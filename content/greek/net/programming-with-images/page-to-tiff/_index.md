@@ -98,7 +98,7 @@ tiffDevice.Process(pdfDocument, 1, 1, dataDir + "PageToTIFF_out.tif");
 
 ## Βήμα 7: Ολοκλήρωση της μετατροπής
 
-Μετά την αποθήκευση της εικόνας TIFF, μπορούμε να εμφανίσουμε ένα μήνυμα επιτυχίας για να υποδείξουμε την επιτυχή μετατροπή. Χρησιμοποιήστε τον ακόλουθο κώδικα:
+Αφού αποθηκεύσουμε την εικόνα TIFF, μπορούμε να εμφανίσουμε ένα μήνυμα επιτυχίας για να υποδείξουμε την επιτυχή μετατροπή. Χρησιμοποιήστε τον ακόλουθο κώδικα:
 
 ```csharp
 System.Console.WriteLine("PDF one page converted to TIFF successfully!");
@@ -122,12 +122,12 @@ tiffSettings.Shape = ShapeType.Landscape;
 tiffSettings.SkipBlankPages = false;
 // Δημιουργία συσκευής TIFF
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
-//Μετατρέψτε μια συγκεκριμένη σελίδα και αποθηκεύστε την εικόνα σε ροή
+// Μετατρέψτε μια συγκεκριμένη σελίδα και αποθηκεύστε την εικόνα σε ροή
 tiffDevice.Process(pdfDocument, 1, 1, dataDir + "PageToTIFF_out.tif");
 System.Console.WriteLine("PDF one page converted to tiff successfully!");
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Σε αυτό το σεμινάριο, καλύψαμε τη διαδικασία βήμα προς βήμα μετατροπής μιας σελίδας PDF σε TIFF χρησιμοποιώντας το Aspose.PDF για .NET. Ξεκινήσαμε ρυθμίζοντας τις απαραίτητες προϋποθέσεις, συμπεριλαμβανομένης της εγκατάστασης του Aspose.PDF για .NET και της διαμόρφωσης του περιβάλλοντος ανάπτυξης. Στη συνέχεια, προχωρήσαμε σε κάθε βήμα, από τη φόρτωση του εγγράφου PDF έως την αποθήκευση της εικόνας TIFF.
 

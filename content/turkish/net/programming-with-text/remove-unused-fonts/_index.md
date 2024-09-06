@@ -1,24 +1,24 @@
 ---
 title: PDF Dosyasındaki Kullanılmayan Yazı Tiplerini Kaldır
 linktitle: PDF Dosyasındaki Kullanılmayan Yazı Tiplerini Kaldır
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET kullanarak PDF dosyasındaki kullanılmayan yazı tiplerini nasıl kaldıracağınızı öğrenin.
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki kullanılmayan yazı tiplerinin nasıl kaldırılacağını öğrenin.
 type: docs
 weight: 300
 url: /tr/net/programming-with-text/remove-unused-fonts/
 ---
-Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak PDF dosyasındaki kullanılmayan fontların nasıl kaldırılacağını açıklayacağız. Bir PDF yükleme, kullanılmayan yazı tiplerini belirleyip kaldırma ve güncellenen PDF'yi sağlanan C# kaynak kodunu kullanarak kaydetme sürecini adım adım gerçekleştireceğiz.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak PDF dosyasındaki kullanılmayan fontların nasıl kaldırılacağını açıklayacağız. PDF yükleme, kullanılmayan fontları belirleme ve kaldırma ve güncellenen PDF'yi sağlanan C# kaynak kodunu kullanarak kaydetme adım adım sürecini ele alacağız.
 
 ## Gereksinimler
 
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
 - Aspose.PDF for .NET kütüphanesi kuruldu.
-- C# programlamanın temel anlayışı.
+- C# programlamanın temellerini anlamak.
 
-## 1. Adım: Belge Dizinini Ayarlayın
+## Adım 1: Belge Dizinini Ayarlayın
 
- Öncelikle PDF dosyalarınızın bulunduğu dizinin yolunu ayarlamanız gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` PDF dosyalarınızın yolunu içeren değişken.
+ İlk olarak, PDF dosyalarınızın bulunduğu dizine giden yolu ayarlamanız gerekir. Değiştir`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` PDF dosyalarınızın yolunu içeren değişken.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -26,15 +26,15 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Adım 2: Kaynak PDF'yi yükleyin
 
- Daha sonra kaynak PDF belgesini kullanarak yüklüyoruz.`Document` Aspose.PDF kütüphanesinden sınıf.
+ Daha sonra, kaynak PDF belgesini kullanarak yüklüyoruz`Document` Aspose.PDF kütüphanesinden sınıf.
 
 ```csharp
 Document doc = new Document(dataDir + "ReplaceTextPage.pdf");
 ```
 
-## 3. Adım: Kullanılmayan Yazı Tiplerini Belirleyin ve Kaldır
+## Adım 3: Kullanılmayan Yazı Tiplerini Belirleyin ve Kaldırın
 
- Biz bir yaratıyoruz`TextFragmentAbsorber` ile nesne`TextEditOptions` parametre şu şekilde ayarlandı:`TextEditOptions.FontReplace.RemoveUnusedFonts` . Bu seçenek, PDF belgesindeki kullanılmayan yazı tiplerini belirleyip kaldırmamıza olanak tanır. Daha sonra tüm işlemleri yineliyoruz`TextFragments` ve yazı tipini istediğiniz yazı tipine ayarlayın.
+ Biz bir tane yaratıyoruz`TextFragmentAbsorber` nesne ile`TextEditOptions` parametre ayarlandı`TextEditOptions.FontReplace.RemoveUnusedFonts` . Bu seçenek, PDF belgesinde kullanılmayan yazı tiplerini belirlememize ve kaldırmamıza olanak tanır. Daha sonra tüm`TextFragments` ve yazı tipini istediğiniz bir yazı tipine ayarlayın.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
@@ -46,9 +46,9 @@ foreach(TextFragment textFragment in absorber.TextFragments)
 }
 ```
 
-## 4. Adım: Güncellenmiş PDF'yi kaydedin
+## Adım 4: Güncellenen PDF'yi Kaydedin
 
-Son olarak güncellenen PDF belgesini belirtilen çıktı dosyasına kaydediyoruz.
+Son olarak güncellenen PDF dokümanını belirtilen çıktı dosyasına kaydediyoruz.
 
 ```csharp
 dataDir = dataDir + "RemoveUnusedFonts_out.pdf";
@@ -56,17 +56,17 @@ doc.Save(dataDir);
 Console.WriteLine("\nUnused fonts removed successfully from the PDF document.\nFile saved at " + dataDir);
 ```
 
-### Aspose.PDF for .NET kullanarak Kullanılmayan Yazı Tiplerini Kaldırmak için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Kullanılmayan Yazı Tiplerini Kaldırmak için örnek kaynak kodu 
 ```csharp
 try
 {
-	// Belgeler dizininin yolu.
+	// Belgeler dizinine giden yol.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	// Kaynak PDF dosyasını yükle
 	Document doc = new Document(dataDir + "ReplaceTextPage.pdf");
 	TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
 	doc.Pages.Accept(absorber);
-	// Tüm TextFragments'leri yineleyin
+	// Tüm TextFragments'ı yineleyin
 	foreach (TextFragment textFragment in absorber.TextFragments)
 	{
 		textFragment.TextState.Font = FontRepository.FindFont("Arial, Bold");
@@ -84,50 +84,50 @@ catch (Exception ex)
 
 ## Çözüm
 
-Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak kullanılmayan yazı tiplerini bir PDF belgesinden nasıl kaldıracağınızı öğrendiniz. Adım adım kılavuzu izleyerek ve verilen C# kodunu çalıştırarak bir PDF yükleyebilir, kullanılmayan yazı tiplerini tanımlayıp kaldırabilir ve güncellenmiş PDF'yi kaydedebilirsiniz.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak PDF belgesinden kullanılmayan fontları nasıl kaldıracağınızı öğrendiniz. Adım adım kılavuzu takip ederek ve sağlanan C# kodunu çalıştırarak bir PDF yükleyebilir, kullanılmayan fontları belirleyip kaldırabilir ve güncellenmiş PDF'i kaydedebilirsiniz.
 
-### SSS'ler
+### SSS
 
-#### S: "PDF Dosyasındaki Kullanılmayan Yazı Tiplerini Kaldırma" eğitiminin amacı nedir?
+#### S: "PDF Dosyasındaki Kullanılmayan Fontları Kaldırma" eğitiminin amacı nedir?
 
-C: "PDF Dosyasındaki Kullanılmayan Fontları Kaldırma" eğitimi, bir PDF belgesinden kullanılmayan fontları kaldırmak için .NET için Aspose.PDF kütüphanesinin nasıl kullanılacağını açıklar. Eğitim, PDF yükleme, kullanılmayan yazı tiplerini belirleyip kaldırma ve güncellenmiş PDF'yi kaydetme sürecinde size yol gösterir.
+A: "PDF Dosyasındaki Kullanılmayan Yazı Tiplerini Kaldır" öğreticisi, .NET için Aspose.PDF kütüphanesinin PDF belgesinden kullanılmayan yazı tiplerini kaldırmak için nasıl kullanılacağını açıklar. Öğretici, bir PDF yükleme, kullanılmayan yazı tiplerini belirleme ve kaldırma ve güncellenmiş PDF'yi kaydetme sürecinde size rehberlik eder.
 
-#### S: Kullanılmayan yazı tiplerini neden bir PDF belgesinden kaldırmak isteyeyim?
+#### S: Kullanılmayan yazı tiplerini bir PDF belgesinden neden kaldırmak isteyebilirim?
 
-C: Kullanılmayan yazı tiplerini bir PDF belgesinden kaldırmak, dosya boyutunun küçültülmesine ve belgenin daha iyi performans için optimize edilmesine yardımcı olabilir. Bu, özellikle belgenin içeriğinde kullanılmayan gömülü yazı tiplerini içeren PDF'lerle çalışırken kullanışlıdır.
+A: PDF belgesinden kullanılmayan yazı tiplerini kaldırmak, dosya boyutunu azaltmaya ve belgeyi daha iyi performans için optimize etmeye yardımcı olabilir. Bu, özellikle belgenin içeriğinde gerçekten kullanılmayan gömülü yazı tipleri içeren PDF'lerle uğraşırken faydalıdır.
 
 #### S: Belge dizinini nasıl ayarlarım?
 
-C: Belge dizinini ayarlamak için:
+A: Belge dizinini ayarlamak için:
 
 1.  Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` PDF dosyalarınızın bulunduğu dizinin yolunu içeren değişken.
 
-#### S: Aspose.PDF kütüphanesini kullanarak kullanılmayan yazı tiplerini bir PDF belgesinden nasıl kaldırabilirim?
+#### S: Aspose.PDF kütüphanesini kullanarak PDF belgesinden kullanılmayan yazı tiplerini nasıl kaldırabilirim?
 
-C: Eğitim, süreç boyunca size adım adım rehberlik eder:
+A: Eğitim, sizi adım adım süreçte yönlendirir:
 
-1.  PDF belgesini kullanarak açın.`Document` sınıf.
-2.  Oluşturmak`TextFragmentAbsorber` ile nesne`TextEditOptions` ayarlanır`FontReplace.RemoveUnusedFonts`.
-3. Kullanılmayan yazı tiplerini belirlemek ve PDF'den kaldırmak için emiciyi kabul edin.
-4.  Her şeyi yineleyin`TextFragments` ve yazı tipini istediğiniz yazı tipine ayarlayın.
+1.  PDF belgesini kullanarak açın`Document` sınıf.
+2.  Bir tane oluştur`TextFragmentAbsorber` nesne ile`TextEditOptions` ayarlandı`FontReplace.RemoveUnusedFonts`.
+3. Kullanılmayan yazı tiplerini PDF'den belirlemek ve kaldırmak için emiciyi kabul edin.
+4.  Tümünü tekrarla`TextFragments` ve yazı tipini istediğiniz bir yazı tipine ayarlayın.
 5. Güncellenen PDF belgesini kaydedin.
 
-####  Soru: Programın amacı nedir?`TextEditOptions.FontReplace.RemoveUnusedFonts` parameter?
+####  S: Amacı nedir?`TextEditOptions.FontReplace.RemoveUnusedFonts` parameter?
 
- C:`TextEditOptions.FontReplace.RemoveUnusedFonts` parametre talimat verir`TextFragmentAbsorber` Kullanılmayan yazı tiplerini belirlemek ve PDF belgesinden kaldırmak için.
+ A:`TextEditOptions.FontReplace.RemoveUnusedFonts` parametre talimat verir`TextFragmentAbsorber`PDF belgesindeki kullanılmayan yazı tiplerini belirlemek ve kaldırmak için.
 
-#### S: Kullanılmayan yazı tiplerini kendi seçtiğim bir yazı tipiyle değiştirebilir miyim?
+#### S: Kullanılmayan fontları kendi seçtiğim bir fontla değiştirebilir miyim?
 
-C: Evet, kullanılmayan yazı tiplerini seçtiğiniz bir yazı tipiyle değiştirmek için kodu değiştirebilirsiniz. Sağlanan örnek kodda, yerine "Arial, Bold" yazı tipi kullanılmıştır.
+A: Evet, kullanılmayan yazı tiplerini istediğiniz bir yazı tipiyle değiştirmek için kodu değiştirebilirsiniz. Sağlanan örnek kodda, "Arial, Bold" yazı tipi bir değiştirme olarak kullanılmıştır.
 
-####  S: Nasıl`TextFragmentAbsorber` work to remove unused fonts?
+####  S: Nasıl?`TextFragmentAbsorber` work to remove unused fonts?
 
- C:`TextFragmentAbsorber` ile yapılandırılmıştır`TextEditOptions.FontReplace.RemoveUnusedFonts` PDF'nin metin parçaları içindeki kullanılmayan yazı tiplerini tanımlayan parametre. Emilimden sonra, tekrarlayabilirsiniz.`TextFragments` ve yazı tiplerini istediğiniz yedek yazı tiplerine ayarlayın.
+ A:`TextFragmentAbsorber` ile yapılandırılmıştır`TextEditOptions.FontReplace.RemoveUnusedFonts` PDF'nin metin parçalarındaki kullanılmayan yazı tiplerini tanımlayan parametre. Emilimden sonra, yineleme yapabilirsiniz`TextFragments` ve yazı tiplerini istedikleri yedek yazı tipleriyle değiştirebilirler.
 
-#### S: Sağlanan kodu çalıştırmanın beklenen sonucu nedir?
+#### S: Verilen kodun yürütülmesinin beklenen sonucu nedir?
 
-C: Öğreticiyi takip ederek ve sağlanan C# kodunu çalıştırarak, kullanılmayan yazı tiplerini giriş PDF belgesinden kaldıracak ve güncellenmiş sürümü çıktı PDF dosyası olarak kaydedeceksiniz.
+C: Eğitimi takip ederek ve verilen C# kodunu çalıştırarak, kullanılmayan fontları giriş PDF belgesinden kaldıracak ve güncellenmiş sürümü çıkış PDF dosyası olarak kaydedeceksiniz.
 
-#### S: Yazı tiplerini yalnızca belirli sayfalardan veya alanlardan kaldıracak şekilde kodu değiştirebilir miyim?
+#### S: Kodu yalnızca belirli sayfalardan veya alanlardan yazı tiplerini kaldıracak şekilde değiştirebilir miyim?
 
-C: Sağlanan kod, kullanılmayan yazı tiplerini PDF belgesinin tamamından kaldırmaya odaklanmaktadır. Yazı tipinin kaldırılması için belirli sayfaları veya bölgeleri hedeflemek istiyorsanız, yaklaşımı değiştirmeniz ve bu alanlarda kullanılmayan yazı tiplerini belirlemek için daha karmaşık bir mantık kullanmanız gerekir.
+A: Sağlanan kod, kullanılmayan yazı tiplerini tüm PDF belgesinden kaldırmaya odaklanır. Yazı tipi kaldırma için belirli sayfaları veya bölgeleri hedeflemek istiyorsanız, yaklaşımı değiştirmeniz ve bu alanlarda kullanılmayan yazı tiplerini tanımlamak için daha karmaşık bir mantık kullanmanız gerekir.

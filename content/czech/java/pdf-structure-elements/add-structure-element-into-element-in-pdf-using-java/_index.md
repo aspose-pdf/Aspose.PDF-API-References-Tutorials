@@ -26,7 +26,7 @@ Než začneme, ujistěte se, že máte nastavené vývojové prostředí Java. P
 
 ### Vytvoření nového dokumentu PDF
 
-Začneme vytvořením nového PDF dokumentu pomocí Aspose.PDF. Následuj tyto kroky:
+Začneme vytvořením nového PDF dokumentu pomocí Aspose.PDF. Postupujte takto:
 
 ```java
 // Vytvořte nový dokument PDF
@@ -82,7 +82,7 @@ TableElement tableElement = new TableElement();
 // Zde přidejte řádky a buňky tabulky
 ```
 
-### Uložení a uzavření PDF
+### Uložení a zavření PDF
 
 Nakonec uložte a zavřete dokument PDF:
 
@@ -100,7 +100,7 @@ V tomto tutoriálu jsme se naučili, jak přidat prvky struktury do prvků v dok
 
 ### Jak si mohu stáhnout Aspose.PDF pro Javu?
 
- Aspose.PDF pro Java si můžete stáhnout z webové stránky na adrese[tady](https://releases.aspose.com/pdf/java/).
+ Aspose.PDF pro Java si můžete stáhnout z webové stránky na adrese[zde](https://releases.aspose.com/pdf/java/).
 
 ### Je Aspose.PDF for Java zdarma k použití?
 
@@ -116,4 +116,4 @@ Ano, existují další knihovny jako Apache PDFBox a iText, které také poskytu
 
 ### Kde najdu další dokumentaci k Aspose.PDF pro Javu?
 
- Dokumentaci k Aspose.PDF pro Java můžete získat na adrese[tady](https://reference.aspose.com/pdf/java/).
+ Dokumentaci k Aspose.PDF pro Java můžete získat na adrese[zde](https://reference.aspose.com/pdf/java/).

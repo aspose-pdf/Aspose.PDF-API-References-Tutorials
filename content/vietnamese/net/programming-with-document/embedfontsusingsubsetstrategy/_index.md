@@ -1,93 +1,117 @@
 ---
-title: Nhúng phông chữ vào tệp PDF với chiến lược tập hợp con
+title: Nhúng Phông chữ vào Tệp PDF Với Chiến lược Tập hợp Con
 linktitle: Nhúng phông chữ với chiến lược tập hợp con
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Tìm hiểu cách nhúng phông chữ vào tệp PDF bằng Chiến lược tập hợp con bằng Aspose.PDF cho .NET. Tối ưu hóa kích thước PDF của bạn bằng cách chỉ nhúng các ký tự cần thiết.
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Tìm hiểu cách nhúng phông chữ vào tệp PDF bằng Subset Strategy sử dụng Aspose.PDF cho .NET. Tối ưu hóa kích thước PDF của bạn bằng cách chỉ nhúng các ký tự cần thiết.
 type: docs
 weight: 130
 url: /vi/net/programming-with-document/embedfontsusingsubsetstrategy/
 ---
-Trong hướng dẫn này, chúng ta sẽ thảo luận về cách nhúng phông chữ vào tệp PDF bằng chiến lược tập hợp con bằng Aspose.PDF cho .NET. Aspose.PDF for .NET là một thư viện mạnh mẽ cho phép các nhà phát triển tạo, chỉnh sửa và thao tác các tài liệu PDF theo chương trình. Nhúng phông chữ vào tệp PDF là một bước quan trọng để đảm bảo rằng tài liệu được hiển thị chính xác trên các thiết bị khác nhau, bất kể phông chữ được yêu cầu có được cài đặt trên các thiết bị đó hay không.
+## Giới thiệu
 
-## Bước 1: Tạo ứng dụng bảng điều khiển C# mới
-Để bắt đầu, hãy tạo Ứng dụng bảng điều khiển C# mới trong Visual Studio. Bạn có thể đặt tên cho nó bất cứ điều gì bạn thích. Sau khi dự án được tạo, bạn cần thêm tham chiếu đến thư viện Aspose.PDF cho .NET.
+Trong thời đại kỹ thuật số, PDF đã trở thành một yếu tố chính để chia sẻ tài liệu. Cho dù bạn đang gửi báo cáo, bài thuyết trình hay sách điện tử, việc đảm bảo phông chữ của bạn được hiển thị chính xác là rất quan trọng. Bạn đã bao giờ mở tệp PDF chỉ để thấy rằng văn bản trông khác so với dự định chưa? Điều này thường xảy ra khi phông chữ được sử dụng trong tài liệu không được nhúng đúng cách. Đó là lúc Aspose.PDF cho .NET phát huy tác dụng! Trong hướng dẫn này, chúng ta sẽ khám phá cách nhúng phông chữ vào tệp PDF bằng chiến lược tập hợp con, đảm bảo tài liệu của bạn trông giống như bạn mong muốn, bất kể chúng được xem ở đâu.
 
-## Bước 2: Nhập không gian tên Aspose.PDF
-Thêm dòng mã sau vào đầu tệp C# của bạn để nhập vùng tên Aspose.PDF:
+## Điều kiện tiên quyết
+
+Trước khi đi sâu vào chi tiết về việc nhúng phông chữ, bạn cần chuẩn bị một số thứ sau:
+
+1.  Aspose.PDF cho .NET: Đảm bảo bạn đã cài đặt thư viện Aspose.PDF. Bạn có thể tải xuống từ[đây](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: Môi trường phát triển nơi bạn có thể viết và kiểm tra mã .NET của mình.
+3. Kiến thức cơ bản về C#: Sự quen thuộc với lập trình C# sẽ giúp bạn hiểu các đoạn mã tốt hơn.
+
+## Nhập gói
+
+Để bắt đầu, bạn sẽ cần nhập các gói cần thiết vào dự án C# của mình. Sau đây là cách bạn có thể thực hiện:
+
+### Tạo một dự án mới
+
+Mở Visual Studio và tạo một dự án C# mới. Bạn có thể chọn Ứng dụng Console để đơn giản hơn.
+
+### Thêm tham chiếu Aspose.PDF
+
+1. Nhấp chuột phải vào dự án của bạn trong Solution Explorer.
+2. Chọn "Quản lý gói NuGet".
+3. Tìm kiếm "Aspose.PDF" và cài đặt phiên bản mới nhất.
 
 ```csharp
-using Aspose.Pdf;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Bước 3: Tải tệp PDF hiện có
-Để nhúng phông chữ vào tệp PDF hiện có, bạn cần tải tệp đó bằng lớp Tài liệu. Đoạn mã sau đây minh họa cách tải một tệp PDF hiện có:
+Bây giờ chúng ta đã thiết lập xong mọi thứ, hãy cùng tìm hiểu từng bước trong quy trình nhúng phông chữ vào tệp PDF.
+
+## Bước 1: Thiết lập thư mục tài liệu của bạn
+
+Trước tiên, chúng ta cần xác định nơi lưu trữ tài liệu. Điều này rất quan trọng vì chúng ta sẽ đọc và ghi vào thư mục này.
 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
-// Tải tệp PDF hiện có
+ Thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế nơi các tệp PDF của bạn được đặt. Điều này có thể giống như`@"C:\Documents\"`.
+
+## Bước 2: Tải Tài liệu PDF
+
+Tiếp theo, chúng ta sẽ tải tài liệu PDF mà chúng ta muốn chỉnh sửa. Đây là nơi Aspose.PDF tỏa sáng, cho phép chúng ta dễ dàng thao tác các tệp PDF.
+
+```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Bước 4: Nhúng phông chữ với chiến lược tập hợp con
-Aspose.PDF for .NET cung cấp hai chiến lược nhúng phông chữ: SubsetAllFonts và SubsetEmbeddedFontsOnly.
+ Hãy chắc chắn rằng bạn có một`input.pdf` tập tin trong thư mục bạn chỉ định. Tập tin này sẽ là tập tin chúng ta sửa đổi.
 
-Chiến lược SubsetAllFonts sẽ nhúng tất cả các phông chữ trong tài liệu dưới dạng tập hợp con. Tập hợp con là một phần của phông chữ chỉ chứa các ký tự được sử dụng trong tài liệu. Chiến lược này rất hữu ích để giảm kích thước tệp của tài liệu PDF.
+## Bước 3: Tập hợp tất cả phông chữ
 
-Chiến lược SubsetEmbeddedFontsOnly sẽ chỉ nhúng tập hợp con phông chữ đã được nhúng trong tài liệu. Nếu phông chữ không được nhúng, nó sẽ không bị ảnh hưởng bởi chiến lược này.
-
-Đoạn mã sau đây trình bày cách nhúng phông chữ vào tệp PDF bằng chiến lược tập hợp con:
+Bây giờ, chúng ta hãy đi vào trọng tâm của vấn đề: nhúng phông chữ. Chúng ta sẽ bắt đầu bằng cách nhúng tất cả các phông chữ dưới dạng tập hợp con. Điều này có nghĩa là chỉ các ký tự được sử dụng trong tài liệu sẽ được nhúng, điều này có thể làm giảm đáng kể kích thước tệp.
 
 ```csharp
-// Tất cả các phông chữ sẽ được nhúng dưới dạng tập hợp con vào tài liệu trong trường hợp SubsetAllFonts.
+// Tất cả phông chữ sẽ được nhúng dưới dạng tập hợp con vào tài liệu trong trường hợp SubsetAllFonts.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
+```
 
-// Tập hợp con phông chữ sẽ được nhúng cho các phông chữ được nhúng hoàn toàn nhưng các phông chữ không được nhúng vào tài liệu sẽ không bị ảnh hưởng.
+ Bằng cách sử dụng`SubsetAllFonts`, chúng tôi đảm bảo rằng mọi phông chữ được sử dụng trong tài liệu đều được nhúng, nhưng chỉ những ký tự thực sự được sử dụng mới được đưa vào.
+
+## Bước 4: Chỉ nhúng phông chữ con
+
+Trong một số trường hợp, bạn có thể muốn nhúng chỉ các phông chữ đã được nhúng trong tài liệu. Điều này hữu ích nếu bạn muốn duy trì giao diện gốc mà không cần thêm phông chữ mới.
+
+```csharp
+//Tập hợp phông chữ sẽ được nhúng đối với các phông chữ được nhúng hoàn toàn nhưng các phông chữ không được nhúng vào tài liệu sẽ không bị ảnh hưởng.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
 ```
 
-## Bước 5: Lưu tài liệu PDF
-Khi bạn đã nhúng tất cả các phông chữ vào tệp PDF bằng chiến lược tập hợp con, bạn cần lưu tài liệu. Đoạn mã sau minh họa cách lưu tệp PDF:
+Dòng mã này đảm bảo rằng chỉ những phông chữ đã được nhúng mới được chia thành các tập con, giữ nguyên bất kỳ phông chữ nào không được nhúng.
+
+## Bước 5: Lưu tài liệu đã sửa đổi
+
+Cuối cùng, chúng ta cần lưu các thay đổi của mình. Đây là nơi chúng ta ghi lại tài liệu đã sửa đổi vào đĩa.
 
 ```csharp
 doc.Save(dataDir + "Output_out.pdf");
 ```
 
-### Mã nguồn mẫu để nhúng phông chữ với chiến lược tập hợp con bằng Aspose.PDF cho .NET. 
-
-```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document doc = new Document(dataDir + "input.pdf");
-// Tất cả các phông chữ sẽ được nhúng dưới dạng tập hợp con vào tài liệu trong trường hợp SubsetAllFonts.
-doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
-// Tập hợp con phông chữ sẽ được nhúng cho các phông chữ được nhúng hoàn toàn nhưng các phông chữ không được nhúng vào tài liệu sẽ không bị ảnh hưởng.
-doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
-doc.Save(dataDir + "Output_out.pdf");
-```
+ Điều này sẽ tạo ra một tập tin PDF mới có tên`Output_out.pdf` trong thư mục bạn chỉ định, có đầy đủ phông chữ nhúng.
 
 ## Phần kết luận
-Trong bài viết này, chúng tôi đã thảo luận về cách nhúng phông chữ vào tệp PDF bằng chiến lược tập hợp con bằng Aspose.PDF cho .NET. Aspose.PDF for .NET cung cấp API đơn giản và dễ sử dụng để làm việc với các tài liệu PDF, bao gồm thêm và nhúng phông chữ bằng các chiến lược khác nhau. Nhúng phông chữ vào tệp PDF là một bước quan trọng để đảm bảo tài liệu được hiển thị chính xác trên các thiết bị khác nhau và chiến lược tập hợp con là một tính năng hữu ích để giảm kích thước tệp của tài liệu PDF.
 
-### Câu hỏi thường gặp về phông chữ nhúng trong tệp PDF với chiến lược tập hợp con
+Và thế là xong! Bạn đã nhúng thành công phông chữ vào tệp PDF bằng Aspose.PDF cho .NET. Bằng cách làm theo các bước này, bạn có thể đảm bảo rằng tài liệu của mình duy trì được giao diện mong muốn, bất kể chúng được xem ở đâu. Cho dù bạn đang chia sẻ báo cáo, bản trình bày hay bất kỳ loại tài liệu nào khác, việc nhúng phông chữ là bước quan trọng để duy trì tính chuyên nghiệp và rõ ràng.
 
-#### Câu hỏi: Chiến lược tập hợp con để nhúng phông chữ vào tệp PDF là gì?
+## Câu hỏi thường gặp
 
-Đáp: Chiến lược tập hợp con để nhúng phông chữ vào tệp PDF có nghĩa là chỉ một phần phông chữ chứa các ký tự được sử dụng trong tài liệu sẽ được nhúng. Điều này giúp giảm kích thước tệp của tài liệu PDF bằng cách loại bỏ dữ liệu phông chữ không cần thiết.
+### Font subsetting là gì?
+Phân nhóm phông chữ là quá trình chỉ bao gồm các ký tự được sử dụng trong tài liệu, thay vì toàn bộ phông chữ, giúp giảm kích thước tệp.
 
-#### Câu hỏi: Sự khác biệt giữa chiến lược SubsetAllFonts và SubsetEmbeddedFontsOnly là gì?
+### Tại sao tôi nên nhúng phông chữ vào tệp PDF của mình?
+Việc nhúng phông chữ đảm bảo tài liệu của bạn hiển thị giống nhau trên mọi thiết bị, ngăn ngừa sự cố thay thế phông chữ.
 
- Đáp: Cái`SubsetAllFonts`chiến lược sẽ nhúng tất cả các phông chữ trong tài liệu dưới dạng một tập hợp con, trong khi`SubsetEmbeddedFontsOnly` chiến lược sẽ chỉ nhúng tập hợp con phông chữ đã được nhúng trong tài liệu. Chiến lược thứ hai sẽ không ảnh hưởng đến các phông chữ chưa được nhúng.
+### Tôi có thể sử dụng Aspose.PDF miễn phí không?
+ Có, Aspose cung cấp bản dùng thử miễn phí mà bạn có thể sử dụng để kiểm tra thư viện trước khi mua. Bạn có thể tìm thấy nó[đây](https://releases.aspose.com/).
 
-#### Câu hỏi: Tại sao việc nhúng phông chữ bằng chiến lược tập hợp con lại quan trọng?
+### Tôi có thể tìm thêm tài liệu ở đâu?
+ Bạn có thể truy cập tài liệu đầy đủ về Aspose.PDF cho .NET[đây](https://reference.aspose.com/pdf/net/).
 
-Đáp: Việc nhúng phông chữ bằng chiến lược tập hợp con là quan trọng để đảm bảo rằng tệp PDF chứa dữ liệu phông chữ cần thiết để hiển thị văn bản chính xác, đồng thời giữ kích thước tệp nhỏ hơn bằng cách chỉ bao gồm các ký tự được sử dụng trong tài liệu.
-
-#### Câu hỏi: Tôi có thể sử dụng Aspose.PDF cho .NET để nhúng phông chữ với các chiến lược khác nhau không?
-
- Đáp: Có, Aspose.PDF for .NET cung cấp nhiều chiến lược khác nhau để nhúng phông chữ, bao gồm`SubsetAllFonts` Và`SubsetEmbeddedFontsOnly`. Bạn có thể chọn chiến lược phù hợp dựa trên yêu cầu của bạn.
-
-#### Câu hỏi: Aspose.PDF cho .NET có phải là thư viện đáng tin cậy để làm việc với các tài liệu PDF không?
-
-Đáp: Có, Aspose.PDF for .NET là một thư viện mạnh mẽ và đáng tin cậy để làm việc với các tài liệu PDF. Nó cung cấp các tính năng mở rộng để tạo, chỉnh sửa và thao tác các tệp PDF trong các ứng dụng .NET.
+### Tôi phải làm sao nếu gặp vấn đề?
+ Nếu bạn gặp bất kỳ vấn đề nào, bạn có thể tìm kiếm sự trợ giúp trên diễn đàn hỗ trợ Aspose[đây](https://forum.aspose.com/c/pdf/10).

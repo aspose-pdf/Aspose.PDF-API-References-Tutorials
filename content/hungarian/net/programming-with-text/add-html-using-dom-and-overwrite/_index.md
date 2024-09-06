@@ -42,7 +42,7 @@ Document doc = new Document();
 ```
 
 ## 5. lépés: Adjon hozzá egy oldalt a dokumentumhoz
- Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`Gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
+ Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -56,7 +56,7 @@ HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Tab
 ```
 
 ## 7. lépés: Írja felül a HTML-tartalom stílusait
- A HTML-tartalom stílusainak felülírásához módosíthatja a`TextState` tulajdonságai a`HtmlFragment` tárgy. A megadott kódban a betűcsalád „Arial”-ra változik, a betűméret pedig 20-ra van állítva.
+ A HTML-tartalom stílusainak felülírásához módosíthatja a`TextState` tulajdonságai a`HtmlFragment` objektum. A megadott kódban a betűcsalád „Arial”-ra változik, a betűméret pedig 20-ra van állítva.
 
 ```csharp
 title. TextState = new TextState("Arial");
@@ -79,7 +79,7 @@ page.Paragraphs.Add(title);
 ```
 
 ## 10. lépés: Mentse el a PDF dokumentumot
- Mentse el a PDF dokumentumot a`Save` módszere a`Document` tárgy. Adja meg a kimeneti fájl elérési útját, amelyet a 3. lépésben állított be.
+ Mentse el a PDF dokumentumot a`Save` módszere a`Document` objektum. Adja meg a kimeneti fájl elérési útját, amelyet a 3. lépésben állított be.
 
 ```csharp
 dataDir = dataDir + "AddHTMLUsingDOMAndOverwrite_out.pdf";
@@ -143,7 +143,7 @@ Document doc = new Document();
 
 #### K: Hogyan adhatok hozzá oldalt a dokumentumhoz?
 
- V: Az 5. lépésben új oldalt ad hozzá a dokumentumhoz a`Add` módszere a`Pages` Gyűjtemény:
+ V: Az 5. lépésben új oldalt ad hozzá a dokumentumhoz a`Add` módszere a`Pages` gyűjtemény:
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -159,7 +159,7 @@ HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Tab
 
 #### K: Hogyan írhatom felül a HTML-tartalom stílusait?
 
- V: A 7. lépésben felülírja a HTML-tartalom stílusát a`TextState` tulajdonságai a`HtmlFragment` tárgy. Például módosíthatja a betűcsaládot "Arial"-ra, és beállíthatja a betűméretet 20-ra:
+ V: A 7. lépésben felülírja a HTML-tartalom stílusát a`TextState` tulajdonságai a`HtmlFragment` objektum. Például módosíthatja a betűcsaládot "Arial"-ra, és beállíthatja a betűméretet 20-ra:
 
 ```csharp
 title.TextState = new TextState("Arial");

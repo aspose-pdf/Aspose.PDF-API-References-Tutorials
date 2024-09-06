@@ -1,8 +1,8 @@
 ---
-title: Konversi Gambar ke PDF menggunakan Java
-linktitle: Konversi Gambar ke PDF menggunakan Java
-second_title: Aspose.PDF API Pemrosesan PDF Java
-description: Pelajari cara mengonversi gambar ke PDF menggunakan Java dengan panduan komprehensif ini. Petunjuk langkah demi langkah dan contoh kode disertakan.
+title: Mengonversi Gambar ke PDF menggunakan Java
+linktitle: Mengonversi Gambar ke PDF menggunakan Java
+second_title: API Pemrosesan PDF Java Aspose.PDF
+description: Pelajari cara mengonversi gambar ke PDF menggunakan Java dengan panduan lengkap ini. Petunjuk langkah demi langkah dan contoh kode disertakan.
 type: docs
 weight: 12
 url: /id/java/pdf-image-manipulation/convert-an-image-to-pdf-using-java/
@@ -10,27 +10,27 @@ url: /id/java/pdf-image-manipulation/convert-an-image-to-pdf-using-java/
 
 ## Perkenalan
 
-Di era digital saat ini, kebutuhan untuk mengonversi berbagai format file selalu ada. Salah satu persyaratan umum adalah mengonversi gambar ke dokumen PDF menggunakan Java. Baik untuk tujuan pengarsipan, berbagi, atau pencetakan, kemampuan untuk melakukan konversi ini secara terprogram bisa sangat berharga. Dalam panduan langkah demi langkah ini, kita akan menjelajahi cara mencapai tugas ini menggunakan perpustakaan Aspose.PDF untuk Java. Jadi, mari selami!
+Di era digital saat ini, kebutuhan untuk mengonversi berbagai format file selalu ada. Salah satu persyaratan umum adalah mengonversi gambar ke dokumen PDF menggunakan Java. Baik untuk tujuan pengarsipan, berbagi, atau pencetakan, kemampuan untuk melakukan konversi ini secara terprogram dapat sangat berharga. Dalam panduan langkah demi langkah ini, kita akan menjelajahi cara mencapai tugas ini menggunakan pustaka Aspose.PDF for Java. Jadi, mari kita langsung mulai!
 
 ## Prasyarat
 
-Sebelum kita mulai, pastikan Anda memiliki prasyarat berikut:
+Sebelum kita memulai, pastikan Anda memiliki prasyarat berikut:
 
-- Lingkungan Pengembangan Java: Anda harus menginstal Java JDK di sistem Anda.
+- Lingkungan Pengembangan Java: Anda harus menginstal Java JDK pada sistem Anda.
 
--  Aspose.PDF untuk Java: Unduh dan sertakan perpustakaan Aspose.PDF untuk Java dalam proyek Anda. Anda dapat menemukan tautan unduhan[Di Sini](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF untuk Java: Unduh dan sertakan pustaka Aspose.PDF untuk Java dalam proyek Anda. Anda dapat menemukan tautan unduhan[Di Sini](https://releases.aspose.com/pdf/java/).
 
-- Gambar untuk Dikonversi: Siapkan file gambar yang ingin Anda konversi ke PDF. Pastikan itu dapat diakses dalam proyek Java Anda.
+- Gambar yang Akan Dikonversi: Siapkan berkas gambar yang ingin Anda konversi ke PDF. Pastikan berkas tersebut dapat diakses dalam proyek Java Anda.
 
 ## Menyiapkan Proyek Anda
 
 1. Buat Proyek Java: Mulailah dengan membuat proyek Java baru di Lingkungan Pengembangan Terpadu (IDE) pilihan Anda.
 
-2. Tambahkan Aspose.PDF untuk Java: Sertakan perpustakaan Aspose.PDF dalam proyek Anda. Anda dapat melakukan ini dengan menambahkan file JAR ke classpath proyek Anda.
+2. Tambahkan Aspose.PDF untuk Java: Sertakan pustaka Aspose.PDF dalam proyek Anda. Anda dapat melakukannya dengan menambahkan file JAR ke classpath proyek Anda.
 
 ## Menulis Kode
 
-Sekarang, mari tulis kode Java untuk mengonversi gambar ke PDF menggunakan Aspose.PDF. Kami akan membaginya menjadi beberapa langkah untuk kejelasan.
+Sekarang, mari kita tulis kode Java untuk mengonversi gambar ke PDF menggunakan Aspose.PDF. Kita akan membaginya ke dalam beberapa langkah agar lebih jelas.
 
 ### Langkah 1: Inisialisasi Objek Dokumen
 
@@ -68,26 +68,26 @@ pdfDocument.save("output.pdf");
 
 ## Kesimpulan
 
-Selamat! Anda telah berhasil mengonversi gambar ke dokumen PDF menggunakan Java dan perpustakaan Aspose.PDF untuk Java. Ini bisa sangat berguna dalam berbagai skenario, seperti membuat laporan, membuat portofolio PDF, atau sekadar mengarsipkan data gambar dalam format yang lebih mudah dikelola. Jangan ragu untuk menjelajahi lebih banyak fitur perpustakaan Aspose.PDF untuk meningkatkan kemampuan pembuatan PDF Anda.
+Selamat! Anda telah berhasil mengonversi gambar ke dokumen PDF menggunakan Java dan pustaka Aspose.PDF untuk Java. Ini dapat sangat berguna dalam berbagai skenario, seperti membuat laporan, membuat portofolio PDF, atau sekadar mengarsipkan data gambar dalam format yang lebih mudah dikelola. Jangan ragu untuk menjelajahi lebih banyak fitur pustaka Aspose.PDF untuk meningkatkan kemampuan pembuatan PDF Anda.
 
-## FAQ
+## Pertanyaan yang Sering Diajukan
 
-### Bagaimana cara menambahkan banyak gambar ke satu dokumen PDF?
+### Bagaimana cara menambahkan beberapa gambar ke satu dokumen PDF?
 
-Untuk menambahkan banyak gambar ke satu dokumen PDF, Anda dapat mengikuti langkah-langkah yang sama yang dijelaskan dalam panduan ini untuk setiap gambar. Cukup ulangi proses inisialisasi dokumen, penambahan halaman, memuat gambar, dan menyimpan dokumen PDF dengan file gambar berbeda.
+Untuk menambahkan beberapa gambar ke satu dokumen PDF, Anda dapat mengikuti langkah-langkah yang sama yang diuraikan dalam panduan ini untuk setiap gambar. Cukup ulangi proses inisialisasi dokumen, penambahan halaman, pemuatan gambar, dan penyimpanan dokumen PDF dengan file gambar yang berbeda.
 
-### Bisakah saya menyesuaikan tampilan halaman PDF, seperti mengatur dimensi atau marginnya?
+### Dapatkah saya menyesuaikan tampilan halaman PDF, seperti mengatur dimensi atau marginnya?
 
-Ya, Anda dapat menyesuaikan tampilan halaman PDF dengan menyesuaikan dimensi, margin, dan atribut lainnya menggunakan Aspose.PDF untuk Java. Lihat dokumentasi[Di Sini](https://reference.aspose.com/pdf/java/) untuk informasi rinci tentang penyesuaian halaman.
+Ya, Anda dapat menyesuaikan tampilan halaman PDF dengan menyesuaikan dimensi, margin, dan atribut lainnya menggunakan Aspose.PDF untuk Java. Lihat dokumentasi[Di Sini](https://reference.aspose.com/pdf/java/) untuk informasi terperinci tentang penyesuaian halaman.
 
-### Apakah Aspose.PDF untuk Java merupakan perpustakaan gratis?
+### Apakah Aspose.PDF untuk Java pustaka gratis?
 
-Aspose.PDF untuk Java adalah perpustakaan komersial dengan versi uji coba gratis yang tersedia. Anda dapat menjelajahi fitur dan fungsinya dengan mengunduh versi uji coba dari situs web.
+Aspose.PDF untuk Java adalah pustaka komersial dengan versi uji coba gratis yang tersedia. Anda dapat menjelajahi fitur dan fungsinya dengan mengunduh versi uji coba dari situs web.
 
-### Apakah ada batasan ukuran gambar yang dapat dikonversi ke PDF?
+### Apakah ada batasan ukuran gambar yang dapat diubah ke PDF?
 
-Aspose.PDF untuk Java tidak menerapkan batasan ketat pada ukuran gambar yang dapat dikonversi ke PDF. Namun, gambar yang sangat besar mungkin memerlukan memori tambahan dan waktu pemrosesan. Disarankan untuk mengoptimalkan dan mengubah ukuran gambar besar sebelum konversi untuk kinerja yang lebih baik.
+Aspose.PDF untuk Java tidak memberlakukan batasan ketat pada ukuran gambar yang dapat dikonversi ke PDF. Namun, gambar yang sangat besar mungkin memerlukan memori dan waktu pemrosesan tambahan. Sebaiknya optimalkan dan ubah ukuran gambar besar sebelum konversi untuk mendapatkan kinerja yang lebih baik.
 
 ### Bisakah saya melindungi dokumen PDF yang dihasilkan dengan kata sandi?
 
-Ya, Anda dapat menambahkan perlindungan kata sandi ke dokumen PDF yang dihasilkan menggunakan Aspose.PDF untuk Java. Lihat dokumentasi perpustakaan untuk panduan menambahkan fitur keamanan ke dokumen PDF Anda.
+Ya, Anda dapat menambahkan proteksi kata sandi ke dokumen PDF yang dihasilkan menggunakan Aspose.PDF untuk Java. Lihat dokumentasi pustaka untuk panduan tentang cara menambahkan fitur keamanan ke dokumen PDF Anda.

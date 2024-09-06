@@ -76,7 +76,7 @@ A képbélyegző pozícióját módosíthatja a koordináták módosításával 
 
 ### Hozzáadhatok több képbélyeget egyetlen PDF dokumentumhoz?
 
-Igen, több képbélyeget is hozzáadhat egyetlen PDF-dokumentumhoz úgy, hogy megismétli a bélyegzési folyamatot minden egyes képnél.
+Igen, több képbélyeget is hozzáadhat egyetlen PDF-dokumentumhoz, ha megismétli a bélyegzési folyamatot minden egyes képnél.
 
 ### Ingyenesen használható az Aspose.PDF for Java?
 

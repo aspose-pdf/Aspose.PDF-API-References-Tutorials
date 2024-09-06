@@ -40,7 +40,7 @@ Most, hogy a PDF-fájl nyitva van, megkezdheti az XMP metaadat tulajdonságainak
 - `xmp:Nickname`: A PDF-fájl beceneve vagy álneve.
 - `xmp:CustomProperty`: Egyéni tulajdonság az Ön által megadott értékkel.
 
- Ezen tulajdonságok beállításához használhatja a`Metadata` tulajdona a`Document` tárgy. Íme egy példa:
+ Ezen tulajdonságok beállításához használhatja a`Metadata` tulajdona a`Document` objektum. Íme egy példa:
 
 ```csharp
 // Állítsa be a tulajdonságokat

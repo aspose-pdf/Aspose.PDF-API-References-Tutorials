@@ -2,12 +2,12 @@
 title: Strukturelemente erstellen
 linktitle: Strukturelemente erstellen
 second_title: Aspose.PDF für .NET API-Referenz
-description: In diesem Tutorial erfahren Sie, wie Sie mit Aspose.PDF für .NET Strukturelemente in einem mit Tags versehenen PDF-Dokument erstellen.
+description: In diesem Tutorial erfahren Sie, wie Sie mit Aspose.PDF für .NET Strukturelemente in einem getaggten PDF-Dokument erstellen.
 type: docs
 weight: 60
 url: /de/net/programming-with-tagged-pdf/create-structure-elements/
 ---
-Der folgende C#-Quellcode verwendet Aspose.PDF für .NET, um Strukturelemente zu erstellen. Führen Sie die folgenden Schritte aus, um zu verstehen, wie der Code funktioniert.
+Der folgende C#-Quellcode verwendet Aspose.PDF für .NET, um Strukturelemente zu erstellen. Befolgen Sie die folgenden Schritte, um zu verstehen, wie der Code funktioniert.
 
 ## Schritt 1: Importieren Sie die erforderlichen Bibliotheken
 
@@ -21,7 +21,7 @@ using Aspose.Pdf;
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-Stellen Sie sicher, dass Sie den korrekten Pfad zu Ihrem Dokumentenverzeichnis angeben.
+Achten Sie darauf, den richtigen Pfad zu Ihrem Dokumentverzeichnis anzugeben.
 
 ## Schritt 3: Erstellen Sie ein PDF-Dokument
 
@@ -29,15 +29,15 @@ Stellen Sie sicher, dass Sie den korrekten Pfad zu Ihrem Dokumentenverzeichnis a
 Document document = new Document();
 ```
 
-Wir erstellen ein neues Document-Objekt, das das PDF-Dokument darstellt.
+Wir erstellen ein neues Dokumentobjekt, das das PDF-Dokument darstellt.
 
-## Schritt 4: Machen Sie Inhalte mit TaggedPdf nutzbar
+## Schritt 4: Inhalte mit TaggedPdf bearbeiten
 
 ```csharp
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-Wir rufen den getaggten Inhalt des PDF-Dokuments ab. Dadurch können wir Strukturelemente manipulieren.
+Wir rufen den getaggten Inhalt des PDF-Dokuments ab. Dadurch können wir Strukturelemente bearbeiten.
 
 ## Schritt 5: Dokumenttitel und Sprache festlegen
 
@@ -46,7 +46,7 @@ taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-Wir legen den Titel und die Sprache des getaggten PDF-Dokuments fest. Dadurch wird die Zugänglichkeit des Dokuments verbessert.
+Wir legen den Titel und die Sprache des getaggten PDF-Dokuments fest. Dies verbessert die Zugänglichkeit des Dokuments.
 
 ## Schritt 6: Gruppierungselemente erstellen
 
@@ -66,7 +66,7 @@ PrivateElement privateElement = taggedContent.CreatePrivateElement();
 
 Wir erstellen verschiedene Strukturelemente zur Gruppierung von Inhalten im PDF-Dokument.
 
-## Schritt 7: Erstellen Sie Absatzstrukturelemente
+## Schritt 7: Absatzstrukturelemente erstellen
 
 ```csharp
 ParagraphElement paragraphElement = taggedContent.CreateParagraphElement();
@@ -74,9 +74,9 @@ HeaderElement headerElement = taggedContent.CreateHeaderElement();
 HeaderElement h1Element = taggedContent.CreateHeaderElement(1);
 ```
 
-Wir erstellen Strukturelemente auf Blockebene für Absätze und Überschriften. Das obige Beispiel zeigt die Erstellung eines Level-1-Headers.
+Wir erstellen blockweise Strukturelemente für Absätze und Überschriften. Das obige Beispiel zeigt die Erstellung einer Überschrift der Ebene 1.
 
-## Schritt 8: Erstellen Sie Inline-Level-Strukturelemente
+## Schritt 8: Inline-Level-Strukturelemente erstellen
 
 ```csharp
 SpanElement spanElement = taggedContent.CreateSpanElement();
@@ -84,16 +84,16 @@ QuoteElement quoteElement = taggedContent.CreateQuoteElement();
 NoteElement noteElement = taggedContent.CreateNoteElement();
 ```
 
-Wir erstellen Strukturelemente auf Inline-Ebene für die Textteile, die innerhalb eines Absatzes oder einer Überschrift erscheinen.
+Wir erstellen Inline-Level-Strukturelemente für die Textteile, die innerhalb eines Absatzes oder einer Überschrift erscheinen.
 
-## Schritt 9: Erstellen Sie Grafikstrukturelemente
+## Schritt 9: Bildstrukturelemente erstellen
 
 ```csharp
 FigureElement figureElement = taggedContent.CreateFigureElement();
 FormulaElement formulaElement = taggedContent.CreateFormulaElement();
 ```
 
-Wir erstellen Strukturelemente für die im Dokument enthaltenen Abbildungen und mathematischen Formeln.
+Wir erstellen Strukturelemente für die im Dokument vorhandenen Abbildungen und mathematischen Formeln.
 
 ## Schritt 10: Speichern Sie das getaggte PDF-Dokument
 
@@ -107,13 +107,13 @@ Wir speichern das getaggte PDF-Dokument mit den erstellten Strukturelementen.
 
 ```csharp
 
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Erstellen Sie ein PDF-Dokument
+// PDF-Dokument erstellen
 Document document = new Document();
 // Holen Sie sich Inhalte für die Arbeit mit TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
-// Legen Sie Titel und Sprache für Documentt fest
+// Titel und Sprache für Dokument festlegen
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 // Gruppierungselemente erstellen
@@ -128,15 +128,15 @@ TOCIElement tociElement = taggedContent.CreateTOCIElement();
 IndexElement indexElement = taggedContent.CreateIndexElement();
 NonStructElement nonStructElement = taggedContent.CreateNonStructElement();
 PrivateElement privateElement = taggedContent.CreatePrivateElement();
-// Erstellen Sie Strukturelemente auf Textblockebene
+// Erstellen von Strukturelementen auf Textblockebene
 ParagraphElement paragraphElement = taggedContent.CreateParagraphElement();
 HeaderElement headerElement = taggedContent.CreateHeaderElement();
 HeaderElement h1Element = taggedContent.CreateHeaderElement(1);
-// Erstellen Sie Textstrukturelemente auf Inline-Ebene
+// Erstellen von Text-Inline-Level-Strukturelementen
 SpanElement spanElement = taggedContent.CreateSpanElement();
 QuoteElement quoteElement = taggedContent.CreateQuoteElement();
 NoteElement noteElement = taggedContent.CreateNoteElement();
-// Erstellen Sie Strukturelemente für Illustrationen
+// Erstellen von Illustrationsstrukturelementen
 FigureElement figureElement = taggedContent.CreateFigureElement();
 FormulaElement formulaElement = taggedContent.CreateFormulaElement();
 // Methoden sind in der Entwicklung
@@ -150,53 +150,53 @@ AnnotElement annotElement = taggedContent.CreateAnnotElement();
 RubyElement rubyElement = taggedContent.CreateRubyElement();
 WarichuElement warichuElement = taggedContent.CreateWarichuElement();
 FormElement formElement = taggedContent.CreateFormElement();
-// Markiertes PDF-Dokument speichern
+// Getaggtes PDF-Dokument speichern
 document.Save(dataDir + "StructureElements.pdf");
 
 ```
 
 ## Abschluss
 
-In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET Strukturelemente in einem getaggten PDF-Dokument erstellt. Strukturelemente tragen dazu bei, die Zugänglichkeit von Dokumenten zu verbessern und Inhalte sinnvoll zu organisieren. Jetzt können Sie dieses Wissen nutzen, um strukturierte, leicht zu navigierende PDF-Dokumente zu erstellen.
+In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET Strukturelemente in einem getaggten PDF-Dokument erstellt. Strukturelemente helfen, die Zugänglichkeit von Dokumenten zu verbessern und Inhalte auf sinnvolle Weise zu organisieren. Jetzt können Sie dieses Wissen nutzen, um strukturierte, leicht navigierbare PDF-Dokumente zu erstellen.
 
-### FAQs
+### Häufig gestellte Fragen
 
 #### F: Was ist der Zweck der Erstellung von Strukturelementen in einem PDF-Dokument mit Aspose.PDF für .NET?
 
-A: Das Erstellen von Strukturelementen in einem PDF-Dokument mit Aspose.PDF für .NET verbessert die Zugänglichkeit und Organisation des Dokumentinhalts. Strukturelemente sorgen für eine hierarchische Struktur, die die Navigation, Semantik und Kompatibilität mit unterstützenden Technologien verbessert.
+A: Das Erstellen von Strukturelementen in einem PDF-Dokument mit Aspose.PDF für .NET verbessert die Zugänglichkeit und Organisation des Dokumentinhalts. Strukturelemente bieten eine hierarchische Struktur, die die Navigation, Semantik und Kompatibilität mit unterstützenden Technologien verbessert.
 
 #### F: Wie erstellt der bereitgestellte C#-Code Strukturelemente in einem PDF-Dokument?
 
-A: Das Codebeispiel zeigt, wie verschiedene Arten von Strukturelementen erstellt werden, darunter Gruppierungselemente (wie Teile, Abschnitte und Divs), Elemente auf Blockebene (wie Absätze und Überschriften) und Elemente auf Inline-Ebene (Span, Zitat, Notiz). ) und Grafikelemente (z. B. Zahlen und Formeln). Diese Strukturelemente helfen bei der Organisation von Inhalten.
+A: Das Codebeispiel zeigt, wie verschiedene Arten von Strukturelementen erstellt werden, darunter Gruppierungselemente (wie Teile, Abschnitte und Divs), Elemente auf Blockebene (wie Absätze und Überschriften), Elemente auf Inline-Ebene (Span, Zitat, Notiz) und Grafikelemente (wie Abbildungen und Formeln). Diese Strukturelemente helfen beim Organisieren von Inhalten.
 
-####  F: Warum ist es wichtig, den Titel und die Sprache des Dokuments mithilfe von festzulegen`SetTitle` and `SetLanguage` methods?
+####  F: Warum ist es wichtig, den Titel und die Sprache des Dokuments mit dem`SetTitle` and `SetLanguage` methods?
 
- A: Legen Sie den Titel und die Sprache des Dokuments mit fest`SetTitle` Und`SetLanguage`Methoden verbessern die Zugänglichkeit und Semantik von Dokumenten. Der Titel bietet eine kurze Beschreibung des Zwecks des Dokuments, während das Sprachattribut die sprachspezifische Darstellung und Zugänglichkeit verbessert.
+ A: Festlegen des Titels und der Sprache des Dokuments mithilfe der`SetTitle` Und`SetLanguage`Methoden verbessern die Zugänglichkeit und Semantik des Dokuments. Der Titel bietet eine kurze Beschreibung des Zwecks des Dokuments, während das Sprachattribut die sprachspezifische Darstellung und Zugänglichkeit verbessert.
 
-####  F: Wie funktionieren Gruppierungselemente, z`PartElement` and `SectElement`, contribute to the structure of the PDF document?
+####  F: Wie können Gruppierungselemente wie`PartElement` and `SectElement`, contribute to the structure of the PDF document?
 
-A: Durch Gruppierungselemente wird eine hierarchische Struktur innerhalb des PDF-Dokuments erstellt, sodass Sie zusammengehörige Inhalte logisch organisieren und gruppieren können. Dies verbessert die Navigation und bietet Benutzern eine klare Struktur.
+A: Gruppierungselemente erstellen eine hierarchische Struktur innerhalb des PDF-Dokuments, sodass Sie verwandte Inhalte logisch organisieren und gruppieren können. Dies verbessert die Navigation und bietet Benutzern eine klare Struktur.
 
-#### F: Was sind Strukturelemente auf Block- und Inline-Ebene und wie unterscheiden sie sich?
+#### F: Was sind Strukturelemente auf Blockebene und Inline-Ebene und worin unterscheiden sie sich?
 
-A: Strukturelemente auf Blockebene stellen größere Inhaltsblöcke dar, z. B. Absätze und Überschriften, während Elemente auf Inline-Ebene Textteile innerhalb eines Absatzes oder einer Überschrift darstellen, z. B. Abschnitte, Anführungszeichen und Notizen. Sie helfen dabei, die Hierarchie und Beziehungen von Inhalten zu definieren.
+A: Strukturelemente auf Blockebene stellen größere Inhaltsblöcke dar, wie Absätze und Überschriften, während Elemente auf Inline-Ebene Textteile innerhalb eines Absatzes oder einer Überschrift darstellen, wie Spannen, Zitate und Notizen. Sie helfen dabei, die Hierarchie und Beziehungen des Inhalts zu definieren.
 
-####  F: Wie strukturieren Kunstwerke Elemente?`FigureElement` and `FormulaElement`, contribute to the document?
+####  F: Wie strukturieren Kunstwerke Elemente, wie`FigureElement` and `FormulaElement`, contribute to the document?
 
-A: Mithilfe von Strukturelementen für Grafiken können Sie dem Dokument Illustrationen, Abbildungen und mathematische Formeln hinzufügen. Sie bieten eine strukturierte Möglichkeit, visuelle und mathematische Inhalte einzubinden.
+A: Mithilfe von Grafikstrukturelementen können Sie dem Dokument Abbildungen, Figuren und mathematische Formeln hinzufügen. Sie bieten eine strukturierte Möglichkeit, visuelle und mathematische Inhalte einzubinden.
 
 #### F: Kann ich ähnliche Techniken verwenden, um andere Arten von Strukturelementen wie Listen, Tabellen oder Anmerkungen zu erstellen?
 
-A: Ja, Sie können ähnliche Techniken verwenden, um andere Arten von Strukturelementen wie Listen, Tabellen, Anmerkungen, Referenzen und mehr zu erstellen. Aspose.PDF bietet eine breite Palette von Methoden zur Strukturelementerstellung.
+A: Ja, Sie können ähnliche Techniken verwenden, um andere Arten von Strukturelementen wie Listen, Tabellen, Anmerkungen, Referenzen und mehr zu erstellen. Aspose.PDF bietet eine breite Palette von Methoden zum Erstellen von Strukturelementen.
 
-####  F: Wie funktioniert das Speichern des getaggten PDF-Dokuments mit`Save` method ensure the preservation of structure elements?
+####  F: Wie funktioniert das Speichern des getaggten PDF-Dokuments mit dem`Save` method ensure the preservation of structure elements?
 
- A: Die`Save` Die Methode speichert das PDF-Dokument zusammen mit den erstellten Strukturelementen und stellt so sicher, dass die hierarchische und semantische Struktur des Dokuments für die Zugänglichkeit und Navigation erhalten bleibt.
+ A: Die`Save` Die Methode speichert das PDF-Dokument zusammen mit den erstellten Strukturelementen und stellt sicher, dass die hierarchische und semantische Struktur des Dokuments für die Zugänglichkeit und Navigation erhalten bleibt.
 
-#### F: Welche Vorteile bringen Strukturelemente für PDF-Dokumente im Hinblick auf Zugänglichkeit und Kompatibilität mit unterstützenden Technologien?
+#### F: Welche Vorteile bieten Strukturelemente für PDF-Dokumente im Hinblick auf Zugänglichkeit und Kompatibilität mit unterstützenden Technologien?
 
-A: Strukturelemente verbessern die Zugänglichkeit, indem sie dem Dokument eine sinnvolle Struktur und Semantik verleihen. Dadurch können unterstützende Technologien wie Bildschirmlesegeräte den Inhalt des Dokuments besser interpretieren und Benutzern mit Behinderungen besser vermitteln.
+A: Strukturelemente verbessern die Zugänglichkeit, indem sie dem Dokument eine sinnvolle Struktur und Semantik verleihen. Dadurch können unterstützende Technologien wie Bildschirmleseprogramme den Inhalt des Dokuments besser interpretieren und Benutzern mit Behinderungen vermitteln.
 
 #### F: Wie kann ich verschiedene Arten von Strukturelementen in meinen PDF-Dokumenten weiter anpassen und kombinieren?
 
-A: Sie können Strukturelemente kombinieren und anpassen, indem Sie die entsprechenden Erstellungsmethoden von Aspose.PDF verwenden. Experimentieren Sie mit verschiedenen Elementen und ihren Eigenschaften, um ein gut strukturiertes und organisiertes PDF-Dokument zu erstellen.
+A: Sie können Strukturelemente kombinieren und anpassen, indem Sie entsprechende Erstellungsmethoden von Aspose.PDF verwenden. Experimentieren Sie mit verschiedenen Elementen und ihren Eigenschaften, um ein gut strukturiertes und organisiertes PDF-Dokument zu erstellen.

@@ -16,7 +16,7 @@ PDF（便攜式文件格式）文件廣泛用於文件交換。通常，這些 P
 
 ## 什麼是 Java 版 Aspose.PDF？
 
-Aspose.PDF for Java 是 Aspose 提供的 Java API，使開發人員能夠在 Java 應用程式中處理 PDF 文件。它提供了用於創建、操作和提取 PDF 內容的廣泛功能，使其成為以程式設計方式處理 PDF 的寶貴工具。
+Aspose.PDF for Java 是 Aspose 提供的 Java API，使開發人員能夠在 Java 應用程式中處理 PDF 文件。它提供了廣泛的用於創建、操作和提取 PDF 內容的功能，使其成為以程式設計方式處理 PDF 的寶貴工具。
 
 ## 設定環境
 

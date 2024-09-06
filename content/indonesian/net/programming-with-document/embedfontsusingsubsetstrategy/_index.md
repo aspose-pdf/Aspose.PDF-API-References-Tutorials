@@ -1,93 +1,117 @@
 ---
 title: Sematkan Font Dalam File PDF Dengan Strategi Subset
-linktitle: Sematkan Font Dengan Strategi Subset
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Pelajari cara menyematkan font dalam file PDF dengan Subset Strategy menggunakan Aspose.PDF untuk .NET. Optimalkan ukuran PDF Anda dengan hanya menyematkan karakter yang diperlukan.
+linktitle: Strategi Menanamkan Font dengan Subset
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara menyematkan font dalam file PDF dengan Subset Strategy menggunakan Aspose.PDF untuk .NET. Optimalkan ukuran PDF Anda dengan menyematkan karakter yang diperlukan saja.
 type: docs
 weight: 130
 url: /id/net/programming-with-document/embedfontsusingsubsetstrategy/
 ---
-Pada tutorial kali ini kita akan membahas cara menyematkan font pada file PDF dengan strategi subset menggunakan Aspose.PDF for .NET. Aspose.PDF untuk .NET adalah perpustakaan canggih yang memungkinkan pengembang membuat, mengedit, dan memanipulasi dokumen PDF secara terprogram. Menyematkan font dalam file PDF merupakan langkah penting untuk memastikan bahwa dokumen ditampilkan dengan benar di perangkat yang berbeda, terlepas dari apakah font yang diperlukan diinstal pada perangkat tersebut atau tidak.
+## Perkenalan
 
-## Langkah 1: Buat Aplikasi Konsol C# baru
-Untuk memulai, buat Aplikasi Konsol C# baru di Visual Studio. Anda dapat menamainya sesuka Anda. Setelah proyek dibuat, Anda perlu menambahkan referensi ke perpustakaan Aspose.PDF untuk .NET.
+Di era digital, PDF telah menjadi hal pokok untuk berbagi dokumen. Baik Anda mengirim laporan, presentasi, atau eBook, memastikan font Anda ditampilkan dengan benar sangatlah penting. Pernahkah Anda membuka PDF dan mendapati teksnya tampak berbeda dari yang dimaksudkan? Hal ini sering terjadi ketika font yang digunakan dalam dokumen tidak disematkan dengan benar. Di sinilah Aspose.PDF for .NET berperan! Dalam tutorial ini, kita akan menjelajahi cara menyematkan font dalam file PDF menggunakan strategi subset, memastikan dokumen Anda tampak seperti yang Anda inginkan, di mana pun dokumen tersebut dilihat.
 
-## Langkah 2: Impor Namespace Aspose.PDF
-Tambahkan baris kode berikut di bagian atas file C# Anda untuk mengimpor namespace Aspose.PDF:
+## Prasyarat
+
+Sebelum kita menyelami seluk-beluk penyematan font, ada beberapa hal yang perlu Anda siapkan:
+
+1.  Aspose.PDF untuk .NET: Pastikan Anda telah menginstal pustaka Aspose.PDF. Anda dapat mengunduhnya dari[Di Sini](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: Lingkungan pengembangan tempat Anda dapat menulis dan menguji kode .NET Anda.
+3. Pengetahuan Dasar C#: Keakraban dengan pemrograman C# akan membantu Anda memahami potongan kode dengan lebih baik.
+
+## Paket Impor
+
+Untuk memulai, Anda perlu mengimpor paket yang diperlukan ke dalam proyek C# Anda. Berikut cara melakukannya:
+
+### Buat Proyek Baru
+
+Buka Visual Studio dan buat proyek C# baru. Anda dapat memilih Aplikasi Konsol untuk mempermudah.
+
+### Tambahkan Referensi Aspose.PDF
+
+1. Klik kanan pada proyek Anda di Solution Explorer.
+2. Pilih "Kelola Paket NuGet."
+3. Cari "Aspose.PDF" dan instal versi terbaru.
 
 ```csharp
-using Aspose.Pdf;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Langkah 3: Muat File PDF yang Ada
-Untuk menyematkan font dalam file PDF yang ada, Anda perlu memuat file tersebut menggunakan kelas Dokumen. Kode berikut menunjukkan cara memuat file PDF yang ada:
+Sekarang setelah semuanya disiapkan, mari kita uraikan proses penyisipan font ke dalam berkas PDF langkah demi langkah.
+
+## Langkah 1: Siapkan Direktori Dokumen Anda
+
+Pertama-tama, kita perlu menentukan di mana dokumen kita disimpan. Ini penting karena kita akan membaca dan menulis ke direktori ini.
 
 ```csharp
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
-// Muat file PDF yang ada
+ Mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya tempat file PDF Anda berada. Ini bisa jadi seperti ini`@"C:\Documents\"`.
+
+## Langkah 2: Muat Dokumen PDF
+
+Selanjutnya, kita akan memuat dokumen PDF yang ingin kita ubah. Di sinilah Aspose.PDF berperan, memungkinkan kita untuk memanipulasi file PDF dengan mudah.
+
+```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Langkah 4: Sematkan Font dengan Strategi Subset
-Aspose.PDF untuk .NET menyediakan dua strategi untuk penyematan font: SubsetAllFonts dan SubsetEmbeddedFontsOnly.
+ Pastikan Anda memiliki`input.pdf` file di direktori yang Anda tentukan. File ini akan menjadi file yang kami modifikasi.
 
-Strategi SubsetAllFonts akan menyematkan semua font dalam dokumen sebagai subset. Subset adalah bagian font yang hanya berisi karakter yang digunakan dalam dokumen. Strategi ini berguna untuk memperkecil ukuran file dokumen PDF.
+## Langkah 3: Subset Semua Font
 
-Strategi SubsetEmbeddedFontsOnly hanya akan menyematkan subset font yang sudah tertanam dalam dokumen. Jika font tidak disematkan, maka tidak akan terpengaruh oleh strategi ini.
-
-Kode berikut menunjukkan cara menyematkan font dalam file PDF dengan strategi subset:
+Sekarang, mari kita masuk ke inti permasalahan: penyematan font. Kita akan mulai dengan menyematkan semua font sebagai subset. Ini berarti bahwa hanya karakter yang digunakan dalam dokumen yang akan disematkan, yang dapat mengurangi ukuran file secara signifikan.
 
 ```csharp
-// Semua font akan disematkan sebagai subset ke dalam dokumen jika SubsetAllFonts.
+// Semua font akan ditanamkan sebagai subset ke dalam dokumen jika terjadi SubsetAllFonts.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
+```
 
-// Subset font akan disematkan untuk font yang tertanam sepenuhnya tetapi font yang tidak tertanam ke dalam dokumen tidak akan terpengaruh.
+ Dengan menggunakan`SubsetAllFonts`, kami memastikan bahwa setiap font yang digunakan dalam dokumen tertanam, tetapi hanya karakter yang benar-benar digunakan yang akan disertakan.
+
+## Langkah 4: Hanya Subset Font yang Disematkan
+
+Dalam beberapa kasus, Anda mungkin ingin hanya menyematkan font yang sudah tertanam dalam dokumen. Ini berguna jika Anda ingin mempertahankan tampilan asli tanpa menambahkan font baru.
+
+```csharp
+//Subset font akan disematkan untuk font yang tertanam sepenuhnya, tetapi font yang tidak disematkan ke dalam dokumen tidak akan terpengaruh.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
 ```
 
-## Langkah 5: Simpan Dokumen PDF
-Setelah Anda menyematkan semua font dalam file PDF dengan strategi subset, Anda perlu menyimpan dokumen tersebut. Kode berikut menunjukkan cara menyimpan file PDF:
+Baris kode ini memastikan bahwa hanya font yang sudah tertanam yang akan dijadikan subset, dan membiarkan font yang tidak tertanam tidak tersentuh.
+
+## Langkah 5: Simpan Dokumen yang Dimodifikasi
+
+Terakhir, kita perlu menyimpan perubahan. Di sinilah kita menulis kembali dokumen yang dimodifikasi ke dalam disk.
 
 ```csharp
 doc.Save(dataDir + "Output_out.pdf");
 ```
 
-### Contoh kode sumber untuk menyematkan font dengan strategi subset menggunakan Aspose.PDF untuk .NET. 
-
-```csharp
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document doc = new Document(dataDir + "input.pdf");
-// Semua font akan disematkan sebagai subset ke dalam dokumen jika SubsetAllFonts.
-doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
-// Subset font akan disematkan untuk font yang tertanam sepenuhnya tetapi font yang tidak tertanam ke dalam dokumen tidak akan terpengaruh.
-doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
-doc.Save(dataDir + "Output_out.pdf");
-```
+ Ini akan membuat file PDF baru bernama`Output_out.pdf` di direktori yang Anda tentukan, lengkap dengan font yang tertanam.
 
 ## Kesimpulan
-Pada artikel ini, kita telah membahas cara menyematkan font dalam file PDF dengan strategi subset menggunakan Aspose.PDF untuk .NET. Aspose.PDF untuk .NET menyediakan API sederhana dan mudah digunakan untuk bekerja dengan dokumen PDF, termasuk menambahkan dan menyematkan font dengan strategi berbeda. Menyematkan font dalam file PDF merupakan langkah penting untuk memastikan bahwa dokumen ditampilkan dengan benar di perangkat yang berbeda, dan strategi subset adalah fitur yang berguna untuk mengurangi ukuran file dokumen PDF.
 
-### FAQ untuk menyematkan font dalam file PDF dengan strategi subset
+Nah, itu dia! Anda telah berhasil menyematkan font dalam file PDF menggunakan Aspose.PDF untuk .NET. Dengan mengikuti langkah-langkah ini, Anda dapat memastikan bahwa dokumen Anda tetap terlihat seperti yang diinginkan, di mana pun dokumen tersebut dilihat. Baik Anda membagikan laporan, presentasi, atau jenis dokumen lainnya, menyematkan font merupakan langkah penting dalam menjaga profesionalisme dan kejelasan.
 
-#### T: Apa yang dimaksud dengan strategi subset untuk menyematkan font dalam file PDF?
+## Pertanyaan yang Sering Diajukan
 
-J: Strategi subset untuk penyematan font dalam file PDF berarti hanya sebagian font yang berisi karakter yang digunakan dalam dokumen yang akan disematkan. Ini membantu mengurangi ukuran file dokumen PDF dengan menghilangkan data font yang tidak perlu.
+### Apa itu subsetting font?
+Subset font adalah proses menyertakan hanya karakter yang digunakan dalam dokumen, dan bukan keseluruhan font, yang membantu mengurangi ukuran file.
 
-#### T: Apa perbedaan antara strategi SubsetAllFonts dan SubsetEmbeddedFontsOnly?
+### Mengapa saya harus menanamkan font di PDF saya?
+Menanamkan font memastikan bahwa dokumen Anda tampak sama di semua perangkat, mencegah masalah penggantian font.
 
- J: Itu`SubsetAllFonts`strategi akan menyematkan semua font dalam dokumen sebagai subset, sedangkan`SubsetEmbeddedFontsOnly` strategi hanya akan menyematkan subset font yang sudah tertanam dalam dokumen. Strategi terakhir tidak akan mempengaruhi font yang belum tertanam.
+### Dapatkah saya menggunakan Aspose.PDF secara gratis?
+ Ya, Aspose menawarkan uji coba gratis yang dapat Anda gunakan untuk menguji pustaka sebelum membeli. Anda dapat menemukannya[Di Sini](https://releases.aspose.com/).
 
-#### T: Mengapa penyematan font dengan strategi subset penting?
+### Di mana saya dapat menemukan dokumentasi lebih lanjut?
+ Anda dapat mengakses dokumentasi lengkap untuk Aspose.PDF untuk .NET[Di Sini](https://reference.aspose.com/pdf/net/).
 
-J: Penyematan font dengan strategi subset penting untuk memastikan bahwa file PDF berisi data font yang diperlukan untuk menampilkan teks dengan benar, sekaligus menjaga ukuran file lebih kecil dengan hanya menyertakan karakter yang digunakan dalam dokumen.
-
-#### T: Dapatkah saya menggunakan Aspose.PDF untuk .NET untuk menyematkan font dengan strategi berbeda?
-
- A: Ya, Aspose.PDF untuk .NET menyediakan berbagai strategi untuk penyematan font, termasuk`SubsetAllFonts` Dan`SubsetEmbeddedFontsOnly`. Anda dapat memilih strategi yang sesuai berdasarkan kebutuhan Anda.
-
-#### T: Apakah Aspose.PDF untuk .NET merupakan perpustakaan yang andal untuk bekerja dengan dokumen PDF?
-
-J: Ya, Aspose.PDF untuk .NET adalah perpustakaan yang andal dan kuat untuk bekerja dengan dokumen PDF. Ini menyediakan fitur ekstensif untuk membuat, mengedit, dan memanipulasi file PDF dalam aplikasi .NET.
+### Bagaimana jika saya mengalami masalah?
+ Jika Anda mengalami masalah, Anda dapat mencari bantuan di forum dukungan Aspose[Di Sini](https://forum.aspose.com/c/pdf/10).

@@ -29,7 +29,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## 2. lépés: A bemeneti PDF fájl betöltése
 
-Ebben a lépésben betöltjük a bemeneti PDF-fájlt a`Document` osztályú Aspose.PDF.
+ Ebben a lépésben betöltjük a bemeneti PDF-fájlt a`Document` osztályú Aspose.PDF.
 
 ```csharp
 // Bemeneti PDF fájl betöltése
@@ -40,7 +40,7 @@ Győződjön meg arról, hogy a bemeneti PDF-fájl megtalálható a megadott dok
 
 ## 3. lépés: A TextBox mező elérése
 
- Ahhoz, hogy a JavaScriptet egy adott szövegmezőre alkalmazzuk, először el kell érnünk azt a mezőt. Ebben a példában feltételezzük, hogy a szövegmező neve "textbox1". Használja a`doc.Form["textbox1"]` módszer a megfelelő beszerzéséhez`TextBoxField` tárgy.
+ Ahhoz, hogy a JavaScriptet egy adott szövegmezőre alkalmazzuk, először el kell érnünk azt a mezőt. Ebben a példában feltételezzük, hogy a szövegmező neve "textbox1". Használja a`doc.Form["textbox1"]` módszer a megfelelő beszerzéséhez`TextBoxField` objektum.
 
 ```csharp
 TextBoxField field = (TextBoxField)doc.Form["textbox1"];
@@ -105,7 +105,7 @@ Console.WriteLine("\nJavaScript on form field setup successfully.\nFile saved at
 
 ## Következtetés
 
-Ebben az útmutatóban megtanultuk, hogyan használhatja az Aspose.PDF könyvtárat a .NET-hez a JavaScript beállításához egy PDF-dokumentum űrlapmezőjében. A vázolt lépések követésével testreszabhatja a JavaScript-műveleteket, hogy különféle műveleteket hajtson végre a szövegmezőkön. Nyugodtan fedezze fel az Aspose.PDF for .NET szolgáltatásait a PDF-fájlok kezelésének lehetőségeinek bővítése érdekében.
+Ebben az útmutatóban megtanultuk, hogyan használhatja az Aspose.PDF könyvtárat a .NET-hez a JavaScript beállításához egy PDF-dokumentum űrlapmezőjében. A vázolt lépések követésével testreszabhatja a JavaScript-műveleteket, hogy különféle műveleteket hajtsanak végre a szövegmezőkön. Nyugodtan fedezze fel az Aspose.PDF for .NET szolgáltatásait a PDF-fájlok kezelésének lehetőségeinek bővítése érdekében.
 
 
 ### GYIK

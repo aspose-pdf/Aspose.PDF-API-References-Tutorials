@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 1. lépés: Állítsa be a dokumentumkönyvtárat
 
- Először is be kell állítania annak a könyvtárnak az elérési útját, ahol a bemeneti PDF-fájl található. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir` változó a PDF-fájl elérési útjával.
+ Először is be kell állítania annak a könyvtárnak az elérési útját, ahol a bemeneti PDF-fájl található. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változó a PDF-fájl elérési útjával.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -71,7 +71,7 @@ paragraph = section.Paragraphs[section.Paragraphs.Count - 1];
 Console.WriteLine("Section at {0} last paragraph text:\r\n", section.Rectangle.ToString());
 Console.WriteLine(paragraph.Text);
 
-//Egy szakasz első bekezdésének elérése a többoszlopos bekezdések engedélyezése után
+// Egy szakasz első bekezdésének elérése a többoszlopos bekezdések engedélyezése után
 section = markup. Sections[1];
 paragraph = section.Paragraphs[0];
 Console.WriteLine("\r\nSection at {0} first paragraph text:\r\n", section.Rectangle.ToString());
@@ -125,7 +125,7 @@ V: A többoszlopos bekezdésekkel való munka során kifinomultabb és tetszető
 
 V: A dokumentumkönyvtár beállításához:
 
-1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir` változó annak a könyvtárnak az elérési útjával, ahol a bemeneti PDF-fájl található.
+1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változó annak a könyvtárnak az elérési útjával, ahol a bemeneti PDF-fájl található.
 
 #### K: Hogyan tölthetem be a PDF-dokumentumot és érhetem el a többoszlopos bekezdéseket?
 
@@ -137,7 +137,7 @@ V: A dokumentumkönyvtár beállításához:
 
 #### K: Hogyan engedélyezhetem a többoszlopos bekezdéseket?
 
- V: A többoszlopos bekezdések engedélyezéséhez beállíthatja a`IsMulticolumnParagraphsAllowed` tulajdona a`PageMarkup` tiltakozni`true`.
+ V: A többoszlopos bekezdések engedélyezéséhez beállíthatja a`IsMulticolumnParagraphsAllowed` tulajdona a`PageMarkup` tiltakozik`true`.
 
 #### K: Mi az oktatóanyag várható eredménye?
 

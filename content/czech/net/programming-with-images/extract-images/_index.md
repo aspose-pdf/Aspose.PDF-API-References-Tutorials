@@ -11,7 +11,7 @@ Tato příručka vás krok za krokem provede extrahováním obrázků ze souboru
 
 ## Krok 1: Definujte adresář dokumentů
 
- Než začnete, ujistěte se, že jste nastavili správný adresář pro dokumenty. Nahradit`"YOUR DOCUMENT DIRECTORY"` v kódu s cestou k adresáři, kde se nachází váš dokument PDF.
+Než začnete, ujistěte se, že jste nastavili správný adresář pro dokumenty. Nahradit`"YOUR DOCUMENT DIRECTORY"` v kódu s cestou k adresáři, kde se nachází váš dokument PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 2: Otevřete dokument PDF
 
- tomto kroku otevřeme dokument PDF pomocí`Document` třída Aspose.PDF. Použijte`Document` konstruktoru a předejte cestu k dokumentu PDF.
+ V tomto kroku otevřeme dokument PDF pomocí`Document` třída Aspose.PDF. Použijte`Document` konstruktoru a předejte cestu k dokumentu PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractImages.pdf");
@@ -27,7 +27,7 @@ Document pdfDocument = new Document(dataDir + "ExtractImages.pdf");
 
 ## Krok 3: Extrahujte konkrétní obrázek
 
- V tomto kroku budeme extrahovat konkrétní obrázek z konkrétní stránky. Použijte`Images` kolekce stránky`s `Resources` objekt pro přístup k požadovanému obrázku. V níže uvedeném příkladu extrahujeme obrázek s indexem 1 z první stránky.
+ tomto kroku budeme extrahovat konkrétní obrázek z konkrétní stránky. Použijte`Images` kolekce stránky`s `Resources` objekt pro přístup k požadovanému obrázku. V níže uvedeném příkladu extrahujeme obrázek s indexem 1 z první stránky.
 
 ```csharp
 XImage xImage = pdfDocument.Pages[1].Resources.Images[1];
@@ -90,7 +90,7 @@ Odpověď: Aspose.PDF for .NET poskytuje postupný proces otevření dokumentu P
 
 #### Otázka: Jak určím konkrétní obrázek, který chci extrahovat ze stránky PDF?
 
-A: Můžete použít`Images` kolekce stránek`Resources` objekt pro přístup k požadovanému obrázku podle jeho indexu. Například,`pdfDocument.Pages[1].Resources.Images[1]` přistupuje k prvnímu obrázku na první stránce.
+ A: Můžete použít`Images` kolekce stránek`Resources` objekt pro přístup k požadovanému obrázku podle jeho indexu. Například,`pdfDocument.Pages[1].Resources.Images[1]` přistupuje k prvnímu obrázku na první stránce.
 
 #### Otázka: Mohu extrahovat obrázky z jakékoli stránky v dokumentu PDF?
 

@@ -1,17 +1,17 @@
 ---
-title: Podpisz za pomocą karty inteligentnej, korzystając z pola podpisu
-linktitle: Podpisz za pomocą karty inteligentnej, korzystając z pola podpisu
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Podpisuj bezpiecznie swoje pliki PDF za pomocą karty inteligentnej, korzystając z Aspose.PDF dla .NET.
+title: Podpisz kartą inteligentną, korzystając z pola podpisu
+linktitle: Podpisz kartą inteligentną, korzystając z pola podpisu
+second_title: Aspose.PDF dla .NET API Reference
+description: Bezpiecznie podpisuj pliki PDF za pomocą karty inteligentnej, korzystając z Aspose.PDF dla .NET.
 type: docs
 weight: 120
 url: /pl/net/programming-with-security-and-signatures/sign-with-smart-card-using-signature-field/
 ---
-Podpisywanie cyfrowe za pomocą karty inteligentnej to bezpieczny sposób podpisywania plików PDF. Dzięki Aspose.PDF dla .NET możesz łatwo podpisać plik PDF za pomocą pola podpisu i karty inteligentnej, postępując zgodnie z następującym kodem źródłowym:
+Cyfrowe podpisywanie za pomocą karty inteligentnej to bezpieczny sposób podpisywania plików PDF. Dzięki Aspose.PDF dla .NET możesz łatwo podpisać plik PDF za pomocą pola podpisu i karty inteligentnej, postępując zgodnie z następującym kodem źródłowym:
 
-## Krok 1: Zaimportuj wymagane biblioteki
+## Krok 1: Importuj wymagane biblioteki
 
-Zanim zaczniesz, musisz zaimportować niezbędne biblioteki dla swojego projektu C#. Oto niezbędne dyrektywy importowe:
+Zanim zaczniesz, musisz zaimportować niezbędne biblioteki dla swojego projektu C#. Oto niezbędne dyrektywy importu:
 
 ```csharp
 using Aspose.Pdf;
@@ -21,7 +21,7 @@ using System.Security.Cryptography.X509Certificates;
 
 ## Krok 2: Ustaw ścieżkę do folderu dokumentów
 
- W tym kroku musisz określić ścieżkę do folderu zawierającego plik PDF, który chcesz podpisać. Zastępować`"YOUR DOCUMENTS DIRECTORY"` następującym kodzie z rzeczywistą ścieżką do folderu dokumentów:
+ W tym kroku musisz określić ścieżkę do folderu zawierającego plik PDF, który chcesz podpisać. Zastąp`"YOUR DOCUMENTS DIRECTORY"` w poniższym kodzie podaj rzeczywistą ścieżkę do folderu z dokumentami:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -29,7 +29,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## Krok 3: Skopiuj i otwórz dokument PDF
 
-Teraz skopiujemy i otworzymy dokument PDF do podpisu za pomocą następującego kodu:
+Teraz skopiujemy i otworzymy dokument PDF, który ma zostać podpisany, korzystając z następującego kodu:
 
 ```csharp
 File.Copy(dataDir + "blank.pdf", dataDir + "externalSignature1.pdf", true);
@@ -46,7 +46,7 @@ using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMo
          store.Open(OpenFlags.ReadOnly);
          X509Certificate2Collection sel = X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, X509SelectionFlag.SingleSelection);
         
-         // Utwórz podpis zewnętrzny zawierający niezbędne informacje
+         // Utwórz zewnętrzny podpis z niezbędnymi informacjami
          ExternalSignature externalSignature = new ExternalSignature(sel[0])
          {
              Authority = "Me",
@@ -64,7 +64,7 @@ using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMo
 
 ## Krok 4: Zweryfikuj podpis
 
- Na koniec weryfikujemy podpis podpisanego pliku PDF za pomocą`PdfFileSignature` klasa. Otrzymujemy nazwiska podpisów i sprawdzamy je jeden po drugim. Jeśli podpis nie przejdzie weryfikacji, zostanie zgłoszony wyjątek. Oto odpowiedni kod:
+ Na koniec weryfikujemy podpis podpisanego pliku PDF za pomocą`PdfFileSignature` klasa. Pobieramy nazwy podpisów i sprawdzamy je po kolei. Jeśli podpis nie przejdzie weryfikacji, zgłaszany jest wyjątek. Oto odpowiedni kod:
 
 ```csharp
 using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "externalSignature1.pdf")))
@@ -80,7 +80,7 @@ using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "e
 }
 ```
 
-### Przykładowy kod źródłowy funkcji Podpisywanie za pomocą karty inteligentnej przy użyciu pola podpisu przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla Podpisu za pomocą karty inteligentnej przy użyciu pola podpisu przy użyciu Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -90,10 +90,10 @@ using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMo
 	using (Document doc = new Document(fs))
 	{
 		SignatureField field1 = new SignatureField(doc.Pages[1], new Rectangle(100, 400, 10, 10));
-		// Podpisz, wybierając certyfikat w magazynie certyfikatów systemu Windows
+		// Podpisz za pomocą wybranego certyfikatu w magazynie certyfikatów systemu Windows
 		System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
 		store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
-		// Ręcznie wybrałem certyfikat w sklepie
+		// Ręcznie wybrano certyfikat w sklepie
 		System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel = System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
 		Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0])
 		{
@@ -122,48 +122,48 @@ using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "e
 
 ## Wniosek
 
-Gratulacje! Masz teraz przewodnik krok po kroku dotyczący podpisywania pliku PDF za pomocą karty inteligentnej przy użyciu pola podpisu w Aspose.PDF dla .NET. Możesz użyć tego kodu, aby dodać bezpieczne podpisy cyfrowe do dokumentów PDF.
+Gratulacje! Masz teraz przewodnik krok po kroku, jak podpisać plik PDF kartą inteligentną, używając pola podpisu z Aspose.PDF dla .NET. Możesz użyć tego kodu, aby dodać bezpieczne podpisy cyfrowe do swoich dokumentów PDF.
 
-Koniecznie zapoznaj się z oficjalną dokumentacją Aspose.PDF, aby uzyskać więcej informacji na temat zaawansowanych funkcji podpisu cyfrowego i zarządzania certyfikatami.
+Zapoznaj się z oficjalną dokumentacją Aspose.PDF, aby uzyskać więcej informacji na temat zaawansowanych funkcji podpisu cyfrowego i zarządzania certyfikatami.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Jaka jest korzyść z używania pola podpisu do podpisu cyfrowego za pomocą karty inteligentnej?
+#### P: Jakie są korzyści z używania pola podpisu do składania podpisu cyfrowego za pomocą karty inteligentnej?
 
-Odp.: Użycie pola podpisu do podpisu cyfrowego za pomocą karty inteligentnej zapewnia wyznaczony obszar w pliku PDF, w którym umieszczany jest podpis. Zwiększa to przejrzystość dokumentu i zapewnia autentyczność podpisu.
+A: Użycie pola podpisu do cyfrowego podpisywania kartą inteligentną zapewnia wyznaczony obszar w pliku PDF, w którym podpis jest stosowany. Zwiększa to przejrzystość dokumentu i zapewnia autentyczność podpisu.
 
-#### P: W jaki sposób biblioteka Aspose.PDF dla .NET ułatwia cyfrowe podpisywanie przy użyciu kart inteligentnych z polem podpisu?
+#### P: W jaki sposób biblioteka Aspose.PDF dla platformy .NET ułatwia składanie podpisów cyfrowych przy użyciu kart inteligentnych z polem podpisu?
 
-Odp.: Aspose.PDF dla .NET upraszcza proces tworzenia pola podpisu, wybierania certyfikatu karty inteligentnej i stosowania podpisu cyfrowego w określonym obszarze dokumentu PDF.
+A: Aspose.PDF dla platformy .NET upraszcza proces tworzenia pola podpisu, wybierania certyfikatu karty inteligentnej i stosowania podpisu cyfrowego do określonego obszaru dokumentu PDF.
 
-#### P: Dlaczego wybór konkretnego certyfikatu jest ważny w przypadku podpisywania za pomocą karty inteligentnej?
+#### P: Dlaczego wybór konkretnego certyfikatu jest istotny w przypadku podpisywania przy użyciu karty inteligentnej?
 
-O: Wybranie konkretnego certyfikatu pozwala na jednoznaczną identyfikację osoby podpisującej i zapewnienie integralności podpisu. Pomaga to w budowaniu zaufania i zgodności ze standardami podpisu cyfrowego.
+A: Wybór konkretnego certyfikatu pozwala na jednoznaczną identyfikację osoby podpisującej i zapewnienie integralności podpisu. Pomaga to w budowaniu zaufania i zgodności ze standardami podpisu cyfrowego.
 
-#### P: W jaki sposób dostarczony kod źródłowy obsługuje proces podpisywania przy użyciu karty inteligentnej z polem podpisu?
+#### P: W jaki sposób udostępniony kod źródłowy obsługuje proces podpisywania przy użyciu karty inteligentnej z polem podpisu?
 
-Odp.: Kod źródłowy pokazuje, jak utworzyć pole podpisu, wybrać certyfikat karty inteligentnej i zastosować podpis cyfrowy z określonymi informacjami podpisu. Pokazuje także, jak sprawdzić ważność podpisu.
+A: Kod źródłowy pokazuje, jak utworzyć pole podpisu, wybrać certyfikat karty inteligentnej i zastosować podpis cyfrowy ze szczegółowymi informacjami o podpisie. Pokazuje również, jak zweryfikować ważność podpisu.
 
 #### P: Czy mogę dostosować wygląd pola podpisu?
 
-O: Tak, możesz dostosować wygląd pola podpisu, np. jego rozmiar, położenie i reprezentację wizualną, aby dopasować je do układu dokumentu.
+O: Tak, możesz dostosować wygląd pola podpisu, na przykład jego rozmiar, pozycję i reprezentację wizualną, aby dopasować je do układu dokumentu.
 
 #### P: Co się stanie, jeśli podpis nie przejdzie weryfikacji na etapie weryfikacji?
 
-Odp.: Jeśli podpis nie przejdzie weryfikacji, zostanie zgłoszony wyjątek wskazujący, że podpis jest nieprawidłowy. Dzięki temu akceptowane są tylko ważne i zaufane podpisy.
+A: Jeśli podpis nie przejdzie weryfikacji, zgłaszany jest wyjątek, wskazujący, że podpis nie jest prawidłowy. Zapewnia to, że akceptowane są tylko prawidłowe i zaufane podpisy.
 
-#### P: Czy mogę zastosować wiele pól podpisów i podpisów opartych na kartach inteligentnych w jednym dokumencie PDF?
+#### P: Czy mogę zastosować wiele pól podpisu i podpisów na kartach inteligentnych w jednym dokumencie PDF?
 
-Odp.: Oczywiście można zastosować wiele pól podpisów i podpisów opartych na kartach inteligentnych w różnych obszarach tego samego dokumentu PDF, zapewniając wiele warstw zabezpieczeń.
+O: Oczywiście. Możesz zastosować wiele pól podpisu i podpisów opartych na kartach inteligentnych w różnych obszarach tego samego dokumentu PDF, zapewniając w ten sposób wiele warstw zabezpieczeń.
 
-#### P: W jaki sposób użycie pola podpisu usprawnia cały proces podpisywania dokumentów?
+#### P: W jaki sposób użycie pola podpisu usprawnia cały proces podpisywania dokumentu?
 
-Odp.: Korzystanie z pola podpisu usprawnia proces podpisywania dokumentu, ponieważ pomaga podpisującemu złożyć podpis w wyznaczonym miejscu, dzięki czemu proces podpisywania jest bardziej zorganizowany i przyjazny dla użytkownika.
+A: Użycie pola podpisu usprawnia proces podpisywania dokumentu, ponieważ wskazuje sygnatariuszowi miejsce, w którym należy złożyć podpis. Dzięki temu proces podpisywania staje się bardziej uporządkowany i przyjazny dla użytkownika.
 
-#### P: Czy istnieją jakieś ograniczenia w korzystaniu z pól podpisu w przypadku podpisywania za pomocą karty inteligentnej?
+#### P: Czy istnieją jakieś ograniczenia w korzystaniu z pól podpisu w przypadku podpisów opartych na kartach inteligentnych?
 
-Odp.: Nie ma żadnych nieodłącznych ograniczeń w korzystaniu z pól podpisu w przypadku podpisywania za pomocą karty inteligentnej. Należy jednak upewnić się, że wybrana lokalizacja pola podpisu nie przesłania ważnej treści dokumentu.
+A: Nie ma żadnych wewnętrznych ograniczeń w korzystaniu z pól podpisu z podpisem opartym na karcie inteligentnej. Ważne jest jednak, aby upewnić się, że wybrana lokalizacja pola podpisu nie przesłania ważnej treści dokumentu.
 
-#### P: Gdzie mogę znaleźć dalszą pomoc lub wsparcie dotyczące wdrażania podpisywania przy użyciu karty inteligentnej z polem podpisu?
+#### P: Gdzie mogę znaleźć dalszą pomoc lub wsparcie w zakresie wdrażania podpisów opartych na kartach inteligentnych z polem podpisu?
 
-Odp.: Aby uzyskać dodatkowe wskazówki i wsparcie, możesz zapoznać się z oficjalną dokumentacją Aspose.PDF i forami społeczności, które oferują cenne spostrzeżenia i rozwiązania dotyczące wdrażania bezpiecznych podpisów cyfrowych.
+A: Dodatkowe wskazówki i pomoc można znaleźć w oficjalnej dokumentacji Aspose.PDF oraz na forach społecznościowych. Można tam znaleźć cenne informacje i rozwiązania ułatwiające wdrażanie bezpiecznych podpisów cyfrowych.

@@ -43,14 +43,14 @@ imageStamp.BottomMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Bottom;
 
-// Přidejte vyrovnávací paměť obrázků na všechny stránky
+//Přidejte vyrovnávací paměť obrázků na všechny stránky
 foreach(Page page in pdfDocument.Pages)
 {
      page.AddStamp(imageStamp);
 }
 ```
 
-Výše uvedený kód vytvoří vyrovnávací paměť obrázku ze souboru "aspose-logo.jpg" a nastaví jeho vlastnosti, jako je spodní okraj, horizontální a vertikální zarovnání. Poté se obrazová vyrovnávací paměť přidá na všechny stránky dokumentu PDF.
+Výše uvedený kód vytvoří vyrovnávací paměť obrázku ze souboru „aspose-logo.jpg“ a nastaví jeho vlastnosti, jako je spodní okraj, horizontální a vertikální zarovnání. Poté se obrazová vyrovnávací paměť přidá na všechny stránky dokumentu PDF.
 
 ## Krok 4: Uložení upraveného dokumentu PDF
 
@@ -108,15 +108,15 @@ Odpověď: Přidání obrázku do zápatí dokumentu PDF vám umožní zahrnout 
 
 #### Otázka: Mohu upravit polohu a zarovnání obrázku v zápatí?
 
- Odpověď: Ano, můžete upravit polohu a zarovnání obrázku v sekci zápatí úpravou vlastností`ImageStamp` objekt. Fragment kódu nastavuje vlastnosti jako např`BottomMargin`, `HorizontalAlignment` , a`VerticalAlignment`.
+ Odpověď: Ano, můžete upravit polohu a zarovnání obrázku v sekci zápatí úpravou vlastností`ImageStamp` objekt. Fragment kódu nastavuje vlastnosti jako např`BottomMargin`, `HorizontalAlignment` a`VerticalAlignment`.
 
 #### Otázka: Je možné přidat různé obrázky do sekce zápatí na různých stránkách dokumentu PDF?
 
- Odpověď: Ano, můžete přidat různé obrázky do sekce zápatí na různých stránkách vytvořením samostatných`ImageStamp` objektů s různými obrazovými soubory a vlastnostmi a poté je přidat na konkrétní stránky.
+Odpověď: Ano, můžete přidat různé obrázky do sekce zápatí na různých stránkách vytvořením samostatných`ImageStamp` objektů s různými obrazovými soubory a vlastnostmi a poté je přidat na konkrétní stránky.
 
 #### Otázka: Jak kód zajistí, aby byl obrázek přidán na všechny stránky dokumentu PDF?
 
-Odpověď: Poskytnutý kód používá a`foreach` smyčkou pro iteraci všech stránek dokumentu PDF a přidá to samé`ImageStamp` do sekce zápatí každé stránky.
+ Odpověď: Poskytnutý kód používá a`foreach` smyčkou pro iteraci všech stránek dokumentu PDF a přidá to samé`ImageStamp` do sekce zápatí každé stránky.
 
 #### Otázka: Mohu přidat další prvky, jako je text nebo tvary, do sekce zápatí pomocí podobného přístupu?
 
@@ -136,4 +136,4 @@ Odpověď: Poskytnutý kód používá a`foreach` smyčkou pro iteraci všech st
 
 #### Otázka: Jak kód zpracovává scénáře, kdy rozměry obrázku přesahují dostupné místo v zápatí?
 
- A: Kód nastavuje vlastnosti jako např`BottomMargin`, `HorizontalAlignment` , a`VerticalAlignment` pro ovládání umístění a zarovnání obrazu. Ujistěte se, že tyto vlastnosti jsou upraveny tak, aby se předešlo problémům s překrýváním nebo rozvržením.
+ A: Kód nastavuje vlastnosti jako např`BottomMargin`, `HorizontalAlignment` a`VerticalAlignment` pro ovládání umístění a zarovnání obrazu. Ujistěte se, že tyto vlastnosti jsou upraveny tak, aby se předešlo problémům s překrýváním nebo rozvržením.

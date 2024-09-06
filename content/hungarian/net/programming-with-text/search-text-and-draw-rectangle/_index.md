@@ -53,7 +53,7 @@ Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
 
 ## 5. lépés: Hozzon létre egy TextFragmentAbsorber-t
 
- Hozzon létre egy`TextFragmentAbsorber` objektumot a bemeneti keresési kifejezés összes példányának megtalálásához:
+ Hozzon létre a`TextFragmentAbsorber` objektumot a bemeneti keresési kifejezés összes példányának megtalálásához:
 
 ```csharp
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
@@ -80,7 +80,7 @@ document.Pages.Accept(textAbsorber);
 
 ## 8. lépés: Rajzolj egy téglalapot a talált szöveg köré
 
- Hozzon létre egy`PdfContentEditor` objektumot, és a visszakeresett szövegtöredékek között görgessen, és rajzoljon egy téglalapot minden szövegszegmens köré:
+ Hozzon létre a`PdfContentEditor` objektumot, és a visszakeresett szövegtöredékek között görgessen, és rajzoljon egy téglalapot minden szövegszegmens köré:
 
 ```csharp
 var editor = new PdfContentEditor(document);
@@ -130,7 +130,7 @@ Console.WriteLine("\nRectangle drawn successfully on searched text.\nFile saved 
 
 ## Következtetés
 
-Gratulálunk! Sikeresen megtanulta, hogyan kereshet meghatározott szöveget egy PDF-dokumentumban, hogyan rajzoljon téglalapot a talált szöveg köré, és mentse el a módosított dokumentumot az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a projekt beállításától a szükséges műveletek végrehajtásáig. Most már beépítheti ezt a kódot saját C#-projektjeibe, hogy szöveget manipuláljon és téglalapokat rajzoljon PDF-fájlokba.
+Gratulálok! Sikeresen megtanulta, hogyan kereshet meghatározott szöveget egy PDF-dokumentumban, hogyan rajzoljon téglalapot a talált szöveg köré, és mentse el a módosított dokumentumot az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a projekt beállításától a szükséges műveletek végrehajtásáig. Most már beépítheti ezt a kódot saját C#-projektjeibe, hogy szöveget manipuláljon és téglalapokat rajzoljon PDF-fájlokba.
 
 ### GYIK
 

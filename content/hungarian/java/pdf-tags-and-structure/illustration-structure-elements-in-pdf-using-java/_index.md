@@ -67,7 +67,7 @@ pdfDocument.save("Illustration.pdf");
 
 ### Képek hozzáadása PDF-hez
 
-Most pedig nézzük meg, hogyan adhat hozzá képeket PDF-dokumentumához. Ebben a példában logót adunk a PDF-fájlunkhoz.
+Most pedig nézzük meg, hogyan adhat hozzá képeket PDF-dokumentumához. Ebben a példában egy logót adunk a PDF-hez.
 
 ```java
 // Hozzon létre egy új dokumentumot
@@ -94,7 +94,7 @@ pdfDocument.save("Illustration.pdf");
 
 ## Következtetés
 
-Gratulálunk! Megtanulta, hogyan hozhat létre illusztrációkat és szerkezeti elemeket PDF-fájlokban Java és Aspose.PDF használatával. Mostantól PDF-dokumentumait szöveggel, képekkel és egyebekkel bővítheti.
+Gratulálok! Megtanulta, hogyan hozhat létre illusztrációkat és szerkezeti elemeket PDF-fájlokban Java és Aspose.PDF használatával. Mostantól PDF-dokumentumait szöveggel, képekkel és egyebekkel bővítheti.
 
  Ha bármilyen kérdése van, vagy további segítségre van szüksége, keresse fel a[Aspose.PDF a Java dokumentációhoz](https://reference.aspose.com/pdf/java/) további részletekért.
 

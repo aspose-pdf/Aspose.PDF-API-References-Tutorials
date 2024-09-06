@@ -1,125 +1,121 @@
 ---
-title: Ek Bilgisini Al
-linktitle: Ek Bilgisini Al
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile bir PDF dosyasındaki belirli bir ek hakkında nasıl bilgi alacağınızı öğrenin. Adım adım rehber.
+title: Ek Bilgilerini Al
+linktitle: Ek Bilgilerini Al
+second_title: Aspose.PDF for .NET API Referansı
+description: Bu kapsamlı eğitimde Aspose.PDF for .NET kullanarak PDF dosyalarından ek bilgilerinin nasıl alınacağını öğrenin.
 type: docs
 weight: 50
 url: /tr/net/programming-with-attachments/get-attachment-info/
 ---
-Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF dosyasının belirli bir eki hakkında bilgi almak için aşağıdaki C# kaynak kodunu adım adım anlatacağız.
+## giriiş
 
-Başlamadan önce Aspose.PDF kütüphanesini kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Ayrıca temel C# programlama bilgisine sahip olmak.
+Belge yönetimi dünyasında, PDF dosyalarından veri çıkarma ve düzenlemenin nasıl yapılacağını anlamak çok önemlidir. İster uygulamanızı geliştirmek isteyen bir geliştirici olun, ister belgeleri verimli bir şekilde yönetmesi gereken bir iş profesyoneli olun, Aspose.PDF for .NET, PDF dosyalarıyla çalışmak için güçlü bir araç takımı sağlar. Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesinden ek bilgilerinin nasıl alınacağını ele alacağız. Bu kılavuzun sonunda, gömülü dosyalara ve özelliklerine nasıl erişeceğiniz konusunda sağlam bir anlayışa sahip olacaksınız ve bu da PDF işleme görevlerinizi çok daha kolay hale getirecek.
 
-### Adım 1: Belge Dizini Kurulumu
+## Ön koşullar
 
-Verilen kaynak kodunda, ek bilgisini almak istediğiniz PDF dosyasının bulunduğu dizini belirtmeniz gerekmektedir. "dataDir" değişkenini istediğiniz dizine değiştirin.
+Koda geçmeden önce, yerinde olması gereken birkaç şey var:
+
+1. Visual Studio: Makinenizde Visual Studio'nun yüklü olduğundan emin olun. Bu sizin geliştirme ortamınız olacaktır.
+2. .NET için Aspose.PDF: Aspose.PDF kütüphanesini indirip yüklemeniz gerekir. Bunu bulabilirsiniz[Burada](https://releases.aspose.com/pdf/net/).
+3. Temel C# Bilgisi: C# programlamaya aşina olmak, kod parçacıklarını daha iyi anlamanıza yardımcı olacaktır.
+4. Örnek PDF Belgesi: Bu eğitim için, gömülü dosyalar içeren bir PDF belgesine ihtiyacınız olacak. Bir tane oluşturabilir veya internetten bir örnek indirebilirsiniz.
+
+## Paketleri İçe Aktar
+
+Başlamak için, C# projenize gerekli paketleri içe aktarmanız gerekir. Bunu nasıl yapabileceğiniz aşağıda açıklanmıştır:
+
+1. Visual Studio projenizi açın.
+2. Çözüm Gezgini'nde projenize sağ tıklayın ve "NuGet Paketlerini Yönet" seçeneğini seçin.
+3.  Arama`Aspose.PDF` ve en son sürümü yükleyin.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-### 2. Adım: Mevcut PDF belgesini açın
+Paketi kurduktan sonra kodunuzu yazmaya başlayabilirsiniz.
 
-Mevcut PDF belgesini belirtilen yolu kullanarak açıyoruz.
+## Adım 1: Belge Dizininizi Ayarlayın
 
-```csharp
-Document pdfDocument = new Document(dataDir + "GetAttachmentInfo.pdf");
-```
-
-### Adım 3: Belirli Bir Ekin Edinilmesi
-
-Belgenin ekler koleksiyonundan belirli bir eki alıyoruz. Bu örnekte, dizin 1'i kullanarak ilk eki alıyoruz.
+Yolculuğumuzun ilk adımı PDF belgenizin bulunduğu dizini ayarlamaktır. Bu çok önemlidir çünkü programımıza çalışmak istediğimiz dosyayı nerede bulacağını söylememiz gerekir.
 
 ```csharp
-FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
-```
-
-### Adım 4: Dosya Özelliklerini Alın
-
-Ad, açıklama, MIME türü, kontrol karması, oluşturulma tarihi, değiştirilme tarihi ve boyut gibi ek özelliklerini görüntüleriz.
-
-```csharp
-Console.WriteLine("Name: {0}", fileSpecification.Name);
-Console.WriteLine("Description: {0}", fileSpecification.Description);
-Console.WriteLine("MIME Type: {0}", fileSpecification.MIMEType);
-
-// Nesne parametrelerinin ek bilgi içerip içermediğini kontrol edin
-if (fileSpecification.Params != null)
-{
-Console.WriteLine("Check Hash: {0}", fileSpecification.Params.CheckSum);
-Console.WriteLine("Creation date: {0}", fileSpecification.Params.CreationDate);
-Console.WriteLine("Modified date: {0}", fileSpecification.Params.ModDate);
-Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
-}
-```
-
-### Aspose.PDF for .NET kullanarak Ek Bilgisi Alma için örnek kaynak kodu
- 
-```csharp
-
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` Belgelerinizin klasörüne giden gerçek yol ile. PDF dosyanızın bulunması gereken yer burasıdır.
+
+## Adım 2: PDF Belgesini açın
+
+ Artık dizinimiz ayarlandığına göre, PDF belgesini açmanın zamanı geldi. Bu, şu şekilde yapılır:`Document` Sınıf Aspose.PDF tarafından sağlanmıştır.
+
+```csharp
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir + "GetAttachmentInfo.pdf");
-// Belirli bir gömülü dosyayı alın
+```
+
+ Burada, yeni bir örnek oluşturuyoruz`Document` sınıf ve PDF dosyamızın yolunu geçelim. Bu, PDF'nin içerikleriyle etkileşime girmemizi sağlar.
+
+## Adım 3: Gömülü Dosyalara Erişim
+
+Belge açıldığında, gömülü dosyalara erişebiliriz. Aspose.PDF bu dosyaları kolayca almamızı sağlar.
+
+```csharp
+// Belirli gömülü dosyayı al
 FileSpecification fileSpecification = pdfDocument.EmbeddedFiles[1];
-// Dosya özelliklerini alın
+```
+
+Bu satırda, gömülü dosyalar koleksiyonuna erişiriz ve ikinci dosyayı (indeks 1) alırız. PDF'nizin en az iki gömülü dosyaya sahip olduğundan emin olun; aksi takdirde bir hatayla karşılaşabilirsiniz.
+
+## Adım 4: Dosya Özelliklerini Alın
+
+Artık gömülü dosyaya sahip olduğumuza göre, özelliklerini çıkaralım. Burada dosya hakkında yararlı bilgiler toplayabiliriz.
+
+```csharp
+// Dosya özelliklerini al
 Console.WriteLine("Name: {0}", fileSpecification.Name);
 Console.WriteLine("Description: {0}", fileSpecification.Description);
 Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-//Parametre nesnesinin parametreleri içerip içermediğini kontrol edin
+```
+
+Burada, gömülü dosyanın adını, açıklamasını ve MIME türünü yazdırıyoruz. Bu bilgi, dosyanın içeriğini ve türünü anlamak için çok önemli olabilir.
+
+## Adım 5: Ek Parametreleri Kontrol Edin
+
+Bazı gömülü dosyalar, dosya hakkında daha fazla bağlam sağlayan ek parametrelere sahip olabilir. Bu parametrelerin var olup olmadığını kontrol edelim ve yazdıralım.
+
+```csharp
+// Parametre nesnesinin parametreleri içerip içermediğini kontrol edin
 if (fileSpecification.Params != null)
 {
-	Console.WriteLine("CheckSum: {0}",
-	fileSpecification.Params.CheckSum);
-	Console.WriteLine("Creation Date: {0}",
-	fileSpecification.Params.CreationDate);
-	Console.WriteLine("Modification Date: {0}",
-	fileSpecification.Params.ModDate);
-	Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
+    Console.WriteLine("CheckSum: {0}", fileSpecification.Params.CheckSum);
+    Console.WriteLine("Creation Date: {0}", fileSpecification.Params.CreationDate);
+    Console.WriteLine("Modification Date: {0}", fileSpecification.Params.ModDate);
+    Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
-
 ```
+
+ Bu adımda, şunu kontrol ediyoruz:`Params` nesne boş değil. Veri içeriyorsa, dosyanın sağlama toplamını, oluşturma tarihini, değiştirme tarihini ve boyutunu yazdırırız. Bu ek bilgiler denetim ve izleme amaçları için çok yararlı olabilir.
 
 ## Çözüm
 
-Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF dosyasının belirli bir eki hakkında nasıl bilgi alınacağını açıkladık. Artık bu bilgiyi PDF dosyalarınızdaki ek bilgilerini ayıklamak ve görüntülemek için kullanabilirsiniz.
+Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesinden ek bilgilerini nasıl alacağınızı başarıyla öğrendiniz. Bu adımları izleyerek, gömülü dosyalara ve özelliklerine kolayca erişebilir, belge yönetimi yeteneklerinizi geliştirebilirsiniz. Yeni bir uygulama geliştiriyor veya mevcut bir uygulamayı iyileştiriyor olun, bu bilgi PDF işleme görevlerinizde size iyi hizmet edecektir.
 
-### Ek bilgilerini almak için SSS'ler 
+## SSS
 
-#### S: Bir PDF belgesindeki belirli eklerle ilgili bilgileri neden almam gerekiyor?
+### Aspose.PDF for .NET nedir?
+Aspose.PDF for .NET, geliştiricilerin PDF belgelerini programlı bir şekilde oluşturmalarına, düzenlemelerine ve dönüştürmelerine olanak tanıyan bir kütüphanedir.
 
-C: Ek bilgilerini almak, PDF içindeki gömülü dosyaların ayrıntılarını anlamanıza ve analiz etmenize olanak tanıyarak, ekleri etkili bir şekilde yönetmenize ve bunlarla çalışmanıza yardımcı olur.
+### Aspose.PDF for .NET'i nasıl yüklerim?
+ NuGet Paket Yöneticisini Visual Studio'da kullanarak yükleyebilir veya şu adresten indirebilirsiniz:[web sitesi](https://releases.aspose.com/pdf/net/).
 
-#### S: Bu öğreticiyi kullanarak belirli bir ek hakkında ne tür bilgiler toplayabilirim?
+### Aspose.PDF'yi ücretsiz kullanabilir miyim?
+ Evet, Aspose kütüphaneyi değerlendirmek için kullanabileceğiniz ücretsiz bir deneme sürümü sunuyor. Bunu bulabilirsiniz[Burada](https://releases.aspose.com/).
 
-C: Bu eğitimde ad, açıklama, MIME türü, kontrol karması, oluşturulma tarihi, değişiklik tarihi ve boyut gibi ek özelliklerinin nasıl alınacağı ve görüntüleneceği gösterilmektedir.
+### Aspose.PDF için desteği nerede bulabilirim?
+ Aspose topluluk forumundan destek alabilirsiniz[Burada](https://forum.aspose.com/c/pdf/10).
 
-#### S: Bu eğitim Aspose.PDF for .NET kullanarak ek bilgilerini toplamama nasıl yardımcı oluyor?
-
-C: Bu eğitimde, bir PDF belgesindeki belirli bir ek hakkındaki bilgilere erişmek ve bunları görüntülemek için adım adım talimatlar ve C# kaynak kodu sağlanır.
-
-#### S: Bu öğreticiyi kullanarak belirli bir ek yerine tüm eklerle ilgili bilgi alabilir miyim?
-
-C: Bu eğitim, belirli bir ek hakkında bilgi edinmeye odaklanmıştır, ancak kodu, tüm eklerin arasında dolaşıp bilgilerini toplayacak şekilde uyarlayabilirsiniz.
-
-#### S: Ek bilgilerinde görüntülenen "Karma Kontrolü" özelliğinin amacı nedir?
-
-C: "Karma Kontrolü" özelliği, ekin bütünlüğünü doğrulamak için kullanılabilen ekin kontrol karma değerini temsil eder.
-
-#### S: Farklı dizinlere sahip ekler hakkında bilgi almak için bu kodu nasıl değiştirebilirim?
-
- C: İndeks değerini değiştirebilirsiniz (örn.`pdfDocument.EmbeddedFiles[1]`) PDF belgesindeki farklı dizinlerdeki ekler hakkında bilgi almak için.
-
-#### S: Bu bilgiyi parola korumalı PDF dosyalarından bilgi toplamak için kullanabilir miyim?
-
-C: Evet, Aspose.PDF for .NET'i kullanarak parola korumalı PDF dosyalarından ek bilgileri toplamak için benzer ilkeleri uygulayabilirsiniz.
-
-#### S: Aspose.PDF for .NET, ek bilgilerini alma sürecini nasıl basitleştirir?
-
-C: Aspose.PDF for .NET, PDF belgelerindeki ek özelliklerine kolaylıkla erişmenizi ve bunları değiştirmenizi sağlayan sezgisel bir API sağlar.
-
-#### S: Ek bilgilerinin toplanmasının önerildiği belirli senaryolar var mı?
-
-C: Ek bilgilerini toplamak, özelliklerini doğrulamak veya bir belgedeki ekleri denetlemek gibi gömülü dosyaların ayrıntılarını anlamanız gerektiğinde değerlidir.
+### PDF'e hangi tür dosyaları yerleştirebilirim?
+PDF formatı tarafından desteklendiği sürece, resimler, belgeler ve elektronik tablolar dahil olmak üzere çeşitli dosya türlerini gömebilirsiniz.

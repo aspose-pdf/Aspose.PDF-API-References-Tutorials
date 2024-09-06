@@ -11,7 +11,7 @@ Ez a részletes útmutató elmagyarázza, hogyan konvertálhat CGM-képet PDF-be
 
 ## 1. lépés: Határozza meg a dokumentumkönyvtárat
 
- Mielőtt elkezdené, győződjön meg arról, hogy a megfelelő könyvtárat állította be a dokumentumokhoz. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a kódban annak a könyvtárnak az elérési útjával, ahol a CGM-fájl található.
+Mielőtt elkezdené, győződjön meg arról, hogy a megfelelő könyvtárat állította be a dokumentumokhoz. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a kódban annak a könyvtárnak az elérési útjával, ahol a CGM-fájl található.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -28,7 +28,7 @@ dataDir = dataDir + "CGMImageToPDF_out.pdf";
 
 ## 3. lépés: CGM-kép konvertálása PDF-be
 
- Használja a`Produce` a metódusa`PdfProducer` segítségével konvertálja a CGM fájlt PDF formátumba`ImportFormat.Cgm`. Adja meg a CGM bemeneti fájlt és a PDF kimeneti fájlt.
+ Használja a`Produce` módszere`PdfProducer` segítségével konvertálja a CGM fájlt PDF formátumba`ImportFormat.Cgm`. Adja meg a CGM bemeneti fájlt és a PDF kimeneti fájlt.
 
 ```csharp
 PdfProducer.Produce(inputFile, ImportFormat.Cgm, dataDir);
@@ -69,7 +69,7 @@ V: Határozza meg a bemeneti CGM-fájl nevét, és adja meg a kívánt kimeneti 
 
 ####  K: Hogyan működik a`Produce` method of `PdfProducer` contribute to the CGM to PDF conversion process?
 
- V: A`Produce` a metódusa`PdfProducer` elvégzi a CGM fájl PDF formátumba konvertálását a megadott bemeneti CGM fájl és a kiválasztott kimeneti PDF fájl használatával.
+ V: A`Produce` módszere`PdfProducer`elvégzi a CGM fájl PDF formátumba konvertálását a megadott bemeneti CGM fájl és a kiválasztott kimeneti PDF fájl használatával.
 
 #### K: Testreszabhatom a kimeneti PDF-fájl tulajdonságait és beállításait az átalakítás során?
 

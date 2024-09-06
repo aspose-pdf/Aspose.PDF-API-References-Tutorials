@@ -1,17 +1,17 @@
 ---
-title: PDF Dosya İmzasını Kullanarak Akıllı Kartla İmzalayın
-linktitle: PDF Dosya İmzasını Kullanarak Akıllı Kartla İmzalayın
-second_title: .NET API Referansı için Aspose.PDF
+title: PDF Dosya İmzası Kullanarak Akıllı Kartla İmzalayın
+linktitle: PDF Dosya İmzası Kullanarak Akıllı Kartla İmzalayın
+second_title: Aspose.PDF for .NET API Referansı
 description: Aspose.PDF for .NET kullanarak PDF dosyalarınızı akıllı kartla güvenli bir şekilde imzalayın.
 type: docs
 weight: 110
 url: /tr/net/programming-with-security-and-signatures/sign-with-smart-card-using-pdf-file-signature/
 ---
-Akıllı kartla dijital imzalama, PDF dosyalarını imzalamanın güvenli bir yoludur. Aspose.PDF for .NET ile aşağıdaki kaynak kodunu takip ederek akıllı kart kullanarak bir PDF dosyasını kolayca imzalayabilirsiniz:
+Akıllı kartla dijital imzalama, PDF dosyalarını imzalamanın güvenli bir yoludur. Aspose.PDF for .NET ile, aşağıdaki kaynak kodunu izleyerek bir PDF dosyasını akıllı kart kullanarak kolayca imzalayabilirsiniz:
 
-## 1. Adım: Gerekli kitaplıkları içe aktarın
+## Adım 1: Gerekli kitaplıkları içe aktarın
 
-Başlamadan önce C# projeniz için gerekli kütüphaneleri içe aktarmanız gerekir. Gerekli ithalat direktifleri şunlardır:
+Başlamadan önce, C# projeniz için gerekli kütüphaneleri içe aktarmanız gerekir. İşte gerekli içe aktarma yönergeleri:
 
 ```csharp
 using Aspose.Pdf;
@@ -20,32 +20,32 @@ using Aspose.Pdf.Forms;
 using System.Security.Cryptography.X509Certificates;
 ```
 
-## 2. Adım: Belgeler klasörünün yolunu ayarlayın
+## Adım 2: Belgeler klasörüne giden yolu ayarlayın
 
- Bu adımda imzalamak istediğiniz PDF dosyasının bulunduğu klasörün yolunu belirtmeniz gerekiyor. Yer değiştirmek`"YOUR DOCUMENTS DIRECTORY"`belgeler klasörünüzün gerçek yolunu içeren aşağıdaki kodda:
+ Bu adımda, imzalamak istediğiniz PDF dosyasını içeren klasörün yolunu belirtmeniz gerekir. Değiştir`"YOUR DOCUMENTS DIRECTORY"` Aşağıdaki kodda belgeler klasörünüzün gerçek yolunu bulabilirsiniz:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## 3. Adım: PDF belgesini yükleyin
+## Adım 3: PDF belgesini yükleyin
 
-Şimdi aşağıdaki kodu kullanarak imzalanacak PDF belgesini yükleyeceğiz:
+Şimdi imzalanacak PDF belgesini aşağıdaki kodu kullanarak yükleyeceğiz:
 
 ```csharp
 Document doc = new Document(dataDir + "blank.pdf");
 ```
 
-## Adım 4: İmzayı akıllı kartla gerçekleştirin
+## Adım 4: Akıllı kartla imzayı gerçekleştirin
 
- Bu adımda akıllı kart ile imza işlemini gerçekleştireceğiz.`PdfFileSignature` gelen sınıf`Facades`kütüphane. Windows sertifika deposundan akıllı kart sertifikasını seçiyoruz ve gerekli imzalama bilgilerini belirliyoruz. İşte ilgili kod:
+ Bu adımda akıllı kart ile imzayı gerçekleştireceğiz.`PdfFileSignature` sınıftan`Facades`kütüphane. Akıllı kart sertifikasını Windows sertifika deposundan seçiyoruz ve gerekli imzalama bilgilerini belirtiyoruz. İşte karşılık gelen kod:
 
 ```csharp
 using (PdfFileSignature pdfSign = new PdfFileSignature())
 {
      pdfSign.BindPdf(doc);
 
-     // Mağazadaki sertifikayı seçin
+     // Mağazada sertifikayı seçin
      X509Store store = new X509Store(StoreLocation.CurrentUser);
      store.Open(OpenFlags.ReadOnly);
      X509Certificate2Collection sel = X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, X509SelectionFlag.SingleSelection);
@@ -59,7 +59,7 @@ using (PdfFileSignature pdfSign = new PdfFileSignature())
 
 ## Adım 5: İmzayı Doğrulayın
 
- Son olarak, imzalanan PDF dosyasının imzasını kullanarak doğrularız.`PdfFileSignature` sınıf. İmza isimlerini alıp tek tek kontrol ediyoruz. Bir imzanın doğrulaması başarısız olursa bir istisna oluşturulur. İşte ilgili kod:
+ Son olarak, imzalanmış PDF dosyasının imzasını kullanarak doğrularız.`PdfFileSignature` sınıf. İmza adlarını alırız ve bunları tek tek kontrol ederiz. Bir imza doğrulamada başarısız olursa, bir istisna atılır. İşte karşılık gelen kod:
 
 ```csharp
 using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "externalSignature2.pdf")))
@@ -77,16 +77,16 @@ using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "e
 
 ### Aspose.PDF for .NET kullanarak Pdf Dosya İmzası Kullanarak Akıllı Kartla İmzalama için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document doc = new Document(dataDir + "blank.pdf");
 using (Facades.PdfFileSignature pdfSign = new Facades.PdfFileSignature())
 {
 	pdfSign.BindPdf(doc);
-	// Windows sertifika deposunda sertifika seçimiyle imzalayın
+	// Windows sertifika deposunda sertifika seçimiyle imzala
 	System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
 	store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
-	// Sertifikayı mağazada manuel olarak seçtiniz
+	// Mağazada sertifikayı manuel olarak seçtim
 	System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel = System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
 	Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0]);
 	pdfSign.SignatureAppearance = dataDir + "demo.png";
@@ -108,48 +108,48 @@ using (Facades.PdfFileSignature pdfSign = new Facades.PdfFileSignature(new Docum
 
 ## Çözüm
 
-Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF dosyasını akıllı kartla imzalamak için adım adım bir kılavuza sahipsiniz. PDF belgelerinize güvenli dijital imzalar eklemek için bu kodu kullanabilirsiniz.
+Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF dosyasını akıllı kartla imzalamak için adım adım bir kılavuzunuz var. Bu kodu kullanarak PDF belgelerinize güvenli dijital imzalar ekleyebilirsiniz.
 
-Gelişmiş dijital imza ve sertifika yönetimi özellikleri hakkında daha fazla bilgi için resmi Aspose.PDF belgelerine göz atmayı unutmayın.
+Gelişmiş dijital imza ve sertifika yönetimi özellikleri hakkında daha fazla bilgi edinmek için resmi Aspose.PDF belgelerine göz atmayı unutmayın.
 
-### SSS'ler
+### SSS
 
-#### S: PDF dosyalarını neden akıllı kartla imzalamayı düşünmeliyim?
+#### S: PDF dosyalarını akıllı kartla imzalamayı neden düşünmeliyim?
 
-C: PDF dosyalarının akıllı kartla imzalanması, belgenin orijinalliğini ve bütünlüğünü sağlayarak güvenliği artırır. Akıllı kart tabanlı imzalar daha yüksek düzeyde güven ve uyumluluk sağlar.
+A: PDF dosyalarını akıllı kartla imzalamak, belgenin gerçekliğini ve bütünlüğünü garanti altına alarak güvenliği artırır. Akıllı kart tabanlı imzalar daha yüksek düzeyde güven ve uyumluluk sağlar.
 
 #### S: Akıllı kart tabanlı dijital imzalama nasıl çalışır?
 
-C: Akıllı kart tabanlı dijital imzalama, benzersiz bir dijital imza oluşturmak için akıllı kartta saklanan bir şifreleme anahtarının kullanılmasını içerir. Bu imza, PDF dosyasına eklenerek alıcıların belgenin kökenini ve bütünlüğünü doğrulamasına olanak tanır.
+A: Akıllı kart tabanlı dijital imzalama, benzersiz bir dijital imza oluşturmak için akıllı kartta depolanan bir kriptografik anahtarın kullanılmasını içerir. Bu imza PDF dosyasına eklenir ve alıcıların belgenin kökenini ve bütünlüğünü doğrulamasını sağlar.
 
-#### S: Aspose.PDF for .NET'in akıllı kart tabanlı imzalamadaki rolü nedir?
+#### S: Akıllı kart tabanlı imzalamada Aspose.PDF for .NET'in rolü nedir?
 
-C: Aspose.PDF for .NET, PDF dosyalarının akıllı kart tabanlı dijital imzalanmasını kolaylaştırmak için kapsamlı bir araç ve kitaplık seti sağlar. Süreci basitleştirir ve güvenli belge imzalamayı sağlar.
+A: Aspose.PDF for .NET, PDF dosyalarının akıllı kart tabanlı dijital imzalanmasını kolaylaştırmak için kapsamlı bir araç ve kitaplık seti sağlar. Süreci basitleştirir ve güvenli belge imzalamayı garanti eder.
 
-#### S: İmzalamak için belirli bir akıllı kart sertifikasını seçebilir miyim?
+#### S: İmzalama için belirli bir akıllı kart sertifikası seçebilir miyim?
 
-C: Evet, imzalamak için Windows sertifika deposundan belirli bir akıllı kart sertifikasını seçebilirsiniz. Aspose.PDF for .NET, sertifika seçimini uygulamanıza sorunsuz bir şekilde entegre etmenize olanak tanır.
+C: Evet, imzalama için Windows sertifika deposundan belirli bir akıllı kart sertifikası seçebilirsiniz. Aspose.PDF for .NET, sertifika seçimini uygulamanıza sorunsuz bir şekilde entegre etmenizi sağlar.
 
 #### S: Sağlanan kaynak kodu akıllı kart tabanlı imzalamayı nasıl işliyor?
 
-C: Kaynak kodu, bir PDF belgesinin nasıl ciltleneceğini, akıllı kart sertifikasının nasıl seçileceğini, imzalama bilgilerinin nasıl belirleneceğini ve dijital imzanın nasıl oluşturulacağını gösterir. Ayrıca imzanın geçerliliğinin nasıl doğrulanacağını da gösterir.
+A: Kaynak kodu bir PDF belgesinin nasıl bağlanacağını, akıllı kart sertifikasının nasıl seçileceğini, imzalama bilgilerinin nasıl belirtileceğini ve dijital imzanın nasıl oluşturulacağını gösterir. Ayrıca imzanın geçerliliğinin nasıl doğrulanacağını da gösterir.
 
-#### S: Tek bir PDF dosyasında akıllı kartlar kullanarak birden fazla imza uygulayabilir miyim?
+#### S: Akıllı kartları kullanarak tek bir PDF dosyasında birden fazla imza uygulayabilir miyim?
 
-C: Kesinlikle, tek bir PDF dosyasına birden fazla akıllı kart tabanlı imza uygulayabilirsiniz. Her imza benzersizdir ve belgenin genel güvenliğine katkıda bulunur.
+A: Kesinlikle, tek bir PDF dosyasına birden fazla akıllı kart tabanlı imza uygulayabilirsiniz. Her imza benzersizdir ve belgenin genel güvenliğine katkıda bulunur.
 
-#### S: Doğrulama adımı sırasında bir imza doğrulamada başarısız olursa ne olur?
+#### S: Doğrulama adımı sırasında bir imzanın doğrulanması başarısız olursa ne olur?
 
-C: Bir imzanın doğrulaması başarısız olursa imzanın geçerli olmadığını belirten bir istisna oluşturulur. Bu, yalnızca geçerli ve güvenilir imzaların kabul edilmesini sağlar.
+A: Bir imza doğrulamayı geçemezse, imzanın geçerli olmadığını belirten bir istisna atılır. Bu, yalnızca geçerli ve güvenilir imzaların kabul edilmesini sağlar.
 
-#### S: Akıllı kart tabanlı imzalama her tür PDF belgesiyle uyumlu mudur?
+#### S: Akıllı kart tabanlı imzalama her türlü PDF belgesiyle uyumlu mudur?
 
-C: Evet, akıllı kart tabanlı imzalama her tür PDF belgesiyle uyumludur. Dijital imzaları formlar, raporlar ve daha fazlası dahil olmak üzere çeşitli PDF dosyalarına uygulayabilirsiniz.
+C: Evet, akıllı kart tabanlı imzalama tüm PDF belge türleriyle uyumludur. Formlar, raporlar ve daha fazlası dahil olmak üzere çeşitli PDF dosyası türlerine dijital imzalar uygulayabilirsiniz.
 
-#### S: Gelişmiş dijital imza ve sertifika yönetimi hakkında nasıl daha fazla bilgi edinebilirim?
+#### S: Gelişmiş dijital imza ve sertifika yönetimi hakkında daha fazla bilgi nasıl edinebilirim?
 
-C: Gelişmiş dijital imza özelliklerine, sertifika yönetimine ve belge güvenliğini sağlamaya yönelik en iyi uygulamalara ilişkin ayrıntılı bilgiler için resmi Aspose.PDF belgelerini inceleyin.
+A: Gelişmiş dijital imza özellikleri, sertifika yönetimi ve belge güvenliğinin sağlanmasına yönelik en iyi uygulamalar hakkında ayrıntılı bilgi edinmek için resmi Aspose.PDF belgelerini inceleyin.
 
-#### S: Akıllı kart tabanlı imzalamayı uygulamak için nereden daha fazla yardım veya destek bulabilirim?
+#### S: Akıllı kart tabanlı imzalamayı uygulama konusunda daha fazla yardım veya desteği nereden bulabilirim?
 
-C: Daha fazla rehberlik ve destek için Aspose.PDF topluluk forumlarına ulaşın veya akıllı kart tabanlı imzalama hakkında kapsamlı bilgi için belgelere bakın.
+C: Ek rehberlik ve destek için Aspose.PDF topluluk forumlarına ulaşın veya akıllı kart tabanlı imzalama hakkında kapsamlı bilgi için belgelere bakın.

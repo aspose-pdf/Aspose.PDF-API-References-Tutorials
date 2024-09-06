@@ -1,23 +1,23 @@
 ---
 title: Obtener valores de todos los campos en un documento PDF
 linktitle: Obtener valores de todos los campos en un documento PDF
-second_title: Aspose.PDF para referencia de API .NET
-description: Obtenga fácilmente los valores de todos los campos del formulario en un documento PDF con Aspose.PDF para .NET.
+second_title: Referencia de API de Aspose.PDF para .NET
+description: Obtenga fácilmente los valores de todos los campos de formulario en un documento PDF con Aspose.PDF para .NET.
 type: docs
 weight: 150
 url: /es/net/programming-with-forms/get-values-from-all-fields/
 ---
-En este tutorial, le mostraremos cómo obtener los valores de todos los campos de formulario en un documento PDF usando Aspose.PDF para .NET. Explicaremos el código fuente de C# paso a paso para guiarlo a través de este proceso.
+En este tutorial, le mostraremos cómo obtener los valores de todos los campos de formulario en un documento PDF utilizando Aspose.PDF para .NET. Le explicaremos el código fuente de C# paso a paso para guiarlo en este proceso.
 
-## Paso 1: preparación
+## Paso 1: Preparación
 
-Asegúrese de haber importado las bibliotecas necesarias y establecer la ruta a su directorio de documentos:
+Asegúrese de haber importado las bibliotecas necesarias y de haber configurado la ruta al directorio de sus documentos:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Paso 2: abre el documento
+## Paso 2: Abra el documento
 
 Abra el documento PDF:
 
@@ -25,9 +25,9 @@ Abra el documento PDF:
 Document pdfDocument = new Document(dataDir + "GetValuesFromAllFields.pdf");
 ```
 
-## Paso 3: obtener valores para todos los campos
+## Paso 3: Obtener valores para todos los campos
 
-Recorra todos los campos del formulario en el documento y obtenga sus nombres y valores:
+Recorra todos los campos de formulario del documento y obtenga sus nombres y valores:
 
 ```csharp
 foreach(Field formField in pdfDocument.Form)
@@ -37,7 +37,7 @@ Console.WriteLine("Value: {0}", formField.Value);
 }
 ```
 
-### Código fuente de muestra para Obtener valores de todos los campos usando Aspose.PDF para .NET 
+### Código fuente de muestra para obtener valores de todos los campos con Aspose.PDF para .NET 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -53,26 +53,26 @@ foreach (Field formField in pdfDocument.Form)
 
 ## Conclusión
 
-En este tutorial, aprendimos cómo obtener los valores de todos los campos de formulario en un documento PDF usando Aspose.PDF para .NET. Siguiendo estos pasos, puede extraer fácilmente los valores de todos los campos del formulario de sus documentos PDF utilizando Aspose.PDF.
+En este tutorial, aprendimos a obtener los valores de todos los campos de formulario en un documento PDF con Aspose.PDF para .NET. Si sigue estos pasos, podrá extraer fácilmente los valores de todos los campos de formulario de sus documentos PDF con Aspose.PDF.
 
 ### Preguntas frecuentes
 
-#### P: ¿Puedo modificar los valores de los campos del formulario mientras los recupero usando Aspose.PDF para .NET?
+#### P: ¿Puedo modificar los valores de los campos de formulario mientras los recupero usando Aspose.PDF para .NET?
 
- R: Sí, puede modificar los valores de los campos del formulario mientras los recupera usando Aspose.PDF para .NET. Una vez que tengas el`Field` objeto que representa un campo de formulario, puede actualizar su`Value`propiedad con el valor deseado. Después de realizar los cambios necesarios, puede guardar el documento PDF actualizado para reflejar los cambios.
+ R: Sí, puede modificar los valores de los campos de formulario mientras los recupera utilizando Aspose.PDF para .NET. Una vez que tenga los`Field` objeto que representa un campo de formulario, puede actualizarlo`Value`Propiedad con el valor deseado. Después de realizar los cambios necesarios, puede guardar el documento PDF actualizado para reflejar los cambios.
 
-#### P: ¿Cómo puedo filtrar y recuperar campos de formulario específicos según sus tipos (por ejemplo, campos de texto, casillas de verificación)?
+#### P: ¿Cómo puedo filtrar y recuperar campos de formulario específicos en función de sus tipos (por ejemplo, campos de texto, casillas de verificación)?
 
- R: Para recuperar campos de formulario específicos según sus tipos, puede utilizar declaraciones condicionales o consultas LINQ para filtrar los campos de interés. Puede comprobar el tipo de cada campo del formulario utilizando el campo`FieldType` propiedad y luego recuperar los valores en consecuencia.
+ A: Para recuperar campos de formulario específicos según sus tipos, puede utilizar declaraciones condicionales o consultas LINQ para filtrar los campos de interés. Puede comprobar el tipo de cada campo de formulario utilizando la función de filtrado de campos.`FieldType` propiedad y luego recuperar los valores en consecuencia.
 
 #### P: ¿Qué sucede si el documento PDF no tiene campos de formulario?
 
- R: Si el documento PDF no contiene ningún campo de formulario, el`pdfDocument.Form` La propiedad devolverá una colección vacía. En tales casos, el bucle para recuperar valores no se ejecutará y no se mostrará ningún valor.
+ A: Si el documento PDF no contiene ningún campo de formulario, el`pdfDocument.Form` La propiedad devolverá una colección vacía. En tales casos, el bucle para recuperar valores no se ejecutará y no se mostrará ningún valor.
 
-#### P: ¿Puedo extraer los valores de los campos del formulario en un orden específico u ordenarlos alfabéticamente?
+#### P: ¿Puedo extraer los valores del campo de formulario en un orden específico u ordenarlos alfabéticamente?
 
-R: El orden en que se recuperan los campos del formulario depende de la estructura subyacente del documento PDF. Aspose.PDF para .NET devuelve los campos del formulario en el orden en que se agregaron al documento. Si desea mostrar o procesar los campos del formulario en un orden específico, puede implementar una lógica de clasificación personalizada según sus requisitos.
+R: El orden en el que se recuperan los campos del formulario depende de la estructura subyacente del documento PDF. Aspose.PDF para .NET devuelve los campos del formulario en el orden en el que se agregaron al documento. Si desea mostrar o procesar los campos del formulario en un orden específico, puede implementar una lógica de ordenación personalizada según sus requisitos.
 
-#### P: ¿Cómo puedo manejar documentos PDF cifrados con campos de formulario protegidos con contraseña?
+#### P: ¿Cómo puedo gestionar documentos PDF cifrados con campos de formulario protegidos con contraseña?
 
- R: Aspose.PDF para .NET proporciona funciones para trabajar con documentos PDF cifrados y campos de formulario protegidos con contraseña. Antes de cargar el documento, puede establecer la contraseña utilizando el`pdfDocument.Password` propiedad para acceder al documento PDF protegido y sus campos de formulario.
+ A: Aspose.PDF para .NET ofrece funciones para trabajar con documentos PDF cifrados y campos de formulario protegidos con contraseña. Antes de cargar el documento, puede configurar la contraseña mediante el botón`pdfDocument.Password` propiedad para acceder al documento PDF protegido y sus campos de formulario.

@@ -1,8 +1,8 @@
 ---
-title: Stijl tekststructuur in PDF met behulp van Java
-linktitle: Stijl tekststructuur in PDF met behulp van Java
+title: Stijl Tekststructuur in PDF met behulp van Java
+linktitle: Stijl Tekststructuur in PDF met behulp van Java
 second_title: Aspose.PDF Java PDF-verwerkings-API
-description: Leer hoe u tekststructuren in PDF's kunt opmaken met behulp van Java met onze stapsgewijze handleiding. Pas lettertypen, kleuren, hyperlinks en meer aan voor professioneel ogende documenten.
+description: Leer hoe u tekststructuren in PDF's kunt stylen met Java met onze stapsgewijze handleiding. Pas lettertypen, kleuren, hyperlinks en meer aan voor professioneel ogende documenten.
 type: docs
 weight: 11
 url: /nl/java/pdf-styles-and-formatting/style-text-structure-in-pdf-using-java/
@@ -10,18 +10,18 @@ url: /nl/java/pdf-styles-and-formatting/style-text-structure-in-pdf-using-java/
 
 ## Invoering
 
-PDF's zijn een standaardformaat geworden voor het delen van documenten, rapporten en verschillende soorten inhoud. Wanneer u met PDF's in Java werkt, is het essentieel om ze niet alleen met gegevens te vullen, maar ook om de tekst op te maken voor een verzorgd uiterlijk.
+PDF's zijn een standaardformaat geworden voor het delen van documenten, rapporten en verschillende soorten content. Bij het werken met PDF's in Java is het essentieel om ze niet alleen te vullen met data, maar ook om de tekst te stylen voor een gepolijste uitstraling.
 
 ## Vereisten
 
-Voordat we beginnen, zorg ervoor dat u aan de volgende vereisten voldoet:
+Voordat we beginnen, moet u ervoor zorgen dat u aan de volgende voorwaarden voldoet:
 
 - Java Development Kit (JDK) geïnstalleerd.
-- Aspose.PDF voor Java-bibliotheek gedownload en ingesteld.
+- Aspose.PDF voor Java-bibliotheek gedownload en geïnstalleerd.
 
 ## De omgeving instellen
 
-Om te beginnen met het opmaken van tekst in PDF's met behulp van Java, moet u uw ontwikkelomgeving instellen. Volg deze stappen:
+Om te beginnen met het stylen van tekst in PDF's met Java, moet u uw ontwikkelomgeving instellen. Volg deze stappen:
 
 1.  Download de Aspose.PDF voor Java-bibliotheek van[hier](https://releases.aspose.com/pdf/java/).
 
@@ -34,27 +34,27 @@ Om te beginnen met het opmaken van tekst in PDF's met behulp van Java, moet u uw
 Laten we nu beginnen met het toevoegen van tekst aan een PDF-document. Hier is een eenvoudig voorbeeld:
 
 ```java
-// Maak een nieuw PDF-document
+// Een nieuw PDF-document maken
 com.aspose.pdf.Document pdfDocument = new com.aspose.pdf.Document();
 
-// Voeg een pagina toe aan het document
+// Een pagina toevoegen aan het document
 pdfDocument.getPages().add();
 
-// Maak een TextFragment-object
+// Een TextFragment-object maken
 com.aspose.pdf.TextFragment textFragment = new com.aspose.pdf.TextFragment("Hello, PDF!");
 
 // Voeg het TextFragment toe aan de pagina
 pdfDocument.getPages().get_Item(1).getParagraphs().add(textFragment);
 
-// Bewaar het document
+// Sla het document op
 pdfDocument.save("output.pdf");
 ```
 
-Met deze code wordt een PDF-document gemaakt, een pagina toegevoegd en de tekst "Hallo, PDF!" op de pagina.
+Met deze code wordt een PDF-document gemaakt, een pagina toegevoegd en de tekst 'Hallo, PDF!' op de pagina ingevoegd.
 
 ## Lettertype-stijl
 
-U kunt het lettertype van uw tekst aanpassen. U kunt als volgt de lettertypefamilie en -grootte wijzigen:
+U kunt het lettertype van uw tekst aanpassen. Zo wijzigt u het lettertype en de grootte:
 
 ```java
 textFragment.getTextState().setFont(FontRepository.findFont("Arial"));
@@ -72,7 +72,7 @@ textFragment.getTextState().setForegroundColor(com.aspose.pdf.Color.getBlue());
 
 ## Tekstuitlijning
 
-Beheer de tekstuitlijning in uw PDF:
+Bepaal de uitlijning van tekst in uw PDF:
 
 ```java
 textFragment.getTextState().setHorizontalAlignment(HorizontalAlignment.Center);
@@ -98,7 +98,7 @@ footerText.getTextState().setForegroundColor(com.aspose.pdf.Color.getBlack());
 header.getParagraphs().add(footerText);
 ```
 
-## Lijsten met opsommingstekens toevoegen
+## Opsommingstekens toevoegen
 
 Maak georganiseerde lijsten in uw PDF:
 
@@ -144,7 +144,7 @@ textFragment.getTextState().setUnderline(true);
 
 ## Pagina-indeling en marges
 
-Beheer de lay-out van uw PDF-pagina's:
+Bepaal de lay-out van uw PDF-pagina's:
 
 ```java
 page.setPageSize(PageSize.getA4());
@@ -152,9 +152,9 @@ page.getPageInfo().getMargin().setLeft(50);
 page.getPageInfo().getMargin().setRight(50);
 ```
 
-## Pagina-einden verwerken
+## Omgaan met pagina-einden
 
-Zorg voor de juiste pagina-einden voor uw inhoud:
+Zorg voor de juiste pagina-einden voor uw content:
 
 ```java
 textFragment.getTextState().setIsAutoTruncated(true);
@@ -176,13 +176,13 @@ page.getParagraphs().add(watermark);
 
 ## Conclusie
 
-In deze handleiding hebben we onderzocht hoe u tekststructuren in PDF's kunt opmaken met behulp van Java met behulp van Aspose.PDF. U kunt nu visueel aantrekkelijke en goed gestructureerde PDF-documenten maken die aan uw specifieke eisen voldoen. Experimenteer met de aangeboden technieken en verbeter uw vaardigheden voor het genereren van PDF's.
+In deze gids hebben we onderzocht hoe u tekststructuren in PDF's kunt stylen met Java met behulp van Aspose.PDF. U kunt nu visueel aantrekkelijke en goed gestructureerde PDF-documenten maken die voldoen aan uw specifieke vereisten. Experimenteer met de geboden technieken en verbeter uw PDF-generatievaardigheden.
 
 ## Veelgestelde vragen
 
-### Hoe wijzig ik het lettertype van tekst in een PDF?
+### Hoe wijzig ik het lettertype van de tekst in een PDF?
 
- Om het lettertype van tekst in een PDF te wijzigen, gebruikt u de`setTextState()` methode en geef het gewenste lettertype op met behulp van`setFont()`. Bijvoorbeeld:
+ Om het lettertype van tekst in een PDF te wijzigen, gebruikt u de`setTextState()` methode en specificeer het gewenste lettertype met behulp van`setFont()`. Bijvoorbeeld:
 
 ```java
 textFragment.getTextState().setFont(FontRepository.findFont("Arial"));
@@ -190,16 +190,16 @@ textFragment.getTextState().setFont(FontRepository.findFont("Arial"));
 
 ### Kan ik hyperlinks aan mijn PDF toevoegen met Aspose.PDF voor Java?
 
- Ja, u kunt hyperlinks aan uw PDF toevoegen met Aspose.PDF voor Java. Gebruik de`Hyperlink` class om koppelingen te maken en acties op te geven, zoals het openen van een URL.
+ Ja, u kunt hyperlinks toevoegen aan uw PDF met Aspose.PDF voor Java. Gebruik de`Hyperlink` klasse om koppelingen te maken en acties te specificeren, zoals het openen van een URL.
 
-### Wat is de aanbevolen manier om met pagina-einden in een PDF om te gaan?
+### Wat is de aanbevolen manier om pagina-einden in een PDF te verwerken?
 
- Als u pagina-einden in een PDF wilt verwerken, stelt u de`IsAutoTruncated` En`IsWordWrapped` eigenschappen aan`true` in de`TextState`. Dit zorgt ervoor dat de tekst op de juiste manier wordt afgekapt en omwikkeld, zodat deze binnen de paginagrenzen past.
+ Om pagina-einden in een PDF te verwerken, stelt u de`IsAutoTruncated` En`IsWordWrapped` eigenschappen aan`true` in de`TextState`Hiermee wordt ervoor gezorgd dat de tekst op de juiste manier wordt afgekapt en terugloopt, zodat deze binnen de paginagrenzen past.
 
-### Hoe kan ik mijn PDF-documenten beschermen met watermerken?
+### Hoe kan ik mijn PDF-documenten met watermerken beveiligen?
 
-U kunt uw PDF-documenten beveiligen met watermerken door een watermerktekstfragment aan de PDF toe te voegen. Pas het uiterlijk van het watermerk aan, zoals lettergrootte en kleur, om het gewenste effect te bereiken.
+U kunt uw PDF-documenten beschermen met watermerken door een watermerktekstfragment toe te voegen aan de PDF. Pas het uiterlijk van het watermerk aan, zoals lettergrootte en kleur, om het gewenste effect te bereiken.
 
-### Waar kan ik meer informatie en documentatie vinden voor Aspose.PDF voor Java?
+### Waar kan ik meer informatie en documentatie vinden over Aspose.PDF voor Java?
 
  Uitgebreide documentatie voor Aspose.PDF voor Java vindt u op[hier](https://reference.aspose.com/pdf/java/).

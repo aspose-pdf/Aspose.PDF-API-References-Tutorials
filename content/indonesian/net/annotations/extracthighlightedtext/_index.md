@@ -1,109 +1,114 @@
 ---
 title: Ekstrak Teks yang Disorot Dalam File PDF
 linktitle: Ekstrak Teks yang Disorot Dalam File PDF
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Pelajari cara mengekstrak teks yang disorot dalam file PDF menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah ini.
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara mengekstrak teks yang disorot dari file PDF secara efisien menggunakan Aspose.PDF for .NET dengan tutorial ini. Sempurna untuk analisis data dan peninjauan konten.
 type: docs
 weight: 60
 url: /id/net/annotations/extracthighlightedtext/
 ---
-Untuk mengekstrak teks yang disorot dalam file PDF, Anda dapat menggunakan Aspose.PDF untuk .NET API. API ini menyediakan cara sederhana untuk mengambil semua teks yang telah disorot dalam dokumen.
+## Perkenalan
 
-## Langkah 1: Muat dokumen PDF
+Saat bekerja dengan file PDF, mengekstrak teks yang disorot dapat menjadi tugas penting, baik untuk analisis data, peninjauan konten, atau sekadar mengatur catatan Anda. Jika Anda menggunakan Aspose.PDF untuk .NET, proses ini mudah dan efisien. Dalam tutorial ini, kami akan memandu Anda melalui cara mengekstrak teks yang disorot dari dokumen PDF menggunakan Aspose.PDF untuk .NET. Kami akan membahas semuanya mulai dari prasyarat hingga panduan langkah demi langkah, memastikan Anda memiliki pemahaman yang komprehensif pada akhirnya.
 
- Langkah pertama dalam mengekstrak teks yang disorot dalam file PDF adalah memuat dokumen menggunakan Aspose.PDF untuk .NET API. Anda dapat melakukan ini dengan membuat instance baru dari`Document` kelas dan meneruskan jalur ke dokumen PDF sebagai parameter. 
+## Prasyarat
+
+Sebelum menyelami kode, ada beberapa hal yang perlu Anda siapkan:
+
+-  Pustaka Aspose.PDF untuk .NET: Pastikan Anda telah menginstal pustaka Aspose.PDF. Jika belum, Anda dapat mengunduhnya dari[halaman rilis](https://releases.aspose.com/pdf/net/).
+- Lingkungan Pengembangan: Anda harus menyiapkan lingkungan pengembangan yang berfungsi, seperti Visual Studio.
+- Pengetahuan Dasar C#: Keakraban dengan bahasa pemrograman C# dan pemrograman berorientasi objek sangat penting.
+-  Lisensi Aspose yang Valid: Meskipun Anda dapat memulai dengan uji coba gratis, pertimbangkan untuk mendapatkan lisensi Aspose yang Valid.[lisensi sementara](https://purchase.aspose.com/temporary-license/) atau membeli satu dari[Di Sini](https://purchase.aspose.com/buy) untuk penggunaan tanpa batas.
+
+## Paket Impor
+
+Untuk memulai, Anda perlu mengimpor namespace yang diperlukan dalam proyek C# Anda. Ini penting untuk mengakses kelas dan metode yang disediakan oleh Aspose.PDF untuk .NET.
+
+```csharp
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Sekarang, mari kita bahas proses mengekstrak teks yang disorot dari file PDF menggunakan Aspose.PDF untuk .NET. Setiap langkah dijelaskan secara terperinci untuk membantu Anda memahami konsep dasar dan penerapannya.
+
+## Langkah 1: Siapkan Direktori Proyek Anda
+
+Pertama-tama, Anda perlu menyiapkan direktori proyek tempat file PDF Anda berada. Di sinilah keajaiban terjadi.
 
 ```csharp
 // Jalur ke direktori dokumen.
-string dataDir ="YOUR DOCUMENT DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Mengganti`"YOUR DOCUMENT DIRECTORY"`dengan jalur sebenarnya ke direktori tempat file PDF berada. Direktori ini adalah tempat aplikasi akan mengambil PDF untuk diproses.
+
+## Langkah 2: Muat Dokumen PDF
+
+ Selanjutnya, Anda perlu memuat dokumen PDF tempat Anda ingin mengekstrak teks yang disorot. Ini dilakukan dengan menggunakan`Document` kelas disediakan oleh Aspose.PDF.
+
+```csharp
 Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 ```
 
-## Langkah 2: Ulangi semua anotasi
+ Itu`Document` kelas diwujudkan dengan jalur ke file PDF. Di sini,`"ExtractHighlightedText.pdf"` adalah nama berkas PDF yang berisi teks yang disorot. Pastikan berkas ini ada di direktori yang ditentukan.
 
- Langkah selanjutnya adalah mengulang semua anotasi dalam dokumen PDF. Anda dapat melakukan ini menggunakan a`foreach` lingkaran, seperti ini:
+## Langkah 3: Akses Koleksi Anotasi
+
+Setelah dokumen PDF dimuat, langkah selanjutnya adalah mengakses anotasi pada halaman pertama dokumen. Anotasi digunakan dalam PDF untuk menambahkan informasi tambahan seperti sorotan, komentar, dan lain-lain.
 
 ```csharp
 foreach (Annotation annotation in doc.Pages[1].Annotations)
 {
-	// Kode ada di sini
-}
 ```
 
-## Langkah 3: Filter anotasi markup teks
+ Itu`Annotations` milik`Page` Objek menyediakan akses ke semua anotasi pada halaman tertentu PDF. Di sini, kita mengulang setiap anotasi pada halaman pertama.
 
- Di dalam`foreach` loop, Anda perlu memfilter semua anotasi yang bukan anotasi markup teks. Anda dapat melakukan ini dengan memeriksa apakah anotasi tersebut merupakan turunan dari`TextMarkupAnnotation` kelas.
+## Langkah 4: Filter untuk Anotasi Teks yang Disorot
+
+Sekarang setelah kita memiliki akses ke semua anotasi, kita perlu memfilter hanya anotasi teks yang disorot. Ini dicapai dengan memeriksa jenis setiap anotasi.
 
 ```csharp
 if (annotation is TextMarkupAnnotation)
 {
-	// Kode ada di sini
-}
+    TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
 ```
 
-## Langkah 4: Ambil fragmen teks yang disorot
+ Itu`TextMarkupAnnotation` kelas digunakan untuk mewakili anotasi markup teks, termasuk sorotan.`is` kata kunci memeriksa apakah anotasi bertipe`TextMarkupAnnotation` , dan jika ya, maka ia akan memberikan anotasi ke`TextMarkupAnnotation`.
 
- Setelah Anda memfilter semua anotasi markup teks, Anda dapat mengambil fragmen teks yang disorot untuk setiap anotasi. Anda dapat melakukannya dengan menelepon`GetMarkedTextFragments()` metode pada`TextMarkupAnnotation` obyek.
+## Langkah 5: Ekstrak Teks yang Disorot
+
+Setelah anotasi yang disorot sudah teridentifikasi, langkah berikutnya adalah mengekstrak teks yang terkait dengan sorotan tersebut.
 
 ```csharp
-TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
 TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
-```
-
-## Langkah 5: Tampilkan teks yang disorot
-
- Terakhir, Anda dapat menampilkan teks yang disorot kepada pengguna. Anda dapat melakukan ini dengan mengulang masing-masing`TextFragment` objek di`TextFragmentCollection` dan menelepon`Text` Properti.
-
-```csharp
 foreach (TextFragment tf in collection)
 {
-	Console.WriteLine(tf.Text);
+    Console.WriteLine(tf.Text);
 }
 ```
 
-### Contoh kode sumber untuk Ekstrak Teks yang Disorot menggunakan Aspose.PDF untuk .NET
-
-```csharp
-// Jalur ke direktori dokumen.
-string dataDir ="YOUR DOCUMENT DIRECTORY";
-Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
-
-foreach (Annotation annotation in doc.Pages[1].Annotations)
-{
-	if (annotation is TextMarkupAnnotation)
-	{
-		TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
-		TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
-		foreach (TextFragment tf in collection)
-		{
-			Console.WriteLine(tf.Text);
-		}
-	}
-}
-```
+ Itu`GetMarkedTextFragments()` metode mengembalikan koleksi`TextFragment` objek, masing-masing mewakili sebagian teks yang disorot. Kami mengulang koleksi ini dan mencetak teks setiap fragmen ke konsol.
 
 ## Kesimpulan
 
-Dalam tutorial ini, kita menjelajahi cara mengekstrak teks yang disorot dari dokumen PDF menggunakan Aspose.PDF untuk .NET. Dengan mengikuti panduan langkah demi langkah dan menggunakan kode sumber C# yang disediakan, pengembang dapat dengan mudah mengekstrak dan mengelola teks yang disorot dalam dokumen PDF mereka.
+Mengekstrak teks yang disorot dari PDF menggunakan Aspose.PDF untuk .NET merupakan fitur hebat yang dapat memperlancar alur kerja Anda, terutama jika Anda menangani dokumen berukuran besar. Dengan mengikuti langkah-langkah yang diuraikan dalam tutorial ini, Anda dapat dengan mudah menerapkan fungsi ini dalam proyek Anda sendiri. Baik Anda mengatur catatan, menyiapkan laporan, atau melakukan analisis data, metode ini menawarkan solusi yang mudah untuk mengekstrak dan memanfaatkan teks yang disorot.
 
-### FAQ untuk mengekstrak teks yang disorot dalam file PDF
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa yang dimaksud dengan anotasi markup teks dalam dokumen PDF?
+### Bisakah saya mengekstrak jenis anotasi lain menggunakan metode ini?  
+ Ya, Anda dapat mengekstrak jenis anotasi lain dengan memodifikasi`if` kondisi untuk memeriksa berbagai jenis anotasi, seperti`TextAnnotation`, `StampAnnotation`, dll.
 
-J: Anotasi markup teks adalah anotasi yang menyorot atau menandai teks tertentu dalam dokumen PDF. Contoh anotasi markup teks mencakup sorotan, garis bawah, dan coretan.
+### Apakah mungkin untuk mengekstrak teks yang disorot dari semua halaman PDF?  
+Tentu saja! Anda dapat mengulang setiap halaman dokumen PDF dan menerapkan logika ekstraksi yang sama untuk mengumpulkan teks yang disorot dari setiap halaman.
 
-#### T: Bisakah saya mengekstrak teks dari jenis anotasi lain menggunakan Aspose.PDF untuk .NET?
+### Apakah saya memerlukan lisensi untuk menggunakan Aspose.PDF untuk .NET?  
+ Meskipun Anda dapat memulai dengan uji coba gratis, disarankan untuk mendapatkan versi uji coba gratis.[lisensi sementara](https://purchase.aspose.com/temporary-license/)atau membeli lisensi penuh untuk akses tak terbatas ke semua fitur.
 
-J: Ya, Aspose.PDF untuk .NET menyediakan berbagai metode untuk mengekstrak teks dari berbagai jenis anotasi, termasuk anotasi markup teks, anotasi teks bebas, dan banyak lagi.
+### Bisakah saya menyimpan teks yang diekstrak ke dalam sebuah berkas alih-alih mencetaknya ke konsol?  
+Ya, Anda dapat dengan mudah memodifikasi kode untuk menyimpan teks yang diekstrak ke berkas teks atau format lain yang diinginkan.
 
-#### T: Apakah Aspose.PDF untuk .NET mendukung ekstraksi teks dari file PDF yang dilindungi kata sandi?
-
- J: Ya, Aspose.PDF untuk .NET mendukung ekstraksi teks dari file PDF yang dilindungi kata sandi. Anda harus memberikan kata sandi yang benar saat memuat dokumen PDF menggunakan`Document` kelas.
-
-#### T: Dapatkah saya memfilter teks yang disorot berdasarkan kriteria lain, seperti warna atau penulis?
-
-J: Ya, Anda dapat memfilter teks yang disorot berdasarkan kriteria lain, seperti warna, penulis, atau tanggal pembuatan. Aspose.PDF untuk .NET menyediakan metode untuk mengakses dan memfilter anotasi berdasarkan propertinya.
-
-#### T: Apakah mungkin untuk menyimpan teks yang diekstraksi dan disorot ke file terpisah?
-
-J: Ya, Anda dapat menyimpan teks yang disorot yang diekstrak ke file terpisah atau menyimpannya dalam struktur data untuk diproses atau dianalisis lebih lanjut.
+### Apakah Aspose.PDF mendukung platform lain selain .NET?  
+Ya, Aspose.PDF juga mendukung Java dan platform lainnya, menawarkan fungsionalitas serupa di berbagai lingkungan.

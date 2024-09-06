@@ -1,95 +1,95 @@
 ---
-title: Elementos de estrutura embutidos em PDF usando Java
-linktitle: Elementos de estrutura embutidos em PDF usando Java
+title: Elementos de estrutura em linha em PDF usando Java
+linktitle: Elementos de estrutura em linha em PDF usando Java
 second_title: API de processamento de PDF Java Aspose.PDF
-description: Aprenda como implementar elementos de estrutura embutidos em documentos PDF usando Java com Aspose.PDF para Java. Crie PDFs acessíveis e bem estruturados.
+description: Aprenda a implementar Inline Structure Elements em documentos PDF usando Java com Aspose.PDF para Java. Crie PDFs acessíveis e bem estruturados.
 type: docs
 weight: 10
 url: /pt/java/pdf-styles-and-formatting/inline-structure-elements-in-pdf-using-java/
 ---
 
-## Introdução aos elementos de estrutura embutidos em PDF usando Java
+## Introdução aos elementos de estrutura em linha em PDF usando Java
 
-Os documentos PDF desempenham um papel significativo no gerenciamento de documentos moderno. Eles fornecem uma maneira confiável e consistente de compartilhar informações em diferentes plataformas e dispositivos. Quando se trata de PDFs, não se trata apenas do conteúdo; a estrutura do documento também é importante, especialmente para acessibilidade e organização. Neste artigo, exploraremos "Elementos de estrutura inline em PDF usando Java" e como você pode implementá-los usando Aspose.PDF para Java.
+Documentos PDF desempenham um papel significativo no gerenciamento moderno de documentos. Eles fornecem uma maneira confiável e consistente de compartilhar informações entre diferentes plataformas e dispositivos. Quando se trata de PDFs, não se trata apenas do conteúdo; a estrutura do documento também importa, especialmente para acessibilidade e organização. Neste artigo, exploraremos "Elementos de estrutura em linha em PDF usando Java" e como você pode implementá-los usando Aspose.PDF para Java.
 
-## O que são elementos de estrutura embutidos em PDF?
+## O que são elementos de estrutura em linha em PDF?
 
-Elementos de estrutura embutidos são elementos dentro de um documento PDF que definem a estrutura do conteúdo. Eles ajudam a organizar o texto e outros elementos do documento, tornando-o mais acessível aos usuários com deficiência e melhorando a estrutura geral do documento. Esses elementos fornecem informações importantes sobre a semântica do conteúdo, facilitando a interpretação e apresentação do documento por softwares e leitores de tela.
+Elementos de Estrutura Inline são elementos dentro de um documento PDF que definem a estrutura do conteúdo. Eles ajudam a organizar o texto e outros elementos no documento, tornando-o mais acessível a usuários com deficiências e melhorando a estrutura geral do documento. Esses elementos fornecem informações importantes sobre a semântica do conteúdo, facilitando a interpretação e a apresentação do documento por softwares e leitores de tela.
 
-## Importância dos elementos da estrutura embutida
+## Importância dos elementos da estrutura em linha
 
-Os Elementos de Estrutura Inline desempenham um papel crucial na criação de documentos PDF acessíveis e bem organizados. Eles oferecem benefícios como:
+Elementos de Estrutura Inline desempenham um papel crucial na criação de documentos PDF acessíveis e bem organizados. Eles fornecem benefícios como:
 
-- Acessibilidade aprimorada para usuários com deficiência.
+- Acessibilidade aprimorada para usuários com deficiências.
 - Navegação e estrutura de documentos aprimoradas.
 - Melhor compatibilidade com tecnologias assistivas.
 - Conformidade com padrões de acessibilidade (por exemplo, PDF/UA).
 
-Agora, vamos ver como você pode implementar elementos de estrutura embutidos em seus documentos PDF usando Aspose.PDF para Java.
+Agora, vamos ver como você pode implementar Elementos de Estrutura Embutidos em seus documentos PDF usando o Aspose.PDF para Java.
 
-## Primeiros passos com Aspose.PDF para Java
+## Introdução ao Aspose.PDF para Java
 
-Antes de começarmos, você precisa configurar seu ambiente de desenvolvimento e instalar o Aspose.PDF para Java.
+Antes de começar, você precisa configurar seu ambiente de desenvolvimento e instalar o Aspose.PDF para Java.
 
 ## Instalando Aspose.PDF para Java
 
 Para instalar o Aspose.PDF para Java, siga estas etapas:
 
-1.  Baixe Aspose.PDF para Java: Visite o site Aspose[aqui](https://releases.aspose.com/pdf/java/) e baixe a versão mais recente do Aspose.PDF para Java.
+1.  Baixe Aspose.PDF para Java: Visite o site do Aspose[aqui](https://releases.aspose.com/pdf/java/) e baixe a versão mais recente do Aspose.PDF para Java.
 
-2. Adicione ao seu projeto: adicione a biblioteca Aspose.PDF ao seu projeto Java incluindo o arquivo JAR no caminho de construção do seu projeto.
+2. Adicionar ao seu projeto: adicione a biblioteca Aspose.PDF ao seu projeto Java incluindo o arquivo JAR no caminho de compilação do seu projeto.
 
 ## Configurando um projeto Java
 
 Crie um novo projeto Java ou abra um existente. Certifique-se de ter a biblioteca Aspose.PDF adicionada às dependências do seu projeto.
 
-## Adicionando Texto ao PDF
+## Adicionar texto ao PDF
 
-Agora que seu projeto está configurado, vamos começar criando um documento PDF e adicionando texto embutido nele.
+Agora que seu projeto está configurado, vamos começar criando um documento PDF e adicionando algum texto embutido nele.
 
 ### Criando um documento PDF
 
 ```java
-// Crie um novo documento PDF
+// Criar um novo documento PDF
 Document pdfDocument = new Document();
 ```
 
-### Adicionando texto embutido ao PDF
+### Adicionar texto embutido ao PDF
 
 ```java
 // Crie uma página no documento
 Page page = pdfDocument.getPages().add();
 
-// Adicione texto à página
+// Adicionar texto à página
 TextFragment textFragment = new TextFragment("Hello, Inline Structure Elements!");
 page.getParagraphs().add(textFragment);
 
-// Salve o documento
+// Salvar o documento
 pdfDocument.save("output.pdf");
 ```
 
-## Formatando Texto
+## Formatação de texto
 
-Os elementos de estrutura embutidos não apenas ajudam na estrutura do documento, mas também permitem formatar o texto para melhorar sua aparência visual.
+Os Elementos de Estrutura Embutidos não apenas ajudam na estrutura do documento, mas também permitem que você formate o texto para melhorar sua aparência visual.
 
 ### Alterando a cor do texto
 
-Você pode alterar a cor do texto embutido usando Aspose.PDF. Veja como:
+Você pode alterar a cor do texto inline usando Aspose.PDF. Veja como:
 
 ```java
 textFragment.getTextState().setForegroundColor(Color.getRed());
 ```
 
-### Ajustando tamanho e estilo da fonte
+### Ajustando o tamanho e o estilo da fonte
 
-Para modificar o tamanho e estilo da fonte:
+Para modificar o tamanho e o estilo da fonte:
 
 ```java
 textFragment.getTextState().setFontSize(18);
 textFragment.getTextState().setFont(FontRepository.findFont("Arial"));
 ```
 
-### Aplicando formatação a texto embutido
+### Aplicando formatação ao texto embutido
 
 Você pode aplicar várias opções de formatação ao texto embutido, incluindo negrito, itálico e sublinhado:
 
@@ -99,9 +99,9 @@ textFragment.getTextState().setItalic(true);
 textFragment.getTextState().setUnderline(TextStateDecoration.Line);
 ```
 
-## Adicionando imagens ao PDF
+## Adicionar imagens ao PDF
 
-Além do texto, você também pode adicionar imagens ao seu documento PDF.
+Além de texto, você também pode adicionar imagens ao seu documento PDF.
 
 ### Inserindo imagens em um PDF
 
@@ -116,7 +116,7 @@ image.setFile("image.png");
 page.getParagraphs().add(image);
 ```
 
-### Posicionar e redimensionar imagens
+### Posicionando e redimensionando imagens
 
 Você pode controlar a posição e o tamanho da imagem usando coordenadas e dimensões:
 
@@ -128,87 +128,87 @@ image.getRectangle().setHeight(150);
 
 ## Criando hiperlinks
 
-Os hiperlinks são essenciais para a criação de PDFs interativos. Vamos ver como você pode adicionar hiperlinks ao seu texto embutido.
+Hyperlinks são essenciais para criar PDFs interativos. Vamos ver como você pode adicionar hyperlinks ao seu texto inline.
 
-### Adicionando hiperlinks ao texto embutido
+### Adicionar hiperlinks ao texto embutido
 
 Para adicionar um hiperlink ao texto:
 
 ```java
-// Crie uma anotação de link
+// Criar uma anotação de link
 LinkAnnotation link = new LinkAnnotation(page, textFragment.getRectangle());
 link.setAction(new GoToURIAction(new URI("https://www.exemplo.com")));
 ```
 
 ### Vinculando a recursos externos
 
-Você pode vincular recursos externos, como sites, documentos ou endereços de email, especificando o URI apropriado.
+Você pode criar links para recursos externos, como sites, documentos ou endereços de e-mail, especificando o URI apropriado.
 
-## Estruturando conteúdo PDF
+## Estruturação de conteúdo PDF
 
-Agora, vamos explorar como os Elementos de Estrutura Inline podem ser usados para estruturar seu conteúdo PDF de maneira eficaz.
+Agora, vamos explorar como os Elementos de Estrutura Embutidos podem ser usados para estruturar seu conteúdo em PDF de forma eficaz.
 
 ### Compreendendo os elementos da estrutura do PDF
 
-Os Elementos da Estrutura do PDF fornecem uma estrutura hierárquica para o conteúdo do documento. Eles incluem elementos como parágrafos, títulos, listas e muito mais.
+Elementos de Estrutura de PDF fornecem uma estrutura hierárquica para o conteúdo do documento. Eles incluem elementos como parágrafos, títulos, listas e mais.
 
-### Elementos de estrutura embutidos em Aspose.PDF
+### Elementos de estrutura em linha no Aspose.PDF
 
-Aspose.PDF para Java permite criar e gerenciar elementos de estrutura embutidos em seu documento PDF. Esses elementos ajudam a definir a estrutura do texto, facilitando a navegação e a compreensão.
+Aspose.PDF para Java permite que você crie e gerencie Inline Structure Elements dentro do seu documento PDF. Esses elementos ajudam a definir a estrutura do texto, tornando-o mais fácil de navegar e entender.
 
-## Implementando Elementos de Estrutura Inline
+## Implementando elementos de estrutura em linha
 
-Para implementar elementos de estrutura embutidos em seu documento PDF, siga estas etapas:
+Para implementar Elementos de Estrutura Embutidos no seu documento PDF, siga estas etapas:
 
-### Criando Elementos de Estrutura Inline
+### Criando elementos de estrutura em linha
 
 ```java
-// Crie um elemento de estrutura embutido
+// Crie um elemento de estrutura em linha
 InlineTextElement inlineTextElement = new InlineTextElement();
 inlineTextElement.setText("This is an inline structure element.");
 
-// Associe o elemento de estrutura ao texto
+// Associar o elemento de estrutura ao texto
 textFragment.getTextState().setStructureElement(inlineTextElement);
 ```
 
-### Associando Elementos Estruturais ao Conteúdo
+### Associando elementos de estrutura com conteúdo
 
-Ao associar elementos de estrutura ao conteúdo, você fornece informações adicionais sobre a semântica do texto. Isto é crucial para a acessibilidade.
+Ao associar elementos de estrutura ao conteúdo, você fornece informações adicionais sobre a semântica do texto. Isso é crucial para acessibilidade.
 
-## Acessibilidade de PDFs
+## Acessibilidade PDF
 
-Garantir a acessibilidade do PDF é essencial, especialmente para usuários com deficiência. Os elementos de estrutura embutidos contribuem para a criação de documentos PDF acessíveis.
+Garantir a acessibilidade do PDF é essencial, especialmente para usuários com deficiências. Elementos de Estrutura Inline contribuem para criar documentos PDF acessíveis.
 
 ### Benefícios dos PDFs acessíveis
 
 PDFs acessíveis oferecem vários benefícios:
 
 - Eles podem ser lidos em voz alta por leitores de tela.
-- Eles fornecem opções de navegação para usuários com deficiência.
-- Cumprem as normas de acessibilidade, garantindo a inclusão.
+- Eles fornecem opções de navegação para usuários com deficiências.
+- Eles atendem aos padrões de acessibilidade, garantindo a inclusão.
 
 ## Conclusão
 
-Neste artigo, exploramos o conceito de elementos de estrutura embutidos em documentos PDF usando Java e Aspose.PDF para Java. Abordamos a importância desses elementos, como criar um PDF, adicionar texto e imagens, formatar conteúdo, adicionar hiperlinks, estruturar conteúdo usando elementos de estrutura inline e garantir a acessibilidade do PDF.
+Neste artigo, exploramos o conceito de Inline Structure Elements em documentos PDF usando Java e Aspose.PDF para Java. Abordamos a importância desses elementos, como criar um PDF, adicionar texto e imagens, formatar conteúdo, adicionar hiperlinks, estruturar conteúdo usando Inline Structure Elements e garantir a acessibilidade do PDF.
 
 ## Perguntas frequentes
 
-### O que são elementos de estrutura embutidos?
+### O que são elementos de estrutura em linha?
 
-Elementos de estrutura embutidos são elementos dentro de um documento PDF que definem a estrutura do conteúdo. Eles ajudam a organizar o texto e outros elementos do documento, tornando-o mais acessível aos usuários com deficiência.
+Elementos de Estrutura Inline são elementos dentro de um documento PDF que definem a estrutura do conteúdo. Eles ajudam a organizar o texto e outros elementos no documento, tornando-o mais acessível a usuários com deficiências.
 
 ### Como posso instalar o Aspose.PDF para Java?
 
- Para instalar o Aspose.PDF para Java, visite o site do Aspose[aqui](https://releases.aspose.com/pdf/java/) e baixe a versão mais recente. Em seguida, adicione o arquivo JAR ao caminho de construção do seu projeto Java.
+ Para instalar o Aspose.PDF para Java, visite o site do Aspose[aqui](https://releases.aspose.com/pdf/java/) e baixe a versão mais recente. Depois, adicione o arquivo JAR ao caminho de construção do seu projeto Java.
 
 ### Posso alterar a cor do texto embutido em um PDF?
 
-Sim, você pode alterar a cor do texto embutido em um PDF usando Aspose.PDF para Java. Use o`setTextState().setForegroundColor(Color)` método para especificar a cor.
+Sim, você pode alterar a cor do texto inline em um PDF usando Aspose.PDF para Java. Use o`setTextState().setForegroundColor(Color)` método para especificar a cor.
 
-### Qual é a vantagem de criar PDFs acessíveis?
+### Qual é o benefício de criar PDFs acessíveis?
 
-Os PDFs acessíveis beneficiam os usuários com deficiência, fornecendo recursos como compatibilidade com leitores de tela, opções de navegação e conformidade com padrões de acessibilidade (por exemplo, PDF/UA).
+PDFs acessíveis beneficiam usuários com deficiências ao fornecer recursos como compatibilidade com leitor de tela, opções de navegação e conformidade com padrões de acessibilidade (por exemplo, PDF/UA).
 
 ### Como posso criar hiperlinks em um PDF?
 
- Para criar hiperlinks em um PDF, use Aspose.PDF for Java para criar um`LinkAnnotation` e associe-o ao texto ou elemento desejado. Especifique o URL de destino ou a ação do hiperlink.
+ Para criar hiperlinks em um PDF, use Aspose.PDF para Java para criar um`LinkAnnotation` e associe-o ao texto ou elemento desejado. Especifique a URL de destino ou ação para o hyperlink.

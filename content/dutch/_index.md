@@ -1,7 +1,7 @@
 ---
 title: Aspose.PDF-zelfstudies
-additionalTitle: Stel API-referenties voor
-description: Tutorials en codefragmenten van de Aspose.PDF-productfamilie. Het bevat basis- en geavanceerde tutorials over het gebruik van Aspose.PDF.
+additionalTitle: Aspose API-referenties
+description: Tutorials en code-snippets van de Aspose.PDF productfamilie. Het bevat basis- en geavanceerde tutorials over het gebruik van Aspose.PDF.
 type: docs
 weight: 11
 url: /nl/
@@ -10,11 +10,11 @@ is_root: true
 
 ## Aspose.PDF voor .NET
 {{% alert color="primary" %}}
-Aspose.PDF voor .NET-tutorials en codefragmenten voor het maken, bewerken, converteren, afdrukken en nog veel meer functies voor PDF-documenten in uw toepassing. 
+Aspose.PDF voor .NET-zelfstudies en codefragmenten voor het maken, bewerken, converteren, afdrukken en nog veel meer functies voor PDF-documenten in uw toepassing. 
 {{% /alert %}}
 
-Dit zijn links naar enkele nuttige bronnen:
-- [Programmeren met document](./net/programming-with-document/)
+Hieronder vindt u links naar nuttige bronnen:
+- [Programmeren met Document](./net/programming-with-document/)
 - [Programmeren met annotaties](./net/annotations/)  
 - [Documentconversie](./net/document-conversion/)
 - [Programmeren met formulieren](./net/programming-with-forms/)
@@ -24,24 +24,24 @@ Dit zijn links naar enkele nuttige bronnen:
  
 ## Aspose.PDF-verwerkings-API voor Java
 {{% alert color="primary" %}}
-Beheers Aspose.PDF voor Java met uitgebreide tutorials. Maak, bewerk en optimaliseer moeiteloos PDF's. Verbeter vandaag nog uw PDF-ontwikkelingsvaardigheden!
+Leer Aspose.PDF voor Java met uitgebreide tutorials. Maak, bewerk en optimaliseer moeiteloos PDF's. Verbeter uw PDF-ontwikkelingsvaardigheden vandaag nog!
 {{% /alert %}}
 
-Dit zijn links naar enkele nuttige bronnen:
+Hieronder vindt u links naar nuttige bronnen:
 - [PDF-annotaties](./java/pdf-annotations/)
 - [PDF-bijlagen](./java/pdf-attachments/)
 - [PDF-bladwijzers](./java/pdf-bookmarks/)
 - [PDF-conversie en -transformatie](./java/pdf-conversion-transformation/)
 - [PDF-afbeeldingen](./java/pdf-images/)
-- [Manipulatie van PDF-afbeeldingen](./java/pdf-image-manipulation/)
-- [Links naar PDF-documenten](./java/pdf-document-links/)
-- [Manipulatie van PDF-pagina's](./java/pdf-page-manipulation/)
+- [PDF-afbeeldingmanipulatie](./java/pdf-image-manipulation/)
+- [PDF-documentkoppelingen](./java/pdf-document-links/)
+- [PDF-paginamanipulatie](./java/pdf-page-manipulation/)
 - [PDF-documentbewerkingen](./java/pdf-document-operations/)
 - [PDF-formuliervelden](./java/pdf-form-fields/)
 - [PDF-tabellen](./java/pdf-tables/)
 - [PDF-structuurelementen](./java/pdf-structure-elements/)
 - [PDF-tags en structuur](./java/pdf-tags-and-structure/)
-- [PDF-stijlen en opmaak](./java/pdf-styles-and-formatting/)
-- [PDF-tekstextractie](./java/pdf-text-extraction/)
+- [PDF-stijlen en -opmaak](./java/pdf-styles-and-formatting/)
+- [PDF-tekst extractie](./java/pdf-text-extraction/)
 - [PDF-validatie en -verificatie](./java/pdf-validation-and-verification/)
 

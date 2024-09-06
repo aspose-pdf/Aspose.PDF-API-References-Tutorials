@@ -1,143 +1,150 @@
 ---
-title: lnk Szerokość linii adnotacji
-linktitle: lnk Szerokość linii adnotacji
-second_title: Aspose.PDF z dokumentacją API .NET
-description: W tym artykule przedstawiono przewodnik krok po kroku dotyczący ustawiania szerokości linii adnotacji lnk przy użyciu pliku Aspose.PDF dla .NET.
+title: Szerokość linii adnotacji lnk
+linktitle: Szerokość linii adnotacji lnk
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak ustawić szerokość linii adnotacji atramentowej w pliku PDF za pomocą Aspose.PDF dla .NET. Ten szczegółowy samouczek przeprowadzi Cię przez każdy krok, zapewniając wysokiej jakości wydruk.
 type: docs
 weight: 110
 url: /pl/net/annotations/lnkannotationlinewidth/
 ---
-Aspose.PDF to potężne i powszechnie używane narzędzie do pracy z plikami PDF w aplikacjach .NET. Zapewnia różnorodne funkcje tworzenia, edytowania i manipulowania plikami PDF, w tym możliwość dodawania adnotacji do stron. W tym samouczku wyjaśnimy, jak ustawić szerokość linii adnotacji łącza za pomocą Aspose.PDF dla .NET.
+## Wstęp
 
-Po spełnieniu tych wymagań wstępnych utwórz nowy projekt aplikacji konsolowej w programie Visual Studio. Następnie Dodaj odwołanie do biblioteki Aspose.PDF dla .NET, klikając prawym przyciskiem myszy projekt w Eksploratorze rozwiązań, wybierając „Zarządzaj pakietami NuGet” i wyszukując „Aspose.PDF” w Menedżerze pakietów NuGet.
+Podczas pracy z dokumentami PDF dodawanie adnotacji może być skutecznym sposobem na wyróżnienie informacji lub dodanie interaktywnych elementów do plików. Jedną z takich adnotacji jest Ink Annotation, która umożliwia rysowanie linii o dowolnym kształcie w pliku PDF. Ale co zrobić, jeśli trzeba dostosować wygląd tych linii, w szczególności szerokość linii? W tym samouczku przeprowadzimy Cię przez proces ustawiania szerokości linii adnotacji atramentowej za pomocą Aspose.PDF dla .NET.
 
-Aby dodać adnotację do łącza do dokumentu PDF, wykonaj następujące kroki:
+## Wymagania wstępne
 
-##  Krok 1: Utwórz nowy`Document` object.
+Zanim przejdziemy do kodu, upewnijmy się, że wszystko jest skonfigurowane, by móc płynnie przejść przez ten samouczek:
+
+1.  Aspose.PDF dla .NET: Upewnij się, że masz zainstalowaną bibliotekę Aspose.PDF dla .NET. Możesz ją pobrać ze strony[strona do pobrania](https://releases.aspose.com/pdf/net/) lub zainstaluj go za pomocą Menedżera pakietów NuGet w programie Visual Studio.
+2. Środowisko programistyczne: W tym samouczku założono, że pracujesz w środowisku programistycznym .NET, takim jak Visual Studio.
+3. Podstawowa znajomość języka C#: Podstawowa znajomość języka C# pomoże Ci zrozumieć poszczególne etapy kodowania.
+4. Dokument PDF: Użyj istniejącego dokumentu PDF lub utwórz nowy na potrzeby tego samouczka.
+
+## Importowanie niezbędnych przestrzeni nazw
+
+Zanim zaczniesz kodować, upewnij się, że zaimportowałeś niezbędne przestrzenie nazw do swojego projektu:
+
 ```csharp
+using System.IO;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf;
+using Aspose.Pdf.Facades;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+```
+
+Te przestrzenie nazw udostępniają klasy i metody niezbędne do manipulowania dokumentami PDF, pracy z adnotacjami i obsługi elementów graficznych.
+
+Teraz, gdy spełniliśmy już wszystkie wymagania wstępne, podzielmy proces ustawiania szerokości linii adnotacji tuszem na jasne i łatwe do opanowania kroki.
+
+## Krok 1: Zainicjuj dokument PDF
+
+Najpierw musimy utworzyć lub otworzyć dokument PDF. W tym samouczku utworzymy nowy dokument PDF od podstaw.
+
+```csharp
+// Zainicjuj dokument PDF
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Określ katalog dokumentów
 Document doc = new Document();
+doc.Pages.Add(); // Dodaj pustą stronę do dokumentu
 ```
-## Krok 2: Dodaj nową stronę do dokumentu.
+
+ Tutaj inicjujemy nowy`Document` obiekt, który reprezentuje nasz plik PDF. Następnie dodajemy pustą stronę do tego dokumentu, aby z nim pracować.
+
+## Krok 2: Utwórz adnotację atramentową
+
+Następnie utworzymy samą adnotację atramentową. Obejmuje to zdefiniowanie punktów, które tworzą pociągnięcia atramentem.
+
 ```csharp
-doc.Pages.Add();
-```
-##  Krok 3: Utwórz listę`Point` arrays that represent the ink gesture for the annotation.
-```csharp
+// Utwórz adnotację atramentową
 IList<Point[]> inkList = new List<Point[]>();
-```
-##  Krok 4: Utwórz nowy`LineInfo` object that defines the properties of the ink gesture.
-```csharp
 LineInfo lineInfo = new LineInfo();
 lineInfo.VerticeCoordinate = new float[] { 55, 55, 70, 70, 70, 90, 150, 60 };
 lineInfo.Visibility = true;
-lineInfo.LineColor = System.Drawing.Color.Red;
+lineInfo.LineColor = Color.Red;
 lineInfo.LineWidth = 2;
 ```
-##  Krok 5: Utwórz nowy`Aspose.Pdf.Point` array that represents the gesture from the `LineInfo` object.
+
+ W tym kroku definiujemy`LineInfo` obiekt, który przechowuje współrzędne pociągnięć tuszem, ich widoczność, kolor i początkową szerokość linii.`VerticeCoordinate` Tablica zawiera współrzędne X i Y każdego punktu na obrysie.
+
+## Krok 3: Konwersja współrzędnych na punkty
+
+Teraz musimy przekonwertować te współrzędne na punkty, które będzie można wykorzystać w adnotacji tuszem.
+
 ```csharp
+// Konwersja współrzędnych na punkty
 int length = lineInfo.VerticeCoordinate.Length / 2;
 Aspose.Pdf.Point[] gesture = new Aspose.Pdf.Point[length];
 for (int i = 0; i < length; i++)
 {
     gesture[i] = new Aspose.Pdf.Point(lineInfo.VerticeCoordinate[2 * i], lineInfo.VerticeCoordinate[2 * i + 1]);
 }
-```
-## Krok 6: Dodaj gest do listy gestów pisma odręcznego.
-```csharp
-inkList.Add(gesture);
-```
-##  Krok 7: Utwórz nowy`InkAnnotation` object that represents the link annotation.
-```csharp
-InkAnnotation a1 = new InkAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 100, 300, 300), inkList);
-```
-## Krok 8: Ustaw temat i tytuł adnotacji.
-```csharp
-a1.Subject = "Test";
-a1.Title = "Title";
-```
-## Krok 9: Ustaw kolor adnotacji.
-```csharp
-a1.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
-```
-##  Krok 10: Utwórz nowy`Border` object that defines the properties of the annotation's border.
-```csharp
-Border border = new Border(a1);
-border.Width = 3;
-border.Effect = BorderEffect.Cloudy;
-border.Dash = new Dash(1, 1);
-border.Style = BorderStyle.Solid;
-```
-## Krok 11: Dodaj adnotację do strony.
-```csharp
-doc.Pages[1].Annotations.Add(a1);
-```
-## Krok 12: Zapisz dokument do pliku.
-```csharp
-// Zapisz plik wyjściowy
-doc.Save(dataDir);
-
-
-```
-### Przykład pokazuje szerokość linii adnotacji lnk w pliku Aspose.PDF dla .NET
-
-```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-Document doc = new Document();
-doc.Pages.Add();
-IList<Point[]> inkList = new List<Point[]>();
-LineInfo lineInfo = new LineInfo();
-lineInfo.VerticeCoordinate = new float[] { 55, 55, 70, 70, 70, 90, 150, 60 };
-lineInfo.Visibility = true;
-lineInfo.LineColor = System.Drawing.Color.Red;
-lineInfo.LineWidth = 2;
-int length = lineInfo.VerticeCoordinate.Length / 2;
-Aspose.Pdf.Point[] gesture = new Aspose.Pdf.Point[length];
-for (int i = 0; i < length; i++)
-{
-gesture[i] = new Aspose.Pdf.Point(lineInfo.VerticeCoordinate[2 * i], lineInfo.VerticeCoordinate[2 * i + 1]);
-}
 
 inkList.Add(gesture);
+```
+
+ Ta pętla przetwarza tablicę współrzędnych, konwertując każdą parę współrzędnych na`Point` obiekt, który następnie jest dodawany do naszego`inkList`.
+
+## Krok 4: Dodaj adnotację atramentową do strony PDF
+
+Mając już przygotowane punkty, możemy utworzyć adnotację atramentową i dodać ją do strony PDF.
+
+```csharp
+// Dodaj adnotację atramentową do strony PDF
 InkAnnotation a1 = new InkAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 100, 300, 300), inkList);
 a1.Subject = "Test";
 a1.Title = "Title";
-a1.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
+a1.Color = Aspose.Pdf.Color.FromRgb(Color.Green);
+```
+
+ W tym kroku inicjujemy`InkAnnotation`obiekt, określający stronę, prostokąt ograniczający i naszą listę punktów. Ustawiamy również temat, tytuł i kolor adnotacji.
+
+## Krok 5: Dostosuj obramowanie adnotacji
+
+Aby jeszcze bardziej dostosować wygląd naszej adnotacji, zmodyfikujemy właściwości jej obramowania.
+
+```csharp
+// Dostosuj obramowanie adnotacji
 Border border = new Border(a1);
 border.Width = 3;
 border.Effect = BorderEffect.Cloudy;
 border.Dash = new Dash(1, 1);
 border.Style = BorderStyle.Solid;
 doc.Pages[1].Annotations.Add(a1);
+```
 
+ Tutaj tworzymy`Border` obiekt dla naszej adnotacji, ustawiając jej szerokość, efekt, wzór myślnika i styl. Ten krok zapewnia, że adnotacja wyróżnia się wizualnie na stronie PDF.
+
+## Krok 6: Zapisz dokument PDF
+
+Na koniec, po wprowadzeniu wszystkich niezbędnych zmian, czas zapisać dokument.
+
+```csharp
+// Zapisz dokument PDF
 dataDir = dataDir + "lnkAnnotationLineWidth_out.pdf";
-// Zapisz plik wyjściowy
 doc.Save(dataDir);
+Console.WriteLine("\nInk annotation line width setup successfully.\nFile saved at " + dataDir);
 ```
+
+ Ten kod zapisuje zmodyfikowany dokument PDF z adnotacją atramentową w określonym katalogu.`Console.WriteLine` oświadczenie potwierdza pomyślne wykonanie kodu.
 
 ## Wniosek
 
-tym samouczku nauczyliśmy się, jak ustawić szerokość linii adnotacji łącza w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Aspose.PDF dla .NET zapewnia szeroką gamę narzędzi i funkcji do pracy z dokumentami PDF, w tym możliwość tworzenia i dostosowywania adnotacji do linków. Postępując zgodnie ze szczegółowym przewodnikiem i korzystając z dostarczonego kodu źródłowego C#, programiści mogą łatwo dodawać interaktywne łącza do swoich dokumentów PDF, poprawiając wygodę użytkownika i interaktywność swoich aplikacji. Aspose.PDF dla .NET to wszechstronna biblioteka, która umożliwia programistom .NET wydajną i efektywną pracę z plikami PDF.
+Gratulacje! Udało Ci się utworzyć i dostosować adnotację atramentową w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Ten samouczek obejmuje cały proces, od inicjalizacji dokumentu do zapisania pliku końcowego. Dzięki tej wiedzy możesz dalej odkrywać ogromne możliwości Aspose.PDF dla .NET i stosować podobne techniki do innych typów adnotacji lub manipulacji PDF.
 
-### Często zadawane pytania
+## Najczęściej zadawane pytania
 
-#### P: Co to jest adnotacja łącza w dokumencie PDF?
+### Czy mogę użyć różnych kolorów dla różnych części adnotacji tuszem?  
+ Tak, możesz utworzyć wiele`InkAnnotation` obiekty o różnych kolorach i dodać je do tej samej lub różnych stron dokumentu PDF.
 
-O: Adnotacja łącza w dokumencie PDF to interaktywny element, który umożliwia tworzenie hiperłączy lub akcji kierujących użytkownika do innej lokalizacji w tym samym dokumencie, zewnętrznej witrynie internetowej lub innym dokumencie PDF.
+### Jak dynamicznie zmienić szerokość linii?  
+ Możesz dostosować`LineWidth` własność`LineInfo` obiekt przed zamianą współrzędnych na punkty.
 
-#### P: Jak mogę ustawić szerokość linii adnotacji łącza przy użyciu Aspose.PDF dla .NET?
+### Czy można uczynić adnotację tuszem przezroczystą?  
+ Tak, możesz zmodyfikować`Opacity` własność`InkAnnotation` obiekt, aby uczynić go przezroczystym.
 
-O: Aby ustawić szerokość linii adnotacji łącza za pomocą Aspose.PDF dla .NET, możesz utworzyć`InkAnnotation` obiekt i określ właściwość szerokości linii.
+### Czy mogę dodać wiele adnotacji atramentowych do tej samej strony?  
+Oczywiście! Możesz dodać tyle adnotacji atramentowych, ile chcesz, do jednej strony, powtarzając proces.
 
-#### P: Jakie właściwości można dostosować dla adnotacji łącza w Aspose.PDF dla .NET?
-
-Odp.: Możesz dostosować różne właściwości adnotacji łącza w Aspose.PDF dla .NET, takie jak jego lokalizacja, rozmiar, kolor, właściwości obramowania (szerokość, styl, wzór kreski i efekt), temat, tytuł i widoczność.
-
-#### P: Czy mogę utworzyć adnotację łącza zawierającą wiele gestów pisma odręcznego?
-
- Odp.: Tak, możesz utworzyć adnotację łącza zawierającą wiele gestów pisma odręcznego, dodając wiele`Point` tablice do`InkAnnotation` obiekt.
-
-#### P: Jak mogę dodać adnotację łącza do określonej strony dokumentu PDF?
-
- O: Aby dodać adnotację łącza do konkretnej strony dokumentu PDF, podczas tworzenia dokumentu PDF należy określić numer strony.`InkAnnotation` obiekt. Na przykład,`new InkAnnotation(doc.Pages[1], ...)` dodaje adnotację o linku do pierwszej strony.
+### Jak usunąć adnotację atramentową z pliku PDF?  
+ Możesz usunąć adnotację za pomocą`doc.Pages[1].Annotations.Delete(a1)` metoda, gdzie`a1` jest obiektem adnotacji.

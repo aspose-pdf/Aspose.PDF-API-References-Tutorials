@@ -1,28 +1,28 @@
 ---
-title: 数字登录 PDF 文件
-linktitle: 数字登录 PDF 文件
+title: 对 PDF 文件进行数字签名
+linktitle: 对 PDF 文件进行数字签名
 second_title: Aspose.PDF for .NET API 参考
-description: 了解如何使用 Aspose.PDF for .NET 对 PDF 文件进行数字签名。
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文件上进行数字签名。
 type: docs
 weight: 40
 url: /zh/net/programming-with-security-and-signatures/digitally-sign/
 ---
-在本教程中，我们将引导您完成使用 Aspose.PDF for .NET 对 PDF 文件进行数字签名的过程。数字签名通过添加唯一的电子指纹来保证文档的真实性和完整性。
+在本教程中，我们将引导您完成使用 Aspose.PDF for .NET 在 PDF 文件中进行数字签名的过程。数字签名通过添加唯一的电子指纹来保证文档的真实性和完整性。
 
-## 第 1 步：先决条件
+## 步骤 1：先决条件
 
-在开始之前，请确保您具备以下先决条件：
+开始之前，请确保您满足以下先决条件：
 
-- C# 编程语言的基础知识
-- 在您的计算机上安装 Visual Studio
+- 具备 C# 编程语言的基础知识
+- 在你的机器上安装 Visual Studio
 - 已安装适用于 .NET 的 Aspose.PDF 库
 
-## 第2步：环境设置
+## 第 2 步：环境设置
 
-首先，请按照以下步骤设置您的开发环境：
+首先，请按照以下步骤设置你的开发环境：
 
 1. 打开 Visual Studio 并创建一个新的 C# 项目。
-2. 将所需的命名空间导入到您的代码文件中：
+2. 将所需的命名空间导入到代码文件中：
 
 ```csharp
 using Aspose.Pdf;
@@ -30,7 +30,7 @@ using Aspose.Pdf.Forms;
 using System.Collections.Generic;
 ```
 
-## 第三步：数字签名
+## 步骤 3：数字签名
 
 第一步是对 PDF 文件进行数字签名。提供的代码展示了如何使用 Aspose.PDF for .NET 进行数字签名。
 
@@ -53,11 +53,11 @@ using (Document document = new Document(inFile))
 }
 ```
 
-此代码加载 PDF 文件，创建具有指定外观的数字签名，然后使用添加的签名保存 PDF 文件。
+此代码加载一个 PDF 文件，创建具有指定外观的数字签名，然后保存添加签名的 PDF 文件。
 
-## 第四步：签名验证
+## 步骤 4：签名验证
 
-添加数字签名后，您可以检查PDF文件是否包含有效签名。
+添加数字签名后，您可以检查 PDF 文件是否包含有效签名。
 
 ```csharp
 using(Document document = new Document(outFile))
@@ -73,7 +73,7 @@ using(Document document = new Document(outFile))
                  {
                      if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms)
                      {
-                         //做一点事
+                         //做点什么
                      }
                  }
              }
@@ -82,7 +82,7 @@ using(Document document = new Document(outFile))
 }
 ```
 
-此代码验证 PDF 文件的第一个签名，并在签名经过认证且具有特定权限时执行其他操作。
+此代码验证 PDF 文件的第一个签名，如果签名已经认证且具有特定权限，则执行附加操作。
 
 ### 使用 Aspose.PDF for .NET 进行数字签名的示例源代码 
 ```csharp
@@ -121,7 +121,7 @@ try
 					{
 						if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms) //获取访问权限
 						{
-							//做一点事
+							//做点什么
 						}
 					}
 				}
@@ -137,46 +137,46 @@ catch (Exception ex)
 
 ## 结论
 
-恭喜！您已使用 Aspose.PDF for .NET 对 PDF 文件成功执行了数字签名。本教程介绍了从添加数字签名到验证其有效性的分步过程。您现在可以使用此功能通过数字签名来保护您的 PDF 文件。
+恭喜！您已成功使用 Aspose.PDF for .NET 对 PDF 文件执行数字签名。本教程介绍了从添加数字签名到验证其有效性的分步过程。您现在可以使用此功能通过数字签名保护您的 PDF 文件。
 
 ### 常见问题解答
 
 #### 问：本教程的目的是什么？
 
-答：本教程将指导您完成使用 Aspose.PDF for .NET 对 PDF 文件进行数字签名的过程。数字签名添加电子指纹以确保文档的真实性和完整性。
+答：本教程将指导您使用 Aspose.PDF for .NET 对 PDF 文件进行数字签名的过程。数字签名添加了电子指纹，以确保文档的真实性和完整性。
 
-#### 问：开始之前需要什么先决条件？
+#### 问：开始之前需要满足哪些先决条件？
 
-答：开始之前，请确保您对 C# 编程语言有基本的了解，已安装 Visual Studio，并安装了适用于 .NET 的 Aspose.PDF 库。
+答：开始之前，请确保您对 C# 编程语言有基本的了解，安装了 Visual Studio，并安装了适用于 .NET 的 Aspose.PDF 库。
 
-#### 问：如何搭建开发环境？
+#### 问：如何设置开发环境？
 
-答：按照提供的步骤设置开发环境，包括在 Visual Studio 中创建新的 C# 项目，并导入所需的命名空间。
+答：按照提供的步骤设置您的开发环境，包括在 Visual Studio 中创建一个新的 C# 项目，并导入所需的命名空间。
 
-#### 问：如何向 PDF 文件添加数字签名？
+#### 问：如何在 PDF 文件中添加数字签名？
 
-答：提供的示例代码演示了如何加载 PDF 文件、创建数字签名、指定外观以及保存签名的 PDF 文件。数字签名是使用添加的`Certify`的方法`PdfFileSignature`目的。
+答：提供的示例代码演示了如何加载 PDF 文件、创建数字签名、指定外观以及保存签名的 PDF 文件。使用`Certify`方法`PdfFileSignature`目的。
 
 #### 问：如何验证数字签名的有效性？
 
-A：添加数字签名后，您可以使用示例代码验证签名的有效性。它检查签名是否经过认证并具有特定的访问权限。
+A：添加数字签名后，您可以使用示例代码来验证签名的有效性，检查签名是否经过认证，是否具有特定的访问权限。
 
-#### 问：什么是`PKCS7` object represent?
+#### 问：`PKCS7` object represent?
 
-答： 的`PKCS7`对象用于为数字签名提供加密功能。它用于在提供的示例代码中创建数字签名。
+答：`PKCS7`对象用于提供数字签名的加密功能。它用于在提供的示例代码中创建数字签名。
 
 #### 问：我可以自定义数字签名的外观吗？
 
-答：是的，您可以通过在文件中指定图像的路径来自定义数字签名的外观。`SignatureAppearance`的财产`PdfFileSignature`目的。
+答：是的，您可以通过在`SignatureAppearance`的财产`PdfFileSignature`目的。
 
-#### 问：如果签名无效怎么办？
+#### 问：如果签名无效会发生什么情况？
 
-A：如果签名无效，则验证过程将失败，验证码块内的相应操作将不会被执行。
+A：如果签名无效，验证过程将失败，并且不会执行验证代码块内的相应操作。
 
-#### 问：如何确保我的数字签名的安全？
+#### 问：如何确保我的数字签名的安全性？
 
-答：数字签名在设计上是安全的，并使用加密技术来确保真实性和完整性。确保您的私钥安全并遵循处理数字签名的最佳实践。
+答：数字签名在设计上是安全的，并使用加密技术来确保真实性和完整性。请确保您的私钥安全无虞，并遵循处理数字签名的最佳实践。
 
-#### 问：我可以在 PDF 中添加多个数字签名吗？
+#### 问：我可以向 PDF 添加多个数字签名吗？
 
-答：是的，您可以使用以下命令向 PDF 文件添加多个数字签名`PdfFileSignature`对象的`Sign`或者`Certify`方法。每个签名都有自己的外观和配置。
+答：是的，您可以使用`PdfFileSignature`对象的`Sign`或者`Certify`方法。每个签名都有自己的外观和配置。

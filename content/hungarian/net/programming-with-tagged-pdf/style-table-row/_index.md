@@ -46,7 +46,7 @@ Megkaptuk a gyökérstruktúra elemet, amely a tömbelem tárolójaként fog szo
 Most hozzunk létre egy új táblázatszerkezet elemet a dokumentumunkhoz.
 
 ```csharp
-// Hozd létre a tömbstruktúra elemet
+// Hozza létre a tömbszerkezet elemet
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 ```
@@ -58,7 +58,7 @@ Létrehoztunk egy új tömbstruktúra elemet, és hozzáadtuk a gyökérstruktú
 Ebben a lépésben testre szabjuk a táblázat sorstílusait és tulajdonságait.
 
 ```csharp
-// Testreszabhatja a táblázatsor stílusait és tulajdonságait
+// Testreszabhatja a táblázat sorstílusait és tulajdonságait
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
@@ -228,7 +228,7 @@ V: Mielőtt elkezdené, győződjön meg arról, hogy a fejlesztői környezetet
 
 #### K: Hogyan hozhatok létre új PDF-dokumentumot, és állíthatom be a címét és a nyelvét az Aspose.PDF for .NET használatával?
 
- V: Új PDF-dokumentum létrehozásához létre kell hoznia a`Document` objektumot az Aspose.PDF könyvtárból. Az oktatóanyagban található C# forráskód bemutatja, hogyan hozhat létre dokumentumot, és hogyan állíthatja be a címét és a nyelvi tulajdonságait.
+ V: Új PDF-dokumentum létrehozásához létre kell hoznia a`Document` objektum az Aspose.PDF könyvtárból. Az oktatóanyagban található C# forráskód bemutatja, hogyan hozhat létre dokumentumot, és hogyan állíthatja be a címét és a nyelvi tulajdonságait.
 
 #### K: Mi a jelentősége a gyökérstruktúra elemnek egy PDF dokumentumban?
 
@@ -252,7 +252,7 @@ V: Az oktatóanyag példákat mutat be fejlécek, törzssorok és lábléc létr
 
 #### K: Hogyan építhetem be ezeket a fogalmakat a saját .NET alkalmazásaimba?
 
-V: A mellékelt C#-forráskód-példákat útmutatóként használhatja a táblázatsor-formázás megvalósításához saját .NET-alkalmazásaiban. Módosítsa és alakítsa át a kódot az igényeinek megfelelően, és integrálja projektjeibe.
+V: A mellékelt C#-forráskód-példákat útmutatóként használhatja a táblázatsorok formázásának megvalósításához saját .NET-alkalmazásaiban. Módosítsa és adaptálja a kódot az igényeinek megfelelően, és integrálja projektjeibe.
 
 #### K: Vannak-e ajánlott bevált módszerek a táblázatsorok formázására a PDF dokumentumokban?
 

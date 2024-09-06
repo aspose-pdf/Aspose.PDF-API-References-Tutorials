@@ -2,16 +2,16 @@
 title: Zeichnung mit Verlaufsfüllung hinzufügen
 linktitle: Zeichnung mit Verlaufsfüllung hinzufügen
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET eine Zeichnung mit Farbverlaufsfüllung hinzufügen. Schritt-für-Schritt-Anleitung zum Erstellen attraktiver PDF-Dokumente.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET eine Zeichnung mit Verlaufsfüllung hinzufügen. Schritt-für-Schritt-Anleitung zum Erstellen attraktiver PDF-Dokumente.
 type: docs
 weight: 20
 url: /de/net/programming-with-graphs/add-drawing-with-gradient-fill/
 ---
-In diesem Tutorial führen wir Sie Schritt für Schritt durch den folgenden C#-Quellcode, um mit Aspose.PDF für .NET eine Zeichnung mit Farbverlaufsfüllung zur Programmierung mit Grafiken hinzuzufügen.
+In diesem Tutorial führen wir Sie Schritt für Schritt durch den folgenden C#-Quellcode, um der Programmierung mit Grafiken mithilfe von Aspose.PDF für .NET eine Zeichnung mit Verlaufsfüllung hinzuzufügen.
 
-Stellen Sie sicher, dass Sie die Aspose.PDF-Bibliothek installiert und Ihre Entwicklungsumgebung eingerichtet haben, bevor Sie beginnen. Außerdem verfügen Sie über Grundkenntnisse der C#-Programmierung.
+Stellen Sie sicher, dass Sie die Aspose.PDF-Bibliothek installiert und Ihre Entwicklungsumgebung eingerichtet haben, bevor Sie beginnen. Sie benötigen außerdem Grundkenntnisse in der C#-Programmierung.
 
-## Schritt 1: Einrichten des Dokumentenverzeichnisses
+## Schritt 1: Einrichten des Dokumentverzeichnisses
 
 Im bereitgestellten Quellcode müssen Sie das Verzeichnis angeben, in dem Sie die resultierende PDF-Datei speichern möchten. Ändern Sie die Variable „dataDir“ in das gewünschte Verzeichnis.
 
@@ -21,16 +21,16 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## Schritt 2: Instanziieren eines Dokumentobjekts und Hinzufügen einer Seite
 
-Wir erstellen eine Instanz der Document-Klasse und fügen diesem Dokument eine Seite hinzu.
+Wir erstellen eine Instanz der Dokumentklasse und fügen diesem Dokument eine Seite hinzu.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Schritt 3: Erstellen eines Diagrammobjekts und Hinzufügen zur Seite
+## Schritt 3: Erstellen eines Graph-Objekts und Hinzufügen zur Seite
 
-Wir erstellen ein Graph-Objekt mit angegebenen Abmessungen und fügen es der Absatzsammlung der Seite hinzu.
+Wir erstellen ein Graph-Objekt mit angegebenen Dimensionen und fügen es der Absatzsammlung der Seite hinzu.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(300, 300);
@@ -46,7 +46,7 @@ Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(0, 0, 300, 
 graph.Shapes.Add(rect);
 ```
 
-## Schritt 5: Verlaufsfüllung konfigurieren
+## Schritt 5: Konfigurieren der Verlaufsfüllung
 
 Wir konfigurieren die Verlaufsfüllung für das Rechteck mithilfe der Klasse GradientAxialShading.
 
@@ -61,21 +61,21 @@ End = new Point(300, 300)
 };
 ```
 
-Dadurch wird eine Farbverlaufsfüllung von Rot nach Blau vom Punkt (0, 0) zum Punkt (300, 300) erstellt.
+Dadurch entsteht eine Verlaufsfüllung von Rot nach Blau, vom Punkt (0, 0) zum Punkt (300, 300).
 
 ## Schritt 6: Speichern der PDF-Datei
 
-Abschließend speichern wir die resultierende PDF-Datei mit dem Namen „AddDrawingWithGradientFill_out.pdf“ im angegebenen Verzeichnis.
+Abschließend speichern wir die entstandene PDF-Datei unter dem Namen „AddDrawingWithGradientFill_out.pdf“ im angegebenen Verzeichnis.
 
 ```csharp
 doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 ```
 
-### Beispielquellcode für „Zeichnung mit Farbverlauf hinzufügen“ mit Aspose.PDF für .NET 
+### Beispielquellcode zum Hinzufügen einer Zeichnung mit Farbverlaufsfüllung unter Verwendung von Aspose.PDF für .NET 
 
 ```csharp
 
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 Page page = doc.Pages.Add();
@@ -96,42 +96,42 @@ doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 ```
 ## Abschluss
 
-In diesem Tutorial haben wir Schritt für Schritt erklärt, wie Sie mit Aspose.PDF für .NET eine Zeichnung mit einer Verlaufsfüllung zur Programmierung mit Grafiken hinzufügen. Jetzt können Sie dieses Wissen nutzen, um attraktive PDF-Dokumente mit benutzerdefinierten Designs und Farbverlaufsfüllungen zu erstellen.
+In diesem Tutorial haben wir Schritt für Schritt erklärt, wie Sie mit Aspose.PDF für .NET eine Zeichnung mit Verlaufsfüllung in die Programmierung mit Grafiken einfügen. Jetzt können Sie dieses Wissen nutzen, um attraktive PDF-Dokumente mit benutzerdefinierten Designs und Verlaufsfüllungen zu erstellen.
 
-### FAQs
+### Häufig gestellte Fragen
 
 #### F: Was ist der Zweck dieses Tutorials?
 
-A: Dieses Tutorial soll Sie durch den Prozess des Hinzufügens einer Zeichnung mit Farbverlaufsfüllung zur Programmierung mit Grafiken mit Aspose.PDF für .NET führen.
+A: Dieses Tutorial führt Sie durch den Prozess des Hinzufügens einer Zeichnung mit Verlaufsfüllung zur Programmierung mit Grafiken unter Verwendung von Aspose.PDF für .NET.
 
-#### F: Welche Voraussetzungen sind vor dem Start erforderlich?
+#### F: Welche Voraussetzungen müssen vor dem Start erfüllt sein?
 
-A: Bevor Sie beginnen, stellen Sie sicher, dass Sie die Aspose.PDF-Bibliothek installiert und Ihre Entwicklungsumgebung eingerichtet haben. Darüber hinaus werden grundlegende Kenntnisse der C#-Programmierung empfohlen.
+A: Stellen Sie vor dem Start sicher, dass Sie die Aspose.PDF-Bibliothek installiert und Ihre Entwicklungsumgebung eingerichtet haben. Darüber hinaus sind Grundkenntnisse in der C#-Programmierung empfehlenswert.
 
-#### F: Wie lege ich das Verzeichnis zum Speichern der PDF-Datei fest?
+#### F: Wie gebe ich das Verzeichnis zum Speichern der PDF-Datei an?
 
 A: Im bereitgestellten Quellcode können Sie den Wert der Variable „dataDir“ ändern, um das Verzeichnis anzugeben, in dem Sie die resultierende PDF-Datei speichern möchten.
 
 #### F: Was ist der Zweck des Graph-Objekts?
 
-A: Das Graph-Objekt dient als Container für die Zeichenelemente. Es wird mit den angegebenen Abmessungen erstellt und der Absatzsammlung der Seite hinzugefügt.
+A: Das Graph-Objekt dient als Container für die Zeichenelemente. Es wird mit angegebenen Abmessungen erstellt und der Absatzsammlung der Seite hinzugefügt.
 
 #### F: Wie kann ich die Verlaufsfüllung für eine Form konfigurieren?
 
-A: Um die Verlaufsfüllung zu konfigurieren, können Sie die FillColor-Eigenschaft der GraphInfo einer Form mithilfe der GradientAxialShading-Klasse festlegen. Auf diese Weise können Sie die Start- und Endpunkte des Farbverlaufs sowie die Farben für den Übergang definieren.
+A: Um die Farbverlaufsfüllung zu konfigurieren, können Sie die FillColor-Eigenschaft der GraphInfo einer Form mithilfe der GradientAxialShading-Klasse festlegen. Auf diese Weise können Sie die Start- und Endpunkte des Farbverlaufs sowie die Farben für den Übergang definieren.
 
 #### F: Kann ich die Farben und die Richtung der Verlaufsfüllung anpassen?
 
-A: Ja, Sie können die Farben und die Richtung der Verlaufsfüllung anpassen, indem Sie die Farbobjekte anpassen und die Start- und Endpunkte des GradientAxialShading angeben.
+A: Ja, Sie können die Farben und die Richtung der Verlaufsfüllung anpassen, indem Sie die Farbobjekte anpassen und die Start- und Endpunkte der GradientAxialShading angeben.
 
 #### F: Was ist der letzte Schritt des Tutorials?
 
-A: Der letzte Schritt besteht darin, die resultierende PDF-Datei mit dem Namen „AddDrawingWithGradientFill_out.pdf“ im angegebenen Verzeichnis zu speichern.
+A: Im letzten Schritt wird die resultierende PDF-Datei unter dem Namen „AddDrawingWithGradientFill_out.pdf“ im angegebenen Verzeichnis gespeichert.
 
-#### F: Ist ein Beispielquellcode verfügbar?
+#### F: Gibt es einen Beispielquellcode?
 
-A: Ja, das Tutorial stellt einen Beispielquellcode bereit, den Sie als Referenz für die Implementierung der beschriebenen Schritte verwenden können.
+A: Ja, das Tutorial bietet einen Beispielquellcode, den Sie als Referenz für die Implementierung der beschriebenen Schritte verwenden können.
 
-#### F: Kann ich eine Farbverlaufsfüllung auch auf andere Formen als Rechtecke anwenden?
+#### F: Kann ich eine Verlaufsfüllung auch auf andere Formen als Rechtecke anwenden?
 
-A: Ja, Sie können eine Verlaufsfüllung auch auf andere Formen anwenden. Der Prozess umfasst das Konfigurieren der FillColor-Eigenschaft der GraphInfo der Form mithilfe der GradientAxialShading-Klasse.
+A: Ja, Sie können Farbverlaufsfüllungen auch auf andere Formen anwenden. Dazu konfigurieren Sie die FillColor-Eigenschaft der GraphInfo der Form mithilfe der GradientAxialShading-Klasse.

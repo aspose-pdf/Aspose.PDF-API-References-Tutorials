@@ -21,7 +21,7 @@ using Aspose.Pdf.InteractiveFeatures;
 
 ## Steg 2: Ange sökväg till dokumentmappen
 
- I det här steget måste du ange sökvägen till mappen som innehåller PDF-filen som du vill lägga till en applänk till. Byta ut`"YOUR DOCUMENT DIRECTORY"` följande kod med den faktiska sökvägen till din dokumentmapp:
+ det här steget måste du ange sökvägen till mappen som innehåller PDF-filen som du vill lägga till en applänk till. Ersätta`"YOUR DOCUMENT DIRECTORY"` i följande kod med den faktiska sökvägen till din dokumentmapp:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -37,7 +37,7 @@ Document document = new Document(dataDir + "CreateApplicationLink.pdf");
 
 ## Steg 4: Skapa applikationslänken
 
- I det här steget kommer vi att skapa applikationslänken med hjälp av`LinkAnnotation`anteckning. Vi kommer att ange koordinaterna och området för länken, samt åtgärden för att starta programmet. Här är motsvarande kod:
+ I det här steget kommer vi att skapa applikationslänken med hjälp av`LinkAnnotation` anteckning. Vi kommer att ange koordinaterna och området för länken, samt åtgärden för att starta programmet. Här är motsvarande kod:
 
 ```csharp
 Page page = document.Pages[1];
@@ -49,7 +49,7 @@ page.Annotations.Add(link);
 
 ## Steg 5: Spara den uppdaterade filen
 
- Låt oss nu spara den uppdaterade PDF-filen med hjälp av`Save` metod för`document` objekt. Här är motsvarande kod:
+Låt oss nu spara den uppdaterade PDF-filen med hjälp av`Save` metod för`document` objekt. Här är motsvarande kod:
 
 ```csharp
 dataDir = dataDir + "CreateApplicationLink_out.pdf";

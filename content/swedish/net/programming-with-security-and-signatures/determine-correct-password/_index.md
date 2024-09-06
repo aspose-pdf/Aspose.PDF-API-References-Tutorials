@@ -42,7 +42,7 @@ Se till att ersätta platshållarna med de faktiska platserna för din PDF-fil.
 
 ## Steg 4: Bestäm källa för PDF-kryptering
 
-När du har laddat upp käll-PDF-filen kan du avgöra om den är krypterad med hjälp av`IsEncrypted` metod för`PdfFileInfo` objekt.
+ När du har laddat upp käll-PDF-filen kan du avgöra om den är krypterad med hjälp av`IsEncrypted` metod för`PdfFileInfo` objekt.
 
 ```csharp
 Console.WriteLine("The file is password protected: " + info.IsEncrypted);
@@ -81,7 +81,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 // Ladda käll-PDF-fil
 PdfFileInfo info = new PdfFileInfo();
 info.BindPdf(dataDir + "IsPasswordProtected.pdf");
-// Bestäm om käll-PDF-filen är krypterad
+//Bestäm om käll-PDF-filen är krypterad
 Console.WriteLine("File is password protected " + info.IsEncrypted);
 String[] passwords = new String[5] { "test", "test1", "test2", "test3", "sample" };
 for (int passwordcount = 0; passwordcount < passwords.Length; passwordcount++)
@@ -119,7 +119,7 @@ S: Följ de medföljande stegen för att ställa in din utvecklingsmiljö, inklu
 
 #### F: Hur avgör jag om en PDF-fil är krypterad?
 
- A: Använd`PdfFileInfo` klass för att binda PDF-källfilen. Använd sedan`IsEncrypted` egenskap för att avgöra om PDF-filen är lösenordsskyddad.
+ A: Använd`PdfFileInfo` klass för att binda PDF-källfilen. Använd sedan`IsEncrypted`egenskap för att avgöra om PDF-filen är lösenordsskyddad.
 
 #### F: Hur hittar jag rätt lösenord för en PDF-fil?
 

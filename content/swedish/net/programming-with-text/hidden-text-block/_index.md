@@ -7,7 +7,7 @@ type: docs
 weight: 230
 url: /sv/net/programming-with-text/hidden-text-block/
 ---
-I den här handledningen kommer vi att förklara hur man skapar ett dolt textblock i PDF-fil med Aspose.PDF-biblioteket för .NET. Ett dolt textblock är en flytande text som blir synlig när muspekaren svävar över ett specifikt område. Vi kommer att gå igenom steg-för-steg-processen för att skapa det dolda textblocket med den medföljande C#-källkoden.
+den här handledningen kommer vi att förklara hur man skapar ett dolt textblock i PDF-fil med Aspose.PDF-biblioteket för .NET. Ett dolt textblock är en flytande text som blir synlig när muspekaren svävar över ett specifikt område. Vi kommer att gå igenom steg-för-steg-processen för att skapa det dolda textblocket med den medföljande C#-källkoden.
 
 ## Krav
 
@@ -18,7 +18,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 1: Konfigurera dokumentkatalogen
 
- Först måste du ställa in sökvägen till katalogen där du vill spara den genererade PDF-filen. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir`variabel med sökvägen till din önskade katalog.
+ Först måste du ställa in sökvägen till katalogen där du vill spara den genererade PDF-filen. Ersätta`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till din önskade katalog.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -45,7 +45,7 @@ Document document = new Document(outputFile);
 
 ## Steg 4: Hitta textfragmentet
 
- Vi använder a`TextFragmentAbsorber` objekt för att hitta textfragmentet som kommer att utlösa visningen av det dolda textblocket. I det här fallet söker vi efter den exakta texten "Flytta muspekaren hit för att visa flytande text".
+ Vi använder a`TextFragmentAbsorber`objekt för att hitta textfragmentet som kommer att utlösa visningen av det dolda textblocket. I det här fallet söker vi efter den exakta texten "Flytta muspekaren hit för att visa flytande text".
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
@@ -117,7 +117,7 @@ document.Pages.Accept(absorber);
 // Hämta det första extraherade textfragmentet
 TextFragmentCollection textFragments = absorber.TextFragments;
 TextFragment fragment = textFragments[1];
-// Skapa dolt textfält för flytande text i den angivna rektangeln på sidan
+//Skapa dolt textfält för flytande text i den angivna rektangeln på sidan
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
 // Ställ in text som ska visas som fältvärde
 floatingField.Value = "This is the \"floating text field\".";
@@ -139,7 +139,7 @@ document.Form.Add(floatingField);
 // Skapa osynlig knapp på textfragmentposition
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
 // Skapa ny gömma åtgärd för specificerat fält (anteckning) och osynlighetsflagga.
-//(Du kan också hänvisa till flytande fält med namnet om du angav det ovan.)
+// (Du kan också hänvisa till flytande fält med namnet om du angav det ovan.)
 // Lägg till åtgärder på musen enter/exit vid det osynliga knappfältet
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);
@@ -151,7 +151,7 @@ document.Save(outputFile);
 
 ## Slutsats
 
-I den här handledningen har du lärt dig hur du skapar ett dolt textblock med Aspose.PDF för .NET-biblioteket. Genom att följa steg-för-steg-guiden kan du skapa ett PDF-dokument med ett dolt textfält som blir synligt när muspekaren svävar över ett specifikt område. Du kan anpassa utseendet och beteendet för det dolda textblocket enligt dina krav.
+den här handledningen har du lärt dig hur du skapar ett dolt textblock med Aspose.PDF för .NET-biblioteket. Genom att följa steg-för-steg-guiden kan du skapa ett PDF-dokument med ett dolt textfält som blir synligt när muspekaren svävar över ett specifikt område. Du kan anpassa utseendet och beteendet för det dolda textblocket enligt dina krav.
 
 ### FAQ's
 
@@ -167,11 +167,11 @@ S: Att skapa ett dolt textblock kan vara användbart för interaktiva PDF-dokume
 
 S: Så här ställer du in dokumentkatalogen:
 
-1.  Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till katalogen där du vill spara den genererade PDF-filen.
+1.  Ersätta`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till katalogen där du vill spara den genererade PDF-filen.
 
 #### F: Hur skapar jag ett exempeldokument och lägger till ett textfragment till det?
 
-S: I handledningen använder du`Document` klass för att skapa ett exempel på PDF-dokument och lägga till ett textfragment. Detta textfragment fungerar som utlösaren för att visa det dolda textblocket.
+ S: I handledningen använder du`Document` klass för att skapa ett exempel på PDF-dokument och lägga till ett textfragment. Detta textfragment fungerar som utlösaren för att visa det dolda textblocket.
 
 #### F: Hur hittar jag textfragmentet som utlöser det dolda textblocket?
 
@@ -179,7 +179,7 @@ S: I handledningen använder du`Document` klass för att skapa ett exempel på P
 
 #### F: Hur skapar och anpassar jag det dolda textfältet?
 
- A: Du skapar en`TextBoxField` objekt för att representera det dolda textfältet. Handledningen tillhandahåller kod för att ställa in olika egenskaper som position, värde, utseende och beteende för det dolda textfältet.
+ A: Du skapar en`TextBoxField`objekt för att representera det dolda textfältet. Handledningen tillhandahåller kod för att ställa in olika egenskaper som position, värde, utseende och beteende för det dolda textfältet.
 
 #### F: Hur skapar jag en osynlig knapp kopplad till det dolda textblocket?
 

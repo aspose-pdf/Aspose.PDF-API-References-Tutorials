@@ -1,24 +1,24 @@
 ---
 title: Riempi il testo del tratto nel file PDF
 linktitle: Riempi il testo del tratto nel file PDF
-second_title: Aspose.PDF per riferimento all'API .NET
-description: Scopri come riempire e delineare facilmente il testo nel file PDF con Aspose.PDF per .NET.
+second_title: Riferimento API Aspose.PDF per .NET
+description: Scopri come riempire e delineare facilmente il testo in un file PDF con Aspose.PDF per .NET.
 type: docs
 weight: 90
 url: /it/net/programming-with-stamps-and-watermarks/fill-stroke-text/
 ---
-In questo tutorial ti guideremo passo dopo passo su come riempire e delineare il testo nel file PDF utilizzando Aspose.PDF per .NET. Ti mostreremo come utilizzare il codice sorgente C# fornito per applicare i colori di riempimento e contorno al testo nel file PDF.
+In questo tutorial, ti guideremo passo dopo passo su come riempire e delineare il testo in un file PDF usando Aspose.PDF per .NET. Ti mostreremo come usare il codice sorgente C# fornito per applicare colori di riempimento e contorno al testo nel file PDF.
 
-## Passaggio 1: configurazione dell'ambiente
+## Fase 1: Impostazione dell'ambiente
 
 Prima di iniziare, assicurati di avere quanto segue:
 
 - Un ambiente di sviluppo .NET installato.
-- La libreria Aspose.PDF per .NET scaricata e a cui si fa riferimento nel progetto.
+- La libreria Aspose.PDF per .NET è stata scaricata e a cui si fa riferimento nel progetto.
 
 ## Passaggio 2: creazione dell'oggetto TextState
 
-Il primo passaggio consiste nel creare un oggetto TextState per passare le proprietà avanzate. Ecco come:
+Il primo passo è creare un oggetto TextState per passare le proprietà avanzate. Ecco come:
 
 ```csharp
 // Crea un oggetto TextState per trasferire proprietà avanzate
@@ -27,64 +27,64 @@ TextState ts = new TextState();
 // Imposta il colore del contorno
 ts.StrokingColor = Color.Gray;
 
-// Definire la modalità di rendering del testo
+// Definisci la modalità di rendering del testo
 ts.RenderingMode = TextRenderingMode.StrokeText;
 ```
 
-Il codice precedente crea un nuovo oggetto TextState e imposta il colore del contorno e il modo in cui viene visualizzato il testo.
+Il codice soprastante crea un nuovo oggetto TextState e imposta il colore del contorno e il modo in cui viene visualizzato il testo.
 
 ## Passaggio 3: caricamento del documento PDF
 
-Ora che l'oggetto TextState è pronto, possiamo caricare il documento PDF a cui vogliamo applicare il riempimento e il contorno del testo. Ecco come:
+Ora che l'oggetto TextState è pronto, possiamo caricare il documento PDF in cui vogliamo applicare il riempimento e il contorno del testo. Ecco come:
 
 ```csharp
 // Carica il documento PDF come input
 Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
 ```
 
-Il codice sopra carica il documento PDF esistente utilizzando la classe PdfFileStamp dalla libreria Aspose.PDF.Facades.
+Il codice sopra carica il documento PDF esistente utilizzando la classe PdfFileStamp della libreria Aspose.PDF.Facades.
 
-## Passaggio 4: aggiungi riempimento e tratto al testo
+## Passaggio 4: aggiungere riempimento e tratto al testo
 
 Ora che il documento PDF è caricato, possiamo aggiungere il riempimento e il contorno al testo. Ecco come:
 
 ```csharp
-// Creare un timbro (Timbro) con il testo e le proprietà definiti
+// Crea un timbro (Timbro) con il testo e le proprietà definiti
 Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
 stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
 
 // Associa l'oggetto TextState
 stamp.BindTextState(ts);
 
-// Imposta l'origine X, Y
+// Imposta origine X, Y
 stamp.SetOrigin(100, 100);
 stamp. Opacity = 5;
 stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
 stamp.Rotation = 45.0F;
 stamp. IsBackground = false;
 
-// Aggiungi il timbro al documento
+// Aggiungere il timbro al documento
 fileStamp.AddStamp(stamp);
 ```
 
-Il codice precedente crea un timbro con il testo specificato e le proprietà Fill e Stroke definite.
+Il codice soprastante crea un timbro con il testo specificato e le proprietà Riempimento e Tratto definite.
 
-## Passaggio 5: salvare il documento di output
+## Passaggio 5: Salvare il documento di output
 
 Una volta aggiunto il timbro di testo, possiamo salvare il documento PDF modificato. Ecco come:
 
 ```csharp
-// Salva il documento modificato
+// Salvare il documento modificato
 fileStamp.Save(dataDir + "output_out.pdf");
 fileStamp.Close();
 ```
 
-Il codice precedente salva il documento PDF modificato nella directory specificata.
+Il codice soprastante salva il documento PDF modificato nella directory specificata.
 
-### Codice sorgente di esempio per il testo del tratto di riempimento utilizzando Aspose.PDF per .NET 
+### Esempio di codice sorgente per il testo Fill Stroke utilizzando Aspose.PDF per .NET 
 ```csharp
 
-// Il percorso della directory dei documenti.
+// Percorso verso la directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 // Crea un oggetto TextState per trasferire proprietà avanzate
@@ -120,46 +120,46 @@ fileStamp.Close();
 
 ## Conclusione
 
-Congratulazioni! Hai imparato come riempire e delineare il testo in un documento PDF utilizzando Aspose.PDF per .NET. Ora puoi applicare queste conoscenze per personalizzare i colori di riempimento e contorno nei tuoi documenti PDF.
+Congratulazioni! Hai imparato come riempire e delineare il testo in un documento PDF usando Aspose.PDF per .NET. Ora puoi applicare questa conoscenza per personalizzare i colori di riempimento e di contorno nei tuoi documenti PDF.
 
 ### Domande frequenti sul testo del tratto di riempimento nel file PDF
 
 #### D: Cosa significa riempire e delineare il testo in un documento PDF e quando potrebbe essere necessario farlo?
 
-R: Per riempire e delineare il testo in un documento PDF è necessario applicare colori all'interno dei caratteri del testo (riempimento) e ai bordi attorno al testo (contorno). Questo può essere utilizzato per migliorare l'aspetto visivo del testo, creare enfasi o evidenziare contenuti specifici all'interno del PDF.
+R: Riempire e delineare il testo in un documento PDF comporta l'applicazione di colori all'interno dei caratteri del testo (riempimento) e ai bordi attorno al testo (contorno). Questo può essere utilizzato per migliorare l'aspetto visivo del testo, creare enfasi o evidenziare contenuti specifici all'interno del PDF.
 
 #### D: In che modo il codice sorgente C# fornito riesce a riempire e delineare il testo in un file PDF?
 
- R: Il codice sorgente fornito dimostra come creare un file`TextState` oggetto per definire proprietà di testo avanzate, come il colore del contorno e la modalità di rendering. Quindi utilizza Aspose.PDF.Facades per caricare un documento PDF esistente, creare un timbro contenente il testo con le proprietà di riempimento e tratto specificate e aggiungere il timbro al documento.
+ A: Il codice sorgente fornito dimostra come creare un`TextState` oggetto per definire proprietà di testo avanzate, come colore del contorno e modalità di rendering. Quindi usa Aspose.PDF.Facades per caricare un documento PDF esistente, creare un timbro contenente il testo con proprietà di riempimento e tratto specificate e aggiungere il timbro al documento.
 
-####  D: Qual è lo scopo di`TextState` object in the code?
+####  D: Qual è lo scopo del`TextState` object in the code?
 
- R: Il`TextState`L'oggetto viene utilizzato per definire proprietà avanzate del testo, incluso il colore del contorno del testo (tratto) e la modalità di rendering. Ti consente di personalizzare l'aspetto del testo in termini di tratto e riempimento.
+ A: Il`TextState`object viene utilizzato per definire proprietà di testo avanzate, tra cui il colore del contorno del testo (tratto) e la modalità di rendering. Consente di personalizzare il modo in cui il testo appare in termini di tratto e riempimento.
 
 #### D: Posso applicare colori di riempimento e contorno diversi a parti diverse dello stesso testo?
 
- R: Sì, puoi modificare il codice per crearne di diversi`TextState` oggetti con colori di riempimento e contorno distinti e applicarli a parti specifiche del testo utilizzando separazioni`Stamp` oggetti.
+ A: Sì, puoi modificare il codice per creare diversi`TextState` oggetti con colori di riempimento e contorno distinti e applicarli a parti specifiche del testo utilizzando colori separati`Stamp` oggetti.
 
 #### D: Posso applicare colori di riempimento e contorno al testo già presente nel documento PDF?
 
- R: Sì, è possibile utilizzare principi simili per applicare colori di riempimento e contorno al testo esistente nel documento PDF selezionando gli oggetti di testo appropriati e aggiungendoli come timbri con il carattere desiderato`TextState` proprietà.
+ R: Sì, puoi usare principi simili per applicare colori di riempimento e contorno al testo esistente nel documento PDF selezionando gli oggetti di testo appropriati e aggiungendoli come timbri con il colore desiderato.`TextState` proprietà.
 
-#### D: Come posso regolare l'opacità e la fusione del testo riempito e contornato?
+#### D: Come posso regolare l'opacità e la sfumatura del testo riempito e contornato?
 
- R: Il codice fornito ti consente di impostare le proprietà di opacità e fusione del timbro utilizzando`Opacity` E`BlendingSpace`proprietà, rispettivamente. È possibile regolare questi valori per ottenere l'effetto visivo desiderato.
+ A: Il codice fornito consente di impostare l'opacità e le proprietà di fusione del timbro utilizzando`Opacity` E`BlendingSpace`proprietà, rispettivamente. È possibile regolare questi valori per ottenere l'effetto visivo desiderato.
 
-#### D: Come posso applicare colori di riempimento e contorno diversi a più timbri all'interno dello stesso documento PDF?
+#### D: Come posso applicare colori di riempimento e contorno diversi a più timbri nello stesso documento PDF?
 
- R: Puoi crearne più di uno`TextState` oggetti con colori di riempimento e contorno diversi, quindi creali separatamente`Stamp` oggetti per ogni serie di testo con colori distinti. Aggiungi questi timbri allo stesso documento PDF utilizzando il file`PdfFileStamp` classe.
+ A: Puoi crearne più di uno`TextState` oggetti con diversi colori di riempimento e contorno, quindi creare separati`Stamp` oggetti per ogni set di testo con colori distinti. Aggiungere questi timbri allo stesso documento PDF utilizzando il`PdfFileStamp` classe.
 
-#### D: Posso utilizzare caratteri diversi da Arial per il testo delineato e riempito?
+#### D: Posso usare font diversi da Arial per il testo delineato e riempito?
 
- R: Sì, puoi cambiare il carattere modificando il parametro del nome del carattere nel file`FormattedText` costruttore durante la creazione del timbro. Puoi utilizzare qualsiasi carattere disponibile sul tuo sistema.
+ A: Sì, puoi cambiare il font modificando il parametro del nome del font nel`FormattedText` costruttore quando si crea il timbro. Puoi usare qualsiasi font disponibile sul tuo sistema.
 
 #### D: Come posso modificare l'angolo di rotazione del testo contornato e riempito?
 
- R: Il codice fornito consente di impostare l'angolo di rotazione del timbro utilizzando`Rotation` proprietà. È possibile regolare questa proprietà per specificare l'angolo di rotazione desiderato per il testo.
+ A: Il codice fornito consente di impostare l'angolo di rotazione del timbro utilizzando il`Rotation` proprietà. Puoi regolare questa proprietà per specificare l'angolo di rotazione desiderato per il testo.
 
-#### D: Come posso controllare la posizione e la dimensione del testo contornato e riempito sulla pagina?
+#### D: Come posso controllare la posizione e la dimensione del testo delineato e riempito sulla pagina?
 
-R: Puoi usare il`SetOrigin` metodo del`Stamp` oggetto per impostare le coordinate X e Y della posizione del timbro sulla pagina. Inoltre, puoi regolare la dimensione del carattere nel file`FormattedText` costruttore per controllare la dimensione del testo.
+ A: Puoi usare il`SetOrigin` metodo del`Stamp` oggetto per impostare le coordinate X e Y della posizione del timbro sulla pagina. Inoltre, puoi regolare la dimensione del carattere nel`FormattedText` costruttore per controllare la dimensione del testo.

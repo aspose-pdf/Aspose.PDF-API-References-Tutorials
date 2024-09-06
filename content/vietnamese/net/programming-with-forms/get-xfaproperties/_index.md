@@ -1,17 +1,17 @@
 ---
-title: Nhận thuộc tính XFA
-linktitle: Nhận thuộc tính XFA
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Dễ dàng lấy thuộc tính XFA của các trường biểu mẫu trong tài liệu PDF của bạn với Aspose.PDF cho .NET.
+title: Nhận XFAProperties
+linktitle: Nhận XFAProperties
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Dễ dàng có được các thuộc tính XFA của trường biểu mẫu trong tài liệu PDF của bạn với Aspose.PDF cho .NET.
 type: docs
 weight: 160
 url: /vi/net/programming-with-forms/get-xfaproperties/
 ---
-Trong hướng dẫn này, chúng tôi sẽ chỉ cho bạn cách lấy thuộc tính XFA của các trường biểu mẫu trong tài liệu PDF bằng Aspose.PDF cho .NET. Chúng tôi sẽ giải thích từng bước về mã nguồn C# để hướng dẫn bạn thực hiện quy trình này.
+Trong hướng dẫn này, chúng tôi sẽ chỉ cho bạn cách lấy các thuộc tính XFA của các trường biểu mẫu trong tài liệu PDF bằng Aspose.PDF cho .NET. Chúng tôi sẽ giải thích mã nguồn C# từng bước để hướng dẫn bạn thực hiện quy trình này.
 
 ## Bước 1: Chuẩn bị
 
-Đảm bảo bạn đã nhập các thư viện cần thiết và đặt đường dẫn đến thư mục tài liệu của mình:
+Hãy đảm bảo bạn đã nhập các thư viện cần thiết và đặt đường dẫn đến thư mục tài liệu của bạn:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -35,14 +35,14 @@ string[] names = doc.Form.XFA.FieldNames;
 
 ## Bước 4: Đặt giá trị trường
 
-Đặt giá trị cho các trường XFA:
+Đặt giá trị cho trường XFA:
 
 ```csharp
 doc.Form.XFA[names[0]] = "Field 0";
 doc.Form.XFA[names[1]] = "Field 1";
 ```
 
-## Bước 5: Lấy vị trí trường
+## Bước 5: Lấy vị trí các trường
 
 Lấy vị trí của các trường XFA:
 
@@ -60,7 +60,7 @@ dataDir = dataDir + "Filled_XFA_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Mã nguồn mẫu cho Nhận XFAProperties bằng Aspose.PDF cho .NET 
+### Mã nguồn mẫu để lấy XFAProperties bằng Aspose.PDF cho .NET 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -70,9 +70,9 @@ string[] names = doc.Form.XFA.FieldNames;
 // Đặt giá trị trường
 doc.Form.XFA[names[0]] = "Field 0";
 doc.Form.XFA[names[1]] = "Field 1";
-// Nhận vị trí hiện trường
+// Nhận vị trí thực địa
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["x"].Value);
-// Nhận vị trí hiện trường
+// Nhận vị trí thực địa
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["y"].Value);
 dataDir = dataDir + "Filled_XFA_out.pdf";
 // Lưu tài liệu đã cập nhật
@@ -82,26 +82,26 @@ Console.WriteLine("\nXFA fields properties retrieved successfully.\nFile saved a
 
 ## Phần kết luận
 
-Trong hướng dẫn này, chúng ta đã tìm hiểu cách lấy thuộc tính XFA của các trường biểu mẫu trong tài liệu PDF bằng Aspose.PDF cho .NET. Bằng cách làm theo các bước này, bạn có thể dễ dàng trích xuất thông tin trường XFA, chẳng hạn như vị trí, từ tài liệu PDF bằng Aspose.PDF.
+Trong hướng dẫn này, chúng ta đã học cách lấy các thuộc tính XFA của các trường biểu mẫu trong tài liệu PDF bằng Aspose.PDF cho .NET. Bằng cách làm theo các bước này, bạn có thể dễ dàng trích xuất thông tin trường XFA, chẳng hạn như vị trí, từ tài liệu PDF bằng Aspose.PDF.
 
 ### Câu hỏi thường gặp
 
-#### Câu hỏi: Thuộc tính XFA trong tài liệu PDF là gì?
+#### H: Thuộc tính XFA trong tài liệu PDF là gì?
 
-Đáp: Thuộc tính XFA (Kiến trúc biểu mẫu XML) trong tài liệu PDF đề cập đến cấu trúc dựa trên XML được sử dụng để xác định các biểu mẫu động có bố cục phức tạp và các tính năng tương tác. XFA cho phép thiết kế biểu mẫu phong phú và xử lý dữ liệu trong tài liệu PDF, hỗ trợ các tính năng như tính toán, xác thực và nội dung động. Aspose.PDF for .NET cung cấp API để hoạt động với các biểu mẫu XFA và truy xuất các thuộc tính khác nhau, bao gồm tên trường, giá trị, vị trí, v.v.
+A: Thuộc tính XFA (Kiến trúc biểu mẫu XML) trong tài liệu PDF đề cập đến cấu trúc dựa trên XML được sử dụng để xác định các biểu mẫu động với bố cục phức tạp và các tính năng tương tác. XFA cho phép thiết kế biểu mẫu phong phú và xử lý dữ liệu trong tài liệu PDF, cho phép các tính năng như tính toán, xác thực và nội dung động. Aspose.PDF cho .NET cung cấp API để làm việc với biểu mẫu XFA và truy xuất nhiều thuộc tính khác nhau, bao gồm tên trường, giá trị, vị trí, v.v.
 
-#### Câu hỏi: Tôi có thể sửa đổi thuộc tính XFA bằng Aspose.PDF cho .NET không?
+#### H: Tôi có thể sửa đổi thuộc tính XFA bằng Aspose.PDF cho .NET không?
 
-Trả lời: Có, bạn có thể sửa đổi các thuộc tính XFA bằng Aspose.PDF cho .NET. API cho phép bạn truy cập và cập nhật các giá trị của các trường biểu mẫu XFA theo chương trình. Bạn có thể đặt giá trị mới cho các trường XFA, cập nhật vị trí của chúng, thay đổi giao diện và thực hiện các hành động khác để tùy chỉnh biểu mẫu XFA một cách linh hoạt.
+A: Có, bạn có thể sửa đổi thuộc tính XFA bằng Aspose.PDF cho .NET. API cho phép bạn truy cập và cập nhật giá trị của các trường biểu mẫu XFA theo chương trình. Bạn có thể đặt giá trị mới cho các trường XFA, cập nhật vị trí của chúng, thay đổi giao diện và thực hiện các hành động khác để tùy chỉnh biểu mẫu XFA một cách động.
 
-#### Câu hỏi: Làm cách nào để xác định xem tài liệu PDF có chứa biểu mẫu XFA hay không?
+#### H: Làm sao tôi có thể xác định xem tài liệu PDF có chứa biểu mẫu XFA hay không?
 
- Đáp: Để xác định xem tài liệu PDF có chứa biểu mẫu XFA hay không, bạn có thể kiểm tra xem`Form` tài sản của`Document`đối tượng có rỗng hay không. Nếu tài liệu chứa các biểu mẫu XFA,`Form` thuộc tính sẽ có sẵn và bạn có thể tiến hành các hoạt động tiếp theo liên quan đến XFA.
+ A: Để xác định xem tài liệu PDF có chứa biểu mẫu XFA hay không, bạn có thể kiểm tra xem`Form` tài sản của`Document`đối tượng là null hay không. Nếu tài liệu chứa các biểu mẫu XFA,`Form` tài sản sẽ khả dụng và bạn có thể tiến hành các hoạt động liên quan đến XFA tiếp theo.
 
-#### Câu hỏi: Các biểu mẫu XFA có được hỗ trợ trong tất cả các ứng dụng và trình xem PDF không?
+#### H: Biểu mẫu XFA có được hỗ trợ trong tất cả các ứng dụng và trình xem PDF không?
 
-Đáp: Mặc dù biểu mẫu XFA cung cấp các tính năng biểu mẫu tương tác phong phú nhưng chúng có thể không được hỗ trợ trong tất cả các ứng dụng và trình xem PDF. Một số trình xem PDF có thể chỉ hỗ trợ các biểu mẫu dựa trên AcroForm, một loại biểu mẫu khác được sử dụng trong tài liệu PDF. Điều cần thiết là phải xem xét tính tương thích của biểu mẫu XFA với đối tượng mục tiêu và mục đích sử dụng của tài liệu PDF.
+A: Mặc dù biểu mẫu XFA cung cấp các tính năng biểu mẫu tương tác phong phú, nhưng chúng có thể không được hỗ trợ trong tất cả các trình xem và ứng dụng PDF. Một số trình xem PDF có thể chỉ hỗ trợ biểu mẫu dựa trên AcroForm, đây là một loại biểu mẫu khác được sử dụng trong tài liệu PDF. Điều cần thiết là phải xem xét tính tương thích của biểu mẫu XFA với đối tượng mục tiêu và mục đích sử dụng dự kiến của tài liệu PDF.
 
-#### Câu hỏi: Tôi có thể chuyển đổi biểu mẫu XFA sang biểu mẫu dựa trên AcroForm bằng Aspose.PDF cho .NET không?
+#### H: Tôi có thể chuyển đổi biểu mẫu XFA sang biểu mẫu dựa trên AcroForm bằng Aspose.PDF cho .NET không?
 
-Đáp: Aspose.PDF for .NET cung cấp khả năng chuyển đổi biểu mẫu XFA sang biểu mẫu dựa trên AcroForm. Bằng cách chuyển đổi biểu mẫu XFA sang AcroForm, bạn có thể đảm bảo khả năng tương thích rộng hơn với nhiều trình xem PDF và ứng dụng khác nhau có thể không hỗ trợ đầy đủ XFA. Bạn có thể làm theo các API và kỹ thuật thích hợp để thực hiện chuyển đổi theo yêu cầu của mình.
+A: Aspose.PDF for .NET cung cấp khả năng chuyển đổi biểu mẫu XFA sang biểu mẫu dựa trên AcroForm. Bằng cách chuyển đổi biểu mẫu XFA sang AcroForm, bạn có thể đảm bảo khả năng tương thích rộng hơn với nhiều trình xem PDF và ứng dụng có thể không hỗ trợ đầy đủ XFA. Bạn có thể làm theo các API và kỹ thuật phù hợp để thực hiện chuyển đổi theo yêu cầu của mình.

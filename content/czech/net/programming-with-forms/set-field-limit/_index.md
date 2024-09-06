@@ -7,7 +7,7 @@ type: docs
 weight: 260
 url: /cs/net/programming-with-forms/set-field-limit/
 ---
-Zde je podrobný návod, jak nastavit hranici pole pomocí Aspose.PDF pro .NET. Následuj tyto kroky:
+Zde je podrobný návod, jak nastavit hranici pole pomocí Aspose.PDF pro .NET. Postupujte takto:
 
 ##  Krok 1: Začněte definováním adresáře vašich dokumentů zadáním cesty v`dataDir` variable.
 

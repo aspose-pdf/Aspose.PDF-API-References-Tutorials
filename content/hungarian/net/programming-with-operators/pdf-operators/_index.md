@@ -13,7 +13,7 @@ Ebben az oktatóanyagban lépésről lépésre bemutatjuk, hogyan használhatja 
 
 Mielőtt elkezdené, győződjön meg arról, hogy a következő előfeltételeket teljesítette:
 
-1. A Visual Studio .NET keretrendszerrel telepítve.
+1. Visual Studio .NET keretrendszerrel telepítve.
 2. Az Aspose.PDF könyvtár a .NET-hez.
 
 ## 1. lépés: A projekt beállítása
@@ -70,7 +70,7 @@ page.Contents.Add(new Do(ximage.Name));
 page. Contents. Add(new GRestore());
 ```
 
- Feltétlenül adja meg a PDF- és képfájlok tényleges elérési útját a gépen. Azt is beállíthatja a`lowerLeftX`, `lowerLeftY`, `upperRightX` és`upperRightY`koordinátákat a kép szükség szerinti pozicionálásához.
+ Feltétlenül adja meg a PDF- és képfájlok tényleges elérési útját a gépen. Azt is beállíthatja a`lowerLeftX`, `lowerLeftY`, `upperRightX` és`upperRightY` koordinátákat a kép szükség szerinti pozicionálásához.
 
 ### Minta forráskód PDF-kezelőknek az Aspose.PDF for .NET használatával 
 ```csharp
@@ -83,7 +83,7 @@ int lowerLeftX = 100;
 int lowerLeftY = 100;
 int upperRightX = 200;
 int upperRightY = 200;
-//Szerezze meg azt az oldalt, amelyhez képet kell hozzáadni
+// Szerezze meg azt az oldalt, amelyhez képet kell hozzáadni
 Page page = pdfDocument.Pages[1];
 // Kép betöltése adatfolyamba
 FileStream imageStream = new FileStream(dataDir + "PDFOperators.jpg", FileMode.Open);
@@ -132,7 +132,7 @@ using Aspose.Pdf.Operators;
 
 #### K: Hogyan biztosítják a PDF-operátorok a tartalom pontos elhelyezését?
 
- V: A PDF-operátorok kedvelik`ConcatenateMatrix` lehetővé teszi transzformációs mátrixok meghatározását a tartalom pontos pozícionálásához és átalakításához egy PDF-dokumentumban.
+V: A PDF-operátorok kedvelik`ConcatenateMatrix` lehetővé teszi transzformációs mátrixok meghatározását a tartalom pontos pozícionálásához és átalakításához egy PDF-dokumentumban.
 
 #### K: Hozzáadhatok képet PDF-oldalhoz PDF-operátorok használatával?
 
@@ -144,7 +144,7 @@ V: Igen, a PDF-operátorok segítségével képet adhat a PDF-oldalhoz, és szab
 
 #### K: Mi a GSave és GRestore operátorok célja?
 
- V: A`GSave` és`GRestore`Az Aspose.PDF fájl operátorai a grafikus állapot mentésére és visszaállítására szolgálnak. Segítenek abban, hogy a tartalom egy szakaszára alkalmazott átalakítások és beállítások ne legyenek hatással a következő szakaszokra.
+ V: A`GSave` és`GRestore` Az Aspose.PDF fájl operátorai a grafikus állapot mentésére és visszaállítására szolgálnak. Segítenek abban, hogy a tartalom egy szakaszára alkalmazott átalakítások és beállítások ne legyenek hatással a következő szakaszokra.
 
 #### K: Hogyan állíthatom be a hozzáadott kép pozícióját a PDF-oldalon?
 
@@ -156,7 +156,7 @@ V: Igen, a PDF-operátorok használhatók a szövegtartalom manipulálására, l
 
 #### K: Alkalmazhatók átlátszósági vagy keverési effektusok PDF-operátorok használatával?
 
- V: Igen, a PDF-operátorok szeretik`SetAlpha`, `SetBlendMode`, és mások is használhatók átlátszóság és keverési effektusok alkalmazására a tartalomra.
+V: Igen, a PDF-operátorok szeretik`SetAlpha`, `SetBlendMode`, és mások is használhatók átlátszóság és keverési effektusok alkalmazására a tartalomra.
 
 #### K: Használhatok PDF-operátorokat interaktív elemek létrehozására egy PDF-dokumentumban?
 

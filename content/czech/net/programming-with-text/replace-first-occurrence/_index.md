@@ -119,7 +119,7 @@ A: Chcete-li nastavit adresář dokumentů:
 Odpověď: Výukový program vás provede procesem krok za krokem:
 
 1.  Otevřete dokument PDF pomocí`Document` třída.
-2.  Vytvořit`TextFragmentAbsorber` objekt a přijměte jej pro všechny stránky, abyste našli výskyty hledaného výrazu.
+2.  Vytvořte a`TextFragmentAbsorber` objekt a přijměte jej pro všechny stránky, abyste našli výskyty hledaného výrazu.
 3. Pokud je hledaná fráze nalezena, načtěte první výskyt fragmentu textu a aktualizujte jeho vlastnosti pomocí nového textu a formátování.
 4. Uložte upravený dokument PDF.
 

@@ -129,7 +129,7 @@ StructureAttribute summaryAttribute = new StructureAttribute(AttributeKey.Summar
 summaryAttribute.SetStringValue("The summary text for the table");
 tableAttributes.SetAttribute(summaryAttribute);
 
-// Uložte tagovaný dokument PDF
+// Uložte označený dokument PDF
 document.Save(dataDir + "CreateTableElement.pdf");
 
 // Kontrola shody s PDF/UA
@@ -264,7 +264,7 @@ Odpověď: Mezi klíčové kroky patří nastavení prostředí, vytvoření dok
 
 #### Otázka: Jak kód zajišťuje dostupnost a sémantiku vytvořeného prvku pole?
 
- A: Kód nastavuje atributy jako např`AlternativeText`, `BackgroundColor`, `Border`, `Margin`, `Alignment` , a`ColSpan` zlepšit dostupnost a sémantiku prvku pole. Tyto atributy přispívají k dobře strukturované, informativní a vizuálně přitažlivé reprezentaci dat.
+ A: Kód nastavuje atributy jako např`AlternativeText`, `BackgroundColor`, `Border`, `Margin`, `Alignment` a`ColSpan` zlepšit dostupnost a sémantiku prvku pole. Tyto atributy přispívají k dobře strukturované, informativní a vizuálně přitažlivé reprezentaci dat.
 
 #### Otázka: Jaký význam má soulad s PDF/UA v kontextu vytváření prvků pole?
 

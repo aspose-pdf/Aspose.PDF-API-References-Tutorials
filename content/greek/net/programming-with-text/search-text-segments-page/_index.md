@@ -51,7 +51,7 @@ Document pdfDocument = new Document(dataDir + "SearchTextSegmentsPage.pdf");
 
 ## Βήμα 5: Δημιουργήστε ένα TextFragmentAbsorber
 
- Δημιουργώ ένα`TextFragmentAbsorber` αντικείμενο για να βρείτε όλες τις παρουσίες της φράσης αναζήτησης εισόδου:
+ Δημιουργία α`TextFragmentAbsorber` αντικείμενο για να βρείτε όλες τις παρουσίες της φράσης αναζήτησης εισόδου:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
@@ -141,7 +141,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Συγχαρητήρια! Έχετε μάθει με επιτυχία πώς να αναζητάτε συγκεκριμένα τμήματα κειμένου σε μια σελίδα ενός εγγράφου PDF χρησιμοποιώντας το Aspose.PDF για .NET. Αυτό το σεμινάριο παρείχε έναν οδηγό βήμα προς βήμα, από τη φόρτωση του εγγράφου έως την πρόσβαση στα εξαγόμενα τμήματα κειμένου. Τώρα μπορείτε να ενσωματώσετε αυτόν τον κώδικα στα δικά σας έργα C# για να εκτελέσετε σύνθετες αναζητήσεις τμημάτων κειμένου σε αρχεία PDF.
 

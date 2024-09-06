@@ -122,15 +122,15 @@ Grattis! Du har nu lärt dig hur du justerar innehållet i en rad i en tabell i 
 
 #### F: Hur kan jag justera innehållet i tabellcellerna horisontellt?
 
- S: Du kan justera innehållet i tabellcellerna horisontellt genom att ställa in`HorizontalAlign` egenskapen hos cellen`TextState` objekt. Använd till exempel för att centrera texten`cell.TextState.HorizontalAlignment = HorizontalAlignment.Center` . Du kan också ställa in den på`HorizontalAlignment.Left` eller`HorizontalAlignment.Right` för vänster- respektive högerjustering.
+ S: Du kan justera innehållet i tabellcellerna horisontellt genom att ställa in`HorizontalAlign` egenskap hos cellen`TextState` objekt. Använd till exempel för att centrera texten`cell.TextState.HorizontalAlignment = HorizontalAlignment.Center` . Du kan också ställa in den på`HorizontalAlignment.Left` eller`HorizontalAlignment.Right` för vänster- respektive högerjustering.
 
 #### F: Kan jag använda olika kantstilar och färger på enskilda celler i tabellen?
 
- S: Ja, du kan använda olika ramstilar och färger på enskilda celler i tabellen. För att anpassa gränsen för en specifik cell, ställ in`cell.Border` egendom till en ny`BorderInfo`objekt med önskade inställningar, såsom kantsidor, bredd och färg.
+ S: Ja, du kan använda olika kantstilar och färger på enskilda celler i tabellen. För att anpassa gränsen för en specifik cell, ställ in`cell.Border` egendom till en ny`BorderInfo`objekt med önskade inställningar, såsom kantsidor, bredd och färg.
 
 #### F: Hur kan jag justera den vertikala justeringen av tabellinnehållet i cellerna?
 
- S: Du kan justera den vertikala justeringen av tabellinnehållet i cellerna genom att ställa in`VerticalAlignment` egenskap av raden till`VerticalAlignment.Center`, `VerticalAlignment.Top` , eller`VerticalAlignment.Bottom`. Den här egenskapen styr den vertikala justeringen av alla celler i den raden.
+ S: Du kan justera den vertikala justeringen av tabellinnehållet i cellerna genom att ställa in`VerticalAlignment` radens egendom till`VerticalAlignment.Center`, `VerticalAlignment.Top` , eller`VerticalAlignment.Bottom`. Den här egenskapen styr den vertikala justeringen av alla celler i den raden.
 
 #### F: Är det möjligt att lägga till fler kolumner eller rader i tabellen dynamiskt?
 

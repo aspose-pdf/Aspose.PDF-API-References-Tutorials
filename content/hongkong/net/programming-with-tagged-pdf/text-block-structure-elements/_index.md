@@ -7,7 +7,7 @@ type: docs
 weight: 220
 url: /zh-hant/net/programming-with-tagged-pdf/text-block-structure-elements/
 ---
-在這個詳細的教學中，我們將引導您逐步完成所提供的 C# 原始程式碼，以使用 Aspose.PDF for .NET 在標記的 PDF 文件中建立文字區塊結構元素。請依照以下說明了解如何在 PDF 文件中新增多層標題和標記段落。
+在本詳細教學中，我們將引導您逐步完成所提供的 C# 原始程式碼，以使用 Aspose.PDF for .NET 在標記的 PDF 文件中建立文字區塊結構元素。請依照以下說明了解如何在 PDF 文件中新增多層標題和標記段落。
 
 ## 第一步：建構環境
 

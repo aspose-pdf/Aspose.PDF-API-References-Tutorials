@@ -18,7 +18,7 @@ Než se ponoříme do kódu, ujistěte se, že máte splněny následující př
 
 1. Vývojové prostředí Java: Ujistěte se, že máte v systému nainstalovanou Javu a vhodné IDE (Eclipse, IntelliJ IDEA nebo jakékoli jiné).
 
-2.  Aspose.PDF for Java Library: Stáhněte si a zahrňte do svého projektu knihovnu Aspose.PDF for Java. Odkaz ke stažení najdete[tady](https://releases.aspose.com/pdf/java/).
+2.  Aspose.PDF for Java Library: Stáhněte si a zahrňte do svého projektu knihovnu Aspose.PDF for Java. Odkaz ke stažení najdete[zde](https://releases.aspose.com/pdf/java/).
 
 ## Krok 1: Nastavení vašeho projektu Java
 
@@ -72,7 +72,7 @@ pdfDocument.save("output.pdf");
 
 ## Závěr
 
-Gratulujeme! Úspěšně jste přidali přeškrtnutou textovou anotaci do dokumentu PDF pomocí Aspose.PDF for Java. Tato výkonná knihovna zjednodušuje proces práce s dokumenty PDF, takže je ideální volbou pro vývojáře, kteří chtějí zlepšit své možnosti manipulace s dokumenty.
+Gratuluji! Úspěšně jste přidali přeškrtnutou textovou anotaci do dokumentu PDF pomocí Aspose.PDF for Java. Tato výkonná knihovna zjednodušuje proces práce s dokumenty PDF, takže je ideální volbou pro vývojáře, kteří chtějí zlepšit své možnosti manipulace s dokumenty.
 
 ## FAQ
 
@@ -94,4 +94,4 @@ Ano, Aspose.PDF pro Java podporuje různé typy anotací, včetně textu, zvýra
 
 ### Kde najdu další zdroje a dokumentaci k Aspose.PDF pro Javu?
 
- Pro komplexní dokumentaci a další zdroje navštivte stránku dokumentace Aspose.PDF for Java:[tady](https://reference.aspose.com/pdf/java/).
+ Pro komplexní dokumentaci a další zdroje navštivte stránku dokumentace Aspose.PDF for Java:[zde](https://reference.aspose.com/pdf/java/).

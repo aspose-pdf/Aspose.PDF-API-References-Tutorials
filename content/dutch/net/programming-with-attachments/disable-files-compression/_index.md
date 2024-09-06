@@ -1,123 +1,124 @@
 ---
-title: Schakel bestandscompressie uit in PDF-bestanden
-linktitle: Schakel bestandscompressie uit in PDF-bestanden
+title: Bestandscompressie in PDF-bestand uitschakelen
+linktitle: Bestandscompressie in PDF-bestand uitschakelen
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u bestandscompressie in PDF-bestanden kunt uitschakelen met Aspose.PDF voor .NET. Stap-voor-stap handleiding voor eenvoudig gebruik.
+description: Leer hoe u bestandscompressie in PDF-bestanden kunt uitschakelen met Aspose.PDF voor .NET met deze stapsgewijze handleiding. Verbeter uw PDF-beheervaardigheden.
 type: docs
 weight: 30
 url: /nl/net/programming-with-attachments/disable-files-compression/
 ---
-In deze zelfstudie leiden we u stap voor stap door de volgende C#-broncode om bestandscompressie in PDF uit te schakelen met Aspose.PDF voor .NET.
+## Invoering
 
-Zorg ervoor dat u de Aspose.PDF-bibliotheek hebt geïnstalleerd en uw ontwikkelomgeving hebt ingesteld voordat u begint. Daarnaast heb je basiskennis van programmeren in C#.
+In het digitale tijdperk is het efficiënt beheren van PDF-bestanden cruciaal voor zowel persoonlijk als professioneel gebruik. Of u nu een ontwikkelaar bent die uw applicatie wil verbeteren of een zakelijke professional die documenten beheert, begrijpen hoe u PDF-bestanden kunt manipuleren kan u tijd en moeite besparen. Een veelvoorkomende vereiste is het uitschakelen van bestandscompressie in PDF-documenten. Dit kan met name handig zijn als u ervoor wilt zorgen dat ingesloten bestanden in hun oorspronkelijke formaat blijven zonder enige wijziging. In deze tutorial zullen we onderzoeken hoe u bestandscompressie in een PDF-bestand kunt uitschakelen met Aspose.PDF voor .NET. 
 
-### Stap 1: Documentmap instellen
+## Vereisten
 
-In de meegeleverde broncode moet u de map opgeven waar het PDF-bestand zich bevindt waarvan u de bestandscompressie wilt uitschakelen. Wijzig de variabele "dataDir" in de gewenste map.
+Voordat u aan de slag gaat met de code, moet u aan een aantal voorwaarden voldoen:
+
+1.  Aspose.PDF voor .NET: Zorg ervoor dat u de Aspose.PDF-bibliotheek hebt geïnstalleerd. U kunt deze downloaden van de[website](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: een ontwikkelomgeving waarin u uw .NET-code kunt schrijven en uitvoeren.
+3. Basiskennis van C#: Kennis van C#-programmering helpt u de codefragmenten beter te begrijpen.
+
+## Pakketten importeren
+
+Om te beginnen moet u de benodigde pakketten importeren in uw C#-project. Dit is hoe u dat kunt doen:
+
+### Een nieuw project maken
+
+Open Visual Studio en maak een nieuw C#-project. U kunt een Console Application kiezen voor de eenvoud.
+
+### Voeg Aspose.PDF-referentie toe
+
+1. Klik met de rechtermuisknop op uw project in de Solution Explorer.
+2. Selecteer 'NuGet-pakketten beheren'.
+3. Zoek naar "Aspose.PDF" en installeer de nieuwste versie.
+
+### Importeer de naamruimte
+
+Importeer bovenaan uw C#-bestand de Aspose.PDF-naamruimte:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-### Stap 2: Open het bestaande PDF-document
+Nu we alles hebben ingesteld, kunnen we het proces voor het uitschakelen van bestandscompressie in een PDF-bestand opsplitsen in beheersbare stappen.
 
-We openen het bestaande PDF-document via het opgegeven pad.
+## Stap 1: Definieer de documentdirectory
 
-```csharp
-Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-```
-
-### Stap 3: Het nieuwe bestand instellen om als bijlage toe te voegen
-
-We configureren het nieuwe bestand dat we als bijlage willen toevoegen. In dit voorbeeld voegen we een tekstbestand toe met de naam "test_out.txt" en een beschrijving "Voorbeeldtekstbestand".
+Eerst moet u het pad naar de directory opgeven waar uw PDF-bestand zich bevindt. Dit is cruciaal omdat het het programma vertelt waar het het bestand kan vinden dat u wilt bewerken.
 
 ```csharp
-FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
-```
-
-### Stap 4: Schakel bestandscompressie uit
-
-We schakelen bestandscompressie uit door de eigenschap Encoding van het FileSpecification-object in te stellen op FileEncoding.None.
-
-```csharp
-fileSpecification.Encoding = FileEncoding.None;
-```
-
-### Stap 5: De bijlage toevoegen aan de bijlagenverzameling van het document
-
-We voegen de bijlage toe aan de bijlagenverzameling van het document.
-
-```csharp
-pdfDocument.EmbeddedFiles.Add(fileSpecification);
-```
-
-### Stap 6: Sla het nieuwe uitvoerbestand op
-
-Ten slotte slaan we het resulterende nieuwe PDF-bestand op met de naam "DisableFilesCompression_out.pdf" in de opgegeven map.
-
-```csharp
-pdfDocument.Save(dataDir + "DisableFilesCompression_out.pdf");
-```
-
-
-### Voorbeeldbroncode voor het uitschakelen van bestandscompressie met Aspose.PDF voor .NET 
-
-```csharp
-
-// Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-// Stel een nieuw bestand in dat als bijlage moet worden toegevoegd
-FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
-// Geef Encoding proparty op door deze in te stellen op FileEncoding.None
-fileSpecification.Encoding = FileEncoding.None;
-//Bijlage toevoegen aan de bijlageverzameling van het document
-pdfDocument.EmbeddedFiles.Add(fileSpecification);
-dataDir = dataDir + "DisableFilesCompression_out.pdf";
-// Sla nieuwe uitvoer op
-pdfDocument.Save(dataDir);
-Console.WriteLine("\nFile compression disabled successfully.\nFile saved at " + dataDir);
+```
 
+## Stap 2: Het PDF-document laden
+
+ Vervolgens laadt u het PDF-document dat u wilt wijzigen. Dit doet u met behulp van de`Document` les verzorgd door Aspose.PDF.
+
+```csharp
+Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
+```
+
+## Stap 3: Stel het bestand in dat als bijlage moet worden toegevoegd
+
+Nu moet u een nieuwe bestandsspecificatie maken voor de bijlage die u aan de PDF wilt toevoegen. Dit houdt in dat u de naam en het type van het bestand moet opgeven.
+
+```csharp
+FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
+```
+
+## Stap 4: Specificeer de coderingseigenschap
+
+ Om ervoor te zorgen dat het bestand zonder compressie wordt toegevoegd, moet u de coderingseigenschap van de bestandsspecificatie instellen op`FileEncoding.None`Deze stap is cruciaal omdat het direct invloed heeft op de manier waarop het bestand in de PDF wordt ingesloten.
+
+```csharp
+fileSpecification.Encoding = FileEncoding.None;
+```
+
+## Stap 5: Bijlage toevoegen aan document
+
+Nu de bestandsspecificatie gereed is, kunt u de bijlage toevoegen aan de bijlageverzameling van het document. Deze stap integreert het bestand in de PDF.
+
+```csharp
+pdfDocument.EmbeddedFiles.Add(fileSpecification);
+```
+
+## Stap 6: Sla de nieuwe uitvoer op
+
+Ten slotte moet u het gewijzigde PDF-document opslaan. Geef het uitvoerpad op waar u het nieuwe bestand wilt opslaan.
+
+```csharp
+dataDir = dataDir + "DisableFilesCompression_out.pdf";
+pdfDocument.Save(dataDir);
+```
+
+## Stap 7: Bevestig de bewerking
+
+Om er zeker van te zijn dat alles goed is verlopen, kunt u een bevestigingsbericht naar de console sturen.
+
+```csharp
+Console.WriteLine("\nFile compression disabled successfully.\nFile saved at " + dataDir);
 ```
 
 ## Conclusie
 
-In deze zelfstudie hebben we uitgelegd hoe u bestandscompressie in een PDF kunt uitschakelen met Aspose.PDF voor .NET. U kunt deze kennis nu gebruiken om de integriteit van bijgevoegde bestanden te behouden zonder compressie.
+Het uitschakelen van bestandscompressie in PDF-documenten kan een eenvoudig proces zijn met de juiste tools. Door de stappen in deze tutorial te volgen, kunt u uw PDF-bestanden eenvoudig beheren en ervoor zorgen dat ingesloten bijlagen hun oorspronkelijke formaat behouden. Aspose.PDF voor .NET biedt een krachtige en flexibele manier om PDF-documenten te manipuleren, waardoor het een uitstekende keuze is voor zowel ontwikkelaars als bedrijven.
 
-## Veelgestelde vragen over het uitschakelen van bestandscompressie in PDF-bestanden
+## Veelgestelde vragen
 
-#### Vraag: Waarom zou ik bestandscompressie in een PDF-document willen uitschakelen?
+### Wat is Aspose.PDF voor .NET?
+Aspose.PDF voor .NET is een bibliotheek waarmee ontwikkelaars programmatisch PDF-documenten kunnen maken, bewerken en converteren.
 
-A: Als u bestandscompressie uitschakelt, zorgt u ervoor dat bijgevoegde bestanden in een PDF-document niet-gecomprimeerd blijven, waardoor hun oorspronkelijke kwaliteit en inhoud behouden blijven.
+### Waarom zou ik bestandscompressie in een PDF willen uitschakelen?
+Door bestandscompressie uit te schakelen, zorgt u ervoor dat ingesloten bestanden hun oorspronkelijke indeling behouden. Dit kan belangrijk zijn voor de integriteit van de gegevens.
 
-#### Vraag: Welke voordelen heeft het uitschakelen van bestandscompressie voor PDF-bijlagen?
+### Kan ik Aspose.PDF gratis gebruiken?
+ Ja, Aspose biedt een gratis proefversie die u kunt gebruiken om de bibliotheek te evalueren. U kunt deze downloaden[hier](https://releases.aspose.com/).
 
-A: Als u compressie uitschakelt, voorkomt u gegevens- of kwaliteitsverlies dat kan optreden tijdens het compressieproces, zodat de bijgevoegde bestanden worden gepresenteerd zoals ze zijn.
+### Waar kan ik meer documentatie over Aspose.PDF vinden?
+ Uitgebreide documentatie vindt u op de[Aspose-website](https://reference.aspose.com/pdf/net/).
 
-#### Vraag: Kan ik met behulp van deze tutorial de compressie voor specifieke bijlagen selectief uitschakelen?
-
-A: Ja, deze tutorial begeleidt u bij het uitschakelen van bestandscompressie voor individuele bijlagen in een PDF-document, waardoor u een fijnmazige controle krijgt.
-
-#### Vraag: Voor welke typen bijlagen kan ik de compressie uitschakelen?
-
-A: U kunt de compressie uitschakelen voor elk type bijlage, zoals afbeeldingen, documenten, spreadsheets en meer, zodat de integriteit ervan behouden blijft.
-
-#### Vraag: Heeft het uitschakelen van compressie invloed op de totale bestandsgrootte van het PDF-document?
-
-A: Het uitschakelen van compressie voor bijlagen kan leiden tot een lichte toename van de totale bestandsgrootte van het PDF-document, omdat niet-gecomprimeerde bestanden meer ruimte in beslag nemen.
-
-#### Vraag: Hoe vergemakkelijkt Aspose.PDF voor .NET het proces van het uitschakelen van bestandscompressie?
-
-A: Aspose.PDF voor .NET biedt een eenvoudig te gebruiken API waarmee u bestandscompressie voor bijlagen kunt uitschakelen, zoals gedemonstreerd in de meegeleverde broncode.
-
-#### Vraag: Kan ik indien nodig de compressie voor bijlagen later opnieuw inschakelen?
-
-A: Ja, u kunt de instellingen van de bijlage wijzigen om indien nodig de compressie opnieuw in te schakelen.
-
-#### Vraag: Wat gebeurt er als ik de PDF open op een apparaat of software die compressie ondersteunt?
-
-A: Als u de PDF opent op een apparaat of software die compressie ondersteunt, wordt de bijlage mogelijk ongecomprimeerd weergegeven, wat mogelijk invloed heeft op de bestandsgrootte en de weergaveprestaties.
-
-#### Vraag: Zijn er specifieke scenario's waarin het uitschakelen van compressie wordt aanbevolen?
-
-A: Het uitschakelen van compressie wordt aanbevolen voor bijlagen waarbij het behoud van de oorspronkelijke kwaliteit en gegevensintegriteit een prioriteit is, zoals afbeeldingen met een hoge resolutie of gevoelige documenten.
+### Hoe krijg ik ondersteuning voor Aspose.PDF?
+ U kunt ondersteuning krijgen door de[Aspose-forum](https://forum.aspose.com/c/pdf/10).

@@ -1,26 +1,26 @@
 ---
-title: Các phần tử cấu trúc nội tuyến
-linktitle: Các phần tử cấu trúc nội tuyến
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Hướng dẫn từng bước cách sử dụng các thành phần cấu trúc trực tuyến với Aspose.PDF cho .NET. Sắp xếp các tệp PDF của bạn với các tiêu đề và đoạn văn.
+title: Các thành phần cấu trúc nội tuyến
+linktitle: Các thành phần cấu trúc nội tuyến
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Hướng dẫn từng bước sử dụng các thành phần cấu trúc trực tuyến với Aspose.PDF cho .NET. Sắp xếp các tệp PDF của bạn bằng tiêu đề và đoạn văn.
 type: docs
 weight: 110
 url: /vi/net/programming-with-tagged-pdf/inline-structure-elements/
 ---
-Trong hướng dẫn từng bước này, chúng tôi sẽ chỉ cho bạn cách sử dụng các thành phần cấu trúc nội tuyến với Aspose.PDF cho .NET. Aspose.PDF là một thư viện mạnh mẽ cho phép bạn thao tác các tài liệu PDF theo chương trình. Các phần tử cấu trúc nội tuyến cho phép bạn tạo cấu trúc phân cấp trong tài liệu PDF của mình bằng cách sử dụng các tiêu đề ở các cấp độ và đoạn văn khác nhau.
+Trong hướng dẫn từng bước này, chúng tôi sẽ chỉ cho bạn cách sử dụng các thành phần cấu trúc nội tuyến với Aspose.PDF cho .NET. Aspose.PDF là một thư viện mạnh mẽ cho phép bạn thao tác các tài liệu PDF theo chương trình. Các thành phần cấu trúc nội tuyến cho phép bạn tạo cấu trúc phân cấp trong tài liệu PDF của mình bằng cách sử dụng các tiêu đề ở nhiều cấp độ và đoạn văn khác nhau.
 
-Hãy đi sâu vào mã và tìm hiểu cách sử dụng các phần tử cấu trúc nội tuyến với Aspose.PDF cho .NET.
+Hãy cùng tìm hiểu mã và cách sử dụng các phần tử cấu trúc nội tuyến với Aspose.PDF cho .NET.
 
 ## Điều kiện tiên quyết
 
 Trước khi bắt đầu, hãy đảm bảo bạn có những điều sau:
 
-1. Thư viện Aspose.PDF dành cho .NET được cài đặt.
-2. Có kiến thức cơ bản về ngôn ngữ lập trình C#.
+1. Thư viện Aspose.PDF cho .NET được cài đặt.
+2. Kiến thức cơ bản về ngôn ngữ lập trình C#.
 
 ## Bước 1: Thiết lập môi trường
 
-Để bắt đầu, hãy mở môi trường phát triển C# của bạn và tạo một dự án mới. Đảm bảo rằng bạn đã thêm tham chiếu đến thư viện Aspose.PDF cho .NET trong dự án của mình.
+Để bắt đầu, hãy mở môi trường phát triển C# của bạn và tạo một dự án mới. Đảm bảo bạn đã thêm tham chiếu đến thư viện Aspose.PDF cho .NET vào dự án của bạn.
 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
@@ -38,16 +38,16 @@ Document document = new Document();
 
 ## Bước 3: Làm việc với nội dung được gắn thẻ
 
-Sau đó, chúng tôi lấy nội dung được gắn thẻ của tài liệu để làm việc.
+Sau đó, chúng ta sẽ lấy nội dung được gắn thẻ của tài liệu để làm việc.
 
 ```csharp
-// Lấy nội dung được gắn thẻ của tài liệu
+// Nhận nội dung được gắn thẻ của tài liệu
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Bước 4: Đặt tiêu đề và ngôn ngữ tài liệu
+## Bước 4: Đặt tiêu đề và ngôn ngữ cho tài liệu
 
-Bây giờ chúng ta có thể đặt tiêu đề và ngôn ngữ tài liệu.
+Bây giờ chúng ta có thể đặt tiêu đề và ngôn ngữ cho tài liệu.
 
 ```csharp
 // Xác định tiêu đề và ngôn ngữ của tài liệu
@@ -55,15 +55,15 @@ taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Bước 5: Thêm các phần tử kết cấu trực tuyến
+## Bước 5: Thêm các thành phần cấu trúc trực tuyến
 
-Bây giờ chúng ta sẽ thêm các thành phần cấu trúc nội tuyến chẳng hạn như tiêu đề ở các cấp độ và đoạn văn khác nhau vào tài liệu của chúng ta.
+Bây giờ chúng ta sẽ thêm các thành phần cấu trúc nội tuyến như tiêu đề ở nhiều cấp độ và đoạn văn khác nhau vào tài liệu của mình.
 
 ```csharp
 // Lấy phần tử cấu trúc gốc
 StructureElement rootElement = taggedContent.RootElement;
 
-// Thêm tiêu đề ở các cấp độ khác nhau
+// Thêm tiêu đề ở nhiều cấp độ khác nhau
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 HeaderElement h2 = taggedContent.CreateHeaderElement(2);
 HeaderElement h3 = taggedContent.CreateHeaderElement(3);
@@ -158,35 +158,35 @@ span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla pur
 p.AppendChild(span10);
 ```
 
-Ở đây, chúng tôi tạo các thành phần cấu trúc nội tuyến, chẳng hạn như tiêu đề ở các cấp độ khác nhau và một đoạn văn, rồi thêm nội dung vào chúng.
+Tại đây, chúng ta tạo các thành phần cấu trúc nội tuyến, chẳng hạn như tiêu đề ở nhiều cấp độ khác nhau và một đoạn văn, rồi thêm nội dung vào chúng.
 
-## Bước 6: Lưu tài liệu PDF được gắn thẻ
+## Bước 6: Lưu tài liệu PDF đã gắn thẻ
 
-Cuối cùng, chúng tôi lưu tài liệu PDF được gắn thẻ.
+Cuối cùng, chúng ta lưu tài liệu PDF đã gắn thẻ.
 
 ```csharp
-// Lưu tài liệu PDF được gắn thẻ
+// Lưu tài liệu PDF đã gắn thẻ
 document.Save(dataDir + "InlineStructureElements.pdf");
 ```
 
-### Mã nguồn mẫu cho Thành phần cấu trúc nội tuyến bằng Aspose.PDF cho .NET 
+### Mã nguồn mẫu cho Inline Structure Elements sử dụng Aspose.PDF cho .NET 
 
 ```csharp
 
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Tạo tài liệu PDF
+// Tạo Tài Liệu PDF
 Document document = new Document();
 
-// Nhận nội dung để làm việc với TaggedPdf
+// Nhận nội dung cho công việc với TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Đặt tiêu đề và ngôn ngữ cho Documnet
+// Đặt Tiêu đề và Ngôn ngữ cho Documnet
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Nhận phần tử cấu trúc gốc
+// Lấy phần tử cấu trúc gốc
 StructureElement rootElement = taggedContent.RootElement;
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 HeaderElement h2 = taggedContent.CreateHeaderElement(2);
@@ -270,53 +270,53 @@ SpanElement span10 = taggedContent.CreateSpanElement();
 span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla purus, vitae posuere risus odio id massa. Cras sed venenatis lacus.");
 p.AppendChild(span10);
 
-// Lưu tài liệu PDF được gắn thẻ
+// Lưu tài liệu PDF có gắn thẻ
 document.Save(dataDir + "InlineStructureElements.pdf");
 
 ```
 
 ## Phần kết luận
 
-Xin chúc mừng! Bạn đã học cách sử dụng các phần tử cấu trúc nội tuyến với Aspose.PDF cho .NET. Bây giờ bạn có thể tạo cấu trúc phân cấp trong tài liệu PDF của mình bằng cách sử dụng các tiêu đề ở các cấp độ và đoạn văn khác nhau. Khám phá thêm các tính năng của Aspose.PDF để khám phá toàn bộ tiềm năng của nó.
+Xin chúc mừng! Bạn đã học cách sử dụng các thành phần cấu trúc nội tuyến với Aspose.PDF cho .NET. Bây giờ bạn có thể tạo cấu trúc phân cấp trong tài liệu PDF của mình bằng cách sử dụng các tiêu đề ở nhiều cấp độ và đoạn văn khác nhau. Khám phá thêm các tính năng của Aspose.PDF để khám phá hết tiềm năng của nó.
 
 ### Câu hỏi thường gặp
 
-#### Câu hỏi: Các thành phần cấu trúc nội tuyến trong tài liệu PDF là gì và chúng góp phần tạo ra cấu trúc phân cấp như thế nào?
+#### H: Các thành phần cấu trúc nội tuyến trong tài liệu PDF là gì và chúng góp phần tạo nên cấu trúc phân cấp như thế nào?
 
-Đáp: Các thành phần cấu trúc nội tuyến trong tài liệu PDF, chẳng hạn như tiêu đề ở các cấp độ và đoạn văn khác nhau, được sử dụng để tạo cấu trúc phân cấp nhằm tổ chức và trình bày nội dung theo cách có cấu trúc. Những phần tử này cho phép bạn thiết lập hệ thống phân cấp và luồng thông tin rõ ràng trong tài liệu.
+A: Các thành phần cấu trúc nội tuyến trong tài liệu PDF, chẳng hạn như tiêu đề của các cấp độ và đoạn văn khác nhau, được sử dụng để tạo cấu trúc phân cấp tổ chức và trình bày nội dung theo cách có cấu trúc. Các thành phần này cho phép bạn thiết lập phân cấp rõ ràng và luồng thông tin trong tài liệu.
 
-#### Câu hỏi: Các thành phần cấu trúc nội tuyến có thể nâng cao khả năng đọc và tổ chức của tài liệu PDF bằng cách nào?
+#### H: Các thành phần cấu trúc nội tuyến có thể tăng cường khả năng đọc và sắp xếp của tài liệu PDF như thế nào?
 
-Đáp: Các thành phần cấu trúc nội tuyến, đặc biệt là các tiêu đề và đoạn văn, giúp cải thiện khả năng đọc và tổ chức của tài liệu PDF bằng cách cung cấp cấu trúc logic. Các tiêu đề cho biết mức độ quan trọng khác nhau và giúp người đọc điều hướng nội dung, trong khi các đoạn văn nhóm các thông tin liên quan lại với nhau.
+A: Các thành phần cấu trúc nội tuyến, đặc biệt là tiêu đề và đoạn văn, giúp cải thiện khả năng đọc và tổ chức của tài liệu PDF bằng cách cung cấp cấu trúc logic. Tiêu đề chỉ ra các mức độ quan trọng khác nhau và giúp người đọc điều hướng nội dung, trong khi các đoạn văn nhóm thông tin liên quan lại với nhau.
 
-#### Câu hỏi: Aspose.PDF cho .NET tạo điều kiện thuận lợi cho việc sử dụng các phần tử cấu trúc nội tuyến như thế nào?
+#### H: Aspose.PDF cho .NET hỗ trợ việc sử dụng các thành phần cấu trúc nội tuyến như thế nào?
 
-Đáp: Aspose.PDF for .NET cung cấp các lớp và phương thức để tạo và thao tác các thành phần cấu trúc nội tuyến, chẳng hạn như tiêu đề và đoạn văn. Các thành phần này có thể được tùy chỉnh, sắp xếp theo thứ bậc và làm phong phú thêm nội dung để cải thiện cách trình bày trực quan và khả năng truy cập của tài liệu.
+A: Aspose.PDF cho .NET cung cấp các lớp và phương pháp để tạo và thao tác các thành phần cấu trúc nội tuyến, chẳng hạn như tiêu đề và đoạn văn. Các thành phần này có thể được tùy chỉnh, sắp xếp theo thứ bậc và làm giàu nội dung để cải thiện khả năng trình bày trực quan và khả năng truy cập của tài liệu.
 
-####  Hỏi: Mục đích của việc này là gì?`taggedContent` object in relation to inline structure elements?
+####  Q: Mục đích của việc này là gì?`taggedContent` object in relation to inline structure elements?
 
- Đáp: Cái`taggedContent` đối tượng thu được từ`TaggedContent` tài sản của một`Document`, cho phép bạn làm việc với các phần tử có cấu trúc, bao gồm các phần tử cấu trúc nội tuyến. Nó cho phép bạn tạo, tùy chỉnh và sắp xếp các tiêu đề và đoạn văn trong tài liệu.
+ A: Cái`taggedContent` đối tượng, thu được từ`TaggedContent` tài sản của một`Document`, cho phép bạn làm việc với các thành phần có cấu trúc, bao gồm các thành phần cấu trúc nội tuyến. Nó cho phép bạn tạo, tùy chỉnh và sắp xếp các tiêu đề và đoạn văn trong tài liệu.
 
-#### Câu hỏi: Các phần tử cấu trúc nội tuyến hỗ trợ như thế nào trong việc tạo ra hệ thống phân cấp tài liệu rõ ràng?
+#### H: Các thành phần cấu trúc nội tuyến hỗ trợ tạo ra hệ thống phân cấp tài liệu rõ ràng như thế nào?
 
-Đáp: Các phần tử cấu trúc nội tuyến, chẳng hạn như các tiêu đề ở các cấp độ khác nhau, góp phần thiết lập hệ thống phân cấp rõ ràng và được xác định rõ ràng trong tài liệu. Người đọc có thể nhanh chóng xác định các chủ đề chính, chủ đề phụ và nội dung liên quan, giúp tài liệu dễ dàng điều hướng và dễ hiểu hơn.
+A: Các thành phần cấu trúc nội tuyến, chẳng hạn như tiêu đề ở nhiều cấp độ khác nhau, góp phần thiết lập hệ thống phân cấp rõ ràng và được xác định rõ ràng trong tài liệu. Người đọc có thể nhanh chóng xác định các chủ đề chính, chủ đề phụ và nội dung liên quan, giúp tài liệu dễ điều hướng và dễ hiểu hơn.
 
-#### Câu hỏi: Tôi có thể tùy chỉnh giao diện và định dạng của các thành phần cấu trúc nội tuyến bằng Aspose.PDF cho .NET không?
+#### H: Tôi có thể tùy chỉnh giao diện và định dạng của các thành phần cấu trúc nội tuyến bằng Aspose.PDF cho .NET không?
 
-Đáp: Có, bạn có thể tùy chỉnh hình thức và định dạng của các thành phần cấu trúc nội tuyến. Bạn có thể đặt các thuộc tính như kiểu phông chữ, kích thước, màu sắc, căn chỉnh, thụt lề và khoảng cách để đạt được cách trình bày trực quan mong muốn cho các tiêu đề và đoạn văn.
+A: Có, bạn có thể tùy chỉnh giao diện và định dạng của các thành phần cấu trúc nội tuyến. Bạn có thể thiết lập các thuộc tính như kiểu phông chữ, kích thước, màu sắc, căn chỉnh, thụt lề và khoảng cách để đạt được hình ảnh mong muốn cho tiêu đề và đoạn văn.
 
-#### Câu hỏi: Làm cách nào để tạo và thêm tiêu đề ở các cấp độ khác nhau vào tài liệu PDF bằng cách sử dụng các thành phần cấu trúc nội tuyến trong Aspose.PDF cho .NET?
+#### H: Làm thế nào để tạo và thêm tiêu đề ở nhiều cấp độ khác nhau vào tài liệu PDF bằng các thành phần cấu trúc nội tuyến trong Aspose.PDF cho .NET?
 
- Đáp: Bạn có thể tạo các tiêu đề ở các cấp độ khác nhau bằng cách sử dụng`CreateHeaderElement` phương thức và sau đó nối chúng vào phần tử cấu trúc gốc. Sau đó, bạn có thể thêm nội dung vào từng thành phần tiêu đề bằng cách sử dụng`CreateSpanElement` phương pháp tạo các đoạn văn bản.
+ A: Bạn có thể tạo các tiêu đề ở nhiều cấp độ khác nhau bằng cách sử dụng`CreateHeaderElement` phương pháp và sau đó thêm chúng vào phần tử cấu trúc gốc. Sau đó, bạn có thể thêm nội dung vào từng phần tử tiêu đề bằng cách sử dụng`CreateSpanElement` phương pháp tạo khoảng văn bản.
 
-#### Câu hỏi: Tôi có thể sử dụng các thành phần cấu trúc nội tuyến để tạo danh sách, dấu đầu dòng hoặc các kiểu tổ chức nội dung khác trong tài liệu PDF không?
+#### H: Tôi có thể sử dụng các thành phần cấu trúc nội tuyến để tạo danh sách, dấu đầu dòng hoặc các loại tổ chức nội dung khác trong tài liệu PDF không?
 
-Trả lời: Mặc dù bản thân các phần tử cấu trúc nội tuyến chủ yếu được sử dụng cho tiêu đề và đoạn văn, nhưng bạn có thể sử dụng chúng kết hợp với các tính năng khác do Aspose.PDF cung cấp cho .NET để tạo danh sách, dấu đầu dòng, bảng và các loại tổ chức nội dung khác để có một cái nhìn toàn diện. cấu trúc tài liệu.
+A: Trong khi các thành phần cấu trúc nội tuyến chủ yếu được sử dụng cho tiêu đề và đoạn văn, bạn có thể sử dụng chúng kết hợp với các tính năng khác do Aspose.PDF cung cấp cho .NET để tạo danh sách, dấu đầu dòng, bảng và các loại tổ chức nội dung khác để tạo nên cấu trúc tài liệu toàn diện.
 
-#### Câu hỏi: Các phần tử cấu trúc nội tuyến đóng góp như thế nào vào khả năng truy cập tài liệu?
+#### H: Các thành phần cấu trúc nội tuyến góp phần như thế nào vào khả năng truy cập tài liệu?
 
-Đáp: Các thành phần cấu trúc nội tuyến đóng vai trò quan trọng trong việc nâng cao khả năng truy cập tài liệu. Các tiêu đề và đoạn văn có cấu trúc phù hợp sẽ cung cấp hệ thống phân cấp tài liệu rõ ràng nhằm hỗ trợ trình đọc màn hình và các công nghệ hỗ trợ khác trong việc diễn giải và truyền tải nội dung một cách chính xác tới người dùng khuyết tật.
+A: Các thành phần cấu trúc nội tuyến đóng vai trò quan trọng trong việc tăng cường khả năng truy cập tài liệu. Các tiêu đề và đoạn văn được cấu trúc hợp lý cung cấp một hệ thống phân cấp tài liệu rõ ràng giúp trình đọc màn hình và các công nghệ hỗ trợ khác diễn giải và truyền tải chính xác nội dung cho người dùng khuyết tật.
 
-#### Câu hỏi: Tôi có thể khám phá các cách sử dụng nâng cao hơn của các phần tử cấu trúc nội tuyến, chẳng hạn như tạo các phần tử tương tác hoặc nhúng đa phương tiện không?
+#### H: Tôi có thể khám phá những cách sử dụng nâng cao hơn của các thành phần cấu trúc nội tuyến, chẳng hạn như tạo các thành phần tương tác hoặc nhúng đa phương tiện không?
 
-Đ: Chắc chắn rồi! Trong khi hướng dẫn này tập trung vào việc tạo tiêu đề và đoạn văn, Aspose.PDF cho .NET cung cấp các tính năng nâng cao để tạo các phần tử tương tác, nhúng đa phương tiện, thêm siêu liên kết, v.v. Kiểm tra tài liệu và ví dụ của thư viện để tìm hiểu sâu hơn về các khả năng nâng cao này.
+A: Chắc chắn rồi! Trong khi hướng dẫn này tập trung vào việc tạo tiêu đề và đoạn văn, Aspose.PDF cho .NET cung cấp các tính năng nâng cao để tạo các thành phần tương tác, nhúng đa phương tiện, thêm siêu liên kết, v.v. Hãy kiểm tra tài liệu và ví dụ của thư viện để tìm hiểu sâu hơn về các khả năng nâng cao này.

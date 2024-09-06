@@ -1,52 +1,52 @@
 ---
-title: Tab Kustom Berhenti Di File PDF
-linktitle: Tab Kustom Berhenti Di File PDF
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Pelajari cara membuat perhentian tab khusus dalam file PDF menggunakan Aspose.PDF untuk .NET.
+title: Penghentian Tab Kustom Dalam File PDF
+linktitle: Penghentian Tab Kustom Dalam File PDF
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara membuat penghentian tab khusus dalam berkas PDF menggunakan Aspose.PDF untuk .NET.
 type: docs
 weight: 120
 url: /id/net/programming-with-text/custom-tab-stops/
 ---
 
-Tutorial ini akan memandu Anda melalui proses membuat perhentian tab khusus dalam file PDF menggunakan Aspose.PDF untuk .NET. Kode sumber C# yang disediakan menunjukkan langkah-langkah yang diperlukan.
+Tutorial ini akan memandu Anda melalui proses pembuatan tab stop khusus dalam file PDF menggunakan Aspose.PDF untuk .NET. Kode sumber C# yang disediakan menunjukkan langkah-langkah yang diperlukan.
 
 ## Persyaratan
 Sebelum memulai, pastikan Anda memiliki hal berikut:
 
-- Visual Studio atau kompiler C# lainnya yang diinstal pada mesin Anda.
-- Aspose.PDF untuk perpustakaan .NET. Anda dapat mendownloadnya dari situs resmi Aspose atau menggunakan manajer paket seperti NuGet untuk menginstalnya.
+- Visual Studio atau kompiler C# lainnya terinstal di komputer Anda.
+- Aspose.PDF untuk pustaka .NET. Anda dapat mengunduhnya dari situs web resmi Aspose atau menggunakan pengelola paket seperti NuGet untuk menginstalnya.
 
 ## Langkah 1: Siapkan proyek
 1. Buat proyek C# baru di lingkungan pengembangan pilihan Anda.
-2. Tambahkan referensi ke perpustakaan Aspose.PDF untuk .NET.
+2. Tambahkan referensi ke pustaka Aspose.PDF untuk .NET.
 
 ## Langkah 2: Impor namespace yang diperlukan
-Dalam file kode tempat Anda ingin membuat perhentian tab khusus, tambahkan arahan penggunaan berikut di bagian atas file:
+Pada berkas kode tempat Anda ingin membuat penghentian tab khusus, tambahkan perintah penggunaan berikut di bagian atas berkas:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Langkah 3: Atur direktori dokumen
- Dalam kode, temukan baris yang bertuliskan`string dataDir = "YOUR DOCUMENT DIRECTORY";` dan ganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur ke direktori tempat dokumen Anda disimpan.
+## Langkah 3: Mengatur direktori dokumen
+ Dalam kode, temukan baris yang bertuliskan`string dataDir = "YOUR DOCUMENT DIRECTORY";` dan mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur ke direktori tempat dokumen Anda disimpan.
 
-## Langkah 4: Buat instance Dokumen baru
- Buat instance yang baru`Document` objek dengan menambahkan baris kode berikut:
+## Langkah 4: Buat contoh Dokumen baru
+ Membuat instance baru`Document` objek dengan menambahkan baris kode berikut:
 
 ```csharp
 Document _pdfdocument = new Document();
 ```
 
 ## Langkah 5: Tambahkan halaman ke dokumen
- Tambahkan halaman baru ke dokumen menggunakan`Add` metode`Pages`koleksi. Dalam kode yang disediakan, halaman baru ditugaskan ke variabel`page`.
+ Tambahkan halaman baru ke dokumen menggunakan`Add` metode dari`Pages`koleksi. Dalam kode yang diberikan, halaman baru ditetapkan ke variabel`page`.
 
 ```csharp
 Page page = _pdfdocument.Pages.Add();
 ```
 
-## Langkah 6: Buat perhentian tab khusus
- Membuat`TabStops` objek dan tambahkan perhentian tab khusus ke dalamnya. Tetapkan tipe perataan dan tipe pemimpin untuk setiap perhentian tab.
+## Langkah 6: Buat penghentian tab khusus
+ Membuat sebuah`TabStops` objek dan tambahkan tab stop khusus ke dalamnya. Tetapkan jenis penyelarasan dan jenis penunjuk untuk setiap tab stop.
 
 ```csharp
 TabStops ts = new TabStops();
@@ -64,7 +64,7 @@ ts3.LeaderType = TabLeaderType.Dot;
 ```
 
 ## Langkah 7: Buat fragmen teks dengan tab stop
- Membuat`TextFragment` objek dan meneruskan perhentian tab khusus ke objek tersebut. Gunakan karakter khusus`#$TAB` untuk menunjukkan tab berhenti di dalam teks.
+ Membuat`TextFragment` objek dan berikan tab stop kustom kepada objek tersebut. Gunakan karakter khusus`#$TAB` untuk menunjukkan perhentian tab dalam teks.
 
 ```csharp
 TextFragment header = new TextFragment("This is an example of forming a table with TAB stops", ts);
@@ -83,14 +83,14 @@ page.Paragraphs.Add(text2);
 ```
 
 ## Langkah 8: Simpan dokumen PDF
- Simpan dokumen PDF menggunakan`Save` metode`Document` obyek.
+ Simpan dokumen PDF menggunakan`Save` metode dari`Document` obyek.
 
 ```csharp
 _pdfdocument.Save(dataDir);
 Console.WriteLine("\nCustom tab stops setup successfully.\nFile saved at " + dataDir);
 ```
 
-### Contoh kode sumber untuk Perhentian Tab Kustom menggunakan Aspose.PDF untuk .NET 
+### Contoh kode sumber untuk Penghentian Tab Kustom menggunakan Aspose.PDF untuk .NET 
 ```csharp
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -124,17 +124,17 @@ Console.WriteLine("\nCustom tab stops setup successfully.\nFile saved at " + dat
 ```
 
 ## Kesimpulan
-Anda telah berhasil membuat dokumen PDF dengan tab stop khusus menggunakan Aspose.PDF untuk .NET. File PDF yang dihasilkan sekarang dapat ditemukan di jalur file keluaran yang ditentukan.
+Anda telah berhasil membuat dokumen PDF dengan tab stop khusus menggunakan Aspose.PDF untuk .NET. File PDF yang dihasilkan kini dapat ditemukan di jalur file output yang ditentukan.
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
-#### Q: Apa fokus dari tutorial ini?
+#### T: Apa fokus dari tutorial ini?
 
-J: Tutorial ini difokuskan untuk memandu Anda melalui proses pembuatan tab stop kustom dalam file PDF menggunakan pustaka Aspose.PDF untuk .NET. Kode sumber C# yang disediakan menunjukkan langkah-langkah yang diperlukan untuk mencapai hal ini.
+J: Tutorial ini difokuskan untuk memandu Anda melalui proses pembuatan tab stop kustom dalam file PDF menggunakan pustaka Aspose.PDF for .NET. Kode sumber C# yang disediakan menunjukkan langkah-langkah yang diperlukan untuk mencapainya.
 
-#### T: Namespace manakah yang harus saya impor untuk tutorial ini?
+#### T: Namespace mana yang harus saya impor untuk tutorial ini?
 
-J: Dalam file kode tempat Anda ingin membuat perhentian tab khusus, impor namespace berikut di awal file:
+A: Pada berkas kode tempat Anda ingin membuat penghentian tab khusus, impor namespace berikut di awal berkas:
 
 ```csharp
 using Aspose.Pdf;
@@ -143,28 +143,28 @@ using Aspose.Pdf.Text;
 
 #### T: Bagaimana cara menentukan direktori dokumen?
 
- A: Di dalam kode, temukan barisnya`string dataDir = "YOUR DOCUMENT DIRECTORY";` dan ganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya ke direktori dokumen Anda.
+ A: Pada kode tersebut, temukan baris`string dataDir = "YOUR DOCUMENT DIRECTORY";` dan mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya ke direktori dokumen Anda.
 
-#### T: Bagaimana cara membuat instance Dokumen baru?
+#### T: Bagaimana cara membuat contoh Dokumen baru?
 
- J: Pada Langkah 4, Anda akan membuat instance yang baru`Document` objek menggunakan kode yang disediakan.
+ A: Pada Langkah 4, Anda akan membuat instance baru`Document` objek menggunakan kode yang disediakan.
 
 #### T: Bagaimana cara menambahkan halaman ke dokumen?
 
- J: Pada Langkah 5, Anda akan menambahkan halaman baru ke dokumen menggunakan`Add` metode`Pages` koleksi.
+ A: Pada Langkah 5, Anda akan menambahkan halaman baru ke dokumen menggunakan`Add` metode dari`Pages` koleksi.
 
-#### T: Bagaimana cara membuat perhentian tab khusus?
+#### T: Bagaimana cara membuat penghentian tab khusus?
 
- J: Pada Langkah 6, Anda akan membuat a`TabStops` objek dan tambahkan perhentian tab khusus ke dalamnya. Anda juga akan mengatur perataan dan jenis pemimpin untuk setiap perhentian tab.
+ A: Pada Langkah 6, Anda akan membuat`TabStops` objek dan menambahkan tab stop khusus ke dalamnya. Anda juga akan mengatur jenis perataan dan penunjuk arah untuk setiap tab stop.
 
 #### T: Bagaimana cara membuat fragmen teks dengan tab stop?
 
- J: Pada Langkah 7, Anda akan membuat`TextFragment` objek dan meneruskan perhentian tab khusus ke objek tersebut. Anda akan menggunakan karakter khusus`#$TAB` untuk menunjukkan tab berhenti di dalam teks.
+ A: Pada Langkah 7, Anda akan membuat`TextFragment` objek dan meneruskan tab stop kustom kepada mereka. Anda akan menggunakan karakter khusus`#$TAB` untuk menunjukkan perhentian tab dalam teks.
 
-#### Q: Bagaimana cara menyimpan dokumen PDF?
+#### T: Bagaimana cara menyimpan dokumen PDF?
 
- J: Pada Langkah 8, Anda akan menyimpan dokumen PDF menggunakan`Save` metode`Document` obyek.
+ A: Pada Langkah 8, Anda akan menyimpan dokumen PDF menggunakan`Save` metode dari`Document` obyek.
 
-#### T: Apa manfaat utama dari tutorial ini?
+#### T: Apa hasil utama dari tutorial ini?
 
-J: Dengan mengikuti tutorial ini, Anda telah mempelajari cara membuat dokumen PDF dengan tab stop khusus menggunakan Aspose.PDF untuk .NET. Ini dapat berguna untuk mengatur dan menyelaraskan teks secara terstruktur.
+A: Dengan mengikuti tutorial ini, Anda telah mempelajari cara membuat dokumen PDF dengan tab stop khusus menggunakan Aspose.PDF for .NET. Ini dapat berguna untuk mengatur dan menyelaraskan teks secara terstruktur.

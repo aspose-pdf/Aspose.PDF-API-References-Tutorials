@@ -1,24 +1,24 @@
 ---
-title: Afbeeldingsstempel toevoegen aan PDF-bestand
-linktitle: Afbeeldingsstempel toevoegen aan PDF-bestand
+title: Voeg een afbeeldingsstempel toe aan een PDF-bestand
+linktitle: Voeg een afbeeldingsstempel toe aan een PDF-bestand
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u eenvoudig een afbeeldingsstempel in een PDF-bestand kunt toevoegen met Aspose.PDF voor .NET.
+description: Leer hoe u eenvoudig een afbeeldingsstempel aan een PDF-bestand kunt toevoegen met Aspose.PDF voor .NET.
 type: docs
 weight: 20
 url: /nl/net/programming-with-stamps-and-watermarks/add-image-stamp/
 ---
-In deze tutorial laten we u stap voor stap zien hoe u een afbeeldingsbuffer in een PDF-bestand kunt toevoegen met Aspose.PDF voor .NET. We laten u zien hoe u de meegeleverde C#-broncode kunt gebruiken om een aangepaste afbeeldingsbuffer toe te voegen aan een specifieke pagina in het PDF-bestand.
+In deze tutorial laten we je stap voor stap zien hoe je een image buffer toevoegt aan een PDF-bestand met Aspose.PDF voor .NET. We laten je zien hoe je de meegeleverde C#-broncode gebruikt om een aangepaste image buffer toe te voegen aan een specifieke pagina in het PDF-bestand.
 
 ## Stap 1: De omgeving instellen
 
-Zorg ervoor dat u over het volgende beschikt voordat u begint:
+Voordat u begint, moet u ervoor zorgen dat u het volgende bij de hand hebt:
 
 - Een geïnstalleerde .NET-ontwikkelomgeving.
-- De Aspose.PDF-bibliotheek voor .NET gedownload en waarnaar wordt verwezen in uw project.
+- De Aspose.PDF-bibliotheek voor .NET is gedownload en wordt in uw project gebruikt.
 
 ## Stap 2: Het PDF-document laden
 
-De eerste stap is het laden van het bestaande PDF-document in uw project. Hier is hoe:
+De eerste stap is om het bestaande PDF-document in uw project te laden. Dit doet u als volgt:
 
 ```csharp
 // Het pad naar de documentenmap.
@@ -28,25 +28,25 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "AddImageStamp.pdf");
 ```
 
-Zorg ervoor dat u "UW DOCUMENTENMAP" vervangt door het daadwerkelijke pad naar de map waar uw PDF-document zich bevindt.
+Zorg ervoor dat u "UW DOCUMENTENMAP" vervangt door het daadwerkelijke pad naar de map waarin uw PDF-document zich bevindt.
 
 ## Stap 3: De framebuffer maken
 
-Nu u het PDF-document heeft geüpload, kunt u de afbeeldingsstempel maken om toe te voegen. Hier leest u hoe u het moet doen:
+Nu u het PDF-document hebt geüpload, kunt u de afbeeldingstempel maken om toe te voegen. Dit is hoe u dat doet:
 
 ```csharp
 // Maak de framebuffer
 ImageStamp imageStamp = new ImageStamp(dataDir + "aspose-logo.jpg");
 ```
 
-De bovenstaande code maakt een nieuwe afbeeldingsbuffer met behulp van het bestand "aspose-logo.jpg". Zorg ervoor dat het pad naar het afbeeldingsbestand correct is.
+De bovenstaande code maakt een nieuwe image buffer met behulp van het bestand "aspose-logo.jpg". Zorg ervoor dat het pad naar het imagebestand correct is.
 
-## Stap 4: Eigenschappen van beeldbuffer configureren
+## Stap 4: Eigenschappen van de afbeeldingbuffer configureren
 
-Voordat u de afbeeldingsstempel aan het PDF-document toevoegt, kunt u verschillende eigenschappen van de stempel configureren, zoals dekking, grootte, positie, enz. Hier ziet u hoe:
+Voordat u de afbeeldingsstempel aan het PDF-document toevoegt, kunt u verschillende eigenschappen van de stempel configureren, zoals dekking, grootte, positie, enz. Dit doet u als volgt:
 
 ```csharp
-// Configureer de eigenschappen van de afbeeldingsbuffer
+// Configureer de eigenschappen van de afbeeldingbuffer
 imageStamp. Background = true;
 imageStamp. XIndent = 100;
 imageStamp. YIndent = 100;
@@ -56,22 +56,22 @@ imageStamp.Rotate = Rotate.on270;
 imageStamp. Opacity = 0.5;
 ```
 
-U kunt deze eigenschappen aanpassen aan uw behoeften.
+U kunt deze eigenschappen naar wens aanpassen.
 
-## Stap 5: De afbeeldingsstempel toevoegen aan de PDF
+## Stap 5: De afbeeldingstempel toevoegen aan de PDF
 
-Nu de afbeeldingsstempel gereed is, kunt u deze toevoegen aan een specifieke pagina van het PDF-document. Hier is hoe:
+Nu de afbeeldingstempel klaar is, kunt u deze toevoegen aan een specifieke pagina van het PDF-document. Dit doet u als volgt:
 
 ```csharp
 // Voeg de framebuffer toe aan de specifieke pagina
 pdfDocument.Pages[1].AddStamp(imageStamp);
 ```
 
-De bovenstaande code voegt de afbeeldingsbuffer toe aan de eerste pagina van het PDF-document. Indien nodig kunt u een andere pagina opgeven.
+De bovenstaande code voegt de afbeeldingbuffer toe aan de eerste pagina van het PDF-document. U kunt indien nodig een andere pagina opgeven.
 
 ## Stap 6: Sla het uitvoerdocument op
 
-Nadat u de afbeeldingsbuffer heeft toegevoegd, kunt u het gewijzigde PDF-document opslaan. Hier is hoe:
+Zodra u de afbeeldingbuffer hebt toegevoegd, kunt u het gewijzigde PDF-document opslaan. Dit doet u als volgt:
 
 ```csharp
 // Sla het uitvoerdocument op
@@ -80,7 +80,7 @@ pdfDocument.Save(dataDir);
 
 De bovenstaande code slaat het bewerkte PDF-document op in de opgegeven map.
 
-### Voorbeeldbroncode voor het toevoegen van een afbeeldingsstempel met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor Add Image Stamp met behulp van Aspose.PDF voor .NET 
 ```csharp
 
 // Het pad naar de documentenmap.
@@ -99,53 +99,53 @@ imageStamp.Width = 300;
 imageStamp.Rotate = Rotation.on270;
 imageStamp.Opacity = 0.5;
 
-// Voeg een stempel toe aan een bepaalde pagina
+// Voeg stempel toe aan specifieke pagina
 pdfDocument.Pages[1].AddStamp(imageStamp);
 dataDir = dataDir + "AddImageStamp_out.pdf";
 
-// Sla het uitvoerdocument op
+// Uitvoerdocument opslaan
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nImage stamp added successfully.\nFile saved at " + dataDir);
 ```
 
 ## Conclusie
 
-Gefeliciteerd! U hebt geleerd hoe u een afbeeldingsbuffer kunt toevoegen met Aspose.PDF voor .NET. Nu kunt u deze kennis toepassen op uw eigen projecten en aangepaste afbeeldingsstempels toevoegen aan PDF-documenten.
+Gefeliciteerd! U hebt geleerd hoe u een afbeeldingbuffer kunt toevoegen met Aspose.PDF voor .NET. Nu kunt u deze kennis toepassen op uw eigen projecten om aangepaste afbeeldingstempels toe te voegen aan PDF-documenten.
 
-### Veelgestelde vragen over het toevoegen van een afbeeldingsstempel in een PDF-bestand
+### FAQ's voor het toevoegen van een afbeeldingsstempel aan een PDF-bestand
 
-#### Vraag: Wat is het doel van het toevoegen van een afbeeldingsbuffer aan een PDF-document met Aspose.PDF voor .NET?
+#### V: Wat is het doel van het toevoegen van een afbeeldingbuffer aan een PDF-document met behulp van Aspose.PDF voor .NET?
 
-A: Door een afbeeldingsbuffer aan een PDF-document toe te voegen, kunt u aangepaste afbeeldingen in het document opnemen, waardoor de visuele aantrekkingskracht wordt vergroot en specifieke informatie of branding wordt overgebracht. Deze functie is handig voor het toevoegen van logo's, watermerken of andere grafische elementen aan de PDF.
+A: Door een afbeeldingbuffer toe te voegen aan een PDF-document kunt u aangepaste afbeeldingen in het document opnemen, waardoor de visuele aantrekkingskracht wordt vergroot en specifieke informatie of branding wordt overgebracht. Deze functie is handig voor het toevoegen van logo's, watermerken of andere grafische elementen aan de PDF.
 
-#### Vraag: Kan ik meerdere afbeeldingsbuffers toevoegen aan verschillende pagina's van hetzelfde PDF-document?
+#### V: Kan ik meerdere afbeeldingbuffers toevoegen aan verschillende pagina's van hetzelfde PDF-document?
 
-A: Ja, u kunt meerdere afbeeldingsbuffers toevoegen aan verschillende pagina's van hetzelfde PDF-document. Met de meegeleverde C#-broncode kunt u de doelpagina opgeven voor het toevoegen van de afbeeldingsstempel, waardoor deze veelzijdig is voor verschillende pagina's binnen het document.
+A: Ja, u kunt meerdere afbeeldingbuffers toevoegen aan verschillende pagina's van hetzelfde PDF-document. De meegeleverde C#-broncode stelt u in staat de doelpagina te specificeren voor het toevoegen van de afbeeldingstempel, waardoor het veelzijdig is voor verschillende pagina's binnen het document.
 
-#### Vraag: Hoe kan ik de positie en grootte van de afbeeldingsbuffer in het PDF-document aanpassen?
+#### V: Hoe kan ik de positie en grootte van de afbeeldingbuffer in het PDF-document aanpassen?
 
- A: U kunt de positie en grootte van de afbeeldingsbuffer aanpassen door de eigenschappen van het`ImageStamp` voorwerp. De code in de zelfstudie laat zien hoe u eigenschappen instelt, zoals`XIndent`, `YIndent`, `Height` , En`Width` om de positionering en afmetingen van de afbeeldingsstempel te controleren.
+ A: U kunt de positie en grootte van de afbeeldingbuffer aanpassen door de eigenschappen van de`ImageStamp` object. De code in de tutorial laat zien hoe je eigenschappen instelt zoals`XIndent`, `YIndent`, `Height` , En`Width` om de positie en afmetingen van de afbeeldingsstempel te bepalen.
 
-#### Vraag: Is het mogelijk om de afbeeldingsbuffer te roteren wanneer deze aan het PDF-document wordt toegevoegd?
+#### V: Is het mogelijk om de afbeeldingbuffer te roteren wanneer ik deze aan het PDF-document toevoeg?
 
- A: Ja, u kunt de afbeeldingsbuffer roteren voordat u deze aan het PDF-document toevoegt door de`Rotate` eigendom van de`ImageStamp` voorwerp. De code in de zelfstudie laat zien hoe u de afbeeldingsstempel kunt roteren met behulp van waarden zoals`Rotation.on270`, maar u kunt de rotatiehoek indien nodig aanpassen.
+ A: Ja, u kunt de afbeeldingbuffer roteren voordat u deze aan het PDF-document toevoegt door de`Rotate` eigendom van de`ImageStamp` object. De code in de tutorial laat zien hoe je de afbeeldingstempel roteert met behulp van waarden zoals`Rotation.on270`, maar u kunt de rotatiehoek indien nodig aanpassen.
 
-#### Vraag: Kan ik de dekking van de afbeeldingsbuffer bepalen wanneer ik deze aan het PDF-document toevoeg?
+#### V: Kan ik de dekking van de afbeeldingbuffer bepalen wanneer ik deze aan het PDF-document toevoeg?
 
- A: Absoluut, u kunt de dekking van de afbeeldingsbuffer regelen door de`Opacity` eigendom van de`ImageStamp` voorwerp. De meegeleverde C#-broncode laat zien hoe u het dekkingsniveau instelt, zodat u het gewenste transparantie-effect kunt bereiken.
+ A: Absoluut, u kunt de dekking van de afbeeldingbuffer regelen door de`Opacity` eigendom van de`ImageStamp` object. De meegeleverde C#-broncode laat zien hoe u het opaciteitsniveau instelt, zodat u het gewenste transparantie-effect kunt bereiken.
 
-#### Vraag: Hoe kan ik deze methode in mijn eigen projecten integreren om afbeeldingsbuffers aan PDF-documenten toe te voegen?
+#### V: Hoe kan ik deze methode integreren in mijn eigen projecten om afbeeldingbuffers toe te voegen aan PDF-documenten?
 
-A: Om deze methode te integreren, volgt u de aangegeven stappen en past u de code aan zodat deze overeenkomt met de structuur van uw project. Door afbeeldingsbuffers aan PDF-documenten toe te voegen, kunt u de visuele presentatie ervan verbeteren en specifieke branding of informatie overbrengen.
+A: Om deze methode te integreren, volgt u de gegeven stappen en past u de code aan zodat deze overeenkomt met de structuur van uw project. Door afbeeldingbuffers toe te voegen aan PDF-documenten, kunt u hun visuele presentatie verbeteren en specifieke branding of informatie overbrengen.
 
-#### Vraag: Zijn er overwegingen of beperkingen bij het toevoegen van afbeeldingsbuffers aan PDF-documenten?
+#### V: Zijn er bepaalde overwegingen of beperkingen bij het toevoegen van afbeeldingbuffers aan PDF-documenten?
 
-A: Hoewel het toevoegen van afbeeldingsbuffers eenvoudig is, moet u rekening houden met de algehele lay-out en inhoud van het PDF-document. Zorg ervoor dat de toegevoegde beeldbuffers geen kritische informatie belemmeren of de leesbaarheid van het document negatief beïnvloeden.
+A: Hoewel het toevoegen van afbeeldingbuffers eenvoudig is, moet u rekening houden met de algehele lay-out en inhoud van het PDF-document. Zorg ervoor dat de toegevoegde afbeeldingbuffers geen kritieke informatie blokkeren of de leesbaarheid van het document negatief beïnvloeden.
 
-#### Vraag: Kan ik deze methode gebruiken om andere afbeeldingen dan logo's toe te voegen, zoals watermerken of aangepaste afbeeldingen?
+#### V: Kan ik deze methode gebruiken om andere afbeeldingen dan logo's toe te voegen, zoals watermerken of aangepaste afbeeldingen?
 
-A: Ja, u kunt deze methode gebruiken om verschillende soorten afbeeldingen toe te voegen, inclusief watermerken, aangepaste afbeeldingen of andere visuele elementen. De code van de tutorial kan worden aangepast om de gewenste afbeeldingen aan uw PDF-documenten toe te voegen.
+A: Ja, u kunt deze methode gebruiken om verschillende soorten afbeeldingen toe te voegen, waaronder watermerken, aangepaste afbeeldingen of andere visuele elementen. De code van de tutorial kan worden aangepast om de gewenste afbeeldingen aan uw PDF-documenten toe te voegen.
 
-#### Vraag: Is het mogelijk om het proces van het toevoegen van afbeeldingsbuffers aan meerdere PDF-documenten te automatiseren?
+#### V: Is het mogelijk om het proces van het toevoegen van afbeeldingbuffers aan meerdere PDF-documenten te automatiseren?
 
-A: Ja, u kunt het proces van het toevoegen van afbeeldingsbuffers aan meerdere PDF-documenten automatiseren door een script of programma te maken dat een lijst met documenten doorloopt en op elk document hetzelfde stempelproces toepast.
+A: Ja, u kunt het proces van het toevoegen van afbeeldingbuffers aan meerdere PDF-documenten automatiseren door een script of programma te maken dat door een lijst met documenten itereert en hetzelfde afbeeldingstempelproces op elk document toepast.

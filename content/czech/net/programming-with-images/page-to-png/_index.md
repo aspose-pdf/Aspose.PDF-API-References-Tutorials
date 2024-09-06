@@ -36,7 +36,7 @@ Dále převedeme konkrétní stránku dokumentu PDF do formátu PNG. Použijte n
 ```csharp
 using (FileStream imageStream = new FileStream(dataDir + "aspose-logo.png", FileMode.Create))
 {
-// Vytvořte objekt rozlišení
+//Vytvořte objekt rozlišení
 Resolution resolution = new Resolution(300);
 // Vytvořte zařízení PNG se zadanými atributy (šířka, výška, rozlišení)
 PngDevice pngDevice = new PngDevice(resolution);
@@ -61,7 +61,7 @@ using (FileStream imageStream = new FileStream(dataDir + "aspose-logo.png", File
 	Resolution resolution = new Resolution(300);
 	// Vytvořte zařízení PNG se zadanými atributy (šířka, výška, rozlišení)
 	PngDevice pngDevice = new PngDevice(resolution);
-	//Převeďte konkrétní stránku a uložte obrázek do streamu
+	// Převeďte konkrétní stránku a uložte obrázek do streamu
 	pngDevice.Process(pdfDocument.Pages[1], imageStream);
 	// Zavřít stream
 	imageStream.Close();

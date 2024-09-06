@@ -1,158 +1,125 @@
 ---
 title: Perluas Bookmark Dalam File PDF
 linktitle: Perluas Bookmark Dalam File PDF
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Perluas bookmark dalam file PDF dengan mudah untuk meningkatkan navigasi dengan Aspose.PDF untuk .NET.
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara memperluas bookmark dalam file PDF menggunakan Aspose.PDF for .NET dengan panduan langkah demi langkah ini. Sempurna bagi pengembang yang ingin meningkatkan navigasi PDF.
 type: docs
 weight: 50
 url: /id/net/programming-with-bookmarks/expand-bookmarks/
 ---
-Memperluas bookmark dalam file PDF akan menampilkan semua bookmark yang terbuka secara default. Dengan Aspose.PDF untuk .NET, Anda dapat dengan mudah memperluas bookmark dengan mengikuti kode sumber berikut:
+## Perkenalan
 
-## Langkah 1: Impor perpustakaan yang diperlukan
+Pernahkah Anda membuka berkas PDF dan mendapati bahwa semua penanda halaman telah diciutkan? Hal ini dapat membuat frustrasi, terutama saat Anda mencoba menelusuri dokumen yang panjang. Untungnya, dengan Aspose.PDF for .NET, Anda dapat dengan mudah memperluas penanda halaman dalam berkas PDF secara terprogram. Panduan ini akan memandu Anda melalui proses ini langkah demi langkah, memastikan Anda memahami setiap bagian kode dan cara kerjanya. Jadi, ambil minuman favorit Anda, dan mari selami dunia manipulasi PDF!
 
-Sebelum memulai, Anda perlu mengimpor perpustakaan yang diperlukan untuk proyek C# Anda. Berikut adalah arahan impor yang diperlukan:
+## Prasyarat
+
+Sebelum kita memulai, ada beberapa hal yang perlu Anda siapkan:
+
+1. Visual Studio: Pastikan Anda telah menginstal Visual Studio di komputer Anda. Ini adalah lingkungan terbaik untuk pengembangan .NET.
+2.  Aspose.PDF untuk .NET: Anda perlu mengunduh dan menginstal pustaka Aspose.PDF. Anda dapat menemukannya[Di Sini](https://releases.aspose.com/pdf/net/).
+3. Pengetahuan Dasar C#: Keakraban dengan pemrograman C# akan membantu Anda memahami potongan kode dengan lebih baik.
+
+## Paket Impor
+
+Untuk memulai, Anda perlu mengimpor paket yang diperlukan ke dalam proyek C# Anda. Berikut cara melakukannya:
+
+### Buat Proyek Baru
+
+Buka Visual Studio dan buat proyek C# baru. Anda dapat memilih Aplikasi Konsol untuk mempermudah.
+
+### Tambahkan Referensi Aspose.PDF
+
+1. Klik kanan pada proyek Anda di Solution Explorer.
+2. Pilih "Kelola Paket NuGet."
+3. Cari "Aspose.PDF" dan instal versi terbaru.
+
+### Impor Namespace
+
+Di bagian atas file C# Anda, impor namespace Aspose.PDF:
 
 ```csharp
+using System;
+using System.IO;
 using Aspose.Pdf;
 ```
 
-## Langkah 2: Tetapkan jalur ke folder dokumen
+Sekarang Anda sudah menyiapkan semuanya, mari beralih ke kode sebenarnya!
 
- Pada langkah ini, Anda perlu menentukan jalur ke folder yang berisi file PDF yang ingin Anda perluas bookmarknya. Mengganti`"YOUR DOCUMENT DIRECTORY"`dalam kode berikut dengan jalur sebenarnya ke folder dokumen Anda:
+## Langkah 1: Siapkan Direktori Dokumen Anda
 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-```
+Pertama, Anda perlu menentukan jalur ke direktori dokumen Anda. Di sinilah berkas PDF masukan Anda berada dan di mana berkas keluaran akan disimpan.
 
-## Langkah 3: Buka dokumen PDF
-
-Sekarang kita akan membuka dokumen PDF yang bookmarknya ingin kita perluas menggunakan kode berikut:
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
-## Langkah 4: Atur Mode Tampilan Halaman
-
-Pada langkah ini, kami akan mengatur mode tampilan halaman untuk menampilkan bookmark secara default. Kami menggunakan`PageMode` properti dari`doc` objek untuk mengatur mode halaman yang diinginkan. Ini kode yang sesuai:
-
-```csharp
-doc.PageMode = PageMode.UseOutlines;
-```
-
-## Langkah 5: Jelajahi bookmark dan perluas
-
- Sekarang kita akan menelusuri setiap item bookmark dalam koleksi bookmark dokumen dan mengatur status terbuka setiap item`true` untuk memperluasnya secara default. Ini kode yang sesuai:
-
-```csharp
-foreach(OutlineItemCollection item in doc.Outlines)
-{
-     item. Open = true;
-}
-```
-
-## Langkah 6: Simpan file yang diperbarui
-
- Terakhir, kami menyimpan file PDF yang diperbarui menggunakan`Save` metode`doc` obyek. Ini kode yang sesuai:
-
-```csharp
-dataDir = dataDir + "ExpandBookmarks_out.pdf";
-doc.Save(dataDir);
-```
-
-### Contoh kode sumber untuk Perluas Bookmark menggunakan Aspose.PDF untuk .NET 
 ```csharp
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+## Langkah 2: Buka Dokumen PDF
+
+ Selanjutnya, Anda akan membuka dokumen PDF yang berisi bookmark yang ingin Anda perluas. Ini dilakukan dengan menggunakan`Document` kelas dari pustaka Aspose.PDF.
+
+```csharp
 // Buka dokumen
-Document doc = new Document(dataDir + "input.pdf");
-// Atur mode tampilan halaman yaitu tampilkan thumbnail, layar penuh, tampilkan panel lampiran
+Document doc = new Document(dataDir + "input-bookmark.pdf");
+```
+
+## Langkah 3: Mengatur Mode Tampilan Halaman
+
+Sekarang, Anda perlu mengatur mode tampilan halaman dokumen. Ini menentukan bagaimana PDF akan ditampilkan saat dibuka. Dalam kasus ini, kami ingin menggunakan garis besar (bookmark).
+
+```csharp
+//Atur mode tampilan halaman, yaitu tampilkan gambar mini, layar penuh, tampilkan panel lampiran
 doc.PageMode = PageMode.UseOutlines;
-// Telusuri setiap item Ouline dalam kumpulan garis besar file PDF
+```
+
+## Langkah 4: Telusuri Item Garis Besar
+
+Di sinilah bagian yang menyenangkan! Anda akan menelusuri setiap item kerangka dalam koleksi kerangka PDF dan menyetel status terbukanya menjadi benar. Ini akan memperluas penanda buku.
+
+```csharp
+// Telusuri setiap item Garis Besar dalam kumpulan garis besar file PDF
 foreach (OutlineItemCollection item in doc.Outlines)
 {
-	// Tetapkan status terbuka untuk item kerangka
-	item.Open = true;
+    // Tetapkan status terbuka untuk item garis besar
+    item.Open = true;
 }
+```
+
+## Langkah 5: Simpan Dokumen Output
+
+Setelah memperluas bookmark, saatnya menyimpan dokumen yang dimodifikasi. Anda akan menentukan nama file baru untuk PDF keluaran.
+
+```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 // Simpan keluaran
 doc.Save(dataDir);
+```
+
+## Langkah 6: Pesan Konfirmasi
+
+Terakhir, Anda dapat mencetak pesan konfirmasi ke konsol untuk memberi tahu Anda bahwa bookmark telah berhasil diperluas.
+
+```csharp
 Console.WriteLine("\nBookmarks expanded successfully.\nFile saved at " + dataDir);
 ```
 
 ## Kesimpulan
 
-Selamat! Anda sekarang memiliki panduan langkah demi langkah untuk mengembangkan bookmark dengan Aspose.PDF untuk .NET. Anda dapat menggunakan kode ini untuk menampilkan semua bookmark default di dokumen PDF Anda.
+Nah, itu dia! Anda telah berhasil memperluas bookmark dalam file PDF menggunakan Aspose.PDF untuk .NET. Pustaka yang sederhana namun canggih ini memungkinkan Anda untuk memanipulasi dokumen PDF dengan mudah, membuat hidup Anda jauh lebih mudah. Baik Anda sedang mengerjakan proyek pribadi atau aplikasi profesional, Aspose.PDF adalah alat yang fantastis untuk dimiliki di gudang senjata Anda.
 
-Pastikan untuk memeriksa dokumentasi resmi Aspose.PDF untuk informasi lebih lanjut tentang fitur manipulasi bookmark tingkat lanjut.
+## Pertanyaan yang Sering Diajukan
 
-### FAQ untuk memperluas bookmark dalam file PDF
+### Apa itu Aspose.PDF untuk .NET?
+Aspose.PDF untuk .NET adalah pustaka hebat yang memungkinkan pengembang untuk membuat, memanipulasi, dan mengonversi dokumen PDF secara terprogram.
 
-#### T: Apa yang dimaksud dengan bookmark dalam file PDF?
+### Dapatkah saya menggunakan Aspose.PDF secara gratis?
+ Ya, Aspose menawarkan versi uji coba gratis yang dapat Anda gunakan untuk menjelajahi fitur-fitur pustaka. Anda dapat mengunduhnya[Di Sini](https://releases.aspose.com/).
 
-J: Penanda dalam file PDF adalah alat bantu navigasi yang memungkinkan pengguna melompat ke bagian atau halaman tertentu dalam dokumen dengan cepat. Mereka menyediakan cara mudah untuk mengakses berbagai bagian dokumen.
+### Di mana saya dapat menemukan dokumentasi lebih lanjut?
+ Anda dapat menemukan dokumentasi lengkap di Aspose.PDF untuk .NET[Di Sini](https://reference.aspose.com/pdf/net/).
 
-#### T: Mengapa saya ingin memperluas bookmark di file PDF?
+### Apakah ada dukungan yang tersedia untuk Aspose.PDF?
+ Tentu saja! Anda bisa mendapatkan dukungan dari komunitas Aspose[Di Sini](https://forum.aspose.com/c/pdf/10).
 
-J: Memperluas bookmark dapat meningkatkan pengalaman pengguna dengan menampilkan semua bookmark dalam keadaan diperluas secara default. Ini memberi pengguna gambaran yang jelas tentang struktur dokumen dan memungkinkan mereka menavigasi dengan mudah ke bagian yang berbeda.
-
-#### T: Bagaimana cara mengimpor perpustakaan yang diperlukan untuk proyek C# saya?
-
-J: Untuk mengimpor perpustakaan yang diperlukan untuk proyek C# Anda, gunakan perintah impor berikut:
-
-```csharp
-using Aspose.Pdf;
-```
-
-Arahan ini memungkinkan Anda untuk memanfaatkan kelas dan metode yang disediakan oleh Aspose.PDF untuk .NET.
-
-#### T: Bagaimana cara menentukan jalur ke folder dokumen?
-
- A: Di kode sumber yang disediakan, ganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya ke folder yang berisi file PDF yang ingin Anda kerjakan. Ini memastikan bahwa kode dapat menemukan file PDF target.
-
-#### T: Bagaimana cara membuka dokumen PDF untuk memperluas bookmarknya?
-
-A: Untuk membuka dokumen PDF untuk memperluas bookmark, gunakan kode berikut:
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
- Mengganti`"input.pdf"` dengan nama file sebenarnya.
-
-#### T: Bagaimana cara mengatur mode tampilan halaman untuk menampilkan bookmark secara default?
-
-J: Untuk mengatur mode tampilan halaman agar menampilkan bookmark secara default, gunakan`PageMode` properti dari`doc` obyek:
-
-```csharp
-doc.PageMode = PageMode.UseOutlines;
-```
-
-#### T: Bagaimana cara memperluas semua bookmark di dokumen PDF?
-
- J: Untuk memperluas semua penanda, telusuri setiap item penanda dalam kumpulan kerangka dokumen dan atur`Open` properti ke`true`:
-
-```csharp
-foreach (OutlineItemCollection item in doc.Outlines)
-{
-    item.Open = true;
-}
-```
-
-#### T: Apa yang terjadi jika sebuah bookmark memiliki bookmark anak bertumpuk?
-
-J: Jika suatu penanda mempunyai penanda anak yang bertumpuk, memperluas penanda induk juga akan memperluas penanda anak, sehingga memberikan tampilan komprehensif tentang struktur dokumen.
-
-#### T: Bagaimana cara menyimpan file PDF yang diperbarui setelah memperluas bookmark?
-
-A: Untuk menyimpan file PDF yang diperbarui setelah memperluas bookmark, gunakan kode berikut:
-
-```csharp
-dataDir = dataDir + "ExpandBookmarks_out.pdf";
-doc.Save(dataDir);
-```
-
-#### T: Dapatkah saya menyesuaikan tampilan bookmark yang diperluas?
-
-J: Meskipun tutorial ini berfokus pada memperluas bookmark secara default, Anda dapat menyesuaikan tampilan bookmark menggunakan fitur dan properti Aspose.PDF lainnya.
+### Bagaimana cara membeli lisensi untuk Aspose.PDF?
+ Anda dapat membeli lisensi untuk Aspose.PDF[Di Sini](https://purchase.aspose.com/buy).

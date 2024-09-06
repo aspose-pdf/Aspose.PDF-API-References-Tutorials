@@ -10,17 +10,17 @@ url: /pt/java/pdf-tables/add-table-in-existing-pdf-document-using-java/
 
 ## Introdução para adicionar tabela em documento PDF existente usando Java
 
-Neste artigo, exploraremos como adicionar uma tabela a um documento PDF existente usando Java. As tabelas são uma parte fundamental de muitos documentos, fornecendo uma forma estruturada de exibição de dados. Estaremos usando a biblioteca Aspose.PDF for Java para realizar esta tarefa.
+Neste artigo, exploraremos como adicionar uma tabela a um documento PDF existente usando Java. Tabelas são uma parte fundamental de muitos documentos, fornecendo uma maneira estruturada de exibir dados. Usaremos a biblioteca Aspose.PDF for Java para realizar essa tarefa.
 
 ## Requisitos
 
-Antes de começarmos, certifique-se de ter os seguintes pré-requisitos:
+Antes de começar, certifique-se de ter os seguintes pré-requisitos:
 
-- Kit de desenvolvimento Java (JDK) instalado.
-- Um ambiente de desenvolvimento integrado (IDE) como IntelliJ IDEA ou Eclipse.
+- Java Development Kit (JDK) instalado.
+- Um Ambiente de Desenvolvimento Integrado (IDE) como IntelliJ IDEA ou Eclipse.
 -  Biblioteca Aspose.PDF para Java, que você pode baixar em[aqui](https://releases.aspose.com/pdf/java/).
 
-## Configurando o Ambiente
+## Configurando o ambiente
 
 1. Abra seu IDE preferido e crie um novo projeto Java.
 2. Adicione a biblioteca Aspose.PDF para Java ao seu projeto.
@@ -39,7 +39,7 @@ Antes de começarmos, certifique-se de ter os seguintes pré-requisitos:
 </dependencies>
 ```
 
- Substituir`latest_version` com a versão real da biblioteca Aspose.PDF que você baixou.
+ Substituir`latest_version` com a versão atual da biblioteca Aspose.PDF que você baixou.
 
 ## Criando uma tabela
 
@@ -51,12 +51,12 @@ import com.aspose.pdf.*;
 // Abra um documento PDF existente
 Document pdfDocument = new Document("existing-document.pdf");
 
-// Crie uma tabela
+// Criar uma tabela
 Table table = new Table();
 pdfDocument.getPages().get_Item(1).getParagraphs().add(table);
 ```
 
-## Definir propriedades da tabela
+## Definindo Propriedades da Tabela
 
 Você pode definir várias propriedades para sua tabela, como borda, largura e alinhamento. Aqui está um exemplo:
 
@@ -67,19 +67,19 @@ table.setBorder(new BorderInfo(BorderSide.All, 1f));
 // Definir largura da tabela
 table.setColumnWidths("100 100 100");
 
-// Definir alinhamento da tabela
+// Definir alinhamento da mesa
 table.setAlignment(HorizontalAlignment.Center);
 ```
 
 ## Adicionando dados à tabela
 
-Agora, vamos adicionar dados à tabela. Você pode preenchê-lo com texto, imagens ou outros elementos. Aqui, adicionaremos um texto simples:
+Agora, vamos adicionar dados à tabela. Você pode preenchê-la com texto, imagens ou outros elementos. Aqui, adicionaremos algum texto simples:
 
 ```java
 // Criar uma linha
 Row row = table.getRows().add();
 
-// Adicione células com dados
+// Adicionar células com dados
 row.getCells().add("Name");
 row.getCells().add("Age");
 row.getCells().add("Location");
@@ -89,7 +89,7 @@ row.getCells().add("Location");
 
 ## Estilizando a mesa
 
-Você pode estilizar ainda mais a tabela alterando o tamanho da fonte, a cor do texto e outras opções de formatação. Aqui está um exemplo:
+Você pode estilizar a tabela ainda mais alterando o tamanho da fonte, a cor do texto e outras opções de formatação. Aqui está um exemplo:
 
 ```java
 // Definir tamanho da fonte
@@ -105,7 +105,7 @@ row.getCells().get_Item(0).getBackgroundColour().setColor(Color.getLightGray());
 
 ## Salvando o PDF modificado
 
-Após adicionar a tabela e estilizá-la, salve o documento PDF modificado:
+Depois de adicionar a tabela e estilizá-la, salve o documento PDF modificado:
 
 ```java
 pdfDocument.save("modified-document.pdf");
@@ -113,25 +113,25 @@ pdfDocument.save("modified-document.pdf");
 
 ## Conclusão
 
-Neste tutorial, aprendemos como adicionar uma tabela a um documento PDF existente usando Java e a biblioteca Aspose.PDF para Java. Você pode personalizar a aparência e o conteúdo da tabela para atender às suas necessidades específicas. As tabelas são uma ferramenta valiosa para apresentar dados em formato estruturado em documentos PDF.
+Neste tutorial, aprendemos como adicionar uma tabela a um documento PDF existente usando Java e a biblioteca Aspose.PDF para Java. Você pode personalizar a aparência e o conteúdo da tabela para atender às suas necessidades específicas. As tabelas são uma ferramenta valiosa para apresentar dados em um formato estruturado em documentos PDF.
 
 ## Perguntas frequentes
 
 ### Como posso instalar o Aspose.PDF para Java?
 
- Você pode baixar Aspose.PDF para Java em[aqui](https://releases.aspose.com/pdf/java/). Siga as instruções de instalação fornecidas em seu site.
+ Você pode baixar Aspose.PDF para Java em[aqui](https://releases.aspose.com/pdf/java/). Siga as instruções de instalação fornecidas no site.
 
 ### Posso adicionar imagens às células da tabela?
 
-Sim, você pode adicionar imagens às células da tabela usando a biblioteca Aspose.PDF. Consulte a documentação para exemplos específicos.
+Sim, você pode adicionar imagens a células de tabela usando a biblioteca Aspose.PDF. Consulte a documentação para obter exemplos específicos.
 
 ### O Aspose.PDF para Java é compatível com diferentes versões de PDF?
 
-Sim, Aspose.PDF for Java suporta trabalhar com diferentes versões de PDF, incluindo PDF 1.5 e posterior. Verifique a documentação para obter detalhes de compatibilidade de versão.
+Sim, o Aspose.PDF para Java suporta trabalhar com diferentes versões de PDF, incluindo PDF 1.5 e posteriores. Verifique a documentação para detalhes de compatibilidade de versão.
 
-### Como defino bordas personalizadas para células da tabela?
+### Como defino bordas personalizadas para células de tabela?
 
- Você pode personalizar as bordas das células ajustando o`BorderInfo` propriedades. Consulte a documentação do Aspose.PDF para exemplos detalhados.
+ Você pode personalizar as bordas das células ajustando o`BorderInfo` propriedades. Consulte a documentação do Aspose.PDF para obter exemplos detalhados.
 
 ### Posso extrair dados de tabelas existentes em um documento PDF?
 

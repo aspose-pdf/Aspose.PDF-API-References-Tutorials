@@ -1,20 +1,20 @@
 ---
 title: Spłaszcz adnotację w pliku PDF
 linktitle: Spłaszcz adnotację w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak spłaszczyć adnotacje w pliku PDF za pomocą Aspose.PDF dla .NET. Zachowaj adnotacje i zapobiegnij przypadkowym zmianom.
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak spłaszczyć adnotacje w pliku PDF za pomocą Aspose.PDF dla .NET. Zachowaj adnotacje i zapobiegaj przypadkowym zmianom.
 type: docs
 weight: 150
 url: /pl/net/programming-with-document/flattenannotation/
 ---
-Aspose.PDF dla .NET to potężna biblioteka, która umożliwia programistom programową pracę z plikami PDF. Jedną z funkcji, które zapewnia, jest możliwość spłaszczenia adnotacji w pliku PDF. Spłaszczenie adnotacji w dokumencie PDF oznacza, że adnotacje stają się częścią treści dokumentu i nie można ich już edytować ani usuwać. Jest to przydatne, gdy chcesz mieć pewność, że adnotacje zostaną zachowane i nie będzie można ich przypadkowo zmienić.
+Aspose.PDF dla .NET to potężna biblioteka, która umożliwia programistom programową pracę z plikiem PDF. Jedną z funkcji, które oferuje, jest możliwość spłaszczania adnotacji w pliku PDF. Spłaszczanie adnotacji w dokumencie PDF oznacza, że adnotacje stają się częścią zawartości dokumentu i nie można ich już edytować ani usuwać. Jest to przydatne, gdy chcesz mieć pewność, że adnotacje zostaną zachowane i nie można ich przypadkowo zmienić.
 
-W tym samouczku omówimy, jak używać Aspose.PDF dla .NET do spłaszczania adnotacji w dokumencie PDF. Udostępnimy przewodnik krok po kroku, jak to zrobić, wraz z przykładowym kodem źródłowym.
+W tym samouczku omówimy, jak używać Aspose.PDF dla .NET do spłaszczania adnotacji w dokumencie PDF. Przedstawimy przewodnik krok po kroku, jak to zrobić, wraz z przykładowym kodem źródłowym.
 
 ## Krok 1: Utwórz nową aplikację konsolową C#
-Aby rozpocząć, utwórz nową aplikację konsolową C# w programie Visual Studio. Możesz nazwać to jak chcesz. Po utworzeniu projektu należy dodać odwołanie do biblioteki Aspose.PDF dla .NET.
+Aby rozpocząć, utwórz nową aplikację konsoli C# w Visual Studio. Możesz nadać jej dowolną nazwę. Po utworzeniu projektu musisz dodać odwołanie do biblioteki Aspose.PDF dla .NET.
 
-## Krok 2: Zaimportuj przestrzeń nazw Aspose.PDF
+## Krok 2: Importuj przestrzeń nazw Aspose.PDF
 Dodaj następujący wiersz kodu na górze pliku C#, aby zaimportować przestrzeń nazw Aspose.PDF:
 
 ```csharp
@@ -49,7 +49,7 @@ pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("\nFlattened annotation successfully.\nFile saved at " + dataDir);
 ```
 
-### Przykładowy kod źródłowy spłaszczonej adnotacji przy użyciu Aspose.PDF dla .NET
+### Przykładowy kod źródłowy dla adnotacji Flatten przy użyciu Aspose.PDF dla .NET
 
 ```csharp
 // Ścieżka do katalogu dokumentów.
@@ -72,18 +72,18 @@ Console.WriteLine("\nFlattened annotation successfully.\nFile saved at " + dataD
 ```
 
 ## Wniosek
-W tym samouczku omówiliśmy, jak spłaszczyć adnotacje w dokumencie PDF za pomocą Aspose.PDF dla .NET. Spłaszczanie adnotacji w dokumencie PDF to przydatna funkcja, która gwarantuje, że adnotacje zostaną zachowane i nie będą mogły zostać przypadkowo zmienione. Aspose.PDF dla .NET zapewnia prosty i łatwy w użyciu interfejs API do pracy z dokumentami PDF, w tym spłaszczanymi adnotacjami. 
+W tym samouczku omówiliśmy, jak spłaszczać adnotacje w dokumencie PDF za pomocą Aspose.PDF dla .NET. Spłaszczanie adnotacji w dokumencie PDF to przydatna funkcja, która zapewnia, że adnotacje są zachowywane i nie mogą zostać przypadkowo zmienione. Aspose.PDF dla .NET zapewnia proste i łatwe w użyciu API do pracy z dokumentami PDF, w tym spłaszczania adnotacji. 
 
-### Często zadawane pytania dotyczące spłaszczonych adnotacji w pliku PDF
+### Często zadawane pytania dotyczące spłaszczania adnotacji w pliku PDF
 
 #### P: Czym są adnotacje w dokumencie PDF?
 
-Odp.: Adnotacje w dokumencie PDF to dodatkowe elementy lub notatki, które można dodać do dokumentu w celu zapewnienia dodatkowych informacji lub interaktywności. Adnotacje mogą zawierać tekst, obrazy, łącza, komentarze i inne elementy.
+A: Adnotacje w dokumencie PDF to dodatkowe elementy lub notatki, które można dodać do dokumentu, aby zapewnić dodatkowe informacje lub interaktywność. Adnotacje mogą obejmować tekst, obrazy, linki, komentarze i inne.
 
-#### P: Dlaczego miałbym spłaszczać adnotacje w dokumencie PDF?
+#### P: Dlaczego miałbym chcieć spłaszczyć adnotacje w dokumencie PDF?
 
-Odp.: Spłaszczanie adnotacji w dokumencie PDF jest przydatne, gdy chcesz mieć pewność, że adnotacje staną się częścią treści dokumentu i nie będzie można ich edytować ani usunąć. Pomaga w zachowaniu adnotacji jako części dokumentu.
+A: Spłaszczanie adnotacji w dokumencie PDF jest przydatne, gdy chcesz mieć pewność, że adnotacje staną się częścią treści dokumentu i nie będzie można ich edytować ani usunąć. Pomaga to zachować adnotacje jako część dokumentu.
 
 #### P: Czy mogę selektywnie spłaszczać adnotacje w dokumencie PDF?
 
-Odp.: Tak, możesz selektywnie spłaszczać adnotacje w dokumencie PDF za pomocą Aspose.PDF dla .NET. Możesz spłaszczyć określone adnotacje lub wszystkie adnotacje na określonej stronie lub w całym dokumencie.
+A: Tak, możesz selektywnie spłaszczać adnotacje w dokumencie PDF za pomocą Aspose.PDF dla .NET. Możesz wybrać spłaszczanie określonych adnotacji lub wszystkich adnotacji na określonej stronie lub w całym dokumencie.

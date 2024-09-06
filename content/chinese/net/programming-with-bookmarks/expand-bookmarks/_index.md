@@ -2,157 +2,124 @@
 title: 展开 PDF 文件中的书签
 linktitle: 展开 PDF 文件中的书签
 second_title: Aspose.PDF for .NET API 参考
-description: 使用 Aspose.PDF for .NET 轻松扩展 PDF 文件中的书签以改进导航。
+description: 通过本分步指南了解如何使用 Aspose.PDF for .NET 扩展 PDF 文件中的书签。非常适合希望增强 PDF 导航的开发人员。
 type: docs
 weight: 50
 url: /zh/net/programming-with-bookmarks/expand-bookmarks/
 ---
-默认情况下，展开 PDF 文件中的书签将显示所有打开的书签。使用Aspose.PDF for .NET，您可以通过以下源代码轻松扩展书签：
+## 介绍
 
-## 第1步：导入所需的库
+您是否曾经打开 PDF 文件却发现书签全部折叠？这可能令人沮丧，尤其是当您尝试浏览冗长的文档时。幸运的是，使用 Aspose.PDF for .NET，您可以轻松地以编程方式扩展 PDF 文件中的书签。本指南将逐步引导您完成该过程，确保您了解代码的每个部分及其工作原理。所以，拿起您最喜欢的饮料，让我们深入研究 PDF 操作的世界吧！
 
-在开始之前，您需要为 C# 项目导入必要的库。这是必要的导入指令：
+## 先决条件
+
+在开始之前，您需要做好以下几件事：
+
+1. Visual Studio：确保您的机器上安装了 Visual Studio。它是 .NET 开发的最佳环境。
+2.  Aspose.PDF for .NET：您需要下载并安装 Aspose.PDF 库。您可以找到它[这里](https://releases.aspose.com/pdf/net/).
+3. C# 基础知识：熟悉 C# 编程将帮助您更好地理解代码片段。
+
+## 导入包
+
+首先，您需要在 C# 项目中导入必要的包。操作方法如下：
+
+### 创建新项目
+
+打开 Visual Studio 并创建一个新的 C# 项目。为了简单起见，您可以选择控制台应用程序。
+
+### 添加 Aspose.PDF 参考
+
+1. 在解决方案资源管理器中右键单击您的项目。
+2. 选择“管理 NuGet 包”。
+3. 搜索“Aspose.PDF”并安装最新版本。
+
+### 导入命名空间
+
+在 C# 文件的顶部，导入 Aspose.PDF 命名空间：
 
 ```csharp
+using System;
+using System.IO;
 using Aspose.Pdf;
 ```
 
-## 步骤 2：设置文档文件夹路径
+现在您已完成所有设置，让我们继续实际的代码！
 
-在此步骤中，您需要指定包含要展开其书签的 PDF 文件的文件夹的路径。代替`"YOUR DOCUMENT DIRECTORY"`在以下代码中使用文档文件夹的实际路径：
+## 步骤 1：设置文档目录
 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-```
+首先，您需要指定文档目录的路径。这是输入 PDF 文件所在的位置，也是输出文件的保存位置。
 
-## 步骤 3：打开 PDF 文档
-
-现在我们将使用以下代码打开要扩展其书签的PDF文档：
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
-## 第四步：设置页面显示模式
-
-在这一步中，我们将页面显示模式设置为默认显示书签。我们使用`PageMode`的财产`doc`对象设置所需的页面模式。这是相应的代码：
-
-```csharp
-doc.PageMode = PageMode.UseOutlines;
-```
-
-## 第 5 步：浏览书签并展开它们
-
-现在我们将循环遍历文档书签集合中的每个书签项，并将每个项的打开状态设置为`true`默认情况下展开它们。这是相应的代码：
-
-```csharp
-foreach(OutlineItemCollection item in doc.Outlines)
-{
-     item. Open = true;
-}
-```
-
-## 第 6 步：保存更新的文件
-
-最后，我们使用以下命令保存更新后的 PDF 文件`Save`的方法`doc`目的。这是相应的代码：
-
-```csharp
-dataDir = dataDir + "ExpandBookmarks_out.pdf";
-doc.Save(dataDir);
-```
-
-### 使用 Aspose.PDF for .NET 展开书签的示例源代码 
 ```csharp
 //文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+## 第 2 步：打开 PDF 文档
+
+接下来，您将打开包含要扩展的书签的 PDF 文档。这是使用`Document`Aspose.PDF 库中的类。
+
+```csharp
 //打开文档
-Document doc = new Document(dataDir + "input.pdf");
+Document doc = new Document(dataDir + "input-bookmark.pdf");
+```
+
+## 步骤 3：设置页面视图模式
+
+现在，您需要设置文档的页面视图模式。这决定了 PDF 在打开时将如何显示。在本例中，我们要使用轮廓（书签）。
+
+```csharp
 //设置页面查看模式，即显示缩略图、全屏、显示附件面板
 doc.PageMode = PageMode.UseOutlines;
-//遍历 PDF 文件轮廓集合中的每个 Ouline 项目
+```
+
+## 步骤 4：遍历大纲项目
+
+有趣的部分来了！您将循环遍历 PDF 大纲集合中的每个大纲项，并将其打开状态设置为 true。这将展开书签。
+
+```csharp
+//遍历 PDF 文件的 outlines 集合中的每个 Outline 项
 foreach (OutlineItemCollection item in doc.Outlines)
 {
-	//设置大纲项目的打开状态
-	item.Open = true;
+    //设置大纲项目的打开状态
+    item.Open = true;
 }
+```
+
+## 步骤 5：保存输出文档
+
+展开书签后，就该保存修改后的文档了。您将为输出 PDF 指定一个新文件名。
+
+```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 //保存输出
 doc.Save(dataDir);
+```
+
+## 步骤 6：确认信息
+
+最后，您可以向控制台打印一条确认消息，让您知道书签已成功扩展。
+
+```csharp
 Console.WriteLine("\nBookmarks expanded successfully.\nFile saved at " + dataDir);
 ```
 
 ## 结论
 
-恭喜！您现在已经有了使用 Aspose.PDF for .NET 开发书签的分步指南。您可以使用此代码显示 PDF 文档中的所有默认书签。
+就这样！您已成功使用 Aspose.PDF for .NET 扩展了 PDF 文件中的书签。这个简单但功能强大的库可让您轻松操作 PDF 文档，让您的生活更加轻松。无论您是在处理个人项目还是专业应用程序，Aspose.PDF 都是您必备的绝佳工具。
 
-请务必查看官方 Aspose.PDF 文档，以获取有关高级书签操作功能的更多信息。
+## 常见问题解答
 
-### PDF 文件中展开书签的常见问题解答
+### 什么是 Aspose.PDF for .NET？
+Aspose.PDF for .NET 是一个功能强大的库，允许开发人员以编程方式创建、操作和转换 PDF 文档。
 
-#### 问：PDF 文件中的书签是什么？
+### 我可以免费使用 Aspose.PDF 吗？
+是的，Aspose 提供免费试用版，你可以使用它来探索该库的功能。你可以下载它[这里](https://releases.aspose.com/).
 
-答：PDF 文件中的书签是导航辅助工具，允许用户快速跳转到文档中的特定部分或页面。它们提供了访问文档不同部分的便捷方法。
+### 在哪里可以找到更多文档？
+您可以找到有关 Aspose.PDF for .NET 的全面文档[这里](https://reference.aspose.com/pdf/net/).
 
-#### 问：为什么我要在 PDF 文件中展开书签？
+### 是否支持 Aspose.PDF？
+当然！您可以从 Aspose 社区获得支持[这里](https://forum.aspose.com/c/pdf/10).
 
-答：展开书签可以提高用户体验，所有书签默认以展开状态显示。这使用户可以清楚地了解文档的结构，并允许他们轻松导航到不同的部分。
-
-#### 问：如何导入 C# 项目所需的库？
-
-答：要导入 C# 项目所需的库，请使用以下导入指令：
-
-```csharp
-using Aspose.Pdf;
-```
-
-该指令允许您利用 Aspose.PDF for .NET 提供的类和方法。
-
-#### 问：如何指定文档文件夹的路径？
-
- A：在提供的源代码中，替换`"YOUR DOCUMENT DIRECTORY"`包含您要使用的 PDF 文件的文件夹的实际路径。这可确保代码可以找到目标 PDF 文件。
-
-#### 问：如何打开 PDF 文档以展开其书签？
-
-答：要打开 PDF 文档以展开书签，请使用以下代码：
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
-代替`"input.pdf"`与实际的文件名。
-
-#### 问：如何设置页面显示方式默认显示书签？
-
-A：要将页面显示模式设置为默认显示书签，请使用`PageMode`的财产`doc`目的：
-
-```csharp
-doc.PageMode = PageMode.UseOutlines;
-```
-
-#### 问：如何展开PDF文档中的所有书签？
-
-答：要展开所有书签，请循环浏览文档大纲集合中的每个书签项并设置`Open`财产给`true`:
-
-```csharp
-foreach (OutlineItemCollection item in doc.Outlines)
-{
-    item.Open = true;
-}
-```
-
-#### 问：如果书签有嵌套子书签会怎样？
-
-答：如果书签有嵌套的子书签，则展开父书签也会展开其子书签，从而提供文档结构的全面视图。
-
-#### 问：展开书签后如何保存更新的PDF文件？
-
-答：要在展开书签后保存更新的 PDF 文件，请使用以下代码：
-
-```csharp
-dataDir = dataDir + "ExpandBookmarks_out.pdf";
-doc.Save(dataDir);
-```
-
-#### 问：我可以自定义展开书签的外观吗？
-
-答：虽然本教程默认重点介绍扩展书签，但您可以使用 Aspose.PDF 的其他功能和属性自定义书签的外观。
+### 如何购买 Aspose.PDF 的许可证？
+您可以购买 Aspose.PDF 的许可证[这里](https://purchase.aspose.com/buy).

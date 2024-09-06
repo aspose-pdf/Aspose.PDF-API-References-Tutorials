@@ -1,8 +1,8 @@
 ---
 title: Aggiungi testo trasparente nel file PDF
 linktitle: Aggiungi testo trasparente nel file PDF
-second_title: Aspose.PDF per riferimento all'API .NET
-description: Scopri come aggiungere testo trasparente nel file PDF utilizzando Aspose.PDF per .NET.
+second_title: Riferimento API Aspose.PDF per .NET
+description: Scopri come aggiungere testo trasparente in un file PDF utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 100
 url: /it/net/programming-with-text/add-transparent-text/
@@ -12,47 +12,47 @@ Questo tutorial ti guiderà attraverso il processo di aggiunta di testo traspare
 ## Requisiti
 Prima di iniziare, assicurati di avere quanto segue:
 
-- Visual Studio o qualsiasi altro compilatore C# installato sul tuo computer.
-- Aspose.PDF per la libreria .NET. Puoi scaricarlo dal sito Web ufficiale di Aspose o utilizzare un gestore di pacchetti come NuGet per installarlo.
+- Visual Studio o qualsiasi altro compilatore C# installato sul computer.
+- Aspose.PDF per la libreria .NET. Puoi scaricarlo dal sito web ufficiale di Aspose o usare un gestore di pacchetti come NuGet per installarlo.
 
 ## Passaggio 1: impostare il progetto
 1. Crea un nuovo progetto C# nel tuo ambiente di sviluppo preferito.
 2. Aggiungere un riferimento alla libreria Aspose.PDF per .NET.
 
-## Passaggio 2: importa gli spazi dei nomi richiesti
-Nel file di codice in cui desideri aggiungere testo trasparente, aggiungi le seguenti direttive using nella parte superiore del file:
+## Passaggio 2: importare gli spazi dei nomi richiesti
+Nel file di codice in cui vuoi aggiungere del testo trasparente, aggiungi le seguenti direttive using all'inizio del file:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Drawing;
 ```
 
-## Passaggio 3: imposta la directory dei documenti
+## Passaggio 3: impostare la directory del documento
  Nel codice, individua la riga che dice`string dataDir = "YOUR DOCUMENT DIRECTORY";` e sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso della directory in cui sono archiviati i tuoi documenti.
 
-## Passaggio 4: crea una nuova istanza del documento
- Istanziarne uno nuovo`Document` oggetto aggiungendo la seguente riga di codice:
+## Passaggio 4: creare una nuova istanza del documento
+ Crea un'istanza di un nuovo`Document` oggetto aggiungendo la seguente riga di codice:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Passaggio 5: aggiungi una pagina al documento
- Aggiungi una nuova pagina al documento utilizzando il file`Add` metodo del`Pages`collezione. Nel codice fornito, la nuova pagina viene assegnata alla variabile`page`.
+## Passaggio 5: aggiungere una pagina al documento
+ Aggiungere una nuova pagina al documento utilizzando il`Add` metodo del`Pages`raccolta. Nel codice fornito, la nuova pagina è assegnata alla variabile`page`.
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-## Passaggio 6: crea un oggetto grafico
- Creane uno nuovo`Graph` oggetto con una larghezza e un'altezza specifiche.
+## Passaggio 6: creare un oggetto grafico
+ Crea un nuovo`Graph` oggetto con larghezza e altezza specifiche.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 ```
 
-## Passaggio 7: crea un rettangolo con trasparenza
- Crea un rettangolo con dimensioni specifiche e imposta il colore di riempimento su un colore trasparente utilizzando il`Color.FromRgb` metodo.
+## Passaggio 7: creare un rettangolo con trasparenza
+ Crea un rettangolo con dimensioni specifiche e imposta il suo colore di riempimento su un colore trasparente utilizzando`Color.FromRgb` metodo.
 
 ```csharp
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 400, 400);
@@ -60,22 +60,22 @@ rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArg
 canvas.Shapes.Add(rect);
 ```
 
-## Passaggio 8: aggiungi l'oggetto Graph alla pagina
- Aggiungi il`Graph` opporsi alla raccolta di paragrafi della pagina.
+## Passaggio 8: aggiungere l'oggetto grafico alla pagina
+ Aggiungere il`Graph` oggetto alla raccolta di paragrafi della pagina.
 
 ```csharp
 page.Paragraphs.Add(canvas);
 ```
 
 ## Passaggio 9: impostare la posizione per l'oggetto grafico
- Impostare il`IsChangePosition` proprietà del`Graph` opporsi a`false` per evitare che cambi posizione.
+ Imposta il`IsChangePosition` proprietà del`Graph` opporsi a`false` per evitare che cambi posizione.
 
 ```csharp
 canvas. IsChangePosition = false;
 ```
 
-## Passaggio 10: crea un TextFragment con trasparenza
- Creare un`TextFragment` oggetto e impostarne il contenuto sul testo desiderato. Impostare il`ForegroundColor` proprietà del`TextState` a un colore con trasparenza utilizzando il`Color.FromArgb` metodo.
+## Passaggio 10: creare un TextFragment con trasparenza
+ Crea un`TextFragment` oggetto e imposta il suo contenuto sul testo desiderato. Imposta il`ForegroundColor` proprietà del`TextState` a un colore con trasparenza utilizzando il`Color.FromArgb` metodo.
 
 ```csharp
 TextFragment text = new TextFragment("transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text ");
@@ -84,8 +84,8 @@ text.TextState.ForegroundColor = color;
 page.Paragraphs.Add(text);
 ```
 
-## Passaggio 11: salva il documento PDF
- Salvare il documento PDF utilizzando il file`Save` metodo del`Document` oggetto.
+## Passaggio 11: Salvare il documento PDF
+ Salvare il documento PDF utilizzando`Save` metodo del`Document` oggetto.
 
 ```csharp
 doc.Save(dataDir + "AddTransparentText_out.pdf");
@@ -93,31 +93,31 @@ doc.Save(dataDir);
 Console.WriteLine("\nTransparent text added successfully.\nFile saved at " + dataDir);
 ```
 
-### Codice sorgente di esempio per aggiungere testo trasparente utilizzando Aspose.PDF per .NET 
+### Esempio di codice sorgente per aggiungere testo trasparente utilizzando Aspose.PDF per .NET 
 ```csharp
-// Il percorso della directory dei documenti.
+// Percorso verso la directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Crea istanza del documento
 Document doc = new Document();
-// Crea una raccolta pagina per pagina di file PDF
+// Crea una raccolta di pagine di file PDF
 Aspose.Pdf.Page page = doc.Pages.Add();
 // Crea oggetto grafico
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
-// Crea un'istanza di rettangolo con determinate dimensioni
+// Crea un'istanza rettangolare con determinate dimensioni
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 400, 400);
 // Crea un oggetto colore dal canale colore Alpha
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
-// Aggiungi rettangolo alla raccolta di forme dell'oggetto grafico
+// Aggiungi rettangolo alla raccolta di forme dell'oggetto Graph
 canvas.Shapes.Add(rect);
-//Aggiungi un oggetto grafico alla raccolta di paragrafi dell'oggetto pagina
+//Aggiungere un oggetto grafico alla raccolta di paragrafi dell'oggetto pagina
 page.Paragraphs.Add(canvas);
 // Imposta il valore per non modificare la posizione dell'oggetto grafico
 canvas.IsChangePosition = false;
-// Crea un'istanza TextFragment con un valore di esempio
+// Crea un'istanza di TextFragment con valore di esempio
 TextFragment text = new TextFragment("transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text ");
-// Crea oggetto colore dal canale alfa
+// Crea un oggetto colorato dal canale alfa
 Aspose.Pdf.Color color = Aspose.Pdf.Color.FromArgb(30, 0, 255, 0);
-// Imposta le informazioni sul colore per l'istanza di testo
+// Imposta le informazioni sul colore per l'istanza del testo
 text.TextState.ForegroundColor = color;
 // Aggiungi testo alla raccolta di paragrafi dell'istanza di pagina
 page.Paragraphs.Add(text);
@@ -128,59 +128,59 @@ Console.WriteLine("\nTransparent text added successfully.\nFile saved at " + dat
 
 
 ## Conclusione
-Hai aggiunto con successo testo trasparente al tuo documento PDF utilizzando Aspose.PDF per .NET. Il file PDF risultante può ora essere trovato nel percorso del file di output specificato.
+Hai aggiunto con successo del testo trasparente al tuo documento PDF usando Aspose.PDF per .NET. Il file PDF risultante può ora essere trovato nel percorso del file di output specificato.
 
 ### Domande frequenti
 
-#### D: Qual è il focus di questo tutorial?
+#### D: Qual è l'obiettivo di questo tutorial?
 
-R: Questo tutorial si concentra sull'aggiunta di testo trasparente a un documento PDF utilizzando la libreria Aspose.PDF per .NET. Il codice sorgente C# fornito illustra i passaggi necessari per ottenere questo effetto.
+A: Questo tutorial si concentra sull'aggiunta di testo trasparente a un documento PDF utilizzando la libreria Aspose.PDF per .NET. Il codice sorgente C# fornito illustra i passaggi necessari per ottenere questo effetto.
 
-#### D: Quali spazi dei nomi devono essere importati per questo tutorial?
+#### D: Quali namespace devono essere importati per questo tutorial?
 
-R: Nel file di codice in cui desideri aggiungere testo trasparente, importa i seguenti spazi dei nomi all'inizio del file:
+A: Nel file di codice in cui vuoi aggiungere testo trasparente, importa i seguenti namespace all'inizio del file:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Drawing;
 ```
 
-#### D: Come posso specificare la directory dei documenti?
+#### D: Come faccio a specificare la directory dei documenti?
 
- A: Nel codice, trova la riga`string dataDir = "YOUR DOCUMENT DIRECTORY";` e sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo della directory dei documenti.
+ A: Nel codice, trova la riga`string dataDir = "YOUR DOCUMENT DIRECTORY";` e sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo della directory del documento.
 
-#### D: Come posso creare una nuova istanza del documento?
+#### D: Come posso creare una nuova istanza di Documento?
 
- R: Nel passaggio 4 creerai un'istanza di new`Document` oggetto utilizzando il codice fornito.
+ A: Nel passaggio 4, creerai un nuovo`Document` oggetto utilizzando il codice fornito.
 
-#### D: Come faccio ad aggiungere una pagina al documento?
+#### D: Come posso aggiungere una pagina al documento?
 
- R: Nel passaggio 5, aggiungerai una nuova pagina al documento utilizzando il file`Add` metodo del`Pages` collezione.
+ A: Nel passaggio 5, aggiungerai una nuova pagina al documento utilizzando`Add` metodo del`Pages` collezione.
 
-#### D: Come posso creare un oggetto Graph?
+#### D: Come si crea un oggetto Graph?
 
- R: Nel passaggio 6 ne creerai uno nuovo`Graph` oggetto con una larghezza e un'altezza specifiche.
+ A: Nel passaggio 6, creerai un nuovo`Graph` oggetto con larghezza e altezza specifiche.
 
 #### D: Come posso creare un rettangolo con trasparenza?
 
-R: Nel passaggio 7, creerai un rettangolo con dimensioni specifiche e imposterai il suo colore di riempimento su un colore trasparente utilizzando il`Color.FromRgb` metodo.
+A: Nel passaggio 7, creerai un rettangolo con dimensioni specifiche e imposterai il suo colore di riempimento su un colore trasparente utilizzando`Color.FromRgb` metodo.
 
-#### D: Come aggiungo l'oggetto Graph alla pagina?
+#### D: Come posso aggiungere l'oggetto Grafico alla pagina?
 
- R: Nel passaggio 8 aggiungerai il file`Graph` opporsi alla raccolta di paragrafi della pagina.
+ A: Nel passaggio 8, aggiungerai il`Graph` oggetto alla raccolta di paragrafi della pagina.
 
-#### D: Come imposto la posizione dell'oggetto Graph?
+#### D: Come faccio a impostare la posizione dell'oggetto Graph?
 
- R: Al punto 9, imposterai il`IsChangePosition` proprietà del`Graph` opporsi a`false` per evitare che cambi posizione.
+ A: Nel passaggio 9, imposterai il`IsChangePosition` proprietà del`Graph` opporsi a`false` per evitare che cambi posizione.
 
 #### D: Come posso creare un TextFragment con trasparenza?
 
- R: Nel passaggio 10 creerai un file`TextFragment` oggetto e impostarne il contenuto e`ForegroundColor` proprietà per ottenere un testo trasparente.
+ A: Nel passaggio 10, creerai un`TextFragment` oggetto e impostarne il contenuto e`ForegroundColor` proprietà per ottenere testo trasparente.
 
 #### D: Come posso salvare il documento PDF?
 
- R: Nel passaggio 11, salverai il documento PDF utilizzando il file`Save` metodo del`Document` oggetto.
+ A: Nel passaggio 11, salverai il documento PDF utilizzando`Save` metodo del`Document` oggetto.
 
-#### D: Qual è il punto principale di questo tutorial?
+#### D: Qual è la cosa più importante da imparare da questo tutorial?
 
-R: Seguendo questo tutorial, hai imparato come aggiungere testo trasparente a un documento PDF utilizzando Aspose.PDF per .NET. Questo può essere utile per creare documenti PDF visivamente accattivanti e creativi.
+R: Seguendo questo tutorial, hai imparato come aggiungere testo trasparente a un documento PDF usando Aspose.PDF per .NET. Questo può essere utile per creare documenti PDF visivamente accattivanti e creativi.

@@ -26,7 +26,7 @@ Document document = new Document();
 
 ## 2. lépés: Hozzáférés a címkézett tartalomhoz
 
- Ezután elérjük a dokumentum címkézett tartalmát a segítségével`ITaggedContent` tárgy.
+ Ezután elérjük a dokumentum címkézett tartalmát a segítségével`ITaggedContent` objektum.
 
 ```csharp
 // Hozzáférés a címkézett tartalomhoz
@@ -35,7 +35,7 @@ Tagged.ITaggedContent taggedContent = document.TaggedContent;
 
 ## 3. lépés: Állítsa be a címet és a nyelvet
 
- Most beállíthatjuk a dokumentum címét és nyelvét a segítségével`SetTitle` és`SetLanguage` módszerei a`ITaggedContent` tárgy.
+ Most beállíthatjuk a dokumentum címét és nyelvét a segítségével`SetTitle` és`SetLanguage` módszerei a`ITaggedContent` objektum.
 
 ```csharp
 // Határozza meg a dokumentum címét
@@ -121,7 +121,7 @@ V: A szerkezeti elemek tulajdonságai meghatározzák a címkézett PDF-dokument
 
 #### K: Hogyan segíti az Aspose.PDF for .NET a szerkezeti elemek tulajdonságainak kezelését egy PDF-dokumentumban?
 
-V: Az Aspose.PDF for .NET API-kat biztosít különböző tulajdonságokkal rendelkező szerkezeti elemek létrehozásához és kezeléséhez. A dokumentum szemantikai szerkezetének és hozzáférhetőségének javítása érdekében beállíthat olyan tulajdonságokat, mint a cím, a nyelv, az alternatív szöveg, a kiterjesztés szövege és a tényleges szöveg.
+V: Az Aspose.PDF for .NET API-kat biztosít különböző tulajdonságokkal rendelkező szerkezeti elemek létrehozásához és kezeléséhez. A dokumentum szemantikai szerkezetének és hozzáférhetőségének javítása érdekében beállíthat olyan tulajdonságokat, mint a cím, a nyelv, az alternatív szöveg, a bővítőszöveg és a tényleges szöveg.
 
 ####  K: Mi a szerepe a`SetTitle` and `SetLanguage` methods in working with structural element properties?
 
@@ -129,7 +129,7 @@ V: Az Aspose.PDF for .NET API-kat biztosít különböző tulajdonságokkal rend
 
 #### K: Hogyan hozhatok létre és kezelhetek szerkezeti elemeket egy PDF-dokumentumban az Aspose.PDF for .NET használatával?
 
- V: Létrehozhat és kezelhet szerkezeti elemeket az Aspose.PDF for .NET használatával, ha hozzáfér a dokumentum címkézett tartalmához. Készítsen szerkezeti elemeket, mint pl`SectElement` és`HeaderElement`, és állítson be olyan tulajdonságokat, mint a szöveg, cím, nyelv, alternatív szöveg, bővítőszöveg és tényleges szöveg.
+ V: Létrehozhat és kezelhet szerkezeti elemeket az Aspose.PDF for .NET használatával, ha hozzáfér a dokumentum címkézett tartalmához. Készítsen szerkezeti elemeket, mint pl`SectElement` és`HeaderElement`, és állítson be olyan tulajdonságokat, mint a szöveg, a cím, a nyelv, az alternatív szöveg, a kiterjesztés szövege és a tényleges szöveg.
 
 #### K: Megadhatok különböző tulajdonságokat a különböző szerkezeti elemekhez egy PDF dokumentumban?
 

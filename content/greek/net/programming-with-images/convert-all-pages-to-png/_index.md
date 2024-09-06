@@ -11,7 +11,7 @@ url: /el/net/programming-with-images/convert-all-pages-to-png/
 
 ## Βήμα 1: Ορίστε τον κατάλογο εγγράφων
 
- Πριν ξεκινήσετε, βεβαιωθείτε ότι έχετε ορίσει τον σωστό κατάλογο για τα έγγραφα. Αντικαθιστώ`"YOUR DOCUMENT DIRECTORY"` στον κώδικα με τη διαδρομή προς τον κατάλογο όπου βρίσκεται το έγγραφο PDF σας.
+Πριν ξεκινήσετε, βεβαιωθείτε ότι έχετε ορίσει τον σωστό κατάλογο για τα έγγραφα. Αντικαθιστώ`"YOUR DOCUMENT DIRECTORY"` στον κώδικα με τη διαδρομή προς τον κατάλογο όπου βρίσκεται το έγγραφο PDF σας.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Βήμα 2: Ανοίξτε το έγγραφο
 
-Σε αυτό το βήμα, θα ανοίξουμε το έγγραφο PDF χρησιμοποιώντας το`Document` κλάση του Aspose.PDF. Χρησιμοποιήστε το`Document` κατασκευαστή και περάστε τη διαδρομή προς το έγγραφο PDF.
+ Σε αυτό το βήμα, θα ανοίξουμε το έγγραφο PDF χρησιμοποιώντας το`Document` κλάση του Aspose.PDF. Χρησιμοποιήστε το`Document` κατασκευαστή και περάστε τη διαδρομή προς το έγγραφο PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ConvertAllPagesToPNG.pdf");
@@ -62,11 +62,11 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 	{
 		// Δημιουργήστε συσκευή PNG με καθορισμένα χαρακτηριστικά
 		// Πλάτος, Ύψος, Ανάλυση, Ποιότητα
-		// Ποιότητα [0-100], 100 είναι η μέγιστη
+		//Ποιότητα [0-100], 100 είναι η μέγιστη
 		// Δημιουργία αντικειμένου ανάλυσης
 		Resolution resolution = new Resolution(300);
 		PngDevice pngDevice = new PngDevice(resolution);
-		//Μετατρέψτε μια συγκεκριμένη σελίδα και αποθηκεύστε την εικόνα σε ροή
+		// Μετατρέψτε μια συγκεκριμένη σελίδα και αποθηκεύστε την εικόνα σε ροή
 		pngDevice.Process(pdfDocument.Pages[pageCount], imageStream);
 		// Κλείσιμο ροής
 		imageStream.Close();
@@ -75,7 +75,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 System.Console.WriteLine("PDF pages are converted to PNG successfully!");
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Συγχαρητήρια ! Μετατρέψατε με επιτυχία όλες τις σελίδες ενός εγγράφου PDF σε αρχεία PNG χρησιμοποιώντας το Aspose.PDF για .NET. Τα μεμονωμένα αρχεία PNG αποθηκεύονται στον καθορισμένο κατάλογο. Τώρα μπορείτε να χρησιμοποιήσετε αυτά τα αρχεία PNG στα έργα ή τις εφαρμογές σας.
 

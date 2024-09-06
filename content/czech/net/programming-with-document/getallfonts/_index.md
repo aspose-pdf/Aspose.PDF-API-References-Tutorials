@@ -9,7 +9,7 @@ url: /cs/net/programming-with-document/getallfonts/
 ---
 Aspose.PDF for .NET je výkonná knihovna, která umožňuje vývojářům pracovat se souborem PDF programově. Jednou z funkcí, které poskytuje, je možnost získat všechna písma použitá v souboru PDF. To může být užitečné, pokud potřebujete programově analyzovat písma v souboru PDF nebo s nimi manipulovat.
 
-tomto tutoriálu probereme, jak používat Aspose.PDF pro .NET, abyste získali všechna písma použitá v dokumentu PDF. Poskytneme vám krok za krokem návod, jak to udělat, spolu s ukázkovým zdrojovým kódem.
+V tomto tutoriálu probereme, jak používat Aspose.PDF pro .NET, abyste získali všechna písma použitá v dokumentu PDF. Poskytneme vám krok za krokem návod, jak to udělat, spolu s ukázkovým zdrojovým kódem.
 
 ## Krok 1: Vytvořte novou aplikaci C# Console
 Chcete-li začít, vytvořte novou aplikaci C# Console v sadě Visual Studio. Můžete si to pojmenovat, jak chcete. Jakmile je projekt vytvořen, musíte přidat odkaz na knihovnu Aspose.PDF for .NET.
@@ -58,7 +58,7 @@ foreach (Aspose.Pdf.Text.Font font in fonts)
 ```
 
 ## Závěr
-V tomto tutoriálu jsme diskutovali o tom, jak získat všechna písma použitá v dokumentu PDF pomocí Aspose.PDF pro .NET. Použití všech písem v dokumentu PDF může být užitečné, pokud potřebujete programově analyzovat písma v dokumentu PDF nebo s nimi manipulovat. Aspose.PDF for .NET poskytuje jednoduché a snadno použitelné rozhraní API pro práci s dokumenty PDF, včetně získání všech písem použitých v dokumentu PDF.
+tomto tutoriálu jsme diskutovali o tom, jak získat všechna písma použitá v dokumentu PDF pomocí Aspose.PDF pro .NET. Získání všech písem použitých v dokumentu PDF může být užitečné, pokud potřebujete programově analyzovat písma v dokumentu PDF nebo s nimi manipulovat. Aspose.PDF for .NET poskytuje jednoduché a snadno použitelné rozhraní API pro práci s dokumenty PDF, včetně získání všech písem použitých v dokumentu PDF.
 
 ### FAQ
 

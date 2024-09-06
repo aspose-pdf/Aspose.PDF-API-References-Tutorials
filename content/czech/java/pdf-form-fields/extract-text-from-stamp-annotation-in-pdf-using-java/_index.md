@@ -16,15 +16,15 @@ dnešní digitální době se práce s dokumenty PDF stala nezbytnou součástí
 
 Než se ponoříme do kódu a podrobných pokynů, ujistěte se, že máte splněny následující předpoklady:
 
--  Vývojové prostředí Java: Ujistěte se, že máte v systému nainstalovanou Javu. Můžete si jej stáhnout z[tady](https://www.java.com/download/).
+-  Vývojové prostředí Java: Ujistěte se, že máte v systému nainstalovanou Javu. Můžete si jej stáhnout z[zde](https://www.java.com/download/).
 
--  Aspose.PDF for Java: Budete potřebovat knihovnu Aspose.PDF for Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF for Java: Budete potřebovat knihovnu Aspose.PDF for Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 - Integrované vývojové prostředí (IDE): Použijte IDE dle vlastního výběru; Mezi oblíbené možnosti patří Eclipse, IntelliJ IDEA nebo Visual Studio Code.
 
 ## Krok 1: Vytvořte projekt Java
 
-Začněme vytvořením nového Java projektu ve vámi zvoleném IDE. Následuj tyto kroky:
+Začněme vytvořením nového Java projektu ve vámi zvoleném IDE. Postupujte takto:
 
 1. Otevřete své IDE.
 2. Vytvořte nový projekt Java a dejte mu smysluplný název.
@@ -84,7 +84,7 @@ for (StampAnnotation stampAnnotation : pdfDocument.getPages().get_Item(1).getAnn
 
 ## Závěr
 
-V této příručce jsme prozkoumali, jak extrahovat text z anotací razítek v dokumentu PDF pomocí knihovny Aspose.PDF for Java. Se správnými nástroji a několika řádky kódu můžete efektivně extrahovat cenné informace ze souborů PDF a zlepšit tak pracovní postupy zpracování dokumentů.
+V této příručce jsme prozkoumali, jak extrahovat text z anotací razítek v dokumentu PDF pomocí knihovny Aspose.PDF for Java. Se správnými nástroji a několika řádky kódu můžete efektivně extrahovat cenné informace z PDF a zlepšit tak pracovní postupy zpracování dokumentů.
 
 ## FAQ
 
@@ -106,4 +106,4 @@ Aspose.PDF for Java je navržen pro práci s dokumenty PDF různých velikostí.
 
 ### Jak mohu získat přístup k dalším zdrojům a dokumentaci k Aspose.PDF pro Java?
 
- Pro komplexní dokumentaci a další zdroje navštivte Aspose.PDF pro dokumentaci Java na adrese[tady](https://reference.aspose.com/pdf/java/).
+ Pro komplexní dokumentaci a další zdroje navštivte Aspose.PDF pro dokumentaci Java na adrese[zde](https://reference.aspose.com/pdf/java/).

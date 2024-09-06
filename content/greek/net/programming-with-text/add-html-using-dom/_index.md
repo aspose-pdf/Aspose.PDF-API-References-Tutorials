@@ -59,7 +59,7 @@ title. Margin. Top = 200;
 ```
 
 ## Βήμα 8: Προσθέστε το HtmlFragment στη σελίδα
- Πρόσθεσε το`HtmlFragment` αντικείμενο στη συλλογή παραγράφων της σελίδας.
+ Προσθέστε το`HtmlFragment` αντικείμενο στη συλλογή παραγράφων της σελίδας.
 
 ```csharp
 page.Paragraphs.Add(title);
@@ -102,7 +102,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nHTML using DOM added successfully.\nFile saved at " + dataDir);
 ```
 
-## συμπέρασμα
+## Σύναψη
 Προσθέσατε με επιτυχία περιεχόμενο HTML χρησιμοποιώντας DOM στο Aspose.PDF για .NET. Το αρχείο PDF που προκύπτει μπορεί τώρα να βρεθεί στην καθορισμένη διαδρομή αρχείου εξόδου.
 
 ### Συχνές ερωτήσεις

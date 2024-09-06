@@ -2,7 +2,7 @@
 title: Hozzon létre téglalapot alfa színnel
 linktitle: Hozzon létre téglalapot alfa színnel
 second_title: Aspose.PDF for .NET API Reference
-description: Ismerje meg, hogyan hozhat létre átlátszó színű téglalapot az Aspose.PDF for .NET használatával. Útmutató lépésről lépésre az átláthatóság testreszabásához.
+description: Ismerje meg, hogyan hozhat létre átlátszó színű téglalapot az Aspose.PDF for .NET használatával. Lépésről lépésre szóló útmutató az átláthatóság testreszabásához.
 type: docs
 weight: 60
 url: /hu/net/programming-with-graphs/create-rectangle-with-alpha-color/
@@ -13,7 +13,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy telepítette az Aspose.PDF k�
 
 ## 1. lépés: Dokumentumkönyvtár beállítása
 
-megadott forráskódban meg kell adnia azt a könyvtárat, ahová menteni szeretné az eredményül kapott PDF fájlt. Módosítsa a "dataDir" változót a kívánt könyvtárra.
+A megadott forráskódban meg kell adnia azt a könyvtárat, ahová menteni szeretné az eredményül kapott PDF fájlt. Módosítsa a "dataDir" változót a kívánt könyvtárra.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -93,7 +93,7 @@ Aspose.Pdf.Page page = doc.Pages.Add();
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 // Hozzon létre téglalap objektumot meghatározott méretekkel
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 100);
-//Állítsa be a grafikon kitöltési színét a System.Drawing.Color struktúrából 32 bites ARGB értékből
+// Állítsa be a grafikon kitöltési színét a System.Drawing.Color struktúrából 32 bites ARGB értékből
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
 // Téglalap objektum hozzáadása a Graph példány alakzatgyűjteményéhez
 canvas.Shapes.Add(rect);
@@ -134,7 +134,7 @@ V: A Graph objektum a rajzelemek tárolójaként működik, míg a téglalap a P
 
 #### K: Hogyan állíthatok be alfa színt a téglalaphoz?
 
-V: A téglalap alfa színét a gombbal adhatja meg`FillColor` tulajdona a`GraphInfo` tárgy és a`Color.FromRgb` módszer ARGB értékkel.
+ V: A téglalap alfa színét a gombbal adhatja meg`FillColor` tulajdona a`GraphInfo` tárgy és a`Color.FromRgb` módszer ARGB értékkel.
 
 #### K: Létrehozhatok több téglalapot különböző alfa színekkel?
 

@@ -43,7 +43,7 @@ Låt oss nu ladda PDF-dokumentet som du vill ändra. Du kan använda följande k
 Document pdfDocument = new Document("input.pdf");
 ```
 
- Byta ut`"input.pdf"` med sökvägen till din PDF-fil.
+ Ersätta`"input.pdf"` med sökvägen till din PDF-fil.
 
 ### Ändra färgrymden
 
@@ -65,7 +65,7 @@ När du har ändrat färgrymden kan du spara det ändrade PDF-dokumentet. Så h�
 pdfDocument.save("output.pdf");
 ```
 
- Byta ut`"output.pdf"` med önskat namn för din modifierade PDF-fil.
+ Ersätta`"output.pdf"` med önskat namn för din modifierade PDF-fil.
 
 ## Kodexempel
 

@@ -2,124 +2,171 @@
 title: Wörter durchstreichen
 linktitle: Wörter durchstreichen
 second_title: Aspose.PDF für .NET API-Referenz
-description: Dieser Artikel enthält eine Schritt-für-Schritt-Anleitung zur Verwendung von Aspose.PDF für die Funktion „Wörter durchstreichen“ in .NET, einschließlich einer Schritt-für-Schritt-Anleitung und Erklärungen
+description: Erfahren Sie in dieser umfassenden Schritt-für-Schritt-Anleitung, wie Sie mit Aspose.PDF für .NET Wörter in einer PDF-Datei durchstreichen. Verbessern Sie Ihre Fähigkeiten zur Dokumentbearbeitung.
 type: docs
 weight: 150
 url: /de/net/annotations/strikeoutwords/
 ---
-Aspose.PDF für .NET ist eine Bibliothek zur Bearbeitung und Verarbeitung von PDF-Dokumenten, die verschiedene Funktionen zum Erstellen, Ändern und Konvertieren von PDF-Dateien bietet. Eine der nützlichen Funktionen von Aspose.PDF ist die Möglichkeit, mithilfe von C#-Quellcode Wörter oder Phrasen in einem PDF-Dokument durchzustreichen. In diesem Artikel stellen wir eine Schritt-für-Schritt-Anleitung zum Durchstreichen von Wörtern mit Aspose.PDF für .NET bereit.
+## Einführung
 
-## Schritt 1: Laden des PDF-Dokuments
-Der erste Schritt besteht darin, das PDF-Dokument zu laden, das Sie ändern möchten. In diesem Tutorial laden wir ein PDF-Dokument mit dem Namen „input.pdf“ aus dem Ordner „IHR DOKUMENTVERZEICHNIS“. 
+Mussten Sie schon einmal bestimmten Text in einer PDF-Datei durchstreichen, um ihn hervorzuheben? Egal, ob Sie Dokumente überprüfen, Text markieren oder einfach nur bestimmte Abschnitte hervorheben müssen, das Durchstreichen von Wörtern kann ein wertvolles Werkzeug sein. In diesem Tutorial erfahren Sie, wie Sie genau das mit Aspose.PDF für .NET tun können. Diese umfassende Anleitung führt Sie durch jeden Schritt und stellt sicher, dass Sie über alle erforderlichen Informationen verfügen, um diese Funktion effektiv in Ihren .NET-Anwendungen zu implementieren. 
+
+## Voraussetzungen
+
+Bevor wir uns in den Code stürzen, müssen Sie einige Voraussetzungen erfüllen, um diesem Tutorial folgen zu können:
+
+1.  Aspose.PDF für .NET-Bibliothek: Stellen Sie sicher, dass Sie die Aspose.PDF für .NET-Bibliothek installiert haben. Sie können[Laden Sie es hier herunter](https://releases.aspose.com/pdf/net/).
+
+2. .NET Framework: Stellen Sie sicher, dass .NET Framework auf Ihrem Computer installiert ist. Dieses Tutorial ist für .NET-Anwendungen konzipiert.
+
+3. Entwicklungsumgebung: Sie benötigen eine IDE wie Visual Studio, um Ihren Code zu schreiben und auszuführen.
+
+4. PDF-Dokument: Halten Sie eine Beispiel-PDF-Datei bereit, mit der Sie arbeiten möchten. Dies ist das Dokument, in dem wir den Text streichen.
+
+5. Grundlegende C#-Kenntnisse: Um die Schritte in diesem Tutorial zu verstehen und umzusetzen, sind Kenntnisse in der C#-Programmierung erforderlich.
+
+## Pakete importieren
+
+Bevor wir mit dem Programmieren beginnen können, müssen wir die erforderlichen Namespaces in unser .NET-Projekt importieren. Dadurch erhalten wir Zugriff auf die Klassen und Methoden, die zum Bearbeiten von PDF-Dateien mit Aspose.PDF erforderlich sind.
 
 ```csharp
+using System;
+using System.IO;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf;
+```
+
+Diese Namespaces sind für die Arbeit mit PDF-Dokumenten, die Textbearbeitung und das Hinzufügen von Anmerkungen wie Durchstreichungen von entscheidender Bedeutung.
+
+In diesem Abschnitt unterteilen wir den Vorgang zum Durchstreichen von Wörtern in einem PDF-Dokument in einfache, überschaubare Schritte. Jeder Schritt wird von einer ausführlichen Erklärung begleitet, damit Sie verstehen, wie alles funktioniert.
+
+## Schritt 1: Laden Sie das PDF-Dokument
+
+Der erste Schritt besteht darin, das PDF-Dokument zu laden, das Sie bearbeiten möchten. In diesem Dokument werden Sie bestimmte Wörter oder Ausdrücke streichen.
+
+```csharp
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// Öffnen Sie das PDF-Dokument
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-## Schritt 2: Suche nach Textfragmenten
-Um bestimmte Wörter oder Ausdrücke im PDF-Dokument zu streichen, müssen Sie zunächst danach suchen. Aspose.PDF stellt eine TextFragmentAbsorber-Klasse bereit, mit der nach einem bestimmten Textfragment im PDF-Dokument gesucht werden kann.
+- `dataDir` : Diese Variable enthält den Pfad zu Ihrem Dokumentverzeichnis. Ersetzen Sie`"YOUR DOCUMENT DIRECTORY"` durch den tatsächlichen Pfad, in dem sich Ihre PDF-Datei befindet.
+- `Document` : Der`Document` Klasse stellt ein PDF-Dokument dar. Indem wir den Dateipfad an seinen Konstruktor übergeben, öffnen wir die PDF-Datei zur Verarbeitung.
+
+## Schritt 2: Erstellen Sie einen TextFragment-Absorber, um bestimmten Text zu finden
+
+ Als nächstes erstellen wir eine Instanz von`TextFragmentAbsorber` um nach einem bestimmten Textfragment im PDF-Dokument zu suchen. So können wir den Text finden, den wir streichen möchten.
 
 ```csharp
+// Erstellen Sie eine TextFragment Absorber-Instanz, um nach einem bestimmten Textfragment zu suchen
 Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
 ```
 
-Im obigen Code suchen wir nach dem Textfragment „Estoque“ im PDF-Dokument. Sie können dies ändern, um nach jedem anderen Wort oder jeder anderen Phrase zu suchen, die Sie streichen möchten.
+- `TextFragmentAbsorber`Diese Klasse wird verwendet, um bestimmte Textfragmente im PDF-Dokument zu finden und damit zu arbeiten. In diesem Beispiel suchen wir nach dem Wort „Estoque“. Ersetzen Sie „Estoque“ durch das Wort oder die Phrase, die Sie in Ihrem Dokument finden möchten.
 
-## Schritt 3: Durchstreichen der Textfragmente
-Nachdem Sie die Textfragmente gefunden haben, besteht der nächste Schritt darin, sie zu streichen. Aspose.PDF stellt eine StrikeOutAnnotation-Klasse bereit, mit der eine durchgestrichene Anmerkung für das Textfragment erstellt werden kann. 
+## Schritt 3: Durch die Seiten des PDF-Dokuments iterieren
 
-```csharp
-Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle((float)textFragment.Position.XIndent, (float)textFragment.Position.YIndent, (float)textFragment.Position.XIndent + (float)textFragment.Rectangle.Width, (float)textFragment.Position.YIndent + (float)textFragment.Rectangle.Height);
-
-StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
-strikeOut.Opacity = .80f;
-strikeOut.Border = new Border(strikeOut);
-strikeOut.Color = Aspose.Pdf.Color.Red;
-textFragment.Page.Annotations.Add(strikeOut);
-```
-
-Im obigen Code erstellen wir für jedes gefundene Textfragment eine durchgestrichene Anmerkung. Wir legen auch die Deckkraft, den Rand und die Farbe der durchgestrichenen Anmerkung fest.
-
-## Schritt 4: Speichern des geänderten PDF-Dokuments
-Nachdem Sie die Textfragmente gestrichen haben, speichern Sie das geänderte Dokument.
+ Jetzt, da wir unsere`TextFragmentAbsorber`müssen wir jede Seite des PDF-Dokuments durchsuchen, um den angegebenen Text zu finden.
 
 ```csharp
-dataDir = dataDir + "StrikeOutWords_out.pdf";
-document.Save(dataDir);
-```
-
-### Beispielquellcode für Strike Out Words mit Aspose.PDF für .NET
-
-
-```csharp
-
-// Der Pfad zum Dokumentenverzeichnis.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Dokument öffnen
-Document document = new Document(dataDir + "input.pdf");
-
-// Erstellen Sie eine TextFragment Absorber-Instanz, um ein bestimmtes Textfragment zu durchsuchen
-Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
-// Durchlaufen Sie Seiten eines PDF-Dokuments
+// Durch die Seiten des PDF-Dokuments iterieren
 for (int i = 1; i <= document.Pages.Count; i++)
 {
-	// Holen Sie sich die erste Seite des PDF-Dokuments
-	Page page = document.Pages[1];
-	page.Accept(textFragmentAbsorber);
+    // Aktuelle Seite des PDF-Dokuments abrufen
+    Page page = document.Pages[i];
+    page.Accept(textFragmentAbsorber);
 }
+```
 
-// Erstellen Sie eine Sammlung absorbierten Textes
+- `for (int i = 1; i <= document.Pages.Count; i++)`: Diese Schleife durchläuft jede Seite des PDF-Dokuments.
+- `document.Pages[i]`: Ruft die aktuell verarbeitete Seite ab.
+- `page.Accept(textFragmentAbsorber)` : Diese Methode wendet die`TextFragmentAbsorber` zur aktuellen Seite und sucht nach dem angegebenen Text.
+
+## Schritt 4: Sammeln und verarbeiten Sie die Textfragmente
+
+Nach der Iteration durch die Seiten sammeln wir die gefundenen Textfragmente und bereiten diese für die weitere Verarbeitung auf.
+
+```csharp
+// Erstellen Sie eine Sammlung aufgenommener Textfragmente
 Aspose.Pdf.Text.TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+```
 
-//Iterieren Sie die obige Sammlung
+- `TextFragmentCollection`In dieser Sammlung sind alle Textfragmente gespeichert, die im Dokument gefunden wurden. Diese Sammlung verwenden wir im nächsten Schritt, um den Text durchzustreichen.
+
+## Schritt 5: Durchlaufen Sie die Textfragmente und streichen Sie sie durch
+
+In diesem Schritt durchlaufen wir jedes Textfragment in unserer Sammlung und wenden eine Durchstreichungsanmerkung darauf an.
+
+```csharp
+// Iterieren Sie über die Sammlung von Textfragmenten
 for (int j = 1; j <= textFragmentCollection.Count; j++)
 {
 	Aspose.Pdf.Text.TextFragment textFragment = textFragmentCollection[j];
 
-	// Erhalten Sie rechteckige Abmessungen des TextFragment-Objekts
-	Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
-				(float)textFragment.Position.XIndent,
-				(float)textFragment.Position.YIndent,
-				(float)textFragment.Position.XIndent +
-				(float)textFragment.Rectangle.Width,
-				(float)textFragment.Position.YIndent +
-				(float)textFragment.Rectangle.Height);
+    // Holen Sie sich die rechteckigen Abmessungen des TextFragment-Objekts
+    Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
+        (float)textFragment.Position.XIndent,
+        (float)textFragment.Position.YIndent,
+        (float)textFragment.Position.XIndent + (float)textFragment.Rectangle.Width,
+        (float)textFragment.Position.YIndent + (float)textFragment.Rectangle.Height);
 
-	// Instanziieren Sie die StrikeOut-Annotation-Instanz
-	StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
-	// Legen Sie die Deckkraft für die Anmerkung fest
-	strikeOut.Opacity = .80f;
-	// Legen Sie den Rahmen für die Anmerkungsinstanz fest
-	strikeOut.Border = new Border(strikeOut);
-	// Legen Sie die Farbe der Anmerkung fest
-	strikeOut.Color = Aspose.Pdf.Color.Red;
-	// Anmerkung zur Anmerkungssammlung von TextFragment hinzufügen
-	textFragment.Page.Annotations.Add(strikeOut);
+    // Instanziieren einer StrikeOut-Annotation
+    StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
+
+    // Eigenschaften der Durchstreichungsanmerkung festlegen
+    strikeOut.Opacity = .80f;
+    strikeOut.Border = new Border(strikeOut);
+    strikeOut.Color = Aspose.Pdf.Color.Red;
+
+    // Fügen Sie die Anmerkung zur Anmerkungssammlung der Seite des Textfragments hinzu
+    textFragment.Page.Annotations.Add(strikeOut);
 }
+```
+
+- `TextFragment textFragment = textFragmentCollection[j]`: Diese Zeile ruft das aktuelle Textfragment ab.
+- `Aspose.Pdf.Rectangle`: Wir berechnen die rechteckigen Abmessungen des Textfragments, um zu bestimmen, wo die Durchstreichung angewendet werden soll.
+- `StrikeOutAnnotation`: Diese Klasse stellt die Strikeout-Annotation dar. Wir instanziieren sie mit dem berechneten Rechteck und der aktuellen Seite.
+- `strikeOut.Opacity`: Diese Eigenschaft legt die Deckkraft des Durchstreichungszeichens fest, sodass es zu 80 % sichtbar ist.
+- `strikeOut.Color`Wir haben die Farbe des Durchstreichungszeichens auf Rot gesetzt. Sie können dies in jede beliebige Farbe ändern.
+- `textFragment.Page.Annotations.Add(strikeOut)`: Dadurch wird der Seite die Durchstreichungsanmerkung hinzugefügt.
+
+## Schritt 6: Speichern Sie das geänderte PDF-Dokument
+
+Der letzte Schritt besteht darin, das geänderte PDF-Dokument mit den angewendeten Durchstreichungen zu speichern.
+
+```csharp
+// Speichern Sie das aktualisierte PDF-Dokument
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
 
+- `dataDir + "StrikeOutWords_out.pdf"`: Dadurch wird ein neuer Dateiname für das geänderte Dokument erstellt. Die Originaldatei bleibt unverändert.
+- `document.Save(dataDir)`: Speichert das PDF-Dokument mit den Durchstreichungen am angegebenen Speicherort.
+
 ## Abschluss
 
-In diesem Tutorial haben wir gelernt, wie man Aspose.PDF für .NET verwendet, um bestimmte Wörter in einem PDF-Dokument durchzustreichen. Indem Sie der Schritt-für-Schritt-Anleitung folgen und den bereitgestellten C#-Quellcode verwenden, können Sie ganz einfach ein PDF-Dokument laden, nach bestimmten Textfragmenten suchen und durchgestrichene Anmerkungen erstellen, um diese Wörter visuell zu markieren und durchzustreichen. Aspose.PDF für .NET bietet eine einfache und effektive Möglichkeit, PDF-Dokumente programmgesteuert zu bearbeiten, was es zu einem wertvollen Werkzeug für Entwickler macht, die mit PDF-Dateien in .NET-Anwendungen arbeiten.
+Herzlichen Glückwunsch! Sie haben mit Aspose.PDF für .NET erfolgreich bestimmte Wörter in einem PDF-Dokument durchgestrichen. Wenn Sie dieser Schritt-für-Schritt-Anleitung folgen, können Sie PDF-Dokumente jetzt anpassen, indem Sie Text hervorheben oder durchstreichen, sodass sie dynamischer und auf Ihre Bedürfnisse zugeschnitten sind. Egal, ob Sie juristische Dokumente kommentieren, Berichte erstellen oder einfach nur Text zur Überprüfung markieren, dieses Tutorial hat Ihnen die Fähigkeiten vermittelt, dies effizient zu tun.
 
-### FAQs
+## Häufig gestellte Fragen
 
-#### F: Was ist Aspose.PDF für .NET?
+### Kann ich die Farbe des Durchgestrichenen ändern?
 
-A: Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, die es Entwicklern ermöglicht, PDF-Dokumente programmgesteuert in .NET-Anwendungen zu erstellen, zu bearbeiten und zu bearbeiten. Es bietet eine breite Palette von Funktionen für die Arbeit mit PDF-Dateien, darunter Textextraktion, Anmerkungsverarbeitung, Formularausfüllung und vieles mehr.
+ Ja, Sie können die Farbe ändern, indem Sie die`strikeOut.Color`Eigenschaft. Sie können sie beispielsweise auf`Aspose.Pdf.Color.Blue` für einen blauen Strikeout.
 
-#### F: Kann ich Aspose.PDF für .NET verwenden, um bestimmte Wörter in einem PDF-Dokument durchzustreichen?
+### Ist es möglich, mehrere Wörter auf einmal durchzustreichen?
 
-A: Ja, Aspose.PDF für .NET bietet Funktionen zum Suchen nach bestimmten Textfragmenten in einem PDF-Dokument und zum anschließenden Erstellen von Durchstreichungsanmerkungen, um diese Wörter visuell zu markieren und durchzustreichen.
+ Absolut! Die`TextFragmentAbsorber` kann verwendet werden, um nach einem beliebigen Wort oder einer beliebigen Phrase im Dokument zu suchen. Sie können die Durchstreichung auf mehrere Instanzen anwenden, indem Sie die`TextFragmentCollection`.
 
-#### F: Wie gebe ich den Text an, den ich im PDF-Dokument durchstreichen möchte?
+### Was ist, wenn ich Text nur auf bestimmten Seiten streichen möchte?
 
- A: Um den Text anzugeben, den Sie durchstreichen möchten, können Sie die verwenden`TextFragmentAbsorber` Von Aspose.PDF für .NET bereitgestellte Klasse. Es ermöglicht Ihnen, anhand Ihrer gewünschten Kriterien nach einem bestimmten Textfragment im PDF-Dokument zu suchen.
+ Sie können die Schleife, die die Seiten durchläuft, so ändern, dass nur die Seiten einbezogen werden, die Sie ändern möchten. Beispiel:`for (int i = 1; i <= 3; i++)` würde die Durchstreichung nur auf die ersten drei Seiten anwenden.
 
-#### F: Kann ich das Erscheinungsbild der durchgestrichenen Anmerkung anpassen?
+### Wie kann ich die Dicke der Durchstreichlinie anpassen?
 
-A: Ja, Sie können verschiedene Eigenschaften der durchgestrichenen Anmerkung anpassen, z. B. die Deckkraft, den Rahmenstil und die Farbe. Dadurch können Sie das Erscheinungsbild der durchgestrichenen Anmerkung an Ihre spezifischen Anforderungen anpassen.
+ Sie können die Dicke der durchgestrichenen Linie anpassen, indem Sie die`Border` Eigentum der`StrikeOutAnnotation`. Dadurch kann das Erscheinungsbild des Durchgestrichenen angepasst werden.
+
+### Gibt es eine Möglichkeit, die Durchstreichung nach dem Speichern des Dokuments rückgängig zu machen?
+
+Sobald das Dokument gespeichert ist, ist die Durchstreichung dauerhaft. Wenn Sie den Originaltext ohne Durchstreichung beibehalten möchten, sollten Sie vor dem Anwenden von Änderungen eine Sicherungskopie des Originaldokuments erstellen.

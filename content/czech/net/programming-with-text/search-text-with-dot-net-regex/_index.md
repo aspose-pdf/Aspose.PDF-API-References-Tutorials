@@ -41,7 +41,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 4: Vytvořte objekt .NET Regex
 
- Vytvořit`.NET Regex` objekt pro definování vyhledávacího vzoru:
+ Vytvořte a`.NET Regex` objekt pro definování vyhledávacího vzoru:
 
 ```csharp
 System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"[\S]+");
@@ -71,7 +71,7 @@ Page page = document.Pages[1];
 
 ## Krok 7: Vytvořte TextFragmentAbsorber
 
- Vytvořit`TextFragmentAbsorber` objekt k nalezení všech instancí vstupního regulárního výrazu:
+ Vytvořte a`TextFragmentAbsorber` objekt k nalezení všech instancí vstupního regulárního výrazu:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(regex);
@@ -88,7 +88,7 @@ page.Accept(textFragmentAbsorber);
 
 ## Krok 9: Načtěte extrahované fragmenty textu
 
-Získejte extrahované fragmenty textu pomocí`TextFragments` vlastnictvím`TextFragmentAbsorber` objekt:
+Získejte extrahované fragmenty textu pomocí`TextFragments` majetek z`TextFragmentAbsorber` objekt:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -107,7 +107,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 
 Upravte kód ve smyčce, abyste v případě potřeby provedli další akce s každým textovým fragmentem.
 
-### Ukázkový zdrojový kód pro Search Text With Dot Net Regex pomocí Aspose.PDF pro .NET 
+### Ukázka zdrojového kódu pro Search Text With Dot Net Regex pomocí Aspose.PDF pro .NET 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Vytvořte objekt Regex, abyste našli všechna slova
@@ -132,7 +132,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 
 ## Závěr
 
-Gratulujeme! Úspěšně jste se naučili vyhledávat text pomocí regulárních výrazů .NET v dokumentu PDF pomocí Aspose.PDF for .NET. Tento tutoriál poskytl průvodce krok za krokem, od nastavení projektu až po přístup k extrahovaným fragmentům textu. Nyní můžete tento kód začlenit do svých vlastních projektů C# a provádět pokročilé vyhledávání textu v souborech PDF.
+Gratuluji! Úspěšně jste se naučili vyhledávat text pomocí regulárních výrazů .NET v dokumentu PDF pomocí Aspose.PDF for .NET. Tento tutoriál poskytl průvodce krok za krokem, od nastavení projektu až po přístup k extrahovaným fragmentům textu. Nyní můžete tento kód začlenit do svých vlastních projektů C# a provádět pokročilé vyhledávání textu v souborech PDF.
 
 ### FAQ
 
@@ -142,7 +142,7 @@ Odpověď: Výukový program "Search Text With Dot Net Regex" si klade za cíl v
 
 #### Otázka: Jak tento kurz pomáhá při hledání textu pomocí regulárních výrazů .NET v PDF?
 
-Odpověď: Tento výukový program pomáhá uživatelům pochopit, jak využít možnosti Aspose.PDF pro .NET k vyhledávání textu pomocí regulárních výrazů .NET v dokumentu PDF. Podle poskytnutých kroků a příkladů kódu mohou uživatelé efektivně vyhledávat textové vzory, které odpovídají jejich zadaným regulárním výrazům.
+Odpověď: Tento výukový program pomáhá uživatelům pochopit, jak využít možnosti Aspose.PDF pro .NET k vyhledávání textu pomocí regulárních výrazů .NET v dokumentu PDF. Podle poskytnutých kroků a příkladů kódu mohou uživatelé efektivně vyhledávat vzory textu, které odpovídají jejich zadaným regulárním výrazům.
 
 #### Otázka: Jaké předpoklady jsou vyžadovány pro sledování tohoto kurzu?
 

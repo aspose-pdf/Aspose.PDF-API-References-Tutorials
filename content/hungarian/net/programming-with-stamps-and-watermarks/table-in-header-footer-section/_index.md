@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 2. lépés: A PDF-dokumentum és az oldal létrehozása
 
- Az első lépés egy példány létrehozása a`Document` osztályt, és adjunk hozzá egy oldalt a dokumentumhoz. Itt van, hogyan:
+ Az első lépés a példány létrehozása a`Document` osztályt, és adjunk hozzá egy oldalt a dokumentumhoz. Íme, hogyan:
 
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
@@ -35,7 +35,7 @@ Feltétlenül cserélje ki a "DOKUMENTUMKÖNYVTÁR" elemet annak a könyvtárnak
 
 ## 3. lépés: A fejléc szakasz konfigurálása
 
- Most a PDF-dokumentum fejlécrészét konfiguráljuk a példány létrehozásával`HeaderFooter` osztály. Itt van, hogyan:
+ Most a PDF-dokumentum fejlécrészét konfiguráljuk a példány létrehozásával`HeaderFooter` osztály. Íme, hogyan:
 
 ```csharp
 // Hozzon létre egy fejléc részt a PDF-fájlhoz
@@ -50,7 +50,7 @@ header. Margin. Top = 20;
 
 ## 4. lépés: A táblázat létrehozása
 
- Most egy táblázatot fogunk létrehozni a`Table` osztályt, és adja hozzá a címsor szakasz bekezdésgyűjteményéhez. Itt van, hogyan:
+ Most egy táblázatot fogunk létrehozni a`Table` osztályt, és adja hozzá a címsor szakasz bekezdésgyűjteményéhez. Íme, hogyan:
 
 ```csharp
 // Példányosítson egy táblázat objektumot
@@ -67,7 +67,7 @@ A fenti kód egy táblázatot hoz létre két megadott szélességű oszloppal.
 
 ## 5. lépés: Adjon hozzá sorokat és cellákat a táblázathoz
 
- Most sorokat és cellákat adunk a táblázathoz a`Row` osztály és a`Cell` osztály. Itt van, hogyan:
+ Most sorokat és cellákat adunk a táblázathoz a`Row` osztály és a`Cell` osztály. Íme, hogyan:
 
 ```csharp
 // Hozzon létre egy sort a táblázatban, és adjon hozzá cellákat
@@ -96,7 +96,7 @@ row2.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 
 ## 6. lépés: A PDF-dokumentum mentése
 
-Miután a táblázatot hozzáadtuk a fejléc részhez, elmenthetjük a PDF dokumentumot. Itt van, hogyan:
+Miután a táblázatot hozzáadtuk a fejléc részhez, elmenthetjük a PDF dokumentumot. Íme, hogyan:
 
 ```csharp
 // Mentse el a PDF fájlt
@@ -117,10 +117,10 @@ Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
 // Hozzon létre egy oldalt a pdf dokumentumban
 Aspose.Pdf.Page page = pdfDocument.Pages.Add();
 
-// Hozzon létre egy fejléc részt a PDF-fájlban
+//Hozzon létre egy fejléc részt a PDF-fájlban
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-//Állítsa be a PDF-fájl páratlan fejlécét
+// Állítsa be a PDF-fájl páratlan fejlécét
 page.Header = header;
 
 // Állítsa be a fejlécrész felső margóját
@@ -206,11 +206,11 @@ V: A kód hozzáadja a táblázatot a fejléc szakasz bekezdésgyűjteményéhez
  V: Igen, beállíthatja a táblázat oszlopainak szélességét a`ColumnWidths` ingatlan. Ez lehetővé teszi a táblázat elrendezésének szabályozását.
 
 #### K: Hogyan húzhatom át a cellákat több oszlopra vagy sorra a táblázaton belül?
- V: Ha a cellákat több oszlopra szeretné átívelni, használja a`ColSpan` a megfelelő cella tulajdonsága. Hasonlóképpen használhatja a`RowSpan` tulajdonság a cellák több sorban való áthidalására.
+ V: Ha a cellákat több oszlopra szeretné átívelni, használja a`ColSpan` megfelelő cella tulajdonsága. Hasonlóképpen használhatja a`RowSpan` tulajdonság a cellák több sorban való áthidalására.
 
 #### K: Mi történik, ha a PDF-dokumentum fejlécéhez és láblécéhez is hozzá akarok adni egy táblázatot?
 
-V: Hasonló megközelítést követhet a fejléc és a lábléc részeknél is. Egyszerűen hozzon létre a`HeaderFooter` példányt a lábléchez, konfigurálja azt, és adja hozzá a táblázatot a bekezdésgyűjteményéhez.
+ V: Hasonló megközelítést követhet a fejléc és a lábléc részeknél is. Egyszerűen hozzon létre a`HeaderFooter` példányt a lábléchez, konfigurálja azt, és adja hozzá a táblázatot a bekezdésgyűjteményéhez.
 
 #### K: Használhatok képeket a táblázat celláiban, és hogyan érhető el ez?
 

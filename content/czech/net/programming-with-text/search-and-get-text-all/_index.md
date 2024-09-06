@@ -42,7 +42,7 @@ Document pdfDocument = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
 
 ## Krok 4: Vyhledejte a extrahujte text
 
- Vytvořit`TextFragmentAbsorber` objekt k nalezení všech výskytů vstupní vyhledávací fráze:
+ Vytvořte a`TextFragmentAbsorber` objekt k nalezení všech výskytů vstupní vyhledávací fráze:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
@@ -60,7 +60,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## Krok 6: Získejte extrahované fragmenty textu
 
-Získejte extrahované fragmenty textu pomocí`TextFragments` vlastnictvím`TextFragmentAbsorber` objekt:
+Získejte extrahované fragmenty textu pomocí`TextFragments` majetek z`TextFragmentAbsorber` objekt:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -86,7 +86,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
-Kód v rámci smyčky můžete upravit a provést další akce s každým textovým fragmentem.
+Kód ve smyčce můžete upravit a provést další akce s každým textovým fragmentem.
 
 ### Ukázkový zdrojový kód pro Search And Get Text All pomocí Aspose.PDF for .NET 
 ```csharp
@@ -118,7 +118,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 
 ## Závěr
 
-Gratulujeme! Úspěšně jste se naučili, jak vyhledávat a získávat text ze všech stránek dokumentu PDF pomocí Aspose.PDF pro .NET. Tento výukový program poskytl průvodce krok za krokem, od načtení dokumentu až po přístup k extrahovaným fragmentům textu. Nyní můžete tento kód začlenit do svých vlastních projektů C# pro analýzu a zpracování textového obsahu v souborech PDF.
+Gratuluji! Úspěšně jste se naučili, jak vyhledávat a získávat text ze všech stránek dokumentu PDF pomocí Aspose.PDF pro .NET. Tento výukový program poskytl průvodce krok za krokem, od načtení dokumentu až po přístup k extrahovaným fragmentům textu. Nyní můžete tento kód začlenit do svých vlastních projektů C# pro analýzu a zpracování textového obsahu v souborech PDF.
 
 ### FAQ
 
@@ -140,7 +140,7 @@ A: Chcete-li začít, vytvořte nový projekt C# ve vašem preferovaném integro
 
 #### Otázka: Jak vyhledám konkrétní text v dokumentu PDF?
 
-A: Můžete použít`TextFragmentAbsorber`třídy k vyhledání instancí konkrétní vyhledávací fráze v dokumentu PDF. Vytvořením instance této třídy a určením cílového textu můžete zachytit všechny výskyty tohoto textu.
+ A: Můžete použít`TextFragmentAbsorber`třídy k vyhledání instancí konkrétní vyhledávací fráze v dokumentu PDF. Vytvořením instance této třídy a určením cílového textu můžete zachytit všechny výskyty tohoto textu.
 
 #### Otázka: Mohu hledat text na všech stránkách dokumentu PDF?
 
@@ -148,7 +148,7 @@ A: Můžete použít`TextFragmentAbsorber`třídy k vyhledání instancí konkr�
 
 #### Otázka: Jak získám přístup k fragmentům extrahovaného textu?
 
- Odpověď: Po vyhledání textu můžete získat přístup k extrahovaným textovým fragmentům pomocí`TextFragments` vlastnictvím`TextFragmentAbsorber` objekt. Tato vlastnost poskytuje přístup ke sbírce`TextFragment` objekty, které obsahují extrahovaný text a související informace.
+ Odpověď: Po vyhledání textu můžete získat přístup k extrahovaným textovým fragmentům pomocí`TextFragments` majetek z`TextFragmentAbsorber` objekt. Tato vlastnost poskytuje přístup ke sbírce`TextFragment` objekty, které obsahují extrahovaný text a související informace.
 
 #### Otázka: Jaké informace mohu získat z extrahovaných textových fragmentů?
 

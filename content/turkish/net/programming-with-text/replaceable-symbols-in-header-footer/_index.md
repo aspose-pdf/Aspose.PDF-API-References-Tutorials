@@ -1,41 +1,41 @@
 ---
-title: Üstbilgi Altbilgisindeki Değiştirilebilir Semboller
-linktitle: Üstbilgi Altbilgisindeki Değiştirilebilir Semboller
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET kullanarak bir PDF belgesinin üstbilgisinde ve altbilgisinde değiştirilebilir sembollerin nasıl kullanılacağını öğrenin.
+title: Başlık Altbilgisindeki Değiştirilebilir Semboller
+linktitle: Başlık Altbilgisindeki Değiştirilebilir Semboller
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET'i kullanarak bir PDF belgesinin üst bilgi ve alt bilgisinde değiştirilebilir sembollerin nasıl kullanılacağını öğrenin.
 type: docs
 weight: 320
 url: /tr/net/programming-with-text/replaceable-symbols-in-header-footer/
 ---
-Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesinin üstbilgisinde ve altbilgisinde değiştirilebilir sembollerin nasıl kullanılacağını açıklayacağız. PDF oluşturma, kenar boşluklarını ayarlama, değiştirilebilir sembollerle üstbilgi ve altbilgi ekleme ve sağlanan C# kaynak kodunu kullanarak PDF'yi kaydetme işlemlerini adım adım gerçekleştireceğiz.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesinin üstbilgi ve altbilgisinde değiştirilebilir sembollerin nasıl kullanılacağını açıklayacağız. PDF oluşturma, kenar boşluklarını ayarlama, değiştirilebilir sembollerle üstbilgi ve altbilgi ekleme ve sağlanan C# kaynak kodunu kullanarak PDF'yi kaydetme adım adım sürecini ele alacağız.
 
-## Önkoşullar
+## Ön koşullar
 
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
 - Aspose.PDF for .NET kütüphanesi kuruldu.
-- C# programlamanın temel anlayışı.
+- C# programlamanın temellerini anlamak.
 
-## 1. Adım: Belge Dizinini Ayarlayın
+## Adım 1: Belge Dizinini Ayarlayın
 
- Öncelikle oluşturulan PDF dosyasını kaydetmek istediğiniz dizinin yolunu ayarlamanız gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir`İstediğiniz dizinin yolunu içeren değişken.
+ Öncelikle, oluşturulan PDF dosyasını kaydetmek istediğiniz dizinin yolunu ayarlamanız gerekir. Değiştir`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` İstediğiniz dizinin yolunu içeren değişken.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Adım 2: PDF Belgesi ve Sayfası Oluşturun
+## Adım 2: Bir PDF Belgesi ve Sayfası Oluşturun
 
- Daha sonra, yeni bir PDF belgesi oluşturup ona bir sayfa ekliyoruz.`Document` sınıf ve`Page` Aspose.PDF kütüphanesinden sınıf.
+ Daha sonra yeni bir PDF belgesi oluşturup buna bir sayfa ekliyoruz.`Document` sınıf ve`Page` Aspose.PDF kütüphanesinden sınıf.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## 3. Adım: Kenar Boşluklarını Ayarlayın
+## Adım 3: Kenar Boşluklarını Ayarlayın
 
- Sayfanın kenar boşluklarını kullanarak ayarlıyoruz.`MarginInfo`sınıf. Marj değerlerini gereksinimlerinize göre ayarlayın.
+Sayfanın kenar boşluklarını şunu kullanarak ayarlıyoruz:`MarginInfo` sınıf. Marj değerlerini ihtiyaçlarınıza göre ayarlayın.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -48,7 +48,7 @@ page.PageInfo.Margin = marginInfo;
 
 ## Adım 4: Değiştirilebilir Sembollerle Başlık Ekleme
 
- Biz bir yaratıyoruz`HeaderFooter` sayfa için nesne ve bir tane ekleyin`TextFragment` değiştirilebilir sembollerle birlikte.
+ Biz bir tane yaratıyoruz`HeaderFooter` sayfa için nesne ve bir tane ekle`TextFragment` Değiştirilebilir sembollerle.
 
 ```csharp
 HeaderFooter hfFirst = new HeaderFooter();
@@ -57,7 +57,7 @@ hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
 
 TextFragment t1 = new TextFragment("report title");
-// İsterseniz metin özelliklerini ayarlayın
+// İstenirse metin özelliklerini ayarlayın
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
 t1.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
@@ -67,12 +67,12 @@ t1.TextState.LineSpacing = 5f;
 
 hfFirst.Paragraphs.Add(t1);
 
-// Daha fazla TextFragments ekleyin veya gerektiği gibi özelleştirin
+// Daha fazla TextFragment ekleyin veya gerektiği gibi özelleştirin
 ```
 
 ## Adım 5: Değiştirilebilir Sembollerle Alt Bilgi Ekleme
 
- Benzer şekilde, bir`HeaderFooter` sayfa altbilgisi için nesne ve ekleme`TextFragment` Değiştirilebilir sembollere sahip nesneler.
+ Benzer şekilde, bir tane yaratıyoruz`HeaderFooter` sayfa altbilgisi için nesne ve ekle`TextFragment` Değiştirilebilir sembollere sahip nesneler.
 
 ```csharp
 HeaderFooter hfFoot = new HeaderFooter();
@@ -84,14 +84,14 @@ TextFragment t3 = new TextFragment("Generated on test date");
 TextFragment t4 = new TextFragment("report name ");
 TextFragment t5 = new TextFragment("Page $p of $P");
 
-// Daha fazla TextFragments ekleyin veya gerektiği gibi özelleştirin
+// Daha fazla TextFragment ekleyin veya gerektiği gibi özelleştirin
 
 hfFoot.Paragraphs.Add(tab2);
 ```
 
 ## Adım 6: PDF Belgesini Kaydedin
 
-Son olarak PDF belgesini belirtilen çıktı dosyasına kaydediyoruz.
+Son olarak PDF dokümanını belirtilen çıktı dosyasına kaydediyoruz.
 
 ```csharp
 dataDir = dataDir + "ReplaceableSymbolsInHeaderFooter_out.pdf";
@@ -99,9 +99,9 @@ doc.Save(dataDir);
 Console.WriteLine("\nReplaceable symbols replaced successfully in the header and footer.\nFile saved at " + dataDir);
 ```
 
-### Aspose.PDF for .NET kullanarak Üst Bilgi Alt Bilgisindeki Değiştirilebilir Semboller için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Başlık Alt Bilgisinde Değiştirilebilir Semboller için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 Page page = doc.Pages.Add();
@@ -110,13 +110,13 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-// MarginInfo örneğini sec1.PageInfo'nun Margin özelliğine atayın
+// marginInfo örneğini sec1.PageInfo'nun Margin özelliğine atayın
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
 hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
-// Başlık olarak gösterilecek içeriği saklayacak bir Metin paragrafı örneği oluşturun
+// İçeriği başlık olarak gösterecek bir Metin paragrafı örneği oluşturun
 TextFragment t1 = new TextFragment("report title");
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
@@ -134,7 +134,7 @@ t2.TextState.FontSize = 12;
 hfFirst.Paragraphs.Add(t2);
 // Bölüm için bir HeaderFooter nesnesi oluşturun
 HeaderFooter hfFoot = new HeaderFooter();
-// HeaderFooter nesnesini tek ve çift altbilgi olarak ayarlayın
+// HeaderFooter nesnesini tek ve çift altbilgiye ayarlayın
 page.Footer = hfFoot;
 hfFoot.Margin.Left = 50;
 hfFoot.Margin.Right = 50;
@@ -142,11 +142,11 @@ hfFoot.Margin.Right = 50;
 TextFragment t3 = new TextFragment("Generated on test date");
 TextFragment t4 = new TextFragment("report name ");
 TextFragment t5 = new TextFragment("Page $p of $P");
-// Bir tablo nesnesinin örneğini oluşturma
+// Bir tablo nesnesi örneği oluşturun
 Table tab2 = new Table();
-// Tabloyu istediğiniz bölümün paragraf koleksiyonuna ekleyin
+// İstenilen bölümün paragraf koleksiyonuna tabloyu ekleyin
 hfFoot.Paragraphs.Add(tab2);
-// Tablonun sütun genişliklerine göre ayarlama
+// Tablonun sütun genişlikleriyle ayarlayın
 tab2.ColumnWidths = "165 172 165";
 // Tabloda satırlar ve ardından satırlarda hücreler oluşturun
 Row row3 = tab2.Rows.Add();
@@ -160,15 +160,15 @@ row3.Cells[2].Alignment = Aspose.Pdf.HorizontalAlignment.Right;
 row3.Cells[0].Paragraphs.Add(t3);
 row3.Cells[1].Paragraphs.Add(t4);
 row3.Cells[2].Paragraphs.Add(t5);
-//Sec1.Paragraphs.Add(New Text("Aspose.Total for Java, Aspose tarafından sunulan tüm Java bileşenlerinin bir derlemesidir. Her birinin en güncel sürümlerini içerdiğinden emin olmak için #$NL" + "günlük olarak derlenir. #$NL " + "Aspose.Total for Java'yı kullanarak geliştiriciler çok çeşitli uygulamalar oluşturabilirler. #$NL #$NL #$NP" + "Aspose.Total for Java, her Java bileşeninin bir derlemesidir Aspose tarafından sunulmaktadır. Java bileşenlerimizin her birinin en güncel sürümlerini içerdiğinden emin olmak için #$NL" + "günlük olarak derlenir. #$NL " + "Java geliştiricileri için Aspose.Total'ı kullanarak geniş bir içerik oluşturabilirsiniz. #$NL #$NL #$NP" + "Aspose.Total for Java, Aspose tarafından sunulan her Java bileşeninin bir derlemesidir. En fazla içeriği içerdiğinden emin olmak için #$NL" + "günlük olarak derlenir. Java bileşenlerimizin her birinin güncel sürümleri. #$NL " + "Java geliştiricileri Aspose.Total'ı kullanarak çok çeşitli uygulamalar oluşturabilir. #$NL #$NL"))
+//Sec1.Paragraphs.Add(New Text("Aspose.Total for Java, Aspose tarafından sunulan her Java bileşeninin bir derlemesidir. Her bir Java bileşenimizin en güncel sürümlerini içerdiğinden emin olmak için günlük olarak derlenir. #$NL " + "Aspose.Total for Java geliştiricileri geniş bir uygulama yelpazesi oluşturabilir. #$NL #$NL #$NP" + "Aspose.Total for Java, Aspose tarafından sunulan her Java bileşeninin bir derlemesidir. Her bir Java bileşenimizin en güncel sürümlerini içerdiğinden emin olmak için günlük olarak derlenir. #$NL " + "Aspose.Total for Java geliştiricileri geniş bir uygulama yelpazesi oluşturabilir. #$NL #$NL #$NP" + "Aspose.Total for Java, Aspose tarafından sunulan her Java bileşeninin bir derlemesidir. Her bir Java bileşenimizin en güncel sürümlerini içerdiğinden emin olmak için günlük olarak derlenir. Java bileşenlerimizin her birinin güncel sürümleri. #$NL " + "Java geliştiricileri için Aspose.Total'ı kullanarak çok çeşitli uygulamalar oluşturabilirsiniz. #$NL #$NL"))
 Table table = new Table();
 table.ColumnWidths = "33% 33% 34%";
 table.DefaultCellPadding = new MarginInfo();
 table.DefaultCellPadding.Top = 10;
 table.DefaultCellPadding.Bottom = 10;
-// Tabloyu istediğiniz bölümün paragraf koleksiyonuna ekleyin
+// İstenilen bölümün paragraf koleksiyonuna tabloyu ekleyin
 page.Paragraphs.Add(table);
-// BorderInfo nesnesini kullanarak varsayılan hücre kenarlığını ayarlama
+// BorderInfo nesnesini kullanarak varsayılan hücre kenarlığını ayarlayın
 table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
 // Başka bir özelleştirilmiş BorderInfo nesnesini kullanarak tablo kenarlığını ayarlayın
 table.Border = new BorderInfo(BorderSide.All, 1f);
@@ -203,52 +203,52 @@ Console.WriteLine("\nSymbols replaced successfully in header and footer.\nFile s
 
 ## Çözüm
 
-Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesinin üstbilgisinde ve altbilgisinde değiştirilebilir sembollerin nasıl kullanılacağını öğrendiniz. Adım adım kılavuzu izleyerek ve verilen C# kodunu çalıştırarak bir PDF oluşturabilir, kenar boşluklarını ayarlayabilir, değiştirilebilir sembollerle üst bilgi ve alt bilgi ekleyebilir ve PDF'yi kaydedebilirsiniz.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesinin üstbilgi ve altbilgisinde değiştirilebilir sembollerin nasıl kullanılacağını öğrendiniz. Adım adım kılavuzu takip ederek ve sağlanan C# kodunu çalıştırarak bir PDF oluşturabilir, kenar boşluklarını ayarlayabilir, değiştirilebilir sembollerle üstbilgi ve altbilgi ekleyebilir ve PDF'yi kaydedebilirsiniz.
 
-### SSS'ler
+### SSS
 
-#### S: "Üst Bilgi Alt Bilgideki Değiştirilebilir Semboller" eğitiminin amacı nedir?
+#### S: "Üstbilgi ve Altbilgide Değiştirilebilir Semboller" eğitiminin amacı nedir?
 
-C: "Üst Bilgi Alt Bilgisindeki Değiştirilebilir Semboller" eğitimi, bir PDF belgesinin üst bilgi ve alt bilgisine değiştirilebilir semboller eklemek için .NET için Aspose.PDF kütüphanesini kullanma sürecinde size rehberlik etmeyi amaçlamaktadır. Değiştirilebilir semboller, PDF'yi oluştururken belirli yer tutucuları dinamik olarak gerçek değerlerle değiştirmenize olanak tanır.
+A: "Başlık ve Altbilgide Değiştirilebilir Semboller" öğreticisi, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesinin başlığına ve altbilgisine değiştirilebilir semboller ekleme sürecinde size rehberlik etmeyi amaçlamaktadır. Değiştirilebilir semboller, PDF oluştururken belirli yer tutucuları gerçek değerlerle dinamik olarak değiştirmenize olanak tanır.
 
-#### S: PDF üstbilgisi ve altbilgisi bağlamında değiştirilebilir simgeler nelerdir?
+#### S: PDF üst bilgisi ve alt bilgisi bağlamında değiştirilebilir semboller nelerdir?
 
-C: Değiştirilebilir semboller, bir PDF belgesinin üstbilgisine ve altbilgisine ekleyebileceğiniz yer tutuculardır. Bu semboller, sayfa numaraları, tarihler ve özel bilgiler gibi çalışma zamanında doldurulabilecek değerler için dinamik yer tutucular görevi görür.
+A: Değiştirilebilir semboller, bir PDF belgesinin üstbilgisine ve altbilgisine ekleyebileceğiniz yer tutuculardır. Bu semboller, sayfa numaraları, tarihler ve özel bilgiler gibi çalışma zamanında doldurulabilen değerler için dinamik yer tutucular olarak işlev görür.
 
-#### S: PDF üstbilgisinde ve altbilgisinde neden değiştirilebilir semboller kullanmak isteyeyim?
+#### S: PDF üst bilgi ve alt bilgisinde değiştirilebilir semboller kullanmak istememin nedeni nedir?
 
-C: Üstbilgi ve altbilgideki değiştirilebilir semboller, PDF belgelerinize sayfa numaraları, tarihler veya belge oluşturulduğunda değişebilecek diğer değişken veriler gibi dinamik bilgiler eklemek istediğinizde kullanışlıdır.
+A: Sayfa numaraları, tarihler veya belge oluşturulduğunda değişebilecek diğer değişken veriler gibi PDF belgelerinize dinamik bilgiler eklemek istediğinizde, üst bilgi ve alt bilgideki değiştirilebilir simgeler yararlıdır.
 
 #### S: PDF sayfasının kenar boşluklarını nasıl ayarlayabilirim?
 
- C: PDF sayfasının kenar boşluklarını aşağıdaki düğmeyi kullanarak ayarlayabilirsiniz:`MarginInfo` sınıfa atamak ve`Margin` mülkiyeti`PageInfo` sayfanın. Kenar boşluğu değerlerini gerektiği gibi ayarlayın.
+ A: PDF sayfasının kenar boşluklarını,`MarginInfo` sınıfa atama ve onu atama`Margin` mülkiyeti`PageInfo` Sayfanın. Gerektiğinde kenar boşluğu değerlerini ayarlayın.
 
-#### S: Değiştirilebilir sembolleri üstbilgi ve altbilgiye nasıl eklerim?
+#### S: Üstbilgi ve altbilgiye değiştirilebilir semboller nasıl eklerim?
 
- C: Değiştirilebilir sembolleri bir`HeaderFooter` sayfanın üstbilgisi ve altbilgisi için nesne. Daha sonra ekleyebilirsiniz`TextFragment`Değiştirilebilir semboller de dahil olmak üzere istenen metni içeren nesneleri`Paragraphs` koleksiyonu`HeaderFooter` nesne.
+ A: Değiştirilebilir semboller ekleyerek bir`HeaderFooter` sayfanın üstbilgisi ve altbilgisi için nesne. Daha sonra, ekleyebilirsiniz`TextFragment`değiştirilebilir semboller de dahil olmak üzere istenilen metne sahip nesneleri`Paragraphs` koleksiyonu`HeaderFooter` nesne.
 
-#### S: Değiştirilebilir simgelerin görünümünü özelleştirebilir miyim?
+#### S: Değiştirilebilir sembollerin görünümünü özelleştirebilir miyim?
 
- C: Evet, değiştirilebilir sembollerin özelliklerini değiştirerek, değiştirilebilir sembollerin görünümünü özelleştirebilirsiniz.`TextFragment` sembolleri içeren nesneler. Yazı tipi, yazı tipi boyutu, renk, hizalama ve satır aralığı gibi özellikleri ayarlayabilirsiniz.
+ A: Evet, değiştirilebilir sembollerin görünümünü, sembollerin özelliklerini değiştirerek özelleştirebilirsiniz.`TextFragment` sembolleri içeren nesneler. Yazı tipi, yazı tipi boyutu, renk, hizalama ve satır aralığı gibi özellikleri ayarlayabilirsiniz.
 
-#### S: Ne tür değiştirilebilir semboller kullanabilirim?
+#### S: Hangi tür değiştirilebilir sembolleri kullanabilirim?
 
-C: Aşağıdakiler gibi çeşitli değiştirilebilir semboller kullanabilirsiniz:
+A: Çeşitli değiştirilebilir semboller kullanabilirsiniz, örneğin:
 
-- `$p`: Geçerli sayfa numarası.
+- `$p`: Mevcut sayfa numarası.
 - `$P`: Toplam sayfa sayısı.
-- `$d`: Geçerli tarih.
-- `$t`: Şimdiki zaman.
-- Tanımladığınız özel yer tutucular.
+- `$d`: Güncel tarih.
+- `$t`: Şu anki zaman.
+- Sizin tanımladığınız özel yer tutucular.
 
-#### S: Değiştirilebilir simgelerin çevresine başka metin ve biçimlendirme ekleyebilir miyim?
+#### S: Değiştirilebilir sembollerin etrafına başka metin ve biçimlendirme ekleyebilir miyim?
 
- C: Evet, değiştirilebilir simgelerin çevresine başka metin ve biçimlendirmeler ekleyebilirsiniz.`TextFragment` nesneler. Bu, dinamik ve statik içerik içeren daha karmaşık üstbilgiler ve altbilgiler oluşturmanıza olanak tanır.
+ A: Evet, değiştirilebilir sembollerin etrafına başka metinler ve biçimlendirmeler ekleyebilirsiniz.`TextFragment` Bu, dinamik ve statik içerikleri birleştiren daha karmaşık başlıklar ve altbilgiler oluşturmanıza olanak tanır.
 
 #### S: Oluşturulan PDF belgesini nasıl kaydedebilirim?
 
- C: Oluşturulan PDF belgesini kaydetmek için`Save` yöntemi`Document`sınıf. İstenilen çıktı dosyası yolunu ve adını bağımsız değişken olarak sağlayın.
+ A: Oluşturulan PDF belgesini kaydetmek için şunu kullanabilirsiniz:`Save` yöntemi`Document`sınıf. İstenilen çıktı dosyası yolunu ve adını argüman olarak sağlayın.
 
 #### S: Bu eğitim için geçerli bir Aspose Lisansı gerekli mi?
 
-C: Evet, bu eğitimde kodu başarıyla yürütmek için geçerli bir Aspose Lisansı gereklidir. Aspose web sitesinden tam lisans veya 30 günlük geçici lisans alabilirsiniz.
+C: Evet, bu eğitimdeki kodu başarıyla yürütmek için geçerli bir Aspose Lisansı gereklidir. Aspose web sitesinden tam lisans veya 30 günlük geçici lisans alabilirsiniz.

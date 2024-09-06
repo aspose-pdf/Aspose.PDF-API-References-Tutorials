@@ -45,7 +45,7 @@ Det första steget är att ladda PDF-dokumentet du vill konvertera. Här är ett
 Document pdfDocument = new Document("input.pdf");
 ```
 
- Byta ut`"input.pdf"` med sökvägen till din PDF-fil.
+ Ersätta`"input.pdf"` med sökvägen till din PDF-fil.
 
 ## Konvertera PDF till XPS
 

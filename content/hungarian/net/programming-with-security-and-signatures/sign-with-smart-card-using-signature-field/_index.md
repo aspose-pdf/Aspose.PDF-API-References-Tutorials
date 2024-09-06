@@ -21,7 +21,7 @@ using System.Security.Cryptography.X509Certificates;
 
 ## 2. lépés: Állítsa be a dokumentumok mappa elérési útját
 
- Ebben a lépésben meg kell adnia az aláírni kívánt PDF-fájlt tartalmazó mappa elérési útját. Cserélje ki`"YOUR DOCUMENTS DIRECTORY"` következő kódban a dokumentummappa tényleges elérési útjával:
+ Ebben a lépésben meg kell adnia az aláírni kívánt PDF-fájlt tartalmazó mappa elérési útját. Cserélje ki`"YOUR DOCUMENTS DIRECTORY"` a következő kódban a dokumentummappa tényleges elérési útjával:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -138,7 +138,7 @@ V: Az Aspose.PDF for .NET leegyszerűsíti az aláírási mező létrehozásána
 
 #### K: Miért fontos egy adott tanúsítvány kiválasztása az intelligens kártya alapú aláíráshoz?
 
-V: Egy adott tanúsítvány kiválasztása lehetővé teszi az aláíró egyedi azonosítását és az aláírás integritásának biztosítását. Ez elősegíti a bizalom megteremtését és a digitális aláírási szabványoknak való megfelelést.
+V: Egy adott tanúsítvány kiválasztása lehetővé teszi az aláíró egyedi azonosítását és az aláírás integritásának biztosítását. Ez segít megteremteni a bizalmat és a digitális aláírási szabványoknak való megfelelést.
 
 #### K: Hogyan kezeli a megadott forráskód az intelligens kártya alapú aláírási folyamatot aláírási mezővel?
 
@@ -158,9 +158,9 @@ V: Természetesen több aláírásmezőt és intelligens kártya alapú aláír�
 
 #### K: Hogyan javítja az aláírási mező használata az általános dokumentum-aláírási folyamatot?
 
-V: Az aláírási mező használata leegyszerűsíti a dokumentum-aláírási folyamatot, mivel az aláírót arra irányítja, hogy az aláírását egy kijelölt helyre helyezze, így az aláírási folyamat szervezettebbé és felhasználóbarátabbá válik.
+V: Az aláírási mező használata leegyszerűsíti a dokumentum-aláírási folyamatot, mivel arra irányítja az aláírót, hogy helyezze el aláírását egy kijelölt helyre, így az aláírási folyamat szervezettebbé és felhasználóbarátabbá válik.
 
-#### K: Vannak korlátozások az aláírási mezők használatára intelligens kártya alapú aláírással?
+#### K: Vannak-e korlátozások az aláírási mezők intelligens kártya alapú aláírással történő használatára?
 
 V: Nincsenek eredendő korlátozások az aláírási mezők intelligens kártya alapú aláírással történő használatára vonatkozóan. Fontos azonban annak biztosítása, hogy a kiválasztott aláírási mező helye ne takarja el a fontos dokumentumtartalmat.
 

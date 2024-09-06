@@ -1,26 +1,26 @@
 ---
 title: Trích xuất trang văn bản trong tệp PDF
 linktitle: Trích xuất trang văn bản trong tệp PDF
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
 description: Tìm hiểu cách trích xuất văn bản từ một trang cụ thể trong tệp PDF bằng Aspose.PDF cho .NET.
 type: docs
 weight: 200
 url: /vi/net/programming-with-text/extract-text-page/
 ---
-Hướng dẫn này sẽ hướng dẫn bạn quy trình trích xuất văn bản từ một trang cụ thể trong tệp PDF bằng Aspose.PDF cho .NET. Mã nguồn C# được cung cấp thể hiện các bước cần thiết.
+Hướng dẫn này sẽ hướng dẫn bạn quy trình trích xuất văn bản từ một trang cụ thể trong tệp PDF bằng Aspose.PDF cho .NET. Mã nguồn C# được cung cấp sẽ trình bày các bước cần thiết.
 
 ## Yêu cầu
-Trước khi bắt đầu, hãy đảm bảo rằng bạn có những điều sau:
+Trước khi bắt đầu, hãy đảm bảo bạn có những điều sau:
 
 - Visual Studio hoặc bất kỳ trình biên dịch C# nào khác được cài đặt trên máy của bạn.
-- Aspose.PDF cho thư viện .NET. Bạn có thể tải xuống từ trang web chính thức của Aspose hoặc sử dụng trình quản lý gói như NuGet để cài đặt nó.
+- Aspose.PDF cho thư viện .NET. Bạn có thể tải xuống từ trang web chính thức của Aspose hoặc sử dụng trình quản lý gói như NuGet để cài đặt.
 
 ## Bước 1: Thiết lập dự án
-1. Tạo một dự án C# mới trong môi trường phát triển ưa thích của bạn.
-2. Thêm tham chiếu đến thư viện Aspose.PDF for .NET.
+1. Tạo một dự án C# mới trong môi trường phát triển mà bạn thích.
+2. Thêm tham chiếu đến thư viện Aspose.PDF cho .NET.
 
-## Bước 2: Nhập các không gian tên bắt buộc
-Trong tệp mã mà bạn muốn trích xuất văn bản, hãy thêm các lệnh sử dụng sau vào đầu tệp:
+## Bước 2: Nhập các không gian tên cần thiết
+Trong tệp mã mà bạn muốn trích xuất văn bản, hãy thêm lệnh using sau vào đầu tệp:
 
 ```csharp
 using Aspose.Pdf;
@@ -28,24 +28,24 @@ using System.IO;
 ```
 
 ## Bước 3: Thiết lập thư mục tài liệu
- Trong mã, xác định dòng có nội dung`string dataDir = "YOUR DOCUMENT DIRECTORY";` và thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn đến thư mục nơi tài liệu của bạn được lưu trữ.
+ Trong mã, hãy xác định vị trí dòng ghi`string dataDir = "YOUR DOCUMENT DIRECTORY";` và thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn đến thư mục lưu trữ tài liệu của bạn.
 
 ## Bước 4: Mở tài liệu PDF
- Mở tài liệu PDF hiện có bằng cách sử dụng`Document`constructor và chuyển đường dẫn đến tệp PDF đầu vào.
+ Mở một tài liệu PDF hiện có bằng cách sử dụng`Document` hàm tạo và truyền đường dẫn đến tệp PDF đầu vào.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
 ```
 
 ## Bước 5: Trích xuất văn bản từ một trang cụ thể
- Tạo một`TextAbsorber` đối tượng để trích xuất văn bản từ tài liệu. Chấp nhận phần hấp thụ cho trang mong muốn bằng cách truy cập nó thông qua`Pages` bộ sưu tập của`pdfDocument`.
+ Tạo một`TextAbsorber` đối tượng để trích xuất văn bản từ tài liệu. Chấp nhận bộ hấp thụ cho trang mong muốn bằng cách truy cập nó thông qua`Pages` bộ sưu tập của`pdfDocument`.
 
 ```csharp
 TextAbsorber textAbsorber = new TextAbsorber();
 pdfDocument.Pages[1].Accept(textAbsorber);
 ```
 
-## Bước 6: Lấy văn bản được trích xuất
+## Bước 6: Lấy văn bản đã trích xuất
  Truy cập văn bản được trích xuất từ`TextAbsorber` sự vật.
 
 ```csharp
@@ -53,7 +53,7 @@ string extractedText = textAbsorber.Text;
 ```
 
 ## Bước 7: Lưu văn bản đã trích xuất
- Tạo một`TextWriter` và mở tệp nơi bạn muốn lưu văn bản được trích xuất. Viết văn bản được trích xuất vào tệp và đóng luồng.
+ Tạo một`TextWriter` và mở tệp mà bạn muốn lưu văn bản đã trích xuất. Ghi văn bản đã trích xuất vào tệp và đóng luồng.
 
 ```csharp
 dataDir = dataDir + "extracted-text_out.txt";
@@ -62,7 +62,7 @@ tw.WriteLine(extractedText);
 tw. Close();
 ```
 
-### Mã nguồn mẫu cho Trang trích xuất văn bản bằng Aspose.PDF cho .NET 
+### Mã nguồn mẫu để trích xuất trang văn bản bằng Aspose.PDF cho .NET 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -72,10 +72,10 @@ Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
 TextAbsorber textAbsorber = new TextAbsorber();
 //Chấp nhận bộ hấp thụ cho một trang cụ thể
 pdfDocument.Pages[1].Accept(textAbsorber);
-// Lấy văn bản được trích xuất
+// Lấy văn bản đã trích xuất
 string extractedText = textAbsorber.Text;
 dataDir = dataDir + "extracted-text_out.txt";
-// Tạo một nhà văn và mở tập tin
+// Tạo một trình ghi và mở tệp
 TextWriter tw = new StreamWriter(dataDir);
 // Viết một dòng văn bản vào tập tin
 tw.WriteLine(extractedText);
@@ -85,43 +85,43 @@ Console.WriteLine("\nText extracted successfully from Pages of PDF Document.\nFi
 ```
 
 ## Phần kết luận
-Bạn đã trích xuất thành công văn bản từ một trang cụ thể của tài liệu PDF bằng Aspose.PDF cho .NET. Văn bản trích xuất đã được lưu vào tệp đầu ra được chỉ định.
+Bạn đã trích xuất thành công văn bản từ một trang cụ thể của tài liệu PDF bằng Aspose.PDF cho .NET. Văn bản trích xuất đã được lưu vào tệp đầu ra đã chỉ định.
 
 ### Câu hỏi thường gặp
 
-#### Hỏi: Mục đích của hướng dẫn này là gì?
+#### H: Mục đích của hướng dẫn này là gì?
 
-Đáp: Hướng dẫn này hướng dẫn bạn quy trình trích xuất văn bản từ một trang cụ thể trong tệp PDF bằng Aspose.PDF cho .NET. Mã nguồn C# đi kèm minh họa các bước cần thiết để đạt được nhiệm vụ này.
+A: Hướng dẫn này hướng dẫn bạn quy trình trích xuất văn bản từ một trang cụ thể trong tệp PDF bằng Aspose.PDF cho .NET. Mã nguồn C# đi kèm trình bày các bước cần thiết để thực hiện nhiệm vụ này.
 
-#### Câu hỏi: Tôi nên nhập những không gian tên nào?
+#### H: Tôi nên nhập những không gian tên nào?
 
-Đáp: Trong tệp mã mà bạn dự định trích xuất văn bản, hãy bao gồm các lệnh sử dụng sau ở đầu tệp:
+A: Trong tệp mã mà bạn định trích xuất văn bản, hãy bao gồm lệnh using sau vào đầu tệp:
 
 ```csharp
 using Aspose.Pdf;
 using System.IO;
 ```
 
-#### Câu hỏi: Làm cách nào để chỉ định thư mục tài liệu?
+#### H: Làm thế nào để chỉ định thư mục tài liệu?
 
- Đáp: Trong đoạn mã, hãy tìm dòng có nội dung`string dataDir = "YOUR DOCUMENT DIRECTORY";` và thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế đến thư mục tài liệu của bạn.
+ A: Trong mã, hãy tìm dòng có nội dung`string dataDir = "YOUR DOCUMENT DIRECTORY";` và thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế đến thư mục tài liệu của bạn.
 
-#### Hỏi: Làm cách nào để mở tài liệu PDF hiện có?
+#### H: Làm thế nào để mở một tài liệu PDF hiện có?
 
- Đáp: Ở Bước 4, bạn sẽ mở tài liệu PDF hiện có bằng cách sử dụng`Document` constructor và cung cấp đường dẫn đến tệp PDF đầu vào.
+ A: Ở Bước 4, bạn sẽ mở một tài liệu PDF hiện có bằng cách sử dụng`Document` hàm tạo và cung cấp đường dẫn đến tệp PDF đầu vào.
 
-#### Hỏi: Làm cách nào để trích xuất văn bản từ một trang cụ thể?
+#### H: Làm thế nào để trích xuất văn bản từ một trang cụ thể?
 
- Đáp: Bước 5 liên quan đến việc tạo một`TextAbsorber` đối tượng để trích xuất văn bản từ tài liệu PDF. Sau đó, bạn sẽ chấp nhận phần hấp thụ cho trang mong muốn bằng cách truy cập nó thông qua`Pages` bộ sưu tập của`pdfDocument`.
+ A: Bước 5 bao gồm việc tạo ra một`TextAbsorber` đối tượng để trích xuất văn bản từ tài liệu PDF. Sau đó, bạn sẽ chấp nhận bộ hấp thụ cho trang mong muốn bằng cách truy cập nó thông qua`Pages` bộ sưu tập của`pdfDocument`.
 
-#### Hỏi: Làm cách nào để truy cập văn bản được trích xuất?
+#### H: Làm thế nào để truy cập vào văn bản đã trích xuất?
 
- Đáp: Bước 6 hướng dẫn bạn cách truy cập văn bản được trích xuất từ`TextAbsorber` sự vật.
+ A: Bước 6 hướng dẫn bạn truy cập vào văn bản đã trích xuất từ`TextAbsorber` sự vật.
 
-#### Hỏi: Làm cách nào để lưu văn bản đã trích xuất vào một tập tin?
+#### H: Làm thế nào để lưu văn bản đã trích xuất vào một tệp?
 
- Đáp: Ở Bước 7, bạn sẽ tạo một`TextWriter`, mở tệp nơi bạn muốn lưu văn bản được trích xuất, ghi văn bản được trích xuất vào tệp rồi đóng luồng.
+ A: Ở Bước 7, bạn sẽ tạo một`TextWriter`, mở tệp mà bạn muốn lưu văn bản đã trích xuất, ghi văn bản đã trích xuất vào tệp, sau đó đóng luồng.
 
-#### Hỏi: Điểm mấu chốt rút ra từ hướng dẫn này là gì?
+#### H: Điểm chính cần lưu ý trong hướng dẫn này là gì?
 
-Đáp: Bằng cách làm theo hướng dẫn này, bạn đã học cách trích xuất văn bản từ một trang cụ thể của tài liệu PDF bằng Aspose.PDF cho .NET. Văn bản trích xuất đã được lưu vào một tệp đầu ra được chỉ định, cho phép bạn nhắm mục tiêu và phân tích nội dung văn bản từ các trang cụ thể.
+A: Bằng cách làm theo hướng dẫn này, bạn đã học cách trích xuất văn bản từ một trang cụ thể của tài liệu PDF bằng Aspose.PDF cho .NET. Văn bản được trích xuất đã được lưu vào một tệp đầu ra được chỉ định, cho phép bạn nhắm mục tiêu và phân tích nội dung văn bản từ các trang cụ thể.

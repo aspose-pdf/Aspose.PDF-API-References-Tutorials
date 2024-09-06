@@ -1,24 +1,24 @@
 ---
 title: زر الراديو مع الخيارات
 linktitle: زر الراديو مع الخيارات
-second_title: Aspose.PDF لمرجع .NET API
-description: يمكنك بسهولة إضافة زر اختيار مع خيارات إلى مستند PDF باستخدام Aspose.PDF لـ .NET.
+second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
+description: يمكنك بسهولة إضافة زر اختياري يحتوي على خيارات إلى مستند PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 230
 url: /ar/net/programming-with-forms/radio-button-with-options/
 ---
 
-سنوضح لك في هذا البرنامج التعليمي كيفية إضافة زر اختيار مع خيارات إلى مستند PDF باستخدام Aspose.PDF for .NET. سنشرح لك كود مصدر C# خطوة بخطوة لإرشادك خلال هذه العملية.
+في هذا البرنامج التعليمي، سنوضح لك كيفية إضافة زر اختياري يحتوي على خيارات إلى مستند PDF باستخدام Aspose.PDF for .NET. وسنشرح لك التعليمات البرمجية المصدرية بلغة C# خطوة بخطوة لإرشادك خلال هذه العملية.
 
 ## الخطوة 1: التحضير
 
-تأكد من استيراد المكتبات الضرورية وتعيين المسار إلى دليل المستندات الخاص بك:
+تأكد من أنك قمت باستيراد المكتبات الضرورية وقمت بتعيين المسار إلى دليل المستندات الخاص بك:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## الخطوة 2: إنشاء مثيل لكائن المستند
+## الخطوة 2: إنشاء كائن مستند
 
 إنشاء كائن مستند لإنشاء مستند PDF جديد:
 
@@ -28,7 +28,7 @@ Document doc = new Document();
 
 ## الخطوة 3: إضافة الصفحة والجدول
 
-أضف صفحة إلى المستند وقم بإنشاء جدول للاحتفاظ بخيارات زر الاختيار:
+أضف صفحة إلى المستند وقم بإنشاء جدول لاحتواء خيارات أزرار الاختيار:
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -37,9 +37,9 @@ table. ColumnWidths = "120 120 120";
 page.Paragraphs.Add(table);
 ```
 
-## الخطوة 4: إنشاء مثيل لكائن RadioButtonField
+## الخطوة 4: إنشاء كائن RadioButtonField
 
-إنشاء مثيل لكائن RadioButtonField لتمثيل زر الاختيار:
+إنشاء كائن RadioButtonField لتمثيل زر الاختيار:
 
 ```csharp
 RadioButtonField rf = new RadioButtonField(page);
@@ -47,7 +47,7 @@ rf. PartialName = "radio";
 doc.Form.Add(rf, 1);
 ```
 
-## الخطوة 5: إضافة خيارات زر الاختيار
+## الخطوة 5: إضافة خيارات أزرار الاختيار
 
 أضف خيارات زر الاختيار إلى كائن RadioButtonField:
 
@@ -69,9 +69,9 @@ rf.Add(opt2);
 rf.Add(opt3);
 ```
 
-## الخطوة 6: تخصيص خيارات زر الاختيار
+## الخطوة 6: تخصيص خيارات أزرار الاختيار
 
-قم بتخصيص خيارات زر الاختيار عن طريق تعيين سمات مثل الحدود ولون النص ونص التسمية التوضيحية:
+قم بتخصيص خيارات أزرار الاختيار عن طريق تعيين سمات مثل الحدود ولون النص ونص التسمية التوضيحية:
 
 ```csharp
 opt1.Border = new Border(opt1);
@@ -81,13 +81,13 @@ opt1.Characteristics.Border = System.Drawing.Color.Black;
 opt1.DefaultAppearance.TextColor = System.Drawing.Color.Red;
 opt1.Caption = new TextFragment("Item1");
 
-// كرر نفس الخطوات مع opt2 وopt3
+// كرر نفس الخطوات لخياري opt2 وopt3
 
 ```
 
-## الخطوة 7: أضف خيارات زر الاختيار إلى الجدول
+## الخطوة 7: أضف خيارات أزرار الاختيار إلى الجدول
 
-أضف خيارات زر الاختيار إلى الجدول لعرضها:
+أضف خيارات أزرار الاختيار إلى الجدول لعرضها:
 
 ```csharp
 Cell c1 = table.Rows.Add().Cells.Add();
@@ -108,7 +108,7 @@ dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
 doc.Save(dataDir);
 ```
 
-### نموذج التعليمات البرمجية المصدر لزر الاختيار مع الخيارات باستخدام Aspose.PDF لـ .NET 
+### عينة من كود المصدر لزر الراديو مع الخيارات باستخدام Aspose.PDF لـ .NET 
 ```csharp
 try
 {
@@ -163,7 +163,7 @@ try
 	c2.Paragraphs.Add(opt2);
 	c3.Paragraphs.Add(opt3);
 	dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
-	// احفظ ملف PDF
+	// حفظ ملف PDF
 	doc.Save(dataDir);
 	Console.WriteLine("\nRadio button field with three options added successfully.\nFile saved at " + dataDir);
 }
@@ -175,4 +175,4 @@ catch (Exception ex)
 
 ## خاتمة
 
-تهنئة ! لقد نجحت في إضافة زر اختيار مع خيارات إلى مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك الآن استخدام هذه الطريقة لإنشاء نماذج تفاعلية في مستندات PDF الخاصة بك.
+تهانينا! لقد نجحت في إضافة زر اختياري يحتوي على خيارات إلى مستند PDF باستخدام Aspose.PDF for .NET. يمكنك الآن استخدام هذه الطريقة لإنشاء نماذج تفاعلية في مستندات PDF الخاصة بك.

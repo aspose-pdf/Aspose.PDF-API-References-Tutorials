@@ -13,7 +13,7 @@ Než začnete, ujistěte se, že jste nainstalovali knihovnu Aspose.PDF a nastav
 
 ### Krok 1: Nastavení adresáře dokumentů
 
-V poskytnutém zdrojovém kódu musíte určit adresář, kam chcete uložit vygenerovaný soubor PDF. Změňte proměnnou "dataDir" na požadovaný adresář.
+poskytnutém zdrojovém kódu musíte určit adresář, kam chcete uložit vygenerovaný soubor PDF. Změňte proměnnou "dataDir" na požadovaný adresář.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -225,4 +225,4 @@ Odpověď: Otevřete vygenerovaný soubor PDF a ověřte, zda byl na nadpisy pou
 
 #### Otázka: Mohu použít různé styly číslování na různé části dokumentu?
 
-Odpověď: Ano, na různé části dokumentu můžete použít různé styly číslování vytvořením více`Heading` objekty s různými styly a sekvencemi.
+ Odpověď: Ano, na různé části dokumentu můžete použít různé styly číslování vytvořením více`Heading` objekty s různými styly a sekvencemi.

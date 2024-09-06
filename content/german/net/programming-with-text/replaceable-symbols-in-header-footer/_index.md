@@ -1,24 +1,24 @@
 ---
-title: Austauschbare Symbole in der Kopf- und Fußzeile
-linktitle: Austauschbare Symbole in der Kopf- und Fußzeile
+title: Austauschbare Symbole in Kopf- und Fußzeile
+linktitle: Austauschbare Symbole in Kopf- und Fußzeile
 second_title: Aspose.PDF für .NET API-Referenz
 description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET austauschbare Symbole in der Kopf- und Fußzeile eines PDF-Dokuments verwenden.
 type: docs
 weight: 320
 url: /de/net/programming-with-text/replaceable-symbols-in-header-footer/
 ---
-In diesem Tutorial erklären wir, wie Sie mit der Aspose.PDF-Bibliothek für .NET ersetzbare Symbole in der Kopf- und Fußzeile eines PDF-Dokuments verwenden. Wir werden den Schritt-für-Schritt-Prozess zum Erstellen einer PDF-Datei, zum Festlegen von Rändern, zum Hinzufügen von Kopf- und Fußzeilen mit ersetzbaren Symbolen und zum Speichern der PDF-Datei mit dem bereitgestellten C#-Quellcode durchgehen.
+In diesem Tutorial erklären wir, wie man mithilfe der Aspose.PDF-Bibliothek für .NET austauschbare Symbole in der Kopf- und Fußzeile eines PDF-Dokuments verwendet. Wir gehen Schritt für Schritt durch den Prozess der Erstellung eines PDF-Dokuments, der Festlegung von Rändern, des Hinzufügens von Kopf- und Fußzeilen mit austauschbaren Symbolen und des Speicherns des PDF-Dokuments mithilfe des bereitgestellten C#-Quellcodes.
 
 ## Voraussetzungen
 
 Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- Die Aspose.PDF für .NET-Bibliothek installiert.
-- Ein grundlegendes Verständnis der C#-Programmierung.
+- Die Aspose.PDF-Bibliothek für .NET ist installiert.
+- Grundlegende Kenntnisse der C#-Programmierung.
 
-## Schritt 1: Richten Sie das Dokumentenverzeichnis ein
+## Schritt 1: Einrichten des Dokumentverzeichnisses
 
- Zunächst müssen Sie den Pfad zu dem Verzeichnis festlegen, in dem Sie die generierte PDF-Datei speichern möchten. Ersetzen`"YOUR DOCUMENT DIRECTORY"` im`dataDir`Variable mit dem Pfad zu Ihrem gewünschten Verzeichnis.
+ Zunächst müssen Sie den Pfad zum Verzeichnis festlegen, in dem Sie die generierte PDF-Datei speichern möchten. Ersetzen Sie`"YOUR DOCUMENT DIRECTORY"` im`dataDir` Variable durch den Pfad zu Ihrem gewünschten Verzeichnis.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -26,7 +26,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Schritt 2: Erstellen Sie ein PDF-Dokument und eine Seite
 
- Als nächstes erstellen wir ein neues PDF-Dokument und fügen ihm mithilfe von eine Seite hinzu`Document` Klasse und`Page` Klasse aus der Aspose.PDF-Bibliothek.
+ Als nächstes erstellen wir ein neues PDF-Dokument und fügen ihm eine Seite hinzu mit dem`Document` Klasse und`Page` Klasse aus der Aspose.PDF-Bibliothek.
 
 ```csharp
 Document doc = new Document();
@@ -35,7 +35,7 @@ Page page = doc.Pages.Add();
 
 ## Schritt 3: Ränder festlegen
 
- Wir legen die Ränder für die Seite mit fest`MarginInfo`Klasse. Passen Sie die Randwerte entsprechend Ihren Anforderungen an.
+Wir setzen die Ränder für die Seite mit dem`MarginInfo` Klasse. Passen Sie die Randwerte entsprechend Ihren Anforderungen an.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -48,7 +48,7 @@ page.PageInfo.Margin = marginInfo;
 
 ## Schritt 4: Kopfzeile mit austauschbaren Symbolen hinzufügen
 
- Wir erstellen eine`HeaderFooter` Objekt für die Seite und fügen Sie ein hinzu`TextFragment` mit austauschbaren Symbolen dazu.
+ Wir schaffen eine`HeaderFooter` Objekt für die Seite und fügen Sie ein`TextFragment` mit austauschbaren Symbolen dazu.
 
 ```csharp
 HeaderFooter hfFirst = new HeaderFooter();
@@ -72,7 +72,7 @@ hfFirst.Paragraphs.Add(t1);
 
 ## Schritt 5: Fußzeile mit austauschbaren Symbolen hinzufügen
 
- Ebenso erstellen wir eine`HeaderFooter` Objekt für den Seitenfuß und hinzufügen`TextFragment` Objekte mit austauschbaren Symbolen hinzufügen.
+ Ebenso erstellen wir eine`HeaderFooter` Objekt für die Seitenfußzeile und fügen Sie`TextFragment` Objekte mit austauschbaren Symbolen.
 
 ```csharp
 HeaderFooter hfFoot = new HeaderFooter();
@@ -99,9 +99,9 @@ doc.Save(dataDir);
 Console.WriteLine("\nReplaceable symbols replaced successfully in the header and footer.\nFile saved at " + dataDir);
 ```
 
-### Beispielquellcode für austauschbare Symbole in der Kopf- und Fußzeile mit Aspose.PDF für .NET 
+### Beispielquellcode für austauschbare Symbole in Kopf- und Fußzeilen mit Aspose.PDF für .NET 
 ```csharp
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 Page page = doc.Pages.Add();
@@ -110,7 +110,7 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-// Weisen Sie die marginInfo-Instanz der Margin-Eigenschaft von sec1.PageInfo zu
+// Weisen Sie die marginInfo-Instanz der Margin-Eigenschaft von sec1.PageInfo zu.
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
@@ -134,19 +134,19 @@ t2.TextState.FontSize = 12;
 hfFirst.Paragraphs.Add(t2);
 // Erstellen Sie ein HeaderFooter-Objekt für den Abschnitt
 HeaderFooter hfFoot = new HeaderFooter();
-// Stellen Sie das HeaderFooter-Objekt auf ungerade und gerade Fußzeile ein
+// Stellen Sie das HeaderFooter-Objekt auf ungerade und gerade Fußzeilen ein
 page.Footer = hfFoot;
 hfFoot.Margin.Left = 50;
 hfFoot.Margin.Right = 50;
-// Fügen Sie einen Textabsatz hinzu, der die aktuelle Seitenzahl der Gesamtseitenzahl enthält
+// Fügen Sie einen Textabsatz mit der aktuellen Seitenzahl oder der Gesamtseitenzahl hinzu
 TextFragment t3 = new TextFragment("Generated on test date");
 TextFragment t4 = new TextFragment("report name ");
 TextFragment t5 = new TextFragment("Page $p of $P");
-// Instanziieren Sie ein Tabellenobjekt
+// Instanziieren eines Tabellenobjekts
 Table tab2 = new Table();
-// Fügen Sie die Tabelle in der Absatzsammlung des gewünschten Abschnitts hinzu
+// Fügen Sie die Tabelle in die Absatzsammlung des gewünschten Abschnitts ein
 hfFoot.Paragraphs.Add(tab2);
-// Mit den Spaltenbreiten der Tabelle festlegen
+// Mit Spaltenbreiten der Tabelle festlegen
 tab2.ColumnWidths = "165 172 165";
 // Erstellen Sie Zeilen in der Tabelle und dann Zellen in den Zeilen
 Row row3 = tab2.Rows.Add();
@@ -160,17 +160,17 @@ row3.Cells[2].Alignment = Aspose.Pdf.HorizontalAlignment.Right;
 row3.Cells[0].Paragraphs.Add(t3);
 row3.Cells[1].Paragraphs.Add(t4);
 row3.Cells[2].Paragraphs.Add(t5);
-//Sec1.Paragraphs.Add(New Text("Aspose.Total für Java ist eine Zusammenstellung aller von Aspose angebotenen Java-Komponenten. Es wird täglich kompiliert, um sicherzustellen, dass es jeweils die aktuellsten Versionen enthält unserer Java-Komponenten. #$NL " + "Mit Aspose.Total für Java können Entwickler eine breite Palette von Anwendungen erstellen. #$NL #$NL #$NP" + "Aspose.Total für Java ist eine Zusammenstellung aller Java-Komponenten angeboten von Aspose. Es wird täglich kompiliert, um sicherzustellen, dass es die aktuellsten Versionen jeder unserer Java-Komponenten enthält. #$NL " + "Mit Aspose.Total für Java können Entwickler eine breite Palette erstellen Anwendungsbereich. #$NL #$NL #$NP" + "Aspose.Total für Java ist eine Zusammenstellung aller von Aspose angebotenen Java-Komponenten. Es wird täglich zusammengestellt, um sicherzustellen, dass es die meisten enthält aktuelle Versionen jeder unserer Java-Komponenten. #$NL " + "Mit Aspose.Total für Java können Entwickler eine breite Palette von Anwendungen erstellen. #$NL #$NL"))
+//Sec1.Paragraphs.Add(New Text("Aspose.Total für Java ist eine Kompilierung aller von Aspose angebotenen Java-Komponenten. Es wird täglich kompiliert, um sicherzustellen, dass es die aktuellsten Versionen aller unserer Java-Komponenten enthält. #$NL " + "Mit Aspose.Total für Java können Entwickler eine breite Palette von Anwendungen erstellen. #$NL #$NL #$NP" + "Aspose.Total für Java ist eine Kompilierung aller von Aspose angebotenen Java-Komponenten. Es wird täglich kompiliert, um sicherzustellen, dass es die aktuellsten Versionen aller unserer Java-Komponenten enthält. #$NL " + "Mit Aspose.Total für Java können Entwickler eine breite Palette von Anwendungen erstellen. #$NL #$NL #$NP" + "Aspose.Total für Java ist eine Kompilierung aller von Aspose angebotenen Java-Komponenten. Es wird täglich kompiliert, um sicherzustellen, dass es die aktuellsten Versionen aller unserer Java-Komponenten enthält. #$NL " + „Mit Aspose.Total für Java können Entwickler eine breite Palette von Anwendungen erstellen. #$NL #$NL“))
 Table table = new Table();
 table.ColumnWidths = "33% 33% 34%";
 table.DefaultCellPadding = new MarginInfo();
 table.DefaultCellPadding.Top = 10;
 table.DefaultCellPadding.Bottom = 10;
-// Fügen Sie die Tabelle in der Absatzsammlung des gewünschten Abschnitts hinzu
+// Fügen Sie die Tabelle in die Absatzsammlung des gewünschten Abschnitts ein
 page.Paragraphs.Add(table);
-// Legen Sie den Standardzellenrahmen mithilfe des BorderInfo-Objekts fest
+// Festlegen des Standardzellenrahmens mithilfe des BorderInfo-Objekts
 table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
-// Legen Sie den Tabellenrand mithilfe eines anderen benutzerdefinierten BorderInfo-Objekts fest
+// Festlegen des Tabellenrahmens mithilfe eines anderen benutzerdefinierten BorderInfo-Objekts
 table.Border = new BorderInfo(BorderSide.All, 1f);
 table.RepeatingRowsCount = 1;
 // Erstellen Sie Zeilen in der Tabelle und dann Zellen in den Zeilen
@@ -203,52 +203,52 @@ Console.WriteLine("\nSymbols replaced successfully in header and footer.\nFile s
 
 ## Abschluss
 
-In diesem Tutorial haben Sie gelernt, wie Sie mit der Aspose.PDF-Bibliothek für .NET ersetzbare Symbole in der Kopf- und Fußzeile eines PDF-Dokuments verwenden. Indem Sie der Schritt-für-Schritt-Anleitung folgen und den bereitgestellten C#-Code ausführen, können Sie eine PDF-Datei erstellen, Ränder festlegen, Kopf- und Fußzeilen mit ersetzbaren Symbolen hinzufügen und die PDF-Datei speichern.
+In diesem Tutorial haben Sie gelernt, wie Sie mithilfe der Aspose.PDF-Bibliothek für .NET austauschbare Symbole in der Kopf- und Fußzeile eines PDF-Dokuments verwenden. Indem Sie der Schritt-für-Schritt-Anleitung folgen und den bereitgestellten C#-Code ausführen, können Sie ein PDF erstellen, Ränder festlegen, Kopf- und Fußzeilen mit austauschbaren Symbolen hinzufügen und das PDF speichern.
 
-### FAQs
+### Häufig gestellte Fragen
 
-#### F: Was ist der Zweck des Tutorials „Ersetzbare Symbole in der Kopf- und Fußzeile“?
+#### F: Was ist der Zweck des Tutorials „Austauschbare Symbole in Kopf- und Fußzeilen“?
 
-A: Das Tutorial „Ersetzbare Symbole in der Kopf- und Fußzeile“ soll Sie durch den Prozess der Verwendung der Aspose.PDF-Bibliothek für .NET führen, um ersetzbare Symbole zur Kopf- und Fußzeile eines PDF-Dokuments hinzuzufügen. Mit austauschbaren Symbolen können Sie beim Generieren der PDF-Datei bestimmte Platzhalter dynamisch durch tatsächliche Werte ersetzen.
+A: Das Tutorial „Ersetzbare Symbole in Kopf- und Fußzeile“ führt Sie durch den Prozess der Verwendung der Aspose.PDF-Bibliothek für .NET, um der Kopf- und Fußzeile eines PDF-Dokuments austauschbare Symbole hinzuzufügen. Mit austauschbaren Symbolen können Sie beim Generieren des PDFs bestimmte Platzhalter dynamisch durch tatsächliche Werte ersetzen.
 
-#### F: Was sind ersetzbare Symbole im Kontext einer PDF-Kopf- und -Fußzeile?
+#### F: Was sind ersetzbare Symbole im Kontext einer PDF-Kopf- und Fußzeile?
 
-A: Ersetzbare Symbole sind Platzhalter, die Sie in die Kopf- und Fußzeile eines PDF-Dokuments einfügen können. Diese Symbole fungieren als dynamische Platzhalter für Werte, die zur Laufzeit eingegeben werden können, z. B. Seitenzahlen, Datumsangaben und benutzerdefinierte Informationen.
+A: Ersetzbare Symbole sind Platzhalter, die Sie in die Kopf- und Fußzeile eines PDF-Dokuments einfügen können. Diese Symbole fungieren als dynamische Platzhalter für Werte, die zur Laufzeit eingefügt werden können, wie Seitenzahlen, Daten und benutzerdefinierte Informationen.
 
-#### F: Warum sollte ich austauschbare Symbole in einer PDF-Kopf- und -Fußzeile verwenden?
+#### F: Warum sollte ich austauschbare Symbole in einer PDF-Kopf- und Fußzeile verwenden wollen?
 
-A: Ersetzbare Symbole in der Kopf- und Fußzeile sind nützlich, wenn Sie dynamische Informationen in Ihre PDF-Dokumente einfügen möchten, z. B. Seitenzahlen, Datumsangaben oder andere variable Daten, die sich bei der Erstellung des Dokuments ändern können.
+A: Austauschbare Symbole in der Kopf- und Fußzeile sind nützlich, wenn Sie dynamische Informationen in Ihre PDF-Dokumente aufnehmen möchten, wie etwa Seitenzahlen, Daten oder andere variable Daten, die sich beim Erstellen des Dokuments ändern können.
 
 #### F: Wie kann ich die Ränder für die PDF-Seite festlegen?
 
- A: Sie können die Ränder für die PDF-Seite mit festlegen`MarginInfo` Klasse und weisen Sie sie der zu`Margin` Eigentum der`PageInfo` der Seite. Passen Sie die Randwerte nach Bedarf an.
+ A: Sie können die Ränder für die PDF-Seite mit dem`MarginInfo` Klasse und ordnet sie dem`Margin` Eigentum der`PageInfo` der Seite. Passen Sie die Randwerte nach Bedarf an.
 
 #### F: Wie füge ich austauschbare Symbole zur Kopf- und Fußzeile hinzu?
 
- A: Sie können austauschbare Symbole hinzufügen, indem Sie ein erstellen`HeaderFooter` Objekt für die Kopf- und Fußzeile der Seite. Dann können Sie hinzufügen`TextFragment`Objekte mit dem gewünschten Text, inklusive ersetzbarer Symbole, zum`Paragraphs` Sammlung der`HeaderFooter` Objekt.
+ A: Sie können austauschbare Symbole hinzufügen, indem Sie ein`HeaderFooter` Objekt für die Kopf- und Fußzeile der Seite. Anschließend können Sie`TextFragment`Objekte mit dem gewünschten Text, inklusive austauschbarer Symbole, an die`Paragraphs` Sammlung der`HeaderFooter` Objekt.
 
 #### F: Kann ich das Erscheinungsbild der austauschbaren Symbole anpassen?
 
- A: Ja, Sie können das Erscheinungsbild der austauschbaren Symbole anpassen, indem Sie die Eigenschaften ändern`TextFragment` Objekte, die die Symbole enthalten. Sie können Eigenschaften wie Schriftart, Schriftgröße, Farbe, Ausrichtung und Zeilenabstand festlegen.
+ A: Ja, Sie können das Erscheinungsbild der austauschbaren Symbole anpassen, indem Sie die Eigenschaften des`TextFragment` Objekte, die die Symbole enthalten. Sie können Eigenschaften wie Schriftart, Schriftgröße, Farbe, Ausrichtung und Zeilenabstand festlegen.
 
-#### F: Welche austauschbaren Symbole kann ich verwenden?
+#### F: Welche Art von austauschbaren Symbolen kann ich verwenden?
 
-A: Sie können verschiedene austauschbare Symbole verwenden, wie zum Beispiel:
+A: Sie können verschiedene austauschbare Symbole verwenden, beispielsweise:
 
 - `$p`: Aktuelle Seitenzahl.
-- `$P`: Gesamtzahl der Seiten.
+- `$P`: Gesamtseitenzahl.
 - `$d`: Aktuelles Datum.
 - `$t`: Aktuelle Uhrzeit.
 - Benutzerdefinierte Platzhalter, die Sie definieren.
 
-#### F: Kann ich anderen Text und andere Formatierungen um die ersetzbaren Symbole herum einfügen?
+#### F: Kann ich rund um die austauschbaren Symbole anderen Text und andere Formatierungen einfügen?
 
- A: Ja, Sie können anderen Text und Formatierungen um die ersetzbaren Symbole herum einfügen`TextFragment` Objekte. Dadurch können Sie komplexere Kopf- und Fußzeilen erstellen, die dynamische und statische Inhalte enthalten.
+ A: Ja, Sie können anderen Text und Formatierungen um die austauschbaren Symbole herum einfügen.`TextFragment` Objekte. Dadurch können Sie komplexere Kopf- und Fußzeilen erstellen, die dynamische und statische Inhalte enthalten.
 
 #### F: Wie kann ich das generierte PDF-Dokument speichern?
 
- A: Um das generierte PDF-Dokument zu speichern, können Sie das verwenden`Save` Methode der`Document`Klasse. Geben Sie den gewünschten Pfad und Namen der Ausgabedatei als Argument an.
+ A: Um das generierte PDF-Dokument zu speichern, können Sie den`Save` Methode der`Document`Klasse. Geben Sie den gewünschten Ausgabedateipfad und -namen als Argument an.
 
 #### F: Ist für dieses Tutorial eine gültige Aspose-Lizenz erforderlich?
 
-A: Ja, eine gültige Aspose-Lizenz ist erforderlich, um den Code in diesem Tutorial erfolgreich auszuführen. Sie können eine Volllizenz oder eine 30-tägige temporäre Lizenz auf der Aspose-Website erwerben.
+A: Ja, eine gültige Aspose-Lizenz ist erforderlich, um den Code in diesem Tutorial erfolgreich auszuführen. Sie können eine Volllizenz oder eine 30-tägige temporäre Lizenz von der Aspose-Website erhalten.

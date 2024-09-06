@@ -19,7 +19,7 @@ using Aspose.Pdf;
 
 ## Steg 2: Ange sökväg till dokumentmappen
 
- I det här steget måste du ange sökvägen till mappen som innehåller PDF-filen du vill kontrollera. Byta ut`"YOUR DOCUMENTS DIRECTORY"` följande kod med den faktiska sökvägen till din dokumentmapp:
+ I det här steget måste du ange sökvägen till mappen som innehåller PDF-filen du vill kontrollera. Ersätta`"YOUR DOCUMENTS DIRECTORY"` i följande kod med den faktiska sökvägen till din dokumentmapp:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";

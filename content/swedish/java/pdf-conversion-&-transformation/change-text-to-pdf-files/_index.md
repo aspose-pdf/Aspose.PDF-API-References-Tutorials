@@ -10,7 +10,7 @@ url: /sv/java/pdf-conversion-transformation/change-text-to-pdf-files/
 
 ## Introduktion till att ändra text till PDF-filer
 
-Letar du efter ett pålitligt sätt att konvertera textfiler till PDF-format i din Java-applikation? Kolla inte vidare! I den här guiden går vi igenom processen att använda Aspose.PDF för Java för att enkelt ändra textfiler till PDF-dokument.
+Letar du efter ett pålitligt sätt att konvertera textfiler till PDF-format i din Java-applikation? Leta inte längre! I den här guiden går vi igenom processen att använda Aspose.PDF för Java för att enkelt ändra textfiler till PDF-dokument.
 
 ## Vad är Aspose.PDF för Java?
 

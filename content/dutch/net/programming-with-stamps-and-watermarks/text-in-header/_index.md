@@ -1,13 +1,13 @@
 ---
-title: Tekst in de kop van het PDF-bestand
-linktitle: Tekst in de kop van het PDF-bestand
+title: Tekst in koptekst van PDF-bestand
+linktitle: Tekst in koptekst van PDF-bestand
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u tekst kunt toevoegen aan de koptekst van een PDF-bestand met Aspose.PDF voor .NET.
+description: Leer hoe u tekst toevoegt aan de koptekst van een PDF-bestand met Aspose.PDF voor .NET.
 type: docs
 weight: 190
 url: /nl/net/programming-with-stamps-and-watermarks/text-in-header/
 ---
-In deze zelfstudie leren we hoe u tekst kunt toevoegen aan de koptekst van een PDF-bestand met behulp van Aspose.PDF voor .NET. Volg onderstaande stappen:
+In deze tutorial gaan we leren hoe we tekst kunnen toevoegen in de header van een PDF-bestand met behulp van Aspose.PDF voor .NET. Volg de onderstaande stappen:
 
 ## Stap 1: Projectvoorbereiding
 
@@ -35,7 +35,7 @@ Zorg ervoor dat u "UW DOCUMENTENMAP" vervangt door het daadwerkelijke pad naar u
 
 ## Stap 4: Koptekst maken
 
-Maak een nieuwe tekststempel met de tekst die u in de kop wilt toevoegen:
+Maak een nieuwe tekststempel met de tekst die u in de koptekst wilt toevoegen:
 
 ```csharp
 TextStamp textStamp = new TextStamp("Header text");
@@ -45,7 +45,7 @@ U kunt de tekst aanpassen door de eigenschappen ervan te wijzigen, zoals de bove
 
 ## Stap 5: Voeg koptekst toe aan alle pagina's
 
-Doorloop alle pagina's van het PDF-document en voeg de tekststempel toe in de kop:
+Ga door alle pagina's van het PDF-document en voeg de tekststempel toe in de koptekst:
 
 ```csharp
 foreach(Page page in pdfDocument.Pages)
@@ -56,16 +56,16 @@ foreach(Page page in pdfDocument.Pages)
 
 ## Stap 6: Het PDF-document opslaan
 
-Nadat de koptekst op alle pagina's is toegevoegd, slaat u het bijgewerkte PDF-document op:
+Zodra de koptekst op alle pagina's is toegevoegd, slaat u het bijgewerkte PDF-document op:
 
 ```csharp
 pdfDocument.Save(dataDir + "TextinHeader_out.pdf");
 Console.WriteLine("\nText in header added successfully.\nFile saved at: " + dataDir);
 ```
 
-Zorg ervoor dat u "UW DOCUMENTENMAP" vervangt door het daadwerkelijke pad naar de map waar u het PDF-document wilt opslaan.
+Zorg ervoor dat u "UW DOCUMENTENMAP" vervangt door het daadwerkelijke pad naar de map waarin u het PDF-document wilt opslaan.
 
-### Voorbeeldbroncode voor Textin Header met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor Textin Header met behulp van Aspose.PDF voor .NET 
 ```csharp
 
 // Het pad naar de documentenmap.
@@ -77,18 +77,18 @@ Document pdfDocument = new Document(dataDir+ "TextinHeader.pdf");
 // Koptekst maken
 TextStamp textStamp = new TextStamp("Header Text");
 
-// Stel eigenschappen van de stempel in
+// Eigenschappen van de stempel instellen
 textStamp.TopMargin = 10;
 textStamp.HorizontalAlignment = HorizontalAlignment.Center;
 textStamp.VerticalAlignment = VerticalAlignment.Top;
 
-// Voeg koptekst toe op alle pagina's
+// Koptekst toevoegen op alle pagina's
 foreach (Page page in pdfDocument.Pages)
 {
 	page.AddStamp(textStamp);
 }
 
-// Bewaar het bijgewerkte document
+// Bijgewerkt document opslaan
 pdfDocument.Save(dataDir+ "TextinHeader_out.pdf");
 Console.WriteLine("\nText in header added successfully.\nFile saved at " + dataDir);
 
@@ -96,38 +96,38 @@ Console.WriteLine("\nText in header added successfully.\nFile saved at " + dataD
 
 ## Conclusie
 
-Gefeliciteerd! U hebt geleerd hoe u tekst kunt toevoegen aan de koptekst van een PDF-document met Aspose.PDF voor .NET. U kunt nu uw kopteksten aanpassen door extra tekst aan uw PDF-documenten toe te voegen.
+Gefeliciteerd! U hebt geleerd hoe u tekst toevoegt aan de header van een PDF-document met Aspose.PDF voor .NET. U kunt nu uw headers aanpassen door extra tekst toe te voegen aan uw PDF-documenten.
 
-### Veelgestelde vragen over tekst in de koptekst van een PDF-bestand
+### FAQ's voor tekst in de header van een PDF-bestand
 
-#### Vraag: Wat is het doel van het toevoegen van tekst in de koptekst van een PDF-document?
+#### V: Wat is het doel van het toevoegen van tekst in de koptekst van een PDF-document?
 
-A: Door tekst toe te voegen aan de kop van een PDF-document kunt u belangrijke informatie opnemen, zoals titels, documentnamen, datums of andere tekst die u consistent bovenaan elke pagina wilt weergeven.
+A: Door tekst toe te voegen aan de koptekst van een PDF-document kunt u belangrijke informatie opnemen, zoals titels, documentnamen, datums of andere tekst die u consistent bovenaan elke pagina wilt weergeven.
 
-#### Vraag: Hoe zorgt de meegeleverde C#-broncode voor de toevoeging van tekst in de koptekst van een PDF-document?
+#### V: Hoe wordt met de meegeleverde C#-broncode tekst toegevoegd aan de header van een PDF-document?
 
-A: De code demonstreert het proces van het openen van een bestaand PDF-document, het maken van een tekststempel met de gewenste koptekst, het aanpassen van de teksteigenschappen, het toevoegen van de tekststempel aan alle pagina's en het uiteindelijk opslaan van het bijgewerkte PDF-document met de toegevoegde koptekst.
+A: De code laat zien hoe u een bestaand PDF-document opent, een tekststempel met de gewenste koptekst maakt, de teksteigenschappen aanpast, de tekststempel aan alle pagina's toevoegt en ten slotte het bijgewerkte PDF-document met de toegevoegde koptekst opslaat.
 
-#### Vraag: Kan ik het uiterlijk van de koptekst wijzigen, zoals het lettertype, de grootte, de kleur en de uitlijning?
+#### V: Kan ik het uiterlijk van de koptekst aanpassen, zoals het lettertype, de grootte, de kleur en de uitlijning?
 
- A: Ja, u kunt het uiterlijk van de koptekst aanpassen door de eigenschappen van het`TextStamp`voorwerp. Het codevoorbeeld bevat instellingseigenschappen zoals bovenmarge, horizontale uitlijning en verticale uitlijning. U kunt ook het lettertype, de grootte, de kleur en andere tekstgerelateerde eigenschappen aanpassen.
+A: Ja, u kunt het uiterlijk van de koptekst aanpassen door de eigenschappen van de koptekst te wijzigen.`TextStamp` object. Het codevoorbeeld omvat het instellen van eigenschappen zoals bovenmarge, horizontale uitlijning en verticale uitlijning. U kunt ook het lettertype, de grootte, de kleur en andere tekstgerelateerde eigenschappen aanpassen.
 
-#### Vraag: Is het mogelijk om verschillende tekst aan de koptekst van elke pagina toe te voegen?
+#### V: Is het mogelijk om aan de koptekst van elke pagina een andere tekst toe te voegen?
 
- A: Ja, u kunt verschillende tekst aan de koptekst van elke pagina toevoegen door afzonderlijke tekst te maken`TextStamp` objecten met verschillende tekstinhoud of eigenschappen en voeg deze vervolgens indien nodig toe aan specifieke pagina's.
+ A: Ja, u kunt verschillende tekst toevoegen aan de koptekst van elke pagina door afzonderlijke`TextStamp` objecten met verschillende tekstinhoud of eigenschappen en deze vervolgens indien nodig aan specifieke pagina's toevoegen.
 
-#### Vraag: Hoe zorg ik ervoor dat de koptekst consistent op elke pagina van het PDF-document verschijnt?
+#### V: Hoe zorg ik ervoor dat de koptekst consistent op elke pagina van het PDF-document wordt weergegeven?
 
-A: Door een lus te gebruiken die door alle pagina's van het PDF-document loopt en dezelfde tekststempel aan elke pagina toe te voegen, zorgt u ervoor dat de koptekst consistent op elke pagina verschijnt.
+A: Door een lus te gebruiken die door alle pagina's van het PDF-document loopt en dezelfde tekst aan elke pagina toe te voegen, zorgt u ervoor dat de koptekst op elke pagina consistent wordt weergegeven.
 
-#### Vraag: Kan ik meerdere regels tekst toevoegen of de koptekst opmaken met regeleinden?
+#### V: Kan ik meerdere tekstregels toevoegen of de koptekst opmaken met regeleinden?
 
- A: Ja, u kunt meerdere regels tekst aan de koptekst toevoegen door regeleinden in de tekstreeks op te nemen. U kunt bijvoorbeeld de escape-reeks gebruiken`\n` om een regeleinde in de tekst aan te geven.
+ A: Ja, u kunt meerdere tekstregels toevoegen aan de header door regeleinden in de tekstreeks op te nemen. U kunt bijvoorbeeld de escape-reeks gebruiken`\n` om een regelafbreking in de tekst aan te geven.
 
-#### Vraag: Wat gebeurt er als ik verschillende inhoud wil toevoegen aan de kop- en voettekst van hetzelfde PDF-document?
+#### V: Wat gebeurt er als ik verschillende inhoud wil toevoegen aan de kop- en voettekst van hetzelfde PDF-document?
 
-A: Om verschillende inhoud aan de kop- en voettekstsecties toe te voegen, volgt u voor beide secties vergelijkbare stappen. De code demonstreert het toevoegen van tekst aan de kop; U kunt een soortgelijke aanpak gebruiken om tekst aan de voettekst toe te voegen.
+A: Om verschillende content toe te voegen aan de header- en footer-secties, volgt u vergelijkbare stappen voor beide secties. De code demonstreert het toevoegen van tekst aan de header; u kunt een vergelijkbare aanpak gebruiken om tekst toe te voegen aan de footer.
 
-#### Vraag: Is het mogelijk om op deze manier afbeeldingen of andere elementen toe te voegen aan de koptekst?
+#### V: Is het mogelijk om met deze aanpak afbeeldingen of andere elementen toe te voegen naast de koptekst?
 
-A: Hoewel de meegeleverde code specifiek het toevoegen van tekst aan de koptekst demonstreert, kunt u de aanpak uitbreiden door andere elementen zoals afbeeldingen, lijnen, vormen of andere inhoud aan de koptekst toe te voegen met behulp van de Aspose.PDF-bibliotheek.
+A: Hoewel de meegeleverde code specifiek laat zien hoe u tekst aan de koptekst toevoegt, kunt u de aanpak uitbreiden en andere elementen, zoals afbeeldingen, lijnen, vormen of andere inhoud, aan de koptekst toevoegen met behulp van de Aspose.PDF-bibliotheek.

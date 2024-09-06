@@ -7,32 +7,32 @@ type: docs
 weight: 290
 url: /nl/net/programming-with-forms/text-box/
 ---
-In deze handleiding leggen we stap voor stap uit hoe u de Aspose.PDF-bibliotheek voor .NET kunt gebruiken om een tekstveld in een PDF-document te maken. We laten u zien hoe u het document opent, het tekstveld maakt, de eigenschappen ervan aanpast en de bewerkte PDF opslaat.
+In deze handleiding leggen we stap voor stap uit hoe u de Aspose.PDF-bibliotheek voor .NET gebruikt om een tekstveld in een PDF-document te maken. We laten u zien hoe u het document opent, het tekstveld maakt, de eigenschappen ervan aanpast en de bewerkte PDF opslaat.
 
-## Stap 1: De documentmap configureren
+## Stap 1: De documentdirectory configureren
 
- De eerste stap is het configureren van de documentmap waarin het PDF-bestand staat waaraan u wilt werken. U kunt gebruik maken van de`dataDir` variabele om het mappad op te geven.
+ De eerste stap is het configureren van de documentdirectory waar het PDF-bestand waar u aan wilt werken zich bevindt. U kunt de`dataDir` variabele om het pad naar de directory op te geven.
 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
- Zeker vervangen`"YOUR DOCUMENTS DIRECTORY"` met het daadwerkelijke pad naar uw documentenmap.
+ Zorg ervoor dat u deze vervangt`"YOUR DOCUMENTS DIRECTORY"` met het daadwerkelijke pad naar uw documentenmap.
 
 ## Stap 2: Het PDF-document openen
 
-In deze stap openen we het PDF-document met behulp van de`Document` klasse van Aspose.PDF.
+ In deze stap openen we het PDF-document met behulp van de`Document` klasse van Aspose.PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "TextField.pdf");
 ```
 
-Zorg ervoor dat het PDF-bestand aanwezig is in de opgegeven documentenmap.
+Controleer of het PDF-bestand zich in de opgegeven documentenmap bevindt.
 
-## Stap 3: Het tekstveld maken
+## Stap 3: Het tekstveld aanmaken
 
- We zullen een tekstveld maken met behulp van de`TextBoxField` klas. U kunt positiecoördinaten en veldgrootte opgeven met behulp van de`Rectangle` klas.
+ We gaan een tekstveld maken met behulp van de`TextBoxField` klasse. U kunt positiecoördinaten en veldgrootte opgeven met behulp van de`Rectangle` klas.
 
 ```csharp
 TextBoxField textBoxField = new TextBoxField(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(100, 200, 300, 300));
@@ -42,9 +42,9 @@ textBoxField.Value = "Text Field";
 
 Pas indien nodig de coördinaten, grootte, gedeeltelijke naam en tekstveldwaarde aan.
 
-## Stap 4: Pas de eigenschappen van tekstvelden aan
+## Stap 4: Pas de eigenschappen van het tekstveld aan
 
-In deze stap passen we de eigenschappen van het tekstveld aan, zoals rand, kleur, enz.
+In deze stap passen we de eigenschappen van het tekstveld aan, zoals rand, kleur, etc.
 
 ```csharp
 Border border = new Border(textBoxField);
@@ -66,7 +66,7 @@ pdfDocument.Form.Add(textBoxField, 1);
 
 ## Stap 6: De gewijzigde PDF opslaan
 
- Ten slotte kunnen we de gewijzigde PDF opslaan met behulp van de`Save` werkwijze van de`Document` klas.
+ Ten slotte kunnen we de gewijzigde PDF opslaan met behulp van de`Save` methode van de`Document` klas.
 
 ```csharp
 dataDir = dataDir + "TextBox_out.pdf";
@@ -75,52 +75,52 @@ pdfDocument.Save(dataDir);
 
 Zorg ervoor dat u het volledige pad en de bestandsnaam voor de bewerkte PDF opgeeft.
 
-### Voorbeeldbroncode voor tekstvak met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor tekstvak met behulp van Aspose.PDF voor .NET 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Document openen
 Document pdfDocument = new Document(dataDir + "TextField.pdf");
-// Maak een veld
+//Een veld aanmaken
 TextBoxField textBoxField = new TextBoxField(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(100, 200, 300, 300));
 textBoxField.PartialName = "textbox1";
 textBoxField.Value = "Text Box";
-//TextBoxField.Border = nieuwe rand(
+// TextBoxField.Border = nieuwe Border(
 Border border = new Border(textBoxField);
 border.Width = 5;
 border.Dash = new Dash(1, 1);
 textBoxField.Border = border;
 textBoxField.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
-// Voeg een veld toe aan het document
+// Veld toevoegen aan het document
 pdfDocument.Form.Add(textBoxField, 1);
 dataDir = dataDir + "TextBox_out.pdf";
-// Bewaar gewijzigde PDF
+// Gewijzigde PDF opslaan
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nTextbox field added successfully.\nFile saved at " + dataDir);
 ```
 
 ## Conclusie
 
-In deze handleiding hebben we geleerd hoe u de Aspose.PDF-bibliotheek voor .NET kunt gebruiken om een tekstveld in een PDF-document te maken. Door de beschreven stappen te volgen, kunt u de eigenschappen van het tekstveld aanpassen en indien nodig aan het document toevoegen. Voel je vrij om de functies van Aspose.PDF voor .NET verder te verkennen om de mogelijkheden voor het manipuleren van PDF-bestanden uit te breiden.
+In deze handleiding hebben we geleerd hoe u de Aspose.PDF-bibliotheek voor .NET kunt gebruiken om een tekstveld in een PDF-document te maken. Door de beschreven stappen te volgen, kunt u de eigenschappen van het tekstveld aanpassen en het indien nodig aan het document toevoegen. U kunt de functies van Aspose.PDF voor .NET verder verkennen om de mogelijkheden voor het manipuleren van PDF-bestanden uit te breiden.
 
 ### Veelgestelde vragen
 
-#### Vraag: Kan ik Aspose.PDF voor .NET gebruiken om meerdere tekstvelden in één PDF-document te maken?
+#### V: Kan ik Aspose.PDF voor .NET gebruiken om meerdere tekstvelden in één PDF-document te maken?
 
-A: Ja, u kunt meerdere tekstvelden in één PDF-document maken met Aspose.PDF voor .NET. Herhaal eenvoudigweg het proces van het maken en aanpassen van tekstvelden voor elke gewenste locatie in het document.
+A: Ja, u kunt meerdere tekstvelden in één PDF-document maken met Aspose.PDF voor .NET. Herhaal gewoon het proces van het maken en aanpassen van tekstvelden voor elke gewenste locatie in het document.
 
-#### Vraag: Hoe kan ik het uiterlijk van het tekstveld aanpassen, zoals lettergrootte en kleur?
+#### V: Hoe kan ik het uiterlijk van het tekstveld aanpassen, zoals de lettergrootte en kleur?
 
-A: U kunt het uiterlijk van het tekstveld aanpassen door de eigenschappen ervan aan te passen, zoals lettergrootte, letterstijl, kleur, randstijl, achtergrondkleur en meer. In de meegeleverde voorbeeldbroncode zijn de randbreedte, het randstreepjespatroon en de tekstkleur aangepast.
+A: U kunt het uiterlijk van het tekstveld aanpassen door de eigenschappen ervan aan te passen, zoals lettergrootte, lettertype, kleur, randstijl, achtergrondkleur en meer. In de meegeleverde voorbeeldbroncode worden de randbreedte, het randstreeppatroon en de tekstkleur aangepast.
 
-#### Vraag: Is het mogelijk om de door de gebruiker ingevoerde tekst uit het gemaakte tekstveld te extraheren?
+#### V: Is het mogelijk om de door de gebruiker ingevoerde tekst uit het gemaakte tekstveld te halen?
 
 A: Ja, u kunt de door de gebruiker ingevoerde tekst uit het gemaakte tekstveld halen. Nadat gebruikers het tekstveld in het PDF-document hebben ingevuld, kunt u de veldwaarde programmatisch ophalen met Aspose.PDF voor .NET.
 
-#### Vraag: Kan ik tekstvelden aan een bestaand PDF-document toevoegen zonder een nieuw document te maken?
+#### V: Kan ik tekstvelden toevoegen aan een bestaand PDF-document zonder een nieuw document te maken?
 
-A: Ja, u kunt tekstvelden aan een bestaand PDF-document toevoegen zonder een nieuw document te maken. Aspose.PDF voor .NET biedt de mogelijkheid om bestaande PDF-documenten te wijzigen, inclusief het toevoegen van tekstvelden, selectievakjes en andere formulierelementen.
+A: Ja, u kunt tekstvelden toevoegen aan een bestaand PDF-document zonder een nieuw document te maken. Aspose.PDF voor .NET biedt de mogelijkheid om bestaande PDF-documenten te wijzigen, inclusief het toevoegen van tekstvelden, selectievakjes en andere formulierelementen.
 
-#### Vraag: Ondersteunt Aspose.PDF voor .NET andere typen formuliervelden, zoals selectievakjes en keuzerondjes?
+#### V: Ondersteunt Aspose.PDF voor .NET andere typen formuliervelden, zoals selectievakjes en keuzerondjes?
 
-A: Ja, Aspose.PDF voor .NET ondersteunt verschillende soorten formuliervelden, waaronder selectievakjes, keuzerondjes, vervolgkeuzelijsten en meer. U kunt de bibliotheek gebruiken om met verschillende soorten formulierelementen in PDF-documenten te werken.
+A: Ja, Aspose.PDF voor .NET ondersteunt verschillende typen formuliervelden, waaronder selectievakjes, keuzerondjes, vervolgkeuzelijsten en meer. U kunt de bibliotheek gebruiken om met verschillende typen formulierelementen in PDF-documenten te werken.

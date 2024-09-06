@@ -21,7 +21,7 @@ Innan vi börjar, se till att du har följande förutsättningar på plats:
 
 ## Ställa in miljön
 
-För att börja styla text i PDF-filer med Java måste du konfigurera din utvecklingsmiljö. Följ dessa steg:
+För att börja styla text i PDF-filer med Java måste du ställa in din utvecklingsmiljö. Följ dessa steg:
 
 1.  Ladda ner Aspose.PDF för Java-biblioteket från[här](https://releases.aspose.com/pdf/java/).
 

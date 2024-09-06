@@ -97,7 +97,7 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nImage resized successfully.\nFile saved at " + dataDir);
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Συγχαρητήρια ! Έχετε αλλάξει το μέγεθος των εικόνων σε ένα έγγραφο PDF χρησιμοποιώντας το Aspose.PDF για .NET. Τώρα μπορείτε να εφαρμόσετε αυτήν τη μέθοδο στα δικά σας έργα για να αλλάξετε το μέγεθος των εικόνων σε αρχεία PDF.
 

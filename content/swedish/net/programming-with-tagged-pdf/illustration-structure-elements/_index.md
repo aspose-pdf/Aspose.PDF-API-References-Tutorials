@@ -60,7 +60,7 @@ taggedContent.SetLanguage("fr-FR");
 Låt oss nu lägga till illustrativa element, som bilder och figurer, till vårt dokument.
 
 ```csharp
-// Under utveckling
+// Underutveckling
 IllustrationElement figure1 = taggedContent.CreateFigureElement();
 taggedContent.RootElement.AppendChild(figure1);
 figure1.AlternativeText = "Figure One";

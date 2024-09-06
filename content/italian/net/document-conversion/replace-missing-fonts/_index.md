@@ -1,113 +1,111 @@
 ---
 title: Sostituisci i caratteri mancanti
 linktitle: Sostituisci i caratteri mancanti
-second_title: Aspose.PDF per riferimento all'API .NET
-description: Guida passo passo per sostituire i caratteri mancanti in un file PDF utilizzando Aspose.PDF per .NET.
+second_title: Riferimento API Aspose.PDF per .NET
+description: Scopri come sostituire i font mancanti nei documenti PDF utilizzando Aspose.PDF per .NET con questa guida dettagliata.
 type: docs
 weight: 260
 url: /it/net/document-conversion/replace-missing-fonts/
 ---
-In questo tutorial ti guideremo attraverso il processo di sostituzione dei caratteri mancanti in un file PDF utilizzando Aspose.PDF per .NET. Quando apri un file PDF su un computer in cui manca un carattere specifico, potrebbero verificarsi problemi di visualizzazione dei caratteri. In questi casi è possibile sostituire il font mancante con un altro font disponibile sulla macchina. Seguendo i passaggi seguenti, sarai in grado di sostituire i caratteri mancanti in un file PDF.
+## Introduzione
+
+Hai mai aperto un documento PDF e scoperto che alcuni font sono mancanti? Può essere frustrante, vero? I font mancanti possono portare a un documento che sembra completamente diverso da quello che il creatore intendeva. Fortunatamente, con Aspose.PDF per .NET, puoi facilmente sostituire i font mancanti e assicurarti che i tuoi documenti PDF mantengano l'aspetto previsto. In questo tutorial, ti guideremo passo dopo passo attraverso il processo, rendendolo semplice e diretto.
 
 ## Prerequisiti
-Prima di iniziare, assicurati di soddisfare i seguenti prerequisiti:
 
-- Conoscenza base del linguaggio di programmazione C#.
-- Libreria Aspose.PDF per .NET installata sul tuo sistema.
-- Un ambiente di sviluppo come Visual Studio.
+Prima di iniziare, ecco alcune cose che devi sapere:
 
-## Passaggio 1: trovare il carattere mancante
-Il primo passo è trovare il carattere mancante nel file PDF. Utilizza il seguente codice:
+1.  Aspose.PDF per .NET: assicurati di avere installata la libreria Aspose.PDF. Puoi scaricarla da[Qui](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: un ambiente di sviluppo in cui puoi scrivere e testare il tuo codice.
+3. Conoscenza di base di C#: la familiarità con la programmazione C# ti aiuterà a comprendere meglio i frammenti di codice.
+
+## Importa pacchetti
+
+Per iniziare, dovrai importare i pacchetti necessari nel tuo progetto C#. Ecco come puoi farlo:
 
 ```csharp
-// Percorso della directory dei documenti.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-Aspose.Pdf.Text.Font originalFont = null;
-try
-{
-     // Trova il carattere originale
-     originalFont = FontRepository.FindFont("AgencyFB");
-}
-catch(Exception)
-{
-     // Il carattere manca nel computer di destinazione
-     // Aggiungi una semplice sostituzione dei caratteri
-     FontRepository.Substitutions.Add(new SimpleFontSubstitution("AgencyFB", "Arial"));
-}
+using System;
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
- Assicurati di sostituire`"YOUR DOCUMENTS DIRECTORY"` con la directory effettiva in cui si trova il file PDF.
+## Passaggio 1: imposta la directory dei documenti
 
-## Passaggio 2: sostituisci il carattere mancante
-Successivamente, sostituiremo il carattere mancante con un altro carattere disponibile. Utilizza il seguente codice:
-
-```csharp
-var fileNew = new FileInfo(dataDir + "newfile_out.pdf");
-var pdf = new Document(dataDir + "input.pdf");
-
-// Converti il file PDF in formato PDF/A con rimozione degli errori
-pdf.Convert(dataDir + "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete);
-
-// Salva il file PDF risultante
-pdf.Save(fileNew.FullName);
-```
-
- Assicurati di sostituire`"input.pdf"` con il percorso effettivo del file PDF originale e`"newfile_out.pdf"` con il nome desiderato per il file PDF risultante.
-
-## Passaggio 3: salvataggio del file PDF risultante
-Infine, salveremo il file PDF risultante con il carattere sostituito. Utilizza il seguente codice:
+Per prima cosa, devi specificare il percorso della directory dei tuoi documenti. È qui che si trova il tuo file PDF di input e dove verrà salvato il file di output.
 
 ```csharp
-// Salva il file PDF risultante
-pdf.Save(fileNew.FullName);
-```
-
-Assicurati di aver impostato il percorso di destinazione corretto per il file PDF risultante.
-
-### Codice sorgente di esempio per sostituire i caratteri mancanti utilizzando Aspose.PDF per .NET
-
-```csharp
-// Il percorso della directory dei documenti.
+// Percorso verso la directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+## Passaggio 2: inizializzare il font originale
+
+Successivamente, vorrai provare a trovare il font originale che potrebbe mancare. In questo caso, stiamo cercando "AgencyFB".
+
+```csharp
 Aspose.Pdf.Text.Font originalFont = null;
 try
 {
-	originalFont = FontRepository.FindFont("AgencyFB");
+    originalFont = FontRepository.FindFont("AgencyFB");
 }
 catch (Exception)
 {
-	// Manca il carattere sul computer di destinazione
-	FontRepository.Substitutions.Add(new SimpleFontSubstitution("AgencyFB", "Arial"));
+    //Il font è mancante sulla macchina di destinazione
+    FontRepository.Substitutions.Add(new SimpleFontSubstitution("AgencyFB", "Arial"));
 }
+```
+
+Qui, proviamo a trovare il font. Se non viene trovato, catturiamo l'eccezione e lo sostituiamo con un font più comune, "Arial". Questo assicura che il tuo documento abbia comunque un bell'aspetto anche se il font originale non è disponibile.
+
+## Passaggio 3: caricare il documento PDF
+
+Ora, carichiamo il documento PDF che vuoi elaborare. Dovrai specificare il percorso del file di input.
+
+```csharp
 var fileNew = new FileInfo(dataDir + "newfile_out.pdf");
 var pdf = new Document(dataDir + "input.pdf");
-pdf.Convert( dataDir +  "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete);
+```
+
+ In questo passaggio creiamo un nuovo`FileInfo` oggetto per il file di output e caricare il documento PDF di input in un nuovo`Document` oggetto.
+
+## Passaggio 4: Converti il documento PDF
+
+Prima di salvare il documento, è una buona idea convertirlo in un formato PDF specifico. In questo caso, lo convertiremo in formato PDF/A-1B, che è uno standard per l'archiviazione a lungo termine di documenti elettronici.
+
+```csharp
+pdf.Convert(dataDir + "log.xml", PdfFormat.PDF_A_1B, ConvertErrorAction.Delete);
+```
+
+Questa riga converte il PDF e registra eventuali errori in un file XML specificato. Se ci sono problemi durante la conversione, verranno registrati in "log.xml".
+
+## Passaggio 5: salvare il documento PDF aggiornato
+
+Infine, è il momento di salvare il documento PDF aggiornato con i font sostituiti.
+
+```csharp
 pdf.Save(fileNew.FullName);
 ```
 
+Questa riga salva il PDF modificato nel percorso del file di output specificato. E proprio così, hai sostituito con successo i font mancanti nel tuo documento PDF!
+
 ## Conclusione
-In questo tutorial, abbiamo trattato il processo passo passo di sostituzione dei caratteri mancanti in un file PDF utilizzando Aspose.PDF per .NET. Seguendo le istruzioni sopra descritte, sarai in grado di sostituire con successo i caratteri mancanti nel tuo file PDF.
 
-### Domande frequenti
+Sostituire i font mancanti nei documenti PDF non deve essere un compito arduo. Con Aspose.PDF per .NET, puoi gestire facilmente le sostituzioni dei font e assicurarti che i tuoi documenti abbiano esattamente l'aspetto che dovrebbero avere. Seguendo i passaggi descritti in questo tutorial, puoi mantenere l'integrità dei tuoi file PDF, anche quando alcuni font non sono disponibili. Quindi, la prossima volta che incontrerai un problema di font mancante, saprai esattamente cosa fare!
 
-#### D: Cos'è Aspose.PDF per .NET?
+## Domande frequenti
 
-R: Aspose.PDF per .NET è una potente libreria che consente agli sviluppatori di lavorare con documenti PDF in applicazioni C#. Offre varie funzionalità, inclusa la possibilità di sostituire i caratteri mancanti nei file PDF.
+### Che cos'è Aspose.PDF per .NET?
+Aspose.PDF per .NET è una potente libreria che consente agli sviluppatori di creare, manipolare e convertire documenti PDF a livello di programmazione.
 
-#### D: Perché dovrei riscontrare caratteri mancanti in un file PDF?
+### Posso usare Aspose.PDF gratuitamente?
+ Sì, Aspose offre una versione di prova gratuita che puoi usare per valutare la libreria. Puoi scaricarla[Qui](https://releases.aspose.com/).
 
-R: I caratteri mancanti in un file PDF possono verificarsi quando il file viene aperto su un computer su cui non sono installati i caratteri necessari. Ciò può portare alla sostituzione dei caratteri, influenzando l'aspetto visivo del documento.
+### Cosa devo fare se il font che mi serve non è disponibile?
+È possibile sostituire il font mancante con uno più comune utilizzando la funzionalità di sostituzione font in Aspose.PDF.
 
-#### D: Come posso trovare e sostituire i caratteri mancanti in un file PDF utilizzando Aspose.PDF per .NET?
+### È possibile convertire i PDF in altri formati?
+Assolutamente! Aspose.PDF supporta la conversione in vari formati, tra cui PDF/A, DOCX e altri.
 
- R: Per trovare e sostituire i caratteri mancanti, puoi utilizzare il file`FontRepository.FindFont` metodo per verificare la presenza del carattere richiesto. Se manca il carattere, puoi aggiungere un carattere sostitutivo utilizzando il file`FontRepository.Substitutions` proprietà.
-
-#### D: Posso personalizzare il processo di sostituzione dei caratteri?
-
-R: Sì, puoi personalizzare il processo di sostituzione dei caratteri specificando un carattere diverso per la sostituzione. Nel codice fornito abbiamo utilizzato Arial come sostituto del carattere "AgencyFB" mancante, ma puoi scegliere un carattere diverso in base alle tue preferenze.
-
-#### D: Come posso garantire la precisione del rendering dei caratteri dopo la sostituzione?
-
-R: Aspose.PDF per .NET fornisce robuste funzionalità di gestione dei caratteri, garantendo un rendering accurato dei caratteri dopo la sostituzione. È possibile visualizzare in anteprima il file PDF risultante per verificare la sostituzione del carattere.
+### Dove posso trovare supporto per Aspose.PDF?
+ Puoi trovare supporto e porre domande nel forum Aspose[Qui](https://forum.aspose.com/c/pdf/10).

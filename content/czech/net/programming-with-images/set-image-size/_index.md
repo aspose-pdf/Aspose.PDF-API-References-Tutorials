@@ -42,10 +42,10 @@ Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img. FixWidth = 100;
 img. FixHeight = 100;
 
-// Nastavit typ obrázku na neznámý (Neznámý)
+//Nastavit typ obrázku na neznámý (Neznámý)
 img.FileType = Aspose.Pdf.ImageFileType.Unknown;
 
-//Cesta ke zdrojovému souboru obrázku
+// Cesta ke zdrojovému souboru obrázku
 img.File = dataDir + "aspose-logo.jpg";
 
 // Přidejte obrázek do kolekce odstavců stránky

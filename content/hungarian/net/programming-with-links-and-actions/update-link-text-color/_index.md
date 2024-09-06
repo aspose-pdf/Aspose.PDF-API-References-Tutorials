@@ -68,7 +68,7 @@ Jelenítsen meg egy üzenetet arról, hogy a hivatkozási megjegyzés szövegén
 Console.WriteLine("\nText color of link annotations updated successfully.\nFile saved to location: " + dataDir);
 ```
 
-### Minta forráskód a hivatkozás szövegének színének frissítéséhez az Aspose.PDF for .NET használatával 
+### Minta forráskód a hivatkozás szövegszínének frissítéséhez az Aspose.PDF for .NET használatával 
 ```csharp
 try
 {

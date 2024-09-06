@@ -1,17 +1,17 @@
 ---
 title: Konwertuj region strony na DOM
 linktitle: Konwertuj region strony na DOM
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Z łatwością przekonwertuj określony region strony PDF na obiektowy model dokumentu (DOM) za pomocą Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Łatwo przekonwertuj określony obszar strony PDF na obiektowy model dokumentu (DOM) za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 80
 url: /pl/net/programming-with-images/convert-page-region-to-dom/
 ---
-Ten przewodnik poprowadzi Cię krok po kroku, jak przekonwertować określony region strony na obiektowy model dokumentu (DOM) przy użyciu Aspose.PDF dla .NET. Upewnij się, że masz już skonfigurowane środowisko i wykonaj poniższe czynności:
+Ten przewodnik krok po kroku przeprowadzi Cię przez proces konwersji określonego obszaru strony na Document Object Model (DOM) przy użyciu Aspose.PDF dla .NET. Upewnij się, że skonfigurowałeś już swoje środowisko i wykonaj poniższe kroki:
 
 ## Krok 1: Zdefiniuj katalog dokumentów
 
- Zanim zaczniesz, upewnij się, że ustawiłeś właściwy katalog dla dokumentów. Zastępować`"YOUR DOCUMENT DIRECTORY"` w kodzie ścieżką do katalogu, w którym znajduje się Twój dokument PDF.
+Przed rozpoczęciem upewnij się, że ustawiłeś właściwy katalog dla dokumentów. Zastąp`"YOUR DOCUMENT DIRECTORY"` w kodzie podając ścieżkę do katalogu, w którym znajduje się Twój dokument PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,31 +19,31 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 2: Otwórz dokument
 
- tym kroku otworzymy dokument PDF za pomocą`Document` klasa Aspose.PDF. Użyj`Document` konstruktor i podaj ścieżkę do dokumentu PDF.
+ W tym kroku otworzymy dokument PDF za pomocą`Document` klasa Aspose.PDF. Użyj`Document` konstruktora i przekazuje ścieżkę do dokumentu PDF.
 
 ```csharp
 Document document = new Document(dataDir + "AddImage.pdf");
 ```
 
-## Krok 3: Uzyskaj prostokąt obszaru strony
+## Krok 3: Pobierz prostokąt regionu strony
 
- W tym kroku zdefiniujemy prostokąt reprezentujący konkretny region strony, który chcemy przekonwertować na DOM. Użyj`Aspose.Pdf.Rectangle` klasa do zdefiniowania współrzędnych prostokąta.
+ W tym kroku zdefiniujemy prostokąt reprezentujący konkretny region strony, który chcemy przekonwertować na DOM. Użyj`Aspose.Pdf.Rectangle` Klasa definiująca współrzędne prostokąta.
 
 ```csharp
 Aspose.Pdf.Rectangle pageRect = new Aspose.Pdf.Rectangle(20, 671, 693, 1125);
 ```
 
-## Krok 4: Zdefiniuj obszar przycięcia strony
+## Krok 4: Określ obszar przycinania strony
 
- Użyj`CropBox` własność`Page` obiekt, aby ustawić pole przycinania strony na żądany prostokąt regionu.
+ Użyj`CropBox` własność`Page` obiekt, aby ustawić pole przycinania strony na żądany prostokątny obszar.
 
 ```csharp
 document.Pages[1].CropBox = pageRect;
 ```
 
-## Krok 5: Zapisz przycięty dokument PDF w strumieniu
+## Krok 5: Zapisz przycięty dokument PDF do strumienia
 
- W tym kroku zapiszemy przycięty dokument PDF w strumieniu za pomocą`MemoryStream` klasa.
+ W tym kroku zapiszemy przycięty dokument PDF do strumienia za pomocą`MemoryStream` klasa.
 
 ```csharp
 MemoryStream ms = new MemoryStream();
@@ -52,7 +52,7 @@ document.Save(ms);
 
 ## Krok 6: Otwórz przycięty dokument PDF i przekonwertuj go na obraz
 
- Otwórz przycięty dokument PDF za pomocą`Document` class i przekonwertuj go na obraz. Zastosujemy rozdzielczość 300 dpi.
+ Otwórz przycięty dokument PDF za pomocą`Document` przekonwertować ją na obraz. Użyjemy rozdzielczości 300 dpi.
 
 ```csharp
 document = newDocument(ms);
@@ -60,26 +60,26 @@ Resolution resolution = new Resolution(300);
 PngDevice pngDevice = new PngDevice(resolution);
 ```
 
-## Krok 7: Konwertuj konkretną stronę na obraz
+## Krok 7: Konwertuj określoną stronę na obraz
 
- Konwertuj określoną stronę na obraz za pomocą`Process` metoda`pngDevice`obiekt. Określ ścieżkę wyjściową obrazu.
+ Konwertuj określoną stronę na obraz za pomocą`Process` metoda`pngDevice` obiekt. Określ ścieżkę wyjściową obrazu.
 
 ```csharp
 dataDir = dataDir + "ConvertPageRegionToDOM_out.png";
 pngDevice.Process(document.Pages[1], dataDir);
 ```
 
-### Przykładowy kod źródłowy dla Konwertuj region strony na DOM przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla konwersji regionu strony na DOM przy użyciu Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Otwórz dokument
 Document document = new Document( dataDir + "AddImage.pdf");
-// Uzyskaj prostokąt określonego regionu strony
+// Pobierz prostokąt określonego regionu strony
 Aspose.Pdf.Rectangle pageRect = new Aspose.Pdf.Rectangle(20, 671, 693, 1125);
-// Ustaw wartość CropBox zgodnie z prostokątem żądanego obszaru strony
+// Ustaw wartość CropBox zgodnie z prostokątem żądanego regionu strony
 document.Pages[1].CropBox = pageRect;
-// Zapisz przycięty dokument w strumieniu
+// Zapisz przycięty dokument do strumienia
 MemoryStream ms = new MemoryStream();
 document.Save(ms);
 // Otwórz przycięty dokument PDF i przekonwertuj go na obraz
@@ -89,7 +89,7 @@ Resolution resolution = new Resolution(300);
 // Utwórz urządzenie PNG z określonymi atrybutami
 PngDevice pngDevice = new PngDevice(resolution);
 dataDir = dataDir + "ConvertPageRegionToDOM_out.png";
-//Konwertuj konkretną stronę i zapisz obraz do strumienia
+// Konwertuj określoną stronę i zapisz obraz do strumienia
 pngDevice.Process(document.Pages[1], dataDir);
 ms.Close();
 Console.WriteLine("\nPage region converted to DOM successfully.\nFile saved at " + dataDir); 
@@ -97,42 +97,42 @@ Console.WriteLine("\nPage region converted to DOM successfully.\nFile saved at "
 
 ## Wniosek
 
-Gratulacje! Pomyślnie przekonwertowałeś określony region strony na obiektowy model dokumentu (DOM) przy użyciu Aspose.PDF dla .NET. Wynikowy obraz zostanie zapisany w określonym katalogu. Możesz teraz używać tego obrazu w swoich projektach lub aplikacjach.
+Gratulacje! Udało Ci się pomyślnie przekonwertować określony region strony na Document Object Model (DOM) przy użyciu Aspose.PDF dla .NET. Wynikowy obraz został zapisany w określonym katalogu. Teraz możesz używać tego obrazu w swoich projektach lub aplikacjach.
 
-## Często zadawane pytania
+## Najczęściej zadawane pytania
 
-#### P: Jaki jest cel konwersji określonego regionu strony na obiektowy model dokumentu (DOM) przy użyciu Aspose.PDF dla .NET?
+#### P: Jaki jest cel konwersji określonego obszaru strony na obiektowy model dokumentu (DOM) przy użyciu Aspose.PDF dla platformy .NET?
 
-O: Konwersja określonego regionu strony PDF na obiektowy model dokumentu (DOM) może być pomocna przy wyodrębnianiu i manipulowaniu określoną sekcją treści w dokumencie PDF.
+A: Konwersja określonego obszaru strony PDF do modelu DOM (Document Object Model) może okazać się pomocna przy wyodrębnianiu i modyfikowaniu określonego fragmentu treści w dokumencie PDF.
 
-#### P: W jaki sposób Aspose.PDF dla .NET ułatwia konwersję określonego regionu strony do DOM?
+#### P: W jaki sposób Aspose.PDF dla platformy .NET ułatwia konwersję określonego obszaru strony na DOM?
 
-Odp.: Aspose.PDF dla .NET zapewnia krok po kroku proces definiowania żądanego obszaru strony, ustawiania obszaru przycinania, zapisywania przyciętego dokumentu PDF w strumieniu i konwertowania określonego obszaru strony na obraz.
+A: Aspose.PDF dla platformy .NET oferuje proces krok po kroku umożliwiający zdefiniowanie żądanego obszaru strony, ustawienie obszaru przycinania, zapisanie przyciętego dokumentu PDF do strumienia i konwersję określonego obszaru strony na obraz.
 
-#### P: Dlaczego ważne jest zdefiniowanie katalogu dokumentów przed rozpoczęciem procesu konwersji?
+#### P: Dlaczego ważne jest, aby zdefiniować katalog dokumentów przed rozpoczęciem procesu konwersji?
 
-O: Określenie katalogu dokumentów gwarantuje, że dokument PDF i powstały obraz zostaną prawidłowo umieszczone w żądanej ścieżce wyjściowej.
+A: Określenie katalogu dokumentu gwarantuje, że dokument PDF i powstały w jego wyniku obraz zostaną prawidłowo zlokalizowane w żądanej ścieżce wyjściowej.
 
-####  P: W jaki sposób`Document` class in Aspose.PDF for .NET help in the conversion process?
+####  P: Jak to działa?`Document` class in Aspose.PDF for .NET help in the conversion process?
 
- O:`Document` class umożliwia otwieranie, manipulowanie i zapisywanie dokumentów PDF. W tym przypadku służy do załadowania dokumentu PDF i utworzenia jego przyciętej wersji.
+ A: Ten`Document` Klasa pozwala otwierać, manipulować i zapisywać dokumenty PDF. W tym przypadku jest używana do załadowania dokumentu PDF i utworzenia jego przyciętej wersji.
 
 ####  P: Jaki jest cel`Rectangle` class in the page region conversion process?
 
- O:`Rectangle` class definiuje współrzędne konkretnego regionu na stronie PDF, który chcesz przekonwertować na DOM. Pomaga w dokładnym określeniu obszaru uprawy.
+ A: Ten`Rectangle`Klasa definiuje współrzędne konkretnego regionu na stronie PDF, który chcesz przekonwertować na DOM. Pomaga w dokładnym określeniu obszaru przycinania.
 
-#### P: W jaki sposób obszar przycinania strony jest ustawiany na żądany region w procesie konwersji?
+#### P: W jaki sposób obszar przycięcia strony jest ustawiany do pożądanego regionu w procesie konwersji?
 
- O:`CropBox` własność`Page` obiekt służy do ustawienia obszaru przycięcia strony na zdefiniowany prostokąt reprezentujący konkretny region.
+ A: Ten`CropBox` własność`Page` Obiekt służy do ustawienia obszaru przycinania strony na zdefiniowany prostokąt reprezentujący konkretny region.
 
-#### P: W jaki sposób przycięty dokument PDF jest zapisywany w strumieniu podczas procesu konwersji?
+#### P: W jaki sposób przycięty dokument PDF jest zapisywany do strumienia podczas procesu konwersji?
 
- Odp.: Przycięty dokument PDF jest zapisywany w formacie`MemoryStream` obiekt, który pozwala na sprawną manipulację zawartością PDF.
+ A: Przycięty dokument PDF jest zapisywany w`MemoryStream` obiekt, który umożliwia efektywną manipulację zawartością pliku PDF.
 
-####  P: Jaką rolę odgrywa`PngDevice` class play in the page region to DOM conversion process?
+####  P: Jaką rolę pełni`PngDevice` class play in the page region to DOM conversion process?
 
- O:`PngDevice` class pomaga przekonwertować przycięty dokument PDF na format obrazu, taki jak PNG, umożliwiając wizualizację określonego regionu strony.
+ A: Ten`PngDevice` Klasa ta pomaga przekonwertować przycięty dokument PDF do formatu obrazu, np. PNG, umożliwiając wizualizację określonego obszaru strony.
 
-#### P: Czy mogę dostosować rozdzielczość lub inne atrybuty powstałego obrazu podczas procesu konwersji?
+#### P: Czy mogę dostosować rozdzielczość i inne atrybuty wynikowego obrazu podczas procesu konwersji?
 
- O: Tak, możesz modyfikować rozdzielczość i inne atrybuty powstałego obrazu, konfigurując plik`PngDevice` obiekt przed konwersją strony.
+ O: Tak, możesz modyfikować rozdzielczość i inne atrybuty wynikowego obrazu, konfigurując`PngDevice` obiekt przed konwersją strony.

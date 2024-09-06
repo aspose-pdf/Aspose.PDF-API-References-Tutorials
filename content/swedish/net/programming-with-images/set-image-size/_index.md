@@ -42,10 +42,10 @@ Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img. FixWidth = 100;
 img. FixHeight = 100;
 
-// Ställ in bildtyp till okänd (Okänd)
+//Ställ in bildtyp till okänd (Okänd)
 img.FileType = Aspose.Pdf.ImageFileType.Unknown;
 
-//Sökväg till bildens källfil
+// Sökväg till bildens källfil
 img.File = dataDir + "aspose-logo.jpg";
 
 // Lägg till bilden i sidans styckesamling

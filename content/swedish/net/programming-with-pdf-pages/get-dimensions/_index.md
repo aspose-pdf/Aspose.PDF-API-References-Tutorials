@@ -37,7 +37,7 @@ Page page = pdfDocument.Pages.Count > 0? pdfDocument.Pages[1] : pdfDocument.Page
 ```
 
 ## Steg 4: Få sidmått
- Du kan nu få sidmåtten med hjälp av`GetPageRect()` metod för`Page` objekt. Denna metod returnerar en`Rectangle` objekt som innehåller sidans dimensioner. Du kan komma åt bredd och höjd med hjälp av`Width` och`Height` egenskaper.
+ Du kan nu få sidmåtten med hjälp av`GetPageRect()` metod för`Page` objekt. Denna metod returnerar en`Rectangle` objekt som innehåller sidans dimensioner. Du kan komma åt bredd och höjd med hjälp av`Width` och`Height` fastigheter.
 
 ```csharp
 Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRect(true).Height);

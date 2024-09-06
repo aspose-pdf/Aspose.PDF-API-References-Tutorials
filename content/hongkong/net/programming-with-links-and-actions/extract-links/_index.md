@@ -77,7 +77,7 @@ Console.WriteLine("\nLinks extracted successfully.\nFile saved at " + dataDir);
 
 恭喜！現在您已經有了使用 Aspose.PDF for .NET 從 PDF 文件中提取連結的逐步指南。您可以使用此程式碼來檢索文件中存在的所有超連結。
 
-請務必查看 Aspose.PDF 官方文檔，以了解有關高級連結擷取功能的更多資訊。
+請務必查看 Aspose.PDF 官方文檔，以了解更多有關高級連結提取功能的資訊。
 
 ### PDF 檔案中提取連結的常見問題解答
 

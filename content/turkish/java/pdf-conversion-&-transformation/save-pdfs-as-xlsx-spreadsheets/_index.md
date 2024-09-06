@@ -1,28 +1,28 @@
 ---
-title: PDF'leri XLSX Elektronik Tabloları olarak kaydedin
-linktitle: PDF'leri XLSX Elektronik Tabloları olarak kaydedin
+title: PDF'leri XLSX E-Tabloları olarak kaydedin
+linktitle: PDF'leri XLSX E-Tabloları olarak kaydedin
 second_title: Aspose.PDF Java PDF İşleme API'si
-description: Aspose.PDF for Java ile PDF'leri XLSX e-tablolarına nasıl dönüştüreceğinizi öğrenin. Verimli veri çıkarma ve analiz için adım adım kılavuz.
+description: Java için Aspose.PDF ile PDF'leri XLSX elektronik tablolarına nasıl dönüştüreceğinizi öğrenin. Verimli veri çıkarma ve analizi için adım adım kılavuz.
 type: docs
 weight: 21
 url: /tr/java/pdf-conversion-transformation/save-pdfs-as-xlsx-spreadsheets/
 ---
 
-Aspose.PDF for Java, geliştiricilerin Java uygulamalarında PDF belgeleriyle çalışmasına olanak tanıyan güçlü bir API'dir. Bu adım adım kılavuzda, PDF'leri XLSX e-tablolarına dönüştürmek için Aspose.PDF for Java'nın nasıl kullanılacağını keşfedeceğiz. Bu dönüştürme, Excel'de daha fazla analiz veya değişiklik yapmak için PDF dosyalarından tablo halindeki verileri çıkarmanız gerektiğinde inanılmaz derecede yararlı olabilir. Java ortamınızı kurmaktan kodu yazmaya ve PDF verilerini bir XLSX dosyasına kaydetmeye kadar tüm süreci adım adım anlatacağız.
+Java için Aspose.PDF, geliştiricilerin Java uygulamalarında PDF belgeleriyle çalışmasına olanak tanıyan güçlü bir API'dir. Bu adım adım kılavuzda, PDF'leri XLSX elektronik tablolarına dönüştürmek için Java için Aspose.PDF'nin nasıl kullanılacağını inceleyeceğiz. Bu dönüştürme, Excel'de daha fazla analiz veya düzenleme için PDF dosyalarından tablo verilerini çıkarmanız gerektiğinde inanılmaz derecede yararlı olabilir. Java ortamınızı kurmaktan kodu yazmaya ve PDF verilerini bir XLSX dosyasına kaydetmeye kadar tüm süreci ele alacağız.
 
-## Önkoşullar
+## Ön koşullar
 
-Kodun ayrıntılarına girmeden önce aşağıdaki önkoşulların mevcut olduğundan emin olun:
+Koda dalmadan önce aşağıdaki ön koşulların mevcut olduğundan emin olun:
 
-- Sisteminizde Java Geliştirme Kiti (JDK) yüklü.
--  Java kütüphanesi için Aspose.PDF. Şuradan indirebilirsiniz[Burada](https://releases.aspose.com/pdf/java/).
+- Sisteminizde Java Development Kit (JDK) yüklü.
+-  Java kütüphanesi için Aspose.PDF. Buradan indirebilirsiniz[Burada](https://releases.aspose.com/pdf/java/).
 
 ## Java Projenizi Kurma
 
 1. Tercih ettiğiniz Entegre Geliştirme Ortamında (IDE) yeni bir Java projesi oluşturun.
-2. Aspose.PDF for Java kütüphanesini projenizin sınıf yoluna ekleyin.
+2. Projenizin sınıf yoluna Aspose.PDF for Java kütüphanesini ekleyin.
 
-## Kodu Yazmak
+## Kodun Yazılması
 
 Şimdi koda geçelim. Gerekli paketleri içe aktararak ve temel bir Java sınıfı kurarak başlayacağız.
 
@@ -41,7 +41,7 @@ public class PdfToXlsxConverter {
         // PdfConverter'ın bir örneğini oluşturun
         PdfConverter pdfConverter = new PdfConverter(pdfDocument);
 
-        // Çıktı dosyası formatını XLSX olarak ayarlayın
+        // Çıkış dosya biçimini XLSX olarak ayarlayın
         pdfConverter.bindPdf(pdfDocument);
         pdfConverter.save("output.xlsx", excelSaveOptions);
 
@@ -52,29 +52,29 @@ public class PdfToXlsxConverter {
 }
 ```
 
- Yukarıdaki kodda bir PDF belgesi yüklüyoruz, Excel kaydetme seçeneklerini başlatıyoruz ve ardından PDF'yi bir XLSX dosyasına dönüştürmek için PdfConverter sınıfını kullanıyoruz. Değiştirdiğinizden emin olun`"input.pdf"`PDF dosyanızın yolu ile ve`"output.xlsx"` İstenilen çıktı dosyası yolu ile.
+ Yukarıdaki kodda bir PDF belgesi yüklüyoruz, Excel kaydetme seçeneklerini başlatıyoruz ve ardından PDF'yi XLSX dosyasına dönüştürmek için PdfConverter sınıfını kullanıyoruz. Değiştirdiğinizden emin olun`"input.pdf"`PDF dosyanızın yolunu ve`"output.xlsx"` İstenilen çıktı dosyası yolu ile.
 
-## Dönüşümün Çalıştırılması
+## Dönüştürmeyi Çalıştırma
 
- Dönüşümü çalıştırmak için, basitçe`main` Java projenizdeki yöntem. Dönüştürme tamamlandıktan sonra PDF belgenizdeki verileri içeren bir XLSX dosyasına sahip olacaksınız.
+ Dönüştürmeyi çalıştırmak için, yalnızca şunu çalıştırın:`main` Java projenizdeki yöntem. Dönüştürme tamamlandıktan sonra, PDF belgenizdeki verileri içeren bir XLSX dosyanız olacak.
 
 ## Çözüm
 
-Bu adım adım kılavuzda, PDF'leri XLSX e-tablolarına dönüştürmek için Aspose.PDF for Java'nın nasıl kullanılacağını öğrendik. Bu, PDF'lerden tablo verileri çıkarmak ve Excel'de bunlarla çalışmak için değerli bir araç olabilir. Daha gelişmiş özellikler ve özelleştirme seçenekleri için Aspose.PDF for Java belgelerini incelediğinizden emin olun.
+Bu adım adım kılavuzda, PDF'leri XLSX elektronik tablolarına dönüştürmek için Aspose.PDF for Java'yı nasıl kullanacağımızı öğrendik. Bu, PDF'lerden tablo verilerini çıkarmak ve Excel'de bunlarla çalışmak için değerli bir araç olabilir. Daha gelişmiş özellikler ve özelleştirme seçenekleri için Aspose.PDF for Java belgelerini incelediğinizden emin olun.
 
 ## SSS
 
-### Aspose.PDF for Java'yı nasıl yüklerim?
+### Java için Aspose.PDF'yi nasıl yüklerim?
 
- Aspose.PDF for Java kütüphanesini şu adresteki web sitesinden indirebilirsiniz:[https://releases.aspose.com/pdf/java/](https://releases.aspose.com/pdf/java/). Web sitelerinde verilen kurulum talimatlarını izleyin.
+ Java kütüphanesi için Aspose.PDF'yi şu web sitesinden indirebilirsiniz:[https://releases.aspose.com/pdf/java/](https://releases.aspose.com/pdf/java/). Web sitelerinde verilen kurulum talimatlarını izleyin.
 
 ### Aspose.PDF for Java'yı kullanarak PDF'leri diğer formatlara dönüştürebilir miyim?
 
-Evet, Aspose.PDF for Java, DOCX, HTML ve daha fazlasını içeren çeşitli formatlara dönüştürmeyi destekler. Belirli dönüştürme seçenekleri için belgeleri inceleyebilirsiniz.
+Evet, Aspose.PDF for Java, DOCX, HTML ve daha fazlası dahil olmak üzere çeşitli biçimlere dönüştürmeyi destekler. Belirli dönüştürme seçenekleri için belgeleri inceleyebilirsiniz.
 
-### Aspose.PDF for Java'nın kullanımı ücretsiz midir?
+### Aspose.PDF for Java'yı kullanmak ücretsiz mi?
 
-Aspose.PDF for Java ticari bir kütüphanedir ve kullanımı için lisans gereklidir. Aspose web sitesinden lisans alabilirsiniz.
+Aspose.PDF for Java ticari bir kütüphanedir ve kullanımı için bir lisans gereklidir. Lisansı Aspose web sitesinden edinebilirsiniz.
 
 ### Dönüştürülen XLSX dosyasının görünümünü özelleştirebilir miyim?
 

@@ -7,32 +7,32 @@ type: docs
 weight: 280
 url: /ja/net/programming-with-forms/set-radio-button-caption/
 ---
-このガイドでは、.NET 用の Aspose.PDF ライブラリを使用して PDF フォームのラジオ ボタンのキャプションを定義する方法を段階的に説明します。ラジオ ボタン フィールドにアクセスし、新しいラジオ ボタン オプションを作成し、ボタンのキャプションをカスタマイズする方法を示します。
+このガイドでは、.NET 用の Aspose.PDF ライブラリを使用して PDF フォームのラジオ ボタンのキャプションを定義する方法を段階的に説明します。ラジオ ボタン フィールドにアクセスし、新しいラジオ ボタン オプションを作成し、ボタンのキャプションをカスタマイズする方法を説明します。
 
-## ステップ 1: ドキュメント ディレクトリの構成
+## ステップ1: ドキュメントディレクトリの構成
 
-最初のステップは、作業対象の PDF フォームが配置されるドキュメント ディレクトリを構成することです。使用できます`dataDir`ディレクトリパスを指定する変数。
+最初のステップは、作業したいPDFフォームが保存されているドキュメントディレクトリを設定することです。`dataDir`ディレクトリ パスを指定する変数。
 
 ```csharp
-//ドキュメントディレクトリへのパス。
+//ドキュメント ディレクトリへのパス。
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-必ず交換してください`"YOUR DOCUMENTS DIRECTORY"`ドキュメントディレクトリへの実際のパスを含めます。
+必ず交換してください`"YOUR DOCUMENTS DIRECTORY"`ドキュメント ディレクトリへの実際のパスを入力します。
 
-## ステップ 2: ソース PDF フォームをロードする
+## ステップ2: ソースPDFフォームの読み込み
 
-このステップでは、`Aspose.Pdf.Facades.Form` Aspose.PDF のクラス。
+このステップでは、ソースPDFフォームを読み込み、`Aspose.Pdf.Facades.Form` Aspose.PDF のクラス。
 
 ```csharp
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
 ```
 
-フォームを含む PDF ファイルが指定されたドキュメント ディレクトリに存在することを確認してください。
+フォームを含む PDF ファイルが指定されたドキュメント ディレクトリに存在することを確認します。
 
-## ステップ 3: ラジオボタンのキャプションを編集する
+## ステップ3: ラジオボタンのキャプションを編集する
 
-フォームフィールド名をループして、ラジオボタンフィールドを検索します。一致するフィールドが見つかった場合は、カスタム キャプションを含む新しいラジオ ボタン オプションを作成し、既存のフィールドに追加します。
+フォーム フィールド名をループしてラジオ ボタン フィールドを検索します。一致するフィールドが見つかった場合は、カスタム キャプション付きの新しいラジオ ボタン オプションを作成し、既存のフィールドに追加します。
 
 ```csharp
 foreach(var item in form1.FieldNames)
@@ -47,15 +47,15 @@ var updatedFragment = new Aspose.Pdf.Text.TextFragment("test123");
 updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
 updatedFragment.TextState.FontSize = 10;
 updatedFragment.TextState.LineSpacing = 6.32f;
-// TextParagraph オブジェクトを作成する
+// TextParagraphオブジェクトを作成する
 TextParagraph par = new TextParagraph();
-//段落位置を設定する
+//段落の位置を設定する
 par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
-//ワードラップモードを指定する
+//単語の折り返しモードを指定する
 by.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
-//新しい TextFragment を段落に追加します
+//段落に新しいTextFragmentを追加します
 par.AppendLine(updatedFragment);
-//TextBuilder を使用して TextParagraph を追加する
+//TextBuilderを使用してTextParagraphを追加する
 TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
 textBuilder.AppendParagraph(par);
 field0.DeleteOption("item1");
@@ -65,21 +65,21 @@ field0.DeleteOption("item1");
 
 必要に応じて、キャプションのラジオ ボタンやその他の設定をカスタマイズします。
 
-## ステップ 4: 結果の PDF を保存する
+## ステップ4: 結果のPDFを保存する
 
-ラジオ ボタンのキャプションの変更が完了したので、結果の PDF を次のコマンドを使用して保存できます。`Save`の方法`Document`クラス。
+ラジオボタンのキャプションの変更が完了したら、結果のPDFを`Save`方法の`Document`クラス。
 
 ```csharp
 PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 ```
 
-生成される PDF の絶対パスとファイル名を必ず指定してください。
+結果の PDF の完全なパスとファイル名を必ず指定してください。
 
-### Aspose.PDF for .NET を使用したラジオ ボタン キャプションの設定のサンプル ソース コード 
+### Aspose.PDF for .NET を使用してラジオ ボタンのキャプションを設定するサンプル ソース コード 
 ```csharp
-//ドキュメントディレクトリへのパス。
+//ドキュメント ディレクトリへのパス。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//ソース PDF フォームをロードする
+//ソースPDFフォームを読み込む
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
 Document PDF_Template_PDF_HTML = new Document(dataDir + "RadioButtonField.pdf");
 foreach (var item in form1.FieldNames)
@@ -96,15 +96,15 @@ foreach (var item in form1.FieldNames)
 		updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
 		updatedFragment.TextState.FontSize = 10;
 		updatedFragment.TextState.LineSpacing = 6.32f;
-		//TextParagraph オブジェクトを作成する
+		//TextParagraphオブジェクトを作成する
 		TextParagraph par = new TextParagraph();
-		//段落位置を設定する
+		//段落の位置を設定する
 		par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
-		//ワードラップモードを指定する
+		//単語の折り返しモードを指定する
 		par.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
-		//新しい TextFragment を段落に追加します
+		//段落に新しい TextFragment を追加する
 		par.AppendLine(updatedFragment);
-		//TextBuilder を使用して TextParagraph を追加する
+		//TextBuilderを使用してTextParagraphを追加する
 		TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
 		textBuilder.AppendParagraph(par);
 		field0.DeleteOption("item1");
@@ -115,26 +115,26 @@ PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 
 ## 結論
 
-このガイドでは、.NET 用の Aspose.PDF ライブラリを使用して、PDF フォームのラジオ ボタンのキャプションを設定する方法を学習しました。説明されている手順に従うことで、ラジオ ボタンのオプションをカスタマイズし、必要に応じてキャプションを変更できます。 PDF ファイルの操作の可能性を広げるために、Aspose.PDF for .NET の機能を自由にさらに探索してください。
+このガイドでは、Aspose.PDF ライブラリ for .NET を使用して PDF フォームのラジオ ボタンのキャプションを設定する方法を学習しました。説明されている手順に従うことで、ラジオ ボタンのオプションをカスタマイズし、必要に応じてキャプションを変更できます。Aspose.PDF for .NET の機能をさらに詳しく調べて、PDF ファイルの操作の可能性を広げてください。
 
 ### よくある質問
 
 #### Q: Aspose.PDF for .NET を使用して PDF フォームのラジオ ボタンのキャプションを設定できますか?
 
-A: はい、Aspose.PDF for .NET を使用して、PDF フォームのラジオ ボタンのキャプションを設定できます。提供されているサンプル ソース コードは、ラジオ ボタン フィールドにアクセスし、カスタム キャプションを持つ新しいラジオ ボタン オプションを作成し、既存のフィールドを更新する方法を示しています。
+A: はい、Aspose.PDF for .NET を使用して PDF フォームのラジオ ボタンのキャプションを設定できます。提供されているサンプル ソース コードは、ラジオ ボタン フィールドにアクセスし、カスタム キャプションを使用して新しいラジオ ボタン オプションを作成し、既存のフィールドを更新する方法を示しています。
 
-#### Q: フォント サイズや色など、ラジオ ボタンのキャプションの外観をカスタマイズするにはどうすればよいですか?
+#### Q: ラジオ ボタンのキャプションの外観 (フォント サイズや色など) をカスタマイズするにはどうすればよいですか?
 
- A: ラジオ ボタンのキャプションの外観をカスタマイズするには、`TextFragment`キャプションに使用されます。たとえば、フォント、フォント サイズ、色、行間隔、その他のテキスト書式設定オプションを設定できます。
+ A: ラジオボタンのキャプションの外観は、プロパティを調整することでカスタマイズできます。`TextFragment`キャプションに使用されます。たとえば、フォント、フォント サイズ、色、行間、その他のテキスト書式設定オプションを設定できます。
 
-#### Q: 異なるキャプションを持つ複数のラジオ ボタン オプションを 1 つのラジオ ボタン グループに追加することはできますか?
+#### Q: 異なるキャプションを持つ複数のラジオ ボタン オプションを 1 つのラジオ ボタン グループに追加することは可能ですか?
 
-A: はい、異なるキャプションを持つ複数のラジオ ボタン オプションを 1 つのラジオ ボタン グループに追加できます。各オプションは異なる選択肢を表し、ユーザーはグループからオプションを 1 つだけ選択できます。
+A: はい、異なるキャプションを持つ複数のラジオ ボタン オプションを 1 つのラジオ ボタン グループに追加できます。各オプションは異なる選択肢を表し、ユーザーはグループから 1 つのオプションのみを選択できます。
 
 #### Q: Aspose.PDF for .NET を使用して PDF ドキュメント内の他のフォーム フィールドを変更できますか?
 
-A: はい。Aspose.PDF for .NET は、テキスト フィールド、チェックボックス、ドロップダウン リストなど、PDF ドキュメント内のさまざまなフォーム フィールドを操作するための包括的な機能セットを提供します。このライブラリを使用すると、値の設定、外観の変更、フォーム フィールドへの対話機能の追加ができます。
+A: はい、Aspose.PDF for .NET は、テキスト フィールド、チェックボックス、ドロップダウン リストなど、PDF ドキュメント内のさまざまなフォーム フィールドを操作するための包括的な機能セットを提供します。ライブラリを使用して、値の設定、外観の変更、フォーム フィールドへのインタラクションの追加を行うことができます。
 
 #### Q: Aspose.PDF for .NET は、スキャンされたドキュメントなど、他のソースから生成された PDF の操作をサポートしていますか?
 
-A: はい、Aspose.PDF for .NET は、スキャンされたドキュメントを含むさまざまなソースから生成された PDF の操作をサポートしています。このライブラリは、スキャンされた PDF からテキストを抽出し、プログラムでコンテンツを操作するための OCR (光学文字認識) 機能を提供します。
+A: はい、Aspose.PDF for .NET は、スキャンされたドキュメントを含むさまざまなソースから生成された PDF の操作をサポートしています。ライブラリは、スキャンされた PDF からテキストを抽出し、そのコンテンツをプログラムで操作するための OCR (光学式文字認識) 機能を提供します。

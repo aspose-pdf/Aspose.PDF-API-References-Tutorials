@@ -76,7 +76,7 @@ doc.Pages.Add();
 Aspose.Pdf.Table tab = new Aspose.Pdf.Table();
 // Nastavte styl ohraničení tabulky
 tab.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Red);
-// Nastavte výchozí styl ohraničení pro tabulku s barvou ohraničení jako červená
+// Nastavit výchozí styl ohraničení pro tabulku s barvou ohraničení jako červená
 tab.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.Pdf.Color.Red);
 // Zadejte šířku sloupců tabulky
 tab.ColumnWidths = "100 100";
@@ -104,13 +104,13 @@ Console.WriteLine("\nPage break inserted successfully.\nFile saved at " + dataDi
 ```
 
 ## Závěr
-V tomto tutoriálu jsme se naučili, jak vložit konec stránky do dokumentu PDF pomocí Aspose.PDF pro .NET. Tento podrobný průvodce můžete použít k přidání konce stránky za určitý počet řádků v tabulce v dokumentu PDF pomocí jazyka C#.
+V tomto tutoriálu jsme se naučili, jak vložit konec stránky do dokumentu PDF pomocí Aspose.PDF pro .NET. Tento podrobný průvodce můžete použít k přidání konce stránky po určitém počtu řádků v tabulce v dokumentu PDF pomocí jazyka C#.
 
 ### Časté dotazy pro vložení konce stránky do souboru PDF
 
 #### Otázka: Jak mohu změnit velikost stránky pro nové stránky vytvořené po přerušení stránky?
 
- A: Chcete-li změnit velikost stránky pro nové stránky vytvořené po zalomení stránky, můžete nastavit`PageSize` vlastnictvím`Page` objekt. Můžete například použít následující kód k nastavení velikosti stránky na A4:
+ A: Chcete-li změnit velikost stránky pro nové stránky vytvořené po zalomení stránky, můžete nastavit`PageSize` majetek z`Page` objekt. Můžete například použít následující kód k nastavení velikosti stránky na A4:
 
 ```csharp
 // Nastavte velikost stránky na A4
@@ -119,7 +119,7 @@ doc.Pages[1].SetPageSize(PageSize.A4);
 
 #### Otázka: Mohu ovládat okraje stránek pro nové stránky po přerušení stránky?
 
- Odpověď: Ano, můžete ovládat okraje stránek pro nové stránky po zalomení stránky. Použijte`Margin` vlastnictvím`Page` objekt pro nastavení okrajů stránky. Chcete-li například nastavit všechny okraje na 10 bodů, můžete použít následující kód:
+ Odpověď: Ano, můžete ovládat okraje stránek pro nové stránky po zalomení stránky. Použijte`Margin` majetek z`Page` objekt pro nastavení okrajů stránky. Chcete-li například nastavit všechny okraje na 10 bodů, můžete použít následující kód:
 
 ```csharp
 // Nastavte všechny okraje na 10 bodů
@@ -152,4 +152,4 @@ doc.Pages[1].Footer = new HeaderFooter()
 
 #### Otázka: Jak mohu upravit chování zalomení stránky na základě výšky obsahu?
 
-A: Můžete použít`IsBroken` vlastnost tabulky pro povolení nebo zakázání automatického zalamování řádků mezi stránkami. Při nastavení na`true`umožňuje rozdělit řádky na stránky na základě výšky obsahu.
+ A: Můžete použít`IsBroken` vlastnost tabulky pro povolení nebo zakázání automatického zalamování řádků mezi stránkami. Při nastavení na`true`umožňuje rozdělit řádky na stránky na základě výšky obsahu.

@@ -29,7 +29,7 @@ Först måste vi ladda PDF-dokumentet som innehåller sidan från vilken vi vill
 Document pdfDocument = new Document("sample.pdf");
 ```
 
- Byta ut`"sample.pdf"` med sökvägen till din PDF-fil.
+ Ersätta`"sample.pdf"` med sökvägen till din PDF-fil.
 
 ## Steg 2: Definiera sidregionen
 
@@ -62,7 +62,7 @@ Slutligen, låt oss spara det fångade området som en bildfil. Du kan välja me
 ImageIO.write(image, "PNG", new File("captured_region.png"));
 ```
 
-Och det är allt! Du har framgångsrikt konverterat en viss sidregion till en bild i en PDF med Java och Aspose.PDF för Java.
+Och det är det! Du har framgångsrikt konverterat en viss sidregion till en bild i en PDF med Java och Aspose.PDF för Java.
 
 ## Slutsats
 

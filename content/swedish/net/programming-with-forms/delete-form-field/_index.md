@@ -68,7 +68,7 @@ I den här handledningen lärde vi oss hur man tar bort ett formulärfält med A
 
 #### F: Hur kan jag kontrollera om ett formulärfält finns innan jag försöker ta bort det?
 
- S: Du kan kontrollera om ett formulärfält finns innan du försöker ta bort det genom att använda`Contains` metod för`Form` fast egendom. Till exempel:
+ S: Du kan kontrollera om ett formulärfält finns innan du försöker ta bort det genom att använda`Contains` metod för`Form` egendom. Till exempel:
 
 ```csharp
 if (pdfDocument.Form.Contains("textbox1"))

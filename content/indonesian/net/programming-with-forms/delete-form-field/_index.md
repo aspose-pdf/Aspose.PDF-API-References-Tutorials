@@ -1,8 +1,8 @@
 ---
 title: Hapus Bidang Formulir Dalam Dokumen PDF
 linktitle: Hapus Bidang Formulir Dalam Dokumen PDF
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Hapus kolom formulir yang tidak diinginkan dengan mudah di dokumen PDF menggunakan Aspose.PDF untuk .NET.
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Hapus dengan mudah kolom formulir yang tidak diinginkan dalam dokumen PDF menggunakan Aspose.PDF untuk .NET.
 type: docs
 weight: 50
 url: /id/net/programming-with-forms/delete-form-field/
@@ -11,7 +11,7 @@ Dalam tutorial ini, kami akan menunjukkan cara menghapus kolom formulir mengguna
 
 ## Langkah 1: Persiapan
 
-Pertama, pastikan Anda telah mengimpor perpustakaan yang diperlukan dan mengatur jalur ke direktori dokumen:
+Pertama, pastikan Anda telah mengimpor pustaka yang diperlukan dan mengatur jalur ke direktori dokumen:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -60,15 +60,15 @@ Console.WriteLine("\nParticular field deleted successfully.\nFile saved at " + d
 
 Dalam tutorial ini, kita mempelajari cara menghapus kolom formulir menggunakan Aspose.PDF untuk .NET. Dengan mengikuti langkah-langkah ini, Anda dapat dengan mudah menghapus kolom formulir yang tidak diinginkan dari dokumen PDF Anda menggunakan Aspose.PDF.
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
-#### T: Bisakah saya menghapus beberapa kolom formulir sekaligus menggunakan Aspose.PDF untuk .NET?
+#### T: Dapatkah saya menghapus beberapa bidang formulir sekaligus menggunakan Aspose.PDF untuk .NET?
 
- J: Ya, Anda dapat menghapus beberapa kolom formulir sekaligus menggunakan Aspose.PDF untuk .NET. Cukup hubungi`Delete` metode untuk setiap bidang formulir yang ingin Anda hapus.
+ A: Ya, Anda dapat menghapus beberapa kolom formulir sekaligus menggunakan Aspose.PDF untuk .NET. Cukup panggil`Delete` metode untuk setiap bidang formulir yang ingin Anda hapus.
 
-#### T: Bagaimana cara memeriksa apakah ada bidang formulir sebelum mencoba menghapusnya?
+#### T: Bagaimana saya dapat memeriksa apakah kolom formulir ada sebelum mencoba menghapusnya?
 
- J: Anda dapat memeriksa apakah ada bidang formulir sebelum mencoba menghapusnya dengan menggunakan`Contains` metode`Form` Properti. Misalnya:
+ A: Anda dapat memeriksa apakah bidang formulir ada sebelum mencoba menghapusnya dengan menggunakan`Contains` metode dari`Form` properti. Misalnya:
 
 ```csharp
 if (pdfDocument.Form.Contains("textbox1"))
@@ -77,14 +77,14 @@ if (pdfDocument.Form.Contains("textbox1"))
 }
 ```
 
-#### T: Apa yang terjadi jika saya mencoba menghapus kolom formulir yang tidak ada di dokumen PDF?
+#### T: Apa yang terjadi jika saya mencoba menghapus kolom formulir yang tidak ada dalam dokumen PDF?
 
- J: Jika Anda mencoba menghapus kolom formulir yang tidak ada di dokumen PDF,`Delete` metode tidak akan menimbulkan kesalahan atau pengecualian. Itu tidak akan melakukan apa pun, karena tidak ada bidang yang perlu dihapus.
+ A: Jika Anda mencoba menghapus bidang formulir yang tidak ada dalam dokumen PDF,`Delete` Metode ini tidak akan memunculkan kesalahan atau pengecualian. Metode ini tidak akan melakukan apa pun, karena tidak ada kolom yang akan dihapus.
 
-#### T: Dapatkah saya menghapus berbagai jenis bidang formulir, seperti bidang teks, kotak centang, dan tombol radio?
+#### T: Dapatkah saya menghapus kolom formulir dengan tipe berbeda, seperti kolom teks, kotak centang, dan tombol radio?
 
- J: Ya, Anda dapat menghapus berbagai jenis bidang formulir, seperti bidang teks, kotak centang, dan tombol radio, menggunakan cara yang sama`Delete` metode di Aspose.PDF untuk .NET. Cukup berikan nama bidang yang ingin Anda hapus sebagai parameter ke metode tersebut.
+ A: Ya, Anda dapat menghapus bidang formulir dari berbagai jenis, seperti bidang teks, kotak centang, dan tombol radio, menggunakan metode yang sama.`Delete` metode di Aspose.PDF untuk .NET. Cukup berikan nama kolom yang ingin Anda hapus sebagai parameter ke metode tersebut.
 
-#### T: Apakah mungkin untuk membatalkan penghapusan kolom formulir di dokumen PDF?
+#### T: Apakah mungkin untuk membatalkan penghapusan kolom formulir dalam dokumen PDF?
 
-J: Tidak, setelah kolom formulir dihapus menggunakan Aspose.PDF untuk .NET, kolom tersebut tidak dapat dibatalkan secara terprogram. Disarankan untuk membuat cadangan dokumen PDF sebelum melakukan perubahan apa pun, sehingga Anda dapat kembali ke dokumen asli jika diperlukan.
+J: Tidak, setelah kolom formulir dihapus menggunakan Aspose.PDF for .NET, tindakan tersebut tidak dapat dibatalkan secara terprogram. Sebaiknya buat cadangan dokumen PDF sebelum melakukan perubahan apa pun, sehingga Anda dapat kembali ke dokumen asli jika diperlukan.

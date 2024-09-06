@@ -66,7 +66,7 @@ Igényeinek megfelelően testreszabhatja a könyvjelző megjelenését és visel
 
 ## A PDF dokumentum mentése
 
-Miután tartalmat és könyvjelzőket adott a PDF-dokumentumhoz, elmentheti azt fájlba vagy adatfolyamba. A következőképpen mentheti fájlba:
+Miután tartalmat és könyvjelzőket adott a PDF-dokumentumhoz, elmentheti azt fájlba vagy adatfolyamba. Így mentheti fájlba:
 
 ```java
 // Mentse el a PDF dokumentumot fájlba

@@ -22,7 +22,7 @@ using System.Security.Cryptography.X509Certificates;
 
 ## Krok 2: Nastavte cestu ke složce dokumentů
 
- V tomto kroku musíte zadat cestu ke složce obsahující soubor PDF, který chcete podepsat. Nahradit`"YOUR DOCUMENTS DIRECTORY"` následujícím kódu se skutečnou cestou ke složce dokumentů:
+ V tomto kroku musíte zadat cestu ke složce obsahující soubor PDF, který chcete podepsat. Nahradit`"YOUR DOCUMENTS DIRECTORY"` v následujícím kódu se skutečnou cestou ke složce dokumentů:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";

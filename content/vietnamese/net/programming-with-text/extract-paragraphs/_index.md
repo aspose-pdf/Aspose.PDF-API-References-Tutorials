@@ -1,26 +1,26 @@
 ---
 title: Trích xuất đoạn văn trong tệp PDF
 linktitle: Trích xuất đoạn văn trong tệp PDF
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Tìm hiểu cách trích xuất các đoạn trong tệp PDF bằng Aspose.PDF cho .NET.
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Tìm hiểu cách trích xuất đoạn văn trong tệp PDF bằng Aspose.PDF cho .NET.
 type: docs
 weight: 160
 url: /vi/net/programming-with-text/extract-paragraphs/
 ---
-Hướng dẫn này sẽ hướng dẫn bạn quy trình trích xuất các đoạn văn trong tệp PDF bằng Aspose.PDF cho .NET. Mã nguồn C# được cung cấp thể hiện các bước cần thiết.
+Hướng dẫn này sẽ hướng dẫn bạn quy trình trích xuất đoạn văn trong tệp PDF bằng Aspose.PDF cho .NET. Mã nguồn C# được cung cấp sẽ trình bày các bước cần thiết.
 
 ## Yêu cầu
-Trước khi bắt đầu, hãy đảm bảo rằng bạn có những điều sau:
+Trước khi bắt đầu, hãy đảm bảo bạn có những điều sau:
 
 - Visual Studio hoặc bất kỳ trình biên dịch C# nào khác được cài đặt trên máy của bạn.
-- Aspose.PDF cho thư viện .NET. Bạn có thể tải xuống từ trang web chính thức của Aspose hoặc sử dụng trình quản lý gói như NuGet để cài đặt nó.
+- Aspose.PDF cho thư viện .NET. Bạn có thể tải xuống từ trang web chính thức của Aspose hoặc sử dụng trình quản lý gói như NuGet để cài đặt.
 
 ## Bước 1: Thiết lập dự án
-1. Tạo một dự án C# mới trong môi trường phát triển ưa thích của bạn.
-2. Thêm tham chiếu đến thư viện Aspose.PDF for .NET.
+1. Tạo một dự án C# mới trong môi trường phát triển mà bạn thích.
+2. Thêm tham chiếu đến thư viện Aspose.PDF cho .NET.
 
-## Bước 2: Nhập các không gian tên bắt buộc
-Trong tệp mã nơi bạn muốn trích xuất các đoạn văn, hãy thêm các lệnh sử dụng sau vào đầu tệp:
+## Bước 2: Nhập các không gian tên cần thiết
+Trong tệp mã mà bạn muốn trích xuất đoạn văn, hãy thêm lệnh using sau vào đầu tệp:
 
 ```csharp
 using Aspose.Pdf;
@@ -29,25 +29,25 @@ using System.Text;
 ```
 
 ## Bước 3: Thiết lập thư mục tài liệu
- Trong mã, xác định dòng có nội dung`string dataDir = "YOUR DOCUMENT DIRECTORY";` và thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn đến thư mục nơi tài liệu của bạn được lưu trữ.
+ Trong mã, hãy xác định vị trí dòng ghi`string dataDir = "YOUR DOCUMENT DIRECTORY";` và thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn đến thư mục lưu trữ tài liệu của bạn.
 
 ## Bước 4: Mở tài liệu PDF
- Mở tài liệu PDF hiện có bằng cách sử dụng`Document`constructor và chuyển đường dẫn đến tệp PDF đầu vào.
+ Mở một tài liệu PDF hiện có bằng cách sử dụng`Document` hàm tạo và truyền đường dẫn đến tệp PDF đầu vào.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
 ## Bước 5: Trích xuất đoạn văn
- Khởi tạo`ParagraphAbsorber` lớp và sử dụng nó`Visit` phương pháp trích xuất các đoạn văn từ tài liệu.
+ Khởi tạo`ParagraphAbsorber` lớp và sử dụng nó`Visit` phương pháp trích xuất đoạn văn từ tài liệu.
 
 ```csharp
 ParagraphAbsorber absorb = new ParagraphAbsorber();
 absorb.Visit(doc);
 ```
 
-## Bước 6: Lặp lại các đoạn văn
-Lặp lại các đoạn văn được trích xuất để truy cập nội dung văn bản. Sử dụng các vòng lặp lồng nhau để duyệt qua các phần và dòng trong mỗi đoạn.
+## Bước 6: Lặp lại qua các đoạn văn
+Lặp qua các đoạn văn đã trích xuất để truy cập nội dung văn bản. Sử dụng các vòng lặp lồng nhau để duyệt qua các phần và dòng trong mỗi đoạn văn.
 
 ```csharp
 foreach(PageMarkup markup in absorber.PageMarkups)
@@ -77,13 +77,13 @@ foreach(PageMarkup markup in absorber.PageMarkups)
 }
 ```
 
-### Mã nguồn mẫu cho Trích xuất đoạn văn bằng Aspose.PDF for .NET 
+### Mã nguồn mẫu để trích xuất đoạn văn bằng Aspose.PDF cho .NET 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//Mở tệp PDF hiện có
+// Mở một tệp PDF hiện có
 Document doc = new Document(dataDir + "input.pdf");
-// Khởi tạo trình hấp thụ đoạn văn
+// Khởi tạo ParagraphAbsorber
 ParagraphAbsorber absorber = new ParagraphAbsorber();
 absorber.Visit(doc);
 foreach (PageMarkup markup in absorber.PageMarkups)
@@ -114,17 +114,17 @@ foreach (PageMarkup markup in absorber.PageMarkups)
 ```
 
 ## Phần kết luận
-Bạn đã trích xuất thành công các đoạn văn từ tài liệu PDF bằng Aspose.PDF for .NET. Các đoạn trích xuất đã được hiển thị trong cửa sổ bảng điều khiển.
+Bạn đã trích xuất thành công các đoạn văn từ tài liệu PDF bằng Aspose.PDF cho .NET. Các đoạn văn đã trích xuất đã được hiển thị trong cửa sổ bảng điều khiển.
 
 ### Câu hỏi thường gặp
 
-#### Hỏi: Mục đích của hướng dẫn này là gì?
+#### H: Mục đích của hướng dẫn này là gì?
 
-Đáp: Hướng dẫn này nhằm mục đích hướng dẫn bạn quy trình trích xuất các đoạn văn từ tệp PDF bằng Aspose.PDF cho .NET. Mã nguồn C# đi kèm cung cấp các bước thực tế để đạt được nhiệm vụ này.
+A: Hướng dẫn này nhằm mục đích hướng dẫn bạn thực hiện quy trình trích xuất đoạn văn từ tệp PDF bằng Aspose.PDF cho .NET. Mã nguồn C# đi kèm cung cấp các bước thực tế để thực hiện nhiệm vụ này.
 
-#### Câu hỏi: Tôi nên nhập những không gian tên nào?
+#### H: Tôi nên nhập những không gian tên nào?
 
-Đáp: Trong tệp mã nơi bạn định trích xuất các đoạn văn, hãy bao gồm các lệnh sử dụng sau ở đầu tệp:
+A: Trong tệp mã mà bạn định trích xuất đoạn văn, hãy bao gồm lệnh using sau vào đầu tệp:
 
 ```csharp
 using Aspose.Pdf;
@@ -132,22 +132,22 @@ using System;
 using System.Text;
 ```
 
-#### Câu hỏi: Làm cách nào để chỉ định thư mục tài liệu?
+#### H: Làm thế nào để chỉ định thư mục tài liệu?
 
- A: Xác định vị trí dòng`string dataDir = "YOUR DOCUMENT DIRECTORY";` trong mã và thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế đến thư mục tài liệu của bạn.
+ A: Xác định vị trí đường thẳng`string dataDir = "YOUR DOCUMENT DIRECTORY";` trong mã và thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế đến thư mục tài liệu của bạn.
 
-#### Hỏi: Làm cách nào để mở tài liệu PDF hiện có?
+#### H: Làm thế nào để mở một tài liệu PDF hiện có?
 
- Đáp: Ở Bước 4, bạn sẽ mở tài liệu PDF hiện có bằng cách sử dụng`Document` constructor và cung cấp đường dẫn đến tệp PDF đầu vào.
+ A: Ở Bước 4, bạn sẽ mở một tài liệu PDF hiện có bằng cách sử dụng`Document` hàm tạo và cung cấp đường dẫn đến tệp PDF đầu vào.
 
-#### Hỏi: Làm cách nào để trích xuất các đoạn văn từ tài liệu?
+#### H: Làm thế nào để trích xuất đoạn văn từ tài liệu?
 
- Đáp: Bước 5 liên quan đến việc tạo một phiên bản của`ParagraphAbsorber` lớp và sử dụng nó`Visit` phương pháp trích xuất các đoạn văn từ tài liệu PDF.
+ A: Bước 5 bao gồm việc tạo một phiên bản của`ParagraphAbsorber` lớp và sử dụng nó`Visit` phương pháp trích xuất đoạn văn từ tài liệu PDF.
 
-#### Hỏi: Làm cách nào để lặp lại các đoạn văn được trích xuất?
+#### H: Làm thế nào để lặp lại các đoạn văn đã trích xuất?
 
-Đáp: Bước 6 hướng dẫn bạn lặp lại các đoạn văn được trích xuất. Các vòng lặp lồng nhau được sử dụng để duyệt qua các phần và dòng trong mỗi đoạn văn, cuối cùng là truy cập và hiển thị nội dung văn bản.
+A: Bước 6 hướng dẫn bạn cách lặp qua các đoạn văn đã trích xuất. Các vòng lặp lồng nhau được sử dụng để duyệt qua các phần và dòng trong mỗi đoạn văn, cuối cùng là truy cập và hiển thị nội dung văn bản.
 
-#### Hỏi: Điểm mấu chốt rút ra từ hướng dẫn này là gì?
+#### H: Điểm chính cần lưu ý trong hướng dẫn này là gì?
 
-Đáp: Bằng cách làm theo hướng dẫn này, bạn đã học cách trích xuất các đoạn văn từ tài liệu PDF bằng Aspose.PDF cho .NET. Các đoạn được trích xuất đã được hiển thị trong cửa sổ bảng điều khiển, cung cấp cho bạn cái nhìn sâu sắc có giá trị về cấu trúc nội dung của tài liệu.
+A: Bằng cách làm theo hướng dẫn này, bạn đã học cách trích xuất các đoạn văn từ tài liệu PDF bằng Aspose.PDF cho .NET. Các đoạn văn được trích xuất đã được hiển thị trong cửa sổ bảng điều khiển, cung cấp cho bạn thông tin chi tiết có giá trị về cấu trúc nội dung của tài liệu.

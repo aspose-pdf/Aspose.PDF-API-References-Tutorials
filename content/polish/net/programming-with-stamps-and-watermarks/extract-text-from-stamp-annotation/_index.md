@@ -1,24 +1,24 @@
 ---
-title: Wyodrębnij tekst z adnotacji na znaczku
-linktitle: Wyodrębnij tekst z adnotacji na znaczku
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak łatwo wyodrębnić tekst z adnotacji na znaczku w dokumentach PDF za pomocą Aspose.PDF dla .NET.
+title: Wyodrębnij tekst z adnotacji stempla
+linktitle: Wyodrębnij tekst z adnotacji stempla
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak łatwo wyodrębnić tekst z adnotacji stempla w dokumentach PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 80
 url: /pl/net/programming-with-stamps-and-watermarks/extract-text-from-stamp-annotation/
 ---
-W tym samouczku przeprowadzimy Cię krok po kroku, jak wyodrębnić tekst z adnotacji na znaczku w dokumencie PDF za pomocą Aspose.PDF dla .NET. Pokażemy Ci, jak wykorzystać dostarczony kod źródłowy C# do wyodrębnienia tekstu z konkretnej adnotacji stempla na danej stronie dokumentu PDF.
+W tym samouczku pokażemy Ci krok po kroku, jak wyodrębnić tekst z adnotacji stempla w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Pokażemy Ci, jak użyć dostarczonego kodu źródłowego C#, aby wyodrębnić tekst z określonej adnotacji stempla na danej stronie dokumentu PDF.
 
 ## Krok 1: Konfigurowanie środowiska
 
-Zanim zaczniesz, upewnij się, że masz następujące elementy:
+Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
 
 - Zainstalowane środowisko programistyczne .NET.
-- Biblioteka Aspose.PDF dla platformy .NET pobrana i przywołana w Twoim projekcie.
+- Biblioteka Aspose.PDF dla platformy .NET pobrana i wykorzystana w projekcie.
 
 ## Krok 2: Ładowanie dokumentu PDF
 
-Pierwszym krokiem jest załadowanie istniejącego dokumentu PDF do projektu. Oto jak:
+Pierwszym krokiem jest załadowanie istniejącego dokumentu PDF do projektu. Oto jak to zrobić:
 
 ```csharp
 // Ścieżka do katalogu dokumentów.
@@ -28,17 +28,17 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document doc = new Document(dataDir + "test.pdf");
 ```
 
-Pamiętaj, aby zastąpić „KATALOG TWOICH DOKUMENTÓW” rzeczywistą ścieżką do katalogu, w którym znajduje się dokument PDF.
+Pamiętaj, aby zastąpić frazę „KATALOG DOKUMENTÓW” rzeczywistą ścieżką do katalogu, w którym znajduje się Twój dokument PDF.
 
-## Krok 3: Wyodrębnij tekst z adnotacji na znaczku
+## Krok 3: Wyodrębnij tekst z adnotacji znaczka
 
-Po załadowaniu dokumentu PDF możesz wyodrębnić tekst z konkretnej adnotacji na znaczku. Oto jak:
+Teraz, gdy załadowałeś dokument PDF, możesz wyodrębnić tekst z konkretnej adnotacji znaczka. Oto jak to zrobić:
 
 ```csharp
 // Pobierz adnotację bufora
 StampAnnotation annot = doc.Pages[1].Annotations[3] as StampAnnotation;
 
-// Utwórz pochłaniacz tekstu
+// Utwórz absorber tekstu
 TextAbsorber ta = new TextAbsorber();
 
 // Odwiedź wygląd adnotacji
@@ -49,9 +49,9 @@ ta.Visit(ap);
 Console.WriteLine(ta.Text);
 ```
 
-Powyższy kod pobiera adnotację stempla z określonej strony dokumentu PDF, a następnie wykorzystuje pochłaniacz tekstu do wyodrębnienia tekstu z wyglądu adnotacji. Wyodrębniony tekst jest następnie wyświetlany na wyjściu.
+Powyższy kod pobiera adnotację znaczka ze wskazanej strony dokumentu PDF, a następnie używa absorbera tekstu, aby wyodrębnić tekst z wyglądu adnotacji. Wyodrębniony tekst jest następnie wyświetlany w wyjściu.
 
-### Przykładowy kod źródłowy dla wyodrębnienia tekstu z adnotacji stempla przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Extract Text From Stamp Annotation przy użyciu Aspose.PDF dla platformy .NET 
 ```csharp
 
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -66,42 +66,42 @@ Console.WriteLine(ta.Text);
 
 ## Wniosek
 
-Gratulacje! Nauczyłeś się, jak wyodrębnić tekst z adnotacji na znaczku w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Możesz teraz użyć tej metody do wyodrębnienia tekstu z innych adnotacji w dokumentach PDF.
+Gratulacje! Nauczyłeś się, jak wyodrębnić tekst z adnotacji stempla w dokumencie PDF za pomocą Aspose.PDF dla .NET. Teraz możesz użyć tej metody, aby wyodrębnić tekst z innych adnotacji w dokumentach PDF.
 
-### Często zadawane pytania dotyczące wyodrębniania tekstu z adnotacji na znaczku
+### FAQ dotyczące wyodrębniania tekstu z adnotacji na znaczku
 
-#### P: Co to jest adnotacja stempla w dokumencie PDF i dlaczego muszę wyodrębniać z niego tekst?
+#### P: Czym jest adnotacja w formie stempla w dokumencie PDF i dlaczego muszę wyodrębnić z niej tekst?
 
-Odp.: Adnotacja stemplowa w dokumencie PDF to element graficzny, który można wykorzystać do dostarczenia dodatkowych informacji, takich jak znak wodny lub pieczątka. Wyodrębnianie tekstu z adnotacji na znaczku jest przydatne, gdy chcesz odzyskać z tych adnotacji treść tekstową, która może obejmować notatki, etykiety lub inne informacje tekstowe.
+A: Adnotacja stempla w dokumencie PDF to element graficzny, który można wykorzystać do dostarczenia dodatkowych informacji, takich jak znak wodny lub pieczątka. Wyodrębnianie tekstu z adnotacji stempla jest przydatne, gdy chcesz pobrać tekstową treść z tych adnotacji, która może obejmować notatki, etykiety lub inne informacje tekstowe.
 
-#### P: W jaki sposób dostarczony kod źródłowy C# wyodrębnia tekst z adnotacji na stemplu?
+#### P: W jaki sposób dostarczony kod źródłowy C# wyodrębnia tekst z adnotacji stempla?
 
- O: Dostarczony kod źródłowy pokazuje, jak wyodrębnić tekst z konkretnej adnotacji na znaczku na danej stronie dokumentu PDF. Korzysta z biblioteki Aspose.PDF, aby pobrać adnotację na znaczku, sprawdzić jej wygląd za pomocą`TextAbsorber`, a następnie wyświetla wyodrębniony tekst w wynikach.
+ A: Dostarczony kod źródłowy pokazuje, jak wyodrębnić tekst z konkretnej adnotacji znaczka na danej stronie dokumentu PDF. Używa biblioteki Aspose.PDF do pobrania adnotacji znaczka, odwiedzając jej wygląd za pomocą`TextAbsorber`, a następnie wyświetla wyodrębniony tekst w wynikach.
 
 #### P: Czy mogę wyodrębnić tekst z różnych typów adnotacji, stosując podobne podejście?
 
-O: Tak, możesz zastosować podobne podejście do wyodrębnienia tekstu z innych typów adnotacji, takich jak adnotacje tekstowe lub adnotacje w wyskakujących okienkach. Konieczne byłoby zmodyfikowanie kodu, aby był ukierunkowany na konkretny typ adnotacji, z którego chcesz wyodrębnić tekst.
+A: Tak, możesz użyć podobnego podejścia, aby wyodrębnić tekst z innych typów adnotacji, takich jak adnotacje tekstowe lub adnotacje popup. Musiałbyś zmodyfikować kod, aby ukierunkować go na konkretny typ adnotacji, z której chcesz wyodrębnić tekst.
 
 ####  P: Jaki jest cel`TextAbsorber` class in the code?
 
- O:`TextAbsorber` klasa służy do wyodrębniania tekstu z różnych części dokumentu PDF, w tym adnotacji na stemplach. „Pochłania” lub przechwytuje treść tekstową znalezioną w określonym obszarze lub elemencie pliku PDF.
+ A: Ten`TextAbsorber` Klasa służy do wyodrębniania tekstu z różnych części dokumentu PDF, w tym adnotacji stempli. „Absorbuje” lub przechwytuje zawartość tekstową znalezioną w określonym obszarze lub elemencie pliku PDF.
 
-#### P: Jak zidentyfikować konkretną adnotację na stemplu, z której chcę wyodrębnić tekst?
+#### P: Jak mogę zidentyfikować konkretną adnotację na znaczku, z której chcę wyodrębnić tekst?
 
- Odp.: W dostarczonym kodzie adnotację na znaczku można zidentyfikować, uzyskując dostęp do`Annotations` pobranie określonej strony i wykorzystanie indeksu do pobrania żądanej adnotacji. Możesz dostosować indeks lub użyć innych kryteriów, aby zidentyfikować adnotację docelową.
+ A: W podanym kodzie adnotację znaczka można zidentyfikować, uzyskując dostęp do`Annotations` zbiór określonej strony i użycie indeksu do pobrania pożądanej adnotacji. Możesz dostosować indeks lub użyć innych kryteriów, aby zidentyfikować docelową adnotację.
 
-#### P: Czy mogę wyodrębnić tekst z wielu adnotacji na znaczku na tej samej stronie?
+#### P: Czy mogę wyodrębnić tekst z wielu adnotacji na tej samej stronie?
 
- Odp.: Tak, możesz zmodyfikować kod, aby przechodził przez`Annotations`zbiór strony, odfiltruj adnotacje na znaczkach i wyodrębnij tekst z każdego z nich.
+ A: Tak, możesz zmodyfikować kod, aby przechodził przez pętlę`Annotations`zbiór stron, filtrowanie adnotacji znaczków i wyodrębnianie tekstu z każdej z nich.
 
-#### P: Co się stanie, jeśli adnotacja na stemplu nie zawiera treści tekstowej? Czy kod będzie nadal działać?
+#### P: Co jeśli adnotacja znaczka nie ma treści tekstowej? Czy kod nadal będzie działał?
 
-O: Kod będzie nadal działał, ale wyodrębni i wyświetli pusty ciąg znaków, jeśli wygląd adnotacji na stemplu nie będzie zawierał żadnej treści tekstowej.
+A: Kod nadal będzie działał, ale wyodrębni i wyświetli pusty ciąg znaków, jeśli adnotacja na znaczku nie będzie zawierała żadnej zawartości tekstowej.
 
-#### P: Jak mogę zapisać wyodrębniony tekst do pliku zamiast wyświetlać go na wyjściu?
+#### P: W jaki sposób mogę zapisać wyodrębniony tekst do pliku zamiast wyświetlać go w danych wyjściowych?
 
- Odp.: Możesz zmodyfikować kod, aby zapisać wyodrębniony tekst w pliku zamiast wyświetlać go w konsoli. Po prostu wymień`Console.WriteLine` instrukcja z kodem zapisującym tekst do pliku.
+ A: Możesz zmodyfikować kod, aby zapisać wyodrębniony tekst do pliku zamiast wyświetlać go w konsoli. Po prostu zamień`Console.WriteLine` polecenie z kodem zapisującym tekst do pliku.
 
-#### P: Jak mogę wykorzystać wyodrębniony tekst do dalszego przetwarzania lub analizy?
+#### P: W jaki sposób mogę wykorzystać wyodrębniony tekst w dalszym przetwarzaniu lub analizie?
 
-O: Po wyodrębnieniu tekstu za pomocą podanej metody można go zapisać w zmiennej, manipulować nim, analizować lub zintegrować z innymi częściami aplikacji, jeśli zajdzie taka potrzeba.
+O: Po wyodrębnieniu tekstu za pomocą podanej metody możesz zapisać go w zmiennej, manipulować nim, analizować go lub zintegrować z innymi częściami aplikacji, zależnie od potrzeb.

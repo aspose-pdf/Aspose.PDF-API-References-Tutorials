@@ -48,7 +48,7 @@ Document pdfDocument = new Document(dataDir + "SearchAndGetTextPage.pdf");
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("Figure");
 ```
 
- Byta ut`"Figure"` med den faktiska texten du vill söka efter.
+ Ersätta`"Figure"` med den faktiska texten du vill söka efter.
 
 ## Steg 5: Sök på en specifik sida
 

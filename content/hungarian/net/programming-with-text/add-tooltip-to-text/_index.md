@@ -32,7 +32,7 @@ using Aspose.Pdf.Text;
  A kódban keresse meg azt a sort, amely ezt mondja`string dataDir = "YOUR DOCUMENT DIRECTORY";` és cserélje ki`"YOUR DOCUMENT DIRECTORY"` annak a könyvtárnak az elérési útjával, ahol a dokumentumokat tárolják.
 
 ## 4. lépés: Hozzon létre egy mintadokumentumot szöveggel
- Újat csinálni`Document` objektumot, és adjon hozzá oldalakat szövegtöredékekkel. A megadott kódban két szövegrészletet adunk a dokumentumhoz a megfelelő eszköztipp szöveggel.
+ Hozzon létre egy újat`Document` objektumot, és adjon hozzá oldalakat szövegtöredékekkel. A megadott kódban két szövegrészletet adunk a dokumentumhoz a megfelelő eszköztipp szöveggel.
 
 ```csharp
 Document doc = new Document();
@@ -80,7 +80,7 @@ foreach(TextFragment fragment in textFragments)
 ```
 
 ## 8. lépés: Mentse el a módosított dokumentumot
- Mentse el a módosított PDF dokumentumot a`Save` módszere a`Document` tárgy.
+ Mentse el a módosított PDF dokumentumot a`Save` módszere a`Document` objektum.
 
 ```csharp
 document. Save(outputFile);
@@ -100,7 +100,7 @@ doc.Save(outputFile);
 Document document = new Document(outputFile);
 // Hozzon létre TextAbsorber objektumot a reguláris kifejezésnek megfelelő kifejezések megtalálásához
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
-// Fogadja el az elnyelőt a dokumentumoldalakhoz
+// Fogadja el a dokumentumoldalak elnyelőjét
 document.Pages.Accept(absorber);
 // Szerezze be a kivont szövegrészleteket
 TextFragmentCollection textFragments = absorber.TextFragments;
@@ -177,7 +177,7 @@ V: Hosszú elemleírású szövegtöredékek esetén ismételje meg az 5. és 6.
 
 #### K: Hogyan menthetem el a módosított dokumentumot?
 
- V: A 8. lépésben a módosított PDF-dokumentumot a`Save` módszere a`Document` tárgy.
+ V: A 8. lépésben a módosított PDF-dokumentumot a`Save` módszere a`Document` objektum.
 
 #### K: Mi a fő kivonat ebből az oktatóanyagból?
 

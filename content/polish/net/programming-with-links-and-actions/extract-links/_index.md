@@ -1,17 +1,17 @@
 ---
 title: Wyodrębnij linki w pliku PDF
 linktitle: Wyodrębnij linki w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Z łatwością wyodrębnij linki z pliku PDF za pomocą Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Łatwe wyodrębnianie linków z pliku PDF przy użyciu Aspose.PDF dla platformy .NET.
 type: docs
 weight: 50
 url: /pl/net/programming-with-links-and-actions/extract-links/
 ---
-Wyodrębnianie łączy z pliku PDF umożliwia odzyskanie wszystkich łączy hipertekstowych znajdujących się w dokumencie. Dzięki Aspose.PDF dla .NET możesz łatwo wyodrębnić te linki, postępując zgodnie z następującym kodem źródłowym:
+Wyodrębnianie linków w pliku PDF pozwala odzyskać wszystkie hiperłącza obecne w dokumencie. Dzięki Aspose.PDF dla .NET możesz łatwo wyodrębnić te linki, postępując zgodnie z następującym kodem źródłowym:
 
-## Krok 1: Zaimportuj wymagane biblioteki
+## Krok 1: Importuj wymagane biblioteki
 
-Zanim zaczniesz, musisz zaimportować niezbędne biblioteki dla swojego projektu C#. Oto niezbędna dyrektywa importowa:
+Zanim zaczniesz, musisz zaimportować niezbędne biblioteki dla swojego projektu C#. Oto niezbędna dyrektywa importu:
 
 ```csharp
 using Aspose.Pdf;
@@ -20,7 +20,7 @@ using Aspose.Pdf.Annotations;
 
 ## Krok 2: Ustaw ścieżkę do folderu dokumentów
 
- W tym kroku musisz określić ścieżkę do folderu zawierającego plik PDF, z którego chcesz wyodrębnić linki. Zastępować`"YOUR DOCUMENT DIRECTORY"` następującym kodzie z rzeczywistą ścieżką do folderu dokumentów:
+ W tym kroku musisz określić ścieżkę do folderu zawierającego plik PDF, z którego chcesz wyodrębnić linki. Zastąp`"YOUR DOCUMENT DIRECTORY"` w poniższym kodzie podaj rzeczywistą ścieżkę do folderu z dokumentami:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -28,7 +28,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 3: Otwórz dokument PDF
 
-Otworzymy dokument PDF za pomocą`Document` klasa. Oto odpowiedni kod:
+ Otworzymy dokument PDF za pomocą`Document` klasa. Oto odpowiedni kod:
 
 ```csharp
 Document document = new Document(dataDir + "ExtractLinks.pdf");
@@ -36,7 +36,7 @@ Document document = new Document(dataDir + "ExtractLinks.pdf");
 
 ## Krok 4: Wyodrębnij linki
 
- W tym kroku wyodrębnimy łącza obecne w dokumencie PDF za pomocą`AnnotationSelector` klasa. Oto odpowiedni kod:
+ W tym kroku wyodrębnimy łącza znajdujące się w dokumencie PDF za pomocą`AnnotationSelector` klasa. Oto odpowiedni kod:
 
 ```csharp
 Page page = document.Pages[1];
@@ -48,20 +48,20 @@ Annotation annotation = (Annotation)list[0];
 
 ## Krok 5: Zapisz zaktualizowany dokument
 
- Teraz zapiszmy zaktualizowany plik PDF za pomocą rozszerzenia`Save` metoda`document` obiekt. Oto odpowiedni kod:
+Teraz zapiszmy zaktualizowany plik PDF za pomocą`Save` metoda`document` obiekt. Oto odpowiadający kod:
 
 ```csharp
 dataDir = dataDir + "ExtractLinks_out.pdf";
 document. Save(dataDir);
 ```
 
-### Przykładowy kod źródłowy dla ekstraktu linków przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy do wyodrębniania linków przy użyciu Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Otwórz dokument
 Document document = new Document(dataDir+ "ExtractLinks.pdf");
-// Wyodrębnij działania
+// Wyodrębnij akcje
 Page page = document.Pages[1];
 AnnotationSelector selector = new AnnotationSelector(new LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
 page.Accept(selector);
@@ -75,44 +75,44 @@ Console.WriteLine("\nLinks extracted successfully.\nFile saved at " + dataDir);
 
 ## Wniosek
 
-Gratulacje! Masz teraz przewodnik krok po kroku dotyczący wyodrębniania łączy z dokumentu PDF przy użyciu Aspose.PDF dla .NET. Możesz użyć tego kodu, aby pobrać wszystkie hiperłącza obecne w dokumencie.
+Gratulacje! Masz teraz przewodnik krok po kroku, jak wyodrębnić linki z dokumentu PDF za pomocą Aspose.PDF dla .NET. Możesz użyć tego kodu, aby pobrać wszystkie hiperłącza obecne w dokumencie.
 
-Koniecznie zapoznaj się z oficjalną dokumentacją Aspose.PDF, aby uzyskać więcej informacji na temat zaawansowanych funkcji ekstrakcji linków.
+Zapoznaj się z oficjalną dokumentacją Aspose.PDF, aby uzyskać więcej informacji na temat zaawansowanych funkcji wyodrębniania linków.
 
-### Często zadawane pytania dotyczące wyodrębniania linków w pliku PDF
+### Często zadawane pytania dotyczące linków do wyodrębniania w pliku PDF
 
-#### P: Co to jest wyodrębnianie linków z pliku PDF?
+#### P: Na czym polega wyodrębnianie linków z pliku PDF?
 
-Odp.: Wyodrębnianie łączy w pliku PDF oznacza proces odzyskiwania wszystkich łączy hipertekstowych znajdujących się w dokumencie. Umożliwia to pobieranie adresów URL, wewnętrznych łączy do dokumentów i innych interaktywnych elementów.
+A: Ekstrakcja linków w pliku PDF odnosi się do procesu odzyskiwania wszystkich hiperłączy obecnych w dokumencie. Umożliwia to pobieranie adresów URL, wewnętrznych linków do dokumentów i innych interaktywnych elementów.
 
 #### P: W jaki sposób ekstrakcja linków może pomóc w analizie mojego dokumentu PDF?
 
-Odp.: Wyodrębnianie linków jest przydatne do różnych celów, takich jak sprawdzanie treści, eksploracja danych i analiza. Umożliwia identyfikację i katalogowanie wszystkich łączy w dokumencie PDF w celu dalszej eksploracji.
+A: Ekstrakcja linków jest cenna dla różnych celów, takich jak walidacja treści, eksploracja danych i analiza. Umożliwia identyfikację i katalogowanie wszystkich linków w dokumencie PDF w celu dalszej eksploracji.
 
-#### P: W jaki sposób Aspose.PDF dla .NET obsługuje ekstrakcję linków?
+#### P: W jaki sposób Aspose.PDF dla .NET obsługuje wyodrębnianie linków?
 
-Odp.: Aspose.PDF dla .NET zapewnia potężne interfejsy API umożliwiające łatwe wyodrębnianie łączy z dokumentów PDF. Samouczek krok po kroku opisany w tym przewodniku pokazuje, jak wyodrębnić linki przy użyciu języka C#.
+A: Aspose.PDF dla .NET zapewnia potężne API do łatwego wyodrębniania linków z dokumentów PDF. Samouczek krok po kroku opisany w tym przewodniku pokazuje, jak wyodrębniać linki za pomocą C#.
 
-#### P: Czy mogę wyodrębnić określone typy łączy, takie jak hiperłącza lub łącza do dokumentów wewnętrznych?
+#### P: Czy mogę wyodrębnić określone typy linków, np. hiperłącza lub linki wewnętrzne do dokumentów?
 
- Odp.: Tak, możesz selektywnie wyodrębniać określone typy linków za pomocą`AnnotationSelector` klasa. Dzięki temu możesz filtrować i pobierać żądane linki w oparciu o Twoje wymagania.
+ O: Tak, możesz selektywnie wyodrębnić określone typy linków, korzystając z`AnnotationSelector`Klasa. Pozwala to na filtrowanie i pobieranie żądanych linków na podstawie Twoich wymagań.
 
-#### P: Czy można wyodrębnić linki z określonych stron dokumentu PDF?
+#### P: Czy można wyodrębnić linki z konkretnych stron dokumentu PDF?
 
- Odp.: Absolutnie! Możesz wyodrębnić łącza z określonych stron dokumentu PDF, określając stronę docelową za pomocą opcji`Document.Pages` kolekcja. Dzięki temu możesz skupić się na poszczególnych sekcjach.
+ A: Oczywiście! Możesz wyodrębnić linki z określonych stron dokumentu PDF, określając stronę docelową za pomocą`Document.Pages` kolekcja. Dzięki temu możesz skupić się na konkretnych sekcjach.
 
 #### P: W jakim formacie zwracane są wyodrębnione linki?
 
- Odp.: Wyodrębnione łącza są zwracane jako instancje pliku`Annotation` klasa. Możesz przetwarzać i analizować te adnotacje, aby uzyskać szczegółowe informacje o linkach, w tym docelowe adresy URL i typy linków.
+ A: Wyodrębnione linki są zwracane jako wystąpienia`Annotation` Klasa. Możesz przetwarzać i analizować te adnotacje, aby pobierać szczegóły linków, w tym adresy URL docelowe i typy linków.
 
-#### P: Jak mogę sprawdzić, czy wyodrębnianie linków jest dokładne?
+#### P: Jak mogę sprawdzić, czy wyodrębnianie linków jest prawidłowe?
 
-Odp.: Postępując zgodnie z dostarczonym samouczkiem i przykładowym kodem, możesz zapewnić dokładne wyodrębnienie linków. Możesz analizować wyodrębnione adnotacje i weryfikować adresy URL i atrybuty linków.
+A: Postępując zgodnie z samouczkiem i przykładowym kodem, możesz zapewnić dokładną ekstrakcję linków. Możesz analizować wyodrębnione adnotacje i sprawdzać poprawność adresów URL i atrybutów linków.
 
-#### P: Czy istnieją jakieś ograniczenia podczas wyodrębniania linków?
+#### P: Czy istnieją jakieś ograniczenia przy wyodrębnianiu linków?
 
-Odp.: Chociaż wyodrębnianie linków to potężna funkcja, ważne jest, aby wziąć pod uwagę strukturę dokumentu PDF. Linki osadzone w obrazach, tabelach lub treściach multimedialnych mogą wymagać dodatkowej obsługi.
+A: Chociaż ekstrakcja linków jest potężną funkcją, ważne jest, aby wziąć pod uwagę strukturę dokumentu PDF. Linki osadzone w obrazach, tabelach lub treściach multimedialnych mogą wymagać dodatkowej obsługi.
 
 #### P: Czy mogę wyodrębnić linki z dokumentów PDF chronionych hasłem?
 
-Odp.: Aspose.PDF dla .NET może wyodrębniać linki z dokumentów PDF chronionych hasłem, o ile podczas otwierania dokumentu podasz niezbędne dane uwierzytelniające.
+A: Aspose.PDF dla platformy .NET potrafi wyodrębniać linki z dokumentów PDF chronionych hasłem, pod warunkiem że podczas otwierania dokumentu podasz wymagane dane uwierzytelniające.

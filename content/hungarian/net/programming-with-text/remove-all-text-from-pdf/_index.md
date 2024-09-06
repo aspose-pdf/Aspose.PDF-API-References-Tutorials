@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 1. lépés: Állítsa be a dokumentumkönyvtárat
 
- Először is be kell állítania annak a könyvtárnak az elérési útját, ahol a PDF-fájlok találhatók. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir` változó a PDF-fájlok elérési útjával.
+ Először is be kell állítania annak a könyvtárnak az elérési útját, ahol a PDF-fájlok találhatók. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változó a PDF-fájlok elérési útjával.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -81,14 +81,14 @@ V: Az összes szöveg eltávolítása egy PDF-dokumentumból hasznos lehet olyan
 
 V: A dokumentumkönyvtár beállításához:
 
-1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir` változó annak a könyvtárnak az elérési útjával, ahol a PDF-fájlok találhatók.
+1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változó annak a könyvtárnak az elérési útjával, ahol a PDF-fájlok találhatók.
 
 #### K: Hogyan távolíthatok el minden szöveget egy PDF-dokumentumból az Aspose.PDF könyvtár használatával?
 
 V: Az oktatóanyag lépésről lépésre végigvezeti a folyamaton:
 
 1.  Nyissa meg a PDF dokumentumot a`Document` osztály.
-2.  Inicializálás a`TextFragmentAbsorber` tárgy.
+2.  Inicializálás a`TextFragmentAbsorber` objektum.
 3. Az abszorber segítségével távolítsa el az összes elnyelt szöveget a PDF dokumentumból.
 4. Mentse el a módosított PDF dokumentumot.
 

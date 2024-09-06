@@ -7,11 +7,11 @@ type: docs
 weight: 130
 url: /nl/net/programming-with-forms/get-fields-from-region/
 ---
-In deze zelfstudie laten we u zien hoe u de velden van een specifieke regio in een PDF-bestand kunt krijgen met Aspose.PDF voor .NET. We leggen de C#-broncode stap voor stap uit om u door dit proces te begeleiden.
+In deze tutorial laten we je zien hoe je de velden van een specifieke regio in een PDF-bestand krijgt met Aspose.PDF voor .NET. We leggen de C#-broncode stap voor stap uit om je door dit proces te leiden.
 
 ## Stap 1: Voorbereiding
 
-Zorg ervoor dat u de benodigde bibliotheken heeft geïmporteerd en stel het pad in naar uw documentenmap:
+Zorg ervoor dat u de benodigde bibliotheken hebt geïmporteerd en het pad naar uw documentenmap hebt ingesteld:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -41,7 +41,7 @@ Download het PDF-formulier van het document:
 Aspose.Pdf.Forms.Form form = doc.Form;
 ```
 
-## Stap 5: Haal de velden in het rechthoekige gebied op
+## Stap 5: Haal de velden in het rechthoekige gebied
 
 Haal de velden op die zich in het opgegeven rechthoekige gebied bevinden:
 
@@ -49,9 +49,9 @@ Haal de velden op die zich in het opgegeven rechthoekige gebied bevinden:
 Aspose.Pdf.Forms.Field[] fields = form.GetFieldsInRect(rectangle);
 ```
 
-## Stap 6: Geef veldnamen en waarden weer
+## Stap 6: Veldnamen en waarden weergeven
 
-Doorloop de resulterende velden en geef hun namen en waarden weer:
+Loop door de resulterende velden en geef hun namen en waarden weer:
 
 ```csharp
 foreach (Field field in fields)
@@ -60,48 +60,48 @@ Console.Out.WriteLine("Field name: " + field.FullName + "-" + "Field value: " + 
 }
 ```
 
-### Voorbeeldbroncode voor Get Fields From Region met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor het ophalen van velden uit regio met behulp van Aspose.PDF voor .NET 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Open pdf-bestand
+// PDF-bestand openen
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "GetFieldsFromRegion.pdf");
 // Maak een rechthoekig object om velden in dat gebied te krijgen
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(35, 30, 500, 500);
-// Download het PDF-formulier
+// Ontvang het PDF-formulier
 Aspose.Pdf.Forms.Form form = doc.Form;
-// Krijg velden in het rechthoekige gebied
+// Velden in het rechthoekige gebied ophalen
 Aspose.Pdf.Forms.Field[] fields = form.GetFieldsInRect(rectangle);
 // Veldnamen en waarden weergeven
 foreach (Field field in fields)
 {
-	// Geef de plaatsingseigenschappen van afbeeldingen weer voor alle plaatsingen
+	// Weergave van de eigenschappen van de afbeeldingsplaatsing voor alle plaatsingen
 	Console.Out.WriteLine("Field Name: " + field.FullName + "-" + "Field Value: " + field.Value);
 }
 ```
 
 ## Conclusie
 
-In deze zelfstudie hebben we geleerd hoe u de velden van een specifieke regio in een PDF-document kunt ophalen met Aspose.PDF voor .NET. Door deze stappen te volgen, kunt u eenvoudig de velden in een bepaald rechthoekig gebied van uw PDF-document extraheren met behulp van Aspose.PDF.
+In deze tutorial hebben we geleerd hoe we de velden van een specifieke regio in een PDF-document kunnen ophalen met Aspose.PDF voor .NET. Door deze stappen te volgen, kunt u eenvoudig de velden extraheren die zich in een bepaald rechthoekig gebied van uw PDF-document bevinden met Aspose.PDF.
 
 ### Veelgestelde vragen
 
-#### Vraag: Kan ik deze methode gebruiken om velden uit een niet-rechthoekig gebied in een PDF-document op te halen?
+#### V: Kan ik deze methode gebruiken om velden uit een niet-rechthoekig gebied in een PDF-document te halen?
 
- A: Nee, de opgegeven methode`GetFieldsInRect` is speciaal ontworpen om velden op te halen die zich binnen een rechthoekig gebied in een PDF-document bevinden. Als u velden uit een niet-rechthoekig gebied moet extraheren, moet u aangepaste logica implementeren om de velden te identificeren en te extraheren op basis van andere criteria, zoals veldcoördinaten of namen.
+ A: Nee, de verstrekte methode`GetFieldsInRect` is speciaal ontworpen om velden op te halen die zich binnen een rechthoekige regio in een PDF-document bevinden. Als u velden uit een niet-rechthoekige regio wilt extraheren, moet u aangepaste logica implementeren om de velden te identificeren en te extraheren op basis van andere criteria, zoals veldcoördinaten of namen.
 
-#### Vraag: Hoe kan ik de grootte of positie van de rechthoek wijzigen om velden uit een andere regio op te halen?
+#### V: Hoe kan ik de grootte of positie van de rechthoek aanpassen om velden uit een ander gebied te krijgen?
 
- A: Als u velden uit een andere regio wilt ophalen, kunt u de`Aspose.Pdf.Rectangle` objectparameters die worden gebruikt om de begrenzende rechthoek te definiëren. De`Rectangle` constructor neemt vier parameters:`x`, `y`, `width` , En`height`die de coördinaten in de linkerbovenhoek en de afmetingen van de rechthoek vertegenwoordigen. Als u deze parameters aanpast, verandert de regio waaruit velden worden geëxtraheerd.
+ A: Om velden uit een andere regio te krijgen, kunt u de`Aspose.Pdf.Rectangle` parameters van het object die worden gebruikt om de begrenzende rechthoek te definiëren.`Rectangle` constructor heeft vier parameters:`x`, `y`, `width` , En`height`die de coördinaten van de linkerbovenhoek en de afmetingen van de rechthoek vertegenwoordigen. Door deze parameters aan te passen, verandert u de regio waaruit velden worden geëxtraheerd.
 
-#### Vraag: Wat moet ik doen als er geen velden binnen het opgegeven rechthoekige gebied zijn?
+#### V: Wat als er geen velden binnen het opgegeven rechthoekige gebied zijn?
 
- A: Als er geen velden binnen het opgegeven rechthoekige gebied zijn, wordt de`GetFieldsInRect` methode retourneert een lege array. U kunt de lengte van de array controleren om te bepalen of er velden in de regio aanwezig zijn.
+ A: Als er geen velden binnen het opgegeven rechthoekige gebied zijn,`GetFieldsInRect` methode retourneert een lege array. U kunt de lengte van de array controleren om te bepalen of er velden in de regio zijn.
 
-#### Vraag: Kan ik velden uit overlappende gebieden in een PDF-document ophalen?
+#### V: Kan ik velden uit overlappende regio's in een PDF-document ophalen?
 
- A: Ja, u kunt velden uit overlappende gebieden in een PDF-document verkrijgen door er meerdere te maken`Aspose.Pdf.Rectangle` objecten en het aanroepen van de`GetFieldsInRect` methode voor elk van hen. Overlappende regio's worden afzonderlijk afgehandeld en u ontvangt voor elke regio afzonderlijke reeksen velden.
+ A: Ja, u kunt velden uit overlappende regio's in een PDF-document ophalen door meerdere velden te maken.`Aspose.Pdf.Rectangle` objecten en het aanroepen van de`GetFieldsInRect` methode voor elk van hen. Overlappende regio's worden onafhankelijk behandeld en u ontvangt afzonderlijke arrays van velden voor elke regio.
 
-#### Vraag: Is het mogelijk om velden van een specifieke pagina of meerdere pagina's in het PDF-document op te halen?
+#### V: Is het mogelijk om velden van een specifieke pagina of meerdere pagina's in het PDF-document op te halen?
 
-A: Ja, u kunt velden van een specifieke pagina of van meerdere pagina's in een PDF-document ophalen. Om dit te bereiken, kunt u het PDF-document laden en de gewenste pagina's openen met behulp van de`doc.Pages` verzameling en pas vervolgens de`GetFieldsInRect` methode naar de specifieke regio van elke pagina.
+A: Ja, u kunt velden van een specifieke pagina of meerdere pagina's in een PDF-document ophalen. Om dit te bereiken, kunt u het PDF-document laden, de gewenste pagina's openen met behulp van de`doc.Pages` verzameling en pas vervolgens de`GetFieldsInRect` methode voor de specifieke regio van elke pagina.

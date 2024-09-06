@@ -78,11 +78,11 @@ V: Igen, egy PDF-dokumentumban több űrlapmezőt is kitölthet az Aspose.PDF fo
 
 #### K: Hogyan találhatom meg az űrlapmezők nevét egy PDF-dokumentumban?
 
- V: Ha meg szeretné találni az űrlapmezők nevét egy PDF-dokumentumban, ismételje meg a következőt:`pdfDocument.Form.Fields` Gyűjtemény. Minden űrlapmezőnek van egy`FullName` tulajdonság, amely az egyedi nevét tartalmazza. Ezeket a neveket használhatja bizonyos űrlapmezők azonosítására és módosítására.
+ V: Ha meg szeretné találni az űrlapmezők nevét egy PDF-dokumentumban, ismételje meg a következőt:`pdfDocument.Form.Fields` gyűjtemény. Minden űrlapmezőnek van egy`FullName` tulajdonság, amely az egyedi nevét tartalmazza. Ezeket a neveket használhatja bizonyos űrlapmezők azonosítására és módosítására.
 
 #### K: Mi a teendő, ha a kitöltendő űrlapmező nem létezik a PDF-dokumentumban?
 
- V: Ha a kitölteni kívánt űrlapmező nem létezik a PDF-dokumentumban, próbálja meg elérni a használatával`pdfDocument.Form["fieldName"]`nullát ad vissza. Ezért elengedhetetlen annak biztosítása, hogy az űrlapmező létezik-e, mielőtt megpróbálná kitölteni. Ha szükséges, az Aspose.PDF for .NET használatával programozottan is hozzáadhat új űrlapmezőket.
+ V: Ha a kitölteni kívánt űrlapmező nem létezik a PDF-dokumentumban, próbálja meg elérni a használatával`pdfDocument.Form["fieldName"]`nullát ad vissza. Ezért elengedhetetlen, hogy az űrlapmező létezik-e, mielőtt megpróbálná kitölteni. Ha szükséges, az Aspose.PDF for .NET használatával programozottan is hozzáadhat új űrlapmezőket.
 
 #### K: Megtölthetem az űrlapmezőket adatbázisból vagy más adatforrásból származó dinamikus adatokkal?
 
@@ -90,4 +90,4 @@ V: Igen, kitöltheti az űrlapmezőket adatbázisból vagy bármely más adatfor
 
 #### K: Vannak-e korlátozások az XFA-alapú PDF dokumentumok űrlapmezőinek kitöltésekor?
 
-V: Az XFA (XML Forms Architecture) alapú PDF-dokumentumok űrlapmezőinek kitöltése bizonyos korlátozásokkal járhat az XFA-űrlapok összetett szerkezete miatt. Az Aspose.PDF for .NET támogatja az űrlapmezők kitöltését az XFA-űrlapokon, de előfordulhat, hogy egyes, az XFA-űrlapokra jellemző űrlapmező-tulajdonságokat nem támogatja teljes mértékben az AcroForms.
+V: Az XFA (XML Forms Architecture) alapú PDF-dokumentumok űrlapmezőinek kitöltése bizonyos korlátozásokkal járhat az XFA-űrlapok összetett szerkezete miatt. Az Aspose.PDF for .NET támogatja az XFA-űrlapok űrlapmezőinek kitöltését, de előfordulhat, hogy egyes, az XFA-űrlapokra jellemző űrlapmező-tulajdonságokat nem támogatja teljes mértékben az AcroForms.

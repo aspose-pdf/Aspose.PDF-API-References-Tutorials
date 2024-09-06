@@ -1,28 +1,28 @@
 ---
-title: Javaを使用してPDFにページ番号スタンプを追加する
-linktitle: Javaを使用してPDFにページ番号スタンプを追加する
+title: Java を使用して PDF にページ番号スタンプを追加する
+linktitle: Java を使用して PDF にページ番号スタンプを追加する
 second_title: Aspose.PDF Java PDF 処理 API
-description: Aspose.PDF for Java を使用して Java を使用して PDF ドキュメントにページ番号スタンプを簡単に追加する方法を学びます。カスタマイズ可能なページ番号を使用して PDF を強化します。
+description: Aspose.PDF for Java を使用して、Java で PDF ドキュメントにページ番号スタンプを簡単に追加する方法を学びます。カスタマイズ可能なページ番号で PDF を強化します。
 type: docs
 weight: 11
 url: /ja/java/pdf-form-fields/add-page-number-stamp-in-pdf-using-java/
 ---
 
-## Java を使用して PDF にページ番号スタンプを追加する方法の概要
+## Java を使用して PDF にページ番号スタンプを追加する方法の紹介
 
-PDF ドキュメントは情報の共有や表示に広く使用されていますが、ページ番号を追加して機能を強化する必要がある場合があります。レポート、マニュアル、学術論文のいずれを作成している場合でも、ページ番号は読者がコンテンツを効率的にナビゲートするのに役立ちます。このチュートリアルでは、Java を使用して PDF ファイルにページ番号スタンプを追加するプロセスを説明します。 PDF の操作を簡素化する強力なライブラリである Aspose.PDF for Java を使用します。
+PDF ドキュメントは、情報の共有や提示に広く使用されていますが、ページ番号を追加して強化する必要がある場合があります。レポート、マニュアル、学術論文など、どのような作業であっても、ページ番号があれば読者はコンテンツを効率的にナビゲートできます。このチュートリアルでは、Java を使用して PDF ファイルにページ番号スタンプを追加する手順を説明します。PDF の操作を簡素化する強力なライブラリである Aspose.PDF for Java を使用します。
 
-## Java 用の Aspose.PDF のセットアップ
+## Aspose.PDF for Java のセットアップ
 
-コーディングに入る前に、Aspose.PDF for Java をセットアップする必要があります。次の手順を実行します：
+コーディングを始める前に、Aspose.PDF for Java をセットアップする必要があります。次の手順に従います。
 
-1.  Aspose.PDF for Java をダウンロード: からライブラリにアクセスします。[ここ](https://releases.aspose.com/pdf/java/)プロジェクトに適切なバージョンをダウンロードします。
+1.  Aspose.PDF for Javaをダウンロード: ライブラリにアクセスする[ここ](https://releases.aspose.com/pdf/java/)プロジェクトに適したバージョンをダウンロードしてください。
 
-2. Java プロジェクトを作成する: Java プロジェクトをまだ持っていない場合は、好みの IDE を使用して新しいプロジェクトをセットアップします。
+2. Java プロジェクトを作成する: Java プロジェクトがまだない場合は、好みの IDE を使用して新しいプロジェクトを設定します。
 
 ## 依存関係の追加
 
- Aspose.PDF for Java を入手したら、それを依存関係としてプロジェクトに追加します。 Maven を使用している場合は、次の依存関係を`pom.xml`:
+ Aspose.PDF for Javaを入手したら、それをプロジェクトに依存関係として追加します。Mavenを使用している場合は、次の依存関係をプロジェクトに追加します。`pom.xml`:
 
 ```xml
 <dependency>
@@ -32,7 +32,7 @@ PDF ドキュメントは情報の共有や表示に広く使用されていま�
 </dependency>
 ```
 
-Gradle を好む場合は、これを`build.gradle`ファイル：
+Gradleをご希望の場合は、`build.gradle`ファイル：
 
 ```gradle
 implementation group: 'com.aspose', name: 'aspose-pdf', version: '21.11' //最新バージョンに置き換える
@@ -40,14 +40,14 @@ implementation group: 'com.aspose', name: 'aspose-pdf', version: '21.11' //最�
 
 ## ページ番号スタンプのコーディング
 
-それでは、コードを詳しく見てみましょう。 PDF ドキュメントにページ番号スタンプを追加する簡単な Java プログラムを作成します。
+それでは、コードを見てみましょう。PDF ドキュメントにページ番号スタンプを追加する簡単な Java プログラムを作成します。
 
 ```java
 import com.aspose.pdf.*;
 
 public class AddPageNumberStamp {
     public static void main(String[] args) {
-        // PDF ドキュメントをロードする
+        // PDF文書を読み込む
         Document pdfDocument = new Document("input.pdf");
 
         //ページ番号スタンプを作成する
@@ -62,44 +62,44 @@ public class AddPageNumberStamp {
             pdfDocument.getPages().get_Item(page).addStamp(pageNumberStamp);
         }
 
-        //変更した PDF を保存する
+        //変更したPDFを保存する
         pdfDocument.save("output.pdf");
     }
 }
 ```
 
-このコードでは、PDF ドキュメントをロードし、ページ番号スタンプを作成し、その外観と形式をカスタマイズして、それをドキュメントのすべてのページに適用します。
+このコードでは、PDF ドキュメントを読み込み、ページ番号スタンプを作成し、その外観と形式をカスタマイズして、ドキュメントのすべてのページに適用します。
 
-## ページ番号スタンプを適用する
+## ページ番号スタンプの適用
 
 ページ番号スタンプを適用するには、次の手順に従います。
 
-1. 次を使用して PDF ドキュメントをロードします`Document pdfDocument = new Document("input.pdf");`、 どこ`"input.pdf"`は PDF ファイルへのパスです。
+1.  PDF文書を読み込むには`Document pdfDocument = new Document("input.pdf");`、 どこ`"input.pdf"`PDF ファイルへのパスです。
 
-2. を作成します`PageNumberStamp`オブジェクトを作成し、好みに応じてカスタマイズします。
+2. 作成する`PageNumberStamp`オブジェクトを選択し、好みに応じてカスタマイズします。
 
 3. ループを使用して PDF の各ページにスタンプを追加します。
 
-4. 変更した PDF を次のように保存します。`pdfDocument.save("output.pdf");` 。交換できます`"output.pdf"`希望のファイル名を付けます。
+4. 変更したPDFを保存するには`pdfDocument.save("output.pdf");`置き換えることができます`"output.pdf"`希望のファイル名で。
 
 ## 結果のテスト
 
-PDF にページ番号スタンプを追加したので、結果をテストします。 Java プログラムを実行すると、PDF ドキュメントの各ページにページ番号が適用されていることがわかります。
+PDF にページ番号スタンプを追加したので、結果をテストしてみましょう。Java プログラムを実行すると、PDF ドキュメントの各ページにページ番号が適用されているのがわかります。
 
 ## 結論
 
-このチュートリアルでは、Java と Aspose.PDF for Java を使用して PDF ドキュメントにページ番号スタンプを追加する方法を説明しました。ページ番号により PDF の使いやすさが向上し、読者がコンテンツをナビゲートしやすくなります。 Aspose.PDF for Java を使用すると、基本的なプログラミング スキルを持つ人でも、このタスクが簡単になります。カスタマイズしたページ番号スタンプを使用して、PDF ドキュメントを今すぐ強化しましょう。
+このチュートリアルでは、Java と Aspose.PDF for Java を使用して PDF ドキュメントにページ番号スタンプを追加する方法を説明しました。ページ番号は PDF の使いやすさを向上させ、読者がコンテンツ内を移動しやすくなります。Aspose.PDF for Java を使用すると、基本的なプログラミング スキルを持つユーザーでもこのタスクが簡単になります。カスタマイズされたページ番号スタンプを使用して、今すぐ PDF ドキュメントを強化し始めましょう。
 
 ## よくある質問
 
-### Java 用 Aspose.PDF をダウンロードするにはどうすればよいですか?
+### Aspose.PDF for Java をダウンロードするにはどうすればいいですか?
 
- Java 用 Aspose.PDF は、次の Web サイトからダウンロードできます。[ここ](https://releases.aspose.com/pdf/java/)。プロジェクトに合ったバージョンを選択してください。
+ Aspose.PDF for Javaは次のウェブサイトからダウンロードできます。[ここ](https://releases.aspose.com/pdf/java/)プロジェクトに適したバージョンを選択してください。
 
 ### ページ番号スタンプの外観をカスタマイズできますか?
 
-はい、Aspose.PDF for Java では、ページ番号スタンプを広範囲にカスタマイズできます。ドキュメントのスタイルに合わせてフォント、サイズ、色、位置を調整できます。
+はい、Aspose.PDF for Java ではページ番号スタンプを広範囲にカスタマイズできます。ドキュメントのスタイルに合わせてフォント、サイズ、色、位置を調整できます。
 
 ### Aspose.PDF for Java はさまざまな PDF バージョンと互換性がありますか?
 
-絶対に！ Aspose.PDF for Java はさまざまな PDF バージョンをサポートし、PDF バージョンに関係なく、幅広いドキュメントとの互換性を保証します。
+もちろんです! Aspose.PDF for Java はさまざまな PDF バージョンをサポートしており、PDF バージョンに関係なく、幅広いドキュメントとの互換性が確保されています。

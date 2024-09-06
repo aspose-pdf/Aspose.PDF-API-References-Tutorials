@@ -2,128 +2,164 @@
 title: Entfernen Sie Hyperlinks nach der Konvertierung aus HTML
 linktitle: Entfernen Sie Hyperlinks nach der Konvertierung aus HTML
 second_title: Aspose.PDF für .NET API-Referenz
-description: Schritt-für-Schritt-Anleitung zum Entfernen von Hyperlinks nach der Konvertierung von HTML in PDF mit Aspose.PDF für .NET.
+description: Erfahren Sie in dieser Schritt-für-Schritt-Anleitung, wie Sie Hyperlinks aus HTML-Dokumenten entfernen, nachdem Sie sie mit Aspose.PDF für .NET in PDF konvertiert haben.
 type: docs
 weight: 250
 url: /de/net/document-conversion/remove-hyperlinks-after-converting-from-html/
 ---
-In diesem Tutorial führen wir Sie durch den Prozess des Entfernens von Hyperlinks aus einer PDF-Datei, die mit Aspose.PDF für .NET aus einer HTML-Datei generiert wurde. Hyperlinks sind anklickbare Links, die auf andere Seiten oder Websites weiterleiten können. Wenn Sie die folgenden Schritte ausführen, können Sie Hyperlinks aus der resultierenden PDF-Datei entfernen.
+## Einführung
+
+Im digitalen Zeitalter ist die Konvertierung von HTML-Dokumenten in PDF eine gängige Aufgabe. Manchmal möchten Sie jedoch aus verschiedenen Gründen Hyperlinks aus der konvertierten PDF-Datei entfernen, beispielsweise um die Lesbarkeit zu verbessern oder unerwünschte Navigation zu verhindern. In diesem Tutorial erfahren Sie, wie Sie dies mit Aspose.PDF für .NET erreichen. 
 
 ## Voraussetzungen
-Bevor Sie beginnen, stellen Sie sicher, dass Sie die folgenden Voraussetzungen erfüllen:
 
-- Grundkenntnisse der Programmiersprache C#.
-- Aspose.PDF-Bibliothek für .NET auf Ihrem System installiert.
-- Eine Entwicklungsumgebung wie Visual Studio.
+Bevor Sie in den Code eintauchen, stellen Sie sicher, dass Sie die folgenden Voraussetzungen erfüllen:
 
-## Schritt 1: HTML-Datei laden und Hyperlinks entfernen
-In diesem Schritt laden wir die HTML-Datei und entfernen die Hyperlinks aus dem resultierenden PDF-Dokument. Verwenden Sie den folgenden Code:
+1. Visual Studio: Stellen Sie sicher, dass Visual Studio auf Ihrem Computer installiert ist. Dies wird Ihre Entwicklungsumgebung sein.
+2.  Aspose.PDF für .NET: Sie benötigen die Aspose.PDF-Bibliothek. Sie können sie herunterladen von[Hier](https://releases.aspose.com/pdf/net/).
+3. Grundkenntnisse in C#: Wenn Sie mit der C#-Programmierung vertraut sind, verstehen Sie den Code besser.
+
+## Pakete importieren
+
+Um zu beginnen, müssen Sie die erforderlichen Pakete in Ihr C#-Projekt importieren. So können Sie das tun:
+
+1. Öffnen Sie Ihr Visual Studio-Projekt.
+2. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf Ihr Projekt und wählen Sie „NuGet-Pakete verwalten“ aus.
+3.  Suchen nach`Aspose.PDF` und installieren Sie es.
 
 ```csharp
-// Pfad zum Dokumentenverzeichnis.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// Laden Sie die HTML-Datei mit den HTML-Ladeoptionen
-Document doc = new Document(dataDir + "SampleHtmlFile.html", new HtmlLoadOptions());
-
-// Durchsuchen Sie die Anmerkungen der ersten Seite des Dokuments
-foreach(Annotation a in doc.Pages[1].Annotations)
-{
-     // Überprüfen Sie, ob es sich bei der Anmerkung um einen Link handelt
-     if (a.AnnotationType == AnnotationType.Link)
-     {
-         LinkAnnotation the = (LinkAnnotation)a;
-        
-         // Überprüfen Sie, ob die Aktion vom Typ GoToURIAction ist
-         if (the.Action is GoToURIAction)
-         {
-             GoToURIAction gta = (GoToURIAction)the.Action;
-             gta.URI = "";
-            
-             // Verwenden Sie einen Textfragment-Absorber, um passende Textfragmente zu finden
-             TextFragmentAbsorber tfa = new TextFragmentAbsorber();
-             tfa.TextSearchOptions = new TextSearchOptions(a.Rect);
-             doc.Pages[a.PageIndex].Accept(tfa);
-            
-             // Durchlaufen Sie passende Textfragmente und entfernen Sie Attribute aus Hyperlinks
-             foreach(TextFragment tf in tfa.TextFragments)
-             {
-                 tf.TextState.Underline = false;
-                 tf.TextState.ForegroundColor = Color.Black;
-             }
-         }
-        
-         // Entfernen Sie die Anmerkung von der Seite
-         doc.Pages[a.PageIndex].Annotations.Delete(a);
-     }
-}
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Text;
+using System.IO;
 ```
 
- Unbedingt austauschen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Verzeichnis, in dem sich Ihre HTML-Datei befindet.
+Nachdem Sie nun alles eingerichtet haben, wollen wir den Vorgang zum Entfernen von Hyperlinks aus einer HTML-Datei nach der Konvertierung in PDF aufschlüsseln.
 
-## Schritt 2: Speichern der resultierenden PDF-Datei
-Abschließend speichern wir die resultierende PDF-Datei ohne die Hyperlinks. Verwenden Sie den folgenden Code:
+## Schritt 1: Einrichten des Dokumentverzeichnisses
 
-```csharp
-// Speichern Sie die resultierende PDF-Datei
-doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
-```
-
- Der obige Code speichert die resultierende PDF-Datei unter dem Dateinamen`"RemoveHyperlinksFromText_out.pdf"`.
-
-### Beispielquellcode zum Entfernen von Hyperlinks nach der Konvertierung aus HTML mit Aspose.PDF für .NET
+Als Erstes müssen Sie den Pfad zu Ihrem Dokumentverzeichnis angeben. Hier befindet sich Ihre HTML-Datei und hier wird auch die Ausgabe-PDF-Datei gespeichert.
 
 ```csharp
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+ Ersetzen`"YOUR DOCUMENT DIRECTORY"` durch den tatsächlichen Pfad, in dem Ihre HTML-Datei gespeichert ist.
+
+## Schritt 2: Laden Sie das HTML-Dokument
+
+ Als nächstes laden Sie das HTML-Dokument mit dem`Document` Klasse von Aspose.PDF. Mit dieser Klasse können Sie problemlos mit PDF-Dokumenten arbeiten.
+
+```csharp
 Document doc = new Document(dataDir + "SampleHtmlFile.html", new HtmlLoadOptions());
+```
+
+ Hier laden wir die HTML-Datei mit dem Namen`SampleHtmlFile.html`. Stellen Sie sicher, dass diese Datei in Ihrem angegebenen Verzeichnis vorhanden ist.
+
+## Schritt 3: Speichern Sie das Dokument im Memory Stream
+
+Bevor wir mit der Verarbeitung der Anmerkungen beginnen, müssen wir das Dokument in einem Speicherstream speichern. Dieser Schritt ist entscheidend, da er das Dokument für die weitere Bearbeitung vorbereitet.
+
+```csharp
 doc.Save(new MemoryStream());
+```
+
+Diese Zeile speichert das Dokument im Speicher, sodass wir damit arbeiten können, ohne es sofort auf die Festplatte zu schreiben.
+
+## Schritt 4: Durch Anmerkungen iterieren
+
+Nun durchlaufen wir die Anmerkungen im Dokument. Anmerkungen sind Elemente wie Links, Kommentare und Hervorhebungen. Wir sind insbesondere an Linkanmerkungen interessiert.
+
+```csharp
 foreach (Annotation a in doc.Pages[1].Annotations)
 {
-	if (a.AnnotationType == AnnotationType.Link)
-	{
-		LinkAnnotation la = (LinkAnnotation)a;
-		if (la.Action is GoToURIAction)
-		{
-			GoToURIAction gta = (GoToURIAction)la.Action;
-			gta.URI = "";
-			TextFragmentAbsorber tfa = new TextFragmentAbsorber();
-			tfa.TextSearchOptions = new TextSearchOptions(a.Rect);
-			doc.Pages[a.PageIndex].Accept(tfa);
-			foreach (TextFragment tf in tfa.TextFragments)
-			{
-				tf.TextState.Underline = false;
-				tf.TextState.ForegroundColor = Color.Black;
-			}
-		}
-		doc.Pages[a.PageIndex].Annotations.Delete(a);
-	}
+    if (a.AnnotationType == AnnotationType.Link)
+    {
+        // Verarbeiten der Linkanmerkung
+    }
 }
+```
+
+In dieser Schleife prüfen wir, ob der Annotationstyp ein Link ist. Wenn ja, fahren wir mit den nächsten Schritten fort.
+
+## Schritt 5: Entfernen der Hyperlink-Aktion
+
+Für jede Linkannotation müssen wir prüfen, ob sie eine Hyperlink-Aktion hat. Wenn ja, entfernen wir den Hyperlink, indem wir seine URI auf eine leere Zeichenfolge setzen.
+
+```csharp
+LinkAnnotation la = (LinkAnnotation)a;
+if (la.Action is GoToURIAction)
+{
+    GoToURIAction gta = (GoToURIAction)la.Action;
+    gta.URI = "";
+```
+
+Dieser Codeausschnitt stellt sicher, dass die Hyperlink-Aktion effektiv entfernt wird.
+
+## Schritt 6: Textfragmente aufnehmen
+
+Als nächstes werden wir die mit der Linkanmerkung verknüpften Textfragmente aufnehmen. Dadurch können wir das Erscheinungsbild des Textes bearbeiten.
+
+```csharp
+TextFragmentAbsorber tfa = new TextFragmentAbsorber();
+tfa.TextSearchOptions = new TextSearchOptions(a.Rect);
+doc.Pages[a.PageIndex].Accept(tfa);
+```
+
+ Hier erstellen wir eine`TextFragmentAbsorber` und stellen Sie die Suchoptionen auf das Rechteck der Anmerkung ein. Dies hilft uns, den verlinkten Text zu finden.
+
+## Schritt 7: Textdarstellung ändern
+
+Sobald wir die Textfragmente haben, können wir ihr Aussehen ändern. In diesem Fall entfernen wir die Unterstreichung und ändern die Textfarbe in Schwarz.
+
+```csharp
+foreach (TextFragment tf in tfa.TextFragments)
+{
+    tf.TextState.Underline = false;
+    tf.TextState.ForegroundColor = Color.Black;
+}
+```
+
+Dieser Schritt verbessert die Lesbarkeit des Textes durch Entfernen der Hyperlink-Formatierung.
+
+## Schritt 8: Löschen der Anmerkung
+
+Nachdem wir den Text geändert haben, können wir die Linkanmerkung sicher aus dem Dokument löschen.
+
+```csharp
+doc.Pages[a.PageIndex].Annotations.Delete(a);
+}
+```
+
+Diese Zeile entfernt den Hyperlink aus der PDF-Datei und stellt sicher, dass er in der endgültigen Ausgabe nicht mehr vorhanden ist.
+
+## Schritt 9: Speichern Sie das geänderte Dokument
+
+Abschließend müssen wir das geänderte Dokument in einer neuen PDF-Datei speichern. Dies ist der letzte Schritt in unserem Prozess.
+
+```csharp
 doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 ```
 
+ Diese Zeile speichert das Dokument ohne die Hyperlinks und erstellt eine neue PDF-Datei mit dem Namen`RemoveHyperlinksFromText_out.pdf`.
+
 ## Abschluss
-In diesem Tutorial haben wir den Schritt-für-Schritt-Prozess zum Entfernen von Hyperlinks aus einer PDF-Datei behandelt, die mit Aspose.PDF für .NET aus einer HTML-Datei generiert wurde. Wenn Sie die oben beschriebenen Anweisungen befolgen, können Sie Hyperlinks erfolgreich aus der resultierenden PDF-Datei entfernen.
 
-### FAQs
+Und da haben Sie es! Sie haben erfolgreich Hyperlinks aus einem HTML-Dokument entfernt, nachdem Sie es mit Aspose.PDF für .NET in PDF konvertiert haben. Dieser Vorgang verbessert nicht nur die Lesbarkeit Ihres PDFs, sondern gibt Ihnen auch Kontrolle über den von Ihnen präsentierten Inhalt. 
 
-#### F: Was ist Aspose.PDF für .NET?
+## Häufig gestellte Fragen
 
-A: Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, die Entwicklern die Arbeit mit PDF-Dokumenten in C#-Anwendungen ermöglicht. Es bietet eine breite Palette an Funktionen, einschließlich der Möglichkeit, HTML-Dateien in PDF zu konvertieren und PDF-Inhalte zu bearbeiten.
+### Kann ich Hyperlinks aus jedem PDF-Dokument entfernen?
+Ja, Sie können mit Aspose.PDF für .NET Hyperlinks aus jedem PDF-Dokument entfernen.
 
-#### F: Warum sollte ich Hyperlinks aus einer PDF-Datei entfernen wollen?
+### Ist die Nutzung von Aspose.PDF kostenlos?
+ Aspose.PDF bietet eine kostenlose Testversion an, für den vollen Funktionsumfang müssen Sie jedoch eine Lizenz erwerben. Überprüfen Sie die[Kaufen-Seite](https://purchase.aspose.com/buy).
 
-A: Es gibt verschiedene Gründe, Hyperlinks aus einer PDF-Datei zu entfernen. Beispielsweise möchten Sie möglicherweise externe Links für Druck- oder Archivierungszwecke entfernen oder sicherstellen, dass der PDF-Inhalt nicht über Hyperlinks navigierbar ist.
+### Was ist, wenn bei der Verwendung von Aspose.PDF Probleme auftreten?
+ Hilfe finden Sie auf der[Support-Forum](https://forum.aspose.com/c/pdf/10).
 
-#### F: Wie kann ich mit Aspose.PDF für .NET eine HTML-Datei laden und Hyperlinks entfernen?
+### Kann ich mit Aspose andere Dateiformate in PDF konvertieren?
+Ja, Aspose unterstützt verschiedene Dateiformate für die Konvertierung in PDF.
 
- A: Um eine HTML-Datei zu laden und Hyperlinks zu entfernen, können Sie Aspose.PDF für .NET verwenden`HtmlLoadOptions` Klasse. Durchlaufen Sie die Anmerkungen der PDF-Seiten, um Linkanmerkungen zu finden und deren Attribute zu ändern.
-
-#### F: Kann ich den Ausgabedateinamen für das resultierende PDF anpassen?
-
-A: Ja, Sie können den Ausgabedateinamen für die resultierende PDF-Datei anpassen, indem Sie den Code ändern, der das PDF-Dokument speichert. Ändern Sie einfach den gewünschten Dateinamen im`doc.Save()` Methode.
-
-#### F: Ist es möglich, Hyperlinks anhand bestimmter Kriterien selektiv zu entfernen?
-
-A: Ja, Sie können Hyperlinks anhand bestimmter Kriterien selektiv entfernen. Sie können beispielsweise festlegen, dass nur externe Links oder Links, die auf bestimmte URLs verweisen, entfernt werden.
+### Wo kann ich Aspose.PDF für .NET herunterladen?
+ Sie können es herunterladen von der[Downloadlink](https://releases.aspose.com/pdf/net/).

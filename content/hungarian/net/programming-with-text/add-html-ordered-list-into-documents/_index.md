@@ -1,5 +1,5 @@
 ---
-title: Adjon hozzá HTML rendezett listát a dokumentumokhoz
+title: HTML rendezett lista hozzáadása a dokumentumokhoz
 linktitle: Adjon hozzá HTMLRendezett listát a dokumentumokhoz
 second_title: Aspose.PDF for .NET API Reference
 description: Ismerje meg, hogyan adhat hozzá rendezett HTML-listát egy dokumentumhoz az Aspose.PDF for .NET használatával.
@@ -47,21 +47,21 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 ```
 
 ## 6. lépés: Adjon hozzá egy oldalt a dokumentumhoz
- Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`Gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
+ Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
 ## 7. lépés: Adja hozzá a HtmlFragmentet az oldalhoz
- Add hozzá a`HtmlFragment` objektumot az oldalra a`Add` módszere a`Paragraphs` Gyűjtemény.
+ Add hozzá a`HtmlFragment` objektumot az oldalra a`Add` módszere a`Paragraphs` gyűjtemény.
 
 ```csharp
 page.Paragraphs.Add(t);
 ```
 
 ## 8. lépés: Mentse el a PDF dokumentumot
- Mentse el a kapott PDF-fájlt a`Save` módszere a`Document` tárgy. Adja meg a kimeneti fájl elérési útját, amelyet a 3. lépésben állított be.
+ Mentse el a kapott PDF-fájlt a`Save` módszere a`Document` objektum. Adja meg a kimeneti fájl elérési útját, amelyet a 3. lépésben állított be.
 
 ```csharp
 doc.Save(outFile);
@@ -115,11 +115,11 @@ using Aspose.Pdf.Text;
 
 #### K: Hogyan adhatom hozzá a HTML rendezett listát a dokumentum egy oldalához?
 
- V: A 7. lépésben hozzáadja a`HtmlFragment` tárgy (`t` ) az oldalra a`Add` módszere a`Paragraphs`Gyűjtemény. Ez zökkenőmentesen integrálja a HTML rendezett listát a dokumentumba.
+ V: A 7. lépésben hozzáadja a`HtmlFragment` tárgy (`t` ) az oldalra a`Add` módszere a`Paragraphs`gyűjtemény. Ez zökkenőmentesen integrálja a HTML rendezett listát a dokumentumba.
 
 #### K: Hogyan menthetem el az eredményül kapott PDF-dokumentumot?
 
- V: A HTML-tartalom hozzáadása és egy oldalon való elrendezése után a PDF-dokumentumot a következővel mentheti el`Save` módszere a`Document` tárgy. Ügyeljen arra, hogy a korábban beállított helyes kimeneti fájl elérési utat adja meg.
+ V: A HTML-tartalom hozzáadása és egy oldalon való elrendezése után a PDF-dokumentumot a következővel mentheti el`Save` módszere a`Document` objektum. Ügyeljen arra, hogy a korábban beállított helyes kimeneti fájl elérési utat adja meg.
 
 #### K: Meg tudná adni a mintaforráskód összefoglalását referenciaként?
 

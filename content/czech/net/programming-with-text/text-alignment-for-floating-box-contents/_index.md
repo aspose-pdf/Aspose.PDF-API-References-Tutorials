@@ -41,7 +41,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 4: Vytvořte nový dokument
 
- Vytvoř nový`Document` objekt:
+ Vytvořte nový`Document` objekt:
 
 ```csharp
 Aspose.Pdf.Document doc = new Document();
@@ -116,7 +116,7 @@ doc.Save(dataDir + "FloatingBox_alignment_review_out.pdf");
 
 ## Závěr
 
-Gratulujeme! Úspěšně jste se naučili, jak zarovnat text v plovoucích rámečcích v dokumentu PDF pomocí Aspose.PDF pro .NET. Tento výukový program poskytuje podrobného průvodce, od nastavení projektu až po uložení upraveného dokumentu. Nyní můžete tento kód začlenit do svých vlastních projektů C# a přizpůsobit zarovnání textu v plovoucích rámečcích v souborech PDF.
+Gratuluji! Úspěšně jste se naučili, jak zarovnat text v plovoucích rámečcích v dokumentu PDF pomocí Aspose.PDF pro .NET. Tento výukový program poskytuje podrobného průvodce, od nastavení projektu až po uložení upraveného dokumentu. Nyní můžete tento kód začlenit do svých vlastních projektů C# a přizpůsobit zarovnání textu v plovoucích rámečcích v souborech PDF.
 
 ### FAQ
 
@@ -146,7 +146,7 @@ Odpověď: Ano, tento tutoriál poskytuje pokyny, jak zarovnat text v plovoucíc
 
 #### Otázka: Jak mohu přizpůsobit vzhled plovoucích krabic?
 
- Odpověď: Vzhled plovoucích rámečků můžete přizpůsobit úpravou vlastností, jako je ohraničení, velikost a obsah textu. Výukový program poskytuje ukázky kódu, které demonstrují, jak vytvořit a upravit styl`FloatingBox` objektů.
+ Odpověď: Vzhled plovoucích rámečků můžete upravit úpravou vlastností, jako je ohraničení, velikost a obsah textu. Výukový program poskytuje ukázky kódu, které demonstrují, jak vytvořit a upravit styl`FloatingBox` objektů.
 
 #### Otázka: Mohu do stejného dokumentu PDF přidat více plovoucích rámečků s různým zarovnáním?
 

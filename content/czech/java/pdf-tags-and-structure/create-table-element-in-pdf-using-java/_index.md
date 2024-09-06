@@ -71,7 +71,7 @@ row1.getCells().add("Cell 3");
 
 ## Krok 7: Přizpůsobení vzhledu tabulky
 
-Aspose.PDF for Java poskytuje rozsáhlé možnosti pro přizpůsobení vzhledu vaší tabulky. Můžete nastavit písma, barvy, okraje a zarovnání podle vašich preferencí.
+Aspose.PDF for Java poskytuje rozsáhlé možnosti pro přizpůsobení vzhledu vaší tabulky. Můžete nastavit písma, barvy, okraje a zarovnání podle svých preferencí.
 
 ```java
 // Příklad: Nastavení barvy textu buňky

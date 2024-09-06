@@ -18,7 +18,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 1: Konfigurera dokumentkatalogen
 
- Först måste du ställa in sökvägen till katalogen där dina PDF-filer finns. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till dina PDF-filer.
+ Först måste du ställa in sökvägen till katalogen där dina PDF-filer finns. Ersätta`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till dina PDF-filer.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -84,7 +84,7 @@ catch (Exception ex)
 
 ## Slutsats
 
-den här handledningen har du lärt dig hur du tar bort oanvända teckensnitt från ett PDF-dokument med hjälp av Aspose.PDF-biblioteket för .NET. Genom att följa steg-för-steg-guiden och köra den medföljande C#-koden kan du ladda en PDF, identifiera och ta bort oanvända teckensnitt och spara den uppdaterade PDF-filen.
+I den här handledningen har du lärt dig hur du tar bort oanvända teckensnitt från ett PDF-dokument med hjälp av Aspose.PDF-biblioteket för .NET. Genom att följa steg-för-steg-guiden och köra den medföljande C#-koden kan du ladda en PDF, identifiera och ta bort oanvända teckensnitt och spara den uppdaterade PDF-filen.
 
 ### FAQ's
 
@@ -100,21 +100,21 @@ S: Att ta bort oanvända teckensnitt från ett PDF-dokument kan hjälpa till att
 
 S: Så här ställer du in dokumentkatalogen:
 
-1.  Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till katalogen där dina PDF-filer finns.
+1.  Ersätta`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till katalogen där dina PDF-filer finns.
 
 #### F: Hur tar jag bort oanvända teckensnitt från ett PDF-dokument med Aspose.PDF-biblioteket?
 
 S: Handledningen guidar dig genom processen steg för steg:
 
 1.  Öppna PDF-dokumentet med hjälp av`Document` klass.
-2.  Skapa en`TextFragmentAbsorber` objekt med`TextEditOptions` satt till`FontReplace.RemoveUnusedFonts`.
+2.  Skapa en`TextFragmentAbsorber` objekt med`TextEditOptions` inställd på`FontReplace.RemoveUnusedFonts`.
 3. Acceptera absorbenten för att identifiera och ta bort oanvända teckensnitt från PDF:en.
 4.  Iterera igenom allt`TextFragments` och ställ in typsnittet på önskat typsnitt.
 5. Spara det uppdaterade PDF-dokumentet.
 
 ####  F: Vad är syftet med`TextEditOptions.FontReplace.RemoveUnusedFonts` parameter?
 
- A: Den`TextEditOptions.FontReplace.RemoveUnusedFonts` parametern instruerar`TextFragmentAbsorber` för att identifiera och ta bort oanvända teckensnitt från PDF-dokumentet.
+ A: Den`TextEditOptions.FontReplace.RemoveUnusedFonts` parametern instruerar`TextFragmentAbsorber`för att identifiera och ta bort oanvända teckensnitt från PDF-dokumentet.
 
 #### F: Kan jag ersätta oanvända typsnitt med ett valfritt typsnitt?
 
@@ -122,7 +122,7 @@ S: Ja, du kan ändra koden för att ersätta oanvända teckensnitt med ett valfr
 
 ####  F: Hur fungerar`TextFragmentAbsorber` work to remove unused fonts?
 
- A: Den`TextFragmentAbsorber` är konfigurerad med`TextEditOptions.FontReplace.RemoveUnusedFonts` parameter, som identifierar oanvända teckensnitt i textfragmenten i PDF-filen. Efter absorption kan du iterera genom`TextFragments` och ställ in deras typsnitt till önskade ersättningsteckensnitt.
+ A: Den`TextFragmentAbsorber` är konfigurerad med`TextEditOptions.FontReplace.RemoveUnusedFonts` parameter, som identifierar oanvända teckensnitt i textfragmenten i PDF-filen. Efter absorption kan du iterera dig igenom`TextFragments` och ställ in deras typsnitt till önskade ersättningsteckensnitt.
 
 #### F: Vad är det förväntade resultatet av att exekvera den tillhandahållna koden?
 

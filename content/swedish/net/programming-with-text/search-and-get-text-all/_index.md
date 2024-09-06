@@ -48,7 +48,7 @@ Document pdfDocument = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 ```
 
- Byta ut`"text"` med den faktiska texten du vill söka efter.
+ Ersätta`"text"` med den faktiska texten du vill söka efter.
 
 ## Steg 5: Sök på alla sidor
 
@@ -140,7 +140,7 @@ S: För att komma igång, skapa ett nytt C#-projekt i din föredragna integrerad
 
 #### F: Hur söker jag efter specifik text i ett PDF-dokument?
 
-S: Du kan använda`TextFragmentAbsorber`klass för att hitta instanser av en specifik sökfras i PDF-dokumentet. Genom att skapa en instans av den här klassen och ange måltexten kan du fånga alla förekomster av den texten.
+ S: Du kan använda`TextFragmentAbsorber`klass för att hitta instanser av en specifik sökfras i PDF-dokumentet. Genom att skapa en instans av den här klassen och ange måltexten kan du fånga alla förekomster av den texten.
 
 #### F: Kan jag söka efter text på alla sidor i PDF-dokumentet?
 

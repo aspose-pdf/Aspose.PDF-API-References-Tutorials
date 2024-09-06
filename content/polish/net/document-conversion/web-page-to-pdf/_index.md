@@ -1,143 +1,164 @@
 ---
-title: Strona internetowa do pliku PDF
-linktitle: Strona internetowa do pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Przewodnik krok po kroku dotyczący konwersji strony internetowej do formatu PDF przy użyciu Aspose.PDF dla .NET.
+title: Strona internetowa do PDF
+linktitle: Strona internetowa do PDF
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak konwertować strony internetowe do formatu PDF za pomocą Aspose.PDF dla platformy .NET, korzystając ze szczegółowego samouczka krok po kroku.
 type: docs
 weight: 320
 url: /pl/net/document-conversion/web-page-to-pdf/
 ---
-W tym samouczku poprowadzimy Cię krok po kroku, jak przekonwertować stronę internetową do formatu PDF przy użyciu biblioteki Aspose.PDF dla .NET. Wyjaśnimy dostarczony kod źródłowy C# i pokażemy, jak zaimplementować go we własnych projektach. Pod koniec tego samouczka będziesz mógł bez wysiłku konwertować strony internetowe do dokumentów PDF.
-
 ## Wstęp
-Konwersja stron internetowych do formatu PDF jest powszechnym wymogiem w wielu aplikacjach. Konwertując zawartość internetową do formatu PDF, można łatwo zachować układ, formatowanie i obrazy oryginalnej strony internetowej. Aspose.PDF dla .NET to potężna biblioteka, która pozwala wydajnie i dokładnie przeprowadzić tę konwersję.
 
-## Wymagania
-Zanim zaczniemy, upewnij się, że spełnione są następujące wymagania wstępne:
-- Program Visual Studio zainstalowany na Twoim komputerze
-- Biblioteka Aspose.PDF dla .NET (można ją pobrać z oficjalnej strony Aspose)
-- Podstawowa znajomość programowania w języku C#
+W dzisiejszej erze cyfrowej możliwość konwersji stron internetowych na dokumenty PDF jest niezwykle cenna. Niezależnie od tego, czy chcesz zapisać artykuł do czytania offline, utworzyć raport czy zarchiwizować treści z sieci, posiadanie odpowiednich narzędzi może mieć ogromne znaczenie. Jednym z takich narzędzi jest Aspose.PDF dla .NET, potężna biblioteka, która umożliwia programistom bezproblemowe tworzenie i manipulowanie dokumentami PDF. W tym przewodniku przeprowadzimy Cię przez proces konwersji strony internetowej na PDF przy użyciu Aspose.PDF dla .NET, dzieląc go na łatwe do opanowania kroki.
 
+## Wymagania wstępne
+
+Zanim zagłębimy się w kod, upewnijmy się, że masz wszystko, czego potrzebujesz, aby zacząć:
+
+1. Visual Studio: Upewnij się, że masz zainstalowany Visual Studio na swoim komputerze. Tutaj będziesz pisać i wykonywać swój kod .NET.
+2.  Aspose.PDF dla .NET: Będziesz potrzebować biblioteki Aspose.PDF. Możesz ją pobrać z[Tutaj](https://releases.aspose.com/pdf/net/).
+3. Podstawowa wiedza o języku C#: Znajomość programowania w języku C# pomoże Ci lepiej zrozumieć przykłady.
+4. Dostęp do Internetu: Ponieważ będziemy pobierać zawartość ze strony internetowej, upewnij się, że Twoje środowisko programistyczne ma dostęp do Internetu.
+
+## Importuj pakiety
+
+Aby zacząć, musisz zaimportować niezbędne pakiety do swojego projektu C#. Oto jak to zrobić:
+
+### Utwórz nowy projekt
+
+Najpierw otwórz program Visual Studio i utwórz nowy projekt aplikacji konsolowej w języku C#. 
+
+### Dodaj odniesienie Aspose.PDF
+
+Następnie dodaj odwołanie do biblioteki Aspose.PDF. Możesz to zrobić za pomocą NuGet Package Manager:
+
+1. Kliknij prawym przyciskiem myszy swój projekt w Eksploratorze rozwiązań.
+2. Wybierz „Zarządzaj pakietami NuGet”.
+3. Wyszukaj „Aspose.PDF” i kliknij „Zainstaluj”.
+
+### Importuj wymagane przestrzenie nazw
+
+ Po dodaniu biblioteki otwórz ją`Program.cs` plik i zaimportuj niezbędne przestrzenie nazw na górze pliku:
+
+```csharp
+using System.IO;
+using System;
+using System.Net;
+using Aspose.Pdf;
+```
+
+Teraz, gdy wszystko już skonfigurowaliśmy, możemy omówić krok po kroku proces konwersji strony internetowej do dokumentu PDF.
 
 ## Krok 1: Zdefiniuj katalog dokumentów
+
+Najpierw musisz określić, gdzie zostanie zapisany wyjściowy plik PDF. Można to zrobić, podając ścieżkę do katalogu dokumentów.
+
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Zastąp swoją ścieżką
 ```
- Zastępować`"YOUR DOCUMENT DIRECTORY"` ze ścieżką, w której chcesz zapisać wygenerowany plik PDF.
 
 ## Krok 2: Utwórz żądanie internetowe
+
+Następnie musisz utworzyć żądanie pobrania zawartości ze strony internetowej, którą chcesz przekonwertować. Oto, jak to zrobić:
+
 ```csharp
-WebRequest request = WebRequest.Create("https://pl.wikipedia.org/wiki/Main_Page");
+WebRequest request = WebRequest.Create("https://pl.wikipedia.org/wiki/Strona_główna");
 request.Credentials = CredentialCache.DefaultCredentials;
 ```
-Utwórz obiekt żądania internetowego i określ adres URL strony internetowej, którą chcesz przekonwertować. Możesz zastąpić adres URL dowolną żądaną stroną internetową.
 
-## Krok 3: Uzyskaj odpowiedź internetową
+W tym kodzie tworzymy żądanie do strony głównej Wikipedii. Możesz zastąpić adres URL dowolną wybraną przez siebie stroną internetową.
+
+## Krok 3: Uzyskaj odpowiedź
+
+Po skonfigurowaniu żądania nadszedł czas na otrzymanie odpowiedzi z serwera. Wiąże się to z wysłaniem żądania i odczytaniem strumienia odpowiedzi:
+
 ```csharp
 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-```
-Wyślij żądanie internetowe i pobierz odpowiedź z serwera.
-
-## Krok 4: Przeczytaj zawartość internetową
-```csharp
-Stream dataStream = response. GetResponseStream();
+Stream dataStream = response.GetResponseStream();
 StreamReader reader = new StreamReader(dataStream);
 string responseFromServer = reader.ReadToEnd();
-reader. Close();
+reader.Close();
 dataStream.Close();
-response. Close();
+response.Close();
 ```
- Przeczytaj zawartość strony internetowej za pomocą a`StreamReader` przechowuj go w`responseFromServer` zmienny.
 
-## Krok 5: Konwertuj HTML na PDF
+Tutaj odczytujemy całą zawartość zwróconą przez serwer do zmiennej typu string. To jest zawartość, którą przekonwertujemy do formatu PDF.
+
+## Krok 4: Załaduj zawartość HTML do pamięci
+
+Teraz, gdy mamy już zawartość HTML, musimy ją załadować do`MemoryStream` abyśmy mogli przetworzyć go za pomocą Aspose.PDF:
+
 ```csharp
 MemoryStream stream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(responseFromServer));
 HtmlLoadOptions options = new HtmlLoadOptions("https://pl.wikipedia.org/wiki/");
+```
+
+ W tym kroku konwertujemy odpowiedź w postaci ciągu na tablicę bajtów i ładujemy ją do`MemoryStream` . Ten`HtmlLoadOptions` pozwala nam określić bazowy adres URL dla wszelkich linków względnych w HTML.
+
+## Krok 5: Utwórz dokument PDF
+
+Po załadowaniu zawartości HTML możemy utworzyć z niej dokument PDF:
+
+```csharp
 Document pdfDocument = new Document(stream, options);
+```
+
+ Ta linia kodu inicjuje nowy`Document` obiekt, który reprezentuje plik PDF, który zamierzamy utworzyć.
+
+## Krok 6: Ustaw orientację strony
+
+Jeśli chcesz dostosować układ pliku PDF, np. ustawić go w trybie poziomym, możesz to zrobić za pomocą następującego kodu:
+
+```csharp
 options.PageInfo.IsLandscape = true;
+```
+
+Jest to opcjonalne, ale może być przydatne w zależności od konwertowanej zawartości.
+
+## Krok 7: Zapisz plik PDF
+
+Na koniec pora zapisać dokument PDF w wybranym katalogu:
+
+```csharp
 pdfDocument.Save(dataDir + "WebPageToPDF_out.pdf");
 ```
- Stwórz`MemoryStream` obiekt, aby załadować zawartość strony internetowej. Następnie utwórz instancję`HtmlLoadOptions` i przekazać podstawowy adres URL strony internetowej. Następnie utwórz plik`Document` obiekt przy użyciu załadowanego strumienia i opcji ładowania HTML. Ustaw`IsLandscape` własność do`true` jeśli chcesz, aby plik PDF był w orientacji poziomej. Na koniec zapisz dokument PDF w określonym katalogu
 
-.
+ Ten wiersz zapisuje plik PDF pod nazwą`WebPageToPDF_out.pdf` w określonym przez Ciebie katalogu dokumentów.
 
-## Krok 6: Obsługa wyjątków
-```csharp
-catch (Exception ex)
-{
-Console.WriteLine(ex.Message);
-}
-```
-Wyłap wszelkie wyjątki, które mogą wystąpić podczas procesu konwersji i wyświetl komunikat o błędzie.
+## Krok 8: Obsługa wyjątków
 
-### Przykładowy kod źródłowy strony internetowej do formatu PDF przy użyciu Aspose.PDF dla .NET
+Zawsze dobrą praktyką jest obsługa wyjątków, które mogą wystąpić w trakcie procesu. Możesz opakować swój kod w blok try-catch:
 
 ```csharp
 try
 {
-	
-	// Ścieżka do katalogu dokumentów.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Utwórz żądanie dotyczące adresu URL.
-	WebRequest request = WebRequest.Create("https:// En.wikipedia.org/wiki/Main_Page");
-	// Jeśli serwer tego wymaga, ustaw poświadczenia.
-	request.Credentials = CredentialCache.DefaultCredentials;
-	// Limit czasu w milisekundach przed upływem limitu czasu żądania
-	// Żądanie. Limit czasu = 100;
-
-	// Uzyskaj odpowiedź.
-	HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-
-	// Pobierz strumień zawierający treść zwróconą przez serwer.
-	Stream dataStream = response.GetResponseStream();
-	// Otwórz strumień za pomocą StreamReadera, aby uzyskać łatwy dostęp.
-	StreamReader reader = new StreamReader(dataStream);
-	// Przeczytaj treść.
-	string responseFromServer = reader.ReadToEnd();
-	reader.Close();
-	dataStream.Close();
-	response.Close();
-
-	MemoryStream stream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(responseFromServer));
-	HtmlLoadOptions options = new HtmlLoadOptions("https:// En.wikipedia.org/wiki/");
-
-
-	// Załaduj plik HTML
-	Document pdfDocument = new Document(stream, options);
-
-	options.PageInfo.IsLandscape = true;
-
-	// Zapisz dane wyjściowe w formacie PDF
-	pdfDocument.Save(dataDir + "WebPageToPDF_out.pdf");
-	
+    // Cały poprzedni kod tutaj
 }
 catch (Exception ex)
 {
-	Console.WriteLine(ex.Message);
+    Console.WriteLine(ex.Message);
 }
 ```
 
+Dzięki temu, jeśli coś pójdzie nie tak, otrzymasz komunikat informujący o tym, co się stało.
+
 ## Wniosek
-tym samouczku nauczyliśmy się, jak konwertować stronę internetową do formatu PDF przy użyciu biblioteki Aspose.PDF dla .NET. Przeszliśmy przez przewodnik krok po kroku wyjaśniający dostarczony kod źródłowy C#. Postępując zgodnie z tymi instrukcjami, można łatwo zintegrować funkcję konwersji strony internetowej do formatu PDF z własnymi aplikacjami .NET.
 
-### Często zadawane pytania
+I masz! Udało Ci się przekonwertować stronę internetową do pliku PDF za pomocą Aspose.PDF dla .NET. Za pomocą zaledwie kilku linijek kodu możesz zautomatyzować proces zapisywania treści internetowych do późniejszego wykorzystania. Może to być niezwykle przydatne dla programistów, którzy chcą tworzyć raporty, archiwa lub po prostu zapisywać artykuły do czytania offline. 
 
-#### P: Co to jest Aspose.PDF dla .NET?
+## Najczęściej zadawane pytania
 
-Odp.: Aspose.PDF dla .NET to potężna biblioteka, która umożliwia programistom pracę z dokumentami PDF w aplikacjach C#. Zapewnia różne funkcjonalności, w tym konwersję stron internetowych do formatu PDF.
+### Czym jest Aspose.PDF dla .NET?
+Aspose.PDF dla platformy .NET to biblioteka umożliwiająca programistom programowe tworzenie, modyfikowanie i konwertowanie dokumentów PDF.
 
-#### P: Dlaczego miałbym chcieć przekonwertować stronę internetową do formatu PDF?
+### Czy mogę przekonwertować dowolną stronę internetową do formatu PDF?
+Tak, o ile strona internetowa jest publicznie dostępna, możesz ją przekonwertować do formatu PDF za pomocą Aspose.PDF.
 
-O: Konwersja stron internetowych do formatu PDF jest przydatna do zachowania układu, formatowania i obrazów oryginalnej zawartości internetowej. Umożliwia utworzenie migawki strony internetowej do przeglądania w trybie offline lub udostępniania innym.
+### Czy jest dostępna bezpłatna wersja próbna?
+ Tak, możesz pobrać bezpłatną wersję próbną Aspose.PDF dla .NET ze strony[Tutaj](https://releases.aspose.com/).
 
-#### P: Jakie są wymagania wstępne dotyczące tego samouczka?
+### Gdzie mogę uzyskać pomoc dotyczącą Aspose.PDF?
+ Możesz uzyskać wsparcie od społeczności Aspose na ich stronie[forum wsparcia](https://forum.aspose.com/c/pdf/10).
 
-Odp.: Aby skorzystać z tego samouczka, musisz mieć zainstalowany program Visual Studio na swoim komputerze, bibliotekę Aspose.PDF dla .NET i podstawową wiedzę na temat programowania w języku C#.
-
-#### P: Czy mogę przekonwertować dowolną stronę internetową na format PDF?
-
-Odp.: Tak, możesz przekonwertować dowolną stronę internetową do formatu PDF, podając adres URL strony internetowej w kodzie. Aspose.PDF dla .NET pobierze zawartość internetową i przekonwertuje ją do formatu PDF.
-
-#### P: Jak mogę dostosować wydruk PDF, np. orientację strony?
-
- Odp.: Możesz dostosować wyjściowy plik PDF, korzystając z opcji takich jak`IsLandscape` aby ustawić orientację strony. W podanym kodzie`options.PageInfo.IsLandscape = true` służy do tworzenia pliku PDF w orientacji poziomej.
+### Jak mogę uzyskać tymczasową licencję?
+ Możesz złożyć wniosek o tymczasową licencję na[Strona internetowa Aspose](https://purchase.aspose.com/temporary-license/).

@@ -1,8 +1,8 @@
 ---
 title: Tambahkan Tooltip ke Bidang Formulir PDF dengan Java
 linktitle: Tambahkan Tooltip ke Bidang Formulir PDF dengan Java
-second_title: Aspose.PDF API Pemrosesan PDF Java
-description: Pelajari Cara Menambahkan Tooltip ke Bidang Formulir PDF dengan Java. Panduan langkah demi langkah menggunakan Aspose.PDF untuk Java API.
+second_title: API Pemrosesan PDF Java Aspose.PDF
+description: Pelajari Cara Menambahkan Tooltips ke Kolom Formulir PDF dengan Java. Panduan langkah demi langkah menggunakan Aspose.PDF untuk API Java.
 type: docs
 weight: 11
 url: /id/java/pdf-form-fields/add-tooltip-to-pdf-form-field-with-java/
@@ -10,27 +10,27 @@ url: /id/java/pdf-form-fields/add-tooltip-to-pdf-form-field-with-java/
 
 ## Pengantar Menambahkan Tooltip ke Bidang Formulir PDF dengan Java
 
-Pada artikel ini, kita akan mempelajari cara menambahkan tooltips ke kolom formulir PDF menggunakan Java dan perpustakaan Aspose.PDF. Tooltip memberikan informasi berharga saat pengguna mengarahkan kursor ke kolom formulir dalam dokumen PDF. Menambahkan tooltips dapat meningkatkan pengalaman pengguna dan membuat formulir PDF Anda lebih ramah pengguna.
+Dalam artikel ini, kita akan membahas cara menambahkan tooltip ke kolom formulir PDF menggunakan Java dan pustaka Aspose.PDF. Tooltip memberikan informasi berharga saat pengguna mengarahkan kursor ke kolom formulir dalam dokumen PDF. Menambahkan tooltip dapat meningkatkan pengalaman pengguna dan membuat formulir PDF Anda lebih mudah digunakan.
 
-## Memahami Tooltips di Bidang Formulir PDF
+## Memahami Tooltip di Bidang Formulir PDF
 
-Tooltip adalah pesan pop-up kecil yang muncul saat pengguna mengarahkan penunjuk mouse ke elemen tertentu. Dalam konteks bidang formulir PDF, keterangan alat dapat memberikan instruksi tambahan, penjelasan, atau petunjuk tentang tujuan bidang tertentu. Mereka sangat berguna untuk memandu pengguna dalam mengisi formulir dengan benar.
+Tooltip adalah pesan pop-up kecil yang muncul saat pengguna mengarahkan kursor tetikus ke elemen tertentu. Dalam konteks kolom formulir PDF, tooltip dapat memberikan petunjuk, penjelasan, atau petunjuk tambahan tentang tujuan kolom tertentu. Tooltip sangat berguna untuk memandu pengguna dalam mengisi formulir dengan benar.
 
 ## Mempersiapkan Lingkungan
 
 Sebelum kita mulai, pastikan Anda memiliki prasyarat berikut:
 
-- Kit Pengembangan Java (JDK) diinstal
-- Lingkungan Pengembangan Terintegrasi (IDE) seperti Eclipse atau IntelliJ IDEA
--  Aspose.PDF untuk perpustakaan Java (Anda dapat mengunduhnya dari[Di Sini](https://releases.aspose.com/pdf/java/)
+- Java Development Kit (JDK) terinstal
+- Lingkungan Pengembangan Terpadu (IDE) seperti Eclipse atau IntelliJ IDEA
+-  Aspose.PDF untuk pustaka Java (Anda dapat mengunduhnya dari[Di Sini](https://releases.aspose.com/pdf/java/)
 
-## Menambahkan Dependensi
+## Menambahkan Ketergantungan
 
 Untuk memulai, buat proyek Java baru di IDE Anda dan tambahkan pustaka Aspose.PDF sebagai dependensi.
 
 ## Membuat Dokumen PDF
 
-Pada langkah ini, kita akan membuat dokumen PDF baru menggunakan Aspose.PDF. Anda dapat menyesuaikan ukuran dokumen, orientasi, dan properti lainnya sesuai kebutuhan.
+Pada langkah ini, kita akan membuat dokumen PDF baru menggunakan Aspose.PDF. Anda dapat menyesuaikan ukuran, orientasi, dan properti dokumen lainnya sesuai kebutuhan.
 
 ```java
 // Kode Java untuk membuat dokumen PDF baru
@@ -39,57 +39,57 @@ Document pdfDocument = new Document();
 
 ## Menambahkan Bidang Formulir
 
-Selanjutnya, mari tambahkan kolom formulir ke dokumen PDF kita. Anda bisa menambahkan berbagai tipe bidang formulir, seperti bidang teks, kotak centang, tombol radio, dan lainnya. Untuk contoh ini, kami akan menambahkan kolom teks.
+Selanjutnya, mari tambahkan kolom formulir ke dokumen PDF kita. Anda dapat menambahkan berbagai jenis kolom formulir, seperti kolom teks, kotak centang, tombol radio, dan lainnya. Untuk contoh ini, kita akan menambahkan kolom teks.
 
 ```java
 //Kode Java untuk menambahkan kolom teks
 TextField textField = new TextField(pdfDocument.getPages().get_Item(1), new Rectangle(100, 100, 200, 30));
 ```
 
-## Menambahkan Tooltip ke Bidang Formulir
+## Menambahkan Tooltip ke Kolom Formulir
 
- Sekarang sampai pada bagian penting—menambahkan tooltip ke kolom formulir kita. Kita dapat mengatur teks tooltip untuk suatu bidang menggunakan`setTooltip` metode.
+ Sekarang tibalah bagian yang penting—menambahkan tooltip ke kolom formulir kita. Kita dapat mengatur teks tooltip untuk kolom menggunakan`setTooltip` metode.
 
 ```java
-// Kode Java untuk menambahkan tooltip ke bidang teks
+// Kode Java untuk menambahkan tooltip ke kolom teks
 textField.setTooltip("Enter your name here");
 ```
 
 ## Menyimpan PDF
 
-Setelah menambahkan kolom formulir dan tooltips, jangan lupa untuk menyimpan dokumen PDF.
+Setelah menambahkan kolom formulir dan keterangan alat, jangan lupa untuk menyimpan dokumen PDF.
 
 ```java
 // Kode Java untuk menyimpan dokumen PDF
 pdfDocument.save("sample.pdf");
 ```
 
-## Menguji Keterangan Alat
+## Menguji Tooltip
 
-Untuk memastikan bahwa tooltips berfungsi dengan benar, buka PDF yang dihasilkan di penampil PDF. Arahkan mouse Anda ke bidang teks, dan Anda akan melihat pesan tooltip.
+Untuk memastikan tooltip berfungsi dengan benar, buka PDF yang dihasilkan di penampil PDF. Arahkan kursor ke kolom teks, dan Anda akan melihat pesan tooltip.
 
 ## Kesimpulan
 
-Menambahkan tooltips ke kolom formulir PDF menggunakan Java dan Aspose.PDF adalah proses yang mudah. Ini meningkatkan pengalaman pengguna dengan memberikan petunjuk dan instruksi bermanfaat. Anda dapat menyesuaikan tooltip untuk berbagai bidang formulir di dokumen PDF Anda.
+Menambahkan tooltip ke kolom formulir PDF menggunakan Java dan Aspose.PDF merupakan proses yang mudah. Proses ini meningkatkan pengalaman pengguna dengan memberikan petunjuk dan instruksi yang bermanfaat. Anda dapat menyesuaikan tooltip untuk berbagai kolom formulir di dokumen PDF Anda.
 
-## FAQ
+## Pertanyaan yang Sering Diajukan
 
 ### Bagaimana cara menginstal Aspose.PDF untuk Java?
 
-Anda dapat mengunduh Aspose.PDF untuk Java dari situs web Aspose. Ikuti petunjuk instalasi yang disediakan di situs web mereka untuk mengaturnya di proyek Java Anda.
+Anda dapat mengunduh Aspose.PDF untuk Java dari situs web Aspose. Ikuti petunjuk penginstalan yang tersedia di situs web mereka untuk mengaturnya di proyek Java Anda.
 
-### Bisakah saya menyesuaikan tampilan tooltips?
+### Bisakah saya menyesuaikan tampilan tooltip?
 
-Ya, Anda dapat menyesuaikan tampilan tooltip, termasuk font, warna, dan posisinya. Lihat dokumentasi Aspose.PDF untuk informasi rinci tentang opsi penyesuaian.
+Ya, Anda dapat menyesuaikan tampilan tooltip, termasuk jenis huruf, warna, dan posisinya. Lihat dokumentasi Aspose.PDF untuk informasi terperinci tentang opsi penyesuaian.
 
-### Bisakah saya menambahkan keterangan alat ke formulir PDF yang sudah ada?
+### Bisakah saya menambahkan keterangan alat ke formulir PDF yang ada?
 
-Ya, Anda bisa menambahkan tooltips ke kolom formulir di dokumen PDF yang ada. Cukup muat PDF, akses kolom formulir, dan atur tooltip seperti yang ditunjukkan dalam artikel ini.
+Ya, Anda dapat menambahkan tooltip ke kolom formulir dalam dokumen PDF yang ada. Cukup muat PDF, akses kolom formulir, dan atur tooltip seperti yang ditunjukkan dalam artikel ini.
 
 ### Apakah tooltip didukung di semua penampil PDF?
 
 Tooltip adalah fitur PDF standar dan didukung oleh sebagian besar penampil PDF modern, termasuk Adobe Acrobat Reader dan penampil PDF berbasis web yang populer.
 
-### Bisakah saya menambahkan keterangan alat ke elemen non-bentuk dalam PDF?
+### Bisakah saya menambahkan tooltip ke elemen nonformulir dalam PDF?
 
-Tidak, keterangan alat biasanya dikaitkan dengan bidang formulir dalam dokumen PDF. Jika Anda perlu menambahkan tooltip ke elemen non-formulir, Anda mungkin perlu mempelajari teknik pengeditan PDF lainnya.
+Tidak, tooltip biasanya dikaitkan dengan kolom formulir dalam dokumen PDF. Jika Anda perlu menambahkan tooltip ke elemen nonformulir, Anda mungkin perlu mempelajari teknik penyuntingan PDF lainnya.

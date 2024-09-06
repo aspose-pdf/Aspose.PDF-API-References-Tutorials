@@ -38,14 +38,14 @@ Document doc = new Document();
 ```
 
 ## Krok 5: Nastavte okraje stránky
- Zadejte informace o levém a pravém okraji pro soubor PDF pomocí`PageInfo.Margin` vlastnictvím`Document`.
+ Zadejte informace o levém a pravém okraji pro soubor PDF pomocí`PageInfo.Margin` majetek z`Document`.
 
 ```csharp
 doc.PageInfo.Margin.Left = 40;
 doc.PageInfo.Margin.Right = 40;
 ```
 
-## Krok 6: Přidejte stránku do dokumentu
+## Krok 6: Přidejte do dokumentu stránku
  Přidejte do dokumentu novou stránku pomocí`Add` metoda`Pages`sbírka. V poskytnutém kódu je nová stránka přiřazena k proměnné`page`.
 
 ```csharp
@@ -53,7 +53,7 @@ Page page = doc.Pages.Add();
 ```
 
 ## Krok 7: Vytvořte objekt Graph a přidejte čáru
- Vytvoř nový`Graph` objekt s konkrétními rozměry a přidejte k němu čáru. Poté přidejte`Graph` namítat proti`Paragraphs` kolekce stránky.
+ Vytvořte nový`Graph` objekt s konkrétními rozměry a přidejte k němu čáru. Poté přidejte`Graph` namítat proti`Paragraphs` kolekce stránky.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
@@ -75,7 +75,7 @@ page.Paragraphs.Add(heading_text);
 ```
 
 ## Krok 9: Vytvořte FloatingBox s více sloupci
- Vytvořit`FloatingBox` objekt a nastavte počet sloupců a mezery mezi sloupci. Poté přidejte fragmenty textu a řádek`Paragraphs` sbírka`FloatingBox`.
+ Vytvořte a`FloatingBox` objekt a nastavte počet sloupců a mezery mezi sloupci. Poté přidejte fragmenty textu a řádek`Paragraphs` sbírka`FloatingBox`.
 
 ```csharp
 Aspose.Pdf.FloatingBox box = new Aspose.Pdf.FloatingBox();
@@ -112,9 +112,9 @@ doc.Save(dataDir);
 // Cesta k adresáři dokumentů.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
-// Zadejte informace o levém okraji souboru PDF
+//Zadejte informace o levém okraji souboru PDF
 doc.PageInfo.Margin.Left = 40;
-//Zadejte informace o pravém okraji pro soubor PDF
+// Zadejte informace o pravém okraji pro soubor PDF
 doc.PageInfo.Margin.Right = 40;
 Page page = doc.Pages.Add();
 Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
@@ -188,7 +188,7 @@ using Aspose.Pdf.Drawing;
 
 #### Otázka: Jak nastavím okraje stránky?
 
- Odpověď: V kroku 5 použijete`PageInfo.Margin` vlastnictvím`Document` zadejte informace o levém a pravém okraji souboru PDF.
+ Odpověď: V kroku 5 použijete`PageInfo.Margin` majetek z`Document` zadejte informace o levém a pravém okraji souboru PDF.
 
 #### Otázka: Jak přidám stránku do dokumentu?
 
@@ -204,7 +204,7 @@ using Aspose.Pdf.Drawing;
 
 #### Otázka: Jak vytvořím FloatingBox s více sloupci?
 
- Odpověď: V kroku 9 vytvoříte a`FloatingBox` objekt s více sloupci a mezerami mezi sloupci, pak do něj přidejte fragmenty textu a řádek`Paragraphs` sbírka`FloatingBox`.
+ A: V kroku 9 vytvoříte a`FloatingBox` objekt s více sloupci a mezerami mezi sloupci, pak do něj přidejte fragmenty textu a řádek`Paragraphs` sbírka`FloatingBox`.
 
 #### Otázka: Jak uložím dokument PDF?
 

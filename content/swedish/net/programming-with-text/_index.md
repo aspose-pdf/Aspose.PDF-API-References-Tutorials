@@ -59,6 +59,6 @@ Aspose.PDF:s "Programmering med text" tutorials för .NET erbjuder ett omfattand
 | [Sök text med Dot Net Regex](./search-text-with-dot-net-regex/) | Lär dig hur du söker efter text med reguljära .NET-uttryck i ett PDF-dokument med Aspose.PDF för .NET. |   
 | [Ange radavstånd i PDF-fil](./specify-line-spacing/) | Lär dig hur du anger radavstånd i PDF-filen med Aspose.PDF för .NET. |  
 | [Textjustering för flytande boxinnehåll i PDF-fil](./text-alignment-for-floating-box-contents/) | Lär dig hur du justerar text i flytande rutor i PDF-fil med Aspose.PDF för .NET. |  
-| [Text och bild som stycke i pdf-fil](./text-and-image-as-paragraph/) | Lär dig hur du lägger till text och en bild som inline-stycken i PDF-fil med Aspose.PDF för .NET. |  
+| [Text Och Bild Som Stycke I PDF-fil](./text-and-image-as-paragraph/) | Lär dig hur du lägger till text och en bild som inline-stycken i PDF-fil med Aspose.PDF för .NET. |  
 | [Textsegment i PDF-fil](./text-segments/) | Lär dig hur du söker efter specifika textsegment i PDF-fil med reguljära uttryck i Aspose.PDF för .NET. |  
 | [Använd Latex Script i PDF-fil](./use-latex-script/) | Lär dig hur du använder Latex-skript för att lägga till matematiska uttryck eller formler i PDF-fil med Aspose.PDF för .NET. |  

@@ -7,7 +7,7 @@ type: docs
 weight: 230
 url: /cs/net/programming-with-text/hidden-text-block/
 ---
-V tomto tutoriálu vysvětlíme, jak vytvořit skrytý textový blok v souboru PDF pomocí knihovny Aspose.PDF pro .NET. Skrytý textový blok je plovoucí text, který se zviditelní, když kurzor myši najede na určitou oblast. Projdeme si krok za krokem proces vytvoření skrytého textového bloku pomocí poskytnutého zdrojového kódu C#.
+tomto tutoriálu vysvětlíme, jak vytvořit skrytý textový blok v souboru PDF pomocí knihovny Aspose.PDF pro .NET. Skrytý textový blok je plovoucí text, který se zviditelní, když kurzor myši najede na určitou oblast. Projdeme si krok za krokem proces vytvoření skrytého textového bloku pomocí poskytnutého zdrojového kódu C#.
 
 ## Požadavky
 
@@ -18,7 +18,7 @@ Než začnete, ujistěte se, že máte následující:
 
 ## Krok 1: Nastavte adresář dokumentů
 
- Nejprve je potřeba nastavit cestu k adresáři, kam chcete vygenerovaný PDF soubor uložit. Nahradit`"YOUR DOCUMENT DIRECTORY"` v`dataDir`proměnnou s cestou k požadovanému adresáři.
+ Nejprve je potřeba nastavit cestu k adresáři, kam chcete vygenerovaný PDF soubor uložit. Nahradit`"YOUR DOCUMENT DIRECTORY"` v`dataDir` proměnnou s cestou k požadovanému adresáři.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -45,7 +45,7 @@ Document document = new Document(outputFile);
 
 ## Krok 4: Najděte textový fragment
 
- Používáme a`TextFragmentAbsorber` objekt k nalezení fragmentu textu, který spustí zobrazení bloku skrytého textu. V tomto případě hledáme přesný text „Přesuňte kurzor myši sem pro zobrazení plovoucího textu“.
+ Používáme a`TextFragmentAbsorber`objekt k nalezení fragmentu textu, který spustí zobrazení bloku skrytého textu. V tomto případě hledáme přesný text „Přesuňte kurzor myši sem pro zobrazení plovoucího textu“.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
@@ -117,7 +117,7 @@ document.Pages.Accept(absorber);
 // Získejte první extrahovaný textový fragment
 TextFragmentCollection textFragments = absorber.TextFragments;
 TextFragment fragment = textFragments[1];
-// Vytvořte skryté textové pole pro plovoucí text v určeném obdélníku stránky
+//Vytvořte skryté textové pole pro plovoucí text v určeném obdélníku stránky
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
 // Nastavte text, který se zobrazí jako hodnota pole
 floatingField.Value = "This is the \"floating text field\".";
@@ -139,7 +139,7 @@ document.Form.Add(floatingField);
 // Vytvořit neviditelné tlačítko na pozici fragmentu textu
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
 // Vytvořte novou akci skrytí pro zadané pole (poznámku) a příznak neviditelnosti.
-//(Můžete také odkazovat na plovoucí pole názvem, pokud jste jej uvedli výše.)
+// (Můžete také odkazovat na plovoucí pole názvem, pokud jste jej uvedli výše.)
 // Přidejte akce při vstupu/výstupu myší do pole neviditelného tlačítka
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);
@@ -151,7 +151,7 @@ document.Save(outputFile);
 
 ## Závěr
 
-V tomto tutoriálu jste se naučili, jak vytvořit skrytý textový blok pomocí knihovny Aspose.PDF for .NET. Podle podrobného průvodce můžete vygenerovat dokument PDF se skrytým textovým polem, které se zviditelní, když kurzor myši najede na určitou oblast. Vzhled a chování bloku skrytého textu si můžete přizpůsobit podle svých požadavků.
+tomto tutoriálu jste se naučili, jak vytvořit skrytý textový blok pomocí knihovny Aspose.PDF for .NET. Podle podrobného průvodce můžete vygenerovat dokument PDF se skrytým textovým polem, které se zviditelní, když kurzor myši najede na určitou oblast. Vzhled a chování bloku skrytého textu si můžete přizpůsobit podle svých požadavků.
 
 ### FAQ
 
@@ -171,7 +171,7 @@ A: Chcete-li nastavit adresář dokumentů:
 
 #### Otázka: Jak vytvořím vzorový dokument a přidám do něj fragment textu?
 
-A: V tutoriálu používáte`Document` třídy k vytvoření ukázkového dokumentu PDF a přidání fragmentu textu. Tento fragment textu slouží jako spouštěč pro zobrazení bloku skrytého textu.
+ A: V tutoriálu používáte`Document` třídy k vytvoření ukázkového dokumentu PDF a přidání fragmentu textu. Tento fragment textu slouží jako spouštěč pro zobrazení bloku skrytého textu.
 
 #### Otázka: Jak najdu fragment textu, který spouští blok skrytého textu?
 
@@ -179,7 +179,7 @@ A: V tutoriálu používáte`Document` třídy k vytvoření ukázkového dokume
 
 #### Otázka: Jak vytvořím a přizpůsobím skryté textové pole?
 
- A: Vytvoříte a`TextBoxField` objekt, který bude reprezentovat skryté textové pole. Kurz poskytuje kód pro nastavení různých vlastností, jako je poloha, hodnota, vzhled a chování skrytého textového pole.
+ A: Vytvoříte a`TextBoxField`objekt, který bude reprezentovat skryté textové pole. Kurz poskytuje kód pro nastavení různých vlastností, jako je poloha, hodnota, vzhled a chování skrytého textového pole.
 
 #### Otázka: Jak vytvořím neviditelné tlačítko spojené se skrytým textovým blokem?
 

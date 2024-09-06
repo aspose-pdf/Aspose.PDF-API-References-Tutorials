@@ -71,7 +71,7 @@ Nu när vi har ett PDF-formulär med fält, låt oss fortsätta att fylla i dess
 // Öppna det befintliga PDF-dokumentet
 Document pdfDocument = new Document("sample_form.pdf");
 
-// Gå till formulärfältet med dess namn
+// Öppna formulärfältet med dess namn
 com.aspose.pdf.forms.TextBoxField textBoxField = (com.aspose.pdf.forms.TextBoxField) pdfDocument.getForm().get("text_field");
 
 // Ställ in värdet för formulärfältet

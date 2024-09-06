@@ -7,13 +7,13 @@ type: docs
 weight: 30
 url: /cs/net/programming-with-graphs/add-line-object/
 ---
-V tomto tutoriálu vás krok za krokem provedeme následujícím zdrojovým kódem C#, jak přidat objekt řádku pomocí Aspose.PDF for .NET.
+tomto tutoriálu vás krok za krokem provedeme následujícím zdrojovým kódem C#, jak přidat objekt řádku pomocí Aspose.PDF for .NET.
 
 Než začnete, ujistěte se, že jste nainstalovali knihovnu Aspose.PDF a nastavili své vývojové prostředí. Také mít základní znalosti programování v C#.
 
 ## Krok 1: Nastavení adresáře dokumentů
 
-poskytnutém zdrojovém kódu musíte určit adresář, kam chcete uložit výsledný soubor PDF. Změňte proměnnou "dataDir" na požadovaný adresář.
+V poskytnutém zdrojovém kódu musíte určit adresář, kam chcete uložit výsledný soubor PDF. Změňte proměnnou "dataDir" na požadovaný adresář.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -93,7 +93,7 @@ Console.WriteLine("\nLine object added successfully to pdf.\nFile saved at " + d
 
 ## Závěr
 
-V tomto tutoriálu jsme krok za krokem vysvětlili, jak přidat čárový objekt pomocí Aspose.PDF pro .NET. Nyní můžete tyto znalosti využít k vytváření dokumentů PDF s vlastními řádky ve vašich aplikacích.
+tomto tutoriálu jsme krok za krokem vysvětlili, jak přidat čárový objekt pomocí Aspose.PDF pro .NET. Nyní můžete tyto znalosti využít k vytváření dokumentů PDF s vlastními řádky ve vašich aplikacích.
 
 ### Časté dotazy pro přidání čárového objektu do souboru PDF
 

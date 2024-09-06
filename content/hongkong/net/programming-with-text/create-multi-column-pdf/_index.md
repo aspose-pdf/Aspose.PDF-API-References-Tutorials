@@ -75,7 +75,7 @@ page.Paragraphs.Add(heading_text);
 ```
 
 ## 第 9 步：建立一個具有多列的 FloatingBox
-創建一個`FloatingBox`物件並設定列數和列間距。然後，將文字片段和一行添加到`Paragraphs`的集合`FloatingBox`.
+創建一個`FloatingBox`物件並設定列數和列間距。然後，將文字片段和一行新增到`Paragraphs`的集合`FloatingBox`.
 
 ```csharp
 Aspose.Pdf.FloatingBox box = new Aspose.Pdf.FloatingBox();

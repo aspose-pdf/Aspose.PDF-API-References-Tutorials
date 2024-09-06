@@ -1,17 +1,17 @@
 ---
-title: Documentlink maken
-linktitle: Documentlink maken
+title: Documentkoppeling maken
+linktitle: Documentkoppeling maken
 second_title: Aspose.PDF voor .NET API-referentie
 description: Maak eenvoudig koppelingen naar andere PDF-documenten met Aspose.PDF voor .NET.
 type: docs
 weight: 30
 url: /nl/net/programming-with-links-and-actions/create-document-link/
 ---
-Door naar een ander document in een PDF-bestand te linken, kunt u klikbare koppelingen maken die gebruikers naar andere PDF-documenten omleiden. Met Aspose.PDF voor .NET kunt u eenvoudig dergelijke koppelingen maken door de volgende broncode te volgen:
+Door te linken naar een ander document in een PDF-bestand kunt u klikbare links maken die gebruikers doorverwijzen naar andere PDF-documenten. Met Aspose.PDF voor .NET kunt u dergelijke links eenvoudig maken door de volgende broncode te volgen:
 
 ## Stap 1: Importeer de vereiste bibliotheken
 
-Voordat u begint, moet u de benodigde bibliotheken voor uw C#-project importeren. Hier is de noodzakelijke importrichtlijn:
+Voordat u begint, moet u de benodigde bibliotheken voor uw C#-project importeren. Dit is de benodigde importrichtlijn:
 
 ```csharp
 using Aspose.Pdf;
@@ -21,7 +21,7 @@ using Aspose.Pdf.InteractiveFeatures;
 
 ## Stap 2: Stel het pad naar de documentenmap in
 
-In deze stap moet u het pad opgeven naar de map met het PDF-bestand waaraan u een link naar een ander document wilt toevoegen. Vervangen`"YOUR DOCUMENT DIRECTORY"`in de volgende code met het daadwerkelijke pad naar uw documentenmap:
+ In deze stap moet u het pad opgeven naar de map met het PDF-bestand waaraan u een koppeling naar een ander document wilt toevoegen. Vervangen`"YOUR DOCUMENT DIRECTORY"` in de volgende code met het daadwerkelijke pad naar uw documentenmap:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -49,71 +49,71 @@ page.Annotations.Add(link);
 
 ## Stap 5: Sla het bijgewerkte bestand op
 
- Laten we nu het bijgewerkte PDF-bestand opslaan met behulp van de`Save` werkwijze van de`document` voorwerp. Hier is de bijbehorende code:
+Laten we nu het bijgewerkte PDF-bestand opslaan met behulp van de`Save` methode van de`document` object. Hier is de bijbehorende code:
 
 ```csharp
 dataDir = dataDir + "CreateDocumentLink_out.pdf";
 document. Save(dataDir);
 ```
 
-### Voorbeeldbroncode voor Create Document Link met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor het maken van een documentkoppeling met behulp van Aspose.PDF voor .NET 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Document openen
 Document document = new Document(dataDir+ "CreateDocumentLink.pdf");
-// Maak een koppeling
+// Link maken
 Page page = document.Pages[1];
 LinkAnnotation link = new LinkAnnotation(page, new Aspose.Pdf.Rectangle(100, 100, 300, 300));
 link.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
 link.Action = new GoToRemoteAction(dataDir + "RemoveOpenAction.pdf", 1);
 page.Annotations.Add(link);
 dataDir = dataDir + "CreateDocumentLink_out.pdf";
-// Bewaar het bijgewerkte document
+// Bijgewerkt document opslaan
 document.Save(dataDir);
 Console.WriteLine("\nDocument link created successfully.\nFile saved at " + dataDir);            
 ```
 
 ## Conclusie
 
-Gefeliciteerd! U hebt nu een stapsgewijze handleiding voor het koppelen naar andere documenten met Aspose.PDF voor .NET. U kunt deze code gebruiken om klikbare links in uw PDF-bestanden te maken, waardoor gebruikers naar andere documenten worden omgeleid.
+Gefeliciteerd! U hebt nu een stapsgewijze handleiding om te linken naar andere documenten met Aspose.PDF voor .NET. U kunt deze code gebruiken om klikbare links in uw PDF-bestanden te maken, waarmee gebruikers worden doorverwezen naar andere documenten.
 
-Zorg ervoor dat u de officiële Aspose.PDF-documentatie bekijkt voor meer informatie over de geavanceerde functies van interactieve links.
+Raadpleeg de officiële Aspose.PDF-documentatie voor meer informatie over de geavanceerde functies van interactieve links.
 
-### Veelgestelde vragen over het maken van een documentlink
+### FAQ's voor het maken van een documentlink
 
-#### Vraag: Wat zijn documentlinks in PDF-bestanden?
+#### V: Wat zijn documentkoppelingen in PDF-bestanden?
 
-A: Documentlinks in PDF-bestanden zijn klikbare links die gebruikers naar andere PDF-documenten leiden. Deze links verbeteren de navigatie door een efficiënte manier te bieden om gerelateerde inhoud met elkaar te verbinden en een naadloze leeservaring te vergemakkelijken.
+A: Documentlinks in PDF-bestanden zijn klikbare links die gebruikers naar andere PDF-documenten leiden. Deze links verbeteren de navigatie door een efficiënte manier te bieden om gerelateerde content te verbinden en een naadloze leeservaring te faciliteren.
 
-#### Vraag: Hoe kan ik profiteren van het maken van documentkoppelingen?
+#### V: Hoe kan ik profiteren van het maken van documentlinks?
 
-A: Door documentkoppelingen te maken, kunt u verbindingen tot stand brengen tussen verschillende secties of onderwerpen binnen uw PDF-documenten. Met deze functie hebben gebruikers eenvoudig toegang tot aanvullende informatie of gerelateerd materiaal.
+A: Door documentlinks te maken kunt u verbindingen leggen tussen verschillende secties of onderwerpen binnen uw PDF-documenten. Deze functie stelt gebruikers in staat om eenvoudig toegang te krijgen tot aanvullende informatie of gerelateerde materialen.
 
-#### Vraag: Hoe ondersteunt Aspose.PDF voor .NET het maken van documentlinks?
+#### V: Hoe ondersteunt Aspose.PDF voor .NET het maken van documentkoppelingen?
 
-A: Aspose.PDF voor .NET vereenvoudigt het proces van het maken van documentkoppelingen door een uitgebreide set API's te bieden. De stapsgewijze zelfstudie in deze handleiding laat zien hoe u documentlinks aan uw PDF-bestanden kunt toevoegen.
+A: Aspose.PDF voor .NET vereenvoudigt het proces van het maken van documentlinks door een uitgebreide set API's te bieden. De stapsgewijze tutorial in deze gids laat zien hoe u documentlinks aan uw PDF-bestanden toevoegt.
 
-#### Vraag: Kan ik het uiterlijk van documentlinks aanpassen?
+#### V: Kan ik het uiterlijk van documentkoppelingen aanpassen?
 
-EEN: Absoluut! Aspose.PDF voor .NET biedt aanpassingsopties voor het uiterlijk van documentlinks, inclusief kleur-, stijl- en zweefeffecten. U kunt het uiterlijk aanpassen aan het ontwerp van uw document.
+A: Absoluut! Aspose.PDF voor .NET biedt aanpassingsopties voor het uiterlijk van documentkoppelingen, inclusief kleur, stijl en zweefeffecten. U kunt het uiterlijk aanpassen aan het ontwerp van uw document.
 
-#### Vraag: Is het mogelijk om naar specifieke secties of pagina's binnen een ander document te linken?
+#### V: Is het mogelijk om te linken naar specifieke secties of pagina's binnen een ander document?
 
-A: Ja, u kunt koppelingen maken waarmee gebruikers naar specifieke pagina's of secties in een ander PDF-document kunnen navigeren. Aspose.PDF voor .NET biedt de flexibiliteit om de doellocatie binnen het gekoppelde document te definiëren.
+A: Ja, u kunt links maken die gebruikers naar specifieke pagina's of secties in een ander PDF-document navigeren. Aspose.PDF voor .NET biedt de flexibiliteit om de doellocatie in het gekoppelde document te definiëren.
 
-#### Vraag: Hoe kan ik ervoor zorgen dat mijn documentkoppelingen functioneel zijn?
+#### V: Hoe kan ik ervoor zorgen dat de links in mijn documenten werken?
 
-A: Door de meegeleverde tutorial en voorbeeldcode te volgen, kunt u vol vertrouwen functionele documentkoppelingen maken. U kunt de koppelingen testen door het gegenereerde PDF-document te openen en op de koppelingen te klikken.
+A: Door de meegeleverde tutorial en voorbeeldcode te volgen, kunt u vol vertrouwen functionele documentlinks maken. U kunt de links testen door het gegenereerde PDF-document te openen en op de links te klikken.
 
-#### Vraag: Kan ik meerdere documentlinks maken binnen één PDF-bestand?
+#### V: Kan ik meerdere documentkoppelingen maken in één PDF-bestand?
 
- EEN: Zeker! U kunt meerdere documentkoppelingen maken binnen één PDF-document met behulp van de`LinkAnnotation`annotatie. Hiermee kunt u gebruikers toegang geven tot verschillende gerelateerde documenten uit verschillende secties.
+ A: Zeker! U kunt meerdere documentkoppelingen binnen één PDF-document maken met behulp van de`LinkAnnotation` annotatie. Hiermee kunt u gebruikers toegang geven tot verschillende gerelateerde documenten uit verschillende secties.
 
-#### Vraag: Zijn er beperkingen bij het linken naar externe documenten?
+#### V: Zijn er beperkingen bij het linken naar externe documenten?
 
-A: Zorg er bij het koppelen aan externe documenten voor dat de gekoppelde documenten toegankelijk zijn en zich in de opgegeven paden bevinden. Het is ook belangrijk om rekening te houden met gebruikersmachtigingen en de compatibiliteit van gekoppelde documenten.
+A: Wanneer u naar externe documenten linkt, zorg er dan voor dat de gelinkte documenten toegankelijk zijn en zich in de opgegeven paden bevinden. Het is ook belangrijk om rekening te houden met gebruikersrechten en de compatibiliteit van gelinkte documenten.
 
-#### Vraag: Kan ik een koppeling maken naar documenten die zijn opgeslagen op internet of in online opslagplaatsen?
+#### V: Kan ik een koppeling maken naar documenten die op het web of in online opslagplaatsen zijn opgeslagen?
 
-A: Hoewel deze tutorial zich richt op het linken naar lokale documenten, ondersteunt Aspose.PDF voor .NET ook het linken naar web-URL's of online repository's. U kunt de meegeleverde code aanpassen om webgebaseerde documentlinks te maken.
+A: Hoewel deze tutorial zich richt op het linken naar lokale documenten, ondersteunt Aspose.PDF voor .NET ook het linken naar web-URL's of online repositories. U kunt de meegeleverde code aanpassen om webgebaseerde documentlinks te maken.

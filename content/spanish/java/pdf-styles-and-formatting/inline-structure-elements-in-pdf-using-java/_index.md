@@ -1,33 +1,33 @@
 ---
 title: Elementos de estructura en línea en PDF usando Java
 linktitle: Elementos de estructura en línea en PDF usando Java
-second_title: Aspose.PDF API de procesamiento de PDF Java
-description: Aprenda a implementar elementos de estructura en línea en documentos PDF usando Java con Aspose.PDF para Java. Cree archivos PDF accesibles y bien estructurados.
+second_title: API de procesamiento de PDF de Java Aspose.PDF
+description: Aprenda a implementar elementos de estructura en línea en documentos PDF utilizando Java con Aspose.PDF para Java. Cree archivos PDF accesibles y bien estructurados.
 type: docs
 weight: 10
 url: /es/java/pdf-styles-and-formatting/inline-structure-elements-in-pdf-using-java/
 ---
 
-## Introducción a los elementos de estructura en línea en PDF usando Java
+## Introducción a los elementos de estructura en línea en PDF con Java
 
-Los documentos PDF desempeñan un papel importante en la gestión de documentos moderna. Proporcionan una forma confiable y consistente de compartir información entre diferentes plataformas y dispositivos. Cuando se trata de archivos PDF, no se trata sólo del contenido; La estructura del documento también importa, especialmente en términos de accesibilidad y organización. En este artículo, exploraremos "Elementos de estructura en línea en PDF usando Java" y cómo implementarlos usando Aspose.PDF para Java.
+Los documentos PDF desempeñan un papel importante en la gestión documental moderna. Ofrecen una forma fiable y coherente de compartir información entre diferentes plataformas y dispositivos. Cuando se trata de archivos PDF, no solo se trata del contenido; la estructura del documento también es importante, especialmente en lo que respecta a la accesibilidad y la organización. En este artículo, exploraremos los "Elementos de estructura en línea en PDF con Java" y cómo puedes implementarlos con Aspose.PDF para Java.
 
 ## ¿Qué son los elementos de estructura en línea en PDF?
 
 Los elementos de estructura en línea son elementos dentro de un documento PDF que definen la estructura del contenido. Ayudan a organizar el texto y otros elementos del documento, haciéndolo más accesible para usuarios con discapacidades y mejorando la estructura general del documento. Estos elementos proporcionan información importante sobre la semántica del contenido, lo que facilita que el software y los lectores de pantalla interpreten y presenten el documento.
 
-## Importancia de los elementos de la estructura en línea
+## Importancia de los elementos de estructura en línea
 
-Los elementos de estructura en línea desempeñan un papel crucial en la creación de documentos PDF accesibles y bien organizados. Proporcionan beneficios como:
+Los elementos de estructura en línea desempeñan un papel fundamental en la creación de documentos PDF accesibles y bien organizados. Ofrecen ventajas como las siguientes:
 
 - Accesibilidad mejorada para usuarios con discapacidad.
-- Navegación y estructura de documentos mejoradas.
+- Navegación y estructura de documentos mejorada.
 - Mejor compatibilidad con tecnologías de asistencia.
-- Cumplimiento de estándares de accesibilidad (p. ej., PDF/UA).
+- Cumplimiento de los estándares de accesibilidad (por ejemplo, PDF/UA).
 
-Ahora, profundicemos en cómo puede implementar elementos de estructura en línea en sus documentos PDF usando Aspose.PDF para Java.
+Ahora, veamos cómo puedes implementar elementos de estructura en línea en tus documentos PDF usando Aspose.PDF para Java.
 
-## Primeros pasos con Aspose.PDF para Java
+## Introducción a Aspose.PDF para Java
 
 Antes de comenzar, debe configurar su entorno de desarrollo e instalar Aspose.PDF para Java.
 
@@ -35,61 +35,61 @@ Antes de comenzar, debe configurar su entorno de desarrollo e instalar Aspose.PD
 
 Para instalar Aspose.PDF para Java, siga estos pasos:
 
-1.  Descargue Aspose.PDF para Java: visite el sitio web de Aspose[aquí](https://releases.aspose.com/pdf/java/) y descargue la última versión de Aspose.PDF para Java.
+1.  Descargar Aspose.PDF para Java: Visite el sitio web de Aspose[aquí](https://releases.aspose.com/pdf/java/) y descargue la última versión de Aspose.PDF para Java.
 
-2. Agregue a su proyecto: agregue la biblioteca Aspose.PDF a su proyecto Java incluyendo el archivo JAR en la ruta de compilación de su proyecto.
+2. Agregar a su proyecto: agregue la biblioteca Aspose.PDF a su proyecto Java incluyendo el archivo JAR en la ruta de compilación de su proyecto.
 
-## Configurando un proyecto Java
+## Configuración de un proyecto Java
 
-Cree un nuevo proyecto Java o abra uno existente. Asegúrese de tener la biblioteca Aspose.PDF agregada a las dependencias de su proyecto.
+Cree un nuevo proyecto Java o abra uno existente. Asegúrese de haber agregado la biblioteca Aspose.PDF a las dependencias de su proyecto.
 
 ## Agregar texto a PDF
 
-Ahora que su proyecto está configurado, comencemos creando un documento PDF y agregándole texto en línea.
+Ahora que su proyecto está configurado, comencemos por crear un documento PDF y agregarle texto en línea.
 
-### Crear un documento PDF
+### Creación de un documento PDF
 
 ```java
 // Crear un nuevo documento PDF
 Document pdfDocument = new Document();
 ```
 
-### Agregar texto en línea al PDF
+### Cómo agregar texto en línea al PDF
 
 ```java
-// Crear una página en el documento.
+// Crear una página en el documento
 Page page = pdfDocument.getPages().add();
 
-// Agregar texto a la página
+// Añadir texto a la página
 TextFragment textFragment = new TextFragment("Hello, Inline Structure Elements!");
 page.getParagraphs().add(textFragment);
 
-// guardar el documento
+// Guardar el documento
 pdfDocument.save("output.pdf");
 ```
 
-## Dar formato al texto
+## Formato de texto
 
-Los elementos de estructura en línea no solo ayudan con la estructura del documento sino que también le permiten formatear el texto para mejorar su apariencia visual.
+Los elementos de estructura en línea no solo ayudan con la estructura del documento, sino que también permiten formatear el texto para mejorar su apariencia visual.
 
 ### Cambiar el color del texto
 
-Puede cambiar el color del texto en línea usando Aspose.PDF. Así es cómo:
+Puedes cambiar el color del texto en línea con Aspose.PDF. A continuación te indicamos cómo hacerlo:
 
 ```java
 textFragment.getTextState().setForegroundColor(Color.getRed());
 ```
 
-### Ajustar el tamaño y el estilo de la fuente
+### Ajuste del tamaño y estilo de fuente
 
-Para modificar el tamaño y estilo de fuente:
+Para modificar el tamaño y el estilo de fuente:
 
 ```java
 textFragment.getTextState().setFontSize(18);
 textFragment.getTextState().setFont(FontRepository.findFont("Arial"));
 ```
 
-### Aplicar formato al texto en línea
+### Cómo aplicar formato al texto en línea
 
 Puede aplicar varias opciones de formato al texto en línea, incluidas negrita, cursiva y subrayado:
 
@@ -101,7 +101,7 @@ textFragment.getTextState().setUnderline(TextStateDecoration.Line);
 
 ## Agregar imágenes a PDF
 
-Además de texto, también puedes agregar imágenes a tu documento PDF.
+Además del texto, también puedes agregar imágenes a tu documento PDF.
 
 ### Insertar imágenes en un PDF
 
@@ -112,7 +112,7 @@ Para insertar una imagen en el PDF:
 com.aspose.pdf.Image image = new com.aspose.pdf.Image();
 image.setFile("image.png");
 
-// Añade la imagen a la página.
+// Añade la imagen a la página
 page.getParagraphs().add(image);
 ```
 
@@ -126,11 +126,11 @@ image.getRectangle().setWidth(200);
 image.getRectangle().setHeight(150);
 ```
 
-## Crear hipervínculos
+## Creación de hipervínculos
 
 Los hipervínculos son esenciales para crear archivos PDF interactivos. Veamos cómo puedes agregar hipervínculos a tu texto en línea.
 
-### Agregar hipervínculos al texto en línea
+### Cómo agregar hipervínculos a texto en línea
 
 Para agregar un hipervínculo al texto:
 
@@ -140,56 +140,56 @@ LinkAnnotation link = new LinkAnnotation(page, textFragment.getRectangle());
 link.setAction(new GoToURIAction(new URI("https://www.ejemplo.com")));
 ```
 
-### Vinculación a recursos externos
+### Enlaces a recursos externos
 
-Puede vincular a recursos externos como sitios web, documentos o direcciones de correo electrónico especificando el URI apropiado.
+Puede vincular a recursos externos, como sitios web, documentos o direcciones de correo electrónico, especificando el URI apropiado.
 
-## Estructurar contenido PDF
+## Estructuración de contenido PDF
 
-Ahora, exploremos cómo se pueden utilizar los elementos de estructura en línea para estructurar su contenido PDF de manera efectiva.
+Ahora, exploremos cómo se pueden usar los elementos de estructura en línea para estructurar el contenido PDF de manera efectiva.
 
-### Comprender los elementos de la estructura de PDF
+### Comprensión de los elementos de la estructura de PDF
 
-Los elementos de estructura PDF proporcionan una estructura jerárquica para el contenido del documento. Incluyen elementos como párrafos, títulos, listas y más.
+Los elementos de estructura de PDF proporcionan una estructura jerárquica para el contenido del documento. Incluyen elementos como párrafos, encabezados, listas y más.
 
 ### Elementos de estructura en línea en Aspose.PDF
 
-Aspose.PDF para Java le permite crear y administrar elementos de estructura en línea dentro de su documento PDF. Estos elementos ayudan a definir la estructura del texto, haciéndolo más fácil de navegar y comprender.
+Aspose.PDF para Java le permite crear y administrar elementos de estructura en línea dentro de su documento PDF. Estos elementos ayudan a definir la estructura del texto, lo que facilita la navegación y la comprensión.
 
 ## Implementación de elementos de estructura en línea
 
 Para implementar elementos de estructura en línea en su documento PDF, siga estos pasos:
 
-### Crear elementos de estructura en línea
+### Creación de elementos de estructura en línea
 
 ```java
 // Crear un elemento de estructura en línea
 InlineTextElement inlineTextElement = new InlineTextElement();
 inlineTextElement.setText("This is an inline structure element.");
 
-// Asociar el elemento de estructura con texto.
+// Asociar el elemento de estructura con el texto
 textFragment.getTextState().setStructureElement(inlineTextElement);
 ```
 
-### Asociar elementos de estructura con contenido
+### Asociación de elementos de estructura con contenido
 
-Al asociar elementos de estructura con contenido, proporciona información adicional sobre la semántica del texto. Esto es crucial para la accesibilidad.
+Al asociar elementos de la estructura con el contenido, se proporciona información adicional sobre la semántica del texto, lo cual es fundamental para la accesibilidad.
 
 ## Accesibilidad de PDF
 
-Garantizar la accesibilidad de los PDF es esencial, especialmente para los usuarios con discapacidades. Los elementos de estructura en línea contribuyen a la creación de documentos PDF accesibles.
+Garantizar la accesibilidad de los archivos PDF es fundamental, especialmente para los usuarios con discapacidades. Los elementos de estructura en línea contribuyen a crear documentos PDF accesibles.
 
-### Beneficios de los archivos PDF accesibles
+### Beneficios de los PDF accesibles
 
-Los archivos PDF accesibles ofrecen varios beneficios:
+Los PDF accesibles ofrecen varias ventajas:
 
 - Pueden leerse en voz alta mediante lectores de pantalla.
 - Proporcionan opciones de navegación para usuarios con discapacidades.
-- Cumplen con los estándares de accesibilidad, garantizando la inclusión.
+- Cumplen con los estándares de accesibilidad, garantizando la inclusividad.
 
 ## Conclusión
 
-En este artículo, exploramos el concepto de elementos de estructura en línea en documentos PDF utilizando Java y Aspose.PDF para Java. Hemos cubierto la importancia de estos elementos, cómo crear un PDF, agregar texto e imágenes, formatear el contenido, agregar hipervínculos, estructurar el contenido utilizando elementos de estructura en línea y garantizar la accesibilidad del PDF.
+En este artículo, hemos explorado el concepto de elementos de estructura en línea en documentos PDF utilizando Java y Aspose.PDF para Java. Hemos abordado la importancia de estos elementos, cómo crear un PDF, agregar texto e imágenes, dar formato al contenido, agregar hipervínculos, estructurar el contenido utilizando elementos de estructura en línea y garantizar la accesibilidad del PDF.
 
 ## Preguntas frecuentes
 
@@ -203,11 +203,11 @@ Los elementos de estructura en línea son elementos dentro de un documento PDF q
 
 ### ¿Puedo cambiar el color del texto en línea en un PDF?
 
-Sí, puedes cambiar el color del texto en línea en un PDF usando Aspose.PDF para Java. Utilizar el`setTextState().setForegroundColor(Color)` Método para especificar el color.
+Sí, puedes cambiar el color del texto en línea en un PDF usando Aspose.PDF para Java. Usa el`setTextState().setForegroundColor(Color)` método para especificar el color.
 
 ### ¿Cuál es el beneficio de crear archivos PDF accesibles?
 
-Los PDF accesibles benefician a los usuarios con discapacidades al proporcionar características como compatibilidad con lectores de pantalla, opciones de navegación y cumplimiento de estándares de accesibilidad (por ejemplo, PDF/UA).
+Los PDF accesibles benefician a los usuarios con discapacidades al brindarles funciones como compatibilidad con lectores de pantalla, opciones de navegación y cumplimiento de los estándares de accesibilidad (por ejemplo, PDF/UA).
 
 ### ¿Cómo puedo crear hipervínculos en un PDF?
 

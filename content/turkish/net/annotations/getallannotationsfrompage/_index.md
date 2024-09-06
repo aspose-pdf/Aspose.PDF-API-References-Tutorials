@@ -1,109 +1,92 @@
 ---
-title: Tüm Ek Açıklamaları Sayfadan Al
-linktitle: Tüm Ek Açıklamaları Sayfadan Al
-second_title: .NET API Referansı için Aspose.PDF
-description: Bu adım adım kılavuzla bir PDF sayfasındaki tüm açıklamaları almak için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin.
+title: Sayfadan Tüm Açıklamaları Al
+linktitle: Sayfadan Tüm Açıklamaları Al
+second_title: Aspose.PDF for .NET API Referansı
+description: Bu adım adım kılavuzda Aspose.PDF for .NET kullanarak PDF dosyalarından açıklamaların nasıl çıkarılacağını öğrenin. Her seviyedeki geliştirici için mükemmeldir.
 type: docs
 weight: 70
 url: /tr/net/annotations/getallannotationsfrompage/
 ---
-Bu makale, Aspose.PDF for .NET kullanarak bir PDF sayfasındaki tüm açıklamaları çıkarma sürecinde size rehberlik edecektir. Aspose.PDF for .NET, geliştiricilerin PDF belgeleri oluşturmasına, düzenlemesine ve dönüştürmesine olanak tanıyan bir kitaplıktır. Bu kılavuzun yardımıyla, sağlanan C# kaynak kodunu kullanarak belirli bir PDF sayfasındaki tüm ek açıklamaları alabileceksiniz.
+## giriiş
 
-Aspose.PDF for .NET kullanarak bir PDF sayfasındaki tüm Ek Açıklamaları almak için aşağıdaki adımları izleyin:
+.NET için Aspose.PDF dünyasına hoş geldiniz! PDF belgelerini programatik olarak düzenlemek istiyorsanız doğru yerdesiniz. Aspose.PDF, geliştiricilerin PDF dosyalarını kolaylıkla oluşturmasına, düzenlemesine ve yönetmesine olanak tanıyan güçlü bir kütüphanedir. Bu eğitimde, belirli bir özelliği ele alacağız: PDF sayfasından ek açıklamaları çıkarmak. İster deneyimli bir geliştirici olun ister yeni başlıyor olun, bu kılavuz sizi adım adım süreçte yönlendirecek ve yol boyunca her ayrıntıyı kavramanızı sağlayacaktır.
 
-## Adım 1: Belgeler Dizininin Yolu
+## Ön koşullar
 
-Aspose.PDF for .NET kullanarak bir PDF sayfasından tüm açıklamaları almanın ilk adımı, PDF dosyalarınızın depolandığı belgeler dizininin yolunu ayarlamaktır. Bunu aşağıdaki kod satırını değiştirerek yapabilirsiniz:
+Koda geçmeden önce, başlamak için ihtiyacınız olan her şeye sahip olduğunuzdan emin olalım:
+
+1. Visual Studio: Makinenizde Visual Studio'nun yüklü olduğundan emin olun. Kodumuzu burada yazıp çalıştıracağız.
+2. .NET Framework: .NET framework'e aşinalık şarttır. Yeniyseniz endişelenmeyin; işleri basit tutacağız.
+3.  .NET için Aspose.PDF: Aspose.PDF kütüphanesini indirip yüklemeniz gerekecek. Bunu bulabilirsiniz[Burada](https://releases.aspose.com/pdf/net/).
+4. Örnek PDF Dosyası: Bu eğitim için, açıklamalı bir PDF dosyasına ihtiyacınız olacak. Bir tane oluşturabilir veya internetten bir örnek indirebilirsiniz.
+
+## Paketleri İçe Aktar
+
+Başlamak için gerekli paketleri içe aktarmamız gerekiyor. Visual Studio projenizi açın ve Aspose.PDF kütüphanesine bir referans ekleyin. Bunu NuGet Paket Yöneticisi'ni kullanarak yapabilirsiniz:
 
 ```csharp
+using System.IO;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf;
+using System;
+```
+
+## Adım 1: Belge Dizininizi Ayarlayın
+
+Açıklamaları çıkarabilmemiz için önce PDF belgemizin nerede bulunduğunu belirtmemiz gerekir. Bu, belgeler dizinine bir yol tanımlayarak yapılır.
+
+```csharp
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
-## 2. Adım: PDF dosyalarınız saklanır
 
-"BELGE DİZİNİNİZ" ifadesini, PDF dosyalarınızın depolandığı klasörün yolu ile değiştirin. Örneğin:
+ Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` PDF dosyanızın saklandığı gerçek yol ile. Bu önemlidir çünkü programın dosyayı nerede bulacağını bilmesi gerekir.
 
-```csharp
-string dataDir = @"C:\Users\JohnDoe\Documents\PDFs\";
-```
+## Adım 2: PDF Belgesini açın
 
-## 3. Adım: Belgeyi Açın
-
-Bir sonraki adım, çıkarmak istediğiniz ek açıklamaları içeren PDF belgesini açmaktır. Bunu aşağıdaki kodu ekleyerek yapabilirsiniz:
+ Artık belge dizinimizi kurduğumuza göre, PDF dosyasını açmanın zamanı geldi.`Document` Bunu yapmak için Aspose.PDF kütüphanesinden bir sınıf kullanabilirsiniz.
 
 ```csharp
-Document pdfDocument = new Document(dataDir + "GetAllAnnotationsFromPage.pdf");
-```
-
-Bu kod satırı, Document sınıfının yeni bir örneğini başlatır ve "GetAllAnnotationsFromPage.pdf" PDF belgesini yükler. Bu dosya adını PDF dosyanızın adıyla değiştirin.
-
-## Adım 4: Tüm Ek Açıklamalarda Döngü Yapın
-
-PDF belgesini açtıktan sonra belirli bir sayfadaki tüm ek açıklamalar arasında geçiş yapabilirsiniz. Örneğin, PDF belgesinin ilk sayfasındaki tüm ek açıklamalar arasında geçiş yapmak için aşağıdaki kodu ekleyin:
-
-```csharp
-foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
-{
-    // Kod buraya gelecek
-}
-```
-
-Bu kod, PDF belgesinin ilk sayfasındaki tüm ek açıklamalar arasında geçiş yapar ve her ek açıklamayı "ek açıklama" değişkenine atar.
-
-## Adım 5: Ek Açıklama Özelliklerini Alın
-
-Her bir açıklamanın özelliklerini çıkarmak için foreach döngüsünün içine aşağıdaki kodu ekleyebilirsiniz:
-
-```csharp
-Console.WriteLine("Title : {0} ", annotation.Title);
-Console.WriteLine("Subject : {0} ", annotation.Subject);
-Console.WriteLine("Contents : {0} ", annotation.Contents);
-```
-
-Bu kod, her ek açıklamanın Başlığını, Konusunu ve İçeriğini konsola yazar.
-
-### Aspose.PDF for .NET kullanarak Sayfadan Tüm Ek Açıklamaları Almak için Örnek Kaynak Kodu
-
-Aspose.PDF for .NET kullanarak bir PDF sayfasındaki tüm açıklamaları almak için tam kaynak kodunu burada bulabilirsiniz:
-
-```csharp
-// Belgeler dizininin yolu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir + "GetAllAnnotationsFromPage.pdf");
+```
 
-// Tüm ek açıklamalar arasında dolaşın
+ Bu satırda, yeni bir örnek oluşturuyoruz`Document` sınıf ve PDF dosyamızın yolunu geçelim. Bu, PDF'nin içerikleriyle etkileşime girmemizi sağlar.
+
+## Adım 3: Açıklamalar Arasında Döngü
+
+Belge açıkken artık açıklamalarına erişebiliriz. Açıklamalar, PDF'e eklenen yorumlar, vurgular veya notlardır. Belgenin ilk sayfasındaki tüm açıklamalar arasında dolaşacağız.
+
+```csharp
+// Tüm açıklamalar arasında dolaş
 foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
 {
-	// Ek açıklama özelliklerini alma
-	Console.WriteLine("Title : {0} ", annotation.Title);
-	Console.WriteLine("Subject : {0} ", annotation.Subject);
-	Console.WriteLine("Contents : {0} ", annotation.Contents);                
+    // Açıklama özelliklerini al
+    Console.WriteLine("Title : {0} ", annotation.Title);
+    Console.WriteLine("Subject : {0} ", annotation.Subject);
+    Console.WriteLine("Contents : {0} ", annotation.Contents);                
 }
 ```
+
+ Bu kod parçacığında şunu kullanıyoruz:`foreach` İlk sayfadaki her açıklamayı yinelemek için döngü. Her açıklama için başlığını, konusunu ve içeriğini konsola yazdırıyoruz. Sihrin gerçekleştiğini burada görebilirsiniz!
 
 ## Çözüm
 
-Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesinin belirli bir sayfasındaki tüm açıklamaların nasıl alınacağını araştırdık. Geliştiriciler, adım adım kılavuzu izleyerek ve sağlanan C# kaynak kodunu kullanarak, PDF belgelerinden ek açıklamaları kolayca çıkarabilir ve yönetebilir.
+Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesinden açıklamaları nasıl çıkaracağınızı başarıyla öğrendiniz. Bu güçlü kütüphane, PDF dosyalarıyla programatik olarak çalışmak için bir olasılıklar dünyasının kapılarını açar. İster raporlar oluşturmak, ister belgeleri yönetmek veya sadece bilgi çıkarmak isteyin, Aspose.PDF sizin için her şeyi yapar.
 
-### SSS'ler
+## SSS
 
-#### S: PDF belgesindeki ek açıklamalar nelerdir?
+### Aspose.PDF for .NET nedir?
+Aspose.PDF for .NET, geliştiricilerin PDF belgelerini programlı bir şekilde oluşturmalarına, düzenlemelerine ve yönetmelerine olanak tanıyan bir kütüphanedir.
 
-C: Bir PDF belgesindeki ek açıklamalar, belgenin belirli bölümleri hakkında ek bilgi, yorum veya notlar sağlayan etkileşimli öğelerdir. Ek açıklamalar metin notlarını, yorumları, vurguları ve diğer etkileşimli öğeleri içerebilir.
+### Aspose.PDF'yi nasıl yüklerim?
+Aspose.PDF'yi Visual Studio'daki NuGet Paket Yöneticisi aracılığıyla yükleyebilir veya doğrudan şu adresten indirebilirsiniz:[Aspose web sitesi](https://releases.aspose.com/pdf/net/).
 
-#### S: Yalnızca belirli sayfalardan ek açıklamalar alabilir miyim?
+### Birden fazla sayfadan ek açıklamaları çıkarabilir miyim?
+Evet, belgedeki tüm sayfalar arasında dolaşabilir ve her birinden ek açıklamalar çıkarabilirsiniz.
 
-C: Evet, Aspose.PDF for .NET ile gereksinimlerinize bağlı olarak belirli sayfalardan, hatta belgenin tamamından açıklamalar alabilirsiniz.
+### Ücretsiz deneme imkanı var mı?
+ Evet, Aspose.PDF'yi ücretsiz olarak denemek için deneme sürümünü buradan indirebilirsiniz.[Burada](https://releases.aspose.com/).
 
-#### S: Aspose.PDF for .NET, parola korumalı PDF dosyalarından açıklamaların çıkarılmasını destekliyor mu?
-
- C: Evet, Aspose.PDF for .NET, parola korumalı PDF dosyalarından açıklamaların çıkarılmasını destekler. PDF belgesini kullanarak yüklerken doğru şifreyi girmeniz gerekir.`Document` sınıf.
-
-#### S: Ek açıklamaları içerik veya yazar gibi özelliklerine göre filtreleyebilir miyim?
-
-C: Evet, Aspose.PDF for .NET, içerik, yazar veya oluşturulma tarihi gibi özelliklerine göre açıklamalara erişme ve bunları filtreleme yöntemleri sağlar. Tüm ek açıklamalar arasında geçiş yapabilir ve filtrelemek istediğiniz belirli özellikleri kontrol edebilirsiniz.
-
-#### S: Aspose.PDF for .NET, farklı türdeki PDF belgelerinden açıklamaların çıkarılmasını destekliyor mu?
-
-C: Evet, Aspose.PDF for .NET, metin işaretleme açıklamaları, serbest metin açıklamaları ve daha fazlasını içeren, farklı PDF belge türlerinden açıklamaları çıkarmak için çeşitli yöntemler sağlar.
+### Aspose.PDF için desteği nerede bulabilirim?
+ Destek bulabilir ve soru sorabilirsiniz.[Aspose forumu](https://forum.aspose.com/c/pdf/10).

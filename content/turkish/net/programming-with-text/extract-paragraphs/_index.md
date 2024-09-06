@@ -1,26 +1,26 @@
 ---
-title: PDF Dosyasındaki Paragrafları Çıkart
-linktitle: PDF Dosyasındaki Paragrafları Çıkart
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET kullanarak PDF dosyasındaki paragrafları nasıl çıkaracağınızı öğrenin.
+title: PDF Dosyasındaki Paragrafları Çıkar
+linktitle: PDF Dosyasındaki Paragrafları Çıkar
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki paragrafların nasıl çıkarılacağını öğrenin.
 type: docs
 weight: 160
 url: /tr/net/programming-with-text/extract-paragraphs/
 ---
-Bu eğitim, Aspose.PDF for .NET'i kullanarak PDF dosyasındaki paragrafları çıkarma sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları gösterir.
+Bu eğitim, .NET için Aspose.PDF kullanarak PDF dosyasındaki paragrafları çıkarma sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları göstermektedir.
 
 ## Gereksinimler
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Makinenizde kurulu Visual Studio veya başka herhangi bir C# derleyicisi.
-- Aspose.PDF for .NET kitaplığı. Resmi Aspose web sitesinden indirebilir veya yüklemek için NuGet gibi bir paket yöneticisi kullanabilirsiniz.
+- Bilgisayarınızda Visual Studio veya herhangi bir C# derleyicisi yüklü olmalıdır.
+- Aspose.PDF for .NET kütüphanesi. Resmi Aspose web sitesinden indirebilir veya NuGet gibi bir paket yöneticisi kullanarak kurabilirsiniz.
 
-## 1. Adım: Projeyi ayarlayın
+## Adım 1: Projeyi kurun
 1. Tercih ettiğiniz geliştirme ortamında yeni bir C# projesi oluşturun.
-2. Aspose.PDF for .NET kitaplığına bir referans ekleyin.
+2. .NET için Aspose.PDF kitaplığına bir referans ekleyin.
 
-## 2. Adım: Gerekli ad alanlarını içe aktarın
-Paragrafları çıkarmak istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki kullanma yönergelerini ekleyin:
+## Adım 2: Gerekli ad alanlarını içe aktarın
+Paragrafları çıkarmak istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki using yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
@@ -28,26 +28,26 @@ using System;
 using System.Text;
 ```
 
-## 3. Adım: Belge dizinini ayarlayın
- Kodda yazan satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belgelerinizin saklandığı dizinin yolu ile birlikte.
+## Adım 3: Belge dizinini ayarlayın
+ Kodda şu satırı bulun:`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` Belgelerinizin saklandığı dizinin yolunu içeren.
 
-## 4. Adım: PDF belgesini açın
- Mevcut bir PDF belgesini kullanarak açın.`Document`yapıcı ve yolu giriş PDF dosyasına geçirme.
+## Adım 4: PDF belgesini açın
+ Mevcut bir PDF belgesini şu şekilde açın:`Document` yapıcı ve giriş PDF dosyasına giden yolu geçirme.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## 5. Adım: Paragrafları çıkarın
- Örnekleyin`ParagraphAbsorber` sınıf ve onu kullanın`Visit` Belgeden paragrafları çıkarma yöntemi.
+## Adım 5: Paragrafları ayıkla
+ Örneklemi oluştur`ParagraphAbsorber` sınıfını kullan ve kullan`Visit` Belgeden paragrafları çıkarma yöntemi.
 
 ```csharp
 ParagraphAbsorber absorb = new ParagraphAbsorber();
 absorb.Visit(doc);
 ```
 
-## Adım 6: Paragrafları yineleyin
-Metin içeriğine erişmek için çıkarılan paragraflar arasında dolaşın. Her paragraftaki bölümler ve çizgiler arasında geçiş yapmak için iç içe geçmiş döngüleri kullanın.
+## Adım 6: Paragraflar arasında gezinin
+Metin içeriklerine erişmek için çıkarılan paragraflar arasında döngü yapın. Her paragraftaki bölümler ve satırlar arasında gezinmek için iç içe döngüleri kullanın.
 
 ```csharp
 foreach(PageMarkup markup in absorber.PageMarkups)
@@ -77,13 +77,13 @@ foreach(PageMarkup markup in absorber.PageMarkups)
 }
 ```
 
-### Aspose.PDF for .NET kullanarak Paragraf Çıkarma için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Paragrafları Çıkarmak için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//Mevcut bir PDF dosyasını açın
+// Mevcut bir PDF dosyasını açın
 Document doc = new Document(dataDir + "input.pdf");
-// Paragraf Emiciyi Örneklendir
+// ParagraphAbsorber'ı örneklendir
 ParagraphAbsorber absorber = new ParagraphAbsorber();
 absorber.Visit(doc);
 foreach (PageMarkup markup in absorber.PageMarkups)
@@ -114,17 +114,17 @@ foreach (PageMarkup markup in absorber.PageMarkups)
 ```
 
 ## Çözüm
-Aspose.PDF for .NET'i kullanarak bir PDF belgesinden paragrafları başarıyla çıkardınız. Çıkarılan paragraflar konsol penceresinde görüntülendi.
+Aspose.PDF for .NET kullanarak bir PDF belgesinden paragrafları başarıyla çıkardınız. Çıkarılan paragraflar konsol penceresinde görüntülendi.
 
-### SSS'ler
+### SSS
 
 #### S: Bu eğitimin amacı nedir?
 
-C: Bu eğitimin amacı, Aspose.PDF for .NET kullanarak bir PDF dosyasından paragraf çıkarma sürecinde size rehberlik etmektir. Ekteki C# kaynak kodu, bu görevi gerçekleştirmek için pratik adımlar sağlar.
+A: Bu eğitim, .NET için Aspose.PDF kullanarak bir PDF dosyasından paragrafları çıkarma sürecinde size rehberlik etmeyi amaçlamaktadır. Eşlik eden C# kaynak kodu, bu görevi başarmak için pratik adımlar sağlar.
 
 #### S: Hangi ad alanlarını içe aktarmalıyım?
 
-C: Paragrafları çıkarmak istediğiniz kod dosyasında, dosyanın başına aşağıdaki kullanma yönergelerini ekleyin:
+A: Paragrafları çıkarmayı planladığınız kod dosyasında, dosyanın başına aşağıdaki using yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
@@ -134,20 +134,20 @@ using System.Text;
 
 #### S: Belge dizinini nasıl belirlerim?
 
- A: Çizgiyi bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` kodda ve değiştirin`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
+ A: Satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` kodda ve değiştir`"YOUR DOCUMENT DIRECTORY"` belge dizininize giden gerçek yol ile.
 
-#### S: Mevcut bir PDF belgesini nasıl açarım?
+#### S: Mevcut bir PDF belgesini nasıl açabilirim?
 
- C: 4. Adımda, mevcut bir PDF belgesini aşağıdaki komutu kullanarak açacaksınız:`Document` yapıcı ve giriş PDF dosyasının yolunu sağlama.
+ A: 4. Adımda, mevcut bir PDF belgesini kullanarak açacaksınız.`Document` yapıcı ve giriş PDF dosyasına giden yolu sağlama.
 
 #### S: Belgeden paragrafları nasıl çıkarabilirim?
 
- C: Adım 5, bir örneğinin oluşturulmasını içerir.`ParagraphAbsorber` sınıf ve onu kullanma`Visit` PDF belgesinden paragrafları çıkarma yöntemi.
+ A: 5. Adım, bir örnek oluşturmayı içerir`ParagraphAbsorber` sınıf ve kullanımı`Visit` PDF belgesinden paragrafları çıkarma yöntemi.
 
-#### S: Çıkarılan paragraflar arasında nasıl yineleme yaparım?
+#### S: Çıkarılan paragraflar arasında nasıl gezinebilirim?
 
-C: Adım 6, çıkarılan paragraflar arasında geçiş yapmanızda size rehberlik eder. İç içe döngüler, her paragraf içindeki bölümleri ve satırları geçmek, sonuçta metin içeriğine erişmek ve görüntülemek için kullanılır.
+A: 6. Adım, çıkarılan paragraflar arasında döngü yapmanıza rehberlik eder. İç içe döngüler, her paragraftaki bölümler ve satırlar arasında gezinmek, en sonunda metin içeriklerine erişmek ve bunları görüntülemek için kullanılır.
 
-#### S: Bu eğitimden çıkarılacak önemli sonuç nedir?
+#### S: Bu eğitimden çıkarılacak en önemli ders nedir?
 
-C: Bu eğitimi takip ederek Aspose.PDF for .NET kullanarak bir PDF belgesinden paragrafların nasıl çıkarılacağını öğrendiniz. Çıkarılan paragraflar konsol penceresinde görüntülenerek belgenin içerik yapısına ilişkin değerli bilgiler sağlanmıştır.
+A: Bu öğreticiyi takip ederek, .NET için Aspose.PDF kullanarak bir PDF belgesinden paragrafların nasıl çıkarılacağını öğrendiniz. Çıkarılan paragraflar konsol penceresinde görüntülenerek, belgenin içerik yapısı hakkında size değerli bilgiler sağladı.

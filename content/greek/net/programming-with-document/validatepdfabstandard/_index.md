@@ -55,7 +55,7 @@ Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1B);
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Σε αυτό το άρθρο, εξηγήσαμε πώς να χρησιμοποιήσετε το Aspose.PDF για .NET για την επικύρωση ενός εγγράφου PDF έναντι του προτύπου PDF/A-1a. Ακολουθώντας τα παραπάνω βήματα, μπορείτε εύκολα να επικυρώσετε τα έγγραφα PDF σας σε σχέση με διάφορα πρότυπα χρησιμοποιώντας το Aspose.PDF για .NET.
 

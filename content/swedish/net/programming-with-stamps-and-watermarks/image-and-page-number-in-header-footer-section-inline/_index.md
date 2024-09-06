@@ -18,7 +18,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 2: Skapa PDF-dokumentet och -sidan
 
-Det första steget är att skapa ett nytt dokumentobjekt och en sida i PDF-dokumentet. Här är hur:
+Det första steget är att skapa ett nytt dokumentobjekt och en sida i PDF-dokumentet. Så här gör du:
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -35,7 +35,7 @@ Koden ovan skapar ett nytt dokumentobjekt och en tom sida i PDF-dokumentet.
 
 ## Steg 3: Lägga till rubriken med en bild och inbäddad text
 
-Nu när sidan är skapad kan vi lägga till en rubrik med en bild och text med hjälp av inline-stycken. Här är hur:
+Nu när sidan är skapad kan vi lägga till en rubrik med en bild och text med hjälp av inline-stycken. Så här gör du:
 
 ```csharp
 // Skapa en rubriksektion
@@ -75,11 +75,11 @@ header.Paragraphs.Add(image1);
 header.Paragraphs.Add(txt2);
 ```
 
-Koden ovan skapar en rubriksektion, ställer in sidhuvudet med denna sektion, lägger till ett TextFragment med inbäddad text och ett inbäddat bildobjekt.
+Koden ovan skapar en rubriksektion, ställer in sidhuvudet med denna sektion, lägger till ett TextFragment med infogat text och ett infogat bildobjekt.
 
 ## Steg 4: Spara det ändrade PDF-dokumentet
 
-När rubriken med bilden och den infogade texten har lagts till kan vi spara det ändrade PDF-dokumentet. Här är hur:
+När rubriken med bilden och den infogade texten har lagts till kan vi spara det ändrade PDF-dokumentet. Så här gör du:
 
 ```csharp
 // Spara det ändrade PDF-dokumentet
@@ -119,7 +119,7 @@ Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 // Ställ in sökvägen till bildfilen
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Ställ in information om bildbredden
+//Ställ in information om bildbredden
 image1.FixWidth = 50;
 image1.FixHeight = 20;
 
@@ -177,7 +177,7 @@ S: Ja, du kan kombinera inline-stycken med andra anpassningsmetoder för sidhuvu
 
 #### F: Kan jag ta bort eller rensa inline-elementen från rubriken om det behövs?
 
- S: Ja, du kan ta bort eller rensa inline-elementen genom att ändra innehållet i`HeaderFooter` objekt och ta bort respektive infogade stycken.
+ S: Ja, du kan ta bort eller rensa inline-elementen genom att ändra innehållet i`HeaderFooter`objekt och ta bort respektive infogade stycken.
 
 #### F: Hur kan jag tillämpa inline-stycken på specifika sidor i PDF-dokumentet?
 

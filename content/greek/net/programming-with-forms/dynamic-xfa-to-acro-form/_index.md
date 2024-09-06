@@ -56,7 +56,7 @@ document.Save(dataDir);
 Console.WriteLine("\nDynamic XFA form converted to standard AcroForm successfully.\nFile saved at " + dataDir);
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Σε αυτό το σεμινάριο, μάθαμε πώς να μετατρέπουμε μια δυναμική φόρμα XFA σε μια τυπική φόρμα AcroForm χρησιμοποιώντας το Aspose.PDF για .NET. Ακολουθώντας αυτά τα βήματα, μπορείτε εύκολα να μετατρέψετε τις δυναμικές φόρμες XFATo σε AcroForms για πιο κοινή χρήση.
 

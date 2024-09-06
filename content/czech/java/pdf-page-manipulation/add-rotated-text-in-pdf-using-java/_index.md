@@ -8,7 +8,7 @@ weight: 14
 url: /cs/java/pdf-page-manipulation/add-rotated-text-in-pdf-using-java/
 ---
 
-## Úvod
+## Zavedení
 
 V tomto obsáhlém tutoriálu se ponoříme do procesu přidávání otočeného textu do dokumentu PDF pomocí Javy. Ať už potřebujete označit diagramy, vytvořit vodoznaky nebo přidat speciální efekty do souborů PDF, tento průvodce vás provede jednotlivými kroky. K demonstraci procesu použijeme Aspose.PDF for Java, výkonnou knihovnu pro manipulaci s PDF.
 
@@ -18,7 +18,7 @@ Než začneme, ujistěte se, že máte splněny následující předpoklady:
 
 1. Vývojové prostředí Java: Ujistěte se, že máte v systému nainstalovanou Javu.
 
-2.  Aspose.PDF for Java: Stáhněte si a zahrňte knihovnu Aspose.PDF do svého projektu Java. Odkaz ke stažení najdete[tady](https://releases.aspose.com/pdf/java/).
+2.  Aspose.PDF for Java: Stáhněte si a zahrňte knihovnu Aspose.PDF do svého projektu Java. Odkaz ke stažení najdete[zde](https://releases.aspose.com/pdf/java/).
 
 ## Krok 1: Vytvořte nový dokument PDF
 

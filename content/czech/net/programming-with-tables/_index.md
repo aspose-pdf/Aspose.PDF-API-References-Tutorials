@@ -17,7 +17,7 @@ Ať už jste začátečník nebo zkušený vývojář, výukové programy Progra
 | [Přidat opakující se sloupec do dokumentu PDF](./add-repeating-column/) | Naučte se, jak přidat opakující se sloupec do dokumentu PDF pomocí Aspose.PDF pro .NET. |  
 | [Přidat objekt SVG do souboru PDF](./add-svg-object/) | Snadno přidávejte objekty SVG do souboru PDF pomocí Aspose.PDF pro .NET. |  
 | [Přidat tabulku do souboru PDF](./add-table/) | Snadno přidávejte tabulky do souboru PDF pomocí Aspose.PDF pro .NET. |  
-| [Automatické přizpůsobení oknu](./auto-fit-to-window/) | Podrobný průvodce používáním Aspose.PDF pro .NET a dosažením automatického přizpůsobení oknu při generování PDF. |  
+| [Automaticky Přizpůsobit Oknu](./auto-fit-to-window/) | Podrobný průvodce používáním Aspose.PDF pro .NET a dosažením automatického přizpůsobení oknu při generování PDF. |  
 | [Určete zalomení tabulky v souboru PDF](./determine-table-break/) | Naučte se, jak určit konce tabulek v souboru PDF pomocí Aspose.PDF for .NET. |  
 | [Export dat listu aplikace Excel do tabulky](./export-excel-worksheet-data-to-table/) | Exportujte data z listu aplikace Excel do tabulky PDF pomocí Aspose.PDF for .NET. |  
 | [Extrahovat ohraničení v souboru PDF](./extract-border/) | Naučte se, jak extrahovat ohraničení v souboru PDF pomocí Aspose.PDF pro .NET. |  

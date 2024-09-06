@@ -1,23 +1,23 @@
 ---
-title: PDF Dosyasındaki Resimleri Yeniden Boyutlandır
-linktitle: PDF Dosyasındaki Resimleri Yeniden Boyutlandır
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET kullanarak PDF dosyasındaki görüntüleri yeniden boyutlandırmak için adım adım kılavuz.
+title: PDF Dosyasındaki Resimleri Yeniden Boyutlandırma
+linktitle: PDF Dosyasındaki Resimleri Yeniden Boyutlandırma
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki resimleri yeniden boyutlandırmaya yönelik adım adım kılavuz.
 type: docs
 weight: 250
 url: /tr/net/programming-with-images/resize-images/
 ---
-Bu eğitimde, Aspose.PDF for .NET'i kullanarak PDF dosyasındaki görüntüleri nasıl yeniden boyutlandıracağınızı size anlatacağız. Bu işlemi kolayca gerçekleştirmek için aşağıdaki adımları izleyin.
+Bu eğitimde, Aspose.PDF for .NET kullanarak PDF dosyasındaki görselleri nasıl yeniden boyutlandıracağınızı göstereceğiz. Bu işlemi kolayca gerçekleştirmek için şu adımları izleyin.
 
-## Önkoşullar
+## Ön koşullar
 
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Visual Studio veya kurulu ve yapılandırılmış başka bir geliştirme ortamı.
-- C# programlama dili hakkında temel bilgi.
-- .NET için Aspose.PDF kütüphanesi kuruldu. Aspose'un resmi web sitesinden indirebilirsiniz.
+- Visual Studio veya herhangi bir geliştirme ortamının kurulu ve yapılandırılmış olması.
+- C# programlama dilinin temel bilgisi.
+- .NET için Aspose.PDF kütüphanesi yüklü. Aspose resmi web sitesinden indirebilirsiniz.
 
-## 1. Adım: PDF belgesini yükleme
+## Adım 1: PDF belgesini yükleme
 
 Başlamak için PDF belgesini yüklemek üzere aşağıdaki kodu kullanın:
 
@@ -30,20 +30,20 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "ResizeImage.pdf");
 ```
 
-PDF belgenize doğru yolu girdiğinizden emin olun.
+PDF belgenize doğru yolu sağladığınızdan emin olun.
 
-## 2. Adım: Optimizasyon seçeneklerinin başlatılması
+## Adım 2: Optimizasyon seçeneklerinin başlatılması
 
-Resimleri yeniden boyutlandırmadan önce optimizasyon seçeneklerini başlatmamız gerekiyor. Aşağıdaki kodu kullanın:
+Resimleri yeniden boyutlandırmadan önce, optimizasyon seçeneklerini başlatmamız gerekiyor. Aşağıdaki kodu kullanın:
 
 ```csharp
-// OptimizasyonSeçeneklerini Başlat
+// OptimizationOptions'ı Başlat
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();
 
 // CompressImages seçeneğini etkinleştirin
 optimizeOptions.ImageCompressionOptions.CompressImages = true;
 
-// Görüntü kalitesini ayarlayın
+// Görüntü kalitesini ayarla
 optimizeOptions.ImageCompressionOptions.ImageQuality = 75;
 
 // ResizeImages seçeneğini etkinleştirin
@@ -53,9 +53,9 @@ optimizeOptions.ImageCompressionOptions.ResizeImages = true;
 optimizeOptions.ImageCompressionOptions.MaxResolution = 300;
 ```
 
-Optimizasyon ayarlarını ihtiyaçlarınıza göre ayarlayabilirsiniz.
+Optimizasyon ayarlarını ihtiyaçlarınıza göre düzenleyebilirsiniz.
 
-## 3. Adım: PDF belgesinin optimizasyonu
+## Adım 3: PDF belgesinin optimizasyonu
 
 Şimdi tanımladığımız optimizasyon seçeneklerini kullanarak PDF belgesini optimize edeceğiz. Aşağıdaki kodu kullanın:
 
@@ -71,25 +71,25 @@ Console.WriteLine("\nImage resized successfully.\nFile saved as: " + dataDir);
 
 Güncellenen PDF belgesi için istediğiniz yolu ve dosya adını sağladığınızdan emin olun.
 
-### Aspose.PDF for .NET kullanarak Görüntüleri Yeniden Boyutlandırmak için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Resimleri Yeniden Boyutlandırmak için örnek kaynak kodu 
 ```csharp
-// Zamanı Başlat
+// Başlatma Zamanı
 var time = DateTime.Now.Ticks;
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir + "ResizeImage.pdf");
-// OptimizasyonSeçeneklerini Başlat
+// OptimizationOptions'ı Başlat
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();            
-// CompressImages seçeneğini ayarla
+// CompressImages seçeneğini ayarlayın
 optimizeOptions.ImageCompressionOptions.CompressImages = true;            
 // ImageQuality seçeneğini ayarlayın
 optimizeOptions.ImageCompressionOptions.ImageQuality = 75;            
-// ResizeImage seçeneğini ayarla
+// ResizeImage seçeneğini ayarlayın
 optimizeOptions.ImageCompressionOptions.ResizeImages = true;            
 // MaxResolution seçeneğini ayarlayın
 optimizeOptions.ImageCompressionOptions.MaxResolution = 300;
-// OptimizationOptions'ı kullanarak PDF belgesini optimize edin
+// OptimizationOptions kullanarak PDF belgesini optimize edin
 pdfDocument.OptimizeResources(optimizeOptions);
 dataDir = dataDir + "ResizeImages_out.pdf";
 // Güncellenen belgeyi kaydet
@@ -99,42 +99,42 @@ Console.WriteLine("\nImage resized successfully.\nFile saved at " + dataDir);
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF belgesindeki görüntüleri başarıyla yeniden boyutlandırdınız. Artık PDF dosyalarındaki görsellerin boyutunu değiştirmek için bu yöntemi kendi projelerinize uygulayabilirsiniz.
+Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesindeki resimleri başarıyla yeniden boyutlandırdınız. Artık bu yöntemi kendi projelerinize uygulayarak PDF dosyalarındaki resimlerin boyutunu değiştirebilirsiniz.
 
-### SSS'ler
+### SSS
 
-#### S: Aspose.PDF for .NET'i kullanarak bir PDF dosyasındaki görselleri neden yeniden boyutlandırmak isteyeyim?
+#### S: Aspose.PDF for .NET kullanarak bir PDF dosyasındaki görsellerin boyutunu neden yeniden boyutlandırmak isteyeyim?
 
-C: Bir PDF dosyasındaki görüntüleri yeniden boyutlandırmak, belgenin boyutunu optimize etmenize ve performansını artırmanıza yardımcı olabilir. PDF belgelerinin daha kolay paylaşılması veya daha hızlı yüklenmesi için dosya boyutunu küçültmek istediğinizde özellikle kullanışlıdır.
+A: Bir PDF dosyasındaki görüntüleri yeniden boyutlandırmak, belgenin boyutunu optimize etmeye ve performansını iyileştirmeye yardımcı olabilir. Özellikle PDF belgelerinin daha kolay paylaşılması veya daha hızlı yüklenmesi için dosya boyutunu küçültmek istediğinizde faydalıdır.
 
-#### S: Görüntüyü yeniden boyutlandırma, PDF belgesindeki görüntülerin kalitesini nasıl etkiler?
+#### S: Görüntü yeniden boyutlandırma, PDF belgesindeki görüntülerin kalitesini nasıl etkiler?
 
- C: Görüntüyü yeniden boyutlandırma, görüntülerin boyutlarını ve çözünürlüğünü azaltmayı içerir; bu da dosya boyutunun küçülmesine neden olabilir. Bu, görüntü kalitesini bir dereceye kadar düşürebilirken,`ImageQuality` parametre (`optimizeOptions.ImageCompressionOptions.ImageQuality`) görüntü boyutu ve kalitesi arasındaki dengeyi kontrol etmenizi sağlar.
+ A: Görüntü yeniden boyutlandırma, görüntülerin boyutlarını ve çözünürlüğünü azaltmayı içerir ve bu da daha küçük bir dosya boyutuyla sonuçlanabilir. Bu, görüntü kalitesini bir dereceye kadar düşürebilse de,`ImageQuality` parametre (`optimizeOptions.ImageCompressionOptions.ImageQuality`) görüntü boyutu ve kalitesi arasındaki dengeyi kontrol etmenizi sağlar.
 
-####  Soru: Programın amacı nedir?`MaxResolution` option in the optimization settings?
+####  S: Amacı nedir?`MaxResolution` option in the optimization settings?
 
- C:`MaxResolution` seçenek (`optimizeOptions.ImageCompressionOptions.MaxResolution`) PDF belgesindeki görüntüler için maksimum çözünürlüğü ayarlar. Optimizasyon işlemi sırasında daha yüksek çözünürlüklü görsellerin ölçeği bu belirtilen değere küçültülecektir.
+ A:`MaxResolution` seçenek (`optimizeOptions.ImageCompressionOptions.MaxResolution`) PDF belgesindeki resimler için maksimum çözünürlüğü ayarlar. Daha yüksek çözünürlüğe sahip resimler, optimizasyon işlemi sırasında bu belirtilen değere ölçeklendirilir.
 
-#### S: Görüntüyü yeniden boyutlandırmaya ilişkin optimizasyon ayarlarını nasıl ayarlayabilirim?
+#### S: Görüntü yeniden boyutlandırma için optimizasyon ayarlarını nasıl yapabilirim?
 
- C: Sağlanan kodda, istenen görüntü yeniden boyutlandırma ve sıkıştırmayı elde etmek için optimizasyon seçeneklerinin değerlerini değiştirebilirsiniz. Örneğin, şunları değiştirebilirsiniz:`ImageQuality` Ve`MaxResolution` Optimizasyon sürecini gereksinimlerinize göre özelleştirmek için değerler.
+ A: Sağlanan kodda, istenen görüntü yeniden boyutlandırma ve sıkıştırmayı elde etmek için optimizasyon seçeneklerinin değerlerini değiştirebilirsiniz. Örneğin,`ImageQuality` Ve`MaxResolution` İhtiyaçlarınıza göre optimizasyon sürecini özelleştirmek için değerler.
 
-#### S: PDF belgesindeki belirli görselleri seçerek yeniden boyutlandırabilir miyim?
+#### S: PDF belgesindeki belirli görsellerin boyutunu seçerek değiştirebilir miyim?
 
-C: Sağlanan kod, aynı optimizasyon ayarlarını kullanarak PDF belgesindeki tüm görüntüleri optimize eder. Belirli görselleri seçerek yeniden boyutlandırmak istiyorsanız bu görselleri tek tek hedeflemek için kodu değiştirmeniz gerekebilir.
+A: Sağlanan kod, aynı optimizasyon ayarlarını kullanarak PDF belgesindeki tüm görüntüleri optimize eder. Belirli görüntüleri seçici olarak yeniden boyutlandırmak istiyorsanız, kodu bu görüntüleri tek tek hedefleyecek şekilde değiştirmeniz gerekebilir.
 
-####  S: Nasıl`pdfDocument.OptimizeResources` method work in resizing images?
+####  S: Nasıl?`pdfDocument.OptimizeResources` method work in resizing images?
 
- C:`OptimizeResources` yöntemi, görüntü yeniden boyutlandırma ve sıkıştırma da dahil olmak üzere belirtilen optimizasyon seçeneklerini PDF belgesine uygular. Tanımlanan optimizasyon ayarlarını kaynaklarına uygulayarak PDF belgesinin dosya boyutunun azaltılmasına yardımcı olur.
+ A:`OptimizeResources` yöntem, görüntü yeniden boyutlandırma ve sıkıştırma dahil olmak üzere belirtilen optimizasyon seçeneklerini PDF belgesine uygular. Tanımlanan optimizasyon ayarlarını kaynaklarına uygulayarak PDF belgesinin dosya boyutunu azaltmaya yardımcı olur.
 
-#### S: PDF belgesini kaydetmeden önce yeniden boyutlandırılan görüntülerin önizlemesini görmek mümkün müdür?
+#### S: PDF belgesini kaydetmeden önce yeniden boyutlandırılmış görsellerin önizlemesini yapmak mümkün müdür?
 
-C: Sağlanan kod, yeniden boyutlandırılmış resimlerle birlikte PDF belgesini doğrudan optimize eder ve kaydeder. Yeniden boyutlandırılan görselleri kaydetmeden önce önizlemek istiyorsanız, önizleme görselleri oluşturmak için de kodu değiştirmeniz gerekebilir.
+A: Sağlanan kod doğrudan yeniden boyutlandırılmış resimlerle PDF belgesini optimize eder ve kaydeder. Yeniden boyutlandırılmış resimleri kaydetmeden önce önizlemek istiyorsanız, önizleme resimleri oluşturmak için kodu değiştirmeniz gerekebilir.
 
-#### S: Bu görsel yeniden boyutlandırma yöntemini kendi projelerime nasıl entegre edebilirim?
+#### S: Bu resim boyutlandırma yöntemini kendi projelerime nasıl entegre edebilirim?
 
-C: Bu yöntemi projelerinize entegre etmek için özetlenen adımları izleyin ve kodu gerektiği gibi değiştirin. Bu kodu uygulamanıza ekleyerek PDF belgelerindeki görselleri yeniden boyutlandırma işlemini otomatikleştirebilirsiniz.
+A: Bu yöntemi projelerinize entegre etmek için, özetlenen adımları izleyin ve kodu gerektiği gibi değiştirin. Bu kodu uygulamanıza dahil ederek PDF belgelerindeki resimleri yeniden boyutlandırma sürecini otomatikleştirebilirsiniz.
 
-#### S: Aspose.PDF for .NET kitaplığı, PDF optimizasyonu için başka özellikler sunuyor mu?
+#### S: Aspose.PDF for .NET kütüphanesi PDF optimizasyonu için başka yetenekler sunuyor mu?
 
-C: Evet, Aspose.PDF for .NET kitaplığı, görseli yeniden boyutlandırmanın ötesinde yazı tipi ve metin optimizasyonu, kullanılmayan nesnelerin kaldırılması ve gereksiz verilerin azaltılması gibi çeşitli optimizasyon seçenekleri sunar. Tüm optimizasyon özelliklerini keşfetmek için kitaplığın belgelerini ve örneklerini inceleyebilirsiniz.
+C: Evet, Aspose.PDF for .NET kitaplığı, yazı tipi ve metin optimizasyonu, kullanılmayan nesnelerin kaldırılması ve gereksiz verilerin azaltılması gibi resim yeniden boyutlandırmanın ötesinde çeşitli optimizasyon seçenekleri sunar. Tüm optimizasyon özelliklerini keşfetmek için kitaplığın belgelerini ve örneklerini inceleyebilirsiniz.

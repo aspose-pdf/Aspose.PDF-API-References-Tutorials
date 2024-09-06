@@ -2,7 +2,7 @@
 title: Lägg till underordnade bokmärken till PDF-filer
 linktitle: Lägg till underordnade bokmärken till PDF-filer
 second_title: Aspose.PDF Java PDF Processing API
-description: Lär dig hur du förbättrar PDF-dokument med underordnade bokmärken med Aspose.PDF för Java. Steg-för-steg-guide med kodexempel för förbättrad navigering och organisation.
+description: Lär dig hur du förbättrar PDF-dokument med underordnade bokmärken med Aspose.PDF för Java. Steg-för-steg guide med kodexempel för förbättrad navigering och organisation.
 type: docs
 weight: 11
 url: /sv/java/pdf-bookmarks/add-child-bookmarks-pdfs/

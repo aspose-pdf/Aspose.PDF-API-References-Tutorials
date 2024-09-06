@@ -30,7 +30,7 @@ Document pdfDocument = new Document(dataDir + "GetParticularPage.pdf");
 ```
 
 ## 3. lépés: Szerezze meg az adott oldalt
- Most egy adott oldalra ugorhat a dokumentum oldalindexének használatával`Pages` Gyűjtemény. Az alábbi példában lekérjük a harmadik oldalt (2. index).
+ Most egy adott oldalra ugorhat a dokumentum oldalindexének használatával`Pages` gyűjtemény. Az alábbi példában lekérjük a harmadik oldalt (2. index).
 
 ```csharp
 Page pdfPage = pdfDocument.Pages[2];
@@ -66,7 +66,7 @@ System.Console.WriteLine("\nParticular page accessed successfully.\nFile saved a
 ```
 
 ## Következtetés
-Ebben az oktatóanyagban megtanultuk, hogyan lehet egy adott oldalt lekérni egy PDF-fájlból az Aspose.PDF for .NET használatával. A fent leírt lépések követésével könnyedén megvalósíthatja ezt a funkciót saját projektjeiben. Nyugodtan fedezze fel az Aspose.PDF dokumentációt, hogy további hasznos funkciókat fedezzen fel a PDF-fájlokkal való munkavégzéshez.
+Ebben az oktatóanyagban megtanultuk, hogyan lehet egy adott oldalt lekérni egy PDF-fájlból az Aspose.PDF for .NET használatával. A fent leírt lépések követésével könnyedén megvalósíthatja ezt a funkciót saját projektjeiben. Nyugodtan fedezze fel az Aspose.PDF dokumentációját, hogy további hasznos funkciókat fedezzen fel a PDF-fájlokkal való munkavégzéshez.
 
 ### GYIK
 
@@ -75,7 +75,7 @@ Ebben az oktatóanyagban megtanultuk, hogyan lehet egy adott oldalt lekérni egy
 V: Ha egy adott oldalt szeretne lekérni egy PDF-fájlból, kövesse az alábbi lépéseket:
 
 1.  Példányosítás a`Document` objektum segítségével`Document` osztályú Aspose.PDF fájlt, és nyissa meg a PDF fájlt.
-2.  Az oldalindex segítségével a dokumentum adott oldalára ugorhat`Pages` Gyűjtemény. Például a harmadik oldal lekéréséhez használhatja`pdfDocument.Pages[2]` (az indexelés 0-tól kezdődik).
+2.  Az oldalindex segítségével a dokumentum adott oldalára ugorhat`Pages` gyűjtemény. Például a harmadik oldal lekéréséhez használhatja`pdfDocument.Pages[2]` (az indexelés 0-tól kezdődik).
 3.  Mentse el az adott oldalt külön PDF fájlként egy új létrehozásával`Document` objektumot, hozzáadja a letöltött oldalt, majd elmenti a kívánt helyre.
 
 #### K: Lekérhetek több konkrét oldalt és menthetek külön PDF-fájlként az Aspose.PDF for .NET használatával?

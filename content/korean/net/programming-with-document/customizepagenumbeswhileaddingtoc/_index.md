@@ -1,36 +1,78 @@
 ---
-title: TOC를 추가하는 동안 페이지 번호 사용자 정의
-linktitle: TOC를 추가하는 동안 페이지 번호 사용자 정의
-second_title: .NET API 참조용 Aspose.PDF
-description: 이 단계별 가이드와 코드 예제를 통해 .NET용 Aspose.PDF를 사용하여 목차(TOC)를 추가하는 동안 페이지 번호를 사용자 정의하는 방법을 알아보세요.
+title: TOC를 추가하는 동안 페이지 번호 사용자 지정
+linktitle: TOC를 추가하는 동안 페이지 번호 사용자 지정
+second_title: .NET API 참조를 위한 Aspose.PDF
+description: 이 포괄적인 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 PDF 문서에 목차를 추가하는 동시에 페이지 번호를 사용자 지정하는 방법을 알아봅니다.
 type: docs
 weight: 100
 url: /ko/net/programming-with-document/customizepagenumbeswhileaddingtoc/
 ---
-이 튜토리얼에서는 .NET용 Aspose.PDF를 사용하여 목차(TOC)를 추가하면서 페이지 번호를 사용자 정의하는 방법을 살펴보겠습니다. 이를 달성하는 데 도움이 되도록 코드 예제와 함께 단계별 지침을 제공할 것입니다.
+## 소개
 
-## 1단계: 기존 PDF 파일 로드
+문서 관리의 세계에서 PDF는 최고입니다. 다양한 플랫폼에서 문서를 공유하고 보존하는 데 적합한 형식입니다. 하지만 목차(TOC)와 같은 기능으로 PDF 문서를 향상시키고 싶을 때는 어떻게 해야 할까요? 바로 Aspose.PDF for .NET이 필요한 이유입니다! 이 강력한 라이브러리를 사용하면 개발자가 PDF 파일을 쉽게 조작하여 손쉽게 콘텐츠를 추가, 수정 및 사용자 지정할 수 있습니다. 이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 PDF 문서에 TOC를 추가하는 동시에 페이지 번호를 사용자 지정하는 방법을 알아보겠습니다. 코딩 모자를 쓰고 시작해 봅시다!
 
-먼저 기존 PDF 파일을 로드해야 합니다. 이 튜토리얼에서는 "YOUR DOCUMENT DIRECTORY" 디렉토리에 있는 "42824.pdf" 파일을 사용합니다. 이 디렉토리 경로를 문서 디렉토리의 실제 경로로 바꾸십시오.
+## 필수 조건
+
+코드로 들어가기 전에 꼭 준비해야 할 몇 가지 사항이 있습니다.
+
+1. Visual Studio: 컴퓨터에 Visual Studio가 설치되어 있는지 확인하세요. 이것이 우리의 개발 환경이 될 것입니다.
+2. .NET용 Aspose.PDF: Aspose.PDF 라이브러리를 다운로드하여 설치해야 합니다. 찾을 수 있습니다.[여기](https://releases.aspose.com/pdf/net/).
+3. C#에 대한 기본 지식: C# 프로그래밍에 익숙하면 코드 조각을 더 잘 이해하는 데 도움이 됩니다.
+4. 샘플 PDF 파일: 작업할 수 있는 샘플 PDF 파일을 준비하세요. 간단한 파일을 만들거나 기존 PDF를 다운로드할 수 있습니다.
+
+## 패키지 가져오기
+
+시작하려면 필요한 패키지를 가져와야 합니다. Visual Studio 프로젝트를 열고 Aspose.PDF 라이브러리에 대한 참조를 추가합니다. NuGet 패키지 관리자를 사용하여 이를 수행할 수 있습니다.
+
+1. 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 버튼으로 클릭합니다.
+2. "NuGet 패키지 관리"를 선택하세요.
+3. "Aspose.PDF"를 검색하여 설치하세요.
+
+```csharp
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+라이브러리를 설치하면 코딩을 시작할 수 있습니다!
+
+## 1단계: 문서 디렉토리 설정
+
+우선, 문서 디렉토리를 설정해야 합니다. 여기에 입력 및 출력 PDF 파일을 저장할 것입니다. 
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "42824.pdf";
 string outFile = dataDir + "42824_out.pdf";
+```
+
+이 스니펫에서 다음을 교체합니다.`YOUR DOCUMENT DIRECTORY` PDF 파일이 있는 실제 경로와 함께. 이렇게 하면 기존 PDF를 로드하고 수정된 버전을 저장하는 데 도움이 됩니다.
+
+## 2단계: 기존 PDF 파일 로드
+
+이제 문서 디렉토리가 설정되었으니 기존 PDF 파일을 로드해 보겠습니다. 
+
+```csharp
 Document doc = new Document(inFile);
 ```
 
-## 2단계: 목차 페이지 추가
+ 여기서 우리는 새로운 것을 만듭니다`Document` 입력 파일 경로를 전달하여 객체를 만듭니다. 이를 통해 PDF 콘텐츠를 프로그래밍 방식으로 조작할 수 있습니다.
 
- 다음으로 목차 페이지 역할을 할 새 페이지를 문서 시작 부분에 추가해야 합니다. 우리는 다음을 사용하여 이를 달성할 수 있습니다.`Insert()` 의 방법`Pages` 의 컬렉션`Document` 물체.
+## 3단계: TOC에 대한 새 페이지 삽입
+
+다음으로, 목차를 넣을 PDF에 새 페이지를 만들어야 합니다.
 
 ```csharp
 Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
 ```
 
-## 3단계: TOC 객체 생성
+이 줄은 문서의 시작 부분에 새 페이지를 삽입합니다. TOC가 이 페이지에 표시됩니다.
 
- TOC 객체를 생성하려면 먼저`TocInfo` 개체를 선택하고 해당 속성을 설정합니다. 이 튜토리얼에서는 TOC 제목을 "목차"로 설정하고 페이지 번호 접두어를 "P"로 설정합니다.
+## 4단계: TOC 정보 생성
+
+이제 TOC 정보를 나타내는 객체를 만들어 보겠습니다.
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
@@ -42,99 +84,55 @@ tocInfo.PageNumbersPrefix = "P";
 tocPage.TocInfo = tocInfo;
 ```
 
-## 4단계: 목차 항목 만들기
+ 이 단계에서는 다음을 생성합니다.`TocInfo` 객체를 만들고 제목을 "목차"로 설정합니다. 또한 글꼴 크기와 스타일도 사용자 정의합니다.`PageNumbersPrefix` "P"로 설정되어 TOC에 페이지 번호가 접두사로 추가됩니다.
 
-목차 항목을 만들려면 목차 페이지를 제외한 문서의 모든 페이지를 반복하고 각 페이지에 대한 제목 개체를 만들어야 합니다. 그런 다음 목차 페이지에 제목 개체를 추가하고 대상 페이지를 지정할 수 있습니다.
+## 5단계: TOC에 제목 추가
+
+이제 재밌는 부분이 왔습니다! 문서의 페이지를 반복하고 TOC에 제목을 추가합니다.
 
 ```csharp
 for (int i = 1; i < doc.Pages.Count; i++)
 {
-    // 제목 개체 만들기
     Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
     TextSegment segment2 = new TextSegment();
     heading2.TocPage = tocPage;
     heading2.Segments.Add(segment2);
-    // 제목 개체의 대상 페이지 지정
     heading2.DestinationPage = doc.Pages[i + 1];
-    // 목적지 페이지
     heading2.Top = doc.Pages[i + 1].Rect.Height;
-    // 목적지 좌표
     segment2.Text = "Page " + i.ToString();
-    // TOC가 포함된 페이지에 제목 추가
     tocPage.Paragraphs.Add(heading2);
 }
 ```
 
-## 5단계: 업데이트된 문서 저장
+ 이 루프에서 우리는 새로운 것을 만듭니다.`Heading` 각 페이지에 대한 객체입니다. 각 제목에 대한 대상 페이지를 설정하고 표시할 텍스트를 지정합니다. 이는 "페이지 X"이며 X는 페이지 번호입니다. 마지막으로 TOC 페이지에 제목을 추가합니다.
 
-마지막으로 업데이트된 문서를 새 파일에 저장해야 합니다. 우리는 다음을 사용하여 이를 달성할 수 있습니다.`Save()` 의 방법`Document` 물체.
+## 6단계: 업데이트된 문서 저장
+
+필요한 제목을 모두 추가한 후에는 업데이트된 문서를 저장할 차례입니다.
 
 ```csharp
 doc.Save(outFile);
 ```
 
-### .NET용 Aspose.PDF를 사용하여 TOC를 추가하는 동안 페이지 번호를 사용자 정의하기 위한 예제 소스 코드
-
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string inFile = dataDir + "42824.pdf";
-string outFile = dataDir + "42824_out.pdf";
-// 기존 PDF 파일 로드
-Document doc = new Document(inFile);
-// PDF 파일의 첫 번째 페이지에 액세스
-Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
-// TOC 정보를 나타내는 객체 생성
-TocInfo tocInfo = new TocInfo();
-TextFragment title = new TextFragment("Table Of Contents");
-title.TextState.FontSize = 20;
-title.TextState.FontStyle = FontStyles.Bold;
-// TOC 제목 설정
-tocInfo.Title = title;
-tocInfo.PageNumbersPrefix = "P";
-tocPage.TocInfo = tocInfo;
-for (int i = 1; i<doc.Pages.Count; i++)
-{
-	// 제목 개체 만들기
-	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
-	TextSegment segment2 = new TextSegment();
-	heading2.TocPage = tocPage;
-	heading2.Segments.Add(segment2);
-	// 제목 개체의 대상 페이지 지정
-	heading2.DestinationPage = doc.Pages[i + 1];
-	// 목적지 페이지
-	heading2.Top = doc.Pages[i + 1].Rect.Height;
-	// 목적지 좌표
-	segment2.Text = "Page " + i.ToString();
-	// TOC가 포함된 페이지에 제목 추가
-	tocPage.Paragraphs.Add(heading2);
-}
-
-// 업데이트된 문서 저장
-doc.Save(outFile);
-```
+이 줄은 TOC가 포함된 수정된 PDF를 저장합니다. 이제 출력 파일을 열고 사용자 지정 목차를 볼 수 있습니다!
 
 ## 결론
 
-이 튜토리얼에서는 .NET용 Aspose.PDF를 사용하여 목차를 추가하는 동안 페이지 번호를 사용자 정의하는 방법에 대한 단계별 지침을 제공했습니다. 또한 이 기능을 애플리케이션에 구현할 때 참조로 사용할 수 있는 코드 예제도 제공했습니다.
+이제 다 되었습니다! Aspose.PDF for .NET을 사용하여 PDF 문서에 목차를 추가하는 동안 페이지 번호를 성공적으로 사용자 지정했습니다. 이 강력한 라이브러리를 사용하면 PDF 파일을 쉽게 조작할 수 있으며, 몇 줄의 코드만 있으면 문서를 크게 향상시킬 수 있습니다. 보고서, 전자책 또는 기타 유형의 PDF를 만들 때 TOC가 있으면 독자의 탐색을 크게 개선할 수 있습니다. 그럼, 무엇을 기다리고 계신가요? Aspose.PDF로 뛰어들어 오늘 놀라운 PDF를 만들기 시작하세요!
 
-### FAQ
+## 자주 묻는 질문
 
-#### Q: PDF 문서의 목차(TOC)란 무엇입니까?
+### .NET용 Aspose.PDF란 무엇인가요?
+.NET용 Aspose.PDF는 개발자가 PDF 문서를 프로그래밍 방식으로 만들고, 조작하고, 변환할 수 있는 라이브러리입니다.
 
-A: PDF 문서의 목차(TOC)는 해당 페이지 번호와 함께 문서 섹션이나 장의 정리된 목록을 제공하는 탐색 보조 도구입니다. 이를 통해 독자는 문서 내의 특정 섹션으로 빠르게 이동할 수 있습니다.
+### Aspose.PDF를 무료로 사용할 수 있나요?
+ 네, Aspose는 라이브러리의 기능을 탐색하는 데 사용할 수 있는 무료 평가판 버전을 제공합니다. 다운로드할 수 있습니다.[여기](https://releases.aspose.com/).
 
-#### Q:목차의 페이지 번호를 사용자 정의하려는 이유는 무엇입니까?
+### Aspose.PDF에 대한 지원은 어떻게 받을 수 있나요?
+ Aspose 포럼을 방문하면 지원을 받을 수 있습니다.[여기](https://forum.aspose.com/c/pdf/10).
 
-A: 특정 페이지 번호 매기기 형식을 사용하거나 페이지 번호와 함께 추가 정보를 포함하려는 경우 목차의 페이지 번호를 사용자 정의하는 것이 유용할 수 있습니다. 이를 통해 보다 개인화되고 유익한 목차를 만들 수 있습니다.
+### 임시 면허증이 있나요?
+ 네, Aspose.PDF에 대한 임시 라이센스를 요청할 수 있습니다.[여기](https://purchase.aspose.com/temporary-license/).
 
-#### Q: PDF 문서 내의 특정 섹션이나 페이지에 연결하기 위해 목차에 하이퍼링크를 포함할 수 있습니까?
-
-A: 예, .NET용 Aspose.PDF를 사용하면 PDF 문서 내의 특정 섹션이나 페이지에 연결되는 하이퍼링크를 목차에 생성할 수 있습니다. 이는 PDF 문서의 상호 작용 및 탐색을 향상시킵니다.
-
-#### Q: .NET용 Aspose.PDF는 PDF/A 표준과 호환됩니까?
-
-A: 예, .NET용 Aspose.PDF는 PDF/A-1, PDF/A-2 및 PDF/A-3을 포함한 PDF/A 표준을 지원합니다. 보관 및 장기 보존 요구 사항을 준수하는 PDF 문서를 만들 수 있습니다.
-
-#### Q: 목차 항목에 글꼴 스타일이나 색상 등 서식을 더 추가할 수 있나요?
-
-A: 예, .NET용 Aspose.PDF를 사용하여 글꼴 스타일, 색상, 글꼴 크기 등 목차 항목에 추가 서식을 추가할 수 있습니다. 이를 통해 요구 사항에 따라 TOC의 모양을 사용자 정의할 수 있습니다.
+### .NET용 Aspose.PDF를 어디서 구매할 수 있나요?
+ .NET용 Aspose.PDF를 구매할 수 있습니다.[여기](https://purchase.aspose.com/buy).

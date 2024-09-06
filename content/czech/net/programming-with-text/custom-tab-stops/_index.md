@@ -46,7 +46,7 @@ Page page = _pdfdocument.Pages.Add();
 ```
 
 ## Krok 6: Vytvořte vlastní zarážky tabulátoru
- Vytvořit`TabStops` objekt a přidejte k němu vlastní zarážky tabulátoru. Nastavte typ zarovnání a typ odkazu pro každou zarážku tabulátoru.
+ Vytvořte a`TabStops` objekt a přidejte k němu vlastní zarážky tabulátoru. Nastavte typ zarovnání a typ odkazu pro každou zarážku tabulátoru.
 
 ```csharp
 TabStops ts = new TabStops();
@@ -155,7 +155,7 @@ using Aspose.Pdf.Text;
 
 #### Otázka: Jak vytvořím vlastní zarážky tabulátoru?
 
- Odpověď: V kroku 6 vytvoříte a`TabStops` objekt a přidejte k němu vlastní zarážky tabulátoru. Pro každou zarážku tabulátoru také nastavíte typy zarovnání a odkazu.
+ Odpověď: V kroku 6 vytvoříte a`TabStops` objekt a přidejte k němu vlastní zarážky tabulátoru. Pro každou zarážku tabulátoru také nastavíte typy zarovnání a odkazové čáry.
 
 #### Otázka: Jak vytvořím fragmenty textu se zarážkami?
 

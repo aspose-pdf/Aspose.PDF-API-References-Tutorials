@@ -106,11 +106,11 @@ V: Ha egy PDF-dokumentum fejlécébe szöveget ad, fontos információk, példá
 
 #### K: A megadott C# forráskód hogyan teszi lehetővé a szöveg hozzáadását egy PDF dokumentum fejlécéhez?
 
-V: A kód bemutatja egy meglévő PDF dokumentum megnyitásának folyamatát, szövegbélyegző létrehozását a kívánt fejlécszöveggel, a szöveg tulajdonságainak testreszabását, a szövegbélyegző hozzáadását az összes oldalhoz, végül pedig a frissített PDF dokumentum mentését a hozzáadott fejlécszöveggel.
+V: A kód bemutatja egy meglévő PDF-dokumentum megnyitásának folyamatát, szövegbélyegző létrehozását a kívánt fejlécszöveggel, a szövegtulajdonságok testreszabását, a szövegbélyegző hozzáadását az összes oldalhoz, végül pedig a frissített PDF-dokumentum elmentését a hozzáadott fejlécszöveggel.
 
 #### K: Módosíthatom a fejléc szövegének megjelenését, például annak betűtípusát, méretét, színét és igazítását?
 
- V: Igen, testreszabhatja a fejléc szövegének megjelenését a tulajdonságok módosításával`TextStamp`tárgy. A kódpélda olyan beállítási tulajdonságokat tartalmaz, mint a felső margó, a vízszintes igazítás és a függőleges igazítás. Beállíthatja a betűtípust, a méretet, a színt és a szöveggel kapcsolatos egyéb tulajdonságokat is.
+V: Igen, testreszabhatja a fejléc szövegének megjelenését a tulajdonságok módosításával`TextStamp` objektum. A kódpélda olyan beállítási tulajdonságokat tartalmaz, mint a felső margó, a vízszintes igazítás és a függőleges igazítás. Beállíthatja a betűtípust, a méretet, a színt és a szöveggel kapcsolatos egyéb tulajdonságokat is.
 
 #### K: Lehetséges-e különböző szöveget hozzáadni az egyes oldalak fejlécéhez?
 

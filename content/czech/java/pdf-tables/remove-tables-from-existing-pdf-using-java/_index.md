@@ -8,7 +8,7 @@ weight: 14
 url: /cs/java/pdf-tables/remove-tables-from-existing-pdf-using-java/
 ---
 
-## Úvod
+## Zavedení
 
 tomto podrobném průvodci prozkoumáme, jak odstranit tabulky ze stávajícího dokumentu PDF pomocí jazyka Java s pomocí knihovny Aspose.PDF for Java. Tabulky se běžně používají v dokumentech PDF k prezentaci dat, ale mohou nastat situace, kdy je potřebujete extrahovat nebo odstranit. Ať už se jedná o analýzu dat nebo úpravy formátování, máme pro vás vše. Pojďme se ponořit a naučit se, jak toho dosáhnout pomocí Aspose.PDF pro Javu.
 
@@ -17,7 +17,7 @@ tomto podrobném průvodci prozkoumáme, jak odstranit tabulky ze stávajícího
 Než začneme, ujistěte se, že máte splněny následující předpoklady:
 
 - Java Development Kit (JDK) nainstalovaný ve vašem systému.
--  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Krok 1: Nastavení vašeho projektu Java
 
@@ -66,7 +66,7 @@ pdfDocument.save("path/to/modified/document.pdf");
 
 ## Závěr
 
-Gratulujeme! Úspěšně jste se naučili, jak odstranit tabulky ze stávajícího dokumentu PDF pomocí Java a Aspose.PDF for Java. To může být neuvěřitelně užitečné, když potřebujete manipulovat s obsahem PDF pro různé účely.
+Gratuluji! Úspěšně jste se naučili, jak odstranit tabulky ze stávajícího dokumentu PDF pomocí Java a Aspose.PDF for Java. To může být neuvěřitelně užitečné, když potřebujete manipulovat s obsahem PDF pro různé účely.
 
 ## FAQ
 
@@ -88,4 +88,4 @@ Ano, Aspose.PDF for Java je navržen pro práci s dokumenty PDF různých veliko
 
 ### Kde mohu získat přístup k dalším zdrojům a dokumentaci k Aspose.PDF pro Java?
 
- Komplexní dokumentaci a zdroje pro Aspose.PDF pro Javu naleznete na adrese[tady](https://reference.aspose.com/pdf/java/).
+ Komplexní dokumentaci a zdroje pro Aspose.PDF pro Javu naleznete na adrese[zde](https://reference.aspose.com/pdf/java/).

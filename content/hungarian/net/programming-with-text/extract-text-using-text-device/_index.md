@@ -33,14 +33,14 @@ using System.Text;
  A kódban keresse meg azt a sort, amely ezt mondja`string dataDir = "YOUR DOCUMENT DIRECTORY";` és cserélje ki`"YOUR DOCUMENT DIRECTORY"` annak a könyvtárnak az elérési útjával, ahol a dokumentumokat tárolják.
 
 ## 4. lépés: Nyissa meg a PDF dokumentumot
- Nyisson meg egy meglévő PDF dokumentumot a`Document`konstruktort, és átadja a bemeneti PDF-fájl elérési útját.
+ Nyisson meg egy meglévő PDF dokumentumot a`Document` konstruktort, és átadja a bemeneti PDF-fájl elérési útját.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
 ## 5. lépés: Szöveg kibontása a Text Device segítségével
- Hozzon létre egy`StringBuilder` objektum a kivont szöveg tárolására. Ismételje meg a dokumentum minden oldalát, és használja a a`TextDevice` hogy kinyerjük a szöveget minden oldalról.
+ Hozzon létre a`StringBuilder` objektum a kivont szöveg tárolására. Ismételje meg a dokumentum minden oldalát, és használja a a`TextDevice` hogy kinyerjük a szöveget minden oldalról.
 
 ```csharp
 StringBuilder builder = new StringBuilder();

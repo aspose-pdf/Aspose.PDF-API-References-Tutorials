@@ -1,26 +1,26 @@
 ---
 title: Dodaj podpowiedź do tekstu w pliku PDF
 linktitle: Dodaj podpowiedź do tekstu w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak dodawać podpowiedzi do tekstu w pliku PDF przy użyciu Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak dodawać podpowiedzi do tekstu w pliku PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 90
 url: /pl/net/programming-with-text/add-tooltip-to-text/
 ---
-Ten samouczek poprowadzi Cię przez proces dodawania podpowiedzi do tekstu w pliku PDF przy użyciu Aspose.PDF dla .NET. Dostarczony kod źródłowy języka C# demonstruje niezbędne kroki.
+Ten samouczek przeprowadzi Cię przez proces dodawania podpowiedzi do tekstu w pliku PDF przy użyciu Aspose.PDF dla .NET. Dostarczony kod źródłowy C# demonstruje niezbędne kroki.
 
 ## Wymagania
-Zanim zaczniesz, upewnij się, że masz następujące elementy:
+Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
 
-- Visual Studio lub dowolny inny kompilator C# zainstalowany na twoim komputerze.
-- Aspose.PDF dla biblioteki .NET. Możesz pobrać go z oficjalnej strony Aspose lub użyć menedżera pakietów, takiego jak NuGet, aby go zainstalować.
+- Visual Studio lub inny kompilator C# zainstalowany na Twoim komputerze.
+- Aspose.PDF dla biblioteki .NET. Możesz pobrać ją z oficjalnej strony Aspose lub użyć menedżera pakietów, takiego jak NuGet, aby ją zainstalować.
 
 ## Krok 1: Skonfiguruj projekt
 1. Utwórz nowy projekt C# w preferowanym środowisku programistycznym.
-2. Dodaj odwołanie do biblioteki Aspose.PDF dla .NET.
+2. Dodaj odwołanie do biblioteki Aspose.PDF dla platformy .NET.
 
-## Krok 2: Zaimportuj wymagane przestrzenie nazw
-W pliku kodu, w którym chcesz dodać podpowiedzi do tekstu, dodaj następujące dyrektywy using na górze pliku:
+## Krok 2: Importuj wymagane przestrzenie nazw
+W pliku kodu, do którego chcesz dodać podpowiedzi do tekstu, dodaj na początku pliku następujące dyrektywy using:
 
 ```csharp
 using Aspose.Pdf;
@@ -29,10 +29,10 @@ using Aspose.Pdf.Text;
 ```
 
 ## Krok 3: Ustaw katalog dokumentów
- W kodzie znajdź wiersz, który mówi`string dataDir = "YOUR DOCUMENT DIRECTORY";` i wymienić`"YOUR DOCUMENT DIRECTORY"` ze ścieżką do katalogu, w którym przechowywane są Twoje dokumenty.
+ W kodzie znajdź linię, która mówi`string dataDir = "YOUR DOCUMENT DIRECTORY";` i zastąpić`"YOUR DOCUMENT DIRECTORY"` ze ścieżką do katalogu, w którym przechowywane są Twoje dokumenty.
 
 ## Krok 4: Utwórz przykładowy dokument z tekstem
- Stwórz nowy`Document` obiekt i dodaj strony z fragmentami tekstu. W dostarczonym kodzie do dokumentu dodano dwa fragmenty tekstu z odpowiednim tekstem podpowiedzi.
+ Utwórz nowy`Document` obiekt i dodaj strony z fragmentami tekstu. W podanym kodzie do dokumentu dodawane są dwa fragmenty tekstu z odpowiednim tekstem podpowiedzi.
 
 ```csharp
 Document doc = new Document();
@@ -42,7 +42,7 @@ doc.Save(outputFile);
 ```
 
 ## Krok 5: Otwórz dokument i znajdź fragmenty tekstu
- Załaduj utworzony dokument za pomocą`Document` konstruktor i znajdź fragmenty tekstu, które wymagają użycia podpowiedzi`TextFragmentAbsorber`.
+ Załaduj utworzony dokument za pomocą`Document` konstruktora i znajdź fragmenty tekstu, które wymagają podpowiedzi, używając`TextFragmentAbsorber`.
 
 ```csharp
 Document document = new Document(outputFile);
@@ -52,7 +52,7 @@ TextFragmentCollection textFragments = absorb.TextFragments;
 ```
 
 ## Krok 6: Dodaj podpowiedzi do fragmentów tekstu
- Przejrzyj wyodrębnione fragmenty tekstu w pętli i utwórz niewidoczne przyciski w ich miejscach. Przypisz żądany tekst podpowiedzi do`AlternateName` własność`ButtonField`. Dodaj pola przycisków do formularza dokumentu.
+ Przejrzyj wyodrębnione fragmenty tekstu i utwórz niewidoczne przyciski w ich pozycjach. Przypisz żądany tekst podpowiedzi do`AlternateName` własność`ButtonField`. Dodaj pola przycisków do formularza dokumentu.
 
 ```csharp
 foreach(TextFragment fragment in textFragments)
@@ -63,8 +63,8 @@ foreach(TextFragment fragment in textFragments)
 }
 ```
 
-## Krok 7: Powtórz tę czynność dla dodatkowych fragmentów tekstu z długimi etykietami narzędzi
-Powtórz kroki 5 i 6 dla fragmentów tekstu z długimi etykietami narzędzi. Zmodyfikuj odpowiednio kryteria wyszukiwania i tekst podpowiedzi.
+## Krok 7: Powtórz dla dodatkowych fragmentów tekstu z długimi etykietami narzędzi
+Powtórz kroki 5 i 6 dla fragmentów tekstu z długimi podpowiedziami. Zmień kryteria wyszukiwania i tekst podpowiedzi odpowiednio.
 
 ```csharp
 absorb = new TextFragmentAbsorber("Move the mouse cursor here to display a very long tooltip");
@@ -80,13 +80,13 @@ foreach(TextFragment fragment in textFragments)
 ```
 
 ## Krok 8: Zapisz zmodyfikowany dokument
- Zapisz zmodyfikowany dokument PDF za pomocą pliku`Save` metoda`Document` obiekt.
+ Zapisz zmodyfikowany dokument PDF za pomocą`Save` metoda`Document` obiekt.
 
 ```csharp
 document. Save(outputFile);
 ```
 
-### Przykładowy kod źródłowy dla opcji Dodaj etykietkę narzędzia do tekstu przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Dodaj podpowiedź do tekstu przy użyciu Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -100,21 +100,21 @@ doc.Save(outputFile);
 Document document = new Document(outputFile);
 // Utwórz obiekt TextAbsorber, aby znaleźć wszystkie frazy pasujące do wyrażenia regularnego
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
-// Zaakceptuj pochłaniacz stron dokumentu
+// Zaakceptuj absorber dla stron dokumentu
 document.Pages.Accept(absorber);
 // Pobierz wyodrębnione fragmenty tekstu
 TextFragmentCollection textFragments = absorber.TextFragments;
 // Przejrzyj fragmenty
 foreach (TextFragment fragment in textFragments)
 {
-	// Utwórz niewidoczny przycisk na pozycji fragmentu tekstu
+	// Utwórz niewidoczny przycisk w pozycji fragmentu tekstu
 	ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
-	// Wartość AlternateName zostanie wyświetlona jako podpowiedź w aplikacji przeglądarki
+	// Wartość AlternateName będzie wyświetlana jako podpowiedź przez aplikację przeglądarki
 	field.AlternateName = "Tooltip for text.";
 	// Dodaj pole przycisku do dokumentu
 	document.Form.Add(field);
 }
-// Następna będzie próbka z bardzo długą podpowiedzią
+// Następny będzie przykład bardzo długiego podpowiedzi
 absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a very long tooltip");
 document.Pages.Accept(absorber);
 textFragments = absorber.TextFragments;
@@ -137,17 +137,17 @@ document.Save(outputFile);
 ```
 
 ## Wniosek
-Pomyślnie dodałeś podpowiedzi do tekstu w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Wynikowy plik PDF można teraz znaleźć pod określoną ścieżką pliku wyjściowego.
+Pomyślnie dodano podpowiedzi do tekstu w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Wynikowy plik PDF można teraz znaleźć w określonej ścieżce pliku wyjściowego.
 
 ## Często zadawane pytania
 
 #### P: Na czym skupia się ten samouczek?
 
-Odp.: Ten samouczek koncentruje się na dodawaniu podpowiedzi do tekstu w pliku PDF przy użyciu biblioteki Aspose.PDF dla .NET. Dostarczony kod źródłowy języka C# demonstruje kroki wymagane do osiągnięcia tego celu.
+A: Ten samouczek koncentruje się na dodawaniu podpowiedzi do tekstu w pliku PDF przy użyciu biblioteki Aspose.PDF dla .NET. Dostarczony kod źródłowy C# demonstruje kroki wymagane do osiągnięcia tego celu.
 
 #### P: Które przestrzenie nazw należy zaimportować na potrzeby tego samouczka?
 
-O: W pliku kodu, w którym chcesz dodać podpowiedzi do tekstu, zaimportuj na początku pliku następujące przestrzenie nazw:
+A: W pliku kodu, do którego chcesz dodać podpowiedzi do tekstu, zaimportuj następujące przestrzenie nazw na początku pliku:
 
 ```csharp
 using Aspose.Pdf;
@@ -157,28 +157,28 @@ using Aspose.Pdf.Text;
 
 #### P: Jak określić katalog dokumentów?
 
- Odp.: W kodzie znajdź linię`string dataDir = "YOUR DOCUMENT DIRECTORY";` i wymienić`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do katalogu dokumentów.
+ A: W kodzie znajdź linię`string dataDir = "YOUR DOCUMENT DIRECTORY";` i zastąpić`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do katalogu dokumentów.
 
 #### P: Jak mogę utworzyć przykładowy dokument z tekstem?
 
- Odp.: W kroku 4 utworzysz nowy plik`Document` obiekt i dodaj strony z fragmentami tekstu. Dostarczony kod dodaje dwa fragmenty tekstu z odpowiednim tekstem podpowiedzi.
+ A: W kroku 4 utworzysz nowy`Document` obiekt i dodaj strony z fragmentami tekstu. Podany kod dodaje dwa fragmenty tekstu z odpowiednim tekstem podpowiedzi.
 
 #### P: Jak otworzyć dokument i znaleźć fragmenty tekstu?
 
- Odp.: W kroku 5 załadujesz utworzony dokument za pomocą`Document` konstruktor i znajdź fragmenty tekstu wymagające podpowiedzi za pomocą`TextFragmentAbsorber`.
+ A: W kroku 5 załadujesz utworzony dokument za pomocą`Document` konstruktora i znajdź fragmenty tekstu wymagające podpowiedzi, korzystając z`TextFragmentAbsorber`.
 
 #### P: Jak dodać podpowiedzi do fragmentów tekstu?
 
- O: W kroku 6 będziesz przeglądać wyodrębnione fragmenty tekstu i tworzyć niewidoczne przyciski w ich miejscach. Tekst podpowiedzi jest przypisany do`AlternateName` własność`ButtonField`który jest dodawany do formularza dokumentu.
+ A: W kroku 6 przejdziesz przez wyodrębnione fragmenty tekstu i utworzysz niewidoczne przyciski w ich pozycjach. Tekst podpowiedzi jest przypisany do`AlternateName` własność`ButtonField`który zostanie dodany do formularza dokumentu.
 
-#### P: Jak powtórzyć proces dla dodatkowych fragmentów tekstu z długimi etykietami narzędzi?
+#### P: Jak powtórzyć proces dla dodatkowych fragmentów tekstu z długimi etykietami?
 
-O: W przypadku fragmentów tekstu z długimi etykietami narzędzi powtórz kroki 5 i 6. Odpowiednio zmodyfikuj kryteria wyszukiwania i tekst podpowiedzi.
+A: W przypadku fragmentów tekstu z długimi podpowiedziami powtórz kroki 5 i 6. Zmień odpowiednio kryteria wyszukiwania i tekst podpowiedzi.
 
 #### P: Jak zapisać zmodyfikowany dokument?
 
- O: W kroku 8 zapiszesz zmodyfikowany dokument PDF za pomocą pliku`Save` metoda`Document` obiekt.
+ A: W kroku 8 zapiszesz zmodyfikowany dokument PDF za pomocą`Save` metoda`Document` obiekt.
 
-#### P: Jaki jest główny wniosek z tego samouczka?
+#### P: Jakie są najważniejsze wnioski z tego samouczka?
 
-Odp.: Wykonując ten samouczek, nauczyłeś się, jak ulepszyć swój dokument PDF, dodając podpowiedzi do tekstu za pomocą Aspose.PDF dla .NET. Może to zapewnić czytelnikom cenne dodatkowe informacje podczas interakcji z zawartością pliku PDF.
+A: Dzięki temu samouczkowi nauczyłeś się, jak ulepszyć swój dokument PDF, dodając podpowiedzi do tekstu za pomocą Aspose.PDF dla .NET. Może to zapewnić czytelnikom cenne dodatkowe informacje podczas interakcji z treścią PDF.

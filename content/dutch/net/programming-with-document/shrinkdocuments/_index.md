@@ -2,16 +2,16 @@
 title: PDF-documenten verkleinen
 linktitle: Documenten verkleinen
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u Aspose.PDF voor .NET kunt gebruiken om PDF-documenten te verkleinen met deze stapsgewijze handleiding.
+description: Leer met deze stapsgewijze handleiding hoe u Aspose.PDF voor .NET kunt gebruiken om PDF-documenten te verkleinen.
 type: docs
 weight: 350
 url: /nl/net/programming-with-document/shrinkdocuments/
 ---
-Aspose.PDF voor .NET is een krachtige bibliotheek waarmee ontwikkelaars PDF-documenten kunnen maken, manipuleren en optimaliseren met C#. In deze zelfstudie doorlopen we een voorbeeld van hoe u Aspose.PDF kunt gebruiken om een PDF-document te verkleinen.
+Aspose.PDF voor .NET is een krachtige bibliotheek waarmee ontwikkelaars PDF-documenten kunnen maken, bewerken en optimaliseren met C#. In deze tutorial laten we een voorbeeld zien van hoe u Aspose.PDF kunt gebruiken om een PDF-document te verkleinen.
 
 ## Stap 1: Het PDF-document laden
 
- Om een PDF-document te verkleinen, moeten we het eerst in onze C#-applicatie laden met Aspose.PDF. In de onderstaande code specificeren we het pad naar ons PDF-document en maken we een nieuw exemplaar van het`Document` klas.
+ Om een PDF-document te verkleinen, moeten we het eerst laden in onze C#-applicatie met behulp van Aspose.PDF. In de onderstaande code specificeren we het pad naar ons PDF-document en maken we een nieuw exemplaar van de`Document` klas.
 
 ```csharp
 // Het pad naar de documentenmap.
@@ -22,59 +22,59 @@ Document pdfDocument = new Document(dataDir + "ShrinkDocument.pdf");
 
 ## Stap 2: Het PDF-document verkleinen
 
- Nadat we het PDF-document hebben geladen, kunnen we de`OptimizeResources` werkwijze van de`Document`class om het document te optimaliseren en mogelijk de omvang ervan te verkleinen. Houd er rekening mee dat deze methode het verkleinen van documenten niet kan garanderen, omdat sommige PDF-documenten mogelijk al sterk zijn geoptimaliseerd.
+ Nadat we het PDF-document hebben geladen, kunnen we de`OptimizeResources` methode van de`Document`class om het document te optimaliseren en mogelijk de grootte ervan te verkleinen. Let op: deze methode kan geen garantie bieden dat het document kleiner wordt, omdat sommige PDF-documenten mogelijk al sterk geoptimaliseerd zijn.
 
 ```csharp
-// Optimaliseer PDF-document. Houd er echter rekening mee dat deze methode het verkleinen van documenten niet kan garanderen
+// Optimaliseer PDF-document. Houd er echter rekening mee dat deze methode niet kan garanderen dat het document kleiner wordt.
 pdfDocument.OptimizeResources();
 ```
 
 ## Stap 3: Het bijgewerkte PDF-document opslaan
 
- Nadat we het PDF-document hebben geoptimaliseerd, kunnen we de bijgewerkte versie opslaan in een nieuw bestand met behulp van de`Save` werkwijze van de`Document` klas. In de onderstaande code specificeren we het pad en de bestandsnaam van het uitvoerbestand.
+ Nadat we het PDF-document hebben geoptimaliseerd, kunnen we de bijgewerkte versie opslaan in een nieuw bestand met behulp van de`Save` methode van de`Document` klasse. In de onderstaande code specificeren we het pad en de bestandsnaam van het uitvoerbestand.
 
 ```csharp
-// Geef het uitvoerbestandspad op
+// Geef het pad van het uitvoerbestand op
 string outputFilePath = dataDir + "ShrinkDocument_out.pdf";
-// Bewaar het bijgewerkte document
+// Bijgewerkt document opslaan
 pdfDocument.Save(outputFilePath);
 ```
 
-### Voorbeeldbroncode voor het verkleinen van documenten met Aspose.PDF voor .NET
+### Voorbeeldbroncode voor het verkleinen van documenten met behulp van Aspose.PDF voor .NET
 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Document openen
 Document pdfDocument = new Document(dataDir + "ShrinkDocument.pdf");
-// Optimaliseer PDF-document. Houd er echter rekening mee dat deze methode het verkleinen van documenten niet kan garanderen
+// Optimaliseer PDF-document. Houd er echter rekening mee dat deze methode niet kan garanderen dat het document kleiner wordt.
 pdfDocument.OptimizeResources();
 dataDir = dataDir + "ShrinkDocument_out.pdf";
-// Bewaar het bijgewerkte document
+// Bijgewerkt document opslaan
 pdfDocument.Save(dataDir);
 ```
 
 ## Conclusie
 
-Concluderend biedt Aspose.PDF voor .NET een eenvoudige en effectieve manier om PDF-documenten programmatisch te verkleinen met behulp van C#. Door de stappen in deze zelfstudie te volgen, kunt u grote PDF-bestanden optimaliseren en verkleinen zonder dat dit ten koste gaat van de kwaliteit of inhoud van het document.
+Concluderend biedt Aspose.PDF voor .NET een eenvoudige en effectieve manier om PDF-documenten programmatisch te verkleinen met behulp van C#. Door de stappen te volgen die in deze tutorial worden beschreven, kunt u grote PDF-bestanden optimaliseren en hun grootte verkleinen zonder de kwaliteit of inhoud van het document in gevaar te brengen.
 
-### Veelgestelde vragen over het verkleinen van PDF-documenten
+### FAQ's voor het verkleinen van PDF-documenten
 
-#### Vraag: Kan Aspose.PDF het verkleinen van elk PDF-document garanderen?
+#### V: Kan Aspose.PDF garanderen dat elk PDF-document wordt verkleind?
 
-A: Terwijl Aspose.PDF's`OptimizeResources` Deze methode is ontworpen om PDF-documenten te optimaliseren en mogelijk te verkleinen. Deze methode kan niet garanderen dat alle bestanden worden verkleind. Sommige PDF-documenten zijn mogelijk al sterk geoptimaliseerd, wat resulteert in weinig tot geen verkleining.
+A: Terwijl Aspose.PDF's`OptimizeResources` methode is ontworpen om PDF-documenten te optimaliseren en mogelijk te verkleinen, maar kan niet garanderen dat alle bestanden kleiner worden. Sommige PDF-documenten zijn mogelijk al sterk geoptimaliseerd, wat resulteert in weinig tot geen vermindering van de bestandsgrootte.
 
-#### Vraag: Zal het verkleinen van een PDF-document leiden tot kwaliteitsverlies?
+#### V: Zal het verkleinen van een PDF-document leiden tot kwaliteitsverlies?
 
-A: Het optimalisatieproces van Aspose.PDF is ontworpen om de bestandsgrootte te minimaliseren en tegelijkertijd de kwaliteit van het document te behouden. In de meeste gevallen zal het verkleinen van een PDF geen merkbare invloed hebben op de kwaliteit van de inhoud.
+A: Het optimalisatieproces van Aspose.PDF is ontworpen om de bestandsgrootte te minimaliseren en tegelijkertijd de kwaliteit van het document te behouden. In de meeste gevallen zou het verkleinen van een PDF geen merkbare impact moeten hebben op de kwaliteit van de inhoud.
 
-#### Vraag: Zijn er specifieke typen PDF-documenten die het meeste baat hebben bij optimalisatie?
+#### V: Zijn er specifieke typen PDF-documenten die het meest profiteren van optimalisatie?
 
-A: PDF-documenten met grote afbeeldingen, ingesloten lettertypen of overtollige gegevens profiteren eerder van optimalisatie. Documenten met veel tekst en minimale afbeeldingen worden mogelijk weinig kleiner.
+A: PDF-documenten met grote afbeeldingen, ingesloten lettertypen of redundante gegevens hebben meer kans op optimalisatie. Tekst-zware documenten met minimale afbeeldingen zien mogelijk weinig reductie in grootte.
 
-#### Vraag: Kan ik de wijzigingen die tijdens de optimalisatie zijn aangebracht, ongedaan maken?
+#### V: Kan ik de wijzigingen die tijdens de optimalisatie zijn aangebracht, ongedaan maken?
 
-A: Aspose.PDF brengt tijdens de optimalisatie geen permanente wijzigingen aan in het originele document. Het optimalisatieproces wordt uitgevoerd op een kopie van het document, waarbij het origineel intact blijft.
+A: Aspose.PDF brengt geen permanente wijzigingen aan in het originele document tijdens de optimalisatie. Het optimalisatieproces wordt uitgevoerd op een kopie van het document, waarbij het origineel intact blijft.
 
 ### V5: Is Aspose.PDF compatibel met andere programmeertalen?
 

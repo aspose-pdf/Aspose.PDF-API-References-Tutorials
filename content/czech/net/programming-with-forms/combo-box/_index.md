@@ -111,11 +111,11 @@ Odpověď: Ano, vzhled seznamu se seznamem můžete upravit pomocí Aspose.PDF p
 
 #### Otázka: Mohu nastavit výchozí vybrané možnosti v seznamu se seznamem?
 
- Odpověď: Ano, můžete nastavit výchozí vybrané možnosti v seznamu pomocí Aspose.PDF pro .NET. Můžete použít`Selected` vlastnictvím`ComboBoxField` objekt pro označení jedné nebo více možností jako standardně vybraných.
+ Odpověď: Ano, můžete nastavit výchozí vybrané možnosti v seznamu pomocí Aspose.PDF pro .NET. Můžete použít`Selected` majetek z`ComboBoxField` objekt pro označení jedné nebo více možností jako standardně vybraných.
 
 #### Otázka: Jak mohu získat vybranou hodnotu ze seznamu, když uživatel provede výběr?
 
- Odpověď: Vybranou hodnotu můžete získat ze seznamu pomocí Aspose.PDF pro .NET. Poté, co uživatel provede výběr, můžete získat přístup k`Value` vlastnictvím`ComboBoxField`objekt k získání vybrané hodnoty.
+ Odpověď: Vybranou hodnotu můžete získat ze seznamu pomocí Aspose.PDF pro .NET. Poté, co uživatel provede výběr, můžete získat přístup k`Value` majetek z`ComboBoxField`objekt k získání vybrané hodnoty.
 
 #### Otázka: Je možné přidat obslužné rutiny událostí nebo akce do seznamu pole se seznamem?
 

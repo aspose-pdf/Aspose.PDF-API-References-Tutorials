@@ -1,13 +1,13 @@
 ---
 title: Spécifier la page lors de la visualisation
 linktitle: Spécifier la page lors de la visualisation
-second_title: Aspose.PDF pour la référence de l'API .NET
-description: Découvrez comment spécifier une page lors de la visualisation d'un PDF à l'aide d'Aspose.PDF pour .NET.
+second_title: Référence de l'API Aspose.PDF pour .NET
+description: Découvrez comment spécifier une page lors de l’affichage d’un PDF à l’aide d’Aspose.PDF pour .NET.
 type: docs
 weight: 110
 url: /fr/net/programming-with-links-and-actions/specify-page-when-viewing/
 ---
-Découvrez comment spécifier une page lors de la visualisation d'un fichier PDF à l'aide d'Aspose.PDF pour .NET avec ce guide étape par étape.
+Découvrez comment spécifier une page lors de l'affichage d'un fichier PDF à l'aide d'Aspose.PDF pour .NET avec ce guide étape par étape.
 
 ## Étape 1 : Configuration de l'environnement
 
@@ -15,18 +15,18 @@ Assurez-vous d'avoir configuré votre environnement de développement avec un pr
 
 ## Étape 2 : Chargement du fichier PDF
 
-Définissez le chemin du répertoire de vos documents et téléchargez le fichier PDF en utilisant le code suivant :
+Définissez le chemin du répertoire de vos documents et téléchargez le fichier PDF à l'aide du code suivant :
 
 ```csharp
-// Le chemin d'accès au répertoire des documents.
+// Le chemin vers le répertoire des documents.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 // Charger le fichier PDF
 Document doc = new Document(dataDir + "SpecifyPageWhenViewing.pdf");
 ```
 
-## Étape 3 : Spécification de la page cible
+## Étape 3 : Spécification de la page cible
 
-Obtenez l'instance de page cible à l'aide du code suivant :
+Obtenez l’instance de la page cible à l’aide du code suivant :
 
 ```csharp
 Page page2 = doc.Pages[2];
@@ -42,17 +42,17 @@ Créez une variable pour définir le facteur de zoom de la page cible :
 double zoom = 1;
 ```
 
-Vous pouvez ajuster la valeur du zoom en fonction de vos besoins.
+Vous pouvez ajuster la valeur du zoom selon vos besoins.
 
-## Étape 5 : Créer l'action de navigation
+## Étape 5 : Créer l’action de navigation
 
-Créez une instance de l'action de navigation à l'aide de la page cible spécifiée :
+Créez une instance de l’action de navigation en utilisant la page cible spécifiée :
 
 ```csharp
 GoToAction action = new GoToAction(doc.Pages[2]);
 ```
 
-## Étape 6 : Définir la destination
+## Étape 6 : Définition de la destination
 
 Définissez la destination pour accéder à la page cible à l'aide des coordonnées et du zoom :
 
@@ -60,7 +60,7 @@ Définissez la destination pour accéder à la page cible à l'aide des coordonn
 action.Destination = new XYZExplicitDestination(page2, 0, page2.Rect.Height, zoom);
 ```
 
-## Étape 7 : Configuration de l'action d'ouverture de document
+## Étape 7 : Configuration de l’action d’ouverture du document
 
 Définissez l'action d'ouverture du document avec l'action de navigation créée :
 
@@ -68,17 +68,17 @@ Définissez l'action d'ouverture du document avec l'action de navigation créée
 doc. OpenAction = action;
 ```
 
-## Étape 8 : Enregistrez le document mis à jour
+## Étape 8 : Enregistrez le document mis à jour
 
- Enregistrez le document mis à jour à l'aide du`Save` méthode:
+ Enregistrez le document mis à jour à l'aide de la`Save` méthode:
 
 ```csharp
 doc.Save(dataDir + "goto2page_out.pdf");
 ```
 
-### Exemple de code source pour Spécifier la page lors de la visualisation à l'aide d'Aspose.PDF pour .NET 
+### Exemple de code source pour spécifier la page lors de l'affichage à l'aide d'Aspose.PDF pour .NET 
 ```csharp
-// Le chemin d'accès au répertoire des documents.
+// Le chemin vers le répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Charger le fichier PDF
 Document doc = new Document(dataDir + "SpecifyPageWhenViewing.pdf");
@@ -88,7 +88,7 @@ Page page2 = doc.Pages[2];
 double zoom = 1;
 // Créer une instance GoToAction
 GoToAction action = new GoToAction(doc.Pages[2]);
-// Aller à 2 pages
+// Aller à la page 2
 action.Destination = new XYZExplicitDestination(page2, 0, page2.Rect.Height, zoom);
 // Définir l'action d'ouverture du document
 doc.OpenAction = action;
@@ -98,48 +98,48 @@ doc.Save(dataDir + "goto2page_out.pdf");
 
 ## Conclusion
 
-Félicitation ! Vous savez maintenant comment spécifier une page lors de la visualisation d'un PDF à l'aide d'Aspose.PDF pour .NET. Utilisez ces connaissances pour personnaliser l’expérience de visualisation de l’utilisateur dans vos documents PDF.
+Félicitations ! Vous savez désormais comment spécifier une page lors de la visualisation d'un PDF à l'aide d'Aspose.PDF pour .NET. Utilisez ces connaissances pour personnaliser l'expérience de visualisation de l'utilisateur dans vos documents PDF.
 
 Maintenant que vous avez terminé ce guide, vous pouvez appliquer ces concepts à vos propres projets et explorer davantage les fonctionnalités offertes par Aspose.PDF pour .NET.
 
 ### FAQ 
 
-#### Q : A quoi sert de spécifier une page cible lors de la visualisation d'un fichier PDF ?
+#### Q : Quel est le but de spécifier une page cible lors de la visualisation d’un fichier PDF ?
 
-R : La spécification d'une page cible vous permet de contrôler quelle page d'un document PDF est affichée lorsque le fichier est ouvert. Cela peut améliorer l'expérience utilisateur en les dirigeant vers une page d'intérêt spécifique.
+R : La spécification d'une page cible vous permet de contrôler la page d'un document PDF qui s'affiche lorsque le fichier est ouvert. Cela peut améliorer l'expérience utilisateur en le dirigeant vers une page spécifique qui l'intéresse.
 
-#### Q : En quoi la spécification d'une page cible peut-elle être utile dans les documents PDF ?
+#### Q : Comment la spécification d’une page cible peut-elle être utile dans les documents PDF ?
 
-R : La spécification d'une page cible est utile lorsque vous souhaitez guider les utilisateurs vers une section ou un contenu particulier dans un document PDF sans les obliger à naviguer manuellement dans les pages.
+R : La spécification d’une page cible est utile lorsque vous souhaitez guider les utilisateurs vers une section ou un contenu particulier dans un document PDF sans leur demander de parcourir manuellement les pages.
 
-#### Q : Comment Aspose.PDF pour .NET facilite-t-il la spécification d'une page cible à afficher ?
+#### Q : Comment Aspose.PDF pour .NET facilite-t-il la spécification d’une page cible à afficher ?
 
-R : Aspose.PDF pour .NET fournit des API qui vous permettent de définir la vue initiale d'un document PDF, y compris la page cible, le niveau de zoom et d'autres propriétés d'affichage.
+R : Aspose.PDF pour .NET fournit des API qui vous permettent de définir la vue initiale d’un document PDF, y compris la page cible, le niveau de zoom et d’autres propriétés d’affichage.
 
-#### Q : Puis-je spécifier n’importe quelle page comme page cible ?
+#### Q : Puis-je spécifier n’importe quelle page comme page cible ?
 
 R : Oui, vous pouvez spécifier n'importe quelle page du document PDF comme page cible à afficher. Utilisez simplement l'index approprié pour sélectionner la page souhaitée.
 
-#### Q : Quelle est l'importance du facteur de zoom lors de la spécification d'une page cible ?
+#### Q : Quelle est l’importance du facteur de zoom lors de la spécification d’une page cible ?
 
-R : Le facteur de zoom détermine le niveau d'agrandissement appliqué à la page cible lorsque le document PDF est ouvert. Il contrôle la quantité de contenu affiché dans la fenêtre.
+R : Le facteur de zoom détermine le niveau d'agrandissement appliqué à la page cible lorsque le document PDF est ouvert. Il contrôle la quantité de contenu affichée dans la fenêtre d'affichage.
 
-#### Q : Puis-je définir différents facteurs de zoom pour différentes pages cibles ?
+#### Q : Puis-je définir différents facteurs de zoom pour différentes pages cibles ?
 
-R : Oui, vous pouvez définir différents facteurs de zoom pour différentes pages cibles en créant des`GoToAction` instances et configurer leurs destinations en conséquence.
+ : Oui, vous pouvez définir différents facteurs de zoom pour différentes pages cibles en créant des`GoToAction` instances et configurer leurs destinations en conséquence.
 
-#### Q : Existe-t-il des limites à la spécification d'une page cible ?
+#### Q : Existe-t-il des limites à la spécification d’une page cible ?
 
-R : La spécification d'une page cible se limite au contrôle de la vue initiale lors de l'ouverture du PDF. Cela n'affecte pas les interactions ou la navigation de l'utilisateur une fois le PDF affiché.
+R : La spécification d'une page cible se limite au contrôle de la vue initiale lors de l'ouverture du PDF. Elle n'affecte pas les interactions de l'utilisateur ni la navigation une fois le PDF affiché.
 
-#### Q : Puis-je utiliser cette fonctionnalité pour créer des présentations dans un document PDF ?
+#### Q : Puis-je utiliser cette fonctionnalité pour créer des présentations dans un document PDF ?
 
-R : Oui, vous pouvez utiliser cette fonctionnalité pour créer des expériences de type présentation dans un document PDF, guidant les utilisateurs à travers différentes sections ou sujets.
+R : Oui, vous pouvez utiliser cette fonctionnalité pour créer des expériences de type présentation dans un document PDF, en guidant les utilisateurs à travers différentes sections ou sujets.
 
-#### Q : Puis-je personnaliser d’autres aspects de la vue initiale, tels que la mise en page ?
+#### Q : Puis-je personnaliser d’autres aspects de la vue initiale, comme la mise en page ?
 
-R : Oui, Aspose.PDF pour .NET fournit des propriétés permettant de personnaliser d'autres aspects de la vue initiale, notamment la mise en page, le mode page, etc.
+R : Oui, Aspose.PDF pour .NET fournit des propriétés permettant de personnaliser d’autres aspects de la vue initiale, notamment la mise en page, le mode de page, etc.
 
 #### Q : Comment puis-je tester si la page cible et le facteur de zoom spécifiés fonctionnent comme prévu ?
 
-R : Après avoir appliqué le code fourni pour spécifier la page cible et le facteur de zoom, ouvrez le fichier PDF modifié et vérifiez qu'il s'ouvre avec la page et le niveau de zoom corrects.
+: Après avoir appliqué le code fourni pour spécifier la page cible et le facteur de zoom, ouvrez le fichier PDF modifié et vérifiez qu'il s'ouvre avec la page et le niveau de zoom corrects.

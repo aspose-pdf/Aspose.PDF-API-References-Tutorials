@@ -1,35 +1,35 @@
 ---
-title: XPS'yi PDF Dosyalarına Dönüştür
-linktitle: XPS'yi PDF Dosyalarına Dönüştür
+title: XPS'i PDF Dosyalarına Dönüştür
+linktitle: XPS'i PDF Dosyalarına Dönüştür
 second_title: Aspose.PDF Java PDF İşleme API'si
-description: Aspose.PDF for Java'yı kullanarak XPS'yi zahmetsizce PDF dosyalarına nasıl dönüştürebileceğinizi öğrenin. Adım adım kılavuzumuz süreci basitleştirir.
+description: Aspose.PDF for Java kullanarak XPS'i PDF dosyalarına zahmetsizce nasıl dönüştüreceğinizi öğrenin. Adım adım kılavuzumuz süreci basitleştirir.
 type: docs
 weight: 27
 url: /tr/java/pdf-conversion-transformation/convert-xps-to-pdf-files/
 ---
 
-## Aspose.PDF for Java'ya giriş
+## Java için Aspose.PDF'ye Giriş
 
-Aspose.PDF for Java, geliştiricilerin Java uygulamalarında PDF dosyalarıyla çalışmasına olanak tanıyan sağlam ve çok yönlü bir kütüphanedir. PDF belgelerini oluşturmak, değiştirmek ve dönüştürmek için çok çeşitli özellikler sunar. Bu kılavuzda XPS dosyalarını PDF'ye dönüştürme yeteneklerine odaklanacağız.
+Java için Aspose.PDF, geliştiricilerin Java uygulamalarında PDF dosyalarıyla çalışmasına olanak tanıyan sağlam ve çok yönlü bir kütüphanedir. PDF belgeleri oluşturmak, düzenlemek ve dönüştürmek için çok çeşitli özellikler sunar. Bu kılavuzda, XPS dosyalarını PDF'ye dönüştürme yeteneklerine odaklanacağız.
 
-## Önkoşullar
+## Ön koşullar
 
-Dönüştürme sürecine dalmadan önce geliştirme ortamınızı ayarlamanız gerekir. Aşağıdakilerin yerinde olduğundan emin olun:
+Dönüştürme sürecine dalmadan önce, geliştirme ortamınızı ayarlamanız gerekir. Aşağıdakilerin yerinde olduğundan emin olun:
 
 - Java Geliştirme Kiti (JDK)
 - Eclipse veya IntelliJ IDEA gibi Entegre Geliştirme Ortamı (IDE)
--  Java kütüphanesi için Aspose.PDF. Şuradan indirebilirsiniz[Burada](https://releases.aspose.com/pdf/java/).
+-  Java kütüphanesi için Aspose.PDF. Buradan indirebilirsiniz[Burada](https://releases.aspose.com/pdf/java/).
 
 ## Projenin Kurulumu
 
-Aspose.PDF for Java'yı kullanmadan önce bir Java projesi kurmamız gerekiyor. Bu adımları takip et:
+Aspose.PDF for Java'yı kullanabilmemiz için bir Java projesi kurmamız gerekiyor. Şu adımları izleyin:
 
 - Seçtiğiniz IDE'de yeni bir Java projesi oluşturun.
-- Aspose.PDF for Java kütüphanesini projenizin sınıf yoluna ekleyin.
+- Projenizin sınıf yoluna Aspose.PDF for Java kütüphanesini ekleyin.
 
-## XPS'yi PDF'ye dönüştürme
+## XPS'i PDF'e dönüştürme
 
-Artık projemiz oluşturulduğuna göre dönüşüm sürecine geçebiliriz. XPS dosyasını PDF dosyasına dönüştürmek için basit bir kod pasajını burada bulabilirsiniz:
+Artık projemiz kurulduğuna göre, dönüştürme sürecine geçelim. İşte bir XPS dosyasını PDF dosyasına dönüştürmek için basit bir kod parçası:
 
 ```java
 // XPS belgesini yükleyin
@@ -39,38 +39,38 @@ com.aspose.pdf.Document pdfDocument = new com.aspose.pdf.Document("input.xps");
 pdfDocument.save("output.pdf");
 ```
 
-Bu kod parçacığı bir XPS belgesini yükler ve bunu bir PDF dosyası olarak kaydeder. "input.xps" yerine XPS dosyanızın yolunu ve "output.pdf" yerine istediğiniz PDF dosyasının adını yazdığınızdan emin olun.
+Bu kod parçacığı bir XPS belgesi yükler ve onu PDF dosyası olarak kaydeder. "input.xps"i XPS dosyanızın yoluyla ve "output.pdf"i istediğiniz PDF dosyasının adıyla değiştirdiğinizden emin olun.
 
 ## Dönüşümü Özelleştirme
 
-Aspose.PDF for Java, dönüştürme sürecini özelleştirmek için çeşitli seçenekler sunar. Sayfa boyutu, kenar boşlukları ve görüntü sıkıştırma gibi özellikleri kontrol edebilirsiniz. Özelleştirme seçenekleri hakkında ayrıntılı bilgi için belgelere bakın.
+Java için Aspose.PDF, dönüştürme sürecini özelleştirmek için çeşitli seçenekler sunar. Sayfa boyutu, kenar boşlukları ve resim sıkıştırma gibi yönleri kontrol edebilirsiniz. Özelleştirme seçenekleri hakkında ayrıntılı bilgi için belgelere bakın.
 
 ## Hataları ve İstisnaları Ele Alma
 
-Herhangi bir API ile çalışırken hataları ve istisnaları incelikle ele almak çok önemlidir. Aspose.PDF for Java, dönüştürme işlemi sırasında istisnalar oluşturabilir. Uygulamanızın sağlam bir şekilde davrandığından emin olmak için hata işlemeyi uyguladığınızdan emin olun.
+Herhangi bir API ile çalışırken, hataları ve istisnaları zarif bir şekilde ele almak önemlidir. Java için Aspose.PDF, dönüştürme işlemi sırasında istisnalar atabilir. Uygulamanızın sağlam bir şekilde davrandığından emin olmak için hata işlemeyi uyguladığınızdan emin olun.
 
 ## Çözüm
 
-Bu kılavuzda Aspose.PDF for Java kullanarak XPS'yi PDF dosyalarına nasıl dönüştürebileceğinizi araştırdık. Aspose.PDF for Java'yı tanıtarak ve geliştirme ortamımızı kurarak başladık. Daha sonra dönüştürme sürecini, özelleştirme seçeneklerini ve hata işlemenin önemini ele aldık. Bu bilgiyle XPS dosyalarını verimli bir şekilde PDF'ye dönüştürebilir ve belge yönetimi yeteneklerinizi geliştirebilirsiniz.
+Bu kılavuzda, Aspose.PDF for Java kullanarak XPS'i PDF dosyalarına nasıl dönüştüreceğinizi inceledik. Aspose.PDF for Java'yı tanıtarak ve geliştirme ortamımızı kurarak başladık. Ardından, dönüştürme sürecini, özelleştirme seçeneklerini ve hata işlemenin önemini ele aldık. Bu bilgiyle, XPS dosyalarını verimli bir şekilde PDF'ye dönüştürebilir ve belge yönetimi yeteneklerinizi geliştirebilirsiniz.
 
-## SSS'ler
+## SSS
 
-### Aspose.PDF for Java'yı nasıl yüklerim?
+### Java için Aspose.PDF'yi nasıl yüklerim?
 
- Aspose.PDF for Java'yı yüklemek için kütüphaneyi şuradan indirin:[Burada](https://releases.aspose.com/pdf/java/) ve onu Java projenizin sınıf yoluna ekleyin.
+ Java için Aspose.PDF'yi yüklemek için, kitaplığı şu adresten indirin:[Burada](https://releases.aspose.com/pdf/java/) ve bunu Java projenizin sınıf yoluna ekleyin.
 
 ### Birden fazla XPS dosyasını tek seferde PDF'ye dönüştürebilir miyim?
 
-Evet, Aspose.PDF for Java'yı kullanarak birden fazla XPS dosyasını toplu olarak PDF'ye dönüştürebilirsiniz. Basitçe XPS dosyalarınız arasında geçiş yapın ve dönüştürme kodunu her birine uygulayın.
+Evet, Aspose.PDF for Java kullanarak birden fazla XPS dosyasını toplu olarak PDF'ye dönüştürebilirsiniz. XPS dosyalarınızda dolaşın ve dönüştürme kodunu her birine uygulayın.
 
-### Aspose.PDF for Java'yı kullanmak için herhangi bir lisans gereksinimi var mı?
+### Java için Aspose.PDF'i kullanmak için herhangi bir lisanslama gereksinimi var mı?
 
-Evet, Aspose.PDF for Java ticari bir kütüphanedir ve onu projelerinizde kullanmak için geçerli bir lisansa ihtiyacınız vardır. Lisans ayrıntıları için Aspose'un web sitesine bakın.
+Evet, Aspose.PDF for Java ticari bir kütüphanedir ve projelerinizde kullanmak için geçerli bir lisansa ihtiyacınız vardır. Lisanslama ayrıntıları için Aspose'un web sitesine bakın.
 
-### Aspose.PDF for Java diğer belge formatlarını destekliyor mu?
+### Aspose.PDF for Java diğer belge biçimlerini destekliyor mu?
 
-Evet, Aspose.PDF for Java, aralarında PDF, XPS, HTML ve daha fazlasının da bulunduğu çok çeşitli belge formatlarını destekler. Java uygulamalarınızda belgeyle ilgili çeşitli görevler için kullanabilirsiniz.
+Evet, Aspose.PDF for Java, PDF, XPS, HTML ve daha fazlası dahil olmak üzere çok çeşitli belge biçimlerini destekler. Java uygulamalarınızda çeşitli belgeyle ilgili görevler için kullanabilirsiniz.
 
-### Aspose.PDF for Java büyük ölçekli belge işlemeye uygun mu?
+### Aspose.PDF for Java büyük ölçekli belge işleme için uygun mudur?
 
-Evet, Aspose.PDF for Java, büyük ölçekli belge işlemeyi verimli bir şekilde gerçekleştirmek üzere tasarlanmıştır. Kapsamlı PDF ile ilgili işlemler gerektiren uygulamalar için sağlam bir seçimdir.
+Evet, Java için Aspose.PDF, büyük ölçekli belge işlemeyi verimli bir şekilde ele almak üzere tasarlanmıştır. Kapsamlı PDF ile ilgili işlemler gerektiren uygulamalar için sağlam bir seçimdir.

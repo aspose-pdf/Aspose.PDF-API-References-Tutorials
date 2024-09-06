@@ -1,28 +1,28 @@
 ---
 title: Radyo Düğmesi Başlığını Ayarla
 linktitle: Radyo Düğmesi Başlığını Ayarla
-second_title: .NET API Referansı için Aspose.PDF
+second_title: Aspose.PDF for .NET API Referansı
 description: PDF formundaki bir radyo düğmesinin başlığını ayarlamak için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin.
 type: docs
 weight: 280
 url: /tr/net/programming-with-forms/set-radio-button-caption/
 ---
-Bu kılavuzda, PDF formundaki bir radyo düğmesinin başlığını tanımlamak için Aspose.PDF kütüphanesinin .NET için nasıl kullanılacağını adım adım açıklayacağız. Size radyo düğmesi alanına nasıl erişeceğinizi, yeni bir radyo düğmesi seçeneği oluşturacağınızı ve düğme başlığını nasıl özelleştireceğinizi göstereceğiz.
+Bu kılavuzda, .NET için Aspose.PDF kütüphanesini kullanarak PDF formundaki bir radyo düğmesinin başlığını nasıl tanımlayacağınızı adım adım açıklayacağız. Radyo düğmesi alanına nasıl erişeceğinizi, yeni bir radyo düğmesi seçeneği nasıl oluşturacağınızı ve düğme başlığını nasıl özelleştireceğinizi göstereceğiz.
 
-## 1. Adım: Belge dizinini yapılandırma
+## Adım 1: Belge dizinini yapılandırma
 
- İlk adım, üzerinde çalışmak istediğiniz PDF formunun bulunduğu belge dizinini yapılandırmaktır. Şunu kullanabilirsiniz:`dataDir` Dizin yolunu belirtmek için değişken.
+ İlk adım, üzerinde çalışmak istediğiniz PDF formunun bulunduğu belge dizinini yapılandırmaktır.`dataDir` dizin yolunu belirtmek için kullanılan değişken.
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
- Değiştirdiğinizden emin olun`"YOUR DOCUMENTS DIRECTORY"` Belgeler dizininizin gerçek yolu ile.
+ Değiştirdiğinizden emin olun`"YOUR DOCUMENTS DIRECTORY"` Belgelerinizin bulunduğu dizinin gerçek yolunu belirtin.
 
-## 2. Adım: Kaynak PDF formunu yükleme
+## Adım 2: Kaynak PDF formunu yükleme
 
- Bu adımda, kaynak PDF formunu kullanarak yükleyeceğiz.`Aspose.Pdf.Facades.Form` Aspose.PDF sınıfı.
+ Bu adımda, kaynak PDF formunu kullanarak yükleyeceğiz`Aspose.Pdf.Facades.Form` Aspose.PDF sınıfı.
 
 ```csharp
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
@@ -30,9 +30,9 @@ Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButt
 
 Formu içeren PDF dosyasının belirtilen belgeler dizininde bulunduğundan emin olun.
 
-## 3. Adım: Radyo düğmesi başlığını düzenleme
+## Adım 3: Radyo düğmesi başlığını düzenleme
 
-Form alanı adları arasında dolaşacağız ve radyo düğmesi alanlarını arayacağız. Eşleşen bir alan bulunursa, özel başlık içeren yeni bir radyo düğmesi seçeneği oluşturup bunu mevcut alana ekleyeceğiz.
+Form alan adları arasında dolaşacağız ve radyo düğmesi alanlarını arayacağız. Eşleşen bir alan bulunursa, özel bir başlıkla yeni bir radyo düğmesi seçeneği oluşturacağız ve bunu mevcut alana ekleyeceğiz.
 
 ```csharp
 foreach(var item in form1.FieldNames)
@@ -47,15 +47,15 @@ var updatedFragment = new Aspose.Pdf.Text.TextFragment("test123");
 updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
 updatedFragment.TextState.FontSize = 10;
 updatedFragment.TextState.LineSpacing = 6.32f;
-// TextParagraph nesnesi oluşturma
+// Bir TextParagraph nesnesi oluşturun
 TextParagraph par = new TextParagraph();
 // Paragraf konumunu ayarla
 par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
 // Kelime kaydırma modunu belirtin
 by.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
-// Yeni TextFragment'i paragrafa ekleme
+// Paragrafa yeni TextFragment'ı ekleyin
 par.AppendLine(updatedFragment);
-// TextBuilder'ı kullanarak TextParagraph'ı ekleme
+// TextBuilder kullanarak TextParagraph'ı ekleyin
 TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
 textBuilder.AppendParagraph(par);
 field0.DeleteOption("item1");
@@ -63,21 +63,21 @@ field0.DeleteOption("item1");
 }
 ```
 
-Altyazı radyo düğmesini ve diğer ayarları gerektiği gibi özelleştirin.
+Altyazı seçeneğini ve diğer ayarları gerektiği gibi özelleştirin.
 
 ## Adım 4: Ortaya Çıkan PDF'yi Kaydetme
 
- Artık radyo düğmesi başlığını değiştirmeyi bitirdiğimize göre, elde edilen PDF'yi aşağıdaki komutu kullanarak kaydedebiliriz:`Save` yöntemi`Document` sınıf.
+ Artık radyo düğmesi başlığını değiştirmeyi tamamladığımıza göre, ortaya çıkan PDF'yi şu şekilde kaydedebiliriz:`Save` yöntemi`Document` sınıf.
 
 ```csharp
 PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 ```
 
-Ortaya çıkan PDF'nin tam yolunu ve dosya adını belirttiğinizden emin olun.
+Elde edilen PDF için tam yolu ve dosya adını belirttiğinizden emin olun.
 
-### Aspose.PDF for .NET kullanarak Radyo Düğmesi Başlığını Ayarla için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Radyo Düğmesi Başlığı Ayarlama için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Kaynak PDF formunu yükle
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
@@ -100,11 +100,11 @@ foreach (var item in form1.FieldNames)
 		TextParagraph par = new TextParagraph();
 		// Paragraf konumunu ayarla
 		par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
-		// Kelime kaydırma modunu belirtin
+		// Kelime sarma modunu belirtin
 		par.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
 		// Paragrafa yeni TextFragment ekle
 		par.AppendLine(updatedFragment);
-		// TextBuilder'ı kullanarak TextParagraph'ı ekleme
+		// TextBuilder kullanarak TextParagraph'ı ekleyin
 		TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
 		textBuilder.AppendParagraph(par);
 		field0.DeleteOption("item1");
@@ -115,26 +115,26 @@ PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 
 ## Çözüm
 
-Bu kılavuzda, PDF formundaki bir radyo düğmesinin başlığını ayarlamak için .NET için Aspose.PDF kütüphanesini nasıl kullanacağımızı öğrendik. Açıklanan adımları izleyerek radyo düğmesi seçeneklerini özelleştirebilir ve başlığı gerektiği gibi değiştirebilirsiniz. PDF dosyalarını değiştirme olanaklarını genişletmek için Aspose.PDF for .NET'in özelliklerini daha fazla keşfetmekten çekinmeyin.
+Bu kılavuzda, bir PDF formundaki bir radyo düğmesi için başlığı ayarlamak üzere .NET için Aspose.PDF kitaplığının nasıl kullanılacağını öğrendik. Açıklanan adımları izleyerek, radyo düğmesi seçeneklerini özelleştirebilir ve başlığı gerektiği gibi değiştirebilirsiniz. PDF dosyalarını düzenleme olanaklarını genişletmek için .NET için Aspose.PDF'nin özelliklerini daha fazla keşfetmekten çekinmeyin.
 
-### SSS'ler
+### SSS
 
-#### S: Aspose.PDF for .NET'i kullanarak PDF formundaki radyo düğmelerinin başlıklarını ayarlayabilir miyim?
+#### S: PDF formundaki radyo düğmeleri için başlıklar ayarlamak amacıyla Aspose.PDF for .NET'i kullanabilir miyim?
 
-C: Evet, PDF formundaki radyo düğmelerinin başlıklarını ayarlamak için Aspose.PDF for .NET'i kullanabilirsiniz. Sağlanan örnek kaynak kodu, radyo düğmesi alanına nasıl erişileceğini, özel başlıkla yeni bir radyo düğmesi seçeneğinin nasıl oluşturulacağını ve mevcut alanın nasıl güncelleneceğini gösterir.
+A: Evet, PDF formundaki radyo düğmeleri için başlıklar ayarlamak üzere Aspose.PDF for .NET'i kullanabilirsiniz. Sağlanan örnek kaynak kodu, radyo düğmesi alanına nasıl erişileceğini, özel bir başlıkla yeni bir radyo düğmesi seçeneğinin nasıl oluşturulacağını ve mevcut alanın nasıl güncelleneceğini gösterir.
 
-#### S: Radyo düğmesi başlığının yazı tipi boyutu ve rengi gibi görünümünü nasıl özelleştirebilirim?
+#### S: Radyo düğmesi başlığının görünümünü (yazı tipi boyutu ve rengi gibi) nasıl özelleştirebilirim?
 
- C: Radyo düğmesi başlığının özelliklerini ayarlayarak, radyo düğmesi başlığının görünümünü özelleştirebilirsiniz.`TextFragment` başlık için kullanılır. Örneğin yazı tipini, yazı tipi boyutunu, rengini, satır aralığını ve diğer metin biçimlendirme seçeneklerini ayarlayabilirsiniz.
+ A: Radyo düğmesi başlığının görünümünü, özelliklerini ayarlayarak özelleştirebilirsiniz.`TextFragment` başlık için kullanılır. Örneğin, yazı tipini, yazı tipi boyutunu, rengini, satır aralığını ve diğer metin biçimlendirme seçeneklerini ayarlayabilirsiniz.
 
 #### S: Tek bir radyo düğmesi grubuna farklı başlıklara sahip birden fazla radyo düğmesi seçeneği eklemek mümkün müdür?
 
-C: Evet, tek bir radyo düğmesi grubuna farklı başlıklara sahip birden fazla radyo düğmesi seçeneği ekleyebilirsiniz. Her seçenek farklı bir seçeneği temsil edecek ve kullanıcılar gruptan yalnızca bir seçeneği seçebilecek.
+A: Evet, tek bir radyo düğmesi grubuna farklı başlıklara sahip birden fazla radyo düğmesi seçeneği ekleyebilirsiniz. Her seçenek farklı bir seçimi temsil eder ve kullanıcılar gruptan yalnızca bir seçeneği seçebilir.
 
 #### S: Aspose.PDF for .NET'i bir PDF belgesindeki diğer form alanlarını değiştirmek için kullanabilir miyim?
 
-C: Evet, Aspose.PDF for .NET, bir PDF belgesindeki metin alanları, onay kutuları, açılır listeler ve daha fazlası gibi çeşitli form alanlarını yönetmek için kapsamlı bir dizi özellik sağlar. Değerleri ayarlamak, görünümleri değiştirmek ve form alanlarına etkileşim eklemek için kitaplığı kullanabilirsiniz.
+C: Evet, Aspose.PDF for .NET, metin alanları, onay kutuları, açılır listeler ve daha fazlası gibi bir PDF belgesindeki çeşitli form alanlarını düzenlemek için kapsamlı bir özellik seti sağlar. Kitaplığı, değerleri ayarlamak, görünümleri değiştirmek ve form alanlarına etkileşim eklemek için kullanabilirsiniz.
 
 #### S: Aspose.PDF for .NET, taranmış belgeler gibi diğer kaynaklardan oluşturulan PDF'lerle çalışmayı destekliyor mu?
 
-C: Evet, Aspose.PDF for .NET, taranmış belgeler de dahil olmak üzere çeşitli kaynaklardan oluşturulan PDF'lerle çalışmayı destekler. Kitaplık, taranan PDF'lerden metin çıkarmak ve içeriği programlı olarak değiştirmek için OCR (Optik Karakter Tanıma) yetenekleri sağlar.
+A: Evet, Aspose.PDF for .NET, taranmış belgeler de dahil olmak üzere çeşitli kaynaklardan oluşturulan PDF'lerle çalışmayı destekler. Kütüphane, taranmış PDF'lerden metin çıkarmak ve içeriği programatik olarak işlemek için OCR (Optik Karakter Tanıma) yetenekleri sağlar.

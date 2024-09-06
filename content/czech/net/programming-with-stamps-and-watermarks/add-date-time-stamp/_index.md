@@ -138,7 +138,7 @@ Console.WriteLine("\nDate time stamp added successfully.\nFile saved at " + data
 
 ## Závěr
 
-gratuluji! Naučili jste se, jak přidat datum a čas pomocí Aspose.PDF pro .NET. Nyní můžete tyto znalosti aplikovat na své vlastní projekty a přidávat do dokumentů PDF datum a čas.
+gratuluji! Naučili jste se, jak přidat datum a čas pomocí Aspose.PDF pro .NET. Nyní můžete tyto znalosti použít na své vlastní projekty a přidat do dokumentů PDF datum a čas.
 
 ### Časté dotazy pro přidání datumu a času do souboru PDF
 

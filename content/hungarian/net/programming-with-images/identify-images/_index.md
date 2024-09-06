@@ -28,7 +28,7 @@ int rdg = 0; // RGB képek számlálója
 
 ## 3. lépés: Nyissa meg a PDF dokumentumot
 
-Ebben a lépésben megnyitjuk a PDF dokumentumot a`Document` osztályú Aspose.PDF. Használja a`Document` konstruktort, és adja át a PDF dokumentum elérési útját.
+ Ebben a lépésben megnyitjuk a PDF dokumentumot a`Document` osztályú Aspose.PDF. Használja a`Document` konstruktort, és adja át a PDF dokumentum elérési útját.
 
 ```csharp
 using (Document document = new Document(dataDir + "ExtractImages.pdf"))

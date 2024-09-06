@@ -95,7 +95,7 @@ A: Pokud předáte název neexistujícího pole do`IsRequiredField` metoda, vrá
 
 #### Otázka: Mohu upravit požadovaný stav pole formuláře pomocí Aspose.PDF pro .NET?
 
- Odpověď: Ano, požadovaný stav pole formuláře můžete upravit pomocí Aspose.PDF pro .NET. The`IsRequired` vlastnictvím`Field` class umožňuje nastavit nebo změnit požadovaný stav pole formuláře. Chcete-li například označit pole jako povinné, můžete použít:
+ Odpověď: Ano, požadovaný stav pole formuláře můžete upravit pomocí Aspose.PDF pro .NET. The`IsRequired` majetek z`Field` class umožňuje nastavit nebo změnit požadovaný stav pole formuláře. Chcete-li například označit pole jako povinné, můžete použít:
 
 ```csharp
 field.IsRequired = true;

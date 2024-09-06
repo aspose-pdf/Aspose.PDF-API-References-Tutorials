@@ -2,7 +2,7 @@
 title: Táblázat hozzáadása a meglévő PDF-dokumentumhoz Java használatával
 linktitle: Táblázat hozzáadása a meglévő PDF-dokumentumhoz Java használatával
 second_title: Aspose.PDF Java PDF feldolgozó API
-description: Ismerje meg, hogyan adhat hozzá táblázatokat meglévő PDF-dokumentumokhoz Java és Aspose.PDF for Java használatával. Útmutató lépésről lépésre kódpéldákkal.
+description: Ismerje meg, hogyan adhat hozzá táblázatokat meglévő PDF-dokumentumokhoz Java és Aspose.PDF for Java használatával. Lépésről lépésre útmutató kódpéldákkal.
 type: docs
 weight: 10
 url: /hu/java/pdf-tables/add-table-in-existing-pdf-document-using-java/

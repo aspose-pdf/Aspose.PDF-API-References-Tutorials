@@ -18,7 +18,7 @@ Než začnete, ujistěte se, že máte následující:
 
 ## Krok 1: Nastavte adresář dokumentů
 
- Nejprve je potřeba nastavit cestu k adresáři, kam chcete vygenerovaný PDF soubor uložit. Nahradit`"YOUR DOCUMENT DIRECTORY"` v`dataDir`proměnnou s cestou k požadovanému adresáři.
+ Nejprve je potřeba nastavit cestu k adresáři, kam chcete vygenerovaný PDF soubor uložit. Nahradit`"YOUR DOCUMENT DIRECTORY"` v`dataDir` proměnnou s cestou k požadovanému adresáři.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";

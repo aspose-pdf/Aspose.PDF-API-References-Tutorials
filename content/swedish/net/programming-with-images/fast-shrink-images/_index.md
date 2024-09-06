@@ -19,7 +19,7 @@ var time = DateTime.Now.Ticks;
 
 ## Steg 2: Definiera dokumentkatalogen
 
- Se till att ställa in rätt dokumentkatalog. Byta ut`"YOUR DOCUMENT DIRECTORY"` i koden med sökvägen till katalogen där ditt PDF-dokument finns.
+ Se till att ställa in rätt dokumentkatalog. Ersätta`"YOUR DOCUMENT DIRECTORY"` i koden med sökvägen till katalogen där ditt PDF-dokument finns.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Steg 3: Öppna PDF-dokumentet
 
- det här steget kommer vi att öppna PDF-dokumentet med hjälp av`Document` klass av Aspose.PDF. Använd`Document` konstruktor och skicka sökvägen till PDF-dokumentet.
+ I det här steget kommer vi att öppna PDF-dokumentet med hjälp av`Document` klass av Aspose.PDF. Använd`Document` konstruktor och skicka sökvägen till PDF-dokumentet.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
@@ -35,7 +35,7 @@ Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
 
 ## Steg 4: Initiera optimeringsalternativ
 
- det här steget kommer vi att initiera optimeringsalternativen för bildkomprimering. Skapa en instans av`OptimizationOptions` och ställ in lämpliga alternativ. I det här exemplet aktiverar vi bildkomprimering, ställer in bildkvaliteten till 75 och använder den snabba komprimeringsversionen.
+ I det här steget kommer vi att initiera optimeringsalternativen för bildkomprimering. Skapa en instans av`OptimizationOptions` och ställ in lämpliga alternativ. I det här exemplet aktiverar vi bildkomprimering, ställer in bildkvaliteten till 75 och använder den snabba komprimeringsversionen.
 
 ```csharp
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();
@@ -46,7 +46,7 @@ optimizeOptions.ImageCompressionOptions.Version = Pdf.Optimization.ImageCompress
 
 ## Steg 5: Optimera PDF-dokumentet
 
- I det här steget kommer vi att optimera PDF-dokumentet med de optimeringsalternativ som definierats tidigare. Ring`OptimizeResources` metod för`pdfDocument` objekt och skicka optimeringsalternativen.
+ det här steget kommer vi att optimera PDF-dokumentet med de optimeringsalternativ som definierats tidigare. Ring`OptimizeResources` metod för`pdfDocument` objekt och skicka optimeringsalternativen.
 
 ```csharp
 pdfDocument.OptimizeResources(optimizeOptions);
@@ -106,7 +106,7 @@ S: Aspose.PDF för .NET ger en strömlinjeformad process för att öppna ett PDF
 
 ####  F: Vad är betydelsen av`OptimizationOptions` class in fast image size reduction?
 
- A: Den`OptimizationOptions`klass gör det möjligt för dig att definiera olika optimeringsinställningar, inklusive bildkomprimeringsalternativ, för att effektivt minska storleken på bilder i PDF-dokumentet.
+ A: Den`OptimizationOptions` klass gör det möjligt för dig att definiera olika optimeringsinställningar, inklusive bildkomprimeringsalternativ, för att effektivt minska storleken på bilder i PDF-dokumentet.
 
 #### F: Kan jag anpassa bildkomprimeringsinställningarna för att kontrollera balansen mellan filstorlek och bildkvalitet?
 

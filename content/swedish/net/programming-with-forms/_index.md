@@ -15,7 +15,7 @@ Dessa handledningar ger också detaljerade kodexempel, tydliga förklaringar och
 | --- | --- | 
 | [Lägg till verktygstips i fält](./add-tooltip-to-field/) | Lär dig hur du lägger till ett verktygstips i ett fält med Aspose.PDF för .NET. |  
 | [Arabisk textfyllning](./arabic-text-filling/) | Fyll enkelt i PDF-formulärfält med arabisk text med Aspose.PDF för .NET. |  
-| [Kombinationsrutan](./combo-box/) | Skapa enkelt kombinationsruta i dina PDF-dokument med Aspose.PDF för .NET. |  
+| [Combo Box](./combo-box/) | Skapa enkelt kombinationsruta i dina PDF-dokument med Aspose.PDF för .NET. |  
 | [Skapa dokument](./create-doc/) | Skapa enkelt ett dokument med alternativknappar med Aspose.PDF för .NET. |  
 | [Ta bort formulärfält i PDF-dokument](./delete-form-field/) | Ta enkelt bort oönskade formulärfält i PDF-dokument med Aspose.PDF för .NET. |  
 | [Bestäm obligatoriskt fält i PDF-formulär](./determine-required-field/) | Bestäm enkelt obligatoriska fält i PDF-form med Aspose.PDF för .NET. |  
@@ -34,7 +34,7 @@ Dessa handledningar ger också detaljerade kodexempel, tydliga förklaringar och
 | [Ändra formulärfält i PDF-dokument](./modify-form-field/) | Redigera enkelt formulärfält i PDF-dokument med Aspose.PDF för .NET. |  
 | [Flytta formulärfält](./move-form-field/) | Flytta enkelt runt formulärfält i dina PDF-dokument med Aspose.PDF för .NET. |  
 | [Bevara rättigheter](./preserve-rights/) | Bevara formulärrättigheter i dina PDF-dokument med Aspose.PDF för .NET. |  
-| [Radio knapp](./radio-button/) | Lägg enkelt till alternativknappar till dina PDF-dokument med Aspose.PDF för .NET. |  
+| [Radioknapp](./radio-button/) | Lägg enkelt till alternativknappar till dina PDF-dokument med Aspose.PDF för .NET. |  
 | [Radioknapp med alternativ](./radio-button-with-options/) | Lägg enkelt till en alternativknapp med alternativ till ett PDF-dokument med Aspose.PDF för .NET. |  
 | [Hämta formulärfält i tabbordning](./retrieve-form-field-in-tab-order/) | Lär dig hur du hämtar formulärfält i tabbordning med Aspose.PDF för .NET. |  
 | [Välj alternativknapp i PDF-dokument](./select-radio-button/) | Lär dig hur du väljer en alternativknapp i PDF-dokument med Aspose.PDF för .NET. |  

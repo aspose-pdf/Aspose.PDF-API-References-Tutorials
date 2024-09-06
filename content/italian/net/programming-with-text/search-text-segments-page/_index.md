@@ -1,47 +1,47 @@
 ---
 title: Cerca la pagina dei segmenti di testo nel file PDF
 linktitle: Cerca la pagina dei segmenti di testo nel file PDF
-second_title: Aspose.PDF per riferimento all'API .NET
-description: Scopri come cercare segmenti di testo su una pagina nel file PDF e recuperare le loro proprietà utilizzando Aspose.PDF per .NET.
+second_title: Riferimento API Aspose.PDF per .NET
+description: Scopri come cercare segmenti di testo in una pagina di un file PDF e recuperarne le proprietà utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 470
 url: /it/net/programming-with-text/search-text-segments-page/
 ---
-Questo tutorial spiega come utilizzare Aspose.PDF per .NET per cercare segmenti di testo specifici su una pagina di file PDF e recuperare le loro proprietà. Il codice sorgente C# fornito illustra il processo passo dopo passo.
+Questo tutorial spiega come usare Aspose.PDF per .NET per cercare specifici segmenti di testo su una pagina di un file PDF e recuperarne le proprietà. Il codice sorgente C# fornito illustra il processo passo dopo passo.
 
 ## Prerequisiti
 
 Prima di procedere con il tutorial, assicurati di avere quanto segue:
 
-- Conoscenza base del linguaggio di programmazione C#.
-- Aspose.PDF per la libreria .NET installata. Puoi ottenerlo dal sito Web Aspose o utilizzare NuGet per installarlo nel tuo progetto.
+- Conoscenza di base del linguaggio di programmazione C#.
+- Aspose.PDF per la libreria .NET installata. Puoi ottenerla dal sito web di Aspose o usare NuGet per installarla nel tuo progetto.
 
 ## Passaggio 1: impostare il progetto
 
 Inizia creando un nuovo progetto C# nel tuo ambiente di sviluppo integrato (IDE) preferito e aggiungi un riferimento alla libreria Aspose.PDF per .NET.
 
-## Passaggio 2: importa gli spazi dei nomi necessari
+## Passaggio 2: importare gli spazi dei nomi necessari
 
-Aggiungi le seguenti direttive using all'inizio del file C# per importare gli spazi dei nomi richiesti:
+Aggiungere le seguenti direttive using all'inizio del file C# per importare gli spazi dei nomi richiesti:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Passaggio 3: impostare il percorso della directory dei documenti
+## Passaggio 3: impostare il percorso della directory del documento
 
- Imposta il percorso della directory dei documenti utilizzando il file`dataDir` variabile:
+ Imposta il percorso della directory del documento utilizzando`dataDir` variabile:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo della directory dei documenti.
+ Sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo della directory del documento.
 
-## Passaggio 4: carica il documento PDF
+## Passaggio 4: caricare il documento PDF
 
- Caricare il documento PDF utilizzando il file`Document` classe:
+ Caricare il documento PDF utilizzando`Document` classe:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "SearchTextSegmentsPage.pdf");
@@ -49,9 +49,9 @@ Document pdfDocument = new Document(dataDir + "SearchTextSegmentsPage.pdf");
 
  Sostituire`"SearchTextSegmentsPage.pdf"` con il nome effettivo del file PDF.
 
-## Passaggio 5: crea un TextFragmentAbsorber
+## Passaggio 5: creare un TextFragmentAbsorber
 
- Creare un`TextFragmentAbsorber` oggetto per trovare tutte le istanze della frase di ricerca di input:
+ Crea un`TextFragmentAbsorber` oggetto per trovare tutte le istanze della frase di ricerca di input:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
@@ -61,17 +61,17 @@ TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 
 ## Passaggio 6: accettare l'assorbitore per una pagina specifica
 
-Accettare l'assorbitore per la pagina desiderata del documento:
+Accetta l'assorbitore per la pagina desiderata del documento:
 
 ```csharp
 pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 ```
 
- Sostituire`2` con il numero di pagina desiderato (indice a base 1).
+ Sostituire`2` con il numero di pagina desiderato (indice a partire da 1).
 
-## Passaggio 7: recupera i segmenti di testo estratti
+## Passaggio 7: recuperare i segmenti di testo estratti
 
- Ottieni i segmenti di testo estratti utilizzando il file`TextFragments` proprietà del`TextFragmentAbsorber` oggetto:
+ Ottieni i segmenti di testo estratti utilizzando`TextFragments` proprietà del`TextFragmentAbsorber` oggetto:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -79,7 +79,7 @@ TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragmen
 
 ## Passaggio 8: scorrere i segmenti di testo
 
-Passa in rassegna i segmenti di testo recuperati e accedi alle loro proprietà:
+Scorrere i segmenti di testo recuperati e accedere alle loro proprietà:
 
 ```csharp
 foreach (TextFragment textFragment in textFragmentCollection)
@@ -100,21 +100,21 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
-Se necessario, modifica il codice all'interno del ciclo per eseguire ulteriori azioni su ciascun segmento di testo.
+Se necessario, modificare il codice all'interno del ciclo per eseguire ulteriori azioni su ciascun segmento di testo.
 
-### Codice sorgente di esempio per la pagina di segmenti di testo di ricerca utilizzando Aspose.PDF per .NET 
+### Esempio di codice sorgente per la pagina dei segmenti di testo di ricerca utilizzando Aspose.PDF per .NET 
 ```csharp
-// Il percorso della directory dei documenti.
+// Percorso verso la directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Apri documento
 Document pdfDocument = new Document(dataDir + "SearchTextSegmentsPage.pdf");
 // Crea un oggetto TextAbsorber per trovare tutte le istanze della frase di ricerca di input
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
-// Accettare l'assorbitore per tutte le pagine
+// Accetta l'assorbitore per tutte le pagine
 pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 // Ottieni i frammenti di testo estratti
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// Passa in rassegna i frammenti
+// Fai un giro tra i frammenti
 foreach (TextFragment textFragment in textFragmentCollection)
 {
 	foreach (TextSegment textSegment in textFragment.Segments)
@@ -143,42 +143,42 @@ foreach (TextFragment textFragment in textFragmentCollection)
 
 ## Conclusione
 
-Congratulazioni! Hai imparato con successo come cercare segmenti di testo specifici su una pagina di un documento PDF utilizzando Aspose.PDF per .NET. Questo tutorial ha fornito una guida passo passo, dal caricamento del documento all'accesso ai segmenti di testo estratti. Ora puoi incorporare questo codice nei tuoi progetti C# per eseguire ricerche avanzate di segmenti di testo nei file PDF.
+Congratulazioni! Hai imparato con successo come cercare segmenti di testo specifici in una pagina di un documento PDF usando Aspose.PDF per .NET. Questo tutorial ha fornito una guida passo passo, dal caricamento del documento all'accesso ai segmenti di testo estratti. Ora puoi incorporare questo codice nei tuoi progetti C# per eseguire ricerche avanzate di segmenti di testo nei file PDF.
 
 ### Domande frequenti
 
 #### D: Qual è lo scopo del tutorial "Cerca segmenti di testo nella pagina nel file PDF"?
 
-R: Il tutorial "Cerca pagine di segmenti di testo nel file PDF" fornisce una guida completa su come utilizzare la libreria Aspose.PDF per .NET per cercare segmenti di testo specifici su una particolare pagina di un documento PDF. Copre il processo di impostazione di un progetto, caricamento di un documento PDF, ricerca di segmenti di testo e recupero delle relative proprietà utilizzando il codice C#.
+R: Il tutorial "Search Text Segments Page In PDF File" fornisce una guida completa su come utilizzare la libreria Aspose.PDF per .NET per cercare specifici segmenti di testo su una pagina specifica di un documento PDF. Copre il processo di impostazione di un progetto, caricamento di un documento PDF, ricerca di segmenti di testo e recupero delle loro proprietà tramite codice C#.
 
-#### D: In che modo questo tutorial aiuta nella ricerca di segmenti di testo specifici in un documento PDF?
+#### D: In che modo questo tutorial aiuta a cercare specifici segmenti di testo in un documento PDF?
 
-R: Questo tutorial dimostra il processo di individuazione ed estrazione di segmenti di testo specifici su una particolare pagina di un documento PDF. Seguendo i passaggi e gli esempi di codice forniti, gli utenti possono cercare in modo efficace i segmenti di testo desiderati e recuperare informazioni sulle loro proprietà.
+R: Questo tutorial illustra il processo di individuazione ed estrazione di specifici segmenti di testo su una pagina specifica di un documento PDF. Seguendo i passaggi e gli esempi di codice forniti, gli utenti possono cercare efficacemente i segmenti di testo desiderati e recuperare informazioni sulle loro proprietà.
 
 #### D: Quali prerequisiti sono richiesti per seguire questo tutorial?
 
-R: Prima di iniziare il tutorial, dovresti avere una conoscenza di base del linguaggio di programmazione C#. Inoltre, è necessario che sia installata la libreria Aspose.PDF per .NET. È possibile ottenerlo dal sito Web Aspose o installarlo nel progetto utilizzando NuGet.
+R: Prima di iniziare il tutorial, dovresti avere una conoscenza di base del linguaggio di programmazione C#. Inoltre, devi avere installata la libreria Aspose.PDF per .NET. Puoi ottenerla dal sito web di Aspose o installarla nel tuo progetto usando NuGet.
 
-#### D: Come posso impostare il mio progetto per seguire questo tutorial?
+#### D: Come posso impostare il mio progetto in modo che segua questo tutorial?
 
 R: Per iniziare, crea un nuovo progetto C# nel tuo ambiente di sviluppo integrato (IDE) preferito e aggiungi un riferimento alla libreria Aspose.PDF per .NET. Ciò ti consentirà di utilizzare le funzionalità della libreria per cercare e lavorare con documenti PDF.
 
-#### D: Posso utilizzare questo tutorial per cercare segmenti di testo specifici su qualsiasi pagina di un PDF?
+#### D: Posso usare questo tutorial per cercare specifici segmenti di testo in qualsiasi pagina di un PDF?
 
-R: Sì, questo tutorial fornisce istruzioni su come cercare segmenti di testo specifici su una pagina selezionata di un documento PDF. Guida gli utenti nella configurazione di un progetto, nel caricamento di un PDF e nell'utilizzo della libreria Aspose.PDF per individuare e recuperare le proprietà dei segmenti di testo desiderati.
+R: Sì, questo tutorial fornisce istruzioni su come cercare specifici segmenti di testo su una pagina selezionata di un documento PDF. Guida gli utenti nell'impostazione di un progetto, nel caricamento di un PDF e nell'utilizzo della libreria Aspose.PDF per individuare e recuperare le proprietà dei segmenti di testo desiderati.
 
-#### D: Come posso specificare il testo che voglio cercare in questo tutorial?
+#### D: Come faccio a specificare il testo che voglio cercare in questo tutorial?
 
- R: Per specificare il testo che vuoi cercare, crea un file`TextFragmentAbsorber` oggetto e impostarne il parametro di ricerca utilizzando il comando`Text` proprietà. Sostituisci l'impostazione predefinita`"text"` nel codice del tutorial con la frase di ricerca desiderata.
+ A: Per specificare il testo che vuoi cercare, crea un`TextFragmentAbsorber` oggetto e imposta il suo parametro di ricerca utilizzando`Text` proprietà. Sostituisci il valore predefinito`"text"` nel codice del tutorial con la frase di ricerca desiderata.
 
 #### D: Come posso recuperare le proprietà dei segmenti di testo estratti?
 
-Dopo aver accettato il`TextFragmentAbsorber` per una pagina specifica del PDF, puoi recuperare i segmenti di testo estratti utilizzando il file`TextFragments` proprietà dell'oggetto assorbente. Ciò fornisce l'accesso a una raccolta di frammenti di testo, ciascuno contenente più segmenti di testo.
+Dopo aver accettato il`TextFragmentAbsorber` per una pagina specifica del PDF, è possibile recuperare i segmenti di testo estratti utilizzando`TextFragments` proprietà dell'oggetto assorbitore. Ciò fornisce l'accesso a una raccolta di frammenti di testo, ciascuno contenente più segmenti di testo.
 
 #### D: Posso personalizzare il codice per eseguire azioni aggiuntive su ciascun segmento di testo?
 
-R: Assolutamente. Il codice di esempio dell'esercitazione fornisce un ciclo per scorrere i segmenti di testo recuperati. Puoi personalizzare il codice all'interno di questo ciclo per eseguire azioni aggiuntive su ciascun segmento di testo, in base ai requisiti del tuo progetto.
+R: Assolutamente. Il codice di esempio del tutorial fornisce un ciclo per scorrere i segmenti di testo recuperati. Puoi personalizzare il codice all'interno di questo ciclo per eseguire azioni aggiuntive su ogni segmento di testo, in base ai requisiti del tuo progetto.
 
 #### D: Come posso salvare il documento PDF modificato dopo aver estratto i segmenti di testo?
 
-R: Questo tutorial si concentra principalmente sulla ricerca di segmenti di testo e sul recupero delle loro proprietà. Se intendi apportare modifiche al PDF, puoi fare riferimento ad altra documentazione Aspose.PDF per imparare come manipolare e salvare il documento in base alle tue esigenze specifiche.
+R: Questo tutorial si concentra principalmente sulla ricerca di segmenti di testo e sul recupero delle loro proprietà. Se intendi apportare modifiche al PDF, puoi fare riferimento ad altra documentazione di Aspose.PDF per imparare come manipolare e salvare il documento in base alle tue esigenze specifiche.

@@ -248,7 +248,7 @@ Megtanulta, hogyan hozhat létre tömbelemeket az Aspose.PDF for .NET használat
 
 #### K: Mi az a tömbelem a PDF-dokumentumban, és miért kell egyet létrehoznom az Aspose.PDF for .NET használatával?
 
-V: A PDF-dokumentumban lévő tömbelemek strukturált adatgyűjteményt képviselnek, amelyet gyakran táblázatok vagy rácsok létrehozására használnak. Előfordulhat, hogy létre kell hoznia egy tömbelemet az Aspose.PDF for .NET használatával, amikor olyan dinamikus PDF-eket hoz létre, amelyek strukturált adatmegjelenítést igényelnek, például táblázatos információkat vagy rácsokat.
+V: A PDF-dokumentumban lévő tömbelemek strukturált adatgyűjteményt képviselnek, amelyet gyakran táblázatok vagy rácsok létrehozására használnak. Előfordulhat, hogy létre kell hoznia egy tömbelemet az Aspose.PDF for .NET használatával, amikor olyan dinamikus PDF-fájlokat hoz létre, amelyek strukturált adatmegjelenítést igényelnek, például táblázatos információkat vagy rácsokat.
 
 #### K: Hogyan egyszerűsíti le az Aspose.PDF for .NET a tömbelemek létrehozásának folyamatát?
 

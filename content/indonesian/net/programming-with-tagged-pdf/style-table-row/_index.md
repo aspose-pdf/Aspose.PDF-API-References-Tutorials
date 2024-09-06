@@ -1,17 +1,17 @@
 ---
 title: Baris Tabel Gaya
 linktitle: Baris Tabel Gaya
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Pelajari cara mengkustomisasi baris tabel dengan Aspose.PDF untuk .NET panduan langkah demi langkah untuk menata gaya dan memformat baris.
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara menyesuaikan baris tabel dengan Aspose.PDF untuk .NET, panduan langkah demi langkah untuk menata dan memformat baris.
 type: docs
 weight: 180
 url: /id/net/programming-with-tagged-pdf/style-table-row/
 ---
-Dalam tutorial mendetail ini, kami akan memandu Anda melalui kode sumber C# yang disediakan langkah demi langkah untuk memformat baris tabel menggunakan Aspose.PDF untuk .NET. Ikuti instruksi di bawah ini untuk memahami cara menyesuaikan gaya dan properti baris tabel.
+Dalam tutorial terperinci ini, kami akan memandu Anda melalui kode sumber C# yang disediakan langkah demi langkah untuk memformat baris tabel menggunakan Aspose.PDF untuk .NET. Ikuti petunjuk di bawah ini untuk memahami cara menyesuaikan gaya dan properti baris tabel.
 
 ## Langkah 1: Menyiapkan lingkungan
 
-Sebelum memulai, pastikan Anda telah mengonfigurasi lingkungan pengembangan untuk menggunakan Aspose.PDF untuk .NET. Ini termasuk menginstal perpustakaan Aspose.PDF dan mengonfigurasi proyek Anda untuk mereferensikannya.
+Sebelum memulai, pastikan Anda telah mengonfigurasi lingkungan pengembangan Anda untuk menggunakan Aspose.PDF untuk .NET. Ini termasuk menginstal pustaka Aspose.PDF dan mengonfigurasi proyek Anda untuk merujuknya.
 
 ## Langkah 2: Membuat dokumen
 
@@ -28,25 +28,25 @@ taggedContent.SetTitle("Example of Table Row Formatting");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-Kami telah membuat dokumen baru dan mengatur judul dan bahasa dokumen.
+Kami telah membuat dokumen baru dan menetapkan judul dan bahasa dokumen.
 
-## Langkah 3: Mendapatkan elemen struktur root
+## Langkah 3: Mendapatkan elemen struktur akar
 
-Pada langkah ini kita akan mendapatkan elemen struktur root untuk dokumen kita.
+Pada langkah ini kita akan mendapatkan elemen struktur akar untuk dokumen kita.
 
 ```csharp
 //Dapatkan elemen struktur akar
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-Kami mendapat elemen struktur root yang akan berfungsi sebagai wadah untuk elemen array.
+Kita mendapat elemen struktur akar yang akan berfungsi sebagai wadah bagi elemen array.
 
 ## Langkah 4: Membuat elemen struktur array
 
-Sekarang mari buat elemen struktur tabel baru untuk dokumen kita.
+Sekarang mari membuat elemen struktur tabel baru untuk dokumen kita.
 
 ```csharp
-// Buat elemen struktur array
+// Membuat elemen struktur array
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 ```
@@ -55,7 +55,7 @@ Kami telah membuat elemen struktur array baru dan menambahkannya ke elemen struk
 
 ## Langkah 5: Sesuaikan gaya dan properti baris tabel
 
-Pada langkah ini, kita akan menyesuaikan gaya dan properti baris tabel.
+Pada langkah ini, kita akan menyesuaikan gaya baris tabel dan properti.
 
 ```csharp
 // Sesuaikan gaya dan properti baris tabel
@@ -68,7 +68,7 @@ int colCount = 3;
 int rowIndex;
 int colIndex;
 
-// Buat baris header tabel
+// Membuat baris tajuk tabel
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Header Row";
 
@@ -103,7 +103,7 @@ for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
      }
 }
 
-// Buat garis footer tabel
+// Membuat garis footer tabel
 TableTRElement footTrElement = tableTFootElement.CreateTR();
 footTrElement.AlternativeText = "Footline";
 
@@ -114,21 +114,21 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 }
 ```
 
-Kami telah menyesuaikan berbagai aspek baris tabel, seperti warna latar belakang, batas, tinggi baris, penomoran halaman, gaya sel default, dan banyak lagi.
+Kami telah menyesuaikan berbagai aspek baris tabel, seperti warna latar belakang, batas, tinggi baris, pagination, gaya sel default, dan banyak lagi.
 
 ## Langkah 6: Menyimpan dokumen PDF yang diberi tag
 
-Sekarang kita telah membuat dokumen kita dengan baris tabel yang diberi gaya, kita akan menyimpannya sebagai dokumen PDF yang diberi tag.
+Sekarang setelah kita membuat dokumen dengan baris tabel bergaya, kita akan menyimpannya sebagai dokumen PDF yang diberi tag.
 ```csharp
 // Simpan dokumen PDF yang diberi tag
 document.Save(dataDir + "StyleTableRow.pdf");
 ```
 
-Kami menyimpan dokumen PDF yang diberi tag di direktori yang ditentukan.
+Kami menyimpan dokumen PDF yang diberi tag pada direktori yang ditentukan.
 
 ## Langkah 7: Validasi kepatuhan PDF/UA
 
-Selanjutnya, kami akan memvalidasi kesesuaian PDF/UA dokumen kami.
+Berikutnya, kami akan memvalidasi kesesuaian PDF/UA dokumen kami.
 
 ```csharp
 // Pemeriksaan kepatuhan PDF/UA
@@ -137,7 +137,7 @@ bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableRow.xml", PdfFor
 Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-Kami mengunggah dokumen PDF yang diberi tag dan memvalidasi kepatuhan PDF/UA dengan membuat laporan XML.
+Kami mengunggah dokumen PDF yang diberi tag dan memvalidasi kepatuhan PDF/UA-nya dengan membuat laporan XML.
 
 
 ### Contoh kode sumber untuk Style Table Row menggunakan Aspose.PDF untuk .NET 
@@ -214,50 +214,50 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ## Kesimpulan
 
-Dalam tutorial ini, kita mempelajari cara memformat baris tabel dengan Aspose.PDF untuk .NET. Kami menyesuaikan gaya dan properti baris tabel, menambahkan header, baris isi, dan footer, menyimpan dokumen PDF yang diberi tag, dan memvalidasi kepatuhan PDF/UA-nya.
+Dalam tutorial ini, kita mempelajari cara memformat baris tabel dengan Aspose.PDF untuk .NET. Kita menyesuaikan gaya dan properti baris tabel, menambahkan header, baris isi, dan footer, menyimpan dokumen PDF yang diberi tag, dan memvalidasi kepatuhan PDF/UA-nya.
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
-#### T: Apa tujuan tutorial tentang memformat baris tabel menggunakan Aspose.PDF untuk .NET?
+#### T: Apa tujuan tutorial memformat baris tabel menggunakan Aspose.PDF untuk .NET ini?
 
-J: Tujuan tutorial ini adalah memandu Anda melalui proses pemformatan baris tabel dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Ini memberikan petunjuk langkah demi langkah dan contoh kode sumber C# untuk membantu Anda menyesuaikan gaya dan properti baris tabel.
+J: Tujuan dari tutorial ini adalah untuk memandu Anda melalui proses pemformatan baris tabel dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Tutorial ini menyediakan petunjuk langkah demi langkah dan contoh kode sumber C# untuk membantu Anda menyesuaikan gaya dan properti baris tabel.
 
-#### Q: Apa saja prasyarat untuk mengikuti tutorial ini?
+#### T: Apa saja prasyarat untuk mengikuti tutorial ini?
 
-J: Sebelum memulai, pastikan Anda telah menyiapkan lingkungan pengembangan untuk menggunakan Aspose.PDF untuk .NET. Ini melibatkan instalasi perpustakaan Aspose.PDF dan mengonfigurasi proyek Anda untuk mereferensikannya.
+J: Sebelum memulai, pastikan Anda telah menyiapkan lingkungan pengembangan untuk menggunakan Aspose.PDF untuk .NET. Ini melibatkan pemasangan pustaka Aspose.PDF dan konfigurasi proyek Anda untuk merujuknya.
 
-#### T: Bagaimana cara membuat dokumen PDF baru dan mengatur judul serta bahasanya menggunakan Aspose.PDF untuk .NET?
+#### T: Bagaimana cara membuat dokumen PDF baru dan mengatur judul dan bahasanya menggunakan Aspose.PDF untuk .NET?
 
- J: Untuk membuat dokumen PDF baru, Anda perlu membuat a`Document` objek dari perpustakaan Aspose.PDF. Kode sumber C# yang disediakan dalam tutorial menunjukkan cara membuat dokumen dan mengatur judul dan properti bahasanya.
+ A: Untuk membuat dokumen PDF baru, Anda perlu membuat`Document` objek dari pustaka Aspose.PDF. Kode sumber C# yang disediakan dalam tutorial ini menunjukkan cara membuat dokumen dan mengatur judul serta properti bahasanya.
 
 #### T: Apa pentingnya elemen struktur akar dalam dokumen PDF?
 
-J: Elemen struktur akar bertindak sebagai wadah bagi elemen struktur lainnya, membantu mengatur dan mengkategorikan konten dokumen PDF. Ini memainkan peran penting dalam membangun struktur logis dokumen.
+A: Elemen struktur root berfungsi sebagai wadah bagi elemen struktur lainnya, membantu mengatur dan mengkategorikan konten dokumen PDF. Elemen ini berperan penting dalam membangun struktur logis dokumen.
 
-#### T: Bagaimana cara membuat dan mengkustomisasi elemen struktur tabel untuk memformat baris tabel menggunakan Aspose.PDF untuk .NET?
+#### T: Bagaimana cara membuat dan menyesuaikan elemen struktur tabel untuk memformat baris tabel menggunakan Aspose.PDF untuk .NET?
 
-A: Tutorial ini menjelaskan cara membuat elemen struktur tabel dan menyesuaikan propertinya untuk memformat baris tabel. Ini mencakup aspek-aspek seperti warna latar belakang, batas, tinggi baris, penomoran halaman, gaya sel default, dan banyak lagi.
+A: Tutorial ini menjelaskan cara membuat elemen struktur tabel dan menyesuaikan propertinya untuk memformat baris tabel. Tutorial ini mencakup berbagai aspek seperti warna latar belakang, batas, tinggi baris, penomoran halaman, gaya sel default, dan banyak lagi.
 
-#### T: Dapatkah saya mengkustomisasi gaya dan properti sel individual dalam baris tabel?
+#### T: Dapatkah saya menyesuaikan gaya dan properti sel individual dalam baris tabel?
 
-J: Ya, Anda bisa mengkustomisasi gaya dan properti sel individual dalam baris tabel. Tutorial ini menunjukkan cara mengatur properti seperti warna latar belakang, batas, warna teks, padding, dan lainnya untuk sel tabel dalam baris tabel yang diformat.
+A: Ya, Anda dapat menyesuaikan gaya dan properti sel individual dalam baris tabel. Tutorial ini menunjukkan cara mengatur properti seperti warna latar belakang, batas, warna teks, padding, dan lainnya untuk sel tabel dalam baris tabel yang diformat.
 
 #### T: Bagaimana cara menambahkan header, baris isi, dan footer ke baris tabel yang diformat?
 
-A: Tutorial memberikan contoh membuat dan menambahkan header, baris isi, dan footer ke elemen struktur tabel. Elemen-elemen ini dapat dikustomisasi lebih lanjut menggunakan properti yang dijelaskan dalam tutorial.
+A: Tutorial ini menyediakan contoh pembuatan dan penambahan header, baris isi, dan footer ke elemen struktur tabel. Elemen-elemen ini dapat disesuaikan lebih lanjut menggunakan properti yang dijelaskan dalam tutorial.
 
-#### T: Apa yang dimaksud dengan kepatuhan PDF/UA, dan bagaimana cara memvalidasinya untuk dokumen PDF saya yang diberi tag?
+#### T: Apa itu kepatuhan PDF/UA, dan bagaimana saya dapat memvalidasinya untuk dokumen PDF saya yang diberi tag?
 
- J: Kepatuhan PDF/UA memastikan bahwa dokumen PDF mematuhi standar aksesibilitas, sehingga lebih mudah diakses oleh pengguna penyandang disabilitas. Tutorial ini menunjukkan cara memvalidasi kesesuaian PDF/UA menggunakan`Validate()` metode dan menghasilkan laporan kepatuhan XML.
+ A: Kepatuhan PDF/UA memastikan bahwa dokumen PDF sesuai dengan standar aksesibilitas, sehingga lebih mudah diakses oleh pengguna penyandang disabilitas. Tutorial ini menunjukkan cara memvalidasi kesesuaian PDF/UA menggunakan`Validate()` metode dan menghasilkan laporan kepatuhan XML.
 
-#### T: Bagaimana cara memasukkan konsep ini ke dalam aplikasi .NET saya sendiri?
+#### T: Bagaimana saya dapat memasukkan konsep-konsep ini ke dalam aplikasi .NET saya sendiri?
 
-J: Anda dapat menggunakan contoh kode sumber C# yang disediakan sebagai panduan untuk mengimplementasikan pemformatan baris tabel di aplikasi .NET Anda sendiri. Ubah dan sesuaikan kode agar sesuai dengan kebutuhan Anda dan integrasikan ke dalam proyek Anda.
+J: Anda dapat menggunakan contoh kode sumber C# yang disediakan sebagai panduan untuk menerapkan pemformatan baris tabel di aplikasi .NET Anda sendiri. Ubah dan sesuaikan kode agar sesuai dengan kebutuhan Anda dan integrasikan ke dalam proyek Anda.
 
-#### T: Apakah ada rekomendasi praktik terbaik untuk memformat baris tabel dalam dokumen PDF?
+#### T: Apakah ada praktik terbaik yang direkomendasikan untuk memformat baris tabel dalam dokumen PDF?
 
-J: Saat memformat baris tabel, pertimbangkan keterbacaan dan aksesibilitas konten. Pastikan warna memiliki kontras yang cukup, gunakan font yang jelas dan terbaca, dan pertahankan tata letak yang konsisten. Validasi kepatuhan PDF/UA untuk memastikan standar aksesibilitas terpenuhi.
+J: Saat memformat baris tabel, pertimbangkan keterbacaan dan aksesibilitas konten. Pastikan warna memiliki kontras yang cukup, gunakan font yang jelas dan mudah dibaca, dan pertahankan tata letak yang konsisten. Validasi kepatuhan PDF/UA untuk memastikan standar aksesibilitas terpenuhi.
 
-#### T: Apa saja fitur Aspose.PDF untuk .NET lainnya yang dapat saya jelajahi untuk kustomisasi dokumen PDF?
+#### T: Fitur Aspose.PDF for .NET apa lagi yang dapat saya jelajahi untuk kustomisasi dokumen PDF?
 
-J: Aspose.PDF untuk .NET menawarkan berbagai fitur untuk penyesuaian dokumen PDF, termasuk manipulasi teks, penyisipan gambar, manajemen bidang formulir, tanda tangan digital, anotasi, dan banyak lagi. Lihat dokumentasi dan sumber daya resmi untuk menjelajahi fungsi tambahan.
+J: Aspose.PDF untuk .NET menawarkan berbagai fitur untuk kustomisasi dokumen PDF, termasuk manipulasi teks, penyisipan gambar, manajemen bidang formulir, tanda tangan digital, anotasi, dan banyak lagi. Lihat dokumentasi dan sumber daya resmi untuk menjelajahi fungsi tambahan.

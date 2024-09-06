@@ -33,7 +33,7 @@ using (Document document = new Document(fs))
 
 ## 3. lépés: Állítsa be az alapértelmezett betűtípust
 
- Ezután beállítjuk a PDF-dokumentum alapértelmezett betűtípusát a`PdfSaveOptions` osztály. Ebben a példában az alapértelmezett betűtípust "Arial"-ra állítjuk.
+ Ezután beállítjuk a PDF-dokumentum alapértelmezett betűtípusát a`PdfSaveOptions`osztály. Ebben a példában az alapértelmezett betűtípust "Arial"-ra állítjuk.
 
 ```csharp
 PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
@@ -68,7 +68,7 @@ using (Document document = new Document(fs))
 
 ## Következtetés
 
-A PDF-dokumentumok alapértelmezett betűtípusának beállítása az Aspose.PDF for .NET használatával egyszerű és hatékony módja annak, hogy a szöveg helyesen jelenjen meg, még akkor is, ha az eredeti betűtípusok nem állnak rendelkezésre. A lépésenkénti útmutató követésével és a mellékelt C# forráskód használatával a fejlesztők egyszerűen beállíthatják az alapértelmezett betűtípust, és olyan PDF-fájlokat hozhatnak létre, amelyek konzisztens és megbízható megtekintési élményt kínálnak a különböző környezetekben. Ez a funkció különösen hasznos olyan esetekben, amikor a PDF-fájlokat különböző rendszereken tekintik meg vagy nyomtatják ki, amelyekre eltérő betűkészletek vannak telepítve.
+PDF-dokumentumok alapértelmezett betűtípusának beállítása az Aspose.PDF for .NET használatával egyszerű és hatékony módja annak, hogy a szöveg helyesen jelenjen meg, még akkor is, ha az eredeti betűtípusok nem állnak rendelkezésre. A lépésenkénti útmutató követésével és a mellékelt C# forráskód használatával a fejlesztők egyszerűen beállíthatják az alapértelmezett betűtípust, és olyan PDF-fájlokat hozhatnak létre, amelyek konzisztens és megbízható megtekintési élményt kínálnak a különböző környezetekben. Ez a funkció különösen hasznos olyan esetekben, amikor a PDF-fájlokat különböző rendszereken tekintik meg vagy nyomtatják ki, amelyekre eltérő betűkészletek vannak telepítve.
 
 ### GYIK az alapértelmezett betűtípus beállításához PDF-fájlban
 

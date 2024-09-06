@@ -1,17 +1,17 @@
 ---
 title: Ustaw uprawnienia w pliku PDF
 linktitle: Ustaw uprawnienia w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Łatwo ustaw uprawnienia dostępu w pliku PDF za pomocą Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Łatwe ustawianie uprawnień dostępu w pliku PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 100
 url: /pl/net/programming-with-security-and-signatures/set-privileges/
 ---
-Często konieczne jest ustawienie określonych uprawnień dostępu do pliku PDF. Dzięki Aspose.PDF dla .NET możesz łatwo ustawić uprawnienia dostępu, korzystając z następującego kodu źródłowego:
+Często konieczne jest ustawienie określonych uprawnień dostępu w pliku PDF. Dzięki Aspose.PDF dla .NET możesz łatwo ustawić uprawnienia dostępu, korzystając z następującego kodu źródłowego:
 
-## Krok 1: Zaimportuj wymagane biblioteki
+## Krok 1: Importuj wymagane biblioteki
 
-Zanim zaczniesz, musisz zaimportować niezbędne biblioteki dla swojego projektu C#. Oto niezbędne dyrektywy importowe:
+Zanim zaczniesz, musisz zaimportować niezbędne biblioteki dla swojego projektu C#. Oto niezbędne dyrektywy importu:
 
 ```csharp
 using Aspose.Pdf;
@@ -19,15 +19,15 @@ using Aspose.Pdf;
 
 ## Krok 2: Ustaw ścieżkę do folderu dokumentów
 
- W tym kroku musisz określić ścieżkę do folderu zawierającego plik PDF, który chcesz edytować. Zastępować`"YOUR DOCUMENTS DIRECTORY"` następującym kodzie z rzeczywistą ścieżką do folderu dokumentów:
+ W tym kroku musisz określić ścieżkę do folderu zawierającego plik PDF, który chcesz edytować. Zastąp`"YOUR DOCUMENTS DIRECTORY"` w poniższym kodzie podaj rzeczywistą ścieżkę do folderu z dokumentami:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Krok 3: Załaduj źródłowy plik PDF
+## Krok 3: Załaduj plik źródłowy PDF
 
-Teraz załadujemy źródłowy plik PDF za pomocą następującego kodu:
+Teraz załadujemy plik źródłowy PDF korzystając z następującego kodu:
 
 ```csharp
 using (Document document = new Document(dataDir + "input.pdf"))
@@ -35,7 +35,7 @@ using (Document document = new Document(dataDir + "input.pdf"))
 
 ## Krok 4: Ustaw uprawnienia dostępu
 
- W tym kroku utworzymy instancję`DocumentPrivilege` obiekt, aby ustawić żądane uprawnienia dostępu. Możesz zastosować ograniczenia dotyczące wszystkich uprawnień korzystających z`DocumentPrivilege.ForbidAll` . Na przykład, jeśli chcesz zezwolić tylko na czytanie ekranu, możesz ustawić`AllowScreenReaders` Do`true`. Oto odpowiedni kod:
+ W tym kroku utworzymy instancję`DocumentPrivilege` obiekt, aby ustawić pożądane uprawnienia dostępu. Możesz zastosować ograniczenia na wszystkie uprawnienia, używając`DocumentPrivilege.ForbidAll` Na przykład, jeśli chcesz zezwolić tylko na odczyt ekranu, możesz ustawić`AllowScreenReaders` Do`true`Oto odpowiedni kod:
 
 ```csharp
 DocumentPrivilege documentPrivilege = DocumentPrivilege.ForbidAll;
@@ -44,27 +44,27 @@ documentPrivilege.AllowScreenReaders = true;
 
 ## Krok 5: Zaszyfruj i zapisz dokument
 
- Wreszcie możemy zaszyfrować dokument PDF za pomocą hasła użytkownika i właściciela`Encrypt` i określenie żądanego algorytmu szyfrowania. Następnie zapisujemy zaktualizowany dokument. Oto odpowiedni kod:
+ Na koniec możemy zaszyfrować dokument PDF hasłem użytkownika i właściciela, używając`Encrypt` i określając żądany algorytm szyfrowania. Następnie zapisujemy zaktualizowany dokument. Oto odpowiedni kod:
 
 ```csharp
 document.Encrypt("user", "owner", documentPrivilege, CryptoAlgorithm.AESx128, false);
 document.Save(dataDir + "SetPrivileges_out.pdf");
 ```
 
-### Przykładowy kod źródłowy dla Ustaw uprawnienia przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Set Privileges using Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Załaduj źródłowy plik PDF
+// Załaduj plik źródłowy PDF
 using (Document document = new Document(dataDir + "input.pdf"))
 {
-	// Utwórz instancję obiektu uprawnień do dokumentu
-	// Zastosuj ograniczenia do wszystkich przywilejów
+	// Utwórz obiekt uprawnień dokumentu
+	// Zastosuj ograniczenia do wszystkich uprawnień
 	DocumentPrivilege documentPrivilege = DocumentPrivilege.ForbidAll;
-	// Zezwalaj tylko na czytanie ekranu
+	// Zezwalaj tylko na odczyt ekranu
 	documentPrivilege.AllowScreenReaders = true;
-	// Zaszyfruj plik za pomocą hasła użytkownika i właściciela.
-	// Należy ustawić hasło, aby gdy użytkownik wyświetlił plik z hasłem użytkownika,
+	// Zaszyfruj plik przy użyciu hasła użytkownika i właściciela.
+	// Należy ustawić hasło, aby po wyświetleniu pliku przez użytkownika z hasłem użytkownika,
 	// Włączona jest tylko opcja odczytu ekranu
 	document.Encrypt("user", "owner", documentPrivilege, CryptoAlgorithm.AESx128, false);
 	// Zapisz zaktualizowany dokument
@@ -78,40 +78,40 @@ Gratulacje! Masz teraz przewodnik krok po kroku, jak ustawić uprawnienia dostę
 
 Koniecznie zapoznaj się z oficjalną dokumentacją Aspose.PDF, aby uzyskać więcej informacji na temat zaawansowanych funkcji zabezpieczeń dokumentów PDF i zarządzania uprawnieniami dostępu.
 
-### Często zadawane pytania dotyczące ustawiania uprawnień w pliku PDF
+### FAQ dotyczące ustawiania uprawnień w pliku PDF
 
-#### P: Dlaczego miałbym ustawiać uprawnienia dostępu w pliku PDF?
+#### P: Dlaczego muszę ustawiać uprawnienia dostępu do pliku PDF?
 
-O: Ustawienie uprawnień dostępu pozwala kontrolować sposób interakcji użytkowników z dokumentami PDF. Możesz ograniczyć czynności takie jak drukowanie, kopiowanie i edytowanie, aby zwiększyć bezpieczeństwo dokumentu.
+A: Ustawienie uprawnień dostępu pozwala kontrolować, w jaki sposób użytkownicy wchodzą w interakcję z dokumentami PDF. Możesz ograniczyć działania, takie jak drukowanie, kopiowanie i edytowanie, aby zwiększyć bezpieczeństwo dokumentów.
 
-#### P: Jakie korzyści mogę uzyskać z ustawiania uprawnień dostępu za pomocą Aspose.PDF dla .NET?
+#### P: Jakie korzyści mogę odnieść, ustawiając uprawnienia dostępu za pomocą Aspose.PDF dla platformy .NET?
 
-O: Aspose.PDF dla .NET zapewnia prosty sposób wdrożenia uprawnień dostępu, dając Ci możliwość dostosowania uprawnień użytkownika i ochrony poufnych treści.
+A: Aspose.PDF dla platformy .NET oferuje prosty sposób wdrażania uprawnień dostępu, umożliwiając dostosowywanie uprawnień użytkowników i ochronę poufnych treści.
 
-#### P: Czy mogę zastosować różne uprawnienia dla różnych użytkowników?
+#### P: Czy mogę nadać różne uprawnienia różnym użytkownikom?
 
-O: Tak, możesz ustawić określone uprawnienia dostępu dla różnych grup użytkowników, co umożliwi dostosowanie dostępu do dokumentów w oparciu o role użytkowników.
+O: Tak, możesz ustawić konkretne uprawnienia dostępu dla różnych grup użytkowników, co pozwoli Ci dostosować dostęp do dokumentów na podstawie ról użytkowników.
 
 #### P: Jakie typowe uprawnienia dostępu mogę ustawić?
 
-O: Typowe uprawnienia dostępu obejmują zezwalanie lub zabranianie takich działań, jak drukowanie, kopiowanie tekstu lub obrazów, modyfikowanie dokumentu i wypełnianie pól formularzy.
+A: Do typowych uprawnień dostępu zalicza się zezwalanie lub zabranianie takich czynności, jak drukowanie, kopiowanie tekstu lub obrazów, modyfikowanie dokumentu i wypełnianie pól formularzy.
 
-#### P: W jaki sposób ustawienie uprawnień do czytania ekranu zwiększa dostępność dokumentów?
+#### P: W jaki sposób ustawienie uprawnień do odczytu ekranu poprawia dostępność dokumentu?
 
-O: Włączenie uprawnień do czytania ekranu zapewnia użytkownikom dostęp do zawartości pliku PDF za pomocą czytników ekranu, co zwiększa dostępność dla osób niedowidzących.
+A: Włączenie uprawnień do odczytu ekranu gwarantuje, że użytkownicy będą mogli uzyskać dostęp do zawartości pliku PDF za pomocą czytników ekranu, zwiększając dostępność dla osób z dysfunkcją wzroku.
 
 #### P: Czy mogę ustawić ochronę hasłem wraz z uprawnieniami dostępu?
 
-Odp.: Oczywiście możesz zaszyfrować dokument PDF hasłami, stosując jednocześnie uprawnienia dostępu. Zapewnia to dodatkową warstwę bezpieczeństwa.
+A: Oczywiście, możesz zaszyfrować swój dokument PDF hasłami, stosując jednocześnie uprawnienia dostępu. Zapewnia to dodatkową warstwę bezpieczeństwa.
 
-#### P: Czy istnieje sposób na odebranie uprawnień dostępu po ich zastosowaniu?
+#### P: Czy istnieje możliwość cofnięcia uprawnień dostępu po ich zastosowaniu?
 
-O: Po zastosowaniu uprawnień dostępu i zaszyfrowaniu dokumentu użytkownicy będą potrzebować odpowiedniego hasła, aby uzyskać dostęp do zawartości. Uprawnienia można modyfikować poprzez zmianę kodu źródłowego.
+A: Po zastosowaniu uprawnień dostępu i zaszyfrowaniu dokumentu użytkownicy będą potrzebować odpowiedniego hasła, aby uzyskać dostęp do treści. Uprawnienia można modyfikować, zmieniając kod źródłowy.
 
-#### P: Czy podczas ustawiania uprawnień dostępu należy wziąć pod uwagę wydajność?
+#### P: Czy przy ustawianiu uprawnień dostępu należy brać pod uwagę jakieś kwestie wydajnościowe?
 
 O: Wpływ na wydajność jest minimalny, ponieważ ustawienia uprawnień dostępu są stosowane podczas szyfrowania, co jest szybkim procesem.
 
-#### P: Czy mogę zastosować uprawnienia dostępu do istniejącego dokumentu PDF?
+#### P: Czy mogę nadać uprawnienia dostępu do istniejącego dokumentu PDF?
 
-Odp.: Tak, możesz użyć Aspose.PDF dla .NET, aby zastosować uprawnienia dostępu zarówno do nowych, jak i istniejących dokumentów PDF.
+O: Tak, możesz używać Aspose.PDF dla .NET, aby stosować uprawnienia dostępu zarówno do nowych, jak i istniejących dokumentów PDF.

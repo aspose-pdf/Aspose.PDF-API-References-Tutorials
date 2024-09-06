@@ -1,26 +1,26 @@
 ---
 title: Obróć tekst za pomocą fragmentu tekstu i akapitu
 linktitle: Obróć tekst za pomocą fragmentu tekstu i akapitu
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak obracać tekst przy użyciu fragmentu tekstu i akapitu w dokumencie PDF przy użyciu Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak obracać tekst za pomocą fragmentu tekstu i akapitu w dokumencie PDF, korzystając z Aspose.PDF dla platformy .NET.
 type: docs
 weight: 400
 url: /pl/net/programming-with-text/rotate-text-using-text-fragment-and-paragraph/
 ---
-W tym samouczku wyjaśniono, jak używać Aspose.PDF dla .NET do obracania tekstu za pomocą fragmentu tekstu i akapitu. Dostarczony kod źródłowy języka C# demonstruje proces krok po kroku.
+Ten samouczek wyjaśnia, jak używać Aspose.PDF dla .NET do obracania tekstu za pomocą fragmentu tekstu i akapitu. Dostarczony kod źródłowy C# demonstruje ten proces krok po kroku.
 
-## Warunki wstępne
+## Wymagania wstępne
 
-Przed kontynuowaniem samouczka upewnij się, że posiadasz następujące elementy:
+Przed przystąpieniem do samouczka upewnij się, że posiadasz następujące elementy:
 
 - Podstawowa znajomość języka programowania C#.
-- Zainstalowana biblioteka Aspose.PDF dla .NET. Możesz go uzyskać ze strony internetowej Aspose lub użyć NuGet, aby zainstalować go w swoim projekcie.
+- Aspose.PDF dla biblioteki .NET jest zainstalowany. Możesz go pobrać ze strony internetowej Aspose lub użyć NuGet, aby zainstalować go w swoim projekcie.
 
 ## Krok 1: Skonfiguruj projekt
 
-Zacznij od utworzenia nowego projektu C# w preferowanym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla .NET.
+Zacznij od utworzenia nowego projektu C# w preferowanym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla platformy .NET.
 
-## Krok 2: Zaimportuj niezbędne przestrzenie nazw
+## Krok 2: Importuj niezbędne przestrzenie nazw
 
 Dodaj następujące dyrektywy using na początku pliku C#, aby zaimportować wymagane przestrzenie nazw:
 
@@ -42,7 +42,7 @@ Document pdfDocument = new Document();
 
 ## Krok 4: Dodaj stronę
 
- Pobierz określoną stronę z dokumentu za pomocą metody`Pages.Add()` metoda:
+ Pobierz konkretną stronę z dokumentu za pomocą`Pages.Add()` metoda:
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
@@ -50,7 +50,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 
 ## Krok 5: Utwórz fragmenty tekstu
 
- Utwórz wiele`TextFragment` obiekty, ustaw ich tekst i właściwości oraz określ kąt obrotu:
+ Utwórz wiele`TextFragment` obiekty, ustaw ich tekst i właściwości, a także określ kąt obrotu:
 
 ```csharp
 TextFragment textFragment1 = new TextFragment("main text");
@@ -72,7 +72,7 @@ Dostosuj tekst, kąt obrotu i inne właściwości według potrzeb.
 
 ## Krok 6: Dodaj fragmenty tekstu do strony
 
- Dodaj utworzone fragmenty tekstu do strony, dołączając je do pliku`Paragraphs` kolekcja:
+ Dodaj utworzone fragmenty tekstu do strony, dołączając je do`Paragraphs` kolekcja:
 
 ```csharp
 pdfPage.Paragraphs.Add(textFragment1);
@@ -90,12 +90,12 @@ pdfDocument.Save(dataDir + "TextFragmentTests_Rotated3_out.pdf");
 
  Pamiętaj o wymianie`"TextFragmentTests_Rotated3_out.pdf"` z żądaną nazwą pliku wyjściowego.
 
-### Przykładowy kod źródłowy funkcji Obróć tekst przy użyciu fragmentu tekstu i akapitu przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Obróć tekst za pomocą fragmentu tekstu i akapitu przy użyciu Aspose.PDF dla .NET 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Zainicjuj obiekt dokumentu
 Document pdfDocument = new Document();
-// Uzyskaj konkretną stronę
+// Pobierz konkretną stronę
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 // Utwórz fragment tekstu
 TextFragment textFragment1 = new TextFragment("main text");
@@ -125,40 +125,40 @@ pdfDocument.Save(dataDir + "TextFragmentTests_Rotated3_out.pdf");
 
 ## Wniosek
 
-Gratulacje! Pomyślnie nauczyłeś się obracać tekst przy użyciu fragmentów tekstu i akapitów w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Ten samouczek zawiera przewodnik krok po kroku, od utworzenia dokumentu do zapisania zmodyfikowanej wersji. Możesz teraz włączyć ten kod do własnych projektów C#, aby manipulować rotacją tekstu w plikach PDF.
+Gratulacje! Udało Ci się nauczyć, jak obracać tekst za pomocą fragmentów tekstu i akapitów w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Ten samouczek zawiera przewodnik krok po kroku, od tworzenia dokumentu do zapisywania zmodyfikowanej wersji. Teraz możesz włączyć ten kod do własnych projektów C#, aby manipulować obrotem tekstu w plikach PDF.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Jaki jest cel samouczka „Obróć tekst za pomocą fragmentu tekstu i akapitu”?
+#### P: Jaki jest cel poradnika „Obróć tekst za pomocą fragmentu tekstu i akapitu”?
 
-Odp.: Samouczek „Obróć tekst za pomocą fragmentu tekstu i akapitu” ma na celu poprowadzenie Cię przez proces używania biblioteki Aspose.PDF dla .NET do obracania tekstu przy użyciu zarówno fragmentów tekstu, jak i akapitów w dokumencie PDF. Samouczek zawiera instrukcje krok po kroku i przykładowy kod umożliwiający osiągnięcie tej funkcjonalności.
+A: Samouczek „Obróć tekst za pomocą fragmentu tekstu i akapitu” ma na celu przeprowadzenie Cię przez proces używania biblioteki Aspose.PDF dla .NET do obracania tekstu za pomocą zarówno fragmentów tekstu, jak i akapitów w dokumencie PDF. Samouczek zawiera instrukcje krok po kroku i przykładowy kod, aby osiągnąć tę funkcjonalność.
 
-#### P: Czym ten samouczek różni się od poprzednich samouczków dotyczących rotacji tekstu?
+#### P: Czym ten samouczek różni się od poprzednich samouczków dotyczących obracania tekstu?
 
-Odp.: W tym samouczku zastosowano fragmenty tekstu i akapity w celu uzyskania rotacji tekstu w dokumencie PDF. Pokazuje, jak obracać fragmenty tekstu indywidualnie, a następnie dodawać je do strony`Paragraphs` kolekcję, aby uzyskać bardziej kompleksowy efekt rotacji tekstu.
+A: Ten samouczek łączy użycie fragmentów tekstu i akapitów, aby uzyskać obrót tekstu w dokumencie PDF. Pokazuje, jak obracać fragmenty tekstu indywidualnie, a następnie dodawać je do strony.`Paragraphs` kolekcja umożliwiająca uzyskanie bardziej kompleksowego efektu obrotu tekstu.
 
-#### P: Jakie są zalety używania fragmentów tekstu i akapitów do obracania tekstu?
+#### P: Jakie są zalety stosowania fragmentów tekstu i akapitów do obracania tekstu?
 
-Odp.: Łączne używanie fragmentów tekstu i akapitów pozwala na większą elastyczność w rotacji tekstu. Fragmenty tekstu umożliwiają indywidualne ustawienia rotacji i formatowania, natomiast akapity zapewniają strukturę do rozmieszczania i pozycjonowania fragmentów tekstu na stronie.
+A: Używanie fragmentów tekstu i akapitów razem pozwala na większą elastyczność w rotacji tekstu. Fragmenty tekstu umożliwiają indywidualne ustawienia rotacji i formatowania, podczas gdy akapity zapewniają strukturę do układania i pozycjonowania fragmentów tekstu na stronie.
 
-#### P: Czy mogę zastosować różne kąty obrotu do różnych fragmentów tekstu w tym samym akapicie?
+#### P: Czy mogę stosować różne kąty obrotu do różnych fragmentów tekstu w obrębie tego samego akapitu?
 
- Odp.: Tak, możesz zastosować różne kąty obrotu do różnych`TextFragment` obiektów w tym samym akapicie. Każdy fragment tekstu może mieć swój własny kąt obrotu określony za pomocą opcji`TextState.Rotation` nieruchomość.
+ A: Tak, można stosować różne kąty obrotu do różnych`TextFragment` obiektów w tym samym akapicie. Każdy fragment tekstu może mieć swój własny kąt obrotu określony za pomocą`TextState.Rotation` nieruchomość.
 
-#### P: Czy przy użyciu tej metody można uzyskać złożone efekty rotacji tekstu?
+#### P: Czy stosując tę metodę można uzyskać złożone efekty obrotu tekstu?
 
-O: Tak, łącząc fragmenty tekstu o różnych kątach obrotu i układając je w akapitach, można uzyskać złożone i dostosowane efekty rotacji tekstu, zwiększając atrakcyjność wizualną dokumentów PDF.
+O: Tak. Łącząc fragmenty tekstu z różnymi kątami obrotu i układając je w akapitach, można uzyskać złożone i niestandardowe efekty obrotu tekstu, zwiększając atrakcyjność wizualną dokumentów PDF.
 
-#### P: Jakie kroki obejmują obracanie tekstu przy użyciu fragmentów tekstu i akapitów?
+#### P: Jakie kroki obejmuje obracanie tekstu za pomocą fragmentów tekstu i akapitów?
 
-Odp.: Te kroki obejmują:
+A: Kroki obejmują:
 
-1. Konfiguracja projektu poprzez utworzenie nowego projektu C# i dodanie odniesienia do biblioteki Aspose.PDF for .NET.
+1. Konfigurowanie projektu poprzez utworzenie nowego projektu C# i dodanie odwołania do biblioteki Aspose.PDF dla .NET.
 2. Tworzenie dokumentu PDF i dodawanie strony.
 3. Tworzenie fragmentów tekstu, ustawianie ich właściwości i określanie kątów obrotu.
-4.  Dodawanie fragmentów tekstu do strony za pomocą metody`Paragraphs` kolekcja.
+4.  Dodawanie fragmentów tekstu do strony za pomocą`Paragraphs` kolekcja.
 5. Zapisywanie zmodyfikowanego dokumentu PDF.
 
 #### P: Czy mogę zastosować obrót do całych akapitów?
 
- Odp.: Tak, możesz zastosować obrót całych akapitów, ustawiając opcję`TextState.Rotation` właściwość samego akapitu. Spowoduje to obrócenie wszystkich fragmentów tekstu w tym akapicie.
+ A: Tak, możesz zastosować obrót do całych akapitów, ustawiając`TextState.Rotation` właściwość samego akapitu. Spowoduje to obrócenie wszystkich fragmentów tekstu w obrębie tego akapitu.

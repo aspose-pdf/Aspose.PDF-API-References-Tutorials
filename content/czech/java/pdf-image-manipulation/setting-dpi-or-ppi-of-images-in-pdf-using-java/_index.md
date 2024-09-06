@@ -20,7 +20,7 @@ Než se ponoříme do nastavení DPI/PPI pro obrázky PDF, pojďme si krátce p�
 
 ### Co je DPI/PPI pro obrázky v PDF?
 
-DPI (Dots Per Inch) a PPI (Pixels Per Inch) jsou měření, která určují rozlišení nebo kvalitu obrázků v dokumentu PDF. Vyšší DPI/PPI znamená vyšší kvalitu obrazu, ale může také vést k větší velikosti souborů.
+DPI (Dots Per Inch) a PPI (Pixels Per Inch) jsou míry, které určují rozlišení nebo kvalitu obrázků v dokumentu PDF. Vyšší DPI/PPI znamená vyšší kvalitu obrazu, ale může také vést k větší velikosti souborů.
 
 ### Metody nastavení DPI/PPI pomocí Aspose.PDF pro Javu
 
@@ -74,11 +74,11 @@ Nastavení DPI/PPI zajišťuje, že se obrázky při tisku nebo digitálním pro
 
 ### Jak nastavím DPI/PPI pomocí Aspose.PDF pro Javu?
 
- Aspose.PDF pro Java nabízí metody jako`setImageResolution` a`setResolution` pro nastavení DPI/PPI pro obrázky v PDF. Podrobné příklady kódu naleznete v naší příručce.
+ Aspose.PDF pro Java nabízí metody jako`setImageResolution` a`setResolution` pro nastavení DPI/PPI pro obrázky v PDF. Podrobné příklady kódu najdete v naší příručce.
 
 ### Můžete uvést příklad nastavení DPI/PPI pomocí kódu?
 
-Rozhodně! V naší příručce jsme poskytli příklady kódu Java, abychom demonstrovali, jak efektivně nastavit DPI/PPI pomocí Aspose.PDF for Java.
+Jistě! V naší příručce jsme poskytli příklady kódu Java, abychom demonstrovali, jak efektivně nastavit DPI/PPI pomocí Aspose.PDF for Java.
 
 ### Jaké jsou některé doporučené hodnoty DPI/PPI pro obrázky PDF?
 

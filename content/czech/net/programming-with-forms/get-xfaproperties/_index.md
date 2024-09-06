@@ -96,7 +96,7 @@ Odpověď: Ano, vlastnosti XFA můžete upravit pomocí Aspose.PDF pro .NET. Roz
 
 #### Otázka: Jak zjistím, zda dokument PDF obsahuje formuláře XFA?
 
- A: Chcete-li zjistit, zda dokument PDF obsahuje formuláře XFA, můžete zkontrolovat, zda`Form` vlastnictvím`Document`objekt je nulový nebo ne. Pokud dokument obsahuje formuláře XFA,`Form` vlastnost bude k dispozici a můžete pokračovat v dalších operacích souvisejících s XFA.
+ A: Chcete-li zjistit, zda dokument PDF obsahuje formuláře XFA, můžete zkontrolovat, zda`Form` majetek z`Document`objekt je nulový nebo ne. Pokud dokument obsahuje formuláře XFA,`Form` vlastnost bude k dispozici a můžete pokračovat v dalších operacích souvisejících s XFA.
 
 #### Otázka: Jsou formuláře XFA podporovány ve všech prohlížečích a aplikacích PDF?
 

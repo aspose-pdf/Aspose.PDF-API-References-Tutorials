@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 3: Otevřete dokument PDF
 
- tomto kroku otevřeme dokument PDF pomocí`Document` třída Aspose.PDF. Použijte`Document` konstruktoru a předejte cestu k dokumentu PDF.
+ V tomto kroku otevřeme dokument PDF pomocí`Document` třída Aspose.PDF. Použijte`Document` konstruktoru a předejte cestu k dokumentu PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
@@ -35,7 +35,7 @@ Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
 
 ## Krok 4: Inicializujte možnosti optimalizace
 
- tomto kroku inicializujeme možnosti optimalizace pro kompresi obrázků. Vytvořte instanci`OptimizationOptions` a nastavte příslušné možnosti. V tomto příkladu povolíme kompresi obrazu, nastavíme kvalitu obrazu na 75 a použijeme verzi s rychlou kompresí.
+ V tomto kroku inicializujeme možnosti optimalizace pro kompresi obrázků. Vytvořte instanci`OptimizationOptions` a nastavte příslušné možnosti. V tomto příkladu povolíme kompresi obrazu, nastavíme kvalitu obrazu na 75 a použijeme verzi s rychlou kompresí.
 
 ```csharp
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();
@@ -46,7 +46,7 @@ optimizeOptions.ImageCompressionOptions.Version = Pdf.Optimization.ImageCompress
 
 ## Krok 5: Optimalizujte dokument PDF
 
- V tomto kroku provedeme optimalizaci dokumentu PDF pomocí možností optimalizace definovaných dříve. Zavolej`OptimizeResources` metoda`pdfDocument` objekt a předat možnosti optimalizace.
+ tomto kroku provedeme optimalizaci dokumentu PDF pomocí možností optimalizace definovaných dříve. Zavolejte na`OptimizeResources` metoda`pdfDocument` objekt a předat možnosti optimalizace.
 
 ```csharp
 pdfDocument.OptimizeResources(optimizeOptions);
@@ -106,7 +106,7 @@ Odpověď: Aspose.PDF for .NET poskytuje zjednodušený proces pro otevření do
 
 ####  Otázka: Jaký je význam`OptimizationOptions` class in fast image size reduction?
 
- A:`OptimizationOptions`třída umožňuje definovat různá nastavení optimalizace, včetně voleb komprese obrazu, aby se efektivně zmenšila velikost obrazů v dokumentu PDF.
+ A:`OptimizationOptions` třída umožňuje definovat různá nastavení optimalizace, včetně voleb komprese obrazu, aby se efektivně zmenšila velikost obrazů v dokumentu PDF.
 
 #### Otázka: Mohu upravit nastavení komprese obrazu, abych řídil rovnováhu mezi velikostí souboru a kvalitou obrazu?
 

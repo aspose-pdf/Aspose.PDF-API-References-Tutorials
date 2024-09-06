@@ -62,7 +62,7 @@ Végül mentsük el a rögzített régiót képfájlként. Különféle képform
 ImageIO.write(image, "PNG", new File("captured_region.png"));
 ```
 
-És ez az! Sikeresen konvertált egy adott oldalrégiót PDF-fájl képpé a Java és az Aspose.PDF for Java használatával.
+És ennyi! Sikeresen konvertált egy adott oldalrégiót PDF-fájl képpé a Java és az Aspose.PDF for Java használatával.
 
 ## Következtetés
 

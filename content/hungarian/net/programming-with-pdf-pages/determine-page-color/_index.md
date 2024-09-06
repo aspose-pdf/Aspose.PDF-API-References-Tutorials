@@ -87,7 +87,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 ```
 
 ## Következtetés
-Ebben az oktatóanyagban megtanultuk, hogyan határozható meg egy PDF oldalszíne az Aspose.PDF for .NET használatával. A fent vázolt lépések követésével könnyedén megvalósíthatja ezt a funkciót saját projektjeiben. Nyugodtan fedezze fel az Aspose.PDF dokumentációt, hogy további hasznos funkciókat fedezzen fel a PDF-fájlokkal való munkavégzéshez.
+Ebben az oktatóanyagban megtanultuk, hogyan határozható meg egy PDF oldalszíne az Aspose.PDF for .NET használatával. A fent vázolt lépések követésével könnyedén megvalósíthatja ezt a funkciót saját projektjeiben. Nyugodtan fedezze fel az Aspose.PDF dokumentációját, hogy további hasznos funkciókat fedezzen fel a PDF-fájlokkal való munkavégzéshez.
 
 ### GYIK az oldalszín meghatározásához
 

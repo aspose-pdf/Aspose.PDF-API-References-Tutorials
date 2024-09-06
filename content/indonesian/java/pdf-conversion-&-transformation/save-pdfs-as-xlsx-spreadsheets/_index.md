@@ -1,30 +1,30 @@
 ---
-title: Simpan PDF sebagai XLSX Spreadsheets
-linktitle: Simpan PDF sebagai XLSX Spreadsheets
-second_title: Aspose.PDF API Pemrosesan PDF Java
+title: Simpan PDF sebagai Spreadsheet XLSX
+linktitle: Simpan PDF sebagai Spreadsheet XLSX
+second_title: API Pemrosesan PDF Java Aspose.PDF
 description: Pelajari cara mengonversi PDF ke spreadsheet XLSX dengan Aspose.PDF untuk Java. Panduan langkah demi langkah untuk ekstraksi dan analisis data yang efisien.
 type: docs
 weight: 21
 url: /id/java/pdf-conversion-transformation/save-pdfs-as-xlsx-spreadsheets/
 ---
 
-Aspose.PDF untuk Java adalah API canggih yang memungkinkan pengembang bekerja dengan dokumen PDF di aplikasi Java. Dalam panduan langkah demi langkah ini, kita akan mempelajari cara menggunakan Aspose.PDF untuk Java untuk mengonversi PDF menjadi spreadsheet XLSX. Konversi ini bisa sangat berguna ketika Anda perlu mengekstrak data tabel dari file PDF untuk analisis atau manipulasi lebih lanjut di Excel. Kami akan memandu seluruh proses, mulai dari menyiapkan lingkungan Java Anda hingga menulis kode dan menyimpan data PDF ke dalam file XLSX.
+Aspose.PDF untuk Java adalah API canggih yang memungkinkan pengembang bekerja dengan dokumen PDF dalam aplikasi Java. Dalam panduan langkah demi langkah ini, kita akan menjelajahi cara menggunakan Aspose.PDF untuk Java untuk mengonversi PDF menjadi spreadsheet XLSX. Konversi ini dapat sangat berguna saat Anda perlu mengekstrak data tabular dari file PDF untuk analisis atau manipulasi lebih lanjut di Excel. Kami akan memandu Anda melalui seluruh proses, mulai dari menyiapkan lingkungan Java hingga menulis kode dan menyimpan data PDF ke dalam file XLSX.
 
 ## Prasyarat
 
-Sebelum kita mendalami kodenya, pastikan Anda memiliki prasyarat berikut:
+Sebelum kita masuk ke kode, pastikan Anda memiliki prasyarat berikut:
 
-- Java Development Kit (JDK) diinstal pada sistem Anda.
--  Aspose.PDF untuk perpustakaan Java. Anda dapat mengunduhnya dari[Di Sini](https://releases.aspose.com/pdf/java/).
+- Java Development Kit (JDK) terinstal di sistem Anda.
+-  Aspose.PDF untuk pustaka Java. Anda dapat mengunduhnya dari[Di Sini](https://releases.aspose.com/pdf/java/).
 
 ## Menyiapkan Proyek Java Anda
 
 1. Buat proyek Java baru di Lingkungan Pengembangan Terpadu (IDE) pilihan Anda.
-2. Tambahkan pustaka Aspose.PDF untuk Java ke jalur kelas proyek Anda.
+2. Tambahkan pustaka Aspose.PDF untuk Java ke classpath proyek Anda.
 
 ## Menulis Kode
 
-Sekarang, mari masuk ke kodenya. Kita akan mulai dengan mengimpor paket yang diperlukan dan menyiapkan kelas dasar Java.
+Sekarang, mari kita mulai dengan kode. Kita akan mulai dengan mengimpor paket-paket yang diperlukan dan menyiapkan kelas Java dasar.
 
 ```java
 import com.aspose.pdf.*;
@@ -38,7 +38,7 @@ public class PdfToXlsxConverter {
         // Inisialisasi Opsi Penyimpanan Excel
         ExcelSaveOptions excelSaveOptions = new ExcelSaveOptions();
 
-        // Buat sebuah instance dari PdfConverter
+        // Buat contoh PdfConverter
         PdfConverter pdfConverter = new PdfConverter(pdfDocument);
 
         // Atur format file keluaran ke XLSX
@@ -52,21 +52,21 @@ public class PdfToXlsxConverter {
 }
 ```
 
- Pada kode di atas, kita memuat dokumen PDF, menginisialisasi opsi penyimpanan Excel, dan kemudian menggunakan kelas PdfConverter untuk mengonversi PDF menjadi file XLSX. Pastikan untuk mengganti`"input.pdf"`dengan jalur ke file PDF Anda dan`"output.xlsx"` dengan jalur file keluaran yang diinginkan.
+ Pada kode di atas, kita memuat dokumen PDF, menginisialisasi opsi penyimpanan Excel, lalu menggunakan kelas PdfConverter untuk mengonversi PDF menjadi file XLSX. Pastikan untuk mengganti`"input.pdf"`dengan jalur ke file PDF Anda dan`"output.xlsx"` dengan jalur berkas keluaran yang diinginkan.
 
 ## Menjalankan Konversi
 
- Untuk menjalankan konversi, cukup jalankan`main` metode dalam proyek Java Anda. Setelah konversi selesai, Anda akan memiliki file XLSX yang berisi data dari dokumen PDF Anda.
+ Untuk menjalankan konversi, cukup jalankan perintah`main` metode dalam proyek Java Anda. Setelah konversi selesai, Anda akan memiliki file XLSX yang berisi data dari dokumen PDF Anda.
 
 ## Kesimpulan
 
-Dalam panduan langkah demi langkah ini, kita telah mempelajari cara menggunakan Aspose.PDF untuk Java untuk mengonversi PDF menjadi spreadsheet XLSX. Ini bisa menjadi alat yang berharga untuk mengekstrak data tabel dari PDF dan mengerjakannya di Excel. Pastikan untuk menjelajahi dokumentasi Aspose.PDF untuk Java untuk fitur lanjutan dan opsi penyesuaian.
+Dalam panduan langkah demi langkah ini, kita telah mempelajari cara menggunakan Aspose.PDF untuk Java guna mengonversi PDF ke spreadsheet XLSX. Ini dapat menjadi alat yang berharga untuk mengekstrak data tabular dari PDF dan mengolahnya di Excel. Pastikan untuk menjelajahi dokumentasi Aspose.PDF untuk Java guna mendapatkan fitur dan opsi penyesuaian yang lebih canggih.
 
-## FAQ
+## Tanya Jawab Umum
 
 ### Bagaimana cara menginstal Aspose.PDF untuk Java?
 
- Anda dapat mengunduh perpustakaan Aspose.PDF untuk Java dari situs web di[https://releases.aspose.com/pdf/java/](https://releases.aspose.com/pdf/java/). Ikuti petunjuk instalasi yang disediakan di situs web mereka.
+ Anda dapat mengunduh pustaka Aspose.PDF untuk Java dari situs web di[https://releases.aspose.com/pdf/java/](https://releases.aspose.com/pdf/java/)Ikuti petunjuk instalasi yang tersedia di situs web mereka.
 
 ### Bisakah saya mengonversi PDF ke format lain menggunakan Aspose.PDF untuk Java?
 
@@ -74,12 +74,12 @@ Ya, Aspose.PDF untuk Java mendukung konversi ke berbagai format, termasuk DOCX, 
 
 ### Apakah Aspose.PDF untuk Java gratis untuk digunakan?
 
-Aspose.PDF untuk Java adalah perpustakaan komersial, dan diperlukan lisensi untuk menggunakannya. Anda dapat memperoleh lisensi dari situs Aspose.
+Aspose.PDF untuk Java adalah pustaka komersial, dan lisensi diperlukan untuk penggunaannya. Anda dapat memperoleh lisensi dari situs web Aspose.
 
-### Bisakah saya menyesuaikan tampilan file XLSX yang dikonversi?
+### Bisakah saya menyesuaikan tampilan berkas XLSX yang dikonversi?
 
 Ya, Anda dapat menyesuaikan tampilan dan format file XLSX dengan menyesuaikan opsi penyimpanan Excel dalam kode Anda. Lihat dokumentasi untuk detail tentang penyesuaian.
 
 ### Apakah ada batasan untuk konversi PDF ke XLSX?
 
-Akurasi konversi dapat bervariasi tergantung pada kompleksitas dan struktur dokumen PDF. Penting untuk meninjau file yang dikonversi dan melakukan penyesuaian yang diperlukan.
+Keakuratan konversi dapat bervariasi tergantung pada kompleksitas dan struktur dokumen PDF. Sangat penting untuk meninjau berkas yang dikonversi dan melakukan penyesuaian yang diperlukan.

@@ -2,22 +2,22 @@
 title: コンボボックス
 linktitle: コンボボックス
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用すると、PDF ドキュメント内にコンボ ボックス リストを簡単に作成できます。
+description: Aspose.PDF for .NET を使用して、PDF ドキュメントにコンボ ボックス リストを簡単に作成します。
 type: docs
 weight: 30
 url: /ja/net/programming-with-forms/combo-box/
 ---
-このチュートリアルでは、Aspose.PDF for .NET を使用してコンボ ボックス リストを作成する方法を説明します。このプロセスをガイドするために、C# ソース コードをステップごとに説明します。
+このチュートリアルでは、Aspose.PDF for .NET を使用してコンボ ボックス リストを作成する方法を説明します。このプロセスをガイドするために、C# ソース コードを段階的に説明します。
 
-## ステップ 1: 準備
+## ステップ1: 準備
 
-まず、必要なライブラリをインポートし、ドキュメント ディレクトリへのパスを設定していることを確認します。
+まず、必要なライブラリがインポートされ、ドキュメント ディレクトリへのパスが設定されていることを確認します。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## ステップ 2: ドキュメント オブジェクトを作成する
+## ステップ2: ドキュメントオブジェクトを作成する
 
 PDF フォームを保持する Document オブジェクトを作成します。
 
@@ -25,7 +25,7 @@ PDF フォームを保持する Document オブジェクトを作成します。
 Document doc = new Document();
 ```
 
-## ステップ 3: ページを追加する
+## ステップ3: ページを追加する
 
 ドキュメントにページを追加します。
 
@@ -33,17 +33,17 @@ Document doc = new Document();
 doc.Pages.Add();
 ```
 
-## ステップ 4: ComboBoxField オブジェクトをインスタンス化する
+## ステップ4: ComboBoxFieldオブジェクトのインスタンスを作成する
 
-必要なサイズで ComboBoxField オブジェクトをインスタンス化します。
+必要な寸法で ComboBoxField オブジェクトをインスタンス化します。
 
 ```csharp
 ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 600, 150, 616));
 ```
 
-## ステップ 5: ドロップダウン リストにオプションを追加する
+## ステップ5: ドロップダウンリストにオプションを追加する
 
-必要なオプションをドロップダウン リストに追加します。
+ドロップダウン リストに必要なオプションを追加します。
 
 ```csharp
 combo.AddOption("Red");
@@ -52,7 +52,7 @@ combo.AddOption("Green");
 combo.AddOption("Blue");
 ```
 
-## ステップ 6: コンボボックスリストをフォームに追加する
+## ステップ6: フォームにコンボボックスリストを追加する
 
 ComboBoxField オブジェクトを Document Form Fields コレクションに追加します。
 
@@ -60,7 +60,7 @@ ComboBoxField オブジェクトを Document Form Fields コレクションに�
 doc.Form.Add(combo);
 ```
 
-## ステップ 7: ドキュメントを保存する
+## ステップ7: ドキュメントを保存する
 
 PDF ドキュメントを保存します。
 
@@ -73,23 +73,23 @@ doc.Save(dataDir);
 ```csharp
 try
 {
-	//ドキュメントディレクトリへのパス。
+	//ドキュメント ディレクトリへのパス。
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	//ドキュメントオブジェクトの作成
+	//ドキュメントオブジェクトを作成する
 	Document doc = new Document();
-	//ドキュメントオブジェクトにページを追加
+	//ドキュメントオブジェクトにページを追加する
 	doc.Pages.Add();
-	//ComboBox Field オブジェクトをインスタンス化する
+	//ComboBox フィールドオブジェクトをインスタンス化する
 	ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 600, 150, 616));
-	//コンボボックスにオプションを追加
+	//ComboBox にオプションを追加する
 	combo.AddOption("Red");
 	combo.AddOption("Yellow");
 	combo.AddOption("Green");
 	combo.AddOption("Blue");
-	//ドキュメント オブジェクトのフォーム フィールド コレクションにコンボ ボックス オブジェクトを追加します。
+	//ドキュメントオブジェクトのフォームフィールドコレクションにコンボボックスオブジェクトを追加します。
 	doc.Form.Add(combo);
 	dataDir = dataDir + "ComboBox_out.pdf";
-	// PDF ドキュメントを保存する
+	// PDF文書を保存する
 	doc.Save(dataDir);
 	Console.WriteLine("\nCombobox field added successfully.\nFile saved at " + dataDir);
 }
@@ -101,26 +101,26 @@ catch (Exception ex)
 
 ## 結論
 
-このチュートリアルでは、Aspose.PDF for .NET を使用してコンボ ボックス リストを作成する方法を学びました。以下の手順に従って、Aspose.PDF を使用して PDF ドキュメントにコンボ ボックス リストを簡単に追加できます。
+このチュートリアルでは、Aspose.PDF for .NET を使用してコンボ ボックス リストを作成する方法を学習しました。これらの手順に従うと、Aspose.PDF を使用して PDF ドキュメントにコンボ ボックス リストを簡単に追加できます。
 
 ### よくある質問
 
 #### Q: Aspose.PDF for .NET を使用してコンボ ボックス リストの外観をカスタマイズできますか?
 
-A: はい、Aspose.PDF for .NET を使用してコンボ ボックス リストの外観をカスタマイズできます。フォント サイズ、色、背景色、境界線のスタイルなどのプロパティを設定して、希望の外観と雰囲気に合わせることができます。
+A: はい、Aspose.PDF for .NET を使用してコンボ ボックス リストの外観をカスタマイズできます。フォント サイズ、色、背景色、境界線のスタイルなどのプロパティを設定して、希望する外観に合わせることができます。
 
-#### Q: コンボボックスリストでデフォルトの選択オプションを設定できますか?
+#### Q: コンボ ボックス リストでデフォルトで選択されるオプションを設定できますか?
 
- A: はい、Aspose.PDF for .NET を使用して、コンボ ボックス リストでデフォルトの選択オプションを設定できます。使用できます`Selected`の財産`ComboBoxField`オブジェクトを使用して、1 つ以上のオプションをデフォルトで選択済みとしてマークします。
+ A: はい、Aspose.PDF for .NETを使用してコンボボックスリストのデフォルトの選択オプションを設定できます。`Selected`の財産`ComboBoxField` 1 つ以上のオプションをデフォルトで選択済みとしてマークするオブジェクト。
 
 #### Q: ユーザーが選択を行った後、コンボ ボックス リストから選択した値を取得するにはどうすればよいですか?
 
- A: Aspose.PDF for .NET を使用して、コンボ ボックス リストから選択した値を取得できます。ユーザーが選択を行った後、`Value`の財産`ComboBoxField`オブジェクトを使用して選択した値を取得します。
+ A: Aspose.PDF for .NETを使用して、コンボボックスリストから選択された値を取得できます。ユーザーが選択した後、`Value`の財産`ComboBoxField`選択した値を取得するオブジェクト。
 
-#### Q: イベント ハンドラーまたはアクションをコンボ ボックス リストに追加することはできますか?
+#### Q: コンボ ボックス リストにイベント ハンドラーまたはアクションを追加することは可能ですか?
 
- A: はい、Aspose.PDF for .NET を使用すると、イベント ハンドラーまたはアクションをコンボ ボックス リストに追加できます。次のような JavaScript アクションを関連付けることができます。`OnValueChanged`、コンボ ボックス リストに追加して、ユーザーがオプションを選択したときに特定のアクションを実行します。
+ A: はい、Aspose.PDF for .NETでは、コンボボックスリストにイベントハンドラーやアクションを追加できます。次のようなJavaScriptアクションを関連付けることができます。`OnValueChanged`、コンボ ボックス リストに追加して、ユーザーがオプションを選択したときに特定のアクションを実行します。
 
-#### Q: コンボボックスリストのオプションにツールチップや説明を追加できますか?
+#### Q: コンボ ボックス リストのオプションにツールヒントや説明を追加できますか?
 
- A: はい、Aspose.PDF for .NET を使用して、コンボ ボックス リストのオプションにツールヒントや説明を追加できます。設定できるのは、`AlternateName`各オプションのプロパティを使用して、ユーザーがオプションの上にマウスを置いたときに表示されるツールチップまたは説明を提供します。
+ A: はい、Aspose.PDF for .NETを使用してコンボボックスリストのオプションにツールヒントや説明を追加できます。`AlternateName`各オプションのプロパティを設定して、ユーザーがオプションの上にマウスを置いたときに表示されるツールヒントまたは説明を提供します。

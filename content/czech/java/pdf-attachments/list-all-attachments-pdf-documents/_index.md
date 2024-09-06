@@ -21,7 +21,7 @@ Než se ponoříme do kódu, seznamme se s Aspose.PDF pro Javu. Je to výkonná 
 Než začneme, ujistěte se, že máte následující předpoklady:
 
 - Java Development Kit (JDK) nainstalovaný ve vašem systému.
--  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout[zde](https://releases.aspose.com/pdf/java/).
 
 Nyní si nastíníme kroky k vypsání všech příloh v dokumentu PDF pomocí Aspose.PDF for Java.
 
@@ -93,4 +93,4 @@ Aspose.PDF for Java dokáže zpracovat soubory PDF různých velikostí, ale vý
 
 ### Kde najdu další zdroje a dokumentaci k Aspose.PDF pro Javu?
 
- Komplexní dokumentaci a zdroje pro Aspose.PDF pro Javu naleznete na adrese[tady](https://reference.aspose.com/pdf/java/).
+ Komplexní dokumentaci a zdroje pro Aspose.PDF pro Javu naleznete na adrese[zde](https://reference.aspose.com/pdf/java/).

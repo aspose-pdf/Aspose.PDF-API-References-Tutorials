@@ -2,177 +2,132 @@
 title: 繼承放大 PDF 文件
 linktitle: 繼承放大 PDF 文件
 second_title: Aspose.PDF for .NET API 參考
-description: 使用 Aspose.PDF for .NET 輕鬆繼承 PDF 檔案中的書籤縮放。
+description: 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 繼承 PDF 檔案的縮放。增強您的 PDF 檢視體驗。
 type: docs
 weight: 90
 url: /zh-hant/net/programming-with-bookmarks/inherit-zoom/
 ---
-PDF 檔案中的縮放繼承可讓您指定書籤的預設縮放等級。使用Aspose.PDF for .NET，您可以透過以下原始程式碼輕鬆繼承縮放：
+## 介紹
 
-## 步驟1：導入所需的庫
+您是否曾經打開過 PDF 文件卻發現縮放等級完全錯誤？這可能會令人沮喪，尤其是當您試圖專注於特定內容時。幸運的是，使用 Aspose.PDF for .NET，您可以輕鬆地為 PDF 文件設定預設縮放等級。本指南將逐步引導您完成整個過程，確保您的讀者在查看 PDF 時獲得最佳體驗。所以，拿起你的編碼帽子，讓我們開始吧！
 
-在開始之前，您需要為 C# 專案匯入必要的程式庫。這是必要的導入指令：
+## 先決條件
+
+在我們開始之前，您需要準備好一些東西：
+
+1. Visual Studio：確保您的電腦上安裝了 Visual Studio。它是 .NET 開發的最佳環境。
+2.  Aspose.PDF for .NET：您需要下載並安裝 Aspose.PDF 庫。你可以找到它[這裡](https://releases.aspose.com/pdf/net/).
+3. C# 基礎知識：熟悉 C# 程式設計將有助於您更好地理解程式碼片段。
+
+## 導入包
+
+首先，您需要將必要的套件匯入到您的專案中。您可以這樣做：
+
+### 建立一個新項目
+
+開啟 Visual Studio 並建立一個新的 C# 專案。為了簡單起見，您可以選擇控制台應用程式。
+
+### 新增 Aspose.PDF 參考
+
+1. 在解決方案資源管理器中以滑鼠右鍵按一下您的專案。
+2. 選擇“管理 NuGet 套件”。
+3. 搜尋“Aspose.PDF”並安裝最新版本。
+
+### 導入命名空間
+
+在 C# 檔案的頂部，匯入 Aspose.PDF 命名空間：
 
 ```csharp
+using System;
+using System.IO;
+using Aspose.Pdf.Annotations;
 using Aspose.Pdf;
-using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## 步驟 2：設定文件資料夾路徑
+現在您已完成所有設置，讓我們繼續進行實際編碼！
 
-在此步驟中，您需要指定包含要繼承縮放的 PDF 檔案的資料夾的路徑。代替`"YOUR DOCUMENT DIRECTORY"`在以下程式碼中使用文件資料夾的實際路徑：
+## 第 1 步：定義文檔目錄
+
+首先，您需要指定文檔目錄的路徑。這是輸入 PDF 檔案所在的位置，也是儲存輸出檔案的位置。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## 步驟 3：開啟 PDF 文檔
+## 第 2 步：開啟 PDF 文檔
 
-現在我們將使用以下程式碼開啟要繼承縮放的 PDF 文件：
+接下來，您需要開啟要修改的 PDF 文件。這是使用以下方法完成的`Document`來自 Aspose.PDF 庫的類別。
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## 第四步：取得書籤集合
+## 第 3 步：存取大綱/書籤集合
 
-在此步驟中，我們將使用以下方法來取得文件的書籤或地標的集合`Outlines`的財產`doc`目的。這是對應的程式碼：
+現在，讓我們進入問題的核心：PDF 的大綱或書籤。這些是允許使用者跳到文件的特定部分的導航元素。
 
 ```csharp
 OutlineItemCollection item = new OutlineItemCollection(doc.Outlines);
 ```
 
-## 第 5 步：設定縮放級別
+## 第 4 步：設定縮放級別
 
-現在我們將透過建立一個來設定縮放級別`XYZExplicitDestination`具有指定 x、y 和 z 座標的物件。這裡我們使用座標(100, 100, 0)，縮放為2。以下是對應的程式碼：
+這就是奇蹟發生的地方！您可以使用設定縮放級別`XYZExplicitDestination`班級。在此範例中，我們將縮放等級設為 0，這表示文件將從檢視器繼承縮放等級。
 
 ```csharp
 XYZExplicitDestination dest = new XYZExplicitDestination(2, 100, 100, 0);
 ```
 
-## 第 6 步：將縮放等級加入書籤
+## 第 5 步：將操作新增至 Outlines 集合中
 
-在此步驟中，我們新增`XYZExplicitDestination`物件作為對書籤的操作`item`收藏。這是對應的程式碼：
-
-```csharp
-item. Action = new GoToAction(dest);
-```
-
-## 步驟 7：將更新後的書籤加入文件中
-
-最後，我們使用以下命令將更新後的書籤新增至文件的書籤集合中：`Add`的方法`doc.Outlines`目的。這是對應的程式碼：
+現在您已經設定了目標，是時候將此操作新增至 PDF 的輪廓集合中了。
 
 ```csharp
-doc. Outlines. Add(item);
-```
-
-## 第 8 步：儲存更新的文件
-
-現在讓我們使用以下命令儲存更新後的 PDF 文件`Save`的方法`doc`目的。這是對應的程式碼：
-
-```csharp
-dataDir = dataDir + "InheritZoom_out.pdf";
-doc.Save(dataDir);
-```
-
-### 使用 Aspose.PDF for .NET 繼承縮放的範例原始碼 
-```csharp
-//文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-//開啟文件
-Document doc = new Document(dataDir + "input.pdf");
-//取得PDF文件的大綱/書籤集合
-OutlineItemCollection item = new OutlineItemCollection(doc.Outlines);
-//將縮放等級設為 0
-XYZExplicitDestination dest = new XYZExplicitDestination(2, 100, 100, 0);
-//新增 XYZExplicitDestination 作為操作來概述 PDF 集合
 item.Action = new GoToAction(dest);
-//將項目新增至 PDF 檔案的大綱集合
+```
+
+## 步驟 6：將項目加入 Outlines 集合中
+
+接下來，您需要將該項目新增至 PDF 檔案的輪廓集合中。此步驟可確保儲存您的變更。
+
+```csharp
 doc.Outlines.Add(item);
+```
+
+## 第 7 步：儲存輸出 PDF
+
+最後，您需要儲存修改後的PDF文件。指定要儲存新檔案的路徑。
+
+```csharp
 dataDir = dataDir + "InheritZoom_out.pdf";
-//保存輸出
 doc.Save(dataDir);
+```
+
+## 第 8 步：確認更新
+
+最後，讓我們在控制台上列印確認訊息，讓我們知道一切順利。
+
+```csharp
 Console.WriteLine("\nBookmarks updated successfully.\nFile saved at " + dataDir);
 ```
 
 ## 結論
 
-恭喜！現在您有了使用 Aspose.PDF for .NET 繼承 Zoom 的逐步指南。您可以使用此程式碼指定 PDF 文件中書籤的預設縮放等級。
+現在你就擁有了！您已使用 Aspose.PDF for .NET 成功繼承了 PDF 檔案中的縮放等級。這個簡單而強大的功能可以大大增強使用者體驗，使您的文件更易於存取和導航。因此，下次創建 PDF 時，請記住設定縮放等級！
 
-請務必查看官方 Aspose.PDF 文檔，以獲取有關高級書籤操作功能的更多資訊。
+## 常見問題解答
 
-### PDF 檔案繼承縮放的常見問題解答
+### 什麼是 Aspose.PDF for .NET？
+Aspose.PDF for .NET 是一個功能強大的程式庫，可讓開發人員以程式設計方式建立、操作和轉換 PDF 文件。
 
-#### Q：什麼是 PDF 檔案中的縮放繼承？
+### 我可以免費使用 Aspose.PDF 嗎？
+是的，Aspose 提供免費試用版，您可以用它來測試該程式庫。你可以下載它[這裡](https://releases.aspose.com/).
 
-答：縮放繼承是指為 PDF 文件中的書籤指定預設縮放等級的功能。當用戶與書籤互動時，這可以實現一致且用戶友好的導航。
+### 我在哪裡可以找到文件？
+您可以找到 Aspose.PDF for .NET 的文檔[這裡](https://reference.aspose.com/pdf/net/).
 
-#### Q：為什麼我要繼承書籤的縮放等級？
+### 我如何購買許可證？
+您可以購買 Aspose.PDF for .NET 的許可證[這裡](https://purchase.aspose.com/buy).
 
-答：繼承縮放等級可確保使用者在瀏覽 PDF 文件中的書籤時獲得一致的檢視體驗。當您想要為文件的不同部分提供特定視圖時，它會特別有用。
-
-#### Q：如何導入 C# 專案所需的庫？
-
-答：要匯入 C# 專案所需的函式庫，請包含以下導入指令：
-
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.InteractiveFeatures;
-```
-
-這些指令使您能夠存取處理 PDF 文件和書籤所需的類別和方法。
-
-#### Q：如何指定文件資料夾的路徑？
-
- A：在提供的源代碼中，替換`"YOUR DOCUMENT DIRECTORY"`包含要繼承縮放等級的 PDF 檔案的資料夾的實際路徑。
-
-#### Q：如何開啟 PDF 文件以繼承縮放等級？
-
-答：要開啟 PDF 文件以繼承縮放級別，請使用以下程式碼：
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
-代替`"input.pdf"`與實際的檔案名稱。
-
-#### Q：如何設定書籤的縮放等級？
-
- A：若要設定縮放級別，請建立一個`XYZExplicitDestination`具有所需座標和縮放係數的物件。這是一個例子：
-
-```csharp
-XYZExplicitDestination dest = new XYZExplicitDestination(2, 100, 100, 0);
-```
-
-這會將座標 (100, 100) 處的縮放等級設為 2。
-
-#### Q：如何將縮放等級加到書籤？
-
-答：新增`XYZExplicitDestination`物件作為書籤集合的操作：
-
-```csharp
-item.Action = new GoToAction(dest);
-```
-
-在哪裡`item`是一個`OutlineItemCollection`代表一個書籤。
-
-#### Q：如何儲存更新後的 PDF 檔案？
-
-答：使用以下命令儲存更新的 PDF 文件`Save`的方法`doc`目的：
-
-```csharp
-dataDir = dataDir + "InheritZoom_out.pdf";
-doc.Save(dataDir);
-```
-
-#### Q：我可以為不同的書籤自訂縮放等級嗎？
-
-答：是的，您可以透過建立多個書籤來自訂不同書籤的縮放級別`XYZExplicitDestination`具有不同座標和縮放係數的物件。
-
-#### Q：我可以套用縮放繼承的書籤數量有限制嗎？
-
-答：通常，您可以應用縮放繼承的書籤數量沒有嚴格限制。然而，具有過多書籤的非常大的文件可能需要高效的記憶體管理。
-
-#### Q：如何確認縮放繼承已套用？
-
-答：開啟產生的 PDF 檔案以驗證書籤是否繼承了指定的縮放等級。
+### 如果我需要支援怎麼辦？
+如果您需要協助，可以造訪 Aspose 支援論壇[這裡](https://forum.aspose.com/c/pdf/10).

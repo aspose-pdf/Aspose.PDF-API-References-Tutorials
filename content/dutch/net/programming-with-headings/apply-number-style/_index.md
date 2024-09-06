@@ -2,18 +2,18 @@
 title: Nummerstijl toepassen in PDF-bestand
 linktitle: Nummerstijl toepassen in PDF-bestand
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u een nummeringsstijl kunt toepassen op koppen in een PDF-bestand met Aspose.PDF voor .NET. Stap voor stap handleiding.
+description: Leer hoe u een nummeringsstijl toepast op koppen in een PDF-bestand met Aspose.PDF voor .NET. Stapsgewijze handleiding.
 type: docs
 weight: 10
 url: /nl/net/programming-with-headings/apply-number-style/
 ---
-In deze zelfstudie leiden we u stap voor stap door de volgende C#-broncode om de nummeringsstijl toe te passen in een PDF-bestand met Aspose.PDF voor .NET.
+In deze tutorial leiden we u stap voor stap door de volgende C#-broncode om een nummeringsstijl toe te passen in een PDF-bestand met behulp van Aspose.PDF voor .NET.
 
-Zorg ervoor dat u de Aspose.PDF-bibliotheek hebt geïnstalleerd en uw ontwikkelomgeving hebt ingesteld voordat u begint. Daarnaast heb je basiskennis van programmeren in C#.
+Zorg ervoor dat u de Aspose.PDF-bibliotheek hebt geïnstalleerd en uw ontwikkelomgeving hebt ingesteld voordat u begint. Heb ook basiskennis van C#-programmering.
 
-### Stap 1: Documentmap instellen
+### Stap 1: Documentdirectory instellen
 
-In de meegeleverde broncode moet u de map opgeven waarin u het gegenereerde PDF-bestand wilt opslaan. Wijzig de variabele "dataDir" in de gewenste map.
+In de meegeleverde broncode moet u de directory opgeven waar u het gegenereerde PDF-bestand wilt opslaan. Wijzig de variabele "dataDir" naar de gewenste directory.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -21,7 +21,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ### Stap 2: Het PDF-document maken
 
-We maken een nieuw PDF-document met gespecificeerde afmetingen en marges.
+We maken een nieuw PDF-document met de opgegeven afmetingen en marges.
 
 ```csharp
 Document pdfDoc = new Document();
@@ -34,9 +34,9 @@ pdfDoc.PageInfo.Margin.Top = 72;
 pdfDoc.PageInfo.Margin.Bottom = 72;
 ```
 
-### Stap 3: Een pagina en zwevende container maken
+### Stap 3: Een pagina en een zwevende container maken
 
-We voegen een pagina toe aan het document en maken een zwevende container om de inhoud te ordenen.
+We voegen een pagina toe aan het document en maken een zwevende container om de inhoud te organiseren.
 
 ```csharp
 Aspose.Pdf.Page pdfPage = pdfDoc.Pages.Add();
@@ -52,9 +52,9 @@ floatBox.Margin = pdfPage.PageInfo.Margin;
 pdfPage.Paragraphs.Add(floatBox);
 ```
 
-### Stap 4: Voeg kopjes toe met nummering
+### Stap 4: Voeg koppen toe met nummering
 
-We maken headers met gespecificeerde nummeringen en voegen deze toe aan de zwevende container.
+We maken headers met specifieke nummering en voegen deze toe aan de zwevende container.
 
 ```csharp
 Aspose.Pdf.Heading heading = new Aspose.Pdf.Heading(1);
@@ -86,7 +86,7 @@ floatBox.Paragraphs.Add(heading3);
 
 ### Stap 5: Het PDF-document opslaan
 
-We slaan het gegenereerde PDF-document op in de opgegeven map.
+We slaan het gegenereerde PDF-document op in de opgegeven directory.
 
 ```csharp
 dataDir = dataDir + "ApplyNumberStyle_out.pdf";
@@ -94,7 +94,7 @@ pdfDoc.Save(dataDir);
 Console.WriteLine("\nNumbering style successfully applied to headers.\nFile saved as: " + dataDir);
 ```
 
-### Voorbeeldbroncode voor Number Style toepassen met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor Toepassen van nummerstijl met behulp van Aspose.PDF voor .NET 
 ```csharp
 
 // Het pad naar de documentenmap.
@@ -149,23 +149,23 @@ Console.WriteLine("\nNumber style applied successfully in headings.\nFile saved 
 
 ## Conclusie
 
-In deze zelfstudie hebben we uitgelegd hoe u een nummeringsstijl kunt toepassen op koppen in een PDF-document met behulp van Aspose.PDF voor .NET. U kunt deze kennis nu gebruiken om PDF-documenten te maken met aangepaste nummering voor koppen.
+In deze tutorial hebben we uitgelegd hoe u een nummeringsstijl toepast op koppen in een PDF-document met behulp van Aspose.PDF voor .NET. U kunt deze kennis nu gebruiken om PDF-documenten te maken met aangepaste nummeringen voor koppen.
 
-### Veelgestelde vragen over het toepassen van nummerstijl in PDF-bestand
+### FAQ's voor het toepassen van nummerstijl in PDF-bestand
 
-#### Vraag: Wat is de nummeringsstijl in een PDF-document?
+#### V: Wat is de nummeringsstijl in een PDF-document?
 
-A: De nummeringsstijl verwijst naar het formaat waarin koppen of secties in een PDF-document worden genummerd. Het kan cijfers, letters of andere tekens bevatten om een hiërarchische structuur te creëren.
+A: Nummeringsstijl verwijst naar het formaat waarin koppen of secties in een PDF-document worden genummerd. Het kan cijfers, letters of andere tekens bevatten om een hiërarchische structuur te bieden.
 
-#### Vraag: Waarom moet ik een nummeringsstijl toepassen op koppen in een PDF-document?
+#### V: Waarom moet ik een nummeringsstijl toepassen op koppen in een PDF-document?
 
-A: Het toepassen van een nummeringsstijl op koppen verbetert de leesbaarheid en organisatie van uw PDF-document. Het helpt lezers gemakkelijk te navigeren en de hiërarchische structuur van de inhoud te begrijpen.
+A: Het toepassen van nummeringstijl op koppen verbetert de leesbaarheid en organisatie van uw PDF-document. Het helpt lezers om eenvoudig te navigeren en de hiërarchische structuur van de inhoud te begrijpen.
 
-#### Vraag: Wat is Aspose.PDF voor .NET?
+#### V: Wat is Aspose.PDF voor .NET?
 
-A: Aspose.PDF voor .NET is een bibliotheek waarmee ontwikkelaars programmatisch met PDF-bestanden kunnen werken in .NET-toepassingen. Het biedt een breed scala aan functies voor het maken, bewerken, converteren en manipuleren van PDF-documenten.
+A: Aspose.PDF voor .NET is een bibliotheek waarmee ontwikkelaars programmatisch met PDF-bestanden kunnen werken in .NET-applicaties. Het biedt een breed scala aan functies voor het maken, bewerken, converteren en manipuleren van PDF-documenten.
 
-#### Vraag: Hoe importeer ik de vereiste bibliotheken voor mijn C#-project?
+#### V: Hoe importeer ik de vereiste bibliotheken voor mijn C#-project?
 
 A: Om de benodigde bibliotheken voor uw C#-project te importeren, neemt u de volgende importrichtlijnen op:
 
@@ -176,7 +176,7 @@ using Aspose.Pdf.InteractiveFeatures;
 
 Met deze richtlijnen krijgt u toegang tot de klassen en methoden die nodig zijn voor het werken met PDF-documenten en het toepassen van nummeringsstijlen.
 
-#### Vraag: Hoe geef ik de map op waarin het gegenereerde PDF-bestand moet worden opgeslagen?
+#### V: Hoe geef ik de map op waarin het gegenereerde PDF-bestand moet worden opgeslagen?
 
 A: Wijzig in de meegeleverde broncode de variabele "dataDir" om de map op te geven waar u het gegenereerde PDF-bestand wilt opslaan.
 
@@ -184,11 +184,11 @@ A: Wijzig in de meegeleverde broncode de variabele "dataDir" om de map op te gev
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
- Vervangen`"YOUR DOCUMENTS DIRECTORY"` met het daadwerkelijke mappad.
+ Vervangen`"YOUR DOCUMENTS DIRECTORY"` met het werkelijke directorypad.
 
-#### Vraag: Hoe maak ik een PDF-document met gespecificeerde afmetingen en marges?
+#### V: Hoe maak ik een PDF-document met de opgegeven afmetingen en marges?
 
-A: Gebruik de volgende code om een PDF-document met opgegeven afmetingen en marges te maken:
+A: Om een PDF-document met de opgegeven afmetingen en marges te maken, gebruikt u de volgende code:
 
 ```csharp
 Document pdfDoc = new Document();
@@ -201,13 +201,13 @@ pdfDoc.PageInfo.Margin.Top = 72;
 pdfDoc.PageInfo.Margin.Bottom = 72;
 ```
 
-#### Vraag: Hoe voeg ik kopjes met nummeringsstijl toe aan het PDF-document?
+#### V: Hoe voeg ik koppen met nummeringsstijl toe aan het PDF-document?
 
-A: Om koppen met een nummeringsstijl aan het PDF-document toe te voegen, gebruikt u de meegeleverde codevoorbeelden om koppen te maken en de nummeringsstijlen ervan aan te passen. Pas indien nodig eigenschappen zoals tekst, nummeringsstijl, startnummer en automatische volgorde aan.
+A: Om koppen met nummeringsstijl toe te voegen aan het PDF-document, gebruikt u de meegeleverde codevoorbeelden om koppen te maken en hun nummeringsstijlen aan te passen. Pas eigenschappen zoals tekst, nummeringsstijl, startnummer en automatische volgorde indien nodig aan.
 
-#### Vraag: Hoe bewaar ik het gegenereerde PDF-document?
+#### V: Hoe kan ik het gegenereerde PDF-document opslaan?
 
- A: Om het gegenereerde PDF-document op te slaan, gebruikt u de`Save` werkwijze van de`pdfDoc` voorwerp:
+ A: Om het gegenereerde PDF-document op te slaan, gebruikt u de`Save` methode van de`pdfDoc` voorwerp:
 
 ```csharp
 dataDir = dataDir + "ApplyNumberStyle_out.pdf";
@@ -215,14 +215,14 @@ pdfDoc.Save(dataDir);
 Console.WriteLine("\nNumbering style applied to headers.\nFile saved as: " + dataDir);
 ```
 
-#### Vraag: Hoe kan ik bevestigen dat de nummeringsstijl is toegepast?
+#### V: Hoe kan ik bevestigen dat de nummeringsstijl is toegepast?
 
-A: Open het gegenereerde PDF-bestand om te controleren of de opgegeven nummeringsstijl op de koppen is toegepast.
+A: Open het gegenereerde PDF-bestand om te controleren of de opgegeven nummeringsstijl is toegepast op de koppen.
 
-#### Vraag: Kan ik de nummeringsstijl verder aanpassen?
+#### V: Kan ik de nummeringsstijl verder aanpassen?
 
- A: Ja, u kunt de nummeringsstijl verder aanpassen door de eigenschappen van de`Heading` objecten, zoals nummeringsstijltype, startnummer en automatische volgorde.
+ A: Ja, u kunt de nummeringsstijl verder aanpassen door de eigenschappen van de`Heading` objecten, zoals het type nummering, het startnummer en de automatische volgorde.
 
-#### Vraag: Kan ik verschillende nummeringsstijlen toepassen op verschillende secties van het document?
+#### V: Kan ik verschillende nummeringsstijlen toepassen op verschillende secties van het document?
 
-A: Ja, u kunt verschillende nummeringsstijlen toepassen op verschillende secties van het document door er meerdere te maken`Heading` objecten met verschillende stijlen en sequenties.
+ A: Ja, u kunt verschillende nummeringsstijlen toepassen op verschillende secties van het document door meerdere nummeringsstijlen te maken.`Heading` objecten met verschillende stijlen en sequenties.

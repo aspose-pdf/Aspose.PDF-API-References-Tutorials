@@ -20,7 +20,7 @@ Innan du börjar, se till att du har följande:
 2. Lägg till en referens till Aspose.PDF för .NET-biblioteket.
 
 ## Steg 2: Importera nödvändiga namnrymder
-I kodfilen där du vill extrahera kolumntext, lägg till följande med hjälp av direktiv överst i filen:
+kodfilen där du vill extrahera kolumntext, lägg till följande med hjälp av direktiv överst i filen:
 
 ```csharp
 using Aspose.Pdf;
@@ -32,7 +32,7 @@ using System.IO;
  I koden, lokalisera raden som säger`string dataDir = "YOUR DOCUMENT DIRECTORY";` och byt ut`"YOUR DOCUMENT DIRECTORY"` med sökvägen till katalogen där dina dokument är lagrade.
 
 ## Steg 4: Öppna PDF-dokumentet
- Öppna ett befintligt PDF-dokument med hjälp av`Document`konstruktorn och skickar sökvägen till indata-PDF-filen.
+ Öppna ett befintligt PDF-dokument med hjälp av`Document` konstruktorn och skickar sökvägen till indata-PDF-filen.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
@@ -84,7 +84,7 @@ pdfDocument.Pages.Accept(tfa);
 TextFragmentCollection tfc = tfa.TextFragments;
 foreach (TextFragment tf in tfc)
 {
-	// Måste minska teckensnittsstorleken med minst 70 %
+	// Måste minska teckenstorleken med minst 70 %
 	tf.TextState.FontSize = tf.TextState.FontSize * 0.7f;
 }
 Stream st = new MemoryStream();

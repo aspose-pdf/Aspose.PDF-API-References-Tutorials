@@ -75,7 +75,7 @@ Mielőtt befejezné, nyissa meg a PDF-dokumentumot, és tesztelje a hivatkozást
 
 ## Következtetés
 
-Másik PDF-dokumentumra mutató hivatkozás létrehozása Java és Aspose.PDF for Java használatával egyszerű folyamat, amely javíthatja a PDF-fájlok interaktivitását és használhatóságát. Az oktatóanyagban ismertetett lépések követésével zökkenőmentesen összekapcsolhat több PDF-dokumentumot, így könnyebbé válik a navigáció a felhasználók számára.
+Egy másik PDF-dokumentumra mutató hivatkozás létrehozása Java és Aspose.PDF for Java használatával egyszerű folyamat, amely javíthatja PDF-fájljai interaktivitását és használhatóságát. Az oktatóanyagban ismertetett lépések követésével zökkenőmentesen összekapcsolhat több PDF-dokumentumot, így könnyebbé válik a navigáció a felhasználók számára.
 
 ## GYIK
 
@@ -89,7 +89,7 @@ Igen, az Aspose.PDF for Java használható kereskedelmi és nem kereskedelmi pro
 
 ### Az Aspose.PDF for Java kompatibilis a különböző Java verziókkal?
 
-Igen, az Aspose.PDF for Java kompatibilis a különböző Java-verziókkal. Ügyeljen arra, hogy a dokumentációban ellenőrizze az adott verzió kompatibilitását.
+Igen, az Aspose.PDF for Java kompatibilis a különböző Java-verziókkal. Győződjön meg arról, hogy a dokumentációban ellenőrizze az adott verzió kompatibilitását.
 
 ### Hogyan adhatok hozzá hivatkozásokat egy PDF dokumentum bizonyos oldalaihoz?
 

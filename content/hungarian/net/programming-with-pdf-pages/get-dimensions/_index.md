@@ -37,14 +37,14 @@ Page page = pdfDocument.Pages.Count > 0? pdfDocument.Pages[1] : pdfDocument.Page
 ```
 
 ## 4. lépés: Szerezze meg az oldal méreteit
- Mostantól az oldalméreteket a`GetPageRect()` módszere a`Page` tárgy. Ez a metódus visszaadja a`Rectangle` az oldal méreteit tartalmazó objektum. A szélességet és magasságot a gombbal érheti el`Width` és`Height` tulajdonságait.
+ Mostantól az oldalméreteket a`GetPageRect()` módszere a`Page` objektum. Ez a módszer visszaadja a`Rectangle` az oldal méreteit tartalmazó objektum. A szélességet és magasságot a gombbal érheti el`Width` és`Height` tulajdonságait.
 
 ```csharp
 Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRect(true).Height);
 ```
 
 ## 5. lépés: Forgassa el az oldalt
- Ha el akarja forgatni az oldalt, használhatja a`Rotate` tulajdona a`Page`tárgy. Ebben a példában az oldal 90 fokkal el van forgatva.
+ Ha el akarja forgatni az oldalt, használhatja a`Rotate` tulajdona a`Page`objektum. Ebben a példában az oldal 90 fokkal el van forgatva.
 
 ```csharp
 page. Rotate = Rotate. on90;
@@ -77,7 +77,7 @@ Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRe
 ```
 
 ## Következtetés
-Ebben az oktatóanyagban megtanultuk, hogyan lehet PDF-fájlban egy oldal méreteit lekérni az Aspose.PDF for .NET használatával. A megadott lépések követésével könnyedén kibonthatja az oldalméreteket, és más PDF-kezelési műveleteket hajthat végre. Az Aspose.PDF for .NET nagy rugalmasságot kínál a PDF-fájlokkal való munkavégzéshez, és lehetővé teszi hatékony és testreszabott megoldások fejlesztését.
+Ebben az oktatóanyagban megtanultuk, hogyan lehet PDF-fájlban egy oldal méreteit lekérni az Aspose.PDF for .NET használatával. A megadott lépések követésével könnyedén kivonhatja az oldalméreteket, és más PDF-kezelési műveleteket hajthat végre. Az Aspose.PDF for .NET nagy rugalmasságot kínál a PDF-fájlokkal való munkavégzéshez, és lehetővé teszi hatékony és testreszabott megoldások fejlesztését.
 
 Nyugodtan tanulmányozza tovább az Aspose.PDF dokumentációját, hogy felfedezze a könyvtár által kínált összes funkciót.
 

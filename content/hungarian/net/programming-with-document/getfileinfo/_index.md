@@ -2,7 +2,7 @@
 title: Fájlinformációk beszerzése PDF fájlban
 linktitle: Fájlinformációk beszerzése PDF fájlban
 second_title: Aspose.PDF for .NET API Reference
-description: Ismerje meg, hogyan használhatja az Aspose.PDF for.NET-hez készült GetFileInfo PDF fájlban funkcióját a PDF-dokumentum metaadatainak lekéréséhez.
+description: Ismerje meg az Aspose.PDF for .NET GetFileInfo PDF fájlban funkciójának használatát a PDF-dokumentum metaadatainak lekéréséhez.
 type: docs
 weight: 180
 url: /hu/net/programming-with-document/getfileinfo/
@@ -17,7 +17,7 @@ Miután letöltötte a könyvtárat, bontsa ki a ZIP-fájl tartalmát egy mappá
 
 ## 2. lépés: Töltse be a PDF-dokumentumot
 
-Miután telepítette az Aspose.PDF for .NET fájlt, és hozzáadott egy hivatkozást a DLL-re a .NET projektben, elkezdheti használni a`GetFileInfo` funkció a PDF-dokumentum metaadataival kapcsolatos információk lekéréséhez.
+ Miután telepítette az Aspose.PDF for .NET fájlt, és hozzáadott egy hivatkozást a DLL-re a .NET projektben, elkezdheti használni a`GetFileInfo` funkció a PDF-dokumentum metaadataival kapcsolatos információk lekéréséhez.
 
 A funkció használatának első lépése annak a PDF-dokumentumnak a betöltése, amelyről információkat szeretne lekérni. Ehhez a következő kódot használhatja:
 
@@ -25,7 +25,7 @@ A funkció használatának első lépése annak a PDF-dokumentumnak a betöltés
 // A PDF dokumentum elérési útja
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Nyissa meg a PDF dokumentumot
+// Nyissa meg a PDF dokumentumot
 Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
 ```
 
@@ -58,7 +58,7 @@ A fenti kódban minden sor lekéri a PDF-dokumentum eltérő metaadat-tulajdons�
 // A PDF dokumentum elérési útja
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Nyissa meg a PDF dokumentumot
+// Nyissa meg a PDF dokumentumot
 Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
 
 // Dokumentuminformációk beszerzése

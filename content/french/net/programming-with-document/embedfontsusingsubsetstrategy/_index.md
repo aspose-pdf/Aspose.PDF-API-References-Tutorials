@@ -1,93 +1,117 @@
 ---
-title: Intégrer des polices dans un fichier PDF avec une stratégie de sous-ensemble
-linktitle: Intégrer des polices avec une stratégie de sous-ensembles
-second_title: Aspose.PDF pour la référence de l'API .NET
+title: Intégrer des polices dans un fichier PDF avec la stratégie de sous-ensemble
+linktitle: Intégrer des polices avec une stratégie de sous-ensemble
+second_title: Référence de l'API Aspose.PDF pour .NET
 description: Découvrez comment intégrer des polices dans un fichier PDF avec la stratégie de sous-ensembles à l'aide d'Aspose.PDF pour .NET. Optimisez la taille de votre PDF en incorporant uniquement les caractères nécessaires.
 type: docs
 weight: 130
 url: /fr/net/programming-with-document/embedfontsusingsubsetstrategy/
 ---
-Dans ce didacticiel, nous verrons comment intégrer des polices dans un fichier PDF avec une stratégie de sous-ensemble à l'aide d'Aspose.PDF pour .NET. Aspose.PDF pour .NET est une bibliothèque puissante qui permet aux développeurs de créer, modifier et manipuler des documents PDF par programme. L'intégration de polices dans un fichier PDF est une étape importante pour garantir que le document s'affiche correctement sur différents appareils, que les polices requises soient installées ou non sur ces appareils.
+## Introduction
 
-## Étape 1 : Créer une nouvelle application console C#
-Pour commencer, créez une nouvelle application console C# dans Visual Studio. Vous pouvez le nommer comme vous le souhaitez. Une fois le projet créé, vous devez ajouter une référence à la bibliothèque Aspose.PDF pour .NET.
+À l'ère du numérique, les fichiers PDF sont devenus un élément incontournable du partage de documents. Que vous envoyiez un rapport, une présentation ou un livre électronique, il est essentiel de s'assurer que vos polices s'affichent correctement. Avez-vous déjà ouvert un PDF et constaté que le texte n'était pas le même que prévu ? Cela se produit souvent lorsque les polices utilisées dans le document ne sont pas correctement intégrées. C'est là qu'Aspose.PDF pour .NET entre en jeu ! Dans ce didacticiel, nous allons découvrir comment intégrer des polices dans un fichier PDF à l'aide de la stratégie de sous-ensemble, en veillant à ce que vos documents s'affichent exactement comme vous le souhaitiez, quel que soit l'endroit où ils sont affichés.
 
-## Étape 2 : Importer l'espace de noms Aspose.PDF
-Ajoutez la ligne de code suivante en haut de votre fichier C# pour importer l'espace de noms Aspose.PDF :
+## Prérequis
+
+Avant de plonger dans le vif du sujet de l'intégration des polices, vous devez mettre en place quelques éléments :
+
+1.  Aspose.PDF pour .NET : assurez-vous que la bibliothèque Aspose.PDF est installée. Vous pouvez la télécharger à partir de[ici](https://releases.aspose.com/pdf/net/).
+2. Visual Studio : un environnement de développement dans lequel vous pouvez écrire et tester votre code .NET.
+3. Connaissances de base de C# : la familiarité avec la programmation C# vous aidera à mieux comprendre les extraits de code.
+
+## Paquets d'importation
+
+Pour commencer, vous devez importer les packages nécessaires dans votre projet C#. Voici comment procéder :
+
+### Créer un nouveau projet
+
+Ouvrez Visual Studio et créez un nouveau projet C#. Vous pouvez choisir une application console pour plus de simplicité.
+
+### Ajouter une référence Aspose.PDF
+
+1. Faites un clic droit sur votre projet dans l’Explorateur de solutions.
+2. Sélectionnez « Gérer les packages NuGet ».
+3. Recherchez « Aspose.PDF » et installez la dernière version.
 
 ```csharp
-using Aspose.Pdf;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Étape 3 : Charger un fichier PDF existant
-Pour intégrer des polices dans un fichier PDF existant, vous devez charger ce fichier à l'aide de la classe Document. Le code suivant montre comment charger un fichier PDF existant :
+Maintenant que nous avons tout configuré, décomposons le processus d'intégration de polices dans un fichier PDF étape par étape.
+
+## Étape 1 : Configurez votre répertoire de documents
+
+Tout d'abord, nous devons définir où nos documents sont stockés. C'est crucial car nous allons lire et écrire dans ce répertoire.
 
 ```csharp
-// Le chemin d'accès au répertoire des documents.
+// Le chemin vers le répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
-// Charger un fichier PDF existant
+ Remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin réel où se trouvent vos fichiers PDF. Cela pourrait être quelque chose comme`@"C:\Documents\"`.
+
+## Étape 2 : Charger le document PDF
+
+Ensuite, nous chargerons le document PDF que nous souhaitons modifier. C'est là qu'Aspose.PDF entre en jeu, nous permettant de manipuler facilement les fichiers PDF.
+
+```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Étape 4 : Incorporer des polices avec une stratégie de sous-ensemble
-Aspose.PDF pour .NET propose deux stratégies pour l'incorporation de polices : SubsetAllFonts et SubsetEmbeddedFontsOnly.
+ Assurez-vous d'avoir un`input.pdf` fichier dans votre répertoire spécifié. Ce fichier sera celui que nous modifierons.
 
-La stratégie SubsetAllFonts intégrera toutes les polices du document en tant que sous-ensemble. Un sous-ensemble est une partie de la police qui contient uniquement les caractères utilisés dans le document. Cette stratégie est utile pour réduire la taille du fichier du document PDF.
+## Étape 3 : Sous-ensemble de toutes les polices
 
-La stratégie SubsetEmbeddedFontsOnly intégrera uniquement le sous-ensemble de polices déjà incorporées dans le document. Si une police n'est pas intégrée, elle ne sera pas affectée par cette stratégie.
-
-Le code suivant montre comment incorporer des polices dans un fichier PDF avec une stratégie de sous-ensemble :
+Passons maintenant au cœur du sujet : l'intégration des polices. Nous commencerons par intégrer toutes les polices en tant que sous-ensembles. Cela signifie que seuls les caractères utilisés dans le document seront intégrés, ce qui peut réduire considérablement la taille du fichier.
 
 ```csharp
 // Toutes les polices seront intégrées en tant que sous-ensemble dans le document dans le cas de SubsetAllFonts.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
+```
 
-// Le sous-ensemble de polices sera intégré pour les polices entièrement intégrées, mais les polices qui ne sont pas intégrées au document ne seront pas affectées.
+ En utilisant`SubsetAllFonts`, nous garantissons que toutes les polices utilisées dans le document sont intégrées, mais seuls les caractères réellement utilisés seront inclus.
+
+## Étape 4 : Sous-ensemble de polices intégrées uniquement
+
+Dans certains cas, vous souhaiterez peut-être intégrer uniquement les polices déjà intégrées au document. Cela est utile si vous souhaitez conserver l'aspect d'origine sans ajouter de nouvelles polices.
+
+```csharp
+//Un sous-ensemble de polices sera intégré pour les polices entièrement intégrées, mais les polices qui ne sont pas intégrées au document ne seront pas affectées.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
 ```
 
-## Étape 5 : Enregistrez le document PDF
-Une fois que vous avez intégré toutes les polices dans le fichier PDF avec une stratégie de sous-ensemble, vous devez enregistrer le document. Le code suivant montre comment enregistrer le fichier PDF :
+Cette ligne de code garantit que seules les polices déjà intégrées seront sous-ensembles, laissant intactes les polices non intégrées.
+
+## Étape 5 : Enregistrer le document modifié
+
+Enfin, nous devons enregistrer nos modifications. C'est ici que nous réécrivons le document modifié sur le disque.
 
 ```csharp
 doc.Save(dataDir + "Output_out.pdf");
 ```
 
-### Exemple de code source pour l'intégration de polices avec une stratégie de sous-ensembles à l'aide d'Aspose.PDF pour .NET. 
-
-```csharp
-// Le chemin d'accès au répertoire des documents.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document doc = new Document(dataDir + "input.pdf");
-// Toutes les polices seront intégrées en tant que sous-ensemble dans le document dans le cas de SubsetAllFonts.
-doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
-// Le sous-ensemble de polices sera intégré pour les polices entièrement intégrées, mais les polices qui ne sont pas intégrées au document ne seront pas affectées.
-doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
-doc.Save(dataDir + "Output_out.pdf");
-```
+ Cela créera un nouveau fichier PDF nommé`Output_out.pdf` dans votre répertoire spécifié, complet avec les polices intégrées.
 
 ## Conclusion
-Dans cet article, nous avons expliqué comment intégrer des polices dans un fichier PDF avec une stratégie de sous-ensemble à l'aide d'Aspose.PDF pour .NET. Aspose.PDF pour .NET fournit une API simple et facile à utiliser pour travailler avec des documents PDF, notamment l'ajout et l'intégration de polices avec différentes stratégies. L'intégration de polices dans un fichier PDF est une étape importante pour garantir que le document s'affiche correctement sur différents appareils, et la stratégie de sous-ensemble est une fonctionnalité utile pour réduire la taille du fichier du document PDF.
 
-### FAQ pour intégrer des polices dans un fichier PDF avec une stratégie de sous-ensemble
+Et voilà ! Vous avez réussi à intégrer des polices dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. En suivant ces étapes, vous pouvez vous assurer que vos documents conservent l'apparence souhaitée, quel que soit l'endroit où ils sont affichés. Que vous partagiez des rapports, des présentations ou tout autre type de document, l'intégration de polices est une étape cruciale pour maintenir le professionnalisme et la clarté.
 
-#### Q : Qu'est-ce qu'une stratégie de sous-ensembles pour l'intégration de polices dans un fichier PDF ?
+## FAQ
 
-R : Une stratégie de sous-ensembles pour l'incorporation de polices dans un fichier PDF signifie que seule une partie de la police contenant les caractères utilisés dans le document sera incorporée. Cela permet de réduire la taille du fichier du document PDF en éliminant les données de police inutiles.
+### Qu'est-ce que le sous-ensemble de polices ?
+Le sous-ensemble de polices est le processus consistant à inclure uniquement les caractères utilisés dans un document, plutôt que la police entière, ce qui permet de réduire la taille du fichier.
 
-#### Q : Quelle est la différence entre les stratégies SubsetAllFonts et SubsetEmbeddedFontsOnly ?
+### Pourquoi devrais-je intégrer des polices dans mon PDF ?
+L'intégration de polices garantit que votre document s'affiche de la même manière sur tous les appareils, évitant ainsi les problèmes de substitution de polices.
 
- R : Le`SubsetAllFonts`La stratégie intégrera toutes les polices dans le document en tant que sous-ensemble, tandis que la stratégie`SubsetEmbeddedFontsOnly` La stratégie n’intégrera que le sous-ensemble de polices déjà intégrées dans le document. Cette dernière stratégie n'affectera pas les polices qui ne sont pas déjà intégrées.
+### Puis-je utiliser Aspose.PDF gratuitement ?
+ Oui, Aspose propose un essai gratuit que vous pouvez utiliser pour tester la bibliothèque avant de l'acheter. Vous pouvez le trouver[ici](https://releases.aspose.com/).
 
-#### Q : Pourquoi l'intégration de polices avec une stratégie de sous-ensembles est-elle importante ?
+### Où puis-je trouver plus de documentation ?
+ Vous pouvez accéder à la documentation complète d'Aspose.PDF pour .NET[ici](https://reference.aspose.com/pdf/net/).
 
-R : L'intégration de polices avec une stratégie de sous-ensembles est importante pour garantir que le fichier PDF contient les données de police nécessaires pour afficher correctement le texte, tout en réduisant la taille du fichier en incluant uniquement les caractères utilisés dans le document.
-
-#### Q : Puis-je utiliser Aspose.PDF pour .NET pour intégrer des polices avec différentes stratégies ?
-
- R : Oui, Aspose.PDF pour .NET propose diverses stratégies d'intégration de polices, notamment`SubsetAllFonts` et`SubsetEmbeddedFontsOnly`. Vous pouvez choisir la stratégie appropriée en fonction de vos besoins.
-
-#### Q : Aspose.PDF pour .NET est-il une bibliothèque fiable pour travailler avec des documents PDF ?
-
-: Oui, Aspose.PDF pour .NET est une bibliothèque fiable et puissante pour travailler avec des documents PDF. Il fournit des fonctionnalités étendues pour créer, modifier et manipuler des fichiers PDF dans des applications .NET.
+### Que faire si je rencontre des problèmes ?
+ Si vous rencontrez des problèmes, vous pouvez demander de l'aide sur le forum d'assistance Aspose[ici](https://forum.aspose.com/c/pdf/10).

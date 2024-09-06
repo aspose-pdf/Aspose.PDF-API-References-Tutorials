@@ -1,13 +1,13 @@
 ---
-title: Tekst in de voettekst van het PDF-bestand
-linktitle: Tekst in de voettekst van het PDF-bestand
+title: Tekst in voettekst van PDF-bestand
+linktitle: Tekst in voettekst van PDF-bestand
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u tekst kunt toevoegen aan de voettekst van een PDF-bestand met Aspose.PDF voor .NET.
+description: Leer hoe u tekst toevoegt aan de voettekst van een PDF-bestand met Aspose.PDF voor .NET.
 type: docs
 weight: 180
 url: /nl/net/programming-with-stamps-and-watermarks/text-in-footer/
 ---
-In deze zelfstudie leren we hoe u tekst kunt toevoegen aan de voettekst van een PDF-bestand met behulp van Aspose.PDF voor .NET. Volg onderstaande stappen:
+In deze tutorial gaan we leren hoe we tekst kunnen toevoegen in de voettekst van een PDF-bestand met behulp van Aspose.PDF voor .NET. Volg de onderstaande stappen:
 
 ## Stap 1: Projectvoorbereiding
 
@@ -33,7 +33,7 @@ Document pdfDocument = new Document(dataDir + "TextinFooter.pdf");
 
 Zorg ervoor dat u "UW DOCUMENTENMAP" vervangt door het daadwerkelijke pad naar uw documentenmap.
 
-## Stap 4: Maak voettekst aan
+## Stap 4: Voettekst maken
 
 Maak een nieuwe tekststempel met de tekst die u in de voettekst wilt toevoegen:
 
@@ -45,7 +45,7 @@ U kunt de tekst aanpassen door de eigenschappen ervan te wijzigen, zoals de onde
 
 ## Stap 5: Voeg voettekst toe aan alle pagina's
 
-Doorloop alle pagina's van het PDF-document en voeg de tekststempel toe in de voettekst:
+Ga door alle pagina's van het PDF-document en voeg de tekststempel toe in de voettekst:
 
 ```csharp
 foreach(Page page in pdfDocument.Pages)
@@ -56,7 +56,7 @@ foreach(Page page in pdfDocument.Pages)
 
 ## Stap 6: Het PDF-document opslaan
 
-Nadat de voettekst op alle pagina's is toegevoegd, slaat u het bijgewerkte PDF-document op:
+Zodra de voettekst op alle pagina's is toegevoegd, slaat u het bijgewerkte PDF-document op:
 
 ```csharp
 dataDir = dataDir + "TextinFooter_out.pdf";
@@ -64,9 +64,9 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nText in footer added successfully.\nFile saved at: " + dataDir);
 ```
 
-Zorg ervoor dat u "UW DOCUMENTENMAP" vervangt door het daadwerkelijke pad naar de map waar u het PDF-document wilt opslaan.
+Zorg ervoor dat u "UW DOCUMENTENMAP" vervangt door het daadwerkelijke pad naar de map waarin u het PDF-document wilt opslaan.
 
-### Voorbeeldbroncode voor Textin Footer met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor Textin Footer met behulp van Aspose.PDF voor .NET 
 ```csharp
 
 // Het pad naar de documentenmap.
@@ -78,19 +78,19 @@ Document pdfDocument = new Document(dataDir+ "TextinFooter.pdf");
 // Voettekst maken
 TextStamp textStamp = new TextStamp("Footer Text");
 
-// Stel eigenschappen van de stempel in
+// Eigenschappen van de stempel instellen
 textStamp.BottomMargin = 10;
 textStamp.HorizontalAlignment = HorizontalAlignment.Center;
 textStamp.VerticalAlignment = VerticalAlignment.Bottom;
 
-// Voeg voettekst toe op alle pagina's
+// Voeg een voettekst toe op alle pagina's
 foreach (Page page in pdfDocument.Pages)
 {
 	page.AddStamp(textStamp);
 }
 dataDir = dataDir + "TextinFooter_out.pdf";
 
-// Sla het bijgewerkte PDF-bestand op
+// Bijgewerkt PDF-bestand opslaan
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nText in footer added successfully.\nFile saved at " + dataDir);
 
@@ -98,38 +98,38 @@ Console.WriteLine("\nText in footer added successfully.\nFile saved at " + dataD
 
 ## Conclusie
 
-Gefeliciteerd! U hebt geleerd hoe u tekst kunt toevoegen aan de voettekst van een PDF-document met Aspose.PDF voor .NET. U kunt nu uw voetteksten aanpassen door extra tekst aan uw PDF-documenten toe te voegen.
+Gefeliciteerd! U hebt geleerd hoe u tekst toevoegt aan de voettekst van een PDF-document met Aspose.PDF voor .NET. U kunt nu uw voetteksten aanpassen door extra tekst toe te voegen aan uw PDF-documenten.
 
-### Veelgestelde vragen over tekst in de voettekst van een PDF-bestand
+### FAQ's voor tekst in de voettekst van een PDF-bestand
 
-#### Vraag: Wat is het doel van het toevoegen van tekst in de voettekst van een PDF-document?
+#### V: Wat is het doel van het toevoegen van tekst in de voettekst van een PDF-document?
 
-A: Door tekst toe te voegen aan de voettekst van een PDF-document kunt u belangrijke informatie opnemen, zoals auteursrechtvermeldingen, paginanummers, documentversie of andere tekst die u consistent onderaan elke pagina wilt weergeven.
+A: Door tekst toe te voegen in de voettekst van een PDF-document kunt u belangrijke informatie opnemen, zoals copyrightvermeldingen, paginanummers, de documentversie of andere tekst die u consistent onderaan elke pagina wilt weergeven.
 
-#### Vraag: Hoe zorgt de meegeleverde C#-broncode voor de toevoeging van tekst in de voettekst van een PDF-document?
+#### V: Hoe wordt met de meegeleverde C#-broncode tekst toegevoegd aan de voettekst van een PDF-document?
 
-A: De code demonstreert het proces van het openen van een bestaand PDF-document, het maken van een tekststempel met de gewenste voettekst, het aanpassen van de teksteigenschappen, het toevoegen van de tekststempel aan alle pagina's en het uiteindelijk opslaan van het bijgewerkte PDF-document met de toegevoegde voettekst.
+A: De code laat zien hoe u een bestaand PDF-document opent, een tekststempel met de gewenste voettekst maakt, de teksteigenschappen aanpast, de tekststempel aan alle pagina's toevoegt en ten slotte het bijgewerkte PDF-document met de toegevoegde voettekst opslaat.
 
-#### Vraag: Kan ik het uiterlijk van de voettekst wijzigen, zoals het lettertype, de grootte, de kleur en de uitlijning?
+#### V: Kan ik het uiterlijk van de voettekst aanpassen, zoals het lettertype, de grootte, de kleur en de uitlijning?
 
- A: Ja, u kunt het uiterlijk van de voettekst aanpassen door de eigenschappen van het`TextStamp` voorwerp. Het codevoorbeeld bevat instellingseigenschappen zoals ondermarge, horizontale uitlijning en verticale uitlijning. U kunt ook het lettertype, de grootte, de kleur en andere tekstgerelateerde eigenschappen aanpassen.
+ A: Ja, u kunt het uiterlijk van de voettekst aanpassen door de eigenschappen van de voettekst te wijzigen.`TextStamp` object. Het codevoorbeeld omvat het instellen van eigenschappen zoals ondermarge, horizontale uitlijning en verticale uitlijning. U kunt ook het lettertype, de grootte, de kleur en andere tekstgerelateerde eigenschappen aanpassen.
 
-#### Vraag: Is het mogelijk om verschillende tekst toe te voegen aan de voettekst van elke pagina?
+#### V: Is het mogelijk om in de voettekst van elke pagina een andere tekst toe te voegen?
 
- A: Ja, u kunt verschillende tekst aan de voettekst van elke pagina toevoegen door er afzonderlijk een te maken`TextStamp` objecten met verschillende tekstinhoud of eigenschappen en voeg deze vervolgens indien nodig toe aan specifieke pagina's.
+ A: Ja, u kunt verschillende tekst toevoegen aan de voettekst van elke pagina door afzonderlijke`TextStamp` objecten met verschillende tekstinhoud of eigenschappen en deze vervolgens indien nodig aan specifieke pagina's toevoegen.
 
-#### Vraag: Hoe zorg ik ervoor dat de voettekst consistent op elke pagina van het PDF-document wordt weergegeven?
+#### V: Hoe zorg ik ervoor dat de voettekst consistent op elke pagina van het PDF-document wordt weergegeven?
 
-A: Door een lus te gebruiken die door alle pagina's van het PDF-document loopt en dezelfde tekststempel aan elke pagina toe te voegen, zorgt u ervoor dat de voettekst consistent op elke pagina verschijnt.
+A: Door een lus te gebruiken die door alle pagina's van het PDF-document loopt en dezelfde tekst aan elke pagina toe te voegen, zorgt u ervoor dat de voettekst op elke pagina consistent wordt weergegeven.
 
-#### Vraag: Kan ik meerdere regels tekst toevoegen of de voettekst opmaken met regeleinden?
+#### V: Kan ik meerdere tekstregels toevoegen of de voettekst opmaken met regeleinden?
 
- A: Ja, u kunt meerdere regels tekst aan de voettekst toevoegen door regeleinden in de tekstreeks op te nemen. U kunt bijvoorbeeld de escape-reeks gebruiken`\n` om een regeleinde in de tekst aan te geven.
+ A: Ja, u kunt meerdere regels tekst toevoegen aan de voettekst door regeleinden in de tekstreeks op te nemen. U kunt bijvoorbeeld de escape-reeks gebruiken`\n` om een regelafbreking in de tekst aan te geven.
 
-#### Vraag: Wat gebeurt er als ik verschillende inhoud wil toevoegen aan de kop- en voettekst van hetzelfde PDF-document?
+#### V: Wat gebeurt er als ik verschillende inhoud wil toevoegen aan de kop- en voettekst van hetzelfde PDF-document?
 
-A: Om verschillende inhoud aan de kop- en voettekstsecties toe te voegen, volgt u voor beide secties vergelijkbare stappen. De code demonstreert het toevoegen van tekst aan de voettekst; u kunt een soortgelijke aanpak gebruiken om tekst aan de koptekst toe te voegen.
+A: Om verschillende content toe te voegen aan de header- en footer-secties, volgt u vergelijkbare stappen voor beide secties. De code demonstreert het toevoegen van tekst aan de footer; u kunt een vergelijkbare aanpak gebruiken om tekst toe te voegen aan de header.
 
-#### Vraag: Is het mogelijk om op deze manier afbeeldingen of andere elementen toe te voegen aan de voettekst?
+#### V: Is het mogelijk om met deze aanpak afbeeldingen of andere elementen toe te voegen naast de voettekst?
 
-A: Hoewel de meegeleverde code specifiek het toevoegen van tekst aan de voettekst demonstreert, kunt u de aanpak uitbreiden door andere elementen zoals afbeeldingen, lijnen, vormen of andere inhoud aan de voettekst toe te voegen met behulp van de Aspose.PDF-bibliotheek.
+A: Hoewel de meegeleverde code specifiek laat zien hoe u tekst aan de voettekst toevoegt, kunt u de aanpak uitbreiden en andere elementen, zoals afbeeldingen, lijnen, vormen of andere inhoud, aan de voettekst toevoegen met behulp van de Aspose.PDF-bibliotheek.

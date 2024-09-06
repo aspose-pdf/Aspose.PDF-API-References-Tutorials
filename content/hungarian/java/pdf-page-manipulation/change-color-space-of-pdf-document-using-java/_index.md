@@ -2,7 +2,7 @@
 title: A PDF-dokumentum színterének módosítása Java használatával
 linktitle: A PDF-dokumentum színterének módosítása Java használatával
 second_title: Aspose.PDF Java PDF feldolgozó API
-description: Ismerje meg, hogyan módosíthatja a PDF-dokumentumok színterét Java használatával. Útmutató lépésről lépésre kódpéldákkal. Optimalizálja PDF-fájljait nyomtatáshoz és megjelenítéshez.
+description: Ismerje meg, hogyan módosíthatja a PDF-dokumentumok színterét Java használatával. Lépésről lépésre útmutató kódpéldákkal. Optimalizálja PDF-fájljait nyomtatáshoz és megjelenítéshez.
 type: docs
 weight: 12
 url: /hu/java/pdf-page-manipulation/change-color-space-of-pdf-document-using-java/

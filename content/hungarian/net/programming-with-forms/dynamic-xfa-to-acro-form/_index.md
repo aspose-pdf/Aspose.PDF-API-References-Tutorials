@@ -76,7 +76,7 @@ V: Igen, egy dinamikus XFA-űrlap szabványos AcroFormmá konvertálása után s
 
 #### K: Vannak-e korlátozások vagy szempontok a dinamikus XFA-űrlapok szabványos AcroForms-okká konvertálásakor?
 
-V: Igen, van néhány korlátozás, amelyet figyelembe kell venni a dinamikus XFA-űrlapok szabványos AcroForms-okká konvertálásakor. Az XFA-űrlapok összetett és dinamikus elrendezéssel rendelkezhetnek, beleértve az olyan funkciókat, mint a dinamikus táblázatok, ismétlődő szakaszok és űrlapszámítások, amelyek nem feltétlenül maradnak meg teljesen az átalakítási folyamat során. Ezenkívül előfordulhat, hogy az XFA-űrlapokra egyedi űrlapmező-tulajdonságok nem alkalmazhatók az AcroForms-ban.
+V: Igen, van néhány korlátozás, amelyet figyelembe kell venni a dinamikus XFA-űrlapok szabványos AcroForms-okká konvertálásakor. Az XFA-űrlapok összetett és dinamikus elrendezésűek lehetnek, például dinamikus táblázatokkal, ismétlődő szakaszokkal és űrlapszámításokkal, amelyek nem feltétlenül maradnak meg teljesen az átalakítási folyamat során. Ezenkívül előfordulhat, hogy az XFA-űrlapokra egyedi űrlapmező-tulajdonságok nem alkalmazhatók az AcroForms-ban.
 
 #### K: Átalakíthatok egy szabványos AcroFormot dinamikus XFA űrlapmá az Aspose.PDF for .NET használatával?
 

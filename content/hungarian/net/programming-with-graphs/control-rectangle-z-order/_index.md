@@ -13,7 +13,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy telepítette az Aspose.PDF k�
 
 ## 1. lépés: Dokumentumkönyvtár beállítása
 
-megadott forráskódban meg kell adnia azt a könyvtárat, ahová menteni szeretné az eredményül kapott PDF fájlt. Módosítsa a "dataDir" változót a kívánt könyvtárra.
+A megadott forráskódban meg kell adnia azt a könyvtárat, ahová menteni szeretné az eredményül kapott PDF fájlt. Módosítsa a "dataDir" változót a kívánt könyvtárra.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -30,7 +30,7 @@ Aspose.Pdf.Page page1 = doc1.Pages.Add();
 
 ## 3. lépés: Az oldalméret beállítása
 
-PDF oldalméretét a SetPageSize metódussal állítjuk be.
+A PDF oldalméretét a SetPageSize metódussal állítjuk be.
 
 ```csharp
 page1.SetPageSize(375, 300);
@@ -78,11 +78,11 @@ page1.SetPageSize(375, 300);
 page1.PageInfo.Margin.Left = 0;
 // Állítsa be az oldalobjektum felső margóját 0-ra
 page1.PageInfo.Margin.Top = 0;
-// Hozzon létre egy új téglalapot, amelyben a szín piros, a Z-sorrend pedig 0 és bizonyos méretek
+//Hozzon létre egy új téglalapot, amelyben a szín piros, a Z-sorrend pedig 0 és bizonyos méretek
 AddRectangle(page1, 50, 40, 60, 40, Aspose.Pdf.Color.Red, 2);
 // Hozzon létre egy új téglalapot a színnel kék, a Z-sorrenddel 0 és bizonyos méretekkel
 AddRectangle(page1, 20, 20, 30, 30, Aspose.Pdf.Color.Blue, 1);
-//Hozzon létre egy új téglalapot, ahol a szín zöld, a Z-sorrend 0 és bizonyos méretek
+// Hozzon létre egy új téglalapot, ahol a szín zöld, a Z-sorrend 0 és bizonyos méretek
 AddRectangle(page1, 40, 40, 60, 30, Aspose.Pdf.Color.Green, 0);
 dataDir = dataDir + "ControlRectangleZOrder_out.pdf";
 // Az eredményül kapott PDF fájl mentése
@@ -114,7 +114,7 @@ V: Az oldalméret és a margók beállítása segít a PDF-oldal elrendezéséne
 
 #### K: Hogyan adhatok hozzá téglalapokat meghatározott Z sorrendben?
 
- V: A gombbal téglalapokat hozhat létre és adhat hozzá az oldalhoz`AddRectangle` módszerrel, megadva az egyes téglalapok helyzetét, méreteit, színét és Z sorrendjét.
+V: A gombbal téglalapokat hozhat létre és adhat hozzá az oldalhoz`AddRectangle` módszerrel, megadva az egyes téglalapok helyzetét, méreteit, színét és Z sorrendjét.
 
 #### K: Mi az a Z-sorrend, és miért fontos?
 

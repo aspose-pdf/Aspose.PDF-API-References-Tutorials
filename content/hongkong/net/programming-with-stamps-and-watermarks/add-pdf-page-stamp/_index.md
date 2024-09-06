@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-stamps-and-watermarks/add-pdf-page-stamp/
 
 ## 第 2 步：載入 PDF 文檔
 
-第一步是將現有的 PDF 文件載入到您的專案中。就是這樣：
+第一步是將現有的 PDF 文件載入到您的專案中。方法如下：
 
 ```csharp
 //文檔目錄的路徑。
@@ -43,7 +43,7 @@ PdfPageStamp pageStamp = new PdfPageStamp(pdfDocument.Pages[1]);
 
 ## 步驟 4：設定頁面緩衝區屬性
 
-在將頁面圖章新增至 PDF 文件之前，您可以設定圖章的各種屬性，例如背景、位置、旋轉等。操作方法如下：
+在將頁面圖章新增至 PDF 文件之前，您可以設定圖章的各種屬性，例如背景、位置、旋轉等。
 
 ```csharp
 //配置頁面緩衝區屬性
@@ -57,7 +57,7 @@ pageStamp.Rotate = Rotate.on180;
 
 ## 第 5 步：將頁碼新增至 PDF
 
-現在頁面圖章已準備就緒，您可以將其新增至 PDF 文件的特定頁面。就是這樣：
+現在頁面圖章已準備就緒，您可以將其新增至 PDF 文件的特定頁面。方法如下：
 
 ```csharp
 //將頁面緩衝區新增至特定頁面
@@ -68,7 +68,7 @@ pdfDocument.Pages[1].AddStamp(pageStamp);
 
 ## 步驟 6：儲存輸出文檔
 
-新增頁戳後，您可以儲存修改後的 PDF 文件。就是這樣：
+新增頁戳後，您可以儲存修改後的 PDF 文件。方法如下：
 
 ```csharp
 //儲存輸出文檔

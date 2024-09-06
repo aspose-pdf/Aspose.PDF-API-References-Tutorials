@@ -85,4 +85,4 @@ Teljesen! Az Aspose.PDF for Java segítségével több XFA-űrlapot is konvertá
 
 ### Honnan tölthetem le az Aspose.PDF-et Java-hoz?
 
- Letöltheti az Aspose.PDF for Java könyvtárat innen[ez a link](https://releases.aspose.com/pdf/java/).
+ Letöltheti az Aspose.PDF for Java könyvtárat innen[ezt a linket](https://releases.aspose.com/pdf/java/).

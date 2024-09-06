@@ -1,17 +1,17 @@
 ---
-title: Resimleri Hızlı Küçült
-linktitle: Resimleri Hızlı Küçült
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile PDF dosyasındaki görsellerin boyutunu hızla azaltın.
+title: Hızlı Küçülen Görüntüler
+linktitle: Hızlı Küçülen Görüntüler
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET ile PDF dosyasındaki görsellerin boyutunu hızla küçültün.
 type: docs
 weight: 130
 url: /tr/net/programming-with-images/fast-shrink-images/
 ---
-Bu kılavuz, Aspose.PDF for .NET kullanarak bir PDF dosyasındaki görüntülerin boyutunu hızlı bir şekilde nasıl azaltabileceğinizi adım adım anlatacaktır. Ortamınızı zaten kurduğunuzdan emin olun ve aşağıdaki adımları izleyin:
+Bu kılavuz, Aspose.PDF for .NET kullanarak bir PDF dosyasındaki görsellerin boyutunu nasıl hızla küçülteceğinizi adım adım gösterecektir. Ortamınızı önceden ayarladığınızdan ve aşağıdaki adımları izlediğinizden emin olun:
 
 ## Adım 1: Zamanı başlatın
 
-Başlamadan önce sıkıştırma performansını ölçmek için zamanı başlatacağız. Başlangıç zamanını kaydetmek için aşağıdaki kodu ekleyin:
+Başlamadan önce, sıkıştırma performansını ölçmek için zamanı başlatacağız. Başlangıç zamanını kaydetmek için aşağıdaki kodu ekleyin:
 
 ```csharp
 var time = DateTime.Now.Ticks;
@@ -19,23 +19,23 @@ var time = DateTime.Now.Ticks;
 
 ## Adım 2: Belge dizinini tanımlayın
 
- Doğru belge dizinini ayarladığınızdan emin olun. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` PDF belgenizin bulunduğu dizinin yolunu içeren kodda.
+ Doğru belge dizinini ayarladığınızdan emin olun. Değiştir`"YOUR DOCUMENT DIRECTORY"` PDF belgenizin bulunduğu dizinin yolunu içeren kodda.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## 3. Adım: PDF belgesini açın
+## Adım 3: PDF belgesini açın
 
-Bu adımda PDF belgesini aşağıdaki komutu kullanarak açacağız:`Document` Aspose.PDF sınıfı. Kullan`Document` yapıcıya gidin ve yolu PDF belgesine iletin.
+ Bu adımda PDF belgesini şu şekilde açacağız:`Document` Aspose.PDF sınıfı. Kullanın`Document` oluşturucuyu kullanın ve PDF belgesinin yolunu geçirin.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
 ```
 
-## 4. Adım: Optimizasyon seçeneklerini başlatın
+## Adım 4: Optimizasyon seçeneklerini başlatın
 
-Bu adımda görüntü sıkıştırma için optimizasyon seçeneklerini başlatacağız. Bir örneğini oluşturun`OptimizationOptions` ve uygun seçenekleri ayarlayın. Bu örnekte görüntü sıkıştırmayı etkinleştiriyoruz, görüntü kalitesini 75'e ayarlıyoruz ve hızlı sıkıştırma sürümünü kullanıyoruz.
+ Bu adımda, görüntü sıkıştırma için optimizasyon seçeneklerini başlatacağız. Bir örnek oluşturun`OptimizationOptions` ve uygun seçenekleri ayarlayın. Bu örnekte, görüntü sıkıştırmayı etkinleştiriyoruz, görüntü kalitesini 75'e ayarlıyoruz ve hızlı sıkıştırma sürümünü kullanıyoruz.
 
 ```csharp
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();
@@ -46,38 +46,38 @@ optimizeOptions.ImageCompressionOptions.Version = Pdf.Optimization.ImageCompress
 
 ## Adım 5: PDF belgesini optimize edin
 
- Bu adımda, daha önce tanımladığımız optimizasyon seçeneklerini kullanarak PDF belgesini optimize edeceğiz. Ara`OptimizeResources` yöntemi`pdfDocument` optimizasyon seçeneklerini nesneleyin ve iletin.
+Bu adımda, daha önce tanımlanan optimizasyon seçeneklerini kullanarak PDF belgesini optimize edeceğiz.`OptimizeResources` yöntemi`pdfDocument` nesneyi seçin ve optimizasyon seçeneklerini iletin.
 
 ```csharp
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-## 6. Adım: Güncellenen PDF belgesini kaydedin
+## Adım 6: Güncellenen PDF belgesini kaydedin
 
- Güncellenen PDF belgesini kullanarak kaydedin.`Save` yöntemi`pdfDocument` nesne. PDF dosyasının çıktı yolunu belirtin.
+ Güncellenen PDF belgesini kullanarak kaydedin`Save` yöntemi`pdfDocument` nesne. PDF dosyası için çıktı yolunu belirtin.
 
 ```csharp
 dataDir = dataDir + "FastShrinkImages_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Aspose.PDF for .NET kullanan Hızlı Shrink Görüntüler için örnek kaynak kodu 
+### Aspose.PDF for .NET kullanılarak Hızlı Küçülen Görüntüler için örnek kaynak kodu 
 ```csharp
-// Zamanı Başlat
+// Başlatma Zamanı
 var time = DateTime.Now.Ticks;
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
-// OptimizasyonSeçeneklerini Başlat
+// OptimizationOptions'ı Başlat
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();
-// CompressImages seçeneğini ayarla
+// CompressImages seçeneğini ayarlayın
 optimizeOptions.ImageCompressionOptions.CompressImages = true;
 // ImageQuality seçeneğini ayarlayın
 optimizeOptions.ImageCompressionOptions.ImageQuality = 75;
-// Imagerae Sıkıştırma Sürümünü hızlı olarak ayarlayın
+// Imagae Sıkıştırma Sürümünü hızlı olarak ayarlayın
 optimizeOptions.ImageCompressionOptions.Version = Pdf.Optimization.ImageCompressionVersion.Fast;
-// OptimizationOptions'ı kullanarak PDF belgesini optimize edin
+// OptimizationOptions kullanarak PDF belgesini optimize edin
 pdfDocument.OptimizeResources(optimizeOptions);
 dataDir = dataDir + "FastShrinkImages_out.pdf";
 // Güncellenen belgeyi kaydet
@@ -88,46 +88,46 @@ Console.WriteLine("\nImage fast shrinked successfully.\nFile saved at " + dataDi
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET'i kullanarak PDF'deki görsellerin boyutunu hızla küçülttünüz. Optimize edilmiş PDF dosyası belirtilen dizine kaydedilir. Artık daha verimli depolama veya paylaşım ihtiyaçları için bu PDF dosyasını küçültülmüş resimlerle kullanabilirsiniz.
+Tebrikler! Aspose.PDF for .NET kullanarak bir PDF'deki görsellerin boyutunu hızla küçülttünüz. Optimize edilmiş PDF dosyası belirtilen dizine kaydedilir. Artık bu PDF dosyasını küçültülmüş görsellerle daha verimli depolama veya paylaşım ihtiyaçları için kullanabilirsiniz.
 
-### SSS'ler
+### SSS
 
-#### S: Neden Aspose.PDF for .NET'i kullanarak bir PDF dosyasındaki görsellerin boyutunu hızlı bir şekilde azaltmak isteyeyim?
+#### S: Aspose.PDF for .NET kullanarak bir PDF dosyasındaki görsellerin boyutunu neden hızlıca küçültmek isteyeyim?
 
-C: Bir PDF dosyasındaki görsellerin boyutunu hızla azaltmak, dosyanın depolama, paylaşım veya iletim için optimize edilmesine yardımcı olabilir, bu da performansın artmasını ve kaynak tüketiminin azalmasını sağlar.
+A: Bir PDF dosyasındaki görsellerin boyutunu hızla küçültmek, dosyanın depolanması, paylaşılması veya iletilmesi için optimize edilmesine yardımcı olabilir; bunun sonucunda performans iyileşir ve kaynak tüketimi azalır.
 
-#### S: Bir PDF belgesinde görüntü sıkıştırmanın sunduğu avantajlar nelerdir?
+#### S: PDF belgesinde görüntü sıkıştırmanın avantajları nelerdir?
 
-C: Bir PDF belgesindeki görüntü sıkıştırma, kabul edilebilir görüntü kalitesini korurken dosya boyutunun en aza indirilmesine yardımcı olur, bu da daha hızlı yükleme sürelerine, daha az depolama gereksinimlerine ve gelişmiş veri aktarım verimliliğine yol açar.
+A: PDF belgesindeki görüntü sıkıştırma, kabul edilebilir görüntü kalitesini korurken dosya boyutunu en aza indirmeye yardımcı olur, bu da daha hızlı yükleme sürelerine, daha az depolama gereksinimine ve iyileştirilmiş veri aktarım verimliliğine yol açar.
 
-#### S: Aspose.PDF for .NET, bir PDF dosyasında görüntü boyutunun hızla küçültülmesini nasıl kolaylaştırır?
+#### S: Aspose.PDF for .NET bir PDF dosyasındaki görüntü boyutunun hızlı bir şekilde küçültülmesini nasıl kolaylaştırır?
 
-C: Aspose.PDF for .NET, bir PDF belgesini açmak, görüntü sıkıştırma seçeneklerini uygulamak ve optimize edilmiş PDF dosyasını küçültülmüş görüntü boyutlarıyla kaydetmek için kolaylaştırılmış bir süreç sağlar.
+A: Aspose.PDF for .NET, bir PDF belgesini açmak, görüntü sıkıştırma seçeneklerini uygulamak ve optimize edilmiş PDF dosyasını küçültülmüş görüntü boyutlarıyla kaydetmek için kolaylaştırılmış bir süreç sağlar.
 
-####  Soru: Bunun önemi nedir?`OptimizationOptions` class in fast image size reduction?
+####  S: Bunun önemi nedir?`OptimizationOptions` class in fast image size reduction?
 
- C:`OptimizationOptions`class, PDF belgesindeki görüntülerin boyutunu etkili bir şekilde azaltmak için görüntü sıkıştırma seçenekleri de dahil olmak üzere çeşitli optimizasyon ayarlarını tanımlamanıza olanak tanır.
+ A:`OptimizationOptions` sınıfı, PDF belgesindeki görüntülerin boyutunu etkili bir şekilde azaltmak için görüntü sıkıştırma seçenekleri de dahil olmak üzere çeşitli optimizasyon ayarlarını tanımlamanıza olanak tanır.
 
 #### S: Dosya boyutu ile görüntü kalitesi arasındaki dengeyi kontrol etmek için görüntü sıkıştırma ayarlarını özelleştirebilir miyim?
 
-C: Evet, dosya boyutu ile görüntünün görünümü arasında istediğiniz dengeyi elde etmek için görüntü kalitesi ve sıkıştırma sürümü gibi parametreleri ayarlayarak görüntü sıkıştırma ayarlarını özelleştirebilirsiniz.
+C: Evet, dosya boyutu ile görüntü görünümü arasında istediğiniz dengeyi elde etmek için görüntü kalitesi ve sıkıştırma sürümü gibi parametreleri ayarlayarak görüntü sıkıştırma ayarlarını özelleştirebilirsiniz.
 
-####  S: Nasıl`pdfDocument.OptimizeResources` method work to reduce image sizes?
+####  S: Nasıl?`pdfDocument.OptimizeResources` method work to reduce image sizes?
 
- C:`OptimizeResources` yöntem, PDF belgesini analiz eder ve görüntülerin ve diğer kaynakların boyutunu azaltmak için görüntü sıkıştırma ayarları da dahil olmak üzere belirtilen optimizasyon seçeneklerini uygular.
+ A:`OptimizeResources` yöntem PDF belgesini analiz eder ve görüntü sıkıştırma ayarları da dahil olmak üzere belirtilen optimizasyon seçeneklerini uygulayarak görüntülerin ve diğer kaynakların boyutunu küçültür.
 
-#### S: Bir PDF belgesindeki belirli bir sayfa aralığına hızlı görüntü boyutu küçültme uygulamak mümkün müdür?
+#### S: PDF belgesindeki belirli bir sayfa aralığına hızlı görüntü boyutu küçültme uygulamak mümkün müdür?
 
- C:`OptimizeResources` yöntemi, optimizasyon seçeneklerini PDF belgesinin tamamına uygular. Belirli sayfalara optimizasyon uygulamak istiyorsanız optimizasyondan önce bu sayfaları yeni bir belgeye çıkarmanız gerekir.
+ A:`OptimizeResources` method, optimizasyon seçeneklerini tüm PDF belgesine uygular. Belirli sayfalara optimizasyon uygulamak istiyorsanız, optimizasyondan önce bu sayfaları yeni bir belgeye çıkarmanız gerekir.
 
-#### S: Hızlı görüntü boyutu küçültme işleminin faydalı olabileceği bazı senaryolar nelerdir?
+#### S: Hızlı görüntü boyutu küçültmenin faydalı olabileceği bazı senaryolar nelerdir?
 
-C: PDF dosyalarını çevrimiçi dağıtım, e-posta ekleri, arşivleme için hazırlarken veya çok sayıda görüntü içeren büyük belgelerle çalışırken hızlı görüntü boyutu küçültme yararlı olabilir.
+A: PDF dosyalarını çevrimiçi dağıtım için hazırlarken, e-posta ekleri olarak eklerken, arşivlerken veya çok sayıda resim içeren büyük belgelerle çalışırken hızlı resim boyutu küçültme faydalı olabilir.
 
-#### S: Resim boyutlarının küçültülmesi, PDF belgesindeki resimlerin görsel kalitesini etkiler mi?
+#### S: Görüntü boyutlarını küçültmek PDF belgesindeki görüntülerin görsel kalitesini etkiler mi?
 
-C: Sıkıştırma yoluyla görüntü boyutlarının küçültülmesi, görüntü kalitesini bir dereceye kadar etkileyebilir. Boyut küçültme ile kabul edilebilir görüntü kalitesi arasında bir denge bulmak önemlidir.
+A: Sıkıştırma yoluyla görüntü boyutlarını azaltmak görüntü kalitesini bir dereceye kadar etkileyebilir. Boyut azaltma ile kabul edilebilir görüntü kalitesi arasında bir denge bulmak önemlidir.
 
 #### S: Hızlı görüntü boyutu küçültme işleminin performansını nasıl ölçebilirim?
 
- C: Başlangıç zamanını kaydederek performansı ölçebilirsiniz.`DateTime.Now.Ticks` optimizasyon işlemi öncesi yöntem ve işlem sonrasında geçen sürenin hesaplanması.
+ A: Başlangıç zamanını kaydederek performansı ölçebilirsiniz.`DateTime.Now.Ticks` Optimizasyon işleminden önce yöntemin uygulanması ve işlemden sonra geçen zamanın hesaplanması.

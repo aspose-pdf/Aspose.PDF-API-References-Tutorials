@@ -1,23 +1,23 @@
 ---
 title: Belge Oluştur
 linktitle: Belge Oluştur
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET'i kullanarak radyo düğmeleriyle kolayca bir belge oluşturun.
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak radyo düğmeleriyle kolayca bir belge oluşturun.
 type: docs
 weight: 40
 url: /tr/net/programming-with-forms/create-doc/
 ---
-Bu eğitimde size Aspose.PDF for .NET kullanarak radyo düğmeleriyle nasıl belge oluşturulacağını göstereceğiz. Bu süreçte size yol göstermek için C# kaynak kodunu adım adım açıklayacağız.
+Bu eğitimde, .NET için Aspose.PDF kullanarak radyo düğmeleriyle bir belgenin nasıl oluşturulacağını göstereceğiz. Bu süreçte size rehberlik etmek için C# kaynak kodunu adım adım açıklayacağız.
 
-##1. Adım: Hazırlık
+##Adım 1: Hazırlık
 
-Öncelikle gerekli kitaplıkları içe aktardığınızdan ve belgeler dizininin yolunu ayarladığınızdan emin olun:
+Öncelikle gerekli kütüphaneleri içeri aktardığınızdan ve belgeler dizinine giden yolu ayarladığınızdan emin olun:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## 2. Adım: Yeni bir belge oluşturun
+## Adım 2: Yeni bir belge oluşturun
 
 PDF belgesini tutacak yeni bir Belge nesnesi oluşturun:
 
@@ -25,7 +25,7 @@ PDF belgesini tutacak yeni bir Belge nesnesi oluşturun:
 Document doc = new Document();
 ```
 
-## 3. Adım: Sayfa ekleyin
+## Adım 3: Bir sayfa ekleyin
 
 Belgeye yeni bir sayfa ekleyin:
 
@@ -33,7 +33,7 @@ Belgeye yeni bir sayfa ekleyin:
 Page page = doc.Pages.Add();
 ```
 
-## 4. Adım: Bir radyo düğmesi alanı ekleyin
+## Adım 4: Bir radyo düğmesi alanı ekleyin
 
 Bir radyo düğmesi alanı oluşturun ve konumunu ve boyutunu ayarlayın:
 
@@ -43,9 +43,9 @@ field.Rect = new Aspose.Pdf.Rectangle(40, 650, 100, 720);
 field. PartialName = "NewField";
 ```
 
-## 5. Adım: Radyo düğmesi seçeneklerini ekleyin
+## Adım 5: Radyo düğmesi seçeneklerini ekleyin
 
-İstediğiniz seçenekleri radyo düğmesi alanına ekleyin. Her seçeneğin koordinatlarını ve boyutunu gerektiği gibi ayarlayabilirsiniz:
+İstenilen seçenekleri radyo düğmesi alanına ekleyin. Her seçeneğin koordinatlarını ve boyutunu gerektiği gibi ayarlayabilirsiniz:
 
 ```csharp
 RadioButtonOptionField opt1 = new RadioButtonOptionField();
@@ -76,13 +76,13 @@ field. Add(opt3);
 
 ## Adım 6: Radyo düğmesi alanını forma ekleyin
 
-Radyo düğmesi alanını Belge Formu Alanları koleksiyonuna ekleyin:
+Belge Form Alanları koleksiyonuna radyo düğmesi alanını ekleyin:
 
 ```csharp
 doc.Form.Add(field);
 ```
 
-## 7. Adım: Belgeyi kaydedin
+## Adım 7: Belgeyi kaydedin
 
 PDF belgesini kaydedin:
 
@@ -91,11 +91,11 @@ dataDir = dataDir + "CreateDoc_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Aspose.PDF for .NET kullanarak Doküman Oluşturma için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Belge Oluşturma için örnek kaynak kodu 
 ```csharp
 try
 {
-	// Belgeler dizininin yolu.
+	// Belgeler dizinine giden yol.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	// Yeni bir belge oluştur
 	Document doc = new Document();
@@ -104,9 +104,9 @@ try
 	RadioButtonField field = new RadioButtonField(page);
 	field.Rect = new Aspose.Pdf.Rectangle(40, 650, 100, 720);
 	field.PartialName = "NewField";
-	// Radyo düğmesi seçeneklerini ekleyin. lütfen bu seçeneklerin yer aldığını unutmayın.
-	// Ne yatay ne de dikey.
-	// Onlar için herhangi bir koordinat (ve hatta boyut) ayarlamayı deneyebilirsiniz.
+	// Radyo düğmesi seçenekleri ekleyin. Lütfen bu seçeneklerin şu konumda olduğunu unutmayın:
+	// Ne yatay, ne dikey.
+	// Bunlara herhangi bir koordinat (ve hatta boyut) ayarlamayı deneyebilirsiniz.
 	RadioButtonOptionField opt1 = new RadioButtonOptionField();
 	opt1.Rect = new Aspose.Pdf.Rectangle(40, 650, 60, 670);
 	opt1.OptionName = "Item1";
@@ -142,26 +142,26 @@ catch (Exception ex)
 
 ## Çözüm
 
-Bu eğitimde Aspose.PDF for .NET kullanarak radyo düğmeleriyle nasıl belge oluşturulacağını öğrendik. Bu adımları takip ederek Aspose.PDF'yi kullanarak PDF belgelerinize kolayca radyo düğmeleri ekleyebilirsiniz.
+Bu eğitimde, .NET için Aspose.PDF kullanarak radyo düğmeleri olan bir belgenin nasıl oluşturulacağını öğrendik. Bu adımları izleyerek, Aspose.PDF kullanarak PDF belgelerinize kolayca radyo düğmeleri ekleyebilirsiniz.
 
-### SSS'ler
+### SSS
 
 #### S: Aspose.PDF for .NET'i kullanarak belgedeki radyo düğmelerinin görünümünü özelleştirebilir miyim?
 
-C: Evet, Aspose.PDF for .NET'i kullanarak belgedeki radyo düğmelerinin görünümünü özelleştirebilirsiniz. Radyo düğmelerinin görünümünü özelleştirmek için boyut, renk, kenarlık stili ve daha fazlası gibi özellikleri ayarlayabilirsiniz.
+A: Evet, Aspose.PDF for .NET kullanarak belgedeki radyo düğmelerinin görünümünü özelleştirebilirsiniz. Radyo düğmelerinin görünümünü özelleştirmek için boyut, renk, kenarlık stili ve daha fazlası gibi özellikler ayarlayabilirsiniz.
 
-#### S: Birbirini dışlayan seçeneklere sahip radyo düğmesi gruplarını nasıl ekleyebilirim?
+#### S: Karşılıklı olarak birbirini dışlayan seçeneklere sahip radyo düğmesi gruplarını nasıl ekleyebilirim?
 
-C: Birbirini dışlayan seçenekler oluşturmak için aynı ada sahip birden fazla radyo düğmesi alanı ekleyebilirsiniz. Bu, bir seçenek seçildiğinde aynı isimdeki diğer seçeneklerin seçiminin otomatik olarak kaldırılmasını sağlayacaktır.
+A: Karşılıklı olarak birbirini dışlayan seçenekler oluşturmak için aynı ada sahip birden fazla radyo düğmesi alanı ekleyebilirsiniz. Bu, bir seçenek seçildiğinde aynı ada sahip diğer seçeneklerin otomatik olarak seçilmemesini sağlar.
 
-#### S: Radyo düğmeleri için varsayılan seçili seçeneği ayarlamak mümkün müdür?
+#### S: Radyo düğmeleri için varsayılan seçili bir seçenek belirlemek mümkün müdür?
 
-C: Evet, Aspose.PDF for .NET'i kullanarak radyo düğmeleri için varsayılan seçili seçeneği ayarlayabilirsiniz. Şunu kullanabilirsiniz:`Selected` mülkiyeti`RadioButtonOptionField` Bir seçeneği varsayılan olarak seçili olarak işaretlemek için nesneyi kullanın.
+A: Evet, Aspose.PDF for .NET kullanarak radyo düğmeleri için varsayılan seçili bir seçenek ayarlayabilirsiniz.`Selected` mülkiyeti`RadioButtonOptionField` Bir seçeneği varsayılan olarak seçili olarak işaretlemek için kullanılan nesne.
 
 #### S: Radyo düğmelerine olay işleyicileri ekleyebilir miyim?
 
- C: Evet, Aspose.PDF for .NET'i kullanarak radyo düğmelerine olay işleyicileri ekleyebilirsiniz. Aşağıdaki gibi JavaScript eylemlerini ilişkilendirebilirsiniz:`OnValueChanged`Kullanıcı bir seçeneği seçtiğinde belirli eylemleri gerçekleştirmek için radyo düğmelerine.
+ A: Evet, Aspose.PDF for .NET kullanarak radyo düğmelerine olay işleyicileri ekleyebilirsiniz. JavaScript eylemlerini şu şekilde ilişkilendirebilirsiniz:`OnValueChanged`, kullanıcı bir seçeneği seçtiğinde belirli eylemleri gerçekleştirmek için radyo düğmelerine.
 
-#### S: Kullanıcı bir seçim yaptıktan sonra seçilen seçeneği radyo düğmesi grubundan nasıl alabilirim?
+#### S: Kullanıcı bir seçim yaptıktan sonra, seçili seçeneği radyo düğmesi grubundan nasıl alabilirim?
 
- C: Seçilen seçeneği Aspose.PDF for .NET'i kullanarak radyo düğmesi grubundan alabilirsiniz. Kullanıcı seçim yaptıktan sonra erişim sağlayabilirsiniz.`Selected` mülkiyeti`RadioButtonOptionField` Hangi seçeneğin seçildiğini kontrol etmek için nesne.
+ A: Aspose.PDF for .NET kullanarak seçili seçeneği radyo düğmesi grubundan alabilirsiniz. Kullanıcı bir seçim yaptıktan sonra,`Selected` mülkiyeti`RadioButtonOptionField` Hangi seçeneğin seçildiğini kontrol etmek için nesne.

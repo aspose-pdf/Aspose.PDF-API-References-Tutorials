@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-stamps-and-watermarks/image-and-page-number-i
 
 ## 第 2 步：建立 PDF 文件和頁面
 
-第一步是在 PDF 文件中建立一個新的 Document 物件和一個頁面。就是這樣：
+第一步是在 PDF 文件中建立一個新的 Document 物件和一個頁面。方法如下：
 
 ```csharp
 //文檔目錄的路徑。
@@ -35,7 +35,7 @@ Aspose.Pdf.Page page = doc.Pages.Add();
 
 ## 步驟 3：新增帶有圖像的標題
 
-現在頁面已創建，我們可以添加帶有圖像的標題部分。就是這樣：
+現在頁面已創建，我們可以添加帶有圖像的標題部分。方法如下：
 
 ```csharp
 //建立標題部分
@@ -58,7 +58,7 @@ header.Paragraphs.Add(image1);
 
 ## 步驟 4：新增頁尾和頁碼
 
-現在新增了頁眉，我們可以新增帶有頁碼的頁尾部分。就是這樣：
+現在新增了頁眉，我們可以新增帶有頁碼的頁尾部分。方法如下：
 
 ```csharp
 //建立頁尾部分
@@ -74,13 +74,13 @@ Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p o
 footer.Paragraphs.Add(txt);
 ```
 
-上面的程式碼建立一個頁腳部分，使用此部分設定頁面的頁腳，並新增一個包含文字「Page: ($p of $P )」的 TextFragment
+上面的程式碼建立一個頁腳部分，用此部分設定頁面的頁腳，並新增一個包含文字「Page: ($p of $P )」的 TextFragment
 
   顯示頁碼。
 
 ## 步驟5：儲存修改後的PDF文檔
 
-在新增頁首和頁尾後，我們就可以儲存修改後的PDF文件。就是這樣：
+在新增頁首和頁尾後，我們就可以儲存修改後的PDF文件。方法如下：
 
 ```csharp
 //儲存修改後的PDF文檔
@@ -145,7 +145,7 @@ doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
 
 答：提供的程式碼示範如何建立 PDF 文件、新增頁面，然後自訂頁首和頁尾部分。它演示瞭如何將圖像添加到頁眉以及如何將帶有頁碼的文字片段添加到頁腳。
 
-#### Q：標題可以使用任何圖像格式嗎？如何指定其路徑？
+#### Q：標題可以使用任何圖像格式嗎？
 
 答：是的，您可以使用各種圖像格式（例如 JPEG、PNG、GIF 等）作為標題圖像。影像的路徑是使用指定的`File`的財產`Aspose.Pdf.Image`目的。
 

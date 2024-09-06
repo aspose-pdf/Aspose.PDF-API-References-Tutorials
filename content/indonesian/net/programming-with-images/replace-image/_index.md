@@ -1,21 +1,21 @@
 ---
 title: Ganti Gambar Dalam File PDF
 linktitle: Ganti Gambar Dalam File PDF
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Panduan langkah demi langkah untuk mengganti gambar dalam file PDF menggunakan Aspose.PDF untuk .NET.
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Panduan langkah demi langkah untuk mengganti gambar dalam berkas PDF menggunakan Aspose.PDF untuk .NET.
 type: docs
 weight: 240
 url: /id/net/programming-with-images/replace-image/
 ---
-Dalam tutorial ini, kami akan memandu Anda tentang cara mengganti gambar dalam file PDF menggunakan Aspose.PDF untuk .NET. Ikuti langkah-langkah berikut untuk melakukan operasi ini dengan mudah.
+Dalam tutorial ini, kami akan memandu Anda untuk mengganti gambar dalam file PDF menggunakan Aspose.PDF untuk .NET. Ikuti langkah-langkah berikut untuk melakukan operasi ini dengan mudah.
 
 ## Langkah 1: Prasyarat
 
 Sebelum memulai, pastikan Anda memiliki hal berikut:
 
-- Visual Studio atau lingkungan pengembangan lainnya diinstal dan dikonfigurasi.
+- Visual Studio atau lingkungan pengembangan lainnya terinstal dan dikonfigurasi.
 - Pengetahuan dasar tentang bahasa pemrograman C#.
-- Pustaka Aspose.PDF untuk .NET diinstal. Anda dapat mendownloadnya dari situs resmi Aspose.
+- Pustaka Aspose.PDF untuk .NET telah terinstal. Anda dapat mengunduhnya dari situs web resmi Aspose.
 
 ## Langkah 2: Memuat dokumen PDF
 
@@ -38,7 +38,7 @@ Untuk mengganti gambar tertentu dalam dokumen PDF, gunakan kode berikut:
 pdfDocument.Pages[1].Resources.Images.Replace(1, new FileStream(dataDir + "aspose-logo.jpg", FileMode.Open));
 ```
 
-Dalam contoh ini, kami mengganti gambar yang terletak di halaman 1 dokumen PDF. Pastikan untuk memberikan jalur yang benar ke gambar baru yang ingin Anda gunakan.
+Dalam contoh ini, kami mengganti gambar yang terdapat pada halaman 1 dokumen PDF. Pastikan untuk memberikan jalur yang benar ke gambar baru yang ingin Anda gunakan.
 
 ## Langkah 4: Menyimpan file PDF yang diperbarui
 
@@ -69,34 +69,34 @@ Console.WriteLine("\nImage replaced successfully.\nFile saved at " + dataDir);
 
 ## Kesimpulan
 
-Selamat! Anda telah berhasil mengganti gambar dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Sekarang Anda dapat menerapkan metode ini pada proyek Anda sendiri untuk mengedit gambar dalam file PDF.
+Selamat! Anda telah berhasil mengganti gambar dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Sekarang Anda dapat menerapkan metode ini ke proyek Anda sendiri untuk mengedit gambar dalam file PDF.
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
-#### T: Mengapa saya ingin mengganti gambar dalam file PDF menggunakan Aspose.PDF untuk .NET?
+#### T: Mengapa saya ingin mengganti gambar dalam berkas PDF menggunakan Aspose.PDF untuk .NET?
 
-J: Mengganti gambar dalam file PDF dapat berguna untuk memperbarui grafik, logo, atau elemen visual lainnya dalam dokumen PDF. Ini memungkinkan Anda membuat perubahan pada konten PDF tanpa mengubah struktur atau tata letak dokumen lainnya.
+J: Mengganti gambar dalam berkas PDF dapat berguna untuk memperbarui grafik, logo, atau elemen visual lainnya dalam dokumen PDF. Hal ini memungkinkan Anda membuat perubahan pada konten PDF tanpa mengubah struktur atau tata letak dokumen lainnya.
 
-####  T: Peran apa yang dilakukan`Document` class play in replacing an image?
+####  T: Apa peran`Document` class play in replacing an image?
 
- J: Itu`Document` kelas dari perpustakaan Aspose.PDF digunakan untuk membuka, memanipulasi, dan menyimpan dokumen PDF secara terprogram. Dalam tutorial ini, digunakan untuk membuka dokumen PDF, mengganti gambar tertentu, dan menyimpan dokumen yang diperbarui.
+ Sebuah:`Document` Kelas dari pustaka Aspose.PDF digunakan untuk membuka, memanipulasi, dan menyimpan dokumen PDF secara terprogram. Dalam tutorial ini, kelas ini digunakan untuk membuka dokumen PDF, mengganti gambar tertentu, dan menyimpan dokumen yang diperbarui.
 
 #### T: Bagaimana cara menentukan gambar mana yang akan diganti dalam dokumen PDF?
 
- A: Dalam kode yang disediakan, baris`pdfDocument.Pages[1].Resources.Images.Replace(1, new FileStream(dataDir + "aspose-logo.jpg", FileMode.Open));` menggantikan gambar yang terletak di halaman 1 dokumen PDF. Nomor`1`mewakili indeks gambar yang akan diganti. Sesuaikan nomor ini untuk menargetkan gambar yang berbeda jika diperlukan.
+ A: Pada kode yang diberikan, baris`pdfDocument.Pages[1].Resources.Images.Replace(1, new FileStream(dataDir + "aspose-logo.jpg", FileMode.Open));` menggantikan gambar yang terletak di halaman 1 dokumen PDF. Nomor`1`mewakili indeks gambar yang akan diganti. Sesuaikan angka ini untuk menargetkan gambar lain jika diperlukan.
 
-#### T: Dapatkah saya mengganti gambar pada halaman mana pun di dokumen PDF?
+#### T: Dapatkah saya mengganti gambar pada halaman mana pun pada dokumen PDF?
 
- J: Ya, Anda dapat mengganti gambar di halaman mana pun pada dokumen PDF. Cukup ubah indeks di`pdfDocument.Pages[1]` bagian dari kode untuk menargetkan halaman yang diinginkan.
+ A: Ya, Anda dapat mengganti gambar di halaman mana pun dari dokumen PDF. Cukup ubah indeks di`pdfDocument.Pages[1]` bagian kode untuk menargetkan halaman yang diinginkan.
 
 #### T: Format file apa yang didukung untuk mengganti gambar?
 
-A: Dalam kode yang disediakan, gambar baru dimuat dari file JPEG (`aspose-logo.jpg`). Aspose.PDF untuk .NET mendukung berbagai format gambar, termasuk JPEG, PNG, GIF, BMP, dan banyak lagi. Pastikan untuk memberikan jalur yang benar ke file gambar baru dan pastikan formatnya kompatibel.
+A: Dalam kode yang diberikan, gambar baru dimuat dari file JPEG (`aspose-logo.jpg`). Aspose.PDF untuk .NET mendukung berbagai format gambar, termasuk JPEG, PNG, GIF, BMP, dan banyak lagi. Pastikan untuk memberikan jalur yang benar ke berkas gambar baru dan pastikan formatnya kompatibel.
 
 ####  T: Bagaimana caranya`pdfDocument.Save` method update the PDF file after image replacement?
 
- J: Itu`pdfDocument.Save` metode ini digunakan untuk menyimpan dokumen PDF yang diperbarui setelah penggantian gambar. Ini menimpa file PDF asli dengan konten yang dimodifikasi, secara efektif menggantikan gambar. Pastikan untuk memberikan jalur keluaran dan nama file yang diinginkan untuk file PDF yang diperbarui.
+ Sebuah:`pdfDocument.Save` Metode ini digunakan untuk menyimpan dokumen PDF yang diperbarui setelah penggantian gambar. Metode ini akan menimpa berkas PDF asli dengan konten yang dimodifikasi, sehingga secara efektif mengganti gambar. Pastikan untuk memberikan jalur keluaran dan nama berkas yang diinginkan untuk berkas PDF yang diperbarui.
 
-#### T: Apakah mungkin mengganti banyak gambar dalam satu dokumen PDF?
+#### T: Apakah mungkin untuk mengganti beberapa gambar dalam satu dokumen PDF?
 
-J: Ya, Anda dapat mengganti beberapa gambar dalam satu dokumen PDF dengan memanggil`Replace` metode untuk setiap gambar yang ingin Anda ganti. Ubah indeks dan sumber gambar untuk setiap penggantian.
+A: Ya, Anda dapat mengganti beberapa gambar dalam satu dokumen PDF dengan memanggil`Replace` metode untuk setiap gambar yang ingin Anda ganti. Ubah indeks dan sumber gambar untuk setiap penggantian sebagaimana mestinya.

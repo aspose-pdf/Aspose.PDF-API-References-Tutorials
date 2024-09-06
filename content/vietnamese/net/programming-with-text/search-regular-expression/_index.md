@@ -1,28 +1,28 @@
 ---
 title: Tìm kiếm biểu thức chính quy trong tệp PDF
 linktitle: Tìm kiếm biểu thức chính quy trong tệp PDF
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Tìm hiểu cách tìm kiếm và truy xuất văn bản bằng cách sử dụng cụm từ thông dụng trong tệp PDF bằng Aspose.PDF cho .NET.
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Tìm hiểu cách tìm kiếm và truy xuất văn bản bằng biểu thức chính quy trong tệp PDF bằng Aspose.PDF cho .NET.
 type: docs
 weight: 440
 url: /vi/net/programming-with-text/search-regular-expression/
 ---
-Hướng dẫn này giải thích cách sử dụng Aspose.PDF cho .NET để tìm kiếm và truy xuất văn bản khớp với biểu thức chính quy trong tệp PDF. Mã nguồn C# được cung cấp thể hiện quy trình từng bước.
+Hướng dẫn này giải thích cách sử dụng Aspose.PDF cho .NET để tìm kiếm và truy xuất văn bản khớp với biểu thức chính quy trong tệp PDF. Mã nguồn C# được cung cấp sẽ trình bày từng bước của quy trình.
 
 ## Điều kiện tiên quyết
 
-Trước khi tiếp tục với hướng dẫn, hãy đảm bảo bạn có những điều sau:
+Trước khi thực hiện hướng dẫn, hãy đảm bảo bạn có những điều sau:
 
 - Kiến thức cơ bản về ngôn ngữ lập trình C#.
-- Đã cài đặt thư viện Aspose.PDF cho .NET. Bạn có thể lấy nó từ trang web Aspose hoặc sử dụng NuGet để cài đặt nó trong dự án của bạn.
+- Đã cài đặt thư viện Aspose.PDF cho .NET. Bạn có thể tải xuống từ trang web Aspose hoặc sử dụng NuGet để cài đặt vào dự án của bạn.
 
 ## Bước 1: Thiết lập dự án
 
-Bắt đầu bằng cách tạo một dự án C# mới trong môi trường phát triển tích hợp (IDE) ưa thích của bạn và thêm tham chiếu vào thư viện Aspose.PDF cho .NET.
+Bắt đầu bằng cách tạo một dự án C# mới trong môi trường phát triển tích hợp (IDE) mà bạn thích và thêm tham chiếu đến thư viện Aspose.PDF cho .NET.
 
 ## Bước 2: Nhập các không gian tên cần thiết
 
-Thêm các lệnh sử dụng sau vào đầu tệp C# của bạn để nhập các không gian tên được yêu cầu:
+Thêm lệnh using sau vào đầu tệp C# của bạn để nhập các không gian tên cần thiết:
 
 ```csharp
 using Aspose.Pdf;
@@ -38,19 +38,19 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionAll.pdf");
 ```
 
- Đảm bảo thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế đến thư mục tài liệu của bạn.
+ Hãy chắc chắn thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế đến thư mục tài liệu của bạn.
 
 ## Bước 4: Tìm kiếm bằng biểu thức chính quy
 
- Tạo một`TextFragmentAbsorber` đối tượng và đặt mẫu biểu thức chính quy để tìm tất cả các cụm từ khớp với mẫu:
+ Tạo một`TextFragmentAbsorber` đối tượng và thiết lập mẫu biểu thức chính quy để tìm tất cả các cụm từ khớp với mẫu:
 
 ```csharp
-TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Như 1999-2000
+TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Giống như 1999-2000
 ```
 
- Thay thế`"\\d{4}-\\d{4}"` với mẫu biểu thức chính quy mong muốn của bạn.
+ Thay thế`"\\d{4}-\\d{4}"` với mẫu biểu thức chính quy bạn mong muốn.
 
-## Bước 5: Đặt tùy chọn tìm kiếm văn bản
+## Bước 5: Thiết lập tùy chọn tìm kiếm văn bản
 
  Tạo một`TextSearchOptions` đối tượng và đặt nó vào`TextSearchOptions` tài sản của`TextFragmentAbsorber` đối tượng để cho phép sử dụng biểu thức chính quy:
 
@@ -61,13 +61,13 @@ textFragmentAbsorber.TextSearchOptions = textSearchOptions;
 
 ## Bước 6: Tìm kiếm trên tất cả các trang
 
-Chấp nhận phần hấp thụ cho tất cả các trang của tài liệu:
+Chấp nhận bộ hấp thụ cho tất cả các trang của tài liệu:
 
 ```csharp
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 ```
 
-## Bước 7: Truy xuất các đoạn văn bản đã trích xuất
+## Bước 7: Lấy lại các đoạn văn bản đã trích xuất
 
 Lấy các đoạn văn bản được trích xuất bằng cách sử dụng`TextFragments` tài sản của`TextFragmentAbsorber` sự vật:
 
@@ -77,7 +77,7 @@ TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragmen
 
 ## Bước 8: Lặp qua các đoạn văn bản
 
-Lặp lại các đoạn văn bản được truy xuất và truy cập các thuộc tính của chúng:
+Lặp qua các đoạn văn bản đã lấy được và truy cập vào các thuộc tính của chúng:
 
 ```csharp
 foreach (TextFragment textFragment in textFragmentCollection)
@@ -97,22 +97,22 @@ foreach (TextFragment textFragment in textFragmentCollection)
 
 Bạn có thể sửa đổi mã trong vòng lặp để thực hiện các hành động tiếp theo trên từng đoạn văn bản.
 
-### Mã nguồn mẫu cho Tìm kiếm biểu thức chính quy bằng Aspose.PDF cho .NET 
+### Mã nguồn mẫu cho Search Regular Expression sử dụng Aspose.PDF cho .NET 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Mở tài liệu
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionAll.pdf");
 // Tạo đối tượng TextAbsorber để tìm tất cả các cụm từ khớp với biểu thức chính quy
-TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Như 1999-2000
+TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Giống như 1999-2000
 // Đặt tùy chọn tìm kiếm văn bản để chỉ định cách sử dụng biểu thức chính quy
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textFragmentAbsorber.TextSearchOptions = textSearchOptions;
 // Chấp nhận bộ hấp thụ cho tất cả các trang
 pdfDocument.Pages.Accept(textFragmentAbsorber);
-// Lấy các đoạn văn bản được trích xuất
+// Lấy các đoạn văn bản đã trích xuất
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// Lặp lại các mảnh vỡ
+// Lặp lại các đoạn
 foreach (TextFragment textFragment in textFragmentCollection)
 {
 	Console.WriteLine("Text : {0} ", textFragment.Text);
@@ -130,46 +130,46 @@ foreach (TextFragment textFragment in textFragmentCollection)
 
 ## Phần kết luận
 
-Chúc mừng! Bạn đã học thành công cách tìm kiếm và truy xuất văn bản khớp với biểu thức chính quy trong tài liệu PDF bằng Aspose.PDF cho .NET. Hướng dẫn này cung cấp hướng dẫn từng bước, từ tải tài liệu đến truy cập các đoạn văn bản được trích xuất. Bây giờ bạn có thể kết hợp mã này vào các dự án C# của riêng mình để thực hiện tìm kiếm văn bản nâng cao trong tệp PDF.
+Xin chúc mừng! Bạn đã học thành công cách tìm kiếm và truy xuất văn bản khớp với biểu thức chính quy trong tài liệu PDF bằng Aspose.PDF cho .NET. Hướng dẫn này cung cấp hướng dẫn từng bước, từ tải tài liệu đến truy cập các đoạn văn bản đã trích xuất. Bây giờ bạn có thể kết hợp mã này vào các dự án C# của riêng mình để thực hiện tìm kiếm văn bản nâng cao trong các tệp PDF.
 
 ### Câu hỏi thường gặp
 
-#### Hỏi: Mục đích của hướng dẫn "Tìm kiếm biểu thức chính quy trong tệp PDF" là gì?
+#### H: Mục đích của hướng dẫn "Tìm kiếm biểu thức chính quy trong tệp PDF" là gì?
 
-Đáp: Hướng dẫn "Tìm kiếm biểu thức chính quy trong tệp PDF" nhằm mục đích giới thiệu cách sử dụng thư viện Aspose.PDF cho .NET để tìm kiếm và trích xuất văn bản khớp với mẫu biểu thức chính quy được chỉ định trong tệp PDF. Hướng dẫn này cung cấp hướng dẫn toàn diện và mã C# mẫu để minh họa quy trình.
+A: Hướng dẫn "Tìm kiếm biểu thức chính quy trong tệp PDF" nhằm mục đích giới thiệu cách sử dụng thư viện Aspose.PDF cho .NET để tìm kiếm và trích xuất văn bản khớp với mẫu biểu thức chính quy được chỉ định trong tệp PDF. Hướng dẫn cung cấp hướng dẫn toàn diện và mã C# mẫu để chứng minh quy trình.
 
-#### Hỏi: Hướng dẫn này giúp ích như thế nào trong việc tìm kiếm văn bản bằng cách sử dụng các biểu thức thông thường trong tài liệu PDF?
+#### H: Hướng dẫn này giúp ích như thế nào trong việc tìm kiếm văn bản bằng biểu thức chính quy trong tài liệu PDF?
 
-Đáp: Hướng dẫn này cung cấp cách tiếp cận từng bước để sử dụng thư viện Aspose.PDF để tiến hành tìm kiếm văn bản trong tài liệu PDF dựa trên mẫu biểu thức chính quy. Nó trình bày chi tiết cách thiết lập dự án, tải tài liệu PDF, xác định mẫu biểu thức chính quy và truy xuất các đoạn văn bản phù hợp.
+A: Hướng dẫn này cung cấp cách tiếp cận từng bước để sử dụng thư viện Aspose.PDF để thực hiện tìm kiếm văn bản trong tài liệu PDF dựa trên mẫu biểu thức chính quy. Hướng dẫn này trình bày chi tiết cách thiết lập dự án, tải tài liệu PDF, xác định mẫu biểu thức chính quy và truy xuất các đoạn văn bản khớp.
 
-#### Hỏi: Điều kiện tiên quyết để làm theo hướng dẫn này là gì?
+#### H: Cần có những điều kiện tiên quyết nào để thực hiện hướng dẫn này?
 
-Đáp: Trước khi bắt đầu hướng dẫn này, bạn nên có hiểu biết cơ bản về ngôn ngữ lập trình C#. Ngoài ra, bạn cần cài đặt thư viện Aspose.PDF for .NET. Bạn có thể lấy nó từ trang web Aspose hoặc sử dụng NuGet để tích hợp nó vào dự án của bạn.
+A: Trước khi bắt đầu hướng dẫn này, bạn nên có hiểu biết cơ bản về ngôn ngữ lập trình C#. Ngoài ra, bạn cần cài đặt thư viện Aspose.PDF cho .NET. Bạn có thể tải xuống từ trang web Aspose hoặc sử dụng NuGet để tích hợp vào dự án của mình.
 
-#### Hỏi: Làm cách nào để thiết lập dự án của tôi theo hướng dẫn này?
+#### H: Tôi phải thiết lập dự án của mình như thế nào để thực hiện theo hướng dẫn này?
 
-Đáp: Để bắt đầu, hãy tạo một dự án C# mới trong môi trường phát triển tích hợp (IDE) ưa thích của bạn và thêm tham chiếu vào thư viện Aspose.PDF cho .NET. Điều này sẽ cho phép bạn tận dụng khả năng của thư viện trong dự án của mình.
+A: Để bắt đầu, hãy tạo một dự án C# mới trong môi trường phát triển tích hợp (IDE) ưa thích của bạn và thêm tham chiếu đến thư viện Aspose.PDF cho .NET. Điều này sẽ cho phép bạn tận dụng các khả năng của thư viện trong dự án của mình.
 
-#### Câu hỏi: Tôi có thể sử dụng biểu thức chính quy để tìm kiếm văn bản trong tài liệu PDF không?
+#### H: Tôi có thể sử dụng biểu thức chính quy để tìm kiếm văn bản trong tài liệu PDF không?
 
- Đáp: Có, hướng dẫn này trình bày cách sử dụng biểu thức chính quy để tìm kiếm và trích xuất văn bản từ tài liệu PDF. Nó bao gồm việc sử dụng các`TextFragmentAbsorber` lớp và chỉ định mẫu biểu thức chính quy để tìm các cụm từ khớp với mẫu được cung cấp.
+ A: Vâng, hướng dẫn này trình bày cách sử dụng biểu thức chính quy để tìm kiếm và trích xuất văn bản từ tài liệu PDF. Nó bao gồm việc sử dụng`TextFragmentAbsorber` lớp và chỉ định một mẫu biểu thức chính quy để tìm cụm từ khớp với mẫu được cung cấp.
 
-#### Câu hỏi: Làm cách nào để xác định mẫu biểu thức chính quy cho tìm kiếm văn bản?
+#### H: Làm thế nào để xác định mẫu biểu thức chính quy cho tìm kiếm văn bản?
 
- Đáp: Để xác định mẫu biểu thức chính quy cho tìm kiếm văn bản, hãy tạo một`TextFragmentAbsorber` đối tượng và thiết lập mẫu của nó bằng cách sử dụng`Text` tham số. Thay thế mẫu mặc định`"\\d{4}-\\d{4}"` trong mã của hướng dẫn bằng mẫu biểu thức chính quy mà bạn mong muốn.
+ A: Để xác định mẫu biểu thức chính quy cho tìm kiếm văn bản, hãy tạo một`TextFragmentAbsorber` đối tượng và thiết lập mẫu của nó bằng cách sử dụng`Text` tham số. Thay thế mẫu mặc định`"\\d{4}-\\d{4}"` trong mã hướng dẫn với mẫu biểu thức chính quy mong muốn của bạn.
 
-#### Câu hỏi: Làm cách nào tôi có thể bật tính năng sử dụng biểu thức chính quy để tìm kiếm văn bản?
+#### H: Làm thế nào tôi có thể bật tính năng sử dụng biểu thức chính quy để tìm kiếm văn bản?
 
- Đáp: Việc sử dụng biểu thức chính quy được kích hoạt bằng cách tạo một`TextSearchOptions` đối tượng và đặt giá trị của nó thành`true` . Gán đối tượng này vào`TextSearchOptions` tài sản của`TextFragmentAbsorber` ví dụ. Điều này đảm bảo rằng mẫu biểu thức chính quy được áp dụng trong quá trình tìm kiếm văn bản.
+ A: Việc sử dụng biểu thức chính quy được kích hoạt bằng cách tạo một`TextSearchOptions` đối tượng và thiết lập giá trị của nó thành`true` . Gán đối tượng này cho`TextSearchOptions` tài sản của`TextFragmentAbsorber` Ví dụ. Điều này đảm bảo rằng mẫu biểu thức chính quy được áp dụng trong quá trình tìm kiếm văn bản.
 
-#### Câu hỏi: Tôi có thể truy xuất các đoạn văn bản khớp với mẫu biểu thức chính quy không?
+#### H: Tôi có thể lấy các đoạn văn bản khớp với mẫu biểu thức chính quy không?
 
- Đ: Chắc chắn rồi. Sau khi áp dụng tìm kiếm biểu thức chính quy trên tài liệu PDF, bạn có thể truy xuất các đoạn văn bản được trích xuất bằng cách sử dụng`TextFragments` tài sản của`TextFragmentAbsorber` sự vật. Các đoạn văn bản này chứa các đoạn văn bản khớp với mẫu biểu thức chính quy đã chỉ định.
+ A: Hoàn toàn đúng. Sau khi áp dụng tìm kiếm biểu thức chính quy trên tài liệu PDF, bạn có thể lấy lại các đoạn văn bản đã trích xuất bằng cách sử dụng`TextFragments` tài sản của`TextFragmentAbsorber` đối tượng. Các đoạn văn bản này chứa các phân đoạn văn bản khớp với mẫu biểu thức chính quy đã chỉ định.
 
-#### Câu hỏi: Tôi có thể truy cập những gì từ các đoạn văn bản được truy xuất?
+#### H: Tôi có thể truy cập những gì từ các đoạn văn bản đã lấy?
 
-Trả lời: Từ các đoạn văn bản được truy xuất, bạn có thể truy cập các thuộc tính khác nhau như nội dung văn bản trùng khớp, vị trí (tọa độ X và Y), thông tin phông chữ (tên, kích thước, màu sắc), v.v. Mã mẫu trong vòng lặp của hướng dẫn này minh họa cách truy cập và hiển thị các thuộc tính này.
+A: Từ các đoạn văn bản đã lấy, bạn có thể truy cập nhiều thuộc tính khác nhau như nội dung văn bản khớp, vị trí (tọa độ X và Y), thông tin phông chữ (tên, kích thước, màu sắc) và nhiều hơn nữa. Mã mẫu trong vòng lặp của hướng dẫn trình bày cách truy cập và hiển thị các thuộc tính này.
 
-#### Câu hỏi: Làm cách nào tôi có thể tùy chỉnh các thao tác trên các đoạn văn bản được trích xuất?
+#### H: Làm thế nào tôi có thể tùy chỉnh các hành động trên các đoạn văn bản đã trích xuất?
 
-Đáp: Sau khi đã trích xuất các đoạn văn bản, bạn có thể tùy chỉnh mã trong vòng lặp để thực hiện các hành động bổ sung trên từng đoạn văn bản. Điều này có thể bao gồm lưu văn bản được trích xuất, phân tích mẫu hoặc thực hiện các thay đổi định dạng dựa trên yêu cầu của bạn.
+A: Sau khi bạn đã trích xuất được các đoạn văn bản, bạn có thể tùy chỉnh mã trong vòng lặp để thực hiện các hành động bổ sung trên mỗi đoạn văn bản. Điều này có thể bao gồm lưu văn bản đã trích xuất, phân tích các mẫu hoặc triển khai các thay đổi định dạng dựa trên yêu cầu của bạn.

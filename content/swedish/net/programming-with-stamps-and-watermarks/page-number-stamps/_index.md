@@ -18,7 +18,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 2: Laddar det befintliga PDF-dokumentet
 
-Det första steget är att ladda det befintliga PDF-dokumentet i ditt projekt. Här är hur:
+Det första steget är att ladda det befintliga PDF-dokumentet i ditt projekt. Så här gör du:
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -32,7 +32,7 @@ Var noga med att ersätta "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till
 
 ## Steg 3: Skapa och konfigurera sidnumreringsstämpeln
 
-Nu när PDF-dokumentet är laddat kan vi skapa en sidnumreringsbuffert och konfigurera den efter våra behov. Här är hur:
+Nu när PDF-dokumentet är laddat kan vi skapa en sidnumreringsbuffert och konfigurera den efter våra behov. Så här gör du:
 
 ```csharp
 // Skapa en sidnummerbuffert
@@ -65,7 +65,7 @@ Ovanstående kod skapar en sidnummerstämpel med egenskaper som sidnummerformat,
 
 ## Steg 4: Lägga till sidnummerstämpeln på en specifik sida
 
-När sidnummerstämpeln är konfigurerad kan vi lägga till den på en specifik sida i PDF-dokumentet. Här är hur:
+När sidnummerstämpeln är konfigurerad kan vi lägga till den på en specifik sida i PDF-dokumentet. Så här gör du:
 
 ```csharp
 // Lägg till sidnummerbufferten på en specifik sida
@@ -76,7 +76,7 @@ Ovanstående kod lägger till sidnummerstämpeln på första sidan i PDF-dokumen
 
 ## Steg 5: Spara det ändrade PDF-dokumentet
 
-När sidnummerstämpeln har lagts till i PDF-dokumentet kan vi spara det ändrade PDF-dokumentet. Här är hur:
+När sidnummerstämpeln har lagts till i PDF-dokumentet kan vi spara det ändrade PDF-dokumentet. Så här gör du:
 
 ```csharp
 // Spara det ändrade PDF-dokumentet
@@ -125,7 +125,7 @@ Console.WriteLine("\nPage number stamp added successfully.\nFile saved at " + da
 
 Grattis! Du har lärt dig hur du lägger till sidnummerstämplar i ett PDF-dokument med Aspose.PDF för .NET. Du kan nu anpassa dina PDF-dokument genom att lägga till tydliga och informativa sidnummer.
 
-### Vanliga frågor för sidnummerstämplar i PDF-fil
+### Vanliga frågor om sidnummerstämplar i PDF-fil
 
 #### F: Vad är en sidnummerstämpel och hur används den för att lägga till sidnummer i en PDF-fil?
 

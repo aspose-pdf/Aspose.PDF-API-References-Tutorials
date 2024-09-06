@@ -1,8 +1,8 @@
 ---
-title: Uzyskaj miejsce docelowe hiperłącza PDF przy użyciu języka Java
-linktitle: Uzyskaj miejsce docelowe hiperłącza PDF przy użyciu języka Java
-second_title: Aspose.PDF Interfejs API przetwarzania plików Java w formacie Java
-description: Dowiedz się, jak odzyskać miejsca docelowe hiperłączy PDF przy użyciu Java z Aspose.PDF dla Java. Dowiedz się krok po kroku, korzystając z przykładów kodu w tym obszernym samouczku.
+title: Pobierz PDF Hyperlink Destination za pomocą Java
+linktitle: Pobierz PDF Hyperlink Destination za pomocą Java
+second_title: Aspose.PDF Java PDF Processing API
+description: Dowiedz się, jak pobierać miejsca docelowe hiperłączy PDF za pomocą Java z Aspose.PDF dla Java. Naucz się krok po kroku z przykładami kodu w tym kompleksowym samouczku.
 type: docs
 weight: 10
 url: /pl/java/pdf-page-manipulation/get-pdf-hyperlink-destination-using-java/
@@ -10,28 +10,28 @@ url: /pl/java/pdf-page-manipulation/get-pdf-hyperlink-destination-using-java/
 
 ## Wstęp
 
-tym samouczku przyjrzymy się, jak uzyskać miejsca docelowe hiperłączy PDF przy użyciu Java za pomocą Aspose.PDF dla Java. Hiperłącza to istotne elementy dokumentów PDF, umożliwiające użytkownikom nawigację do określonych miejsc docelowych w pliku PDF lub zasobach zewnętrznych. Przejdziemy przez proces krok po kroku, podając przykłady kodu i wyjaśnienia.
+tym samouczku pokażemy, jak uzyskać miejsca docelowe hiperłączy PDF za pomocą Javy z pomocą Aspose.PDF dla Javy. Hiperłącza są niezbędnymi elementami w dokumentach PDF, umożliwiającymi użytkownikom nawigację do określonych miejsc docelowych w pliku PDF lub zasobach zewnętrznych. Przeprowadzimy ten proces krok po kroku, podając przykłady kodu i wyjaśnienia.
 
 ## Zrozumienie hiperłączy PDF
 
-Hiperłącza PDF to interaktywne elementy, które umożliwiają użytkownikom klikanie i przechodzenie do różnych lokalizacji w dokumencie PDF lub zewnętrznych witrynach internetowych. Składają się z dwóch głównych elementów: adnotacji łącza i miejsca docelowego. Miejsce docelowe określa, dokąd hiperłącze zabierze użytkownika.
+Hiperłącza PDF to interaktywne elementy, które pozwalają użytkownikom klikać i nawigować do różnych lokalizacji w dokumencie PDF lub zewnętrznych witrynach internetowych. Składają się z dwóch głównych komponentów: adnotacji łącza i miejsca docelowego. Miejsce docelowe określa, gdzie hiperłącze przeniesie użytkownika.
 
-## Warunki wstępne
+## Wymagania wstępne
 
 Zanim zaczniemy, upewnij się, że spełnione są następujące wymagania wstępne:
 - Środowisko programistyczne Java
 - Aspose.PDF dla biblioteki Java
-- Podstawowa znajomość programowania w języku Java
+- Podstawowa znajomość programowania w Javie
 
 ## Konfigurowanie Aspose.PDF dla Java
 
-Aby rozpocząć, musisz skonfigurować w swoim projekcie Aspose.PDF dla Java. Wykonaj następujące kroki:
+Aby rozpocząć, musisz skonfigurować Aspose.PDF dla Java w swoim projekcie. Wykonaj następujące kroki:
 1.  Pobierz Aspose.PDF dla Java z[Tutaj](https://releases.aspose.com/pdf/java/).
 2. Dodaj bibliotekę Aspose.PDF do swojego projektu Java.
 
 ## Ładowanie dokumentu PDF
 
-Najpierw załadujemy dokument PDF przy użyciu Aspose.PDF dla Java. Oto kod, aby to zrobić:
+Najpierw załadujemy dokument PDF za pomocą Aspose.PDF dla Java. Oto kod, który to zrobi:
 
 ```java
 // Załaduj dokument PDF
@@ -40,17 +40,17 @@ Document pdfDocument = new Document("sample.pdf");
 
 ## Pobieranie hiperłączy
 
-Następnie musimy pobrać hiperłącza obecne w dokumencie PDF. Aspose.PDF zapewnia wygodny sposób, aby to zrobić:
+Następnie musimy pobrać hiperłącza obecne w dokumencie PDF. Aspose.PDF zapewnia wygodny sposób na zrobienie tego:
 
 ```java
-// Pobierz zbiór linków z pierwszej strony
+// Pobierz kolekcję linków z pierwszej strony
 Page page = pdfDocument.getPages().get_Item(1);
 LinkAnnotationCollection linkAnnotations = page.getAnnotations().getLinkAnnotations();
 ```
 
 ## Wyodrębnianie miejsc docelowych hiperłączy
 
-Teraz, gdy mamy adnotacje do linków, możemy wyodrębnić miejsca docelowe hiperłączy:
+Teraz, gdy mamy już adnotacje dotyczące łączy, możemy wyodrębnić miejsca docelowe hiperłączy:
 
 ```java
 // Wyodrębnij i wydrukuj miejsca docelowe hiperłączy
@@ -62,26 +62,26 @@ for (LinkAnnotation link : linkAnnotations) {
 
 ## Wniosek
 
-W tym samouczku nauczyliśmy się, jak uzyskać miejsca docelowe hiperłączy PDF przy użyciu języka Java i Aspose.PDF dla języka Java. Omówiliśmy podstawy hiperłączy PDF, skonfigurowaliśmy niezbędne środowisko, załadowaliśmy dokument PDF, pobraliśmy hiperłącza i wyodrębniliśmy ich miejsca docelowe. Wiedza ta może być cenna przy różnych zadaniach manipulacji plikami PDF w aplikacjach Java.
+W tym samouczku nauczyliśmy się, jak uzyskać miejsca docelowe hiperłączy PDF przy użyciu Java i Aspose.PDF dla Java. Omówiliśmy podstawy hiperłączy PDF, skonfigurowaliśmy niezbędne środowisko, wczytaliśmy dokument PDF, pobraliśmy hiperłącza i wyodrębniliśmy ich miejsca docelowe. Ta wiedza może być cenna w przypadku różnych zadań związanych z manipulacją PDF w aplikacjach Java.
 
-## Często zadawane pytania
+## Najczęściej zadawane pytania
 
 ### Jak zainstalować Aspose.PDF dla Java?
 
- Aby zainstalować Aspose.PDF dla Java, pobierz bibliotekę z[Tutaj](https://releases.aspose.com/pdf/java/) i dodaj go do zależności swojego projektu Java.
+ Aby zainstalować Aspose.PDF dla Java, pobierz bibliotekę ze strony[Tutaj](https://releases.aspose.com/pdf/java/) i dodaj go do zależności swojego projektu Java.
 
 ### Czy mogę używać Aspose.PDF dla Java za darmo?
 
-Aspose.PDF dla Java jest biblioteką komercyjną, ale możesz poznać jej funkcje, korzystając z bezpłatnej wersji próbnej.
+Aspose.PDF for Java jest biblioteką komercyjną, ale możesz zapoznać się z jej funkcjami, korzystając z bezpłatnej wersji próbnej.
 
 ### Jakie typy hiperłączy mogę pobrać za pomocą Aspose.PDF dla Java?
 
 Aspose.PDF dla Java umożliwia pobieranie zarówno wewnętrznych, jak i zewnętrznych hiperłączy znajdujących się w dokumencie PDF.
 
-### Jak mogę modyfikować lub usuwać hiperłącza w pliku PDF przy użyciu Aspose.PDF dla Java?
+### Jak mogę modyfikować lub usuwać hiperłącza w pliku PDF, korzystając z Aspose.PDF dla Java?
 
-Możesz modyfikować lub usuwać hiperłącza, uzyskując dostęp do adnotacji łączy i powiązanych z nimi działań w dokumencie PDF.
+Hiperłącza można modyfikować i usuwać, uzyskując dostęp do adnotacji łączy i skojarzonych z nimi działań w dokumencie PDF.
 
 ### Gdzie mogę znaleźć więcej dokumentacji na temat Aspose.PDF dla Java?
 
- Szczegółową dokumentację Aspose.PDF dla Java można znaleźć pod adresem[Tutaj](https://reference.aspose.com/pdf/java/).
+ Szczegółową dokumentację Aspose.PDF dla języka Java można znaleźć pod adresem[Tutaj](https://reference.aspose.com/pdf/java/).

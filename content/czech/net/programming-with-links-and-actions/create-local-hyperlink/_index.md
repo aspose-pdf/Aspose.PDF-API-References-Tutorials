@@ -21,7 +21,7 @@ using Aspose.Pdf.InteractiveFeatures;
 
 ## Krok 2: Nastavte cestu ke složce dokumentů
 
- V tomto kroku je potřeba zadat cestu ke složce, kam chcete výsledný soubor PDF uložit. Nahradit`"YOUR DOCUMENT DIRECTORY"` následujícím kódu se skutečnou cestou ke složce dokumentů:
+ V tomto kroku je potřeba zadat cestu ke složce, kam chcete výsledný soubor PDF uložit. Nahradit`"YOUR DOCUMENT DIRECTORY"` v následujícím kódu se skutečnou cestou ke složce dokumentů:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -37,7 +37,7 @@ Document doc = new Document();
 
 ## Krok 4: Přidejte stránku a text pomocí hypertextových odkazů
 
-V tomto kroku přidáme stránku do našeho dokumentu PDF a přidáme nějaký text obsahující místní hypertextové odkazy. Pro každý odkaz definujeme cílové stránky. Zde je odpovídající kód:
+tomto kroku přidáme stránku do našeho dokumentu PDF a přidáme nějaký text obsahující místní hypertextové odkazy. Pro každý odkaz definujeme cílové stránky. Zde je odpovídající kód:
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -58,7 +58,7 @@ page.Paragraphs.Add(text);
 
 ## Krok 5: Uložte aktualizovaný dokument
 
- Nyní uložme aktualizovaný soubor PDF pomocí`Save` metoda`doc` objekt. Zde je odpovídající kód:
+Nyní uložme aktualizovaný soubor PDF pomocí`Save` metoda`doc` objekt. Zde je odpovídající kód:
 
 ```csharp
 dataDir = dataDir + "CreateLocalHyperlink_out.pdf";
@@ -81,7 +81,7 @@ Aspose.Pdf.LocalHyperlink link = new Aspose.Pdf.LocalHyperlink();
 link.TargetPageNumber = 7;
 // Nastavit hypertextový odkaz TextFragment
 text.Hyperlink = link;
-//Přidejte text do kolekce odstavců stránky
+// Přidejte text do kolekce odstavců stránky
 page.Paragraphs.Add(text);
 // Vytvořte novou instanci TextFragment
 text = new TextFragment("link page number test to page 1");

@@ -41,7 +41,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Βήμα 4: Δημιουργήστε ένα αντικείμενο .NET Regex
 
- Δημιουργώ ένα`.NET Regex` αντικείμενο για να ορίσετε το μοτίβο αναζήτησης:
+ Δημιουργία α`.NET Regex` αντικείμενο για να ορίσετε το μοτίβο αναζήτησης:
 
 ```csharp
 System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"[\S]+");
@@ -71,7 +71,7 @@ Page page = document.Pages[1];
 
 ## Βήμα 7: Δημιουργήστε ένα TextFragmentAbsorber
 
- Δημιουργώ ένα`TextFragmentAbsorber` αντικείμενο για να βρει όλες τις παρουσίες της τυπικής έκφρασης εισόδου:
+ Δημιουργία α`TextFragmentAbsorber` αντικείμενο για να βρει όλες τις παρουσίες της τυπικής έκφρασης εισόδου:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(regex);
@@ -130,7 +130,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Συγχαρητήρια! Έχετε μάθει με επιτυχία πώς να αναζητάτε κείμενο χρησιμοποιώντας τυπικές εκφράσεις .NET σε ένα έγγραφο PDF χρησιμοποιώντας το Aspose.PDF για .NET. Αυτό το σεμινάριο παρείχε έναν οδηγό βήμα προς βήμα, από τη ρύθμιση του έργου έως την πρόσβαση στα αποσπάσματα κειμένου που έχουν εξαχθεί. Τώρα μπορείτε να ενσωματώσετε αυτόν τον κώδικα στα δικά σας έργα C# για να πραγματοποιήσετε σύνθετες αναζητήσεις κειμένου σε αρχεία PDF.
 

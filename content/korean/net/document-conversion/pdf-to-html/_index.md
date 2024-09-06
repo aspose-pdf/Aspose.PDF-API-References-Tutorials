@@ -1,76 +1,100 @@
 ---
-title: PDF를 HTML로
-linktitle: PDF를 HTML로
-second_title: .NET API 참조용 Aspose.PDF
-description: .NET용 Aspose.PDF를 사용하여 PDF를 HTML로 변환하는 단계별 가이드입니다.
+title: PDF에서 HTML로
+linktitle: PDF에서 HTML로
+second_title: .NET API 참조를 위한 Aspose.PDF
+description: 이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF를 HTML로 변환하는 방법을 알아보세요. 개발자와 콘텐츠 제작자에게 완벽합니다.
 type: docs
 weight: 130
 url: /ko/net/document-conversion/pdf-to-html/
 ---
-이 튜토리얼에서는 .NET용 Aspose.PDF를 사용하여 PDF 파일을 HTML 형식으로 변환하는 과정을 안내합니다. PDF 형식은 일반적으로 문서를 보고 공유하는 데 사용되는 반면 HTML 형식은 웹 페이지를 만드는 데 사용됩니다. 아래 단계를 따르면 PDF 파일을 HTML 형식으로 변환할 수 있습니다.
+## 소개
 
-## 전제조건
-시작하기 전에 다음 전제 조건을 충족하는지 확인하세요.
+오늘날의 디지털 시대에 문서를 한 형식에서 다른 형식으로 변환하는 것은 흔한 작업입니다. 개발자이든, 콘텐츠 제작자이든, 아니면 그저 정보를 공유해야 하는 사람이든, PDF 파일을 HTML로 변환하는 방법을 아는 것은 엄청나게 유용할 수 있습니다. 이 가이드에서는 Aspose.PDF for .NET을 사용하여 PDF 문서를 HTML 형식으로 변환하는 과정을 안내합니다. Aspose.PDF를 사용하면 효율적이고 효과적인 방식으로 PDF 파일을 쉽게 조작하고 콘텐츠를 추출할 수 있습니다. 그럼, 시작해 볼까요!
 
-- C# 프로그래밍 언어에 대한 기본 지식.
-- 시스템에 설치된 .NET용 Aspose.PDF 라이브러리.
-- Visual Studio와 같은 개발 환경.
+## 필수 조건
 
-## 1단계: 소스 PDF 문서 열기
-이 단계에서는 .NET용 Aspose.PDF를 사용하여 소스 PDF 파일을 엽니다. 아래 코드를 따르십시오.
+시작하기 전에 꼭 준비해야 할 몇 가지 사항이 있습니다.
+
+1. Visual Studio: 컴퓨터에 Visual Studio가 설치되어 있는지 확인하세요. 여기서 .NET 코드를 작성하고 실행합니다.
+2. .NET용 Aspose.PDF: Aspose.PDF 라이브러리를 다운로드하여 설치해야 합니다. 찾을 수 있습니다.[여기](https://releases.aspose.com/pdf/net/).
+3. C#에 대한 기본 지식: C# 프로그래밍에 익숙하면 코드 조각을 더 잘 이해하는 데 도움이 됩니다.
+4. 샘플 PDF 파일: 이 튜토리얼에서는 작업할 샘플 PDF 파일이 필요합니다. 직접 만들거나 인터넷에서 샘플을 다운로드할 수 있습니다.
+
+## 패키지 가져오기
+
+Aspose.PDF를 시작하려면 프로젝트에 필요한 패키지를 가져와야 합니다. 방법은 다음과 같습니다.
+
+### 새 프로젝트 만들기
+
+Visual Studio를 열고 새 C# 프로젝트를 만듭니다. 단순성을 위해 콘솔 애플리케이션을 선택할 수 있습니다.
+
+### Aspose.PDF 참조 추가
+
+1. 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 버튼으로 클릭합니다.
+2. "NuGet 패키지 관리"를 선택하세요.
+3. "Aspose.PDF"를 검색하여 최신 버전을 설치하세요.
+
+### 패키지 가져오기
 
 ```csharp
-// 문서 디렉터리의 경로입니다.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// 소스 PDF 문서 열기
-Document pdfDocument = new Document(dataDir + "PDFToHTML.pdf");
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
- 꼭 교체하세요`"YOUR DOCUMENTS DIRECTORY"` PDF 파일이 있는 실제 디렉토리를 사용하세요.
+이제 모든 것이 설정되었으니 실제 변환 과정으로 넘어가겠습니다.
 
-## 2단계: PDF를 HTML로 변환
-PDF 파일을 연 후 HTML 형식으로 변환을 진행할 수 있습니다. 다음 코드를 사용하세요.
+## 1단계: 문서 디렉토리 설정
 
-```csharp
-//파일을 HTML 형식으로 저장
-pdfDocument.Save(dataDir + "output_out.html", SaveFormat.Html);
-```
-
- 위의 코드는 PDF 파일을 HTML 형식으로 변환하고 다음과 같이 저장합니다.`"output_out.html"` 파일.
-
- 바꾸다`"YOUR DOCUMENTS DIRECTORY"` 출력 HTML 파일을 저장하려는 원하는 디렉토리를 사용하십시오.
-
-### .NET용 Aspose.PDF를 사용하여 PDF를 HTML로 변환하는 예제 소스 코드
+먼저, 문서 디렉토리 경로를 정의해야 합니다. 여기가 PDF 파일이 있는 곳이며 출력 HTML 파일이 저장되는 곳입니다.
 
 ```csharp
-// 문서 디렉터리의 경로입니다.
+// 문서 디렉토리의 경로입니다.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+ 교체를 꼭 해주세요`"YOUR DOCUMENT DIRECTORY"` 컴퓨터의 실제 경로와 일치합니다.
+
+## 2단계: 소스 PDF 문서 열기
+
+ 다음으로 변환하려는 PDF 문서를 열어야 합니다. 이는 다음을 사용하여 수행됩니다.`Document` Aspose.PDF에서 제공하는 클래스입니다.
+
+```csharp
 // 소스 PDF 문서 열기
 Document pdfDocument = new Document(dataDir + "PDFToHTML.pdf");
+```
 
-// 파일을 MS 문서 형식으로 저장하세요.
+ 이 줄에서 다음을 바꾸세요.`"PDFToHTML.pdf"` PDF 파일의 이름을 입력합니다.
+
+## 3단계: PDF를 HTML로 저장
+
+이제 신나는 부분이 옵니다! PDF 문서를 HTML 파일로 저장합니다. Aspose.PDF는 이것을 매우 간단하게 만듭니다.
+
+```csharp
+// 파일을 MS 문서 형식으로 저장하세요
 pdfDocument.Save(dataDir + "output_out.html", SaveFormat.Html);
 ```
+
+ 여기,`"output_out.html"` 는 생성될 HTML 파일의 이름입니다. 원하는 대로 변경할 수 있습니다.
+
 
 ## 결론
-이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 PDF 파일을 HTML 형식으로 변환하는 단계별 프로세스를 다루었습니다. 위에 설명된 지침을 따르면 이제 PDF 파일을 HTML 형식으로 변환할 수 있습니다. 이 기능은 HTML 형식을 지원하는 웹 페이지나 기타 응용 프로그램에 PDF 콘텐츠를 포함하려는 경우에 유용합니다.
 
-### FAQ
+이제 알겠습니다! Aspose.PDF for .NET을 사용하여 PDF를 HTML로 변환하는 것은 아주 간단합니다. 몇 줄의 코드만 있으면 문서를 웹 친화적인 형식으로 변환할 수 있습니다. 이는 특히 웹사이트에 PDF 콘텐츠를 표시해야 하는 웹 개발자와 콘텐츠 관리자에게 유용할 수 있습니다. 그러니 계속해서 시도해 보세요!
 
-#### Q: 변환 중에 HTML 파일의 출력 구조를 제어할 수 있습니까?
+## 자주 묻는 질문
 
- A: 예, .NET용 Aspose.PDF를 사용하면 변환 중에 HTML 파일의 출력 구조를 제어할 수 있습니다. 변환 모드, 리소스에 대한 별도의 폴더 생성 여부 등의 옵션을 지정할 수 있습니다. 이러한 옵션은 다음을 통해 설정할 수 있습니다.`HtmlSaveOptions` 수업.
+### .NET용 Aspose.PDF란 무엇인가요?
+.NET용 Aspose.PDF는 개발자가 .NET 애플리케이션에서 PDF 문서를 만들고, 조작하고, 변환할 수 있는 강력한 라이브러리입니다.
 
-#### Q: .NET용 Aspose.PDF는 복잡한 PDF를 HTML 형식으로 변환하는 것을 지원합니까?
+### 한 번에 여러 개의 PDF 파일을 변환할 수 있나요?
+네, 디렉토리에 있는 여러 PDF 파일을 순환하여 비슷한 코드를 사용하여 각각을 HTML로 변환할 수 있습니다.
 
-A: .NET용 Aspose.PDF는 복잡한 PDF를 HTML 형식으로 변환하기 위한 포괄적인 지원을 제공합니다. 그러나 경우에 따라 고급 그래픽, 특수 글꼴 또는 복잡한 레이아웃이 포함된 매우 복잡한 PDF에는 생성된 HTML 파일에 대한 추가 조정이나 수동 후처리가 필요할 수 있습니다.
+### 무료 체험판이 있나요?
+ 네, .NET용 Aspose.PDF의 무료 평가판을 다운로드할 수 있습니다.[여기](https://releases.aspose.com/).
 
-#### Q: 변환 프로세스 중에 PDF에서 이미지와 기타 리소스를 추출할 수 있습니까?
+### PDF를 어떤 형식으로 변환할 수 있나요?
+HTML 외에도 Aspose.PDF를 사용하면 PDF를 DOCX, XLSX 등 다양한 형식으로 변환할 수 있습니다.
 
-A: 예, .NET용 Aspose.PDF를 사용하면 변환 프로세스 중에 PDF에 포함된 이미지와 기타 리소스를 추출할 수 있습니다. 이미지와 기타 자산을 별도의 디렉토리에 저장한 다음 변환된 HTML 파일에서 참조하는 리소스에 대한 별도의 폴더를 생성하는 옵션을 활성화할 수 있습니다.
-
-#### Q: 출력 HTML 파일의 하이퍼링크와 북마크를 어떻게 처리할 수 있습니까?
-
-A: .NET용 Aspose.PDF는 PDF를 HTML로 변환하는 동안 하이퍼링크와 책갈피를 유지합니다. 원본 PDF에 있는 링크와 책갈피는 변환된 HTML 파일에 유지되므로 생성된 HTML 콘텐츠 내에서 탐색이 가능합니다.
+### Aspose.PDF에 대한 지원은 어디에서 찾을 수 있나요?
+ Aspose 포럼에서 지원을 받고 질문을 할 수 있습니다.[여기](https://forum.aspose.com/c/pdf/10).

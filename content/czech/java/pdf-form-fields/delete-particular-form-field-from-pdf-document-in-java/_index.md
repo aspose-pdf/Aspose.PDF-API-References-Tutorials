@@ -17,7 +17,7 @@ V dnešní digitální době se programová správa a manipulace s PDF dokumenty
 Než se ponoříme do podrobností implementace, ujistěte se, že máte vše, co potřebujete:
 
 - Základní znalost programování v Javě.
--  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 - Integrované vývojové prostředí (IDE) dle vašeho výběru, jako je Eclipse nebo IntelliJ IDEA.
 
 ## Krok 1: Nastavení vašeho projektu
@@ -63,7 +63,7 @@ pdfDocument.save("output.pdf");
 
 ## Závěr
 
-Gratulujeme! Úspěšně jste odstranili konkrétní pole formuláře z dokumentu PDF pomocí Aspose.PDF for Java. To může být neuvěřitelně užitečné, když potřebujete dezinfikovat nebo upravit formuláře PDF programově. Nezapomeňte do projektu zahrnout knihovnu Aspose.PDF for Java a postupujte podle následujících kroků, abyste dosáhli požadovaných výsledků.
+Gratuluji! Úspěšně jste odstranili konkrétní pole formuláře z dokumentu PDF pomocí Aspose.PDF for Java. To může být neuvěřitelně užitečné, když potřebujete dezinfikovat nebo upravit formuláře PDF programově. Nezapomeňte do projektu zahrnout knihovnu Aspose.PDF for Java a postupujte podle následujících kroků, abyste dosáhli požadovaných výsledků.
 
 ## FAQ
 

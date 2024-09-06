@@ -32,7 +32,7 @@ ITaggedContent taggedContent = document.TaggedContent;
 ```
 
 ## 4. lépés: Állítsa be a dokumentum címét és nyelvét
- Mielőtt hozzáfognánk az elemek szerkezetének kialakításához, meg kell határoznunk a dokumentum címét és nyelvét. Ezt a`SetTitle` és`SetLanguage` módszerei a`taggedContent` tárgy. Íme a lépés kódja:
+ Mielőtt hozzáfognánk az elemek szerkezetének kialakításához, meg kell határoznunk a dokumentum címét és nyelvét. Ezt a`SetTitle` és`SetLanguage` módszerei a`taggedContent` objektum. Íme a lépés kódja:
 
 ```csharp
 // Határozza meg a dokumentum címét és nyelvét
@@ -174,7 +174,7 @@ V: Az elemek hierarchikus rendszerezése javítja a dokumentumszervezést, a nav
 
 #### K: Tovább szabhatom a szerkezetfát más típusú logikai elemek hozzáadásával?
 
-V: Igen, tovább testreszabhatja a szerkezetfát az Aspose.PDF által biztosított más típusú logikai elemek hozzáadásával, például fejlécekkel, bekezdésekkel, ábrákkal és egyebekkel. Különböző elemtípusokkal kísérletezhet testreszabott szerkezet létrehozásához.
+V: Igen, tovább testreszabhatja a szerkezetfát az Aspose.PDF által biztosított egyéb típusú logikai elemek hozzáadásával, például fejlécekkel, bekezdésekkel, ábrákkal és egyebekkel. Különböző elemtípusokkal kísérletezhet testreszabott szerkezet létrehozásához.
 
 #### K: Hogyan javíthatja a létrehozott strukturált fa a dokumentumok hozzáférhetőségét és használhatóságát?
 

@@ -10,20 +10,20 @@ url: /nl/java/pdf-attachments/retrieve-attachment-information/
 
 ## Invoering
 
-In deze zelfstudie leert u hoe u Aspose.PDF voor Java kunt gebruiken om bijlagegegevens uit een PDF-document op te halen. Bijlagen kunnen bestanden of documenten zijn die zijn ingesloten in een PDF. Mogelijk moet u de gegevens ervan programmatisch openen.
+In deze tutorial leert u hoe u Aspose.PDF voor Java kunt gebruiken om bijlage-informatie uit een PDF-document op te halen. Bijlagen kunnen bestanden of documenten zijn die in een PDF zijn ingebed, en u moet mogelijk programmatisch toegang hebben tot hun details.
 
 ## Vereisten
 
 Voordat u begint, moet u ervoor zorgen dat u aan de volgende vereisten voldoet:
 
 1. Java Development Environment (JDK) geïnstalleerd.
-2.  Aspose.PDF voor Java-bibliotheek. Je kunt het downloaden van[hier](https://releases.aspose.com/pdf/java/).
+2.  Aspose.PDF voor Java-bibliotheek. U kunt het downloaden van[hier](https://releases.aspose.com/pdf/java/).
 
-## Stap 1: Maak een Java-project
+## Stap 1: Een Java-project maken
 
 Maak een nieuw Java-project in uw favoriete Integrated Development Environment (IDE) en neem de Aspose.PDF voor Java-bibliotheek op in uw project.
 
-## Stap 2: Laad het PDF-document
+## Stap 2: Het PDF-document laden
 
 Eerst moet u het PDF-document laden dat de bijlagen bevat. Gebruik de volgende code om een PDF-bestand te laden:
 
@@ -34,17 +34,17 @@ Document pdfDocument = new Document("path/to/your/pdf/document.pdf");
 
 ## Stap 3: Bijlage-informatie ophalen
 
-Nu kunt u bijlagegegevens ophalen uit het geladen PDF-document. Zo kunt u een lijst met bijlagen krijgen en de details ervan weergeven:
+Nu kunt u bijlage-informatie ophalen uit het geladen PDF-document. Zo kunt u een lijst met bijlagen ophalen en hun details weergeven:
 
 ```java
-// Download de verzameling bijlagen
+// Ontvang de verzameling bijlagen
 AttachmentCollection attachments = pdfDocument.getAttachments();
 
 // Controleer of er bijlagen zijn
 if (attachments.size() > 0) {
     System.out.println("Attachments found:");
 
-    // Herhaal elke bijlage
+    // Doorloop elke bijlage
     for (Attachment attachment : attachments) {
         System.out.println("Name: " + attachment.getName());
         System.out.println("Description: " + attachment.getDescription());
@@ -59,25 +59,25 @@ if (attachments.size() > 0) {
 
 ## Stap 4: Bijlagen opslaan of verwerken
 
-U kunt de bijlagen indien nodig verder verwerken of opslaan. U kunt ze bijvoorbeeld extraheren en opslaan in een lokale map of aanvullende acties uitvoeren op basis van de vereisten van uw toepassing.
+U kunt de bijlagen indien nodig verder verwerken of opslaan. U kunt ze bijvoorbeeld extraheren en opslaan in een lokale directory of aanvullende acties uitvoeren op basis van de vereisten van uw toepassing.
 
 ## Conclusie
 
-In deze zelfstudie hebt u geleerd hoe u bijlagegegevens uit een PDF-document kunt ophalen met Aspose.PDF voor Java. U kunt deze functionaliteit nu in uw Java-toepassingen integreren, zodat u effectief met PDF-bijlagen kunt werken.
+In deze tutorial hebt u geleerd hoe u bijlage-informatie uit een PDF-document kunt ophalen met Aspose.PDF voor Java. U kunt deze functionaliteit nu opnemen in uw Java-applicaties om effectief met PDF-bijlagen te werken.
 
 ## Veelgestelde vragen
 
-### Hoe kan ik bijlagen uit een PDF extraheren?
+### Hoe kan ik bijlagen uit een PDF halen?
 
- Om bijlagen uit te pakken, kunt u de`attachment.getData()` methode om de inhoud van de bijlage te verkrijgen en deze vervolgens op te slaan in een lokaal bestand.
+ Om bijlagen te extraheren, kunt u de`attachment.getData()` Methode om de inhoud van de bijlage te verkrijgen en deze vervolgens in een lokaal bestand op te slaan.
 
-### Kan ik bijlagen binnen een PDF-document wijzigen?
-Ja, u kunt bijlagen in een PDF-document toevoegen, verwijderen of bijwerken met Aspose.PDF voor Java. Raadpleeg de documentatie voor meer details.
+### Kan ik bijlagen in een PDF-document wijzigen?
+Ja, u kunt bijlagen toevoegen, verwijderen of bijwerken in een PDF-document met Aspose.PDF voor Java. Raadpleeg de documentatie voor meer informatie.
 
-### Wat zijn de ondersteunde bijlageformaten?
+### Welke bijlageformaten worden ondersteund?
 
 Aspose.PDF voor Java ondersteunt een breed scala aan bijlageformaten, waaronder PDF, afbeeldingen, documenten en meer. De eigenschap MIME Type kan helpen bij het identificeren van het formaat.
 
 ### Hoe kan ik nieuwe bijlagen aan een PDF toevoegen?
 
- U kunt bijlagen toevoegen aan een PDF-document met behulp van de`AttachmentCollection.add()`methode. Geef eenvoudigweg de naam, beschrijving en inhoud van de bijlage op en deze wordt aan het document toegevoegd.
+ U kunt bijlagen toevoegen aan een PDF-document met behulp van de`AttachmentCollection.add()`methode. Geef gewoon de naam, beschrijving en inhoud van de bijlage op en deze wordt aan het document toegevoegd.

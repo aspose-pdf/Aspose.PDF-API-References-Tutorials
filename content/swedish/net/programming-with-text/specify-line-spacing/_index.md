@@ -38,7 +38,7 @@ using System.IO;
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Byta ut`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen till din dokumentkatalog.
+ Ersätta`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen till din dokumentkatalog.
 
 ## Steg 4: Ladda in PDF-filen
 
@@ -77,11 +77,11 @@ using (FileStream fontStream = File.OpenRead(fontFile))
 }
 ```
 
- Byta ut`"HPSimplified.TTF"` med det faktiska teckensnittsfilnamnet.
+ Ersätta`"HPSimplified.TTF"` med det faktiska teckensnittsfilnamnet.
 
 ## Steg 8: Ange textposition och radavstånd
 
- Ställ in positionen för textfragmentet och tilldela`TextFormattingOptions` till`TextState.FormattingOptions` fast egendom:
+ Ställ in positionen för textfragmentet och tilldela`TextFormattingOptions` till`TextState.FormattingOptions` egendom:
 
 ```csharp
 textFragment.Position = new Position(100, 600);
@@ -127,9 +127,9 @@ if (fontFile != "")
 	// Ladda TrueType-teckensnittet i strömobjektet
 	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
 	{
-		//Ställ in teckensnittsnamnet för textsträngen
+		// Ställ in teckensnittsnamnet för textsträngen
 		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		// Ange positionen för textfragment
+		//Ange positionen för textfragment
 		textFragment.Position = new Position(100, 600);
 		//Ställ in TextFormattingOptions för aktuellt fragment till fördefinierat (vilket pekar på LineSpacingMode.FullSize)
 		textFragment.TextState.FormattingOptions = formattingOptions;

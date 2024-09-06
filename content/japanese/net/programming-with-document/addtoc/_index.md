@@ -1,49 +1,80 @@
 ---
-title: PDF ファイルに目次を追加
-linktitle: PDF ファイルに目次を追加
+title: PDF ファイルに目次を追加する
+linktitle: PDF ファイルに目次を追加する
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して PDF ファイルに目次を追加する方法を学びます。ソースコードの例を含むステップバイステップのガイド。ドキュメントのナビゲーションを強化します。
+description: Aspose.PDF for .NET を使用して PDF に目次を追加する方法を学びます。このステップ バイ ステップ ガイドはプロセスを簡素化し、ドキュメント内でのナビゲーションを容易にします。
 type: docs
 weight: 40
 url: /ja/net/programming-with-document/addtoc/
 ---
-このチュートリアルでは、Aspose.PDF for .NET の PDF ファイルへの TOC (目次) の追加機能を使用して、PDF ドキュメントに目次を追加する方法を説明します。ステップバイステップのガイドを提供し、これを実現するために必要な C# ソース コードについて説明します。このチュートリアルを完了すると、Aspose.PDF for .NET を使用して目次を含む PDF ドキュメントを生成できるようになります。
+## 導入
 
+長い PDF を延々とスクロールしながら、きちんと整理された目次があればいいのにと思ったことはありませんか? 今日はラッキーな日です! このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ファイルに目次を追加する方法を学びます。複雑なレポート、電子ブック、ビジネス提案書など、どのような文書でも、目次があれば、文書をプロフェッショナルで読みやすい傑作に変身させることができます。
 
-## ステップ 1: 既存の PDF ファイルをロードする
+## 前提条件
 
-まず、既存の PDF ファイルをロードする必要があります。交換する`"YOUR DOCUMENT DIRECTORY"`次のコードでは、PDF ファイルへの実際のパスを指定します。
+コードに進む前に、必要なものがすべて揃っていることを確認しましょう。
+
+1. Aspose.PDF for .NET: Aspose.PDFライブラリをダウンロードしてインストールしたことを確認してください。ダウンロードはここから行えます。[ここ](https://releases.aspose.com/pdf/net/).
+   
+2. 開発環境: マシンに Visual Studio などの .NET 開発環境が設定されていることを確認します。
+
+3. ライセンス: ライセンスをお持ちでない場合は、無料トライアルを取得するか、一時ライセンスをリクエストできます。[ここ](https://purchase.aspose.com/temporary-license/).
+
+## パッケージのインポート
+
+まず、コード ファイルの先頭に必要な名前空間をインポートしてください。方法は次のとおりです。
+
+```csharp
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+```
+
+これらの名前空間を使用すると、PDF 固有の機能にアクセスし、ドキュメント内のテキスト要素を操作できます。
+
+このタスクを小さなステップに分割してみましょう。各ステップでは、PDF ドキュメントに目次を作成して挿入するプロセスをガイドします。
+
+## ステップ1: PDFドキュメントを読み込む
+
+最初に行う必要があるのは、目次を追加する既存の PDF ファイルを読み込むことです。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "AddTOC.pdf");
 ```
 
-## ステップ 2: 目次用の新しいページを作成する
+このステップでは、ドキュメントディレクトリへのパスを指定し、`Document`オブジェクト。必ず置き換えてください`"YOUR DOCUMENT DIRECTORY"`ファイルへの実際のパスを入力します。
 
-目次を保持する新しいページを作成します。次のコードは、インデックス 1 に新しいページを挿入します。
+## ステップ2: TOC用の新しいページを挿入する
+
+次に、PDF ドキュメントの先頭に新しいページを挿入します。このページには目次が表示されます。
 
 ```csharp
 Page tocPage = doc.Pages.Insert(1);
 ```
 
-## ステップ 3: 目次情報を定義する
+TOC ページを先頭に挿入することで、読者が PDF で最初に目にするページとして表示されるようになります。
 
-次に、目次情報を定義する必要があります。目次のタイトルやその他のプロパティを設定します。次のコードを追加します。
+## ステップ3: TOC情報オブジェクトを作成する
+
+次に、目次情報を表すオブジェクトを作成しましょう。また、目次を目立たせるためにタイトルを追加します。
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
-
 tocInfo.Title = title;
 tocPage.TocInfo = tocInfo;
 ```
 
-## ステップ 4: 目次要素を作成する
+ここでは、TOC のタイトルを「Table Of Contents」に設定し、フォント サイズを大きくし、強調するために太字にしました。
 
-次に、目次の要素を作成します。このチュートリアルでは、異なるページに対応する 4 つの目次要素を作成します。要件に応じて次のコードを変更します。
+## ステップ4: TOC要素を定義する
+
+このステップでは、目次に表示される要素 (または見出し) を定義します。これらの要素は、読者がドキュメントの特定のセクションに移動するのに役立ちます。
 
 ```csharp
 string[] titles = new string[4];
@@ -51,7 +82,15 @@ titles[0] = "First page";
 titles[1] = "Second page";
 titles[2] = "Third page";
 titles[3] = "Fourth page";
+```
 
+PDF 内のさまざまなページに対応する TOC 項目として機能する文字列の配列を作成しました。
+
+## ステップ5: 目次の見出しを作成する
+
+ここで重要な部分、つまり目次に見出しを追加し、それぞれのページにリンクする作業が始まります。
+
+```csharp
 for (int i = 0; i < 2; i++)
 {
     Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
@@ -61,100 +100,56 @@ for (int i = 0; i < 2; i++)
 
     heading2.DestinationPage = doc.Pages[i + 2];
     heading2.Top = doc.Pages[i + 2].Rect.Height;
-
     segment2.Text = titles[i];
+
     tocPage.Paragraphs.Add(heading2);
 }
 ```
 
-## ステップ 5: 更新されたドキュメントを保存する
+何が起こっているか見てみましょう:
+- 見出し: 私たちは`Heading`オブジェクトを追加して`TextSegment`それに。
+- リンク先ページ: 各見出しがリンクするページを設定します。
+- 上部の位置: 見出しが指すページ上の位置を指定します。
+- テキスト: 各見出しは、先ほど作成した配列からそれぞれのタイトルを取得します。
 
-最後に、変更したドキュメントを目次とともに保存する必要があります。交換する`"YOUR DOCUMENT DIRECTORY"`以下のコードで、目的の出力ファイルのパスを指定します。
+このループは、目次の最初の 2 つの要素の見出しを作成し、それらを対応するページにリンクします。
+
+## ステップ6: TOC付きのPDFを保存する
+
+最後に、すべての TOC 要素を追加したら、更新された PDF を保存します。
 
 ```csharp
 dataDir = dataDir + "TOC_out.pdf";
 doc.Save(dataDir);
-Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
 
-### Aspose.PDF for .NET を使用して PDF ドキュメントに目次を追加するためのソース コードの例
+これで、PDF に目次が追加された状態でファイルが保存されました。おめでとうございます。目次が正常に追加されました。
+
+## ステップ7: 確認メッセージ
+
+プロセスが完了したことをユーザーに知らせるために、コンソールに簡単なメッセージを表示します。
 
 ```csharp
-
-//ドキュメントディレクトリへのパス。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-//既存の PDF ファイルをロードする
-Document doc = new Document(dataDir + "AddTOC.pdf");
-
-//PDF ファイルの最初のページにアクセスする
-Page tocPage = doc.Pages.Insert(1);
-
-//目次情報を表すオブジェクトを作成する
-TocInfo tocInfo = new TocInfo();
-TextFragment title = new TextFragment("Table Of Contents");
-title.TextState.FontSize = 20;
-title.TextState.FontStyle = FontStyles.Bold;
-
-//目次のタイトルを設定します
-tocInfo.Title = title;
-tocPage.TocInfo = tocInfo;
-
-//TOC要素として使用される文字列オブジェクトを作成します。
-string[] titles = new string[4];
-titles[0] = "First page";
-titles[1] = "Second page";
-titles[2] = "Third page";
-titles[3] = "Fourth page";
-for (int i = 0; i < 2; i++)
-{
-	//見出しオブジェクトの作成
-	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
-	TextSegment segment2 = new TextSegment();
-	heading2.TocPage = tocPage;
-	heading2.Segments.Add(segment2);
-
-	//見出しオブジェクトの宛先ページを指定します
-	heading2.DestinationPage = doc.Pages[i + 2];
-
-	//宛先ページ
-	heading2.Top = doc.Pages[i + 2].Rect.Height;
-
-	//目的地座標
-	segment2.Text = titles[i];
-
-	//目次を含むページに見出しを追加する
-	tocPage.Paragraphs.Add(heading2);
-}
-dataDir = dataDir + "TOC_out.pdf";
-//更新されたドキュメントを保存する
-doc.Save(dataDir);
-
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
 
 ## 結論
 
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメントに目次 (TOC) を追加する方法を検討しました。ステップバイステップのガイドに従い、提供されている C# ソース コードを利用することで、目次を含む PDF ドキュメントを簡単に生成できます。目次によりドキュメントの使いやすさが向上し、ユーザーが特定のセクションやページに効率的に移動できるようになります。 Aspose.PDF for .NET は、.NET アプリケーションで PDF ファイルを操作するための堅牢で使いやすいソリューションを提供し、動的でインタラクティブな PDF ドキュメントを簡単に作成できるようにします。
+これで完了です。Aspose.PDF for .NET を使用すると、PDF に目次を追加するのは簡単なだけでなく、カスタマイズも可能です。シンプルなナビゲーション リンクを作成する必要がある場合でも、複雑な構造を作成する必要がある場合でも、このツールが対応します。次に長い PDF を作成するときは、プロフェッショナルなタッチのために目次を追加することを忘れないでください。
 
-### PDF ファイルへの目次の追加に関する FAQ
+## よくある質問
 
-#### Q: Aspose.PDF for .NET とは何ですか?
+### Aspose.PDF で TOC の外観をカスタマイズできますか?  
+はい、フォント スタイル、サイズ、配置など、目次の外観を完全にカスタマイズできます。
 
-A: Aspose.PDF for .NET は、開発者が .NET アプリケーションで PDF ファイルを効果的に操作できるようにする強力なライブラリです。 PDF ドキュメントをプログラムで作成、操作、管理するための幅広い機能を提供します。
+### 目次にサブ見出しを追加するにはどうすればよいですか?  
+サブ見出しを追加するには、`Heading`レベル（例：`Heading(2)`) を使用して階層的な目次を作成します。
 
-#### Q: PDF ドキュメントに目次 (TOC) を追加する目的は何ですか?
+### ドキュメントが変更された場合に目次を自動的に更新することは可能ですか?  
+いいえ、目次は自動的に更新されません。ドキュメント構造が変更された場合は、目次を再作成する必要があります。
 
-A: 目次 (TOC) はユーザーにナビゲーション補助を提供し、PDF ドキュメント内の特定のセクションやページにすばやくジャンプできるようにします。ドキュメントの使いやすさとユーザー エクスペリエンスが向上します。
+### TOC エントリを外部ドキュメントにリンクできますか?  
+はい、ハイパーリンクを使用して TOC エントリを外部の PDF または URL にリンクできます。
 
-#### Q: Aspose.PDF for .NET を使用して PDF ドキュメントに目次を追加するにはどうすればよいですか?
-
-A: Aspose.PDF for .NET を使用して PDF ドキュメントに目次を追加するには、目次を保持する新しいページを作成し、目次情報を定義してから、特定のページに対応する目次要素を作成する必要があります。ドキュメント内のセクション。
-
-#### Q: 目次の外観をカスタマイズできますか?
-
-A: はい、フォント サイズ、フォント スタイル、配置などの目次要素のさまざまなプロパティを設定することで、目次の外観をカスタマイズできます。 Aspose.PDF for .NET は、目的のルック アンド フィールに合わせて目次を柔軟に設計できます。
-
-#### Q: Aspose.PDF for .NET は、PDF ドキュメントに高度な機能を追加するのに適していますか?
-
-A: もちろん、Aspose.PDF for .NET は、インタラクティブな要素、フォーム フィールド、デジタル署名などの高度な機能を PDF ドキュメントに追加できる機能豊富なライブラリです。
+### Aspose.PDF は複数レベルの目次をサポートしていますか?  
+はい、Aspose.PDF はサブセクションを含む複雑なドキュメントの複数レベルの目次をサポートしています。

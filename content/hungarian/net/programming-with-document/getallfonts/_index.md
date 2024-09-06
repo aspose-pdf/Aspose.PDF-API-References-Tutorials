@@ -12,7 +12,7 @@ Az Aspose.PDF for .NET egy hatékony könyvtár, amely lehetővé teszi a fejles
 Ebben az oktatóanyagban megvitatjuk, hogyan használható az Aspose.PDF for .NET a PDF-dokumentumban használt összes betűtípus eléréséhez. Lépésről lépésre bemutatjuk, hogyan kell ezt megtenni, a példa forráskóddal együtt.
 
 ## 1. lépés: Hozzon létre egy új C# konzolalkalmazást
-A kezdéshez hozzon létre egy új C# konzolalkalmazást a Visual Studióban. Nevezheted, ahogy akarod. A projekt létrehozása után hozzá kell adni egy hivatkozást az Aspose.PDF for .NET könyvtárhoz.
+kezdéshez hozzon létre egy új C# konzolalkalmazást a Visual Studióban. Nevezheted, ahogy akarod. A projekt létrehozása után hozzá kell adni egy hivatkozást az Aspose.PDF for .NET könyvtárhoz.
 
 ## 2. lépés: Importálja az Aspose.PDF névteret
 Adja hozzá a következő kódsort a C# fájl tetejéhez az Aspose.PDF névtér importálásához:
@@ -76,4 +76,4 @@ V: Igen, bizonyos kritériumok alapján szűrheti a betűtípusokat az Aspose.PD
 
 #### K: Az Aspose.PDF for .NET kompatibilis a különböző betűtípusokkal?
 
-V: Igen, az Aspose.PDF for .NET kompatibilis különféle betűtípusokkal, beleértve a TrueType, OpenType és Type 1 betűtípusokat. Különböző betűformátumokkal tud dolgozni, és kezelni tudja azokat a PDF-dokumentumkezelés során.
+V: Igen, az Aspose.PDF for .NET kompatibilis különféle betűtípusokkal, beleértve a TrueType, OpenType és Type 1 betűtípusokat. Különböző betűtípusokkal tud dolgozni, és kezelni tudja azokat a PDF-dokumentumkezelés során.

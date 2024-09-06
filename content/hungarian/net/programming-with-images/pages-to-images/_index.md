@@ -20,7 +20,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 2. Adjon hozzá hivatkozást az Aspose.PDF könyvtárra a projektben.
 
 ## 2. lépés: Importálja a szükséges névtereket
-A C# fájl elejére importálja az Aspose.PDF osztályainak és metódusainak eléréséhez szükséges névtereket. Íme egy példa:
+C# fájl elejére importálja az Aspose.PDF osztályainak és metódusainak eléréséhez szükséges névtereket. Íme egy példa:
 ```csharp
 using System;
 using Aspose.Pdf;
@@ -28,7 +28,7 @@ using System.IO;
 ```
 
 ## 3. lépés: Változók és útvonalak inicializálása
-konverzió végrehajtása előtt konfigurálnunk kell a szükséges változókat és útvonalakat.
+A konverzió végrehajtása előtt konfigurálnunk kell a szükséges változókat és útvonalakat.
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
@@ -54,11 +54,11 @@ using (FileStream imageStream = new FileStream(dataDir + "image" + pageCount + "
 // Kód az oldal képpé alakításához
 }
 ```
-4.  Benne`using` blokkol, hozzon létre a`Resolution` objektumot a képfelbontás beállításához.
+4.  Belül a`using` blokkol, hozzon létre a`Resolution` objektumot a képfelbontás beállításához.
 ```csharp
 Resolution resolution = new Resolution(300);
 ```
-5.  Hozzon létre egy`JpegDevice` objektum a megadott felbontás és minőség használatával.
+5.  Hozzon létre a`JpegDevice` objektum a megadott felbontás és minőség használatával.
 ```csharp
 JpegDevice jpegDevice = new JpegDevice(resolution, 100);
 ```
@@ -88,12 +88,12 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 	{
 		// JPEG-eszköz létrehozása megadott attribútumokkal
 		// Szélesség, magasság, felbontás, minőség
-		// Minőség [0-100], 100 a maximum
+		//Minőség [0-100], 100 a maximum
 		// Hozzon létre Resolution objektumot
 		Resolution resolution = new Resolution(300);
-		//JpegDevice jpegDevice = new JpegDevice(500, 700, felbontás, 100);
+		// JpegDevice jpegDevice = new JpegDevice(500, 700, felbontás, 100);
 		JpegDevice jpegDevice = new JpegDevice(resolution, 100);
-		//Konvertálja az adott oldalt, és mentse a képet adatfolyamba
+		// Konvertálja az adott oldalt, és mentse a képet adatfolyamba
 		jpegDevice.Process(pdfDocument.Pages[pageCount], imageStream);
 		// Folyamat bezárása
 		imageStream.Close();
@@ -109,7 +109,7 @@ Ennek a lépésenkénti útmutatónak a követésével megtanulta, hogyan alakí
 
 #### K: Miért szeretném a PDF dokumentum oldalait egyedi képekké konvertálni az Aspose.PDF for .NET használatával?
 
-V: A PDF-dokumentumoldalak egyedi képekké alakítása különféle célokra hasznos lehet, például miniatűrök létrehozásához, PDF-fájlokból tartalom kinyeréséhez további feldolgozás céljából, kép-előnézetek generálásához és PDF-tartalom képorientált alkalmazásokba való integrálásához.
+V: A PDF-dokumentumoldalak egyedi képekké konvertálása különféle célokra hasznos lehet, például képbélyegképek létrehozásához, tartalom kinyeréséhez a PDF-fájlokból további feldolgozás céljából, kép-előnézetek generálásához és PDF-tartalom képorientált alkalmazásokba való integrálásához.
 
 ####  K: Hogyan működik a`Document` class facilitate the conversion of PDF pages to images?
 

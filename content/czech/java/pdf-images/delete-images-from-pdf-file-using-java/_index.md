@@ -10,7 +10,7 @@ url: /cs/java/pdf-images/delete-images-from-pdf-file-using-java/
 
 V tomto podrobném průvodci prozkoumáme, jak odstranit obrázky ze souboru PDF pomocí programovacího jazyka Java s pomocí Aspose.PDF for Java. Aspose.PDF je výkonná knihovna, která umožňuje vývojářům pracovat se soubory PDF programově, takže je pro tento úkol ideální volbou.
 
-## Úvod
+## Zavedení
 
 Soubory PDF často obsahují různé typy obsahu, včetně textu, obrázků a grafiky. V některých případech může být nutné odstranit konkrétní obrázky z dokumentu PDF z různých důvodů, jako je redigování citlivých informací nebo optimalizace velikosti souboru. Java, která je všestranným programovacím jazykem, vám může pomoci dosáhnout tohoto úkolu efektivně v kombinaci s Aspose.PDF for Java.
 
@@ -20,7 +20,7 @@ Než začneme, ujistěte se, že máte splněny následující předpoklady:
 
 - Java Development Kit (JDK): V systému byste měli mít nainstalovaný JDK.
 - Integrované vývojové prostředí (IDE): Použijte IDE jako Eclipse nebo IntelliJ IDEA pro vývoj Java.
--  Aspose.PDF for Java: Stáhněte si a nainstalujte knihovnu Aspose.PDF for Java z[tady](https://downloads.aspose.com/pdf/java).
+-  Aspose.PDF for Java: Stáhněte si a nainstalujte knihovnu Aspose.PDF for Java z[zde](https://downloads.aspose.com/pdf/java).
 - Základní znalosti jazyka Java: Měli byste mít základní znalosti o programování v jazyce Java.
 
 ## Nastavení prostředí
@@ -31,7 +31,7 @@ Než začneme, ujistěte se, že máte splněny následující předpoklady:
 
 ## Načítání souboru PDF
 
-Chcete-li začít pracovat se souborem PDF v Javě pomocí Aspose.PDF, musíte načíst dokument PDF do svého kódu. Zde je jednoduchý příklad, jak na to:
+Chcete-li začít pracovat se souborem PDF v Javě pomocí Aspose.PDF, musíte načíst dokument PDF do kódu. Zde je jednoduchý příklad, jak na to:
 
 ```java
 import com.aspose.pdf.Document;
@@ -64,7 +64,7 @@ public class PdfImageDeletion {
         for (Page page : pdfDocument.getPages()) {
             // Iterujte obsah stránky
             for (XObject xObject : page.getResources().getImages()) {
-                // Zkontrolujte, zda je objekt obrázkem
+                // Zkontrolujte, zda je objekt obrazem
                 if (xObject instanceof XImage) {
                     // Smazat obrázek
                     xObject.delete();
@@ -94,7 +94,7 @@ public class PdfImageDeletion {
         for (Page page : pdfDocument.getPages()) {
             // Iterujte obsah stránky
             for (XObject xObject : page.getResources().getImages()) {
-                // Zkontrolujte, zda je objekt obrázkem
+                // Zkontrolujte, zda je objekt obrazem
                 if (xObject instanceof XImage) {
                     // Smazat obrázek
                     xObject.delete();
@@ -127,7 +127,7 @@ Chcete-li zajistit, aby byly obrázky úspěšně odstraněny, můžete spustit 
 
 ## Odstraňování problémů
 
-Pokud během tohoto procesu narazíte na nějaké problémy, nahlédněte do dokumentace Aspose.PDF pro Java nebo se podívejte do sekce FAQ, kde najdete běžné řešení problémů.
+Pokud během tohoto procesu narazíte na nějaké problémy, nahlédněte do dokumentace Aspose.PDF for Java nebo se podívejte do sekce FAQ, kde najdete běžné řešení problémů.
 
 ## Závěr
 

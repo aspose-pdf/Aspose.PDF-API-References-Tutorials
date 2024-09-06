@@ -38,14 +38,14 @@ Document doc = new Document();
 ```
 
 ## 5. lépés: Adjon hozzá egy oldalt a dokumentumhoz
- Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`Gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
+ Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
 ## 6. lépés: Hozzon létre egy Graph objektumot
- Újat csinálni`Graph` meghatározott szélességű és magasságú objektum.
+ Hozzon létre egy újat`Graph` meghatározott szélességű és magasságú objektum.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
@@ -68,14 +68,14 @@ page.Paragraphs.Add(canvas);
 ```
 
 ## 9. lépés: Állítsa be a Graph objektum pozícióját
- Állítsa be a`IsChangePosition` tulajdona a`Graph` tiltakozni`false` hogy megakadályozza a helyzet megváltoztatását.
+ Állítsa be a`IsChangePosition` tulajdona a`Graph` tiltakozik`false` hogy megakadályozza a helyzet megváltoztatását.
 
 ```csharp
 canvas. IsChangePosition = false;
 ```
 
 ## 10. lépés: Hozzon létre egy átlátszó szövegrészletet
- Hozzon létre egy`TextFragment` objektumot, és állítsa be a tartalmát a kívánt szövegre. Állítsa be a`ForegroundColor` tulajdona a`TextState` átlátszó színre a segítségével`Color.FromArgb` módszer.
+ Hozzon létre a`TextFragment` objektumot, és állítsa be a tartalmát a kívánt szövegre. Állítsa be a`ForegroundColor` tulajdona a`TextState` átlátszó színre a segítségével`Color.FromArgb` módszer.
 
 ```csharp
 TextFragment text = new TextFragment("transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text ");
@@ -85,7 +85,7 @@ page.Paragraphs.Add(text);
 ```
 
 ## 11. lépés: Mentse el a PDF dokumentumot
- Mentse el a PDF dokumentumot a`Save` módszere a`Document` tárgy.
+ Mentse el a PDF dokumentumot a`Save` módszere a`Document` objektum.
 
 ```csharp
 doc.Save(dataDir + "AddTransparentText_out.pdf");
@@ -93,7 +93,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nTransparent text added successfully.\nFile saved at " + dataDir);
 ```
 
-### Forráskód minta az Átlátszó szöveg hozzáadása Aspose.PDF for .NET használatával programhoz 
+### Minta forráskód az Átlátszó szöveg hozzáadása az Aspose.PDF for .NET-hez használatával 
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -155,7 +155,7 @@ using Aspose.Pdf.Drawing;
 
 #### K: Hogyan adhatok hozzá oldalt a dokumentumhoz?
 
- V: Az 5. lépésben új oldalt ad hozzá a dokumentumhoz a`Add` módszere a`Pages` Gyűjtemény.
+ V: Az 5. lépésben új oldalt ad hozzá a dokumentumhoz a`Add` módszere a`Pages` gyűjtemény.
 
 #### K: Hogyan hozhatok létre Graph objektumot?
 
@@ -171,7 +171,7 @@ V: A 7. lépésben egy meghatározott méretű téglalapot hoz létre, és a kit
 
 #### K: Hogyan állíthatom be a Graph objektum pozícióját?
 
- V: A 9. lépésben beállítja a`IsChangePosition` tulajdona a`Graph` tiltakozni`false` hogy megakadályozza a helyzet megváltoztatását.
+ V: A 9. lépésben beállítja a`IsChangePosition` tulajdona a`Graph` tiltakozik`false` hogy megakadályozza a helyzet megváltoztatását.
 
 #### K: Hogyan hozhatok létre átlátszóságú TextFragmentet?
 
@@ -179,7 +179,7 @@ V: A 7. lépésben egy meghatározott méretű téglalapot hoz létre, és a kit
 
 #### K: Hogyan menthetem el a PDF dokumentumot?
 
- V: A 11. lépésben a PDF-dokumentumot a`Save` módszere a`Document` tárgy.
+ V: A 11. lépésben a PDF-dokumentumot a`Save` módszere a`Document` objektum.
 
 #### K: Mi a fő kivonat ebből az oktatóanyagból?
 

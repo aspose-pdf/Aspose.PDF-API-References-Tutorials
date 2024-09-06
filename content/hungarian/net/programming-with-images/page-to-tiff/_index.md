@@ -48,7 +48,7 @@ Document pdfDocument = new Document(dataDir + "PageToTIFF.pdf");
 
 ## 3. lépés: Felbontás és TiffSettings objektumok létrehozása
 
- Ezután létre kell hoznunk a`Resolution` tárgy és a`TiffSettings` tárgy. Ezek az objektumok határozzák meg a TIFF-kép felbontását és beállításait. Használja a következő kódot:
+ Ezután létre kell hoznunk a`Resolution` tárgy és a`TiffSettings` objektum. Ezek az objektumok határozzák meg a TIFF-kép felbontását és beállításait. Használja a következő kódot:
 
 ```csharp
 // Hozzon létre Resolution objektumot
@@ -66,7 +66,7 @@ tiffSettings.SkipBlankPages = false;
 
 ## 4. lépés: TiffDevice létrehozása
 
- Az átalakítás végrehajtásához létre kell hoznunk a`TiffDevice` tárgy. Ez az eszköz kezeli az átalakítási folyamatot. Használja a következő kódot:
+ Az átalakítás végrehajtásához létre kell hoznunk a`TiffDevice` objektum. Ez az eszköz kezeli az átalakítási folyamatot. Használja a következő kódot:
 
 ```csharp
 // Hozzon létre TIFF-eszközt
@@ -104,7 +104,7 @@ A TIFF kép mentése után megjeleníthetünk egy sikerüzenetet, amely jelzi a 
 System.Console.WriteLine("PDF one page converted to TIFF successfully!");
 ```
 
-Gratulálunk! Sikeresen konvertált egy PDF oldalt TIFF formátumba az Aspose.PDF for .NET segítségével.
+Gratulálok! Sikeresen konvertált egy PDF oldalt TIFF formátumba az Aspose.PDF for .NET segítségével.
 
 ### Minta forráskód a Page To TIFF-hez az Aspose.PDF for .NET használatával 
 ```csharp
@@ -122,7 +122,7 @@ tiffSettings.Shape = ShapeType.Landscape;
 tiffSettings.SkipBlankPages = false;
 // Hozzon létre TIFF-eszközt
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
-//Konvertálja az adott oldalt, és mentse a képet adatfolyamba
+// Konvertálja az adott oldalt, és mentse a képet adatfolyamba
 tiffDevice.Process(pdfDocument, 1, 1, dataDir + "PageToTIFF_out.tif");
 System.Console.WriteLine("PDF one page converted to tiff successfully!");
 ```
@@ -159,4 +159,4 @@ V: Testreszabhatja a TIFF-kép beállításait a létrehozásával`TiffSettings`
 
 #### K: Beállítható az eredményül kapott TIFF-kép tájolása?
 
-V: Igen, módosíthatja az eredményül kapott TIFF-kép tájolását a`ShapeType` tulajdona a`TiffSettings` tárgy. A megadott kódban,`ShapeType.Landscape` fekvő tájoláshoz használják.
+V: Igen, módosíthatja az eredményül kapott TIFF-kép tájolását a`ShapeType` tulajdona a`TiffSettings` objektum. A megadott kódban,`ShapeType.Landscape` fekvő tájoláshoz használják.

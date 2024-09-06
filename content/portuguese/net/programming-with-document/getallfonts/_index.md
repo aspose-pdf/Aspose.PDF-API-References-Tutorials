@@ -1,41 +1,41 @@
 ---
 title: Obtenha todas as fontes em arquivo PDF
 linktitle: Obtenha todas as fontes em arquivo PDF
-second_title: Referência da API Aspose.PDF para .NET
-description: Aprenda como usar Aspose.PDF for .NET para obter todas as fontes usadas em um arquivo PDF programaticamente com este guia passo a passo e código de exemplo.
+second_title: Referência da API do Aspose.PDF para .NET
+description: Aprenda a usar o Aspose.PDF para .NET para obter todas as fontes usadas em um arquivo PDF programaticamente com este guia passo a passo e código de exemplo.
 type: docs
 weight: 160
 url: /pt/net/programming-with-document/getallfonts/
 ---
-Aspose.PDF for .NET é uma biblioteca poderosa que permite aos desenvolvedores trabalhar com arquivos PDF programaticamente. Um dos recursos que oferece é a capacidade de obter todas as fontes usadas em um arquivo PDF. Isso pode ser útil se você precisar analisar ou manipular programaticamente as fontes em um arquivo PDF.
+Aspose.PDF para .NET é uma biblioteca poderosa que permite que desenvolvedores trabalhem com arquivos PDF programaticamente. Um dos recursos que ele fornece é a capacidade de obter todas as fontes usadas em um arquivo PDF. Isso pode ser útil se você precisar analisar ou manipular programaticamente as fontes em um arquivo PDF.
 
-Neste tutorial, discutiremos como usar Aspose.PDF for .NET para obter todas as fontes usadas em um documento PDF. Forneceremos um guia passo a passo sobre como fazer isso, junto com um exemplo de código-fonte.
+Neste tutorial, discutiremos como usar o Aspose.PDF for .NET para obter todas as fontes usadas em um documento PDF. Forneceremos um guia passo a passo sobre como fazer isso, junto com um código-fonte de exemplo.
 
-## Etapa 1: criar um novo aplicativo de console C#
-Para começar, crie um novo aplicativo de console C# no Visual Studio. Você pode nomeá-lo como quiser. Depois que o projeto for criado, você precisará adicionar uma referência à biblioteca Aspose.PDF for .NET.
+## Etapa 1: Crie um novo aplicativo de console C#
+Para começar, crie um novo C# Console Application no Visual Studio. Você pode nomeá-lo como quiser. Depois que o projeto for criado, você precisa adicionar uma referência à biblioteca Aspose.PDF for .NET.
 
-## Etapa 2: importar o namespace Aspose.PDF
-Adicione a seguinte linha de código na parte superior do seu arquivo C# para importar o namespace Aspose.PDF:
+## Etapa 2: Importe o namespace Aspose.PDF
+Adicione a seguinte linha de código no topo do seu arquivo C# para importar o namespace Aspose.PDF:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Passo 3: Carregue o Documento PDF
-Carregue o documento PDF do qual deseja obter as fontes:
+## Etapa 3: Carregue o documento PDF
+Carregue o documento PDF do qual você deseja obter as fontes:
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Etapa 4: obtenha todas as fontes
+## Etapa 4: Obtenha todas as fontes
 Obtenha todas as fontes usadas no documento PDF:
 
 ```csharp
 Aspose.Pdf.Text.Font[] fonts = doc.FontUtilities.GetAllFonts();
 ```
 
-## Etapa 5: imprimir todas as fontes
+## Etapa 5: Imprima todas as fontes
 Imprima todas as fontes usadas no documento PDF:
 
 ```csharp
@@ -45,7 +45,7 @@ foreach (Aspose.Pdf.Text.Font font in fonts)
 }
 ```
 
-### Exemplo de código-fonte para obter todas as fontes usando Aspose.PDF para .NET
+### Exemplo de código-fonte para Obter todas as fontes usando Aspose.PDF para .NET
 ```csharp
 // O caminho para o diretório de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -58,22 +58,22 @@ foreach (Aspose.Pdf.Text.Font font in fonts)
 ```
 
 ## Conclusão
-Neste tutorial, discutimos como obter todas as fontes usadas em um documento PDF usando Aspose.PDF for .NET. Obter todas as fontes usadas em um documento PDF pode ser útil se você precisar analisar ou manipular programaticamente as fontes em um documento PDF. Aspose.PDF for .NET fornece uma API simples e fácil de usar para trabalhar com documentos PDF, incluindo a obtenção de todas as fontes usadas em um documento PDF.
+Neste tutorial, discutimos como obter todas as fontes usadas em um documento PDF usando o Aspose.PDF para .NET. Obter todas as fontes usadas em um documento PDF pode ser útil se você precisar analisar ou manipular programaticamente as fontes em um documento PDF. O Aspose.PDF para .NET fornece uma API simples e fácil de usar para trabalhar com documentos PDF, incluindo obter todas as fontes usadas em um documento PDF.
 
 ### Perguntas frequentes
 
-#### P: Por que eu precisaria usar todas as fontes em um documento PDF?
+#### P: Por que preciso obter todas as fontes usadas em um documento PDF?
 
-R: Obter todas as fontes usadas em um documento PDF pode ser útil se você precisar analisar ou manipular programaticamente as fontes para diversos fins, como substituição ou personalização de fontes.
+R: Obter todas as fontes usadas em um documento PDF pode ser útil se você precisar analisar ou manipular programaticamente as fontes para vários propósitos, como substituição ou personalização de fontes.
 
-#### P: Como posso obter todas as fontes usadas em um documento PDF usando Aspose.PDF for .NET?
+#### P: Como posso obter todas as fontes usadas em um documento PDF usando o Aspose.PDF para .NET?
 
- R: Você pode obter todas as fontes usadas em um documento PDF usando Aspose.PDF for .NET chamando o`GetAllFonts` método do`FontUtilities` aula. Este método retorna um array de`Aspose.Pdf.Text.Font` objetos, que representam as fontes usadas no documento PDF.
+ R: Você pode obter todas as fontes usadas em um documento PDF usando Aspose.PDF para .NET chamando o`GetAllFonts` método do`FontUtilities` classe. Este método retorna uma matriz de`Aspose.Pdf.Text.Font` objetos, que representam as fontes usadas no documento PDF.
 
 #### P: Posso filtrar fontes com base em determinados critérios?
 
-R: Sim, você pode filtrar fontes com base em determinados critérios usando Aspose.PDF for .NET. Depois de obter todas as fontes, você pode analisá-las programaticamente e aplicar a lógica de filtragem conforme necessário.
+R: Sim, você pode filtrar fontes com base em certos critérios usando o Aspose.PDF para .NET. Depois de obter todas as fontes, você pode analisá-las programaticamente e aplicar lógica de filtragem conforme necessário.
 
-#### P: O Aspose.PDF for .NET é compatível com vários formatos de fonte?
+#### P: O Aspose.PDF para .NET é compatível com vários formatos de fonte?
 
-R: Sim, Aspose.PDF for .NET é compatível com vários formatos de fonte, incluindo fontes TrueType, OpenType e Type 1. Ele pode trabalhar com diferentes formatos de fonte e manipulá-los durante a manipulação de documentos PDF.
+R: Sim, o Aspose.PDF para .NET é compatível com vários formatos de fonte, incluindo fontes TrueType, OpenType e Type 1. Ele pode trabalhar com diferentes formatos de fonte e lidar com eles durante a manipulação de documentos PDF.

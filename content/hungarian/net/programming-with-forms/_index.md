@@ -25,7 +25,7 @@ Ezek az oktatóanyagok részletes kódpéldákat, világos magyarázatokat és i
 | [Lapítsd ki az űrlapokat PDF-dokumentumban](./flatten-forms/) | Az Aspose.PDF for .NET segítségével könnyedén simítsa ki az űrlapokat PDF-dokumentumban. |  
 | [Űrlapmező 14. betűtípusa](./form-field-font-14/) | Az Aspose.PDF for .NET segítségével könnyedén beállíthatja a PDF-dokumentumok űrlapmezőinek betűtípusát. |  
 | [PDF űrlapmezőkoordináták beszerzése](./get-coordinates/) | Az Aspose.PDF for .NET segítségével könnyedén beszerezheti a PDF űrlapmezők koordinátáit PDF-dokumentumaiban. |  
-| [Mezők lekérése a régióból PDF-fájlban](./get-fields-from-region/) | Könnyen beszerezhet mezőket egy adott régióból PDF-fájlban az Aspose.PDF for .NET segítségével. |  
+| [Mezők lekérése a régióból PDF-fájlban](./get-fields-from-region/) | Könnyen beszerezheti a mezőket egy adott régióból PDF-fájlban az Aspose.PDF for .NET segítségével. |  
 | [Szerezzen értéket a mezőből PDF-dokumentumban](./get-value-from-field/) | Könnyen beszerezheti egy űrlapmező értékét PDF-dokumentumban az Aspose.PDF for .NET segítségével. |  
 | [Szerezzen be értékeket az összes mezőből PDF-dokumentumban](./get-values-from-all-fields/) | Könnyen lekérheti az összes űrlapmező értékét PDF-dokumentumban az Aspose.PDF for .NET segítségével. |  
 | [Szerezze be az XFAProperties-t](./get-xfaproperties/) | Az Aspose.PDF for .NET segítségével könnyedén megszerezheti az űrlapmezők XFA-tulajdonságait PDF-dokumentumaiban. |  
@@ -34,7 +34,7 @@ Ezek az oktatóanyagok részletes kódpéldákat, világos magyarázatokat és i
 | [Módosítsa az űrlapmezőt a PDF-dokumentumban](./modify-form-field/) | Könnyen szerkesztheti az űrlapmezőket PDF-dokumentumban az Aspose.PDF for .NET segítségével. |  
 | [Űrlapmező mozgatása](./move-form-field/) | Könnyen mozgathatja az űrlapmezőket PDF-dokumentumaiban az Aspose.PDF for .NET segítségével. |  
 | [Jogok megőrzése](./preserve-rights/) | Az Aspose.PDF for .NET segítségével megőrizheti az űrlapjogokat PDF-dokumentumaiban. |  
-| [Rádiógomb](./radio-button/) | Könnyen hozzáadhat rádiógombokat PDF-dokumentumaihoz az Aspose.PDF for .NET segítségével. |  
+| [Rádió gomb](./radio-button/) | Könnyen hozzáadhat rádiógombokat PDF-dokumentumaihoz az Aspose.PDF for .NET segítségével. |  
 | [Rádiógomb Opciókkal](./radio-button-with-options/) | Az Aspose.PDF for .NET segítségével egyszerűen adjon hozzá opciókat tartalmazó választógombot egy PDF-dokumentumhoz. |  
 | [Űrlapmező lekérése lapok sorrendjében](./retrieve-form-field-in-tab-order/) | Ismerje meg, hogyan kérheti le az űrlapmezőket tabulátorok sorrendjében az Aspose.PDF for .NET használatával. |  
 | [Válassza a rádiógombot a PDF-dokumentumban](./select-radio-button/) | Ismerje meg, hogyan választhat ki választógombot PDF-dokumentumban az Aspose.PDF for .NET használatával. |  

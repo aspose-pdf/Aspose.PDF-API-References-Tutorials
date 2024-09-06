@@ -1,16 +1,16 @@
 ---
-title: PDF Dosyasındaki Kenarlığı Çıkart
-linktitle: PDF Dosyasındaki Kenarlığı Çıkart
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET kullanarak PDF dosyasındaki kenarlığı nasıl çıkaracağınızı öğrenin.
+title: PDF Dosyasındaki Kenarlığı Çıkar
+linktitle: PDF Dosyasındaki Kenarlığı Çıkar
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki kenarlığın nasıl çıkarılacağını öğrenin.
 type: docs
 weight: 80
 url: /tr/net/programming-with-tables/extract-border/
 ---
-Bu derste Aspose.PDF for .NET kullanarak PDF dosyasındaki kenarlığın nasıl çıkarılacağını öğreneceğiz. C#'ta kaynak kodunu adım adım anlatacağız. Bu eğitimin sonunda, bir PDF belgesinden kenarlığı nasıl çıkaracağınızı ve onu resim olarak nasıl kaydedeceğinizi öğreneceksiniz. Hadi başlayalım!
+Bu eğitimde, .NET için Aspose.PDF kullanarak PDF dosyasındaki kenarlığı nasıl çıkaracağımızı öğreneceğiz. Kaynak kodunu adım adım C# dilinde açıklayacağız. Bu eğitimin sonunda, PDF belgesinden kenarlığı nasıl çıkaracağınızı ve bir resim olarak nasıl kaydedeceğinizi öğreneceksiniz. Başlayalım!
 
-## 1. Adım: Ortamı ayarlama
-Öncelikle Aspose.PDF for .NET ile C# geliştirme ortamınızı kurduğunuzdan emin olun. Referansı kitaplığa ekleyin ve gerekli ad alanlarını içe aktarın.
+## Adım 1: Ortamı kurma
+Öncelikle, C# geliştirme ortamınızı .NET için Aspose.PDF ile kurduğunuzdan emin olun. Referansı kütüphaneye ekleyin ve gerekli ad alanlarını içe aktarın.
 
 ## Adım 2: PDF Belgesini Yükleme
 Bu adımda belirtilen dosyadan PDF belgesini yüklüyoruz.
@@ -19,10 +19,10 @@ Bu adımda belirtilen dosyadan PDF belgesini yüklüyoruz.
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-"BELGE DİZİNİ"ni PDF dosyanızın bulunduğu gerçek dizinle değiştirdiğinizden emin olun.
+"BELGE DİZİNİNİZ" ifadesini PDF dosyanızın bulunduğu gerçek dizinle değiştirdiğinizden emin olun.
 
-## Adım 3: Kenar Çıkarma
-Belgede yer alan işlemleri yineleyerek PDF belgesinden kenarlığı çıkaracağız.
+## Adım 3: Kenar Çıkarımı
+PDF belgesindeki işlemleri yineleyerek kenarlığı çıkaracağız.
 
 ```csharp
 Stack graphicsState = new Stack();
@@ -46,16 +46,16 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 }
 ```
 
- Biz bir yaratıyoruz`graphicsState` grafik durumlarını depolamak için yığın, çıkarılan sınırı yakalamak için bir bitmap görüntüsü,`GraphicsPath` çizim yollarını depolamak için nesneyi ve durumu ve renkleri izlemek için diğer değişkenleri içerir.
+ Biz bir tane yaratıyoruz`graphicsState` grafik durumlarını depolamak için bir yığın, çıkarılan kenarlığı yakalamak için bir bitmap görüntüsü,`GraphicsPath` çizim yollarını ve durum ve renkleri izlemek için diğer değişkenleri depolamak için nesne.
 
 ## Adım 4: İşlem İşleme
-Bu adımda, belgenin kenarlığını çıkarmak için yapılan her işlemi işliyoruz.
+Bu adımda belgenin her bir işlemini işleyerek kenarlığı çıkarıyoruz.
 
 ```csharp
 // İşlem türünü kontrol edin
 if (opSaveState != null)
 {
-     // Önceki durumu kaydedin ve mevcut durumu yığının en üstüne itin
+     // Önceki durumu kaydet ve geçerli durumu yığının en üstüne it
      graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
      lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 }
@@ -67,7 +67,7 @@ else if (opRestoreState != null)
 }
 else if (opCtm != null)
 {
-     // Geçerli dönüşüm matrisini alın
+     // Mevcut dönüşüm matrisini al
      System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
          (float)opCtm.Matrix.A,
          (float)opCtm.Matrix.B,
@@ -87,18 +87,18 @@ else if (opMoveTo != null)
 }
 else if (opLineTo != null)
 {
-     // Çizgi çizimini işleme
+     // Bir çizginin çizimini işleyin
      // ...
-     // Çizgi çizmeyi yönetmek için kod ekleyin
+     // Bir çizginin çizilmesini işlemek için kod ekleyin
 }
 // ...
-// Diğer işlemler için else if bloklarını ekleyin
+// Diğer işlemler için else if blokları ekleyin
 ```
 
-Koşulları kullanarak işlem türünü kontrol ediyoruz ve her işlem için uygun kodu çalıştırıyoruz.
+İşlemin türünü koşullar kullanarak kontrol ediyoruz ve her işlem için uygun kodu çalıştırıyoruz.
 
-## Adım 5: Yedekleme İmajı
-Son olarak, çıkarılan kenarlığı içeren bitmap görüntüsünü belirtilen bir dosyaya kaydediyoruz.
+## Adım 5: Yedekleme Görüntüsü
+Son olarak, çıkarılan kenarlığı içeren bitmap görüntüsünü belirtilen dosyaya kaydediyoruz.
 
 ```csharp
 dataDir = dataDir + "ExtractBorder_out.png";
@@ -107,10 +107,10 @@ bitmap.Save(dataDir, ImageFormat.Png);
 
 Çıktı görüntüsünü kaydetmek için doğru dizini ve dosya adını belirttiğinizden emin olun.
 
-### Aspose.PDF for .NET kullanarak Kenar Çıkarma için örnek kaynak kodu
+### .NET için Aspose.PDF kullanarak Kenarlığı Çıkarma için örnek kaynak kodu
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document(dataDir + "input.pdf");
@@ -120,7 +120,7 @@ System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageI
 System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
 // Varsayılan ctm matris değeri 1,0,0,1,0,0'dır
 System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
-//System.Drawing koordinat sistemi sol üst tabanlı, pdf koordinat sistemi ise sol alt tabanlı olduğundan ters çevirme matrisini uygulamamız gerekiyor
+//Sistem. Çizim koordinat sistemi sol üst tabanlı iken, pdf koordinat sistemi sol alt tabanlıdır, bu nedenle ters matrisi uygulamamız gerekir
 System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, (float)doc.Pages[1].PageInfo.Height);
 System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
 System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);
@@ -149,13 +149,13 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 
 		if (opSaveState != null)
 		{
-			//Önceki durumu kaydedin ve mevcut durumu yığının en üstüne itin
+			//Önceki durumu kaydet ve geçerli durumu yığının en üstüne it
 			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
 		else if (opRestoreState != null)
 		{
-			// Mevcut durumu atın ve öncekini geri yükleyin
+			// Mevcut durumu at ve öncekini geri yükle
 			graphicsState.Pop();
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
@@ -233,26 +233,26 @@ Console.WriteLine("\nBorder extracted successfully as image.\nFile saved at " + 
 ```
 
 ## Çözüm
-Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesinden kenarlığın nasıl çıkarılacağını öğrendik. Diğer PDF belgelerinden kenarlık çıkarmak için bu adım adım kılavuzu kullanabilirsiniz.
+Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF belgesinden kenarlığın nasıl çıkarılacağını öğrendik. Diğer PDF belgelerinden kenarlığı çıkarmak için bu adım adım kılavuzu kullanabilirsiniz.
 
-### PDF dosyasındaki kenarlığı ayıklamak için SSS
+### PDF dosyasındaki kenarlığı çıkarmak için SSS
 
-#### S: Bir PDF dosyasından kenarlığı çıkarmanın amacı nedir?
+#### S: PDF dosyasından kenarlık çıkarma işleminin amacı nedir?
 
-C: Kenarlığın bir PDF dosyasından çıkarılması çeşitli amaçlar için yararlı olabilir. Belgenin tablolar, diyagramlar veya grafik öğeler gibi yapısal öğelerini ayırmanıza ve analiz etmenize olanak tanır. PDF belgesindeki içeriğin düzenini, boyutlarını ve konumunu belirlemek için çıkarılan kenarlığı kullanabilirsiniz.
+A: Bir PDF dosyasından kenarlığı çıkarmak çeşitli amaçlar için yararlı olabilir. Tablolar, diyagramlar veya grafiksel öğeler gibi belgenin yapısal öğelerini izole etmenize ve analiz etmenize olanak tanır. Çıkarılan kenarlığı, PDF belgesindeki içeriğin düzenini, boyutlarını ve konumunu belirlemek için kullanabilirsiniz.
 
-#### S: Kenarlığı PDF belgesindeki belirli sayfalardan veya alanlardan çıkarabilir miyim?
+#### S: PDF belgesindeki belirli sayfalardan veya alanlardan kenarlıkları çıkarabilir miyim?
 
-C: Evet, PDF belgesindeki belirli sayfalardan veya bölgelerden kenarlığı çıkarmak için sağlanan C# kaynak kodunu değiştirebilirsiniz. Manipüle ederek`doc.Pages` toplama ve özel ölçütler belirleyerek, belirli sayfalardan veya ilgi alanlarından kenarlığı çıkarmayı seçebilirsiniz.
+A: Evet, PDF belgesindeki belirli sayfalardan veya bölgelerden kenarlığı çıkarmak için sağlanan C# kaynak kodunu değiştirebilirsiniz.`doc.Pages` Özel ölçütleri belirleyerek ve toplayarak, belirli sayfalardan veya ilgi alanlarından kenarlığı çıkarmayı seçebilirsiniz.
 
 #### S: Çıktı görüntü formatını ve kalitesini nasıl özelleştirebilirim?
 
- C: Sağlanan C# kodunda, çıkarılan kenarlık PNG görüntüsü olarak kaydedilir. Çıktı görüntü formatını değiştirmek isterseniz,`ImageFormat.Png` parametresi`bitmap.Save` yöntemi JPEG, BMP veya GIF gibi desteklenen diğer görüntü formatlarına dönüştürür. Ek olarak, gereksinimlerinize göre görüntü kalitesini veya sıkıştırma ayarlarını ayarlayabilirsiniz.
+ A: Sağlanan C# kodunda, çıkarılan kenarlık PNG görüntüsü olarak kaydedilir. Çıktı görüntü biçimini değiştirmek istiyorsanız,`ImageFormat.Png` parametre içinde`bitmap.Save` JPEG, BMP veya GIF gibi diğer desteklenen görüntü biçimlerine yönelik yöntem. Ayrıca, gereksinimlerinize göre görüntü kalitesini veya sıkıştırma ayarlarını ayarlayabilirsiniz.
 
-#### S: Çıkarılan sınırda başka hangi işlemleri yapabilirim?
+#### S: Çıkarılan kenarlık üzerinde başka hangi işlemleri yapabilirim?
 
-C: Kenarlığı bir görüntü olarak çıkardıktan sonra, görüntü işleme kitaplıklarını veya algoritmalarını kullanarak onu daha fazla işleyebilirsiniz. Gerekirse görüntüden metin çıkarmak için görüntüyü analiz edebilir, görüntü filtreleri uygulayabilir, desenleri tespit edebilir veya OCR (Optik Karakter Tanıma) gerçekleştirebilirsiniz.
+A: Sınırı bir görüntü olarak çıkardıktan sonra, görüntü işleme kütüphanelerini veya algoritmalarını kullanarak daha fazla işleyebilirsiniz. Görüntüyü analiz edebilir, görüntü filtreleri uygulayabilir, desenleri tespit edebilir veya gerekirse görüntüden metin çıkarmak için OCR (Optik Karakter Tanıma) gerçekleştirebilirsiniz.
 
-#### S: Karmaşık PDF belgelerinden kenarlıkları çıkarırken herhangi bir sınırlama veya dikkate alınması gereken noktalar var mı?
+#### S: Karmaşık PDF belgelerinden kenarlıkları çıkarırken herhangi bir sınırlama veya dikkat edilmesi gereken husus var mı?
 
-C: Çıkarma işlemi, PDF belgesinin karmaşıklığına bağlı olarak değişebilir. Birden çok katmana, şeffaflığa veya gelişmiş grafiklere sahip karmaşık PDF'ler, kenarlığın doğru şekilde çıkarılması için ek işlem veya ayarlamalar gerektirebilir. Güvenilir sonuçlar elde etmek için çıkarma işlemini çeşitli PDF belgelerinde kapsamlı bir şekilde test etmek önemlidir.
+A: Çıkarma işlemi PDF belgesinin karmaşıklığına bağlı olarak değişebilir. Çok katmanlı, şeffaf veya gelişmiş grafiklere sahip karmaşık PDF'ler, kenarlığı doğru bir şekilde çıkarmak için ek işleme veya ayarlamalar gerektirebilir. Güvenilir sonuçlardan emin olmak için çıkarma işlemini çeşitli PDF belgelerinde kapsamlı bir şekilde test etmek önemlidir.

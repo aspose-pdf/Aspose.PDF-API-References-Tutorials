@@ -1,107 +1,135 @@
 ---
 title: Tetapkan Nama Font Default
 linktitle: Tetapkan Nama Font Default
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Panduan langkah demi langkah untuk mengatur nama font default dalam file PDF menggunakan Aspose.PDF untuk .NET.
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara menetapkan nama font default saat merender PDF ke gambar menggunakan Aspose.PDF untuk .NET. Panduan ini mencakup prasyarat, petunjuk langkah demi langkah, dan Tanya Jawab Umum.
 type: docs
 weight: 270
 url: /id/net/document-conversion/set-default-font-name/
 ---
-Dalam tutorial ini, kami akan menunjukkan cara mengatur nama font default dalam file PDF menggunakan Aspose.PDF untuk .NET. Terkadang saat Anda mengekstrak gambar dari file PDF, Anda mungkin mengalami masalah font yang hilang. Dengan menentukan nama font default, Anda dapat memastikan bahwa teks yang diekstrak akan ditampilkan dengan benar. Ikuti langkah-langkah di bawah ini untuk mengatur nama font default dalam file PDF.
+## Perkenalan
+
+Pernahkah Anda mencoba merender dokumen PDF ke gambar tetapi font-nya tidak terlihat benar? Mungkin teksnya tampak terdistorsi, atau mungkin font aslinya tidak didukung. Di sinilah pengaturan font default dapat menyelamatkan hari! Dengan menggunakan Aspose.PDF untuk .NET, Anda dapat dengan mudah mengatur font default untuk rendering PDF Anda, memastikan bahwa dokumen Anda terlihat tajam dan profesional. Dalam tutorial ini, kami akan memandu Anda tentang cara mengatur nama font default saat merender PDF ke gambar. Di akhir panduan ini, Anda akan memiliki keterampilan untuk mengatasi tantangan rendering PDF apa pun yang menghadang Anda. Siap? Mari kita mulai!
 
 ## Prasyarat
-Sebelum memulai, pastikan Anda memenuhi prasyarat berikut:
 
-- Pengetahuan dasar tentang bahasa pemrograman C#.
-- Pustaka Aspose.PDF untuk .NET diinstal di sistem Anda.
-- Lingkungan pengembangan seperti Visual Studio.
+Sebelum kita masuk ke kode, ada beberapa hal yang perlu Anda siapkan:
 
-## Langkah 1: Memuat dokumen PDF
- Langkah pertama adalah memuat dokumen PDF ke a`Document` obyek. Gunakan kode berikut:
+- Aspose.PDF untuk .NET: Pustaka canggih ini akan kita gunakan untuk memanipulasi dokumen PDF kita. Anda dapat mengunduhnya dari[Situs web Aspose](https://releases.aspose.com/pdf/net/).
+- Visual Studio: Pastikan Anda telah menginstal Visual Studio di komputer Anda. Ini akan menjadi lingkungan pengembangan kita.
+- .NET Framework: Pastikan Anda telah menginstal .NET Framework. Aspose.PDF untuk .NET mendukung berbagai versi, jadi periksa dokumentasi untuk menyesuaikan dengan kebutuhan Anda.
+- Dokumen PDF: Anda memerlukan contoh dokumen PDF untuk digunakan. Jika Anda tidak memilikinya, buat PDF sederhana atau unduh contohnya secara daring.
 
-```csharp
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+Setelah Anda menyiapkan semuanya, kita siap untuk memulai membuat kode!
 
-using (Document pdfDocument = new Document(dataDir + "input.pdf"))
-{
-     // Kode untuk ditambahkan
-}
-```
+## Paket Impor
 
- Pastikan untuk mengganti`"YOUR DOCUMENTS DIRECTORY"` dengan direktori sebenarnya tempat file PDF Anda berada.
-
-## Langkah 2: Tetapkan nama font default
- Selanjutnya, kita akan menetapkan nama font default menggunakan`DefaultFontName` pilihan dari`RenderingOptions` obyek. Gunakan kode berikut:
+Sebelum kita mulai membuat kode, penting untuk mengimpor paket-paket yang diperlukan. Ini memastikan bahwa kita memiliki akses ke semua kelas dan metode yang kita butuhkan untuk proyek kita.
 
 ```csharp
-using (Document pdfDocument = new Document(dataDir + "input.pdf"))
-{
-     using (FileStream imageStream = new FileStream(dataDir + "SetDefaultFontName.png", FileMode.Create))
-     {
-         Resolution resolution = new Resolution(300);
-         PngDevice pngDevice = new PngDevice(resolution);
-         RenderingOptions ro = new RenderingOptions();
-         ro.DefaultFontName = "Arial";
-         pngDevice.RenderingOptions = ro;
-        
-         // Kode untuk ditambahkan
-     }
-}
+using Aspose.Pdf.Devices;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
 ```
 
- Pastikan untuk mengganti`"Arial"` dengan nama font yang diinginkan.
+Impor ini penting karena menghadirkan namespace yang diperlukan untuk menangani manipulasi PDF, penyajian gambar, dan operasi aliran file.
 
-## Langkah 3: Ekstraksi Gambar
-Selanjutnya, kita akan mengekstrak gambar dari halaman tertentu pada dokumen PDF. Gunakan kode berikut:
+## Langkah 1: Siapkan Jalur Proyek dan Dokumen Anda
 
-```csharp
-pngDevice.Process(pdfDocument.Pages[1], imageStream);
-```
-
- Pastikan untuk menentukan nomor halaman yang benar`pdfDocument.Pages[1]`.
-
-### Contoh kode sumber untuk Tetapkan Nama Font Default menggunakan Aspose.PDF untuk .NET
+Pertama-tama, mari kita atur jalur direktori tempat dokumen PDF Anda berada. Ini akan menjadi titik awal Anda untuk memanipulasi berkas PDF.
 
 ```csharp
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-using (Document pdfDocument = new Document(dataDir + "input.pdf"))
-{
-	using (FileStream imageStream = new FileStream(dataDir + "SetDefaultFontName.png", FileMode.Create))
-	{
-		Resolution resolution = new Resolution(300);
-		PngDevice pngDevice = new PngDevice(resolution);
-		RenderingOptions ro = new RenderingOptions();
-		ro.DefaultFontName = "Arial";
-		pngDevice.RenderingOptions = ro;
-		pngDevice.Process(pdfDocument.Pages[1], imageStream);
-	}
-}
 ```
+ Di Sini,`dataDir` adalah direktori tempat dokumen PDF Anda berada. Pastikan untuk mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya ke dokumen Anda. Hal ini penting karena kode perlu mengetahui dari mana mengambil berkas PDF.
+
+## Langkah 2: Muat Dokumen PDF
+
+Sekarang setelah kita memiliki jalur dokumen, langkah berikutnya adalah memuat dokumen PDF ke dalam memori sehingga kita dapat mulai mengerjakannya.
+
+```csharp
+using (Document pdfDocument = new Document(dataDir + "input.pdf"))
+```
+ Kami menggunakan`Document` kelas dari pustaka Aspose.PDF untuk memuat berkas PDF kita. Kelas ini menyediakan berbagai metode dan properti untuk bekerja dengan dokumen PDF.`"input.pdf"` harus diganti dengan nama file PDF Anda yang sebenarnya. File ini akan digunakan sebagai input untuk rendering.
+
+## Langkah 3: Buat Aliran Gambar untuk Output
+
+Setelah dokumen dimuat, kita perlu menyiapkan aliran untuk menyimpan gambar yang telah dirender. Di sinilah gambar keluaran akan disimpan.
+
+```csharp
+using (FileStream imageStream = new FileStream(dataDir + "SetDefaultFontName.png", FileMode.Create))
+```
+ Itu`FileStream`kelas digunakan untuk membuat file baru tempat gambar yang dirender akan disimpan. Dalam contoh ini, kami menyimpan gambar sebagai`"SetDefaultFontName.png"` . Itu`FileMode.Create` memastikan bahwa file baru dibuat, atau file yang sudah ada ditimpa.
+
+## Langkah 4: Atur Resolusi Gambar
+
+Sebelum mengubah PDF menjadi gambar, penting untuk mengatur resolusinya. Ini menentukan kualitas dan kejelasan gambar keluaran.
+
+```csharp
+Resolution resolution = new Resolution(300);
+```
+ Itu`Resolution` class menetapkan resolusi gambar keluaran. Di sini, kami telah memilih resolusi 300 DPI (titik per inci), yang merupakan standar untuk gambar berkualitas tinggi. Ini memastikan bahwa teks dan grafik dalam PDF Anda ditampilkan dengan jelas tanpa kehilangan detail.
+
+## Langkah 5: Konfigurasikan Perangkat PNG
+
+Berikutnya, kita perlu mengonfigurasi perangkat yang akan menangani pemrosesan PDF ke gambar PNG.
+
+```csharp
+PngDevice pngDevice = new PngDevice(resolution);
+```
+ Itu`PngDevice` kelas bertanggung jawab untuk merender dokumen PDF menjadi gambar PNG. Dengan melewati`resolution` keberatan dengan hal tersebut, kami memastikan bahwa gambar dibuat dengan DPI yang ditentukan.
+
+## Langkah 6: Mengatur Nama Font Default
+
+Berikut bagian yang penting – menetapkan nama font default. Ini akan menjadi font cadangan jika font asli dalam PDF tidak tersedia.
+
+```csharp
+RenderingOptions ro = new RenderingOptions();
+ro.DefaultFontName = "Arial";
+pngDevice.RenderingOptions = ro;
+```
+ Kami membuat sebuah contoh`RenderingOptions` dan mengaturnya`DefaultFontName` properti untuk`"Arial"`. Ini berarti bahwa jika font asli dalam PDF tidak dapat ditemukan, Arial akan digunakan sebagai gantinya. Langkah ini penting untuk menjaga keterbacaan dan tampilan teks dalam gambar yang ditampilkan.
+
+## Langkah 7: Render Halaman PDF ke Gambar
+
+Akhirnya, setelah semuanya siap, kita sekarang dapat mengubah halaman pertama dokumen PDF menjadi gambar dan menyimpannya menggunakan aliran file yang kita buat sebelumnya.
+
+```csharp
+pngDevice.Process(pdfDocument.Pages[1], imageStream);
+```
+ Itu`Process` metode dari`PngDevice` kelas digunakan untuk merender halaman PDF yang ditentukan (dalam kasus ini, halaman pertama) menjadi gambar. Output kemudian disimpan ke`imageStream`Langkah ini mengonversi halaman PDF menjadi gambar PNG dengan resolusi dan font default yang ditentukan.
+
+## Langkah 8: Tutup Aliran File dan Dokumen PDF
+
+Setelah merender gambar, penting untuk menutup aliran file dan dokumen PDF untuk mengosongkan sumber daya.
+
+```csharp
+imageStream.Close();
+pdfDocument.Dispose();
+```
+Penutupan`imageStream` memastikan bahwa file disimpan dengan benar dan tidak ada data yang hilang. Membuang`pdfDocument` membebaskan memori dan sumber daya, mencegah potensi kebocoran memori.
 
 ## Kesimpulan
-Dalam tutorial ini, kita mempelajari cara mengatur nama font default dalam file PDF menggunakan Aspose.PDF untuk .NET. Dengan menentukan nama font default, Anda dapat memastikan bahwa teks yang diekstrak akan ditampilkan dengan benar. Gunakan metode ini untuk mengatasi masalah font yang hilang saat mengekstraksi gambar dari file PDF.
 
-### FAQ
+Nah, itu dia! Hanya dengan beberapa baris kode, Anda telah mempelajari cara mengatur nama fon default saat merender PDF ke gambar menggunakan Aspose.PDF for .NET. Keterampilan ini sangat berguna, terutama saat menangani PDF yang mungkin berisi fon yang tidak didukung. Dengan mengatur fon default, Anda memastikan bahwa gambar yang dirender tetap mudah dibaca dan terlihat profesional.
 
-#### T: Apa itu Aspose.PDF untuk .NET?
+## Pertanyaan yang Sering Diajukan
 
-J: Aspose.PDF untuk .NET adalah perpustakaan canggih yang memungkinkan pengembang bekerja dengan dokumen PDF dalam aplikasi C#. Ia menawarkan berbagai fungsi, termasuk mengatur nama font default dalam file PDF.
+### Apa yang terjadi jika font default yang ditentukan tidak terpasang pada sistem?
+ Jika font default yang ditentukan dalam`RenderingOptions` tidak terinstal di sistem, Aspose.PDF akan menggunakan font fallback yang ditentukan sistem.
 
-#### T: Mengapa saya perlu menyetel nama font default di file PDF?
+### Bisakah saya menggunakan font selain Arial sebagai font default?
+Tentu saja! Anda dapat mengatur font apa pun yang terinstal di sistem Anda sebagai font default.
 
-J: Menyetel nama font default berguna saat mengekstraksi teks dari dokumen PDF. Jika PDF berisi teks dengan font yang tidak tersedia di mesin ekstraksi, menentukan nama font default memastikan tampilan teks yang benar.
+### Mungkinkah mengubah beberapa halaman PDF menjadi gambar sekaligus?
+Ya, Anda dapat mengulang halaman-halaman PDF Anda dan merender setiap halaman secara individual menggunakan proses yang sama.
 
-#### T: Bagaimana cara memuat dokumen PDF dan mengatur nama font default menggunakan Aspose.PDF untuk .NET?
+### Apakah pengaturan resolusi tinggi mempengaruhi kinerja rendering PDF?
+Ya, resolusi yang lebih tinggi akan menghasilkan berkas gambar yang lebih besar dan dapat meningkatkan waktu rendering, tetapi resolusi yang lebih tinggi juga akan menghasilkan gambar yang lebih jelas.
 
- J: Untuk memuat dokumen PDF dan mengatur nama font default, Anda dapat menggunakan`Document`kelas untuk memuat file PDF dan`RenderingOptions.DefaultFontName` properti untuk menentukan nama font default yang diinginkan.
-
-#### T: Bisakah saya memilih font apa pun sebagai nama font default?
-
-A:Ya, Anda dapat memilih font apa pun yang tersedia di mesin ekstraksi sebagai nama font default. Gunakan font yang sangat cocok dengan font yang hilang di PDF asli untuk memastikan rendering teks akurat.
-
-#### T: Apakah menyetel nama font default merupakan perubahan permanen pada file PDF?
-
-J: Tidak, menyetel nama font default menggunakan Aspose.PDF untuk .NET adalah perubahan sementara yang dilakukan selama ekstraksi teks. Itu tidak mengubah file PDF asli.
+### Bisakah saya mengubah PDF ke format gambar lain selain PNG?
+Ya, Aspose.PDF mendukung rendering ke berbagai format gambar seperti JPEG, BMP, dan TIFF.

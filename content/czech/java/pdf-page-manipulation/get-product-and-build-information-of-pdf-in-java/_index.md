@@ -91,7 +91,7 @@ V tomto článku jsme prozkoumali, jak extrahovat informace o produktu a sestavo
 Chcete-li extrahovat informace o produktu ze souboru PDF pomocí Aspose.PDF for Java, postupujte takto:
 1. Importujte knihovnu Aspose.PDF.
 2. Načtěte dokument PDF.
-3.  Použijte`getProductName()`, `getProductVersion()` , a`getProductManufacturer()` metody extrahování podrobností o produktu.
+3.  Použijte`getProductName()`, `getProductVersion()` a`getProductManufacturer()` metody extrahování podrobností o produktu.
 
 ### Co jsou informace o sestavení a proč jsou důležité?
 

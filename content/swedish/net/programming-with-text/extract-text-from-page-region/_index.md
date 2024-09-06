@@ -31,7 +31,7 @@ using System.IO;
  I koden, lokalisera raden som säger`string dataDir = "YOUR DOCUMENT DIRECTORY";` och byt ut`"YOUR DOCUMENT DIRECTORY"` med sökvägen till katalogen där dina dokument är lagrade.
 
 ## Steg 4: Öppna PDF-dokumentet
- Öppna ett befintligt PDF-dokument med hjälp av`Document`konstruktorn och skickar sökvägen till indata-PDF-filen.
+ Öppna ett befintligt PDF-dokument med hjälp av`Document` konstruktorn och skickar sökvägen till indata-PDF-filen.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
@@ -77,7 +77,7 @@ absorber.TextSearchOptions.Rectangle = new Aspose.Pdf.Rectangle(100, 200, 250, 3
 pdfDocument.Pages[1].Accept(absorber);
 // Hämta den extraherade texten
 string extractedText = absorber.Text;
-// Skapa en skribent och öppna filen
+// Skapa en författare och öppna filen
 TextWriter tw = new StreamWriter(dataDir + "extracted-text.txt");
 // Skriv en textrad till filen
 tw.WriteLine(extractedText);

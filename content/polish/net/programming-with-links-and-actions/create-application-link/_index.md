@@ -1,17 +1,17 @@
 ---
-title: Utwórz łącze do aplikacji w pliku PDF
-linktitle: Utwórz łącze do aplikacji w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Z łatwością twórz łącza do aplikacji w pliku PDF za pomocą Aspose.PDF dla .NET.
+title: Utwórz łącze aplikacji w pliku PDF
+linktitle: Utwórz łącze aplikacji w pliku PDF
+second_title: Aspose.PDF dla .NET API Reference
+description: Łatwe tworzenie łączy do aplikacji w plikach PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 20
 url: /pl/net/programming-with-links-and-actions/create-application-link/
 ---
-Utworzenie łącza do aplikacji w pliku PDF umożliwia utworzenie łączy do aplikacji zewnętrznych, takich jak pliki wykonywalne lub adresy URL. Dzięki Aspose.PDF dla .NET możesz łatwo tworzyć łącza do aplikacji, postępując zgodnie z następującym kodem źródłowym:
+Tworzenie łącza aplikacji w pliku PDF umożliwia tworzenie łączy do aplikacji zewnętrznych, takich jak pliki wykonywalne lub adresy URL. Dzięki Aspose.PDF dla .NET możesz łatwo tworzyć łącza aplikacji, postępując zgodnie z następującym kodem źródłowym:
 
-## Krok 1: Zaimportuj wymagane biblioteki
+## Krok 1: Importuj wymagane biblioteki
 
-Zanim zaczniesz, musisz zaimportować niezbędne biblioteki dla swojego projektu C#. Oto niezbędna dyrektywa importowa:
+Zanim zaczniesz, musisz zaimportować niezbędne biblioteki dla swojego projektu C#. Oto niezbędna dyrektywa importu:
 
 ```csharp
 using Aspose.Pdf;
@@ -21,7 +21,7 @@ using Aspose.Pdf.InteractiveFeatures;
 
 ## Krok 2: Ustaw ścieżkę do folderu dokumentów
 
- W tym kroku musisz określić ścieżkę do folderu zawierającego plik PDF, do którego chcesz dodać link do aplikacji. Zastępować`"YOUR DOCUMENT DIRECTORY"` następującym kodzie z rzeczywistą ścieżką do folderu dokumentów:
+ tym kroku musisz określić ścieżkę do folderu zawierającego plik PDF, do którego chcesz dodać łącze aplikacji. Zastąp`"YOUR DOCUMENT DIRECTORY"` w poniższym kodzie podaj rzeczywistą ścieżkę do folderu z dokumentami:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -37,7 +37,7 @@ Document document = new Document(dataDir + "CreateApplicationLink.pdf");
 
 ## Krok 4: Utwórz łącze do aplikacji
 
- W tym kroku utworzymy łącze do aplikacji za pomocą pliku`LinkAnnotation`adnotacja. Określimy współrzędne i obszar łącza, a także akcję uruchomienia aplikacji. Oto odpowiedni kod:
+ W tym kroku utworzymy łącze do aplikacji za pomocą`LinkAnnotation` adnotacja. Określimy współrzędne i obszar łącza, a także akcję uruchamiania aplikacji. Oto odpowiedni kod:
 
 ```csharp
 Page page = document.Pages[1];
@@ -49,20 +49,20 @@ page.Annotations.Add(link);
 
 ## Krok 5: Zapisz zaktualizowany plik
 
- Teraz zapiszmy zaktualizowany plik PDF za pomocą rozszerzenia`Save` metoda`document` obiekt. Oto odpowiedni kod:
+Teraz zapiszmy zaktualizowany plik PDF za pomocą`Save` metoda`document` obiekt. Oto odpowiadający kod:
 
 ```csharp
 dataDir = dataDir + "CreateApplicationLink_out.pdf";
 document. Save(dataDir);
 ```
 
-### Przykładowy kod źródłowy narzędzia Utwórz łącze do aplikacji przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla Create Application Link using Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Otwórz dokument
 Document document = new Document( dataDir + "CreateApplicationLink.pdf");
-// Utwórz łącze
+// Utwórz link
 Page page = document.Pages[1];
 LinkAnnotation link = new LinkAnnotation(page, new Aspose.Pdf.Rectangle(100, 100, 300, 300));
 link.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
@@ -76,43 +76,43 @@ Console.WriteLine("\nApplication link created successfully.\nFile saved at " + d
 
 ## Wniosek
 
-Gratulacje! Masz teraz przewodnik krok po kroku dotyczący tworzenia łączy do aplikacji za pomocą Aspose.PDF dla .NET. Możesz użyć tego kodu, aby dodać łącza do aplikacji zewnętrznych w dokumentach PDF.
+Gratulacje! Masz teraz przewodnik krok po kroku, jak tworzyć linki do aplikacji za pomocą Aspose.PDF dla .NET. Możesz użyć tego kodu, aby dodać linki do zewnętrznych aplikacji w swoich dokumentach PDF.
 
-Koniecznie zapoznaj się z oficjalną dokumentacją Aspose.PDF, aby uzyskać więcej informacji na temat zaawansowanych funkcji łączy interaktywnych.
+Koniecznie zapoznaj się z oficjalną dokumentacją Aspose.PDF, aby uzyskać więcej informacji na temat zaawansowanych funkcji interaktywnych łączy.
 
-### Często zadawane pytania dotyczące tworzenia łącza do aplikacji w pliku PDF
+### FAQ dotyczące tworzenia łącza do aplikacji w pliku PDF
 
-#### P: Czym są łącza do aplikacji w plikach PDF?
+#### P: Czym są linki do aplikacji w plikach PDF?
 
-O: Łącza do aplikacji w plikach PDF umożliwiają tworzenie łączy otwierających po kliknięciu aplikacje zewnętrzne, takie jak pliki wykonywalne lub adresy URL. Ta funkcja zwiększa interaktywność i zapewnia wygodny sposób łączenia użytkowników z zasobami zewnętrznymi.
+A: Linki aplikacji w plikach PDF umożliwiają tworzenie linków, które otwierają zewnętrzne aplikacje, takie jak pliki wykonywalne lub adresy URL, po kliknięciu. Ta funkcja zwiększa interaktywność i zapewnia wygodny sposób łączenia użytkowników z zasobami zewnętrznymi.
 
-#### P: W jaki sposób Aspose.PDF dla .NET ułatwia tworzenie łączy do aplikacji?
+#### P: W jaki sposób Aspose.PDF dla .NET ułatwia tworzenie łączy aplikacji?
 
-Odp.: Aspose.PDF dla .NET upraszcza proces tworzenia łączy do aplikacji, udostępniając kompleksowy zestaw narzędzi i interfejsów API. Samouczek krok po kroku zawarty w tym przewodniku pokazuje, jak dodawać łącza do aplikacji do dokumentów PDF.
+A: Aspose.PDF dla .NET upraszcza proces tworzenia łączy aplikacji, zapewniając kompleksowy zestaw narzędzi i interfejsów API. Samouczek krok po kroku zawarty w tym przewodniku pokazuje, jak dodawać łącza aplikacji do dokumentów PDF.
 
-#### P: Czy mogę dostosować wygląd łączy do aplikacji?
+#### P: Czy mogę dostosować wygląd linków aplikacji?
 
-Odp.: Absolutnie! Dzięki Aspose.PDF dla .NET masz kontrolę nad wyglądem łączy aplikacji. Możesz określić atrybuty, takie jak kolor, styl i efekty najechania, aby zapewnić atrakcyjne wizualnie wrażenia użytkownika.
+A: Oczywiście! Dzięki Aspose.PDF dla .NET masz kontrolę nad wyglądem łączy aplikacji. Możesz określić atrybuty, takie jak kolor, styl i efekty najechania, aby zapewnić wizualnie atrakcyjne doświadczenie użytkownika.
 
-#### P: Czy istnieją jakieś ograniczenia dotyczące typów aplikacji zewnętrznych, z którymi mogę się łączyć?
+#### P: Czy istnieją jakieś ograniczenia co do typów aplikacji zewnętrznych, do których mogę się łączyć?
 
-Odp.: Aspose.PDF dla .NET umożliwia łączenie się z różnymi aplikacjami zewnętrznymi, w tym plikami wykonywalnymi, adresami URL i dokumentami. Jednak podczas łączenia z plikami wykonywalnymi ważne jest, aby wziąć pod uwagę bezpieczeństwo użytkownika i kompatybilność.
+A: Aspose.PDF dla .NET umożliwia łączenie z różnymi aplikacjami zewnętrznymi, w tym plikami wykonywalnymi, adresami URL i dokumentami. Ważne jest jednak, aby podczas łączenia z plikami wykonywalnymi wziąć pod uwagę bezpieczeństwo użytkownika i zgodność.
 
-#### P: Jak mogę sprawdzić, czy moje łącza do aplikacji działają poprawnie?
+#### P: Jak mogę sprawdzić, czy linki do mojej aplikacji działają prawidłowo?
 
-O: Postępując zgodnie z instrukcjami zawartymi w samouczku i korzystając z dostarczonego przykładowego kodu, możesz śmiało tworzyć funkcjonalne łącza do aplikacji. Następnie możesz przetestować łącza, otwierając wygenerowany dokument PDF i klikając łącza aplikacji.
+A: Postępując zgodnie z instrukcjami samouczka i korzystając z dostarczonego przykładowego kodu, możesz pewnie tworzyć funkcjonalne linki aplikacji. Następnie możesz przetestować linki, otwierając wygenerowany dokument PDF i klikając linki aplikacji.
 
-#### P: Czy mogę utworzyć wiele łączy do aplikacji w jednym dokumencie PDF?
+#### P: Czy mogę utworzyć wiele linków do aplikacji w jednym dokumencie PDF?
 
- Odp.: Tak, możesz utworzyć wiele łączy do aplikacji w jednym dokumencie PDF za pomocą narzędzia`LinkAnnotation` adnotacja. Dzięki temu można zapewnić użytkownikom dostęp do różnych aplikacji zewnętrznych z różnych sekcji dokumentu.
+ O: Tak, możesz utworzyć wiele łączy do aplikacji w jednym dokumencie PDF, korzystając z`LinkAnnotation` adnotacja. Pozwala to zapewnić użytkownikom dostęp do różnych aplikacji zewnętrznych z różnych sekcji dokumentu.
 
-#### P: Czy podczas korzystania z łączy do aplikacji istnieją jakieś względy bezpieczeństwa?
-O: Łącząc pliki wykonywalne, ważne jest, aby upewnić się, że połączone aplikacje są bezpieczne i godne zaufania. Dodatkowo rozważ uprawnienia użytkowników i poinformuj ich o potencjalnym uruchomieniu aplikacji zewnętrznych.
+#### P: Czy istnieją jakieś względy bezpieczeństwa przy korzystaniu z łączy aplikacji?
+A: Podczas linkowania do plików wykonywalnych ważne jest, aby upewnić się, że powiązane aplikacje są bezpieczne i godne zaufania. Ponadto należy wziąć pod uwagę uprawnienia użytkowników i poinformować ich o potencjalnym uruchomieniu zewnętrznych aplikacji.
 
-#### P: Jak dodać łącza aplikacji do adresów URL lub stron internetowych?
+#### P: Jak dodać linki aplikacji do adresów URL lub stron internetowych?
 
-Odp.: Chociaż ten samouczek koncentruje się na tworzeniu łączy do aplikacji zewnętrznych, Aspose.PDF dla .NET obsługuje także tworzenie hiperłączy do adresów URL lub stron internetowych. Możesz dostosować dostarczony kod, aby utworzyć łącza internetowe w dokumentach PDF.
+A: Podczas gdy ten samouczek koncentruje się na tworzeniu linków do aplikacji zewnętrznych, Aspose.PDF dla .NET obsługuje również tworzenie hiperłączy do adresów URL lub stron internetowych. Możesz dostosować dostarczony kod, aby tworzyć linki internetowe w dokumentach PDF.
 
-#### P: Czy mogę używać Aspose.PDF dla .NET do wyodrębniania informacji z połączonych aplikacji zewnętrznych?
+#### P: Czy mogę użyć Aspose.PDF dla .NET do wyodrębniania informacji z połączonych aplikacji zewnętrznych?
 
-O: Tak, Aspose.PDF dla .NET zapewnia możliwości wyodrębniania i manipulowania informacjami z połączonych aplikacji zewnętrznych. Możesz eksplorować rozbudowane funkcje biblioteki, aby wykonywać różne zadania związane z połączoną treścią.
+A: Tak, Aspose.PDF dla .NET zapewnia możliwości wyodrębniania i manipulowania informacjami z połączonych aplikacji zewnętrznych. Możesz eksplorować rozbudowane funkcje biblioteki, aby wykonywać różne zadania związane z powiązaną zawartością.

@@ -25,7 +25,7 @@ Mielőtt elkezdené a kódírást, be kell állítania a fejlesztői környezete
 Az Aspose.PDF for .NET használatához hozzá kell adnia a megfelelő hivatkozásokat a projekthez. Kövesse az alábbi lépéseket a szükséges referenciák importálásához:
 
 1. A projektben kattintson a jobb gombbal a „References” elemre, és válassza a „Referencia hozzáadása” lehetőséget.
-2. "Hivatkozás hozzáadása" ablakban keresse meg és válassza ki az Aspose.PDF for .NET DLL-fájljait.
+2. A "Hivatkozás hozzáadása" ablakban keresse meg és válassza ki az Aspose.PDF for .NET DLL-fájljait.
 3. Kattintson az "OK" gombra a referenciák projektbe való importálásához.
 
 ## 3. lépés: A PDF fájl betöltése
@@ -134,13 +134,13 @@ V: Az Aspose.PDF for .NET hatékony API-kat biztosít a hiperhivatkozási célhe
 
 V: Igen, szelektíven kibonthatja a hiperhivatkozási célokat a PDF-dokumentum oldalain való iterációval, és a kívánt hiperhivatkozás-annotációk szűrésével a kritériumok alapján.
 
-#### K: Ki lehet bontani a hiperhivatkozási célokat jelszóval védett PDF dokumentumokból?
+#### K: Kivonhatók-e a hiperhivatkozási célhelyek a jelszóval védett PDF dokumentumokból?
 
 V: Az Aspose.PDF for .NET ki tudja bontani a hiperhivatkozási célokat a jelszóval védett PDF dokumentumokból, amennyiben megadja a szükséges hitelesítési adatokat a dokumentum megnyitásakor.
 
 #### K: Hogyan használhatom a kibontott hiperhivatkozási célokat az alkalmazásomban?
 
-V: Miután kibontotta a hiperhivatkozási célokat, különféle műveleteket hajthat végre velük, mint például a link URL-ek érvényesítése, jelentések létrehozása vagy egyéni navigáció megvalósítása.
+V: Miután kibontotta a hiperhivatkozási célokat, különféle műveletek végrehajtására használhatja őket, mint például a link URL-ek ellenőrzése, jelentések létrehozása vagy egyéni navigáció megvalósítása.
 
 #### K: Vannak-e korlátozások a hiperhivatkozási célhelyek kivonásakor?
 

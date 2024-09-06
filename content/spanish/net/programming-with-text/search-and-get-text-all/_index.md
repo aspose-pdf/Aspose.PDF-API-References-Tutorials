@@ -1,48 +1,48 @@
 ---
-title: Buscar y obtener texto todo
-linktitle: Buscar y obtener texto todo
-second_title: Aspose.PDF para referencia de API .NET
+title: Buscar y obtener todo el texto
+linktitle: Buscar y obtener todo el texto
+second_title: Referencia de API de Aspose.PDF para .NET
 description: Aprenda a buscar y obtener texto de todas las páginas de un documento PDF utilizando Aspose.PDF para .NET.
 type: docs
 weight: 420
 url: /es/net/programming-with-text/search-and-get-text-all/
 ---
-Este tutorial explica cómo usar Aspose.PDF para .NET para buscar y obtener texto de todas las páginas de un documento PDF. El código fuente de C# proporcionado demuestra el proceso paso a paso.
+Este tutorial explica cómo utilizar Aspose.PDF para .NET para buscar y obtener texto de todas las páginas de un documento PDF. El código fuente de C# proporcionado demuestra el proceso paso a paso.
 
-## Requisitos previos
+## Prerrequisitos
 
 Antes de continuar con el tutorial, asegúrese de tener lo siguiente:
 
 - Conocimientos básicos del lenguaje de programación C#.
-- Aspose.PDF para la biblioteca .NET instalada. Puede obtenerlo del sitio web de Aspose o utilizar NuGet para instalarlo en su proyecto.
+- Biblioteca Aspose.PDF para .NET instalada. Puede obtenerla desde el sitio web de Aspose o usar NuGet para instalarla en su proyecto.
 
-## Paso 1: configurar el proyecto
+## Paso 1: Configurar el proyecto
 
 Comience creando un nuevo proyecto C# en su entorno de desarrollo integrado (IDE) preferido y agregue una referencia a la biblioteca Aspose.PDF para .NET.
 
-## Paso 2: importar los espacios de nombres necesarios
+## Paso 2: Importar los espacios de nombres necesarios
 
-Agregue las siguientes directivas de uso al principio de su archivo C# para importar los espacios de nombres requeridos:
+Agregue las siguientes directivas using al comienzo de su archivo C# para importar los espacios de nombres requeridos:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Paso 3: cargue el documento PDF
+## Paso 3: Cargue el documento PDF
 
- Establezca la ruta a su directorio de documentos PDF y cargue el documento usando el`Document` clase:
+ Establezca la ruta al directorio de su documento PDF y cargue el documento utilizando el`Document` clase:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
 ```
 
- Asegúrate de reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta real a su directorio de documentos.
+ Asegúrese de reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta real a su directorio de documentos.
 
-## Paso 4: buscar y extraer texto
+## Paso 4: Buscar y extraer texto
 
- Crear un`TextFragmentAbsorber` objeto para encontrar todas las instancias de la frase de búsqueda de entrada:
+ Crear un`TextFragmentAbsorber` objeto para encontrar todas las instancias de la frase de búsqueda ingresada:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
@@ -50,15 +50,15 @@ TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 
  Reemplazar`"text"` con el texto real que desea buscar.
 
-## Paso 5: buscar en todas las páginas
+## Paso 5: Buscar en todas las páginas
 
-Acepta el absorbente para todas las páginas del documento:
+Aceptar el absorbedor para todas las páginas del documento:
 
 ```csharp
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 ```
 
-## Paso 6: obtenga fragmentos de texto extraídos
+## Paso 6: obtener fragmentos de texto extraídos
 
 Obtenga los fragmentos de texto extraídos utilizando el`TextFragments` propiedad de la`TextFragmentAbsorber` objeto:
 
@@ -66,9 +66,9 @@ Obtenga los fragmentos de texto extraídos utilizando el`TextFragments` propieda
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 ```
 
-## Paso 7: recorrer los fragmentos de texto
+## Paso 7: Recorrer los fragmentos de texto
 
-Recorra los fragmentos de texto obtenidos y acceda a sus propiedades:
+Recorra los fragmentos de texto getd y acceda a sus propiedades:
 
 ```csharp
 foreach (TextFragment textFragment in textFragmentCollection)
@@ -94,13 +94,13 @@ Puede modificar el código dentro del bucle para realizar más acciones en cada 
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Abrir documento
 Document pdfDocument = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-// Cree un objeto TextAbsorber para encontrar todas las instancias de la frase de búsqueda de entrada
+// Cree un objeto TextAbsorber para encontrar todas las instancias de la frase de búsqueda ingresada
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
-// Aceptar el absorbente para todas las páginas.
+// Acepta el absorbedor para todas las páginas.
 pdfDocument.Pages.Accept(textFragmentAbsorber);
-// Obtenga los fragmentos de texto extraídos
+// Obtener los fragmentos de texto extraídos
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// Recorre los fragmentos
+// Recorrer los fragmentos
 foreach (TextFragment textFragment in textFragmentCollection)
 {
 	Console.WriteLine("Text : {0} ", textFragment.Text);
@@ -118,21 +118,21 @@ foreach (TextFragment textFragment in textFragmentCollection)
 
 ## Conclusión
 
-¡Felicidades! Ha aprendido con éxito cómo buscar y obtener texto de todas las páginas de un documento PDF utilizando Aspose.PDF para .NET. Este tutorial proporciona una guía paso a paso, desde cargar el documento hasta acceder a los fragmentos de texto extraídos. Ahora puede incorporar este código en sus propios proyectos de C# para analizar y procesar contenido de texto en archivos PDF.
+¡Felicitaciones! Aprendió a buscar y obtener texto de todas las páginas de un documento PDF con Aspose.PDF para .NET. Este tutorial le proporcionó una guía paso a paso, desde la carga del documento hasta el acceso a los fragmentos de texto extraídos. Ahora puede incorporar este código en sus propios proyectos de C# para analizar y procesar el contenido de texto en archivos PDF.
 
 ### Preguntas frecuentes
 
-#### P: ¿Cuál es el propósito del tutorial "Buscar y obtener texto completo"?
+#### P: ¿Cuál es el propósito del tutorial "Buscar y obtener todo el texto"?
 
-R: El tutorial "Buscar y obtener texto todo" demuestra cómo utilizar la biblioteca Aspose.PDF para .NET para buscar y extraer texto de todas las páginas de un documento PDF. El tutorial proporciona instrucciones paso a paso junto con código C# de muestra para realizar búsqueda y recuperación de texto.
+A: El tutorial "Buscar y obtener todo el texto" demuestra cómo utilizar la biblioteca Aspose.PDF para .NET para buscar y extraer texto de todas las páginas de un documento PDF. El tutorial proporciona instrucciones paso a paso junto con un código C# de muestra para realizar búsquedas y recuperaciones de texto.
 
 #### P: ¿Cómo ayuda este tutorial a extraer texto de documentos PDF?
 
-R: Este tutorial lo guía a través del proceso de extracción de texto de todas las páginas de un documento PDF. Utiliza la biblioteca Aspose.PDF para localizar frases de texto específicas y recuperar información asociada, como posición, propiedades de fuente y colores.
+A: Este tutorial lo guía a través del proceso de extracción de texto de todas las páginas de un documento PDF. Utiliza la biblioteca Aspose.PDF para localizar frases de texto específicas y recuperar información asociada, como la posición, las propiedades de fuente y los colores.
 
 #### P: ¿Cuáles son los requisitos previos para seguir este tutorial?
 
-R: Antes de comenzar este tutorial, debes tener un conocimiento básico del lenguaje de programación C#. Además, debe tener instalada la biblioteca Aspose.PDF para .NET. Puede obtenerlo del sitio web de Aspose o utilizar NuGet para integrarlo en su proyecto.
+R: Antes de comenzar este tutorial, debe tener conocimientos básicos del lenguaje de programación C#. Además, debe tener instalada la biblioteca Aspose.PDF para .NET. Puede obtenerla del sitio web de Aspose o usar NuGet para integrarla en su proyecto.
 
 #### P: ¿Cómo configuro mi proyecto para seguir este tutorial?
 
@@ -140,20 +140,20 @@ R: Para comenzar, cree un nuevo proyecto de C# en su entorno de desarrollo integ
 
 #### P: ¿Cómo busco texto específico dentro de un documento PDF?
 
-R: Puedes usar el`TextFragmentAbsorber`clase para buscar instancias de una frase de búsqueda específica dentro del documento PDF. Al crear una instancia de esta clase y especificar el texto de destino, puede capturar todas las apariciones de ese texto.
+ A: Puedes utilizar el`TextFragmentAbsorber`Clase para buscar instancias de una frase de búsqueda específica dentro del documento PDF. Al crear una instancia de esta clase y especificar el texto de destino, puede capturar todas las apariciones de ese texto.
 
 #### P: ¿Puedo buscar texto en todas las páginas del documento PDF?
 
- R: Sí, el tutorial muestra cómo buscar texto en todas las páginas del documento PDF. El`pdfDocument.Pages.Accept(textFragmentAbsorber)` El método se utiliza para aceptar el absorbente para todas las páginas, lo que le permite buscar el texto deseado en cada página.
+ R: Sí, el tutorial demuestra cómo buscar texto en todas las páginas del documento PDF.`pdfDocument.Pages.Accept(textFragmentAbsorber)` Se utiliza este método para aceptar el absorbedor para todas las páginas, lo que le permite buscar el texto deseado en cada página.
 
-#### P: ¿Cómo accedo a los fragmentos de texto extraídos?
+#### P: ¿Cómo puedo acceder a los fragmentos de texto extraídos?
 
- R: Después de buscar el texto, puede acceder a los fragmentos de texto extraídos utilizando el`TextFragments` propiedad de la`TextFragmentAbsorber` objeto. Esta propiedad proporciona acceso a una colección de`TextFragment` objetos que contienen el texto extraído e información relacionada.
+ A: Después de buscar el texto, puede acceder a los fragmentos de texto extraídos utilizando el`TextFragments` propiedad de la`TextFragmentAbsorber` objeto. Esta propiedad proporciona acceso a una colección de`TextFragment` objetos que contienen el texto extraído y la información relacionada.
 
 #### P: ¿Qué información puedo recuperar de los fragmentos de texto extraídos?
 
-R: Puede recuperar varios detalles de los fragmentos de texto extraídos, como el contenido del texto real, la posición (coordenadas X e Y), información de fuente (nombre, tamaño, color, etc.) y más. El código de muestra del tutorial demuestra cómo acceder e imprimir estos detalles.
+A: Puede recuperar diversos detalles de los fragmentos de texto extraídos, como el contenido real del texto, la posición (coordenadas X e Y), información de la fuente (nombre, tamaño, color, etc.) y más. El código de muestra del tutorial demuestra cómo acceder a estos detalles e imprimirlos.
 
 #### P: ¿Puedo realizar más acciones en los fragmentos de texto extraídos?
 
-R: Absolutamente. Una vez que tenga los fragmentos de texto extraídos, puede modificar el código dentro del bucle para realizar acciones personalizadas en cada fragmento. Esto podría incluir guardar el texto extraído, analizar patrones de texto o aplicar cambios de formato.
+R: Por supuesto. Una vez que tenga los fragmentos de texto extraídos, puede modificar el código dentro del bucle para realizar acciones personalizadas en cada fragmento. Esto podría incluir guardar el texto extraído, analizar patrones de texto o aplicar cambios de formato.

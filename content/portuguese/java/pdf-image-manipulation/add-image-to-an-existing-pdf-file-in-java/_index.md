@@ -10,26 +10,26 @@ url: /pt/java/pdf-image-manipulation/add-image-to-an-existing-pdf-file-in-java/
 
 ## Introdução para adicionar imagem a um arquivo PDF existente em Java
 
-Adicionar imagens a arquivos PDF existentes em Java pode melhorar muito o apelo visual e o conteúdo dos seus documentos. Neste tutorial, orientaremos você no processo passo a passo de uso do Aspose.PDF for Java para realizar esta tarefa.
+Adicionar imagens a arquivos PDF existentes em Java pode melhorar muito o apelo visual e o conteúdo dos seus documentos. Neste tutorial, nós o guiaremos pelo processo passo a passo de usar o Aspose.PDF para Java para realizar esta tarefa.
 
 ## Pré-requisitos
 
-Antes de começarmos, certifique-se de ter os seguintes pré-requisitos em vigor:
+Antes de começar, certifique-se de ter os seguintes pré-requisitos em vigor:
 
-- Um conhecimento prático de programação Java
-- Kit de desenvolvimento Java (JDK) instalado em seu sistema
+- Conhecimento prático de programação Java
+- Java Development Kit (JDK) instalado no seu sistema
 -  Biblioteca Aspose.PDF para Java, que você pode baixar em[aqui](https://releases.aspose.com/pdf/java/)
 
-## Etapa 1: configurando seu ambiente de desenvolvimento
+## Etapa 1: Configurando seu ambiente de desenvolvimento
 
-Para começar, você precisa configurar seu ambiente de desenvolvimento. Siga esses passos:
+Para começar, você precisa configurar seu ambiente de desenvolvimento. Siga estes passos:
 
 1. Baixe e instale a biblioteca Aspose.PDF para Java.
-2. Crie um novo projeto Java em seu ambiente de desenvolvimento integrado (IDE) preferido.
+2. Crie um novo projeto Java no seu Ambiente de Desenvolvimento Integrado (IDE) preferido.
 
-## Passo 2: Adicionando Dependências
+## Etapa 2: Adicionando Dependências
 
-Em seguida, você precisa incluir Aspose.PDF for Java em seu projeto. Adicione a seguinte dependência à configuração do seu projeto:
+Em seguida, você precisa incluir Aspose.PDF para Java no seu projeto. Adicione a seguinte dependência à configuração do seu projeto:
 
 ```xml
 <!-- Aspose.PDF for Java -->
@@ -40,24 +40,24 @@ Em seguida, você precisa incluir Aspose.PDF for Java em seu projeto. Adicione a
 </dependency>
 ```
 
-## Passo 3: Criando um Documento PDF
+## Etapa 3: Criando um documento PDF
 
 Agora, vamos começar criando um novo documento PDF usando Aspose.PDF para Java. Aqui está um trecho de código para você começar:
 
 ```java
-// Inicialize um novo documento PDF
+// Inicializar um novo documento PDF
 Document pdfDocument = new Document();
 
-// Adicione uma página ao documento
+// Adicionar uma página ao documento
 Page page = pdfDocument.getPages().add();
 
 // Seu conteúdo vai aqui
 
-// Salve o documento
+// Salvar o documento
 pdfDocument.save("output.pdf");
 ```
 
-## Passo 4: Adicionando uma Imagem ao PDF
+## Etapa 4: Adicionar uma imagem ao PDF
 
 Para adicionar uma imagem ao PDF, você pode usar o seguinte código:
 
@@ -72,7 +72,7 @@ image.setFile("image.jpg");
 // Adicione a imagem à página
 page.getParagraphs().add(image);
 
-// Salve o PDF modificado
+// Salvar o PDF modificado
 pdfDocument.save("output.pdf");
 ```
 
@@ -81,15 +81,15 @@ pdfDocument.save("output.pdf");
  Você pode personalizar o posicionamento e o tamanho da imagem adicionada usando propriedades como`setHorizontalAlignment`, `setVerticalAlignment` , e`setRectangle`. Ajuste essas propriedades conforme necessário para obter o posicionamento e o tamanho desejados.
 
 ```java
-// Personalize o posicionamento da imagem
+// Personalizar posicionamento da imagem
 image.setHorizontalAlignment(HorizontalAlignment.Center);
 image.setVerticalAlignment(VerticalAlignment.Middle);
 image.setRectangle(new Rectangle(100, 100, 200, 200)); // Definir dimensões personalizadas
 ```
 
-## Passo 6: Salvando o PDF Modificado
+## Etapa 6: Salvando o PDF modificado
 
- Finalmente, salve o PDF modificado com a imagem adicionada usando o`save` método.
+ Por fim, salve o PDF modificado com a imagem adicionada usando o`save` método.
 
 ```java
 pdfDocument.save("output.pdf");
@@ -99,7 +99,7 @@ Parabéns! Você adicionou com sucesso uma imagem a um arquivo PDF existente em 
 
 ## Conclusão
 
-Neste tutorial, aprendemos como adicionar imagens a arquivos PDF existentes em Java usando Aspose.PDF para Java. Aprimorar seus documentos PDF com imagens pode torná-los mais envolventes e informativos. Com Aspose.PDF para Java, você tem a flexibilidade de personalizar o posicionamento e a aparência da imagem para atender às suas necessidades específicas. Agora você pode criar PDFs visualmente atraentes com facilidade.
+Neste tutorial, aprendemos como adicionar imagens a arquivos PDF existentes em Java usando Aspose.PDF para Java. Aprimorar seus documentos PDF com imagens pode torná-los mais envolventes e informativos. Com Aspose.PDF para Java, você tem a flexibilidade de personalizar o posicionamento e a aparência das imagens para atender às suas necessidades específicas. Agora, você pode criar PDFs visualmente atraentes com facilidade.
 
 ## Perguntas frequentes
 
@@ -113,7 +113,7 @@ Sim, você pode especificar o número da página ao adicionar uma imagem para di
 
 ### O Aspose.PDF para Java é compatível com diferentes formatos de imagem?
 
-Sim, Aspose.PDF para Java suporta vários formatos de imagem como JPEG, PNG, BMP e GIF.
+Sim, o Aspose.PDF para Java suporta vários formatos de imagem, como JPEG, PNG, BMP e GIF.
 
 ### Como posso controlar a transparência das imagens adicionadas?
 

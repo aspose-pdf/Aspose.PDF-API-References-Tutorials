@@ -58,7 +58,7 @@ Végül a PDF dokumentumot fájlba mentheti:
 pdfDocument.save("output.pdf");
 ```
 
-Ez az! Sikeresen hozzáadott egy HTML-karakterláncot egy PDF-dokumentumhoz az Aspose.PDF for Java használatával.
+Ennyi! Sikeresen hozzáadott egy HTML-karakterláncot egy PDF-dokumentumhoz az Aspose.PDF for Java használatával.
 
 # Következtetés
 Ebben az oktatóanyagban megtanultuk, hogyan adhatunk hozzá HTML-karakterláncokat PDF-dokumentumokhoz az Aspose.PDF for Java könyvtár használatával. Ez egy hatékony módja annak, hogy dinamikus és formázott tartalmat helyezzen el PDF-fájljaiba. Továbbra is testreszabhatja a HTML-tartalom megjelenését és elrendezését, hogy megfeleljen egyedi igényeinek.

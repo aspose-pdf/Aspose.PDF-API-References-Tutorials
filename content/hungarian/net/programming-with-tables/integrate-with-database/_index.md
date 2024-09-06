@@ -68,7 +68,7 @@ A PDF dokumentumot a beágyazott adatbázis adataival mentjük.
 doc.Save(dataDir + "DataIntegrated_out.pdf");
 ```
 
-Gratulálunk! Most már tudja, hogyan ágyazhat be adatbázisadatokat egy PDF-dokumentumba az Aspose.PDF for .NET használatával.
+Gratulálok! Most már tudja, hogyan ágyazhat be adatbázisadatokat egy PDF-dokumentumba az Aspose.PDF for .NET használatával.
 
 ### Példa forráskódra az Integrate With Database for Aspose.PDF for .NET használatával programhoz
 
@@ -128,7 +128,7 @@ V: Testreszabhatja a táblázat megjelenését a PDF-dokumentumban az Aspose.PDF
 
 #### K: Lehetséges-e hiperhivatkozásokat vagy interaktív elemeket hozzáadni az adatbázisból importált adatokhoz?
 
-V: Igen, hozzáadhat hiperhivatkozásokat vagy egyéb interaktív elemeket az adatbázisból importált adatokhoz. Az Aspose.PDF for .NET támogatja hiperhivatkozások, könyvjelzők és egyéb interaktív elemek hozzáadását a PDF-dokumentumhoz. Módosíthatja a DataTable tartalmát, mielőtt importálná a táblába, és hiperhivatkozásokat vagy egyéb interaktív szolgáltatásokat is tartalmazhat.
+V: Igen, hozzáadhat hiperhivatkozásokat vagy egyéb interaktív elemeket az adatbázisból importált adatokhoz. Az Aspose.PDF for .NET támogatja hiperhivatkozások, könyvjelzők és egyéb interaktív elemek hozzáadását a PDF-dokumentumhoz. A DataTable tartalmát manipulálhatja, mielőtt importálná a táblába, és hiperhivatkozásokat vagy egyéb interaktív szolgáltatásokat is tartalmazhat.
 
 #### K: Lapozhatom a táblázatot, ha túllép egy bizonyos számú sort?
 

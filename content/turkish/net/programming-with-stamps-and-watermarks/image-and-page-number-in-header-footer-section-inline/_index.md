@@ -1,27 +1,27 @@
 ---
-title: Üst Bilgi Alt Bilgi Bölümündeki Resim ve Sayfa Numarası Satır İçi
-linktitle: Üst Bilgi Alt Bilgi Bölümündeki Resim ve Sayfa Numarası Satır İçi
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile satır içi paragrafları kullanarak üstbilgi ve altbilgiye resim ve sayfa numarası eklemeyi öğrenin.
+title: Üstbilgi Altbilgi Bölümünde Resim ve Sayfa Numarası Satır İçi
+linktitle: Üstbilgi Altbilgi Bölümünde Resim ve Sayfa Numarası Satır İçi
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET ile satır içi paragrafları kullanarak üstbilgi ve altbilgiye resim ve sayfa numarasının nasıl ekleneceğini öğrenin.
 type: docs
 weight: 120
 url: /tr/net/programming-with-stamps-and-watermarks/image-and-page-number-in-header-footer-section-inline/
 ---
-Bu eğitimde, Aspose.PDF for .NET kullanarak PDF belgesinin üstbilgi ve altbilgi bölümüne resim ve sayfa numarasının nasıl ekleneceği konusunda size adım adım rehberlik edeceğiz. PDF belgesinin başlığındaki satır içi paragrafları kullanarak sayfa oluşturmak, üstbilgi ve altbilgiyi ayarlamak, resim ve metin eklemek için sağlanan C# kaynak kodunu kullanacağız.
+Bu eğitimde, .NET için Aspose.PDF kullanarak PDF belgesinin üstbilgi ve altbilgi bölümüne resim ve sayfa numarasının nasıl ekleneceğini adım adım göstereceğiz. Sağlanan C# kaynak kodunu kullanarak bir sayfa oluşturacağız, üstbilgi ve altbilgiyi ayarlayacağız, PDF belgesinin üstbilgisine satır içi paragraflar kullanarak resim ve metin ekleyeceğiz.
 
-## 1. Adım: Ortamı ayarlama
+## Adım 1: Ortamı kurma
 
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
 - Kurulu bir .NET geliştirme ortamı.
-- .NET için Aspose.PDF kütüphanesini indirip projenizde referans olarak kullanabilirsiniz.
+- .NET için Aspose.PDF kütüphanesi indirildi ve projenizde referans olarak kullanıldı.
 
-## Adım 2: PDF Belgesini ve Sayfasını Oluşturma
+## Adım 2: PDF Belgesi ve Sayfasını Oluşturma
 
 İlk adım, PDF belgesinde yeni bir Belge nesnesi ve bir sayfa oluşturmaktır. İşte nasıl:
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 // Yeni bir Belge nesnesi oluşturun
@@ -31,14 +31,14 @@ Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = pdf1.Pages.Add();
 ```
 
-Yukarıdaki kod, PDF belgesinde yeni bir Belge nesnesi ve boş bir sayfa oluşturur.
+Yukarıdaki kod PDF belgesinde yeni bir Belge nesnesi ve boş bir sayfa oluşturur.
 
-## 3. Adım: Resim ve satır içi metin içeren başlığı ekleme
+## Adım 3: Resim ve satır içi metin içeren başlığı ekleme
 
-Artık sayfa oluşturulduğuna göre, satır içi paragrafları kullanarak resim ve metin içeren bir başlık bölümü ekleyebiliriz. İşte nasıl:
+Sayfa artık oluşturulduğuna göre, satır içi paragraflar kullanarak resim ve metin içeren bir başlık bölümü ekleyebiliriz. İşte nasıl:
 
 ```csharp
-// Başlık bölümü oluşturma
+// Bir başlık bölümü oluşturun
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
 // Sayfa başlığını ayarlayın
@@ -51,7 +51,7 @@ Aspose.Pdf.Text.TextFragment txt1 = new Aspose.Pdf.Text.TextFragment("Aspose.Pdf
 txt1.TextState.ForegroundColor = Color.Blue;
 txt1.IsInLineParagraph = true;
 
-// Görüntü için bir Görüntü nesnesi oluşturun
+// Resim için bir Resim nesnesi oluşturun
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
 // Görüntü yolunu ayarla
@@ -69,61 +69,61 @@ Aspose.Pdf.Text.TextFragment txt2 = new Aspose.Pdf.Text.TextFragment(" Pty Ltd."
 txt2.IsInLineParagraph = true;
 txt2.TextState.ForegroundColor = Color.Maroon;
 
-// Başlığa öğe ekle
+// Üstbilgiye öğeler ekle
 header.Paragraphs.Add(txt1);
 header.Paragraphs.Add(image1);
 header.Paragraphs.Add(txt2);
 ```
 
-Yukarıdaki kod bir başlık bölümü oluşturur, bu bölümle sayfa başlığını ayarlar, satır içi metin içeren bir TextFragment ve satır içi Image nesnesi ekler.
+Yukarıdaki kod bir header bölümü oluşturur, bu bölümle sayfa başlığını ayarlar, satır içi metin içeren bir TextFragment ve satır içi Image nesnesi ekler.
 
-## Adım 4: Değiştirilen PDF belgesini kaydetme
+## Adım 4: Değiştirilen PDF belgesinin kaydedilmesi
 
-Görüntüyü ve satır içi metni içeren başlık eklendikten sonra değiştirilen PDF belgesini kaydedebiliriz. İşte nasıl:
+Resim ve satır içi metin içeren başlık eklendiğinde, değiştirilmiş PDF belgesini kaydedebiliriz. İşte nasıl:
 
 ```csharp
 // Değiştirilen PDF belgesini kaydedin
 pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.pdf");
 ```
 
-Yukarıdaki kod, düzenlenen PDF belgesini belirtilen dizine kaydeder.
+Yukarıdaki kod düzenlenen PDF belgesini belirtilen dizine kaydeder.
 
-### Aspose.PDF for .NET kullanarak Satır İçi Başlık Alt Bilgi bölümündeki Görüntü ve Sayfa Numarası için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Üstbilgi Altbilgi bölümündeki Resim ve Sayfa Numarası için örnek kaynak kodu 
 ```csharp
 
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Boş yapıcısını çağırarak bir Document nesnesinin örneğini oluşturun
+// Boş oluşturucusunu çağırarak bir Belge nesnesi örneği oluşturun
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 
 // Pdf nesnesinde bir sayfa oluşturun
 Aspose.Pdf.Page page = pdf1.Pages.Add();
 
-// Belgenin Başlık Bölümünü Oluşturun
+// Belgenin Başlık Bölümünü Oluştur
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// PDF dosyasının başlığını ayarlayın
+// PDF dosyası için başlığı ayarlayın
 page.Header = header;
 
-// Metin nesnesi oluşturma
+// Bir Metin nesnesi oluşturun
 Aspose.Pdf.Text.TextFragment txt1 = new Aspose.Pdf.Text.TextFragment("Aspose.Pdf is a Robust component by");
 
 // Rengi belirtin
 txt1.TextState.ForegroundColor = Color.Blue;
 txt1.IsInLineParagraph = true;
 
-// Bölümde bir görüntü nesnesi oluşturun
+// Bölümde bir resim nesnesi oluşturun
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
 // Görüntü dosyasının yolunu ayarlayın
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Görüntü genişliğini ayarlayın Bilgi
+//Resim genişliğini ayarlayın Bilgi
 image1.FixWidth = 50;
 image1.FixHeight = 20;
 
-// Seg1'in InlineParagraph'ının bir resim olduğunu belirtin.
+// seg1'in InlineParagraph'ının bir resim olduğunu belirtin.
 image1.IsInLineParagraph = true;
 Aspose.Pdf.Text.TextFragment txt2 = new Aspose.Pdf.Text.TextFragment(" Pty Ltd.");
 txt2.IsInLineParagraph = true;
@@ -139,46 +139,46 @@ pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.p
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET ile satır içi paragrafları kullanarak bir PDF belgesinin üstbilgi ve altbilgi bölümüne nasıl resim ve sayfa numarası ekleyeceğinizi öğrendiniz. Artık PDF belgelerinizin üstbilgisini ve altbilgisini esnek bir şekilde özelleştirebilirsiniz.
+Tebrikler! Aspose.PDF for .NET ile satır içi paragraflar kullanarak bir PDF belgesinin üstbilgi ve altbilgi bölümüne resim ve sayfa numarası eklemeyi öğrendiniz. Artık PDF belgelerinizin üstbilgi ve altbilgisini esnek bir şekilde özelleştirebilirsiniz.
 
-### SSS'ler
+### SSS
 
-#### S: PDF belgesinin başlığına resim ve metin eklemek için satır içi paragraf kullanmanın avantajı nedir?
+#### S: PDF belgesinin başlığına resim ve metin eklemek için satır içi paragrafları kullanmanın avantajı nedir?
 
-C: Satır içi paragrafları kullanmak, görselleri ve metni aynı paragraf içinde sorunsuz bir şekilde entegre etmenize olanak tanıyarak bunların yerleşimi ve biçimlendirmesi üzerinde hassas kontrol sağlar. Bu yöntem özellikle görsel öğeler içeren özelleştirilmiş başlıklar oluşturmak için kullanışlıdır.
+A: Satır içi paragrafları kullanmak, aynı paragrafta görselleri ve metni sorunsuz bir şekilde entegre etmenize olanak tanır ve bunların yerleşimi ve biçimlendirmesi üzerinde hassas kontrol sağlar. Bu yöntem, özellikle görsel öğelerle özelleştirilmiş başlıklar oluşturmak için kullanışlıdır.
 
-#### S: Sağlanan C# kaynak kodu, bir PDF belgesindeki başlık için satır içi paragrafları nasıl elde eder?
+#### S: Sağlanan C# kaynak kodu, bir PDF belgesindeki başlık için satır içi paragrafları nasıl elde ediyor?
 
-C: Sağlanan kod, bir PDF belgesinin nasıl oluşturulacağını, sayfa ekleneceğini ve satır içi paragraflar kullanılarak başlığın nasıl özelleştirileceğini gösterir. Satır içi metin içeren bir TextFragment, bir satır içi görüntü ve başka bir satır içi TextFragment ekler.
+A: Sağlanan kod, PDF belgesi oluşturmayı, sayfa eklemeyi ve satır içi paragraflar kullanarak başlığı özelleştirmeyi gösterir. Satır içi metin, satır içi resim ve başka bir satır içi TextFragment içeren bir TextFragment ekler.
 
-#### S: Başlıktaki satır içi metnin rengini nasıl belirlerim?
+#### S: Başlıktaki satır içi metnin rengini nasıl belirleyebilirim?
 
- C: Satır içi metnin rengi şu komut kullanılarak belirtilir:`ForegroundColor` mülkiyeti`TextState` arasında`TextFragment` nesne.
+ A: Satır içi metnin rengi, şunu kullanarak belirtilir:`ForegroundColor` mülkiyeti`TextState` of'un`TextFragment` nesne.
 
-#### S: Başlıktaki satır içi görüntünün boyutlarını ayarlayabilir miyim?
+#### S: Başlıktaki satır içi görselin boyutlarını ayarlayabilir miyim?
 
- C: Evet, satır içi görüntünün boyutlarını aşağıdaki düğmeyi kullanarak ayarlayabilirsiniz:`FixWidth` Ve`FixHeight` özellikleri`Image` nesne. Bu, başlıktaki görüntünün genişliğini ve yüksekliğini kontrol etmenize olanak tanır.
+ A: Evet, satır içi görüntünün boyutlarını kullanarak ayarlayabilirsiniz.`FixWidth` Ve`FixHeight` özellikleri`Image` nesne. Bu, başlık içindeki görüntünün genişliğini ve yüksekliğini kontrol etmenizi sağlar.
 
-#### S: Başlığa köprüler veya farklı yazı tipi stilleri gibi ek satır içi öğeler ekleyebilir miyim?
+#### S: Üst bilgiye köprü metinleri veya farklı yazı tipleri gibi ek satır içi öğeler ekleyebilir miyim?
 
- C: Evet, daha fazla öğe oluşturarak başlığa ek satır içi öğeler ekleyebilirsiniz.`TextFragment` veya`Image` İstenilen özelliklere sahip nesneler. Bu, köprüler, farklı yazı tipi stilleri veya diğer görsel öğeler de dahil olmak üzere başlığı daha da özelleştirmenize olanak tanır.
+ A: Evet, daha fazla öğe oluşturarak başlığa ek satır içi öğeler ekleyebilirsiniz.`TextFragment` veya`Image` İstenilen özelliklere sahip nesneler. Bu, köprü metinleri, farklı yazı tipleri veya diğer görsel öğeler dahil olmak üzere başlığı daha da özelleştirmenize olanak tanır.
 
-#### S: Satır içi görselin ve metnin farklı cihazlar ve izleyiciler arasında düzgün şekilde hizalandığından ve biçimlendirildiğinden nasıl emin olabilirim?
+#### S: Satır içi görselin ve metnin farklı cihazlarda ve görüntüleyicilerde düzgün şekilde hizalanmasını ve biçimlendirilmesini nasıl sağlayabilirim?
 
-C: Aspose.PDF for .NET, satır içi görsellerin ve metinlerin düzgün şekilde hizalanmasını ve formatlanmasını sağlayarak farklı cihazlar ve PDF görüntüleyiciler arasında tutarlı bir görünüm sağlar.
+A: Aspose.PDF for .NET, satır içi görsellerin ve metinlerin düzgün şekilde hizalanmasını ve biçimlendirilmesini sağlayarak farklı cihazlarda ve PDF görüntüleyicilerinde tutarlı bir görünüm sağlar.
 
 #### S: Satır içi paragrafları altbilgi bölümüne de uygulayabilir miyim?
 
- C: Evet, satır içi paragraf kullanma tekniğinin aynısını altbilgi bölümüne de uygulayabilirsiniz.`Footer` nesne ve ona metin ve resimler gibi satır içi öğeler ekleme.
+ A: Evet, aynı satır içi paragraf kullanma tekniğini altbilgi bölümüne de uygulayabilirsiniz.`Footer` nesneye metin ve resim gibi satır içi öğeler eklemek.
 
 #### S: Satır içi paragrafları diğer üstbilgi veya altbilgi özelleştirme yöntemleriyle birleştirmek mümkün müdür?
 
-C: Evet, daha karmaşık ve özelleştirilmiş üstbilgi veya altbilgi tasarımları oluşturmak için satır içi paragrafları Aspose.PDF for .NET tarafından sağlanan diğer üstbilgi veya altbilgi özelleştirme yöntemleriyle birleştirebilirsiniz.
+C: Evet, Aspose.PDF for .NET tarafından sağlanan diğer üstbilgi veya altbilgi özelleştirme yöntemleriyle satır içi paragrafları birleştirerek daha karmaşık ve özelleştirilmiş üstbilgi veya altbilgi tasarımları oluşturabilirsiniz.
 
-#### S: Gerekirse başlıktaki satır içi öğeleri kaldırabilir veya temizleyebilir miyim?
+#### S: Gerektiğinde başlıktaki satır içi öğeleri kaldırabilir veya temizleyebilir miyim?
 
- C: Evet, satır içi öğeleri, içeriğini değiştirerek kaldırabilir veya temizleyebilirsiniz.`HeaderFooter` nesne ve ilgili satır içi paragrafların kaldırılması.
+ A: Evet, satır içi öğeleri, içeriklerini değiştirerek kaldırabilir veya temizleyebilirsiniz.`HeaderFooter`nesne ve ilgili satır içi paragrafları kaldırma.
 
-#### S: Satır içi paragrafları PDF belgesinin belirli sayfalarına nasıl uygulayabilirim?
+#### S: PDF belgesinin belirli sayfalarına satır içi paragrafları nasıl uygulayabilirim?
 
- C: Satır içi paragrafları belirli sayfalara uygulamak için ayrı paragraflar oluşturabilirsiniz.`HeaderFooter` her sayfa için nesneler ve bunları kullanarak atayın`Header` ilgilinin mülkiyeti`Aspose.Pdf.Page` nesneler.
+ A: Belirli sayfalara satır içi paragraflar uygulamak için ayrı sayfalar oluşturabilirsiniz.`HeaderFooter` her sayfa için nesneler belirleyin ve bunları kullanarak atayın`Header` ilgili kişinin mülkiyeti`Aspose.Pdf.Page` nesneler.

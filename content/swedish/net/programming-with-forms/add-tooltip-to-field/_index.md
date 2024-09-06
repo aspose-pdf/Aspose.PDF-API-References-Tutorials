@@ -41,7 +41,7 @@ För att lägga till ett verktygstips i textfältet, använd följande kod:
 (doc.Form["textbox1"] as Field).AlternateName = "Text box tool tip";
 ```
 
- Byta ut`"textbox1"` med det faktiska namnet på textfältet som du vill lägga till verktygstipset i. Anpassa även verktygstipstexten genom att ändra värdet som tilldelats`AlternateName`.
+ Ersätta`"textbox1"` med det faktiska namnet på textfältet som du vill lägga till verktygstipset i. Anpassa även verktygstipstexten genom att ändra värdet som tilldelats`AlternateName`.
 
 ## Steg 4: Spara det uppdaterade dokumentet
 

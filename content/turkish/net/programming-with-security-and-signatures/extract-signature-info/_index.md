@@ -1,27 +1,27 @@
 ---
-title: İmza Bilgilerini Çıkarın
-linktitle: İmza Bilgilerini Çıkarın
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET kullanarak imza bilgilerini çıkarma.
+title: İmza Bilgilerini Çıkar
+linktitle: İmza Bilgilerini Çıkar
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanılarak imza bilgilerinin çıkarılması.
 type: docs
 weight: 80
 url: /tr/net/programming-with-security-and-signatures/extract-signature-info/
 ---
-Bir PDF belgesinden imza bilgilerinin çıkarılması işlemi, çeşitli senaryolarda oldukça faydalı olabilir. İmzalı bir belgenin gerçekliğini doğrulamanız veya imza için kullanılan sertifikayı analiz etmeniz gerekiyorsa Aspose.PDF for .NET kütüphanesi uygun bir çözüm sunar. Bu öğreticide, sağlanan C# kaynak kodunu kullanarak imza bilgilerinin çıkarılmasına ilişkin adım adım süreçte size rehberlik edeceğiz.
+Bir PDF belgesinden imza bilgilerini çıkarma süreci çeşitli senaryolarda oldukça faydalı olabilir. İster imzalanmış bir belgenin gerçekliğini doğrulamanız, ister imza için kullanılan sertifikayı analiz etmeniz gereksin, Aspose.PDF for .NET kitaplığı kullanışlı bir çözüm sunar. Bu eğitimde, sağlanan C# kaynak kodunu kullanarak imza bilgilerini çıkarma adım adım sürecinde size rehberlik edeceğiz.
 
 ## Gereksinimler
 
-Başlamadan önce aşağıdaki önkoşulların mevcut olduğundan emin olun:
+Başlamadan önce aşağıdaki ön koşulların mevcut olduğundan emin olun:
 
-1. Temel C# programlama dili bilgisi.
-2. Aspose.PDF for .NET kütüphanesi sisteminizde kuruludur.
+1. C# programlama dilinin temel bilgisi.
+2. Sisteminizde Aspose.PDF for .NET kütüphanesi yüklü olmalıdır.
 3. Bir veya daha fazla imza alanına sahip geçerli bir PDF belgesi.
 
 Şimdi uygulama detaylarına geçelim.
 
-## 1. Adım: Gerekli Kitaplıkları İçe Aktarma
+## Adım 1: Gerekli Kitaplıkları İçe Aktarma
 
- Başlamak için gerekli kitaplıkları C# projenize aktarmanız gerekir. Bu durumda import etmemiz gerekiyor.`Aspose.Pdf` Ve`System.IO` ad alanları. Bu, C# dosyanızın başına aşağıdaki kodu ekleyerek yapılabilir:
+ Başlamak için, gerekli kütüphaneleri C# projenize aktarmanız gerekir. Bu durumda, şunları aktarmamız gerekir:`Aspose.Pdf` Ve`System.IO` namespaces. Bu, C# dosyanızın başına aşağıdaki kodu ekleyerek yapılabilir:
 
 ```csharp
 using Aspose.Pdf;
@@ -30,16 +30,16 @@ using System.IO;
 
 ## Adım 2: Belge Yolunu Ayarlama
 
-Daha sonra imza bilgilerini çıkarmak istediğiniz PDF belgesinin yolunu ayarlamanız gerekir. Yer değiştirmek`"YOUR DOCUMENTS DIRECTORY"` belgenizin gerçek yolunu içeren aşağıdaki kod parçacığında:
+Sonra, imza bilgilerini çıkarmak istediğiniz PDF belgesinin yolunu ayarlamanız gerekir. Değiştir`"YOUR DOCUMENTS DIRECTORY"` Aşağıdaki kod parçasında belgenizin gerçek yolunu bulabilirsiniz:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 string input = dataDir + "ExtractSignatureInfo.pdf";
 ```
 
-## Adım 3: İmza Bilgilerinin Çıkarılması
+## Adım 3: İmza Bilgilerini Çıkarma
 
-Şimdi kodun PDF belgesinden imza bilgilerini çıkaracağımız ana kısmına geçelim. Belge formundaki her alanı yineliyoruz ve bunun bir imza alanı olup olmadığını kontrol ediyoruz. İmza alanı bulunursa sertifikayı çıkarmaya devam ederiz. Aşağıdaki kod parçacığını ekleyin:
+Şimdi, PDF belgesinden imza bilgilerini çıkardığımız kodun ana kısmına geçelim. Belgenin formundaki her alanı yineliyoruz ve bir imza alanı olup olmadığını kontrol ediyoruz. Bir imza alanı bulunursa, sertifikayı çıkarmaya devam ediyoruz. Aşağıdaki kod parçacığını ekleyin:
 
 ```csharp
 using (Document pdfDocument = new Document(input))
@@ -68,9 +68,9 @@ using (Document pdfDocument = new Document(input))
 }
 ```
 
-## Adım 4: Sertifikanın Çıkarılması
+## Adım 4: Sertifikayı Çıkarma
 
-Bu adımda sertifikayı imza alanından çıkartıp dosya olarak kaydediyoruz. Çıkarılan sertifika daha fazla analiz edilebilir veya doğrulama amacıyla kullanılabilir. Aşağıdaki kod parçacığı, çıkarma ve kaydetme işlemini gösterir:
+Bu adımda, sertifikayı imza alanından çıkarırız ve bir dosya olarak kaydederiz. Çıkarılan sertifika daha fazla analiz edilebilir veya doğrulama amaçları için kullanılabilir. Aşağıdaki kod parçası çıkarma ve kaydetme sürecini gösterir:
 
 ```csharp
 Stream cerStream = sf.ExtractCertificate();
@@ -90,9 +90,9 @@ if (cerStream != null)
 
 ## Adım 5
 
-: Sertifikanın Kaydedilmesi
+: Sertifikayı Kaydetme
 
-Son olarak çıkarttığımız sertifikayı dosya olarak kaydediyoruz. Bu örnekte sertifika, belirtilen dizine "input.cer" adıyla kaydedilir. Kodu gereksinimlerinize uyacak şekilde değiştirebilirsiniz. Sertifikayı kaydetmeye yönelik kod pasajı aşağıda verilmiştir:
+Son olarak, çıkarılan sertifikayı bir dosya olarak kaydediyoruz. Bu örnekte, sertifika belirtilen dizinde "input.cer" adıyla kaydedilir. Kodu gereksinimlerinize uyacak şekilde değiştirebilirsiniz. Sertifikayı kaydetmek için kod parçacığı şöyledir:
 
 ```csharp
 using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
@@ -101,13 +101,13 @@ using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew
 }
 ```
 
-Bu kadar! Aspose.PDF for .NET'i kullanarak imza bilgilerini başarıyla çıkardınız. Bu kodu kendi uygulamalarınıza entegre etmekten veya ihtiyaçlarınıza göre değiştirmekten çekinmeyin.
+İşte bu kadar! Aspose.PDF for .NET kullanarak imza bilgilerini başarıyla çıkardınız. Bu kodu kendi uygulamalarınıza entegre etmekten veya ihtiyaçlarınıza göre değiştirmekten çekinmeyin.
 
-### Aspose.PDF for .NET kullanarak İmza Bilgilerini Çıkarma için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak İmza Bilgilerini Çıkarmak için örnek kaynak kodu 
 ```csharp
 try
 {
-	// Belgeler dizininin yolu.
+	// Belgeler dizinine giden yol.
 	string dataDir = "YOUR DOCUMENTS DIRECTORY";
 	string input = dataDir + "ExtractSignatureInfo.pdf";
 	using (Document pdfDocument = new Document(input))
@@ -142,70 +142,70 @@ catch (Exception ex)
 
 ## Çözüm
 
-Bu eğitimde, Aspose.PDF for .NET kitaplığını kullanarak bir PDF belgesinden imza bilgilerinin nasıl çıkarılacağına ilişkin adım adım kılavuzu inceledik. Gerekli kitaplıkların içe aktarılması, belge yolunun ayarlanması, imza bilgilerinin çıkarılması, sertifikanın çıkarılması ve bir dosyaya kaydedilmesi sürecini ele aldık. Bu adımları izleyerek imza ayrıntılarını kolayca alabilir ve gerektiğinde onlarla çalışabilirsiniz.
+Bu eğitimde, Aspose.PDF for .NET kütüphanesini kullanarak bir PDF belgesinden imza bilgilerinin nasıl çıkarılacağına dair adım adım bir kılavuz izledik. Gerekli kütüphaneleri içe aktarma, belge yolunu ayarlama, imza bilgilerini çıkarma, sertifikayı çıkarma ve bir dosyaya kaydetme sürecini ele aldık. Bu adımları izleyerek, imza ayrıntılarını kolayca alabilir ve gerektiğinde bunlarla çalışabilirsiniz.
 
-### SSS'ler
+### SSS
 
-#### S: Neden bir PDF belgesinden imza bilgilerini çıkarmam gerekiyor?
+#### S: PDF belgesinden imza bilgilerini neden çıkarmam gerekir?
 
-C: Bir PDF belgesinden imza bilgilerinin çıkarılması, imzalı bir belgenin orijinalliğini doğrulamak ve imza için kullanılan sertifikayı analiz etmek için kullanışlıdır. Bu süreç, imzalanan içeriğin bütünlüğünün sağlanmasına yardımcı olur ve yasal ve güvenlik açısından gerekli olabilir.
+A: Bir PDF belgesinden imza bilgilerini çıkarmak, imzalanmış bir belgenin gerçekliğini doğrulamak ve imza için kullanılan sertifikayı analiz etmek için yararlıdır. Bu süreç, imzalanmış içeriğin bütünlüğünün sağlanmasına yardımcı olur ve yasal ve güvenlik amaçları için önemli olabilir.
 
 #### S: Aspose.PDF for .NET nedir?
 
-C: Aspose.PDF for .NET, geliştiricilerin .NET uygulamalarında PDF belgeleriyle çalışmasına olanak tanıyan bir kitaplıktır. PDF dosyalarını programlı olarak oluşturmak, değiştirmek ve bunlarla etkileşimde bulunmak için çok çeşitli özellikler sağlar.
+A: Aspose.PDF for .NET, geliştiricilerin .NET uygulamalarında PDF belgeleriyle çalışmasını sağlayan bir kütüphanedir. PDF dosyalarını programatik olarak oluşturmak, değiştirmek ve etkileşim kurmak için çok çeşitli özellikler sunar.
 
-#### S: Aspose.PDF for .NET kullanarak imza bilgilerini çıkarmanın önkoşulları nelerdir?
+#### S: Aspose.PDF for .NET kullanarak imza bilgilerini çıkarmak için ön koşullar nelerdir?
 
-C: İmza bilgilerini çıkarmak için temel C# programlama dili bilgisine, sisteminizde kurulu Aspose.PDF for .NET kitaplığına ve bir veya daha fazla imza alanı içeren geçerli bir PDF belgesine ihtiyacınız vardır.
+A: İmza bilgilerini çıkarmak için, C# programlama dili hakkında temel bilgiye, sisteminizde yüklü Aspose.PDF for .NET kütüphanesine ve bir veya daha fazla imza alanı içeren geçerli bir PDF belgesine ihtiyacınız vardır.
 
-#### S: Çıkarma işlemi için gerekli kitaplıkları nasıl içe aktarabilirim?
+#### S: Çıkarma işlemi için gerekli kütüphaneleri nasıl içe aktarabilirim?
 
-C: Gerekli kütüphaneleri ekleyerek içe aktarabilirsiniz.`using` için direktifler`Aspose.Pdf` Ve`System.IO` C# dosyanızın başında. Bu yönergeler imza bilgilerini çıkarmak için gereken sınıfları ve yöntemleri kullanmanızı sağlar.
+A: Gerekli kütüphaneleri ekleyerek içe aktarabilirsiniz.`using` için yönergeler`Aspose.Pdf` Ve`System.IO` C# dosyanızın başında. Bu yönergeler, imza bilgilerini çıkarmak için gereken sınıfları ve yöntemleri kullanmanızı sağlar.
 
-#### S: İmza bilgilerinin çıkarılması için PDF belgesini nasıl belirlerim?
+#### S: İmza bilgilerinin çıkarılacağı PDF belgesini nasıl belirlerim?
 
- C: PDF belgesinin yolunu değiştirerek ayarlayabilirsiniz.`"YOUR DOCUMENTS DIRECTORY"` sağlanan kod pasajında belgenizin gerçek yolunu belirtin. Bu yol, imza bilgilerini çıkarmak istediğiniz PDF belgesini yüklemek için kullanılır.
+ A: PDF belgesinin yolunu değiştirerek ayarlayabilirsiniz`"YOUR DOCUMENTS DIRECTORY"` Sağlanan kod parçacığında belgenizin gerçek yolu ile. Bu yol, imza bilgilerini çıkarmak istediğiniz PDF belgesini yüklemek için kullanılır.
 
-#### S: Bir PDF belgesinden imza bilgilerinin çıkarılması süreci nedir?
+#### S: PDF belgesinden imza bilgisi çıkarma süreci nasıldır?
 
-C: Çıkarma işlemi, PDF belgesinin form alanlarının yinelenmesini, her alanın bir imza alanı olup olmadığının kontrol edilmesini ve öyleyse ilgili sertifikanın çıkarılmasını içerir. Çıkarılan sertifika daha fazla analiz veya doğrulama için dosya olarak kaydedilebilir.
+A: Çıkarma işlemi, PDF belgesinin form alanlarında yineleme yapmayı, her alanın bir imza alanı olup olmadığını kontrol etmeyi ve öyleyse ilişkili sertifikayı çıkarmayı içerir. Çıkarılan sertifika, daha fazla analiz veya doğrulama için bir dosya olarak kaydedilebilir.
 
-#### S: Sertifika imza alanından nasıl çıkarılır?
+#### S: İmza alanından sertifika nasıl çıkarılır?
 
-C: Sertifika, imza alanından çıkarılır.`ExtractCertificate()` tarafından sağlanan yöntem`SignatureField` Aspose.PDF for .NET'teki sınıf. Bu yöntem, sertifika verilerini içeren bir akış döndürür.
+A: Sertifika, imza alanından şu şekilde çıkarılır:`ExtractCertificate()` tarafından sağlanan yöntem`SignatureField` .NET için Aspose.PDF'deki sınıf. Bu yöntem sertifika verilerini içeren bir akış döndürür.
 
 #### S: Çıkarılan sertifikayı dosya olarak nasıl kaydederim?
 
- C: Çıkarılan sertifikayı, sertifika akışını okuyup içeriğini bir dosyaya yazarak dosya olarak kaydedebilirsiniz.`FileStream` sınıf. Öğreticide sağlanan kod bu işlemi göstermektedir.
+ A: Sertifika akışını okuyup içeriğini bir dosyaya yazarak çıkarılan sertifikayı bir dosya olarak kaydedebilirsiniz.`FileStream` sınıf. Eğitimde sağlanan kod bu süreci göstermektedir.
 
-#### S: Çıkarılan bu sertifikayı imza doğrulama için kullanabilir miyim?
+#### S: Bu çıkarılan sertifikayı imza doğrulaması için kullanabilir miyim?
 
-C: Evet, çıkarılan sertifika imza doğrulaması için kullanılabilir. İmzalanan belgenin bütünlüğünü sağlamak için sertifikanın ayrıntılarını analiz edebilir ve orijinalliğini doğrulayabilirsiniz.
+A: Evet, çıkarılan sertifika imza doğrulaması için kullanılabilir. İmzalanan belgenin bütünlüğünü sağlamak için sertifikanın ayrıntılarını analiz edebilir ve gerçekliğini doğrulayabilirsiniz.
 
 #### S: Bu kodu kendi uygulamalarıma nasıl entegre edebilirim?
 
-C: Sağlanan kodu, adım adım kılavuzu izleyerek kendi C# uygulamalarınıza entegre edebilirsiniz. Yolları ve dosya adlarını gerektiği gibi değiştirin ve kodu mevcut projelerinize ekleyin.
+A: Sağlanan kodu adım adım kılavuzu izleyerek kendi C# uygulamalarınıza entegre edebilirsiniz. Gerektiğinde yolları ve dosya adlarını değiştirin ve kodu mevcut projelerinize dahil edin.
 
 #### S: Aspose.PDF for .NET'te imza yönetimiyle ilgili başka özellikler var mı?
 
-C: Evet, Aspose.PDF for .NET dijital imzalarla çalışmak için belgeleri imzalamak, imzaları doğrulamak ve zaman damgası bilgileri eklemek gibi çeşitli özellikler sunar. Bu özellikler hakkında daha fazla ayrıntı için resmi belgeleri inceleyebilirsiniz.
+C: Evet, Aspose.PDF for .NET, belgeleri imzalama, imzaları doğrulama ve zaman damgası bilgileri ekleme gibi dijital imzalarla çalışmak için bir dizi özellik sunar. Bu özellikler hakkında daha fazla ayrıntı için resmi belgeleri inceleyebilirsiniz.
 
 #### S: Aspose.PDF for .NET'i kullanmak için ek kaynakları nerede bulabilirim?
 
- C: .NET için Aspose.PDF kullanımına ilişkin daha fazla bilgi, eğitim ve kaynak için,[Aspose.PDF for .NET](https://reference.aspose.com/pdf/net/).
+ A: .NET için Aspose.PDF'i kullanma hakkında daha fazla bilgi, eğitim ve kaynak için,[Aspose.PDF for .NET](https://reference.aspose.com/pdf/net/).
 
 #### S: Şifrelenmiş PDF belgelerinden imza çıkarmak mümkün müdür?
 
-C: Şifrelenmiş PDF belgelerinden imza çıkarma yeteneği, belgenin şifreleme ayarlarına ve izinlerine bağlı olabilir. İmza bilgilerine erişmek ve bunları çıkarmak için gerekli izinlere sahip olduğunuzdan emin olmanız gerekebilir.
+A: Şifrelenmiş PDF belgelerinden imzaları çıkarma yeteneği, belgenin şifreleme ayarlarına ve izinlerine bağlı olabilir. İmza bilgilerine erişmek ve bunları çıkarmak için gerekli izinlere sahip olduğunuzdan emin olmanız gerekebilir.
 
 #### S: Tek bir PDF belgesinden birden fazla imzayı çıkarabilir miyim?
 
-C: Evet, sağlanan kodu, PDF belgesindeki tüm imza alanlarını yineleyecek ve her birinden imza bilgilerini çıkaracak şekilde değiştirebilirsiniz. Bu, belgede bulunan birden fazla imza hakkında bilgi almanıza olanak tanır.
+C: Evet, PDF belgesindeki tüm imza alanlarında yineleme yapmak ve her birinden imza bilgilerini çıkarmak için sağlanan kodu değiştirebilirsiniz. Bu, belgede bulunan birden fazla imza hakkında bilgi çıkarmanıza olanak tanır.
 
-#### S: İmza bilgilerini ayıklamak için bazı pratik kullanım durumları nelerdir?
+#### S: İmza bilgilerinin çıkarılması için bazı pratik kullanım durumları nelerdir?
 
-C: İmza bilgilerini çıkarmaya yönelik bazı pratik kullanım örnekleri arasında dijital olarak imzalanmış belgelerin orijinalliğinin doğrulanması, uyumluluk amacıyla sertifika ayrıntılarının analiz edilmesi ve denetim amacıyla imzaların ve imza sahiplerinin kayıtlarının tutulması yer alır.
+A: İmza bilgilerinin çıkarılması için bazı pratik kullanım durumları arasında, dijital olarak imzalanmış belgelerin gerçekliğini doğrulamak, uyumluluk amaçları doğrultusunda sertifika ayrıntılarını analiz etmek ve denetim amaçları doğrultusunda imzaların ve imzalayanların kaydını tutmak yer alır.
 
-#### S: İmza bilgilerini alırken herhangi bir yasal husus var mı?
+#### S: İmza bilgilerinin çıkarılmasında herhangi bir hukuki husus var mıdır?
 
-C: İmza bilgilerinin çıkarılmasının, özellikle yasal olarak bağlayıcı belgeler kullanılırken yasal sonuçları olabilir. Bulunduğunuz yargı bölgesindeki elektronik imzalar ve belge orijinalliğiyle ilgili ilgili düzenlemelere ve yasalara uyduğunuzdan emin olun.
+A: İmza bilgilerinin çıkarılması, özellikle yasal olarak bağlayıcı belgeleri ele alırken yasal sonuçlar doğurabilir. Yargı bölgenizde elektronik imzalar ve belge gerçekliğiyle ilgili ilgili düzenlemelere ve yasalara uyduğunuzdan emin olun.

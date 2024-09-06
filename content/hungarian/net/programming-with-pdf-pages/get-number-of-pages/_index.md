@@ -50,7 +50,7 @@ System.Console.WriteLine("Page Count : {0}", pdfDocument.Pages.Count);
 ```
 
 ## Következtetés
-Ebben az oktatóanyagban megtanultuk, hogyan lehet lekérni egy PDF-fájl oldalszámát az Aspose.PDF for .NET használatával. A fent vázolt lépések követésével könnyedén megvalósíthatja ezt a funkciót saját projektjeiben. Nyugodtan fedezze fel az Aspose.PDF dokumentációt, hogy további hasznos funkciókat fedezzen fel a PDF-fájlokkal való munkavégzéshez.
+Ebben az oktatóanyagban megtanultuk, hogyan lehet lekérni egy PDF-fájl oldalszámát az Aspose.PDF for .NET használatával. A fent vázolt lépések követésével könnyedén megvalósíthatja ezt a funkciót saját projektjeiben. Nyugodtan fedezze fel az Aspose.PDF dokumentációját, hogy további hasznos funkciókat fedezzen fel a PDF-fájlokkal való munkavégzéshez.
 
 ### GYIK az oldalak számának megtekintéséhez PDF fájlban
 
@@ -64,7 +64,7 @@ Ebben az oktatóanyagban megtanultuk, hogyan lehet lekérni egy PDF-fájl oldals
 
 #### K: Megtekinthető egy PDF-fájl oldalainak száma a teljes dokumentum megnyitása nélkül?
 
- V: Nem, egy PDF-fájl oldalszámának megtekintéséhez meg kell nyitnia a dokumentumot a`Document` osztály. Az Aspose.PDF for .NET hatékony és optimalizált módszereket biztosít a PDF-fájlokkal való munkavégzéshez, de az oldalszám eléréséhez általában a teljes dokumentum betöltése szükséges.
+ V: Nem, egy PDF-fájl oldalszámának megtekintéséhez meg kell nyitnia a dokumentumot a`Document` osztály. Az Aspose.PDF for .NET hatékony és optimalizált módszereket kínál a PDF-fájlokkal való munkavégzéshez, de az oldalszám eléréséhez általában a teljes dokumentum betöltése szükséges.
 
 #### K: Mi történik, ha az Aspose.PDF for .NET használatával megpróbálom lekérni egy nem létező PDF-fájl oldalainak számát?
 

@@ -1,17 +1,17 @@
 ---
-title: Relleno de texto árabe
-linktitle: Relleno de texto árabe
-second_title: Aspose.PDF para referencia de API .NET
-description: Complete fácilmente los campos de formulario PDF con texto árabe usando Aspose.PDF para .NET.
+title: Relleno de texto en árabe
+linktitle: Relleno de texto en árabe
+second_title: Referencia de API de Aspose.PDF para .NET
+description: Rellene fácilmente campos de formulario PDF con texto árabe utilizando Aspose.PDF para .NET.
 type: docs
 weight: 20
 url: /es/net/programming-with-forms/arabic-text-filling/
 ---
-En este tutorial, aprenderemos cómo completar un campo de formulario PDF con texto árabe usando Aspose.PDF para .NET. Aspose.PDF es una poderosa biblioteca que permite a los desarrolladores manipular documentos PDF mediante programación. Lo guiaremos a través del proceso paso a paso, explicando el código fuente de C# necesario para realizar esta tarea.
+En este tutorial, aprenderemos a rellenar un campo de formulario PDF con texto en árabe utilizando Aspose.PDF para .NET. Aspose.PDF es una potente biblioteca que permite a los desarrolladores manipular documentos PDF mediante programación. Le guiaremos a través del proceso paso a paso y le explicaremos el código fuente de C# necesario para realizar esta tarea.
 
-## Paso 1: cargar el contenido del formulario PDF
+## Paso 1: Cargue el contenido del formulario PDF
 
-Primero, debemos cargar el formulario PDF que contiene el campo que queremos completar. Comenzamos definiendo la ruta al directorio donde se encuentra el formulario:
+En primer lugar, debemos cargar el formulario PDF que contiene el campo que queremos rellenar. Comenzamos definiendo la ruta del directorio donde se encuentra el formulario:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -23,21 +23,21 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 FileStream fs = new FileStream(dataDir + "FillFormField.pdf", FileMode.Open, FileAccess.ReadWrite);
 ```
 
- A continuación, instanciamos un`Document` objeto usando la secuencia que contiene el archivo de formulario:
+ A continuación, creamos una instancia`Document` objeto que utiliza el flujo que contiene el archivo de formulario:
 
 ```csharp
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(fs);
 ```
 
-## Paso 2: accede al campo TextBoxField
+## Paso 2: Acceda al campo TextBoxField
 
- Para completar el campo del formulario con texto árabe, debemos acceder al campo específico`TextBoxField` campo que queremos llenar. En este ejemplo, asumimos que el nombre del campo es "cuadro de texto1". Podemos recuperar la referencia del campo usando el`Form` propiedad de la`pdfDocument` objeto:
+ Para rellenar el campo de formulario con texto en árabe, necesitamos acceder a la información específica`TextBoxField` campo que queremos rellenar. En este ejemplo, suponemos que el nombre del campo es "textbox1". Podemos recuperar la referencia del campo utilizando el`Form` propiedad de la`pdfDocument` objeto:
 
 ```csharp
 TextBoxField txtFld = pdfDocument.Form["textbox1"] as TextBoxField;
 ```
 
-## Paso 3: complete el campo del formulario con texto árabe
+## Paso 3: Complete el campo de formulario con texto en árabe
 
  Ahora que tenemos el`TextBoxField` referencia, podemos asignar el texto árabe a su`Value` propiedad:
 
@@ -45,32 +45,32 @@ TextBoxField txtFld = pdfDocument.Form["textbox1"] as TextBoxField;
 txtFld.Value = "يولد جميع الناس أحراراً متساوين في";
 ```
 
-## Paso 4: guarde el documento actualizado
+## Paso 4: Guarde el documento actualizado
 
-Finalmente, guardamos el documento actualizado en un archivo nuevo:
+Finalmente, guardamos el documento actualizado en un nuevo archivo:
 
 ```csharp
 dataDir = dataDir + "ArabicTextFilling_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-También mostramos un mensaje para indicar el éxito de completar el texto árabe:
+También mostramos un mensaje para indicar el éxito del llenado del texto en árabe:
 
 ```csharp
 Console.WriteLine("\nArabic text successfully filled in the form field.\nFile saved in the following location: " + dataDir);
 ```
 
-### Código fuente de muestra para completar texto en árabe usando Aspose.PDF para .NET 
+### Código fuente de muestra para rellenar texto en árabe con Aspose.PDF para .NET 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Cargar contenidos del formulario PDF
+//Cargar el contenido del formulario PDF
 FileStream fs = new FileStream(dataDir + "FillFormField.pdf", FileMode.Open, FileAccess.ReadWrite);
-//Crear una instancia de documento con un archivo de formulario que contiene flujo
+// Crear una instancia de documento con una secuencia que contiene un archivo de formulario
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(fs);
-// Obtener referencia de TextBoxField particular
+// Obtener referencia de un TextBoxField en particular
 TextBoxField txtFld = pdfDocument.Form["textbox1"] as TextBoxField;
-// Rellene el campo del formulario con texto árabe
+// Rellene el campo del formulario con texto en árabe
 txtFld.Value = "يولد جميع الناس أحراراً متساوين في";
 dataDir = dataDir + "ArabicTextFilling_out.pdf";
 // Guardar documento actualizado
@@ -80,26 +80,26 @@ Console.WriteLine("\nArabic text filled successfully in form field.\nFile saved 
 
 ## Conclusión
 
-En este tutorial, exploramos cómo completar un campo de formulario PDF con texto árabe usando Aspose.PDF para .NET. Recorrimos el proceso paso a paso y explicamos el código fuente de C# relevante. Si sigue estas instrucciones, podrá integrar fácilmente la funcionalidad de relleno de texto en árabe en sus aplicaciones .NET. Si tiene más preguntas o necesita más información, no dude en comunicarse con el equipo de soporte de Aspose.PDF o consulte los recursos adicionales a continuación.
+En este tutorial, exploramos cómo rellenar un campo de formulario PDF con texto en árabe usando Aspose.PDF para .NET. Repasamos el proceso paso a paso y explicamos el código fuente de C# relevante. Si sigue estas instrucciones, podrá integrar fácilmente la función de rellenar texto en árabe en sus aplicaciones .NET. Si tiene más preguntas o necesita más información, no dude en ponerse en contacto con el equipo de soporte de Aspose.PDF o consulte los recursos adicionales que aparecen a continuación.
 
 ### Preguntas frecuentes
 
 #### P: ¿Puedo completar otros tipos de campos de formulario con texto árabe usando Aspose.PDF para .NET?
 
- R: Sí, puede utilizar Aspose.PDF para .NET para completar otros tipos de campos de formulario con texto árabe, como casillas de verificación, botones de opción, cuadros combinados y más. El proceso es similar a llenar un`TextBoxField` . Simplemente acceda al campo específico usando su nombre o ID y configure su`Value` propiedad al texto árabe deseado.
+ R: Sí, puede utilizar Aspose.PDF para .NET para completar otros tipos de campos de formulario con texto en árabe, como casillas de verificación, botones de opción, cuadros combinados y más. El proceso es similar al de completar un formulario.`TextBoxField` Simplemente acceda al campo específico usando su nombre o ID y configure su`Value`propiedad al texto árabe deseado.
 
 #### P: ¿Aspose.PDF para .NET es compatible con texto árabe y escritura de derecha a izquierda (RTL)?
 
-R: Sí, Aspose.PDF para .NET es totalmente compatible con texto árabe y escritura RTL. Maneja correctamente los caracteres árabes y la alineación del texto, lo que garantiza que los documentos PDF generados conserven el diseño visual correcto para los idiomas que se escriben de derecha a izquierda.
+R: Sí, Aspose.PDF para .NET es totalmente compatible con texto en árabe y escritura RTL. Maneja los caracteres árabes y la alineación del texto correctamente, lo que garantiza que los documentos PDF generados conserven el diseño visual correcto para idiomas que se escriben de derecha a izquierda.
 
 #### P: ¿Puedo usar Aspose.PDF para .NET para extraer texto en árabe de archivos PDF existentes?
 
-R: Sí, Aspose.PDF para .NET proporciona capacidades de extracción de texto, lo que le permite extraer texto en árabe de archivos PDF existentes. Puede extraer texto mediante programación de páginas específicas o del documento completo, incluido el texto en árabe, utilizando la biblioteca.
+R: Sí, Aspose.PDF para .NET ofrece funciones de extracción de texto que le permiten extraer texto en árabe de archivos PDF existentes. Puede extraer texto de páginas específicas o de todo el documento mediante programación, incluido el texto en árabe, utilizando la biblioteca.
 
-#### P: ¿Puedo personalizar la apariencia del texto árabe completado en el campo del formulario?
+#### P: ¿Puedo personalizar la apariencia del texto árabe completo en el campo de formulario?
 
-R: Sí, puede personalizar la apariencia del texto árabe completo en el campo del formulario usando Aspose.PDF para .NET. Tienes control sobre los estilos de fuente, tamaños, colores y otras opciones de formato de texto. Puede asegurarse de que el texto árabe completado coincida con la apariencia deseada en el formulario PDF.
+R: Sí, puede personalizar la apariencia del texto en árabe completo en el campo de formulario usando Aspose.PDF para .NET. Tiene control sobre los estilos de fuente, tamaños, colores y otras opciones de formato de texto. Puede asegurarse de que el texto en árabe completo coincida con la apariencia deseada en el formulario PDF.
 
 #### P: ¿Cómo puedo obtener soporte o encontrar recursos adicionales para Aspose.PDF para .NET?
 
-R: Puede obtener soporte para Aspose.PDF para .NET visitando el foro de soporte oficial de Aspose o comunicándose directamente con su equipo de soporte. Además, puede encontrar documentación útil, ejemplos y referencias de API en el sitio web de Aspose para ayudarle a implementar diversas tareas relacionadas con PDF.
+R: Puede obtener asistencia para Aspose.PDF para .NET visitando el foro de asistencia oficial de Aspose o contactándose directamente con el equipo de asistencia. Además, puede encontrar documentación útil, ejemplos y referencias de API en el sitio web de Aspose para ayudarlo a implementar diversas tareas relacionadas con PDF.

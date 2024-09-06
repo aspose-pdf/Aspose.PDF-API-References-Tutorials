@@ -1,25 +1,25 @@
 ---
-title: Dijital Olarak Oturum Açma PDF Dosyası
-linktitle: Dijital Olarak Oturum Açma PDF Dosyası
-second_title: .NET API Referansı için Aspose.PDF
+title: PDF Dosyasında Dijital Olarak Oturum Açın
+linktitle: PDF Dosyasında Dijital Olarak Oturum Açın
+second_title: Aspose.PDF for .NET API Referansı
 description: Aspose.PDF for .NET ile PDF dosyasına dijital olarak nasıl imza atacağınızı öğrenin.
 type: docs
 weight: 40
 url: /tr/net/programming-with-security-and-signatures/digitally-sign/
 ---
-Bu eğitimde, Aspose.PDF for .NET'i kullanarak PDF dosyasını dijital olarak imzalama sürecinde size yol göstereceğiz. Dijital imza, benzersiz bir elektronik parmak izi ekleyerek belgenin gerçekliğini ve bütünlüğünü garanti eder.
+Bu eğitimde, .NET için Aspose.PDF kullanarak PDF dosyasında dijital olarak imzalama sürecini adım adım anlatacağız. Dijital imza, benzersiz bir elektronik parmak izi ekleyerek belgenin gerçekliğini ve bütünlüğünü garanti eder.
 
-## 1. Adım: Önkoşullar
+## Adım 1: Ön koşullar
 
-Başlamadan önce aşağıdaki önkoşullara sahip olduğunuzdan emin olun:
+Başlamadan önce aşağıdaki ön koşullara sahip olduğunuzdan emin olun:
 
-- C# programlama dili hakkında temel bilgi
+- C# programlama dilinin temel bilgisi
 - Visual Studio'yu makinenize yükleme
-- .NET için Aspose.PDF kütüphanesi kuruldu
+- .NET için Aspose.PDF kütüphanesi yüklendi
 
-## 2. Adım: Ortam kurulumu
+## Adım 2: Ortam kurulumu
 
-Başlamak için geliştirme ortamınızı ayarlamak üzere şu adımları izleyin:
+Başlamak için geliştirme ortamınızı kurmak üzere şu adımları izleyin:
 
 1. Visual Studio'yu açın ve yeni bir C# projesi oluşturun.
 2. Gerekli ad alanlarını kod dosyanıza aktarın:
@@ -30,9 +30,9 @@ using Aspose.Pdf.Forms;
 using System.Collections.Generic;
 ```
 
-## 3. Adım: Dijital imza
+## Adım 3: Dijital imza
 
-İlk adım PDF dosyasını dijital olarak imzalamaktır. Sağlanan kod Aspose.PDF for .NET ile nasıl dijital imza oluşturulacağını gösterir.
+İlk adım PDF dosyasını dijital olarak imzalamaktır. Sağlanan kod, .NET için Aspose.PDF ile dijital imzanın nasıl oluşturulacağını gösterir.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -53,7 +53,7 @@ using (Document document = new Document(inFile))
 }
 ```
 
-Bu kod bir PDF dosyası yükler, belirtilen görünüme sahip bir dijital imza oluşturur ve ardından PDF dosyasını eklenen imzayla birlikte kaydeder.
+Bu kod bir PDF dosyasını yükler, belirtilen görünümde bir dijital imza oluşturur, ardından eklenen imzayla PDF dosyasını kaydeder.
 
 ## Adım 4: İmza Doğrulaması
 
@@ -82,13 +82,13 @@ using(Document document = new Document(outFile))
 }
 ```
 
-Bu kod, PDF dosyasının ilk imzasını doğrular ve imzanın sertifikalı olması ve belirli izinlere sahip olması durumunda ek eylemler gerçekleştirir.
+Bu kod PDF dosyasının ilk imzasını doğrular ve imza sertifikalıysa ve belirli izinlere sahipse ek işlemler gerçekleştirir.
 
-### Aspose.PDF for .NET kullanarak Digitally Sign için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Dijital İmza için örnek kaynak kodu 
 ```csharp
 try
 {
-	// Belgeler dizininin yolu.
+	// Belgeler dizinine giden yol.
 	string dataDir = "YOUR DOCUMENTS DIRECTORY";
 	string pbxFile = "";
 	string inFile = dataDir + @"DigitallySign.pdf";
@@ -97,7 +97,7 @@ try
 	{
 		using (PdfFileSignature signature = new PdfFileSignature(document))
 		{
-			PKCS7 pkcs = new PKCS7(pbxFile, "WebSales"); // PKCS7/PKCS7Ayrılmış nesneleri kullanma
+			PKCS7 pkcs = new PKCS7(pbxFile, "WebSales"); // PKCS7/PKCS7Detached nesnelerini kullanın
 			DocMDPSignature docMdpSignature = new DocMDPSignature(pkcs, DocMDPAccessPermissions.FillingInForms);
 			System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
 			// İmza görünümünü ayarla
@@ -115,11 +115,11 @@ try
 			IList<string> sigNames = signature.GetSignNames();
 			if (sigNames.Count > 0) // İmza var mı?
 			{
-				if (signature.VerifySigned(sigNames[0] as string)) // İlkini doğrulayın
+				if (signature.VerifySigned(sigNames[0] as string)) // İlk önce doğrulayın
 				{
-					if (signature.IsCertified) // Sertifikalı mı?
+					if (signature.IsCertified) // Sertifikalı mısınız?
 					{
-						if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms) // Erişim izni alın
+						if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms) // Erişim izni al
 						{
 							// Bir şey yap
 						}
@@ -137,46 +137,46 @@ catch (Exception ex)
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF dosyasında başarıyla dijital imza gerçekleştirdiniz. Bu eğitim, dijital imzanın eklenmesinden geçerliliğinin doğrulanmasına kadar adım adım süreci kapsıyordu. Artık PDF dosyalarınızı dijital imzalarla güvence altına almak için bu özelliği kullanabilirsiniz.
+Tebrikler! Aspose.PDF for .NET kullanarak bir PDF dosyasında dijital imzayı başarıyla gerçekleştirdiniz. Bu eğitim, dijital imzayı eklemekten geçerliliğini doğrulamaya kadar adım adım süreci ele aldı. Artık bu özelliği kullanarak PDF dosyalarınızı dijital imzalarla güvence altına alabilirsiniz.
 
-### SSS'ler
+### SSS
 
 #### S: Bu eğitimin amacı nedir?
 
-C: Bu eğitim, Aspose.PDF for .NET kullanarak bir PDF dosyasını dijital olarak imzalama sürecinde size yol gösterir. Dijital imzalar, belgenin orijinalliğini ve bütünlüğünü sağlamak için elektronik parmak izi ekler.
+A: Bu eğitim, Aspose.PDF for .NET kullanarak bir PDF dosyasını dijital olarak imzalama sürecinde size rehberlik eder. Dijital imzalar, belgenin gerçekliğini ve bütünlüğünü sağlamak için elektronik bir parmak izi ekler.
 
-#### S: Başlamadan önce hangi önkoşullar gereklidir?
+#### S: Başlamadan önce hangi ön koşullar gereklidir?
 
-C: Başlamadan önce, C# programlama dilini temel düzeyde anladığınızdan, Visual Studio'nun kurulu olduğundan ve Aspose.PDF kütüphanesinin .NET'in kurulu olduğundan emin olun.
+C: Başlamadan önce, C# programlama dili hakkında temel bir anlayışa sahip olduğunuzdan, Visual Studio'nun ve .NET için Aspose.PDF kütüphanesinin yüklü olduğundan emin olun.
 
 #### S: Geliştirme ortamını nasıl kurarım?
 
-C: Visual Studio'da yeni bir C# projesi oluşturma ve gerekli ad alanlarını içe aktarma da dahil olmak üzere geliştirme ortamınızı kurmak için sağlanan adımları izleyin.
+A: Visual Studio'da yeni bir C# projesi oluşturmak ve gerekli ad alanlarını içe aktarmak da dahil olmak üzere geliştirme ortamınızı kurmak için verilen adımları izleyin.
 
-#### S: Bir PDF dosyasına nasıl dijital imza eklerim?
+#### S: PDF dosyasına dijital imza nasıl eklerim?
 
- C: Sağlanan örnek kod, bir PDF dosyasının nasıl yükleneceğini, dijital imzanın nasıl oluşturulacağını, görünümün nasıl belirleneceğini ve imzalı PDF dosyasının nasıl kaydedileceğini gösterir. Dijital imza aşağıdakiler kullanılarak eklenir:`Certify` yöntemi`PdfFileSignature` nesne.
+ A: Sağlanan örnek kod, bir PDF dosyasının nasıl yükleneceğini, dijital imzanın nasıl oluşturulacağını, görünümün nasıl belirtileceğini ve imzalanmış PDF dosyasının nasıl kaydedileceğini gösterir. Dijital imza,`Certify` yöntemi`PdfFileSignature` nesne.
 
 #### S: Dijital imzanın geçerliliğini nasıl doğrularım?
 
-C: Dijital imzayı ekledikten sonra imzanın geçerliliğini doğrulamak için örnek kodu kullanabilirsiniz. İmzanın sertifikalı olup olmadığını ve belirli erişim izinlerine sahip olup olmadığını kontrol eder.
+A: Dijital imzayı ekledikten sonra, imzanın geçerliliğini doğrulamak için örnek kodu kullanabilirsiniz. İmzanın sertifikalı olup olmadığını ve belirli erişim izinlerine sahip olup olmadığını kontrol eder.
 
-####  S: Ne işe yarar?`PKCS7` object represent?
+####  S: Ne anlama geliyor?`PKCS7` object represent?
 
- C:`PKCS7` nesne, dijital imzalar için şifreleme işlevselliği sağlamak amacıyla kullanılır. Verilen örnek kodda dijital imza oluşturmak için kullanılır.
+ A:`PKCS7` nesnesi dijital imzalar için kriptografik işlevselliği sağlamak için kullanılır. Sağlanan örnek kodda dijital imzayı oluşturmak için kullanılır.
 
 #### S: Dijital imzanın görünümünü özelleştirebilir miyim?
 
- C: Evet, bir görüntünün yolunu belirterek dijital imzanın görünümünü özelleştirebilirsiniz.`SignatureAppearance` mülkiyeti`PdfFileSignature` nesne.
+ A: Evet, dijital imzanın görünümünü, dijital imzanın yolunu belirterek özelleştirebilirsiniz.`SignatureAppearance` mülkiyeti`PdfFileSignature` nesne.
 
-#### Soru: İmza geçerli değilse ne olur?
+#### S: İmza geçerli değilse ne olur?
 
-C: İmza geçerli değilse doğrulama işlemi başarısız olur ve doğrulama kodu bloğundaki ilgili eylemler yürütülmez.
+A: İmza geçerli değilse doğrulama işlemi başarısız olur ve doğrulama kodu bloğundaki ilgili eylemler yürütülmez.
 
 #### S: Dijital imzalarımın güvenliğini nasıl sağlayabilirim?
 
-C: Dijital imzalar tasarım gereği güvenlidir ve özgünlüğü ve bütünlüğü sağlamak için şifreleme teknikleri kullanır. Özel anahtarınızı güvende tuttuğunuzdan ve dijital imzaların kullanımına ilişkin en iyi uygulamaları takip ettiğinizden emin olun.
+A: Dijital imzalar tasarım gereği güvenlidir ve kimlik doğrulama ve bütünlüğü sağlamak için kriptografik teknikler kullanır. Özel anahtarınızı güvende tuttuğunuzdan ve dijital imzaları işlemek için en iyi uygulamaları takip ettiğinizden emin olun.
 
-#### S: Bir PDF'ye birden fazla dijital imza ekleyebilir miyim?
+#### S: Bir PDF'e birden fazla dijital imza ekleyebilir miyim?
 
- C: Evet, PDF dosyasına birden fazla dijital imza ekleyebilirsiniz.`PdfFileSignature` nesnenin`Sign` veya`Certify` yöntemler. Her imzanın kendi görünümü ve konfigürasyonu olacaktır.
+ A: Evet, PDF dosyasına birden fazla dijital imza ekleyebilirsiniz.`PdfFileSignature` nesnenin`Sign` veya`Certify` yöntemler. Her imzanın kendine özgü görünümü ve yapılandırması olacaktır.

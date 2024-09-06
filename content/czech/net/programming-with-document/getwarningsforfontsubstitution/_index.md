@@ -17,7 +17,7 @@ Po stažení knihovny rozbalte obsah souboru ZIP do složky v počítači. Poté
 
 ## Krok 2: Načtěte dokument PDF
 
-Jakmile nainstalujete Aspose.PDF pro .NET a přidáte odkaz na knihovnu DLL ve svém projektu .NET, můžete začít používat`GetWarningsForFontSubstitution` funkce pro detekci upozornění na nahrazení písem při otevírání dokumentu PDF.
+ Jakmile nainstalujete Aspose.PDF pro .NET a přidáte odkaz na knihovnu DLL ve svém projektu .NET, můžete začít používat`GetWarningsForFontSubstitution` funkce pro detekci upozornění na nahrazení písem při otevírání dokumentu PDF.
 
 Prvním krokem při použití této funkce je načtení dokumentu PDF, u kterého chcete detekovat varování o záměně písem. Chcete-li to provést, můžete použít následující kód:
 
@@ -25,7 +25,7 @@ Prvním krokem při použití této funkce je načtení dokumentu PDF, u kteréh
 // Cesta k dokumentu PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Otevřete dokument PDF
+// Otevřete dokument PDF
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
@@ -60,7 +60,7 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 // Cesta k dokumentu PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Otevřete dokument PDF
+// Otevřete dokument PDF
 Document doc = new Document(dataDir + "input.pdf");
 
 // Zjistit upozornění na nahrazení písem

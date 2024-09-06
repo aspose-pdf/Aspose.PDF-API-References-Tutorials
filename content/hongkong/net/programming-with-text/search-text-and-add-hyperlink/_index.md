@@ -163,7 +163,7 @@ Console.WriteLine("\nText replaced and hyperlink added successfully based on a r
 
 #### Q：學習本教程需要什麼先決條件？
 
-答：開始之前，您應該對 C# 程式語言有基本的了解。此外，您還需要安裝 Aspose.PDF for .NET 程式庫，該程式庫可以從 Aspose 網站取得或在專案中使用 NuGet 安裝。
+答：開始之前，您應該對 C# 程式語言有基本的了解。此外，您需要安裝 Aspose.PDF for .NET 程式庫，該程式庫可以從 Aspose 網站取得或在專案中使用 NuGet 安裝。
 
 #### Q：如何設定我的專案來遵循本教學？
 

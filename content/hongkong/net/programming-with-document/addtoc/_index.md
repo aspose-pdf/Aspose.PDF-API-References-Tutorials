@@ -2,48 +2,79 @@
 title: 新增目錄到 PDF 文件
 linktitle: 新增目錄到 PDF 文件
 second_title: Aspose.PDF for .NET API 參考
-description: 了解如何使用 Aspose.PDF for .NET 將目錄新增至 PDF 檔案。帶有範例原始程式碼的分步指南。增強文件導航！
+description: 了解如何使用 Aspose.PDF for .NET 將目錄新增至 PDF。本逐步指南簡化了流程並確保在文件中輕鬆導航。
 type: docs
 weight: 40
 url: /zh-hant/net/programming-with-document/addtoc/
 ---
-在本教學中，我們將探討如何使用 Aspose.PDF for .NET 的「將 TOC（目錄）新增至 PDF 檔案」功能將目錄新增至 PDF 文件。我們將提供逐步指南並解釋實現此目的所需的 C# 原始程式碼。在本教學結束時，您將能夠使用 Aspose.PDF for .NET 產生帶有目錄的 PDF 文件。
+## 介紹
 
+您是否曾經無止盡地瀏覽過一份冗長的 PDF，希望它有一個組織良好的目錄？好吧，今天就是你的幸運日！在本教學中，您將學習如何使用 Aspose.PDF for .NET 將目錄新增至 PDF 檔案。無論您正在處理複雜的報告、電子書還是商業提案，目錄都可以將您的文件轉變為專業的、易於導航的傑作。
 
-## 第 1 步：載入現有 PDF 文件
+## 先決條件
 
-首先，我們需要載入現有的 PDF 檔案。代替`"YOUR DOCUMENT DIRECTORY"`在以下程式碼中新增 PDF 檔案的實際路徑：
+在我們進入程式碼之前，讓我們確保您已擁有所需的一切：
+
+1. Aspose.PDF for .NET：請確定您已下載並安裝了 Aspose.PDF 庫。您可以從以下位置下載：[這裡](https://releases.aspose.com/pdf/net/).
+   
+2. 開發環境：確保您的電腦上設定有 .NET 開發環境，例如 Visual Studio。
+
+3. 許可證：如果您沒有許可證，可以獲得免費試用或申請臨時許可證[這裡](https://purchase.aspose.com/temporary-license/).
+
+## 導入包
+
+首先，請確保在程式碼檔案的開頭匯入必要的命名空間。方法如下：
+
+```csharp
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+```
+
+這些命名空間可讓您存取 PDF 特定的功能並操作文件中的文字元素。
+
+讓我們把這個任務分成幾個小步驟。每個步驟將引導您完成建立目錄並將其插入 PDF 文件的過程。
+
+## 第 1 步：載入 PDF 文檔
+
+我們需要做的第一件事是載入現有的 PDF 文件，將其新增到要新增目錄的位置。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "AddTOC.pdf");
 ```
 
-## 步驟 2：為目錄建立一個新頁面
+在此步驟中，我們指定文件目錄的路徑並使用以下命令載入 PDF`Document`目的。確保更換`"YOUR DOCUMENT DIRECTORY"`與文件的實際路徑。
 
-我們將建立一個新頁面來保存目錄。以下程式碼在索引 1 處插入一個新頁面：
+## 第 2 步：為目錄插入新頁面
+
+接下來，我們在 PDF 文件的開頭插入一個新頁面。此頁將包含目錄。
 
 ```csharp
 Page tocPage = doc.Pages.Insert(1);
 ```
 
-## 步驟 3：定義目錄訊息
+透過在開頭插入 TOC 頁面，我們確保它作為讀者在 PDF 中首先看到的內容出現。
 
-接下來，我們需要定義目錄資訊。我們將設定目錄的標題和其他屬性。新增以下程式碼：
+## 步驟 3：建立 TOC 資訊對象
+
+現在，讓我們建立一個表示 TOC 資訊的物件。我們還將為目錄添加標題以使其脫穎而出。
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
-
 tocInfo.Title = title;
 tocPage.TocInfo = tocInfo;
 ```
 
-## 第 4 步：建立目錄元素
+在這裡，我們將目錄標題設為“目錄”，增大了字體大小，並加粗以示強調。
 
-現在，我們將建立目錄的元素。在本教程中，我們將建立對應於不同頁面的四個目錄元素。根據您的要求修改以下程式碼：
+## 步驟 4：定義目錄元素
+
+在此步驟中，我們定義將在目錄中顯示的元素（或標題）。這些元素將幫助讀者導航到文件的特定部分。
 
 ```csharp
 string[] titles = new string[4];
@@ -51,7 +82,15 @@ titles[0] = "First page";
 titles[1] = "Second page";
 titles[2] = "Third page";
 titles[3] = "Fourth page";
+```
 
+我們建立了一個字串數組，用作目錄項，對應於 PDF 中的不同頁面。
+
+## 第 5 步：建立目錄標題
+
+現在到了關鍵部分——向目錄添加標題並將它們連結到各自的頁面。
+
+```csharp
 for (int i = 0; i < 2; i++)
 {
     Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
@@ -61,100 +100,56 @@ for (int i = 0; i < 2; i++)
 
     heading2.DestinationPage = doc.Pages[i + 2];
     heading2.Top = doc.Pages[i + 2].Rect.Height;
-
     segment2.Text = titles[i];
+
     tocPage.Paragraphs.Add(heading2);
 }
 ```
 
-## 步驟 5：儲存更新後的文檔
+這是發生的事情：
+- 標題：我們創建一個`Heading`對象並添加一個`TextSegment`到它。
+- 目標頁面：我們設定每個標題將連結到的頁面。
+- 頂部位置：我們指定標題在頁面上指向的位置。
+- 文字：每個標題從我們之前創建的數組中獲取其各自的標題。
 
-最後，我們需要將修改後的文件與目錄一起儲存。代替`"YOUR DOCUMENT DIRECTORY"`在下面的程式碼中使用所需的輸出檔案路徑：
+此循環為目錄中的前兩個元素建立標題並將它們連結到相應的頁面。
+
+## 第 6 步：儲存 PDF 和目錄
+
+最後，在新增所有目錄元素後，是時候儲存更新的 PDF 了。
 
 ```csharp
 dataDir = dataDir + "TOC_out.pdf";
 doc.Save(dataDir);
-Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
 
-### 使用 Aspose.PDF for .NET 將 TOC 新增至 PDF 文件的範例原始程式碼
+現在，文件已儲存，目錄已新增至 PDF。恭喜您 - 您已成功新增目錄！
+
+## 步驟7：確認訊息
+
+為了讓使用者知道流程已完成，我們將在控制台中顯示簡單的訊息。
 
 ```csharp
-
-//文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-//載入現有的 PDF 文件
-Document doc = new Document(dataDir + "AddTOC.pdf");
-
-//造訪 PDF 檔案的第一頁
-Page tocPage = doc.Pages.Insert(1);
-
-//建立物件來表示 TOC 訊息
-TocInfo tocInfo = new TocInfo();
-TextFragment title = new TextFragment("Table Of Contents");
-title.TextState.FontSize = 20;
-title.TextState.FontStyle = FontStyles.Bold;
-
-//設定目錄標題
-tocInfo.Title = title;
-tocPage.TocInfo = tocInfo;
-
-//建立將用作目錄元素的字串對象
-string[] titles = new string[4];
-titles[0] = "First page";
-titles[1] = "Second page";
-titles[2] = "Third page";
-titles[3] = "Fourth page";
-for (int i = 0; i < 2; i++)
-{
-	//建立標題對象
-	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
-	TextSegment segment2 = new TextSegment();
-	heading2.TocPage = tocPage;
-	heading2.Segments.Add(segment2);
-
-	//指定標題物件的目標頁面
-	heading2.DestinationPage = doc.Pages[i + 2];
-
-	//目的地頁面
-	heading2.Top = doc.Pages[i + 2].Rect.Height;
-
-	//目的地座標
-	segment2.Text = titles[i];
-
-	//將標題新增至包含目錄的頁面
-	tocPage.Paragraphs.Add(heading2);
-}
-dataDir = dataDir + "TOC_out.pdf";
-//儲存更新後的文檔
-doc.Save(dataDir);
-
 Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at " + dataDir);
 ```
 
 ## 結論
 
-在本教學中，我們探討如何使用 Aspose.PDF for .NET 將目錄 (TOC) 新增至 PDF 文件。透過遵循逐步指南並利用提供的 C# 原始程式碼，您可以輕鬆產生帶有目錄的 PDF 文件。 TOC 增強了文件的可用性，讓使用者更有效地導航到特定部分或頁面。 Aspose.PDF for .NET 提供了一個強大且用戶友好的解決方案，用於在 .NET 應用程式中處理 PDF 文件，使您能夠輕鬆建立動態和互動式 PDF 文件。
+現在你就擁有了！透過 Aspose.PDF for .NET，在 PDF 中新增目錄不僅簡單，而且可以自訂。無論您需要建立簡單的導航連結還是複雜的結構，這個工具都能滿足您的需求。因此，下次您處理冗長的 PDF 時，請不要忘記添加目錄以實現專業的風格！
 
-### 將目錄新增至 PDF 檔案的常見問題解答
+## 常見問題解答
 
-#### Q：什麼是 Aspose.PDF for .NET？
+### 我可以在 Aspose.PDF 中自訂 TOC 的外觀嗎？  
+是的，您可以完全自訂目錄的外觀，包括字體樣式、大小和對齊方式。
 
-答：Aspose.PDF for .NET 是一個功能強大的程式庫，可讓開發人員在 .NET 應用程式中有效地處理 PDF 檔案。它提供了廣泛的功能，可以程式設計方式建立、操作和管理 PDF 文件。
+### 如何為目錄新增副標題？  
+您可以透過調整來新增副標題`Heading`水平（例如，`Heading(2)`）建立分層目錄。
 
-#### Q：在 PDF 文件中新增目錄 (TOC) 的目的是什麼？
+### 如果文件發生變化，是否可以自動更新目錄？  
+不，目錄不會自動更新。如果文件結構發生更改，您將需要重新建立它。
 
-答：目錄 (TOC) 為使用者提供導覽協助，使他們能夠快速跳到 PDF 文件中的特定部分或頁面。它提高了文件的可用性和用戶體驗。
+### 我可以將目錄條目連結到外部文件嗎？  
+是的，您可以使用超連結將目錄條目連結到外部 PDF 或 URL。
 
-#### Q：如何使用 Aspose.PDF for .NET 將目錄新增至 PDF 文件？
-
-答：要使用 Aspose.PDF for .NET 將目錄新增至 PDF 文件中，您需要建立一個新頁面來保存 TOC，定義目錄信息，然後建立與特定頁面或對應的 TOC 元素文件中的部分。
-
-#### Q：我可以自訂目錄的外觀嗎？
-
-答：是的，您可以透過設定目錄元素的各種屬性（例如字體大小、字體樣式和對齊方式）來自訂目錄的外觀。 Aspose.PDF for .NET 提供了設計目錄的靈活性，以配合您所需的外觀和感覺。
-
-#### Q：Aspose.PDF for .NET 是否適合為 PDF 文件新增進階功能？
-
-答：當然，Aspose.PDF for .NET 是一個功能豐富的函式庫，可讓您為 PDF 文件添加進階功能，包括互動元素、表單欄位、數位簽章等。
+### Aspose.PDF 支援多層目錄嗎？  
+是的，Aspose.PDF 支援帶有子部分的複雜文件的多層目錄。

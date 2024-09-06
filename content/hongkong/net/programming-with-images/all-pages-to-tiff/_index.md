@@ -127,4 +127,4 @@ System.Console.WriteLine("PDF all pages converted to one tiff file successfully!
 
 #### Q：使用 Aspose.PDF for .NET 將 PDF 轉換為 TIFF 是否有任何限制？
 
-答：雖然 Aspose.PDF for .NET 功能強大，但具有複雜格式的極其複雜的 PDF 文件可能需要在轉換過程中進行額外的調整。
+答：雖然 Aspose.PDF for .NET 功能強大，但格式複雜的極其複雜的 PDF 文件可能需要在轉換過程中進行額外的調整。

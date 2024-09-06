@@ -124,15 +124,15 @@ Odpověď: Ano, na různé stránky stejného dokumentu PDF můžete přidat ví
 
 #### Otázka: Jak mohu upravit polohu a velikost vyrovnávací paměti obrázku v dokumentu PDF?
 
- Odpověď: Pozici a velikost vyrovnávací paměti obrázku můžete upravit úpravou vlastností souboru`ImageStamp` objekt. Kód uvedený v tutoriálu ukazuje, jak nastavit vlastnosti, jako je např`XIndent`, `YIndent`, `Height` , a`Width` pro ovládání umístění a rozměrů obrazového razítka.
+ Odpověď: Pozici a velikost vyrovnávací paměti obrázku můžete upravit úpravou vlastností souboru`ImageStamp` objekt. Kód uvedený v tutoriálu ukazuje, jak nastavit vlastnosti, jako je např`XIndent`, `YIndent`, `Height` a`Width` pro ovládání umístění a rozměrů obrazového razítka.
 
 #### Otázka: Je možné otočit vyrovnávací paměť obrázku při přidávání do dokumentu PDF?
 
- Odpověď: Ano, můžete otočit vyrovnávací paměť obrazu před přidáním do dokumentu PDF nastavením`Rotate` vlastnictvím`ImageStamp` objekt. Kód v tutoriálu ukazuje, jak otočit razítko obrázku pomocí hodnot jako`Rotation.on270`, ale můžete upravit úhel natočení podle potřeby.
+ Odpověď: Ano, můžete otočit vyrovnávací paměť obrazu před přidáním do dokumentu PDF nastavením`Rotate` majetek z`ImageStamp` objekt. Kód v tutoriálu ukazuje, jak otočit razítko obrázku pomocí hodnot jako`Rotation.on270`, ale můžete upravit úhel natočení podle potřeby.
 
 #### Otázka: Mohu ovládat neprůhlednost vyrovnávací paměti obrázku při přidávání do dokumentu PDF?
 
- Odpověď: Samozřejmě můžete řídit krytí vyrovnávací paměti obrazu úpravou`Opacity` vlastnictvím`ImageStamp` objekt. Poskytnutý zdrojový kód C# ukazuje, jak nastavit úroveň krytí, což vám umožní dosáhnout požadovaného efektu průhlednosti.
+ Odpověď: Samozřejmě můžete řídit krytí vyrovnávací paměti obrazu úpravou`Opacity` majetek z`ImageStamp` objekt. Poskytnutý zdrojový kód C# ukazuje, jak nastavit úroveň krytí, což vám umožní dosáhnout požadovaného efektu průhlednosti.
 
 #### Otázka: Jak mohu integrovat tuto metodu do svých vlastních projektů a přidat do dokumentů PDF obrazové vyrovnávací paměti?
 

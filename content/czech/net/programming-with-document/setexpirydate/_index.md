@@ -35,7 +35,7 @@ doc.Pages.Add();
 
 ## Krok 4: Přidání textu do dokumentu PDF
 
-Po přidání stránky do dokumentu PDF do něj můžeme přidat text pomocí`Paragraphs` sbírka. Můžeme to udělat pomocí následujícího kódu:
+ Po přidání stránky do dokumentu PDF do něj můžeme přidat text pomocí`Paragraphs` sbírka. Můžeme to udělat pomocí následujícího kódu:
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));

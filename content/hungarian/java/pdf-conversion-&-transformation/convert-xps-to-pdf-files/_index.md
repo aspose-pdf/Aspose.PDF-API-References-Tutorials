@@ -22,7 +22,7 @@ Mielőtt belevágnánk az átalakítási folyamatba, be kell állítania a fejle
 
 ## A Projekt beállítása
 
-Az Aspose.PDF for Java használata előtt be kell állítanunk egy Java projektet. Kovesd ezeket a lepeseket:
+Az Aspose.PDF for Java használata előtt be kell állítanunk egy Java projektet. Kövesse az alábbi lépéseket:
 
 - Hozzon létre egy új Java-projektet a kiválasztott IDE-ben.
 - Adja hozzá az Aspose.PDF for Java könyvtárat a projekt osztályútvonalához.

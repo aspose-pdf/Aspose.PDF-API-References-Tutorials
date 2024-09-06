@@ -35,7 +35,7 @@ Innan vi dyker in i koden, se till att du har följande förutsättningar på pl
 Document pdfDocument = new Document("sample.pdf");
 ```
 
- Byta ut`"sample.pdf"` med sökvägen till din PDF-fil.
+ Ersätta`"sample.pdf"` med sökvägen till din PDF-fil.
 
 ### Steg 2: Identifiera anteckningarna som ska raderas
 
@@ -62,7 +62,7 @@ När du har tagit bort kommentarerna sparar du det ändrade PDF-dokumentet.
 pdfDocument.save("modified.pdf");
 ```
 
- Byta ut`"modified.pdf"` med önskad sökväg för utdatafilen.
+ Ersätta`"modified.pdf"` med önskad sökväg för utdatafilen.
 
 ## Slutsats
 

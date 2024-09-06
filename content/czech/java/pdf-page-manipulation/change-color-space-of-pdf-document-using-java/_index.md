@@ -26,7 +26,7 @@ Chcete-li začít se změnou barevného prostoru dokumentu PDF v Javě, budete p
 - Integrované vývojové prostředí (IDE) dle vašeho výběru
 - Aspose.PDF pro knihovnu Java
 
- Knihovnu Aspose.PDF si můžete stáhnout z[tady](https://releases.aspose.com/pdf/java/). Nezapomeňte jej přidat do svého projektu Java.
+ Knihovnu Aspose.PDF si můžete stáhnout z[zde](https://releases.aspose.com/pdf/java/). Nezapomeňte jej přidat do svého projektu Java.
 
 ## Průvodce krok za krokem
 
@@ -91,13 +91,13 @@ public class PDFColorSpaceConverter {
 
 ## Závěr
 
-V tomto tutoriálu jsme prozkoumali, jak změnit barevný prostor dokumentu PDF pomocí Java a knihovny Aspose.PDF for Java. Dozvěděli jsme se o důležitosti barevných prostorů v souborech PDF, potřebných nástrojích a knihovnách a podrobného průvodce, jak provést převod barevného prostoru.
+V tomto tutoriálu jsme prozkoumali, jak změnit barevný prostor dokumentu PDF pomocí Java a knihovny Aspose.PDF for Java. Dozvěděli jsme se o důležitosti barevných prostorů v PDF, potřebných nástrojích a knihovnách a podrobného průvodce, jak provést převod barevného prostoru.
 
 ## FAQ
 
 ### Jak nainstaluji Aspose.PDF pro Javu?
 
- Aspose.PDF pro Javu si můžete stáhnout z[tady](https://releases.aspose.com/pdf/java/) a postupujte podle pokynů k instalaci uvedených v dokumentaci.
+ Aspose.PDF pro Javu si můžete stáhnout z[zde](https://releases.aspose.com/pdf/java/) a postupujte podle pokynů k instalaci uvedených v dokumentaci.
 
 ### Mohu změnit barevný prostor na RGB místo na CMYK?
 

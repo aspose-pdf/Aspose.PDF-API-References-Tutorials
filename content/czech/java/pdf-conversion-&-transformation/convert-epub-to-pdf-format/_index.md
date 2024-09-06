@@ -14,9 +14,9 @@ EPUB je populární formát e-knihy, ale jsou chvíle, kdy jej možná budete po
 
 ## Začínáme s Aspose.PDF pro Javu
 
-Než se ponoříme do procesu převodu, budete muset nastavit vývojové prostředí. Následuj tyto kroky:
+Než se ponoříme do procesu převodu, budete muset nastavit vývojové prostředí. Postupujte takto:
 
-1. Stáhnout Aspose.PDF pro Java: Navštivte stránku pro stažení Aspose.PDF pro Java na adrese[tady](https://releases.aspose.com/pdf/java/) a stáhněte si nejnovější verzi.
+1. Stáhnout Aspose.PDF pro Java: Navštivte stránku pro stažení Aspose.PDF pro Java na adrese[zde](https://releases.aspose.com/pdf/java/) a stáhněte si nejnovější verzi.
 
 2. Nainstalujte Aspose.PDF for Java: Postupujte podle pokynů k instalaci dodaných se staženým souborem a nastavte Aspose.PDF for Java ve svém vývojovém prostředí.
 
@@ -57,7 +57,7 @@ Nyní přichází hlavní krok převodu:
 doc.save("output.pdf");
 ```
 
-je to! Úspěšně jste převedli soubor EPUB do PDF pomocí Aspose.PDF for Java.
+To je vše! Úspěšně jste převedli soubor EPUB do PDF pomocí Aspose.PDF for Java.
 
 ## Další funkce
 
@@ -87,4 +87,4 @@ Aspose.PDF for Java poskytuje robustní proces převodu EPUB do PDF, ale je nezb
 
 ### Kde najdu další příklady a dokumentaci k Aspose.PDF pro Javu?
 
- Další příklady a podrobnou dokumentaci naleznete v dokumentaci Aspose.PDF pro Java na adrese[tady](https://reference.aspose.com/pdf/java/).
+ Další příklady a podrobnou dokumentaci naleznete v dokumentaci Aspose.PDF pro Java na adrese[zde](https://reference.aspose.com/pdf/java/).

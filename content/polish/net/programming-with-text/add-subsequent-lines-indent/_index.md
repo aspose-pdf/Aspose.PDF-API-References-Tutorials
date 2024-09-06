@@ -1,26 +1,26 @@
 ---
-title: Dodaj wcięcie kolejnych linii w pliku PDF
-linktitle: Dodaj wcięcie kolejnych linii w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak dodawać wcięcia kolejnych wierszy do tekstu w pliku PDF przy użyciu Aspose.PDF dla .NET.
+title: Dodaj kolejne wcięcia linii w pliku PDF
+linktitle: Dodaj kolejne wcięcia linii w pliku PDF
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak dodawać wcięcia do tekstu w kolejnych wierszach pliku PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 60
 url: /pl/net/programming-with-text/add-subsequent-lines-indent/
 ---
-Ten samouczek poprowadzi Cię przez proces dodawania kolejnych wcięć do tekstu w pliku PDF przy użyciu Aspose.PDF dla .NET. Dostarczony kod źródłowy języka C# demonstruje niezbędne kroki.
+Ten samouczek przeprowadzi Cię przez proces dodawania kolejnych wcięć wierszy do tekstu w pliku PDF przy użyciu Aspose.PDF dla .NET. Dostarczony kod źródłowy C# demonstruje niezbędne kroki.
 
 ## Wymagania
-Zanim zaczniesz, upewnij się, że masz następujące elementy:
+Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
 
-- Visual Studio lub dowolny inny kompilator C# zainstalowany na twoim komputerze.
-- Aspose.PDF dla biblioteki .NET. Możesz pobrać go z oficjalnej strony Aspose lub użyć menedżera pakietów, takiego jak NuGet, aby go zainstalować.
+- Visual Studio lub inny kompilator C# zainstalowany na Twoim komputerze.
+- Aspose.PDF dla biblioteki .NET. Możesz pobrać ją z oficjalnej strony Aspose lub użyć menedżera pakietów, takiego jak NuGet, aby ją zainstalować.
 
 ## Krok 1: Skonfiguruj projekt
 1. Utwórz nowy projekt C# w preferowanym środowisku programistycznym.
-2. Dodaj odwołanie do biblioteki Aspose.PDF dla .NET.
+2. Dodaj odwołanie do biblioteki Aspose.PDF dla platformy .NET.
 
-## Krok 2: Zaimportuj wymagane przestrzenie nazw
-W pliku kodu, w którym chcesz dodać wcięcie kolejnych linii, dodaj następującą dyrektywę using na górze pliku:
+## Krok 2: Importuj wymagane przestrzenie nazw
+W pliku kodu, w którym chcesz dodać wcięcie kolejnych wierszy, dodaj następującą dyrektywę using na początku pliku:
 
 ```csharp
 using Aspose.Pdf;
@@ -28,10 +28,10 @@ using Aspose.Pdf.Text;
 ```
 
 ## Krok 3: Ustaw katalog dokumentów
- W kodzie znajdź wiersz, który mówi`string dataDir = "YOUR DOCUMENT DIRECTORY";` i wymienić`"YOUR DOCUMENT DIRECTORY"` ze ścieżką do katalogu, w którym przechowywane są Twoje dokumenty.
+ W kodzie znajdź linię, która mówi`string dataDir = "YOUR DOCUMENT DIRECTORY";` i zastąpić`"YOUR DOCUMENT DIRECTORY"` ze ścieżką do katalogu, w którym przechowywane są Twoje dokumenty.
 
 ## Krok 4: Utwórz nowy obiekt Dokument
- Utwórz instancję nowego`Document` obiekt, dodając następujący wiersz kodu:
+ Utwórz nową instancję`Document` obiekt dodając następujący wiersz kodu:
 
 ```csharp
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
@@ -45,7 +45,7 @@ Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
 ## Krok 6: Utwórz fragment tekstu z wcięciem kolejnych wierszy
- Utwórz instancję a`TextFragment` obiekt i podaj żądany tekst. W podanym kodzie tekst jest przypisany do zmiennej`text` . Następnie zainicjuj`TextFormattingOptions` dla`TextFragment` określ`SubsequentLinesIndent` wartość.
+ Utwórz instancję`TextFragment` obiekt i podaj żądany tekst. W podanym kodzie tekst jest przypisany do zmiennej`text` . Następnie zainicjuj`TextFormattingOptions` dla`TextFragment` określ`SubsequentLinesIndent` wartość.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
@@ -56,14 +56,14 @@ text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 ```
 
 ## Krok 7: Dodaj fragment tekstu do strony
- Dodaj`TextFragment` sprzeciwić się zbiorowi akapitów na stronie.
+ Dodaj`TextFragment` sprzeciw wobec zbioru akapitów na stronie.
 
 ```csharp
 page.Paragraphs.Add(text);
 ```
 
 ## Krok 8: Powtórz kroki 6 i 7 dla dodatkowych linii
-Aby dodać kolejne linie z tym samym wcięciem, powtórz kroki 6 i 7 dla każdej linii. W razie potrzeby zaktualizuj treść tekstową.
+Aby dodać kolejne wiersze z tym samym wcięciem, powtórz kroki 6 i 7 dla każdego wiersza. Zaktualizuj zawartość tekstową w razie potrzeby.
 
 ```csharp
 text = new Aspose.Pdf.Text.TextFragment("Line2");
@@ -77,13 +77,13 @@ page.Paragraphs.Add(text);
 ```
 
 ## Krok 9: Zapisz dokument PDF
- Zapisz dokument PDF za pomocą`Save` metoda`Document` obiekt. Określ ścieżkę pliku wyjściowego.
+ Zapisz dokument PDF za pomocą`Save` metoda`Document` obiekt. Określ ścieżkę do pliku wyjściowego.
 
 ```csharp
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-### Przykładowy kod źródłowy opcji Dodaj wcięcie kolejnych wierszy przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Dodaj wcięcie kolejnych wierszy przy użyciu Aspose.PDF dla platformy .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -91,7 +91,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = document.Pages.Add();
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-// Zainicjuj opcję TextFormattingOptions dla fragmentu tekstu i określ wartość TemporaryLinesIndent
+// Zainicjuj opcję TextFormattingOptions dla fragmentu tekstu i określ wartość FurtherLinesIndent
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
 	SubsequentLinesIndent = 20
@@ -109,17 +109,17 @@ document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
 ## Wniosek
-Pomyślnie dodałeś wcięcie kolejnych linii do tekstu przy użyciu Aspose.PDF dla .NET. Wynikowy plik PDF można teraz znaleźć pod określoną ścieżką pliku wyjściowego.
+Pomyślnie dodano kolejne wcięcia wierszy do tekstu za pomocą Aspose.PDF dla .NET. Wynikowy plik PDF można teraz znaleźć w określonej ścieżce pliku wyjściowego.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
 #### P: Na czym skupia się ten samouczek?
 
-Odp.: Ten samouczek zawiera kompleksowy przewodnik na temat dodawania kolejnych wcięć do tekstu w pliku PDF przy użyciu biblioteki Aspose.PDF dla .NET. Zawiera przykłady kodu źródłowego C# ilustrujące kroki wymagane do osiągnięcia tego celu.
+A: Ten samouczek zawiera kompleksowy przewodnik na temat dodawania kolejnych wcięć do tekstu w pliku PDF przy użyciu biblioteki Aspose.PDF dla .NET. Zawiera przykłady kodu źródłowego C# ilustrujące kroki wymagane do osiągnięcia tego celu.
 
-#### P: Które przestrzenie nazw muszę zaimportować na potrzeby tego samouczka?
+#### P: Jakie przestrzenie nazw muszę zaimportować na potrzeby tego samouczka?
 
-O: W pliku kodu, w którym zamierzasz dodać wcięcie kolejnych linii, zaimportuj na początku pliku następujące przestrzenie nazw:
+A: W pliku kodu, w którym zamierzasz dodać wcięcie do kolejnych wierszy, zaimportuj następujące przestrzenie nazw na początku pliku:
 
 ```csharp
 using Aspose.Pdf;
@@ -128,11 +128,11 @@ using Aspose.Pdf.Text;
 
 #### P: Jak określić katalog dokumentów?
 
- Odp.: W kodzie znajdź linię`string dataDir = "YOUR DOCUMENT DIRECTORY";` i wymienić`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do katalogu dokumentów.
+ A: W kodzie znajdź linię`string dataDir = "YOUR DOCUMENT DIRECTORY";` i zastąpić`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do katalogu dokumentów.
 
 #### P: Jak utworzyć obiekt Dokument?
 
- O: W kroku 4 utworzysz nową instancję`Document` obiekt za pomocą następującego wiersza kodu:
+ A: W kroku 4 utworzysz nową instancję`Document` obiekt używając następującego wiersza kodu:
 
 ```csharp
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
@@ -140,15 +140,15 @@ Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 
 #### P: Jak dodać stronę do dokumentu?
 
- Odp.: W kroku 5 dodasz nową stronę do dokumentu za pomocą`Add` metoda`Pages` kolekcja:
+ A: W kroku 5 dodasz nową stronę do dokumentu za pomocą`Add` metoda`Pages` kolekcja:
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
-#### P: Jak mogę dodać wcięcie kolejnych linii do tekstu?
+#### P: Jak mogę dodać wcięcie do kolejnych wierszy tekstu?
 
- O: W kroku 6 utworzysz plik`TextFragment` obiekt i przypisz do niego żądany tekst. Następnie dokonasz inicjalizacji`TextFormattingOptions` dla`TextFragment` określ`SubsequentLinesIndent` wartość:
+ A: W kroku 6 utworzysz`TextFragment` obiekt i przypisz mu pożądany tekst. Następnie zainicjujesz`TextFormattingOptions` dla`TextFragment` określ`SubsequentLinesIndent` wartość:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
@@ -158,9 +158,9 @@ text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 };
 ```
 
-#### P: Jak dodać fragment tekstu do dokumentu PDF?
+#### P: Jak dodać TextFragment do dokumentu PDF?
 
- Odp.: W kroku 7 dodasz plik`TextFragment` obiekt (`text`) do zbioru akapitów strony:
+ A: W kroku 7 dodasz`TextFragment` obiekt (`text`) do zbioru akapitów strony:
 
 ```csharp
 page.Paragraphs.Add(text);
@@ -168,16 +168,16 @@ page.Paragraphs.Add(text);
 
 #### P: Czy mogę powtórzyć proces dla dodatkowych linii?
 
- O: Tak, w kroku 8 możesz powtórzyć proces dla dodatkowych linii z tym samym wcięciem, tworząc nowe`TextFragment` obiekty i dodanie ich do kolekcji akapitów na stronie.
+ A: Tak, w kroku 8 możesz powtórzyć proces dla dodatkowych wierszy z tym samym wcięciem, tworząc nowe`TextFragment` obiektów i dodawanie ich do zbioru akapitów strony.
 
-#### P: Jak zapisać wynikowy dokument PDF?
+#### P: Jak zapisać powstały dokument PDF?
 
- O: Po dodaniu tekstu z wcięciem kolejnych wierszy należy skorzystać z opcji`Save` metoda`Document` obiekt, aby zapisać dokument PDF:
+ A: Po dodaniu tekstu z wcięciem kolejnych wierszy użyj`Save` metoda`Document` obiekt, aby zapisać dokument PDF:
 
 ```csharp
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-#### P: Jaki jest najważniejszy wniosek z tego samouczka?
+#### P: Jakie są najważniejsze wnioski z tego samouczka?
 
-Odp.: Wykonując ten samouczek, z powodzeniem nauczyłeś się, jak poprawić czytelność tekstu w dokumencie PDF, dodając wcięcia kolejnych wierszy za pomocą Aspose.PDF dla .NET. Technika ta może być przydatna w przypadku różnego rodzaju dokumentów i raportów.
+A: Postępując zgodnie z tym samouczkiem, nauczyłeś się, jak poprawić czytelność tekstu w dokumencie PDF, dodając kolejne wcięcia wierszy za pomocą Aspose.PDF dla .NET. Ta technika może być przydatna w przypadku różnych typów dokumentów i raportów.

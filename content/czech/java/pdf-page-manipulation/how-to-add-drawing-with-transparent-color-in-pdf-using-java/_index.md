@@ -8,7 +8,7 @@ weight: 14
 url: /cs/java/pdf-page-manipulation/how-to-add-drawing-with-transparent-color-in-pdf-using-java/
 ---
 
-## Úvod
+## Zavedení
 
 V tomto tutoriálu prozkoumáme, jak přidat kresby s průhlednými barvami do dokumentů PDF pomocí Java a Aspose.PDF for Java API. Přidání kreseb s průhlednými barvami může být užitečnou funkcí, když chcete vytvářet vizuálně přitažlivé a dynamické dokumenty PDF. Pokryjeme celý proces krok za krokem, včetně nastavení prostředí, vytvoření PDF dokumentu, přidání výkresů a zajištění průhlednosti barev použitých v těchto výkresech.
 
@@ -17,7 +17,7 @@ V tomto tutoriálu prozkoumáme, jak přidat kresby s průhlednými barvami do d
 Než začneme, ujistěte se, že máte následující předpoklady:
 
 - Java Development Kit (JDK) nainstalovaný ve vašem systému.
--  Aspose.PDF pro knihovnu Java, kterou si můžete stáhnout[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java, kterou si můžete stáhnout[zde](https://releases.aspose.com/pdf/java/).
 - Integrované vývojové prostředí (IDE) jako Eclipse nebo IntelliJ IDEA.
 
 ## Nastavení projektu
@@ -102,4 +102,4 @@ Absolutně! Pomocí Aspose.PDF for Java API můžete přidat různé tvary, jako
 
 ### Kde najdu další informace a dokumentaci k Aspose.PDF pro Javu?
 
- Můžete se podívat na Aspose.PDF pro dokumentaci Java na adrese[tady](https://reference.aspose.com/pdf/java/) pro komplexní informace o používání API, včetně podrobných příkladů kódu a návodů.
+ Můžete se podívat na Aspose.PDF pro dokumentaci Java na adrese[zde](https://reference.aspose.com/pdf/java/) pro komplexní informace o používání API, včetně podrobných příkladů kódu a návodů.

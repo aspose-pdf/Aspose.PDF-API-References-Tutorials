@@ -7,7 +7,7 @@ type: docs
 weight: 110
 url: /hu/net/programming-with-pdf-pages/image-as-background/
 ---
-Ebben az oktatóanyagban lépésről lépésre végigvezetjük a kép oldal hátterének beállításához az Aspose.PDF for .NET segítségével. Elmagyarázzuk a csomagban lévő C# forráskódot, és átfogó útmutatót adunk, amely segít megérteni és megvalósítani ezt a funkciót saját projektjeiben. Ennek az oktatóanyagnak a végén tudni fogja, hogyan adhat hozzá képet oldal háttereként egy PDF-dokumentumhoz az Aspose.PDF for .NET segítségével.
+Ebben az oktatóanyagban lépésről lépésre végigvezetjük a kép oldal hátterének beállításához az Aspose.PDF for .NET segítségével. Elmagyarázzuk a csomagban lévő C# forráskódot, és átfogó útmutatót adunk, amely segít megérteni és megvalósítani ezt a funkciót saját projektjeiben. Az oktatóanyag végén tudni fogja, hogyan adhat hozzá képet oldal háttereként egy PDF-dokumentumhoz az Aspose.PDF for .NET segítségével.
 
 ## Előfeltételek
 Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel:
@@ -68,7 +68,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 // Új oldal hozzáadása a dokumentumobjektumhoz
 Page page = doc.Pages.Add();
-// Háttértermék objektum létrehozása
+// Hozzon létre Background Artifact objektumot
 BackgroundArtifact background = new BackgroundArtifact();
 // Adja meg a képet a backgroundartifact objektumhoz
 background.BackgroundImage = File.OpenRead(dataDir + "aspose-total-for-net.jpg");
@@ -107,7 +107,7 @@ V: Igen, több háttérképet is hozzáadhat a PDF-dokumentum különböző olda
 
 #### K: Az Aspose.PDF for .NET támogatja a háttérképek hozzáadását a meglévő tartalommal rendelkező PDF dokumentumokhoz?
 
-V: Igen, az Aspose.PDF for .NET lehetővé teszi háttérképek hozzáadását a meglévő tartalommal rendelkező PDF dokumentumokhoz. Betölthet egy meglévő PDF dokumentumot, hozzáadhatja a háttérképet a kívánt oldalhoz, majd mentheti a frissített dokumentumot egy új fájlba, vagy felülírhatja az eredeti fájlt.
+V: Igen, az Aspose.PDF for .NET lehetővé teszi háttérképek hozzáadását a meglévő tartalommal rendelkező PDF-dokumentumokhoz. Betölthet egy meglévő PDF dokumentumot, hozzáadhatja a háttérképet a kívánt oldalhoz, majd mentheti a frissített dokumentumot egy új fájlba, vagy felülírhatja az eredeti fájlt.
 
 #### K: Használhatok különböző formátumú képeket oldal háttereként, például PNG vagy BMP?
 

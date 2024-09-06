@@ -31,7 +31,7 @@ using Aspose.Pdf.Text;
 
 ## Steg 3: Använd TextFragmentAbsorber för textsökning
 
- Skapa en`TextFragmentAbsorber` objekt för att söka efter specifika textsegment med hjälp av reguljära uttryck:
+ Skapa en`TextFragmentAbsorber` objekt för att söka efter specifika textsegment med reguljära uttryck:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber;

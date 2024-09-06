@@ -89,7 +89,7 @@ pdfDocument.save("output.pdf");
 是的，您可以在目錄中新增超連結以導覽至 PDF 文件中的特定部分或頁面。
 
 ### Aspose.PDF for Java 是否支援其他 PDF 操作功能？
-是的，Aspose.PDF for Java 提供了廣泛的處理 PDF 文件的功能，包括文字擷取、頁面操作等。
+是的，Aspose.PDF for Java 提供了處理 PDF 文件的廣泛功能，包括文字擷取、頁面操作等。
 
 ### 是否有 Aspose.PDF for Java 的試用版？
 是的，您可以從以下位置下載 Aspose.PDF for Java 的試用版：[Aspose.購買](https://purchase.aspose.com/temporary-license/)在購買許可證之前評估其功能。

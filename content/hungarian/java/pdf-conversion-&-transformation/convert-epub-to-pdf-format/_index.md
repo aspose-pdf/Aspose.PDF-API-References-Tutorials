@@ -14,7 +14,7 @@ Az EPUB egy népszerű e-könyv formátum, de előfordulhat, hogy különféle o
 
 ## Az Aspose.PDF for Java első lépései
 
-Mielőtt belevágnánk az átalakítási folyamatba, be kell állítania a fejlesztői környezetet. Kovesd ezeket a lepeseket:
+Mielőtt belevágnánk az átalakítási folyamatba, be kell állítania a fejlesztői környezetet. Kövesse az alábbi lépéseket:
 
 1. Az Aspose.PDF for Java letöltése: Látogassa meg az Aspose.PDF for Java letöltési oldalát a címen[itt](https://releases.aspose.com/pdf/java/) és töltse le a legújabb verziót.
 
@@ -57,11 +57,11 @@ Most jön a fő konverziós lépés:
 doc.save("output.pdf");
 ```
 
-Ez az! Sikeresen konvertált egy EPUB-fájlt PDF-be az Aspose.PDF for Java használatával.
+Ennyi! Sikeresen konvertált egy EPUB-fájlt PDF-be az Aspose.PDF for Java használatával.
 
-## További jellemzők
+## További funkciók
 
-Az Aspose.PDF for Java a szolgáltatások széles skáláját kínálja az EPUB-ból PDF-be konvertáláson túl, például megjegyzések hozzáadását, űrlapokkal való munkavégzést stb. Fedezze fel a dokumentációt a fejlett képességekről.
+Az Aspose.PDF for Java funkciók széles skáláját kínálja az EPUB-ból PDF-be konvertáláson túl, mint például megjegyzések hozzáadása, űrlapokkal való munka stb. Fedezze fel a dokumentációt a fejlett képességekről.
 
 ## Következtetés
 
@@ -79,7 +79,7 @@ Az Aspose.PDF for Java egy kereskedelmi könyvtár ingyenes próbaidőszakkal. A
 
 ### Testreszabhatom a konvertált PDF megjelenését?
 
-Igen, személyre szabhatja a konvertált PDF megjelenését az olyan beállításokkal, mint az oldalméret és a margók a PDF-fájl mentése előtt.
+Igen, testreszabhatja a konvertált PDF megjelenését azáltal, hogy a PDF-fájl mentése előtt módosítja a beállításokat, például az oldalméretet és a margókat.
 
 ### Vannak korlátozások az Aspose.PDF for Java segítségével az EPUB-ból PDF-be való konvertáláshoz?
 

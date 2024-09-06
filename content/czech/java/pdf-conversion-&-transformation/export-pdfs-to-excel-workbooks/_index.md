@@ -16,7 +16,7 @@ V dnešní digitální době je neocenitelná možnost extrahovat data ze soubor
 
 Než se ponoříme do kódu, ujistěte se, že máte vše, co potřebujete, abyste mohli začít:
 
--  Aspose.PDF pro Javu: Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro Javu: Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 - Vývojové prostředí Java: Ujistěte se, že máte v systému nainstalovanou Javu.
 - Základní znalost jazyka Java: Znalost programování v jazyce Java bude užitečná, ale není povinná.
 
@@ -82,17 +82,17 @@ excelWorkbook.save("path/to/your/excel/workbook.xlsx");
 
 ## Závěr
 
-Gratulujeme! Úspěšně jste se naučili exportovat soubory PDF do sešitů aplikace Excel pomocí Aspose.PDF for Java. Díky této výkonné kombinaci Aspose.PDF a Aspose.Cells je extrahování a manipulace s daty z dokumentů PDF hračkou. Ať už pracujete na analýze dat, vytváření sestav nebo na jakémkoli jiném úkolu, který zahrnuje převod PDF do Excelu, tato příručka vás vybavila znalostmi, které vám umožní efektivně vykonávat práci.
+Gratuluji! Úspěšně jste se naučili exportovat soubory PDF do sešitů aplikace Excel pomocí Aspose.PDF for Java. Díky této výkonné kombinaci Aspose.PDF a Aspose.Cells je extrahování a manipulace s daty z dokumentů PDF hračkou. Ať už pracujete na analýze dat, vytváření sestav nebo na jakémkoli jiném úkolu, který zahrnuje převod PDF do Excelu, tato příručka vás vybavila znalostmi, které vám umožní efektivně vykonávat práci.
 
 ## FAQ
 
 ### Jak nainstaluji Aspose.PDF pro Javu?
 
- Instalace Aspose.PDF pro Java je snadná. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/) a postupujte podle pokynů k instalaci uvedených na jejich webových stránkách.
+ Instalace Aspose.PDF pro Java je snadná. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/) a postupujte podle pokynů k instalaci uvedených na jejich webových stránkách.
 
 ### Mohu přizpůsobit výstup Excelu?
 
-Ano, můžete upravit výstup Excelu úpravou kódu. Můžete formátovat buňky, přidávat záhlaví a zápatí a provádět různé další operace, abyste přizpůsobili výstup svým potřebám.
+Ano, můžete upravit výstup Excelu úpravou kódu. Můžete formátovat buňky, přidávat záhlaví a zápatí a provádět různé další operace pro přizpůsobení výstupu vašim potřebám.
 
 ### Je Aspose.PDF for Java zdarma k použití?
 
@@ -104,4 +104,4 @@ Aspose.PDF for Java se primárně zabývá soubory PDF, ale také poskytuje mož
 
 ### Kde najdu další dokumentaci a zdroje?
 
- Komplexní dokumentaci a další zdroje pro Aspose.PDF pro Java můžete najít na jejich webových stránkách na adrese[tady](https://reference.aspose.com/pdf/java/).
+ Komplexní dokumentaci a další zdroje pro Aspose.PDF pro Java můžete najít na jejich webových stránkách na adrese[zde](https://reference.aspose.com/pdf/java/).

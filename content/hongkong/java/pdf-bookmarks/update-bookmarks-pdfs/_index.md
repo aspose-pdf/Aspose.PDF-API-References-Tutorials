@@ -101,7 +101,7 @@ pdfDocument.save("updated_example.pdf");
 
 是的，您可以使用 Aspose.PDF for Java 在批次中自動更新書籤。您可以建立一個 Java 程式來迭代 PDF 檔案集合並根據需要更新書籤。
 
-### 使用 Aspose.PDF for Java 進行書籤更新時是否有任何限製或限制？
+### 使用 Aspose.PDF for Java 進行書籤更新時是否有任何限製或約束？
 
 雖然 Aspose.PDF for Java 是一個多功能庫，但有必要查看文件並根據專案的需要考慮任何特定要求或限制。某些進階 PDF 功能可能有特定要求。
 

@@ -1,72 +1,82 @@
 ---
 title: PDF sang XML
 linktitle: PDF sang XML
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Hướng dẫn từng bước để chuyển đổi PDF sang XML bằng Aspose.PDF cho .NET.
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Tìm hiểu cách chuyển đổi PDF sang XML bằng Aspose.PDF cho .NET trong hướng dẫn toàn diện này. Hướng dẫn từng bước có kèm ví dụ về mã.
 type: docs
 weight: 210
 url: /vi/net/document-conversion/pdf-to-xml/
 ---
-Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn quy trình chuyển đổi tệp PDF sang định dạng XML bằng Aspose.PDF cho .NET. XML (Ngôn ngữ đánh dấu mở rộng) là định dạng dữ liệu được sử dụng để lưu trữ và trao đổi thông tin có cấu trúc. Bằng cách làm theo các bước bên dưới, bạn sẽ có thể chuyển đổi tệp PDF sang định dạng XML.
+## Giới thiệu
+
+Trong thế giới kỹ thuật số ngày nay, khả năng chuyển đổi tài liệu từ định dạng này sang định dạng khác là điều cần thiết. Cho dù bạn là nhà phát triển, chuyên gia kinh doanh hay chỉ là người thường xuyên làm việc với PDF, biết cách chuyển đổi tệp PDF sang XML có thể là một bước ngoặt. XML (Ngôn ngữ đánh dấu mở rộng) được sử dụng rộng rãi để biểu diễn dữ liệu và đặc biệt hữu ích cho việc trao đổi dữ liệu giữa các hệ thống. Trong hướng dẫn này, chúng ta sẽ khám phá cách sử dụng Aspose.PDF cho .NET để chuyển đổi tệp PDF sang định dạng XML một cách liền mạch. 
 
 ## Điều kiện tiên quyết
-Trước khi bắt đầu, hãy đảm bảo bạn đáp ứng các điều kiện tiên quyết sau:
 
-- Kiến thức cơ bản về ngôn ngữ lập trình C#.
-- Thư viện Aspose.PDF cho .NET được cài đặt trên hệ thống của bạn.
-- Một môi trường phát triển như Visual Studio.
+Trước khi tìm hiểu về mã, bạn cần chuẩn bị một số thứ sau:
 
-## Bước 1: Tải tài liệu PDF
-Trong bước này, chúng tôi sẽ tải tệp PDF nguồn bằng Aspose.PDF cho .NET. Thực hiện theo mã dưới đây:
+1. Visual Studio: Đảm bảo bạn đã cài đặt Visual Studio trên máy của mình. Đây sẽ là môi trường phát triển của chúng tôi.
+2. Aspose.PDF cho .NET: Bạn cần tải xuống và cài đặt thư viện Aspose.PDF. Bạn có thể tìm thấy nó[đây](https://releases.aspose.com/pdf/net/).
+3. Kiến thức cơ bản về C#: Sự quen thuộc với lập trình C# sẽ giúp bạn hiểu các đoạn mã tốt hơn.
+4. Tệp PDF mẫu: Chuẩn bị tệp PDF mẫu để chuyển đổi. Bạn có thể tạo tệp PDF đơn giản hoặc tải xuống từ internet.
 
-```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+## Nhập gói
 
-// Tải tài liệu PDF
-Document doc = new Document(dataDir + "input.pdf");
-```
+Để bắt đầu với Aspose.PDF, bạn cần nhập các gói cần thiết vào dự án của mình. Sau đây là cách bạn có thể thực hiện:
 
- Hãy chắc chắn để thay thế`"YOUR DOCUMENTS DIRECTORY"` với thư mục thực tế nơi chứa tệp PDF của bạn.
+1. Mở Visual Studio và tạo một dự án C# mới.
+2. Thêm gói Aspose.PDF NuGet:
+- Nhấp chuột phải vào dự án của bạn trong Solution Explorer.
+- Chọn "Quản lý gói NuGet".
+- Tìm kiếm "Aspose.PDF" và cài đặt gói.
 
-## Bước 2: Lưu tệp XML kết quả
-Bây giờ chúng tôi sẽ lưu tệp PDF đã chuyển đổi ở định dạng XML. Sử dụng mã sau đây:
+Sau khi cài đặt gói, bạn có thể bắt đầu viết mã để chuyển đổi PDF sang XML.
 
-```csharp
-// Lưu đầu ra dưới dạng XML
-doc.Save(dataDir + "PDFToXML_out.xml", SaveFormat.MobiXml);
-```
+## Bước 1: Thiết lập dự án của bạn
 
- Đoạn mã trên lưu tệp PDF đã chuyển đổi ở định dạng XML với tên tệp`"PDFToXML_out.xml"`.
+Trước tiên, hãy thiết lập cấu trúc dự án của chúng ta. Tạo một thư mục trong thư mục dự án của bạn để lưu trữ các tệp PDF. Điều này sẽ giúp mọi thứ được sắp xếp hợp lý.
 
-### Mã nguồn ví dụ cho PDF sang XML bằng Aspose.PDF for .NET
+## Bước 2: Tải Tài liệu PDF
+
+Bây giờ, hãy tải tài liệu PDF mà chúng ta muốn chuyển đổi. Sau đây là cách bạn có thể thực hiện:
 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";            
-// Tải tập tin PDF nguồn
+// Tải tệp PDF nguồn
 Document doc = new Document(dataDir + "input.pdf");
+```
+
+ Trong đoạn mã này, hãy thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế nơi tệp PDF của bạn được lưu trữ.`Document` lớp từ Aspose.PDF được sử dụng để tải tệp PDF.
+
+## Bước 3: Chuyển đổi PDF sang XML
+
+ Sau khi PDF được tải, bước tiếp theo là chuyển đổi nó sang định dạng XML. Điều này được thực hiện bằng cách sử dụng`Save` phương pháp của`Document` lớp. Đây là cách thực hiện:
+
+```csharp
 // Lưu đầu ra ở định dạng XML
 doc.Save(dataDir + "PDFToXML_out.xml", SaveFormat.MobiXml);
 ```
 
+ Trong dòng này, chúng tôi chỉ định tên và định dạng tệp đầu ra.`SaveFormat.MobiXml` cho biết chúng ta muốn lưu tài liệu ở định dạng XML.
+
 ## Phần kết luận
-Trong hướng dẫn này, chúng tôi đã trình bày quy trình từng bước chuyển đổi tệp PDF sang XML bằng Aspose.PDF cho .NET. Bằng cách làm theo các hướng dẫn được nêu ở trên, giờ đây bạn có thể chuyển đổi tệp PDF sang định dạng XML. Tính năng này hữu ích khi bạn muốn trích xuất nội dung có cấu trúc từ tệp PDF và xử lý nó thành định dạng XML để sử dụng sau này.
 
-### Câu hỏi thường gặp
+Xin chúc mừng! Bạn đã chuyển đổi thành công tệp PDF sang định dạng XML bằng Aspose.PDF cho .NET. Thư viện mạnh mẽ này giúp bạn dễ dàng thao tác các tài liệu PDF và chỉ với một vài dòng mã, bạn có thể thực hiện các tác vụ phức tạp như chuyển đổi định dạng. Cho dù bạn đang làm việc trên một ứng dụng quy mô lớn hay chỉ cần chuyển đổi một vài tệp, Aspose.PDF đều có thể giúp bạn.
 
-#### Câu hỏi: Aspose.PDF cho .NET có thể xử lý các tệp PDF phức tạp có nhiều trang và cấu trúc trong quá trình chuyển đổi XML không?
+## Câu hỏi thường gặp
 
-Trả lời: Có, Aspose.PDF for .NET có khả năng xử lý các tệp PDF phức tạp với nhiều trang và cấu trúc khác nhau trong quá trình chuyển đổi XML. Nó trích xuất và thể hiện chính xác nội dung cũng như cấu trúc của tệp PDF ở định dạng XML, duy trì thứ bậc của các thành phần và trang.
+### Aspose.PDF dành cho .NET là gì?
+Aspose.PDF for .NET là một thư viện cho phép các nhà phát triển tạo, chỉnh sửa và chuyển đổi tài liệu PDF theo cách lập trình.
 
-#### Hỏi: Điều gì xảy ra nếu tệp PDF chứa hình ảnh hoặc nội dung không phải văn bản?
+### Tôi có thể sử dụng Aspose.PDF miễn phí không?
+ Có, Aspose cung cấp phiên bản dùng thử miễn phí mà bạn có thể sử dụng để đánh giá thư viện. Bạn có thể tải xuống[đây](https://releases.aspose.com/).
 
-Trả lời: Trong quá trình chuyển đổi PDF sang XML, Aspose.PDF cho .NET chủ yếu tập trung vào việc trích xuất nội dung văn bản và cấu trúc. Nội dung phi văn bản, chẳng hạn như hình ảnh hoặc đồ họa phức tạp, có thể không được giữ nguyên trong tệp XML kết quả. Đầu ra XML chủ yếu sẽ thể hiện các thành phần văn bản và cấu trúc của PDF.
+### Có thể chuyển đổi XML trở lại PDF không?
+Có, Aspose.PDF cũng hỗ trợ chuyển đổi các tệp XML trở lại định dạng PDF.
 
-#### Câu hỏi: Tôi có thể kiểm soát định dạng và cấu trúc đầu ra XML trong quá trình chuyển đổi không?
+### Tôi có thể tìm thêm tài liệu ở đâu?
+ Bạn có thể tìm thấy tài liệu toàn diện về Aspose.PDF cho .NET[đây](https://reference.aspose.com/pdf/net/).
 
- Đáp: Aspose.PDF for .NET cung cấp một số mức độ kiểm soát đối với cấu trúc và định dạng đầu ra XML. Bạn có thể dùng`SaveOptions` lớp để xác định mong muốn`SaveFormat` và chọn giữa các định dạng XML khác nhau, chẳng hạn như MobiXml hoặc StandardXml. Tuy nhiên, mức độ kiểm soát cấu trúc XML có thể bị hạn chế do tính chất của nội dung PDF.
-
-#### Hỏi: Có thể chuyển đổi các tệp PDF được bảo vệ bằng mật khẩu sang định dạng XML bằng Aspose.PDF cho .NET không?
-
- Trả lời: Có, Aspose.PDF for .NET hỗ trợ chuyển đổi các tệp PDF được bảo vệ bằng mật khẩu sang định dạng XML. Khi tải tệp PDF được bảo vệ bằng mật khẩu, bạn có thể cung cấp mật khẩu bằng cách sử dụng`Document` hàm tạo của lớp hoặc bằng cách thiết lập`Password` thuộc tính trước khi tải tệp PDF.
+### Tôi có thể nhận được hỗ trợ cho Aspose.PDF như thế nào?
+ Bạn có thể nhận được hỗ trợ bằng cách truy cập diễn đàn Aspose[đây](https://forum.aspose.com/c/pdf/10).

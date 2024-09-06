@@ -68,7 +68,7 @@ pdfDocument.save("output.pdf");
 
 ## Következtetés
 
-Gratulálunk! Sikeresen konvertált egy képet PDF-dokumentummá a Java és az Aspose.PDF for Java könyvtár használatával. Ez hihetetlenül hasznos lehet különféle forgatókönyvekben, mint például jelentések generálása, PDF-portfóliók létrehozása vagy egyszerűen képadatok archiválása könnyebben kezelhető formátumban. Nyugodtan fedezze fel az Aspose.PDF könyvtár további funkcióit PDF-generálási képességeinek javítása érdekében.
+Gratulálok! Sikeresen konvertált egy képet PDF-dokumentummá a Java és az Aspose.PDF for Java könyvtár használatával. Ez hihetetlenül hasznos lehet különféle forgatókönyvekben, mint például jelentések generálása, PDF-portfóliók létrehozása vagy egyszerűen képadatok archiválása könnyebben kezelhető formátumban. Nyugodtan fedezze fel az Aspose.PDF könyvtár további funkcióit PDF-generálási képességeinek javítása érdekében.
 
 ## GYIK
 

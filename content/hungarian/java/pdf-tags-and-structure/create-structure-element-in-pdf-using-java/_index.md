@@ -36,12 +36,12 @@ Document pdfDocument = new Document();
 Ezután adjunk hozzá tartalmat PDF-dokumentumunkhoz. Ez a tartalom tartalmazhat szöveget, képeket, táblázatokat és egyebeket. Ehhez a példához egy egyszerű szöveges bekezdést adunk hozzá:
 
 ```java
-// Adjon hozzá egy szöveges bekezdést a PDF-hez
+// Adjon hozzá szöveges bekezdést a PDF-hez
 pdfDocument.getPages().add().getParagraphs().add("This is a sample text paragraph.");
 ```
 
 ## 3. lépés: Struktúraelemek létrehozása
- Most hozzunk létre szerkezeti elemeket a tartalom logikai szerkezetének meghatározásához. Használhatunk szerkezeti elemeket, mint pl`<H1>`, `<H2>`, `<P>`és mások a címsorok és bekezdések megjelenítésére.
+ Most hozzunk létre szerkezeti elemeket a tartalom logikai szerkezetének meghatározásához. Használhatunk szerkezeti elemeket, mint pl`<H1>`, `<H2>`, `<P>`, és mások a címsorok és bekezdések megjelenítésére.
 
 ```java
 // Hozzon létre egy szerkezeti elemet az első címsorhoz

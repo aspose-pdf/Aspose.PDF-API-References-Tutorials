@@ -22,7 +22,7 @@ Chcete vylepšit vzhled svých dokumentů PDF? S Aspose.PDF for Java můžete sn
 
 Optimalizace obrázků v PDF je nezbytná pro zmenšení velikosti souboru a zlepšení výkonu dokumentu. Ukážeme, jak vám Aspose.PDF for Java umožňuje optimalizovat obrázky úpravou jejich nastavení komprese a kvality. Na konci těchto výukových programů budete zběhlí v dosahování dokonalé rovnováhy mezi kvalitou obrazu a velikostí dokumentu, což zajistí bezproblémové uživatelské prostředí.
 
-Připojte se k nám na této cestě stát se expertem na manipulaci s obrázky PDF s Aspose.PDF pro Javu. Ať už jste vývojář, který se snaží vylepšit své možnosti zpracování dokumentů, nebo někdo, kdo chce vytvářet vizuálně úchvatné soubory PDF, tyto výukové programy vám umožní bezproblémově transformovat, upravovat a optimalizovat obrázky v dokumentech PDF.
+Připojte se k nám na této cestě stát se expertem na manipulaci s obrázky PDF s Aspose.PDF pro Javu. Ať už jste vývojář, který se snaží vylepšit své možnosti zpracování dokumentů, nebo někdo, kdo chce vytvářet vizuálně ohromující soubory PDF, tyto výukové programy vám umožní bezproblémově transformovat, upravovat a optimalizovat obrázky v dokumentech PDF.
 
 ## Výukové programy pro manipulaci s obrázky PDF
 ### [Přidejte obrázek do PDF pomocí Java](./add-image-to-pdf-using-java/)

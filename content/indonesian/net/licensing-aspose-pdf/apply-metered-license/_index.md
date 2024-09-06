@@ -1,128 +1,111 @@
 ---
-title: Konfigurasikan Kunci Lisensi Terukur Dalam File PDF
-linktitle: Konfigurasikan Kunci Lisensi Terukur Dalam File PDF
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Panduan langkah demi langkah untuk menyiapkan kunci lisensi terukur dalam file PDF dengan Aspose.PDF untuk .NET dan memanfaatkan fitur-fitur canggih.
+title: Konfigurasikan Kunci Lisensi Terukur dalam File PDF
+linktitle: Konfigurasikan Kunci Lisensi Terukur dalam File PDF
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara mengonfigurasi kunci lisensi terukur dalam file PDF Anda menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah yang komprehensif ini.
 type: docs
 weight: 10
 url: /id/net/licensing-aspose-pdf/configure-metered-license/
 ---
-Dalam tutorial ini, kami akan memandu Anda langkah demi langkah cara menyiapkan kunci lisensi terukur dalam file PDF dengan Aspose.PDF untuk .NET. Lisensi terukur memungkinkan Anda menggunakan fitur-fitur canggih Aspose.PDF berdasarkan konsumsi aktual Anda.
+## Perkenalan
 
-### Langkah 1: Mengonfigurasi Kunci Lisensi
+Apakah Anda siap untuk menyelami dunia manipulasi PDF menggunakan Aspose.PDF untuk .NET? Baik Anda mengelola alur kerja dokumen yang besar atau hanya perlu menangani beberapa PDF, mengonfigurasi lisensi terukur adalah langkah pertama Anda untuk membuka potensi penuh Aspose.PDF. Dalam panduan komprehensif ini, kami akan memandu Anda melalui proses pengaturan kunci lisensi terukur dalam file PDF Anda. Dan jangan khawatir—kami akan membuat semuanya tetap sederhana, menarik, dan penuh dengan wawasan praktis untuk membuat perjalanan Anda semulus mungkin.
 
-Dalam kode sumber yang disediakan, Anda harus menentukan kunci publik dan pribadi dari lisensi terukur. Gantikan "*****" nilai dengan kunci Anda sendiri. Kunci ini akan diberikan kepada Anda saat Anda membeli lisensi terukur dari Aspose.
+## Prasyarat
+
+Sebelum kita mulai, mari pastikan Anda memiliki semua yang Anda butuhkan:
+
+1.  Aspose.PDF untuk .NET: Pastikan Anda telah mengunduh dan menginstal versi terbaru Aspose.PDF untuk .NET. Anda bisa mendapatkannya dari[halaman unduhan](https://releases.aspose.com/pdf/net/).
+2.  Kunci Lisensi Terukur yang Valid: Anda memerlukan kunci publik dan pribadi terukur. Jika Anda belum memilikinya, Anda dapat memperoleh lisensi sementara dari[Di Sini](https://purchase.aspose.com/temporary-license/).
+3. Lingkungan Pengembangan: Visual Studio atau lingkungan pengembangan .NET lain yang kompatibel harus disiapkan dan siap digunakan.
+4. Contoh Dokumen PDF: Sediakan file PDF yang dapat Anda gunakan untuk menguji proses konfigurasi.
+
+## Paket Impor
+
+Untuk bekerja dengan Aspose.PDF, Anda perlu menyertakan namespace yang diperlukan dalam proyek Anda. Ini memastikan bahwa Anda memiliki akses ke semua kelas dan metode yang diperlukan untuk mengonfigurasi lisensi terukur.
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Mari kita uraikan prosesnya menjadi beberapa langkah yang mudah diikuti. Setiap langkah akan memandu Anda melalui bagian konfigurasi tertentu, memastikan Anda tidak melewatkan apa pun.
+
+## Langkah 1: Menyiapkan Lingkungan Pengembangan
+
+Sebelum Anda masuk ke kode, pastikan lingkungan pengembangan Anda sudah disiapkan.
+
+- Buka Visual Studio: Luncurkan Visual Studio dan buat proyek C# baru. Jika Anda sudah memiliki proyek yang ingin Anda konfigurasikan lisensi terukurnya, buka proyek tersebut.
+- Tambahkan Referensi ke Aspose.PDF: Klik kanan pada proyek Anda di Solution Explorer, buka "Kelola Paket NuGet," dan cari "Aspose.PDF untuk .NET." Instal paket tersebut untuk menyertakannya dalam proyek Anda.
+
+## Langkah 2: Inisialisasi Kelas Terukur
+
+ Sekarang lingkungan Anda sudah siap, saatnya untuk menginisialisasi`Metered` kelas disediakan oleh Aspose.PDF.
+
+-  Buat Instansi: Mulailah dengan membuat sebuah instance dari`Metered` kelas. Kelas ini akan membantu Anda mengatur kunci lisensi terukur Anda.
 
 ```csharp
 Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
-metered.SetMeteredKey("PUBLIC_KEY", "PRIVATE_KEY");
 ```
 
-### Langkah 2: Memuat dokumen
+-  Mengapa Hal Ini Penting:`Metered` Kelas ini penting karena memungkinkan Anda memanfaatkan model lisensi terukur, yang dapat lebih hemat biaya jika Anda menangani pemrosesan dokumen bervolume tinggi.
 
- Muat dokumen PDF dari disk menggunakan`Document` kelas Aspose.PDF.
+## Langkah 3: Tetapkan Kunci Lisensi Terukur Anda
+
+ Dengan`Metered` kelas diinisialisasi, saatnya untuk menetapkan kunci publik dan privat terukur Anda.
+
+-  Akses`SetMeteredKey` Metode :`SetMeteredKey` metode ini digunakan untuk menerapkan kunci publik dan privat Anda ke pustaka Aspose.PDF.
 
 ```csharp
-Document doc = new Document(dataDir + "input.pdf");
+metered.SetMeteredKey("YOUR_PUBLIC_KEY", "YOUR_PRIVATE_KEY");
 ```
 
-### Langkah 3: Dapatkan Jumlah Halaman Dokumen
+-  Catatan Penting: Ganti`"YOUR_PUBLIC_KEY"` Dan`"YOUR_PRIVATE_KEY"`dengan kunci lisensi terukur Anda yang sebenarnya. Kunci ini penting untuk mengaktifkan kemampuan penuh Aspose.PDF.
 
- Menggunakan`Count` properti dari`Pages` koleksi untuk mendapatkan jumlah total halaman dalam dokumen.
+## Langkah 4: Muat Dokumen PDF Anda
 
-```csharp
-Console.WriteLine(doc.Pages.Count);
-```
+Berikutnya, Anda akan memuat dokumen PDF yang ingin Anda kerjakan.
 
-### Contoh kode sumber untuk Konfigurasikan Lisensi Terukur menggunakan Aspose.PDF untuk .NET 
+- Tentukan Jalur Dokumen: Tentukan jalur ke berkas PDF Anda. Ini adalah dokumen tempat Anda akan menerapkan konfigurasi lisensi terukur.
 
 ```csharp
-
-// Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// mengatur kunci publik dan pribadi terukur
-Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
-//Akses properti setMeteredKey dan teruskan kunci publik dan pribadi sebagai parameter
-metered.SetMeteredKey("*****", "*****");
-// Muat dokumen dari disk.
 Document doc = new Document(dataDir + "input.pdf");
-//Dapatkan jumlah halaman dokumen
-Console.WriteLine(doc.Pages.Count);
-
 ```
+
+-  Memuat Dokumen:`Document` kelas di Aspose.PDF memungkinkan Anda memuat dan memanipulasi berkas PDF dengan mudah.
+
+## Langkah 5: Verifikasi Konfigurasi
+
+Terakhir, mari verifikasi bahwa lisensi terukur telah dikonfigurasi dengan benar.
+
+- Periksa Jumlah Halaman: Cara mudah untuk memeriksa apakah semuanya berfungsi dengan baik adalah dengan mengakses jumlah halaman dokumen yang dimuat. Jika lisensi terukur diatur dengan benar, operasi ini akan berjalan tanpa masalah lisensi.
+
+```csharp
+Console.WriteLine(doc.Pages.Count);
+```
+
+- Mengapa Langkah Ini Penting: Dengan memeriksa jumlah halaman, Anda mengonfirmasi bahwa dokumen dapat diakses dan lisensi berfungsi seperti yang diharapkan.
 
 ## Kesimpulan
 
-Dalam tutorial ini, kami menjelaskan cara menyiapkan lisensi terukur dengan Aspose.PDF untuk .NET. Dengan menggunakan lisensi terukur, Anda dapat memanfaatkan fitur-fitur canggih Aspose.PDF berdasarkan penggunaan Anda yang sebenarnya. Pastikan untuk memberikan kunci lisensi yang valid untuk menggunakan Aspose.PDF dengan semua fiturnya.
+Selamat! Anda telah berhasil mengonfigurasi kunci lisensi terukur untuk file PDF Anda menggunakan Aspose.PDF untuk .NET. Pengaturan ini tidak hanya membuka potensi penuh pustaka Aspose.PDF tetapi juga memastikan bahwa Anda siap menangani tugas pemrosesan PDF skala besar dengan mudah.
 
-### FAQ untuk mengonfigurasi kunci lisensi terukur dalam file PDF
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa yang dimaksud dengan lisensi terukur di Aspose.PDF?
+### Apa itu lisensi terukur di Aspose.PDF?  
+Lisensi terukur memungkinkan Anda membayar API berdasarkan penggunaan, bukan biaya satu kali. Lisensi ini ideal untuk pemrosesan dokumen bervolume tinggi.
 
-J: Lisensi terukur di Aspose.PDF adalah model lisensi yang memungkinkan Anda membayar berdasarkan konsumsi fitur aktual, bukan biaya lisensi tetap. Ini memungkinkan Anda untuk menggunakan fitur-fitur canggih Aspose.PDF sambil hanya membayar untuk apa yang Anda gunakan.
+### Bagaimana cara memperoleh kunci lisensi terukur?  
+ Anda dapat memperoleh kunci lisensi terukur dengan membeli lisensi dari[Di Sini](https://purchase.aspose.com/buy) atau dengan mengajukan permohonan lisensi sementara.
 
-#### T: Mengapa saya harus menggunakan lisensi terukur untuk Aspose.PDF?
+### Bisakah saya menggunakan Aspose.PDF tanpa lisensi?  
+Ya, tetapi versi gratisnya memiliki batasan. Untuk akses tanpa batas ke semua fitur, Anda harus menggunakan lisensi yang valid.
 
-J: Menggunakan lisensi bermeter menawarkan penghematan biaya dan fleksibilitas. Anda hanya membayar untuk fitur yang Anda gunakan, sehingga cocok untuk proyek dengan tuntutan yang berbeda-beda. Ini menghilangkan kebutuhan biaya lisensi di muka dan memungkinkan Anda mengakses fitur PDF tingkat lanjut.
+### Apa yang terjadi jika saya tidak mengatur lisensi terukur dengan benar?  
+Jika lisensi terukur tidak ditetapkan dengan benar, aplikasi Anda mungkin tidak memiliki akses ke semua fitur, atau mungkin memunculkan pengecualian terkait dengan pemberian lisensi.
 
-#### T: Bagaimana cara mendapatkan kunci lisensi terukur?
-
-J: Saat Anda membeli lisensi terukur dari Aspose, Anda akan menerima sepasang kunci publik dan pribadi. Kunci ini akan digunakan untuk mengautentikasi dan mengaktifkan lisensi terukur untuk aplikasi Aspose.PDF Anda.
-
-#### T: Bagaimana cara mengonfigurasi kunci lisensi terukur di Aspose.PDF untuk .NET?
-
- J: Untuk mengonfigurasi kunci lisensi terukur, gunakan`SetMeteredKey` metode`Aspose.Pdf.Metered` kelas. Mengganti`"PUBLIC_KEY"` Dan`"PRIVATE_KEY"` dengan kunci Anda yang sebenarnya.
-
-```csharp
-Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
-metered.SetMeteredKey("PUBLIC_KEY", "PRIVATE_KEY");
-```
-
-#### T: Bagaimana cara memuat dokumen PDF menggunakan Aspose.PDF untuk .NET?
-
- J: Untuk memuat dokumen PDF dari disk, gunakan`Document` kelas Aspose.PDF dan berikan jalur file.
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
-#### T: Bagaimana cara mendapatkan jumlah halaman total dokumen PDF?
-
- J: Untuk mendapatkan jumlah halaman total dokumen PDF, gunakan`Count` properti dari`Pages` koleksi.
-
-```csharp
-int pageCount = doc.Pages.Count;
-Console.WriteLine("Total pages: " + pageCount);
-```
-
-#### T: Dapatkah saya menggunakan lisensi terukur untuk produk Aspose lainnya?
-
-J: Ya, lisensi terukur tersedia untuk berbagai produk Aspose, memungkinkan Anda membayar berdasarkan penggunaan Anda untuk berbagai fitur.
-
-#### T: Apakah lisensi bermeter cocok untuk semua jenis proyek?
-
-J: Lisensi terukur cocok untuk proyek dengan penggunaan fitur yang bervariasi. Ini mungkin tidak hemat biaya untuk proyek dengan penggunaan fitur tinggi yang konsisten.
-
-#### T: Di mana saya dapat menemukan informasi selengkapnya tentang lisensi terukur Aspose.PDF?
-
- J: Untuk informasi lebih lanjut tentang lisensi, harga, dan manfaat terukur, kunjungi[Lisensi Terukur Aspose.PDF](https://purchase.aspose.com/pricing/pdf/net) halaman.
-
-#### T: Bagaimana cara memastikan keamanan kunci lisensi terukur saya?
-
-J: Kunci lisensi terukur digunakan untuk autentikasi dan merupakan informasi sensitif. Pastikan informasi tersebut dirahasiakan dan tidak dibagikan kepada publik.
-
-#### T: Dapatkah saya beralih antara pemberian lisensi tradisional dan berbayar?
-
-J: Ya, Anda dapat beralih antara lisensi tradisional dan lisensi terukur untuk Aspose.PDF berdasarkan kebutuhan proyek Anda.
-
-#### T: Dapatkah saya menggunakan versi uji coba sebelum membeli lisensi terukur?
-
- A: Ya, Anda bisa mencobanya[versi percobaan gratis](https://products.aspose.com/pdf/net) dari Aspose.PDF untuk mengevaluasi fitur dan fungsinya sebelum membeli lisensi terukur.
-
-#### T: Seberapa sering saya harus mengonfigurasi kunci lisensi terukur?
-
-J: Anda hanya perlu mengonfigurasi kunci lisensi terukur satu kali saat aplikasi Anda dimulai. Ini menyediakan akses ke fitur-fitur canggih sepanjang runtime aplikasi.
-
-#### T: Dapatkah saya menerapkan lisensi terukur pada aplikasi yang sudah ada?
-
-J: Ya, Anda dapat mengintegrasikan lisensi terukur ke dalam aplikasi Aspose.PDF yang sudah ada untuk memanfaatkan kelebihannya.
+### Dapatkah saya beralih di antara jenis lisensi yang berbeda di Aspose.PDF?  
+Ya, Aspose.PDF memungkinkan Anda beralih di antara berbagai jenis lisensi (seperti reguler dan terukur) dengan mengonfigurasi kunci lisensi yang sesuai di aplikasi Anda.

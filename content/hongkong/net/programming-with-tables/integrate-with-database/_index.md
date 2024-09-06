@@ -7,7 +7,7 @@ type: docs
 weight: 120
 url: /zh-hant/net/programming-with-tables/integrate-with-database/
 ---
-在本教學中，我們將學習如何使用 Aspose.PDF for .NET 將資料庫中的資料嵌入 PDF 檔案中。我們將一步步解釋C#的原始碼。在本教學結束時，您將了解如何將資料庫中的表格資料匯入 PDF 文件。開始吧！
+在本教學中，我們將學習如何使用 Aspose.PDF for .NET 將資料庫中的資料嵌入 PDF 檔案中。我們將一步步解釋C#的原始碼。在本教學結束時，您將了解如何將資料庫中的表格資料匯入 PDF 文件。讓我們開始吧！
 
 ## 第一步：建構環境
 請確定您已使用 Aspose.PDF for .NET 配置 C# 開發環境。新增對庫的引用並導入必要的命名空間。

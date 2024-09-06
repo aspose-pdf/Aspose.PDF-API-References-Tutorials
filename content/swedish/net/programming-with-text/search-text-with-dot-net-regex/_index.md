@@ -37,7 +37,7 @@ using Aspose.Pdf.Text;
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Byta ut`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen till din dokumentkatalog.
+ Ersätta`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen till din dokumentkatalog.
 
 ## Steg 4: Skapa ett .NET Regex-objekt
 
@@ -47,7 +47,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"[\S]+");
 ```
 
- Byta ut`@"[\S]+"` med ditt önskade reguljära uttrycksmönster.
+ Ersätta`@"[\S]+"` med ditt önskade reguljära uttrycksmönster.
 
 ## Steg 5: Ladda PDF-dokumentet
 
@@ -57,7 +57,7 @@ System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.
 Aspose.Pdf.Document document = new Aspose.Pdf.Document(dataDir + "SearchTextRegex.pdf");
 ```
 
- Byta ut`"SearchTextRegex.pdf"` med det faktiska namnet på din PDF-fil.
+ Ersätta`"SearchTextRegex.pdf"` med det faktiska namnet på din PDF-fil.
 
 ## Steg 6: Skaffa en specifik sida
 
@@ -67,7 +67,7 @@ Hämta önskad sida i dokumentet:
 Page page = document.Pages[1];
 ```
 
- Byta ut`1` med önskat sidnummer (1-baserat index).
+ Ersätta`1` med önskat sidnummer (1-baserat index).
 
 ## Steg 7: Skapa en TextFragmentAbsorber
 

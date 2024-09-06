@@ -1,111 +1,118 @@
 ---
-title: Chú thích vô hình trong tệp PDF
-linktitle: Chú thích vô hình trong tệp PDF
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Tìm hiểu cách ẩn chú thích trong tệp PDF bằng mã nguồn C# với Aspose.PDF cho .NET. Hướng dẫn từng bước một.
+title: Chú thích ẩn trong tệp PDF
+linktitle: Chú thích ẩn trong tệp PDF
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Tìm hiểu cách thêm chú thích vô hình vào tệp PDF bằng Aspose.PDF cho .NET. Làm theo hướng dẫn từng bước của chúng tôi để thành thạo tính năng mạnh mẽ này.
 type: docs
 weight: 100
 url: /vi/net/annotations/invisibleannotation/
 ---
-Chú thích trong tệp PDF là một tính năng mạnh mẽ cho phép bạn thêm thông tin hoặc ghi chú bổ sung vào tài liệu mà không thay đổi nội dung thực tế. Chúng có thể được sử dụng để làm nổi bật văn bản, thu hút sự chú ý đến các khu vực cụ thể của tài liệu hoặc thêm nhận xét hoặc phản hồi.
+## Giới thiệu
 
-Có nhiều loại chú thích khác nhau mà bạn có thể sử dụng trong tài liệu PDF, bao gồm:
+Bạn đã bao giờ muốn thêm chú thích vào tệp PDF của mình mà vẫn ẩn được nhưng vẫn hiệu quả chưa? Cho dù bạn muốn thêm ghi chú để in hay muốn để lại tin nhắn ẩn trong tài liệu của mình, chú thích ẩn có thể cực kỳ hữu ích. Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn quy trình tạo chú thích ẩn trong tệp PDF bằng Aspose.PDF cho .NET. Thư viện .NET mạnh mẽ này cho phép bạn dễ dàng thao tác với tài liệu PDF và đến cuối hướng dẫn này, bạn sẽ thành thạo nghệ thuật thêm chú thích ẩn vào tệp PDF của mình như một chuyên gia!
 
-- Chú thích văn bản
-- Chú thích liên kết
-- Chú thích tem
-- Chú thích âm thanh
-- Chú thích tệp đính kèm
-- và nhiều cái khác
+## Điều kiện tiên quyết
 
-## Bước 1: Tạo chú thích ẩn trong tài liệu PDF bằng Aspose.PDF cho .NET
+Trước khi đi sâu vào các bước, hãy đảm bảo rằng bạn đã có mọi thứ cần thiết:
 
- Để tạo chú thích ẩn trong tài liệu PDF bằng Aspose.PDF cho .NET, trước tiên chúng ta cần tạo một`FreeTextAnnotation` đối tượng và chỉ định vị trí cũng như kích thước của chú thích.
+- Aspose.PDF cho .NET: Đảm bảo rằng bạn đã cài đặt thư viện Aspose.PDF. Bạn có thể tải xuống từ[đây](https://releases.aspose.com/pdf/net/).
+- Môi trường phát triển .NET: Bạn nên cài đặt Visual Studio hoặc bất kỳ môi trường phát triển .NET nào khác.
+- Kiến thức cơ bản về C#: Hiểu biết về cú pháp và lập trình C# là điều cần thiết.
+-  Giấy phép hợp lệ hoặc bản dùng thử miễn phí: Nếu bạn không có giấy phép, bạn có thể xin giấy phép tạm thời[đây](https://purchase.aspose.com/temporary-license/) hoặc sử dụng phiên bản dùng thử miễn phí.
+
+## Nhập gói
+
+Để bắt đầu, bạn cần nhập các không gian tên cần thiết. Các không gian tên này sẽ cung cấp cho bạn quyền truy cập vào các lớp và phương thức cần thiết để làm việc với các tài liệu PDF trong Aspose.PDF cho .NET.
+
+```csharp
+using System.IO;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf;
+using System;
+```
+
+Bây giờ chúng ta đã hoàn thành các điều kiện tiên quyết, hãy chia nhỏ quy trình thêm chú thích vô hình vào tài liệu PDF thành các bước dễ quản lý.
+
+## Bước 1: Thiết lập thư mục tài liệu
+
+Đầu tiên, bạn cần chỉ định đường dẫn đến thư mục tài liệu nơi tệp PDF đầu vào của bạn nằm. Đường dẫn này sẽ được sử dụng để tải tài liệu PDF vào chương trình.
 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+ 
+ Các`dataDir`biến giữ đường dẫn đến thư mục nơi lưu trữ các tệp PDF của bạn. Hãy đảm bảo thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế trên máy của bạn.
 
+## Bước 2: Tải Tài liệu PDF
+
+Tiếp theo, chúng ta sẽ tải tài liệu PDF vào chương trình của mình. Đây là tài liệu mà chúng ta sẽ thêm chú thích vô hình.
+
+```csharp
 // Mở tài liệu
 Document doc = new Document(dataDir + "input.pdf");
-
-FreeTextAnnotation annotation = new FreeTextAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(50, 600, 250, 650), new DefaultAppearance("Helvetica", 16, System.Drawing.Color.Red));
 ```
+ 
+ Ở đây, chúng tôi sử dụng`Document` lớp từ thư viện Aspose.PDF để mở tệp PDF có tên`input.pdf`. Đảm bảo rằng tệp này tồn tại trong thư mục bạn đã chỉ định ở bước trước.
 
- Trong đoạn mã trên, chúng ta tạo một`FreeTextAnnotation`đối tượng và chỉ định vị trí của chú thích trên trang 2 của tài liệu PDF. Chúng tôi cũng chỉ định loại phông chữ, kích thước và màu sắc cho văn bản sẽ hiển thị trong chú thích.
+## Bước 3: Tạo chú thích vô hình
 
-## Bước 2: Thêm đặc điểm vào chú thích vô hình
-
-Tiếp theo, chúng ta có thể thêm một số đặc điểm vào chú thích, chẳng hạn như màu đường viền, màu nền hoặc độ mờ.
+ Bây giờ đến phần thú vị—tạo chú thích vô hình. Chúng ta sẽ sử dụng`FreeTextAnnotation` lớp để thêm chú thích dạng văn bản tự do vào trang đầu tiên của tài liệu PDF.
 
 ```csharp
-annotation.Characteristics.Border = System.Drawing.Color.Red;
-```
-
-Trong đoạn mã trên, chúng tôi đặt màu đường viền của chú thích thành màu đỏ.
-
-## Bước 3: Đặt cờ chú thích
-
-Sau khi tạo chú thích và thiết lập các đặc điểm của nó, chúng ta có thể chỉ định các cờ chú thích. Trong hướng dẫn này, chúng tôi muốn chú thích có thể in được nhưng không thể xem được.
-
-```csharp
-annotation.Flags = AnnotationFlags.Print | AnnotationFlags.NoView;
-doc.Pages[1].Annotations.Add(annotation);
-```
-
-## Bước 4: Lưu tài liệu PDF đã sửa đổi
-
-Cuối cùng, chúng ta có thể lưu tài liệu PDF đã sửa đổi bằng chú thích ẩn mới.
-
-```csharp
-dataDir = dataDir + "InvisibleAnnotation_out.pdf";
-doc.Save(dataDir);
-```
-
-## Mã nguồn ví dụ về Cách chú thích vô hình bằng Aspose.PDF cho .NET
-
-```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Mở tài liệu
-Document doc = new Document(dataDir + "input.pdf");
-
 FreeTextAnnotation annotation = new FreeTextAnnotation(doc.Pages[1], new Aspose.Pdf.Rectangle(50, 600, 250, 650), new DefaultAppearance("Helvetica", 16, System.Drawing.Color.Red));
 annotation.Contents = "ABCDEFG";
 annotation.Characteristics.Border = System.Drawing.Color.Red;
 annotation.Flags = AnnotationFlags.Print | AnnotationFlags.NoView;
 doc.Pages[1].Annotations.Add(annotation);
+```
 
+-  Chúng tôi tạo ra một cái mới`FreeTextAnnotation` và chỉ định trang (`doc.Pages[1]` ) nơi cần thêm vào.`Rectangle` lớp xác định khu vực trên trang nơi chú thích sẽ được đặt.
+-  Các`DefaultAppearance` lớp được sử dụng để thiết lập phông chữ, cỡ chữ và màu sắc cho chú thích. Trong ví dụ này, chúng tôi đã chọn phông chữ "Helvetica", cỡ chữ 16 và màu đỏ.
+-  Các`Contents`thuộc tính giữ văn bản của chú thích, ở đây được đặt thành`"ABCDEFG"`.
+-  Các`Characteristics.Border` thuộc tính này xác định màu đường viền của chú thích, một lần nữa được đặt thành màu đỏ.
+-  Các`Flags` tài sản bao gồm`AnnotationFlags.Print` để đảm bảo chú thích có thể nhìn thấy khi tài liệu được in và`AnnotationFlags.NoView` để làm cho nó vô hình khi xem bình thường.
+-  Cuối cùng, chúng tôi thêm chú thích vào trang đầu tiên của tài liệu PDF bằng cách sử dụng`Annotations.Add` phương pháp.
+
+## Bước 4: Lưu tài liệu PDF đã cập nhật
+
+Sau khi thêm chú thích thành công, bước tiếp theo là lưu tài liệu PDF đã cập nhật.
+
+```csharp
 dataDir = dataDir + "InvisibleAnnotation_out.pdf";
 // Lưu tập tin đầu ra
 doc.Save(dataDir);
-// ExEnd:Chú thích vô hình
-Console.WriteLine("\nAnnotation nvisible successfully.\nFile saved at " + dataDir);
 ```
+
+ Chúng tôi sửa đổi`dataDir` biến để chỉ định tên tệp đầu ra,`"InvisibleAnnotation_out.pdf"` . Các`Save` phương pháp này sau đó sẽ lưu tài liệu PDF đã cập nhật với chú thích vô hình vào thư mục đã chỉ định.
+
+## Bước 5: Xác nhận quá trình hoàn tất
+
+Cuối cùng, luôn luôn là một cách làm tốt để xác nhận rằng quá trình đã hoàn tất thành công. Chúng tôi sẽ thêm một đầu ra bảng điều khiển đơn giản cho mục đích này.
+
+```csharp
+Console.WriteLine("\nAnnotation invisible successfully.\nFile saved at " + dataDir);
+```
+
+Dòng này sẽ đưa ra thông báo xác nhận tới bảng điều khiển, cho bạn biết chú thích vô hình đã được thêm thành công và chỉ ra vị trí của tệp đã lưu.
 
 ## Phần kết luận
 
-Trong hướng dẫn này, chúng ta đã tìm hiểu cách tạo chú thích ẩn trong tài liệu PDF bằng Aspose.PDF cho .NET. Chú thích ẩn là một tính năng hữu ích khi bạn muốn thêm thông tin hoặc ghi chú bổ sung vào tài liệu mà không hiển thị chúng cho người đọc. Bằng cách làm theo hướng dẫn từng bước và sử dụng mã nguồn C# được cung cấp, nhà phát triển có thể dễ dàng tạo và tùy chỉnh các chú thích ẩn trong tài liệu PDF của họ. Aspose.PDF for .NET cung cấp một bộ công cụ toàn diện để làm việc với các chú thích, cho phép bạn nâng cao tính tương tác và khả năng sử dụng của các tệp PDF của mình.
+Và bạn đã có nó! Bạn đã thêm thành công chú thích ẩn vào tệp PDF bằng Aspose.PDF cho .NET. Hướng dẫn này hướng dẫn bạn từng bước, từ thiết lập môi trường cho đến lưu tài liệu cuối cùng. Cho dù bạn đang thêm tin nhắn ẩn hay chú thích cho mục đích in ấn, chú thích ẩn là một tính năng mạnh mẽ mà bạn có thể dễ dàng triển khai bằng Aspose.PDF cho .NET. Chúc bạn viết mã vui vẻ!
 
-### Câu hỏi thường gặp
+## Câu hỏi thường gặp
 
-#### Hỏi: Chú thích ẩn trong tài liệu PDF là gì?
+### Tôi có thể làm cho chú thích hiển thị lại được không?  
+ Có, bằng cách loại bỏ`AnnotationFlags.NoView` cờ, bạn có thể làm cho chú thích hiển thị trong khi xem bình thường.
 
-Đáp: Chú thích ẩn trong tài liệu PDF là chú thích không hiển thị trên trang nhưng chứa thông tin hoặc ghi chú bổ sung. Nó cho phép bạn thêm nhận xét hoặc phản hồi mà không hiển thị chúng cho người đọc.
+### Tôi có thể thêm những loại chú thích nào khác khi sử dụng Aspose.PDF?  
+Aspose.PDF hỗ trợ nhiều chú thích khác nhau, bao gồm chú thích văn bản, liên kết, đánh dấu và đóng dấu, cùng nhiều chú thích khác.
 
-#### Câu hỏi: Những loại đặc điểm nào có thể được thêm vào chú thích ẩn?
+### Có thể sửa đổi chú thích sau khi đã thêm vào không?  
+Có, bạn có thể sửa đổi các thuộc tính của chú thích ngay cả sau khi chú thích đó đã được thêm vào tài liệu.
 
-Trả lời: Có thể thêm nhiều đặc điểm khác nhau vào chú thích vô hình, chẳng hạn như màu đường viền, màu nền, độ mờ, loại phông chữ, kích thước và màu sắc cho văn bản sẽ được hiển thị.
+### Làm thế nào tôi có thể thêm nhiều chú thích vào cùng một tài liệu?  
+Chỉ cần lặp lại quy trình tạo chú thích cho mỗi chú thích bạn muốn thêm. Mỗi chú thích có thể được thêm vào cùng một trang hoặc các trang khác nhau.
 
-#### Câu hỏi: Tôi có thể đặt các cờ chú thích khác nhau cho chú thích ẩn không?
-
-Đáp: Có, bạn có thể đặt các cờ chú thích khác nhau cho chú thích ẩn, tùy thuộc vào yêu cầu của bạn. Ví dụ: bạn có thể làm cho chú thích có thể in được nhưng không thể xem được.
-
-#### Hỏi: Làm cách nào tôi có thể thêm chú thích ẩn vào một trang cụ thể của tài liệu PDF?
-
- Đáp: Để thêm chú thích ẩn vào một trang cụ thể của tài liệu PDF, bạn cần tạo một`FreeTextAnnotation` đối tượng và chỉ định vị trí cũng như kích thước của chú thích trên trang đó.
-
-#### Câu hỏi: Tôi có thể sửa đổi các đặc điểm của chú thích ẩn hiện có trong tệp PDF không?
-
-Trả lời: Có, bạn có thể sửa đổi các đặc điểm của chú thích ẩn hiện có trong tệp PDF bằng Aspose.PDF cho .NET. Bạn có thể thay đổi loại phông chữ, kích thước, màu sắc, màu đường viền, màu nền, độ mờ và các thuộc tính khác của chú thích.
+### Nếu tài liệu PDF của tôi có nhiều trang thì sao?  
+ Bạn có thể chỉ định số trang khi tạo chú thích bằng cách thay đổi`doc.Pages[1]` đến trang chỉ mục mong muốn.

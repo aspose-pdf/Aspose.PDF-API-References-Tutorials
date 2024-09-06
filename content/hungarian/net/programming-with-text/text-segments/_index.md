@@ -31,7 +31,7 @@ using Aspose.Pdf.Text;
 
 ## 3. lépés: A TextFragmentAbsorber használata szöveges kereséshez
 
- Hozzon létre egy`TextFragmentAbsorber` objektum adott szövegszegmensek kereséséhez reguláris kifejezésekkel:
+ Hozzon létre a`TextFragmentAbsorber` objektum adott szövegszegmensek kereséséhez reguláris kifejezésekkel:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber;
@@ -71,7 +71,7 @@ textFragmentAbsorber = new TextFragmentAbsorber(@"(?i)the ((.)*)");
 textFragmentAbsorber = new TextFragmentAbsorber(@"(?<=word).*");
 ```
 
-- Hiperhivatkozások/URL-ek keresése a PDF-dokumentumban: 
+- Hiperhivatkozás/URL-ek keresése a PDF-dokumentumban: 
 
 ```csharp
 textFragmentAbsorber = new TextFragmentAbsorber(@"(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?");
@@ -81,7 +81,7 @@ Cserélje le a reguláris kifejezéseket a kívánt keresési mintákkal.
 
 ## 5. lépés: Végezze el a keresést és dolgozza fel az eredményeket
 
- Hajtsa végre a keresést a létrehozott segítségével`TextFragmentAbsorber` objektumokat és az eredményeket az Ön igényei alapján dolgozza fel.
+ Végezze el a keresést a létrehozott segítségével`TextFragmentAbsorber` objektumokat és az eredményeket az Ön igényei alapján dolgozza fel.
 
 ### Minta forráskód szövegszegmensekhez az Aspose.PDF for .NET használatával 
 ```csharp
@@ -103,7 +103,7 @@ textFragmentAbsorber = new TextFragmentAbsorber(@"(http|ftp|https):\/\/([\w\-_]+
 
 ## Következtetés
 
-Gratulálunk! Sikeresen megtanulta, hogyan kereshet meghatározott szövegszegmenseket egy PDF-dokumentumban az Aspose.PDF for .NET segítségével. Ez az oktatóanyag példákat mutat be reguláris kifejezéseket használó különböző keresési forgatókönyvekre. Most már beépítheti ezt a kódot saját C#-projektjébe, hogy szövegszegmenseket keressen és dolgozzon fel PDF-fájlokban.
+Gratulálok! Sikeresen megtanulta, hogyan kereshet meghatározott szövegszegmenseket egy PDF-dokumentumban az Aspose.PDF for .NET segítségével. Ez az oktatóanyag példákat mutat be reguláris kifejezéseket használó különböző keresési forgatókönyvekre. Most már beépítheti ezt a kódot saját C#-projektjébe, hogy szövegszegmenseket keressen és dolgozzon fel PDF-fájlokban.
 
 ### GYIK
 
@@ -121,11 +121,11 @@ V: Mielőtt elkezdené az oktatóanyagot, ismernie kell a C# programozási nyelv
 
 #### K: Hogyan állíthatom be a projektemet, hogy kövesse ezt az oktatóanyagot?
 
-V: A kezdéshez hozzon létre egy új C# projektet az előnyben részesített integrált fejlesztői környezetben (IDE), és adjon hozzá egy hivatkozást az Aspose.PDF for .NET könyvtárhoz. Ez lehetővé teszi a könyvtár funkcióinak kihasználását a PDF-dokumentumok és szövegtöredékek kezeléséhez.
+V: A kezdéshez hozzon létre egy új C# projektet az előnyben részesített integrált fejlesztői környezetben (IDE), és adjon hozzá egy hivatkozást az Aspose.PDF for .NET könyvtárhoz. Ez lehetővé teszi a könyvtár funkcióinak kihasználását a PDF dokumentumok és szövegtöredékek kezeléséhez.
 
 #### K: Hogyan kereshetek meghatározott szövegszegmenseket egy PDF-fájlban?
 
- V: Adott szövegszegmensek kereséséhez létre kell hoznia a`TextFragmentAbsorber` tárgy. Az oktatóanyag különféle kódpéldákat kínál reguláris kifejezések használatával a különböző keresési forgatókönyvek bemutatására. A reguláris kifejezések módosításával meghatározhatja a kívánt keresési mintákat.
+ V: Adott szövegszegmensek kereséséhez létre kell hoznia a`TextFragmentAbsorber` objektum. Az oktatóanyag különféle kódpéldákat kínál reguláris kifejezések használatával a különböző keresési forgatókönyvek bemutatására. A reguláris kifejezések módosításával meghatározhatja a kívánt keresési mintákat.
 
 #### K: Milyen típusú keresési forgatókönyvekkel foglalkozik az oktatóanyag?
 

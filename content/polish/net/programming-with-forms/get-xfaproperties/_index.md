@@ -1,17 +1,17 @@
 ---
 title: Pobierz XFAProperties
 linktitle: Pobierz XFAProperties
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Z łatwością uzyskaj właściwości XFA pól formularzy w dokumentach PDF za pomocą Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Łatwe uzyskiwanie właściwości XFA pól formularzy w dokumentach PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 160
 url: /pl/net/programming-with-forms/get-xfaproperties/
 ---
-W tym samouczku pokażemy, jak uzyskać właściwości XFA pól formularza w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Krok po kroku wyjaśnimy kod źródłowy C#, aby poprowadzić Cię przez ten proces.
+W tym samouczku pokażemy, jak uzyskać właściwości XFA pól formularza w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Wyjaśnimy kod źródłowy C# krok po kroku, aby przeprowadzić Cię przez ten proces.
 
 ## Krok 1: Przygotowanie
 
-Upewnij się, że zaimportowałeś niezbędne biblioteki i ustaw ścieżkę do katalogu dokumentów:
+Upewnij się, że zaimportowałeś niezbędne biblioteki i ustawiłeś ścieżkę do katalogu dokumentów:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -25,9 +25,9 @@ Załaduj formularz XFA z dokumentu PDF:
 Document doc = new Document(dataDir + "GetXFAProperties.pdf");
 ```
 
-## Krok 3: Uzyskaj nazwy pól
+## Krok 3: Pobierz nazwy pól
 
-Uzyskaj nazwy pól XFA:
+Pobierz nazwy pól XFA:
 
 ```csharp
 string[] names = doc.Form.XFA.FieldNames;
@@ -42,9 +42,9 @@ doc.Form.XFA[names[0]] = "Field 0";
 doc.Form.XFA[names[1]] = "Field 1";
 ```
 
-## Krok 5: Uzyskaj pozycję pól
+## Krok 5: Pobierz pozycję pól
 
-Uzyskaj pozycję pól XFA:
+Pobierz pozycję pól XFA:
 
 ```csharp
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["x"].Value);
@@ -70,9 +70,9 @@ string[] names = doc.Form.XFA.FieldNames;
 // Ustaw wartości pól
 doc.Form.XFA[names[0]] = "Field 0";
 doc.Form.XFA[names[1]] = "Field 1";
-// Zdobądź pozycję w terenie
+// Uzyskaj pozycję na boisku
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["x"].Value);
-// Zdobądź pozycję w terenie
+// Uzyskaj pozycję na boisku
 Console.WriteLine(doc.Form.XFA.GetFieldTemplate(names[0]).Attributes["y"].Value);
 dataDir = dataDir + "Filled_XFA_out.pdf";
 // Zapisz zaktualizowany dokument
@@ -82,26 +82,26 @@ Console.WriteLine("\nXFA fields properties retrieved successfully.\nFile saved a
 
 ## Wniosek
 
-W tym samouczku nauczyliśmy się, jak uzyskać właściwości XFA pól formularza w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Wykonując poniższe kroki, możesz łatwo wyodrębnić informacje o polach XFA, takie jak pozycje, z dokumentów PDF za pomocą Aspose.PDF.
+W tym samouczku nauczyliśmy się, jak uzyskać właściwości XFA pól formularza w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Wykonując te kroki, możesz łatwo wyodrębnić informacje o polach XFA, takie jak pozycje, z dokumentów PDF przy użyciu Aspose.PDF.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Jakie są właściwości XFA w dokumencie PDF?
+#### P: Czym są właściwości XFA w dokumencie PDF?
 
-Odp.: Właściwości XFA (architektura formularzy XML) w dokumencie PDF odnoszą się do struktury opartej na XML używanej do definiowania dynamicznych formularzy ze złożonymi układami i funkcjami interaktywnymi. XFA umożliwia bogate projektowanie formularzy i obsługę danych w dokumentach PDF, udostępniając takie funkcje, jak obliczenia, walidacje i dynamiczną zawartość. Aspose.PDF dla .NET zapewnia interfejsy API do pracy z formularzami XFA i pobierania różnych właściwości, w tym nazw pól, wartości, pozycji i innych.
+A: Właściwości XFA (XML Forms Architecture) w dokumencie PDF odnoszą się do struktury opartej na XML, używanej do definiowania dynamicznych formularzy ze złożonymi układami i interaktywnymi funkcjami. XFA umożliwia bogate projektowanie formularzy i obsługę danych w dokumentach PDF, umożliwiając takie funkcje, jak obliczenia, walidacje i dynamiczną zawartość. Aspose.PDF dla .NET udostępnia interfejsy API do pracy z formularzami XFA i pobierania różnych właściwości, w tym nazw pól, wartości, pozycji i innych.
 
-#### P: Czy mogę modyfikować właściwości XFA przy użyciu Aspose.PDF dla .NET?
+#### P: Czy mogę modyfikować właściwości XFA za pomocą Aspose.PDF dla .NET?
 
-O: Tak, możesz modyfikować właściwości XFA przy użyciu Aspose.PDF dla .NET. Interfejs API umożliwia programowy dostęp i aktualizację wartości pól formularza XFA. Możesz ustawić nowe wartości dla pól XFA, zaktualizować ich położenie, zmienić wygląd i wykonać inne czynności, aby dynamicznie dostosować formularz XFA.
+A: Tak, możesz modyfikować właściwości XFA za pomocą Aspose.PDF dla .NET. API umożliwia programowy dostęp i aktualizację wartości pól formularza XFA. Możesz ustawić nowe wartości dla pól XFA, zaktualizować ich pozycje, zmienić wygląd i wykonać inne czynności, aby dynamicznie dostosować formularz XFA.
 
 #### P: Jak mogę sprawdzić, czy dokument PDF zawiera formularze XFA?
 
- Odp.: Aby ustalić, czy dokument PDF zawiera formularze XFA, możesz sprawdzić, czy plik`Form` własność`Document`obiekt ma wartość null lub nie. Jeżeli dokument zawiera formularze XFA, plik`Form` właściwość będzie dostępna i będzie można przystąpić do dalszych operacji związanych z XFA.
+ A: Aby ustalić, czy dokument PDF zawiera formularze XFA, można sprawdzić, czy`Form` własność`Document`obiekt jest nullem lub nie. Jeśli dokument zawiera formularze XFA,`Form` Nieruchomość będzie dostępna i będziesz mógł kontynuować dalsze operacje związane z XFA.
 
 #### P: Czy formularze XFA są obsługiwane we wszystkich przeglądarkach i aplikacjach PDF?
 
-Odp.: Chociaż formularze XFA zapewniają bogate funkcje interaktywnych formularzy, mogą nie być obsługiwane we wszystkich przeglądarkach i aplikacjach PDF. Niektóre przeglądarki plików PDF mogą obsługiwać wyłącznie formularze oparte na formacie AcroForm, który jest innym typem formularza używanym w dokumentach PDF. Należy koniecznie wziąć pod uwagę zgodność formularzy XFA z docelową grupą odbiorców i zamierzonym wykorzystaniem dokumentu PDF.
+A: Chociaż formularze XFA oferują bogate funkcje formularzy interaktywnych, mogą nie być obsługiwane przez wszystkie przeglądarki i aplikacje PDF. Niektóre przeglądarki PDF mogą obsługiwać tylko formularze oparte na AcroForm, które są innym typem formularza używanym w dokumentach PDF. Ważne jest, aby wziąć pod uwagę zgodność formularzy XFA z grupą docelową i zamierzonym zastosowaniem dokumentu PDF.
 
-#### P: Czy mogę konwertować formularze XFA do formularzy opartych na AcroForm przy użyciu Aspose.PDF dla .NET?
+#### P: Czy mogę konwertować formularze XFA na formularze oparte na AcroForm przy użyciu Aspose.PDF dla platformy .NET?
 
-Odp.: Aspose.PDF dla .NET zapewnia możliwość konwersji formularzy XFA do formularzy opartych na AcroForm. Konwertując formularze XFA do AcroForm, możesz zapewnić szerszą kompatybilność z różnymi przeglądarkami plików PDF i aplikacjami, które mogą nie w pełni obsługiwać XFA. Możesz postępować zgodnie z odpowiednimi interfejsami API i technikami, aby przeprowadzić konwersję zgodnie ze swoimi wymaganiami.
+A: Aspose.PDF dla .NET zapewnia możliwości konwersji formularzy XFA na formularze oparte na AcroForm. Konwertując formularze XFA na AcroForm, możesz zapewnić szerszą zgodność z różnymi przeglądarkami PDF i aplikacjami, które mogą nie w pełni obsługiwać XFA. Możesz postępować zgodnie z odpowiednimi API i technikami, aby wykonać konwersję zgodnie ze swoimi wymaganiami.

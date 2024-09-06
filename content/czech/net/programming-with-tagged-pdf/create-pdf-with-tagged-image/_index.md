@@ -110,7 +110,7 @@ Odpověď: Ano, pro označený obrázek můžete použít různé formáty obrá
 
 #### Otázka: Jak se v označených obrázcích používá alternativní text (alt text)?
 
- Odpověď: Alternativní text poskytuje textový popis obrázku, který je nahlas čten čtečkami obrazovky pro zrakově postižené uživatele. V poskytnutém kódu je alternativní text nastaven pomocí`AlternativeText` vlastnictvím`IllustrationElement` představující označený obrázek.
+ Odpověď: Alternativní text poskytuje textový popis obrázku, který je nahlas čten čtečkami obrazovky pro zrakově postižené uživatele. V poskytnutém kódu je alternativní text nastaven pomocí`AlternativeText` majetek z`IllustrationElement` představující označený obrázek.
 
 ####  Otázka: Jak to`SetTitle` method contribute to the PDF document's tagged image?
 

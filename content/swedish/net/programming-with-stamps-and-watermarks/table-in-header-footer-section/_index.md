@@ -18,7 +18,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 2: Skapa PDF-dokumentet och -sidan
 
- Det första steget är att skapa en instans av`Document` klass och lägg till en sida i dokumentet. Här är hur:
+ Det första steget är att skapa en instans av`Document` klass och lägg till en sida i dokumentet. Så här gör du:
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
@@ -35,7 +35,7 @@ Var noga med att ersätta "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till
 
 ## Steg 3: Konfigurera rubriksektionen
 
- Nu kommer vi att konfigurera rubriken i PDF-dokumentet genom att skapa en instans av`HeaderFooter` klass. Här är hur:
+ Nu kommer vi att konfigurera rubriken i PDF-dokumentet genom att skapa en instans av`HeaderFooter` klass. Så här gör du:
 
 ```csharp
 // Skapa en rubriksektion för PDF-filen
@@ -50,7 +50,7 @@ header. Margin. Top = 20;
 
 ## Steg 4: Skapa tabellen
 
- Nu ska vi skapa en tabell med hjälp av`Table` klass och lägg till den i rubriksektionens styckesamling. Här är hur:
+ Nu ska vi skapa en tabell med hjälp av`Table` klass och lägg till den i rubriksektionens styckesamling. Så här gör du:
 
 ```csharp
 // Instantiera ett tabellobjekt
@@ -67,7 +67,7 @@ Koden ovan skapar en tabell med två kolumner med specificerade bredder.
 
 ## Steg 5: Lägg till rader och celler i tabellen
 
- Nu kommer vi att lägga till rader och celler i tabellen med hjälp av`Row` klass och`Cell` klass. Här är hur:
+ Nu kommer vi att lägga till rader och celler i tabellen med hjälp av`Row` klass och`Cell` klass. Så här gör du:
 
 ```csharp
 // Skapa en rad i tabellen och lägg till celler
@@ -96,7 +96,7 @@ row2.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 
 ## Steg 6: Spara PDF-dokumentet
 
-När tabellen har lagts till i rubriken kan vi spara PDF-dokumentet. Här är hur:
+När tabellen har lagts till i rubriken kan vi spara PDF-dokumentet. Så här gör du:
 
 ```csharp
 // Spara PDF-filen
@@ -117,10 +117,10 @@ Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
 // Skapa en sida i pdf-dokumentet
 Aspose.Pdf.Page page = pdfDocument.Pages.Add();
 
-// Skapa en rubriksektion av PDF-filen
+//Skapa en rubriksektion av PDF-filen
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-//Ställ in udda rubrik för PDF-filen
+// Ställ in udda rubrik för PDF-filen
 page.Header = header;
 
 // Ställ in den övre marginalen för rubriksektionen
@@ -203,14 +203,14 @@ S: Koden lägger till tabellen till styckesamlingen i rubriksektionen, vilket s�
  S: Absolut, du kan lägga till fler rader och celler i tabellen genom att använda`Rows.Add()` och`Cells.Add()` metoder. Detta gör att du kan strukturera tabellinnehållet efter önskemål.
 
 #### F: Är det möjligt att justera bredden på tabellkolumnerna?
- S: Ja, du kan justera bredden på tabellkolumnerna med hjälp av`ColumnWidths` fast egendom. Detta gör att du kan styra tabellens layout.
+ S: Ja, du kan justera bredden på tabellkolumnerna med hjälp av`ColumnWidths` egendom. Detta gör att du kan styra tabellens layout.
 
 #### F: Hur kan jag spänna över celler över flera kolumner eller rader i tabellen?
- S: För att spänna över celler över flera kolumner kan du använda`ColSpan` egenskap hos motsvarande cell. På samma sätt kan du använda`RowSpan` egenskap som spänner över celler över flera rader.
+ S: För att spänna över celler över flera kolumner kan du använda`ColSpan`egenskap hos motsvarande cell. På samma sätt kan du använda`RowSpan` egenskap som spänner över celler över flera rader.
 
 #### F: Vad händer om jag vill lägga till en tabell i både sidhuvudet och sidfoten i PDF-dokumentet?
 
-S: Du kan följa ett liknande tillvägagångssätt för både sidhuvuds- och sidfotssektionerna. Skapa helt enkelt en`HeaderFooter` instans för sidfoten, konfigurera den och lägg till tabellen i dess styckesamling.
+ S: Du kan följa ett liknande tillvägagångssätt för både sidhuvuds- och sidfotssektionerna. Skapa helt enkelt en`HeaderFooter` instans för sidfoten, konfigurera den och lägg till tabellen i dess styckesamling.
 
 #### F: Kan jag använda bilder i tabellcellerna, och hur uppnås det?
 

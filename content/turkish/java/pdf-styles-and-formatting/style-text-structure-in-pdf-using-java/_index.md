@@ -1,8 +1,8 @@
 ---
-title: Java kullanarak PDF'de Metin Yapısını Stillendirme
-linktitle: Java kullanarak PDF'de Metin Yapısını Stillendirme
+title: Java kullanarak PDF'deki Metin Yapısını Biçimlendirin
+linktitle: Java kullanarak PDF'deki Metin Yapısını Biçimlendirin
 second_title: Aspose.PDF Java PDF İşleme API'si
-description: Adım adım kılavuzumuzla Java kullanarak PDF'lerdeki metin yapılarına nasıl stil uygulayacağınızı öğrenin. Profesyonel görünümlü belgeler için yazı tiplerini, renkleri, köprüleri ve daha fazlasını özelleştirin.
+description: Adım adım kılavuzumuzla Java kullanarak PDF'lerdeki metin yapılarını nasıl biçimlendireceğinizi öğrenin. Profesyonel görünümlü belgeler için yazı tiplerini, renkleri, köprü metinlerini ve daha fazlasını özelleştirin.
 type: docs
 weight: 11
 url: /tr/java/pdf-styles-and-formatting/style-text-structure-in-pdf-using-java/
@@ -10,20 +10,20 @@ url: /tr/java/pdf-styles-and-formatting/style-text-structure-in-pdf-using-java/
 
 ## giriiş
 
-PDF'ler belgeleri, raporları ve çeşitli içerik türlerini paylaşmak için standart bir format haline geldi. Java'da PDF'lerle çalışırken, bunları yalnızca verilerle doldurmak değil, aynı zamanda metne şık bir görünüm sağlayacak şekilde stil vermek de önemlidir.
+PDF'ler belgeleri, raporları ve çeşitli içerik türlerini paylaşmak için standart bir format haline geldi. Java'da PDF'lerle çalışırken, bunları yalnızca verilerle doldurmak değil, aynı zamanda cilalı bir görünüm için metni biçimlendirmek de önemlidir.
 
-## Önkoşullar
+## Ön koşullar
 
-Başlamadan önce aşağıdaki önkoşulların mevcut olduğundan emin olun:
+Başlamadan önce aşağıdaki ön koşulların mevcut olduğundan emin olun:
 
-- Java Geliştirme Kiti (JDK) yüklü.
+- Java Geliştirme Kiti (JDK) kuruldu.
 - Aspose.PDF for Java kütüphanesi indirildi ve kuruldu.
 
-## Ortamın Ayarlanması
+## Ortamın Kurulması
 
-Java kullanarak PDF'lerdeki metni şekillendirmeye başlamak için geliştirme ortamınızı ayarlamanız gerekir. Bu adımları takip et:
+Java kullanarak PDF'lerdeki metni biçimlendirmeye başlamak için geliştirme ortamınızı ayarlamanız gerekir. Şu adımları izleyin:
 
-1.  Aspose.PDF for Java kütüphanesini şu adresten indirin:[Burada](https://releases.aspose.com/pdf/java/).
+1.  Java kütüphanesi için Aspose.PDF'yi şu adresten indirin:[Burada](https://releases.aspose.com/pdf/java/).
 
 2. Kütüphaneyi Java projenize ekleyin.
 
@@ -31,30 +31,30 @@ Java kullanarak PDF'lerdeki metni şekillendirmeye başlamak için geliştirme o
 
 ## PDF'ye Metin Ekleme
 
-Şimdi bir PDF belgesine metin ekleyerek başlayalım. İşte basit bir örnek:
+Şimdi, bir PDF belgesine metin ekleyerek başlayalım. İşte basit bir örnek:
 
 ```java
-// Yeni bir PDF belgesi oluştur
+// Yeni bir PDF belgesi oluşturun
 com.aspose.pdf.Document pdfDocument = new com.aspose.pdf.Document();
 
-// Belgeye sayfa ekleme
+// Belgeye bir sayfa ekle
 pdfDocument.getPages().add();
 
-// TextFragment nesnesi oluşturma
+// Bir TextFragment nesnesi oluşturun
 com.aspose.pdf.TextFragment textFragment = new com.aspose.pdf.TextFragment("Hello, PDF!");
 
-// TextFragment'i sayfaya ekleyin
+// Sayfaya TextFragment'ı ekleyin
 pdfDocument.getPages().get_Item(1).getParagraphs().add(textFragment);
 
 // Belgeyi kaydet
 pdfDocument.save("output.pdf");
 ```
 
-Bu kod bir PDF belgesi oluşturur, bir sayfa ekler ve "Merhaba, PDF!" metnini ekler. sayfaya.
+Bu kod bir PDF belgesi oluşturur, bir sayfa ekler ve sayfaya "Merhaba, PDF!" metnini ekler.
 
 ## Yazı Tipi Stili
 
-Metninizin yazı tipini özelleştirebilirsiniz. Yazı tipi ailesini ve boyutunu nasıl değiştireceğiniz aşağıda açıklanmıştır:
+Metninizin yazı tipini özelleştirebilirsiniz. İşte yazı tipi ailesini ve boyutunu değiştirme yöntemi:
 
 ```java
 textFragment.getTextState().setFont(FontRepository.findFont("Arial"));
@@ -70,9 +70,9 @@ textFragment.getTextState().setFontSize(16);
 textFragment.getTextState().setForegroundColor(com.aspose.pdf.Color.getBlue());
 ```
 
-## Metin hizalama
+## Metin Hizalaması
 
-PDF'nizdeki metin hizalamasını kontrol edin:
+PDF'inizdeki metin hizalamasını kontrol edin:
 
 ```java
 textFragment.getTextState().setHorizontalAlignment(HorizontalAlignment.Center);
@@ -80,7 +80,7 @@ textFragment.getTextState().setHorizontalAlignment(HorizontalAlignment.Center);
 
 ## Üstbilgi ve Altbilgi Ekleme
 
-Üstbilgiler ve altbilgilerle belge yapısını geliştirin:
+Üstbilgi ve altbilgilerle belge yapısını geliştirin:
 
 ```java
 Page page = pdfDocument.getPages().get_Item(1);
@@ -117,9 +117,9 @@ listItem.getSegments().get_Item(0).getTextState().setFontSize(12);
 listSection.getListItems().add(listItem);
 ```
 
-## Köprüler Oluşturma
+## Hiperlink Oluşturma
 
-Etkileşimli içerik için PDF'nize köprüler ekleyin:
+Etkileşimli içerik için PDF'nize köprü metinleri ekleyin:
 
 ```java
 TextFragment linkText = new TextFragment("Visit our website");
@@ -127,7 +127,7 @@ linkText.getTextState().setFont(FontRepository.findFont("Arial"));
 linkText.getTextState().setFontSize(12);
 
 Hyperlink link = new Hyperlink(linkText);
-link.setAction(new GoToURIAction("https://www.example.com"));
+link.setAction(new GoToURIAction("https://www.ornek.com"));
 
 page.getParagraphs().add(link);
 ```
@@ -176,13 +176,13 @@ page.getParagraphs().add(watermark);
 
 ## Çözüm
 
-Bu kılavuzda, Aspose.PDF'in yardımıyla Java kullanarak PDF'lerdeki metin yapılarına nasıl stil uygulanacağını araştırdık. Artık özel gereksinimlerinizi karşılayan, görsel açıdan çekici ve iyi yapılandırılmış PDF belgeleri oluşturabilirsiniz. Sağlanan teknikleri deneyin ve PDF oluşturma becerilerinizi geliştirin.
+Bu kılavuzda, Aspose.PDF'nin yardımıyla Java kullanarak PDF'lerdeki metin yapılarının nasıl biçimlendirileceğini inceledik. Artık özel gereksinimlerinizi karşılayan görsel olarak çekici ve iyi yapılandırılmış PDF belgeleri oluşturabilirsiniz. Sağlanan tekniklerle deneyler yapın ve PDF oluşturma becerilerinizi geliştirin.
 
-## SSS'ler
+## SSS
 
-### PDF'deki metnin yazı tipini nasıl değiştiririm?
+### PDF'deki metnin yazı tipini nasıl değiştirebilirim?
 
- PDF'deki metnin yazı tipini değiştirmek için`setTextState()` yöntemini kullanın ve istediğiniz yazı tipini kullanarak belirtin.`setFont()`. Örneğin:
+ Bir PDF'deki metnin yazı tipini değiştirmek için şunu kullanın:`setTextState()` yöntemini kullanın ve istediğiniz yazı tipini belirtin`setFont()`. Örneğin:
 
 ```java
 textFragment.getTextState().setFont(FontRepository.findFont("Arial"));
@@ -190,16 +190,16 @@ textFragment.getTextState().setFont(FontRepository.findFont("Arial"));
 
 ### Aspose.PDF for Java kullanarak PDF'ime köprüler ekleyebilir miyim?
 
- Evet, Aspose.PDF for Java'yı kullanarak PDF'nize köprüler ekleyebilirsiniz. Kullan`Hyperlink` Bağlantılar oluşturmak ve URL açmak gibi eylemleri belirtmek için sınıf.
+ Evet, Java için Aspose.PDF'yi kullanarak PDF'nize köprüler ekleyebilirsiniz.`Hyperlink` Bağlantılar oluşturmak ve URL açmak gibi eylemleri belirtmek için kullanılan sınıf.
 
-### PDF'deki sayfa sonlarını işlemenin önerilen yolu nedir?
+### PDF'de sayfa sonlarını işlemenin önerilen yolu nedir?
 
- PDF'deki sayfa sonlarını işlemek için`IsAutoTruncated` Ve`IsWordWrapped` özellikleri`true` içinde`TextState`. Bu, metnin sayfa sınırlarına sığacak şekilde düzgün şekilde kesilmesini ve kaydırılmasını sağlar.
+ Bir PDF'deki sayfa sonlarını işlemek için,`IsAutoTruncated` Ve`IsWordWrapped` özellikleri`true` içinde`TextState`Bu, metnin sayfa sınırlarına uyacak şekilde düzgün bir şekilde kesilmesini ve sarılmasını sağlar.
 
-### PDF belgelerimi filigranlarla nasıl koruyabilirim?
+### PDF belgelerimi filigranla nasıl koruyabilirim?
 
-PDF'ye filigran metin parçası ekleyerek PDF belgelerinizi filigranlarla koruyabilirsiniz. İstediğiniz efekti elde etmek için filigranın yazı tipi boyutu ve rengi gibi görünümünü özelleştirin.
+PDF'nize filigran metin parçası ekleyerek PDF belgelerinizi filigranlarla koruyabilirsiniz. İstediğiniz efekti elde etmek için yazı tipi boyutu ve rengi gibi filigranın görünümünü özelleştirin.
 
-### Aspose.PDF for Java hakkında daha fazla bilgi ve belgeyi nerede bulabilirim?
+### Java için Aspose.PDF hakkında daha fazla bilgi ve belgeyi nerede bulabilirim?
 
- Aspose.PDF for Java ile ilgili kapsamlı belgeleri şu adreste bulabilirsiniz:[Burada](https://reference.aspose.com/pdf/java/).
+ Java için Aspose.PDF'e ilişkin kapsamlı belgeleri şu adreste bulabilirsiniz:[Burada](https://reference.aspose.com/pdf/java/).

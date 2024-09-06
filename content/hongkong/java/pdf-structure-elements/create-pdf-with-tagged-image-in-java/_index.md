@@ -22,7 +22,7 @@ url: /zh-hant/java/pdf-structure-elements/create-pdf-with-tagged-image-in-java/
 
 ## 設定您的項目
 
-讓我們先設定用於建立標籤的 PDF 的 Java 專案。按著這些次序：
+讓我們先設定用於建立標籤的 PDF 的 Java 專案。請依照下列步驟操作：
 
 1. 建立 Java 專案：開啟您最喜歡的 Java 開發環境（例如 Eclipse 或 IntelliJ IDEA）並建立一個新的 Java 專案。
 

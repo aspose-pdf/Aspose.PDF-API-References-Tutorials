@@ -30,7 +30,7 @@ Document pdfDocument1 = new Document(dataDir + "InsertEmptyPage.pdf");
 ```
 
 ## 3. lépés: Helyezzen be egy üres oldalt
- Most már beszúrhat egy üres oldalt a PDF dokumentumba a`Insert()` módszere a`Pages` gyűjteménye a`pdfDocument1` tárgy. Adja meg a beszúrandó oldal indexét. Ebben a példában egy üres oldalt szúrunk be a 2. indexbe.
+ Most már beszúrhat egy üres oldalt a PDF dokumentumba a`Insert()` módszere a`Pages` gyűjteménye a`pdfDocument1` objektum. Adja meg a beszúrandó oldal indexét. Ebben a példában egy üres oldalt szúrunk be a 2. indexbe.
 
 ```csharp
 pdfDocument1.Pages.Insert(2);
@@ -73,7 +73,7 @@ V: Ha üres oldalt szeretne beszúrni egy PDF-fájlba az Aspose.PDF for .NET has
 
 1. Állítsa be a dokumentumkönyvtárat az elérési út megadásával, ahová menteni szeretné a PDF-fájlt az üres oldallal.
 2.  Nyissa meg a meglévő PDF-dokumentumot a`Document` osztályú Aspose.PDF. Ügyeljen arra, hogy a megfelelő dokumentum elérési utat adja meg.
-3.  Szúrjon be egy üres oldalt a PDF-dokumentumba a gombbal`Insert()` módszere a`Pages` gyűjteménye a`pdfDocument1` tárgy. Adja meg a beszúrandó oldal indexét. Például egy üres oldal beszúrásához a 2. indexhez használja a`pdfDocument1.Pages.Insert(2);`.
+3.  Szúrjon be egy üres oldalt a PDF-dokumentumba a gombbal`Insert()` módszere a`Pages` gyűjteménye a`pdfDocument1` objektum. Adja meg a beszúrandó oldal indexét. Például egy üres oldal beszúrásához a 2. indexhez használja a`pdfDocument1.Pages.Insert(2);`.
 4.  Mentse el a módosított PDF-dokumentumot fájlba a`Save()` módszere a`Document` osztály. Ügyeljen arra, hogy a megfelelő elérési utat és fájlnevet adja meg a kimeneti fájlhoz.
 
 #### K: Beilleszthetek több üres oldalt a PDF dokumentumba?

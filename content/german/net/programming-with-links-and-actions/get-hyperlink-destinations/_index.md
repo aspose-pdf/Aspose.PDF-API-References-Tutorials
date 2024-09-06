@@ -1,59 +1,59 @@
 ---
-title: Holen Sie sich Hyperlink-Ziele in eine PDF-Datei
-linktitle: Holen Sie sich Hyperlink-Ziele in eine PDF-Datei
+title: Holen Sie sich Hyperlink-Ziele in PDF-Datei
+linktitle: Holen Sie sich Hyperlink-Ziele in PDF-Datei
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Hyperlink-Ziele in eine PDF-Datei extrahieren.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Hyperlinkziele in PDF-Dateien extrahieren.
 type: docs
 weight: 60
 url: /de/net/programming-with-links-and-actions/get-hyperlink-destinations/
 ---
-Aspose.PDF für .NET ist eine leistungsstarke Bibliothek zum Bearbeiten und Extrahieren von Informationen in PDF-Dateien mithilfe der Programmiersprache C#. In diesem Tutorial konzentrieren wir uns auf das Extrahieren von Hyperlink-Zielen aus einer PDF-Datei mit Aspose.PDF für .NET.
+Aspose.PDF für .NET ist eine leistungsstarke Bibliothek zum Bearbeiten und Extrahieren von Informationen in PDF-Dateien mithilfe der Programmiersprache C#. In diesem Tutorial konzentrieren wir uns auf das Extrahieren von Hyperlink-Zielen aus einer PDF-Datei mithilfe von Aspose.PDF für .NET.
 
 ## Voraussetzungen
 
 Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
 - Eine integrierte Entwicklungsumgebung (IDE) wie Visual Studio.
-- Die auf Ihrem Computer installierte Aspose.PDF-Bibliothek für .NET.
+- Die Aspose.PDF-Bibliothek für .NET ist auf Ihrem Computer installiert.
 
 ## Schritt 1: Einrichten der Entwicklungsumgebung
 
-Bevor Sie mit dem Schreiben von Code beginnen, müssen Sie Ihre Entwicklungsumgebung einrichten, indem Sie ein neues C#-Projekt in Ihrer bevorzugten IDE erstellen.
+Bevor Sie mit dem Schreiben von Code beginnen, müssen Sie Ihre Entwicklungsumgebung einrichten, indem Sie in Ihrer bevorzugten IDE ein neues C#-Projekt erstellen.
 
 ## Schritt 2: Aspose.PDF-Referenzen importieren
 
-Um Aspose.PDF für .NET verwenden zu können, müssen Sie Ihrem Projekt die entsprechenden Referenzen hinzufügen. Führen Sie die folgenden Schritte aus, um die erforderlichen Referenzen zu importieren:
+Um Aspose.PDF für .NET zu verwenden, müssen Sie Ihrem Projekt die entsprechenden Referenzen hinzufügen. Befolgen Sie die folgenden Schritte, um die erforderlichen Referenzen zu importieren:
 
-1. Klicken Sie in Ihrem Projekt mit der rechten Maustaste auf „Referenzen“ und wählen Sie „Referenz hinzufügen“.
-2. Suchen Sie im Fenster „Referenz hinzufügen“ nach den DLL-Dateien von Aspose.PDF für .NET und wählen Sie sie aus.
+1. Klicken Sie in Ihrem Projekt mit der rechten Maustaste auf „Verweise“ und wählen Sie „Verweis hinzufügen“.
+2. Suchen und wählen Sie im Fenster „Referenz hinzufügen“ die DLL-Dateien von Aspose.PDF für .NET aus.
 3. Klicken Sie auf „OK“, um die Referenzen in Ihr Projekt zu importieren.
 
 ## Schritt 3: Laden der PDF-Datei
 
-Bevor Sie Hyperlink-Ziele extrahieren können, müssen Sie die PDF-Datei in Ihre Anwendung laden. Verwenden Sie den folgenden Code, um die PDF-Datei zu laden:
+Bevor Sie Hyperlinkziele extrahieren können, müssen Sie die PDF-Datei in Ihre Anwendung laden. Verwenden Sie den folgenden Code, um die PDF-Datei zu laden:
 
 ```csharp
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 // Laden Sie die PDF-Datei
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-Stellen Sie sicher, dass Sie den korrekten Pfad zu Ihrem Dokumentverzeichnis und der PDF-Datei angeben, die Sie verarbeiten möchten.
+Achten Sie darauf, den richtigen Pfad zu Ihrem Dokumentverzeichnis und der zu verarbeitenden PDF-Datei anzugeben.
 
 ## Schritt 4: Navigieren durch die Seiten des Dokuments
 
-Nachdem die PDF-Datei nun geladen ist, müssen Sie alle Seiten des Dokuments durchgehen. Dies wird Ihnen ermöglichen, zu bekommen
+Nachdem die PDF-Datei geladen wurde, müssen Sie alle Seiten des Dokuments durchgehen. Auf diese Weise erhalten Sie
 
-ir die auf jeder Seite vorhandenen Hyperlink-Anmerkungen. Verwenden Sie den folgenden Code, um die Seiten des Dokuments zu durchlaufen:
+in den Hyperlink-Anmerkungen auf jeder Seite. Verwenden Sie den folgenden Code, um durch die Seiten des Dokuments zu iterieren:
 
 ```csharp
 foreach(Aspose.Pdf.Page page in document.Pages)
 {
-     // Rufen Sie die Linkanmerkungen einer bestimmten Seite ab
+     // Holen Sie sich die Linkanmerkungen einer bestimmten Seite
      AnnotationSelector selector = new AnnotationSelector(new Aspose.Pdf.Annotations.LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
      page. Accept(selector);
-     // Erstellen Sie eine Liste, um alle Links zu speichern
+     // Erstellen Sie eine Liste zum Speichern aller Links
      IList<Annotation> list = selector. Selected;
      // Durchlaufen Sie jedes Element in der Liste
      foreach(LinkAnnotation a in list)
@@ -64,11 +64,11 @@ foreach(Aspose.Pdf.Page page in document.Pages)
 }
 ```
 
-Dieser Code durchläuft jede Seite des Dokuments und wählt die auf jeder Seite vorhandenen Hyperlink-Anmerkungen aus. Anschließend speichert es diese Anmerkungen in einer Liste und gibt die Ziel-URL für jeden Link aus.
+Dieser Code durchläuft jede Seite des Dokuments und wählt die auf jeder Seite vorhandenen Hyperlink-Anmerkungen aus. Anschließend speichert er diese Anmerkungen in einer Liste und druckt die Ziel-URL für jeden Link aus.
 
 ## Schritt 5: Abrufen von Hyperlink-Zielen
 
-Der letzte Schritt besteht darin, die Hyperlinkziele aus den Hyperlinkanmerkungen zu extrahieren. Der folgende Code zeigt Ihnen, wie es geht:
+Der letzte Schritt besteht darin, die Hyperlinkziele aus den Hyperlinkanmerkungen zu extrahieren. Der folgende Code zeigt Ihnen, wie das geht:
 
 ```csharp
 foreach(Aspose.Pdf.Page page in document.Pages)
@@ -79,25 +79,25 @@ foreach(Aspose.Pdf.Page page in document.Pages)
      foreach(LinkAnnotation a in list)
      {
          string destination = (a.Action as Aspose.Pdf.Annotations.GoToURIAction).URI;
-         // Nutzen Sie das Ziel nach Ihren Wünschen
+         // Nutzen Sie das Ziel nach Belieben
      }
 }
 ```
 
-In diesem Code erhalten wir jedes Hyperlinkziel aus den Linkanmerkungen und speichern das Ziel in einer Variablen. Dieses Ziel können Sie dann in Ihrer Bewerbung beliebig verwenden.
+In diesem Code erhalten wir jedes Hyperlinkziel aus den Linkanmerkungen und speichern das Ziel in einer Variablen. Sie können dieses Ziel dann nach Belieben in Ihrer Anwendung verwenden.
 
-### Beispielquellcode für „Get Hyperlink Destinations“ mit Aspose.PDF für .NET 
+### Beispielquellcode zum Abrufen von Hyperlinkzielen mit Aspose.PDF für .NET 
 ```csharp
 try
 {
-	// Der Pfad zum Dokumentenverzeichnis.
+	// Der Pfad zum Dokumentverzeichnis.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	// Laden Sie die PDF-Datei
 	Document document = new Document(dataDir + "input.pdf");
-	// Durchsuchen Sie die gesamte PDF-Seite
+	// Alle PDF-Seiten durchsuchen
 	foreach (Aspose.Pdf.Page page in document.Pages)
 	{
-		// Rufen Sie die Linkanmerkungen von einer bestimmten Seite ab
+		// Holen Sie sich die Linkanmerkungen von einer bestimmten Seite
 		AnnotationSelector selector = new AnnotationSelector(new Aspose.Pdf.Annotations.LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
 		page.Accept(selector);
 		// Erstellen Sie eine Liste mit allen Links
@@ -105,7 +105,7 @@ try
 		// Durchlaufen Sie einzelne Elemente in der Liste
 		foreach (LinkAnnotation a in list)
 		{
-			// Drucken Sie die Ziel-URL aus
+			// Drucken Sie die Ziel-URL
 			Console.WriteLine("\nDestination: " + (a.Action as Aspose.Pdf.Annotations.GoToURIAction).URI + "\n");
 		}
 	}
@@ -116,36 +116,36 @@ catch (Exception ex)
 }
 ```
 
-### FAQs zum Abrufen von Hyperlink-Zielen in einer PDF-Datei
+### FAQs zum Abrufen von Hyperlink-Zielen in PDF-Dateien
 
 #### F: Was ist ein Hyperlink-Ziel in einer PDF-Datei?
 
-A: Ein Hyperlink-Ziel in einer PDF-Datei ist ein bestimmter Ort oder ein bestimmtes Ziel, auf das ein Hyperlink verweist. Dabei kann es sich um eine URL, eine Seite innerhalb desselben Dokuments oder ein externes Dokument handeln.
+A: Ein Hyperlinkziel in einer PDF-Datei ist ein bestimmter Ort oder ein bestimmtes Ziel, auf das ein Hyperlink verweist. Dies kann eine URL, eine Seite innerhalb desselben Dokuments oder ein externes Dokument sein.
 
-#### F: Wie kann das Extrahieren von Hyperlink-Zielen meine PDF-Dokumentanalyse verbessern?
+#### F: Welche Vorteile bietet das Extrahieren von Hyperlink-Zielen bei der Analyse meines PDF-Dokuments?
 
-A: Durch das Extrahieren von Hyperlinkzielen können Sie alle Ziele identifizieren und katalogisieren, auf die Hyperlinks in einem PDF-Dokument verweisen. Diese Informationen können für die Inhaltsvalidierung, Linküberprüfung und Datenanalyse nützlich sein.
+A: Durch das Extrahieren von Hyperlink-Zielen können Sie alle Ziele identifizieren und katalogisieren, auf die Hyperlinks in einem PDF-Dokument verweisen. Diese Informationen können für die Inhaltsvalidierung, Linküberprüfung und Datenanalyse nützlich sein.
 
 #### F: Wie hilft Aspose.PDF für .NET beim Extrahieren von Hyperlink-Zielen?
 
-A: Aspose.PDF für .NET bietet leistungsstarke APIs zum einfachen Extrahieren von Hyperlink-Zielen. Dieses Tutorial zeigt Schritt für Schritt, wie Sie Hyperlinkziele mit C# extrahieren.
+A: Aspose.PDF für .NET bietet leistungsstarke APIs zum einfachen Extrahieren von Hyperlink-Zielen. Dieses Tutorial zeigt Schritt für Schritt, wie Sie Hyperlink-Ziele mit C# extrahieren.
 
-#### F: Kann ich Hyperlink-Ziele anhand bestimmter Kriterien selektiv extrahieren?
+#### F: Kann ich Hyperlink-Ziele selektiv anhand bestimmter Kriterien extrahieren?
 
-A: Ja, Sie können Hyperlink-Ziele selektiv extrahieren, indem Sie die Seiten des PDF-Dokuments durchlaufen und die gewünschten Hyperlink-Anmerkungen basierend auf Ihren Kriterien filtern.
+A: Ja, Sie können Hyperlink-Ziele selektiv extrahieren, indem Sie die Seiten des PDF-Dokuments durchsuchen und die gewünschten Hyperlink-Anmerkungen basierend auf Ihren Kriterien filtern.
 
-#### F: Ist es möglich, Hyperlink-Ziele aus passwortgeschützten PDF-Dokumenten zu extrahieren?
+#### F: Ist es möglich, Hyperlinkziele aus passwortgeschützten PDF-Dokumenten zu extrahieren?
 
-A: Aspose.PDF für .NET kann Hyperlink-Ziele aus passwortgeschützten PDF-Dokumenten extrahieren, sofern Sie beim Öffnen des Dokuments die erforderlichen Authentifizierungsdaten angeben.
+A: Aspose.PDF für .NET kann Hyperlink-Ziele aus passwortgeschützten PDF-Dokumenten extrahieren, solange Sie beim Öffnen des Dokuments die erforderlichen Authentifizierungsdaten angeben.
 
-#### F: Wie kann ich die extrahierten Hyperlink-Ziele in meiner Anwendung verwenden?
+#### F: Wie kann ich die extrahierten Hyperlink-Ziele in meiner Anwendung nutzen?
 
-A: Sobald Sie die Hyperlink-Ziele extrahiert haben, können Sie sie zum Ausführen verschiedener Aktionen verwenden, z. B. zum Überprüfen von Link-URLs, zum Erstellen von Berichten oder zum Implementieren einer benutzerdefinierten Navigation.
+A: Nachdem Sie die Hyperlinkziele extrahiert haben, können Sie diese für verschiedene Aktionen verwenden, z. B. zum Validieren von Link-URLs, zum Erstellen von Berichten oder zum Implementieren einer benutzerdefinierten Navigation.
 
-#### F: Gibt es Einschränkungen beim Extrahieren von Hyperlink-Zielen?
+#### F: Gibt es beim Extrahieren von Hyperlink-Zielen irgendwelche Einschränkungen?
 
-A: Obwohl die Extraktion von Hyperlinkzielen leistungsstark ist, ist es wichtig, die Struktur des PDF-Dokuments zu berücksichtigen. In komplexe Grafiken oder Multimedia-Inhalte eingebettete Hyperlinks erfordern möglicherweise eine zusätzliche Bearbeitung.
+A: Obwohl die Extraktion von Hyperlink-Zielen leistungsstark ist, muss die Struktur des PDF-Dokuments unbedingt berücksichtigt werden. In komplexe Grafiken oder Multimedia-Inhalte eingebettete Hyperlinks erfordern möglicherweise zusätzliche Bearbeitung.
 
-#### F: Kann ich andere Attribute von Hyperlinks extrahieren, z. B. Linktypen oder Koordinaten?
+#### F: Kann ich andere Attribute von Hyperlinks extrahieren, beispielsweise Linktypen oder Koordinaten?
 
-A: Das Tutorial konzentriert sich auf das Extrahieren von Hyperlink-Zielen. Sie können jedoch die offizielle Aspose.PDF-Dokumentation lesen, um erweiterte Funktionen zu erkunden, einschließlich der Extraktion von Linktypen und Koordinaten.
+A: Das Tutorial konzentriert sich auf das Extrahieren von Hyperlink-Zielen. Sie können jedoch auch die offizielle Aspose.PDF-Dokumentation zu Rate ziehen, um erweiterte Funktionen kennenzulernen, darunter das Extrahieren von Linktypen und Koordinaten.

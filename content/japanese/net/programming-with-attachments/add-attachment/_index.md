@@ -1,113 +1,121 @@
 ---
-title: PDF ファイルに添付ファイルを追加
-linktitle: PDF ファイルに添付ファイルを追加
+title: PDFファイルに添付ファイルを追加する
+linktitle: PDFファイルに添付ファイルを追加する
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して PDF ファイルに添付ファイルを追加する方法を学びます。簡単に操作できるステップバイステップのガイド。
+description: このステップバイステップ ガイドでは、Aspose.PDF for .NET を使用して PDF ファイルに添付ファイルを追加する方法を学習します。ドキュメントを簡単に強化できます。
 type: docs
 weight: 10
 url: /ja/net/programming-with-attachments/add-attachment/
 ---
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ファイルに添付ファイルを追加するための次の C# ソース コードを段階的に説明します。
+## 導入
 
-始める前に、Aspose.PDF ライブラリをインストールし、開発環境をセットアップしていることを確認してください。 C# プログラミングの基本的な知識も必要です。
+PDF ドキュメントにファイルを添付する必要に迫られたことはありませんか? 補足テキスト ファイル、画像、その他の種類のドキュメントなど、PDF に添付ファイルを追加すると、ファイルの使いやすさと機能性が向上します。このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ファイルに添付ファイルを追加する方法について説明します。この強力なライブラリを使用すると、開発者は PDF ドキュメントを簡単に操作できます。このガイドを読み終える頃には、プロのように添付ファイルを追加できるようになります。
 
-### ステップ 1: ドキュメント ディレクトリのセットアップ
+## 前提条件
 
-提供されたソース コードでは、添付ファイルを追加する PDF ファイルが配置されているディレクトリを指定する必要があります。 「dataDir」変数を目的のディレクトリに変更します。
+添付ファイルの追加の詳細に入る前に、いくつかの前提条件を満たす必要があります。
+
+1.  Aspose.PDF for .NET: Aspose.PDFライブラリがインストールされていることを確認してください。[サイト](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: .NET コードを記述およびテストできる開発環境。
+3. C# の基礎知識: C# プログラミングに精通していると、コード スニペットをよりよく理解できるようになります。
+
+## パッケージのインポート
+
+まず、C# プロジェクトに必要なパッケージをインポートする必要があります。手順は次のとおりです。
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-### ステップ 2: 既存の PDF ドキュメントを開く
+パッケージをインストールしたら、コードの作成を開始できます。
 
-指定されたパスを使用して既存の PDF ドキュメントを開きます。
+すべての設定が完了したので、PDF ファイルに添付ファイルを追加するプロセスを管理しやすい手順に分解してみましょう。
 
-```csharp
-Document pdfDocument = new Document(dataDir + "AddAttachment.pdf");
-```
+## ステップ1: ドキュメントディレクトリを定義する
 
-### ステップ 3: 添付ファイルとして追加する新しいファイルを設定する
-
-添付ファイルとして追加する新しいファイルを構成します。この例では、「test.txt」という名前と「サンプル テキスト ファイル」という説明を持つテキスト ファイルを追加します。
+最初のステップは、ドキュメント ディレクトリへのパスを定義することです。ここに、PDF ファイルと添付するファイルが保存されます。
 
 ```csharp
-FileSpecification fileSpecification = new FileSpecification(dataDir + "test.txt", "Sample text file");
-```
-
-### ステップ 4: ドキュメントの添付ファイル コレクションに添付ファイルを追加する
-
-添付ファイルをドキュメントの添付ファイル コレクションに追加します。
-
-```csharp
-pdfDocument.EmbeddedFiles.Add(fileSpecification);
-```
-
-### ステップ 5: 新しい出力ファイルを保存する
-
-最後に、結果の新しい PDF ファイルを「AddAttachment_out.pdf」という名前で指定したディレクトリに保存します。
-
-```csharp
-pdfDocument.Save(dataDir + "AddAttachment_out.pdf");
-```
-
-### Aspose.PDF for .NET を使用した添付ファイルの追加のサンプル ソース コード
- 
-```csharp
-
-//ドキュメントディレクトリへのパス。
+//ドキュメント ディレクトリへのパス。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//開いた文書
-Document pdfDocument = new Document(dataDir + "AddAttachment.pdf");
-//添付ファイルとして追加する新しいファイルを設定します
-FileSpecification fileSpecification = new FileSpecification(dataDir + "test.txt", "Sample text file");
-//ドキュメントの添付ファイル コレクションに添付ファイルを追加する
-pdfDocument.EmbeddedFiles.Add(fileSpecification);
-dataDir = dataDir + "AddAttachment_out.pdf";
-//新しい出力を保存する
-pdfDocument.Save(dataDir);
-Console.WriteLine("\nSample text file attached successfully.\nFile saved at " + dataDir);
-
 ```
+
+必ず交換してください`"YOUR DOCUMENT DIRECTORY"`ファイルが保存されている実際のパスを入力します。
+
+## ステップ2: PDFドキュメントを開く
+
+次に、添付ファイルを追加したいPDF文書を開く必要があります。これは、`Document` Aspose.PDF によって提供されるクラス。
+
+```csharp
+//ドキュメントを開く
+Document pdfDocument = new Document(dataDir + "AddAttachment.pdf");
+```
+
+この行では、`Document`クラスと既存のPDFファイルをロードします`AddAttachment.pdf`.
+
+## ステップ3: 添付するファイルを設定する
+
+次に、添付するファイルを指定します。`FileSpecification`ファイルへのパスと説明を含むオブジェクト。
+
+```csharp
+//添付ファイルとして追加する新しいファイルを設定する
+FileSpecification fileSpecification = new FileSpecification(dataDir + "test.txt", "Sample text file");
+```
+
+ここでは、次のテキストファイルを添付する準備をしています。`test.txt` 「サンプルテキストファイル」の説明付き。
+
+## ステップ4: ドキュメントに添付ファイルを追加する
+
+ファイル仕様が準備できたら、添付ファイルを PDF ドキュメントの添付ファイル コレクションに追加できます。
+
+```csharp
+//ドキュメントの添付ファイルコレクションに添付ファイルを追加する
+pdfDocument.EmbeddedFiles.Add(fileSpecification);
+```
+
+このコード行は、指定されたファイルを PDF ドキュメントに埋め込みファイルとして追加します。
+
+## ステップ5: 更新したドキュメントを保存する
+
+添付ファイルを追加したら、更新された PDF ドキュメントを保存する必要があります。新しいファイルを保存する出力パスを指定します。
+
+```csharp
+dataDir = dataDir + "AddAttachment_out.pdf";
+//新しい出力を保存
+pdfDocument.Save(dataDir);
+```
+
+このステップでは、変更したPDFを次のように保存します。`AddAttachment_out.pdf`同じディレクトリ内。
+
+## ステップ6: 操作を確認する
+
+最後に、操作が成功したことを確認するのが常に良い方法です。コンソールにメッセージを出力することで、これを実行できます。
+
+```csharp
+Console.WriteLine("\nSample text file attached successfully.\nFile saved at " + dataDir);
+```
+
+このメッセージは、添付ファイルが正常に追加されたことと、新しいファイルが保存されている場所を知らせます。
 
 ## 結論
 
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ファイルに添付ファイルを追加する方法を説明しました。この知識を利用して、追加のファイルを PDF ドキュメントに添付ファイルとして追加できるようになりました。
+Aspose.PDF for .NET を使用して PDF ファイルに添付ファイルを追加するのは簡単なプロセスですが、ドキュメントの機能を大幅に強化できます。このチュートリアルで説明されている手順に従うと、PDF にファイルを簡単に添付して、閲覧者にとってより有益で役立つものにすることができます。レポート、プレゼンテーション、またはその他の種類のドキュメントのいずれを作成する場合でも、この機能は画期的な効果を発揮します。
 
-### PDF ファイルに添付ファイルを追加する場合の FAQ
+## よくある質問
 
-#### Q: PDF ファイルに添付ファイルを追加する必要があるのはなぜですか?
+### PDF に添付できるファイルの種類は何ですか?
+テキスト ファイル、画像、ドキュメントなど、さまざまな種類のファイルを添付できます。
 
-A: PDF ファイルに添付ファイルを追加すると、サポート文書、画像、ファイルなどの補足資料を含めることができ、PDF のコンテンツに追加のコンテキストや情報を提供できます。
+### Aspose.PDF for .NET は無料で使用できますか?
+Aspose.PDF は無料試用版を提供していますが、完全な機能を使用するにはライセンスを購入する必要があります。
 
-#### Q: Aspose.PDF for .NET は、添付ファイルを追加するプロセスをどのように簡素化しますか?
+### 1 つの PDF に複数の添付ファイルを追加できますか?
+はい、PDF の添付ファイル コレクションに複数のファイルを追加できます。
 
-A: Aspose.PDF for .NET は、PDF ファイルに添付ファイルを簡単に追加できる合理化された API を提供します。提供されているソース コードは、このタスクを実行する方法を段階的に示しています。
+### Aspose.PDF に関する詳細なドキュメントはどこで見つかりますか?
+包括的なドキュメントは、[Aspose ウェブサイト](https://reference.aspose.com/pdf/net/).
 
-#### Q: Aspose.PDF for .NET を使用して PDF に添付できるファイルの種類は何ですか?
-
-A: Aspose.PDF for .NET は、開発環境からアクセスできる限り、テキスト ファイル、画像、ドキュメント、スプレッドシートなどを含むさまざまな種類のファイルの添付をサポートします。
-
-#### Q: PDF ファイルに追加できる添付ファイルの数に制限はありますか?
-
-A: 追加できる添付ファイルの数に厳密な制限はありませんが、ファイル全体のサイズとドキュメントのパフォーマンスへの潜在的な影響を考慮することが重要です。
-
-#### Q: 添付ファイルの説明をカスタマイズできますか?
-
-A: はい、各添付ファイルの説明をカスタマイズできます。この説明は、添付ファイルの追加コンテキストを提供し、ユーザーがその目的を理解するのに役立ちます。
-
-#### Q: 添付ファイルを追加するときにファイル サイズに関する考慮事項はありますか?
-
-A: 添付ファイルにより PDF 全体のファイル サイズが大きくなる可能性がありますが、Aspose.PDF for .NET は添付ファイルを効率的に処理して、ドキュメントのパフォーマンスへの悪影響を最小限に抑えます。
-
-#### Q: PDF ドキュメント内の特定のページに添付ファイルを追加できますか?
-
-A: 添付ファイルは、特定のページではなく PDF ドキュメント全体に関連付けられます。ユーザーは、PDF ビューアの添付ファイル パネルからこれらにアクセスできます。
-
-#### Q: 添付ファイルが正常に追加されたことを確認するにはどうすればよいですか?
-
-A: 提供されたソース コードに従った後、結果の PDF ファイルを開いて、添付ファイルが添付ファイル パネルからアクセスできることを確認できます。
-
-#### Q: 添付ファイルを追加した後に削除または更新できますか?
-
-A: はい、Aspose.PDF for .NET の API を使用して PDF ファイルの添付ファイルを変更または削除できるため、必要に応じて添付ファイルを柔軟に管理できます。
+### Aspose.PDF のサポートを受けるにはどうすればよいですか?
+サポートを受けるには、[Aspose フォーラム](https://forum.aspose.com/c/pdf/10).

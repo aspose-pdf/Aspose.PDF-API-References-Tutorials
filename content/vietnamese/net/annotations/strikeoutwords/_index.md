@@ -1,125 +1,172 @@
 ---
-title: gạch bỏ các từ
-linktitle: gạch bỏ các từ
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Bài viết này cung cấp hướng dẫn từng bước cách sử dụng Aspose.PDF cho tính năng Strike Out Words của .NET, bao gồm hướng dẫn và giải thích từng bước
+title: Gạch bỏ các từ
+linktitle: Gạch bỏ các từ
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Tìm hiểu cách gạch bỏ các từ trong PDF bằng Aspose.PDF cho .NET với hướng dẫn từng bước toàn diện này. Nâng cao kỹ năng chỉnh sửa tài liệu của bạn.
 type: docs
 weight: 150
 url: /vi/net/annotations/strikeoutwords/
 ---
-Aspose.PDF for .NET là thư viện xử lý và thao tác tài liệu PDF cung cấp nhiều tính năng khác nhau để tạo, sửa đổi và chuyển đổi tệp PDF. Một trong những tính năng hữu ích mà Aspose.PDF cung cấp là khả năng gạch bỏ các từ hoặc cụm từ trong tài liệu PDF bằng mã nguồn C#. Trong bài viết này, chúng tôi sẽ cung cấp hướng dẫn từng bước về cách gạch bỏ các từ bằng Aspose.PDF cho .NET.
+## Giới thiệu
 
-## Bước 1: Tải tài liệu PDF
-Bước đầu tiên là tải tài liệu PDF mà bạn muốn sửa đổi. Trong hướng dẫn này, chúng tôi sẽ tải một tài liệu PDF có tên "input.pdf" từ thư mục "THƯ MỤC TÀI LIỆU CỦA BẠN". 
+Bạn đã bao giờ thấy mình cần nhấn mạnh một đoạn văn bản cụ thể trong PDF bằng cách gạch bỏ nó chưa? Cho dù bạn đang xem lại tài liệu, đánh dấu văn bản hay chỉ cần làm nổi bật một số phần nhất định, thì việc gạch bỏ các từ có thể là một công cụ hữu ích. Trong hướng dẫn này, chúng ta sẽ khám phá cách thực hiện điều đó bằng Aspose.PDF cho .NET. Hướng dẫn toàn diện này sẽ hướng dẫn bạn từng bước, đảm bảo bạn có tất cả thông tin cần thiết để triển khai hiệu quả tính năng này trong các ứng dụng .NET của mình. 
+
+## Điều kiện tiên quyết
+
+Trước khi đi sâu vào mã, bạn cần đáp ứng một số điều kiện tiên quyết để có thể làm theo hướng dẫn này:
+
+1.  Aspose.PDF cho Thư viện .NET: Đảm bảo bạn đã cài đặt thư viện Aspose.PDF cho .NET. Bạn có thể[tải xuống ở đây](https://releases.aspose.com/pdf/net/).
+
+2. .NET Framework: Đảm bảo rằng bạn đã cài đặt .NET Framework trên máy của mình. Hướng dẫn này được thiết kế cho các ứng dụng .NET.
+
+3. Môi trường phát triển: Bạn sẽ cần một IDE như Visual Studio để viết và chạy mã của mình.
+
+4. Tài liệu PDF: Chuẩn bị sẵn tệp PDF mẫu mà bạn muốn sử dụng. Đây sẽ là tài liệu mà chúng tôi sẽ gạch bỏ văn bản.
+
+5. Kiến thức cơ bản về C#: Cần phải quen thuộc với lập trình C# để hiểu và thực hiện các bước trong hướng dẫn này.
+
+## Nhập gói
+
+Trước khi chúng ta có thể bắt đầu mã hóa, chúng ta cần nhập các không gian tên cần thiết vào dự án .NET của mình. Điều này sẽ cho phép chúng ta truy cập vào các lớp và phương thức cần thiết để thao tác các tệp PDF bằng Aspose.PDF.
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document document = new Document(dataDir + "input.pdf");
+using System;
+using System.IO;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf;
 ```
 
-## Bước 2: Tìm kiếm đoạn văn bản
-Để gạch bỏ các từ hoặc cụm từ cụ thể trong tài liệu PDF, trước tiên bạn cần tìm kiếm chúng. Aspose.PDF cung cấp lớp TextFragmentAbsorber có thể được sử dụng để tìm kiếm một đoạn văn bản cụ thể trong tài liệu PDF.
+Các không gian tên này rất cần thiết khi làm việc với tài liệu PDF, xử lý văn bản và thêm chú thích như gạch bỏ.
+
+Trong phần này, chúng tôi sẽ chia nhỏ quy trình gạch bỏ các từ trong tài liệu PDF thành các bước đơn giản, dễ quản lý. Mỗi bước sẽ đi kèm với giải thích chi tiết để đảm bảo bạn hiểu cách mọi thứ hoạt động.
+
+## Bước 1: Tải Tài liệu PDF
+
+Bước đầu tiên là tải tài liệu PDF mà bạn muốn chỉnh sửa. Đây sẽ là tài liệu mà bạn sẽ gạch bỏ các từ hoặc cụm từ cụ thể.
 
 ```csharp
-Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
-```
-
-Trong đoạn mã trên, chúng tôi đang tìm kiếm đoạn văn bản "Estoque" trong tài liệu PDF. Bạn có thể sửa đổi điều này để tìm kiếm bất kỳ từ hoặc cụm từ nào khác mà bạn muốn gạch bỏ.
-
-## Bước 3: Gạch bỏ các đoạn văn bản
-Sau khi tìm thấy các đoạn văn bản, bước tiếp theo là gạch bỏ chúng. Aspose.PDF cung cấp lớp StrikeOutAnnotation có thể được sử dụng để tạo chú thích gạch ngang cho đoạn văn bản. 
-
-```csharp
-Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle((float)textFragment.Position.XIndent, (float)textFragment.Position.YIndent, (float)textFragment.Position.XIndent + (float)textFragment.Rectangle.Width, (float)textFragment.Position.YIndent + (float)textFragment.Rectangle.Height);
-
-StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
-strikeOut.Opacity = .80f;
-strikeOut.Border = new Border(strikeOut);
-strikeOut.Color = Aspose.Pdf.Color.Red;
-textFragment.Page.Annotations.Add(strikeOut);
-```
-
-Trong đoạn mã trên, chúng tôi đang tạo chú thích gạch ngang cho từng đoạn văn bản mà chúng tôi tìm thấy. Chúng tôi cũng đang thiết lập độ mờ, đường viền và màu sắc của chú thích gạch ngang.
-
-## Bước 4: Lưu tài liệu PDF đã sửa đổi
-Sau khi gạch bỏ các đoạn văn bản, hãy lưu tài liệu đã sửa đổi.
-
-```csharp
-dataDir = dataDir + "StrikeOutWords_out.pdf";
-document.Save(dataDir);
-```
-
-### Mã nguồn mẫu cho Strike Out Words sử dụng Aspose.PDF for .NET
-
-
-```csharp
-
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Mở tài liệu
+// Mở tài liệu PDF
 Document document = new Document(dataDir + "input.pdf");
+```
 
-// Tạo phiên bản Trình hấp thụ TextFragment để tìm kiếm đoạn văn bản cụ thể
+- `dataDir` : Biến này giữ đường dẫn đến thư mục tài liệu của bạn. Thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế nơi lưu trữ tệp PDF của bạn.
+- `Document` : Các`Document` lớp biểu diễn một tài liệu PDF. Bằng cách truyền đường dẫn tệp đến hàm tạo của nó, chúng ta mở tệp PDF để xử lý.
+
+## Bước 2: Tạo TextFragment Absorber để tìm văn bản cụ thể
+
+ Tiếp theo, chúng ta sẽ tạo một thể hiện của`TextFragmentAbsorber` để tìm kiếm một đoạn văn bản cụ thể trong tài liệu PDF. Điều này cho phép chúng tôi xác định vị trí đoạn văn bản mà chúng tôi muốn gạch bỏ.
+
+```csharp
+// Tạo phiên bản TextFragment Absorber để tìm kiếm một đoạn văn bản cụ thể
 Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
+```
+
+- `TextFragmentAbsorber`Lớp này được sử dụng để tìm và làm việc với các đoạn văn bản cụ thể trong tài liệu PDF. Trong ví dụ này, chúng tôi đang tìm kiếm từ "Estoque". Thay thế "Estoque" bằng từ hoặc cụm từ bạn muốn tìm trong tài liệu của mình.
+
+## Bước 3: Lặp lại qua các trang của tài liệu PDF
+
+ Bây giờ chúng ta đã có`TextFragmentAbsorber`, chúng ta cần lặp lại từng trang của tài liệu PDF để tìm văn bản được chỉ định.
+
+```csharp
 // Lặp lại qua các trang của tài liệu PDF
 for (int i = 1; i <= document.Pages.Count; i++)
 {
-	// Nhận trang đầu tiên của tài liệu PDF
-	Page page = document.Pages[1];
-	page.Accept(textFragmentAbsorber);
+    // Lấy trang hiện tại của tài liệu PDF
+    Page page = document.Pages[i];
+    page.Accept(textFragmentAbsorber);
 }
+```
 
-// Tạo một bộ sưu tập văn bản hấp thụ
+- `for (int i = 1; i <= document.Pages.Count; i++)`: Vòng lặp này lặp lại qua từng trang của tài liệu PDF.
+- `document.Pages[i]`: Truy xuất trang hiện tại đang được xử lý.
+- `page.Accept(textFragmentAbsorber)` : Phương pháp này áp dụng`TextFragmentAbsorber` đến trang hiện tại, tìm kiếm văn bản đã chỉ định.
+
+## Bước 4: Thu thập và xử lý các đoạn văn bản
+
+Sau khi duyệt qua các trang, chúng tôi sẽ thu thập các đoạn văn bản tìm thấy và chuẩn bị chúng để xử lý thêm.
+
+```csharp
+// Tạo một bộ sưu tập các đoạn văn bản được hấp thụ
 Aspose.Pdf.Text.TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+```
 
-//Lặp lại bộ sưu tập trên
+- `TextFragmentCollection`Bộ sưu tập này lưu trữ tất cả các đoạn văn bản được tìm thấy trong tài liệu. Chúng tôi sẽ sử dụng bộ sưu tập này trong bước tiếp theo để gạch bỏ văn bản.
+
+## Bước 5: Lặp lại các đoạn văn bản và gạch bỏ chúng
+
+Ở bước này, chúng ta sẽ lặp qua từng đoạn văn bản trong bộ sưu tập và áp dụng chú thích gạch bỏ vào đó.
+
+```csharp
+// Lặp lại qua bộ sưu tập các đoạn văn bản
 for (int j = 1; j <= textFragmentCollection.Count; j++)
 {
 	Aspose.Pdf.Text.TextFragment textFragment = textFragmentCollection[j];
 
-	// Lấy kích thước hình chữ nhật của đối tượng TextFragment
-	Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
-				(float)textFragment.Position.XIndent,
-				(float)textFragment.Position.YIndent,
-				(float)textFragment.Position.XIndent +
-				(float)textFragment.Rectangle.Width,
-				(float)textFragment.Position.YIndent +
-				(float)textFragment.Rectangle.Height);
+    // Lấy kích thước hình chữ nhật của đối tượng TextFragment
+    Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
+        (float)textFragment.Position.XIndent,
+        (float)textFragment.Position.YIndent,
+        (float)textFragment.Position.XIndent + (float)textFragment.Rectangle.Width,
+        (float)textFragment.Position.YIndent + (float)textFragment.Rectangle.Height);
 
-	// Khởi tạo phiên bản Chú thích StrikeOut
-	StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
-	// Đặt độ mờ cho chú thích
-	strikeOut.Opacity = .80f;
-	// Đặt đường viền cho phiên bản chú thích
-	strikeOut.Border = new Border(strikeOut);
-	// Đặt màu của chú thích
-	strikeOut.Color = Aspose.Pdf.Color.Red;
-	// Thêm chú thích vào bộ sưu tập chú thích của TextFragment
-	textFragment.Page.Annotations.Add(strikeOut);
+    // Khởi tạo phiên bản chú thích StrikeOut
+    StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
+
+    // Đặt thuộc tính của chú thích gạch bỏ
+    strikeOut.Opacity = .80f;
+    strikeOut.Border = new Border(strikeOut);
+    strikeOut.Color = Aspose.Pdf.Color.Red;
+
+    // Thêm chú thích vào bộ sưu tập chú thích của trang đoạn văn bản
+    textFragment.Page.Annotations.Add(strikeOut);
 }
+```
+
+- `TextFragment textFragment = textFragmentCollection[j]`: Dòng này lấy đoạn văn bản hiện tại.
+- `Aspose.Pdf.Rectangle`:Chúng tôi tính toán kích thước hình chữ nhật của đoạn văn bản để xác định vị trí áp dụng gạch ngang.
+- `StrikeOutAnnotation`: Lớp này biểu diễn chú thích gạch bỏ. Chúng tôi khởi tạo nó bằng hình chữ nhật được tính toán và trang hiện tại.
+- `strikeOut.Opacity`: Thuộc tính này thiết lập độ mờ đục của phần gạch bỏ, làm cho phần này hiển thị ở mức 80%.
+- `strikeOut.Color`Chúng tôi đặt màu của gạch bỏ là đỏ. Bạn có thể thay đổi thành bất kỳ màu nào bạn thích.
+- `textFragment.Page.Annotations.Add(strikeOut)`: Thao tác này sẽ thêm chú thích gạch bỏ vào trang.
+
+## Bước 6: Lưu tài liệu PDF đã sửa đổi
+
+Bước cuối cùng là lưu tài liệu PDF đã chỉnh sửa với các gạch bỏ được áp dụng.
+
+```csharp
+// Lưu tài liệu PDF đã cập nhật
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
 
+- `dataDir + "StrikeOutWords_out.pdf"`: Thao tác này tạo tên tệp mới cho tài liệu đã sửa đổi. Tệp gốc vẫn không thay đổi.
+- `document.Save(dataDir)`: Lưu tài liệu PDF có gạch bỏ chữ vào vị trí đã chỉ định.
+
 ## Phần kết luận
 
-Trong hướng dẫn này, chúng ta đã học cách sử dụng Aspose.PDF cho .NET để gạch bỏ các từ cụ thể trong tài liệu PDF. Bằng cách làm theo hướng dẫn từng bước và sử dụng mã nguồn C# được cung cấp, bạn có thể dễ dàng tải tài liệu PDF, tìm kiếm các đoạn văn bản cụ thể và tạo chú thích gạch ngang để đánh dấu và gạch bỏ những từ đó một cách trực quan. Aspose.PDF for .NET cung cấp một cách đơn giản và hiệu quả để thao tác các tài liệu PDF theo chương trình, khiến nó trở thành một công cụ có giá trị cho các nhà phát triển làm việc với các tệp PDF trong ứng dụng .NET.
+Xin chúc mừng! Bạn đã gạch bỏ thành công các từ cụ thể trong tài liệu PDF bằng Aspose.PDF cho .NET. Bằng cách làm theo hướng dẫn từng bước này, giờ đây bạn có thể tùy chỉnh tài liệu PDF bằng cách tô sáng hoặc gạch bỏ văn bản, giúp chúng trở nên năng động hơn và phù hợp với nhu cầu của bạn. Cho dù bạn đang chú thích tài liệu pháp lý, chuẩn bị báo cáo hay chỉ đánh dấu văn bản để xem lại, hướng dẫn này đã trang bị cho bạn các kỹ năng để thực hiện hiệu quả.
 
-### Câu hỏi thường gặp
+## Câu hỏi thường gặp
 
-#### Câu hỏi: Aspose.PDF dành cho .NET là gì?
+### Tôi có thể thay đổi màu của phần gạch ngang không?
 
-Trả lời: Aspose.PDF for .NET là một thư viện mạnh mẽ cho phép các nhà phát triển tạo, chỉnh sửa và thao tác các tài liệu PDF theo chương trình trong các ứng dụng .NET. Nó cung cấp nhiều tính năng để làm việc với các tệp PDF, bao gồm trích xuất văn bản, xử lý chú thích, điền biểu mẫu, v.v.
+ Có, bạn có thể thay đổi màu sắc bằng cách sửa đổi`strikeOut.Color`thuộc tính. Ví dụ, bạn có thể đặt nó thành`Aspose.Pdf.Color.Blue` để đánh bóng màu xanh.
 
-#### Câu hỏi: Tôi có thể sử dụng Aspose.PDF cho .NET để gạch bỏ các từ cụ thể trong tài liệu PDF không?
+### Có thể gạch bỏ nhiều từ cùng một lúc không?
 
-Trả lời: Có, Aspose.PDF cho .NET cung cấp chức năng tìm kiếm các đoạn văn bản cụ thể trong tài liệu PDF, sau đó tạo chú thích gạch ngang để đánh dấu và gạch bỏ những từ đó một cách trực quan.
+ Chắc chắn rồi!`TextFragmentAbsorber` có thể được sử dụng để tìm kiếm bất kỳ từ hoặc cụm từ nào trong tài liệu. Bạn có thể áp dụng gạch bỏ cho nhiều trường hợp bằng cách lặp lại qua`TextFragmentCollection`.
 
-#### Hỏi: Làm cách nào để chỉ định văn bản tôi muốn gạch bỏ trong tài liệu PDF?
+### Tôi phải làm sao nếu chỉ muốn gạch bỏ văn bản trên một số trang cụ thể?
 
- Đáp: Để chỉ định văn bản bạn muốn gạch bỏ, bạn có thể sử dụng`TextFragmentAbsorber` lớp được cung cấp bởi Aspose.PDF cho .NET. Nó cho phép bạn tìm kiếm một đoạn văn bản cụ thể trong tài liệu PDF dựa trên tiêu chí mong muốn của bạn.
+ Bạn có thể sửa đổi vòng lặp lặp qua các trang để chỉ bao gồm các trang bạn muốn sửa đổi. Ví dụ:`for (int i = 1; i <= 3; i++)` sẽ chỉ áp dụng lệnh gạch bỏ cho ba trang đầu tiên.
 
-#### Câu hỏi: Tôi có thể tùy chỉnh hình thức của chú thích gạch ngang không?
+### Tôi có thể điều chỉnh độ dày của đường gạch ngang như thế nào?
 
-Đáp: Có, bạn có thể tùy chỉnh các thuộc tính khác nhau của chú thích gạch ngang, chẳng hạn như độ mờ, kiểu đường viền và màu sắc. Điều này cho phép bạn điều chỉnh giao diện của chú thích gạch ngang theo yêu cầu cụ thể của mình.
+ Bạn có thể điều chỉnh độ dày của đường gạch ngang bằng cách sửa đổi`Border` tài sản của`StrikeOutAnnotation`. Điều này cho phép tùy chỉnh giao diện gạch ngang.
+
+### Có cách nào để hoàn tác lệnh gạch bỏ sau khi lưu tài liệu không?
+
+Sau khi tài liệu được lưu, gạch bỏ sẽ có hiệu lực vĩnh viễn. Nếu bạn cần giữ nguyên văn bản gốc mà không có gạch bỏ, hãy cân nhắc lưu bản sao lưu của tài liệu gốc trước khi áp dụng bất kỳ sửa đổi nào.

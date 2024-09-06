@@ -22,7 +22,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## 2. lépés: Nyissa meg a PDF dokumentumot
 
-Ebben a lépésben megnyitjuk a PDF dokumentumot a`Document` osztályú Aspose.PDF.
+ Ebben a lépésben megnyitjuk a PDF dokumentumot a`Document` osztályú Aspose.PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "TextField.pdf");
@@ -44,7 +44,7 @@ Igény szerint testreszabhatja a koordinátákat, a méretet, a részleges nevet
 
 ## 4. lépés: A szövegmező tulajdonságainak testreszabása
 
-Ebben a lépésben testre szabjuk a szövegmező tulajdonságait, mint például a keret, a szín stb.
+Ebben a lépésben testre szabjuk a szövegmező tulajdonságait, például keret, szín stb.
 
 ```csharp
 Border border = new Border(textBoxField);
@@ -81,11 +81,11 @@ Feltétlenül adja meg a szerkesztett PDF teljes elérési útját és fájlnev�
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Nyissa meg a dokumentumot
 Document pdfDocument = new Document(dataDir + "TextField.pdf");
-// Hozzon létre egy mezőt
+//Hozzon létre egy mezőt
 TextBoxField textBoxField = new TextBoxField(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(100, 200, 300, 300));
 textBoxField.PartialName = "textbox1";
 textBoxField.Value = "Text Box";
-//TextBoxField.Border = new Border(
+// TextBoxField.Border = new Border(
 Border border = new Border(textBoxField);
 border.Width = 5;
 border.Dash = new Dash(1, 1);

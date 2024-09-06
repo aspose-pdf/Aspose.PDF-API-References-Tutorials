@@ -85,7 +85,7 @@ För att extrahera bilagor från en PDF kan du använda Aspose.PDF för Javas AP
 
 ### Finns det några storleksbegränsningar för filerna jag kan bifoga till en PDF?
 
-Storleken på filer du kan bifoga till en PDF beror på olika faktorer, inklusive PDF-visarens möjligheter och ditt systems resurser. Det är dock en bra praxis att hålla filstorlekarna rimliga för att säkerställa smidig visning och hantering av PDF:en.
+Storleken på filer du kan bifoga till en PDF beror på olika faktorer, inklusive PDF-visarens möjligheter och ditt systems resurser. Det är dock en god praxis att hålla filstorlekarna rimliga för att säkerställa smidig visning och hantering av PDF:en.
 
 ### Är Aspose.PDF för Java kompatibel med olika Java-versioner?
 

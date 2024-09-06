@@ -1,139 +1,137 @@
 ---
-title: Podaj dane uwierzytelniające podczas HTML do formatu PDF
-linktitle: Podaj dane uwierzytelniające podczas HTML do formatu PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Przewodnik krok po kroku dotyczący konwersji HTML do formatu PDF poprzez podanie poświadczeń w Aspose.PDF dla .NET.
+title: Podaj dane uwierzytelniające podczas konwersji HTML na PDF
+linktitle: Podaj dane uwierzytelniające podczas konwersji HTML na PDF
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak konwertować HTML do PDF za pomocą Aspose.PDF dla .NET dzięki temu przewodnikowi krok po kroku. Idealne dla programistów, którzy chcą usprawnić generowanie dokumentów.
 type: docs
 weight: 240
 url: /pl/net/document-conversion/provide-credentials-during-html-to-pdf/
 ---
-tym samouczku przeprowadzimy Cię przez proces konwersji pliku HTML do formatu PDF, jednocześnie podając dane uwierzytelniające podczas uzyskiwania dostępu do bezpiecznego adresu URL za pomocą Aspose.PDF dla .NET. Wykonując poniższe kroki, będziesz mógł przekonwertować treść HTML na format PDF przy użyciu odpowiednich poświadczeń.
+## Wstęp
 
-## Warunki wstępne
-Zanim zaczniesz, upewnij się, że spełniasz następujące wymagania wstępne:
+W świecie rozwoju oprogramowania konwersja HTML do PDF jest powszechnym wymogiem. Niezależnie od tego, czy generujesz raporty, faktury czy jakikolwiek inny dokument, posiadanie niezawodnej biblioteki do obsługi tego zadania może zaoszczędzić Ci dużo czasu i wysiłku. Wprowadź Aspose.PDF dla .NET, potężną bibliotekę, która pozwala programistom na łatwe tworzenie, manipulowanie i konwertowanie dokumentów PDF. W tym samouczku przeprowadzimy Cię przez proces używania Aspose.PDF do konwersji HTML do PDF, zapewniając jednocześnie poświadczenia dla bezpiecznego dostępu. Więc chwyć swój kapelusz kodera i zanurzmy się!
 
-- Podstawowa znajomość języka programowania C#.
-- Biblioteka Aspose.PDF dla .NET zainstalowana w Twoim systemie.
-- Środowisko programistyczne, takie jak Visual Studio.
+## Wymagania wstępne
 
-## Krok 1: Pobierz bezpieczną zawartość HTML
-Na tym etapie pobierzemy bezpieczną treść HTML z adresu URL przy użyciu odpowiednich danych uwierzytelniających. Użyj następującego kodu:
+Zanim zaczniemy, jest kilka rzeczy, które musisz mieć na miejscu:
+
+1. Visual Studio: Upewnij się, że masz zainstalowane Visual Studio na swoim komputerze. To będzie nasze środowisko programistyczne.
+2.  Aspose.PDF dla .NET: Bibliotekę można pobrać ze strony[strona internetowa](https://releases.aspose.com/pdf/net/) . Jeśli chcesz najpierw spróbować, możesz również uzyskać[bezpłatny okres próbny](https://releases.aspose.com/).
+3. Podstawowa wiedza o języku C#: Znajomość programowania w języku C# pomoże Ci lepiej zrozumieć przykłady.
+4. Dostęp do Internetu: Ponieważ będziemy pobierać zawartość HTML z adresu URL, upewnij się, że masz aktywne połączenie z Internetem.
+
+## Importuj pakiety
+
+Aby rozpocząć pracę z Aspose.PDF, musisz zaimportować niezbędne pakiety do swojego projektu. Oto, jak możesz to zrobić:
+
+1. Otwórz projekt programu Visual Studio.
+2. Kliknij prawym przyciskiem myszy swój projekt w Eksploratorze rozwiązań i wybierz opcję „Zarządzaj pakietami NuGet”.
+3. Wyszukaj „Aspose.PDF” i zainstaluj najnowszą wersję.
 
 ```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using System;
+using System.Net;
+```
+Teraz, gdy wszystko już skonfigurowaliśmy, możemy podzielić proces konwersji pliku HTML na PDF z danymi uwierzytelniającymi na mniejsze, łatwiejsze do wykonania kroki.
 
-// Utwórz żądanie dotyczące adresu URL.
-WebRequest request = WebRequest.Create("http://My.signchart.com/Report/PrintBook.asp?ProjectGuid=6FB9DBB0-");
-// Jeśli jest to wymagane dla serwera, ustaw poświadczenia.
-request.Credentials = CredentialCache.DefaultCredentials;
-// Uzyskaj odpowiedź.
-HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+## Krok 1: Skonfiguruj katalog dokumentów
 
-// Pobierz strumień zawierający treść zwróconą przez serwer.
-Stream dataStream = response. GetResponseStream();
-// Otwórz strumień za pomocą StreamReadera, aby uzyskać łatwy dostęp.
-StreamReader reader = new StreamReader(dataStream);
-// Przeczytaj treść.
-string responseFromServer = reader.ReadToEnd();
-reader. Close();
-dataStream.Close();
-response. Close();
+Zanim będziemy mogli przekonwertować HTML na PDF, musimy określić, gdzie nasz wyjściowy PDF zostanie zapisany. Robimy to, definiując ścieżkę do katalogu dokumentów.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Pamiętaj o wymianie`"YOUR DOCUMENTS DIRECTORY"` z rzeczywistym katalogiem, w którym chcesz zapisać wynikowy plik PDF.
+ Zastępować`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką, w której chcesz zapisać plik PDF. Może to być folder na pulpicie lub dowolna inna lokalizacja w systemie.
 
-## Krok 2: Konwertuj HTML na PDF, podając dane uwierzytelniające
-Teraz załadujemy pobraną treść HTML i przekonwertujemy ją do formatu PDF, podając odpowiednie dane uwierzytelniające. Użyj następującego kodu:
+## Krok 2: Utwórz żądanie internetowe
+
+ Następnie musimy utworzyć żądanie pobrania zawartości HTML z określonego adresu URL. Tutaj użyjemy`WebRequest` klasa.
+
+```csharp
+WebRequest request = WebRequest.Create("http://My.signchart.com/Report/PrintBook.asp?ProjectGuid=6FB9DBB0-");
+```
+
+Tutaj tworzymy żądanie do adresu URL zawierającego kod HTML, który chcemy przekonwertować. Upewnij się, że zastąpisz adres URL tym, którego zamierzasz użyć.
+
+## Krok 3: Ustaw dane uwierzytelniające (jeśli wymagane)
+
+Jeśli serwer wymaga danych uwierzytelniających, aby uzyskać dostęp do treści, musimy je ustawić. Robi się to za pomocą`CredentialCache.DefaultCredentials`.
+
+```csharp
+request.Credentials = CredentialCache.DefaultCredentials;
+```
+
+ Ten wiersz zapewnia, że żądanie używa domyślnych poświadczeń bieżącego użytkownika. Jeśli musisz podać konkretne poświadczenia, możesz utworzyć nowe`NetworkCredential` obiekt.
+
+## Krok 4: Uzyskaj odpowiedź
+
+Teraz, gdy skonfigurowaliśmy nasze żądanie, pora na uzyskanie odpowiedzi z serwera.
+
+```csharp
+HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+```
+
+Ta linia wysyła żądanie i czeka na odpowiedź serwera. Jeśli wszystko pójdzie dobrze, otrzymamy potrzebną nam zawartość HTML.
+
+## Krok 5: Odczytaj strumień odpowiedzi
+
+ Gdy już otrzymamy odpowiedź, musimy odczytać treść zwróconą przez serwer. Robi się to za pomocą`StreamReader`.
+
+```csharp
+Stream dataStream = response.GetResponseStream();
+StreamReader reader = new StreamReader(dataStream);
+string responseFromServer = reader.ReadToEnd();
+reader.Close();
+dataStream.Close();
+response.Close();
+```
+
+ Tutaj odczytujemy całą zawartość strumienia odpowiedzi do zmiennej ciągu o nazwie`responseFromServer`. Nie zapomnij zamknąć czytnika i strumienia, aby zwolnić zasoby.
+
+## Krok 6: Konwersja HTML do PDF
+
+Teraz nadchodzi ekscytująca część! Przekonwertujemy zawartość HTML na dokument PDF za pomocą Aspose.PDF.
 
 ```csharp
 MemoryStream stream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(responseFromServer));
-
 HtmlLoadOptions options = new HtmlLoadOptions("http://Mój.signchart.com/");
 options.ExternalResourcesCredentials = CredentialCache.DefaultCredentials;
 
-// Załaduj plik HTML
 Document pdfDocument = new Document(stream, options);
 ```
 
-## Krok 3: Zapisanie wynikowego pliku PDF
-Na koniec zapiszemy powstały plik PDF. Użyj następującego kodu:
+ tym kroku tworzymy`MemoryStream` z zawartości HTML i konfiguracji`HtmlLoadOptions`. Pozwala nam to określić bazowy adres URL dla wszelkich zasobów zewnętrznych (takich jak obrazy lub arkusze stylów), do których może odwoływać się kod HTML.
+
+## Krok 7: Zapisz dokument PDF
+
+Na koniec musimy zapisać wygenerowany dokument PDF w określonym katalogu.
 
 ```csharp
-// Zapisz wynikowy plik PDF
 pdfDocument.Save(dataDir + "ProvideCredentialsDuringHTMLToPDF_out.pdf");
 ```
 
- Powyższy kod zapisuje wynikowy plik PDF z nazwą pliku`"ProvideCredentialsDuringHTMLToPDF_out.pdf"`.
-
-### Przykładowy kod źródłowy dla podawania poświadczeń podczas HTML do formatu PDF przy użyciu Aspose.PDF dla .NET
-
-```csharp
-try
-{
-	
-	// Ścieżka do katalogu dokumentów.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-	// Utwórz żądanie dotyczące adresu URL.
-	WebRequest request = WebRequest.Create("http:// My.signchart.com/Report/PrintBook.asp?ProjectGuid=6FB9DBB0-");
-	// Jeśli serwer tego wymaga, ustaw poświadczenia.
-	request.Credentials = CredentialCache.DefaultCredentials;
-	// Uzyskaj odpowiedź.
-	HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-
-	// Pobierz strumień zawierający treść zwróconą przez serwer.
-	Stream dataStream = response.GetResponseStream();
-	// Otwórz strumień za pomocą StreamReadera, aby uzyskać łatwy dostęp.
-	StreamReader reader = new StreamReader(dataStream);
-	// Przeczytaj treść.
-	string responseFromServer = reader.ReadToEnd();
-	reader.Close();
-	dataStream.Close();
-	response.Close();
-
-	MemoryStream stream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(responseFromServer));
-
-	HtmlLoadOptions options = new HtmlLoadOptions("http:// Mój.signchart.com/");
-	options.ExternalResourcesCredentials = CredentialCache.DefaultCredentials;
-
-	// Załaduj plik HTML
-	Document pdfDocument = new Document(stream, options);
-	// Zapisz wynikowy plik
-	pdfDocument.Save("ProvideCredentialsDuringHTMLToPDF_out.pdf");
-	
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+ Ten wiersz zapisuje plik PDF pod nazwą`ProvideCredentialsDuringHTMLToPDF_out.pdf` w katalogu, który określiliśmy wcześniej.
 
 ## Wniosek
-tym samouczku omówiliśmy krok po kroku proces konwersji pliku HTML do formatu PDF, jednocześnie podając dane uwierzytelniające podczas uzyskiwania dostępu do bezpiecznego adresu URL za pomocą Aspose.PDF dla .NET. Postępując zgodnie z instrukcjami opisanymi powyżej, będziesz mógł pomyślnie przekonwertować zawartość HTML na format PDF, podając jednocześnie prawidłowe dane uwierzytelniające.
 
-### Często zadawane pytania
+I masz! Udało Ci się przekonwertować HTML na PDF za pomocą Aspose.PDF dla .NET, podając jednocześnie poświadczenia dla bezpiecznego dostępu. Ta potężna biblioteka ułatwia obsługę dokumentów PDF, a za pomocą zaledwie kilku linijek kodu możesz generować profesjonalnie wyglądające pliki PDF z treści HTML. 
 
-#### P: Co to jest Aspose.PDF dla .NET?
+## Najczęściej zadawane pytania
 
-O: Aspose.PDF dla .NET to solidna biblioteka, która umożliwia programistom pracę z dokumentami PDF w aplikacjach C#. Oferuje szeroką gamę funkcjonalności, w tym konwersję HTML do PDF.
+### Czym jest Aspose.PDF dla .NET?
+Aspose.PDF for .NET to biblioteka umożliwiająca programistom tworzenie, edytowanie i konwertowanie dokumentów PDF w aplikacjach .NET.
 
-#### P: Jak mogę pobrać bezpieczną treść HTML z adresu URL?
+### Jak zainstalować Aspose.PDF?
+ Możesz zainstalować Aspose.PDF za pomocą Menedżera pakietów NuGet w programie Visual Studio lub pobrać go ze strony[strona internetowa](https://releases.aspose.com/pdf/net/).
 
- O: Aby pobrać bezpieczną zawartość HTML z adresu URL, możesz użyć metody`WebRequest` klasa w języku C#. Upewnij się, że ustawiłeś odpowiednie poświadczenia za pomocą`Credentials` nieruchomość.
+### Czy mogę używać Aspose.PDF bezpłatnie?
+Tak, Aspose oferuje bezpłatną wersję próbną, dzięki której możesz sprawdzić bibliotekę przed zakupem.
 
-#### P: Jakie są wymagania wstępne dotyczące tego samouczka?
+### Jakie typy dokumentów mogę tworzyć za pomocą Aspose.PDF?
+Za pomocą Aspose.PDF można tworzyć szeroką gamę dokumentów, w tym raporty, faktury i formularze.
 
-O: Przed kontynuowaniem samouczka upewnij się, że spełnione są następujące wymagania wstępne:
-
-- Podstawowa znajomość języka programowania C#.
-- Biblioteka Aspose.PDF dla .NET zainstalowana w Twoim systemie.
-- Środowisko programistyczne, takie jak Visual Studio.
-
-#### P: W jaki sposób Aspose.PDF dla .NET obsługuje zasoby zewnętrzne podczas konwersji HTML na PDF?
-
- Odp.: Aspose.PDF dla .NET zapewnia`HtmlLoadOptions`klasa do obsługi zasobów zewnętrznych podczas konwersji HTML na PDF. Możesz ustawić poświadczenia zasobów zewnętrznych za pomocą`ExternalResourcesCredentials` nieruchomość.
-
-#### P: Czy mogę dostosować nazwę wynikowego pliku PDF?
-
- O: Tak, możesz dostosować nazwę wynikowego pliku PDF, modyfikując kod, który zapisuje dokument PDF. Po prostu zmień żądaną nazwę pliku w`pdfDocument.Save()` metoda.
+### Gdzie mogę znaleźć pomoc dotyczącą Aspose.PDF?
+ Wsparcie i zadawanie pytań można znaleźć na stronie[Forum wsparcia Aspose](https://forum.aspose.com/c/pdf/10).

@@ -1,17 +1,17 @@
 ---
 title: Perbarui Warna Teks Tautan Dalam File PDF
 linktitle: Perbarui Warna Teks Tautan Dalam File PDF
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Pelajari cara memperbarui warna teks tautan dalam file PDF dengan Aspose.PDF untuk .NET.
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara memperbarui warna teks tautan dalam berkas PDF dengan Aspose.PDF untuk .NET.
 type: docs
 weight: 130
 url: /id/net/programming-with-links-and-actions/update-link-text-color/
 ---
-Pelajari cara memperbarui warna teks tautan dalam file PDF menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah ini.
+Pelajari cara memperbarui warna teks tautan dalam berkas PDF menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah ini.
 
 ## Langkah 1: Menyiapkan lingkungan
 
-Pastikan Anda telah menyiapkan lingkungan pengembangan dengan proyek C# dan referensi Aspose.PDF yang sesuai.
+Pastikan Anda telah menyiapkan lingkungan pengembangan Anda dengan proyek C# dan referensi Aspose.PDF yang sesuai.
 
 ## Langkah 2: Memuat file PDF
 
@@ -26,7 +26,7 @@ Document doc = new Document(dataDir + "UpdateLinks.pdf");
 
 ## Langkah 3: Menavigasi Anotasi Tautan
 
-Ulangi semua anotasi tautan di halaman kedua dokumen menggunakan kode berikut:
+Ulangi semua anotasi tautan pada halaman kedua dokumen menggunakan kode berikut:
 
 ```csharp
 foreach(Annotation annotation in doc.Pages[1].Annotations)
@@ -62,7 +62,7 @@ doc.Save(dataDir);
 
 ## Langkah 5: Menampilkan hasilnya
 
-Tampilkan pesan bahwa warna teks anotasi tautan berhasil diperbarui dan tentukan lokasi file yang disimpan:
+Menampilkan pesan bahwa warna teks anotasi tautan berhasil diperbarui dan menentukan lokasi file yang disimpan:
 
 ```csharp
 Console.WriteLine("\nText color of link annotations updated successfully.\nFile saved to location: " + dataDir);
@@ -89,7 +89,7 @@ try
 			rect.URY += 10;
 			ta.TextSearchOptions = new TextSearchOptions(rect);
 			ta.Visit(doc.Pages[1]);
-			//Ubah warna teks.
+			//Mengubah warna teks.
 			foreach (TextFragment tf in ta.TextFragments)
 			{
 				tf.TextState.ForegroundColor = Color.Red;
@@ -109,44 +109,44 @@ catch (Exception ex)
 
 ## Kesimpulan
 
-Selamat! Anda sekarang tahu cara memperbarui warna teks tautan dalam file PDF menggunakan Aspose.PDF untuk .NET. Gunakan pengetahuan ini untuk menyesuaikan tampilan tautan Anda di dokumen PDF.
+Selamat! Kini Anda tahu cara memperbarui warna teks tautan dalam berkas PDF menggunakan Aspose.PDF untuk .NET. Gunakan pengetahuan ini untuk menyesuaikan tampilan tautan Anda dalam dokumen PDF.
 
-Sekarang setelah Anda menyelesaikan panduan ini, Anda dapat menerapkan konsep ini ke proyek Anda sendiri dan menjelajahi lebih jauh fitur yang ditawarkan oleh Aspose.PDF untuk .NET.
+Sekarang setelah Anda menyelesaikan panduan ini, Anda dapat menerapkan konsep-konsep ini ke proyek Anda sendiri dan mengeksplorasi lebih lanjut fitur-fitur yang ditawarkan oleh Aspose.PDF untuk .NET.
 
 ### FAQ untuk memperbarui warna teks tautan dalam file PDF 
 
-#### T: Mengapa saya ingin memperbarui warna teks link dalam dokumen PDF?
+#### T: Mengapa saya ingin memperbarui warna teks tautan dalam dokumen PDF?
 
-J: Memperbarui warna teks tautan memungkinkan Anda menekankan dan menyesuaikan tampilan hyperlink dalam dokumen PDF Anda secara visual, menjadikannya lebih terlihat dan meningkatkan pengalaman pengguna.
+A: Memperbarui warna teks tautan memungkinkan Anda untuk menekankan dan menyesuaikan tampilan hyperlink secara visual dalam dokumen PDF Anda, membuatnya lebih terlihat dan meningkatkan pengalaman pengguna.
 
-#### T: Apa manfaat mengubah warna teks tautan terhadap pengalaman pengguna?
+#### T: Bagaimana mengubah warna teks tautan memberikan manfaat bagi pengalaman pengguna?
 
-J: Mengubah warna teks tautan dapat membantu pengguna dengan mudah mengidentifikasi dan berinteraksi dengan elemen yang dapat diklik, sehingga meningkatkan navigasi dan keterlibatan dalam dokumen PDF.
+A: Mengubah warna teks tautan dapat membantu pengguna dengan mudah mengidentifikasi dan berinteraksi dengan elemen yang dapat diklik, meningkatkan navigasi dan keterlibatan dalam dokumen PDF.
 
-#### T: Dapatkah saya mengubah warna teks pada tautan tertentu atau semua tautan dalam dokumen?
+#### T: Dapatkah saya mengubah warna teks tautan tertentu atau semua tautan dalam dokumen?
 
-A: Tutorial ini berfokus pada mengubah warna teks pada link tertentu. Namun, Anda dapat memodifikasi kode yang disediakan untuk mengulangi semua anotasi tautan jika Anda ingin mengubah warna teks semua tautan.
+A: Tutorial ini berfokus pada perubahan warna teks pada tautan tertentu. Namun, Anda dapat mengubah kode yang diberikan untuk mengulangi semua anotasi tautan jika Anda ingin mengubah warna teks pada semua tautan.
 
 ####  T: Apa yang dimaksud dengan`TextFragmentAbsorber` class do in the provided code?
 
- J: Itu`TextFragmentAbsorber` kelas digunakan untuk mencari fragmen teks dalam wilayah tertentu, yang dalam hal ini sesuai dengan area anotasi tautan. Ini membantu mengidentifikasi dan menargetkan teks yang terkait dengan tautan.
+ Sebuah:`TextFragmentAbsorber` Kelas digunakan untuk mencari fragmen teks dalam wilayah tertentu, yang dalam kasus ini sesuai dengan area anotasi tautan. Kelas ini membantu mengidentifikasi dan menargetkan teks yang terkait dengan tautan.
 
-#### T: Bagaimana cara menyesuaikan ukuran area yang dipertimbangkan untuk mengubah warna teks?
+#### T: Bagaimana saya dapat menyesuaikan ukuran area yang dipertimbangkan untuk mengubah warna teks?
 
- A: Ukuran area disesuaikan dengan memodifikasi`rect` objek dalam kode yang disediakan. Anda dapat mengubah koordinat untuk memperluas atau memperkecil area pencarian di sekitar anotasi tautan.
+ A: Ukuran area disesuaikan dengan memodifikasi`rect` objek dalam kode yang diberikan. Anda dapat mengubah koordinat untuk memperluas atau mempersempit area pencarian di sekitar anotasi tautan.
 
-#### Q: Bisakah saya mengubah warna teks menjadi warna selain merah?
+#### T: Bisakah saya mengubah warna teks menjadi warna selain merah?
 
- A: Ya, Anda dapat menyesuaikan warna teks dengan memodifikasi`tf.TextState.ForegroundColor` Properti. Anda dapat mengaturnya ke warna apa pun yang diinginkan menggunakan`Color` kelas dari namespace System.Drawing.
+ A: Ya, Anda dapat menyesuaikan warna teks dengan memodifikasi`tf.TextState.ForegroundColor` properti. Anda dapat mengaturnya ke warna yang diinginkan menggunakan`Color` kelas dari namespace System.Drawing.
 
 #### T: Apakah ada batasan dalam mengubah warna teks tautan?
 
-J: Mengubah warna teks tautan hanya sebatas mengubah tampilannya. Ini tidak mempengaruhi tujuan atau perilaku tautan.
+A: Mengubah warna teks tautan hanya terbatas pada perubahan tampilannya. Perubahan ini tidak memengaruhi tujuan atau perilaku tautan.
 
-#### T: Bagaimana cara menguji apakah warna teks anotasi tautan telah berhasil diperbarui?
+#### T: Bagaimana saya dapat menguji apakah warna teks anotasi tautan telah berhasil diperbarui?
 
-J: Setelah menerapkan kode yang disediakan untuk memperbarui warna teks, buka file PDF yang dimodifikasi dan verifikasi bahwa warna teks dari tautan yang ditentukan telah berubah seperti yang diharapkan.
+A: Setelah menerapkan kode yang disediakan untuk memperbarui warna teks, buka file PDF yang dimodifikasi dan verifikasi bahwa warna teks dari tautan yang ditentukan telah berubah seperti yang diharapkan.
 
-#### T: Apakah ada cara untuk mengembalikan warna teks tautan ke warna aslinya?
+#### T: Apakah ada cara untuk mengembalikan warna teks tautan ke warna asli?
 
-J: Ya, Anda dapat memodifikasi kode untuk menyimpan warna teks asli sebelum memperbaruinya dan kemudian menggunakan informasi tersebut untuk mengembalikan warna teks jika diperlukan.
+A: Ya, Anda dapat mengubah kode untuk menyimpan warna teks asli sebelum memperbaruinya, lalu menggunakan informasi tersebut untuk mengembalikan warna teks jika diperlukan.

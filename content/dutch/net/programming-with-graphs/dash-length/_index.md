@@ -1,19 +1,19 @@
 ---
-title: Dash-lengte
-linktitle: Dash-lengte
+title: Lengte streepje
+linktitle: Lengte streepje
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u de lengte van streepjes instelt met Aspose.PDF voor .NET. Stapsgewijze handleiding om streepjespatronen aan te passen.
+description: Leer hoe u de lengte van streepjes instelt met Aspose.PDF voor .NET. Stapsgewijze handleiding voor het aanpassen van streepjespatronen.
 type: docs
 weight: 70
 url: /nl/net/programming-with-graphs/dash-length/
 ---
-In deze zelfstudie leiden we u stap voor stap door de volgende C#-broncode om de lengte van streepjes in te stellen met Aspose.PDF voor .NET.
+In deze tutorial leiden we u stap voor stap door de volgende C#-broncode om de lengte van streepjes in te stellen met Aspose.PDF voor .NET.
 
-Zorg ervoor dat u de Aspose.PDF-bibliotheek hebt geïnstalleerd en uw ontwikkelomgeving hebt ingesteld voordat u begint. Daarnaast heb je basiskennis van programmeren in C#.
+Zorg ervoor dat u de Aspose.PDF-bibliotheek hebt geïnstalleerd en uw ontwikkelomgeving hebt ingesteld voordat u begint. Heb ook basiskennis van C#-programmering.
 
-## Stap 1: Documentmap instellen
+## Stap 1: Documentdirectory instellen
 
-In de meegeleverde broncode moet u de map opgeven waarin u het resulterende PDF-bestand wilt opslaan. Wijzig de variabele "dataDir" in de gewenste map.
+In de meegeleverde broncode moet u de directory opgeven waar u het resulterende PDF-bestand wilt opslaan. Wijzig de variabele "dataDir" naar de gewenste directory.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -21,7 +21,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## Stap 2: Een documentobject instantiëren en een pagina toevoegen
 
-We maken een exemplaar van de klasse Document en voegen een pagina toe aan dit document.
+We maken een instantie van de klasse Document en voegen een pagina toe aan dit document.
 
 ```csharp
 Document doc = new Document();
@@ -50,7 +50,7 @@ line.GraphInfo.DashPhase = 1;
 
 ## Stap 5: De lijn toevoegen aan het grafiekobject
 
-We voegen de lijn toe aan de vormcollectie van het Graph-object.
+We voegen de lijn toe aan de vormverzameling van het Graph-object.
 
 ```csharp
 canvas.Shapes.Add(line);
@@ -58,35 +58,35 @@ canvas.Shapes.Add(line);
 
 ## Stap 6: Het resulterende PDF-bestand opslaan
 
-Ten slotte slaan we het resulterende PDF-bestand op met de naam "DashLength_out.pdf" in de opgegeven map.
+Ten slotte slaan we het resulterende PDF-bestand op onder de naam "DashLength_out.pdf" in de opgegeven directory.
 
 ```csharp
 doc.Save(dataDir + "DashLength_out.pdf");
 ```
 
-### Voorbeeldbroncode voor Dash Length met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor Dash Length met behulp van Aspose.PDF voor .NET 
 
 ```csharp
 
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantie van documentinstantie
+// Instantieer Document-instantie
 Document doc = new Document();
 // Pagina toevoegen aan paginaverzameling van Document-object
 Page page = doc.Pages.Add();
-// Maak een tekenobject met bepaalde afmetingen
+// Tekenobject met bepaalde afmetingen maken
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
-// Voeg een tekenobject toe aan de alineaverzameling van een pagina-instantie
+// Tekenobject toevoegen aan alineaverzameling van pagina-instantie
 page.Paragraphs.Add(canvas);
 // Lijnobject maken
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { 100, 100, 200, 100 });
-// Kleur instellen voor lijnobject
+// Kleur instellen voor Lijn-object
 line.GraphInfo.Color = Aspose.Pdf.Color.Red;
-// Geef een dash-array op voor het lijnobject
+// Geef een dash-array op voor een lijnobject
 line.GraphInfo.DashArray = new int[] { 0, 1, 0 };
-// Stel de streepjesfase in voor Line-instantie
+// Stel de streepjesfase in voor het Line-exemplaar
 line.GraphInfo.DashPhase = 1;
-// Voeg een lijn toe aan de vormenverzameling van tekenobjecten
+// Lijn toevoegen aan vormenverzameling van tekenobject
 canvas.Shapes.Add(line);
 dataDir = dataDir + "DashLength_out.pdf";
 // PDF-document opslaan
@@ -97,30 +97,30 @@ Console.WriteLine("\nLength dashed successfully in black and white.\nFile saved 
 
 ## Conclusie
 
-In deze tutorial hebben we uitgelegd hoe je de lengte van streepjes instelt met Aspose.PDF voor .NET. Nu kunt u deze kennis gebruiken om lijnen met aangepaste streepjespatronen in uw PDF-bestanden te maken.
+In deze tutorial hebben we uitgelegd hoe u de lengte van streepjes instelt met Aspose.PDF voor .NET. Nu kunt u deze kennis gebruiken om lijnen met aangepaste streepjespatronen in uw PDF-bestanden te maken.
 
 ## Veelgestelde vragen
 
-#### Vraag: Wat is het doel van deze tutorial?
+#### V: Wat is het doel van deze tutorial?
 
-A: Het doel van deze tutorial is om u te begeleiden bij het instellen van de lengte van streepjes voor lijnen met behulp van Aspose.PDF voor .NET. U leert hoe u lijnen met aangepaste streepjespatronen in uw PDF-bestanden kunt maken.
+A: Het doel van deze tutorial is om u te begeleiden door het proces van het instellen van de lengte van streepjes voor lijnen met behulp van Aspose.PDF voor .NET. U leert hoe u lijnen met aangepaste streepjespatronen in uw PDF-bestanden kunt maken.
 
-#### Vraag: Welke vereisten zijn vereist voordat u begint?
+#### V: Aan welke voorwaarden moet ik voldoen voordat ik kan beginnen?
 
-A: Voordat u begint, moet u ervoor zorgen dat u de Aspose.PDF-bibliotheek hebt geïnstalleerd en uw ontwikkelomgeving hebt ingesteld. Een basiskennis van programmeren in C# wordt ook aanbevolen.
+A: Voordat u begint, moet u ervoor zorgen dat u de Aspose.PDF-bibliotheek hebt geïnstalleerd en uw ontwikkelomgeving hebt ingesteld. Een basiskennis van C#-programmering wordt ook aanbevolen.
 
-#### Vraag: Hoe geef ik de map op waarin het PDF-bestand moet worden opgeslagen?
+#### V: Hoe geef ik de map op waar het PDF-bestand moet worden opgeslagen?
 
 A: Wijzig de variabele "dataDir" in de meegeleverde broncode om de map aan te geven waar u het resulterende PDF-bestand wilt opslaan.
 
-#### Vraag: Hoe maak ik een lijn met aangepaste streepjespatronen?
+#### V: Hoe maak ik een lijn met aangepaste streepjespatronen?
 
- A: In de tutorial wordt gedemonstreerd hoe u een Line-object maakt en de kleur, streepjesreeks en streepjesfase configureert met behulp van de`GraphInfo` voorwerp. Wijzig deze instellingen om het gewenste streepjespatroon te bereiken.
+ A: De tutorial laat zien hoe je een Line-object kunt maken en de kleur, de streepjesmatrix en de streepjesfase kunt configureren met behulp van de`GraphInfo` object. Wijzig deze instellingen om het gewenste streepjespatroon te verkrijgen.
 
-#### Vraag: Kan ik de kleur van de lijn aanpassen?
+#### V: Kan ik de kleur van de lijn aanpassen?
 
  A: Ja, u kunt de kleur van de lijn aanpassen door de`Color` eigendom van de`GraphInfo` object dat aan de lijn is gekoppeld.
 
-#### Vraag: Hoe bewaar ik het PDF-document nadat ik de streepjeslengte heb ingesteld?
+#### V: Hoe kan ik het PDF-document opslaan nadat ik de streepjeslengte heb ingesteld?
 
- A: Nadat u het Line-object met het gewenste streepjespatroon hebt geconfigureerd, kunt u het resulterende PDF-document opslaan met behulp van de`doc.Save(dataDir + "DashLength_out.pdf");` regel in de opgegeven broncode.
+ A: Nadat u het Line-object hebt geconfigureerd met het gewenste streepjespatroon, kunt u het resulterende PDF-document opslaan met behulp van de`doc.Save(dataDir + "DashLength_out.pdf");` regel in de meegeleverde broncode.

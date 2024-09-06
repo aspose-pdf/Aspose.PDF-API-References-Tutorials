@@ -6,7 +6,7 @@ weight: 17
 url: /hu/net/programming-with-security-and-signatures/
 description: A Programozás biztonsággal és aláírásokkal oktatóanyaga megtanítja Önnek, hogyan biztonságossá és aláírhatja PDF-dokumentumait, biztosítva a bizalmasságot és a hitelességet.
 ---
-Programozás a Biztonsággal és aláírásokkal oktatóanyaga végigvezeti a PDF-dokumentumok biztonsági és aláírási funkcióin. Megtanulja, hogyan védheti meg PDF-fájljait jelszavakkal, hogyan adhat hozzá digitális aláírást és ellenőrizheti az aláírt dokumentumok sértetlenségét.
+Programozás a Biztonsággal és aláírásokkal oktatóanyaga végigvezeti a PDF-dokumentumok biztonsági és aláírási funkcióin. Megtanulja, hogyan védheti meg PDF-fájljait jelszavakkal, hogyan adhat hozzá digitális aláírást és ellenőrizze az aláírt dokumentumok sértetlenségét.
 
 Az oktatóanyag részletes áttekintést nyújt a PDF-fájlok titkosságának és hitelességének biztosítására szolgáló módszerekről és technikákról. Megtudhatja, hogyan kezelheti a digitális tanúsítványokat, hogyan adhat hozzá biztonsági engedélyeket, hogyan alkalmazhat biztonsági házirendeket stb. Ezen oktatóanyagok segítségével megbízhatóan és professzionálisan védheti PDF-dokumentumait.
 

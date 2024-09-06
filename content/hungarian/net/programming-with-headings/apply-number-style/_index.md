@@ -13,7 +13,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy telepítette az Aspose.PDF k�
 
 ### 1. lépés: Dokumentumkönyvtár beállítása
 
-A megadott forráskódban meg kell adnia azt a könyvtárat, ahová a generált PDF fájlt menteni szeretné. Módosítsa a "dataDir" változót a kívánt könyvtárra.
+megadott forráskódban meg kell adnia azt a könyvtárat, ahová a generált PDF fájlt menteni szeretné. Módosítsa a "dataDir" változót a kívánt könyvtárra.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -207,7 +207,7 @@ V: Ha számozási stílusú címsorokat szeretne hozzáadni a PDF-dokumentumhoz,
 
 #### K: Hogyan menthetem el a létrehozott PDF dokumentumot?
 
- V: A létrehozott PDF dokumentum mentéséhez használja a`Save` módszere a`pdfDoc` tárgy:
+ V: A létrehozott PDF dokumentum mentéséhez használja a`Save` módszere a`pdfDoc` objektum:
 
 ```csharp
 dataDir = dataDir + "ApplyNumberStyle_out.pdf";
@@ -225,4 +225,4 @@ V: Nyissa meg a létrehozott PDF-fájlt, és ellenőrizze, hogy a megadott szám
 
 #### K: Alkalmazhatok különböző számozási stílusokat a dokumentum különböző szakaszaira?
 
-V: Igen, többféle számozási stílust is alkalmazhat a dokumentum különböző szakaszaira, ha több példányt hoz létre`Heading` különböző stílusú és sorozatú objektumok.
+ V: Igen, többféle számozási stílust is alkalmazhat a dokumentum különböző szakaszaira, ha több példányt hoz létre`Heading` különböző stílusú és sorozatú objektumok.

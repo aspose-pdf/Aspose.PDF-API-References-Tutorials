@@ -1,26 +1,26 @@
 ---
 title: Zamień stronę tekstową w pliku PDF
 linktitle: Zamień stronę tekstową w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak zamienić tekst na określonej stronie w pliku PDF przy użyciu Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak zastąpić tekst na określonej stronie w pliku PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 370
 url: /pl/net/programming-with-text/replace-text-page/
 ---
-W tym samouczku wyjaśniono, jak używać Aspose.PDF dla .NET do zamiany tekstu na określonej stronie w pliku PDF. Dostarczony kod źródłowy języka C# demonstruje proces krok po kroku.
+Ten samouczek wyjaśnia, jak używać Aspose.PDF dla .NET do zastępowania tekstu na określonej stronie w pliku PDF. Dostarczony kod źródłowy C# demonstruje proces krok po kroku.
 
-## Warunki wstępne
+## Wymagania wstępne
 
-Przed kontynuowaniem samouczka upewnij się, że posiadasz następujące elementy:
+Przed przystąpieniem do samouczka upewnij się, że posiadasz następujące elementy:
 
 - Podstawowa znajomość języka programowania C#.
-- Zainstalowana biblioteka Aspose.PDF dla .NET. Możesz go uzyskać ze strony internetowej Aspose lub użyć NuGet, aby zainstalować go w swoim projekcie.
+- Aspose.PDF dla biblioteki .NET jest zainstalowany. Możesz go pobrać ze strony internetowej Aspose lub użyć NuGet, aby zainstalować go w swoim projekcie.
 
 ## Krok 1: Skonfiguruj projekt
 
-Zacznij od utworzenia nowego projektu C# w preferowanym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla .NET.
+Zacznij od utworzenia nowego projektu C# w preferowanym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla platformy .NET.
 
-## Krok 2: Zaimportuj niezbędne przestrzenie nazw
+## Krok 2: Importuj niezbędne przestrzenie nazw
 
 Dodaj następujące dyrektywy using na początku pliku C#, aby zaimportować wymagane przestrzenie nazw:
 
@@ -31,7 +31,7 @@ using Aspose.Pdf.Text;
 
 ## Krok 3: Załaduj dokument PDF
 
- Ustaw ścieżkę do katalogu dokumentów PDF i załaduj dokument za pomocą`Document` klasa:
+ Ustaw ścieżkę do katalogu dokumentu PDF i załaduj dokument za pomocą`Document` klasa:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -42,35 +42,35 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## Krok 4: Znajdź i zamień tekst
 
- Stwórz`TextFragmentAbsorber` obiekt, aby znaleźć wszystkie wystąpienia wprowadzonej frazy wyszukiwania:
+ Utwórz`TextFragmentAbsorber` obiekt, aby znaleźć wszystkie wystąpienia wprowadzonej frazy wyszukiwania:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 ```
 
- Zastępować`"text"` z rzeczywistym tekstem, który chcesz wyszukać i zastąpić.
+ Zastępować`"text"` z rzeczywistym tekstem, który chcesz wyszukać i zamienić.
 
 ## Krok 5: Określ stronę docelową
 
- Zaakceptuj absorber dla konkretnej strony, uzyskując dostęp do`Pages` zbiór`pdfDocument` obiekt i wywołanie`Accept` metoda:
+ Zaakceptuj absorber dla konkretnej strony, uzyskując dostęp do`Pages` kolekcja`pdfDocument` obiekt i wywołanie`Accept` metoda:
 
 ```csharp
 pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 ```
 
- Zastępować`2` z numerem strony, na której chcesz zastąpić tekst. Należy pamiętać, że numery stron są liczone od zera, więc`0` reprezentuje pierwszą stronę.
+ Zastępować`2` z numerem strony, na której chcesz zastąpić tekst. Należy pamiętać, że numery stron są zerowe, więc`0` reprezentuje pierwszą stronę.
 
 ## Krok 6: Pobierz wyodrębnione fragmenty tekstu
 
-Pobierz wyodrębnione fragmenty tekstu za pomocą metody`TextFragments` własność`TextFragmentAbsorber` obiekt:
+Pobierz wyodrębnione fragmenty tekstu za pomocą`TextFragments` własność`TextFragmentAbsorber` obiekt:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 ```
 
-## Krok 7: Iteruj po fragmentach tekstu
+## Krok 7: Przejrzyj fragmenty tekstu
 
-Przejrzyj pobrane fragmenty tekstu w pętli i zaktualizuj tekst oraz inne właściwości według potrzeb:
+Przejrzyj pobrane fragmenty tekstu i zaktualizuj tekst oraz inne właściwości zgodnie z potrzebami:
 
 ```csharp
 foreach (TextFragment textFragment in textFragmentCollection)
@@ -83,11 +83,11 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
- W powyższym fragmencie kodu zamień`"New Phrase"` z tekstem zastępczym, którego chcesz użyć. Można także dostosować inne właściwości, takie jak czcionka, rozmiar czcionki, kolor pierwszego planu i kolor tła.
+ W powyższym fragmencie kodu zamień`"New Phrase"` z tekstem zastępczym, którego chcesz użyć. Możesz również dostosować inne właściwości, takie jak czcionka, rozmiar czcionki, kolor pierwszego planu i kolor tła.
 
 ## Krok 8: Zapisz zmodyfikowany plik PDF
 
- Zapisz zmodyfikowany dokument PDF w nowym pliku za pomocą`Save` metoda:
+ Zapisz zmodyfikowany dokument PDF do nowego pliku za pomocą`Save` metoda:
 
 ```csharp
 pdfDocument.Save(dataDir + "ReplaceTextPage_out.pdf");
@@ -95,13 +95,13 @@ pdfDocument.Save(dataDir + "ReplaceTextPage_out.pdf");
 
  Pamiętaj o wymianie`"ReplaceTextPage_out.pdf"` z żądaną nazwą pliku wyjściowego.
 
-### Przykładowy kod źródłowy dla strony Zamień tekst przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Zamień stronę tekstową za pomocą Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Otwórz dokument
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
-// Utwórz obiekt TextAbsorber, aby znaleźć wszystkie wystąpienia wprowadzonej frazy wyszukiwania
+// Utwórz obiekt TextAbsorber, aby znaleźć wszystkie wystąpienia frazy wyszukiwania wejściowego
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 //Zaakceptuj absorber dla konkretnej strony
 pdfDocument.Pages[2].Accept(textFragmentAbsorber);
@@ -110,7 +110,7 @@ TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragmen
 // Przejrzyj fragmenty
 foreach (TextFragment textFragment in textFragmentCollection)
 {
-	// Zaktualizuj tekst i inne właściwości
+	// Aktualizuj tekst i inne właściwości
 	textFragment.Text = "New Phrase";
 	textFragment.TextState.Font = FontRepository.FindFont("Verdana");
 	textFragment.TextState.FontSize = 22;
@@ -122,32 +122,32 @@ pdfDocument.Save(dataDir + "ReplaceTextPage_out.pdf");
 
 ## Wniosek
 
-Gratulacje! Pomyślnie nauczyłeś się, jak zamienić tekst na określonej stronie dokumentu PDF przy użyciu Aspose.PDF dla .NET. Ten samouczek zawiera przewodnik krok po kroku, od załadowania dokumentu do zapisania zmodyfikowanej wersji. Możesz teraz włączyć ten kod do własnych projektów C#, aby zautomatyzować zastępowanie tekstu w plikach PDF.
+Gratulacje! Udało Ci się nauczyć, jak zastąpić tekst na określonej stronie dokumentu PDF za pomocą Aspose.PDF dla .NET. Ten samouczek zawiera przewodnik krok po kroku, od załadowania dokumentu do zapisania zmodyfikowanej wersji. Teraz możesz włączyć ten kod do własnych projektów C#, aby zautomatyzować zastępowanie tekstu w plikach PDF.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Jaki jest cel samouczka „Zamień stronę tekstową w pliku PDF”?
+#### P: Jaki jest cel poradnika „Zamień stronę tekstową w pliku PDF”?
 
-Odp.: Samouczek „Zamień stronę tekstową w pliku PDF” ma na celu poprowadzić Cię przez proces używania biblioteki Aspose.PDF dla .NET do zamiany tekstu na określonej stronie w pliku PDF. Zawiera przewodnik krok po kroku wraz z przykładowym kodem C#.
+A: Samouczek „Zamień stronę tekstową w pliku PDF” ma na celu przeprowadzenie Cię przez proces używania biblioteki Aspose.PDF dla .NET w celu zastąpienia tekstu na określonej stronie w pliku PDF. Zawiera przewodnik krok po kroku wraz z przykładowym kodem C#.
 
-#### P: Dlaczego miałbym chcieć zastąpić tekst na określonej stronie dokumentu PDF?
+#### P: Dlaczego miałbym chcieć zastąpić tekst na konkretnej stronie dokumentu PDF?
 
-O: Zastępowanie tekstu na określonej stronie jest przydatne, gdy trzeba zaktualizować zawartość określonej strony dokumentu PDF, pozostawiając inne strony nietknięte. Jest to powszechnie używane do wprowadzania ukierunkowanych zmian w zawartości określonej strony.
+A: Zastępowanie tekstu na określonej stronie jest przydatne, gdy trzeba zaktualizować zawartość na określonej stronie dokumentu PDF, pozostawiając inne strony nietknięte. Jest to powszechnie stosowane w celu wprowadzania ukierunkowanych zmian w zawartości określonej strony.
 
 #### P4: Jak skonfigurować projekt na potrzeby samouczka?
 
-O: Aby skonfigurować projekt:
+A: Aby skonfigurować projekt:
 
 1. Utwórz nowy projekt C# w preferowanym zintegrowanym środowisku programistycznym (IDE).
-2. Dodaj odwołanie do biblioteki Aspose.PDF dla .NET.
+2. Dodaj odwołanie do biblioteki Aspose.PDF dla platformy .NET.
 
 ####  P: Dlaczego`Aspose.Pdf` and `Aspose.Pdf.Text` namespaces imported?
 
-O: Te przestrzenie nazw są importowane, aby zapewnić dostęp do klas i metod udostępnianych przez bibliotekę Aspose.PDF, które są niezbędne do ładowania, modyfikowania i zapisywania dokumentów PDF, a także pracy z fragmentami tekstu.
+A: Te przestrzenie nazw są importowane, aby zapewnić dostęp do klas i metod udostępnianych przez bibliotekę Aspose.PDF, które są niezbędne do ładowania, modyfikowania i zapisywania dokumentów PDF, a także do pracy z fragmentami tekstu.
 
-#### P: Jak załadować dokument PDF przy użyciu Aspose.PDF?
+#### P: Jak wczytać dokument PDF za pomocą Aspose.PDF?
 
- Odp.: Możesz załadować dokument PDF za pomocą`Document` class i podanie ścieżki do pliku PDF:
+ A: Dokument PDF można załadować za pomocą`Document` klasa i określając ścieżkę do pliku PDF:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
@@ -155,22 +155,22 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
  Zastępować`"ReplaceTextPage.pdf"` z rzeczywistą nazwą pliku.
 
-#### P: Czy przy użyciu tej metody mogę zastąpić tekst na wielu stronach?
+#### P: Czy mogę zastąpić tekst na wielu stronach, stosując tę metodę?
 
- Odp.: Tak, możesz zastąpić tekst na wielu stronach, powtarzając proces dla każdej żądanej strony. Zmodyfikuj indeks strony (np.`pdfDocument.Pages[2]`), aby określić stronę, nad którą chcesz pracować.
+ A: Tak, możesz zastąpić tekst na wielu stronach, powtarzając proces dla każdej żądanej strony. Zmodyfikuj indeks strony (np.`pdfDocument.Pages[2]`) aby określić stronę, nad którą chcesz pracować.
 
-#### P: Co się stanie, jeśli chcę zastąpić tekst innym formatowaniem?
+#### P: Co zrobić, jeśli chcę zastąpić tekst innym formatowaniem?
 
- Odp.: Możesz zaktualizować właściwości pliku`TextFragment` obiektów, takich jak czcionka, rozmiar czcionki, kolor pierwszego planu i kolor tła, aby uzyskać żądane formatowanie zastępowanego tekstu.
+ A: Możesz zaktualizować właściwości`TextFragment` obiektów, takich jak czcionka, rozmiar czcionki, kolor pierwszego planu i kolor tła, aby uzyskać pożądane formatowanie zastępowanego tekstu.
 
-#### P: Co się stanie, jeśli wyszukiwane hasło nie zostanie znalezione na określonej stronie?
+#### P: Co się stanie, jeśli szukana fraza nie zostanie znaleziona na określonej stronie?
 
- Odp.: Jeśli wyszukiwana fraza nie zostanie znaleziona na określonej stronie, plik`TextFragmentCollection` będą puste i nie zostaną dokonane żadne zastąpienia. Upewnij się, że wyszukiwane hasło istnieje na stronie docelowej.
+ A: Jeżeli fraza wyszukiwania nie zostanie znaleziona na określonej stronie,`TextFragmentCollection` będzie pusty i nie zostaną dokonane żadne zamienniki. Upewnij się, że fraza wyszukiwania istnieje na stronie, do której kierujesz.
 
-#### P: Jak mogę dostosować tekst zastępczy dla każdego fragmentu tekstu?
+#### P: W jaki sposób mogę dostosować tekst zastępczy dla każdego fragmentu tekstu?
 
-Odp.: W pętli, która iteruje po`TextFragmentCollection` , możesz dostosować tekst zastępczy dla każdego z nich`TextFragment` indywidualnie, przypisując inny ciąg do`Text` nieruchomość.
+ A: W pętli, która iteruje przez`TextFragmentCollection` możesz dostosować tekst zastępczy dla każdego`TextFragment` indywidualnie, przypisując inny ciąg do`Text` nieruchomość.
 
-#### P: Czy można zastąpić tekst w oparciu o wyszukiwanie bez rozróżniania wielkości liter?
+#### P: Czy można zastąpić tekst w oparciu o wyszukiwanie bez uwzględniania wielkości liter?
 
- O: Tak, możesz przeprowadzić wyszukiwanie bez uwzględniania wielkości liter, modyfikując wzorzec wyrażenia regularnego. Możesz na przykład użyć`"text"` zamiast`"text"` w`TextFragmentAbsorber` konstruktor.
+ A: Tak, możesz wykonać wyszukiwanie bez uwzględniania wielkości liter, modyfikując wzorzec wyrażenia regularnego. Na przykład możesz użyć`"text"` zamiast`"text"` w`TextFragmentAbsorber` konstruktor.

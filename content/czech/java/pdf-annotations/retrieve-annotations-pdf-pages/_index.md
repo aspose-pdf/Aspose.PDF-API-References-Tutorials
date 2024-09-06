@@ -8,7 +8,7 @@ weight: 13
 url: /cs/java/pdf-annotations/retrieve-annotations-pdf-pages/
 ---
 
-## Úvod
+## Zavedení
 
 Ve světě zpracování dokumentů hrají soubory PDF zásadní roli. Jsou všestranným formátem pro sdílení a prezentaci informací. Soubory PDF však často obsahují anotace, které obsahují cenné informace. Tento článek se zabývá tím, jak načíst anotace ze stránek PDF pomocí Aspose.PDF for Java, výkonného rozhraní API pro manipulaci s PDF.
 
@@ -66,7 +66,7 @@ V tomto tutoriálu jsme prozkoumali, jak načíst anotace ze stránek PDF pomoc�
 
 ### Jak mohu nainstalovat Aspose.PDF pro Javu?
 
- Chcete-li nainstalovat Aspose.PDF pro Java, navštivte odkaz ke stažení na adrese[tady](https://releases.aspose.com/pdf/java/) a postupujte podle pokynů k instalaci uvedených na webových stránkách.
+ Chcete-li nainstalovat Aspose.PDF pro Java, navštivte odkaz ke stažení na adrese[zde](https://releases.aspose.com/pdf/java/) a postupujte podle pokynů k instalaci uvedených na webových stránkách.
 
 ### Mohu načíst anotace z konkrétních stránek v dokumentu PDF?
 Ano, anotace můžete načíst z konkrétních stránek v dokumentu PDF zadáním čísla stránky v kódu. Jednoduše načtěte dokument PDF a přejděte na požadovanou stránku pomocí`get_Item` metoda.

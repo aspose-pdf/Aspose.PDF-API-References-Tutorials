@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-text/replace-text-on-regular-expression/
 
 ## 第 1 步：設定文檔目錄
 
-將路徑設定為輸入 PDF 檔案所在的目錄。代替`"YOUR DOCUMENT DIRECTORY"`在裡面`dataDir`變數包含 PDF 檔案的路徑。
+將路徑設定為輸入 PDF 檔案所在的目錄。代替`"YOUR DOCUMENT DIRECTORY"`在`dataDir`變數包含 PDF 檔案的路徑。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -117,7 +117,7 @@ Console.WriteLine("\nText replaced successfully based on a regular expression.\n
 
 A：設定文檔目錄：
 
-1. 代替`"YOUR DOCUMENT DIRECTORY"`在裡面`dataDir`變數包含輸入 PDF 檔案所在目錄的路徑。
+1. 代替`"YOUR DOCUMENT DIRECTORY"`在`dataDir`變數包含輸入 PDF 檔案所在目錄的路徑。
 
 #### Q：如何根據 PDF 文件中的正規表示式替換文字？
 

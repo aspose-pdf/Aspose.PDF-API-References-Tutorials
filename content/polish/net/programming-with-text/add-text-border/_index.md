@@ -1,26 +1,26 @@
 ---
 title: Dodaj obramowanie tekstu w pliku PDF
 linktitle: Dodaj obramowanie tekstu w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak dodać ramkę tekstową do pliku PDF przy użyciu Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak dodać obramowanie tekstu w pliku PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 70
 url: /pl/net/programming-with-text/add-text-border/
 ---
-Ten samouczek poprowadzi Cię przez proces dodawania ramki tekstowej do pliku PDF przy użyciu Aspose.PDF dla .NET. Dostarczony kod źródłowy języka C# demonstruje niezbędne kroki.
+Ten samouczek przeprowadzi Cię przez proces dodawania obramowania tekstu w pliku PDF przy użyciu Aspose.PDF dla .NET. Dostarczony kod źródłowy C# demonstruje niezbędne kroki.
 
 ## Wymagania
-Zanim zaczniesz, upewnij się, że masz następujące elementy:
+Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
 
-- Visual Studio lub dowolny inny kompilator C# zainstalowany na twoim komputerze.
-- Aspose.PDF dla biblioteki .NET. Możesz pobrać go z oficjalnej strony Aspose lub użyć menedżera pakietów, takiego jak NuGet, aby go zainstalować.
+- Visual Studio lub inny kompilator C# zainstalowany na Twoim komputerze.
+- Aspose.PDF dla biblioteki .NET. Możesz pobrać ją z oficjalnej strony Aspose lub użyć menedżera pakietów, takiego jak NuGet, aby ją zainstalować.
 
 ## Krok 1: Skonfiguruj projekt
 1. Utwórz nowy projekt C# w preferowanym środowisku programistycznym.
-2. Dodaj odwołanie do biblioteki Aspose.PDF dla .NET.
+2. Dodaj odwołanie do biblioteki Aspose.PDF dla platformy .NET.
 
-## Krok 2: Zaimportuj wymagane przestrzenie nazw
-W pliku kodu, do którego chcesz dodać ramkę tekstową, dodaj następującą dyrektywę using na górze pliku:
+## Krok 2: Importuj wymagane przestrzenie nazw
+W pliku kodu, w którym chcesz dodać obramowanie tekstu, dodaj następującą dyrektywę using na górze pliku:
 
 ```csharp
 using Aspose.Pdf;
@@ -28,10 +28,10 @@ using Aspose.Pdf.Text;
 ```
 
 ## Krok 3: Ustaw katalog dokumentów
- W kodzie znajdź wiersz, który mówi`string dataDir = "YOUR DOCUMENT DIRECTORY";` i wymienić`"YOUR DOCUMENT DIRECTORY"` ze ścieżką do katalogu, w którym przechowywane są Twoje dokumenty.
+ W kodzie znajdź linię, która mówi`string dataDir = "YOUR DOCUMENT DIRECTORY";` i zastąpić`"YOUR DOCUMENT DIRECTORY"` ze ścieżką do katalogu, w którym przechowywane są Twoje dokumenty.
 
 ## Krok 4: Utwórz nowy obiekt Dokument
- Utwórz instancję nowego`Document` obiekt, dodając następujący wiersz kodu:
+ Utwórz nową instancję`Document` obiekt dodając następujący wiersz kodu:
 
 ```csharp
 Document pdfDocument = new Document();
@@ -45,7 +45,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
 ## Krok 6: Utwórz fragment tekstu
- Stwórz`TextFragment` obiekt i podaj żądany tekst. Ustaw pozycję fragmentu tekstu za pomocą`Position` nieruchomość. W dostarczonym kodzie tekst jest ustawiony na „tekst główny” i umieszczony na (100, 600) na stronie.
+ Utwórz`TextFragment` obiekt i podaj żądany tekst. Ustaw pozycję fragmentu tekstu za pomocą`Position` Własność. W podanym kodzie tekst jest ustawiony na „main text” i umieszczony na stronie w punkcie (100, 600).
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -53,7 +53,7 @@ textFragment.Position = new Position(100, 600);
 ```
 
 ## Krok 7: Ustaw właściwości tekstu
-Dostosuj właściwości tekstu, takie jak rozmiar czcionki, typ czcionki, kolor tła, kolor pierwszego planu itp. W dostarczonym kodzie dla fragmentu tekstu ustawiane są właściwości takie jak rozmiar czcionki, czcionka, kolor tła, kolor pierwszego planu i kolor obrysu.
+Dostosuj właściwości tekstu, takie jak rozmiar czcionki, rodzaj czcionki, kolor tła, kolor pierwszego planu itp. W dostarczonym kodzie właściwości, takie jak rozmiar czcionki, czcionka, kolor tła, kolor pierwszego planu i kolor obrysu, są ustawione dla fragmentu tekstu.
 
 ```csharp
 textFragment.TextState.FontSize = 12;
@@ -63,15 +63,15 @@ textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
 textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 ```
 
-## Krok 8: Włącz ramkę tekstową
- Aby włączyć ramkę tekstową, ustaw opcję`DrawTextRectangleBorder`właściwość fragmentu tekstu`TextState` Do`true`.
+## Krok 8: Włącz obramowanie tekstu
+ Aby włączyć obramowanie tekstu, ustaw`DrawTextRectangleBorder`właściwość fragmentu tekstu`TextState` Do`true`.
 
 ```csharp
 textFragment.TextState.DrawTextRectangleBorder = true;
 ```
 
 ## Krok 9: Dodaj fragment tekstu do strony
- Użyj`TextBuilder` klasa, aby dodać`TextFragment` sprzeciw wobec strony.
+ Użyj`TextBuilder` klasa do dodania`TextFragment` sprzeciw wobec strony.
 
 ```csharp
 TextBuilder tb = new TextBuilder(pdfPage);
@@ -79,19 +79,19 @@ tb.AppendText(textFragment);
 ```
 
 ## Krok 10: Zapisz dokument PDF
- Zapisz dokument PDF za pomocą`Save` metoda`Document` obiekt. Określ ścieżkę pliku wyjściowego ustawioną w kroku 3.
+ Zapisz dokument PDF za pomocą`Save` metoda`Document` obiekt. Określ ścieżkę pliku wyjściowego, którą ustawiłeś w kroku 3.
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
-### Przykładowy kod źródłowy dla opcji Dodaj obramowanie tekstu przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Dodaj obramowanie tekstu przy użyciu Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Utwórz nowy obiekt dokumentu
 Document pdfDocument = new Document();
-// Uzyskaj konkretną stronę
+// Pobierz konkretną stronę
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 // Utwórz fragment tekstu
 TextFragment textFragment = new TextFragment("main text");
@@ -101,7 +101,7 @@ textFragment.TextState.FontSize = 12;
 textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-// Ustaw właściwość StrokingColor do rysowania obramowania (obrysu) wokół prostokąta tekstowego
+// Ustaw właściwość StrokingColor do rysowania obramowania (obrysowywania) wokół prostokąta tekstowego
 textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 // Ustaw wartość właściwości DrawTextRectangleBorder na true
 textFragment.TextState.DrawTextRectangleBorder = true;
@@ -112,17 +112,17 @@ pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
 ## Wniosek
-Pomyślnie dodałeś ramkę tekstową do swojego dokumentu PDF przy użyciu Aspose.PDF dla .NET. Wynikowy plik PDF można teraz znaleźć pod określoną ścieżką pliku wyjściowego.
+Pomyślnie dodano obramowanie tekstu do dokumentu PDF przy użyciu Aspose.PDF dla .NET. Wynikowy plik PDF można teraz znaleźć w określonej ścieżce pliku wyjściowego.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Na czym skupia się głównie ten samouczek?
+#### P: Na czym głównie skupia się ten samouczek?
 
-Odp.: Ten samouczek poprowadzi Cię przez proces dodawania ramki tekstowej do pliku PDF przy użyciu biblioteki Aspose.PDF dla .NET. Dostarczony kod źródłowy języka C# przedstawia kroki niezbędne do osiągnięcia tego celu.
+A: Ten samouczek przeprowadzi Cię przez proces dodawania obramowania tekstu do pliku PDF przy użyciu biblioteki Aspose.PDF dla .NET. Dostarczony kod źródłowy C# demonstruje niezbędne kroki, aby to osiągnąć.
 
-#### P: Które przestrzenie nazw muszę zaimportować na potrzeby tego samouczka?
+#### P: Jakie przestrzenie nazw muszę zaimportować na potrzeby tego samouczka?
 
-Odp.: W pliku kodu, do którego chcesz dodać obramowanie tekstowe, zaimportuj na początku pliku następujące przestrzenie nazw:
+A: W pliku kodu, do którego chcesz dodać obramowanie tekstu, zaimportuj następujące przestrzenie nazw na początku pliku:
 
 ```csharp
 using Aspose.Pdf;
@@ -131,11 +131,11 @@ using Aspose.Pdf.Text;
 
 #### P: Jak określić katalog dokumentów?
 
- Odp.: W kodzie znajdź linię`string dataDir = "YOUR DOCUMENT DIRECTORY";` i wymienić`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do katalogu dokumentów.
+ A: W kodzie znajdź linię`string dataDir = "YOUR DOCUMENT DIRECTORY";` i zastąpić`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do katalogu dokumentów.
 
 #### P: Jak utworzyć obiekt Dokument?
 
- O: W kroku 4 utworzysz nową instancję`Document` obiekt za pomocą następującego wiersza kodu:
+ A: W kroku 4 utworzysz nową instancję`Document` obiekt używając następującego wiersza kodu:
 
 ```csharp
 Document pdfDocument = new Document();
@@ -143,7 +143,7 @@ Document pdfDocument = new Document();
 
 #### P: Jak dodać stronę do dokumentu?
 
- Odp.: W kroku 5 dodasz nową stronę do dokumentu za pomocą`Add` metoda`Pages` kolekcja:
+ A: W kroku 5 dodasz nową stronę do dokumentu za pomocą`Add` metoda`Pages` kolekcja:
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
@@ -151,16 +151,16 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 
 #### P: Jak utworzyć fragment tekstu i ustawić jego pozycję?
 
- O: W kroku 6 utworzysz plik`TextFragment`obiektu i ustaw jego pozycję na stronie za pomocą`Position` nieruchomość:
+ A: W kroku 6 utworzysz`TextFragment`obiekt i ustaw jego pozycję na stronie za pomocą`Position` nieruchomość:
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
 textFragment.Position = new Position(100, 600);
 ```
 
-#### P: Jak mogę dostosować właściwości tekstu, w tym obramowanie tekstu?
+#### P: W jaki sposób mogę dostosować właściwości tekstu, łącznie z obramowaniem tekstu?
 
-O: W kroku 7 dostosujesz różne właściwości tekstu, takie jak rozmiar czcionki, typ czcionki, kolor tła, kolor pierwszego planu i obramowanie tekstu:
+A: W kroku 7 dostosujesz różne właściwości tekstu, takie jak rozmiar czcionki, rodzaj czcionki, kolor tła, kolor pierwszego planu i obramowanie tekstu:
 
 ```csharp
 textFragment.TextState.FontSize = 12;
@@ -171,23 +171,23 @@ textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 textFragment.TextState.DrawTextRectangleBorder = true;
 ```
 
-#### P: Jak dodać fragment tekstu do dokumentu PDF?
+#### P: Jak dodać TextFragment do dokumentu PDF?
 
- O: W kroku 9 użyjesz metody`TextBuilder` klasa, aby dodać`TextFragment` obiekt do strony:
+ A: W kroku 9 użyjesz`TextBuilder` klasa do dodania`TextFragment` sprzeciw wobec strony:
 
 ```csharp
 TextBuilder tb = new TextBuilder(pdfPage);
 tb.AppendText(textFragment);
 ```
 
-#### P: Jak zapisać wynikowy dokument PDF?
+#### P: Jak zapisać powstały dokument PDF?
 
- Odp.: Po dodaniu tekstu z obramowaniem użyj opcji`Save` metoda`Document` obiekt, aby zapisać dokument PDF:
+ A: Po dodaniu tekstu z obramowaniem użyj`Save` metoda`Document` obiekt, aby zapisać dokument PDF:
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
-#### P: Jaki jest główny wniosek z tego samouczka?
+#### P: Jakie są najważniejsze wnioski z tego samouczka?
 
-Odp.: Wykonując ten samouczek, z powodzeniem nauczyłeś się, jak ulepszyć swój dokument PDF, dodając obramowanie tekstowe za pomocą Aspose.PDF dla .NET. Może to być szczególnie przydatne do podkreślania określonej zawartości tekstowej w plikach PDF.
+A: Postępując zgodnie z tym samouczkiem, nauczyłeś się, jak ulepszyć swój dokument PDF, dodając obramowanie tekstu za pomocą Aspose.PDF dla .NET. Może to być szczególnie przydatne do podkreślania określonej zawartości tekstowej w plikach PDF.

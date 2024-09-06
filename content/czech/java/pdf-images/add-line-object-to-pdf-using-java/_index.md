@@ -20,7 +20,7 @@ Než začneme, musíte se ujistit, že máte splněny následující předpoklad
 - Integrované vývojové prostředí (IDE) jako IntelliJ IDEA nebo Eclipse
 - Aspose.PDF pro knihovnu Java
 
- Knihovnu Aspose.PDF for Java si můžete stáhnout z[tady](https://releases.aspose.com/pdf/java/)Ujistěte se, že jste vybrali vhodnou verzi pro váš projekt.
+ Knihovnu Aspose.PDF for Java si můžete stáhnout z[zde](https://releases.aspose.com/pdf/java/)Ujistěte se, že jste vybrali vhodnou verzi pro váš projekt.
 
 ## Vytvoření projektu Java
 
@@ -119,4 +119,4 @@ Ano, do dokumentu PDF můžete přidat zakřivené čáry. Aspose.PDF pro Java p
 
 ### Kde najdu více informací o Aspose.PDF for Java?
 
-Na stránce dokumentace můžete najít komplexní dokumentaci a příklady pro Aspose.PDF pro Java[tady](https://reference.aspose.com/pdf/java/).
+Na stránce dokumentace můžete najít komplexní dokumentaci a příklady pro Aspose.PDF pro Java[zde](https://reference.aspose.com/pdf/java/).

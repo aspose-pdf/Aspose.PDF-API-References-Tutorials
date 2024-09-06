@@ -22,7 +22,7 @@ Aspose.PDF for Java 是一個強大且多功能的程式庫，可讓開發人員
 
 ## 設定項目
 
-在使用 Aspose.PDF for Java 之前，我們需要建立一個 Java 專案。按著這些次序：
+在使用 Aspose.PDF for Java 之前，我們需要建立一個 Java 專案。請依照下列步驟操作：
 
 - 在您選擇的 IDE 中建立一個新的 Java 專案。
 - 將 Aspose.PDF for Java 庫加入到專案的類別路徑中。

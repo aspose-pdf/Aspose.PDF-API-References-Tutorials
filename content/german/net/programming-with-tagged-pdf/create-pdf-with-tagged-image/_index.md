@@ -7,18 +7,18 @@ type: docs
 weight: 40
 url: /de/net/programming-with-tagged-pdf/create-pdf-with-tagged-image/
 ---
-In diesem Tutorial stellen wir Ihnen eine Schritt-für-Schritt-Anleitung zur Verfügung, wie Sie mit Aspose.PDF für .NET ein PDF-Dokument mit einem getaggten Bild erstellen. Aspose.PDF ist eine leistungsstarke Bibliothek, mit der Sie PDF-Dokumente programmgesteuert erstellen, bearbeiten und konvertieren können. Mithilfe der Strukturfunktionen für markierte Inhalte von Aspose.PDF können Sie markierte Bilder zu Ihrem PDF-Dokument hinzufügen.
+In diesem Tutorial geben wir Ihnen eine Schritt-für-Schritt-Anleitung zum Erstellen eines PDF-Dokuments mit einem getaggten Bild mithilfe von Aspose.PDF für .NET. Aspose.PDF ist eine leistungsstarke Bibliothek, mit der Sie PDF-Dokumente programmgesteuert erstellen, bearbeiten und konvertieren können. Mithilfe der getaggten Inhaltsstrukturfunktionen von Aspose.PDF können Sie getaggte Bilder zu Ihrem PDF-Dokument hinzufügen.
 
 ## Voraussetzungen
 
-Bevor Sie beginnen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
+Stellen Sie zunächst sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
 1. Visual Studio mit .NET Framework installiert.
 2. Die Aspose.PDF-Bibliothek für .NET.
 
-## Schritt 1: Projekteinrichtung
+## Schritt 1: Projekt-Setup
 
-Erstellen Sie zunächst ein neues Projekt in Visual Studio und fügen Sie einen Verweis auf die Aspose.PDF für .NET-Bibliothek hinzu. Sie können die Bibliothek von der offiziellen Website von Aspose herunterladen und auf Ihrem Computer installieren.
+Erstellen Sie zunächst ein neues Projekt in Visual Studio und fügen Sie einen Verweis auf die Aspose.PDF-Bibliothek für .NET hinzu. Sie können die Bibliothek von der offiziellen Aspose-Website herunterladen und auf Ihrem Computer installieren.
 
 ## Schritt 2: Importieren Sie die erforderlichen Namespaces
 
@@ -59,12 +59,12 @@ Verwenden Sie den folgenden Code, um das PDF-Dokument zu speichern:
 document.Save(dataDir + "PDFwithTaggedImage.pdf");
 ```
 
-Dieser Code speichert das PDF-Dokument mit dem getaggten Bild in einer angegebenen Datei.
+Dieser Code speichert das PDF-Dokument mit dem markierten Bild in einer angegebenen Datei.
 
-### Beispielquellcode für „PDF mit markiertem Bild erstellen“ mit Aspose.PDF für .NET 
+### Beispielquellcode zum Erstellen von PDFs mit markierten Bildern unter Verwendung von Aspose.PDF für .NET 
 ```csharp
 
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
@@ -84,46 +84,46 @@ document.Save(dataDir + "PDFwithTaggedImage.pdf");
 
 ## Abschluss
 
-In diesem Tutorial haben Sie gelernt, wie Sie mit Aspose.PDF für .NET ein PDF-Dokument mit einem getaggten Bild erstellen. Mit Tags versehene Bilder fügen Ihrem PDF-Dokument zusätzliche, strukturierte Informationen hinzu.
+In diesem Tutorial haben Sie gelernt, wie Sie mit Aspose.PDF für .NET ein PDF-Dokument mit einem getaggten Bild erstellen. Markierte Bilder fügen Ihrem PDF-Dokument zusätzliche, strukturierte Informationen hinzu.
 
-### FAQs
+### Häufig gestellte Fragen
 
 #### F: Was ist der Zweck der Erstellung eines PDF-Dokuments mit einem getaggten Bild mit Aspose.PDF für .NET?
 
-A: Wenn Sie mit Aspose.PDF für .NET ein PDF-Dokument mit einem getaggten Bild erstellen, können Sie dem Inhalt des Dokuments getaggte Bilder hinzufügen. Mit Tags versehene Bilder bieten strukturierte Informationen wie Alternativtext und Titel und verbessern so die Zugänglichkeit und Organisation.
+A: Wenn Sie mit Aspose.PDF für .NET ein PDF-Dokument mit einem getaggten Bild erstellen, können Sie getaggte Bilder zum Inhalt des Dokuments hinzufügen. Getaggte Bilder bieten strukturierte Informationen wie Alternativtext und Titel und verbessern so die Zugänglichkeit und Organisation.
 
-#### F: Wie unterstützt die Aspose.PDF-Bibliothek die Erstellung eines PDF-Dokuments mit einem getaggten Bild?
+#### F: Wie hilft die Aspose.PDF-Bibliothek beim Erstellen eines PDF-Dokuments mit einem getaggten Bild?
 
-A: Aspose.PDF für .NET ist eine robuste Bibliothek, die Funktionen zum programmgesteuerten Erstellen, Bearbeiten und Konvertieren von PDF-Dokumenten bietet. In diesem Tutorial werden die Strukturfunktionen der Bibliothek für getaggte Inhalte verwendet, um dem PDF-Dokument ein getaggtes Bild hinzuzufügen.
+A: Aspose.PDF für .NET ist eine robuste Bibliothek, die Funktionen zum programmgesteuerten Erstellen, Bearbeiten und Konvertieren von PDF-Dokumenten bietet. In diesem Tutorial werden die getaggten Inhaltsstrukturfunktionen der Bibliothek verwendet, um dem PDF-Dokument ein getaggtes Bild hinzuzufügen.
 
-#### F: Was sind die Voraussetzungen für die Erstellung eines PDF-Dokuments mit einem getaggten Bild mit Aspose.PDF für .NET?
+#### F: Was sind die Voraussetzungen zum Erstellen eines PDF-Dokuments mit einem getaggten Bild mit Aspose.PDF für .NET?
 
-A: Bevor Sie beginnen, stellen Sie sicher, dass Visual Studio mit dem .NET Framework installiert ist und dass in Ihrem Projekt auf die Aspose.PDF-Bibliothek für .NET verwiesen wird.
+A: Bevor Sie beginnen, stellen Sie sicher, dass Sie Visual Studio mit dem .NET-Framework installiert haben und dass in Ihrem Projekt auf die Aspose.PDF-Bibliothek für .NET verwiesen wird.
 
 #### F: Wie erstellt der bereitgestellte C#-Code ein PDF-Dokument mit einem getaggten Bild?
 
-A: Der Code zeigt, wie man ein PDF-Dokument erstellt, ein getaggtes Bildelement definiert und es dem Inhalt des Dokuments hinzufügt. Das getaggte Bild enthält mithilfe der von Aspose.PDF bereitgestellten Methoden Alternativtext, einen Titel und ein Tag.
+A: Der Code zeigt, wie man ein PDF-Dokument erstellt, ein getaggtes Bildelement definiert und es dem Inhalt des Dokuments hinzufügt. Das getaggte Bild enthält Alternativtext, einen Titel und ein Tag mit Methoden, die von Aspose.PDF bereitgestellt werden.
 
-#### F: Kann ich für das getaggte Bild unterschiedliche Bildformate verwenden?
+#### F: Kann ich für das getaggte Bild verschiedene Bildformate verwenden?
 
-A: Ja, Sie können für das getaggte Bild verschiedene Bildformate verwenden, z. B. JPEG, PNG, GIF usw. Das im Tutorial bereitgestellte Codebeispiel verwendet ein JPEG-Bild, Sie können es jedoch durch den Pfad zu einer Bilddatei in ersetzen Ihr bevorzugtes Format.
+A: Ja, Sie können für das markierte Bild verschiedene Bildformate verwenden, z. B. JPEG, PNG, GIF usw. Das im Tutorial bereitgestellte Codebeispiel verwendet ein JPEG-Bild, Sie können es jedoch durch den Pfad zu einer Bilddatei in Ihrem bevorzugten Format ersetzen.
 
 #### F: Wie wird der alternative Text (Alt-Text) in getaggten Bildern verwendet?
 
- A: Alt-Text bietet eine Textbeschreibung des Bildes, die von Bildschirmleseprogrammen für sehbehinderte Benutzer vorgelesen wird. Im bereitgestellten Code wird der Alternativtext mithilfe von festgelegt`AlternativeText` Eigentum der`IllustrationElement` Stellt das getaggte Bild dar.
+ A: Alternativtext bietet eine Textbeschreibung des Bildes, die von Bildschirmleseprogrammen für sehbehinderte Benutzer vorgelesen wird. Im bereitgestellten Code wird der Alternativtext mithilfe des`AlternativeText` Eigentum der`IllustrationElement` stellt das markierte Bild dar.
 
-####  F: Wie funktioniert das?`SetTitle` method contribute to the PDF document's tagged image?
+####  F: Wie funktioniert das`SetTitle` method contribute to the PDF document's tagged image?
 
- A: Die`SetTitle` Die Methode legt den Titel des getaggten Inhalts des PDF-Dokuments fest und stellt so zusätzlichen Kontext für das getaggte Bild bereit. Dieser Titel kann dabei helfen, den Zweck oder das Thema des getaggten Inhalts zu identifizieren.
+ A: Die`SetTitle` Die Methode legt den Titel des getaggten Inhalts des PDF-Dokuments fest und bietet zusätzlichen Kontext für das getaggte Bild. Dieser Titel kann dabei helfen, den Zweck oder das Thema des getaggten Inhalts zu identifizieren.
 
 #### F: Kann ich das Tag und den Titel des getaggten Bildes anpassen?
 
- A: Ja, Sie können das Tag und den Titel des getaggten Bildes mithilfe von anpassen`SetTag` Und`Title` Methoden der`IllustrationElement`. Das Codebeispiel zeigt, wie man das Tag auf „Abb“ und den Titel auf „Bild 1“ setzt.
+ A: Ja, Sie können das Tag und den Titel des getaggten Bildes anpassen, indem Sie`SetTag` Und`Title` Methoden der`IllustrationElement`Das Codebeispiel zeigt, wie das Tag auf „Abb.“ und der Titel auf „Bild 1“ gesetzt wird.
 
-#### F: Wie kann ich sicherstellen, dass das getaggte Bild zugänglich ist und den Barrierefreiheitsstandards entspricht?
+#### F: Wie kann ich sicherstellen, dass das markierte Bild zugänglich ist und den Zugänglichkeitsstandards entspricht?
 
-A: Indem Sie die Strukturfunktionen für getaggte Inhalte von Aspose.PDF verwenden und Alternativtext und andere relevante Informationen bereitstellen, tragen Sie zur Zugänglichkeit des getaggten Bildes bei. Um die Einhaltung der Barrierefreiheitsstandards sicherzustellen, müssen Best Practices für Alternativtext und Dokumentstruktur befolgt werden.
+A: Indem Sie die getaggten Inhaltsstrukturfunktionen von Aspose.PDF verwenden und Alternativtext und andere relevante Informationen bereitstellen, tragen Sie zur Zugänglichkeit des getaggten Bildes bei. Um die Einhaltung der Zugänglichkeitsstandards sicherzustellen, müssen Sie Best Practices für Alternativtext und Dokumentstruktur befolgen.
 
-#### F: Ist es möglich, mit ähnlichen Techniken mehrere getaggte Bilder zum selben PDF-Dokument hinzuzufügen?
+#### F: Ist es möglich, mit ähnlichen Techniken mehrere markierte Bilder zum selben PDF-Dokument hinzuzufügen?
 
- A: Ja, Sie können mit ähnlichen Techniken mehrere getaggte Bilder zum selben PDF-Dokument hinzufügen. Sie würden zusätzliche erstellen`IllustrationElement` Erstellen Sie Instanzen für jedes getaggte Bild und passen Sie deren Eigenschaften nach Bedarf an.
+ A: Ja, Sie können mehrere getaggte Bilder mit ähnlichen Techniken zum selben PDF-Dokument hinzufügen. Sie erstellen zusätzliche`IllustrationElement` Instanzen für jedes markierte Bild und passen Sie deren Eigenschaften nach Bedarf an.

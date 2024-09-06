@@ -1,35 +1,35 @@
 ---
-title: Tambahkan Gambar ke File PDF yang Ada di Java
-linktitle: Tambahkan Gambar ke File PDF yang Ada di Java
-second_title: Aspose.PDF API Pemrosesan PDF Java
-description: Pelajari cara menambahkan gambar ke file PDF yang ada di Java dengan mudah menggunakan Aspose.PDF untuk Java. Sempurnakan dokumen PDF Anda dengan panduan langkah demi langkah dan contoh kode.
+title: Menambahkan Gambar ke File PDF yang Ada di Java
+linktitle: Menambahkan Gambar ke File PDF yang Ada di Java
+second_title: API Pemrosesan PDF Java Aspose.PDF
+description: Pelajari cara menambahkan gambar ke berkas PDF yang sudah ada di Java dengan mudah menggunakan Aspose.PDF untuk Java. Sempurnakan dokumen PDF Anda dengan panduan langkah demi langkah dan contoh kode.
 type: docs
 weight: 11
 url: /id/java/pdf-image-manipulation/add-image-to-an-existing-pdf-file-in-java/
 ---
 
-## Pengantar Menambahkan Gambar ke File PDF yang Ada di Java
+## Pengantar untuk Menambahkan Gambar ke File PDF yang Ada di Java
 
-Menambahkan gambar ke file PDF yang ada di Java dapat meningkatkan daya tarik visual dan konten dokumen Anda secara signifikan. Dalam tutorial ini, kami akan memandu Anda melalui proses langkah demi langkah menggunakan Aspose.PDF untuk Java untuk menyelesaikan tugas ini.
+Menambahkan gambar ke berkas PDF yang ada di Java dapat meningkatkan daya tarik visual dan konten dokumen Anda. Dalam tutorial ini, kami akan memandu Anda melalui proses langkah demi langkah penggunaan Aspose.PDF untuk Java untuk menyelesaikan tugas ini.
 
 ## Prasyarat
 
-Sebelum kita mulai, pastikan Anda memiliki prasyarat berikut:
+Sebelum kita memulai, pastikan Anda memiliki prasyarat berikut:
 
-- Pengetahuan kerja tentang pemrograman Java
-- Java Development Kit (JDK) diinstal pada sistem Anda
--  Aspose.PDF untuk perpustakaan Java, tempat Anda dapat mengunduh[Di Sini](https://releases.aspose.com/pdf/java/)
+- Pengetahuan praktis tentang pemrograman Java
+- Java Development Kit (JDK) terinstal di sistem Anda
+-  Aspose.PDF untuk pustaka Java, yang dapat Anda unduh dari[Di Sini](https://releases.aspose.com/pdf/java/)
 
 ## Langkah 1: Menyiapkan Lingkungan Pengembangan Anda
 
-Untuk memulai, Anda perlu menyiapkan lingkungan pengembangan Anda. Ikuti langkah ini:
+Untuk memulai, Anda perlu menyiapkan lingkungan pengembangan Anda. Ikuti langkah-langkah berikut:
 
-1. Unduh dan instal perpustakaan Aspose.PDF untuk Java.
+1. Unduh dan instal pustaka Aspose.PDF untuk Java.
 2. Buat proyek Java baru di Lingkungan Pengembangan Terpadu (IDE) pilihan Anda.
 
-## Langkah 2: Menambahkan Dependensi
+## Langkah 2: Menambahkan Ketergantungan
 
-Selanjutnya, Anda perlu menyertakan Aspose.PDF untuk Java dalam proyek Anda. Tambahkan ketergantungan berikut ke konfigurasi proyek Anda:
+Selanjutnya, Anda perlu menyertakan Aspose.PDF untuk Java dalam proyek Anda. Tambahkan dependensi berikut ke konfigurasi proyek Anda:
 
 ```xml
 <!-- Aspose.PDF for Java -->
@@ -42,7 +42,7 @@ Selanjutnya, Anda perlu menyertakan Aspose.PDF untuk Java dalam proyek Anda. Tam
 
 ## Langkah 3: Membuat Dokumen PDF
 
-Sekarang, mari kita mulai dengan membuat dokumen PDF baru menggunakan Aspose.PDF untuk Java. Berikut cuplikan kode untuk Anda mulai:
+Sekarang, mari kita mulai dengan membuat dokumen PDF baru menggunakan Aspose.PDF untuk Java. Berikut cuplikan kode untuk membantu Anda memulai:
 
 ```java
 // Inisialisasi dokumen PDF baru
@@ -53,7 +53,7 @@ Page page = pdfDocument.getPages().add();
 
 // Konten Anda ada di sini
 
-// Simpan dokumennya
+// Simpan dokumen
 pdfDocument.save("output.pdf");
 ```
 
@@ -62,7 +62,7 @@ pdfDocument.save("output.pdf");
 Untuk menambahkan gambar ke PDF, Anda dapat menggunakan kode berikut:
 
 ```java
-// Muat dokumen PDF yang ada
+// Memuat dokumen PDF yang ada
 Document pdfDocument = new Document("input.pdf");
 
 // Muat gambar yang akan ditambahkan
@@ -78,7 +78,7 @@ pdfDocument.save("output.pdf");
 
 ## Langkah 5: Menyesuaikan Penempatan Gambar
 
- Anda dapat menyesuaikan penempatan dan ukuran gambar yang ditambahkan menggunakan properti seperti`setHorizontalAlignment`, `setVerticalAlignment` , Dan`setRectangle`. Sesuaikan properti ini sesuai kebutuhan untuk mencapai penempatan dan ukuran yang diinginkan.
+ Anda dapat menyesuaikan penempatan dan ukuran gambar yang ditambahkan menggunakan properti seperti`setHorizontalAlignment`, `setVerticalAlignment` , Dan`setRectangle`Sesuaikan properti ini sesuai kebutuhan untuk mencapai penempatan dan ukuran yang diinginkan.
 
 ```java
 // Sesuaikan penempatan gambar
@@ -95,15 +95,15 @@ image.setRectangle(new Rectangle(100, 100, 200, 200)); // Tetapkan dimensi khusu
 pdfDocument.save("output.pdf");
 ```
 
-Selamat! Anda telah berhasil menambahkan gambar ke file PDF yang ada di Java menggunakan Aspose.PDF untuk Java.
+Selamat! Anda berhasil menambahkan gambar ke berkas PDF yang sudah ada di Java menggunakan Aspose.PDF untuk Java.
 
 ## Kesimpulan
 
-Dalam tutorial ini, kita mempelajari cara menambahkan gambar ke file PDF yang ada di Java menggunakan Aspose.PDF untuk Java. Menyempurnakan dokumen PDF Anda dengan gambar dapat membuatnya lebih menarik dan informatif. Dengan Aspose.PDF untuk Java, Anda memiliki fleksibilitas untuk menyesuaikan penempatan dan tampilan gambar agar sesuai dengan kebutuhan spesifik Anda. Sekarang, Anda dapat membuat PDF yang menarik secara visual dengan mudah.
+Dalam tutorial ini, kita mempelajari cara menambahkan gambar ke berkas PDF yang sudah ada di Java menggunakan Aspose.PDF untuk Java. Mempercantik dokumen PDF Anda dengan gambar dapat membuatnya lebih menarik dan informatif. Dengan Aspose.PDF untuk Java, Anda memiliki fleksibilitas untuk menyesuaikan penempatan dan tampilan gambar agar sesuai dengan kebutuhan spesifik Anda. Sekarang, Anda dapat membuat PDF yang menarik secara visual dengan mudah.
 
-## FAQ
+## Pertanyaan yang Sering Diajukan
 
-### Bagaimana cara menambahkan banyak gambar ke PDF?
+### Bagaimana cara menambahkan beberapa gambar ke PDF?
 
 Anda dapat menambahkan beberapa gambar dengan mengulangi proses penambahan gambar untuk setiap gambar dan menyesuaikan posisinya sesuai kebutuhan.
 
@@ -111,14 +111,14 @@ Anda dapat menambahkan beberapa gambar dengan mengulangi proses penambahan gamba
 
 Ya, Anda dapat menentukan nomor halaman saat menambahkan gambar untuk menargetkan halaman tertentu dalam PDF multi-halaman.
 
-### Apakah Aspose.PDF untuk Java kompatibel dengan format gambar yang berbeda?
+### Apakah Aspose.PDF untuk Java kompatibel dengan berbagai format gambar?
 
 Ya, Aspose.PDF untuk Java mendukung berbagai format gambar seperti JPEG, PNG, BMP, dan GIF.
 
 ### Bagaimana cara mengontrol transparansi gambar yang ditambahkan?
 
- Anda dapat mengatur opacity suatu gambar menggunakan`setOpacity` metode untuk mengontrol transparansi.
+ Anda dapat mengatur opasitas gambar menggunakan`setOpacity` metode untuk mengendalikan transparansi.
 
 ### Bisakah saya memutar gambar yang ditambahkan?
 
- Ya, Anda dapat menggunakan`setRotate` metode untuk memutar gambar sesuai kebutuhan.
+ Ya, Anda bisa menggunakan`setRotate` metode untuk memutar gambar sesuai kebutuhan.

@@ -1,17 +1,17 @@
 ---
-title: Konten PDF yang diberi tag
-linktitle: Konten PDF yang diberi tag
-second_title: Aspose.PDF untuk Referensi .NET API
+title: Konten PDF yang Ditandai
+linktitle: Konten PDF yang Ditandai
+second_title: Referensi API Aspose.PDF untuk .NET
 description: Pelajari cara bekerja dengan konten yang diberi tag dalam dokumen PDF dengan Aspose.PDF untuk .NET. Panduan langkah demi langkah untuk menggunakan tag.
 type: docs
 weight: 200
 url: /id/net/programming-with-tagged-pdf/tagged-pdf-content/
 ---
-Dalam tutorial mendetail ini, kami akan memandu Anda melalui kode sumber C# yang disediakan selangkah demi selangkah untuk bekerja dengan konten yang diberi markup pada dokumen PDF menggunakan Aspose.PDF untuk .NET. Ikuti petunjuk di bawah ini untuk memahami cara menggunakan tag untuk konten PDF.
+Dalam tutorial terperinci ini, kami akan memandu Anda melalui kode sumber C# yang disediakan langkah demi langkah untuk bekerja dengan konten bertanda pada dokumen PDF menggunakan Aspose.PDF untuk .NET. Ikuti petunjuk di bawah ini untuk memahami cara menggunakan tag untuk konten PDF.
 
 ## Langkah 1: Menyiapkan lingkungan
 
-Sebelum memulai, pastikan Anda telah mengonfigurasi lingkungan pengembangan untuk menggunakan Aspose.PDF untuk .NET. Ini termasuk menginstal perpustakaan Aspose.PDF dan mengonfigurasi proyek Anda untuk mereferensikannya.
+Sebelum memulai, pastikan Anda telah mengonfigurasi lingkungan pengembangan Anda untuk menggunakan Aspose.PDF untuk .NET. Ini termasuk menginstal pustaka Aspose.PDF dan mengonfigurasi proyek Anda untuk merujuknya.
 
 ## Langkah 2: Membuat dokumen PDF
 
@@ -27,18 +27,18 @@ Document document = new Document();
 
 Kami telah membuat dokumen PDF baru dengan Aspose.PDF.
 
-## Langkah 3: Buat konten berfungsi dengan PDF yang diberi tag
+## Langkah 3: Dapatkan konten untuk bekerja dengan PDF yang diberi tag
 
-Pada langkah ini, kita akan membuat konten dokumen PDF berfungsi dengan PDF yang diberi tag.
+Pada langkah ini, kita akan mendapatkan konten dokumen PDF untuk bekerja dengan PDF yang diberi tag.
 
 ```csharp
-// Buat konten berfungsi dengan PDF yang diberi tag
+// Dapatkan konten untuk bekerja dengan PDF yang diberi tag
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-Kami mendapatkan konten dokumen PDF agar berfungsi dengan PDF yang diberi tag.
+Kami mendapatkan konten dokumen PDF untuk bekerja dengan PDF yang diberi tag.
 
-## Langkah 4: Bekerja dengan Konten Bertanda PDF
+## Langkah 4: Bekerja dengan Konten Bertag PDF
 
 Sekarang kita akan bekerja dengan konten PDF yang diberi tag menggunakan tag yang sesuai.
 
@@ -52,16 +52,16 @@ Kami telah menetapkan judul dan bahasa dokumen PDF yang diberi tag.
 
 ## Langkah 5: Menyimpan dokumen PDF yang diberi tag
 
-Sekarang kita telah bekerja dengan konten dokumen PDF yang diberi tag, mari kita simpan sebagai dokumen PDF yang diberi tag.
+Sekarang setelah kita bekerja dengan konten yang diberi tag pada dokumen PDF, mari simpan sebagai dokumen PDF yang diberi tag.
 
 ```csharp
 // Simpan dokumen PDF yang diberi tag
 document.Save(dataDir + "ContentPDFTag.pdf");
 ```
 
-Kami menyimpan dokumen PDF yang diberi tag di direktori yang ditentukan.
+Kami menyimpan dokumen PDF yang diberi tag pada direktori yang ditentukan.
 
-### Contoh kode sumber untuk Konten PDF yang Ditandai menggunakan Aspose.PDF untuk .NET 
+### Contoh kode sumber untuk Tagged PDFContent menggunakan Aspose.PDF untuk .NET 
 
 ```csharp
 
@@ -75,7 +75,7 @@ Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 
 // Bekerja dengan konten Pdf yang diberi tag
-// Tetapkan Judul dan Bahasa untuk Documnet
+// Mengatur Judul dan Bahasa untuk Dokumen
 taggedContent.SetTitle("Simple Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
@@ -85,42 +85,42 @@ document.Save(dataDir + "TaggedPDFContent.pdf");
 ```
 ## Kesimpulan
 
-Dalam tutorial ini, kita mempelajari cara bekerja dengan konten yang diberi markup dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Anda sekarang dapat menggunakan Aspose.PDF untuk membuat dokumen PDF dengan konten yang diberi tag yang sesuai.
+Dalam tutorial ini, kita mempelajari cara mengolah konten yang ditandai dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Kini Anda dapat menggunakan Aspose.PDF untuk membuat dokumen PDF dengan konten yang ditandai dengan tepat.
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
-#### T: Apa fokus utama tutorial ini dalam bekerja dengan konten PDF yang diberi tag menggunakan Aspose.PDF untuk .NET?
+#### T: Apa fokus utama tutorial ini tentang bekerja dengan konten PDF yang diberi tag menggunakan Aspose.PDF untuk .NET?
 
-J: Tutorial ini terutama difokuskan untuk memandu Anda melalui proses bekerja dengan konten yang diberi markup dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Tutorial ini memberikan petunjuk langkah demi langkah dan contoh kode sumber C# untuk membantu Anda memahami cara menggunakan tag untuk menentukan dan memanipulasi konten dokumen PDF.
+J: Tutorial ini terutama difokuskan untuk memandu Anda melalui proses bekerja dengan konten yang ditandai dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Tutorial ini menyediakan petunjuk langkah demi langkah dan contoh kode sumber C# untuk membantu Anda memahami cara menggunakan tag untuk menentukan dan memanipulasi konten dokumen PDF.
 
-#### T: Apa saja prasyarat untuk mengikuti tutorial tentang manipulasi konten PDF yang diberi tag dengan Aspose.PDF untuk .NET?
+#### T: Apa saja prasyarat untuk mengikuti tutorial ini tentang manipulasi konten PDF yang diberi tag dengan Aspose.PDF untuk .NET?
 
-J: Sebelum memulai, pastikan Anda telah menyiapkan lingkungan pengembangan untuk menggunakan Aspose.PDF untuk .NET. Ini melibatkan instalasi perpustakaan Aspose.PDF dan mengonfigurasi proyek Anda untuk mereferensikannya.
+J: Sebelum memulai, pastikan Anda telah menyiapkan lingkungan pengembangan untuk menggunakan Aspose.PDF untuk .NET. Ini melibatkan pemasangan pustaka Aspose.PDF dan konfigurasi proyek Anda untuk merujuknya.
 
-#### T: Bagaimana cara membuat dokumen PDF baru dan bekerja dengan konten yang diberi tag menggunakan Aspose.PDF untuk .NET?
+#### T: Bagaimana cara membuat dokumen PDF baru dan bekerja dengan konten yang diberi tag menggunakan Aspose.PDF for .NET?
 
-J: Tutorial ini memberikan contoh kode sumber C# yang menunjukkan cara membuat dokumen PDF baru dan mengakses konten yang diberi tag untuk manipulasi lebih lanjut.
+A: Tutorial ini menyediakan contoh kode sumber C# yang menunjukkan cara membuat dokumen PDF baru dan mengakses konten yang diberi tag untuk manipulasi lebih lanjut.
 
-#### T: Apa pentingnya bekerja dengan konten yang diberi tag dalam dokumen PDF?
+#### T: Apa pentingnya bekerja dengan konten yang ditandai dalam dokumen PDF?
 
-J: Bekerja dengan konten yang diberi tag dalam dokumen PDF melibatkan penggunaan tag terstruktur untuk menentukan makna semantik elemen dokumen. Hal ini sangat penting untuk aksesibilitas dan ekstraksi konten, karena memungkinkan pembaca layar dan teknologi lain menafsirkan konten dokumen dengan benar.
+J: Bekerja dengan konten yang diberi tag dalam dokumen PDF melibatkan penggunaan tag terstruktur untuk menentukan makna semantik dari elemen dokumen. Hal ini sangat penting untuk aksesibilitas dan ekstraksi konten, karena memungkinkan pembaca layar dan teknologi lainnya untuk menginterpretasikan konten dokumen dengan benar.
 
 #### T: Bagaimana cara mengatur judul dan bahasa untuk dokumen PDF yang diberi tag menggunakan Aspose.PDF untuk .NET?
 
-J: Tutorial ini mencakup contoh kode sumber C# yang mengilustrasikan cara mengatur judul dan bahasa untuk dokumen PDF yang diberi tag menggunakan Aspose.PDF untuk .NET.
+A: Tutorial menyertakan contoh kode sumber C# yang mengilustrasikan cara mengatur judul dan bahasa untuk dokumen PDF yang diberi tag menggunakan Aspose.PDF untuk .NET.
 
-#### T: Bagaimana proses menyimpan dokumen PDF yang diberi tag setelah mengerjakan konten yang diberi tag?
+#### T: Bagaimana proses menyimpan dokumen PDF yang diberi tag setelah bekerja dengan konten yang diberi tag?
 
- J: Setelah melakukan modifikasi pada konten yang diberi tag pada dokumen PDF, Anda dapat menggunakan contoh kode sumber C# yang disediakan untuk menyimpan dokumen yang dimodifikasi menggunakan`Save()` metode.
+ A: Setelah melakukan modifikasi pada konten yang diberi tag pada dokumen PDF, Anda dapat menggunakan contoh kode sumber C# yang disediakan untuk menyimpan dokumen yang dimodifikasi menggunakan`Save()` metode.
 
-#### T: Bagaimana contoh kode sumber yang diberikan dalam tutorial membantu dalam bekerja dengan konten PDF yang diberi tag?
+#### T: Bagaimana contoh kode sumber yang disediakan dalam tutorial membantu dalam menangani konten PDF yang diberi tag?
 
-J: Contoh kode sumber berfungsi sebagai referensi praktis untuk menerapkan manipulasi konten yang diberi tag menggunakan Aspose.PDF untuk .NET. Anda dapat menggunakan kode ini sebagai titik awal dan memodifikasinya sesuai dengan kebutuhan spesifik Anda.
+A: Contoh kode sumber berfungsi sebagai referensi praktis untuk menerapkan manipulasi konten yang diberi tag menggunakan Aspose.PDF untuk .NET. Anda dapat menggunakan kode ini sebagai titik awal dan memodifikasinya sesuai dengan kebutuhan spesifik Anda.
 
 #### T: Dapatkah saya menerapkan teknik serupa pada jenis elemen lain dalam dokumen PDF, bukan hanya pengaturan teks dan bahasa?
 
-J: Ya, teknik yang ditunjukkan dalam tutorial ini dapat diadaptasi untuk bekerja dengan berbagai jenis elemen dalam dokumen PDF. Anda dapat menggunakan prinsip serupa untuk memanipulasi teks, gambar, tabel, dan lainnya, sambil menggunakan tag untuk menentukan peran dan atributnya.
+J: Ya, teknik yang ditunjukkan dalam tutorial ini dapat diadaptasi untuk bekerja dengan berbagai jenis elemen dalam dokumen PDF. Anda dapat menggunakan prinsip serupa untuk memanipulasi teks, gambar, tabel, dan lainnya, sambil memanfaatkan tag untuk menentukan peran dan atributnya.
 
-#### T: Bagaimana cara menggunakan Aspose.PDF untuk .NET untuk lebih menyempurnakan dan menyesuaikan dokumen PDF di luar konten yang diberi tag?
+#### T: Bagaimana saya dapat menggunakan Aspose.PDF untuk .NET untuk lebih menyempurnakan dan menyesuaikan dokumen PDF di luar konten yang diberi tag?
 
-J: Aspose.PDF untuk .NET menawarkan berbagai fitur untuk manipulasi dokumen PDF, termasuk menambahkan teks, gambar, tabel, hyperlink, anotasi, kolom formulir, tanda air, tanda tangan digital, dan banyak lagi. Anda dapat menjelajahi dokumentasi dan sumber resmi untuk pemahaman komprehensif tentang kemampuan perpustakaan.
+J: Aspose.PDF untuk .NET menawarkan berbagai fitur untuk manipulasi dokumen PDF, termasuk menambahkan teks, gambar, tabel, hyperlink, anotasi, kolom formulir, tanda air, tanda tangan digital, dan banyak lagi. Anda dapat menjelajahi dokumentasi dan sumber daya resmi untuk mendapatkan pemahaman menyeluruh tentang kemampuan pustaka tersebut.

@@ -1,26 +1,26 @@
 ---
 title: Określ podział wiersza w pliku PDF
 linktitle: Określ podział wiersza w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak określić podziały wierszy w pliku PDF przy użyciu Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak określić podziały wierszy w pliku PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 130
 url: /pl/net/programming-with-text/determine-line-break/
 ---
-Ten samouczek poprowadzi Cię przez proces określania podziałów wierszy w pliku PDF przy użyciu Aspose.PDF dla .NET. Dostarczony kod źródłowy języka C# demonstruje niezbędne kroki.
+Ten samouczek przeprowadzi Cię przez proces określania podziałów wierszy w pliku PDF przy użyciu Aspose.PDF dla .NET. Dostarczony kod źródłowy C# demonstruje niezbędne kroki.
 
 ## Wymagania
-Zanim zaczniesz, upewnij się, że masz następujące elementy:
+Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
 
-- Visual Studio lub dowolny inny kompilator C# zainstalowany na twoim komputerze.
-- Aspose.PDF dla biblioteki .NET. Możesz pobrać go z oficjalnej strony Aspose lub użyć menedżera pakietów, takiego jak NuGet, aby go zainstalować.
+- Visual Studio lub inny kompilator C# zainstalowany na Twoim komputerze.
+- Aspose.PDF dla biblioteki .NET. Możesz pobrać ją z oficjalnej strony Aspose lub użyć menedżera pakietów, takiego jak NuGet, aby ją zainstalować.
 
 ## Krok 1: Skonfiguruj projekt
 1. Utwórz nowy projekt C# w preferowanym środowisku programistycznym.
-2. Dodaj odwołanie do biblioteki Aspose.PDF dla .NET.
+2. Dodaj odwołanie do biblioteki Aspose.PDF dla platformy .NET.
 
-## Krok 2: Zaimportuj wymagane przestrzenie nazw
-W pliku kodu, w którym chcesz określić podziały wierszy, dodaj następujące dyrektywy using na górze pliku:
+## Krok 2: Importuj wymagane przestrzenie nazw
+W pliku kodu, w którym chcesz określić podziały wierszy, dodaj na początku pliku następujące dyrektywy using:
 
 ```csharp
 using Aspose.Pdf;
@@ -28,10 +28,10 @@ using System.IO;
 ```
 
 ## Krok 3: Ustaw katalog dokumentów
- W kodzie znajdź wiersz, który mówi`string dataDir = "YOUR DOCUMENT DIRECTORY";` i wymienić`"YOUR DOCUMENT DIRECTORY"` ze ścieżką do katalogu, w którym przechowywane są Twoje dokumenty.
+ W kodzie znajdź linię, która mówi`string dataDir = "YOUR DOCUMENT DIRECTORY";` i zastąpić`"YOUR DOCUMENT DIRECTORY"` ze ścieżką do katalogu, w którym przechowywane są Twoje dokumenty.
 
 ## Krok 4: Utwórz nową instancję dokumentu
- Utwórz instancję nowego`Document` obiekt, dodając następujący wiersz kodu:
+ Utwórz nową instancję`Document` obiekt dodając następujący wiersz kodu:
 
 ```csharp
 Document doc = new Document();
@@ -44,8 +44,8 @@ Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Krok 6: Dodaj fragmenty tekstu z podziałami wierszy
-Utwórz pętlę, aby dodać do strony wiele fragmentów tekstu, każdy zawierający akapit z podziałami wierszy.
+## Krok 6: Dodaj fragmenty tekstu z podziałem wiersza
+Utwórz pętlę, aby dodać do strony wiele fragmentów tekstu, z których każdy będzie zawierał akapit z podziałem wiersza.
 
 ```csharp
 for (int i = 0; i < 4; i++)
@@ -56,8 +56,8 @@ for (int i = 0; i < 4; i++)
 }
 ```
 
-## Krok 7: Zapisz dokument PDF i wyodrębnij informacje o podziale wierszy
- Zapisz dokument PDF za pomocą`Save` metoda`Document` obiekt. Następnie wyodrębnij informacje o podziale wierszy za pomocą`GetNotifications` metodę żądanej strony.
+## Krok 7: Zapisz dokument PDF i wyodrębnij informacje o podziale wiersza
+ Zapisz dokument PDF za pomocą`Save` metoda`Document` obiekt. Następnie wyodrębnij informacje o podziale wiersza za pomocą`GetNotifications` metoda żądanej strony.
 
 ```csharp
 doc.Save(dataDir + "DetermineLineBreak_out.pdf");
@@ -65,7 +65,7 @@ string notifications = doc.Pages[1].GetNotifications();
 File.WriteAllText(dataDir + "notifications_out.txt", notifications);
 ```
 
-### Przykładowy kod źródłowy dla określenia podziału wiersza przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Określ podział wiersza za pomocą Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -83,17 +83,17 @@ File.WriteAllText(dataDir + "notifications_out.txt", notifications);
 ```
 
 ## Wniosek
-Pomyślnie określiłeś podziały wierszy w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Informacje o podziale wierszy zostały wyodrębnione i zapisane w pliku tekstowym.
+Udało Ci się ustalić podziały wierszy w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Informacje o podziale wierszy zostały wyodrębnione i zapisane w pliku tekstowym.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Na czym skupia się głównie ten samouczek?
+#### P: Na czym głównie skupia się ten samouczek?
 
-Odp.: Ten samouczek koncentruje się na przeprowadzeniu Cię przez proces określania podziałów wierszy w pliku PDF przy użyciu biblioteki Aspose.PDF dla .NET. Dostarczony kod źródłowy języka C# przedstawia kroki niezbędne do osiągnięcia tego celu.
+A: Ten samouczek koncentruje się na przeprowadzeniu Cię przez proces określania podziałów wierszy w pliku PDF przy użyciu biblioteki Aspose.PDF dla .NET. Dostarczony kod źródłowy C# demonstruje niezbędne kroki, aby to osiągnąć.
 
-#### P: Które przestrzenie nazw powinienem zaimportować na potrzeby tego samouczka?
+#### P: Jakie przestrzenie nazw powinienem zaimportować na potrzeby tego samouczka?
 
-O: W pliku kodu, w którym chcesz określić podziały wierszy, zaimportuj na początku pliku następujące przestrzenie nazw:
+A: W pliku kodu, w którym chcesz określić podziały wierszy, zaimportuj następujące przestrzenie nazw na początku pliku:
 
 ```csharp
 using Aspose.Pdf;
@@ -102,28 +102,28 @@ using System.IO;
 
 #### P: Jak określić katalog dokumentów?
 
- Odp.: W kodzie znajdź linię`string dataDir = "YOUR DOCUMENT DIRECTORY";` i wymienić`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do katalogu dokumentów.
+ A: W kodzie znajdź linię`string dataDir = "YOUR DOCUMENT DIRECTORY";` i zastąpić`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do katalogu dokumentów.
 
 #### P: Jak utworzyć nową instancję dokumentu?
 
- O: W kroku 4 utworzysz nową instancję`Document` obiekt za pomocą dostarczonego kodu.
+ A: W kroku 4 utworzysz nową instancję`Document` obiekt używając dostarczonego kodu.
 
 #### P: Jak dodać stronę do dokumentu?
 
- Odp.: W kroku 5 dodasz nową stronę do dokumentu za pomocą`Add` metoda`Pages` kolekcja.
+ A: W kroku 5 dodasz nową stronę do dokumentu za pomocą`Add` metoda`Pages` kolekcja.
 
 #### P: Jak dodać fragmenty tekstu z podziałem wiersza?
 
-O: W kroku 6 utworzysz pętlę, która doda do strony wiele fragmentów tekstu, z których każdy będzie zawierał akapit z podziałami wierszy.
+A: W kroku 6 utworzysz pętlę, aby dodać do strony wiele fragmentów tekstu, z których każdy będzie zawierał akapit z podziałami wiersza.
 
-#### P: Jak zapisać dokument PDF i wyodrębnić informacje o podziale wierszy?
+#### P: Jak zapisać dokument PDF i wyodrębnić informacje o podziale wiersza?
 
- Odp.: W kroku 7 zapiszesz dokument PDF za pomocą pliku`Save` metoda`Document` obiekt. Następnie wyodrębnisz informacje o podziale wierszy za pomocą`GetNotifications` metodę żądanej strony i zapisz ją w pliku tekstowym.
+ A: W kroku 7 zapiszesz dokument PDF za pomocą`Save` metoda`Document` obiekt. Następnie wyodrębnisz informacje o podziale wiersza za pomocą`GetNotifications`metodę wybranej strony i zapisać ją do pliku tekstowego.
 
-#### P: Jaki jest cel wyodrębnionych informacji o podziale wierszy?
+#### P: Jaki jest cel wyodrębnionych informacji o podziale wiersza?
 
-Odp.: Wyodrębnione informacje o podziale wierszy zawierają szczegółowe informacje o podziale wierszy i powiadomieniach występujących w dokumencie PDF. Może to być przydatne do analizowania i zrozumienia struktury tekstu i akapitów w dokumencie.
+A: Wyodrębnione informacje o podziale wiersza zawierają szczegóły dotyczące podziałów wiersza i powiadomień obecnych w dokumencie PDF. Może to być przydatne do analizy i zrozumienia, w jaki sposób tekst i akapity są ustrukturyzowane w dokumencie.
 
-#### P: Jaki jest główny wniosek z tego samouczka?
+#### P: Jakie są najważniejsze wnioski z tego samouczka?
 
-Odp.: Wykonując ten samouczek, nauczyłeś się określać podziały wierszy w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Możesz wykorzystać tę wiedzę do programowego wyodrębniania i analizowania informacji o podziałach wierszy z plików PDF.
+A: Postępując zgodnie z tym samouczkiem, nauczyłeś się, jak określić podziały wierszy w dokumencie PDF za pomocą Aspose.PDF dla .NET. Możesz użyć tej wiedzy, aby programowo wyodrębnić i przeanalizować informacje o podziałach wierszy z plików PDF.

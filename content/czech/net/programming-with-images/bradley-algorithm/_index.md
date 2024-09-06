@@ -11,7 +11,7 @@ Tento podrobný průvodce vysvětluje, jak používat Bradleyho algoritmus s Asp
 
 ## Krok 1: Definujte adresář dokumentů
 
- Než začnete, ujistěte se, že jste nastavili správný adresář pro dokumenty. Nahradit`"YOUR DOCUMENT DIRECTORY"` v kódu s cestou k adresáři, kde se nachází váš dokument PDF.
+Než začnete, ujistěte se, že jste nastavili správný adresář pro dokumenty. Nahradit`"YOUR DOCUMENT DIRECTORY"` v kódu s cestou k adresáři, kde se nachází váš dokument PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 2: Otevřete dokument
 
- tomto kroku otevřeme dokument PDF pomocí`Document` třída Aspose.PDF. Použijte`Document` konstruktoru a předejte cestu k dokumentu PDF.
+ V tomto kroku otevřeme dokument PDF pomocí`Document` třída Aspose.PDF. Použijte`Document` konstruktoru a předejte cestu k dokumentu PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "PageToTIFF.pdf");
@@ -36,7 +36,7 @@ string outputBinImageFile = dataDir + "37116-bin_out.tif";
 
 ## Krok 4: Vytvořte objekt Resolution
 
- Vytvořit`Resolution`objekt pro nastavení rozlišení obrázku TIFF. V tomto příkladu používáme rozlišení 300 dpi.
+ Vytvořte a`Resolution` objekt pro nastavení rozlišení obrázku TIFF. V tomto příkladu používáme rozlišení 300 dpi.
 
 ```csharp
 Resolution resolution = new Resolution(300);
@@ -44,7 +44,7 @@ Resolution resolution = new Resolution(300);
 
 ## Krok 5: Vytvořte objekt TiffSettings
 
- Vytvořit`TiffSettings`objekt k určení nastavení pro výstupní soubor TIFF. V tomto příkladu používáme kompresi LZW a barevnou hloubku 1 bit na pixel (formát 1 bpp).
+ Vytvořte a`TiffSettings` objekt k určení nastavení pro výstupní soubor TIFF. V tomto příkladu používáme kompresi LZW a barevnou hloubku 1 bit na pixel (formát 1 bpp).
 
 ```csharp
 TiffSettings tiffSettings = new TiffSettings();
@@ -70,7 +70,7 @@ tiffDevice.Process(pdfDocument, outputImageFile);
 
 ## Krok 8: Binarizujte obrázek pomocí Bradleyho algoritmu
 
- Použijte`BinarizeBradley` metoda zařízení TIFF k binarizaci obrazu pomocí Bradleyho algoritmu. Tato metoda bere vstupní proud původního obrazu a výstupní proud pro binární obraz. Zadejte práh binarizace (v tomto příkladu 0,1).
+ Použijte`BinarizeBradley`metoda zařízení TIFF k binarizaci obrazu pomocí Bradleyho algoritmu. Tato metoda bere vstupní proud původního obrazu a výstupní proud pro binární obraz. Zadejte práh binarizace (v tomto příkladu 0,1).
 
 ```csharp
 using (FileStream
@@ -100,7 +100,7 @@ tiffSettings.Compression = CompressionType.LZW;
 tiffSettings.Depth = Aspose.Pdf.Devices.ColorDepth.Format1bpp;
 // Vytvořte zařízení TIFF
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
-//Převeďte konkrétní stránku a uložte obrázek do streamu
+// Převeďte konkrétní stránku a uložte obrázek do streamu
 tiffDevice.Process(pdfDocument, outputImageFile);
 using (FileStream inStream = new FileStream(outputImageFile, FileMode.Open))
 {

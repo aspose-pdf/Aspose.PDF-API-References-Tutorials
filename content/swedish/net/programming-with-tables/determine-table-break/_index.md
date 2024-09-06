@@ -161,7 +161,7 @@ S: Syftet med att fastställa tabellbrytningar i ett PDF-dokument är att kontro
 
 #### F: Hur kan jag justera den övre marginalen i tabellen?
 
- S: I den medföljande C#-källkoden kan du justera den övre marginalen i tabellen genom att ändra värdet på`table1.Margin.Top`fast egendom. Öka eller minska värdet efter behov för att ställa in önskad toppmarginal för tabellen.
+ S: I den medföljande C#-källkoden kan du justera den övre marginalen i tabellen genom att ändra värdet på`table1.Margin.Top`egendom. Öka eller minska värdet efter behov för att ställa in önskad toppmarginal för tabellen.
 
 #### F: Kan jag anpassa utseendet på tabellen, som cellfärger och teckenstorlek?
 

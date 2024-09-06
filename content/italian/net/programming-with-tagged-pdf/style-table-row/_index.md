@@ -1,24 +1,24 @@
 ---
 title: Riga della tabella di stile
 linktitle: Riga della tabella di stile
-second_title: Aspose.PDF per riferimento all'API .NET
-description: Scopri come personalizzare le righe della tabella con Aspose.PDF per .NET guida passo passo allo stile e alla formattazione delle righe.
+second_title: Riferimento API Aspose.PDF per .NET
+description: Scopri come personalizzare le righe della tabella con Aspose.PDF per .NET, una guida dettagliata per la formattazione e lo stile delle righe.
 type: docs
 weight: 180
 url: /it/net/programming-with-tagged-pdf/style-table-row/
 ---
-In questo tutorial dettagliato, ti guideremo passo dopo passo attraverso il codice sorgente C# fornito per formattare la riga della tabella utilizzando Aspose.PDF per .NET. Segui le istruzioni seguenti per capire come personalizzare gli stili e le proprietà delle righe della tabella.
+In questo tutorial dettagliato, ti guideremo passo dopo passo attraverso il codice sorgente C# fornito per formattare la riga della tabella utilizzando Aspose.PDF per .NET. Segui le istruzioni sottostanti per capire come personalizzare stili e proprietà delle righe della tabella.
 
-## Passaggio 1: configurazione dell'ambiente
+## Fase 1: Impostazione dell'ambiente
 
-Prima di iniziare, assicurati di aver configurato il tuo ambiente di sviluppo per utilizzare Aspose.PDF per .NET. Ciò include l'installazione della libreria Aspose.PDF e la configurazione del progetto per farvi riferimento.
+Prima di iniziare, assicurati di aver configurato il tuo ambiente di sviluppo per usare Aspose.PDF per .NET. Ciò include l'installazione della libreria Aspose.PDF e la configurazione del tuo progetto per farvi riferimento.
 
-## Passaggio 2: creazione di un documento
+## Fase 2: Creazione di un documento
 
-In questo passaggio, creeremo un nuovo oggetto documento Aspose.PDF.
+In questo passaggio creeremo un nuovo oggetto documento Aspose.PDF.
 
 ```csharp
-// Il percorso della directory dei documenti.
+// Percorso verso la directory dei documenti.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 // Creazione di documenti
@@ -28,34 +28,34 @@ taggedContent.SetTitle("Example of Table Row Formatting");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-Abbiamo creato un nuovo documento e impostato il titolo e la lingua del documento.
+Abbiamo creato un nuovo documento e impostato il titolo e la lingua.
 
-## Passaggio 3: ottenere l'elemento della struttura radice
+## Fase 3: Ottenere l'elemento della struttura radice
 
-In questo passaggio otterremo l'elemento della struttura radice per il nostro documento.
+In questo passaggio otterremo l'elemento struttura radice per il nostro documento.
 
 ```csharp
 //Ottieni l'elemento della struttura radice
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-Abbiamo ottenuto l'elemento della struttura root che servirà da contenitore per l'elemento dell'array.
+Abbiamo ottenuto l'elemento della struttura radice che fungerà da contenitore per l'elemento array.
 
-## Passaggio 4: creazione dell'elemento della struttura dell'array
+## Fase 4: Creazione dell'elemento della struttura array
 
-Ora creiamo un nuovo elemento della struttura della tabella per il nostro documento.
+Ora creiamo un nuovo elemento di struttura tabella per il nostro documento.
 
 ```csharp
-// Creare l'elemento della struttura dell'array
+// Crea l'elemento della struttura array
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 ```
 
-Abbiamo creato un nuovo elemento della struttura dell'array e lo abbiamo aggiunto all'elemento della struttura root.
+Abbiamo creato un nuovo elemento della struttura array e lo abbiamo aggiunto all'elemento della struttura radice.
 
 ## Passaggio 5: personalizzare gli stili e le proprietà delle righe della tabella
 
-In questo passaggio personalizzeremo gli stili e le proprietà delle righe della tabella.
+In questa fase personalizzeremo gli stili e le proprietà delle righe della tabella.
 
 ```csharp
 // Personalizza gli stili e le proprietà delle righe della tabella
@@ -68,7 +68,7 @@ int colCount = 3;
 int rowIndex;
 int colIndex;
 
-// Crea la riga di intestazione della tabella
+// Crea la riga dell'intestazione della tabella
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Header Row";
 
@@ -103,7 +103,7 @@ for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
      }
 }
 
-// Crea la linea a piè di pagina della tabella
+// Crea la riga del piè di pagina della tabella
 TableTRElement footTrElement = tableTFootElement.CreateTR();
 footTrElement.AlternativeText = "Footline";
 
@@ -114,21 +114,21 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 }
 ```
 
-Abbiamo personalizzato vari aspetti della riga della tabella, come colore di sfondo, bordi, altezza della riga, impaginazione, stile di cella predefinito e altro ancora.
+Abbiamo personalizzato vari aspetti della riga della tabella, come il colore di sfondo, i bordi, l'altezza della riga, la paginazione, lo stile predefinito delle celle e altro ancora.
 
-## Passaggio 6: salvataggio del documento PDF contrassegnato
+## Passaggio 6: salvataggio del documento PDF taggato
 
-Ora che abbiamo creato il nostro documento con la riga della tabella con stile, lo salveremo come documento PDF con tag.
+Ora che abbiamo creato il nostro documento con la riga della tabella formattata, lo salveremo come documento PDF con tag.
 ```csharp
-// Salva il documento PDF contrassegnato
+// Salva il documento PDF taggato
 document.Save(dataDir + "StyleTableRow.pdf");
 ```
 
-Abbiamo salvato il documento PDF contrassegnato nella directory specificata.
+Abbiamo salvato il documento PDF taggato nella directory specificata.
 
-## Passaggio 7: convalida della conformità PDF/UA
+## Fase 7: convalida della conformità PDF/UA
 
-Successivamente, convalideremo la conformità PDF/UA del nostro documento.
+Successivamente valideremo la conformità PDF/UA del nostro documento.
 
 ```csharp
 // Controllo di conformità PDF/UA
@@ -137,13 +137,13 @@ bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableRow.xml", PdfFor
 Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-Abbiamo caricato il documento PDF con tag e ne abbiamo convalidato la conformità PDF/UA generando un report XML.
+Abbiamo caricato il documento PDF taggato e ne abbiamo convalidato la conformità PDF/UA generando un report XML.
 
 
-### Codice sorgente di esempio per la riga della tabella di stile utilizzando Aspose.PDF per .NET 
+### Esempio di codice sorgente per Style Table Row utilizzando Aspose.PDF per .NET 
 ```csharp
 
-// Il percorso della directory dei documenti.
+// Percorso verso la directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 // Crea documento
@@ -155,7 +155,7 @@ taggedContent.SetLanguage("en-US");
 // Ottieni l'elemento della struttura radice
 StructureElement rootElement = taggedContent.RootElement;
 
-// Crea un elemento della struttura della tabella
+// Crea elemento struttura tabella
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
@@ -202,10 +202,10 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 	tdElement.SetText(String.Format("Foot {0}", colIndex));
 }
 
-// Salva documento PDF contrassegnato
+// Salva il documento PDF taggato
 document.Save(dataDir + "StyleTableRow.pdf");
 
-// Verifica della conformità PDF/UA
+// Controllo della conformità PDF/UA
 document = new Document(dataDir + "StyleTableRow.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableRow.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
@@ -214,50 +214,50 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ## Conclusione
 
-In questo tutorial, abbiamo imparato come formattare la riga della tabella con Aspose.PDF per .NET. Abbiamo personalizzato gli stili e le proprietà delle righe della tabella, aggiunto le intestazioni, le righe del corpo e il piè di pagina, salvato il documento PDF con tag e convalidato la sua conformità PDF/UA.
+In questo tutorial, abbiamo imparato come formattare le righe di tabella con Aspose.PDF per .NET. Abbiamo personalizzato gli stili e le proprietà delle righe di tabella, aggiunto le intestazioni, le righe del corpo e il piè di pagina, salvato il documento PDF taggato e convalidato la sua conformità PDF/UA.
 
 ### Domande frequenti
 
-#### D: Qual è lo scopo di questo tutorial sulla formattazione delle righe della tabella utilizzando Aspose.PDF per .NET?
+#### D: Qual è lo scopo di questo tutorial sulla formattazione delle righe di una tabella utilizzando Aspose.PDF per .NET?
 
-R: Lo scopo di questo tutorial è guidarti attraverso il processo di formattazione delle righe della tabella in un documento PDF utilizzando Aspose.PDF per .NET. Fornisce istruzioni dettagliate ed esempi di codice sorgente C# per aiutarti a personalizzare gli stili e le proprietà delle righe della tabella.
+R: Lo scopo di questo tutorial è guidarti attraverso il processo di formattazione delle righe di tabella in un documento PDF utilizzando Aspose.PDF per .NET. Fornisce istruzioni dettagliate ed esempi di codice sorgente C# per aiutarti a personalizzare stili e proprietà delle righe di tabella.
 
 #### D: Quali sono i prerequisiti per seguire questo tutorial?
 
-R: Prima di iniziare, assicurati di aver configurato il tuo ambiente di sviluppo per utilizzare Aspose.PDF per .NET. Ciò comporta l'installazione della libreria Aspose.PDF e la configurazione del progetto per farvi riferimento.
+R: Prima di iniziare, assicurati di aver impostato il tuo ambiente di sviluppo per usare Aspose.PDF per .NET. Ciò comporta l'installazione della libreria Aspose.PDF e la configurazione del tuo progetto per farvi riferimento.
 
 #### D: Come posso creare un nuovo documento PDF e impostarne il titolo e la lingua utilizzando Aspose.PDF per .NET?
 
- R: Per creare un nuovo documento PDF, è necessario creare un file`Document` oggetto dalla libreria Aspose.PDF. Il codice sorgente C# fornito nell'esercitazione illustra come creare un documento e impostarne il titolo e le proprietà della lingua.
+ A: Per creare un nuovo documento PDF, è necessario creare un`Document` oggetto dalla libreria Aspose.PDF. Il codice sorgente C# fornito dal tutorial dimostra come creare un documento e impostarne le proprietà titolo e lingua.
 
-#### D: Qual è il significato dell'elemento della struttura radice in un documento PDF?
+#### D: Qual è il significato dell'elemento struttura radice in un documento PDF?
 
-R: L'elemento della struttura radice funge da contenitore per altri elementi della struttura, aiutando a organizzare e classificare il contenuto del documento PDF. Svolge un ruolo cruciale nello stabilire la struttura logica del documento.
+A: L'elemento struttura radice funge da contenitore per altri elementi struttura, aiutando a organizzare e categorizzare il contenuto del documento PDF. Svolge un ruolo cruciale nello stabilire la struttura logica del documento.
 
 #### D: Come posso creare e personalizzare un elemento della struttura della tabella per formattare le righe della tabella utilizzando Aspose.PDF per .NET?
 
-R: Il tutorial spiega come creare un elemento della struttura della tabella e personalizzare le sue proprietà per formattare le righe della tabella. Copre aspetti come colore di sfondo, bordi, altezza della riga, impaginazione, stile di cella predefinito e altro.
+R: Il tutorial spiega come creare un elemento struttura tabella e personalizzare le sue proprietà per formattare le righe della tabella. Copre aspetti quali colore di sfondo, bordi, altezza riga, impaginazione, stile cella predefinito e altro.
 
-#### D: Posso personalizzare gli stili e le proprietà delle singole celle all'interno di una riga di tabella?
+#### D: Posso personalizzare gli stili e le proprietà delle singole celle all'interno di una riga di una tabella?
 
-R: Sì, puoi personalizzare gli stili e le proprietà delle singole celle all'interno di una riga della tabella. Il tutorial dimostra come impostare proprietà come colore di sfondo, bordi, colore del testo, riempimento e altro per le celle della tabella all'interno della riga della tabella formattata.
+R: Sì, puoi personalizzare gli stili e le proprietà delle singole celle all'interno di una riga di tabella. Il tutorial mostra come impostare proprietà quali colore di sfondo, bordi, colore del testo, padding e altro per le celle di tabella all'interno della riga di tabella formattata.
 
-#### D: Come posso aggiungere intestazioni, righe di corpo e piè di pagina alla riga della tabella formattata?
+#### D: Come posso aggiungere intestazioni, righe del corpo e un piè di pagina alla riga della tabella formattata?
 
-R: Il tutorial fornisce esempi di creazione e aggiunta di intestazioni, righe del corpo e piè di pagina all'elemento della struttura della tabella. Questi elementi possono essere ulteriormente personalizzati utilizzando le proprietà descritte nel tutorial.
+R: Il tutorial fornisce esempi di creazione e aggiunta di intestazioni, righe del corpo e un piè di pagina all'elemento struttura tabella. Questi elementi possono essere ulteriormente personalizzati utilizzando le proprietà descritte nel tutorial.
 
-#### D: Cos'è la conformità PDF/UA e come posso convalidarla per il mio documento PDF con tag?
+#### D: Che cos'è la conformità PDF/UA e come posso convalidarla per il mio documento PDF taggato?
 
- R: La conformità PDF/UA garantisce che il documento PDF sia conforme agli standard di accessibilità, rendendolo più accessibile agli utenti con disabilità. Il tutorial dimostra come convalidare la conformità PDF/UA utilizzando il file`Validate()` metodo e generare un report di conformità XML.
+ A: La conformità PDF/UA assicura che il documento PDF sia conforme agli standard di accessibilità, rendendolo più accessibile agli utenti con disabilità. Il tutorial mostra come convalidare la conformità PDF/UA utilizzando`Validate()` metodo e generare un report di conformità XML.
 
-#### D: Come posso incorporare questi concetti nelle mie applicazioni .NET?
+#### D: Come posso integrare questi concetti nelle mie applicazioni .NET?
 
-R: È possibile utilizzare gli esempi di codice sorgente C# forniti come guida per implementare la formattazione delle righe di tabella nelle proprie applicazioni .NET. Modifica e adatta il codice per soddisfare le tue esigenze e integralo nei tuoi progetti.
+R: Puoi usare gli esempi di codice sorgente C# forniti come guida per implementare la formattazione delle righe di tabella nelle tue applicazioni .NET. Modifica e adatta il codice per adattarlo ai tuoi requisiti e integralo nei tuoi progetti.
 
-#### D: Esistono best practice consigliate per la formattazione delle righe della tabella nei documenti PDF?
+#### D: Esistono delle buone pratiche consigliate per la formattazione delle righe delle tabelle nei documenti PDF?
 
-R: Quando formatti le righe della tabella, considera la leggibilità e l'accessibilità del contenuto. Assicurati che i colori abbiano un contrasto sufficiente, utilizzi caratteri chiari e leggibili e mantieni un layout coerente. Convalida la conformità PDF/UA per garantire il rispetto degli standard di accessibilità.
+R: Quando formatti le righe della tabella, considera la leggibilità e l'accessibilità del contenuto. Assicurati che i colori abbiano un contrasto sufficiente, usa caratteri chiari e leggibili e mantieni un layout coerente. Convalida la conformità PDF/UA per garantire che gli standard di accessibilità siano rispettati.
 
 #### D: Quali altre funzionalità di Aspose.PDF per .NET posso esplorare per la personalizzazione dei documenti PDF?
 
-R: Aspose.PDF per .NET offre un'ampia gamma di funzionalità per la personalizzazione dei documenti PDF, tra cui la manipolazione del testo, l'inserimento di immagini, la gestione dei campi del modulo, le firme digitali, le annotazioni e altro ancora. Consulta la documentazione e le risorse ufficiali per esplorare funzionalità aggiuntive.
+R: Aspose.PDF per .NET offre un'ampia gamma di funzionalità per la personalizzazione dei documenti PDF, tra cui manipolazione del testo, inserimento di immagini, gestione dei campi dei moduli, firme digitali, annotazioni e altro ancora. Consulta la documentazione e le risorse ufficiali per esplorare funzionalità aggiuntive.

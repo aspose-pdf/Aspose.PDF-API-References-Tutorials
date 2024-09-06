@@ -1,35 +1,35 @@
 ---
-title: Tablo Öğesi Oluştur
-linktitle: Tablo Öğesi Oluştur
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile dizi öğesi oluşturmak için adım adım kılavuz. Tablolarla kolayca dinamik PDF'ler oluşturun.
+title: Tablo Elemanı Oluştur
+linktitle: Tablo Elemanı Oluştur
+second_title: Aspose.PDF for .NET API Referansı
+description: .NET için Aspose.PDF ile dizi öğesi oluşturmaya yönelik adım adım kılavuz. Tablolar içeren dinamik PDF'leri kolayca oluşturun.
 type: docs
 weight: 80
 url: /tr/net/programming-with-tagged-pdf/create-table-element/
 ---
-Bu adım adım kılavuzda, Aspose.PDF for .NET'i kullanarak bir dizi öğesi oluşturma sürecinde size yol göstereceğiz. Aspose.PDF, PDF belgelerini programlı olarak değiştirmenizi sağlayan güçlü bir kütüphanedir. Dinamik PDF'ler oluştururken bir dizi öğesi oluşturmak yaygın bir gereksinimdir ve Aspose.PDF bunu başarmanın kolay ve etkili bir yolunu sunar.
+Bu adım adım kılavuzda, .NET için Aspose.PDF kullanarak bir dizi öğesi oluşturma sürecinde size yol göstereceğiz. Aspose.PDF, PDF belgelerini programatik olarak düzenlemenize olanak tanıyan güçlü bir kütüphanedir. Dizi öğesi oluşturmak, dinamik PDF'ler oluştururken yaygın bir gerekliliktir ve Aspose.PDF bunu başarmak için kolay ve etkili bir yol sunar.
 
-Hadi kodun derinliklerine inelim ve Aspose.PDF for .NET kullanarak bir dizi öğesinin nasıl oluşturulacağını öğrenelim.
+Gelin koda bir göz atalım ve Aspose.PDF for .NET kullanarak bir dizi öğesinin nasıl oluşturulacağını öğrenelim.
 
-## Önkoşullar
+## Ön koşullar
 
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
 1. .NET için Aspose.PDF kütüphanesi kuruldu.
-2. C# programlama dili hakkında temel bilgi.
+2. C# programlama dilinin temel bilgisi.
 
-## 1. Adım: Ortamı ayarlama
+## Adım 1: Ortamı kurma
 
-Başlamak için C# geliştirme ortamınızı açın ve yeni bir proje oluşturun. Projenize .NET için Aspose.PDF kütüphanesine bir referans eklediğinizden emin olun.
+Başlamak için C# geliştirme ortamınızı açın ve yeni bir proje oluşturun. Projenize .NET için Aspose.PDF kütüphanesine bir başvuru eklediğinizden emin olun.
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Adım 2: Belgeyi oluşturma
+## Adım 2: Belgenin oluşturulması
 
- İlk adım, kullanarak yeni bir PDF belgesi oluşturmaktır.`Document` sınıf.
+ İlk adım, yeni bir PDF belgesi oluşturmaktır`Document` sınıf.
 
 ```csharp
 // Belgeyi oluştur
@@ -39,11 +39,11 @@ taggedContent.SetTitle("Example Array");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-Burada etiketlenen içeriğin başlığını ve dilini de ayarlıyoruz.
+Burada ayrıca etiketli içerik için başlığı ve dili de belirliyoruz.
 
-## 3. Adım: Dizi öğesini oluşturma
+## Adım 3: Dizi öğesini oluşturma
 
-Daha sonra dizi elemanını oluşturup belgeye eklememiz gerekiyor. Kök yapı elemanını alarak başlıyoruz, ardından aşağıdaki komutu kullanarak yeni bir tablo elemanı oluşturuyoruz.`CreateTableElement` yöntem.
+Sonra, dizi öğesini oluşturmamız ve belgeye eklememiz gerekiyor. Kök yapı öğesini alarak başlıyoruz, sonra kullanarak yeni bir tablo öğesi oluşturuyoruz`CreateTableElement` Yöntem.
 
 ```csharp
 // Kök yapı öğesini alın
@@ -138,18 +138,18 @@ bool isPdfUaCompliance = document.Validate(dataDir + "table.xml", PdfFormat.PDF_
 Console.WriteLine(String.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-### Aspose.PDF for .NET kullanarak Tablo Öğesi Oluşturma için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Tablo Elemanı Oluşturma için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Doküman oluştur
+// Belge oluştur
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table");
 taggedContent.SetLanguage("en-US");
 
-// Kök yapı öğesini alın
+// Kök yapı elemanını al
 StructureElement rootElement = taggedContent.RootElement;
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
@@ -230,10 +230,10 @@ StructureAttribute summaryAttribute = new StructureAttribute(AttributeKey.Summar
 summaryAttribute.SetStringValue("The summary text for table");
 tableAttributes.SetAttribute(summaryAttribute);
 
-// Etiketli Pdf Belgesini Kaydet
+// Etiketli PDF Belgesini Kaydet
 document.Save(dataDir + "CreateTableElement.pdf");
 
-// PDF/UA uyumluluğunu kontrol etme
+// PDF/UA uyumluluğunun kontrol edilmesi
 document = new Document(dataDir + "CreateTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "table.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
@@ -242,46 +242,46 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ## Çözüm
 
-Aspose.PDF for .NET'i kullanarak bir dizi öğesinin nasıl oluşturulacağını öğrendiniz. Artık bu yöntemi kullanarak dinamik tablolara sahip PDF belgeleri oluşturabilirsiniz. Aspose.PDF'in tüm potansiyelini keşfetmek için daha fazla özelliğini keşfetmekten çekinmeyin.
+.NET için Aspose.PDF kullanarak bir dizi öğesinin nasıl oluşturulacağını öğrendiniz. Artık bu yöntemi kullanarak dinamik tablolar içeren PDF belgeleri oluşturabilirsiniz. Aspose.PDF'nin tüm potansiyelini keşfetmek için daha fazla özelliğini keşfetmekten çekinmeyin.
 
-### SSS'ler
+### SSS
 
-#### S: PDF belgesindeki dizi öğesi nedir ve neden Aspose.PDF for .NET kullanarak bir dizi öğesi oluşturmam gerekiyor?
+#### S: PDF belgesinde dizi öğesi nedir ve .NET için Aspose.PDF kullanarak neden bir tane oluşturmam gerekir?
 
-C: Bir PDF belgesindeki dizi öğesi, genellikle tablolar veya ızgaralar oluşturmak için kullanılan, yapılandırılmış bir veri koleksiyonunu temsil eder. Tablo bilgileri veya ızgaralar gibi yapılandırılmış veri sunumu gerektiren dinamik PDF'ler oluştururken Aspose.PDF for .NET'i kullanarak bir dizi öğesi oluşturmanız gerekebilir.
+A: PDF belgesindeki bir dizi öğesi, genellikle tablolar veya ızgaralar oluşturmak için kullanılan yapılandırılmış bir veri koleksiyonunu temsil eder. Tablo bilgileri veya ızgaralar gibi yapılandırılmış veri sunumu gerektiren dinamik PDF'ler oluştururken .NET için Aspose.PDF kullanarak bir dizi öğesi oluşturmanız gerekebilir.
 
 #### S: Aspose.PDF for .NET bir dizi öğesi oluşturma sürecini nasıl basitleştirir?
 
-C: Aspose.PDF for .NET, bir PDF belgesindeki dizi öğelerini (tabloları) programlı olarak oluşturmanıza, özelleştirmenize ve yönetmenize olanak tanıyan kapsamlı bir sınıf ve yöntemler seti sağlar. Bu, manuel PDF manipülasyonu ihtiyacını ortadan kaldırır ve yapılandırılmış veri temsillerinin oluşturulmasını kolaylaştırır.
+A: Aspose.PDF for .NET, bir PDF belgesinde dizi öğelerini (tabloları) programatik olarak oluşturmanıza, özelleştirmenize ve yönetmenize olanak tanıyan kapsamlı bir sınıf ve yöntem kümesi sağlar. Bu, manuel PDF düzenleme ihtiyacını ortadan kaldırır ve yapılandırılmış veri gösterimlerinin oluşturulmasını kolaylaştırır.
 
 #### S: Aspose.PDF for .NET kullanarak bir dizi öğesi oluşturmanın temel adımları nelerdir?
 
-C: Temel adımlar arasında ortamın kurulması, belgenin oluşturulması, kök yapı öğesinin elde edilmesi, bir tablo öğesi oluşturulması, tablo içindeki satırların ve hücrelerin tanımlanması ve öğeler için biçimlendirmenin ve özelliklerin belirtilmesi yer alır. Sağlanan kod örneği bu adımları göstermektedir.
+A: Temel adımlar arasında ortamın kurulması, belgenin oluşturulması, kök yapı öğesinin edinilmesi, bir tablo öğesinin oluşturulması, tablo içindeki satırların ve hücrelerin tanımlanması ve öğeler için biçimlendirme ve özelliklerin belirtilmesi yer alır. Sağlanan kod örneği bu adımları göstermektedir.
 
-####  S: Hangi rol`taggedContent` object play in creating an array element?
+####  S: Rolü nedir?`taggedContent` object play in creating an array element?
 
- C:`taggedContent` belgeden elde edilen nesne`TaggedContent`özelliği, PDF belgesindeki etiketli içeriğin yapısını tanımlamanıza olanak tanır. Bu, dizi öğelerini ve bunların alt öğelerini hiyerarşik bir şekilde oluşturmayı ve düzenlemeyi içerir.
+ A:`taggedContent` nesne, belgenin kendisinden elde edilen`TaggedContent`özellik, PDF belgesindeki etiketli içeriğin yapısını tanımlamanıza olanak tanır. Bu, dizi öğelerini ve bunların alt öğelerini hiyerarşik bir şekilde oluşturmayı ve düzenlemeyi içerir.
 
-#### S: Kod, oluşturulan dizi öğesinin erişilebilirliğini ve anlambilimini nasıl sağlıyor?
+#### S: Kod, oluşturulan dizi öğesinin erişilebilirliğini ve semantiğini nasıl sağlar?
 
- C: Kod, aşağıdaki gibi nitelikleri ayarlar:`AlternativeText`, `BackgroundColor`, `Border`, `Margin`, `Alignment` , Ve`ColSpan` dizi öğesinin erişilebilirliğini ve anlambilimini geliştirmek için. Bu nitelikler, verilerin iyi yapılandırılmış, bilgilendirici ve görsel olarak çekici bir temsiline katkıda bulunur.
+ A: Kod şu gibi nitelikleri ayarlar:`AlternativeText`, `BackgroundColor`, `Border`, `Margin`, `Alignment` , Ve`ColSpan` Dizi öğesinin erişilebilirliğini ve semantiğini geliştirmek için. Bu nitelikler, verilerin iyi yapılandırılmış, bilgilendirici ve görsel olarak çekici bir temsiline katkıda bulunur.
 
-#### S: Dizi öğeleri oluşturma bağlamında PDF/UA uyumluluğunun önemi nedir?
+#### S: Dizi elemanlarının oluşturulması bağlamında PDF/UA uyumluluğunun önemi nedir?
 
- C: PDF/UA (Evrensel Erişilebilirlik) uyumluluğu, oluşturulan PDF belgelerinin engelli kullanıcılar tarafından erişilebilir olmasını ve belirli erişilebilirlik standartlarını karşılamasını sağlar. Kod örneği, PDF/UA uyumluluğunu aşağıdaki komutu kullanarak kontrol eder:`Validate` kapsayıcı ve erişilebilir belgeler oluşturmanıza yardımcı olan yöntem.
+ A: PDF/UA (Evrensel Erişilebilirlik) uyumluluğu, oluşturulan PDF belgelerinin engelli kullanıcılar tarafından erişilebilir olmasını ve belirli erişilebilirlik standartlarını karşılamasını sağlar. Kod örneği, PDF/UA uyumluluğunu şu şekilde kontrol eder:`Validate` kapsayıcı ve erişilebilir belgeler oluşturmanıza yardımcı olan bir yöntemdir.
 
-#### S: Dizi öğelerinin biçimlendirmesini ve görünümünü daha da özelleştirebilir miyim?
+#### S: Dizi elemanlarının biçimlendirmesini ve görünümünü daha fazla özelleştirebilir miyim?
 
-C: Evet, arka plan rengi, kenarlık stili, yazı tipi boyutu ve hizalama gibi nitelikleri ayarlayarak dizi öğelerinin biçimlendirmesini ve görünümünü özelleştirebilirsiniz. Aspose.PDF for .NET, görsel sunumu ihtiyaçlarınıza göre uyarlamak için geniş bir özellik yelpazesi sunar.
+A: Evet, arka plan rengi, kenarlık stili, yazı tipi boyutu ve hizalama gibi nitelikleri ayarlayarak dizi öğelerinin biçimlendirmesini ve görünümünü özelleştirebilirsiniz. Aspose.PDF for .NET, görsel sunumu gereksinimlerinize göre uyarlamak için çok çeşitli özellikler sunar.
 
-#### S: Bu bilgiyi daha karmaşık tablo yapıları oluşturacak veya dizi öğelerini daha büyük PDF belgelerine dahil edecek şekilde nasıl genişletebilirim?
+#### S: Bu bilgiyi daha karmaşık tablo yapıları oluşturmak veya dizi elemanlarını daha büyük PDF belgelerine dahil etmek için nasıl genişletebilirim?
 
-C: Aspose.PDF for .NET'in birden fazla dizi öğesini birleştirmek, iç içe geçmiş tablolar oluşturmak, üstbilgi ve altbilgiler eklemek ve dizi öğelerini daha büyük PDF düzenlerine entegre etmek gibi ek özelliklerini keşfederek bu bilgiyi genişletebilirsiniz. Kitaplığın belgeleri ve örnekleri bu gelişmiş senaryolar için rehberlik sağlar.
+A: Birden fazla dizi öğesini birleştirme, iç içe tablolar oluşturma, başlıklar ve altbilgiler ekleme ve dizi öğelerini daha büyük PDF düzenlerine entegre etme gibi .NET için Aspose.PDF'nin ek özelliklerini keşfederek bu bilgiyi genişletebilirsiniz. Kütüphanenin belgeleri ve örnekleri bu gelişmiş senaryolar için rehberlik sağlar.
 
-#### S: Dizi öğelerini doldurmak için veritabanları veya elektronik tablolar gibi harici kaynaklardan veri almak mümkün müdür?
+#### S: Dizi elemanlarını doldurmak için veritabanları veya elektronik tablolar gibi harici kaynaklardan veri içe aktarmak mümkün müdür?
 
-C: Evet, dizi öğelerini doldurmak için harici kaynaklardan verileri içe aktarabilirsiniz. Veritabanlarından, elektronik tablolardan veya diğer kaynaklardan veri almak ve ardından dizi öğelerini buna göre doldurmak için C#'taki veri alma ve dönüştürme tekniklerini kullanabilirsiniz.
+A: Evet, dizi öğelerini doldurmak için harici kaynaklardan veri içe aktarabilirsiniz. Veritabanlarından, elektronik tablolardan veya diğer kaynaklardan veri almak ve ardından dizi öğelerini buna göre doldurmak için C# dilindeki veri alma ve dönüştürme tekniklerini kullanabilirsiniz.
 
-#### S: Programlı olarak oluşturduğum PDF belgelerinin kalitesini ve kullanılabilirliğini geliştirmek için bu eğitimden edindiğim bilgileri nasıl kullanabilirim?
+#### S: Bu eğitimden edindiğim bilgileri, programatik olarak oluşturduğum PDF belgelerinin kalitesini ve kullanılabilirliğini artırmak için nasıl kullanabilirim?
 
-C: Bu eğitimden edinilen bilgiler, PDF belgelerinde yapılandırılmış ve görsel olarak çekici dizi öğeleri (tablolar) oluşturmanıza olanak tanır. Bu teknikleri birleştirerek, dinamik olarak oluşturulan PDF'lerin okunabilirliğini, erişilebilirliğini ve kullanıcı deneyimini iyileştirerek onları daha bilgilendirici ve kullanıcı dostu hale getirebilirsiniz.
+A: Bu eğitimden edinilen bilgi, PDF belgelerinde yapılandırılmış ve görsel olarak çekici dizi öğeleri (tablolar) oluşturmanıza olanak tanır. Bu teknikleri dahil ederek, dinamik olarak oluşturulan PDF'lerin okunabilirliğini, erişilebilirliğini ve kullanıcı deneyimini iyileştirebilir, bunları daha bilgilendirici ve kullanıcı dostu hale getirebilirsiniz.

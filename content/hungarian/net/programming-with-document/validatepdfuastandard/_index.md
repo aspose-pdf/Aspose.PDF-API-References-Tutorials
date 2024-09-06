@@ -70,7 +70,7 @@ V: A PDF-dokumentumot tartalmazó könyvtár elérési útjának meghatározás�
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Cserélje le a „DOKUMENTUMKÖNYVTÁR” elemet a PDF-dokumentumot tartalmazó könyvtár tényleges elérési útjával.
+Cserélje le a "DOKUMENTUMKÖNYVTÁR" elemet a PDF-dokumentumot tartalmazó könyvtár tényleges elérési útjával.
 
 #### K: Érvényesíthetem a PDF-dokumentumokat más PDF-szabványokkal szemben az Aspose.PDF for .NET használatával?
 

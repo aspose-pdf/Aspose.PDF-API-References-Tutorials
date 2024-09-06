@@ -7,13 +7,13 @@ type: docs
 weight: 60
 url: /cs/net/programming-with-graphs/create-rectangle-with-alpha-color/
 ---
-V tomto tutoriálu vás krok za krokem provedeme následujícím zdrojovým kódem C#, abyste vytvořili obdélník s barvou alfa pomocí Aspose.PDF for .NET.
+tomto tutoriálu vás krok za krokem provedeme následujícím zdrojovým kódem C#, abyste vytvořili obdélník s barvou alfa pomocí Aspose.PDF pro .NET.
 
 Než začnete, ujistěte se, že jste nainstalovali knihovnu Aspose.PDF a nastavili své vývojové prostředí. Také mít základní znalosti programování v C#.
 
 ## Krok 1: Nastavení adresáře dokumentů
 
-poskytnutém zdrojovém kódu musíte určit adresář, kam chcete uložit výsledný soubor PDF. Změňte proměnnou "dataDir" na požadovaný adresář.
+V poskytnutém zdrojovém kódu musíte určit adresář, kam chcete uložit výsledný soubor PDF. Změňte proměnnou "dataDir" na požadovaný adresář.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -73,7 +73,7 @@ page.Paragraphs.Add(canvas);
 
 ## Krok 8: Uložení výsledného souboru PDF
 
-Nakonec výsledný soubor PDF s názvem „CreateRectangleWithAlphaColor_out.pdf“ uložíme do zadaného adresáře.
+Nakonec výsledný PDF soubor s názvem „CreateRectangleWithAlphaColor_out.pdf“ uložíme do zadaného adresáře.
 
 ```csharp
 doc.Save(dataDir + "CreateRectangleWithAlphaColor_out.pdf");
@@ -93,7 +93,7 @@ Aspose.Pdf.Page page = doc.Pages.Add();
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 // Vytvořte obdélníkový objekt se specifickými rozměry
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 100);
-//Nastavte barvu výplně grafu ze struktury System.Drawing.Color z 32bitové hodnoty ARGB
+// Nastavte barvu výplně grafu ze struktury System.Drawing.Color z 32bitové hodnoty ARGB
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
 // Přidejte obdélníkový objekt do kolekce tvarů instance Graph
 canvas.Shapes.Add(rect);
@@ -134,7 +134,7 @@ Odpověď: Objekt Graph funguje jako kontejner pro prvky kreslení, zatímco obd
 
 #### Otázka: Jak mohu nastavit barvu alfa pro obdélník?
 
-A: Můžete určit barvu alfa pro obdélník pomocí`FillColor` vlastnictvím`GraphInfo` objekt a`Color.FromRgb` metoda s hodnotou ARGB.
+ A: Můžete určit barvu alfa pro obdélník pomocí`FillColor` majetek z`GraphInfo` objekt a`Color.FromRgb` metoda s hodnotou ARGB.
 
 #### Otázka: Mohu vytvořit více obdélníků s různými barvami alfa?
 

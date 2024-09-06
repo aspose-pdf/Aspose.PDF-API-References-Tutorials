@@ -1,15 +1,15 @@
 ---
 title: Criar elemento de tabela
 linktitle: Criar elemento de tabela
-second_title: Referência da API Aspose.PDF para .NET
+second_title: Referência da API do Aspose.PDF para .NET
 description: Guia passo a passo para criar um elemento de array com Aspose.PDF para .NET. Gere PDFs dinâmicos com tabelas facilmente.
 type: docs
 weight: 80
 url: /pt/net/programming-with-tagged-pdf/create-table-element/
 ---
-Neste guia passo a passo, orientaremos você no processo de criação de um elemento de array usando Aspose.PDF para .NET. Aspose.PDF é uma biblioteca poderosa que permite manipular documentos PDF programaticamente. Criar um elemento de array é um requisito comum ao gerar PDFs dinâmicos, e Aspose.PDF oferece uma maneira fácil e eficiente de fazer isso.
+Neste guia passo a passo, nós o guiaremos pelo processo de criação de um elemento de array usando o Aspose.PDF para .NET. O Aspose.PDF é uma biblioteca poderosa que permite manipular documentos PDF programaticamente. Criar um elemento de array é um requisito comum ao gerar PDFs dinâmicos, e o Aspose.PDF oferece uma maneira fácil e eficiente de fazer isso.
 
-Vamos mergulhar no código e aprender como criar um elemento de array usando Aspose.PDF para .NET.
+Vamos mergulhar no código e aprender como criar um elemento de matriz usando Aspose.PDF para .NET.
 
 ## Pré-requisitos
 
@@ -18,7 +18,7 @@ Antes de começar, certifique-se de ter o seguinte:
 1. Biblioteca Aspose.PDF para .NET instalada.
 2. Conhecimento básico da linguagem de programação C#.
 
-## Passo 1: Configurando o ambiente
+## Etapa 1: Configurando o ambiente
 
 Para começar, abra seu ambiente de desenvolvimento C# e crie um novo projeto. Certifique-se de ter adicionado uma referência à biblioteca Aspose.PDF para .NET em seu projeto.
 
@@ -27,7 +27,7 @@ Para começar, abra seu ambiente de desenvolvimento C# e crie um novo projeto. C
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Passo 2: Criando o documento
+## Etapa 2: Criando o documento
 
  O primeiro passo é criar um novo documento PDF usando o`Document` aula.
 
@@ -41,12 +41,12 @@ taggedContent.SetLanguage("fr-FR");
 
 Aqui também definimos o título e o idioma do conteúdo marcado.
 
-## Etapa 3: Criando o elemento array
+## Etapa 3: Criando o elemento da matriz
 
- seguir, precisamos criar o elemento array e adicioná-lo ao documento. Começamos obtendo o elemento de estrutura raiz e, em seguida, criamos um novo elemento de tabela usando o`CreateTableElement` método.
+Em seguida, precisamos criar o elemento array e adicioná-lo ao documento. Começamos obtendo o elemento root structure, então criamos um novo elemento table usando o`CreateTableElement` método.
 
 ```csharp
-// Obtenha o elemento da estrutura raiz
+// Obter o elemento de estrutura raiz
 StructureElement rootElement = taggedContent.RootElement;
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
@@ -129,16 +129,16 @@ StructureAttribute summaryAttribute = new StructureAttribute(AttributeKey.Summar
 summaryAttribute.SetStringValue("The summary text for the table");
 tableAttributes.SetAttribute(summaryAttribute);
 
-// Salve o documento PDF marcado
+// Salvar o documento PDF marcado
 document.Save(dataDir + "CreateTableElement.pdf");
 
-// Verificação de conformidade com PDF/UA
+// Verificação de conformidade PDF/UA
 document = new Document(dataDir + "CreateTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "table.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-### Exemplo de código-fonte para criar elemento de tabela usando Aspose.PDF para .NET 
+### Código-fonte de exemplo para criar elemento de tabela usando Aspose.PDF para .NET 
 ```csharp
 // O caminho para o diretório de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -149,7 +149,7 @@ ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table");
 taggedContent.SetLanguage("en-US");
 
-// Obtenha o elemento da estrutura raiz
+// Obter elemento de estrutura raiz
 StructureElement rootElement = taggedContent.RootElement;
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
@@ -246,42 +246,42 @@ Você aprendeu como criar um elemento de array usando Aspose.PDF para .NET. Agor
 
 ### Perguntas frequentes
 
-#### P: O que é um elemento de array em um documento PDF e por que eu precisaria criar um usando Aspose.PDF for .NET?
+#### P: O que é um elemento de matriz em um documento PDF e por que eu precisaria criar um usando o Aspose.PDF para .NET?
 
-R: Um elemento de matriz em um documento PDF representa uma coleção estruturada de dados, frequentemente usada para criar tabelas ou grades. Pode ser necessário criar um elemento de matriz usando Aspose.PDF for .NET ao gerar PDFs dinâmicos que exigem apresentação de dados estruturados, como informações tabulares ou grades.
+R: Um elemento de matriz em um documento PDF representa uma coleção estruturada de dados, frequentemente usada para criar tabelas ou grades. Talvez seja necessário criar um elemento de matriz usando o Aspose.PDF para .NET ao gerar PDFs dinâmicos que exigem apresentação de dados estruturados, como informações tabulares ou grades.
 
-#### P: Como o Aspose.PDF for .NET simplifica o processo de criação de um elemento de array?
+#### P: Como o Aspose.PDF for .NET simplifica o processo de criação de um elemento de matriz?
 
-R: Aspose.PDF for .NET fornece um conjunto abrangente de classes e métodos que permitem criar, personalizar e gerenciar elementos de array (tabelas) em um documento PDF de forma programática. Isso elimina a necessidade de manipulação manual de PDF e agiliza a criação de representações de dados estruturados.
+A: O Aspose.PDF para .NET fornece um conjunto abrangente de classes e métodos que permitem que você crie, personalize e gerencie elementos de array (tabelas) em um documento PDF programaticamente. Isso elimina a necessidade de manipulação manual de PDF e simplifica a criação de representações de dados estruturados.
 
-#### P: Quais são as principais etapas envolvidas na criação de um elemento de array usando Aspose.PDF for .NET?
+#### P: Quais são as principais etapas envolvidas na criação de um elemento de matriz usando Aspose.PDF para .NET?
 
-R: As principais etapas incluem configurar o ambiente, criar o documento, obter o elemento da estrutura raiz, criar um elemento de tabela, definir linhas e células na tabela e especificar a formatação e as propriedades dos elementos. O exemplo de código fornecido demonstra essas etapas.
+R: As principais etapas incluem configurar o ambiente, criar o documento, obter o elemento de estrutura raiz, criar um elemento de tabela, definir linhas e células dentro da tabela e especificar formatação e propriedades para os elementos. O exemplo de código fornecido demonstra essas etapas.
 
 ####  P: Qual é o papel do`taggedContent` object play in creating an array element?
 
- R: O`taggedContent` objeto, obtido do documento`TaggedContent`propriedade, permite definir a estrutura do conteúdo marcado no documento PDF. Isso inclui criar e organizar elementos de array e seus elementos filhos de maneira hierárquica.
+ A: O`taggedContent` objeto, obtido do documento`TaggedContent`propriedade, permite que você defina a estrutura do conteúdo marcado dentro do documento PDF. Isso inclui criar e organizar elementos de array e seus elementos filhos de forma hierárquica.
 
-#### P: Como o código garante a acessibilidade e a semântica do elemento do array criado?
+#### P: Como o código garante a acessibilidade e a semântica do elemento da matriz criado?
 
- R: O código define atributos como`AlternativeText`, `BackgroundColor`, `Border`, `Margin`, `Alignment` , e`ColSpan` para melhorar a acessibilidade e a semântica do elemento da matriz. Esses atributos contribuem para uma representação dos dados bem estruturada, informativa e visualmente atraente.
+ R: O código define atributos como`AlternativeText`, `BackgroundColor`, `Border`, `Margin`, `Alignment` , e`ColSpan` para melhorar a acessibilidade e a semântica do elemento do array. Esses atributos contribuem para uma representação de dados bem estruturada, informativa e visualmente atraente.
 
-#### P: Qual é a importância da conformidade com PDF/UA no contexto da criação de elementos de array?
+#### P: Qual é a importância da conformidade com PDF/UA no contexto da criação de elementos de matriz?
 
- R: A conformidade com PDF/UA (Acessibilidade Universal) garante que os documentos PDF gerados sejam acessíveis a usuários com deficiência e atendam a determinados padrões de acessibilidade. O exemplo de código verifica a conformidade com PDF/UA usando o`Validate` método, ajudando você a criar documentos inclusivos e acessíveis.
+ A: A conformidade com PDF/UA (Acessibilidade Universal) garante que os documentos PDF gerados sejam acessíveis a usuários com deficiências e atendam a certos padrões de acessibilidade. O exemplo de código verifica a conformidade com PDF/UA usando o`Validate` método, ajudando você a criar documentos inclusivos e acessíveis.
 
-#### P: Posso personalizar ainda mais a formatação e a aparência dos elementos da matriz?
+#### P: Posso personalizar ainda mais a formatação e a aparência dos elementos do array?
 
-R: Sim, você pode personalizar a formatação e a aparência dos elementos da matriz ajustando atributos como cor de fundo, estilo de borda, tamanho da fonte e alinhamento. Aspose.PDF for .NET oferece uma ampla gama de propriedades para adaptar a apresentação visual às suas necessidades.
+R: Sim, você pode personalizar a formatação e a aparência dos elementos do array ajustando atributos como cor de fundo, estilo de borda, tamanho da fonte e alinhamento. O Aspose.PDF para .NET fornece uma ampla gama de propriedades para adaptar a apresentação visual às suas necessidades.
 
-#### P: Como posso ampliar esse conhecimento para criar estruturas de tabelas mais complexas ou incorporar elementos de array em documentos PDF maiores?
+#### P: Como posso estender esse conhecimento para criar estruturas de tabela mais complexas ou incorporar elementos de matriz em documentos PDF maiores?
 
-R: Você pode ampliar esse conhecimento explorando recursos adicionais do Aspose.PDF para .NET, como mesclar vários elementos de matriz, criar tabelas aninhadas, adicionar cabeçalhos e rodapés e integrar elementos de matriz em layouts PDF maiores. A documentação e os exemplos da biblioteca fornecem orientação para esses cenários avançados.
+R: Você pode estender esse conhecimento explorando recursos adicionais do Aspose.PDF para .NET, como mesclar vários elementos de array, criar tabelas aninhadas, adicionar cabeçalhos e rodapés e integrar elementos de array em layouts de PDF maiores. A documentação e os exemplos da biblioteca fornecem orientação para esses cenários avançados.
 
-#### P: É possível importar dados de fontes externas, como bancos de dados ou planilhas, para preencher os elementos do array?
+#### P: É possível importar dados de fontes externas, como bancos de dados ou planilhas, para preencher os elementos da matriz?
 
-R: Sim, você pode importar dados de fontes externas para preencher elementos do array. Você pode usar técnicas de recuperação e transformação de dados em C# para buscar dados de bancos de dados, planilhas ou outras fontes e, em seguida, preencher os elementos da matriz de acordo.
+R: Sim, você pode importar dados de fontes externas para preencher elementos de array. Você pode usar técnicas de recuperação e transformação de dados em C# para buscar dados de bancos de dados, planilhas ou outras fontes e, então, preencher os elementos de array adequadamente.
 
 #### P: Como posso usar o conhecimento adquirido neste tutorial para melhorar a qualidade e a usabilidade dos documentos PDF que crio programaticamente?
 
-R: O conhecimento adquirido neste tutorial permite criar elementos de array (tabelas) estruturados e visualmente atraentes em documentos PDF. Ao incorporar essas técnicas, você pode melhorar a legibilidade, a acessibilidade e a experiência do usuário de PDFs gerados dinamicamente, tornando-os mais informativos e fáceis de usar.
+R: O conhecimento adquirido neste tutorial permite que você crie elementos de array (tabelas) estruturados e visualmente atraentes em documentos PDF. Ao incorporar essas técnicas, você pode melhorar a legibilidade, acessibilidade e experiência do usuário de PDFs gerados dinamicamente, tornando-os mais informativos e fáceis de usar.

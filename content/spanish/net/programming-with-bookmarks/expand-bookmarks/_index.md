@@ -1,158 +1,125 @@
 ---
 title: Expandir marcadores en un archivo PDF
 linktitle: Expandir marcadores en un archivo PDF
-second_title: Aspose.PDF para referencia de API .NET
-description: Amplíe fácilmente los marcadores en un archivo PDF para mejorar la navegación con Aspose.PDF para .NET.
+second_title: Referencia de API de Aspose.PDF para .NET
+description: Aprenda a expandir marcadores en archivos PDF con Aspose.PDF para .NET con esta guía paso a paso. Perfecta para desarrolladores que buscan mejorar la navegación en PDF.
 type: docs
 weight: 50
 url: /es/net/programming-with-bookmarks/expand-bookmarks/
 ---
-Al expandir los marcadores en un archivo PDF se mostrarán todos los marcadores abiertos de forma predeterminada. Con Aspose.PDF para .NET, puede expandir fácilmente los marcadores siguiendo el siguiente código fuente:
+## Introducción
 
-## Paso 1: importar las bibliotecas necesarias
+¿Alguna vez ha abierto un archivo PDF y se ha dado cuenta de que todos los marcadores están contraídos? Puede resultar frustrante, especialmente cuando intenta navegar por un documento extenso. Afortunadamente, con Aspose.PDF para .NET, puede expandir fácilmente los marcadores de sus archivos PDF mediante programación. Esta guía le guiará por el proceso paso a paso, asegurándose de que comprende cada parte del código y cómo funciona. Así que, tome su bebida favorita y ¡sumérjase en el mundo de la manipulación de PDF!
 
-Antes de comenzar, debe importar las bibliotecas necesarias para su proyecto C#. Aquí está la directiva de importación necesaria:
+## Prerrequisitos
+
+Antes de comenzar, hay algunas cosas que debes tener en cuenta:
+
+1. Visual Studio: Asegúrate de tener Visual Studio instalado en tu equipo. Es el mejor entorno para el desarrollo de .NET.
+2.  Aspose.PDF para .NET: Deberá descargar e instalar la biblioteca Aspose.PDF. Puede encontrarla[aquí](https://releases.aspose.com/pdf/net/).
+3. Conocimientos básicos de C#: la familiaridad con la programación en C# le ayudará a comprender mejor los fragmentos de código.
+
+## Importar paquetes
+
+Para comenzar, debes importar los paquetes necesarios en tu proyecto de C#. Puedes hacerlo de la siguiente manera:
+
+### Crear un nuevo proyecto
+
+Abra Visual Studio y cree un nuevo proyecto de C#. Puede elegir una aplicación de consola para simplificar el proceso.
+
+### Añadir referencia de Aspose.PDF
+
+1. Haga clic derecho en su proyecto en el Explorador de soluciones.
+2. Seleccione "Administrar paquetes NuGet".
+3. Busque "Aspose.PDF" e instale la última versión.
+
+### Importar el espacio de nombres
+
+En la parte superior de su archivo C#, importe el espacio de nombres Aspose.PDF:
 
 ```csharp
+using System;
+using System.IO;
 using Aspose.Pdf;
 ```
 
-## Paso 2: establezca la ruta a la carpeta de documentos
+¡Ahora que ya tienes todo configurado, pasemos al código real!
 
- En este paso, debe especificar la ruta a la carpeta que contiene el archivo PDF cuyos marcadores desea expandir. Reemplazar`"YOUR DOCUMENT DIRECTORY"`en el siguiente código con la ruta real a su carpeta de documentos:
+## Paso 1: Configurar el directorio de documentos
 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-```
+En primer lugar, debe especificar la ruta al directorio de sus documentos. Aquí se encuentra el archivo PDF de entrada y donde se guardará el archivo de salida.
 
-## Paso 3: abre el documento PDF
-
-Ahora abriremos el documento PDF cuyos marcadores queremos expandir usando el siguiente código:
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
-## Paso 4: configurar el modo de visualización de página
-
-En este paso, configuraremos el modo de visualización de la página para que muestre marcadores de forma predeterminada. Usamos el`PageMode` propiedad de la`doc` objeto para establecer el modo de página deseado. Aquí está el código correspondiente:
-
-```csharp
-doc.PageMode = PageMode.UseOutlines;
-```
-
-## Paso 5: busque marcadores y amplíelos
-
- Ahora recorreremos cada elemento de marcador en la colección de marcadores del documento y estableceremos el estado abierto de cada elemento en`true` para expandirlos de forma predeterminada. Aquí está el código correspondiente:
-
-```csharp
-foreach(OutlineItemCollection item in doc.Outlines)
-{
-     item. Open = true;
-}
-```
-
-## Paso 6: guarde el archivo actualizado
-
- Finalmente, guardamos el archivo PDF actualizado usando el`Save` método de la`doc` objeto. Aquí está el código correspondiente:
-
-```csharp
-dataDir = dataDir + "ExpandBookmarks_out.pdf";
-doc.Save(dataDir);
-```
-
-### Código fuente de muestra para expandir marcadores usando Aspose.PDF para .NET 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+## Paso 2: Abra el documento PDF
+
+ A continuación, abra el documento PDF que contiene los marcadores que desea expandir. Esto se hace usando el botón`Document` clase de la biblioteca Aspose.PDF.
+
+```csharp
 // Abrir documento
-Document doc = new Document(dataDir + "input.pdf");
-// Establecer el modo de vista de página, es decir, mostrar miniaturas, pantalla completa, mostrar panel de archivos adjuntos
+Document doc = new Document(dataDir + "input-bookmark.pdf");
+```
+
+## Paso 3: Establezca el modo de visualización de la página
+
+Ahora, debe configurar el modo de visualización de la página del documento. Esto determina cómo se mostrará el PDF al abrirlo. En este caso, queremos utilizar contornos (marcadores).
+
+```csharp
+//Establecer el modo de visualización de la página, es decir, mostrar miniaturas, pantalla completa, mostrar panel de archivos adjuntos
 doc.PageMode = PageMode.UseOutlines;
-// Recorra cada elemento de Ouline en la colección de esquemas del archivo PDF
+```
+
+## Paso 4: Recorrer los elementos del esquema
+
+¡Ahora viene la parte divertida! Recorrerás cada elemento del esquema en la colección de esquemas del PDF y establecerás su estado abierto como verdadero. Esto expandirá los marcadores.
+
+```csharp
+// Recorrer cada elemento del esquema en la colección de esquemas del archivo PDF
 foreach (OutlineItemCollection item in doc.Outlines)
 {
-	// Establecer estado abierto para elemento de esquema
-	item.Open = true;
+    // Establecer el estado abierto para el elemento del esquema
+    item.Open = true;
 }
+```
+
+## Paso 5: Guardar el documento de salida
+
+Después de expandir los marcadores, es momento de guardar el documento modificado. Deberá especificar un nuevo nombre de archivo para el PDF resultante.
+
+```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 // Guardar salida
 doc.Save(dataDir);
+```
+
+## Paso 6: Mensaje de confirmación
+
+Por último, puedes imprimir un mensaje de confirmación en la consola para avisarte que los marcadores se han expandido exitosamente.
+
+```csharp
 Console.WriteLine("\nBookmarks expanded successfully.\nFile saved at " + dataDir);
 ```
 
 ## Conclusión
 
-¡Enhorabuena! Ahora tiene una guía paso a paso para desarrollar marcadores con Aspose.PDF para .NET. Puede utilizar este código para mostrar todos los marcadores predeterminados en sus documentos PDF.
+¡Y ya está! Ha logrado expandir los marcadores en un archivo PDF con Aspose.PDF para .NET. Esta sencilla pero potente biblioteca le permite manipular documentos PDF con facilidad, lo que le hará la vida mucho más sencilla. Ya sea que esté trabajando en un proyecto personal o en una aplicación profesional, Aspose.PDF es una herramienta fantástica para tener en su arsenal.
 
-Asegúrese de consultar la documentación oficial de Aspose.PDF para obtener más información sobre las funciones avanzadas de manipulación de marcadores.
+## Preguntas frecuentes
 
-### Preguntas frecuentes para expandir marcadores en un archivo PDF
+### ¿Qué es Aspose.PDF para .NET?
+Aspose.PDF para .NET es una potente biblioteca que permite a los desarrolladores crear, manipular y convertir documentos PDF mediante programación.
 
-#### P: ¿Qué son los marcadores en un archivo PDF?
+### ¿Puedo utilizar Aspose.PDF gratis?
+ Sí, Aspose ofrece una versión de prueba gratuita que puedes usar para explorar las funciones de la biblioteca. Puedes descargarla[aquí](https://releases.aspose.com/).
 
-R: Los marcadores en un archivo PDF son ayudas de navegación que permiten a los usuarios saltar rápidamente a secciones o páginas específicas dentro del documento. Proporcionan una forma cómoda de acceder a diferentes partes de un documento.
+### ¿Dónde puedo encontrar más documentación?
+ Puede encontrar documentación completa en Aspose.PDF para .NET[aquí](https://reference.aspose.com/pdf/net/).
 
-#### P: ¿Por qué querría expandir los marcadores en un archivo PDF?
+### ¿Hay soporte disponible para Aspose.PDF?
+ ¡Por supuesto! Puedes obtener ayuda de la comunidad Aspose[aquí](https://forum.aspose.com/c/pdf/10).
 
-R: Expandir los marcadores puede mejorar la experiencia del usuario al mostrar todos los marcadores en un estado expandido de forma predeterminada. Esto brinda a los usuarios una descripción general clara de la estructura del documento y les permite navegar fácilmente a diferentes secciones.
-
-#### P: ¿Cómo importo las bibliotecas necesarias para mi proyecto C#?
-
-R: Para importar la biblioteca requerida para su proyecto C#, use la siguiente directiva de importación:
-
-```csharp
-using Aspose.Pdf;
-```
-
-Esta directiva le permite utilizar las clases y métodos proporcionados por Aspose.PDF para .NET.
-
-#### P: ¿Cómo especifico la ruta a la carpeta de documentos?
-
- R: En el código fuente proporcionado, reemplace`"YOUR DOCUMENT DIRECTORY"` con la ruta real a la carpeta que contiene el archivo PDF con el que desea trabajar. Esto garantiza que el código pueda localizar el archivo PDF de destino.
-
-#### P: ¿Cómo abro un documento PDF para expandir sus marcadores?
-
-R: Para abrir un documento PDF y expandir los marcadores, utilice el siguiente código:
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
- Reemplazar`"input.pdf"` con el nombre del archivo real.
-
-#### P: ¿Cómo configuro el modo de visualización de páginas para que muestre marcadores de forma predeterminada?
-
-R: Para configurar el modo de visualización de páginas para que muestre marcadores de forma predeterminada, utilice el`PageMode` propiedad de la`doc` objeto:
-
-```csharp
-doc.PageMode = PageMode.UseOutlines;
-```
-
-#### P: ¿Cómo amplío todos los marcadores en el documento PDF?
-
- R: Para expandir todos los marcadores, recorra cada elemento de marcador en la colección de esquemas del documento y configure el`Open` propiedad a`true`:
-
-```csharp
-foreach (OutlineItemCollection item in doc.Outlines)
-{
-    item.Open = true;
-}
-```
-
-#### P: ¿Qué sucede si un marcador tiene marcadores secundarios anidados?
-
-R: Si un marcador tiene marcadores secundarios anidados, al expandir el marcador principal también se expandirán sus marcadores secundarios, lo que proporciona una vista completa de la estructura del documento.
-
-#### P: ¿Cómo guardo el archivo PDF actualizado después de expandir los marcadores?
-
-R: Para guardar el archivo PDF actualizado después de expandir los marcadores, use el siguiente código:
-
-```csharp
-dataDir = dataDir + "ExpandBookmarks_out.pdf";
-doc.Save(dataDir);
-```
-
-#### P: ¿Puedo personalizar la apariencia de los marcadores expandidos?
-
-R: Si bien este tutorial se centra en expandir los marcadores de forma predeterminada, puede personalizar la apariencia de los marcadores utilizando otras características y propiedades de Aspose.PDF.
+### ¿Cómo compro una licencia para Aspose.PDF?
+ Puedes comprar una licencia para Aspose.PDF[aquí](https://purchase.aspose.com/buy).

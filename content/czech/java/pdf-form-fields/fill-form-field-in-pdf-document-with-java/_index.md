@@ -8,7 +8,7 @@ weight: 14
 url: /cs/java/pdf-form-fields/fill-form-field-in-pdf-document-with-java/
 ---
 
-## Úvod
+## Zavedení
 
 Aspose.PDF for Java je komplexní knihovna Java, která umožňuje vývojářům bezproblémově vytvářet, manipulovat a pracovat s dokumenty PDF. V tomto podrobném průvodci prozkoumáme, jak vyplnit pole formuláře v dokumentu PDF pomocí Aspose.PDF pro Java.
 
@@ -23,7 +23,7 @@ Aspose.PDF for Java poskytuje širokou škálu funkcí pro práci s PDF, včetn�
 - Extrahování dat z PDF.
 - Přidání polí formuláře do PDF.
 - Vyplňování polí formuláře v PDF.
-- A mnohem víc.
+- A mnohem více.
 
 ## Předpoklady
 
@@ -31,7 +31,7 @@ Než začnete, ujistěte se, že máte splněny následující předpoklady:
 
 - Java Development Kit (JDK) nainstalovaný ve vašem systému.
 - Editor kódu, jako je IntelliJ IDEA nebo Eclipse.
--  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Nastavení prostředí
 
@@ -100,7 +100,7 @@ V tomto článku jsme prozkoumali, jak vyplnit pole formuláře v dokumentu PDF 
 
 ### Jak si mohu stáhnout Aspose.PDF pro Javu?
 
- Aspose.PDF pro Java si můžete stáhnout z webových stránek[tady](https://releases.aspose.com/pdf/java/).
+ Aspose.PDF pro Java si můžete stáhnout z webových stránek[zde](https://releases.aspose.com/pdf/java/).
 
 ### Mohu použít Aspose.PDF pro Javu v komerčních projektech?
 

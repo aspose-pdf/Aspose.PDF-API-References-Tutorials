@@ -1,17 +1,17 @@
 ---
-title: Dodaj obraz w pliku PDF
-linktitle: Dodaj obraz w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Z łatwością dodawaj obraz do pliku PDF za pomocą Aspose.PDF dla .NET.
+title: Dodaj obraz do pliku PDF
+linktitle: Dodaj obraz do pliku PDF
+second_title: Aspose.PDF dla .NET API Reference
+description: Łatwe dodawanie obrazów do plików PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 10
 url: /pl/net/programming-with-images/add-image/
 ---
-Ten przewodnik poprowadzi Cię krok po kroku, jak dodać obraz do pliku PDF przy użyciu Aspose.PDF dla .NET. Upewnij się, że masz już skonfigurowane środowisko i wykonaj poniższe czynności:
+Ten przewodnik krok po kroku pokaże Ci, jak dodać obraz do pliku PDF za pomocą Aspose.PDF dla .NET. Upewnij się, że skonfigurowałeś już swoje środowisko i wykonaj poniższe kroki:
 
 ## Krok 1: Zdefiniuj katalog dokumentów
 
- Zanim zaczniesz, upewnij się, że ustawiłeś właściwy katalog dla dokumentów. Zastępować`"YOUR DOCUMENT DIRECTORY"` w kodzie ścieżką do katalogu, w którym znajduje się Twój dokument PDF.
+Przed rozpoczęciem upewnij się, że ustawiłeś właściwy katalog dla dokumentów. Zastąp`"YOUR DOCUMENT DIRECTORY"` w kodzie podając ścieżkę do katalogu, w którym znajduje się Twój dokument PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 2: Otwórz dokument
 
- tym kroku otworzymy dokument PDF za pomocą`Document` klasa Aspose.PDF. Użyj`Document` konstruktor i podaj ścieżkę do dokumentu PDF.
+ W tym kroku otworzymy dokument PDF za pomocą`Document` klasa Aspose.PDF. Użyj`Document` konstruktora i przekazuje ścieżkę do dokumentu PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddImage.pdf");
@@ -27,7 +27,7 @@ Document pdfDocument = new Document(dataDir + "AddImage.pdf");
 
 ## Krok 3: Ustaw współrzędne obrazu
 
- Ustaw współrzędne obrazu, który chcesz dodać. Zmienne`lowerLeftX`, `lowerLeftY`, `upperRightX` I`upperRightY` reprezentują współrzędne odpowiednio lewego dolnego i prawego górnego rogu obrazu.
+ Ustaw współrzędne obrazu, który chcesz dodać. Zmienne`lowerLeftX`, `lowerLeftY`, `upperRightX` I`upperRightY` reprezentują odpowiednio współrzędne lewego dolnego rogu i prawego górnego rogu obrazu.
 
 ```csharp
 int lowerLeftX = 100;
@@ -36,9 +36,9 @@ int upperRightX = 200;
 int upperRightY = 200;
 ```
 
-## Krok 4: Uzyskaj stronę, na której powinien zostać dodany obraz
+## Krok 4: Pobierz stronę, na której chcesz dodać obraz
 
-Aby dodać obraz do określonej strony dokumentu PDF, musimy najpierw pobrać tę stronę. W tym przykładzie dodajemy obraz na drugą stronę (indeks 1) dokumentu.
+Aby dodać obraz do określonej strony dokumentu PDF, najpierw musimy pobrać tę stronę. W tym przykładzie dodajemy obraz do drugiej strony (indeks 1) dokumentu.
 
 ```csharp
 Page page = pdfDocument.Pages[1];
@@ -46,7 +46,7 @@ Page page = pdfDocument.Pages[1];
 
 ## Krok 5: Załaduj obraz ze strumienia
 
- Załadujemy teraz obraz, który chcemy dodać do dokumentu PDF. W tym przykładzie założono, że masz plik obrazu o nazwie`aspose-logo.jpg` w tym samym katalogu co Twój dokument. Jeśli to konieczne, zmień nazwę pliku.
+ Teraz załadujemy obraz, który chcemy dodać do dokumentu PDF. Ten przykład zakłada, że masz plik obrazu o nazwie`aspose-logo.jpg` w tym samym katalogu co twój dokument. W razie potrzeby zamień nazwę pliku.
 
 ```csharp
 FileStream imageStream = new FileStream(dataDir + "aspose-logo.jpg", FileMode.Open);
@@ -62,7 +62,7 @@ page.Resources.Images.Add(imageStream);
 
 ## Krok 7: Zapisz aktualny stan grafiki
 
- Przed narysowaniem obrazu musimy zapisać aktualny stan grafiki za pomocą pliku`GSave` operator. Zapewnia to możliwość późniejszego wycofania zmian w stanie grafiki.
+ Przed narysowaniem obrazu musimy zapisać aktualny stan grafiki za pomocą`GSave` operator. Dzięki temu zmiany stanu grafiki można później wycofać.
 
 ```csharp
 page.Contents.Add(new Aspose.Pdf.Operators.GSave());
@@ -70,7 +70,7 @@ page.Contents.Add(new Aspose.Pdf.Operators.GSave());
 
 ## Krok 8: Utwórz obiekty Rectangle i Matrix
 
- Utworzymy teraz plik`Rectangle` obiekt i a`Matrix`obiekt. Prostokąt reprezentuje położenie i rozmiar obrazu, natomiast matryca określa, w jaki sposób obraz powinien zostać umieszczony.
+ Teraz utworzymy`Rectangle` obiekt i`Matrix` obiekt. Prostokąt reprezentuje pozycję i rozmiar obrazu, podczas gdy macierz definiuje, jak obraz powinien być umieszczony.
 
 ```csharp
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(lower
@@ -81,7 +81,7 @@ Matrix matrix = new Matrix(new double[] { rectangle.URX - rectangle.LLX, 0, 0, r
 
 ## Krok 9: Połącz macierz w celu umieszczenia obrazu
 
- Aby określić sposób umieszczenia obrazu w prostokącie, używamy metody`ConcatenateMatrix` operator. Operator ten definiuje macierz transformacji, która odwzorowuje przestrzeń współrzędnych obrazu na przestrzeń współrzędnych strony.
+ Aby określić, jak obraz powinien zostać umieszczony w prostokącie, używamy`ConcatenateMatrix` operator. Ten operator definiuje macierz transformacji, która mapuje przestrzeń współrzędnych obrazu na przestrzeń współrzędnych strony.
 
 ```csharp
 page.Contents.Add(new Aspose.Pdf.Operators.ConcatenateMatrix(matrix));
@@ -89,7 +89,7 @@ page.Contents.Add(new Aspose.Pdf.Operators.ConcatenateMatrix(matrix));
 
 ## Krok 10: Narysuj obraz
 
- W tym kroku narysujemy obraz na stronie za pomocą`Do` operator. The`Do` operator pobiera nazwę obrazu z zasobów i rysuje ją na stronie.
+ W tym kroku narysujemy obraz na stronie za pomocą`Do` operator.`Do`Operator pobiera nazwę obrazu z zasobów i rysuje ją na stronie.
 
 ```csharp
 XImage ximage = page.Resources.Images[page.Resources.Images.Count];
@@ -98,7 +98,7 @@ page.Contents.Add(new Aspose.Pdf.Operators.Do(ximage.Name));
 
 ## Krok 11: Przywróć stan grafiki
 
- Po narysowaniu obrazu musimy przywrócić poprzedni stan graficzny za pomocą`GRestore` operator.
+ Po narysowaniu obrazu musimy przywrócić poprzedni stan grafiki za pomocą`GRestore` operator.
 
 ```csharp
 page.Contents.Add(new Aspose.Pdf.Operators.GRestore());
@@ -106,14 +106,14 @@ page.Contents.Add(new Aspose.Pdf.Operators.GRestore());
 
 ## Krok 12: Zapisz zaktualizowany dokument
 
- Na koniec zapiszemy zaktualizowany dokument w nowym pliku. Zaktualizuj`dataDir` zmienną z żądanym katalogiem wyjściowym i nazwą pliku.
+ Na koniec zapiszemy zaktualizowany dokument do nowego pliku. Zaktualizuj`dataDir` zmienna z żądanym katalogiem wyjściowym i nazwą pliku.
 
 ```csharp
 dataDir = dataDir + "AddImage_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Przykładowy kod źródłowy dla Dodaj obraz przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Dodaj obraz za pomocą Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -124,23 +124,23 @@ int lowerLeftX = 100;
 int lowerLeftY = 100;
 int upperRightX = 200;
 int upperRightY = 200;
-//Uzyskaj stronę, na której należy dodać obraz
+// Pobierz stronę, na której należy dodać obraz
 Page page = pdfDocument.Pages[1];
 // Załaduj obraz do strumienia
 FileStream imageStream = new FileStream(dataDir + "aspose-logo.jpg", FileMode.Open);
 // Dodaj obraz do kolekcji obrazów w zasobach strony
 page.Resources.Images.Add(imageStream);
-// Korzystanie z operatora GSave: operator ten zapisuje aktualny stan grafiki
+// Użycie operatora GSave: ten operator zapisuje bieżący stan grafiki
 page.Contents.Add(new Aspose.Pdf.Operators.GSave());
-// Twórz obiekty Rectangle i Matrix
+// Utwórz obiekty prostokąta i macierzy
 Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(lowerLeftX, lowerLeftY, upperRightX, upperRightY);
 Matrix matrix = new Matrix(new double[] { rectangle.URX - rectangle.LLX, 0, 0, rectangle.URY - rectangle.LLY, rectangle.LLX, rectangle.LLY });
-// Użycie operatora ConcatenateMatrix (concatenate matrix): określa sposób umieszczenia obrazu
+// Korzystanie z operatora ConcatenateMatrix (łączenie macierzy): definiuje sposób umieszczenia obrazu
 page.Contents.Add(new Aspose.Pdf.Operators.ConcatenateMatrix(matrix));
 XImage ximage = page.Resources.Images[page.Resources.Images.Count];
-// Użycie operatora Do: ten operator rysuje obraz
+// Używanie operatora Do: ten operator rysuje obraz
 page.Contents.Add(new Aspose.Pdf.Operators.Do(ximage.Name));
-// Korzystanie z operatora GRestore: ten operator przywraca stan grafiki
+// Używanie operatora GRestore: ten operator przywraca stan grafiki
 page.Contents.Add(new Aspose.Pdf.Operators.GRestore());
 dataDir = dataDir + "AddImage_out.pdf";
 // Zapisz zaktualizowany dokument
@@ -150,50 +150,50 @@ Console.WriteLine("\nImage added successfully.\nFile saved at " + dataDir);
 
 ## Wniosek
 
-W tym samouczku nauczyliśmy się, jak dodać obraz do dokumentu PDF przy użyciu Aspose.PDF dla .NET. Szczegółowo omówiliśmy każdy krok, od otwarcia dokumentu po zapisanie zaktualizowanej wersji. Postępując zgodnie z tym przewodnikiem, powinno być teraz możliwe programowe osadzanie obrazów w plikach PDF przy użyciu języków C# i Aspose.PDF.
+tym samouczku nauczyliśmy się, jak dodać obraz do dokumentu PDF za pomocą Aspose.PDF dla .NET. Omówiliśmy każdy krok szczegółowo, od otwierania dokumentu do zapisywania zaktualizowanej wersji. Postępując zgodnie z tym przewodnikiem, powinieneś teraz móc osadzać obrazy w plikach PDF programowo za pomocą C# i Aspose.PDF.
 
-### Często zadawane pytania dotyczące dodawania obrazu w pliku PDF
+### FAQ dotyczące dodawania obrazu do pliku PDF
 
 #### P: Dlaczego miałbym chcieć dodać obraz do dokumentu PDF?
 
-Odp.: Dodawanie obrazów do dokumentu PDF może ulepszyć zawartość wizualną, zapewnić dodatkowy kontekst lub dołączyć logo i grafikę do plików PDF.
+A: Dodanie obrazów do dokumentu PDF może wzbogacić zawartość wizualną, zapewnić dodatkowy kontekst lub uwzględnić w plikach PDF logo i grafiki.
 
-#### P: Czy mogę dodawać obrazy do określonych stron dokumentu PDF?
+#### P: Czy mogę dodawać obrazy do konkretnych stron w dokumencie PDF?
 
-Odp.: Tak, możesz określić stronę, do której chcesz dodać obraz. W dostarczonym kodzie obraz jest dodawany na drugiej stronie dokumentu PDF.
+A: Tak, możesz określić stronę, na której chcesz dodać obraz. W podanym kodzie obraz jest dodawany do drugiej strony dokumentu PDF.
 
-#### P: Jak dostosować położenie i rozmiar dodanego obrazu?
+#### P: Jak mogę zmienić położenie i rozmiar dodanego obrazu?
 
- Odp.: Możesz modyfikować plik`lowerLeftX`, `lowerLeftY`, `upperRightX` , I`upperRightY` zmienne w kodzie umożliwiające ustawienie współrzędnych obrazu oraz kontrolowanie jego rozmiaru i położenia na stronie.
+ A: Możesz zmodyfikować`lowerLeftX`, `lowerLeftY`, `upperRightX` , I`upperRightY` zmienne w kodzie umożliwiające ustawienie współrzędnych obrazu oraz kontrolowanie jego rozmiaru i położenia na stronie.
 
-#### P: Jakie typy formatów obrazów mogę dodać za pomocą tej metody?
+#### P: Jakie formaty obrazów mogę dodać za pomocą tej metody?
 
-O: W podanym przykładzie kodu założono, że ładujesz obraz JPG (`aspose-logo.jpg`). Aspose.PDF dla .NET obsługuje różne formaty obrazów, w tym PNG, BMP, GIF i inne.
+A: W podanym przykładzie kodu przyjęto założenie, że ładujesz obraz JPG (`aspose-logo.jpg`). Aspose.PDF dla .NET obsługuje różne formaty obrazów, w tym PNG, BMP, GIF i inne.
 
-#### P: Jak mogę się upewnić, że dodany obraz mieści się w określonych współrzędnych?
+#### P: Jak mogę mieć pewność, że dodany obraz zmieści się w określonych współrzędnych?
 
- Odp.: Pamiętaj, aby dostosować współrzędne i rozmiar pliku`Rectangle` obiekt (`rectangle`), aby dopasować wymiary obrazu i jego pożądane położenie na stronie.
+ A: Pamiętaj o dostosowaniu współrzędnych i rozmiaru`Rectangle` obiekt (`rectangle`) aby dopasować wymiary obrazu i jego pożądane umiejscowienie na stronie.
 
 #### P: Czy mogę dodać wiele obrazów do jednej strony PDF?
 
-Odp.: Tak, możesz dodać wiele obrazów do jednej strony PDF, powtarzając proces dla każdego obrazu i odpowiednio dostosowując współrzędne i inne parametry.
+O: Tak, możesz dodać wiele obrazów do jednej strony pliku PDF, powtarzając proces dla każdego obrazu i odpowiednio dostosowując współrzędne oraz inne parametry.
 
-####  P: W jaki sposób`GSave` and `GRestore` operator work in the code?
+####  P: Jak to działa?`GSave` and `GRestore` operator work in the code?
 
- O:`GSave` operator zapisuje aktualny stan grafiki, umożliwiając dokonanie zmian bez wpływu na ogólny kontekst graficzny. The`GRestore` operator przywraca poprzedni stan grafiki po dokonaniu zmian.
+ A: Ten`GSave` operator zapisuje aktualny stan grafiki, umożliwiając wprowadzanie zmian bez wpływu na ogólny kontekst grafiki.`GRestore` Operator przywraca poprzedni stan grafiki po wprowadzeniu zmian.
 
-#### P: Co się stanie, jeśli plik obrazu nie zostanie znaleziony w określonej ścieżce?
+#### P: Co się stanie, jeśli pliku obrazu nie będzie można znaleźć w podanej ścieżce?
 
-Odp.: Jeśli plik obrazu nie zostanie znaleziony w określonej ścieżce, kod zgłosi wyjątek podczas próby załadowania strumienia obrazu. Upewnij się, że plik obrazu znajduje się we właściwym katalogu.
+A: Jeśli plik obrazu nie zostanie znaleziony w określonej ścieżce, kod zgłosi wyjątek podczas próby załadowania strumienia obrazu. Upewnij się, że plik obrazu znajduje się w prawidłowym katalogu.
 
-#### P: Czy mogę dodatkowo dostosować położenie i wygląd obrazu?
+#### P: Czy mogę dodatkowo dostosować rozmieszczenie i wygląd obrazu?
 
- O: Tak, możesz dostosować wygląd obrazu, modyfikując plik`Matrix`obiektu i dostosowywanie innych operatorów w kodzie. Aby zapoznać się z zaawansowanymi możliwościami dostosowywania, zapoznaj się z dokumentacją Aspose.PDF.
+ A: Tak, możesz dostosować wygląd obrazu, modyfikując`Matrix` obiekt i dostosowywanie innych operatorów w kodzie. Zapoznaj się z dokumentacją Aspose.PDF, aby uzyskać informacje o zaawansowanych dostosowaniach.
 
 #### P: Jak mogę sprawdzić, czy obraz został pomyślnie dodany do pliku PDF?
 
-Odp.: Po zastosowaniu dostarczonego kodu w celu dodania obrazu otwórz zmodyfikowany plik PDF i sprawdź, czy obraz jest wyświetlany na określonej stronie we właściwym miejscu.
+A: Po zastosowaniu dostarczonego kodu w celu dodania obrazu otwórz zmodyfikowany plik PDF i sprawdź, czy obraz jest wyświetlany na określonej stronie w prawidłowym położeniu.
 
-#### P: Czy dodanie obrazów wpływa na oryginalną zawartość dokumentu PDF?
+#### P: Czy dodawanie obrazów ma wpływ na oryginalną zawartość dokumentu PDF?
 
-Odp.: Dodawanie obrazów nie ma wpływu na oryginalną zawartość dokumentu PDF. Uatrakcyjnia dokument poprzez dodanie elementów wizualnych.
+A: Dodawanie obrazów nie wpływa na oryginalną zawartość dokumentu PDF. Ulepsza dokument, dodając elementy wizualne.

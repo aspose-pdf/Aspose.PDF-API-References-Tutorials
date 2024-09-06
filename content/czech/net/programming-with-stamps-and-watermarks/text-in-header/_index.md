@@ -110,7 +110,7 @@ Odpověď: Kód demonstruje proces otevření existujícího dokumentu PDF, vytv
 
 #### Otázka: Mohu upravit vzhled textu záhlaví, jako je jeho písmo, velikost, barva a zarovnání?
 
- Odpověď: Ano, vzhled textu záhlaví můžete upravit úpravou vlastností souboru`TextStamp`objekt. Příklad kódu zahrnuje nastavení vlastností, jako je horní okraj, vodorovné zarovnání a svislé zarovnání. Můžete také upravit písmo, velikost, barvu a další vlastnosti související s textem.
+Odpověď: Ano, vzhled textu záhlaví můžete upravit úpravou vlastností souboru`TextStamp` objekt. Příklad kódu zahrnuje nastavení vlastností, jako je horní okraj, vodorovné zarovnání a svislé zarovnání. Můžete také upravit písmo, velikost, barvu a další vlastnosti související s textem.
 
 #### Otázka: Je možné do záhlaví každé stránky přidat jiný text?
 

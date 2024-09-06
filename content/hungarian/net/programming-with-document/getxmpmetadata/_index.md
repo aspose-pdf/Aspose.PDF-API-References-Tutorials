@@ -17,7 +17,7 @@ Miután letöltötte a könyvtárat, bontsa ki a ZIP-fájl tartalmát egy mappá
 
 ## 2. lépés: Töltse be a PDF-dokumentumot
 
-Miután telepítette az Aspose.PDF for .NET fájlt, és hozzáadott egy hivatkozást a DLL-re a .NET projektben, elkezdheti használni a`GetXmpMetadata` funkció XMP-metaadatok kinyerésére egy PDF-dokumentumból.
+ Miután telepítette az Aspose.PDF for .NET fájlt, és hozzáadott egy hivatkozást a DLL-re a .NET projektben, elkezdheti használni a`GetXmpMetadata` funkció XMP-metaadatok kinyerésére egy PDF-dokumentumból.
 
 A funkció használatának első lépése annak a PDF-dokumentumnak a betöltése, amelyből XMP-metaadatokat szeretne kinyerni. Ehhez a következő kódot használhatja:
 
@@ -25,13 +25,13 @@ A funkció használatának első lépése annak a PDF-dokumentumnak a betöltés
 // A PDF dokumentum elérési útja
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Nyissa meg a PDF dokumentumot
+// Nyissa meg a PDF dokumentumot
 Document pdfDocument = new Document(dataDir + "GetXMPMetadata.pdf");
 ```
 
  A fenti kódban cserélje ki`"YOUR DOCUMENT DIRECTORY"` annak a könyvtárnak az elérési útjával, ahol a PDF-dokumentum található. Ez a kód betölti a PDF dokumentumot a`Document` objektumot, amelyet azután XMP-metaadatok kinyerésére használhat.
 
-## 3. lépés: XMP metaadatok kibontása
+## 3. lépés: XMP-metaadatok kibontása
 
 Az XMP-metaadatok PDF-dokumentumból való kinyeréséhez a következő kódot használhatja:
 
@@ -51,7 +51,7 @@ Console.WriteLine(pdfDocument.Metadata["xmp:CustomProperty"]);
 // A PDF dokumentum elérési útja
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Nyissa meg a PDF dokumentumot
+// Nyissa meg a PDF dokumentumot
 Document pdfDocument = new Document(dataDir + "GetXMPMetadata.pdf");
 
 // XMP metaadatok kibontása

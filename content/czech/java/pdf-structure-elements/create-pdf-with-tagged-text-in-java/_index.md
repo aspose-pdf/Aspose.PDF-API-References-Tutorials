@@ -17,7 +17,7 @@ Ve světě správy dokumentů vynikají PDF jako univerzální formát, který u
 Než se ponoříme do kódu, ujistěte se, že máte splněny následující předpoklady:
 
 - Java Development Kit (JDK) nainstalovaný ve vašem systému.
--  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout[zde](https://releases.aspose.com/pdf/java/).
 
 ## Nastavení vašeho projektu Java
 
@@ -86,4 +86,4 @@ Aspose.PDF for Java je komerční knihovna, ale nabízí zkušební verzi, ktero
 
 ### Kde najdu další zdroje a dokumentaci k Aspose.PDF pro Javu?
 
- Na webu Aspose můžete najít komplexní dokumentaci a reference k Aspose.PDF pro Javu[tady](https://reference.aspose.com/pdf/java/).
+ Na webu Aspose můžete najít komplexní dokumentaci a reference k Aspose.PDF pro Javu[zde](https://reference.aspose.com/pdf/java/).

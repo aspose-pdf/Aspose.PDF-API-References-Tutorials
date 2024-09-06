@@ -30,7 +30,7 @@ Document pdfDocument1 = new Document(dataDir + "InsertEmptyPageAtEnd.pdf");
 ```
 
 ## Krok 3: Vložte prázdnou stránku
- Nyní můžete vložit prázdnou stránku na konec dokumentu PDF pomocí`Add()` metoda`Pages` vlastnictvím`pdfDocument1` objekt.
+ Nyní můžete vložit prázdnou stránku na konec dokumentu PDF pomocí`Add()` metoda`Pages` majetek z`pdfDocument1` objekt.
 
 ```csharp
 pdfDocument1.Pages.Add();
@@ -72,7 +72,7 @@ Odpověď: Chcete-li vložit prázdnou stránku na konec dokumentu PDF pomocí A
 
 1. Nastavte adresář dokumentu zadáním cesty, kde se nachází váš původní soubor PDF a kam chcete uložit upravený soubor PDF. Nahraďte "VAŠE ADRESÁŘ DOKUMENTŮ" příslušnou cestou.
 2.  Otevřete dokument PDF pomocí`Document` třída Aspose.PDF. Ujistěte se, že jste zadali správnou cestu k původnímu dokumentu PDF.
-3.  Vložte prázdnou stránku na konec dokumentu PDF pomocí`Add()` metoda`Pages` vlastnictvím`pdfDocument1` objekt.
+3.  Vložte prázdnou stránku na konec dokumentu PDF pomocí`Add()` metoda`Pages` majetek z`pdfDocument1` objekt.
 4.  Uložte upravený dokument PDF do souboru pomocí`Save()` metoda`Document` třída. Nezapomeňte zadat správnou cestu a název souboru pro výstupní soubor.
 
 #### Otázka: Mohu vložit prázdnou stránku na určité místo v dokumentu PDF?

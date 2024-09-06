@@ -35,7 +35,7 @@ Tanulja meg, hogyan törölhet könnyedén egy adott űrlapmezőt egy PDF-dokume
 Ismerje meg, hogyan töltheti ki a PDF űrlapmezőit Java nyelven az Aspose.PDF for Java segítségével. Lépésről lépésre útmutató forráskóddal.
 ### [Szöveges bélyegző hozzáadása PDF fájlhoz Java használatával](./adding-text-stamp-in-pdf-file-using-java/)
 Ismerje meg, hogyan adhat szövegbélyegeket PDF-fájlokhoz Java használatával az Aspose.PDF for Java segítségével. Könnyedén testreszabhatja PDF-dokumentumait.
-### [Oldalszám bélyegző hozzáadása PDF-ben Java segítségével](./add-page-number-stamp-in-pdf-using-java/)
+### [Oldalszámbélyegző hozzáadása PDF-ben Java segítségével](./add-page-number-stamp-in-pdf-using-java/)
 Ismerje meg, hogyan lehet egyszerűen oldalszámbélyegzőket hozzáadni PDF-dokumentumokhoz Java használatával az Aspose.PDF for Java segítségével. Javítsa PDF-fájljait testreszabható oldalszámokkal.
 ### [Vezérelje a képminőséget, ha képbélyeget ad hozzá PDF-hez Java használatával](./control-image-quality-when-adding-image-stamp-in-pdf-using-java/)
 A lépésenkénti utasítások segítségével megtudhatja, hogyan szabályozhatja a képminőséget, amikor Java használatával képbélyegzőket ad hozzá PDF-ekhez.

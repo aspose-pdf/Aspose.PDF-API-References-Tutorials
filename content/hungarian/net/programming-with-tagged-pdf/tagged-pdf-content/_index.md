@@ -74,7 +74,7 @@ Document document = new Document();
 // Szerezzen tartalmat munkához a TaggedPdf segítségével
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Címkézett PDF tartalommal dolgozhat
+// Dolgozzon címkézett PDF-tartalommal
 // Állítsa be a Documnet címét és nyelvét
 taggedContent.SetTitle("Simple Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");

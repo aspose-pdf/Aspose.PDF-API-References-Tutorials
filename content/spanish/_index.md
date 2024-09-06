@@ -10,11 +10,11 @@ is_root: true
 
 ## Aspose.PDF para .NET
 {{% alert color="primary" %}}
-Aspose.PDF para tutoriales .NET y fragmentos de código para crear, editar, convertir, imprimir y muchas más funciones para documentos PDF en su aplicación. 
+Tutoriales y fragmentos de código de Aspose.PDF para .NET para crear, editar, convertir, imprimir y muchas más funciones para documentos PDF en su aplicación. 
 {{% /alert %}}
 
-Estos son enlaces a algunos recursos útiles:
-- [Programación con documento](./net/programming-with-document/)
+A continuación se muestran enlaces a algunos recursos útiles:
+- [Programación con Documentos](./net/programming-with-document/)
 - [Programación con anotaciones](./net/annotations/)  
 - [Conversión de documentos](./net/document-conversion/)
 - [Programación con formularios](./net/programming-with-forms/)
@@ -24,10 +24,10 @@ Estos son enlaces a algunos recursos útiles:
  
 ## API de procesamiento Aspose.PDF para Java
 {{% alert color="primary" %}}
-Domine Aspose.PDF para Java con tutoriales completos. Cree, edite y optimice archivos PDF sin esfuerzo. ¡Mejore sus habilidades de desarrollo de PDF hoy!
+Domine Aspose.PDF para Java con tutoriales completos. Cree, edite y optimice archivos PDF sin esfuerzo. ¡Mejore sus habilidades de desarrollo de archivos PDF hoy mismo!
 {{% /alert %}}
 
-Estos son enlaces a algunos recursos útiles:
+A continuación se muestran enlaces a algunos recursos útiles:
 - [Anotaciones en PDF](./java/pdf-annotations/)
 - [Archivos adjuntos en formato PDF](./java/pdf-attachments/)
 - [Marcadores PDF](./java/pdf-bookmarks/)
@@ -36,12 +36,12 @@ Estos son enlaces a algunos recursos útiles:
 - [Manipulación de imágenes PDF](./java/pdf-image-manipulation/)
 - [Enlaces a documentos PDF](./java/pdf-document-links/)
 - [Manipulación de páginas PDF](./java/pdf-page-manipulation/)
-- [Operaciones de documentos PDF](./java/pdf-document-operations/)
+- [Operaciones con documentos PDF](./java/pdf-document-operations/)
 - [Campos de formulario PDF](./java/pdf-form-fields/)
 - [Tablas PDF](./java/pdf-tables/)
-- [Elementos de la estructura del PDF](./java/pdf-structure-elements/)
+- [Elementos de la estructura de PDF](./java/pdf-structure-elements/)
 - [Etiquetas y estructura de PDF](./java/pdf-tags-and-structure/)
-- [Estilos y formato de PDF](./java/pdf-styles-and-formatting/)
+- [Estilos y formatos de PDF](./java/pdf-styles-and-formatting/)
 - [Extracción de texto PDF](./java/pdf-text-extraction/)
 - [Validación y verificación de PDF](./java/pdf-validation-and-verification/)
 

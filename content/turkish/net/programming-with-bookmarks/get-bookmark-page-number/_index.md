@@ -1,168 +1,115 @@
 ---
-title: PDF Dosyasında Yer İşareti Sayfa Numarasını Al
-linktitle: PDF Dosyasında Yer İşareti Sayfa Numarasını Al
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile PDF dosyasındaki yer imi sayfa numarasını kolayca alın.
+title: PDF Dosyasında Yer İmi Sayfa Numarasını Al
+linktitle: PDF Dosyasında Yer İmi Sayfa Numarasını Al
+second_title: Aspose.PDF for .NET API Referansı
+description: Bu kapsamlı eğitimde Aspose.PDF for .NET kullanarak PDF dosyalarından yer imi sayfa numaralarının nasıl çıkarılacağını öğrenin.
 type: docs
 weight: 60
 url: /tr/net/programming-with-bookmarks/get-bookmark-page-number/
 ---
-PDF dosyasındaki yer imleriyle ilişkili sayfa numaralarının alınması, gezinme açısından yararlı olabilir. Aspose.PDF for .NET ile aşağıdaki kaynak kodunu takip ederek yer imlerinin sayfa numarasını kolayca alabilirsiniz:
+## giriiş
 
-## 1. Adım: Gerekli kitaplıkları içe aktarın
+Dijital çağda, PDF belgelerini etkili bir şekilde yönetmek hem kişisel hem de profesyonel kullanım için çok önemlidir. İster uygulamanızı geliştirmek isteyen bir geliştirici olun, ister belgelerinizi düzenlemesi gereken bir iş profesyoneli olun, PDF'leri nasıl düzenleyeceğinizi anlamak size zaman ve emek kazandırabilir. PDF yönetiminin temel özelliklerinden biri, yer imlerini ve bunlara karşılık gelen sayfa numaralarını çıkarabilme yeteneğidir. Bu eğitimde, PDF düzenlemeyi basitleştiren güçlü bir kütüphane olan Aspose.PDF for .NET kullanarak bunu nasıl başaracağımızı inceleyeceğiz.
 
-Başlamadan önce C# projeniz için gerekli kütüphaneleri içe aktarmanız gerekir. Gerekli ithalat direktifi aşağıdadır:
+## Ön koşullar
+
+Koda dalmadan önce aşağıdaki ön koşullara sahip olduğunuzdan emin olun:
+
+1. Visual Studio: Makinenizde Visual Studio'nun yüklü olduğundan emin olun. Bu sizin geliştirme ortamınız olacaktır.
+2.  .NET için Aspose.PDF: Aspose.PDF kütüphanesine sahip olmanız gerekir. Bunu şuradan indirebilirsiniz:[web sitesi](https://releases.aspose.com/pdf/net/).
+3. Temel C# Bilgisi: C# programlamaya aşina olmak, kod parçacıklarını daha iyi anlamanıza yardımcı olacaktır.
+
+## Paketleri İçe Aktar
+
+Başlamak için, C# projenize gerekli paketleri içe aktarmanız gerekir. Bunu nasıl yapabileceğiniz aşağıda açıklanmıştır:
+
+1. Visual Studio projenizi açın.
+2. Çözüm Gezgini'nde projenize sağ tıklayın ve "NuGet Paketlerini Yönet" seçeneğini seçin.
+3.  Arama`Aspose.PDF` ve en son sürümü yükleyin.
+
+Artık her şeyi ayarladığınıza göre, yer imi sayfa numaralarını çıkarma sürecini adım adım inceleyelim.
+
+## Adım 1: Belge Dizininizi Ayarlayın
+
+Yer imlerini çıkarabilmeniz için önce PDF belgenizin yolunu belirtmeniz gerekir. PDF dosyanız burada bulunur.
 
 ```csharp
-using Aspose.Pdf.Facades;
-```
-
-## 2. Adım: Belgeler klasörünün yolunu ayarlayın
-
- Bu adımda, yer imi sayfa numaralarını çıkarmak istediğiniz PDF dosyasını içeren klasörün yolunu belirtmeniz gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"`belgeler klasörünüzün gerçek yolunu içeren aşağıdaki kodda:
-
-```csharp
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## 3. Adım: Yer imi düzenleyicisini oluşturun
+ Bu adımda, değiştirin`"YOUR DOCUMENT DIRECTORY"` PDF dosyanızın saklandığı gerçek yol ile. Bu yol, programa çalışmak istediğiniz PDF dosyasını nerede arayacağını söylediği için önemlidir.
 
- Şimdi bir oluşturacağız`PdfBookmarkEditor` Belgenin yer imlerini değiştirmek için nesne. Aşağıdaki kodu kullanın:
+## Adım 2: Bir PdfBookmarkEditor Örneği Oluşturun
+
+ Daha sonra, bir örnek oluşturmanız gerekir`PdfBookmarkEditor`sınıf. Bu sınıf, PDF dosyalarındaki yer imlerini düzenlemek için yöntemler sağlar.
 
 ```csharp
+// PDFBookmarkEditor Oluştur
 PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
 ```
 
-## Adım 4: PDF Dosyasını Açın
+ Burada, şunu örneklendiriyoruz:`PdfBookmarkEditor`Bu nesne PDF dosyamızı bağlamamıza ve ondan yer imlerini çıkarmamıza olanak tanıyacaktır.
 
- Bu adımda PDF dosyasını kullanarak açıyoruz.`BindPdf` yer imi düzenleyicisinin yöntemi. İşte ilgili kod:
+## Adım 3: PDF Dosyasını Açın
 
-```csharp
-bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
-```
-
-## 5. Adım: Yer işaretlerini çıkarın
-
- Şimdi yer imlerini belgeden çıkaracağız.`ExtractBookmarks` yer imi düzenleyicisinin yöntemi. İşte ilgili kod:
+ Şimdi PDF dosyasını bağlamanın zamanı geldi`PdfBookmarkEditor` Az önce oluşturduğunuz örnek.
 
 ```csharp
-Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
-```
-
-## 6. Adım: Yer işaretlerine göz atın ve sayfa numaralarını alın
-
- Son olarak, çıkartılan yer imleri arasında dolaşıyoruz ve her bir yer imiyle ilişkili sayfa numaralarını bir`foreach` döngü. İşte ilgili kod:
-
-```csharp
-foreach (Bookmark bookmark in bookmarks)
-{
-     string strLevelSeprator = string.Empty;
-     for (int i = 1; i < bookmark.Level; i++)
-     {
-         strLevelSeprator += "----";
-     }
-     Console.WriteLine("{0}Title: {1}", strLevelSeprator, bookmark.Title);
-     Console.WriteLine("{0}Page number: {1}", strLevelSeprator, bookmark.PageNumber);
-     Console.WriteLine("{0}Page Action: {1}", strLevelSeprator, bookmark.Action);
-}
-```
-
-### Aspose.PDF for .NET kullanarak Yer İşareti Sayfa Numarasını Al için örnek kaynak kodu 
-```csharp
-// Belgeler dizininin yolu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// PdfYer İşareti Düzenleyicisi Oluştur
-PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
 // PDF dosyasını aç
 bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
-// Yer imlerini çıkart
+```
+
+ Bu satırda şunu kullanıyoruz:`BindPdf` adlı PDF dosyasını açma yöntemi`GetBookmarks.pdf`Bu dosyanın belirtilen dizinde bulunduğundan emin olun; aksi takdirde bir hatayla karşılaşırsınız.
+
+## Adım 4: Yer İşaretlerini Çıkarın
+
+ PDF dosyası açıldığında, artık yer imlerini kullanarak çıkarabilirsiniz`ExtractBookmarks` Yöntem.
+
+```csharp
+// Yer imlerini ayıkla
 Aspose.Pdf.Facades.Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
+```
+
+ Bu adım, PDF dosyasındaki tüm yer imlerini alır ve bunları şu adlı bir değişkende depolar:`bookmarks`Bu değişken, bir sonraki adımda işleyeceğimiz tüm yer imi bilgilerini tutacaktır.
+
+## Adım 5: Yer İşaretleri Üzerinde Yineleme Yapın
+
+Artık yer imleriniz olduğuna göre, bunlar arasında gezinerek başlıklarını ve sayfa numaralarını görüntüleyebilirsiniz.
+
+```csharp
 foreach (Aspose.Pdf.Facades.Bookmark bookmark in bookmarks)
 {
-	string strLevelSeprator = string.Empty;
-	for (int i = 1; i < bookmark.Level; i++)
-	{
-		strLevelSeprator += "----";
-	}
-	Console.WriteLine("{0}Title: {1}", strLevelSeprator, bookmark.Title);
-	Console.WriteLine("{0}Page Number: {1}", strLevelSeprator, bookmark.PageNumber);
-	Console.WriteLine("{0}Page Action: {1}", strLevelSeprator, bookmark.Action);
+    string strLevelSeprator = string.Empty;
+    for (int i = 1; i < bookmark.Level; i++)
+    {
+        strLevelSeprator += "----";
+    }
+    Console.WriteLine("{0}Title: {1}", strLevelSeprator, bookmark.Title);
+    Console.WriteLine("{0}Page Number: {1}", strLevelSeprator, bookmark.PageNumber);
+    Console.WriteLine("{0}Page Action: {1}", strLevelSeprator, bookmark.Action);
 }
 ```
+
+Bu döngüde, her yer imi üzerinde yineleme yapıyoruz. Her yer imi için, seviyesine göre bir dize ayırıcı oluşturuyoruz (yer imlerinin hiyerarşisini görsel olarak temsil etmek için). Sonra, her yer imi ile ilişkili başlığı, sayfa numarasını ve eylemi konsola yazdırıyoruz.
 
 ## Çözüm
 
-Tebrikler! Artık Aspose.PDF for .NET ile yer imi sayfa numaralarını almak için adım adım bir kılavuza sahipsiniz. PDF belgelerinizdeki her yer işaretiyle ilişkili gezinme bilgilerini almak için bu kodu kullanabilirsiniz.
+Aspose.PDF for .NET kullanarak bir PDF dosyasından yer imi sayfa numaralarını çıkarmak basit bir işlemdir. Bu eğitimde özetlenen adımları izleyerek PDF belgelerinizdeki yer imlerini etkili bir şekilde yönetebilirsiniz. Bir uygulama geliştiriyor veya yalnızca PDF'lerinizi düzenlemeniz gerekiyorsa, bu bilgi şüphesiz işe yarayacaktır.
 
-Gelişmiş yer imi düzenleme özellikleri hakkında daha fazla bilgi için resmi Aspose.PDF belgelerine göz atmayı unutmayın.
+## SSS
 
-### PDF dosyasındaki yer imi sayfa numarasını almak için SSS
+### Aspose.PDF for .NET nedir?
+Aspose.PDF for .NET, geliştiricilerin PDF belgelerini programlı bir şekilde oluşturmalarına, düzenlemelerine ve dönüştürmelerine olanak tanıyan bir kütüphanedir.
 
-#### S: PDF dosyasındaki yer işaretleri nedir?
+### Aspose.PDF'yi ücretsiz kullanabilir miyim?
+ Evet, Aspose kütüphaneyi değerlendirmek için kullanabileceğiniz ücretsiz bir deneme sürümü sunuyor. İndirebilirsiniz[Burada](https://releases.aspose.com/).
 
-C: Bir PDF dosyasındaki yer imleri, kullanıcıların belge içindeki belirli bölümlere veya sayfalara hızlı bir şekilde atlamasına olanak tanıyan gezinme yardımcılarıdır. İlgili içeriğe kısayollar sağlayarak kullanıcı deneyimini geliştirirler.
+### Aspose.PDF'in dokümanlarını nerede bulabilirim?
+ Belgeler mevcuttur[Burada](https://reference.aspose.com/pdf/net/).
 
-#### S: Neden bir PDF dosyasından yer imi sayfa numaralarını almak isteyeyim?
+### Aspose.PDF için lisans nasıl satın alabilirim?
+ Lisansı şuradan satın alabilirsiniz:[satın alma sayfası](https://purchase.aspose.com/buy).
 
-C: Yer imi sayfa numaralarının alınması, kullanıcıların bir belgede daha etkili bir şekilde gezinmesine yardımcı olur ve her bir yer iminin nereye gittiğine dair net bir gösterge sağlar. Bu, özellikle birden fazla bölümü olan daha uzun belgeler için kullanışlıdır.
-
-#### S: C# projem için gerekli kitaplıkları nasıl içeri aktarabilirim?
-
-C: C# projeniz için gerekli kitaplığı içe aktarmak için aşağıdaki içe aktarma yönergesini kullanın:
-
-```csharp
-using Aspose.Pdf.Facades;
-```
-
-Bu yönerge Aspose.PDF for .NET tarafından sağlanan sınıfları ve yöntemleri kullanmanızı sağlar.
-
-#### S: Belgeler klasörünün yolunu nasıl belirlerim?
-
- C: Sağlanan kaynak kodunda değiştirin`"YOUR DOCUMENT DIRECTORY"`yer imi sayfa numaralarını çıkarmak istediğiniz PDF dosyasını içeren klasörün gerçek yolunu belirtin. Bu, kodun hedef PDF dosyasını bulabilmesini sağlar.
-
-#### S: Yer imi düzenleyicisini nasıl oluşturabilirim?
-
-C: Bir yer imi düzenleyicisi oluşturmak için aşağıdaki kodu kullanın:
-
-```csharp
-PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
-```
-
-#### S: Yer imlerini değiştirmek için bir PDF dosyasını nasıl açarım?
-
-C: Yer imi bilgilerini çıkarmak amacıyla bir PDF dosyası açmak için aşağıdaki kodu kullanın:
-
-```csharp
-bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
-```
-
- Yer değiştirmek`"GetBookmarks.pdf"` gerçek dosya adı ile.
-
-#### S: Yer işaretlerini PDF dosyasından nasıl çıkarabilirim?
-
- C: PDF dosyasından yer imlerini çıkarmak için`ExtractBookmarks` yer imi düzenleyicisinin yöntemi:
-
-```csharp
-Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
-```
-
-#### S: Yer imi sayfa numaralarını nasıl alırım ve görüntülerim?
-
- C: Çıkarılan yer imleri arasında bir`foreach` döngüye girin ve erişin`PageNumber` İlgili sayfa numarasını almak ve görüntülemek için her yer iminin özelliği:
-
-```csharp
-foreach (Bookmark bookmark in bookmarks)
-{
-    Console.WriteLine("Title: " + bookmark.Title);
-    Console.WriteLine("Page Number: " + bookmark.PageNumber);
-    Console.WriteLine("Page Action: " + bookmark.Action);
-}
-```
-
-#### S: Bu yaklaşımı kullanarak yer imi özelliklerini değiştirebilir miyim?
-
- C: Bu eğitim, yer imi sayfa numaralarını almaya odaklansa da, aynı yöntemi kullanarak diğer yer imi özelliklerini de değiştirebilirsiniz.`Bookmark`nesne ve ilgili özellikler.
-
-#### S: Yer imi bilgilerini çıkardıktan sonra güncellenen PDF dosyasını nasıl kaydedebilirim?
-
-C: Yer imini çıkarma orijinal PDF dosyasını değiştirmez. Herhangi bir değişikliği kaydetmek istiyorsanız bunu Aspose.PDF for .NET tarafından sağlanan diğer yöntemleri kullanarak yapabilirsiniz.
+### Sorunla karşılaşırsam ne yapmalıyım?
+ Herhangi bir sorunla karşılaşırsanız, yardım isteyebilirsiniz.[Aspose destek forumu](https://forum.aspose.com/c/pdf/10).

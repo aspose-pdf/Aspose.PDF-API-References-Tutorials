@@ -31,14 +31,14 @@ using System.IO;
  A kódban keresse meg azt a sort, amely ezt mondja`string dataDir = "YOUR DOCUMENT DIRECTORY";` és cserélje ki`"YOUR DOCUMENT DIRECTORY"` annak a könyvtárnak az elérési útjával, ahol a dokumentumokat tárolják.
 
 ## 4. lépés: Nyissa meg a PDF dokumentumot
- Nyisson meg egy meglévő PDF dokumentumot a`Document`konstruktort, és átadja a bemeneti PDF-fájl elérési útját.
+ Nyisson meg egy meglévő PDF dokumentumot a`Document` konstruktort, és átadja a bemeneti PDF-fájl elérési útját.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
 ```
 
 ## 5. lépés: Az összes szöveg kibontása
- Hozzon létre egy`TextAbsorber`objektumot, hogy szöveget vonjon ki a dokumentumból. Ezután fogadja el az összes oldal elnyelőjét.
+ Hozzon létre a`TextAbsorber`objektumot, hogy szöveget vonjon ki a dokumentumból. Ezután fogadja el az összes oldal elnyelőjét.
 
 ```csharp
 TextAbsorber textAbsorber = new TextAbsorber();
@@ -46,14 +46,14 @@ pdfDocument.Pages.Accept(textAbsorber);
 ```
 
 ## 6. lépés: Szerezze be a kivont szöveget
- A kivont szöveg elérése a`TextAbsorber` tárgy.
+ A kivont szöveg elérése a`TextAbsorber` objektum.
 
 ```csharp
 string extractedText = textAbsorber.Text;
 ```
 
 ## 7. lépés: Mentse el a kicsomagolt szöveget
- Hozzon létre egy`TextWriter` és nyissa meg a fájlt, ahová a kicsomagolt szöveget menteni szeretné. Írja be a kicsomagolt szöveget a fájlba, és zárja be az adatfolyamot.
+ Hozzon létre a`TextWriter` és nyissa meg a fájlt, ahová a kicsomagolt szöveget menteni szeretné. Írja be a kicsomagolt szöveget a fájlba, és zárja be az adatfolyamot.
 
 ```csharp
 TextWriter tw = new StreamWriter(dataDir + "extracted-text.txt");
@@ -101,7 +101,7 @@ using System.IO;
 
 #### K: Hogyan adhatom meg a dokumentumkönyvtárat?
 
- V: Keresse meg a vonalat`string dataDir = "YOUR DOCUMENT DIRECTORY";` a kódban és cserélje ki`"YOUR DOCUMENT DIRECTORY"` a dokumentumkönyvtár tényleges elérési útjával.
+ V: Keresse meg a vonalat`string dataDir = "YOUR DOCUMENT DIRECTORY";` a kódban, és cserélje ki`"YOUR DOCUMENT DIRECTORY"` a dokumentumkönyvtár tényleges elérési útjával.
 
 #### K: Hogyan nyithatok meg egy meglévő PDF-dokumentumot?
 
@@ -113,7 +113,7 @@ using System.IO;
 
 #### K: Hogyan férhetek hozzá a kivonatolt szöveghez?
 
- V: A 6. lépés végigvezeti Önt a kivonatolt szöveg elérésén`TextAbsorber` tárgy.
+ V: A 6. lépés végigvezeti Önt a kivonatolt szöveg elérésén`TextAbsorber` objektum.
 
 #### K: Hogyan menthetem el a kicsomagolt szöveget fájlba?
 

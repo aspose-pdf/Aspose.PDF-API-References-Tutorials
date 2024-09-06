@@ -1,13 +1,13 @@
 ---
-title: Đặt thuộc tính cho hộp thoại in
-linktitle: Đặt thuộc tính cho hộp thoại in
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Tìm hiểu cách đặt thuộc tính cho hộp thoại in trong Aspose.PDF cho .NET bằng hướng dẫn từng bước.
+title: Thiết lập Thuộc tính cho Hộp thoại In
+linktitle: Thiết lập Thuộc tính cho Hộp thoại In
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Tìm hiểu cách thiết lập thuộc tính cho hộp thoại in trong Aspose.PDF cho .NET bằng hướng dẫn từng bước.
 type: docs
 weight: 320
 url: /vi/net/programming-with-document/setpropertiesforprintdialog/
 ---
-đây là hướng dẫn từng bước để đặt thuộc tính cho hộp thoại in bằng Aspose.PDF cho .NET:
+Sau đây là hướng dẫn từng bước để thiết lập thuộc tính cho hộp thoại in bằng Aspose.PDF cho .NET:
 
 
 ## Bước 1: Xác định thư mục chứa tài liệu PDF của bạn:
@@ -37,13 +37,13 @@ doc.Pages.Add();
 doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
 ```
    
-## Bước 5: Lưu tài liệu với tên file và định dạng được chỉ định:
+## Bước 5: Lưu tài liệu với tên tệp và định dạng đã chỉ định:
 
 ```csharp
 doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
 ```
 
-### Mã nguồn ví dụ cho Đặt thuộc tính cho hộp thoại in bằng Aspose.PDF cho .NET
+### Mã nguồn ví dụ cho Set Properties For Print Dialog sử dụng Aspose.PDF cho .NET
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -58,18 +58,18 @@ using (Document doc = new Document())
 
 ## Phần kết luận
 
-Aspose.PDF for .NET giúp bạn dễ dàng đặt thuộc tính cho hộp thoại in trong tệp PDF của mình. Bằng cách làm theo hướng dẫn từng bước ở trên, bạn có thể nhanh chóng tối ưu hóa các tệp PDF của mình để in.
+Aspose.PDF for .NET giúp bạn dễ dàng thiết lập thuộc tính cho hộp thoại in trong tệp PDF của mình. Bằng cách làm theo hướng dẫn từng bước ở trên, bạn có thể nhanh chóng tối ưu hóa tệp PDF của mình để in.
 
 ### Câu hỏi thường gặp
 
-#### Câu hỏi: Tôi có thể đặt các thuộc tính hộp thoại in khác ngoài chế độ in hai mặt bằng Aspose.PDF cho .NET không?
+#### H: Tôi có thể thiết lập các thuộc tính hộp thoại in khác ngoài chế độ in hai mặt bằng Aspose.PDF cho .NET không?
 
-Trả lời: Có, ngoài việc đặt chế độ in hai mặt, Aspose.PDF for .NET còn cho phép bạn đặt nhiều thuộc tính khác cho hộp thoại in. Một số ví dụ bao gồm cài đặt chất lượng in, phạm vi trang, số lượng bản sao, khổ giấy, v.v. Bạn có thể tham khảo tài liệu Aspose.PDF for .NET để khám phá danh sách đầy đủ các thuộc tính có sẵn.
+A: Có, ngoài việc thiết lập chế độ in hai mặt, Aspose.PDF cho .NET cho phép bạn thiết lập nhiều thuộc tính khác cho hộp thoại in. Một số ví dụ bao gồm thiết lập chất lượng in, phạm vi trang, số bản sao, kích thước giấy, v.v. Bạn có thể tham khảo tài liệu Aspose.PDF cho .NET để khám phá danh sách đầy đủ các thuộc tính có sẵn.
 
-#### Hỏi: Làm cách nào để đặt chất lượng in khi in tài liệu PDF?
+#### H: Tôi có thể cài đặt chất lượng in khi in tài liệu PDF như thế nào?
 
- Đáp: Để đặt chất lượng in, bạn có thể sử dụng`PrintQuality` tài sản của`Document` lớp trong Aspose.PDF cho .NET. Bạn có thể chọn từ các tùy chọn chất lượng in khác nhau như cao, trung bình hoặc thấp, tùy theo yêu cầu của bạn.
+ A: Để thiết lập chất lượng in, bạn có thể sử dụng`PrintQuality` tài sản của`Document` lớp trong Aspose.PDF cho .NET. Bạn có thể chọn từ các tùy chọn chất lượng in khác nhau như cao, trung bình hoặc thấp, dựa trên yêu cầu của bạn.
 
-#### Hỏi: Có thể chỉ định cài đặt in tùy chỉnh cho các trang khác nhau trong tài liệu PDF không?
+#### H: Có thể chỉ định cài đặt in tùy chỉnh cho các trang khác nhau trong tài liệu PDF không?
 
- Trả lời: Có, bạn có thể đặt cài đặt in tùy chỉnh cho các trang khác nhau trong tài liệu PDF bằng Aspose.PDF for .NET. Bạn có thể truy cập các trang riêng lẻ thông qua`doc.Pages` thu thập và đặt cài đặt in cụ thể cho từng trang riêng biệt.
+ A: Có, bạn có thể thiết lập cài đặt in tùy chỉnh cho các trang khác nhau trong tài liệu PDF bằng Aspose.PDF cho .NET. Bạn có thể truy cập từng trang thông qua`doc.Pages` thu thập và thiết lập cài đặt in cụ thể cho từng trang riêng biệt.

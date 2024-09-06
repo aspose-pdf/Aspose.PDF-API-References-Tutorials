@@ -7,11 +7,11 @@ type: docs
 weight: 40
 url: /nl/net/programming-with-forms/create-doc/
 ---
-In deze zelfstudie laten we u zien hoe u een document met keuzerondjes maakt met Aspose.PDF voor .NET. We leggen de C#-broncode stap voor stap uit om u door dit proces te begeleiden.
+In deze tutorial laten we je zien hoe je een document met keuzerondjes maakt met Aspose.PDF voor .NET. We leggen de C#-broncode stap voor stap uit om je door dit proces te leiden.
 
 ##Stap 1: Voorbereiding
 
-Zorg er eerst voor dat u de benodigde bibliotheken heeft geïmporteerd en stel het pad in naar de documentenmap:
+Controleer eerst of u de benodigde bibliotheken hebt geïmporteerd en stel het pad naar de documentenmap in:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,13 +19,13 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Stap 2: Maak een nieuw document
 
-Maak een nieuw Document-object om het PDF-document in te bewaren:
+Maak een nieuw Document-object om het PDF-document in op te slaan:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Stap 3: Voeg een pagina toe
+## Stap 3: Een pagina toevoegen
 
 Voeg een nieuwe pagina toe aan het document:
 
@@ -33,7 +33,7 @@ Voeg een nieuwe pagina toe aan het document:
 Page page = doc.Pages.Add();
 ```
 
-## Stap 4: Voeg een keuzerondjeveld toe
+## Stap 4: Een keuzerondje toevoegen
 
 Maak een keuzerondjeveld en stel de positie en grootte ervan in:
 
@@ -43,9 +43,9 @@ field.Rect = new Aspose.Pdf.Rectangle(40, 650, 100, 720);
 field. PartialName = "NewField";
 ```
 
-## Stap 5: Voeg keuzerondjes toe
+## Stap 5: Voeg keuzerondje-opties toe
 
-Voeg de gewenste opties toe aan het keuzerondjeveld. U kunt de coördinaten en grootte van elke optie naar wens instellen:
+Voeg de gewenste opties toe aan het radioknopveld. U kunt de coördinaten en grootte van elke optie naar wens instellen:
 
 ```csharp
 RadioButtonOptionField opt1 = new RadioButtonOptionField();
@@ -74,9 +74,9 @@ field. Add(opt2);
 field. Add(opt3);
 ```
 
-## Stap 6: Voeg het keuzerondjeveld toe aan het formulier
+## Stap 6: Voeg het keuzerondje toe aan het formulier
 
-Voeg het keuzerondjeveld toe aan de verzameling Documentformuliervelden:
+Voeg het keuzerondje toe aan de verzameling Documentformuliervelden:
 
 ```csharp
 doc.Form.Add(field);
@@ -97,16 +97,16 @@ try
 {
 	// Het pad naar de documentenmap.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Maak een nieuw document
+	// Een nieuw document maken
 	Document doc = new Document();
 	Page page = doc.Pages.Add();
 	// Keuzerondjeveld toevoegen
 	RadioButtonField field = new RadioButtonField(page);
 	field.Rect = new Aspose.Pdf.Rectangle(40, 650, 100, 720);
 	field.PartialName = "NewField";
-	// Keuzerondjes toevoegen. Houd er rekening mee dat deze opties zich bevinden
+	// Voeg opties voor keuzerondjes toe. Let op: deze opties bevinden zich
 	// Noch horizontaal, noch verticaal.
-	// U kunt proberen alle coördinaten (en zelfs de grootte) ervoor in te stellen.
+	// U kunt proberen om de gewenste coördinaten (en zelfs de grootte) in te stellen.
 	RadioButtonOptionField opt1 = new RadioButtonOptionField();
 	opt1.Rect = new Aspose.Pdf.Rectangle(40, 650, 60, 670);
 	opt1.OptionName = "Item1";
@@ -142,26 +142,26 @@ catch (Exception ex)
 
 ## Conclusie
 
-In deze zelfstudie hebben we geleerd hoe u een document met keuzerondjes kunt maken met Aspose.PDF voor .NET. Door deze stappen te volgen, kunt u eenvoudig keuzerondjes aan uw PDF-documenten toevoegen met behulp van Aspose.PDF.
+In deze tutorial hebben we geleerd hoe je een document met keuzerondjes maakt met Aspose.PDF voor .NET. Door deze stappen te volgen, kun je eenvoudig keuzerondjes toevoegen aan je PDF-documenten met Aspose.PDF.
 
 ### Veelgestelde vragen
 
-#### Vraag: Kan ik het uiterlijk van de keuzerondjes in het document aanpassen met Aspose.PDF voor .NET?
+#### V: Kan ik het uiterlijk van de keuzerondjes in het document aanpassen met Aspose.PDF voor .NET?
 
 A: Ja, u kunt het uiterlijk van de keuzerondjes in het document aanpassen met Aspose.PDF voor .NET. U kunt eigenschappen instellen zoals grootte, kleur, randstijl en meer om het uiterlijk van de keuzerondjes aan te passen.
 
-#### Vraag: Hoe kan ik keuzerondjesgroepen toevoegen met elkaar uitsluitende opties?
+#### V: Hoe kan ik groepen keuzerondjes toevoegen met opties die elkaar uitsluiten?
 
-A: Om elkaar uitsluitende opties te creëren, kunt u meerdere keuzerondjevelden met dezelfde naam toevoegen. Dit zorgt ervoor dat wanneer één optie wordt geselecteerd, de andere opties met dezelfde naam automatisch worden gedeselecteerd.
+A: Om wederzijds exclusieve opties te creëren, kunt u meerdere radioknopvelden met dezelfde naam toevoegen. Dit zorgt ervoor dat wanneer één optie wordt geselecteerd, de andere opties met dezelfde naam automatisch worden gedeselecteerd.
 
-#### Vraag: Is het mogelijk om een standaard geselecteerde optie voor de keuzerondjes in te stellen?
+#### V: Is het mogelijk om een standaard geselecteerde optie voor de keuzerondjes in te stellen?
 
-A: Ja, u kunt een standaard geselecteerde optie voor de keuzerondjes instellen met Aspose.PDF voor .NET. U kunt gebruik maken van de`Selected` eigendom van de`RadioButtonOptionField` object om een optie als standaard geselecteerd te markeren.
+A: Ja, u kunt een standaard geselecteerde optie voor de keuzerondjes instellen met Aspose.PDF voor .NET. U kunt de`Selected` eigendom van de`RadioButtonOptionField` object om een optie als standaard geselecteerd te markeren.
 
-#### Vraag: Kan ik gebeurtenishandlers aan de keuzerondjes toevoegen?
+#### V: Kan ik gebeurtenis-handlers toevoegen aan de keuzerondjes?
 
- A: Ja, u kunt gebeurtenishandlers aan de keuzerondjes toevoegen met Aspose.PDF voor .NET. U kunt JavaScript-acties koppelen, zoals`OnValueChanged`, naar de keuzerondjes om specifieke acties uit te voeren wanneer de gebruiker een optie selecteert.
+ A: Ja, u kunt event handlers toevoegen aan de keuzerondjes met Aspose.PDF voor .NET. U kunt JavaScript-acties koppelen, zoals`OnValueChanged`, naar de keuzerondjes om specifieke acties uit te voeren wanneer de gebruiker een optie selecteert.
 
-#### Vraag: Hoe kan ik de geselecteerde optie uit de keuzerondjesgroep ophalen nadat de gebruiker een selectie heeft gemaakt?
+#### V: Hoe kan ik de geselecteerde optie uit de keuzerondjesgroep ophalen nadat de gebruiker een selectie heeft gemaakt?
 
- A: U kunt de geselecteerde optie uit de keuzerondjesgroep ophalen met Aspose.PDF voor .NET. Nadat de gebruiker een selectie heeft gemaakt, krijgt u toegang tot het`Selected` eigendom van de`RadioButtonOptionField` object om te controleren welke optie is geselecteerd.
+ A: U kunt de geselecteerde optie ophalen uit de radioknopgroep met Aspose.PDF voor .NET. Nadat de gebruiker een selectie heeft gemaakt, kunt u de`Selected` eigendom van de`RadioButtonOptionField` object om te controleren welke optie is geselecteerd.

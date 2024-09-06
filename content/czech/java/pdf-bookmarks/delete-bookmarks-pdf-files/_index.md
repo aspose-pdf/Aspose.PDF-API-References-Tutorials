@@ -63,7 +63,7 @@ OutlineCollection outlines = pdfDocument.getOutlines();
 
 ## Mazání záložek
 
-Nyní se pustíme do procesu mazání záložek ze souboru PDF. Následuj tyto kroky:
+Nyní se pustíme do procesu mazání záložek ze souboru PDF. Postupujte takto:
 
 1. Procházejte záložky pomocí smyčky.
 2. Na základě vašich kritérií určete záložky, které chcete odstranit.

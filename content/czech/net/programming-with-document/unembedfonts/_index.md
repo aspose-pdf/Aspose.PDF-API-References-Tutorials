@@ -33,7 +33,7 @@ Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 
 ## Krok 3: Nastavte možnost UnembedFonts
 
- Chcete-li získat nevložená písma z dokumentu PDF, musíte nastavit`UnembedFonts` možnost`true` . Tato možnost je dostupná v`OptimizationOptions` třída. Následující fragment kódu ukazuje, jak nastavit`UnembedFonts` volba:
+ Chcete-li získat nevložená písma z dokumentu PDF, musíte nastavit`UnembedFonts` možnost`true` . Tato možnost je k dispozici v`OptimizationOptions` třída. Následující fragment kódu ukazuje, jak nastavit`UnembedFonts` volba:
 
 ```csharp
 // Nastavte možnost UnembedFonts
@@ -127,7 +127,7 @@ Odpověď: Aspose.PDF for .NET neprovádí trvalé změny původního dokumentu 
 
 #### Otázka: Jak mohu po optimalizaci zkontrolovat původní a zmenšenou velikost souboru?
 
-A: Můžete použít`FileInfo` třída`System.IO` získat původní a zmenšenou velikost souboru. Zde je příklad fragmentu kódu, jak toho dosáhnout:
+ A: Můžete použít`FileInfo` třídy`System.IO` získat původní a zmenšenou velikost souboru. Zde je příklad fragmentu kódu, jak toho dosáhnout:
 
 ```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");

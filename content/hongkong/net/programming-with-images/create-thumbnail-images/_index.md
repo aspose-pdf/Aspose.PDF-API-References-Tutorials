@@ -118,7 +118,7 @@ System.Console.WriteLine("PDF pages are converted to thumbnails successfully!");
 
 #### Q：我可以在創建過程中調整生成的縮圖的解析度或品質嗎？
 
- A：是的，您可以透過配置來修改解析度、寬度、高度、品質等屬性`JpegDevice`轉換每個頁面之前的物件。
+A：是的，您可以透過配置來修改解析度、寬度、高度、品質等屬性`JpegDevice`轉換每個頁面之前的物件。
 
 #### Q：創建過程後如何在我的專案或應用程式中使用生成的縮圖？
 

@@ -23,7 +23,7 @@ Innan du börjar, se till att du har följande:
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Byta ut`"YOUR DOCUMENT DIRECTORY"`med sökvägen till katalogen där dina dokument finns. Detta kommer att användas för att lagra alla genererade PDF-filer.
+ Ersätta`"YOUR DOCUMENT DIRECTORY"` med sökvägen till katalogen där dina dokument finns. Detta kommer att användas för att lagra alla genererade PDF-filer.
 
 ## Steg 2: Hitta teckensnittet
 
@@ -31,7 +31,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("Arial");
 ```
 
- Koden ovan hittar Arial-fonten med hjälp av`FindFont` metod från`FontRepository` klass. Om du vill använda ett annat teckensnitt, byt ut`"Arial"` med önskat teckensnittsnamn.
+Koden ovan hittar Arial-teckensnittet med hjälp av`FindFont` metod från`FontRepository` klass. Om du vill använda ett annat teckensnitt, byt ut`"Arial"` med önskat teckensnittsnamn.
 
 ## Steg 3: Ställ in texttillstånd
 
@@ -101,7 +101,7 @@ S: Genom att mäta textbredd dynamiskt kan du exakt bestämma det utrymme som kr
 
 #### F: Hur hittar jag typsnittet som ska användas för textmätning?
 
-S: I handledningen använder du`FontRepository.FindFont` metod för att hitta önskat teckensnitt. Exemplet använder typsnittet Arial, men du kan ersätta det`"Arial"` med namnet på alla andra teckensnitt du vill använda.
+ S: I handledningen använder du`FontRepository.FindFont` metod för att hitta önskat teckensnitt. Exemplet använder typsnittet Arial, men du kan ersätta det`"Arial"` med namnet på alla andra teckensnitt du vill använda.
 
 ####  F: Vad är syftet med`TextState` class?
 

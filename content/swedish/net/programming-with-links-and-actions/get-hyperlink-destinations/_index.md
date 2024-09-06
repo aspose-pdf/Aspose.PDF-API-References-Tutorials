@@ -25,7 +25,7 @@ Innan du börjar skriva kod måste du ställa in din utvecklingsmiljö genom att
 För att använda Aspose.PDF för .NET måste du lägga till lämpliga referenser till ditt projekt. Följ stegen nedan för att importera nödvändiga referenser:
 
 1. I ditt projekt högerklickar du på "Referenser" och väljer "Lägg till referens".
-2. fönstret "Lägg till referens", leta upp och välj DLL-filerna för Aspose.PDF för .NET.
+2. I fönstret "Lägg till referens", leta upp och välj DLL-filerna för Aspose.PDF för .NET.
 3. Klicka på "OK" för att importera referenserna till ditt projekt.
 
 ## Steg 3: Laddar PDF-filen
@@ -66,7 +66,7 @@ foreach(Aspose.Pdf.Page page in document.Pages)
 
 Denna kod går igenom varje sida i dokumentet och väljer hyperlänksanteckningarna som finns på varje sida. Sedan lagrar den dessa kommentarer i en lista och skriver ut måladressen för varje länk.
 
-## Steg 5: Få hyperlänkdestinationer
+## Steg 5: Skaffa hyperlänkdestinationer
 
 Det sista steget är att extrahera hyperlänkdestinationerna från hyperlänksanteckningarna. Följande kod visar hur du gör:
 

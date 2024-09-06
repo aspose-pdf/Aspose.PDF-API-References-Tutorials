@@ -22,7 +22,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy a következő előfeltételek
 
 ## 1. lépés: Fejlesztői környezet beállítása
 
-A kezdéshez be kell állítania a fejlesztői környezetet. Kovesd ezeket a lepeseket:
+A kezdéshez be kell állítania a fejlesztői környezetet. Kövesse az alábbi lépéseket:
 
 1. Töltse le és telepítse az Aspose.PDF for Java könyvtárat.
 2. Hozzon létre egy új Java-projektet a kívánt integrált fejlesztőkörnyezetben (IDE).
@@ -95,7 +95,7 @@ image.setRectangle(new Rectangle(100, 100, 200, 200)); // Állítsa be az egyén
 pdfDocument.save("output.pdf");
 ```
 
-Gratulálunk! Sikeresen hozzáadott egy képet egy meglévő PDF-fájlhoz Java nyelven az Aspose.PDF for Java használatával.
+Gratulálok! Sikeresen hozzáadott egy képet egy meglévő PDF-fájlhoz Java nyelven az Aspose.PDF for Java használatával.
 
 ## Következtetés
 

@@ -1,155 +1,154 @@
 ---
 title: Nhận tất cả các tệp đính kèm trong tệp PDF
 linktitle: Nhận tất cả các tệp đính kèm trong tệp PDF
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Tìm hiểu cách lấy tất cả tệp đính kèm trong tệp PDF bằng Aspose.PDF cho .NET. Hướng dẫn từng bước để xử lý dễ dàng.
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Tìm hiểu cách trích xuất tất cả các tệp đính kèm từ tệp PDF bằng Aspose.PDF cho .NET trong hướng dẫn từng bước này.
 type: docs
 weight: 40
 url: /vi/net/programming-with-attachments/get-all-the-attachments/
 ---
-Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn từng bước về mã nguồn C# sau đây để nhận tất cả các tệp đính kèm trong tệp PDF bằng Aspose.PDF cho .NET.
+## Giới thiệu
 
-Đảm bảo bạn đã cài đặt thư viện Aspose.PDF và thiết lập môi trường phát triển của mình trước khi bắt đầu. Ngoài ra còn có kiến thức cơ bản về lập trình C#.
+Trong thời đại kỹ thuật số, PDF đã trở thành một yếu tố chính để chia sẻ tài liệu. Chúng linh hoạt, an toàn và có thể chứa nhiều thông tin, bao gồm cả tệp đính kèm. Bạn đã bao giờ tự hỏi làm thế nào để trích xuất tất cả những viên ngọc ẩn đó từ tệp PDF chưa? Vâng, bạn thật may mắn! Trong hướng dẫn này, chúng ta sẽ tìm hiểu cách sử dụng Aspose.PDF cho .NET để lấy tất cả các tệp đính kèm trong tệp PDF. Cho dù bạn là một nhà phát triển dày dạn kinh nghiệm hay chỉ mới bắt đầu, hướng dẫn này sẽ hướng dẫn bạn từng bước thực hiện quy trình.
 
-### Bước 1: Thiết lập thư mục tài liệu
+## Điều kiện tiên quyết
 
-Trong mã nguồn được cung cấp, bạn cần chỉ định thư mục chứa tệp PDF mà bạn muốn lấy tệp đính kèm. Thay đổi biến "dataDir" thành thư mục mong muốn.
+Trước khi tìm hiểu về mã, hãy đảm bảo rằng bạn có mọi thứ cần thiết để bắt đầu:
+
+1. Visual Studio: Đảm bảo bạn đã cài đặt Visual Studio trên máy của mình. Đây là IDE phù hợp để phát triển .NET.
+2.  Aspose.PDF cho .NET: Bạn sẽ cần tải xuống và cài đặt thư viện Aspose.PDF. Bạn có thể tìm thấy nó[đây](https://releases.aspose.com/pdf/net/).
+3. Kiến thức cơ bản về C#: Sự quen thuộc với lập trình C# sẽ giúp bạn hiểu các đoạn mã tốt hơn.
+
+## Nhập gói
+
+Để bắt đầu, bạn sẽ cần nhập các gói cần thiết vào dự án C# của mình. Sau đây là cách thực hiện:
+
+### Tạo một dự án mới
+
+Mở Visual Studio và tạo một dự án C# mới. Chọn Ứng dụng Console để đơn giản hơn.
+
+### Thêm tham chiếu Aspose.PDF
+
+1. Nhấp chuột phải vào dự án của bạn trong Solution Explorer.
+2. Chọn “Quản lý các gói NuGet”.
+3. Tìm kiếm “Aspose.PDF” và cài đặt phiên bản mới nhất.
+
+### Nhập không gian tên
+
+Ở đầu tệp C# của bạn, hãy nhập không gian tên Aspose.PDF
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using System;
 ```
 
-### Bước 2: Mở tài liệu PDF hiện có
+Bây giờ chúng ta đã thiết lập xong môi trường, hãy cùng bắt đầu thực hiện trích xuất tệp đính kèm từ tệp PDF.
 
-Chúng tôi mở tài liệu PDF hiện có bằng đường dẫn đã chỉ định.
+## Bước 1: Thiết lập thư mục tài liệu của bạn
+
+Trước tiên, bạn cần chỉ định đường dẫn đến thư mục tài liệu của mình. Đây là nơi tệp PDF của bạn sẽ nằm.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Thay thế`YOUR DOCUMENT DIRECTORY` với đường dẫn thực tế nơi tệp PDF của bạn được lưu trữ. Điều này rất quan trọng vì chương trình cần biết nơi tìm tệp.
+
+## Bước 2: Mở Tài liệu PDF
+
+Tiếp theo, chúng ta sẽ mở tài liệu PDF bằng thư viện Aspose.PDF. Đây chính là nơi phép thuật bắt đầu!
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
 ```
 
-### Bước 3: Lấy bộ sưu tập tệp đính kèm
+ Ở đây, chúng ta tạo ra một cái mới`Document` đối tượng và truyền đường dẫn của tệp PDF. Đảm bảo tên tệp khớp chính xác, bao gồm cả phần mở rộng.
 
-Chúng tôi nhận được bộ sưu tập các tệp đính kèm từ tài liệu.
+## Bước 3: Truy cập Bộ sưu tập tệp nhúng
+
+Bây giờ chúng ta đã mở tài liệu, hãy truy cập vào bộ sưu tập tệp nhúng. Đây là nơi lưu trữ tất cả các tệp đính kèm.
 
 ```csharp
 EmbeddedFileCollection embeddedFiles = pdfDocument.EmbeddedFiles;
 ```
 
-### Bước 4: Truy xuất tệp đính kèm
+Với dòng này, chúng ta sẽ kéo tất cả các tệp nhúng vào một bộ sưu tập mà chúng ta có thể dễ dàng lặp qua.
 
-Chúng tôi duyệt qua bộ sưu tập để lấy tất cả các tệp đính kèm và hiển thị thông tin của chúng. Chúng tôi cũng lưu tệp đính kèm trong các tệp riêng lẻ.
+## Bước 4: Đếm các tập tin nhúng
+
+Luôn tốt khi biết bạn đang xử lý bao nhiêu tệp đính kèm. Hãy in tổng số tệp được nhúng.
+
+```csharp
+Console.WriteLine("Total files : {0}", embeddedFiles.Count);
+```
+
+Thao tác này sẽ cung cấp cho bạn cái nhìn tổng quan nhanh về số lượng tệp đính kèm trong tệp PDF của bạn.
+
+## Bước 5: Lặp qua các tệp đính kèm
+
+Bây giờ đến phần thú vị! Chúng ta sẽ lặp qua từng thông số kỹ thuật tệp trong bộ sưu tập tệp nhúng và trích xuất thông tin chi tiết.
 
 ```csharp
 int count = 1;
-foreach(FileSpecification fileSpecification in embeddedFiles)
-{
-Console.WriteLine("Name: {0}", fileSpecification.Name);
-Console.WriteLine("Description: {0}", fileSpecification.Description);
-Console.WriteLine("MIME Type: {0}", fileSpecification.MIMEType);
 
-// Kiểm tra xem tham số đối tượng có chứa thông tin bổ sung không
+foreach (FileSpecification fileSpecification in embeddedFiles)
+{
+    Console.WriteLine("Name: {0}", fileSpecification.Name);
+    Console.WriteLine("Description: {0}", fileSpecification.Description);
+    Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
+```
+
+Trong vòng lặp này, chúng tôi in ra tên, mô tả và loại MIME của từng tệp đính kèm. Điều này cung cấp cho bạn hình ảnh rõ ràng về những gì bên trong tệp PDF của bạn.
+
+## Bước 6: Kiểm tra các thông số bổ sung
+
+Một số tệp đính kèm có thể có các tham số bổ sung. Hãy kiểm tra xem chúng có tồn tại không và in chúng ra.
+
+```csharp
 if (fileSpecification.Params != null)
 {
-Console.WriteLine("CheckSum: {0}", fileSpecification.Params.CheckSum);
-Console.WriteLine("Creation date: {0}", fileSpecification.Params.CreationDate);
-Console.WriteLine("Modified date: {0}", fileSpecification.Params.ModDate);
-Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
+    Console.WriteLine("CheckSum: {0}", fileSpecification.Params.CheckSum);
+    Console.WriteLine("Creation Date: {0}", fileSpecification.Params.CreationDate);
+    Console.WriteLine("Modification Date: {0}", fileSpecification.Params.ModDate);
+    Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
+```
 
-// Truy xuất tệp đính kèm và lưu vào một tệp
+Bước này đảm bảo bạn không bỏ sót bất kỳ thông tin quan trọng nào về tệp đính kèm.
+
+## Bước 7: Trích xuất và lưu tệp đính kèm
+
+Cuối cùng, hãy trích xuất nội dung của từng tệp đính kèm và lưu vào một tệp. Đây là nơi bạn sẽ thấy kết quả công sức của mình!
+
+```csharp
 byte[] fileContent = new byte[fileSpecification.Contents.Length];
 fileSpecification.Contents.Read(fileContent, 0, fileContent.Length);
 FileStream fileStream = new FileStream(dataDir + count + "_out" + ".txt", FileMode.Create);
 fileStream.Write(fileContent, 0, fileContent.Length);
 fileStream.Close();
-
 count += 1;
-}
 ```
 
-
-### Mã nguồn mẫu cho Nhận tất cả các tệp đính kèm bằng Aspose.PDF cho .NET 
-
-```csharp
-
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Mở tài liệu
-Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-// Nhận bộ sưu tập tập tin nhúng
-EmbeddedFileCollection embeddedFiles = pdfDocument.EmbeddedFiles;
-// Nhận số lượng tệp được nhúng
-Console.WriteLine("Total files : {0}", embeddedFiles.Count);
-int count = 1;
-// Lặp lại bộ sưu tập để nhận tất cả các tệp đính kèm
-foreach (FileSpecification fileSpecification in embeddedFiles)
-{
-	Console.WriteLine("Name: {0}", fileSpecification.Name);
-	Console.WriteLine("Description: {0}",
-	fileSpecification.Description);
-	Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-	//Kiểm tra xem đối tượng tham số có chứa tham số không
-	if (fileSpecification.Params != null)
-	{
-		Console.WriteLine("CheckSum: {0}",
-		fileSpecification.Params.CheckSum);
-		Console.WriteLine("Creation Date: {0}",
-		fileSpecification.Params.CreationDate);
-		Console.WriteLine("Modification Date: {0}",
-		fileSpecification.Params.ModDate);
-		Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
-	}
-	// Nhận tệp đính kèm và ghi vào tệp hoặc luồng
-	byte[] fileContent = new byte[fileSpecification.Contents.Length];
-	fileSpecification.Contents.Read(fileContent, 0,
-	fileContent.Length);
-	FileStream fileStream = new FileStream(dataDir + count + "_out" + ".txt",
-	FileMode.Create);
-	fileStream.Write(fileContent, 0, fileContent.Length);
-	fileStream.Close();
-	count+=1;
-}
-
-```
+ Trong mã này, chúng ta đọc nội dung của mỗi tệp đính kèm vào một mảng byte và sau đó ghi vào một tệp mới. Các tệp sẽ được đặt tên theo trình tự (ví dụ:`1_out.txt`, `2_out.txt`, vân vân.).
 
 ## Phần kết luận
 
-Trong hướng dẫn này, chúng tôi đã giải thích cách lấy tất cả tệp đính kèm từ tệp PDF bằng Aspose.PDF cho .NET. Bây giờ bạn có thể sử dụng kiến thức này để trích xuất và thao tác với các tệp đính kèm từ tệp PDF của mình.
+Và bạn đã có nó! Bạn đã trích xuất thành công tất cả các tệp đính kèm từ tệp PDF bằng Aspose.PDF cho .NET. Thư viện mạnh mẽ này giúp bạn dễ dàng thao tác các tài liệu PDF và truy cập vào kho báu ẩn của chúng. Cho dù bạn đang làm việc trên một dự án cá nhân hay một ứng dụng chuyên nghiệp, việc biết cách trích xuất các tệp đính kèm có thể cực kỳ hữu ích.
 
-## Câu hỏi thường gặp để nhận tất cả các tệp đính kèm trong tệp PDF
+## Câu hỏi thường gặp
 
-#### Hỏi: Tại sao tôi cần truy xuất tất cả tệp đính kèm từ tài liệu PDF?
+### Aspose.PDF dành cho .NET là gì?
+Aspose.PDF for .NET là một thư viện cho phép các nhà phát triển tạo, chỉnh sửa và chuyển đổi tài liệu PDF theo cách lập trình.
 
-Đáp: Việc truy xuất tệp đính kèm cho phép bạn truy cập và thao tác với các tệp bổ sung được nhúng trong tệp PDF, điều này có thể hữu ích cho việc lưu trữ, chia sẻ hoặc xử lý thêm.
+### Tôi có thể sử dụng Aspose.PDF miễn phí không?
+ Có, Aspose cung cấp phiên bản dùng thử miễn phí mà bạn có thể sử dụng để khám phá các tính năng của thư viện. Hãy xem thử[đây](https://releases.aspose.com/).
 
-#### Hỏi: Những loại tập tin nào có thể được đính kèm vào tài liệu PDF?
+### Làm thế nào để tôi nhận được hỗ trợ cho Aspose.PDF?
+ Bạn có thể nhận được hỗ trợ thông qua diễn đàn Aspose[đây](https://forum.aspose.com/c/pdf/10).
 
-Đáp: Tài liệu PDF có thể chứa nhiều loại tệp đính kèm, bao gồm hình ảnh, tài liệu, bảng tính, tệp âm thanh, v.v.
+### Có giấy phép tạm thời không?
+Có, bạn có thể xin giấy phép tạm thời cho Aspose.PDF[đây](https://purchase.aspose.com/temporary-license/).
 
-#### Hỏi: Hướng dẫn này giúp tôi truy xuất tệp đính kèm từ tệp PDF bằng Aspose.PDF cho .NET như thế nào?
-
-Đáp: Hướng dẫn này cung cấp hướng dẫn từng bước và mã nguồn C# để truy cập và truy xuất tất cả các tệp đính kèm trong tài liệu PDF.
-
-#### Câu hỏi: Tôi có thể truy xuất các tệp đính kèm cụ thể thay vì tất cả các tệp đính kèm bằng hướng dẫn này không?
-
-Đáp: Có, bạn có thể sửa đổi mã được cung cấp để truy xuất có chọn lọc các tệp đính kèm dựa trên yêu cầu của bạn.
-
-#### Câu hỏi: Tôi có thể lấy thông tin gì về mỗi tệp đính kèm bằng cách sử dụng hướng dẫn này?
-
-Đáp: Hướng dẫn này trình bày cách truy xuất và hiển thị các chi tiết như tên, mô tả, loại MIME, ngày tạo, ngày sửa đổi và kích thước của tệp đính kèm.
-
-#### Hỏi: Các tệp đính kèm đã truy xuất được lưu bằng cách sử dụng hướng dẫn này như thế nào?
-
-Đáp: Hướng dẫn này sẽ hướng dẫn bạn cách lưu từng tệp đính kèm được truy xuất dưới dạng một tệp riêng biệt trong thư mục được chỉ định.
-
-#### Hỏi: Tôi có thể sử dụng kiến thức này để trích xuất tệp đính kèm từ tệp PDF được bảo vệ bằng mật khẩu không?
-
-Đáp: Có, bạn có thể áp dụng các nguyên tắc tương tự để truy xuất tệp đính kèm từ tệp PDF được bảo vệ bằng mật khẩu bằng Aspose.PDF cho .NET.
-
-#### Câu hỏi: Aspose.PDF dành cho .NET tạo điều kiện truy xuất tệp đính kèm như thế nào?
-
-Trả lời: Aspose.PDF for .NET cung cấp API trực quan cho phép bạn truy cập và thao tác các tệp đính kèm trong tài liệu PDF một cách dễ dàng.
-
-#### Câu hỏi: Có những trường hợp cụ thể nào được khuyến nghị truy xuất tệp đính kèm không?
-
-Đáp: Việc truy xuất tệp đính kèm rất hữu ích khi bạn cần truy cập các tệp được nhúng trong tệp PDF, chẳng hạn như trích xuất hình ảnh, tệp âm thanh hoặc tài liệu bổ sung.
+### Tôi có thể tìm tài liệu ở đâu?
+ Tài liệu về Aspose.PDF cho .NET có thể được tìm thấy[đây](https://reference.aspose.com/pdf/net/).

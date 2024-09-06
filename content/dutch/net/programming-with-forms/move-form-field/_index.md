@@ -7,11 +7,11 @@ type: docs
 weight: 200
 url: /nl/net/programming-with-forms/move-form-field/
 ---
-In deze zelfstudie laten we u zien hoe u een formulierveld in een PDF-document verplaatst met Aspose.PDF voor .NET. We leggen de C#-broncode stap voor stap uit om u door dit proces te begeleiden.
+In deze tutorial laten we u zien hoe u een formulierveld in een PDF-document verplaatst met Aspose.PDF voor .NET. We leggen de C#-broncode stap voor stap uit om u door dit proces te leiden.
 
 ## Stap 1: Voorbereiding
 
-Zorg ervoor dat u de benodigde bibliotheken heeft geïmporteerd en stel het pad in naar uw documentenmap:
+Zorg ervoor dat u de benodigde bibliotheken hebt geïmporteerd en het pad naar uw documentenmap hebt ingesteld:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -25,15 +25,15 @@ Laad het bestaande PDF-document:
 Document pdfDocument = new Document(dataDir + "MoveFormField.pdf");
 ```
 
-## Stap 3: Haal het formulierveld op
+## Stap 3: Het formulierveld ophalen
 
-Haal het formulierveld op dat u wilt verplaatsen:
+Selecteer het formulierveld dat u wilt verplaatsen:
 
 ```csharp
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 ```
 
-## Stap 4: Wijzig de veldlocatie
+## Stap 4: Veldlocatie wijzigen
 
 Wijzig de locatie van het formulierveld door een nieuw rechthoekig gebied te definiëren:
 
@@ -50,41 +50,41 @@ dataDir = dataDir + "MoveFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Voorbeeldbroncode voor formulierveld verplaatsen met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor Move Form Field met behulp van Aspose.PDF voor .NET 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Document openen
 Document pdfDocument = new Document(dataDir + "MoveFormField.pdf");
-// Neem een veld
+// Krijg een veld
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
 // Veldlocatie wijzigen
 textBoxField.Rect = new Aspose.Pdf.Rectangle(300, 400, 600, 500);
 dataDir = dataDir + "MoveFormField_out.pdf";
-// Bewaar het gewijzigde document
+// Gewijzigd document opslaan
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nForm field moved successfully to a new location.\nFile saved at " + dataDir);
 ```
 
 ## Conclusie
 
-In deze zelfstudie hebben we geleerd hoe u een formulierveld in een PDF-document kunt verplaatsen met Aspose.PDF voor .NET. Door deze stappen te volgen, kunt u eenvoudig naar een specifiek veld navigeren en de locatie ervan indien nodig wijzigen.
+In deze tutorial hebben we geleerd hoe u een formulierveld in een PDF-document verplaatst met Aspose.PDF voor .NET. Door deze stappen te volgen, kunt u eenvoudig naar een specifiek veld navigeren en de locatie ervan wijzigen indien nodig.
 
 
 ### Veelgestelde vragen
 
-#### Vraag: Kan ik meerdere formuliervelden binnen één PDF-document verplaatsen met Aspose.PDF voor .NET?
+#### V: Kan ik meerdere formuliervelden binnen één PDF-document verplaatsen met Aspose.PDF voor .NET?
 
-A: Ja, u kunt meerdere formuliervelden binnen één PDF-document verplaatsen met Aspose.PDF voor .NET. Herhaal eenvoudigweg het proces voor elk formulierveld dat u wilt verplaatsen.
+A: Ja, u kunt meerdere formuliervelden binnen één PDF-document verplaatsen met Aspose.PDF voor .NET. Herhaal het proces eenvoudigweg voor elk formulierveld dat u wilt verplaatsen.
 
-#### Vraag: Heeft het verplaatsen van een formulierveld invloed op de bijbehorende gegevens of functionaliteit?
+#### V: Heeft het verplaatsen van een formulierveld invloed op de bijbehorende gegevens of functionaliteit?
 
 A: Nee, het verplaatsen van een formulierveld heeft geen invloed op de bijbehorende gegevens of functionaliteit. Het formulierveld behoudt al zijn eigenschappen en waarden nadat het naar een nieuwe locatie is verplaatst.
 
-#### Vraag: Hoe kan ik de exacte coördinaten voor de nieuwe locatie van het formulierveld bepalen?
+#### V: Hoe kan ik de exacte coördinaten voor de nieuwe locatie van het formulierveld bepalen?
 
- A: U kunt de nieuwe locatie opgeven met behulp van de`Aspose.Pdf.Rectangle` klasse, waar u de X- en Y-coördinaten van de linkerbovenhoek en de X- en Y-coördinaten van de rechteronderhoek van het rechthoekige gebied definieert.
+ A: U kunt de nieuwe locatie opgeven met behulp van de`Aspose.Pdf.Rectangle` klasse, waarin u de X- en Y-coördinaten van de linkerbovenhoek en de X- en Y-coördinaten van de rechteronderhoek van het rechthoekige gebied definieert.
 
-#### Vraag: Is Aspose.PDF voor .NET compatibel met zowel Windows- als Linux-omgevingen?
+#### V: Is Aspose.PDF voor .NET compatibel met zowel Windows- als Linux-omgevingen?
 
-A: Ja, Aspose.PDF voor .NET is compatibel met zowel Windows- als Linux-omgevingen, waardoor ontwikkelaars de flexibiliteit krijgen om in hun favoriete besturingssystemen te werken.
+A: Ja, Aspose.PDF voor .NET is compatibel met zowel Windows- als Linux-omgevingen, waardoor ontwikkelaars flexibel kunnen werken in hun favoriete besturingssystemen.

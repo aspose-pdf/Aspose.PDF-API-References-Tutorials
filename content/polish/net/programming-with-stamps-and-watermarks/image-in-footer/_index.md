@@ -1,24 +1,24 @@
 ---
 title: Obraz w stopce
 linktitle: Obraz w stopce
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak dodać obraz w sekcji stopki dokumentu PDF za pomocą Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak dodać obraz do stopki dokumentu PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 130
 url: /pl/net/programming-with-stamps-and-watermarks/image-in-footer/
 ---
-W tym samouczku poprowadzimy Cię krok po kroku, jak dodać obraz w sekcji stopki dokumentu PDF przy użyciu Aspose.PDF dla .NET. Użyjemy dostarczonego kodu źródłowego C#, aby otworzyć istniejący dokument PDF, utworzyć bufor obrazu, ustawić jego właściwości i dodać go do wszystkich stron dokumentu PDF.
+W tym samouczku pokażemy Ci krok po kroku, jak dodać obraz w stopce dokumentu PDF za pomocą Aspose.PDF dla .NET. Użyjemy dostarczonego kodu źródłowego C#, aby otworzyć istniejący dokument PDF, utworzyć bufor obrazu, ustawić jego właściwości i dodać go do wszystkich stron dokumentu PDF.
 
 ## Krok 1: Konfigurowanie środowiska
 
-Zanim zaczniesz, upewnij się, że masz następujące elementy:
+Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
 
 - Zainstalowane środowisko programistyczne .NET.
-- Biblioteka Aspose.PDF dla platformy .NET pobrana i przywołana w Twoim projekcie.
+- Biblioteka Aspose.PDF dla platformy .NET pobrana i wykorzystana w projekcie.
 
 ## Krok 2: Ładowanie istniejącego dokumentu PDF
 
-Pierwszym krokiem jest załadowanie istniejącego dokumentu PDF do projektu. Oto jak:
+Pierwszym krokiem jest załadowanie istniejącego dokumentu PDF do projektu. Oto jak to zrobić:
 
 ```csharp
 // Ścieżka do katalogu dokumentów.
@@ -28,11 +28,11 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "ImageInFooter.pdf");
 ```
 
-Pamiętaj, aby zastąpić „KATALOG TWOICH DOKUMENTÓW” rzeczywistą ścieżką do katalogu, w którym znajduje się dokument PDF.
+Pamiętaj, aby zastąpić frazę „KATALOG DOKUMENTÓW” rzeczywistą ścieżką do katalogu, w którym znajduje się Twój dokument PDF.
 
-## Krok 3: Tworzenie i dodanie obrazu w sekcji stopki
+## Krok 3: Tworzenie i dodawanie obrazu w sekcji stopki
 
-Teraz, gdy dokument PDF jest załadowany, możemy utworzyć stempel graficzny i dodać go do wszystkich stron dokumentu. Oto jak:
+Teraz, gdy dokument PDF jest załadowany, możemy utworzyć stempel obrazkowy i dodać go do wszystkich stron dokumentu. Oto jak to zrobić:
 
 ```csharp
 // Utwórz bufor ramki
@@ -43,27 +43,27 @@ imageStamp.BottomMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Bottom;
 
-// Dodaj bufor obrazu do wszystkich stron
+//Dodaj bufor obrazu do wszystkich stron
 foreach(Page page in pdfDocument.Pages)
 {
      page.AddStamp(imageStamp);
 }
 ```
 
-Powyższy kod tworzy bufor obrazu z pliku „aspose-logo.jpg” i ustawia jego właściwości, takie jak dolny margines, wyrównanie w poziomie i pionie. Następnie do wszystkich stron dokumentu PDF dodawany jest bufor obrazu.
+Powyższy kod tworzy bufor obrazu z pliku „aspose-logo.jpg” i ustawia jego właściwości, takie jak dolny margines, wyrównanie poziome i pionowe. Następnie bufor obrazu jest dodawany do wszystkich stron dokumentu PDF.
 
-## Krok 4: Zapisanie zmodyfikowanego dokumentu PDF
+## Krok 4: Zapisywanie zmodyfikowanego dokumentu PDF
 
-Po dodaniu obrazu do sekcji stopki możemy zapisać zmodyfikowany dokument PDF. Oto jak:
+Po dodaniu obrazu do sekcji stopki możemy zapisać zmodyfikowany dokument PDF. Oto jak to zrobić:
 
 ```csharp
 // Zapisz zmodyfikowany dokument PDF
 pdfDocument.Save(dataDir + "ImageInFooter_out.pdf");
 ```
 
-Powyższy kod zapisuje edytowany dokument PDF we wskazanym katalogu.
+Powyższy kod zapisuje edytowany dokument PDF w określonym katalogu.
 
-### Przykładowy kod źródłowy obrazu w stopce przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla Obrazu w Stopce przy użyciu Aspose.PDF dla .NET 
 ```csharp
 
 // Ścieżka do katalogu dokumentów.
@@ -75,7 +75,7 @@ Document pdfDocument = new Document(dataDir+ "ImageInFooter.pdf");
 // Utwórz stopkę
 ImageStamp imageStamp = new ImageStamp(dataDir+ "aspose-logo.jpg");
 
-// Ustaw właściwości stempla
+// Ustaw właściwości znaczka
 imageStamp.BottomMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Bottom;
@@ -94,46 +94,46 @@ Console.WriteLine("\nImage in footer added successfully.\nFile saved at " + data
 
 ## Wniosek
 
-Gratulacje! Nauczyłeś się, jak dodać obraz w sekcji stopki dokumentu PDF przy użyciu Aspose.PDF dla .NET. Możesz teraz dostosować stopki swoich dokumentów PDF, dodając obrazy.
+Gratulacje! Nauczyłeś się, jak dodać obraz w stopce dokumentu PDF za pomocą Aspose.PDF dla .NET. Teraz możesz dostosować stopki swoich dokumentów PDF, dodając obrazy.
 
-### Często zadawane pytania dotyczące obrazu w stopce
+### FAQ dotyczące obrazków w stopce
 
-#### P: Jaki jest cel dodawania obrazu do sekcji stopki dokumentu PDF?
+#### P: Jaki jest cel dodawania obrazu do stopki dokumentu PDF?
 
-Odp.: Dodanie obrazu do sekcji stopki dokumentu PDF umożliwia umieszczenie elementów wizualnych, takich jak logo lub znak wodny, u dołu każdej strony. Może to poprawić markę i estetykę treści PDF.
+A: Dodanie obrazu do sekcji stopki dokumentu PDF umożliwia dołączenie elementów wizualnych, takich jak logo lub znak wodny, na dole każdej strony. Może to poprawić markę i estetykę treści PDF.
 
-#### P: W jaki sposób dostarczony kod źródłowy C# umożliwia dodanie obrazu do sekcji stopki dokumentu PDF?
+#### P: W jaki sposób dostarczony kod źródłowy C# umożliwia dodanie obrazka do stopki dokumentu PDF?
 
- O: Dostarczony kod demonstruje, jak załadować istniejący dokument PDF, utworzyć plik`ImageStamp` obiektu z pliku obrazu, ustaw właściwości, takie jak dolny margines i wyrównanie, a następnie dodaj stempel obrazu do stopki wszystkich stron.
+ A: Dostarczony kod pokazuje, jak załadować istniejący dokument PDF, utworzyć`ImageStamp` obiekt z pliku obrazu, ustaw właściwości, takie jak dolny margines i wyrównanie, a następnie dodaj stempel graficzny do stopki wszystkich stron.
 
-#### P: Czy mogę dostosować położenie i wyrównanie obrazu w sekcji stopki?
+#### P: Czy mogę zmienić położenie i wyrównanie obrazu w stopce?
 
- O: Tak, możesz dostosować położenie i wyrównanie obrazu w sekcji stopki, modyfikując właściwości pliku`ImageStamp` obiekt. Fragment kodu ustawia właściwości takie jak`BottomMargin`, `HorizontalAlignment` , I`VerticalAlignment`.
+ O: Tak, możesz dostosować położenie i wyrównanie obrazu w sekcji stopki, modyfikując właściwości`ImageStamp` obiekt. Fragment kodu ustawia właściwości takie jak`BottomMargin`, `HorizontalAlignment` , I`VerticalAlignment`.
 
-#### P: Czy można dodać różne obrazy do sekcji stopki na różnych stronach dokumentu PDF?
+#### P: Czy można dodawać różne obrazy do stopki na różnych stronach dokumentu PDF?
 
- Odp.: Tak, możesz dodać różne obrazy do sekcji stopki na różnych stronach, tworząc osobne`ImageStamp` obiekty o różnych plikach obrazów i właściwościach, a następnie dodawanie ich do określonych stron.
+O: Tak, możesz dodać różne obrazy do sekcji stopki na różnych stronach, tworząc oddzielne`ImageStamp` obiektów z różnymi plikami obrazów i właściwościami, a następnie dodawanie ich do określonych stron.
 
 #### P: W jaki sposób kod zapewnia dodanie obrazu do wszystkich stron dokumentu PDF?
 
-Odp.: Dostarczony kod wykorzystuje a`foreach` pętla, aby iterować po wszystkich stronach dokumentu PDF i dodaje to samo`ImageStamp` do sekcji stopki każdej strony.
+ A: Dostarczony kod wykorzystuje`foreach` pętla umożliwiająca iteracyjne przeglądanie wszystkich stron dokumentu PDF i dodanie tego samego`ImageStamp` do stopki każdej strony.
 
-#### P: Czy mogę dodać inne elementy, takie jak tekst lub kształty, do sekcji stopki, stosując podobne podejście?
+#### P: Czy mogę dodać inne elementy, takie jak tekst lub kształty, do stopki, stosując podobne podejście?
 
  O: Tak, możesz dodać inne elementy, takie jak tekst lub kształty, do sekcji stopki, stosując podobne podejście, tworząc odpowiednie obiekty stempla (np.`TextStamp`) i odpowiednio ustawiając ich właściwości.
 
 #### P: Jak określić ścieżkę do pliku obrazu, który chcę dodać do stopki?
 
- Odp.: Ścieżka do pliku obrazu jest określana podczas tworzenia pliku`ImageStamp` obiekt, jak pokazano w kodzie. Upewnij się, że podałeś poprawną ścieżkę do pliku obrazu.
+ A: Ścieżka do pliku obrazu jest określana podczas tworzenia`ImageStamp` obiekt, jak pokazano w kodzie. Upewnij się, że podałeś poprawną ścieżkę do pliku obrazu.
 
 #### P: Czy mogę dostosować rozmiar obrazu w sekcji stopki?
 
- O: Tak, możesz dostosować rozmiar obrazu w sekcji stopki, dostosowując wymiary pliku`ImageStamp` używając właściwości takich jak`Width` I`Height`.
+ O: Tak, możesz dostosować rozmiar obrazu w sekcji stopki, zmieniając wymiary`ImageStamp` korzystając z właściwości takich jak`Width` I`Height`.
 
-#### P: Czy można usunąć lub zastąpić obraz w stopce po jego dodaniu?
+#### P: Czy można usunąć lub zastąpić obrazek w stopce po jego dodaniu?
 
- O: Tak, możesz usunąć lub zastąpić obraz w sekcji stopki, modyfikując zawartość pliku`ImageStamp` obiektu lub usunięcia stempla z określonych stron.
+ O: Tak, możesz usunąć lub zastąpić obraz w sekcji stopki, modyfikując jej zawartość.`ImageStamp` obiektu lub usunięcia znaczka z określonych stron.
 
-#### P: Jak kod radzi sobie ze scenariuszami, w których wymiary obrazu przekraczają dostępne miejsce w stopce?
+#### P: W jaki sposób kod radzi sobie w sytuacjach, gdy wymiary obrazu przekraczają dostępną przestrzeń w stopce?
 
- O: Kod ustawia właściwości takie jak`BottomMargin`, `HorizontalAlignment` , I`VerticalAlignment` do kontrolowania położenia i wyrównania obrazu. Upewnij się, że te właściwości są dostosowane, aby zapobiec nakładaniu się lub problemom z układem.
+ A: Kod ustawia właściwości takie jak:`BottomMargin`, `HorizontalAlignment` , I`VerticalAlignment` aby kontrolować pozycjonowanie i wyrównanie obrazu. Upewnij się, że te właściwości są dostosowane, aby zapobiec nakładaniu się lub problemom z układem.

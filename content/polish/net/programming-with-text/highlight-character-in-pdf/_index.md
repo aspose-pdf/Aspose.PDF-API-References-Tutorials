@@ -1,24 +1,24 @@
 ---
-title: Zaznacz znak w pliku PDF
-linktitle: Zaznacz znak w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak wyróżniać znaki w pliku PDF za pomocą Aspose.PDF dla .NET.
+title: Podświetl znak w pliku PDF
+linktitle: Podświetl znak w pliku PDF
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak wyróżniać znaki w pliku PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 240
 url: /pl/net/programming-with-text/highlight-character-in-pdf/
 ---
-W tym samouczku wyjaśnimy, jak wyróżniać znaki w pliku PDF za pomocą biblioteki Aspose.PDF dla .NET. Przejdziemy krok po kroku przez proces wyróżniania znaków w pliku PDF przy użyciu dostarczonego kodu źródłowego C#.
+W tym samouczku wyjaśnimy, jak wyróżniać znaki w pliku PDF za pomocą biblioteki Aspose.PDF dla .NET. Przejdziemy przez proces wyróżniania znaków w pliku PDF krok po kroku za pomocą dostarczonego kodu źródłowego C#.
 
 ## Wymagania
 
-Zanim zaczniesz, upewnij się, że masz następujące elementy:
+Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
 
-- Zainstalowana biblioteka Aspose.PDF dla .NET.
+- Zainstalowano bibliotekę Aspose.PDF dla .NET.
 - Podstawowa znajomość programowania w języku C#.
 
 ## Krok 1: Skonfiguruj katalog dokumentów
 
- Najpierw musisz ustawić ścieżkę do katalogu, w którym znajduje się wejściowy plik PDF. Zastępować`"YOUR DOCUMENT DIRECTORY"` w`dataDir` zmienną ze ścieżką do pliku PDF.
+ Najpierw musisz ustawić ścieżkę do katalogu, w którym znajduje się plik PDF wejściowy. Zastąp`"YOUR DOCUMENT DIRECTORY"` w`dataDir` zmienną zawierającą ścieżkę do pliku PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -32,9 +32,9 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
 ```
 
-## Krok 3: Konwertuj plik PDF na obraz
+## Krok 3: Konwersja pliku PDF na obraz
 
- Aby wyróżnić znaki, konwertujemy dokument PDF na obraz za pomocą`PdfConverter` klasa. Ustawiamy rozdzielczość konwersji i pobieramy obraz jako plik`Bitmap` obiekt.
+ Aby wyróżnić znaki, konwertujemy dokument PDF na obraz za pomocą`PdfConverter` Klasa. Ustawiamy rozdzielczość konwersji i pobieramy obraz jako`Bitmap` obiekt.
 
 ```csharp
 int resolution = 150;
@@ -46,34 +46,34 @@ using (MemoryStream ms = new MemoryStream())
      Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
 ```
 
-## Krok 4: Zaznacz postacie
+## Krok 4: Podświetlanie postaci
 
- Przeglądamy każdą stronę dokumentu PDF i używamy a`TextFragmentAbsorber` obiekt, aby znaleźć wszystkie słowa na stronie. Następnie iterujemy po fragmentach, segmentach i znakach tekstu, aby wyróżnić je za pomocą prostokątów.
+ Przechodzimy przez każdą stronę dokumentu PDF i używamy`TextFragmentAbsorber` obiekt, aby znaleźć wszystkie słowa na stronie. Następnie iterujemy po fragmentach tekstu, segmentach i znakach, aby wyróżnić je za pomocą prostokątów.
 
 ```csharp
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 {
-     //Ustaw skalę i przekształć
+     // Ustaw skalę i przekształć
      float scale = resolution / 72f;
      gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
 
-     // Przeglądaj strony w pętli
+     // Pętla przez strony
      for (int i = 0; i < pdfDocument.Pages.Count; i++)
      {
          Page page = pdfDocument.Pages[1];
 
-         // Znajdź wszystkie słowa na stronie
+         //Znajdź wszystkie słowa na stronie
          TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
          textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
          page. Accept(textFragmentAbsorber);
          TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 
-         // Przejrzyj fragmenty tekstu w pętli
+         // Pętla przez fragmenty tekstu
          foreach(TextFragment textFragment in textFragmentCollection)
          {
              if (i == 0)
              {
-                 // Zaznacz znaki
+                 // Podświetlaj znaki
                  gr.DrawRectangle(
                      Think.Yellow,
                      (float)textFragment.Position.XIndent,
@@ -81,7 +81,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
                      (float)textFragment.Rectangle.Width,
                      (float)textFragment.Rectangle.Height);
 
-                 // Zapętlaj segmenty
+                 // Pętla przez segmenty
                  foreach(TextSegment segment in textFragment.Segments)
                  {
                      // Podświetl segment
@@ -92,7 +92,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
                          (float)segment.Rectangle.Width,
                          (float)segment.Rectangle.Height);
 
-                     // Zapętlaj znaki
+                     // Pętla przez znaki
                      foreach(CharInfo characterInfo in segment.Characters)
                      {
                          // Podświetl postać
@@ -112,14 +112,14 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 
 ## Krok 5: Zapisz obraz wyjściowy
 
-Na koniec zapisujemy zmodyfikowany obraz z podświetlonymi znakami do określonego pliku wyjściowego.
+Na koniec zapisujemy zmodyfikowany obraz z wyróżnionymi znakami do wskazanego pliku wyjściowego.
 
 ```csharp
 dataDir = dataDir + "HighlightCharacterInPDF_out.png";
 bmp.Save(dataDir, System.Drawing.Imaging.ImageFormat.Png);
 ```
 
-### Przykładowy kod źródłowy dla podświetlenia znaku w formacie PDF przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Podświetlanie znaków w pliku PDF przy użyciu Aspose.PDF dla platformy .NET 
 ```csharp
 try
 {
@@ -197,40 +197,40 @@ catch (Exception ex)
 
 ## Wniosek
 
-W tym samouczku nauczyłeś się wyróżniać znaki w dokumencie PDF przy użyciu biblioteki Aspose.PDF dla .NET. Postępując zgodnie ze szczegółowym przewodnikiem i wykonując dostarczony kod C#, możesz wyróżniać znaki w pliku PDF i zapisywać dane wyjściowe jako obraz.
+W tym samouczku nauczyłeś się, jak wyróżniać znaki w dokumencie PDF za pomocą biblioteki Aspose.PDF dla .NET. Postępując zgodnie z przewodnikiem krok po kroku i wykonując dostarczony kod C#, możesz wyróżniać znaki w pliku PDF i zapisywać dane wyjściowe jako obraz.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Jaki jest cel samouczka „Podświetlanie znaków w pliku PDF”?
+#### P: Jaki jest cel poradnika „Wyróżnianie znaków w pliku PDF”?
 
-Odp.: Samouczek „Podświetlanie znaków w pliku PDF” wyjaśnia, jak używać biblioteki Aspose.PDF dla .NET do wyróżniania znaków w dokumencie PDF. Samouczek zawiera przewodnik krok po kroku i kod źródłowy języka C#, aby to osiągnąć.
+A: Samouczek „Podświetlanie znaków w pliku PDF” wyjaśnia, jak używać biblioteki Aspose.PDF dla .NET do podświetlania znaków w dokumencie PDF. Samouczek zawiera przewodnik krok po kroku i kod źródłowy C#, aby to osiągnąć.
 
-#### P: Dlaczego miałbym wyróżniać znaki w dokumencie PDF?
+#### P: Dlaczego miałbym chcieć wyróżniać znaki w dokumencie PDF?
 
-Odp.: Wyróżnianie znaków w dokumencie PDF może być przydatne do różnych celów, na przykład do podkreślania określonej treści lub zwiększania widoczności i rozpoznawalności określonego tekstu.
+A: Podświetlanie znaków w dokumencie PDF może być przydatne z różnych powodów, np. w celu podkreślenia określonej treści lub poprawienia widoczności i wyróżnienia pewnego tekstu.
 
 #### P: Jak skonfigurować katalog dokumentów?
 
-O: Aby skonfigurować katalog dokumentów:
+A: Aby skonfigurować katalog dokumentów:
 
-1.  Zastępować`"YOUR DOCUMENT DIRECTORY"` w`dataDir` zmienną ze ścieżką do katalogu, w którym znajduje się wejściowy plik PDF.
+1.  Zastępować`"YOUR DOCUMENT DIRECTORY"` w`dataDir` zmienna zawierająca ścieżkę do katalogu, w którym znajduje się plik PDF wejściowy.
 
 #### P: Jak załadować dokument PDF i przekonwertować go na obraz?
 
- Odp.: W samouczku plik`Aspose.Pdf.Document` class służy do ładowania wejściowego dokumentu PDF. A później`PdfConverter` klasa służy do konwersji dokumentu PDF na obraz. Rozdzielczość obrazu jest ustawiana, a obraz jest pobierany jako plik`Bitmap` obiekt.
+ A: W samouczku,`Aspose.Pdf.Document` Klasa jest używana do ładowania wejściowego dokumentu PDF. Następnie`PdfConverter` Klasa ta jest wykorzystywana do konwersji dokumentu PDF na obraz. Rozdzielczość obrazu jest ustawiana, a obraz jest pobierany jako`Bitmap` obiekt.
 
 #### P: Jak wyróżnić znaki na obrazie dokumentu PDF?
 
-O: Samouczek poprowadzi Cię przez proces przeglądania poszczególnych stron dokumentu PDF w poszukiwaniu słów za pomocą a`TextFragmentAbsorber`oraz iterowanie po fragmentach, segmentach i znakach tekstu w celu wyróżnienia ich za pomocą prostokątów.
+A: Samouczek przeprowadzi Cię przez proces przeglądania każdej strony dokumentu PDF, wyszukiwania słów za pomocą`TextFragmentAbsorber`i przeglądając fragmenty tekstu, segmenty i znaki, aby wyróżnić je za pomocą prostokątów.
 
-#### P: Czy mogę dostosować wygląd podświetlonych znaków i segmentów?
+#### P: Czy mogę dostosować wygląd wyróżnionych znaków i segmentów?
 
-O: Tak, możesz dostosować wygląd podświetlonych znaków i segmentów, modyfikując kolory i style używane w operacjach rysowania.
+O: Tak, możesz dostosować wygląd wyróżnionych znaków i segmentów, modyfikując kolory i style używane podczas rysowania.
 
 #### P: Jak zapisać zmodyfikowany obraz z wyróżnionymi znakami?
 
- Odp.: W samouczku pokazano, jak zapisać zmodyfikowany obraz z podświetlonymi znakami do określonego pliku wyjściowego za pomocą`Save` metoda`Bitmap` klasa.
+ A: W tym samouczku pokazano, jak zapisać zmodyfikowany obraz z wyróżnionymi znakami do określonego pliku wyjściowego, korzystając z`Save` metoda`Bitmap` klasa.
 
-#### P: Czy do tego samouczka wymagana jest ważna licencja Aspose?
+#### P: Czy do skorzystania z tego samouczka wymagana jest ważna licencja Aspose?
 
-Odp.: Tak, aby ten samouczek działał poprawnie, wymagana jest ważna licencja Aspose. Możesz kupić pełną licencję lub uzyskać 30-dniową licencję tymczasową ze strony internetowej Aspose.
+A: Tak, aby ten samouczek działał poprawnie, wymagana jest ważna licencja Aspose. Możesz kupić pełną licencję lub uzyskać 30-dniową licencję tymczasową ze strony internetowej Aspose.

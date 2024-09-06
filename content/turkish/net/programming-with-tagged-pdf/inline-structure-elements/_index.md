@@ -1,51 +1,51 @@
 ---
 title: Satır İçi Yapı Elemanları
 linktitle: Satır İçi Yapı Elemanları
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile çevrimiçi yapısal elemanların kullanımına ilişkin adım adım kılavuz. PDF'lerinizi başlıklar ve paragraflarla düzenleyin.
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET ile çevrimiçi yapısal öğelerin kullanımına ilişkin adım adım kılavuz. PDF'lerinizi başlıklar ve paragraflarla düzenleyin.
 type: docs
 weight: 110
 url: /tr/net/programming-with-tagged-pdf/inline-structure-elements/
 ---
-Bu adım adım kılavuzda, satır içi yapı elemanlarını Aspose.PDF for .NET ile nasıl kullanacağınızı göstereceğiz. Aspose.PDF, PDF belgelerini programlı olarak değiştirmenizi sağlayan güçlü bir kütüphanedir. Satır içi yapı öğeleri, farklı düzeydeki başlıklar ve paragraflar kullanarak PDF belgenizde hiyerarşik bir yapı oluşturmanıza olanak tanır.
+Bu adım adım kılavuzda, .NET için Aspose.PDF ile satır içi yapı öğelerini nasıl kullanacağınızı göstereceğiz. Aspose.PDF, PDF belgelerini programatik olarak düzenlemenizi sağlayan güçlü bir kütüphanedir. Satır içi yapı öğeleri, farklı düzeylerde ve paragraflarda başlıklar kullanarak PDF belgenizde hiyerarşik bir yapı oluşturmanıza olanak tanır.
 
-Kodun derinliklerine inelim ve Aspose.PDF for .NET ile satır içi yapı elemanlarının nasıl kullanılacağını öğrenelim.
+Gelin koda bir göz atalım ve Aspose.PDF for .NET ile satır içi yapı öğelerinin nasıl kullanılacağını öğrenelim.
 
-## Önkoşullar
+## Ön koşullar
 
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
 1. .NET için Aspose.PDF kütüphanesi kuruldu.
-2. C# programlama dili hakkında temel bilgi.
+2. C# programlama dilinin temel bilgisi.
 
-## 1. Adım: Ortamı ayarlama
+## Adım 1: Ortamı kurma
 
-Başlamak için C# geliştirme ortamınızı açın ve yeni bir proje oluşturun. Projenize .NET için Aspose.PDF kütüphanesine bir referans eklediğinizden emin olun.
+Başlamak için C# geliştirme ortamınızı açın ve yeni bir proje oluşturun. Projenize .NET için Aspose.PDF kütüphanesine bir başvuru eklediğinizden emin olun.
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Adım 2: Belgeyi oluşturma
+## Adım 2: Belgenin oluşturulması
 
- İlk adım, kullanarak yeni bir PDF belgesi oluşturmaktır.`Document` sınıf.
+ İlk adım, yeni bir PDF belgesi oluşturmaktır`Document` sınıf.
 
 ```csharp
 // PDF belgesini oluşturun
 Document document = new Document();
 ```
 
-## 3. Adım: Etiketli içerikle çalışın
+## Adım 3: Etiketli içerikle çalışın
 
-Daha sonra üzerinde çalışacağımız belgenin etiketli içeriğini alıyoruz.
+Daha sonra belgenin etiketli içeriğini alıp çalışmaya başlıyoruz.
 
 ```csharp
 // Belgenin etiketli içeriğini alın
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## 4. Adım: Belge başlığını ve dilini ayarlayın
+## Adım 4: Belge başlığını ve dilini ayarlayın
 
 Artık belge başlığını ve dilini ayarlayabiliriz.
 
@@ -55,9 +55,9 @@ taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## 5. Adım: Yapısal öğeleri çevrimiçi olarak ekleyin
+## Adım 5: Yapısal elemanları çevrimiçi ekleyin
 
-Şimdi belgemize farklı düzeylerde başlıklar ve paragraflar gibi satır içi yapı öğeleri ekleyeceğiz.
+Şimdi dokümanımıza farklı düzeylerde başlıklar ve paragraflar gibi satır içi yapı öğeleri ekleyeceğiz.
 
 ```csharp
 // Kök yapı öğesini alın
@@ -120,12 +120,12 @@ SpanElement spanH62 = taggedContent.CreateSpanElement();
 spanH62.SetText("Heading level 6");
 h6.AppendChild(spanH62);
 
-// Paragraf ekle
+// Bir paragraf ekle
 ParagraphElement p = taggedContent.CreateParagraphElement();
 p.SetText("P.");
 rootElement.AppendChild(p);
 
-// Paragrafa içerik ekleme
+// Paragrafa içerik ekle
 SpanElement span1 = taggedContent.CreateSpanElement();
 span1.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
 p.AppendChild(span1);
@@ -158,35 +158,35 @@ span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla pur
 p.AppendChild(span10);
 ```
 
-Burada farklı düzeylerde başlıklar ve paragraf gibi satır içi yapı öğeleri oluşturup bunlara içerik ekliyoruz.
+Burada farklı düzeylerde başlıklar ve bir paragraf gibi satır içi yapı öğeleri oluşturuyoruz ve bunlara içerik ekliyoruz.
 
-## 6. Adım: Etiketli PDF belgesini kaydedin
+## Adım 6: Etiketli PDF belgesini kaydedin
 
-Son olarak etiketlenen PDF belgesini kaydediyoruz.
+Son olarak etiketli PDF dokümanını kaydediyoruz.
 
 ```csharp
 // Etiketli PDF belgesini kaydedin
 document.Save(dataDir + "InlineStructureElements.pdf");
 ```
 
-### Aspose.PDF for .NET kullanan Satır İçi Yapı Elemanları için örnek kaynak kodu 
+### .NET için Aspose.PDF'yi kullanarak Satır İçi Yapı Elemanları için örnek kaynak kodu 
 
 ```csharp
 
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Pdf Belgesi Oluştur
+// PDF Belgesi Oluştur
 Document document = new Document();
 
-// TaggedPdf ile çalışmaya yönelik İçerik edinin
+// TaggedPdf ile çalışmak için İçerik Alın
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Documnet için Başlığı ve Dili Ayarlayın
+// Belge için Başlık ve Dil Ayarla
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Kök Yapı Elemanını Alın
+// Kök Yapı Elemanını Al
 StructureElement rootElement = taggedContent.RootElement;
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 HeaderElement h2 = taggedContent.CreateHeaderElement(2);
@@ -270,53 +270,53 @@ SpanElement span10 = taggedContent.CreateSpanElement();
 span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla purus, vitae posuere risus odio id massa. Cras sed venenatis lacus.");
 p.AppendChild(span10);
 
-// Etiketli Pdf Belgesini Kaydet
+// Etiketli PDF Belgesini Kaydet
 document.Save(dataDir + "InlineStructureElements.pdf");
 
 ```
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET ile satır içi yapı elemanlarının nasıl kullanılacağını öğrendiniz. Artık farklı düzeylerde başlıklar ve paragraflar kullanarak PDF belgenizde hiyerarşik bir yapı oluşturabilirsiniz. Aspose.PDF'in tüm potansiyelini keşfetmek için diğer özelliklerini keşfedin.
+Tebrikler! .NET için Aspose.PDF ile satır içi yapı öğelerini nasıl kullanacağınızı öğrendiniz. Artık farklı düzeylerde ve paragraflarda başlıklar kullanarak PDF belgenizde hiyerarşik bir yapı oluşturabilirsiniz. Aspose.PDF'nin tüm potansiyelini keşfetmek için diğer özelliklerini keşfedin.
 
-### SSS'ler
+### SSS
 
-#### S: Bir PDF belgesindeki satır içi yapı öğeleri nelerdir ve bunlar hiyerarşik bir yapı oluşturmaya nasıl katkıda bulunur?
+#### S: Bir PDF belgesinde satır içi yapı öğeleri nelerdir ve hiyerarşik bir yapı oluşturmaya nasıl katkıda bulunurlar?
 
-C: Bir PDF belgesindeki farklı düzeylerdeki başlıklar ve paragraflar gibi satır içi yapı öğeleri, içeriği yapılandırılmış bir şekilde düzenleyen ve sunan hiyerarşik bir yapı oluşturmak için kullanılır. Bu öğeler, belge içinde net bir hiyerarşi ve bilgi akışı oluşturmanıza olanak tanır.
+A: Farklı düzeylerdeki başlıklar ve paragraflar gibi PDF belgesindeki satır içi yapı öğeleri, içeriği yapılandırılmış bir şekilde düzenleyen ve sunan hiyerarşik bir yapı oluşturmak için kullanılır. Bu öğeler, belge içinde net bir hiyerarşi ve bilgi akışı oluşturmanıza olanak tanır.
 
-#### S: Satır içi yapı öğeleri bir PDF belgesinin okunabilirliğini ve düzenini nasıl geliştirebilir?
+#### S: Satır içi yapı öğeleri bir PDF belgesinin okunabilirliğini ve organizasyonunu nasıl artırabilir?
 
-C: Satır içi yapı öğeleri, özellikle başlıklar ve paragraflar, mantıksal bir yapı sağlayarak PDF belgesinin okunabilirliğini ve düzenini iyileştirmeye yardımcı olur. Başlıklar farklı önem düzeylerini belirtir ve okuyucuların içerikte gezinmesine yardımcı olur; paragraflar ise ilgili bilgileri bir arada gruplandırır.
+A: Satır içi yapı öğeleri, özellikle başlıklar ve paragraflar, mantıksal bir yapı sağlayarak bir PDF belgesinin okunabilirliğini ve organizasyonunu iyileştirmeye yardımcı olur. Başlıklar farklı önem düzeylerini belirtir ve okuyucuların içerikte gezinmesine yardımcı olurken, paragraflar ilgili bilgileri bir araya getirir.
 
-#### S: Aspose.PDF for .NET satır içi yapı elemanlarının kullanımını nasıl kolaylaştırıyor?
+#### S: Aspose.PDF for .NET, satır içi yapı öğelerinin kullanımını nasıl kolaylaştırır?
 
-C: Aspose.PDF for .NET, başlıklar ve paragraflar gibi satır içi yapı öğelerini oluşturmak ve değiştirmek için sınıflar ve yöntemler sunar. Bu öğeler, belgenin görsel sunumunu ve erişilebilirliğini geliştirmek için özelleştirilebilir, hiyerarşik olarak düzenlenebilir ve içerikle zenginleştirilebilir.
+A: .NET için Aspose.PDF, başlıklar ve paragraflar gibi satır içi yapı öğelerini oluşturmak ve düzenlemek için sınıflar ve yöntemler sunar. Bu öğeler özelleştirilebilir, hiyerarşik olarak düzenlenebilir ve belgenin görsel sunumunu ve erişilebilirliğini iyileştirmek için içerikle zenginleştirilebilir.
 
-####  Soru: Programın amacı nedir?`taggedContent` object in relation to inline structure elements?
+####  S: Amacı nedir?`taggedContent` object in relation to inline structure elements?
 
- C:`taggedContent` elde edilen nesne`TaggedContent` bir mülk`Document`, satır içi yapı öğeleri de dahil olmak üzere yapılandırılmış öğelerle çalışmanıza olanak tanır. Belge içinde başlıklar ve paragraflar oluşturmanıza, özelleştirmenize ve düzenlemenize olanak tanır.
+ A:`taggedContent` nesne, elde edilen`TaggedContent` birinin mülkü`Document`, satır içi yapı öğeleri de dahil olmak üzere yapılandırılmış öğelerle çalışmanıza olanak tanır. Belge içinde başlıklar ve paragraflar oluşturmanıza, özelleştirmenize ve düzenlemenize olanak tanır.
 
 #### S: Satır içi yapı öğeleri net bir belge hiyerarşisi oluşturmaya nasıl yardımcı olur?
 
-C: Farklı düzeylerdeki başlıklar gibi satır içi yapı öğeleri, belgede açık ve iyi tanımlanmış bir hiyerarşi oluşturulmasına katkıda bulunur. Okuyucular ana konuları, alt konuları ve ilgili içeriği hızlı bir şekilde tanımlayabilir, böylece belgede gezinmek ve anlamak daha kolay hale gelir.
+A: Çeşitli düzeylerdeki başlıklar gibi satır içi yapı öğeleri, belgede net ve iyi tanımlanmış bir hiyerarşi oluşturmaya katkıda bulunur. Okuyucular ana konuları, alt konuları ve ilgili içerikleri hızla belirleyebilir, bu da belgenin gezinmesini ve anlaşılmasını kolaylaştırır.
 
-#### S: Satır içi yapı elemanlarının görünümünü ve formatını Aspose.PDF for .NET kullanarak özelleştirebilir miyim?
+#### S: Aspose.PDF for .NET'i kullanarak satır içi yapı öğelerinin görünümünü ve biçimlendirmesini özelleştirebilir miyim?
 
-C: Evet, satır içi yapı öğelerinin görünümünü ve biçimlendirmesini özelleştirebilirsiniz. Başlıklar ve paragraflar için istenen görsel sunumu elde etmek amacıyla yazı tipi stilleri, boyutları, renkleri, hizalaması, girintisi ve aralığı gibi özellikleri ayarlayabilirsiniz.
+A: Evet, satır içi yapı öğelerinin görünümünü ve biçimlendirmesini özelleştirebilirsiniz. Başlıklar ve paragraflar için istediğiniz görsel sunumu elde etmek için yazı tipi stilleri, boyutlar, renkler, hizalama, girinti ve aralık gibi özellikleri ayarlayabilirsiniz.
 
-#### S: Aspose.PDF for .NET'teki satır içi yapı öğelerini kullanarak bir PDF belgesine farklı düzeylerde başlıkları nasıl oluşturabilirim ve eklerim?
+#### S: Aspose.PDF for .NET'te satır içi yapı öğelerini kullanarak bir PDF belgesine farklı düzeylerde başlıklar nasıl oluşturabilir ve ekleyebilirim?
 
- C: Düğmeyi kullanarak farklı düzeylerde başlıklar oluşturabilirsiniz.`CreateHeaderElement` yöntemini kullanın ve ardından bunları kök yapı öğesine ekleyin. Daha sonra, her bir başlık öğesine içerik ekleyebilirsiniz.`CreateSpanElement` metin aralıkları oluşturma yöntemi.
+ A: Farklı düzeylerde başlıklar oluşturmak için şunları kullanabilirsiniz:`CreateHeaderElement` yöntemini kullanın ve ardından bunları kök yapı öğesine ekleyin. Daha sonra, her başlık öğesine içerik ekleyebilirsiniz.`CreateSpanElement` metin aralıkları oluşturma yöntemi.
 
-#### S: Bir PDF belgesinde listeler, madde işaretleri veya diğer içerik organizasyonu türlerini oluşturmak için satır içi yapı öğelerini kullanabilir miyim?
+#### S: PDF belgesinde listeler, madde işaretleri veya diğer içerik düzenleme türlerini oluşturmak için satır içi yapı öğelerini kullanabilir miyim?
 
-C: Satır içi yapı elemanları öncelikle başlıklar ve paragraflar için kullanılsa da bunları Aspose.PDF for .NET'in sunduğu diğer özelliklerle birlikte kullanarak kapsamlı bir içerik organizasyonu için listeler, madde işaretleri, tablolar ve diğer içerik organizasyonu türlerini oluşturabilirsiniz. belge yapısı.
+A: Satır içi yapı öğeleri öncelikli olarak başlıklar ve paragraflar için kullanılsa da, kapsamlı bir belge yapısı için listeler, madde işaretleri, tablolar ve diğer içerik düzenleme türlerini oluşturmak amacıyla bunları Aspose.PDF for .NET tarafından sunulan diğer özellikler ile birlikte kullanabilirsiniz.
 
 #### S: Satır içi yapı öğeleri belge erişilebilirliğine nasıl katkıda bulunur?
 
-C: Satır içi yapı öğeleri belge erişilebilirliğini artırmada çok önemli bir rol oynar. Düzgün yapılandırılmış başlıklar ve paragraflar, içeriğin engelli kullanıcılara doğru şekilde yorumlanması ve iletilmesinde ekran okuyuculara ve diğer yardımcı teknolojilere yardımcı olan net bir belge hiyerarşisi sağlar.
+A: Satır içi yapı öğeleri, belge erişilebilirliğini geliştirmede önemli bir rol oynar. Uygun şekilde yapılandırılmış başlıklar ve paragraflar, ekran okuyucuların ve diğer yardımcı teknolojilerin içeriği engelli kullanıcılara doğru şekilde yorumlamasına ve iletmesine yardımcı olan net bir belge hiyerarşisi sağlar.
 
-#### S: Satır içi yapı öğelerinin etkileşimli öğeler oluşturma veya multimedya yerleştirme gibi daha gelişmiş kullanımlarını keşfedebilir miyim?
+#### S: Etkileşimli öğeler oluşturma veya multimedya yerleştirme gibi satır içi yapı öğelerinin daha gelişmiş kullanımlarını keşfedebilir miyim?
 
-C: Kesinlikle! Bu eğitim başlıklar ve paragraflar oluşturmaya odaklanırken, Aspose.PDF for .NET etkileşimli öğeler oluşturmak, multimedya yerleştirmek, köprüler eklemek ve daha fazlası için gelişmiş özellikler sunar. Bu gelişmiş yetenekleri ayrıntılı olarak incelemek için kitaplığın belgelerine ve örneklerine bakın.
+A: Kesinlikle! Bu eğitim başlıklar ve paragraflar oluşturmaya odaklanırken, Aspose.PDF for .NET etkileşimli öğeler oluşturmak, multimedya yerleştirmek, köprü metinleri eklemek ve daha fazlası için gelişmiş özellikler sunar. Bu gelişmiş yetenekleri derinlemesine incelemek için kütüphanenin belgelerine ve örneklerine bakın.

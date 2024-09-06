@@ -94,7 +94,7 @@ StructureElement rootElement = taggedContent.RootElement;
 
 ### 常見問題解答
 
-#### Q：PDF 文件中的根結構元素是什麼？它們如何提供對文件結構的存取？
+#### Q：PDF 文件中的根結構元素是什麼？
 
 答：PDF 文件中的根結構元素提供對文件結構的訪問，讓您可以與 StructTreeRoot 物件進行互動。它們充當文檔邏輯結構的入口點，支援對文檔內容進行高級操作。
 

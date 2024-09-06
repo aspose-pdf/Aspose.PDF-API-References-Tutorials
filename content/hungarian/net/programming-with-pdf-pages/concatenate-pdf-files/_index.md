@@ -31,7 +31,7 @@ Document pdfDocument2 = new Document(dataDir + "Concat2.pdf");
 ```
 
 ## 3. lépés: Az oldalak összefűzése
- Most hozzáadhatja a második dokumentum oldalait az első dokumentumhoz a segítségével`Add()` a dokumentum módszere`Pages` Gyűjtemény. Ez mindkét dokumentum oldalait egyetlen dokumentumba fogja összefűzni.
+ Most hozzáadhatja a második dokumentum oldalait az első dokumentumhoz a segítségével`Add()` a dokumentum módszere`Pages` gyűjtemény. Ez mindkét dokumentum oldalait egyetlen dokumentumba fogja összefűzni.
 
 ```csharp
 pdfDocument1.Pages.Add(pdfDocument2.Pages);
@@ -65,7 +65,7 @@ System.Console.WriteLine("\nPDFs are concatenated successfully.\nFile saved at "
 ```
 
 ## Következtetés
-Ebben az oktatóanyagban megtanultuk, hogyan kell PDF-fájlokat összefűzni az Aspose.PDF for .NET használatával. A fent vázolt lépések követésével könnyedén megvalósíthatja ezt a funkciót saját projektjeiben. Nyugodtan fedezze fel az Aspose.PDF dokumentációt, hogy további hasznos funkciókat fedezzen fel a PDF-fájlokkal való munkavégzéshez.
+Ebben az oktatóanyagban megtanultuk, hogyan kell PDF-fájlokat összefűzni az Aspose.PDF for .NET használatával. A fent vázolt lépések követésével könnyedén megvalósíthatja ezt a funkciót saját projektjeiben. Nyugodtan fedezze fel az Aspose.PDF dokumentációját, hogy további hasznos funkciókat fedezzen fel a PDF-fájlokkal való munkavégzéshez.
 
 ### GYIK a PDF-fájlok összefűzéséhez
 
@@ -83,7 +83,7 @@ V: Igen, kettőnél több PDF-fájlt is összefűzhet az Aspose.PDF for .NET has
 
 #### K: Mi történik, ha az összefűzött PDF-fájlok oldalmérete vagy tájolása eltérő?
 
-V: Különböző oldalméretű vagy tájolású PDF-fájlok összefűzésekor az egyes PDF-fájlok oldalai a hozzáadás sorrendjében lesznek kombinálva. Ennek eredményeként a kimeneti PDF-ben a forrásfájloktól függően eltérő méretű vagy tájolású oldalak lesznek. Ez hatással lehet a tartalom elrendezésére, és előfordulhat, hogy ennek megfelelően módosítania kell.
+V: Különböző oldalméretű vagy tájolású PDF-fájlok összefűzésekor az egyes PDF-fájlok oldalai a hozzáadás sorrendjében lesznek kombinálva. Ennek eredményeként a kimeneti PDF-ben a forrásfájloktól eltérő méretű vagy tájolású oldalak lesznek. Ez hatással lehet a tartalom elrendezésére, és előfordulhat, hogy ennek megfelelően módosítania kell.
 
 #### K: Szabályozhatom az oldalak sorrendjét az összefűzött PDF-ben?
 

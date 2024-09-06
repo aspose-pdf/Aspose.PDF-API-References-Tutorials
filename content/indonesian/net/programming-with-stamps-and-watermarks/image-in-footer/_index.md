@@ -1,24 +1,24 @@
 ---
-title: Gambar Di Catatan Kaki
-linktitle: Gambar Di Catatan Kaki
-second_title: Aspose.PDF untuk Referensi .NET API
+title: Gambar di Footer
+linktitle: Gambar di Footer
+second_title: Referensi API Aspose.PDF untuk .NET
 description: Pelajari cara menambahkan gambar di bagian footer dokumen PDF dengan Aspose.PDF untuk .NET.
 type: docs
 weight: 130
 url: /id/net/programming-with-stamps-and-watermarks/image-in-footer/
 ---
-Dalam tutorial ini, kami akan memandu Anda langkah demi langkah tentang cara menambahkan gambar di bagian footer dokumen PDF menggunakan Aspose.PDF untuk .NET. Kami akan menggunakan kode sumber C# yang disediakan untuk membuka dokumen PDF yang ada, membuat buffer gambar, mengatur propertinya, dan menambahkannya ke semua halaman dokumen PDF.
+Dalam tutorial ini, kami akan memandu Anda langkah demi langkah tentang cara menambahkan gambar di bagian footer dokumen PDF menggunakan Aspose.PDF untuk .NET. Kami akan menggunakan kode sumber C# yang disediakan untuk membuka dokumen PDF yang sudah ada, membuat buffer gambar, mengatur propertinya, dan menambahkannya ke semua halaman dokumen PDF.
 
 ## Langkah 1: Menyiapkan lingkungan
 
 Sebelum memulai, pastikan Anda memiliki hal berikut:
 
 - Lingkungan pengembangan .NET yang terinstal.
-- Pustaka Aspose.PDF untuk .NET diunduh dan direferensikan dalam proyek Anda.
+- Pustaka Aspose.PDF untuk .NET diunduh dan dirujuk dalam proyek Anda.
 
 ## Langkah 2: Memuat dokumen PDF yang ada
 
-Langkah pertama adalah memuat dokumen PDF yang ada ke dalam proyek Anda. Begini caranya:
+Langkah pertama adalah memuat dokumen PDF yang ada ke dalam proyek Anda. Berikut caranya:
 
 ```csharp
 // Jalur ke direktori dokumen.
@@ -32,38 +32,38 @@ Pastikan untuk mengganti "DIREKTORI DOKUMEN ANDA" dengan jalur sebenarnya ke dir
 
 ## Langkah 3: Membuat dan menambahkan gambar di bagian footer
 
-Sekarang dokumen PDF telah dimuat, kita dapat membuat stempel gambar dan menambahkannya ke semua halaman dokumen. Begini caranya:
+Setelah dokumen PDF dimuat, kita dapat membuat stempel gambar dan menambahkannya ke semua halaman dokumen. Berikut caranya:
 
 ```csharp
 // Buat buffer bingkai
 ImageStamp imageStamp = new ImageStamp(dataDir + "aspose-logo.jpg");
 
-// Atur properti buffer gambar
+// Mengatur properti buffer gambar
 imageStamp.BottomMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Bottom;
 
-// Tambahkan buffer gambar ke semua halaman
+//Tambahkan buffer gambar ke semua halaman
 foreach(Page page in pdfDocument.Pages)
 {
      page.AddStamp(imageStamp);
 }
 ```
 
-Kode di atas membuat buffer gambar dari file "aspose-logo.jpg" dan mengatur propertinya, seperti margin bawah, perataan horizontal dan vertikal. Kemudian buffer gambar ditambahkan ke semua halaman dokumen PDF.
+Kode di atas membuat buffer gambar dari berkas "aspose-logo.jpg" dan mengatur propertinya, seperti margin bawah, perataan horizontal dan vertikal. Kemudian buffer gambar ditambahkan ke semua halaman dokumen PDF.
 
 ## Langkah 4: Menyimpan dokumen PDF yang dimodifikasi
 
-Setelah gambar ditambahkan ke bagian footer, kita dapat menyimpan dokumen PDF yang dimodifikasi. Begini caranya:
+Setelah gambar ditambahkan ke bagian footer, kita dapat menyimpan dokumen PDF yang dimodifikasi. Berikut caranya:
 
 ```csharp
 // Simpan dokumen PDF yang dimodifikasi
 pdfDocument.Save(dataDir + "ImageInFooter_out.pdf");
 ```
 
-Kode di atas menyimpan dokumen PDF yang diedit ke direktori yang ditentukan.
+Kode di atas menyimpan dokumen PDF yang telah diedit ke direktori yang ditentukan.
 
-### Contoh kode sumber untuk Gambar Di Footer menggunakan Aspose.PDF untuk .NET 
+### Contoh kode sumber untuk Gambar di Footer menggunakan Aspose.PDF untuk .NET 
 ```csharp
 
 // Jalur ke direktori dokumen.
@@ -72,10 +72,10 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Buka dokumen
 Document pdfDocument = new Document(dataDir+ "ImageInFooter.pdf");
 
-// Buat catatan kaki
+// Buat footer
 ImageStamp imageStamp = new ImageStamp(dataDir+ "aspose-logo.jpg");
 
-// Mengatur properti stempel
+// Mengatur properti prangko
 imageStamp.BottomMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Bottom;
@@ -94,46 +94,46 @@ Console.WriteLine("\nImage in footer added successfully.\nFile saved at " + data
 
 ## Kesimpulan
 
-Selamat! Anda telah mempelajari cara menambahkan gambar di bagian footer dokumen PDF menggunakan Aspose.PDF untuk .NET. Anda sekarang dapat menyesuaikan footer dokumen PDF Anda dengan menambahkan gambar.
+Selamat! Anda telah mempelajari cara menambahkan gambar di bagian footer dokumen PDF menggunakan Aspose.PDF for .NET. Kini Anda dapat menyesuaikan footer dokumen PDF dengan menambahkan gambar.
 
 ### FAQ untuk gambar di footer
 
-#### Q: Apa tujuan menambahkan gambar ke bagian footer dokumen PDF?
+#### T: Apa tujuan menambahkan gambar ke bagian footer dokumen PDF?
 
-J: Menambahkan gambar ke bagian footer dokumen PDF memungkinkan Anda menyertakan elemen visual, seperti logo atau tanda air, di bagian bawah setiap halaman. Hal ini dapat meningkatkan branding dan estetika konten PDF.
+A: Menambahkan gambar ke bagian footer dokumen PDF memungkinkan Anda menyertakan elemen visual, seperti logo atau tanda air, di bagian bawah setiap halaman. Hal ini dapat meningkatkan branding dan estetika konten PDF.
 
-#### T: Bagaimana kode sumber C# yang disediakan dapat menambahkan gambar ke bagian footer dokumen PDF?
+#### T: Bagaimana kode sumber C# yang disediakan mencapai penambahan gambar ke bagian footer dokumen PDF?
 
- A: Kode yang diberikan menunjukkan cara memuat dokumen PDF yang ada, membuat`ImageStamp` objek dari file gambar, atur properti seperti margin bawah dan perataan, lalu tambahkan stempel gambar ke footer semua halaman.
+ A: Kode yang diberikan menunjukkan cara memuat dokumen PDF yang ada, membuat`ImageStamp` objek dari berkas gambar, atur properti seperti margin bawah dan perataan, lalu tambahkan stempel gambar ke bagian bawah semua halaman.
 
-#### Q: Bisakah saya mengatur posisi dan perataan gambar di bagian footer?
+#### T: Dapatkah saya menyesuaikan posisi dan perataan gambar di bagian footer?
 
- J: Ya, Anda dapat mengatur posisi dan perataan gambar di bagian footer dengan memodifikasi propertinya`ImageStamp` obyek. Cuplikan kode menyetel properti seperti`BottomMargin`, `HorizontalAlignment` , Dan`VerticalAlignment`.
+ A: Ya, Anda dapat menyesuaikan posisi dan perataan gambar di bagian footer dengan mengubah properti`ImageStamp` objek. Potongan kode tersebut menetapkan properti seperti`BottomMargin`, `HorizontalAlignment` , Dan`VerticalAlignment`.
 
-#### T: Apakah mungkin menambahkan gambar berbeda ke bagian footer di halaman berbeda dokumen PDF?
+#### T: Apakah mungkin untuk menambahkan gambar yang berbeda ke bagian footer pada halaman yang berbeda dalam dokumen PDF?
 
- A: Ya, Anda dapat menambahkan gambar berbeda ke bagian footer di halaman berbeda dengan membuatnya terpisah`ImageStamp` objek dengan file gambar dan properti berbeda, lalu menambahkannya ke halaman tertentu.
+A: Ya, Anda dapat menambahkan gambar yang berbeda ke bagian footer di halaman yang berbeda dengan membuat gambar terpisah`ImageStamp` objek dengan file gambar dan properti yang berbeda, lalu menambahkannya ke halaman tertentu.
 
 #### T: Bagaimana kode memastikan bahwa gambar ditambahkan ke semua halaman dokumen PDF?
 
-A: Kode yang diberikan menggunakan a`foreach` loop untuk mengulangi semua halaman dokumen PDF dan menambahkan halaman yang sama`ImageStamp` ke bagian footer setiap halaman.
+ A: Kode yang diberikan menggunakan`foreach` loop untuk mengulang semua halaman dokumen PDF dan menambahkan yang sama`ImageStamp` ke bagian footer setiap halaman.
 
 #### T: Dapatkah saya menambahkan elemen lain, seperti teks atau bentuk, ke bagian footer menggunakan pendekatan serupa?
 
- J: Ya, Anda dapat menambahkan elemen lain seperti teks atau bentuk ke bagian footer menggunakan pendekatan serupa dengan membuat objek stempel yang sesuai (misalnya,`TextStamp`) dan mengatur propertinya sesuai dengan itu.
+ A: Ya, Anda dapat menambahkan elemen lain seperti teks atau bentuk ke bagian footer menggunakan pendekatan serupa dengan membuat objek stempel yang sesuai (misalnya,`TextStamp`) dan mengatur propertinya sebagaimana mestinya.
 
-#### T: Bagaimana cara menentukan jalur ke file gambar yang ingin saya tambahkan ke footer?
+#### T: Bagaimana cara menentukan jalur ke berkas gambar yang ingin saya tambahkan ke footer?
 
- A: Jalur ke file gambar ditentukan saat membuat`ImageStamp` objek, seperti yang ditunjukkan dalam kode. Pastikan untuk memberikan jalur yang benar ke file gambar.
+ A: Jalur ke file gambar ditentukan saat membuat`ImageStamp` objek, seperti yang ditunjukkan dalam kode. Pastikan untuk memberikan jalur yang benar ke berkas gambar.
 
 #### T: Dapatkah saya menyesuaikan ukuran gambar di bagian footer?
 
- A: Ya, Anda dapat menyesuaikan ukuran gambar di bagian footer dengan menyesuaikan dimensinya`ImageStamp` menggunakan properti seperti`Width` Dan`Height`.
+ A: Ya, Anda dapat menyesuaikan ukuran gambar di bagian footer dengan menyesuaikan dimensi`ImageStamp` menggunakan properti seperti`Width` Dan`Height`.
 
-#### Q: Apakah gambar di bagian footer bisa dihilangkan atau diganti setelah ditambahkan?
+#### T: Apakah mungkin untuk menghapus atau mengganti gambar di bagian footer setelah ditambahkan?
 
- A: Ya, Anda dapat menghapus atau mengganti gambar di bagian footer dengan memodifikasi kontennya`ImageStamp` keberatan atau menghilangkan stempel dari halaman tertentu.
+ A: Ya, Anda dapat menghapus atau mengganti gambar di bagian footer dengan mengubah kontennya.`ImageStamp` keberatan atau menghapus prangko dari halaman tertentu.
 
-#### T: Bagaimana cara kode menangani skenario ketika dimensi gambar melebihi ruang yang tersedia di footer?
+#### T: Bagaimana kode menangani skenario di mana dimensi gambar melebihi ruang yang tersedia di footer?
 
- A: Kode menetapkan properti seperti`BottomMargin`, `HorizontalAlignment` , Dan`VerticalAlignment` untuk mengontrol posisi dan penyelarasan gambar. Pastikan properti ini disesuaikan untuk mencegah masalah tumpang tindih atau tata letak.
+ A: Kode tersebut menetapkan properti seperti`BottomMargin`, `HorizontalAlignment` , Dan`VerticalAlignment` untuk mengontrol posisi dan penyelarasan gambar. Pastikan properti ini disesuaikan untuk mencegah masalah tumpang tindih atau tata letak.

@@ -155,7 +155,7 @@ V: Kövesse a megadott lépéseket a fejlesztői környezet beállításához, b
 
 #### K: Hogyan adhatok digitális aláírást egy PDF-fájlhoz?
 
- V: A mellékelt mintakód bemutatja a PDF-fájl betöltését, a digitális aláírás létrehozását, a megjelenés megadását és az aláírt PDF-fájl mentését. A digitális aláírás a következővel kerül hozzáadásra`Certify` módszere a`PdfFileSignature` tárgy.
+ V: A mellékelt mintakód bemutatja a PDF-fájl betöltését, a digitális aláírás létrehozását, a megjelenés megadását és az aláírt PDF-fájl mentését. A digitális aláírás a következővel kerül hozzáadásra`Certify` módszere a`PdfFileSignature` objektum.
 
 #### K: Hogyan ellenőrizhetem a digitális aláírás érvényességét?
 
@@ -167,7 +167,7 @@ V: A digitális aláírás hozzáadása után a mintakód segítségével ellen�
 
 #### K: Testreszabhatom a digitális aláírás megjelenését?
 
- V: Igen, testreszabhatja a digitális aláírás megjelenését, ha megadja a kép elérési útját a`SignatureAppearance` tulajdona a`PdfFileSignature` tárgy.
+ V: Igen, testreszabhatja a digitális aláírás megjelenését, ha megadja a kép elérési útját a`SignatureAppearance` tulajdona a`PdfFileSignature` objektum.
 
 #### K: Mi történik, ha az aláírás nem érvényes?
 

@@ -172,7 +172,7 @@ Console.WriteLine("\nImage added successfully.\nFile saved at " + dataDir);
 
 #### Q：如何確保新增的影像符合指定的座標？
 
- A：一定要調整好座標和大小`Rectangle`目的 （`rectangle`以符合影像的尺寸及其在頁面上所需的位置。
+ A：一定要調整好座標和大小`Rectangle`目的 （`rectangle`) 以符合影像的尺寸及其在頁面上所需的位置。
 
 #### Q：我可以將多個圖像新增到單一 PDF 頁面嗎？
 

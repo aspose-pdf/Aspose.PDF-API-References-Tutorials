@@ -137,7 +137,7 @@ S: Denna handledning fokuserar på att ändra textfärgen på specifika länkar.
 
 #### F: Kan jag ändra textfärgen till en annan färg än röd?
 
- S: Ja, du kan anpassa textfärgen genom att ändra`tf.TextState.ForegroundColor` fast egendom. Du kan ställa in den till valfri färg med hjälp av`Color` klass från namnområdet System.Drawing.
+ S: Ja, du kan anpassa textfärgen genom att ändra`tf.TextState.ForegroundColor` egendom. Du kan ställa in den till valfri färg med hjälp av`Color` klass från namnområdet System.Drawing.
 
 #### F: Finns det några begränsningar för att ändra textfärgen på länkar?
 

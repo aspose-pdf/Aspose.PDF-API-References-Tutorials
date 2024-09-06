@@ -1,8 +1,8 @@
 ---
 title: Elemen Struktur Inline dalam PDF menggunakan Java
 linktitle: Elemen Struktur Inline dalam PDF menggunakan Java
-second_title: Aspose.PDF API Pemrosesan PDF Java
-description: Pelajari cara mengimplementasikan Elemen Struktur Inline dalam dokumen PDF menggunakan Java dengan Aspose.PDF untuk Java. Buat PDF yang mudah diakses dan terstruktur dengan baik.
+second_title: API Pemrosesan PDF Java Aspose.PDF
+description: Pelajari cara menerapkan Elemen Struktur Inline dalam dokumen PDF menggunakan Java dengan Aspose.PDF untuk Java. Buat PDF yang mudah diakses dan terstruktur dengan baik.
 type: docs
 weight: 10
 url: /id/java/pdf-styles-and-formatting/inline-structure-elements-in-pdf-using-java/
@@ -10,42 +10,42 @@ url: /id/java/pdf-styles-and-formatting/inline-structure-elements-in-pdf-using-j
 
 ## Pengenalan Elemen Struktur Inline dalam PDF menggunakan Java
 
-Dokumen PDF memainkan peran penting dalam manajemen dokumen modern. Mereka menyediakan cara yang andal dan konsisten untuk berbagi informasi di berbagai platform dan perangkat. Terkait PDF, ini bukan hanya tentang konten; struktur dokumen juga penting, terutama untuk aksesibilitas dan organisasi. Pada artikel ini, kita akan menjelajahi "Elemen Struktur Sebaris dalam PDF menggunakan Java" dan bagaimana Anda dapat mengimplementasikannya menggunakan Aspose.PDF untuk Java.
+Dokumen PDF memainkan peran penting dalam manajemen dokumen modern. Dokumen ini menyediakan cara yang andal dan konsisten untuk berbagi informasi di berbagai platform dan perangkat. Dalam hal PDF, yang penting bukan hanya kontennya; struktur dokumen juga penting, terutama untuk aksesibilitas dan pengaturan. Dalam artikel ini, kita akan membahas "Elemen Struktur Inline dalam PDF menggunakan Java" dan cara mengimplementasikannya menggunakan Aspose.PDF untuk Java.
 
 ## Apa itu Elemen Struktur Sebaris dalam PDF?
 
-Elemen Struktur Sebaris adalah elemen dalam dokumen PDF yang menentukan struktur konten. Mereka membantu mengatur teks dan elemen lain dalam dokumen, membuatnya lebih mudah diakses oleh pengguna penyandang disabilitas dan meningkatkan struktur dokumen secara keseluruhan. Elemen-elemen ini memberikan informasi penting tentang semantik konten, sehingga memudahkan perangkat lunak dan pembaca layar untuk menafsirkan dan menyajikan dokumen.
+Elemen Struktur Inline adalah elemen dalam dokumen PDF yang menentukan struktur konten. Elemen ini membantu mengatur teks dan elemen lain dalam dokumen, membuatnya lebih mudah diakses oleh pengguna dengan disabilitas dan meningkatkan struktur dokumen secara keseluruhan. Elemen ini memberikan informasi penting tentang semantik konten, sehingga memudahkan perangkat lunak dan pembaca layar untuk menafsirkan dan menyajikan dokumen.
 
 ## Pentingnya Elemen Struktur Inline
 
-Elemen Struktur Inline memainkan peran penting dalam membuat dokumen PDF yang mudah diakses dan terorganisir dengan baik. Mereka memberikan manfaat seperti:
+Elemen Struktur Inline memainkan peran penting dalam menciptakan dokumen PDF yang mudah diakses dan terorganisasi dengan baik. Elemen-elemen ini memberikan manfaat seperti:
 
-- Peningkatan aksesibilitas bagi pengguna penyandang disabilitas.
-- Navigasi dan struktur dokumen yang ditingkatkan.
-- Kompatibilitas yang lebih baik dengan teknologi bantu.
-- Kepatuhan terhadap standar aksesibilitas (misalnya PDF/UA).
+- Peningkatan aksesbilitas bagi pengguna penyandang disabilitas.
+- Peningkatan navigasi dan struktur dokumen.
+- Kompatibilitas yang lebih baik dengan teknologi bantuan.
+- Kepatuhan terhadap standar aksesibilitas (misalnya, PDF/UA).
 
-Sekarang, mari selami bagaimana Anda dapat mengimplementasikan Elemen Struktur Inline dalam dokumen PDF Anda menggunakan Aspose.PDF untuk Java.
+Sekarang, mari selami bagaimana Anda dapat mengimplementasikan Elemen Struktur Sebaris dalam dokumen PDF Anda menggunakan Aspose.PDF untuk Java.
 
-## Memulai Aspose.PDF untuk Java
+## Memulai dengan Aspose.PDF untuk Java
 
-Sebelum kita mulai, Anda perlu menyiapkan lingkungan pengembangan dan menginstal Aspose.PDF untuk Java.
+Sebelum memulai, Anda perlu menyiapkan lingkungan pengembangan dan menginstal Aspose.PDF untuk Java.
 
 ## Menginstal Aspose.PDF untuk Java
 
 Untuk menginstal Aspose.PDF untuk Java, ikuti langkah-langkah berikut:
 
-1.  Unduh Aspose.PDF untuk Java: Kunjungi situs web Aspose[Di Sini](https://releases.aspose.com/pdf/java/) dan unduh Aspose.PDF versi terbaru untuk Java.
+1.  Unduh Aspose.PDF untuk Java: Kunjungi situs web Aspose[Di Sini](https://releases.aspose.com/pdf/java/) dan unduh versi terbaru Aspose.PDF untuk Java.
 
-2. Tambahkan ke Proyek Anda: Tambahkan pustaka Aspose.PDF ke proyek Java Anda dengan menyertakan file JAR di jalur pembangunan proyek Anda.
+2. Tambahkan ke Proyek Anda: Tambahkan pustaka Aspose.PDF ke proyek Java Anda dengan menyertakan file JAR di jalur pembuatan proyek Anda.
 
 ## Menyiapkan Proyek Java
 
-Buat proyek Java baru atau buka yang sudah ada. Pastikan Anda memiliki perpustakaan Aspose.PDF yang ditambahkan ke dependensi proyek Anda.
+Buat proyek Java baru atau buka proyek yang sudah ada. Pastikan Anda telah menambahkan pustaka Aspose.PDF ke dependensi proyek Anda.
 
 ## Menambahkan Teks ke PDF
 
-Sekarang proyek Anda sudah siap, mari mulai dengan membuat dokumen PDF dan menambahkan beberapa teks sebaris ke dalamnya.
+Sekarang proyek Anda sudah disiapkan, mari mulai dengan membuat dokumen PDF dan menambahkan beberapa teks sebaris ke dalamnya.
 
 ### Membuat Dokumen PDF
 
@@ -57,24 +57,24 @@ Document pdfDocument = new Document();
 ### Menambahkan Teks Sebaris ke PDF
 
 ```java
-// Buat halaman di dokumen
+// Buat halaman dalam dokumen
 Page page = pdfDocument.getPages().add();
 
 // Tambahkan teks ke halaman
 TextFragment textFragment = new TextFragment("Hello, Inline Structure Elements!");
 page.getParagraphs().add(textFragment);
 
-// Simpan dokumennya
+// Simpan dokumen
 pdfDocument.save("output.pdf");
 ```
 
 ## Memformat Teks
 
-Elemen Struktur Sebaris tidak hanya membantu struktur dokumen tetapi juga memungkinkan Anda memformat teks untuk menyempurnakan tampilan visualnya.
+Elemen Struktur Sebaris tidak hanya membantu struktur dokumen tetapi juga memungkinkan Anda memformat teks untuk meningkatkan tampilan visualnya.
 
 ### Mengubah Warna Teks
 
-Anda dapat mengubah warna teks sebaris menggunakan Aspose.PDF. Begini caranya:
+Anda dapat mengubah warna teks sebaris menggunakan Aspose.PDF. Berikut caranya:
 
 ```java
 textFragment.getTextState().setForegroundColor(Color.getRed());
@@ -91,7 +91,7 @@ textFragment.getTextState().setFont(FontRepository.findFont("Arial"));
 
 ### Menerapkan Pemformatan ke Teks Sebaris
 
-Anda dapat menerapkan berbagai opsi pemformatan pada teks sebaris, termasuk huruf tebal, miring, dan garis bawah:
+Anda dapat menerapkan berbagai opsi pemformatan ke teks sebaris, termasuk tebal, miring, dan garis bawah:
 
 ```java
 textFragment.getTextState().setBold(true);
@@ -130,7 +130,7 @@ image.getRectangle().setHeight(150);
 
 Hyperlink sangat penting untuk membuat PDF interaktif. Mari kita lihat bagaimana Anda dapat menambahkan hyperlink ke teks sebaris Anda.
 
-### Menambahkan Hyperlink ke Teks Inline
+### Menambahkan Hyperlink ke Teks Sebaris
 
 Untuk menambahkan hyperlink ke teks:
 
@@ -144,15 +144,15 @@ link.setAction(new GoToURIAction(new URI("https://www.contoh.com")));
 
 Anda dapat menautkan ke sumber daya eksternal seperti situs web, dokumen, atau alamat email dengan menentukan URI yang sesuai.
 
-## Penataan Konten PDF
+## Menyusun Konten PDF
 
-Sekarang, mari jelajahi bagaimana Elemen Struktur Inline dapat digunakan untuk menyusun konten PDF Anda secara efektif.
+Sekarang, mari kita jelajahi bagaimana Elemen Struktur Inline dapat digunakan untuk menyusun konten PDF Anda secara efektif.
 
 ### Memahami Elemen Struktur PDF
 
-Elemen Struktur PDF menyediakan struktur hierarki untuk konten dokumen. Mereka mencakup elemen seperti paragraf, judul, daftar, dan banyak lagi.
+Elemen Struktur PDF menyediakan struktur hierarkis untuk konten dokumen. Elemen-elemen tersebut meliputi paragraf, judul, daftar, dan banyak lagi.
 
-### Elemen Struktur Sebaris di Aspose.PDF
+### Elemen Struktur Inline di Aspose.PDF
 
 Aspose.PDF untuk Java memungkinkan Anda membuat dan mengelola Elemen Struktur Inline dalam dokumen PDF Anda. Elemen-elemen ini membantu menentukan struktur teks, sehingga lebih mudah dinavigasi dan dipahami.
 
@@ -167,48 +167,48 @@ Untuk menerapkan Elemen Struktur Inline dalam dokumen PDF Anda, ikuti langkah-la
 InlineTextElement inlineTextElement = new InlineTextElement();
 inlineTextElement.setText("This is an inline structure element.");
 
-// Kaitkan elemen struktur dengan teks
+// Hubungkan elemen struktur dengan teks
 textFragment.getTextState().setStructureElement(inlineTextElement);
 ```
 
 ### Mengaitkan Elemen Struktur dengan Konten
 
-Dengan mengaitkan elemen struktur dengan konten, Anda memberikan informasi tambahan tentang semantik teks. Ini penting untuk aksesibilitas.
+Dengan mengaitkan elemen struktur dengan konten, Anda memberikan informasi tambahan tentang semantik teks. Hal ini penting untuk aksesibilitas.
 
 ## Aksesibilitas PDF
 
-Memastikan aksesibilitas PDF sangat penting, terutama bagi pengguna penyandang disabilitas. Elemen Struktur Inline berkontribusi dalam pembuatan dokumen PDF yang dapat diakses.
+Memastikan aksesibilitas PDF sangat penting, terutama bagi pengguna dengan disabilitas. Elemen Struktur Inline berkontribusi dalam menciptakan dokumen PDF yang dapat diakses.
 
-### Manfaat PDF yang Dapat Diakses
+### Manfaat PDF yang Mudah Diakses
 
 PDF yang dapat diakses menawarkan beberapa manfaat:
 
-- Mereka dapat dibacakan dengan lantang oleh pembaca layar.
-- Mereka menyediakan opsi navigasi bagi pengguna penyandang disabilitas.
+- Mereka dapat dibacakan dengan pembaca layar.
+- Mereka menyediakan pilihan navigasi bagi pengguna penyandang disabilitas.
 - Mereka mematuhi standar aksesibilitas, memastikan inklusivitas.
 
 ## Kesimpulan
 
-Pada artikel ini, kita telah mengeksplorasi konsep Elemen Struktur Inline dalam dokumen PDF menggunakan Java dan Aspose.PDF untuk Java. Kami telah membahas pentingnya elemen-elemen ini, cara membuat PDF, menambahkan teks dan gambar, memformat konten, menambahkan hyperlink, menyusun konten menggunakan Elemen Struktur Inline, dan memastikan aksesibilitas PDF.
+Dalam artikel ini, kami telah mengeksplorasi konsep Elemen Struktur Inline dalam dokumen PDF menggunakan Java dan Aspose.PDF untuk Java. Kami telah membahas pentingnya elemen-elemen ini, cara membuat PDF, menambahkan teks dan gambar, memformat konten, menambahkan hyperlink, menyusun konten menggunakan Elemen Struktur Inline, dan memastikan aksesibilitas PDF.
 
-## FAQ
+## Pertanyaan yang Sering Diajukan
 
-### Apa itu Elemen Struktur Sebaris?
+### Apa itu Elemen Struktur Inline?
 
-Elemen Struktur Sebaris adalah elemen dalam dokumen PDF yang menentukan struktur konten. Mereka membantu mengatur teks dan elemen lain dalam dokumen, sehingga lebih mudah diakses oleh pengguna penyandang disabilitas.
+Elemen Struktur Inline adalah elemen dalam dokumen PDF yang menentukan struktur konten. Elemen ini membantu mengatur teks dan elemen lain dalam dokumen, sehingga lebih mudah diakses oleh pengguna dengan disabilitas.
 
 ### Bagaimana cara menginstal Aspose.PDF untuk Java?
 
- Untuk menginstal Aspose.PDF untuk Java, kunjungi situs web Aspose[Di Sini](https://releases.aspose.com/pdf/java/) dan unduh versi terbaru. Kemudian, tambahkan file JAR ke jalur pembangunan proyek Java Anda.
+ Untuk menginstal Aspose.PDF untuk Java, kunjungi situs web Aspose[Di Sini](https://releases.aspose.com/pdf/java/) dan unduh versi terbaru. Lalu, tambahkan file JAR ke jalur pembuatan proyek Java Anda.
 
 ### Bisakah saya mengubah warna teks sebaris dalam PDF?
 
-Ya, Anda dapat mengubah warna teks sebaris dalam PDF menggunakan Aspose.PDF untuk Java. Menggunakan`setTextState().setForegroundColor(Color)` metode untuk menentukan warna.
+Ya, Anda dapat mengubah warna teks sebaris dalam PDF menggunakan Aspose.PDF untuk Java. Gunakan`setTextState().setForegroundColor(Color)` metode untuk menentukan warna.
 
-### Apa manfaat membuat PDF yang dapat diakses?
+### Apa manfaat membuat PDF yang mudah diakses?
 
-PDF yang dapat diakses bermanfaat bagi pengguna penyandang disabilitas dengan menyediakan fitur seperti kompatibilitas pembaca layar, opsi navigasi, dan kepatuhan terhadap standar aksesibilitas (misalnya, PDF/UA).
+PDF yang dapat diakses bermanfaat bagi pengguna penyandang disabilitas dengan menyediakan fitur-fitur seperti kompatibilitas pembaca layar, opsi navigasi, dan kepatuhan terhadap standar aksesibilitas (misalnya, PDF/UA).
 
-### Bagaimana cara membuat hyperlink di PDF?
+### Bagaimana cara membuat hyperlink dalam PDF?
 
- Untuk membuat hyperlink dalam PDF, gunakan Aspose.PDF untuk Java untuk membuat`LinkAnnotation` dan mengaitkannya dengan teks atau elemen yang diinginkan. Tentukan URL target atau tindakan untuk hyperlink.
+ Untuk membuat hyperlink dalam PDF, gunakan Aspose.PDF untuk Java untuk membuat`LinkAnnotation` dan kaitkan dengan teks atau elemen yang diinginkan. Tentukan URL atau tindakan target untuk hyperlink.

@@ -8,7 +8,7 @@ weight: 11
 url: /cs/java/pdf-styles-and-formatting/root-structure-in-pdf-using-java/
 ---
 
-## Úvod
+## Zavedení
 
 Soubory PDF (Portable Document Format) jsou široce používány pro sdílení a prezentaci dokumentů. Pochopení kořenové struktury PDF je zásadní pro vývojáře, kteří chtějí vytvářet, upravovat nebo optimalizovat dokumenty PDF programově pomocí Javy.
 

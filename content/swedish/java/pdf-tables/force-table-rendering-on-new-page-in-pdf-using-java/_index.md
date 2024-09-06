@@ -68,7 +68,7 @@ Cell cell2 = row.getCells().add("Column 2 Data");
 
 ### Steg 5: Kontrollera sidbrytningar
 
- För att tvinga tabellen att rendera på en ny sida kan du styra sidbrytningar med hjälp av`IsInNewPage` fast egendom.
+ För att tvinga tabellen att rendera på en ny sida kan du styra sidbrytningar med hjälp av`IsInNewPage` egendom.
 
 ```java
 // Tvinga tabellen att börja på en ny sida

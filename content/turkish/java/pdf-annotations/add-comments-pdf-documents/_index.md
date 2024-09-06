@@ -1,8 +1,8 @@
 ---
-title: PDF Belgelerine Yorum Ekleme
-linktitle: PDF Belgelerine Yorum Ekleme
+title: PDF Belgelerine Yorum Ekle
+linktitle: PDF Belgelerine Yorum Ekle
 second_title: Aspose.PDF Java PDF İşleme API'si
-description: Aspose.PDF for Java Kullanarak PDF Belgelerine Nasıl Yorum Ekleneceğini Öğrenin - Kod Örnekleriyle Adım Adım Kılavuz.
+description: Java için Aspose.PDF'yi Kullanarak PDF Belgelerine Yorum Eklemeyi Öğrenin - Kod Örnekleriyle Adım Adım Kılavuz.
 type: docs
 weight: 10
 url: /tr/java/pdf-annotations/add-comments-pdf-documents/
@@ -10,76 +10,76 @@ url: /tr/java/pdf-annotations/add-comments-pdf-documents/
 
 ## PDF Belgelerine Yorum Eklemeye Giriş
 
-PDF belgeleri, evrensel uyumlulukları ve tutarlı biçimlendirmeleri nedeniyle dijital olarak bilgi paylaşımında bir standart haline geldi. PDF'lerin temel özelliklerinden biri, belgelere yorum, açıklama ve not ekleyebilme yeteneğidir. Bu makale, PDF işleme için güçlü bir API olan Aspose.PDF for Java'yı kullanarak PDF belgelerine yorum ekleme sürecinde size rehberlik edecektir.
+PDF belgeleri, evrensel uyumlulukları ve tutarlı biçimlendirmeleri nedeniyle dijital olarak bilgi paylaşımı için bir standart haline gelmiştir. PDF'lerin temel özelliklerinden biri, belgelere yorum, ek açıklama ve not ekleme yeteneğidir. Bu makale, PDF düzenleme için güçlü bir API olan Aspose.PDF for Java'yı kullanarak PDF belgelerine yorum ekleme sürecinde size rehberlik edecektir.
 
-## Aspose.PDF for Java'ya Başlarken
+## Java için Aspose.PDF'ye Başlarken
 
- Başlamak için geliştirme ortamınızı ayarlamanız gerekir. Aspose.PDF for Java kütüphanesinin kurulu olduğundan emin olun. Şuradan indirebilirsiniz[Burada](https://releases.aspose.com/pdf/java/).
+ Başlamak için, geliştirme ortamınızı ayarlamanız gerekir. Java için Aspose.PDF kütüphanesinin yüklü olduğundan emin olun. Bunu şuradan indirebilirsiniz:[Burada](https://releases.aspose.com/pdf/java/).
 
 ## PDF Belgesi Oluşturma
 
-Bir PDF'ye yorum eklemek için öncelikle üzerinde çalışacağınız bir PDF belgesine ihtiyacınız vardır. Aspose.PDF for Java'yı kullanarak yalnızca birkaç satır kodla yeni bir PDF belgesi oluşturabilirsiniz:
+Bir PDF'e yorum eklemek için öncelikle çalışacağınız bir PDF belgesine ihtiyacınız vardır. Sadece birkaç satır kodla Java için Aspose.PDF kullanarak yeni bir PDF belgesi oluşturabilirsiniz:
 
 ```java
-// Yeni bir PDF belgesi başlat
+// Yeni bir PDF belgesi başlatın
 Document pdfDocument = new Document();
 ```
 
-## PDF Belgesine Yorumlar Ekleme
+## PDF Belgesine Yorum Ekleme
 
-Yorum eklemek basittir. Aspose.PDF API'sini kullanarak vurgulamalar, metin notları veya damgalar gibi yorumlar ekleyebilirsiniz. Örnek olarak bir öne çıkan yorum ekleyelim:
+Yorum eklemek basittir. Aspose.PDF API'sini kullanarak vurgulamalar, metin notları veya damgalar gibi yorumlar ekleyebilirsiniz. Örnek olarak bir vurgulama yorumu ekleyelim:
 
 ```java
-// PDF'de sayfa oluşturma
+// PDF'de bir sayfa oluşturun
 Page page = pdfDocument.getPages().add();
 
-// Vurgu notu ekleme
+// Vurgulu açıklama ekle
 HighlightAnnotation highlight = new HighlightAnnotation(page, new Rectangle(100, 100, 200, 200));
 highlight.setColor(Color.YELLOW);
 highlight.setContents("This is a highlighted comment.");
 
-// Ek açıklamayı sayfaya ekleyin
+// Sayfaya açıklama ekle
 page.getAnnotations().add(highlight);
 ```
 
 ## Farklı Yorum Türleri
 
-Aspose.PDF for Java, metin açıklamaları, damgalar, mürekkep açıklamaları ve daha fazlasını içeren çeşitli yorum türlerini destekler. İhtiyaçlarınıza en uygun türü seçebilirsiniz.
+Java için Aspose.PDF, metin açıklamaları, damgalar, mürekkep açıklamaları ve daha fazlası dahil olmak üzere çeşitli yorum türlerini destekler. İhtiyaçlarınıza en uygun türü seçebilirsiniz.
 
 ## Yorum Görünümünü Özelleştirme
 
-Yorumların görünümünü tercihlerinize uyacak şekilde özelleştirebilirsiniz. Yorumlarınızın öne çıkmasını sağlamak için renkleri, yazı tiplerini ve diğer görsel özellikleri değiştirin.
+Yorumların görünümünü tercihlerinize uyacak şekilde özelleştirebilirsiniz. Yorumlarınızın öne çıkması için renkleri, yazı tiplerini ve diğer görsel unsurları değiştirin.
 
-## Yorumları Programlı Olarak Yönetme
+## Yorumları Programatik Olarak Yönetme
 
-Aspose.PDF for Java, yorumları programlı bir şekilde yönetmenize olanak tanır. Yorum yapma süreci üzerinde tam kontrol sağlayarak yorumları gerektiği gibi alabilir, güncelleyebilir veya silebilirsiniz.
+Java için Aspose.PDF yorumları programlı olarak yönetmenizi sağlar. Yorumları gerektiği gibi alabilir, güncelleyebilir veya silebilir, yorumlama süreci üzerinde tam kontrol sağlayabilirsiniz.
 
 ## Değiştirilen PDF'yi Kaydetme ve Dışa Aktarma
 
-Yorumları ekleyip özelleştirdikten sonra, değiştirilen PDF belgesini başkalarıyla paylaşmak üzere kaydedebilir veya dışa aktarabilirsiniz. Yorumları korumak için değişikliklerinizi kaydettiğinizden emin olun.
+Yorumları ekledikten ve özelleştirdikten sonra, değiştirilen PDF belgesini başkalarıyla paylaşmak için kaydedebilir veya dışa aktarabilirsiniz. Yorumları korumak için değişikliklerinizi kaydettiğinizden emin olun.
 
 ## Çözüm
 
-PDF belgelerine yorum eklemek, işbirliğini ve belgelendirmeyi geliştiren değerli bir özelliktir. Aspose.PDF for Java, süreci basitleştirerek yorumları kolaylıkla eklemenize, özelleştirmenize ve yönetmenize olanak tanır. İletişimi ve anlayışı geliştirmek için PDF belgelerinize yorumlar eklemeye başlayın.
+PDF belgelerine yorum eklemek, iş birliğini ve dokümantasyonu geliştiren değerli bir özelliktir. Aspose.PDF for Java, yorumları kolayca eklemenize, özelleştirmenize ve yönetmenize olanak tanıyarak süreci basitleştirir. İletişimi ve anlayışı geliştirmek için PDF belgelerinize yorumlar eklemeye başlayın.
 
-## SSS'ler
+## SSS
 
-### PDF'deki belirli bir konuma nasıl metin yorumu ekleyebilirim?
+### PDF'deki belirli bir yere nasıl metin yorumu ekleyebilirim?
 
-Belirli bir konuma metin yorumu eklemek için bir metin açıklaması oluşturun ve bunun PDF sayfası içindeki konumunu ayarlayın.
+Belirli bir yere metin yorumu eklemek için bir metin açıklaması oluşturun ve PDF sayfasındaki konumunu ayarlayın.
 
-### Bir PDF belgesindeki yorumlara yanıt verebilir miyim?
+### PDF belgesindeki yorumlara cevap verebilir miyim?
 
-Evet, orijinal yoruma bağlı bir yanıt açıklaması oluşturarak yorumları yanıtlayabilirsiniz.
+Evet, orijinal yoruma bağlı bir yanıt açıklaması oluşturarak yorumlara yanıt verebilirsiniz.
 
-### Bir PDF belgesindeki yorumları gizlemek veya göstermek mümkün mü?
+### PDF belgesinde yorumları gizlemek veya göstermek mümkün müdür?
 
 Evet, Aspose.PDF for Java API'sini kullanarak bir PDF belgesindeki yorumların görünürlüğünü kontrol edebilirsiniz.
 
 ### PDF'deki yorum sayısında herhangi bir sınırlama var mı?
 
-Bir PDF belgesine ekleyebileceğiniz yorumların sayısı, belgenin karmaşıklığı ve kullanılabilir sistem kaynakları gibi çeşitli faktörlere bağlıdır.
+Bir PDF belgesine ekleyebileceğiniz yorum sayısı, belgenin karmaşıklığı ve kullanılabilir sistem kaynakları gibi çeşitli faktörlere bağlıdır.
 
-### Yorumları bir PDF'den programlı olarak nasıl çıkarabilirim?
+### PDF'den yorumları program aracılığıyla nasıl çıkarabilirim?
 
-Aspose.PDF for Java'yı kullanarak, belgenin ek açıklamalarını yineleyerek bir PDF belgesinden yorumları çıkarabilirsiniz.
+Java için Aspose.PDF'i kullanarak, belgenin açıklamaları arasında gezinerek bir PDF belgesinden yorumları çıkarabilirsiniz.

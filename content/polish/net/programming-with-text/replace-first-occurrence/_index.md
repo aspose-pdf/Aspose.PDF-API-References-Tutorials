@@ -1,24 +1,24 @@
 ---
-title: Zamień pierwsze wystąpienie
-linktitle: Zamień pierwsze wystąpienie
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak zamienić pierwsze wystąpienie tekstu w dokumencie PDF przy użyciu Aspose.PDF dla .NET.
+title: Zastąp pierwsze wystąpienie
+linktitle: Zastąp pierwsze wystąpienie
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak zastąpić pierwsze wystąpienie tekstu w dokumencie PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 330
 url: /pl/net/programming-with-text/replace-first-occurrence/
 ---
-W tym samouczku wyjaśnimy, jak zamienić pierwsze wystąpienie określonego tekstu w dokumencie PDF przy użyciu biblioteki Aspose.PDF dla .NET. Przejdziemy krok po kroku przez proces otwarcia dokumentu PDF, znalezienia pierwszego wystąpienia wyszukiwanej frazy, zamiany tekstu, aktualizacji właściwości i zapisania zmodyfikowanego pliku PDF przy użyciu dostarczonego kodu źródłowego C#.
+W tym samouczku wyjaśnimy, jak zastąpić pierwsze wystąpienie określonego tekstu w dokumencie PDF za pomocą biblioteki Aspose.PDF dla .NET. Przejdziemy przez proces krok po kroku otwierania dokumentu PDF, znajdowania pierwszego wystąpienia frazy wyszukiwania, zastępowania tekstu, aktualizowania właściwości i zapisywania zmodyfikowanego pliku PDF za pomocą dostarczonego kodu źródłowego C#.
 
-## Warunki wstępne
+## Wymagania wstępne
 
-Zanim zaczniesz, upewnij się, że masz następujące elementy:
+Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
 
-- Zainstalowana biblioteka Aspose.PDF dla .NET.
+- Zainstalowano bibliotekę Aspose.PDF dla .NET.
 - Podstawowa znajomość programowania w języku C#.
 
 ## Krok 1: Skonfiguruj katalog dokumentów
 
- Najpierw musisz ustawić ścieżkę do katalogu, w którym znajduje się wejściowy plik PDF. Zastępować`"YOUR DOCUMENT DIRECTORY"` w`dataDir` zmienną ze ścieżką do pliku PDF.
+ Najpierw musisz ustawić ścieżkę do katalogu, w którym znajduje się plik PDF wejściowy. Zastąp`"YOUR DOCUMENT DIRECTORY"` w`dataDir` zmienną zawierającą ścieżkę do pliku PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -26,15 +26,15 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 2: Otwórz dokument PDF
 
- Następnie otwieramy dokument PDF za pomocą`Document` class z biblioteki Aspose.PDF.
+ Następnie otwieramy dokument PDF za pomocą`Document` klasa z biblioteki Aspose.PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 ```
 
-## Krok 3: Znajdź pierwsze wystąpienie wyszukiwanego hasła
+## Krok 3: Znajdź pierwsze wystąpienie frazy wyszukiwania
 
- Tworzymy`TextFragmentAbsorber` obiekt i zaakceptuj go dla wszystkich stron dokumentu PDF, aby znaleźć wszystkie wystąpienia wyszukiwanej frazy.
+ Tworzymy`TextFragmentAbsorber` obiekt i zaakceptuj go na wszystkich stronach dokumentu PDF, aby znaleźć wszystkie wystąpienia frazy wyszukiwania.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
@@ -43,7 +43,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## Krok 4: Zamień tekst
 
-Jeśli wyszukiwana fraza zostanie znaleziona w dokumencie PDF, pobieramy pierwsze wystąpienie fragmentu tekstu i aktualizujemy jego właściwości o nowy tekst i formatowanie.
+Jeśli wyszukiwana fraza zostanie znaleziona w dokumencie PDF, pobieramy pierwsze wystąpienie fragmentu tekstu i aktualizujemy jego właściwości, uwzględniając nowy tekst i formatowanie.
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -59,7 +59,7 @@ if (textFragmentCollection.Count > 0)
 
 ## Krok 5: Zapisz zmodyfikowany plik PDF
 
-Na koniec zapisujemy zmodyfikowany dokument PDF w określonym pliku wyjściowym.
+Na koniec zapisujemy zmodyfikowany dokument PDF do wskazanego pliku wyjściowego.
 
 ```csharp
 dataDir = dataDir + "ReplaceFirstOccurrence_out.pdf";
@@ -67,23 +67,23 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nText replaced successfully.\nFile saved at " + dataDir);
 ```
 
-### Przykładowy kod źródłowy funkcji Zamień pierwsze wystąpienie przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Zamień pierwsze wystąpienie przy użyciu Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Otwórz dokument
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
-// Utwórz obiekt TextAbsorber, aby znaleźć wszystkie wystąpienia wprowadzonej frazy wyszukiwania
+// Utwórz obiekt TextAbsorber, aby znaleźć wszystkie wystąpienia frazy wyszukiwania wejściowego
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
-// Zaakceptuj pochłaniacz dla wszystkich stron
+// Zaakceptuj absorber dla wszystkich stron
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 // Pobierz wyodrębnione fragmenty tekstu
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 if (textFragmentCollection.Count > 0)
 {
-	// Uzyskaj pierwsze wystąpienie tekstu i zamień
+	// Pobierz pierwsze wystąpienie tekstu i zamień
 	TextFragment textFragment = textFragmentCollection[1];
-	// Zaktualizuj tekst i inne właściwości
+	// Aktualizuj tekst i inne właściwości
 	textFragment.Text = "New Phrase";
 	textFragment.TextState.Font = FontRepository.FindFont("Verdana");
 	textFragment.TextState.FontSize = 22;
@@ -96,49 +96,49 @@ if (textFragmentCollection.Count > 0)
 
 ## Wniosek
 
-W tym samouczku nauczyłeś się, jak zastąpić pierwsze wystąpienie określonego tekstu w dokumencie PDF przy użyciu biblioteki Aspose.PDF dla .NET. Postępując zgodnie ze szczegółowym przewodnikiem i wykonując dostarczony kod C#, możesz otworzyć dokument PDF, znaleźć pierwsze wystąpienie wyszukiwanej frazy, zastąpić tekst, zaktualizować właściwości i zapisać zmodyfikowany plik PDF.
+W tym samouczku nauczyłeś się, jak zastąpić pierwsze wystąpienie określonego tekstu w dokumencie PDF za pomocą biblioteki Aspose.PDF dla .NET. Postępując zgodnie z przewodnikiem krok po kroku i wykonując dostarczony kod C#, możesz otworzyć dokument PDF, znaleźć pierwsze wystąpienie frazy wyszukiwania, zastąpić tekst, zaktualizować właściwości i zapisać zmodyfikowany plik PDF.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
 #### P: Jaki jest cel samouczka „Zamień pierwsze wystąpienie”?
 
-O: Samouczek „Zamień pierwsze wystąpienie” pokazuje, jak używać biblioteki Aspose.PDF dla platformy .NET w celu zastąpienia pierwszego wystąpienia określonego tekstu w dokumencie PDF. Zawiera instrukcje krok po kroku dotyczące otwierania dokumentu PDF, znajdowania pierwszego wystąpienia wyszukiwanej frazy, zastępowania tekstu, aktualizowania właściwości i zapisywania zmodyfikowanego pliku PDF.
+A: Samouczek „Replace First Occurrence” pokazuje, jak używać biblioteki Aspose.PDF dla .NET, aby zastąpić pierwsze wystąpienie określonego tekstu w dokumencie PDF. Zawiera instrukcje krok po kroku, jak otworzyć dokument PDF, zlokalizować pierwsze wystąpienie frazy wyszukiwania, zastąpić tekst, zaktualizować właściwości i zapisać zmodyfikowany plik PDF.
 
 #### P: Dlaczego miałbym chcieć zastąpić pierwsze wystąpienie tekstu w dokumencie PDF?
 
-O: Zastąpienie pierwszego wystąpienia tekstu w dokumencie PDF jest przydatne, gdy trzeba wprowadzić ukierunkowane zmiany w konkretnych wystąpieniach określonej frazy, pozostawiając inne wystąpienia bez zmian. To podejście jest często stosowane do kontrolowanego aktualizowania lub poprawiania tekstu.
+A: Zastępowanie pierwszego wystąpienia tekstu w dokumencie PDF jest przydatne, gdy trzeba wprowadzić ukierunkowane zmiany w określonych wystąpieniach pewnej frazy, pozostawiając inne wystąpienia nietknięte. To podejście jest często stosowane w celu aktualizacji lub korekty tekstu w sposób kontrolowany.
 
 #### P: Jak skonfigurować katalog dokumentów?
 
-O: Aby skonfigurować katalog dokumentów:
+A: Aby skonfigurować katalog dokumentów:
 
-1.  Zastępować`"YOUR DOCUMENT DIRECTORY"` w`dataDir` zmienną ze ścieżką do katalogu, w którym znajduje się wejściowy plik PDF.
+1.  Zastępować`"YOUR DOCUMENT DIRECTORY"` w`dataDir` zmienna zawierająca ścieżkę do katalogu, w którym znajduje się plik PDF wejściowy.
 
 #### P: Jak zastąpić pierwsze wystąpienie określonego tekstu w dokumencie PDF?
 
-O: Samouczek przeprowadzi Cię krok po kroku przez cały proces:
+A: Samouczek przeprowadzi Cię przez cały proces krok po kroku:
 
 1.  Otwórz dokument PDF za pomocą`Document` klasa.
-2.  Stwórz`TextFragmentAbsorber` obiekt i zaakceptuj go dla wszystkich stron, aby znaleźć wystąpienia wyszukiwanej frazy.
-3. Jeśli wyszukiwana fraza zostanie znaleziona, pobierz pierwsze wystąpienie fragmentu tekstu i zaktualizuj jego właściwości, dodając nowy tekst i formatowanie.
+2.  Utwórz`TextFragmentAbsorber` obiekt i zaakceptuj go, aby wszystkie strony mogły znaleźć wystąpienia frazy wyszukiwania.
+3. Jeśli wyszukiwana fraza zostanie znaleziona, pobierz pierwsze wystąpienie fragmentu tekstu i zaktualizuj jego właściwości, uwzględniając nowy tekst i formatowanie.
 4. Zapisz zmodyfikowany dokument PDF.
 
-####  P: Jaki jest cel użycia`TextFragmentAbsorber` to find the first occurrence of the search phrase?
+####  P: Jaki jest cel korzystania z`TextFragmentAbsorber` to find the first occurrence of the search phrase?
 
- O:`TextFragmentAbsorber` służy do lokalizowania wystąpień szukanej frazy w dokumencie PDF. W tym samouczku pomożemy zidentyfikować pierwsze wystąpienie tekstu, który należy zastąpić.
+ A: Ten`TextFragmentAbsorber` służy do lokalizowania wystąpień frazy wyszukiwania w dokumencie PDF. W tym samouczku pomaga zidentyfikować pierwsze wystąpienie tekstu, który należy zastąpić.
 
-#### P: Jak zaktualizować właściwości fragmentu tekstu?
+#### P: Jak mogę zaktualizować właściwości fragmentu tekstu?
 
-O: Po zlokalizowaniu pierwszego wystąpienia fragmentu tekstu możesz zaktualizować jego właściwości, takie jak sam tekst, czcionka, rozmiar czcionki i kolor tekstu. Dzięki temu możesz dostosować wygląd tekstu zastępczego.
+A: Po zlokalizowaniu pierwszego wystąpienia fragmentu tekstu możesz zaktualizować jego właściwości, takie jak sam tekst, czcionka, rozmiar czcionki i kolor tekstu. Pozwala to dostosować wygląd tekstu zastępczego.
 
 #### P: Czy istnieje ograniczenie dotyczące zastępowania tylko pierwszego wystąpienia tekstu?
 
- Odp.: Tak, ten samouczek skupia się szczególnie na zastąpieniu pierwszego wystąpienia tekstu. Jeśli chcesz zastąpić wiele wystąpień tego samego tekstu, możesz rozszerzyć to podejście, przechodząc przez pętlę`TextFragmentCollection` aby zidentyfikować i zaktualizować każdą instancję.
+ A: Tak, ten samouczek koncentruje się konkretnie na zastępowaniu pierwszego wystąpienia tekstu. Jeśli musisz zastąpić wiele wystąpień tego samego tekstu, możesz rozszerzyć podejście, przechodząc przez pętlę`TextFragmentCollection` aby zidentyfikować i zaktualizować każdą instancję.
 
-#### P: Jaki jest oczekiwany wynik wykonania dostarczonego kodu?
+#### P: Jakiego wyniku można oczekiwać po wykonaniu dostarczonego kodu?
 
-Odp.: Postępując zgodnie z samouczkiem i uruchamiając dostarczony kod C#, zastąpisz pierwsze wystąpienie określonego tekstu w dokumencie PDF. Tekst zastępczy będzie miał zaktualizowane właściwości, takie jak czcionka, rozmiar czcionki i kolor tekstu.
+A: Postępując zgodnie z samouczkiem i uruchamiając dostarczony kod C#, zastąpisz pierwsze wystąpienie określonego tekstu w dokumencie PDF. Tekst zastępczy będzie miał zaktualizowane właściwości, takie jak czcionka, rozmiar czcionki i kolor tekstu.
 
-#### P: Czy mogę zastosować to podejście do zastąpienia innych wystąpień tego samego tekstu?
+#### P: Czy mogę użyć tego podejścia, aby zastąpić inne wystąpienia tego samego tekstu?
 
- Odp.: Tak, możesz zmodyfikować kod, aby przechodził przez`TextFragmentCollection` aby zastąpić wielokrotne wystąpienia tego samego tekstu. Po prostu rozszerz logikę, aby w razie potrzeby identyfikować i aktualizować każdą instancję.
+ A: Tak, możesz zmodyfikować kod, aby przechodził przez pętlę`TextFragmentCollection` aby zastąpić wiele wystąpień tego samego tekstu. Po prostu rozszerz logikę, aby zidentyfikować i zaktualizować każde wystąpienie w razie potrzeby.

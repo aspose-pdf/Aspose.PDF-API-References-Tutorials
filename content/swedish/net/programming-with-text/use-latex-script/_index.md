@@ -59,7 +59,7 @@ LatexFragment ltext1 = new LatexFragment(latexText1, true);
 cell.Paragraphs.Add(ltext1);
 ```
 
- Observera att`true` parametern i`LatexFragment` konstruktorn eliminerar latex-styckeindrag.
+ Observera att`true` parametern i`LatexFragment` konstruktorn tar bort latex-styckeindrag.
 
 ## Steg 6: Lägg till tabellen på sidan
 
@@ -134,7 +134,7 @@ using Aspose.Pdf.Tables;
 using Aspose.Pdf.Text;
 ```
 
-Dessa namnutrymmen ger dig tillgång till de klasser och funktioner som behövs för att arbeta med PDF-dokument och LaTeX-skript.
+Dessa namnrymder ger dig tillgång till de klasser och funktioner som behövs för att arbeta med PDF-dokument och LaTeX-skript.
 
 #### F: Hur kan jag använda LaTeX-skript för att lägga till matematiska uttryck eller formler i ett PDF-dokument?
 
@@ -152,7 +152,7 @@ S: När du har lagt till det LaTeX-baserade innehållet i PDF-dokumentet kan du 
 doc.Save(dataDir + "LatextScriptInPdf_out.pdf");
 ```
 
- Byta ut`"LatextScriptInPdf_out.pdf"` med önskat utdatafilnamn. Detta kommer att spara PDF-dokumentet som innehåller de matematiska uttrycken skrivna i LaTeX-skript.
+ Ersätta`"LatextScriptInPdf_out.pdf"` med önskat utdatafilnamn. Detta kommer att spara PDF-dokumentet som innehåller de matematiska uttrycken skrivna i LaTeX-skript.
 
 #### F: Kan jag inkludera flera LaTeX-baserade uttryck i ett enda PDF-dokument?
 

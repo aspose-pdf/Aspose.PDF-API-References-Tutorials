@@ -81,7 +81,7 @@ System.Console.WriteLine("PDF pages are converted to EMF successfully!");
 
 ### 常見問題解答
 
-#### Q：什麼是 EMF？為什麼需要將 PDF 頁面轉換為 EMF 檔案？
+#### Q：什麼是 EMF？
 
 答：EMF 代表增強型圖元文件，是一種廣泛用於儲存圖形影像的向量圖形檔案格式。將 PDF 頁面轉換為 EMF 格式有利於保留基於向量的圖形並促進進一步編輯或整合。
 

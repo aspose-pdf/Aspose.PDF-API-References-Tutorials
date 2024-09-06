@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 1. lépés: Állítsa be a dokumentumkönyvtárat
 
- Először is be kell állítania annak a könyvtárnak az elérési útját, ahová a létrehozott PDF-fájlt menteni szeretné. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir`változót a kívánt könyvtár elérési útjával.
+ Először is be kell állítania annak a könyvtárnak az elérési útját, ahová a létrehozott PDF-fájlt menteni szeretné. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változót a kívánt könyvtár elérési útjával.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -71,7 +71,7 @@ row1.Cells[0].Paragraphs.Add(logo);
 
 ## 6. lépés: Szöveg hozzáadása a képhez
 
- Létrehozunk HTML-formátumú szöveget tartalmazó karakterlánc-változókat, és létrehozunk egy`HtmlFragment`tárgy. Ezután hozzáadjuk a HTML szöveget a képet tartalmazó táblázatcellához.
+ Létrehozunk HTML-formátumú szöveget tartalmazó karakterlánc-változókat, és létrehozunk egy`HtmlFragment`objektum. Ezután hozzáadjuk a HTML szöveget a képet tartalmazó táblázatcellához.
 
 ```csharp
 string TitleString = "<font face=\"Arial\" size=6 color=\"#101090\"><b>Aspose.Pdf for .NET</b></font>";
@@ -178,7 +178,7 @@ V: Szöveg elhelyezése egy kép körül javítja a PDF-dokumentumok vizuális m
 
 V: A dokumentumkönyvtár beállításához:
 
-1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir` változó annak a könyvtárnak az elérési útjával, ahová a generált PDF fájlt menteni szeretné.
+1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változó annak a könyvtárnak az elérési útjával, ahová a generált PDF fájlt menteni szeretné.
 
 #### K: Hogyan hozhatok létre táblázatot és adhatok hozzá képet?
 
@@ -202,7 +202,7 @@ V: Az oktatóanyag követésével és a mellékelt C# kód végrehajtásával PD
 
 #### K: Használhatok más képformátumokat a JPG-n kívül?
 
- V: Igen, használhat különböző, az Aspose.PDF könyvtár által támogatott képformátumokat, például PNG, BMP, GIF stb. Amikor létrehozza a`Image` objektum, adja meg a kívánt képformátum fájl elérési útját.
+ V: Igen, használhat különböző, az Aspose.PDF könyvtár által támogatott képformátumokat, például PNG, BMP, GIF stb. Amikor létrehozza a`Image` objektumot, adja meg a kívánt képformátum fájl elérési útját.
 
 #### K: Szükséges érvényes Aspose-licenc ehhez az oktatóanyaghoz?
 

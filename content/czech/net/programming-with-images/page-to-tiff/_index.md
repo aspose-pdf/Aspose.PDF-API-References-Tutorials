@@ -96,7 +96,7 @@ tiffDevice.Process(pdfDocument, 1, 1, dataDir + "PageToTIFF_out.tif");
 
 Ujistěte se, že jste zadali správnou cestu k výstupnímu souboru.
 
-## Krok 7: Dokončení převodu
+## Krok 7: Dokončení konverze
 
 Po uložení obrázku TIFF můžeme zobrazit zprávu o úspěchu, která indikuje úspěšnou konverzi. Použijte následující kód:
 
@@ -104,7 +104,7 @@ Po uložení obrázku TIFF můžeme zobrazit zprávu o úspěchu, která indikuj
 System.Console.WriteLine("PDF one page converted to TIFF successfully!");
 ```
 
-Gratulujeme! Úspěšně jste převedli stránku PDF na TIFF pomocí Aspose.PDF for .NET.
+Gratuluji! Úspěšně jste převedli stránku PDF na TIFF pomocí Aspose.PDF for .NET.
 
 ### Ukázka zdrojového kódu pro Page To TIFF pomocí Aspose.PDF pro .NET 
 ```csharp
@@ -122,7 +122,7 @@ tiffSettings.Shape = ShapeType.Landscape;
 tiffSettings.SkipBlankPages = false;
 // Vytvořte zařízení TIFF
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
-//Převeďte konkrétní stránku a uložte obrázek do streamu
+// Převeďte konkrétní stránku a uložte obrázek do streamu
 tiffDevice.Process(pdfDocument, 1, 1, dataDir + "PageToTIFF_out.tif");
 System.Console.WriteLine("PDF one page converted to tiff successfully!");
 ```
@@ -159,4 +159,4 @@ A: Nastavení obrázku TIFF můžete upravit vytvořením a`TiffSettings` objekt
 
 #### Otázka: Je možné upravit orientaci výsledného obrázku TIFF?
 
-Odpověď: Ano, můžete upravit orientaci výsledného obrázku TIFF úpravou`ShapeType` vlastnictvím`TiffSettings` objekt. V poskytnutém kódu`ShapeType.Landscape` se používá pro orientaci na šířku.
+Odpověď: Ano, můžete upravit orientaci výsledného obrázku TIFF úpravou`ShapeType` majetek z`TiffSettings` objekt. V poskytnutém kódu`ShapeType.Landscape` se používá pro orientaci na šířku.

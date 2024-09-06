@@ -1,18 +1,18 @@
 ---
 title: Atur Info File Dalam File PDF
 linktitle: Atur Info File Dalam File PDF
-second_title: Aspose.PDF untuk Referensi .NET API
+second_title: Referensi API Aspose.PDF untuk .NET
 description: Pelajari cara menggunakan Aspose.PDF untuk .NET untuk mengatur info file dalam file PDF dengan panduan langkah demi langkah ini.
 type: docs
 weight: 310
 url: /id/net/programming-with-document/setfileinfo/
 ---
-Jika Anda mengerjakan proyek yang memerlukan pengelolaan file PDF menggunakan Aspose.PDF untuk .NET, salah satu fitur yang mungkin ingin Anda manfaatkan adalah kemampuan untuk mengatur informasi file untuk dokumen PDF. Informasi file mencakup berbagai detail seperti penulis, tanggal pembuatan, kata kunci, tanggal modifikasi, subjek, dan judul. Panduan ini akan memandu Anda melalui proses pengaturan informasi file untuk dokumen PDF menggunakan kode sumber C# dengan Aspose.PDF untuk .NET.
+Jika Anda mengerjakan proyek yang memerlukan pengelolaan berkas PDF menggunakan Aspose.PDF untuk .NET, salah satu fitur yang mungkin ingin Anda manfaatkan adalah kemampuan untuk mengatur informasi berkas untuk dokumen PDF. Informasi berkas mencakup berbagai detail seperti penulis, tanggal pembuatan, kata kunci, tanggal modifikasi, subjek, dan judul. Panduan ini akan memandu Anda melalui proses pengaturan informasi berkas untuk dokumen PDF menggunakan kode sumber C# dengan Aspose.PDF untuk .NET.
 
 ## Panduan langkah demi langkah untuk mengatur info file menggunakan Aspose.PDF untuk .NET
 
-1. Buat proyek C# baru di Visual Studio IDE Anda.
-2. Tambahkan referensi ke perpustakaan Aspose.PDF untuk .NET di proyek Anda.
+1. Buat proyek C# baru di IDE Visual Studio Anda.
+2. Tambahkan referensi ke pustaka Aspose.PDF untuk .NET di proyek Anda.
 3. Buat objek dokumen PDF baru dengan memberikan jalur ke file PDF yang informasi filenya ingin Anda ubah.
 
 ## Langkah 1: Tetapkan jalur ke direktori dokumen.
@@ -52,7 +52,7 @@ dataDir = dataDir + "SetFileInfo_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-## Langkah 6: Verifikasi bahwa informasi file telah berhasil diperbarui.
+## Langkah 6: Verifikasi bahwa informasi berkas telah berhasil diperbarui.
 
 ```csharp
 Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + dataDir);
@@ -60,7 +60,7 @@ Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + da
 
 Anda telah berhasil mengatur informasi file untuk dokumen PDF menggunakan Aspose.PDF untuk .NET.
 
-### Contoh kode sumber untuk Mengatur Info File menggunakan Aspose.PDF untuk .NET
+### Contoh kode sumber untuk Set File Info menggunakan Aspose.PDF untuk .NET
 
 
 ```csharp
@@ -89,18 +89,18 @@ Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + da
 
 ## Kesimpulan
 
-Kesimpulannya, Aspose.PDF untuk .NET menyediakan cara sederhana dan efektif dalam mengatur informasi file untuk dokumen PDF. Dengan mengikuti langkah-langkah yang disebutkan di atas, Anda dapat dengan mudah mengatur nilai informasi file yang diinginkan untuk dokumen PDF Anda menggunakan kode sumber C#.
+Sebagai kesimpulan, Aspose.PDF untuk .NET menyediakan cara yang sederhana dan efektif untuk mengatur informasi berkas untuk dokumen PDF. Dengan mengikuti langkah-langkah yang disebutkan di atas, Anda dapat dengan mudah mengatur nilai informasi berkas yang diinginkan untuk dokumen PDF Anda menggunakan kode sumber C#.
 
 ### FAQ untuk mengatur info file dalam file PDF
 
-#### T: Dapatkah saya menyetel properti informasi file tambahan yang tidak disebutkan dalam contoh?
+#### T: Dapatkah saya mengatur properti informasi file tambahan yang tidak disebutkan dalam contoh?
 
- J: Ya, Anda dapat mengatur properti informasi file tambahan menggunakan`DocumentInfo` objek di Aspose.PDF untuk .NET. Itu`DocumentInfo`kelas menyediakan berbagai properti yang memungkinkan Anda mengatur informasi tambahan seperti produsen, versi, dan properti khusus.
+ A: Ya, Anda dapat mengatur properti informasi file tambahan menggunakan`DocumentInfo` objek di Aspose.PDF untuk .NET.`DocumentInfo`kelas menyediakan berbagai properti yang memungkinkan Anda mengatur informasi tambahan seperti produsen, versi, dan properti kustom.
 
-#### T: Apakah mungkin untuk mengambil informasi file dari dokumen PDF yang sudah ada?
+#### T: Apakah mungkin untuk mengambil informasi berkas dari dokumen PDF yang ada?
 
- J: Ya, Anda dapat mengambil informasi file dari dokumen PDF yang ada menggunakan Aspose.PDF untuk .NET. Untuk melakukan ini, Anda dapat menggunakan`DocumentInfo` objek untuk mengakses properti informasi file dan membaca informasi yang disimpan dalam dokumen PDF.
+ A: Ya, Anda dapat mengambil informasi file dari dokumen PDF yang ada menggunakan Aspose.PDF untuk .NET. Untuk melakukan ini, Anda dapat menggunakan`DocumentInfo` objek untuk mengakses properti informasi file dan membaca informasi yang disimpan dalam dokumen PDF.
 
-#### T: Apakah pengaturan informasi file mengubah dokumen PDF asli?
+#### T: Apakah pengaturan informasi file akan mengubah dokumen PDF asli?
 
-J: Tidak, mengatur informasi file menggunakan Aspose.PDF untuk .NET tidak mengubah dokumen PDF asli. Sebaliknya, ini membuat dokumen PDF baru dengan informasi file yang diperbarui. Dokumen PDF asli tetap tidak berubah.
+J: Tidak, pengaturan informasi berkas menggunakan Aspose.PDF untuk .NET tidak akan mengubah dokumen PDF asli. Sebaliknya, dokumen PDF baru akan dibuat dengan informasi berkas yang diperbarui. Dokumen PDF asli tetap tidak berubah.

@@ -20,7 +20,7 @@ using Aspose.Pdf.Annotations;
 
 ## Steg 2: Ange sökväg till dokumentmappen
 
- I det här steget måste du ange sökvägen till mappen som innehåller PDF-filen från vilken du vill extrahera länkarna. Byta ut`"YOUR DOCUMENT DIRECTORY"` följande kod med den faktiska sökvägen till din dokumentmapp:
+ I det här steget måste du ange sökvägen till mappen som innehåller PDF-filen från vilken du vill extrahera länkarna. Ersätta`"YOUR DOCUMENT DIRECTORY"` i följande kod med den faktiska sökvägen till din dokumentmapp:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -28,7 +28,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Steg 3: Öppna PDF-dokumentet
 
-Vi kommer att öppna PDF-dokumentet med hjälp av`Document` klass. Här är motsvarande kod:
+ Vi kommer att öppna PDF-dokumentet med hjälp av`Document` klass. Här är motsvarande kod:
 
 ```csharp
 Document document = new Document(dataDir + "ExtractLinks.pdf");
@@ -48,7 +48,7 @@ Annotation annotation = (Annotation)list[0];
 
 ## Steg 5: Spara det uppdaterade dokumentet
 
- Låt oss nu spara den uppdaterade PDF-filen med hjälp av`Save` metod för`document` objekt. Här är motsvarande kod:
+Låt oss nu spara den uppdaterade PDF-filen med hjälp av`Save` metod för`document` objekt. Här är motsvarande kod:
 
 ```csharp
 dataDir = dataDir + "ExtractLinks_out.pdf";
@@ -95,7 +95,7 @@ S: Aspose.PDF för .NET tillhandahåller kraftfulla API:er för att enkelt extra
 
 #### F: Kan jag extrahera specifika typer av länkar, till exempel hyperlänkar eller interna dokumentlänkar?
 
- S: Ja, du kan selektivt extrahera specifika typer av länkar med hjälp av`AnnotationSelector` klass. Detta gör att du kan filtrera och hämta önskade länkar baserat på dina krav.
+ S: Ja, du kan selektivt extrahera specifika typer av länkar med hjälp av`AnnotationSelector`klass. Detta gör att du kan filtrera och hämta önskade länkar baserat på dina krav.
 
 #### F: Är det möjligt att extrahera länkar från specifika sidor i ett PDF-dokument?
 

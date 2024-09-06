@@ -46,7 +46,7 @@ Megkaptuk a gyökérstruktúra elemet, amely a tömbelem tárolójaként fog szo
 Most hozzunk létre egy új táblázatszerkezet elemet a dokumentumunkhoz.
 
 ```csharp
-// Hozd létre a tömbstruktúra elemet
+// Hozza létre a tömbszerkezet elemet
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 ```
@@ -257,7 +257,7 @@ V: Mielőtt elkezdené, győződjön meg arról, hogy a fejlesztői környezetet
 
 #### K: Hogyan hozhatok létre új PDF-dokumentumot, és állíthatom be a címét és a nyelvét az Aspose.PDF for .NET használatával?
 
- V: Új PDF-dokumentum létrehozásához létre kell hoznia a`Document` objektumot az Aspose.PDF könyvtárból. Az oktatóanyagban található C# forráskód bemutatja, hogyan hozhat létre dokumentumot, és hogyan állíthatja be a címét és a nyelvi tulajdonságait.
+ V: Új PDF-dokumentum létrehozásához létre kell hoznia a`Document` objektum az Aspose.PDF könyvtárból. Az oktatóanyagban található C# forráskód bemutatja, hogyan hozhat létre dokumentumot, és hogyan állíthatja be a címét és a nyelvi tulajdonságait.
 
 #### K: Mi a jelentősége a gyökérstruktúra elemnek egy PDF dokumentumban?
 
@@ -281,7 +281,7 @@ V: Az oktatóanyag elmagyarázza, hogyan lehet fejléceket, törzssorokat és l�
 
 #### K: Hogyan építhetem be ezeket a fogalmakat a saját .NET alkalmazásaimba?
 
-V: A mellékelt C#-forráskód-példákat útmutatóként használhatja a tömbelem-formázás megvalósításához saját .NET-alkalmazásaiban. Módosítsa és alakítsa át a kódot az igényeinek megfelelően, és integrálja projektjeibe.
+V: A mellékelt C#-forráskód-példákat útmutatóként használhatja a tömbelem-formázás megvalósításához saját .NET-alkalmazásaiban. Módosítsa és adaptálja a kódot az igényeinek megfelelően, és integrálja projektjeibe.
 
 #### K: Vannak-e ajánlott bevált módszerek a tömbelemek formázására a PDF dokumentumokban?
 

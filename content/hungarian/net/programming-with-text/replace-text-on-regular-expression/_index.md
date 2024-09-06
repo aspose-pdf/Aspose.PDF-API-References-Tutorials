@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 1. lépés: Állítsa be a dokumentumkönyvtárat
 
- Állítsa be annak a könyvtárnak az elérési útját, ahol a bemeneti PDF-fájl található. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir` változó a PDF-fájl elérési útjával.
+ Állítsa be annak a könyvtárnak az elérési útját, ahol a bemeneti PDF-fájl található. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változó a PDF-fájl elérési útjával.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -34,7 +34,7 @@ Document pdfDocument = new Document(dataDir + "SearchRegularExpressionPage.pdf")
 
 ## 3. lépés: Szöveg keresése és cseréje reguláris kifejezéssel
 
- Hozzon létre egy`TextFragmentAbsorber` objektumot, és adja meg a reguláris kifejezés mintáját, hogy megtalálja a mintának megfelelő összes kifejezést. Állítsa be a szöveges keresési beállítást a reguláris kifejezés használatának engedélyezéséhez.
+ Hozzon létre a`TextFragmentAbsorber` objektumot, és adja meg a reguláris kifejezés mintáját, hogy megtalálja a mintának megfelelő összes kifejezést. Állítsa be a szöveges keresési beállítást a reguláris kifejezés használatának engedélyezéséhez.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Mint 1999-2000
@@ -117,14 +117,14 @@ V: A reguláris kifejezések használatával olyan szövegmintákat kereshet és
 
 V: A dokumentumkönyvtár beállításához:
 
-1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir` változó annak a könyvtárnak az elérési útjával, ahol a bemeneti PDF-fájl található.
+1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változó annak a könyvtárnak az elérési útjával, ahol a bemeneti PDF-fájl található.
 
 #### K: Hogyan cserélhetek le szöveget reguláris kifejezés alapján egy PDF-dokumentumban?
 
 V: Az oktatóanyag végigvezeti Önt a következő lépéseken:
 
 1.  Töltse be a PDF dokumentumot a`Document` osztály.
-2.  Hozzon létre egy`TextFragmentAbsorber` objektumot, és adja meg a reguláris kifejezés mintáját, hogy megtalálja a mintának megfelelő kifejezéseket. Állítsa be a szöveges keresési beállítást a reguláris kifejezés használatának engedélyezéséhez.
+2.  Hozzon létre a`TextFragmentAbsorber` objektumot, és adja meg a reguláris kifejezés mintáját, hogy megtalálja a mintának megfelelő kifejezéseket. Állítsa be a szöveges keresési beállítást a reguláris kifejezés használatának engedélyezéséhez.
 3. Keresse át a kibontott szövegrészleteket, és cserélje ki a szöveget. Szükség szerint frissítse az egyéb tulajdonságokat, például a betűtípust, a betűméretet, az előtérszínt és a háttérszínt.
 4. Mentse el a módosított PDF dokumentumot.
 

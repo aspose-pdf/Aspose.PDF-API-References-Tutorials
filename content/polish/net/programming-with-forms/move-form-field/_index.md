@@ -1,17 +1,17 @@
 ---
 title: Przenieś pole formularza
 linktitle: Przenieś pole formularza
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Z łatwością przenoś pola formularzy w dokumentach PDF za pomocą Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Łatwe przenoszenie pól formularzy w dokumentach PDF za pomocą Aspose.PDF dla .NET.
 type: docs
 weight: 200
 url: /pl/net/programming-with-forms/move-form-field/
 ---
-W tym samouczku pokażemy, jak przenieść pole formularza w dokumencie PDF za pomocą Aspose.PDF dla .NET. Krok po kroku wyjaśnimy kod źródłowy C#, aby poprowadzić Cię przez ten proces.
+W tym samouczku pokażemy, jak przenieść pole formularza w dokumencie PDF za pomocą Aspose.PDF dla .NET. Wyjaśnimy kod źródłowy C# krok po kroku, aby przeprowadzić Cię przez ten proces.
 
 ## Krok 1: Przygotowanie
 
-Upewnij się, że zaimportowałeś niezbędne biblioteki i ustaw ścieżkę do katalogu dokumentów:
+Upewnij się, że zaimportowałeś niezbędne biblioteki i ustawiłeś ścieżkę do katalogu dokumentów:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -25,9 +25,9 @@ Załaduj istniejący dokument PDF:
 Document pdfDocument = new Document(dataDir + "MoveFormField.pdf");
 ```
 
-## Krok 3: Uzyskaj pole formularza
+## Krok 3: Pobierz pole formularza
 
-Uzyskaj pole formularza, które chcesz przenieść:
+Pobierz pole formularza, które chcesz przenieść:
 
 ```csharp
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
@@ -50,7 +50,7 @@ dataDir = dataDir + "MoveFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Przykładowy kod źródłowy dla pola formularza przenoszenia przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Przenieś pole formularza przy użyciu Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -58,7 +58,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "MoveFormField.pdf");
 // Zdobądź pole
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
-// Zmień lokalizację pola
+// Modyfikuj lokalizację pola
 textBoxField.Rect = new Aspose.Pdf.Rectangle(300, 400, 600, 500);
 dataDir = dataDir + "MoveFormField_out.pdf";
 // Zapisz zmodyfikowany dokument
@@ -68,23 +68,23 @@ Console.WriteLine("\nForm field moved successfully to a new location.\nFile save
 
 ## Wniosek
 
-W tym samouczku nauczyliśmy się, jak przenosić pole formularza w dokumencie PDF za pomocą Aspose.PDF dla .NET. Wykonując poniższe kroki, możesz łatwo przejść do konkretnego pola i w razie potrzeby zmienić jego lokalizację.
+W tym samouczku nauczyliśmy się, jak przenieść pole formularza w dokumencie PDF za pomocą Aspose.PDF dla .NET. Wykonując te kroki, możesz łatwo przejść do określonego pola i zmienić jego lokalizację w razie potrzeby.
 
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Czy mogę przenieść wiele pól formularza w jednym dokumencie PDF przy użyciu Aspose.PDF dla .NET?
+#### P: Czy mogę przenosić wiele pól formularzy w obrębie jednego dokumentu PDF, korzystając z Aspose.PDF dla platformy .NET?
 
-Odp.: Tak, możesz przenosić wiele pól formularzy w jednym dokumencie PDF za pomocą Aspose.PDF dla .NET. Po prostu powtórz ten proces dla każdego pola formularza, które chcesz przenieść.
+A: Tak, możesz przenosić wiele pól formularza w ramach jednego dokumentu PDF za pomocą Aspose.PDF dla .NET. Po prostu powtórz proces dla każdego pola formularza, które chcesz przenieść.
 
-#### P: Czy przeniesienie pola formularza wpłynie na powiązane z nim dane lub funkcjonalność?
+#### P: Czy przeniesienie pola formularza będzie miało wpływ na powiązane z nim dane lub funkcjonalność?
 
-O: Nie, przeniesienie pola formularza nie ma wpływu na powiązane z nim dane ani funkcjonalność. Pole formularza zachowuje wszystkie swoje właściwości i wartości po przeniesieniu do nowej lokalizacji.
+A: Nie, przeniesienie pola formularza nie wpływa na powiązane z nim dane ani funkcjonalność. Pole formularza zachowuje wszystkie swoje właściwości i wartości po przeniesieniu do nowej lokalizacji.
 
 #### P: Jak mogę określić dokładne współrzędne nowej lokalizacji pola formularza?
 
- Odp.: Możesz określić nową lokalizację za pomocą`Aspose.Pdf.Rectangle` class, w której definiujesz współrzędne X i Y lewego górnego rogu oraz współrzędne X i Y prawego dolnego rogu prostokątnego obszaru.
+ A: Możesz określić nową lokalizację za pomocą`Aspose.Pdf.Rectangle` klasa, w której definiujesz współrzędne X i Y lewego górnego rogu oraz współrzędne X i Y prawego dolnego rogu prostokątnego obszaru.
 
-#### P: Czy Aspose.PDF dla .NET jest kompatybilny zarówno ze środowiskami Windows, jak i Linux?
+#### P: Czy Aspose.PDF dla .NET jest kompatybilny ze środowiskiem Windows i Linux?
 
-Odp.: Tak, Aspose.PDF dla .NET jest kompatybilny zarówno ze środowiskami Windows, jak i Linux, zapewniając programistom elastyczność pracy w preferowanych przez nich systemach operacyjnych.
+O: Tak, Aspose.PDF dla platformy .NET jest kompatybilny zarówno ze środowiskami Windows, jak i Linux, zapewniając programistom elastyczność pracy w preferowanych przez nich systemach operacyjnych.

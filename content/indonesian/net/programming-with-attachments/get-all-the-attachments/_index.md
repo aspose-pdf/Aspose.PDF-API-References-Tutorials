@@ -1,155 +1,154 @@
 ---
 title: Dapatkan Semua Lampiran Dalam File PDF
 linktitle: Dapatkan Semua Lampiran Dalam File PDF
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Pelajari cara mendapatkan semua lampiran dalam file PDF dengan Aspose.PDF untuk .NET. Panduan langkah demi langkah untuk penanganan mudah.
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara mengekstrak semua lampiran dari file PDF menggunakan Aspose.PDF untuk .NET dalam tutorial langkah demi langkah ini.
 type: docs
 weight: 40
 url: /id/net/programming-with-attachments/get-all-the-attachments/
 ---
-Dalam tutorial ini, kami akan memandu Anda melalui kode sumber C# berikut langkah demi langkah untuk mendapatkan semua lampiran dalam file PDF menggunakan Aspose.PDF untuk .NET.
+## Perkenalan
 
-Pastikan Anda telah menginstal perpustakaan Aspose.PDF dan mengatur lingkungan pengembangan Anda sebelum memulai. Juga memiliki pengetahuan dasar tentang pemrograman C#.
+Di era digital, PDF telah menjadi andalan untuk berbagi dokumen. PDF serbaguna, aman, dan dapat memuat banyak informasi, termasuk lampiran. Pernahkah Anda bertanya-tanya bagaimana cara mengekstrak semua informasi tersembunyi dari file PDF? Nah, Anda beruntung! Dalam tutorial ini, kita akan mendalami penggunaan Aspose.PDF untuk .NET guna mendapatkan semua lampiran dalam file PDF. Baik Anda pengembang berpengalaman atau baru memulai, panduan ini akan memandu Anda melalui proses ini langkah demi langkah.
 
-### Langkah 1: Pengaturan Direktori Dokumen
+## Prasyarat
 
-Dalam kode sumber yang disediakan, Anda perlu menentukan direktori tempat file PDF berada dari mana Anda ingin mendapatkan lampirannya. Ubah variabel "dataDir" ke direktori yang diinginkan.
+Sebelum kita masuk ke kode, mari pastikan Anda memiliki semua yang dibutuhkan untuk memulai:
+
+1. Visual Studio: Pastikan Anda telah menginstal Visual Studio di komputer Anda. Ini adalah IDE yang tepat untuk pengembangan .NET.
+2.  Aspose.PDF untuk .NET: Anda perlu mengunduh dan menginstal pustaka Aspose.PDF. Anda dapat menemukannya[Di Sini](https://releases.aspose.com/pdf/net/).
+3. Pengetahuan Dasar C#: Keakraban dengan pemrograman C# akan membantu Anda memahami potongan kode dengan lebih baik.
+
+## Paket Impor
+
+Untuk memulai, Anda perlu mengimpor paket yang diperlukan ke dalam proyek C# Anda. Berikut cara melakukannya:
+
+### Buat Proyek Baru
+
+Buka Visual Studio dan buat proyek C# baru. Pilih Aplikasi Konsol untuk mempermudah.
+
+### Tambahkan Referensi Aspose.PDF
+
+1. Klik kanan pada proyek Anda di Solution Explorer.
+2. Pilih “Kelola Paket NuGet.”
+3. Cari “Aspose.PDF” dan instal versi terbaru.
+
+### Impor Namespace
+
+Di bagian atas file C# Anda, impor namespace Aspose.PDF
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using System;
 ```
 
-### Langkah 2: Buka dokumen PDF yang ada
+Sekarang setelah lingkungan kita disiapkan, mari masuk ke inti proses mengekstrak lampiran dari berkas PDF.
 
-Kami membuka dokumen PDF yang ada menggunakan jalur yang ditentukan.
+## Langkah 1: Siapkan Direktori Dokumen Anda
+
+Pertama-tama, Anda perlu menentukan jalur ke direktori dokumen Anda. Di sinilah berkas PDF Anda akan ditempatkan.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Mengganti`YOUR DOCUMENT DIRECTORY` dengan jalur sebenarnya tempat file PDF Anda disimpan. Hal ini penting karena program perlu mengetahui tempat mencari file tersebut.
+
+## Langkah 2: Buka Dokumen PDF
+
+Selanjutnya, kita akan membuka dokumen PDF menggunakan pustaka Aspose.PDF. Di sinilah keajaiban dimulai!
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
 ```
 
-### Langkah 3: Mendapatkan Koleksi Lampiran
+ Di sini, kita membuat yang baru`Document` objek dan berikan jalur file PDF. Pastikan nama file sama persis, termasuk ekstensinya.
 
-Kami mendapatkan kumpulan lampiran dari dokumen.
+## Langkah 3: Akses Koleksi File Tertanam
+
+Sekarang setelah dokumen terbuka, mari akses koleksi file tertanam. Di sinilah semua lampiran disimpan.
 
 ```csharp
 EmbeddedFileCollection embeddedFiles = pdfDocument.EmbeddedFiles;
 ```
 
-### Langkah 4: Mengambil lampiran
+Dengan baris ini, kita menarik semua berkas yang tertanam ke dalam suatu koleksi yang dapat kita ulangi dengan mudah.
 
-Kami menelusuri koleksi untuk mendapatkan semua lampiran dan menampilkan informasinya. Kami juga menyimpan lampiran dalam file individual.
+## Langkah 4: Hitung File yang Tertanam
+
+Selalu baik untuk mengetahui berapa banyak lampiran yang Anda tangani. Mari kita cetak jumlah total file yang disematkan.
+
+```csharp
+Console.WriteLine("Total files : {0}", embeddedFiles.Count);
+```
+
+Ini akan memberi Anda gambaran singkat tentang berapa banyak lampiran dalam PDF Anda.
+
+## Langkah 5: Ulangi Melalui Lampiran
+
+Sekarang tibalah bagian yang menyenangkan! Kita akan mengulang setiap spesifikasi file dalam koleksi file tertanam dan mengekstrak detailnya.
 
 ```csharp
 int count = 1;
-foreach(FileSpecification fileSpecification in embeddedFiles)
-{
-Console.WriteLine("Name: {0}", fileSpecification.Name);
-Console.WriteLine("Description: {0}", fileSpecification.Description);
-Console.WriteLine("MIME Type: {0}", fileSpecification.MIMEType);
 
-// Periksa apakah parameter objek berisi informasi tambahan
+foreach (FileSpecification fileSpecification in embeddedFiles)
+{
+    Console.WriteLine("Name: {0}", fileSpecification.Name);
+    Console.WriteLine("Description: {0}", fileSpecification.Description);
+    Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
+```
+
+Dalam proses ini, kami mencetak nama, deskripsi, dan tipe MIME setiap lampiran. Ini memberi Anda gambaran jelas tentang apa yang ada di dalam PDF Anda.
+
+## Langkah 6: Periksa Parameter Tambahan
+
+Beberapa lampiran mungkin memiliki parameter tambahan. Mari kita periksa apakah ada dan cetak.
+
+```csharp
 if (fileSpecification.Params != null)
 {
-Console.WriteLine("CheckSum: {0}", fileSpecification.Params.CheckSum);
-Console.WriteLine("Creation date: {0}", fileSpecification.Params.CreationDate);
-Console.WriteLine("Modified date: {0}", fileSpecification.Params.ModDate);
-Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
+    Console.WriteLine("CheckSum: {0}", fileSpecification.Params.CheckSum);
+    Console.WriteLine("Creation Date: {0}", fileSpecification.Params.CreationDate);
+    Console.WriteLine("Modification Date: {0}", fileSpecification.Params.ModDate);
+    Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
 }
+```
 
-// Ambil lampiran dan simpan dalam file
+Langkah ini memastikan Anda tidak kehilangan detail penting apa pun tentang lampiran.
+
+## Langkah 7: Ekstrak dan Simpan Lampiran
+
+Terakhir, mari kita ekstrak isi setiap lampiran dan simpan ke dalam sebuah berkas. Di sinilah Anda akan melihat hasil kerja keras Anda!
+
+```csharp
 byte[] fileContent = new byte[fileSpecification.Contents.Length];
 fileSpecification.Contents.Read(fileContent, 0, fileContent.Length);
 FileStream fileStream = new FileStream(dataDir + count + "_out" + ".txt", FileMode.Create);
 fileStream.Write(fileContent, 0, fileContent.Length);
 fileStream.Close();
-
 count += 1;
-}
 ```
 
-
-### Contoh kode sumber untuk Dapatkan Semua Lampiran menggunakan Aspose.PDF untuk .NET 
-
-```csharp
-
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Buka dokumen
-Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-// Dapatkan koleksi file yang disematkan
-EmbeddedFileCollection embeddedFiles = pdfDocument.EmbeddedFiles;
-// Dapatkan hitungan file yang disematkan
-Console.WriteLine("Total files : {0}", embeddedFiles.Count);
-int count = 1;
-// Ulangi koleksi untuk mendapatkan semua lampiran
-foreach (FileSpecification fileSpecification in embeddedFiles)
-{
-	Console.WriteLine("Name: {0}", fileSpecification.Name);
-	Console.WriteLine("Description: {0}",
-	fileSpecification.Description);
-	Console.WriteLine("Mime Type: {0}", fileSpecification.MIMEType);
-	//Periksa apakah objek parameter berisi parameter
-	if (fileSpecification.Params != null)
-	{
-		Console.WriteLine("CheckSum: {0}",
-		fileSpecification.Params.CheckSum);
-		Console.WriteLine("Creation Date: {0}",
-		fileSpecification.Params.CreationDate);
-		Console.WriteLine("Modification Date: {0}",
-		fileSpecification.Params.ModDate);
-		Console.WriteLine("Size: {0}", fileSpecification.Params.Size);
-	}
-	// Dapatkan lampiran dan tulis ke file atau streaming
-	byte[] fileContent = new byte[fileSpecification.Contents.Length];
-	fileSpecification.Contents.Read(fileContent, 0,
-	fileContent.Length);
-	FileStream fileStream = new FileStream(dataDir + count + "_out" + ".txt",
-	FileMode.Create);
-	fileStream.Write(fileContent, 0, fileContent.Length);
-	fileStream.Close();
-	count+=1;
-}
-
-```
+ Dalam kode ini, kita membaca isi setiap lampiran ke dalam array byte dan kemudian menuliskannya ke file baru. File-file tersebut akan diberi nama secara berurutan (misalnya,`1_out.txt`, `2_out.txt`, dll.).
 
 ## Kesimpulan
 
-Dalam tutorial ini, kami menjelaskan cara mendapatkan semua lampiran dari file PDF menggunakan Aspose.PDF untuk .NET. Anda sekarang dapat menggunakan pengetahuan ini untuk mengekstrak dan memanipulasi lampiran dari file PDF Anda.
+Nah, itu dia! Anda telah berhasil mengekstrak semua lampiran dari file PDF menggunakan Aspose.PDF for .NET. Pustaka canggih ini memudahkan Anda untuk memanipulasi dokumen PDF dan mengakses harta karun tersembunyi di dalamnya. Baik Anda sedang mengerjakan proyek pribadi atau aplikasi profesional, mengetahui cara mengekstrak lampiran bisa sangat berguna.
 
-## FAQ untuk mendapatkan semua lampiran dalam file PDF
+## Pertanyaan yang Sering Diajukan
 
-#### T: Mengapa saya perlu mengambil semua lampiran dari dokumen PDF?
+### Apa itu Aspose.PDF untuk .NET?
+Aspose.PDF untuk .NET adalah pustaka yang memungkinkan pengembang untuk membuat, memanipulasi, dan mengonversi dokumen PDF secara terprogram.
 
-J: Mengambil lampiran memungkinkan Anda mengakses dan memanipulasi file tambahan yang tertanam dalam PDF, yang dapat berguna untuk pengarsipan, berbagi, atau pemrosesan lebih lanjut.
+### Dapatkah saya menggunakan Aspose.PDF secara gratis?
+ Ya, Aspose menawarkan versi uji coba gratis yang dapat Anda gunakan untuk menjelajahi fitur-fitur pustaka. Lihatlah[Di Sini](https://releases.aspose.com/).
 
-#### T: Jenis file apa saja yang dapat dilampirkan ke dokumen PDF?
+### Bagaimana cara mendapatkan dukungan untuk Aspose.PDF?
+ Anda bisa mendapatkan dukungan melalui forum Aspose[Di Sini](https://forum.aspose.com/c/pdf/10).
 
-J: Dokumen PDF dapat berisi berbagai macam file lampiran, termasuk gambar, dokumen, spreadsheet, file audio, dan banyak lagi.
+### Apakah ada lisensi sementara yang tersedia?
+Ya, Anda bisa mendapatkan lisensi sementara untuk Aspose.PDF[Di Sini](https://purchase.aspose.com/temporary-license/).
 
-#### T: Bagaimana tutorial ini membantu saya mengambil lampiran dari PDF menggunakan Aspose.PDF untuk .NET?
-
-J: Tutorial ini memberikan petunjuk langkah demi langkah dan kode sumber C# untuk mengakses dan mengambil semua lampiran dalam dokumen PDF.
-
-#### T: Bisakah saya mengambil lampiran tertentu dan bukan semua lampiran menggunakan tutorial ini?
-
-J: Ya, Anda dapat mengubah kode yang diberikan untuk mengambil lampiran secara selektif berdasarkan kebutuhan Anda.
-
-#### T: Informasi apa tentang setiap lampiran yang dapat saya peroleh menggunakan tutorial ini?
-
-J: Tutorial ini menunjukkan cara mengambil dan menampilkan detail seperti nama lampiran, deskripsi, tipe MIME, tanggal pembuatan, tanggal modifikasi, dan ukuran.
-
-#### T: Bagaimana cara lampiran yang diambil disimpan menggunakan tutorial ini?
-
-J: Tutorial ini memandu Anda dalam menyimpan setiap lampiran yang diambil sebagai file terpisah di direktori yang ditentukan.
-
-#### T: Bisakah saya menggunakan pengetahuan ini untuk mengekstrak lampiran dari file PDF yang dilindungi kata sandi?
-
-J: Ya, Anda dapat menerapkan prinsip serupa untuk mengambil lampiran dari file PDF yang dilindungi kata sandi menggunakan Aspose.PDF untuk .NET.
-
-#### T: Bagaimana Aspose.PDF untuk .NET memfasilitasi pengambilan lampiran?
-
-J: Aspose.PDF untuk .NET menyediakan API intuitif yang memungkinkan Anda mengakses dan memanipulasi lampiran dalam dokumen PDF dengan mudah.
-
-#### T: Apakah ada skenario tertentu yang direkomendasikan untuk mengambil lampiran?
-
-J: Mengambil lampiran berguna ketika Anda perlu mengakses file yang tertanam dalam PDF, seperti mengekstrak gambar, file audio, atau dokumen tambahan.
+### Di mana saya dapat menemukan dokumentasinya?
+ Dokumentasi untuk Aspose.PDF untuk .NET dapat ditemukan[Di Sini](https://reference.aspose.com/pdf/net/).

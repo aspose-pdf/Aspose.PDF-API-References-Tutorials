@@ -174,7 +174,7 @@ S: Så här roterar du textfragment med textfragment:
 
 #### F: Kan jag använda olika rotationsvinklar på olika textfragment?
 
- A: Ja, du kan använda olika rotationsvinklar på olika`TextFragment` föremål. Varje textfragment kan ha sin egen rotationsvinkel specificerad med hjälp av`TextState.Rotation` fast egendom.
+ A: Ja, du kan använda olika rotationsvinklar på olika`TextFragment` föremål. Varje textfragment kan ha sin egen rotationsvinkel specificerad med hjälp av`TextState.Rotation` egendom.
 
 #### F: Hur sparar jag PDF-dokumentet med roterade textfragment?
 

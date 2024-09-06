@@ -1,109 +1,92 @@
 ---
 title: 페이지에서 모든 주석 가져오기
 linktitle: 페이지에서 모든 주석 가져오기
-second_title: .NET API 참조용 Aspose.PDF
-description: 이 단계별 가이드를 통해 .NET용 Aspose.PDF를 사용하여 PDF 페이지에서 모든 주석을 검색하는 방법을 알아보세요.
+second_title: .NET API 참조를 위한 Aspose.PDF
+description: 이 단계별 가이드에서 Aspose.PDF for .NET을 사용하여 PDF 파일에서 주석을 추출하는 방법을 알아보세요. 모든 레벨의 개발자에게 완벽합니다.
 type: docs
 weight: 70
 url: /ko/net/annotations/getallannotationsfrompage/
 ---
-이 문서에서는 Aspose.PDF for .NET을 사용하여 PDF 페이지에서 모든 주석을 추출하는 과정을 안내합니다. Aspose.PDF for .NET은 개발자가 PDF 문서를 생성, 편집 및 변환할 수 있는 라이브러리입니다. 이 가이드의 도움으로 제공된 C# 소스 코드를 사용하여 특정 PDF 페이지에서 모든 주석을 얻을 수 있습니다.
+## 소개
 
-.NET용 Aspose.PDF를 사용하여 PDF 페이지의 모든 주석을 얻는 방법은 아래 단계를 따르십시오.
+.NET용 Aspose.PDF 세계에 오신 것을 환영합니다! PDF 문서를 프로그래밍 방식으로 조작하려는 경우 올바른 곳에 왔습니다. Aspose.PDF는 개발자가 PDF 파일을 쉽게 만들고, 편집하고, 관리할 수 있는 강력한 라이브러리입니다. 이 튜토리얼에서는 PDF 페이지에서 주석을 추출하는 특정 기능에 대해 자세히 알아보겠습니다. 노련한 개발자이든 방금 시작한 개발자이든 이 가이드는 단계별로 프로세스를 안내하여 모든 세부 사항을 이해할 수 있도록 합니다.
 
-## 1단계: 문서 디렉토리 경로
+## 필수 조건
 
-.NET용 Aspose.PDF를 사용하여 PDF 페이지에서 모든 주석을 가져오는 첫 번째 단계는 PDF 파일이 저장된 문서 디렉터리의 경로를 설정하는 것입니다. 다음 코드 줄을 수정하여 이 작업을 수행할 수 있습니다.
+코드로 넘어가기 전에 시작하는 데 필요한 모든 것이 있는지 확인해 보겠습니다.
+
+1. Visual Studio: 컴퓨터에 Visual Studio가 설치되어 있는지 확인하세요. 여기서 코드를 작성하고 실행합니다.
+2. .NET Framework: .NET framework에 대한 지식이 필수적입니다. 처음이라면 걱정하지 마세요. 간단하게 설명해 드리겠습니다.
+3.  .NET용 Aspose.PDF: Aspose.PDF 라이브러리를 다운로드하여 설치해야 합니다. 찾을 수 있습니다.[여기](https://releases.aspose.com/pdf/net/).
+4. 샘플 PDF 파일: 이 튜토리얼에서는 주석이 있는 PDF 파일이 필요합니다. 직접 만들거나 인터넷에서 샘플을 다운로드할 수 있습니다.
+
+## 패키지 가져오기
+
+시작하려면 필요한 패키지를 가져와야 합니다. Visual Studio 프로젝트를 열고 Aspose.PDF 라이브러리에 대한 참조를 추가합니다. NuGet 패키지 관리자를 사용하여 이를 수행할 수 있습니다.
 
 ```csharp
+using System.IO;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf;
+using System;
+```
+
+## 1단계: 문서 디렉토리 설정
+
+주석을 추출하기 전에 PDF 문서가 어디에 있는지 지정해야 합니다. 이는 문서 디렉토리 경로를 정의하여 수행됩니다.
+
+```csharp
+// 문서 디렉토리의 경로입니다.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
-## 2단계: PDF 파일이 저장됩니다.
 
-"YOUR DOCUMENT DIRECTORY"를 PDF 파일이 저장된 폴더의 경로로 바꾸십시오. 예를 들어:
+ 바꾸다`"YOUR DOCUMENT DIRECTORY"` PDF 파일이 저장된 실제 경로와 함께. 이것은 프로그램이 파일을 찾을 위치를 알아야 하기 때문에 중요합니다.
 
-```csharp
-string dataDir = @"C:\Users\JohnDoe\Documents\PDFs\";
-```
+## 2단계: PDF 문서 열기
 
-## 3단계: 문서 열기
-
-다음 단계는 추출하려는 주석이 포함된 PDF 문서를 여는 것입니다. 다음 코드를 추가하면 됩니다.
+ 이제 문서 디렉토리가 설정되었으므로 PDF 파일을 열 차례입니다.`Document` 이를 위해 Aspose.PDF 라이브러리의 클래스를 사용합니다.
 
 ```csharp
-Document pdfDocument = new Document(dataDir + "GetAllAnnotationsFromPage.pdf");
-```
-
-이 코드 줄은 Document 클래스의 새 인스턴스를 초기화하고 PDF 문서 "GetAllAnnotationsFromPage.pdf"를 로드합니다. 이 파일 이름을 PDF 파일 이름으로 바꾸십시오.
-
-## 4단계: 모든 주석을 반복합니다.
-
-PDF 문서를 열면 특정 페이지의 모든 주석을 반복해서 살펴볼 수 있습니다. 예를 들어 PDF 문서의 첫 번째 페이지에 있는 모든 주석을 반복하려면 다음 코드를 추가하세요.
-
-```csharp
-foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
-{
-    // 코드는 여기에 표시됩니다.
-}
-```
-
-이 코드는 PDF 문서의 첫 번째 페이지에 있는 모든 주석을 반복하고 각 주석을 "annotation" 변수에 할당합니다.
-
-## 5단계: 주석 속성 가져오기
-
-각 주석의 속성을 추출하려면 foreach 루프 내에 다음 코드를 추가하면 됩니다.
-
-```csharp
-Console.WriteLine("Title : {0} ", annotation.Title);
-Console.WriteLine("Subject : {0} ", annotation.Subject);
-Console.WriteLine("Contents : {0} ", annotation.Contents);
-```
-
-이 코드는 각 주석의 제목, 주제 및 내용을 콘솔에 기록합니다.
-
-### .NET용 Aspose.PDF를 사용하여 페이지에서 모든 주석 가져오기에 대한 예제 소스 코드
-
-다음은 .NET용 Aspose.PDF를 사용하여 PDF 페이지에서 모든 주석을 가져오는 전체 소스 코드입니다.
-
-```csharp
-// 문서 디렉터리의 경로입니다.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
 // 문서 열기
 Document pdfDocument = new Document(dataDir + "GetAllAnnotationsFromPage.pdf");
+```
 
-// 모든 주석을 반복합니다.
+ 이 줄에서 우리는 새로운 인스턴스를 생성합니다.`Document` 클래스를 만들고 PDF 파일의 경로를 전달합니다. 이를 통해 PDF의 내용과 상호 작용할 수 있습니다.
+
+## 3단계: 주석 반복
+
+문서를 열면 이제 주석에 액세스할 수 있습니다. 주석은 PDF에 추가된 주석, 강조 표시 또는 메모입니다. 문서의 첫 번째 페이지에 있는 모든 주석을 반복합니다.
+
+```csharp
+// 모든 주석을 반복합니다
 foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
 {
-	// 주석 속성 가져오기
-	Console.WriteLine("Title : {0} ", annotation.Title);
-	Console.WriteLine("Subject : {0} ", annotation.Subject);
-	Console.WriteLine("Contents : {0} ", annotation.Contents);                
+    // 주석 속성 가져오기
+    Console.WriteLine("Title : {0} ", annotation.Title);
+    Console.WriteLine("Subject : {0} ", annotation.Subject);
+    Console.WriteLine("Contents : {0} ", annotation.Contents);                
 }
 ```
+
+ 이 코드 조각에서는 다음을 사용합니다.`foreach` 첫 번째 페이지의 각 주석을 반복하기 위한 루프입니다. 각 주석에 대해 제목, 주제 및 내용을 콘솔에 인쇄합니다. 여기서 마법이 일어나는 것을 볼 수 있습니다!
 
 ## 결론
 
-이 튜토리얼에서는 .NET용 Aspose.PDF를 사용하여 PDF 문서의 특정 페이지에서 모든 주석을 얻는 방법을 살펴보았습니다. 단계별 가이드를 따르고 제공된 C# 소스 코드를 사용하여 개발자는 PDF 문서에서 주석을 쉽게 추출하고 관리할 수 있습니다.
+축하합니다! Aspose.PDF for .NET을 사용하여 PDF 문서에서 주석을 추출하는 방법을 성공적으로 배웠습니다. 이 강력한 라이브러리는 PDF 파일을 프로그래밍 방식으로 작업할 수 있는 가능성의 세계를 열어줍니다. 보고서를 만들거나, 문서를 관리하거나, 단순히 정보를 추출하든 Aspose.PDF가 해결해 드립니다.
 
-### FAQ
+## 자주 묻는 질문
 
-#### Q: PDF 문서의 주석이란 무엇입니까?
+### .NET용 Aspose.PDF란 무엇인가요?
+.NET용 Aspose.PDF는 개발자가 프로그래밍 방식으로 PDF 문서를 만들고, 조작하고, 관리할 수 있는 라이브러리입니다.
 
-답변: PDF 문서의 주석은 문서의 특정 부분에 대한 추가 정보, 설명 또는 메모를 제공하는 대화형 요소입니다. 주석에는 텍스트 메모, 설명, 강조 표시 및 기타 대화형 요소가 포함될 수 있습니다.
+### Aspose.PDF를 어떻게 설치하나요?
+Visual Studio의 NuGet 패키지 관리자를 통해 Aspose.PDF를 설치하거나 다음에서 직접 다운로드할 수 있습니다.[Aspose 웹사이트](https://releases.aspose.com/pdf/net/).
 
-#### Q: 특정 페이지에서만 주석을 받을 수 있나요?
+### 여러 페이지에서 주석을 추출할 수 있나요?
+네, 문서의 모든 페이지를 탐색하여 각 페이지에서 주석을 추출할 수 있습니다.
 
-A: 예, .NET용 Aspose.PDF를 사용하면 요구 사항에 따라 특정 페이지 또는 전체 문서에서 주석을 얻을 수 있습니다.
+### 무료 체험판이 있나요?
+ 예, Aspose.PDF를 무료로 사용해 보려면 여기에서 평가판을 다운로드하세요.[여기](https://releases.aspose.com/).
 
-#### Q: .NET용 Aspose.PDF는 비밀번호로 보호된 PDF 파일에서 주석 추출을 지원합니까?
-
- A: 예, .NET용 Aspose.PDF는 비밀번호로 보호된 PDF 파일에서 주석 추출을 지원합니다. PDF 문서를 로드할 때 올바른 비밀번호를 제공해야 합니다.`Document` 수업.
-
-#### Q: 콘텐츠나 작성자 등 속성을 기준으로 주석을 필터링할 수 있습니까?
-
-A: 예, .NET용 Aspose.PDF는 콘텐츠, 작성자 또는 생성 날짜와 같은 속성을 기반으로 주석에 액세스하고 필터링하는 방법을 제공합니다. 모든 주석을 반복하여 필터링하려는 특정 속성을 확인할 수 있습니다.
-
-#### Q: .NET용 Aspose.PDF는 다양한 유형의 PDF 문서에서 주석 추출을 지원합니까?
-
-A: 예, .NET용 Aspose.PDF는 텍스트 마크업 주석, 자유 텍스트 주석 등을 포함하여 다양한 유형의 PDF 문서에서 주석을 추출하는 다양한 방법을 제공합니다.
+### Aspose.PDF에 대한 지원은 어디에서 찾을 수 있나요?
+ 지원을 받고 질문할 수 있습니다.[Aspose 포럼](https://forum.aspose.com/c/pdf/10).

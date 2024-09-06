@@ -1,123 +1,124 @@
 ---
-title: Désactiver la compression des fichiers dans un fichier PDF
-linktitle: Désactiver la compression des fichiers dans un fichier PDF
-second_title: Aspose.PDF pour la référence de l'API .NET
-description: Découvrez comment désactiver la compression de fichier dans un fichier PDF avec Aspose.PDF pour .NET. Guide étape par étape pour une manipulation facile.
+title: Désactiver la compression des fichiers dans le fichier PDF
+linktitle: Désactiver la compression des fichiers dans le fichier PDF
+second_title: Référence de l'API Aspose.PDF pour .NET
+description: Découvrez comment désactiver la compression de fichiers PDF à l'aide d'Aspose.PDF pour .NET grâce à ce guide étape par étape. Améliorez vos compétences en gestion PDF.
 type: docs
 weight: 30
 url: /fr/net/programming-with-attachments/disable-files-compression/
 ---
-Dans ce didacticiel, nous vous guiderons étape par étape à travers le code source C# suivant pour désactiver la compression de fichiers au format PDF à l'aide d'Aspose.PDF pour .NET.
+## Introduction
 
-Assurez-vous d'avoir installé la bibliothèque Aspose.PDF et configuré votre environnement de développement avant de commencer. Posséder également des connaissances de base en programmation C#.
+À l'ère du numérique, la gestion efficace des fichiers PDF est essentielle pour une utilisation personnelle et professionnelle. Que vous soyez un développeur cherchant à améliorer votre application ou un professionnel gérant des documents, comprendre comment manipuler les fichiers PDF peut vous faire gagner du temps et des efforts. L'une des exigences courantes est de désactiver la compression de fichiers dans les documents PDF. Cela peut être particulièrement utile lorsque vous souhaitez vous assurer que les fichiers intégrés restent dans leur format d'origine sans aucune modification. Dans ce didacticiel, nous verrons comment désactiver la compression de fichiers dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. 
 
-### Étape 1 : configuration du répertoire de documents
+## Prérequis
 
-Dans le code source fourni, vous devez spécifier le répertoire où se trouve le fichier PDF dans lequel vous souhaitez désactiver la compression de fichier. Remplacez la variable "dataDir" par le répertoire souhaité.
+Avant de plonger dans le code, vous devez mettre en place quelques prérequis :
+
+1.  Aspose.PDF pour .NET : Assurez-vous que la bibliothèque Aspose.PDF est installée. Vous pouvez la télécharger à partir du[site web](https://releases.aspose.com/pdf/net/).
+2. Visual Studio : un environnement de développement dans lequel vous pouvez écrire et exécuter votre code .NET.
+3. Connaissances de base de C# : la familiarité avec la programmation C# vous aidera à mieux comprendre les extraits de code.
+
+## Paquets d'importation
+
+Pour commencer, vous devez importer les packages nécessaires dans votre projet C#. Voici comment procéder :
+
+### Créer un nouveau projet
+
+Ouvrez Visual Studio et créez un nouveau projet C#. Vous pouvez choisir une application console pour plus de simplicité.
+
+### Ajouter une référence Aspose.PDF
+
+1. Faites un clic droit sur votre projet dans l’Explorateur de solutions.
+2. Sélectionnez « Gérer les packages NuGet ».
+3. Recherchez « Aspose.PDF » et installez la dernière version.
+
+### Importer l'espace de noms
+
+En haut de votre fichier C#, importez l'espace de noms Aspose.PDF :
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-### Étape 2 : Ouvrez le document PDF existant
+Maintenant que nous avons tout configuré, décomposons le processus de désactivation de la compression de fichiers dans un fichier PDF en étapes gérables.
 
-Nous ouvrons le document PDF existant en utilisant le chemin spécifié.
+## Étape 1 : Définir le répertoire des documents
 
-```csharp
-Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-```
-
-### Étape 3 : Configuration du nouveau fichier à ajouter en pièce jointe
-
-Nous configurons le nouveau fichier que nous souhaitons ajouter en pièce jointe. Dans cet exemple, nous ajoutons un fichier texte avec le nom "test_out.txt" et une description "Exemple de fichier texte".
+Tout d'abord, vous devez spécifier le chemin d'accès au répertoire où se trouve votre fichier PDF. Ceci est crucial car cela indique au programme où trouver le fichier que vous souhaitez manipuler.
 
 ```csharp
-FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
-```
-
-### Étape 4 : Désactiver la compression de fichiers
-
-Nous désactivons la compression de fichiers en définissant la propriété Encoding de l'objet FileSpecification sur FileEncoding.None.
-
-```csharp
-fileSpecification.Encoding = FileEncoding.None;
-```
-
-### Étape 5 : Ajout de la pièce jointe à la collection de pièces jointes du document
-
-Nous ajoutons la pièce jointe à la collection de pièces jointes du document.
-
-```csharp
-pdfDocument.EmbeddedFiles.Add(fileSpecification);
-```
-
-### Étape 6 : Enregistrez le nouveau fichier de sortie
-
-Enfin, nous enregistrons le nouveau fichier PDF résultant sous le nom "DisableFilesCompression_out.pdf" dans le répertoire spécifié.
-
-```csharp
-pdfDocument.Save(dataDir + "DisableFilesCompression_out.pdf");
-```
-
-
-### Exemple de code source pour désactiver la compression de fichiers à l'aide d'Aspose.PDF pour .NET 
-
-```csharp
-
-// Le chemin d'accès au répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-// Configurer le nouveau fichier à ajouter en pièce jointe
-FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
-// Spécifiez la propriété Encoding en la définissant sur FileEncoding.None
-fileSpecification.Encoding = FileEncoding.None;
-//Ajouter une pièce jointe à la collection de pièces jointes du document
-pdfDocument.EmbeddedFiles.Add(fileSpecification);
-dataDir = dataDir + "DisableFilesCompression_out.pdf";
-// Enregistrer la nouvelle sortie
-pdfDocument.Save(dataDir);
-Console.WriteLine("\nFile compression disabled successfully.\nFile saved at " + dataDir);
+```
 
+## Étape 2 : Charger le document PDF
+
+ Ensuite, vous chargez le document PDF que vous souhaitez modifier. Cela se fait à l'aide de l'`Document` cours fourni par Aspose.PDF.
+
+```csharp
+Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
+```
+
+## Étape 3 : Configurer le fichier à ajouter en tant que pièce jointe
+
+Vous devez maintenant créer une nouvelle spécification de fichier pour la pièce jointe que vous souhaitez ajouter au PDF. Cela implique de spécifier le nom et le type du fichier.
+
+```csharp
+FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
+```
+
+## Étape 4 : Spécifier la propriété d'encodage
+
+ Pour garantir que le fichier est ajouté sans compression, vous devez définir la propriété d'encodage de la spécification du fichier sur`FileEncoding.None`Cette étape est cruciale car elle affecte directement la manière dont le fichier est intégré dans le PDF.
+
+```csharp
+fileSpecification.Encoding = FileEncoding.None;
+```
+
+## Étape 5 : Ajouter une pièce jointe au document
+
+Une fois la spécification du fichier prête, vous pouvez maintenant ajouter la pièce jointe à la collection de pièces jointes du document. Cette étape intègre le fichier dans le PDF.
+
+```csharp
+pdfDocument.EmbeddedFiles.Add(fileSpecification);
+```
+
+## Étape 6 : Enregistrer la nouvelle sortie
+
+Enfin, vous devez enregistrer le document PDF modifié. Spécifiez le chemin de sortie où vous souhaitez enregistrer le nouveau fichier.
+
+```csharp
+dataDir = dataDir + "DisableFilesCompression_out.pdf";
+pdfDocument.Save(dataDir);
+```
+
+## Étape 7 : Confirmer l'opération
+
+Pour vous assurer que tout s'est bien passé, vous pouvez imprimer un message de confirmation sur la console.
+
+```csharp
+Console.WriteLine("\nFile compression disabled successfully.\nFile saved at " + dataDir);
 ```
 
 ## Conclusion
 
-Dans ce didacticiel, nous avons expliqué comment désactiver la compression de fichiers dans un PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez désormais utiliser ces connaissances pour maintenir l'intégrité des fichiers joints sans compression.
+La désactivation de la compression de fichiers dans les documents PDF peut être un processus simple avec les bons outils. En suivant les étapes décrites dans ce didacticiel, vous pouvez facilement gérer vos fichiers PDF et vous assurer que les pièces jointes intégrées conservent leur format d'origine. Aspose.PDF pour .NET offre un moyen puissant et flexible de manipuler les documents PDF, ce qui en fait un excellent choix pour les développeurs et les entreprises.
 
-## FAQ pour désactiver la compression des fichiers dans un fichier PDF
+## FAQ
 
-#### Q : Pourquoi voudrais-je désactiver la compression de fichiers dans un document PDF ?
+### Qu'est-ce qu'Aspose.PDF pour .NET ?
+Aspose.PDF pour .NET est une bibliothèque qui permet aux développeurs de créer, manipuler et convertir des documents PDF par programmation.
 
-R : La désactivation de la compression des fichiers garantit que les fichiers joints à un document PDF restent non compressés, préservant ainsi leur qualité et leur contenu d'origine.
+### Pourquoi voudrais-je désactiver la compression de fichiers dans un PDF ?
+La désactivation de la compression de fichiers garantit que les fichiers intégrés restent dans leur format d'origine, ce qui peut être important pour l'intégrité des données.
 
-#### Q : En quoi la désactivation de la compression des fichiers profite-t-elle aux pièces jointes PDF ?
+### Puis-je utiliser Aspose.PDF gratuitement ?
+ Oui, Aspose propose une version d'essai gratuite que vous pouvez utiliser pour évaluer la bibliothèque. Vous pouvez la télécharger[ici](https://releases.aspose.com/).
 
-R : La désactivation de la compression évite toute perte de données ou de qualité pouvant survenir pendant le processus de compression, garantissant ainsi que les fichiers joints sont présentés tels quels.
+### Où puis-je trouver plus de documentation sur Aspose.PDF ?
+ Vous trouverez une documentation complète sur le[Site Web d'Aspose](https://reference.aspose.com/pdf/net/).
 
-#### Q : Puis-je désactiver sélectivement la compression pour des pièces jointes spécifiques à l'aide de ce didacticiel ?
-
-R : Oui, ce didacticiel vous guide dans la désactivation de la compression des fichiers pour les pièces jointes individuelles d'un document PDF, offrant ainsi un contrôle plus précis.
-
-#### Q : Pour quels types de pièces jointes puis-je désactiver la compression ?
-
-R : Vous pouvez désactiver la compression pour tout type de pièce jointe, telle que des images, des documents, des feuilles de calcul, etc., garantissant ainsi le maintien de leur intégrité.
-
-#### Q : La désactivation de la compression affecte-t-elle la taille globale du fichier PDF ?
-
-R : La désactivation de la compression des pièces jointes peut entraîner une légère augmentation de la taille globale du fichier PDF, car les fichiers non compressés occupent plus d'espace.
-
-#### Q : Comment Aspose.PDF pour .NET facilite-t-il le processus de désactivation de la compression des fichiers ?
-
-R : Aspose.PDF pour .NET fournit une API facile à utiliser qui vous permet de désactiver la compression des fichiers pour les pièces jointes, comme démontré dans le code source fourni.
-
-#### Q : Puis-je réactiver la compression des pièces jointes ultérieurement si nécessaire ?
-
-R : Oui, vous pouvez modifier les paramètres de la pièce jointe pour réactiver la compression si nécessaire.
-
-#### Q : Que se passe-t-il si j'ouvre le PDF sur un appareil ou un logiciel prenant en charge la compression ?
-
-R : Si vous ouvrez le PDF sur un appareil ou un logiciel prenant en charge la compression, la pièce jointe peut s'afficher non compressée, ce qui peut affecter la taille du fichier et les performances de rendu.
-
-#### Q : Existe-t-il des scénarios spécifiques dans lesquels la désactivation de la compression est recommandée ?
-
-R : La désactivation de la compression est recommandée pour les pièces jointes pour lesquelles le maintien de la qualité d'origine et de l'intégrité des données est une priorité, comme les images haute résolution ou les documents sensibles.
+### Comment puis-je obtenir de l'aide pour Aspose.PDF ?
+ Vous pouvez obtenir de l'aide en visitant le[Forum Aspose](https://forum.aspose.com/c/pdf/10).

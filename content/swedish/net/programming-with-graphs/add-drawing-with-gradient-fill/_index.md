@@ -13,7 +13,7 @@ Se till att du har installerat Aspose.PDF-biblioteket och ställt in din utveckl
 
 ## Steg 1: Installation av dokumentkatalog
 
-den medföljande källkoden måste du ange katalogen där du vill spara den resulterande PDF-filen. Ändra variabeln "dataDir" till önskad katalog.
+I den medföljande källkoden måste du ange katalogen där du vill spara den resulterande PDF-filen. Ändra variabeln "dataDir" till önskad katalog.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";

@@ -1,19 +1,19 @@
 ---
-title: Integrazione con il database nel file PDF
-linktitle: Integrazione con il database nel file PDF
-second_title: Aspose.PDF per riferimento all'API .NET
+title: Integrazione con database in file PDF
+linktitle: Integrazione con database in file PDF
+second_title: Riferimento API Aspose.PDF per .NET
 description: Incorpora dati da un database in un file PDF utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 120
 url: /it/net/programming-with-tables/integrate-with-database/
 ---
-In questo tutorial impareremo come incorporare i dati da un database in un file PDF utilizzando Aspose.PDF per .NET. Spiegheremo passo dopo passo il codice sorgente in C#. Alla fine di questo tutorial, saprai come importare i dati di una tabella da un database in un documento PDF. Iniziamo!
+In questo tutorial, impareremo come incorporare dati da un database in un file PDF usando Aspose.PDF per .NET. Spiegheremo il codice sorgente in C# passo dopo passo. Alla fine di questo tutorial, saprai come importare dati di tabella da un database in un documento PDF. Cominciamo!
 
-## Passaggio 1: configurazione dell'ambiente
-Assicurati di aver configurato il tuo ambiente di sviluppo C# con Aspose.PDF per .NET. Aggiungi il riferimento alla libreria e importa gli spazi dei nomi necessari.
+## Fase 1: Impostazione dell'ambiente
+Assicurati di aver configurato il tuo ambiente di sviluppo C# con Aspose.PDF per .NET. Aggiungi il riferimento alla libreria e importa i namespace necessari.
 
-## Passaggio 2: creazione del DataTable
-Creiamo un'istanza di DataTable per rappresentare i dati che vogliamo incorporare nel documento PDF. In questo esempio creiamo un DataTable con tre colonne: Employee_ID, Employee_Name e Gender. Aggiungiamo anche due righe al DataTable con dati fittizi.
+## Passaggio 2: creazione della tabella dati
+Creiamo un'istanza di DataTable per rappresentare i dati che vogliamo incorporare nel documento PDF. In questo esempio, creiamo una DataTable con tre colonne: Employee_ID, Employee_Name e Gender. Aggiungiamo anche due righe alla DataTable con dati fittizi.
 
 ```csharp
 DataTable dt = new DataTable("Employee");
@@ -34,8 +34,8 @@ dr[2] = "Female";
 dt.Rows.Add(dr);
 ```
 
-## Passaggio 3: creazione del documento PDF e della tabella
-Creiamo un'istanza di Document e aggiungiamo una pagina a questo documento. Successivamente, creiamo un'istanza Table per rappresentare la nostra tabella nel documento PDF. Definiamo le larghezze delle colonne della tabella e gli stili dei bordi.
+## Fase 3: Creazione del documento PDF e della tabella
+Creiamo un'istanza di Document e aggiungiamo una pagina a questo documento. Poi, creiamo un'istanza di Table per rappresentare la nostra tabella nel documento PDF. Definiamo le larghezze delle colonne della tabella e gli stili dei bordi.
 
 ```csharp
 Document doc = new Document();
@@ -47,21 +47,21 @@ table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 ```
 
-## Passaggio 4: importazione dei dati da DataTable nella tabella
-Utilizziamo il metodo ImportDataTable per importare i dati da DataTable nella tabella nel documento PDF.
+## Passaggio 4: importazione dei dati dalla DataTable alla tabella
+Utilizziamo il metodo ImportDataTable per importare i dati dalla DataTable alla tabella del documento PDF.
 
 ```csharp
 table.ImportDataTable(dt, true, 0, 1, 3, 3);
 ```
 
 ## Passaggio 5: aggiunta della tabella al documento
-Aggiungiamo la tabella alla raccolta paragrafi della pagina del documento.
+Aggiungiamo la tabella alla raccolta dei paragrafi della pagina del documento.
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(table);
 ```
 
-## Passaggio 6: salva il documento
+## Passaggio 6: Salvare il documento
 Salviamo il documento PDF con i dati dal database incorporato.
 
 ```csharp
@@ -70,17 +70,17 @@ doc.Save(dataDir + "DataIntegrated_out.pdf");
 
 Congratulazioni! Ora sai come incorporare i dati del database in un documento PDF utilizzando Aspose.PDF per .NET.
 
-### Codice sorgente di esempio per l'integrazione con il database utilizzando Aspose.PDF per .NET
+### Esempio di codice sorgente per Integrate With Database utilizzando Aspose.PDF per .NET
 
 ```csharp
-// Il percorso della directory dei documenti.
+// Percorso verso la directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 DataTable dt = new DataTable("Employee");
 dt.Columns.Add("Employee_ID", typeof(Int32));
 dt.Columns.Add("Employee_Name", typeof(string));
 dt.Columns.Add("Gender", typeof(string));
-// Aggiungere 2 righe nell'oggetto DataTable a livello di codice
+// Aggiungere 2 righe nell'oggetto DataTable a livello di programmazione
 DataRow dr = dt.NewRow();
 dr[0] = 1;
 dr[1] = "John Smith";
@@ -98,13 +98,13 @@ doc.Pages.Add();
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 // Imposta la larghezza delle colonne della tabella
 table.ColumnWidths = "40 100 100 100";
-// Imposta il colore del bordo della tabella come Grigio chiaro
+// Imposta il colore del bordo della tabella come LightGray
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 // Imposta il bordo per le celle della tabella
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
 table.ImportDataTable(dt, true, 0, 1, 3, 3);
 
-// Aggiungi oggetto tabella alla prima pagina del documento di input
+// Aggiungere l'oggetto tabella alla prima pagina del documento di input
 doc.Pages[1].Paragraphs.Add(table);
 dataDir = dataDir + "DataIntegrated_out.pdf";
 // Salva il documento aggiornato contenente l'oggetto tabella
@@ -114,26 +114,26 @@ Console.WriteLine("\nDatabase integrated successfully.\nFile saved at " + dataDi
 ```
 
 ## Conclusione
-In questo tutorial, abbiamo imparato come incorporare dati da un database in un documento PDF utilizzando Aspose.PDF per .NET. Puoi utilizzare questa guida passo passo per importare i dati dal tuo database e visualizzarli in documenti PDF. Esplora ulteriormente la documentazione Aspose.PDF per scoprire altre funzionalità e possibilità offerte da questa potente libreria.
+In questo tutorial, abbiamo imparato come incorporare dati da un database in un documento PDF usando Aspose.PDF per .NET. Puoi usare questa guida passo passo per importare i dati dal tuo database e visualizzarli in documenti PDF. Esplora ulteriormente la documentazione di Aspose.PDF per scoprire altre funzionalità e possibilità offerte da questa potente libreria.
 
-### Domande frequenti sull'integrazione con il database nel file PDF
+### FAQ per l'integrazione con il database nel file PDF
 
-#### D: Posso utilizzare Aspose.PDF per .NET con diversi tipi di database come MySQL, SQL Server o Oracle?
+#### D: Posso usare Aspose.PDF per .NET con diversi tipi di database come MySQL, SQL Server o Oracle?
 
-R: Sì, puoi utilizzare Aspose.PDF per .NET con diversi tipi di database come MySQL, SQL Server, Oracle e altri. Aspose.PDF per .NET fornisce funzionalità per leggere dati da varie origini dati, inclusi database, file XML e altro. È possibile recuperare i dati dal tipo di database desiderato e popolarli in un DataTable o qualsiasi altra struttura dati compatibile con Aspose.PDF per .NET.
+R: Sì, puoi usare Aspose.PDF per .NET con diversi tipi di database come MySQL, SQL Server, Oracle e altri. Aspose.PDF per .NET fornisce funzionalità per leggere dati da varie fonti di dati, inclusi database, file XML e altro. Puoi recuperare dati dal tipo di database desiderato e popolarli in una DataTable o in qualsiasi altra struttura dati compatibile con Aspose.PDF per .NET.
 
 #### D: Come posso personalizzare l'aspetto della tabella nel documento PDF?
 
-R: È possibile personalizzare l'aspetto della tabella nel documento PDF utilizzando varie proprietà fornite dalla libreria Aspose.PDF per .NET. Ad esempio, puoi impostare diversi stili di bordo, colori di sfondo, stili di carattere e allineamento per la tabella e le sue celle. Fare riferimento alla documentazione Aspose.PDF per .NET per ulteriori dettagli sulla personalizzazione dell'aspetto della tabella.
+R: Puoi personalizzare l'aspetto della tabella nel documento PDF utilizzando varie proprietà fornite dalla libreria Aspose.PDF per .NET. Ad esempio, puoi impostare diversi stili di bordo, colori di sfondo, stili di carattere e allineamento per la tabella e le sue celle. Fai riferimento alla documentazione di Aspose.PDF per .NET per maggiori dettagli sulla personalizzazione dell'aspetto della tabella.
 
 #### D: È possibile aggiungere collegamenti ipertestuali o elementi interattivi ai dati importati dal database?
 
-R: Sì, puoi aggiungere collegamenti ipertestuali o altri elementi interattivi ai dati importati dal database. Aspose.PDF per .NET supporta l'aggiunta di collegamenti ipertestuali, segnalibri e altri elementi interattivi al documento PDF. È possibile manipolare il contenuto in DataTable prima di importarlo nella tabella e includere collegamenti ipertestuali o altre funzionalità interattive.
+R: Sì, puoi aggiungere collegamenti ipertestuali o altri elementi interattivi ai dati importati dal database. Aspose.PDF per .NET supporta l'aggiunta di collegamenti ipertestuali, segnalibri e altri elementi interattivi al documento PDF. Puoi manipolare il contenuto in DataTable prima di importarlo nella tabella e includere collegamenti ipertestuali o altre funzionalità interattive.
 
-#### D: Posso impaginare la tabella se supera un certo numero di righe?
+#### D: Posso suddividere le pagine della tabella se supera un certo numero di righe?
 
- R: Sì, puoi impaginare la tabella se supera un certo numero di righe. Per raggiungere questo obiettivo, è possibile utilizzare il`IsInNewPage`proprietà dell'oggetto Row per indicare che una nuova pagina deve iniziare dopo una riga specifica. È possibile calcolare il numero di righe da visualizzare per pagina e impostare il`IsInNewPage` proprietà di conseguenza.
+ A: Sì, puoi impaginare la tabella se supera un certo numero di righe. Per ottenere questo risultato, puoi usare il`IsInNewPage`proprietà dell'oggetto Row per indicare che una nuova pagina dovrebbe iniziare dopo una riga specifica. Puoi calcolare il numero di righe da visualizzare per pagina e impostare la`IsInNewPage` proprietà di conseguenza.
 
 #### D: Come posso esportare il documento PDF con i dati del database incorporati in diversi formati di file come DOCX o XLSX?
 
-R: Aspose.PDF per .NET ti consente di convertire documenti PDF in vari altri formati di file, inclusi DOCX (Microsoft Word) e XLSX (Microsoft Excel). È possibile utilizzare la libreria Aspose.PDF per .NET in combinazione con altre librerie Aspose come Aspose.Words e Aspose.Cells per raggiungere questo obiettivo. Innanzitutto, salva il documento PDF con i dati del database incorporati, quindi utilizza la rispettiva libreria Aspose per convertirlo nel formato di file desiderato.
+R: Aspose.PDF per .NET consente di convertire documenti PDF in vari altri formati di file, tra cui DOCX (Microsoft Word) e XLSX (Microsoft Excel). È possibile utilizzare la libreria Aspose.PDF per .NET in combinazione con altre librerie Aspose come Aspose.Words e Aspose.Cells per ottenere questo risultato. Per prima cosa, salvare il documento PDF con i dati del database incorporati, quindi utilizzare la rispettiva libreria Aspose per convertirlo nel formato di file desiderato.

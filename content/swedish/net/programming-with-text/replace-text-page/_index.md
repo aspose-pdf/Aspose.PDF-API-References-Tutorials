@@ -48,7 +48,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 ```
 
- Byta ut`"text"` med den faktiska texten du vill söka efter och ersätta.
+ Ersätta`"text"` med den faktiska texten du vill söka efter och ersätta.
 
 ## Steg 5: Ange målsidan
 
@@ -58,7 +58,7 @@ TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 ```
 
- Byta ut`2` med sidnumret där du vill ersätta texten. Observera att sidnumren är nollbaserade, alltså`0` representerar den första sidan.
+ Ersätta`2` med sidnumret där du vill ersätta texten. Observera att sidnumren är nollbaserade, alltså`0` representerar den första sidan.
 
 ## Steg 6: Hämta extraherade textfragment
 
@@ -153,7 +153,7 @@ S: Dessa namnrymder importeras för att ge dig tillgång till klasserna och meto
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 ```
 
- Byta ut`"ReplaceTextPage.pdf"` med det faktiska filnamnet.
+ Ersätta`"ReplaceTextPage.pdf"` med det faktiska filnamnet.
 
 #### F: Kan jag ersätta text på flera sidor med detta tillvägagångssätt?
 
@@ -169,8 +169,8 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 #### F: Hur kan jag anpassa ersättningstexten för varje textfragment?
 
-S: Inom slingan som itererar genom`TextFragmentCollection` , kan du anpassa ersättningstexten för varje`TextFragment` individuellt genom att tilldela en annan sträng till`Text` fast egendom.
+ S: Inom slingan som itererar genom`TextFragmentCollection` , kan du anpassa ersättningstexten för varje`TextFragment` individuellt genom att tilldela en annan sträng till`Text` egendom.
 
 #### F: Är det möjligt att ersätta text baserat på en skiftlägesokänslig sökning?
 
- S: Ja, du kan utföra en skiftlägesokänslig sökning genom att ändra det reguljära uttrycksmönstret. Du kan till exempel använda`"text"` istället för`"text"` i`TextFragmentAbsorber` konstruktör.
+ S: Ja, du kan utföra en skiftlägesokänslig sökning genom att ändra det reguljära uttrycksmönstret. Du kan till exempel använda`"text"` i stället för`"text"` i`TextFragmentAbsorber` konstruktör.

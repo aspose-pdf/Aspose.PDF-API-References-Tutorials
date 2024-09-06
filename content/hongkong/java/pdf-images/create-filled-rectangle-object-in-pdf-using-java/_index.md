@@ -22,7 +22,7 @@ url: /zh-hant/java/pdf-images/create-filled-rectangle-object-in-pdf-using-java/
 
 ## 為 Java 設定 Aspose.PDF
 
-首先，您需要從網站下載 Aspose.PDF for Java。按著這些次序：
+首先，您需要從網站下載 Aspose.PDF for Java。請依照下列步驟操作：
 
 1. 存取 Aspose.PDF for Java 文件：[這裡](https://reference.aspose.com/pdf/java/).
 
@@ -92,7 +92,7 @@ Aspose.PDF for Java 是一個 Java 函式庫，可讓開發人員在 Java 應用
 
 ### 如何安裝 Aspose.PDF for Java？
 
-您可以透過從 Aspose 網站下載該程式庫並依照文件中提供的安裝說明來安裝 Aspose.PDF for Java。
+您可以透過從 Aspose 網站下載程式庫並依照文件中提供的安裝說明來安裝 Aspose.PDF for Java。
 
 ### 我可以更改填滿矩形的顏色嗎？
 

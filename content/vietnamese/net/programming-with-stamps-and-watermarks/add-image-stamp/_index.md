@@ -1,7 +1,7 @@
 ---
-title: Thêm tem hình ảnh vào tệp PDF
-linktitle: Thêm tem hình ảnh vào tệp PDF
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
+title: Thêm hình ảnh đóng dấu vào tệp PDF
+linktitle: Thêm hình ảnh đóng dấu vào tệp PDF
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
 description: Tìm hiểu cách dễ dàng thêm dấu hình ảnh vào tệp PDF bằng Aspose.PDF cho .NET.
 type: docs
 weight: 20
@@ -13,12 +13,12 @@ Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn từng bước 
 
 Trước khi bắt đầu, hãy đảm bảo bạn có những điều sau:
 
-- Một môi trường phát triển .NET được cài đặt.
-- Thư viện Aspose.PDF dành cho .NET được tải xuống và tham chiếu trong dự án của bạn.
+- Môi trường phát triển .NET đã được cài đặt.
+- Thư viện Aspose.PDF dành cho .NET đã được tải xuống và tham chiếu trong dự án của bạn.
 
 ## Bước 2: Tải tài liệu PDF
 
-Bước đầu tiên là tải tài liệu PDF hiện có vào dự án của bạn. Đây là cách thực hiện:
+Bước đầu tiên là tải tài liệu PDF hiện có vào dự án của bạn. Thực hiện như sau:
 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
@@ -28,25 +28,25 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "AddImageStamp.pdf");
 ```
 
-Đảm bảo thay thế "THƯ MỤC TÀI LIỆU CỦA BẠN" bằng đường dẫn thực tế đến thư mục chứa tài liệu PDF của bạn.
+Hãy nhớ thay thế "YOUR DOCUMENTS DIRECTORY" bằng đường dẫn thực tế đến thư mục chứa tài liệu PDF của bạn.
 
 ## Bước 3: Tạo bộ đệm khung
 
-Bây giờ bạn đã tải lên tài liệu PDF, bạn có thể tạo tem hình ảnh để thêm vào. Đây là cách thực hiện:
+Bây giờ bạn đã tải lên tài liệu PDF, bạn có thể tạo tem hình ảnh để thêm vào. Sau đây là cách thực hiện:
 
 ```csharp
 // Tạo bộ đệm khung
 ImageStamp imageStamp = new ImageStamp(dataDir + "aspose-logo.jpg");
 ```
 
-Đoạn mã trên tạo bộ đệm hình ảnh mới bằng tệp "aspose-logo.jpg". Đảm bảo đường dẫn tệp hình ảnh là chính xác.
+Mã ở trên tạo một bộ đệm hình ảnh mới bằng cách sử dụng tệp "aspose-logo.jpg". Hãy đảm bảo đường dẫn tệp hình ảnh là chính xác.
 
-## Bước 4: Định cấu hình thuộc tính bộ đệm hình ảnh
+## Bước 4: Cấu hình Thuộc tính Bộ đệm Hình ảnh
 
-Trước khi thêm dấu hình ảnh vào tài liệu PDF, bạn có thể định cấu hình các thuộc tính khác nhau của dấu, chẳng hạn như độ mờ, kích thước, vị trí, v.v. Dưới đây là cách thực hiện:
+Trước khi thêm tem hình ảnh vào tài liệu PDF, bạn có thể cấu hình nhiều thuộc tính khác nhau của tem, chẳng hạn như độ mờ, kích thước, vị trí, v.v. Thực hiện như sau:
 
 ```csharp
-// Định cấu hình thuộc tính bộ đệm hình ảnh
+// Cấu hình thuộc tính bộ đệm hình ảnh
 imageStamp. Background = true;
 imageStamp. XIndent = 100;
 imageStamp. YIndent = 100;
@@ -56,31 +56,31 @@ imageStamp.Rotate = Rotate.on270;
 imageStamp. Opacity = 0.5;
 ```
 
-Bạn có thể điều chỉnh các thuộc tính này theo nhu cầu của bạn.
+Bạn có thể điều chỉnh các thuộc tính này tùy theo nhu cầu của mình.
 
 ## Bước 5: Thêm tem hình ảnh vào PDF
 
-Bây giờ tem hình ảnh đã sẵn sàng, bạn có thể thêm nó vào một trang cụ thể của tài liệu PDF. Đây là cách thực hiện:
+Bây giờ con dấu hình ảnh đã sẵn sàng, bạn có thể thêm nó vào một trang cụ thể của tài liệu PDF. Thực hiện như sau:
 
 ```csharp
 // Thêm bộ đệm khung vào trang cụ thể
 pdfDocument.Pages[1].AddStamp(imageStamp);
 ```
 
-Đoạn mã trên thêm bộ đệm hình ảnh vào trang đầu tiên của tài liệu PDF. Bạn có thể chỉ định một trang khác nếu cần.
+Mã ở trên thêm bộ đệm hình ảnh vào trang đầu tiên của tài liệu PDF. Bạn có thể chỉ định một trang khác nếu cần.
 
 ## Bước 6: Lưu tài liệu đầu ra
 
-Khi bạn đã thêm bộ đệm hình ảnh, bạn có thể lưu tài liệu PDF đã sửa đổi. Đây là cách thực hiện:
+Sau khi bạn đã thêm bộ đệm hình ảnh, bạn có thể lưu tài liệu PDF đã sửa đổi. Thực hiện như sau:
 
 ```csharp
 // Lưu tài liệu đầu ra
 pdfDocument.Save(dataDir);
 ```
 
-Đoạn mã trên lưu tài liệu PDF đã chỉnh sửa vào thư mục được chỉ định.
+Đoạn mã trên sẽ lưu tài liệu PDF đã chỉnh sửa vào thư mục đã chỉ định.
 
-### Mã nguồn mẫu cho Thêm dấu hình ảnh bằng Aspose.PDF cho .NET 
+### Mã nguồn mẫu cho Add Image Stamp sử dụng Aspose.PDF cho .NET 
 ```csharp
 
 // Đường dẫn đến thư mục tài liệu.
@@ -89,7 +89,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Mở tài liệu
 Document pdfDocument = new Document(dataDir+ "AddImageStamp.pdf");
 
-// Tạo tem ảnh
+// Tạo tem hình ảnh
 ImageStamp imageStamp = new ImageStamp(dataDir + "aspose-logo.jpg");
 imageStamp.Background = true;
 imageStamp.XIndent = 100;
@@ -110,42 +110,42 @@ Console.WriteLine("\nImage stamp added successfully.\nFile saved at " + dataDir)
 
 ## Phần kết luận
 
-Xin chúc mừng! Bạn đã học cách thêm bộ đệm hình ảnh bằng Aspose.PDF cho .NET. Giờ đây, bạn có thể áp dụng kiến thức này cho các dự án của riêng mình để thêm tem hình ảnh tùy chỉnh vào tài liệu PDF.
+Xin chúc mừng! Bạn đã học được cách thêm bộ đệm hình ảnh bằng Aspose.PDF cho .NET. Bây giờ bạn có thể áp dụng kiến thức này vào các dự án của riêng mình để thêm tem hình ảnh tùy chỉnh vào tài liệu PDF.
 
-### Câu hỏi thường gặp về thêm tem hình ảnh vào tệp PDF
+### Câu hỏi thường gặp về việc thêm hình ảnh đóng dấu vào tệp PDF
 
-#### Câu hỏi: Mục đích của việc thêm bộ đệm hình ảnh vào tài liệu PDF bằng Aspose.PDF cho .NET là gì?
+#### H: Mục đích của việc thêm bộ đệm hình ảnh vào tài liệu PDF bằng Aspose.PDF cho .NET là gì?
 
-Đáp: Việc thêm bộ đệm hình ảnh vào tài liệu PDF cho phép bạn kết hợp các hình ảnh tùy chỉnh vào tài liệu, nâng cao sức hấp dẫn trực quan của tài liệu và truyền tải thông tin hoặc thương hiệu cụ thể. Tính năng này hữu ích để thêm logo, hình mờ hoặc các thành phần đồ họa khác vào PDF.
+A: Thêm bộ đệm hình ảnh vào tài liệu PDF cho phép bạn kết hợp hình ảnh tùy chỉnh vào tài liệu, tăng cường sức hấp dẫn trực quan và truyền tải thông tin hoặc thương hiệu cụ thể. Tính năng này hữu ích để thêm logo, hình mờ hoặc các thành phần đồ họa khác vào PDF.
 
-#### Hỏi: Tôi có thể thêm nhiều bộ đệm hình ảnh vào các trang khác nhau của cùng một tài liệu PDF không?
+#### H: Tôi có thể thêm nhiều vùng đệm hình ảnh vào các trang khác nhau của cùng một tài liệu PDF không?
 
-Đáp: Có, bạn có thể thêm nhiều vùng đệm hình ảnh vào các trang khác nhau của cùng một tài liệu PDF. Mã nguồn C# được cung cấp cho phép bạn chỉ định trang đích để thêm tem hình ảnh, giúp nó trở nên linh hoạt cho các trang khác nhau trong tài liệu.
+A: Có, bạn có thể thêm nhiều bộ đệm hình ảnh vào các trang khác nhau của cùng một tài liệu PDF. Mã nguồn C# được cung cấp cho phép bạn chỉ định trang đích để thêm tem hình ảnh, giúp linh hoạt cho các trang khác nhau trong tài liệu.
 
-#### Hỏi: Làm cách nào tôi có thể điều chỉnh vị trí và kích thước của bộ đệm hình ảnh trong tài liệu PDF?
+#### H: Làm thế nào để điều chỉnh vị trí và kích thước của vùng đệm hình ảnh trong tài liệu PDF?
 
- Đáp: Bạn có thể tùy chỉnh vị trí và kích thước của bộ đệm hình ảnh bằng cách sửa đổi các thuộc tính của`ImageStamp` sự vật. Mã được cung cấp trong hướng dẫn này minh họa cách đặt các thuộc tính như`XIndent`, `YIndent`, `Height` , Và`Width` để kiểm soát vị trí và kích thước của tem hình ảnh.
+ A: Bạn có thể tùy chỉnh vị trí và kích thước của bộ đệm hình ảnh bằng cách sửa đổi các thuộc tính của`ImageStamp` đối tượng. Mã được cung cấp trong hướng dẫn trình bày cách thiết lập các thuộc tính như`XIndent`, `YIndent`, `Height` , Và`Width` để kiểm soát vị trí và kích thước của con dấu hình ảnh.
 
-#### Hỏi: Có thể xoay bộ đệm hình ảnh khi thêm nó vào tài liệu PDF không?
+#### H: Có thể xoay bộ đệm hình ảnh khi thêm vào tài liệu PDF không?
 
- Đáp: Có, bạn có thể xoay bộ đệm hình ảnh trước khi thêm nó vào tài liệu PDF bằng cách đặt`Rotate` tài sản của`ImageStamp` sự vật. Mã trong hướng dẫn giới thiệu cách xoay tem hình ảnh bằng các giá trị như`Rotation.on270`, nhưng bạn có thể điều chỉnh góc quay nếu cần.
+ A: Có, bạn có thể xoay bộ đệm hình ảnh trước khi thêm nó vào tài liệu PDF bằng cách thiết lập`Rotate` tài sản của`ImageStamp` đối tượng. Mã trong hướng dẫn trình bày cách xoay tem hình ảnh bằng các giá trị như`Rotation.on270`nhưng bạn có thể điều chỉnh góc quay tùy ý.
 
-#### Hỏi: Tôi có thể kiểm soát độ mờ của bộ đệm hình ảnh khi thêm nó vào tài liệu PDF không?
+#### H: Tôi có thể kiểm soát độ mờ của vùng đệm hình ảnh khi thêm nó vào tài liệu PDF không?
 
- Đáp: Hoàn toàn có thể, bạn có thể kiểm soát độ mờ của bộ đệm hình ảnh bằng cách điều chỉnh`Opacity` tài sản của`ImageStamp` sự vật. Mã nguồn C# được cung cấp trình bày cách đặt mức độ mờ, cho phép bạn đạt được hiệu ứng trong suốt mong muốn.
+ A: Hoàn toàn có thể, bạn có thể kiểm soát độ mờ của bộ đệm hình ảnh bằng cách điều chỉnh`Opacity` tài sản của`ImageStamp` đối tượng. Mã nguồn C# được cung cấp sẽ trình bày cách thiết lập mức độ mờ đục, cho phép bạn đạt được hiệu ứng trong suốt mong muốn.
 
-#### Câu hỏi: Làm cách nào tôi có thể tích hợp phương pháp này vào các dự án của riêng mình để thêm bộ đệm hình ảnh vào tài liệu PDF?
+#### H: Làm thế nào tôi có thể tích hợp phương pháp này vào các dự án của mình để thêm vùng đệm hình ảnh vào tài liệu PDF?
 
-Đáp: Để tích hợp phương pháp này, hãy làm theo các bước được cung cấp và điều chỉnh mã cho phù hợp với cấu trúc dự án của bạn. Bằng cách thêm bộ đệm hình ảnh vào tài liệu PDF, bạn có thể nâng cao khả năng trình bày trực quan của chúng và truyền tải thông tin hoặc thương hiệu cụ thể.
+A: Để tích hợp phương pháp này, hãy làm theo các bước được cung cấp và điều chỉnh mã để phù hợp với cấu trúc dự án của bạn. Bằng cách thêm bộ đệm hình ảnh vào tài liệu PDF, bạn có thể nâng cao khả năng trình bày trực quan và truyền tải thông tin hoặc thương hiệu cụ thể.
 
-#### Câu hỏi: Có bất kỳ cân nhắc hoặc hạn chế nào khi thêm bộ đệm hình ảnh vào tài liệu PDF không?
+#### H: Có bất kỳ cân nhắc hoặc hạn chế nào khi thêm vùng đệm hình ảnh vào tài liệu PDF không?
 
-Đáp: Mặc dù việc thêm bộ đệm hình ảnh rất đơn giản nhưng hãy xem xét bố cục và nội dung tổng thể của tài liệu PDF. Đảm bảo rằng bộ đệm hình ảnh được thêm vào không cản trở thông tin quan trọng hoặc ảnh hưởng tiêu cực đến khả năng đọc của tài liệu.
+A: Mặc dù việc thêm bộ đệm hình ảnh rất đơn giản, hãy cân nhắc đến bố cục và nội dung chung của tài liệu PDF. Đảm bảo rằng bộ đệm hình ảnh được thêm vào không cản trở thông tin quan trọng hoặc ảnh hưởng tiêu cực đến khả năng đọc của tài liệu.
 
-#### Hỏi: Tôi có thể sử dụng phương pháp này để thêm hình ảnh ngoài logo, chẳng hạn như hình mờ hoặc đồ họa tùy chỉnh không?
+#### H: Tôi có thể sử dụng phương pháp này để thêm hình ảnh khác ngoài logo, chẳng hạn như hình mờ hoặc đồ họa tùy chỉnh không?
 
-Đáp: Có, bạn có thể sử dụng phương pháp này để thêm nhiều loại hình ảnh khác nhau, bao gồm hình mờ, đồ họa tùy chỉnh hoặc bất kỳ thành phần hình ảnh nào khác. Mã của hướng dẫn có thể được tùy chỉnh để thêm hình ảnh mong muốn vào tài liệu PDF của bạn.
+A: Có, bạn có thể sử dụng phương pháp này để thêm nhiều loại hình ảnh khác nhau, bao gồm hình mờ, đồ họa tùy chỉnh hoặc bất kỳ yếu tố trực quan nào khác. Mã hướng dẫn có thể được tùy chỉnh để thêm hình ảnh mong muốn vào tài liệu PDF của bạn.
 
-#### Hỏi: Có thể tự động hóa quá trình thêm bộ đệm hình ảnh vào nhiều tài liệu PDF không?
+#### H: Có thể tự động hóa quá trình thêm vùng đệm hình ảnh vào nhiều tài liệu PDF không?
 
-Trả lời: Có, bạn có thể tự động hóa quy trình thêm bộ đệm hình ảnh vào nhiều tài liệu PDF bằng cách tạo tập lệnh hoặc chương trình lặp qua danh sách tài liệu và áp dụng cùng một quy trình đóng dấu hình ảnh cho từng tài liệu.
+A: Có, bạn có thể tự động hóa quy trình thêm vùng đệm hình ảnh vào nhiều tài liệu PDF bằng cách tạo một tập lệnh hoặc chương trình lặp qua danh sách các tài liệu và áp dụng cùng một quy trình đóng dấu hình ảnh cho từng tài liệu.

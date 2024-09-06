@@ -109,6 +109,6 @@ Console.WriteLine("\nPDF file decrypted successfully.\nFile saved at " + dataDir
 
  A：解密PDF後，使用`Save`方法上的`Document`物件保存更新的 PDF 文件。指定保存解密的 PDF 的輸出檔案路徑。
 
-#### Q：如何確保解密後的 PDF 檔案的安全性？
+#### Q：如何確保解密後的 PDF 檔案的安全？
 
 答：PDF 解密後，就不再需要密碼即可存取。共享解密的 PDF 時要小心，因為它們可能不再具有與受密碼保護的文件相同的安全性等級。

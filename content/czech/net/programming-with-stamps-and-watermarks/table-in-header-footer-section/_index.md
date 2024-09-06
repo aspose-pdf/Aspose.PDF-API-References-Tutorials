@@ -117,10 +117,10 @@ Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
 // Vytvořte stránku v dokumentu pdf
 Aspose.Pdf.Page page = pdfDocument.Pages.Add();
 
-// Vytvořte sekci záhlaví souboru PDF
+//Vytvořte sekci záhlaví souboru PDF
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-//Nastavte liché záhlaví pro soubor PDF
+// Nastavte liché záhlaví pro soubor PDF
 page.Header = header;
 
 // Nastavte horní okraj pro sekci záhlaví
@@ -206,11 +206,11 @@ Odpověď: Kód přidá tabulku do kolekce odstavců sekce záhlaví, což zajis
  Odpověď: Ano, můžete upravit šířku sloupců tabulky pomocí`ColumnWidths` vlastnictví. To vám umožní ovládat rozložení tabulky.
 
 #### Otázka: Jak mohu rozložit buňky přes více sloupců nebo řádků v tabulce?
- Odpověď: Chcete-li rozložit buňky přes více sloupců, můžete použít`ColSpan` vlastnost odpovídající buňky. Podobně můžete použít`RowSpan` vlastnost rozprostírat buňky přes více řádků.
+ Odpověď: Chcete-li rozložit buňky přes více sloupců, můžete použít`ColSpan`vlastnost odpovídající buňky. Podobně můžete použít`RowSpan` vlastnost rozprostírat buňky přes více řádků.
 
 #### Otázka: Co se stane, když chci přidat tabulku do části záhlaví i zápatí dokumentu PDF?
 
-Odpověď: Podobný přístup můžete použít pro sekce záhlaví i zápatí. Jednoduše vytvořte a`HeaderFooter` instanci zápatí, nakonfigurujte ji a přidejte tabulku do její kolekce odstavců.
+ Odpověď: Podobný přístup můžete použít pro sekce záhlaví i zápatí. Jednoduše vytvořte a`HeaderFooter` instanci zápatí, nakonfigurujte ji a přidejte tabulku do její kolekce odstavců.
 
 #### Otázka: Mohu použít obrázky v buňkách tabulky a jak toho lze dosáhnout?
 

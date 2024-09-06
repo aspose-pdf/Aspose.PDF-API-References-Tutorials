@@ -1,8 +1,8 @@
 ---
-title: Wenden Sie die Schwärzung auf sensible Inhalte an
-linktitle: Wenden Sie die Schwärzung auf sensible Inhalte an
+title: Redigieren Sie vertrauliche Inhalte
+linktitle: Redigieren Sie vertrauliche Inhalte
 second_title: Aspose.PDF Java PDF-Verarbeitungs-API
-description: Entdecken Sie die Möglichkeiten, sensible Inhalte in PDFs mit Aspose.PDF für Java zu redigieren.
+description: Entdecken Sie die Möglichkeiten der Schwärzung vertraulicher Inhalte in PDFs mit Aspose.PDF für Java.
 type: docs
 weight: 15
 url: /de/java/pdf-annotations/apply-redaction-sensitive-content/
@@ -10,19 +10,19 @@ url: /de/java/pdf-annotations/apply-redaction-sensitive-content/
 
 ## Einführung in die Redaktion
 
-Bei der Schwärzung werden vertrauliche Informationen in einem Dokument dauerhaft entfernt oder unkenntlich gemacht, sodass niemand darauf zugreifen kann, der keinen Zugriff auf diese Daten haben sollte. Dieses Verfahren wird häufig verwendet, um vertrauliche Daten wie Sozialversicherungsnummern, Finanzinformationen oder persönliche Adressen in Dokumenten wie Rechtsverträgen, Finanzberichten oder Regierungsunterlagen zu schützen.
+Redigieren ist der Vorgang, bei dem vertrauliche Informationen in einem Dokument dauerhaft entfernt oder unkenntlich gemacht werden, sodass sie für alle unzugänglich werden, die keinen Zugriff auf diese Daten haben sollten. Dieser Vorgang wird häufig verwendet, um vertrauliche Daten wie Sozialversicherungsnummern, Finanzinformationen oder persönliche Adressen in Dokumenten wie Rechtsverträgen, Finanzberichten oder Regierungsunterlagen zu schützen.
 
 ## Voraussetzungen
 
-Bevor wir mit dem Schwärzungsprozess beginnen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
+Bevor wir in den Redaktionsprozess eintauchen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
 - Java-Entwicklungsumgebung: Stellen Sie sicher, dass Java auf Ihrem System installiert ist.
--  Aspose.PDF für Java-Bibliothek: Laden Sie die Aspose.PDF für Java-Bibliothek von herunter und installieren Sie sie[Hier](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF für Java-Bibliothek: Laden Sie die Aspose.PDF für Java-Bibliothek herunter und installieren Sie sie von[Hier](https://releases.aspose.com/pdf/java/).
 
 
 ## Einrichten Ihrer Java-Umgebung
 
-Bevor wir mit Aspose.PDF für Java arbeiten, stellen Sie sicher, dass Ihre Java-Umgebung ordnungsgemäß konfiguriert ist. Sie können Ihre Java-Installation überprüfen, indem Sie den folgenden Befehl ausführen:
+Bevor wir mit Aspose.PDF für Java arbeiten, stellen Sie sicher, dass Ihre Java-Umgebung richtig konfiguriert ist. Sie können Ihre Java-Installation überprüfen, indem Sie den folgenden Befehl ausführen:
 
 ```java -version```
 
@@ -30,9 +30,9 @@ Stellen Sie sicher, dass Sie Java 8 oder höher installiert haben.
 
 ## Hinzufügen von Aspose.PDF zu Ihrem Projekt
 
-Um Aspose.PDF für Java in Ihr Projekt einzubinden, führen Sie die folgenden Schritte aus:
+Um Aspose.PDF für Java in Ihr Projekt einzubinden, gehen Sie folgendermaßen vor:
 
-1. Laden Sie die Aspose.PDF für Java-Bibliothek von der Website herunter.
+1. Laden Sie die Aspose.PDF-Bibliothek für Java von der Website herunter.
 2. Fügen Sie die heruntergeladene JAR-Datei zum Klassenpfad Ihres Projekts hinzu.
 
 ## Laden eines PDF-Dokuments
@@ -44,7 +44,7 @@ In diesem Schritt laden wir ein PDF-Dokument, das vertrauliche Informationen ent
 Document pdfDocument = new Document("example.pdf");
 ```
 
- Ersetzen`"example.pdf"` mit dem Pfad zu Ihrer PDF-Datei.
+ Ersetzen`"example.pdf"` durch den Pfad zu Ihrer PDF-Datei.
 
 ## Identifizieren sensibler Inhalte
 
@@ -54,7 +54,7 @@ Bevor wir vertrauliche Inhalte schwärzen können, müssen wir sie im Dokument i
 // Definieren Sie das Muster für SSNs (Beispiel)
 String pattern = "\\d{3}-\\d{2}-\\d{4}";
 
-// Erstellen Sie ein TextFragmentAbsorber-Objekt, um nach Text zu suchen
+// Erstellen Sie ein TextFragmentAbsorber-Objekt zum Suchen nach Text
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(pattern);
 
 // Akzeptieren Sie den Absorber für die gesamte Seite
@@ -63,18 +63,18 @@ pdfDocument.getPages().accept(absorber);
 
 ## Schwärzung anwenden
 
-Sobald wir den sensiblen Inhalt identifiziert haben, ist es an der Zeit, die Schwärzung vorzunehmen. Wir können den identifizierten Text durch schwarze Rechtecke ersetzen, um die Informationen auszublenden:
+Sobald wir den vertraulichen Inhalt identifiziert haben, ist es an der Zeit, ihn zu redigieren. Wir können den identifizierten Text durch schwarze Rechtecke ersetzen, um die Informationen zu verbergen:
 
 ```java
-// Gehen Sie die Textfragmente durch und redigieren Sie sie
+// Durchlaufen Sie die Textfragmente und redigieren Sie sie
 for (TextFragment textFragment : absorber.getTextFragments()) {
     textFragment.setText("■■■-■■-■■■■"); // Durch schwarze Rechtecke ersetzen
 }
 ```
 
-## Speichern der redigierten PDF-Datei
+## Speichern der redigierten PDF
 
-Nachdem wir die Schwärzungen angewendet haben, sollten wir das geschwärzte PDF-Dokument speichern:
+Nach dem Anwenden der Schwärzungen sollten wir das redigierte PDF-Dokument speichern:
 
 ```java
 // Speichern Sie das redigierte PDF
@@ -83,26 +83,26 @@ pdfDocument.save("redacted.pdf");
 
 ## Abschluss
 
-In diesem Leitfaden haben wir untersucht, wie Sie mit Aspose.PDF für Java eine Schwärzung auf vertrauliche Inhalte in PDF-Dokumenten anwenden. Indem Sie diese Schritte befolgen, können Sie sicherstellen, dass vertrauliche Informationen geschützt und vertraulich bleiben.
+In diesem Handbuch haben wir untersucht, wie Sie mit Aspose.PDF für Java vertrauliche Inhalte in PDF-Dokumenten redigieren können. Indem Sie diese Schritte befolgen, können Sie sicherstellen, dass vertrauliche Informationen geschützt und vertraulich bleiben.
 
-## FAQs
+## Häufig gestellte Fragen
 
 ### Wie kann ich mehrere Arten vertraulicher Informationen in einem einzigen Dokument schwärzen?
 
-Sie können mehrere TextFragmentAbsorber-Objekte erstellen, jedes mit seinem eigenen Muster zur Identifizierung verschiedener Arten vertraulicher Inhalte. Anschließend durchlaufen Sie sie, um die Schwärzungen entsprechend anzuwenden.
+Sie können mehrere TextFragmentAbsorber-Objekte erstellen, jedes mit seinem eigenen Muster zur Identifizierung verschiedener Arten vertraulicher Inhalte. Dann durchlaufen Sie sie, um entsprechende Schwärzungen anzuwenden.
 
-### Ist die Schwärzung umkehrbar?
+### Ist die Redaktion umkehrbar?
 
-Nein, die Schwärzung ist nicht rückgängig zu machen. Sobald Sie eine Schwärzung auf ein Dokument anwenden, wird der vertrauliche Inhalt dauerhaft ausgeblendet und kann nicht wiederhergestellt werden.
+Nein, die Schwärzung kann nicht rückgängig gemacht werden. Sobald Sie die Schwärzung auf ein Dokument anwenden, wird der vertrauliche Inhalt dauerhaft ausgeblendet und kann nicht wiederhergestellt werden.
 
-### Kann ich das Erscheinungsbild geschwärzter Inhalte anpassen?
+### Kann ich das Erscheinungsbild redigierter Inhalte anpassen?
 
-Ja, Sie können das Erscheinungsbild geschwärzter Inhalte anpassen, indem Sie beispielsweise verschiedene Farben oder Muster für Schwärzungsmarkierungen auswählen.
+Ja, Sie können das Erscheinungsbild redigierter Inhalte anpassen, beispielsweise durch die Auswahl unterschiedlicher Farben oder Muster für die Schwärzungsmarkierungen.
 
 ### Unterstützt Aspose.PDF für Java die Stapelverarbeitung?
 
 Ja, Sie können mehrere PDF-Dokumente stapelweise verarbeiten, um sie gleichzeitig zu schwärzen.
 
-### Gibt es Einschränkungen bei der Schwärzung in Aspose.PDF für Java?
+### Gibt es Einschränkungen hinsichtlich der Redaktion in Aspose.PDF für Java?
 
-Aspose.PDF für Java bietet leistungsstarke Schwärzungsfunktionen, es ist jedoch wichtig, die geschwärzten Dokumente gründlich zu testen, um sicherzustellen, dass es nicht zu unbeabsichtigten Informationslecks kommt.
+Aspose.PDF für Java bietet leistungsstarke Redaktionsfunktionen, aber es ist wichtig, die redigierten Dokumente gründlich zu testen, um sicherzustellen, dass kein unbeabsichtigter Informationsverlust auftritt.

@@ -29,7 +29,7 @@ TableAbsorber absorber = new TableAbsorber();
 ```
 
 ## Steg 3: Besök den andra sidan med absorbenten
-Vi kommer nu att besöka den andra sidan i PDF-dokumentet med hjälp av absorberaren:
+Vi kommer nu att besöka den andra sidan av PDF-dokumentet med hjälp av absorberaren:
 
 ```csharp
 // Besök den andra sidan med absorbenten

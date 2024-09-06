@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-text/rendering-replaceable-symbols/
 
 ## 第 1 步：設定文檔目錄
 
-首先，您需要設定要儲存生成的 PDF 檔案的目錄路徑。代替`"YOUR DOCUMENT DIRECTORY"`在裡面`dataDir`變數包含您所需目錄的路徑。
+首先，您需要設定要儲存生成的 PDF 檔案的目錄路徑。代替`"YOUR DOCUMENT DIRECTORY"`在`dataDir`變數包含您所需目錄的路徑。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -127,7 +127,7 @@ Console.WriteLine("\nReplaceable symbols render successfully duing pdf creation.
 
 A：設定文檔目錄：
 
-1. 代替`"YOUR DOCUMENT DIRECTORY"`在裡面`dataDir`變數包含要儲存產生的 PDF 檔案的目錄路徑。
+1. 代替`"YOUR DOCUMENT DIRECTORY"`在`dataDir`變數包含要儲存產生的 PDF 檔案的目錄路徑。
 
 #### Q：如何使用 Aspose.PDF 庫在 PDF 文件中渲染可替換符號？
 

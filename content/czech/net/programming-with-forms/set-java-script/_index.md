@@ -29,7 +29,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## Krok 2: Načtení vstupního souboru PDF
 
- tomto kroku načteme vstupní soubor PDF pomocí`Document` třída Aspose.PDF.
+ V tomto kroku načteme vstupní soubor PDF pomocí`Document` třída Aspose.PDF.
 
 ```csharp
 // Načíst vstupní soubor PDF
@@ -124,7 +124,7 @@ této příručce jsme se naučili používat knihovnu Aspose.PDF pro .NET k nas
 
 #### Otázka: Podporuje Aspose.PDF for .NET jiné události JavaScriptu než ty, které jsou uvedeny v tomto kurzu?
 
- Odpověď: Ano, Aspose.PDF pro .NET podporuje širokou škálu událostí JavaScript, včetně`OnMouseEnter`, `OnMouseExit`, `OnMouseDown` , a`OnMouseUp`, mezi ostatními. Tyto události můžete použít ke spouštění akcí JavaScriptu na základě interakcí uživatelů.
+ Odpověď: Ano, Aspose.PDF pro .NET podporuje širokou škálu událostí JavaScript, včetně`OnMouseEnter`, `OnMouseExit`, `OnMouseDown` a`OnMouseUp`, mimo jiné. Tyto události můžete použít ke spouštění akcí JavaScriptu na základě interakcí uživatelů.
 
 #### Otázka: Mohu použít Aspose.PDF for .NET k extrahování kódu JavaScript z existujících dokumentů PDF?
 

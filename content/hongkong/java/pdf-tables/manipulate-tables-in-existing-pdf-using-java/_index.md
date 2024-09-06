@@ -47,7 +47,7 @@ absorber.visit(pdfPage);
 TableCollection tables = absorber.getTableList();
 ```
 
-現在`tables`集合包含 PDF 第一頁上找到的所有表格。
+現在，`tables`集合包含 PDF 第一頁上找到的所有表格。
 
 ### 修改表數據
 

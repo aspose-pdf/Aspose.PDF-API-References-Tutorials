@@ -65,7 +65,7 @@ heading.setNumberingStyle(numberingStyle);
 
 ## Számozási formátumok testreszabása
 
-A számozási formátumot igényeinek megfelelően testreszabhatja. Az Aspose.PDF for Java lehetővé teszi a számozás különböző szempontjainak szabályozását, beleértve az előtagot, az utótagot és a formátumot. Íme egy példa a számozás testreszabására:
+A számozási formátumot igényeinek megfelelően testreszabhatja. Az Aspose.PDF for Java lehetővé teszi a számozás különféle szempontjainak szabályozását, beleértve az előtagot, az utótagot és a formátumot. Íme egy példa a számozás testreszabására:
 
 ```java
 // A számozási stílus testreszabása

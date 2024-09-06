@@ -7,7 +7,7 @@ type: docs
 weight: 260
 url: /hu/net/programming-with-forms/set-field-limit/
 ---
-Itt található egy részletes oktatóanyag a mezőhatár beállításához az Aspose.PDF for .NET használatával. Kovesd ezeket a lepeseket:
+Itt található egy részletes oktatóanyag a mezőhatár beállításához az Aspose.PDF for .NET használatával. Kövesse az alábbi lépéseket:
 
 ##  1. lépés: Kezdje a dokumentumok könyvtárának meghatározásával az elérési út megadásával a`dataDir` variable.
 

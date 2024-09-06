@@ -18,11 +18,11 @@ Než začneme, ujistěte se, že máte splněny následující předpoklady:
 
 - Pracovní znalost programování v Javě
 - Java Development Kit (JDK) nainstalovaný ve vašem systému
--  Aspose.PDF pro knihovnu Java, kterou si můžete stáhnout[tady](https://releases.aspose.com/pdf/java/)
+-  Aspose.PDF pro knihovnu Java, kterou si můžete stáhnout[zde](https://releases.aspose.com/pdf/java/)
 
 ## Krok 1: Nastavení vývojového prostředí
 
-Chcete-li začít, musíte nastavit vývojové prostředí. Následuj tyto kroky:
+Chcete-li začít, musíte nastavit vývojové prostředí. Postupujte takto:
 
 1. Stáhněte a nainstalujte knihovnu Aspose.PDF for Java.
 2. Vytvořte nový projekt Java ve vašem preferovaném integrovaném vývojovém prostředí (IDE).
@@ -78,7 +78,7 @@ pdfDocument.save("output.pdf");
 
 ## Krok 5: Přizpůsobení umístění obrázku
 
- Umístění a velikost přidaného obrázku můžete upravit pomocí vlastností jako`setHorizontalAlignment`, `setVerticalAlignment` , a`setRectangle`. Upravte tyto vlastnosti podle potřeby, abyste dosáhli požadovaného umístění a velikosti.
+ Umístění a velikost přidaného obrázku můžete upravit pomocí vlastností jako`setHorizontalAlignment`, `setVerticalAlignment` a`setRectangle`. Upravte tyto vlastnosti podle potřeby, abyste dosáhli požadovaného umístění a velikosti.
 
 ```java
 // Přizpůsobte umístění obrázku
@@ -95,7 +95,7 @@ image.setRectangle(new Rectangle(100, 100, 200, 200)); // Nastavte vlastní rozm
 pdfDocument.save("output.pdf");
 ```
 
-Gratulujeme! Úspěšně jste přidali obrázek do existujícího souboru PDF v Javě pomocí Aspose.PDF for Java.
+Gratuluji! Úspěšně jste přidali obrázek do existujícího souboru PDF v Javě pomocí Aspose.PDF for Java.
 
 ## Závěr
 

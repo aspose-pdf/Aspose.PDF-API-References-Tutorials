@@ -1,13 +1,13 @@
 ---
-title: Afbeeldingen snel verkleinen
-linktitle: Afbeeldingen snel verkleinen
+title: Snel krimpende afbeeldingen
+linktitle: Snel krimpende afbeeldingen
 second_title: Aspose.PDF voor .NET API-referentie
 description: Verklein snel de grootte van afbeeldingen in een PDF-bestand met Aspose.PDF voor .NET.
 type: docs
 weight: 130
 url: /nl/net/programming-with-images/fast-shrink-images/
 ---
-In deze handleiding wordt stap voor stap uitgelegd hoe u snel de grootte van afbeeldingen in een PDF-bestand kunt verkleinen met Aspose.PDF voor .NET. Zorg ervoor dat u uw omgeving al heeft ingesteld en volg de onderstaande stappen:
+Deze gids laat u stap voor stap zien hoe u snel de grootte van afbeeldingen in een PDF-bestand kunt verkleinen met Aspose.PDF voor .NET. Zorg ervoor dat u uw omgeving al hebt ingesteld en volg de onderstaande stappen:
 
 ## Stap 1: Initialiseer de tijd
 
@@ -17,9 +17,9 @@ Voordat we beginnen, initialiseren we de tijd om de compressieprestaties te mete
 var time = DateTime.Now.Ticks;
 ```
 
-## Stap 2: Definieer de documentmap
+## Stap 2: Definieer de documentdirectory
 
- Zorg ervoor dat u de juiste documentmap instelt. Vervangen`"YOUR DOCUMENT DIRECTORY"` in de code met het pad naar de map waar uw PDF-document zich bevindt.
+ Zorg ervoor dat u de juiste documentdirectory instelt. Vervangen`"YOUR DOCUMENT DIRECTORY"` in de code met het pad naar de map waar uw PDF-document zich bevindt.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -27,7 +27,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Stap 3: Open het PDF-document
 
-In deze stap openen we het PDF-document met behulp van de`Document` klasse van Aspose.PDF. Gebruik de`Document` constructor en geef het pad door naar het PDF-document.
+ In deze stap openen we het PDF-document met behulp van de`Document` klasse van Aspose.PDF. Gebruik de`Document` constructor en geef het pad naar het PDF-document door.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
@@ -35,7 +35,7 @@ Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
 
 ## Stap 4: Initialiseer optimalisatieopties
 
-In deze stap initialiseren we de optimalisatieopties voor beeldcompressie. Maak een exemplaar van`OptimizationOptions` en stel de juiste opties in. In dit voorbeeld schakelen we beeldcompressie in, stellen we de beeldkwaliteit in op 75 en gebruiken we de snelle compressieversie.
+ In deze stap initialiseren we de optimalisatieopties voor beeldcompressie. Maak een instantie van`OptimizationOptions` en stel de juiste opties in. In dit voorbeeld schakelen we beeldcompressie in, stellen we de beeldkwaliteit in op 75 en gebruiken we de snelle compressieversie.
 
 ```csharp
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();
@@ -46,7 +46,7 @@ optimizeOptions.ImageCompressionOptions.Version = Pdf.Optimization.ImageCompress
 
 ## Stap 5: Optimaliseer het PDF-document
 
- In deze stap optimaliseren we het PDF-document met behulp van de eerder gedefinieerde optimalisatieopties. Bel de`OptimizeResources` werkwijze van de`pdfDocument` bezwaar maken en de optimalisatieopties doorgeven.
+In deze stap optimaliseren we het PDF-document met behulp van de eerder gedefinieerde optimalisatieopties. Roep de`OptimizeResources` methode van de`pdfDocument` object en geef de optimalisatieopties door.
 
 ```csharp
 pdfDocument.OptimizeResources(optimizeOptions);
@@ -54,33 +54,33 @@ pdfDocument.OptimizeResources(optimizeOptions);
 
 ## Stap 6: Sla het bijgewerkte PDF-document op
 
- Sla het bijgewerkte PDF-document op met behulp van de`Save` werkwijze van de`pdfDocument` voorwerp. Geef het uitvoerpad voor het PDF-bestand op.
+ Sla het bijgewerkte PDF-document op met behulp van de`Save` methode van de`pdfDocument` object. Geef het uitvoerpad voor het PDF-bestand op.
 
 ```csharp
 dataDir = dataDir + "FastShrinkImages_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Voorbeeldbroncode voor Fast Shrink Images met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor Fast Shrink Images met behulp van Aspose.PDF voor .NET 
 ```csharp
-// Initialiseer de tijd
+// Initialiseer tijd
 var time = DateTime.Now.Ticks;
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Document openen
 Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
-// Initialiseer Optimalisatieopties
+// Initialiseer OptimizationOptions
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions();
-// Stel de CompressImages-optie in
+// Stel de optie CompressImages in
 optimizeOptions.ImageCompressionOptions.CompressImages = true;
-// Stel de optie Beeldkwaliteit in
+// Optie ImageQuality instellen
 optimizeOptions.ImageCompressionOptions.ImageQuality = 75;
-// Stel de Imageae-compressieversie in op snel
+// Stel Imagae-compressieversie in op snel
 optimizeOptions.ImageCompressionOptions.Version = Pdf.Optimization.ImageCompressionVersion.Fast;
-// Optimaliseer een PDF-document met OptimizationOptions
+// Optimaliseer PDF-document met OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
 dataDir = dataDir + "FastShrinkImages_out.pdf";
-// Bewaar het bijgewerkte document
+// Bijgewerkt document opslaan
 pdfDocument.Save(dataDir);
 Console.WriteLine("Ticks: {0}", DateTime.Now.Ticks - time);
 Console.WriteLine("\nImage fast shrinked successfully.\nFile saved at " + dataDir);
@@ -88,46 +88,46 @@ Console.WriteLine("\nImage fast shrinked successfully.\nFile saved at " + dataDi
 
 ## Conclusie
 
-Gefeliciteerd! Met Aspose.PDF voor .NET verkleint u snel de grootte van afbeeldingen in een PDF. Het geoptimaliseerde PDF-bestand wordt opgeslagen in de opgegeven map. U kunt dit PDF-bestand nu gebruiken met verkleinde afbeeldingen voor efficiëntere opslag of deelbehoeften.
+Gefeliciteerd! U hebt snel de grootte van afbeeldingen in een PDF verkleind met Aspose.PDF voor .NET. Het geoptimaliseerde PDF-bestand is opgeslagen in de opgegeven directory. U kunt dit PDF-bestand nu gebruiken met verkleinde afbeeldingen voor efficiëntere opslag- of deelbehoeften.
 
 ### Veelgestelde vragen
 
-#### Vraag: Waarom zou ik de grootte van afbeeldingen in een PDF-bestand snel willen verkleinen met Aspose.PDF voor .NET?
+#### V: Waarom zou ik snel de grootte van afbeeldingen in een PDF-bestand willen verkleinen met Aspose.PDF voor .NET?
 
-A: Door de grootte van afbeeldingen in een PDF-bestand snel te verkleinen, kunt u het bestand optimaliseren voor opslag, delen of verzenden, wat resulteert in betere prestaties en een lager verbruik van bronnen.
+A: Door de grootte van afbeeldingen in een PDF-bestand snel te verkleinen, kunt u het bestand optimaliseren voor opslag, delen of verzenden. Dit resulteert in betere prestaties en een lager bronnenverbruik.
 
-#### Vraag: Welke voordelen biedt beeldcompressie in een PDF-document?
+#### V: Welke voordelen biedt beeldcompressie in een PDF-document?
 
-A: Beeldcompressie in een PDF-document helpt de bestandsgrootte te minimaliseren terwijl de beeldkwaliteit acceptabel blijft, wat leidt tot snellere laadtijden, minder opslagvereisten en een verbeterde efficiëntie van de gegevensoverdracht.
+A: Beeldcompressie in een PDF-document zorgt ervoor dat de bestandsgrootte wordt geminimaliseerd, terwijl de acceptabele beeldkwaliteit behouden blijft. Dit leidt tot snellere laadtijden, minder opslagvereisten en een verbeterde efficiëntie van de gegevensoverdracht.
 
-#### Vraag: Hoe maakt Aspose.PDF voor .NET een snelle verkleining van de afbeeldingsgrootte in een PDF-bestand mogelijk?
+#### V: Hoe zorgt Aspose.PDF voor .NET ervoor dat afbeeldingen in een PDF-bestand snel kleiner worden?
 
-A: Aspose.PDF voor .NET biedt een gestroomlijnd proces voor het openen van een PDF-document, het toepassen van beeldcompressie-opties en het opslaan van het geoptimaliseerde PDF-bestand met kleinere afbeeldingsformaten.
+A: Aspose.PDF voor .NET biedt een gestroomlijnd proces voor het openen van een PDF-document, het toepassen van opties voor beeldcompressie en het opslaan van het geoptimaliseerde PDF-bestand met kleinere afbeeldingsgroottes.
 
-####  Vraag: Wat is de betekenis van de`OptimizationOptions` class in fast image size reduction?
+####  V: Wat is de betekenis van de`OptimizationOptions` class in fast image size reduction?
 
- EEN: De`OptimizationOptions`Met class kunt u verschillende optimalisatie-instellingen definiëren, waaronder opties voor beeldcompressie, om de grootte van afbeeldingen in het PDF-document effectief te verkleinen.
+ A: De`OptimizationOptions` Met de klasse kunt u verschillende optimalisatie-instellingen definiëren, waaronder opties voor afbeeldingscompressie, om de grootte van afbeeldingen in het PDF-document effectief te verkleinen.
 
-#### Vraag: Kan ik de instellingen voor beeldcompressie aanpassen om de balans tussen bestandsgrootte en beeldkwaliteit te regelen?
+#### V: Kan ik de instellingen voor beeldcompressie aanpassen om de balans tussen bestandsgrootte en beeldkwaliteit te bepalen?
 
-A: Ja, u kunt de instellingen voor beeldcompressie aanpassen door parameters zoals beeldkwaliteit en compressieversie aan te passen om de gewenste balans tussen bestandsgrootte en uiterlijk van de afbeelding te bereiken.
+A: Ja, u kunt de instellingen voor beeldcompressie aanpassen door parameters zoals beeldkwaliteit en compressieversie aan te passen om de gewenste balans te bereiken tussen bestandsgrootte en beeldweergave.
 
-####  Vraag: Hoe werkt de`pdfDocument.OptimizeResources` method work to reduce image sizes?
+####  V: Hoe werkt de`pdfDocument.OptimizeResources` method work to reduce image sizes?
 
- EEN: De`OptimizeResources` methode analyseert het PDF-document en past de opgegeven optimalisatieopties toe, inclusief instellingen voor beeldcompressie, om de grootte van afbeeldingen en andere bronnen te verkleinen.
+ A: De`OptimizeResources` Met deze methode wordt het PDF-document geanalyseerd en worden de opgegeven optimalisatieopties toegepast, waaronder instellingen voor beeldcompressie, om de grootte van afbeeldingen en andere bronnen te verkleinen.
 
-#### Vraag: Is het mogelijk om een snelle verkleining van de afbeeldingsgrootte toe te passen op een specifiek paginabereik binnen een PDF-document?
+#### V: Is het mogelijk om snel de afbeeldingsgrootte te verkleinen op een specifiek paginabereik in een PDF-document?
 
- EEN: De`OptimizeResources` methode past optimalisatieopties toe op het gehele PDF-document. Als u optimalisatie op specifieke pagina's wilt toepassen, moet u die pagina's vóór de optimalisatie in een nieuw document extraheren.
+ A: De`OptimizeResources` methode past optimalisatieopties toe op het gehele PDF-document. Als u optimalisatie wilt toepassen op specifieke pagina's, moet u die pagina's extraheren in een nieuw document vóór de optimalisatie.
 
-#### Vraag: Wat zijn enkele scenario's waarin een snelle verkleining van de afbeeldingsgrootte nuttig kan zijn?
+#### V: In welke scenario's kan het snel verkleinen van de afbeeldingsgrootte nuttig zijn?
 
-A: Een snelle verkleining van de afbeeldingsgrootte kan nuttig zijn bij het voorbereiden van PDF-bestanden voor online distributie, e-mailbijlagen, archivering of bij het werken met grote documenten met veel afbeeldingen.
+A: Het snel verkleinen van de afbeeldingsgrootte kan handig zijn bij het voorbereiden van PDF-bestanden voor online distributie, e-mailbijlagen, archivering of bij het werken met grote documenten met veel afbeeldingen.
 
-#### Vraag: Heeft het verkleinen van de afbeeldingsgrootte invloed op de visuele kwaliteit van afbeeldingen in het PDF-document?
+#### V: Heeft het verkleinen van de afbeeldingsgrootte invloed op de visuele kwaliteit van de afbeeldingen in het PDF-document?
 
-A: Het verkleinen van de afbeeldingsgrootte door middel van compressie kan tot op zekere hoogte de beeldkwaliteit beïnvloeden. Het is belangrijk om een balans te vinden tussen verkleining en acceptabele beeldkwaliteit.
+A: Het verkleinen van afbeeldingsgroottes door compressie kan de beeldkwaliteit enigszins beïnvloeden. Het is belangrijk om een balans te vinden tussen het verkleinen van de grootte en acceptabele beeldkwaliteit.
 
-#### Vraag: Hoe kan ik de prestaties van het snelle verkleiningsproces van het beeldformaat meten?
+#### V: Hoe kan ik de prestaties van het snelle proces voor het verkleinen van afbeeldingen meten?
 
- A: U kunt de prestatie meten door de starttijd vast te leggen met behulp van de`DateTime.Now.Ticks` methode vóór het optimalisatieproces en het berekenen van de tijd die na het proces is verstreken.
+ A: U kunt de prestatie meten door de starttijd vast te leggen met behulp van de`DateTime.Now.Ticks` methode vóór het optimalisatieproces en het berekenen van de verstreken tijd na het proces.

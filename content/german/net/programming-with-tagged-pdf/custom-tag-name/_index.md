@@ -7,7 +7,7 @@ type: docs
 weight: 90
 url: /de/net/programming-with-tagged-pdf/custom-tag-name/
 ---
-In dieser Schritt-für-Schritt-Anleitung führen wir Sie durch die Verwendung eines benutzerdefinierten Tag-Namens mit Aspose.PDF für .NET. Aspose.PDF ist eine leistungsstarke Bibliothek, mit der Sie PDF-Dokumente programmgesteuert bearbeiten können. Durch die Verwendung benutzerdefinierter Tags können Sie spezifische Strukturinformationen zu Ihrem PDF-Dokument hinzufügen und so die Verwendung und den Zugriff vereinfachen.
+In dieser Schritt-für-Schritt-Anleitung zeigen wir Ihnen, wie Sie einen benutzerdefinierten Tag-Namen mit Aspose.PDF für .NET verwenden. Aspose.PDF ist eine leistungsstarke Bibliothek, mit der Sie PDF-Dokumente programmgesteuert bearbeiten können. Durch die Verwendung benutzerdefinierter Tags können Sie Ihrem PDF-Dokument bestimmte Strukturinformationen hinzufügen, wodurch es einfacher zu verwenden und zugänglich wird.
 
 Lassen Sie uns in den Code eintauchen und lernen, wie Sie mit Aspose.PDF für .NET einen benutzerdefinierten Tag-Namen verwenden.
 
@@ -23,44 +23,44 @@ Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 Öffnen Sie zunächst Ihre C#-Entwicklungsumgebung und erstellen Sie ein neues Projekt. Stellen Sie sicher, dass Sie in Ihrem Projekt einen Verweis auf die Aspose.PDF-Bibliothek für .NET hinzugefügt haben.
 
 ```csharp
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
 ## Schritt 2: Erstellen des Dokuments
 
- Der erste Schritt besteht darin, ein neues PDF-Dokument mit zu erstellen`Document` Klasse.
+ Der erste Schritt besteht in der Erstellung eines neuen PDF-Dokuments mit dem`Document` Klasse.
 
 ```csharp
 // Erstellen Sie das PDF-Dokument
 Document document = new Document();
 ```
 
-## Schritt 3: Arbeiten Sie mit getaggten Inhalten
+## Schritt 3: Mit getaggten Inhalten arbeiten
 
 Dann erhalten wir den getaggten Inhalt des Dokuments, mit dem wir arbeiten können.
 
 ```csharp
-// Rufen Sie den getaggten Inhalt des Dokuments ab
+// Holen Sie sich den getaggten Inhalt des Dokuments
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
 ## Schritt 4: Dokumenttitel und Sprache festlegen
 
-Wir können nun den Titel und die Sprache des Dokuments festlegen.
+Wir können jetzt den Dokumenttitel und die Sprache festlegen.
 
 ```csharp
-// Definieren Sie den Titel und die Sprache des Dokuments
+// Definieren Sie den Dokumenttitel und die Sprache
 taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
 ## Schritt 5: Logische Strukturelemente erstellen
 
-Lassen Sie uns nun einige logische Strukturelemente erstellen, um unsere Inhalte zu organisieren.
+Lassen Sie uns nun einige logische Strukturelemente erstellen, um unseren Inhalt zu organisieren.
 
 ```csharp
-// Erstellen Sie logische Strukturelemente
+// Logische Strukturelemente erstellen
 SectElement sect = taggedContent.CreateSectElement();
 taggedContent.RootElement.AppendChild(sect);
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
@@ -97,34 +97,34 @@ p3.AppendChild(span3);
 p4.AppendChild(span4);
 ```
 
-Hier erstellen wir Absatzelemente und Spannelemente für unsere Inhalte und weisen ihnen benutzerdefinierte Tags zu.
+Hier erstellen wir Absatzelemente und Span-Elemente für unseren Inhalt und weisen ihnen benutzerdefinierte Tags zu.
 
 ## Schritt 6: Speichern Sie das getaggte PDF-Dokument
 
 Abschließend speichern wir das getaggte PDF-Dokument.
 
 ```csharp
-// Speichern Sie das getaggte PDF-Dokument
+// Speichern des getaggten PDF-Dokuments
 document.Save(dataDir + "CustomTag.pdf");
 ```
 
-### Beispielquellcode für einen benutzerdefinierten Tag-Namen mit Aspose.PDF für .NET 
+### Beispielquellcode für benutzerdefinierte Tag-Namen mit Aspose.PDF für .NET 
 ```csharp
 
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Erstellen Sie ein PDF-Dokument
+// PDF-Dokument erstellen
 Document document = new Document();
 
 // Holen Sie sich Inhalte für die Arbeit mit TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Legen Sie Titel und Sprache für Documentt fest
+// Titel und Sprache für Dokument festlegen
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Erstellen Sie logische Strukturelemente
+// Logische Strukturelemente erstellen
 SectElement sect = taggedContent.CreateSectElement();
 taggedContent.RootElement.AppendChild(sect);
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
@@ -160,7 +160,7 @@ p2.AppendChild(span2);
 p3.AppendChild(span3);
 p4.AppendChild(span4);
 
-// Markiertes PDF-Dokument speichern
+// Getaggtes PDF-Dokument speichern
 document.Save(dataDir + "CustomTag.pdf");
 
 ```
@@ -169,44 +169,44 @@ document.Save(dataDir + "CustomTag.pdf");
 
 Herzlichen Glückwunsch! Sie haben gelernt, wie Sie mit Aspose.PDF für .NET einen benutzerdefinierten Tag-Namen verwenden. Sie können Ihrem PDF-Dokument jetzt mithilfe benutzerdefinierter Tags spezifische Strukturinformationen hinzufügen. Entdecken Sie weitere Funktionen von Aspose.PDF, um sein volles Potenzial zu entdecken.
 
-### FAQs
+### Häufig gestellte Fragen
 
 #### F: Was ist ein benutzerdefinierter Tag-Name im Kontext von PDF-Dokumenten und warum sollte ich ihn mit Aspose.PDF für .NET verwenden?
 
-A: Ein benutzerdefinierter Tag-Name in einem PDF-Dokument ist eine benutzerdefinierte Bezeichnung, die spezifische Strukturinformationen zum Inhalt des Dokuments bereitstellt. Durch die Verwendung benutzerdefinierter Tag-Namen mit Aspose.PDF für .NET können Sie die Zugänglichkeit und Organisation des PDF-Dokuments verbessern und so die Navigation, das Verständnis und die Interaktion damit erleichtern.
+A: Ein benutzerdefinierter Tag-Name in einem PDF-Dokument ist eine benutzerdefinierte Bezeichnung, die dem Inhalt des Dokuments spezifische Strukturinformationen verleiht. Durch die Verwendung benutzerdefinierter Tag-Namen mit Aspose.PDF für .NET können Sie die Zugänglichkeit und Organisation des PDF-Dokuments verbessern und so die Navigation, das Verständnis und die Interaktion erleichtern.
 
 #### F: Wie erleichtert Aspose.PDF für .NET die Verwendung benutzerdefinierter Tag-Namen in PDF-Dokumenten?
 
-A: Aspose.PDF für .NET bietet eine Reihe von Klassen und Methoden, mit denen Sie benutzerdefinierte Tag-Namen erstellen, bearbeiten und verschiedenen Strukturelementen in einem PDF-Dokument zuweisen können. Dies hilft Ihnen, dem Inhalt des Dokuments semantische Bedeutung und Kontext hinzuzufügen.
+A: Aspose.PDF für .NET bietet eine Reihe von Klassen und Methoden, mit denen Sie benutzerdefinierte Tag-Namen erstellen, bearbeiten und verschiedenen Strukturelementen in einem PDF-Dokument zuweisen können. Auf diese Weise können Sie dem Inhalt des Dokuments semantische Bedeutung und Kontext verleihen.
 
-####  F: Welche Rolle spielt das?`taggedContent` object play in using custom tag names?
+####  F: Welche Rolle spielt der`taggedContent` object play in using custom tag names?
 
- A: Die`taggedContent` Objekt, das aus dem Dokument stammt`TaggedContent` Mit dieser Eigenschaft können Sie mit strukturierten Elementen im PDF-Dokument arbeiten. Sie können diesen Elementen benutzerdefinierte Tag-Namen erstellen, organisieren und zuweisen und so die semantische Struktur des Dokuments verbessern.
+ A: Die`taggedContent` Objekt, das aus dem Dokument`TaggedContent` -Eigenschaft ermöglicht Ihnen das Arbeiten mit strukturierten Elementen im PDF-Dokument. Sie können diese Elemente erstellen, organisieren und ihnen benutzerdefinierte Tag-Namen zuweisen, um die semantische Struktur des Dokuments zu verbessern.
 
-#### F: Wie verbessern benutzerdefinierte Tag-Namen die Barrierefreiheit und Benutzerfreundlichkeit von Dokumenten?
+#### F: Wie verbessern benutzerdefinierte Tag-Namen die Zugänglichkeit und Benutzerfreundlichkeit von Dokumenten?
 
-A: Benutzerdefinierte Tag-Namen bieten zusätzlichen Kontext und Semantik für den Inhalt des Dokuments, wodurch die Zugänglichkeit für unterstützende Technologien verbessert und das Benutzererlebnis insgesamt verbessert wird. Bildschirmlesegeräte und andere Hilfsgeräte können benutzerdefinierte Tag-Namen verwenden, um Benutzern aussagekräftige Informationen zu übermitteln.
+A: Benutzerdefinierte Tag-Namen verleihen dem Inhalt des Dokuments zusätzlichen Kontext und zusätzliche Semantik, was die Zugänglichkeit für unterstützende Technologien verbessert und das allgemeine Benutzererlebnis steigert. Bildschirmleseprogramme und andere unterstützende Geräte können benutzerdefinierte Tag-Namen verwenden, um Benutzern aussagekräftige Informationen zu vermitteln.
 
 #### F: Kann ich benutzerdefinierte Tag-Namen für verschiedene Arten von Strukturelementen in einem PDF-Dokument verwenden?
 
-A: Ja, Sie können einer Vielzahl von Strukturelementen, einschließlich Absätzen, Spannen, Abschnitten und mehr, benutzerdefinierte Tag-Namen zuweisen. Auf diese Weise können Sie verschiedene Teile des Dokumentinhalts kategorisieren und beschriften und so ein besser organisiertes und verständlicheres Layout erstellen.
+A: Ja, Sie können einer Vielzahl von Strukturelementen, darunter Absätzen, Bereichen, Abschnitten und mehr, benutzerdefinierte Tag-Namen zuweisen. Auf diese Weise können Sie verschiedene Teile des Dokumentinhalts kategorisieren und beschriften und so ein besser organisiertes und verständlicheres Layout erstellen.
 
-#### F: Wie definiere ich mit Aspose.PDF für .NET benutzerdefinierte Tag-Namen und weise sie Elementen in einem PDF-Dokument zu?
+#### F: Wie definiere und weise ich mit Aspose.PDF für .NET Elementen in einem PDF-Dokument benutzerdefinierte Tag-Namen zu?
 
- A: Sie können benutzerdefinierte Tag-Namen definieren und zuweisen, indem Sie logische Strukturelemente wie Absätze und Bereiche erstellen und diese dann verwenden`SetTag` -Methode, um diesen Elementen den gewünschten benutzerdefinierten Tag-Namen zuzuweisen. Das bereitgestellte Codebeispiel veranschaulicht diesen Prozess.
+ A: Sie können benutzerdefinierte Tag-Namen definieren und zuweisen, indem Sie logische Strukturelemente wie Absätze und Bereiche erstellen und dann die`SetTag` Methode, um diesen Elementen den gewünschten benutzerdefinierten Tag-Namen zuzuweisen. Das bereitgestellte Codebeispiel demonstriert diesen Vorgang.
 
-#### F: Wie stelle ich sicher, dass die von mir verwendeten benutzerdefinierten Tag-Namen mit Barrierefreiheitsstandards und Best Practices kompatibel sind?
+#### F: Wie stelle ich sicher, dass die von mir verwendeten benutzerdefinierten Tag-Namen mit den Zugänglichkeitsstandards und Best Practices kompatibel sind?
 
-A: Bei der Auswahl benutzerdefinierter Tag-Namen wird empfohlen, die Richtlinien zur Barrierefreiheit zu befolgen und beschreibende und aussagekräftige Labels zu verwenden, die den Inhalt genau wiedergeben. Die Konsultation relevanter Barrierefreiheitsstandards und Dokumentation kann Ihnen bei der Auswahl geeigneter benutzerdefinierter Tag-Namen helfen.
+A: Bei der Auswahl benutzerdefinierter Tag-Namen wird empfohlen, die Zugänglichkeitsrichtlinien zu befolgen und beschreibende und aussagekräftige Bezeichnungen zu verwenden, die den Inhalt genau darstellen. Die Konsultation relevanter Zugänglichkeitsstandards und Dokumentationen kann Ihnen bei der Auswahl geeigneter benutzerdefinierter Tag-Namen helfen.
 
-#### F: Kann ich die Verwendung benutzerdefinierter Tag-Namen mit anderen PDF-Bearbeitungsfunktionen kombinieren, die Aspose.PDF für .NET bietet?
+#### F: Kann ich die Verwendung benutzerdefinierter Tag-Namen mit anderen PDF-Bearbeitungsfunktionen kombinieren, die von Aspose.PDF für .NET angeboten werden?
 
-A: Auf jeden Fall! Sie können die Verwendung benutzerdefinierter Tag-Namen mit anderen Funktionen von Aspose.PDF für .NET kombinieren, z. B. dem Erstellen von Tabellen, dem Hinzufügen von Bildern, dem Einfügen von Hyperlinks und mehr. Dadurch können Sie umfangreiche und zugängliche PDF-Dokumente mit strukturiertem Inhalt erstellen.
+A: Absolut! Sie können die Verwendung benutzerdefinierter Tag-Namen mit anderen Funktionen von Aspose.PDF für .NET kombinieren, z. B. Tabellen erstellen, Bilder hinzufügen, Hyperlinks einfügen und mehr. Auf diese Weise können Sie umfangreiche und zugängliche PDF-Dokumente mit strukturiertem Inhalt erstellen.
 
-#### F: Wie kann ich die Wirksamkeit der Verwendung benutzerdefinierter Tag-Namen für Barrierefreiheit und Benutzerfreundlichkeit in meinen PDF-Dokumenten überprüfen?
+#### F: Wie kann ich die Wirksamkeit der Verwendung benutzerdefinierter Tag-Namen hinsichtlich Zugänglichkeit und Benutzerfreundlichkeit in meinen PDF-Dokumenten überprüfen?
 
-A: Sie können die Wirksamkeit benutzerdefinierter Tag-Namen überprüfen, indem Sie unterstützende Technologien wie Bildschirmleseprogramme verwenden, um im PDF-Dokument zu navigieren und mit ihm zu interagieren. Darüber hinaus können Sie mithilfe von Tools und Validatoren die Konformität des Dokuments mit Barrierefreiheitsstandards und -richtlinien testen.
+A: Sie können die Wirksamkeit benutzerdefinierter Tag-Namen überprüfen, indem Sie unterstützende Technologien wie Bildschirmleseprogramme verwenden, um im PDF-Dokument zu navigieren und damit zu interagieren. Darüber hinaus können Sie mithilfe von Tools und Validierern testen, ob das Dokument den Standards und Richtlinien zur Barrierefreiheit entspricht.
 
-#### F: Wie kann ich dieses Wissen erweitern, um komplexere Dokumentstrukturen zu erstellen und benutzerdefinierte Tag-Namen für erweiterte Szenarios zu verwenden?
+#### F: Wie kann ich dieses Wissen erweitern, um komplexere Dokumentstrukturen zu erstellen und benutzerdefinierte Tag-Namen für erweiterte Szenarien zu verwenden?
 
-A: Sie können dieses Wissen erweitern, indem Sie zusätzliche Funktionen von Aspose.PDF für .NET erkunden, z. B. das Erstellen verschachtelter Strukturelemente, die Verwendung benutzerdefinierter Tags für Formularfelder, das Einbinden von Multimedia-Elementen und mehr. Die Dokumentation und Beispiele der Bibliothek bieten Anleitungen für diese erweiterten Szenarios.
+A: Sie können dieses Wissen erweitern, indem Sie zusätzliche Funktionen von Aspose.PDF für .NET erkunden, z. B. das Erstellen verschachtelter Strukturelemente, die Verwendung benutzerdefinierter Tags für Formularfelder, das Einbinden von Multimediaelementen und mehr. Die Dokumentation und Beispiele der Bibliothek bieten Anleitungen für diese erweiterten Szenarien.

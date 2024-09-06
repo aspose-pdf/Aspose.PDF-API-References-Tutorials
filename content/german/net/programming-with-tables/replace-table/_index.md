@@ -7,9 +7,9 @@ type: docs
 weight: 180
 url: /de/net/programming-with-tables/replace-table/
 ---
-In diesem Tutorial führen wir Sie Schritt für Schritt durch das Ersetzen einer Tabelle in einem PDF-Dokument mit Aspose.PDF für .NET. Wir erklären Ihnen den bereitgestellten C#-Quellcode und zeigen Ihnen, wie Sie ihn implementieren.
+In diesem Tutorial führen wir Sie Schritt für Schritt durch das Ersetzen einer Tabelle in einem PDF-Dokument mithilfe von Aspose.PDF für .NET. Wir erklären den bereitgestellten C#-Quellcode und zeigen Ihnen, wie Sie ihn implementieren.
 
-## Schritt 1: Laden des vorhandenen PDF-Dokuments
+## Schritt 1: Vorhandenes PDF-Dokument laden
 Zuerst müssen Sie das vorhandene PDF-Dokument mit dem folgenden Code laden:
 
 ```csharp
@@ -29,22 +29,22 @@ TableAbsorber absorber = new TableAbsorber();
 ```
 
 ## Schritt 3: Besuchen Sie die erste Seite mit dem Absorber
-Wir besuchen nun die erste Seite des PDF-Dokuments mit dem Absorber:
+Wir besuchen nun mit dem Absorber die erste Seite des PDF-Dokuments:
 
 ```csharp
 // Besuchen Sie die erste Seite mit dem Absorber
 absorb.Visit(pdfDocument.Pages[1]);
 ```
 
-## Schritt 4: Erste Tabelle auf der Seite erstellen
-Um die Tabelle ersetzen zu können, erhalten wir die erste Tabelle der Seite:
+## Schritt 4: Die erste Tabelle auf die Seite bringen
+Um die Tabelle ersetzen zu können, holen wir uns die erste Tabelle der Seite:
 
 ```csharp
 // Holen Sie sich die erste Tabelle auf der Seite
 AbsorbedTable table = absorb.TableList[0];
 ```
 
-## Schritt 5: Erstellen einer neuen Tabelle
+## Schritt 5: Eine neue Tabelle erstellen
 Nun erstellen wir eine neue Tabelle mit den gewünschten Spalten und Zellen:
 
 ```csharp
@@ -59,7 +59,7 @@ row. Cells. Add("Col 3");
 ```
 
 ## Schritt 6: Ersetzen der vorhandenen Tabelle durch die neue Tabelle
-Wir ersetzen nun die bestehende Tabelle durch die neue Tabelle auf der ersten Seite des Dokuments:
+Wir ersetzen nun die vorhandene Tabelle durch die neue Tabelle auf der ersten Seite des Dokuments:
 
 ```csharp
 // Ersetzen Sie die Tabelle durch die neue Tabelle
@@ -73,10 +73,10 @@ Abschließend speichern wir das geänderte PDF-Dokument:
 pdfDocument.Save(dataDir + "TableReplaced_out.pdf");
 ```
 
-### Beispielquellcode für „Tabelle ersetzen“ mit Aspose.PDF für .NET
+### Beispielquellcode für „Replace Table“ mit Aspose.PDF für .NET
 
 ```csharp
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 // Vorhandenes PDF-Dokument laden
@@ -88,7 +88,7 @@ TableAbsorber absorber = new TableAbsorber();
 // Besuchen Sie die erste Seite mit Absorber
 absorber.Visit(pdfDocument.Pages[1]);
 
-// Holen Sie sich die erste Tabelle auf der Seite
+// Erste Tabelle auf der Seite abrufen
 AbsorbedTable table = absorber.TableList[0];
 
 // Neue Tabelle erstellen
@@ -109,26 +109,26 @@ pdfDocument.Save(dataDir + "TableReplaced_out.pdf");
 ```
 
 ## Abschluss
-Herzlichen Glückwunsch! Sie haben jetzt gelernt, wie Sie mit Aspose.PDF für .NET eine Tabelle in einem PDF-Dokument ersetzen. Diese Schritt-für-Schritt-Anleitung zeigte Ihnen, wie Sie das Dokument laden, die vorhandene Tabelle finden, eine neue Tabelle erstellen und diese ersetzen. Jetzt können Sie dieses Wissen auf Ihre eigenen Projekte anwenden.
+Herzlichen Glückwunsch! Sie haben nun gelernt, wie Sie mit Aspose.PDF für .NET eine Tabelle in einem PDF-Dokument ersetzen. Diese Schritt-für-Schritt-Anleitung hat Ihnen gezeigt, wie Sie das Dokument laden, die vorhandene Tabelle finden, eine neue Tabelle erstellen und sie ersetzen. Jetzt können Sie dieses Wissen in Ihren eigenen Projekten anwenden.
 
-### FAQs zum Ersetzen einer Tabelle in einem PDF-Dokument
+### FAQs zum Ersetzen von Tabellen in PDF-Dokumenten
 
 #### F: Kann ich mit diesem Ansatz mehrere Tabellen im selben PDF-Dokument ersetzen?
 
- A: Ja, Sie können mehrere Tabellen im selben PDF-Dokument ersetzen, indem Sie für jede Tabelle, die Sie ersetzen möchten, denselben Vorgang ausführen. Nach Erhalt der`AbsorbedTable` Objekt für jede Tabelle mit dem`TableAbsorber` , können Sie entsprechende neue Tabellen erstellen und diese dann verwenden`absorber.Replace()` Methode, um jede vorhandene Tabelle durch die entsprechende neue Tabelle zu ersetzen.
+ A: Ja, Sie können mehrere Tabellen im selben PDF-Dokument ersetzen, indem Sie für jede Tabelle, die Sie ersetzen möchten, den gleichen Vorgang ausführen. Nachdem Sie die`AbsorbedTable` Objekt für jede Tabelle mit dem`TableAbsorber` können Sie entsprechende neue Tabellen anlegen und anschließend mit dem`absorber.Replace()` Methode, um jede vorhandene Tabelle durch die entsprechende neue Tabelle zu ersetzen.
 
-#### F: Was passiert, wenn die neue Tabelle eine andere Anzahl von Spalten hat als die ursprüngliche Tabelle?
+#### F: Was passiert, wenn die neue Tabelle eine andere Spaltenanzahl hat als die Originaltabelle?
 
-A: Wenn die neue Tabelle eine andere Spaltenanzahl als die Originaltabelle hat, kann es zu unerwartetem Verhalten oder Layoutproblemen im geänderten PDF-Dokument kommen. Für einen nahtlosen Ersatz muss unbedingt sichergestellt werden, dass die Struktur der neuen Tabelle (Anzahl der Spalten und deren Breite) mit der Struktur der ursprünglichen Tabelle übereinstimmt.
+A: Wenn die neue Tabelle eine andere Spaltenanzahl als die Originaltabelle hat, kann dies zu unerwartetem Verhalten oder Layoutproblemen im geänderten PDF-Dokument führen. Um einen nahtlosen Austausch zu gewährleisten, muss unbedingt sichergestellt werden, dass die Struktur der neuen Tabelle (Anzahl der Spalten und deren Breite) mit der Struktur der Originaltabelle übereinstimmt.
 
 #### F: Kann ich eine Tabelle auf einer bestimmten Seite außer der ersten Seite ersetzen?
 
- A: Ja, Sie können eine Tabelle auf einer bestimmten Seite außer der ersten Seite ersetzen, indem Sie den Seitenindex in ändern`pdfDocument.Pages[]` Methodenaufruf beim Abrufen der`AbsorbedTable` Objekt. Um beispielsweise eine Tabelle auf der zweiten Seite zu ersetzen, würden Sie verwenden`pdfDocument.Pages[2]`.
+ A: Ja, Sie können eine Tabelle auf einer bestimmten Seite außer der ersten Seite ersetzen, indem Sie den Seitenindex im`pdfDocument.Pages[]` Methodenaufruf beim Abrufen der`AbsorbedTable` Objekt. Um beispielsweise eine Tabelle auf der zweiten Seite zu ersetzen, verwenden Sie`pdfDocument.Pages[2]`.
 
-#### F: Kann ich das Erscheinungsbild der neuen Tabelle anpassen, indem ich beispielsweise Hintergrundfarbe oder Rahmen hinzufüge?
+#### F: Kann ich das Erscheinungsbild der neuen Tabelle anpassen, beispielsweise durch Hinzufügen einer Hintergrundfarbe oder von Rändern?
 
- A: Ja, Sie können das Erscheinungsbild der neuen Tabelle anpassen, indem Sie verschiedene Eigenschaften festlegen`Table` und seine Zellen. Sie können beispielsweise Folgendes festlegen:`BackgroundColor` Eigenschaft von Zellen, Hintergrundfarbe hinzuzufügen. Sie können auch die festlegen`DefaultCellBorder` Eigenschaft der neuen Tabelle oder einzelner Zellen, um Ränder hinzuzufügen.
+ A: Ja, Sie können das Erscheinungsbild der neuen Tabelle anpassen, indem Sie verschiedene Eigenschaften der`Table` und seine Zellen. Sie können beispielsweise die`BackgroundColor` Eigenschaft von Zellen, um Hintergrundfarbe hinzuzufügen. Sie können auch die`DefaultCellBorder` -Eigenschaft der neuen Tabelle oder einzelner Zellen, um Ränder hinzuzufügen.
 
 #### F: Hat das Ersetzen einer Tabelle Auswirkungen auf das Inhaltslayout des restlichen PDF-Dokuments?
 
-A: Das Ersetzen einer Tabelle kann sich auf das Inhaltslayout auswirken, wenn die Größe oder Struktur der neuen Tabelle erheblich von der Originaltabelle abweicht. Der Rest des Inhalts auf der Seite wird neu umbrochen, um die neue Tabelle aufzunehmen. Es ist wichtig, den neuen Tisch sorgfältig so zu gestalten, dass er sich nahtlos in das bestehende Layout einfügt, um Layoutprobleme zu vermeiden.
+A: Das Ersetzen einer Tabelle kann sich auf das Inhaltslayout auswirken, wenn die Größe oder Struktur der neuen Tabelle erheblich von der ursprünglichen Tabelle abweicht. Der restliche Inhalt auf der Seite wird neu umbrochen, um der neuen Tabelle Platz zu bieten. Es ist wichtig, die neue Tabelle sorgfältig zu entwerfen, damit sie nahtlos in das vorhandene Layout passt und Layoutprobleme vermieden werden.

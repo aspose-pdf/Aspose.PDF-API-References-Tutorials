@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 2. lépés: Új PDF dokumentum létrehozása
 
- Új PDF dokumentum létrehozásához létre kell hoznunk egy újat`Aspose.Pdf.Document` tárgy. Ezt a következő kóddal tehetjük meg:
+ Új PDF dokumentum létrehozásához létre kell hoznunk egy újat`Aspose.Pdf.Document` objektum. Ezt a következő kóddal tehetjük meg:
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
@@ -35,7 +35,7 @@ doc.Pages.Add();
 
 ## 4. lépés: Szöveg hozzáadása a PDF-dokumentumhoz
 
-Miután hozzáadtunk egy oldalt a PDF dokumentumhoz, a segítségével szöveget adhatunk hozzá`Paragraphs` Gyűjtemény. Ezt a következő kóddal tehetjük meg:
+ Miután hozzáadtunk egy oldalt a PDF dokumentumhoz, a segítségével szöveget adhatunk hozzá`Paragraphs` gyűjtemény. Ezt a következő kóddal tehetjük meg:
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));

@@ -7,7 +7,7 @@ type: docs
 weight: 30
 url: /cs/net/programming-with-operators/remove-graphics-objects/
 ---
-V tomto tutoriálu vám poskytneme podrobný návod, jak odstranit grafické objekty ze souboru PDF pomocí Aspose.PDF for .NET. Aspose.PDF je výkonná knihovna, která vám umožňuje programově vytvářet, manipulovat a převádět dokumenty PDF. Pomocí operátorů poskytovaných Aspose.PDF můžete cílit na konkrétní grafické objekty a odstraňovat je ze stránky PDF.
+tomto tutoriálu vám poskytneme podrobný návod, jak odstranit grafické objekty ze souboru PDF pomocí Aspose.PDF for .NET. Aspose.PDF je výkonná knihovna, která vám umožňuje programově vytvářet, manipulovat a převádět dokumenty PDF. Pomocí operátorů poskytovaných Aspose.PDF můžete cílit na konkrétní grafické objekty a odstraňovat je ze stránky PDF.
 
 ## Předpoklady
 
@@ -115,11 +115,11 @@ using Aspose.Pdf.Operators;
 
 #### Otázka: Jak mohu načíst dokument PDF pomocí Aspose.PDF?
 
-A: Můžete použít`Document` třídy k načtení dokumentu PDF. Chcete-li načíst dokument, postupujte podle příkladu kódu uvedeného v kurzu.
+ A: Můžete použít`Document` třídy k načtení dokumentu PDF. Chcete-li načíst dokument, postupujte podle příkladu kódu uvedeného v kurzu.
 
 #### Otázka: Jak mohu identifikovat a odstranit grafické objekty ze stránky PDF?
 
- A: Můžete použít operátory jako`Stroke`, `ClosePathStroke` , a`Fill` k identifikaci grafických objektů na stránce PDF. Poté použijte`Delete` způsob odstranění těchto objektů.
+ A: Můžete použít operátory jako`Stroke`, `ClosePathStroke` a`Fill` k identifikaci grafických objektů na stránce PDF. Poté použijte`Delete` způsob odstranění těchto objektů.
 
 #### Otázka: Je možné pomocí Aspose.PDF odstranit jiné typy objektů PDF?
 

@@ -21,7 +21,7 @@ using Aspose.Pdf.InteractiveFeatures;
 
 ## Krok 2: Nastavte cestu ke složce dokumentů
 
- tomto kroku musíte zadat cestu ke složce obsahující soubor PDF, do kterého chcete přidat odkaz na jiný dokument. Nahradit`"YOUR DOCUMENT DIRECTORY"` následujícím kódu se skutečnou cestou ke složce dokumentů:
+ V tomto kroku musíte zadat cestu ke složce obsahující soubor PDF, do kterého chcete přidat odkaz na jiný dokument. Nahradit`"YOUR DOCUMENT DIRECTORY"` v následujícím kódu se skutečnou cestou ke složce dokumentů:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -49,7 +49,7 @@ page.Annotations.Add(link);
 
 ## Krok 5: Uložte aktualizovaný soubor
 
- Nyní uložme aktualizovaný soubor PDF pomocí`Save` metoda`document` objekt. Zde je odpovídající kód:
+Nyní uložme aktualizovaný soubor PDF pomocí`Save` metoda`document` objekt. Zde je odpovídající kód:
 
 ```csharp
 dataDir = dataDir + "CreateDocumentLink_out.pdf";
@@ -108,7 +108,7 @@ Odpověď: Podle poskytnutého kurzu a ukázkového kódu můžete s jistotou vy
 
 #### Otázka: Mohu vytvořit více odkazů na dokument v rámci jednoho souboru PDF?
 
- A: Určitě! V rámci jednoho dokumentu PDF můžete vytvořit více odkazů na dokument pomocí`LinkAnnotation`anotace. To vám umožní poskytnout uživatelům přístup k různým souvisejícím dokumentům z různých sekcí.
+ A: Určitě! V rámci jednoho dokumentu PDF můžete vytvořit více odkazů na dokument pomocí`LinkAnnotation` anotace. To vám umožní poskytnout uživatelům přístup k různým souvisejícím dokumentům z různých sekcí.
 
 #### Otázka: Existují nějaká omezení při odkazování na externí dokumenty?
 

@@ -7,7 +7,7 @@ type: docs
 weight: 470
 url: /cs/net/programming-with-text/search-text-segments-page/
 ---
-Tento tutoriál vysvětluje, jak používat Aspose.PDF for .NET k vyhledávání specifických textových segmentů na stránce souboru PDF a získávání jejich vlastností. Poskytnutý zdrojový kód C# demonstruje proces krok za krokem.
+Tento výukový program vysvětluje, jak používat Aspose.PDF for .NET k vyhledávání specifických textových segmentů na stránce souboru PDF a získávání jejich vlastností. Poskytnutý zdrojový kód C# demonstruje proces krok za krokem.
 
 ## Předpoklady
 
@@ -51,7 +51,7 @@ Document pdfDocument = new Document(dataDir + "SearchTextSegmentsPage.pdf");
 
 ## Krok 5: Vytvořte TextFragmentAbsorber
 
- Vytvořit`TextFragmentAbsorber` objekt k nalezení všech výskytů vstupní vyhledávací fráze:
+ Vytvořte a`TextFragmentAbsorber` objekt k nalezení všech výskytů vstupní vyhledávací fráze:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
@@ -71,7 +71,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## Krok 7: Načtěte extrahované textové segmenty
 
- Získejte extrahované textové segmenty pomocí`TextFragments` vlastnictvím`TextFragmentAbsorber` objekt:
+ Získejte extrahované textové segmenty pomocí`TextFragments` majetek z`TextFragmentAbsorber` objekt:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -143,7 +143,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 
 ## Závěr
 
-Gratulujeme! Úspěšně jste se naučili, jak vyhledávat konkrétní textové segmenty na stránce dokumentu PDF pomocí Aspose.PDF for .NET. Tento výukový program poskytl průvodce krok za krokem, od načtení dokumentu až po přístup k extrahovaným textovým segmentům. Nyní můžete tento kód začlenit do svých vlastních projektů C# a provádět pokročilé vyhledávání textových segmentů v souborech PDF.
+Gratuluji! Úspěšně jste se naučili, jak vyhledávat konkrétní textové segmenty na stránce dokumentu PDF pomocí Aspose.PDF for .NET. Tento výukový program poskytl průvodce krok za krokem, od načtení dokumentu až po přístup k extrahovaným textovým segmentům. Nyní můžete tento kód začlenit do svých vlastních projektů C# a provádět pokročilé vyhledávání textových segmentů v souborech PDF.
 
 ### FAQ
 

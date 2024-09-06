@@ -11,7 +11,7 @@ Ez az útmutató lépésről lépésre bemutatja, hogyan hozhat létre indexkép
 
 ## 1. lépés: Határozza meg a dokumentumkönyvtárat
 
- Mielőtt elkezdené, győződjön meg arról, hogy a megfelelő könyvtárat állította be a dokumentumokhoz. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a kódban a PDF-fájlokat tartalmazó könyvtár elérési útjával.
+Mielőtt elkezdené, győződjön meg arról, hogy a megfelelő könyvtárat állította be a dokumentumokhoz. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a kódban a PDF-fájlokat tartalmazó könyvtár elérési útjával.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 2. lépés: Szerezze meg az összes PDF-fájl nevét egy könyvtárban
 
- Ebben a lépésben a megadott könyvtárban található összes PDF fájl nevét lekérjük C# segítségével`Directory` osztály. A fájlok karakterláncok tömbjében lesznek tárolva.
+ Ebben a lépésben a megadott könyvtárban található összes PDF fájl nevét lekérjük C# segítségével`Directory`osztály. A fájlok karakterláncok tömbjében lesznek tárolva.
 
 ```csharp
 string[] fileEntries = Directory.GetFiles(dataDir, "*.pdf");
@@ -32,7 +32,7 @@ string[] fileEntries = Directory.GetFiles(dataDir, "*.pdf");
 ```csharp
 for (int counter = 0; counter < fileEntries.Length; counter++)
 {
-     //Nyissa meg a PDF dokumentumot
+     // Nyissa meg a PDF dokumentumot
      Document pdfDocument = new Document(fileEntries[counter]);
     
      // Menjen végig a dokumentum összes oldalán
@@ -41,7 +41,7 @@ for (int counter = 0; counter < fileEntries.Length; counter++)
          // Hozzon létre egy adatfolyamot az indexkép mentéséhez
          using (FileStream imageStream = new FileStream(dataDir + "\\Thumbnails" + counter.ToString() + "_" + pageCount + ".jpg", FileMode.Create))
          {
-             // Hozzon létre egy Resolution objektumot
+             //Hozzon létre egy Resolution objektumot
              Resolution resolution = new Resolution(300);
             
              // Hozzon létre egy JPEG-eszközt a megadott attribútumokkal
@@ -61,7 +61,7 @@ for (int counter = 0; counter < fileEntries.Length; counter++)
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//Lekérheti az összes PDF-fájl nevét egy adott könyvtárban
+// Lekérheti az összes PDF-fájl nevét egy adott könyvtárban
 string[] fileEntries = Directory.GetFiles(dataDir, "*.pdf");
 // Ismételje meg a tömb összes fájl bejegyzését
 for (int counter = 0; counter < fileEntries.Length; counter++)
@@ -98,7 +98,7 @@ V: A PDF-fájlokból bélyegképek létrehozása lehetővé teszi, hogy a PDF-f�
 
 #### K: Hogyan segíti elő az Aspose.PDF for .NET PDF-fájlokból való miniatűrök létrehozását?
 
-V: Az Aspose.PDF for .NET lépésről-lépésre kínál PDF-dokumentumok megnyitását, oldalaikon való iterációt, miniatűrképek létrehozását, és egy meghatározott könyvtárba való mentését a`JpegDevice` osztály.
+ V: Az Aspose.PDF for .NET lépésről-lépésre kínál PDF-dokumentumok megnyitását, oldalaikon való iterációt, miniatűrképek létrehozását, és egy meghatározott könyvtárba való mentését a`JpegDevice` osztály.
 
 #### K: Miért fontos meghatározni a dokumentumkönyvtárat az indexképek létrehozásának megkezdése előtt?
 
@@ -114,11 +114,11 @@ V: A dokumentumkönyvtár megadása biztosítja, hogy a PDF-fájlok helyesen hel
 
 #### K: Hogyan konvertálják a PDF-dokumentum minden oldalát egyedi miniatűr képpé?
 
- V: Egy beágyazott`for` ciklus az egyes PDF-fájlok és oldalain való iterációra szolgál. Minden oldalhoz létrejön egy JPEG-eszköz meghatározott attribútumokkal, és a`Process` módszerrel az oldal miniatűr képpé konvertálható és menthető az adatfolyamba.
+ V: Egy beágyazott`for` A ciklus az egyes PDF-fájlok és oldalain való iterációra szolgál. Minden oldalhoz létrejön egy JPEG-eszköz meghatározott attribútumokkal, és a`Process` módszerrel az oldal miniatűr képpé konvertálható és menthető az adatfolyamba.
 
 #### K: Beállíthatom az eredményül kapott miniatűrök felbontását vagy minőségét a létrehozási folyamat során?
 
- V: Igen, módosíthatja az olyan attribútumokat, mint a felbontás, szélesség, magasság és minőség, ha konfigurálja a`JpegDevice` objektumot az egyes oldalak konvertálása előtt.
+V: Igen, módosíthatja az olyan attribútumokat, mint a felbontás, szélesség, magasság és minőség, ha konfigurálja a`JpegDevice` objektumot az egyes oldalak konvertálása előtt.
 
 #### K: Hogyan használhatom fel a generált bélyegképeket projektjeimben vagy alkalmazásaimban a létrehozási folyamat után?
 

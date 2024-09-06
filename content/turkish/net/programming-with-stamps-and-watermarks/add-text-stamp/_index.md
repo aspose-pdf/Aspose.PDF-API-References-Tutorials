@@ -1,52 +1,52 @@
 ---
-title: PDF Dosyasına Metin Damgası Ekleme
-linktitle: PDF Dosyasına Metin Damgası Ekleme
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile PDF dosyasına kolayca metin damgası eklemeyi öğrenin.
+title: PDF Dosyasına Metin Damgası Ekle
+linktitle: PDF Dosyasına Metin Damgası Ekle
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET ile PDF dosyasına nasıl kolayca metin damgası ekleyeceğinizi öğrenin.
 type: docs
 weight: 50
 url: /tr/net/programming-with-stamps-and-watermarks/add-text-stamp/
 ---
-Bu eğitimde, Aspose.PDF for .NET kullanarak PDF dosyasına nasıl metin damgası ekleyeceğinizi adım adım anlatacağız. PDF dosyasının belirli bir sayfasına özel metin damgası eklemek için sağlanan C# kaynak kodunu nasıl kullanacağınızı size göstereceğiz.
+Bu eğitimde, .NET için Aspose.PDF kullanarak PDF dosyasına nasıl metin damgası ekleyeceğinizi adım adım göstereceğiz. Sağlanan C# kaynak kodunu kullanarak PDF dosyasının belirli bir sayfasına özel bir metin damgası eklemeyi göstereceğiz.
 
-## 1. Adım: Ortamı ayarlama
+## Adım 1: Ortamı kurma
 
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
 - Kurulu bir .NET geliştirme ortamı.
-- .NET için Aspose.PDF kütüphanesini indirip projenizde referans olarak kullanabilirsiniz.
+- .NET için Aspose.PDF kütüphanesi indirildi ve projenizde referans olarak kullanıldı.
 
 ## Adım 2: PDF belgesini yükleme
 
-İlk adım mevcut PDF belgesini projenize yüklemektir. İşte nasıl:
+İlk adım, mevcut PDF belgesini projenize yüklemektir. İşte nasıl:
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir + "AddTextStamp.pdf");
 ```
 
-"BELGELERİNİZ DİZİNİ"ni, PDF belgenizin bulunduğu dizine giden gerçek yolla değiştirdiğinizden emin olun.
+"BELGELERİNİZ DİZİNİ" ifadesini PDF belgenizin bulunduğu dizinin gerçek yoluyla değiştirdiğinizden emin olun.
 
-## 3. Adım: Metin arabelleğini oluşturma
+## Adım 3: Metin tamponunu oluşturma
 
-Artık PDF belgesini yüklediğinize göre eklenecek metin damgasını oluşturabilirsiniz. Bunu nasıl yapacağınız aşağıda açıklanmıştır:
+Artık PDF belgenizi yüklediğinize göre, eklemek için metin damgasını oluşturabilirsiniz. İşte nasıl yapacağınız:
 
 ```csharp
-// Metin arabelleğini oluşturun
+// Metin tamponunu oluştur
 TextStamp textStamp = new TextStamp("Example Stamp");
 ```
 
-Yukarıdaki kod, belirtilen metni içeren yeni bir metin arabelleği oluşturur.
+Yukarıdaki kod belirtilen metni içeren yeni bir metin tamponu oluşturur.
 
 ## Adım 4: Metin Damgası Özelliklerini Yapılandırma
 
-Metin damgasını PDF belgesine eklemeden önce damganın arka plan, konum, döndürme, yazı tipi, boyut vb. çeşitli özelliklerini yapılandırabilirsiniz. Bunu şu şekilde yapabilirsiniz:
+PDF belgesine metin damgasını eklemeden önce damganın arka plan, konum, dönüş, yazı tipi, boyut vb. gibi çeşitli özelliklerini yapılandırabilirsiniz. İşte nasıl:
 
 ```csharp
-// Metin arabelleği özelliklerini yapılandırma
+// Metin arabelleği özelliklerini yapılandırın
 textStamp. Background = true;
 textStamp. XIndent = 100;
 textStamp. YIndent = 100;
@@ -59,32 +59,32 @@ textStamp.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Co
 
 Bu özellikleri ihtiyaçlarınıza göre ayarlayabilirsiniz.
 
-## Adım 5: PDF'ye Metin Damgası Ekleme
+## Adım 5: PDF'e Metin Damgası Ekleme
 
-Artık metin damgası hazır olduğuna göre onu PDF belgesinin belirli bir sayfasına ekleyebilirsiniz. İşte nasıl:
+Artık metin damgası hazır olduğuna göre, onu PDF belgesinin belirli bir sayfasına ekleyebilirsiniz. İşte nasıl:
 
 ```csharp
-//Belirli bir sayfaya metin arabelleği ekleyin
+//Belirli bir sayfaya metin arabelleği ekle
 pdfDocument.Pages[1].AddStamp(textStamp);
 ```
 
-Yukarıdaki kod, metin damgasını PDF belgesinin ilk sayfasına ekler. Gerekirse başka bir sayfa belirtebilirsiniz.
+Yukarıdaki kod, PDF belgesinin ilk sayfasına metin damgası ekler. Gerekirse başka bir sayfa belirtebilirsiniz.
 
 ## Adım 6: Çıktı belgesini kaydedin
 
-Metin damgasını ekledikten sonra düzenlenen PDF belgesini kaydedebilirsiniz. İşte nasıl:
+Metin damgasını ekledikten sonra, düzenlenen PDF belgesini kaydedebilirsiniz. İşte nasıl:
 
 ```csharp
-// Çıktı belgesini kaydet
+// Çıktı belgesini kaydedin
 pdfDocument.Save(dataDir);
 ```
 
 Yukarıdaki kod, değiştirilen PDF belgesini belirtilen dizine kaydeder.
 
-### Aspose.PDF for .NET kullanarak Metin Damgası Ekleme için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Metin Damgası Ekleme için örnek kaynak kodu 
 ```csharp
 
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 // Belgeyi aç
@@ -93,17 +93,17 @@ Document pdfDocument = new Document(dataDir+ "AddTextStamp.pdf");
 // Metin damgası oluştur
 TextStamp textStamp = new TextStamp("Sample Stamp");
 
-// Damganın arka planda olup olmayacağını ayarlayın
+// Damganın arka plan olup olmadığını ayarlayın
 textStamp.Background = true;
 
-// Başlangıç noktasını ayarla
+// Kökeni ayarla
 textStamp.XIndent = 100;
 textStamp.YIndent = 100;
 
-// Damgayı döndür
+// Pul döndür
 textStamp.Rotate = Rotation.on90;
 
-// Metin özelliklerini ayarlama
+// Metin özelliklerini ayarla
 textStamp.TextState.Font = FontRepository.FindFont("Arial");
 textStamp.TextState.FontSize = 14.0F;
 textStamp.TextState.FontStyle = FontStyles.Bold;
@@ -122,42 +122,42 @@ Console.WriteLine("\nText stamp added successfully.\nFile saved at " + dataDir);
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET'i kullanarak nasıl metin damgası ekleyeceğinizi öğrendiniz. Artık PDF belgelerine özel metin damgaları eklemek için bu bilgiyi kendi projelerinize uygulayabilirsiniz.
+Tebrikler! Aspose.PDF for .NET kullanarak metin damgası eklemeyi öğrendiniz. Şimdi bu bilgiyi kendi projelerinize uygulayarak PDF belgelerine özel metin damgaları ekleyebilirsiniz.
 
-### PDF dosyasına metin damgası eklemek için SSS
+### PDF dosyasına metin damgası eklemeyle ilgili SSS
 
 #### S: Aspose.PDF for .NET kullanarak bir PDF dosyasına metin damgası eklemenin amacı nedir?
 
-C: Metin damgası eklemek, özel metni bir PDF belgesinin belirli bir sayfasına yerleştirmenize olanak tanır. Bu özellik, belgenin içeriğini geliştirmek ve ek bağlam sağlamak amacıyla etiketler, yorumlar, filigranlar veya diğer metinsel bilgileri eklemek için kullanışlıdır.
+A: Metin damgası eklemek, PDF belgesinin belirli bir sayfasına özel metin yerleştirmenize olanak tanır. Bu özellik, belgenin içeriğini geliştirmek ve ek bağlam sağlamak için etiketler, yorumlar, filigranlar veya başka herhangi bir metinsel bilgi eklemek için kullanışlıdır.
 
-#### S: Metin damgasının yazı tipi, boyutu, rengi ve döndürme gibi görünümünü özelleştirebilir miyim?
+#### S: Metin damgasının yazı tipi, boyutu, rengi ve dönüşü gibi görünümünü özelleştirebilir miyim?
 
- C: Evet, metin damgasının görünümünü tamamen özelleştirebilirsiniz. Sağlanan C# kaynak kodu, C#'ın çeşitli özelliklerinin nasıl ayarlanacağını gösterir.`TextStamp` yazı tipi, yazı tipi boyutu, yazı tipi stili, metin rengi, arka plan rengi ve döndürme dahil olmak üzere nesne.
+ A: Evet, metin damgasının görünümünü tamamen özelleştirebilirsiniz. Sağlanan C# kaynak kodu, çeşitli özelliklerin nasıl ayarlanacağını gösterir`TextStamp` yazı tipi, yazı tipi boyutu, yazı tipi stili, metin rengi, arka plan rengi ve dönüş dahil olmak üzere nesne.
 
 #### S: Aynı PDF belgesinin farklı sayfalarına birden fazla metin damgası eklemek mümkün müdür?
 
-C: Kesinlikle, aynı PDF belgesinin farklı sayfalarına birden fazla metin damgası ekleyebilirsiniz. Eğitimde sağlanan kod, metin damgasını eklemek için hedef sayfayı belirtmenize olanak tanır, böylece belge içindeki farklı sayfalar için çok yönlü hale gelir.
+A: Kesinlikle, aynı PDF belgesinin farklı sayfalarına birden fazla metin damgası ekleyebilirsiniz. Eğitimin sağladığı kod, metin damgasını eklemek için hedef sayfayı belirtmenize olanak tanır ve bu da belgedeki farklı sayfalar için çok yönlü hale getirir.
 
-#### S: Metin damgasının PDF belgesindeki konumunu nasıl belirlerim?
+#### S: PDF belgesindeki metin damgasının konumunu nasıl belirlerim?
 
- C: Metin damgasının konumunu değiştirerek özelleştirebilirsiniz.`XIndent` Ve`YIndent` özellikleri`TextStamp` nesne. Bu özellikler damganın sol üst köşesinin koordinatlarını sayfanın kaynağına göre tanımlar.
+ A: Metin damgasının konumunu,`XIndent` Ve`YIndent` özellikleri`TextStamp` nesne. Bu özellikler, pulun sol üst köşesinin sayfanın kökenine göre koordinatlarını tanımlar.
 
-#### S: Metin damgaları eklemek için bu yöntemi mevcut PDF belgelerine uygulayabilir miyim?
+#### S: Bu yöntemi mevcut PDF belgelerine metin damgaları eklemek için uygulayabilir miyim?
 
-C: Evet, metin damgaları eklemek için bu yöntemi mevcut PDF belgelerine uygulayabilirsiniz. Eğitimde sağlanan kod, mevcut bir PDF belgesinin nasıl yükleneceğini ve belirli bir sayfaya metin damgasının nasıl ekleneceğini gösterir.
+A: Evet, metin damgaları eklemek için bu yöntemi mevcut PDF belgelerine uygulayabilirsiniz. Eğitimde sağlanan kod, mevcut bir PDF belgesinin nasıl yükleneceğini ve belirli bir sayfaya metin damgası nasıl ekleneceğini gösterir.
 
-#### S: Metin damgasına hem arka plan hem de ön plan renkleri ekleyebilir miyim?
+#### S: Metin damgasına hem arka plan hem de ön plan renklerini ekleyebilir miyim?
 
- C: Evet, metin damgasına hem arka plan hem de ön plan renkleri ekleyebilirsiniz. Ayarlayarak`Background` mülkiyet`true` metin damgası için renkli bir arka plan sağlayabilirsiniz. Ek olarak,`TextState.ForegroundColor` Metnin rengini belirtme özelliği.
+ A: Evet, metin damgasına hem arka plan hem de ön plan renkleri ekleyebilirsiniz.`Background` mülk`true` , metin damgası için renkli bir arka plan sağlayabilirsiniz. Ek olarak,`TextState.ForegroundColor` Metnin rengini belirtmek için kullanılan özellik.
 
-#### S: Metin damgasının PDF belgesinin temel içeriğini gizlememesini nasıl sağlayabilirim?
+#### S: Metin damgasının PDF belgesinin altta yatan içeriğini gizlemediğinden nasıl emin olabilirim?
 
- C: Bir metin damgası eklerken, kritik bilgileri engellemediğinden veya belgenin okunabilirliğini olumsuz etkilemediğinden emin olmak için yerleşimine dikkat edin. Ayarlayabilirsiniz`XIndent` Ve`YIndent` metin damgasını uygun şekilde konumlandırmak için özellikler.
+A: Bir metin damgası eklerken, kritik bilgileri engellememesini veya belgenin okunabilirliğini olumsuz etkilememesini sağlamak için yerleşimine dikkat edin.`XIndent` Ve`YIndent` Metin damgasını uygun şekilde konumlandırmak için özellikler.
 
-#### S: Bu yöntemi metin dışında resim veya logo gibi damgalar eklemek için kullanabilir miyim?
+#### S: Bu yöntemi metin dışında resim veya logo gibi pullar eklemek için kullanabilir miyim?
 
-C: Bu özel eğitim metin damgaları eklemeye odaklanıyor ancak Aspose.PDF for .NET'i kullanarak benzer şekilde resim veya logo gibi diğer damga türlerini de ekleyebilirsiniz. Süreç, uygun damga nesnesinin oluşturulmasını ve özelliklerinin yapılandırılmasını içerir.
+A: Bu özel eğitim metin damgaları eklemeye odaklanır, ancak benzer şekilde Aspose.PDF for .NET kullanarak resim veya logo gibi diğer damga türlerini de ekleyebilirsiniz. İşlem, uygun damga nesnesini oluşturmayı ve özelliklerini yapılandırmayı içerir.
 
-#### S: Birden fazla PDF belgesine metin damgası ekleme işlemini nasıl otomatikleştirebilirim?
+#### S: Birden fazla PDF belgesine metin damgası ekleme sürecini nasıl otomatikleştirebilirim?
 
-C: Bir belge listesi üzerinde yinelenen ve her birine aynı metin damgalama işlemini uygulayan bir komut dosyası veya program oluşturarak, birden fazla PDF belgesine metin damgası ekleme işlemini otomatikleştirebilirsiniz.
+A: Birden fazla PDF belgesine metin damgası ekleme sürecini, bir belge listesi üzerinde yineleme yapan ve her birine aynı metin damgalama işlemini uygulayan bir betik veya program oluşturarak otomatikleştirebilirsiniz.

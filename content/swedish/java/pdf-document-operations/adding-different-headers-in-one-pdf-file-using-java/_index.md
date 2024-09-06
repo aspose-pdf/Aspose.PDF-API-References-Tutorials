@@ -69,7 +69,7 @@ header2.getParagraphs().add(new TextFragment("Header for Page 2"));
 HeaderFooter header3 = new HeaderFooter();
 header3.getParagraphs().add(new TextFragment("Header for Page 3"));
 
-// Tilldela rubriker till respektive sidor
+// Tilldela rubriker till respektive sida
 page1.setHeader(header1);
 page2.setHeader(header2);
 page3.setHeader(header3);

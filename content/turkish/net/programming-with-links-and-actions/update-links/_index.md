@@ -1,15 +1,15 @@
 ---
-title: PDF Dosyasındaki Bağlantıları Güncelleyin
-linktitle: PDF Dosyasındaki Bağlantıları Güncelleyin
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile PDF dosyasındaki bağlantıları nasıl güncelleyeceğinizi öğrenin.
+title: PDF Dosyasındaki Bağlantıları Güncelle
+linktitle: PDF Dosyasındaki Bağlantıları Güncelle
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET ile PDF dosyasındaki bağlantıların nasıl güncelleneceğini öğrenin.
 type: docs
 weight: 120
 url: /tr/net/programming-with-links-and-actions/update-links/
 ---
 Bu adım adım kılavuzla Aspose.PDF for .NET kullanarak PDF dosyasındaki bağlantıları nasıl güncelleyeceğinizi öğrenin.
 
-## 1. Adım: Ortamı ayarlama
+## Adım 1: Ortamı kurma
 
 Geliştirme ortamınızı bir C# projesi ve uygun Aspose.PDF referanslarıyla kurduğunuzdan emin olun.
 
@@ -18,13 +18,13 @@ Geliştirme ortamınızı bir C# projesi ve uygun Aspose.PDF referanslarıyla ku
 Belgelerinizin dizin yolunu ayarlayın ve aşağıdaki kodu kullanarak PDF dosyasını yükleyin:
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// PDF dosyasını yükleyin
+// PDF dosyasını yükle
 Document doc = new Document(dataDir + "UpdateLinks.pdf");
 ```
 
-## 3. Adım: Bağlantıyı düzenleme
+## Adım 3: Bağlantıyı düzenleme
 
 Aşağıdaki kodu kullanarak değiştirilecek bağlantı açıklamasını alın:
 
@@ -32,20 +32,20 @@ Aşağıdaki kodu kullanarak değiştirilecek bağlantı açıklamasını alın:
 LinkAnnotation linkAnnot = (LinkAnnotation)doc.Pages[1].Annotations[1];
 ```
 
- Ayarlayabilirsiniz`[1]` Belirli bir sayfayı veya ek açıklamayı seçmek için dizinler.
+ Ayarlayabilirsiniz`[1]` Belirli bir sayfayı veya açıklamayı seçmek için dizinler.
 
-Ardından hedefi değiştirerek bağlantıyı değiştirin:
+Daha sonra hedefi değiştirerek bağlantıyı düzenleyin:
 
 ```csharp
 GoToAction goToAction = (GoToAction)linkAnnot.Action;
 goToAction.Destination = new Aspose.Pdf.Annotations.XYZExplicitDestination(1, 1, 2, 2);
 ```
 
-İlk parametre belgenin konusunu, ikincisi ise hedef sayfa numarasını temsil eder. Beşinci argüman, ilgili sayfayı görüntülerken yakınlaştırma faktörüdür. 2'ye ayarlandığında sayfa %200 yakınlaştırmada görüntülenecektir.
+İlk parametre belgenin konusunu temsil eder, ikincisi hedef sayfa numarasıdır. Beşinci argüman ilgili sayfayı görüntülerken yakınlaştırma faktörüdür. 2 olarak ayarlandığında sayfa %200 yakınlaştırma ile görüntülenir.
 
-## 4. Adım: Belgeyi güncellenmiş bağlantıyla kaydedin
+## Adım 4: Belgeyi güncellenmiş bağlantıyla kaydedin
 
- Belgeyi güncellenmiş bağlantıyla birlikte kaydedin.`Save` yöntem:
+ Güncellenen bağlantıyla belgeyi kaydedin`Save` yöntem:
 
 ```csharp
 dataDir = dataDir + "PDFLINK_Modified_UpdateLinks_out.pdf";
@@ -60,21 +60,21 @@ Bağlantıların başarıyla güncellendiğini belirten bir mesaj görüntüleyi
 Console.WriteLine("\nLinks updated successfully.\nFile saved to location: " + dataDir);
 ```
 
-### Aspose.PDF for .NET kullanan Güncelleme Bağlantıları için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Güncelleme Bağlantıları için örnek kaynak kodu 
 ```csharp
 try
 {
-	// Belgeler dizininin yolu.
+	// Belgeler dizinine giden yol.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// PDF dosyasını yükleyin
+	// PDF dosyasını yükle
 	Document doc = new Document(dataDir + "UpdateLinks.pdf");
 	// Belgenin ilk sayfasından ilk bağlantı açıklamasını alın
 	LinkAnnotation linkAnnot = (LinkAnnotation)doc.Pages[1].Annotations[1];
 	// Değişiklik bağlantısı: bağlantı hedefini değiştir
 	GoToAction goToAction = (GoToAction)linkAnnot.Action;
 	// Bağlantı nesnesi için hedefi belirtin
-	// İlk parametre belge nesnesi, ikincisi ise hedef sayfa numarasıdır.
-	// 5ht argümanı ilgili sayfayı görüntülerken yakınlaştırma faktörüdür. 2 kullanıldığında sayfa %200 yakınlaştırılmış olarak görüntülenecektir
+	// İlk parametre belge nesnesi, ikincisi hedef sayfa numarasıdır.
+	// 5ht argümanı ilgili sayfayı görüntülerken yakınlaştırma faktörüdür. 2 kullanıldığında sayfa %200 yakınlaştırmada görüntülenecektir
 	goToAction.Destination = new Aspose.Pdf.Annotations.XYZExplicitDestination(1, 1, 2, 2);
 	dataDir = dataDir + "PDFLINK_Modified_UpdateLinks_out.pdf";
 	// Belgeyi güncellenmiş bağlantıyla kaydedin
@@ -89,48 +89,48 @@ catch (Exception ex)
 
 ## Çözüm
 
-Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF dosyasındaki bağlantıları nasıl güncelleyeceğinizi biliyorsunuz. PDF belgelerinizdeki bağlantıları özelleştirmek ve kullanıcılar için etkileşimli deneyimler oluşturmak için bu bilgiyi kullanın.
+Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF dosyasındaki bağlantıları nasıl güncelleyeceğinizi biliyorsunuz. Bu bilgiyi PDF belgelerinizdeki bağlantıları özelleştirmek ve kullanıcılar için etkileşimli deneyimler oluşturmak için kullanın.
 
-Artık bu kılavuzu tamamladığınıza göre, bu kavramları kendi projelerinize uygulayabilir ve Aspose.PDF for .NET'in sunduğu özellikleri daha fazla keşfedebilirsiniz.
+Artık bu kılavuzu tamamladığınıza göre, bu kavramları kendi projelerinize uygulayabilir ve Aspose.PDF for .NET tarafından sunulan özellikleri daha ayrıntılı olarak inceleyebilirsiniz.
 
 ### PDF dosyasındaki güncelleme bağlantıları için SSS 
 
-#### S: Bir PDF belgesindeki bağlantıları neden güncellemek isteyeyim?
+#### S: Neden bir PDF belgesindeki bağlantıları güncellemek istiyorum?
 
-C: Bir PDF belgesindeki bağlantıları güncellemek, köprülerin davranışını ve hedefini değiştirmenize olanak tanıyarak daha etkileşimli ve kullanıcı dostu PDF dosyaları oluşturmanıza olanak tanır.
+A: Bir PDF belgesindeki bağlantıları güncellemek, köprü metinlerinin davranışını ve hedefini değiştirmenize olanak tanır; böylece daha etkileşimli ve kullanıcı dostu PDF dosyaları oluşturabilirsiniz.
 
-#### S: PDF belgelerimdeki bağlantıların güncellenmesinden nasıl yararlanabilirim?
+#### S: PDF belgelerimdeki bağlantıları güncellemenin bana nasıl bir faydası olabilir?
 
-C: Bağlantıları güncelleyerek kullanıcıların doğru sayfalara veya harici kaynaklara yönlendirilmesini sağlayabilir, PDF dosyalarınızdaki gezinme deneyimini geliştirebilirsiniz.
+A: Bağlantıları güncelleyerek kullanıcıların doğru sayfalara veya harici kaynaklara yönlendirilmesini sağlayabilir, PDF dosyalarınız içindeki gezinme deneyimini iyileştirebilirsiniz.
 
 #### S: Tek bir PDF belgesinde birden fazla bağlantıyı güncelleyebilir miyim?
 
-C: Evet, tüm bağlantı açıklamalarını yinelemek ve bunların hedeflerini veya davranışlarını gerektiği gibi değiştirmek için sağlanan kodu temel olarak kullanabilirsiniz.
+C: Evet, sağlanan kodu tüm bağlantı açıklamalarını yinelemek ve gerektiğinde hedeflerini veya davranışlarını değiştirmek için bir temel olarak kullanabilirsiniz.
 
-####  S: Ne işe yarar?`GoToAction` class do in the provided code?
+####  S: Ne anlama geliyor?`GoToAction` class do in the provided code?
 
- C:`GoToAction` class, PDF belgesinde belirli bir sayfaya giden bir eylemi temsil eder. Bir bağlantı açıklamasının hedefini değiştirmenize olanak tanır.
+ A:`GoToAction` sınıf, PDF belgesindeki belirli bir sayfaya giden bir eylemi temsil eder. Bir bağlantı açıklamasının hedefini değiştirmenize olanak tanır.
 
-#### S: Bir bağlantının hedef sayfasını ve yakınlaştırma düzeyini nasıl ayarlayabilirim?
+#### S: Bir bağlantı için hedef sayfayı ve yakınlaştırma seviyesini nasıl ayarlarım?
 
- C: Verilen kodda, aktarılan argümanları değiştirebilirsiniz.`XYZExplicitDestination`yapıcı. İlk parametre hedef sayfa numarasıdır ve beşinci parametre yakınlaştırma faktörünü kontrol eder.
+ A: Sağlanan kodda, geçirilen argümanları değiştirebilirsiniz.`XYZExplicitDestination`constructor. İlk parametre hedef sayfa numarasıdır ve beşinci parametre yakınlaştırma faktörünü kontrol eder.
 
-#### S: Bir bağlantının görünümü gibi diğer özelliklerini güncellemek mümkün müdür?
+#### S: Bir bağlantının görünümü gibi diğer niteliklerini güncellemek mümkün müdür?
 
-C: Bu eğitim bağlantı hedeflerini güncellemeye odaklanmaktadır. Ancak bağlantı görünümlerini özelleştirme hakkında daha fazla bilgi için Aspose.PDF belgelerini inceleyebilirsiniz.
+A: Bu eğitim bağlantı hedeflerini güncellemeye odaklanmaktadır. Ancak, bağlantı görünümlerini özelleştirme hakkında daha fazla bilgi için Aspose.PDF belgelerini inceleyebilirsiniz.
 
 #### S: Geçersiz bir hedef sayfa numarası belirtirsem ne olur?
 
-C: Geçersiz bir hedef sayfa numarası belirtirseniz bağlantı, PDF belgesinde yanlış veya var olmayan bir sayfaya yol açabilir.
+A: Geçersiz bir hedef sayfa numarası belirtirseniz, bağlantı PDF belgesi içinde yanlış veya var olmayan bir sayfaya yönlendirebilir.
 
 #### S: Gerekirse bağlantı değişikliklerini geri alabilir miyim?
 
-C: Evet, orijinal bağlantı açıklamalarını değişiklik yapmadan önce saklayabilir ve gerekirse bu bilgiyi bağlantıları orijinal durumuna döndürmek için kullanabilirsiniz.
+C: Evet, değişiklik yapmadan önce orijinal bağlantı açıklamalarını saklayabilir ve gerektiğinde bağlantıları orijinal durumlarına geri döndürmek için bu bilgileri kullanabilirsiniz.
 
 #### S: Bağlantıların başarıyla güncellenip güncellenmediğini nasıl test edebilirim?
 
-C: Bağlantıları güncellemek için sağlanan kodu uyguladıktan sonra, değiştirilen PDF dosyasını açın ve bağlantıların belirtilen sayfalara doğru yakınlaştırma düzeyiyle gittiğini doğrulayın.
+A: Bağlantıları güncellemek için verilen kodu uyguladıktan sonra, değiştirilmiş PDF dosyasını açın ve bağlantıların doğru yakınlaştırma düzeyiyle belirtilen sayfalara gittiğini doğrulayın.
 
-#### S: Bağlantıların güncellenmesi PDF belgesinin genel yapısını veya içeriğini etkiler mi?
+#### S: Bağlantıları güncellemek PDF belgesinin genel yapısını veya içeriğini etkiler mi?
 
-C: Hayır, bağlantıların güncellenmesi yalnızca bağlantıların davranışını ve hedefini değiştirir. PDF belgesinin içeriğini veya yapısını etkilemez.
+A: Hayır, bağlantıları güncellemek yalnızca bağlantıların davranışını ve hedefini değiştirir. PDF belgesinin içeriğini veya yapısını etkilemez.

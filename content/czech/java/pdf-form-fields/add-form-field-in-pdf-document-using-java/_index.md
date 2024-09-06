@@ -8,7 +8,7 @@ weight: 10
 url: /cs/java/pdf-form-fields/add-form-field-in-pdf-document-using-java/
 ---
 
-## Úvod
+## Zavedení
 
 Přidání polí formuláře do dokumentu PDF vylepšuje jeho funkčnost tím, že uživatelům umožňuje vkládat data přímo do dokumentu. To může být neuvěřitelně užitečné pro různé účely, jako je vytváření vyplnitelných formulářů, průzkumů nebo zpráv s obsahem vytvářeným uživateli.
 
@@ -16,9 +16,9 @@ Budeme používat Aspose.PDF for Java, výkonnou knihovnu, která zjednodušuje 
 
 ## Nastavení prostředí
 
-Než se vrhneme na kód, musíte nastavit vývojové prostředí. Následuj tyto kroky:
+Než se vrhneme na kód, musíte nastavit vývojové prostředí. Postupujte takto:
 
-1.  Stáhnout Aspose.PDF pro Java: Navštivte web Aspose a stáhněte si nejnovější verzi Aspose.PDF pro Java. Můžete to najít[tady](https://releases.aspose.com/pdf/java/).
+1.  Stáhnout Aspose.PDF pro Java: Navštivte web Aspose a stáhněte si nejnovější verzi Aspose.PDF pro Java. Můžete to najít[zde](https://releases.aspose.com/pdf/java/).
 
 2. Instalace Aspose.PDF: Po stažení nainstalujte Aspose.PDF podle pokynů k instalaci uvedených na webu.
 
@@ -93,7 +93,7 @@ page.getAnnotations().add(checkboxField);
 Přepínače se používají, když uživatelé potřebují vybrat jednu možnost ze skupiny. Každá možnost je samostatný přepínač, ale patří do stejné skupiny. Zde je návod, jak přidat přepínače:
 
 ```java
-// Vytvořit přepínače
+// Vytvořte přepínače
 RadioButtonOptionField option1 = new RadioButtonOptionField(page, new Rectangle(100, 200, 20, 20));
 RadioButtonOptionField option2 = new RadioButtonOptionField(page, new Rectangle(100, 180, 20, 20));
 option1.setPartialName("optYes"); // Nastavte název pole pro volbu 1

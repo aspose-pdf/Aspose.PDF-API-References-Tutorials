@@ -63,7 +63,7 @@ OutlineCollection outlines = pdfDocument.getOutlines();
 
 ## 刪除書籤
 
-現在，讓我們開始從 PDF 文件中刪除書籤的過程。按著這些次序：
+現在，讓我們開始從 PDF 文件中刪除書籤的過程。請依照下列步驟操作：
 
 1. 使用循環遍歷書籤。
 2. 根據您的條件決定要刪除的書籤。

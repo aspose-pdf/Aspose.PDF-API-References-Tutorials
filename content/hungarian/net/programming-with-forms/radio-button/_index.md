@@ -1,6 +1,6 @@
 ---
-title: Rádiógomb
-linktitle: Rádiógomb
+title: Rádió gomb
+linktitle: Rádió gomb
 second_title: Aspose.PDF for .NET API Reference
 description: Könnyen hozzáadhat rádiógombokat PDF-dokumentumaihoz az Aspose.PDF for .NET segítségével.
 type: docs
@@ -41,7 +41,7 @@ Példányosítson egy RadioButtonField objektumot, amely argumentumként adja me
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## 5. lépés: Adja meg a választógomb opcióit
+## 5. lépés: Adja hozzá a választógomb opcióit
 
 Adjon hozzá rádiógomb-beállításokat a RadioButtonField objektumhoz úgy, hogy az egyes opciók koordinátáit egy Rectangle objektummal adja meg:
 
@@ -113,7 +113,7 @@ V: Igen, ugyanazon az oldalon több választógombot is hozzáadhat különböz�
 
 #### K: Hogyan adhatok hozzá címkét vagy szöveges leírást a választógomb opcióihoz?
 
- V: Címke vagy szöveges leírás hozzáadásához a választógomb opcióihoz használja a`TextStamp`osztály az Aspose.PDF-ből .NET-hez, hogy meghatározott koordinátákon átfedje a PDF-dokumentum szövegét.
+ V: Címke vagy szöveges leírás hozzáadásához a választógomb opcióihoz használja a`TextStamp`osztály az Aspose.PDF-ből .NET-hez, hogy a PDF-dokumentum szövegét meghatározott koordinátákkal fedje le.
 
 #### K: Az Aspose.PDF for .NET kompatibilis a .NET Framework összes verziójával?
 

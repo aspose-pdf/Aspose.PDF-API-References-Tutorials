@@ -21,7 +21,7 @@ using Aspose.Pdf.InteractiveFeatures;
 
 ## 2. lépés: Állítsa be a dokumentumok mappa elérési útját
 
- Ebben a lépésben meg kell adnia annak a PDF-fájlnak az elérési útját, amelyhez alkalmazáshivatkozást szeretne hozzáadni. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` következő kódban a dokumentummappa tényleges elérési útjával:
+Ebben a lépésben meg kell adnia annak a PDF-fájlnak az elérési útját, amelyhez alkalmazáshivatkozást szeretne hozzáadni. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a következő kódban a dokumentummappa tényleges elérési útjával:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -37,7 +37,7 @@ Document document = new Document(dataDir + "CreateApplicationLink.pdf");
 
 ## 4. lépés: Hozza létre az alkalmazáshivatkozást
 
- Ebben a lépésben létrehozzuk az alkalmazás hivatkozását a`LinkAnnotation`annotáció. Meghatározzuk a hivatkozás koordinátáit és területét, valamint az alkalmazásindítási műveletet. Itt van a megfelelő kód:
+ Ebben a lépésben létrehozzuk az alkalmazás hivatkozását a`LinkAnnotation` annotáció. Meghatározzuk a hivatkozás koordinátáit és területét, valamint az alkalmazásindítási műveletet. Itt van a megfelelő kód:
 
 ```csharp
 Page page = document.Pages[1];
@@ -49,7 +49,7 @@ page.Annotations.Add(link);
 
 ## 5. lépés: Mentse el a frissített fájlt
 
- Most mentsük el a frissített PDF fájlt a`Save` módszere a`document` tárgy. Itt van a megfelelő kód:
+Most mentsük el a frissített PDF fájlt a`Save` módszere a`document` objektum. Itt van a megfelelő kód:
 
 ```csharp
 dataDir = dataDir + "CreateApplicationLink_out.pdf";

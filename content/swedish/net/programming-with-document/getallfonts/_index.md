@@ -9,7 +9,7 @@ url: /sv/net/programming-with-document/getallfonts/
 ---
 Aspose.PDF för .NET är ett kraftfullt bibliotek som gör det möjligt för utvecklare att arbeta med PDF-filer programmatiskt. En av funktionerna som det ger är möjligheten att få alla teckensnitt som används i en PDF-fil. Detta kan vara användbart om du behöver programmera analysera eller manipulera teckensnitten i en PDF-fil.
 
-den här handledningen kommer vi att diskutera hur man använder Aspose.PDF för .NET för att få alla teckensnitt som används i ett PDF-dokument. Vi kommer att tillhandahålla en steg-för-steg-guide om hur du gör detta, tillsammans med exempel på källkod.
+I den här handledningen kommer vi att diskutera hur man använder Aspose.PDF för .NET för att få alla teckensnitt som används i ett PDF-dokument. Vi kommer att tillhandahålla en steg-för-steg-guide om hur du gör detta, tillsammans med exempel på källkod.
 
 ## Steg 1: Skapa en ny C# Console Application
 För att komma igång, skapa en ny C# Console Application i Visual Studio. Du kan namnge det vad du vill. När projektet har skapats måste du lägga till en referens till Aspose.PDF för .NET-biblioteket.
@@ -58,7 +58,7 @@ foreach (Aspose.Pdf.Text.Font font in fonts)
 ```
 
 ## Slutsats
-I den här handledningen har vi diskuterat hur man får alla teckensnitt som används i ett PDF-dokument med Aspose.PDF för .NET. Att få alla teckensnitt som används i ett PDF-dokument kan vara användbart om du behöver programmera analysera eller manipulera teckensnitten i ett PDF-dokument. Aspose.PDF för .NET tillhandahåller ett enkelt och lättanvänt API för att arbeta med PDF-dokument, inklusive att hämta alla teckensnitt som används i ett PDF-dokument.
+den här handledningen har vi diskuterat hur man får alla teckensnitt som används i ett PDF-dokument med Aspose.PDF för .NET. Att få alla teckensnitt som används i ett PDF-dokument kan vara användbart om du behöver programmera analysera eller manipulera teckensnitten i ett PDF-dokument. Aspose.PDF för .NET tillhandahåller ett enkelt och lättanvänt API för att arbeta med PDF-dokument, inklusive att hämta alla teckensnitt som används i ett PDF-dokument.
 
 ### FAQ's
 

@@ -65,7 +65,7 @@ Nyní přichází ta vzrušující část, přidání obrázku do buňky tabulky
 
 ## Krok 6.1: Vytvoření objektu obrázku
 
- Vytvořte instanci souboru`Image` třídy ze jmenného prostoru Aspose.Pdf. Nastav`File` vlastnost k cestě k souboru obrázku, který chcete přidat.
+ Vytvořte instanci souboru`Image` třídy ze jmenného prostoru Aspose.Pdf. Nastavte`File` vlastnost k cestě k souboru obrázku, který chcete přidat.
 
 ```csharp
 // Vytvořte objekt Image
@@ -118,7 +118,7 @@ row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
-Gratulujeme! Úspěšně jste se naučili, jak přidat obrázek do buňky tabulky pomocí Aspose.PDF pro .NET. Neváhejte prozkoumat další možnosti přizpůsobení a integrujte tuto funkci do svých projektů.
+Gratuluji! Úspěšně jste se naučili, jak přidat obrázek do buňky tabulky pomocí Aspose.PDF pro .NET. Neváhejte prozkoumat další možnosti přizpůsobení a integrujte tuto funkci do svých projektů.
 
 ### Příklad zdrojového kódu pro přidání obrázku do buňky tabulky pomocí Aspose.PDF pro .NET
 

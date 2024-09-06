@@ -1,13 +1,13 @@
 ---
 title: Renderuj tabelę w dokumencie PDF
 linktitle: Renderuj tabelę w dokumencie PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak wyświetlić tabelę w dokumencie PDF przy użyciu Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak wyświetlić tabelę w dokumencie PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 170
 url: /pl/net/programming-with-tables/render-table/
 ---
-W tym samouczku poprowadzimy Cię krok po kroku, jak wyświetlić tabelę w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Wyjaśnimy dostarczony kod źródłowy C# i pokażemy, jak go zaimplementować.
+W tym samouczku krok po kroku pokażemy Ci, jak wyświetlić tabelę w dokumencie PDF za pomocą Aspose.PDF dla .NET. Wyjaśnimy podany kod źródłowy C# i pokażemy, jak go zaimplementować.
 
 ## Krok 1: Tworzenie dokumentu
 Najpierw utworzymy nowy dokument PDF:
@@ -20,7 +20,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document doc = new Document();
 ```
 
-## Krok 2: Konfiguracja marginesów i orientacji strony
+## Krok 2: Konfigurowanie marginesów i orientacji strony
 Następnie skonfigurujemy marginesy strony i ustawimy orientację na tryb poziomy:
 
 ```csharp
@@ -36,7 +36,7 @@ pageInfo.IsLandscape = true;
 ```
 
 ## Krok 3: Tworzenie tabeli i kolumn
-Stwórzmy teraz tabelę i ustawmy szerokości kolumn:
+Teraz utwórzmy tabelę i ustawmy szerokości kolumn:
 
 ```csharp
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
@@ -58,8 +58,8 @@ for (int i = 1; i <= 120; i++)
 }
 ```
 
-## Krok 5: Dodanie tabeli do strony
-Dodajmy teraz tabelę do strony dokumentu:
+## Krok 5: Dodawanie tabeli do strony
+Teraz dodajmy tabelę do strony dokumentu:
 
 ```csharp
 Page curPage = doc.Pages.Add();
@@ -67,7 +67,7 @@ Aspose.Pdf.Paragraphs paragraphs = curPage.Paragraphs;
 paragraphs. Add(table);
 ```
 
-## Krok 6: Wyświetlenie tabeli na nowej stronie
+## Krok 6: Wyświetlanie tabeli na nowej stronie
 Następnie utworzymy nową tabelę i ustawimy właściwość „IsInNewPage” na „true”, aby wyświetlić tabelę na nowej stronie:
 
 ```csharp
@@ -95,7 +95,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nTable displayed successfully on a page.\nFile saved at location: " + dataDir);
 ```
 
-### Przykładowy kod źródłowy tabeli renderowania przy użyciu Aspose.PDF dla .NET
+### Przykładowy kod źródłowy dla Render Table przy użyciu Aspose.PDF dla .NET
 
 ```csharp
 // Ścieżka do katalogu dokumentów.
@@ -114,7 +114,7 @@ pageInfo.IsLandscape = true;
 
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 table.ColumnWidths = "50 100";
-// Dodana strona.
+// Dodano stronę.
 Page curPage = doc.Pages.Add();
 for (int i = 1; i <= 120; i++)
 {
@@ -139,7 +139,7 @@ for (int i = 1; i <= 10; i++)
 	cell2.Paragraphs.Add(new TextFragment("LAAGGGGGG"));
 }
 table1.IsInNewPage = true;
-// Chcę zachować tabelę 1 na następnej stronie...
+// Proszę o przeniesienie tabeli 1 na następną stronę...
 paragraphs.Add(table1);
 dataDir = dataDir + "IsNewPageProperty_Test_out.pdf";
 doc.Save(dataDir);
@@ -148,26 +148,26 @@ Console.WriteLine("\nTable render successfully on a page.\nFile saved at " + dat
 ```
 
 ## Wniosek
-Gratulacje! Nauczyłeś się teraz, jak wyświetlać tabelę w dokumencie PDF przy użyciu Aspose.PDF dla .NET. W tym przewodniku krok po kroku pokazano, jak utworzyć dokument, skonfigurować marginesy i orientację strony, dodać tabelę i wyświetlić tabelę na nowej stronie. Teraz możesz zastosować tę wiedzę w swoich własnych projektach.
+Gratulacje! Teraz nauczyłeś się, jak wyświetlić tabelę w dokumencie PDF za pomocą Aspose.PDF dla .NET. Ten przewodnik krok po kroku pokazał Ci, jak utworzyć dokument, skonfigurować marginesy i orientację strony, dodać tabelę i wyświetlić tabelę na nowej stronie. Teraz możesz zastosować tę wiedzę w swoich projektach.
 
-### Często zadawane pytania dotyczące tabeli renderowania w dokumencie PDF
+### FAQ dotyczące tabeli renderowania w dokumencie PDF
 
-#### P: Jak mogę zmodyfikować wygląd tabeli, na przykład zmienić kolory komórek lub dodać obramowania?
+#### P: W jaki sposób mogę zmienić wygląd tabeli, np. zmienić kolory komórek lub dodać obramowania?
 
-O: Aby zmodyfikować wygląd tabeli, możesz ustawić różne właściwości pliku`Aspose.Pdf.Table` i jego komórki. Można na przykład ustawić`BackgroundColor` właściwość komórek do zmiany koloru tła. Można także ustawić`Border` właściwość tabeli lub poszczególnych komórek, aby dodać obramowania. Dodatkowo możesz dostosować czcionkę, kolor tekstu i wyrównanie zawartości tabeli, modyfikując plik`TextState` z`TextFragment` obiekty dodane do komórek.
+A: Aby zmienić wygląd tabeli, możesz ustawić różne właściwości`Aspose.Pdf.Table` i jego komórki. Na przykład możesz ustawić`BackgroundColor` właściwość komórek, aby zmienić ich kolor tła. Możesz również ustawić`Border` właściwość tabeli lub poszczególnych komórek, aby dodać obramowania. Ponadto możesz dostosować czcionkę, kolor tekstu i wyrównanie zawartości tabeli, modyfikując`TextState` z`TextFragment` obiekty dodane do komórek.
 
-#### P: Czy mogę dodać nagłówki lub stopki do tabeli?
+#### P: Czy mogę dodać nagłówki i stopki do tabeli?
 
-Odp.: Tak, możesz dodać nagłówki lub stopki do tabeli, tworząc dodatkowe wiersze na początku lub na końcu tabeli i ustawiając odpowiednią treść w komórkach. Możesz dostosować nagłówki i stopki niezależnie od reszty zawartości tabeli, dodając różne style lub treść do tych konkretnych wierszy.
+A: Tak, możesz dodać nagłówki lub stopki do tabeli, tworząc dodatkowe wiersze na początku lub na końcu tabeli i ustawiając odpowiednią zawartość w komórkach. Możesz dostosować nagłówki lub stopki niezależnie od reszty zawartości tabeli, dodając różne style lub zawartość do tych konkretnych wierszy.
 
-#### P: Jak mogę kontrolować pozycję tabeli na stronie?
+#### P: Jak mogę kontrolować położenie tabeli na stronie?
 
- O: Aby kontrolować położenie tabeli na stronie, możesz dostosować`MarginInfo` z`PageInfo` obiekt. The`MarginInfo`pozwala ustawić lewy, prawy, górny i dolny margines strony, co wpływa na dostępną przestrzeń na stół. Możesz także skorzystać z`PositioningType` własność`Aspose.Pdf.Table` do kontrolowania wyrównania w poziomie i pionie w obszarze zawartości strony.
+ A: Aby kontrolować położenie tabeli na stronie, można dostosować`MarginInfo` z`PageInfo` obiekt.`MarginInfo`pozwala ustawić lewy, prawy, górny i dolny margines strony, co wpływa na dostępną przestrzeń dla tabeli. Możesz również użyć`PositioningType` własność`Aspose.Pdf.Table` aby kontrolować jego wyrównanie w poziomie i pionie w obrębie obszaru zawartości strony.
 
-#### P: Czy mogę wyeksportować tabelę do różnych formatów plików, takich jak Excel lub CSV?
+#### P: Czy mogę wyeksportować tabelę do innych formatów plików, np. Excel lub CSV?
 
-Odp.: Aspose.PDF dla .NET jest przeznaczony przede wszystkim do pracy z dokumentami PDF. Chociaż może eksportować dokument PDF jako obraz lub XPS, nie obsługuje bezpośrednio eksportowania tabel do formatów takich jak Excel lub CSV. Aby wyeksportować dane tabeli do różnych formatów plików, może być konieczne użycie dodatkowych bibliotek lub metod konwersji zawartości pliku PDF do żądanego formatu.
+A: Aspose.PDF dla .NET jest przeznaczony głównie do pracy z dokumentami PDF. Chociaż może eksportować dokument PDF jako obraz lub XPS, nie obsługuje bezpośrednio eksportowania tabel do formatów takich jak Excel lub CSV. Aby wyeksportować dane tabeli do różnych formatów plików, może być konieczne użycie dodatkowych bibliotek lub metod w celu przekonwertowania zawartości PDF do żądanego formatu.
 
 #### P: Jak mogę dodać hiperłącza do komórek tabeli?
 
- Odp.: Aby dodać hiperłącza do komórek tabeli, możesz użyć metody`Aspose.Pdf.WebHyperlink` klasę, aby utworzyć hiperłącze, a następnie dodać je jako kotwicę do pliku`TextFragment`wewnątrz komórki. Umożliwia to powiązanie adresu URL lub celu łącza z określonym tekstem lub treścią w komórce, tworząc klikalne hiperłącza.
+ A: Aby dodać hiperłącza do komórek tabeli, możesz użyć`Aspose.Pdf.WebHyperlink` klasę, aby utworzyć hiperłącze, a następnie dodać je jako kotwicę do`TextFragment`wewnątrz komórki. Pozwala to na skojarzenie adresu URL lub celu łącza ze specyficznym tekstem lub treścią w komórce, tworząc klikalne hiperłącza.

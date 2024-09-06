@@ -109,4 +109,4 @@ Igen, vannak más könyvtárak, mint például az Apache PDFBox és az iText, am
 
 ### Elrejthetem a szegélyeket szelektíven bizonyos cellákhoz?
 
-Biztosan! A szegélyrejtő logikát szelektíven alkalmazhatja a táblázat szerkezete és kialakítása alapján.
+Biztosan! A szegélyrejtő logikát a táblázat szerkezete és kialakítása alapján szelektíven alkalmazhatja.

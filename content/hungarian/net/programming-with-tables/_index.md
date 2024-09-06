@@ -19,9 +19,9 @@ Akár kezdő, akár tapasztalt fejlesztő, a Programozás táblázatokkal az Asp
 | [Táblázat hozzáadása PDF-fájlhoz](./add-table/) | Könnyen hozzáadhat táblázatokat PDF-fájlba az Aspose.PDF for .NET segítségével. |  
 | [Automatikus ablakhoz igazítás](./auto-fit-to-window/) | Útmutató lépésről lépésre az Aspose.PDF .NET-hez használatához és az ablakhoz való automatikus illesztéshez a PDF-generálás során. |  
 | [Határozza meg a táblázattörést a PDF-fájlban](./determine-table-break/) | Ismerje meg, hogyan határozhatja meg a táblázattöréseket PDF-fájlban az Aspose.PDF for .NET segítségével. |  
-| [Exportálja az Excel munkalap adatait táblázatba](./export-excel-worksheet-data-to-table/) | Exportáljon adatokat Excel-lapról PDF-táblázatba az Aspose.PDF for .NET használatával. |  
+| [Exportálja az Excel munkalap adatait táblázatba](./export-excel-worksheet-data-to-table/) | Exportáljon adatokat egy Excel-lapról PDF-táblázatba az Aspose.PDF for .NET használatával. |  
 | [Szegély kibontása PDF fájlból](./extract-border/) | Ismerje meg, hogyan bonthatja ki a szegélyt PDF-fájlból az Aspose.PDF for .NET segítségével. |  
-| [Táblázat szélességének lekérése PDF-fájlban](./get-table-width/) | Ismerje meg, hogyan határozhatja meg a táblázat szélességét PDF-fájlban az Aspose.PDF for .NET segítségével. |  
+| [Töltse le a táblázat szélességét PDF-fájlban](./get-table-width/) | Ismerje meg, hogyan határozhatja meg a táblázat szélességét PDF-fájlban az Aspose.PDF for .NET segítségével. |  
 | [HTML-címkék a táblázatban PDF-fájlban](./html-tags-inside-table/) | Tanulja meg, hogyan használhatja a HTML-címkéket egy táblázatban PDF-fájlban az Aspose.PDF for .NET segítségével. |  
 | [Oldaltörés beszúrása PDF fájlba](./insert-page-break/) | Ismerje meg, hogyan szúrhat be oldaltörést PDF-fájlba az Aspose.PDF for .NET segítségével. |  
 | [Integrálás az adatbázisba PDF-fájlba](./integrate-with-database/) | Adatbázisból származó adatok beágyazása PDF-fájlba az Aspose.PDF for .NET használatával. |  

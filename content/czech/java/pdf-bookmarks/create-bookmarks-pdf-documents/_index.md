@@ -2,13 +2,13 @@
 title: Vytvářejte záložky v dokumentech PDF
 linktitle: Vytvářejte záložky v dokumentech PDF
 second_title: Aspose.PDF Java PDF Processing API
-description: Naučte se vytvářet záložky PDF pomocí Aspose.PDF pro Javu. Vylepšete navigaci v dokumentech a uživatelskou zkušenost. Průvodce krok za krokem se zdrojovým kódem.
+description: Naučte se vytvářet záložky PDF pomocí Aspose.PDF pro Java. Vylepšete navigaci v dokumentech a uživatelskou zkušenost. Průvodce krok za krokem se zdrojovým kódem.
 type: docs
 weight: 10
 url: /cs/java/pdf-bookmarks/create-bookmarks-pdf-documents/
 ---
 
-## Úvod
+## Zavedení
 
 digitálním věku může být správa a procházení velkých dokumentů PDF náročným úkolem. Představte si, že máte stostránkový dokument a snažíte se rychle najít konkrétní sekce. Zde přicházejí na pomoc záložky. Záložky vám umožňují vytvořit v dokumentu PDF obsah, na který lze kliknout, a čtenáři tak mohou snadno přejít na konkrétní sekce. V tomto tutoriálu prozkoumáme, jak vytvořit záložky v dokumentech PDF pomocí Aspose.PDF for Java, výkonného API, které zjednodušuje práci s PDF v aplikacích Java.
 
@@ -17,7 +17,7 @@ digitálním věku může být správa a procházení velkých dokumentů PDF n�
 Než se ponoříme do kódovací části, ujistěte se, že máte splněny následující předpoklady:
 
 - Vývojové prostředí Java: Ujistěte se, že máte v systému nainstalovanou Javu.
--  Aspose.PDF for Java: Stáhněte si a nainstalujte knihovnu Aspose.PDF for Java z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF for Java: Stáhněte si a nainstalujte knihovnu Aspose.PDF for Java z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Začínáme
 
@@ -82,7 +82,7 @@ V tomto tutoriálu jsme se naučili, jak vytvářet záložky v dokumentech PDF 
 
 ### Jak nainstaluji Aspose.PDF pro Javu?
 
- Instalace Aspose.PDF pro Java je přímočará. Navštivte stránku ke stažení[tady](https://releases.aspose.com/pdf/java/) a postupujte podle pokynů k instalaci dodaných pro vaše konkrétní vývojové prostředí.
+ Instalace Aspose.PDF pro Java je přímočará. Navštivte stránku ke stažení[zde](https://releases.aspose.com/pdf/java/) a postupujte podle pokynů k instalaci dodaných pro vaše konkrétní vývojové prostředí.
 
 ### Mohu přizpůsobit vzhled záložek?
 
@@ -98,4 +98,4 @@ Ano, můžete vytvářet záložky, které odkazují na konkrétní sekce na str
 
 ### Kde najdu další dokumentaci a příklady?
 
- Na stránce dokumentace Aspose máte přístup ke komplexní dokumentaci a široké škále příkladů[tady](https://reference.aspose.com/pdf/java/). Je to cenný zdroj pro zvládnutí Aspose.PDF pro Javu.
+ Na stránce dokumentace Aspose máte přístup ke komplexní dokumentaci a široké škále příkladů[zde](https://reference.aspose.com/pdf/java/). Je to cenný zdroj pro zvládnutí Aspose.PDF pro Javu.

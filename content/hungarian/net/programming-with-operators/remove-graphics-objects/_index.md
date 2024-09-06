@@ -13,7 +13,7 @@ Ebben az oktatóanyagban lépésről lépésre bemutatjuk, hogyan távolíthat e
 
 Mielőtt elkezdené, győződjön meg arról, hogy a következő előfeltételeket teljesítette:
 
-1. A Visual Studio .NET keretrendszerrel telepítve.
+1. Visual Studio .NET keretrendszerrel telepítve.
 2. Az Aspose.PDF könyvtár a .NET-hez.
 
 ## 1. lépés: A projekt beállítása
@@ -115,7 +115,7 @@ using Aspose.Pdf.Operators;
 
 #### K: Hogyan tölthetek be PDF-dokumentumot az Aspose.PDF használatával?
 
-V: Használhatja a`Document` osztályban PDF dokumentum betöltéséhez. A dokumentum betöltéséhez kövesse az oktatóanyagban található kódpéldát.
+ V: Használhatja a`Document` osztályban PDF dokumentum betöltéséhez. A dokumentum betöltéséhez kövesse az oktatóanyagban található kódpéldát.
 
 #### K: Hogyan azonosíthatok és távolíthatok el grafikus objektumokat egy PDF-oldalról?
 

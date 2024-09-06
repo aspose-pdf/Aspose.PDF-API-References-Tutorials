@@ -91,7 +91,7 @@ sect3.AppendChild(div31);
  Jakmile máme vytvořenou strukturu prvků, můžeme uložit dokument PDF. Použijte`Save` metoda`document` objekt určete cestu a název souboru PDF, který se má uložit. Zde je kód pro tento krok:
 
 ```csharp
-// Uložte tagovaný dokument PDF
+// Uložte označený dokument PDF
 document.Save(dataDir + "StructureElementsTree.pdf");
 ```
 
@@ -150,7 +150,7 @@ Odpověď: Vytvoření struktury stromových prvků v dokumentu PDF pomocí Aspo
 
 #### Otázka: Jak poskytnutý kód C# vytvoří strukturu stromových prvků v dokumentu PDF?
 
-Odpověď: Příklad kódu ukazuje, jak vytvořit hierarchickou strukturu logických prvků pomocí`SectElement`, `DivElement` , a`ArtElement` třídy poskytované Aspose.PDF. Tyto prvky jsou organizovány jako nadřazené a podřízené uzly a tvoří v dokumentu stromovou strukturu.
+Odpověď: Příklad kódu ukazuje, jak vytvořit hierarchickou strukturu logických prvků pomocí`SectElement`, `DivElement` a`ArtElement` třídy poskytuje Aspose.PDF. Tyto prvky jsou organizovány jako nadřazené a podřízené uzly a tvoří v dokumentu stromovou strukturu.
 
 ####  Otázka: Jak to`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
 

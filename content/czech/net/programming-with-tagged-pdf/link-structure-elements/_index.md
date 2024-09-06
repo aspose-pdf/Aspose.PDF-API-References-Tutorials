@@ -7,7 +7,7 @@ type: docs
 weight: 120
 url: /cs/net/programming-with-tagged-pdf/link-structure-elements/
 ---
-V tomto podrobném průvodci vám ukážeme, jak používat prvky struktury odkazů s Aspose.PDF pro .NET. Aspose.PDF je výkonná knihovna, která vám umožní programově vytvářet a manipulovat s dokumenty PDF. Prvky struktury odkazů vám umožňují přidávat do dokumentu PDF hypertextové odkazy, které uživatelům umožňují klikat na odkazy a procházet online zdroje.
+V tomto podrobném průvodci vám ukážeme, jak používat prvky struktury odkazů s Aspose.PDF pro .NET. Aspose.PDF je výkonná knihovna, která vám umožní programově vytvářet a manipulovat s dokumenty PDF. Prvky struktury odkazů umožňují přidávat do dokumentu PDF hypertextové odkazy, které uživatelům umožňují klikat na odkazy a procházet online zdroje.
 
 Pojďme se ponořit do kódu a naučit se používat prvky struktury odkazů s Aspose.PDF pro .NET.
 
@@ -131,7 +131,7 @@ link5.AlternateDescriptions = "Link to Google";
 Nakonec tagovaný dokument PDF uložíme.
 
 ```csharp
-// Uložte tagovaný dokument PDF
+// Uložte označený dokument PDF
 document. Save(outFile);
 ```
 

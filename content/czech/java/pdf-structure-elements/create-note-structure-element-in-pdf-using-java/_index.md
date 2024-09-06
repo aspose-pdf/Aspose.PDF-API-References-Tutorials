@@ -17,7 +17,7 @@ Ve světě digitálních dokumentů kralují soubory PDF. Poskytují konzistentn
 Než se ponoříme do kódu, ujistěte se, že máme vše nastaveno:
 
 - Vývojové prostředí Java: Ujistěte se, že máte ve svém systému nainstalované vývojové prostředí Java.
--  Aspose.PDF for Java: Knihovnu Aspose.PDF for Java si můžete stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF for Java: Knihovnu Aspose.PDF for Java si můžete stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Průvodce krok za krokem
 

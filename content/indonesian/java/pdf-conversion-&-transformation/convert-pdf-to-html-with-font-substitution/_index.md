@@ -1,36 +1,36 @@
 ---
 title: Konversi PDF ke HTML dengan Substitusi Font
 linktitle: Konversi PDF ke HTML dengan Substitusi Font
-second_title: Aspose.PDF API Pemrosesan PDF Java
+second_title: API Pemrosesan PDF Java Aspose.PDF
 description: Pelajari cara mengonversi PDF ke HTML dengan substitusi font menggunakan Aspose.PDF untuk Java. Panduan langkah demi langkah dengan kode sumber untuk konversi yang lancar. Optimalkan konten web Anda sekarang!
 type: docs
 weight: 30
 url: /id/java/pdf-conversion-transformation/convert-pdf-to-html-with-font-substitution/
 ---
 
-Dalam panduan langkah demi langkah ini, kita akan mempelajari cara mengonversi dokumen PDF ke HTML dengan substitusi font menggunakan Aspose.PDF untuk Java. Substitusi font adalah fitur penting ketika menangani dokumen PDF yang menggunakan font yang tidak tersedia dalam HTML. Di akhir tutorial ini, Anda akan dapat melakukan konversi dengan lancar sambil menjaga integritas dokumen.
+Dalam panduan langkah demi langkah ini, kita akan menjelajahi cara mengonversi dokumen PDF ke HTML dengan substitusi font menggunakan Aspose.PDF untuk Java. Substitusi font merupakan fitur penting saat menangani dokumen PDF yang menggunakan font yang tidak tersedia dalam HTML. Di akhir tutorial ini, Anda akan dapat melakukan konversi tanpa hambatan sambil menjaga integritas dokumen.
 
 ## Perkenalan
 
-Aspose.PDF untuk Java adalah pustaka Java canggih yang memungkinkan Anda bekerja dengan dokumen PDF secara terprogram. Ia menawarkan berbagai fitur, termasuk konversi PDF ke HTML dengan substitusi font, yang akan kami fokuskan dalam panduan ini.
+Aspose.PDF untuk Java adalah pustaka Java yang hebat yang memungkinkan Anda bekerja dengan dokumen PDF secara terprogram. Pustaka ini menawarkan berbagai fitur, termasuk konversi PDF ke HTML dengan substitusi font, yang akan kami bahas dalam panduan ini.
 
 ## Apa itu Aspose.PDF untuk Java?
 
-Aspose.PDF untuk Java adalah API tangguh yang memungkinkan pengembang membuat, mengedit, dan memanipulasi dokumen PDF dalam aplikasi Java. Ini memberikan dukungan komprehensif untuk berbagai operasi terkait PDF, menjadikannya pilihan tepat untuk penanganan PDF di Java.
+Aspose.PDF untuk Java adalah API tangguh yang memungkinkan pengembang membuat, mengedit, dan memanipulasi dokumen PDF dalam aplikasi Java. API ini menyediakan dukungan komprehensif untuk berbagai operasi terkait PDF, menjadikannya pilihan utama untuk penanganan PDF di Java.
 
 ## Mengapa Mengonversi PDF ke HTML dengan Substitusi Font?
 
-Mengonversi PDF ke HTML sangat penting saat Anda perlu menampilkan konten PDF di web. Namun, PDF dapat berisi font yang tidak aman untuk web, sehingga menyebabkan masalah rendering. Substitusi font memastikan bahwa dokumen HTML yang dikonversi mempertahankan tampilan yang sama dengan mengganti font yang tidak tersedia dengan alternatif yang sesuai.
+Mengonversi PDF ke HTML sangat penting saat Anda perlu menampilkan konten PDF di web. Namun, PDF dapat berisi fon yang tidak aman untuk web, yang menyebabkan masalah rendering. Substitusi fon memastikan bahwa dokumen HTML yang dikonversi mempertahankan tampilan yang sama dengan mengganti fon yang tidak tersedia dengan alternatif yang sesuai.
 
 ## Prasyarat
 
-Sebelum kita mulai, pastikan Anda memiliki prasyarat berikut:
+Sebelum kita memulai, pastikan Anda memiliki prasyarat berikut:
 
-- Kit Pengembangan Java (JDK) diinstal
--  Aspose.PDF untuk perpustakaan Java (Anda dapat mengunduhnya dari[Di Sini](https://releases.aspose.com/pdf/java/)
+- Java Development Kit (JDK) terinstal
+-  Aspose.PDF untuk pustaka Java (Anda dapat mengunduhnya dari[Di Sini](https://releases.aspose.com/pdf/java/)
 - Lingkungan Pengembangan Terpadu (IDE) pilihan Anda
 
-## Menyiapkan Lingkungan Pembangunan
+## Menyiapkan Lingkungan Pengembangan
 
 1. Buka IDE Anda.
 2. Buat proyek Java baru.
@@ -53,13 +53,13 @@ Document pdfDocument = new Document("input.pdf");
 ## Mengonfigurasi Substitusi Font
 
 ```java
-//Buat sebuah instance dari HtmlSaveOptions
+//Buat contoh HtmlSaveOptions
 HtmlSaveOptions saveOptions = new HtmlSaveOptions();
 
 // Aktifkan substitusi font
 saveOptions.setUseSubstitutions(true);
 
-// Atur pemetaan font khusus jika diperlukan
+// Tetapkan pemetaan font khusus jika diperlukan
 saveOptions.setFontSavingMode(HtmlSaveOptions.FontSavingModes.SAVE_IN_ALL_FORMATS);
 ```
 
@@ -70,7 +70,7 @@ saveOptions.setFontSavingMode(HtmlSaveOptions.FontSavingModes.SAVE_IN_ALL_FORMAT
 pdfDocument.save("output.html", saveOptions);
 ```
 
-## Pengecualian Penanganan
+## Penanganan Pengecualian
 
 ```java
 try {
@@ -83,32 +83,32 @@ try {
 
 ## Menyesuaikan Konversi
 
- Anda dapat menyesuaikan lebih lanjut keluaran HTML dengan menyesuaikan`HtmlSaveOptions` parameter. Ini memungkinkan Anda mengontrol berbagai aspek konversi, seperti kompresi gambar dan pemformatan teks.
+ Anda dapat menyesuaikan output HTML lebih lanjut dengan menyesuaikan`HtmlSaveOptions` parameter. Ini memungkinkan Anda untuk mengontrol berbagai aspek konversi, seperti kompresi gambar dan pemformatan teks.
 
 ## Kesimpulan
 
-Dalam panduan ini, kami telah membahas proses mengonversi PDF ke HTML dengan substitusi font menggunakan Aspose.PDF untuk Java. Pustaka canggih ini menyederhanakan proses konversi dan memastikan dokumen HTML Anda tetap terlihat sama, bahkan saat menggunakan font yang tidak aman untuk web.
+Dalam panduan ini, kami telah membahas proses mengonversi PDF ke HTML dengan substitusi font menggunakan Aspose.PDF untuk Java. Pustaka canggih ini menyederhanakan proses konversi dan memastikan bahwa dokumen HTML Anda tetap terlihat sama, bahkan saat menggunakan font yang tidak aman untuk web.
 
-Sekarang Anda dapat dengan mudah mengintegrasikan konversi PDF ke HTML ke dalam aplikasi Java Anda. Jika Anda memiliki pertanyaan atau menghadapi tantangan apa pun, lihat FAQ di bawah.
+Kini Anda dapat dengan mudah mengintegrasikan konversi PDF ke HTML ke dalam aplikasi Java Anda. Jika Anda memiliki pertanyaan atau menghadapi tantangan, baca FAQ di bawah ini.
 
-## FAQ
+## Tanya Jawab Umum
 
 ### Bagaimana cara kerja substitusi font di Aspose.PDF untuk Java?
 
-Aspose.PDF untuk Java secara otomatis mendeteksi font dalam dokumen PDF yang tidak tersedia untuk rendering HTML. Ini menggantikannya dengan font serupa yang aman untuk web untuk memastikan representasi visual yang konsisten dalam HTML yang dikonversi.
+Aspose.PDF untuk Java secara otomatis mendeteksi fon dalam dokumen PDF yang tidak tersedia untuk rendering HTML. Ia menggantinya dengan fon serupa yang aman untuk web guna memastikan representasi visual yang konsisten dalam HTML yang dikonversi.
 
 ### Bisakah saya menentukan font khusus untuk substitusi?
 
-Ya, Anda dapat menentukan pemetaan font khusus untuk menentukan font mana yang harus menggantikan font yang tidak tersedia selama proses konversi. Hal ini memberikan kontrol yang lebih baik atas substitusi.
+Ya, Anda dapat menentukan pemetaan font khusus untuk menentukan font mana yang akan menggantikan font yang tidak tersedia selama proses konversi. Ini memberikan kontrol yang lebih rinci atas penggantian tersebut.
 
 ### Apa keuntungan mengonversi PDF ke HTML dengan substitusi font?
 
-Mengonversi PDF ke HTML dengan substitusi font memastikan dokumen Anda muncul sebagaimana mestinya di web, meskipun PDF asli menggunakan font yang tidak umum. Ini menjaga konsistensi dalam presentasi visual di berbagai platform dan browser.
+Mengonversi PDF ke HTML dengan substitusi font memastikan bahwa dokumen Anda muncul sebagaimana mestinya di web, meskipun PDF asli menggunakan font yang tidak umum. Ini menjaga konsistensi dalam presentasi visual di berbagai platform dan browser.
 
-### Apakah ada batasan untuk penggantian font?
+### Apakah ada batasan pada penggantian font?
 
-Meskipun penggantian font adalah fitur yang berharga, ini mungkin tidak cocok dengan estetika dokumen PDF asli. Penting untuk meninjau HTML yang dikonversi dan melakukan penyesuaian yang diperlukan.
+Meskipun penggantian font merupakan fitur yang berharga, fitur ini mungkin tidak sepenuhnya sesuai dengan estetika dokumen PDF asli. Sangat penting untuk meninjau HTML yang dikonversi dan melakukan penyesuaian yang diperlukan.
 
 ### Apakah Aspose.PDF untuk Java cocok untuk konversi PDF ke HTML skala besar?
 
-Ya, Aspose.PDF untuk Java sangat cocok untuk konversi PDF ke HTML skala kecil dan besar. Performanya yang kuat dan opsi penyesuaian menjadikannya pilihan yang andal untuk berbagai proyek.
+Ya, Aspose.PDF untuk Java sangat cocok untuk konversi PDF ke HTML skala kecil maupun besar. Performanya yang tangguh dan opsi penyesuaiannya menjadikannya pilihan yang andal untuk berbagai proyek.

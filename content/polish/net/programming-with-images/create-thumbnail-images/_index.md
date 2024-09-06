@@ -1,25 +1,25 @@
 ---
-title: Twórz miniatury w pliku PDF
-linktitle: Twórz miniatury w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: łatwością twórz miniatury w pliku PDF za pomocą Aspose.PDF dla .NET.
+title: Utwórz miniatury obrazów w pliku PDF
+linktitle: Utwórz miniatury obrazów w pliku PDF
+second_title: Aspose.PDF dla .NET API Reference
+description: Łatwe tworzenie miniatur w plikach PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 100
 url: /pl/net/programming-with-images/create-thumbnail-images/
 ---
-Ten przewodnik poprowadzi Cię krok po kroku, jak utworzyć miniaturę w pliku PDF przy użyciu Aspose.PDF dla .NET. Upewnij się, że masz już skonfigurowane środowisko i wykonaj poniższe czynności:
+Ten przewodnik krok po kroku pokaże Ci, jak utworzyć miniaturę obrazu w pliku PDF za pomocą Aspose.PDF dla .NET. Upewnij się, że skonfigurowałeś już swoje środowisko i wykonaj poniższe kroki:
 
 ## Krok 1: Zdefiniuj katalog dokumentów
 
- Zanim zaczniesz, upewnij się, że ustawiłeś właściwy katalog dla dokumentów. Zastępować`"YOUR DOCUMENT DIRECTORY"` w kodzie ścieżką do katalogu zawierającego Twoje pliki PDF.
+Przed rozpoczęciem upewnij się, że ustawiłeś właściwy katalog dla dokumentów. Zastąp`"YOUR DOCUMENT DIRECTORY"` w kodzie podając ścieżkę do katalogu zawierającego pliki PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Krok 2: Uzyskaj nazwy wszystkich plików PDF w katalogu
+## Krok 2: Pobierz nazwy wszystkich plików PDF w katalogu
 
- W tym kroku pobierzemy nazwy wszystkich plików PDF znajdujących się w określonym katalogu przy użyciu języka C#`Directory` klasa. Pliki będą przechowywane w tablicy ciągów.
+ W tym kroku pobierzemy nazwy wszystkich plików PDF znajdujących się w określonym katalogu, korzystając z języka C#`Directory`Klasa. Pliki będą przechowywane w tablicy ciągów znaków.
 
 ```csharp
 string[] fileEntries = Directory.GetFiles(dataDir, "*.pdf");
@@ -27,12 +27,12 @@ string[] fileEntries = Directory.GetFiles(dataDir, "*.pdf");
 
 ## Krok 3: Przeglądaj wszystkie pliki PDF i ich strony
 
- Na tym etapie przejrzymy wszystkie pliki PDF i ich strony, aby utworzyć miniatury obrazów. Będziemy używać A`for` pętla do iteracji po wszystkich plikach.
+ W tym kroku przejdziemy przez wszystkie pliki PDF i ich strony, aby utworzyć miniatury obrazów. Użyjemy`for` pętla do iteracyjnego przeglądania wszystkich plików.
 
 ```csharp
 for (int counter = 0; counter < fileEntries.Length; counter++)
 {
-     //Otwórz dokument PDF
+     // Otwórz dokument PDF
      Document pdfDocument = new Document(fileEntries[counter]);
     
      // Przejdź przez wszystkie strony dokumentu
@@ -41,13 +41,13 @@ for (int counter = 0; counter < fileEntries.Length; counter++)
          // Utwórz strumień, aby zapisać obraz miniatury
          using (FileStream imageStream = new FileStream(dataDir + "\\Thumbnails" + counter.ToString() + "_" + pageCount + ".jpg", FileMode.Create))
          {
-             // Utwórz obiekt rozdzielczości
+             //Utwórz obiekt rozdzielczości
              Resolution resolution = new Resolution(300);
             
              // Utwórz urządzenie JPEG z określonymi atrybutami
              JpegDevice jpegDevice = new JpegDevice(45, 59, resolution, 100);
             
-             // Konwertuj konkretną stronę i zapisz obraz w strumieniu
+             // Konwertuj określoną stronę i zapisz obraz w strumieniu
              jpegDevice.Process(pdfDocument.Pages[pageCount], imageStream);
             
              // Zamknij strumień
@@ -57,13 +57,13 @@ for (int counter = 0; counter < fileEntries.Length; counter++)
 }
 ```
 
-### Przykładowy kod źródłowy do tworzenia obrazów miniatur przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Create Thumbnail Images using Aspose.PDF for .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//Pobierz nazwy wszystkich plików PDF w określonym katalogu
+// Pobierz nazwy wszystkich plików PDF w określonym katalogu
 string[] fileEntries = Directory.GetFiles(dataDir, "*.pdf");
-// Iteruj po wszystkich wpisach plików w tablicy
+// Przejrzyj wszystkie wpisy plików w tablicy
 for (int counter = 0; counter < fileEntries.Length; counter++)
 {
 	//Otwórz dokument
@@ -74,9 +74,9 @@ for (int counter = 0; counter < fileEntries.Length; counter++)
 		{
 			//Utwórz obiekt rozdzielczości
 			Resolution resolution = new Resolution(300);
-			//JpegDevice jpegDevice = nowe JpegDevice(500, 700, rozdzielczość, 100);
+			//JpegDevice jpegDevice = new JpegDevice(500, 700, rozdzielczość, 100);
 			JpegDevice jpegDevice = new JpegDevice(45, 59, resolution, 100);
-			//Konwertuj konkretną stronę i zapisz obraz do strumienia
+			//Konwertuj określoną stronę i zapisz obraz do strumienia
 			jpegDevice.Process(pdfDocument.Pages[pageCount], imageStream);
 			//Zamknij strumień
 			imageStream.Close();
@@ -88,42 +88,42 @@ System.Console.WriteLine("PDF pages are converted to thumbnails successfully!");
 
 ## Wniosek
 
-Gratulacje! Pomyślnie utworzyłeś miniatury obrazów z plików PDF przy użyciu Aspose.PDF dla .NET. Miniatury obrazów są zapisywane w określonym katalogu. Możesz teraz używać tych miniatur do wyświetlania wizualnego podglądu plików PDF.
+Gratulacje! Udało Ci się utworzyć miniatury obrazów z plików PDF przy użyciu Aspose.PDF dla .NET. Miniatury obrazów są zapisywane w określonym katalogu. Teraz możesz użyć tych miniatur, aby wyświetlić podgląd wizualny swoich plików PDF.
 
-### Często zadawane pytania dotyczące tworzenia miniatur w pliku PDF
+### Często zadawane pytania dotyczące tworzenia miniatur w plikach PDF
 
-#### P: Jaki jest cel tworzenia miniatur z plików PDF przy użyciu Aspose.PDF dla .NET?
+#### P: Jaki jest cel tworzenia miniatur plików PDF za pomocą Aspose.PDF dla platformy .NET?
 
-Odp.: Tworzenie miniatur z plików PDF umożliwia generowanie małych wizualnych podglądów każdej strony w pliku PDF, co może być przydatne do szybkiego przeglądania podglądu i nawigacji po zawartości.
+A: Tworzenie miniatur plików PDF umożliwia generowanie małych podglądów wizualnych każdej strony w pliku PDF, co może być przydatne do szybkiego przeglądania treści i poruszania się po niej.
 
-#### P: W jaki sposób Aspose.PDF dla .NET ułatwia tworzenie miniatur z plików PDF?
+#### P: W jaki sposób Aspose.PDF dla platformy .NET ułatwia tworzenie miniatur plików PDF?
 
-Odp.: Aspose.PDF dla .NET zapewnia krok po kroku proces otwierania dokumentów PDF, przeglądania ich stron, tworzenia miniatur i zapisywania ich w określonym katalogu za pomocą`JpegDevice` klasa.
+ A: Aspose.PDF dla platformy .NET udostępnia proces krok po kroku umożliwiający otwieranie dokumentów PDF, przeglądanie ich stron, tworzenie miniatur i zapisywanie ich w określonym katalogu za pomocą`JpegDevice` klasa.
 
-#### P: Dlaczego ważne jest zdefiniowanie katalogu dokumentów przed rozpoczęciem tworzenia miniatur?
+#### P: Dlaczego ważne jest, aby zdefiniować katalog dokumentu przed rozpoczęciem tworzenia miniatur?
 
-O: Określenie katalogu dokumentów gwarantuje, że pliki PDF zostaną prawidłowo zlokalizowane, a powstałe miniatury zostaną zapisane w żądanej ścieżce wyjściowej.
+A: Określenie katalogu dokumentu gwarantuje, że pliki PDF zostaną prawidłowo zlokalizowane, a powstałe miniatury zostaną zapisane w żądanej ścieżce wyjściowej.
 
-####  P: W jaki sposób`Document` class in Aspose.PDF for .NET help in the creation of thumbnail images?
+####  P: Jak to działa?`Document` class in Aspose.PDF for .NET help in the creation of thumbnail images?
 
- O:`Document` class umożliwia otwieranie i manipulowanie dokumentami PDF. W tym przypadku służy do załadowania plików PDF, z których zostaną utworzone miniatury.
+ A: Ten`Document` Klasa pozwala otwierać i manipulować dokumentami PDF. W tym przypadku jest używana do ładowania plików PDF, z których zostaną utworzone obrazy miniatur.
 
-####  P: Jaką rolę odgrywa`JpegDevice` class play in the creation of thumbnail images?
+####  P: Jaką rolę pełni`JpegDevice` class play in the creation of thumbnail images?
 
- O:`JpegDevice` klasa odpowiada za konwersję stron PDF na obrazy JPEG, które służą jako miniatury. Umożliwia określenie atrybutów, takich jak szerokość, wysokość, rozdzielczość i jakość.
+ A: Ten`JpegDevice` Klasa jest odpowiedzialna za konwersję stron PDF do obrazów JPEG, które są używane jako obrazy miniatur. Pozwala określić atrybuty, takie jak szerokość, wysokość, rozdzielczość i jakość.
 
-#### P: W jaki sposób każda strona dokumentu PDF jest konwertowana na indywidualną miniaturę?
+#### P: W jaki sposób każda strona dokumentu PDF jest konwertowana na pojedynczy obraz miniatury?
 
- O: Zagnieżdżony`for`pętla służy do iteracji po każdym pliku PDF i jego stronach. Dla każdej strony tworzone jest urządzenie JPEG z określonymi atrybutami i plikiem`Process` Metoda służy do konwersji strony na obraz miniatury i zapisania go w strumieniu.
+ A: Zagnieżdżony`for` pętla służy do iterowania przez każdy plik PDF i jego strony. Dla każdej strony tworzone jest urządzenie JPEG z określonymi atrybutami, a`Process` Metoda ta służy do konwersji strony na obraz miniatury i zapisania jej w strumieniu.
 
-#### P: Czy mogę dostosować rozdzielczość lub jakość powstałych miniatur podczas procesu tworzenia?
+#### P: Czy mogę dostosować rozdzielczość i jakość powstałych miniatur w trakcie procesu ich tworzenia?
 
- O: Tak, możesz modyfikować atrybuty, takie jak rozdzielczość, szerokość, wysokość i jakość, konfigurując plik`JpegDevice` obiekt przed konwersją każdej strony.
+O: Tak, możesz modyfikować atrybuty takie jak rozdzielczość, szerokość, wysokość i jakość, konfigurując`JpegDevice` obiekt przed konwersją każdej strony.
 
-#### P: Jak mogę wykorzystać wygenerowane miniatury w moich projektach lub aplikacjach po procesie tworzenia?
+#### P: W jaki sposób mogę wykorzystać wygenerowane miniatury w moich projektach lub aplikacjach po zakończeniu procesu tworzenia?
 
-O: Powstałe w ten sposób miniatury można wykorzystać do zapewnienia wizualnego podglądu plików PDF, pomagając użytkownikom szybko identyfikować zawartość i poruszać się po niej.
+A: Powstałe miniatury można wykorzystać do wizualnego podglądu plików PDF, pomagając użytkownikom szybko identyfikować treści i poruszać się po nich.
 
-#### : Czy istnieje ograniczenie liczby miniatur, które można wygenerować z plików PDF przy użyciu tego procesu tworzenia?
+#### :Czy istnieje ograniczenie liczby miniatur, które można wygenerować z plików PDF za pomocą tego procesu tworzenia?
 
-Odp.: Liczba wygenerowanych miniatur zależy od liczby stron w każdym dokumencie PDF. Każda strona zostanie przekonwertowana na oddzielną miniaturę.
+A: Liczba generowanych miniatur zależy od liczby stron w każdym dokumencie PDF. Każda strona zostanie przekonwertowana na osobny obraz miniatury.

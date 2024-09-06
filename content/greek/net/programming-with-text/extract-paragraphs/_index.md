@@ -32,7 +32,7 @@ using System.Text;
  Στον κώδικα, εντοπίστε τη γραμμή που λέει`string dataDir = "YOUR DOCUMENT DIRECTORY";` και αντικαταστήστε`"YOUR DOCUMENT DIRECTORY"` με τη διαδρομή προς τον κατάλογο όπου είναι αποθηκευμένα τα έγγραφά σας.
 
 ## Βήμα 4: Ανοίξτε το έγγραφο PDF
- Ανοίξτε ένα υπάρχον έγγραφο PDF χρησιμοποιώντας το`Document`κατασκευαστή και περνώντας τη διαδρομή προς το αρχείο εισόδου PDF.
+ Ανοίξτε ένα υπάρχον έγγραφο PDF χρησιμοποιώντας το`Document` κατασκευαστή και περνώντας τη διαδρομή προς το αρχείο εισόδου PDF.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
@@ -81,7 +81,7 @@ foreach(PageMarkup markup in absorber.PageMarkups)
 ```csharp
 // Η διαδρομή προς τον κατάλογο εγγράφων.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//Ανοίξτε ένα υπάρχον αρχείο PDF
+// Ανοίξτε ένα υπάρχον αρχείο PDF
 Document doc = new Document(dataDir + "input.pdf");
 // Instantiate ParagraphAbsorber
 ParagraphAbsorber absorber = new ParagraphAbsorber();
@@ -113,7 +113,7 @@ foreach (PageMarkup markup in absorber.PageMarkups)
 }
 ```
 
-## συμπέρασμα
+## Σύναψη
 Έχετε εξαγάγει με επιτυχία παραγράφους από ένα έγγραφο PDF χρησιμοποιώντας το Aspose.PDF για .NET. Οι παραγράφοι που έχουν εξαχθεί έχουν εμφανιστεί στο παράθυρο της κονσόλας.
 
 ### Συχνές ερωτήσεις

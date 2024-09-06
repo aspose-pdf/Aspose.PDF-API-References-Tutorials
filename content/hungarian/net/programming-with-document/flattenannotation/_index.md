@@ -7,12 +7,12 @@ type: docs
 weight: 150
 url: /hu/net/programming-with-document/flattenannotation/
 ---
-Az Aspose.PDF for .NET egy hatékony könyvtár, amely lehetővé teszi a fejlesztők számára, hogy programozottan dolgozzanak PDF fájlokkal. Az egyik szolgáltatás, amelyet biztosít, a megjegyzések simítása PDF-fájlban. A PDF-dokumentumban lévő megjegyzések kiegyenlítése azt jelenti, hogy a megjegyzések a dokumentum tartalmának részévé válnak, és többé nem szerkeszthetők vagy törölhetők. Ez akkor hasznos, ha biztosítani szeretné, hogy a megjegyzések megmaradjanak, és véletlenül ne módosíthatók legyenek.
+Az Aspose.PDF for .NET egy hatékony könyvtár, amely lehetővé teszi a fejlesztők számára, hogy programozottan dolgozzanak PDF fájlokkal. Az egyik szolgáltatás, amelyet biztosít, a megjegyzések egyesítésének lehetősége PDF-fájlban. A PDF-dokumentumban lévő megjegyzések kiegyenlítése azt jelenti, hogy a megjegyzések a dokumentum tartalmának részévé válnak, és többé nem szerkeszthetők vagy törölhetők. Ez akkor hasznos, ha biztosítani szeretné, hogy a megjegyzések megmaradjanak, és véletlenül ne módosíthatók legyenek.
 
 Ebben az oktatóanyagban megvitatjuk, hogyan használható az Aspose.PDF for .NET a megjegyzések egyesítésére egy PDF-dokumentumban. Lépésről lépésre bemutatjuk, hogyan kell ezt megtenni, a példa forráskóddal együtt.
 
 ## 1. lépés: Hozzon létre egy új C# konzolalkalmazást
-A kezdéshez hozzon létre egy új C# konzolalkalmazást a Visual Studióban. Nevezheted, ahogy akarod. A projekt létrehozása után hozzá kell adni egy hivatkozást az Aspose.PDF for .NET könyvtárhoz.
+kezdéshez hozzon létre egy új C# konzolalkalmazást a Visual Studióban. Nevezheted, ahogy akarod. A projekt létrehozása után hozzá kell adni egy hivatkozást az Aspose.PDF for .NET könyvtárhoz.
 
 ## 2. lépés: Importálja az Aspose.PDF névteret
 Adja hozzá a következő kódsort a C# fájl tetejéhez az Aspose.PDF névtér importálásához:

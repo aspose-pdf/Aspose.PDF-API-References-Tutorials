@@ -1,27 +1,27 @@
 ---
 title: Trích xuất đường viền trong tệp PDF
 linktitle: Trích xuất đường viền trong tệp PDF
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
 description: Tìm hiểu cách trích xuất đường viền trong tệp PDF bằng Aspose.PDF cho .NET.
 type: docs
 weight: 80
 url: /vi/net/programming-with-tables/extract-border/
 ---
-Trong hướng dẫn này, chúng ta sẽ tìm hiểu cách trích xuất đường viền trong tệp PDF bằng Aspose.PDF cho .NET. Chúng tôi sẽ giải thích từng bước về mã nguồn trong C#. Khi kết thúc hướng dẫn này, bạn sẽ biết cách trích xuất đường viền từ tài liệu PDF và lưu nó dưới dạng hình ảnh. Hãy bắt đầu!
+Trong hướng dẫn này, chúng ta sẽ học cách trích xuất đường viền trong tệp PDF bằng Aspose.PDF cho .NET. Chúng tôi sẽ giải thích mã nguồn bằng C# từng bước. Vào cuối hướng dẫn này, bạn sẽ biết cách trích xuất đường viền từ tài liệu PDF và lưu dưới dạng hình ảnh. Hãy bắt đầu!
 
 ## Bước 1: Thiết lập môi trường
-Trước tiên, hãy đảm bảo bạn đã thiết lập môi trường phát triển C# của mình với Aspose.PDF cho .NET. Thêm tham chiếu vào thư viện và nhập các không gian tên cần thiết.
+Trước tiên, hãy đảm bảo bạn đã thiết lập môi trường phát triển C# của mình với Aspose.PDF cho .NET. Thêm tham chiếu đến thư viện và nhập các không gian tên cần thiết.
 
 ## Bước 2: Tải tài liệu PDF
-Trong bước này, chúng tôi tải tài liệu PDF từ tệp được chỉ định.
+Ở bước này, chúng ta tải tài liệu PDF từ tệp đã chỉ định.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-Đảm bảo thay thế "THƯ VIỆN TÀI LIỆU CỦA BẠN" bằng thư mục thực nơi chứa tệp PDF của bạn.
+Hãy nhớ thay thế "YOUR DOCUMENT DIRECTORY" bằng thư mục thực tế chứa tệp PDF của bạn.
 
-## Bước 3: Khai thác cạnh
+## Bước 3: Trích xuất cạnh
 Chúng tôi sẽ trích xuất đường viền từ tài liệu PDF bằng cách lặp lại các thao tác có trong tài liệu.
 
 ```csharp
@@ -36,7 +36,7 @@ System.Drawing.Color strokeColor = System.Drawing.Color.FromArgb(0, 0, 0);
 
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 {
-     // Xử lý mọi hoạt động nội dung
+     // Xử lý tất cả các hoạt động nội dung
      foreach(Operator op in doc.Pages[1].Contents)
      {
          // Kiểm tra loại hoạt động
@@ -46,10 +46,10 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 }
 ```
 
- Chúng tôi tạo ra một`graphicsState` ngăn xếp để lưu trữ trạng thái đồ họa, hình ảnh bitmap để chụp đường viền được trích xuất,`GraphicsPath` đối tượng để lưu trữ đường dẫn vẽ và các biến khác để theo dõi trạng thái và màu sắc.
+ Chúng tôi tạo ra một`graphicsState` ngăn xếp để lưu trữ trạng thái đồ họa, một hình ảnh bitmap để chụp đường viền được trích xuất, một`GraphicsPath` đối tượng để lưu trữ đường dẫn vẽ và các biến khác để theo dõi trạng thái và màu sắc.
 
 ## Bước 4: Xử lý giao dịch
-Ở bước này chúng ta xử lý từng thao tác trên tài liệu để trích xuất đường viền.
+Ở bước này, chúng ta xử lý từng thao tác của tài liệu để trích xuất đường viền.
 
 ```csharp
 // Kiểm tra loại hoạt động
@@ -67,7 +67,7 @@ else if (opRestoreState != null)
 }
 else if (opCtm != null)
 {
-     // Truy xuất ma trận chuyển đổi hiện tại
+     // Lấy lại ma trận biến đổi hiện tại
      System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
          (float)opCtm.Matrix.A,
          (float)opCtm.Matrix.B,
@@ -87,27 +87,27 @@ else if (opMoveTo != null)
 }
 else if (opLineTo != null)
 {
-     // Xử lý việc vẽ đường
+     // Xử lý bản vẽ của một đường thẳng
      // ...
-     // Thêm mã để xử lý việc vẽ một đường
+     // Thêm mã để xử lý việc vẽ một đường thẳng
 }
 // ...
 // Thêm các khối else if cho các hoạt động khác
 ```
 
-Chúng tôi kiểm tra loại hoạt động bằng cách sử dụng các điều kiện và chạy mã thích hợp cho từng hoạt động.
+Chúng tôi kiểm tra loại hoạt động bằng cách sử dụng các điều kiện và chạy mã phù hợp cho từng hoạt động.
 
-## Bước 5: Sao lưu ảnh
-Cuối cùng, chúng ta lưu hình ảnh bitmap chứa đường viền được trích xuất vào một tệp được chỉ định.
+## Bước 5: Sao lưu hình ảnh
+Cuối cùng, chúng ta lưu ảnh bitmap chứa đường viền đã trích xuất vào một tệp được chỉ định.
 
 ```csharp
 dataDir = dataDir + "ExtractBorder_out.png";
 bitmap.Save(dataDir, ImageFormat.Png);
 ```
 
-Đảm bảo chỉ định đúng thư mục và tên tệp để lưu hình ảnh đầu ra.
+Hãy chắc chắn chỉ định đúng thư mục và tên tệp để lưu hình ảnh đầu ra.
 
-### Mã nguồn ví dụ cho Extract Border bằng Aspose.PDF for .NET
+### Mã nguồn ví dụ cho Trích xuất đường viền bằng Aspose.PDF cho .NET
 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
@@ -120,7 +120,7 @@ System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageI
 System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
 // Giá trị ma trận ctm mặc định là 1,0,0,1,0,0
 System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
-//Hệ tọa độ System.draw nằm trên cùng bên trái, trong khi hệ tọa độ pdf dựa trên bên trái thấp, vì vậy chúng ta phải áp dụng ma trận đảo ngược
+//Hệ thống. Hệ tọa độ bản vẽ dựa trên góc trên bên trái, trong khi hệ tọa độ pdf dựa trên góc dưới bên trái, do đó chúng ta phải áp dụng ma trận đảo ngược
 System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, (float)doc.Pages[1].PageInfo.Height);
 System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
 System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);
@@ -155,7 +155,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 		}
 		else if (opRestoreState != null)
 		{
-			// Vứt bỏ trạng thái hiện tại và khôi phục trạng thái trước đó
+			// Bỏ trạng thái hiện tại và khôi phục trạng thái trước đó
 			graphicsState.Pop();
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
@@ -237,22 +237,22 @@ Trong hướng dẫn này, chúng ta đã học cách trích xuất đường vi
 
 ### Câu hỏi thường gặp về trích xuất đường viền trong tệp PDF
 
-#### Hỏi: Mục đích của việc trích xuất đường viền từ tệp PDF là gì?
+#### H: Mục đích của việc trích xuất đường viền từ tệp PDF là gì?
 
-Trả lời: Việc trích xuất đường viền từ tệp PDF có thể hữu ích cho nhiều mục đích khác nhau. Nó cho phép bạn tách biệt và phân tích các thành phần cấu trúc của tài liệu, chẳng hạn như bảng, sơ đồ hoặc thành phần đồ họa. Bạn có thể sử dụng đường viền được trích xuất để xác định bố cục, kích thước và vị trí của nội dung trong tài liệu PDF.
+A: Trích xuất đường viền từ tệp PDF có thể hữu ích cho nhiều mục đích khác nhau. Nó cho phép bạn cô lập và phân tích các thành phần cấu trúc của tài liệu, chẳng hạn như bảng, sơ đồ hoặc thành phần đồ họa. Bạn có thể sử dụng đường viền đã trích xuất để xác định bố cục, kích thước và vị trí của nội dung trong tài liệu PDF.
 
-#### Hỏi: Tôi có thể trích xuất đường viền từ các trang hoặc khu vực cụ thể trong tài liệu PDF không?
+#### H: Tôi có thể trích xuất đường viền từ các trang hoặc khu vực cụ thể trong tài liệu PDF không?
 
-Trả lời: Có, bạn có thể sửa đổi mã nguồn C# được cung cấp để trích xuất đường viền từ các trang hoặc vùng cụ thể trong tài liệu PDF. Bằng cách thao tác`doc.Pages` tập hợp và chỉ định tiêu chí tùy chỉnh, bạn có thể chọn trích xuất đường viền từ các trang hoặc khu vực quan tâm cụ thể.
+A: Có, bạn có thể sửa đổi mã nguồn C# được cung cấp để trích xuất đường viền từ các trang hoặc vùng cụ thể trong tài liệu PDF. Bằng cách thao tác`doc.Pages` thu thập và chỉ định tiêu chí tùy chỉnh, bạn có thể chọn trích xuất đường viền từ các trang hoặc khu vực quan tâm cụ thể.
 
-#### Hỏi: Làm cách nào tôi có thể tùy chỉnh định dạng và chất lượng hình ảnh đầu ra?
+#### H: Làm thế nào để tùy chỉnh định dạng và chất lượng hình ảnh đầu ra?
 
- Trả lời: Trong mã C# được cung cấp, đường viền được trích xuất sẽ được lưu dưới dạng hình ảnh PNG. Nếu bạn muốn thay đổi định dạng hình ảnh đầu ra, bạn có thể sửa đổi`ImageFormat.Png` tham số trong`bitmap.Save` sang các định dạng hình ảnh được hỗ trợ khác, chẳng hạn như JPEG, BMP hoặc GIF. Ngoài ra, bạn có thể điều chỉnh chất lượng hình ảnh hoặc cài đặt nén dựa trên yêu cầu của mình.
+ A: Trong mã C# được cung cấp, đường viền được trích xuất được lưu dưới dạng hình ảnh PNG. Nếu bạn muốn thay đổi định dạng hình ảnh đầu ra, bạn có thể sửa đổi`ImageFormat.Png` tham số trong`bitmap.Save` phương pháp này sang các định dạng hình ảnh được hỗ trợ khác, chẳng hạn như JPEG, BMP hoặc GIF. Ngoài ra, bạn có thể điều chỉnh chất lượng hình ảnh hoặc cài đặt nén dựa trên yêu cầu của mình.
 
-#### Câu hỏi: Tôi có thể thực hiện những thao tác nào khác trên đường viền được trích xuất?
+#### H: Tôi có thể thực hiện những thao tác nào khác trên đường viền đã trích xuất?
 
-Đáp: Sau khi đã trích xuất đường viền dưới dạng hình ảnh, bạn có thể xử lý thêm đường viền đó bằng cách sử dụng các thư viện hoặc thuật toán xử lý hình ảnh. Bạn có thể phân tích hình ảnh, áp dụng bộ lọc hình ảnh, phát hiện mẫu hoặc thực hiện OCR (Nhận dạng ký tự quang học) để trích xuất văn bản từ hình ảnh nếu cần.
+A: Sau khi trích xuất đường viền dưới dạng hình ảnh, bạn có thể xử lý thêm bằng các thư viện hoặc thuật toán xử lý hình ảnh. Bạn có thể phân tích hình ảnh, áp dụng bộ lọc hình ảnh, phát hiện mẫu hoặc thực hiện OCR (Nhận dạng ký tự quang học) để trích xuất văn bản từ hình ảnh nếu cần.
 
-#### Câu hỏi: Có bất kỳ hạn chế hoặc cân nhắc nào khi trích xuất đường viền từ các tài liệu PDF phức tạp không?
+#### H: Có bất kỳ hạn chế hoặc cân nhắc nào khi trích xuất đường viền từ các tài liệu PDF phức tạp không?
 
-Trả lời: Quá trình trích xuất có thể khác nhau tùy thuộc vào độ phức tạp của tài liệu PDF. Các tệp PDF phức tạp có nhiều lớp, độ trong suốt hoặc đồ họa nâng cao có thể yêu cầu xử lý hoặc điều chỉnh bổ sung để trích xuất chính xác đường viền. Điều cần thiết là phải kiểm tra kỹ lưỡng quá trình trích xuất trên nhiều tài liệu PDF khác nhau để đảm bảo kết quả đáng tin cậy.
+A: Quá trình trích xuất có thể khác nhau tùy thuộc vào độ phức tạp của tài liệu PDF. Các tệp PDF phức tạp với nhiều lớp, độ trong suốt hoặc đồ họa nâng cao có thể yêu cầu xử lý hoặc điều chỉnh bổ sung để trích xuất chính xác đường viền. Điều cần thiết là phải kiểm tra kỹ lưỡng quá trình trích xuất trên nhiều tài liệu PDF khác nhau để đảm bảo kết quả đáng tin cậy.

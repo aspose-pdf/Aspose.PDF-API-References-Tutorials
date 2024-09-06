@@ -7,7 +7,7 @@ type: docs
 weight: 340
 url: /sv/net/programming-with-text/replace-fonts/
 ---
-I den här handledningen kommer vi att förklara hur du byter ut specifika teckensnitt i PDF-filer med Aspose.PDF-biblioteket för .NET. Vi kommer att gå igenom steg-för-steg-processen för att ladda ett PDF-dokument, söka efter textfragment, identifiera de typsnitt som ska ersättas, ersätta teckensnitten och spara den modifierade PDF-filen med den medföljande C#-källkoden.
+I den här handledningen kommer vi att förklara hur du byter ut specifika teckensnitt i PDF-filen med Aspose.PDF-biblioteket för .NET. Vi kommer att gå igenom steg-för-steg-processen för att ladda ett PDF-dokument, söka efter textfragment, identifiera de typsnitt som ska ersättas, ersätta teckensnitten och spara den modifierade PDF-filen med den medföljande C#-källkoden.
 
 ## Förutsättningar
 
@@ -18,7 +18,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 1: Konfigurera dokumentkatalogen
 
- Först måste du ställa in sökvägen till katalogen där du har indata-PDF-filen. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till din PDF-fil.
+ Först måste du ställa in sökvägen till katalogen där du har indata-PDF-filen. Ersätta`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till din PDF-fil.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -115,7 +115,7 @@ S: Att ersätta teckensnitt i ett PDF-dokument kan vara nödvändigt när du vil
 
 S: Så här ställer du in dokumentkatalogen:
 
-1.  Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till katalogen där din indata-PDF-fil finns.
+1.  Ersätta`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till katalogen där din indata-PDF-fil finns.
 
 #### F: Hur ersätter jag specifika teckensnitt i ett PDF-dokument?
 

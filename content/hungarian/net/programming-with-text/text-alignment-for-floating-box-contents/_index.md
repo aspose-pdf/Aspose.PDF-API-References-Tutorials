@@ -41,7 +41,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 4. lépés: Hozzon létre egy új dokumentumot
 
- Újat csinálni`Document` tárgy:
+ Hozzon létre egy újat`Document` objektum:
 
 ```csharp
 Aspose.Pdf.Document doc = new Document();
@@ -116,7 +116,7 @@ doc.Save(dataDir + "FloatingBox_alignment_review_out.pdf");
 
 ## Következtetés
 
-Gratulálunk! Sikeresen megtanulta, hogyan igazítson szöveget a lebegő mezőkben egy PDF-dokumentumban az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a projekt beállításától a módosított dokumentum mentéséig. Most már beépítheti ezt a kódot saját C#-projektjébe, hogy testreszabhassa a szöveg igazítását a PDF-fájlok lebegő dobozaiban.
+Gratulálok! Sikeresen megtanulta, hogyan igazítson szöveget a lebegő mezőkben egy PDF-dokumentumban az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a projekt beállításától a módosított dokumentum mentéséig. Most már beépítheti ezt a kódot saját C#-projektjébe, hogy testreszabhassa a szöveg igazítását a PDF-fájlok lebegő dobozaiban.
 
 ### GYIK
 
@@ -154,4 +154,4 @@ V: Igen, ez az oktatóanyag útmutatást ad arról, hogyan igazíthat szöveget 
 
 #### K: Hogyan menthetem el a módosított PDF dokumentumot?
 
- V: A módosított PDF dokumentum mentéséhez használhatja a`Save` módszere a`Document` tárgy. Az oktatóanyag kódmintákat tartalmaz, amelyek bemutatják, hogyan kell menteni az eredményül kapott PDF-dokumentumot.
+ V: A módosított PDF dokumentum mentéséhez használhatja a`Save` módszere a`Document` objektum. Az oktatóanyag kódmintákat tartalmaz, amelyek bemutatják, hogyan kell elmenteni az eredményül kapott PDF-dokumentumot.

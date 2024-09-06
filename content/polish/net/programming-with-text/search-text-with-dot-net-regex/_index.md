@@ -1,26 +1,26 @@
 ---
 title: Wyszukaj tekst za pomocą wyrażenia regularnego Dot Net
 linktitle: Wyszukaj tekst za pomocą wyrażenia regularnego Dot Net
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak wyszukiwać tekst przy użyciu wyrażeń regularnych .NET w dokumencie PDF przy użyciu Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak wyszukiwać tekst za pomocą wyrażeń regularnych .NET w dokumencie PDF, korzystając z Aspose.PDF dla platformy .NET.
 type: docs
 weight: 480
 url: /pl/net/programming-with-text/search-text-with-dot-net-regex/
 ---
-W tym samouczku wyjaśniono, jak używać Aspose.PDF dla .NET do wyszukiwania tekstu przy użyciu wyrażeń regularnych .NET w dokumencie PDF. Dostarczony kod źródłowy języka C# demonstruje proces krok po kroku.
+Ten samouczek wyjaśnia, jak używać Aspose.PDF dla .NET do wyszukiwania tekstu za pomocą wyrażeń regularnych .NET w dokumencie PDF. Dostarczony kod źródłowy C# demonstruje ten proces krok po kroku.
 
-## Warunki wstępne
+## Wymagania wstępne
 
-Przed kontynuowaniem samouczka upewnij się, że posiadasz następujące elementy:
+Przed przystąpieniem do samouczka upewnij się, że posiadasz następujące elementy:
 
 - Podstawowa znajomość języka programowania C#.
-- Zainstalowana biblioteka Aspose.PDF dla .NET. Możesz go uzyskać ze strony internetowej Aspose lub użyć NuGet, aby zainstalować go w swoim projekcie.
+- Aspose.PDF dla biblioteki .NET jest zainstalowany. Możesz go pobrać ze strony internetowej Aspose lub użyć NuGet, aby zainstalować go w swoim projekcie.
 
 ## Krok 1: Skonfiguruj projekt
 
-Zacznij od utworzenia nowego projektu C# w preferowanym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla .NET.
+Zacznij od utworzenia nowego projektu C# w preferowanym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla platformy .NET.
 
-## Krok 2: Zaimportuj niezbędne przestrzenie nazw
+## Krok 2: Importuj niezbędne przestrzenie nazw
 
 Dodaj następujące dyrektywy using na początku pliku C#, aby zaimportować wymagane przestrzenie nazw:
 
@@ -29,7 +29,7 @@ using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Krok 3: Ustaw ścieżkę do katalogu dokumentów
+## Krok 3: Ustaw ścieżkę do katalogu dokumentu
 
  Ustaw ścieżkę do katalogu dokumentów za pomocą`dataDir` zmienny:
 
@@ -39,15 +39,15 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
  Zastępować`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do katalogu dokumentów.
 
-## Krok 4: Utwórz obiekt Regex .NET
+## Krok 4: Utwórz obiekt .NET Regex
 
- Stwórz`.NET Regex` obiekt do zdefiniowania wzorca wyszukiwania:
+ Utwórz`.NET Regex` obiekt definiujący wzorzec wyszukiwania:
 
 ```csharp
 System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@"[\S]+");
 ```
 
- Zastępować`@"[\S]+"` z żądanym wzorcem wyrażenia regularnego.
+ Zastępować`@"[\S]+"` z wybranym przez Ciebie wzorcem wyrażenia regularnego.
 
 ## Krok 5: Załaduj dokument PDF
 
@@ -61,7 +61,7 @@ Aspose.Pdf.Document document = new Aspose.Pdf.Document(dataDir + "SearchTextRege
 
 ## Krok 6: Uzyskaj konkretną stronę
 
-Uzyskaj żądaną stronę dokumentu:
+Pobierz żądaną stronę dokumentu:
 
 ```csharp
 Page page = document.Pages[1];
@@ -71,14 +71,14 @@ Page page = document.Pages[1];
 
 ## Krok 7: Utwórz TextFragmentAbsorber
 
- Stwórz`TextFragmentAbsorber` obiekt, aby znaleźć wszystkie wystąpienia wejściowego wyrażenia regularnego:
+ Utwórz`TextFragmentAbsorber` obiekt, aby znaleźć wszystkie wystąpienia wyrażenia regularnego wejściowego:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(regex);
 textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
 ```
 
-## Krok 8: Zaakceptuj pochłaniacz dla strony
+## Krok 8: Zaakceptuj absorber dla strony
 
 Zaakceptuj absorber dla strony:
 
@@ -88,15 +88,15 @@ page.Accept(textFragmentAbsorber);
 
 ## Krok 9: Pobierz wyodrębnione fragmenty tekstu
 
-Pobierz wyodrębnione fragmenty tekstu za pomocą metody`TextFragments` własność`TextFragmentAbsorber` obiekt:
+Pobierz wyodrębnione fragmenty tekstu za pomocą`TextFragments` własność`TextFragmentAbsorber` obiekt:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 ```
 
-## Krok 10: Przejrzyj fragmenty tekstu w pętli
+## Krok 10: Przejrzyj fragmenty tekstu
 
-Przejrzyj pobrane fragmenty tekstu w pętli i wykonaj żądane czynności:
+Przejrzyj pobrane fragmenty tekstu i wykonaj żądane czynności:
 
 ```csharp
 foreach (TextFragment textFragment in textFragmentCollection)
@@ -105,9 +105,9 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
-Zmodyfikuj kod w pętli, aby w razie potrzeby wykonać dalsze działania na każdym fragmencie tekstu.
+W razie potrzeby zmodyfikuj kod w pętli, aby wykonać dalsze działania na każdym fragmencie tekstu.
 
-### Przykładowy kod źródłowy dla tekstu wyszukiwania za pomocą wyrażenia regularnego Dot Net przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla wyszukiwania tekstu za pomocą wyrażenia regularnego Dot Net przy użyciu Aspose.PDF dla .NET 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Utwórz obiekt Regex, aby znaleźć wszystkie słowa
@@ -116,10 +116,10 @@ System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.
 Aspose.Pdf.Document document = new Aspose.Pdf.Document(dataDir + "SearchTextRegex.pdf");
 // Uzyskaj konkretną stronę
 Page page = document.Pages[1];
-// Utwórz obiekt TextAbsorber, aby znaleźć wszystkie wystąpienia wejściowego wyrażenia regularnego
+// Utwórz obiekt TextAbsorber, aby znaleźć wszystkie wystąpienia wyrażenia regularnego wejściowego
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(regex);
 textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
-// Zaakceptuj pochłaniacz dla strony
+// Zaakceptuj absorber dla strony
 page.Accept(textFragmentAbsorber);
 // Pobierz wyodrębnione fragmenty tekstu
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -132,42 +132,42 @@ foreach (TextFragment textFragment in textFragmentCollection)
 
 ## Wniosek
 
-Gratulacje! Pomyślnie nauczyłeś się wyszukiwać tekst przy użyciu wyrażeń regularnych .NET w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Ten samouczek zawiera przewodnik krok po kroku, od skonfigurowania projektu po uzyskanie dostępu do wyodrębnionych fragmentów tekstu. Możesz teraz włączyć ten kod do własnych projektów C#, aby przeprowadzać zaawansowane wyszukiwanie tekstu w plikach PDF.
+Gratulacje! Udało Ci się nauczyć, jak wyszukiwać tekst za pomocą wyrażeń regularnych .NET w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Ten samouczek zawiera przewodnik krok po kroku, od konfiguracji projektu po dostęp do wyodrębnionych fragmentów tekstu. Teraz możesz włączyć ten kod do własnych projektów C#, aby wykonywać zaawansowane wyszukiwania tekstowe w plikach PDF.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Jaki jest cel samouczka „Wyszukiwanie tekstu za pomocą wyrażenia regularnego Dot Net”?
+#### P: Jaki jest cel samouczka „Wyszukiwanie tekstu za pomocą wyrażeń regularnych Dot Net”?
 
-O: Samouczek „Wyszukaj tekst za pomocą Dot Net Regex” ma na celu poinstruowanie użytkowników, jak używać biblioteki Aspose.PDF dla platformy .NET do wyszukiwania tekstu w dokumencie PDF przy użyciu wyrażeń regularnych platformy .NET. Samouczek zawiera instrukcje krok po kroku i przykłady kodu C# demonstrujące proces.
+A: Samouczek „Search Text With Dot Net Regex” ma na celu poprowadzenie użytkowników przez bibliotekę Aspose.PDF dla .NET do wyszukiwania tekstu w dokumencie PDF przy użyciu wyrażeń regularnych .NET. Samouczek zawiera instrukcje krok po kroku i przykłady kodu C#, aby zademonstrować ten proces.
 
-#### P: W jaki sposób ten samouczek pomaga w wyszukiwaniu tekstu przy użyciu wyrażeń regularnych .NET w pliku PDF?
+#### P: W jaki sposób ten samouczek pomaga w wyszukiwaniu tekstu za pomocą wyrażeń regularnych .NET w plikach PDF?
 
-Odp.: Ten samouczek pomaga użytkownikom zrozumieć, jak wykorzystać możliwości Aspose.PDF dla .NET do wyszukiwania tekstu przy użyciu wyrażeń regularnych .NET w dokumencie PDF. Postępując zgodnie z podanymi krokami i przykładami kodu, użytkownicy mogą skutecznie wyszukiwać wzorce tekstowe pasujące do określonych wyrażeń regularnych.
+A: Ten samouczek pomaga użytkownikom zrozumieć, jak wykorzystać możliwości Aspose.PDF dla .NET do wyszukiwania tekstu przy użyciu wyrażeń regularnych .NET w dokumencie PDF. Postępując zgodnie z podanymi krokami i przykładami kodu, użytkownicy mogą skutecznie wyszukiwać wzorce tekstowe, które pasują do określonych przez nich wyrażeń regularnych.
 
-#### P: Jakie wymagania wstępne są wymagane, aby móc skorzystać z tego samouczka?
+#### P: Jakie warunki wstępne muszę spełnić, aby móc skorzystać z tego samouczka?
 
-Odp.: Przed rozpoczęciem samouczka należy posiadać podstawową wiedzę na temat języka programowania C#. Dodatkowo musisz mieć zainstalowaną bibliotekę Aspose.PDF dla .NET. Możesz go pobrać ze strony internetowej Aspose lub zainstalować w swoim projekcie za pomocą NuGet.
+A: Przed rozpoczęciem samouczka powinieneś mieć podstawową wiedzę na temat języka programowania C#. Ponadto musisz mieć zainstalowaną bibliotekę Aspose.PDF dla .NET. Możesz ją pobrać ze strony internetowej Aspose lub zainstalować w swoim projekcie za pomocą NuGet.
 
-#### P: Jak skonfigurować projekt tak, aby działał zgodnie z tym samouczkiem?
+#### P: Jak skonfigurować projekt, aby móc skorzystać z tego samouczka?
 
-O: Na początek utwórz nowy projekt C# w preferowanym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla .NET. Umożliwi to wykorzystanie funkcji biblioteki do wyszukiwania i pracy z dokumentami PDF.
+A: Na początek utwórz nowy projekt C# w preferowanym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla .NET. Umożliwi ci to wykorzystanie funkcji biblioteki do wyszukiwania i pracy z dokumentami PDF.
 
-#### P: Czy mogę skorzystać z tego samouczka, aby wyszukać dowolny konkretny typ tekstu za pomocą wyrażeń regularnych .NET?
+#### P: Czy mogę użyć tego samouczka do wyszukiwania określonego typu tekstu za pomocą wyrażeń regularnych .NET?
 
- O: Tak, ten samouczek zawiera instrukcje dotyczące wyszukiwania tekstu przy użyciu wyrażeń regularnych .NET w dokumencie PDF. Możesz dostosować`.NET Regex` obiekt, aby zdefiniować konkretny wzorzec wyszukiwania, którego chcesz użyć.
+ A: Tak, ten samouczek zawiera instrukcje dotyczące wyszukiwania tekstu za pomocą wyrażeń regularnych .NET w dokumencie PDF. Możesz dostosować`.NET Regex` obiekt, aby zdefiniować konkretny wzorzec wyszukiwania, którego chcesz użyć.
 
-#### P: Jak określić wzorzec wyrażeń regularnych .NET, który będzie wyszukiwany w tym samouczku?
+#### P: Jak określić wzorzec wyrażenia regularnego .NET, którego będę szukać w tym samouczku?
 
- O: Aby określić wzorzec wyrażenia regularnego .NET, który chcesz wyszukać, utwórz plik`.NET Regex` obiekt i ustaw jego wzorzec, używając odpowiedniej składni wyrażeń regularnych. Zastąp domyślny`@"[\S]+"` w kodzie samouczka żądanym wyrażeniem regularnym.
+ A: Aby określić wzorzec wyrażenia regularnego .NET, którego chcesz szukać, utwórz`.NET Regex` obiekt i ustaw jego wzorzec, używając odpowiedniej składni wyrażenia regularnego. Zastąp domyślny`@"[\S]+"` w kodzie samouczka wpisując żądane wyrażenie regularne.
 
-#### P: Jak odzyskać właściwości wyodrębnionych fragmentów tekstu?
+#### P: W jaki sposób mogę pobrać właściwości wyodrębnionych fragmentów tekstu?
 
- Odp.: Po zaakceptowaniu`TextFragmentAbsorber` w przypadku określonej strony pliku PDF możesz pobrać wyodrębnione fragmenty tekstu za pomocą`TextFragments` właściwość obiektu absorbera. Zapewnia to dostęp do kolekcji fragmentów tekstu pasujących do określonego wyrażenia regularnego .NET.
+ A: Po zaakceptowaniu`TextFragmentAbsorber` dla konkretnej strony pliku PDF możesz pobrać wyodrębnione fragmenty tekstu, korzystając z`TextFragments` właściwość obiektu absorbera. Zapewnia dostęp do kolekcji fragmentów tekstu, które pasują do określonego wyrażenia regularnego .NET.
 
-#### P: Czy mogę dostosować kod, aby wykonywać dodatkowe działania na każdym wyodrębnionym fragmencie tekstu?
+#### P: Czy mogę dostosować kod tak, aby wykonywał dodatkowe akcje na każdym wyodrębnionym fragmencie tekstu?
 
-O: Oczywiście. Przykładowy kod samouczka zawiera pętlę umożliwiającą iterację pobranych fragmentów tekstu. Możesz dostosować kod w tej pętli, aby wykonać dodatkowe działania na każdym wyodrębnionym fragmencie tekstu w oparciu o wymagania projektu.
+A: Oczywiście. Przykładowy kod samouczka zawiera pętlę do iterowania pobranych fragmentów tekstu. Możesz dostosować kod w tej pętli, aby wykonać dodatkowe czynności na każdym wyodrębnionym fragmencie tekstu w oparciu o wymagania projektu.
 
 #### P: Jak zapisać zmodyfikowany dokument PDF po wyodrębnieniu fragmentów tekstu?
 
-Odp.: Ten samouczek koncentruje się głównie na wyszukiwaniu tekstu przy użyciu wyrażeń regularnych .NET i pobieraniu fragmentów tekstu. Jeśli zamierzasz dokonać modyfikacji w pliku PDF, możesz zapoznać się z inną dokumentacją Aspose.PDF, aby dowiedzieć się, jak manipulować i zapisywać dokument w zależności od konkretnych potrzeb.
+A: Ten samouczek koncentruje się głównie na wyszukiwaniu tekstu za pomocą wyrażeń regularnych .NET i pobieraniu fragmentów tekstu. Jeśli zamierzasz dokonać modyfikacji w pliku PDF, możesz zapoznać się z inną dokumentacją Aspose.PDF, aby dowiedzieć się, jak manipulować dokumentem i zapisywać go zgodnie ze swoimi konkretnymi potrzebami.

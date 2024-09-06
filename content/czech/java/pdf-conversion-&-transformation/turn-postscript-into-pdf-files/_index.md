@@ -15,7 +15,7 @@ V dnešní digitální době je schopnost převádět různé formáty souborů 
 Než se pustíme do procesu převodu, ujistěte se, že máte splněny následující předpoklady:
 
 - Java Development Kit (JDK) nainstalovaný ve vašem systému.
--  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 - Základní znalost programování v Javě.
 
 Tak pojďme začít!
@@ -75,7 +75,7 @@ Proces převodu do značné míry závisí na složitosti původního PostScript
 
 ### Kde najdu další zdroje a dokumentaci k Aspose.PDF pro Javu?
 
- Úplnou dokumentaci a příklady můžete najít v referenci Aspose.PDF for Java API[tady](https://reference.aspose.com/pdf/java/).
+ Úplnou dokumentaci a příklady můžete najít v referenci Aspose.PDF for Java API[zde](https://reference.aspose.com/pdf/java/).
 
 ## Závěr
 
@@ -83,4 +83,4 @@ Převod PostScriptových souborů do PDF je jednoduchý s Aspose.PDF pro Java. P
 
 Nyní, když jste se naučili, jak tento převod provést, můžete zjednodušit procesy správy dokumentů a zajistit, aby byl váš obsah přístupný širšímu publiku.
 
- Další informace a přístup k dokumentaci Aspose.PDF pro Java naleznete na adrese[tady](https://reference.aspose.com/pdf/java/).
+ Další informace a přístup k dokumentaci Aspose.PDF pro Java naleznete na adrese[zde](https://reference.aspose.com/pdf/java/).

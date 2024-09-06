@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 2. lépés: A PDF-dokumentum és az oldal létrehozása
 
-Az első lépés egy új dokumentum objektum és egy oldal létrehozása a PDF dokumentumban. Itt van, hogyan:
+Az első lépés egy új dokumentum objektum és egy oldal létrehozása a PDF dokumentumban. Íme, hogyan:
 
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
@@ -35,7 +35,7 @@ A fenti kód egy új dokumentum objektumot és egy üres oldalt hoz létre a PDF
 
 ## 3. lépés: A fejléc hozzáadása képpel és szövegközi szöveggel
 
-Most, hogy az oldal elkészült, soron belüli bekezdések segítségével hozzáadhatunk egy fejlécet képpel és szöveggel. Itt van, hogyan:
+Most, hogy az oldal elkészült, soron belüli bekezdések segítségével hozzáadhatunk egy fejlécet képpel és szöveggel. Íme, hogyan:
 
 ```csharp
 // Hozzon létre egy fejléc szakaszt
@@ -75,11 +75,11 @@ header.Paragraphs.Add(image1);
 header.Paragraphs.Add(txt2);
 ```
 
-A fenti kód létrehoz egy fejléc szakaszt, beállítja az oldal fejlécét ezzel a szakasszal, hozzáad egy szövegtöredéket inline szöveggel és egy soron belüli kép objektumot.
+A fenti kód létrehoz egy fejléc szakaszt, beállítja az oldal fejlécét ezzel a szekcióval, hozzáad egy szövegtöredéket inline szöveggel és egy soron belüli kép objektumot.
 
 ## 4. lépés: Mentse el a módosított PDF dokumentumot
 
-Miután hozzáadtuk a fejlécet a képpel és a szövegközi szöveggel, elmenthetjük a módosított PDF dokumentumot. Itt van, hogyan:
+Miután hozzáadtuk a fejlécet a képpel és a szövegközi szöveggel, elmenthetjük a módosított PDF dokumentumot. Íme, hogyan:
 
 ```csharp
 // Mentse el a módosított PDF dokumentumot
@@ -119,7 +119,7 @@ Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 // Állítsa be a képfájl elérési útját
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Állítsa be a képszélesség információit
+//Állítsa be a képszélesség információit
 image1.FixWidth = 50;
 image1.FixHeight = 20;
 
@@ -149,15 +149,15 @@ V: A sorközi bekezdések használatával zökkenőmentesen integrálhatja a ké
 
 #### K: Hogyan hoz létre a megadott C#-forráskód soron belüli bekezdéseket a fejléchez egy PDF-dokumentumban?
 
-V: A mellékelt kód bemutatja, hogyan hozhat létre PDF-dokumentumot, hogyan adhat hozzá oldalt, és testreszabhatja a fejlécet sorközi bekezdések segítségével. Hozzáad egy szövegtöredéket soron belüli szöveggel, egy soron belüli képet és egy másik beágyazott szövegtöredéket.
+V: A mellékelt kód bemutatja, hogyan hozhat létre PDF-dokumentumot, hogyan adhat hozzá oldalt, és testreszabhatja a fejlécet sorközi bekezdések használatával. Hozzáad egy szövegtöredéket soron belüli szöveggel, egy soron belüli képet és egy másik beágyazott szövegtöredéket.
 
 #### K: Hogyan adhatom meg a fejlécben szereplő szöveg színét?
 
- V: A szövegközi szöveg színe a gombbal van megadva`ForegroundColor` tulajdona a`TextState` a`TextFragment` tárgy.
+ V: A szövegközi szöveg színe a gombbal van megadva`ForegroundColor` tulajdona a`TextState` a`TextFragment` objektum.
 
 #### K: Beállíthatom a fejlécben lévő beágyazott kép méreteit?
 
- V: Igen, beállíthatja a beágyazott kép méreteit a`FixWidth` és`FixHeight` tulajdonságai a`Image` tárgy. Ez lehetővé teszi a kép szélességének és magasságának szabályozását a fejlécen belül.
+ V: Igen, beállíthatja a beágyazott kép méreteit a`FixWidth` és`FixHeight` tulajdonságai a`Image` objektum. Ez lehetővé teszi a kép szélességének és magasságának szabályozását a fejlécen belül.
 
 #### K: Felvehetek-e további soron belüli elemeket, például hiperhivatkozásokat vagy különböző betűstílusokat a fejlécbe?
 
@@ -177,7 +177,7 @@ V: Igen, kombinálhatja a sorközi bekezdéseket más, az Aspose.PDF for .NET á
 
 #### K: Eltávolíthatom vagy törölhetem a soron belüli elemeket a fejlécből, ha szükséges?
 
- V: Igen, eltávolíthatja vagy törölheti a soron belüli elemeket a tartalom módosításával`HeaderFooter` objektumot, és eltávolítja a megfelelő sorközi bekezdéseket.
+ V: Igen, eltávolíthatja vagy törölheti a soron belüli elemeket a tartalom módosításával`HeaderFooter`objektumot, és eltávolítja a megfelelő sorközi bekezdéseket.
 
 #### K: Hogyan alkalmazhatok sorközi bekezdéseket a PDF-dokumentum egyes oldalaira?
 

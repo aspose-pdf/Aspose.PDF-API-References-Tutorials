@@ -39,14 +39,14 @@ Document _pdfdocument = new Document();
 ```
 
 ## 5. lépés: Adjon hozzá egy oldalt a dokumentumhoz
- Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`Gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
+ Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
 
 ```csharp
 Page page = _pdfdocument.Pages.Add();
 ```
 
 ## 6. lépés: Hozzon létre egyéni tabulátorokat
- Hozzon létre egy`TabStops` objektumot, és adjunk hozzá egyéni tabulátorokat. Állítsa be az igazítás típusát és a vezető típusát minden tabulátorhoz.
+ Hozzon létre a`TabStops` objektumot, és adjunk hozzá egyéni tabulátorokat. Állítsa be az igazítás típusát és a vezető típusát minden tabulátorhoz.
 
 ```csharp
 TabStops ts = new TabStops();
@@ -83,7 +83,7 @@ page.Paragraphs.Add(text2);
 ```
 
 ## 8. lépés: Mentse el a PDF dokumentumot
- Mentse el a PDF dokumentumot a`Save` módszere a`Document` tárgy.
+ Mentse el a PDF dokumentumot a`Save` módszere a`Document` objektum.
 
 ```csharp
 _pdfdocument.Save(dataDir);
@@ -132,7 +132,7 @@ Sikeresen létrehozott egy PDF-dokumentumot egyéni tabulátorokkal az Aspose.PD
 
 V: Ez az oktatóanyag az Aspose.PDF for .NET könyvtár használatával történő egyéni tabulátorok létrehozásának folyamatán segíti Önt. A mellékelt C# forráskód bemutatja az ehhez szükséges lépéseket.
 
-#### K: Mely névtereket kell importálnom ehhez az oktatóanyaghoz?
+#### K: Milyen névtereket importáljak ehhez az oktatóanyaghoz?
 
 V: Abban a kódfájlban, amelyben egyéni tabulátorokat szeretne létrehozni, importálja a következő névtereket a fájl elejére:
 
@@ -151,7 +151,7 @@ using Aspose.Pdf.Text;
 
 #### K: Hogyan adhatok hozzá oldalt a dokumentumhoz?
 
- V: Az 5. lépésben új oldalt ad hozzá a dokumentumhoz a`Add` módszere a`Pages` Gyűjtemény.
+ V: Az 5. lépésben új oldalt ad hozzá a dokumentumhoz a`Add` módszere a`Pages` gyűjtemény.
 
 #### K: Hogyan hozhatok létre egyéni tabulátorokat?
 
@@ -163,7 +163,7 @@ using Aspose.Pdf.Text;
 
 #### K: Hogyan menthetem el a PDF dokumentumot?
 
- V: A 8. lépésben a PDF-dokumentumot a`Save` módszere a`Document` tárgy.
+ V: A 8. lépésben a PDF-dokumentumot a`Save` módszere a`Document` objektum.
 
 #### K: Mi a fő kivonat ebből az oktatóanyagból?
 

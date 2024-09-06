@@ -80,7 +80,7 @@ taggedContent.RootElement.AppendChild(pSP);
 Nakonec tagovaný dokument PDF uložíme.
 
 ```csharp
-// Uložte tagovaný dokument PDF
+// Uložte označený dokument PDF
 document.Save(dataDir + "SetupLanguageAndTitle.pdf");
 ```
 

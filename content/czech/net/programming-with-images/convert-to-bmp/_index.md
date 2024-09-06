@@ -11,7 +11,7 @@ Tato příručka vás krok za krokem provede převodem souboru PDF na jednotliv�
 
 ## Krok 1: Definujte adresář dokumentů
 
- Než začnete, ujistěte se, že jste nastavili správný adresář pro dokumenty. Nahradit`"YOUR DOCUMENT DIRECTORY"` v kódu s cestou k adresáři, kde se nachází váš dokument PDF.
+Než začnete, ujistěte se, že jste nastavili správný adresář pro dokumenty. Nahradit`"YOUR DOCUMENT DIRECTORY"` v kódu s cestou k adresáři, kde se nachází váš dokument PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 2: Otevřete dokument
 
- tomto kroku otevřeme dokument PDF pomocí`Document` třída Aspose.PDF. Použijte`Document` konstruktoru a předejte cestu k dokumentu PDF.
+ V tomto kroku otevřeme dokument PDF pomocí`Document` třída Aspose.PDF. Použijte`Document` konstruktoru a předejte cestu k dokumentu PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddImage.pdf");
@@ -27,7 +27,7 @@ Document pdfDocument = new Document(dataDir + "AddImage.pdf");
 
 ## Krok 3: Převeďte každou stránku do BMP
 
- tomto kroku projdeme každou stránku PDF dokumentu a převedeme je na jednotlivé BMP obrázky. Použijeme a`for` smyčka pro iteraci všech stránek.
+ V tomto kroku projdeme každou stránku PDF dokumentu a převedeme je na jednotlivé BMP obrázky. Použijeme a`for` smyčka pro iteraci všech stránek.
 
 ```csharp
 for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
@@ -35,7 +35,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
      // Vytvořte stream pro uložení obrázku BMP
      using (FileStream imageStream = new FileStream("image" + pageCount + "_out" + ".bmp", FileMode.Create))
      {
-         // Vytvořte objekt rozlišení
+         //Vytvořte objekt rozlišení
          Resolution resolution = new Resolution(300);
         
          // Vytvořte zařízení BMP se zadanými atributy
@@ -66,7 +66,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 		// Vytvořte zařízení BMP se zadanými atributy
 		// Šířka, Výška, Rozlišení, Velikost stránky
 		BmpDevice bmpDevice = new BmpDevice(resolution);
-		//Převeďte konkrétní stránku a uložte obrázek do streamu
+		// Převeďte konkrétní stránku a uložte obrázek do streamu
 		bmpDevice.Process(pdfDocument.Pages[pageCount], imageStream);
 		// Zavřít stream
 		imageStream.Close();
@@ -99,11 +99,11 @@ Odpověď: Určení adresáře dokumentu zajistí, že dokument PDF bude správn
 
 ####  Otázka: Jakou roli hraje`BmpDevice` class play in the conversion process?
 
- A:`BmpDevice` class pomáhá převádět stránky PDF na obrázky BMP. Umožňuje vám určit atributy, jako je šířka, výška, rozlišení a velikost stránky pro výsledné obrázky BMP.
+ A:`BmpDevice`class pomáhá převádět stránky PDF na obrázky BMP. Umožňuje vám určit atributy, jako je šířka, výška, rozlišení a velikost stránky pro výsledné obrázky BMP.
 
 #### Otázka: Jak je každá stránka dokumentu PDF převedena na samostatný obrázek BMP?
 
- A: A`for` smyčka se používá k iteraci každou stránkou dokumentu PDF. Pro každou stránku je vytvořeno zařízení BMP se zadanými atributy a`Process`metoda se používá k převodu stránky na obrázek BMP a jeho uložení do streamu.
+ A: A`for` smyčka se používá k iteraci každou stránkou dokumentu PDF. Pro každou stránku je vytvořeno zařízení BMP se zadanými atributy a`Process` metoda se používá k převodu stránky na obrázek BMP a jeho uložení do streamu.
 
 #### Otázka: Mohu během procesu převodu upravit rozlišení nebo jiné atributy výsledných obrázků BMP?
 

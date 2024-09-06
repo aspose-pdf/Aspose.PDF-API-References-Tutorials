@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 2. lépés: A PDF dokumentum létrehozása és egy oldal hozzáadása
 
-Az első lépés a PDF-dokumentum példányának létrehozása és egy oldal hozzáadása. Itt van, hogyan:
+Az első lépés a PDF-dokumentum példányának létrehozása és egy oldal hozzáadása. Íme, hogyan:
 
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
@@ -35,7 +35,7 @@ Feltétlenül cserélje ki a "DOKUMENTUMKÖNYVTÁR" elemet annak a könyvtárnak
 
 ## 3. lépés: A FloatingBox létrehozása és az oldalszám hozzáadása
 
-Most, hogy az oldal hozzáadásra került a PDF dokumentumhoz, létrehozhatunk egy FloatingBox-ot, beállíthatjuk a pozícióját, és hozzáadhatjuk az oldalszámot. Itt van, hogyan:
+Most, hogy az oldal hozzáadásra került a PDF dokumentumhoz, létrehozhatunk egy FloatingBox-ot, beállíthatjuk a pozícióját, és hozzáadhatjuk az oldalszámot. Íme, hogyan:
 
 ```csharp
 // Hozzon létre egy úszódobozt, amelynek szélessége 140 és magassága 80
@@ -58,7 +58,7 @@ A fenti kód egy FloatingBoxot hoz létre, amelynek szélessége 140 és magass�
 
 ## 4. lépés: Mentse el a módosított PDF dokumentumot
 
-Miután az oldalszámot hozzáadtuk a fejléchez vagy a lábléchez a FloatingBox segítségével, elmenthetjük a módosított PDF dokumentumot. Itt van, hogyan:
+Miután az oldalszámot hozzáadtuk a fejléchez vagy a lábléchez a FloatingBox segítségével, elmenthetjük a módosított PDF dokumentumot. Íme, hogyan:
 
 ```csharp
 // Mentse el a módosított PDF dokumentumot
@@ -79,7 +79,7 @@ Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
 // Adjon hozzá egy oldalt a pdf dokumentumhoz
 Aspose.Pdf.Page page = pdf.Pages.Add();
 
-//Inicializálja a FloatingBox osztály új példányát
+// Inicializálja a FloatingBox osztály új példányát
 Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
 
 // Lebegő érték, amely a bekezdés bal oldali pozícióját jelzi
@@ -138,4 +138,4 @@ V: Igen, több különböző tartalmú FloatingBoxot is hozzáadhat ugyanazon ol
 
 #### K: Használhatom a FloatingBox megközelítést tartalom hozzáadására a PDF-dokumentum más részeihez, például a törzshöz vagy a margókhoz?
 
-V: Míg a FloatingBoxokat általában fejlécekhez és láblécekhez használják, a PDF-dokumentum más részeihez, például a törzshöz vagy a margókhoz is hozzáadhat tartalmat, ha megfelelően helyezi el őket az oldalon.
+V: Bár a FloatingBoxokat általában fejlécekhez és láblécekhez használják, a PDF-dokumentum más részeihez, például a törzshöz vagy a margókhoz is hozzáadhat tartalmat, ha megfelelően helyezi el őket az oldalon.

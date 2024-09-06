@@ -1,15 +1,15 @@
 ---
-title: Nome da tag personalizada
-linktitle: Nome da tag personalizada
-second_title: Referência da API Aspose.PDF para .NET
+title: Nome da etiqueta personalizada
+linktitle: Nome da etiqueta personalizada
+second_title: Referência da API do Aspose.PDF para .NET
 description: Guia passo a passo para usar um nome de tag personalizado com Aspose.PDF para .NET. Melhore a estrutura dos seus PDFs com tags personalizadas.
 type: docs
 weight: 90
 url: /pt/net/programming-with-tagged-pdf/custom-tag-name/
 ---
-Neste guia passo a passo, orientaremos você sobre como usar um nome de tag personalizado com Aspose.PDF para .NET. Aspose.PDF é uma biblioteca poderosa que permite manipular documentos PDF programaticamente. O uso de tags personalizadas permite adicionar informações estruturais específicas ao seu documento PDF, tornando-o mais fácil de usar e acessar.
+Neste guia passo a passo, mostraremos como usar um nome de tag personalizado com o Aspose.PDF para .NET. O Aspose.PDF é uma biblioteca poderosa que permite manipular documentos PDF programaticamente. Usar tags personalizadas permite adicionar informações estruturais específicas ao seu documento PDF, tornando-o mais fácil de usar e acessar.
 
-Vamos mergulhar no código e aprender como usar um nome de tag personalizado com Aspose.PDF para .NET.
+Vamos mergulhar no código e aprender como usar um nome de tag personalizado com o Aspose.PDF para .NET.
 
 ## Pré-requisitos
 
@@ -18,7 +18,7 @@ Antes de começar, certifique-se de ter o seguinte:
 1. Biblioteca Aspose.PDF para .NET instalada.
 2. Conhecimento básico da linguagem de programação C#.
 
-## Passo 1: Configurando o ambiente
+## Etapa 1: Configurando o ambiente
 
 Para começar, abra seu ambiente de desenvolvimento C# e crie um novo projeto. Certifique-se de ter adicionado uma referência à biblioteca Aspose.PDF para .NET em seu projeto.
 
@@ -27,7 +27,7 @@ Para começar, abra seu ambiente de desenvolvimento C# e crie um novo projeto. C
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Passo 2: Criando o documento
+## Etapa 2: Criando o documento
 
  O primeiro passo é criar um novo documento PDF usando o`Document` aula.
 
@@ -36,16 +36,16 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document document = new Document();
 ```
 
-## Etapa 3: Trabalhe com conteúdo marcado
+## Etapa 3: trabalhe com conteúdo marcado
 
-Em seguida, obtemos o conteúdo marcado do documento para trabalhar.
+Então, obtemos o conteúdo marcado do documento para trabalhar.
 
 ```csharp
-// Obtenha o conteúdo marcado do documento
+// Obter o conteúdo marcado do documento
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## Etapa 4: definir o título e o idioma do documento
+## Etapa 4: Defina o título e o idioma do documento
 
 Agora podemos definir o título e o idioma do documento.
 
@@ -55,7 +55,7 @@ taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Etapa 5: Criar Elementos de Estrutura Lógica
+## Etapa 5: Crie elementos de estrutura lógica
 
 Agora vamos criar alguns elementos de estrutura lógica para organizar nosso conteúdo.
 
@@ -97,18 +97,18 @@ p3.AppendChild(span3);
 p4.AppendChild(span4);
 ```
 
-Aqui criamos elementos de parágrafo e elementos de extensão para nosso conteúdo e atribuímos tags personalizadas a eles.
+Aqui criamos elementos de parágrafo e elementos de abrangência para nosso conteúdo e atribuímos tags personalizadas a eles.
 
-## Passo 6: Salve o documento PDF marcado
+## Etapa 6: Salve o documento PDF marcado
 
-Finalmente, salvamos o documento PDF marcado.
+Por fim, salvamos o documento PDF marcado.
 
 ```csharp
-// Salve o documento PDF marcado
+// Salvar o documento PDF marcado
 document.Save(dataDir + "CustomTag.pdf");
 ```
 
-### Exemplo de código-fonte para nome de tag personalizado usando Aspose.PDF para .NET 
+### Código-fonte de exemplo para nome de tag personalizado usando Aspose.PDF para .NET 
 ```csharp
 
 // O caminho para o diretório de documentos.
@@ -167,46 +167,46 @@ document.Save(dataDir + "CustomTag.pdf");
 
 ## Conclusão
 
-Parabéns! Você aprendeu como usar um nome de tag personalizado com Aspose.PDF para .NET. Agora você pode adicionar informações estruturais específicas ao seu documento PDF usando tags personalizadas. Explore mais recursos do Aspose.PDF para descobrir todo o seu potencial.
+Parabéns! Você aprendeu a usar um nome de tag personalizado com o Aspose.PDF para .NET. Agora você pode adicionar informações estruturais específicas ao seu documento PDF usando tags personalizadas. Explore mais recursos do Aspose.PDF para descobrir todo o seu potencial.
 
 ### Perguntas frequentes
 
-#### P: O que é um nome de tag personalizado no contexto de documentos PDF e por que devo usá-lo com Aspose.PDF for .NET?
+#### P: O que é um nome de tag personalizado no contexto de documentos PDF e por que eu o usaria com o Aspose.PDF para .NET?
 
-R: Um nome de tag personalizado em um documento PDF é um rótulo definido pelo usuário que fornece informações estruturais específicas ao conteúdo do documento. Usar nomes de tags personalizados com Aspose.PDF for .NET permite aprimorar a acessibilidade e organização do documento PDF, tornando-o mais fácil de navegar, compreender e interagir.
+R: Um nome de tag personalizado em um documento PDF é um rótulo definido pelo usuário que fornece informações estruturais específicas para o conteúdo do documento. Usar nomes de tag personalizados com o Aspose.PDF para .NET permite que você aprimore a acessibilidade e a organização do documento PDF, tornando-o mais fácil de navegar, entender e interagir.
 
-#### P: Como o Aspose.PDF for .NET facilita o uso de nomes de tags personalizados em documentos PDF?
+#### P: Como o Aspose.PDF para .NET facilita o uso de nomes de tags personalizados em documentos PDF?
 
-R: Aspose.PDF for .NET fornece um conjunto de classes e métodos que permitem criar, manipular e atribuir nomes de tags personalizados a diferentes elementos estruturais em um documento PDF. Isso ajuda a adicionar significado semântico e contexto ao conteúdo do documento.
+A: O Aspose.PDF para .NET fornece um conjunto de classes e métodos que permitem que você crie, manipule e atribua nomes de tags personalizados a diferentes elementos estruturais dentro de um documento PDF. Isso ajuda você a adicionar significado semântico e contexto ao conteúdo do documento.
 
 ####  P: Qual é o papel do`taggedContent` object play in using custom tag names?
 
- R: O`taggedContent` objeto, obtido do documento`TaggedContent` propriedade, permite trabalhar com elementos estruturados no documento PDF. Você pode criar, organizar e atribuir nomes de tags personalizados a esses elementos, aprimorando a estrutura semântica do documento.
+ A: O`taggedContent` objeto, obtido do documento`TaggedContent` propriedade, permite que você trabalhe com elementos estruturados no documento PDF. Você pode criar, organizar e atribuir nomes de tags personalizados a esses elementos, aprimorando a estrutura semântica do documento.
 
 #### P: Como os nomes de tags personalizados melhoram a acessibilidade e a usabilidade dos documentos?
 
-R: Os nomes de tags personalizados fornecem contexto e semântica adicionais ao conteúdo do documento, o que melhora sua acessibilidade para tecnologias assistivas e melhora a experiência geral do usuário. Leitores de tela e outros dispositivos assistivos podem usar nomes de tags personalizados para transmitir informações significativas aos usuários.
+R: Nomes de tags personalizados fornecem contexto e semântica adicionais ao conteúdo do documento, o que melhora sua acessibilidade para tecnologias assistivas e aprimora a experiência geral do usuário. Leitores de tela e outros dispositivos assistivos podem usar nomes de tags personalizados para transmitir informações significativas aos usuários.
 
 #### P: Posso usar nomes de tags personalizados para vários tipos de elementos estruturais em um documento PDF?
 
-R: Sim, você pode atribuir nomes de tags personalizados a uma ampla variedade de elementos estruturais, incluindo parágrafos, trechos, seções e muito mais. Isso permite categorizar e rotular diferentes partes do conteúdo do documento, criando um layout mais organizado e compreensível.
+R: Sim, você pode atribuir nomes de tags personalizados a uma ampla gama de elementos estruturais, incluindo parágrafos, spans, seções e muito mais. Isso permite que você categorize e rotule diferentes partes do conteúdo do documento, criando um layout mais organizado e compreensível.
 
-#### P: Como defino e atribuo nomes de tags personalizados a elementos em um documento PDF usando Aspose.PDF for .NET?
+#### P: Como defino e atribuo nomes de tags personalizados a elementos em um documento PDF usando o Aspose.PDF para .NET?
 
- R: Você pode definir e atribuir nomes de tags personalizados criando elementos de estrutura lógica, como parágrafos e extensões, e depois usando o comando`SetTag` método para atribuir o nome da tag personalizada desejada a esses elementos. O exemplo de código fornecido demonstra esse processo.
+ R: Você pode definir e atribuir nomes de tags personalizados criando elementos de estrutura lógica, como parágrafos e intervalos, e então usando o`SetTag` método para atribuir o nome de tag personalizado desejado a esses elementos. O exemplo de código fornecido demonstra esse processo.
 
-#### P: Como posso garantir que os nomes das tags personalizadas que uso sejam compatíveis com os padrões de acessibilidade e as práticas recomendadas?
+#### P: Como posso garantir que os nomes de tags personalizados que uso sejam compatíveis com os padrões de acessibilidade e as práticas recomendadas?
 
-R: Ao escolher nomes de tags personalizados, é recomendável seguir as diretrizes de acessibilidade e usar rótulos descritivos e significativos que representem o conteúdo com precisão. Consultar padrões e documentação de acessibilidade relevantes pode ajudá-lo a selecionar nomes de tags personalizados apropriados.
+R: Ao escolher nomes de tags personalizados, é recomendável seguir as diretrizes de acessibilidade e usar rótulos descritivos e significativos que representem o conteúdo com precisão. Consultar padrões de acessibilidade e documentação relevantes pode ajudar você a selecionar nomes de tags personalizados apropriados.
 
-#### P: Posso combinar o uso de nomes de tags personalizados com outros recursos de manipulação de PDF oferecidos pelo Aspose.PDF for .NET?
+#### P: Posso combinar o uso de nomes de tags personalizados com outros recursos de manipulação de PDF oferecidos pelo Aspose.PDF para .NET?
 
-R: Absolutamente! Você pode combinar o uso de nomes de tags personalizados com outros recursos do Aspose.PDF for .NET, como criação de tabelas, adição de imagens, inserção de hiperlinks e muito mais. Isso permite criar documentos PDF ricos e acessíveis com conteúdo estruturado.
+R: Com certeza! Você pode combinar o uso de nomes de tags personalizados com outros recursos do Aspose.PDF para .NET, como criar tabelas, adicionar imagens, inserir hiperlinks e muito mais. Isso permite que você crie documentos PDF ricos e acessíveis com conteúdo estruturado.
 
 #### P: Como posso validar a eficácia do uso de nomes de tags personalizados para acessibilidade e usabilidade em meus documentos PDF?
 
-R: Você pode validar a eficácia dos nomes de tags personalizados usando tecnologias assistenciais, como leitores de tela, para navegar e interagir com o documento PDF. Além disso, você pode testar a conformidade do documento com os padrões e diretrizes de acessibilidade usando ferramentas e validadores.
+R: Você pode validar a eficácia de nomes de tags personalizados usando tecnologias assistivas como leitores de tela para navegar e interagir com o documento PDF. Além disso, você pode testar a conformidade do documento com os padrões e diretrizes de acessibilidade usando ferramentas e validadores.
 
-#### P: Como posso ampliar esse conhecimento para criar estruturas de documentos mais complexas e utilizar nomes de tags personalizados para cenários avançados?
+#### P: Como posso estender esse conhecimento para criar estruturas de documentos mais complexas e utilizar nomes de tags personalizados para cenários avançados?
 
-R: Você pode ampliar esse conhecimento explorando recursos adicionais do Aspose.PDF for .NET, como criação de elementos de estrutura aninhados, uso de tags personalizadas para campos de formulário, incorporação de elementos multimídia e muito mais. A documentação e os exemplos da biblioteca fornecem orientação para esses cenários avançados.
+R: Você pode estender esse conhecimento explorando recursos adicionais do Aspose.PDF para .NET, como criar elementos de estrutura aninhados, usar tags personalizadas para campos de formulário, incorporar elementos multimídia e muito mais. A documentação e os exemplos da biblioteca fornecem orientação para esses cenários avançados.

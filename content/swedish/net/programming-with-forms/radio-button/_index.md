@@ -1,6 +1,6 @@
 ---
-title: Radio knapp
-linktitle: Radio knapp
+title: Radioknapp
+linktitle: Radioknapp
 second_title: Aspose.PDF för .NET API-referens
 description: Lägg enkelt till alternativknappar till dina PDF-dokument med Aspose.PDF för .NET.
 type: docs

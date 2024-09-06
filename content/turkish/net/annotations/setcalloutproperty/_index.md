@@ -1,127 +1,154 @@
 ---
-title: PDF Dosyasında Belirtme Özelliğini Ayarlama
-linktitle: PDF Dosyasında Belirtme Özelliğini Ayarlama
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET kullanarak PDF Dosyasında Bilgi Özelliğini nasıl ayarlayacağınızı öğrenin. Ek açıklamaları belirtme çizgileri, metin rengi ve bitiş stilleriyle özelleştirin.
+title: PDF Dosyasında Çağrı Özelliğini Ayarla
+linktitle: PDF Dosyasında Çağrı Özelliğini Ayarla
+second_title: Aspose.PDF for .NET API Referansı
+description: Bu ayrıntılı, adım adım eğitimde Aspose.PDF for .NET kullanarak bir PDF dosyasında callout özelliğinin nasıl ayarlanacağını öğrenin.
 type: docs
 weight: 130
 url: /tr/net/annotations/setcalloutproperty/
 ---
- Aspose.PDF for .NET, C# dilinde PDF belgeleri oluşturmaya, işlemeye ve dönüştürmeye yönelik güçlü bir kitaplıktır. Bu kitaplığın sağladığı özelliklerden biri, PDF belgelerindeki serbest metin açıklamaları için belirtme çizgisi özelliklerini ayarlama yeteneğidir. Bu, kullanılarak yapılabilir.`FreeTextAnnotation` belirtme çizgileriyle ek açıklamalar oluşturmanıza olanak tanıyan sınıf.
+## giriiş
 
-Bu eğitimde, C#'ta Aspose.PDF for .NET kullanarak serbest metin açıklaması için belirtme çizgisi özelliklerini ayarlama sürecinde size rehberlik edeceğiz. Başlamak için aşağıdaki adımları izleyin.
+Profesyonel ve görsel olarak çekici PDF belgeleri oluşturmak genellikle belirli içeriklere dikkat çeken açıklamaların eklenmesini gerektirir. Bu açıklamalardan biri de çizgi romanlarda gördüğünüz konuşma balonlarına benzeyen açıklamadır. PDF'nizdeki metni netleştirmeye veya vurgulamaya yardımcı olurlar. .NET için Aspose.PDF, belgelerinize bu tür açıklamalar eklemeyi inanılmaz derecede kolaylaştırır ve bu eğitimde, bu güçlü kütüphaneyi kullanarak bir PDF dosyasında açıklama özelliğinin nasıl ayarlanacağını ele alacağız. İster deneyimli bir geliştirici olun ister yeni başlıyor olun, bu kılavuzun sonunda PDF dosyalarında açıklamaların nasıl kullanılacağına dair net bir anlayışa sahip olacaksınız.
 
-## Aspose.PDF for .NET'i yükleyin
+## Ön koşullar
 
- Henüz yapmadıysanız, yapmanız gerekecek[indirmek](https://releases.aspose.com/pdf/net/) ve Aspose.PDF for .NET'i Aspose Sürümlerinden veya NuGet paket yöneticisi aracılığıyla yükleyin.
+Koda dalmadan önce, başlamak için ihtiyacınız olan temel bilgileri ele alalım.
 
-## 1. Adım: Yeni bir PDF belgesi oluşturun
+1.  Aspose.PDF for .NET: Aspose.PDF for .NET kütüphanesinin yüklü olduğundan emin olun. Buradan indirebilirsiniz[Burada](https://releases.aspose.com/pdf/net/).
+2. IDE: Visual Studio benzeri bir geliştirme ortamı.
+3. .NET Framework: Bilgisayarınızda .NET'in yüklü olduğundan emin olun.
+4. Geçici Lisans: Aspose.PDF'nin tüm özelliklerini sınırlama olmaksızın denemek istiyorsanız, bir tane edinin[geçici lisans](https://purchase.aspose.com/temporary-license/).
 
- kullanarak yeni bir PDF belgesi oluşturun.`Document`sınıf Aspose.PDF for .NET tarafından sağlanmıştır.
+## Paketleri İçe Aktar
+
+Kod yazmaya başlamadan önce, PDF dosyaları ve açıklamalarla çalışmanıza olanak sağlayacak gerekli paketleri içe aktarmanız gerekir.
 
 ```csharp
-// Belgeler dizininin yolu.
+using Aspose.Pdf.Annotations;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+```
+
+Bu içe aktarımlar, PDF belgelerini düzenlemek ve açıklama metni gibi ek açıklamalar oluşturmak için gerekli tüm sınıfları ve yöntemleri size sağlayacaktır.
+
+## Adım 1: PDF Belgesini Başlatın
+
+Yolculuğumuzun ilk adımı, açıklama notumuzu ekleyeceğimiz yeni bir PDF belgesi başlatmaktır. Bunu, öğeler eklemeye başlayabileceğiniz boş bir tuval oluşturmak olarak düşünün.
+
+```csharp
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// Yeni bir PDF belgesi başlatın
 Document doc = new Document();
 ```
+ Burada yeni bir şey yaratıyoruz`Document` PDF dosyamız olarak hizmet edecek nesne.`dataDir` değişkeni, işimiz bittikten sonra PDF dosyanızı kaydetmek istediğiniz dizine ayarlanır.
 
-## 2. Adım: Belgeye yeni bir sayfa ekleyin
+## Adım 2: Belgeye Yeni Bir Sayfa Ekleyin
 
- kullanarak belgeye yeni bir sayfa ekleyin.`Pages` koleksiyonu`Document` sınıf.
+Bir PDF belgesi birden fazla sayfaya sahip olabilir ve bu adımda belgemize yeni bir sayfa ekleyeceğiz. Bu sayfa, açıklama notumuzun yerleştirileceği yer olacaktır.
 
 ```csharp
+//Belgeye yeni bir sayfa ekle
 Page page = doc.Pages.Add();
 ```
+ The`Pages.Add()`yeni bir sayfa eklemek için kullanılan yöntem`doc` nesne. Yeni sayfa şurada saklanır:`page` Daha sonra açıklama eklerken kullanacağımız değişken.
 
-## 3. Adım: Varsayılan görünümü ayarlayın
+## Adım 3: Varsayılan Görünümü Tanımlayın
 
- Yeni bir açıklama oluşturarak serbest metin açıklamasının varsayılan görünümünü ayarlayın.`DefaultAppearance` nesne ve onun gibi özelliklerinin ayarlanması`TextColor` Ve`FontSize`.
+Açıklamalar, açıklama metni gibi, özelleştirebileceğiniz görsel bir görünüme sahiptir. Bu adımda, açıklama metninin nasıl görünmesi gerektiğini tanımlayacağız.
 
 ```csharp
+// Açıklama için varsayılan görünümü tanımlayın
 DefaultAppearance da = new DefaultAppearance();
 da.TextColor = System.Drawing.Color.Red;
 da.FontSize = 10;
 ```
+ Biz bir tane yaratıyoruz`DefaultAppearance` metin rengini ve yazı tipi boyutunu tanımlayan nesne. Burada, metin kırmızı olacak ve yazı tipi boyutu 10 olarak ayarlanacak. Bu görünüm, açıklama açıklamasına uygulanacaktır.
 
-## 4. Adım: Belirtme çizgisiyle serbest metin ek açıklaması oluşturun
+## Adım 4: Serbest Metin Açıklamasını Oluşturun
 
- kullanarak yeni bir serbest metin ek açıklaması oluşturun.`FreeTextAnnotation` sınıf. Yı kur`Intent` mülkiyet`FreeTextIntent.FreeTextCallout` Bunun bir belirtme çizgisi ek açıklaması olduğunu belirtmek için. Yı kur`EndingStyle` mülkiyet`LineEnding.OpenArrow` belirtme çizgisinin sonundaki okun stilini belirtmek için. Yı kur`Callout` bir dizi özellik`Point` sayfada belirtme çizgisinin çizilmesi gereken noktaları temsil eden nesneler.
+Şimdi gerçek açıklamayı oluşturma zamanı. Serbest metin açıklaması, belirli metin ve stile sahip bir açıklama eklememize olanak tanır.
 
 ```csharp
+// Bir çağrı ile FreeTextAnnotation oluşturun
 FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
 fta.Intent = FreeTextIntent.FreeTextCallout;
 fta.EndingStyle = LineEnding.OpenArrow;
+```
+ Biz bir tane yaratıyoruz`FreeTextAnnotation` sayfadaki konumunu tanımlayan belirli koordinatlara sahip nesne.`Intent` ayarlandı`FreeTextCallout` , bunun bir açıklama açıklaması olduğunu belirtir.`EndingStyle` ayarlandı`OpenArrow`açıklama satırının açık bir okla sonlanacağı anlamına gelir.
+
+## Adım 5: Çağrı Çizgisi Noktalarını Tanımlayın
+
+Bir açıklama notu, ilgi alanına işaret eden bir çizgiye sahiptir. Burada, bu çizgiyi oluşturan noktaları tanımlayacağız.
+
+```csharp
+// Çağrı satırı için noktaları tanımlayın
 fta.Callout = new Point[]
 {
-    new Point(428.25,651.75), new Point(462.75,681.375), new Point(474,681.375)
+    new Point(428.25, 651.75), 
+    new Point(462.75, 681.375), 
+    new Point(474, 681.375)
 };
 ```
+ The`Callout` mülk bir dizidir`Point` nesneler, her biri sayfadaki bir koordinatı temsil eder. Bu noktalar, çağrı satırının yolunu tanımlar ve ona klasik konuşma balonu görünümünü verir.
 
-## 5. Adım: Serbest metin açıklamasını sayfaya ekleyin
+## Adım 6: Sayfaya Açıklama Ekleyin
 
- Serbest metin açıklamasını kullanarak sayfaya ekleyin.`Annotations` koleksiyonu`Page` sınıf.
+Açıklamamızı oluşturup yapılandırdıktan sonraki adım, açıklamamızı sayfaya eklemektir.
 
 ```csharp
+// Sayfaya açıklama ekle
 page.Annotations.Add(fta);
 ```
+ The`Annotations.Add()` yöntemi, daha önce oluşturduğumuz sayfaya açıklamayı yerleştirmek için kullanılır. Bu adım, açıklamayı PDF sayfasına etkili bir şekilde "çizer".
 
-## 6. Adım: Ek açıklamaya metin ekleyin
+## Adım 7: Zengin Metin İçeriğini Ayarlayın
 
- ayarlayarak ek açıklamaya metin ekleyin.`RichText`özelliği, biçimlendirilmiş bir XML dizisinin özelliğidir. Bu eğitimde metin rengini kırmızıya ve yazı tipi boyutunu 9'a ayarlıyoruz.
+Açıklama açıklamaları zengin metin içerebilir ve balon içinde biçimlendirilmiş içeriklere olanak tanır. Biraz örnek metin ekleyelim.
 
 ```csharp
-fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"renk:#FF
+// Açıklama için zengin metni ayarlayın
+fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"><span style=\"font-size:9.0pt;font-family:Helvetica\">Bu bir örnektir</span></p></body>";
 ```
+ The`RichText` özellik HTML içeriğiyle ayarlanır. Bu, yazı tipi boyutu, rengi ve stili gibi açıklama içinde ayrıntılı biçimlendirmeye olanak tanır.
 
-## Adım 7: belgeyi kaydedin
+## Adım 8: PDF Belgesini Kaydedin
 
-Şimdi aşağıdaki kodu kullanarak belgeyi kaydedin:
-
-```csharp
-doc.Save(dataDir + "SetCalloutProperty.pdf")
-```
-
-### Aspose.PDF for .NET kullanarak Set Callout Property için örnek kaynak kodu
+Son olarak, her şeyi ayarladıktan sonra belgeyi kaydetmemiz gerekiyor. Bu adım, açıklama notuyla PDF'nin oluşturulmasını sonlandırır.
 
 ```csharp
-// Belgeler dizininin yolu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-Document doc = new Document();
-Page page = doc.Pages.Add();
-DefaultAppearance da = new DefaultAppearance();
-da.TextColor = System.Drawing.Color.Red;
-da.FontSize = 10;
-FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
-fta.Intent = FreeTextIntent.FreeTextCallout;
-fta.EndingStyle = LineEnding.OpenArrow;
-fta.Callout = new Point[]
-{
-	new Point(428.25,651.75), new Point(462.75,681.375), new Point(474,681.375)
-};
-page.Annotations.Add(fta);
-fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"> <span style=\"font-size:9.0pt;font-family:Helvetica\">Bu bir örnektir</span></p></body>";
+// Belgeyi kaydet
 doc.Save(dataDir + "SetCalloutProperty.pdf");
 ```
+ The`Save()` method belgeyi belirtilen dizine "SetCalloutProperty.pdf" dosya adıyla kaydeder. Bu adım PDF oluşturma sürecimizi sonlandırır.
 
 ## Çözüm
 
-Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesindeki serbest metin açıklaması için belirtme çizgisi özelliklerinin nasıl ayarlanacağını araştırdık. Belirtme çizgisi ek açıklamaları, bir belgedeki belirli alanlarla ilgili ek bilgi veya açıklamalar sağlamak için kullanışlıdır. Aspose.PDF for .NET, PDF dosyalarıyla çalışmak için, belirtme çizgileri gibi ek açıklamaların oluşturulması ve özelleştirilmesi de dahil olmak üzere çok çeşitli özellikler ve yetenekler sağlar. Geliştiriciler, adım adım kılavuzu izleyerek ve sağlanan C# kaynak kodunu kullanarak, PDF belgelerine belirtme çizgileri ek açıklamalarını kolayca uygulayabilir, belgelerinin kullanılabilirliğini ve netliğini artırabilir. Aspose.PDF for .NET, .NET uygulamalarındaki PDF işlemleri için çok yönlü ve güvenilir bir kitaplıktır ve PDF ile ilgili çeşitli görevleri verimli bir şekilde gerçekleştirmek için güçlü araçlar sunar.
+İşte karşınızda! .NET için Aspose.PDF kullanarak bir açıklama notuyla bir PDF belgesi oluşturdunuz. Bu açıklama, belgenizin belirli bölümlerini vurgulamak veya açıklamak için inanılmaz derecede yararlı olabilir. Aspose.PDF, PDF düzenlemeyi basit ve esnek hale getiren güçlü bir API sunar. Açıklamalar ekliyor, belgeleri dönüştürüyor veya karmaşık PDF görevlerini yönetiyor olun, Aspose.PDF sizin için her şeyi yapar.
 
-### PDF dosyasındaki belirtme çizgisi özelliğini ayarlamak için SSS
+## SSS
 
-#### S: PDF belgesindeki belirtme çizgisi açıklaması nedir?
+### Açıklama metninin görünümünü daha fazla özelleştirebilir miyim?
 
-C: PDF belgesindeki belirtme çizgisi ek açıklaması, belgedeki belirli bir alanı işaret eden öncü çizgiye sahip bir metin kutusu oluşturmanıza olanak tanıyan bir ek açıklama türüdür. Genellikle belgedeki belirli bir bölüm veya öğeyle ilgili ek bilgi veya yorum sağlamak için kullanılır.
+Kesinlikle! Çizgi rengi, kalınlık ve metnin yazı tipi ailesi ve stili gibi çeşitli yönleri özelleştirebilirsiniz.
 
-#### S: Belirtme çizgisi açıklamasının görünümünü Aspose.PDF for .NET'i kullanarak özelleştirebilir miyim?
+### Tek bir sayfaya birden fazla açıklama eklemek mümkün müdür?
 
-C: Evet, belirtme çizgisi ek açıklamasının renk, yazı tipi boyutu, metin hizalaması, çizgi stili, ok stili ve daha fazlası gibi çeşitli özelliklerini özelleştirebilirsiniz.
+Evet, her açıklama için adımları tekrarlayarak ihtiyacınız olduğu kadar açıklama ekleyebilirsiniz.
 
-#### S: Belirtme çizgisi ek açıklamasına nasıl metin eklerim?
+### Açıklamanın konumunu nasıl değiştirebilirim?
 
- C: Belirtme çizgisi ek açıklamasına metin eklemek için`RichText` mülkiyeti`FreeTextAnnotation` nesne.`RichText` özelliği, belirtme çizgisi ek açıklamasında görüntülenecek metni temsil eden biçimlendirilmiş XML dizesini alır.
+ Sadece koordinatları değiştirin`Rectangle` Ve`Callout` Açıklamayı yeniden konumlandırmak için özellikler.
 
-#### S: Aspose.PDF for .NET'i kullanarak bir PDF belgesine birden fazla belirtme çizgisi ek açıklaması ekleyebilir miyim?
+### Aspose.PDF'i kullanarak başka türde açıklamalar ekleyebilir miyim?
 
- C: Evet, bir PDF belgesinde birden çok belirtme çizgisi ek açıklaması oluşturabilirsiniz.`FreeTextAnnotation`nesneyi kullanma ve bunları belgedeki farklı sayfalara veya konumlara ekleme.
+Evet, Aspose.PDF vurgulamalar, damgalar ve dosya ekleri dahil olmak üzere çeşitli açıklama türlerini destekler.
+
+### Zengin metin içeriği HTML ile mi sınırlı?
+
+ The`RichText` özellik, biçimlendirilmiş metin ve temel biçimlendirme eklemenize olanak tanıyan HTML'nin bir alt kümesini destekler.

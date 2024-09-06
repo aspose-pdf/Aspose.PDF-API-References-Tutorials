@@ -1,6 +1,6 @@
 ---
-title: Styl Textové Struktury V Souboru PDF
-linktitle: Styl Textové Struktury V Souboru PDF
+title: Styl Textová Struktura V Souboru PDF
+linktitle: Styl Textová Struktura V Souboru PDF
 second_title: Aspose.PDF pro .NET API Reference
 description: Naučte se formátovat strukturu textu v souboru PDF pomocí Aspose.PDF pro .NET. Podrobný průvodce stylem textu.
 type: docs
@@ -81,7 +81,7 @@ Na text jsme aplikovali formátování nastavením velikosti písma, barvy a sty
 Nyní, když jsme upravili styl textu v našem dokumentu PDF, uložme jej jako tagovaný dokument PDF.
 
 ```csharp
-// Uložte tagovaný dokument PDF
+// Uložte označený dokument PDF
 document.Save(dataDir + "StyleTextStructure.pdf");
 ```
 
@@ -161,4 +161,4 @@ Odpověď: Ukázkový zdrojový kód slouží jako praktická reference pro impl
 
 #### Otázka: Mohu tyto koncepty začlenit do svých vlastních aplikací .NET a vytvářet přizpůsobené dokumenty PDF?
 
-Odpověď: Ano, koncepty a kód uvedené v tutoriálu můžete použít jako základ pro vytváření vlastních přizpůsobených dokumentů PDF se stylizovaným a formátovaným textem. Upravte a rozšiřte kód, abyste dosáhli požadovaných výsledků.
+Odpověď: Ano, můžete použít koncepty a kód uvedené v tutoriálu jako základ pro vytváření vlastních přizpůsobených dokumentů PDF se stylizovaným a formátovaným textem. Upravte a rozšiřte kód, abyste dosáhli požadovaných výsledků.

@@ -1,24 +1,24 @@
 ---
-title: Dodaj stempel tekstowy w pliku PDF
-linktitle: Dodaj stempel tekstowy w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak łatwo dodać stempel tekstowy do pliku PDF za pomocą Aspose.PDF dla .NET.
+title: Dodaj stempel tekstowy do pliku PDF
+linktitle: Dodaj stempel tekstowy do pliku PDF
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak łatwo dodać stempel tekstowy do pliku PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 50
 url: /pl/net/programming-with-stamps-and-watermarks/add-text-stamp/
 ---
-W tym samouczku przeprowadzimy Cię krok po kroku, jak dodać stempel tekstowy do pliku PDF za pomocą Aspose.PDF dla .NET. Pokażemy Ci, jak użyć dostarczonego kodu źródłowego C#, aby dodać niestandardowy znacznik tekstowy do określonej strony pliku PDF.
+W tym samouczku pokażemy Ci krok po kroku, jak dodać stempel tekstowy do pliku PDF za pomocą Aspose.PDF dla .NET. Pokażemy Ci, jak użyć dostarczonego kodu źródłowego C#, aby dodać niestandardowy stempel tekstowy do określonej strony pliku PDF.
 
 ## Krok 1: Konfigurowanie środowiska
 
-Zanim zaczniesz, upewnij się, że masz następujące elementy:
+Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
 
 - Zainstalowane środowisko programistyczne .NET.
-- Biblioteka Aspose.PDF dla platformy .NET pobrana i przywołana w Twoim projekcie.
+- Biblioteka Aspose.PDF dla platformy .NET pobrana i wykorzystana w projekcie.
 
 ## Krok 2: Ładowanie dokumentu PDF
 
-Pierwszym krokiem jest załadowanie istniejącego dokumentu PDF do projektu. Oto jak:
+Pierwszym krokiem jest załadowanie istniejącego dokumentu PDF do projektu. Oto jak to zrobić:
 
 ```csharp
 // Ścieżka do katalogu dokumentów.
@@ -28,25 +28,25 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "AddTextStamp.pdf");
 ```
 
-Pamiętaj, aby zastąpić „KATALOG TWOICH DOKUMENTÓW” rzeczywistą ścieżką do katalogu, w którym znajduje się dokument PDF.
+Pamiętaj, aby zastąpić frazę „KATALOG DOKUMENTÓW” rzeczywistą ścieżką do katalogu, w którym znajduje się Twój dokument PDF.
 
-## Krok 3: Tworzenie bufora tekstowego
+## Krok 3: Tworzenie bufora tekstu
 
-Po przesłaniu dokumentu PDF możesz utworzyć stempel tekstowy do dodania. Oto jak to zrobić:
+Teraz, gdy przesłałeś dokument PDF, możesz utworzyć stempel tekstowy, który chcesz dodać. Oto jak to zrobić:
 
 ```csharp
-// Utwórz bufor tekstowy
+// Utwórz bufor tekstu
 TextStamp textStamp = new TextStamp("Example Stamp");
 ```
 
 Powyższy kod tworzy nowy bufor tekstowy zawierający określony tekst.
 
-## Krok 4: Konfigurowanie właściwości stempla tekstowego
+## Krok 4: Konfigurowanie właściwości znacznika tekstowego
 
-Przed dodaniem stempla tekstowego do dokumentu PDF możesz skonfigurować różne właściwości stempla, takie jak tło, położenie, obrót, czcionka, rozmiar itp. Oto jak:
+Przed dodaniem stempla tekstowego do dokumentu PDF możesz skonfigurować różne właściwości stempla, takie jak tło, położenie, obrót, czcionkę, rozmiar itp. Oto jak to zrobić:
 
 ```csharp
-// Skonfiguruj właściwości bufora tekstu
+// Konfigurowanie właściwości bufora tekstu
 textStamp. Background = true;
 textStamp. XIndent = 100;
 textStamp. YIndent = 100;
@@ -61,10 +61,10 @@ Możesz dostosować te właściwości do swoich potrzeb.
 
 ## Krok 5: Dodaj stempel tekstowy do pliku PDF
 
-Teraz, gdy stempel tekstowy jest już gotowy, możesz dodać go do określonej strony dokumentu PDF. Oto jak:
+Teraz, gdy stempel tekstowy jest gotowy, możesz dodać go do konkretnej strony dokumentu PDF. Oto jak to zrobić:
 
 ```csharp
-//Dodaj bufor tekstowy do określonej strony
+//Dodaj bufor tekstu do określonej strony
 pdfDocument.Pages[1].AddStamp(textStamp);
 ```
 
@@ -72,7 +72,7 @@ Powyższy kod dodaje stempel tekstowy do pierwszej strony dokumentu PDF. W razie
 
 ## Krok 6: Zapisz dokument wyjściowy
 
-Po dodaniu stempla tekstowego możesz zapisać edytowany dokument PDF. Oto jak:
+Po dodaniu stempla tekstowego możesz zapisać edytowany dokument PDF. Oto jak to zrobić:
 
 ```csharp
 // Zapisz dokument wyjściowy
@@ -81,7 +81,7 @@ pdfDocument.Save(dataDir);
 
 Powyższy kod zapisuje zmodyfikowany dokument PDF w określonym katalogu.
 
-### Przykładowy kod źródłowy dla opcji Dodaj stempel tekstowy przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Dodaj znacznik tekstowy przy użyciu Aspose.PDF dla .NET 
 ```csharp
 
 // Ścieżka do katalogu dokumentów.
@@ -93,14 +93,14 @@ Document pdfDocument = new Document(dataDir+ "AddTextStamp.pdf");
 // Utwórz stempel tekstowy
 TextStamp textStamp = new TextStamp("Sample Stamp");
 
-// Ustaw, czy stempel ma być tłem
+// Ustaw, czy znaczek jest tłem
 textStamp.Background = true;
 
-// Ustaw pochodzenie
+// Ustaw początek
 textStamp.XIndent = 100;
 textStamp.YIndent = 100;
 
-// Obróć stempel
+// Obróć znaczek
 textStamp.Rotate = Rotation.on90;
 
 // Ustaw właściwości tekstu
@@ -122,42 +122,42 @@ Console.WriteLine("\nText stamp added successfully.\nFile saved at " + dataDir);
 
 ## Wniosek
 
-Gratulacje! Nauczyłeś się, jak dodać stempel tekstowy za pomocą Aspose.PDF dla .NET. Teraz możesz zastosować tę wiedzę we własnych projektach, aby dodać niestandardowe znaczniki tekstowe do dokumentów PDF.
+Gratulacje! Nauczyłeś się, jak dodać stempel tekstowy za pomocą Aspose.PDF dla .NET. Teraz możesz zastosować tę wiedzę w swoich projektach, aby dodać niestandardowe stemple tekstowe do dokumentów PDF.
 
-### Często zadawane pytania dotyczące dodawania stempla tekstowego w pliku PDF
+### FAQ dotyczące dodawania stempla tekstowego do pliku PDF
 
-#### P: Jaki jest cel dodawania stempla tekstowego do pliku PDF przy użyciu Aspose.PDF dla .NET?
+#### P: Jaki jest cel dodawania znacznika tekstowego do pliku PDF za pomocą Aspose.PDF dla platformy .NET?
 
-Odp.: Dodanie stempla tekstowego umożliwia umieszczenie niestandardowego tekstu na określonej stronie dokumentu PDF. Ta funkcja jest przydatna do dodawania etykiet, komentarzy, znaków wodnych lub innych informacji tekstowych w celu ulepszenia zawartości dokumentu i zapewnienia dodatkowego kontekstu.
+A: Dodanie stempla tekstowego pozwala umieścić niestandardowy tekst na określonej stronie dokumentu PDF. Ta funkcja jest przydatna do dodawania etykiet, komentarzy, znaków wodnych lub innych informacji tekstowych w celu wzbogacenia zawartości dokumentu i zapewnienia dodatkowego kontekstu.
 
-#### P: Czy mogę dostosować wygląd stempla tekstowego, np. czcionkę, rozmiar, kolor i obrót?
+#### P: Czy mogę dostosować wygląd znacznika tekstowego, np. czcionkę, rozmiar, kolor i obrót?
 
- Odp.: Tak, możesz w pełni dostosować wygląd stempla tekstowego. Dostarczony kod źródłowy języka C# demonstruje, jak ustawić różne właściwości pliku`TextStamp` obiektu, w tym czcionkę, rozmiar czcionki, styl czcionki, kolor tekstu, kolor tła i obrót.
+ A: Tak, możesz w pełni dostosować wygląd znacznika tekstowego. Dostarczony kod źródłowy C# pokazuje, jak ustawić różne właściwości znacznika`TextStamp` obiekt, w tym czcionka, rozmiar czcionki, styl czcionki, kolor tekstu, kolor tła i obrót.
 
-#### P: Czy można dodać wiele znaczników tekstowych do różnych stron tego samego dokumentu PDF?
+#### P: Czy można dodać wiele stempli tekstowych na różnych stronach tego samego dokumentu PDF?
 
-Odp.: Oczywiście możesz dodać wiele znaczników tekstowych do różnych stron tego samego dokumentu PDF. Kod dostarczony w samouczku pozwala określić stronę docelową do dodania znacznika tekstowego, dzięki czemu jest uniwersalny w przypadku różnych stron w dokumencie.
+A: Oczywiście, możesz dodać wiele stempli tekstowych do różnych stron tego samego dokumentu PDF. Kod dostarczony w samouczku pozwala określić stronę docelową, na której ma zostać dodany stempel tekstowy, dzięki czemu jest on uniwersalny dla różnych stron w dokumencie.
 
 #### P: Jak określić położenie stempla tekstowego w dokumencie PDF?
 
- Odp.: Możesz dostosować położenie stempla tekstowego, modyfikując plik`XIndent` I`YIndent` właściwości`TextStamp` obiekt. Właściwości te definiują współrzędne lewego górnego rogu stempla względem początku strony.
+ A: Możesz dostosować położenie stempla tekstowego, modyfikując`XIndent` I`YIndent` właściwości`TextStamp` obiekt. Właściwości te definiują współrzędne lewego górnego rogu znaczka względem początku strony.
 
-#### P: Czy mogę zastosować tę metodę do istniejących dokumentów PDF, aby dodać znaczniki tekstowe?
+#### P: Czy mogę zastosować tę metodę do istniejących dokumentów PDF, aby dodać stemple tekstowe?
 
-Odp.: Tak, możesz zastosować tę metodę do istniejących dokumentów PDF, aby dodać znaczniki tekstowe. Kod dostarczony w samouczku pokazuje, jak załadować istniejący dokument PDF i dodać znacznik tekstowy do określonej strony.
+A: Tak, możesz zastosować tę metodę do istniejących dokumentów PDF, aby dodać stemple tekstowe. Kod dostarczony w samouczku pokazuje, jak załadować istniejący dokument PDF i dodać stempel tekstowy do określonej strony.
 
-#### P: Czy do stempla tekstowego mogę dodać kolory tła i pierwszego planu?
+#### P: Czy mogę dodać do stempla tekstowego zarówno kolory tła, jak i pierwszego planu?
 
- Odp.: Tak, do stempla tekstowego można dodać zarówno kolory tła, jak i pierwszego planu. Ustawiając`Background` własność do`true` , możesz zapewnić kolorowe tło dla stempla tekstowego. Dodatkowo możesz ustawić`TextState.ForegroundColor` właściwość określająca kolor samego tekstu.
+ A: Tak, możesz dodać zarówno kolory tła, jak i pierwszego planu do stempla tekstowego. Ustawiając`Background` nieruchomość do`true` , możesz zapewnić kolorowe tło dla stempla tekstowego. Dodatkowo możesz ustawić`TextState.ForegroundColor` Właściwość umożliwiająca określenie koloru samego tekstu.
 
-#### P: Jak mogę mieć pewność, że stempel tekstowy nie zasłania podstawowej zawartości dokumentu PDF?
+#### P: Jak mogę mieć pewność, że stempel tekstowy nie będzie zasłaniał podstawowej treści dokumentu PDF?
 
- Odpowiedź: Podczas dodawania stempla tekstowego należy zwrócić uwagę na jego umiejscowienie, aby nie zasłaniać najważniejszych informacji ani nie wpływać negatywnie na czytelność dokumentu. Możesz dostosować`XIndent` I`YIndent` właściwości, aby odpowiednio umieścić znacznik tekstowy.
+A: Dodając stempel tekstowy, pamiętaj o jego umiejscowieniu, aby upewnić się, że nie zasłania on ważnych informacji ani nie wpływa negatywnie na czytelność dokumentu. Możesz dostosować`XIndent` I`YIndent` właściwości umożliwiające odpowiednie umiejscowienie stempla tekstowego.
 
-#### P: Czy mogę użyć tej metody do dodania znaczków innych niż tekst, takich jak obrazy lub logo?
+#### P: Czy mogę użyć tej metody, aby dodać inne stemple niż tekst, np. obrazy lub logo?
 
-Odp.: Ten konkretny samouczek koncentruje się na dodawaniu znaczków tekstowych, ale możesz w podobny sposób dodawać inne typy stempli, takie jak obrazy lub logo, używając Aspose.PDF dla .NET. Proces polega na utworzeniu odpowiedniego obiektu stempla i skonfigurowaniu jego właściwości.
+A: Ten konkretny samouczek skupia się na dodawaniu stempli tekstowych, ale możesz podobnie dodać inne rodzaje stempli, takie jak obrazy lub logo, używając Aspose.PDF dla .NET. Proces obejmuje utworzenie odpowiedniego obiektu stempla i skonfigurowanie jego właściwości.
 
-#### P: Jak mogę zautomatyzować proces dodawania znaczników tekstowych do wielu dokumentów PDF?
+#### P: W jaki sposób mogę zautomatyzować proces dodawania znaczników tekstowych do wielu dokumentów PDF?
 
-O: Możesz zautomatyzować proces dodawania znaczników tekstowych do wielu dokumentów PDF, tworząc skrypt lub program, który przegląda listę dokumentów i stosuje ten sam proces znakowania tekstem do każdego z nich.
+A: Możesz zautomatyzować proces dodawania znaczników tekstowych do wielu dokumentów PDF, tworząc skrypt lub program, który przechodzi przez listę dokumentów i stosuje ten sam proces dodawania znaczników tekstowych do każdego z nich.

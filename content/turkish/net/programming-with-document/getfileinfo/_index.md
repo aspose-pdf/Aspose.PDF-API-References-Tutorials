@@ -1,42 +1,42 @@
 ---
-title: PDF Dosyasında Dosya Bilgisini Al
-linktitle: PDF Dosyasında Dosya Bilgisini Al
-second_title: .NET API Referansı için Aspose.PDF
-description: Bir PDF belgesi hakkında meta veri bilgilerini almak için Aspose.PDF for .NET'in PDF dosyasında GetFileInfo özelliğini nasıl kullanacağınızı öğrenin.
+title: PDF Dosyasında Dosya Bilgilerini Alın
+linktitle: PDF Dosyasında Dosya Bilgilerini Alın
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET'in PDF dosyasında GetFileInfo özelliğinin bir PDF belgesi hakkında meta veri bilgilerini almak için nasıl kullanılacağını öğrenin.
 type: docs
 weight: 180
 url: /tr/net/programming-with-document/getfileinfo/
 ---
- Aspose.PDF for .NET, geliştiricilerin .NET uygulamalarında PDF dosyaları oluşturmasına, düzenlemesine ve dönüştürmesine olanak tanıyan popüler bir PDF işleme kitaplığıdır. Bu kitaplığın sunduğu özelliklerden biri, PDF belgesinin meta verileri hakkında bilgi alma yeteneğidir. Bu eğitim, kullanımın adımları konusunda size rehberlik edecektir.`GetFileInfo` Aspose.PDF for .NET'in bir PDF belgesinin meta verileri hakkında bilgi alma özelliği.
+ Aspose.PDF for .NET, geliştiricilerin .NET uygulamalarında PDF dosyaları oluşturmasını, düzenlemesini ve dönüştürmesini sağlayan popüler bir PDF düzenleme kütüphanesidir. Bu kütüphanenin sunduğu özelliklerden biri de bir PDF belgesinin meta verileri hakkında bilgi alabilme yeteneğidir. Bu eğitim, sizi kullanma adımlarında yönlendirecektir`GetFileInfo` Aspose.PDF for .NET'in bir PDF belgesinin meta verileri hakkında bilgi alma özelliği.
 
-## Adım 1: Aspose.PDF for .NET'i yükleyin
+## Adım 1: .NET için Aspose.PDF'yi yükleyin
 
- Aspose.PDF for .NET'i .NET uygulamalarınızda kullanmak için öncelikle kütüphaneyi kurmanız gerekir. Kütüphanenin en son sürümünü adresinden indirebilirsiniz.[Aspose.PDF for .NET indirme sayfası](https://releases.aspose.com/pdf/net).
+ .NET uygulamalarınızda Aspose.PDF for .NET'i kullanmak için önce kütüphaneyi yüklemeniz gerekir. Kütüphanenin en son sürümünü şu adresten indirebilirsiniz:[Aspose.PDF for .NET indirme sayfası](https://releases.aspose.com/pdf/net).
 
-Kütüphaneyi indirdikten sonra ZIP dosyasının içeriğini bilgisayarınızdaki bir klasöre çıkarın. Daha sonra .NET projenize Aspose.PDF for .NET DLL dosyasına bir referans eklemeniz gerekecektir.
+Kütüphaneyi indirdikten sonra, ZIP dosyasının içeriğini bilgisayarınızdaki bir klasöre çıkarın. Daha sonra .NET projenizde Aspose.PDF for .NET DLL'sine bir referans eklemeniz gerekecektir.
 
 ## Adım 2: PDF Belgesini Yükleyin
 
-Aspose.PDF for .NET'i yükledikten ve .NET projenize DLL'ye bir referans ekledikten sonra, kullanmaya başlayabilirsiniz.`GetFileInfo` PDF belgesinin meta verileri hakkında bilgi alma özelliği.
+ Aspose.PDF for .NET'i yükledikten ve .NET projenize DLL'ye bir başvuru ekledikten sonra, kullanmaya başlayabilirsiniz.`GetFileInfo` Bir PDF belgesinin meta verileri hakkında bilgi almaya yarayan özellik.
 
 Bu özelliği kullanmanın ilk adımı, hakkında bilgi almak istediğiniz PDF belgesini yüklemektir. Bunu yapmak için aşağıdaki kodu kullanabilirsiniz:
 
 ```csharp
-// PDF belgesinin yolu
+// PDF belgesine giden yol
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//PDF belgesini açın
+// PDF belgesini açın
 Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
 ```
 
- Yukarıdaki kodda değiştirin`"YOUR DOCUMENT DIRECTORY"` PDF belgenizin bulunduğu dizinin yolu ile birlikte. Bu kod, PDF belgesini bir`Document` daha sonra belgenin meta verileri hakkında bilgi almak için kullanabileceğiniz nesne.
+ Yukarıdaki kodda şunu değiştirin:`"YOUR DOCUMENT DIRECTORY"` PDF belgenizin bulunduğu dizinin yolunu içeren kod. Bu kod PDF belgesini bir`Document` Daha sonra belgenin meta verileri hakkında bilgi almak için kullanabileceğiniz nesne.
 
-## 3. Adım: Belgenin Meta Verilerini Alın
+## Adım 3: Belgenin Meta Verilerini Alın
 
 Bir PDF belgesinin meta verileri hakkında bilgi almak için aşağıdaki kodu kullanabilirsiniz:
 
 ```csharp
-// Belge bilgilerini alın
+// Belge bilgilerini al
 DocumentInfo docInfo = pdfDocument.Info;
 
 // Belge bilgilerini göster
@@ -48,20 +48,20 @@ Console.WriteLine("Subject: {0}", docInfo.Subject);
 Console.WriteLine("Title: {0}", docInfo.Title);
 ```
 
-Yukarıdaki kodda, her satır PDF belgesinin farklı bir meta veri özelliğini alır ve bunu konsola çıkarır. Yalnızca ilgilendiğiniz özellikleri almak için bu kodu özelleştirebilirsiniz.
+Yukarıdaki kodda, her satır PDF belgesinin farklı bir meta veri özelliğini alır ve bunu konsola çıktı olarak verir. Bu kodu yalnızca ilgilendiğiniz özellikleri alacak şekilde özelleştirebilirsiniz.
 
-### Örnek kaynak kodu, Aspose.PDF for .NET'i kullanarak PDF dosyası bilgilerini alma
+### Örnek kaynak kodu, .NET için Aspose.PDF kullanarak PDF dosya bilgilerini alır
 
- Burada, PDF belgesinin meta verilerini almak için kullanılan kaynak kodun tamamı bulunmaktadır.`GetFileInfo` Aspose.PDF for .NET'in özelliği:
+ İşte PDF belgesinin meta verilerini almak için tam kaynak kodu:`GetFileInfo` Aspose.PDF for .NET'in özelliği:
 
 ```csharp
-// PDF belgesinin yolu
+// PDF belgesine giden yol
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//PDF belgesini açın
+// PDF belgesini açın
 Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
 
-// Belge bilgilerini alın
+// Belge bilgilerini al
 DocumentInfo docInfo = pdfDocument.Info;
 
 // Belge bilgilerini göster
@@ -75,22 +75,22 @@ Console.WriteLine("Title: {0}", docInfo.Title);
 
 ## Çözüm
 
-Bu eğitimde, bir PDF belgesinin meta verileri hakkında bilgi almak için Aspose.PDF for .NET'in nasıl kullanılacağını tartıştık. Bir PDF belgesi yükleyerek ve meta veri özelliklerine erişerek belgenin özellikleri ve özellikleri hakkında bilgi toplayabilirsiniz. Aspose.PDF for .NET, meta veri bilgilerinin alınması da dahil olmak üzere PDF belgeleriyle çalışmak için basit ve kullanımı kolay bir API sağlar ve bu da onu .NET uygulamalarında PDF manipülasyonu için değerli bir araç haline getirir.
+Bu eğitimde, bir PDF belgesinin meta verileri hakkında bilgi almak için Aspose.PDF for .NET'in nasıl kullanılacağını ele aldık. Bir PDF belgesini yükleyerek ve meta veri özelliklerine erişerek, belgenin özellikleri ve karakteristikleri hakkında bilgi toplayabilirsiniz. Aspose.PDF for .NET, meta veri bilgilerini almak da dahil olmak üzere PDF belgeleriyle çalışmak için basit ve kullanımı kolay bir API sağlar ve bu da onu .NET uygulamalarında PDF düzenleme için değerli bir araç haline getirir.
 
-### SSS'ler
+### SSS
 
-#### S: PDF belgesindeki meta veriler nedir?
+#### S: PDF belgesinde meta veri nedir?
 
-C: Bir PDF belgesindeki meta veriler, belgenin özelliklerini ve özelliklerini açıklayan bilgileri ifade eder. Bu bilgiler genellikle belgenin başlığını, yazarını, konusunu, anahtar sözcüklerini, oluşturulma tarihini, değiştirilme tarihini ve daha fazlasını içerir.
+A: Bir PDF belgesindeki meta veriler, belgenin özelliklerini ve karakteristiklerini tanımlayan bilgileri ifade eder. Bu bilgiler genellikle belgenin başlığını, yazarını, konusunu, anahtar sözcüklerini, oluşturma tarihini, değiştirme tarihini ve daha fazlasını içerir.
 
-#### S: Aspose.PDF for .NET'i .NET projeme nasıl kurabilirim?
+#### S: .NET projemde Aspose.PDF for .NET'i nasıl kurabilirim?
 
- C: Aspose.PDF for .NET'i kurmak için kütüphaneyi şuradan indirmeniz gerekir:[Aspose.PDF for .NET indirme sayfası](https://releases.aspose.com/pdf/net). İndirdikten sonra ZIP dosyasının içeriğini çıkarın ve .NET projenize Aspose.PDF for .NET DLL dosyasına bir referans ekleyin.
+ A: .NET için Aspose.PDF'yi yüklemek için, kütüphaneyi şu adresten indirmeniz gerekir:[Aspose.PDF for .NET indirme sayfası](https://releases.aspose.com/pdf/net). İndirdikten sonra, ZIP dosyasının içeriğini çıkarın ve .NET projenize Aspose.PDF for .NET DLL'sine bir referans ekleyin.
 
 #### S: Kodu yalnızca belirli meta veri özelliklerini alacak şekilde özelleştirebilir miyim?
 
-C: Evet, ihtiyacınız olmayan satırlara yorum ekleyerek belirli meta veri özelliklerini almak için kodu özelleştirebilirsiniz. Koddaki her satır belirli bir meta veri özelliğine karşılık gelir; böylece gereksinimlerinize göre özellikleri dahil edebilir veya hariç tutabilirsiniz.
+A: Evet, ihtiyacınız olmayan satırları yorumlayarak belirli meta veri özelliklerini almak için kodu özelleştirebilirsiniz. Koddaki her satır belirli bir meta veri özelliğine karşılık gelir, böylece gereksinimlerinize göre özellikleri dahil edebilir veya hariç tutabilirsiniz.
 
-#### S: Aspose.PDF for .NET'i kullanarak ne tür meta veri özelliklerini alabilirim?
+#### S: Aspose.PDF for .NET kullanarak hangi tür meta veri özelliklerini alabilirim?
 
-C: Aspose.PDF for .NET'i kullanarak bir PDF belgesinin yazar, başlık, konu, anahtar kelimeler, oluşturulma tarihi ve değiştirilme tarihi dahil olmak üzere çeşitli meta veri özelliklerini alabilirsiniz.
+A: Aspose.PDF for .NET'i kullanarak, yazar, başlık, konu, anahtar sözcükler, oluşturulma tarihi ve değiştirilme tarihi dahil olmak üzere bir PDF belgesinin çeşitli meta veri özelliklerini alabilirsiniz.

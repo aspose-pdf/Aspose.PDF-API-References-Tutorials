@@ -1,125 +1,172 @@
 ---
-title: Cancellare le parole
-linktitle: Cancellare le parole
-second_title: Aspose.PDF per riferimento all'API .NET
-description: Questo articolo fornisce una guida passo passo per l'utilizzo di Aspose.PDF per la funzione Barra parole di .NET, inclusa guida passo passo e spiegazioni
+title: Parole cancellate
+linktitle: Parole cancellate
+second_title: Riferimento API Aspose.PDF per .NET
+description: Scopri come barrare le parole in un PDF usando Aspose.PDF per .NET con questa guida completa passo dopo passo. Migliora le tue capacità di modifica dei documenti.
 type: docs
 weight: 150
 url: /it/net/annotations/strikeoutwords/
 ---
-Aspose.PDF per .NET è una libreria di manipolazione ed elaborazione di documenti PDF che fornisce varie funzionalità per creare, modificare e convertire file PDF. Una delle funzionalità utili fornite da Aspose.PDF è la possibilità di cancellare parole o frasi in un documento PDF utilizzando il codice sorgente C#. In questo articolo, forniremo una guida passo passo su come cancellare le parole utilizzando Aspose.PDF per .NET.
+## Introduzione
 
-## Passaggio 1: caricamento del documento PDF
-Il primo passo è caricare il documento PDF che desideri modificare. In questo tutorial, caricheremo un documento PDF denominato "input.pdf" dalla cartella "YOUR DOCUMENT DIRECTORY". 
+Ti è mai capitato di dover enfatizzare un testo specifico in un PDF barrandolo? Che tu stia rivedendo documenti, contrassegnando del testo o semplicemente evidenziando determinate sezioni, barrare le parole può essere uno strumento prezioso. In questo tutorial, esploreremo come fare proprio questo usando Aspose.PDF per .NET. Questa guida completa ti guiderà attraverso ogni passaggio, assicurandoti di avere tutte le informazioni necessarie per implementare efficacemente questa funzionalità nelle tue applicazioni .NET. 
+
+## Prerequisiti
+
+Prima di passare al codice, ecco alcuni prerequisiti che dovrai soddisfare per seguire questo tutorial:
+
+1.  Libreria Aspose.PDF per .NET: assicurati di avere installata la libreria Aspose.PDF per .NET. Puoi[scaricalo qui](https://releases.aspose.com/pdf/net/).
+
+2. .NET Framework: assicurati di avere .NET Framework installato sul tuo computer. Questo tutorial è progettato per le applicazioni .NET.
+
+3. Ambiente di sviluppo: per scrivere ed eseguire il codice avrai bisogno di un IDE come Visual Studio.
+
+4. Documento PDF: Tieni pronto un file PDF di esempio con cui vuoi lavorare. Questo sarà il documento in cui cancelleremo il testo.
+
+5. Conoscenze di base del linguaggio C#: per comprendere e implementare i passaggi di questo tutorial è necessaria una certa familiarità con la programmazione C#.
+
+## Importa pacchetti
+
+Prima di poter iniziare a programmare, dobbiamo importare i namespace necessari nel nostro progetto .NET. Questo ci darà accesso alle classi e ai metodi richiesti per manipolare i file PDF usando Aspose.PDF.
 
 ```csharp
+using System;
+using System.IO;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf;
+```
+
+Questi namespace sono essenziali per lavorare con documenti PDF, gestire il testo e aggiungere annotazioni come le barre.
+
+In questa sezione, suddivideremo il processo di cancellazione delle parole in un documento PDF in semplici passaggi gestibili. Ogni passaggio sarà accompagnato da una spiegazione dettagliata per assicurarti di capire come funziona il tutto.
+
+## Passaggio 1: caricare il documento PDF
+
+Il primo passo è caricare il documento PDF che vuoi modificare. Questo documento sarà quello in cui cancellerai parole o frasi specifiche.
+
+```csharp
+// Percorso verso la directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// Apri il documento PDF
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-## Passaggio 2: ricerca di frammenti di testo
-Per cancellare parole o frasi specifiche nel documento PDF, devi prima cercarle. Aspose.PDF fornisce una classe TextFragmentAbsorber che può essere utilizzata per cercare un frammento di testo specifico nel documento PDF.
+- `dataDir` : Questa variabile contiene il percorso alla directory del documento. Sostituisci`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo in cui si trova il file PDF.
+- `Document` : IL`Document` class rappresenta un documento PDF. Passando il percorso del file al suo costruttore, apriamo il file PDF per l'elaborazione.
+
+## Passaggio 2: creare un assorbitore di frammenti di testo per trovare un testo specifico
+
+ Successivamente, creeremo un'istanza di`TextFragmentAbsorber` per cercare un frammento di testo specifico nel documento PDF. Questo ci consente di individuare il testo che vogliamo barrare.
 
 ```csharp
+// Crea un'istanza di TextFragment Absorber per cercare un frammento di testo specifico
 Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
 ```
 
-Nel codice sopra, stiamo cercando il frammento di testo "Estoque" nel documento PDF. Puoi modificarlo per cercare qualsiasi altra parola o frase che desideri cancellare.
+- `TextFragmentAbsorber`Questa classe è usata per trovare e lavorare con frammenti di testo specifici all'interno del documento PDF. In questo esempio, stiamo cercando la parola "Estoque". Sostituisci "Estoque" con la parola o la frase che vuoi trovare nel tuo documento.
 
-## Passaggio 3: eliminare i frammenti di testo
-Dopo aver trovato i frammenti di testo, il passo successivo è cancellarli. Aspose.PDF fornisce una classe StrikeOutAnnotation che può essere utilizzata per creare un'annotazione barrata per il frammento di testo. 
+## Passaggio 3: scorrere le pagine del documento PDF
 
-```csharp
-Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle((float)textFragment.Position.XIndent, (float)textFragment.Position.YIndent, (float)textFragment.Position.XIndent + (float)textFragment.Rectangle.Width, (float)textFragment.Position.YIndent + (float)textFragment.Rectangle.Height);
-
-StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
-strikeOut.Opacity = .80f;
-strikeOut.Border = new Border(strikeOut);
-strikeOut.Color = Aspose.Pdf.Color.Red;
-textFragment.Page.Annotations.Add(strikeOut);
-```
-
-Nel codice sopra, stiamo creando un'annotazione barrata per ogni frammento di testo che abbiamo trovato. Stiamo impostando anche l'opacità, il bordo e il colore dell'annotazione barrata.
-
-## Passaggio 4: salvataggio del documento PDF modificato
-Dopo aver cancellato i frammenti di testo, salva il documento modificato.
+ Ora che abbiamo il nostro`TextFragmentAbsorber`, dobbiamo scorrere ogni pagina del documento PDF per trovare il testo specificato.
 
 ```csharp
-dataDir = dataDir + "StrikeOutWords_out.pdf";
-document.Save(dataDir);
-```
-
-### Codice sorgente di esempio per Barrare le parole utilizzando Aspose.PDF per .NET
-
-
-```csharp
-
-// Il percorso della directory dei documenti.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Apri documento
-Document document = new Document(dataDir + "input.pdf");
-
-// Crea un'istanza TextFragment Absorber per cercare un particolare frammento di testo
-Aspose.Pdf.Text.TextFragmentAbsorber textFragmentAbsorber = new Aspose.Pdf.Text.TextFragmentAbsorber("Estoque");
 // Scorrere le pagine del documento PDF
 for (int i = 1; i <= document.Pages.Count; i++)
 {
-	// Ottieni la prima pagina del documento PDF
-	Page page = document.Pages[1];
-	page.Accept(textFragmentAbsorber);
+    // Ottieni la pagina corrente del documento PDF
+    Page page = document.Pages[i];
+    page.Accept(textFragmentAbsorber);
 }
+```
 
-// Crea una raccolta di testo assorbito
+- `for (int i = 1; i <= document.Pages.Count; i++)`: Questo ciclo scorre ogni pagina del documento PDF.
+- `document.Pages[i]`: Recupera la pagina corrente in fase di elaborazione.
+- `page.Accept(textFragmentAbsorber)` : Questo metodo applica il`TextFragmentAbsorber` alla pagina corrente, cercando il testo specificato.
+
+## Fase 4: Raccogliere ed elaborare i frammenti di testo
+
+Dopo aver esaminato le pagine, raccoglieremo i frammenti di testo trovati e li prepareremo per un'ulteriore elaborazione.
+
+```csharp
+// Crea una raccolta di frammenti di testo assorbiti
 Aspose.Pdf.Text.TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+```
 
-//Ripetere la raccolta sopra
+- `TextFragmentCollection`Questa raccolta memorizza tutti i frammenti di testo che sono stati trovati nel documento. Utilizzeremo questa raccolta nel passaggio successivo per barrare il testo.
+
+## Passaggio 5: scorrere i frammenti di testo e cancellarli
+
+In questa fase, analizzeremo ogni frammento di testo nella nostra raccolta e applicheremo un'annotazione barrata.
+
+```csharp
+// Eseguire l'iterazione sulla raccolta di frammenti di testo
 for (int j = 1; j <= textFragmentCollection.Count; j++)
 {
 	Aspose.Pdf.Text.TextFragment textFragment = textFragmentCollection[j];
 
-	// Ottieni dimensioni rettangolari dell'oggetto TextFragment
-	Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
-				(float)textFragment.Position.XIndent,
-				(float)textFragment.Position.YIndent,
-				(float)textFragment.Position.XIndent +
-				(float)textFragment.Rectangle.Width,
-				(float)textFragment.Position.YIndent +
-				(float)textFragment.Rectangle.Height);
+    // Ottieni le dimensioni rettangolari dell'oggetto TextFragment
+    Aspose.Pdf.Rectangle rect = new Aspose.Pdf.Rectangle(
+        (float)textFragment.Position.XIndent,
+        (float)textFragment.Position.YIndent,
+        (float)textFragment.Position.XIndent + (float)textFragment.Rectangle.Width,
+        (float)textFragment.Position.YIndent + (float)textFragment.Rectangle.Height);
 
-	// Crea un'istanza di StrikeOut Annotation
-	StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
-	// Imposta l'opacità per l'annotazione
-	strikeOut.Opacity = .80f;
-	// Imposta il bordo per l'istanza di annotazione
-	strikeOut.Border = new Border(strikeOut);
-	// Imposta il colore dell'annotazione
-	strikeOut.Color = Aspose.Pdf.Color.Red;
-	// Aggiungi annotazione alla raccolta di annotazioni di TextFragment
-	textFragment.Page.Annotations.Add(strikeOut);
+    // Crea un'istanza di annotazione StrikeOut
+    StrikeOutAnnotation strikeOut = new StrikeOutAnnotation(textFragment.Page, rect);
+
+    // Imposta le proprietà dell'annotazione barrata
+    strikeOut.Opacity = .80f;
+    strikeOut.Border = new Border(strikeOut);
+    strikeOut.Color = Aspose.Pdf.Color.Red;
+
+    // Aggiungere l'annotazione alla raccolta di annotazioni della pagina del frammento di testo
+    textFragment.Page.Annotations.Add(strikeOut);
 }
+```
+
+- `TextFragment textFragment = textFragmentCollection[j]`: Questa riga recupera il frammento di testo corrente.
+- `Aspose.Pdf.Rectangle`: Calcoliamo le dimensioni rettangolari del frammento di testo per determinare dove applicare la barratura.
+- `StrikeOutAnnotation`: Questa classe rappresenta l'annotazione barrata. La istanziamo con il rettangolo calcolato e la pagina corrente.
+- `strikeOut.Opacity`: Questa proprietà imposta l'opacità della barratura, rendendola visibile all'80%.
+- `strikeOut.Color`Abbiamo impostato il colore del barrato su rosso. Puoi cambiarlo con qualsiasi colore tu preferisca.
+- `textFragment.Page.Annotations.Add(strikeOut)`: Questo aggiunge l'annotazione barrata alla pagina.
+
+## Passaggio 6: Salvare il documento PDF modificato
+
+Il passaggio finale consiste nel salvare il documento PDF modificato con le barre applicate.
+
+```csharp
+// Salva il documento PDF aggiornato
 dataDir = dataDir + "StrikeOutWords_out.pdf";
 document.Save(dataDir);
 ```
 
+- `dataDir + "StrikeOutWords_out.pdf"`: Questo crea un nuovo nome file per il documento modificato. Il file originale rimane invariato.
+- `document.Save(dataDir)`: Salva il documento PDF barrato nella posizione specificata.
+
 ## Conclusione
 
-In questo tutorial, abbiamo imparato come utilizzare Aspose.PDF per .NET per cancellare parole specifiche in un documento PDF. Seguendo la guida passo passo e utilizzando il codice sorgente C# fornito, puoi caricare facilmente un documento PDF, cercare frammenti di testo specifici e creare annotazioni barrate per contrassegnare e barrare visivamente quelle parole. Aspose.PDF per .NET fornisce un modo semplice ed efficace per manipolare i documenti PDF a livello di codice, rendendolo uno strumento prezioso per gli sviluppatori che lavorano con file PDF nelle applicazioni .NET.
+Congratulazioni! Hai barrato con successo parole specifiche in un documento PDF usando Aspose.PDF per .NET. Seguendo questa guida passo passo, ora puoi personalizzare i documenti PDF evidenziando o barrando il testo, rendendoli più dinamici e adatti alle tue esigenze. Che tu stia annotando documenti legali, preparando report o semplicemente contrassegnando il testo per la revisione, questo tutorial ti ha fornito le competenze per farlo in modo efficiente.
 
-### Domande frequenti
+## Domande frequenti
 
-#### D: Cos'è Aspose.PDF per .NET?
+### Posso cambiare il colore della barratura?
 
-R: Aspose.PDF per .NET è una potente libreria che consente agli sviluppatori di creare, modificare e manipolare documenti PDF a livello di codice nelle applicazioni .NET. Fornisce un'ampia gamma di funzionalità per lavorare con file PDF, tra cui l'estrazione del testo, la gestione delle annotazioni, la compilazione dei moduli e molto altro.
+ Sì, puoi cambiare il colore modificando il`strikeOut.Color`proprietà. Ad esempio, puoi impostarlo su`Aspose.Pdf.Color.Blue` per uno strikeout blu.
 
-#### D: Posso utilizzare Aspose.PDF per .NET per cancellare parole specifiche in un documento PDF?
+### È possibile barrare più parole contemporaneamente?
 
-R: Sì, Aspose.PDF per .NET fornisce funzionalità per cercare frammenti di testo specifici in un documento PDF e quindi creare annotazioni barrate per contrassegnare visivamente e cancellare quelle parole.
+ Assolutamente! Il`TextFragmentAbsorber` può essere utilizzato per cercare qualsiasi parola o frase nel documento. È possibile applicare la barratura a più istanze iterando attraverso il`TextFragmentCollection`.
 
-#### D: Come posso specificare il testo che voglio barrare nel documento PDF?
+### Cosa succede se voglio barrare il testo solo su pagine specifiche?
 
- R: Per specificare il testo che vuoi cancellare, puoi usare il`TextFragmentAbsorber` classe fornita da Aspose.PDF per .NET. Ti consente di cercare un frammento di testo specifico nel documento PDF in base ai criteri desiderati.
+ Puoi modificare il ciclo che scorre le pagine per includere solo le pagine che vuoi modificare. Ad esempio,`for (int i = 1; i <= 3; i++)` applicherebbe la barratura solo alle prime tre pagine.
 
-#### D: Posso personalizzare l'aspetto dell'annotazione barrata?
+### Come posso regolare lo spessore della linea barrata?
 
-R: Sì, puoi personalizzare varie proprietà dell'annotazione barrata, come l'opacità, lo stile del bordo e il colore. Ciò ti consente di personalizzare l'aspetto dell'annotazione barrata in base alle tue esigenze specifiche.
+ È possibile regolare lo spessore della linea barrata modificando il`Border` proprietà del`StrikeOutAnnotation`Ciò consente di personalizzare l'aspetto della barratura.
+
+### C'è un modo per annullare la barratura dopo aver salvato il documento?
+
+Una volta salvato il documento, il barrato è permanente. Se hai bisogno di conservare il testo originale senza barrato, prendi in considerazione di salvare un backup del documento originale prima di applicare qualsiasi modifica.

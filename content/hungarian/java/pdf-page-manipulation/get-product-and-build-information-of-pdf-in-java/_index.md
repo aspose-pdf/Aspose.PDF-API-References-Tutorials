@@ -22,7 +22,7 @@ Mielőtt belemerülnénk a részletekbe, győződjön meg arról, hogy a követk
 
 Győződjön meg arról, hogy megfelelően beállította a fejlesztői környezetet az Aspose.PDF for Java használatához.
 
-## Elkezdeni
+## Kezdő lépések
 
 A kezdéshez importálnia kell az Aspose.PDF könyvtárat a Java projektbe. Hozzáadhatja a könyvtárat függőségként a projekt konfigurációjához, vagy letöltheti a JAR fájlt az Aspose webhelyéről, és manuálisan beillesztheti a projektbe.
 
@@ -82,7 +82,7 @@ System.out.println("Document Summary:\n" + documentSummary);
 
 ## Következtetés
 
-Ebben a cikkben megvizsgáltuk, hogyan lehet termék- és összeállítási információkat kinyerni PDF-fájlokból Java nyelven az Aspose.PDF for Java segítségével. Áttekintettük az induláshoz szükséges alapvető lépéseket, kivonatoltuk a termék- és építési részleteket, és hasznos dokumentumösszefoglalóvá egyesítjük őket. Az Aspose.PDF for Java értékes eszköz a PDF-dokumentumokkal dolgozó fejlesztők számára, amely biztosítja a különféle feladatokhoz szükséges rugalmasságot és funkcionalitást.
+Ebben a cikkben megvizsgáltuk, hogyan lehet termék- és összeállítási információkat kinyerni PDF-fájlokból Java nyelven az Aspose.PDF for Java segítségével. Áttekintettük az induláshoz szükséges alapvető lépéseket, kivonatoltuk a termék- és konstrukciós részleteket, és összevontuk őket egy hasznos dokumentum-összefoglalóban. Az Aspose.PDF for Java értékes eszköz a PDF-dokumentumokkal dolgozó fejlesztők számára, amely biztosítja a különféle feladatokhoz szükséges rugalmasságot és funkcionalitást.
 
 ## GYIK
 

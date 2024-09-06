@@ -14,7 +14,7 @@ A mai digitális korban a PDF-dokumentumok programozott kezelése és kezelése 
 
 ## Előfeltételek
 
-Mielőtt belemerülnénk a megvalósítás részleteibe, győződjünk meg arról, hogy mindennel rendelkezik, amire szüksége van:
+Mielőtt belemerülnénk a megvalósítás részleteibe, győződjünk meg arról, hogy mindennel rendelkezünk, amire szüksége van:
 
 - Java programozási alapismeretek.
 -  Aspose.PDF a Java könyvtárhoz. Letöltheti innen[itt](https://releases.aspose.com/pdf/java/).
@@ -63,7 +63,7 @@ pdfDocument.save("output.pdf");
 
 ## Következtetés
 
-Gratulálunk! Sikeresen törölt egy adott űrlapmezőt egy PDF-dokumentumból az Aspose.PDF for Java használatával. Ez hihetetlenül hasznos lehet, ha programozottan kell megtisztítani vagy személyre szabni a PDF-űrlapokat. Ne felejtse el belefoglalni az Aspose.PDF for Java könyvtárat a projektbe, és kövesse ezeket a lépéseket a kívánt eredmények eléréséhez.
+Gratulálok! Sikeresen törölt egy adott űrlapmezőt egy PDF-dokumentumból az Aspose.PDF for Java használatával. Ez hihetetlenül hasznos lehet, ha programozottan kell megtisztítani vagy személyre szabni a PDF-űrlapokat. Ne felejtse el belefoglalni az Aspose.PDF for Java könyvtárat a projektbe, és kövesse ezeket a lépéseket a kívánt eredmények eléréséhez.
 
 ## GYIK
 

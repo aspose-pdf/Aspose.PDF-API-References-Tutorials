@@ -246,7 +246,7 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 答：本教學提供了建立標題、正文行和頁腳並將其新增至表格結構元素的範例。可以使用教程中描述的屬性進一步自訂這些元素。
 
-#### Q：什麼是 PDF/UA 合規性？如何驗證我的已標記 PDF 文件的合規性？
+#### Q：什麼是 PDF/UA 合規性？
 
 答：PDF/UA 合規性可確保 PDF 文件符合輔助功能標準，從而更方便殘障使用者使用。本教學示範如何使用以下方法驗證 PDF/UA 一致性`Validate()`方法並產生 XML 合規性報表。
 

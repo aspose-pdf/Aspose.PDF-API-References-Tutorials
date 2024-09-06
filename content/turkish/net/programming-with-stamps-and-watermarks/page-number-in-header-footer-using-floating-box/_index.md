@@ -1,41 +1,41 @@
 ---
-title: Kayan Kutu Kullanarak Üst Bilgi Alt Bilgideki Sayfa Numarası
-linktitle: Kayan Kutu Kullanarak Üst Bilgi Alt Bilgideki Sayfa Numarası
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile bir PDF belgesinin üstbilgi ve altbilgisine sayfa numarasını nasıl ekleyeceğinizi öğrenin.
+title: Üstbilgi Altbilgide Yüzen Kutu Kullanarak Sayfa Numarası
+linktitle: Üstbilgi Altbilgide Yüzen Kutu Kullanarak Sayfa Numarası
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET ile bir PDF belgesinin üst bilgi ve alt bilgisine sayfa numarasının nasıl ekleneceğini öğrenin.
 type: docs
 weight: 150
 url: /tr/net/programming-with-stamps-and-watermarks/page-number-in-header-footer-using-floating-box/
 ---
-Bu eğitimde, Aspose.PDF for .NET ile FloatingBox kullanarak bir PDF belgesinin üstbilgisine ve altbilgisine sayfa numarasının nasıl ekleneceği konusunda size adım adım rehberlik edeceğiz. Bir PDF belgesi oluşturmak, bir sayfa eklemek, bir FloatingBox oluşturmak, konumunu ayarlamak ve sayfa numarasını buna eklemek, ardından değiştirilen PDF belgesini kaydetmek için sağlanan C# kaynak kodunu kullanacağız.
+Bu eğitimde, .NET için Aspose.PDF ile FloatingBox kullanarak bir PDF belgesinin üst bilgisine ve alt bilgisine sayfa numarasının nasıl ekleneceğini adım adım göstereceğiz. Sağlanan C# kaynak kodunu kullanarak bir PDF belgesi oluşturacağız, bir sayfa ekleyeceğiz, bir FloatingBox oluşturacağız, konumunu ayarlayıp sayfa numarasını ekleyeceğiz ve ardından değiştirilmiş PDF belgesini kaydedeceğiz.
 
-## 1. Adım: Ortamı ayarlama
+## Adım 1: Ortamı kurma
 
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
 - Kurulu bir .NET geliştirme ortamı.
-- .NET için Aspose.PDF kütüphanesini indirip projenizde referans olarak kullanabilirsiniz.
+- .NET için Aspose.PDF kütüphanesi indirildi ve projenizde referans olarak kullanıldı.
 
-## Adım 2: PDF belgesini oluşturma ve sayfa ekleme
+## Adım 2: PDF belgesini oluşturma ve bir sayfa ekleme
 
 İlk adım, PDF belgesinin bir örneğini oluşturmak ve ona bir sayfa eklemektir. İşte nasıl:
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 // PDF belgesini örneklendirin
 Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
 
-// PDF belgesine sayfa ekleme
+// PDF belgesine bir sayfa ekleyin
 Aspose.Pdf.Page page = pdf.Pages.Add();
 ```
 
-"BELGELERİNİZ DİZİNİ"ni, PDF belgesini kaydetmek istediğiniz dizinin gerçek yolu ile değiştirdiğinizden emin olun.
+"BELGELERİNİZ DİZİNİ" ifadesini PDF belgenizi kaydetmek istediğiniz dizinin gerçek yoluyla değiştirdiğinizden emin olun.
 
 ## Adım 3: FloatingBox'ı oluşturma ve sayfa numarasını ekleme
 
-Artık sayfa PDF belgesine eklendiğine göre bir FloatingBox oluşturabilir, konumunu ayarlayabilir ve sayfa numarasını buna ekleyebiliriz. İşte nasıl:
+Sayfa artık PDF belgesine eklendiğine göre, bir FloatingBox oluşturabilir, konumunu ayarlayabilir ve sayfa numarasını ekleyebiliriz. İşte nasıl:
 
 ```csharp
 // 140 genişliğinde ve 80 yüksekliğinde bir FloatingBox oluşturun
@@ -44,54 +44,54 @@ Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
 // Paragrafın sol konumunu ayarlayın
 box1. Left = 2;
 
-// Paragrafın üst konumunu ayarlama
+// Paragrafın en üst konumunu ayarlayın
 box1. Top = 10;
 
 // Sayfa numarasını FloatingBox'a ekleyin
 box1.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Page: ($p/ $P )"));
 
-// FloatingBox'ı sayfaya ekleyin
+// Sayfaya FloatingBox ekleyin
 page.Paragraphs.Add(box1);
 ```
 
-Yukarıdaki kod genişliği 140, yüksekliği 80 olan bir FloatingBox oluşturuyor. Daha sonra sol ve üst değerlerini belirterek konumunu belirliyoruz. Son olarak, mevcut sayfa numarası ve toplam sayfa sayısıyla değiştirilecek olan "($p/ $P )" sözdizimini içeren bir TextFragment kullanarak sayfa numarasını FloatingBox'a ekliyoruz.
+Yukarıdaki kod, 140 genişliğinde ve 80 yüksekliğinde bir FloatingBox oluşturur. Sonra, sol ve üst değerlerini belirterek konumunu ayarlarız. Son olarak, "($p/ $P )" sözdizimini içeren bir TextFragment kullanarak sayfa numarasını FloatingBox'a ekleriz; bu, geçerli sayfa numarası ve toplam sayfa sayısıyla değiştirilecektir.
 
-## Adım 4: Değiştirilen PDF belgesini kaydetme
+## Adım 4: Değiştirilen PDF belgesinin kaydedilmesi
 
-FloatingBox kullanılarak sayfa numarası üstbilgi veya altbilgiye eklendikten sonra değiştirilen PDF belgesini kaydedebiliriz. İşte nasıl:
+Sayfa numarası FloatingBox kullanılarak üstbilgiye veya altbilgiye eklendiğinde, değiştirilmiş PDF belgesini kaydedebiliriz. İşte nasıl:
 
 ```csharp
 // Değiştirilen PDF belgesini kaydedin
 pdf.Save(dataDir + "PageNumberinHeaderFooterUsingFloatingBox_out.pdf");
 ```
 
-Yukarıdaki kod, düzenlenen PDF belgesini belirtilen dizine kaydeder.
+Yukarıdaki kod düzenlenen PDF belgesini belirtilen dizine kaydeder.
 
-### Aspose.PDF for .NET kullanarak Kayan Kutu Kullanan Sayfa Numarasındaki Üst Bilgi Alt Bilgisi için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Yüzen Kutu Kullanarak Sayfa Numarası için Başlık Alt Bilgi için örnek kaynak kodu 
 ```csharp
 
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Belge örneğini oluştur
+// Belge örneğini örneklendir
 Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
 
 // PDF belgesine bir Sayfa ekleyin
 Aspose.Pdf.Page page = pdf.Pages.Add();
 
-//FloatingBox sınıfının yeni bir örneğini başlatır
+// FloatingBox sınıfının yeni bir örneğini başlatır
 Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
 
-// Paragrafın sol konumunu gösteren kayan değer
+// Paragrafın sol konumunu gösteren kayan nokta değeri
 box1.Left = 2;
 
-// Paragrafın üst konumunu gösteren kayan değer
+// Paragrafın en üst konumunu gösteren kayan nokta değeri
 box1.Top = 10;
 
 // Makroları FloatingBox'ın paragraf koleksiyonuna ekleyin
 box1.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Page: ($p/ $P )"));
 
-// Sayfaya bir floatBox ekleyin
+// Sayfaya bir floatingBox ekleyin
 page.Paragraphs.Add(box1);
 
 // Belgeyi kaydet
@@ -101,41 +101,41 @@ pdf.Save(dataDir + "PageNumberinHeaderFooterUsingFloatingBox_out.pdf");
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET ile FloatingBox kullanarak PDF belgesinin üstbilgisine ve altbilgisine sayfa numarasının nasıl ekleneceğini öğrendiniz. Artık sayfa numarası gibi dinamik bilgiler ekleyerek üstbilgilerinizi ve altbilgilerinizi özelleştirebilirsiniz.
+Tebrikler! FloatingBox with Aspose.PDF for .NET kullanarak PDF belgesinin üstbilgi ve altbilgisine sayfa numarası eklemeyi öğrendiniz. Artık sayfa numarası gibi dinamik bilgiler ekleyerek üstbilgi ve altbilgilerinizi özelleştirebilirsiniz.
 
-### SSS'ler
+### SSS
 
-#### S: FloatingBox nedir ve bir PDF belgesinin üstbilgisine veya altbilgisine sayfa numaraları eklemek için nasıl kullanılır?
+#### S: FloatingBox nedir ve bir PDF belgesinin üst bilgi veya alt bilgisine sayfa numaraları eklemek için nasıl kullanılır?
 
-C: FloatingBox, Aspose.PDF'de metin ve resimler de dahil olmak üzere çeşitli içerikleri tutabilen çok yönlü bir düzen öğesidir. Bu öğreticide, sayfa numarası için bir kapsayıcı oluşturmak için kullanılır; bu, geçerli sayfa numarasını ve toplam sayfa sayısını üstbilgi veya altbilgiye dinamik olarak eklemenize olanak tanır.
+A: FloatingBox, Aspose.PDF'de metin ve resimler dahil olmak üzere çeşitli içerikleri tutabilen çok yönlü bir düzen öğesidir. Bu eğitimde, sayfa numarası için bir kapsayıcı oluşturmak için kullanılır ve geçerli sayfa numarasını ve toplam sayfa sayısını üstbilgiye veya altbilgiye dinamik olarak eklemenize olanak tanır.
 
-#### S: Sağlanan C# kaynak kodu, FloatingBox kullanarak sayfa numaraları eklemeyi nasıl başarır?
+#### S: Sağlanan C# kaynak kodunda FloatingBox kullanılarak sayfa numaraları nasıl ekleniyor?
 
-C: Kod pasajı, bir PDF belgesinin nasıl oluşturulacağını, bir sayfanın nasıl ekleneceğini, bir FloatingBox'un nasıl oluşturulacağını, sayfa içindeki konumunun nasıl ayarlanacağını ve bir TextFragment kullanarak sayfa numarasının nasıl ekleneceğini gösterir. TextFragment'teki "($p/ $P )" sözdizimi, geçerli sayfa numarası ve toplam sayfa sayısıyla değiştirilir.
+A: Kod parçacığı bir PDF belgesinin nasıl oluşturulacağını, bir sayfanın nasıl ekleneceğini, bir FloatingBox'ın nasıl oluşturulacağını, sayfadaki konumunun nasıl ayarlanacağını ve bir TextFragment kullanılarak sayfa numarasının nasıl ekleneceğini gösterir. TextFragment'taki "($p/ $P )" sözdizimi geçerli sayfa numarası ve toplam sayfa sayısıyla değiştirilir.
 
-#### S: FloatingBox kullanarak eklenen sayfa numarasının görünümünü ve formatını özelleştirebilir miyim?
+#### S: FloatingBox kullanılarak eklenen sayfa numarasının görünümünü ve biçimlendirmesini özelleştirebilir miyim?
 
-C: Evet, FloatingBox içindeki TextFragment'in özelliklerini değiştirerek sayfa numarasının görünümünü özelleştirebilirsiniz. Yazı tipi boyutunu, rengini, stilini, hizalamasını ve diğer biçimlendirme seçeneklerini değiştirebilirsiniz.
+A: Evet, FloatingBox içindeki TextFragment'ın özelliklerini değiştirerek sayfa numarasının görünümünü özelleştirebilirsiniz. Yazı tipi boyutunu, rengini, stilini, hizalamasını ve diğer biçimlendirme seçeneklerini değiştirebilirsiniz.
 
-#### S: Benzer bir yaklaşım kullanarak üst bilgi veya alt bilgiye tarih ve saat gibi farklı dinamik öğeler eklemek mümkün müdür?
+#### S: Benzer bir yaklaşımla üstbilgi veya altbilgiye tarih ve saat gibi farklı dinamik öğeler eklemek mümkün müdür?
 
-C: Kesinlikle, FloatingBox içindeki TextFragment içeriğini değiştirerek tarih, saat, belge meta verileri veya özel metin gibi farklı dinamik öğeler ekleyebilirsiniz. Sayfa numaraları için "($p/ $P )" veya güncel tarih için "($date)" gibi makroları kullanabilirsiniz.
+A: Kesinlikle, FloatingBox içindeki TextFragment içeriğini değiştirerek tarih, saat, belge meta verileri veya özel metin gibi farklı dinamik öğeler ekleyebilirsiniz. Sayfa numaraları için "($p/ $P )" veya geçerli tarih için "($date)" gibi makrolar kullanabilirsiniz.
 
-#### S: FloatingBox'un üstbilgi veya altbilgi bölümündeki konumunu nasıl belirlerim?
- C: Sağlanan kod, FloatingBox'un konumunu şunu kullanarak ayarlar:`Left` Ve`Top` özellikler. FloatingBox'ı üstbilgi veya altbilgi bölümünde istediğiniz gibi konumlandırmak için bu değerleri ayarlayabilirsiniz.
+#### S: FloatingBox'ın başlık veya altbilgi bölümündeki konumunu nasıl belirlerim?
+ A: Sağlanan kod, FloatingBox'ın konumunu şu şekilde ayarlar:`Left` Ve`Top` özellikleri. Bu değerleri ayarlayarak FloatingBox'ı başlık veya altbilgi bölümünde istediğiniz gibi konumlandırabilirsiniz.
 
 #### S: Üstbilgi veya altbilgideki sayfa numarası için farklı bir yazı tipi veya stil kullanabilir miyim?
 
-C: Evet, FloatingBox içindeki TextFragment özelliklerini değiştirerek sayfa numarası metninin yazı tipi, stili ve diğer formatlama özelliklerini özelleştirebilirsiniz.
+C: Evet, FloatingBox içindeki TextFragment özelliklerini değiştirerek sayfa numarası metninin yazı tipini, stilini ve diğer biçimlendirme özelliklerini özelleştirebilirsiniz.
 
 #### S: FloatingBox'taki içerik boyutlarını aşarsa ne olur?
 
-C: FloatingBox içindeki içerik boyutlarını aşarsa kesilebilir veya düzen sorunları ortaya çıkabilir. FloatingBox'ın boyutlarının içeriğe uyum sağlamaya uygun olduğundan emin olun ve gerekirse sayfa düzenini ayarlamayı düşünün.
+A: FloatingBox içindeki içerik boyutlarını aşarsa, kesilebilir veya düzen sorunları ortaya çıkabilir. FloatingBox boyutlarının içeriği barındırmaya uygun olduğundan emin olun ve gerekirse sayfa düzenini ayarlamayı düşünün.
 
-#### S: Aynı sayfanın üstbilgisine veya altbilgisine farklı içeriğe sahip birden fazla FloatingBox eklemek mümkün müdür?
+#### S: Aynı sayfanın üst bilgisine veya alt bilgisine farklı içeriklere sahip birden fazla FloatingBox eklemek mümkün müdür?
 
-C: Evet, ayrı FloatingBox örnekleri oluşturup bunları sayfanın Paragraphs koleksiyonuna ekleyerek aynı sayfanın üstbilgisine veya altbilgisine farklı içeriğe sahip birden fazla FloatingBox ekleyebilirsiniz.
+C: Evet, aynı sayfanın üst bilgisine veya alt bilgisine farklı içeriklere sahip birden fazla FloatingBox ekleyebilirsiniz. Bunun için ayrı FloatingBox örnekleri oluşturup bunları sayfanın Paragraflar koleksiyonuna ekleyebilirsiniz.
 
-#### S: PDF belgesinin gövde veya kenar boşlukları gibi diğer bölümlerine içerik eklemek için FloatingBox yaklaşımını kullanabilir miyim?
+#### S: FloatingBox yaklaşımını PDF belgesinin gövde veya kenar boşlukları gibi diğer bölümlerine içerik eklemek için kullanabilir miyim?
 
-C: FloatingBox'lar genellikle üstbilgiler ve altbilgiler için kullanılsa da, bunları sayfa içinde uygun şekilde konumlandırarak PDF belgesinin gövde veya kenar boşlukları gibi diğer bölümlerine içerik eklemek için de kullanabilirsiniz.
+A: FloatingBox'lar genellikle başlıklar ve altbilgiler için kullanılsa da, bunları sayfanın içinde uygun şekilde konumlandırarak PDF belgesinin gövde veya kenar boşlukları gibi diğer bölümlerine içerik eklemek için de kullanabilirsiniz.

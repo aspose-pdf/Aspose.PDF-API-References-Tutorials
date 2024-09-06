@@ -2,7 +2,7 @@
 title: Επικύρωση αρχείων PDF A Standard
 linktitle: Επικύρωση PDF A Standard
 second_title: Aspose.PDF για Αναφορά API .NET
-description: Μάθετε πώς να χρησιμοποιείτε το Aspose.PDF για .NET για την επικύρωση αρχείων PDF για το PDFAStandard με αυτόν τον αναλυτικό οδηγό.
+description: Μάθετε πώς να χρησιμοποιείτε το Aspose.PDF για .NET για την επικύρωση αρχείων PDF για το PDFAStandard με αυτόν τον οδηγό βήμα προς βήμα.
 type: docs
 weight: 390
 url: /el/net/programming-with-document/validatepdfastandard/
@@ -48,7 +48,7 @@ Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Η επικύρωση αρχείων PDF σε σχέση με διάφορα πρότυπα PDF είναι μια σημαντική πτυχή της εργασίας με αρχεία PDF σε ένα επαγγελματικό περιβάλλον. Το Aspose.PDF για .NET παρέχει ένα ισχυρό και εύχρηστο API για την επικύρωση αρχείων PDF σε σχέση με διάφορα πρότυπα PDF, συμπεριλαμβανομένου του PDF/A-1a. Ακολουθώντας τον οδηγό βήμα προς βήμα που παρέχεται σε αυτό το άρθρο, μπορείτε γρήγορα και εύκολα να επικυρώσετε τα αρχεία PDF σας χρησιμοποιώντας το Aspose.PDF για .NET.
 

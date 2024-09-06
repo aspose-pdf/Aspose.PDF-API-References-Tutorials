@@ -14,7 +14,7 @@ EPUB 是一種流行的電子書格式，但有時您可能因各種原因需要
 
 ## Java 版 Aspose.PDF 入門
 
-在我們深入了解轉換過程之前，您需要設定您的開發環境。按著這些次序：
+在我們深入了解轉換過程之前，您需要設定您的開發環境。請依照下列步驟操作：
 
 1. 下載 Aspose.PDF for Java：造訪 Aspose.PDF for Java 下載頁面：[這裡](https://releases.aspose.com/pdf/java/)並下載最新版本。
 

@@ -7,7 +7,7 @@ type: docs
 weight: 250
 url: /hu/net/programming-with-forms/select-radio-button/
 ---
-Itt található egy részletes oktatóanyag a választógomb kiválasztásához az Aspose.PDF for .NET használatával. Kovesd ezeket a lepeseket:
+Itt található egy részletes oktatóanyag a választógomb kiválasztásához az Aspose.PDF for .NET használatával. Kövesse az alábbi lépéseket:
 
 ##  1. lépés: Kezdje a dokumentumok könyvtárának meghatározásával az elérési út megadásával a`dataDir` variable.
 

@@ -1,66 +1,66 @@
 ---
-title: Düz Kod Çözme Sıkıştırma
-linktitle: Düz Kod Çözme Sıkıştırma
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile Flate Decode sıkıştırmasını kullanarak PDF'deki görüntüleri verimli bir şekilde sıkıştırın.
+title: Flate Kod Çözme Sıkıştırması
+linktitle: Flate Kod Çözme Sıkıştırması
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET ile Flate Decode sıkıştırmasını kullanarak PDF'deki görüntüleri etkili bir şekilde sıkıştırın.
 type: docs
 weight: 140
 url: /tr/net/programming-with-images/flate-decode-compression/
 ---
-Bu kılavuz, Flate Decode sıkıştırmasını kullanarak görüntüleri Aspose.PDF for .NET kullanarak bir PDF dosyasına nasıl sıkıştıracağınız konusunda size adım adım yol gösterecektir. Ortamınızı zaten kurduğunuzdan emin olun ve aşağıdaki adımları izleyin:
+Bu kılavuz, Flate Decode sıkıştırmasını kullanarak görüntüleri Aspose.PDF for .NET kullanarak PDF dosyasına nasıl sıkıştıracağınızı adım adım anlatacaktır. Ortamınızı önceden ayarladığınızdan ve aşağıdaki adımları izlediğinizden emin olun:
 
-## 1. Adım: Belge dizinini tanımlayın
+## Adım 1: Belge dizinini tanımlayın
 
- Doğru belge dizinini ayarladığınızdan emin olun. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` PDF belgenizin bulunduğu dizinin yolunu içeren kodda.
+ Doğru belge dizinini ayarladığınızdan emin olun. Değiştir`"YOUR DOCUMENT DIRECTORY"` PDF belgenizin bulunduğu dizinin yolunu içeren kodda.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## 2. Adım: PDF belgesini açın
+## Adım 2: PDF belgesini açın
 
-Bu adımda PDF belgesini aşağıdaki komutu kullanarak açacağız:`Document` Aspose.PDF sınıfı. Kullan`Document` yapıcıya gidin ve yolu PDF belgesine iletin.
+ Bu adımda PDF belgesini şu şekilde açacağız:`Document` Aspose.PDF sınıfı. Kullanın`Document` oluşturucuyu kullanın ve PDF belgesinin yolunu geçirin.
 
 ```csharp
 Document doc = new Document(dataDir + "AddImage.pdf");
 ```
 
-## 3. Adım: Optimizasyon seçeneklerini başlatın
+## Adım 3: Optimizasyon seçeneklerini başlatın
 
-Bu adımda görüntü sıkıştırma için optimizasyon seçeneklerini başlatacağız. Bir örneğini oluşturun`OptimizationOptions` ve uygun seçenekleri ayarlayın. Bu örnekte görüntüleri optimize etmek için Flate Decode sıkıştırmasını kullanıyoruz.
+ Bu adımda, görüntü sıkıştırma için optimizasyon seçeneklerini başlatacağız. Bir örnek oluşturun`OptimizationOptions` ve uygun seçenekleri ayarlayın. Bu örnekte, görüntüleri optimize etmek için Flate Decode sıkıştırmasını kullanıyoruz.
 
 ```csharp
 var optimizationOptions = new Aspose.Pdf.Optimization.OptimizationOptions();
 optimizationOptions.ImageCompressionOptions.Encoding = ImageEncoding.Flate;
 ```
 
-## 4. Adım: PDF belgesini optimize edin
+## Adım 4: PDF belgesini optimize edin
 
- Bu adımda, daha önce tanımladığımız optimizasyon seçeneklerini kullanarak PDF belgesini optimize edeceğiz. Ara`OptimizeResources` yöntemi`doc` optimizasyon seçeneklerini nesneleyin ve iletin.
+Bu adımda, daha önce tanımlanan optimizasyon seçeneklerini kullanarak PDF belgesini optimize edeceğiz.`OptimizeResources` yöntemi`doc` nesneyi seçin ve optimizasyon seçeneklerini iletin.
 
 ```csharp
 doc.OptimizeResources(optimizationOptions);
 ```
 
-## 5. Adım: Güncellenen PDF belgesini kaydedin
+## Adım 5: Güncellenen PDF belgesini kaydedin
 
- Güncellenen PDF belgesini kullanarak kaydedin.`Save` yöntemi`doc` nesne. PDF dosyasının çıktı yolunu belirtin.
+ Güncellenen PDF belgesini kullanarak kaydedin`Save` yöntemi`doc` nesne. PDF dosyası için çıktı yolunu belirtin.
 
 ```csharp
 doc.Save(dataDir + "FlateDecodeCompression.pdf");
 ```
 
-### Aspose.PDF for .NET kullanılarak Flate Decode Sıkıştırma için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanılarak Flate Kod Çözme Sıkıştırması için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Belgeyi Aç
+// Açık Belge
 Document doc = new Document(dataDir + "AddImage.pdf");
-// OptimizasyonSeçeneklerini Başlat
+// OptimizationOptions'ı Başlat
 var optimizationOptions = new Aspose.Pdf.Optimization.OptimizationOptions();
 // FlateDecode Sıkıştırma kullanarak görüntüyü optimize etmek için optimizasyon seçeneklerini Flate olarak ayarlayın
 optimizationOptions.ImageCompressionOptions.Encoding = ImageEncoding.Flate;
-// Optimizasyon Seçeneklerini Ayarlayın
+// Optimizasyon Seçeneklerini Ayarla
 doc.OptimizeResources(optimizationOptions);
 // Belgeyi Kaydet
 doc.Save(dataDir + "FlateDecodeCompression.pdf");
@@ -68,46 +68,46 @@ doc.Save(dataDir + "FlateDecodeCompression.pdf");
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET ile Flate Decode sıkıştırmasını kullanarak görüntüleri başarıyla PDF'ye sıkıştırdınız. Optimize edilmiş PDF dosyası belirtilen dizine kaydedilir. Artık bu PDF dosyasını daha verimli depolama veya paylaşım ihtiyaçlarınız için kullanabilirsiniz.
+Tebrikler! Flate Decode sıkıştırma ile Aspose.PDF for .NET kullanarak görüntüleri başarıyla PDF'ye sıkıştırdınız. Optimize edilmiş PDF dosyası belirtilen dizine kaydedildi. Artık bu PDF dosyasını daha verimli depolama veya paylaşım ihtiyaçları için kullanabilirsiniz.
 
-### SSS'ler
+### SSS
 
-#### S: Flate Decode sıkıştırması nedir ve neden PDF belgelerinde kullanılır?
+#### S: Flate Decode sıkıştırması nedir ve PDF belgelerinde neden kullanılır?
 
-C: Flate Decode sıkıştırması, bir PDF belgesindeki verilerin boyutunu azaltmak için yaygın olarak kullanılan bir veri sıkıştırma yöntemidir. Özellikle görüntüleri sıkıştırmak, genel dosya boyutunu azaltmak ve depolama ve iletim sırasında verimliliği artırmak için etkilidir.
+A: Flate Decode sıkıştırma, bir PDF belgesindeki verilerin boyutunu azaltmak için yaygın olarak kullanılan bir veri sıkıştırma yöntemidir. Özellikle görüntüleri sıkıştırmak, genel dosya boyutunu azaltmak ve depolama ve iletim sırasında verimliliği artırmak için etkilidir.
 
-#### S: Aspose.PDF for .NET, bir PDF belgesinde Flate Decode sıkıştırmasını nasıl kolaylaştırır?
+#### S: Aspose.PDF for .NET, bir PDF belgesindeki Flate Decode sıkıştırmasını nasıl kolaylaştırır?
 
-C: Aspose.PDF for .NET, bir PDF belgesi açmak, görüntülere Flate Decode sıkıştırması uygulamak ve optimize edilmiş PDF dosyasını sıkıştırılmış görüntülerle kaydetmek için kolaylaştırılmış bir süreç sağlar.
+A: Aspose.PDF for .NET, bir PDF belgesini açmak, resimlere Flate Decode sıkıştırması uygulamak ve optimize edilmiş PDF dosyasını sıkıştırılmış resimlerle kaydetmek için kolaylaştırılmış bir süreç sağlar.
 
-#### S: Bir PDF belgesinde görüntü optimizasyonu için Flate Decode sıkıştırmasını kullanmanın avantajları nelerdir?
+#### S: PDF belgesinde görüntü optimizasyonu için Flate Decode sıkıştırmasını kullanmanın avantajları nelerdir?
 
-C: Flate Decode sıkıştırması, etkili ve kayıpsız görüntü sıkıştırması sunarak görüntü kalitesinden ödün vermeden dosya boyutlarının küçültülmesini sağlar. Bu, daha hızlı belge yüklemeye ve gelişmiş veri aktarımına yol açabilir.
+A: Flate Decode sıkıştırması, görüntü kalitesinden ödün vermeden dosya boyutlarının azaltılmasıyla sonuçlanan verimli ve kayıpsız görüntü sıkıştırması sunar. Bu, daha hızlı belge yükleme ve iyileştirilmiş veri aktarımına yol açabilir.
 
-####  S: Nasıl`ImageEncoding.Flate` option contribute to image optimization in Flate Decode compression?
+####  S: Nasıl?`ImageEncoding.Flate` option contribute to image optimization in Flate Decode compression?
 
- C:`ImageEncoding.Flate`seçeneği, PDF belgesindeki görüntü optimizasyonu için Flate Decode sıkıştırmasının kullanımını belirterek görüntülerin bu yöntem kullanılarak etkili bir şekilde sıkıştırılmasını sağlar.
+ A:`ImageEncoding.Flate`seçeneği, PDF belgesinde görüntü optimizasyonu için Flate Decode sıkıştırmasının kullanımını belirtir ve bu yöntem kullanılarak görüntülerin etkili bir şekilde sıkıştırılmasını sağlar.
 
-#### S: Flate Decode sıkıştırmasını bir PDF belgesindeki belirli görüntülere seçerek uygulayabilir miyim?
+#### S: Flate Decode sıkıştırmasını PDF belgesindeki belirli resimlere seçici olarak uygulayabilir miyim?
 
- C: Evet, Flate Decode sıkıştırmasını belirli görüntülere seçerek uygulayabilirsiniz.`ImageCompressionOptions.Encoding` mülkiyet`ImageEncoding.Flate` İstenilen görseller için
+ A: Evet, Flate Decode sıkıştırmasını belirli görüntülere seçerek uygulayabilirsiniz.`ImageCompressionOptions.Encoding` mülk`ImageEncoding.Flate` İstenilen görseller için.
 
-####  S: Nasıl`OptimizeResources` method work to apply Flate Decode compression in a PDF document?
+####  S: Nasıl?`OptimizeResources` method work to apply Flate Decode compression in a PDF document?
 
- C:`OptimizeResources` yöntemi, PDF belgesini analiz eder ve Flate Decode sıkıştırması da dahil olmak üzere belirtilen optimizasyon seçeneklerini görüntülere ve diğer kaynaklara uygulayarak dosya boyutunu etkili bir şekilde azaltır.
+ A:`OptimizeResources` yöntem PDF belgesini analiz eder ve Flate Decode sıkıştırması da dahil olmak üzere belirtilen optimizasyon seçeneklerini resimlere ve diğer kaynaklara uygulayarak dosya boyutunu etkili bir şekilde azaltır.
 
-#### S: PDF belgelerinde Flate Decode sıkıştırmasından hangi senaryolar yararlanır?
+#### S: Flate Decode sıkıştırmasının PDF belgelerinde hangi senaryolarda faydası olur?
 
-C: Flate Decode sıkıştırması, PDF dosyalarını çevrimiçi dağıtım, arşivleme veya paylaşım için hazırlarken, yüksek kaliteli görüntüleri korurken dosya boyutunu küçülttüğü için özellikle faydalıdır.
+A: Flate Decode sıkıştırma, özellikle PDF dosyalarını çevrimiçi dağıtım, arşivleme veya paylaşım için hazırlarken faydalıdır, çünkü yüksek kaliteli görüntüleri korurken dosya boyutunu azaltır.
 
-#### S: Flate Decode sıkıştırması, PDF belgesindeki görüntülerin görsel kalitesini etkiler mi?
+#### S: Flate Decode sıkıştırması PDF belgesindeki görsellerin görsel kalitesini etkiler mi?
 
-C: Flate Decode sıkıştırması kayıpsız bir sıkıştırma yöntemidir, yani görüntülerin görsel kalitesini etkilemez. Dosya boyutu küçültüldüğünde görüntüler değişmeden kalır.
+A: Flate Decode sıkıştırması kayıpsız bir sıkıştırma yöntemidir, yani görüntülerin görsel kalitesini etkilemez. Dosya boyutu azaltılırken görüntüler değişmeden kalır.
 
-#### S: Flate Decode sıkıştırmasını tersine çevirmek ve orijinal görüntüleri optimize edilmiş PDF'den geri yüklemek mümkün müdür?
+#### S: Flate Decode sıkıştırmasını tersine çevirmek ve optimize edilmiş PDF'den orijinal görüntüleri geri yüklemek mümkün müdür?
 
-C: Hayır, Flate Decode sıkıştırması kayıpsız bir yöntemdir ve orijinal görüntü verileri korunur. Orijinal görüntülere erişmek için sıkıştırmayı tersine çevirmeye gerek yoktur.
+A: Hayır, Flate Decode sıkıştırması kayıpsız bir yöntemdir ve orijinal görüntü verileri korunur. Orijinal görüntülere erişmek için sıkıştırmayı tersine çevirmeye gerek yoktur.
 
 #### S: Flate Decode sıkıştırması PDF belgelerinin performansını nasıl etkiler?
 
-C: Flate Decode sıkıştırması, dosya boyutunu azaltarak PDF belgelerinin performansını artırabilir, böylece daha hızlı yükleme süreleri ve daha verimli veri aktarımı sağlanır.
+C: Flate Decode sıkıştırması, dosya boyutunu azaltarak PDF belgelerinin performansını iyileştirebilir, bu da daha hızlı yükleme sürelerine ve daha verimli veri aktarımına yol açabilir.

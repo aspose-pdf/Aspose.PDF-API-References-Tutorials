@@ -1,26 +1,26 @@
 ---
-title: Użyj skryptu lateksowego w pliku PDF
-linktitle: Użyj skryptu lateksowego w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak używać skryptu Latex do dodawania wyrażeń matematycznych lub formuł w dokumencie PDF przy użyciu Aspose.PDF dla .NET.
+title: Użyj skryptu Latex w pliku PDF
+linktitle: Użyj skryptu Latex w pliku PDF
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak używać skryptu Latex do dodawania wyrażeń matematycznych lub wzorów w dokumencie PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 550
 url: /pl/net/programming-with-text/use-latex-script/
 ---
-W tym samouczku wyjaśniono, jak używać skryptu Latex do dodawania wyrażeń matematycznych lub formuł w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Dostarczony kod źródłowy C# demonstruje kroki tworzenia dokumentu, dodawania tabeli z komórką zawierającą skrypt LaTeX i zapisywania dokumentu.
+Ten samouczek wyjaśnia, jak używać skryptu Latex do dodawania wyrażeń matematycznych lub wzorów w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Dostarczony kod źródłowy C# demonstruje kroki tworzenia dokumentu, dodawania tabeli z komórką zawierającą skrypt LaTeX i zapisywania dokumentu.
 
-## Warunki wstępne
+## Wymagania wstępne
 
-Zanim zaczniesz, upewnij się, że masz następujące elementy:
+Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
 
 - Podstawowa znajomość języka programowania C#.
-- Zainstalowana biblioteka Aspose.PDF dla .NET. Możesz go uzyskać ze strony internetowej Aspose lub użyć NuGet, aby zainstalować go w swoim projekcie.
+- Aspose.PDF dla biblioteki .NET jest zainstalowany. Możesz go pobrać ze strony internetowej Aspose lub użyć NuGet, aby zainstalować go w swoim projekcie.
 
 ## Krok 1: Skonfiguruj projekt
 
-Utwórz nowy projekt C# w preferowanym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla .NET.
+Utwórz nowy projekt C# w preferowanym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla platformy .NET.
 
-## Krok 2: Zaimportuj niezbędne przestrzenie nazw
+## Krok 2: Importuj niezbędne przestrzenie nazw
 
 Dodaj następujące dyrektywy using na początku pliku C#, aby zaimportować wymagane przestrzenie nazw:
 
@@ -32,7 +32,7 @@ using Aspose.Pdf.Text;
 
 ## Krok 3: Utwórz i skonfiguruj dokument
 
- Stwórz nowy`Document` obiekt i dodaj do niego stronę:
+ Utwórz nowy`Document` obiekt i dodaj do niego stronę:
 
 ```csharp
 Document doc = new Document();
@@ -48,9 +48,9 @@ Table table = new Table();
 Row row = table.Rows.Add();
 ```
 
-## Krok 5: Dodaj komórkę za pomocą skryptu LaTeX
+## Krok 5: Dodaj komórkę ze skryptem LaTeX
 
- Utwórz komórkę i dodaj a`LatexFragment` zawierający skrypt Latex:
+ Utwórz komórkę i dodaj`LatexFragment` zawierający skrypt Latex:
 
 ```csharp
 string latexText1 = "$123456789+\\sqrt{1}+\\int_a^b f(x)dx$";
@@ -59,7 +59,7 @@ LatexFragment ltext1 = new LatexFragment(latexText1, true);
 cell.Paragraphs.Add(ltext1);
 ```
 
- Należy pamiętać, że`true` parametr w`LatexFragment` konstruktor eliminuje wcięcia akapitu Latex.
+ Należy pamiętać, że`true` parametr w`LatexFragment` Konstruktor eliminuje wcięcia akapitów w programie Latex.
 
 ## Krok 6: Dodaj tabelę do strony
 
@@ -71,13 +71,13 @@ page.Paragraphs.Add(table);
 
 ## Krok 7: Zapisz dokument
 
-Zapisz dokument w pliku PDF:
+Zapisz dokument do pliku PDF:
 
 ```csharp
 doc.Save(dataDir + "LatextScriptInPdf_out.pdf");
 ```
 
-### Przykładowy kod źródłowy dla opcji Użyj skryptu Latex przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla Use Latex Script using Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -89,11 +89,11 @@ Page page = doc.Pages.Add();
 Table table = new Table();
 // Dodaj wiersz do tabeli
 Row row = table.Rows.Add();
-// Dodaj komórkę ze skryptem lateksowym, aby dodać wyrażenia/formuły metematyczne
+// Dodaj komórkę ze skryptem Latex, aby dodać wyrażenia/wzory matematyczne
 string latexText1 = "$123456789+\\sqrt{1}+\\int_a^b f(x)dx$";
 Cell cell = row.Cells.Add();
 cell.Margin = new MarginInfo { Left = 20, Right = 20, Top = 20, Bottom = 20 };
-// Drugi parametr bool konstruktora LatexFragment zapewnia eliminację wcięć akapitów LaTeX.
+// Drugi parametr typu bool konstruktora LatexFragment umożliwia eliminację wcięć akapitów LaTeX.
 LatexFragment ltext1 = new LatexFragment(latexText1, true);
 cell.Paragraphs.Add(ltext1);
 // Dodaj tabelę wewnątrz strony
@@ -104,29 +104,29 @@ doc.Save(dataDir + "LatextScriptInPdf_out.pdf");
 
 ## Wniosek
 
-Gratulacje! Pomyślnie nauczyłeś się używać skryptu Latex do dodawania wyrażeń matematycznych lub formuł w dokumencie PDF przy użyciu Aspose.PDF dla .NET. W tym samouczku przedstawiono szczegółowe instrukcje dotyczące tworzenia dokumentu, dodawania tabeli z komórką zawierającą skrypt LaTeX i zapisywania dokumentu. Możesz teraz włączyć ten kod do własnych projektów C#, aby wygenerować pliki PDF z treścią matematyczną.
+Gratulacje! Udało Ci się nauczyć, jak używać skryptu Latex, aby dodawać wyrażenia matematyczne lub wzory do dokumentu PDF za pomocą Aspose.PDF dla .NET. Ten samouczek zawiera instrukcje krok po kroku dotyczące tworzenia dokumentu, dodawania tabeli z komórką zawierającą skrypt LaTeX i zapisywania dokumentu. Teraz możesz włączyć ten kod do własnych projektów C#, aby generować pliki PDF z treścią matematyczną.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Jaki jest cel samouczka „Użyj skryptu Latex w pliku PDF”?
+#### P: Jaki jest cel poradnika „Użyj skryptu Latex w pliku PDF”?
 
-Odp.: Samouczek „Użyj skryptu Latex w pliku PDF” ma na celu poinstruowanie użytkowników, jak włączyć skrypt LaTeX w celu dodania wyrażeń matematycznych lub formuł w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Samouczek zawiera instrukcje krok po kroku i przykłady kodu C# umożliwiające utworzenie dokumentu, wstawienie tabeli z komórką zawierającą skrypt LaTeX i zapisanie dokumentu.
+A: Samouczek „Użyj skryptu Latex w pliku PDF” ma na celu poprowadzenie użytkowników przez proces włączania skryptu LaTeX w celu dodawania wyrażeń matematycznych lub wzorów w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Samouczek zawiera instrukcje krok po kroku i przykłady kodu C#, aby utworzyć dokument, wstawić tabelę z komórką zawierającą skrypt LaTeX i zapisać dokument.
 
-#### P: W jaki sposób ten samouczek pomaga w używaniu skryptu LaTeX do wyrażeń matematycznych w dokumencie PDF?
+#### P: W jaki sposób ten samouczek pomaga w korzystaniu ze skryptów LaTeX w przypadku wyrażeń matematycznych w dokumencie PDF?
 
-Odp.: Ten samouczek pomaga użytkownikom zrozumieć, jak wykorzystać Aspose.PDF dla .NET w celu dołączenia wyrażeń matematycznych lub formuł zapisanych w skrypcie LaTeX w dokumencie PDF. Postępując zgodnie z podanymi przykładami kodu, użytkownicy mogą bezproblemowo tworzyć dokumenty ze złożoną treścią matematyczną.
+A: Ten samouczek pomaga użytkownikom zrozumieć, jak wykorzystać Aspose.PDF dla .NET, aby uwzględnić wyrażenia matematyczne lub formuły zapisane w skrypcie LaTeX w dokumencie PDF. Postępując zgodnie z podanymi przykładami kodu, użytkownicy mogą bezproblemowo tworzyć dokumenty ze złożoną treścią matematyczną.
 
-#### P: Jakie wymagania wstępne są niezbędne, aby skorzystać z tego samouczka?
+#### P: Jakie warunki wstępne są konieczne, aby móc skorzystać z tego samouczka?
 
-Odp.: Aby pomyślnie wykonać ten samouczek, należy posiadać podstawową wiedzę na temat języka programowania C#. Dodatkowo upewnij się, że masz zainstalowaną bibliotekę Aspose.PDF dla .NET. Możesz go uzyskać ze strony internetowej Aspose lub użyć NuGet, aby zainstalować go w swoim projekcie.
+A: Aby pomyślnie przejść ten samouczek, powinieneś mieć podstawową wiedzę na temat języka programowania C#. Ponadto upewnij się, że masz zainstalowaną bibliotekę Aspose.PDF dla .NET. Możesz ją pobrać ze strony internetowej Aspose lub użyć NuGet, aby zainstalować ją w swoim projekcie.
 
-#### P: Jak skonfigurować projekt tak, aby używał skryptu LaTeX w dokumencie PDF?
+#### P: Jak skonfigurować mój projekt, aby móc używać skryptów LaTeX w dokumencie PDF?
 
-O: Na początek utwórz nowy projekt C# w wybranym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla .NET. Dzięki temu zyskasz niezbędne narzędzia do pracy z dokumentami PDF i skryptem LaTeX.
+A: Na początek utwórz nowy projekt C# w wybranym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla .NET. Zapewni to niezbędne narzędzia do pracy z dokumentami PDF i skryptami LaTeX.
 
-#### P: Jakie przestrzenie nazw muszę zaimportować, aby pracować z Aspose.PDF dla .NET?
+#### P: Jakie przestrzenie nazw muszę zaimportować, aby móc pracować z Aspose.PDF dla .NET?
 
-O: W pliku kodu C# umieść na początku następujące dyrektywy using, aby zaimportować wymagane przestrzenie nazw:
+A: W pliku z kodem C# należy na początku uwzględnić następujące dyrektywy using, aby zaimportować wymagane przestrzenie nazw:
 
 ```csharp
 using Aspose.Pdf;
@@ -134,19 +134,19 @@ using Aspose.Pdf.Tables;
 using Aspose.Pdf.Text;
 ```
 
-Te przestrzenie nazw umożliwią dostęp do klas i funkcjonalności potrzebnych do pracy z dokumentami PDF i skryptami LaTeX.
+Te przestrzenie nazw umożliwiają dostęp do klas i funkcjonalności niezbędnych do pracy z dokumentami PDF i skryptami LaTeX.
 
-#### P: Jak mogę używać skryptu LaTeX do dodawania wyrażeń matematycznych lub formuł w dokumencie PDF?
+#### P: W jaki sposób mogę użyć skryptu LaTeX, aby dodać wyrażenia matematyczne lub wzory do dokumentu PDF?
 
- Odp.: W tym samouczku przedstawiono proces krok po kroku. Po skonfigurowaniu projektu i zaimportowaniu wymaganych przestrzeni nazw utworzysz nową`Document` obiekt, dodaj stronę, a następnie utwórz tabelę z komórką zawierającą skrypt LaTeX. Skrypt LaTeX powinien być zawinięty`$` symbolika. Postępując zgodnie z podanymi przykładami kodu, możesz bezproblemowo zintegrować wyrażenia matematyczne oparte na LaTeX z dokumentem PDF.
+ A: Ten samouczek pokazuje proces krok po kroku. Po skonfigurowaniu projektu i zaimportowaniu wymaganych przestrzeni nazw utworzysz nowy`Document` obiekt, dodaj stronę, a następnie utwórz tabelę z komórką zawierającą skrypt LaTeX. Skrypt LaTeX powinien być zawinięty w`$` symbole. Postępując zgodnie z podanymi przykładami kodu, możesz bezproblemowo zintegrować wyrażenia matematyczne oparte na LaTeX-u ze swoim dokumentem PDF.
 
-#### P: Czy mogę dostosować skrypt LaTeX używany w samouczku?
+#### P: Czy mogę dostosować skrypt LaTeX użyty w samouczku?
 
- O: Absolutnie. Podane przykłady kodu pokazują, jak wstawić skrypt LaTeX dla wyrażenia matematycznego. Możesz modyfikować`latexText1` zmienna zawierająca dowolną formułę matematyczną lub wyrażenie, które chcesz wyświetlić w dokumencie PDF.
+ A: Oczywiście. Podane przykłady kodu pokazują, jak wstawić skrypt LaTeX dla wyrażenia matematycznego. Możesz zmodyfikować`latexText1` zmienna, która może zawierać dowolny wzór matematyczny lub wyrażenie, które chcesz wyświetlić w dokumencie PDF.
 
-#### P: Jak zapisać dokument PDF po dodaniu zawartości opartej na LaTeX?
+#### P: Jak zapisać dokument PDF po dodaniu treści LaTeX?
 
-Odp.: Po dodaniu zawartości opartej na LaTeX do dokumentu PDF możesz go zapisać, korzystając z następującego fragmentu kodu:
+A: Po dodaniu zawartości LaTeX do dokumentu PDF możesz ją zapisać, korzystając z następującego fragmentu kodu:
 
 ```csharp
 doc.Save(dataDir + "LatextScriptInPdf_out.pdf");
@@ -154,6 +154,6 @@ doc.Save(dataDir + "LatextScriptInPdf_out.pdf");
 
  Zastępować`"LatextScriptInPdf_out.pdf"` z żądaną nazwą pliku wyjściowego. Spowoduje to zapisanie dokumentu PDF zawierającego wyrażenia matematyczne zapisane w skrypcie LaTeX.
 
-#### P: Czy mogę dołączyć wiele wyrażeń opartych na LaTeX w jednym dokumencie PDF?
+#### P: Czy mogę umieścić wiele wyrażeń LaTeX w jednym dokumencie PDF?
 
- Odp.: Tak, w tym samym dokumencie PDF możesz umieścić wiele wyrażeń opartych na LaTeX. Po prostu powtórz kroki tworzenia komórek i dodawania`LatexFragment` obiekty do tych komórek, jeśli zajdzie taka potrzeba.
+ A: Tak, możesz uwzględnić wiele wyrażeń opartych na LaTeX w tym samym dokumencie PDF. Po prostu powtórz kroki tworzenia komórek i dodawania`LatexFragment` obiektów do tych komórek w razie potrzeby.

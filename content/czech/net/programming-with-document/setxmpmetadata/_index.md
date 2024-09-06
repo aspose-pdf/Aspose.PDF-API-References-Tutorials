@@ -40,7 +40,7 @@ Nyní, když máte otevřený soubor PDF, můžete začít nastavovat vlastnosti
 - `xmp:Nickname`: Přezdívka nebo alias pro soubor PDF.
 - `xmp:CustomProperty`: Vlastní vlastnost s hodnotou, kterou určíte.
 
- Chcete-li nastavit tyto vlastnosti, můžete použít`Metadata` vlastnictvím`Document` objekt. Zde je příklad:
+ Chcete-li nastavit tyto vlastnosti, můžete použít`Metadata` majetek z`Document` objekt. Zde je příklad:
 
 ```csharp
 // Nastavit vlastnosti
@@ -100,4 +100,4 @@ Odpověď: XMP (Extensible Metadata Platform) je standard pro vkládání metada
 
 #### Otázka: Je možné načíst a přečíst metadata XMP z existujícího souboru PDF?
 
- Odpověď: Ano, Aspose.PDF for .NET poskytuje možnost číst a získávat metadata XMP z existujícího souboru PDF. Můžete použít`Metadata` vlastnictvím`Document` třídy pro přístup k metadatům XMP a načtení hodnot konkrétních vlastností.
+ Odpověď: Ano, Aspose.PDF for .NET poskytuje možnost číst a získávat metadata XMP z existujícího souboru PDF. Můžete použít`Metadata` majetek z`Document` třídy pro přístup k metadatům XMP a načtení hodnot konkrétních vlastností.

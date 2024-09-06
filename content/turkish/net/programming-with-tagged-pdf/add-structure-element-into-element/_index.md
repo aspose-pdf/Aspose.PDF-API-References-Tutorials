@@ -1,28 +1,28 @@
 ---
-title: Elemana Yapı Elemanı Ekleme
-linktitle: Elemana Yapı Elemanı Ekleme
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET kullanarak PDF belgesindeki öğeye yapı öğesi eklemek için adım adım kılavuz.
+title: Elemana Yapı Elemanı Ekle
+linktitle: Elemana Yapı Elemanı Ekle
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak PDF belgesine yapı öğesi eklemeye yönelik adım adım kılavuz.
 type: docs
 weight: 20
 url: /tr/net/programming-with-tagged-pdf/add-structure-element-into-element/
 ---
-Bu eğitimde size Aspose.PDF for .NET kullanarak bir PDF belgesindeki bir öğeye yapı öğesinin nasıl ekleneceği konusunda adım adım bir kılavuz sunacağız. Aspose.PDF, PDF belgelerini programlı olarak oluşturmanıza, değiştirmenize ve dönüştürmenize olanak tanıyan güçlü bir kütüphanedir. Aspose.PDF'in işaretlenmiş içerik yapısı özelliklerini kullanarak PDF belgenizde hiyerarşik bir yapı oluşturabilirsiniz.
+Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF belgesindeki bir öğeye bir yapı öğesinin nasıl ekleneceği konusunda adım adım bir kılavuz sağlayacağız. Aspose.PDF, PDF belgelerini programatik olarak oluşturmanıza, düzenlemenize ve dönüştürmenize olanak tanıyan güçlü bir kütüphanedir. Aspose.PDF'nin işaretli içerik yapısı özelliklerini kullanarak PDF belgenizde hiyerarşik bir yapı oluşturabilirsiniz.
 
-## Önkoşullar
+## Ön koşullar
 
-Başlamadan önce aşağıdaki önkoşulların mevcut olduğundan emin olun:
+Başlamadan önce aşağıdaki ön koşulların mevcut olduğundan emin olun:
 
-1. .NET framework ile yüklenen Visual Studio.
+1. .NET framework ile Visual Studio kuruldu.
 2. .NET için Aspose.PDF kütüphanesi.
 
 ## Adım 1: Proje Kurulumu
 
-Başlamak için Visual Studio'da yeni bir proje oluşturun ve Aspose.PDF for .NET kitaplığına bir referans ekleyin. Kütüphaneyi Aspose resmi web sitesinden indirebilir ve makinenize kurabilirsiniz.
+Başlamak için, Visual Studio'da yeni bir proje oluşturun ve Aspose.PDF for .NET kütüphanesine bir referans ekleyin. Kütüphaneyi Aspose resmi web sitesinden indirebilir ve makinenize kurabilirsiniz.
 
-## 2. Adım: Gerekli ad alanlarını içe aktarın
+## Adım 2: Gerekli ad alanlarını içe aktarın
 
-Aspose.PDF tarafından sağlanan sınıflara ve yöntemlere erişmek için gereken ad alanlarını C# kod dosyanıza aktarın:
+C# kod dosyanıza, Aspose.PDF tarafından sağlanan sınıflara ve yöntemlere erişmek için gereken ad alanlarını içe aktarın:
 
 ```csharp
 using System;
@@ -30,9 +30,9 @@ using Aspose.Pdf;
 using Aspose.Pdf.Tagged;
 ```
 
-## Adım 3: PDF belgesinin oluşturulması ve yapılandırılmış öğelerin tanımlanması
+## Adım 3: PDF belgesini oluşturma ve yapılandırılmış öğeleri tanımlama
 
-PDF belgesi oluşturmak ve yapılandırılmış öğeleri tanımlamak için aşağıdaki kodu kullanın:
+Bir PDF belgesi oluşturmak ve yapılandırılmış öğeleri tanımlamak için aşağıdaki kodu kullanın:
 
 ```csharp
 
@@ -96,7 +96,7 @@ p4.AppendChild(span42);
 p4.SetText(".");
 ```
 
-Bu kod boş bir PDF belgesi oluşturur ve paragraflar ve açıklıklar gibi yapılandırılmış öğeler ekler. Her yapı elemanı Aspose.PDF tarafından sağlanan yöntemler kullanılarak oluşturulur.
+Bu kod boş bir PDF belgesi oluşturur ve paragraflar ve aralıklar gibi yapılandırılmış öğeler ekler. Her yapı öğesi Aspose.PDF tarafından sağlanan yöntemler kullanılarak oluşturulur.
 
 ## Adım 4: PDF Belgesini Kaydetme
 
@@ -106,21 +106,21 @@ PDF belgesini kaydetmek için aşağıdaki kodu kullanın:
 document. Save(outFile);
 ```
 
-Bu kod, yapılandırılmış öğeleri içeren PDF belgesini belirtilen bir dosyaya kaydeder.
+Bu kod, yapılandırılmış öğeler içeren PDF belgesini belirtilen bir dosyaya kaydeder.
 
-### Aspose.PDF for .NET kullanarak Yapı Elemanını Elemana Eklemek için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Elemana Yapı Elemanı Ekleme için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
 string logFile = dataDir + "46144_log.xml";
 // Belge oluşturma ve Etiketli Pdf İçeriği alma
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
-// Belgenin Başlığını ve Doğa Dilini Ayarlama
+// Belge için Başlık ve Doğa Dilinin Ayarlanması
 taggedContent.SetTitle("Text Elements Example");
 taggedContent.SetLanguage("en-US");
-// Kök yapı öğesini alma (Belge yapısı öğesi)
+// Kök yapı elemanını alma (Belge yapı elemanı)
 StructureElement rootElement = taggedContent.RootElement;
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p1);
@@ -164,9 +164,9 @@ span42.SetText("Span_42");
 p4.AppendChild(span41);
 p4.AppendChild(span42);
 p4.SetText(".");
-// Etiketli Pdf Belgesini Kaydet
+// Etiketli PDF Belgesini Kaydet
 document.Save(outFile);
-// PDF/UA uyumluluğunu kontrol etme
+// PDF/UA uyumluluğunun kontrol edilmesi
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
@@ -175,42 +175,42 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ## Çözüm
 
-Bu eğitimde Aspose.PDF for .NET kullanarak bir PDF belgesindeki bir öğeye nasıl yapı öğesi ekleyeceğinizi öğrendiniz. Aspose.PDF'in işaretlenmiş içerik yapısı özelliklerini kullanarak PDF belgenizde hiyerarşik bir yapı oluşturabilirsiniz, bu da içeriği yönetmenizi ve içeriğin içinde gezinmenizi kolaylaştırır.
+Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF belgesindeki bir öğeye bir yapı öğesinin nasıl ekleneceğini öğrendiniz. Aspose.PDF'nin işaretli içerik yapısı özelliklerini kullanarak, PDF belgenizde hiyerarşik bir yapı oluşturabilir, bu da içeriği yönetmeyi ve gezinmeyi kolaylaştırır.
 
-### SSS'ler
+### SSS
 
 #### S: Aspose.PDF for .NET kullanarak bir PDF belgesindeki bir öğeye yapı öğesi eklemenin amacı nedir?
 
-C: Aspose.PDF for .NET kullanarak bir PDF belgesindeki bir öğeye yapı öğesi eklemek, belgenin içeriğinde hiyerarşik bir yapı oluşturmanıza olanak tanır. Bu hiyerarşik yapı, içeriğin organizasyonunu ve gezinmesini geliştirerek belirli öğelerin yönetilmesini ve bunlara erişilmesini kolaylaştırır.
+A: Aspose.PDF for .NET kullanarak bir PDF belgesindeki bir öğeye bir yapı öğesi eklemek, belgenin içeriğinde hiyerarşik bir yapı oluşturmanıza olanak tanır. Bu hiyerarşik yapı, içeriğin organizasyonunu ve gezinmesini geliştirerek belirli öğeleri yönetmeyi ve erişmeyi kolaylaştırır.
 
-#### S: Aspose.PDF kütüphanesi bir PDF belgesine yapı elemanları eklemeye nasıl yardımcı olur?
+#### S: Aspose.PDF kütüphanesi bir PDF belgesine yapı öğeleri eklemeye nasıl yardımcı olur?
 
-C: Aspose.PDF for .NET, PDF belgelerini programlı olarak oluşturma, değiştirme ve dönüştürme yetenekleri sağlayan güçlü bir kitaplıktır. Bu öğreticide, yapı öğelerini oluşturmak ve PDF belgesinin içeriğine eklemek için kitaplığın işaretli içerik yapısı özelliklerinden yararlanılır.
+A: Aspose.PDF for .NET, PDF belgelerini programatik olarak oluşturma, düzenleme ve dönüştürme yetenekleri sağlayan güçlü bir kütüphanedir. Bu eğitimde, kütüphanenin işaretli içerik yapısı özellikleri, PDF belgesinin içeriğine yapı öğeleri oluşturmak ve eklemek için kullanılır.
 
-#### S: Aspose.PDF for .NET kullanarak bir PDF belgesine yapı elemanları eklemenin önkoşulları nelerdir?
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesine yapı öğeleri eklemenin ön koşulları nelerdir?
 
-C: Başlamadan önce, Visual Studio'nun .NET framework ile kurulu olduğundan ve projenizde .NET için Aspose.PDF kütüphanesinin referans alındığından emin olun.
+C: Başlamadan önce, Visual Studio'nun .NET Framework ile birlikte yüklü olduğundan ve projenizde .NET için Aspose.PDF kütüphanesine başvurulduğundan emin olun.
 
-#### S: Sağlanan C# kodu yapı öğelerini nasıl oluşturur ve PDF belgesinin içeriğine ekler?
+#### S: Sağlanan C# kodu PDF belgesinin içeriğine yapı öğelerini nasıl oluşturur ve ekler?
 
-C: Kod, bir PDF belgesinin nasıl oluşturulacağını, bir kök yapı öğesinin nasıl tanımlanacağını ve buna paragraflar ve açıklıklar gibi çeşitli yapılandırılmış öğelerin nasıl ekleneceğini gösterir. Her yapılandırılmış öğe, Aspose.PDF tarafından sağlanan yöntemler kullanılarak oluşturulur ve hiyerarşik bir yapı oluşturmanıza olanak tanır.
+A: Kod, bir PDF belgesinin nasıl oluşturulacağını, bir kök yapı öğesinin nasıl tanımlanacağını ve paragraflar ve açıklıklar gibi çeşitli yapılandırılmış öğelerin nasıl ekleneceğini gösterir. Her yapılandırılmış öğe, Aspose.PDF tarafından sağlanan yöntemler kullanılarak oluşturulur ve hiyerarşik bir yapı oluşturmanıza olanak tanır.
 
-#### S: PDF belgesine eklediğim yapı öğelerinin türlerini özelleştirebilir miyim?
+#### S: PDF belgesine eklediğim yapı elemanlarının türlerini özelleştirebilir miyim?
 
-C: Evet, Aspose.PDF kütüphanesinin sağladığı farklı yöntemleri keşfederek yapı elemanlarının türlerini özelleştirebilirsiniz. Kod, örnek olarak paragrafları ve kapsamları gösterir, ancak gerektiğinde başka türde yapılandırılmış öğeler oluşturabilir ve ekleyebilirsiniz.
+C: Evet, Aspose.PDF kütüphanesi tarafından sağlanan farklı yöntemleri keşfederek yapı öğelerinin türlerini özelleştirebilirsiniz. Kod, örnek olarak paragrafları ve aralıkları gösterir, ancak ihtiyaç duyduğunuzda diğer türde yapılandırılmış öğeler oluşturabilir ve ekleyebilirsiniz.
 
-#### S: Eklenen yapı öğeleri arasındaki hiyerarşik ilişkiyi nasıl tanımlarım?
+#### S: Eklenen yapı elemanları arasındaki hiyerarşik ilişkiyi nasıl tanımlarım?
 
- C: Yapı öğeleri arasındaki hiyerarşik ilişki, onları üst öğelerine ekleme sıranıza göre tanımlanır. Kodda ebeveyn-çocuk ilişkileri şu şekilde kurulur:`AppendChild` yöntem.
+ A: Yapı elemanları arasındaki hiyerarşik ilişki, bunları üst elemanlarına eklediğiniz sıraya göre tanımlanır. Kodda, üst-alt ilişkileri,`AppendChild` Yöntem.
 
 #### S: PDF belgesinde hiyerarşik bir yapı oluşturmanın faydaları nelerdir?
 
-C: Bir PDF belgesinde hiyerarşik bir yapı oluşturmak, belgenin erişilebilirliğini, gezinmesini ve organizasyonunu geliştirir. Yardımcı teknolojilerin belgenin içeriğini daha iyi yorumlayıp iletmesine olanak tanıyarak belgeyi engelli bireyler için daha kullanıcı dostu hale getirir.
+A: PDF belgesinde hiyerarşik bir yapı oluşturmak erişilebilirliğini, gezinmesini ve organizasyonunu geliştirir. Yardımcı teknolojilerin belgenin içeriğini daha iyi yorumlamasına ve iletmesine olanak tanır ve engelli bireyler için daha kullanıcı dostu hale getirir.
 
-#### S: Yapı öğelerini ekledikten sonra PDF/UA uyumluluğunu nasıl doğrulayabilirim?
+#### S: Yapı elemanlarını ekledikten sonra PDF/UA uyumluluğunu nasıl doğrulayabilirim?
 
- C: Eğitimde sağlanan kod, PDF/UA uyumluluğunun nasıl doğrulanacağını gösterir.`Validate` yöntem. Belgeyi PDF/UA standardına göre doğrulayarak eklenen yapı öğelerinin erişilebilirlik yönergelerine uygun olduğundan emin olabilirsiniz.
+ A: Eğitimde sağlanan kod, PDF/UA uyumluluğunun nasıl doğrulanacağını göstermektedir.`Validate` yöntem. Belgeyi PDF/UA standardına göre doğrulayarak, eklenen yapı öğelerinin erişilebilirlik yönergelerine uygun olduğundan emin olabilirsiniz.
 
 #### S: Bu yaklaşımı mevcut bir PDF belgesine yapı öğeleri eklemek için kullanabilir miyim?
 
-C: Evet, mevcut bir PDF belgesine yapı öğeleri eklemek için sağlanan yaklaşımı değiştirebilirsiniz. Yeni bir belge oluşturmak yerine mevcut belgeyi Aspose.PDF kullanarak yükleyebilir ve ardından yapı elemanlarını eklemek için benzer adımları takip edebilirsiniz.
+A: Evet, mevcut bir PDF belgesine yapı öğeleri eklemek için sağlanan yaklaşımı değiştirebilirsiniz. Yeni bir belge oluşturmak yerine, Aspose.PDF kullanarak mevcut belgeyi yükler ve ardından yapı öğelerini eklemek için benzer adımları izlersiniz.

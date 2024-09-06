@@ -1,8 +1,8 @@
 ---
-title: Pobieraj adnotacje ze stron PDF
-linktitle: Pobieraj adnotacje ze stron PDF
-second_title: Aspose.PDF Interfejs API przetwarzania plików Java w formacie Java
-description: Dowiedz się, jak pobierać adnotacje ze stron PDF przy użyciu Aspose.PDF dla Java. Zapoznaj się z instrukcjami krok po kroku i przykładami kodu zawartymi w tym obszernym przewodniku.
+title: Pobierz adnotacje ze stron PDF
+linktitle: Pobierz adnotacje ze stron PDF
+second_title: Aspose.PDF Java PDF Processing API
+description: Dowiedz się, jak pobierać adnotacje ze stron PDF za pomocą Aspose.PDF dla Java. Zapoznaj się z instrukcjami krok po kroku i przykładami kodu w tym kompleksowym przewodniku.
 type: docs
 weight: 13
 url: /pl/java/pdf-annotations/retrieve-annotations-pdf-pages/
@@ -10,20 +10,20 @@ url: /pl/java/pdf-annotations/retrieve-annotations-pdf-pages/
 
 ## Wstęp
 
-W świecie przetwarzania dokumentów pliki PDF odgrywają kluczową rolę. Stanowią uniwersalny format udostępniania i prezentowania informacji. Jednak pliki PDF często zawierają adnotacje zawierające cenne informacje. W tym artykule omówiono sposób pobierania adnotacji ze stron PDF przy użyciu Aspose.PDF dla Java, potężnego interfejsu API do manipulacji plikami PDF.
+W świecie przetwarzania dokumentów pliki PDF odgrywają kluczową rolę. Są wszechstronnym formatem udostępniania i prezentowania informacji. Jednak pliki PDF często zawierają adnotacje, które zawierają cenne informacje. W tym artykule opisano, jak pobierać adnotacje ze stron PDF za pomocą Aspose.PDF for Java, potężnego interfejsu API do manipulacji plikami PDF.
 
-## Warunki wstępne
-Zanim zagłębimy się w szczegóły, upewnij się, że spełnione są następujące wymagania wstępne:
-- [Zestaw programistyczny Java (JDK)](https://www.oracle.com/java/technologies/javase-downloads.html)
+## Wymagania wstępne
+Zanim przejdziemy do szczegółów, upewnij się, że spełnione są następujące wymagania wstępne:
+- [Zestaw narzędzi programistycznych Java (JDK)](https://www.oracle.com/java/technologies/javase-downloads.html)
 - [Aspose.PDF dla Java](https://releases.aspose.com/pdf/java/): Pobierz i zainstaluj bibliotekę.
 
-## Odzyskiwanie adnotacji — krok po kroku
+## Pobieranie adnotacji — krok po kroku
 
 ### Krok 1: Utwórz projekt Java
-Rozpocznij od utworzenia nowego projektu Java w preferowanym zintegrowanym środowisku programistycznym (IDE). Skonfiguruj strukturę projektu i upewnij się, że dodałeś bibliotekę Aspose.PDF do ścieżki klas.
+Zacznij od utworzenia nowego projektu Java w preferowanym zintegrowanym środowisku programistycznym (IDE). Skonfiguruj strukturę projektu i upewnij się, że dodałeś bibliotekę Aspose.PDF do swojej ścieżki klas.
 
-### Krok 2: Zaimportuj niezbędne pakiety
-W kodzie Java zaimportuj wymagane klasy Aspose.PDF, aby pracować z dokumentami PDF. Pakiety te obejmują:
+### Krok 2: Importuj niezbędne pakiety
+W kodzie Java zaimportuj wymagane klasy Aspose.PDF, aby pracować z dokumentami PDF. Te pakiety obejmują:
 ```java
 import com.aspose.pdf.Document;
 import com.aspose.pdf.Page;
@@ -36,14 +36,14 @@ Załaduj dokument PDF, z którego chcesz pobrać adnotacje:
 Document pdfDocument = new Document("sample.pdf");
 ```
 
-### Krok 4: Uzyskaj dostęp do stron PDF
+### Krok 4: Dostęp do stron PDF
 Uzyskaj dostęp do stron dokumentu PDF:
 ```java
 Page page = pdfDocument.getPages().get_Item(1); // Zastąp żądanym numerem strony.
 ```
 
 ### Krok 5: Pobierz adnotacje
-Aby pobrać adnotacje ze strony, możesz użyć pętli i filtrować interesujące Cię adnotacje, takie jak adnotacje tekstowe:
+Aby pobrać adnotacje ze strony, możesz użyć pętli i filtrować adnotacje, które cię interesują, np. adnotacje tekstowe:
 ```java
 for (com.aspose.pdf.Annotation annotation : page.getAnnotations()) {
     if (annotation instanceof TextAnnotation) {
@@ -56,29 +56,29 @@ for (com.aspose.pdf.Annotation annotation : page.getAnnotations()) {
 
 ### Krok 6: Uruchom kod
 
-Skompiluj i uruchom kod Java, aby pobrać adnotacje ze strony PDF. Możesz dostosować ten kod, aby spełnić Twoje specyficzne wymagania, takie jak zapisanie pobranych adnotacji do pliku lub wykonanie dalszej analizy.
+Skompiluj i uruchom kod Java, aby pobrać adnotacje ze strony PDF. Możesz dostosować ten kod, aby spełniał Twoje szczególne wymagania, takie jak zapisywanie pobranych adnotacji do pliku lub przeprowadzanie dalszych analiz.
 
 ## Wniosek
 
-W tym samouczku omówiliśmy, jak pobierać adnotacje ze stron PDF przy użyciu Aspose.PDF dla Java. Pliki PDF często zawierają cenne komentarze i notatki, a dzięki temu interfejsowi API można łatwo uzyskać do nich dostęp i manipulować nimi w różnych celach. Niezależnie od tego, czy chcesz wyodrębnić komentarze do analizy, czy zintegrować je z własnymi aplikacjami, Aspose.PDF dla Java zapewnia potężne rozwiązanie.
+W tym samouczku przyjrzeliśmy się sposobowi pobierania adnotacji ze stron PDF za pomocą Aspose.PDF dla Java. Pliki PDF często zawierają cenne komentarze i notatki, a dzięki temu API możesz łatwo uzyskać do nich dostęp i manipulować nimi w różnych celach. Niezależnie od tego, czy potrzebujesz wyodrębnić komentarze do analizy, czy zintegrować je z własnymi aplikacjami, Aspose.PDF dla Java zapewnia potężne rozwiązanie.
 
-## Często zadawane pytania
+## Najczęściej zadawane pytania
 
-### Jak mogę zainstalować Aspose.PDF dla Java?
+### Jak zainstalować Aspose.PDF dla Java?
 
- Aby zainstalować Aspose.PDF dla Java, odwiedź łącze pobierania pod adresem[Tutaj](https://releases.aspose.com/pdf/java/) i postępuj zgodnie z instrukcjami instalacji zamieszczonymi na stronie internetowej.
+ Aby zainstalować Aspose.PDF dla Java, odwiedź łącze pobierania pod adresem[Tutaj](https://releases.aspose.com/pdf/java/) i postępuj zgodnie z instrukcjami instalacji podanymi na stronie internetowej.
 
-### Czy mogę pobrać adnotacje z określonych stron w dokumencie PDF?
-Tak, możesz pobrać adnotacje z określonych stron dokumentu PDF, podając numer strony w kodzie. Po prostu załaduj dokument PDF i uzyskaj dostęp do żądanej strony za pomocą`get_Item` metoda.
+### Czy mogę pobierać adnotacje z konkretnych stron dokumentu PDF?
+Tak, możesz pobrać adnotacje z określonych stron dokumentu PDF, określając numer strony w kodzie. Po prostu załaduj dokument PDF i uzyskaj dostęp do żądanej strony za pomocą`get_Item` metoda.
 
 ### Jakie typy adnotacji mogę pobrać za pomocą Aspose.PDF dla Java?
 
-Aspose.PDF dla Java obsługuje pobieranie różnych typów adnotacji, w tym adnotacji tekstowych, adnotacji wyróżnień i innych. Możesz filtrować adnotacje na podstawie ich typu i uzyskać dostęp do ich właściwości w kodzie Java.
+Aspose.PDF for Java obsługuje pobieranie różnych typów adnotacji, w tym adnotacji tekstowych, adnotacji wyróżnień i innych. Możesz filtrować adnotacje na podstawie ich typu i uzyskiwać dostęp do ich właściwości w kodzie Java.
 
-### Czy Aspose.PDF dla Java nadaje się zarówno do użytku osobistego, jak i korporacyjnego?
+### Czy Aspose.PDF for Java nadaje się zarówno do użytku prywatnego, jak i korporacyjnego?
 
-Tak, Aspose.PDF dla Java jest odpowiedni zarówno do użytku osobistego, jak i korporacyjnego. Zapewnia wszechstronny zestaw funkcji do pracy z dokumentami PDF, dzięki czemu jest cenny w szerokim zakresie zastosowań.
+Tak, Aspose.PDF for Java nadaje się zarówno do użytku osobistego, jak i korporacyjnego. Zapewnia wszechstronny zestaw funkcji do pracy z dokumentami PDF, co czyni go cennym dla szerokiej gamy aplikacji.
 
 ### Czy mogę zautomatyzować proces pobierania adnotacji przy użyciu Aspose.PDF dla Java?
 
-Tak, możesz zautomatyzować proces pobierania adnotacji za pomocą Aspose.PDF dla Java. Można tworzyć skrypty lub aplikacje, które programowo pobierają adnotacje z dokumentów PDF, co czyni je cennym narzędziem w przepływach pracy związanych z przetwarzaniem dokumentów.
+Tak, możesz zautomatyzować proces pobierania adnotacji za pomocą Aspose.PDF dla Java. Możesz tworzyć skrypty lub aplikacje, które programowo pobierają adnotacje z dokumentów PDF, co czyni je cennym narzędziem dla przepływów pracy przetwarzania dokumentów.

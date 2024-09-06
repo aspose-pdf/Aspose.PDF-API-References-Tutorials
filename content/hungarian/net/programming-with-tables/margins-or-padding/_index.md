@@ -139,7 +139,7 @@ Console.WriteLine("\nCell and table border width setup successfully.\nFile saved
 ```
 
 ## Következtetés
-Gratulálunk! Sikeresen megtanulta, hogyan állíthat be margókat vagy kitöltést egy táblázatban az Aspose.PDF for .NET segítségével. Ez a tudás segít a dokumentum formázási képességeinek fejlesztésében, és a táblázatok látványossá tételében.
+Gratulálok! Sikeresen megtanulta, hogyan állíthat be margókat vagy kitöltést egy táblázatban az Aspose.PDF for .NET segítségével. Ez a tudás segít a dokumentum formázási képességeinek fejlesztésében, és a táblázatok látványossá tételében.
 
 ### GYIK
 
@@ -149,7 +149,7 @@ V: Igen, az Aspose.PDF for .NET használatával különböző margókat vagy kit
 
 #### K: Hogyan változtathatom meg a táblázat keretének színét vagy stílusát?
 
- V: A táblázat szegélyszínének vagy stílusának megváltoztatásához módosíthatja a`Color` és`Width` tulajdonságai a`BorderInfo` tárgy. Az adott példában a keret színét feketére és 1F (egy pont) szélesre állítottuk a segítségével`tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);`. A színt és a szélességet igény szerint állíthatja be.
+ V: A táblázat szegélyszínének vagy stílusának megváltoztatásához módosíthatja a`Color` és`Width` tulajdonságai a`BorderInfo` objektum. Az adott példában a szegély színét feketére és 1F (egy pont) szélesre állítottuk a segítségével`tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);`. A színt és a szélességet igény szerint állíthatja be.
 
 #### K: Lehetséges-e fejléceket vagy lábléceket hozzáadni a táblázathoz?
 
@@ -157,8 +157,8 @@ V: Igen, az Aspose.PDF for .NET használatával fejlécet vagy láblécet adhat 
 
 #### K: Hogyan állíthatom be a szöveg igazítását egy táblázatcellán belül?
 
- V: A táblázatcellán belüli szövegigazítás beállításához használhatja a`HorizontalAlignment` és`VerticalAlignment` tulajdonságai a`TextFragment` tárgy. Például a szöveg vízszintes középre igazításához beállíthatja`mytext.HorizontalAlignment = HorizontalAlignment.Center;` . Hasonlóképpen beállíthatja`mytext.VerticalAlignment` a függőleges igazítás szabályozásához.
+ V: A táblázatcellán belüli szövegigazítás beállításához használhatja a`HorizontalAlignment` és`VerticalAlignment` tulajdonságai a`TextFragment` objektum. Például a szöveg vízszintes középre igazításához beállíthatja`mytext.HorizontalAlignment = HorizontalAlignment.Center;` . Hasonlóképpen beállíthatja`mytext.VerticalAlignment` a függőleges igazítás szabályozásához.
 
 #### K: Hozzáadhatok képeket a táblázat celláihoz szöveg helyett?
 
- V: Igen, képeket adhat hozzá a táblázat celláihoz az Aspose.PDF for .NET használatával. Létrehozása helyett a`TextFragment` objektumot, létrehozhat egy`Image` objektumot, töltse be a képfájlt, és adja hozzá a kívánt cellához a segítségével`cell.Paragraphs.Add(image);` módszer. Ez lehetővé teszi képek beszúrását a táblázatba a szöveges tartalom mellé.
+ V: Igen, képeket adhat hozzá a táblázat celláihoz az Aspose.PDF for .NET használatával. Létrehozása helyett a`TextFragment` objektumot, létrehozhat egy`Image` objektumot, töltse be a képfájlt, és adja hozzá a kívánt cellához a segítségével`cell.Paragraphs.Add(image);` módszer. Ez lehetővé teszi képek beszúrását a táblázatba szöveges tartalom mellett.

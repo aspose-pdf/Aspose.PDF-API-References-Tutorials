@@ -1,8 +1,8 @@
 ---
-title: PDF Belgelerinde Yer İmleri Oluşturun
-linktitle: PDF Belgelerinde Yer İmleri Oluşturun
+title: PDF Belgelerinde Yer İşaretleri Oluşturun
+linktitle: PDF Belgelerinde Yer İşaretleri Oluşturun
 second_title: Aspose.PDF Java PDF İşleme API'si
-description: Aspose.PDF for Java ile PDF yer imlerini nasıl oluşturacağınızı öğrenin. Belgede gezinmeyi ve kullanıcı deneyimini geliştirin. Kaynak koduyla adım adım kılavuz.
+description: Java için Aspose.PDF ile PDF yer imleri oluşturmayı öğrenin. Belge gezinmesini ve kullanıcı deneyimini geliştirin. Kaynak kodlu adım adım kılavuz.
 type: docs
 weight: 10
 url: /tr/java/pdf-bookmarks/create-bookmarks-pdf-documents/
@@ -10,24 +10,24 @@ url: /tr/java/pdf-bookmarks/create-bookmarks-pdf-documents/
 
 ## giriiş
 
-Dijital çağda, büyük PDF belgelerini yönetmek ve bunlar arasında gezinmek göz korkutucu bir görev olabilir. Yüz sayfalık bir belgeye sahip olduğunuzu ve belirli bölümleri hızlı bir şekilde bulmaya çalıştığınızı hayal edin. Yer imlerinin kurtarmaya geldiği yer burasıdır. Yer imleri, PDF belgenizde tıklanabilir bir içindekiler tablosu oluşturmanıza olanak tanıyarak okuyucuların belirli bölümlere atlamasını kolaylaştırır. Bu eğitimde, Java uygulamalarında PDF'lerle çalışmayı kolaylaştıran güçlü bir API olan Aspose.PDF for Java'yı kullanarak PDF belgelerinde nasıl yer imleri oluşturulacağını keşfedeceğiz.
+Dijital çağda, büyük PDF belgelerini yönetmek ve bunlar arasında gezinmek zorlu bir görev olabilir. Yüzlerce sayfalık bir belgeniz olduğunu ve belirli bölümleri hızla bulmaya çalıştığınızı düşünün. İşte tam bu noktada yer imleri imdadınıza yetişir. Yer imleri, PDF belgeniz içinde tıklanabilir bir içerik tablosu oluşturmanıza olanak tanır ve okuyucuların belirli bölümlere kolayca atlamasını sağlar. Bu eğitimde, Java uygulamalarında PDF'lerle çalışmayı basitleştiren güçlü bir API olan Aspose.PDF for Java kullanarak PDF belgelerinde yer imlerinin nasıl oluşturulacağını inceleyeceğiz.
 
-## Önkoşullar
+## Ön koşullar
 
-Kodlama kısmına geçmeden önce aşağıdaki önkoşulların mevcut olduğundan emin olun:
+Kodlama kısmına geçmeden önce aşağıdaki ön koşulların mevcut olduğundan emin olun:
 
-- Java Geliştirme Ortamı: Sisteminizde Java'nın kurulu olduğundan emin olun.
--  Aspose.PDF for Java: Aspose.PDF for Java kütüphanesini şu adresten indirip yükleyin:[Burada](https://releases.aspose.com/pdf/java/).
+- Java Geliştirme Ortamı: Sisteminizde Java'nın yüklü olduğundan emin olun.
+-  Java için Aspose.PDF: Java için Aspose.PDF kitaplığını şu adresten indirin ve yükleyin:[Burada](https://releases.aspose.com/pdf/java/).
 
 ## Başlarken
 
-### 1. Adım: Projenizi Kurma
+### Adım 1: Projenizi Kurma
 
-En sevdiğiniz Entegre Geliştirme Ortamında (IDE) yeni bir Java projesi oluşturarak başlayın. Aspose.PDF for Java kütüphanesini projenizin sınıf yoluna eklediğinizden emin olun.
+En sevdiğiniz Entegre Geliştirme Ortamında (IDE) yeni bir Java projesi oluşturarak başlayın. Projenizin sınıf yoluna Aspose.PDF for Java kütüphanesini eklediğinizden emin olun.
 
 ### Adım 2: Gerekli Paketleri İçe Aktarma
 
-Aspose.PDF kütüphanesinden gerekli paketleri Java kodunuzda içe aktarın. Bu paketler PDF belgeleri ve yer imleriyle çalışmanıza olanak tanır.
+Java kodunuzda, Aspose.PDF kütüphanesinden gerekli paketleri içe aktarın. Bu paketler PDF belgeleri ve yer imleriyle çalışmanızı sağlayacaktır.
 
 ```java
 import com.aspose.pdf.*;
@@ -35,7 +35,7 @@ import com.aspose.pdf.*;
 
 ## Yer İşaretleri Oluşturma
 
-Şimdi bir PDF belgesinde yer imleri oluşturmaya devam edelim. Süreci adım adım ilerleyeceğiz.
+Şimdi, bir PDF belgesinde yer imleri oluşturmaya geçelim. İşlemi adım adım ele alacağız.
 
 ### Adım 3: PDF Belgesini Yükleme
 
@@ -45,11 +45,11 @@ Mevcut bir PDF belgesiyle çalışmak için önce onu yüklemeniz gerekir. Bir P
 Document pdfDocument = new Document("your_document.pdf");
 ```
 
- Yer değiştirmek`"your_document.pdf"` PDF dosyanızın yolu ile birlikte.
+ Yer değiştirmek`"your_document.pdf"` PDF dosyanızın yolunu belirtin.
 
-### 4. Adım: Yer İmleri Ekleme
+### Adım 4: Yer İşaretleri Ekleme
 
- Belge yüklendikten sonra yer imleri eklemeye başlayabilirsiniz. Yer imleri şuraya eklenir:`OutlineCollection` PDF belgesinin. Yer imini nasıl oluşturabileceğiniz aşağıda açıklanmıştır:
+ Belge yüklendikten sonra yer imleri eklemeye başlayabilirsiniz. Yer imleri,`OutlineCollection` PDF belgesinin. İşte bir yer imi oluşturmanın yolu:
 
 ```java
 OutlineCollection outlines = pdfDocument.getOutlines();
@@ -64,11 +64,11 @@ subCollection.setTitle("Subsection 1");
 subCollection.setAction(new GoToAction(pdfDocument.getPages().get_Item(1)));
 ```
 
-Bu örnekte, "Ana Bölüm" adında bir kök yer imi ve PDF belgesinin ikinci sayfasına bağlanan "Alt Bölüm 1" adında bir alt yer imi oluşturuyoruz. Daha iyi organizasyon için hiyerarşik bir yapı oluşturarak gerektiği kadar yer imi ekleyebilirsiniz.
+Bu örnekte, "Ana Bölüm" adlı bir kök yer imi ve PDF belgesinin ikinci sayfasına bağlanan "Alt Bölüm 1" adlı bir alt yer imi oluşturuyoruz. Daha iyi bir organizasyon için hiyerarşik bir yapı oluşturarak ihtiyaç duyduğunuz kadar yer imi ekleyebilirsiniz.
 
 ### Adım 5: PDF Belgesini Kaydetme
 
-Tüm yer işaretlerini ekledikten sonra değiştirilen PDF belgesini aşağıdaki kodu kullanarak kaydedin:
+Tüm yer imlerini ekledikten sonra, aşağıdaki kodu kullanarak değiştirilmiş PDF belgesini kaydedin:
 
 ```java
 pdfDocument.save("output.pdf");
@@ -76,26 +76,26 @@ pdfDocument.save("output.pdf");
 
 ## Çözüm
 
-Bu eğitimde Aspose.PDF for Java kullanarak PDF belgelerinde nasıl yer imleri oluşturulacağını öğrendik. Yer imleri, PDF dosyalarının kullanılabilirliğini artıran, okuyucuların kolaylıkla gezinmesine olanak tanıyan değerli bir özelliktir. Aspose.PDF for Java ile PDF belgelerinize yer imleri ekleme işlemini otomatikleştirerek onları daha kullanıcı dostu hale getirebilirsiniz.
+Bu eğitimde, Java için Aspose.PDF kullanarak PDF belgelerinde yer imleri oluşturmayı öğrendik. Yer imleri, PDF dosyalarının kullanılabilirliğini artıran ve okuyucuların kolayca gezinmesini sağlayan değerli bir özelliktir. Java için Aspose.PDF ile PDF belgelerinize yer imi ekleme sürecini otomatikleştirebilir ve bunları daha kullanıcı dostu hale getirebilirsiniz.
 
-## SSS'ler
+## SSS
 
-### Aspose.PDF for Java'yı nasıl yüklerim?
+### Java için Aspose.PDF'yi nasıl yüklerim?
 
- Aspose.PDF for Java'nın kurulumu basittir. İndirme sayfasını ziyaret edin[Burada](https://releases.aspose.com/pdf/java/) ve özel geliştirme ortamınız için sağlanan kurulum talimatlarını izleyin.
+ Java için Aspose.PDF'yi yüklemek basittir. İndirme sayfasını ziyaret edin[Burada](https://releases.aspose.com/pdf/java/) ve özel geliştirme ortamınız için sağlanan kurulum talimatlarını izleyin.
 
 ### Yer imlerinin görünümünü özelleştirebilir miyim?
 
-Evet, renkleri ve stilleri de dahil olmak üzere yer işaretlerinin görünümünü özelleştirebilirsiniz. Aspose.PDF for Java, yer imi özelleştirmesi için kapsamlı seçenekler sunarak bunları belgenizin tasarımına göre uyarlamanıza olanak tanır.
+Evet, yer imlerinin görünümünü, renkleri ve stilleri dahil olmak üzere özelleştirebilirsiniz. Java için Aspose.PDF, yer imi özelleştirmesi için kapsamlı seçenekler sunarak bunları belgenizin tasarımına göre uyarlamanıza olanak tanır.
 
 ### Aspose.PDF for Java ticari projeler için uygun mudur?
 
-Kesinlikle! Aspose.PDF for Java, profesyonel kullanım için tasarlanmış sağlam bir kütüphanedir. PDF belgeleriyle çalışmak için güçlü özellikler sunan, hem kişisel hem de ticari projeler için çok uygundur.
+Kesinlikle! Aspose.PDF for Java, profesyonel kullanım için tasarlanmış sağlam bir kütüphanedir. Hem kişisel hem de ticari projeler için uygundur ve PDF belgeleriyle çalışmak için güçlü özellikler sunar.
 
 ### Bir sayfanın belirli bölümleri için yer imleri oluşturabilir miyim?
 
-Evet, bir sayfanın belirli bölümlerine bağlantı veren yer imleri oluşturabilirsiniz. Bu, okuyucularınıza hassas gezinme sağlayarak tam olarak ihtiyaç duydukları içeriğe ulaşmalarını sağlar.
+Evet, bir sayfadaki belirli bölümlere bağlantı veren yer imleri oluşturabilirsiniz. Bu, okuyucularınıza hassas gezinme sağlayarak ihtiyaç duydukları tam içeriğe ulaşmalarını sağlar.
 
-### Daha fazla belge ve örneği nerede bulabilirim?
+### Daha fazla doküman ve örneği nerede bulabilirim?
 
- Aspose dokümantasyon sitesinden kapsamlı dokümantasyona ve çok çeşitli örneklere ulaşabilirsiniz.[Burada](https://reference.aspose.com/pdf/java/). Aspose.PDF for Java'da uzmanlaşmak için değerli bir kaynaktır.
+ Aspose dokümantasyon sitesinde kapsamlı dokümantasyona ve çok çeşitli örneklere erişebilirsiniz[Burada](https://reference.aspose.com/pdf/java/)Java için Aspose.PDF'i öğrenmek için değerli bir kaynaktır.

@@ -120,7 +120,7 @@ Přizpůsobili jsme různé aspekty řádku tabulky, jako je barva pozadí, ohra
 
 Nyní, když jsme vytvořili náš dokument se stylizovaným řádkem tabulky, uložíme jej jako tagovaný dokument PDF.
 ```csharp
-// Uložte tagovaný dokument PDF
+// Uložte označený dokument PDF
 document.Save(dataDir + "StyleTableRow.pdf");
 ```
 

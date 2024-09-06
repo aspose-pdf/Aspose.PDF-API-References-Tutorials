@@ -91,7 +91,7 @@ Nu har du kunskapen och verktygen för att förbättra dina PDF-dokument med tex
 
 ### Hur ändrar jag positionen för textstämpeln i PDF:en?
 
- För att ändra positionen för textstämpeln i PDF:en kan du ställa in dess`XIndent` och`YIndent` egenskaper. Dessa egenskaper bestämmer den horisontella och vertikala positionen för stämpeln på sidan.
+ För att ändra positionen för textstämpeln i PDF:en kan du ställa in dess`XIndent` och`YIndent` fastigheter. Dessa egenskaper bestämmer den horisontella och vertikala positionen för stämpeln på sidan.
 
 ```java
 textStamp.setXIndent(100);

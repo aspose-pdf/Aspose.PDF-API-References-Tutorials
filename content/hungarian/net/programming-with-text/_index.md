@@ -11,8 +11,8 @@ Az Aspose.PDF "Programozás szöveggel" oktatóanyagai a .NET-hez átfogó utas�
 ## Oktatóanyagok
 | Cím | Leírás |
 | --- | --- | 
-| [Rejtett szöveg hozzáadása és keresése PDF fájlban](./add-and-search-hidden-text/) | Útmutató lépésről lépésre rejtett szöveg hozzáadásához és kereséséhez PDF-fájlban az Aspose.PDF for .NET használatával. |  
-| [Adjon hozzá HTML rendezett listát a dokumentumokhoz](./add-html-ordered-list-into-documents/) | Ismerje meg, hogyan adhat hozzá rendezett HTML-listát egy dokumentumhoz az Aspose.PDF for .NET használatával. |  
+| [Rejtett szöveg hozzáadása és keresése PDF-fájlban](./add-and-search-hidden-text/) | Útmutató lépésről lépésre rejtett szöveg hozzáadásához és kereséséhez PDF-fájlban az Aspose.PDF for .NET használatával. |  
+| [HTML rendezett lista hozzáadása a dokumentumokhoz](./add-html-ordered-list-into-documents/) | Ismerje meg, hogyan adhat hozzá rendezett HTML-listát egy dokumentumhoz az Aspose.PDF for .NET használatával. |  
 | [HTML hozzáadása DOM segítségével](./add-html-using-dom/) | Ismerje meg, hogyan adhat hozzá HTML-tartalmat DOM használatával az Aspose.PDF for .NET fájlban. |  
 | [HTML hozzáadása DOM és PDF felülírás segítségével](./add-html-using-dom-and-overwrite/) | Ismerje meg, hogyan adhat hozzá HTML-tartalmat DOM-mal és PDF-felülírással az Aspose.PDF for .NET fájlban. |  
 | [Következő sorok behúzása hozzáadása a PDF-fájlhoz](./add-subsequent-lines-indent/) | Ismerje meg, hogyan adhat hozzá sorok behúzását a PDF-fájl szövegéhez az Aspose.PDF for .NET segítségével. |  
@@ -53,7 +53,7 @@ Az Aspose.PDF "Programozás szöveggel" oktatóanyagai a .NET-hez átfogó utas�
 | [Keressen és kapjon szöveget](./search-and-get-text-all/) | Tanulja meg, hogyan kereshet szöveget, és hogyan lehet szöveget lekérni egy PDF-dokumentum összes oldalán az Aspose.PDF for .NET segítségével. |  
 | [Keressen és szerezzen szöveges oldalt PDF-fájlban](./search-and-get-text-page/) | Tanulja meg, hogyan kereshet szöveget, és hogyan tud lekérni egy adott oldalt PDF-fájlban az Aspose.PDF for .NET segítségével. |  
 | [Reguláris kifejezés keresése PDF fájlban](./search-regular-expression/) | Tanulja meg, hogyan kereshet és kérhet le szöveget reguláris kifejezések használatával PDF-fájlban az Aspose.PDF for .NET segítségével. |  
-| [Szöveg keresése és hiperhivatkozás hozzáadása](./search-text-and-add-hyperlink/) | Ismerje meg, hogyan kereshet szöveget PDF-ben, hogyan adhat hozzá hivatkozásokat a talált szöveghez, és hogyan mentheti el a módosított dokumentumot az Aspose.PDF for .NET segítségével. |  
+| [Szöveg keresése és hiperhivatkozás hozzáadása](./search-text-and-add-hyperlink/) | Tanulja meg, hogyan kereshet szöveget PDF-ben, hogyan adhat hiperhivatkozásokat a talált szöveghez, és hogyan mentheti el a módosított dokumentumot az Aspose.PDF for .NET segítségével. |  
 | [Szöveg keresése és téglalap rajzolása](./search-text-and-draw-rectangle/) | Tanulja meg, hogyan kereshet szöveget PDF-ben, hogyan rajzolhat téglalapokat a talált szöveg köré, és hogyan mentheti el a módosított dokumentumot az Aspose.PDF for .NET segítségével. |  
 | [Szövegszegmensek oldal keresése PDF-fájlban](./search-text-segments-page/) | Tanulja meg, hogyan kereshet szöveges szegmenseket egy oldalon PDF-fájlban, és hogyan kérheti le azok tulajdonságait az Aspose.PDF for .NET segítségével. |  
 | [Szöveg keresése a Dot Net Regex segítségével](./search-text-with-dot-net-regex/) | Ismerje meg, hogyan kereshet szöveget .NET reguláris kifejezésekkel egy PDF-dokumentumban az Aspose.PDF for .NET használatával. |   

@@ -42,7 +42,7 @@ info.BindPdf(dataDir + "IsPasswordProtected.pdf");
 
 ## 4. lépés: Határozza meg a forrás PDF-titkosítását
 
-Miután feltöltötte a forrás PDF-fájlt, a segítségével megállapíthatja, hogy titkosítva van-e`IsEncrypted` módszere a`PdfFileInfo` tárgy.
+ Miután feltöltötte a forrás PDF-fájlt, a segítségével megállapíthatja, hogy titkosítva van-e`IsEncrypted` módszere a`PdfFileInfo` objektum.
 
 ```csharp
 Console.WriteLine("The file is password protected: " + info.IsEncrypted);
@@ -81,7 +81,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 // Forrás PDF fájl betöltése
 PdfFileInfo info = new PdfFileInfo();
 info.BindPdf(dataDir + "IsPasswordProtected.pdf");
-// Határozza meg, hogy a forrás PDF titkosított-e
+//Határozza meg, hogy a forrás PDF titkosított-e
 Console.WriteLine("File is password protected " + info.IsEncrypted);
 String[] passwords = new String[5] { "test", "test1", "test2", "test3", "sample" };
 for (int passwordcount = 0; passwordcount < passwords.Length; passwordcount++)
@@ -119,7 +119,7 @@ V: Kövesse a megadott lépéseket a fejlesztői környezet beállításához, b
 
 #### K: Hogyan állapíthatom meg, hogy egy PDF-fájl titkosított-e?
 
- V: Használja a`PdfFileInfo` osztályt a forrás PDF-fájl kötéséhez. Ezután használja a`IsEncrypted` tulajdonság annak meghatározására, hogy a PDF-fájl jelszóval védett-e.
+ V: Használja a`PdfFileInfo` osztályt a forrás PDF-fájl kötéséhez. Ezután használja a`IsEncrypted`tulajdonság annak meghatározására, hogy a PDF-fájl jelszóval védett-e.
 
 #### K: Hogyan találhatom meg a megfelelő jelszót egy PDF-fájlhoz?
 

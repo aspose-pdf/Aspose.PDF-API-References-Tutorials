@@ -11,7 +11,7 @@ Den här guiden tar dig steg för steg hur du tar bort bilder från PDF-fil med 
 
 ## Steg 1: Definiera dokumentkatalogen
 
- Innan du börjar, se till att du ställer in rätt katalog för dokumenten. Byta ut`"YOUR DOCUMENT DIRECTORY"` i koden med sökvägen till katalogen där ditt PDF-dokument finns.
+Innan du börjar, se till att du ställer in rätt katalog för dokumenten. Ersätta`"YOUR DOCUMENT DIRECTORY"` i koden med sökvägen till katalogen där ditt PDF-dokument finns.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Steg 2: Öppna PDF-dokumentet
 
- det här steget kommer vi att öppna PDF-dokumentet med hjälp av`Document` klass av Aspose.PDF. Använd`Document` konstruktor och skicka sökvägen till PDF-dokumentet.
+ I det här steget kommer vi att öppna PDF-dokumentet med hjälp av`Document` klass av Aspose.PDF. Använd`Document` konstruktor och skicka sökvägen till PDF-dokumentet.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "DeleteImages.pdf");
@@ -28,7 +28,7 @@ Document pdfDocument = new Document(dataDir + "DeleteImages.pdf");
 
 ## Steg 3: Ta bort en specifik bild
 
- I det här steget kommer vi att ta bort en specifik bild från en viss sida. Använd`Delete` metod för sidresursen`Images` objekt för att ta bort bilden. I exemplet nedan tar vi bort bilden med index 1 från första sidan.
+ det här steget kommer vi att ta bort en specifik bild från en viss sida. Använd`Delete` metod för sidresursen`Images` objekt för att ta bort bilden. I exemplet nedan tar vi bort bilden med index 1 från första sidan.
 
 ```csharp
 pdfDocument.Pages[1].Resources.Images.Delete(1);
@@ -77,11 +77,11 @@ S: Att definiera dokumentkatalogen säkerställer att PDF-dokumentet är korrekt
 
 ####  F: Hur fungerar`Document` class in Aspose.PDF for .NET help in deleting images from a PDF file?
 
- A: Den`Document`klass låter dig öppna och manipulera PDF-dokument. I det här fallet används den för att ladda PDF-filen från vilken bilder kommer att raderas.
+ A: Den`Document` klass låter dig öppna och manipulera PDF-dokument. I det här fallet används den för att ladda PDF-filen från vilken bilder kommer att raderas.
 
 #### F: Hur väljer jag en specifik bild att ta bort från PDF-dokumentet?
 
-S: Du kan använda`Delete` metod för`Images` objekt inom`Resources` på en viss sida för att radera en specifik bild genom dess index.
+ S: Du kan använda`Delete` metod för`Images` objekt inom`Resources` på en viss sida för att radera en specifik bild genom dess index.
 
 #### F: Kan jag ta bort bilder från vilken sida som helst i PDF-dokumentet?
 

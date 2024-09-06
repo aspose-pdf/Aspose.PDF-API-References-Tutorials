@@ -42,7 +42,7 @@ Document pdfDocument = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
 
 ## 4. lépés: Szöveg keresése és kibontása
 
- Hozzon létre egy`TextFragmentAbsorber` objektumot a bemeneti keresési kifejezés összes példányának megtalálásához:
+ Hozzon létre a`TextFragmentAbsorber` objektumot a bemeneti keresési kifejezés összes példányának megtalálásához:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
@@ -60,7 +60,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## 6. lépés: szerezze be a kivont szövegrészleteket
 
-Szerezze be a kivont szövegrészleteket a`TextFragments` tulajdona a`TextFragmentAbsorber` tárgy:
+Szerezze be a kivont szövegrészleteket a`TextFragments` tulajdona a`TextFragmentAbsorber` objektum:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -118,7 +118,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 
 ## Következtetés
 
-Gratulálunk! Sikeresen megtanulta, hogyan lehet szöveget keresni és lekérni egy PDF-dokumentum összes oldalán az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a dokumentum betöltésétől a kivont szövegrészletek eléréséig. Mostantól ezt a kódot beépítheti saját C#-projektjeibe a PDF-fájlok szövegtartalmának elemzéséhez és feldolgozásához.
+Gratulálok! Sikeresen megtanulta, hogyan lehet szöveget keresni és lekérni egy PDF-dokumentum összes oldalán az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a dokumentum betöltésétől a kivont szövegrészletek eléréséig. Mostantól ezt a kódot beépítheti saját C#-projektjeibe a PDF-fájlok szövegtartalmának elemzéséhez és feldolgozásához.
 
 ### GYIK
 
@@ -140,15 +140,15 @@ V: A kezdéshez hozzon létre egy új C# projektet az előnyben részesített in
 
 #### K: Hogyan kereshetek meghatározott szöveget egy PDF-dokumentumban?
 
-V: Használhatja a`TextFragmentAbsorber`osztályban, hogy megtalálja egy adott keresési kifejezés előfordulását a PDF-dokumentumban. Az osztály példányának létrehozásával és a célszöveg megadásával a szöveg minden előfordulását rögzítheti.
+ V: Használhatja a`TextFragmentAbsorber`osztályban, hogy megtalálja egy adott keresési kifejezés előfordulását a PDF-dokumentumban. Az osztály példányának létrehozásával és a célszöveg megadásával a szöveg minden előfordulását rögzítheti.
 
 #### K: Kereshetek szöveget a PDF-dokumentum összes oldalán?
 
  V: Igen, az oktatóanyag bemutatja, hogyan kereshet szöveget a PDF-dokumentum összes oldalán. A`pdfDocument.Pages.Accept(textFragmentAbsorber)` módszert alkalmazzák az abszorber elfogadására az összes oldalon, lehetővé téve, hogy minden oldalon megkeresse a kívánt szöveget.
 
-#### K: Hogyan férhetek hozzá a kibontott szövegrészletekhez?
+#### K: Hogyan férhetek hozzá a kivont szövegrészletekhez?
 
- V: Miután megkereste a szöveget, a kivonatolt szövegrészleteket a következővel érheti el`TextFragments` tulajdona a`TextFragmentAbsorber` tárgy. Ez az ingatlan hozzáférést biztosít a gyűjteményhez`TextFragment` objektumok, amelyek a kivont szöveget és a kapcsolódó információkat tartalmazzák.
+ V: Miután megkereste a szöveget, a kivonatolt szövegrészleteket a következővel érheti el`TextFragments` tulajdona a`TextFragmentAbsorber` objektum. Ez az ingatlan hozzáférést biztosít a gyűjteményhez`TextFragment` objektumok, amelyek a kivont szöveget és a kapcsolódó információkat tartalmazzák.
 
 #### K: Milyen információkat kérhetek le a kivonatolt szövegrészletekből?
 

@@ -1,75 +1,108 @@
 ---
 title: MHT sang PDF
 linktitle: MHT sang PDF
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Hướng dẫn từng bước để chuyển đổi MHT sang PDF bằng Aspose.PDF cho .NET.
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Tìm hiểu cách chuyển đổi tệp MHT sang PDF bằng Aspose.PDF cho .NET trong hướng dẫn từng bước này. Chuyển đổi tài liệu dễ dàng và hiệu quả.
 type: docs
 weight: 70
 url: /vi/net/document-conversion/mht-to-pdf/
 ---
-Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn quy trình chuyển đổi tệp MHT sang PDF bằng Aspose.PDF cho .NET. MHT (MIME HTML) là định dạng được sử dụng để lưu một trang web hoàn chỉnh, bao gồm hình ảnh và nội dung liên quan. Bằng cách làm theo các bước bên dưới, bạn sẽ có thể chuyển đổi tệp MHT sang định dạng PDF.
+## Giới thiệu
+
+Trong thế giới kỹ thuật số ngày nay, nhu cầu chuyển đổi tệp từ định dạng này sang định dạng khác phổ biến hơn bao giờ hết. Cho dù bạn là nhà phát triển, chuyên gia kinh doanh hay chỉ là người muốn chia sẻ thông tin một cách liền mạch, việc hiểu cách chuyển đổi tệp MHT sang PDF có thể cực kỳ hữu ích. Tệp MHT hoặc tệp HTML MIME thường được sử dụng để lưu các trang web trong một tệp duy nhất, nhưng chúng có thể cồng kềnh khi chia sẻ hoặc in. Đó là lúc Aspose.PDF cho .NET phát huy tác dụng! Thư viện mạnh mẽ này cho phép bạn chuyển đổi tệp MHT sang PDF một cách dễ dàng, đảm bảo rằng tài liệu của bạn duy trì định dạng và dễ phân phối. Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn từng bước trong toàn bộ quy trình, giúp bạn thực hiện đơn giản và dễ hiểu.
 
 ## Điều kiện tiên quyết
-Trước khi bắt đầu, hãy đảm bảo bạn đáp ứng các điều kiện tiên quyết sau:
 
-- Kiến thức cơ bản về ngôn ngữ lập trình C#.
-- Thư viện Aspose.PDF cho .NET được cài đặt trên hệ thống của bạn.
-- Một môi trường phát triển như Visual Studio.
+Trước khi đi sâu vào quá trình chuyển đổi, bạn cần chuẩn bị một số thứ sau:
 
-## Bước 1: Tải file MHT
-Trong bước này, chúng tôi sẽ tải tệp MHT bằng Aspose.PDF cho .NET. Thực hiện theo mã dưới đây:
+1. Visual Studio: Đảm bảo bạn đã cài đặt Visual Studio trên máy của mình. Đây là nơi bạn sẽ viết và chạy mã .NET của mình.
+2. Aspose.PDF cho .NET: Bạn cần tải xuống và cài đặt thư viện Aspose.PDF. Bạn có thể tìm thấy nó[đây](https://releases.aspose.com/pdf/net/).
+3. Kiến thức cơ bản về C#: Sự quen thuộc với lập trình C# sẽ giúp bạn hiểu các đoạn mã chúng ta sẽ sử dụng.
+4. Tệp MHT: Chuẩn bị tệp MHT để chuyển đổi. Bạn có thể tạo tệp bằng cách lưu trang web dưới dạng MHT trong trình duyệt của mình.
+
+## Nhập gói
+
+Để bắt đầu, bạn sẽ cần nhập các gói cần thiết vào dự án C# của mình. Sau đây là cách bạn có thể thực hiện:
+
+### Tạo một dự án mới
+
+Mở Visual Studio và tạo một dự án C# mới. Bạn có thể chọn Ứng dụng Console để đơn giản hơn.
+
+### Thêm tham chiếu Aspose.PDF
+
+1. Nhấp chuột phải vào dự án của bạn trong Solution Explorer.
+2. Chọn "Quản lý gói NuGet".
+3. Tìm kiếm "Aspose.PDF" và cài đặt phiên bản mới nhất.
+
+### Nhập gói
 
 ```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-MhtLoadOptions options = new MhtLoadOptions();
-
-// Tải tài liệu
-Document document = new Document(dataDir + "test.mht", options);
+using System.IO;
+using Aspose.Pdf;
 ```
 
- Hãy chắc chắn để thay thế`"YOUR DOCUMENTS DIRECTORY"` với thư mục thực nơi chứa tệp MHT của bạn.
+Bây giờ bạn đã thiết lập xong mọi thứ, chúng ta hãy chuyển sang quá trình chuyển đổi thực tế!
 
-## Bước 2: Chuyển đổi MHT sang PDF
-Sau khi tải file MHT, chúng ta có thể tiến hành chuyển đổi sang PDF. Sử dụng mã sau đây:
+## Bước 1: Thiết lập thư mục tài liệu của bạn
 
-```csharp
-// Lưu kết quả đầu ra dưới dạng tài liệu PDF
-document.Save(dataDir + "MHTToPDF_out.pdf");
-```
-
- Đoạn mã trên chuyển đổi tệp MHT sang định dạng PDF và lưu dưới dạng tên tệp`"MHTToPDF_out.pdf"`.
-
-### Mã nguồn ví dụ cho MHT sang PDF bằng Aspose.PDF for .NET
+Trước tiên, bạn cần chỉ định đường dẫn đến thư mục tài liệu của mình. Đây là nơi tệp MHT của bạn nằm và nơi PDF đã chuyển đổi sẽ được lưu.
 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế trên máy của bạn. Điều này có thể giống như`@"C:\Documents\"`.
+
+## Bước 2: Tải tùy chọn MHT
+
+ Tiếp theo, bạn sẽ cần tạo một phiên bản của`MhtLoadOptions`. Lớp này cho phép bạn chỉ định các tùy chọn để tải tệp MHT.
+
+```csharp
 MhtLoadOptions options = new MhtLoadOptions();
+```
+
+Bước này rất quan trọng vì nó chuẩn bị cho thư viện xử lý tệp MHT một cách chính xác.
+
+## Bước 3: Tải Tài liệu MHT
+
+ Bây giờ là lúc tải tài liệu MHT của bạn vào thư viện Aspose.PDF. Điều này được thực hiện bằng cách sử dụng`Document` lớp học.
+
+```csharp
 // Tải tài liệu
-Document document = new Document(dataDir  + "test.mht", options);
-// Lưu kết quả đầu ra dưới dạng tài liệu PDF
+Document document = new Document(dataDir + "test.mht", options);
+```
+
+ Hãy chắc chắn thay thế`"test.mht"` với tên tệp MHT của bạn. Dòng mã này đọc tệp MHT và chuẩn bị cho việc chuyển đổi.
+
+## Bước 4: Lưu tài liệu dưới dạng PDF
+
+Cuối cùng, bạn có thể lưu tài liệu đã tải dưới dạng PDF. Đây chính là nơi phép thuật xảy ra!
+
+```csharp
+// Lưu đầu ra dưới dạng tài liệu PDF
 document.Save(dataDir + "MHTToPDF_out.pdf");
 ```
 
+Dòng này lưu PDF đã chuyển đổi trong cùng thư mục với tệp MHT của bạn. Bạn có thể thay đổi tên tệp đầu ra nếu cần.
+
 ## Phần kết luận
-Trong hướng dẫn này, chúng tôi đã trình bày quy trình từng bước chuyển đổi tệp MHT sang PDF bằng Aspose.PDF cho .NET. Bằng cách làm theo các hướng dẫn được nêu ở trên, giờ đây bạn có thể chuyển đổi tệp MHT sang định dạng PDF. Tính năng này có thể hữu ích khi bạn cần chuyển đổi toàn bộ trang web thành tài liệu PDF.
 
-### Câu hỏi thường gặp
+Và thế là xong! Bạn đã chuyển đổi thành công tệp MHT sang PDF bằng Aspose.PDF cho .NET. Quy trình này không chỉ đơn giản mà còn cực kỳ hiệu quả, cho phép bạn xử lý các chuyển đổi tài liệu một cách dễ dàng. Cho dù bạn đang làm việc trên một dự án cá nhân hay một ứng dụng chuyên nghiệp, việc thành thạo kỹ thuật chuyển đổi này có thể giúp bạn tiết kiệm thời gian và công sức.
 
-#### Câu hỏi: Aspose.PDF for .NET có hỗ trợ chuyển đổi tệp MHT có hình ảnh nhúng sang PDF không?
+## Câu hỏi thường gặp
 
-Trả lời: Có, Aspose.PDF for .NET hỗ trợ chuyển đổi tệp MHT có hình ảnh nhúng sang PDF. Thư viện có thể xử lý toàn bộ nội dung trang web, bao gồm hình ảnh và các tài nguyên liên quan, đồng thời chuyển đổi nó thành tài liệu PDF.
+### Tệp MHT là gì?
+Tệp MHT là định dạng lưu trữ trang web cho phép lưu toàn bộ trang web, bao gồm văn bản và hình ảnh, trong một tệp duy nhất.
 
-#### H: Tôi có thể tùy chỉnh đầu ra PDF trong quá trình chuyển đổi MHT sang PDF không?
+### Tôi có thể chuyển đổi nhiều tệp MHT cùng lúc không?
+Có, bạn có thể lặp qua nhiều tệp MHT trong thư mục của mình và chuyển đổi từng tệp một bằng cùng một phương pháp.
 
-Trả lời: Có, Aspose.PDF for .NET cung cấp nhiều tùy chọn khác nhau để tùy chỉnh đầu ra PDF trong quá trình chuyển đổi MHT sang PDF. Bạn có thể đặt các thuộc tính như kích thước trang, hướng, lề, v.v. để kiểm soát hình thức của tài liệu PDF thu được.
+### Aspose.PDF cho .NET có miễn phí không?
+ Aspose.PDF cung cấp bản dùng thử miễn phí, nhưng để có đầy đủ chức năng, bạn sẽ cần mua giấy phép. Bạn có thể tìm thêm thông tin[đây](https://purchase.aspose.com/buy).
 
-#### Câu hỏi: Aspose.PDF cho .NET có giữ nguyên các siêu liên kết và định dạng từ tệp MHT gốc trong đầu ra PDF không?
+### Tôi phải làm sao nếu gặp lỗi trong quá trình chuyển đổi?
+ Kiểm tra diễn đàn hỗ trợ Aspose để được trợ giúp. Bạn có thể tìm thấy nó[đây](https://forum.aspose.com/c/pdf/10).
 
-Trả lời: Có, Aspose.PDF cho .NET giữ nguyên các siêu liên kết và định dạng từ tệp MHT gốc trong đầu ra PDF. Thư viện đảm bảo rằng tệp PDF được chuyển đổi vẫn giữ nguyên bố cục và nội dung như tệp MHT nguồn.
-
-#### Câu hỏi: Tôi có thể chuyển đổi nhiều tệp MHT thành các tài liệu PDF riêng biệt bằng Aspose.PDF cho .NET không?
-
-Trả lời: Có, bạn có thể chuyển đổi nhiều tệp MHT thành các tài liệu PDF riêng biệt bằng Aspose.PDF cho .NET. Chỉ cần tải từng tệp MHT và lưu dưới dạng tài liệu PDF riêng biệt với tên tệp duy nhất.
+### Tôi có thể sử dụng Aspose.PDF cho các định dạng tệp khác không?
+Chắc chắn rồi! Aspose.PDF hỗ trợ nhiều định dạng khác nhau, bao gồm HTML, DOCX, v.v.

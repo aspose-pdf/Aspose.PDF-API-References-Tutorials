@@ -2,23 +2,23 @@
 title: Artefacten tellen in PDF-bestand
 linktitle: Artefacten tellen in PDF-bestand
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u eenvoudig watermerken in PDF-bestanden kunt tellen met Aspose.PDF voor .NET.
+description: Leer hoe u eenvoudig watermerken in een PDF-bestand kunt tellen met Aspose.PDF voor .NET.
 type: docs
 weight: 60
 url: /nl/net/programming-with-stamps-and-watermarks/counting-artifacts/
 ---
-In deze zelfstudie laten we u stap voor stap zien hoe u artefacten in een PDF-bestand kunt tellen met Aspose.PDF voor .NET. We laten u zien hoe u de meegeleverde C#-broncode kunt gebruiken om het aantal "watermerk"-artefacten op een specifieke pagina van het PDF-bestand te tellen.
+In deze tutorial laten we u stap voor stap zien hoe u artefacten in een PDF-bestand kunt tellen met Aspose.PDF voor .NET. We laten u zien hoe u de meegeleverde C#-broncode kunt gebruiken om het aantal "watermerk"-artefacten op een specifieke pagina van het PDF-bestand te tellen.
 
 ## Stap 1: De omgeving instellen
 
-Zorg ervoor dat u over het volgende beschikt voordat u begint:
+Voordat u begint, moet u ervoor zorgen dat u het volgende bij de hand hebt:
 
 - Een geïnstalleerde .NET-ontwikkelomgeving.
-- De Aspose.PDF-bibliotheek voor .NET gedownload en waarnaar wordt verwezen in uw project.
+- De Aspose.PDF-bibliotheek voor .NET is gedownload en wordt in uw project gebruikt.
 
 ## Stap 2: Het PDF-document laden
 
-De eerste stap is het laden van het bestaande PDF-document in uw project. Hier is hoe:
+De eerste stap is om het bestaande PDF-document in uw project te laden. Dit doet u als volgt:
 
 ```csharp
 // Het pad naar de documentenmap.
@@ -28,11 +28,11 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "watermark.pdf");
 ```
 
-Zorg ervoor dat u "UW DOCUMENTENMAP" vervangt door het daadwerkelijke pad naar de map waar uw PDF-document zich bevindt.
+Zorg ervoor dat u "UW DOCUMENTENMAP" vervangt door het daadwerkelijke pad naar de map waarin uw PDF-document zich bevindt.
 
 ## Stap 3: Tel artefacten
 
-Nu u het PDF-document hebt geladen, kunt u de artefacten van het "watermerk"-type op een specifieke pagina van het document tellen. Hier is hoe:
+Nu u het PDF-document hebt geladen, kunt u de artefacten van het type "watermerk" op een specifieke pagina van het document tellen. Dit doet u als volgt:
 
 ```csharp
 // Initialiseer de teller
@@ -41,18 +41,18 @@ int count = 0;
 // Loop door alle artefacten op de eerste pagina
 foreach(Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
-     //Als het artefact-subtype 'watermerk' is, verhoogt u de teller
+     //Als het artefact-subtype "watermerk" is, verhoogt u de teller
      if (artifact.Subtype == Artifact.ArtifactSubtype.Watermark)
          count++;
 }
 
-// Geef het aantal artefacten van het type "watermerk" weer
+// Het aantal artefacten van het type "watermerk" weergeven
 Console.WriteLine("The page contains " + count + " watermarks");
 ```
 
-De bovenstaande code doorloopt alle artefacten op de eerste pagina van het PDF-document en verhoogt de teller voor elk aangetroffen artefact van het type "watermerk".
+De bovenstaande code doorloopt alle artefacten op de eerste pagina van het PDF-document en verhoogt de teller voor elk aangetroffen artefact van het type 'watermerk'.
 
-### Voorbeeldbroncode voor het tellen van artefacten met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor het tellen van artefacten met behulp van Aspose.PDF voor .NET 
 ```csharp
 
 // Het pad naar de documentenmap.
@@ -64,7 +64,7 @@ Document pdfDocument = new Document( dataDir +  "watermark.pdf");
 int count = 0;
 foreach (Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
-	// Als het artefacttype een watermerk is, verhoogt u de teller
+	// Als het artefacttype watermerk is, maak dan de teller aan
 	if (artifact.Subtype == Artifact.ArtifactSubtype.Watermark) count++;
 }
 Console.WriteLine("Page contains " + count + " watermarks");
@@ -73,42 +73,42 @@ Console.WriteLine("Page contains " + count + " watermarks");
 
 ## Conclusie
 
-Gefeliciteerd! U hebt geleerd hoe u "watermerk"-artefacten in een PDF-document kunt tellen met behulp van Aspose.PDF voor .NET. U kunt deze kennis nu gebruiken om specifieke analyses en verwerkingen uit te voeren op artefacten in uw PDF-documenten.
+Gefeliciteerd! U hebt geleerd hoe u "watermerk"-artefacten in een PDF-document kunt tellen met Aspose.PDF voor .NET. U kunt deze kennis nu gebruiken om specifieke analyses en verwerkingen uit te voeren op artefacten in uw PDF-documenten.
 
-### Veelgestelde vragen over het tellen van artefacten in PDF-bestanden
+### FAQ's voor het tellen van artefacten in een PDF-bestand
 
-#### Vraag: Wat zijn artefacten in een PDF-document en waarom zou ik ze moeten tellen?
+#### V: Wat zijn artefacten in een PDF-document en waarom moet ik ze tellen?
 
-A: Artefacten in een PDF-document zijn elementen die niet rechtstreeks van invloed zijn op de inhoud of het uiterlijk van het document, maar die zijn opgenomen voor specifieke doeleinden, zoals toegankelijkheid of metagegevens. Door artefacten te tellen, kunt u specifieke elementen in een PDF identificeren en analyseren, zoals watermerken, annotaties of verborgen inhoud.
+A: Artefacten in een PDF-document zijn elementen die niet direct van invloed zijn op de inhoud of het uiterlijk van het document, maar die zijn opgenomen voor specifieke doeleinden, zoals toegankelijkheid of metadata. Het tellen van artefacten kan u helpen specifieke elementen in een PDF te identificeren en analyseren, zoals watermerken, annotaties of verborgen inhoud.
 
-#### Vraag: Hoe bepaal ik het type artefacten dat moet worden meegeteld in een PDF-document met Aspose.PDF voor .NET?
+#### V: Hoe bepaal ik met Aspose.PDF voor .NET welk type artefacten ik moet tellen in een PDF-document?
 
  A: De meegeleverde C#-broncode laat zien hoe u "watermerk"-artefacten op een specifieke pagina van een PDF-document kunt tellen. U kunt de code aanpassen om artefacten van verschillende typen te tellen door de`ArtifactSubtype` vergelijking met het gewenste subtype, zoals 'Annotatie', 'Stempel' of 'Link'.
 
-#### Vraag: Kan ik artefacten op meerdere pagina's van een PDF-document tellen?
+#### V: Kan ik artefacten op meerdere pagina's van een PDF-document tellen?
 
- A: Ja, u kunt de code uitbreiden om artefacten op meerdere pagina's van een PDF-document te herhalen door de`pdfDocument.Pages` verzamelen en tellen van artefacten op elke pagina.
+ A: Ja, u kunt de code uitbreiden om door artefacten op meerdere pagina's van een PDF-document te lussen door te itereren door de`pdfDocument.Pages` verzameling en telling van artefacten op elke pagina.
 
-#### Vraag: Hoe kan ik de getelde artefactinformatie gebruiken voor verdere verwerking?
+#### V: Hoe kan ik de getelde artefactinformatie gebruiken voor verdere verwerking?
 
-A: Nadat u de gewenste artefacten heeft geteld, kunt u de informatie voor verschillende doeleinden gebruiken, zoals het genereren van rapporten, het uitvoeren van gerichte wijzigingen of het valideren van de aanwezigheid van specifieke elementen in het PDF-document.
+A: Zodra u de gewenste artefacten hebt geteld, kunt u de informatie voor verschillende doeleinden gebruiken, zoals het genereren van rapporten, het uitvoeren van gerichte wijzigingen of het valideren van de aanwezigheid van specifieke elementen in het PDF-document.
 
-#### Vraag: Kan ik het telproces aanpassen om rekening te houden met aanvullende kenmerken of omstandigheden van artefacten?
+#### V: Kan ik het telproces aanpassen om rekening te houden met extra kenmerken of omstandigheden van artefacten?
 
-A: Absoluut, u kunt het telproces aanpassen om rekening te houden met extra attributen of voorwaarden door meer voorwaardelijke controles binnen de lus toe te voegen. U kunt bijvoorbeeld artefacten tellen op basis van een combinatie van artefactsubtype en kleur.
+A: Absoluut, u kunt het telproces aanpassen om extra kenmerken of voorwaarden te overwegen door meer voorwaardelijke controles binnen de lus toe te voegen. U kunt bijvoorbeeld artefacten tellen op basis van een combinatie van artefactsubtype en kleur.
 
-#### Vraag: Wat moet ik doen als mijn PDF-document meerdere soorten artefacten bevat, en niet alleen watermerken?
+#### V: Wat als mijn PDF-document meerdere soorten artefacten bevat, niet alleen watermerken?
 
  A: Hoewel de tutorial zich richt op het tellen van watermerkartefacten, kunt u de code aanpassen om verschillende soorten artefacten te tellen door de`ArtifactSubtype` vergelijking met het gewenste subtype dat u wilt tellen.
 
-#### Vraag: Hoe kan ik deze kennis toepassen om het tellen van artefacten voor een grote batch PDF-documenten te automatiseren?
+#### V: Hoe kan ik deze kennis toepassen om het tellen van artefacten voor een grote hoeveelheid PDF-documenten te automatiseren?
 
-A: U kunt een script of programma maken dat een lijst met PDF-documenten doorloopt en voor elk document het artefacttellingsproces uitvoert, rapporten genereert of de tellingen opslaat voor analyse.
+A: U kunt een script of programma maken dat door een lijst met PDF-documenten itereert en het proces van het tellen van artefacten voor elk document uitvoert. Hierbij worden rapporten gegenereerd of de aantallen opgeslagen voor analyse.
 
-#### Vraag: Is het mogelijk om artefacten met specifieke kenmerken te tellen, zoals artefacten van een bepaalde kleur of grootte?
+#### V: Is het mogelijk om artefacten met specifieke kenmerken te tellen, zoals artefacten met een bepaalde kleur of grootte?
 
-A: Ja, u kunt de code verbeteren om artefacten met specifieke attributen te tellen. Binnen de lus kunt u aanvullende voorwaardelijke controles opnemen om attributen zoals kleur, grootte of positie van artefacten te overwegen.
+A: Ja, u kunt de code verbeteren om artefacten met specifieke kenmerken te tellen. Binnen de lus kunt u extra voorwaardelijke controles opnemen om kenmerken zoals kleur, grootte of positie van artefacten te overwegen.
 
-#### Vraag: Kan ik deze aanpak gebruiken om andere soorten elementen te tellen, zoals annotaties of tekstobjecten?
+#### V: Kan ik deze aanpak gebruiken om andere typen elementen te tellen, zoals aantekeningen of tekstobjecten?
 
-A: Ja, u kunt de meegeleverde broncode aanpassen om andere soorten elementen te tellen, zoals annotaties of tekstobjecten, door de lus- en voorwaardelijke controles dienovereenkomstig aan te passen.
+A: Ja, u kunt de meegeleverde broncode aanpassen om andere typen elementen te tellen, zoals aantekeningen of tekstobjecten, door de lus en de voorwaardelijke controles dienovereenkomstig aan te passen.

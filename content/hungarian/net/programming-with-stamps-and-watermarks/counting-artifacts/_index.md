@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 2. lépés: A PDF dokumentum betöltése
 
-Az első lépés a meglévő PDF dokumentum betöltése a projektbe. Itt van, hogyan:
+Az első lépés a meglévő PDF dokumentum betöltése a projektbe. Íme, hogyan:
 
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
@@ -32,7 +32,7 @@ Feltétlenül cserélje ki a „DOKUMENTUMKÖNYVTÁR” elemet a PDF-dokumentum 
 
 ## 3. lépés: Számolja meg a műtermékeket
 
-Most, hogy betöltötte a PDF dokumentumot, megszámolhatja a „vízjel” típusú műtermékeket a dokumentum egy adott oldalán. Itt van, hogyan:
+Most, hogy betöltötte a PDF dokumentumot, megszámolhatja a „vízjel” típusú műtermékeket a dokumentum egy adott oldalán. Íme, hogyan:
 
 ```csharp
 // Inicializálja a számlálót
@@ -103,7 +103,7 @@ V: Természetesen testreszabhatja a számlálási folyamatot további attribútu
 
 #### K: Hogyan alkalmazhatom ezt a tudást a műtermékek számlálásának automatizálására nagy mennyiségű PDF-dokumentum esetében?
 
-V: Létrehozhat egy szkriptet vagy programot, amely a PDF-dokumentumok listáján keresztül iterál, és minden egyes dokumentumnál elvégzi a műtermék-számlálási folyamatot, jelentéseket hoz létre vagy tárolja a számlálásokat elemzés céljából.
+V: Létrehozhat egy szkriptet vagy programot, amely a PDF-dokumentumok listáján keresztül iterál, és minden egyes dokumentumhoz elvégzi a műtermék-számlálási folyamatot, jelentéseket generál vagy tárolja a számlálásokat elemzés céljából.
 
 #### K: Megszámolhatók-e bizonyos tulajdonságokkal rendelkező műtermékek, például bizonyos színű vagy méretű műtermékek?
 

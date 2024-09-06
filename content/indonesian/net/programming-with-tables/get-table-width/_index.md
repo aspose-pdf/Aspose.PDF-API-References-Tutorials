@@ -1,19 +1,19 @@
 ---
 title: Dapatkan Lebar Tabel Dalam File PDF
 linktitle: Dapatkan Lebar Tabel Dalam File PDF
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Pelajari cara mendapatkan lebar tabel dalam file PDF menggunakan Aspose.PDF untuk .NET.
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara mendapatkan lebar tabel dalam berkas PDF menggunakan Aspose.PDF untuk .NET.
 type: docs
 weight: 90
 url: /id/net/programming-with-tables/get-table-width/
 ---
-Dalam tutorial ini, kita akan mempelajari cara mendapatkan lebar tabel dalam file PDF menggunakan Aspose.PDF untuk .NET. Kami akan menjelaskan kode sumber dalam C# langkah demi langkah. Di akhir tutorial ini, Anda akan mengetahui cara mendapatkan lebar tabel di dokumen PDF. Ayo mulai!
+Dalam tutorial ini, kita akan mempelajari cara mendapatkan lebar tabel dalam file PDF menggunakan Aspose.PDF untuk .NET. Kami akan menjelaskan kode sumber dalam C# langkah demi langkah. Di akhir tutorial ini, Anda akan mengetahui cara mendapatkan lebar tabel dalam dokumen PDF. Mari kita mulai!
 
 ## Langkah 1: Menyiapkan lingkungan
-Pertama, pastikan Anda telah menyiapkan lingkungan pengembangan C# dengan Aspose.PDF untuk .NET. Tambahkan referensi ke perpustakaan dan impor namespace yang diperlukan.
+Pertama, pastikan Anda telah menyiapkan lingkungan pengembangan C# dengan Aspose.PDF untuk .NET. Tambahkan referensi ke pustaka dan impor namespace yang diperlukan.
 
 ## Langkah 2: Membuat Dokumen dan Halaman Baru
-Kami membuat dokumen PDF baru dan menambahkan halaman di dokumen ini.
+Kami membuat dokumen PDF baru dan menambahkan halaman dalam dokumen ini.
 
 ```csharp
 Document doc = new Document();
@@ -21,7 +21,7 @@ Page page = doc.Pages.Add();
 ```
 
 ## Langkah 3: Menginisialisasi tabel baru
-Kami menginisialisasi tabel baru dan mengatur kolom yang sesuai ke "AutoFitToContent".
+Kami menginisialisasi tabel baru dan mengatur kesesuaian kolom menjadi "AutoFitToContent".
 
 ```csharp
 Table table = new Table
@@ -31,7 +31,7 @@ ColumnAdjustment = ColumnAdjustment.AutoFitToContent
 ```
 
 ## Langkah 4: Tambahkan baris dan sel dalam tabel
-Kami menambahkan baris di tabel dan menambahkan sel di baris itu.
+Kita menambahkan baris dalam tabel dan menambahkan sel di baris tersebut.
 
 ```csharp
 Row row = table.Rows.Add();
@@ -70,26 +70,26 @@ System.Console.WriteLine("Extracted table width succesfully!");
 ```
 
 ## Kesimpulan
-Dalam tutorial ini, kita mempelajari cara mendapatkan lebar tabel dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Anda dapat menggunakan panduan langkah demi langkah ini untuk mendapatkan lebar tabel di proyek C# Anda sendiri.
+Dalam tutorial ini, kita mempelajari cara mendapatkan lebar tabel dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Anda dapat menggunakan panduan langkah demi langkah ini untuk mendapatkan lebar tabel dalam proyek C# Anda sendiri.
 
 ### FAQ untuk mendapatkan lebar tabel dalam file PDF
 
-#### T: Dapatkah saya mengubah penyesuaian kolom tabel menjadi lebar tetap, bukan AutoFitToContent?
+#### T: Dapatkah saya mengubah penyesuaian kolom tabel ke lebar tetap, bukan AutoFitToContent?
 
- J: Ya, Anda dapat menyesuaikan lebar kolom ke nilai tetap dengan mengatur`ColumnAdjustment` properti ke`ColumnAdjustment.FixedColumnWidth` . Setelah mengatur properti ini, Anda dapat menentukan lebar yang diinginkan untuk setiap kolom menggunakan`ColumnWidths` properti tabel.
+ A: Ya, Anda dapat menyesuaikan lebar kolom ke nilai tetap dengan mengatur`ColumnAdjustment` properti untuk`ColumnAdjustment.FixedColumnWidth` Setelah mengatur properti ini, Anda dapat menentukan lebar yang diinginkan untuk setiap kolom menggunakan`ColumnWidths` properti tabel.
 
-####  T: Bagaimana jika tabel tersebar di beberapa halaman? Akankah`GetWidth()` method still provide accurate results?
+####  T: Bagaimana jika tabel membentang di beberapa halaman? Apakah`GetWidth()` method still provide accurate results?
 
- J: Itu`GetWidth()` metode menghitung lebar tabel berdasarkan kontennya dalam halaman saat ini. Jika tabel tersebar di beberapa halaman, Anda mungkin perlu mengulangi setiap halaman dan menjumlahkan lebar tabel di setiap halaman untuk mendapatkan lebar keseluruhan tabel secara keseluruhan.
+ Sebuah:`GetWidth()` Metode ini menghitung lebar tabel berdasarkan kontennya di halaman saat ini. Jika tabel membentang di beberapa halaman, Anda mungkin perlu mengulang setiap halaman dan menjumlahkan lebar tabel di setiap halaman untuk mendapatkan lebar keseluruhan tabel.
 
-#### T: Bisakah saya mendapatkan lebar masing-masing kolom tabel menggunakan Aspose.PDF untuk .NET?
+#### T: Bisakah saya mendapatkan lebar kolom individual tabel menggunakan Aspose.PDF untuk .NET?
 
-J: Ya, Anda dapat mengambil lebar kolom individual pada tabel menggunakan`ColumnWidths` Properti. Ia mengembalikan string yang mewakili lebar setiap kolom yang dipisahkan oleh spasi. Anda kemudian dapat mengurai string ini untuk mendapatkan lebar setiap kolom.
+A: Ya, Anda dapat mengambil lebar kolom individual dari tabel menggunakan`ColumnWidths` properti. Mengembalikan string yang mewakili lebar setiap kolom yang dipisahkan oleh spasi. Anda kemudian dapat mengurai string ini untuk mendapatkan lebar setiap kolom.
 
 #### T: Apakah mungkin untuk mendapatkan tinggi tabel menggunakan Aspose.PDF untuk .NET?
 
- A: Ya, Anda bisa mendapatkan tinggi meja menggunakan`GetHeight()` metode tabel. Metode ini mengembalikan total tinggi tabel berdasarkan konten dan tata letaknya.
+ A: Ya, Anda bisa mendapatkan tinggi meja menggunakan`GetHeight()` metode tabel. Metode ini mengembalikan tinggi total tabel berdasarkan konten dan tata letaknya.
 
-#### T: Bisakah saya menyesuaikan lebar tabel berdasarkan konten tertentu di setiap sel?
+#### T: Dapatkah saya menyesuaikan lebar tabel berdasarkan konten tertentu di setiap sel?
 
- A: Ya, Anda dapat mengatur lebar tabel berdasarkan konten spesifik di setiap sel dengan mengatur`ColumnAdjustment` properti ke`ColumnAdjustment.AutoFitToContent`. Aspose.PDF untuk .NET akan secara otomatis menyesuaikan lebar kolom agar sesuai dengan konten di setiap sel.
+ A: Ya, Anda dapat menyesuaikan lebar tabel berdasarkan konten tertentu di setiap sel dengan mengatur`ColumnAdjustment` properti untuk`ColumnAdjustment.AutoFitToContent`Aspose.PDF untuk .NET akan secara otomatis menyesuaikan lebar kolom agar sesuai dengan konten di setiap sel.

@@ -16,7 +16,7 @@ oblasti zpracování dokumentů v Javě je Aspose.PDF mocným spojencem. Umožň
 
 Než se vydáme na tuto cestu, ujistěte se, že máte splněny následující předpoklady:
 
--  Aspose.PDF pro knihovnu Java: Stáhněte a nainstalujte ji z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java: Stáhněte a nainstalujte ji z[zde](https://releases.aspose.com/pdf/java/).
 
 Nyní se pojďme ponořit do toho nejnutnějšího přidávání různých záhlaví do souboru PDF krok za krokem.
 
@@ -83,7 +83,7 @@ Nakonec uložte dokument PDF:
 pdfDocument.save("output.pdf");
 ```
 
-Gratulujeme! Úspěšně jste přidali různá záhlaví do jednoho souboru PDF pomocí Aspose.PDF pro Java.
+Gratuluji! Úspěšně jste přidali různá záhlaví do jednoho souboru PDF pomocí Aspose.PDF pro Java.
 
 ## Závěr
 

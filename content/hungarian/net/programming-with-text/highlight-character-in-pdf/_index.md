@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 1. lépés: Állítsa be a dokumentumkönyvtárat
 
- Először is be kell állítania annak a könyvtárnak az elérési útját, ahol a bemeneti PDF-fájl található. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir` változó a PDF-fájl elérési útjával.
+ Először is be kell állítania annak a könyvtárnak az elérési útját, ahol a bemeneti PDF-fájl található. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változó a PDF-fájl elérési útjával.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -34,7 +34,7 @@ Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf")
 
 ## 3. lépés: Konvertálja a PDF-et képpé
 
- Karakterek kiemeléséhez a PDF-dokumentumot képpé alakítjuk a`PdfConverter` osztály. Beállítjuk a felbontást az átalakításhoz, és lekérjük a képet a`Bitmap` tárgy.
+ Karakterek kiemeléséhez a PDF-dokumentumot képpé alakítjuk a`PdfConverter` osztály. Beállítjuk a felbontást az átalakításhoz, és lekérjük a képet a`Bitmap` objektum.
 
 ```csharp
 int resolution = 150;
@@ -53,7 +53,7 @@ using (MemoryStream ms = new MemoryStream())
 ```csharp
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 {
-     //Állítsa be a léptéket és alakítsa át
+     // Állítsa be a léptéket és alakítsa át
      float scale = resolution / 72f;
      gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
 
@@ -62,7 +62,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
      {
          Page page = pdfDocument.Pages[1];
 
-         // Keresse meg az összes szót az oldalon
+         //Keresse meg az összes szót az oldalon
          TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
          textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
          page. Accept(textFragmentAbsorber);
@@ -213,11 +213,11 @@ V: A karakterek kiemelése egy PDF-dokumentumban különféle célokra hasznos l
 
 V: A dokumentumkönyvtár beállításához:
 
-1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir` változó annak a könyvtárnak az elérési útjával, ahol a bemeneti PDF-fájl található.
+1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változó annak a könyvtárnak az elérési útjával, ahol a bemeneti PDF-fájl található.
 
 #### K: Hogyan tölthetem be a PDF dokumentumot és alakíthatom át képpé?
 
- V: Az oktatóanyagban a`Aspose.Pdf.Document` osztályt használják a bemeneti PDF dokumentum betöltésére. Aztán a`PdfConverter` osztályt használják a PDF-dokumentum képpé konvertálására. A kép felbontása be van állítva, és a kép a`Bitmap` tárgy.
+ V: Az oktatóanyagban a`Aspose.Pdf.Document` osztályt használják a bemeneti PDF dokumentum betöltésére. Aztán a`PdfConverter` osztályt használják a PDF-dokumentum képpé konvertálására. A kép felbontása be van állítva, és a kép a`Bitmap` objektum.
 
 #### K: Hogyan jelölhetek ki karaktereket a PDF dokumentum képében?
 

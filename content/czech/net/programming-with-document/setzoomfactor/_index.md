@@ -11,7 +11,7 @@ Aspose.PDF for .NET je výkonné API, které umožňuje vývojářům pracovat s
 
 ## Krok 1: Nastavte cestu k adresáři dokumentů
 
- Prvním krokem je nastavení cesty k adresáři, kde se PDF dokument nachází. To lze provést nastavením`dataDir` proměnnou k cestě k adresáři. 
+ Prvním krokem je nastavení cesty k adresáři, kde se PDF dokument nachází. To lze provést nastavením`dataDir` proměnnou na cestu k adresáři. 
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -38,7 +38,7 @@ GoToAction action = new GoToAction(new XYZExplicitDestination(1, 0, 0, .5));
 doc.OpenAction = action;
 ```
 
- Tento kód nastaví faktor přiblížení na 50 % vytvořením nového`GoToAction` objekt a míjení a`XYZExplicitDestination` objekt s faktorem přiblížení 50 %. The`OpenAction` vlastnictvím`Document` objekt je pak nastaven na toto`GoToAction` objekt.
+ Tento kód nastaví faktor přiblížení na 50 % vytvořením nového`GoToAction` objekt a míjení a`XYZExplicitDestination` objekt s faktorem přiblížení 50 %. The`OpenAction` majetek z`Document` objekt je pak nastaven na toto`GoToAction` objekt.
 
 ## Krok 4: Uložte dokument PDF
 

@@ -18,7 +18,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 1: Konfigurera dokumentkatalogen
 
- Först måste du ställa in sökvägen till katalogen där du vill spara den genererade PDF-filen. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir`variabel med sökvägen till din önskade katalog.
+ Först måste du ställa in sökvägen till katalogen där du vill spara den genererade PDF-filen. Ersätta`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till din önskade katalog.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -35,7 +35,7 @@ Aspose.Pdf.Page applicationFirstPage = (Aspose.Pdf.Page)pdfApplicationDoc.Pages.
 
 ## Steg 3: Lägg till textfragment med Newline Markers
 
- Vi skapar en`TextFragment`objekt och ställ in dess text så att den inkluderar nyradsmarkörer (`Environment.NewLine`) för att representera flera textrader.
+ Vi skapar en`TextFragment` objekt och ställ in dess text så att den inkluderar nyradsmarkörer (`Environment.NewLine`) för att representera flera textrader.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment textFragment = new Aspose.Pdf.Text.TextFragment("Applicant Name: " + Environment.NewLine + " Joe Smoe");
@@ -127,7 +127,7 @@ S: Att rendera utbytbara symboler är användbart när du dynamiskt behöver gen
 
 S: Så här ställer du in dokumentkatalogen:
 
-1.  Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till katalogen där du vill spara den genererade PDF-filen.
+1.  Ersätta`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till katalogen där du vill spara den genererade PDF-filen.
 
 #### F: Hur återger jag utbytbara symboler i ett PDF-dokument med Aspose.PDF-biblioteket?
 
@@ -143,7 +143,7 @@ S: Handledningen guidar dig genom processen steg för steg:
 
 #### F: Vad är syftet med att använda nyradsmarkörer (`Environment.NewLine`) in the text fragment?
 
- S: Nyradsmarkörer används för att skapa flerradsinnehåll i ett enda textfragment. Genom att använda`Environment.NewLine`, kan du ange var radbrytningar ska förekomma i texten.
+ S: Nyradsmarkörer används för att skapa flerradsinnehåll i ett enda textfragment. Genom att använda`Environment.NewLine`kan du ange var radbrytningar ska förekomma i texten.
 
 #### F: Kan jag anpassa utseendet på de utbytbara symbolerna?
 

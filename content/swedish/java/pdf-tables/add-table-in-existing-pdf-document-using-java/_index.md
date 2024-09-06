@@ -39,7 +39,7 @@ Innan vi börjar, se till att du har följande förutsättningar:
 </dependencies>
 ```
 
- Byta ut`latest_version` med den faktiska versionen av Aspose.PDF-biblioteket du laddade ner.
+ Ersätta`latest_version` med den faktiska versionen av Aspose.PDF-biblioteket du laddade ner.
 
 ## Skapa en tabell
 
@@ -131,7 +131,7 @@ Ja, Aspose.PDF för Java stöder arbete med olika PDF-versioner, inklusive PDF 1
 
 ### Hur ställer jag in anpassade ramar för tabellceller?
 
- Du kan anpassa cellkanterna genom att justera`BorderInfo` egenskaper. Se Aspose.PDF-dokumentationen för detaljerade exempel.
+ Du kan anpassa cellkanterna genom att justera`BorderInfo` fastigheter. Se Aspose.PDF-dokumentationen för detaljerade exempel.
 
 ### Kan jag extrahera data från befintliga tabeller i ett PDF-dokument?
 

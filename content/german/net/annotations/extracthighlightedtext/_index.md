@@ -1,109 +1,114 @@
 ---
-title: Extrahieren Sie hervorgehobenen Text in einer PDF-Datei
-linktitle: Extrahieren Sie hervorgehobenen Text in einer PDF-Datei
+title: Markierten Text in PDF-Datei extrahieren
+linktitle: Markierten Text in PDF-Datei extrahieren
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie in dieser Schritt-für-Schritt-Anleitung, wie Sie mit Aspose.PDF für .NET hervorgehobenen Text in einer PDF-Datei extrahieren.
+description: Erfahren Sie in diesem Tutorial, wie Sie mit Aspose.PDF für .NET markierten Text effizient aus einer PDF-Datei extrahieren. Perfekt für die Datenanalyse und Inhaltsüberprüfung.
 type: docs
 weight: 60
 url: /de/net/annotations/extracthighlightedtext/
 ---
-Um hervorgehobenen Text in einer PDF-Datei zu extrahieren, können Sie die Aspose.PDF für .NET-API verwenden. Diese API bietet eine einfache Möglichkeit, den gesamten Text abzurufen, der in einem Dokument hervorgehoben wurde.
+## Einführung
 
-## Schritt 1: Laden Sie das PDF-Dokument
+Beim Arbeiten mit PDF-Dateien kann das Extrahieren von markiertem Text eine wichtige Aufgabe sein, sei es für die Datenanalyse, die Inhaltsüberprüfung oder einfach zum Organisieren Ihrer Notizen. Wenn Sie Aspose.PDF für .NET verwenden, ist dieser Vorgang unkompliziert und effizient. In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET markierten Text aus einem PDF-Dokument extrahieren. Wir behandeln alles von den Voraussetzungen bis zur Schritt-für-Schritt-Anleitung, damit Sie am Ende ein umfassendes Verständnis haben.
 
- Der erste Schritt beim Extrahieren von hervorgehobenem Text in einer PDF-Datei besteht darin, das Dokument mithilfe der Aspose.PDF für .NET-API zu laden. Sie können dies tun, indem Sie eine neue Instanz von erstellen`Document` Klasse und Übergabe des Pfads zum PDF-Dokument als Parameter. 
+## Voraussetzungen
+
+Bevor Sie sich in den Code vertiefen, müssen Sie einige Dinge vorbereitet haben:
+
+-  Aspose.PDF für .NET-Bibliothek: Stellen Sie sicher, dass Sie die Aspose.PDF-Bibliothek installiert haben. Wenn nicht, können Sie sie von der[Veröffentlichungsseite](https://releases.aspose.com/pdf/net/).
+- Entwicklungsumgebung: Sie sollten eine funktionierende Entwicklungsumgebung wie beispielsweise Visual Studio eingerichtet haben.
+- Grundkenntnisse in C#: Vertrautheit mit der Programmiersprache C# und der objektorientierten Programmierung ist unbedingt erforderlich.
+-  Eine gültige Aspose-Lizenz: Sie können zwar mit einer kostenlosen Testversion beginnen, sollten aber den Erwerb einer[vorläufige Lizenz](https://purchase.aspose.com/temporary-license/) oder den Kauf eines von[Hier](https://purchase.aspose.com/buy) zur uneingeschränkten Nutzung.
+
+## Pakete importieren
+
+Zu Beginn müssen Sie die erforderlichen Namespaces in Ihr C#-Projekt importieren. Dies ist entscheidend für den Zugriff auf die von Aspose.PDF für .NET bereitgestellten Klassen und Methoden.
 
 ```csharp
-// Der Pfad zum Dokumentenverzeichnis.
-string dataDir ="YOUR DOCUMENT DIRECTORY";
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Lassen Sie uns nun den Prozess des Extrahierens von markiertem Text aus einer PDF-Datei mit Aspose.PDF für .NET aufschlüsseln. Jeder Schritt wird ausführlich erklärt, damit Sie die zugrunde liegenden Konzepte und die Implementierung verstehen.
+
+## Schritt 1: Richten Sie Ihr Projektverzeichnis ein
+
+Als Erstes müssen Sie Ihr Projektverzeichnis einrichten, in dem sich Ihre PDF-Datei befindet. Hier geschieht die Magie.
+
+```csharp
+// Der Pfad zum Dokumentverzeichnis.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Ersetzen`"YOUR DOCUMENT DIRECTORY"`durch den tatsächlichen Pfad zu Ihrem Verzeichnis, in dem sich die PDF-Datei befindet. Aus diesem Verzeichnis ruft die Anwendung die PDF-Datei zur Verarbeitung ab.
+
+## Schritt 2: Laden Sie das PDF-Dokument
+
+ Als nächstes müssen Sie das PDF-Dokument laden, aus dem Sie den markierten Text extrahieren möchten. Dies geschieht mit dem`Document` Klasse bereitgestellt von Aspose.PDF.
+
+```csharp
 Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
 ```
 
-## Schritt 2: Durchlaufen Sie alle Anmerkungen
+ Der`Document` Klasse wird mit dem Pfad zur PDF-Datei instanziiert. Hier`"ExtractHighlightedText.pdf"` ist der Name der PDF-Datei, die den markierten Text enthält. Stellen Sie sicher, dass diese Datei im angegebenen Verzeichnis vorhanden ist.
 
- Der nächste Schritt besteht darin, alle Anmerkungen im PDF-Dokument zu durchlaufen. Sie können dies mit a tun`foreach` Schleife, etwa so:
+## Schritt 3: Zugriff auf die Annotations-Sammlung
+
+Sobald das PDF-Dokument geladen ist, besteht der nächste Schritt darin, auf die Anmerkungen auf der ersten Seite des Dokuments zuzugreifen. Anmerkungen werden in PDFs verwendet, um zusätzliche Informationen wie Hervorhebungen, Kommentare und mehr hinzuzufügen.
 
 ```csharp
 foreach (Annotation annotation in doc.Pages[1].Annotations)
 {
-	// Code kommt hierher
-}
 ```
 
-## Schritt 3: Text-Markup-Anmerkungen filtern
+ Der`Annotations` Eigentum der`Page` Objekt bietet Zugriff auf alle Anmerkungen auf einer bestimmten Seite des PDF. Hier durchlaufen wir jede Anmerkung auf der ersten Seite.
 
- Im Inneren`foreach` In der Schleife müssen Sie alle Anmerkungen herausfiltern, die keine Textmarkierungsanmerkungen sind. Sie können dies tun, indem Sie prüfen, ob die Anmerkung eine Instanz von ist`TextMarkupAnnotation` Klasse.
+## Schritt 4: Filtern nach hervorgehobenen Textanmerkungen
+
+Da wir nun Zugriff auf alle Anmerkungen haben, müssen wir nur die hervorgehobenen Textanmerkungen herausfiltern. Dies erreichen wir, indem wir den Typ jeder Anmerkung überprüfen.
 
 ```csharp
 if (annotation is TextMarkupAnnotation)
 {
-	// Code kommt hierher
-}
+    TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
 ```
 
-## Schritt 4: Hervorgehobene Textfragmente abrufen
+ Der`TextMarkupAnnotation` Klasse wird verwendet, um Textmarkierungsanmerkungen, einschließlich Hervorhebungen, darzustellen. Die`is` Das Schlüsselwort prüft, ob die Annotation vom Typ ist`TextMarkupAnnotation` , und wenn dies der Fall ist, wird die Annotation in`TextMarkupAnnotation`.
 
- Nachdem Sie alle Text-Markup-Anmerkungen herausgefiltert haben, können Sie die hervorgehobenen Textfragmente für jede Anmerkung abrufen. Sie können dies tun, indem Sie die anrufen`GetMarkedTextFragments()` Methode auf der`TextMarkupAnnotation` Objekt.
+## Schritt 5: Den markierten Text extrahieren
+
+Nachdem die hervorgehobene Anmerkung identifiziert wurde, besteht der nächste Schritt darin, den mit der Hervorhebung verknüpften Text zu extrahieren.
 
 ```csharp
-TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
 TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
-```
-
-## Schritt 5: Zeigen Sie den hervorgehobenen Text an
-
- Abschließend können Sie dem Benutzer den hervorgehobenen Text anzeigen. Sie können dies tun, indem Sie jeden durchlaufen`TextFragment` Objekt in der`TextFragmentCollection` und das Aufrufen des`Text` Eigentum.
-
-```csharp
 foreach (TextFragment tf in collection)
 {
-	Console.WriteLine(tf.Text);
+    Console.WriteLine(tf.Text);
 }
 ```
 
-### Beispielquellcode zum Extrahieren von hervorgehobenem Text mit Aspose.PDF für .NET
-
-```csharp
-// Der Pfad zum Dokumentenverzeichnis.
-string dataDir ="YOUR DOCUMENT DIRECTORY";
-Document doc = new Document(dataDir + "ExtractHighlightedText.pdf");
-
-foreach (Annotation annotation in doc.Pages[1].Annotations)
-{
-	if (annotation is TextMarkupAnnotation)
-	{
-		TextMarkupAnnotation highlightedAnnotation = annotation as TextMarkupAnnotation;
-		TextFragmentCollection collection = highlightedAnnotation.GetMarkedTextFragments();
-		foreach (TextFragment tf in collection)
-		{
-			Console.WriteLine(tf.Text);
-		}
-	}
-}
-```
+ Der`GetMarkedTextFragments()` Methode gibt eine Sammlung von`TextFragment` Objekte, die jeweils einen Teil des hervorgehobenen Textes darstellen. Wir durchlaufen diese Sammlung und drucken den Text jedes Fragments auf der Konsole.
 
 ## Abschluss
 
-In diesem Tutorial haben wir untersucht, wie Sie mit Aspose.PDF für .NET hervorgehobenen Text aus einem PDF-Dokument extrahieren. Durch Befolgen der Schritt-für-Schritt-Anleitung und Verwendung des bereitgestellten C#-Quellcodes können Entwickler hervorgehobenen Text in ihren PDF-Dokumenten einfach extrahieren und verwalten.
+Das Extrahieren von markiertem Text aus einer PDF-Datei mit Aspose.PDF für .NET ist eine leistungsstarke Funktion, die Ihren Arbeitsablauf optimieren kann, insbesondere wenn Sie mit großen Dokumenten arbeiten. Indem Sie die in diesem Tutorial beschriebenen Schritte befolgen, können Sie diese Funktion problemlos in Ihre eigenen Projekte implementieren. Egal, ob Sie Ihre Notizen organisieren, Berichte erstellen oder Datenanalysen durchführen, diese Methode bietet eine nahtlose Lösung zum Extrahieren und Verwenden von markiertem Text.
 
-### FAQs zum Extrahieren von hervorgehobenem Text in einer PDF-Datei
+## Häufig gestellte Fragen
 
-#### F: Was sind Textmarkierungsanmerkungen in einem PDF-Dokument?
+### Kann ich mit dieser Methode andere Arten von Anmerkungen extrahieren?  
+ Ja, Sie können andere Arten von Anmerkungen extrahieren, indem Sie die`if` Bedingung zur Überprüfung auf verschiedene Annotationstypen, wie z. B.`TextAnnotation`, `StampAnnotation`, usw.
 
-A: Textmarkup-Anmerkungen sind Anmerkungen, die bestimmten Text in einem PDF-Dokument hervorheben oder markieren. Beispiele für Textmarkierungsanmerkungen sind Hervorhebungen, Unterstreichungen und Durchstreichungen.
+### Ist es möglich, markierten Text aus allen Seiten der PDF-Datei zu extrahieren?  
+Auf jeden Fall! Sie können jede Seite des PDF-Dokuments durchlaufen und dieselbe Extraktionslogik anwenden, um markierten Text von jeder Seite zu erfassen.
 
-#### F: Kann ich mit Aspose.PDF für .NET Text aus anderen Arten von Anmerkungen extrahieren?
+### Benötige ich eine Lizenz, um Aspose.PDF für .NET zu verwenden?  
+ Sie können zwar mit einer kostenlosen Testversion beginnen, es wird jedoch empfohlen, eine[vorläufige Lizenz](https://purchase.aspose.com/temporary-license/)oder erwerben Sie eine Volllizenz für uneingeschränkten Zugriff auf alle Funktionen.
 
-A: Ja, Aspose.PDF für .NET bietet verschiedene Methoden zum Extrahieren von Text aus verschiedenen Arten von Anmerkungen, einschließlich Textmarkierungsanmerkungen, Freitextanmerkungen und mehr.
+### Kann ich den extrahierten Text in einer Datei speichern, anstatt ihn auf der Konsole auszudrucken?  
+Ja, Sie können den Code einfach ändern, um den extrahierten Text in einer Textdatei oder einem anderen gewünschten Format zu speichern.
 
-#### F: Unterstützt Aspose.PDF für .NET das Extrahieren von Text aus passwortgeschützten PDF-Dateien?
-
- A: Ja, Aspose.PDF für .NET unterstützt das Extrahieren von Text aus passwortgeschützten PDF-Dateien. Sie müssen das richtige Passwort angeben, wenn Sie das PDF-Dokument mit laden`Document` Klasse.
-
-#### F: Kann ich hervorgehobenen Text nach anderen Kriterien filtern, beispielsweise nach Farbe oder Autor?
-
-A: Ja, Sie können hervorgehobenen Text nach anderen Kriterien filtern, z. B. nach Farbe, Autor oder Erstellungsdatum. Aspose.PDF für .NET bietet Methoden für den Zugriff auf und das Filtern von Anmerkungen basierend auf ihren Eigenschaften.
-
-#### F: Ist es möglich, den extrahierten hervorgehobenen Text in einer separaten Datei zu speichern?
-
-A: Ja, Sie können den extrahierten hervorgehobenen Text in einer separaten Datei speichern oder ihn zur weiteren Verarbeitung oder Analyse in einer Datenstruktur speichern.
+### Unterstützt Aspose.PDF andere Plattformen außer .NET?  
+Ja, Aspose.PDF unterstützt auch Java und andere Plattformen und bietet ähnliche Funktionen in verschiedenen Umgebungen.

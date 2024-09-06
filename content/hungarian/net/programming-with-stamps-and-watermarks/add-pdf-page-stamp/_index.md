@@ -2,7 +2,7 @@
 title: PDF-oldalbélyegző hozzáadása PDF-fájlhoz
 linktitle: PDF-oldalbélyegző hozzáadása PDF-fájlhoz
 second_title: Aspose.PDF for .NET API Reference
-description: Ismerje meg, hogyan adhat hozzá egyszerűen PDF-oldalbélyeget PDF-fájlhoz az Aspose.PDF for .NET segítségével.
+description: Ismerje meg, hogyan adhat hozzá egyszerűen PDF-oldalbélyegzőt PDF-fájlhoz az Aspose.PDF for .NET segítségével.
 type: docs
 weight: 40
 url: /hu/net/programming-with-stamps-and-watermarks/add-pdf-page-stamp/
@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 2. lépés: A PDF dokumentum betöltése
 
-Az első lépés a meglévő PDF dokumentum betöltése a projektbe. Itt van, hogyan:
+Az első lépés a meglévő PDF dokumentum betöltése a projektbe. Íme, hogyan:
 
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
@@ -39,7 +39,7 @@ Most, hogy feltöltötte a PDF-dokumentumot, létrehozhatja a hozzáadandó olda
 PdfPageStamp pageStamp = new PdfPageStamp(pdfDocument.Pages[1]);
 ```
 
-A fenti kód új oldalpuffert hoz létre a PDF-dokumentum első oldalának felhasználásával.
+A fenti kód egy új oldalpuffert hoz létre a PDF-dokumentum első oldalának felhasználásával.
 
 ## 4. lépés: Az oldalpuffer tulajdonságainak konfigurálása
 
@@ -57,7 +57,7 @@ Ezeket a tulajdonságokat igényei szerint módosíthatja.
 
 ## 5. lépés: Az oldalbélyegző hozzáadása a PDF-hez
 
-Most, hogy az oldalbélyegző készen áll, hozzáadhatja a PDF-dokumentum egy adott oldalához. Itt van, hogyan:
+Most, hogy az oldalbélyegző készen áll, hozzáadhatja a PDF-dokumentum egy adott oldalához. Íme, hogyan:
 
 ```csharp
 // Oldalpuffer hozzáadása egy adott oldalhoz
@@ -68,7 +68,7 @@ A fenti kód hozzáadja az oldalbélyeget a PDF dokumentum első oldalához. Sz�
 
 ## 6. lépés: Mentse el a kimeneti dokumentumot
 
-Az oldalbélyegző hozzáadása után elmentheti a módosított PDF dokumentumot. Itt van, hogyan:
+Az oldalbélyegző hozzáadása után elmentheti a módosított PDF dokumentumot. Íme, hogyan:
 
 ```csharp
 // Mentse el a kimeneti dokumentumot
@@ -105,7 +105,7 @@ A fenti kód a szerkesztett PDF dokumentumot a megadott könyvtárba menti.
 
 ## Következtetés
 
-Gratulálok ! Megtanulta, hogyan adhat hozzá PDF-oldalbélyegzőt az Aspose.PDF for .NET használatával. Mostantól ezt a tudást saját projektjeire is alkalmazhatja, hogy egyéni bélyegzőket adjon PDF-dokumentumai egyes oldalaihoz.
+Gratulálok ! Megtanulta, hogyan adhat hozzá PDF-oldalbélyeget az Aspose.PDF for .NET használatával. Mostantól ezt a tudást saját projektjeire is alkalmazhatja, hogy egyéni bélyegzőket adjon PDF-dokumentumai egyes oldalaihoz.
 
 ### GYIK a PDF-oldalbélyegző PDF-fájlba való hozzáadásához
 
@@ -119,11 +119,11 @@ V: Igen, több oldalbélyegzőt is hozzáadhat ugyanazon PDF-dokumentum különb
 
 #### K: Hogyan állíthatom be az oldalbélyegző pozícióját és elforgatását a PDF-dokumentumban?
 
- V: Az oldalbélyegző tulajdonságainak módosításával testreszabhatja az oldalbélyegző pozícióját és elforgatását`PdfPageStamp` tárgy. Az oktatóanyagban található kód bemutatja, hogyan lehet olyan tulajdonságokat beállítani, mint pl`XIndent`, `YIndent` , és`Rotate` a bélyegző elhelyezésének és tájolásának vezérléséhez.
+ V: Az oldalbélyegző tulajdonságainak módosításával testreszabhatja az oldalbélyegző pozícióját és elforgatását`PdfPageStamp` objektum. Az oktatóanyagban található kód bemutatja, hogyan lehet olyan tulajdonságokat beállítani, mint pl`XIndent`, `YIndent` , és`Rotate` a bélyegző elhelyezésének és tájolásának vezérléséhez.
 
 #### K: Lehetséges átlátszó vagy félig átlátszó háttér az oldalbélyegzőhöz?
 
- V: Igen, beállíthatja a`Background` tulajdona a`PdfPageStamp` tiltakozni`true` átlátszó vagy félig átlátszó hátteret engedélyezni az oldalbélyegző számára. Ez hasznos lehet vízjeleknél vagy más bélyegzőknél, amelyek nem takarhatják el teljesen a tartalmat.
+ V: Igen, beállíthatja a`Background` tulajdona a`PdfPageStamp` tiltakozik`true` átlátszó vagy félig átlátszó hátteret engedélyezni az oldalbélyegző számára. Ez hasznos lehet vízjeleknél vagy más bélyegzőknél, amelyek nem takarhatják el teljesen a tartalmat.
 
 #### K: Alkalmazhatom ezt a módszert meglévő PDF dokumentumokra oldalbélyegzők hozzáadásához?
 

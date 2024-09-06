@@ -141,7 +141,7 @@ Do tabulky jsme přidali záhlaví, řádky těla a řádek zápatí pomocí odp
 Nyní, když jsme vytvořili náš dokument s prvkem styled table, uložíme jej jako tagovaný dokument PDF.
 
 ```csharp
-// Uložte tagovaný dokument PDF
+// Uložte označený dokument PDF
 document.Save(dataDir + "StyleTableElement.pdf");
 ```
 

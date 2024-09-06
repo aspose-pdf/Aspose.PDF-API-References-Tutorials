@@ -7,87 +7,111 @@ type: docs
 weight: 130
 url: /cs/net/programming-with-document/embedfontsusingsubsetstrategy/
 ---
-V tomto tutoriálu probereme, jak vložit písma do souboru PDF se strategií podmnožiny pomocí Aspose.PDF pro .NET. Aspose.PDF for .NET je výkonná knihovna, která umožňuje vývojářům vytvářet, upravovat a manipulovat s dokumenty PDF programově. Vložení písem do souboru PDF je důležitým krokem k zajištění správného zobrazení dokumentu na různých zařízeních bez ohledu na to, zda jsou požadovaná písma na těchto zařízeních nainstalována či nikoli.
+## Zavedení
 
-## Krok 1: Vytvořte novou aplikaci C# Console
-Chcete-li začít, vytvořte novou aplikaci C# Console v sadě Visual Studio. Můžete si to pojmenovat, jak chcete. Jakmile je projekt vytvořen, musíte přidat odkaz na knihovnu Aspose.PDF for .NET.
+digitálním věku se soubory PDF staly základem sdílení dokumentů. Ať už posíláte zprávu, prezentaci nebo e-knihu, zajištění správného zobrazení písem je zásadní. Otevřeli jste někdy PDF, abyste zjistili, že text vypadá jinak, než byl zamýšlen? To se často stává, když písma použitá v dokumentu nejsou správně vložena. To je místo, kde Aspose.PDF pro .NET přichází do hry! V tomto tutoriálu prozkoumáme, jak vložit písma do souboru PDF pomocí strategie podmnožiny, aby vaše dokumenty vypadaly přesně tak, jak jste zamýšleli, bez ohledu na to, kde jsou zobrazeny.
 
-## Krok 2: Importujte jmenný prostor Aspose.PDF
-Chcete-li importovat jmenný prostor Aspose.PDF, přidejte následující řádek kódu na začátek souboru C#:
+## Předpoklady
+
+Než se ponoříme do toho nejnutnějšího vkládání písem, je třeba mít připraveno několik věcí:
+
+1.  Aspose.PDF pro .NET: Ujistěte se, že máte nainstalovanou knihovnu Aspose.PDF. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: Vývojové prostředí, kde můžete psát a testovat svůj kód .NET.
+3. Základní znalost C#: Znalost programování v C# vám pomůže lépe porozumět úryvkům kódu.
+
+## Importujte balíčky
+
+Chcete-li začít, budete muset importovat potřebné balíčky do svého projektu C#. Můžete to udělat takto:
+
+### Vytvořit nový projekt
+
+Otevřete Visual Studio a vytvořte nový projekt C#. Pro jednoduchost si můžete vybrat konzolovou aplikaci.
+
+### Přidejte odkaz Aspose.PDF
+
+1. Klepněte pravým tlačítkem myši na svůj projekt v Průzkumníku řešení.
+2. Vyberte „Spravovat balíčky NuGet“.
+3. Vyhledejte „Aspose.PDF“ a nainstalujte nejnovější verzi.
 
 ```csharp
-using Aspose.Pdf;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Krok 3: Načtěte existující soubor PDF
-Chcete-li vložit písma do existujícího souboru PDF, musíte tento soubor načíst pomocí třídy Dokument. Následující kód ukazuje, jak načíst existující soubor PDF:
+Nyní, když máme vše nastaveno, pojďme si krok za krokem rozebrat proces vkládání písem do souboru PDF.
+
+## Krok 1: Nastavte adresář dokumentů
+
+Nejprve musíme definovat, kde jsou naše dokumenty uloženy. To je zásadní, protože z tohoto adresáře budeme číst a zapisovat do něj.
 
 ```csharp
 // Cesta k adresáři dokumentů.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
-// Načtěte existující soubor PDF
+ Nahradit`"YOUR DOCUMENT DIRECTORY"` se skutečnou cestou, kde jsou umístěny vaše soubory PDF. Tohle by mohlo být něco jako`@"C:\Documents\"`.
+
+## Krok 2: Načtěte dokument PDF
+
+Dále načteme dokument PDF, který chceme upravit. To je místo, kde Aspose.PDF září a umožňuje nám snadno manipulovat se soubory PDF.
+
+```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Krok 4: Vložení písem se strategií podmnožiny
-Aspose.PDF for .NET poskytuje dvě strategie pro vkládání písem: SubsetAllFonts a SubsetEmbeddedFontsOnly.
+ Ujistěte se, že máte`input.pdf` soubor ve vámi určeném adresáři. Tento soubor bude ten, který upravíme.
 
-Strategie SubsetAllFonts vloží všechna písma do dokumentu jako podmnožinu. Podmnožina je část písma, která obsahuje pouze znaky použité v dokumentu. Tato strategie je užitečná pro zmenšení velikosti souboru dokumentu PDF.
+## Krok 3: Podmnožte všechna písma
 
-Strategie SubsetEmbeddedFontsOnly vloží pouze podmnožinu písem, která jsou již v dokumentu vložena. Pokud písmo není vloženo, nebude tato strategie ovlivněna.
-
-Následující kód ukazuje, jak vložit písma do souboru PDF pomocí strategie podmnožiny:
+Nyní pojďme k jádru věci: vkládání písem. Začneme vložením všech písem jako podmnožin. To znamená, že budou vloženy pouze znaky použité v dokumentu, což může výrazně snížit velikost souboru.
 
 ```csharp
 // Všechna písma budou vložena jako podmnožina do dokumentu v případě SubsetAllFonts.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
+```
 
-// Podmnožina písem bude vložena pro plně vložená písma, ale písma, která nejsou vložena do dokumentu, nebudou ovlivněna.
+ Použitím`SubsetAllFonts`, zajistíme, že každé písmo použité v dokumentu bude vloženo, ale budou zahrnuty pouze skutečně použité znaky.
+
+## Krok 4: Pouze podmnožina vložených písem
+
+V některých případech můžete chtít vložit pouze písma, která jsou již v dokumentu vložena. To je užitečné, pokud chcete zachovat původní vzhled bez přidávání nových písem.
+
+```csharp
+//Podmnožina písem bude vložena pro plně vložená písma, ale písma, která nejsou vložena do dokumentu, nebudou ovlivněna.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
 ```
 
-## Krok 5: Uložte dokument PDF
-Jakmile vložíte všechna písma do souboru PDF pomocí strategie podmnožiny, musíte dokument uložit. Následující kód ukazuje, jak uložit soubor PDF:
+Tento řádek kódu zajišťuje, že podmnožiny budou vloženy pouze písma, která jsou již vložená, a všechna nevložená písma zůstanou nedotčená.
+
+## Krok 5: Uložte upravený dokument
+
+Nakonec musíme změny uložit. Zde zapíšeme upravený dokument zpět na disk.
 
 ```csharp
 doc.Save(dataDir + "Output_out.pdf");
 ```
 
-### Příklad zdrojového kódu pro vkládání písem se strategií podmnožiny pomocí Aspose.PDF pro .NET. 
-
-```csharp
-// Cesta k adresáři dokumentů.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document doc = new Document(dataDir + "input.pdf");
-// Všechna písma budou vložena jako podmnožina do dokumentu v případě SubsetAllFonts.
-doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
-// Podmnožina písem bude vložena pro plně vložená písma, ale písma, která nejsou vložena do dokumentu, nebudou ovlivněna.
-doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
-doc.Save(dataDir + "Output_out.pdf");
-```
+ Tím se vytvoří nový soubor PDF s názvem`Output_out.pdf` ve vašem zadaném adresáři, kompletní s vloženými fonty.
 
 ## Závěr
-tomto článku jsme diskutovali o tom, jak vložit písma do souboru PDF se strategií podmnožiny pomocí Aspose.PDF pro .NET. Aspose.PDF for .NET poskytuje jednoduché a snadno použitelné rozhraní API pro práci s dokumenty PDF, včetně přidávání a vkládání písem s různými strategiemi. Vkládání písem do souboru PDF je důležitým krokem k zajištění správného zobrazení dokumentu na různých zařízeních a strategie podmnožiny je užitečnou funkcí pro zmenšení velikosti souboru dokumentu PDF.
 
-### Časté dotazy pro vkládání písem do souboru PDF se strategií podmnožin
+A tady to máte! Úspěšně jste vložili písma do souboru PDF pomocí Aspose.PDF pro .NET. Dodržením těchto kroků můžete zajistit, že si vaše dokumenty zachovají svůj zamýšlený vzhled bez ohledu na to, kde jsou zobrazeny. Ať už sdílíte zprávy, prezentace nebo jakýkoli jiný typ dokumentu, vkládání písem je zásadním krokem k udržení profesionality a jasnosti.
 
-#### Otázka: Jaká je strategie podmnožiny pro vkládání písem do souboru PDF?
+## FAQ
 
-Odpověď: Strategie podmnožiny pro vkládání písem do souboru PDF znamená, že bude vložena pouze část písma obsahující znaky použité v dokumentu. To pomáhá zmenšit velikost souboru dokumentu PDF odstraněním zbytečných dat písem.
+### Co je podmnožina písma?
+Podmnožina písma je proces zahrnutí pouze znaků použitých v dokumentu, nikoli celého písma, což pomáhá zmenšit velikost souboru.
 
-#### Otázka: Jaký je rozdíl mezi strategiemi SubsetAllFonts a SubsetEmbeddedFontsOnly?
+### Proč bych měl do svého PDF vkládat písma?
+Vkládání písem zajistí, že váš dokument bude vypadat stejně na všech zařízeních, čímž se zabrání problémům s nahrazováním písem.
 
- A:`SubsetAllFonts`strategie vloží všechna písma do dokumentu jako podmnožinu, zatímco`SubsetEmbeddedFontsOnly` strategie vloží pouze podmnožinu písem, která jsou již v dokumentu vložena. Tato druhá strategie neovlivní písma, která ještě nejsou vložena.
+### Mohu používat Aspose.PDF zdarma?
+ Ano, Aspose nabízí bezplatnou zkušební verzi, kterou můžete použít k otestování knihovny před jejím zakoupením. Můžete to najít[zde](https://releases.aspose.com/).
 
-#### Otázka: Proč je důležité vkládání písem se strategií podmnožiny?
+### Kde najdu další dokumentaci?
+ Máte přístup ke kompletní dokumentaci Aspose.PDF pro .NET[zde](https://reference.aspose.com/pdf/net/).
 
-Odpověď: Vkládání písem se strategií podmnožiny je důležité k zajištění toho, aby soubor PDF obsahoval potřebná data písem pro správné zobrazení textu a zároveň aby byla velikost souboru menší, protože obsahuje pouze znaky použité v dokumentu.
-
-#### Otázka: Mohu použít Aspose.PDF pro .NET k vkládání písem s různými strategiemi?
-
- Odpověď: Ano, Aspose.PDF pro .NET poskytuje různé strategie pro vkládání písem, včetně`SubsetAllFonts` a`SubsetEmbeddedFontsOnly`. Na základě vašich požadavků si můžete zvolit vhodnou strategii.
-
-#### Otázka: Je Aspose.PDF for .NET spolehlivou knihovnou pro práci s dokumenty PDF?
-
-Odpověď: Ano, Aspose.PDF for .NET je spolehlivá a výkonná knihovna pro práci s dokumenty PDF. Poskytuje rozsáhlé funkce pro vytváření, úpravy a manipulaci se soubory PDF v aplikacích .NET.
+### Co když narazím na problémy?
+ Pokud narazíte na nějaké problémy, můžete vyhledat pomoc na fóru podpory Aspose[zde](https://forum.aspose.com/c/pdf/10).

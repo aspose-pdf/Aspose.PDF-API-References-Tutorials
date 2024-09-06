@@ -40,7 +40,7 @@ Document document = new Document(dataDir + "ChangePassword.pdf", "owner");
 
 ## Krok 4: Změna hesla
 
- Jakmile načtete dokument PDF, můžete změnit jeho heslo pomocí`ChangePasswords` metoda. Metoda vyžaduje tři parametry: aktuální heslo vlastníka, nové uživatelské heslo a nové heslo vlastníka.
+ Jakmile načtete dokument PDF, můžete změnit jeho heslo pomocí`ChangePasswords`metoda. Metoda vyžaduje tři parametry: aktuální heslo vlastníka, nové uživatelské heslo a nové heslo vlastníka.
 
 ```csharp
 document.ChangePasswords("owner", "newuser", "newowner");
@@ -66,7 +66,7 @@ Aktualizovaný soubor PDF bude uložen na zadané místo.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 // Otevřete dokument
 Document document = new Document(dataDir+ "ChangePassword.pdf", "owner");
-// Změnit heslo
+// Změňte heslo
 document.ChangePasswords("owner", "newuser", "newowner");
 dataDir = dataDir + "ChangePassword_out.pdf";
 // Uložit aktualizované PDF
@@ -76,7 +76,7 @@ Console.WriteLine("\nPDF file password changed successfully.\nFile saved at " + 
 
 ## Závěr
 
-Gratulujeme! Úspěšně jste změnili heslo dokumentu PDF pomocí Aspose.PDF pro .NET. Tento výukový program popsal proces krok za krokem, od načtení dokumentu po uložení aktualizované verze. Tuto funkci nyní můžete použít k zabezpečení souborů PDF pomocí nových hesel.
+Gratuluji! Úspěšně jste změnili heslo dokumentu PDF pomocí Aspose.PDF pro .NET. Tento výukový program popsal proces krok za krokem, od načtení dokumentu po uložení aktualizované verze. Nyní můžete tuto funkci použít k zabezpečení souborů PDF pomocí nových hesel.
 
 ### Časté dotazy pro změnu hesla v souboru PDF
 
@@ -102,7 +102,7 @@ Odpověď: Podle poskytnutých kroků nastavte své vývojové prostředí, vče
 
 #### Otázka: Mohu zadat různá hesla pro uživatele a vlastníky?
 
- A: Ano, ten`ChangePasswords`umožňuje nastavit různá hesla pro uživatele a vlastníka. Nahraďte zástupné symboly "newuser" a "newowner" požadovanými hesly.
+ A: Ano, ten`ChangePasswords` umožňuje nastavit různá hesla pro uživatele a vlastníka. Nahraďte zástupné symboly "newuser" a "newowner" požadovanými hesly.
 
 #### Otázka: Jak uložím aktualizovaný dokument PDF?
 

@@ -22,7 +22,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## Steg 2: Öppna PDF-dokumentet
 
- det här steget kommer vi att öppna PDF-dokumentet med hjälp av`Document` klass av Aspose.PDF.
+ I det här steget kommer vi att öppna PDF-dokumentet med hjälp av`Document` klass av Aspose.PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "TextField.pdf");
@@ -81,11 +81,11 @@ Var noga med att ange den fullständiga sökvägen och filnamnet för den redige
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Öppna dokumentet
 Document pdfDocument = new Document(dataDir + "TextField.pdf");
-// Skapa ett fält
+//Skapa ett fält
 TextBoxField textBoxField = new TextBoxField(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(100, 200, 300, 300));
 textBoxField.PartialName = "textbox1";
 textBoxField.Value = "Text Box";
-//TextBoxField.Border = new Border(
+// TextBoxField.Border = new Border(
 Border border = new Border(textBoxField);
 border.Width = 5;
 border.Dash = new Dash(1, 1);

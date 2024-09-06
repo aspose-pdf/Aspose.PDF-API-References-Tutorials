@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-text/replace-fonts/
 
 ## 第 1 步：設定文檔目錄
 
-首先，您需要設定輸入 PDF 檔案所在目錄的路徑。代替`"YOUR DOCUMENT DIRECTORY"`在裡面`dataDir`變數包含 PDF 檔案的路徑。
+首先，您需要設定輸入 PDF 檔案所在目錄的路徑。代替`"YOUR DOCUMENT DIRECTORY"`在`dataDir`變數包含 PDF 檔案的路徑。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -115,7 +115,7 @@ catch (Exception ex)
 
 A：設定文檔目錄：
 
-1. 代替`"YOUR DOCUMENT DIRECTORY"`在裡面`dataDir`變數包含輸入 PDF 檔案所在目錄的路徑。
+1. 代替`"YOUR DOCUMENT DIRECTORY"`在`dataDir`變數包含輸入 PDF 檔案所在目錄的路徑。
 
 #### Q：如何替換 PDF 文件中的特定字型？
 

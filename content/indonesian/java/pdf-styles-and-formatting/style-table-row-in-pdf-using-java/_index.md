@@ -1,8 +1,8 @@
 ---
 title: Gaya Baris Tabel dalam PDF menggunakan Java
 linktitle: Gaya Baris Tabel dalam PDF menggunakan Java
-second_title: Aspose.PDF API Pemrosesan PDF Java
-description: Pelajari cara menata baris tabel PDF di Java menggunakan Aspose.PDF untuk Java. Sesuaikan warna, tambahkan batas, dan banyak lagi dalam panduan komprehensif ini.
+second_title: API Pemrosesan PDF Java Aspose.PDF
+description: Pelajari cara menata baris tabel PDF di Java menggunakan Aspose.PDF untuk Java. Sesuaikan warna, tambahkan batas, dan banyak lagi dalam panduan lengkap ini.
 type: docs
 weight: 10
 url: /id/java/pdf-styles-and-formatting/style-table-row-in-pdf-using-java/
@@ -10,21 +10,21 @@ url: /id/java/pdf-styles-and-formatting/style-table-row-in-pdf-using-java/
 
 ## Pengantar Aspose.PDF untuk Java
 
-Aspose.PDF untuk Java adalah perpustakaan canggih yang memungkinkan Anda membuat, memanipulasi, dan mengubah dokumen PDF dalam aplikasi Java. Ini menyediakan berbagai fitur untuk bekerja dengan PDF, termasuk membuat tabel dan menyesuaikan kontennya.
+Aspose.PDF untuk Java adalah pustaka canggih yang memungkinkan Anda membuat, memanipulasi, dan mengubah dokumen PDF dalam aplikasi Java. Pustaka ini menyediakan berbagai fitur untuk bekerja dengan PDF, termasuk membuat tabel dan menyesuaikan kontennya.
 
 ## Instalasi dan Pengaturan
 
-Untuk mulai menggunakan Aspose.PDF untuk Java, Anda perlu menyiapkan lingkungan pengembangan Anda. Berikut langkah-langkah dasarnya:
+Untuk mulai menggunakan Aspose.PDF untuk Java, Anda perlu menyiapkan lingkungan pengembangan Anda. Berikut ini adalah langkah-langkah dasarnya:
 
-1.  Unduh Aspose.PDF untuk Java: Kunjungi[Di Sini](https://releases.aspose.com/pdf/java/) untuk mengunduh perpustakaan.
+1.  Unduh Aspose.PDF untuk Java: Kunjungi[Di Sini](https://releases.aspose.com/pdf/java/) untuk mengunduh pustaka.
 
-2. Tambahkan Jar Aspose.PDF ke Proyek Anda: Sertakan file JAR yang diunduh dalam proyek Java Anda.
+2. Tambahkan Aspose.PDF Jar ke Proyek Anda: Sertakan file JAR yang diunduh dalam proyek Java Anda.
 
 3. Inisialisasi Aspose.PDF: Inisialisasi pustaka Aspose.PDF dalam kode Anda untuk mulai bekerja dengan dokumen PDF.
 
 ## Membuat Dokumen PDF
 
-Sekarang kita sudah menyiapkan Aspose.PDF untuk Java, mari kita mulai dengan membuat dokumen PDF baru.
+Sekarang setelah Aspose.PDF untuk Java disiapkan, mari mulai dengan membuat dokumen PDF baru.
 
 ```java
 // Buat dokumen PDF baru
@@ -33,23 +33,23 @@ Document pdfDocument = new Document();
 
 ## Menambahkan Tabel ke PDF
 
-Untuk menata baris tabel, pertama-tama kita perlu menambahkan tabel ke dokumen PDF kita. Mari kita lihat cara melakukannya:
+Untuk memberi gaya pada baris tabel, pertama-tama kita perlu menambahkan tabel ke dokumen PDF kita. Mari kita lihat cara melakukannya:
 
 ```java
-// Buat tabel
+// Membuat tabel
 Table table = new Table();
 pdfDocument.getPages().get_Item(1).getParagraphs().add(table);
 ```
 
-Sekarang setelah meja kita siap, saatnya beralih ke menata baris-barisnya.
+Setelah tabel kita pada tempatnya, saatnya beralih ke penataan baris-barisnya.
 
-## Barisan Tabel Penataan Gaya
+## Menata Baris Tabel
 
-Menata baris tabel dalam PDF dapat mencakup perubahan warna latar belakang, warna teks, font, dan banyak lagi. Aspose.PDF untuk Java menyediakan berbagai opsi untuk menyesuaikan gaya baris.
+Penataan baris tabel dalam PDF dapat mencakup perubahan warna latar belakang, warna teks, fon, dan banyak lagi. Aspose.PDF untuk Java menyediakan berbagai opsi untuk menyesuaikan gaya baris.
 
-## Menerapkan Penataan Baris
+## Menerapkan Gaya Baris
 
-Mari kita lihat panduan langkah demi langkah untuk menata baris tabel menggunakan Aspose.PDF untuk Java. Kami akan menggunakan contoh kode Java untuk setiap langkah.
+Mari kita bahas panduan langkah demi langkah untuk menata baris tabel menggunakan Aspose.PDF untuk Java. Kita akan menggunakan contoh kode Java untuk setiap langkah.
 
 ### 1. Menambahkan Baris ke Tabel
 
@@ -95,34 +95,34 @@ TextFragment text = new TextFragment("This is cell content.");
 cell.getParagraphs().add(text);
 ```
 
-Ulangi langkah-langkah ini untuk setiap baris yang ingin Anda gaya di tabel Anda.
+Ulangi langkah-langkah ini untuk setiap baris yang ingin Anda beri gaya pada tabel Anda.
 
 ## Pengujian dan Pratinjau
 
-Setelah menerapkan gaya baris yang diinginkan, penting untuk menguji dan melihat pratinjau dokumen PDF Anda untuk memastikan bahwa gaya tersebut memenuhi kebutuhan Anda.
+Setelah menerapkan gaya baris yang diinginkan, penting untuk menguji dan melihat pratinjau dokumen PDF Anda untuk memastikan bahwa gaya tersebut memenuhi persyaratan Anda.
 
 ## Kesimpulan
 
-Pada artikel ini, kita telah mempelajari cara menata baris tabel dalam dokumen PDF menggunakan Java dan Aspose.PDF untuk Java. Menyesuaikan tampilan baris tabel dapat membuat PDF Anda lebih menarik secara visual dan informatif. Aspose.PDF untuk Java menyediakan seperangkat alat canggih untuk mencapai hal ini.
+Dalam artikel ini, kami telah membahas cara menata baris tabel dalam dokumen PDF menggunakan Java dan Aspose.PDF untuk Java. Menyesuaikan tampilan baris tabel dapat membuat PDF Anda lebih menarik secara visual dan informatif. Aspose.PDF untuk Java menyediakan seperangkat alat yang canggih untuk mencapai hal ini.
 
-## FAQ
+## Pertanyaan yang Sering Diajukan
 
 ### Apa itu Aspose.PDF untuk Java?
 
-Aspose.PDF untuk Java adalah perpustakaan Java yang memungkinkan pengembang membuat, memanipulasi, dan bekerja dengan dokumen PDF dalam aplikasi Java.
+Aspose.PDF untuk Java adalah pustaka Java yang memungkinkan pengembang untuk membuat, memanipulasi, dan bekerja dengan dokumen PDF dalam aplikasi Java.
 
 ### Bagaimana cara menginstal Aspose.PDF untuk Java?
 
- Untuk menginstal Aspose.PDF untuk Java, unduh perpustakaan dari[Di Sini](https://releases.aspose.com/pdf/java/) dan sertakan file JAR dalam proyek Java Anda.
+ Untuk menginstal Aspose.PDF untuk Java, unduh pustaka dari[Di Sini](https://releases.aspose.com/pdf/java/) dan sertakan berkas JAR dalam proyek Java Anda.
 
-### Bisakah saya menata setiap baris dalam tabel PDF?
+### Bisakah saya memberi gaya pada baris individual dalam tabel PDF?
 
-Ya, Anda dapat menata setiap baris dalam tabel PDF menggunakan Aspose.PDF untuk Java dengan menyesuaikan properti seperti warna latar belakang, warna teks, font, dan lainnya.
+Ya, Anda dapat menata baris individual dalam tabel PDF menggunakan Aspose.PDF untuk Java dengan menyesuaikan properti seperti warna latar belakang, warna teks, font, dan lainnya.
 
 ### Apakah ada batasan pada penataan baris di Aspose.PDF untuk Java?
 
-Meskipun Aspose.PDF untuk Java menawarkan opsi penyesuaian ekstensif untuk baris tabel, penting untuk memeriksa dokumentasi untuk mengetahui batasan atau pertimbangan spesifik untuk kasus penggunaan Anda.
+Meskipun Aspose.PDF untuk Java menawarkan opsi penyesuaian yang luas untuk baris tabel, penting untuk memeriksa dokumentasi guna mengetahui batasan atau pertimbangan khusus untuk kasus penggunaan Anda.
 
 ### Di mana saya dapat menemukan lebih banyak sumber daya untuk Aspose.PDF untuk Java?
 
- Untuk dokumentasi komprehensif dan sumber daya tambahan, kunjungi[Di Sini](https://reference.aspose.com/pdf/java/).
+ Untuk dokumentasi lengkap dan sumber daya tambahan, kunjungi[Di Sini](https://reference.aspose.com/pdf/java/).

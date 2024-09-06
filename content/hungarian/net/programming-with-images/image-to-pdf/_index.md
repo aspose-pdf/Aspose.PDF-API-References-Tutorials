@@ -25,7 +25,7 @@ using System.Drawing;
 
 ## 3. lépés: A dokumentumobjektum inicializálása
 
- A C# kódban az első lépés a`Document` tárgy. Ez az objektum a PDF dokumentumot képviseli, amelyet létrehozunk. Adja hozzá a következő kódot a projekthez:
+ A C# kódban az első lépés a`Document` objektum. Ez az objektum a PDF dokumentumot képviseli, amelyet létrehozunk. Adja hozzá a következő kódot a projekthez:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -76,7 +76,7 @@ Ezek a beállítások biztosítják, hogy a kép minden további margó nélkül
 
 ## 7. lépés: Képobjektum létrehozása
 
-Most pedig hozzunk létre egy`Aspose.Pdf.Image` objektum a képadatok tárolására. Adja hozzá a következő kódot a projekthez:
+ Most pedig hozzunk létre egy`Aspose.Pdf.Image` objektum a képadatok tárolására. Adja hozzá a következő kódot a projekthez:
 
 ```csharp
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
@@ -86,7 +86,7 @@ Ez az objektum képviseli azt a képet, amelyet hozzá szeretnénk adni a PDF-ol
 
 ## 8. lépés: A kép hozzáadása az oldalhoz
 
- A kép PDF oldalhoz való hozzáadásához hozzá kell rendelnünk a képadatokat a`ImageStream` tulajdona a`Aspose.Pdf.Image` tárgy. A kép hozzáadásához használja a következő kódot:
+ A kép PDF oldalhoz való hozzáadásához hozzá kell rendelnünk a képadatokat a`ImageStream` tulajdona a`Aspose.Pdf.Image` objektum. A kép hozzáadásához használja a következő kódot:
 
 ```csharp
 image1.ImageStream = mystream;
@@ -127,7 +127,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 // Oldal hozzáadása a dokumentum oldalgyűjteményéhez
 Page page = doc.Pages.Add();
-// Töltse be a forrás képfájlt a Stream objektumba
+// Töltse be a forrásképfájlt a Stream objektumba
 FileStream fs = new FileStream(dataDir + "aspose-logo.jpg", FileMode.Open, FileAccess.Read);
 byte[] tmpBytes = new byte[fs.Length];
 fs.Read(tmpBytes, 0, int.Parse(fs.Length.ToString()));
@@ -144,7 +144,7 @@ page.CropBox = new Aspose.Pdf.Rectangle(0, 0, b.Width, b.Height);
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 // Adja hozzá a képet a szakasz bekezdésgyűjteményéhez
 page.Paragraphs.Add(image1);
-// Állítsa be a képfájl adatfolyamát
+// Állítsa be a képfájl adatfolyamot
 image1.ImageStream = mystream;
 dataDir = dataDir + "ImageToPDF_out.pdf";
 // Az eredményül kapott PDF fájl mentése
@@ -156,7 +156,7 @@ Console.WriteLine("\nImage converted to pdf successfully.\nFile saved at " + dat
 
 ## Következtetés
 
-Ebben az oktatóanyagban megtanultuk, hogyan alakíthat át képeket PDF-be az Aspose.PDF for .NET használatával. Lépésről lépésre áttekintettük a folyamatot, beleértve a környezet beállítását, a könyvtárak importálását, a dokumentum objektum inicializálását, a képfájl betöltését, a margók és a vágódoboz beállítását, a kép hozzáadását az oldalhoz, a PDF fájl mentését és a memóriafolyam. Az alábbi lépések követésével könnyedén konvertálhatja a képeket PDF-formátumba .NET-alkalmazásaiban.
+Ebben az oktatóanyagban megtanultuk, hogyan alakíthat át képeket PDF-be az Aspose.PDF for .NET használatával. Lépésről lépésre áttekintettük a folyamatot, beleértve a környezet beállítását, a könyvtárak importálását, a dokumentum objektum inicializálását, a képfájl betöltését, a margók és a vágódoboz beállítását, a kép hozzáadását az oldalhoz, a PDF fájl mentését és a program bezárását. memóriafolyam. Az alábbi lépések követésével könnyedén konvertálhatja a képeket PDF-formátumba .NET-alkalmazásaiban.
 
 ### GYIK
 

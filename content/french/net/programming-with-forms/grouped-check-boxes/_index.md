@@ -1,13 +1,13 @@
 ---
-title: Cases à cocher regroupées dans un document PDF
-linktitle: Cases à cocher regroupées dans un document PDF
-second_title: Aspose.PDF pour la référence de l'API .NET
+title: Cases à cocher groupées dans un document PDF
+linktitle: Cases à cocher groupées dans un document PDF
+second_title: Référence de l'API Aspose.PDF pour .NET
 description: Créez facilement des cases à cocher groupées dans un document PDF avec Aspose.PDF pour .NET.
 type: docs
 weight: 170
 url: /fr/net/programming-with-forms/grouped-check-boxes/
 ---
-Dans ce didacticiel, nous allons vous montrer comment créer des cases à cocher groupées dans un document PDF à l'aide d'Aspose.PDF pour .NET. Nous expliquerons le code source C# étape par étape pour vous guider tout au long de ce processus.
+Dans ce tutoriel, nous vous montrerons comment créer des cases à cocher groupées dans un document PDF à l'aide d'Aspose.PDF pour .NET. Nous expliquerons le code source C# étape par étape pour vous guider tout au long de ce processus.
 
 ## Étape 1 : Préparation
 
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## Étape 2 : instancier un objet de document
 
-Instanciez un objet Document :
+Instancier un objet Document :
 
 ```csharp
 Document pdfDocument = new Document();
@@ -41,9 +41,9 @@ Instanciez un objet RadioButtonField avec le numéro de page comme argument :
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## Étape 5 : Ajouter des options de boutons radio
+## Étape 5 : ajouter des options de bouton radio
 
-Ajoutez des options de boutons radio à l'aide de l'objet RadioButtonOptionField et spécifiez leur position à l'aide de l'objet Rectangle :
+Ajoutez des options de bouton radio à l'aide de l'objet RadioButtonOptionField et spécifiez leur position à l'aide de l'objet Rectangle :
 
 ```csharp
 RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
@@ -71,26 +71,26 @@ opt2.Border.Style = BorderStyle.Solid;
 
 ## Étape 7 : Ajoutez les boutons radio au formulaire
 
-Ajoutez les boutons radio à l'objet formulaire de document :
+Ajoutez les boutons radio à l’objet de formulaire de document :
 
 ```csharp
 pdfDocument.Form.Add(radio);
 ```
 
-## Étape 8 : Enregistrez le document
+## Étape 8 : Enregistrer le document
 
-Enregistrez le document PDF :
+Enregistrer le document PDF :
 
 ```csharp
 dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Exemple de code source pour les cases à cocher groupées utilisant Aspose.PDF pour .NET 
+### Exemple de code source pour les cases à cocher groupées à l'aide d'Aspose.PDF pour .NET 
 ```csharp
 try
 {
-	// Le chemin d'accès au répertoire des documents.
+	// Le chemin vers le répertoire des documents.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	// Instancier l'objet Document
 	Document pdfDocument = new Document();
@@ -98,7 +98,7 @@ try
 	Page page = pdfDocument.Pages.Add();
 	// Instancier un objet RadioButtonField avec le numéro de page comme argument
 	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
-	// Ajoutez la première option de bouton radio et spécifiez également son origine à l'aide de l'objet Rectangle
+	// Ajoutez la première option de bouton radio et spécifiez également son origine à l’aide de l’objet Rectangle
 	RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
 	RadioButtonOptionField opt2 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(100, 0, 120, 20));
 	opt1.OptionName = "Test1";
@@ -117,10 +117,10 @@ try
 	opt2.Border.Width = 1;
 	opt2.Border.Style = BorderStyle.Solid;
 	opt2.Characteristics.Border = System.Drawing.Color.Black;
-	// Ajouter un bouton radio pour former un objet de l'objet Document
+	// Ajouter un bouton radio pour former l'objet de l'objet Document
 	pdfDocument.Form.Add(radio);
 	dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
-	// Enregistrez le document PDF
+	// Enregistrer le document PDF
 	pdfDocument.Save(dataDir);
 	Console.WriteLine("\nGrouped checkboxes added successfully.\nFile saved at " + dataDir);
 }
@@ -136,22 +136,22 @@ Dans ce didacticiel, nous avons appris à créer des cases à cocher groupées d
 
 ### FAQ
 
-#### Q : Que sont les cases à cocher regroupées dans un document PDF ?
+#### Q : Que sont les cases à cocher groupées dans un document PDF ?
 
-R : Les cases à cocher regroupées dans un document PDF font référence à un ensemble d'options de boutons radio regroupées. Les boutons radio permettent aux utilisateurs de sélectionner une seule option parmi un groupe de choix mutuellement exclusifs. Lorsqu'un bouton radio est sélectionné, les autres du même groupe sont automatiquement désélectionnés. Ce comportement de regroupement est utile lorsque vous souhaitez présenter plusieurs options aux utilisateurs tout en limitant leur sélection à un seul choix.
+R : Les cases à cocher groupées dans un document PDF font référence à un ensemble d'options de boutons radio regroupées. Les boutons radio permettent aux utilisateurs de sélectionner une seule option dans un groupe de choix mutuellement exclusifs. Lorsqu'un bouton radio est sélectionné, les autres du même groupe sont automatiquement désélectionnés. Ce comportement de regroupement est utile lorsque vous souhaitez présenter aux utilisateurs plusieurs options mais limiter leur sélection à un seul choix.
 
-#### Q : Puis-je personnaliser l’apparence des cases à cocher groupées dans Aspose.PDF pour .NET ?
+#### Q : Puis-je personnaliser l’apparence des cases à cocher groupées dans Aspose.PDF pour .NET ?
 
-R : Oui, vous pouvez personnaliser l'apparence des cases à cocher groupées dans Aspose.PDF pour .NET. L'API propose diverses options pour définir le style, la bordure et l'apparence des options des boutons radio. Vous pouvez définir la position de chaque option, choisir entre différents styles de boîte (par exemple carré, cercle, croix) et ajuster les propriétés de bordure pour obtenir la représentation visuelle souhaitée.
+R : Oui, vous pouvez personnaliser l'apparence des cases à cocher groupées dans Aspose.PDF pour .NET. L'API fournit diverses options pour définir le style, la bordure et l'apparence des options de bouton radio. Vous pouvez définir la position de chaque option, choisir entre différents styles de case (par exemple, carré, cercle, croix) et ajuster les propriétés de bordure pour obtenir la représentation visuelle souhaitée.
 
-#### Q : Comment ajouter des cases à cocher groupées à une page spécifique d'un document PDF ?
+#### Q : Comment ajouter des cases à cocher groupées à une page spécifique dans un document PDF ?
 
-R : Pour ajouter des cases à cocher groupées à une page spécifique d'un document PDF, vous devez instancier un`RadioButtonField` objet avec le numéro de page souhaité comme argument. Ensuite, créez`RadioButtonOptionField` objets représentant chaque option de bouton radio et spécifiez leur position à l'aide du`Rectangle` objet. Enfin, ajoutez ces options au`RadioButtonField` et personnalisez leur apparence selon vos besoins avant d'ajouter le`RadioButtonField` au formulaire de document.
+R : Pour ajouter des cases à cocher groupées à une page spécifique dans un document PDF, vous devez instancier un`RadioButtonField` objet avec le numéro de page souhaité comme argument. Ensuite, créez`RadioButtonOptionField` objets représentant chaque option de bouton radio et spécifiez leur position à l'aide de la`Rectangle` objet. Enfin, ajoutez ces options à la`RadioButtonField` et personnalisez leur apparence selon vos besoins avant d'ajouter le`RadioButtonField` au formulaire du document.
 
-#### Q : Puis-je ajouter plusieurs groupes de cases à cocher à un seul document PDF ?
+#### Q : Puis-je ajouter plusieurs groupes de cases à cocher à un seul document PDF ?
 
  R : Oui, vous pouvez ajouter plusieurs groupes de cases à cocher à un seul document PDF. Chaque groupe doit avoir un`RadioButtonField` objet, et le`RadioButtonOptionField` les objets de chaque groupe doivent partager la même page et des noms uniques pour leurs options. Cela garantit que les boutons radio de chaque groupe fonctionnent correctement et que les sélections s'excluent mutuellement.
 
 #### Q : Les cases à cocher groupées sont-elles prises en charge dans toutes les visionneuses et applications PDF ?
 
-R : Oui, les cases à cocher groupées sont prises en charge dans toutes les visionneuses et applications PDF conformes aux normes. La spécification PDF définit les boutons radio et leur comportement de regroupement, les rendant universellement reconnus au format PDF. Cependant, il est essentiel de tester les fonctionnalités dans différents visualiseurs PDF pour garantir un comportement cohérent sur les différentes plates-formes.
+R : Oui, les cases à cocher groupées sont prises en charge dans toutes les applications et visionneuses PDF conformes aux normes. La spécification PDF définit les boutons radio et leur comportement de regroupement, ce qui les rend universellement reconnus dans le format PDF. Cependant, il est essentiel de tester la fonctionnalité dans différentes visionneuses PDF pour garantir un comportement cohérent sur différentes plates-formes.

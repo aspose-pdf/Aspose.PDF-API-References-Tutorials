@@ -45,7 +45,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
 ## Βήμα 6: Δημιουργήστε ένα TextFragment
- Δημιουργώ ένα`TextFragment` αντικείμενο και παρέχετε το επιθυμητό κείμενο. Ορίστε τη θέση του τμήματος κειμένου χρησιμοποιώντας το`Position` ιδιοκτησία. Στον παρεχόμενο κωδικό, το κείμενο ορίζεται σε "κύριο κείμενο" και τοποθετείται στο (100, 600) στη σελίδα.
+ Δημιουργία α`TextFragment` αντικείμενο και παρέχετε το επιθυμητό κείμενο. Ορίστε τη θέση του τμήματος κειμένου χρησιμοποιώντας το`Position` ιδιοκτησία. Στον παρεχόμενο κωδικό, το κείμενο ορίζεται σε "κύριο κείμενο" και τοποθετείται στο (100, 600) στη σελίδα.
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -64,7 +64,7 @@ textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 ```
 
 ## Βήμα 8: Ενεργοποιήστε το περίγραμμα κειμένου
- Για να ενεργοποιήσετε το περίγραμμα κειμένου, ορίστε το`DrawTextRectangleBorder`ιδιότητα του τμήματος κειμένου`TextState` προς την`true`.
+ Για να ενεργοποιήσετε το περίγραμμα κειμένου, ορίστε το`DrawTextRectangleBorder`ιδιότητα του τμήματος κειμένου`TextState` να`true`.
 
 ```csharp
 textFragment.TextState.DrawTextRectangleBorder = true;
@@ -111,7 +111,7 @@ tb.AppendText(textFragment);
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
-## συμπέρασμα
+## Σύναψη
 Προσθέσατε με επιτυχία ένα περίγραμμα κειμένου στο έγγραφο PDF χρησιμοποιώντας το Aspose.PDF για .NET. Το αρχείο PDF που προκύπτει μπορεί τώρα να βρεθεί στην καθορισμένη διαδρομή αρχείου εξόδου.
 
 ### Συχνές ερωτήσεις

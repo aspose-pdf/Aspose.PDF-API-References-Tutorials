@@ -33,6 +33,6 @@ Aspose.PDF för .NET:s "Programmering med taggade PDF-filer" vägleder dig genom
 | [Stiltextstruktur i PDF-fil](./style-text-structure/) | Lär dig hur du formaterar textstruktur i PDF-fil med Aspose.PDF för .NET. Steg-för-steg guide till stiltext. |  
 | [Taggad PDF-innehåll](./tagged-pdf-content/) | Lär dig hur du arbetar med taggat innehåll i ett PDF-dokument med Aspose.PDF för .NET. En steg-för-steg-guide för att använda taggar. |  
 | [Tagga bild i befintlig PDF](./tag-image-in-existing-pdf/) | Lär dig hur du markerar en bild i en befintlig PDF med Aspose.PDF för .NET. En steg-för-steg-guide för att lägga till taggar till bilder. |  
-| [Textblockstrukturelement](./text-block-structure-elements/) | Lär dig hur du använder Aspose.PDF för .NET för att lägga till textblockstrukturelement, såsom rubriker och taggade stycken, till ett befintligt PDF-dokument. |  
+| [Textblocksstrukturelement](./text-block-structure-elements/) | Lär dig hur du använder Aspose.PDF för .NET för att lägga till textblockstrukturelement, såsom rubriker och taggade stycken, till ett befintligt PDF-dokument. |  
 | [Textstrukturelement i PDF-fil](./text-structure-elements/) | Lär dig hur du lägger till textstrukturelement i PDF-fil med Aspose.PDF för .NET. Förbättra strukturen och tillgängligheten för dina PDF-filer. |  
 | [Validera PDF-fil](./validate-pdf/) | Lär dig hur du validerar en PDF-fil med Aspose.PDF för .NET. Kontrollera dess överensstämmelse med standarder och generera en valideringsrapport. |  

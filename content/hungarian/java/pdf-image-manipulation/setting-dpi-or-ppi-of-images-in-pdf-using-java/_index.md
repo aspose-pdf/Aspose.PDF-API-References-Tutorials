@@ -16,7 +16,7 @@ digitális korban, ahol a dokumentumokat gyakran elektronikusan osztják meg, a 
 
 Mielőtt belemerülnénk a DPI/PPI beállításába PDF-képekhez, mutassuk be röviden az Aspose.PDF for Java-t. Ez egy nagy teljesítményű és sokoldalú könyvtár, amely lehetővé teszi a Java fejlesztők számára PDF dokumentumok egyszerű létrehozását, kezelését és átalakítását. A kezdéshez telepítenie és be kell állítania az Aspose.PDF for Java fájlt a fejlesztői környezetben.
 
-## DPI vagy PPI beállítása a PDF képekben
+## A DPI vagy PPI beállítása a PDF képekben
 
 ### Mi az a DPI/PPI a képekhez PDF-ben?
 
@@ -56,11 +56,11 @@ megfelelő DPI/PPI értékek kiválasztása a PDF-képekhez kulcsfontosságú. O
 
 ## Tesztelés és ellenőrzés
 
-A PDF-képek DPI/PPI-jének beállítása után feltétlenül ellenőrizze, hogy a változtatásokat megfelelően alkalmazta-e. A tesztelés biztosítja, hogy PDF-dokumentumai megfeleljenek a kívánt minőségi szabványoknak, legyen szó akár a képernyőn történő megtekintésről, akár a nyomtatásról.
+A PDF-képek DPI/PPI-jének beállítása után feltétlenül ellenőrizze, hogy a változtatásokat megfelelően alkalmazta-e. A tesztelés biztosítja, hogy PDF-dokumentumai megfeleljenek a kívánt minőségi szabványoknak, legyen szó a képernyőn történő megtekintésről vagy a nyomtatásról.
 
 ## Következtetés
 
-Összefoglalva, a PDF-fájlokban lévő képek DPI-jének vagy PPI-jének Java használatával történő beállítása jelentősen befolyásolhatja a dokumentumok minőségét és használhatóságát. Feltérképeztük a Java Aspose.PDF-en keresztül elérhető módszereket, és megvitattuk a DPI/PPI-értékekkel kapcsolatos megalapozott döntések meghozatalának bevált gyakorlatait. Ezen irányelvek követésével javíthatja PDF-dokumentumai vizuális vonzerejét és funkcionalitását.
+Összefoglalva, a PDF-fájlokban lévő képek DPI-jének vagy PPI-jének Java használatával történő beállítása jelentősen befolyásolhatja a dokumentumok minőségét és használhatóságát. Feltérképeztük az Aspose.PDF for Java-n keresztül elérhető módszereket, és megvitattuk a DPI/PPI-értékekkel kapcsolatos megalapozott döntések meghozatalának legjobb gyakorlatait. Ezen irányelvek követésével javíthatja PDF-dokumentumai vizuális vonzerejét és funkcionalitását.
 
 ## GYIK
 

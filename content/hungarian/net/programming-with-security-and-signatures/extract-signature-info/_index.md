@@ -101,7 +101,7 @@ using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew
 }
 ```
 
-Ez az! Sikeresen kinyerte az aláírási információkat az Aspose.PDF for .NET használatával. Nyugodtan integrálhatja ezt a kódot saját alkalmazásaiba, vagy módosíthatja igényei szerint.
+Ennyi! Sikeresen kinyerte az aláírási információkat az Aspose.PDF for .NET használatával. Nyugodtan integrálhatja ezt a kódot saját alkalmazásaiba, vagy módosíthatja igényei szerint.
 
 ### Minta forráskód az aláírási információk kibontásához az Aspose.PDF for .NET használatával 
 ```csharp

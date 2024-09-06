@@ -1,24 +1,24 @@
 ---
-title: Botón de radio con opciones
-linktitle: Botón de radio con opciones
-second_title: Aspose.PDF para referencia de API .NET
+title: Botón de opción con opciones
+linktitle: Botón de opción con opciones
+second_title: Referencia de API de Aspose.PDF para .NET
 description: Agregue fácilmente un botón de opción con opciones a un documento PDF usando Aspose.PDF para .NET.
 type: docs
 weight: 230
 url: /es/net/programming-with-forms/radio-button-with-options/
 ---
 
-En este tutorial, le mostraremos cómo agregar un botón de opción con opciones a un documento PDF usando Aspose.PDF para .NET. Explicaremos el código fuente de C# paso a paso para guiarlo a través de este proceso.
+En este tutorial, le mostraremos cómo agregar un botón de opción con opciones a un documento PDF mediante Aspose.PDF para .NET. Le explicaremos el código fuente de C# paso a paso para guiarlo en este proceso.
 
-## Paso 1: preparación
+## Paso 1: Preparación
 
-Asegúrese de haber importado las bibliotecas necesarias y establecer la ruta a su directorio de documentos:
+Asegúrese de haber importado las bibliotecas necesarias y de haber configurado la ruta al directorio de sus documentos:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Paso 2: crear una instancia de un objeto de documento
+## Paso 2: Crear una instancia de un objeto de documento
 
 Cree una instancia de un objeto Documento para crear un nuevo documento PDF:
 
@@ -26,7 +26,7 @@ Cree una instancia de un objeto Documento para crear un nuevo documento PDF:
 Document doc = new Document();
 ```
 
-## Paso 3: agregar página y tabla
+## Paso 3: Agregar página y tabla
 
 Agregue una página al documento y cree una tabla para contener las opciones del botón de opción:
 
@@ -37,7 +37,7 @@ table. ColumnWidths = "120 120 120";
 page.Paragraphs.Add(table);
 ```
 
-## Paso 4: crear una instancia de un objeto RadioButtonField
+## Paso 4: Crear una instancia de un objeto RadioButtonField
 
 Cree una instancia de un objeto RadioButtonField para representar el botón de opción:
 
@@ -47,7 +47,7 @@ rf. PartialName = "radio";
 doc.Form.Add(rf, 1);
 ```
 
-## Paso 5: agregue opciones de botón de opción
+## Paso 5: Agregar opciones de botón de opción
 
 Agregue las opciones del botón de opción al objeto RadioButtonField:
 
@@ -69,9 +69,9 @@ rf.Add(opt2);
 rf.Add(opt3);
 ```
 
-## Paso 6: personaliza las opciones del botón de opción
+## Paso 6: Personaliza las opciones del botón de opción
 
-Personalice las opciones del botón de opción configurando atributos como borde, color de texto y texto de título:
+Personalice las opciones del botón de opción configurando atributos como el borde, el color del texto y el texto del título:
 
 ```csharp
 opt1.Border = new Border(opt1);
@@ -81,11 +81,11 @@ opt1.Characteristics.Border = System.Drawing.Color.Black;
 opt1.DefaultAppearance.TextColor = System.Drawing.Color.Red;
 opt1.Caption = new TextFragment("Item1");
 
-// Repita los mismos pasos para opt2 y opt3.
+// Repita los mismos pasos para opt2 y opt3
 
 ```
 
-## Paso 7: agregue las opciones del botón de opción a la tabla
+## Paso 7: Agrega las opciones del botón de opción a la tabla
 
 Agregue las opciones del botón de opción a la tabla para mostrarlas:
 
@@ -99,16 +99,16 @@ c2.Paragraphs.Add(opt2);
 c3.Paragraphs.Add(opt3);
 ```
 
-## Paso 8: guarde el documento PDF
+## Paso 8: Guarde el documento PDF
 
-Guarde el documento PDF creado:
+Guardar el documento PDF creado:
 
 ```csharp
 dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Código fuente de muestra para botón de opción con opciones usando Aspose.PDF para .NET 
+### Código fuente de muestra para botón de opción con opciones utilizando Aspose.PDF para .NET 
 ```csharp
 try
 {
@@ -163,7 +163,7 @@ try
 	c2.Paragraphs.Add(opt2);
 	c3.Paragraphs.Add(opt3);
 	dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
-	// Guarde el archivo PDF
+	// Guardar el archivo PDF
 	doc.Save(dataDir);
 	Console.WriteLine("\nRadio button field with three options added successfully.\nFile saved at " + dataDir);
 }
@@ -175,4 +175,4 @@ catch (Exception ex)
 
 ## Conclusión
 
-¡Enhorabuena! Ha agregado con éxito un botón de opción con opciones a un documento PDF usando Aspose.PDF para .NET. Ahora puede utilizar este método para crear formularios interactivos en sus documentos PDF.
+¡Felicitaciones! Ha agregado exitosamente un botón de opción con opciones a un documento PDF usando Aspose.PDF para .NET. Ahora puede usar este método para crear formularios interactivos en sus documentos PDF.

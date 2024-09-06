@@ -1,8 +1,8 @@
 ---
-title: Hassas İçeriğe Redaksiyon Uygula
-linktitle: Hassas İçeriğe Redaksiyon Uygula
+title: Hassas İçeriklere Redaksiyon Uygulayın
+linktitle: Hassas İçeriklere Redaksiyon Uygulayın
 second_title: Aspose.PDF Java PDF İşleme API'si
-description: Aspose.PDF for Java ile PDF'lerdeki hassas içeriği düzenlemenin gücünü keşfedin.
+description: Aspose.PDF for Java ile PDF'lerdeki hassas içerikleri sansürlemenin gücünü keşfedin.
 type: docs
 weight: 15
 url: /tr/java/pdf-annotations/apply-redaction-sensitive-content/
@@ -10,29 +10,29 @@ url: /tr/java/pdf-annotations/apply-redaction-sensitive-content/
 
 ## Redaksiyona Giriş
 
-Redaksiyon, bir belgedeki hassas bilgilerin kalıcı olarak kaldırılması veya gizlenmesi, bu verilere erişimi olmaması gereken kişiler için bu bilgilerin erişilemez hale getirilmesi işlemidir. Bu süreç genellikle yasal sözleşmeler, mali raporlar veya devlet kayıtları gibi belgelerdeki sosyal güvenlik numaraları, mali bilgiler veya kişisel adresler gibi gizli verileri korumak için kullanılır.
+Redaksiyon, bir belgedeki hassas bilgileri kalıcı olarak kaldırma veya gizleme işlemidir ve bu verilere erişimi olmaması gereken kişiler için erişilemez hale getirir. Bu işlem genellikle yasal sözleşmeler, finansal raporlar veya devlet kayıtları gibi belgelerdeki sosyal güvenlik numaraları, finansal bilgiler veya kişisel adresler gibi gizli verileri korumak için kullanılır.
 
-## Önkoşullar
+## Ön koşullar
 
-Redaksiyon sürecine dalmadan önce aşağıdaki önkoşulların mevcut olduğundan emin olun:
+Redaksiyon sürecine başlamadan önce aşağıdaki ön koşulların mevcut olduğundan emin olun:
 
-- Java Geliştirme Ortamı: Sisteminizde Java'nın kurulu olduğundan emin olun.
--  Aspose.PDF for Java Library: Aspose.PDF for Java kütüphanesini şu adresten indirip yükleyin:[Burada](https://releases.aspose.com/pdf/java/).
+- Java Geliştirme Ortamı: Sisteminizde Java'nın yüklü olduğundan emin olun.
+-  Java Kütüphanesi için Aspose.PDF: Java kütüphanesi için Aspose.PDF'yi indirin ve kurun[Burada](https://releases.aspose.com/pdf/java/).
 
 
 ## Java Ortamınızı Kurma
 
-Aspose.PDF for Java ile çalışmaya başlamadan önce Java ortamınızın doğru şekilde yapılandırıldığından emin olun. Aşağıdaki komutu çalıştırarak Java kurulumunuzu kontrol edebilirsiniz:
+Java için Aspose.PDF ile çalışmaya başlamadan önce, Java ortamınızın düzgün yapılandırıldığından emin olun. Aşağıdaki komutu çalıştırarak Java kurulumunuzu kontrol edebilirsiniz:
 
 ```java -version```
 
-Java 8 veya üstünün kurulu olduğundan emin olun.
+Java 8 veya üzeri sürümün yüklü olduğundan emin olun.
 
 ## Aspose.PDF'yi Projenize Ekleme
 
-Aspose.PDF for Java'yı projenize eklemek için şu adımları izleyin:
+Projenize Aspose.PDF for Java'yı eklemek için şu adımları izleyin:
 
-1. Aspose.PDF for Java kütüphanesini web sitesinden indirin.
+1. Java kütüphanesi için Aspose.PDF'i web sitesinden indirin.
 2. İndirdiğiniz JAR dosyasını projenizin sınıf yoluna ekleyin.
 
 ## PDF Belgesi Yükleme
@@ -44,29 +44,29 @@ Bu adımda hassas bilgiler içeren bir PDF belgesi yükleyeceğiz. Bir PDF dosya
 Document pdfDocument = new Document("example.pdf");
 ```
 
- Yer değiştirmek`"example.pdf"` PDF dosyanızın yolu ile birlikte.
+ Yer değiştirmek`"example.pdf"` PDF dosyanızın yolunu belirtin.
 
-## Hassas İçeriğin Belirlenmesi
+## Hassas İçeriği Belirleme
 
-Hassas içeriği düzeltmeden önce onu belge içinde tanımlamamız gerekir. Bu, belirli anahtar kelimeleri, kalıpları veya normal ifadeleri arayarak yapılabilir. Örneğin, belgedeki sosyal güvenlik numarasının (SSN) tüm örneklerini çıkarmak istiyorsak aşağıdaki kodu kullanabiliriz:
+Hassas içeriği sansürleyebilmemiz için önce onu belge içinde tanımlamamız gerekir. Bu, belirli anahtar sözcükleri, kalıpları veya düzenli ifadeleri arayarak yapılabilir. Örneğin, belgedeki bir sosyal güvenlik numarasının (SSN) tüm örneklerini sansürlemek istiyorsak, aşağıdaki kodu kullanabiliriz:
 
 ```java
-// SSN'ler için modeli tanımlayın (örnek)
+// SSN'ler için deseni tanımlayın (örnek)
 String pattern = "\\d{3}-\\d{2}-\\d{4}";
 
 // Metin aramak için bir TextFragmentAbsorber nesnesi oluşturun
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(pattern);
 
-// Sayfanın tamamı için emiciyi kabul edin
+// Tüm sayfa için emiciyi kabul et
 pdfDocument.getPages().accept(absorber);
 ```
 
-## Redaksiyon Uygulanıyor
+## Redaksiyon Uygulaması
 
-Hassas içeriği belirledikten sonra redaksiyon uygulama zamanı gelir. Bilgileri gizlemek için tanımlanan metni siyah dikdörtgenlerle değiştirebiliriz:
+Hassas içeriği tanımladığımızda, düzenlemeyi uygulama zamanı gelir. Tanımlanan metni, bilgileri gizlemek için siyah dikdörtgenlerle değiştirebiliriz:
 
 ```java
-// Metin parçalarını yineleyin ve bunları düzeltin
+// Metin parçaları arasında gezinin ve bunları düzenleyin
 for (TextFragment textFragment : absorber.getTextFragments()) {
     textFragment.setText("■■■-■■-■■■■"); // Siyah dikdörtgenlerle değiştirin
 }
@@ -74,7 +74,7 @@ for (TextFragment textFragment : absorber.getTextFragments()) {
 
 ## Düzenlenmiş PDF'yi Kaydetme
 
-Redaksiyonları uyguladıktan sonra, redaksiyon yapılan PDF belgesini kaydetmeliyiz:
+Düzenlemeleri uyguladıktan sonra düzenlenmiş PDF belgesini kaydetmeliyiz:
 
 ```java
 // Düzenlenmiş PDF'yi kaydedin
@@ -83,26 +83,26 @@ pdfDocument.save("redacted.pdf");
 
 ## Çözüm
 
-Bu kılavuzda, Aspose.PDF for Java kullanarak PDF belgelerindeki hassas içeriğe redaksiyonun nasıl uygulanacağını araştırdık. Bu adımları izleyerek hassas bilgilerin korunmasını ve gizli kalmasını sağlayabilirsiniz.
+Bu kılavuzda, Java için Aspose.PDF kullanarak PDF belgelerindeki hassas içeriklere redaksiyon uygulamasının nasıl uygulanacağını inceledik. Bu adımları izleyerek hassas bilgilerin korunduğundan ve gizli kaldığından emin olabilirsiniz.
 
-## SSS'ler
+## SSS
 
-### Tek bir belgede birden çok türdeki hassas bilgiyi nasıl düzeltebilirim?
+### Tek bir belgedeki birden fazla hassas bilgi türünü nasıl sansürleyebilirim?
 
-Farklı hassas içerik türlerini tanımlamak için her biri kendi desenine sahip birden fazla TextFragmentAbsorber nesnesi oluşturabilirsiniz. Daha sonra redaksiyonları uygun şekilde uygulamak için bunları yineleyin.
+Her biri farklı hassas içerik türlerini tanımlamak için kendi desenine sahip birden fazla TextFragmentAbsorber nesnesi oluşturabilirsiniz. Ardından, uygun şekilde düzenlemeleri uygulamak için bunlar arasında yineleme yapın.
 
-### Redaksiyon geri döndürülebilir mi?
+### Redaksiyon geri alınabilir mi?
 
-Hayır, redaksiyon geri alınamaz. Bir belgeye redaksiyon uyguladığınızda hassas içerik kalıcı olarak gizlenir ve geri alınamaz.
+Hayır, redaksiyon geri alınamaz. Bir belgeye redaksiyon uyguladığınızda, hassas içerik kalıcı olarak gizlenir ve geri alınamaz.
 
-### Düzenlenen içeriğin görünümünü özelleştirebilir miyim?
+### Düzenlenmiş içeriğin görünümünü özelleştirebilir miyim?
 
-Evet, redaksiyon işaretleri için farklı renkler veya desenler seçmek gibi, redaksiyona tabi tutulan içeriğin görünümünü özelleştirebilirsiniz.
+Evet, sansürlenmiş içeriğin görünümünü özelleştirebilir, örneğin sansür işaretleri için farklı renkler veya desenler seçebilirsiniz.
 
 ### Aspose.PDF for Java toplu işlemeyi destekliyor mu?
 
-Evet, aynı anda redaksiyon uygulamak için birden fazla PDF belgesini toplu olarak işleyebilirsiniz.
+Evet, birden fazla PDF belgesini toplu olarak işleyip aynı anda üzerlerine düzenleme uygulayabilirsiniz.
 
-### Aspose.PDF for Java'da redaksiyonla ilgili herhangi bir sınırlama var mı?
+### Java için Aspose.PDF'de redaksiyona yönelik herhangi bir sınırlama var mı?
 
-Aspose.PDF for Java, güçlü redaksiyon yetenekleri sağlar, ancak istenmeyen bilgi sızıntısının meydana gelmediğinden emin olmak için redakte edilen belgeleri kapsamlı bir şekilde test etmek önemlidir.
+Java için Aspose.PDF güçlü düzenleme yetenekleri sunar, ancak istenmeyen bilgi sızıntısının olmadığından emin olmak için düzenlenmiş belgelerin kapsamlı bir şekilde test edilmesi önemlidir.

@@ -1,14 +1,14 @@
 ---
 title: Bouton radio avec options
 linktitle: Bouton radio avec options
-second_title: Aspose.PDF pour la référence de l'API .NET
+second_title: Référence de l'API Aspose.PDF pour .NET
 description: Ajoutez facilement un bouton radio avec des options à un document PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 230
 url: /fr/net/programming-with-forms/radio-button-with-options/
 ---
 
-Dans ce didacticiel, nous allons vous montrer comment ajouter un bouton radio avec des options à un document PDF à l'aide d'Aspose.PDF pour .NET. Nous expliquerons le code source C# étape par étape pour vous guider tout au long de ce processus.
+Dans ce tutoriel, nous vous montrerons comment ajouter un bouton radio avec des options à un document PDF à l'aide d'Aspose.PDF pour .NET. Nous expliquerons le code source C# étape par étape pour vous guider tout au long de ce processus.
 
 ## Étape 1 : Préparation
 
@@ -47,9 +47,9 @@ rf. PartialName = "radio";
 doc.Form.Add(rf, 1);
 ```
 
-## Étape 5 : Ajouter des options de boutons radio
+## Étape 5 : ajouter des options de bouton radio
 
-Ajoutez les options du bouton radio à l'objet RadioButtonField :
+Ajoutez les options du bouton radio à l’objet RadioButtonField :
 
 ```csharp
 RadioButtonOptionField opt1 = new RadioButtonOptionField();
@@ -85,9 +85,9 @@ opt1.Caption = new TextFragment("Item1");
 
 ```
 
-## Étape 7 : Ajoutez les options du bouton radio au tableau
+## Étape 7 : Ajoutez les options de bouton radio au tableau
 
-Ajoutez les options des boutons radio au tableau pour les afficher :
+Ajoutez les options du bouton radio au tableau pour les afficher :
 
 ```csharp
 Cell c1 = table.Rows.Add().Cells.Add();
@@ -99,7 +99,7 @@ c2.Paragraphs.Add(opt2);
 c3.Paragraphs.Add(opt3);
 ```
 
-## Étape 8 : Enregistrez le document PDF
+## Étape 8 : Enregistrez le document PDF
 
 Enregistrez le document PDF créé :
 
@@ -108,11 +108,11 @@ dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Exemple de code source pour le bouton radio avec options utilisant Aspose.PDF pour .NET 
+### Exemple de code source pour le bouton radio avec options à l'aide d'Aspose.PDF pour .NET 
 ```csharp
 try
 {
-	// Le chemin d'accès au répertoire des documents.
+	// Le chemin vers le répertoire des documents.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	Document doc = new Document();
 	Page page = doc.Pages.Add();
@@ -163,7 +163,7 @@ try
 	c2.Paragraphs.Add(opt2);
 	c3.Paragraphs.Add(opt3);
 	dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
-	// Enregistrez le fichier PDF
+	// Enregistrer le fichier PDF
 	doc.Save(dataDir);
 	Console.WriteLine("\nRadio button field with three options added successfully.\nFile saved at " + dataDir);
 }
@@ -175,4 +175,4 @@ catch (Exception ex)
 
 ## Conclusion
 
-Félicitation ! Vous avez ajouté avec succès un bouton radio avec des options à un document PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez désormais utiliser cette méthode pour créer des formulaires interactifs dans vos documents PDF.
+Félicitations ! Vous avez ajouté avec succès un bouton radio avec des options à un document PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez désormais utiliser cette méthode pour créer des formulaires interactifs dans vos documents PDF.

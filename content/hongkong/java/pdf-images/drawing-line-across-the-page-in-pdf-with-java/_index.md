@@ -57,7 +57,7 @@ public class DrawLine {
         //建立一個新文檔
         Document doc = new Document();
         
-        //建立一個頁面
+        //建立頁面
         Page page = doc.getPages().add();
         
         //建立線對象

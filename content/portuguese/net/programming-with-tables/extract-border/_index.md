@@ -1,18 +1,18 @@
 ---
-title: Extrair borda em arquivo PDF
-linktitle: Extrair borda em arquivo PDF
-second_title: Referência da API Aspose.PDF para .NET
-description: Aprenda como extrair a borda de um arquivo PDF usando Aspose.PDF for .NET.
+title: Extrair Borda em Arquivo PDF
+linktitle: Extrair Borda em Arquivo PDF
+second_title: Referência da API do Aspose.PDF para .NET
+description: Aprenda como extrair a borda em um arquivo PDF usando o Aspose.PDF para .NET.
 type: docs
 weight: 80
 url: /pt/net/programming-with-tables/extract-border/
 ---
-Neste tutorial, aprenderemos como extrair a borda de um arquivo PDF usando Aspose.PDF for .NET. Explicaremos o código-fonte em C# passo a passo. Ao final deste tutorial você saberá como extrair a borda de um documento PDF e salvá-la como imagem. Vamos começar!
+Neste tutorial, aprenderemos como extrair a borda em um arquivo PDF usando o Aspose.PDF para .NET. Explicaremos o código-fonte em C# passo a passo. No final deste tutorial, você saberá como extrair a borda de um documento PDF e salvá-lo como uma imagem. Vamos começar!
 
-## Passo 1: Configurando o ambiente
-Primeiro, certifique-se de configurar seu ambiente de desenvolvimento C# com Aspose.PDF for .NET. Adicione a referência à biblioteca e importe os namespaces necessários.
+## Etapa 1: Configurando o ambiente
+Primeiro, certifique-se de ter configurado seu ambiente de desenvolvimento C# com Aspose.PDF para .NET. Adicione a referência à biblioteca e importe os namespaces necessários.
 
-## Passo 2: Carregando o Documento PDF
+## Etapa 2: Carregando o documento PDF
 Nesta etapa, carregamos o documento PDF do arquivo especificado.
 
 ```csharp
@@ -22,7 +22,7 @@ Document doc = new Document(dataDir + "input.pdf");
 Certifique-se de substituir "SEU DIRETÓRIO DE DOCUMENTOS" pelo diretório real onde seu arquivo PDF está localizado.
 
 ## Etapa 3: Extração de Borda
-Extrairemos a borda do documento PDF iterando as operações contidas no documento.
+Extrairemos a borda do documento PDF iterando sobre as operações contidas no documento.
 
 ```csharp
 Stack graphicsState = new Stack();
@@ -49,13 +49,13 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
  Nós criamos um`graphicsState` pilha para armazenar estados gráficos, uma imagem bitmap para capturar a borda extraída, um`GraphicsPath` objeto para armazenar caminhos de desenho e outras variáveis para rastrear estado e cores.
 
 ## Etapa 4: Processamento de transações
-Nesta etapa processamos cada operação do documento para extrair a borda.
+Nesta etapa, processamos cada operação do documento para extrair a borda.
 
 ```csharp
 // Verifique o tipo de operação
 if (opSaveState != null)
 {
-     // Salve o estado anterior e coloque o estado atual no topo da pilha
+     // Salvar o estado anterior e empurrar o estado atual para o topo da pilha
      graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
      lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 }
@@ -82,23 +82,23 @@ else if (opCtm != null)
 }
 else if (opMoveTo != null)
 {
-     // Atualize o último ponto de desenho
+     // Atualizar o último ponto de desenho
      lastPoint = new System.Drawing.PointF((float)opMoveTo.X, (float)opMoveTo.Y);
 }
 else if (opLineTo != null)
 {
      // Processar o desenho de uma linha
      // ...
-     // Adicione código para desenhar uma linha
+     // Adicionar código para manipular o desenho de uma linha
 }
 // ...
-// Adicione blocos else if para outras operações
+// Adicionar blocos else if para outras operações
 ```
 
 Verificamos o tipo de operação usando condições e executamos o código apropriado para cada operação.
 
-## Etapa 5: imagem de backup
-Finalmente, salvamos a imagem bitmap contendo a borda extraída em um arquivo especificado.
+## Etapa 5: Imagem de backup
+Por fim, salvamos a imagem bitmap contendo a borda extraída em um arquivo especificado.
 
 ```csharp
 dataDir = dataDir + "ExtractBorder_out.png";
@@ -131,7 +131,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 	gr.SmoothingMode = SmoothingMode.HighQuality;
 	graphicsState.Push(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, 0, 0));
 
-	// Processe todos os comandos de conteúdo
+	// Processar todos os comandos de conteúdo
 	foreach (Operator op in doc.Pages[1].Contents)
 	{
 		Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
@@ -149,13 +149,13 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 
 		if (opSaveState != null)
 		{
-			//Salve o estado anterior e coloque o estado atual no topo da pilha
+			//Salvar estado anterior e empurrar estado atual para o topo da pilha
 			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
 		else if (opRestoreState != null)
 		{
-			// Jogue fora o estado atual e restaure o anterior
+			// Descarte o estado atual e restaure o anterior
 			graphicsState.Pop();
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
@@ -233,26 +233,26 @@ Console.WriteLine("\nBorder extracted successfully as image.\nFile saved at " + 
 ```
 
 ## Conclusão
-Neste tutorial, aprendemos como extrair a borda de um documento PDF usando Aspose.PDF for .NET. Você pode usar este guia passo a passo para extrair bordas de outros documentos PDF.
+Neste tutorial, aprendemos como extrair a borda de um documento PDF usando Aspose.PDF para .NET. Você pode usar este guia passo a passo para extrair a borda de outros documentos PDF.
 
-### Perguntas frequentes para extrair borda em arquivo PDF
+### Perguntas frequentes sobre como extrair bordas em arquivo PDF
 
 #### P: Qual é o propósito de extrair a borda de um arquivo PDF?
 
-R: Extrair a borda de um arquivo PDF pode ser útil para diversos fins. Permite isolar e analisar os elementos estruturais do documento, como tabelas, diagramas ou elementos gráficos. Você pode usar a borda extraída para identificar o layout, as dimensões e o posicionamento do conteúdo no documento PDF.
+R: Extrair a borda de um arquivo PDF pode ser útil para vários propósitos. Ele permite que você isole e analise os elementos estruturais do documento, como tabelas, diagramas ou elementos gráficos. Você pode usar a borda extraída para identificar o layout, as dimensões e o posicionamento do conteúdo dentro do documento PDF.
 
-#### P: Posso extrair a borda de páginas ou áreas específicas do documento PDF?
+#### P: Posso extrair a borda de páginas ou áreas específicas dentro do documento PDF?
 
-R: Sim, você pode modificar o código-fonte C# fornecido para extrair a borda de páginas ou regiões específicas do documento PDF. Ao manipular o`doc.Pages` coleção e especificando critérios personalizados, você pode optar por extrair a borda de páginas ou áreas de interesse específicas.
+R: Sim, você pode modificar o código-fonte C# fornecido para extrair a borda de páginas ou regiões específicas dentro do documento PDF. Ao manipular o`doc.Pages` coleta e especificando critérios personalizados, você pode escolher extrair a borda de páginas ou áreas de interesse específicas.
 
 #### P: Como posso personalizar o formato e a qualidade da imagem de saída?
 
- R: No código C# fornecido, a borda extraída é salva como uma imagem PNG. Se quiser alterar o formato da imagem de saída, você pode modificar o`ImageFormat.Png` parâmetro no`bitmap.Save` método para outros formatos de imagem suportados, como JPEG, BMP ou GIF. Além disso, você pode ajustar a qualidade da imagem ou as configurações de compactação com base em seus requisitos.
+ R: No código C# fornecido, a borda extraída é salva como uma imagem PNG. Se você quiser alterar o formato da imagem de saída, você pode modificar o`ImageFormat.Png` parâmetro no`bitmap.Save` método para outros formatos de imagem suportados, como JPEG, BMP ou GIF. Além disso, você pode ajustar a qualidade da imagem ou as configurações de compressão com base em seus requisitos.
 
-#### P: Que outras operações posso realizar na borda extraída?
+#### P: Que outras operações posso executar na borda extraída?
 
-R: Depois de extrair a borda como uma imagem, você poderá processá-la posteriormente usando bibliotecas ou algoritmos de processamento de imagem. Você pode analisar a imagem, aplicar filtros de imagem, detectar padrões ou realizar OCR (reconhecimento óptico de caracteres) para extrair texto da imagem, se necessário.
+R: Depois de extrair a borda como uma imagem, você pode processá-la ainda mais usando bibliotecas ou algoritmos de processamento de imagem. Você pode analisar a imagem, aplicar filtros de imagem, detectar padrões ou executar OCR (Optical Character Recognition) para extrair texto da imagem, se necessário.
 
 #### P: Há alguma limitação ou consideração ao extrair bordas de documentos PDF complexos?
 
-R: O processo de extração pode variar dependendo da complexidade do documento PDF. PDFs complexos com múltiplas camadas, transparência ou gráficos avançados podem exigir processamento ou ajustes adicionais para extrair a borda com precisão. É essencial testar minuciosamente o processo de extração em vários documentos PDF para garantir resultados confiáveis.
+R: O processo de extração pode variar dependendo da complexidade do documento PDF. PDFs complexos com múltiplas camadas, transparência ou gráficos avançados podem exigir processamento ou ajustes adicionais para extrair a borda com precisão. É essencial testar completamente o processo de extração em vários documentos PDF para garantir resultados confiáveis.

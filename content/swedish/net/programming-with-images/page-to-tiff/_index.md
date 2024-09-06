@@ -82,7 +82,7 @@ Nu är det dags att konvertera PDF-sidan till TIFF. Vi kan konvertera en specifi
 tiffDevice.Process(pdfDocument, 1, 1, dataDir + "PageToTIFF_out.tif");
 ```
 
- Byta ut`1, 1` med önskat sidintervall om du vill konvertera flera sidor.
+ Ersätta`1, 1` med önskat sidintervall om du vill konvertera flera sidor.
 
 ## Steg 6: Spara TIFF-bilden
 
@@ -122,7 +122,7 @@ tiffSettings.Shape = ShapeType.Landscape;
 tiffSettings.SkipBlankPages = false;
 // Skapa TIFF-enhet
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
-//Konvertera en viss sida och spara bilden för att streama
+// Konvertera en viss sida och spara bilden för att streama
 tiffDevice.Process(pdfDocument, 1, 1, dataDir + "PageToTIFF_out.tif");
 System.Console.WriteLine("PDF one page converted to tiff successfully!");
 ```

@@ -1,20 +1,20 @@
 ---
-title: XMPMetadata'yı PDF Dosyasında Ayarla
-linktitle: XMPMetadata'yı PDF Dosyasında Ayarla
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET kullanarak XMPMetadata'yı PDF dosyasında nasıl ayarlayacağınızı öğrenin. Bu adım adım kılavuzu izleyin.
+title: XMPMetadata'yı PDF Dosyasına Ayarla
+linktitle: XMPMetadata'yı PDF Dosyasına Ayarla
+second_title: Aspose.PDF for .NET API Referansı
+description: .NET için Aspose.PDF kullanarak PDF dosyasında XMPMetadata'nın nasıl ayarlanacağını öğrenin. Bu adım adım kılavuzu izleyin.
 type: docs
 weight: 330
 url: /tr/net/programming-with-document/setxmpmetadata/
 ---
-Bu makalede, bir PDF dosyasında XMP meta verilerini ayarlamak için Aspose.PDF for .NET'in nasıl kullanılacağı hakkında adım adım bir kılavuz sunacağız. Makalenin sonunda tam bir örnek kaynak kodu vereceğiz.
+Bu makalede, bir PDF dosyasında XMP meta verilerini ayarlamak için Aspose.PDF for .NET'in nasıl kullanılacağına dair adım adım bir kılavuz sunacağız. Makalenin sonunda tam bir örnek kaynak kodu sunacağız.
 
-## 1. Adım: Belge dizininin yolunu ayarlayın
+## Adım 1: Belge dizinine giden yolu ayarlayın
 
-Başlamadan önce PDF belgemizin bulunduğu dizinin yolunu ayarlamamız gerekiyor. Bu yolu "dataDir" adlı bir değişkende saklayacağız.
+Başlamadan önce, PDF belgemizin bulunduğu dizine giden yolu ayarlamamız gerekiyor. Bu yolu "dataDir" adlı bir değişkende saklayacağız.
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
@@ -22,25 +22,25 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Adım 2: PDF Dosyasını Açın
 
- İlk adım, XMP meta verilerini ayarlamak istediğiniz PDF dosyasını açmaktır. Bunu yapmak için yeni bir tane oluşturmanız gerekecek`Document` nesneyi seçin ve PDF dosyanızın yolunu iletin.
+ İlk adım, XMP meta verilerini ayarlamak istediğiniz PDF dosyasını açmaktır. Bunu yapmak için yeni bir tane oluşturmanız gerekir`Document` nesneyi seçin ve PDF dosyanızın yolunu iletin.
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
 ```
 
-## 3. Adım: XMP Meta Veri Özelliklerini Ayarlayın
+## Adım 3: XMP Meta Veri Özelliklerini Ayarlayın
 
-Artık PDF dosyanızı açtığınıza göre XMP meta veri özelliklerini ayarlamaya başlayabilirsiniz. Ayarladığınız özellikler özel ihtiyaçlarınıza bağlı olacaktır ancak ayarlamak isteyebileceğiniz bazı genel özellikler şunlardır:
+Artık PDF dosyanız açık olduğuna göre, XMP meta veri özelliklerini ayarlamaya başlayabilirsiniz. Ayarladığınız özellikler, özel ihtiyaçlarınıza bağlı olacaktır ancak ayarlamak isteyebileceğiniz bazı genel özellikler şunlardır:
 
 - `xmp:CreateDate`: PDF dosyasının oluşturulma tarihi.
-- `xmp:Nickname`: PDF dosyası için bir takma ad veya takma ad.
-- `xmp:CustomProperty`: Belirttiğiniz değere sahip özel bir özellik.
+- `xmp:Nickname`: PDF dosyası için bir takma ad veya rumuz.
+- `xmp:CustomProperty`: Belirlediğiniz bir değere sahip özel bir özellik.
 
- Bu özellikleri ayarlamak için kullanabilirsiniz.`Metadata` mülkiyeti`Document` nesne. İşte bir örnek:
+ Bu özellikleri ayarlamak için şunu kullanabilirsiniz:`Metadata` mülkiyeti`Document` nesne. İşte bir örnek:
 
 ```csharp
 // Özellikleri ayarla
@@ -49,11 +49,11 @@ pdfDocument.Metadata["xmp:Nickname"] = "Nickname";
 pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
 ```
 
-Bu öğreticide, oluşturma tarihini geçerli tarih ve saate, takma adı "Takma Ad"a ve özel özelliği "Özel Değer"e ayarlıyoruz. Bu değerleri kendi değerlerinizle değiştirebilirsiniz.
+Bu eğitimde, oluşturma tarihini geçerli tarih ve saate, takma adı "Takma Ad"a ve özel bir özelliği "Özel Değer"e ayarlıyoruz. Bu değerleri kendi değerlerinizle değiştirebilirsiniz.
 
 ## Adım 4: PDF Dosyasını Kaydedin
 
- XMP meta veri özelliklerini ayarladıktan sonra PDF dosyasını kaydetmeniz gerekir. Bunu yapmak için şunları kullanabilirsiniz:`Save` yöntemi`Document` nesneyi seçin ve güncellenmiş PDF dosyasını kaydetmek istediğiniz yere giden yolu iletin.
+ XMP meta veri özelliklerini ayarladıktan sonra PDF dosyasını kaydetmeniz gerekir. Bunu yapmak için şunu kullanabilirsiniz:`Save` yöntemi`Document` nesnesini seçin ve güncellenmiş PDF dosyasını kaydetmek istediğiniz yolu girin.
 
 ```csharp
 dataDir = dataDir + "SetXMPMetadata_out.pdf";
@@ -61,12 +61,12 @@ dataDir = dataDir + "SetXMPMetadata_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Aspose.PDF for .NET kullanarak Set XMPMetadata için Örnek Kaynak Kodu
+### .NET için Aspose.PDF kullanarak XMPMetadata'yı Ayarlamak için Örnek Kaynak Kodu
 
-Aspose.PDF for .NET kullanarak XMPMetadata'yı ayarlamak için tam örnek kaynak kodunu burada bulabilirsiniz:
+İşte .NET için Aspose.PDF kullanarak XMPMetadata'yı ayarlamaya yönelik tam örnek kaynak kodu:
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 // Belgeyi aç
@@ -86,18 +86,18 @@ Console.WriteLine("\nXMP metadata in a pdf file setup successfully.\nFile saved 
 
 ## Çözüm
 
-Aspose.PDF for .NET, PDF dosyalarında XMP meta verilerini ayarlamanın basit bir yolunu sunarak, belgelerinize açıklayıcı bilgiler ve özellikler eklemenizi sağlar. Yukarıda sağlanan adım adım kılavuz, C# kaynak kodunu kullanarak çeşitli XMP meta veri özelliklerini nasıl ayarlayacağınızı gösterir. Ayrıca XMP meta verilerini özel ihtiyaçlarınıza ve iş gereksinimlerinize uyacak şekilde özelleştirebilirsiniz. Aspose.PDF for .NET ile PDF meta verilerini yönetmek verimli hale gelir ve PDF belgelerinizin daha iyi organize edilmesine ve aranabilirliğine olanak tanır.
+.NET için Aspose.PDF, PDF dosyalarında XMP meta verilerini ayarlamak için basit bir yol sunar ve belgelerinize açıklayıcı bilgiler ve özellikler eklemenize olanak tanır. Yukarıda sağlanan adım adım kılavuz, C# kaynak kodunu kullanarak çeşitli XMP meta veri özelliklerini nasıl ayarlayacağınızı gösterir. Ayrıca, XMP meta verilerini özel ihtiyaçlarınıza ve iş gereksinimlerinize uyacak şekilde özelleştirebilirsiniz. .NET için Aspose.PDF ile PDF meta verilerini yönetmek verimli hale gelir ve PDF belgelerinizin daha iyi düzenlenmesini ve aranabilirliğini sağlar.
 
 ### PDF dosyasında XMPMetadata'yı ayarlamayla ilgili SSS
 
-#### S: PDF dosyasındaki XMP meta verileri nedir ve neden önemlidir?
+#### S: Bir PDF dosyasındaki XMP meta verisi nedir ve neden önemlidir?
 
-C: XMP (Genişletilebilir Meta Veri Platformu), meta verileri PDF dahil çeşitli dosya formatlarına gömmek için kullanılan bir standarttır. Bir PDF dosyasındaki XMP meta verileri, belgeye oluşturulma tarihi, yazar, başlık, anahtar sözcükler ve özel özellikler gibi açıklayıcı bilgiler ve özellikler eklemenizi sağlar. PDF belgelerinin daha iyi düzenlenmesi, aranabilirliği ve arşivlenmesi için gereklidir.
+A: XMP (Genişletilebilir Meta Veri Platformu), PDF dahil olmak üzere çeşitli dosya biçimlerine meta veri yerleştirmek için bir standarttır. Bir PDF dosyasındaki XMP meta verisi, belgeye oluşturma tarihi, yazar, başlık, anahtar sözcükler ve özel özellikler gibi açıklayıcı bilgiler ve özellikler eklemenize olanak tanır. PDF belgelerinin daha iyi düzenlenmesi, aranabilirliği ve arşivlenmesi için önemlidir.
 
-#### S: Örnekte belirtilenlerin yanı sıra başka XMP meta veri özelliklerini de ayarlayabilir miyim?
+#### S: Örnekte belirtilenlerin dışında başka XMP meta verisi özellikleri ayarlayabilir miyim?
 
- C: Evet, özel gereksinimlerinize bağlı olarak çok çeşitli XMP meta veri özelliklerini ayarlayabilirsiniz. Bazı ortak özellikler şunları içerir:`dc:title` (belge başlığı),`dc:creator` (belge oluşturucu),`dc:description` (belge açıklaması),`pdf:Keywords` (belge anahtar sözcükleri) ve daha fazlası. XMP spesifikasyonu, farklı türdeki meta verileri ayarlamak için çeşitli standart ad alanları ve özel ad alanları sunar.
+ A: Evet, özel gereksinimlerinize bağlı olarak geniş bir XMP meta verisi özelliği aralığı ayarlayabilirsiniz. Bazı yaygın özellikler şunlardır:`dc:title` (belge başlığı),`dc:creator` (belge yaratıcısı),`dc:description` (belge açıklaması),`pdf:Keywords` (belge anahtar sözcükleri) ve daha fazlası. XMP spesifikasyonu, farklı meta veri türlerini ayarlamak için çeşitli standart ad alanları ve özel ad alanları sunar.
 
-#### S: XMP meta verilerini mevcut bir PDF dosyasından alıp okumak mümkün müdür?
+#### S: Mevcut bir PDF dosyasından XMP meta verilerini almak ve okumak mümkün müdür?
 
- C: Evet, Aspose.PDF for .NET, mevcut bir PDF dosyasından XMP meta verilerini okuma ve alma olanağı sağlar. Şunu kullanabilirsiniz:`Metadata` mülkiyeti`Document` XMP meta verilerine erişmek ve belirli özelliklerin değerlerini almak için sınıf.
+ A: Evet, Aspose.PDF for .NET, mevcut bir PDF dosyasından XMP meta verilerini okuma ve alma olanağı sağlar.`Metadata` mülkiyeti`Document` XMP meta verilerine erişmek ve belirli özelliklerin değerlerini almak için kullanılan sınıf.

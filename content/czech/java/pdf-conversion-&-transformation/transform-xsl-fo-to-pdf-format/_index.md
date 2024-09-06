@@ -16,7 +16,7 @@ Než se ponoříme do kódu, ujistěte se, že máte následující:
 
 - Java Development Kit (JDK) nainstalovaný ve vašem systému.
 - Integrované vývojové prostředí (IDE) jako Eclipse nebo IntelliJ IDEA.
--  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout[zde](https://releases.aspose.com/pdf/java/).
 - Základní znalost programování v Javě.
 
 ## Nastavení vašeho projektu
@@ -60,7 +60,7 @@ public class XSLFOTutorial {
 ## Nejčastější dotazy
 
 ### Jak nainstaluji Aspose.PDF pro Javu?
-Knihovnu si můžete stáhnout z[tady](https://releases.aspose.com/pdf/java/) a postupujte podle dodaných pokynů k instalaci.
+Knihovnu si můžete stáhnout z[zde](https://releases.aspose.com/pdf/java/) a postupujte podle dodaných pokynů k instalaci.
 
 ### Mohu převést XSL-FO do jiných formátů pomocí Aspose.PDF pro Javu?
 Ano, Aspose.PDF for Java podporuje různé formáty, včetně HTML, obrázků a dalších. Podrobnosti naleznete v dokumentaci.

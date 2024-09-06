@@ -2,15 +2,15 @@
 title: 带选项的单选按钮
 linktitle: 带选项的单选按钮
 second_title: Aspose.PDF for .NET API 参考
-description: 使用 Aspose.PDF for .NET 轻松向 PDF 文档添加带有选项的单选按钮。
+description: 使用 Aspose.PDF for .NET 轻松地向 PDF 文档添加带有选项的单选按钮。
 type: docs
 weight: 230
 url: /zh/net/programming-with-forms/radio-button-with-options/
 ---
 
-在本教程中，我们将向您展示如何使用 Aspose.PDF for .NET 将带有选项的单选按钮添加到 PDF 文档。我们将逐步解释 C# 源代码，以指导您完成此过程。
+在本教程中，我们将向您展示如何使用 Aspose.PDF for .NET 向 PDF 文档添加带有选项的单选按钮。我们将逐步解释 C# 源代码以指导您完成此过程。
 
-## 第 1 步：准备
+## 步骤 1：准备
 
 确保您已导入必要的库并设置文档目录的路径：
 
@@ -18,7 +18,7 @@ url: /zh/net/programming-with-forms/radio-button-with-options/
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## 第 2 步：实例化文档对象
+## 步骤 2：实例化文档对象
 
 实例化一个 Document 对象来创建一个新的 PDF 文档：
 
@@ -26,9 +26,9 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document doc = new Document();
 ```
 
-## 第三步：添加页面和表格
+## 步骤 3：添加页面和表格
 
-向文档添加页面并创建一个表格来保存单选按钮选项：
+向文档添加一个页面并创建一个表格来保存单选按钮选项：
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -37,7 +37,7 @@ table. ColumnWidths = "120 120 120";
 page.Paragraphs.Add(table);
 ```
 
-## 第 4 步：实例化 RadioButtonField 对象
+## 步骤 4：实例化 RadioButtonField 对象
 
 实例化一个 RadioButtonField 对象来表示单选按钮：
 
@@ -47,7 +47,7 @@ rf. PartialName = "radio";
 doc.Form.Add(rf, 1);
 ```
 
-## 第 5 步：添加单选按钮选项
+## 步骤 5：添加单选按钮选项
 
 将单选按钮选项添加到 RadioButtonField 对象：
 
@@ -69,7 +69,7 @@ rf.Add(opt2);
 rf.Add(opt3);
 ```
 
-## 第 6 步：自定义单选按钮选项
+## 步骤 6：自定义单选按钮选项
 
 通过设置边框、文本颜色和标题文本等属性来自定义单选按钮选项：
 
@@ -81,11 +81,11 @@ opt1.Characteristics.Border = System.Drawing.Color.Black;
 opt1.DefaultAppearance.TextColor = System.Drawing.Color.Red;
 opt1.Caption = new TextFragment("Item1");
 
-//对 opt2 和 opt3 重复相同的步骤
+//对 opt2 和 opt3 重复相同步骤
 
 ```
 
-## 步骤 7：将单选按钮选项添加到表中
+## 步骤 7：将单选按钮选项添加到表格中
 
 将单选按钮选项添加到表中以显示它们：
 
@@ -175,4 +175,4 @@ catch (Exception ex)
 
 ## 结论
 
-恭喜！您已使用 Aspose.PDF for .NET 成功向 PDF 文档添加了带有选项的单选按钮。您现在可以使用此方法在 PDF 文档中创建交互式表单。
+恭喜！您已成功使用 Aspose.PDF for .NET 将带有选项的单选按钮添加到 PDF 文档。您现在可以使用此方法在 PDF 文档中创建交互式表单。

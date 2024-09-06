@@ -117,7 +117,7 @@ V tomto tutoriálu jsme se naučili používat HTML tagy uvnitř tabulky v dokum
 
 #### Otázka: Mohu použít jiné značky a atributy HTML uvnitř buněk tabulky?
 
- Odpověď: Ano, uvnitř buněk tabulky můžete použít různé HTML tagy a atributy, jako např`<b>`, `<i>`, `<a>`a mnoho dalších. Aspose.PDF for .NET podporuje širokou škálu prvků a stylů HTML, které můžete použít k formátování obsahu v buňkách tabulky.
+ Odpověď: Ano, uvnitř buněk tabulky můžete použít různé HTML tagy a atributy, jako např`<b>`, `<i>`, `<a>`mnoho dalších. Aspose.PDF for .NET podporuje širokou škálu prvků a stylů HTML, které můžete použít k formátování obsahu v buňkách tabulky.
 
 #### Otázka: Mohu použít styly CSS na obsah HTML uvnitř buněk tabulky?
 

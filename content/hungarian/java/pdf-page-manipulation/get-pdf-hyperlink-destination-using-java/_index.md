@@ -25,7 +25,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy a következő előfeltételek
 
 ## Az Aspose.PDF beállítása Java számára
 
-A kezdéshez be kell állítania az Aspose.PDF for Java fájlt a projektben. Kovesd ezeket a lepeseket:
+A kezdéshez be kell állítania az Aspose.PDF for Java fájlt a projektben. Kövesse az alábbi lépéseket:
 1.  Az Aspose.PDF for Java letöltése innen:[itt](https://releases.aspose.com/pdf/java/).
 2. Adja hozzá az Aspose.PDF könyvtárat a Java projekthez.
 

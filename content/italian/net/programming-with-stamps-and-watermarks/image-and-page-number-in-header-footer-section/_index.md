@@ -1,27 +1,27 @@
 ---
-title: Immagine e numero di pagina nella sezione piè di pagina dell'intestazione
-linktitle: Immagine e numero di pagina nella sezione piè di pagina dell'intestazione
-second_title: Aspose.PDF per riferimento all'API .NET
+title: Immagine e numero di pagina nella sezione intestazione/piè di pagina
+linktitle: Immagine e numero di pagina nella sezione intestazione/piè di pagina
+second_title: Riferimento API Aspose.PDF per .NET
 description: Scopri come aggiungere un'immagine e un numero di pagina nell'intestazione e nel piè di pagina di un documento PDF con Aspose.
 type: docs
 weight: 110
 url: /it/net/programming-with-stamps-and-watermarks/image-and-page-number-in-header-footer-section/
 ---
-In questo tutorial, ti guideremo passo dopo passo su come aggiungere un'immagine e un numero di pagina nella sezione intestazione e piè di pagina di un documento PDF utilizzando Aspose.PDF per .NET. Ti mostreremo come utilizzare il codice sorgente C# fornito per creare una pagina, impostare intestazione e piè di pagina, aggiungere immagine all'intestazione e testo con numero di pagina al PDF del piè di pagina del documento.
+In questo tutorial, ti guideremo passo dopo passo su come aggiungere un'immagine e un numero di pagina nella sezione intestazione e piè di pagina di un documento PDF utilizzando Aspose.PDF per .NET. Ti mostreremo come utilizzare il codice sorgente C# fornito per creare una pagina, impostare intestazione e piè di pagina, aggiungere un'immagine all'intestazione e testo con numero di pagina al piè di pagina del documento PDF.
 
-## Passaggio 1: configurazione dell'ambiente
+## Fase 1: Impostazione dell'ambiente
 
 Prima di iniziare, assicurati di avere quanto segue:
 
 - Un ambiente di sviluppo .NET installato.
-- La libreria Aspose.PDF per .NET scaricata e a cui si fa riferimento nel progetto.
+- La libreria Aspose.PDF per .NET è stata scaricata e a cui si fa riferimento nel progetto.
 
 ## Passaggio 2: creazione del documento PDF e della pagina
 
-Il primo passo è creare un nuovo oggetto Documento e una pagina nel documento PDF. Ecco come:
+Il primo passo è creare un nuovo oggetto Documento e una pagina nel documento PDF. Ecco come fare:
 
 ```csharp
-// Il percorso della directory dei documenti.
+// Percorso verso la directory dei documenti.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 // Crea un nuovo oggetto Documento
@@ -31,11 +31,11 @@ Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-Il codice sopra crea un nuovo oggetto Document e una pagina vuota nel documento PDF.
+Il codice sopra crea un nuovo oggetto Documento e una pagina vuota nel documento PDF.
 
 ## Passaggio 3: aggiunta dell'intestazione con un'immagine
 
-Ora che la pagina è stata creata, possiamo aggiungere una sezione di intestazione con un'immagine. Ecco come:
+Ora che la pagina è creata, possiamo aggiungere una sezione di intestazione con un'immagine. Ecco come:
 
 ```csharp
 // Crea una sezione di intestazione
@@ -50,56 +50,56 @@ Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 // Imposta il percorso dell'immagine
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Aggiungi l'immagine all'intestazione della pagina del documento PDF
+// Aggiungere l'immagine all'intestazione di pagina del documento PDF
 header.Paragraphs.Add(image1);
 ```
 
-Il codice precedente crea una sezione di intestazione, imposta l'intestazione della pagina con questa sezione e aggiunge un'immagine all'intestazione.
+Il codice sopra crea una sezione di intestazione, imposta l'intestazione di pagina con questa sezione e aggiunge un'immagine all'intestazione.
 
-## Passaggio 4: aggiunta del piè di pagina con il numero di pagina
+## Fase 4: Aggiungere il piè di pagina con il numero di pagina
 
-Ora che è stata aggiunta l'intestazione, possiamo aggiungere una sezione a piè di pagina con un numero di pagina. Ecco come:
+Ora che l'intestazione è stata aggiunta, possiamo aggiungere una sezione footer con un numero di pagina. Ecco come:
 
 ```csharp
-// Crea una sezione a piè di pagina
+// Crea una sezione piè di pagina
 Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
 
-// Definire il piè di pagina del documento PDF
+// Definisci il piè di pagina del documento PDF
 page. Footer = footer;
 
 // Crea un oggetto TextFragment
 Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P)");
 
-// Aggiungi il testo con il numero di pagina al piè di pagina del documento PDF
+// Aggiungere il testo con il numero di pagina al piè di pagina del documento PDF
 footer.Paragraphs.Add(txt);
 ```
 
-Il codice precedente crea una sezione a piè di pagina, imposta il piè di pagina della pagina con questa sezione e aggiunge un TextFragment contenente il testo "Pagina: ($p of $P )"
+Il codice sopra crea una sezione footer, imposta il footer della pagina con questa sezione e aggiunge un TextFragment contenente il testo "Page: ($p of $P )"
 
   che visualizza il numero di pagina.
 
 ## Passaggio 5: salvataggio del documento PDF modificato
 
-Una volta aggiunti l'intestazione e il piè di pagina, possiamo salvare il documento PDF modificato. Ecco come:
+Una volta aggiunti intestazione e piè di pagina, possiamo salvare il documento PDF modificato. Ecco come:
 
 ```csharp
-// Salva il documento PDF modificato
+// Salvare il documento PDF modificato
 doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
 ```
 
-Il codice precedente salva il documento PDF modificato nella directory specificata.
+Il codice soprastante salva il documento PDF modificato nella directory specificata.
 
-### Codice sorgente di esempio per immagine e numero di pagina nella sezione piè di pagina dell'intestazione utilizzando Aspose.PDF per .NET 
+### Esempio di codice sorgente per Immagine e numero di pagina nella sezione Intestazione/Piè di pagina utilizzando Aspose.PDF per .NET 
 ```csharp
 
-// Il percorso della directory dei documenti.
+// Percorso verso la directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
 // Crea una pagina nell'oggetto documento
 Aspose.Pdf.Page page = doc.Pages.Add();
 
-// Crea la sezione di intestazione del documento
+// Crea la sezione intestazione del documento
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
 // Imposta l'intestazione per il file PDF
@@ -111,68 +111,68 @@ Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 // Imposta il percorso del file immagine
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Aggiungi immagine alla pagina di intestazione del file Pdf
+// Aggiungi immagine alla pagina dell'intestazione del file PDF
 header.Paragraphs.Add(image1);
 
-//Crea una sezione piè di pagina del documento
+//Creare una sezione piè di pagina del documento
 Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
 
 // Imposta il piè di pagina del file PDF
 page.Footer = footer;
 
-// Crea un oggetto di testo
+// Crea un oggetto Testo
 Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P ) ");
 
-// Aggiungi testo alla sezione Intestazione del file Pdf
+// Aggiungere testo alla sezione Intestazione del file PDF
 footer.Paragraphs.Add(txt);
 
-// Salvare il file PDF
+// Salva il file PDF
 doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
 
 ```
 
 ## Conclusione
 
-Congratulazioni! Hai imparato come aggiungere un'immagine e un numero di pagina nella sezione di intestazione e piè di pagina di un documento PDF utilizzando Aspose.PDF per .NET. Ora puoi utilizzare questo metodo per personalizzare intestazione e piè di pagina nei tuoi documenti PDF.
+Congratulazioni! Hai imparato come aggiungere un'immagine e un numero di pagina nella sezione intestazione e piè di pagina di un documento PDF usando Aspose.PDF per .NET. Ora puoi usare questo metodo per personalizzare intestazione e piè di pagina nei tuoi documenti PDF.
 
 ### Domande frequenti
 
-#### D: Qual è lo scopo di aggiungere un'immagine e un numero di pagina nella sezione di intestazione e piè di pagina di un documento PDF?
+#### D: Qual è lo scopo di aggiungere un'immagine e un numero di pagina nella sezione intestazione e piè di pagina di un documento PDF?
 
-R: L'aggiunta di un'immagine e di un numero di pagina nella sezione intestazione e piè di pagina di un documento PDF può migliorarne l'attrattiva visiva, il branding e gli elementi di navigazione. Un'immagine può rappresentare un logo, una filigrana o qualsiasi elemento grafico, mentre un numero di pagina aiuta gli utenti a monitorare i propri progressi e a individuare pagine specifiche.
+R: Aggiungere un'immagine e un numero di pagina nella sezione intestazione e piè di pagina di un documento PDF può migliorarne l'aspetto visivo, il branding e gli elementi di navigazione. Un'immagine può rappresentare un logo, una filigrana o qualsiasi elemento grafico, mentre un numero di pagina aiuta gli utenti a tenere traccia dei loro progressi e a individuare pagine specifiche.
 
 #### D: In che modo il codice sorgente C# fornito aiuta ad aggiungere un'immagine e un numero di pagina all'intestazione e al piè di pagina di un documento PDF?
 
-R: Il codice fornito dimostra come creare un documento PDF, aggiungere una pagina e quindi personalizzare le sezioni di intestazione e piè di pagina. Mostra come aggiungere un'immagine all'intestazione e un frammento di testo con la numerazione delle pagine al piè di pagina.
+R: Il codice fornito dimostra come creare un documento PDF, aggiungere una pagina e quindi personalizzare le sezioni di intestazione e piè di pagina. Mostra come aggiungere un'immagine all'intestazione e un frammento di testo con numerazione delle pagine al piè di pagina.
 
-#### D: Posso utilizzare qualsiasi formato immagine per l'intestazione e come posso specificarne il percorso?
+#### D: Posso utilizzare qualsiasi formato immagine per l'intestazione e come faccio a specificarne il percorso?
 
- R: Sì, puoi utilizzare vari formati immagine (come JPEG, PNG, GIF, ecc.) per l'immagine dell'intestazione. Il percorso dell'immagine viene specificato utilizzando il file`File` proprietà del`Aspose.Pdf.Image` oggetto.
+ R: Sì, puoi usare vari formati di immagine (come JPEG, PNG, GIF, ecc.) per l'immagine di intestazione. Il percorso dell'immagine è specificato usando`File` proprietà del`Aspose.Pdf.Image` oggetto.
 
 #### D: Come posso personalizzare l'aspetto e il posizionamento dell'immagine nella sezione dell'intestazione?
 
- R: Puoi personalizzare l'aspetto e il posizionamento dell'immagine regolando le proprietà del file`Aspose.Pdf.Image` oggetto prima di aggiungerlo alla sezione dell'intestazione. Ad esempio, puoi impostare le dimensioni, l'allineamento, la rotazione, l'opacità dell'immagine, ecc.
+ A: È possibile personalizzare l'aspetto e il posizionamento dell'immagine regolando le proprietà dell'`Aspose.Pdf.Image` oggetto prima di aggiungerlo alla sezione dell'intestazione. Ad esempio, puoi impostare le dimensioni, l'allineamento, la rotazione, l'opacità, ecc. dell'immagine.
 
-####  D: Qual è lo scopo di`TextFragment` object used for the footer?
+####  D: Qual è lo scopo del`TextFragment` object used for the footer?
 
- R: Il`TextFragment` L'oggetto viene utilizzato per creare e formattare il testo che verrà visualizzato nella sezione del piè di pagina. Nel codice fornito, viene utilizzato per visualizzare il numero di pagina e il conteggio totale delle pagine.
+ A: Il`TextFragment` object viene utilizzato per creare e formattare il testo che verrà visualizzato nella sezione footer. Nel codice fornito, viene utilizzato per visualizzare il numero di pagina e il conteggio totale delle pagine.
 
-#### D: Posso modificare il testo del piè di pagina per includere informazioni o formattazione aggiuntive?
+#### D: Posso modificare il testo del piè di pagina per includere informazioni o formattazioni aggiuntive?
 
- R: Sì, puoi modificare il testo del piè di pagina modificando il contenuto del file`TextFragment` oggetto. Puoi aggiungere testo aggiuntivo, modificare caratteri, colori e formattazione in base alle tue esigenze.
+ A: Sì, puoi modificare il testo del piè di pagina modificando il contenuto del`TextFragment` oggetto. Puoi aggiungere testo aggiuntivo, cambiare font, colori e formattazione in base alle tue esigenze.
 
-#### D: Posso applicare contenuti diversi di intestazione e piè di pagina a pagine diverse del documento PDF?
+#### D: Posso applicare contenuti diversi nell'intestazione e nel piè di pagina alle diverse pagine del documento PDF?
 
- R: Sì, puoi applicare contenuti diversi di intestazione e piè di pagina a pagine diverse creando contenuti separati`HeaderFooter` oggetti e assegnandoli a pagine specifiche utilizzando il comando`Header` E`Footer` proprietà del`Aspose.Pdf.Page` oggetto.
+ A: Sì, puoi applicare contenuti diversi di intestazione e piè di pagina a pagine diverse creando pagine separate`HeaderFooter` oggetti e assegnarli a pagine specifiche utilizzando`Header` E`Footer` proprietà del`Aspose.Pdf.Page` oggetto.
 
-#### D: Come posso personalizzare ulteriormente l'intestazione e il piè di pagina, ad esempio modificando gli stili dei caratteri o aggiungendo elementi aggiuntivi?
+#### D: Come posso personalizzare ulteriormente l'intestazione e il piè di pagina, ad esempio cambiando lo stile del carattere o aggiungendo elementi aggiuntivi?
 
-R: È possibile personalizzare l'intestazione e il piè di pagina utilizzando varie classi e proprietà fornite da Aspose.PDF per .NET. Ad esempio, puoi utilizzare diverse opzioni di formattazione del testo, aggiungere più paragrafi, immagini o persino tabelle alle sezioni di intestazione e piè di pagina.
+R: Puoi personalizzare l'intestazione e il piè di pagina utilizzando varie classi e proprietà fornite da Aspose.PDF per .NET. Ad esempio, puoi utilizzare diverse opzioni di formattazione del testo, aggiungere più paragrafi, immagini o persino tabelle alle sezioni dell'intestazione e del piè di pagina.
 
-#### D: Posso rimuovere o cancellare le sezioni di intestazione e piè di pagina, se necessario?
+#### D: Posso rimuovere o cancellare le sezioni intestazione e piè di pagina, se necessario?
 
-R: Sì, puoi rimuovere o cancellare le sezioni di intestazione e piè di pagina impostando il file`Header` E`Footer` proprietà del`Aspose.Pdf.Page` opporsi a`null`.
+A: Sì, puoi rimuovere o cancellare le sezioni intestazione e piè di pagina impostando`Header` E`Footer` proprietà del`Aspose.Pdf.Page` opporsi a`null`.
 
-#### D: Come posso garantire che l'immagine e il numero di pagina aggiunti rimangano coerenti su diversi dispositivi e visualizzatori?
+#### D: Come posso garantire che l'immagine aggiunta e il numero di pagina rimangano coerenti su diversi dispositivi e visualizzatori?
 
-R: Aspose.PDF per .NET fornisce funzionalità per creare documenti PDF standardizzati e coerenti, garantendo che l'immagine e il numero di pagina aggiunti vengano visualizzati in modo coerente su diversi dispositivi e visualizzatori PDF.
+R: Aspose.PDF per .NET fornisce funzionalità per creare documenti PDF standardizzati e coerenti, garantendo che l'immagine aggiunta e il numero di pagina vengano visualizzati in modo coerente su diversi dispositivi e visualizzatori PDF.

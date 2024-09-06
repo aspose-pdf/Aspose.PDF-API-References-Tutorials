@@ -44,7 +44,7 @@ Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRe
 ```
 
 ## Krok 5: Otočte stránku
- Pokud chcete stránku otočit, můžete použít`Rotate` vlastnictvím`Page`objekt. V tomto příkladu je stránka otočena o 90 stupňů.
+ Pokud chcete stránku otočit, můžete použít`Rotate` majetek z`Page`objekt. V tomto příkladu je stránka otočena o 90 stupňů.
 
 ```csharp
 page. Rotate = Rotate. on90;

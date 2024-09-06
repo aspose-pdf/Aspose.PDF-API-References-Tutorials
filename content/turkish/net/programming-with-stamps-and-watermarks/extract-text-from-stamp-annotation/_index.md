@@ -1,47 +1,47 @@
 ---
-title: Damga Açıklamasından Metin Çıkarma
-linktitle: Damga Açıklamasından Metin Çıkarma
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile PDF belgelerinizdeki damga açıklamasından kolayca metin çıkarmayı öğrenin.
+title: Damga Açıklamasından Metin Çıkar
+linktitle: Damga Açıklamasından Metin Çıkar
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET ile PDF belgelerinizdeki damga ek açıklamalarından metni kolayca nasıl çıkaracağınızı öğrenin.
 type: docs
 weight: 80
 url: /tr/net/programming-with-stamps-and-watermarks/extract-text-from-stamp-annotation/
 ---
-Bu eğitimde, Aspose.PDF for .NET kullanarak bir PDF belgesindeki damga açıklamasından nasıl metin çıkarılacağı konusunda size adım adım yol göstereceğiz. PDF belgesinin belirli bir sayfasındaki belirli bir damga açıklamasından metni çıkarmak için sağlanan C# kaynak kodunu nasıl kullanacağınızı size göstereceğiz.
+Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF belgesindeki damga açıklamasından metni nasıl çıkaracağınızı adım adım göstereceğiz. Sağlanan C# kaynak kodunu kullanarak PDF belgesinin belirli bir sayfasındaki belirli bir damga açıklamasından metni nasıl çıkaracağınızı göstereceğiz.
 
-## 1. Adım: Ortamı ayarlama
+## Adım 1: Ortamı kurma
 
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
 - Kurulu bir .NET geliştirme ortamı.
-- .NET için Aspose.PDF kütüphanesini indirip projenizde referans olarak kullanabilirsiniz.
+- .NET için Aspose.PDF kütüphanesi indirildi ve projenizde referans olarak kullanıldı.
 
 ## Adım 2: PDF belgesini yükleme
 
-İlk adım mevcut PDF belgesini projenize yüklemektir. İşte nasıl:
+İlk adım, mevcut PDF belgesini projenize yüklemektir. İşte nasıl:
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Belgeyi yükleyin
+// Belgeyi yükle
 Document doc = new Document(dataDir + "test.pdf");
 ```
 
-"BELGELERİNİZ DİZİNİ"ni, PDF belgenizin bulunduğu dizine giden gerçek yolla değiştirdiğinizden emin olun.
+"BELGELERİNİZ DİZİNİ" ifadesini PDF belgenizin bulunduğu dizinin gerçek yoluyla değiştirdiğinizden emin olun.
 
-## 3. Adım: Damga açıklamasından metni çıkarın
+## Adım 3: Damga açıklamasından metni çıkarın
 
 Artık PDF belgesini yüklediğinize göre, metni belirli damga açıklamasından çıkarabilirsiniz. İşte nasıl:
 
 ```csharp
-// Tampon açıklamasını al
+// Arabellek açıklamasını al
 StampAnnotation annot = doc.Pages[1].Annotations[3] as StampAnnotation;
 
-// Metin emici oluşturma
+// Bir metin emici oluşturun
 TextAbsorber ta = new TextAbsorber();
 
-// Ek açıklamanın görünümünü ziyaret edin
+// Açıklamanın görünümünü ziyaret edin
 XForm ap = annot. Appearance["N"];
 ta.Visit(ap);
 
@@ -49,9 +49,9 @@ ta.Visit(ap);
 Console.WriteLine(ta.Text);
 ```
 
-Yukarıdaki kod, damga ek açıklamasını PDF belgesinin belirtilen sayfasından alır ve ardından metni ek açıklamanın görünümünden çıkarmak için bir metin emici kullanır. Çıkarılan metin daha sonra çıktıda görüntülenir.
+Yukarıdaki kod, damga açıklamasını PDF belgesinin belirtilen sayfasından alır ve ardından metni açıklamanın görünümünden çıkarmak için bir metin emici kullanır. Çıkarılan metin daha sonra çıktıda görüntülenir.
 
-### Aspose.PDF for .NET kullanarak Damga Açıklamasından Metin Çıkarma için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Damga Açıklamasından Metin Çıkarma için örnek kaynak kodu 
 ```csharp
 
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -66,42 +66,42 @@ Console.WriteLine(ta.Text);
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF belgesindeki damga açıklamasından metni nasıl çıkaracağınızı öğrendiniz. Artık bu yöntemi PDF belgelerinizdeki diğer açıklamalardan metin çıkarmak için kullanabilirsiniz.
+Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesindeki damga açıklamasından metin çıkarmayı öğrendiniz. Artık bu yöntemi kullanarak PDF belgelerinizdeki diğer açıklamalardan metin çıkarabilirsiniz.
 
-### Damga açıklamasından metin çıkarmak için SSS'ler
+### Damga açıklamasından metin çıkarma hakkında SSS
 
-#### S: PDF belgesindeki damga açıklaması nedir ve neden bu belgeden metin çıkarmam gerekiyor?
+#### S: PDF belgesinde damga açıklaması nedir ve neden bundan metin çıkarmam gerekir?
 
-C: PDF belgesindeki damga açıklaması, filigran veya lastik damga gibi ek bilgiler sağlamak için kullanılabilen grafiksel bir öğedir. Damga ek açıklamasından metin çıkarmak, bu ek açıklamalardan notlar, etiketler veya diğer metin bilgileri içerebilen metin tabanlı içerik almak istediğinizde kullanışlıdır.
+A: PDF belgesindeki damga açıklaması, filigran veya lastik damga gibi ek bilgiler sağlamak için kullanılabilen grafiksel bir öğedir. Notlar, etiketler veya diğer metinsel bilgileri içerebilen bu açıklamalardan metin tabanlı içerik almak istediğinizde, damga açıklamasından metin çıkarmak yararlıdır.
 
-#### S: Sağlanan C# kaynak kodu, damga ek açıklamasından metni nasıl çıkarır?
+#### S: Sağlanan C# kaynak kodu bir damga açıklamasından metni nasıl çıkarır?
 
- C: Sağlanan kaynak kodu, bir PDF belgesinin belirli bir sayfasındaki belirli bir damga açıklamasından metnin nasıl çıkarılacağını gösterir. Damga açıklamasını almak, görünümünü ziyaret etmek için Aspose.PDF kütüphanesini kullanır.`TextAbsorber`ve ardından çıkarılan metni çıktıda görüntüler.
+ A: Sağlanan kaynak kodu, bir PDF belgesinin belirli bir sayfasındaki belirli bir damga açıklamasından metnin nasıl çıkarılacağını gösterir. Damga açıklamasını almak için Aspose.PDF kitaplığını kullanır, bir`TextAbsorber`ve ardından çıkarılan metni çıktıda görüntüler.
 
-#### S: Benzer bir yaklaşım kullanarak farklı türdeki ek açıklamalardan metin çıkarabilir miyim?
+#### S: Benzer bir yaklaşım kullanarak farklı türdeki açıklamalardan metin çıkarabilir miyim?
 
-C: Evet, metin ek açıklamaları veya açılır pencere ek açıklamaları gibi diğer ek açıklama türlerinden metin çıkarmak için benzer bir yaklaşım kullanabilirsiniz. Metni çıkarmak istediğiniz belirli ek açıklama türünü hedeflemek için kodu değiştirmeniz gerekir.
+C: Evet, metin açıklamaları veya açılır açıklamalar gibi diğer açıklama türlerinden metin çıkarmak için benzer bir yaklaşım kullanabilirsiniz. Metni çıkarmak istediğiniz belirli açıklama türünü hedeflemek için kodu değiştirmeniz gerekir.
 
-####  Soru: Programın amacı nedir?`TextAbsorber` class in the code?
+####  S: Amacı nedir?`TextAbsorber` class in the code?
 
- C:`TextAbsorber` sınıfı, damga açıklamaları da dahil olmak üzere bir PDF belgesinin farklı bölümlerinden metin çıkarmak için kullanılır. PDF'nin belirtilen alanında veya öğesinde bulunan metin içeriğini "emer" veya yakalar.
+ A:`TextAbsorber` sınıf, damga açıklamaları da dahil olmak üzere bir PDF belgesinin farklı bölümlerinden metin çıkarmak için kullanılır. PDF'nin belirtilen alanında veya öğesinde bulunan metin içeriğini "emer" veya yakalar.
 
-#### S: Metni çıkarmak istediğim belirli damga açıklamasını nasıl tanımlarım?
+#### S: Metni çıkarmak istediğim belirli damga açıklamasını nasıl belirlerim?
 
- C: Sağlanan kodda damga açıklaması,`Annotations` Belirli bir sayfanın toplanması ve istenen ek açıklamayı almak için dizini kullanma. Hedef açıklamayı tanımlamak için dizini ayarlayabilir veya diğer kriterleri kullanabilirsiniz.
+ A: Sağlanan kodda, damga açıklaması, şuraya erişilerek tanımlanır:`Annotations` Belirli bir sayfanın toplanması ve istenen açıklamayı almak için dizini kullanma. Hedef açıklamayı tanımlamak için dizini ayarlayabilir veya başka ölçütler kullanabilirsiniz.
 
-#### S: Aynı sayfadaki birden fazla damga açıklamasından metin çıkarabilir miyim?
+#### S: Aynı sayfadaki birden fazla damga ek açıklamasından metin çıkarabilir miyim?
 
- C: Evet, kodda döngü oluşturacak şekilde değişiklik yapabilirsiniz.`Annotations`bir sayfanın koleksiyonunu oluşturun, damga açıklamalarını filtreleyin ve her birinden metin çıkarın.
+ A: Evet, kodu döngüye alacak şekilde değiştirebilirsiniz`Annotations`Bir sayfanın koleksiyonunu oluşturun, damga açıklamalarını filtreleyin ve her birinden metin çıkarın.
 
-#### S: Damga açıklamasının metin içeriği yoksa ne olur? Kod hala çalışacak mı?
+#### S: Damga açıklamasının metinsel içeriği yoksa ne olur? Kod yine de çalışır mı?
 
-C: Kod çalışmaya devam edecek ancak damga ek açıklamasının görünümü herhangi bir metin içeriği içermiyorsa boş bir dize çıkaracak ve görüntüleyecektir.
+A: Kod yine çalışacak, ancak damga açıklamasının görünümünde herhangi bir metinsel içerik bulunmuyorsa boş bir dize çıkarılacak ve görüntülenecektir.
 
 #### S: Çıkarılan metni çıktıda görüntülemek yerine bir dosyaya nasıl kaydedebilirim?
 
- C: Çıkarılan metni konsolda görüntülemek yerine bir dosyaya kaydetmek için kodu değiştirebilirsiniz. Basitçe değiştirin`Console.WriteLine` Metni bir dosyaya yazmak için kod içeren ifade.
+ A: Çıkarılan metni konsolda görüntülemek yerine bir dosyaya kaydetmek için kodu değiştirebilirsiniz. Basitçe şunu değiştirin:`Console.WriteLine` Metni bir dosyaya yazmak için kod içeren ifade.
 
-#### S: Çıkarılan metni daha sonraki işlemlerde veya analizlerde nasıl kullanabilirim?
+#### S: Çıkarılan metni daha ileri işleme veya analizde nasıl kullanabilirim?
 
-C: Sağlanan yöntemi kullanarak metni çıkardıktan sonra, onu bir değişkende saklayabilir, değiştirebilir, analiz edebilir veya gerektiği şekilde uygulamanızın diğer bölümlerine entegre edebilirsiniz.
+A: Sağlanan yöntemi kullanarak metni çıkardıktan sonra, onu bir değişkende saklayabilir, işleyebilir, analiz edebilir veya ihtiyacınız olduğunda uygulamanızın diğer bölümlerine entegre edebilirsiniz.

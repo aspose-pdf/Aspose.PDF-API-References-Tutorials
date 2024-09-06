@@ -22,7 +22,7 @@ Než začneme, ujistěte se, že máte následující předpoklady:
 
 - Java Development Kit (JDK) nainstalován
 - Integrované vývojové prostředí (IDE) jako Eclipse nebo IntelliJ IDEA
--  Aspose.PDF pro knihovnu Java (Můžete si ji stáhnout z[tady](https://releases.aspose.com/pdf/java/)
+-  Aspose.PDF pro knihovnu Java (Můžete si ji stáhnout z[zde](https://releases.aspose.com/pdf/java/)
 
 ## Přidání závislostí
 

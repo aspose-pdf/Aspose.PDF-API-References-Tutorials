@@ -17,7 +17,7 @@ Než začneme, ujistěte se, že máte následující:
 - Do vašeho projektu byla přidána knihovna Aspose.PDF for .NET
 
 ## Krok 1: Nastavení prostředí
-Chcete-li začít, vytvořte nový projekt C# v sadě Visual Studio. Přidejte odkaz na knihovnu Aspose.PDF for .NET kliknutím pravým tlačítkem na váš projekt v Průzkumníku řešení, výběrem „Spravovat balíčky NuGet“ a vyhledáním „Aspose.PDF“. Nainstalujte balíček a můžete vyrazit.
+Chcete-li začít, vytvořte nový projekt C# v sadě Visual Studio. Přidejte odkaz na knihovnu Aspose.PDF for .NET kliknutím pravým tlačítkem myši na váš projekt v Průzkumníku řešení, výběrem „Spravovat balíčky NuGet“ a vyhledáním „Aspose.PDF“. Nainstalujte balíček a můžete vyrazit.
 
 ## Krok 2: Načtení listu aplikace Excel
 V prvním kroku našeho kódu definujeme cestu k adresáři obsahujícímu dokument Excel. Nahraďte "VÁŠ ADRESÁŘ DOKUMENTŮ" skutečnou cestou k adresáři, kde se nachází váš soubor Excel.

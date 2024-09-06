@@ -8,7 +8,7 @@ weight: 13
 url: /hu/java/pdf-tags-and-structure/custom-tag-name-for-pdf-using-java/
 ---
 
-Ebben a részletes útmutatóban végigvezetjük az egyéni címkenevek beállításának folyamatán a PDF-dokumentumokhoz Java és Aspose.PDF for Java használatával. Az egyéni címkenevek javítják a PDF-dokumentumok hozzáférhetőségét, és felhasználóbarátabbá teszik azokat a fogyatékkal élők számára.
+Ebben a lépésenkénti útmutatóban végigvezetjük az egyéni címkenevek beállításának folyamatán a PDF-dokumentumokhoz Java és Aspose.PDF for Java használatával. Az egyéni címkenevek javítják a PDF-dokumentumok hozzáférhetőségét, és felhasználóbarátabbá teszik azokat a fogyatékkal élők számára.
 
 ## Bevezetés
 
@@ -83,7 +83,7 @@ pdfDocument.save("CustomTagNames.pdf");
 
 ## Következtetés
 
-Ebben az oktatóanyagban megtanulta, hogyan állíthat be egyéni címkeneveket PDF-dokumentumokhoz Java használatával az Aspose.PDF for Java segítségével. Az egyéni címkék javítják a PDF-fájlok hozzáférhetőségét, így azok befogadóbbak és felhasználóbarátabbak.
+Ebben az oktatóanyagban megtanulta, hogyan állíthat be egyéni címkeneveket PDF-dokumentumokhoz Java használatával az Aspose.PDF for Java-val. Az egyéni címkék javítják a PDF-fájlok hozzáférhetőségét, így azok befogadóbbak és felhasználóbarátabbak.
 
 Nyugodtan fedezze fel a fejlettebb funkciókat, és szabja testre PDF-fájljait az Aspose.PDF for Java segítségével. Boldog kódolást!
 
@@ -93,7 +93,7 @@ Nyugodtan fedezze fel a fejlettebb funkciókat, és szabja testre PDF-fájljait 
 Az egyéni címkenevek javítják a PDF-dokumentumok hozzáférhetőségét, így a fogyatékkal élő felhasználók könnyebben navigálhatnak bennük.
 
 ### 2. Módosíthatom az egyéni címkeneveket a PDF létrehozása után?
-Igen, bármikor módosíthatja az egyéni címkeneveket, ha hozzáfér a szerkezeti elemekhez, és frissíti a címke tulajdonságait.
+Igen, bármikor módosíthatja az egyéni címkeneveket, ha eléri a szerkezeti elemeket és frissíti a címke tulajdonságait.
 
 ### 3. Az egyéni címkenevek nyelvspecifikusak?
 Az egyéni címkenevek nyelvspecifikusak lehetnek, lehetővé téve a kisegítő lehetőségek támogatását a különböző nyelvekhez.

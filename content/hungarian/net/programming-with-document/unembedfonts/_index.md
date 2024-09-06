@@ -33,7 +33,7 @@ Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 
 ## 3. lépés: Állítsa be az UnembedFonts opciót
 
- A nem beágyazott betűtípusok PDF-dokumentumból való lekéréséhez be kell állítania a`UnembedFonts` opciót`true` . Ez az opció elérhető a`OptimizationOptions` osztály. A következő kódrészlet bemutatja, hogyan kell beállítani a`UnembedFonts` választási lehetőség:
+ A nem beágyazott betűtípusok PDF-dokumentumból való lekéréséhez be kell állítania a`UnembedFonts` opciót`true` . Ez az opció elérhető a`OptimizationOptions` osztály. A következő kódrészlet bemutatja, hogyan kell beállítani a`UnembedFonts` opció:
 
 ```csharp
 // Állítsa be az UnembedFonts opciót
@@ -61,7 +61,7 @@ pdfDocument.OptimizeResources(optimizeOptions);
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 ```
 
-## 6. lépés: Szerezze be az eredeti és a csökkentett fájlméretet
+## 6. lépés: Szerezze be az eredeti és csökkentett fájlméretet
 
  Végül a PDF-dokumentum eredeti és csökkentett fájlméretét a`FileInfo` osztályú System.IO. A következő kódrészlet bemutatja, hogyan szerezheti be az eredeti és csökkentett fájlméretet:
 
@@ -127,7 +127,7 @@ V: Az Aspose.PDF for .NET nem módosítja az eredeti PDF-dokumentumot az optimal
 
 #### K: Hogyan ellenőrizhetem az eredeti és a csökkentett fájlméretet az optimalizálás után?
 
-V: Használhatja a`FileInfo` Osztálya`System.IO` hogy megkapja az eredeti és csökkentett fájlméretet. Íme egy példa kódrészlet ennek eléréséhez:
+ V: Használhatja a`FileInfo` osztálya`System.IO` hogy megkapja az eredeti és csökkentett fájlméretet. Íme egy példa kódrészlet ennek eléréséhez:
 
 ```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");

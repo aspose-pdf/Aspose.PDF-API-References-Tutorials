@@ -45,7 +45,7 @@ Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
 ## Krok 6: Vytvořte objekt Graph
- Vytvoř nový`Graph` objekt s určitou šířkou a výškou.
+ Vytvořte nový`Graph` objekt s určitou šířkou a výškou.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
@@ -61,21 +61,21 @@ canvas.Shapes.Add(rect);
 ```
 
 ## Krok 8: Přidejte na stránku objekt Graph
- Přidat`Graph` objekt proti kolekci odstavců na stránce.
+ Přidejte`Graph` objekt proti kolekci odstavců na stránce.
 
 ```csharp
 page.Paragraphs.Add(canvas);
 ```
 
 ## Krok 9: Nastavte pozici pro objekt Graph
- Nastav`IsChangePosition` vlastnictvím`Graph` namítat proti`false` aby nedošlo ke změně polohy.
+ Nastavte`IsChangePosition` majetek z`Graph` namítat proti`false` aby nedošlo ke změně polohy.
 
 ```csharp
 canvas. IsChangePosition = false;
 ```
 
 ## Krok 10: Vytvořte TextFragment s průhledností
- Vytvořit`TextFragment` objekt a nastavte jeho obsah na požadovaný text. Nastav`ForegroundColor` vlastnictvím`TextState` na barvu s průhledností pomocí`Color.FromArgb` metoda.
+ Vytvořte a`TextFragment` objekt a nastavte jeho obsah na požadovaný text. Nastavte`ForegroundColor` majetek z`TextState` na barvu s průhledností pomocí`Color.FromArgb` metoda.
 
 ```csharp
 TextFragment text = new TextFragment("transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text ");
@@ -171,7 +171,7 @@ Odpověď: V kroku 7 vytvoříte obdélník se specifickými rozměry a nastaví
 
 #### Otázka: Jak nastavím pozici pro objekt Graph?
 
- A: V kroku 9 nastavíte`IsChangePosition` vlastnictvím`Graph` namítat proti`false` aby nedošlo ke změně polohy.
+ A: V kroku 9 nastavíte`IsChangePosition` majetek z`Graph` namítat proti`false` aby nedošlo ke změně polohy.
 
 #### Otázka: Jak vytvořím TextFragment s průhledností?
 

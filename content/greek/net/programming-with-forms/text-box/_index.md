@@ -22,7 +22,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## Βήμα 2: Άνοιγμα του εγγράφου PDF
 
-Σε αυτό το βήμα, θα ανοίξουμε το έγγραφο PDF χρησιμοποιώντας το`Document` κλάση του Aspose.PDF.
+ Σε αυτό το βήμα, θα ανοίξουμε το έγγραφο PDF χρησιμοποιώντας το`Document` κλάση του Aspose.PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "TextField.pdf");
@@ -81,11 +81,11 @@ pdfDocument.Save(dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Άνοιγμα εγγράφου
 Document pdfDocument = new Document(dataDir + "TextField.pdf");
-// Δημιουργήστε ένα πεδίο
+//Δημιουργήστε ένα πεδίο
 TextBoxField textBoxField = new TextBoxField(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(100, 200, 300, 300));
 textBoxField.PartialName = "textbox1";
 textBoxField.Value = "Text Box";
-//TextBoxField.Border = νέο περίγραμμα(
+// TextBoxField.Border = νέο περίγραμμα(
 Border border = new Border(textBoxField);
 border.Width = 5;
 border.Dash = new Dash(1, 1);
@@ -99,7 +99,7 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nTextbox field added successfully.\nFile saved at " + dataDir);
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Σε αυτόν τον οδηγό, μάθαμε πώς να χρησιμοποιούμε τη βιβλιοθήκη Aspose.PDF για .NET για να δημιουργήσουμε ένα πεδίο κειμένου σε ένα έγγραφο PDF. Ακολουθώντας τα βήματα που περιγράφονται, μπορείτε να προσαρμόσετε τις ιδιότητες του πεδίου κειμένου και να το προσθέσετε στο έγγραφο όπως απαιτείται. Μη διστάσετε να εξερευνήσετε περαιτέρω τις δυνατότητες του Aspose.PDF για .NET για να επεκτείνετε τις δυνατότητες χειρισμού αρχείων PDF.
 

@@ -84,13 +84,13 @@ catch (Exception ex)
 
 ## Závěr
 
-tomto tutoriálu jste se naučili, jak odstranit nepoužívaná písma z dokumentu PDF pomocí knihovny Aspose.PDF pro .NET. Podle podrobného průvodce a spuštěním poskytnutého kódu C# můžete načíst PDF, identifikovat a odstranit nepoužívaná písma a uložit aktualizované PDF.
+V tomto tutoriálu jste se naučili, jak odstranit nepoužívaná písma z dokumentu PDF pomocí knihovny Aspose.PDF pro .NET. Podle podrobného průvodce a spuštěním poskytnutého kódu C# můžete načíst PDF, identifikovat a odstranit nepoužívaná písma a uložit aktualizované PDF.
 
 ### FAQ
 
 #### Otázka: Jaký je účel výukového programu „Odstranit nepoužívaná písma v souboru PDF“?
 
-Odpověď: Výukový program "Odstranit nepoužívaná písma v souboru PDF" vysvětluje, jak používat knihovnu Aspose.PDF pro .NET k odstranění nepoužívaných písem z dokumentu PDF. Výukový program vás provede procesem načítání PDF, identifikace a odstraňování nepoužívaných písem a ukládání aktualizovaného PDF.
+Odpověď: Výukový program "Odebrat nepoužívaná písma v souboru PDF" vysvětluje, jak používat knihovnu Aspose.PDF pro .NET k odstranění nepoužívaných písem z dokumentu PDF. Výukový program vás provede procesem načítání PDF, identifikace a odstraňování nepoužívaných písem a ukládání aktualizovaného PDF.
 
 #### Otázka: Proč bych měl chtít odstranit nepoužívaná písma z dokumentu PDF?
 
@@ -107,14 +107,14 @@ A: Chcete-li nastavit adresář dokumentů:
 Odpověď: Výukový program vás provede procesem krok za krokem:
 
 1.  Otevřete dokument PDF pomocí`Document` třída.
-2.  Vytvořit`TextFragmentAbsorber` objekt s`TextEditOptions` nastaven na`FontReplace.RemoveUnusedFonts`.
+2.  Vytvořte a`TextFragmentAbsorber` objekt s`TextEditOptions` nastavit na`FontReplace.RemoveUnusedFonts`.
 3. Přijměte absorbér k identifikaci a odstranění nepoužívaných písem z PDF.
 4.  Iterujte skrz všechny`TextFragments` a nastavte písmo na požadované písmo.
 5. Uložte aktualizovaný dokument PDF.
 
 ####  Otázka: Jaký je účel`TextEditOptions.FontReplace.RemoveUnusedFonts` parameter?
 
- A:`TextEditOptions.FontReplace.RemoveUnusedFonts` parametr dává pokyn`TextFragmentAbsorber` k identifikaci a odstranění nepoužívaných písem z dokumentu PDF.
+ A:`TextEditOptions.FontReplace.RemoveUnusedFonts` parametr dává pokyn`TextFragmentAbsorber` identifikaci a odstranění nepoužívaných písem z dokumentu PDF.
 
 #### Otázka: Mohu nahradit nepoužívaná písma písmem podle mého výběru?
 

@@ -96,7 +96,7 @@ Odpověď: Ano, Aspose.PDF pro .NET podporuje úpravy různých typů polí form
 
 #### Otázka: Jak mohu přidat nová pole formuláře do dokumentu PDF pomocí Aspose.PDF pro .NET?
 
- Odpověď: Chcete-li do dokumentu PDF přidat nová pole formuláře, můžete použít`Form` vlastnictvím`Document` třídy pro přístup k`Field` kolekce a poté programově přidat nová pole formuláře.
+ Odpověď: Chcete-li do dokumentu PDF přidat nová pole formuláře, můžete použít`Form` majetek z`Document` třídy pro přístup k`Field` kolekce a poté programově přidat nová pole formuláře.
 
 #### Otázka: Podporuje Aspose.PDF pro .NET další programovací jazyky kromě C#?
 

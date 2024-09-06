@@ -56,7 +56,7 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nParticular field deleted successfully.\nFile saved at " + dataDir);
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Σε αυτό το σεμινάριο, μάθαμε πώς να διαγράψουμε ένα πεδίο φόρμας χρησιμοποιώντας το Aspose.PDF για .NET. Ακολουθώντας αυτά τα βήματα, μπορείτε εύκολα να αφαιρέσετε ανεπιθύμητα πεδία φόρμας από τα έγγραφα PDF χρησιμοποιώντας το Aspose.PDF.
 

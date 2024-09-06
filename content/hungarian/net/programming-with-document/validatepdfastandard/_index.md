@@ -2,12 +2,12 @@
 title: PDF fájlok érvényesítése A Szabvány
 linktitle: Érvényesítse a PDF A szabványt
 second_title: Aspose.PDF for .NET API Reference
-description: Ebből a lépésenkénti útmutatóból megtudhatja, hogyan használhatja az Aspose.PDF for .NET fájlt a PDFAStandard PDF-fájlok érvényesítéséhez.
+description: Ebből a lépésenkénti útmutatóból megtudhatja, hogyan használja az Aspose.PDF for .NET fájlt a PDFAStandard PDF-fájlok érvényesítéséhez.
 type: docs
 weight: 390
 url: /hu/net/programming-with-document/validatepdfastandard/
 ---
-Az Aspose.PDF for .NET egy hatékony könyvtár, amely lehetővé teszi PDF-fájlok létrehozását, szerkesztését és programozott kezelését a C# nyelv használatával. Az Aspose.PDF for .NET egyik legfontosabb jellemzője a PDF-fájlok különböző PDF-szabványok, köztük a PDF/A-1a szabványok szerinti érvényesítése. Ebben a cikkben lépésről lépésre bemutatjuk az Aspose.PDF for .NET "Get Validate PDFAStandard" funkciójának használatát. 
+Az Aspose.PDF for .NET egy hatékony könyvtár, amely lehetővé teszi PDF-fájlok létrehozását, szerkesztését és programozott kezelését a C# nyelv használatával. Az Aspose.PDF for .NET egyik kulcsfontosságú funkciója a PDF-fájlok különböző PDF-szabványok, köztük a PDF/A-1a szabványok szerinti érvényesítése. Ebben a cikkben lépésről lépésre bemutatjuk az Aspose.PDF for .NET "Get Validate PDFAStandard" funkciójának használatát. 
 
 ## 1. lépés: A dokumentumkönyvtár elérési útjának meghatározása
 
@@ -66,7 +66,7 @@ V: A PDF-dokumentumot tartalmazó könyvtár elérési útjának meghatározás�
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Cserélje le a „DOKUMENTUMKÖNYVTÁR” elemet a PDF-dokumentumot tartalmazó könyvtár tényleges elérési útjával.
+Cserélje le a "DOKUMENTUMKÖNYVTÁR" elemet a PDF-dokumentumot tartalmazó könyvtár tényleges elérési útjával.
 
 #### K: Szükséges-e hivatkozást hozzáadni az Aspose.PDF for .NET-hez a projektemhez?
 

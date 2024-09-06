@@ -1,90 +1,115 @@
 ---
-title: SVG-afmetingen verkrijgen
-linktitle: SVG-afmetingen verkrijgen
+title: SVG-afmetingen ophalen
+linktitle: SVG-afmetingen ophalen
 second_title: Aspose.PDF voor .NET API-referentie
-description: Stapsgewijze handleiding voor het verkrijgen van SVG-afmetingen met Aspose.PDF voor .NET.
+description: Leer hoe u Aspose.PDF voor .NET gebruikt om SVG-bestanden naar PDF te converteren met deze stapsgewijze handleiding. Perfect voor ontwikkelaars die PDF's willen manipuleren.
 type: docs
 weight: 40
 url: /nl/net/document-conversion/get-svg-dimensions/
 ---
 ## Invoering
-In deze zelfstudie begeleiden we u bij het verkrijgen van de afmetingen van een SVG-bestand met behulp van Aspose.PDF voor .NET. SVG (Scalable Vector Graphics) is een op XML gebaseerd afbeeldingsformaat dat wordt gebruikt om vectorafbeeldingen weer te geven. Met behulp van de onderstaande stappen kunt u de afmetingen van een SVG-bestand verkrijgen en deze als PDF opslaan.
+
+Welkom in de wereld van Aspose.PDF voor .NET! Als u PDF-bestanden programmatisch wilt bewerken, bent u op de juiste plek beland. Aspose.PDF is een krachtige bibliotheek waarmee ontwikkelaars eenvoudig PDF-documenten kunnen maken, bewerken en converteren. Of u nu een doorgewinterde ontwikkelaar bent of net begint, deze gids leidt u door de basisbeginselen van het gebruik van Aspose.PDF voor .NET, met de nadruk op het verkrijgen van SVG-afmetingen en het converteren ervan naar PDF-formaat.
 
 ## Vereisten
-Zorg ervoor dat u aan de volgende vereisten voldoet voordat u begint:
 
-- Basiskennis van de programmeertaal C#.
-- Aspose.PDF-bibliotheek voor .NET geïnstalleerd op uw systeem.
-- Een ontwikkelomgeving zoals Visual Studio.
+Voordat we met de code aan de slag gaan, zijn er een paar dingen die je moet regelen:
 
-## Stap 1: SVG-bestand laden
-In deze stap laden we het SVG-bestand met Aspose.PDF voor .NET. Volg de onderstaande code:
+1. Visual Studio: Zorg ervoor dat Visual Studio op uw machine is geïnstalleerd. Het is de IDE die we voor deze tutorial gebruiken.
+2.  .NET Framework: Zorg ervoor dat u het .NET Framework hebt geïnstalleerd. Aspose.PDF ondersteunt verschillende versies, dus controleer de[documentatie](https://reference.aspose.com/pdf/net/) voor compatibiliteit.
+3.  Aspose.PDF-bibliotheek: U kunt de nieuwste versie van Aspose.PDF voor .NET downloaden van de[downloadlink](https://releases.aspose.com/pdf/net/) . Als je het eerst wilt uitproberen, kun je ook een[gratis proefperiode](https://releases.aspose.com/).
+4. Basiskennis van C#: Kennis van C#-programmering helpt u de voorbeelden beter te begrijpen.
+
+## Pakketten importeren
+
+Om te beginnen moet u de benodigde pakketten importeren. Dit is hoe u dat kunt doen:
+
+1. Open uw Visual Studio-project.
+2. Klik met de rechtermuisknop op uw project in Solution Explorer en selecteer 'NuGet-pakketten beheren'.
+3. Zoek naar "Aspose.PDF" en installeer het pakket.
+
+Zodra u het pakket hebt geïnstalleerd, kunt u beginnen met coderen!
+
+## Stap 1: Stel uw project in
+
+### Een nieuw project maken
+
+Laten we eerst een nieuw C#-project in Visual Studio maken.
+
+- Open Visual Studio en selecteer 'Een nieuw project maken'.
+- Kies 'Console-app (.NET Framework)' en klik op 'Volgende'.
+- Geef uw project een naam (bijvoorbeeld 'AsposePDFExample') en klik op 'Maken'.
+
+### Voeg richtlijnen toe
+
+ Nu uw project is ingesteld, moet u de benodigde using-richtlijnen bovenaan uw project toevoegen.`Program.cs` bestand:
 
 ```csharp
-// Pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-var loadopt = new SvgLoadOptions();
-loadopt.AdjustPageSize = true;
-var svgDoc = new Document(dataDir + "GetSVGDimensions.svg", loadopt);
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
- Zeker vervangen`"YOUR DOCUMENTS DIRECTORY"` met de daadwerkelijke map waar uw SVG-bestand zich bevindt.
+Hiermee krijgt u toegang tot de klassen en methoden die de Aspose.PDF-bibliotheek biedt.
 
-## Stap 2: Aanpassing van het paginaformaat
-Nu we het SVG-bestand hebben geladen, kunnen we het paginaformaat aanpassen aan de SVG-inhoud. Gebruik de volgende code:
+## Stap 2: Laad het SVG-document
 
-```csharp
-svgDoc.Pages[1].PageInfo.Margin.Top = 0;
-svgDoc.Pages[1].PageInfo.Margin.Left = 0;
-svgDoc.Pages[1].PageInfo.Margin.Bottom = 0;
-svgDoc.Pages[1].PageInfo.Margin.Right = 0;
-```
+### Definieer de documentdirectory
 
-De bovenstaande code stelt de paginamarges in op nul, waardoor het paginaformaat kan worden aangepast op basis van de SVG-inhoud.
-
-## Stap 3: De resulterende PDF opslaan
-Nadat we het paginaformaat hebben aangepast, kunnen we het resulterende PDF-document nu opslaan. Hier is de laatste stap:
+Voordat u het SVG-document laadt, moet u het pad naar uw documentenmap opgeven. Vervangen`"YOUR DOCUMENT DIRECTORY"` met het werkelijke pad waar uw SVG-bestand zich bevindt.
 
 ```csharp
-svgDoc.Save(dataDir + "GetSVGDimensions_out.pdf");
-```
-
- Vervangen`"YOUR DOCUMENTS DIRECTORY"` met de gewenste map waarin u het uitgevoerde PDF-bestand wilt opslaan.
-  
-### Voorbeeldbroncode voor Get SVG Dimensions met Aspose.PDF voor .NET
-
-```csharp
-// Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+### SVG-document laden
+
+ Laten we nu het SVG-document laden met behulp van de`SvgLoadOptions` klasse. Met deze klasse kunt u de paginagrootte aanpassen op basis van de SVG-inhoud.
+
+```csharp
 var loadopt = new SvgLoadOptions();
 loadopt.AdjustPageSize = true;
 var svgDoc = new Document(dataDir + "GetSVGDimensions.svg", loadopt);
+```
+
+## Stap 3: Pas de paginamarges aan
+
+Om ervoor te zorgen dat de SVG-inhoud perfect in de PDF past, moet u de paginamarges op nul zetten. Deze stap is cruciaal voor het behouden van de integriteit van de SVG-afmetingen.
+
+```csharp
 svgDoc.Pages[1].PageInfo.Margin.Top = 0;
 svgDoc.Pages[1].PageInfo.Margin.Left = 0;
 svgDoc.Pages[1].PageInfo.Margin.Bottom = 0;
 svgDoc.Pages[1].PageInfo.Margin.Right = 0;
+```
+
+## Stap 4: Sla het document op als PDF
+
+Ten slotte is het tijd om het SVG-document op te slaan als een PDF. U kunt de naam en het pad van het uitvoerbestand als volgt opgeven:
+
+```csharp
 svgDoc.Save(dataDir + "GetSVGDimensions_out.pdf");
 ```
+
+En dat is alles! U hebt met succes een SVG-bestand geconverteerd naar een PDF met Aspose.PDF voor .NET.
 
 ## Conclusie
-In deze zelfstudie hebben we het stapsgewijze proces besproken voor het verkrijgen van de afmetingen van een SVG-bestand met Aspose.PDF voor .NET. Door de hierboven beschreven instructies te volgen, zou u nu de afmetingen van een SVG-bestand moeten kunnen achterhalen en deze in PDF-indeling kunnen opslaan. Deze functie kan handig zijn als u de afmetingen van een vectorafbeelding moet meten.
 
-### Veelgestelde vragen
+Gefeliciteerd! U hebt zojuist een eenvoudige maar krachtige taak voltooid met Aspose.PDF voor .NET. Door deze handleiding te volgen, hebt u geleerd hoe u een SVG-document laadt, de marges aanpast en het opslaat als een PDF. De mogelijkheden met Aspose.PDF zijn eindeloos en dit is slechts het topje van de ijsberg. Of u nu complexe PDF's wilt maken, bestaande PDF's wilt bewerken of wilt converteren tussen formaten, Aspose.PDF heeft alles wat u nodig hebt. Dus waar wacht u nog op? Duik dieper in de[documentatie](https://reference.aspose.com/pdf/net/) en ontdek alle functies die deze bibliotheek te bieden heeft!
 
-#### Vraag: Wat is SVG?
+## Veelgestelde vragen
 
-A: SVG (Scalable Vector Graphics) is een op XML gebaseerd afbeeldingsformaat dat wordt gebruikt om vectorafbeeldingen weer te geven. In tegenstelling tot rasterafbeeldingen zijn SVG-bestanden resolutie-onafhankelijk en kunnen ze worden geschaald zonder kwaliteitsverlies. SVG wordt veel gebruikt voor het weergeven van afbeeldingen op internet en kan gemakkelijk worden bewerkt en gemanipuleerd.
+### Wat is Aspose.PDF voor .NET?
+Aspose.PDF voor .NET is een bibliotheek waarmee ontwikkelaars programmatisch PDF-documenten kunnen maken, bewerken en converteren.
 
-#### Vraag: Waarom Aspose.PDF voor .NET gebruiken voor conversie van SVG naar PDF?
+### Hoe installeer ik Aspose.PDF?
+ U kunt Aspose.PDF installeren via NuGet Package Manager in Visual Studio of downloaden van de[plaats](https://releases.aspose.com/pdf/net/).
 
-A: Aspose.PDF voor .NET biedt een betrouwbare en efficiënte manier om SVG-bestanden te verwerken en deze naar PDF-formaat te converteren. Het biedt verschillende opties en instellingen om het conversieproces aan te passen, zoals het aanpassen van het paginaformaat, de marges en andere eigenschappen om een nauwkeurige weergave in de PDF te garanderen.
+### Kan ik Aspose.PDF gratis gebruiken?
+ Ja, Aspose biedt een[gratis proefperiode](https://releases.aspose.com/) zodat u de bibliotheek kunt testen voordat u tot aankoop overgaat.
 
-#### Vraag: Kan ik SVG-bestanden met complexe afbeeldingen en tekst converteren?
+### Waar kan ik ondersteuning vinden voor Aspose.PDF?
+ U kunt ondersteuning krijgen van de[Aspose-forum](https://forum.aspose.com/c/pdf/10).
 
-A: Ja, Aspose.PDF voor .NET kan SVG-bestanden met complexe afbeeldingen, tekst en vectorelementen verwerken. Het behoudt nauwkeurig de details en kwaliteit van de SVG-inhoud tijdens het conversieproces, wat resulteert in PDF-documenten van hoge kwaliteit.
-
-#### Vraag: Is het mogelijk om tekst uit SVG-bestanden te extraheren met Aspose.PDF voor .NET?
-
-A: Ja, met Aspose.PDF voor .NET kunt u tekst uit SVG-bestanden extraheren. U kunt de tekstextractiefuncties van de bibliotheek gebruiken om tekstelementen uit SVG te extraheren en deze afzonderlijk op te slaan voor verdere verwerking.
+### Hoe krijg ik een tijdelijke licentie voor Aspose.PDF?
+ U kunt een verzoek indienen[tijdelijke licentie](https://purchase.aspose.com/temporary-license/) van de Aspose-website.

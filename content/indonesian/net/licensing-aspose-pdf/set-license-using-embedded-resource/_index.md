@@ -1,122 +1,106 @@
 ---
 title: Tetapkan Lisensi Menggunakan Sumber Daya Tertanam
 linktitle: Tetapkan Lisensi Menggunakan Sumber Daya Tertanam
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Panduan langkah demi langkah untuk mengatur lisensi menggunakan sumber daya tertanam dengan Aspose.PDF untuk .NET. Buka kunci fitur lengkap.
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Manfaatkan kekuatan Aspose.PDF untuk .NET dengan panduan lengkap ini. Pelajari cara mengatur lisensi, memanipulasi PDF, dan banyak lagi.
 type: docs
 weight: 50
 url: /id/net/licensing-aspose-pdf/set-license-using-embedded-resource/
 ---
-Dalam tutorial ini, kami akan memberi Anda panduan langkah demi langkah tentang cara mengatur lisensi menggunakan sumber daya tertanam dengan Aspose.PDF untuk .NET. Aspose.PDF adalah perpustakaan canggih yang memungkinkan Anda membuat, memanipulasi, dan mengonversi dokumen PDF secara terprogram. Dengan menetapkan lisensi, Anda dapat membuka kunci fitur lengkap yang ditawarkan oleh Aspose.PDF.
+## Perkenalan
+
+Selamat datang di dunia Aspose.PDF untuk .NET! Jika Anda ingin memanipulasi file PDF secara terprogram, Anda telah tiba di tempat yang tepat. Aspose.PDF adalah pustaka canggih yang memungkinkan pengembang untuk membuat, mengedit, dan mengonversi dokumen PDF dengan mudah. Apakah Anda seorang pengembang berpengalaman atau baru memulai, panduan ini akan memandu Anda melalui hal-hal penting dalam menggunakan Aspose.PDF untuk .NET, memastikan Anda memiliki semua alat yang Anda butuhkan untuk memulai.
 
 ## Prasyarat
 
-Sebelum memulai, pastikan Anda memiliki prasyarat berikut:
+Sebelum kita masuk ke kode, ada beberapa hal yang perlu Anda siapkan:
 
-1. Visual Studio diinstal dengan kerangka .NET.
-2. Pustaka Aspose.PDF untuk .NET.
+1. Visual Studio: Pastikan Anda telah menginstal Visual Studio di komputer Anda. Ini adalah IDE yang akan kita gunakan untuk tutorial ini.
+2. .NET Framework: Pastikan Anda telah menginstal .NET Framework. Aspose.PDF mendukung berbagai versi, jadi periksa dokumentasi untuk kompatibilitas.
+3.  Pustaka Aspose.PDF: Anda dapat mengunduh pustaka dari[Halaman rilis Aspose PDF untuk .NET](https://releases.aspose.com/pdf/net/)Anda juga dapat memilih uji coba gratis jika ingin mencobanya terlebih dahulu.
+4. Pengetahuan Dasar C#: Keakraban dengan pemrograman C# akan membantu Anda memahami contoh-contoh dengan lebih baik.
 
-## Langkah 1: Pengaturan Proyek
+## Paket Impor
 
-Untuk memulai, buat proyek baru di Visual Studio dan tambahkan referensi ke perpustakaan Aspose.PDF untuk .NET. Anda dapat mengunduh perpustakaan dari situs resmi Aspose dan menginstalnya di mesin Anda.
+Setelah semuanya siap, langkah selanjutnya adalah mengimpor paket yang diperlukan. Berikut cara melakukannya:
 
-## Langkah 2: Impor namespace yang diperlukan
-
-Dalam file kode C# Anda, impor namespace yang diperlukan untuk mengakses kelas dan metode yang disediakan oleh Aspose.PDF:
+1. Buka proyek Visual Studio Anda.
+2. Klik kanan pada proyek Anda di Solution Explorer dan pilih "Kelola Paket NuGet."
+3. Cari "Aspose.PDF" dan instal paketnya.
 
 ```csharp
 using System;
-using Aspose.Pdf;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Langkah 3: Mengatur lisensi dari sumber daya yang disematkan
+Sekarang setelah pustakanya siap, mari kita uraikan langkah-langkah untuk menetapkan lisensi menggunakan sumber daya tertanam.
 
-Setelah mengimpor namespace yang diperlukan, Anda dapat mengatur lisensi menggunakan sumber daya yang disematkan. Gunakan baris kode berikut untuk mengatur lisensi:
+## Langkah 1: Siapkan Direktori Dokumen Anda
 
-```csharp
-Aspose.Pdf.License license = new Aspose.Pdf.License();
-license.SetLicense("MergedAPI.Aspose.Total.lic");
-```
-
- Pastikan`"MergedAPI.Aspose.Total.lic"` file lisensi disertakan dalam sumber daya tersemat proyek Anda.
-
-## Langkah 4: Mengonfirmasi definisi lisensi
-
-Setelah mengatur lisensi, Anda dapat menampilkan pesan konfirmasi untuk memeriksa apakah lisensi telah berhasil diatur. Gunakan baris kode berikut untuk menampilkan pesan di konsol:
+Sebelum Anda dapat menetapkan lisensi, Anda perlu menentukan jalur ke direktori dokumen Anda. Di sinilah berkas PDF Anda akan disimpan. 
 
 ```csharp
-Console.WriteLine("License set successfully.");
-```
-
-
-### Contoh kode sumber untuk Menetapkan Lisensi Menggunakan Sumber Daya Tertanam menggunakan Aspose.PDF untuk .NET
- 
-```csharp
-
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya tempat Anda ingin menyimpan berkas PDF. Langkah ini penting karena pustaka perlu mengetahui tempat mencari berkas lisensi.
+
+## Langkah 2: Inisialisasi Objek Lisensi
+
+ Selanjutnya, Anda perlu membuat instance dari`License` kelas yang disediakan oleh Aspose.PDF. Objek ini akan digunakan untuk menetapkan lisensi Anda.
+
+```csharp
 // Inisialisasi objek lisensi
 Aspose.Pdf.License license = new Aspose.Pdf.License();
-//Tetapkan lisensi
-license.SetLicense("MergedAPI.Aspose.Total.lic");
-Console.WriteLine("License set successfully.");
-
 ```
+
+Baris kode ini menginisialisasi objek lisensi, mempersiapkannya untuk langkah berikutnya di mana kita akan menetapkan lisensi.
+
+## Langkah 3: Tetapkan Lisensi
+
+### Menerapkan Lisensi
+
+Sekarang tibalah bagian yang menarik—menetapkan lisensi! Di sinilah Anda memberi tahu Aspose.PDF untuk menggunakan berkas lisensi Anda. Jika Anda memiliki berkas lisensi sebagai sumber daya tertanam, Anda dapat menetapkannya seperti ini:
+
+```csharp
+// Tetapkan lisensi
+// lisensi.SetLicense("MergedAPI.Aspose.Total.lic");
+```
+
+ Pastikan untuk menghapus komentar pada baris tersebut dan menggantinya`"MergedAPI.Aspose.Total.lic"` dengan nama sebenarnya dari berkas lisensi Anda. Langkah ini penting untuk membuka potensi penuh pustaka Aspose.PDF.
+
+## Langkah 4: Konfirmasikan Pengaturan Lisensi
+
+### Memverifikasi Lisensi
+
+Setelah menetapkan lisensi, sebaiknya konfirmasikan bahwa lisensi telah berhasil ditetapkan. Anda dapat melakukannya dengan menambahkan pesan konsol sederhana:
+
+```csharp
+Console.WriteLine("License set successfully.");
+```
+
+Baris ini akan mencetak pesan ke konsol, memberi tahu Anda bahwa semuanya beres.
 
 ## Kesimpulan
 
-Dalam tutorial ini, Anda mempelajari cara mengatur lisensi menggunakan sumber daya tertanam dengan Aspose.PDF untuk .NET. Dengan mengikuti langkah-langkah yang dijelaskan, Anda akan dapat membuka kunci fungsionalitas penuh yang ditawarkan oleh Aspose.PDF dan menggunakan perpustakaan secara optimal dalam proyek C# Anda.
+Selamat! Anda baru saja mempelajari cara menyiapkan dan menggunakan Aspose.PDF untuk .NET. Dengan pustaka canggih ini di ujung jari Anda, kini Anda dapat membuat, mengedit, dan memanipulasi dokumen PDF seperti seorang profesional. Ingat, kunci untuk menguasai alat apa pun adalah latihan, jadi jangan ragu untuk bereksperimen dengan berbagai fitur yang ditawarkan Aspose.PDF.
 
-### FAQ untuk menetapkan lisensi menggunakan sumber daya tertanam
+## Pertanyaan yang Sering Diajukan
 
-#### T: Mengapa saya harus menetapkan lisensi menggunakan sumber daya yang tertanam?
+### Apa itu Aspose.PDF untuk .NET?
+Aspose.PDF untuk .NET adalah pustaka yang memungkinkan pengembang untuk membuat, mengedit, dan memanipulasi dokumen PDF secara terprogram.
 
-J: Menetapkan lisensi menggunakan sumber daya tertanam memastikan bahwa informasi lisensi Anda disimpan dengan aman dalam aplikasi Anda. Ini memungkinkan Anda untuk membuka kunci fitur lengkap yang ditawarkan oleh Aspose.PDF sambil menjaga kerahasiaan informasi lisensi Anda.
+### Bagaimana cara mengatur lisensi untuk Aspose.PDF?
+ Anda dapat mengatur lisensi dengan membuat`License` objek dan menggunakan`SetLicense` metode dengan jalur ke berkas lisensi Anda.
 
-#### T: Bagaimana cara mengimpor namespace yang diperlukan untuk Aspose.PDF?
+### Dapatkah saya menggunakan Aspose.PDF secara gratis?
+Ya, Aspose menawarkan versi uji coba gratis yang dapat Anda gunakan untuk menguji pustaka sebelum membeli.
 
- A: Dalam file kode C# Anda, gunakan`using` arahan untuk mengimpor namespace yang diperlukan untuk mengakses kelas dan metode yang disediakan oleh Aspose.PDF:
-```csharp
-using System;
-using Aspose.Pdf;
-```
+### Di mana saya dapat menemukan dokumentasi untuk Aspose.PDF?
+ Dokumentasinya dapat ditemukan[Di Sini](https://reference.aspose.com/pdf/net/).
 
-#### T: Apa yang dimaksud dengan sumber daya tertanam?
-
-J: Sumber daya tertanam adalah file yang disertakan dalam rakitan aplikasi Anda. Itu dapat diakses dan digunakan langsung dari kode Anda.
-
-#### T: Bagaimana cara menyertakan file lisensi sebagai sumber daya tertanam?
-
-J: Untuk menyertakan file lisensi sebagai sumber daya yang disematkan, tambahkan file lisensi ke proyek Anda dan atur properti Build Action-nya ke "Sumber Daya Tertanam".
-
-#### T: Bagaimana cara menetapkan lisensi menggunakan sumber daya tertanam?
-
- J: Setelah mengimpor namespace yang diperlukan, Anda dapat mengatur lisensi menggunakan cuplikan kode yang disediakan. Mengganti`"MergedAPI.Aspose.Total.lic"` dengan jalur yang benar ke sumber lisensi tersemat Anda.
-
-#### T: Dapatkah saya menggunakan beberapa sumber daya lisensi yang tersemat dalam proyek yang sama?
-
- J: Ya, Anda dapat menggunakan beberapa sumber lisensi yang tertanam dalam proyek yang sama dengan melakukan inisialisasi secara terpisah`Aspose.Pdf.License` objek dan mengatur setiap lisensi secara individual.
-
-#### T: Apa yang terjadi jika saya mengubah file lisensi?
-
- J: Jika Anda perlu memperbarui lisensi, ganti file lisensi tertanam yang ada dengan yang baru dan pastikan untuk memperbarui jalur file di`SetLicense` metode yang sesuai.
-
-#### T: Dapatkah saya menetapkan lisensi menggunakan sumber daya tertanam untuk perpustakaan Aspose lainnya?
-
-J: Ya, proses pengaturan lisensi menggunakan sumber daya tertanam serupa di berbagai perpustakaan Aspose. Namun, setiap perpustakaan mungkin memiliki spesifikasinya masing-masing, jadi lihat dokumentasi untuk perpustakaan terkait.
-
-#### T: Apakah perlu menyetel lisensi menggunakan sumber daya yang disematkan?
-
-J: Meskipun tidak wajib, mengatur lisensi menggunakan sumber daya yang tertanam adalah praktik yang disarankan untuk menjaga keamanan informasi lisensi Anda dan memastikan kelancaran fungsionalitas.
-
-#### T: Dapatkah saya menggunakan lisensi tertanam dengan versi uji coba Aspose.PDF?
-
-A: Ya, Anda dapat menggunakan lisensi yang disematkan dengan versi uji coba Aspose.PDF. Namun, untuk fungsionalitas penuh, disarankan untuk menggunakan lisensi yang valid.
-
-#### T: Bagaimana cara mendapatkan lisensi yang valid untuk Aspose.PDF?
-
- J: Anda bisa mendapatkan lisensi yang valid dengan membelinya dari[Aspose.Pembelian PDF](https://purchase.aspose.com/pricing/pdf/net) halaman.
-
-#### T: Di mana saya dapat memperoleh informasi selengkapnya tentang pengaturan lisensi untuk produk Aspose?
-
-J: Untuk informasi selengkapnya tentang pengaturan lisensi, penyematan sumber daya, dan detail terkait, lihat[Ajukan Dokumentasi Lisensi](https://docs.aspose.com/pdf/net/licensing/) halaman.
+### Apa yang harus saya lakukan jika saya menemui masalah?
+ Jika Anda menghadapi masalah, Anda dapat mencari bantuan di[Forum dukungan Aspose](https://forum.aspose.com/c/pdf/10).

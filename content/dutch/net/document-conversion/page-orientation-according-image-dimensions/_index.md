@@ -1,143 +1,143 @@
 ---
-title: Paginarichting volgens afbeeldingsafmetingen
-linktitle: Paginarichting volgens afbeeldingsafmetingen
+title: Pagina-oriëntatie volgens afbeeldingsafmetingen
+linktitle: Pagina-oriëntatie volgens afbeeldingsafmetingen
 second_title: Aspose.PDF voor .NET API-referentie
-description: Stapsgewijze handleiding voor het instellen van de paginarichting op basis van afbeeldingsafmetingen met Aspose.PDF voor .NET.
+description: Leer in deze stapsgewijze handleiding hoe u PDF's maakt met Aspose.PDF voor .NET en hoe u de pagina-oriëntatie instelt op basis van de afmetingen van afbeeldingen.
 type: docs
 weight: 80
 url: /nl/net/document-conversion/page-orientation-according-image-dimensions/
 ---
-In deze zelfstudie begeleiden we u bij het instellen van de paginarichting op basis van de afmetingen van een afbeelding met behulp van Aspose.PDF voor .NET. We doorlopen een lijst met JPG-afbeeldingen in een bepaalde map en passen de paginarichting automatisch aan op basis van de breedte van elke afbeelding. Volg de onderstaande stappen om dit te bereiken.
+## Invoering
+
+Welkom in de wereld van Aspose.PDF voor .NET! Als u op zoek bent naar het maken, bewerken of converteren van PDF-documenten via een programma, dan bent u hier aan het juiste adres. Aspose.PDF is een krachtige bibliotheek waarmee ontwikkelaars naadloos met PDF-bestanden kunnen werken. In deze handleiding leiden we u door het proces van het instellen van pagina-oriëntaties op basis van afbeeldingsafmetingen. Of u nu een doorgewinterde ontwikkelaar bent of net begint, deze tutorial biedt u de kennis die u nodig hebt om aan de slag te gaan met Aspose.PDF.
 
 ## Vereisten
-Zorg ervoor dat u aan de volgende vereisten voldoet voordat u begint:
 
-- Basiskennis van de programmeertaal C#.
-- Aspose.PDF-bibliotheek voor .NET geïnstalleerd op uw systeem.
-- Een ontwikkelomgeving zoals Visual Studio.
+Voordat we in de code duiken, willen we ervoor zorgen dat je alles bij de hand hebt wat je nodig hebt:
 
-## Stap 1: Blader door JPG-afbeeldingen
-Bij deze stap bladeren we door alle JPG-afbeeldingen in een bepaalde map. Volg de onderstaande code:
+1. Visual Studio: Zorg ervoor dat Visual Studio op uw machine is geïnstalleerd. Het is de beste IDE voor .NET-ontwikkeling.
+2. .NET Framework: Deze handleiding gaat ervan uit dat u .NET Framework gebruikt. Zorg ervoor dat u de juiste versie hebt geïnstalleerd.
+3.  Aspose.PDF voor .NET: U kunt de bibliotheek downloaden van de[Aspose-website](https://releases.aspose.com/pdf/net/) Als je het eerst wilt uitproberen, kun je een[gratis proefperiode](https://releases.aspose.com/).
+4. Basiskennis van C#: Kennis van C#-programmering helpt u de voorbeelden beter te begrijpen.
 
-```csharp
-// Pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+## Pakketten importeren
 
-// Maak een nieuw PDF-document
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+Om te beginnen moet u de benodigde pakketten importeren. Dit is hoe u dat kunt doen:
 
-// Haal de namen op van alle JPG-bestanden in een bepaalde map
-string[] fileEntries = Directory.GetFiles(dataDir, "*.JPG");
-```
+1. Open uw Visual Studio-project.
+2. Klik met de rechtermuisknop op uw project in Solution Explorer en selecteer 'NuGet-pakketten beheren'.
+3.  Zoeken naar`Aspose.PDF` en installeer het.
 
- Zeker vervangen`"YOUR DOCUMENTS DIRECTORY"` met de daadwerkelijke map waar uw JPG-afbeeldingen zich bevinden.
+Nu we alles hebben ingesteld, gaan we het voorbeeld stap voor stap uitleggen.
 
-## Stap 2: Creatie van de pagina en de afbeelding
-Nadat we door de JPG-bestanden hebben gebladerd, maken we voor elk bestand een pagina en een afbeelding. Gebruik de volgende code:
+## Stap 1: Stel uw documentenmap in
+
+Allereerst moet u het pad naar uw documentenmap opgeven waar uw afbeeldingen zijn opgeslagen. Dit is waar Aspose naar de JPG-bestanden zal zoeken.
 
 ```csharp
-int counter;
-for (counter = 0; counter < fileEntries.Length - 1; counter++)
-{
-// Maak een Pagina-object
-Aspose.Pdf.Page page = doc.Pages.Add();
-
-// Maak een afbeeldingsobject
-Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
-image1.File = fileEntries[counter];
-```
-
-## Stap 3: Afbeeldingsafmetingen controleren
-Laten we nu de afmetingen van elke afbeelding controleren om de paginarichting te bepalen. Gebruik de volgende code:
-
-```csharp
-// Maak een BitMap-object om informatie uit het afbeeldingsbestand te halen
-Bitmap myimage = new Bitmap(fileEntries[counter]);
-
-// Controleer of de breedte van de afbeelding groter is dan de breedte van de pagina of niet
-if (myimage.Width > page.PageInfo.Width)
-//
-
-  If the width of the image is greater than the width of the page, set the page orientation to landscape
-page.PageInfo.IsLandscape = true;
-else
-// Als de breedte van de afbeelding kleiner is dan de breedte van de pagina, stelt u de afdrukstand van de pagina in op staand
-page.PageInfo.IsLandscape = false;
-```
-
-## Stap 4: De afbeelding toevoegen aan het PDF-document
-Nadat we de afmetingen van de afbeelding hebben gecontroleerd, voegen we de afbeelding toe aan de alineaverzameling van het PDF-document. Gebruik de volgende code:
-
-```csharp
-// Voeg de afbeelding toe aan de alineaverzameling van het PDF-document
-page.Paragraphs.Add(image1);
-```
-
-## Stap 5: Het PDF-bestand opslaan
-Nadat we alle afbeeldingen aan het PDF-document hebben toegevoegd, kunnen we nu het resulterende PDF-bestand opslaan. Hier is de laatste stap:
-
-```csharp
-// Sla het PDF-bestand op
-doc.Save(dataDir + "SetPageOrientation_out.pdf");
-```
-
- Vervangen`"YOUR DOCUMENTS DIRECTORY"` met de gewenste map waarin u het uitgevoerde PDF-bestand wilt opslaan.
-
-### Voorbeeldbroncode voor paginaoriëntatie volgens afbeeldingsafmetingen met Aspose.PDF voor .NET
-
-```csharp
-
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+ Vervangen`"YOUR DOCUMENT DIRECTORY"` met het daadwerkelijke pad waar uw afbeeldingen zich bevinden. Dit is cruciaal, want als Aspose uw afbeeldingen niet kan vinden, kan het de PDF niet maken.
+
+## Stap 2: Maak een nieuw PDF-document
+
+Vervolgens maakt u een nieuw PDF-documentobject. Hier worden al uw afbeeldingen toegevoegd.
+
+```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+```
 
-// Haal de namen op van alle JPG-bestanden in een bepaalde map
+ Deze regel initialiseert een nieuw exemplaar van de`Document` klasse, die uw PDF-bestand vertegenwoordigt.
+
+## Stap 3: Afbeeldingsbestanden ophalen
+
+ Laten we nu alle JPG-bestanden uit de opgegeven directory ophalen. Dit doen we met behulp van de`Directory.GetFiles` methode.
+
+```csharp
 string[] fileEntries = Directory.GetFiles(dataDir, "*.JPG");
+```
 
+Deze regel geeft u een array van bestandsnamen die overeenkomen met het JPG-formaat. Zorg ervoor dat uw directory enkele JPG-afbeeldingen bevat om dit te laten werken!
+
+## Stap 4: Loop door elke afbeelding
+
+U moet door elk afbeeldingsbestand heen lopen en het toevoegen aan het PDF-document. Dit is hoe u dat kunt doen:
+
+```csharp
 int counter;
 for (counter = 0; counter < fileEntries.Length - 1; counter++)
 {
-	// Maak een paginaobject
-	Aspose.Pdf.Page page = doc.Pages.Add();
+    // Een paginaobject maken
+    Aspose.Pdf.Page page = doc.Pages.Add();
+```
 
-	// Maak een afbeeldingsobject
-	Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
-	image1.File = fileEntries[counter];
+ In deze lus maakt u voor elke afbeelding een nieuwe pagina.`doc.Pages.Add()` Met deze methode wordt een nieuwe pagina aan uw PDF-document toegevoegd.
 
-	// Maak een BitMap-object om de informatie van het afbeeldingsbestand op te halen
-	Bitmap myimage = new Bitmap(fileEntries[counter]);
-	// Controleer of de breedte van het afbeeldingsbestand groter is dan Paginabreedte of niet
-	if (myimage.Width > page.PageInfo.Width)
-		// Als de afbeeldingsbreedte groter is dan de paginabreedte, stelt u de paginarichting in op Liggend
-		page.PageInfo.IsLandscape = true;
-	else
-		// Als de afbeeldingsbreedte kleiner is dan de paginabreedte, stelt u de paginarichting in op Staand
-		page.PageInfo.IsLandscape = false;
-	// Voeg de afbeelding toe aan de alineaverzameling van het PDF-document
-	page.Paragraphs.Add(image1);
+## Stap 5: Een afbeeldingsobject maken
+
+ Voor elke afbeelding moet u een`Image` object dat de beeldgegevens zal bevatten.
+
+```csharp
+    Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
+    image1.File = fileEntries[counter];
+```
+
+ Hier wijst u het huidige afbeeldingsbestand toe aan de`Image` object. Dit is essentieel voor het toevoegen van de afbeelding aan de PDF.
+
+## Stap 6: Controleer de afmetingen van de afbeelding
+
+Voordat u de afbeelding aan het PDF-bestand toevoegt, moet u de afmetingen controleren om de pagina-oriëntatie te bepalen.
+
+```csharp
+    Bitmap myimage = new Bitmap(fileEntries[counter]);
+    if (myimage.Width > page.PageInfo.Width)
+        page.PageInfo.IsLandscape = true;
+    else
+        page.PageInfo.IsLandscape = false;
+```
+
+Dit codefragment controleert of de breedte van de afbeelding groter is dan de paginabreedte. Als dat zo is, wordt de pagina-oriëntatie ingesteld op liggend; anders blijft het in de staande modus.
+
+## Stap 7: Voeg de afbeelding toe aan de PDF
+
+Nu u de oriëntatie hebt ingesteld, is het tijd om de afbeelding aan het PDF-document toe te voegen.
+
+```csharp
+    page.Paragraphs.Add(image1);
 }
-// Sla het pdf-bestand op
+```
+
+Deze regel voegt de afbeelding toe aan de alineaverzameling van de huidige pagina. Het is alsof je een afbeelding in een frame plaatst!
+
+## Stap 8: Sla het PDF-document op
+
+Tot slot moet u het PDF-document opslaan in de door u opgegeven map.
+
+```csharp
 doc.Save(dataDir + "SetPageOrientation_out.pdf");
 ```
 
+ Deze regel slaat het document op met de naam`SetPageOrientation_out.pdf`Controleer uw documentenmap op de nieuw gemaakte PDF!
+
 ## Conclusie
-In deze zelfstudie hebben we het stapsgewijze proces besproken van het instellen van de paginarichting op basis van de afmetingen van een afbeelding met behulp van Aspose.PDF voor .NET. Door de hierboven beschreven instructies te volgen, zou u nu een PDF-document moeten kunnen maken met de juiste paginarichting voor elke afbeelding. Deze functie is handig als u afbeeldingen van verschillende formaten heeft en deze in een PDF-document wilt insluiten.
 
-### Veelgestelde vragen
+En daar heb je het! Je hebt met succes een PDF-document gemaakt met Aspose.PDF voor .NET, waarbij je de pagina-oriëntatie hebt ingesteld op basis van de afmetingen van de afbeeldingen. Deze krachtige bibliotheek opent een wereld aan mogelijkheden voor het werken met PDF-bestanden in je applicaties. Of je nu rapporten, facturen of een ander type document genereert, Aspose.PDF heeft alles wat je nodig hebt.
 
-#### Vraag: Kan ik andere afbeeldingsformaten gebruiken in plaats van JPG om de paginarichting in te stellen op basis van de afmetingen van de afbeelding?
+## Veelgestelde vragen
 
-A: Ja, u kunt naast JPG ook andere afbeeldingsformaten gebruiken, zoals PNG, BMP of GIF, om de paginarichting in te stellen op basis van de afmetingen van de afbeelding. De meegeleverde code loopt door alle afbeeldingsbestanden met de extensie ".JPG", maar u kunt deze wijzigen om ook andere afbeeldingsformaten op te nemen.
+### Wat is Aspose.PDF voor .NET?
+Aspose.PDF voor .NET is een bibliotheek waarmee ontwikkelaars programmatisch PDF-documenten kunnen maken, bewerken en converteren.
 
-#### Vraag: Wat gebeurt er als de afmetingen van een afbeelding exact gelijk zijn aan de paginabreedte?
+### Hoe installeer ik Aspose.PDF?
+ U kunt Aspose.PDF installeren via NuGet Package Manager in Visual Studio of downloaden van de[Aspose-website](https://releases.aspose.com/pdf/net/).
 
-A: Als de breedte van een afbeelding exact gelijk is aan de paginabreedte, wordt de paginarichting ingesteld op staand. In de verstrekte code wordt de paginarichting alleen ingesteld op liggend als de breedte van de afbeelding groter is dan de paginabreedte.
+### Kan ik Aspose.PDF gratis gebruiken?
+ Ja, Aspose biedt een[gratis proefperiode](https://releases.aspose.com/) zodat u de bibliotheek kunt testen voordat u tot aankoop overgaat.
 
-#### Vraag: Kan ik de logica van de paginarichting aanpassen op basis van specifieke vereisten?
+### Waar kan ik ondersteuning vinden voor Aspose.PDF?
+ kunt ondersteuning vinden op de[Aspose-forum](https://forum.aspose.com/c/pdf/10).
 
-A: Ja, u kunt de paginaoriëntatielogica aanpassen op basis van specifieke vereisten. U kunt bijvoorbeeld een drempelwaarde instellen om te bepalen wanneer de paginarichting moet worden ingesteld op liggend of staand. Bovendien kunt u rekening houden met factoren zoals de hoogte van de afbeelding of de beeldverhouding om de paginarichting te bepalen.
-
-#### Vraag: Kan ik naast de afbeeldingen ook andere inhoud, zoals tekst of tabellen, aan het PDF-document toevoegen?
-
-A: Ja, u kunt samen met de afbeeldingen andere inhoud, zoals tekst of tabellen, aan het PDF-document toevoegen. Aspose.PDF voor .NET biedt een uitgebreide reeks functies voor het manipuleren van PDF-documenten, inclusief het toevoegen van tekst, afbeeldingen, tabellen en andere elementen aan de pagina's.
+### Welke bestandstypen kan ik met Aspose naar PDF converteren?
+Aspose.PDF ondersteunt een breed scala aan bestandsindelingen, waaronder afbeeldingen, Word-documenten, Excel-spreadsheets en meer.

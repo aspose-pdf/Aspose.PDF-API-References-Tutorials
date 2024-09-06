@@ -42,10 +42,10 @@ Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img. FixWidth = 100;
 img. FixHeight = 100;
 
-// Ορισμός τύπου εικόνας σε άγνωστο (Άγνωστο)
+//Ορισμός τύπου εικόνας σε άγνωστο (Άγνωστο)
 img.FileType = Aspose.Pdf.ImageFileType.Unknown;
 
-//Διαδρομή προς το αρχείο προέλευσης εικόνας
+// Διαδρομή προς το αρχείο προέλευσης εικόνας
 img.File = dataDir + "aspose-logo.jpg";
 
 // Προσθέστε την εικόνα στη συλλογή παραγράφων της σελίδας
@@ -91,7 +91,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nImage size added successfully.\nFile saved at " + dataDir);
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Συγχαρητήρια ! Έχετε ορίσει με επιτυχία το μέγεθος μιας εικόνας σε ένα έγγραφο PDF χρησιμοποιώντας το Aspose.PDF για .NET. Τώρα μπορείτε να εφαρμόσετε αυτήν τη μέθοδο στα δικά σας έργα για να προσαρμόσετε το μέγεθος των εικόνων σε αρχεία PDF.
 

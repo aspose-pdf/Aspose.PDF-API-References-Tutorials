@@ -7,7 +7,7 @@ type: docs
 weight: 240
 url: /hu/net/programming-with-forms/retrieve-form-field-in-tab-order/
 ---
-Ha PDF dokumentumokkal dolgozik C# nyelven az Aspose.PDF for .NET használatával, akkor előfordulhat, hogy egy adott lapozási sorrendben kell lekérnie az űrlapmezőket. Ez akkor lehet hasznos, ha műveleteket szeretne végrehajtani az űrlapmezőkön a tabulátorok sorrendje alapján. Ebben az oktatóanyagban lépésről lépésre bemutatjuk, hogyan kérheti le az űrlapmezőket tabulátorok sorrendjében az Aspose.PDF for .NET használatával.
+Ha C# nyelvű PDF-dokumentumokkal dolgozik az Aspose.PDF for .NET használatával, előfordulhat, hogy az űrlapmezőket meghatározott tabulátorok sorrendjében kell lekérnie. Ez akkor lehet hasznos, ha műveleteket szeretne végrehajtani az űrlapmezőkön a tabulátorok sorrendje alapján. Ebben az oktatóanyagban lépésről lépésre bemutatjuk, hogyan kérheti le az űrlapmezőket tabulátorok sorrendjében az Aspose.PDF for .NET használatával.
 
 ## Követelmények
 

@@ -162,7 +162,7 @@ V: Igen, fejlécet vagy láblécet adhat hozzá a táblázathoz, ha további sor
 
 #### K: Hogyan szabályozhatom a táblázat pozícióját az oldalon?
 
- V: A táblázat pozíciójának szabályozásához az oldalon beállíthatja a`MarginInfo` a`PageInfo` tárgy. A`MarginInfo`lehetővé teszi az oldal bal, jobb, felső és alsó margójának beállítását, ami befolyásolja a táblázat számára rendelkezésre álló helyet. Használhatja a`PositioningType` tulajdona a`Aspose.Pdf.Table` az oldal tartalmi területén belüli vízszintes és függőleges igazításának szabályozására.
+ V: A táblázat pozíciójának szabályozásához az oldalon beállíthatja a`MarginInfo` a`PageInfo` objektum. A`MarginInfo`lehetővé teszi az oldal bal, jobb, felső és alsó margójának beállítását, ami befolyásolja a táblázat számára rendelkezésre álló helyet. Használhatja a`PositioningType` tulajdona a`Aspose.Pdf.Table` az oldal tartalmi területén belüli vízszintes és függőleges igazításának szabályozására.
 
 #### K: Exportálhatom a táblázatot különböző fájlformátumokba, például Excel vagy CSV formátumba?
 

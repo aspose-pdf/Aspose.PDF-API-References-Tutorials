@@ -14,7 +14,7 @@ Az Aspose.PDF for Java egy hatékony és sokoldalú Java-könyvtár, amely lehet
 
 ## Mi az Aspose.PDF for Java?
 
-Az Aspose.PDF for Java egy Java-alapú PDF-dokumentum-létrehozó és -kezelési könyvtár. Funkciók széles skáláját kínálja a PDF fájlokkal való munkavégzéshez, beleértve a PDF dokumentumok létrehozását, szerkesztését és konvertálását. Ebben az oktatóanyagban az SVG-ből PDF-be konvertáló képességeire összpontosítunk.
+Az Aspose.PDF for Java egy Java-alapú PDF-dokumentum-létrehozó és -kezelési könyvtár. Funkciók széles skáláját kínálja a PDF-fájlokkal való munkavégzéshez, beleértve a PDF-dokumentumok létrehozását, szerkesztését és konvertálását. Ebben az oktatóanyagban az SVG-ből PDF-be konvertáló képességeire összpontosítunk.
 
 ## Miért konvertálja az SVG-t PDF-be?
 
@@ -33,7 +33,7 @@ Most pedig vessünk egy pillantást az SVG PDF formátumba konvertálásának l�
 
 ## Fejlesztői környezet beállítása
 
-Az Aspose.PDF for Java használatának megkezdéséhez be kell állítania a fejlesztői környezetet. Kovesd ezeket a lepeseket:
+Az Aspose.PDF for Java használatának megkezdéséhez be kell állítania a fejlesztői környezetet. Kövesse az alábbi lépéseket:
 
 1. Az Aspose.PDF for Java letöltése: Töltse le az Aspose.PDF for Java könyvtárat a megadott hivatkozásról, és adja hozzá projektje függőségeihez.
 

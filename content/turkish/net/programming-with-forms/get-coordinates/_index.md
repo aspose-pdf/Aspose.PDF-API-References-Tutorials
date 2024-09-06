@@ -1,23 +1,23 @@
 ---
-title: PDF Form Alanı Koordinatlarını Alın
-linktitle: PDF Form Alanı Koordinatlarını Alın
-second_title: .NET API Referansı için Aspose.PDF
+title: PDF Form Alan Koordinatlarını Alın
+linktitle: PDF Form Alan Koordinatlarını Alın
+second_title: Aspose.PDF for .NET API Referansı
 description: Aspose.PDF for .NET ile PDF belgelerinizdeki PDF form alanı koordinatlarını kolayca alın.
 type: docs
 weight: 120
 url: /tr/net/programming-with-forms/get-coordinates/
 ---
-Bu eğitimde size Aspose.PDF for .NET kullanarak PDF form alanı koordinatlarını nasıl alacağınızı göstereceğiz. Bu süreçte size yol göstermek için C# kaynak kodunu adım adım açıklayacağız.
+Bu eğitimde, .NET için Aspose.PDF kullanarak PDF form alanı koordinatlarını nasıl alacağınızı göstereceğiz. Bu süreçte size rehberlik etmek için C# kaynak kodunu adım adım açıklayacağız.
 
 ## Adım 1: Hazırlık
 
-Gerekli kitaplıkları içe aktardığınızdan ve belgeler dizininin yolunu ayarladığınızdan emin olun:
+Gerekli kütüphaneleri içe aktardığınızdan ve belgeler dizinine giden yolu ayarladığınızdan emin olun:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## 2. Adım: Çıktı belgesini yükleyin
+## Adım 2: Çıktı belgesini yükleyin
 
 Çıktı PDF belgesini yükleyin:
 
@@ -25,9 +25,9 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc1 = new Document(dataDir + "input.pdf");
 ```
 
-## 3. Adım: Eklenen alanları bulun
+## Adım 3: Eklenen alanları bulun
 
-Eklenen form alanlarını bulun (bu örnekte "Öğe1", "Öğe2" ve "Öğe3" alanlarını kullanıyoruz):
+Eklenen form alanlarını bulun (bu örnekte "Item1", "Item2" ve "Item3" alanlarını kullanıyoruz):
 
 ```csharp
 RadioButtonField field0 = doc1.Form["Item1"] as RadioButtonField;
@@ -35,9 +35,9 @@ RadioButtonField field1 = doc1.Form["Item2"] as RadioButtonField;
 RadioButtonField field2 = doc1.Form["Item3"] as RadioButtonField;
 ```
 
-## 4. Adım: Her alan için alt öğe konumlarını görüntüleyin
+## Adım 4: Her alan için alt öğe konumlarını görüntüleyin
 
-Her alanın seçenekleri arasında gezinin ve her alt öğenin koordinatlarını görüntüleyin:
+Her alan için seçenekler arasında gezinin ve her alt öğenin koordinatlarını görüntüleyin:
 
 ```csharp
 foreach(RadioButtonOptionField option in field0)
@@ -54,19 +54,19 @@ Console.WriteLine(option.Rect);
 }
 ```
 
-### Aspose.PDF for .NET kullanarak Koordinatları Al için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Koordinatları Almak için örnek kaynak kodu 
 ```csharp
 try
 {
-	// Belgeler dizininin yolu.
+	// Belgeler dizinine giden yol.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Çıkış belgesini yükleyin
+	// Çıktı belgesini yükleyin
 	Document doc1 = new Document( dataDir + "input.pdf");
 	// Eklenen alanları bul
 	RadioButtonField field0 = doc1.Form["Item1"] as RadioButtonField;
 	RadioButtonField field1 = doc1.Form["Item2"] as RadioButtonField;
 	RadioButtonField field2 = doc1.Form["Item3"] as RadioButtonField;
-	// Ve her biri için alt öğelerin konumlarını gösterin.
+	// Ve her birinin alt öğelerinin pozisyonlarını göster.
 	foreach (RadioButtonOptionField option in field0)
 	{
 		Console.WriteLine(option.Rect);
@@ -88,26 +88,26 @@ catch (Exception ex)
 
 ## Çözüm
 
-Bu eğitimde Aspose.PDF for .NET kullanarak form alanı koordinatlarının nasıl alınacağını öğrendik. Bu adımları izleyerek form alanlarınızın alt öğelerinin koordinatlarını Aspose.PDF kullanarak PDF belgelerinizde kolayca alabilirsiniz.
+Bu eğitimde, .NET için Aspose.PDF kullanarak form alanı koordinatlarının nasıl alınacağını öğrendik. Bu adımları izleyerek, Aspose.PDF kullanarak PDF belgelerinizdeki form alanlarınızın alt öğelerinin koordinatlarını kolayca alabilirsiniz.
 
-### SSS'ler
+### SSS
 
-#### S: Aspose.PDF for .NET'te herhangi bir form alanının koordinatlarını almak için bu yöntemi kullanabilir miyim?
+#### S: Bu yöntemi Aspose.PDF for .NET'te herhangi bir form alanı için koordinatları almak amacıyla kullanabilir miyim?
 
-C: Evet, Aspose.PDF for .NET'te çeşitli form alanı türlerinin koordinatlarını almak için bu yöntemi kullanabilirsiniz. Sağlanan C# kaynak kodu, RadioButton alanları için koordinatların nasıl alınacağını gösterir, ancak aynı yaklaşımı TextBox, CheckBox, ListBox ve daha fazlası gibi diğer form alanı türleri için de uyarlayabilirsiniz.
+A: Evet, bu yöntemi .NET için Aspose.PDF'de çeşitli form alanı türleri için koordinatları almak için kullanabilirsiniz. Sağlanan C# kaynak kodu, RadioButton alanları için koordinatların nasıl alınacağını gösterir, ancak aynı yaklaşımı TextBox, CheckBox, ListBox ve daha fazlası gibi diğer form alanı türleri için de uyarlayabilirsiniz.
 
-#### S: Form alanı koordinatlarını nasıl değiştirebilirim veya ayarlayabilirim?
+#### S: Form alanı koordinatlarını nasıl değiştirebilir veya ayarlayabilirim?
 
-C: Form alanı koordinatları, başlangıç noktasının (0,0) sayfanın sol alt köşesinde bulunduğu PDF belgesinin koordinat sistemini temel alır. Form alanı koordinatlarını değiştirmek veya ayarlamak için`Rect` ilgili form alanının veya RadioButtonOptionField gibi alt öğelerinin özelliği.
+A: Form alanı koordinatları, başlangıç noktasının (0,0) sayfanın sol alt köşesinde bulunduğu PDF belgesinin koordinat sistemine dayanır. Form alanı koordinatlarını değiştirmek veya ayarlamak için,`Rect` İlgili form alanının veya alt öğelerinin özelliği, örneğin RadioButtonOptionField.
 
-#### S: Bir PDF belgesine program aracılığıyla eklenen form alanlarının koordinatlarını alabilir miyim?
+#### S: Form alanlarının koordinatlarını PDF belgesine program aracılığıyla ekleyebilir miyim?
 
-C: Evet, program aracılığıyla bir PDF belgesine eklenen form alanlarının koordinatlarını alabilirsiniz. Aspose.PDF for .NET, form alanlarını dinamik olarak eklemenizi sağlar ve bir kez eklendiğinde bu eğitimde gösterilen yaklaşımı kullanarak bunların koordinatlarını alabilirsiniz.
+C: Evet, PDF belgesine programatik olarak eklenen form alanlarının koordinatlarını alabilirsiniz. .NET için Aspose.PDF, form alanlarını dinamik olarak eklemenize olanak tanır ve eklendikten sonra, bu eğitimde gösterilen yaklaşımı kullanarak koordinatlarını alabilirsiniz.
 
 #### S: Form alanı koordinatlarını almanın amacı nedir?
 
-C: Bir PDF belgesindeki form alanlarında düzen ile ilgili belirli işlemler veya doğrulamalar yapmanız gerektiğinde form alanı koordinatlarını almak yararlı olabilir. Form alanlarını koordinatlarına göre doğru bir şekilde konumlandırmanıza ve hizalamanıza olanak tanıyarak belgede doğru görünmelerini sağlar ve kusursuz bir kullanıcı deneyimi sunar.
+A: Form alanı koordinatlarını almak, bir PDF belgesindeki form alanlarında belirli düzen ile ilgili işlemler veya doğrulamalar yapmanız gerektiğinde faydalı olabilir. Form alanlarını koordinatlarına göre doğru bir şekilde konumlandırmanıza ve hizalamanıza olanak tanır, belgede doğru şekilde görünmelerini ve sorunsuz bir kullanıcı deneyimi sağlamalarını sağlar.
 
-#### S: Form alanı koordinatları noktalarla mı yoksa başka bir birimle mi ifade ediliyor?
+#### S: Form alanı koordinatları nokta cinsinden mi yoksa başka bir birimle mi ifade ediliyor?
 
-C: Aspose.PDF for .NET'teki form alanı koordinatları noktalarla ifade edilir. Bir nokta 1/72 inç'e eşdeğerdir ve bu da onu PDF formatında standart bir ölçü birimi yapar.
+A: Aspose.PDF for .NET'teki form alanı koordinatları noktalarla ifade edilir. Bir nokta 1/72 inç'e eşdeğerdir ve bu da onu PDF formatında standart bir ölçüm birimi yapar.

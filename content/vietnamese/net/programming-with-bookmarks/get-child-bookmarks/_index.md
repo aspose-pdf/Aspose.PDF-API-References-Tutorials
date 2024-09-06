@@ -1,174 +1,126 @@
 ---
-title: Nhận dấu trang trẻ em trong tệp PDF
-linktitle: Nhận dấu trang trẻ em trong tệp PDF
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Dễ dàng lấy dấu trang con trong tệp PDF với Aspose.PDF cho .NET.
+title: Nhận Dấu trang Trẻ em trong Tệp PDF
+linktitle: Nhận Dấu trang Trẻ em trong Tệp PDF
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Tìm hiểu cách lấy dấu trang con trong tệp PDF bằng Aspose.PDF cho .NET với hướng dẫn từng bước này. Cải thiện khả năng điều hướng PDF của bạn.
 type: docs
 weight: 80
 url: /vi/net/programming-with-bookmarks/get-child-bookmarks/
 ---
-Truy xuất dấu trang con trong tệp PDF có thể hữu ích cho việc khám phá cấu trúc phân cấp của dấu trang. Với Aspose.PDF for .NET, bạn có thể dễ dàng lấy dấu trang con bằng cách làm theo mã nguồn sau:
+## Giới thiệu
 
-## Bước 1: Nhập thư viện cần thiết
+Bạn đã bao giờ thấy mình đang sàng lọc một tài liệu PDF dài, cố gắng tìm các phần hoặc chương cụ thể chưa? Nếu đã từng, bạn biết điều đó có thể gây khó chịu như thế nào! May mắn thay, với Aspose.PDF cho .NET, bạn có thể dễ dàng quản lý các dấu trang trong các tệp PDF của mình. Trong hướng dẫn này, chúng ta sẽ tìm hiểu cách lấy các dấu trang con từ một tài liệu PDF, giúp trải nghiệm điều hướng của bạn mượt mà và hiệu quả hơn. Vì vậy, hãy lấy đồ uống yêu thích của bạn và bắt đầu thôi!
 
-Trước khi bắt đầu, bạn cần nhập các thư viện cần thiết cho dự án C# của mình. Đây là chỉ thị nhập khẩu cần thiết:
+## Điều kiện tiên quyết
+
+Trước khi tìm hiểu về mã, bạn cần chuẩn bị một số thứ sau:
+
+1. Visual Studio: Đảm bảo bạn đã cài đặt Visual Studio trên máy của mình. Đây là IDE phù hợp để phát triển .NET.
+2.  Aspose.PDF cho .NET: Bạn sẽ cần tải xuống và cài đặt thư viện Aspose.PDF. Bạn có thể tìm thấy nó[đây](https://releases.aspose.com/pdf/net/).
+3. Kiến thức cơ bản về C#: Sự quen thuộc với lập trình C# sẽ giúp bạn hiểu các đoạn mã tốt hơn.
+
+## Nhập gói
+
+Để bắt đầu, bạn cần nhập các gói cần thiết vào dự án C# của mình. Sau đây là cách bạn có thể thực hiện:
+
+### Tạo một dự án mới
+
+Mở Visual Studio và tạo một dự án C# mới. Bạn có thể chọn Ứng dụng Console để đơn giản hơn.
+
+### Thêm tham chiếu Aspose.PDF
+
+1. Nhấp chuột phải vào dự án của bạn trong Solution Explorer.
+2. Chọn "Quản lý gói NuGet".
+3. Tìm kiếm "Aspose.PDF" và cài đặt phiên bản mới nhất.
+
+### Nhập không gian tên
+
+Ở đầu tệp C# của bạn, hãy nhập không gian tên Aspose.PDF:
 
 ```csharp
+using System;
+using System.IO;
 using Aspose.Pdf;
 ```
 
-## Bước 2: Đặt đường dẫn đến thư mục tài liệu
+Bây giờ chúng ta đã thiết lập xong mọi thứ, hãy cùng tìm hiểu về mã lệnh nhé!
 
- Ở bước này, bạn cần chỉ định đường dẫn đến thư mục chứa tệp PDF mà bạn muốn trích xuất dấu trang. Thay thế`"YOUR DOCUMENT DIRECTORY"`trong đoạn mã sau với đường dẫn thực tế đến thư mục tài liệu của bạn:
+## Bước 1: Thiết lập thư mục tài liệu của bạn
 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-```
+Trước tiên, bạn cần chỉ định đường dẫn đến tài liệu PDF của mình. Đây là nơi Aspose sẽ tìm kiếm tệp.
 
-## Bước 3: Mở tài liệu PDF
-
-Bây giờ chúng ta sẽ mở tài liệu PDF mà chúng ta muốn trích xuất dấu trang bằng mã sau:
-
-```csharp
-Document pdfDocument = new Document(dataDir + "GetChildBookmarks.pdf");
-```
-
-## Bước 4: Duyệt bookmark và bookmark con
-
- Trong bước này, chúng ta sẽ lặp lại tất cả dấu trang trong tài liệu bằng cách sử dụng`foreach` vòng. Với mỗi bookmark, chúng ta sẽ hiển thị các thông tin như tiêu đề, kiểu in nghiêng, kiểu in đậm và màu sắc. Nếu dấu trang có dấu trang con, chúng tôi cũng sẽ hiển thị những dấu trang đó. Đây là mã tương ứng:
-
-```csharp
-foreach(OutlineItemCollection outlineItem in pdfDocument.Outlines)
-{
-     Console.WriteLine(outlineItem.Title);
-     Console.WriteLine(outlineItem.Italic);
-     Console.WriteLine(outlineItem.Bold);
-     Console.WriteLine(outlineItem.Color);
-    
-     if (outlineItem.Count > 0)
-     {
-         Console.WriteLine("Child bookmarks");
-        
-         // Duyệt cả các dấu trang của trẻ
-         foreach(OutlineItemCollection childOutline in outlineItem)
-         {
-             Console.WriteLine(childOutline.Title);
-             Console.WriteLine(childOutline.Italic);
-             Console.WriteLine(childOutline.Bold);
-             Console.WriteLine(childOutline.Color);
-         }
-     }
-}
-```
-
-### Mã nguồn mẫu để Nhận dấu trang con bằng Aspose.PDF cho .NET 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế nơi lưu trữ tệp PDF của bạn.
+
+## Bước 2: Mở Tài liệu PDF
+
+Tiếp theo, chúng ta sẽ mở tài liệu PDF bằng cách sử dụng`Document` lớp được cung cấp bởi Aspose.PDF.
+
+```csharp
 // Mở tài liệu
 Document pdfDocument = new Document(dataDir + "GetChildBookmarks.pdf");
-// Lặp lại tất cả các dấu trang
+```
+
+ Dòng mã này khởi tạo một cái mới`Document` đối tượng với tệp PDF của bạn. Đảm bảo tên tệp trùng khớp với tên bạn có.
+
+## Bước 3: Lặp qua các dấu trang
+
+Bây giờ, chúng ta hãy duyệt qua tất cả các dấu trang trong PDF. Đây chính là nơi phép thuật xảy ra!
+
+```csharp
+// Lặp qua tất cả các dấu trang
 foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 {
-	Console.WriteLine(outlineItem.Title);
-	Console.WriteLine(outlineItem.Italic);
-	Console.WriteLine(outlineItem.Bold);
-	Console.WriteLine(outlineItem.Color);
-	if (outlineItem.Count > 0)
-	{
-		Console.WriteLine("Child Bookmarks");
-		// Có dấu trang con sau đó lặp qua đó
-		foreach (OutlineItemCollection childOutline in outlineItem)
-		{
-			Console.WriteLine(childOutline.Title);
-			Console.WriteLine(childOutline.Italic);
-			Console.WriteLine(childOutline.Bold);
-			Console.WriteLine(childOutline.Color);
-		}
-	}
-}
+    Console.WriteLine(outlineItem.Title);
+    Console.WriteLine(outlineItem.Italic);
+    Console.WriteLine(outlineItem.Bold);
+    Console.WriteLine(outlineItem.Color);
 ```
 
-## Phần kết luận
+ Ở đây, chúng tôi đang sử dụng một`foreach` vòng lặp để lặp qua từng dấu trang trong tài liệu. Chúng tôi in ra tiêu đề, trạng thái nghiêng, trạng thái đậm và màu của từng dấu trang.
 
-Xin chúc mừng! Bây giờ bạn đã có hướng dẫn từng bước để lấy dấu trang con bằng Aspose.PDF cho .NET. Bạn có thể sử dụng mã này để khám phá cấu trúc phân cấp của dấu trang và nhận thông tin chi tiết về từng dấu trang cũng như dấu trang con của nó trong tài liệu PDF của bạn.
+## Bước 4: Kiểm tra các dấu trang con
 
-Hãy nhớ xem tài liệu Aspose.PDF chính thức để biết thêm thông tin về các tính năng thao tác dấu trang nâng cao.
-
-### Câu hỏi thường gặp về lấy dấu trang con trong tệp PDF
-
-#### Câu hỏi: Dấu trang con trong tệp PDF là gì?
-
-Đáp: Dấu trang con là dấu trang được lồng dưới dấu trang gốc. Chúng tạo ra cấu trúc phân cấp, cho phép trải nghiệm điều hướng có tổ chức và chi tiết hơn trong tài liệu PDF.
-
-#### Hỏi: Tại sao tôi muốn truy xuất dấu trang con từ tệp PDF?
-
-Đáp: Truy xuất các dấu trang con giúp bạn hiểu được mối quan hệ và thứ bậc giữa các phần khác nhau của tài liệu. Thông tin này có thể đặc biệt hữu ích đối với các tài liệu có cấu trúc phức tạp hoặc nhiều cấp độ tổ chức.
-
-#### Câu hỏi: Làm cách nào để nhập các thư viện cần thiết cho dự án C# của tôi?
-
-Đáp: Để nhập thư viện cần thiết cho dự án C# của bạn, hãy sử dụng lệnh nhập sau:
+Đôi khi, dấu trang có dấu trang con. Hãy kiểm tra xem có dấu trang con nào không và lặp lại chúng.
 
 ```csharp
-using Aspose.Pdf;
-```
-
-Lệnh này cho phép bạn truy cập các lớp và phương thức do Aspose.PDF cung cấp cho .NET.
-
-#### Hỏi: Làm cách nào để chỉ định đường dẫn đến thư mục tài liệu?
-
- Đáp: Trong mã nguồn được cung cấp, hãy thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế đến thư mục chứa tệp PDF mà bạn muốn trích xuất dấu trang con. Điều này đảm bảo rằng mã có thể định vị được tệp PDF mục tiêu.
-
-#### Hỏi: Làm cách nào để mở tài liệu PDF để trích xuất dấu trang con?
-
-Trả lời: Để mở tài liệu PDF để trích xuất dấu trang, hãy sử dụng mã sau:
-
-```csharp
-Document pdfDocument = new Document(dataDir + "GetChildBookmarks.pdf");
-```
-
- Thay thế`"GetChildBookmarks.pdf"` với tên tập tin thực tế.
-
-#### Câu hỏi: Làm cách nào để lặp lại và hiển thị thông tin dấu trang con?
-
- Đáp: Lặp lại tất cả các dấu trang trong tài liệu bằng cách sử dụng`foreach` vòng. Đối với mỗi dấu trang, hiển thị thông tin như tiêu đề, kiểu in nghiêng, kiểu in đậm, màu sắc và nếu nó có dấu trang con, hãy lặp lại qua chúng:
-
-```csharp
-foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
+if (outlineItem.Count > 0)
 {
-    Console.WriteLine("Title: " + outlineItem.Title);
-    Console.WriteLine("Italic: " + outlineItem.Italic);
-    Console.WriteLine("Bold: " + outlineItem.Bold);
-    Console.WriteLine("Color: " + outlineItem.Color);
-    
-    if (outlineItem.Count > 0)
+    Console.WriteLine("Child Bookmarks");
+    // Có các dấu trang con sau đó lặp lại qua đó
+    foreach (OutlineItemCollection childOutline in outlineItem)
     {
-        Console.WriteLine("Child bookmarks");
-        
-        // Duyệt cả các dấu trang của trẻ
-        foreach (OutlineItemCollection childOutline in outlineItem)
-        {
-            Console.WriteLine(childOutline.Title);
-            Console.WriteLine(childOutline.Italic);
-            Console.WriteLine(childOutline.Bold);
-            Console.WriteLine(childOutline.Color);
-        }
+        Console.WriteLine(childOutline.Title);
+        Console.WriteLine(childOutline.Italic);
+        Console.WriteLine(childOutline.Bold);
+        Console.WriteLine(childOutline.Color);
     }
 }
 ```
 
-#### Câu hỏi: Tôi có thể trích xuất các thuộc tính khác của dấu trang con bằng cách sử dụng phương pháp tương tự không?
+Trong đoạn mã này, chúng tôi kiểm tra xem dấu trang hiện tại có bất kỳ dấu trang con nào không. Nếu có, chúng tôi lặp qua chúng và in thông tin chi tiết của chúng.
 
- Trả lời: Có, bạn có thể trích xuất các thuộc tính khác nhau của dấu trang con bằng cách sử dụng`OutlineItemCollection` sự vật. Tham khảo tài liệu Aspose.PDF để biết danh sách đầy đủ các thuộc tính có sẵn.
+## Phần kết luận
 
-#### Hỏi: Có giới hạn nào về số lượng dấu trang con mà tôi có thể truy xuất không?
+Và bạn đã có nó! Bạn đã học thành công cách lấy dấu trang con từ tệp PDF bằng Aspose.PDF cho .NET. Chức năng này có thể cải thiện đáng kể trải nghiệm của người dùng khi duyệt qua các tài liệu dài. Cho dù bạn đang phát triển trình xem PDF hay chỉ cần quản lý dấu trang, Aspose.PDF đều có thể giúp bạn.
 
-Đáp: Thông thường không có giới hạn nghiêm ngặt về số lượng dấu trang con mà bạn có thể truy xuất bằng phương pháp này. Tuy nhiên, những tài liệu rất lớn có số lượng dấu trang con quá lớn có thể yêu cầu quản lý bộ nhớ hiệu quả.
+## Câu hỏi thường gặp
 
-#### Câu hỏi: Điều gì sẽ xảy ra nếu các dấu trang con có nhiều dấu trang con lồng nhau hơn?
+### Aspose.PDF dành cho .NET là gì?
+Aspose.PDF for .NET là một thư viện mạnh mẽ cho phép các nhà phát triển tạo, thao tác và quản lý tài liệu PDF theo chương trình.
 
-Đáp: Mã được cung cấp sẽ lặp lại đệ quy qua tất cả các cấp độ dấu trang con, cho phép bạn truy xuất thông tin từ các dấu trang con lồng nhau.
+### Tôi có thể sử dụng Aspose.PDF miễn phí không?
+ Có, Aspose cung cấp phiên bản dùng thử miễn phí mà bạn có thể sử dụng để khám phá các tính năng của thư viện. Bạn có thể tải xuống[đây](https://releases.aspose.com/).
 
-#### Câu hỏi: Làm cách nào tôi có thể sử dụng thông tin dấu trang con đã trích xuất?
+### Tôi có thể tìm thêm tài liệu ở đâu?
+ Bạn có thể tìm thấy tài liệu toàn diện về Aspose.PDF cho .NET[đây](https://reference.aspose.com/pdf/net/).
 
-Đáp: Bạn có thể sử dụng thông tin dấu trang con được trích xuất để phân tích, lập tài liệu hoặc tạo giao diện điều hướng tùy chỉnh trong ứng dụng của mình.
+### Làm thế nào để mua giấy phép?
+ Bạn có thể mua giấy phép cho Aspose.PDF[đây](https://purchase.aspose.com/buy).
+
+### Tôi phải làm sao nếu cần hỗ trợ?
+ Nếu bạn có bất kỳ câu hỏi nào hoặc cần hỗ trợ, bạn có thể truy cập diễn đàn hỗ trợ Aspose[đây](https://forum.aspose.com/c/pdf/10).

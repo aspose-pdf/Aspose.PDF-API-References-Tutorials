@@ -37,7 +37,7 @@ using Aspose.Pdf.Text;
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Byta ut`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen till din dokumentkatalog.
+ Ersätta`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen till din dokumentkatalog.
 
 ## Steg 4: Ladda PDF-dokumentet
 
@@ -47,7 +47,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "SearchTextSegmentsPage.pdf");
 ```
 
- Byta ut`"SearchTextSegmentsPage.pdf"` med det faktiska namnet på din PDF-fil.
+ Ersätta`"SearchTextSegmentsPage.pdf"` med det faktiska namnet på din PDF-fil.
 
 ## Steg 5: Skapa en TextFragmentAbsorber
 
@@ -57,7 +57,7 @@ Document pdfDocument = new Document(dataDir + "SearchTextSegmentsPage.pdf");
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 ```
 
- Byta ut`"text"` med önskad sökfras.
+ Ersätta`"text"` med önskad sökfras.
 
 ## Steg 6: Acceptera absorbenten för en specifik sida
 
@@ -67,7 +67,7 @@ Acceptera absorbenten för önskad sida i dokumentet:
 pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 ```
 
- Byta ut`2` med önskat sidnummer (1-baserat index).
+ Ersätta`2` med önskat sidnummer (1-baserat index).
 
 ## Steg 7: Hämta de extraherade textsegmenten
 
@@ -169,7 +169,7 @@ S: Ja, den här handledningen ger instruktioner om hur du söker efter specifika
 
 #### F: Hur anger jag texten jag vill söka efter i denna handledning?
 
- S: För att ange texten du vill söka efter, skapa en`TextFragmentAbsorber` objekt och ställ in dess sökparameter med hjälp av`Text` fast egendom. Ersätt standard`"text"` i handledningens kod med önskad sökfras.
+ S: För att ange texten du vill söka efter, skapa en`TextFragmentAbsorber` objekt och ställ in dess sökparameter med hjälp av`Text` egendom. Ersätt standard`"text"` i handledningens kod med önskad sökfras.
 
 #### F: Hur hämtar jag egenskaperna för de extraherade textsegmenten?
 

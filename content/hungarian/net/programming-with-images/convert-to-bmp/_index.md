@@ -11,7 +11,7 @@ Ez az útmutató lépésről lépésre bemutatja, hogyan alakíthat át PDF fáj
 
 ## 1. lépés: Határozza meg a dokumentumkönyvtárat
 
- Mielőtt elkezdené, győződjön meg arról, hogy a megfelelő könyvtárat állította be a dokumentumokhoz. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a kódban annak a könyvtárnak az elérési útjával, ahol a PDF-dokumentum található.
+Mielőtt elkezdené, győződjön meg arról, hogy a megfelelő könyvtárat állította be a dokumentumokhoz. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a kódban annak a könyvtárnak az elérési útjával, ahol a PDF-dokumentum található.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 2. lépés: Nyissa meg a dokumentumot
 
-Ebben a lépésben megnyitjuk a PDF dokumentumot a`Document` osztályú Aspose.PDF. Használja a`Document` konstruktort, és adja át a PDF dokumentum elérési útját.
+ Ebben a lépésben megnyitjuk a PDF dokumentumot a`Document` osztályú Aspose.PDF. Használja a`Document` konstruktort, és adja át a PDF dokumentum elérési útját.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "AddImage.pdf");
@@ -27,7 +27,7 @@ Document pdfDocument = new Document(dataDir + "AddImage.pdf");
 
 ## 3. lépés: Konvertálja az egyes oldalakat BMP-vé
 
-Ebben a lépésben végigmegyünk a PDF-dokumentum minden oldalán, és azokat egyedi BMP-képekké alakítjuk. Használjuk a`for` ciklus az összes oldalon való iterációhoz.
+ Ebben a lépésben végigmegyünk a PDF-dokumentum minden oldalán, és azokat egyedi BMP-képekké alakítjuk. Használjuk a`for` ciklus az összes oldalon való iterációhoz.
 
 ```csharp
 for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
@@ -35,7 +35,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
      // Hozzon létre egy adatfolyamot a BMP-kép mentéséhez
      using (FileStream imageStream = new FileStream("image" + pageCount + "_out" + ".bmp", FileMode.Create))
      {
-         // Hozzon létre egy Resolution objektumot
+         //Hozzon létre egy Resolution objektumot
          Resolution resolution = new Resolution(300);
         
          // Hozzon létre egy BMP-eszközt a megadott attribútumokkal
@@ -66,7 +66,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 		// BMP-eszköz létrehozása megadott attribútumokkal
 		// Szélesség, magasság, felbontás, oldalméret
 		BmpDevice bmpDevice = new BmpDevice(resolution);
-		//Konvertálja az adott oldalt, és mentse a képet adatfolyamba
+		// Konvertálja az adott oldalt, és mentse a képet adatfolyamba
 		bmpDevice.Process(pdfDocument.Pages[pageCount], imageStream);
 		// Folyamat bezárása
 		imageStream.Close();
@@ -99,11 +99,11 @@ V: A dokumentumkönyvtár megadása biztosítja, hogy a PDF-dokumentum megfelel�
 
 ####  K: Milyen szerepet tölt be a`BmpDevice` class play in the conversion process?
 
- V: A`BmpDevice` osztály segít a PDF-oldalak BMP-képekké alakításában. Lehetővé teszi olyan attribútumok megadását, mint a szélesség, magasság, felbontás és oldalméret a kapott BMP-képekhez.
+ V: A`BmpDevice`osztály segít a PDF-oldalak BMP-képekké alakításában. Lehetővé teszi olyan attribútumok megadását, mint a szélesség, magasság, felbontás és oldalméret a kapott BMP-képekhez.
 
 #### K: Hogyan konvertálják a PDF-dokumentum egyes oldalait egyedi BMP-képpé?
 
- V: A`for` A ciklus a PDF-dokumentum egyes oldalain való iterációra szolgál. Minden oldalhoz létrejön egy BMP-eszköz meghatározott attribútumokkal, és a`Process`módszerrel konvertálja az oldalt BMP képpé és menti a streambe.
+ V: A`for` A ciklus a PDF-dokumentum egyes oldalain való iterációra szolgál. Minden oldalhoz létrejön egy BMP-eszköz meghatározott attribútumokkal, és a`Process` módszerrel konvertálja az oldalt BMP képpé és menti a streambe.
 
 #### K: Beállíthatom a kapott BMP-képek felbontását vagy egyéb attribútumait az átalakítási folyamat során?
 

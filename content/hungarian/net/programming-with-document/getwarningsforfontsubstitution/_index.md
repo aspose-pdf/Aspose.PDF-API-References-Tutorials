@@ -17,7 +17,7 @@ Miután letöltötte a könyvtárat, bontsa ki a ZIP-fájl tartalmát egy mappá
 
 ## 2. lépés: Töltse be a PDF-dokumentumot
 
-Miután telepítette az Aspose.PDF for .NET fájlt, és hozzáadott egy hivatkozást a DLL-re a .NET projektben, elkezdheti használni a`GetWarningsForFontSubstitution` funkció a betűtípus helyettesítésére vonatkozó figyelmeztetések észlelésére PDF-dokumentum megnyitásakor.
+ Miután telepítette az Aspose.PDF for .NET fájlt, és hozzáadott egy hivatkozást a DLL-re a .NET projektben, elkezdheti használni a`GetWarningsForFontSubstitution` funkció a betűtípus helyettesítésére vonatkozó figyelmeztetések észlelésére PDF-dokumentum megnyitásakor.
 
 A funkció használatának első lépése annak a PDF-dokumentumnak a betöltése, amelynél fontolóra cserélési figyelmeztetéseket szeretne észlelni. Ehhez a következő kódot használhatja:
 
@@ -25,7 +25,7 @@ A funkció használatának első lépése annak a PDF-dokumentumnak a betöltés
 // A PDF dokumentum elérési útja
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Nyissa meg a PDF dokumentumot
+// Nyissa meg a PDF dokumentumot
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
@@ -60,13 +60,13 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 // A PDF dokumentum elérési útja
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Nyissa meg a PDF dokumentumot
+// Nyissa meg a PDF dokumentumot
 Document doc = new Document(dataDir + "input.pdf");
 
 // A betűtípus helyettesítésére vonatkozó figyelmeztetések észlelése
 doc.FontSubstitution += new Document.FontSubstitutionHandler(OnFontSubstitution);
 
-// Figyelmeztetés a betűtípus helyettesítésére
+// Kezelje a betűtípus helyettesítésére vonatkozó figyelmeztetést
 private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArgs e)
 {
     Console.WriteLine("Font substitution: {0} => {1}", e.OriginalFontName, e.SubstitutedFontName);
@@ -79,7 +79,7 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 
 ### GYIK
 
-#### K: Mit jelent a betűkészlet helyettesítése egy PDF-dokumentumban?
+#### K: Mit jelent a betűtípus helyettesítése egy PDF-dokumentumban?
 
 V: A PDF-dokumentumban a betűtípus helyettesítésére akkor kerül sor, ha a dokumentumban használt betűtípus nem érhető el vagy nincs beágyazva a fájlba. Ilyen esetekben a megjelenítő vagy a nyomtató a hiányzó betűtípust a rendszerben elérhető hasonlóval helyettesíti. A betűtípus helyettesítése befolyásolhatja a dokumentum megjelenését és elrendezését.
 

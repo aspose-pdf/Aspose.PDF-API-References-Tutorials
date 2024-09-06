@@ -11,7 +11,7 @@ Den här guiden tar dig steg för steg hur du konverterar alla sidor i ett PDF-d
 
 ## Steg 1: Definiera dokumentkatalogen
 
- Innan du börjar, se till att du ställer in rätt katalog för dokumenten. Byta ut`"YOUR DOCUMENT DIRECTORY"` i koden med sökvägen till katalogen där ditt PDF-dokument finns.
+Innan du börjar, se till att du ställer in rätt katalog för dokumenten. Ersätta`"YOUR DOCUMENT DIRECTORY"` i koden med sökvägen till katalogen där ditt PDF-dokument finns.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Steg 2: Öppna dokumentet
 
- det här steget kommer vi att öppna PDF-dokumentet med hjälp av`Document` klass av Aspose.PDF. Använd`Document` konstruktor och skicka sökvägen till PDF-dokumentet.
+ I det här steget kommer vi att öppna PDF-dokumentet med hjälp av`Document` klass av Aspose.PDF. Använd`Document` konstruktor och skicka sökvägen till PDF-dokumentet.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ConvertAllPagesToEMF.pdf");
@@ -35,7 +35,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
      // Skapa en ström för att spara EMF-bilden
      using (FileStream imageStream = new FileStream(dataDir + "image" + pageCount + "_out" + ".emf", FileMode.Create))
      {
-         // Skapa ett Resolution-objekt
+         //Skapa ett Resolution-objekt
          Resolution resolution = new Resolution(300);
         
          // Skapa en EMF-enhet med de angivna attributen
@@ -66,7 +66,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 		// Skapa PNG-enhet med specificerade attribut
 		// Bredd, höjd, upplösning
 		EmfDevice emfDevice = new EmfDevice(500, 700, resolution);
-		//Konvertera en viss sida och spara bilden för att streama
+		// Konvertera en viss sida och spara bilden för att streama
 		emfDevice.Process(pdfDocument.Pages[pageCount], imageStream);
 		// Stäng strömmen
 		imageStream.Close();

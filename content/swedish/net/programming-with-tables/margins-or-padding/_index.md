@@ -145,7 +145,7 @@ Grattis! Du har framgångsrikt lärt dig hur man ställer in marginaler eller ut
 
 #### F: Kan jag ställa in olika marginaler eller utfyllnad för enskilda celler i en tabell?
 
-S: Ja, du kan ställa in olika marginaler eller utfyllnad för enskilda celler i en tabell med Aspose.PDF för .NET. I det medföljande exemplet ställer vi in standardcellutfyllningen för hela tabellen med hjälp av`DefaultCellPadding` fast egendom. För att ställa in olika utfyllnad för specifika celler kan du komma åt`MarginInfo` av varje cell individuellt och ändra deras marginaler.
+S: Ja, du kan ställa in olika marginaler eller utfyllnad för enskilda celler i en tabell med Aspose.PDF för .NET. I det medföljande exemplet ställer vi in standardcellutfyllningen för hela tabellen med hjälp av`DefaultCellPadding` egendom. För att ställa in olika utfyllnad för specifika celler kan du komma åt`MarginInfo` av varje cell individuellt och ändra deras marginaler.
 
 #### F: Hur kan jag ändra kantfärg eller stil på bordet?
 

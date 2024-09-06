@@ -1,168 +1,115 @@
 ---
 title: Nhận số trang đánh dấu trong tệp PDF
 linktitle: Nhận số trang đánh dấu trong tệp PDF
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Dễ dàng lấy số trang đánh dấu trong tệp PDF với Aspose.PDF cho .NET.
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Tìm hiểu cách trích xuất số trang đánh dấu từ tệp PDF bằng Aspose.PDF cho .NET trong hướng dẫn toàn diện này.
 type: docs
 weight: 60
 url: /vi/net/programming-with-bookmarks/get-bookmark-page-number/
 ---
-Việc lấy số trang được liên kết với dấu trang trong tệp PDF có thể hữu ích cho việc điều hướng. Với Aspose.PDF for .NET, bạn có thể dễ dàng lấy số trang của dấu trang bằng cách làm theo mã nguồn sau:
+## Giới thiệu
 
-## Bước 1: Nhập thư viện cần thiết
+Trong thời đại kỹ thuật số, việc quản lý tài liệu PDF hiệu quả là rất quan trọng đối với cả mục đích sử dụng cá nhân và chuyên nghiệp. Cho dù bạn là nhà phát triển muốn cải thiện ứng dụng của mình hay là chuyên gia kinh doanh cần sắp xếp tài liệu, việc hiểu cách thao tác PDF có thể giúp bạn tiết kiệm thời gian và công sức. Một trong những tính năng thiết yếu của quản lý PDF là khả năng trích xuất dấu trang và số trang tương ứng. Trong hướng dẫn này, chúng ta sẽ khám phá cách thực hiện điều này bằng Aspose.PDF cho .NET, một thư viện mạnh mẽ giúp đơn giản hóa thao tác PDF.
 
-Trước khi bắt đầu, bạn cần nhập các thư viện cần thiết cho dự án C# của mình. Đây là chỉ thị nhập khẩu cần thiết:
+## Điều kiện tiên quyết
 
-```csharp
-using Aspose.Pdf.Facades;
-```
+Trước khi tìm hiểu về mã, hãy đảm bảo bạn có đủ các điều kiện tiên quyết sau:
 
-## Bước 2: Đặt đường dẫn đến thư mục tài liệu
+1. Visual Studio: Đảm bảo bạn đã cài đặt Visual Studio trên máy của mình. Đây sẽ là môi trường phát triển của bạn.
+2.  Aspose.PDF cho .NET: Bạn cần có thư viện Aspose.PDF. Bạn có thể tải xuống từ[trang web](https://releases.aspose.com/pdf/net/).
+3. Kiến thức cơ bản về C#: Sự quen thuộc với lập trình C# sẽ giúp bạn hiểu các đoạn mã tốt hơn.
 
- Ở bước này, bạn cần chỉ định đường dẫn đến thư mục chứa tệp PDF mà bạn muốn trích xuất số trang đánh dấu từ đó. Thay thế`"YOUR DOCUMENT DIRECTORY"`trong đoạn mã sau với đường dẫn thực tế đến thư mục tài liệu của bạn:
+## Nhập gói
 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-```
+Để bắt đầu, bạn cần nhập các gói cần thiết vào dự án C# của mình. Sau đây là cách bạn có thể thực hiện:
 
-## Bước 3: Tạo trình chỉnh sửa dấu trang
+1. Mở dự án Visual Studio của bạn.
+2. Nhấp chuột phải vào dự án của bạn trong Solution Explorer và chọn "Quản lý gói NuGet".
+3.  Tìm kiếm`Aspose.PDF` và cài đặt phiên bản mới nhất.
 
- Bây giờ chúng ta sẽ tạo một`PdfBookmarkEditor` đối tượng để thao tác đánh dấu tài liệu. Sử dụng mã sau đây:
+Bây giờ bạn đã thiết lập mọi thứ, chúng ta hãy cùng tìm hiểu từng bước thực hiện trích xuất số trang dấu trang.
 
-```csharp
-PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
-```
+## Bước 1: Thiết lập thư mục tài liệu của bạn
 
-## Bước 4: Mở tệp PDF
+Trước khi bạn có thể trích xuất dấu trang, bạn cần chỉ định đường dẫn đến tài liệu PDF của mình. Đây là nơi tệp PDF của bạn nằm.
 
- Ở bước này, chúng tôi mở tệp PDF bằng cách sử dụng`BindPdf` phương pháp của trình soạn thảo dấu trang. Đây là mã tương ứng:
-
-```csharp
-bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
-```
-
-## Bước 5: Trích xuất dấu trang
-
- Bây giờ chúng ta sẽ trích xuất dấu trang từ tài liệu bằng cách sử dụng`ExtractBookmarks` phương pháp của trình soạn thảo dấu trang. Đây là mã tương ứng:
-
-```csharp
-Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
-```
-
-## Bước 6: Duyệt bookmark và lấy số trang
-
- Cuối cùng, chúng tôi lặp lại các dấu trang được trích xuất và lấy số trang liên quan đến từng dấu trang bằng cách sử dụng một`foreach` vòng. Đây là mã tương ứng:
-
-```csharp
-foreach (Bookmark bookmark in bookmarks)
-{
-     string strLevelSeprator = string.Empty;
-     for (int i = 1; i < bookmark.Level; i++)
-     {
-         strLevelSeprator += "----";
-     }
-     Console.WriteLine("{0}Title: {1}", strLevelSeprator, bookmark.Title);
-     Console.WriteLine("{0}Page number: {1}", strLevelSeprator, bookmark.PageNumber);
-     Console.WriteLine("{0}Page Action: {1}", strLevelSeprator, bookmark.Action);
-}
-```
-
-### Mã nguồn mẫu để Nhận số trang đánh dấu bằng Aspose.PDF cho .NET 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Trong bước này, thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế nơi tệp PDF của bạn được lưu trữ. Đường dẫn này rất quan trọng vì nó cho chương trình biết nơi tìm tệp PDF mà bạn muốn làm việc.
+
+## Bước 2: Tạo một phiên bản PdfBookmarkEditor
+
+ Tiếp theo, bạn cần tạo một phiên bản của`PdfBookmarkEditor`lớp. Lớp này cung cấp các phương thức để thao tác dấu trang trong tệp PDF.
+
+```csharp
 // Tạo PdfBookmarkEditor
 PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
+```
+
+ Ở đây, chúng tôi đang khởi tạo`PdfBookmarkEditor`. Đối tượng này sẽ cho phép chúng ta liên kết tệp PDF và trích xuất dấu trang từ tệp đó.
+
+## Bước 3: Mở tệp PDF
+
+ Bây giờ, đã đến lúc liên kết tệp PDF với`PdfBookmarkEditor` trường hợp bạn vừa tạo.
+
+```csharp
 // Mở tệp PDF
 bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
+```
+
+ Trong dòng này, chúng tôi đang sử dụng`BindPdf` phương pháp để mở tệp PDF có tên`GetBookmarks.pdf`. Hãy đảm bảo rằng tệp này tồn tại trong thư mục đã chỉ định; nếu không, bạn sẽ gặp lỗi.
+
+## Bước 4: Trích xuất dấu trang
+
+ Với tệp PDF đã mở, bây giờ bạn có thể trích xuất các dấu trang bằng cách sử dụng`ExtractBookmarks` phương pháp.
+
+```csharp
 // Trích xuất dấu trang
 Aspose.Pdf.Facades.Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
+```
+
+ Bước này sẽ lấy tất cả các dấu trang từ tệp PDF và lưu trữ chúng trong một biến có tên là`bookmarks`. Biến này sẽ lưu trữ tất cả thông tin dấu trang mà chúng ta sẽ xử lý ở bước tiếp theo.
+
+## Bước 5: Lặp lại qua các dấu trang
+
+Bây giờ bạn đã có dấu trang, bạn có thể duyệt qua chúng để hiển thị tiêu đề và số trang.
+
+```csharp
 foreach (Aspose.Pdf.Facades.Bookmark bookmark in bookmarks)
 {
-	string strLevelSeprator = string.Empty;
-	for (int i = 1; i < bookmark.Level; i++)
-	{
-		strLevelSeprator += "----";
-	}
-	Console.WriteLine("{0}Title: {1}", strLevelSeprator, bookmark.Title);
-	Console.WriteLine("{0}Page Number: {1}", strLevelSeprator, bookmark.PageNumber);
-	Console.WriteLine("{0}Page Action: {1}", strLevelSeprator, bookmark.Action);
+    string strLevelSeprator = string.Empty;
+    for (int i = 1; i < bookmark.Level; i++)
+    {
+        strLevelSeprator += "----";
+    }
+    Console.WriteLine("{0}Title: {1}", strLevelSeprator, bookmark.Title);
+    Console.WriteLine("{0}Page Number: {1}", strLevelSeprator, bookmark.PageNumber);
+    Console.WriteLine("{0}Page Action: {1}", strLevelSeprator, bookmark.Action);
 }
 ```
+
+Trong vòng lặp này, chúng ta lặp lại qua từng dấu trang. Đối với mỗi dấu trang, chúng ta tạo một dấu phân cách chuỗi dựa trên cấp độ của nó (để biểu diễn trực quan thứ bậc của các dấu trang). Sau đó, chúng ta in tiêu đề, số trang và hành động liên quan đến từng dấu trang vào bảng điều khiển.
 
 ## Phần kết luận
 
-Xin chúc mừng! Bây giờ bạn đã có hướng dẫn từng bước để lấy số trang đánh dấu bằng Aspose.PDF cho .NET. Bạn có thể sử dụng mã này để truy xuất thông tin điều hướng được liên kết với từng dấu trang trong tài liệu PDF của mình.
+Trích xuất số trang đánh dấu trang từ tệp PDF bằng Aspose.PDF cho .NET là một quá trình đơn giản. Bằng cách làm theo các bước được nêu trong hướng dẫn này, bạn có thể quản lý hiệu quả các dấu trang trong tài liệu PDF của mình. Cho dù bạn đang phát triển ứng dụng hay chỉ cần sắp xếp các tệp PDF của mình, kiến thức này chắc chắn sẽ hữu ích.
 
-Hãy nhớ xem tài liệu Aspose.PDF chính thức để biết thêm thông tin về các tính năng thao tác dấu trang nâng cao.
+## Câu hỏi thường gặp
 
-### Câu hỏi thường gặp về lấy số trang đánh dấu trong tệp PDF
+### Aspose.PDF dành cho .NET là gì?
+Aspose.PDF for .NET là một thư viện cho phép các nhà phát triển tạo, chỉnh sửa và chuyển đổi tài liệu PDF theo cách lập trình.
 
-#### Hỏi: Dấu trang trong tệp PDF là gì?
+### Tôi có thể sử dụng Aspose.PDF miễn phí không?
+ Có, Aspose cung cấp phiên bản dùng thử miễn phí mà bạn có thể sử dụng để đánh giá thư viện. Bạn có thể tải xuống[đây](https://releases.aspose.com/).
 
-Đáp: Dấu trang trong tệp PDF là công cụ hỗ trợ điều hướng cho phép người dùng nhanh chóng chuyển đến các phần hoặc trang cụ thể trong tài liệu. Chúng nâng cao trải nghiệm người dùng bằng cách cung cấp lối tắt đến nội dung có liên quan.
+### Tôi có thể tìm tài liệu về Aspose.PDF ở đâu?
+ Tài liệu có sẵn[đây](https://reference.aspose.com/pdf/net/).
 
-#### Hỏi: Tại sao tôi muốn truy xuất số trang đánh dấu từ tệp PDF?
+### Làm thế nào để mua giấy phép cho Aspose.PDF?
+ Bạn có thể mua giấy phép từ[trang mua hàng](https://purchase.aspose.com/buy).
 
-Đáp: Truy xuất số trang của dấu trang giúp người dùng điều hướng qua tài liệu hiệu quả hơn, cung cấp chỉ dẫn rõ ràng về vị trí dẫn đến mỗi dấu trang. Điều này đặc biệt hữu ích cho các tài liệu dài hơn có nhiều phần.
-
-#### Câu hỏi: Làm cách nào để nhập các thư viện cần thiết cho dự án C# của tôi?
-
-Đáp: Để nhập thư viện cần thiết cho dự án C# của bạn, hãy sử dụng lệnh nhập sau:
-
-```csharp
-using Aspose.Pdf.Facades;
-```
-
-Lệnh này cho phép bạn sử dụng các lớp và phương thức do Aspose.PDF cung cấp cho .NET.
-
-#### Hỏi: Làm cách nào để chỉ định đường dẫn đến thư mục tài liệu?
-
- Đáp: Trong mã nguồn được cung cấp, hãy thay thế`"YOUR DOCUMENT DIRECTORY"`với đường dẫn thực tế đến thư mục chứa tệp PDF mà bạn muốn trích xuất số trang dấu trang. Điều này đảm bảo rằng mã có thể định vị được tệp PDF mục tiêu.
-
-#### Hỏi: Làm cách nào để tạo trình chỉnh sửa dấu trang?
-
-Đáp: Để tạo trình chỉnh sửa dấu trang, hãy sử dụng đoạn mã sau:
-
-```csharp
-PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
-```
-
-#### Hỏi: Làm cách nào để mở tệp PDF để thao tác đánh dấu?
-
-Trả lời: Để mở tệp PDF nhằm trích xuất thông tin dấu trang, hãy sử dụng mã sau:
-
-```csharp
-bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
-```
-
- Thay thế`"GetBookmarks.pdf"` với tên tập tin thực tế.
-
-#### Hỏi: Làm cách nào để trích xuất dấu trang từ tệp PDF?
-
- Đáp: Để trích xuất dấu trang từ tệp PDF, hãy sử dụng`ExtractBookmarks` phương pháp của trình chỉnh sửa dấu trang:
-
-```csharp
-Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
-```
-
-#### Hỏi: Làm cách nào để truy xuất và hiển thị số trang dấu trang?
-
- Đáp: Lặp lại các dấu trang đã được trích xuất bằng cách sử dụng một`foreach` vòng lặp và truy cập`PageNumber` thuộc tính của mỗi dấu trang để truy xuất và hiển thị số trang liên quan của nó:
-
-```csharp
-foreach (Bookmark bookmark in bookmarks)
-{
-    Console.WriteLine("Title: " + bookmark.Title);
-    Console.WriteLine("Page Number: " + bookmark.PageNumber);
-    Console.WriteLine("Page Action: " + bookmark.Action);
-}
-```
-
-#### Câu hỏi: Tôi có thể sửa đổi thuộc tính dấu trang bằng cách sử dụng phương pháp này không?
-
- Trả lời: Trong khi hướng dẫn này tập trung vào việc truy xuất số trang dấu trang, bạn có thể sửa đổi các thuộc tính dấu trang khác bằng cách sử dụng tương tự`Bookmark`đối tượng và các thuộc tính liên quan.
-
-#### Hỏi: Làm cách nào để lưu tệp PDF đã cập nhật sau khi trích xuất thông tin dấu trang?
-
-Trả lời: Trích xuất dấu trang không sửa đổi tệp PDF gốc. Nếu bạn muốn lưu bất kỳ thay đổi nào, bạn có thể thực hiện bằng các phương pháp khác do Aspose.PDF cung cấp cho .NET.
+### Tôi phải làm gì nếu gặp vấn đề?
+ Nếu bạn gặp bất kỳ vấn đề nào, bạn có thể tìm kiếm sự trợ giúp trên[Diễn đàn hỗ trợ Aspose](https://forum.aspose.com/c/pdf/10).

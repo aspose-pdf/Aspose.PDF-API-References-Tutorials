@@ -1,139 +1,137 @@
 ---
-title: Hitelesítő adatok megadása a HTML-hez PDF-be
-linktitle: Hitelesítő adatok megadása a HTML-hez PDF-be
+title: Hitelesítési adatok megadása a HTML-hez PDF-be
+linktitle: Hitelesítési adatok megadása a HTML-hez PDF-be
 second_title: Aspose.PDF for .NET API Reference
-description: Útmutató lépésről lépésre a HTML konvertálásához PDF formátumba az Aspose.PDF for .NET hitelesítő adatainak megadásával.
+description: Ebből a lépésenkénti útmutatóból megtudhatja, hogyan konvertálhat HTML-t PDF-be az Aspose.PDF for .NET használatával. Tökéletes azoknak a fejlesztőknek, akik egyszerűsíteni szeretnék a dokumentumkészítést.
 type: docs
 weight: 240
 url: /hu/net/document-conversion/provide-credentials-during-html-to-pdf/
 ---
-Ebben az oktatóanyagban végigvezetjük a HTML-fájlok PDF-formátumba konvertálásának folyamatán, miközben hitelesítési adatokat biztosítunk, amikor egy biztonságos URL-hez fér hozzá az Aspose.PDF for .NET használatával. Az alábbi lépések követésével a megfelelő hitelesítő adatok használatával konvertálhatja a HTML-tartalmat PDF-be.
+## Bevezetés
+
+A szoftverfejlesztés világában a HTML PDF formátumba konvertálása általános követelmény. Függetlenül attól, hogy jelentéseket, számlákat vagy bármilyen más dokumentumot készít, a feladat elvégzéséhez megbízható könyvtárral sok időt és erőfeszítést takaríthat meg. Írja be az Aspose.PDF for .NET fájlt, egy hatékony könyvtárat, amely lehetővé teszi a fejlesztők számára PDF-dokumentumok egyszerű létrehozását, kezelését és konvertálását. Ebben az oktatóanyagban végigvezetjük az Aspose.PDF használatával a HTML PDF-formátumba konvertálásához, miközben hitelesítési adatokat biztosítunk a biztonságos hozzáféréshez. Szóval, fogd a kódoló kalapot, és merüljünk bele!
 
 ## Előfeltételek
-Mielőtt elkezdené, győződjön meg arról, hogy megfelel a következő előfeltételeknek:
 
-- C# programozási nyelv alapismerete.
-- Aspose.PDF könyvtár a .NET-hez telepítve a rendszerére.
-- Fejlesztői környezet, például a Visual Studio.
+Mielőtt elkezdenénk, néhány dolgot meg kell tennie:
 
-## 1. lépés: Töltse le a biztonságos HTML-tartalmat
-Ebben a lépésben biztonságos HTML-tartalmat kérünk le egy URL-ről a megfelelő hitelesítő adatok használatával. Használja a következő kódot:
+1. Visual Studio: Győződjön meg arról, hogy a Visual Studio telepítve van a gépen. Ez lesz a fejlesztési környezetünk.
+2.  Aspose.PDF for .NET: Letöltheti a könyvtárat a[weboldal](https://releases.aspose.com/pdf/net/) . Ha először szeretné kipróbálni, beszerezheti a[ingyenes próbaverzió](https://releases.aspose.com/).
+3. Alapvető C# ismerete: A C# programozás ismerete segít a példák jobb megértésében.
+4. Internet-hozzáférés: Mivel a HTML-tartalmat egy URL-ről fogjuk lekérni, győződjön meg róla, hogy aktív internetkapcsolata van.
+
+## Csomagok importálása
+
+Az Aspose.PDF használatának megkezdéséhez importálnia kell a szükséges csomagokat a projektbe. A következőképpen teheti meg:
+
+1. Nyissa meg a Visual Studio projektet.
+2. Kattintson a jobb gombbal a projektre a Solution Explorerben, és válassza a "NuGet-csomagok kezelése" lehetőséget.
+3. Keresse meg az "Aspose.PDF" kifejezést, és telepítse a legújabb verziót.
 
 ```csharp
-// A dokumentumok könyvtár elérési útja.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using System;
+using System.Net;
+```
+Most, hogy mindent beállítottunk, bontsuk fel kezelhető lépésekre a HTML hitelesítő adatokkal történő PDF formátumba konvertálásának folyamatát.
 
-// Hozzon létre egy kérést az URL-hez.
-WebRequest request = WebRequest.Create("http://My.signchart.com/Report/PrintBook.asp?ProjectGuid=6FB9DBB0-");
-// Ha szükséges a szerverhez, állítsa be a hitelesítési adatokat.
-request.Credentials = CredentialCache.DefaultCredentials;
-// Kapja meg a választ.
-HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+## 1. lépés: Állítsa be a dokumentumkönyvtárat
 
-// Szerezze be a szerver által visszaadott tartalmat tartalmazó adatfolyamot.
-Stream dataStream = response. GetResponseStream();
-// Nyissa meg az adatfolyamot a StreamReader segítségével az egyszerű hozzáférés érdekében.
-StreamReader reader = new StreamReader(dataStream);
-// Olvassa el a tartalmat.
-string responseFromServer = reader.ReadToEnd();
-reader. Close();
-dataStream.Close();
-response. Close();
+Mielőtt konvertálhatnánk a HTML-t PDF-be, meg kell adnunk, hogy a kimeneti PDF hova kerüljön mentésre. Ez a dokumentumkönyvtár elérési útjának meghatározásával történik.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Feltétlenül cserélje ki`"YOUR DOCUMENTS DIRECTORY"` azzal a tényleges könyvtárral, ahová menteni szeretné az eredményül kapott PDF-fájlt.
+ Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a tényleges elérési úttal, ahová a PDF-fájlt menteni szeretné. Ez lehet egy mappa az asztalon vagy a rendszer bármely más helye.
 
-## 2. lépés: Konvertálja a HTML-t PDF-be hitelesítő adatok megadásával
-Most betöltjük a letöltött HTML tartalmat, és PDF formátumba konvertáljuk, miközben megadjuk a megfelelő hitelesítő adatokat. Használja a következő kódot:
+## 2. lépés: Hozzon létre egy webes kérelmet
+
+ Ezután létre kell hoznunk egy kérést a HTML-tartalom lekérésére egy adott URL-ről. Itt fogjuk használni a`WebRequest` osztály.
+
+```csharp
+WebRequest request = WebRequest.Create("http://My.signchart.com/Report/PrintBook.asp?ProjectGuid=6FB9DBB0-");
+```
+
+Itt létrehozunk egy kérést arra az URL-re, amely tartalmazza a konvertálni kívánt HTML-kódot. Ügyeljen arra, hogy az URL-t a használni kívánt URL-re cserélje ki.
+
+## 3. lépés: Hitelesítési adatok beállítása (ha szükséges)
+
+Ha a kiszolgálónak hitelesítő adatokra van szüksége a tartalom eléréséhez, be kell állítanunk azokat. Ez a`CredentialCache.DefaultCredentials`.
+
+```csharp
+request.Credentials = CredentialCache.DefaultCredentials;
+```
+
+ Ez a sor biztosítja, hogy a kérés az aktuális felhasználó alapértelmezett hitelesítő adatait használja. Ha konkrét hitelesítési adatokat kell megadnia, létrehozhat újat`NetworkCredential` objektum.
+
+## 4. lépés: Kérje meg a választ
+
+Most, hogy beállítottuk a kérésünket, itt az ideje, hogy megkapjuk a választ a szervertől.
+
+```csharp
+HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+```
+
+Ez a sor elküldi a kérést, és várja, hogy a szerver válaszoljon. Ha minden jól megy, megkapjuk a szükséges HTML tartalmat.
+
+## 5. lépés: Olvassa el a válaszfolyamot
+
+ Miután megkaptuk a választ, el kell olvasnunk a szerver által visszaadott tartalmat. Ez az a`StreamReader`.
+
+```csharp
+Stream dataStream = response.GetResponseStream();
+StreamReader reader = new StreamReader(dataStream);
+string responseFromServer = reader.ReadToEnd();
+reader.Close();
+dataStream.Close();
+response.Close();
+```
+
+ Itt a válaszfolyam teljes tartalmát egy karakterlánc-változóba olvassuk be`responseFromServer`. Ne felejtse el bezárni az olvasót és a streamet, hogy forrásokat szabadítson fel.
+
+## 6. lépés: Alakítsa át a HTML-t PDF-be
+
+Most jön az izgalmas rész! A HTML-tartalmat PDF-dokumentummá alakítjuk az Aspose.PDF használatával.
 
 ```csharp
 MemoryStream stream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(responseFromServer));
-
 HtmlLoadOptions options = new HtmlLoadOptions("http://My.signchart.com/");
 options.ExternalResourcesCredentials = CredentialCache.DefaultCredentials;
 
-// Töltse be a HTML fájlt
 Document pdfDocument = new Document(stream, options);
 ```
 
-## 3. lépés: Mentse el a kapott PDF-fájlt
-Végül elmentjük a kapott PDF fájlt. Használja a következő kódot:
+Ebben a lépésben létrehozunk egy`MemoryStream` a HTML tartalomból és beállításból`HtmlLoadOptions`. Ez lehetővé teszi, hogy megadjuk az alap URL-t minden olyan külső erőforráshoz (például képekhez vagy stíluslapokhoz), amelyekre a HTML hivatkozhat.
+
+## 7. lépés: Mentse el a PDF-dokumentumot
+
+Végül a létrehozott PDF dokumentumot el kell mentenünk a megadott könyvtárba.
 
 ```csharp
-// Mentse el a kapott PDF-fájlt
 pdfDocument.Save(dataDir + "ProvideCredentialsDuringHTMLToPDF_out.pdf");
 ```
 
- A fenti kód elmenti az eredményül kapott PDF-fájlt a fájlnévvel`"ProvideCredentialsDuringHTMLToPDF_out.pdf"`.
-
-### Példa forráskódra a Hitelesítő adatok megadása során a HTML-ben PDF-be az Aspose.PDF for .NET használatával
-
-```csharp
-try
-{
-	
-	// A dokumentumok könyvtárának elérési útja.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-	// Hozzon létre egy kérést az URL-hez.
-	WebRequest request = WebRequest.Create("http:// My.signchart.com/Report/PrintBook.asp?ProjectGuid=6FB9DBB0-");
-	// Ha a szerver megköveteli, állítsa be a hitelesítő adatokat.
-	request.Credentials = CredentialCache.DefaultCredentials;
-	// Kapja meg a választ.
-	HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-
-	// Szerezze be a szerver által visszaadott tartalmat tartalmazó adatfolyamot.
-	Stream dataStream = response.GetResponseStream();
-	// Nyissa meg az adatfolyamot a StreamReader segítségével az egyszerű hozzáférés érdekében.
-	StreamReader reader = new StreamReader(dataStream);
-	// Olvassa el a tartalmat.
-	string responseFromServer = reader.ReadToEnd();
-	reader.Close();
-	dataStream.Close();
-	response.Close();
-
-	MemoryStream stream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(responseFromServer));
-
-	HtmlLoadOptions options = new HtmlLoadOptions("http:// My.signchart.com/");
-	options.ExternalResourcesCredentials = CredentialCache.DefaultCredentials;
-
-	// HTML fájl betöltése
-	Document pdfDocument = new Document(stream, options);
-	// Az eredményül kapott fájl mentése
-	pdfDocument.Save("ProvideCredentialsDuringHTMLToPDF_out.pdf");
-	
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+ Ez a sor menti a PDF fájlt a névvel`ProvideCredentialsDuringHTMLToPDF_out.pdf` a korábban megadott könyvtárban.
 
 ## Következtetés
-Ebben az oktatóanyagban a HTML-fájlok PDF-formátumba konvertálásának lépésről lépésre bemutatott folyamatát ismertetjük, miközben hitelesítő adatokat biztosítunk egy biztonságos URL elérésekor az Aspose.PDF for .NET használatával. A fent vázolt utasítások követésével sikeresen konvertálhatja a HTML-tartalmat PDF-be, miközben megadja a megfelelő hitelesítő adatokat.
 
-### GYIK
+És megvan! Sikeresen konvertálta a HTML-t PDF-be az Aspose.PDF for .NET használatával, miközben hitelesítési adatokat biztosított a biztonságos hozzáféréshez. Ez a nagy teljesítményű könyvtár megkönnyíti a PDF-dokumentumok kezelését, és mindössze néhány sornyi kóddal professzionális megjelenésű PDF-fájlokat hozhat létre HTML-tartalomból. 
 
-#### K: Mi az Aspose.PDF for .NET?
+## GYIK
 
-V: Az Aspose.PDF for .NET egy robusztus könyvtár, amely lehetővé teszi a fejlesztők számára, hogy PDF dokumentumokkal dolgozzanak C# alkalmazásokban. A funkciók széles skáláját kínálja, beleértve a HTML-ből PDF-be konvertálást.
+### Mi az Aspose.PDF for .NET?
+Az Aspose.PDF for .NET egy olyan könyvtár, amely lehetővé teszi a fejlesztők számára PDF-dokumentumok létrehozását, kezelését és konvertálását .NET-alkalmazásokban.
 
-#### K: Hogyan tölthetek le biztonságos HTML tartalmat egy URL-ről?
+### Hogyan telepíthetem az Aspose.PDF-et?
+ Az Aspose.PDF-et a NuGet Package Manager segítségével telepítheti a Visual Studio alkalmazásban, vagy letöltheti a webhelyről[weboldal](https://releases.aspose.com/pdf/net/).
 
- V: Ha biztonságos HTML-tartalmat szeretne lekérni egy URL-ről, használja a`WebRequest` osztály C# nyelven. Ügyeljen arra, hogy a megfelelő hitelesítő adatokat a`Credentials` ingatlan.
+### Használhatom ingyenesen az Aspose.PDF-et?
+Igen, az Aspose ingyenes próbaverziót kínál, amellyel a vásárlás előtt kiértékelheti a könyvtárat.
 
-#### K: Milyen előfeltételei vannak ennek az oktatóanyagnak?
+### Milyen típusú dokumentumokat hozhatok létre az Aspose.PDF segítségével?
+Az Aspose.PDF használatával dokumentumok széles skáláját hozhatja létre, beleértve a jelentéseket, számlákat és űrlapokat.
 
-V: Mielőtt folytatná az oktatóanyagot, győződjön meg arról, hogy rendelkezik a következő előfeltételekkel:
-
-- C# programozási nyelv alapismerete.
-- Aspose.PDF könyvtár a .NET-hez telepítve a rendszerére.
-- Fejlesztői környezet, például a Visual Studio.
-
-#### K: Hogyan kezeli az Aspose.PDF for .NET a külső erőforrásokat, miközben HTML-t PDF-be konvertál?
-
- V: Az Aspose.PDF for .NET biztosítja a`HtmlLoadOptions`osztály a külső erőforrások kezelésére a HTML-ből PDF-be átalakítás során. A külső erőforrás hitelesítő adatait a következővel állíthatja be`ExternalResourcesCredentials` ingatlan.
-
-#### K: Testreszabhatom a kapott PDF-fájl fájlnevét?
-
- V: Igen, testreszabhatja a létrejövő PDF-fájl fájlnevét a PDF-dokumentumot mentő kód módosításával. Egyszerűen módosítsa a kívánt fájlnevet a`pdfDocument.Save()` módszer.
+### Hol találok támogatást az Aspose.PDF számára?
+ Támogatást találhat és kérdéseket tehet fel a[Aspose támogatási fórum](https://forum.aspose.com/c/pdf/10).

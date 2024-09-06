@@ -7,7 +7,7 @@ type: docs
 weight: 40
 url: /hu/net/programming-with-tables/add-table/
 ---
-Az Aspose.PDF for .NET egy hatékony könyvtár, amely lehetővé teszi a fejlesztők számára PDF-dokumentumok programozott létrehozását, kezelését és átalakítását. Ebben az oktatóanyagban végigvezetjük a táblázat PDF-fájlba történő hozzáadásának folyamatán az Aspose.PDF for .NET használatával. Elmagyarázzuk a megadott kódrészlet minden lépését, és átfogó útmutatót adunk, amely segít megérteni és megvalósítani a funkcionalitást saját projektjeiben.
+Az Aspose.PDF for .NET egy hatékony könyvtár, amely lehetővé teszi a fejlesztők számára PDF-dokumentumok programozott létrehozását, kezelését és átalakítását. Ebben az oktatóanyagban végigvezetjük a táblázat PDF-fájlba való hozzáadásának folyamatán az Aspose.PDF for .NET használatával. Elmagyarázzuk a megadott kódrészlet minden lépését, és átfogó útmutatót adunk, amely segít megérteni és megvalósítani a funkcionalitást saját projektjeiben.
 
 ## Bevezetés
 
@@ -68,7 +68,7 @@ for (int row_count = 1; row_count < 10; row_count++)
 }
 ```
 
-Ebben a lépésben létrehozunk egy hurkot, amellyel 10 sort adunk a táblázathoz. Minden soron belül hozzáadunk három cellát a mintaadatokkal. Módosíthatja a kódot úgy, hogy sorokat és cellákat adjon hozzá saját igényei szerint.
+Ebben a lépésben létrehozunk egy hurkot, amellyel 10 sort adunk a táblázathoz. Minden soron belül hozzáadunk három cellát mintaadatokkal. Módosíthatja a kódot, hogy sorokat és cellákat adjon hozzá sajátos igényei szerint.
 
 ## 6. lépés: A táblázat objektum hozzáadása a dokumentumhoz
 

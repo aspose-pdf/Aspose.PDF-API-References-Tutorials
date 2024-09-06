@@ -75,7 +75,7 @@ Ebben a lépésről lépésre bemutatott útmutatóban bemutattuk, hogyan szabá
 
 ## GYIK
 
-### Hogyan tudom tovább állítani a képminőséget?
+### Hogyan állíthatom tovább a képminőséget?
 
  Finomhangolhatja a képminőséget a következőre átadott érték módosításával`setQuality` módszer. A magasabb érték, például 95 vagy 100, jobb képminőséget eredményez, de növelheti a fájlméretet.
 

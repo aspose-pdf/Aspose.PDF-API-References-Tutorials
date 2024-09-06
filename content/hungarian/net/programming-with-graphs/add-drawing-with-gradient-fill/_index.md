@@ -13,7 +13,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy telepítette az Aspose.PDF k�
 
 ## 1. lépés: Dokumentumkönyvtár beállítása
 
-megadott forráskódban meg kell adnia azt a könyvtárat, ahová menteni szeretné az eredményül kapott PDF fájlt. Módosítsa a "dataDir" változót a kívánt könyvtárra.
+A megadott forráskódban meg kell adnia azt a könyvtárat, ahová menteni szeretné az eredményül kapott PDF fájlt. Módosítsa a "dataDir" változót a kívánt könyvtárra.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";

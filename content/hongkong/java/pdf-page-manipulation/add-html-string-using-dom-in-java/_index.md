@@ -63,7 +63,7 @@ pdfDocument.save("output.pdf");
 # 結論
 在本教學中，我們學習如何使用 Aspose.PDF for Java 程式庫將 HTML 字串新增至 PDF 文件。這是在 PDF 文件中包含動態和格式化內容的有效方法。您可以進一步自訂 HTML 內容的外觀和佈局以滿足您的特定要求。
 
-如果您有任何疑問或需要進一步協助，請隨時參閱[Aspose.PDF for Java API 文檔](https://reference.aspose.com/pdf/java/)更多細節。
+如果您有任何疑問或需要進一步協助，請隨時參閱[Aspose.PDF for Java API 文檔](https://reference.aspose.com/pdf/java/)了解更多詳情。
 
 ## 常見問題解答
 

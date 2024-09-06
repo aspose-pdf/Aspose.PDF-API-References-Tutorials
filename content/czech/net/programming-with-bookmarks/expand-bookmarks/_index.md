@@ -2,157 +2,124 @@
 title: Rozbalte záložky v souboru PDF
 linktitle: Rozbalte záložky v souboru PDF
 second_title: Aspose.PDF pro .NET API Reference
-description: Snadno rozbalte záložky v souboru PDF pro lepší navigaci s Aspose.PDF pro .NET.
+description: Naučte se, jak rozšířit záložky v souborech PDF pomocí Aspose.PDF for .NET, pomocí tohoto podrobného průvodce. Ideální pro vývojáře, kteří chtějí vylepšit navigaci PDF.
 type: docs
 weight: 50
 url: /cs/net/programming-with-bookmarks/expand-bookmarks/
 ---
-Rozšířením záložek v souboru PDF se ve výchozím nastavení zobrazí všechny otevřené záložky. S Aspose.PDF pro .NET můžete snadno rozšířit záložky pomocí následujícího zdrojového kódu:
+## Zavedení
 
-## Krok 1: Importujte požadované knihovny
+Otevřeli jste někdy soubor PDF a zjistili jste, že všechny záložky jsou sbalené? Může to být frustrující, zvláště když se snažíte procházet dlouhým dokumentem. Naštěstí s Aspose.PDF pro .NET můžete snadno programově rozšiřovat záložky v souborech PDF. Tato příručka vás provede procesem krok za krokem a zajistí, že porozumíte každé části kódu a tomu, jak funguje. Vezměte si svůj oblíbený nápoj a pojďme se ponořit do světa manipulace s PDF!
 
-Než začnete, musíte importovat potřebné knihovny pro váš projekt C#. Zde je nezbytná dovozní směrnice:
+## Předpoklady
+
+Než začneme, je třeba mít připraveno několik věcí:
+
+1. Visual Studio: Ujistěte se, že máte na svém počítači nainstalované Visual Studio. Je to nejlepší prostředí pro vývoj .NET.
+2.  Aspose.PDF for .NET: Budete si muset stáhnout a nainstalovat knihovnu Aspose.PDF. Můžete to najít[zde](https://releases.aspose.com/pdf/net/).
+3. Základní znalost C#: Znalost programování v C# vám pomůže lépe porozumět úryvkům kódu.
+
+## Importujte balíčky
+
+Chcete-li začít, musíte do svého projektu C# importovat potřebné balíčky. Můžete to udělat takto:
+
+### Vytvořit nový projekt
+
+Otevřete Visual Studio a vytvořte nový projekt C#. Pro jednoduchost si můžete vybrat konzolovou aplikaci.
+
+### Přidejte odkaz Aspose.PDF
+
+1. Klepněte pravým tlačítkem myši na svůj projekt v Průzkumníku řešení.
+2. Vyberte „Spravovat balíčky NuGet“.
+3. Vyhledejte „Aspose.PDF“ a nainstalujte nejnovější verzi.
+
+### Importujte jmenný prostor
+
+V horní části souboru C# importujte jmenný prostor Aspose.PDF:
 
 ```csharp
+using System;
+using System.IO;
 using Aspose.Pdf;
 ```
 
-## Krok 2: Nastavte cestu ke složce dokumentů
+Nyní, když máte vše nastaveno, přejděme ke skutečnému kódu!
 
- V tomto kroku musíte zadat cestu ke složce obsahující soubor PDF, jehož záložky chcete rozbalit. Nahradit`"YOUR DOCUMENT DIRECTORY"` následujícím kódu se skutečnou cestou ke složce dokumentů:
+## Krok 1: Nastavte adresář dokumentů
 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-```
+Nejprve musíte zadat cestu k adresáři dokumentů. Zde je umístěn váš vstupní soubor PDF a kde bude uložen výstupní soubor.
 
-## Krok 3: Otevřete dokument PDF
-
-Nyní otevřeme dokument PDF, jehož záložky chceme rozšířit pomocí následujícího kódu:
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
-## Krok 4: Nastavte režim zobrazení stránky
-
- tomto kroku nastavíme režim zobrazení stránky tak, aby se ve výchozím nastavení zobrazovaly záložky. Používáme`PageMode` vlastnictvím`doc` objekt pro nastavení požadovaného režimu stránky. Zde je odpovídající kód:
-
-```csharp
-doc.PageMode = PageMode.UseOutlines;
-```
-
-## Krok 5: Procházejte záložky a rozbalte je
-
- Nyní projdeme každou položku záložky v kolekci záložek dokumentu a nastavíme stav otevření každé položky na`true` ve výchozím nastavení je rozbalíte. Zde je odpovídající kód:
-
-```csharp
-foreach(OutlineItemCollection item in doc.Outlines)
-{
-     item. Open = true;
-}
-```
-
-## Krok 6: Uložte aktualizovaný soubor
-
- Nakonec uložíme aktualizovaný soubor PDF pomocí`Save` metoda`doc` objekt. Zde je odpovídající kód:
-
-```csharp
-dataDir = dataDir + "ExpandBookmarks_out.pdf";
-doc.Save(dataDir);
-```
-
-### Ukázkový zdrojový kód pro Expand Bookmarks pomocí Aspose.PDF pro .NET 
 ```csharp
 // Cesta k adresáři dokumentů.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+## Krok 2: Otevřete dokument PDF
+
+ Dále otevřete dokument PDF, který obsahuje záložky, které chcete rozbalit. To se provádí pomocí`Document` třídy z knihovny Aspose.PDF.
+
+```csharp
 // Otevřete dokument
-Document doc = new Document(dataDir + "input.pdf");
-// Nastavte režim zobrazení stránky, tj. zobrazení miniatur, zobrazení na celou obrazovku, zobrazení panelu příloh
+Document doc = new Document(dataDir + "input-bookmark.pdf");
+```
+
+## Krok 3: Nastavte režim zobrazení stránky
+
+Nyní musíte nastavit režim zobrazení stránky dokumentu. To určuje, jak se PDF zobrazí při otevření. V tomto případě chceme použít obrysy (záložky).
+
+```csharp
+//Nastavte režim zobrazení stránky, tj. zobrazení miniatur, zobrazení na celou obrazovku, zobrazení panelu příloh
 doc.PageMode = PageMode.UseOutlines;
-// Procházejte každou položku Ouline ve sbírce obrysů souboru PDF
+```
+
+## Krok 4: Projděte položky osnovy
+
+Tady přichází ta zábavná část! Budete procházet každou položkou osnovy v kolekci osnovy PDF a nastavíte její otevřený stav na hodnotu true. Tím se rozbalí záložky.
+
+```csharp
+// Procházejte každou položku osnovy ve sbírce osnovy souboru PDF
 foreach (OutlineItemCollection item in doc.Outlines)
 {
-	// Nastavte otevřený stav položky osnovy
-	item.Open = true;
+    // Nastavte otevřený stav položky osnovy
+    item.Open = true;
 }
+```
+
+## Krok 5: Uložte výstupní dokument
+
+Po rozbalení záložek je čas upravený dokument uložit. Pro výstupní PDF určíte nový název souboru.
+
+```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 // Uložit výstup
 doc.Save(dataDir);
+```
+
+## Krok 6: Potvrzující zpráva
+
+Nakonec můžete vytisknout potvrzovací zprávu do konzole, abyste věděli, že záložky byly úspěšně rozbaleny.
+
+```csharp
 Console.WriteLine("\nBookmarks expanded successfully.\nFile saved at " + dataDir);
 ```
 
 ## Závěr
 
-gratuluji! Nyní máte krok za krokem průvodce vývojem záložek pomocí Aspose.PDF pro .NET. Tento kód můžete použít k zobrazení všech výchozích záložek v dokumentech PDF.
+tady to máte! Úspěšně jste rozšířili záložky v souboru PDF pomocí Aspose.PDF pro .NET. Tato jednoduchá, ale výkonná knihovna vám umožňuje snadno manipulovat s dokumenty PDF, takže váš život bude mnohem jednodušší. Ať už pracujete na osobním projektu nebo na profesionální aplikaci, Aspose.PDF je fantastický nástroj, který můžete mít ve svém arzenálu.
 
-Nezapomeňte se podívat na oficiální dokumentaci Aspose.PDF, kde najdete další informace o pokročilých funkcích manipulace se záložkami.
+## FAQ
 
-### Časté dotazy pro rozšíření záložek v souboru PDF
+### Co je Aspose.PDF pro .NET?
+Aspose.PDF for .NET je výkonná knihovna, která umožňuje vývojářům vytvářet, manipulovat a převádět dokumenty PDF programově.
 
-#### Otázka: Co jsou záložky v souboru PDF?
+### Mohu používat Aspose.PDF zdarma?
+ Ano, Aspose nabízí bezplatnou zkušební verzi, kterou můžete použít k prozkoumání funkcí knihovny. Můžete si jej stáhnout[zde](https://releases.aspose.com/).
 
-Odpověď: Záložky v souboru PDF jsou navigační pomůcky, které uživatelům umožňují rychle přejít na určité části nebo stránky v dokumentu. Poskytují pohodlný způsob přístupu k různým částem dokumentu.
+### Kde najdu další dokumentaci?
+ Kompletní dokumentaci naleznete na Aspose.PDF pro .NET[zde](https://reference.aspose.com/pdf/net/).
 
-#### Otázka: Proč bych měl chtít rozbalit záložky v souboru PDF?
+### Je k dispozici podpora pro Aspose.PDF?
+ Absolutně! Můžete získat podporu od komunity Aspose[zde](https://forum.aspose.com/c/pdf/10).
 
-Odpověď: Rozšíření záložek může zlepšit uživatelské prostředí tím, že ve výchozím nastavení zobrazí všechny záložky v rozbaleném stavu. To dává uživatelům jasný přehled o struktuře dokumentu a umožňuje jim snadno přecházet do různých sekcí.
-
-#### Otázka: Jak naimportuji potřebné knihovny pro můj projekt C#?
-
-Odpověď: Chcete-li importovat požadovanou knihovnu pro váš projekt C#, použijte následující importní direktivu:
-
-```csharp
-using Aspose.Pdf;
-```
-
-Tato směrnice vám umožňuje používat třídy a metody poskytované Aspose.PDF pro .NET.
-
-#### Otázka: Jak určím cestu ke složce dokumentů?
-
- Odpověď: V poskytnutém zdrojovém kódu nahraďte`"YOUR DOCUMENT DIRECTORY"` se skutečnou cestou ke složce obsahující soubor PDF, se kterým chcete pracovat. To zajistí, že kód dokáže najít cílový soubor PDF.
-
-#### Otázka: Jak mohu otevřít dokument PDF, abych rozbalil jeho záložky?
-
-Odpověď: Chcete-li otevřít dokument PDF pro rozbalení záložek, použijte následující kód:
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
- Nahradit`"input.pdf"` se skutečným názvem souboru.
-
-#### Otázka: Jak nastavím režim zobrazení stránky, aby se ve výchozím nastavení zobrazovaly záložky?
-
-A: Chcete-li nastavit režim zobrazení stránky tak, aby se ve výchozím nastavení zobrazovaly záložky, použijte`PageMode` vlastnictvím`doc` objekt:
-
-```csharp
-doc.PageMode = PageMode.UseOutlines;
-```
-
-#### Otázka: Jak rozbalím všechny záložky v dokumentu PDF?
-
- A: Chcete-li rozbalit všechny záložky, procházejte každou položku záložky v kolekci obrysů dokumentu a nastavte`Open` majetek do`true`:
-
-```csharp
-foreach (OutlineItemCollection item in doc.Outlines)
-{
-    item.Open = true;
-}
-```
-
-#### Otázka: Co se stane, pokud má záložka vnořené podřízené záložky?
-
-Odpověď: Pokud má záložka vnořené podřízené záložky, rozbalení nadřazené záložky rozšíří i její podřízené záložky, což poskytne komplexní pohled na strukturu dokumentu.
-
-#### Otázka: Jak uložím aktualizovaný soubor PDF po rozbalení záložek?
-
-Odpověď: Chcete-li uložit aktualizovaný soubor PDF po rozbalení záložek, použijte následující kód:
-
-```csharp
-dataDir = dataDir + "ExpandBookmarks_out.pdf";
-doc.Save(dataDir);
-```
-
-#### Otázka: Mohu přizpůsobit vzhled rozšířených záložek?
-
-Odpověď: I když se tento tutoriál ve výchozím nastavení zaměřuje na rozšiřování záložek, vzhled záložek můžete upravit pomocí dalších funkcí a vlastností Aspose.PDF.
+### Jak si koupím licenci pro Aspose.PDF?
+ Můžete si zakoupit licenci pro Aspose.PDF[zde](https://purchase.aspose.com/buy).

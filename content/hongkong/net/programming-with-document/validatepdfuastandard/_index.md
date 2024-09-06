@@ -58,9 +58,9 @@ bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", P
 
 ### 常見問題解答
 
-#### Q：什麼是 PDF/UA 標準？為什麼根據該標準驗證 PDF 文件很重要？
+#### Q：什麼是 PDF/UA 標準？ 為什麼根據該標準驗證 PDF 文件很重要？
 
-答：PDF/UA 標準，也稱為“通用輔助功能”，確保 PDF 文件可供殘障人士（例如視力障礙者）存取。根據 PDF/UA 標準合規性驗證 PDF 文件有助於建立具有包容性且可供更廣泛受眾存取的文件。
+答：PDF/UA 標準，也稱為“通用輔助功能”，可確保殘障人士（例如視力障礙者）可以存取 PDF 文件。根據 PDF/UA 標準合規性驗證 PDF 文件有助於建立具有包容性且可供更廣泛受眾存取的文件。
 
 #### Q：如何在C#程式碼中定義文檔目錄路徑？
 

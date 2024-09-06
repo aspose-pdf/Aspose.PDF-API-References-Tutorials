@@ -1,168 +1,115 @@
 ---
-title: Lesezeichen-Seitenzahl in PDF-Datei abrufen
-linktitle: Lesezeichen-Seitenzahl in PDF-Datei abrufen
+title: Holen Sie sich die Seitenzahl des Lesezeichens in der PDF-Datei
+linktitle: Holen Sie sich die Seitenzahl des Lesezeichens in der PDF-Datei
 second_title: Aspose.PDF für .NET API-Referenz
-description: Mit Aspose.PDF für .NET können Sie ganz einfach die Seitenzahl eines Lesezeichens in einer PDF-Datei speichern.
+description: Erfahren Sie in diesem umfassenden Tutorial, wie Sie mit Aspose.PDF für .NET Lesezeichenseitenzahlen aus PDF-Dateien extrahieren.
 type: docs
 weight: 60
 url: /de/net/programming-with-bookmarks/get-bookmark-page-number/
 ---
-Das Abrufen von Seitenzahlen, die Lesezeichen in einer PDF-Datei zugeordnet sind, kann für die Navigation hilfreich sein. Mit Aspose.PDF für .NET können Sie die Seitenzahl von Lesezeichen ganz einfach ermitteln, indem Sie dem folgenden Quellcode folgen:
+## Einführung
 
-## Schritt 1: Erforderliche Bibliotheken importieren
+Im digitalen Zeitalter ist die effiziente Verwaltung von PDF-Dokumenten sowohl für den privaten als auch für den professionellen Gebrauch von entscheidender Bedeutung. Egal, ob Sie Entwickler sind und Ihre Anwendung verbessern möchten, oder ein Geschäftsmann, der seine Dokumente organisieren muss: Wenn Sie wissen, wie Sie PDFs bearbeiten, können Sie Zeit und Mühe sparen. Eine der wichtigsten Funktionen der PDF-Verwaltung ist die Möglichkeit, Lesezeichen und die entsprechenden Seitenzahlen zu extrahieren. In diesem Tutorial erfahren Sie, wie Sie dies mit Aspose.PDF für .NET erreichen können, einer leistungsstarken Bibliothek, die die PDF-Bearbeitung vereinfacht.
 
-Bevor Sie beginnen, müssen Sie die erforderlichen Bibliotheken für Ihr C#-Projekt importieren. Hier ist die notwendige Importanweisung:
+## Voraussetzungen
+
+Bevor Sie in den Code eintauchen, stellen Sie sicher, dass Sie die folgenden Voraussetzungen erfüllen:
+
+1. Visual Studio: Stellen Sie sicher, dass Visual Studio auf Ihrem Computer installiert ist. Dies wird Ihre Entwicklungsumgebung sein.
+2.  Aspose.PDF für .NET: Sie benötigen die Aspose.PDF-Bibliothek. Sie können sie herunterladen von[Webseite](https://releases.aspose.com/pdf/net/).
+3. Grundkenntnisse in C#: Wenn Sie mit der C#-Programmierung vertraut sind, verstehen Sie die Codeausschnitte besser.
+
+## Pakete importieren
+
+Um zu beginnen, müssen Sie die erforderlichen Pakete in Ihr C#-Projekt importieren. So können Sie das tun:
+
+1. Öffnen Sie Ihr Visual Studio-Projekt.
+2. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf Ihr Projekt und wählen Sie „NuGet-Pakete verwalten“ aus.
+3.  Suchen nach`Aspose.PDF` und installieren Sie die neueste Version.
+
+Nachdem Sie nun alles eingerichtet haben, gehen wir den Vorgang zum Extrahieren der Lesezeichen-Seitenzahlen Schritt für Schritt durch.
+
+## Schritt 1: Richten Sie Ihr Dokumentverzeichnis ein
+
+Bevor Sie Lesezeichen extrahieren können, müssen Sie den Pfad zu Ihrem PDF-Dokument angeben. Hier befindet sich Ihre PDF-Datei.
 
 ```csharp
-using Aspose.Pdf.Facades;
-```
-
-## Schritt 2: Legen Sie den Pfad zum Dokumentenordner fest
-
- In diesem Schritt müssen Sie den Pfad zu dem Ordner angeben, der die PDF-Datei enthält, aus der Sie die Lesezeichen-Seitenzahlen extrahieren möchten. Ersetzen`"YOUR DOCUMENT DIRECTORY"`Geben Sie im folgenden Code den tatsächlichen Pfad zu Ihrem Dokumentenordner ein:
-
-```csharp
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Schritt 3: Erstellen Sie den Lesezeichen-Editor
+ Ersetzen Sie in diesem Schritt`"YOUR DOCUMENT DIRECTORY"` durch den tatsächlichen Pfad, in dem Ihre PDF-Datei gespeichert ist. Dieser Pfad ist entscheidend, da er dem Programm mitteilt, wo es nach der PDF-Datei suchen soll, mit der Sie arbeiten möchten.
 
- Jetzt erstellen wir eine`PdfBookmarkEditor` Objekt, um die Lesezeichen des Dokuments zu manipulieren. Verwenden Sie den folgenden Code:
+## Schritt 2: Erstellen Sie eine PdfBookmarkEditor-Instanz
+
+ Als nächstes müssen Sie eine Instanz des`PdfBookmarkEditor`Klasse. Diese Klasse bietet Methoden zum Bearbeiten von Lesezeichen in PDF-Dateien.
 
 ```csharp
+// PdfBookmarkEditor erstellen
 PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
 ```
 
-## Schritt 4: Öffnen Sie die PDF-Datei
+ Hier instantiieren wir die`PdfBookmarkEditor`. Mit diesem Objekt können wir unsere PDF-Datei binden und Lesezeichen daraus extrahieren.
 
- In diesem Schritt öffnen wir die PDF-Datei mit`BindPdf` Methode des Lesezeichen-Editors. Hier ist der entsprechende Code:
+## Schritt 3: Öffnen Sie die PDF-Datei
 
-```csharp
-bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
-```
-
-## Schritt 5: Lesezeichen extrahieren
-
- Jetzt extrahieren wir die Lesezeichen mithilfe von aus dem Dokument`ExtractBookmarks` Methode des Lesezeichen-Editors. Hier ist der entsprechende Code:
+ Nun ist es an der Zeit, die PDF-Datei an das`PdfBookmarkEditor` Instanz, die Sie gerade erstellt haben.
 
 ```csharp
-Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
-```
-
-## Schritt 6: Lesezeichen durchsuchen und Seitenzahlen abrufen
-
- Schließlich durchlaufen wir die extrahierten Lesezeichen und ermitteln mithilfe von a die Seitenzahlen, die jedem Lesezeichen zugeordnet sind`foreach` Schleife. Hier ist der entsprechende Code:
-
-```csharp
-foreach (Bookmark bookmark in bookmarks)
-{
-     string strLevelSeprator = string.Empty;
-     for (int i = 1; i < bookmark.Level; i++)
-     {
-         strLevelSeprator += "----";
-     }
-     Console.WriteLine("{0}Title: {1}", strLevelSeprator, bookmark.Title);
-     Console.WriteLine("{0}Page number: {1}", strLevelSeprator, bookmark.PageNumber);
-     Console.WriteLine("{0}Page Action: {1}", strLevelSeprator, bookmark.Action);
-}
-```
-
-### Beispielquellcode für „Get Bookmark Page Number“ mit Aspose.PDF für .NET 
-```csharp
-// Der Pfad zum Dokumentenverzeichnis.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Erstellen Sie einen PDFBookmarkEditor
-PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
 // PDF-Datei öffnen
 bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
+```
+
+ In dieser Zeile verwenden wir die`BindPdf` Methode zum Öffnen der PDF-Datei mit dem Namen`GetBookmarks.pdf`. Stellen Sie sicher, dass diese Datei im angegebenen Verzeichnis vorhanden ist. Andernfalls tritt ein Fehler auf.
+
+## Schritt 4: Lesezeichen extrahieren
+
+ Wenn die PDF-Datei geöffnet ist, können Sie nun die Lesezeichen mit dem`ExtractBookmarks` Verfahren.
+
+```csharp
 // Lesezeichen extrahieren
 Aspose.Pdf.Facades.Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
+```
+
+ Dieser Schritt ruft alle Lesezeichen aus der PDF-Datei ab und speichert sie in einer Variablen namens`bookmarks`. Diese Variable enthält alle Lesezeicheninformationen, die wir im nächsten Schritt verarbeiten werden.
+
+## Schritt 5: Durch Lesezeichen iterieren
+
+Nachdem Sie nun die Lesezeichen haben, können Sie diese durchlaufen, um ihre Titel und Seitenzahlen anzuzeigen.
+
+```csharp
 foreach (Aspose.Pdf.Facades.Bookmark bookmark in bookmarks)
 {
-	string strLevelSeprator = string.Empty;
-	for (int i = 1; i < bookmark.Level; i++)
-	{
-		strLevelSeprator += "----";
-	}
-	Console.WriteLine("{0}Title: {1}", strLevelSeprator, bookmark.Title);
-	Console.WriteLine("{0}Page Number: {1}", strLevelSeprator, bookmark.PageNumber);
-	Console.WriteLine("{0}Page Action: {1}", strLevelSeprator, bookmark.Action);
+    string strLevelSeprator = string.Empty;
+    for (int i = 1; i < bookmark.Level; i++)
+    {
+        strLevelSeprator += "----";
+    }
+    Console.WriteLine("{0}Title: {1}", strLevelSeprator, bookmark.Title);
+    Console.WriteLine("{0}Page Number: {1}", strLevelSeprator, bookmark.PageNumber);
+    Console.WriteLine("{0}Page Action: {1}", strLevelSeprator, bookmark.Action);
 }
 ```
+
+In dieser Schleife durchlaufen wir jedes Lesezeichen. Für jedes Lesezeichen erstellen wir einen Zeichenfolgentrenner basierend auf seiner Ebene (um die Hierarchie der Lesezeichen visuell darzustellen). Dann drucken wir den Titel, die Seitenzahl und die mit jedem Lesezeichen verknüpfte Aktion auf der Konsole aus.
 
 ## Abschluss
 
-Herzlichen Glückwunsch! Jetzt haben Sie eine Schritt-für-Schritt-Anleitung zum Abrufen von Lesezeichen-Seitenzahlen mit Aspose.PDF für .NET. Mit diesem Code können Sie die Navigationsinformationen abrufen, die jedem Lesezeichen in Ihren PDF-Dokumenten zugeordnet sind.
+Das Extrahieren von Lesezeichenseitenzahlen aus einer PDF-Datei mit Aspose.PDF für .NET ist ein unkomplizierter Vorgang. Indem Sie die in diesem Tutorial beschriebenen Schritte befolgen, können Sie Lesezeichen in Ihren PDF-Dokumenten effizient verwalten. Egal, ob Sie eine Anwendung entwickeln oder einfach nur Ihre PDFs organisieren müssen, dieses Wissen wird Ihnen zweifellos nützlich sein.
 
-Weitere Informationen zu erweiterten Funktionen zur Lesezeichenmanipulation finden Sie unbedingt in der offiziellen Aspose.PDF-Dokumentation.
+## Häufig gestellte Fragen
 
-### FAQs zum Abrufen der Seitenzahl eines Lesezeichens in einer PDF-Datei
+### Was ist Aspose.PDF für .NET?
+Aspose.PDF für .NET ist eine Bibliothek, die es Entwicklern ermöglicht, PDF-Dokumente programmgesteuert zu erstellen, zu bearbeiten und zu konvertieren.
 
-#### F: Was sind Lesezeichen in einer PDF-Datei?
+### Kann ich Aspose.PDF kostenlos nutzen?
+ Ja, Aspose bietet eine kostenlose Testversion an, mit der Sie die Bibliothek testen können. Sie können sie herunterladen[Hier](https://releases.aspose.com/).
 
-A: Lesezeichen in einer PDF-Datei sind Navigationshilfen, die es Benutzern ermöglichen, schnell zu bestimmten Abschnitten oder Seiten innerhalb des Dokuments zu springen. Sie verbessern das Benutzererlebnis, indem sie Verknüpfungen zu relevanten Inhalten bereitstellen.
+### Wo finde ich die Dokumentation für Aspose.PDF?
+ Die Dokumentation ist verfügbar[Hier](https://reference.aspose.com/pdf/net/).
 
-#### F: Warum sollte ich Lesezeichen-Seitenzahlen aus einer PDF-Datei abrufen?
+### Wie erwerbe ich eine Lizenz für Aspose.PDF?
+ Sie können eine Lizenz erwerben bei der[Kaufseite](https://purchase.aspose.com/buy).
 
-A: Durch das Abrufen von Lesezeichenseitenzahlen können Benutzer effektiver durch ein Dokument navigieren und erhalten einen klaren Hinweis darauf, wohin jedes Lesezeichen führt. Dies ist besonders nützlich für längere Dokumente mit mehreren Abschnitten.
-
-#### F: Wie importiere ich die erforderlichen Bibliotheken für mein C#-Projekt?
-
-A: Um die erforderliche Bibliothek für Ihr C#-Projekt zu importieren, verwenden Sie die folgende Importanweisung:
-
-```csharp
-using Aspose.Pdf.Facades;
-```
-
-Mit dieser Direktive können Sie die von Aspose.PDF für .NET bereitgestellten Klassen und Methoden verwenden.
-
-#### F: Wie lege ich den Pfad zum Dokumentenordner fest?
-
- A: Ersetzen Sie im bereitgestellten Quellcode`"YOUR DOCUMENT DIRECTORY"`mit dem tatsächlichen Pfad zu dem Ordner, der die PDF-Datei enthält, aus der Sie Lesezeichen-Seitenzahlen extrahieren möchten. Dadurch wird sichergestellt, dass der Code die Ziel-PDF-Datei finden kann.
-
-#### F: Wie erstelle ich einen Lesezeichen-Editor?
-
-A: Um einen Lesezeichen-Editor zu erstellen, verwenden Sie den folgenden Code:
-
-```csharp
-PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
-```
-
-#### F: Wie öffne ich eine PDF-Datei zur Lesezeichenbearbeitung?
-
-A: Um eine PDF-Datei zum Extrahieren von Lesezeicheninformationen zu öffnen, verwenden Sie den folgenden Code:
-
-```csharp
-bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
-```
-
- Ersetzen`"GetBookmarks.pdf"` mit dem tatsächlichen Dateinamen.
-
-#### F: Wie extrahiere ich Lesezeichen aus der PDF-Datei?
-
- A: Um Lesezeichen aus der PDF-Datei zu extrahieren, verwenden Sie die`ExtractBookmarks` Methode des Lesezeichen-Editors:
-
-```csharp
-Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
-```
-
-#### F: Wie kann ich die Seitenzahlen von Lesezeichen abrufen und anzeigen?
-
- A: Durchlaufen Sie die extrahierten Lesezeichen mit a`foreach` Schleife und Zugriff auf die`PageNumber` Eigenschaft jedes Lesezeichens, um die zugehörige Seitennummer abzurufen und anzuzeigen:
-
-```csharp
-foreach (Bookmark bookmark in bookmarks)
-{
-    Console.WriteLine("Title: " + bookmark.Title);
-    Console.WriteLine("Page Number: " + bookmark.PageNumber);
-    Console.WriteLine("Page Action: " + bookmark.Action);
-}
-```
-
-#### F: Kann ich mit diesem Ansatz Lesezeicheneigenschaften ändern?
-
- A: Während sich dieses Tutorial auf das Abrufen von Lesezeichenseitenzahlen konzentriert, können Sie damit auch andere Lesezeicheneigenschaften ändern`Bookmark`Objekt und zugehörige Eigenschaften.
-
-#### F: Wie speichere ich die aktualisierte PDF-Datei nach dem Extrahieren der Lesezeicheninformationen?
-
-A: Durch die Lesezeichenextraktion wird die ursprüngliche PDF-Datei nicht verändert. Wenn Sie Änderungen speichern möchten, können Sie dies mit anderen von Aspose.PDF für .NET bereitgestellten Methoden tun.
+### Was soll ich tun, wenn ich auf Probleme stoße?
+ Wenn Sie auf Probleme stoßen, können Sie Hilfe suchen auf der[Aspose-Supportforum](https://forum.aspose.com/c/pdf/10).

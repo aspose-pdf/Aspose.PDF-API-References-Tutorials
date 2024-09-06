@@ -16,7 +16,7 @@ Soubory PDF (Portable Document Format) se široce používají pro sdílení dok
 
 Aspose.PDF for Java je výkonná Java knihovna, která umožňuje vývojářům vytvářet, manipulovat a převádět PDF dokumenty programově. Poskytuje rozsáhlé funkce pro práci se soubory PDF, díky čemuž je cenným nástrojem pro různé úkoly, včetně převodu PDF na SVG.
 
-## Proč převádět soubory PDF na obrázky SVG?
+## Proč převádět PDF na obrázky SVG?
 
 SVG je vektorový grafický formát, který lze snadno škálovat bez ztráty kvality. Převod souborů PDF na obrázky SVG je výhodný, když chcete:
 
@@ -31,7 +31,7 @@ Než se pustíme do procesu převodu, ujistěte se, že máte splněny následuj
 
 - Java Development Kit (JDK) nainstalovaný ve vašem systému.
 - Integrované vývojové prostředí (IDE) jako Eclipse nebo IntelliJ IDEA.
--  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Nastavení prostředí Java
 
@@ -104,7 +104,7 @@ V tomto článku jsme se naučili, jak převést soubory PDF na obrázky SVG pom
 
 ### Jak nainstaluji Aspose.PDF pro Javu?
 
- Aspose.PDF pro Javu si můžete stáhnout z[tady](https://releases.aspose.com/pdf/java/). Postupujte podle pokynů k instalaci uvedených v dokumentaci.
+ Aspose.PDF pro Javu si můžete stáhnout z[zde](https://releases.aspose.com/pdf/java/). Postupujte podle pokynů k instalaci uvedených v dokumentaci.
 
 ### Mohu pomocí Aspose.PDF for Java převést soubory PDF do jiných formátů?
 
@@ -120,4 +120,4 @@ Aspose.PDF for Java je komerční knihovna s dostupnou zkušební verzí. Může
 
 ### Je Aspose.PDF for Java vhodný pro dávkové zpracování PDF?
 
-Ano, Aspose.PDF for Java se dobře hodí pro úlohy dávkového zpracování PDF, takže je efektivní pro manipulaci s více dokumenty.
+Ano, Aspose.PDF for Java se dobře hodí pro úlohy dávkového zpracování PDF, takže je efektivní pro práci s více dokumenty.

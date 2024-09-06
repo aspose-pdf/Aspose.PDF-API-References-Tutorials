@@ -38,14 +38,14 @@ Document pdfDocument = new Document();
 ```
 
 ## 5. lépés: Adjon hozzá egy oldalt a dokumentumhoz
- Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`Gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`pdfPage`.
+ Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`pdfPage`.
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
 ## 6. lépés: Hozzon létre egy szövegrészletet
- Hozzon létre egy`TextFragment` objektumot, és adja meg a kívánt szöveget. Állítsa be a szövegrészlet pozícióját a gombbal`Position` ingatlan. A megadott kódban a szöveg „főszöveg”-re van állítva, és az oldalon (100, 600) található.
+ Hozzon létre a`TextFragment` objektumot, és adja meg a kívánt szöveget. Állítsa be a szövegrészlet pozícióját a gombbal`Position` ingatlan. A megadott kódban a szöveg „főszöveg”-re van állítva, és az oldalon (100, 600) található.
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -64,7 +64,7 @@ textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 ```
 
 ## 8. lépés: Engedélyezze a szövegszegélyt
- A szövegszegély engedélyezéséhez állítsa be a`DrawTextRectangleBorder` szövegrészlet tulajdonsága`TextState` nak nek`true`.
+ A szövegszegély engedélyezéséhez állítsa be a`DrawTextRectangleBorder` szövegrészlet tulajdonsága`TextState` hogy`true`.
 
 ```csharp
 textFragment.TextState.DrawTextRectangleBorder = true;
@@ -79,7 +79,7 @@ tb.AppendText(textFragment);
 ```
 
 ## 10. lépés: Mentse el a PDF dokumentumot
- Mentse el a PDF dokumentumot a`Save` módszere a`Document` tárgy. Adja meg a kimeneti fájl elérési útját, amelyet a 3. lépésben állított be.
+ Mentse el a PDF dokumentumot a`Save` módszere a`Document` objektum. Adja meg a kimeneti fájl elérési útját, amelyet a 3. lépésben állított be.
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
@@ -143,7 +143,7 @@ Document pdfDocument = new Document();
 
 #### K: Hogyan adhatok hozzá oldalt a dokumentumhoz?
 
- V: Az 5. lépésben új oldalt ad hozzá a dokumentumhoz a`Add` módszere a`Pages` Gyűjtemény:
+ V: Az 5. lépésben új oldalt ad hozzá a dokumentumhoz a`Add` módszere a`Pages` gyűjtemény:
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();

@@ -8,19 +8,19 @@ weight: 230
 url: /de/net/programming-with-forms/radio-button-with-options/
 ---
 
-In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET ein Optionsfeld mit Optionen zu einem PDF-Dokument hinzufügen. Wir erklären Ihnen Schritt für Schritt den C#-Quellcode, um Sie durch diesen Prozess zu führen.
+In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET einem PDF-Dokument ein Optionsfeld mit Optionen hinzufügen. Wir erklären Ihnen den C#-Quellcode Schritt für Schritt, um Sie durch diesen Prozess zu führen.
 
 ## Schritt 1: Vorbereitung
 
-Stellen Sie sicher, dass Sie die erforderlichen Bibliotheken importiert und den Pfad zu Ihrem Dokumentenverzeichnis festgelegt haben:
+Stellen Sie sicher, dass Sie die erforderlichen Bibliotheken importiert haben, und legen Sie den Pfad zu Ihrem Dokumentverzeichnis fest:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Schritt 2: Instanziieren Sie ein Dokumentobjekt
+## Schritt 2: Instanziieren eines Dokumentobjekts
 
-Instanziieren Sie ein Document-Objekt, um ein neues PDF-Dokument zu erstellen:
+Instanziieren Sie ein Dokumentobjekt, um ein neues PDF-Dokument zu erstellen:
 
 ```csharp
 Document doc = new Document();
@@ -28,7 +28,7 @@ Document doc = new Document();
 
 ## Schritt 3: Seite und Tabelle hinzufügen
 
-Fügen Sie dem Dokument eine Seite hinzu und erstellen Sie eine Tabelle für die Optionsfelder:
+Fügen Sie dem Dokument eine Seite hinzu und erstellen Sie eine Tabelle, die die Optionsfeldoptionen enthält:
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -37,7 +37,7 @@ table. ColumnWidths = "120 120 120";
 page.Paragraphs.Add(table);
 ```
 
-## Schritt 4: Instanziieren Sie ein RadioButtonField-Objekt
+## Schritt 4: Instanziieren eines RadioButtonField-Objekts
 
 Instanziieren Sie ein RadioButtonField-Objekt, um das Optionsfeld darzustellen:
 
@@ -47,9 +47,9 @@ rf. PartialName = "radio";
 doc.Form.Add(rf, 1);
 ```
 
-## Schritt 5: Optionsfelder hinzufügen
+## Schritt 5: Optionsfeldoptionen hinzufügen
 
-Fügen Sie die Optionsfeldoptionen zum RadioButtonField-Objekt hinzu:
+Fügen Sie dem RadioButtonField-Objekt die Optionsfeldoptionen hinzu:
 
 ```csharp
 RadioButtonOptionField opt1 = new RadioButtonOptionField();
@@ -71,7 +71,7 @@ rf.Add(opt3);
 
 ## Schritt 6: Optionsfeldoptionen anpassen
 
-Passen Sie die Optionen der Optionsfelder an, indem Sie Attribute wie Rahmen, Textfarbe und Beschriftungstext festlegen:
+Passen Sie die Optionsfelder an, indem Sie Attribute wie Rahmen, Textfarbe und Beschriftungstext festlegen:
 
 ```csharp
 opt1.Border = new Border(opt1);
@@ -85,7 +85,7 @@ opt1.Caption = new TextFragment("Item1");
 
 ```
 
-## Schritt 7: Fügen Sie der Tabelle die Optionsfeldoptionen hinzu
+## Schritt 7: Optionsfeldoptionen zur Tabelle hinzufügen
 
 Fügen Sie der Tabelle die Optionsfeldoptionen hinzu, um sie anzuzeigen:
 
@@ -108,11 +108,11 @@ dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Beispielquellcode für Radio Button With Options mit Aspose.PDF für .NET 
+### Beispiel-Quellcode für Radio Button With Options unter Verwendung von Aspose.PDF für .NET 
 ```csharp
 try
 {
-	// Der Pfad zum Dokumentenverzeichnis.
+	// Der Pfad zum Dokumentverzeichnis.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	Document doc = new Document();
 	Page page = doc.Pages.Add();
@@ -175,4 +175,4 @@ catch (Exception ex)
 
 ## Abschluss
 
-Herzlichen Glückwunsch! Sie haben mit Aspose.PDF für .NET erfolgreich ein Optionsfeld mit Optionen zu einem PDF-Dokument hinzugefügt. Mit dieser Methode können Sie nun interaktive Formulare in Ihren PDF-Dokumenten erstellen.
+Herzlichen Glückwunsch! Sie haben mit Aspose.PDF für .NET erfolgreich ein Optionsfeld mit Optionen zu einem PDF-Dokument hinzugefügt. Mit dieser Methode können Sie jetzt interaktive Formulare in Ihren PDF-Dokumenten erstellen.

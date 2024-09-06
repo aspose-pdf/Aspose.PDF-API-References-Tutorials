@@ -83,7 +83,7 @@ S: Att ersätta en bild i en PDF-fil kan vara användbart för att uppdatera gra
 
 #### F: Hur anger jag vilken bild som ska ersättas i PDF-dokumentet?
 
- S: I den angivna koden, raden`pdfDocument.Pages[1].Resources.Images.Replace(1, new FileStream(dataDir + "aspose-logo.jpg", FileMode.Open));` ersätter bilden på sidan 1 i PDF-dokumentet. Numret`1`representerar indexet för bilden som ska ersättas. Justera detta nummer för att rikta in en annan bild om det behövs.
+ S: I den angivna koden, raden`pdfDocument.Pages[1].Resources.Images.Replace(1, new FileStream(dataDir + "aspose-logo.jpg", FileMode.Open));` ersätter bilden på sidan 1 i PDF-dokumentet. Antalet`1`representerar indexet för bilden som ska ersättas. Justera detta nummer för att rikta in en annan bild om det behövs.
 
 #### F: Kan jag ersätta bilder på vilken sida som helst i PDF-dokumentet?
 

@@ -2,29 +2,29 @@
 title: Maak een gevuld rechthoekobject in PDF met behulp van Java
 linktitle: Maak een gevuld rechthoekobject in PDF met behulp van Java
 second_title: Aspose.PDF Java PDF-verwerkings-API
-description: Leer hoe u gevulde rechthoeken in PDF's kunt maken met Java met Aspose.PDF voor Java. Stapsgewijze zelfstudie met codevoorbeelden.
+description: Leer hoe u gevulde rechthoeken in PDF's maakt met Java met Aspose.PDF voor Java. Stapsgewijze tutorial met codevoorbeelden.
 type: docs
 weight: 12
 url: /nl/java/pdf-images/create-filled-rectangle-object-in-pdf-using-java/
 ---
 
-## Inleiding tot het maken van een gevuld rechthoekig object in PDF met behulp van Java
+## Inleiding tot het maken van een gevuld rechthoekobject in PDF met behulp van Java
 
-In deze zelfstudie onderzoeken we hoe u met Java een gevuld rechthoekig object in een PDF-document kunt maken met behulp van Aspose.PDF voor Java. Gevulde rechthoeken worden in PDF's vaak voor verschillende doeleinden gebruikt, zoals het markeren van belangrijke informatie of het maken van visuele scheidingen.
+In deze tutorial gaan we onderzoeken hoe je een gevuld rechthoekobject in een PDF-document kunt maken met Java met behulp van Aspose.PDF voor Java. Gevulde rechthoeken worden vaak gebruikt in PDF's voor verschillende doeleinden, zoals het markeren van belangrijke informatie of het maken van visuele scheidingen.
 
 ## Vereisten
 
-Voordat we beginnen, zorg ervoor dat u aan de volgende vereisten voldoet:
+Voordat we beginnen, moet u ervoor zorgen dat u aan de volgende voorwaarden voldoet:
 
 - Java Development Kit (JDK) geïnstalleerd
-- Integrated Development Environment (IDE) zoals Eclipse of IntelliJ
+- Geïntegreerde ontwikkelomgeving (IDE) zoals Eclipse of IntelliJ
 - Aspose.PDF voor Java-bibliotheek gedownload en geconfigureerd
 
 ## Aspose.PDF instellen voor Java
 
-Om aan de slag te gaan, moet u Aspose.PDF voor Java downloaden van de website. Volg deze stappen:
+Om te beginnen moet u Aspose.PDF voor Java downloaden van de website. Volg deze stappen:
 
-1.  Ga naar de Aspose.PDF voor Java-documentatie op[hier](https://reference.aspose.com/pdf/java/).
+1.  Ga naar Aspose.PDF voor Java-documentatie op[hier](https://reference.aspose.com/pdf/java/).
 
 2. Download de bibliotheek en volg de meegeleverde installatie-instructies.
 
@@ -34,7 +34,7 @@ Nu we Aspose.PDF voor Java hebben ingesteld, gaan we dieper in op het maken van 
 
 ## Een nieuw PDF-document maken
 
-In deze sectie gaan we een nieuw PDF-document maken met Aspose.PDF voor Java. Importeer eerst de benodigde klassen:
+In deze sectie maken we een nieuw PDF-document met Aspose.PDF voor Java. Importeer eerst de benodigde klassen:
 
 ```java
 import com.aspose.pdf.Document;
@@ -51,7 +51,7 @@ Page page = pdfDocument.getPages().add();
 
 ## Een gevulde rechthoek toevoegen
 
-Als u een gevulde rechthoek wilt toevoegen, moet u de coördinaten, afmetingen en kleur ervan definiëren. Hier is een voorbeeld van hoe u een gevulde rechthoek maakt:
+Om een gevulde rechthoek toe te voegen, moet u de coördinaten, afmetingen en kleur definiëren. Hier is een voorbeeld van hoe u een gevulde rechthoek maakt:
 
 ```java
 Rectangle filledRectangle = new Rectangle(page, 100, 100, 200, 50);
@@ -60,15 +60,15 @@ page.getParagraphs().add(filledRectangle);
 ```
 
 In deze code:
--  Wij creëren een nieuwe`Rectangle` object, waarbij de positie (x=100, y=100), breedte (200) en hoogte (50) wordt gespecificeerd.
-- We hebben de achtergrondkleur van de rechthoek ingesteld op rood.
+-  Wij creëren een nieuwe`Rectangle` object, waarbij de positie (x=100, y=100), breedte (200) en hoogte (50) worden gespecificeerd.
+- We stellen de achtergrondkleur van de rechthoek in op rood.
 - Ten slotte voegen we de rechthoek toe aan de pagina.
 
 ## De rechthoek aanpassen
 
-U kunt de rechthoek verder aanpassen door de kleur, rand of andere eigenschappen te wijzigen. Verken de Aspose.PDF voor Java-documentatie voor meer opties.
+U kunt de rechthoek verder aanpassen door de kleur, rand of andere eigenschappen te wijzigen. Bekijk de Aspose.PDF voor Java-documentatie voor meer opties.
 
-## De PDF opslaan
+## PDF opslaan
 
 Nadat u het PDF-document met de gevulde rechthoek hebt gemaakt, slaat u het op in een bestand:
 
@@ -82,13 +82,13 @@ Compileer en voer uw Java-code uit. U zou nu een PDF-bestand moeten hebben met d
 
 ## Conclusie
 
-In deze zelfstudie hebben we geleerd hoe u een gevuld rechthoekig object in een PDF-document kunt maken met behulp van Java en Aspose.PDF voor Java. Dit kan handig zijn om belangrijke informatie te benadrukken of visuele elementen aan uw PDF's toe te voegen. Aspose.PDF voor Java biedt een krachtige en flexibele manier om met PDF's in Java-toepassingen te werken.
+In deze tutorial hebben we geleerd hoe je een gevuld rechthoekobject in een PDF-document maakt met Java en Aspose.PDF voor Java. Dit kan handig zijn om belangrijke informatie te markeren of visuele elementen toe te voegen aan je PDF's. Aspose.PDF voor Java biedt een krachtige en flexibele manier om met PDF's te werken in Java-applicaties.
 
 ## Veelgestelde vragen
 
 ### Wat is Aspose.PDF voor Java?
 
-Aspose.PDF voor Java is een Java-bibliotheek waarmee ontwikkelaars met PDF-bestanden in Java-toepassingen kunnen werken. Het biedt een breed scala aan functies voor het maken, manipuleren en beheren van PDF-documenten.
+Aspose.PDF voor Java is een Java-bibliotheek waarmee ontwikkelaars met PDF-bestanden in Java-applicaties kunnen werken. Het biedt een breed scala aan functies voor het maken, manipuleren en beheren van PDF-documenten.
 
 ### Hoe installeer ik Aspose.PDF voor Java?
 
@@ -100,7 +100,7 @@ U kunt Aspose.PDF voor Java installeren door de bibliotheek te downloaden van de
 
 ### Is Aspose.PDF voor Java gratis te gebruiken?
 
-Aspose.PDF voor Java is een commerciële bibliotheek en mogelijk moet u een licentie aanschaffen om deze in uw projecten te kunnen gebruiken. Kijk op de Aspose-website voor licentiegegevens.
+Aspose.PDF voor Java is een commerciële bibliotheek en u moet mogelijk een licentie aanschaffen om het in uw projecten te gebruiken. Bekijk de Aspose-website voor licentiedetails.
 
 ### Waar kan ik meer voorbeelden vinden van het gebruik van Aspose.PDF voor Java?
 

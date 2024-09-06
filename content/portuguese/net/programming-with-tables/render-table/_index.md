@@ -1,27 +1,27 @@
 ---
 title: Renderizar tabela em documento PDF
 linktitle: Renderizar tabela em documento PDF
-second_title: Referência da API Aspose.PDF para .NET
-description: Aprenda como exibir uma tabela em um documento PDF usando Aspose.PDF for .NET.
+second_title: Referência da API do Aspose.PDF para .NET
+description: Aprenda a exibir uma tabela em um documento PDF usando o Aspose.PDF para .NET.
 type: docs
 weight: 170
 url: /pt/net/programming-with-tables/render-table/
 ---
-Neste tutorial, iremos guiá-lo passo a passo para exibir uma tabela em um documento PDF usando Aspose.PDF for .NET. Explicaremos o código-fonte C# fornecido e mostraremos como implementá-lo.
+Neste tutorial, nós o guiaremos passo a passo para exibir uma tabela em um documento PDF usando Aspose.PDF para .NET. Explicaremos o código-fonte C# fornecido e mostraremos como implementá-lo.
 
-## Passo 1: Criando o documento
+## Etapa 1: Criando o documento
 Primeiro, criaremos um novo documento PDF:
 
 ```csharp
 // Caminho para o diretório de documentos
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// Crie um novo documento
+// Criar um novo documento
 Document doc = new Document();
 ```
 
-## Etapa 2: configurar margens e orientação da página
-A seguir, configuraremos as margens da página e definiremos a orientação para o modo paisagem:
+## Etapa 2: Configurando margens e orientação da página
+Em seguida, configuraremos as margens da página e definiremos a orientação para o modo paisagem:
 
 ```csharp
 PageInfo pageInfo = doc.PageInfo;
@@ -44,7 +44,7 @@ table. ColumnWidths = "50 100";
 ```
 
 ## Etapa 4: adicionar linhas e células à tabela
-seguir, adicionaremos linhas e células à tabela usando um loop:
+Em seguida, adicionaremos linhas e células à tabela usando um loop:
 
 ```csharp
 for (int i = 1; i <= 120; i++)
@@ -67,8 +67,8 @@ Aspose.Pdf.Paragraphs paragraphs = curPage.Paragraphs;
 paragraphs. Add(table);
 ```
 
-## Etapa 6: exibindo a tabela em uma nova página
-A seguir, criaremos uma nova tabela e definiremos a propriedade "IsInNewPage" como "true" para exibir a tabela em uma nova página:
+## Etapa 6: Exibindo a tabela em uma nova página
+Em seguida, criaremos uma nova tabela e definiremos a propriedade "IsInNewPage" como "true" para exibir a tabela em uma nova página:
 
 ```csharp
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
@@ -85,8 +85,8 @@ table1.IsInNewPage = true;
 paragraphs. Add(table1);
 ```
 
-## Passo 7: Salvar PDF
-Finalmente, salvamos o documento PDF:
+## Etapa 7: Salvar PDF
+Por fim, salvamos o documento PDF:
 
 ```csharp
 dataDir = dataDir + "IsNewPageProperty_Test_out.pdf";
@@ -148,26 +148,26 @@ Console.WriteLine("\nTable render successfully on a page.\nFile saved at " + dat
 ```
 
 ## Conclusão
-Parabéns! Agora você aprendeu como exibir uma tabela em um documento PDF usando Aspose.PDF for .NET. Este guia passo a passo mostrou como criar um documento, configurar margens e orientação da página, adicionar uma tabela e exibir uma tabela em uma nova página. Agora você pode aplicar esse conhecimento em seus próprios projetos.
+Parabéns! Agora você aprendeu como exibir uma tabela em um documento PDF usando o Aspose.PDF para .NET. Este guia passo a passo mostrou como criar um documento, configurar margens e orientação de página, adicionar uma tabela e exibir uma tabela em uma nova página. Agora você pode aplicar esse conhecimento aos seus próprios projetos.
 
-### Perguntas frequentes sobre tabela de renderização em documento PDF
+### Perguntas frequentes sobre a tabela de renderização em documento PDF
 
 #### P: Como posso modificar a aparência da tabela, como alterar as cores das células ou adicionar bordas?
 
-R: Para modificar a aparência da tabela, você pode definir diversas propriedades da tabela.`Aspose.Pdf.Table` e suas células. Por exemplo, você pode definir o`BackgroundColor` propriedade das células para alterar sua cor de fundo. Você também pode definir o`Border` propriedade da tabela ou células individuais para adicionar bordas. Além disso, você pode personalizar a fonte, a cor do texto e o alinhamento do conteúdo da tabela modificando o campo`TextState` do`TextFragment` objetos adicionados às células.
+R: Para modificar a aparência da tabela, você pode definir várias propriedades da mesma.`Aspose.Pdf.Table` e suas células. Por exemplo, você pode definir o`BackgroundColor` propriedade das células de alterar sua cor de fundo. Você também pode definir a`Border` propriedade da tabela ou células individuais para adicionar bordas. Além disso, você pode personalizar a fonte, a cor do texto e o alinhamento do conteúdo da tabela modificando o`TextState` do`TextFragment` objetos adicionados às células.
 
 #### P: Posso adicionar cabeçalhos ou rodapés à tabela?
 
-R: Sim, você pode adicionar cabeçalhos ou rodapés à tabela criando linhas adicionais no início ou no final da tabela e definindo o conteúdo apropriado nas células. Você pode personalizar os cabeçalhos ou rodapés independentemente do restante do conteúdo da tabela, adicionando estilos ou conteúdos diferentes a essas linhas específicas.
+R: Sim, você pode adicionar cabeçalhos ou rodapés à tabela criando linhas adicionais no início ou no fim da tabela e definindo o conteúdo apropriado nas células. Você pode personalizar os cabeçalhos ou rodapés independentemente do restante do conteúdo da tabela adicionando estilos ou conteúdo diferentes a essas linhas específicas.
 
 #### P: Como posso controlar a posição da tabela na página?
 
- R: Para controlar a posição da tabela na página, você pode ajustar o`MarginInfo` do`PageInfo` objeto. O`MarginInfo`permite definir as margens esquerda, direita, superior e inferior da página, o que afeta o espaço disponível para a tabela. Você também pode usar o`PositioningType` propriedade do`Aspose.Pdf.Table` para controlar seu alinhamento horizontal e vertical dentro da área de conteúdo da página.
+ R: Para controlar a posição da tabela na página, você pode ajustar a`MarginInfo` do`PageInfo` objeto. O`MarginInfo`permite que você defina as margens esquerda, direita, superior e inferior da página, o que afeta o espaço disponível para a tabela. Você também pode usar o`PositioningType` propriedade do`Aspose.Pdf.Table` para controlar seu alinhamento horizontal e vertical dentro da área de conteúdo da página.
 
 #### P: Posso exportar a tabela para diferentes formatos de arquivo, como Excel ou CSV?
 
-R: Aspose.PDF for .NET foi projetado principalmente para trabalhar com documentos PDF. Embora possa exportar o documento PDF como uma imagem ou XPS, não oferece suporte direto à exportação de tabelas para formatos como Excel ou CSV. Para exportar os dados da tabela para diferentes formatos de arquivo, pode ser necessário usar bibliotecas ou métodos adicionais para converter o conteúdo do PDF no formato desejado.
+R: O Aspose.PDF para .NET foi projetado principalmente para trabalhar com documentos PDF. Embora ele possa exportar o documento PDF como uma imagem ou XPS, ele não oferece suporte direto à exportação de tabelas para formatos como Excel ou CSV. Para exportar os dados da tabela para diferentes formatos de arquivo, talvez seja necessário usar bibliotecas ou métodos adicionais para converter o conteúdo do PDF para o formato desejado.
 
 #### P: Como posso adicionar hiperlinks às células da tabela?
 
- R: Para adicionar hiperlinks às células da tabela, você pode usar o`Aspose.Pdf.WebHyperlink` classe para criar um hiperlink e, em seguida, adicioná-lo como uma âncora ao`TextFragment`dentro da célula. Isso permite associar um URL ou link de destino a um texto ou conteúdo específico dentro da célula, criando hiperlinks clicáveis.
+ R: Para adicionar hiperlinks às células da tabela, você pode usar o`Aspose.Pdf.WebHyperlink` classe para criar um hiperlink e adicioná-lo como uma âncora ao`TextFragment`dentro da célula. Isso permite que você associe um URL ou link target a um texto ou conteúdo específico dentro da célula, criando hyperlinks clicáveis.

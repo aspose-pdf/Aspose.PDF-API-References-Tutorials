@@ -1,30 +1,30 @@
 ---
-title: Dinamik XFA Formunu PDF'de Standart AcroForm'a Dönüştürün
-linktitle: Dinamik XFA Formunu PDF'de Standart AcroForm'a Dönüştürün
+title: Dinamik XFA Formunu PDF'de Standart AcroForm'a Dönüştür
+linktitle: Dinamik XFA Formunu PDF'de Standart AcroForm'a Dönüştür
 second_title: Aspose.PDF Java PDF İşleme API'si
-description: Aspose.PDF for Java'yı kullanarak Dinamik XFA formlarını PDF'deki Standart AcroForm'lara zahmetsizce nasıl dönüştürebileceğinizi öğrenin. Uyumluluk ve erişilebilirliği sağlayın.
+description: Aspose.PDF for Java kullanarak Dinamik XFA formlarını PDF formatında Standart AcroForms'a zahmetsizce nasıl dönüştüreceğinizi öğrenin. Uyumluluk ve erişilebilirliği garantileyin.
 type: docs
 weight: 12
 url: /tr/java/pdf-form-fields/convert-dynamic-xfa-form-to-standard-acroform-in-pdf/
 ---
 
-## PDF'de Dinamik XFA Formunu Standart AcroForm'a Dönüştürmeye Giriş
+## Dinamik XFA Formunu PDF'de Standart AcroForm'a Dönüştürmeye Giriş
 
-PDF işleme ve oluşturma dünyasında, Dinamik XFA (XML Form Mimarisi) formlarını Standart AcroForm'lara dönüştürme ihtiyacı yaygın bir gereksinimdir. Dinamik ve etkileşimli özellikleriyle bilinen XFA formlarının avantajları vardır. Yine de bazı durumlarda uyumluluk sorunları ve daha geniş erişilebilirlik ihtiyacı, bunların daha evrensel olarak desteklenen AcroForm'lara dönüştürülmesini gerekli kılmaktadır. Bu kılavuzda, Dinamik XFA formlarını Aspose.PDF for Java kullanarak PDF'deki Standart AcroForms'a dönüştürme işlemini adım adım anlatacağız.
+PDF düzenleme ve oluşturma dünyasında, Dinamik XFA (XML Form Mimarisi) formlarını Standart AcroForms'a dönüştürme ihtiyacı yaygın bir gerekliliktir. Dinamik ve etkileşimli özellikleriyle bilinen XFA formlarının kendi avantajları vardır. Yine de bazı durumlarda uyumluluk sorunları ve daha geniş erişilebilirlik ihtiyacı, bunları daha evrensel olarak desteklenen AcroForms'a dönüştürmeyi gerekli kılar. Bu kılavuzda, Java için Aspose.PDF kullanarak Dinamik XFA formlarını PDF'de Standart AcroForms'a dönüştürme sürecini adım adım anlatacağız.
 
-## Önkoşullar
+## Ön koşullar
 
-Dönüşüm sürecine dalmadan önce aşağıdaki önkoşulların mevcut olduğundan emin olun:
+Dönüştürme sürecine başlamadan önce aşağıdaki ön koşulların mevcut olduğundan emin olun:
 
-- Java Geliştirme Ortamı: Sisteminizde Java Geliştirme Kitinin (JDK) kurulu olduğundan emin olun.
--  Aspose.PDF for Java: Aspose.PDF for Java kütüphanesini şu adresten indirip yükleyin:[Burada](https://releases.aspose.com/pdf/java/).
-- Java Tümleşik Geliştirme Ortamı (IDE): Eclipse veya IntelliJ IDEA gibi popüler IDE'leri kullanabilirsiniz.
+- Java Geliştirme Ortamı: Sisteminizde Java Geliştirme Kiti'nin (JDK) yüklü olduğundan emin olun.
+-  Java için Aspose.PDF: Java için Aspose.PDF kitaplığını şu adresten indirin ve yükleyin:[Burada](https://releases.aspose.com/pdf/java/).
+- Java Entegre Geliştirme Ortamı (IDE): Eclipse veya IntelliJ IDEA gibi popüler IDE'leri kullanabilirsiniz.
 
 ## XFA'yı AcroForm'a dönüştürme
 
-### 1. Adım: PDF Belgesini Başlatın
+### Adım 1: PDF Belgesini Başlatın
 
-Dönüşümü başlatmak için IDE'nizde yeni bir Java projesi oluşturun ve Aspose.PDF for Java kütüphanesini projenize ekleyin. Ardından bir PDF belgesini aşağıdaki şekilde başlatın:
+Dönüştürmeyi başlatmak için IDE'nizde yeni bir Java projesi oluşturun ve projenize Aspose.PDF for Java kütüphanesini ekleyin. Ardından, bir PDF belgesini aşağıdaki gibi başlatın:
 
 ```java
 //Gerekli sınıfları içe aktar
@@ -34,27 +34,27 @@ import com.aspose.pdf.Document;
 Document pdfDocument = new Document();
 ```
 
-### 2. Adım: XFA Formunu Yükleyin
+### Adım 2: XFA Formunu yükleyin
 
-Daha sonra, XFA formunu mevcut bir PDF dosyasından yüklemeniz gerekir. Aşağıdaki kod parçacığını kullanın:
+Sonra, XFA formunu mevcut bir PDF dosyasından yüklemeniz gerekir. Aşağıdaki kod parçacığını kullanın:
 
 ```java
 // Kaynak PDF'yi XFA formuyla yükleyin
 pdfDocument.setXfa(dataDir + "input.pdf");
 ```
 
-### 3. Adım: AcroForm'a Dönüştürün
+### Adım 3: AcroForm'a dönüştürün
 
-Şimdi dönüşümü gerçekleştirmenin zamanı geldi. Aspose.PDF for Java, XFA formlarını AcroForms'a dönüştürmek için basit bir yöntem sunar:
+Şimdi, dönüşümü gerçekleştirme zamanı. Java için Aspose.PDF, XFA formlarını AcroForms'a dönüştürmek için basit bir yöntem sağlar:
 
 ```java
-// XFA'yı AcroForm'a dönüştürün
+// XFA'yı AcroForm'a dönüştür
 pdfDocument.convert();
 ```
 
-### 4. Adım: Dönüştürülen PDF'yi kaydedin
+### Adım 4: Dönüştürülen PDF'yi Kaydedin
 
-Dönüştürme tamamlandıktan sonra değiştirilen PDF belgesini yeni bir dosyaya kaydedin:
+Dönüştürme tamamlandıktan sonra, değiştirilen PDF belgesini yeni bir dosyaya kaydedin:
 
 ```java
 // Dönüştürülen PDF'yi yeni bir dosyaya kaydedin
@@ -63,26 +63,26 @@ pdfDocument.save(dataDir + "output.pdf");
 
 ## Çözüm
 
-Aspose.PDF for Java ile Dinamik XFA formlarını PDF'deki Standart AcroFormlara dönüştürmek artık çok kolay. Bu güçlü kitaplık, süreci kolaylaştırır ve çeşitli PDF görüntüleyiciler ve uygulamalar arasında uyumluluk sağlar. İster karmaşık etkileşimli formlarla uğraşıyor olun, ister belge iş akışınızı basitleştiriyor olun, Aspose.PDF for Java ihtiyacınızı karşılar.
+Dinamik XFA formlarını PDF'deki Standart AcroForms'a dönüştürmek Aspose.PDF for Java ile kolaylaşır. Bu güçlü kütüphane süreci kolaylaştırır ve çeşitli PDF görüntüleyicileri ve uygulamaları arasında uyumluluğu garanti eder. İster karmaşık etkileşimli formlarla uğraşıyor olun ister belge iş akışınızı basitleştiriyor olun, Aspose.PDF for Java sizin için her şeyi yapar.
 
-## SSS'ler
+## SSS
 
-### Aspose.PDF for Java belgelerine nasıl erişebilirim?
+### Aspose.PDF for Java dokümanlarına nasıl erişebilirim?
 
- Aspose.PDF for Java belgelerine erişebilirsiniz[Burada](https://reference.aspose.com/pdf/java/).
+ Java için Aspose.PDF belgelerine erişebilirsiniz[Burada](https://reference.aspose.com/pdf/java/).
 
-### Aspose.PDF for Java farklı Java IDE'leriyle uyumlu mu?
+### Aspose.PDF for Java farklı Java IDE'leriyle uyumlu mudur?
 
 Evet, Aspose.PDF for Java, Eclipse ve IntelliJ IDEA gibi popüler Java Entegre Geliştirme Ortamları (IDE'ler) ile uyumludur.
 
 ### Dönüştürme işlemi orijinal formun düzenini koruyor mu?
 
-Evet, dönüştürme işlemi, orijinal formun düzeninin ve içeriğinin dönüştürülen PDF'de korunmasını sağlar.
+Evet, dönüştürme işlemi dönüştürülen PDF'de orijinal formun düzeninin ve içeriğinin korunmasını sağlar.
 
 ### Birden fazla XFA formunu tek bir PDF belgesine dönüştürebilir miyim?
 
-Kesinlikle! Aspose.PDF for Java'yı kullanarak birden fazla XFA formunu tek bir PDF belgesinde dönüştürebilirsiniz.
+Kesinlikle! Aspose.PDF for Java kullanarak tek bir PDF belgesi içinde birden fazla XFA formunu dönüştürebilirsiniz.
 
-### Aspose.PDF for Java'yı nereden indirebilirim?
+### Java için Aspose.PDF'yi nereden indirebilirim?
 
- Aspose.PDF for Java kütüphanesini şu adresten indirebilirsiniz:[bu bağlantı](https://releases.aspose.com/pdf/java/).
+ Java kütüphanesi için Aspose.PDF'yi şu adresten indirebilirsiniz:[bu bağlantı](https://releases.aspose.com/pdf/java/).

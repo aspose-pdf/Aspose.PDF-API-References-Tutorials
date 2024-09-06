@@ -53,7 +53,7 @@ public class PCLtoPDFConverter {
 
 ## Steg 2: Ladda PCL-fil
 
-Ladda sedan PCL-filen som du vill konvertera till en PDF. Du kan ange sökvägen till PCL-filen som du vill konvertera.
+Ladda sedan PCL-filen som du vill konvertera till en PDF. Du kan ange sökvägen till PCL-filen du vill konvertera.
 
 ```java
 String pclFilePath = "path/to/your/file.pcl";
@@ -102,7 +102,7 @@ Med Aspose.PDF för Java kan du effektivt hantera dokumentkonverteringar, vilket
 
 ### Hur kan jag ladda ner Aspose.PDF för Java?
 
- Du kan ladda ner Aspose.PDF för Java från Asposes webbplats genom att besöka[den här länken](https://releases.aspose.com/pdf/java/).
+ Du kan ladda ner Aspose.PDF för Java från Asposes webbplats genom att besöka[denna länk](https://releases.aspose.com/pdf/java/).
 
 ### Finns det några licenskrav för att använda Aspose.PDF för Java?
 

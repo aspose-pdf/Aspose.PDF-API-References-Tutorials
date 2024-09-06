@@ -2,7 +2,7 @@
 title: Szöveg keresése és hiperhivatkozás hozzáadása
 linktitle: Szöveg keresése és hiperhivatkozás hozzáadása
 second_title: Aspose.PDF for .NET API Reference
-description: Ismerje meg, hogyan kereshet szöveget PDF-ben, hogyan adhat hozzá hivatkozásokat a talált szöveghez, és hogyan mentheti el a módosított dokumentumot az Aspose.PDF for .NET segítségével.
+description: Tanulja meg, hogyan kereshet szöveget PDF-ben, hogyan adhat hiperhivatkozásokat a talált szöveghez, és hogyan mentheti el a módosított dokumentumot az Aspose.PDF for .NET segítségével.
 type: docs
 weight: 450
 url: /hu/net/programming-with-text/search-text-and-add-hyperlink/
@@ -43,7 +43,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 4. lépés: Hozzon létre egy TextFragmentAbsorber-t
 
- Hozzon létre egy`TextFragmentAbsorber` objektumot a bemeneti keresési kifejezés összes példányának megtalálásához:
+ Hozzon létre a`TextFragmentAbsorber` objektumot a bemeneti keresési kifejezés összes példányának megtalálásához:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("\\d{4}-\\d{4}");
@@ -61,7 +61,7 @@ absorber.TextSearchOptions = new TextSearchOptions(true);
 
 ## 6. lépés: Nyissa meg és kösse össze a PDF-dokumentumot
 
- Hozzon létre egy`PdfContentEditor` objektumot, és kösd a forrás PDF-fájlhoz:
+ Hozzon létre a`PdfContentEditor` objektumot, és kösd a forrás PDF-fájlhoz:
 
 ```csharp
 PdfContentEditor editor = new PdfContentEditor();
@@ -72,7 +72,7 @@ editor.BindPdf(dataDir + "SearchRegularExpressionPage.pdf");
 
 ## 7. lépés: Fogadja el az oldal elnyelőjét
 
-Fogadja el az abszorbert a dokumentum kívánt oldalához:
+Fogadja el az elnyelőt a dokumentum kívánt oldalához:
 
 ```csharp
 editor.Document.Pages[1].Accept(absorber);
@@ -80,7 +80,7 @@ editor.Document.Pages[1].Accept(absorber);
 
  Cserélje ki`1` a kívánt oldalszámmal.
 
-## 8. lépés: Adjon hozzá hiperhivatkozásokat a talált szöveghez
+## 8. lépés: Adjon hozzá hivatkozásokat a talált szöveghez
 
 Lapozzon át a letöltött szövegrészleteken, és adjon hozzá hivatkozásokat:
 
@@ -149,7 +149,7 @@ Console.WriteLine("\nText replaced and hyperlink added successfully based on a r
 
 ## Következtetés
 
-Gratulálunk! Sikeresen megtanulta, hogyan kereshet meghatározott szöveget egy PDF-dokumentumban, hogyan adhat hiperhivatkozásokat a talált szöveghez, és hogyan mentheti el a módosított dokumentumot az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a projekt beállításától a szükséges műveletek végrehajtásáig. Most már beépítheti ezt a kódot saját C#-projektjeibe, hogy szöveget manipuláljon és hiperhivatkozásokat adjon hozzá PDF-fájlokhoz.
+Gratulálok! Sikeresen megtanulta, hogyan kereshet meghatározott szöveget egy PDF-dokumentumban, hogyan adhat hiperhivatkozásokat a talált szöveghez, és hogyan mentheti el a módosított dokumentumot az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a projekt beállításától a szükséges műveletek végrehajtásáig. Most már beépítheti ezt a kódot saját C#-projektjeibe, hogy szöveget manipuláljon és hiperhivatkozásokat adjon hozzá PDF-fájlokhoz.
 
 ### GYIK
 
@@ -171,7 +171,7 @@ V: Kezdje egy új C# projekt létrehozásával a preferált integrált fejleszt�
 
 #### K: Adhatok hiperhivatkozásokat adott szöveghez ezzel az oktatóanyaggal?
 
-V: Igen, ez az oktatóanyag kifejezetten a hiperhivatkozások hozzáadására összpontosít egy PDF-dokumentum adott szövegéhez. Bemutatja, hogyan keresheti meg és bonthatja ki a kívánt szöveget reguláris kifejezések segítségével, hogyan hozhat létre hivatkozásokat a szövegrészletekhez, és hogyan mentheti el a módosított PDF-fájlt.
+V: Igen, ez az oktatóanyag kifejezetten a hiperhivatkozások hozzáadására összpontosít egy PDF-dokumentum adott szövegéhez. Bemutatja, hogyan találhatja meg és bonthatja ki a kívánt szöveget reguláris kifejezések segítségével, hogyan hozhat létre hivatkozásokat a szövegrészletekhez, és hogyan mentheti el a módosított PDF-fájlt.
 
 #### K: Hogyan határozhatom meg azt a szöveget, amelyre keresni szeretnék, és amelyhez hiperhivatkozást szeretnék hozzáadni?
 

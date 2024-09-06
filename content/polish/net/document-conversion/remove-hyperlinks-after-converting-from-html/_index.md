@@ -1,129 +1,165 @@
 ---
 title: Usuń hiperłącza po konwersji z HTML
 linktitle: Usuń hiperłącza po konwersji z HTML
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Przewodnik krok po kroku dotyczący usuwania hiperłączy po konwersji HTML na PDF przy użyciu Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: W tym przewodniku krok po kroku dowiesz się, jak usuwać hiperłącza z dokumentów HTML po przekonwertowaniu ich na format PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 250
 url: /pl/net/document-conversion/remove-hyperlinks-after-converting-from-html/
 ---
-W tym samouczku przeprowadzimy Cię przez proces usuwania hiperłączy z pliku PDF wygenerowanego z pliku HTML przy użyciu Aspose.PDF dla .NET. Hiperłącza to klikalne łącza, które mogą przekierowywać do innych stron lub witryn internetowych. Wykonując poniższe czynności, będziesz mógł usunąć hiperłącza z wynikowego pliku PDF.
+## Wstęp
 
-## Warunki wstępne
-Zanim zaczniesz, upewnij się, że spełniasz następujące wymagania wstępne:
+W erze cyfrowej konwersja dokumentów HTML do PDF jest powszechnym zadaniem. Jednak czasami możesz chcieć usunąć hiperłącza z przekonwertowanego pliku PDF z różnych powodów, takich jak poprawa czytelności lub zapobieganie niechcianej nawigacji. W tym samouczku pokażemy, jak to osiągnąć, używając Aspose.PDF dla .NET. 
 
-- Podstawowa znajomość języka programowania C#.
-- Biblioteka Aspose.PDF dla .NET zainstalowana w Twoim systemie.
-- Środowisko programistyczne, takie jak Visual Studio.
+## Wymagania wstępne
 
-## Krok 1: Ładowanie pliku HTML i usuwanie hiperłączy
-Na tym etapie załadujemy plik HTML i usuniemy hiperłącza z wynikowego dokumentu PDF. Użyj następującego kodu:
+Zanim zaczniesz pisać kod, upewnij się, że spełniasz następujące wymagania:
 
-```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+1. Visual Studio: Upewnij się, że masz zainstalowane Visual Studio na swoim komputerze. To będzie Twoje środowisko programistyczne.
+2.  Aspose.PDF dla .NET: Musisz mieć bibliotekę Aspose.PDF. Możesz ją pobrać z[Tutaj](https://releases.aspose.com/pdf/net/).
+3. Podstawowa wiedza o języku C#: Znajomość programowania w języku C# pomoże Ci lepiej zrozumieć kod.
 
-// Załaduj plik HTML, korzystając z opcji ładowania HTML
-Document doc = new Document(dataDir + "SampleHtmlFile.html", new HtmlLoadOptions());
+## Importuj pakiety
 
-// Przeglądaj adnotacje na pierwszej stronie dokumentu
-foreach(Annotation a in doc.Pages[1].Annotations)
-{
-     // Sprawdź, czy adnotacja jest linkiem
-     if (a.AnnotationType == AnnotationType.Link)
-     {
-         LinkAnnotation the = (LinkAnnotation)a;
-        
-         // Sprawdź, czy akcja jest typu GoToURIAction
-         if (the.Action is GoToURIAction)
-         {
-             GoToURIAction gta = (GoToURIAction)the.Action;
-             gta.URI = "";
-            
-             // Użyj pochłaniacza fragmentów tekstu, aby znaleźć pasujące fragmenty tekstu
-             TextFragmentAbsorber tfa = new TextFragmentAbsorber();
-             tfa.TextSearchOptions = new TextSearchOptions(a.Rect);
-             doc.Pages[a.PageIndex].Accept(tfa);
-            
-             // Przeglądaj pasujące fragmenty tekstu i usuwaj atrybuty z hiperłączy
-             foreach(TextFragment tf in tfa.TextFragments)
-             {
-                 tf.TextState.Underline = false;
-                 tf.TextState.ForegroundColor = Color.Black;
-             }
-         }
-        
-         // Usuń adnotację ze strony
-         doc.Pages[a.PageIndex].Annotations.Delete(a);
-     }
-}
-```
+Aby zacząć, musisz zaimportować niezbędne pakiety do swojego projektu C#. Oto, jak możesz to zrobić:
 
- Pamiętaj o wymianie`"YOUR DOCUMENTS DIRECTORY"` z rzeczywistym katalogiem, w którym znajduje się plik HTML.
-
-## Krok 2: Zapisanie wynikowego pliku PDF
-Na koniec zapiszemy wynikowy plik PDF bez hiperłączy. Użyj następującego kodu:
+1. Otwórz projekt programu Visual Studio.
+2. Kliknij prawym przyciskiem myszy swój projekt w Eksploratorze rozwiązań i wybierz opcję „Zarządzaj pakietami NuGet”.
+3.  Szukaj`Aspose.PDF` i zainstaluj.
 
 ```csharp
-// Zapisz wynikowy plik PDF
-doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Text;
+using System.IO;
 ```
 
- Powyższy kod zapisuje wynikowy plik PDF z nazwą pliku`"RemoveHyperlinksFromText_out.pdf"`.
+Teraz, gdy wszystko już skonfigurowałeś, przyjrzyjmy się bliżej procesowi usuwania hiperłączy z pliku HTML po przekonwertowaniu go na format PDF.
 
-### Przykładowy kod źródłowy narzędzia Usuń hiperłącza po konwersji z HTML przy użyciu Aspose.PDF dla .NET
+## Krok 1: Skonfiguruj katalog dokumentów
+
+Po pierwsze, musisz określić ścieżkę do katalogu dokumentów. To tutaj znajduje się plik HTML i gdzie zostanie zapisany wyjściowy plik PDF.
 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+ Zastępować`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką, gdzie przechowywany jest Twój plik HTML.
+
+## Krok 2: Załaduj dokument HTML
+
+ Następnie załadujesz dokument HTML za pomocą`Document` klasa z Aspose.PDF. Ta klasa pozwala na łatwą pracę z dokumentami PDF.
+
+```csharp
 Document doc = new Document(dataDir + "SampleHtmlFile.html", new HtmlLoadOptions());
+```
+
+ Tutaj ładujemy plik HTML o nazwie`SampleHtmlFile.html`. Upewnij się, że ten plik istnieje w określonym katalogu.
+
+## Krok 3: Zapisz dokument w strumieniu pamięci
+
+Zanim zaczniemy przetwarzać adnotacje, musimy zapisać dokument w strumieniu pamięci. Ten krok jest kluczowy, ponieważ przygotowuje dokument do dalszej manipulacji.
+
+```csharp
 doc.Save(new MemoryStream());
+```
+
+Ten wiersz zapisuje dokument w pamięci, co pozwala nam pracować z nim bez konieczności zapisywania go na dysku.
+
+## Krok 4: Przejrzyj adnotacje
+
+Teraz przejdziemy przez adnotacje w dokumencie. Adnotacje to elementy takie jak linki, komentarze i wyróżnienia. Jesteśmy szczególnie zainteresowani adnotacjami linków.
+
+```csharp
 foreach (Annotation a in doc.Pages[1].Annotations)
 {
-	if (a.AnnotationType == AnnotationType.Link)
-	{
-		LinkAnnotation la = (LinkAnnotation)a;
-		if (la.Action is GoToURIAction)
-		{
-			GoToURIAction gta = (GoToURIAction)la.Action;
-			gta.URI = "";
-			TextFragmentAbsorber tfa = new TextFragmentAbsorber();
-			tfa.TextSearchOptions = new TextSearchOptions(a.Rect);
-			doc.Pages[a.PageIndex].Accept(tfa);
-			foreach (TextFragment tf in tfa.TextFragments)
-			{
-				tf.TextState.Underline = false;
-				tf.TextState.ForegroundColor = Color.Black;
-			}
-		}
-		doc.Pages[a.PageIndex].Annotations.Delete(a);
-	}
+    if (a.AnnotationType == AnnotationType.Link)
+    {
+        // Przetwórz adnotację łącza
+    }
 }
+```
+
+W tej pętli sprawdzamy, czy typ adnotacji jest linkiem. Jeśli tak, przechodzimy do następnych kroków.
+
+## Krok 5: Usuń akcję hiperłącza
+
+Dla każdej adnotacji łącza musimy sprawdzić, czy ma ona akcję hiperłącza. Jeśli tak, usuniemy hiperłącze, ustawiając jego URI na pusty ciąg.
+
+```csharp
+LinkAnnotation la = (LinkAnnotation)a;
+if (la.Action is GoToURIAction)
+{
+    GoToURIAction gta = (GoToURIAction)la.Action;
+    gta.URI = "";
+```
+
+Ten fragment kodu gwarantuje, że działanie hiperłącza zostanie skutecznie usunięte.
+
+## Krok 6: Wchłoń fragmenty tekstu
+
+Następnie wchłoniemy fragmenty tekstu powiązane z adnotacją linku. To pozwoli nam manipulować wyglądem tekstu.
+
+```csharp
+TextFragmentAbsorber tfa = new TextFragmentAbsorber();
+tfa.TextSearchOptions = new TextSearchOptions(a.Rect);
+doc.Pages[a.PageIndex].Accept(tfa);
+```
+
+ Tutaj tworzymy`TextFragmentAbsorber` i ustaw opcje wyszukiwania na prostokąt adnotacji. To pomaga nam znaleźć tekst, który był linkowany.
+
+## Krok 7: Modyfikuj wygląd tekstu
+
+Gdy mamy już fragmenty tekstu, możemy zmodyfikować ich wygląd. W tym przypadku usuniemy podkreślenie i zmienimy kolor tekstu na czarny.
+
+```csharp
+foreach (TextFragment tf in tfa.TextFragments)
+{
+    tf.TextState.Underline = false;
+    tf.TextState.ForegroundColor = Color.Black;
+}
+```
+
+Ten krok poprawia czytelność tekstu poprzez usunięcie stylu hiperłącza.
+
+## Krok 8: Usuń adnotację
+
+Po zmodyfikowaniu tekstu możemy bezpiecznie usunąć adnotację linku z dokumentu.
+
+```csharp
+doc.Pages[a.PageIndex].Annotations.Delete(a);
+}
+```
+
+Ten wiersz usuwa hiperłącze z pliku PDF, gwarantując, że nie będzie ono już obecne w końcowym wydruku.
+
+## Krok 9: Zapisz zmodyfikowany dokument
+
+Na koniec musimy zapisać zmodyfikowany dokument do nowego pliku PDF. To ostatni krok w naszym procesie.
+
+```csharp
 doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 ```
 
+ Ten wiersz zapisuje dokument z usuniętymi hiperlinkami, tworząc nowy plik PDF o nazwie`RemoveHyperlinksFromText_out.pdf`.
+
 ## Wniosek
-W tym samouczku omówiliśmy krok po kroku proces usuwania hiperłączy z pliku PDF wygenerowanego z pliku HTML przy użyciu Aspose.PDF dla .NET. Postępując zgodnie z instrukcjami opisanymi powyżej, będziesz mógł skutecznie usunąć hiperłącza z wynikowego pliku PDF.
 
-### Często zadawane pytania
+I masz! Udało Ci się usunąć hiperłącza z dokumentu HTML po przekonwertowaniu go do PDF za pomocą Aspose.PDF dla .NET. Ten proces nie tylko zwiększa czytelność Twojego pliku PDF, ale także daje Ci kontrolę nad prezentowaną treścią. 
 
-#### P: Co to jest Aspose.PDF dla .NET?
+## Najczęściej zadawane pytania
 
-Odp.: Aspose.PDF dla .NET to potężna biblioteka, która umożliwia programistom pracę z dokumentami PDF w aplikacjach C#. Oferuje szeroką gamę funkcjonalności, w tym możliwość konwersji plików HTML do formatu PDF i manipulowania zawartością PDF.
+### Czy mogę usunąć hiperłącza z dowolnego dokumentu PDF?
+Tak, możesz usuwać hiperłącza z dowolnego dokumentu PDF za pomocą Aspose.PDF dla .NET.
 
-#### P: Dlaczego miałbym chcieć usunąć hiperłącza z pliku PDF?
+### Czy korzystanie z Aspose.PDF jest bezpłatne?
+ Aspose.PDF oferuje bezpłatną wersję próbną, ale aby korzystać z pełnych funkcji, musisz kupić licencję. Sprawdź[kup stronę](https://purchase.aspose.com/buy).
 
-Odp.: Istnieje wiele powodów usuwania hiperłączy z pliku PDF. Na przykład możesz chcieć wyeliminować linki zewnętrzne do celów drukowania lub archiwizacji lub upewnić się, że po zawartości pliku PDF nie będzie można nawigować za pomocą hiperłączy.
+### Co zrobić, jeśli napotkam problemy podczas korzystania z Aspose.PDF?
+ Możesz szukać pomocy na[forum wsparcia](https://forum.aspose.com/c/pdf/10).
 
-#### P: Jak mogę załadować plik HTML i usunąć hiperłącza przy użyciu Aspose.PDF dla .NET?
+### Czy mogę konwertować inne formaty plików do formatu PDF za pomocą Aspose?
+Tak, Aspose obsługuje różne formaty plików umożliwiające konwersję do formatu PDF.
 
- O: Aby załadować plik HTML i usunąć hiperłącza, możesz użyć Aspose.PDF dla .NET`HtmlLoadOptions` klasa. Przeglądaj adnotacje na stronach PDF, aby znaleźć adnotacje do linków i zmodyfikować ich atrybuty.
-
-#### P: Czy mogę dostosować nazwę pliku wyjściowego wynikowego pliku PDF?
-
-O: Tak, możesz dostosować nazwę pliku wyjściowego wynikowego pliku PDF, modyfikując kod, który zapisuje dokument PDF. Po prostu zmień żądaną nazwę pliku w`doc.Save()` metoda.
-
-#### P: Czy możliwe jest selektywne usuwanie hiperłączy w oparciu o określone kryteria?
-
-O: Tak, możesz selektywnie usuwać hiperłącza na podstawie określonych kryteriów. Możesz na przykład usunąć tylko linki zewnętrzne lub linki prowadzące do określonych adresów URL.
+### Gdzie mogę pobrać Aspose.PDF dla .NET?
+ Można go pobrać ze strony[link do pobrania](https://releases.aspose.com/pdf/net/).

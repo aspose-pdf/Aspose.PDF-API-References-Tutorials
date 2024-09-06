@@ -7,7 +7,7 @@ type: docs
 weight: 140
 url: /cs/net/programming-with-stamps-and-watermarks/image-in-header/
 ---
-V tomto tutoriálu vás krok za krokem provedeme přidáním obrázku do záhlaví dokumentu PDF pomocí Aspose.PDF pro .NET. Dodaný zdrojový kód C# použijeme k otevření existujícího dokumentu PDF, vytvoření vyrovnávací paměti obrazu, nastavení jeho vlastností a přidání na všechny stránky dokumentu PDF.
+tomto tutoriálu vás krok za krokem provedeme přidáním obrázku do záhlaví dokumentu PDF pomocí Aspose.PDF pro .NET. Dodaný zdrojový kód C# použijeme k otevření existujícího dokumentu PDF, vytvoření vyrovnávací paměti obrazu, nastavení jeho vlastností a přidání na všechny stránky dokumentu PDF.
 
 ## Krok 1: Nastavení prostředí
 
@@ -43,7 +43,7 @@ imageStamp.TopMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Top;
 
-// Přidejte vyrovnávací paměť obrázků na všechny stránky
+//Přidejte vyrovnávací paměť obrázků na všechny stránky
 foreach(Page page in pdfDocument.Pages)
 {
      page.AddStamp(imageStamp);
@@ -110,7 +110,7 @@ Odpověď: Přidání obrázku do sekce záhlaví dokumentu PDF vám umožní za
 
 #### Otázka: Mohu upravit polohu a zarovnání obrázku v sekci záhlaví?
 
- Odpověď: Ano, můžete upravit polohu a zarovnání obrázku v sekci záhlaví úpravou vlastností souboru`ImageStamp` objekt. Fragment kódu nastavuje vlastnosti jako např`TopMargin`, `HorizontalAlignment` , a`VerticalAlignment`.
+ Odpověď: Ano, můžete upravit polohu a zarovnání obrázku v sekci záhlaví úpravou vlastností souboru`ImageStamp` objekt. Fragment kódu nastavuje vlastnosti jako např`TopMargin`, `HorizontalAlignment` a`VerticalAlignment`.
 
 #### Otázka: Je možné přidat různé obrázky do sekce záhlaví na různých stránkách dokumentu PDF?
 
@@ -118,7 +118,7 @@ Odpověď: Přidání obrázku do sekce záhlaví dokumentu PDF vám umožní za
 
 #### Otázka: Jak kód zajistí, aby byl obrázek přidán na všechny stránky záhlaví dokumentu PDF?
 
-Odpověď: Poskytnutý kód používá a`foreach` smyčkou pro iteraci všech stránek dokumentu PDF a přidá to samé`ImageStamp`do sekce záhlaví každé stránky.
+ Odpověď: Poskytnutý kód používá a`foreach` smyčkou pro iteraci všech stránek dokumentu PDF a přidá to samé`ImageStamp` do sekce záhlaví každé stránky.
 
 #### Otázka: Mohu přidat další prvky, jako je text nebo tvary, do sekce záhlaví pomocí podobného přístupu?
 
@@ -134,8 +134,8 @@ Odpověď: Poskytnutý kód používá a`foreach` smyčkou pro iteraci všech st
 
 #### Otázka: Je možné odstranit nebo nahradit obrázek v záhlaví poté, co byl přidán?
 
- Odpověď: Ano, můžete odstranit nebo nahradit obrázek v sekci záhlaví úpravou obsahu souboru`ImageStamp` objekt nebo odstranění razítka z konkrétních stránek.
+Odpověď: Ano, můžete odstranit nebo nahradit obrázek v sekci záhlaví úpravou obsahu souboru`ImageStamp` objekt nebo odstranění razítka z konkrétních stránek.
 
 #### Otázka: Jak kód zpracovává scénáře, kdy rozměry obrázku přesahují dostupné místo v záhlaví?
 
- A: Kód nastavuje vlastnosti jako např`TopMargin`, `HorizontalAlignment` , a`VerticalAlignment` pro ovládání umístění a zarovnání obrazu. Ujistěte se, že tyto vlastnosti jsou upraveny tak, aby se předešlo problémům s překrýváním nebo rozvržením.
+ A: Kód nastavuje vlastnosti jako např`TopMargin`, `HorizontalAlignment` a`VerticalAlignment` pro ovládání umístění a zarovnání obrazu. Ujistěte se, že tyto vlastnosti jsou upraveny tak, aby se předešlo problémům s překrýváním nebo rozvržením.

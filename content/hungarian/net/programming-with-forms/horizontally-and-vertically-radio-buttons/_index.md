@@ -34,7 +34,7 @@ Testreszabhatja a választógomb opcióit a következő tulajdonságok beállít
 formEditor. RadioGap = 4; // Két választógomb közötti távolság
 formEditor. RadioHoriz = true; // rádiógombok vízszintes elrendezése
 formEditor.RadioButtonItemSize = 20; // A rádiógombok mérete
-formEditor.Facade.BorderWidth = 1; // A rádiógomb szegélyének szélessége
+formEditor.Facade.BorderWidth = 1; // A választógomb szegélyének szélessége
 formEditor.Facade.BorderColor = System.Drawing.Color.Black; // Rádiógomb szegélyszíne
 ```
 

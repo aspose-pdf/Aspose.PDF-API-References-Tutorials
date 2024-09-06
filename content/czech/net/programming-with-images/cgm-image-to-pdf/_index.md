@@ -11,7 +11,7 @@ Tento podrobný průvodce vysvětluje, jak převést obrázek CGM do PDF pomocí
 
 ## Krok 1: Definujte adresář dokumentů
 
- Než začnete, ujistěte se, že jste nastavili správný adresář pro dokumenty. Nahradit`"YOUR DOCUMENT DIRECTORY"` v kódu s cestou k adresáři, kde se nachází váš soubor CGM.
+Než začnete, ujistěte se, že jste nastavili správný adresář pro dokumenty. Nahradit`"YOUR DOCUMENT DIRECTORY"` v kódu s cestou k adresáři, kde se nachází váš soubor CGM.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -28,7 +28,7 @@ dataDir = dataDir + "CGMImageToPDF_out.pdf";
 
 ## Krok 3: Převeďte obrázek CGM do PDF
 
- Použijte`Produce` metoda`PdfProducer` převést soubor CGM do formátu PDF pomocí`ImportFormat.Cgm`. Zadejte vstupní soubor CGM a výstupní soubor PDF.
+ Použijte`Produce` způsob`PdfProducer` převést soubor CGM do formátu PDF pomocí`ImportFormat.Cgm`. Zadejte vstupní soubor CGM a výstupní soubor PDF.
 
 ```csharp
 PdfProducer.Produce(inputFile, ImportFormat.Cgm, dataDir);
@@ -57,7 +57,7 @@ Odpověď: CGM je zkratka pro Computer Graphics Metafile, formát souboru použ�
 
 #### Otázka: Jak Aspose.PDF for .NET usnadňuje převod obrázků CGM do PDF?
 
- Odpověď: Aspose.PDF for .NET poskytuje přímý přístup k převodu obrázků CGM do PDF pomocí`PdfProducer` třídy, díky čemuž je proces efektivní a uživatelsky přívětivý.
+ A: Aspose.PDF for .NET poskytuje přímý přístup k převodu obrázků CGM do PDF pomocí`PdfProducer` třídy, díky čemuž je proces efektivní a uživatelsky přívětivý.
 
 #### Otázka: Jaký je účel definování adresáře dokumentů v procesu převodu CGM do PDF?
 
@@ -69,7 +69,7 @@ A: Definujte název vstupního souboru CGM a určete požadovaný výstupní adr
 
 ####  Otázka: Jak to`Produce` method of `PdfProducer` contribute to the CGM to PDF conversion process?
 
- A:`Produce` metoda`PdfProducer` provede převod souboru CGM do formátu PDF pomocí zadaného vstupního souboru CGM a zvoleného výstupního souboru PDF.
+ A:`Produce` způsob`PdfProducer`provede převod souboru CGM do formátu PDF pomocí zadaného vstupního souboru CGM a zvoleného výstupního souboru PDF.
 
 #### Otázka: Mohu upravit vlastnosti a nastavení výstupního souboru PDF během převodu?
 

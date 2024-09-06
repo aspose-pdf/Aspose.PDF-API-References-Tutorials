@@ -8,7 +8,7 @@ weight: 13
 url: /cs/java/pdf-page-manipulation/add-html-using-dom-and-overwrite-content-in-java/
 ---
 
-## Úvod
+## Zavedení
 
 tomto komplexním tutoriálu podrobně prozkoumáme, jak přidat obsah HTML pomocí modelu DOM (Document Object Model) v Javě a přepsat existující obsah. K důkladné demonstraci tohoto procesu použijeme Aspose.PDF pro Javu. DOM nám umožňuje pracovat se strukturou dokumentu HTML, což usnadňuje manipulaci a programovou aktualizaci jeho obsahu.
 
@@ -18,7 +18,7 @@ Než se ponoříme do kódu, ujistěte se, že máte splněny následující př
 
 1. Vývojové prostředí Java: Ujistěte se, že máte v systému nainstalovanou Javu.
 
-2.  Aspose.PDF for Java: Stáhněte si a zahrňte knihovnu Aspose.PDF do svého projektu Java. Odkaz ke stažení najdete[tady](https://releases.aspose.com/pdf/java/).
+2.  Aspose.PDF for Java: Stáhněte si a zahrňte knihovnu Aspose.PDF do svého projektu Java. Odkaz ke stažení najdete[zde](https://releases.aspose.com/pdf/java/).
 
 ## Krok 1: Vytvořte nový dokument PDF
 

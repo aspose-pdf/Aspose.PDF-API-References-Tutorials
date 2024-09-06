@@ -1,7 +1,7 @@
 ---
-title: Gambar dan Nomor Halaman pada Bagian Header Footer Sebaris
-linktitle: Gambar dan Nomor Halaman pada Bagian Header Footer Sebaris
-second_title: Aspose.PDF untuk Referensi .NET API
+title: Gambar dan Nomor Halaman di Bagian Header Footer Sebaris
+linktitle: Gambar dan Nomor Halaman di Bagian Header Footer Sebaris
+second_title: Referensi API Aspose.PDF untuk .NET
 description: Pelajari cara menambahkan gambar dan nomor halaman di header dan footer menggunakan paragraf sebaris dengan Aspose.PDF untuk .NET.
 type: docs
 weight: 120
@@ -14,11 +14,11 @@ Dalam tutorial ini, kami akan memandu Anda langkah demi langkah tentang cara men
 Sebelum memulai, pastikan Anda memiliki hal berikut:
 
 - Lingkungan pengembangan .NET yang terinstal.
-- Pustaka Aspose.PDF untuk .NET diunduh dan direferensikan dalam proyek Anda.
+- Pustaka Aspose.PDF untuk .NET diunduh dan dirujuk dalam proyek Anda.
 
 ## Langkah 2: Membuat Dokumen dan Halaman PDF
 
-Langkah pertama adalah membuat objek Dokumen baru dan halaman di dokumen PDF. Begini caranya:
+Langkah pertama adalah membuat objek Dokumen baru dan halaman dalam dokumen PDF. Berikut caranya:
 
 ```csharp
 // Jalur ke direktori dokumen.
@@ -27,21 +27,21 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 // Buat objek Dokumen baru
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 
-// Buat halaman di dokumen
+// Buat halaman dalam dokumen
 Aspose.Pdf.Page page = pdf1.Pages.Add();
 ```
 
-Kode di atas membuat objek Dokumen baru dan halaman kosong di dokumen PDF.
+Kode di atas membuat objek Dokumen baru dan halaman kosong dalam dokumen PDF.
 
 ## Langkah 3: Menambahkan header dengan gambar dan teks sebaris
 
-Sekarang halaman telah dibuat, kita dapat menambahkan bagian header dengan gambar dan teks menggunakan paragraf sebaris. Begini caranya:
+Setelah halaman dibuat, kita dapat menambahkan bagian header dengan gambar dan teks menggunakan paragraf sebaris. Berikut caranya:
 
 ```csharp
 // Buat bagian header
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Atur tajuk halaman
+// Mengatur header halaman
 page. Header = header;
 
 // Buat objek TextFragment untuk teks sebaris pertama
@@ -51,13 +51,13 @@ Aspose.Pdf.Text.TextFragment txt1 = new Aspose.Pdf.Text.TextFragment("Aspose.Pdf
 txt1.TextState.ForegroundColor = Color.Blue;
 txt1.IsInLineParagraph = true;
 
-// Buat objek Gambar untuk gambar tersebut
+// Buat objek Gambar untuk gambar
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
 // Tetapkan jalur gambar
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Tentukan dimensi gambar
+// Tentukan dimensi gambarnya
 image1.FixWidth = 50;
 image1.FixHeight = 20;
 
@@ -75,26 +75,26 @@ header.Paragraphs.Add(image1);
 header.Paragraphs.Add(txt2);
 ```
 
-Kode di atas membuat bagian header, menyetel header halaman dengan bagian ini, menambahkan TextFragment dengan teks sebaris dan objek Gambar sebaris.
+Kode di atas membuat bagian header, menetapkan header halaman dengan bagian ini, menambahkan TextFragment dengan teks sebaris dan objek Gambar sebaris.
 
 ## Langkah 4: Menyimpan dokumen PDF yang dimodifikasi
 
-Setelah header dengan gambar dan teks sebaris ditambahkan, kita dapat menyimpan dokumen PDF yang dimodifikasi. Begini caranya:
+Setelah header dengan gambar dan teks sebaris ditambahkan, kita dapat menyimpan dokumen PDF yang dimodifikasi. Berikut caranya:
 
 ```csharp
 // Simpan dokumen PDF yang dimodifikasi
 pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.pdf");
 ```
 
-Kode di atas menyimpan dokumen PDF yang diedit ke direktori yang ditentukan.
+Kode di atas menyimpan dokumen PDF yang telah diedit ke direktori yang ditentukan.
 
-### Contoh kode sumber untuk Gambar dan Nomor Halaman di Header Footersection Inline menggunakan Aspose.PDF untuk .NET 
+### Contoh kode sumber untuk Gambar dan Nomor Halaman di bagian Header dan Footer Inline menggunakan Aspose.PDF untuk .NET 
 ```csharp
 
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Buat instance objek Dokumen dengan memanggil konstruktor kosongnya
+// Membuat instance objek Dokumen dengan memanggil konstruktor kosongnya
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
 
 // Buat halaman di objek Pdf
@@ -103,27 +103,27 @@ Aspose.Pdf.Page page = pdf1.Pages.Add();
 // Buat Bagian Header dokumen
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-// Atur header untuk file PDF
+// Mengatur header untuk file PDF
 page.Header = header;
 
-// Buat objek Teks
+// Membuat objek Teks
 Aspose.Pdf.Text.TextFragment txt1 = new Aspose.Pdf.Text.TextFragment("Aspose.Pdf is a Robust component by");
 
 // Tentukan warnanya
 txt1.TextState.ForegroundColor = Color.Blue;
 txt1.IsInLineParagraph = true;
 
-// Buat objek gambar di bagian tersebut
+// Buat objek gambar di bagian
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 
-// Tetapkan jalur file gambar
+// Mengatur jalur file gambar
 image1.File = dataDir + "aspose-logo.jpg";
 
-// Atur informasi lebar gambar
+//Mengatur lebar gambar Informasi
 image1.FixWidth = 50;
 image1.FixHeight = 20;
 
-// Tunjukkan InlineParagraph seg1 adalah sebuah gambar.
+// Tunjukkan InlineParagraph seg1 adalah gambar.
 image1.IsInLineParagraph = true;
 Aspose.Pdf.Text.TextFragment txt2 = new Aspose.Pdf.Text.TextFragment(" Pty Ltd.");
 txt2.IsInLineParagraph = true;
@@ -132,53 +132,53 @@ header.Paragraphs.Add(txt1);
 header.Paragraphs.Add(image1);
 header.Paragraphs.Add(txt2);
 
-// Simpan Pdfnya
+// Simpan PDFnya
 pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.pdf");
 
 ```
 
 ## Kesimpulan
 
-Selamat! Anda telah mempelajari cara menambahkan gambar dan nomor halaman di bagian header dan footer dokumen PDF menggunakan paragraf sebaris dengan Aspose.PDF untuk .NET. Anda sekarang dapat menyesuaikan header dan footer dokumen PDF Anda secara fleksibel.
+Selamat! Anda telah mempelajari cara menambahkan gambar dan nomor halaman di bagian header dan footer dokumen PDF menggunakan paragraf sebaris dengan Aspose.PDF untuk .NET. Kini Anda dapat menyesuaikan header dan footer dokumen PDF Anda secara fleksibel.
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
 #### T: Apa keuntungan menggunakan paragraf sebaris untuk menambahkan gambar dan teks ke header dokumen PDF?
 
-J: Menggunakan paragraf sebaris memungkinkan Anda mengintegrasikan gambar dan teks dengan mulus dalam paragraf yang sama, memberikan kontrol yang tepat atas penempatan dan pemformatannya. Metode ini sangat berguna untuk membuat header khusus dengan elemen visual.
+J: Menggunakan paragraf sebaris memungkinkan Anda untuk mengintegrasikan gambar dan teks dengan lancar dalam paragraf yang sama, memberikan kontrol yang tepat atas penempatan dan pemformatannya. Metode ini sangat berguna untuk membuat tajuk khusus dengan elemen visual.
 
-#### T: Bagaimana kode sumber C# yang disediakan menghasilkan paragraf sebaris untuk header dalam dokumen PDF?
+#### T: Bagaimana kode sumber C# yang disediakan mencapai paragraf sebaris untuk tajuk dalam dokumen PDF?
 
-J: Kode yang diberikan menunjukkan cara membuat dokumen PDF, menambahkan halaman, dan menyesuaikan header menggunakan paragraf sebaris. Ia menambahkan TextFragment dengan teks sebaris, gambar sebaris, dan TextFragment sebaris lainnya.
+A: Kode yang diberikan menunjukkan cara membuat dokumen PDF, menambahkan halaman, dan menyesuaikan header menggunakan paragraf sebaris. Kode ini menambahkan TextFragment dengan teks sebaris, gambar sebaris, dan TextFragment sebaris lainnya.
 
 #### T: Bagaimana cara menentukan warna teks sebaris di header?
 
- A: Warna teks sebaris ditentukan menggunakan`ForegroundColor` properti dari`TextState` dari`TextFragment` obyek.
+ A: Warna teks sebaris ditentukan menggunakan`ForegroundColor` milik`TextState` dari`TextFragment` obyek.
 
 #### T: Dapatkah saya menyesuaikan dimensi gambar sebaris di header?
 
- A: Ya, Anda dapat mengatur dimensi gambar sebaris menggunakan`FixWidth` Dan`FixHeight` properti dari`Image` obyek. Ini memungkinkan Anda mengontrol lebar dan tinggi gambar di dalam header.
+ A: Ya, Anda dapat menyesuaikan dimensi gambar sebaris menggunakan`FixWidth` Dan`FixHeight` properti dari`Image` objek. Ini memungkinkan Anda untuk mengontrol lebar dan tinggi gambar di dalam header.
 
-#### T: Bisakah saya menyertakan elemen sebaris tambahan, seperti hyperlink atau gaya font berbeda, di header?
+#### T: Dapatkah saya menyertakan elemen sebaris tambahan, seperti hyperlink atau gaya font yang berbeda, di header?
 
- J: Ya, Anda dapat menyertakan elemen inline tambahan di header dengan membuat lebih banyak`TextFragment` atau`Image` objek dengan properti yang diinginkan. Ini memungkinkan Anda untuk menyesuaikan header lebih lanjut, termasuk hyperlink, gaya font yang berbeda, atau elemen visual lainnya.
+ A: Ya, Anda dapat menyertakan elemen sebaris tambahan di header dengan membuat lebih banyak`TextFragment` atau`Image` objek dengan properti yang diinginkan. Ini memungkinkan Anda untuk menyesuaikan header lebih lanjut, termasuk hyperlink, gaya font yang berbeda, atau elemen visual lainnya.
 
-#### T: Bagaimana cara memastikan bahwa gambar dan teks sebaris tetap selaras dan diformat dengan benar di berbagai perangkat dan pemirsa?
+#### T: Bagaimana saya dapat memastikan gambar dan teks sebaris tetap selaras dan terformat dengan benar di berbagai perangkat dan penampil?
 
-J: Aspose.PDF untuk .NET memastikan bahwa gambar dan teks sebaris disejajarkan dan diformat dengan benar, sehingga menghasilkan tampilan yang konsisten di berbagai perangkat dan penampil PDF.
+A: Aspose.PDF untuk .NET memastikan bahwa gambar dan teks sebaris diselaraskan dan diformat dengan benar, menghasilkan tampilan yang konsisten di berbagai perangkat dan penampil PDF.
 
 #### T: Dapatkah saya menerapkan paragraf sebaris ke bagian footer juga?
 
- A: Ya, Anda dapat menerapkan teknik yang sama yaitu menggunakan paragraf sebaris pada bagian footer dengan membuat a`Footer` objek dan menambahkan elemen sebaris seperti teks dan gambar ke dalamnya.
+ A: Ya, Anda dapat menerapkan teknik yang sama dalam menggunakan paragraf sebaris ke bagian footer dengan membuat`Footer` objek dan menambahkan elemen sebaris seperti teks dan gambar ke dalamnya.
 
 #### T: Apakah mungkin untuk menggabungkan paragraf sebaris dengan metode penyesuaian header atau footer lainnya?
 
-J: Ya, Anda dapat menggabungkan paragraf sebaris dengan metode penyesuaian header atau footer lain yang disediakan oleh Aspose.PDF untuk .NET untuk membuat desain header atau footer yang lebih kompleks dan disesuaikan.
+A: Ya, Anda dapat menggabungkan paragraf sebaris dengan metode penyesuaian header atau footer lain yang disediakan oleh Aspose.PDF untuk .NET untuk membuat desain header atau footer yang lebih kompleks dan khusus.
 
-#### T: Dapatkah saya menghapus atau menghapus elemen sebaris dari header jika diperlukan?
+#### T: Dapatkah saya menghapus atau mengosongkan elemen sebaris dari header jika diperlukan?
 
- J: Ya, Anda dapat menghapus atau menghapus elemen sebaris dengan memodifikasi kontennya`HeaderFooter` keberatan dan menghapus masing-masing paragraf sebaris.
+ A: Ya, Anda dapat menghapus atau membersihkan elemen sebaris dengan memodifikasi konten`HeaderFooter`objek dan menghapus paragraf sebaris yang bersangkutan.
 
-#### T: Bagaimana cara menerapkan paragraf sebaris ke halaman tertentu di dokumen PDF?
+#### T: Bagaimana cara menerapkan paragraf sebaris ke halaman tertentu dalam dokumen PDF?
 
- A: Untuk menerapkan paragraf sebaris pada halaman tertentu, Anda dapat membuatnya terpisah`HeaderFooter` objek untuk setiap halaman dan menugaskannya menggunakan`Header` milik masing-masing`Aspose.Pdf.Page` objek.
+ A: Untuk menerapkan paragraf sebaris ke halaman tertentu, Anda dapat membuat paragraf terpisah`HeaderFooter` objek untuk setiap halaman dan menetapkannya menggunakan`Header` milik masing-masing`Aspose.Pdf.Page` objek.

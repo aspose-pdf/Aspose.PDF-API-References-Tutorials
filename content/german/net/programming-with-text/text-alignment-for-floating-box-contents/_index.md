@@ -1,56 +1,56 @@
 ---
-title: Textausrichtung für Floating-Box-Inhalte in PDF-Dateien
-linktitle: Textausrichtung für Floating-Box-Inhalte in PDF-Dateien
+title: Textausrichtung für schwebende Boxinhalte in PDF-Datei
+linktitle: Textausrichtung für schwebende Boxinhalte in PDF-Datei
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Text in schwebenden Feldern in einer PDF-Datei ausrichten.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Text in schwebenden Feldern in PDF-Dateien ausrichten.
 type: docs
 weight: 520
 url: /de/net/programming-with-text/text-alignment-for-floating-box-contents/
 ---
-In diesem Tutorial wird erläutert, wie Sie mit Aspose.PDF für .NET Text in schwebenden Feldern in einer PDF-Datei ausrichten. Der bereitgestellte C#-Quellcode demonstriert den Prozess Schritt für Schritt.
+Dieses Tutorial erklärt, wie Sie mit Aspose.PDF für .NET Text in schwebenden Boxen in PDF-Dateien ausrichten. Der bereitgestellte C#-Quellcode demonstriert den Vorgang Schritt für Schritt.
 
 ## Voraussetzungen
 
-Bevor Sie mit dem Tutorial fortfahren, stellen Sie sicher, dass Sie über Folgendes verfügen:
+Bevor Sie mit dem Lernprogramm fortfahren, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
 - Grundkenntnisse der Programmiersprache C#.
-- Aspose.PDF für .NET-Bibliothek installiert. Sie können es von der Aspose-Website herunterladen oder NuGet verwenden, um es in Ihrem Projekt zu installieren.
+- Aspose.PDF für .NET-Bibliothek installiert. Sie können es von der Aspose-Website beziehen oder NuGet verwenden, um es in Ihrem Projekt zu installieren.
 
-## Schritt 1: Richten Sie das Projekt ein
+## Schritt 1: Einrichten des Projekts
 
-Erstellen Sie zunächst ein neues C#-Projekt in Ihrer bevorzugten integrierten Entwicklungsumgebung (IDE) und fügen Sie einen Verweis auf die Aspose.PDF für .NET-Bibliothek hinzu.
+Beginnen Sie mit der Erstellung eines neuen C#-Projekts in Ihrer bevorzugten integrierten Entwicklungsumgebung (IDE) und fügen Sie einen Verweis auf die Aspose.PDF-Bibliothek für .NET hinzu.
 
-## Schritt 2: Importieren Sie die erforderlichen Namespaces
+## Schritt 2: Erforderliche Namespaces importieren
 
-Fügen Sie am Anfang Ihrer C#-Datei die folgenden using-Anweisungen hinzu, um die erforderlichen Namespaces zu importieren:
+Fügen Sie am Anfang Ihrer C#-Datei die folgenden Using-Direktiven hinzu, um die erforderlichen Namespaces zu importieren:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-## Schritt 3: Legen Sie den Pfad zum Dokumentverzeichnis fest
+## Schritt 3: Pfad zum Dokumentverzeichnis festlegen
 
- Legen Sie den Pfad zu Ihrem Dokumentverzeichnis mit fest`dataDir` Variable:
+ Legen Sie den Pfad zu Ihrem Dokumentverzeichnis fest mit dem`dataDir` Variable:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Ersetzen`"YOUR DOCUMENT DIRECTORY"` mit dem tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
+ Ersetzen`"YOUR DOCUMENT DIRECTORY"` durch den tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
 
-## Schritt 4: Erstellen Sie ein neues Dokument
+## Schritt 4: Neues Dokument erstellen
 
- Erstelle eine neue`Document` Objekt:
+ Erstellen Sie ein neues`Document` Objekt:
 
 ```csharp
 Aspose.Pdf.Document doc = new Document();
 doc.Pages.Add();
 ```
 
-## Schritt 5: Erstellen Sie schwebende Boxen mit Textfragmenten
+## Schritt 5: Schwebende Boxen mit Textfragmenten erstellen
 
- Mehrere erstellen`FloatingBox` Objekte mit unterschiedlicher vertikaler und horizontaler Ausrichtung:
+ Erstellen Sie mehrere`FloatingBox` Objekte mit unterschiedlicher vertikaler und horizontaler Ausrichtung:
 
 ```csharp
 Aspose.Pdf.FloatingBox floatBox = new Aspose.Pdf.FloatingBox(100, 100);
@@ -75,7 +75,7 @@ floatBox2.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, Aspose.P
 doc.Pages[1].Paragraphs.Add(floatBox2);
 ```
 
- Ändern Sie den Text und den Stil des`TextFragment` Objekte nach Wunsch.
+ Ändern Sie den Text und das Styling der`TextFragment` Objekte nach Wunsch.
 
 ## Schritt 6: Speichern Sie das PDF-Dokument
 
@@ -85,11 +85,11 @@ Speichern Sie das geänderte PDF-Dokument:
 doc.Save(dataDir + "FloatingBox_alignment_review_out.pdf");
 ```
 
- Unbedingt austauschen`"FloatingBox_alignment_review_out.pdf"` mit dem gewünschten Ausgabedateinamen.
+ Ersetzen Sie unbedingt`"FloatingBox_alignment_review_out.pdf"` durch den gewünschten Ausgabedateinamen.
 
-### Beispielquellcode für die Textausrichtung für Floating-Box-Inhalte mit Aspose.PDF für .NET 
+### Beispielquellcode für die Textausrichtung für schwebende Boxinhalte mit Aspose.PDF für .NET 
 ```csharp
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document doc = new Document();
 doc.Pages.Add();
@@ -116,42 +116,42 @@ doc.Save(dataDir + "FloatingBox_alignment_review_out.pdf");
 
 ## Abschluss
 
-Glückwunsch! Sie haben erfolgreich gelernt, wie Sie mit Aspose.PDF für .NET Text in schwebenden Feldern in einem PDF-Dokument ausrichten. Dieses Tutorial bietet eine Schritt-für-Schritt-Anleitung vom Einrichten des Projekts bis zum Speichern des geänderten Dokuments. Sie können diesen Code jetzt in Ihre eigenen C#-Projekte integrieren, um die Textausrichtung in schwebenden Feldern in PDF-Dateien anzupassen.
+Herzlichen Glückwunsch! Sie haben erfolgreich gelernt, wie Sie mit Aspose.PDF für .NET Text in schwebenden Boxen in einem PDF-Dokument ausrichten. Dieses Tutorial bietet eine Schritt-für-Schritt-Anleitung vom Einrichten des Projekts bis zum Speichern des geänderten Dokuments. Sie können diesen Code jetzt in Ihre eigenen C#-Projekte integrieren, um die Ausrichtung von Text in schwebenden Boxen in PDF-Dateien anzupassen.
 
-### FAQs
+### Häufig gestellte Fragen
 
-#### F: Was ist der Zweck des Tutorials „Textausrichtung für Floating-Box-Inhalte in PDF-Dateien“?
+#### F: Was ist der Zweck des Tutorials „Textausrichtung für schwebende Boxinhalte in PDF-Dateien“?
 
-A: Das Tutorial „Textausrichtung für schwebende Boxinhalte in PDF-Dateien“ zielt darauf ab, Benutzern bei der Ausrichtung von Text in schwebenden Boxen in einem PDF-Dokument mit Aspose.PDF für .NET zu helfen. Das Tutorial bietet Schritt-für-Schritt-Anleitungen und C#-Codebeispiele zur Veranschaulichung des Prozesses.
+A: Das Tutorial „Textausrichtung für schwebende Boxinhalte in PDF-Dateien“ soll Benutzern zeigen, wie sie Text in schwebenden Boxen in einem PDF-Dokument mit Aspose.PDF für .NET ausrichten können. Das Tutorial enthält schrittweise Anleitungen und C#-Codebeispiele zur Demonstration des Vorgangs.
 
-#### F: Wie hilft dieses Tutorial beim Ausrichten von Text in schwebenden Feldern?
+#### F: Wie hilft dieses Tutorial beim Ausrichten von Text in schwebenden Boxen?
 
-A: Dieses Tutorial hilft Benutzern zu verstehen, wie sie Aspose.PDF für .NET verwenden, um Text in schwebenden Feldern in einem PDF-Dokument auszurichten. Durch Befolgen der bereitgestellten Schritte und Codebeispiele können Benutzer die vertikale und horizontale Ausrichtung von Text in schwebenden Feldern anpassen.
+A: Dieses Tutorial hilft Benutzern zu verstehen, wie sie Aspose.PDF für .NET verwenden können, um Text in schwebenden Boxen in einem PDF-Dokument auszurichten. Indem Benutzer die bereitgestellten Schritte und Codebeispiele befolgen, können sie die vertikale und horizontale Ausrichtung von Text in schwebenden Boxen anpassen.
 
 #### F: Welche Voraussetzungen sind erforderlich, um diesem Tutorial folgen zu können?
 
-A: Bevor Sie mit dem Tutorial beginnen, sollten Sie über grundlegende Kenntnisse der Programmiersprache C# verfügen. Darüber hinaus muss die Bibliothek Aspose.PDF für .NET installiert sein. Sie können es von der Aspose-Website herunterladen oder mit NuGet in Ihrem Projekt installieren.
+A: Bevor Sie mit dem Tutorial beginnen, sollten Sie über Grundkenntnisse der Programmiersprache C# verfügen. Darüber hinaus müssen Sie die Bibliothek Aspose.PDF für .NET installiert haben. Sie können sie von der Aspose-Website herunterladen oder mit NuGet in Ihrem Projekt installieren.
 
 #### F: Wie richte ich mein Projekt ein, um diesem Tutorial zu folgen?
 
-A: Erstellen Sie zunächst ein neues C#-Projekt in Ihrer bevorzugten integrierten Entwicklungsumgebung (IDE) und fügen Sie einen Verweis auf die Bibliothek Aspose.PDF für .NET hinzu. Dadurch können Sie die Funktionen der Bibliothek zum Arbeiten mit PDF-Dokumenten und zum Ausrichten von Text in schwebenden Feldern nutzen.
+A: Erstellen Sie zunächst ein neues C#-Projekt in Ihrer bevorzugten integrierten Entwicklungsumgebung (IDE) und fügen Sie einen Verweis auf die Aspose.PDF-Bibliothek für .NET hinzu. Auf diese Weise können Sie die Funktionen der Bibliothek für die Arbeit mit PDF-Dokumenten und die Ausrichtung von Text in schwebenden Feldern nutzen.
 
-#### F: Kann ich dieses Tutorial verwenden, um Text in jeder Art von Schweberahmen auszurichten?
+#### F: Kann ich dieses Tutorial verwenden, um Text innerhalb einer beliebigen Art von schwebendem Feld auszurichten?
 
-A: Ja, dieses Tutorial enthält Anweisungen zum Ausrichten von Text in schwebenden Feldern in einem PDF-Dokument mit Aspose.PDF für .NET. Mithilfe der bereitgestellten Codebeispiele können Sie die vertikale und horizontale Ausrichtung von Text in schwebenden Feldern anpassen.
+A: Ja, dieses Tutorial enthält Anweisungen zum Ausrichten von Text in schwebenden Boxen in einem PDF-Dokument mit Aspose.PDF für .NET. Sie können die bereitgestellten Codebeispiele verwenden, um die vertikale und horizontale Ausrichtung von Text in schwebenden Boxen anzupassen.
 
-#### F: Wie lege ich die Ausrichtung von Text innerhalb eines schwebenden Felds fest?
+#### F: Wie lege ich die Textausrichtung innerhalb eines schwebenden Felds fest?
 
- A: Das Tutorial zeigt, wie man erstellt`FloatingBox`Objekte und setzen ihre`VerticalAlignment` Und`HorizontalAlignment` Eigenschaften, um die Ausrichtung des enthaltenen Textes zu steuern. Sie können diese Eigenschaften entsprechend Ihren Anforderungen anpassen.
+ A: Das Tutorial zeigt, wie man`FloatingBox`Objekte und legen Sie deren`VerticalAlignment` Und`HorizontalAlignment` Eigenschaften zur Steuerung der Ausrichtung des enthaltenen Textes. Sie können diese Eigenschaften Ihren Anforderungen entsprechend anpassen.
 
 #### F: Wie kann ich das Erscheinungsbild der schwebenden Boxen anpassen?
 
- A: Sie können das Erscheinungsbild der schwebenden Boxen anpassen, indem Sie Eigenschaften wie Rahmen, Größe und Textinhalt ändern. Das Tutorial enthält Codebeispiele, die veranschaulichen, wie das erstellt und gestaltet wird`FloatingBox` Objekte.
+ A: Sie können das Erscheinungsbild der schwebenden Boxen anpassen, indem Sie Eigenschaften wie Rahmen, Größe und Textinhalt ändern. Das Tutorial enthält Codebeispiele, die zeigen, wie Sie die`FloatingBox` Objekte.
 
-#### F: Kann ich im selben PDF-Dokument mehrere Schweberahmen mit unterschiedlicher Ausrichtung hinzufügen?
+#### F: Kann ich mehrere schwebende Boxen mit unterschiedlicher Ausrichtung in dasselbe PDF-Dokument einfügen?
 
- A: Ja, das Tutorial zeigt, wie man mehrere erstellt`FloatingBox` Objekte mit unterschiedlicher vertikaler und horizontaler Ausrichtung und fügen Sie sie demselben PDF-Dokument hinzu. Dadurch können Sie die Auswirkungen verschiedener Ausrichtungen innerhalb desselben Dokuments sehen.
+ A: Ja, das Tutorial zeigt, wie man mehrere`FloatingBox` Objekte mit unterschiedlicher vertikaler und horizontaler Ausrichtung und fügen Sie sie demselben PDF-Dokument hinzu. Auf diese Weise können Sie die Auswirkungen verschiedener Ausrichtungen innerhalb desselben Dokuments sehen.
 
 #### F: Wie speichere ich das geänderte PDF-Dokument?
 
- A: Um das geänderte PDF-Dokument zu speichern, können Sie das verwenden`Save` Methode der`Document` Objekt. Das Tutorial stellt Codebeispiele bereit, die veranschaulichen, wie das resultierende PDF-Dokument gespeichert wird.
+ A: Um das geänderte PDF-Dokument zu speichern, können Sie den`Save` Methode der`Document` Objekt. Das Tutorial enthält Codebeispiele, die zeigen, wie das resultierende PDF-Dokument gespeichert wird.

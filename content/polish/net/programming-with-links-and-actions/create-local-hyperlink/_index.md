@@ -1,17 +1,17 @@
 ---
 title: Utwórz lokalne hiperłącze w pliku PDF
 linktitle: Utwórz lokalne hiperłącze w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Z łatwością twórz lokalne hiperłącza w pliku PDF za pomocą Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Łatwe tworzenie lokalnych hiperłączy w plikach PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 40
 url: /pl/net/programming-with-links-and-actions/create-local-hyperlink/
 ---
-Tworzenie lokalnych hiperłączy w pliku PDF umożliwia tworzenie klikalnych łączy przenoszących użytkowników do innych stron tego samego dokumentu PDF. Dzięki Aspose.PDF dla .NET możesz łatwo utworzyć takie linki, postępując zgodnie z następującym kodem źródłowym:
+Tworzenie lokalnych hiperłączy w pliku PDF pozwala tworzyć klikalne łącza, które przenoszą użytkowników do innych stron w tym samym dokumencie PDF. Dzięki Aspose.PDF dla .NET możesz łatwo tworzyć takie łącza, postępując zgodnie z następującym kodem źródłowym:
 
-## Krok 1: Zaimportuj wymagane biblioteki
+## Krok 1: Importuj wymagane biblioteki
 
-Zanim zaczniesz, musisz zaimportować niezbędne biblioteki dla swojego projektu C#. Oto niezbędna dyrektywa importowa:
+Zanim zaczniesz, musisz zaimportować niezbędne biblioteki dla swojego projektu C#. Oto niezbędna dyrektywa importu:
 
 ```csharp
 using Aspose.Pdf;
@@ -21,23 +21,23 @@ using Aspose.Pdf.InteractiveFeatures;
 
 ## Krok 2: Ustaw ścieżkę do folderu dokumentów
 
- W tym kroku musisz określić ścieżkę do folderu, w którym chcesz zapisać wynikowy plik PDF. Zastępować`"YOUR DOCUMENT DIRECTORY"` następującym kodzie z rzeczywistą ścieżką do folderu dokumentów:
+ W tym kroku musisz określić ścieżkę do folderu, w którym chcesz zapisać wynikowy plik PDF. Zastąp`"YOUR DOCUMENT DIRECTORY"` w poniższym kodzie podaj rzeczywistą ścieżkę do folderu z dokumentami:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Krok 3: Utwórz instancję dokumentu
+## Krok 3: Utwórz wystąpienie dokumentu
 
- Stworzymy instancję`Document` class reprezentująca nasz dokument PDF. Oto odpowiedni kod:
+ Utworzymy instancję`Document` klasa do reprezentowania naszego dokumentu PDF. Oto odpowiadający kod:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Krok 4: Dodaj stronę i tekst za pomocą hiperłączy
+## Krok 4: Dodaj stronę i tekst z hiperłączami
 
-W tym kroku dodamy stronę do naszego dokumentu PDF i dodamy tekst zawierający lokalne hiperłącza. Zdefiniujemy strony docelowe dla każdego linku. Oto odpowiedni kod:
+tym kroku dodamy stronę do naszego dokumentu PDF i dodamy tekst zawierający lokalne hiperłącza. Zdefiniujemy strony docelowe dla każdego łącza. Oto odpowiedni kod:
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -58,42 +58,42 @@ page.Paragraphs.Add(text);
 
 ## Krok 5: Zapisz zaktualizowany dokument
 
- Teraz zapiszmy zaktualizowany plik PDF za pomocą rozszerzenia`Save` metoda`doc` obiekt. Oto odpowiedni kod:
+Teraz zapiszmy zaktualizowany plik PDF za pomocą`Save` metoda`doc` obiekt. Oto odpowiadający kod:
 
 ```csharp
 dataDir = dataDir + "CreateLocalHyperlink_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Przykładowy kod źródłowy narzędzia Utwórz lokalne hiperłącze przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Utwórz lokalne hiperłącze przy użyciu Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Utwórz instancję dokumentu
 Document doc = new Document();
-// Dodaj stronę do kolekcji stron pliku PDF
+// Dodaj stronę do zbioru stron pliku PDF
 Page page = doc.Pages.Add();
 // Utwórz instancję fragmentu tekstu
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("link page number test to page 7");
 // Utwórz lokalną instancję hiperłącza
 Aspose.Pdf.LocalHyperlink link = new Aspose.Pdf.LocalHyperlink();
-// Ustaw stronę docelową dla instancji łącza
+// Ustaw stronę docelową dla wystąpienia łącza
 link.TargetPageNumber = 7;
 // Ustaw hiperłącze TextFragment
 text.Hyperlink = link;
-//Dodaj tekst do kolekcji akapitów Page
+// Dodaj tekst do zbioru akapitów strony
 page.Paragraphs.Add(text);
 // Utwórz nową instancję TextFragment
 text = new TextFragment("link page number test to page 1");
-// TextFragment należy dodać na nowej stronie
+// Fragment tekstu należy dodać na nowej stronie
 text.IsInNewPage = true;
 // Utwórz kolejną lokalną instancję hiperłącza
 link = new LocalHyperlink();
 // Ustaw stronę docelową dla drugiego hiperłącza
 link.TargetPageNumber = 1;
-// Ustaw łącze dla drugiego fragmentu tekstu
+// Ustaw link dla drugiego fragmentu tekstu
 text.Hyperlink = link;
-// Dodaj tekst do kolekcji akapitów obiektu strony
+// Dodaj tekst do zbioru akapitów obiektu strony
 page.Paragraphs.Add(text);    
 dataDir = dataDir + "CreateLocalHyperlink_out.pdf";
 // Zapisz zaktualizowany dokument
@@ -103,43 +103,43 @@ Console.WriteLine("\nLocal hyperlink created successfully.\nFile saved at " + da
 
 ## Wniosek
 
-Gratulacje! Teraz masz przewodnik krok po kroku dotyczący tworzenia lokalnych hiperłączy w pliku PDF przy użyciu Aspose.PDF dla .NET. Możesz użyć tego kodu, aby utworzyć klikalne linki przenoszące użytkowników do innych stron w tym samym dokumencie.
+Gratulacje! Teraz masz przewodnik krok po kroku, jak tworzyć lokalne hiperłącza w pliku PDF przy użyciu Aspose.PDF dla .NET. Możesz użyć tego kodu, aby tworzyć klikalne łącza, które przenoszą użytkowników do innych stron w tym samym dokumencie.
 
 Koniecznie zapoznaj się z oficjalną dokumentacją Aspose.PDF, aby uzyskać więcej informacji na temat zaawansowanych funkcji hiperłączy.
 
-### Często zadawane pytania dotyczące tworzenia lokalnego hiperłącza w pliku PDF
+### FAQ dotyczące tworzenia lokalnego hiperłącza w pliku PDF
 
 #### P: Czym są lokalne hiperłącza w pliku PDF?
 
-Odp.: Lokalne hiperłącza w pliku PDF to klikalne łącza, które przenoszą użytkowników do różnych stron w tym samym dokumencie. Linki te usprawniają nawigację i umożliwiają czytelnikom szybki dostęp do odpowiednich sekcji.
+A: Lokalne hiperłącza w pliku PDF to klikalne łącza, które kierują użytkowników do różnych stron w tym samym dokumencie. Te łącza usprawniają nawigację i pozwalają czytelnikom na szybki dostęp do odpowiednich sekcji.
 
-#### P: W jaki sposób lokalne hiperłącza mogą pomóc mojemu dokumentowi PDF?
+#### P: Jaką korzyść mogą przynieść lokalne hiperłącza w moim dokumencie PDF?
 
-Odp.: Lokalne hiperłącza stanowią skuteczny sposób łączenia powiązanych treści w tym samym dokumencie PDF. Poprawiają wygodę użytkownika, umożliwiając czytelnikom szybkie przechodzenie do określonych sekcji bez konieczności przewijania całego dokumentu.
+A: Lokalne hiperłącza zapewniają wydajny sposób łączenia powiązanych treści w tym samym dokumencie PDF. Poprawiają one doświadczenie użytkownika, umożliwiając czytelnikom szybkie przechodzenie do określonych sekcji bez przewijania całego dokumentu.
 
-#### P: W jaki sposób Aspose.PDF dla .NET obsługuje tworzenie lokalnych hiperłączy?
-Odp.: Aspose.PDF dla .NET oferuje kompleksową obsługę tworzenia lokalnych hiperłączy. Samouczek krok po kroku zawarty w tym przewodniku pokazuje, jak dodać lokalne hiperłącza do dokumentu PDF przy użyciu języka C#.
+#### P: W jaki sposób Aspose.PDF dla platformy .NET obsługuje tworzenie lokalnych hiperłączy?
+A: Aspose.PDF dla .NET oferuje kompleksowe wsparcie dla tworzenia lokalnych hiperłączy. Samouczek krok po kroku zawarty w tym przewodniku pokazuje, jak dodawać lokalne hiperłącza do dokumentu PDF za pomocą języka C#.
 
 #### P: Czy mogę dostosować wygląd lokalnych hiperłączy?
 
-O: Tak, możesz dostosować wygląd lokalnych hiperłączy, w tym kolor i styl tekstu, aby mieć pewność, że pasują one do projektu dokumentu i zapewniają spójne wrażenia wizualne.
+O: Tak, możesz dostosować wygląd lokalnych hiperłączy, w tym kolor i styl tekstu, aby mieć pewność, że będą one pasować do projektu Twojego dokumentu i zapewnią spójne wrażenia wizualne.
 
-#### P: Czy można utworzyć wiele lokalnych hiperłączy na jednej stronie pliku PDF?
+#### P: Czy można utworzyć wiele lokalnych hiperłączy w ramach jednej strony pliku PDF?
 
-Odp.: Absolutnie! Na jednej stronie pliku PDF można utworzyć wiele lokalnych hiperłączy, umożliwiając czytelnikom przechodzenie do różnych sekcji lub stron w razie potrzeby. Każde lokalne hiperłącze można dostosować do odpowiedniego celu.
+A: Oczywiście! Możesz utworzyć wiele lokalnych hiperłączy w ramach jednej strony PDF, umożliwiając czytelnikom przeskakiwanie do różnych sekcji lub stron w razie potrzeby. Każde lokalne hiperłącze można dostosować do jego celu.
 
-#### P: Czy mogę utworzyć łącze do określonych sekcji strony za pomocą lokalnych hiperłączy?
+#### P: Czy mogę linkować do konkretnych sekcji strony za pomocą lokalnych hiperłączy?
 
-Odp.: Chociaż lokalne hiperłącza zazwyczaj prowadzą do całych stron, w dokumencie PDF można tworzyć kotwice lub zakładki, aby uzyskać ukierunkowane linki. Aspose.PDF dla .NET obsługuje różne opcje hiperłączy.
+A: Podczas gdy lokalne hiperłącza zazwyczaj prowadzą do całych stron, możesz tworzyć kotwice lub zakładki w dokumencie PDF, aby uzyskać ukierunkowane łączenie. Aspose.PDF dla .NET obsługuje różne opcje hiperłączy.
 
-#### P: Jak mogę sprawdzić, czy moje lokalne hiperłącza działają poprawnie?
+#### P: Jak mogę sprawdzić, czy moje lokalne hiperłącza działają prawidłowo?
 
-Odp.: Postępując zgodnie z dostarczonym samouczkiem i przykładowym kodem, możesz z łatwością tworzyć funkcjonalne hiperłącza lokalne. Możesz przetestować łącza, otwierając wygenerowany dokument PDF i klikając tekst hiperłącza.
+A: Postępując zgodnie z samouczkiem i przykładowym kodem, możesz pewnie tworzyć funkcjonalne lokalne hiperłącza. Możesz przetestować łącza, otwierając wygenerowany dokument PDF i klikając na tekst hiperłącza.
 
-#### P: Czy istnieją jakieś ograniczenia podczas korzystania z lokalnych hiperłączy?
+#### P: Czy istnieją jakieś ograniczenia przy korzystaniu z lokalnych hiperłączy?
 
-O: Lokalne hiperłącza to skuteczny sposób na usprawnienie nawigacji w dokumencie, ale ważne jest, aby struktura dokumentu pozostała przejrzysta i intuicyjna. Odpowiednio oznaczone hiperłącza i kotwice przyczyniają się do pozytywnego doświadczenia użytkownika.
+A: Lokalne hiperłącza są skutecznym sposobem na ulepszenie nawigacji w dokumencie, ale ważne jest, aby struktura dokumentu pozostała przejrzysta i intuicyjna. Prawidłowo oznaczone hiperłącza i kotwice przyczyniają się do pozytywnych doświadczeń użytkownika.
 
-#### P: Czy mogę tworzyć lokalne hiperłącza w tabelach lub obrazach?
+#### P: Czy mogę tworzyć lokalne hiperłącza w tabelach i obrazach?
 
-O: Tak, możesz tworzyć lokalne hiperłącza w różnych elementach dokumentu PDF, w tym w tabelach, obrazach i tekście. Aspose.PDF dla .NET oferuje elastyczność w dodawaniu hiperłączy do różnych typów treści.
+A: Tak, możesz tworzyć lokalne hiperłącza w różnych elementach dokumentu PDF, w tym tabelach, obrazach i tekście. Aspose.PDF dla .NET oferuje elastyczność w dodawaniu hiperłączy do różnych typów treści.

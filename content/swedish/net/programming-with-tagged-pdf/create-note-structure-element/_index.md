@@ -152,7 +152,7 @@ S: Ja, du kan tilldela unika ID:n till noteringsstrukturelement med hjälp av`Se
 
 #### F: Vad händer om jag försöker tilldela ett dubblett-ID till ett anteckningsstrukturelement?
 
-S: Ett försök att tilldela ett duplicerat ID till ett anteckningsstrukturelement kommer att resultera i ett undantag. Koden som tillhandahålls i handledningen innehåller en kommentar som illustrerar detta scenario.
+S: Ett försök att tilldela ett duplicerat ID till ett anteckningsstrukturelement kommer att resultera i ett undantag. Koden i handledningen innehåller en kommentar som illustrerar detta scenario.
 
 #### F: Hur kan jag säkerställa PDF/UA-kompatibilitet när jag skapar anteckningsstrukturelement?
 

@@ -8,7 +8,7 @@ weight: 17
 url: /cs/java/pdf-conversion-transformation/generate-mobixml-from-pdfs/
 ---
 
-## Úvod
+## Zavedení
 
 tomto podrobném průvodci prozkoumáme, jak generovat MobiXML ze souborů PDF pomocí výkonné knihovny Aspose.PDF for Java. MobiXML je populární formát e-knih a pomocí Aspose.PDF pro Java můžete bez problémů převést své PDF dokumenty do tohoto formátu. Pokryjeme vše od nastavení vašeho vývojového prostředí až po psaní kódu Java pro proces převodu.
 
@@ -53,7 +53,7 @@ V tomto článku jsme prozkoumali, jak generovat MobiXML z PDF pomocí knihovny 
 
 ## FAQ
 
-### Jak mohu získat Aspose.PDF pro Javu?
+### Jak mohu získat Aspose.PDF pro Java?
 
  Aspose.PDF pro Java si můžete stáhnout z odkazu na vydání:[Aspose.PDF pro stahování Java](https://releases.aspose.com/pdf/java/).
 

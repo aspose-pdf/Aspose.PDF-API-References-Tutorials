@@ -11,7 +11,7 @@ Ez az útmutató lépésről lépésre bemutatja, hogyan alakíthat át egy olda
 
 ## 1. lépés: Határozza meg a dokumentumkönyvtárat
 
- Mielőtt elkezdené, győződjön meg arról, hogy a megfelelő könyvtárat állította be a dokumentumokhoz. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a kódban annak a könyvtárnak az elérési útjával, ahol a PDF-dokumentum található.
+Mielőtt elkezdené, győződjön meg arról, hogy a megfelelő könyvtárat állította be a dokumentumokhoz. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a kódban annak a könyvtárnak az elérési útjával, ahol a PDF-dokumentum található.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 2. lépés: Nyissa meg a dokumentumot
 
-Ebben a lépésben megnyitjuk a PDF dokumentumot a`Document` osztályú Aspose.PDF. Használja a`Document` konstruktort, és adja át a PDF dokumentum elérési útját.
+ Ebben a lépésben megnyitjuk a PDF dokumentumot a`Document` osztályú Aspose.PDF. Használja a`Document` konstruktort, és adja át a PDF dokumentum elérési útját.
 
 ```csharp
 Document document = new Document(dataDir + "AddImage.pdf");
@@ -52,7 +52,7 @@ document.Save(ms);
 
 ## 6. lépés: Nyissa meg a kivágott PDF-dokumentumot, és alakítsa át képpé
 
- Nyissa meg a kivágott PDF-dokumentumot a`Document` osztályt, és konvertálja képpé. 300 dpi felbontást fogunk használni.
+ Nyissa meg a kivágott PDF-dokumentumot a`Document`osztályt, és konvertálja képpé. 300 dpi felbontást fogunk használni.
 
 ```csharp
 document = newDocument(ms);
@@ -62,7 +62,7 @@ PngDevice pngDevice = new PngDevice(resolution);
 
 ## 7. lépés: Alakítsa át az adott oldalt képpé
 
- Alakítsa át az adott oldalt képpé a segítségével`Process` módszere a`pngDevice`tárgy. Adja meg a kép kimeneti útvonalát.
+ Alakítsa át az adott oldalt képpé a segítségével`Process` módszere a`pngDevice` objektum. Adja meg a kép kimeneti útvonalát.
 
 ```csharp
 dataDir = dataDir + "ConvertPageRegionToDOM_out.png";
@@ -75,7 +75,7 @@ pngDevice.Process(document.Pages[1], dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Nyissa meg a dokumentumot
 Document document = new Document( dataDir + "AddImage.pdf");
-// Egy adott oldalrégió téglalap lekérése
+// Egy adott oldalrégió téglalapjának lekérése
 Aspose.Pdf.Rectangle pageRect = new Aspose.Pdf.Rectangle(20, 671, 693, 1125);
 // Állítsa be a CropBox értékét a kívánt oldalrégió téglalapja szerint
 document.Pages[1].CropBox = pageRect;
@@ -89,7 +89,7 @@ Resolution resolution = new Resolution(300);
 // PNG-eszköz létrehozása megadott attribútumokkal
 PngDevice pngDevice = new PngDevice(resolution);
 dataDir = dataDir + "ConvertPageRegionToDOM_out.png";
-//Konvertálja az adott oldalt, és mentse a képet adatfolyamba
+// Konvertálja az adott oldalt, és mentse a képet adatfolyamba
 pngDevice.Process(document.Pages[1], dataDir);
 ms.Close();
 Console.WriteLine("\nPage region converted to DOM successfully.\nFile saved at " + dataDir); 
@@ -119,7 +119,7 @@ V: A dokumentumkönyvtár megadása biztosítja, hogy a PDF-dokumentum és az er
 
 ####  K: Mi a célja a`Rectangle` class in the page region conversion process?
 
- V: A`Rectangle` osztály határozza meg a DOM-má konvertálni kívánt PDF-oldal adott régiójának koordinátáit. Segít a vetésterület pontos meghatározásában.
+ V: A`Rectangle`osztály határozza meg a DOM-má konvertálni kívánt PDF-oldal adott régiójának koordinátáit. Segít a vetésterület pontos meghatározásában.
 
 #### K: Hogyan állítják be az oldal vágási területét a kívánt régióra az átalakítási folyamat során?
 

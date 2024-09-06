@@ -32,7 +32,7 @@ Chcete-li implementovat vynucené vykreslování tabulky v jazyce Java, postupuj
 
 ### Krok 1: Nastavení vašeho projektu Java
 
- Než začnete, ujistěte se, že máte Aspose.PDF for Java integrován do vašeho projektu. Knihovnu si můžete stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+ Než začnete, ujistěte se, že máte Aspose.PDF for Java integrován do vašeho projektu. Knihovnu si můžete stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ### Krok 2: Vytvoření dokumentu PDF
 
@@ -105,7 +105,7 @@ V tomto článku jsme se naučili, jak vynutit vykreslování tabulky na nové s
 ### Jak přidám Aspose.PDF for Java do svého projektu?
 
 Chcete-li do projektu přidat Aspose.PDF for Java, postupujte takto:
-1.  Stáhněte si knihovnu z[tady](https://releases.aspose.com/pdf/java/).
+1.  Stáhněte si knihovnu z[zde](https://releases.aspose.com/pdf/java/).
 2. Přidejte soubory JAR do cesty třídy vašeho projektu.
 3. Jste připraveni použít Aspose.PDF ve svém projektu Java.
 

@@ -1,17 +1,17 @@
 ---
 title: PDF Dosyasında Küçük Resim Görüntüleri Oluşturun
 linktitle: PDF Dosyasında Küçük Resim Görüntüleri Oluşturun
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile PDF dosyasında kolayca küçük resim oluşturun.
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET ile PDF dosyasında kolayca küçük resim görüntüsü oluşturun.
 type: docs
 weight: 100
 url: /tr/net/programming-with-images/create-thumbnail-images/
 ---
-Bu kılavuz, Aspose.PDF for .NET kullanarak PDF dosyasında küçük resim görüntüsünün nasıl oluşturulacağını adım adım anlatacaktır. Ortamınızı zaten kurduğunuzdan emin olun ve aşağıdaki adımları izleyin:
+Bu kılavuz, .NET için Aspose.PDF kullanarak PDF dosyasında küçük resim görüntüsünün nasıl oluşturulacağını adım adım gösterecektir. Ortamınızı önceden ayarladığınızdan ve aşağıdaki adımları izlediğinizden emin olun:
 
-## 1. Adım: Belge dizinini tanımlayın
+## Adım 1: Belge dizinini tanımlayın
 
- Başlamadan önce belgeler için doğru dizini ayarladığınızdan emin olun. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` PDF dosyalarınızı içeren dizinin yolunu içeren kodda.
+Başlamadan önce, belgeler için doğru dizini ayarladığınızdan emin olun. Değiştir`"YOUR DOCUMENT DIRECTORY"` PDF dosyalarınızın bulunduğu dizinin yolunu içeren kodda.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,20 +19,20 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Adım 2: Bir dizindeki tüm PDF dosyalarının adlarını alın
 
- Bu adımda, C#'ın komutlarını kullanarak belirtilen dizinde bulunan tüm PDF dosyalarının adlarını alacağız.`Directory` sınıf. Dosyalar bir dizi dizide saklanacaktır.
+ Bu adımda, C# kullanarak belirtilen dizinde bulunan tüm PDF dosyalarının adlarını alacağız`Directory`sınıf. Dosyalar bir dizi dizede saklanacaktır.
 
 ```csharp
 string[] fileEntries = Directory.GetFiles(dataDir, "*.pdf");
 ```
 
-## 3. Adım: Tüm PDF dosyalarına ve sayfalarına göz atın
+## Adım 3: Tüm PDF dosyalarına ve sayfalarına göz atın
 
- Bu adımda, görsel küçük resimleri oluşturmak için tüm PDF dosyalarını ve sayfalarını inceleyeceğiz. Bir kullanacağız`for` tüm dosyalar arasında yineleme yapmak için döngü.
+ Bu adımda, resim küçük resimleri oluşturmak için tüm PDF dosyalarını ve sayfalarını inceleyeceğiz.`for` tüm dosyalar arasında yineleme yapmak için döngü.
 
 ```csharp
 for (int counter = 0; counter < fileEntries.Length; counter++)
 {
-     //PDF belgesini açın
+     // PDF belgesini açın
      Document pdfDocument = new Document(fileEntries[counter]);
     
      // Belgenin tüm sayfalarını inceleyin
@@ -41,7 +41,7 @@ for (int counter = 0; counter < fileEntries.Length; counter++)
          // Küçük resim görüntüsünü kaydetmek için bir akış oluşturun
          using (FileStream imageStream = new FileStream(dataDir + "\\Thumbnails" + counter.ToString() + "_" + pageCount + ".jpg", FileMode.Create))
          {
-             // Çözünürlük nesnesi oluşturma
+             //Bir Resolution nesnesi oluşturun
              Resolution resolution = new Resolution(300);
             
              // Belirtilen niteliklere sahip bir JPEG aygıtı oluşturun
@@ -57,13 +57,13 @@ for (int counter = 0; counter < fileEntries.Length; counter++)
 }
 ```
 
-### Aspose.PDF for .NET kullanarak Küçük Resim Görüntüleri Oluşturmak için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Küçük Resim Görüntüleri Oluşturmak için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//Belirli bir dizindeki tüm PDF dosyalarının adlarını alın
+// Belirli bir dizindeki tüm PDF dosyalarının adlarını alın
 string[] fileEntries = Directory.GetFiles(dataDir, "*.pdf");
-// Dizideki tüm dosya girişlerini yineleyin
+// Dizideki tüm dosya girişlerini yinele
 for (int counter = 0; counter < fileEntries.Length; counter++)
 {
 	//Belgeyi aç
@@ -88,42 +88,42 @@ System.Console.WriteLine("PDF pages are converted to thumbnails successfully!");
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET'i kullanarak PDF dosyalarından görsel küçük resimlerini başarıyla oluşturdunuz. Görüntünün küçük resimleri belirtilen dizine kaydedilir. Artık PDF dosyalarınızın görsel bir önizlemesini görüntülemek için bu küçük resimleri kullanabilirsiniz.
+Tebrikler! Aspose.PDF for .NET kullanarak PDF dosyalarından resim küçük resimleri başarıyla oluşturdunuz. Resim küçük resimleri belirtilen dizine kaydedilir. Artık bu küçük resimleri kullanarak PDF dosyalarınızın görsel önizlemesini görüntüleyebilirsiniz.
 
-### PDF dosyasında küçük resimler oluşturmaya ilişkin SSS'ler
+### PDF dosyasında küçük resim görüntüleri oluşturmaya ilişkin SSS
 
-#### S: Aspose.PDF for .NET kullanarak PDF dosyalarından küçük resimler oluşturmanın amacı nedir?
+#### S: Aspose.PDF for .NET kullanarak PDF dosyalarından küçük resim görüntüleri oluşturmanın amacı nedir?
 
-C: PDF dosyalarından küçük resimler oluşturmak, PDF'deki her sayfanın küçük görsel önizlemelerini oluşturmanıza olanak tanır; bu, içeriği hızlı bir şekilde önizlemek ve gezinmek için yararlı olabilir.
+A: PDF dosyalarından küçük resim görüntüleri oluşturmak, PDF'deki her sayfanın küçük görsel önizlemelerini oluşturmanıza olanak tanır; bu, içerikte hızlı bir şekilde önizleme yapmak ve gezinmek için yararlı olabilir.
 
-#### S: Aspose.PDF for .NET, PDF dosyalarından küçük resim oluşturmayı nasıl kolaylaştırır?
+#### S: Aspose.PDF for .NET, PDF dosyalarından küçük resim görüntüleri oluşturmayı nasıl kolaylaştırır?
 
-C: Aspose.PDF for .NET, PDF belgelerini açmak, sayfalarında yinelemek, küçük resimler oluşturmak ve bunları, PDF belgelerini kullanarak belirli bir dizine kaydetmek için adım adım bir süreç sağlar.`JpegDevice` sınıf.
+ A: Aspose.PDF for .NET, PDF belgelerini açmak, sayfalarında gezinmek, küçük resim görüntüleri oluşturmak ve bunları belirtilen bir dizine kaydetmek için adım adım bir süreç sağlar.`JpegDevice` sınıf.
 
-#### S: Küçük resim görüntüleri oluşturmaya başlamadan önce belge dizinini tanımlamak neden önemlidir?
+#### S: Küçük resim oluşturmaya başlamadan önce belge dizinini tanımlamak neden önemlidir?
 
-C: Belge dizininin belirtilmesi, PDF dosyalarının doğru şekilde konumlandırılmasını ve sonuçta ortaya çıkan küçük resimlerin istenen çıktı yoluna kaydedilmesini sağlar.
+A: Belge dizinini belirtmek, PDF dosyalarının doğru bir şekilde konumlandırılmasını ve ortaya çıkan küçük resim görüntülerinin istenen çıktı yoluna kaydedilmesini sağlar.
 
-####  S: Nasıl`Document` class in Aspose.PDF for .NET help in the creation of thumbnail images?
+####  S: Nasıl?`Document` class in Aspose.PDF for .NET help in the creation of thumbnail images?
 
- C:`Document` class, PDF belgelerini açmanıza ve değiştirmenize olanak tanır. Bu durumda küçük resimlerin oluşturulacağı PDF dosyalarını yüklemek için kullanılır.
+ A:`Document` sınıfı PDF belgelerini açmanıza ve düzenlemenize olanak tanır. Bu durumda, küçük resim görüntülerinin oluşturulacağı PDF dosyalarını yüklemek için kullanılır.
 
-####  S: Hangi rol`JpegDevice` class play in the creation of thumbnail images?
+####  S: Rolü nedir?`JpegDevice` class play in the creation of thumbnail images?
 
- C:`JpegDevice` sınıfı, PDF sayfalarını küçük resim görüntüleri olarak kullanılan JPEG görüntülerine dönüştürmekten sorumludur. Genişlik, yükseklik, çözünürlük ve kalite gibi nitelikleri belirtmenize olanak tanır.
+ A:`JpegDevice` sınıf, PDF sayfalarını küçük resim olarak kullanılan JPEG görüntülerine dönüştürmekten sorumludur. Genişlik, yükseklik, çözünürlük ve kalite gibi nitelikleri belirtmenize olanak tanır.
 
 #### S: PDF belgesinin her sayfası ayrı bir küçük resim görüntüsüne nasıl dönüştürülür?
 
- A: İç içe geçmiş bir`for`döngü, her PDF dosyası ve sayfaları arasında yineleme yapmak için kullanılır. Her sayfa için belirtilen niteliklere sahip bir JPEG aygıtı oluşturulur ve`Process` yöntemi, sayfayı küçük resim görüntüsüne dönüştürmek ve akışa kaydetmek için kullanılır.
+ A: İç içe geçmiş`for` döngü, her PDF dosyası ve sayfalarında yineleme yapmak için kullanılır. Her sayfa için, belirtilen niteliklere sahip bir JPEG aygıtı oluşturulur ve`Process` Sayfanın küçük resim görüntüsüne dönüştürülmesi ve akışa kaydedilmesi için kullanılan yöntemdir.
 
-#### S: Oluşturma işlemi sırasında ortaya çıkan küçük resimlerin çözünürlüğünü veya kalitesini ayarlayabilir miyim?
+#### S: Oluşturma işlemi sırasında ortaya çıkan küçük resim görüntülerinin çözünürlüğünü veya kalitesini ayarlayabilir miyim?
 
- C: Evet, çözünürlük, genişlik, yükseklik ve kalite gibi özellikleri yapılandırarak değiştirebilirsiniz.`JpegDevice` her sayfayı dönüştürmeden önce nesne.
+A: Evet, çözünürlük, genişlik, yükseklik ve kalite gibi nitelikleri yapılandırarak değiştirebilirsiniz.`JpegDevice` Her sayfayı dönüştürmeden önce nesne.
 
-#### S: Oluşturulan küçük resimleri, oluşturma sürecinden sonra projelerimde veya uygulamalarımda nasıl kullanabilirim?
+#### S: Oluşturulan küçük resim görüntülerini oluşturma işleminden sonra projelerimde veya uygulamalarımda nasıl kullanabilirim?
 
-C: Ortaya çıkan küçük resimler, PDF dosyalarının görsel bir önizlemesini sağlamak için kullanılabilir ve kullanıcıların içeriği hızlı bir şekilde tanımlamasına ve içinde gezinmesine yardımcı olur.
+A: Ortaya çıkan küçük resim görüntüleri, PDF dosyalarının görsel önizlemesini sağlamak için kullanılabilir ve kullanıcıların içerikleri hızla tanımlamasına ve içerikler arasında gezinmesine yardımcı olur.
 
-#### : Bu oluşturma işlemi kullanılarak PDF dosyalarından oluşturulabilecek küçük resim sayısında herhangi bir sınırlama var mı?
+#### : Bu oluşturma süreci kullanılarak PDF dosyalarından oluşturulabilecek küçük resim sayısının bir sınırı var mıdır?
 
-C: Oluşturulan küçük resimlerin sayısı, her PDF belgesindeki sayfa sayısına bağlıdır. Her sayfa ayrı bir küçük resim görüntüsüne dönüştürülecektir.
+A: Oluşturulan küçük resim sayısı her PDF belgesindeki sayfa sayısına bağlıdır. Her sayfa ayrı bir küçük resim görüntüsüne dönüştürülecektir.

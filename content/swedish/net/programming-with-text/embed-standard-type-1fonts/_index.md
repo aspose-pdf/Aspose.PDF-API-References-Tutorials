@@ -20,7 +20,7 @@ Innan du börjar, se till att du har följande:
 2. Lägg till en referens till Aspose.PDF för .NET-biblioteket.
 
 ## Steg 2: Importera nödvändiga namnrymder
-I kodfilen där du vill bädda in standardtyp 1-teckensnitt, lägg till följande med hjälp av direktivet överst i filen:
+kodfilen där du vill bädda in standardtyp 1-teckensnitt, lägg till följande med hjälp av direktivet överst i filen:
 
 ```csharp
 using Aspose.Pdf;
@@ -30,7 +30,7 @@ using Aspose.Pdf;
  I koden, lokalisera raden som säger`string dataDir = "YOUR DOCUMENT DIRECTORY";` och byt ut`"YOUR DOCUMENT DIRECTORY"` med sökvägen till katalogen där dina dokument är lagrade.
 
 ## Steg 4: Ladda det befintliga PDF-dokumentet
- Ladda ett befintligt PDF-dokument med hjälp av`Document`konstruktorn och skickar sökvägen till indata-PDF-filen.
+ Ladda ett befintligt PDF-dokument med hjälp av`Document` konstruktorn och skickar sökvägen till indata-PDF-filen.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
@@ -129,7 +129,7 @@ using Aspose.Pdf;
 
 #### F: Hur sparar jag det uppdaterade PDF-dokumentet?
 
- S: I steg 7 kommer du att använda`Save` metod för`Document` objekt för att spara det uppdaterade PDF-dokumentet och ange sökvägen till utdatafilen.
+ S: I steg 7 kommer du att använda`Save` metod för`Document`objekt för att spara det uppdaterade PDF-dokumentet och ange sökvägen till utdatafilen.
 
 #### F: Vad är betydelsen av att bädda in teckensnitt i ett PDF-dokument?
 

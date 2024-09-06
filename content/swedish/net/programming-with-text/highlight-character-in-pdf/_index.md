@@ -18,7 +18,7 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 1: Konfigurera dokumentkatalogen
 
- Först måste du ställa in sökvägen till katalogen där din indata-PDF-fil finns. Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till din PDF-fil.
+ Först måste du ställa in sökvägen till katalogen där din indata-PDF-fil finns. Ersätta`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till din PDF-fil.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -53,7 +53,7 @@ using (MemoryStream ms = new MemoryStream())
 ```csharp
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 {
-     //Ställ in skala och transformera
+     // Ställ in skala och transformera
      float scale = resolution / 72f;
      gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
 
@@ -62,7 +62,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
      {
          Page page = pdfDocument.Pages[1];
 
-         // Hitta alla ord på sidan
+         //Hitta alla ord på sidan
          TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
          textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
          page. Accept(textFragmentAbsorber);
@@ -213,11 +213,11 @@ S: Att markera tecken i ett PDF-dokument kan vara användbart för olika ändam�
 
 S: Så här ställer du in dokumentkatalogen:
 
-1.  Byta ut`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till katalogen där din indata-PDF-fil finns.
+1.  Ersätta`"YOUR DOCUMENT DIRECTORY"` i`dataDir` variabel med sökvägen till katalogen där din indata-PDF-fil finns.
 
 #### F: Hur laddar jag in PDF-dokumentet och konverterar det till en bild?
 
- S: I handledningen visas`Aspose.Pdf.Document` klass används för att läsa in PDF-dokumentet. Sedan`PdfConverter` klass används för att konvertera PDF-dokumentet till en bild. Bildens upplösning ställs in och bilden hämtas som en`Bitmap` objekt.
+ S: I handledningen visas`Aspose.Pdf.Document` klass används för att läsa in PDF-dokumentet. Sedan, den`PdfConverter` klass används för att konvertera PDF-dokumentet till en bild. Bildens upplösning ställs in och bilden hämtas som en`Bitmap` objekt.
 
 #### F: Hur markerar jag tecken i PDF-dokumentets bild?
 

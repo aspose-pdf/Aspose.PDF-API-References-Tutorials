@@ -1,50 +1,50 @@
 ---
-title: Incorpora caratteri standard di tipo 1 nel file PDF
-linktitle: Incorpora caratteri standard di tipo 1 nel file PDF
-second_title: Aspose.PDF per riferimento all'API .NET
-description: Scopri come incorporare i caratteri standard di tipo 1 nel file PDF utilizzando Aspose.PDF per .NET.
+title: Incorpora i font standard di tipo 1 nel file PDF
+linktitle: Incorpora i font standard di tipo 1 nel file PDF
+second_title: Riferimento API Aspose.PDF per .NET
+description: Scopri come incorporare i font standard Type 1 nei file PDF utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 140
 url: /it/net/programming-with-text/embed-standard-type-1fonts/
 ---
-Questo tutorial ti guiderà attraverso il processo di incorporamento dei caratteri standard di tipo 1 nel file PDF utilizzando Aspose.PDF per .NET. Il codice sorgente C# fornito illustra i passaggi necessari.
+Questo tutorial ti guiderà attraverso il processo di incorporamento di font Type 1 standard in file PDF usando Aspose.PDF per .NET. Il codice sorgente C# fornito dimostra i passaggi necessari.
 
 ## Requisiti
 Prima di iniziare, assicurati di avere quanto segue:
 
-- Visual Studio o qualsiasi altro compilatore C# installato sul tuo computer.
-- Aspose.PDF per la libreria .NET. Puoi scaricarlo dal sito Web ufficiale di Aspose o utilizzare un gestore di pacchetti come NuGet per installarlo.
+- Visual Studio o qualsiasi altro compilatore C# installato sul computer.
+- Aspose.PDF per la libreria .NET. Puoi scaricarlo dal sito web ufficiale di Aspose o usare un gestore di pacchetti come NuGet per installarlo.
 
 ## Passaggio 1: impostare il progetto
 1. Crea un nuovo progetto C# nel tuo ambiente di sviluppo preferito.
 2. Aggiungere un riferimento alla libreria Aspose.PDF per .NET.
 
-## Passaggio 2: importa gli spazi dei nomi richiesti
-Nel file di codice in cui desideri incorporare i caratteri Type 1 standard, aggiungi la seguente direttiva using nella parte superiore del file:
+## Passaggio 2: importare gli spazi dei nomi richiesti
+Nel file di codice in cui desideri incorporare i font standard Type 1, aggiungi la seguente direttiva using all'inizio del file:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## Passaggio 3: imposta la directory dei documenti
+## Passaggio 3: impostare la directory del documento
  Nel codice, individua la riga che dice`string dataDir = "YOUR DOCUMENT DIRECTORY";` e sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso della directory in cui sono archiviati i tuoi documenti.
 
-## Passaggio 4: carica il documento PDF esistente
- Caricare un documento PDF esistente utilizzando il file`Document`costruttore e passando il percorso al file PDF di input.
+## Passaggio 4: caricare il documento PDF esistente
+ Carica un documento PDF esistente utilizzando`Document` costruttore e passando il percorso al file PDF di input.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
 ## Passaggio 5: impostare la proprietà EmbedStandardFonts
- Impostare il`EmbedStandardFonts` proprietà del documento a`true` per consentire l'incorporamento di caratteri Type 1 standard.
+ Imposta il`EmbedStandardFonts` proprietà del documento a`true` per consentire l'incorporamento dei font standard Type 1.
 
 ```csharp
 pdfDocument.EmbedStandardFonts = true;
 ```
 
-## Passaggio 6: incorpora i caratteri in ogni pagina
- Sfoglia ogni pagina del documento PDF e controlla se i caratteri sono già incorporati. In caso contrario, impostare il`IsEmbedded` proprietà a`true` per incorporare il carattere.
+## Passaggio 6: incorporare i font in ogni pagina
+ Passa attraverso ogni pagina del documento PDF e controlla se i font sono già incorporati. In caso contrario, imposta`IsEmbedded` proprietà a`true` per incorporare il font.
 
 ```csharp
 foreach(Page page in pdfDocument.Pages)
@@ -62,16 +62,16 @@ foreach(Page page in pdfDocument.Pages)
 }
 ```
 
-## Passaggio 7: salva il documento PDF aggiornato
- Salvare il documento PDF aggiornato utilizzando il file`Save` metodo del`Document` oggetto, specificando il percorso del file di output.
+## Passaggio 7: salvare il documento PDF aggiornato
+ Salvare il documento PDF aggiornato utilizzando`Save` metodo del`Document` oggetto, specificando il percorso del file di output.
 
 ```csharp
 pdfDocument.Save(dataDir + "EmbeddedFonts-updated_out.pdf");
 ```
 
-### Codice sorgente di esempio per incorporare caratteri standard di tipo 1 utilizzando Aspose.PDF per .NET 
+### Esempio di codice sorgente per Embed Standard Type 1Fonts utilizzando Aspose.PDF per .NET 
 ```csharp
-// Il percorso della directory dei documenti.
+// Percorso verso la directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Carica un documento PDF esistente
 Document pdfDocument = new Document(dataDir + "input.pdf");
@@ -83,7 +83,7 @@ foreach (Aspose.Pdf.Page page in pdfDocument.Pages)
 	{
 		foreach (Aspose.Pdf.Text.Font pageFont in page.Resources.Fonts)
 		{
-			// Controlla se il carattere è già incorporato
+			// Controlla se il font è già incorporato
 			if (!pageFont.IsEmbedded)
 			{
 				pageFont.IsEmbedded = true;
@@ -95,46 +95,46 @@ pdfDocument.Save(dataDir + "EmbeddedFonts-updated_out.pdf");
 ```
 
 ## Conclusione
-Hai incorporato con successo i caratteri standard di tipo 1 in un documento PDF utilizzando Aspose.PDF per .NET. Il file PDF aggiornato con caratteri incorporati è stato salvato nel percorso del file di output specificato.
+Hai incorporato correttamente i font standard Type 1 in un documento PDF utilizzando Aspose.PDF per .NET. Il file PDF aggiornato con i font incorporati è stato salvato nel percorso del file di output specificato.
 
 ### Domande frequenti
 
-#### D: Qual è il focus di questo tutorial?
+#### D: Qual è l'obiettivo di questo tutorial?
 
-R: Questo tutorial fornisce una guida passo passo per incorporare i caratteri Type 1 standard in un file PDF utilizzando la libreria Aspose.PDF per .NET. Il codice sorgente C# allegato illustra le procedure necessarie.
+R: Questo tutorial fornisce una guida passo-passo per incorporare font Type 1 standard in un file PDF utilizzando la libreria Aspose.PDF per .NET. Il codice sorgente C# allegato illustra le procedure necessarie.
 
-#### D: Quale spazio dei nomi devo importare?
+#### D: Quale namespace devo importare?
 
-R: Nel file di codice in cui intendi incorporare i caratteri Type 1 standard, includi il seguente spazio dei nomi nella parte superiore del file:
+A: Nel file di codice in cui intendi incorporare i font standard Type 1, includi il seguente namespace all'inizio del file:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-#### D: Come posso specificare la directory dei documenti?
+#### D: Come faccio a specificare la directory dei documenti?
 
- R: Individua la linea`string dataDir = "YOUR DOCUMENT DIRECTORY";` nel codice e sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo della directory dei documenti.
+ A: Individua la linea`string dataDir = "YOUR DOCUMENT DIRECTORY";` nel codice e sostituisci`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo della directory del documento.
 
-#### D: Come carico un documento PDF esistente?
+#### D: Come faccio a caricare un documento PDF esistente?
 
- R: Nel passaggio 4, caricherai un documento PDF esistente utilizzando il file`Document` costruttore e fornendo il percorso del file PDF di input.
+ A: Nel passaggio 4, caricherai un documento PDF esistente utilizzando`Document` costruttore e fornendo il percorso al file PDF di input.
 
-####  D: Qual è lo scopo di`EmbedStandardFonts` property?
+####  D: Qual è lo scopo del`EmbedStandardFonts` property?
 
- R: Nel passaggio 5 imposterai il file`EmbedStandardFonts` proprietà del documento a`true`, consentendo l'incorporamento di caratteri Type 1 standard.
+ A: Nel passaggio 5, imposterai il`EmbedStandardFonts` proprietà del documento a`true`, consentendo l'incorporamento dei font standard Type 1.
 
-#### D: Come incorporo i caratteri in ogni pagina?
+#### D: Come posso incorporare i font in ogni pagina?
 
- R: Il passaggio 6 prevede il ciclo continuo di ciascuna pagina del documento PDF. Per i caratteri che non sono già incorporati, imposterai il file`IsEmbedded` proprietà a`true` per incorporare il carattere.
+ A: Il passaggio 6 prevede di scorrere ogni pagina del documento PDF. Per i font che non sono già incorporati, imposterai il`IsEmbedded` proprietà a`true` per incorporare il font.
 
 #### D: Come posso salvare il documento PDF aggiornato?
 
- R: Nel passaggio 7 utilizzerai il file`Save` metodo del`Document` oggetto per salvare il documento PDF aggiornato, specificando il percorso del file di output.
+ A: Nel passaggio 7, utilizzerai il`Save` metodo del`Document`oggetto per salvare il documento PDF aggiornato, specificando il percorso del file di output.
 
-#### D: Qual è il significato di incorporare i caratteri in un documento PDF?
+#### D: Qual è l'importanza di incorporare i font in un documento PDF?
 
-R: L'incorporamento dei caratteri garantisce che i caratteri utilizzati nel PDF siano inclusi nel file stesso. Ciò garantisce una visualizzazione coerente del testo anche se nel sistema del destinatario non sono installati i caratteri richiesti.
+R: L'incorporamento dei font assicura che i font utilizzati nel PDF siano inclusi nel file stesso. Ciò garantisce una visualizzazione coerente del testo anche se il sistema del destinatario non ha i font richiesti installati.
 
-#### D: Qual è il punto principale di questo tutorial?
+#### D: Qual è la conclusione principale da trarre da questo tutorial?
 
-R: Seguendo questo tutorial, hai acquisito le conoscenze e le competenze per incorporare i caratteri standard di tipo 1 in un documento PDF utilizzando Aspose.PDF per .NET. Ciò garantisce il corretto rendering del testo su diversi sistemi.
+R: Seguendo questo tutorial, hai acquisito le conoscenze e le competenze per incorporare i font Type 1 standard in un documento PDF utilizzando Aspose.PDF per .NET. Ciò garantisce il rendering corretto del testo su sistemi diversi.

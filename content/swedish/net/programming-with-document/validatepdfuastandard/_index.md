@@ -78,7 +78,7 @@ Ersätt "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till katalogen som inn
 
 #### F: Hur kan jag kontrollera om ett PDF-dokument klarade PDF/UA-valideringen?
 
- S: Efter att ha ringt`Validate` metoden, den booleska variabeln`isValidPdfUa` kommer att lagra valideringsresultatet. Om värdet av`isValidPdfUa` är`true`, PDF-dokumentet överensstämmer med PDF/UA-standarden; annars gör det inte det.
+ A: Efter att ha ringt`Validate` metoden, den booleska variabeln`isValidPdfUa` kommer att lagra valideringsresultatet. Om värdet av`isValidPdfUa` är`true`, PDF-dokumentet överensstämmer med PDF/UA-standarden; annars gör det inte det.
 
 #### F: Finns det några specifika tillgänglighetskrav för PDF/UA-kompatibilitet?
 

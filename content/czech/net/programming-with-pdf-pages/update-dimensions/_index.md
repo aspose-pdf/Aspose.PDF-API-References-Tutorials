@@ -30,7 +30,7 @@ Document pdfDocument = new Document(dataDir + "UpdateDimensions.pdf");
 ```
 
 ## Krok 3: Získejte kolekci stránek
- Nyní můžete přistupovat ke kolekci stránek dokumentu PDF pomocí`Pages` vlastnictvím`Document` třída.
+ Nyní můžete přistupovat ke kolekci stránek dokumentu PDF pomocí`Pages` majetek z`Document` třída.
 
 ```csharp
 PageCollection pageCollection = pdfDocument.Pages;
@@ -91,7 +91,7 @@ Odpověď: Chcete-li aktualizovat rozměry konkrétní stránky v dokumentu PDF 
 
 1. Nastavte adresář dokumentu zadáním cesty, kde se nachází váš původní soubor PDF a kam chcete uložit aktualizovaný soubor PDF. Nahraďte "VAŠE ADRESÁŘ DOKUMENTŮ" příslušnou cestou.
 2.  Otevřete existující dokument PDF a aktualizujte jej pomocí`Document` třída Aspose.PDF. Ujistěte se, že jste zadali správnou cestu k původnímu dokumentu PDF.
-3.  Přístup ke kolekci stránek dokumentu PDF pomocí`Pages` vlastnictvím`Document` třída.
+3.  Přístup ke kolekci stránek dokumentu PDF pomocí`Pages` majetek z`Document` třída.
 4. Vyberte konkrétní stránku, kterou chcete aktualizovat, z kolekce stránek pomocí indexu stránky. V poskytnutém zdrojovém kódu C# používáme druhou stránku (index 1).
 5.  Definujte novou velikost stránky pomocí`SetPageSize()` metoda`Page` objekt. V příkladu nastavíme rozměry stránky na velikost A4 (11,7 x 8,3 palce), převedené na body (1 palec = 72 bodů).
 6.  Uložte aktualizovaný dokument PDF do souboru pomocí`Save()` metoda`Document`třída. Ujistěte se, že jste zadali správnou cestu a název souboru.

@@ -52,7 +52,7 @@ tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.
 
 ## Steg 5: Ställa in kolumnbredder
 
- För att definiera bredden på varje kolumn i tabellen kan vi ställa in`ColumnWidths` fast egendom. Ange bredderna som en sträng med mellanslagsseparerade värden.
+ För att definiera bredden på varje kolumn i tabellen kan vi ställa in`ColumnWidths` egendom. Ange bredderna som en sträng med mellanslagsseparerade värden.
 
 ```csharp
 // Ställ in med tabellens kolumnbredder

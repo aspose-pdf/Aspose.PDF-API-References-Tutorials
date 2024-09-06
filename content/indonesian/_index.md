@@ -1,7 +1,7 @@
 ---
-title: Aspose.PDF Tutorial
-additionalTitle: Asumsikan Referensi API
-description: Tutorial dan cuplikan kode keluarga produk Aspose.PDF. Ini mencakup tutorial dasar dan lanjutan penggunaan Aspose.PDF.
+title: Tutorial Aspose.PDF
+additionalTitle: Referensi API Aspose
+description: Tutorial dan cuplikan kode dari keluarga produk Aspose.PDF. Termasuk tutorial dasar dan lanjutan tentang penggunaan Aspose.PDF.
 type: docs
 weight: 11
 url: /id/
@@ -10,10 +10,10 @@ is_root: true
 
 ## Aspose.PDF untuk .NET
 {{% alert color="primary" %}}
-Aspose.PDF untuk tutorial .NET dan cuplikan kode untuk membuat, mengedit, mengonversi, mencetak, dan banyak lagi fitur lainnya untuk dokumen PDF di aplikasi Anda. 
+Tutorial dan cuplikan kode Aspose.PDF untuk .NET untuk membuat, mengedit, mengonversi, mencetak, dan banyak fitur lainnya untuk dokumen PDF di aplikasi Anda. 
 {{% /alert %}}
 
-Ini adalah tautan ke beberapa sumber yang bermanfaat:
+Berikut ini adalah tautan ke beberapa sumber daya yang bermanfaat:
 - [Pemrograman dengan Dokumen](./net/programming-with-document/)
 - [Pemrograman dengan Anotasi](./net/annotations/)  
 - [Konversi Dokumen](./net/document-conversion/)
@@ -24,11 +24,11 @@ Ini adalah tautan ke beberapa sumber yang bermanfaat:
  
 ## API Pemrosesan Aspose.PDF untuk Java
 {{% alert color="primary" %}}
-Kuasai Aspose.PDF untuk Java dengan tutorial komprehensif. Buat, edit, dan optimalkan PDF dengan mudah. Tingkatkan keterampilan pengembangan PDF Anda hari ini!
+Kuasai Aspose.PDF untuk Java dengan tutorial yang lengkap. Buat, edit, dan optimalkan PDF dengan mudah. Tingkatkan keterampilan pengembangan PDF Anda hari ini!
 {{% /alert %}}
 
-Ini adalah tautan ke beberapa sumber yang bermanfaat:
-- [Anotasi PDF](./java/pdf-annotations/)
+Berikut ini adalah tautan ke beberapa sumber daya yang bermanfaat:
+- [Catatan PDF](./java/pdf-annotations/)
 - [Lampiran PDF](./java/pdf-attachments/)
 - [Penanda PDF](./java/pdf-bookmarks/)
 - [Konversi & Transformasi PDF](./java/pdf-conversion-transformation/)

@@ -18,13 +18,13 @@ Innan du börjar, se till att du har följande:
 
 ## Steg 2: Laddar PDF-dokumentet
 
-Det första steget är att ladda det befintliga PDF-dokumentet i ditt projekt. Här är hur:
+Det första steget är att ladda det befintliga PDF-dokumentet i ditt projekt. Så här gör du:
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-//Öppna PDF-dokumentet
+// Öppna PDF-dokumentet
 Document pdfDocument = new Document(dataDir + "watermark.pdf");
 ```
 
@@ -32,7 +32,7 @@ Var noga med att ersätta "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till
 
 ## Steg 3: Skaffa vattenstämpeln
 
-Nu när du har laddat PDF-dokumentet kan du iterera genom de specifika sidartefakterna för att få information om vattenstämpeln. Här är hur:
+Nu när du har laddat PDF-dokumentet kan du iterera genom de specifika sidartefakterna för att få information om vattenstämpeln. Så här gör du:
 
 ```csharp
 // Bläddra bland artefakter och få vattenstämpel undertyp, text och plats

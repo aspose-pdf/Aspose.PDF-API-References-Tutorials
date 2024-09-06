@@ -277,7 +277,7 @@ S: Handledningen förklarar hur du skapar och lägger till rubriker, brödrader 
 
 #### F: Vad är PDF/UA-kompatibilitet och hur kan jag validera det för mitt taggade PDF-dokument?
 
- S: PDF/UA-kompatibilitet säkerställer att PDF-dokumentet överensstämmer med tillgänglighetsstandarder, vilket gör det mer tillgängligt för användare med funktionshinder. Handledningen visar hur man validerar PDF/UA-överensstämmelse med hjälp av`Validate()` metod och generera en rapport om XML-efterlevnad.
+ S: PDF/UA-kompatibilitet säkerställer att PDF-dokumentet överensstämmer med tillgänglighetsstandarder, vilket gör det mer tillgängligt för användare med funktionshinder. Handledningen visar hur man validerar PDF/UA-överensstämmelse med hjälp av`Validate()` metod och generera en XML-efterlevnadsrapport.
 
 #### F: Hur kan jag införliva dessa koncept i mina egna .NET-applikationer?
 

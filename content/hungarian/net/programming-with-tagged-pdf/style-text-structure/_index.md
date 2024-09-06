@@ -2,7 +2,7 @@
 title: Stílus szövegszerkezet PDF fájlban
 linktitle: Stílus szövegszerkezet PDF fájlban
 second_title: Aspose.PDF for .NET API Reference
-description: Ismerje meg, hogyan formázhat szövegstruktúrát PDF-fájlban az Aspose.PDF for .NET segítségével. Lépésről lépésre a szöveg stílusához.
+description: Ismerje meg, hogyan formázhat szövegstruktúrát PDF-fájlban az Aspose.PDF for .NET segítségével. Lépésről lépésre útmutató a szöveg stílusához.
 type: docs
 weight: 190
 url: /hu/net/programming-with-tagged-pdf/style-text-structure/

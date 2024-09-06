@@ -31,7 +31,7 @@ using Aspose.Pdf;
 using Aspose.Pdf.Operators;
 ```
 
-## Steg 3: Ställ in filsökvägar
+## Steg 3: Ställa in filsökvägar
 
 Definiera filsökvägarna för bakgrundsbilden, indata-PDF-filen och PDF-utdatafilen:
 
@@ -56,7 +56,7 @@ OperatorCollection pageContents = doc.Pages[1].Contents;
 // Koden använder ContatenateMatrix-operatorn för att placera XForm
 // Koden använder Do-operatorn för att rita XForm på sidan
 // GSave/GRestore-operatörer omsluter befintligt innehåll
-// detta görs för att få det ursprungliga grafiktillståndet i slutet av det befintliga innehållet
+//detta görs för att få det ursprungliga grafiktillståndet i slutet av det befintliga innehållet
 // annars kan det finnas oönskade transformationer kvar i slutet av kedjan av befintliga operatörer
 pageContents. Insert(1, new GSave());
 pageContents. Add(new GRestore());
@@ -79,7 +79,7 @@ form.Contents.Add(new Do(ximage.Name));
 form.Contents.Add(new GRestore());
 
 pageContents. Add(new GSave());
-//Placera XForm vid koordinaterna x=100 och y=500
+// Placera XForm vid koordinaterna x=100 och y=500
 pageContents. Add(new ConcatenateMatrix(1, 0, 0, 1, 100, 500));
 // Rita XForm med Do-operatorn
 pageContents.Add(new Do(form.Name));
@@ -115,7 +115,7 @@ using (Document doc = new Document(inFile))
 	// Provet visar
 	// Användning av GSave/GRRestore-operatörer
 	// ContatenateMatrix-operatoranvändning för att positionera xForm
-	// Använd operatorn för att rita xForm på sidan
+	//Använd operatorn för att rita xForm på sidan
 	// Slå in befintligt innehåll med GSave/GRestore-operatörspar
 	// detta är för att få initialt grafiktillstånd vid och av befintligt innehåll
 	// annars kan det finnas några oönskade omvandlingar i slutet av befintlig operatörskedja
@@ -132,7 +132,7 @@ using (Document doc = new Document(inFile))
 	form.Contents.Add(new Aspose.Pdf.Operators.ConcatenateMatrix(200, 0, 0, 200, 0, 0));
 	// Ladda bilden i stream
 	Stream imageStream = new FileStream(imageFile, FileMode.Open);
-	//Lägg till bild till bildsamlingen av XForm-resurserna
+	// Lägg till bild till bildsamlingen av XForm-resurserna
 	form.Resources.Images.Add(imageStream);
 	XImage ximage = form.Resources.Images[form.Resources.Images.Count];
 	// Använda Gör-operatorn: denna operator ritar en bild
@@ -180,15 +180,15 @@ using Aspose.Pdf.Operators;
 
 #### F: Vad är syftet med GSave- och GRestore-operatörerna?
 
- A: Den`GSave` och`GRestore`operatorer i Aspose.PDF används för att spara och återställa grafiktillståndet. De hjälper till att säkerställa att transformationer och inställningar som tillämpas på ett avsnitt av innehållet inte påverkar efterföljande avsnitt.
+ A: Den`GSave` och`GRestore` operatorer i Aspose.PDF används för att spara och återställa grafiktillståndet. De hjälper till att säkerställa att transformationer och inställningar som tillämpas på ett avsnitt av innehållet inte påverkar efterföljande avsnitt.
 
 #### F: Hur definierar jag en XForm med Aspose.PDF?
 
- S: För att skapa ett XForm, använd`XForm.CreateNewForm` metoden och lägg till den i`Resources.Forms` samling av en specifik sida. Du kan sedan lägga till innehåll till XForms`Contents` fast egendom.
+ S: För att skapa ett XForm, använd`XForm.CreateNewForm` metoden och lägg till den i`Resources.Forms` samling av en specifik sida. Du kan sedan lägga till innehåll till XForms`Contents` egendom.
 
 #### F: Hur kan jag rita en bild i en XForm?
 
- S: Ladda bilden i en ström och lägg till den i`Resources.Images` samling av XForm. Använd`Do` operatör inom XForms`Contents` att rita bilden.
+S: Ladda bilden i en ström och lägg till den i`Resources.Images` samling av XForm. Använd`Do` operatör inom XForms`Contents` att rita bilden.
 
 #### F: Hur placerar jag ett XForm på en PDF-sida?
 
@@ -196,11 +196,11 @@ using Aspose.Pdf.Operators;
 
 #### F: Kan jag rita flera XForms på samma sida?
 
- S: Ja, du kan rita flera XForms på samma sida genom att justera`ConcatenateMatrix`parametrar för att placera varje XForm vid olika koordinater.
+ S: Ja, du kan rita flera XForms på samma sida genom att justera`ConcatenateMatrix` parametrar för att placera varje XForm vid olika koordinater.
 
 #### F: Kan jag ändra innehållet i en XForm efter att den har skapats?
 
- S: Ja, du kan ändra innehållet i en XForm efter att den har skapats genom att lägga till ytterligare operatorer till dess`Contents` fast egendom.
+ S: Ja, du kan ändra innehållet i en XForm efter att den har skapats genom att lägga till ytterligare operatorer till dess`Contents` egendom.
 
 #### F: Vad händer om jag utelämnar GSave- och GRestore-operatörerna?
 
@@ -216,4 +216,4 @@ S: Även om det inte finns någon strikt gräns för antalet XForms du kan skapa
 
 #### F: Kan jag rotera en XForm eller tillämpa andra transformationer?
 
- A: Ja, du kan använda`ConcatenateMatrix`operatör för att tillämpa transformationer som rotation, skalning och translation till en XForm.
+ A: Ja, du kan använda`ConcatenateMatrix` operatör för att tillämpa transformationer som rotation, skalning och translation till en XForm.

@@ -63,7 +63,7 @@ document.Save(dataDir);
 Console.WriteLine("\nOpen action removed successfully.\nFile saved at " + dataDir); 
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Συγχαρητήρια ! Τώρα ξέρετε πώς να αφαιρέσετε την ανοιχτή ενέργεια από ένα PDF χρησιμοποιώντας το Aspose.PDF για .NET. Χρησιμοποιήστε αυτή τη γνώση για να προσαρμόσετε τις ιδιότητες και τη συμπεριφορά των αρχείων PDF στα έργα σας.
 

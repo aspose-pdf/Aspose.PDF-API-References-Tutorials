@@ -44,7 +44,7 @@ Naučte se převádět PDF do formátu PPTX pomocí Aspose.PDF for Java. Podrobn
 ### [Převeďte soubory PDF na obrázky SVG](./convert-pdfs-to-svg-images/)
 Převeďte soubory PDF na obrázky SVG pomocí Aspose.PDF pro Javu - Podrobný průvodce bezproblémovým převodem PDF na SVG s Aspose.PDF pro Javu.
 ### [Uložte soubory PDF jako tabulky XLSX](./save-pdfs-as-xlsx-spreadsheets/)
-Naučte se, jak převádět soubory PDF na tabulky XLSX pomocí Aspose.PDF pro Java. Podrobný průvodce pro efektivní extrakci a analýzu dat.
+Naučte se převádět soubory PDF na tabulky XLSX pomocí Aspose.PDF pro Java. Podrobný průvodce pro efektivní extrakci a analýzu dat.
 ### [Převod PDF do formátu XML](./convert-pdfs-to-xml-format/)
 Naučte se, jak bez námahy převádět PDF do XML pomocí Aspose.PDF for Java. Podrobný průvodce a doporučené postupy pro efektivní konverzi.
 ### [Přeměňte PostScript na soubory PDF](./turn-postscript-into-pdf-files/)
@@ -54,9 +54,9 @@ V tomto podrobném průvodci se dozvíte, jak bez námahy převést SVG do PDF p
 ### [Změnit text na soubory PDF](./change-text-to-pdf-files/)
 Naučte se, jak snadno převádět text na soubory PDF pomocí Aspose.PDF for Java. Průvodce krok za krokem se zdrojovým kódem.
 ### [Export XML do PDF dokumentů](./export-xml-to-pdf-documents/)
-Snadno převádějte XML do PDF pomocí Aspose.PDF pro Javu. Zjednodušte reprezentaci a sdílení dat. Jak na to se dozvíte v tomto komplexním průvodci.
+Snadno převádějte XML do PDF pomocí Aspose.PDF pro Javu. Zjednodušte reprezentaci a sdílení dat. Jak na to, se dozvíte v tomto komplexním průvodci.
 ### [Převod souborů XPS na soubory PDF](./convert-xps-to-pdf-files/)
-Naučte se, jak bez námahy převádět soubory XPS na soubory PDF pomocí Aspose.PDF for Java. Náš průvodce krok za krokem celý proces zjednodušuje.
+Naučte se, jak bez námahy převádět soubory XPS na soubory PDF pomocí Aspose.PDF for Java. Náš průvodce krok za krokem tento proces zjednodušuje.
 ### [Transformujte XSL-FO do formátu PDF](./transform-xsl-fo-to-pdf-format/)
 Transformujte XSL-FO do PDF pomocí Aspose.PDF pro Javu. Podrobný průvodce, zdrojový kód a časté dotazy pro efektivní převod dat.
 ### [Převeďte PDF do HTML pomocí náhrady písem](./convert-pdf-to-html-with-font-substitution/)

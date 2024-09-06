@@ -7,13 +7,13 @@ type: docs
 weight: 60
 url: /sv/net/programming-with-graphs/create-rectangle-with-alpha-color/
 ---
-I den här handledningen går vi igenom följande C#-källkod steg för steg för att skapa en rektangel med alfafärg med Aspose.PDF för .NET.
+den här handledningen går vi igenom följande C#-källkod steg för steg för att skapa en rektangel med alfafärg med Aspose.PDF för .NET.
 
 Se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö innan du börjar. Har även grundläggande kunskaper i C#-programmering.
 
 ## Steg 1: Installation av dokumentkatalog
 
-den medföljande källkoden måste du ange katalogen där du vill spara den resulterande PDF-filen. Ändra variabeln "dataDir" till önskad katalog.
+I den medföljande källkoden måste du ange katalogen där du vill spara den resulterande PDF-filen. Ändra variabeln "dataDir" till önskad katalog.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -93,7 +93,7 @@ Aspose.Pdf.Page page = doc.Pages.Add();
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 // Skapa rektangelobjekt med specifika mått
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 100);
-//Ställ in graffyllningsfärg från System.Drawing.Color-struktur från ett 32-bitars ARGB-värde
+// Ställ in graffyllningsfärg från System.Drawing.Color-struktur från ett 32-bitars ARGB-värde
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
 // Lägg till rektangelobjekt till formsamlingen av Graph-instansen
 canvas.Shapes.Add(rect);
@@ -126,7 +126,7 @@ S: Innan du börjar, se till att du har installerat Aspose.PDF-biblioteket och s
 
 #### F: Hur anger jag katalogen för att spara PDF-filen?
 
-S: I den medföljande källkoden kan du ändra variabeln "dataDir" för att indikera katalogen där du vill spara den resulterande PDF-filen.
+S: I den medföljande källkoden kan du ändra variabeln "dataDir" för att ange katalogen där du vill spara den resulterande PDF-filen.
 
 #### F: Vad är syftet med Graph-objektet och rektangeln?
 
@@ -134,7 +134,7 @@ S: Graph-objektet fungerar som en behållare för att rita element, medan rektan
 
 #### F: Hur kan jag ställa in en alfafärg för rektangeln?
 
-S: Du kan ange en alfafärg för rektangeln med hjälp av`FillColor` egendom av`GraphInfo` objekt och`Color.FromRgb` metod med ett ARGB-värde.
+ S: Du kan ange en alfafärg för rektangeln med hjälp av`FillColor` egendom av`GraphInfo` objekt och`Color.FromRgb` metod med ett ARGB-värde.
 
 #### F: Kan jag skapa flera rektanglar med olika alfafärger?
 

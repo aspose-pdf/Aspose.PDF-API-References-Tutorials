@@ -16,7 +16,7 @@ Dokumenty PDF často obsahují obrázky a může být užitečné extrahovat inf
 
 ## 2. Nastavení Aspose.PDF pro Java
 
- Než začneme, musíte ve svém projektu nastavit Aspose.PDF pro Javu. Knihovnu si můžete stáhnout z webu[tady](https://releases.aspose.com/pdf/java/) a postupujte podle pokynů k instalaci.
+ Než začneme, musíte ve svém projektu nastavit Aspose.PDF pro Javu. Knihovnu si můžete stáhnout z webu[zde](https://releases.aspose.com/pdf/java/) a postupujte podle pokynů k instalaci.
 
 ## 3. Načtení dokumentu PDF
 
@@ -90,7 +90,7 @@ V této příručce jsme se naučili, jak extrahovat vlastnosti obrázku z dokum
 
 ### Jak nainstaluji Aspose.PDF pro Javu?
 
- Aspose.PDF pro Java si můžete stáhnout z webových stránek[tady](https://releases.aspose.com/pdf/java/) a postupujte podle pokynů k instalaci uvedených v dokumentaci.
+ Aspose.PDF pro Java si můžete stáhnout z webových stránek[zde](https://releases.aspose.com/pdf/java/) a postupujte podle pokynů k instalaci uvedených v dokumentaci.
 
 ### Mohu extrahovat vlastnosti obrázku z konkrétních stránek v PDF?
 

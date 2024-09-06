@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 1. lépés: Állítsa be a dokumentumkönyvtárat
 
- Először is be kell állítania annak a könyvtárnak az elérési útját, ahová a létrehozott PDF-fájlt menteni szeretné. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir`változót a kívánt könyvtár elérési útjával.
+ Először is be kell állítania annak a könyvtárnak az elérési útját, ahová a létrehozott PDF-fájlt menteni szeretné. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változót a kívánt könyvtár elérési útjával.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -45,7 +45,7 @@ Document document = new Document(outputFile);
 
 ## 4. lépés: Keresse meg a szövegrészletet
 
- Használjuk a`TextFragmentAbsorber` objektumot, hogy megtalálja azt a szövegrészletet, amely kiváltja a rejtett szövegblokk megjelenítését. Ebben az esetben pontosan a "Vigye ide az egérkurzort a lebegő szöveg megjelenítéséhez" szövegre keresünk.
+ Használjuk a`TextFragmentAbsorber`objektumot, hogy megtalálja azt a szövegrészletet, amely kiváltja a rejtett szövegblokk megjelenítését. Ebben az esetben pontosan a "Vigye ide az egérkurzort a lebegő szöveg megjelenítéséhez" szövegre keresünk.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
@@ -112,12 +112,12 @@ doc.Save(outputFile);
 Document document = new Document(outputFile);
 // Hozzon létre TextAbsorber objektumot a reguláris kifejezésnek megfelelő kifejezések megtalálásához
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-// Fogadja el az elnyelőt a dokumentumoldalakhoz
+// Fogadja el a dokumentumoldalak elnyelőjét
 document.Pages.Accept(absorber);
 // Szerezd meg az első kivont szövegrészletet
 TextFragmentCollection textFragments = absorber.TextFragments;
 TextFragment fragment = textFragments[1];
-// Rejtett szövegmező létrehozása a lebegő szöveghez az oldal megadott téglalapjában
+//Rejtett szövegmező létrehozása a lebegő szöveghez az oldal megadott téglalapjában
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
 // Állítsa be a mező értékeként megjelenítendő szöveget
 floatingField.Value = "This is the \"floating text field\".";
@@ -139,7 +139,7 @@ document.Form.Add(floatingField);
 // Láthatatlan gomb létrehozása a szövegrészlet pozíciójában
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
 // Hozzon létre új elrejtési műveletet a megadott mezőhöz (jegyzet) és láthatatlansági jelzőhöz.
-//(A lebegő mezőt a névvel is hivatkozhat, ha fent megadta.)
+// (A lebegő mezőt a névvel is hivatkozhat, ha fent megadta.)
 // Adjon hozzá műveleteket az egér be-/kilépésekor a láthatatlan gombmezőben
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);
@@ -167,11 +167,11 @@ V: A rejtett szövegblokk létrehozása hasznos lehet olyan interaktív PDF-doku
 
 V: A dokumentumkönyvtár beállításához:
 
-1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` ban,-ben`dataDir` változó annak a könyvtárnak az elérési útjával, ahová a generált PDF fájlt menteni szeretné.
+1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változó annak a könyvtárnak az elérési útjával, ahová a generált PDF fájlt menteni szeretné.
 
 #### K: Hogyan készíthetek mintadokumentumot, és hogyan adhatok hozzá szövegrészletet?
 
-V: Az oktatóanyagban a`Document` osztályban PDF-minta létrehozásához és szövegrészlet hozzáadásához. Ez a szövegtöredék szolgál a rejtett szövegblokk megjelenítéséhez.
+ V: Az oktatóanyagban a`Document` osztályban PDF-minta létrehozásához és szövegrészlet hozzáadásához. Ez a szövegtöredék szolgál a rejtett szövegblokk megjelenítéséhez.
 
 #### K: Hogyan találhatom meg azt a szövegrészletet, amely kiváltja a rejtett szövegblokkot?
 
@@ -179,7 +179,7 @@ V: Az oktatóanyagban a`Document` osztályban PDF-minta létrehozásához és sz
 
 #### K: Hogyan hozhatom létre és szabhatom testre a rejtett szövegmezőt?
 
- V: Ön létrehoz egy`TextBoxField` objektumot a rejtett szövegmező megjelenítéséhez. Az oktatóanyag kódot tartalmaz a rejtett szövegmező különféle tulajdonságainak, például pozíciójának, értékének, megjelenésének és viselkedésének beállításához.
+ V: Ön létrehoz egy`TextBoxField`objektumot a rejtett szövegmező megjelenítéséhez. Az oktatóanyag kódot tartalmaz a rejtett szövegmező különféle tulajdonságainak, például pozíciójának, értékének, megjelenésének és viselkedésének beállításához.
 
 #### K: Hogyan hozhatok létre egy láthatatlan gombot a rejtett szövegblokkhoz társítva?
 

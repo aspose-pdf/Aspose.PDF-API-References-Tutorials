@@ -75,7 +75,7 @@ S: För att dela upp ett PDF-dokument i enskilda sidor med Aspose.PDF för .NET,
 1. Ställ in dokumentkatalogen genom att ange sökvägen där din ursprungliga PDF-fil finns och var du vill spara de delade PDF-filerna. Ersätt "DIN DOKUMENTKATOLOG" med lämplig sökväg.
 2.  Öppna PDF-dokumentet för att dela med hjälp av`Document` klass av Aspose.PDF. Var noga med att ange rätt sökväg till det ursprungliga PDF-dokumentet.
 3. Bläddra igenom alla sidor i PDF-dokumentet med en slinga.
-4.  Skapa ett nytt dokument för varje sida med hjälp av`Document` klass och lägg till den sidan i detta nya dokument med hjälp av`Add()` metod för`Pages` fast egendom.
+4.  Skapa ett nytt dokument för varje sida med hjälp av`Document` klass och lägg till den sidan i detta nya dokument med hjälp av`Add()` metod för`Pages` egendom.
 5.  Spara det nya dokumentet med ett unikt filnamn för varje sida med hjälp av`Save()` metod för`Document` klass.
 
 #### F: Kommer uppdelning av PDF-dokumentet att påverka den ursprungliga PDF-filen?

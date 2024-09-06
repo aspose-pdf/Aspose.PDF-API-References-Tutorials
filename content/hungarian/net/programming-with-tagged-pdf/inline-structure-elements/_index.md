@@ -47,7 +47,7 @@ ITaggedContent taggedContent = document.TaggedContent;
 
 ## 4. lépés: Állítsa be a dokumentum címét és nyelvét
 
-Most beállíthatjuk a dokumentum címét és nyelvét.
+Most már beállíthatjuk a dokumentum címét és nyelvét.
 
 ```csharp
 // Határozza meg a dokumentum címét és nyelvét
@@ -289,7 +289,7 @@ V: A PDF-dokumentum soron belüli szerkezeti elemei, például a különböző s
 
 V: A soron belüli struktúraelemek, különösen a címsorok és bekezdések, logikai struktúrával segítik a PDF-dokumentumok olvashatóságát és rendszerezését. A címsorok különböző fontossági szinteket jeleznek, és segítik az olvasókat a tartalomban való eligazodásban, míg a bekezdések a kapcsolódó információkat csoportosítják.
 
-#### K: Hogyan könnyíti meg az Aspose.PDF for .NET a belső szerkezeti elemek használatát?
+#### K: Hogyan segíti elő az Aspose.PDF for .NET a beágyazott szerkezeti elemek használatát?
 
 V: Az Aspose.PDF for .NET osztályokat és módszereket kínál a soron belüli struktúraelemek, például címsorok és bekezdések létrehozásához és kezeléséhez. Ezek az elemek testreszabhatók, hierarchikusan rendezhetők, és tartalommal gazdagíthatók a dokumentum vizuális megjelenítésének és hozzáférhetőségének javítása érdekében.
 

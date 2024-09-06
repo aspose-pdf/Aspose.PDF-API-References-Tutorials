@@ -20,7 +20,7 @@ url: /zh-hant/java/pdf-conversion-transformation/add-layers-to-pdf-file-using-ja
 如果您尚未安裝 Java 開發工具包 (JDK) 並設定您首選的整合開發環境 (IDE)。確保您的開發環境已準備好進行 Java 程式設計。
 
 ## 步驟 2：將 Aspose.PDF for Java 新增到您的專案中
-設定開發環境後，您需要將 Aspose.PDF for Java 庫新增到您的專案中。按著這些次序：
+設定開發環境後，您需要將 Aspose.PDF for Java 庫新增到您的專案中。請依照下列步驟操作：
 
 1. 從網站下載 Aspose.PDF for Java 函式庫。
 2. 在 IDE 中，建立一個新的 Java 專案或開啟一個現有專案。

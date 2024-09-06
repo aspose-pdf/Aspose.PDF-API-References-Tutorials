@@ -85,7 +85,7 @@ using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
 
 #### Q：開始本教學需要什麼先決條件？
 
-答：在開始之前，請確保您對 C# 程式語言有基本的了解，並已安裝 Visual Studio，並安裝了適用於 .NET 的 Aspose.PDF 程式庫。
+答：在開始之前，請確保您對 C# 程式語言有基本的了解，並已安裝 Visual Studio，並已安裝適用於 .NET 的 Aspose.PDF 程式庫。
 
 #### Q：如何設定我的開發環境？
 

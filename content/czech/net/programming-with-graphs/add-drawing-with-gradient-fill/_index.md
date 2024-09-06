@@ -13,7 +13,7 @@ Než začnete, ujistěte se, že jste nainstalovali knihovnu Aspose.PDF a nastav
 
 ## Krok 1: Nastavení adresáře dokumentů
 
-poskytnutém zdrojovém kódu musíte určit adresář, kam chcete uložit výsledný soubor PDF. Změňte proměnnou "dataDir" na požadovaný adresář.
+V poskytnutém zdrojovém kódu musíte určit adresář, kam chcete uložit výsledný soubor PDF. Změňte proměnnou "dataDir" na požadovaný adresář.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";

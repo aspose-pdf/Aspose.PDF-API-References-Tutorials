@@ -1,23 +1,23 @@
 ---
-title: Kotak Centang yang Dikelompokkan Dalam Dokumen PDF
-linktitle: Kotak Centang yang Dikelompokkan Dalam Dokumen PDF
-second_title: Aspose.PDF untuk Referensi .NET API
+title: Kotak Centang yang Dikelompokkan dalam Dokumen PDF
+linktitle: Kotak Centang yang Dikelompokkan dalam Dokumen PDF
+second_title: Referensi API Aspose.PDF untuk .NET
 description: Buat kotak centang yang dikelompokkan dengan mudah dalam dokumen PDF dengan Aspose.PDF untuk .NET.
 type: docs
 weight: 170
 url: /id/net/programming-with-forms/grouped-check-boxes/
 ---
-Dalam tutorial ini, kami akan menunjukkan cara membuat kotak centang yang dikelompokkan dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Kami akan menjelaskan kode sumber C# langkah demi langkah untuk memandu Anda melalui proses ini.
+Dalam tutorial ini, kami akan menunjukkan cara membuat kotak centang berkelompok dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Kami akan menjelaskan kode sumber C# langkah demi langkah untuk memandu Anda melalui proses ini.
 
 ## Langkah 1: Persiapan
 
-Pastikan Anda telah mengimpor perpustakaan yang diperlukan dan mengatur jalur ke direktori dokumen Anda:
+Pastikan Anda telah mengimpor pustaka yang diperlukan dan mengatur jalur ke direktori dokumen Anda:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Langkah 2: Buat Instansiasi Objek Dokumen
+## Langkah 2: Membuat Instansi Objek Dokumen
 
 Membuat instance objek Dokumen:
 
@@ -33,7 +33,7 @@ Tambahkan halaman ke dokumen PDF:
 Page page = pdfDocument.Pages.Add();
 ```
 
-## Langkah 4: Buat instance Objek RadioButtonField
+## Langkah 4: Membuat Instansiasi Objek RadioButtonField
 
 Buat instance objek RadioButtonField dengan nomor halaman sebagai argumen:
 
@@ -92,13 +92,13 @@ try
 {
 	// Jalur ke direktori dokumen.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Buat instance objek Dokumen
+	// Membuat instance objek Dokumen
 	Document pdfDocument = new Document();
 	// Tambahkan halaman ke file PDF
 	Page page = pdfDocument.Pages.Add();
 	// Buat objek RadioButtonField dengan nomor halaman sebagai argumen
 	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
-	// Tambahkan opsi tombol radio pertama dan tentukan juga asalnya menggunakan objek Rectangle
+	// Tambahkan opsi tombol radio pertama dan tentukan juga asalnya menggunakan objek Persegi Panjang
 	RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
 	RadioButtonOptionField opt2 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(100, 0, 120, 20));
 	opt1.OptionName = "Test1";
@@ -117,7 +117,7 @@ try
 	opt2.Border.Width = 1;
 	opt2.Border.Style = BorderStyle.Solid;
 	opt2.Characteristics.Border = System.Drawing.Color.Black;
-	// Tambahkan tombol radio untuk membentuk objek objek Dokumen
+	// Tambahkan tombol radio ke objek formulir objek Dokumen
 	pdfDocument.Form.Add(radio);
 	dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
 	// Simpan dokumen PDF
@@ -134,24 +134,24 @@ catch (Exception ex)
 
 Dalam tutorial ini, kita mempelajari cara membuat kotak centang yang dikelompokkan dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Dengan mengikuti langkah-langkah ini, Anda dapat dengan mudah menambahkan opsi tombol radio khusus dan menggabungkannya dalam dokumen PDF Anda menggunakan Aspose.PDF.
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
-#### T: Apa yang dimaksud dengan kotak centang yang dikelompokkan dalam dokumen PDF?
+#### T: Apa itu kotak centang yang dikelompokkan dalam dokumen PDF?
 
-J: Kotak centang yang dikelompokkan dalam dokumen PDF mengacu pada serangkaian opsi tombol radio yang dikelompokkan bersama. Tombol radio memungkinkan pengguna untuk memilih hanya satu pilihan dari sekelompok pilihan yang saling eksklusif. Ketika satu tombol radio dipilih, tombol lain dalam grup yang sama secara otomatis dibatalkan pilihannya. Perilaku pengelompokan ini berguna ketika Anda ingin memberikan beberapa pilihan kepada pengguna tetapi membatasi pilihan mereka pada satu pilihan saja.
+A: Kotak centang yang dikelompokkan dalam dokumen PDF merujuk pada serangkaian opsi tombol radio yang dikelompokkan bersama. Tombol radio memungkinkan pengguna untuk memilih hanya satu opsi dari sekelompok pilihan yang saling eksklusif. Ketika satu tombol radio dipilih, tombol radio lainnya dalam kelompok yang sama akan otomatis tidak dipilih. Perilaku pengelompokan ini berguna ketika Anda ingin menyajikan beberapa opsi kepada pengguna tetapi membatasi pilihan mereka hanya pada satu pilihan.
 
-#### T: Bisakah saya mengkustomisasi tampilan kotak centang yang dikelompokkan di Aspose.PDF untuk .NET?
+#### T: Dapatkah saya menyesuaikan tampilan kotak centang yang dikelompokkan dalam Aspose.PDF untuk .NET?
 
-J: Ya, Anda dapat menyesuaikan tampilan kotak centang yang dikelompokkan di Aspose.PDF untuk .NET. API menyediakan berbagai opsi untuk mengatur gaya, batas, dan tampilan opsi tombol radio. Anda dapat menentukan posisi setiap opsi, memilih di antara gaya kotak yang berbeda (misalnya persegi, lingkaran, silang), dan menyesuaikan properti batas untuk mencapai representasi visual yang diinginkan.
+A: Ya, Anda dapat menyesuaikan tampilan kotak centang yang dikelompokkan di Aspose.PDF untuk .NET. API menyediakan berbagai opsi untuk mengatur gaya, batas, dan tampilan opsi tombol radio. Anda dapat menentukan posisi setiap opsi, memilih di antara berbagai gaya kotak (misalnya, persegi, lingkaran, silang), dan menyesuaikan properti batas untuk mencapai representasi visual yang diinginkan.
 
-#### T: Bagaimana cara menambahkan kotak centang yang dikelompokkan ke halaman tertentu di dokumen PDF?
+#### T: Bagaimana cara menambahkan kotak centang yang dikelompokkan ke halaman tertentu dalam dokumen PDF?
 
-J: Untuk menambahkan kotak centang yang dikelompokkan ke halaman tertentu dalam dokumen PDF, Anda perlu membuat instance a`RadioButtonField` objek dengan nomor halaman yang diinginkan sebagai argumen. Lalu, buat`RadioButtonOptionField` objek yang mewakili setiap opsi tombol radio dan menentukan posisinya menggunakan`Rectangle` obyek. Terakhir, tambahkan opsi ini ke`RadioButtonField` dan sesuaikan tampilannya sesuai kebutuhan sebelum menambahkan`RadioButtonField` ke formulir dokumen.
+A: Untuk menambahkan kotak centang yang dikelompokkan ke halaman tertentu dalam dokumen PDF, Anda perlu membuat instance`RadioButtonField` objek dengan nomor halaman yang diinginkan sebagai argumen. Kemudian, buat`RadioButtonOptionField` objek yang mewakili setiap opsi tombol radio dan menentukan posisinya menggunakan`Rectangle` objek. Terakhir, tambahkan opsi ini ke`RadioButtonField` dan menyesuaikan tampilannya sesuai kebutuhan sebelum menambahkan`RadioButtonField` ke formulir dokumen.
 
 #### T: Dapatkah saya menambahkan beberapa grup kotak centang ke satu dokumen PDF?
 
- J: Ya, Anda dapat menambahkan beberapa grup kotak centang ke satu dokumen PDF. Setiap kelompok harus memiliki keunikannya`RadioButtonField` objek, dan`RadioButtonOptionField` objek dalam setiap grup harus berbagi halaman yang sama dan nama unik untuk opsinya. Hal ini memastikan bahwa tombol radio dalam setiap grup berfungsi dengan benar, dan pilihannya saling eksklusif.
+ A: Ya, Anda dapat menambahkan beberapa grup kotak centang ke satu dokumen PDF. Setiap grup harus memiliki nama yang unik.`RadioButtonField` objek, dan`RadioButtonOptionField` Objek dalam setiap grup harus berbagi halaman yang sama dan nama yang unik untuk opsinya. Ini memastikan bahwa tombol radio dalam setiap grup berfungsi dengan benar, dan pilihannya saling eksklusif.
 
 #### T: Apakah kotak centang yang dikelompokkan didukung di semua penampil dan aplikasi PDF?
 
-J: Ya, kotak centang yang dikelompokkan didukung di semua aplikasi dan penampil PDF yang memenuhi standar. Spesifikasi PDF mendefinisikan tombol radio dan perilaku pengelompokannya, membuatnya dikenali secara universal dalam format PDF. Namun, penting untuk menguji fungsionalitas di berbagai penampil PDF untuk memastikan perilaku yang konsisten di berbagai platform.
+J: Ya, kotak centang yang dikelompokkan didukung di semua penampil dan aplikasi PDF yang sesuai standar. Spesifikasi PDF mendefinisikan tombol radio dan perilaku pengelompokannya, sehingga dikenal secara universal dalam format PDF. Namun, penting untuk menguji fungsionalitas di berbagai penampil PDF guna memastikan perilaku yang konsisten di berbagai platform.

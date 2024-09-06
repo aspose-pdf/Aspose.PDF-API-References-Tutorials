@@ -16,17 +16,17 @@ Az Aspose.PDF for Java-t fogjuk használni, amely egy hatékony könyvtár, amel
 
 ## A környezet beállítása
 
-Mielőtt belemerülnénk a kódba, be kell állítania a fejlesztői környezetet. Kovesd ezeket a lepeseket:
+Mielőtt belemerülnénk a kódba, be kell állítania a fejlesztői környezetet. Kövesse az alábbi lépéseket:
 
 1.  Az Aspose.PDF for Java letöltése: Látogassa meg az Aspose webhelyét, és töltse le az Aspose.PDF for Java legújabb verzióját. Megtalálhatod[itt](https://releases.aspose.com/pdf/java/).
 
 2. Az Aspose.PDF telepítése: A letöltés után telepítse az Aspose.PDF fájlt a webhelyen található telepítési utasításokat követve.
 
-3. Java-projekt létrehozása: Hozzon létre egy új Java-projektet az Ön által előnyben részesített Integrált Fejlesztési Környezetben (IDE), és foglalja bele az Aspose.PDF könyvtárat a projektbe.
+3. Java-projekt létrehozása: Hozzon létre egy új Java-projektet az előnyben részesített integrált fejlesztőkörnyezetben (IDE), és foglalja bele az Aspose.PDF könyvtárat a projektbe.
 
 ## Új PDF dokumentum létrehozása
 
-Kezdjük egy új PDF dokumentum létrehozásával. Ebben a példában egy egyszerű PDF-fájlt hozunk létre címmel és néhány utasítással.
+Kezdjük egy új PDF dokumentum létrehozásával. Ebben a példában egy egyszerű PDF-fájlt fogunk létrehozni címmel és néhány utasítással.
 
 ```java
 // Importálja az Aspose.PDF könyvtárat
@@ -61,7 +61,7 @@ Ebben a kódrészletben létrehozunk egy új PDF-dokumentumot, hozzáadunk egy o
 
 ## Űrlapmezők hozzáadása
 
-Most lépjünk tovább az űrlapmezők PDF dokumentumunkhoz való hozzáadására. Szövegmezőket, jelölőnégyzeteket és választógombokat helyezünk el az interaktív visszajelzési űrlap létrehozásához.
+Most lépjünk tovább az űrlapmezők PDF-dokumentumunkhoz való hozzáadására. Szövegmezőket, jelölőnégyzeteket és választógombokat helyezünk el az interaktív visszajelzési űrlap létrehozásához.
 
 ### Szövegmezők
 
@@ -186,7 +186,7 @@ outputStream.close();
 
 ## Következtetés
 
-Ebben az átfogó útmutatóban megvizsgáltuk, hogyan adhatunk űrlapmezőket PDF-dokumentumokhoz Java és Aspose.PDF for Java használatával. Megtanulta, hogyan hozhat létre szövegmezőket, jelölőnégyzeteket és választógombokat, hogyan szabhatja testre tulajdonságaikat, állíthat be alapértelmezett értékeket, engedélyezheti az űrlapok elküldését és érvényesítését, valamint hogyan mentheti/exportálhatja a PDF-dokumentumot.
+Ebben az átfogó útmutatóban megvizsgáltuk, hogyan adhatunk űrlapmezőket PDF-dokumentumokhoz Java és Aspose.PDF for Java használatával. Megtanulta, hogyan hozhat létre szövegmezőket, jelölőnégyzeteket és választógombokat, hogyan szabhatja testre tulajdonságaikat, állítsa be az alapértelmezett értékeket, engedélyezze az űrlapok elküldését és érvényesítését, valamint hogyan mentheti/exportálhatja a PDF-dokumentumot.
 
 ## GYIK
 
@@ -196,11 +196,11 @@ Ebben az átfogó útmutatóban megvizsgáltuk, hogyan adhatunk űrlapmezőket P
 
 ### Az Aspose.PDF for Java kompatibilis más Java könyvtárakkal és keretrendszerekkel?
 
-Igen, az Aspose.PDF for Java kompatibilis különféle Java könyvtárakkal és keretrendszerekkel. Integrálhatja Java-alkalmazásaiba, függetlenül attól, hogy Spring, JavaFX vagy más népszerű keretrendszert használ. Ügyeljen arra, hogy ellenőrizze a dokumentációt és a forrásokat a konkrét integrációs irányelvekhez.
+Igen, az Aspose.PDF for Java kompatibilis különféle Java könyvtárakkal és keretrendszerekkel. Integrálhatja Java-alkalmazásaiba, akár Spring, JavaFX vagy más népszerű keretrendszert használ. Ügyeljen arra, hogy ellenőrizze a dokumentációt és a forrásokat a konkrét integrációs irányelvekhez.
 
 ### Megvédhetem jelszóval az Aspose.PDF for Java programmal létrehozott PDF-űrlapot?
 
-Teljesen! Az Aspose.PDF for Java lehetővé teszi, hogy jelszavas védelmet adjon PDF dokumentumaihoz, beleértve az űrlapokat is. Felhasználói és tulajdonosi szintű jelszavakat is beállíthat a hozzáférés és az engedélyek korlátozására. Tekintse meg a dokumentációt a biztonsági funkció megvalósítására vonatkozó részletes utasításokért.
+Teljesen! Az Aspose.PDF for Java lehetővé teszi, hogy jelszavas védelmet adjon PDF-dokumentumaihoz, beleértve az űrlapokat is. Felhasználói és tulajdonosi szintű jelszavakat is beállíthat a hozzáférés és az engedélyek korlátozására. Tekintse meg a dokumentációt a biztonsági funkció megvalósítására vonatkozó részletes utasításokért.
 
 ### Hogyan bonthatom ki a PDF űrlapon keresztül benyújtott adatokat?
 

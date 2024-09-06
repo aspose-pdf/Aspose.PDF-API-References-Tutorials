@@ -8,19 +8,19 @@ weight: 230
 url: /nl/net/programming-with-forms/radio-button-with-options/
 ---
 
-In deze zelfstudie laten we u zien hoe u een keuzerondje met opties aan een PDF-document kunt toevoegen met Aspose.PDF voor .NET. We leggen de C#-broncode stap voor stap uit om u door dit proces te begeleiden.
+In deze tutorial laten we u zien hoe u een radioknop met opties toevoegt aan een PDF-document met Aspose.PDF voor .NET. We leggen de C#-broncode stap voor stap uit om u door dit proces te leiden.
 
 ## Stap 1: Voorbereiding
 
-Zorg ervoor dat u de benodigde bibliotheken heeft geïmporteerd en stel het pad in naar uw documentenmap:
+Zorg ervoor dat u de benodigde bibliotheken hebt geïmporteerd en het pad naar uw documentenmap hebt ingesteld:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Stap 2: Instantie van een documentobject
+## Stap 2: Een documentobject instantiëren
 
-Een documentobject instantiëren om een nieuw PDF-document te maken:
+Instantieer een Document-object om een nieuw PDF-document te maken:
 
 ```csharp
 Document doc = new Document();
@@ -28,7 +28,7 @@ Document doc = new Document();
 
 ## Stap 3: Pagina en tabel toevoegen
 
-Voeg een pagina toe aan het document en maak een tabel met de keuzerondjes:
+Voeg een pagina toe aan het document en maak een tabel om de keuzerondjes in op te slaan:
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -39,7 +39,7 @@ page.Paragraphs.Add(table);
 
 ## Stap 4: Instantieer een RadioButtonField-object
 
-Instantieer een RadioButtonField-object om het keuzerondje weer te geven:
+Instantieer een RadioButtonField-object om de keuzerondje weer te geven:
 
 ```csharp
 RadioButtonField rf = new RadioButtonField(page);
@@ -47,9 +47,9 @@ rf. PartialName = "radio";
 doc.Form.Add(rf, 1);
 ```
 
-## Stap 5: Voeg keuzerondjes toe
+## Stap 5: Voeg keuzerondje-opties toe
 
-Voeg de keuzerondjesopties toe aan het RadioButtonField-object:
+Voeg de keuzerondjes toe aan het RadioButtonField-object:
 
 ```csharp
 RadioButtonOptionField opt1 = new RadioButtonOptionField();
@@ -69,9 +69,9 @@ rf.Add(opt2);
 rf.Add(opt3);
 ```
 
-## Stap 6: Pas de keuzerondjesopties aan
+## Stap 6: Pas de opties voor keuzerondjes aan
 
-Pas de opties voor keuzerondjes aan door kenmerken in te stellen zoals rand, tekstkleur en bijschrift:
+Pas de opties voor keuzerondjes aan door kenmerken in te stellen zoals rand, tekstkleur en bijschrifttekst:
 
 ```csharp
 opt1.Border = new Border(opt1);
@@ -85,7 +85,7 @@ opt1.Caption = new TextFragment("Item1");
 
 ```
 
-## Stap 7: Voeg de keuzerondjes toe aan de tabel
+## Stap 7: Voeg de opties voor de keuzerondjes toe aan de tabel
 
 Voeg de keuzerondjes toe aan de tabel om ze weer te geven:
 
@@ -108,7 +108,7 @@ dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Voorbeeldbroncode voor keuzerondje met opties met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor keuzerondje met opties met behulp van Aspose.PDF voor .NET 
 ```csharp
 try
 {
@@ -175,4 +175,4 @@ catch (Exception ex)
 
 ## Conclusie
 
-Gefeliciteerd! U hebt met succes een keuzerondje met opties aan een PDF-document toegevoegd met Aspose.PDF voor .NET. U kunt deze methode nu gebruiken om interactieve formulieren in uw PDF-documenten te maken.
+Gefeliciteerd! U hebt met succes een keuzerondje met opties toegevoegd aan een PDF-document met Aspose.PDF voor .NET. U kunt deze methode nu gebruiken om interactieve formulieren te maken in uw PDF-documenten.

@@ -66,7 +66,7 @@ Console.WriteLine("\nParticular field deleted successfully.\nFile saved at " + d
 
 答：是的，您可以使用 Aspose.PDF for .NET 一次刪除多個表單欄位。只需撥打`Delete`您要刪除的每個表單欄位的方法。
 
-#### Q：在嘗試刪除表單欄位之前，如何檢查它是否存在？
+#### Q：在嘗試刪除表單欄位之前如何檢查它是否存在？
 
 答：您可以在嘗試刪除表單欄位之前檢查它是否存在，方法是使用`Contains`的方法`Form`財產。例如：
 

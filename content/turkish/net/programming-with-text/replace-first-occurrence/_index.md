@@ -1,24 +1,24 @@
 ---
-title: İlk Oluşumu Değiştir
-linktitle: İlk Oluşumu Değiştir
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET kullanarak bir PDF belgesinde metnin ilk geçtiği yeri nasıl değiştireceğinizi öğrenin.
+title: İlk Görünümü Değiştir
+linktitle: İlk Görünümü Değiştir
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak bir PDF belgesindeki metnin ilk örneğinin nasıl değiştirileceğini öğrenin.
 type: docs
 weight: 330
 url: /tr/net/programming-with-text/replace-first-occurrence/
 ---
-Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesinde belirli bir metnin ilk geçtiği yeri nasıl değiştireceğinizi açıklayacağız. Bir PDF belgesini açma, arama ifadesinin ilk geçtiği yeri bulma, metni değiştirme, özellikleri güncelleme ve değiştirilen PDF'yi sağlanan C# kaynak kodunu kullanarak kaydetme sürecini adım adım gerçekleştireceğiz.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesindeki belirli bir metnin ilk örneğinin nasıl değiştirileceğini açıklayacağız. Bir PDF belgesini açma, arama ifadesinin ilk örneğini bulma, metni değiştirme, özellikleri güncelleme ve sağlanan C# kaynak kodunu kullanarak değiştirilmiş PDF'yi kaydetme adım adım sürecini ele alacağız.
 
-## Önkoşullar
+## Ön koşullar
 
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
 - Aspose.PDF for .NET kütüphanesi kuruldu.
-- C# programlamanın temel anlayışı.
+- C# programlamanın temellerini anlamak.
 
-## 1. Adım: Belge Dizinini Ayarlayın
+## Adım 1: Belge Dizinini Ayarlayın
 
- Öncelikle, giriş PDF dosyasının bulunduğu dizinin yolunu ayarlamanız gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` PDF dosyanızın yolunu içeren değişken.
+ İlk olarak, giriş PDF dosyanızın bulunduğu dizine giden yolu ayarlamanız gerekir. Değiştir`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` PDF dosyanızın yolunu içeren değişken.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -26,24 +26,24 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Adım 2: PDF Belgesini açın
 
- Daha sonra, PDF belgesini kullanarak açıyoruz.`Document` Aspose.PDF kütüphanesinden sınıf.
+ Daha sonra PDF belgesini şu şekilde açıyoruz:`Document` Aspose.PDF kütüphanesinden sınıf.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 ```
 
-## Adım 3: Arama İfadesinin İlk Geçişini Bulun
+## Adım 3: Arama İfadesinin İlk Görünümünü Bulun
 
- Biz bir yaratıyoruz`TextFragmentAbsorber` Arama ifadesinin tüm örneklerini bulmak için PDF belgesinin tüm sayfaları için itiraz edin ve bunu kabul edin.
+ Biz bir tane yaratıyoruz`TextFragmentAbsorber` nesneyi seçin ve arama ifadesinin tüm örneklerini bulmak için PDF belgesinin tüm sayfalarını kabul edin.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 ```
 
-## 4. Adım: Metni Değiştirin
+## Adım 4: Metni Değiştirin
 
-Arama ifadesi PDF belgesinde bulunursa, metin parçasının ilk geçtiği yeri alır ve özelliklerini yeni metin ve biçimlendirmeyle güncelleriz.
+Aranan ifade PDF belgesinde bulunursa, metin parçasının ilk örneğini alırız ve özelliklerini yeni metin ve biçimlendirmeyle güncelleriz.
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -57,9 +57,9 @@ if (textFragmentCollection.Count > 0)
 }
 ```
 
-## 5. Adım: Değiştirilen PDF'yi kaydedin
+## Adım 5: Değiştirilen PDF'yi kaydedin
 
-Son olarak değiştirilen PDF belgesini belirtilen çıktı dosyasına kaydediyoruz.
+Son olarak değiştirdiğimiz PDF belgesini belirtilen çıktı dosyasına kaydediyoruz.
 
 ```csharp
 dataDir = dataDir + "ReplaceFirstOccurrence_out.pdf";
@@ -67,23 +67,23 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nText replaced successfully.\nFile saved at " + dataDir);
 ```
 
-### Aspose.PDF for .NET kullanarak İlk Oluşumu Değiştir için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak İlk Oluşumu Değiştirme için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 // Giriş arama ifadesinin tüm örneklerini bulmak için TextAbsorber nesnesi oluşturun
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
-// Tüm sayfalar için emiciyi kabul edin
+// Tüm sayfalar için emiciyi kabul et
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 // Çıkarılan metin parçalarını alın
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 if (textFragmentCollection.Count > 0)
 {
-	// Metnin ilk geçtiği yeri alın ve değiştirin
+	// Metnin ilk örneğini al ve değiştir
 	TextFragment textFragment = textFragmentCollection[1];
-	// Metni ve diğer özellikleri güncelleme
+	// Metni ve diğer özellikleri güncelle
 	textFragment.Text = "New Phrase";
 	textFragment.TextState.Font = FontRepository.FindFont("Verdana");
 	textFragment.TextState.FontSize = 22;
@@ -96,49 +96,49 @@ if (textFragmentCollection.Count > 0)
 
 ## Çözüm
 
-Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesinde belirli bir metnin ilk geçtiği yeri nasıl değiştireceğinizi öğrendiniz. Adım adım kılavuzu izleyerek ve verilen C# kodunu çalıştırarak bir PDF belgesi açabilir, bir arama ifadesinin ilk geçtiği yeri bulabilir, metni değiştirebilir, özellikleri güncelleyebilir ve değiştirilen PDF'yi kaydedebilirsiniz.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesindeki belirli bir metnin ilk örneğini nasıl değiştireceğinizi öğrendiniz. Adım adım kılavuzu izleyerek ve sağlanan C# kodunu çalıştırarak bir PDF belgesi açabilir, bir arama ifadesinin ilk örneğini bulabilir, metni değiştirebilir, özellikleri güncelleyebilir ve değiştirilmiş PDF'yi kaydedebilirsiniz.
 
-### SSS'ler
+### SSS
 
-#### S: "İlk Oluşumu Değiştir" öğreticisinin amacı nedir?
+#### S: "İlk Görünümü Değiştir" öğreticisinin amacı nedir?
 
-C: "İlk Oluşumu Değiştir" eğitimi, bir PDF belgesindeki belirli bir metnin ilk geçtiği yeri değiştirmek için Aspose.PDF kütüphanesinin .NET için nasıl kullanılacağını gösterir. Bir PDF belgesinin nasıl açılacağı, bir arama ifadesinin ilk örneğinin nasıl bulunacağı, metnin nasıl değiştirileceği, özelliklerin nasıl güncelleneceği ve değiştirilen PDF'nin nasıl kaydedileceği konusunda adım adım talimatlar sağlar.
+A: "İlk Oluşumu Değiştir" öğreticisi, .NET için Aspose.PDF kütüphanesinin bir PDF belgesinde belirli bir metnin ilk oluşumunu değiştirmek için nasıl kullanılacağını gösterir. Bir PDF belgesinin nasıl açılacağı, bir arama ifadesinin ilk örneğinin nasıl bulunacağı, metnin nasıl değiştirileceği, özelliklerin nasıl güncelleneceği ve değiştirilen PDF'in nasıl kaydedileceği konusunda adım adım talimatlar sağlar.
 
-#### S: Bir PDF belgesinde metnin ilk geçtiği yeri neden değiştirmek isteyeyim?
+#### S: Bir PDF belgesinde metnin ilk örneğini neden değiştirmek isteyeyim?
 
-C: Bir PDF belgesinde metnin ilk geçtiği yeri değiştirmek, belirli bir ifadenin belirli örneklerinde hedefli değişiklikler yaparken diğer oluşumlara dokunmamanız gerektiğinde kullanışlıdır. Bu yaklaşım genellikle metni kontrollü bir şekilde güncellemek veya düzeltmek için kullanılır.
+A: Bir PDF belgesinde metnin ilk örneğini değiştirmek, belirli bir ifadenin belirli örneklerinde hedefli değişiklikler yapmanız gerektiğinde ve diğer örnekleri olduğu gibi bırakmanız gerektiğinde yararlıdır. Bu yaklaşım genellikle metni kontrollü bir şekilde güncellemek veya düzeltmek için kullanılır.
 
 #### S: Belge dizinini nasıl ayarlarım?
 
-C: Belge dizinini ayarlamak için:
+A: Belge dizinini ayarlamak için:
 
-1.  Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` giriş PDF dosyanızın bulunduğu dizinin yolunu içeren değişken.
+1.  Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` Girdi PDF dosyanızın bulunduğu dizinin yolunu içeren değişken.
 
-#### S: Bir PDF belgesinde belirli bir metnin ilk geçtiği yeri nasıl değiştiririm?
+#### S: PDF belgesinde belirli bir metnin ilk örneğini nasıl değiştiririm?
 
-C: Eğitim, süreç boyunca size adım adım rehberlik eder:
+A: Eğitim, sizi adım adım süreçte yönlendirir:
 
-1.  kullanarak bir PDF belgesi açın.`Document` sınıf.
-2.  Oluşturmak`TextFragmentAbsorber` itiraz edin ve tüm sayfaların arama ifadesinin örneklerini bulmasını kabul edin.
-3. Arama ifadesi bulunursa, metin parçasının ilk geçtiği yeri alın ve özelliklerini yeni metin ve biçimlendirmeyle güncelleyin.
+1.  PDF belgesini şu şekilde açın:`Document` sınıf.
+2.  Bir tane oluştur`TextFragmentAbsorber` nesneyi seçin ve arama ifadesinin örneklerini bulmak için tüm sayfalarda kabul edin.
+3. Aranan ifade bulunursa, metin parçasının ilk örneğini al ve özelliklerini yeni metin ve biçimlendirmeyle güncelle.
 4. Değiştirilen PDF belgesini kaydedin.
 
-####  S: Kullanmanın amacı nedir?`TextFragmentAbsorber` to find the first occurrence of the search phrase?
+####  S: Kullanım amacı nedir?`TextFragmentAbsorber` to find the first occurrence of the search phrase?
 
- C:`TextFragmentAbsorber` Arama ifadesinin örneklerini PDF belgesinde bulmak için kullanılır. Bu öğreticide, değiştirilmesi gereken metnin ilk geçtiği yeri belirlemeye yardımcı olur.
+ A:`TextFragmentAbsorber` PDF belgesindeki arama ifadesinin örneklerini bulmak için kullanılır. Bu eğitimde, değiştirilmesi gereken metnin ilk oluşumunu belirlemeye yardımcı olur.
 
 #### S: Metin parçasının özelliklerini nasıl güncellerim?
 
-C: Metin parçasının ilk geçtiği yer belirlendikten sonra metnin kendisi, yazı tipi, yazı tipi boyutu ve metin rengi gibi özelliklerini güncelleyebilirsiniz. Bu, değiştirilen metnin görünümünü özelleştirmenize olanak tanır.
+A: Metin parçasının ilk oluşumu bulunduğunda, metnin kendisi, yazı tipi, yazı tipi boyutu ve metin rengi gibi özelliklerini güncelleyebilirsiniz. Bu, değiştirme metninin görünümünü özelleştirmenize olanak tanır.
 
-#### S: Metnin yalnızca ilk geçtiği yeri değiştirme konusunda bir sınırlama var mı?
+#### S: Metnin yalnızca ilk örneğinin değiştirilmesi konusunda bir sınırlama var mı?
 
- C: Evet, bu eğitim özellikle metnin ilk geçtiği yeri değiştirmeye odaklanıyor. Aynı metnin birden çok örneğini değiştirmeniz gerekiyorsa, yaklaşımı, döngüler arasında dolaşarak genişletebilirsiniz.`TextFragmentCollection` Her örneği tanımlamak ve güncellemek için.
+ A: Evet, bu eğitim özellikle metnin ilk örneğini değiştirmeye odaklanıyor. Aynı metnin birden fazla örneğini değiştirmeniz gerekiyorsa, döngüyü kullanarak yaklaşımı genişletebilirsiniz`TextFragmentCollection` her bir örneği tespit edip güncellemek.
 
-#### S: Sağlanan kodu çalıştırmanın beklenen sonucu nedir?
+#### S: Verilen kodun yürütülmesinin beklenen sonucu nedir?
 
-C: Öğreticiyi takip ederek ve verilen C# kodunu çalıştırarak, belirtilen metnin PDF belgesinde ilk geçtiği yeri değiştireceksiniz. Değiştirilen metin yazı tipi, yazı tipi boyutu ve metin rengi gibi güncellenmiş özelliklere sahip olacaktır.
+A: Öğreticiyi takip ederek ve sağlanan C# kodunu çalıştırarak, PDF belgesinde belirtilen metnin ilk örneğini değiştireceksiniz. Değiştirilen metin, yazı tipi, yazı tipi boyutu ve metin rengi gibi güncellenmiş özelliklere sahip olacaktır.
 
-#### S: Bu yaklaşımı aynı metnin diğer oluşumlarını değiştirmek için kullanabilir miyim?
+#### S: Aynı metnin diğer örneklerini değiştirmek için bu yaklaşımı kullanabilir miyim?
 
- C: Evet, kodda döngü oluşturacak şekilde değişiklik yapabilirsiniz.`TextFragmentCollection` aynı metnin birden çok örneğini değiştirmek için. Her bir örneği gerektiği gibi tanımlamak ve güncellemek için mantığı genişletmeniz yeterlidir.
+ A: Evet, kodu döngüye alacak şekilde değiştirebilirsiniz`TextFragmentCollection` aynı metnin birden fazla örneğini değiştirmek için. Mantığı, her örneği gerektiği gibi tanımlayıp güncellemek için genişletin.

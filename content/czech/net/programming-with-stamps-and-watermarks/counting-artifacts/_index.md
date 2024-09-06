@@ -41,7 +41,7 @@ int count = 0;
 // Projděte všechny artefakty na první stránce
 foreach(Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
-     //Pokud je podtypem artefaktu „vodoznak“, zvyšte počítadlo
+     //Pokud je podtypem artefaktu "vodoznak", zvyšte počítadlo
      if (artifact.Subtype == Artifact.ArtifactSubtype.Watermark)
          count++;
 }

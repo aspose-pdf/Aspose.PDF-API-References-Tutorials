@@ -58,7 +58,7 @@ using (FileStream imageStream = new FileStream(dataDir + "image" + pageCount + "
 ```csharp
 Resolution resolution = new Resolution(300);
 ```
-5.  Vytvořit`JpegDevice` objekt pomocí specifikovaného rozlišení a kvality.
+5.  Vytvořte a`JpegDevice` objekt pomocí specifikovaného rozlišení a kvality.
 ```csharp
 JpegDevice jpegDevice = new JpegDevice(resolution, 100);
 ```
@@ -88,12 +88,12 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 	{
 		// Vytvořte zařízení JPEG se zadanými atributy
 		// Šířka, výška, rozlišení, kvalita
-		// Kvalita [0-100], 100 je maximum
+		//Kvalita [0-100], 100 je maximum
 		// Vytvořit objekt rozlišení
 		Resolution resolution = new Resolution(300);
-		//JpegDevice jpegDevice = nové JpegDevice(500, 700, rozlišení, 100);
+		// JpegDevice jpegDevice = nové JpegDevice(500, 700, rozlišení, 100);
 		JpegDevice jpegDevice = new JpegDevice(resolution, 100);
-		//Převeďte konkrétní stránku a uložte obrázek do streamu
+		// Převeďte konkrétní stránku a uložte obrázek do streamu
 		jpegDevice.Process(pdfDocument.Pages[pageCount], imageStream);
 		// Zavřít stream
 		imageStream.Close();

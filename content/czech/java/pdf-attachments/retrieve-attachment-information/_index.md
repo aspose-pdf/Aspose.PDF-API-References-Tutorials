@@ -8,7 +8,7 @@ weight: 12
 url: /cs/java/pdf-attachments/retrieve-attachment-information/
 ---
 
-## Úvod
+## Zavedení
 
 V tomto tutoriálu se naučíte, jak používat Aspose.PDF pro Java k načtení informací o příloze z dokumentu PDF. Přílohy mohou být soubory nebo dokumenty vložené do PDF a možná budete muset přistupovat k jejich podrobnostem programově.
 
@@ -17,7 +17,7 @@ V tomto tutoriálu se naučíte, jak používat Aspose.PDF pro Java k načtení 
 Než začnete, ujistěte se, že máte následující předpoklady:
 
 1. Java Development Environment (JDK) nainstalováno.
-2.  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+2.  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Krok 1: Vytvořte projekt Java
 

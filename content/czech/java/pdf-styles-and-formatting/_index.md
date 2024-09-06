@@ -16,7 +16,7 @@ Efektivní používání písem, barev a rozvržení je prvořadé pro efektivn�
 
 ## Přesnost formátování
 
-Dosažení přesného formátování v dokumentech PDF může být náročný úkol, ale s Aspose.PDF pro Java se to stane hračkou. Provedeme vás technikami ovládání zarovnání textu, řádkování a odsazení odstavců. Zjistíte také, jak k prvkům přidat okraje, barvy pozadí a přechody, což vám umožní vytvářet soubory PDF, které vynikají dokonalým formátováním.
+Dosažení přesného formátování v dokumentech PDF může být náročný úkol, ale s Aspose.PDF pro Java se to stane hračkou. Provedeme vás technikami ovládání zarovnání textu, řádkování a odsazení odstavců. Zjistíte také, jak přidat okraje, barvy pozadí a přechody k prvkům, což vám umožní vytvářet soubory PDF, které vynikají dokonalým formátováním.
 
 ## Pokročilý styl PDF
 

@@ -1,24 +1,24 @@
 ---
 title: PDF Dosyasındaki Yazı Tiplerini Değiştir
 linktitle: PDF Dosyasındaki Yazı Tiplerini Değiştir
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET kullanarak PDF dosyasındaki yazı tiplerini nasıl değiştireceğinizi öğrenin.
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki yazı tiplerinin nasıl değiştirileceğini öğrenin.
 type: docs
 weight: 340
 url: /tr/net/programming-with-text/replace-fonts/
 ---
-Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak PDF dosyasındaki belirli yazı tiplerinin nasıl değiştirileceğini açıklayacağız. Bir PDF belgesi yükleme, metin parçalarını arama, değiştirilecek yazı tiplerini belirleme, yazı tiplerini değiştirme ve değiştirilen PDF'yi sağlanan C# kaynak kodunu kullanarak kaydetme sürecini adım adım gerçekleştireceğiz.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak PDF dosyasındaki belirli yazı tiplerinin nasıl değiştirileceğini açıklayacağız. Bir PDF belgesini yükleme, metin parçalarını arama, değiştirilecek yazı tiplerini tanımlama, yazı tiplerini değiştirme ve sağlanan C# kaynak kodunu kullanarak değiştirilmiş PDF'yi kaydetme adım adım sürecini ele alacağız.
 
-## Önkoşullar
+## Ön koşullar
 
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
 - Aspose.PDF for .NET kütüphanesi kuruldu.
-- C# programlamanın temel anlayışı.
+- C# programlamanın temellerini anlamak.
 
-## 1. Adım: Belge Dizinini Ayarlayın
+## Adım 1: Belge Dizinini Ayarlayın
 
- Öncelikle, giriş PDF dosyasının bulunduğu dizinin yolunu ayarlamanız gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` PDF dosyanızın yolunu içeren değişken.
+ İlk olarak, giriş PDF dosyanızın bulunduğu dizine giden yolu ayarlamanız gerekir. Değiştir`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` PDF dosyanızın yolunu içeren değişken.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -26,24 +26,24 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Adım 2: PDF Belgesini Yükleyin
 
- Daha sonra, PDF belgesini kullanarak yüklüyoruz.`Document` Aspose.PDF kütüphanesinden sınıf.
+ Daha sonra PDF belgesini kullanarak yüklüyoruz`Document` Aspose.PDF kütüphanesinden sınıf.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 ```
 
-## 3. Adım: Yazı Tiplerini Arayın ve Değiştirin
+## Adım 3: Yazı Tiplerini Ara ve Değiştir
 
- Biz bir yaratıyoruz`TextFragmentAbsorber`nesneyi seçin ve kullanılmayan yazı tiplerini kaldırmak için düzenleme seçeneğini ayarlayın. Ardından, metin parçalarını aramak için PDF belgesinin tüm sayfaları için emiciyi kabul ediyoruz.
+ Biz bir tane yaratıyoruz`TextFragmentAbsorber`nesneyi seçin ve kullanılmayan yazı tiplerini kaldırmak için düzenleme seçeneğini ayarlayın. Ardından, metin parçalarını aramak için PDF belgesinin tüm sayfaları için emiciyi kabul ederiz.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
 pdfDocument.Pages.Accept(absorber);
 ```
 
-## 4. Adım: Yazı Tiplerini Değiştirin
+## Adım 4: Yazı Tiplerini Değiştirin
 
-Emici tarafından tanımlanan tüm metin parçalarının üzerinden geçiyoruz. Bir metin parçasının yazı tipi adı, değiştirilmesi istenen yazı tipiyle eşleşiyorsa onu yeni yazı tipiyle değiştiririz.
+Absorber tarafından tanımlanan tüm metin parçalarını dolaşıyoruz. Bir metin parçasının font adı, değiştirilecek istenen fontla eşleşiyorsa, onu yeni fontla değiştiririz.
 
 ```csharp
 foreach (TextFragment textFragment in absorber.TextFragments)
@@ -55,9 +55,9 @@ foreach (TextFragment textFragment in absorber.TextFragments)
 }
 ```
 
-## 5. Adım: Değiştirilen PDF'yi kaydedin
+## Adım 5: Değiştirilen PDF'yi kaydedin
 
-Son olarak değiştirilen PDF belgesini belirtilen çıktı dosyasına kaydediyoruz.
+Son olarak değiştirdiğimiz PDF belgesini belirtilen çıktı dosyasına kaydediyoruz.
 
 ```csharp
 dataDir = dataDir + "ReplaceFonts_out.pdf";
@@ -65,19 +65,19 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nFonts replaced successfully in the PDF document.\nFile saved at " + dataDir);
 ```
 
-### Aspose.PDF for .NET kullanarak Yazı Tiplerini Değiştirme için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Yazı Tiplerini Değiştirmek için örnek kaynak kodu 
 ```csharp
 try
 {
-	// Belgeler dizininin yolu.
+	// Belgeler dizinine giden yol.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	// Kaynak PDF dosyasını yükle
 	Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
-	// Metin parçalarını arayın ve kullanılmayan yazı tiplerini kaldırmak için düzenleme seçeneğini ayarlayın
+	// Metin parçalarını arayın ve düzenleme seçeneğini kullanılmayan yazı tiplerini kaldır olarak ayarlayın
 	TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
-	// Tüm sayfalar için emiciyi kabul edin
+	// Tüm sayfalar için emiciyi kabul et
 	pdfDocument.Pages.Accept(absorber);
-	// Tüm TextFragments'ler arasında geçiş yapın
+	// Tüm TextFragments'ı dolaş
 	foreach (TextFragment textFragment in absorber.TextFragments)
 	{
 		// Yazı tipi adı ArialMT ise yazı tipi adını Arial ile değiştirin
@@ -99,52 +99,52 @@ catch (Exception ex)
 
 ## Çözüm
 
-Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesindeki belirli yazı tiplerini nasıl değiştireceğinizi öğrendiniz. Adım adım kılavuzu izleyerek ve verilen C# kodunu çalıştırarak bir PDF belgesi yükleyebilir, metin parçalarını arayabilir, belirli yazı tiplerini tanımlayıp değiştirebilir ve değiştirilen PDF'yi kaydedebilirsiniz.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesindeki belirli yazı tiplerini nasıl değiştireceğinizi öğrendiniz. Adım adım kılavuzu izleyerek ve sağlanan C# kodunu çalıştırarak bir PDF belgesi yükleyebilir, metin parçalarını arayabilir, belirli yazı tiplerini tanımlayıp değiştirebilir ve değiştirilmiş PDF'yi kaydedebilirsiniz.
 
-### SSS'ler
+### SSS
 
 #### S: "PDF Dosyasındaki Yazı Tiplerini Değiştirme" eğitiminin amacı nedir?
 
-C: "PDF Dosyasındaki Fontları Değiştirme" eğitimi, bir PDF belgesindeki belirli fontları değiştirmek için Aspose.PDF for .NET kütüphanesinin nasıl kullanılacağını gösterir. Bir PDF belgesinin nasıl yükleneceği, metin parçalarının nasıl aranacağı, değiştirilecek yazı tiplerinin nasıl belirleneceği, yazı tiplerinin nasıl değiştirileceği ve değiştirilen PDF'nin nasıl kaydedileceği konusunda adım adım kılavuz sağlar.
+A: "PDF Dosyasındaki Yazı Tiplerini Değiştir" öğreticisi, bir PDF belgesindeki belirli yazı tiplerini değiştirmek için .NET için Aspose.PDF kitaplığının nasıl kullanılacağını gösterir. PDF belgesinin nasıl yükleneceğine, metin parçalarının nasıl aranacağına, değiştirilecek yazı tiplerinin nasıl tanımlanacağına, yazı tiplerinin nasıl değiştirileceğine ve değiştirilen PDF'in nasıl kaydedileceğine dair adım adım bir kılavuz sağlar.
 
-#### S: Bir PDF belgesindeki yazı tiplerini neden değiştirmek isteyeyim?
+#### S: Neden bir PDF belgesindeki yazı tiplerini değiştirmek isteyebilirim?
 
-C: Metnin görünümünü standartlaştırmak veya belgenin farklı cihazlar ve platformlar arasındaki uyumluluğunu geliştirmek istediğinizde, PDF belgesindeki yazı tiplerini değiştirmek gerekli olabilir. Tutarlı tipografi ve biçimlendirme sağlamanıza olanak tanır.
+A: Bir PDF belgesindeki yazı tiplerini değiştirmek, metnin görünümünü standartlaştırmak veya belgenin farklı cihazlar ve platformlar arasındaki uyumluluğunu iyileştirmek istediğinizde gerekli olabilir. Tutarlı tipografi ve biçimlendirme sağlamanıza olanak tanır.
 
 #### S: Belge dizinini nasıl ayarlarım?
 
-C: Belge dizinini ayarlamak için:
+A: Belge dizinini ayarlamak için:
 
-1.  Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` giriş PDF dosyanızın bulunduğu dizinin yolunu içeren değişken.
+1.  Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` Girdi PDF dosyanızın bulunduğu dizinin yolunu içeren değişken.
 
-#### S: Bir PDF belgesindeki belirli yazı tiplerini nasıl değiştiririm?
+#### S: PDF belgesinde belirli yazı tiplerini nasıl değiştirebilirim?
 
-C: Eğitim, süreç boyunca size adım adım rehberlik eder:
+A: Eğitim, sizi adım adım süreçte yönlendirir:
 
 1.  PDF belgesini kullanarak yükleyin`Document` sınıf.
-2.  Oluşturmak`TextFragmentAbsorber` nesneyi seçin ve kullanılmayan yazı tiplerini kaldırmak için düzenleme seçeneğini ayarlayın. Metin parçalarını aramak için tüm sayfalar için emiciyi kabul edin.
-3. Tanımlanan metin parçaları arasında geçiş yapın. Bir metin parçasının yazı tipi adı değiştirmek istediğiniz yazı tipiyle eşleşiyorsa onu yeni yazı tipiyle değiştirin.
+2.  Bir tane oluştur`TextFragmentAbsorber` nesneyi seçin ve kullanılmayan yazı tiplerini kaldırmak için düzenleme seçeneğini ayarlayın. Metin parçalarını aramak için tüm sayfalar için emiciyi kabul edin.
+3. Tanımlanan metin parçaları arasında gezinin. Bir metin parçasının yazı tipi adı değiştirmek istediğiniz yazı tipiyle eşleşiyorsa, yeni yazı tipiyle değiştirin.
 
-####  S: Kullanmanın amacı nedir?`TextFragmentAbsorber` with font replacement options?
+####  S: Kullanım amacı nedir?`TextFragmentAbsorber` with font replacement options?
 
- C:`TextFragmentAbsorber` yazı tipi değiştirme seçenekleriyle metin parçalarını bulmanıza ve aynı anda kullanılmayan yazı tiplerini kaldırmanıza olanak tanır. Değiştirilen yazı tiplerinin PDF'ye ek kaynak olarak eklenmemesini sağlamak için bu önemlidir.
+ A:`TextFragmentAbsorber` yazı tipi değiştirme seçenekleriyle metin parçalarını bulmanızı ve aynı anda kullanılmayan yazı tiplerini kaldırmanızı sağlar. Bu, değiştirilen yazı tiplerinin PDF'de ek kaynak olarak eklenmemesini sağlamak için önemlidir.
 
-#### S: Değiştirilecek belirli yazı tiplerini nasıl tanımlarım?
+#### S: Değiştirilecek belirli yazı tiplerini nasıl belirlerim?
 
-C: Emici tarafından tanımlanan metin parçaları arasında geçiş yaparak her bir metin parçası için yazı tipi bilgisine erişebilirsiniz. Font adı değiştirmek istediğiniz fontla eşleşiyorsa değiştirme işlemini gerçekleştirebilirsiniz.
+A: Absorber tarafından tanımlanan metin parçaları arasında gezinerek, her metin parçası için font bilgisine erişebilirsiniz. Font adı, değiştirmek istediğiniz fontla eşleşiyorsa, değiştirmeyi gerçekleştirebilirsiniz.
 
-#### S: Değiştirilecek yazı tipi bir metin parçasında bulunamazsa ne olur?
+#### S: Değiştirilecek yazı tipi bir metin parçasında bulunmazsa ne olur?
 
-C: Değiştirilecek yazı tipi bir metin parçasında bulunamazsa, metin parçasının yazı tipi değişmeden kalır. Değiştirme yalnızca yazı tipi adı eşleştiğinde gerçekleşir.
+A: Değiştirilecek yazı tipi bir metin parçasında bulunmazsa, metin parçasının yazı tipi değişmeden kalır. Değiştirme yalnızca yazı tipi adı eşleşirse gerçekleşir.
 
-#### S: Bu eğitimde yazı tiplerini değiştirmeyle ilgili bir sınırlama var mı?
+#### S: Bu eğitimde yazı tiplerini değiştirme konusunda bir sınırlama var mı?
 
-C: Bu eğitim, metin parçalarındaki belirli yazı tiplerini değiştirmeye odaklanmaktadır. Ek açıklamalar veya form alanları gibi başka bağlamlardaki yazı tiplerini değiştirmeniz gerekiyorsa yaklaşımı buna göre genişletmeniz gerekir.
+A: Bu eğitim, metin parçalarındaki belirli yazı tiplerini değiştirmeye odaklanır. Açıklamalar veya form alanları gibi diğer bağlamlardaki yazı tiplerini değiştirmeniz gerekirse, yaklaşımı buna göre genişletmeniz gerekir.
 
-#### S: Sağlanan kodu çalıştırmanın beklenen sonucu nedir?
+#### S: Verilen kodun yürütülmesinin beklenen sonucu nedir?
 
-C: Öğreticiyi takip ederek ve verilen C# kodunu çalıştırarak, PDF belgesindeki belirli yazı tiplerini değiştireceksiniz. Belirlediğiniz kriterlere göre belirlenen yazı tipleri, belirttiğiniz yeni yazı tipiyle değiştirilecektir.
+A: Öğreticiyi takip ederek ve sağlanan C# kodunu çalıştırarak PDF belgesindeki belirli yazı tiplerini değiştireceksiniz. Belirlediğiniz ölçütlerle tanımlanan yazı tipleri, belirttiğiniz yeni yazı tipiyle değiştirilecektir.
 
-#### S: Bu yaklaşımı tüm PDF belgesindeki yazı tiplerini değiştirmek için kullanabilir miyim?
+#### S: Bu yaklaşımı kullanarak PDF belgesinin tamamındaki yazı tiplerini değiştirebilir miyim?
 
-C: Evet, tüm metin parçalarından geçerek ve yazı tipi değiştirme mantığını uygulayarak kodu, PDF belgesinin tamamındaki yazı tiplerini değiştirecek şekilde uyarlayabilirsiniz.
+C: Evet, tüm metin parçalarını dolaşarak ve yazı tipi değiştirme mantığını uygulayarak, kodu PDF belgesinin tamamındaki yazı tiplerini değiştirecek şekilde uyarlayabilirsiniz.

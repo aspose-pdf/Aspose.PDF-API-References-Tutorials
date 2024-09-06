@@ -1,26 +1,26 @@
 ---
 title: Tekst i obraz jako akapit w pliku PDF
 linktitle: Tekst i obraz jako akapit w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak dodać tekst i obraz jako akapity wbudowane w pliku PDF przy użyciu Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak dodawać tekst i obrazy jako akapity w tekście do pliku PDF, korzystając z Aspose.PDF dla platformy .NET.
 type: docs
 weight: 530
 url: /pl/net/programming-with-text/text-and-image-as-paragraph/
 ---
-W tym samouczku wyjaśniono, jak dodać tekst i obraz jako akapity wbudowane w pliku PDF przy użyciu Aspose.PDF dla .NET. Dostarczony kod źródłowy języka C# demonstruje proces krok po kroku.
+Ten samouczek wyjaśnia, jak dodać tekst i obraz jako akapity w tekście w pliku PDF przy użyciu Aspose.PDF dla .NET. Dostarczony kod źródłowy C# demonstruje ten proces krok po kroku.
 
-## Warunki wstępne
+## Wymagania wstępne
 
-Przed kontynuowaniem samouczka upewnij się, że posiadasz następujące elementy:
+Przed przystąpieniem do samouczka upewnij się, że posiadasz następujące elementy:
 
 - Podstawowa znajomość języka programowania C#.
-- Zainstalowana biblioteka Aspose.PDF dla .NET. Możesz go uzyskać ze strony internetowej Aspose lub użyć NuGet, aby zainstalować go w swoim projekcie.
+- Aspose.PDF dla biblioteki .NET jest zainstalowany. Możesz go pobrać ze strony internetowej Aspose lub użyć NuGet, aby zainstalować go w swoim projekcie.
 
 ## Krok 1: Skonfiguruj projekt
 
-Zacznij od utworzenia nowego projektu C# w preferowanym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla .NET.
+Zacznij od utworzenia nowego projektu C# w preferowanym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla platformy .NET.
 
-## Krok 2: Zaimportuj niezbędne przestrzenie nazw
+## Krok 2: Importuj niezbędne przestrzenie nazw
 
 Dodaj następujące dyrektywy using na początku pliku C#, aby zaimportować wymagane przestrzenie nazw:
 
@@ -30,7 +30,7 @@ using Aspose.Pdf.Text;
 using Aspose.Pdf.Drawing;
 ```
 
-## Krok 3: Ustaw ścieżkę do katalogu dokumentów
+## Krok 3: Ustaw ścieżkę do katalogu dokumentu
 
  Ustaw ścieżkę do katalogu dokumentów za pomocą`dataDir` zmienny:
 
@@ -42,7 +42,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 4: Utwórz nowy dokument i stronę
 
- Stwórz nowy`Document` obiekt i dodaj stronę do jego kolekcji stron:
+ Utwórz nowy`Document` obiekt i dodaj stronę do jego kolekcji stron:
 
 ```csharp
 Document doc = new Document();
@@ -51,16 +51,16 @@ Page page = doc.Pages.Add();
 
 ## Krok 5: Utwórz fragment tekstu i dodaj go jako akapit
 
- Stwórz`TextFragment` obiekt i dodaj go do kolekcji akapitów strony:
+ Utwórz`TextFragment` obiekt i dodaj go do kolekcji akapitów strony:
 
 ```csharp
 TextFragment text = new TextFragment("Hello World.. ");
 page.Paragraphs.Add(text);
 ```
 
-## Krok 6: Dodaj obraz jako akapit liniowy
+## Krok 6: Dodaj obraz jako akapit w tekście
 
- Stworzyć`Aspose.Pdf.Image` obiekt i ustaw go jako akapit wbudowany, tak aby pojawiał się zaraz po poprzednim akapicie:
+ Utwórz`Aspose.Pdf.Image` obiekt i ustaw go jako akapit w tekście, tak aby pojawiał się bezpośrednio po poprzednim akapicie:
 
 ```csharp
 Aspose.Pdf.Image image = new Aspose.Pdf.Image();
@@ -71,11 +71,11 @@ image.FixWidth = 100; // Opcjonalnie: Ustaw szerokość obrazu
 page.Paragraphs.Add(image);
 ```
 
- Zastępować`"aspose-logo.jpg"` z rzeczywistą nazwą pliku obrazu i dostosuj opcjonalną wysokość i szerokość obrazu zgodnie z potrzebami.
+ Zastępować`"aspose-logo.jpg"` z rzeczywistą nazwą pliku obrazu i dostosuj opcjonalną wysokość i szerokość obrazu według potrzeb.
 
-## Krok 7: Dodaj kolejny fragment tekstu jako akapit wbudowany
+## Krok 7: Dodaj kolejny fragment tekstu jako akapit w tekście
 
- Zainicjuj ponownie`TextFragment` obiekt o innej treści i dodaj go jako akapit wbudowany:
+ Ponownie zainicjuj`TextFragment` obiekt o innej zawartości i dodaj go jako akapit inline:
 
 ```csharp
 text = new TextFragment(" Hello Again..");
@@ -94,13 +94,13 @@ doc.Save(dataDir);
 
  Pamiętaj o wymianie`"TextAndImageAsParagraph_out.pdf"` z żądaną nazwą pliku wyjściowego.
 
-### Przykładowy kod źródłowy tekstu i obrazu jako akapitu przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla Tekstu i Obrazu Jako Akapitu przy użyciu Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Utwórz instancję dokumentu
+// Utwórz wystąpienie dokumentu
 Document doc = new Document();
-// Dodaj stronę do kolekcji stron instancji Document
+// Dodaj stronę do kolekcji stron instancji dokumentu
 Page page = doc.Pages.Add();
 // Utwórz TextFragmnet
 TextFragment text = new TextFragment("Hello World.. ");
@@ -108,10 +108,10 @@ TextFragment text = new TextFragment("Hello World.. ");
 page.Paragraphs.Add(text);
 // Utwórz instancję obrazu
 Aspose.Pdf.Image image = new Aspose.Pdf.Image();
-// Ustaw obraz jako akapit wbudowany, aby pojawił się zaraz po
-// Obiekt poprzedniego akapitu (TextFragment)
+// Ustaw obraz jako akapit w tekście, aby pojawiał się zaraz po nim
+// Poprzedni obiekt akapitu (TextFragment)
 image.IsInLineParagraph = true;
-// Określ ścieżkę pliku obrazu
+// Określ ścieżkę do pliku obrazu
 image.File = dataDir + "aspose-logo.jpg";
 // Ustaw wysokość obrazu (opcjonalnie)
 image.FixHeight = 30;
@@ -119,11 +119,11 @@ image.FixHeight = 30;
 image.FixWidth = 100;
 // Dodaj obraz do kolekcji akapitów obiektu strony
 page.Paragraphs.Add(image);
-// Zainicjuj ponownie obiekt TextFragment z inną zawartością
+// Ponowna inicjalizacja obiektu TextFragment z inną zawartością
 text = new TextFragment(" Hello Again..");
-// Ustaw TextFragment jako akapit wbudowany
+// Ustaw TextFragment jako akapit w tekście
 text.IsInLineParagraph = true;
-// Dodaj nowo utworzony TextFragment do kolekcji akapitów strony
+// Dodaj nowo utworzony fragment tekstu do kolekcji akapitów strony
 page.Paragraphs.Add(text);
 dataDir = dataDir + "TextAndImageAsParagraph_out.pdf";
 doc.Save(dataDir);
@@ -132,38 +132,38 @@ Console.WriteLine("\nText and image added successfully as an inline paragraphs.\
 
 ## Wniosek
 
-Gratulacje! Pomyślnie nauczyłeś się, jak dodawać tekst i obraz jako akapity wbudowane w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Ten samouczek zawiera przewodnik krok po kroku, od skonfigurowania projektu do zapisania zmodyfikowanego dokumentu. Możesz teraz włączyć ten kod do własnych projektów C#, aby dostosować układ tekstu i obrazów w plikach PDF.
+Gratulacje! Udało Ci się nauczyć, jak dodawać tekst i obraz jako akapity w tekście w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Ten samouczek zawiera przewodnik krok po kroku, od konfiguracji projektu do zapisania zmodyfikowanego dokumentu. Teraz możesz włączyć ten kod do własnych projektów C#, aby dostosować układ tekstu i obrazów w plikach PDF.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
 #### P: Jaki jest cel samouczka „Tekst i obraz jako akapit w pliku PDF”?
 
-Odp.: Samouczek „Tekst i obraz jako akapit w pliku PDF” ma na celu poinstruowanie użytkowników, jak dodawać tekst i obrazy jako akapity w tekście w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Samouczek zawiera instrukcje krok po kroku i przykłady kodu C# demonstrujące proces.
+A: Samouczek „Tekst i obraz jako akapit w pliku PDF” ma na celu poprowadzenie użytkowników przez proces dodawania tekstu i obrazów jako akapitów w tekście w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Samouczek zawiera instrukcje krok po kroku i przykłady kodu C#, aby zademonstrować ten proces.
 
-#### P: W jaki sposób ten samouczek pomaga w dodawaniu tekstu i obrazów jako akapitów wbudowanych?
+#### P: W jaki sposób ten samouczek pomaga w dodawaniu tekstu i obrazów jako akapitów w tekście?
 
-Odp.: Ten samouczek pomaga użytkownikom zrozumieć, jak używać Aspose.PDF dla .NET do włączania tekstu i obrazów jako akapitów wbudowanych w dokument PDF. Postępując zgodnie z podanymi krokami i przykładami kodu, użytkownicy mogą tworzyć pliki PDF z niestandardowymi układami łączącymi tekst i obrazy.
+A: Ten samouczek pomaga użytkownikom zrozumieć, jak używać Aspose.PDF dla .NET, aby włączyć tekst i obrazy jako akapity w tekście dokumentu PDF. Postępując zgodnie z podanymi krokami i przykładami kodu, użytkownicy mogą tworzyć pliki PDF z niestandardowymi układami, które łączą tekst i obrazy.
 
-#### P: Jakie wymagania wstępne są wymagane, aby móc skorzystać z tego samouczka?
+#### P: Jakie warunki wstępne muszę spełnić, aby móc skorzystać z tego samouczka?
 
-Odp.: Przed rozpoczęciem samouczka należy posiadać podstawową wiedzę na temat języka programowania C#. Dodatkowo musisz mieć zainstalowaną bibliotekę Aspose.PDF dla .NET. Możesz go pobrać ze strony internetowej Aspose lub zainstalować w swoim projekcie za pomocą NuGet.
+A: Przed rozpoczęciem samouczka powinieneś mieć podstawową wiedzę na temat języka programowania C#. Ponadto musisz mieć zainstalowaną bibliotekę Aspose.PDF dla .NET. Możesz ją pobrać ze strony internetowej Aspose lub zainstalować w swoim projekcie za pomocą NuGet.
 
-#### P: Jak skonfigurować projekt tak, aby działał zgodnie z tym samouczkiem?
+#### P: Jak skonfigurować projekt, aby móc skorzystać z tego samouczka?
 
-O: Na początek utwórz nowy projekt C# w preferowanym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla .NET. Umożliwia to wykorzystanie funkcji biblioteki do pracy z dokumentami PDF, fragmentami tekstu i obrazami.
+A: Na początek utwórz nowy projekt C# w preferowanym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla .NET. Dzięki temu będziesz mógł wykorzystać funkcje biblioteki do pracy z dokumentami PDF, fragmentami tekstu i obrazami.
 
-#### P: Czy mogę skorzystać z tego samouczka, aby dodać wiele akapitów tekstu i obrazów w pliku PDF?
+#### P: Czy mogę użyć tego samouczka, aby dodać wiele akapitów tekstowych i graficznych do pliku PDF?
 
-O: Tak, możesz użyć dostarczonych przykładów kodu, aby dodać wiele wystąpień akapitów tekstowych i graficznych w tym samym dokumencie PDF. W tym samouczku pokazano, jak tworzyć akapity śródliniowe, co ułatwia dołączanie różnych kombinacji tekstu i obrazów.
+A: Tak, możesz użyć dostarczonych przykładów kodu, aby dodać wiele wystąpień akapitów tekstowych i graficznych w tym samym dokumencie PDF. Ten samouczek pokazuje, jak tworzyć akapity inline, ułatwiając dołączanie różnych kombinacji tekstu i obrazów.
 
-#### P: Jak określić zawartość i wygląd akapitów tekstowych i obrazów?
+#### P: Jak mogę określić zawartość i wygląd akapitów tekstowych i obrazów?
 
- Odp.: W samouczku pokazano, jak tworzyć`TextFragment`obiekty reprezentujące akapity tekstowe i`Aspose.Pdf.Image` obiekty reprezentujące obrazy. Możesz dostosować zawartość, wymiary i wygląd zarówno tekstu, jak i obrazów, korzystając z dostarczonych próbek kodu.
+ A: W tym samouczku pokazano, jak utworzyć`TextFragment`obiekty do reprezentowania akapitów tekstowych i`Aspose.Pdf.Image` obiekty do reprezentowania obrazów. Możesz dostosować zawartość, wymiary i wygląd tekstu i obrazów, korzystając z dostarczonych przykładów kodu.
 
-#### P: Czy mogę dostosować układ akapitów wbudowanych?
+#### P: Czy mogę zmienić układ akapitów w tekście?
 
- O: Tak, możesz dostosować układ akapitów śródliniowych, kontrolując ich położenie, wymiary i kolejność na stronie. W samouczku pokazano, jak ustawić atrybuty wbudowane, takie jak`IsInLineParagraph`, aby kontrolować układ akapitów tekstu i obrazów.
+ A: Tak, możesz dostosować układ akapitów inline, kontrolując ich położenie, wymiary i kolejność na stronie. Samouczek pokazuje, jak ustawić atrybuty inline, takie jak`IsInLineParagraph`, aby kontrolować układ akapitów tekstu i obrazów.
 
 #### P: Jak zapisać zmodyfikowany dokument PDF?
 
- Odp.: Aby zapisać zmodyfikowany dokument PDF, możesz użyć pliku`Save` metoda`Document` obiekt. W samouczku znajdują się przykłady kodu pokazujące, jak zapisać wynikowy dokument PDF.
+ A: Aby zapisać zmodyfikowany dokument PDF, możesz użyć`Save` metoda`Document` obiekt. Samouczek zawiera przykłady kodu, które pokazują, jak zapisać wynikowy dokument PDF.

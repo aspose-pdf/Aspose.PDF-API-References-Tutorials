@@ -11,7 +11,7 @@ Tato příručka vás krok za krokem provede převodem všech stránek dokumentu
 
 ## Krok 1: Definujte adresář dokumentů
 
- Než začnete, ujistěte se, že jste nastavili správný adresář pro dokumenty. Nahradit`"YOUR DOCUMENT DIRECTORY"` v kódu s cestou k adresáři, kde se nachází váš dokument PDF.
+Než začnete, ujistěte se, že jste nastavili správný adresář pro dokumenty. Nahradit`"YOUR DOCUMENT DIRECTORY"` v kódu s cestou k adresáři, kde se nachází váš dokument PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 2: Otevřete dokument
 
- tomto kroku otevřeme dokument PDF pomocí`Document` třída Aspose.PDF. Použijte`Document` konstruktoru a předejte cestu k dokumentu PDF.
+ V tomto kroku otevřeme dokument PDF pomocí`Document` třída Aspose.PDF. Použijte`Document` konstruktoru a předejte cestu k dokumentu PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "PageToTIFF.pdf");
@@ -27,7 +27,7 @@ Document pdfDocument = new Document(dataDir + "PageToTIFF.pdf");
 
 ## Krok 3: Vytvořte objekt Resolution
 
- Vytvořit`Resolution`objekt pro nastavení rozlišení obrázku TIFF. V tomto příkladu používáme rozlišení 300 dpi.
+ Vytvořte a`Resolution` objekt pro nastavení rozlišení obrázku TIFF. V tomto příkladu používáme rozlišení 300 dpi.
 
 ```csharp
 Resolution resolution = new Resolution(300);
@@ -35,7 +35,7 @@ Resolution resolution = new Resolution(300);
 
 ## Krok 4: Vytvořte objekt TiffSettings
 
- Vytvořit`TiffSettings` objekt k určení nastavení pro výstupní soubor TIFF. V tomto příkladu vypneme kompresi, použijeme výchozí barevnou hloubku a nastavíme tvar na režim na šířku.
+ Vytvořte a`TiffSettings` objekt k určení nastavení pro výstupní soubor TIFF. V tomto příkladu vypneme kompresi, použijeme výchozí barevnou hloubku a nastavíme tvar na režim na šířku.
 
 ```csharp
 TiffSettings tiffSettings = new TiffSettings();
@@ -78,7 +78,7 @@ tiffSettings.Shape = ShapeType.Landscape;
 tiffSettings.SkipBlankPages = false;
 // Vytvořte zařízení TIFF
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
-//Převeďte konkrétní stránku a uložte obrázek do streamu
+// Převeďte konkrétní stránku a uložte obrázek do streamu
 tiffDevice.Process(pdfDocument, dataDir + "AllPagesToTIFF_out.tif");
 System.Console.WriteLine("PDF all pages converted to one tiff file successfully!");
 ```
@@ -99,7 +99,7 @@ Odpověď: Aspose.PDF for .NET nabízí spolehlivé a na funkce bohaté rozhran�
 
 #### Otázka: Jak nadefinuji adresář dokumentů před zahájením procesu převodu?
 
- Odpověď: Ujistěte se, že jste zadali správnou cestu k adresáři pro vaše dokumenty PDF, abyste zajistili úspěšný převod. Nahradit`"YOUR DOCUMENT DIRECTORY"` s příslušnou cestou v poskytnutém fragmentu kódu.
+Odpověď: Ujistěte se, že jste zadali správnou cestu k adresáři pro vaše dokumenty PDF, abyste zajistili úspěšný převod. Nahradit`"YOUR DOCUMENT DIRECTORY"` s příslušnou cestou v poskytnutém fragmentu kódu.
 
 ####  Otázka: Jaký je význam otevření dokumentu PDF pomocí`Document` class?
 
@@ -107,7 +107,7 @@ Odpověď: Aspose.PDF for .NET nabízí spolehlivé a na funkce bohaté rozhran�
 
 ####  Otázka: Jak to`Resolution` object impact the quality of the TIFF image?
 
- A:`Resolution`objekt nastaví kvalitu obrazu výsledného souboru TIFF. Vyšší rozlišení, například 300 dpi (bodů na palec), vytváří jasnější a podrobnější obrázek.
+ A:`Resolution` objekt nastaví kvalitu obrazu výsledného souboru TIFF. Vyšší rozlišení, například 300 dpi (bodů na palec), vytváří jasnější a podrobnější obrázek.
 
 #### Otázka: Mohu upravit nastavení pro výstupní soubor TIFF?
 

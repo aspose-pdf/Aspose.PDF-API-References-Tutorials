@@ -31,7 +31,7 @@ using Aspose.Pdf.Text;
 
 ## Krok 3: Použijte TextFragmentAbsorber pro textové vyhledávání
 
- Vytvořit`TextFragmentAbsorber` objekt pro vyhledávání konkrétních textových segmentů pomocí regulárních výrazů:
+ Vytvořte a`TextFragmentAbsorber` objekt pro vyhledávání konkrétních textových segmentů pomocí regulárních výrazů:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber;
@@ -96,14 +96,14 @@ textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
 textFragmentAbsorber = new TextFragmentAbsorber(@"(?i)the ((.)*)");
 // K vyhledání textu následujícího po shodě regulárního výrazu použijte následující regulární výraz.
 textFragmentAbsorber = new TextFragmentAbsorber(@"(?<=word).*");
-// Chcete-li hledat hypertextové odkazy/URL uvnitř dokumentu PDF, zkuste použít následující regulární výraz.
+// Chcete-li hledat hypertextové odkazy/URL v dokumentu PDF, zkuste použít následující regulární výraz.
 textFragmentAbsorber = new TextFragmentAbsorber(@"(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?");
 ```
 
 
 ## Závěr
 
-Gratulujeme! Úspěšně jste se naučili, jak vyhledávat konkrétní textové segmenty v dokumentu PDF pomocí Aspose.PDF pro .NET. Tento výukový program poskytuje příklady různých scénářů vyhledávání pomocí regulárních výrazů. Nyní můžete tento kód začlenit do svých vlastních projektů C# pro vyhledávání a zpracování textových segmentů v souborech PDF.
+Gratuluji! Úspěšně jste se naučili, jak vyhledávat konkrétní textové segmenty v dokumentu PDF pomocí Aspose.PDF for .NET. Tento výukový program poskytuje příklady různých scénářů vyhledávání pomocí regulárních výrazů. Nyní můžete tento kód začlenit do svých vlastních projektů C# pro vyhledávání a zpracování textových segmentů v souborech PDF.
 
 ### FAQ
 
@@ -113,7 +113,7 @@ Odpověď: Výukový program „Textové segmenty v souboru PDF“ si klade za c
 
 #### Otázka: Jak tento kurz pomáhá při hledání textových segmentů v dokumentu PDF?
 
-Odpověď: Tento výukový program pomáhá uživatelům pochopit, jak používat knihovnu Aspose.PDF for .NET k vyhledávání specifických textových segmentů v dokumentu PDF. Poskytnutím různých příkladů kódu a regulárních výrazů mohou uživatelé přizpůsobit své textové vyhledávací dotazy tak, aby našli požadovaný obsah v souborech PDF.
+Odpověď: Tento výukový program pomáhá uživatelům pochopit, jak používat knihovnu Aspose.PDF for .NET k vyhledávání konkrétních textových segmentů v dokumentu PDF. Poskytnutím různých příkladů kódu a regulárních výrazů mohou uživatelé přizpůsobit své textové vyhledávací dotazy tak, aby našli požadovaný obsah v souborech PDF.
 
 #### Otázka: Jaké předpoklady jsou vyžadovány pro sledování tohoto kurzu?
 
@@ -129,7 +129,7 @@ A: Chcete-li začít, vytvořte nový projekt C# ve vašem preferovaném integro
 
 #### Otázka: Jaké typy scénářů vyhledávání jsou obsaženy ve výukovém programu?
 
-Odpověď: Výukový program pokrývá řadu scénářů hledání pomocí regulárních výrazů, jako jsou přesné shody slov, hledání bez rozlišení velkých a malých písmen, hledání všech řetězců v dokumentu, hledání textu po konkrétních řetězcích a hledání hypertextových odkazů/URL. Uvedené příklady kódu lze upravit tak, aby vyhovovaly vašim specifickým požadavkům na vyhledávání.
+Odpověď: Výukový program pokrývá řadu scénářů hledání pomocí regulárních výrazů, jako jsou přesné shody slov, hledání bez rozlišení malých a velkých písmen, hledání všech řetězců v dokumentu, hledání textu po konkrétních řetězcích a hledání hypertextových odkazů/adres URL. Uvedené příklady kódu lze upravit tak, aby vyhovovaly vašim specifickým požadavkům na vyhledávání.
 
 #### Otázka: Jak zpracuji výsledky vyhledávání po provedení textového vyhledávání?
 

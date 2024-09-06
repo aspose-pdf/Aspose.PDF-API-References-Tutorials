@@ -14,7 +14,7 @@ PDF 文件廣泛用於共享和演示訊息，但有時您可能需要透過添�
 
 ## 為 Java 設定 Aspose.PDF
 
-在我們深入編碼之前，您需要設定 Aspose.PDF for Java。按著這些次序：
+在我們深入編碼之前，您需要設定 Aspose.PDF for Java。請依照下列步驟操作：
 
 1. 下載 Aspose.PDF for Java：從下列位置存取該程式庫[這裡](https://releases.aspose.com/pdf/java/)並下載適合您的專案的版本。
 
@@ -22,7 +22,7 @@ PDF 文件廣泛用於共享和演示訊息，但有時您可能需要透過添�
 
 ## 新增依賴項
 
-一旦您擁有了 Aspose.PDF for Java，請將其作為依賴項新增至您的專案。如果您使用 Maven，請將以下依賴項新增至您的`pom.xml`:
+一旦您擁有了 Aspose.PDF for Java，請將其作為依賴項新增至您的專案。如果您使用 Maven，請將以下依賴項新增至您的`pom.xml`：
 
 ```xml
 <dependency>
@@ -35,7 +35,7 @@ PDF 文件廣泛用於共享和演示訊息，但有時您可能需要透過添�
 如果您更喜歡 Gradle，請將其包含在您的`build.gradle`文件：
 
 ```gradle
-implementation group: 'com.aspose', name: 'aspose-pdf', version: '21.11' //替換為最新版本
+implementation group: 'com.aspose', name: 'aspose-pdf', version: '21.11' //更換為最新版本
 ```
 
 ## 編碼頁碼標記

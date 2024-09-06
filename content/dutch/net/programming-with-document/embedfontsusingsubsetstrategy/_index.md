@@ -2,92 +2,116 @@
 title: Lettertypen in PDF-bestand insluiten met subsetstrategie
 linktitle: Lettertypen insluiten met subsetstrategie
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u lettertypen in een PDF-bestand kunt insluiten met Subset Strategy met behulp van Aspose.PDF voor .NET. Optimaliseer uw PDF-formaat door alleen de noodzakelijke tekens in te sluiten.
+description: Leer hoe u lettertypen in een PDF-bestand kunt insluiten met Subset Strategy met Aspose.PDF voor .NET. Optimaliseer uw PDF-formaat door alleen de benodigde tekens in te sluiten.
 type: docs
 weight: 130
 url: /nl/net/programming-with-document/embedfontsusingsubsetstrategy/
 ---
-In deze zelfstudie bespreken we hoe u lettertypen in een PDF-bestand kunt insluiten met een subsetstrategie met behulp van Aspose.PDF voor .NET. Aspose.PDF voor .NET is een krachtige bibliotheek waarmee ontwikkelaars PDF-documenten programmatisch kunnen maken, bewerken en manipuleren. Het insluiten van lettertypen in een PDF-bestand is een belangrijke stap om ervoor te zorgen dat het document correct wordt weergegeven op verschillende apparaten, ongeacht of de vereiste lettertypen op die apparaten zijn geïnstalleerd of niet.
+## Invoering
 
-## Stap 1: Maak een nieuwe C#-consoletoepassing
-Maak om te beginnen een nieuwe C#-consoletoepassing in Visual Studio. Je kunt het noemen zoals je wilt. Nadat het project is gemaakt, moet u een verwijzing toevoegen naar de Aspose.PDF voor .NET-bibliotheek.
+In het digitale tijdperk zijn PDF's een vast onderdeel geworden van het delen van documenten. Of u nu een rapport, een presentatie of een e-book verzendt, het is cruciaal om ervoor te zorgen dat uw lettertypen correct worden weergegeven. Hebt u ooit een PDF geopend en ontdekt dat de tekst er anders uitziet dan bedoeld? Dit gebeurt vaak wanneer de lettertypen die in het document worden gebruikt, niet correct zijn ingesloten. Dat is waar Aspose.PDF voor .NET in het spel komt! In deze tutorial onderzoeken we hoe u lettertypen in een PDF-bestand kunt insluiten met behulp van de subsetstrategie, zodat uw documenten eruitzien zoals u bedoelde, ongeacht waar ze worden bekeken.
 
-## Stap 2: Importeer de Aspose.PDF-naamruimte
-Voeg de volgende regel code toe bovenaan uw C#-bestand om de Aspose.PDF-naamruimte te importeren:
+## Vereisten
+
+Voordat we dieper ingaan op het insluiten van lettertypen, moet u eerst een aantal zaken regelen:
+
+1.  Aspose.PDF voor .NET: Zorg ervoor dat u de Aspose.PDF-bibliotheek hebt geïnstalleerd. U kunt deze downloaden van[hier](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: een ontwikkelomgeving waarin u uw .NET-code kunt schrijven en testen.
+3. Basiskennis van C#: Kennis van C#-programmering helpt u de codefragmenten beter te begrijpen.
+
+## Pakketten importeren
+
+Om te beginnen moet u de benodigde pakketten importeren in uw C#-project. Dit is hoe u dat kunt doen:
+
+### Een nieuw project maken
+
+Open Visual Studio en maak een nieuw C#-project. U kunt een Console Application kiezen voor de eenvoud.
+
+### Voeg Aspose.PDF-referentie toe
+
+1. Klik met de rechtermuisknop op uw project in de Solution Explorer.
+2. Selecteer 'NuGet-pakketten beheren'.
+3. Zoek naar "Aspose.PDF" en installeer de nieuwste versie.
 
 ```csharp
-using Aspose.Pdf;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Stap 3: Laad een bestaand PDF-bestand
-Om lettertypen in een bestaand PDF-bestand in te sluiten, moet u dat bestand laden met de klasse Document. De volgende code laat zien hoe u een bestaand PDF-bestand laadt:
+Nu we alles hebben ingesteld, gaan we stap voor stap het proces van het insluiten van lettertypen in een PDF-bestand uitleggen.
+
+## Stap 1: Stel uw documentenmap in
+
+Allereerst moeten we definiëren waar onze documenten worden opgeslagen. Dit is cruciaal omdat we van deze directory gaan lezen en ernaar gaan schrijven.
 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
-// Laad een bestaand PDF-bestand
+ Vervangen`"YOUR DOCUMENT DIRECTORY"` met het werkelijke pad waar uw PDF-bestanden zich bevinden. Dit kan zoiets zijn als`@"C:\Documents\"`.
+
+## Stap 2: Het PDF-document laden
+
+Vervolgens laden we het PDF-document dat we willen aanpassen. Dit is waar Aspose.PDF schittert, waardoor we PDF-bestanden eenvoudig kunnen manipuleren.
+
+```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Stap 4: Lettertypen insluiten met subsetstrategie
-Aspose.PDF voor .NET biedt twee strategieën voor het insluiten van lettertypen: SubsetAllFonts en SubsetEmbeddedFontsOnly.
+ Zorg ervoor dat je een`input.pdf` bestand in de door u opgegeven directory. Dit bestand is het bestand dat we wijzigen.
 
-De SubsetAllFonts-strategie sluit alle lettertypen als een subset in het document in. Een subset is een deel van het lettertype dat alleen de tekens bevat die in het document worden gebruikt. Deze strategie is handig om de bestandsgrootte van het PDF-document te verkleinen.
+## Stap 3: Subset alle lettertypen
 
-De strategie SubsetEmbeddedFontsOnly sluit alleen de subset van lettertypen in die al in het document zijn ingesloten. Als een lettertype niet is ingesloten, wordt het niet beïnvloed door deze strategie.
-
-De volgende code laat zien hoe u lettertypen in een PDF-bestand kunt insluiten met een subsetstrategie:
+Laten we nu tot de kern van de zaak komen: het insluiten van lettertypen. We beginnen met het insluiten van alle lettertypen als subsets. Dit betekent dat alleen de tekens die in het document worden gebruikt, worden ingesloten, wat de bestandsgrootte aanzienlijk kan verkleinen.
 
 ```csharp
-// In het geval van SubsetAllFonts worden alle lettertypen als subset in het document ingesloten.
+// Bij SubsetAllFonts worden alle lettertypen als subset in het document ingesloten.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
+```
 
-// De lettertypesubset wordt ingesloten voor volledig ingesloten lettertypen, maar lettertypen die niet in het document zijn ingesloten, worden niet beïnvloed.
+ Door gebruik te maken van`SubsetAllFonts`zorgen we ervoor dat alle lettertypen die in het document worden gebruikt, worden ingesloten, maar alleen de tekens die daadwerkelijk worden gebruikt, worden opgenomen.
+
+## Stap 4: Alleen ingesloten lettertypen subsetten
+
+In sommige gevallen wilt u misschien alleen de lettertypen insluiten die al in het document zijn ingesloten. Dit is handig als u de originele look wilt behouden zonder nieuwe lettertypen toe te voegen.
+
+```csharp
+//Voor volledig ingesloten lettertypen wordt een subset van lettertypen ingesloten. Lettertypen die niet in het document zijn ingesloten, worden echter niet beïnvloed.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
 ```
 
-## Stap 5: Sla het PDF-document op
-Zodra u alle lettertypen in het PDF-bestand hebt ingesloten met een subsetstrategie, moet u het document opslaan. De volgende code laat zien hoe u het PDF-bestand opslaat:
+Deze regel code zorgt ervoor dat alleen de lettertypen die al zijn ingesloten, worden gesubset, terwijl niet-ingesloten lettertypen onaangetast blijven.
+
+## Stap 5: Sla het gewijzigde document op
+
+Ten slotte moeten we onze wijzigingen opslaan. Dit is waar we het gewijzigde document terugschrijven naar de schijf.
 
 ```csharp
 doc.Save(dataDir + "Output_out.pdf");
 ```
 
-### Voorbeeldbroncode voor het insluiten van lettertypen met subsetstrategie met behulp van Aspose.PDF voor .NET. 
-
-```csharp
-// Het pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document doc = new Document(dataDir + "input.pdf");
-// In het geval van SubsetAllFonts worden alle lettertypen als subset in het document ingesloten.
-doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
-// De lettertypesubset wordt ingesloten voor volledig ingesloten lettertypen, maar lettertypen die niet in het document zijn ingesloten, worden niet beïnvloed.
-doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
-doc.Save(dataDir + "Output_out.pdf");
-```
+ Hiermee wordt een nieuw PDF-bestand gemaakt met de naam`Output_out.pdf` in de door u opgegeven map, compleet met de ingesloten lettertypen.
 
 ## Conclusie
-In dit artikel hebben we besproken hoe u lettertypen in een PDF-bestand kunt insluiten met een subsetstrategie met behulp van Aspose.PDF voor .NET. Aspose.PDF voor .NET biedt een eenvoudige en gebruiksvriendelijke API om met PDF-documenten te werken, inclusief het toevoegen en insluiten van lettertypen met verschillende strategieën. Het insluiten van lettertypen in een PDF-bestand is een belangrijke stap om ervoor te zorgen dat het document correct wordt weergegeven op verschillende apparaten, en de subsetstrategie is een handige functie om de bestandsgrootte van het PDF-document te verkleinen.
 
-### Veelgestelde vragen over het insluiten van lettertypen in PDF-bestanden met subsetstrategie
+En daar heb je het! Je hebt succesvol lettertypen ingesloten in een PDF-bestand met Aspose.PDF voor .NET. Door deze stappen te volgen, kun je ervoor zorgen dat je documenten hun beoogde uiterlijk behouden, ongeacht waar ze worden bekeken. Of je nu rapporten, presentaties of een ander type document deelt, het insluiten van lettertypen is een cruciale stap in het behouden van professionaliteit en duidelijkheid.
 
-#### Vraag: Wat is een subsetstrategie voor het insluiten van lettertypen in een PDF-bestand?
+## Veelgestelde vragen
 
-A: Een subsetstrategie voor het insluiten van lettertypen in een PDF-bestand betekent dat slechts een deel van het lettertype dat de tekens bevat die in het document worden gebruikt, wordt ingesloten. Dit helpt de bestandsgrootte van het PDF-document te verkleinen door onnodige lettertypegegevens te elimineren.
+### Wat is lettertype-subset?
+Met lettertypesubsets worden alleen de tekens opgenomen die in een document worden gebruikt, in plaats van het volledige lettertype. Hierdoor wordt de bestandsgrootte verkleind.
 
-#### Vraag: Wat is het verschil tussen de strategieën SubsetAllFonts en SubsetEmbeddedFontsOnly?
+### Waarom moet ik lettertypen in mijn PDF insluiten?
+Door lettertypen in te sluiten, wordt uw document op alle apparaten hetzelfde weergegeven en worden problemen met lettertypevervanging voorkomen.
 
- EEN: De`SubsetAllFonts`strategie zal alle lettertypen in het document insluiten als een subset, terwijl de`SubsetEmbeddedFontsOnly` strategie zal alleen de subset van lettertypen insluiten die al in het document zijn ingesloten. Deze laatste strategie heeft geen invloed op lettertypen die nog niet zijn ingesloten.
+### Kan ik Aspose.PDF gratis gebruiken?
+ Ja, Aspose biedt een gratis proefperiode aan die u kunt gebruiken om de bibliotheek te testen voordat u tot aankoop overgaat. U kunt het vinden[hier](https://releases.aspose.com/).
 
-#### Vraag: Waarom is het insluiten van lettertypen met een subsetstrategie belangrijk?
+### Waar kan ik meer documentatie vinden?
+ U kunt de volledige documentatie voor Aspose.PDF voor .NET raadplegen[hier](https://reference.aspose.com/pdf/net/).
 
-A: Het insluiten van lettertypen met een subsetstrategie is belangrijk om ervoor te zorgen dat het PDF-bestand de benodigde lettertypegegevens bevat om tekst correct weer te geven, terwijl ook de bestandsgrootte kleiner blijft door alleen de tekens op te nemen die in het document worden gebruikt.
-
-#### Vraag: Kan ik Aspose.PDF voor .NET gebruiken om lettertypen met verschillende strategieën in te sluiten?
-
- A: Ja, Aspose.PDF voor .NET biedt verschillende strategieën voor het insluiten van lettertypen, waaronder`SubsetAllFonts` En`SubsetEmbeddedFontsOnly`. U kunt de juiste strategie kiezen op basis van uw vereisten.
-
-#### Vraag: Is Aspose.PDF voor .NET een betrouwbare bibliotheek voor het werken met PDF-documenten?
-
-A: Ja, Aspose.PDF voor .NET is een betrouwbare en krachtige bibliotheek voor het werken met PDF-documenten. Het biedt uitgebreide functies voor het maken, bewerken en manipuleren van PDF-bestanden in .NET-toepassingen.
+### Wat als ik problemen tegenkom?
+ Als u problemen ondervindt, kunt u hulp zoeken op het Aspose-ondersteuningsforum[hier](https://forum.aspose.com/c/pdf/10).

@@ -20,7 +20,7 @@ Mielőtt belevágnánk a megvalósításba, győződjön meg arról, hogy a köv
 Ha még nem tette meg, telepítse a Java fejlesztői készletet (JDK), és állítsa be a kívánt integrált fejlesztői környezetet (IDE). Győződjön meg arról, hogy fejlesztői környezete készen áll a Java programozásra.
 
 ## 2. lépés: Adja hozzá az Aspose.PDF for Java fájlt projektjéhez
-Miután beállította a fejlesztői környezetet, hozzá kell adnia az Aspose.PDF for Java könyvtárat a projekthez. Kovesd ezeket a lepeseket:
+Miután beállította a fejlesztői környezetet, hozzá kell adnia az Aspose.PDF for Java könyvtárat a projekthez. Kövesse az alábbi lépéseket:
 
 1. Töltse le az Aspose.PDF for Java könyvtárat a webhelyről.
 2. Az IDE-ben hozzon létre egy új Java-projektet, vagy nyisson meg egy meglévőt.
@@ -89,7 +89,7 @@ pdfDocument.save("document_with_layers.pdf");
 ```
 
 ## Következtetés
-Gratulálunk! Sikeresen hozzáadott rétegeket egy PDF-fájlhoz Java használatával az Aspose.PDF for Java fájllal. A rétegek hatékony módot biztosítanak a PDF-dokumentumok tartalmának láthatóságának szabályozására, interaktívabbá és dinamikusabbá téve azokat.
+Gratulálok! Sikeresen hozzáadott rétegeket egy PDF-fájlhoz Java használatával az Aspose.PDF for Java fájllal. A rétegek hatékony módot biztosítanak a PDF-dokumentumok tartalmának láthatóságának szabályozására, interaktívabbá és dinamikusabbá téve azokat.
 
 ## GYIK
 
@@ -109,4 +109,4 @@ Különböző tulajdonságokat alkalmazhat az egyes rétegekre, ha hozzáfér a 
  Az Aspose.PDF for Java-hoz átfogó dokumentációt és kódpéldákat találhat az Aspose webhelyén:[Aspose.PDF a Java dokumentációhoz](https://reference.aspose.com/pdf/java/).
 
 
-Ebben az átfogó útmutatóban bemutattuk a rétegek hozzáadását egy PDF-fájlhoz Java használatával az Aspose.PDF for Java segítségével. Megtanulta a fejlesztői környezet beállítását, a könyvtár integrálását, PDF-dokumentum létrehozását, rétegek hozzáadását, rendszerezését és a módosított PDF mentését. Reméljük, hogy ez az oktatóanyag informatív és hasznos volt a PDF-kezelési igényeinek kielégítésében. Ha további kérdései vannak, tekintse meg a GYIK-et, vagy keresse fel az Aspose.PDF for Java dokumentációt további részletekért.
+Ebben az átfogó útmutatóban bemutattuk a rétegek hozzáadását egy PDF-fájlhoz Java használatával az Aspose.PDF for Java segítségével. Megtanulta a fejlesztői környezet beállítását, a könyvtár integrálását, PDF-dokumentum létrehozását, rétegek hozzáadását, rendszerezését és a módosított PDF mentését. Reméljük, hogy ez az oktatóanyag informatív és hasznos volt a PDF-kezelési igényeinek kielégítésében. Ha további kérdései vannak, kérjük, tekintse meg a GYIK-et, vagy keresse fel az Aspose.PDF for Java dokumentációt további részletekért.

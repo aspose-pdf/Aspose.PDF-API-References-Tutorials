@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 2. lépés: A meglévő PDF dokumentum betöltése
 
-Az első lépés a meglévő PDF dokumentum betöltése a projektbe. Itt van, hogyan:
+Az első lépés a meglévő PDF dokumentum betöltése a projektbe. Íme, hogyan:
 
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
@@ -32,7 +32,7 @@ Feltétlenül cserélje ki a „DOKUMENTUMKÖNYVTÁR” elemet a PDF-dokumentum 
 
 ## 3. lépés: A kép létrehozása és hozzáadása a lábléc részhez
 
-Most, hogy a PDF dokumentum betöltődött, létrehozhatunk egy képbélyeget, és hozzáadhatjuk a dokumentum összes oldalához. Itt van, hogyan:
+Most, hogy a PDF dokumentum betöltődött, létrehozhatunk egy képbélyeget, és hozzáadhatjuk a dokumentum összes oldalához. Íme, hogyan:
 
 ```csharp
 // Hozza létre a keretpuffert
@@ -43,18 +43,18 @@ imageStamp.BottomMargin = 10;
 imageStamp.HorizontalAlignment = HorizontalAlignment.Center;
 imageStamp.VerticalAlignment = VerticalAlignment.Bottom;
 
-// Képpuffer hozzáadása az összes oldalhoz
+//Képpuffer hozzáadása az összes oldalhoz
 foreach(Page page in pdfDocument.Pages)
 {
      page.AddStamp(imageStamp);
 }
 ```
 
-fenti kód képpuffert hoz létre az "aspose-logo.jpg" fájlból, és beállítja annak tulajdonságait, például az alsó margót, a vízszintes és függőleges igazítást. Ezután a képpuffer hozzáadódik a PDF-dokumentum összes oldalához.
+A fenti kód képpuffert hoz létre az "aspose-logo.jpg" fájlból, és beállítja annak tulajdonságait, például az alsó margót, a vízszintes és függőleges igazítást. Ezután a képpuffer hozzáadódik a PDF-dokumentum összes oldalához.
 
 ## 4. lépés: Mentse el a módosított PDF dokumentumot
 
-Miután a képet hozzáadtuk a lábléc részhez, elmenthetjük a módosított PDF dokumentumot. Itt van, hogyan:
+Miután a képet hozzáadtuk a lábléc részhez, elmenthetjük a módosított PDF dokumentumot. Íme, hogyan:
 
 ```csharp
 // Mentse el a módosított PDF dokumentumot
@@ -108,15 +108,15 @@ V: Ha képet ad a PDF-dokumentum láblécéhez, akkor minden oldal alján vizuá
 
 #### K: Beállíthatom a kép helyzetét és igazítását a lábléc részben?
 
- V: Igen, beállíthatja a kép helyzetét és igazítását a láblécben a kép tulajdonságainak módosításával.`ImageStamp` tárgy. A kódrészlet olyan tulajdonságokat állít be, mint pl`BottomMargin`, `HorizontalAlignment` , és`VerticalAlignment`.
+ V: Igen, beállíthatja a kép helyzetét és igazítását a láblécben a kép tulajdonságainak módosításával.`ImageStamp` objektum. A kódrészlet olyan tulajdonságokat állít be, mint pl`BottomMargin`, `HorizontalAlignment` , és`VerticalAlignment`.
 
 #### K: Lehetséges-e különböző képeket hozzáadni a lábléchez a PDF-dokumentum különböző oldalain?
 
- V: Igen, a különböző oldalakon lévő lábléc részhez különböző képeket adhat hozzá külön létrehozva`ImageStamp` különböző képfájlokkal és tulajdonságokkal rendelkező objektumokat, majd hozzáadhatja azokat adott oldalakhoz.
+V: Igen, a különböző oldalakon lévő lábléc részhez különböző képeket adhat hozzá külön létrehozva`ImageStamp` különböző képfájlokkal és tulajdonságokkal rendelkező objektumokat, majd hozzáadhatja azokat adott oldalakhoz.
 
 #### K: Hogyan biztosítja a kód, hogy a kép a PDF-dokumentum minden oldalára felkerüljön?
 
-V: A megadott kód a`foreach` ciklus a PDF-dokumentum összes oldalán való iterációhoz, és hozzáadja ugyanazt`ImageStamp` az egyes oldalak lábléc részéhez.
+ V: A megadott kód a`foreach` ciklus a PDF-dokumentum összes oldalán való iterációhoz, és hozzáadja ugyanazt`ImageStamp` az egyes oldalak lábléc részéhez.
 
 #### K: Hozzáadhatok más elemeket, például szöveget vagy alakzatokat a lábléchez hasonló megközelítéssel?
 

@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 2. lépés: A PDF dokumentum betöltése
 
-Az első lépés a meglévő PDF dokumentum betöltése a projektbe. Itt van, hogyan:
+Az első lépés a meglévő PDF dokumentum betöltése a projektbe. Íme, hogyan:
 
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
@@ -32,7 +32,7 @@ Feltétlenül cserélje ki a „DOKUMENTUMKÖNYVTÁR” elemet a PDF-dokumentum 
 
 ## 3. lépés: Fejlécpufferek létrehozása
 
-Most, hogy feltöltötte a PDF-dokumentumot, létrehozhatja a hozzáadandó fejlécbélyegzőket. Itt van, hogyan:
+Most, hogy feltöltötte a PDF-dokumentumot, létrehozhatja a hozzáadandó fejlécbélyegzőket. Íme, hogyan:
 
 ```csharp
 // Hozzon létre három fejlécpuffert
@@ -72,7 +72,7 @@ Ezeket a tulajdonságokat szükség szerint módosíthatja az egyes fejlécpuffe
 
 ## 5. lépés: Adjon hozzá fejlécbélyegeket a PDF-hez
 
-Most, hogy a fejlécbélyegek készen állnak, hozzáadhatja őket a PDF-dokumentum minden egyes oldalához. Itt van, hogyan:
+Most, hogy a fejlécbélyegek készen állnak, hozzáadhatja őket a PDF-dokumentum minden egyes oldalához. Íme, hogyan:
 
 ```csharp
 // Adjon hozzá fejlécpuffereket adott oldalakhoz
@@ -85,7 +85,7 @@ A fenti kód minden fejlécbélyeget hozzáad a PDF-dokumentum megfelelő oldal�
 
 ## 6. lépés: Mentse el a kimeneti dokumentumot
 
-A fejlécbélyegzők hozzáadása után mentheti a szerkesztett PDF dokumentumot. Itt van, hogyan:
+A fejlécbélyegzők hozzáadása után mentheti a szerkesztett PDF dokumentumot. Íme, hogyan:
 
 ```csharp
 // Mentse el a frissített dokumentumot
@@ -149,7 +149,7 @@ stamp3.TextState.Font = FontRepository.FindFont("Verdana");
 // Az első bélyegző az első oldalra kerül;
 doc.Pages[1].AddStamp(stamp1);
 
-// A második oldalra a második bélyegző került;
+// A második oldalon a második bélyegző található;
 doc.Pages[2].AddStamp(stamp2);
 
 // A harmadik oldalon a harmadik bélyegző található.

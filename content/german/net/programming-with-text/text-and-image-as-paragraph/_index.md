@@ -1,28 +1,28 @@
 ---
-title: Text und Bild als Absatz in einer PDF-Datei
-linktitle: Text und Bild als Absatz in einer PDF-Datei
+title: Text und Bild als Absatz in PDF-Datei
+linktitle: Text und Bild als Absatz in PDF-Datei
 second_title: Aspose.PDF für .NET API-Referenz
 description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Text und ein Bild als Inline-Absätze in eine PDF-Datei einfügen.
 type: docs
 weight: 530
 url: /de/net/programming-with-text/text-and-image-as-paragraph/
 ---
-In diesem Tutorial wird erläutert, wie Sie mit Aspose.PDF für .NET Text und ein Bild als Inline-Absätze in eine PDF-Datei einfügen. Der bereitgestellte C#-Quellcode demonstriert den Prozess Schritt für Schritt.
+Dieses Tutorial erklärt, wie Sie mit Aspose.PDF für .NET Text und ein Bild als Inline-Absätze in eine PDF-Datei einfügen. Der bereitgestellte C#-Quellcode demonstriert den Vorgang Schritt für Schritt.
 
 ## Voraussetzungen
 
-Bevor Sie mit dem Tutorial fortfahren, stellen Sie sicher, dass Sie über Folgendes verfügen:
+Bevor Sie mit dem Lernprogramm fortfahren, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
 - Grundkenntnisse der Programmiersprache C#.
-- Aspose.PDF für .NET-Bibliothek installiert. Sie können es von der Aspose-Website herunterladen oder NuGet verwenden, um es in Ihrem Projekt zu installieren.
+- Aspose.PDF für .NET-Bibliothek installiert. Sie können es von der Aspose-Website beziehen oder NuGet verwenden, um es in Ihrem Projekt zu installieren.
 
-## Schritt 1: Richten Sie das Projekt ein
+## Schritt 1: Einrichten des Projekts
 
-Erstellen Sie zunächst ein neues C#-Projekt in Ihrer bevorzugten integrierten Entwicklungsumgebung (IDE) und fügen Sie einen Verweis auf die Aspose.PDF für .NET-Bibliothek hinzu.
+Beginnen Sie mit der Erstellung eines neuen C#-Projekts in Ihrer bevorzugten integrierten Entwicklungsumgebung (IDE) und fügen Sie einen Verweis auf die Aspose.PDF-Bibliothek für .NET hinzu.
 
-## Schritt 2: Importieren Sie die erforderlichen Namespaces
+## Schritt 2: Erforderliche Namespaces importieren
 
-Fügen Sie am Anfang Ihrer C#-Datei die folgenden using-Anweisungen hinzu, um die erforderlichen Namespaces zu importieren:
+Fügen Sie am Anfang Ihrer C#-Datei die folgenden Using-Direktiven hinzu, um die erforderlichen Namespaces zu importieren:
 
 ```csharp
 using Aspose.Pdf;
@@ -30,19 +30,19 @@ using Aspose.Pdf.Text;
 using Aspose.Pdf.Drawing;
 ```
 
-## Schritt 3: Legen Sie den Pfad zum Dokumentverzeichnis fest
+## Schritt 3: Pfad zum Dokumentverzeichnis festlegen
 
- Legen Sie den Pfad zu Ihrem Dokumentverzeichnis mit fest`dataDir` Variable:
+ Legen Sie den Pfad zu Ihrem Dokumentverzeichnis fest mit dem`dataDir` Variable:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Ersetzen`"YOUR DOCUMENT DIRECTORY"` mit dem tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
+ Ersetzen`"YOUR DOCUMENT DIRECTORY"` durch den tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
 
-## Schritt 4: Erstellen Sie ein neues Dokument und eine neue Seite
+## Schritt 4: Neues Dokument und neue Seite erstellen
 
- Erstelle eine neue`Document` Objekt und fügen Sie eine Seite zu seiner Seitensammlung hinzu:
+ Erstellen Sie ein neues`Document` Objekt und fügen Sie seiner Seitensammlung eine Seite hinzu:
 
 ```csharp
 Document doc = new Document();
@@ -51,16 +51,16 @@ Page page = doc.Pages.Add();
 
 ## Schritt 5: Erstellen Sie ein TextFragment und fügen Sie es als Absatz hinzu
 
- Ein ... kreieren`TextFragment` Objekt und fügen Sie es der Absatzsammlung der Seite hinzu:
+ Erstellen Sie ein`TextFragment` Objekt und fügen Sie es der Absatzsammlung der Seite hinzu:
 
 ```csharp
 TextFragment text = new TextFragment("Hello World.. ");
 page.Paragraphs.Add(text);
 ```
 
-## Schritt 6: Fügen Sie ein Bild als Inline-Absatz hinzu
+## Schritt 6: Ein Bild als Inline-Absatz hinzufügen
 
- Erstelle ein`Aspose.Pdf.Image` Objekt und legen Sie es als Inline-Absatz fest, sodass es direkt nach dem vorherigen Absatz erscheint:
+ Erstellen Sie ein`Aspose.Pdf.Image` Objekt und legen Sie es als Inline-Absatz fest, sodass es direkt nach dem vorherigen Absatz erscheint:
 
 ```csharp
 Aspose.Pdf.Image image = new Aspose.Pdf.Image();
@@ -71,11 +71,11 @@ image.FixWidth = 100; // Optional: Bildbreite festlegen
 page.Paragraphs.Add(image);
 ```
 
- Ersetzen`"aspose-logo.jpg"` Geben Sie den tatsächlichen Namen der Bilddatei ein und passen Sie die optionale Bildhöhe und -breite wie gewünscht an.
+ Ersetzen`"aspose-logo.jpg"` durch den tatsächlichen Bilddateinamen und passen Sie die optionale Bildhöhe und -breite nach Wunsch an.
 
-## Schritt 7: Fügen Sie ein weiteres TextFragment als Inline-Absatz hinzu
+## Schritt 7: Ein weiteres TextFragment als Inline-Absatz hinzufügen
 
- Initialisieren Sie das neu`TextFragment` Objekt mit unterschiedlichem Inhalt und fügen Sie es als Inline-Absatz hinzu:
+ Initialisieren Sie den`TextFragment` Objekt mit anderem Inhalt und fügen Sie es als Inline-Absatz hinzu:
 
 ```csharp
 text = new TextFragment(" Hello Again..");
@@ -92,28 +92,28 @@ dataDir = dataDir + "TextAndImageAsParagraph_out.pdf";
 doc.Save(dataDir);
 ```
 
- Unbedingt austauschen`"TextAndImageAsParagraph_out.pdf"` mit dem gewünschten Ausgabedateinamen.
+ Ersetzen Sie unbedingt`"TextAndImageAsParagraph_out.pdf"` durch den gewünschten Ausgabedateinamen.
 
 ### Beispielquellcode für Text und Bild als Absatz mit Aspose.PDF für .NET 
 ```csharp
-// Der Pfad zum Dokumentenverzeichnis.
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Dokumentinstanz instanziieren
+// Dokumentinstanz instantiieren
 Document doc = new Document();
 // Seite zur Seitensammlung der Dokumentinstanz hinzufügen
 Page page = doc.Pages.Add();
-// Erstellen Sie TextFragmnet
+// Textfragment erstellen
 TextFragment text = new TextFragment("Hello World.. ");
-// Fügen Sie ein Textfragment zur Absatzsammlung des Seitenobjekts hinzu
+// Textfragment zur Absatzsammlung des Seitenobjekts hinzufügen
 page.Paragraphs.Add(text);
-// Erstellen Sie eine Image-Instanz
+// Erstellen einer Imageinstanz
 Aspose.Pdf.Image image = new Aspose.Pdf.Image();
-// Legen Sie das Bild als Inline-Absatz fest, sodass es direkt danach erscheint
+// Stellen Sie das Bild als Inline-Absatz ein, sodass es direkt danach erscheint
 // Das vorherige Absatzobjekt (TextFragment)
 image.IsInLineParagraph = true;
-// Geben Sie den Pfad der Bilddatei an
+// Bilddateipfad angeben
 image.File = dataDir + "aspose-logo.jpg";
-// Bildhöhe einstellen (optional)
+// Bildhöhe festlegen (optional)
 image.FixHeight = 30;
 // Bildbreite festlegen (optional)
 image.FixWidth = 100;
@@ -121,9 +121,9 @@ image.FixWidth = 100;
 page.Paragraphs.Add(image);
 // TextFragment-Objekt mit anderem Inhalt neu initialisieren
 text = new TextFragment(" Hello Again..");
-// Legen Sie TextFragment als Inline-Absatz fest
+// TextFragment als Inline-Absatz festlegen
 text.IsInLineParagraph = true;
-// Fügen Sie das neu erstellte TextFragment zur Absatzsammlung der Seite hinzu
+// Neu erstelltes TextFragment zur Absatzsammlung der Seite hinzufügen
 page.Paragraphs.Add(text);
 dataDir = dataDir + "TextAndImageAsParagraph_out.pdf";
 doc.Save(dataDir);
@@ -132,38 +132,38 @@ Console.WriteLine("\nText and image added successfully as an inline paragraphs.\
 
 ## Abschluss
 
-Glückwunsch! Sie haben erfolgreich gelernt, wie Sie mit Aspose.PDF für .NET Text und ein Bild als Inline-Absätze in ein PDF-Dokument einfügen. Dieses Tutorial bietet eine Schritt-für-Schritt-Anleitung vom Einrichten des Projekts bis zum Speichern des geänderten Dokuments. Sie können diesen Code jetzt in Ihre eigenen C#-Projekte integrieren, um das Layout von Text und Bildern in PDF-Dateien anzupassen.
+Herzlichen Glückwunsch! Sie haben erfolgreich gelernt, wie Sie mit Aspose.PDF für .NET Text und ein Bild als Inline-Absätze in ein PDF-Dokument einfügen. Dieses Tutorial bietet eine Schritt-für-Schritt-Anleitung vom Einrichten des Projekts bis zum Speichern des geänderten Dokuments. Sie können diesen Code jetzt in Ihre eigenen C#-Projekte integrieren, um das Layout von Text und Bildern in PDF-Dateien anzupassen.
 
-### FAQs
+### Häufig gestellte Fragen
 
-#### F: Was ist der Zweck des Tutorials „Text und Bild als Absatz in einer PDF-Datei“?
+#### F: Was ist der Zweck des Tutorials „Text und Bild als Absatz in PDF-Datei“?
 
-A: Das Tutorial „Text und Bild als Absatz in einer PDF-Datei“ soll Benutzern zeigen, wie sie mit Aspose.PDF für .NET sowohl Text als auch Bilder als Inline-Absätze in ein PDF-Dokument einfügen. Das Tutorial bietet Schritt-für-Schritt-Anleitungen und C#-Codebeispiele zur Veranschaulichung des Prozesses.
+A: Das Tutorial „Text und Bild als Absatz in PDF-Datei“ soll Benutzern zeigen, wie sie mit Aspose.PDF für .NET sowohl Text als auch Bilder als Inline-Absätze in ein PDF-Dokument einfügen können. Das Tutorial enthält schrittweise Anleitungen und C#-Codebeispiele, um den Vorgang zu demonstrieren.
 
 #### F: Wie hilft dieses Tutorial beim Hinzufügen von Text und Bildern als Inline-Absätze?
 
-A: Dieses Tutorial hilft Benutzern zu verstehen, wie sie Aspose.PDF für .NET verwenden, um sowohl Text als auch Bilder als Inline-Absätze in ein PDF-Dokument zu integrieren. Durch Befolgen der bereitgestellten Schritte und Codebeispiele können Benutzer PDF-Dateien mit benutzerdefinierten Layouts erstellen, die Text und Bilder kombinieren.
+A: Dieses Tutorial hilft Benutzern zu verstehen, wie sie mit Aspose.PDF für .NET sowohl Text als auch Bilder als Inline-Absätze in ein PDF-Dokument einbinden können. Indem sie den bereitgestellten Schritten und Codebeispielen folgen, können Benutzer PDF-Dateien mit benutzerdefinierten Layouts erstellen, die Text und Bilder kombinieren.
 
 #### F: Welche Voraussetzungen sind erforderlich, um diesem Tutorial folgen zu können?
 
-A: Bevor Sie mit dem Tutorial beginnen, sollten Sie über grundlegende Kenntnisse der Programmiersprache C# verfügen. Darüber hinaus muss die Bibliothek Aspose.PDF für .NET installiert sein. Sie können es von der Aspose-Website herunterladen oder mit NuGet in Ihrem Projekt installieren.
+A: Bevor Sie mit dem Tutorial beginnen, sollten Sie über Grundkenntnisse der Programmiersprache C# verfügen. Darüber hinaus müssen Sie die Bibliothek Aspose.PDF für .NET installiert haben. Sie können sie von der Aspose-Website herunterladen oder mit NuGet in Ihrem Projekt installieren.
 
 #### F: Wie richte ich mein Projekt ein, um diesem Tutorial zu folgen?
 
-A: Erstellen Sie zunächst ein neues C#-Projekt in Ihrer bevorzugten integrierten Entwicklungsumgebung (IDE) und fügen Sie einen Verweis auf die Bibliothek Aspose.PDF für .NET hinzu. Dadurch können Sie die Funktionen der Bibliothek für die Arbeit mit PDF-Dokumenten, Textfragmenten und Bildern nutzen.
+A: Erstellen Sie zunächst ein neues C#-Projekt in Ihrer bevorzugten integrierten Entwicklungsumgebung (IDE) und fügen Sie einen Verweis auf die Aspose.PDF-Bibliothek für .NET hinzu. Auf diese Weise können Sie die Funktionen der Bibliothek für die Arbeit mit PDF-Dokumenten, Textfragmenten und Bildern nutzen.
 
 #### F: Kann ich dieses Tutorial verwenden, um mehrere Text- und Bildabsätze in eine PDF-Datei einzufügen?
 
-A: Ja, Sie können die bereitgestellten Codebeispiele verwenden, um mehrere Instanzen von Text- und Bildabsätzen innerhalb desselben PDF-Dokuments hinzuzufügen. In diesem Tutorial wird gezeigt, wie Sie Inline-Absätze erstellen, sodass Sie problemlos verschiedene Kombinationen aus Text und Bildern einfügen können.
+A: Ja, Sie können die bereitgestellten Codebeispiele verwenden, um mehrere Instanzen von Text- und Bildabsätzen in dasselbe PDF-Dokument einzufügen. Dieses Tutorial zeigt, wie Sie Inline-Absätze erstellen, sodass Sie ganz einfach verschiedene Kombinationen aus Text und Bildern einfügen können.
 
-#### F: Wie lege ich den Inhalt und das Aussehen der Textabsätze und Bilder fest?
+#### F: Wie lege ich Inhalt und Aussehen der Textabsätze und Bilder fest?
 
- A: Das Tutorial zeigt, wie man erstellt`TextFragment`Objekte zur Darstellung von Textabsätzen und`Aspose.Pdf.Image` Objekte zur Darstellung von Bildern. Mithilfe der bereitgestellten Codebeispiele können Sie den Inhalt, die Abmessungen und das Erscheinungsbild von Text und Bildern anpassen.
+ A: Das Tutorial zeigt, wie man`TextFragment`Objekte zur Darstellung von Textabschnitten und`Aspose.Pdf.Image` Objekte zur Darstellung von Bildern. Sie können Inhalt, Abmessungen und Erscheinungsbild von Text und Bildern mithilfe der bereitgestellten Codebeispiele anpassen.
 
 #### F: Kann ich das Layout der Inline-Absätze anpassen?
 
- A: Ja, Sie können das Layout von Inline-Absätzen anpassen, indem Sie deren Positionierung, Abmessungen und Reihenfolge innerhalb der Seite steuern. Das Tutorial zeigt, wie man Inline-Attribute festlegt, z`IsInLineParagraph`, um das Layout von Text- und Bildabsätzen zu steuern.
+ A: Ja, Sie können das Layout von Inline-Absätzen anpassen, indem Sie deren Positionierung, Abmessungen und Reihenfolge innerhalb der Seite steuern. Das Tutorial zeigt, wie Sie Inline-Attribute festlegen, wie zum Beispiel`IsInLineParagraph`, um das Layout von Text- und Bildabsätzen zu steuern.
 
 #### F: Wie speichere ich das geänderte PDF-Dokument?
 
- A: Um das geänderte PDF-Dokument zu speichern, können Sie das verwenden`Save` Methode der`Document` Objekt. Das Tutorial stellt Codebeispiele bereit, die veranschaulichen, wie das resultierende PDF-Dokument gespeichert wird.
+ A: Um das geänderte PDF-Dokument zu speichern, können Sie den`Save` Methode der`Document` Objekt. Das Tutorial enthält Codebeispiele, die zeigen, wie das resultierende PDF-Dokument gespeichert wird.

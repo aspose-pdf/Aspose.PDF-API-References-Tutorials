@@ -60,7 +60,7 @@ taggedContent.SetLanguage("fr-FR");
 Τώρα ας προσθέσουμε ενδεικτικά στοιχεία, όπως εικόνες και σχήματα, στο έγγραφό μας.
 
 ```csharp
-// Υπό ανάπτυξη
+// Υπανάπτυξη
 IllustrationElement figure1 = taggedContent.CreateFigureElement();
 taggedContent.RootElement.AppendChild(figure1);
 figure1.AlternativeText = "Figure One";
@@ -96,7 +96,7 @@ ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Υπό ανάπτυξη
+// Υπό Ανάπτυξη
 IllustrationElement figure1 = taggedContent.CreateFigureElement();
 taggedContent.RootElement.AppendChild(figure1);
 figure1.AlternativeText = "Figure One";
@@ -109,7 +109,7 @@ document.Save(dataDir + "IllustrationStructureElements.pdf");
 
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Συγχαρητήρια ! Έχετε μάθει πώς να χρησιμοποιείτε στοιχεία δομής εικονογράφησης με το Aspose.PDF για .NET. Τώρα μπορείτε να προσθέσετε εικόνες και σχήματα στο έγγραφο PDF σας για να βελτιώσετε την οπτική του παρουσίαση. Εξερευνήστε περισσότερες δυνατότητες του Aspose.PDF για να ανακαλύψετε όλες τις δυνατότητές του.
 

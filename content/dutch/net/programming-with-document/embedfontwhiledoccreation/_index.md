@@ -1,115 +1,152 @@
 ---
-title: Lettertype insluiten tijdens het maken van PDF-documenten
-linktitle: Lettertype insluiten tijdens het maken van PDF-documenten
+title: Lettertype insluiten tijdens het maken van PDF-document
+linktitle: Lettertype insluiten tijdens het maken van PDF-document
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u een lettertype kunt insluiten terwijl u een PDF-document maakt met Aspose.PDF voor .NET. Zorg voor een correcte weergave op verschillende apparaten.
+description: Leer hoe u lettertypen in PDF-documenten kunt insluiten met Aspose.PDF voor .NET met deze stapsgewijze handleiding. Verbeter het uiterlijk van uw PDF.
 type: docs
 weight: 140
 url: /nl/net/programming-with-document/embedfontwhiledoccreation/
 ---
-In deze zelfstudie bespreken we hoe u een lettertype kunt insluiten terwijl u een PDF-document maakt met Aspose.PDF voor .NET. Aspose.PDF voor .NET is een krachtige bibliotheek waarmee ontwikkelaars PDF-documenten programmatisch kunnen maken, bewerken en manipuleren. Deze bibliotheek biedt een breed scala aan functies om met PDF-documenten te werken, waaronder het toevoegen van tekst, afbeeldingen, tabellen en nog veel meer. Het insluiten van lettertypen tijdens het maken van een PDF-document is een veel voorkomende vereiste voor ontwikkelaars die ervoor willen zorgen dat het PDF-document correct wordt weergegeven op verschillende apparaten, ongeacht of de vereiste lettertypen op die apparaten zijn geïnstalleerd of niet.
+## Invoering
 
-## Stap 1: Maak een nieuwe C#-consoletoepassing
-Maak om te beginnen een nieuwe C#-consoletoepassing in Visual Studio. Je kunt het noemen zoals je wilt. Nadat het project is gemaakt, moet u een verwijzing toevoegen naar de Aspose.PDF voor .NET-bibliotheek.
+Het maken van PDF-documenten die er professioneel en gepolijst uitzien, is essentieel in de digitale wereld van vandaag. Een van de belangrijkste aspecten om die gepolijste look te bereiken, is ervoor te zorgen dat de lettertypen die in uw PDF worden gebruikt, correct zijn ingesloten. Dit behoudt niet alleen het uiterlijk van uw document op verschillende apparaten, maar verbetert ook de leesbaarheid. In deze tutorial duiken we in hoe u lettertypen kunt insluiten bij het maken van PDF-documenten met Aspose.PDF voor .NET. 
 
-## Stap 2: Importeer de Aspose.PDF-naamruimte
-Voeg de volgende regel code toe bovenaan uw C#-bestand om de Aspose.PDF-naamruimte te importeren:
+## Vereisten
+
+Voordat we met de code aan de slag gaan, controleren we eerst of je alles hebt wat je nodig hebt om te beginnen:
+
+1.  Aspose.PDF voor .NET: U moet de Aspose.PDF-bibliotheek geïnstalleerd hebben. U kunt deze downloaden van de[website](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: een ontwikkelomgeving waarin u uw code kunt schrijven en testen.
+3. Basiskennis van C#: Kennis van C#-programmering helpt u de codefragmenten beter te begrijpen.
+
+## Pakketten importeren
+
+Om Aspose.PDF in uw project te gebruiken, moet u de benodigde naamruimten importeren. Dit is hoe u dat kunt doen:
 
 ```csharp
 using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-## Stap 3: Instantieer een PDF-object
-Instantieer een Pdf-object door de lege constructor ervan aan te roepen:
+Met deze naamruimten krijgt u toegang tot de klassen en methoden die nodig zijn voor het maken en bewerken van PDF-documenten.
 
-```csharp
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-```
+Nu we de vereisten op een rijtje hebben, kunnen we het proces van het insluiten van lettertypen in een PDF-document opsplitsen in beheersbare stappen.
 
-## Stap 4: Maak een sectie in het PDF-object
-Maak een sectie in het Pdf-object:
+## Stap 1: Stel uw documentenmap in
 
-```csharp
-Aspose.Pdf.Page page = doc.Pages.Add();
-```
-
-## Stap 5: Voeg tekst toe aan de sectie
-Voeg tekst toe aan de sectie:
-
-```csharp
-Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
-Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
-```
-
-## Stap 6: Stel het lettertype in en sluit het in
-Stel het lettertype in en sluit het in:
-
-```csharp
-Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
-ts.Font = FontRepository.FindFont("Arial");
-ts.Font.IsEmbedded = true;
-segment.TextState = ts;
-fragment.Segments.Add(segment);
-page.Paragraphs.Add(fragment);
-```
-
-## Stap 7: Sla het PDF-document op
-Nadat u het lettertype hebt ingesloten tijdens het maken van het PDF-document, moet u het document opslaan:
-
-```csharp
-dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
-// PDF-document opslaan
-doc.Save(dataDir);
-```
-
-### Voorbeeldbroncode voor het insluiten van lettertypen tijdens het maken van documenten met Aspose.PDF voor .NET
+Allereerst moet u het pad definiëren waar uw PDF-document wordt opgeslagen. Dit is cruciaal omdat het uw applicatie vertelt waar het uitvoerbestand moet worden opgeslagen.
 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
-// Instantieer het Pdf-object door de lege constructor ervan aan te roepen
+ Vervangen`"YOUR DOCUMENT DIRECTORY"`met het daadwerkelijke pad op uw systeem waar u de PDF wilt opslaan.
+
+## Stap 2: Het PDF-document instantiëren
+
+ Vervolgens maakt u een exemplaar van de`Document` klasse. Deze klasse vertegenwoordigt uw PDF-document.
+
+```csharp
+// Instantieer een Pdf-object door de lege constructor aan te roepen
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+```
 
+Door de lege constructor aan te roepen, maakt u een nieuw, leeg PDF-document dat klaar is voor inhoud.
+
+## Stap 3: Maak een pagina in het PDF-document
+
+Laten we nu een pagina toevoegen aan uw PDF-document. Elke PDF heeft minimaal één pagina nodig, dus deze stap is essentieel.
+
+```csharp
 // Maak een sectie in het Pdf-object
 Aspose.Pdf.Page page = doc.Pages.Add();
+```
 
+Met deze regel code voegt u een nieuwe pagina toe aan uw document, zodat u inhoud kunt gaan toevoegen.
+
+## Stap 4: Maak een tekstfragment
+
+ Om tekst aan uw PDF toe te voegen, moet u een`TextFragment`. Dit object bevat de tekst die u wilt weergeven.
+
+```csharp
 Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
+```
 
-Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment(" This is a sample text using Custom font.");
+ Hier initialiseren we een nieuwe`TextFragment`Je kunt het zien als een container voor je tekst.
+
+## Stap 5: Tekstsegmenten toevoegen
+
+Laten we nu een tekstsegment maken dat de daadwerkelijke tekst bevat die u wilt weergeven. Hier kunt u uw tekst aanpassen.
+
+```csharp
+Aspose.Pdf.Text.TextSegment segment = new Aspose.Pdf.Text.TextSegment("This is a sample text using Custom font.");
+```
+
+Voel je vrij om de tekst te veranderen naar wat je maar wilt. Dit is jouw content!
+
+## Stap 6: Definieer de tekststatus en sluit het lettertype in
+
+ Om ervoor te zorgen dat uw lettertype in de PDF is ingesloten, moet u de lettertype-eigenschappen in de`TextState` voorwerp.
+
+```csharp
 Aspose.Pdf.Text.TextState ts = new Aspose.Pdf.Text.TextState();
 ts.Font = FontRepository.FindFont("Arial");
 ts.Font.IsEmbedded = true;
 segment.TextState = ts;
-fragment.Segments.Add(segment);
-page.Paragraphs.Add(fragment);
+```
 
+In deze code specificeren we dat we het Arial-lettertype willen gebruiken en dat het in de PDF moet worden ingesloten. Dit is een cruciale stap om ervoor te zorgen dat uw document er op alle apparaten hetzelfde uitziet.
+
+## Stap 7: Voeg het segment toe aan het fragment
+
+Nu u uw tekstsegment klaar hebt, is het tijd om het aan het tekstfragment toe te voegen.
+
+```csharp
+fragment.Segments.Add(segment);
+```
+
+Met deze regel wordt het segment toegevoegd aan het fragment, waardoor het onderdeel wordt van de tekst die op de pagina wordt weergegeven.
+
+## Stap 8: Voeg het fragment toe aan de pagina
+
+Vervolgens moet u het tekstfragment toevoegen aan de pagina die u eerder hebt gemaakt.
+
+```csharp
+page.Paragraphs.Add(fragment);
+```
+
+Met deze stap zorgt u ervoor dat uw tekst op de pagina van het PDF-document verschijnt.
+
+## Stap 9: Sla het PDF-document op
+
+Ten slotte is het tijd om uw PDF-document op te slaan. U geeft het pad op waar u het wilt opslaan.
+
+```csharp
 dataDir = dataDir + "EmbedFontWhileDocCreation_out.pdf";
 // PDF-document opslaan
 doc.Save(dataDir);
 ```
 
+Deze code koppelt de naam van het uitvoerbestand aan het pad van uw documentmap en slaat het PDF-bestand op. 
+
 ## Conclusie
-In deze zelfstudie hebben we besproken hoe u een lettertype kunt insluiten terwijl u een PDF-document maakt met Aspose.PDF voor .NET. Aspose.PDF voor .NET biedt een eenvoudige en gebruiksvriendelijke API om met PDF-documenten te werken, inclusief het toevoegen en insluiten van lettertypen. Het insluiten van lettertypen tijdens het maken van een PDF-document is een belangrijke stap om ervoor te zorgen dat het document correct wordt weergegeven op verschillende apparaten, ongeacht of de vereiste lettertypen op die apparaten zijn geïnstalleerd of niet.
 
-### Veelgestelde vragen over het insluiten van lettertypen tijdens het maken van PDF-documenten
+En daar heb je het! Je hebt met succes een PDF-document met ingesloten lettertypen gemaakt met Aspose.PDF voor .NET. Dit proces verbetert niet alleen de visuele aantrekkingskracht van je documenten, maar zorgt er ook voor dat ze hun opmaak behouden op verschillende platforms. 
 
-#### Vraag: Waarom is het insluiten van lettertypen belangrijk bij het maken van een PDF-document?
+## Veelgestelde vragen
 
-A: Het insluiten van lettertypen tijdens het maken van een PDF-document is belangrijk om ervoor te zorgen dat het document correct wordt weergegeven op verschillende apparaten, zelfs als de vereiste lettertypen niet op die apparaten zijn geïnstalleerd. Hierdoor blijft het beoogde uiterlijk van het document behouden en worden problemen met het vervangen van lettertypen voorkomen.
+### Wat is Aspose.PDF voor .NET?
+Aspose.PDF voor .NET is een krachtige bibliotheek waarmee ontwikkelaars programmatisch PDF-documenten kunnen maken, bewerken en converteren.
 
-#### Vraag: Hoe kan ik lettertypen insluiten terwijl ik een PDF-document maak met Aspose.PDF voor .NET?
+### Waarom moet ik lettertypen in mijn PDF insluiten?
+Door lettertypen in te sluiten, zorgt u ervoor dat uw document er op alle apparaten hetzelfde uitziet en dat het beoogde ontwerp en de leesbaarheid behouden blijven.
 
-A: U kunt lettertypen insluiten terwijl u een PDF-document maakt met Aspose.PDF voor .NET door het lettertype op te geven en de`IsEmbedded` eigendom aan`true`. Dit zorgt ervoor dat de lettertypegegevens in het PDF-bestand worden ingesloten.
+### Kan ik aangepaste lettertypen gebruiken met Aspose.PDF?
+Ja, u kunt aangepaste lettertypen gebruiken, zolang deze beschikbaar zijn op uw systeem en er op de juiste manier naar wordt verwezen in uw code.
 
-#### Vraag: Kan ik een aangepast lettertype opgeven terwijl ik dit in een PDF-document insluit?
+### Is er een gratis proefversie beschikbaar voor Aspose.PDF?
+ Ja, u kunt een gratis proefversie downloaden van de[Aspose-website](https://releases.aspose.com/).
 
-A: Ja, u kunt een aangepast lettertype opgeven terwijl u dit in een PDF-document insluit met behulp van Aspose.PDF voor .NET. Hierdoor kunt u specifieke lettertypen gebruiken die passen bij uw ontwerpvereisten.
-
-#### Vraag: Is Aspose.PDF voor .NET compatibel met verschillende lettertypeformaten?
-
-A: Ja, Aspose.PDF voor .NET is compatibel met verschillende lettertypeformaten, waaronder TrueType-, OpenType- en Type 1-lettertypen. Het kan lettertypen insluiten in een PDF-document, ongeacht hun formaat.
-
-#### Vraag: Kan ik het insluitingsproces van lettertypen aanpassen?
-
- A: Ja, u kunt het insluitingsproces van lettertypen aanpassen met Aspose.PDF voor .NET. U kunt het lettertype opgeven en eigenschappen instellen, zoals`IsEmbedded` om te bepalen hoe het lettertype in het PDF-document wordt ingesloten.
+### Waar kan ik ondersteuning vinden voor Aspose.PDF?
+ U kunt ondersteuning vinden en vragen stellen op de[Aspose-forum](https://forum.aspose.com/c/pdf/10).

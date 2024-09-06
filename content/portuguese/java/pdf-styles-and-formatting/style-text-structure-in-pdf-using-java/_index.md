@@ -1,8 +1,8 @@
 ---
-title: Estilizar estrutura de texto em PDF usando Java
-linktitle: Estilizar estrutura de texto em PDF usando Java
+title: Estrutura de texto de estilo em PDF usando Java
+linktitle: Estrutura de texto de estilo em PDF usando Java
 second_title: API de processamento de PDF Java Aspose.PDF
-description: Aprenda como estilizar estruturas de texto em PDFs usando Java com nosso guia passo a passo. Personalize fontes, cores, hiperlinks e muito mais para obter documentos com aparência profissional.
+description: Aprenda a estilizar estruturas de texto em PDFs usando Java com nosso guia passo a passo. Personalize fontes, cores, hiperlinks e muito mais para documentos com aparência profissional.
 type: docs
 weight: 11
 url: /pt/java/pdf-styles-and-formatting/style-text-structure-in-pdf-using-java/
@@ -10,34 +10,34 @@ url: /pt/java/pdf-styles-and-formatting/style-text-structure-in-pdf-using-java/
 
 ## Introdução
 
-Os PDFs se tornaram um formato padrão para compartilhamento de documentos, relatórios e vários tipos de conteúdo. Ao trabalhar com PDFs em Java, é essencial não apenas preenchê-los com dados, mas também estilizar o texto para obter uma aparência elegante.
+PDFs se tornaram um formato padrão para compartilhar documentos, relatórios e vários tipos de conteúdo. Ao trabalhar com PDFs em Java, é essencial não apenas preenchê-los com dados, mas também estilizar o texto para uma aparência polida.
 
 ## Pré-requisitos
 
-Antes de começarmos, certifique-se de ter os seguintes pré-requisitos em vigor:
+Antes de começar, certifique-se de ter os seguintes pré-requisitos em vigor:
 
-- Kit de desenvolvimento Java (JDK) instalado.
+- Java Development Kit (JDK) instalado.
 - Biblioteca Aspose.PDF para Java baixada e configurada.
 
-## Configurando o Ambiente
+## Configurando o ambiente
 
-Para começar a estilizar texto em PDFs usando Java, você precisa configurar seu ambiente de desenvolvimento. Siga esses passos:
+Para começar a estilizar texto em PDFs usando Java, você precisa configurar seu ambiente de desenvolvimento. Siga estas etapas:
 
 1.  Baixe a biblioteca Aspose.PDF para Java em[aqui](https://releases.aspose.com/pdf/java/).
 
-2. Inclua a biblioteca em seu projeto Java.
+2. Inclua a biblioteca no seu projeto Java.
 
-3. Importe as classes necessárias do Aspose.PDF em seu código.
+3. Importe as classes necessárias do Aspose.PDF no seu código.
 
-## Adicionando texto a um PDF
+## Adicionar texto a um PDF
 
 Agora, vamos começar adicionando texto a um documento PDF. Aqui está um exemplo simples:
 
 ```java
-// Crie um novo documento PDF
+// Criar um novo documento PDF
 com.aspose.pdf.Document pdfDocument = new com.aspose.pdf.Document();
 
-// Adicione uma página ao documento
+// Adicionar uma página ao documento
 pdfDocument.getPages().add();
 
 // Crie um objeto TextFragment
@@ -46,11 +46,11 @@ com.aspose.pdf.TextFragment textFragment = new com.aspose.pdf.TextFragment("Hell
 // Adicione o TextFragment à página
 pdfDocument.getPages().get_Item(1).getParagraphs().add(textFragment);
 
-// Salve o documento
+// Salvar o documento
 pdfDocument.save("output.pdf");
 ```
 
-Este código cria um documento PDF, adiciona uma página e insere o texto “Olá, PDF!” na página.
+Este código cria um documento PDF, adiciona uma página e insere o texto "Olá, PDF!" na página.
 
 ## Estilo de fonte
 
@@ -70,17 +70,17 @@ textFragment.getTextState().setFontSize(16);
 textFragment.getTextState().setForegroundColor(com.aspose.pdf.Color.getBlue());
 ```
 
-## Alinhamento de Texto
+## Alinhamento de texto
 
-Controle o alinhamento do texto em seu PDF:
+Controle o alinhamento do texto no seu PDF:
 
 ```java
 textFragment.getTextState().setHorizontalAlignment(HorizontalAlignment.Center);
 ```
 
-## Adicionando cabeçalhos e rodapés
+## Adicionar cabeçalhos e rodapés
 
-Aprimore a estrutura do documento com cabeçalhos e rodapés:
+Melhore a estrutura do documento com cabeçalhos e rodapés:
 
 ```java
 Page page = pdfDocument.getPages().get_Item(1);
@@ -137,14 +137,14 @@ page.getParagraphs().add(link);
 Transforme o texto conforme necessário:
 
 ```java
-textFragment.getTextState().setTextRise(5); // Eleva o texto
+textFragment.getTextState().setTextRise(5); // Levanta o texto
 textFragment.getTextState().setTextScaling(200); // Dimensiona o texto
 textFragment.getTextState().setUnderline(true);
 ```
 
-## Layout e margens da página
+## Layout de página e margens
 
-Controle o layout das suas páginas PDF:
+Controle o layout das suas páginas em PDF:
 
 ```java
 page.setPageSize(PageSize.getA4());
@@ -152,16 +152,16 @@ page.getPageInfo().getMargin().setLeft(50);
 page.getPageInfo().getMargin().setRight(50);
 ```
 
-## Tratamento de quebras de página
+## Lidando com quebras de página
 
-Garanta quebras de página adequadas para o seu conteúdo:
+Garanta quebras de página adequadas para seu conteúdo:
 
 ```java
 textFragment.getTextState().setIsAutoTruncated(true);
 textFragment.getTextState().setIsWordWrapped(true);
 ```
 
-## Adicionando marcas d’água
+## Adicionar marcas d'água
 
 Proteja seu conteúdo com marcas d'água:
 
@@ -176,7 +176,7 @@ page.getParagraphs().add(watermark);
 
 ## Conclusão
 
-Neste guia, exploramos como estilizar estruturas de texto em PDFs usando Java com a ajuda de Aspose.PDF. Agora você pode criar documentos PDF visualmente atraentes e bem estruturados que atendam aos seus requisitos específicos. Experimente as técnicas fornecidas e aprimore suas habilidades de geração de PDF.
+Neste guia, exploramos como estilizar estruturas de texto em PDFs usando Java com a ajuda do Aspose.PDF. Agora você pode criar documentos PDF visualmente atraentes e bem estruturados que atendem aos seus requisitos específicos. Experimente as técnicas fornecidas e aprimore suas habilidades de geração de PDF.
 
 ## Perguntas frequentes
 
@@ -188,18 +188,18 @@ Neste guia, exploramos como estilizar estruturas de texto em PDFs usando Java co
 textFragment.getTextState().setFont(FontRepository.findFont("Arial"));
 ```
 
-### Posso adicionar hiperlinks ao meu PDF usando Aspose.PDF para Java?
+### Posso adicionar hiperlinks ao meu PDF usando o Aspose.PDF para Java?
 
  Sim, você pode adicionar hiperlinks ao seu PDF usando Aspose.PDF para Java. Use o`Hyperlink` classe para criar links e especificar ações, como abrir uma URL.
 
 ### Qual é a maneira recomendada de lidar com quebras de página em um PDF?
 
- Para lidar com quebras de página em um PDF, defina o`IsAutoTruncated` e`IsWordWrapped` propriedades para`true` no`TextState`. Isso garante que o texto seja devidamente truncado e quebrado para caber nos limites da página.
+ Para manipular quebras de página em um PDF, defina o`IsAutoTruncated` e`IsWordWrapped` propriedades para`true` no`TextState`. Isso garante que o texto seja devidamente truncado e ajustado para caber dentro dos limites da página.
 
-### Como posso proteger meus documentos PDF com marcas d’água?
+### Como posso proteger meus documentos PDF com marcas d'água?
 
-Você pode proteger seus documentos PDF com marcas d’água adicionando um fragmento de texto de marca d’água ao PDF. Personalize a aparência da marca d'água, como tamanho e cor da fonte, para obter o efeito desejado.
+Você pode proteger seus documentos PDF com marcas d'água adicionando um fragmento de texto de marca d'água ao PDF. Personalize a aparência da marca d'água, como tamanho e cor da fonte, para obter o efeito desejado.
 
-### Onde posso encontrar mais informações e documentação sobre Aspose.PDF para Java?
+### Onde posso encontrar mais informações e documentação sobre o Aspose.PDF para Java?
 
  Você pode encontrar documentação abrangente para Aspose.PDF para Java em[aqui](https://reference.aspose.com/pdf/java/).

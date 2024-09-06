@@ -1,24 +1,24 @@
 ---
-title: PDF Dosyasındaki Normal İfadedeki Metni Değiştir
-linktitle: PDF Dosyasındaki Texton Normal İfadesini Değiştir
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET'i kullanarak PDF dosyasındaki normal ifadeye dayalı metni nasıl değiştireceğinizi öğrenin.
+title: PDF Dosyasındaki Düzenli İfadedeki Metni Değiştir
+linktitle: PDF Dosyasında Texton Düzenli İfadesini Değiştirin
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki metni düzenli ifadeye göre nasıl değiştireceğinizi öğrenin.
 type: docs
 weight: 360
 url: /tr/net/programming-with-text/replace-text-on-regular-expression/
 ---
-Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak PDF dosyasındaki normal ifadeye dayalı metni nasıl değiştireceğinizi açıklayacağız. Gerekli C# kaynak koduyla birlikte adım adım bir kılavuz sağlayacağız.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak PDF dosyasındaki bir düzenli ifadeye dayalı metni nasıl değiştireceğinizi açıklayacağız. Gerekli C# kaynak koduyla birlikte adım adım bir kılavuz sağlayacağız.
 
-## Önkoşullar
+## Ön koşullar
 
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
 - Aspose.PDF for .NET kütüphanesi kuruldu.
-- C# programlamanın temel anlayışı.
+- C# programlamanın temel bilgisi.
 
-## 1. Adım: Belge Dizinini Ayarlayın
+## Adım 1: Belge Dizinini Ayarlayın
 
- Giriş PDF dosyasının bulunduğu dizinin yolunu ayarlayın. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` PDF dosyanızın yolunu içeren değişken.
+ Giriş PDF dosyanızın bulunduğu dizine giden yolu ayarlayın. Değiştir`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` PDF dosyanızın yolunu içeren değişken.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -32,9 +32,9 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionPage.pdf");
 ```
 
-## 3. Adım: Normal İfade Kullanarak Metni Arayın ve Değiştirin
+## Adım 3: Düzenli İfade Kullanarak Metin Arayın ve Değiştirin
 
- Oluşturmak`TextFragmentAbsorber` nesneyi seçin ve kalıpla eşleşen tüm ifadeleri bulmak için normal ifade modelini belirtin. Normal ifade kullanımını etkinleştirmek için metin arama seçeneğini ayarlayın.
+ Bir tane oluştur`TextFragmentAbsorber` nesneyi seçin ve desenle eşleşen tüm ifadeleri bulmak için düzenli ifade desenini belirtin. Düzenli ifade kullanımını etkinleştirmek için metin arama seçeneğini ayarlayın.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // 1999-2000 gibi
@@ -43,9 +43,9 @@ textFragmentAbsorber.TextSearchOptions = textSearchOptions;
 pdfDocument.Pages[1].Accept(textFragmentAbsorber);
 ```
 
-## 4. Adım: Metni Değiştir
+## Adım 4: Metni Değiştirin
 
-Çıkarılan metin parçaları arasında dolaşın ve metni gerektiği gibi değiştirin. Metni ve yazı tipi, yazı tipi boyutu, ön plan rengi ve arka plan rengi gibi diğer özellikleri güncelleyin.
+Çıkarılan metin parçaları arasında döngü yapın ve metni gerektiği gibi değiştirin. Metni ve yazı tipi, yazı tipi boyutu, ön plan rengi ve arka plan rengi gibi diğer özellikleri güncelleyin.
 
 ```csharp
 foreach (TextFragment textFragment in textFragmentAbsorber.TextFragments)
@@ -58,7 +58,7 @@ foreach (TextFragment textFragment in textFragmentAbsorber.TextFragments)
 }
 ```
 
-## 5. Adım: Değiştirilen PDF'yi kaydedin
+## Adım 5: Değiştirilen PDF'yi kaydedin
 
 Değiştirilen PDF belgesini belirtilen çıktı dosyasına kaydedin.
 
@@ -68,25 +68,25 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nText replaced successfully based on a regular expression.\nFile saved at " + dataDir);
 ```
 
-### Aspose.PDF for .NET kullanarak Texton Normal İfadesini Değiştir için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Replace Texton Regular Expression için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionPage.pdf");
-// Normal ifadeyle eşleşen tüm ifadeleri bulmak için TextAbsorber nesnesi oluşturun
+// Düzenli ifadeyle eşleşen tüm ifadeleri bulmak için TextAbsorber nesnesi oluşturun
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // 1999-2000 gibi
-// Normal ifade kullanımını belirtmek için metin arama seçeneğini ayarlayın
+// Düzenli ifade kullanımını belirtmek için metin arama seçeneğini ayarlayın
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textFragmentAbsorber.TextSearchOptions = textSearchOptions;
 // Tek bir sayfa için emiciyi kabul edin
 pdfDocument.Pages[1].Accept(textFragmentAbsorber);
 // Çıkarılan metin parçalarını alın
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// Parçalar arasında döngü yapın
+// Parçalar arasında döngü
 foreach (TextFragment textFragment in textFragmentCollection)
 {
-	// Metni ve diğer özellikleri güncelleme
+	// Metni ve diğer özellikleri güncelle
 	textFragment.Text = "New Phrase";
 	// Bir nesnenin örneğine ayarlayın.
 	textFragment.TextState.Font = FontRepository.FindFont("Verdana");
@@ -101,53 +101,53 @@ Console.WriteLine("\nText replaced successfully based on a regular expression.\n
 
 ## Çözüm
 
-Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesindeki normal ifadeye dayalı metni nasıl değiştireceğinizi öğrendiniz. Adım adım kılavuzu izleyerek ve verilen C# kodunu çalıştırarak bir PDF belgesi yükleyebilir, normal ifade kullanarak metin arayabilir, değiştirebilir ve değiştirilen PDF'yi kaydedebilirsiniz.
+Bu eğitimde, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesindeki metni düzenli ifadeye göre nasıl değiştireceğinizi öğrendiniz. Adım adım kılavuzu takip ederek ve sağlanan C# kodunu çalıştırarak bir PDF belgesi yükleyebilir, düzenli ifade kullanarak metin arayabilir, değiştirebilir ve değiştirilmiş PDF'yi kaydedebilirsiniz.
 
-### SSS'ler
+### SSS
 
-#### S: "PDF Dosyasındaki Normal İfadedeki Metni Değiştirme" öğreticisinin amacı nedir?
+#### S: "PDF Dosyasındaki Düzenli İfadedeki Metni Değiştirme" eğitiminin amacı nedir?
 
-C: "PDF Dosyasındaki Normal İfadede Metni Değiştir" eğitimi, bir PDF belgesinde normal ifadeye dayalı metni aramak ve değiştirmek için .NET için Aspose.PDF kütüphanesini kullanma sürecinde size rehberlik etmeyi amaçlamaktadır. Örnek C# koduyla birlikte adım adım bir kılavuz sağlar.
+A: "PDF Dosyasındaki Düzenli İfadedeki Metni Değiştir" öğreticisinin amacı, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesinde düzenli ifadeye dayalı metin arama ve değiştirme sürecinde size rehberlik etmektir. Örnek C# koduyla birlikte adım adım bir kılavuz sağlar.
 
-#### S: Bir PDF belgesindeki metni değiştirmek için neden normal ifadeyi kullanmak isteyeyim?
+#### S: PDF belgesinde metni değiştirmek için neden düzenli ifade kullanmak isteyeyim?
 
-C: Düzenli ifadeleri kullanmak, belirli bir formatı izleyen metin kalıplarını aramanıza ve değiştirmenize olanak tanır, bu da onu içeriği değiştirmenin güçlü bir yolu haline getirir. Bu yaklaşım özellikle PDF belgesinde belirli bir desen veya yapıyla eşleşen metni değiştirmeniz gerektiğinde kullanışlıdır.
+A: Düzenli ifadeleri kullanmak, belirli bir biçimi izleyen metin desenlerini aramanıza ve değiştirmenize olanak tanır ve bu da içeriği düzenlemenin güçlü bir yoludur. Bu yaklaşım, özellikle PDF belgesinde belirli bir desen veya yapıyla eşleşen metni değiştirmeniz gerektiğinde faydalıdır.
 
 #### S: Belge dizinini nasıl ayarlarım?
 
-C: Belge dizinini ayarlamak için:
+A: Belge dizinini ayarlamak için:
 
-1.  Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` giriş PDF dosyanızın bulunduğu dizinin yolunu içeren değişken.
+1.  Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` içinde`dataDir` Girdi PDF dosyanızın bulunduğu dizinin yolunu içeren değişken.
 
-#### S: Bir PDF belgesindeki normal ifadeye dayalı metni nasıl değiştiririm?
+#### S: PDF belgesinde düzenli ifadeye dayalı metni nasıl değiştiririm?
 
-C: Eğitim aşağıdaki adımlarda size yol gösterir:
+A: Eğitim sizi aşağıdaki adımlarda yönlendirecektir:
 
 1.  PDF belgesini kullanarak yükleyin`Document` sınıf.
-2.  Oluşturmak`TextFragmentAbsorber` nesneyi açın ve kalıpla eşleşen cümleleri bulmak için normal ifade modelini belirtin. Normal ifade kullanımını etkinleştirmek için metin arama seçeneğini ayarlayın.
-3. Çıkarılan metin parçaları arasında dolaşın ve metni değiştirin. Yazı tipi, yazı tipi boyutu, ön plan rengi ve arka plan rengi gibi diğer özellikleri gerektiği gibi güncelleyin.
+2.  Bir tane oluştur`TextFragmentAbsorber` nesneyi seçin ve desene uyan ifadeleri bulmak için düzenli ifade desenini belirtin. Düzenli ifade kullanımını etkinleştirmek için metin arama seçeneğini ayarlayın.
+3. Çıkarılan metin parçaları arasında dolaşın ve metni değiştirin. Gerektiğinde yazı tipi, yazı tipi boyutu, ön plan rengi ve arka plan rengi gibi diğer özellikleri güncelleyin.
 4. Değiştirilen PDF belgesini kaydedin.
 
-#### S: Metni karmaşık normal ifadeler kullanarak değiştirebilir miyim?
+#### S: Karmaşık düzenli ifadeleri kullanarak metni değiştirebilir miyim?
 
-C: Evet, PDF belgesindeki metni eşleştirmek ve değiştirmek için karmaşık normal ifadeler kullanabilirsiniz. Düzenli ifadeler, metindeki belirli kalıpları veya yapıları tanımlamak için esnek bir yol sağlar.
+A: Evet, PDF belgesindeki metni eşleştirmek ve değiştirmek için karmaşık düzenli ifadeler kullanabilirsiniz. Düzenli ifadeler, metindeki belirli kalıpları veya yapıları tanımlamanın esnek bir yolunu sağlar.
 
-####  Soru: Programın amacı nedir?`TextSearchOptions` class in the tutorial?
+####  S: Amacı nedir?`TextSearchOptions` class in the tutorial?
 
- C:`TextSearchOptions`class, metin parçalarını ararken normal ifade kullanımını etkinleştirmek gibi metin arama seçeneklerini belirtmenize olanak tanır. Öğreticide, normal ifade modunu etkinleştirmek için kullanılır.`TextFragmentAbsorber`.
+ A:`TextSearchOptions`sınıf, metin parçalarını ararken düzenli ifade kullanımını etkinleştirme gibi metin arama seçeneklerini belirtmenize olanak tanır. Eğitimde, düzenli ifade modunu etkinleştirmek için kullanılır`TextFragmentAbsorber`.
 
-#### S: Metni değiştirmek için normal ifadeler kullanıldığında yazı tipini değiştirmek isteğe bağlı mıdır?
+#### S: Metni değiştirmek için düzenli ifadeler kullanıldığında yazı tipi değiştirme isteğe bağlı mıdır?
 
-C: Evet, metni değiştirmek için normal ifadeler kullanıldığında yazı tipinin değiştirilmesi isteğe bağlıdır. Yeni bir yazı tipi belirtmezseniz metin, orijinal metin parçasının yazı tipini koruyacaktır.
+A: Evet, metni değiştirmek için düzenli ifadeler kullanıldığında yazı tipi değiştirme isteğe bağlıdır. Yeni bir yazı tipi belirtmezseniz, metin orijinal metin parçasının yazı tipini koruyacaktır.
 
-#### S: Birden çok sayfadaki metni normal ifade kullanarak nasıl değiştirebilirim?
+#### S: Düzenli ifade kullanarak birden fazla sayfadaki metni nasıl değiştirebilirim?
 
-C: Öğretici örneğine benzer şekilde, metin parçaları arasındaki döngüyü PDF belgesinin tüm sayfalarını içerecek şekilde değiştirebilirsiniz. Bu şekilde, birden çok sayfadaki metni normal ifade düzenine göre değiştirebilirsiniz.
+A: PDF belgesinin tüm sayfalarını içerecek şekilde metin parçalarındaki döngüyü, öğretici örneğine benzer şekilde değiştirebilirsiniz. Bu şekilde, düzenli ifade desenine göre birden fazla sayfadaki metni değiştirebilirsiniz.
 
-#### S: Sağlanan kodu çalıştırmanın beklenen sonucu nedir?
+#### S: Verilen kodun yürütülmesinin beklenen sonucu nedir?
 
-C: Öğreticiyi takip ederek ve verilen C# kodunu çalıştırarak, PDF belgesindeki metni, belirtilen normal ifade düzeniyle eşleşen metni değiştireceksiniz. Değiştirilen metin, yazı tipi, yazı tipi boyutu, ön plan rengi ve arka plan rengi gibi belirttiğiniz özelliklere sahip olacaktır.
+A: Öğreticiyi takip ederek ve sağlanan C# kodunu çalıştırarak, belirtilen düzenli ifade kalıbıyla eşleşen PDF belgesindeki metni değiştireceksiniz. Değiştirilen metin, yazı tipi, yazı tipi boyutu, ön plan rengi ve arka plan rengi gibi belirttiğiniz özelliklere sahip olacaktır.
 
-#### S: Metni karmaşık biçimlendirmeyle değiştirmek için bu yaklaşımı kullanabilir miyim?
+#### S: Karmaşık biçimlendirmeye sahip metni değiştirmek için bu yaklaşımı kullanabilir miyim?
 
-C: Evet, yazı tipi, yazı tipi boyutu, ön plan rengi ve arka plan rengi gibi özellikleri güncelleyerek değiştirilen metnin biçimlendirmesini özelleştirebilirsiniz. Bu, biçimlendirmeyi gerektiği gibi korumanıza veya değiştirmenize olanak tanır.
+A: Evet, yazı tipi, yazı tipi boyutu, ön plan rengi ve arka plan rengi gibi özellikleri güncelleyerek değiştirilen metnin biçimlendirmesini özelleştirebilirsiniz. Bu, biçimlendirmeyi gerektiği gibi korumanıza veya değiştirmenize olanak tanır.

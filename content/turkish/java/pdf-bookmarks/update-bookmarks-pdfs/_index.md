@@ -1,8 +1,8 @@
 ---
-title: PDF'lerdeki Yer İşaretlerini Güncelleme
-linktitle: PDF'lerdeki Yer İşaretlerini Güncelleme
+title: PDF'lerdeki Yer İşaretlerini Güncelle
+linktitle: PDF'lerdeki Yer İşaretlerini Güncelle
 second_title: Aspose.PDF Java PDF İşleme API'si
-description: Aspose.PDF for Java'yı kullanarak PDF yer imlerini verimli bir şekilde nasıl güncelleyeceğinizi öğrenin. Adım adım kılavuzumuz süreci basitleştirir.
+description: Java için Aspose.PDF'yi kullanarak PDF yer imlerini nasıl etkili bir şekilde güncelleyeceğinizi öğrenin. Adım adım kılavuzumuz süreci basitleştirir.
 type: docs
 weight: 16
 url: /tr/java/pdf-bookmarks/update-bookmarks-pdfs/
@@ -10,60 +10,60 @@ url: /tr/java/pdf-bookmarks/update-bookmarks-pdfs/
 
 ## giriiş
 
-Bu derste, PDF belgeleriyle çalışmak için güçlü bir Java kütüphanesi olan Aspose.PDF for Java'yı kullanarak PDF'lerdeki yer imlerinin nasıl güncelleneceğini keşfedeceğiz. Yer imleri, PDF dosyalarında gezinmeyi ve kullanılabilirliği geliştirmek için gereklidir ve Aspose.PDF for Java, bunları programlı olarak değiştirmek için uygun bir yol sağlar.
+Bu eğitimde, PDF belgeleriyle çalışmak için güçlü bir Java kütüphanesi olan Aspose.PDF for Java kullanarak PDF'lerdeki yer imlerinin nasıl güncelleneceğini inceleyeceğiz. Yer imleri, PDF dosyalarının gezinmesini ve kullanılabilirliğini geliştirmek için olmazsa olmazdır ve Aspose.PDF for Java, bunları programatik olarak değiştirmek için kullanışlı bir yol sağlar.
 
-## Aspose.PDF for Java'yı Anlamak
+## Java için Aspose.PDF'yi Anlamak
 
-Aspose.PDF for Java, geliştiricilerin Java uygulamalarında PDF belgeleri oluşturmasına, düzenlemesine ve işlemesine olanak tanıyan, zengin özelliklere sahip bir PDF işleme kitaplığıdır. Etkileşimli bağlantılar veya PDF dosyaları için içindekiler tablosu sağlayan ana hatlar olan yer imleriyle çalışma yeteneği de dahil olmak üzere çok çeşitli yetenekler sunar.
+Java için Aspose.PDF, geliştiricilerin Java uygulamalarında PDF belgeleri oluşturmasına, düzenlemesine ve düzenlemesine olanak tanıyan özellik açısından zengin bir PDF düzenleme kütüphanesidir. PDF dosyaları için içerik tablosu sağlayan etkileşimli bağlantılar veya ana hatlar olan yer imleriyle çalışma yeteneği de dahil olmak üzere çok çeşitli yetenekler sunar.
 
-## Önkoşullar
+## Ön koşullar
 
-Eğiticiye dalmadan önce aşağıdaki önkoşullara ihtiyacınız olacak:
+Eğitime başlamadan önce aşağıdaki ön koşullara ihtiyacınız olacak:
 
-- Java programlamanın temel anlayışı.
-- Sisteminizde Java Geliştirme Kiti (JDK) yüklü.
+- Java programlamanın temellerini anlamak.
+- Sisteminizde Java Development Kit (JDK) yüklü.
 - IntelliJ IDEA veya Eclipse gibi Entegre Geliştirme Ortamı (IDE).
 
-## Geliştirme Ortamını Kurma
+## Geliştirme Ortamının Kurulması
 
 Geliştirme ortamımızı kurarak başlayalım:
 
-1. Tercih ettiğiniz Java IDE'yi yükleyin.
+1. Tercih ettiğiniz Java IDE'sini yükleyin.
 2. Yeni bir Java projesi oluşturun.
-3. Aspose.PDF for Java'yı projenize ekleyin.
+3. Projenize Aspose.PDF for Java'yı ekleyin.
 
-## Java Projesi Oluşturma
+## Bir Java Projesi Oluşturma
 
 Şimdi IDE'nizde yeni bir Java projesi oluşturalım:
 
-1. IDE'nizi açın.
+1. IDE’nizi açın.
 2. "Dosya" > "Yeni Proje"yi seçin.
-3. Proje türü olarak "Java"yı seçin.
+3. Proje türünü "Java" olarak seçin.
 4. Projeyi oluşturmak için sihirbazı takip edin.
 
-## Aspose.PDF for Java'yı Projenize Ekleme
+## Projenize Aspose.PDF for Java Ekleme
 
-Aspose.PDF for Java ile çalışmak için kütüphaneyi projenize eklemeniz gerekir:
+Java için Aspose.PDF ile çalışmak için, projenize şu kütüphaneyi eklemeniz gerekir:
 
-1.  Aspose.PDF for Java kütüphanesini şu adresten indirin:[Burada](https://releases.aspose.com/pdf/java/).
+1.  Java kütüphanesi için Aspose.PDF'yi şu adresten indirin:[Burada](https://releases.aspose.com/pdf/java/).
 2. JAR dosyasını projenizin sınıf yoluna ekleyin.
 
 ## PDF'lerdeki Yer İşaretlerini Güncelleme
 
-Şimdi Aspose.PDF for Java'yı kullanarak PDF'lerdeki yer işaretlerini güncelleme konusuna geçelim.
+Şimdi Aspose.PDF for Java'yı kullanarak PDF'lerdeki yer imlerini güncellemeye geçelim.
 
 ### Mevcut bir PDF Belgesini Yükleme
 
-Başlamak için yer imleri içeren mevcut bir PDF belgesini yüklememiz gerekiyor:
+Başlamak için, yer imleri içeren mevcut bir PDF belgesini yüklememiz gerekiyor:
 
 ```java
 // PDF belgesini yükleyin
 Document pdfDocument = new Document("example.pdf");
 ```
 
-### Yer İmlerini Değiştirme
+### Yer İşaretlerini Değiştirme
 
-Daha sonra yer imlerini gerektiği gibi değiştirebiliriz. Örneğin, mevcut bir yer imini yeniden adlandıralım:
+Sonra, yer imlerini gerektiği gibi değiştirebiliriz. Örneğin, mevcut bir yer imini yeniden adlandıralım:
 
 ```java
 // İlk yer imine erişin
@@ -71,7 +71,7 @@ OutlineItemCollection bookmarks = pdfDocument.getOutlines().get(0);
 bookmarks.setTitle("New Bookmark Title");
 ```
 
-### Güncellenmiş PDF'yi Kaydetme
+### Güncellenen PDF'yi Kaydetme
 
 Gerekli değişiklikleri yaptıktan sonra güncellenen PDF belgesini kaydedin:
 
@@ -81,30 +81,30 @@ pdfDocument.save("updated_example.pdf");
 
 ## Uygulamayı Çalıştırma ve Test Etme
 
-Artık PDF'lerdeki yer işaretlerini güncellemek için Java uygulamanızı çalıştırabilirsiniz. Yer işaretlerinin başarıyla güncellendiğinden emin olmak için uygulamayı test edin.
+Şimdi, PDF'lerdeki yer imlerini güncellemek için Java uygulamanızı çalıştırabilirsiniz. Yer imlerinin başarıyla güncellendiğinden emin olmak için uygulamayı test edin.
 
 ## Çözüm
 
-Bu eğitimde Aspose.PDF for Java kullanarak PDF'lerdeki yer işaretlerini nasıl güncelleyeceğimizi öğrendik. Bu güçlü kitaplık, PDF belgeleriyle çalışma sürecini basitleştirir ve PDF dosyalarınızın gezinmesini ve kullanılabilirliğini geliştirmenize olanak tanır.
+Bu eğitimde, Java için Aspose.PDF kullanarak PDF'lerdeki yer imlerini nasıl güncelleyeceğimizi öğrendik. Bu güçlü kütüphane, PDF belgeleriyle çalışma sürecini basitleştirir ve PDF dosyalarınızın gezinme ve kullanılabilirliğini geliştirmenize olanak tanır.
 
-## SSS'ler
+## SSS
 
-### Aspose.PDF for Java kullanarak bir PDF'ye nasıl yeni yer imleri ekleyebilirim?
+### Aspose.PDF for Java kullanarak bir PDF'e nasıl yeni yer imleri ekleyebilirim?
 
-Aspose.PDF for Java'yı kullanarak yeni taslak öğeleri oluşturarak ve bunları PDF belgesinin taslak koleksiyonuna ekleyerek PDF'ye yeni yer imleri ekleyebilirsiniz. Bu, PDF'niz için bir içindekiler tablosu veya gezinme yapısı oluşturmanıza olanak tanır.
+Java için Aspose.PDF'yi kullanarak yeni anahat öğeleri oluşturup bunları PDF belgesinin anahat koleksiyonuna ekleyerek bir PDF'ye yeni yer imleri ekleyebilirsiniz. Bu, PDF'niz için bir içerik tablosu veya gezinme yapısı oluşturmanıza olanak tanır.
 
-### Aspose.PDF for Java büyük PDF belgelerini işlemeye uygun mudur?
+### Aspose.PDF for Java büyük PDF belgelerini işlemek için uygun mudur?
 
-Evet, Aspose.PDF for Java, büyük PDF belgelerini verimli bir şekilde işleme kapasitesine sahiptir. Çeşitli boyut ve karmaşıklıktaki PDF'lerle çalışacak şekilde tasarlanmıştır ve bu da onu çok çeşitli uygulamalara uygun hale getirir.
+Evet, Aspose.PDF for Java büyük PDF belgelerini verimli bir şekilde işleyebilir. Çeşitli boyutlarda ve karmaşıklıkta PDF'lerle çalışmak üzere tasarlanmıştır ve bu da onu çok çeşitli uygulamalar için uygun hale getirir.
 
 ### Aspose.PDF for Java'yı kullanarak toplu işlemlerde yer imi güncellemelerini otomatikleştirebilir miyim?
 
-Evet, Aspose.PDF for Java'yı kullanarak toplu işlemlerde yer imi güncellemelerini otomatikleştirebilirsiniz. Bir PDF dosyaları koleksiyonunu yinelemek ve yer imlerini gerektiği gibi güncellemek için bir Java programı oluşturabilirsiniz.
+Evet, Aspose.PDF for Java kullanarak toplu işlemede yer imi güncellemelerini otomatikleştirebilirsiniz. PDF dosyaları koleksiyonunda yineleme yapmak ve yer imlerini gerektiği gibi güncellemek için bir Java programı oluşturabilirsiniz.
 
 ### Aspose.PDF for Java'yı yer imi güncellemeleri için kullanırken herhangi bir sınırlama veya kısıtlama var mı?
 
-Aspose.PDF for Java çok yönlü bir kütüphane olsa da, belgeleri gözden geçirmeniz ve projenizin ihtiyaçlarına göre belirli gereksinimleri veya sınırlamaları dikkate almanız önemlidir. Bazı gelişmiş PDF özelliklerinin özel gereksinimleri olabilir.
+Java için Aspose.PDF çok yönlü bir kütüphane olsa da, belgeleri incelemek ve projenizin ihtiyaçlarına göre herhangi bir özel gereksinimi veya sınırlamayı göz önünde bulundurmak önemlidir. Bazı gelişmiş PDF özelliklerinin özel gereksinimleri olabilir.
 
-### Aspose.PDF for Java için daha fazla kaynağı ve belgeyi nerede bulabilirim?
+### Java için Aspose.PDF hakkında daha fazla kaynak ve belgeyi nerede bulabilirim?
 
- Aspose web sitesinde Aspose.PDF for Java için kapsamlı belgeler, eğitimler ve ek kaynaklar bulabilirsiniz:[Burada](https://reference.aspose.com/pdf/java/).
+ Aspose.PDF for Java için kapsamlı belgeleri, eğitimleri ve ek kaynakları Aspose web sitesinde bulabilirsiniz:[Burada](https://reference.aspose.com/pdf/java/).

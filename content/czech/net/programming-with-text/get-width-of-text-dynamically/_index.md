@@ -23,7 +23,7 @@ Než začnete, ujistěte se, že máte následující:
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Nahradit`"YOUR DOCUMENT DIRECTORY"` cestou k adresáři, kde jsou umístěny vaše dokumenty. Ten bude použit k uložení všech vygenerovaných souborů PDF.
+ Nahradit`"YOUR DOCUMENT DIRECTORY"` s cestou k adresáři, kde jsou umístěny vaše dokumenty. Ten bude použit k uložení všech vygenerovaných souborů PDF.
 
 ## Krok 2: Najděte písmo
 
@@ -31,7 +31,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("Arial");
 ```
 
- Výše uvedený kód najde písmo Arial pomocí`FindFont` metoda z`FontRepository` třída. Pokud chcete použít jiné písmo, nahraďte jej`"Arial"` s požadovaným názvem písma.
+Výše uvedený kód najde písmo Arial pomocí`FindFont` metoda z`FontRepository` třída. Pokud chcete použít jiné písmo, nahraďte jej`"Arial"` s požadovaným názvem písma.
 
 ## Krok 3: Nastavte stav textu
 
@@ -101,7 +101,7 @@ Odpověď: Dynamické měření šířky textu vám umožňuje přesně určit p
 
 #### Otázka: Jak najdu písmo, které se má použít pro měření textu?
 
-A: V tutoriálu používáte`FontRepository.FindFont` způsob vyhledání požadovaného písma. V příkladu je použito písmo Arial, ale můžete jej nahradit`"Arial"` s názvem jakéhokoli jiného písma, které chcete použít.
+ A: V tutoriálu používáte`FontRepository.FindFont` způsob vyhledání požadovaného písma. V příkladu je použito písmo Arial, ale můžete jej nahradit`"Arial"` s názvem jakéhokoli jiného písma, které chcete použít.
 
 ####  Otázka: Jaký je účel`TextState` class?
 

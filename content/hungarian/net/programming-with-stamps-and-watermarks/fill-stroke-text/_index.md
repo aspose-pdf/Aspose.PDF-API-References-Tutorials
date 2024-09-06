@@ -7,7 +7,7 @@ type: docs
 weight: 90
 url: /hu/net/programming-with-stamps-and-watermarks/fill-stroke-text/
 ---
-Ebben az oktatóanyagban lépésről lépésre bemutatjuk, hogyan töltsön ki és vázoljon fel szöveget PDF-fájlban az Aspose.PDF for .NET segítségével. Megmutatjuk, hogyan használhatja a mellékelt C# forráskódot a kitöltési és körvonali színek alkalmazására a PDF-fájl szövegére.
+Ebben az oktatóanyagban lépésről lépésre bemutatjuk, hogyan töltsön ki és vázoljon fel szöveget PDF-fájlban az Aspose.PDF for .NET használatával. Megmutatjuk, hogyan használhatja a mellékelt C# forráskódot a kitöltési és körvonali színek alkalmazására a PDF-fájl szövegére.
 
 ## 1. lépés: A környezet beállítása
 
@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 2. lépés: A TextState objektum létrehozása
 
-Az első lépés egy TextState objektum létrehozása a speciális tulajdonságok átadásához. Itt van, hogyan:
+Az első lépés egy TextState objektum létrehozása a speciális tulajdonságok átadásához. Íme, hogyan:
 
 ```csharp
 // Hozzon létre TextState objektumot a speciális tulajdonságok átviteléhez
@@ -35,7 +35,7 @@ A fenti kód egy új TextState objektumot hoz létre, és beállítja a körvona
 
 ## 3. lépés: A PDF dokumentum betöltése
 
-Most, hogy a TextState objektum készen áll, betölthetjük azt a PDF dokumentumot, ahol alkalmazni szeretnénk a szövegkitöltést és a körvonalat. Itt van, hogyan:
+Most, hogy a TextState objektum készen áll, betölthetjük azt a PDF dokumentumot, ahol alkalmazni szeretnénk a szövegkitöltést és a körvonalat. Íme, hogyan:
 
 ```csharp
 // Töltse be a PDF dokumentumot bemenetként
@@ -46,7 +46,7 @@ A fenti kód betölti a meglévő PDF-dokumentumot az Aspose.PDF.Facades könyvt
 
 ## 4. lépés: Adja hozzá a kitöltést és a körvonalakat a szöveghez
 
-Most, hogy a PDF dokumentum betöltődött, hozzáadhatjuk a kitöltést és a körvonalat a szöveghez. Itt van, hogyan:
+Most, hogy a PDF dokumentum betöltődött, hozzáadhatjuk a kitöltést és a körvonalat a szöveghez. Íme, hogyan:
 
 ```csharp
 // Hozzon létre egy bélyeget (Bélyegző) a meghatározott szöveggel és tulajdonságokkal
@@ -71,7 +71,7 @@ A fenti kód létrehoz egy pecsétet a megadott szöveggel és meghatározott ki
 
 ## 5. lépés: Mentse el a kimeneti dokumentumot
 
-A szövegbélyegző hozzáadása után elmenthetjük a módosított PDF dokumentumot. Itt van, hogyan:
+A szövegbélyegző hozzáadása után elmenthetjük a módosított PDF dokumentumot. Íme, hogyan:
 
 ```csharp
 // Mentse el a módosított dokumentumot
@@ -154,7 +154,7 @@ V: A PDF-dokumentum szövegének kitöltése és körvonalazása azt jelenti, ho
 
 #### K: Használhatok az Arialtól eltérő betűtípusokat a vázolt és kitöltött szöveghez?
 
- V: Igen, módosíthatja a betűtípust a betűtípusnév paraméter módosításával a`FormattedText` konstruktort a bélyeg létrehozásakor. Bármilyen, a rendszeren elérhető betűtípust használhat.
+ V: Igen, módosíthatja a betűtípust a betűtípusnév paraméter módosításával a`FormattedText` konstruktor a bélyeg létrehozásakor. Bármilyen, a rendszeren elérhető betűtípust használhat.
 
 #### K: Hogyan módosíthatom a körvonalazott és kitöltött szöveg elforgatási szögét?
 
@@ -162,4 +162,4 @@ V: A PDF-dokumentum szövegének kitöltése és körvonalazása azt jelenti, ho
 
 #### K: Hogyan szabályozhatom a vázolt és kitöltött szöveg helyzetét és méretét az oldalon?
 
-V: Használhatja a`SetOrigin` módszere a`Stamp` objektumot a bélyeg oldali pozíciójának X és Y koordinátáinak beállításához. Ezenkívül beállíthatja a betűméretet a`FormattedText` konstruktorral szabályozhatja a szöveg méretét.
+ V: Használhatja a`SetOrigin` módszere a`Stamp` objektumot a bélyeg oldali pozíciójának X és Y koordinátáinak beállításához. Ezenkívül beállíthatja a betűméretet a`FormattedText` konstruktorral szabályozhatja a szöveg méretét.

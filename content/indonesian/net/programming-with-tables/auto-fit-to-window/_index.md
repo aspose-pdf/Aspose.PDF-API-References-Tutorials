@@ -1,17 +1,17 @@
 ---
-title: Pas Otomatis Ke Jendela
-linktitle: Pas Otomatis Ke Jendela
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Panduan langkah demi langkah untuk menggunakan Aspose.PDF untuk .NET dan mencapai penyesuaian otomatis ke jendela dalam pembuatan PDF.
+title: Sesuaikan Otomatis ke Jendela
+linktitle: Sesuaikan Otomatis ke Jendela
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Panduan langkah demi langkah untuk menggunakan Aspose.PDF untuk .NET dan mencapai kesesuaian otomatis dengan jendela dalam pembuatan PDF.
 type: docs
 weight: 50
 url: /id/net/programming-with-tables/auto-fit-to-window/
 ---
-Artikel berikut adalah panduan langkah demi langkah tentang cara menggunakan kode sumber C# yang disediakan untuk mencapai fungsionalitas Auto Fit To Window menggunakan pustaka Aspose.PDF untuk .NET. Fungsi Auto Fit To Window memungkinkan Anda menghasilkan file PDF dengan tata letak yang disesuaikan dengan jendela tampilan. Fitur ini sangat berguna ketika Anda ingin dokumen PDF Anda secara otomatis menyesuaikan dengan ukuran jendela pembaca PDF yang digunakan oleh pengguna.
+Artikel berikut adalah panduan langkah demi langkah tentang cara menggunakan kode sumber C# yang disediakan untuk mencapai fungsi Penyesuaian Otomatis ke Jendela menggunakan pustaka Aspose.PDF untuk .NET. Fungsi Penyesuaian Otomatis ke Jendela memungkinkan Anda membuat berkas PDF dengan tata letak yang disesuaikan dengan jendela tampilan. Fitur ini khususnya berguna ketika Anda ingin dokumen PDF Anda secara otomatis menyesuaikan dengan ukuran jendela pembaca PDF yang digunakan oleh pengguna.
 
 ## Langkah 1: Menyiapkan Lingkungan
 
-Sebelum memulai, Anda perlu menginstal perpustakaan Aspose.PDF untuk .NET di mesin Anda. Pastikan juga untuk mengimpor namespace yang diperlukan ke dalam proyek Anda.
+Sebelum memulai, Anda perlu menginstal pustaka Aspose.PDF untuk .NET di komputer Anda. Pastikan juga untuk mengimpor namespace yang diperlukan ke dalam proyek Anda.
 
 ```csharp
 // Jalur ke direktori dokumen.
@@ -20,7 +20,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Langkah 2: Membuat Dokumen PDF
 
- Untuk memulai, Anda perlu membuat`Document` objek dengan memanggil konstruktor defaultnya.
+ Untuk memulai, Anda perlu membuat`Document` objek dengan memanggil konstruktor default-nya.
 
 ```csharp
 Document doc = new Document();
@@ -34,13 +34,13 @@ Page sec1 = doc.Pages.Add();
 
 ## Langkah 3: Menambahkan Tabel ke Dokumen
 
- Pada langkah ini, kita akan menambahkan tabel ke dokumen PDF kita. Pertama buat a`Table` obyek.
+ Pada langkah ini, kita akan menambahkan tabel ke dokumen PDF kita. Pertama buat tabel`Table` obyek.
 
 ```csharp
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 ```
 
-Selanjutnya, tambahkan tabel ke kumpulan paragraf bagian tersebut.
+Berikutnya, tambahkan tabel ke kumpulan paragraf bagian tersebut.
 
 ```csharp
 sec1.Paragraphs.Add(tab1);
@@ -91,39 +91,39 @@ dataDir = dataDir + "AutoFitToWindow_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Contoh kode sumber untuk Auto Fit To Window menggunakan Aspose.PDF untuk .NET
+### Contoh kode sumber untuk Penyesuaian Otomatis ke Jendela menggunakan Aspose.PDF untuk .NET
 
 ```csharp
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Buat instance objek Pdf dengan memanggil konstruktor kosongnya
+// Buat objek Pdf dengan memanggil konstruktor kosongnya
 Document doc = new Document();
-// Buat bagian di objek Pdf
+// Buat bagian dalam objek Pdf
 Page sec1 = doc.Pages.Add();
 
-// Buat instance objek tabel
+// Membuat instance objek tabel
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
-// Tambahkan tabel dalam kumpulan paragraf dari bagian yang diinginkan
+// Tambahkan tabel dalam kumpulan paragraf bagian yang diinginkan
 sec1.Paragraphs.Add(tab1);
 
-// Atur dengan lebar kolom tabel
+// Diatur dengan lebar kolom tabel
 tab1.ColumnWidths = "50 50 50";
 tab1.ColumnAdjustment = ColumnAdjustment.AutoFitToWindow;
 
-// Tetapkan batas sel default menggunakan objek BorderInfo
+// Mengatur batas sel default menggunakan objek BorderInfo
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 
-// Tetapkan batas tabel menggunakan objek BorderInfo khusus lainnya
+// Tetapkan batas tabel menggunakan objek BorderInfo lain yang disesuaikan
 tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
-// Buat objek MarginInfo dan atur margin kiri, bawah, kanan dan atas
+// Buat objek MarginInfo dan atur margin kiri, bawah, kanan dan atasnya
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin.Top = 5f;
 margin.Left = 5f;
 margin.Right = 5f;
 margin.Bottom = 5f;
 
-// Atur padding sel default ke objek MarginInfo
+// Tetapkan bantalan sel default ke objek MarginInfo
 tab1.DefaultCellPadding = margin;
 
 // Buat baris dalam tabel dan kemudian sel dalam baris
@@ -137,32 +137,32 @@ row2.Cells.Add("item2");
 row2.Cells.Add("item3");
 
 dataDir = dataDir + "AutoFitToWindow_out.pdf";
-// Simpan dokumen terbaru yang berisi objek tabel
+// Simpan dokumen yang diperbarui yang berisi objek tabel
 doc.Save(dataDir);
 ```
 
 ## Kesimpulan
 
-Dalam tutorial ini, kita mempelajari cara menggunakan Aspose.PDF untuk .NET untuk menghasilkan file PDF dengan fitur Auto Fit To Window. Fitur ini sangat berguna ketika Anda ingin dokumen PDF Anda secara otomatis menyesuaikan dengan ukuran jendela tampilan. Aspose.PDF untuk .NET menawarkan banyak fitur canggih lainnya untuk menghasilkan dan memanipulasi file PDF. Saya mendorong Anda untuk menjelajahi perpustakaan ini lebih jauh untuk menemukan semua kemampuannya.
+Dalam tutorial ini, kita mempelajari cara menggunakan Aspose.PDF for .NET untuk membuat file PDF dengan fitur Auto Fit To Window. Fitur ini sangat berguna ketika Anda ingin dokumen PDF Anda secara otomatis menyesuaikan dengan ukuran jendela tampilan. Aspose.PDF for .NET menawarkan banyak fitur hebat lainnya untuk membuat dan memanipulasi file PDF. Saya menganjurkan Anda untuk menjelajahi pustaka ini lebih lanjut untuk menemukan semua kemampuannya.
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
-#### Q: Apa tujuan fitur Auto Fit To Window dalam pembuatan PDF?
+#### T: Apa tujuan fitur Sesuaikan Otomatis ke Jendela dalam pembuatan PDF?
 
-A: Fitur Auto Fit To Window pada pembuatan PDF memastikan tata letak dokumen PDF secara otomatis menyesuaikan dengan ukuran jendela pembaca PDF yang digunakan pengguna. Hal ini memungkinkan tampilan yang lebih baik dan memastikan konten pas dengan area tampilan yang tersedia.
+A: Fitur Auto Fit To Window dalam pembuatan PDF memastikan bahwa tata letak dokumen PDF secara otomatis menyesuaikan dengan ukuran jendela pembaca PDF yang digunakan oleh pengguna. Hal ini memungkinkan tampilan yang lebih baik dan memastikan bahwa kontennya pas dengan area tampilan yang tersedia.
 
 #### T: Dapatkah saya menyesuaikan tampilan tabel, seperti ukuran font dan warna?
 
-A: Ya, Anda dapat menyesuaikan tampilan tabel di dokumen PDF menggunakan Aspose.PDF untuk .NET. Cuplikan kode yang disediakan menunjukkan cara mengatur properti seperti batas sel, margin, dan lebar kolom. Anda dapat menyesuaikan lebih lanjut ukuran font, warna, dan aspek gaya lainnya pada tabel dan kontennya.
+A: Ya, Anda dapat menyesuaikan tampilan tabel dalam dokumen PDF menggunakan Aspose.PDF for .NET. Cuplikan kode yang diberikan menunjukkan cara mengatur properti seperti batas sel, margin, dan lebar kolom. Anda dapat menyesuaikan lebih lanjut ukuran font, warna, dan aspek gaya lainnya pada tabel dan kontennya.
 
 #### T: Bagaimana cara mengintegrasikan Aspose.PDF untuk .NET ke dalam proyek C# saya?
 
-J: Untuk menggunakan Aspose.PDF untuk .NET di proyek C# Anda, Anda harus terlebih dahulu menginstal perpustakaan Aspose.PDF untuk .NET di mesin Anda. Kemudian, Anda dapat menambahkan referensi ke perpustakaan di proyek C# Anda. Terakhir, impor namespace yang diperlukan untuk mengakses kelas dan metode yang disediakan oleh Aspose.PDF untuk .NET.
+J: Untuk menggunakan Aspose.PDF for .NET dalam proyek C# Anda, pertama-tama Anda perlu menginstal pustaka Aspose.PDF for .NET pada komputer Anda. Kemudian, Anda dapat menambahkan referensi ke pustaka tersebut dalam proyek C# Anda. Terakhir, impor namespace yang diperlukan untuk mengakses kelas dan metode yang disediakan oleh Aspose.PDF for .NET.
 
 #### T: Apakah Aspose.PDF untuk .NET kompatibel dengan aplikasi .NET Core?
 
-J: Ya, Aspose.PDF untuk .NET kompatibel dengan aplikasi .NET Core. Ini mendukung berbagai platform .NET, termasuk .NET Framework, .NET Core, dan .NET 5.0+.
+A: Ya, Aspose.PDF untuk .NET kompatibel dengan aplikasi .NET Core. Aplikasi ini mendukung berbagai platform .NET, termasuk .NET Framework, .NET Core, dan .NET 5.0+.
 
 #### T: Dapatkah saya menambahkan lebih banyak tabel ke dokumen PDF?
 
-J: Ya, Anda dapat menambahkan beberapa tabel ke dokumen PDF dengan mengikuti langkah serupa seperti yang ditunjukkan dalam cuplikan kode. Cukup buat instance baru dari`Aspose.Pdf.Table` kelas dan menambahkannya ke bagian atau halaman berbeda dari dokumen PDF.
+A: Ya, Anda dapat menambahkan beberapa tabel ke dokumen PDF dengan mengikuti langkah-langkah serupa seperti yang ditunjukkan dalam cuplikan kode. Cukup buat contoh baru dari`Aspose.Pdf.Table` kelas dan menambahkannya ke bagian atau halaman berbeda dari dokumen PDF.

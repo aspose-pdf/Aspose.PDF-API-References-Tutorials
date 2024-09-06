@@ -8,16 +8,16 @@ weight: 13
 url: /cs/java/pdf-form-fields/define-alignment-for-text-stamp-object-in-pdf-using-java/
 ---
 
-## Úvod
+## Zavedení
 
-Textová razítka jsou všestranným nástrojem, pokud jde o poznámky a přidávání informací do souborů PDF. Aby však byly skutečně účinné, je nezbytné správné zarovnání. V tomto článku prozkoumáme, jak definovat zarovnání pro objekty textových razítek v PDF pomocí Java, konkrétně s využitím síly Aspose.PDF pro Java.
+Textová razítka jsou všestranným nástrojem, pokud jde o poznámky a přidávání informací do souborů PDF. Aby však byly skutečně účinné, je nezbytné správné zarovnání. V tomto článku prozkoumáme, jak definovat zarovnání pro objekty textových razítek v PDF pomocí Javy, konkrétně s využitím síly Aspose.PDF pro Javu.
 
 ## Začínáme
 
 Než se ponoříme do specifik zarovnání textových razítek, je důležité nastavit naše vývojové prostředí. Ujistěte se, že máte Aspose.PDF for Java nainstalovaný a nakonfigurovaný v projektu Java. K potřebným zdrojům se dostanete zde:
 
 -  Dokumentace:[Aspose.PDF pro Java API Reference](https://reference.aspose.com/pdf/java/)
--  Stažení:[Aspose.PDF pro Javu](https://releases.aspose.com/pdf/java/)
+-  Stáhnout:[Aspose.PDF pro Javu](https://releases.aspose.com/pdf/java/)
 
 Jakmile máte vše na svém místě, přejděme k části kódování.
 
@@ -108,4 +108,4 @@ Ano, Aspose.PDF pro Java je schopen snadno zpracovávat velké dokumenty PDF. Po
 
 ### Jsou k dispozici nějaké pokročilé možnosti zarovnání?
 
-Ano, Aspose.PDF pro Java nabízí pokročilé možnosti zarovnání, včetně vystředění textových razítek vodorovně i svisle, zarovnání podle konkrétních okrajů a další. Podrobné příklady najdete v dokumentaci.
+Ano, Aspose.PDF for Java nabízí pokročilé možnosti zarovnání, včetně vystředění textových razítek vodorovně i svisle, zarovnání podle konkrétních okrajů a další. Podrobné příklady najdete v dokumentaci.

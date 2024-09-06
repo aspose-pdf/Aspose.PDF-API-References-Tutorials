@@ -1,17 +1,17 @@
 ---
 title: Algorytm Bradleya
 linktitle: Algorytm Bradleya
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Konwertuj dokument PDF przy użyciu algorytmu Bradleya z Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Konwertuj dokument PDF przy użyciu algorytmu Bradleya za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 30
 url: /pl/net/programming-with-images/bradley-algorithm/
 ---
-Ten przewodnik krok po kroku wyjaśnia, jak używać algorytmu Bradleya z Aspose.PDF dla .NET. Upewnij się, że masz już skonfigurowane środowisko i wykonaj poniższe czynności:
+Ten przewodnik krok po kroku wyjaśnia, jak używać algorytmu Bradleya z Aspose.PDF dla .NET. Upewnij się, że skonfigurowałeś już swoje środowisko i wykonaj poniższe kroki:
 
 ## Krok 1: Zdefiniuj katalog dokumentów
 
- Zanim zaczniesz, upewnij się, że ustawiłeś właściwy katalog dla dokumentów. Zastępować`"YOUR DOCUMENT DIRECTORY"` w kodzie ścieżką do katalogu, w którym znajduje się Twój dokument PDF.
+Przed rozpoczęciem upewnij się, że ustawiłeś właściwy katalog dla dokumentów. Zastąp`"YOUR DOCUMENT DIRECTORY"` w kodzie podając ścieżkę do katalogu, w którym znajduje się Twój dokument PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Krok 2: Otwórz dokument
 
- tym kroku otworzymy dokument PDF za pomocą`Document` klasa Aspose.PDF. Użyj`Document` konstruktor i podaj ścieżkę do dokumentu PDF.
+ W tym kroku otworzymy dokument PDF za pomocą`Document` klasa Aspose.PDF. Użyj`Document` konstruktora i przekazuje ścieżkę do dokumentu PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "PageToTIFF.pdf");
@@ -27,7 +27,7 @@ Document pdfDocument = new Document(dataDir + "PageToTIFF.pdf");
 
 ## Krok 3: Zdefiniuj pliki wyjściowe
 
- Zdefiniuj nazwy plików wyjściowych dla obrazu wynikowego i obrazu binarnego. Zastępować`"resultant_out.tif"` I`"37116-bin_out.tif"` z żądanymi nazwami plików wyjściowych.
+ Zdefiniuj nazwy plików wyjściowych dla obrazu wynikowego i obrazu binarnego. Zastąp`"resultant_out.tif"` I`"37116-bin_out.tif"` z żądanymi nazwami plików wyjściowych.
 
 ```csharp
 string outputImageFile = dataDir + "resultant_out.tif";
@@ -36,7 +36,7 @@ string outputBinImageFile = dataDir + "37116-bin_out.tif";
 
 ## Krok 4: Utwórz obiekt Rozdzielczość
 
- Stwórz`Resolution`obiekt, aby ustawić rozdzielczość obrazu TIFF. W tym przykładzie używamy rozdzielczości 300 dpi.
+ Utwórz`Resolution` obiekt do ustawienia rozdzielczości obrazu TIFF. W tym przykładzie używamy rozdzielczości 300 dpi.
 
 ```csharp
 Resolution resolution = new Resolution(300);
@@ -44,7 +44,7 @@ Resolution resolution = new Resolution(300);
 
 ## Krok 5: Utwórz obiekt TiffSettings
 
- Stwórz`TiffSettings`obiekt, aby określić ustawienia wyjściowego pliku TIFF. W tym przykładzie używamy kompresji LZW i głębi kolorów 1 bit na piksel (format 1 bpp).
+ Utwórz`TiffSettings` obiekt do określenia ustawień dla pliku wyjściowego TIFF. W tym przykładzie używamy kompresji LZW i głębi koloru 1 bit na piksel (format 1 bpp).
 
 ```csharp
 TiffSettings tiffSettings = new TiffSettings();
@@ -54,23 +54,23 @@ tiffSettings.Depth = Aspose.Pdf.Devices.ColorDepth.Format1bpp;
 
 ## Krok 6: Utwórz urządzenie TIFF
 
- Utwórz urządzenie TIFF za pomocą pliku`TiffDevice` obiektu, określając rozdzielczość i ustawienia TIFF.
+ Utwórz urządzenie TIFF za pomocą`TiffDevice` obiekt, określający rozdzielczość i ustawienia TIFF.
 
 ```csharp
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
 ```
 
-## Krok 7: Konwertuj konkretną stronę i zapisz obraz
+## Krok 7: Konwertuj określoną stronę i zapisz obraz
 
- Użyj`Process` metoda urządzenia TIFF polegająca na konwersji określonej strony dokumentu PDF i zapisaniu obrazu w pliku TIFF. Określ ścieżkę wyjściową pliku.
+ Użyj`Process` metoda urządzenia TIFF do konwersji określonej strony dokumentu PDF i zapisania obrazu do pliku TIFF. Określ ścieżkę wyjściową pliku.
 
 ```csharp
 tiffDevice.Process(pdfDocument, outputImageFile);
 ```
 
-## Krok 8: Binaryzuj obraz za pomocą algorytmu Bradleya
+## Krok 8: Binaryzacja obrazu przy użyciu algorytmu Bradleya
 
- Użyj`BinarizeBradley` metoda urządzenia TIFF do binaryzacji obrazu przy użyciu algorytmu Bradleya. Ta metoda pobiera strumień wejściowy oryginalnego obrazu i strumień wyjściowy obrazu binarnego. Określ próg binaryzacji (w tym przykładzie 0,1).
+ Użyj`BinarizeBradley`metoda urządzenia TIFF do binaryzacji obrazu przy użyciu algorytmu Bradleya. Ta metoda przyjmuje strumień wejściowy oryginalnego obrazu i strumień wyjściowy obrazu binarnego. Określ próg binaryzacji (0,1 w tym przykładzie).
 
 ```csharp
 using (FileStream
@@ -84,7 +84,7 @@ tiffDevice. Binarize Bradley(inStream, outStream, 0.1);
 }
 ```
 
-### Przykładowy kod źródłowy algorytmu Bradleya przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla algorytmu Bradleya przy użyciu Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -100,7 +100,7 @@ tiffSettings.Compression = CompressionType.LZW;
 tiffSettings.Depth = Aspose.Pdf.Devices.ColorDepth.Format1bpp;
 // Utwórz urządzenie TIFF
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
-//Konwertuj konkretną stronę i zapisz obraz do strumienia
+// Konwertuj określoną stronę i zapisz obraz do strumienia
 tiffDevice.Process(pdfDocument, outputImageFile);
 using (FileStream inStream = new FileStream(outputImageFile, FileMode.Open))
 {
@@ -114,41 +114,41 @@ System.Console.WriteLine("Conversion using bradley algorithm performed successfu
 
 ## Wniosek
 
-Gratulacje! Pomyślnie ukończyłeś konwersję przy użyciu algorytmu Bradleya z Aspose.PDF dla .NET. Możesz teraz używać powstałych obrazów w swoich projektach lub aplikacjach.
+Gratulacje! Udało Ci się ukończyć konwersję przy użyciu algorytmu Bradley z Aspose.PDF dla .NET. Możesz teraz używać wynikowych obrazów w swoich projektach lub aplikacjach.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Czym jest algorytm Bradleya i jaki ma on związek z Aspose.PDF dla .NET?
+#### P: Czym jest algorytm Bradleya i jaki jest jego związek z Aspose.PDF dla .NET?
 
-Odp.: Algorytm Bradleya to technika przetwarzania obrazu stosowana w celu poprawy jakości i przejrzystości obrazu. Aspose.PDF dla .NET zapewnia wygodny sposób stosowania algorytmu Bradleya do dokumentów PDF, co skutkuje lepszymi obrazami.
+A: Algorytm Bradleya to technika przetwarzania obrazu stosowana w celu poprawy jakości i przejrzystości obrazu. Aspose.PDF dla .NET zapewnia wygodny sposób stosowania algorytmu Bradleya do dokumentów PDF, co skutkuje ulepszonymi obrazami.
 
-#### P: Jak skonfigurować środowisko do korzystania z algorytmu Bradleya z Aspose.PDF dla .NET?
+#### P: Jak skonfigurować środowisko do wykorzystania algorytmu Bradleya z Aspose.PDF dla platformy .NET?
 
-O: Zanim zaczniesz, upewnij się, że masz poprawnie zainstalowany Aspose.PDF dla .NET i skonfigurowane środowisko programistyczne.
+O: Zanim zaczniesz, upewnij się, że Aspose.PDF for .NET jest poprawnie zainstalowany i że środowisko programistyczne jest skonfigurowane.
 
-#### P: Jakie znaczenie ma zdefiniowanie katalogu dokumentów w procesie algorytmu Bradley?
+#### P: Jakie znaczenie ma zdefiniowanie katalogu dokumentów w procesie algorytmu Bradleya?
 
-O: Określenie prawidłowego katalogu dokumentów ma kluczowe znaczenie dla zapewnienia, że dokument PDF zostanie umieszczony we właściwej ścieżce do przetworzenia.
+A: Określenie prawidłowego katalogu dokumentu jest kluczowe, aby mieć pewność, że dokument PDF znajdzie się we właściwej ścieżce do przetworzenia.
 
-#### P: Jak otworzyć dokument PDF przy użyciu Aspose.PDF dla .NET w algorytmie Bradley?
+#### P: Jak otworzyć dokument PDF za pomocą Aspose.PDF dla .NET w algorytmie Bradleya?
 
- O: Skorzystaj z`Document` class, aby otworzyć dokument PDF, który służy jako dane wejściowe dla procesu algorytmu Bradley.
+ A: Użyj`Document` klasa umożliwiająca otwarcie dokumentu PDF, który stanowi dane wejściowe dla procesu algorytmu Bradleya.
 
-#### P: Jaki jest cel definiowania nazw plików wyjściowych obrazu i obrazu binarnego w procesie algorytmu Bradley?
+#### P: Jaki jest cel definiowania nazw plików wyjściowych dla obrazu i obrazu binarnego w procesie algorytmu Bradleya?
 
-O: Zdefiniowanie nazw plików wyjściowych pozwala określić, gdzie obraz wynikowy i obraz binarny zostaną zapisane po zastosowaniu algorytmu Bradleya.
+A: Zdefiniowanie nazw plików wyjściowych umożliwia określenie miejsca, w którym obraz wynikowy i obraz binarny zostaną zapisane po zastosowaniu algorytmu Bradleya.
 
-#### P: W jaki sposób ustawienie rozdzielczości wpływa na jakość obrazu TIFF w procesie algorytmu Bradleya?
+#### P: W jaki sposób ustawienia rozdzielczości wpływają na jakość obrazu TIFF w procesie algorytmu Bradleya?
 
-O: Ustawienie rozdzielczości określa poziom szczegółowości i przejrzystości powstałego obrazu TIFF po zastosowaniu algorytmu Bradleya.
+A: Ustawienie rozdzielczości decyduje o poziomie szczegółowości i przejrzystości końcowego obrazu TIFF po zastosowaniu algorytmu Bradleya.
 
-#### P: Jakie ustawienia mogę dostosować dla wyjściowego obrazu TIFF w procesie algorytmu Bradleya?
-Odp.: Można dostosować ustawienia, takie jak typ kompresji i głębia kolorów, aby uzyskać żądany wynik obrazu TIFF.
+#### P: Jakie ustawienia mogę dostosować dla obrazu wyjściowego TIFF w procesie algorytmu Bradleya?
+A: Możesz dostosować ustawienia, takie jak typ kompresji i głębia kolorów, aby uzyskać pożądany efekt wyjściowy obrazu TIFF.
 
-#### P: W jaki sposób urządzenie TIFF wpływa na proces algorytmu Bradleya?
+#### P: W jaki sposób urządzenie TIFF przyczynia się do procesu algorytmu Bradleya?
 
-Odp.: Urządzenie TIFF pełni funkcję narzędzia do przetwarzania obrazów i stosowania algorytmu Bradleya, co skutkuje lepszą jakością obrazu.
+A: Urządzenie TIFF działa jako narzędzie do przetwarzania obrazów i stosowania algorytmu Bradleya, co skutkuje poprawą jakości obrazu.
 
-#### P: Jak przekonwertować określoną stronę dokumentu PDF na obraz TIFF w procesie algorytmu Bradleya?
+#### P: Jak przekonwertować konkretną stronę dokumentu PDF na obraz TIFF w procesie algorytmu Bradleya?
 
- Odp.: Skorzystaj z`Process` metoda urządzenia TIFF polegająca na konwersji określonej strony dokumentu PDF na obraz TIFF, który można następnie dalej przetwarzać za pomocą algorytmu Bradleya.
+ A: Wykorzystaj`Process` metoda urządzenia TIFF służąca do konwersji określonej strony dokumentu PDF na obraz TIFF, który następnie może być dalej przetwarzany przy użyciu algorytmu Bradleya.

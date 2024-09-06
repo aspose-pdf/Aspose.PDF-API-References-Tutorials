@@ -81,7 +81,7 @@ page.getParagraphs().add(textFragment);
 
 ## Steg 6: Spara PDF-filen
 
-Slutligen sparar du PDF-dokumentet med den roterade texten:
+Spara slutligen PDF-dokumentet med den roterade texten:
 
 ```java
 // Spara PDF-dokumentet
@@ -90,7 +90,7 @@ pdfDocument.save("output.pdf");
 
 ## Slutsats
 
-I den här handledningen har vi utforskat processen att lägga till roterad text till ett PDF-dokument med hjälp av Java och Aspose.PDF för Java. Du har lärt dig hur du skapar en ny PDF, definierar roterad text med anpassade stilar, placerar den på sidan och sparar den ändrade PDF-filen.
+I den här handledningen har vi utforskat processen att lägga till roterad text till ett PDF-dokument med Java och Aspose.PDF för Java. Du har lärt dig hur du skapar en ny PDF, definierar roterad text med anpassade stilar, placerar den på sidan och sparar den ändrade PDF-filen.
 
 Roterad text kan vara ett värdefullt tillägg till dina PDF-filer för olika ändamål, som att märka diagram, vattenmärka eller lägga till kreativa element i dina dokument.
 
@@ -104,7 +104,7 @@ Förbättra dina PDF-dokument genom att enkelt införliva roterad text, tack var
    Ja, du kan lägga till flera instanser av roterad text med olika vinklar till samma PDF-dokument. Upprepa helt enkelt processen som beskrivs i den här handledningen för varje stycke roterad text.
 
 ### 2. Hur kan jag ändra färgen på den roterade texten?
-    För att ändra textfärgen, använd`textFragment.getTextState().setForegroundColor` metod och ange färgen i RGB-format. Använd till exempel för att ställa in textfärgen på röd`textFragment.getTextState().setForegroundColor(com.aspose.pdf.Color.getRed());`.
+    För att ändra textfärgen, använd`textFragment.getTextState().setForegroundColor` metod och ange färgen i RGB-format. Använd till exempel för att ställa in textfärgen till röd`textFragment.getTextState().setForegroundColor(com.aspose.pdf.Color.getRed());`.
 
 ### 3. Är Aspose.PDF för Java ett gratis bibliotek?
    Aspose.PDF för Java är ett kraftfullt kommersiellt bibliotek, men det erbjuder en gratis testversion för testning och utvärdering. Beroende på ditt projekts krav kan du välja ett lämpligt licensalternativ.

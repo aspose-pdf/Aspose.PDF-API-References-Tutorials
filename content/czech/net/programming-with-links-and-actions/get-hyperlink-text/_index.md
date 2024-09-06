@@ -94,7 +94,7 @@ Odpověď: Ano, text hypertextového odkazu můžete selektivně extrahovat proc
 
 #### Otázka: Existují nějaká omezení při extrahování textu hypertextového odkazu?
 
-Odpověď: Přesnost extrakce textu hypertextového odkazu závisí na formátování a rozložení dokumentu PDF. Složité grafické prvky nebo nestandardní reprezentace hypertextových odkazů mohou vyžadovat další manipulaci.
+Odpověď: Přesnost extrakce textu hypertextového odkazu závisí na formátování a rozvržení dokumentu PDF. Složité grafické prvky nebo nestandardní reprezentace hypertextových odkazů mohou vyžadovat další manipulaci.
 
 #### Otázka: Mohu extrahovat text hypertextového odkazu z dokumentů PDF chráněných heslem?
 

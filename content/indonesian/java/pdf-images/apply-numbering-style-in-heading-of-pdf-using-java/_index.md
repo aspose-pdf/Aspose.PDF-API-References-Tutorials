@@ -1,8 +1,8 @@
 ---
 title: Terapkan Gaya Penomoran di Judul PDF menggunakan Java
 linktitle: Terapkan Gaya Penomoran di Judul PDF menggunakan Java
-second_title: Aspose.PDF API Pemrosesan PDF Java
-description: Pelajari cara menerapkan gaya penomoran ke judul PDF menggunakan Aspose.PDF untuk Java. Panduan langkah demi langkah kami memberikan contoh kode sumber untuk sentuhan profesional pada dokumen Anda.
+second_title: API Pemrosesan PDF Java Aspose.PDF
+description: Pelajari cara menerapkan gaya penomoran pada judul PDF menggunakan Aspose.PDF untuk Java. Panduan langkah demi langkah kami menyediakan contoh kode sumber untuk sentuhan profesional pada dokumen Anda.
 type: docs
 weight: 14
 url: /id/java/pdf-images/apply-numbering-style-in-heading-of-pdf-using-java/
@@ -10,19 +10,19 @@ url: /id/java/pdf-images/apply-numbering-style-in-heading-of-pdf-using-java/
 
 ## Pengantar Aspose.PDF untuk Java
 
-Aspose.PDF untuk Java adalah perpustakaan tangguh yang memungkinkan pengembang bekerja dengan dokumen PDF secara terprogram. Ini menyediakan berbagai fitur untuk manipulasi PDF, termasuk pemformatan teks, manipulasi halaman, dan, tentu saja, menerapkan gaya penomoran pada judul.
+Aspose.PDF untuk Java adalah pustaka tangguh yang memungkinkan pengembang untuk bekerja dengan dokumen PDF secara terprogram. Pustaka ini menyediakan berbagai fitur untuk manipulasi PDF, termasuk pemformatan teks, manipulasi halaman, dan, tentu saja, penerapan gaya penomoran pada judul.
 
-## Menyiapkan Lingkungan Pembangunan
+## Menyiapkan Lingkungan Pengembangan
 
-Sebelum kita mendalami kodenya, pastikan Anda telah menyiapkan alat yang diperlukan di lingkungan pengembangan Anda:
+Sebelum kita masuk ke kode, pastikan Anda telah menyiapkan alat yang diperlukan di lingkungan pengembangan Anda:
 
 - Kit Pengembangan Java (JDK)
-- Lingkungan Pengembangan Terintegrasi (IDE) pilihan Anda (Eclipse, IntelliJ IDEA, dll.)
-- Aspose.PDF untuk perpustakaan Java
+- Lingkungan Pengembangan Terpadu (IDE) pilihan Anda (Eclipse, IntelliJ IDEA, dll.)
+- Aspose.PDF untuk pustaka Java
 
 ## Membuat Dokumen PDF
 
-Mari kita mulai dengan membuat dokumen PDF baru menggunakan Aspose.PDF untuk Java. Berikut beberapa contoh kode untuk Anda mulai:
+Mari kita mulai dengan membuat dokumen PDF baru menggunakan Aspose.PDF untuk Java. Berikut ini beberapa contoh kode untuk membantu Anda memulai:
 
 ```java
 // Buat dokumen PDF baru
@@ -31,7 +31,7 @@ com.aspose.pdf.Document pdfDocument = new com.aspose.pdf.Document();
 
 ## Menambahkan Judul ke PDF
 
-Sekarang, kami akan menambahkan beberapa judul ke dokumen PDF kami. Judul ini akan berfungsi sebagai bagian dalam dokumen kita. Berikut ini contoh penambahan judul:
+Sekarang, kita akan menambahkan beberapa judul ke dokumen PDF kita. Judul-judul ini akan berfungsi sebagai bagian-bagian dalam dokumen kita. Berikut ini contoh penambahan judul:
 
 ```java
 // Buat judul
@@ -43,7 +43,7 @@ heading.getTextState().setBold(true);
 heading.getTextState().setForegroundColor(com.aspose.pdf.Color.getBlack());
 heading.getTextState().setBackgroundColor(com.aspose.pdf.Color.getLightGray());
 
-// Atur teks judul
+// Mengatur teks judul
 TextFragment titleFragment = new TextFragment("Applying Numbering Style");
 heading.getFragments().add(titleFragment);
 pdfDocument.getPages().get_Item(1).getParagraphs().add(heading);
@@ -51,21 +51,21 @@ pdfDocument.getPages().get_Item(1).getParagraphs().add(heading);
 
 ## Menerapkan Gaya Penomoran
 
-Sekarang sampai pada bagian yang menarik—menerapkan gaya penomoran pada judul kita. Aspose.PDF untuk Java menyediakan cara mudah untuk mencapai hal ini. Berikut contoh penerapan penomoran:
+Sekarang tibalah bagian yang menarik—menerapkan gaya penomoran pada judul kita. Aspose.PDF untuk Java menyediakan cara mudah untuk mencapainya. Berikut ini contoh penerapan penomoran:
 
 ```java
-// Buat gaya penomoran
+// Membuat gaya penomoran
 com.aspose.pdf.NumberingStyle numberingStyle = new com.aspose.pdf.NumberingStyle();
 numberingStyle.setFormat("(1)");
 numberingStyle.setFirstIndex(1);
 
-// Terapkan gaya penomoran pada judul
+// Terapkan gaya penomoran ke judul
 heading.setNumberingStyle(numberingStyle);
 ```
 
 ## Menyesuaikan Format Penomoran
 
-Anda dapat menyesuaikan format penomoran sesuai kebutuhan Anda. Aspose.PDF untuk Java memungkinkan Anda mengontrol berbagai aspek penomoran, termasuk awalan, akhiran, dan format. Berikut ini contoh penyesuaian penomoran:
+Anda dapat menyesuaikan format penomoran sesuai dengan kebutuhan Anda. Aspose.PDF untuk Java memungkinkan Anda untuk mengontrol berbagai aspek penomoran, termasuk awalan, akhiran, dan format. Berikut ini adalah contoh penyesuaian penomoran:
 
 ```java
 // Sesuaikan gaya penomoran
@@ -76,7 +76,7 @@ numberingStyle.setStartNumber(5);
 
 ## Menyimpan dan Melihat PDF
 
-Setelah Anda menambahkan judul dengan gaya penomoran, sekarang saatnya menyimpan dokumen PDF dan melihat hasilnya:
+Setelah Anda menambahkan judul dengan gaya penomoran, saatnya menyimpan dokumen PDF dan melihat hasilnya:
 
 ```java
 // Simpan dokumen PDF
@@ -88,30 +88,30 @@ java.awt.Desktop.getDesktop().open(new java.io.File("NumberedDocument.pdf"));
 
 ## Kesimpulan
 
-Dalam panduan langkah demi langkah ini, kita telah mempelajari cara menerapkan gaya penomoran pada judul dalam dokumen PDF menggunakan Aspose.PDF untuk Java. Pustaka canggih ini memudahkan pembuatan dokumen yang terlihat profesional dengan format penomoran yang disesuaikan.
+Dalam panduan langkah demi langkah ini, kami telah mempelajari cara menerapkan gaya penomoran pada judul dalam dokumen PDF menggunakan Aspose.PDF untuk Java. Pustaka canggih ini memudahkan pembuatan dokumen yang tampak profesional dengan format penomoran yang disesuaikan.
 
-## FAQ
+## Pertanyaan yang Sering Diajukan
 
 ### Bagaimana cara menginstal Aspose.PDF untuk Java?
 
 Untuk menginstal Aspose.PDF untuk Java, ikuti langkah-langkah berikut:
 
 1.  Kunjungi dokumentasi Aspose.PDF untuk Java di[Di Sini](https://reference.aspose.com/pdf/java/).
-2.  Unduh perpustakaan versi terbaru dari[Di Sini](https://releases.aspose.com/pdf/java/).
-3. Integrasikan perpustakaan ke dalam proyek Java Anda sesuai dengan petunjuk instalasi yang disediakan dalam dokumentasi.
+2.  Unduh versi terbaru perpustakaan dari[Di Sini](https://releases.aspose.com/pdf/java/).
+3. Integrasikan pustaka ke dalam proyek Java Anda sesuai dengan petunjuk instalasi yang disediakan dalam dokumentasi.
 
-### Bisakah saya menggunakan Aspose.PDF untuk Java secara gratis?
+### Dapatkah saya menggunakan Aspose.PDF untuk Java secara gratis?
 
 Aspose.PDF untuk Java menawarkan versi uji coba gratis yang dapat Anda gunakan untuk mengevaluasi fitur-fiturnya. Namun, untuk akses penuh dan penggunaan komersial, Anda perlu membeli lisensi.
 
-### Apakah mungkin untuk menerapkan gaya penomoran yang berbeda pada bagian dokumen yang berbeda?
+### Apakah mungkin untuk menerapkan gaya penomoran yang berbeda pada bagian yang berbeda dalam suatu dokumen?
 
- Ya, Anda dapat menerapkan gaya penomoran berbeda ke bagian berbeda dokumen PDF menggunakan Aspose.PDF untuk Java. Cukup buat terpisah`Heading` objek dan sesuaikan gaya penomoran untuk setiap bagian.
+ Ya, Anda dapat menerapkan gaya penomoran yang berbeda ke bagian yang berbeda dari dokumen PDF menggunakan Aspose.PDF untuk Java. Cukup buat penomoran terpisah`Heading` objek dan menyesuaikan gaya penomoran untuk setiap bagian.
 
 ### Bisakah saya mengekspor PDF dengan judul bernomor ke format lain seperti DOCX atau HTML?
 
-Ya, Aspose.PDF untuk Java menyediakan kemampuan untuk mengekspor dokumen PDF dengan judul bernomor ke berbagai format, termasuk DOCX, HTML, dan lainnya. Anda dapat menjelajahi dokumentasi untuk mengetahui contoh mendetail tentang cara melakukan konversi ini.
+Ya, Aspose.PDF untuk Java menyediakan kemampuan untuk mengekspor dokumen PDF dengan judul bernomor ke berbagai format, termasuk DOCX, HTML, dan lainnya. Anda dapat menjelajahi dokumentasi untuk contoh terperinci tentang cara melakukan konversi ini.
 
 ### Di mana saya dapat menemukan lebih banyak contoh dan dokumentasi untuk Aspose.PDF untuk Java?
 
- Anda dapat menemukan dokumentasi komprehensif, contoh kode, dan referensi API untuk Aspose.PDF untuk Java di situs dokumentasi di[Di Sini](https://reference.aspose.com/pdf/java/).
+ Anda dapat menemukan dokumentasi lengkap, contoh kode, dan referensi API untuk Aspose.PDF untuk Java di situs web dokumentasi di[Di Sini](https://reference.aspose.com/pdf/java/).

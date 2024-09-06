@@ -31,14 +31,14 @@ using System.IO;
  A kódban keresse meg azt a sort, amely ezt mondja`string dataDir = "YOUR DOCUMENT DIRECTORY";` és cserélje ki`"YOUR DOCUMENT DIRECTORY"` annak a könyvtárnak az elérési útjával, ahol a dokumentumokat tárolják.
 
 ## 4. lépés: Nyissa meg a PDF dokumentumot
- Nyisson meg egy meglévő PDF dokumentumot a`Document`konstruktort, és átadja a bemeneti PDF-fájl elérési útját.
+ Nyisson meg egy meglévő PDF dokumentumot a`Document` konstruktort, és átadja a bemeneti PDF-fájl elérési útját.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
 ```
 
 ## 5. lépés: Szöveg kibontása egy oldalrégióból
- Hozzon létre egy`TextAbsorber` objektumot, hogy szöveget vonjon ki a dokumentumból. Konfigurálja a`TextSearchOptions` hogy a keresést egy téglalap által meghatározott oldalrégióra korlátozzuk.
+ Hozzon létre a`TextAbsorber` objektumot, hogy kivonja a szöveget a dokumentumból. Konfigurálja a`TextSearchOptions` hogy a keresést egy téglalap által meghatározott oldalrégióra korlátozzuk.
 
 ```csharp
 TextAbsorber absorb = new TextAbsorber();
@@ -48,14 +48,14 @@ pdfDocument.Pages[1].Accept(absorb);
 ```
 
 ## 6. lépés: Szerezze be a kivont szöveget
- A kivont szöveg elérése a`TextAbsorber` tárgy.
+ A kivont szöveg elérése a`TextAbsorber` objektum.
 
 ```csharp
 string extractedText = absorb.Text;
 ```
 
 ## 7. lépés: Mentse el a kicsomagolt szöveget
- Hozzon létre egy`TextWriter` és nyissa meg a fájlt, ahová a kicsomagolt szöveget menteni szeretné. Írja be a kicsomagolt szöveget a fájlba, és zárja be az adatfolyamot.
+ Hozzon létre a`TextWriter` és nyissa meg a fájlt, ahová a kicsomagolt szöveget menteni szeretné. Írja be a kicsomagolt szöveget a fájlba, és zárja be az adatfolyamot.
 
 ```csharp
 TextWriter tw = new StreamWriter(dataDir + "extracted-text.txt");
@@ -86,7 +86,7 @@ tw.Close();
 ```
 
 ## Következtetés
-Sikeresen kinyert szöveget egy adott régióból egy PDF-dokumentum oldaláról az Aspose.PDF for .NET segítségével. A kivont szöveget a rendszer a megadott kimeneti fájlba mentette.
+Sikeresen kinyert szöveget egy adott régióból egy PDF-dokumentum oldaláról az Aspose.PDF for .NET segítségével. A kicsomagolt szöveg a megadott kimeneti fájlba került.
 
 ### GYIK
 
@@ -105,7 +105,7 @@ using System.IO;
 
 #### K: Hogyan adhatom meg a dokumentumkönyvtárat?
 
- V: Keresse meg a vonalat`string dataDir = "YOUR DOCUMENT DIRECTORY";` a kódban és cserélje ki`"YOUR DOCUMENT DIRECTORY"` a dokumentumkönyvtár tényleges elérési útjával.
+ V: Keresse meg a vonalat`string dataDir = "YOUR DOCUMENT DIRECTORY";` a kódban, és cserélje ki`"YOUR DOCUMENT DIRECTORY"` a dokumentumkönyvtár tényleges elérési útjával.
 
 #### K: Hogyan nyithatok meg egy meglévő PDF-dokumentumot?
 
@@ -113,11 +113,11 @@ using System.IO;
 
 #### K: Hogyan nyerhetek ki szöveget egy adott oldalrégióból?
 
- V: Az 5. lépés az a`TextAbsorber`objektum a szöveg kinyeréséhez a PDF dokumentumból. Ezután konfigurálja a`TextSearchOptions` egy adott téglalap alakú régió meghatározásához az oldalon a koordináták segítségével.
+ V: Az 5. lépés az a`TextAbsorber`objektum a szöveg kivonásához a PDF-dokumentumból. Ezután konfigurálja a`TextSearchOptions` egy adott téglalap alakú régió meghatározásához az oldalon a koordináták segítségével.
 
 #### K: Hogyan férhetek hozzá a kivonatolt szöveghez?
 
- V: A 6. lépés végigvezeti Önt a kivonatolt szöveg elérésén`TextAbsorber` tárgy.
+ V: A 6. lépés végigvezeti Önt a kivonatolt szöveg elérésén`TextAbsorber` objektum.
 
 #### K: Hogyan menthetem el a kicsomagolt szöveget fájlba?
 

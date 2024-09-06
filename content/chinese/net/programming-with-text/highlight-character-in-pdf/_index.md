@@ -1,24 +1,24 @@
 ---
-title: 突出显示 PDF 文件中的字符
-linktitle: 突出显示 PDF 文件中的字符
+title: PDF文件中的突出显示字符
+linktitle: PDF文件中的突出显示字符
 second_title: Aspose.PDF for .NET API 参考
 description: 了解如何使用 Aspose.PDF for .NET 突出显示 PDF 文件中的字符。
 type: docs
 weight: 240
 url: /zh/net/programming-with-text/highlight-character-in-pdf/
 ---
-在本教程中，我们将解释如何使用 .NET 的 Aspose.PDF 库突出显示 PDF 文件中的字符。我们将使用提供的 C# 源代码逐步完成突出显示 PDF 中的字符的过程。
+在本教程中，我们将解释如何使用 .NET 的 Aspose.PDF 库突出显示 PDF 文件中的字符。我们将使用提供的 C# 源代码逐步介绍突出显示 PDF 中的字符的过程。
 
 ## 要求
 
-在开始之前，请确保您具备以下条件：
+开始之前，请确保您已准备好以下物品：
 
-- 安装了 Aspose.PDF for .NET 库。
-- 对 C# 编程有基本了解。
+- 已安装 Aspose.PDF for .NET 库。
+- 对 C# 编程有基本的了解。
 
-## 第 1 步：设置文档目录
+## 步骤 1：设置文档目录
 
-首先，您需要设置输入 PDF 文件所在目录的路径。代替`"YOUR DOCUMENT DIRECTORY"`在里面`dataDir`变量包含 PDF 文件的路径。
+首先，您需要设置输入 PDF 文件所在目录的路径。替换`"YOUR DOCUMENT DIRECTORY"`在`dataDir`变量，其中包含您的 PDF 文件的路径。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -26,7 +26,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 第 2 步：加载 PDF 文档
 
-接下来，我们使用以下命令加载输入 PDF 文档`Aspose.Pdf.Document`班级。
+接下来，我们使用`Aspose.Pdf.Document`班级。
 
 ```csharp
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
@@ -34,7 +34,7 @@ Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf")
 
 ## 步骤 3：将 PDF 转换为图像
 
-为了突出显示字符，我们使用以下命令将 PDF 文档转换为图像：`PdfConverter`班级。我们设置转换的分辨率并将图像检索为`Bitmap`目的。
+为了突出显示字符，我们使用`PdfConverter`类。我们设置转换的分辨率，并将图像检索为`Bitmap`目的。
 
 ```csharp
 int resolution = 150;
@@ -46,9 +46,9 @@ using (MemoryStream ms = new MemoryStream())
      Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
 ```
 
-## 第四步：突出显示角色
+## 第四步：突出人物
 
-我们循环遍历 PDF 文档的每一页并使用`TextFragmentAbsorber`对象查找页面中的所有单词。然后，我们迭代文本片段、段和字符，以使用矩形突出显示它们。
+我们循环遍历 PDF 文档的每一页，并使用`TextFragmentAbsorber`对象来查找页面中的所有单词。然后，我们遍历文本片段、段和字符，并使用矩形突出显示它们。
 
 ```csharp
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
@@ -81,10 +81,10 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
                      (float)textFragment.Rectangle.Width,
                      (float)textFragment.Rectangle.Height);
 
-                 //循环遍历段
+                 //循环遍历片段
                  foreach(TextSegment segment in textFragment.Segments)
                  {
-                     //亮点片段
+                     //亮点部分
                      gr.DrawRectangle(
                          Think Green,
                          (float)segment.Rectangle.LLX,
@@ -95,7 +95,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
                      //循环遍历字符
                      foreach(CharInfo characterInfo in segment.Characters)
                      {
-                         //突出显示字符
+                         //突出人物
                          gr.DrawRectangle(
                              Think.Black,
                              (float)characterInfo.Rectangle.LLx,
@@ -110,9 +110,9 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 }
 ```
 
-## 第5步：保存输出图像
+## 步骤 5：保存输出图像
 
-最后，我们将修改后的图像与突出显示的字符保存到指定的输出文件中。
+最后，我们将修改后带有突出显示字符的图像保存到指定的输出文件中。
 
 ```csharp
 dataDir = dataDir + "HighlightCharacterInPDF_out.png";
@@ -201,27 +201,27 @@ catch (Exception ex)
 
 ### 常见问题解答
 
-#### 问：“突出显示 PDF 文件中的字符”教程的目的是什么？
+#### 问： “在 PDF 文件中突出显示字符”教程的目的是什么？
 
-答：“突出显示 PDF 文件中的字符”教程介绍了如何使用 .NET 的 Aspose.PDF 库突出显示 PDF 文档中的字符。本教程提供了实现此目的的分步指南和 C# 源代码。
+答：“突出显示 PDF 文件中的字符”教程解释了如何使用 .NET 的 Aspose.PDF 库突出显示 PDF 文档中的字符。该教程提供了分步指南和 C# 源代码来实现此目的。
 
 #### 问：为什么我要突出显示 PDF 文档中的字符？
 
-答：突出显示 PDF 文档中的字符可用于多种目的，例如强调特定内容或使某些文本更加明显和易于区分。
+答：突出显示 PDF 文档中的字符可用于多种目的，例如强调特定内容或使某些文本更清晰、更易区分。
 
 #### 问：如何设置文档目录？
 
 A：设置文档目录：
 
-1. 代替`"YOUR DOCUMENT DIRECTORY"`在里面`dataDir`变量包含输入 PDF 文件所在目录的路径。
+1. 代替`"YOUR DOCUMENT DIRECTORY"`在`dataDir`变量为输入 PDF 文件所在目录的路径。
 
 #### 问：如何加载 PDF 文档并将其转换为图像？
 
-答：在教程中，`Aspose.Pdf.Document`类用于加载输入 PDF 文档。然后，`PdfConverter`类用于将 PDF 文档转换为图像。设置图像的分辨率，并将图像检索为`Bitmap`目的。
+答：在教程中，`Aspose.Pdf.Document`类用于加载输入 PDF 文档。然后，`PdfConverter`类用于将 PDF 文档转换为图像。设置图像的分辨率，并将图像作为`Bitmap`目的。
 
 #### 问：如何突出显示 PDF 文档图像中的字符？
 
-答：本教程将引导您完成循环浏览 PDF 文档的每一页、使用搜索引擎查找单词的过程。`TextFragmentAbsorber`，并迭代文本片段、段和字符以使用矩形突出显示它们。
+答：本教程将指导您循环遍历 PDF 文档的每一页，使用`TextFragmentAbsorber`，并遍历文本片段、段和字符，使用矩形突出显示它们。
 
 #### 问：我可以自定义突出显示的字符和片段的外观吗？
 
@@ -229,8 +229,8 @@ A：设置文档目录：
 
 #### 问：如何保存修改后的带有突出显示字符的图像？
 
-答：本教程演示了如何使用以下命令将修改后的带有突出显示字符的图像保存到指定的输出文件中：`Save`的方法`Bitmap`班级。
+答：本教程演示如何使用`Save`方法`Bitmap`班级。
 
-#### 问：本教程需要有效的 Aspose 许可证吗？
+#### 问：本教程是否需要有效的 Aspose 许可证？
 
-答：是的，本教程需要有效的 Aspose 许可证才能正常工作。您可以从 Aspose 网站购买完整许可证或获取 30 天的临时许可证。
+答：是的，本教程需要有效的 Aspose 许可证才能正常运行。您可以从 Aspose 网站购买完整许可证或获取 30 天的临时许可证。

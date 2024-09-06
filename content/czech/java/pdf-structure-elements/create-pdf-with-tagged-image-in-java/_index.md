@@ -22,7 +22,7 @@ Než se ponoříme do kódu, ujistěte se, že máte splněny následující př
 
 ## Nastavení vašeho projektu
 
-Začněme nastavením našeho projektu Java pro vytváření tagovaných PDF. Následuj tyto kroky:
+Začněme nastavením našeho projektu Java pro vytváření tagovaných PDF. Postupujte takto:
 
 1. Vytvoření projektu Java: Otevřete své oblíbené vývojové prostředí Java (jako Eclipse nebo IntelliJ IDEA) a vytvořte nový projekt Java.
 

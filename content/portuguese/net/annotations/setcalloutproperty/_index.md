@@ -1,127 +1,154 @@
 ---
-title: Definir propriedade de texto explicativo em arquivo PDF
-linktitle: Definir propriedade de texto explicativo em arquivo PDF
-second_title: Referência da API Aspose.PDF para .NET
-description: Aprenda como definir a propriedade do texto explicativo em um arquivo PDF usando Aspose.PDF para .NET. Personalize anotações com linhas de texto explicativo, cor do texto e estilos finais.
+title: Definir propriedade de chamada em arquivo PDF
+linktitle: Definir propriedade de chamada em arquivo PDF
+second_title: Referência da API do Aspose.PDF para .NET
+description: Aprenda como definir a propriedade de chamada em um arquivo PDF usando o Aspose.PDF para .NET neste tutorial detalhado e passo a passo.
 type: docs
 weight: 130
 url: /pt/net/annotations/setcalloutproperty/
 ---
- Aspose.PDF for .NET é uma biblioteca poderosa para criar, manipular e converter documentos PDF em C#. Um dos recursos fornecidos por esta biblioteca é a capacidade de definir propriedades de texto explicativo para anotações de texto livre em documentos PDF. Isto pode ser feito usando o`FreeTextAnnotation` class, que permite criar anotações com textos explicativos.
+## Introdução
 
-Neste tutorial, iremos guiá-lo através do processo de configuração de propriedades de texto explicativo para uma anotação de texto livre usando Aspose.PDF para .NET em C#. Siga as etapas abaixo para começar.
+Criar documentos PDF profissionais e visualmente atraentes geralmente requer a adição de anotações que chamem a atenção para um conteúdo específico. Uma dessas anotações é o callout, que é como aqueles balões de fala que você vê em quadrinhos. Eles ajudam a esclarecer ou enfatizar o texto dentro do seu PDF. O Aspose.PDF para .NET torna incrivelmente fácil adicionar essas anotações aos seus documentos e, neste tutorial, mostraremos como definir a propriedade callout em um arquivo PDF usando esta biblioteca poderosa. Seja você um desenvolvedor experiente ou apenas começando, ao final deste guia, você terá uma compreensão clara de como trabalhar com callouts em arquivos PDF.
 
-## Instale Aspose.PDF para .NET
+## Pré-requisitos
 
- Se ainda não o fez, você precisará[download](https://releases.aspose.com/pdf/net/) e instale o Aspose.PDF para .NET a partir dos lançamentos do Aspose ou por meio do gerenciador de pacotes NuGet.
+Antes de mergulharmos no código, vamos abordar os conceitos essenciais que você precisa para começar.
 
-## Passo 1: Crie um novo documento PDF
+1.  Aspose.PDF para .NET: Certifique-se de ter a biblioteca Aspose.PDF para .NET instalada. Você pode baixá-la em[aqui](https://releases.aspose.com/pdf/net/).
+2. IDE: Um ambiente de desenvolvimento como o Visual Studio.
+3. .NET Framework: certifique-se de ter o .NET instalado em sua máquina.
+4. Licença temporária: se você quiser experimentar todos os recursos do Aspose.PDF sem limitações, obtenha uma[licença temporária](https://purchase.aspose.com/temporary-license/).
 
- Crie um novo documento PDF usando o`Document`classe fornecida por Aspose.PDF para .NET.
+## Pacotes de importação
 
-```csharp
-// O caminho para o diretório de documentos.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document doc = new Document();
-```
-
-## Etapa 2: adicione uma nova página ao documento
-
- Adicione uma nova página ao documento usando o`Pages` coleção do`Document` aula.
+Antes de começar a escrever o código, você precisa importar os pacotes necessários que permitirão trabalhar com arquivos PDF e anotações.
 
 ```csharp
-Page page = doc.Pages.Add();
+using Aspose.Pdf.Annotations;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
 ```
 
-## Etapa 3: definir a aparência padrão
+Essas importações fornecerão todas as classes e métodos necessários para manipular documentos PDF e criar anotações como o texto explicativo.
 
- Defina a aparência padrão da anotação de texto livre criando um novo`DefaultAppearance` objeto e definindo suas propriedades, como`TextColor` e`FontSize`.
+## Etapa 1: inicializar o documento PDF
 
-```csharp
-DefaultAppearance da = new DefaultAppearance();
-da.TextColor = System.Drawing.Color.Red;
-da.FontSize = 10;
-```
-
-## Etapa 4: crie uma anotação de texto livre com texto explicativo
-
- Crie uma nova anotação de texto livre com texto explicativo usando o`FreeTextAnnotation` aula. Colocou o`Intent` propriedade para`FreeTextIntent.FreeTextCallout` para especificar que esta é uma anotação de texto explicativo. Colocou o`EndingStyle` propriedade para`LineEnding.OpenArrow` para especificar o estilo da seta no final da chamada. Colocou o`Callout` propriedade para uma matriz de`Point` objetos que representam os pontos na página onde a linha de texto explicativo deve ser desenhada.
-
-```csharp
-FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
-fta.Intent = FreeTextIntent.FreeTextCallout;
-fta.EndingStyle = LineEnding.OpenArrow;
-fta.Callout = new Point[]
-{
-    new Point(428.25,651.75), new Point(462.75,681.375), new Point(474,681.375)
-};
-```
-
-## Etapa 5: adicione a anotação de texto livre à página
-
- Adicione a anotação de texto livre à página usando o`Annotations` coleção do`Page` aula.
-
-```csharp
-page.Annotations.Add(fta);
-```
-
-## Etapa 6: adicione texto à anotação
-
- Adicione texto à anotação definindo o`RichText`propriedade para uma string de XML formatado. Neste tutorial, estamos definindo a cor do texto como vermelho e o tamanho da fonte como 9.
-
-```csharp
-fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"cor:#FF
-```
-
-## Etapa 7: salve o documento
-
-Agora salve o documento usando o seguinte código:
-
-```csharp
-doc.Save(dataDir + "SetCalloutProperty.pdf")
-```
-
-### Exemplo de código-fonte para definir propriedade de texto explicativo usando Aspose.PDF para .NET
+O primeiro passo em nossa jornada é inicializar um novo documento PDF onde adicionaremos nossa anotação de chamada. Pense nisso como configurar uma tela em branco onde você pode começar a adicionar elementos.
 
 ```csharp
 // O caminho para o diretório de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
+// Inicializar um novo documento PDF
 Document doc = new Document();
+```
+ Aqui, estamos criando um novo`Document` objeto que servirá como nosso arquivo PDF. O`dataDir` A variável é definida como o diretório onde você deseja salvar seu arquivo PDF depois que terminarmos.
+
+## Etapa 2: Adicionar uma nova página ao documento
+
+Um documento PDF pode ter várias páginas e, nesta etapa, adicionaremos uma nova página ao nosso documento. Esta página será onde nossa anotação de chamada será colocada.
+
+```csharp
+//Adicionar uma nova página ao documento
 Page page = doc.Pages.Add();
+```
+ O`Pages.Add()`método é usado para adicionar uma nova página ao`doc` objeto. A nova página é armazenada no`page` variável, que usaremos mais tarde ao adicionar a anotação.
+
+## Etapa 3: Defina a aparência padrão
+
+Anotações, como o callout, têm uma aparência visual que você pode personalizar. Nesta etapa, definiremos como o texto dentro do callout deve ficar.
+
+```csharp
+// Defina a aparência padrão para a anotação
 DefaultAppearance da = new DefaultAppearance();
 da.TextColor = System.Drawing.Color.Red;
 da.FontSize = 10;
+```
+ Nós criamos um`DefaultAppearance` objeto que define a cor do texto e o tamanho da fonte. Aqui, o texto será vermelho, e o tamanho da fonte será definido como 10. Essa aparência será aplicada à anotação de chamada.
+
+## Etapa 4: Crie a anotação de texto livre
+
+Agora é hora de criar a anotação real. A anotação de texto livre é o que nos permite adicionar um callout com texto e estilo específicos.
+
+```csharp
+// Crie um FreeTextAnnotation com um callout
 FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.75, 583.5, 702.75), da);
 fta.Intent = FreeTextIntent.FreeTextCallout;
 fta.EndingStyle = LineEnding.OpenArrow;
+```
+ Nós criamos um`FreeTextAnnotation` objeto com coordenadas específicas, definindo sua posição na página. O`Intent` está definido para`FreeTextCallout` , indicando que esta é uma anotação de chamada. O`EndingStyle` está definido para`OpenArrow`o que significa que a linha de chamada terminará com uma seta aberta.
+
+## Etapa 5: Defina os pontos da linha de chamada
+
+Uma anotação de chamada tem uma linha que aponta para a área de interesse. Aqui, definiremos os pontos que compõem essa linha.
+
+```csharp
+// Defina os pontos para a linha de chamada
 fta.Callout = new Point[]
 {
-	new Point(428.25,651.75), new Point(462.75,681.375), new Point(474,681.375)
+    new Point(428.25, 651.75), 
+    new Point(462.75, 681.375), 
+    new Point(474, 681.375)
 };
+```
+ O`Callout` propriedade é uma matriz de`Point` objetos, cada um representando uma coordenada na página. Esses pontos definem o caminho da linha de chamada, dando a ela a aparência clássica de balão de fala.
+
+## Etapa 6: adicione a anotação à página
+
+Depois de criar e configurar nossa anotação, o próximo passo é adicioná-la à página.
+
+```csharp
+// Adicione a anotação à página
 page.Annotations.Add(fta);
-fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"> <span style=\"font-size:9.0pt;font-family:Helvetica\">Este é um exemplo</span></p></body>";
+```
+ O`Annotations.Add()` O método é usado para colocar a anotação na página que criamos anteriormente. Esta etapa efetivamente "desenha" o callout na página PDF.
+
+## Etapa 7: Defina o conteúdo de Rich Text
+
+Anotações de chamada podem incluir rich text, permitindo conteúdo formatado dentro do balão. Vamos adicionar um texto de exemplo.
+
+```csharp
+// Defina o texto enriquecido para a anotação
+fta.RichText = "<body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\" xfa:APIVersion=\"Acrobat:11.0.23\" xfa:spec=\"2.0.2\" style=\"color:#FF0000;font-weight:normal;font-style:normal;font-stretch:normal\"><p dir=\"ltr\"><span style=\"font-size:9.0pt;font-family:Helvetica\">Este é um exemplo</span></p></body>";
+```
+ O`RichText` property é definido com conteúdo HTML. Isso permite formatação detalhada dentro do callout, como especificar tamanho da fonte, cor e estilo.
+
+## Etapa 8: Salve o documento PDF
+
+Por fim, depois de configurar tudo, precisamos salvar o documento. Este passo finaliza a criação do PDF com a anotação de callout.
+
+```csharp
+// Salvar o documento
 doc.Save(dataDir + "SetCalloutProperty.pdf");
 ```
+ O`Save()` O método salva o documento no diretório especificado com o nome de arquivo "SetCalloutProperty.pdf". Esta etapa conclui nosso processo de criação de PDF.
 
 ## Conclusão
 
-Neste tutorial, exploramos como definir propriedades de texto explicativo para uma anotação de texto livre em um documento PDF usando Aspose.PDF for .NET. As anotações de texto explicativo são úteis para fornecer informações ou explicações adicionais relacionadas a áreas específicas de um documento. Aspose.PDF for .NET oferece uma ampla gama de recursos e capacidades para trabalhar com arquivos PDF, incluindo a criação e personalização de anotações, como textos explicativos. Seguindo o guia passo a passo e usando o código-fonte C# fornecido, os desenvolvedores podem implementar facilmente anotações de texto explicativo em seus documentos PDF, melhorando a usabilidade e a clareza de seus documentos. Aspose.PDF for .NET é uma biblioteca versátil e confiável para operações de PDF em aplicativos .NET, oferecendo ferramentas poderosas para lidar com várias tarefas relacionadas a PDF com eficiência.
+aí está! Você acabou de criar um documento PDF com uma anotação de chamada usando o Aspose.PDF para .NET. Essa anotação pode ser incrivelmente útil para destacar ou explicar partes específicas do seu documento. O Aspose.PDF oferece uma API poderosa que torna a manipulação de PDF direta e flexível. Não importa se você está adicionando anotações, convertendo documentos ou lidando com tarefas complexas de PDF, o Aspose.PDF tem tudo o que você precisa.
 
-### Perguntas frequentes sobre como definir propriedades de texto explicativo em arquivo PDF
+## Perguntas frequentes
 
-#### P: O que é uma anotação de texto explicativo em um documento PDF?
+### Posso personalizar ainda mais a aparência do texto explicativo?
 
-R: Uma anotação de texto explicativo em um documento PDF é um tipo de anotação que permite criar uma caixa de texto com uma linha líder apontando para uma área específica do documento. É comumente usado para fornecer informações adicionais ou comentários relacionados a uma seção ou elemento específico do documento.
+Claro! Você pode personalizar vários aspectos como cor da linha, espessura e a família e estilo da fonte do texto.
 
-#### P: Posso personalizar a aparência da anotação de texto explicativo usando Aspose.PDF for .NET?
+### É possível adicionar vários textos explicativos em uma única página?
 
-R: Sim, você pode personalizar várias propriedades da anotação de texto explicativo, como cor, tamanho da fonte, alinhamento do texto, estilo de linha, estilo de seta e muito mais.
+Sim, você pode adicionar quantos balões forem necessários repetindo as etapas para cada anotação.
 
-#### P: Como adiciono texto à anotação da frase de destaque?
+### Como altero a posição do texto explicativo?
 
- R: Para adicionar texto à anotação de texto explicativo, você pode definir o`RichText` propriedade do`FreeTextAnnotation` objeto. O`RichText` propriedade usa uma string de XML formatado que representa o texto a ser exibido na anotação de texto explicativo.
+ Basta modificar as coordenadas no`Rectangle` e`Callout` propriedades para reposicionar a anotação.
 
-#### P: Posso adicionar várias anotações de texto explicativo a um documento PDF usando Aspose.PDF for .NET?
+### Posso adicionar outros tipos de anotações usando o Aspose.PDF?
 
- R: Sim, você pode criar diversas anotações de texto explicativo em um documento PDF criando diversas instâncias do`FreeTextAnnotation`objeto e adicioná-los a diferentes páginas ou locais no documento.
+Sim, o Aspose.PDF suporta vários tipos de anotações, incluindo destaques, carimbos e anexos de arquivo.
+
+### O conteúdo de rich text é limitado a HTML?
+
+ O`RichText` propriedade suporta um subconjunto de HTML, permitindo que você inclua texto estilizado e formatação básica.

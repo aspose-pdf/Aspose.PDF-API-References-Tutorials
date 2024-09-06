@@ -1,17 +1,17 @@
 ---
-title: Sel Tabel Gaya
-linktitle: Sel Tabel Gaya
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Pelajari cara menata gaya sel tabel dengan Aspose.PDF untuk .NET. Panduan langkah demi langkah untuk membuat dan menyesuaikan tabel.
+title: Gaya Tabel Sel
+linktitle: Gaya Tabel Sel
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara menata sel tabel dengan Aspose.PDF untuk .NET. Panduan langkah demi langkah untuk membuat dan menyesuaikan tabel.
 type: docs
 weight: 160
 url: /id/net/programming-with-tagged-pdf/style-table-cell/
 ---
-Selamat datang di tutorial mendetail tentang memformat sel tabel menggunakan Aspose.PDF untuk .NET. Dalam panduan ini, kami akan menjelaskan secara detail setiap langkah kode sumber C# yang disediakan untuk membantu Anda memahami cara menata gaya sel tabel. Pastikan Anda telah menginstal Aspose.PDF untuk .NET dan menyiapkan lingkungan pengembangan sebelum memulai.
+Selamat datang di tutorial terperinci tentang pemformatan sel tabel menggunakan Aspose.PDF untuk .NET. Dalam panduan ini, kami akan menjelaskan secara terperinci setiap langkah dari kode sumber C# yang disediakan untuk membantu Anda memahami cara memberi gaya pada sel tabel. Pastikan Anda telah menginstal Aspose.PDF untuk .NET dan menyiapkan lingkungan pengembangan Anda sebelum memulai.
 
 ## Langkah 1: Menyiapkan lingkungan
 
-Sebelum memulai, pastikan Anda telah mengonfigurasi lingkungan pengembangan untuk menggunakan Aspose.PDF untuk .NET. Ini termasuk menginstal perpustakaan Aspose.PDF dan mengonfigurasi proyek Anda untuk mereferensikannya.
+Sebelum memulai, pastikan Anda telah mengonfigurasi lingkungan pengembangan Anda untuk menggunakan Aspose.PDF untuk .NET. Ini termasuk menginstal pustaka Aspose.PDF dan mengonfigurasi proyek Anda untuk merujuknya.
 
 ## Langkah 2: Membuat dokumen
 
@@ -28,25 +28,25 @@ taggedContent.SetTitle("Example of table cell formatting");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-Kami telah membuat dokumen baru dan mengatur judul dan bahasa dokumen.
+Kami telah membuat dokumen baru dan menetapkan judul dan bahasa dokumen.
 
-## Langkah 3: Mendapatkan elemen struktur root
+## Langkah 3: Mendapatkan elemen struktur akar
 
-Pada langkah ini kita akan mendapatkan elemen struktur root untuk dokumen kita.
+Pada langkah ini kita akan mendapatkan elemen struktur akar untuk dokumen kita.
 
 ```csharp
 //Dapatkan elemen struktur akar
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-Kami mendapat elemen struktur root yang akan berfungsi sebagai wadah untuk elemen array.
+Kita mendapat elemen struktur akar yang akan berfungsi sebagai wadah bagi elemen-elemen array.
 
 ## Langkah 4: Membuat elemen struktur array
 
-Sekarang mari buat elemen struktur tabel baru untuk dokumen kita.
+Sekarang mari membuat elemen struktur tabel baru untuk dokumen kita.
 
 ```csharp
-// Buat elemen struktur array
+// Membuat elemen struktur array
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
@@ -58,7 +58,7 @@ Kami telah membuat elemen struktur array baru dan menambahkannya ke elemen struk
 
 ## Langkah 5: Menambahkan header tabel
 
-Pada langkah ini kita akan menambahkan header tabel ke tabel kita.
+Pada langkah ini kita akan menambahkan tajuk tabel ke dalam tabel kita.
 
 ```csharp
 // Jumlah baris dan kolom dalam tabel
@@ -68,7 +68,7 @@ int colCount = 4;
 int rowIndex;
 int colIndex;
 
-// Buat baris header tabel
+// Membuat baris tajuk tabel
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Header Row";
 
@@ -137,7 +137,7 @@ for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
 }
 ```
 
-Kami menambahkan baris ke badan tabel menggunakan loop untuk mengulangi setiap sel tabel. Kami mengatur properti pemformatan untuk setiap sel, seperti warna latar belakang, batas, margin, perataan teks, dll.
+Kami menambahkan baris ke badan tabel menggunakan loop untuk mengulangi setiap sel tabel. Kami menetapkan properti pemformatan untuk setiap sel, seperti warna latar belakang, batas, margin, perataan teks, dll.
 
 ## Langkah 7: Menambahkan footer
 
@@ -160,18 +160,18 @@ Kami membuat footer untuk tabel kami dan menambahkan sel footer dengan teks.
 
 ## Langkah 8: Menyimpan dokumen PDF yang diberi tag
 
-Sekarang kita telah membuat dokumen kita dengan tabel yang diberi gaya, kita akan menyimpannya sebagai dokumen PDF yang diberi tag.
+Sekarang setelah kita membuat dokumen dengan tabel bergaya, kita akan menyimpannya sebagai dokumen PDF yang diberi tag.
 
 ```csharp
 // Simpan dokumen PDF yang diberi tag
 document.Save(dataDir + "StyleTableCell.pdf");
 ```
 
-Kami menyimpan dokumen PDF yang diberi tag di direktori yang ditentukan.
+Kami menyimpan dokumen PDF yang diberi tag pada direktori yang ditentukan.
 
 ## Langkah 9: Validasi kepatuhan PDF/UA
 
-Selanjutnya, kami akan memvalidasi kesesuaian PDF/UA dokumen kami.
+Berikutnya, kami akan memvalidasi kesesuaian PDF/UA dokumen kami.
 
 ```csharp
 // Pemeriksaan kepatuhan PDF/UA
@@ -180,7 +180,7 @@ bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableCell.xml", PdfFo
 Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
 ```
 
-Kami mengunggah dokumen PDF yang diberi tag dan memvalidasi kepatuhan PDF/UA dengan membuat laporan XML.
+Kami mengunggah dokumen PDF yang diberi tag dan memvalidasi kepatuhan PDF/UA-nya dengan membuat laporan XML.
 
 ### Contoh kode sumber untuk Style Table Cell menggunakan Aspose.PDF untuk .NET 
 ```csharp
@@ -279,46 +279,46 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ## Kesimpulan
 
-Dalam tutorial ini, kita mempelajari cara menata gaya sel tabel menggunakan Aspose.PDF untuk .NET. Kita telah melihat cara membuat dokumen, menambahkan tabel dengan header, baris isi, dan footer, serta menyesuaikan gaya sel. Terakhir, kami menyimpan dokumen PDF yang diberi tag dan memvalidasi kepatuhan PDF/UA-nya. Anda sekarang dapat menggunakan Aspose.PDF untuk .NET untuk membuat dan menata tabel di aplikasi .NET Anda.
+Dalam tutorial ini, kita mempelajari cara memberi gaya pada sel tabel menggunakan Aspose.PDF untuk .NET. Kita telah melihat cara membuat dokumen, menambahkan tabel dengan tajuk, baris isi, dan catatan kaki, serta menyesuaikan gaya sel. Terakhir, kita menyimpan dokumen PDF yang diberi tag dan memvalidasi kepatuhan PDF/UA-nya. Kini Anda dapat menggunakan Aspose.PDF untuk .NET guna membuat dan memberi gaya pada tabel di aplikasi .NET Anda.
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
-#### T: Apa tujuan tutorial memformat sel tabel menggunakan Aspose.PDF untuk .NET?
+#### T: Apa tujuan tutorial memformat sel tabel menggunakan Aspose.PDF untuk .NET ini?
 
-J: Tutorial ini bertujuan untuk memberikan panduan komprehensif tentang cara menata gaya sel tabel dalam dokumen PDF menggunakan perpustakaan Aspose.PDF untuk .NET. Ini mencakup petunjuk langkah demi langkah dan contoh kode sumber C# untuk membantu Anda memahami dan menerapkan pemformatan sel tabel.
+J: Tutorial ini bertujuan untuk memberikan panduan lengkap tentang cara menata sel tabel dalam dokumen PDF menggunakan pustaka Aspose.PDF untuk .NET. Tutorial ini mencakup petunjuk langkah demi langkah dan contoh kode sumber C# untuk membantu Anda memahami dan menerapkan pemformatan sel tabel.
 
-#### Q: Apa saja prasyarat untuk mengikuti tutorial ini?
+#### T: Apa saja prasyarat untuk mengikuti tutorial ini?
 
-J: Sebelum memulai, pastikan Anda telah menginstal Aspose.PDF untuk .NET dan telah menyiapkan lingkungan pengembangan Anda. Ini termasuk mengonfigurasi proyek Anda untuk mereferensikan pustaka Aspose.PDF.
+J: Sebelum memulai, pastikan Anda telah menginstal Aspose.PDF untuk .NET dan telah menyiapkan lingkungan pengembangan Anda. Ini termasuk mengonfigurasi proyek Anda untuk merujuk ke pustaka Aspose.PDF.
 
 #### T: Bagaimana cara membuat dokumen PDF baru menggunakan Aspose.PDF untuk .NET?
 
-J: Untuk membuat dokumen PDF baru, Anda perlu membuat instance a`Document` objek dari perpustakaan Aspose.PDF. Kode sumber C# yang disediakan menunjukkan cara membuat dokumen dan mengatur judul dan bahasanya.
+A: Untuk membuat dokumen PDF baru, Anda perlu membuat instance`Document` objek dari pustaka Aspose.PDF. Kode sumber C# yang disediakan menunjukkan cara membuat dokumen dan mengatur judul serta bahasanya.
 
 #### T: Apa pentingnya elemen struktur akar dalam dokumen PDF?
 
-J: Elemen struktur akar berfungsi sebagai wadah bagi elemen struktur lainnya, membantu mengatur dan mengkategorikan konten dokumen PDF. Ini memainkan peran penting dalam membangun struktur logis dokumen.
+A: Elemen struktur akar berfungsi sebagai wadah bagi elemen struktur lainnya, membantu mengatur dan mengkategorikan konten dokumen PDF. Elemen ini berperan penting dalam membangun struktur logis dokumen.
 
-#### T: Bagaimana cara membuat elemen struktur tabel dan mengkustomisasi tampilannya menggunakan Aspose.PDF untuk .NET?
+#### T: Bagaimana cara membuat elemen struktur tabel dan menyesuaikan tampilannya menggunakan Aspose.PDF untuk .NET?
 
- A: Anda dapat membuat elemen struktur tabel menggunakan`CreateTableElement()` metode. Kode sumber yang disediakan menunjukkan cara menyesuaikan tampilan tabel, termasuk header, body, dan footer, dengan mengatur properti seperti warna latar belakang, batas, margin, dan perataan.
+ A: Anda dapat membuat elemen struktur tabel menggunakan`CreateTableElement()` metode. Kode sumber yang diberikan menunjukkan cara menyesuaikan tampilan tabel, termasuk header, body, dan footer, dengan mengatur properti seperti warna latar belakang, border, margin, dan alignment.
 
 #### T: Dapatkah saya menambahkan beberapa baris dan kolom ke badan tabel dan menyesuaikan formatnya?
 
-J: Ya, tutorial ini menunjukkan cara menambahkan beberapa baris dan kolom ke badan tabel menggunakan loop. Ini juga memberikan contoh penyesuaian pemformatan sel, seperti warna latar belakang, batas, perataan teks, gaya font, dan banyak lagi.
+A: Ya, tutorial ini menunjukkan cara menambahkan beberapa baris dan kolom ke badan tabel menggunakan loop. Tutorial ini juga menyediakan contoh penyesuaian format sel, seperti warna latar belakang, batas, perataan teks, gaya font, dan banyak lagi.
 
-#### T: Apa tujuan memvalidasi kepatuhan PDF/UA, dan bagaimana cara melakukan validasi ini?
+#### T: Apa tujuan memvalidasi kepatuhan PDF/UA, dan bagaimana saya dapat melakukan validasi ini?
 
- J: Memvalidasi kepatuhan PDF/UA memastikan bahwa dokumen PDF mematuhi standar aksesibilitas, sehingga lebih mudah diakses oleh pengguna penyandang disabilitas. Tutorial ini menunjukkan cara memvalidasi kesesuaian PDF/UA menggunakan`Validate()` metode dan menghasilkan laporan XML.
+ A: Memvalidasi kepatuhan PDF/UA memastikan bahwa dokumen PDF mematuhi standar aksesibilitas, sehingga lebih mudah diakses oleh pengguna penyandang disabilitas. Tutorial ini menunjukkan cara memvalidasi kesesuaian PDF/UA menggunakan`Validate()` metode dan menghasilkan laporan XML.
 
-#### T: Bagaimana cara menerapkan konsep ini pada aplikasi .NET saya sendiri?
+#### T: Bagaimana saya dapat menerapkan konsep ini ke aplikasi .NET saya sendiri?
 
-J: Anda dapat menggunakan contoh kode sumber C# yang disediakan sebagai panduan untuk mengimplementasikan pemformatan sel tabel di aplikasi .NET Anda sendiri. Sesuaikan kode seperlunya agar sesuai dengan kebutuhan Anda dan integrasikan ke dalam proyek Anda.
+J: Anda dapat menggunakan contoh kode sumber C# yang disediakan sebagai panduan untuk menerapkan pemformatan sel tabel di aplikasi .NET Anda sendiri. Sesuaikan kode sesuai kebutuhan agar sesuai dengan persyaratan Anda dan integrasikan ke dalam proyek Anda.
 
-#### T: Apakah ada rekomendasi praktik terbaik untuk menata gaya sel tabel di dokumen PDF?
+#### T: Apakah ada praktik terbaik yang direkomendasikan untuk menata gaya sel tabel dalam dokumen PDF?
 
-J: Saat menata gaya sel tabel, pertimbangkan kebutuhan audiens Anda, termasuk persyaratan aksesibilitas. Gunakan warna kontras, font yang sesuai, dan perataan sel yang jelas untuk meningkatkan keterbacaan. Selain itu, validasi kepatuhan PDF/UA untuk memastikan standar aksesibilitas terpenuhi.
+J: Saat menata sel tabel, pertimbangkan kebutuhan audiens Anda, termasuk persyaratan aksesibilitas. Gunakan warna yang kontras, font yang sesuai, dan perataan sel yang jelas untuk meningkatkan keterbacaan. Selain itu, validasi kepatuhan PDF/UA untuk memastikan standar aksesibilitas terpenuhi.
 
-#### T: Fitur Aspose.PDF untuk .NET apa lagi yang dapat saya jelajahi untuk manipulasi dokumen PDF?
+#### T: Fitur Aspose.PDF for .NET apa lagi yang dapat saya jelajahi untuk manipulasi dokumen PDF?
 
 J: Aspose.PDF untuk .NET menawarkan berbagai fitur untuk manipulasi dokumen PDF, termasuk ekstraksi teks, penyisipan gambar, manajemen bidang formulir, tanda tangan digital, dan banyak lagi. Jelajahi dokumentasi dan sumber daya resmi untuk mempelajari tentang fungsi tambahan.

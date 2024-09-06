@@ -1,50 +1,50 @@
 ---
-title: Standart Tip 1 Yazı Tiplerini PDF Dosyasına Göm
-linktitle: Standart Tip 1 Yazı Tiplerini PDF Dosyasına Göm
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET kullanarak standart Type 1 yazı tiplerini PDF dosyasına nasıl yerleştireceğinizi öğrenin.
+title: PDF Dosyasına Standart Tip 1 Yazı Tiplerini Göm
+linktitle: PDF Dosyasına Standart Tip 1 Yazı Tiplerini Göm
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak standart Type 1 yazı tiplerinin PDF dosyasına nasıl yerleştirileceğini öğrenin.
 type: docs
 weight: 140
 url: /tr/net/programming-with-text/embed-standard-type-1fonts/
 ---
-Bu eğitim, standart Type 1 yazı tiplerini Aspose.PDF for .NET kullanarak PDF dosyasına yerleştirme sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları gösterir.
+Bu eğitim, .NET için Aspose.PDF kullanarak PDF dosyasına standart Type 1 yazı tiplerini yerleştirme sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları göstermektedir.
 
 ## Gereksinimler
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Makinenizde kurulu Visual Studio veya başka herhangi bir C# derleyicisi.
-- Aspose.PDF for .NET kitaplığı. Resmi Aspose web sitesinden indirebilir veya yüklemek için NuGet gibi bir paket yöneticisi kullanabilirsiniz.
+- Bilgisayarınızda Visual Studio veya herhangi bir C# derleyicisi yüklü olmalıdır.
+- Aspose.PDF for .NET kütüphanesi. Resmi Aspose web sitesinden indirebilir veya NuGet gibi bir paket yöneticisi kullanarak kurabilirsiniz.
 
-## 1. Adım: Projeyi ayarlayın
+## Adım 1: Projeyi kurun
 1. Tercih ettiğiniz geliştirme ortamında yeni bir C# projesi oluşturun.
-2. Aspose.PDF for .NET kitaplığına bir referans ekleyin.
+2. .NET için Aspose.PDF kitaplığına bir referans ekleyin.
 
-## 2. Adım: Gerekli ad alanlarını içe aktarın
-Standart Type 1 yazı tiplerini gömmek istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki kullanma yönergesini ekleyin:
+## Adım 2: Gerekli ad alanlarını içe aktarın
+Standart Type 1 fontlarını gömmek istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki using yönergesini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
 ```
 
-## 3. Adım: Belge dizinini ayarlayın
- Kodda yazan satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belgelerinizin saklandığı dizinin yolu ile birlikte.
+## Adım 3: Belge dizinini ayarlayın
+ Kodda şu satırı bulun:`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` Belgelerinizin saklandığı dizinin yolunu içeren.
 
-## 4. Adım: Mevcut PDF belgesini yükleyin
- Mevcut bir PDF belgesini kullanarak yükleyin.`Document`yapıcı ve yolu giriş PDF dosyasına geçirme.
+## Adım 4: Mevcut PDF belgesini yükleyin
+ Mevcut bir PDF belgesini kullanarak yükleyin`Document` yapıcı ve giriş PDF dosyasına giden yolu geçirme.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
-## 5. Adım: EmbedStandardFonts özelliğini ayarlayın
- Yı kur`EmbedStandardFonts` belgenin özelliği`true` standart Tip 1 yazı tiplerinin yerleştirilmesini etkinleştirmek için.
+## Adım 5: EmbedStandardFonts özelliğini ayarlayın
+ Ayarla`EmbedStandardFonts` belgenin mülkiyeti`true` Standart Tip 1 yazı tiplerinin gömülmesini sağlamak için.
 
 ```csharp
 pdfDocument.EmbedStandardFonts = true;
 ```
 
-## 6. Adım: Her sayfaya yazı tiplerini gömün
- PDF belgesinin her sayfasında dolaşın ve yazı tiplerinin zaten gömülü olup olmadığını kontrol edin. Değilse, ayarlayın`IsEmbedded` mülkiyet`true` yazı tipini gömmek için.
+## Adım 6: Her sayfaya yazı tiplerini yerleştirin
+ PDF belgesinin her sayfasını dolaşın ve yazı tiplerinin zaten gömülü olup olmadığını kontrol edin. Değilse,`IsEmbedded` mülk`true` yazı tipini gömmek için.
 
 ```csharp
 foreach(Page page in pdfDocument.Pages)
@@ -62,16 +62,16 @@ foreach(Page page in pdfDocument.Pages)
 }
 ```
 
-## 7. Adım: Güncellenen PDF belgesini kaydedin
- Güncellenen PDF belgesini kullanarak kaydedin.`Save` yöntemi`Document` çıktı dosyası yolunu belirten nesne.
+## Adım 7: Güncellenen PDF belgesini kaydedin
+ Güncellenen PDF belgesini kullanarak kaydedin`Save` yöntemi`Document` çıktı dosyası yolunu belirten nesne.
 
 ```csharp
 pdfDocument.Save(dataDir + "EmbeddedFonts-updated_out.pdf");
 ```
 
-### Aspose.PDF for .NET kullanan Embed Standard Type 1Font'lar için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Embed Standard Type 1Fonts için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Mevcut bir PDF Belgesini yükleyin
 Document pdfDocument = new Document(dataDir + "input.pdf");
@@ -95,17 +95,17 @@ pdfDocument.Save(dataDir + "EmbeddedFonts-updated_out.pdf");
 ```
 
 ## Çözüm
-Aspose.PDF for .NET'i kullanarak standart Type 1 yazı tiplerini bir PDF belgesine başarıyla gömdünüz. Gömülü yazı tiplerini içeren güncellenmiş PDF dosyası, belirtilen çıktı dosyası yoluna kaydedildi.
+Aspose.PDF for .NET kullanarak standart Type 1 yazı tiplerini bir PDF belgesine başarıyla yerleştirdiniz. Yerleştirilmiş yazı tiplerine sahip güncellenmiş PDF dosyası belirtilen çıktı dosyası yoluna kaydedildi.
 
-### SSS'ler
+### SSS
 
 #### S: Bu eğitimin odak noktası nedir?
 
-C: Bu eğitim, Aspose.PDF for .NET kütüphanesini kullanarak standart Type 1 yazı tiplerini bir PDF dosyasına gömmek için adım adım bir kılavuz sağlar. Ekteki C# kaynak kodu gerekli prosedürleri gösterir.
+A: Bu eğitim, Aspose.PDF for .NET kütüphanesini kullanarak standart Type 1 yazı tiplerini bir PDF dosyasına yerleştirmek için adım adım bir kılavuz sağlar. Eşlik eden C# kaynak kodu gerekli prosedürleri gösterir.
 
 #### S: Hangi ad alanını içe aktarmam gerekiyor?
 
-C: Standart Tip 1 yazı tiplerini yerleştirmeyi planladığınız kod dosyasında, dosyanın en üstüne aşağıdaki ad alanını ekleyin:
+A: Standart Type 1 yazı tiplerini yerleştirmeyi planladığınız kod dosyasında, dosyanın en üstüne aşağıdaki ad alanını ekleyin:
 
 ```csharp
 using Aspose.Pdf;
@@ -113,28 +113,28 @@ using Aspose.Pdf;
 
 #### S: Belge dizinini nasıl belirlerim?
 
- A: Çizgiyi bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` kodda ve değiştirin`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
+ A: Satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` kodda ve değiştir`"YOUR DOCUMENT DIRECTORY"` belge dizininize giden gerçek yol ile.
 
 #### S: Mevcut bir PDF belgesini nasıl yüklerim?
 
- C: 4. Adımda, mevcut bir PDF belgesini`Document` yapıcı ve giriş PDF dosyasının yolunu sağlama.
+ A: 4. Adımda, mevcut bir PDF belgesini kullanarak yükleyeceksiniz`Document` yapıcı ve giriş PDF dosyasına giden yolu sağlama.
 
-####  Soru: Programın amacı nedir?`EmbedStandardFonts` property?
+####  S: Amacı nedir?`EmbedStandardFonts` property?
 
- C: 5. Adımda,`EmbedStandardFonts` belgenin özelliği`true`, standart Tip 1 yazı tiplerinin gömülmesini sağlar.
+ A: 5. Adımda,`EmbedStandardFonts` belgenin mülkiyeti`true`, standart Tip 1 yazı tiplerinin gömülmesini sağlar.
 
-#### S: Yazı tiplerini her sayfaya nasıl gömebilirim?
+#### S: Her sayfaya yazı tiplerini nasıl yerleştiririm?
 
- C: Adım 6, PDF belgesinin her sayfasında döngü yapmayı içerir. Halihazırda gömülü olmayan yazı tipleri için,`IsEmbedded` mülkiyet`true` yazı tipini gömmek için.
+ A: 6. Adım, PDF belgesinin her sayfasında döngü yapmayı içerir. Zaten gömülü olmayan yazı tipleri için,`IsEmbedded` mülk`true` yazı tipini gömmek için.
 
 #### S: Güncellenen PDF belgesini nasıl kaydederim?
 
- C: 7. Adımda şunları kullanacaksınız:`Save` yöntemi`Document` Çıktı dosyası yolunu belirterek güncellenmiş PDF belgesini kaydetmek için nesneyi seçin.
+ A: 7. Adımda şunu kullanacaksınız:`Save` yöntemi`Document`Güncellenen PDF belgesini kaydetmek için çıktı dosya yolunu belirten nesne.
 
-#### S: Yazı tiplerini bir PDF belgesine yerleştirmenin önemi nedir?
+#### S: PDF belgesine yazı tiplerini yerleştirmenin önemi nedir?
 
-C: Yazı tiplerini gömmek, PDF'de kullanılan yazı tiplerinin dosyanın kendisine dahil edilmesini sağlar. Bu, alıcının sisteminde gerekli yazı tipleri kurulu olmasa bile metnin tutarlı bir şekilde görüntülenmesini garanti eder.
+A: Yazı tiplerini yerleştirmek, PDF'de kullanılan yazı tiplerinin dosyanın kendisine dahil edilmesini sağlar. Bu, alıcının sisteminde gerekli yazı tipleri yüklü olmasa bile metnin tutarlı bir şekilde görüntülenmesini garanti eder.
 
-#### S: Bu eğitimden çıkan ana sonuç nedir?
+#### S: Bu eğitimden çıkarılacak en önemli ders nedir?
 
-C: Bu eğitimi takip ederek, standart Type 1 yazı tiplerini Aspose.PDF for .NET kullanarak bir PDF belgesine yerleştirme bilgi ve becerisini kazandınız. Bu, metnin farklı sistemlerde doğru şekilde işlenmesini sağlar.
+A: Bu öğreticiyi takip ederek, .NET için Aspose.PDF kullanarak standart Type 1 yazı tiplerini bir PDF belgesine yerleştirmek için gereken bilgi ve becerileri edindiniz. Bu, metnin farklı sistemlerde düzgün bir şekilde işlenmesini sağlar.

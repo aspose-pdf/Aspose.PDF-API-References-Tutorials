@@ -1,28 +1,28 @@
 ---
 title: Metin Ara ve Dikdörtgen Çiz
 linktitle: Metin Ara ve Dikdörtgen Çiz
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET'i kullanarak PDF'de metin aramayı, bulunan metnin etrafına dikdörtgenler çizmeyi ve değiştirilen belgeyi kaydetmeyi öğrenin.
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET'i kullanarak PDF'te metin aramayı, bulunan metnin etrafına dikdörtgenler çizmeyi ve değiştirilmiş belgeyi kaydetmeyi öğrenin.
 type: docs
 weight: 460
 url: /tr/net/programming-with-text/search-text-and-draw-rectangle/
 ---
-Bu eğitimde, bir PDF belgesinde belirli bir metni aramak, bulunan metnin etrafına bir dikdörtgen çizmek ve değiştirilen belgeyi kaydetmek için Aspose.PDF for .NET'in nasıl kullanılacağı açıklanmaktadır. Sağlanan C# kaynak kodu süreci adım adım gösterir.
+Bu eğitim, bir PDF belgesinde belirli bir metni aramak, bulunan metnin etrafına bir dikdörtgen çizmek ve değiştirilmiş belgeyi kaydetmek için Aspose.PDF for .NET'in nasıl kullanılacağını açıklar. Sağlanan C# kaynak kodu, işlemi adım adım gösterir.
 
-## Önkoşullar
+## Ön koşullar
 
-Eğiticiye devam etmeden önce aşağıdakilere sahip olduğunuzdan emin olun:
+Eğitime başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Temel C# programlama dili bilgisi.
-- Aspose.PDF for .NET kütüphanesi kuruldu. Bunu Aspose web sitesinden edinebilir veya projenize kurmak için NuGet'i kullanabilirsiniz.
+- C# programlama dilinin temel bilgisi.
+- .NET kütüphanesi için Aspose.PDF yüklendi. Bunu Aspose web sitesinden edinebilir veya projenize yüklemek için NuGet'i kullanabilirsiniz.
 
-## 1. Adım: Projeyi ayarlayın
+## Adım 1: Projeyi kurun
 
-Tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir C# projesi oluşturarak başlayın ve Aspose.PDF for .NET kitaplığına bir referans ekleyin.
+Tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir C# projesi oluşturarak başlayın ve .NET için Aspose.PDF kitaplığına bir başvuru ekleyin.
 
-## 2. Adım: Gerekli ad alanlarını içe aktarın
+## Adım 2: Gerekli ad alanlarını içe aktarın
 
-Gerekli ad alanlarını içe aktarmak için C# dosyanızın başına aşağıdaki kullanma yönergelerini ekleyin:
+Gerekli ad alanlarını içe aktarmak için C# dosyanızın başına aşağıdaki using yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
@@ -31,17 +31,17 @@ using Aspose.Pdf.Content;
 using Aspose.Pdf.Facades;
 ```
 
-## 3. Adım: Belge dizininin yolunu ayarlayın
+## Adım 3: Belge dizinine giden yolu ayarlayın
 
- kullanarak belge dizininizin yolunu ayarlayın.`dataDir` değişken:
+ Belge dizininize giden yolu kullanarak ayarlayın`dataDir` değişken:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
+ Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` belge dizininize giden gerçek yol ile.
 
-## 4. Adım: PDF belgesini yükleyin
+## Adım 4: PDF belgesini yükleyin
 
  PDF belgesini kullanarak yükleyin`Document` sınıf:
 
@@ -51,26 +51,26 @@ Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
 
  Yer değiştirmek`"SearchAndGetTextFromAll.pdf"` PDF dosyanızın gerçek adıyla.
 
-## Adım 5: TextFragmentAbsorber oluşturun
+## Adım 5: Bir TextFragmentAbsorber Oluşturun
 
- Oluşturmak`TextFragmentAbsorber` giriş arama ifadesinin tüm örneklerini bulmak için nesne:
+ Bir tane oluştur`TextFragmentAbsorber` Giriş arama ifadesinin tüm örneklerini bulmak için nesne:
 
 ```csharp
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 ```
 
- Yer değiştirmek`@"[\S]+"` İstediğiniz düzenli ifade modeliyle.
+ Yer değiştirmek`@"[\S]+"` İstediğiniz düzenli ifade kalıbıyla.
 
-## 6. Adım: Normal ifade aramasını etkinleştirin
+## Adım 6: Düzenli ifade aramasını etkinleştirin
 
- Ayarlayarak normal ifade aramasını etkinleştirin`TextSearchOptions` emicinin özelliği:
+ Düzenli ifade aramasını etkinleştirmek için şu ayarı yapın:`TextSearchOptions` emicinin özelliği:
 
 ```csharp
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;
 ```
 
-## 7. Adım: Tüm sayfalarda arama yapın
+## Adım 7: Tüm sayfalarda arama yapın
 
 Belgenin tüm sayfaları için emiciyi kabul edin:
 
@@ -80,7 +80,7 @@ document.Pages.Accept(textAbsorber);
 
 ## Adım 8: Bulunan metnin etrafına bir dikdörtgen çizin
 
- Oluşturmak`PdfContentEditor` her metin bölümünün etrafına bir dikdörtgen çizerek, alınan metin parçaları arasında nesne oluşturun ve döngü yapın:
+ Bir tane oluştur`PdfContentEditor` nesne ve döngü, alınan metin parçaları arasında dolaşarak her metin parçasının etrafına bir dikdörtgen çizer:
 
 ```csharp
 var editor = new PdfContentEditor(document);
@@ -93,7 +93,7 @@ foreach (TextFragment textFragment in textAbsorber.TextFragments)
 }
 ```
 
-## 9. Adım: Değiştirilen belgeyi kaydedin
+## Adım 9: Değiştirilen belgeyi kaydedin
 
 Değiştirilen belgeyi kaydedin:
 
@@ -102,15 +102,15 @@ dataDir = dataDir + "SearchTextAndDrawRectangle_out.pdf";
 document.Save(dataDir);
 ```
 
- Değiştirdiğinizden emin olun`"SearchTextAndDrawRectangle_out.pdf"` İstenilen çıktı dosyası adı ile.
+ Değiştirdiğinizden emin olun`"SearchTextAndDrawRectangle_out.pdf"` İstenilen çıktı dosya adı ile.
 
-### Aspose.PDF for .NET kullanarak Metin Arama ve Dikdörtgen Çizme için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Arama Metni ve Çizim Dikdörtgeni için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Belgeyi aç
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-// Normal ifadeyle eşleşen tüm ifadeleri bulmak için TextAbsorber nesnesi oluşturun
+// Düzenli ifadeyle eşleşen tüm ifadeleri bulmak için TextAbsorber nesnesi oluşturun
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;
@@ -130,46 +130,46 @@ Console.WriteLine("\nRectangle drawn successfully on searched text.\nFile saved 
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET'i kullanarak bir PDF belgesinde belirli bir metni nasıl arayacağınızı, bulunan metnin etrafına bir dikdörtgen çizmeyi ve değiştirilen belgeyi nasıl kaydedeceğinizi başarıyla öğrendiniz. Bu eğitimde, projenin kurulumundan gerekli eylemlerin gerçekleştirilmesine kadar adım adım bir kılavuz sağlanmıştır. Artık metni değiştirmek ve PDF dosyalarında dikdörtgenler çizmek için bu kodu kendi C# projelerinize dahil edebilirsiniz.
+Tebrikler! Bir PDF belgesinde belirli bir metni aramayı, bulunan metnin etrafına bir dikdörtgen çizmeyi ve değiştirilmiş belgeyi Aspose.PDF for .NET kullanarak kaydetmeyi başarıyla öğrendiniz. Bu eğitim, projeyi kurmaktan gerekli eylemleri gerçekleştirmeye kadar adım adım bir kılavuz sağladı. Artık bu kodu kendi C# projelerinize dahil ederek metni düzenleyebilir ve PDF dosyalarında dikdörtgenler çizebilirsiniz.
 
-### SSS'ler
+### SSS
 
-#### S: "Metin Arama ve Dikdörtgen Çizme" eğitiminin amacı nedir?
+#### S: "Metin Ara ve Dikdörtgen Çiz" eğitiminin amacı nedir?
 
-C: "Metin Arama ve Dikdörtgen Çizme" eğitimi, kullanıcılara Aspose.PDF kütüphanesini .NET kullanarak bir PDF belgesinde belirli bir metni arama, bulunan metin bölümlerinin etrafına dikdörtgenler çizme ve değiştirilenleri kaydetme sürecinde rehberlik etmeyi amaçlamaktadır. belge. Öğretici, sürecin her adımını göstermek için ayrıntılı talimatlar ve C# kod örnekleri sağlar.
+A: "Metin Ara ve Dikdörtgen Çiz" öğreticisinin amacı, kullanıcıları .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesi içinde belirli bir metni arama, bulunan metin parçalarının etrafına dikdörtgenler çizme ve değiştirilmiş belgeyi kaydetme sürecinde yönlendirmektir. Öğretici, sürecin her adımını göstermek için ayrıntılı talimatlar ve C# kod örnekleri sağlar.
 
-#### S: Bu eğitim, bir PDF belgesindeki belirli bir metnin etrafına dikdörtgenler çizmeye nasıl yardımcı olur?
+#### S: Bu eğitim, bir PDF belgesinde belirli bir metnin etrafına dikdörtgen çizmeye nasıl yardımcı olur?
 
-C: Bu eğitim, bir PDF belgesindeki belirli metin bölümlerinin etrafındaki dikdörtgenlerin nasıl bulunacağı ve çizileceği konusunda kapsamlı bir kılavuz sağlar. Bir proje oluşturma, bir PDF belgesi yükleme, normal ifade aramasını etkinleştirme, bulunan metin bölümlerinin etrafına dikdörtgenler çizme ve değiştirilen PDF'yi kaydetme sürecini gösterir.
+A: Bu eğitim, bir PDF belgesindeki belirli metin parçalarının etrafına dikdörtgenler yerleştirme ve çizme konusunda kapsamlı bir kılavuz sunar. Bir proje kurma, bir PDF belgesi yükleme, düzenli ifade aramasını etkinleştirme, bulunan metin parçalarının etrafına dikdörtgenler çizme ve değiştirilmiş PDF'yi kaydetme sürecini gösterir.
 
-#### S: Bu öğreticiyi takip etmek için hangi ön koşullar gereklidir?
+#### S: Bu eğitimi takip etmek için hangi ön koşullar gereklidir?
 
-C: Eğitime başlamadan önce C# programlama dili hakkında temel bilgiye sahip olmanız gerekir. Ayrıca Aspose.PDF for .NET kütüphanesinin de kurulu olması gerekir. Bunu Aspose web sitesinden edinebilir veya NuGet'i kullanarak projenize yükleyebilirsiniz.
+A: Eğitime başlamadan önce, C# programlama dili hakkında temel bir anlayışa sahip olmalısınız. Ek olarak, .NET için Aspose.PDF kütüphanesinin yüklü olması gerekir. Bunu Aspose web sitesinden edinebilir veya NuGet kullanarak projenize yükleyebilirsiniz.
 
-#### S: Projemi bu öğreticiyi takip edecek şekilde nasıl ayarlayabilirim?
+#### S: Bu eğitimi takip edecek şekilde projemi nasıl kurarım?
 
-C: Tercih ettiğiniz tümleşik geliştirme ortamında (IDE) yeni bir C# projesi oluşturarak başlayın. Ardından projenize Aspose.PDF for .NET kütüphanesine bir referans ekleyin. Bu, PDF belgelerini düzenlemek için kitaplığın işlevselliğini kullanmanızı sağlayacaktır.
+A: Tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir C# projesi oluşturarak başlayın. Ardından, projenize Aspose.PDF for .NET kitaplığına bir referans ekleyin. Bu, PDF belgelerini düzenlemek için kitaplığın işlevselliğini kullanmanızı sağlayacaktır.
 
-#### S: Bu öğreticiyi kullanarak belirli bir metnin etrafına dikdörtgenler çizebilir miyim?
+#### S: Bu eğitimi kullanarak belirli bir metnin etrafına dikdörtgenler çizebilir miyim?
 
-C: Evet, eğitim, bir PDF belgesindeki belirli metin bölümlerinin etrafına dikdörtgenler çizmeye odaklanıyor. Düzenli ifadeler kullanarak istenen metnin nasıl bulunacağını, tanımlanan metin bölümlerinin etrafında dikdörtgenlerin nasıl oluşturulacağını ve değiştirilen PDF'nin nasıl kaydedileceğini gösterir.
+C: Evet, eğitim bir PDF belgesindeki belirli metin bölümlerinin etrafına dikdörtgenler çizmeye odaklanır. Düzenli ifadeler kullanarak istenen metni nasıl bulacağınızı, tanımlanan metin bölümlerinin etrafına dikdörtgenler nasıl oluşturacağınızı ve değiştirilmiş PDF'i nasıl kaydedeceğinizi gösterir.
 
-#### S: Aramak istediğim metni nasıl belirleyebilirim ve etrafına dikdörtgenler çizebilirim?
+#### S: Aramak istediğim metni nasıl belirleyebilirim ve etrafına dikdörtgenler nasıl çizebilirim?
 
- C: Aramak istediğiniz metni belirtmek ve etrafına dikdörtgenler çizmek için bir`TextFragmentAbsorber` kullanarak nesneyi seçin ve desenini ayarlayın.`Text` parametre. Varsayılan deseni değiştir`@"[\S]+"` öğreticinin kodunda istediğiniz normal ifade düzeniyle.
+ A: Aramak istediğiniz metni belirtmek ve etrafına dikdörtgenler çizmek için bir`TextFragmentAbsorber` nesneyi seçin ve desenini kullanarak ayarlayın`Text` parametre. Varsayılan deseni değiştir`@"[\S]+"` İstediğiniz düzenli ifade kalıbını kullanarak eğitimin koduna yazın.
 
-#### S: Metin için normal ifade aramasını nasıl etkinleştiririm?
+#### S: Metin için düzenli ifade aramasını nasıl etkinleştiririm?
 
- C: Normal ifade araması, bir`TextSearchOptions` nesne ve değerini ayarlama`true` . Bu nesneyi şuraya atayın:`TextSearchOptions` mülkiyeti`TextFragmentAbsorber` misal. Bu, metin araması sırasında normal ifade modelinin kullanılmasını sağlar.
+ A: Düzenli ifade araması, bir`TextSearchOptions` nesne ve değerini ayarlama`true` Bu nesneyi şuraya atayın:`TextSearchOptions` mülkiyeti`TextFragmentAbsorber` örnek. Bu, metin araması sırasında düzenli ifade deseninin kullanılmasını sağlar.
 
-#### S: Bulunan metnin etrafına nasıl dikdörtgenler çizebilirim?
+#### S: Bulunan metnin etrafına nasıl dikdörtgen çizebilirim?
 
- C: Metin parçalarını tanımladıktan sonra`TextFragmentAbsorber` , öğretici bu segmentler arasında yineleme yapmak için bir döngü sağlar. Eğitimde, her metin bölümü için, metin bölümünün etrafında, aşağıdakileri kullanarak nasıl bir dikdörtgen oluşturulacağı gösterilmektedir:`DrawBox` yöntemini seçin ve dikdörtgenin görünümünü belirtin.
+ A: Metin bölümlerini kullanarak tanımladıktan sonra`TextFragmentAbsorber` , öğretici bu segmentler arasında yineleme yapmak için bir döngü sağlar. Her metin segmenti için öğretici, bunun etrafında bir dikdörtgenin nasıl oluşturulacağını gösterir.`DrawBox` yöntemini kullanın ve dikdörtgenin görünümünü belirtin.
 
-#### S: Değiştirilen PDF'yi çizilmiş dikdörtgenlerle kaydetme adımları nelerdir?
+#### S: Çizilmiş dikdörtgenlerle düzenlenmiş PDF'i kaydetmek için hangi adımlar izlenmelidir?
 
-C: İstediğiniz metin bölümlerinin çevresine dikdörtgenler çizdikten sonra`Document` sınıfın`Save` Değiştirilen belgeyi kaydetme yöntemi. Eğitimin örnek kodu, düzenlenen PDF'nin nasıl kaydedileceğini ve bir başarı mesajının nasıl görüntüleneceğini gösterir.
+A: İstenilen metin parçalarının etrafına dikdörtgenler çizdikten sonra,`Document` sınıfın`Save` Değiştirilen belgeyi kaydetme yöntemi. Eğitimin örnek kodu, düzenlenen PDF'nin nasıl kaydedileceğini ve bir başarı mesajının nasıl görüntüleneceğini gösterir.
 
 #### S: Çizilen dikdörtgenlerin görünümünü özelleştirebilir miyim?
 
- C: Evet, çizilen dikdörtgenlerin görünümünü özelleştirebilirsiniz. Öğreticinin örnek kodunda,`DrawBox` Dikdörtgen oluşturmak için yöntem kullanılır. Çizilen dikdörtgenlerin görünümünü özelleştirmek için renk, stil ve kalınlık gibi özellikleri değiştirebilirsiniz.
+ A: Evet, çizilen dikdörtgenlerin görünümünü özelleştirebilirsiniz. Eğitimin örnek kodunda,`DrawBox` yöntemi dikdörtgenler oluşturmak için kullanılır. Çizilen dikdörtgenlerin görünümünü özelleştirmek için renk, stil ve kalınlık gibi özellikleri değiştirebilirsiniz.

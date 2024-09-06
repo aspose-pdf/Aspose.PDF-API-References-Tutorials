@@ -26,7 +26,7 @@ Aspose.PDF för Java är ett robust bibliotek som låter dig manipulera PDF-doku
 
 ### Steg 1: Konfigurera utvecklingsmiljön
 
-Innan vi dyker in i koden, låt oss se till att du har de nödvändiga verktygen på plats. Du kommer att behöva:
+Innan vi dyker in i koden, låt oss se till att du har de nödvändiga verktygen på plats. Du behöver:
 
 - Java Development Kit (JDK)
 - Aspose.PDF för Java-bibliotek

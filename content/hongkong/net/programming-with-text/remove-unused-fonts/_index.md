@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-text/remove-unused-fonts/
 
 ## 第 1 步：設定文檔目錄
 
-首先，您需要設定 PDF 檔案所在目錄的路徑。代替`"YOUR DOCUMENT DIRECTORY"`在裡面`dataDir`變數包含 PDF 檔案的路徑。
+首先，您需要設定 PDF 檔案所在目錄的路徑。代替`"YOUR DOCUMENT DIRECTORY"`在`dataDir`變數包含 PDF 檔案的路徑。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -100,14 +100,14 @@ catch (Exception ex)
 
 A：設定文檔目錄：
 
-1. 代替`"YOUR DOCUMENT DIRECTORY"`在裡面`dataDir`變數包含 PDF 檔案所在目錄的路徑。
+1. 代替`"YOUR DOCUMENT DIRECTORY"`在`dataDir`變數包含 PDF 檔案所在目錄的路徑。
 
 #### Q：如何使用 Aspose.PDF 庫從 PDF 文件中刪除未使用的字型？
 
 答：本教學將逐步引導您完成整個過程：
 
 1. 使用以下命令開啟 PDF 文檔`Document`班級。
-2. 創建一個`TextFragmentAbsorber`對象與`TextEditOptions`設定`FontReplace.RemoveUnusedFonts`.
+2. 創建一個`TextFragmentAbsorber`對象與`TextEditOptions`設定為`FontReplace.RemoveUnusedFonts`.
 3. 接受吸收器以識別並刪除 PDF 中未使用的字體。
 4. 遍歷所有`TextFragments`並將字體設定為所需的字體。
 5. 儲存更新的 PDF 文件。

@@ -67,7 +67,7 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nImage replaced successfully.\nFile saved at " + dataDir); 
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Συγχαρητήρια ! Αντικαταστήσατε με επιτυχία μια εικόνα σε ένα έγγραφο PDF χρησιμοποιώντας το Aspose.PDF για .NET. Τώρα μπορείτε να εφαρμόσετε αυτήν τη μέθοδο στα δικά σας έργα για να επεξεργαστείτε εικόνες σε αρχεία PDF.
 

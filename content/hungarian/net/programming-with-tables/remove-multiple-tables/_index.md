@@ -62,7 +62,7 @@ Végül elmentjük a módosított PDF dokumentumot:
 pdfDocument.Save(dataDir + "Table2_out.pdf");
 ```
 
-### Példa forráskódra a Több tábla eltávolításához az Aspose.PDF segítségével a .NET-hez
+### Példa forráskód a Több tábla eltávolításához az Aspose.PDF for .NET használatával programhoz
 
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
@@ -100,7 +100,7 @@ V: Igen, az Aspose.PDF for .NET használatával eltávolíthat bizonyos tábláz
 
 #### K: Hogyan távolíthatok el táblázatokat a PDF-dokumentum több oldaláról?
 
- V: Ha a PDF-dokumentum több oldaláról szeretne táblázatokat eltávolítani, meg kell ismételnie a folyamatot minden oldalnál. A megadott példában a kód csak a második oldalról távolítja el a táblázatokat`pdfDocument.Pages[1]` . Táblázatok eltávolításához más oldalakról, minden kívánt oldalhoz hasonló kódot használhat az oldalindex cseréjével (pl.`pdfDocument.Pages[2]`, `pdfDocument.Pages[3]`, stb).
+ V: Ha a PDF-dokumentum több oldaláról szeretne táblázatokat eltávolítani, meg kell ismételnie a folyamatot minden oldalnál. A megadott példában a kód csak a második oldalról távolítja el a táblázatokat`pdfDocument.Pages[1]` . Táblázatok eltávolításához más oldalakról, minden kívánt oldalhoz hasonló kódot használhat az oldalindex cseréjével (pl.`pdfDocument.Pages[2]`, `pdfDocument.Pages[3]`és így tovább).
 
 #### K: Mi történik, ha megpróbálok eltávolítani egy olyan táblát, amely nem létezik a megadott oldalon?
 

@@ -101,7 +101,7 @@ using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew
 }
 ```
 
-A je to! Úspěšně jste extrahovali informace o podpisu pomocí Aspose.PDF pro .NET. Neváhejte a integrujte tento kód do svých vlastních aplikací nebo jej upravte podle svých potřeb.
+To je vše! Úspěšně jste extrahovali informace o podpisu pomocí Aspose.PDF pro .NET. Neváhejte a integrujte tento kód do svých vlastních aplikací nebo jej upravte podle svých potřeb.
 
 ### Ukázkový zdrojový kód pro extrahování informací o podpisu pomocí Aspose.PDF pro .NET 
 ```csharp

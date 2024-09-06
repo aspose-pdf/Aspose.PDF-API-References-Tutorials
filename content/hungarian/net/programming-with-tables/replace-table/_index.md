@@ -123,7 +123,7 @@ V: Ha az új tábla az eredeti táblától eltérő számú oszlopot tartalmaz, 
 
 #### K: Cserélhetek egy táblázatot egy adott oldalon, az első oldalon kívül?
 
- V: Igen, lecserélhet egy táblázatot egy adott oldalon, amely nem az első oldal, ha módosítja az oldalindexet a`pdfDocument.Pages[]` metódushívás a`AbsorbedTable` tárgy. Például a második oldalon lévő táblázat cseréjéhez használja`pdfDocument.Pages[2]`.
+ V: Igen, lecserélhet egy táblázatot egy adott oldalon, amely nem az első oldal, ha módosítja az oldalindexet a`pdfDocument.Pages[]` metódushívás a`AbsorbedTable` objektum. Például a második oldalon lévő táblázat cseréjéhez használja`pdfDocument.Pages[2]`.
 
 #### K: Testreszabhatom az új táblázat megjelenését, például hozzáadhatok háttérszínt vagy szegélyeket?
 

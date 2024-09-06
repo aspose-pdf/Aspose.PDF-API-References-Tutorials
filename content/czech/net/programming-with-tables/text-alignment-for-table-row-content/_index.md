@@ -126,7 +126,7 @@ gratuluji! Nyní jste se naučili, jak zarovnat obsah řádku v tabulce v dokume
 
 #### Otázka: Mohu na jednotlivé buňky v tabulce použít různé styly a barvy ohraničení?
 
- Odpověď: Ano, na jednotlivé buňky v tabulce můžete použít různé styly a barvy ohraničení. Chcete-li upravit ohraničení pro konkrétní buňku, nastavte`cell.Border` nemovitost na novou`BorderInfo`objekt s požadovaným nastavením, jako jsou strany okraje, šířka a barva.
+ Odpověď: Ano, na jednotlivé buňky v tabulce můžete použít různé styly a barvy ohraničení. Chcete-li upravit ohraničení pro konkrétní buňku, nastavte`cell.Border` nemovitosti na novou`BorderInfo`objekt s požadovaným nastavením, jako jsou strany okraje, šířka a barva.
 
 #### Otázka: Jak mohu upravit vertikální zarovnání obsahu tabulky v buňkách?
 
@@ -138,4 +138,4 @@ gratuluji! Nyní jste se naučili, jak zarovnat obsah řádku v tabulce v dokume
 
 #### Otázka: Jak mohu nastavit barvu pozadí pro konkrétní buňky nebo celou tabulku?
 
- A: Chcete-li nastavit barvu pozadí pro konkrétní buňky nebo celou tabulku, použijte`BackgroundColor` vlastnictvím`Cell` nebo`Table` objekt. Chcete-li například nastavit barvu pozadí buňky, použijte`cell.BackgroundColor = Aspose.Pdf.Color.LightBlue`.
+ A: Chcete-li nastavit barvu pozadí pro konkrétní buňky nebo celou tabulku, použijte`BackgroundColor` majetek z`Cell` nebo`Table` objekt. Chcete-li například nastavit barvu pozadí buňky, použijte`cell.BackgroundColor = Aspose.Pdf.Color.LightBlue`.

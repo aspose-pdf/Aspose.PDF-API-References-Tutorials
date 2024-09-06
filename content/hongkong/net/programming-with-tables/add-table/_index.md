@@ -7,7 +7,7 @@ type: docs
 weight: 40
 url: /zh-hant/net/programming-with-tables/add-table/
 ---
-Aspose.PDF for .NET 是一個功能強大的程式庫，可讓開發人員以程式設計方式建立、操作和轉換 PDF 文件。在本教學中，我們將引導您完成使用 Aspose.PDF for .NET 在 PDF 檔案中新增表格的過程。我們將解釋所提供的程式碼片段的每個步驟，並提供全面的指南，以幫助您理解和在自己的專案中實現該功能。
+Aspose.PDF for .NET 是一個功能強大的程式庫，可讓開發人員以程式設計方式建立、操作和轉換 PDF 文件。在本教學中，我們將引導您完成使用 Aspose.PDF for .NET 在 PDF 檔案中新增表格的過程。我們將解釋所提供的程式碼片段的每個步驟，並提供全面的指南來幫助您理解和在自己的專案中實現該功能。
 
 ## 介紹
 

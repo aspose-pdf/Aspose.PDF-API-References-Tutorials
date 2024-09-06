@@ -43,7 +43,7 @@ ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(1
 
 ## 5. lépés: Adjon hozzá lehetőségeket a legördülő listához
 
-Adja hozzá a kívánt beállításokat a legördülő listához:
+Adja hozzá a kívánt opciókat a legördülő listához:
 
 ```csharp
 combo.AddOption("Red");
@@ -101,7 +101,7 @@ catch (Exception ex)
 
 ## Következtetés
 
-Ebben az oktatóanyagban megtanultuk, hogyan hozhat létre kombinált listát az Aspose.PDF for .NET használatával. Ha követi ezeket a lépéseket, az Aspose.PDF használatával egyszerűen hozzáadhat egy kombinált listát PDF-dokumentumaihoz.
+Ebben az oktatóanyagban megtanultuk, hogyan hozhat létre kombinált listát az Aspose.PDF for .NET használatával. Ha követi ezeket a lépéseket, az Aspose.PDF használatával könnyedén hozzáadhat egy kombinált listát PDF-dokumentumaihoz.
 
 ### GYIK
 

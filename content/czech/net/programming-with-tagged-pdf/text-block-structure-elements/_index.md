@@ -58,7 +58,7 @@ Získali jsme prvek kořenové struktury dokumentu PDF.
 Nyní do našeho PDF dokumentu přidáme nadpisy různých úrovní a tagované odstavce.
 
 ```csharp
-// Vytvořte záhlaví různých úrovní
+// Vytvářejte záhlaví různých úrovní
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 HeaderElement h2 = taggedContent.CreateHeaderElement(2);
 HeaderElement h3 = taggedContent.CreateHeaderElement(3);
@@ -99,7 +99,7 @@ Do kořenové struktury dokumentu PDF jsme přidali nadpisy různých úrovní a
 Nyní, když jsme dokončili úpravy dokumentu PDF, uložme jej do souboru.
 
 ```csharp
-// Uložte tagovaný dokument PDF
+// Uložte označený dokument PDF
 document.Save(dataDir + "ElementsDeStructureDeBlocsDeTexte.pdf");
 ```
 

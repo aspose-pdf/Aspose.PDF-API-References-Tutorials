@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-stamps-and-watermarks/extract-text-from-stamp
 
 ## 第 2 步：載入 PDF 文檔
 
-第一步是將現有的 PDF 文件載入到您的專案中。就是這樣：
+第一步是將現有的 PDF 文件載入到您的專案中。方法如下：
 
 ```csharp
 //文檔目錄的路徑。
@@ -32,7 +32,7 @@ Document doc = new Document(dataDir + "test.pdf");
 
 ## 步驟 3：從圖章註釋中擷取文本
 
-現在您已經加載了 PDF 文檔，您可以從特定圖章註釋中提取文字。就是這樣：
+現在您已經加載了 PDF 文檔，您可以從特定圖章註釋中提取文字。方法如下：
 
 ```csharp
 //檢索緩衝區註釋
@@ -41,7 +41,7 @@ StampAnnotation annot = doc.Pages[1].Annotations[3] as StampAnnotation;
 //建立文字吸收器
 TextAbsorber ta = new TextAbsorber();
 
-//訪問註釋的外觀
+//存取註釋的外觀
 XForm ap = annot. Appearance["N"];
 ta.Visit(ap);
 
@@ -70,9 +70,9 @@ Console.WriteLine(ta.Text);
 
 ### 從圖章註釋中提取文本的常見問題解答
 
-#### Q：什麼是 PDF 文件中的圖章註釋？為什麼需要從中提取文字？
+#### Q：什麼是 PDF 文件中的圖章註釋？
 
-答：PDF 文件中的圖章註釋是一種圖形元素，可用於提供附加資訊，例如浮水印或橡皮圖章。當您想要從這些註釋中檢索基於文字的內容（其中可能包括註釋、標籤或其他文字資訊）時，從圖章註釋中提取文字非常有用。
+答：PDF 文件中的圖章註釋是一種圖形元素，可用於提供附加資訊，例如浮水印或橡皮圖章。當您想要從這些註釋中檢索基於文字的內容（可能包括註釋、標籤或其他文字資訊）時，從圖章註釋中提取文字非常有用。
 
 #### Q：提供的 C# 原始碼如何從圖章註解中提取文字？
 

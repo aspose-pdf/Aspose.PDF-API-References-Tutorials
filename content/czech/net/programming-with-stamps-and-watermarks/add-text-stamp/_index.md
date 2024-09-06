@@ -152,7 +152,7 @@ Odpověď: Ano, tuto metodu můžete použít na existující dokumenty PDF a p�
 
 #### Otázka: Jak mohu zajistit, aby textové razítko nezakrývalo základní obsah dokumentu PDF?
 
- Odpověď: Při přidávání textového razítka dbejte na jeho umístění, abyste zajistili, že nebude bránit kritickým informacím nebo negativně neovlivňovat čitelnost dokumentu. Můžete upravit`XIndent` a`YIndent` vlastnosti pro správné umístění textového razítka.
+Odpověď: Při přidávání textového razítka dbejte na jeho umístění, abyste zajistili, že nebude bránit kritickým informacím nebo negativně neovlivňovat čitelnost dokumentu. Můžete upravit`XIndent` a`YIndent` vlastnosti pro správné umístění textového razítka.
 
 #### Otázka: Mohu tuto metodu použít k přidání jiných razítek než textu, jako jsou obrázky nebo loga?
 

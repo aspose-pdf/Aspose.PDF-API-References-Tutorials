@@ -1,21 +1,21 @@
 ---
 title: Sprawdź poprawność pliku PDF
 linktitle: Sprawdź poprawność pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak sprawdzić poprawność pliku PDF za pomocą Aspose.PDF dla .NET. Sprawdź jego zgodność ze standardami i wygeneruj raport z walidacji.
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak sprawdzić poprawność pliku PDF za pomocą Aspose.PDF dla .NET. Sprawdź jego zgodność ze standardami i wygeneruj raport walidacyjny.
 type: docs
 weight: 240
 url: /pl/net/programming-with-tagged-pdf/validate-pdf/
 ---
-tym samouczku przeprowadzimy Cię przez proces sprawdzania poprawności pliku PDF przy użyciu Aspose.PDF dla .NET. Postępuj zgodnie z poniższymi instrukcjami, aby zrozumieć, jak używać dostarczonego kodu źródłowego C# do sprawdzania poprawności pliku PDF i generowania raportu z walidacji.
+tym samouczku przeprowadzimy Cię przez proces walidacji pliku PDF za pomocą Aspose.PDF dla .NET. Postępuj zgodnie z poniższymi instrukcjami, aby dowiedzieć się, jak używać dostarczonego kodu źródłowego C# do walidacji pliku PDF i generowania raportu walidacji.
 
 ## Krok 1: Konfigurowanie środowiska
 
-Zanim zaczniesz, upewnij się, że skonfigurowałeś środowisko programistyczne do korzystania z Aspose.PDF dla .NET. Obejmuje to instalację biblioteki Aspose.PDF i skonfigurowanie projektu tak, aby się do niej odwoływał.
+Zanim zaczniesz, upewnij się, że skonfigurowałeś środowisko programistyczne do używania Aspose.PDF dla .NET. Obejmuje to zainstalowanie biblioteki Aspose.PDF i skonfigurowanie projektu, aby się do niej odwoływał.
 
 ## Krok 2: Przygotowanie dokumentu PDF
 
-Umieść plik PDF do sprawdzenia w określonym katalogu. Pamiętaj, aby dostosować ścieżkę pliku w kodzie źródłowym, korzystając z własnego katalogu dokumentów.
+Umieść plik PDF do walidacji w określonym katalogu. Upewnij się, że dostosowałeś ścieżkę pliku w kodzie źródłowym, używając własnego katalogu docs.
 
 ```csharp
 // Ścieżka do katalogu dokumentów.
@@ -24,18 +24,18 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 // Ścieżka pliku wejściowego PDF
 string inputFileName = dataDir + "StructureElements.pdf";
 
-// Ścieżka pliku wyjściowego raportu z walidacji
+// Ścieżka do pliku wyjściowego raportu walidacyjnego
 string outputLogName = dataDir + "ua-20.xml";
 ```
 
-Upewnij się, że plik PDF, który ma zostać zweryfikowany, jest poprawnie określony w kodzie źródłowym.
+Upewnij się, że plik PDF, który ma zostać sprawdzony, jest poprawnie określony w kodzie źródłowym.
 
-## Krok 3: Walidacja pliku PDF
+## Krok 3: Walidacja PDF
 
-W tym kroku użyjemy Aspose.PDF dla .NET do sprawdzenia poprawności określonego dokumentu PDF i wygenerowania raportu z walidacji.
+W tym kroku użyjemy Aspose.PDF dla .NET w celu sprawdzenia poprawności określonego dokumentu PDF i wygenerowania raportu z sprawdzenia poprawności.
 
 ```csharp
-//Otwórz dokument PDF
+// Otwórz dokument PDF
 using (var document = new Aspose.Pdf.Document(inputFileName))
 {
 // Sprawdź poprawność dokumentu PDF
@@ -43,9 +43,9 @@ bool isValid = document.Validate(outputLogName, Aspose.Pdf.PdfFormat.PDF_UA_1);
 }
 ```
 
-Otworzyliśmy dokument PDF i sprawdziliśmy jego format za pomocą Aspose.PDF dla .NET. Wynik walidacji zostanie zapisany w określonym pliku raportu.
+Otworzyliśmy dokument PDF i sprawdziliśmy jego format za pomocą Aspose.PDF dla .NET. Wynik sprawdzenia zostanie zapisany w określonym pliku raportu.
 
-### Przykładowy kod źródłowy dla Walidacji PDF przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Walidacja pliku PDF przy użyciu Aspose.PDF dla platformy .NET 
 ```csharp
 
 // Ścieżka do katalogu dokumentów.
@@ -62,38 +62,38 @@ using (var document = new Aspose.Pdf.Document(inputFileName))
 
 ## Wniosek
 
-tym samouczku nauczyliśmy się używać Aspose.PDF dla .NET do sprawdzania poprawności dokumentu PDF i generowania raportu z walidacji. Walidacja pliku PDF pozwala upewnić się, że jest on zgodny ze standardami i gwarantuje jego dostępność. Użyj tych funkcji, aby poprawić jakość swoich dokumentów PDF.
+tym samouczku nauczyliśmy się, jak używać Aspose.PDF dla .NET do walidacji dokumentu PDF i generowania raportu walidacyjnego. Walidacja pliku PDF pozwala upewnić się, że jest on zgodny ze standardami i gwarantuje jego dostępność. Użyj tych funkcji, aby poprawić jakość swoich dokumentów PDF.
 
-### Często zadawane pytania
+### Najczęściej zadawane pytania
 
-#### P: Jaki jest cel tego samouczka dotyczącego sprawdzania poprawności pliku PDF przy użyciu Aspose.PDF dla .NET?
+#### P: Jaki jest cel tego samouczka dotyczącego walidacji pliku PDF za pomocą Aspose.PDF dla platformy .NET?
 
-Odp.: Głównym celem tego samouczka jest poprowadzenie Cię przez proces sprawdzania poprawności pliku PDF przy użyciu Aspose.PDF dla .NET. Postępując zgodnie z dostarczonymi instrukcjami i korzystając z dostarczonego kodu źródłowego C#, możesz mieć pewność, że Twój dokument PDF jest zgodny z określonymi standardami i wygenerować raport z walidacji.
+A: Głównym celem tego samouczka jest przeprowadzenie Cię przez proces walidacji pliku PDF przy użyciu Aspose.PDF dla .NET. Postępując zgodnie z podanymi instrukcjami i używając podanego kodu źródłowego C#, możesz upewnić się, że Twój dokument PDF spełnia określone standardy i wygenerować raport walidacyjny.
 
-#### P: Jakie są wymagania wstępne sprawdzania poprawności pliku PDF przy użyciu Aspose.PDF dla .NET?
+#### P: Jakie są wymagania wstępne dotyczące walidacji pliku PDF za pomocą Aspose.PDF dla platformy .NET?
 
-O: Zanim zaczniesz, upewnij się, że skonfigurowałeś środowisko programistyczne do korzystania z Aspose.PDF dla .NET. Obejmuje to zainstalowanie biblioteki Aspose.PDF i skonfigurowanie projektu tak, aby się do niej odwoływał.
+A: Zanim zaczniesz, upewnij się, że skonfigurowałeś środowisko programistyczne do używania Aspose.PDF dla .NET. Wiąże się to z zainstalowaniem biblioteki Aspose.PDF i skonfigurowaniem projektu tak, aby się do niej odwoływał.
 
-#### P: Jak przygotować dokument PDF do sprawdzenia przy użyciu Aspose.PDF dla .NET?
+#### P: Jak przygotować dokument PDF do walidacji za pomocą Aspose.PDF dla .NET?
 
-Odp.: Musisz umieścić plik PDF, który chcesz sprawdzić, w określonym katalogu. Dostosuj ścieżkę pliku w kodzie źródłowym, aby wskazywała dokument PDF. Samouczek zawiera niezbędny kod źródłowy i wskazówki.
+A: Musisz umieścić plik PDF, który chcesz zweryfikować, w określonym katalogu. Dostosuj ścieżkę pliku w kodzie źródłowym, aby wskazywała na dokument PDF. Samouczek zawiera niezbędny kod źródłowy i wskazówki.
 
-#### P: Na czym polega proces sprawdzania poprawności pliku PDF przy użyciu Aspose.PDF dla .NET?
+#### P: Na czym polega proces walidacji plików PDF przy użyciu Aspose.PDF dla platformy .NET?
 
-Odp.: Samouczek pokazuje, jak używać Aspose.PDF dla .NET do otwierania i sprawdzania poprawności określonego dokumentu PDF. Proces walidacji gwarantuje, że plik PDF jest zgodny z określonym standardem (w tym przypadku PDF/UA-1). Wynik walidacji zapisywany jest w raporcie z walidacji.
+A: W tym samouczku pokazano, jak używać Aspose.PDF dla .NET do otwierania i walidacji określonego dokumentu PDF. Proces walidacji zapewnia zgodność pliku PDF ze standardem (w tym przypadku PDF/UA-1). Wynik walidacji jest przechowywany w raporcie walidacji.
 
-#### P: Jak mogę wygenerować raport z walidacji dla dokumentu PDF przy użyciu Aspose.PDF dla .NET?
+#### P: W jaki sposób mogę wygenerować raport walidacyjny dla dokumentu PDF, korzystając z Aspose.PDF dla platformy .NET?
 
- O: Dostarczone przykłady kodu źródłowego C# pokazują, jak otworzyć dokument PDF, sprawdzić go za pomocą Aspose.PDF dla .NET i wygenerować raport z walidacji. The`Validate` W tym celu stosuje się metodę.
+ A: Dostarczone przykłady kodu źródłowego C# pokazują, jak otworzyć dokument PDF, sprawdzić jego poprawność przy użyciu Aspose.PDF dla .NET i wygenerować raport walidacyjny.`Validate` W tym celu stosuje się metodę.
 
-#### P: Jakie jest znaczenie sprawdzania poprawności pliku PDF i generowania raportu z walidacji?
+#### P: Jakie znaczenie ma walidacja pliku PDF i generowanie raportu walidacyjnego?
 
-O: Sprawdzanie poprawności dokumentu PDF gwarantuje, że jest on zgodny ze standardami i wytycznymi, takimi jak PDF/UA, które skupiają się szczególnie na dostępności. Raport z walidacji dostarcza cennych informacji na temat wszelkich problemów lub obszarów niezgodności w dokumencie PDF.
+A: Walidacja dokumentu PDF zapewnia, że jest on zgodny ze standardami i wytycznymi, takimi jak PDF/UA, który jest specjalnie ukierunkowany na dostępność. Raport walidacyjny dostarcza cennych informacji o wszelkich problemach lub obszarach niezgodności w dokumencie PDF.
 
-#### P: Czy mogę dostosować proces walidacji lub określić inne standardy walidacji przy użyciu Aspose.PDF dla .NET?
+#### P: Czy mogę dostosować proces walidacji lub określić różne standardy walidacji przy użyciu Aspose.PDF dla .NET?
 
-O: Tak, możesz dostosować proces walidacji, wybierając różne standardy walidacji, takie jak PDF/A lub PDF/X, oraz konfigurując dodatkowe opcje walidacji. Dostarczony kod źródłowy C# koncentruje się na sprawdzaniu poprawności plików PDF/UA, ale możesz zapoznać się z oficjalną dokumentacją, aby uzyskać więcej opcji.
+A: Tak, możesz dostosować proces walidacji, wybierając różne standardy walidacji, takie jak PDF/A lub PDF/X, i konfigurując dodatkowe opcje walidacji. Dostarczony kod źródłowy C# koncentruje się na walidacji PDF/UA, ale możesz przejrzeć oficjalną dokumentację, aby uzyskać więcej opcji.
 
-#### P: Jak mogę zinterpretować i wykorzystać raport walidacyjny wygenerowany przez Aspose.PDF dla .NET?
+#### P: W jaki sposób mogę zinterpretować i wykorzystać raport walidacyjny wygenerowany przez Aspose.PDF dla platformy .NET?
 
-Odpowiedź: Raport z walidacji zawiera szczegółowe informacje o wszelkich błędach i ostrzeżeniach związanych z walidacją w dokumencie PDF. Pomaga zidentyfikować i rozwiązać problemy związane z dostępnością i zgodnością. Możesz przejrzeć raport, aby wprowadzić niezbędne ulepszenia.
+A: Raport walidacyjny zawiera szczegółowe informacje o wszelkich błędach walidacyjnych lub ostrzeżeniach w dokumencie PDF. Pomaga zidentyfikować i rozwiązać problemy związane z dostępnością i zgodnością. Możesz przejrzeć raport, aby wprowadzić niezbędne ulepszenia.

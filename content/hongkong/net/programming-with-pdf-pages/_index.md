@@ -25,7 +25,7 @@ Aspose.PDF for .NET 的「PDF 頁面程式設計」文件提供了逐步教學�
 | [取得 PDF 屬性](./get-properties/) | 使用 Aspose.PDF for .NET 取得 PDF 屬性（例如框尺寸和旋轉）的逐步指南。 |  
 | [將圖像設定為 PDF 文件中的頁面背景](./image-as-background/) | 使用 Aspose.PDF for .NET 將影像設定為 PDF 檔案中的頁面背景的逐步指南。 |  
 | [在 PDF 檔案中插入空白頁](./insert-empty-page/) | 使用 Aspose.PDF for .NET 在 PDF 檔案中插入空白頁面的逐步指南。輕鬆個性化您的 PDF 檔案。 |  
-| [在最後插入空白頁](./insert-empty-page-at-end/) | 使用 Aspose.PDF for .NET 在 PDF 文件末尾插入空白頁面的逐步指南。簡單又快速！ |  
+| [在最後插入空白頁](./insert-empty-page-at-end/) | 使用 Aspose.PDF for .NET 在 PDF 文件末尾插入空白頁的逐步指南。簡單又快速！ |  
 | [拆分為頁面](./split-to-pages/) | 使用 Aspose.PDF for .NET 將 PDF 文件分割為單獨頁面的逐步指南。 |  
 | [更新 PDF 頁面尺寸](./update-dimensions/) | 使用 Aspose.PDF for .NET 更新 PDF 頁面尺寸的逐步指南。根據您的需求檢查尺寸。 |  
 | [縮放至 PDF 文件中的頁面內容](./zoom-to-page-contents/) | 使用 Aspose.PDF for .NET 縮放 PDF 檔案中的頁面內容的逐步指南。根據您的具體需求增強您的 PDF 文件。 |  

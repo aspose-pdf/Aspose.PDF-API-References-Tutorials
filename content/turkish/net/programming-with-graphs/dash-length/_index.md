@@ -1,15 +1,15 @@
 ---
 title: Çizgi Uzunluğu
 linktitle: Çizgi Uzunluğu
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile tirelerin uzunluğunu nasıl ayarlayacağınızı öğrenin. Çizgi desenlerini özelleştirmek için adım adım kılavuz.
+second_title: Aspose.PDF for .NET API Referansı
+description: .NET için Aspose.PDF ile çizgi uzunluğunun nasıl ayarlanacağını öğrenin. Çizgi desenlerini özelleştirmek için adım adım kılavuz.
 type: docs
 weight: 70
 url: /tr/net/programming-with-graphs/dash-length/
 ---
-Bu eğitimde, Aspose.PDF for .NET'i kullanarak tirelerin uzunluğunu ayarlamak için aşağıdaki C# kaynak kodunu adım adım anlatacağız.
+Bu eğitimde, .NET için Aspose.PDF kullanarak çizgi uzunluğunu ayarlamak için aşağıdaki C# kaynak kodunu adım adım inceleyeceğiz.
 
-Başlamadan önce Aspose.PDF kütüphanesini kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. Ayrıca temel C# programlama bilgisine sahip olmak.
+Başlamadan önce Aspose.PDF kütüphanesini yüklediğinizden ve geliştirme ortamınızı ayarladığınızdan emin olun. Ayrıca C# programlamanın temel bilgisine sahip olun.
 
 ## Adım 1: Belge Dizini Kurulumu
 
@@ -19,27 +19,27 @@ Sağlanan kaynak kodunda, ortaya çıkan PDF dosyasını kaydetmek istediğiniz 
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Adım 2: Bir Belge Nesnesinin Örneklenmesi ve Sayfa Ekleme
+## Adım 2: Bir Belge Nesnesi Oluşturma ve Bir Sayfa Ekleme
 
-Document sınıfının bir örneğini oluşturup bu belgeye bir sayfa ekliyoruz.
+Document sınıfının bir örneğini oluşturuyoruz ve bu belgeye bir sayfa ekliyoruz.
 
 ```csharp
 Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## Adım 3: Grafik Nesnesi Oluşturma ve bunu sayfaya ekleme
+## Adım 3: Bir Grafik Nesnesi Oluşturma ve Sayfaya Ekleme
 
-Belirtilen boyutlara sahip bir Graph nesnesi oluşturup onu sayfanın paragraf koleksiyonuna ekliyoruz.
+Belirtilen boyutlarda bir Graph nesnesi oluşturup sayfanın paragraf koleksiyonuna ekliyoruz.
 
 ```csharp
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 page.Paragraphs.Add(canvas);
 ```
 
-## Adım 4: Çizgi Nesnesi Oluşturma ve Yapılandırma
+## Adım 4: Bir Çizgi Nesnesi Oluşturma ve Yapılandırma
 
-Belirlenen koordinatlara sahip bir Line nesnesi oluşturup çizgilerin rengini ve uzunluğunu yapılandırıyoruz.
+Belirtilen koordinatlarla bir Line nesnesi oluşturuyoruz ve çizgilerin rengini ve uzunluğunu yapılandırıyoruz.
 
 ```csharp
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { 100, 100, 200, 100 });
@@ -48,7 +48,7 @@ line.GraphInfo.DashArray = new int[] { 0, 1, 0 };
 line.GraphInfo.DashPhase = 1;
 ```
 
-## Adım 5: Çizgiyi Grafik Nesnesine Ekleme
+## Adım 5: Grafik Nesnesine Çizgi Ekleme
 
 Çizgiyi Graph nesnesinin şekil koleksiyonuna ekliyoruz.
 
@@ -64,29 +64,29 @@ Son olarak ortaya çıkan PDF dosyasını "DashLength_out.pdf" ismiyle belirtile
 doc.Save(dataDir + "DashLength_out.pdf");
 ```
 
-### Aspose.PDF for .NET kullanarak Çizgi Uzunluğu için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanılarak Dash Uzunluğu için örnek kaynak kodu 
 
 ```csharp
 
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Belge örneğini oluştur
+// Belge örneğini örneklendir
 Document doc = new Document();
 // Belge nesnesinin sayfa koleksiyonuna sayfa ekle
 Page page = doc.Pages.Add();
-// Belirli boyutlara sahip Çizim nesnesi oluşturma
+// Belirli boyutlara sahip Çizim nesnesi oluşturun
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
-// Sayfa örneğinin paragraf koleksiyonuna çizim nesnesi ekleme
+// Sayfa örneğinin paragraf koleksiyonuna çizim nesnesi ekle
 page.Paragraphs.Add(canvas);
 // Çizgi nesnesi oluştur
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { 100, 100, 200, 100 });
-// Çizgi nesnesinin rengini ayarla
+// Çizgi nesnesi için renk ayarla
 line.GraphInfo.Color = Aspose.Pdf.Color.Red;
-// Çizgi nesnesi için çizgi dizisini belirtin
+// Satır nesnesi için çizgi dizisini belirtin
 line.GraphInfo.DashArray = new int[] { 0, 1, 0 };
-// Line örneği için kısa çizgi aşamasını ayarlayın
+// Çizgi örneği için çizgi aşamasını ayarlayın
 line.GraphInfo.DashPhase = 1;
-// Çizim nesnesinin şekiller koleksiyonuna çizgi ekleme
+// Çizim nesnesinin şekiller koleksiyonuna çizgi ekle
 canvas.Shapes.Add(line);
 dataDir = dataDir + "DashLength_out.pdf";
 // PDF belgesini kaydet
@@ -97,30 +97,30 @@ Console.WriteLine("\nLength dashed successfully in black and white.\nFile saved 
 
 ## Çözüm
 
-Bu eğitimde Aspose.PDF for .NET kullanarak tire uzunluğunun nasıl ayarlanacağını açıkladık. Artık bu bilgiyi PDF dosyalarınızda özel çizgi desenlerine sahip çizgiler oluşturmak için kullanabilirsiniz.
+Bu eğitimde, .NET için Aspose.PDF kullanarak çizgi uzunluğunun nasıl ayarlanacağını açıkladık. Şimdi bu bilgiyi kullanarak PDF dosyalarınızda özel çizgi desenlerine sahip çizgiler oluşturabilirsiniz.
 
 ## SSS
 
 #### S: Bu eğitimin amacı nedir?
 
-C: Bu eğitimin amacı, Aspose.PDF for .NET'i kullanarak çizgilerdeki tirelerin uzunluğunu ayarlama sürecinde size rehberlik etmektir. PDF dosyalarınızda özel çizgi desenlerine sahip çizgiler oluşturmayı öğreneceksiniz.
+A: Bu eğitimin amacı, .NET için Aspose.PDF kullanarak çizgiler için çizgi uzunluğunu ayarlama sürecinde size rehberlik etmektir. PDF dosyalarınızda özel çizgi desenlerine sahip çizgilerin nasıl oluşturulacağını öğreneceksiniz.
 
-#### S: Başlamadan önce hangi önkoşullar gereklidir?
+#### S: Başlamadan önce hangi ön koşullar gereklidir?
 
-C: Başlamadan önce Aspose.PDF kütüphanesini kurduğunuzdan ve geliştirme ortamınızı kurduğunuzdan emin olun. C# programlamaya ilişkin temel bir anlayış da önerilir.
+A: Başlamadan önce Aspose.PDF kütüphanesini yüklediğinizden ve geliştirme ortamınızı ayarladığınızdan emin olun. C# programlamanın temel bir anlayışına sahip olmanız da önerilir.
 
-#### S: PDF dosyasının kaydedileceği dizini nasıl belirlerim?
+#### S: PDF dosyasını kaydedeceğim dizini nasıl belirlerim?
 
-C: Ortaya çıkan PDF dosyasını kaydetmek istediğiniz dizini belirtmek için sağlanan kaynak koddaki "dataDir" değişkenini değiştirin.
+A: Elde edilen PDF dosyasını kaydetmek istediğiniz dizini belirtmek için verilen kaynak kodundaki "dataDir" değişkenini değiştirin.
 
-#### S: Özel çizgi desenlerine sahip bir çizgiyi nasıl oluşturabilirim?
+#### S: Özel çizgi desenlerine sahip bir çizgi nasıl oluştururum?
 
- C: Öğretici, bir Line nesnesi oluşturmayı ve bu nesnenin rengini, çizgi dizisini ve çizgi aşamasını yapılandırmayı gösterir.`GraphInfo` nesne. İstenilen çizgi desenini elde etmek için bu ayarları değiştirin.
+ A: Eğitimde, bir Line nesnesi oluşturma ve rengini, çizgi dizisini ve çizgi aşamasını yapılandırma gösterilmektedir.`GraphInfo` nesne. İstenilen çizgi desenini elde etmek için bu ayarları değiştirin.
 
 #### S: Çizginin rengini özelleştirebilir miyim?
 
- C: Evet, çizginin rengini ayarlayarak özelleştirebilirsiniz.`Color` mülkiyeti`GraphInfo` Çizgiyle ilişkili nesne.
+ A: Evet, çizginin rengini ayarlayarak özelleştirebilirsiniz.`Color` mülkiyeti`GraphInfo` Satır ile ilişkili nesne.
 
-#### S: Çizgi uzunluğunu ayarladıktan sonra PDF belgesini nasıl kaydedebilirim?
+#### S: Tire uzunluğunu ayarladıktan sonra PDF belgesini nasıl kaydedebilirim?
 
- C: Çizgi nesnesini istenen çizgi deseniyle yapılandırdıktan sonra, elde edilen PDF belgesini kullanarak kaydedebilirsiniz.`doc.Save(dataDir + "DashLength_out.pdf");` Sağlanan kaynak kodundaki satır.
+ A: Line nesnesini istediğiniz çizgi deseniyle yapılandırdıktan sonra, ortaya çıkan PDF belgesini kullanarak kaydedebilirsiniz.`doc.Save(dataDir + "DashLength_out.pdf");` Sağlanan kaynak kodundaki satır.

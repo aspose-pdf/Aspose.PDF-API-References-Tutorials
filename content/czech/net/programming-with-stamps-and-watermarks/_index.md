@@ -23,7 +23,7 @@ Návody Aspose.PDF "Programování s razítky a vodoznaky" pro .NET vás provedo
 | [Vyplnit text tahu v souboru PDF](./fill-stroke-text/) | Naučte se, jak snadno vyplňovat a obrysovat text v souboru PDF pomocí Aspose.PDF pro .NET. |  
 | [Získejte vodoznak ze souboru PDF](./get-watermark/) | Naučte se extrahovat vodoznaky ze souboru PDF pomocí Aspose.PDF pro .NET. |  
 | [Obrázek a číslo stránky v části Zápatí záhlaví](./image-and-page-number-in-header-footer-section/) | Zjistěte, jak přidat obrázek a číslo stránky do záhlaví a zápatí dokumentu PDF pomocí Aspose. |  
-| [Obrázek a číslo stránky v záhlaví Zápatí sekce Inline](./image-and-page-number-in-header-footer-section-inline/) | Naučte se, jak přidat obrázek a číslo stránky do záhlaví a zápatí pomocí vložených odstavců pomocí Aspose.PDF pro .NET. |  
+| [Obrázek a číslo stránky v záhlaví Zápatí v řádku](./image-and-page-number-in-header-footer-section-inline/) | Naučte se, jak přidat obrázek a číslo stránky do záhlaví a zápatí pomocí vložených odstavců pomocí Aspose.PDF pro .NET. |  
 | [Obrázek V Zápatí](./image-in-footer/) | Naučte se, jak přidat obrázek do sekce zápatí dokumentu PDF pomocí Aspose.PDF pro .NET. |  
 | [Obrázek V Záhlaví](./image-in-header/) | Naučte se, jak přidat obrázek do sekce záhlaví dokumentu PDF pomocí Aspose.PDF pro .NET. |  
 | [Číslo Stránky V Zápatí Záhlaví Pomocí Plovoucí Krabice](./page-number-in-header-footer-using-floating-box/) | Naučte se, jak přidat číslo stránky do záhlaví a zápatí dokumentu PDF pomocí Aspose.PDF pro .NET. |  

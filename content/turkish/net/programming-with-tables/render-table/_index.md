@@ -1,26 +1,26 @@
 ---
 title: Tabloyu PDF Belgesinde Oluştur
 linktitle: Tabloyu PDF Belgesinde Oluştur
-second_title: .NET API Referansı için Aspose.PDF
+second_title: Aspose.PDF for .NET API Referansı
 description: Aspose.PDF for .NET kullanarak PDF belgesinde bir tablonun nasıl görüntüleneceğini öğrenin.
 type: docs
 weight: 170
 url: /tr/net/programming-with-tables/render-table/
 ---
-Bu eğitimde, Aspose.PDF for .NET kullanarak PDF belgesinde bir tabloyu görüntülemek için size adım adım rehberlik edeceğiz. Sağlanan C# kaynak kodunu açıklayacağız ve size nasıl uygulayacağınızı göstereceğiz.
+Bu eğitimde, .NET için Aspose.PDF kullanarak PDF belgesinde bir tabloyu adım adım görüntülemenize yardımcı olacağız. Sağlanan C# kaynak kodunu açıklayacağız ve nasıl uygulayacağınızı göstereceğiz.
 
-## 1. Adım: Belgeyi oluşturma
-İlk önce yeni bir PDF belgesi oluşturacağız:
+## Adım 1: Belgenin oluşturulması
+Öncelikle yeni bir PDF belgesi oluşturacağız:
 
 ```csharp
-// Belgeler dizininin yolu
+// Belgeler dizinine giden yol
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 // Yeni bir belge oluştur
 Document doc = new Document();
 ```
 
-## 2. Adım: Sayfa kenar boşluklarını ve yönünü yapılandırma
+## Adım 2: Sayfa kenar boşluklarını ve yönlendirmeyi yapılandırma
 Daha sonra sayfa kenar boşluklarını yapılandıracağız ve yönlendirmeyi yatay moda ayarlayacağız:
 
 ```csharp
@@ -35,7 +35,7 @@ marginInfo.Bottom = 37;
 pageInfo.IsLandscape = true;
 ```
 
-## 3. Adım: Tabloyu ve sütunları oluşturma
+## Adım 3: Tablo ve sütunları oluşturma
 Şimdi bir tablo oluşturalım ve sütun genişliklerini ayarlayalım:
 
 ```csharp
@@ -43,8 +43,8 @@ Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 table. ColumnWidths = "50 100";
 ```
 
-## 4. Adım: Tabloya satır ve hücre ekleyin
-Daha sonra bir döngü kullanarak tabloya satırlar ve hücreler ekleyeceğiz:
+## Adım 4: Tabloya satırlar ve hücreler ekleyin
+Daha sonra, bir döngü kullanarak tabloya satırlar ve hücreler ekleyeceğiz:
 
 ```csharp
 for (int i = 1; i <= 120; i++)
@@ -67,7 +67,7 @@ Aspose.Pdf.Paragraphs paragraphs = curPage.Paragraphs;
 paragraphs. Add(table);
 ```
 
-## Adım 6: Tablonun yeni bir sayfada görüntülenmesi
+## Adım 6: Tabloyu yeni bir sayfada görüntüleme
 Daha sonra yeni bir tablo oluşturacağız ve tabloyu yeni bir sayfada görüntülemek için "IsInNewPage" özelliğini "true" olarak ayarlayacağız:
 
 ```csharp
@@ -86,7 +86,7 @@ paragraphs. Add(table1);
 ```
 
 ## Adım 7: PDF'yi kaydedin
-Son olarak PDF belgesini kaydediyoruz:
+Son olarak PDF dokümanını kaydediyoruz:
 
 ```csharp
 dataDir = dataDir + "IsNewPageProperty_Test_out.pdf";
@@ -95,10 +95,10 @@ doc.Save(dataDir);
 Console.WriteLine("\nTable displayed successfully on a page.\nFile saved at location: " + dataDir);
 ```
 
-### Aspose.PDF for .NET kullanan Tablo İşleme için örnek kaynak kodu
+### .NET için Aspose.PDF kullanılarak Render Tablosu için örnek kaynak kodu
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 Document doc = new Document();
@@ -139,7 +139,7 @@ for (int i = 1; i <= 10; i++)
 	cell2.Paragraphs.Add(new TextFragment("LAAGGGGGG"));
 }
 table1.IsInNewPage = true;
-// Tablo 1'i bir sonraki sayfaya taşımak istiyorum lütfen...
+// 1. tabloyu bir sonraki sayfada tutmak istiyorum lütfen...
 paragraphs.Add(table1);
 dataDir = dataDir + "IsNewPageProperty_Test_out.pdf";
 doc.Save(dataDir);
@@ -148,26 +148,26 @@ Console.WriteLine("\nTable render successfully on a page.\nFile saved at " + dat
 ```
 
 ## Çözüm
-Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF belgesinde bir tablonun nasıl görüntüleneceğini öğrendiniz. Bu adım adım kılavuz size nasıl belge oluşturacağınızı, sayfa kenar boşluklarını ve yönünü nasıl yapılandıracağınızı, tablo ekleyeceğinizi ve tabloyu yeni bir sayfada nasıl görüntüleyeceğinizi gösterdi. Artık bu bilgiyi kendi projelerinize uygulayabilirsiniz.
+Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF belgesinde tablonun nasıl görüntüleneceğini öğrendiniz. Bu adım adım kılavuz size bir belgenin nasıl oluşturulacağını, sayfa kenar boşluklarının ve yönlendirmesinin nasıl yapılandırılacağını, bir tablonun nasıl ekleneceğini ve yeni bir sayfada bir tablonun nasıl görüntüleneceğini gösterdi. Artık bu bilgiyi kendi projelerinize uygulayabilirsiniz.
 
-### PDF belgesindeki tablo oluşturmayla ilgili SSS
+### PDF belgesinde render tablosu için SSS
 
-#### S: Hücre renklerini değiştirmek veya kenarlıklar eklemek gibi yöntemlerle tablonun görünümünü nasıl değiştirebilirim?
+#### S: Tablonun görünümünü nasıl değiştirebilirim? Örneğin hücre renklerini değiştirebilir veya kenarlık ekleyebilirim?
 
-C: Tablonun görünümünü değiştirmek için tablonun çeşitli özelliklerini ayarlayabilirsiniz.`Aspose.Pdf.Table` ve hücreleri. Örneğin,`BackgroundColor` Hücrelerin arka plan rengini değiştirme özelliği. Ayrıca`Border` tablonun özelliği veya tek tek hücrelere kenarlık eklemek için. Ek olarak, tablo içeriğini değiştirerek yazı tipini, metin rengini ve hizalamasını özelleştirebilirsiniz.`TextState` arasında`TextFragment` Hücrelere eklenen nesneler.
+A: Tablonun görünümünü değiştirmek için çeşitli özellikleri ayarlayabilirsiniz.`Aspose.Pdf.Table` ve hücreleri. Örneğin, şunu ayarlayabilirsiniz:`BackgroundColor` Hücrelerin arka plan rengini değiştirme özelliği. Ayrıca,`Border` tablonun veya tek tek hücrelerin kenarlık eklemek için özelliğini özelleştirebilirsiniz. Ayrıca, tablo içeriğinin yazı tipini, metin rengini ve hizalamasını,`TextState` of'un`TextFragment` hücrelere eklenen nesneler.
 
 #### S: Tabloya üstbilgi veya altbilgi ekleyebilir miyim?
 
-C: Evet, tablonun başında veya sonunda ek satırlar oluşturarak ve hücrelerde uygun içeriği ayarlayarak tabloya üstbilgi veya altbilgi ekleyebilirsiniz. Bu belirli satırlara farklı stiller veya içerik ekleyerek üstbilgileri veya altbilgileri tablo içeriğinin geri kalanından bağımsız olarak özelleştirebilirsiniz.
+A: Evet, tablonun başında veya sonunda ek satırlar oluşturarak ve hücrelerde uygun içeriği ayarlayarak tabloya başlıklar veya altbilgiler ekleyebilirsiniz. Bu belirli satırlara farklı stiller veya içerik ekleyerek başlıkları veya altbilgileri tablonun geri kalanından bağımsız olarak özelleştirebilirsiniz.
 
 #### S: Tablonun sayfadaki konumunu nasıl kontrol edebilirim?
 
- C: Tablonun sayfadaki konumunu kontrol etmek için`MarginInfo` arasında`PageInfo` nesne.`MarginInfo`tablo için kullanılabilir alanı etkileyen sayfanın sol, sağ, üst ve alt kenar boşluklarını ayarlamanıza olanak tanır. Ayrıca şunları da kullanabilirsiniz:`PositioningType` mülkiyeti`Aspose.Pdf.Table` sayfanın içerik alanı içindeki yatay ve dikey hizalamasını kontrol etmek için.
+ A: Tablonun sayfadaki konumunu kontrol etmek için,`MarginInfo` of'un`PageInfo` nesne.`MarginInfo`sayfanın sol, sağ, üst ve alt kenar boşluklarını ayarlamanıza olanak tanır; bu da tablo için kullanılabilir alanı etkiler. Ayrıca şunu da kullanabilirsiniz:`PositioningType` mülkiyeti`Aspose.Pdf.Table` Sayfanın içerik alanı içerisinde yatay ve dikey hizalamasını kontrol etmek için.
 
-#### S: Tabloyu Excel veya CSV gibi farklı dosya formatlarına aktarabilir miyim?
+#### S: Tabloyu Excel veya CSV gibi farklı dosya biçimlerine aktarabilir miyim?
 
-C: Aspose.PDF for .NET öncelikle PDF belgeleriyle çalışmak üzere tasarlanmıştır. PDF belgesini görüntü veya XPS olarak dışa aktarabilse de tabloların Excel veya CSV gibi formatlara aktarılmasını doğrudan desteklemez. Tablo verilerini farklı dosya formatlarına aktarmak için PDF içeriğini istediğiniz formata dönüştürmek üzere ek kitaplıklar veya yöntemler kullanmanız gerekebilir.
+A: Aspose.PDF for .NET, öncelikle PDF belgeleriyle çalışmak için tasarlanmıştır. PDF belgesini bir görüntü veya XPS olarak dışa aktarabilirken, tabloları Excel veya CSV gibi biçimlere doğrudan aktarmayı desteklemez. Tablo verilerini farklı dosya biçimlerine dışa aktarmak için, PDF içeriğini istenen biçime dönüştürmek için ek kitaplıklar veya yöntemler kullanmanız gerekebilir.
 
 #### S: Tablo hücrelerine nasıl köprü ekleyebilirim?
 
- C: Tablo hücrelerine köprüler eklemek için`Aspose.Pdf.WebHyperlink` sınıfa bir köprü oluşturmak ve ardından onu bağlantı noktası olarak eklemek için`TextFragment`hücrenin içinde. Bu, tıklanabilir köprüler oluşturarak bir URL'yi veya bağlantı hedefini hücre içindeki belirli metin veya içerikle ilişkilendirmenize olanak tanır.
+ A: Tablo hücrelerine köprü eklemek için şunu kullanabilirsiniz:`Aspose.Pdf.WebHyperlink` bir köprü metni oluşturmak ve ardından bunu bir bağlantı noktası olarak eklemek için sınıf`TextFragment`hücrenin içinde. Bu, bir URL veya bağlantı hedefini hücre içindeki belirli bir metin veya içerikle ilişkilendirmenize ve tıklanabilir köprüler oluşturmanıza olanak tanır.

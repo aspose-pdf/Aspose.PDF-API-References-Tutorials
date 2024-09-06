@@ -2,40 +2,40 @@
 title: PDF Dosyalarından Yer İşaretlerini Sil
 linktitle: PDF Dosyalarından Yer İşaretlerini Sil
 second_title: Aspose.PDF Java PDF İşleme API'si
-description: Aspose.PDF for Java'yı kullanarak yer işaretlerini PDF dosyalarından zahmetsizce nasıl sileceğinizi öğrenin. Adım adım kılavuzumuz ve örnek kodumuz bunu kolaylaştırıyor.
+description: Aspose.PDF for Java kullanarak PDF dosyalarından yer imlerini zahmetsizce nasıl sileceğinizi öğrenin. Adım adım kılavuzumuz ve örnek kodumuz bunu basit hale getirir.
 type: docs
 weight: 13
 url: /tr/java/pdf-bookmarks/delete-bookmarks-pdf-files/
 ---
 
-## Aspose.PDF for Java kullanarak PDF Dosyalarından Yer İmlerini Silme İşlemine Giriş
+## Java için Aspose.PDF'yi kullanarak PDF Dosyalarından Yer İşaretlerini Silme Girişi
 
-PDF dosyaları, belgeleri paylaşmak için yaygın olarak kullanılan bir formattır. Genellikle kullanıcıların içerikte kolayca gezinmesine yardımcı olmak için yer imleri içerirler. Ancak yer işaretlerini bir PDF dosyasından kaldırmanız gerekebilecek durumlar vardır. Bu makale, Aspose.PDF for Java kullanarak PDF dosyalarından yer imlerini silme işleminde size rehberlik edecektir.
+PDF dosyaları, belgeleri paylaşmak için yaygın olarak kullanılan bir biçimdir. Genellikle kullanıcıların içerikte kolayca gezinmesine yardımcı olmak için yer imleri içerirler. Ancak, PDF dosyasından yer imlerini kaldırmanız gereken durumlar olabilir. Bu makale, Java için Aspose.PDF kullanarak PDF dosyalarından yer imlerini silme sürecinde size rehberlik edecektir.
 
-## Aspose.PDF for Java'yı Anlamak
+## Java için Aspose.PDF'yi Anlamak
 
-Aspose.PDF for Java, geliştiricilerin Java uygulamalarında PDF dosyalarıyla çalışmasına olanak tanıyan güçlü bir kütüphanedir. PDF belgelerini oluşturmak, değiştirmek ve dönüştürmek için çok çeşitli özellikler sunar. Bu makalede, yer işaretlerini mevcut PDF dosyalarından kaldırma yeteneklerine odaklanacağız.
+Aspose.PDF for Java, geliştiricilerin Java uygulamalarında PDF dosyalarıyla çalışmasına olanak tanıyan güçlü bir kütüphanedir. PDF belgeleri oluşturmak, düzenlemek ve dönüştürmek için çok çeşitli özellikler sunar. Bu makalede, mevcut PDF dosyalarından yer imlerini kaldırma yeteneklerine odaklanacağız.
 
-## Yer İmlerini Kaldırma İhtiyacı
+## Yer İşaretlerini Kaldırma İhtiyacı
 
-Yer işaretlerini bir PDF dosyasından kaldırmak istemenin birkaç nedeni olabilir. Güvenlik veya gizlilik nedeniyle bir belgeyi arındırmak gerekebilir veya yalnızca PDF dosyasının son kullanıcıları için gezinme deneyimini özelleştirmek isteyebilirsiniz.
+Bir PDF dosyasından yer imlerini kaldırmak istemenin birkaç nedeni olabilir. Güvenlik veya gizlilik nedenleriyle bir belgeyi temizlemek gerekebilir veya yalnızca PDF dosyasının son kullanıcıları için gezinme deneyimini özelleştirmek isteyebilirsiniz.
 
-## Java için Aspose.PDF'yi kurma
+## Java için Aspose.PDF Kurulumu
 
-Başlamadan önce Java projenizde Aspose.PDF for Java'yı kurmanız gerekiyor. Başlamak için şu adımları izleyin:
+Başlamadan önce, Java projenizde Aspose.PDF for Java'yı ayarlamanız gerekir. Başlamak için şu adımları izleyin:
 
-1.  Aspose.PDF for Java'yı indirin: Kütüphaneyi Aspose web sitesinden indirebilirsiniz. Aşağıdaki bağlantıyı kullanın:[Java İndirmek için Aspose.PDF](https://releases.aspose.com/pdf/java/).
+1.  Java için Aspose.PDF'yi indirin: Kütüphaneyi Aspose web sitesinden indirebilirsiniz. Aşağıdaki bağlantıyı kullanın:[Java için Aspose.PDF İndir](https://releases.aspose.com/pdf/java/).
 
 2. JAR'ı Projenize Ekleyin: İndirilen JAR dosyasını Java projenizin sınıf yoluna ekleyin.
 
-3. Aspose.PDF for Java'yı başlatın: PDF belgeleriyle çalışmaya başlamak için Java kodunuzda Aspose.PDF for Java'yı başlatın.
+3. Java için Aspose.PDF'yi Başlatın: Java kodunuzda, PDF belgeleriyle çalışmaya başlamak için Aspose.PDF for Java'yı başlatın.
 
 ```java
 import com.aspose.pdf.Document;
 
 public class Main {
     public static void main(String[] args) {
-        // Java için Aspose.PDF'yi başlat
+        // Java için Aspose.PDF'yi Başlat
         Document pdfDocument = new Document();
         // Kodunuz burada
     }
@@ -44,7 +44,7 @@ public class Main {
 
 ## PDF Belgesi Yükleme
 
-Aspose.PDF for Java'yı kurduktan sonra, daha fazla düzenleme için bir PDF belgesini Java uygulamanıza yükleyebilirsiniz. Bir PDF belgesi yüklemek için aşağıdaki kodu kullanın:
+Java için Aspose.PDF'yi kurduğunuzda, daha fazla düzenleme için bir PDF belgesini Java uygulamanıza yükleyebilirsiniz. Bir PDF belgesini yüklemek için aşağıdaki kodu kullanın:
 
 ```java
 // Mevcut bir PDF dosyasını yükleyin
@@ -53,39 +53,39 @@ Document pdfDocument = new Document("input.pdf");
 
 ## Yer İşaretlerine Erişim ve Yönetme
 
-Aspose.PDF for Java, bir PDF dosyasındaki yer imlerine erişmeye ve bunları yönetmeye yönelik yöntemler sağlar. Yer imleri arasında geçiş yapabilir, yeni yer imleri ekleyebilir, mevcut olanları güncelleyebilir veya bizim durumumuzda bunları silebilirsiniz.
+Java için Aspose.PDF, bir PDF dosyası içindeki yer imlerine erişmek ve onları yönetmek için yöntemler sağlar. Yer imleri arasında yineleme yapabilir, yeni yer imleri ekleyebilir, mevcut olanları güncelleyebilir veya bizim durumumuzda olduğu gibi silebilirsiniz.
 
-Yer işaretlerine erişmek için aşağıdaki kodu kullanın:
+Yer imlerine erişmek için aşağıdaki kodu kullanın:
 
 ```java
 OutlineCollection outlines = pdfDocument.getOutlines();
 ```
 
-## Yer İmlerini Silme
+## Yer İşaretlerini Silme
 
-Şimdi yer işaretlerini bir PDF dosyasından silme işlemine geçelim. Bu adımları takip et:
+Şimdi, bir PDF dosyasından yer imlerini silme sürecine geçelim. Şu adımları izleyin:
 
-1. Bir döngü kullanarak yer imleri arasında yineleme yapın.
-2. Kriterlerinize göre silmek istediğiniz yer işaretlerini belirleyin.
-3.  Yer işaretlerini kullanarak kaldırın`delete` yöntem.
+1. Bir döngü kullanarak yer imleri arasında dolaşın.
+2. Kriterlerinize göre silmek istediğiniz yer imlerini belirleyin.
+3.  Yer imlerini kullanarak kaldırın`delete` Yöntem.
 
-Başlamanıza yardımcı olacak örnek bir kod pasajını burada bulabilirsiniz:
+Başlamanıza yardımcı olacak bir örnek kod parçası:
 
 ```java
 OutlineCollection outlines = pdfDocument.getOutlines();
 for (int i = outlines.size(); i > 0; i--) {
     OutlineItemCollection outlineItem = outlines.get_Item(i);
     
-    // Hangi yer işaretlerinin silineceğine karar vermek için buradaki kriterlerinizi kontrol edin
+    // Hangi yer imlerini sileceğinize karar vermek için kriterlerinizi burada kontrol edin
     
-    // Yer işaretini sil
+    // Yer imini sil
     outlines.delete(i);
 }
 ```
 
-## Basit kod
+## Örnek Kod
 
-Aşağıda Aspose.PDF for Java kullanılarak bir PDF dosyasındaki yer imlerinin nasıl silineceğini gösteren örnek bir Java kod pasajı bulunmaktadır:
+Aşağıda Aspose.PDF for Java kullanılarak bir PDF dosyasından yer imlerinin nasıl silineceğini gösteren bir örnek Java kod parçacığı bulunmaktadır:
 
 ```java
 import com.aspose.pdf.*;
@@ -95,16 +95,16 @@ public class DeleteBookmarks {
         // Mevcut bir PDF dosyasını yükleyin
         Document pdfDocument = new Document("input.pdf");
 
-        // Yer işaretlerine erişme
+        // Yer imlerine erişin
         OutlineCollection outlines = pdfDocument.getOutlines();
 
-        // Yer işaretlerini yineleyin ve silin
+        // Yer imleri arasında gezinin ve silin
         for (int i = outlines.size(); i > 0; i--) {
             OutlineItemCollection outlineItem = outlines.get_Item(i);
             
-            // Hangi yer işaretlerinin silineceğine karar vermek için buradaki kriterlerinizi kontrol edin
+            // Hangi yer imlerini sileceğinize karar vermek için kriterlerinizi burada kontrol edin
             
-            // Yer işaretini sil
+            // Yer imini sil
             outlines.delete(i);
         }
 
@@ -116,33 +116,33 @@ public class DeleteBookmarks {
 
 ## Kodun Test Edilmesi
 
-Yer imlerini silme kodunu uyguladıktan sonra, yer imlerinin PDF dosyasından başarıyla kaldırıldığından emin olmak için kodu kapsamlı bir şekilde test etmek önemlidir. Değiştirilen PDF dosyasını açın ve yer işaretlerinin artık mevcut olmadığını doğrulayın.
+Yer imlerini silmek için kodu uyguladıktan sonra, yer imlerinin PDF dosyasından başarıyla kaldırıldığından emin olmak için kodu iyice test etmek önemlidir. Değiştirilen PDF dosyasını açın ve yer imlerinin artık mevcut olmadığını doğrulayın.
 
 ## Çözüm
 
-Bu makalede Aspose.PDF for Java kullanarak PDF dosyalarından yer imlerinin nasıl silineceğini araştırdık. Aspose.PDF for Java'nın PDF manipülasyonunda önemini tartıştık, kütüphaneyi bir Java projesinde kurduk ve yer işaretlerini silmek için örnek kod içeren adım adım bir kılavuz sağladık. Bu talimatları izleyerek PDF belgelerinizdeki yer işaretlerini etkili bir şekilde yönetebilir ve kullanıcı deneyimini özelleştirebilirsiniz.
+Bu makalede, Aspose.PDF for Java kullanarak PDF dosyalarından yer imlerinin nasıl silineceğini inceledik. PDF düzenlemede Aspose.PDF for Java'nın önemini tartıştık, kütüphaneyi bir Java projesinde kurduk ve yer imlerini silmek için örnek kod içeren adım adım bir kılavuz sağladık. Bu talimatları izleyerek PDF belgelerinizdeki yer imlerini verimli bir şekilde yönetebilir ve kullanıcı deneyimini özelleştirebilirsiniz.
 
-## SSS'ler
+## SSS
 
-### Aspose.PDF for Java'yı nasıl yüklerim?
+### Java için Aspose.PDF'yi nasıl yüklerim?
 
-Aspose.PDF for Java'yı yüklemek için şu adımları izleyin:
+Java için Aspose.PDF'yi yüklemek için şu adımları izleyin:
 1. Kütüphaneyi Aspose web sitesinden indirin.
-2. İndirilen JAR dosyasını Java projenizin sınıf yoluna ekleyin.
-3. Kullanmaya başlamak için kodunuzda Aspose.PDF for Java'yı başlatın.
+2. İndirdiğiniz JAR dosyasını Java projenizin sınıf yoluna ekleyin.
+3. Kullanmaya başlamak için Aspose.PDF'yi kodunuzda Java için başlatın.
 
-### Kriterlere göre belirli yer işaretlerini silebilir miyim?
+### Belirli kriterlere göre belirli yer imlerini silebilir miyim?
 
- Evet, kriterlerinize göre belirli yer imlerini silebilirsiniz. Yer işaretlerini yineleyin, kriterlerinizi uygulayın ve`delete` bunları kaldırmanın yöntemi.
+ Evet, kriterlerinize göre belirli yer imlerini silebilirsiniz. Yer imleri arasında gezinin, kriterlerinizi uygulayın ve`delete` Bunları kaldırmanın yöntemi.
 
-### Yer imlerinin silinmesi PDF'nin içeriğini etkiler mi?
+### Yer imlerini silmek PDF'in içeriğini etkiler mi?
 
-Hayır, Aspose.PDF for Java kullanarak bir PDF dosyasındaki yer işaretlerini silmek, PDF'nin gerçek içeriğini etkilemez. Yalnızca gezinme için kullanılan yer imlerini kaldırır.
+Hayır, Aspose.PDF for Java kullanarak bir PDF dosyasından yer imlerini silmek PDF'nin gerçek içeriğini etkilemez. Sadece gezinme için kullanılan yer imlerini kaldırır.
 
-### Aspose.PDF for Java'nın kullanımı ücretsiz midir?
+### Aspose.PDF for Java'yı kullanmak ücretsiz mi?
 
-Aspose.PDF for Java ticari bir kütüphanedir ve belirli kullanımlar için lisans gerektirebilir. Fiyatlandırma ve lisanslama ayrıntıları için Aspose web sitesine bakın.
+Java için Aspose.PDF ticari bir kütüphanedir ve belirli kullanımlar için lisans gerektirebilir. Fiyatlandırma ve lisanslama ayrıntıları için Aspose web sitesini kontrol edin.
 
-### Java için daha fazla Aspose.PDF dokümantasyonu ve kaynağını nerede bulabilirim?
+### Aspose.PDF for Java ile ilgili daha fazla doküman ve kaynağı nerede bulabilirim?
 
- Aspose.PDF for Java'ya ilişkin kapsamlı belgeleri ve kaynakları Aspose belgelendirme bağlantısında bulabilirsiniz:[Java Belgelendirmesi için Aspose.PDF](https://reference.aspose.com/pdf/java/).
+ Java için Aspose.PDF'e ilişkin kapsamlı dokümanları ve kaynakları Aspose dokümantasyon bağlantısında bulabilirsiniz:[Java Belgeleri için Aspose.PDF](https://reference.aspose.com/pdf/java/).

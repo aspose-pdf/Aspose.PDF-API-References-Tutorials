@@ -1,69 +1,69 @@
 ---
 title: PDF Dosyasında Yakınlaştırma Faktörünü Alın
 linktitle: PDF Dosyasında Yakınlaştırma Faktörünü Alın
-second_title: .NET API Referansı için Aspose.PDF
-description: Bu adım adım kılavuzla PDF dosyasında yakınlaştırma faktörünü elde etmek için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin.
+second_title: Aspose.PDF for .NET API Referansı
+description: Bu adım adım kılavuzla PDF dosyasında yakınlaştırma faktörünü elde etmek için Aspose.PDF for .NET'in nasıl kullanılacağını öğrenin.
 type: docs
 weight: 210
 url: /tr/net/programming-with-document/getzoomfactor/
 ---
-Aspose.PDF for .NET, PDF belgeleri üzerinde çeşitli işlemler gerçekleştirmek için birçok özellik sağlayan bir PDF işleme kitaplığıdır. Bu özelliklerden biri de PDF dosyasında yakınlaştırma faktörünü alabilme yeteneğidir. Bu eğitimde, C# kaynak kodunu kullanarak PDF dosyasındaki yakınlaştırma faktörünü elde etmek için Aspose.PDF for .NET'in nasıl kullanılacağını açıklayacağız.
+Aspose.PDF for .NET, PDF belgelerinde çeşitli işlemler gerçekleştirmek için birçok özellik sağlayan bir PDF düzenleme kütüphanesidir. Bu özelliklerden biri de PDF dosyasında yakınlaştırma faktörünü elde etme yeteneğidir. Bu eğitimde, C# kaynak kodunu kullanarak PDF dosyasında yakınlaştırma faktörünü elde etmek için Aspose.PDF for .NET'in nasıl kullanılacağını açıklayacağız.
 
 
-## 1. Adım: Yeni Belge nesnesini örnekleyin
+## Adım 1: Yeni Belge nesnesi örneği oluşturun
 
- Aspose.PDF for .NET kullanarak bir PDF dosyasının yakınlaştırma faktörünü elde etmenin ilk adımı yeni bir örnek oluşturmaktır.`Document` nesne.`Document` nesne, bir dosyadan veya akıştan yüklenebilen bir PDF belgesini temsil eder.
+ Aspose.PDF for .NET kullanarak bir PDF dosyasının yakınlaştırma faktörünü elde etmenin ilk adımı, yeni bir örnek oluşturmaktır.`Document` nesne.`Document` nesne, bir dosyadan veya akıştan yüklenebilen bir PDF belgesini temsil eder.
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Yeni Belge nesnesini başlat
+// Yeni Belge nesnesi örneği oluştur
 Document doc = new Document(dataDir + "Zoomed_pdf.pdf");
 ```
 
- Yukarıdaki kodda bir tane oluşturduk.`Document` PDF dosyasının yolunu yapıcısına ileterek nesneyi`Document` sınıf. "BELGE DİZİNİ"ni, PDF dosyanızın bulunduğu dizinin gerçek yolu ile değiştirmeniz gerekir.
+ Yukarıdaki kodda bir tane oluşturduk`Document` PDF dosyasının yolunu oluşturucuya geçirerek nesne`Document` sınıf. "YOUR DOCUMENT DIRECTORY" ifadesini PDF dosyanızın bulunduğu dizinin gerçek yoluyla değiştirmeniz gerekir.
 
-## 2. Adım: GoToAction nesnesini oluşturun
+## Adım 2: GoToAction nesnesi oluşturun
 
- Bir sonraki adım bir oluşturmaktır`GoToAction` nesne. A`GoToAction`nesne, bir PDF belgesinde belirli bir hedefe giden bir eylemi temsil eder. Bizim durumumuzda, PDF dosyasının yakınlaştırma faktörünü almak istiyoruz, bu nedenle`OpenAction` mülkiyeti`Document` almak için nesne`GoToAction` nesne.
+ Bir sonraki adım, bir tane oluşturmaktır`GoToAction` nesne. Bir`GoToAction`nesne, bir PDF belgesinde belirli bir hedefe giden bir eylemi temsil eder. Bizim durumumuzda, PDF dosyasının yakınlaştırma faktörünü elde etmek istiyoruz, bu nedenle`OpenAction` mülkiyeti`Document` nesneyi elde etmek için`GoToAction` nesne.
 
 ```csharp
 // GoToAction nesnesi oluştur
 GoToAction action = doc.OpenAction as GoToAction;
 ```
 
- Yukarıdaki kodda bir tane oluşturduk.`GoToAction` döküm yaparak nesneyi`OpenAction` mülkiyeti`Document` itiraz etmek`GoToAction`.
+ Yukarıdaki kodda bir tane oluşturduk`GoToAction` nesneyi dökerek`OpenAction` mülkiyeti`Document` itiraz etmek`GoToAction`.
 
-## 3. Adım: PDF dosyasının Yakınlaştırma faktörünü alın
+## Adım 3: PDF dosyasının Yakınlaştırma faktörünü alın
 
- Üçüncü adım, PDF dosyasının yakınlaştırma faktörünü elde etmektir. PDF dosyasının yakınlaştırma faktörünü şuraya erişerek alabiliriz:`Destination` mülkiyeti`GoToAction` nesne ve sonra onu yayına almak`XYZExplicitDestination` .`XYZExplicitDestination` sınıf, bir PDF belgesinde gidilecek koordinatları ve yakınlaştırma faktörünü belirten bir hedefi temsil eder.
+ Üçüncü adım PDF dosyasının yakınlaştırma faktörünü elde etmektir. PDF dosyasının yakınlaştırma faktörünü şuraya erişerek elde edebiliriz:`Destination` mülkiyeti`GoToAction` nesne ve ardından onu döküm`XYZExplicitDestination` .`XYZExplicitDestination` sınıf, PDF belgesinde gidilecek koordinatları ve yakınlaştırma faktörünü belirten bir hedefi temsil eder.
 
 ```csharp
 // PDF dosyasının Yakınlaştırma faktörünü alın
 System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Belge yakınlaştırma değeri;
 ```
 
- Yukarıdaki kodda şuraya ulaştık:`Destination` mülkiyeti`GoToAction` nesneyi seçin ve ardından onu yayınlayın`XYZExplicitDestination` . Bundan sonra şuraya eriştik:`Zoom` mülkiyeti`XYZExplicitDestination` PDF dosyasının yakınlaştırma faktörünü almak için nesneyi kullanın.
+ Yukarıdaki kodda, şuna eriştik:`Destination` mülkiyeti`GoToAction` nesneyi ve sonra onu şuraya at`XYZExplicitDestination` . Bundan sonra, şuraya eriştik:`Zoom` mülkiyeti`XYZExplicitDestination` PDF dosyasının yakınlaştırma faktörünü almak için nesne.
 
-## Adım 4: Yakınlaştırma faktörünün çıktısını alın
+## Adım 4: Yakınlaştırma faktörünü çıktı olarak alın
 
- Son adım, PDF dosyasının yakınlaştırma faktörünün çıktısını almaktır. Şunu kullanabiliriz:`System.Console.WriteLine`
+ Son adım PDF dosyasının yakınlaştırma faktörünü çıktı olarak vermektir. Şunu kullanabiliriz:`System.Console.WriteLine`
 
 ```csharp
 // PDF dosyasının Yakınlaştırma faktörünü alın
 System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); // Belge yakınlaştırma değeri;
 ```        
 
-### Aspose.PDF for .NET kullanarak Yakınlaştırma Faktörü Alma için Örnek Kaynak Kodu
+### .NET için Aspose.PDF kullanarak Yakınlaştırma Faktörünü Almak için Örnek Kaynak Kodu
 
-Aspose.PDF for .NET kullanarak Get Zoom Factor'un tam örnek kaynak kodunu burada bulabilirsiniz:
+İşte .NET için Aspose.PDF kullanarak Yakınlaştırma Faktörünü Elde Etmenin tam örnek kaynak kodu:
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Yeni Belge nesnesini başlat
+// Yeni Belge nesnesi örneği oluştur
 Document doc = new Document(dataDir + "Zoomed_pdf.pdf");
 
 // GoToAction nesnesi oluştur
@@ -75,22 +75,22 @@ System.Console.WriteLine((action.Destination as XYZExplicitDestination).Zoom); /
 
 ## Çözüm
 
-Bu eğitimde, bir PDF dosyasının yakınlaştırma faktörünü elde etmek için Aspose.PDF for .NET'in nasıl kullanılacağını araştırdık. Yakınlaştırma faktörü, bir görüntüleyicide açıldığında ilk görüntü boyutunu belirlediği için PDF belgesinin çok önemli bir özelliğidir. Geliştiriciler, yakınlaştırma faktörüne erişerek ve onu kullanarak, son kullanıcılar için görüntüleme deneyimini özelleştirebilir. Aspose.PDF for .NET, yakınlaştırma faktörünü ve gezinmeyle ilgili diğer bilgileri bir PDF belgesinden almak için basit ve etkili bir API sağlayarak geliştiricilerin zengin özelliklere sahip ve etkileşimli PDF uygulamaları oluşturmasına olanak tanır.
+Bu eğitimde, bir PDF dosyasının yakınlaştırma faktörünü almak için Aspose.PDF for .NET'in nasıl kullanılacağını inceledik. Yakınlaştırma faktörü, bir PDF belgesinin önemli bir yönüdür, çünkü bir görüntüleyicide açıldığında ilk görüntüleme boyutunu belirler. Yakınlaştırma faktörüne erişerek ve onu kullanarak, geliştiriciler son kullanıcılar için görüntüleme deneyimini özelleştirebilir. Aspose.PDF for .NET, bir PDF belgesinden yakınlaştırma faktörünü ve diğer gezinmeyle ilgili bilgileri almak için basit ve etkili bir API sağlar ve geliştiricilerin özellik açısından zengin ve etkileşimli PDF uygulamaları oluşturmasını sağlar.
 
-### PDF dosyasında yakınlaştırma faktörünü almak için SSS
+### PDF dosyasında yakınlaştırma faktörünü elde etmek için SSS
 
-#### S: Bir PDF dosyasındaki yakınlaştırma faktörü nedir?
+#### S: PDF dosyasında yakınlaştırma faktörü nedir?
 
-C: Bir PDF dosyasındaki yakınlaştırma faktörü, görüntülendiğinde belgeye uygulanan büyütme düzeyini ifade eder. PDF dosyasının ekranda ilk görüntülenme boyutunu belirler. 1,0'lık bir yakınlaştırma faktörü gerçek boyutu temsil eder (%100 yakınlaştırma), 1,0'dan büyük bir yakınlaştırma faktörü bir büyütmeyi temsil eder ve 1,0'dan küçük bir yakınlaştırma faktörü bir küçültmeyi temsil eder.
+A: Bir PDF dosyasındaki yakınlaştırma faktörü, belge görüntülendiğinde uygulanan büyütme seviyesini ifade eder. PDF dosyasının ekranda ilk görüntülenme boyutunu belirler. 1,0'lık bir yakınlaştırma faktörü gerçek boyutu (yüzde 100 yakınlaştırma) temsil ederken, 1,0'dan büyük bir yakınlaştırma faktörü bir büyütmeyi, 1,0'dan küçük bir yakınlaştırma faktörü ise bir küçültmeyi temsil eder.
 
-#### S: Yakınlaştırma faktörü bilgisini uygulamamda nasıl kullanabilirim?
+#### S: Uygulamamda yakınlaştırma faktörü bilgisini nasıl kullanabilirim?
 
-C: Bir PDF belgesinin görüntüleyicide açıldığında ilk görüntülenme boyutunu özelleştirmek için yakınlaştırma faktörü bilgisini kullanabilirsiniz. Örneğin, PDF'nin belirli bir boyutta görüntülenmesini sağlamak veya sayfanın tamamını izleyicinin penceresine sığdırmak için belirli bir yakınlaştırma faktörü ayarlayabilirsiniz.
+A: Bir PDF belgesi görüntüleyicide açıldığında ilk görüntüleme boyutunu özelleştirmek için yakınlaştırma faktörü bilgilerini kullanabilirsiniz. Örneğin, PDF'nin belirli bir boyutta görüntülenmesini veya tüm sayfanın görüntüleyicinin penceresine sığmasını sağlamak için belirli bir yakınlaştırma faktörü ayarlayabilirsiniz.
 
-#### S: Aspose.PDF for .NET'i kullanarak bir PDF belgesinin yakınlaştırma faktörünü programlı olarak değiştirebilir miyim?
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesinin yakınlaştırma faktörünü program aracılığıyla değiştirebilir miyim?
 
- C: Evet, Aspose.PDF for .NET'i kullanarak bir PDF belgesinin yakınlaştırma faktörünü programlı olarak değiştirebilirsiniz. Aşağıdakiler gibi belirli eylemler için yakınlaştırma faktörünü ayarlayabilirsiniz:`GoToAction` veya`GoToRemoteAction`Kullanıcı bağlantılar veya yer imleriyle etkileşimde bulunduğunda belgenin nasıl görüntüleneceğini kontrol etmek için.
+ A: Evet, Aspose.PDF for .NET kullanarak bir PDF belgesinin yakınlaştırma faktörünü programatik olarak değiştirebilirsiniz. Yakınlaştırma faktörünü belirli eylemler için ayarlayabilirsiniz, örneğin:`GoToAction` veya`GoToRemoteAction`Kullanıcının bağlantılarla veya yer imleriyle etkileşime girdiğinde belgenin nasıl görüntüleneceğini kontrol etmek için.
 
 #### S: Aspose.PDF for .NET kullanarak bir PDF belgesinde belirli konumlara gitmenin başka yolları var mı?
 
- C: Evet, Aspose.PDF for .NET, bir PDF belgesindeki belirli konumlara gitmek için çeşitli özellikler sağlar. Kullanmanın yanı sıra`GoToAction` gibi diğer eylemleri kullanabilirsiniz.`GoToURIAction` bir URL'yi açmak için,`GoToEmbeddedAction` katıştırılmış dosyalara gitmek için ve`GoToNamedAction` PDF belgesindeki adlandırılmış hedeflere gitmek için.
+ A: Evet, Aspose.PDF for .NET, bir PDF belgesindeki belirli konumlara gitmek için çeşitli özellikler sunar.`GoToAction` , diğer eylemleri de kullanabilirsiniz`GoToURIAction` Bir URL'yi açmak için,`GoToEmbeddedAction` gömülü dosyalara gitmek için ve`GoToNamedAction` PDF belgesindeki belirtilen hedeflere gitmek için.

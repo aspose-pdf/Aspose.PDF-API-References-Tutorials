@@ -1,20 +1,20 @@
 ---
-title: Cari Dan Dapatkan Halaman Teks Dalam File PDF
-linktitle: Cari Dan Dapatkan Halaman Teks Dalam File PDF
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Pelajari cara mencari dan mendapatkan teks dari halaman tertentu dalam file PDF menggunakan Aspose.PDF untuk .NET.
+title: Cari dan Dapatkan Halaman Teks Dalam File PDF
+linktitle: Cari dan Dapatkan Halaman Teks Dalam File PDF
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara mencari dan mendapatkan teks dari halaman tertentu dalam berkas PDF menggunakan Aspose.PDF untuk .NET.
 type: docs
 weight: 430
 url: /id/net/programming-with-text/search-and-get-text-page/
 ---
-Tutorial ini menjelaskan cara menggunakan Aspose.PDF untuk .NET untuk mencari dan mendapatkan teks dari halaman tertentu dalam file PDF. Kode sumber C# yang disediakan menunjukkan proses langkah demi langkah.
+Tutorial ini menjelaskan cara menggunakan Aspose.PDF untuk .NET guna mencari dan mendapatkan teks dari halaman tertentu dalam file PDF. Kode sumber C# yang disediakan menunjukkan proses tersebut langkah demi langkah.
 
 ## Prasyarat
 
 Sebelum melanjutkan tutorial, pastikan Anda memiliki hal berikut:
 
-- Pengetahuan dasar bahasa pemrograman C#.
-- Aspose.PDF untuk perpustakaan .NET diinstal. Anda dapat memperolehnya dari situs Aspose atau menggunakan NuGet untuk menginstalnya di proyek Anda.
+- Pengetahuan dasar tentang bahasa pemrograman C#.
+- Pustaka Aspose.PDF untuk .NET telah terinstal. Anda dapat memperolehnya dari situs web Aspose atau menggunakan NuGet untuk menginstalnya di proyek Anda.
 
 ## Langkah 1: Siapkan proyek
 
@@ -22,7 +22,7 @@ Mulailah dengan membuat proyek C# baru di lingkungan pengembangan terintegrasi (
 
 ## Langkah 2: Impor namespace yang diperlukan
 
-Tambahkan arahan penggunaan berikut di awal file C# Anda untuk mengimpor namespace yang diperlukan:
+Tambahkan perintah berikut di awal file C# Anda untuk mengimpor namespace yang diperlukan:
 
 ```csharp
 using Aspose.Pdf;
@@ -31,7 +31,7 @@ using Aspose.Pdf.Text;
 
 ## Langkah 3: Muat dokumen PDF
 
- Tetapkan jalur ke direktori dokumen PDF Anda dan muat dokumen menggunakan`Document` kelas:
+ Atur jalur ke direktori dokumen PDF Anda dan muat dokumen menggunakan`Document` kelas:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -42,7 +42,7 @@ Document pdfDocument = new Document(dataDir + "SearchAndGetTextPage.pdf");
 
 ## Langkah 4: Cari dan ekstrak teks dari halaman
 
- Membuat`TextFragmentAbsorber`objek untuk menemukan semua contoh frasa pencarian masukan pada halaman tertentu:
+ Membuat sebuah`TextFragmentAbsorber`objek untuk menemukan semua contoh frasa pencarian input pada halaman tertentu:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("Figure");
@@ -52,7 +52,7 @@ TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("Figure");
 
 ## Langkah 5: Cari di halaman tertentu
 
-Terima penyerap untuk halaman tertentu dari dokumen:
+Terima penyerap untuk halaman dokumen tertentu:
 
 ```csharp
 pdfDocument.Pages.Accept(textFragmentAbsorber);
@@ -60,15 +60,15 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## Langkah 6: dapatkan fragmen teks yang diekstraksi
 
-Dapatkan fragmen teks yang diekstraksi menggunakan`TextFragments` properti dari`TextFragmentAbsorber` obyek:
+Dapatkan fragmen teks yang diekstraksi menggunakan`TextFragments` milik`TextFragmentAbsorber` obyek:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 ```
 
-## Langkah 7: Ulangi fragmen dan segmen teks
+## Langkah 7: Ulangi melalui fragmen dan segmen teks
 
-Ulangi fragmen teks yang diperoleh dan segmennya, lalu akses propertinya:
+Ulangi fragmen teks getd dan segmennya, dan akses propertinya:
 
 ```csharp
 foreach (TextFragment textFragment in textFragmentCollection)
@@ -89,21 +89,21 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
-Anda dapat mengubah kode dalam loop untuk melakukan tindakan lebih lanjut pada setiap segmen teks.
+Anda dapat memodifikasi kode dalam loop untuk melakukan tindakan lebih lanjut pada setiap segmen teks.
 
-### Contoh kode sumber untuk Cari Dan Dapatkan Halaman Teks menggunakan Aspose.PDF untuk .NET 
+### Contoh kode sumber untuk Pencarian dan Dapatkan Halaman Teks menggunakan Aspose.PDF untuk .NET 
 ```csharp
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Buka dokumen
 Document pdfDocument = new Document(dataDir + "SearchAndGetTextPage.pdf");
-// Buat objek TextAbsorber untuk menemukan semua contoh frasa pencarian masukan
+// Buat objek TextAbsorber untuk menemukan semua contoh frasa pencarian input
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("Figure");
 // Terima penyerap untuk semua halaman
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 // Dapatkan fragmen teks yang diekstraksi
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// Ulangi fragmennya
+// Ulangi melalui fragmen
 foreach (TextFragment textFragment in textFragmentCollection)
 {
 	foreach (TextSegment textSegment in textFragment.Segments)
@@ -124,38 +124,38 @@ foreach (TextFragment textFragment in textFragmentCollection)
 
 ## Kesimpulan
 
-Selamat! Anda telah berhasil mempelajari cara mencari dan mendapatkan teks dari halaman tertentu dokumen PDF menggunakan Aspose.PDF untuk .NET. Tutorial ini memberikan panduan langkah demi langkah, mulai dari memuat dokumen hingga mengakses segmen teks yang diekstrak. Anda sekarang dapat menggabungkannya
+Selamat! Anda telah berhasil mempelajari cara mencari dan mendapatkan teks dari halaman tertentu dokumen PDF menggunakan Aspose.PDF untuk .NET. Tutorial ini menyediakan panduan langkah demi langkah, mulai dari memuat dokumen hingga mengakses segmen teks yang diekstrak. Sekarang Anda dapat menggabungkan
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
-#### Q: Apa tujuan dari tutorial "Cari Dan Dapatkan Halaman Teks"?
+#### T: Apa tujuan dari tutorial "Halaman Pencarian dan Dapatkan Teks"?
 
-J: Tutorial "Cari Dan Dapatkan Halaman Teks" dirancang untuk mengilustrasikan cara menggunakan perpustakaan Aspose.PDF untuk .NET untuk mencari dan mengambil teks dari halaman tertentu dalam file PDF. Tutorial ini memberikan instruksi rinci dan contoh kode C# untuk mendemonstrasikan prosesnya.
+J: Tutorial "Cari dan Dapatkan Halaman Teks" dirancang untuk mengilustrasikan cara menggunakan pustaka Aspose.PDF untuk .NET guna mencari dan mengambil teks dari halaman tertentu dalam file PDF. Tutorial ini menyediakan petunjuk terperinci dan contoh kode C# untuk menunjukkan prosesnya.
 
-#### T: Bagaimana tutorial ini membantu mengekstraksi teks dari halaman tertentu dalam dokumen PDF?
+#### T: Bagaimana tutorial ini membantu mengekstrak teks dari halaman tertentu dalam dokumen PDF?
 
-J: Tutorial ini memandu Anda melalui proses mengekstraksi teks dari halaman tertentu dokumen PDF menggunakan perpustakaan Aspose.PDF. Ini menguraikan langkah-langkah yang diperlukan dan menyediakan kode C# untuk mencari frasa teks tertentu pada halaman yang dipilih dan mengambil segmen teks terkait.
+J: Tutorial ini memandu Anda melalui proses mengekstraksi teks dari halaman tertentu dokumen PDF menggunakan pustaka Aspose.PDF. Tutorial ini menguraikan langkah-langkah yang diperlukan dan menyediakan kode C# untuk mencari frasa teks tertentu pada halaman yang dipilih dan mengambil segmen teks terkait.
 
-#### Q: Apa saja prasyarat untuk mengikuti tutorial ini?
+#### T: Apa saja prasyarat untuk mengikuti tutorial ini?
 
-A: Sebelum memulai tutorial ini, Anda harus memiliki pemahaman dasar tentang bahasa pemrograman C#. Selain itu, Anda perlu menginstal perpustakaan Aspose.PDF untuk .NET. Anda dapat memperolehnya dari situs Aspose atau menggunakan NuGet untuk mengintegrasikannya ke dalam proyek Anda.
+J: Sebelum memulai tutorial ini, Anda harus memiliki pemahaman dasar tentang bahasa pemrograman C#. Selain itu, Anda perlu menginstal pustaka Aspose.PDF for .NET. Anda dapat memperolehnya dari situs web Aspose atau menggunakan NuGet untuk mengintegrasikannya ke dalam proyek Anda.
 
 #### T: Bagaimana cara menyiapkan proyek saya untuk mengikuti tutorial ini?
 
-J: Untuk memulai, buat proyek C# baru di lingkungan pengembangan terintegrasi (IDE) pilihan Anda dan tambahkan referensi ke pustaka Aspose.PDF untuk .NET. Ini akan memungkinkan Anda untuk memanfaatkan kemampuan perpustakaan dalam proyek Anda.
+J: Untuk memulai, buat proyek C# baru di lingkungan pengembangan terpadu (IDE) pilihan Anda dan tambahkan referensi ke pustaka Aspose.PDF untuk .NET. Ini akan memungkinkan Anda memanfaatkan kemampuan pustaka tersebut dalam proyek Anda.
 
-#### T: Bisakah saya mencari teks pada halaman tertentu di dokumen PDF?
+#### T: Dapatkah saya mencari teks pada halaman tertentu dari dokumen PDF?
 
-J: Ya, tutorial ini menunjukkan cara mencari teks pada halaman tertentu dokumen PDF. Ini melibatkan penggunaan`TextFragmentAbsorber` kelas untuk menemukan contoh frasa teks tertentu pada halaman yang dipilih.
+A: Ya, tutorial ini menunjukkan cara mencari teks pada halaman tertentu dari dokumen PDF. Ini melibatkan penggunaan`TextFragmentAbsorber` kelas untuk menemukan contoh frasa teks tertentu pada halaman yang dipilih.
 
-#### T: Bagaimana cara mengakses segmen teks yang diekstraksi dari halaman tertentu?
+#### T: Bagaimana cara mengakses segmen teks yang diekstrak dari halaman tertentu?
 
- J: Setelah mencari teks pada halaman yang ditentukan, Anda dapat mengakses segmen teks yang diekstrak menggunakan`TextSegments` properti dari`TextFragment` obyek. Properti ini menyediakan akses ke koleksi`TextSegment` objek yang berisi teks yang diekstraksi dan informasi terkait.
+ A: Setelah mencari teks pada halaman yang ditunjuk, Anda dapat mengakses segmen teks yang diekstraksi menggunakan`TextSegments` milik`TextFragment` objek. Properti ini menyediakan akses ke koleksi`TextSegment` objek yang berisi teks yang diekstraksi dan informasi terkait.
 
-#### T: Informasi apa yang dapat saya ambil dari segmen teks yang diekstraksi?
+#### T: Informasi apa yang dapat saya peroleh dari segmen teks yang diekstrak?
 
-J: Anda dapat mengambil berbagai detail dari segmen teks yang diekstrak, termasuk konten teks, posisi (koordinat X dan Y), informasi font (nama, ukuran, warna, dll.), dan banyak lagi. Kode contoh tutorial menunjukkan cara mengakses dan mencetak detail ini untuk setiap segmen teks.
+A: Anda dapat mengambil berbagai detail dari segmen teks yang diekstrak, termasuk konten teks, posisi (koordinat X dan Y), informasi font (nama, ukuran, warna, dll.), dan banyak lagi. Kode contoh tutorial menunjukkan cara mengakses dan mencetak detail ini untuk setiap segmen teks.
 
 #### T: Dapatkah saya melakukan tindakan khusus pada segmen teks yang diekstraksi?
 
-J: Tentu saja. Setelah Anda mengekstrak segmen teks, Anda dapat menyesuaikan kode dalam loop untuk melakukan tindakan tambahan pada setiap segmen. Hal ini dapat mencakup menyimpan teks yang diekstraksi, menganalisis pola teks, atau menerapkan perubahan pemformatan.
+A: Tentu saja. Setelah Anda memiliki segmen teks yang diekstrak, Anda dapat menyesuaikan kode dalam loop untuk melakukan tindakan tambahan pada setiap segmen. Ini dapat mencakup menyimpan teks yang diekstrak, menganalisis pola teks, atau menerapkan perubahan format.

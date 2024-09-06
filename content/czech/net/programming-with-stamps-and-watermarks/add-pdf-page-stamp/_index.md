@@ -41,12 +41,12 @@ PdfPageStamp pageStamp = new PdfPageStamp(pdfDocument.Pages[1]);
 
 Výše uvedený kód vytvoří novou vyrovnávací paměť stránky pomocí první stránky dokumentu PDF.
 
-## Krok 4: Konfigurace vlastností vyrovnávací paměti stránky
+## Krok 4: Konfigurace vlastností vyrovnávací paměti stránek
 
 Před přidáním razítka stránky do dokumentu PDF můžete nakonfigurovat různé vlastnosti razítka, jako je pozadí, poloha, otočení atd. Zde je návod:
 
 ```csharp
-// Nakonfigurujte vlastnosti vyrovnávací paměti stránky
+// Konfigurace vlastností vyrovnávací paměti stránky
 pageStamp. Background = true;
 pageStamp. XIndent = 100;
 pageStamp. YIndent = 100;
@@ -119,11 +119,11 @@ Odpověď: Ano, na různé stránky stejného dokumentu PDF můžete přidat ví
 
 #### Otázka: Jak mohu upravit polohu a otočení razítka stránky v dokumentu PDF?
 
- Odpověď: Pozici a otočení razítka stránky můžete upravit úpravou vlastností`PdfPageStamp` objekt. Kód uvedený v tutoriálu ukazuje, jak nastavit vlastnosti, jako je např`XIndent`, `YIndent` , a`Rotate` k ovládání polohy a orientace razítka.
+ Odpověď: Pozici a otočení razítka stránky můžete upravit úpravou vlastností`PdfPageStamp` objekt. Kód uvedený v tutoriálu ukazuje, jak nastavit vlastnosti, jako je např`XIndent`, `YIndent` a`Rotate` k ovládání polohy a orientace razítka.
 
 #### Otázka: Je možné mít pro razítko stránky průhledné nebo poloprůhledné pozadí?
 
- Odpověď: Ano, můžete nastavit`Background` vlastnictvím`PdfPageStamp` namítat proti`true` pro povolení průhledného nebo poloprůhledného pozadí pro razítko stránky. To může být užitečné pro vodoznaky nebo jiná razítka, která by neměla zcela zakrývat obsah.
+ Odpověď: Ano, můžete nastavit`Background` majetek z`PdfPageStamp` namítat proti`true` pro povolení průhledného nebo poloprůhledného pozadí pro razítko stránky. To může být užitečné pro vodoznaky nebo jiná razítka, která by neměla zcela zakrývat obsah.
 
 #### Otázka: Mohu použít tuto metodu na existující dokumenty PDF a přidat razítka stránek?
 

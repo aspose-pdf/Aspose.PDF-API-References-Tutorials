@@ -8,7 +8,7 @@ weight: 32
 url: /cs/java/pdf-conversion-transformation/adding-javascript-using-dom-in-pdf/
 ---
 
-## Úvod
+## Zavedení
 
 dnešním digitálním světě je interaktivita klíčovým prvkem při zlepšování uživatelské zkušenosti. Při práci s dokumenty PDF může přidání JavaScriptu přinést novou úroveň interaktivity a funkčnosti. V tomto podrobném průvodci prozkoumáme, jak přidat JavaScript pomocí Document Object Model (DOM) do souborů PDF pomocí Aspose.PDF for Java.
 

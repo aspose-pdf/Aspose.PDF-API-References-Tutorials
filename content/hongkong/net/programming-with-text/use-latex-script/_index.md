@@ -110,7 +110,7 @@ doc.Save(dataDir + "LatextScriptInPdf_out.pdf");
 
 #### Q：「在 PDF 檔案中使用 Latex 腳本」教學的目的是什麼？
 
-答：「在 PDF 檔案中使用 Latex 腳本」教學課程旨在指導使用者如何使用 Aspose.PDF for .NET 將 LaTeX 腳本合併到 PDF 文件中新增數學運算式或公式。本教學提供了逐步說明和 C# 程式碼範例，用於建立文件、插入包含 LaTeX 腳本的儲存格的表格以及儲存文件。
+答：「在 PDF 檔案中使用 Latex 腳本」教學課程旨在指導使用者如何使用 Aspose.PDF for .NET 合併 LaTeX 腳本以在 PDF 文件中新增數學運算式或公式。本教學提供了逐步說明和 C# 程式碼範例，用於建立文件、插入包含 LaTeX 腳本的儲存格的表格以及儲存文件。
 
 #### Q：本教學對在 PDF 文件中使用 LaTeX 腳本進行數學表達式有何幫助？
 

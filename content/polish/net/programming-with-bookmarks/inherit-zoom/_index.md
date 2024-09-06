@@ -1,178 +1,133 @@
 ---
-title: Dziedzicz powiększenie pliku PDF
-linktitle: Dziedzicz powiększenie pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Łatwe dziedziczenie powiększenia zakładek w pliku PDF za pomocą Aspose.PDF dla .NET.
+title: Dziedzicz Powiększ w pliku PDF
+linktitle: Dziedzicz Powiększ w pliku PDF
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak dziedziczyć powiększenie w plikach PDF za pomocą Aspose.PDF dla .NET dzięki temu przewodnikowi krok po kroku. Ulepsz swoje wrażenia z przeglądania plików PDF.
 type: docs
 weight: 90
 url: /pl/net/programming-with-bookmarks/inherit-zoom/
 ---
-Dziedziczenie powiększenia w pliku PDF umożliwia określenie domyślnego poziomu powiększenia zakładek. Dzięki Aspose.PDF dla .NET możesz łatwo odziedziczyć powiększenie, postępując zgodnie z następującym kodem źródłowym:
+## Wstęp
 
-## Krok 1: Zaimportuj wymagane biblioteki
+Czy kiedykolwiek otworzyłeś plik PDF tylko po to, by odkryć, że poziom powiększenia jest zupełnie zły? To może być frustrujące, zwłaszcza gdy próbujesz skupić się na konkretnej treści. Na szczęście dzięki Aspose.PDF dla .NET możesz łatwo ustawić domyślny poziom powiększenia dla swoich dokumentów PDF. Ten przewodnik przeprowadzi Cię przez ten proces krok po kroku, zapewniając, że Twoi czytelnicy będą mieli jak najlepsze doświadczenia podczas przeglądania Twoich plików PDF. Więc chwyć swój kapelusz kodera i zanurzmy się!
 
-Zanim zaczniesz, musisz zaimportować niezbędne biblioteki dla swojego projektu C#. Oto niezbędna dyrektywa importowa:
+## Wymagania wstępne
+
+Zanim zaczniemy, jest kilka rzeczy, które musisz mieć na miejscu:
+
+1. Visual Studio: Upewnij się, że masz zainstalowany Visual Studio na swoim komputerze. To najlepsze środowisko do rozwoju .NET.
+2.  Aspose.PDF dla .NET: Musisz pobrać i zainstalować bibliotekę Aspose.PDF. Możesz ją znaleźć[Tutaj](https://releases.aspose.com/pdf/net/).
+3. Podstawowa wiedza o języku C#: Znajomość programowania w języku C# pomoże Ci lepiej zrozumieć fragmenty kodu.
+
+## Importuj pakiety
+
+Na początek musisz zaimportować niezbędne pakiety do swojego projektu. Oto jak możesz to zrobić:
+
+### Utwórz nowy projekt
+
+Otwórz Visual Studio i utwórz nowy projekt C#. Możesz wybrać aplikację konsolową dla uproszczenia.
+
+### Dodaj odniesienie Aspose.PDF
+
+1. Kliknij prawym przyciskiem myszy swój projekt w Eksploratorze rozwiązań.
+2. Wybierz „Zarządzaj pakietami NuGet”.
+3. Wyszukaj „Aspose.PDF” i zainstaluj najnowszą wersję.
+
+### Importuj przestrzeń nazw
+
+Na górze pliku C# zaimportuj przestrzeń nazw Aspose.PDF:
 
 ```csharp
+using System;
+using System.IO;
+using Aspose.Pdf.Annotations;
 using Aspose.Pdf;
-using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Krok 2: Ustaw ścieżkę do folderu dokumentów
+Teraz, gdy wszystko już skonfigurowałeś, możemy zająć się kodowaniem!
 
- W tym kroku musisz określić ścieżkę do folderu zawierającego plik PDF, z którego chcesz odziedziczyć powiększenie. Zastępować`"YOUR DOCUMENT DIRECTORY"` następującym kodzie z rzeczywistą ścieżką do folderu dokumentów:
+## Krok 1: Zdefiniuj katalog dokumentów
+
+Po pierwsze, musisz określić ścieżkę do katalogu dokumentów. To tutaj będzie się znajdował plik PDF wejściowy i plik wyjściowy zostanie zapisany.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Krok 3: Otwórz dokument PDF
+## Krok 2: Otwórz dokument PDF
 
-Teraz otworzymy dokument PDF, w którym chcemy odziedziczyć powiększenie, używając następującego kodu:
+ Następnie należy otworzyć dokument PDF, który chcesz zmodyfikować. Można to zrobić za pomocą`Document` klasa z biblioteki Aspose.PDF.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Krok 4: Pobierz kolekcję zakładek
+## Krok 3: Uzyskaj dostęp do kolekcji konspektów/zakładek
 
- W tym kroku uzyskamy zbiór zakładek lub punktów orientacyjnych dokumentu za pomocą`Outlines` własność`doc` obiekt. Oto odpowiedni kod:
+Przejdźmy teraz do sedna sprawy: konspektów lub zakładek pliku PDF. Są to elementy nawigacyjne, które pozwalają użytkownikom przechodzić do określonych sekcji dokumentu.
 
 ```csharp
 OutlineItemCollection item = new OutlineItemCollection(doc.Outlines);
 ```
 
-## Krok 5: Ustaw poziom powiększenia
+## Krok 4: Ustaw poziom powiększenia
 
- Teraz ustawimy poziom powiększenia, tworząc plik`XYZExplicitDestination` obiekt o określonych współrzędnych x, yiz. Tutaj używamy współrzędnych (100, 100, 0) z powiększeniem 2. Oto odpowiedni kod:
+ Tutaj dzieje się magia! Możesz ustawić poziom powiększenia za pomocą`XYZExplicitDestination` klasa. W tym przykładzie ustawimy poziom powiększenia na 0, co oznacza, że dokument odziedziczy poziom powiększenia od przeglądarki.
 
 ```csharp
 XYZExplicitDestination dest = new XYZExplicitDestination(2, 100, 100, 0);
 ```
 
-## Krok 6: Dodaj poziom powiększenia do zakładek
+## Krok 5: Dodaj akcję do kolekcji konturów
 
- W tym kroku dodajemy`XYZExplicitDestination` obiekt jako akcja na zakładkach pliku`item` kolekcja. Oto odpowiedni kod:
-
-```csharp
-item. Action = new GoToAction(dest);
-```
-
-## Krok 7: Dodaj zaktualizowane zakładki do dokumentu
-
- Na koniec dodajemy zaktualizowane zakładki do kolekcji zakładek dokumentu za pomocą metody`Add` metoda`doc.Outlines` obiekt. Oto odpowiedni kod:
+Teraz, gdy masz już ustawiony cel, czas dodać tę akcję do kolekcji konspektów w pliku PDF.
 
 ```csharp
-doc. Outlines. Add(item);
-```
-
-## Krok 8: Zapisz zaktualizowany plik
-
- Teraz zapiszmy zaktualizowany plik PDF za pomocą rozszerzenia`Save` metoda`doc` obiekt. Oto odpowiedni kod:
-
-```csharp
-dataDir = dataDir + "InheritZoom_out.pdf";
-doc.Save(dataDir);
-```
-
-### Przykładowy kod źródłowy dla Inherit Zoom przy użyciu Aspose.PDF dla .NET 
-```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Otwórz dokument
-Document doc = new Document(dataDir + "input.pdf");
-// Pobierz kolekcję konturów/zakładek w pliku PDF
-OutlineItemCollection item = new OutlineItemCollection(doc.Outlines);
-// Ustaw poziom powiększenia na 0
-XYZExplicitDestination dest = new XYZExplicitDestination(2, 100, 100, 0);
-// Dodaj XYZExplicitDestination jako akcję do zarysowania kolekcji plików PDF
 item.Action = new GoToAction(dest);
-// Dodaj element do kolekcji konturów pliku PDF
+```
+
+## Krok 6: Dodaj element do kolekcji konturów
+
+Następnie należy dodać element do kolekcji konspektów pliku PDF. Ten krok zapewnia zapisanie zmian.
+
+```csharp
 doc.Outlines.Add(item);
+```
+
+## Krok 7: Zapisz plik wyjściowy PDF
+
+Na koniec musisz zapisać zmodyfikowany dokument PDF. Określ ścieżkę, w której chcesz zapisać nowy plik.
+
+```csharp
 dataDir = dataDir + "InheritZoom_out.pdf";
-// Zapisz dane wyjściowe
 doc.Save(dataDir);
+```
+
+## Krok 8: Potwierdź aktualizację
+
+Na zakończenie wydrukujmy komunikat potwierdzający na konsoli, aby dać nam znać, że wszystko przebiegło pomyślnie.
+
+```csharp
 Console.WriteLine("\nBookmarks updated successfully.\nFile saved at " + dataDir);
 ```
 
 ## Wniosek
 
-Gratulacje! Teraz masz przewodnik krok po kroku dotyczący dziedziczenia powiększenia za pomocą Aspose.PDF dla .NET. Możesz użyć tego kodu, aby określić domyślny poziom powiększenia zakładek w dokumentach PDF.
+I masz! Udało Ci się odziedziczyć poziom powiększenia w plikach PDF za pomocą Aspose.PDF dla .NET. Ta prosta, ale potężna funkcja może znacznie poprawić wrażenia użytkownika, czyniąc Twoje dokumenty bardziej dostępnymi i łatwiejszymi w nawigacji. Więc następnym razem, gdy będziesz tworzyć plik PDF, pamiętaj o ustawieniu tego poziomu powiększenia!
 
-Koniecznie zapoznaj się z oficjalną dokumentacją Aspose.PDF, aby uzyskać więcej informacji na temat zaawansowanych funkcji manipulacji zakładkami.
+## Najczęściej zadawane pytania
 
-### Często zadawane pytania dotyczące dziedziczenia powiększenia w pliku PDF
+### Czym jest Aspose.PDF dla .NET?
+Aspose.PDF dla platformy .NET to zaawansowana biblioteka umożliwiająca programistom programowe tworzenie, edytowanie i konwertowanie dokumentów PDF.
 
-#### P: Co to jest dziedziczenie powiększenia w pliku PDF?
+### Czy mogę używać Aspose.PDF bezpłatnie?
+ Tak, Aspose oferuje bezpłatną wersję próbną, której możesz użyć do przetestowania biblioteki. Możesz ją pobrać[Tutaj](https://releases.aspose.com/).
 
-Odp.: Dziedziczenie powiększenia odnosi się do możliwości określenia domyślnego poziomu powiększenia zakładek w dokumencie PDF. Pozwala to na spójną i przyjazną dla użytkownika nawigację podczas interakcji z zakładkami.
+### Gdzie mogę znaleźć dokumentację?
+ Dokumentację Aspose.PDF dla .NET można znaleźć w pliku[Tutaj](https://reference.aspose.com/pdf/net/).
 
-#### P: Dlaczego miałbym chcieć dziedziczyć poziomy powiększenia zakładek?
+### Jak zakupić licencję?
+ Możesz kupić licencję na Aspose.PDF dla .NET[Tutaj](https://purchase.aspose.com/buy).
 
-O: Dziedziczenie poziomów powiększenia zapewnia użytkownikom spójny wygląd podczas przeglądania zakładek w dokumencie PDF. Może to być szczególnie przydatne, gdy chcesz zapewnić określony widok dla różnych sekcji dokumentu.
-
-#### P: Jak zaimportować niezbędne biblioteki do mojego projektu C#?
-
-O: Aby zaimportować wymagane biblioteki do projektu C#, dołącz następujące dyrektywy importu:
-
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.InteractiveFeatures;
-```
-
-Dyrektywy te umożliwiają dostęp do klas i metod potrzebnych do pracy z dokumentami PDF i zakładkami.
-
-#### P: Jak określić ścieżkę do folderu dokumentów?
-
- Odp.: W dostarczonym kodzie źródłowym zamień`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do folderu zawierającego plik PDF, dla którego chcesz odziedziczyć poziomy powiększenia.
-
-#### P: Jak otworzyć dokument PDF, aby odziedziczyć poziomy powiększenia?
-
-Odp.: Aby otworzyć dokument PDF w celu dziedziczenia poziomów powiększenia, użyj następującego kodu:
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
- Zastępować`"input.pdf"` z rzeczywistą nazwą pliku.
-
-#### P: Jak ustawić poziom powiększenia zakładek?
-
- Odp.: Aby ustawić poziom powiększenia, utwórz plik`XYZExplicitDestination` obiekt o żądanych współrzędnych i współczynniku powiększenia. Oto przykład:
-
-```csharp
-XYZExplicitDestination dest = new XYZExplicitDestination(2, 100, 100, 0);
-```
-
-Ustawia to poziom powiększenia na 2 przy współrzędnych (100, 100).
-
-#### P: Jak dodać poziom powiększenia do zakładek?
-
- O: Dodaj`XYZExplicitDestination` obiekt jako akcja w kolekcji zakładek:
-
-```csharp
-item.Action = new GoToAction(dest);
-```
-
- Gdzie`item` jest`OutlineItemCollection` reprezentujący zakładkę.
-
-#### P: Jak zapisać zaktualizowany plik PDF?
-
- Odp.: Zapisz zaktualizowany plik PDF za pomocą rozszerzenia`Save` metoda`doc` obiekt:
-
-```csharp
-dataDir = dataDir + "InheritZoom_out.pdf";
-doc.Save(dataDir);
-```
-
-#### P: Czy mogę dostosować poziomy powiększenia dla różnych zakładek?
-
- Odp.: Tak, możesz dostosować poziomy powiększenia dla różnych zakładek, tworząc ich wiele`XYZExplicitDestination` obiekty o różnych współrzędnych i współczynnikach powiększenia.
-
-#### P: Czy istnieje ograniczenie liczby zakładek, do których mogę zastosować dziedziczenie powiększenia?
-
-Odpowiedź: Zwykle nie ma ścisłego ograniczenia liczby zakładek, do których można zastosować dziedziczenie powiększenia. Jednak bardzo duże dokumenty z nadmierną liczbą zakładek mogą wymagać sprawnego zarządzania pamięcią.
-
-#### P: Jak mogę potwierdzić, że zastosowano dziedziczenie powiększenia?
-
-O: Otwórz wygenerowany plik PDF, aby sprawdzić, czy zakładki przejęły określone poziomy powiększenia.
+### A co jeśli będę potrzebować wsparcia?
+ Jeśli potrzebujesz pomocy, możesz odwiedzić forum pomocy technicznej Aspose[Tutaj](https://forum.aspose.com/c/pdf/10).

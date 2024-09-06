@@ -1,36 +1,78 @@
 ---
-title: Personalice los números de página mientras agrega TOC
-linktitle: Personalice los números de página mientras agrega TOC
-second_title: Aspose.PDF para referencia de API .NET
-description: Aprenda a personalizar los números de página mientras agrega una tabla de contenido (TOC) usando Aspose.PDF para .NET con esta guía paso a paso y un ejemplo de código.
+title: Personalizar los números de página al agregar una tabla de contenidos
+linktitle: Personalizar los números de página al agregar una tabla de contenidos
+second_title: Referencia de API de Aspose.PDF para .NET
+description: Aprenda a personalizar los números de página mientras agrega una tabla de contenido a sus documentos PDF usando Aspose.PDF para .NET en este completo tutorial.
 type: docs
 weight: 100
 url: /es/net/programming-with-document/customizepagenumbeswhileaddingtoc/
 ---
-En este tutorial, exploraremos cómo personalizar los números de página mientras agregamos una tabla de contenido (TOC) usando Aspose.PDF para .NET. Le proporcionaremos orientación paso a paso, junto con un ejemplo de código, para ayudarle a lograrlo.
+## Introducción
 
-## Paso 1: cargar un archivo PDF existente
+En el mundo de la gestión de documentos, los PDF son los reyes. Son el formato ideal para compartir y conservar documentos en varias plataformas. Pero, ¿qué sucede cuando desea mejorar sus documentos PDF con funciones como una tabla de contenido (TOC)? ¡Ahí es donde entra en juego Aspose.PDF para .NET! Esta potente biblioteca permite a los desarrolladores manipular archivos PDF con facilidad, lo que les permite agregar, modificar y personalizar contenido sin esfuerzo. En este tutorial, profundizaremos en cómo personalizar los números de página mientras agrega una tabla de contenido a sus documentos PDF utilizando Aspose.PDF para .NET. ¡Así que, póngase su sombrero de codificador y comencemos!
 
-Primero, necesitamos cargar un archivo PDF existente. Para este tutorial, usaremos el archivo "42824.pdf" ubicado en el directorio "SU DIRECTORIO DE DOCUMENTOS". Reemplace esta ruta de directorio con la ruta real a su directorio de documentos.
+## Prerrequisitos
+
+Antes de pasar al código, hay algunas cosas que debes tener en cuenta:
+
+1. Visual Studio: asegúrese de tener Visual Studio instalado en su equipo. Este será nuestro entorno de desarrollo.
+2. Aspose.PDF para .NET: Debe descargar e instalar la biblioteca Aspose.PDF. Puede encontrarla[aquí](https://releases.aspose.com/pdf/net/).
+3. Conocimientos básicos de C#: la familiaridad con la programación en C# le ayudará a comprender mejor los fragmentos de código.
+4. Un archivo PDF de muestra: tenga listo un archivo PDF de muestra con el que podamos trabajar. Puede crear uno simple o descargar un PDF existente.
+
+## Importar paquetes
+
+Para comenzar, debemos importar los paquetes necesarios. Abra su proyecto de Visual Studio y agregue una referencia a la biblioteca Aspose.PDF. Puede hacerlo mediante el Administrador de paquetes NuGet:
+
+1. Haga clic derecho en su proyecto en el Explorador de soluciones.
+2. Seleccione "Administrar paquetes NuGet".
+3. Busque “Aspose.PDF” e instálelo.
+
+```csharp
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+¡Una vez que tengas la biblioteca instalada, puedes comenzar a codificar!
+
+## Paso 1: Configurar el directorio de documentos
+
+Lo primero es lo primero: debemos configurar nuestro directorio de documentos. Aquí es donde almacenaremos nuestros archivos PDF de entrada y salida. 
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "42824.pdf";
 string outFile = dataDir + "42824_out.pdf";
+```
+
+En este fragmento, reemplace`YOUR DOCUMENT DIRECTORY` con la ruta actual donde se encuentran sus archivos PDF. Esto nos ayudará a cargar el PDF existente y guardar la versión modificada.
+
+## Paso 2: Cargue el archivo PDF existente
+
+Ahora que tenemos configurado nuestro directorio de documentos, carguemos el archivo PDF existente. 
+
+```csharp
 Document doc = new Document(inFile);
 ```
 
-## Paso 2: Agregar una página TOC
+ Aquí creamos uno nuevo`Document` objeto pasando la ruta del archivo de entrada. Esto nos permite manipular el contenido del PDF mediante programación.
 
- A continuación, debemos agregar una nueva página al principio del documento para que sirva como página TOC. Esto lo podemos lograr utilizando el`Insert()` método de la`Pages` colección de la`Document` objeto.
+## Paso 3: Insertar una nueva página para la tabla de contenidos
+
+A continuación, necesitamos crear una nueva página en nuestro PDF donde residirá la Tabla de Contenidos.
 
 ```csharp
 Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
 ```
 
-## Paso 3: crear un objeto TOC
+Esta línea inserta una nueva página al principio del documento. La tabla de contenidos se mostrará en esta página.
 
- Para crear un objeto TOC, primero necesitamos crear un`TocInfo` objeto y establecer sus propiedades. En este tutorial, estableceremos el título del TOC en "Tabla de contenido" y el prefijo del número de página en "P".
+## Paso 4: Crear información de tabla de contenidos
+
+Ahora, vamos a crear un objeto para representar la información del TOC.
 
 ```csharp
 TocInfo tocInfo = new TocInfo();
@@ -42,99 +84,55 @@ tocInfo.PageNumbersPrefix = "P";
 tocPage.TocInfo = tocInfo;
 ```
 
-## Paso 4: Crear entradas TOC
+ En este paso, creamos un`TocInfo` objeto y establecemos su título como "Tabla de contenido". También personalizamos el tamaño y el estilo de la fuente.`PageNumbersPrefix` se establece en "P", que antepondrá los números de página en la tabla de contenidos.
 
-Para crear entradas TOC, debemos recorrer todas las páginas del documento, excepto la página TOC, y crear un objeto de encabezado para cada página. Luego podemos agregar el objeto de encabezado a la página TOC y especificar su página de destino.
+## Paso 5: Agregar títulos a la tabla de contenidos
+
+Ahora viene la parte divertida. Recorreremos las páginas del documento y agregaremos títulos a nuestra tabla de contenidos.
 
 ```csharp
 for (int i = 1; i < doc.Pages.Count; i++)
 {
-    // Crear objeto de encabezado
     Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
     TextSegment segment2 = new TextSegment();
     heading2.TocPage = tocPage;
     heading2.Segments.Add(segment2);
-    // Especificar la página de destino para el objeto de encabezado
     heading2.DestinationPage = doc.Pages[i + 1];
-    // Página de destino
     heading2.Top = doc.Pages[i + 1].Rect.Height;
-    // Coordenada de destino
     segment2.Text = "Page " + i.ToString();
-    // Agregar encabezado a la página que contiene TOC
     tocPage.Paragraphs.Add(heading2);
 }
 ```
 
-## Paso 5: guardar el documento actualizado
+ En este bucle, creamos un nuevo`Heading` objeto para cada página. Establecemos la página de destino para cada encabezado y especificamos el texto que se mostrará, que es "Página X", donde X es el número de página. Por último, agregamos el encabezado a la página de índice.
 
-Finalmente, necesitamos guardar el documento actualizado en un archivo nuevo. Esto lo podemos lograr utilizando el`Save()` método de la`Document` objeto.
+## Paso 6: Guarde el documento actualizado
+
+Después de agregar todos los encabezados necesarios, es hora de guardar nuestro documento actualizado.
 
 ```csharp
 doc.Save(outFile);
 ```
 
-### Código fuente de ejemplo para personalizar los números de página mientras se agrega TOC usando Aspose.PDF para .NET
-
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string inFile = dataDir + "42824.pdf";
-string outFile = dataDir + "42824_out.pdf";
-// Cargar archivos PDF existentes
-Document doc = new Document(inFile);
-// Obtenga acceso a la primera página del archivo PDF
-Aspose.Pdf.Page tocPage = doc.Pages.Insert(1);
-// Crear objeto para representar información TOC
-TocInfo tocInfo = new TocInfo();
-TextFragment title = new TextFragment("Table Of Contents");
-title.TextState.FontSize = 20;
-title.TextState.FontStyle = FontStyles.Bold;
-// Establecer el título para TOC
-tocInfo.Title = title;
-tocInfo.PageNumbersPrefix = "P";
-tocPage.TocInfo = tocInfo;
-for (int i = 1; i<doc.Pages.Count; i++)
-{
-	// Crear objeto de encabezado
-	Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
-	TextSegment segment2 = new TextSegment();
-	heading2.TocPage = tocPage;
-	heading2.Segments.Add(segment2);
-	// Especificar la página de destino para el objeto de encabezado
-	heading2.DestinationPage = doc.Pages[i + 1];
-	// Página de destino
-	heading2.Top = doc.Pages[i + 1].Rect.Height;
-	// Coordenada de destino
-	segment2.Text = "Page " + i.ToString();
-	// Agregar encabezado a la página que contiene TOC
-	tocPage.Paragraphs.Add(heading2);
-}
-
-// Guardar el documento actualizado
-doc.Save(outFile);
-```
+Esta línea guarda el PDF modificado con la tabla de contenidos incluida. ¡Ahora puede abrir el archivo de salida y ver su tabla de contenidos personalizada!
 
 ## Conclusión
 
-En este tutorial, proporcionamos orientación paso a paso sobre cómo personalizar los números de página mientras agregamos una tabla de contenido usando Aspose.PDF para .NET. También proporcionamos un ejemplo de código que puede utilizar como referencia al implementar esta función en su
+¡Y ya está! Has personalizado con éxito los números de página y has añadido una tabla de contenidos a tu documento PDF con Aspose.PDF para .NET. Esta potente biblioteca facilita la manipulación de archivos PDF y, con solo unas pocas líneas de código, puedes mejorar significativamente tus documentos. Tanto si estás creando informes, libros electrónicos o cualquier otro tipo de PDF, tener una tabla de contenidos puede mejorar enormemente la navegación de tus lectores. ¿A qué estás esperando? ¡Sumérgete en Aspose.PDF y empieza a crear PDF increíbles hoy mismo!
 
-### Preguntas frecuentes
+## Preguntas frecuentes
 
-#### P: ¿Qué es una tabla de contenido (TOC) en un documento PDF?
+### ¿Qué es Aspose.PDF para .NET?
+Aspose.PDF para .NET es una biblioteca que permite a los desarrolladores crear, manipular y convertir documentos PDF mediante programación.
 
-R: Una tabla de contenido (TOC) en un documento PDF es una ayuda para la navegación que proporciona una lista organizada de secciones o capítulos del documento junto con sus números de página correspondientes. Permite a los lectores navegar rápidamente a secciones específicas del documento.
+### ¿Puedo utilizar Aspose.PDF gratis?
+ Sí, Aspose ofrece una versión de prueba gratuita que puedes usar para explorar las funciones de la biblioteca. Puedes descargarla[aquí](https://releases.aspose.com/).
 
-#### P: ¿Por qué querría personalizar los números de página en una tabla de contenidos?
+### ¿Cómo puedo obtener soporte para Aspose.PDF?
+ Puede obtener ayuda visitando el foro de Aspose[aquí](https://forum.aspose.com/c/pdf/10).
 
-R: Personalizar los números de página en una tabla de contenido puede resultar útil cuando desea utilizar un formato de numeración de páginas específico o incluir información adicional junto con los números de página. Le permite crear una tabla de contenidos más personalizada e informativa.
+### ¿Existe una licencia temporal disponible?
+ Sí, puedes solicitar una licencia temporal para Aspose.PDF[aquí](https://purchase.aspose.com/temporary-license/).
 
-#### P: ¿Puedo incluir hipervínculos en el TOC para vincular a secciones o páginas específicas dentro del documento PDF?
-
-R: Sí, Aspose.PDF para .NET le permite crear hipervínculos en el TOC que enlazan con secciones o páginas específicas dentro del documento PDF. Esto mejora la interactividad y navegación del documento PDF.
-
-#### P: ¿Aspose.PDF para .NET es compatible con los estándares PDF/A?
-
-R: Sí, Aspose.PDF para .NET admite los estándares PDF/A, incluidos PDF/A-1, PDF/A-2 y PDF/A-3. Le permite crear documentos PDF que cumplen con los requisitos de archivo y preservación a largo plazo.
-
-#### P: ¿Puedo agregar más formato a las entradas de la TOC, como estilos de fuente o colores?
-
-R: Sí, puede agregar formato adicional a las entradas de la TOC, como estilos de fuente, colores y tamaños de fuente, utilizando Aspose.PDF para .NET. Esto le permite personalizar la apariencia del TOC según sus requisitos.
+### ¿Dónde puedo comprar Aspose.PDF para .NET?
+ Puedes comprar Aspose.PDF para .NET[aquí](https://purchase.aspose.com/buy).

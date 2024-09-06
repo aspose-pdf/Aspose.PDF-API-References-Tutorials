@@ -68,7 +68,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nXFA fields filled successfully.\nFile saved at " + dataDir);
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Σε αυτό το σεμινάριο, μάθαμε πώς να συμπληρώνουμε πεδία XFA χρησιμοποιώντας το Aspose.PDF για .NET. Ακολουθώντας αυτά τα βήματα, μπορείτε εύκολα να αλλάξετε τις τιμές των πεδίων XFA στα έγγραφα PDF χρησιμοποιώντας το Aspose.PDF.
 

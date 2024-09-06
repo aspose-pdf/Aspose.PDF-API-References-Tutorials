@@ -2,31 +2,31 @@
 title: オプション付きラジオボタン
 linktitle: オプション付きラジオボタン
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用すると、オプション付きのラジオ ボタンを PDF ドキュメントに簡単に追加できます。
+description: Aspose.PDF for .NET を使用して、オプション付きのラジオ ボタンを PDF ドキュメントに簡単に追加できます。
 type: docs
 weight: 230
 url: /ja/net/programming-with-forms/radio-button-with-options/
 ---
 
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメントにオプション付きのラジオ ボタンを追加する方法を説明します。このプロセスをガイドするために、C# ソース コードをステップごとに説明します。
+このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメントにオプション付きのラジオ ボタンを追加する方法を説明します。このプロセスをガイドするために、C# ソース コードを段階的に説明します。
 
-## ステップ 1: 準備
+## ステップ1: 準備
 
-必要なライブラリをインポートし、ドキュメント ディレクトリへのパスを設定していることを確認してください。
+必要なライブラリがインポートされ、ドキュメント ディレクトリへのパスが設定されていることを確認してください。
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## ステップ 2: ドキュメント オブジェクトをインスタンス化する
+## ステップ2: ドキュメントオブジェクトのインスタンスを作成する
 
-Document オブジェクトをインスタンス化して、新しい PDF ドキュメントを作成します。
+Document オブジェクトをインスタンス化して新しい PDF ドキュメントを作成します。
 
 ```csharp
 Document doc = new Document();
 ```
 
-## ステップ 3: ページとテーブルを追加する
+## ステップ3: ページと表を追加する
 
 ドキュメントにページを追加し、ラジオ ボタンのオプションを保持するテーブルを作成します。
 
@@ -37,7 +37,7 @@ table. ColumnWidths = "120 120 120";
 page.Paragraphs.Add(table);
 ```
 
-## ステップ 4: RadioButtonField オブジェクトをインスタンス化する
+## ステップ4: RadioButtonFieldオブジェクトのインスタンスを作成する
 
 ラジオ ボタンを表す RadioButtonField オブジェクトをインスタンス化します。
 
@@ -47,9 +47,9 @@ rf. PartialName = "radio";
 doc.Form.Add(rf, 1);
 ```
 
-## ステップ 5: ラジオ ボタン オプションを追加する
+## ステップ5: ラジオボタンオプションを追加する
 
-ラジオ ボタン オプションを RadioButtonField オブジェクトに追加します。
+RadioButtonField オブジェクトにラジオ ボタン オプションを追加します。
 
 ```csharp
 RadioButtonOptionField opt1 = new RadioButtonOptionField();
@@ -69,9 +69,9 @@ rf.Add(opt2);
 rf.Add(opt3);
 ```
 
-## ステップ 6: ラジオ ボタン オプションをカスタマイズする
+## ステップ6: ラジオボタンのオプションをカスタマイズする
 
-枠線、テキストの色、キャプション テキストなどの属性を設定して、ラジオ ボタンのオプションをカスタマイズします。
+境界線、テキストの色、キャプション テキストなどの属性を設定して、ラジオ ボタンのオプションをカスタマイズします。
 
 ```csharp
 opt1.Border = new Border(opt1);
@@ -81,11 +81,11 @@ opt1.Characteristics.Border = System.Drawing.Color.Black;
 opt1.DefaultAppearance.TextColor = System.Drawing.Color.Red;
 opt1.Caption = new TextFragment("Item1");
 
-// opt2 と opt3 についても同じ手順を繰り返します。
+// opt2とopt3についても同じ手順を繰り返します。
 
 ```
 
-## ステップ 7: ラジオ ボタン オプションをテーブルに追加します。
+## ステップ7: ラジオボタンのオプションをテーブルに追加する
 
 ラジオ ボタン オプションをテーブルに追加して表示します。
 
@@ -99,7 +99,7 @@ c2.Paragraphs.Add(opt2);
 c3.Paragraphs.Add(opt3);
 ```
 
-## ステップ 8: PDF ドキュメントを保存する
+## ステップ8: PDFドキュメントを保存する
 
 作成した PDF ドキュメントを保存します。
 
@@ -112,7 +112,7 @@ doc.Save(dataDir);
 ```csharp
 try
 {
-	//ドキュメントディレクトリへのパス。
+	//ドキュメント ディレクトリへのパス。
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
 	Document doc = new Document();
 	Page page = doc.Pages.Add();
@@ -163,7 +163,7 @@ try
 	c2.Paragraphs.Add(opt2);
 	c3.Paragraphs.Add(opt3);
 	dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
-	//PDF ファイルを保存する
+	//PDFファイルを保存する
 	doc.Save(dataDir);
 	Console.WriteLine("\nRadio button field with three options added successfully.\nFile saved at " + dataDir);
 }
@@ -175,4 +175,4 @@ catch (Exception ex)
 
 ## 結論
 
-おめでとうございます！ Aspose.PDF for .NET を使用して、PDF ドキュメントにオプション付きのラジオ ボタンを正常に追加しました。この方法を使用して、PDF ドキュメント内にインタラクティブなフォームを作成できるようになりました。
+おめでとうございます! Aspose.PDF for .NET を使用して、オプション付きのラジオ ボタンを PDF ドキュメントに正常に追加しました。この方法を使用して、PDF ドキュメントにインタラクティブなフォームを作成できます。

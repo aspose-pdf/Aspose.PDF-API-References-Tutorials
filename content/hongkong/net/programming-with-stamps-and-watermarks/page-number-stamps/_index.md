@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-stamps-and-watermarks/page-number-stamps/
 
 ## 步驟 2： 載入現有 PDF 文檔
 
-第一步是將現有的 PDF 文件載入到您的專案中。就是這樣：
+第一步是將現有的 PDF 文件載入到您的專案中。方法如下：
 
 ```csharp
 //文檔目錄的路徑。
@@ -32,7 +32,7 @@ Document pdfDocument = new Document(dataDir + "PageNumberStamp.pdf");
 
 ## 步驟 3：建立並設定頁碼標記
 
-現在 PDF 文件已加載，我們可以建立頁碼緩衝區並根據需要進行配置。就是這樣：
+現在 PDF 文件已加載，我們可以建立頁碼緩衝區並根據需要進行配置。方法如下：
 
 ```csharp
 //建立頁碼緩衝區
@@ -65,7 +65,7 @@ pageNumberStamp.TextState.ForegroundColor = Color.Aqua;
 
 ## 步驟 4：將頁碼標記新增至特定頁面
 
-配置頁碼標記後，我們可以將其新增至 PDF 文件的特定頁面。就是這樣：
+配置頁碼標記後，我們可以將其新增至 PDF 文件的特定頁面。方法如下：
 
 ```csharp
 //將頁碼緩衝區新增至特定頁面
@@ -76,7 +76,7 @@ pdfDocument.Pages[1].AddStamp(pageNumberStamp);
 
 ## 步驟5：儲存修改後的PDF文檔
 
-一旦頁碼標記加入PDF文件中，我們就可以儲存修改後的PDF文件。就是這樣：
+一旦頁碼標記加入PDF文件中，我們就可以儲存修改後的PDF文件。方法如下：
 
 ```csharp
 //儲存修改後的PDF文檔

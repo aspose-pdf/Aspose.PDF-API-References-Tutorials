@@ -96,7 +96,7 @@ S: XMP (Extensible Metadata Platform) är en standard för inbäddning av metada
 
 #### F: Kan jag ställa in andra XMP-metadataegenskaper förutom de som nämns i exemplet?
 
- S: Ja, du kan ställa in ett brett utbud av XMP-metadataegenskaper beroende på dina specifika krav. Några vanliga egenskaper inkluderar`dc:title` (dokument titel),`dc:creator` (dokument skapare),`dc:description` (dokumentbeskrivning),`pdf:Keywords` (dokumentnyckelord) och mer. XMP-specifikationen erbjuder olika standardnamnområden och anpassade namnområden för att ställa in olika typer av metadata.
+ S: Ja, du kan ställa in ett brett utbud av XMP-metadataegenskaper beroende på dina specifika krav. Några vanliga egenskaper inkluderar`dc:title` (dokumenttitel),`dc:creator` (dokument skapare),`dc:description` (dokumentbeskrivning),`pdf:Keywords` (dokumentnyckelord) och mer. XMP-specifikationen erbjuder olika standardnamnområden och anpassade namnområden för att ställa in olika typer av metadata.
 
 #### F: Är det möjligt att hämta och läsa XMP-metadata från en befintlig PDF-fil?
 

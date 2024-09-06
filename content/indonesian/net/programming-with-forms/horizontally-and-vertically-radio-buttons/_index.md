@@ -1,7 +1,7 @@
 ---
 title: Tombol Radio Horizontal dan Vertikal
 linktitle: Tombol Radio Horizontal dan Vertikal
-second_title: Aspose.PDF untuk Referensi .NET API
+second_title: Referensi API Aspose.PDF untuk .NET
 description: Buat tombol radio horizontal dan vertikal dengan mudah di dokumen PDF Anda dengan Aspose.PDF untuk .NET.
 type: docs
 weight: 180
@@ -11,7 +11,7 @@ Dalam tutorial ini, kami akan menunjukkan cara membuat tombol radio yang disusun
 
 ## Langkah 1: Persiapan
 
-Pastikan Anda telah mengimpor perpustakaan yang diperlukan dan mengatur jalur ke direktori dokumen Anda:
+Pastikan Anda telah mengimpor pustaka yang diperlukan dan mengatur jalur ke direktori dokumen Anda:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -32,7 +32,7 @@ Sesuaikan opsi tombol radio dengan mengatur properti berikut:
 
 ```csharp
 formEditor. RadioGap = 4; // Jarak antara dua opsi tombol radio
-formEditor. RadioHoriz = true; //Tata letak tombol radio secara horizontal
+formEditor. RadioHoriz = true; //Tata letak tombol radio horizontal
 formEditor.RadioButtonItemSize = 20; // Ukuran tombol radio
 formEditor.Facade.BorderWidth = 1; // Lebar batas tombol radio
 formEditor.Facade.BorderColor = System.Drawing.Color.Black; // Warna batas tombol radio
@@ -52,7 +52,7 @@ formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
 Tambahkan tombol radio yang disusun secara vertikal dengan menentukan opsi dan posisi bidang:
 
 ```csharp
-formEditor. RadioHoriz = false; // Tata letak tombol radio vertikal
+formEditor. RadioHoriz = false; // Tata letak vertikal tombol radio
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
 ```
@@ -75,7 +75,7 @@ try
 	// Muat dokumen yang disimpan sebelumnya
 	FormEditor formEditor = new FormEditor();
 	formEditor.BindPdf(dataDir + "input.pdf");
-	// RadioGap adalah jarak antara dua opsi tombol radio.
+	// RadioGap adalah jarak antara dua pilihan tombol radio.
 	formEditor.RadioGap = 4;
 	// Tambahkan tombol radio horizontal
 	formEditor.RadioHoriz = true;
@@ -102,26 +102,26 @@ catch (Exception ex)
 
 ## Kesimpulan
 
-Dalam tutorial ini, kita mempelajari cara membuat tombol radio yang disusun secara horizontal dan vertikal dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Dengan mengikuti langkah-langkah ini, Anda dapat dengan mudah menyesuaikan tata letak tombol radio dan menambahkannya ke dokumen PDF Anda menggunakan Aspose.PDF.
+Dalam tutorial ini, kita mempelajari cara membuat tombol radio yang disusun secara horizontal dan vertikal dalam dokumen PDF menggunakan Aspose.PDF for .NET. Dengan mengikuti langkah-langkah ini, Anda dapat dengan mudah menyesuaikan tata letak tombol radio dan menambahkannya ke dokumen PDF Anda menggunakan Aspose.PDF.
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
-#### T: Apa yang dimaksud dengan tombol radio yang disusun secara horizontal dan vertikal dalam dokumen PDF?
+#### T: Apa itu tombol radio yang tersusun secara horizontal dan vertikal dalam dokumen PDF?
 
-J: Tombol radio yang disusun secara horizontal dan vertikal dalam dokumen PDF mengacu pada orientasi tata letak opsi tombol radio. Tata letak horizontal menempatkan opsi tombol radio secara berdampingan, memungkinkan pengguna membuat pilihan dari kiri ke kanan. Tata letak vertikal, di sisi lain, menumpuk opsi tombol radio di atas satu sama lain, memungkinkan pengguna membuat pilihan dari atas ke bawah.
+J: Tombol radio yang disusun secara horizontal dan vertikal dalam dokumen PDF mengacu pada orientasi tata letak opsi tombol radio. Tata letak horizontal menempatkan opsi tombol radio berdampingan, yang memungkinkan pengguna membuat pilihan dari kiri ke kanan. Di sisi lain, tata letak vertikal menumpuk opsi tombol radio di atas satu sama lain, yang memungkinkan pengguna membuat pilihan dari atas ke bawah.
 
 #### T: Bagaimana cara menyesuaikan tampilan opsi tombol radio di Aspose.PDF untuk .NET?
 
-J: Anda dapat menyesuaikan tampilan opsi tombol radio di Aspose.PDF untuk .NET dengan menyesuaikan beberapa properti. API menyediakan opsi untuk mengatur jarak antara dua opsi tombol radio (`RadioGap`), orientasi tata letak (`RadioHoriz`), ukuran item tombol radio (`RadioButtonItemSize`), lebar batas dan warna tombol radio, dan banyak lagi.
+A: Anda dapat menyesuaikan tampilan opsi tombol radio di Aspose.PDF untuk .NET dengan menyesuaikan beberapa properti. API menyediakan opsi untuk mengatur jarak antara dua opsi tombol radio (`RadioGap`), orientasi tata letak (`RadioHoriz`), ukuran item tombol radio (`RadioButtonItemSize`), lebar batas dan warna tombol radio, dan banyak lagi.
 
 #### T: Dapatkah saya menambahkan tombol radio horizontal dan vertikal ke dokumen PDF yang sama?
 
-J: Ya, Anda dapat menambahkan tombol radio horizontal dan vertikal ke dokumen PDF yang sama menggunakan Aspose.PDF untuk .NET. Contoh kode sumber yang disediakan dalam tutorial menunjukkan cara menambahkan tombol radio yang disusun secara horizontal terlebih dahulu, lalu menambahkan kumpulan tombol radio lainnya yang disusun secara vertikal ke dokumen PDF yang sama.
+J: Ya, Anda dapat menambahkan tombol radio horizontal dan vertikal ke dokumen PDF yang sama menggunakan Aspose.PDF untuk .NET. Contoh kode sumber yang disediakan dalam tutorial ini menunjukkan cara menambahkan tombol radio yang disusun secara horizontal terlebih dahulu, lalu menambahkan serangkaian tombol radio lain yang disusun secara vertikal ke dokumen PDF yang sama.
 
 #### T: Dapatkah saya mengatur opsi tombol radio yang berbeda untuk setiap grup tombol radio?
 
- J: Ya, Anda dapat mengatur opsi tombol radio yang berbeda untuk setiap grup tombol radio. Setiap kelompok harus memiliki keunikannya`RadioButtonField` objek, dan`RadioButtonOptionField` objek dalam setiap grup harus berbagi halaman yang sama dan nama unik untuk opsinya. Hal ini memastikan bahwa tombol radio dalam setiap grup berfungsi dengan benar, dan pilihannya saling eksklusif.
+ A: Ya, Anda dapat mengatur opsi tombol radio yang berbeda untuk setiap grup tombol radio. Setiap grup harus memiliki opsi yang unik.`RadioButtonField` objek, dan`RadioButtonOptionField` Objek dalam setiap grup harus berbagi halaman yang sama dan nama yang unik untuk opsinya. Ini memastikan bahwa tombol radio dalam setiap grup berfungsi dengan benar, dan pilihannya saling eksklusif.
 
 #### T: Apakah pengaturan tata letak dan tampilan tombol radio didukung di semua penampil dan aplikasi PDF?
 
-J: Ya, pengaturan tata letak dan tampilan tombol radio didukung di semua aplikasi dan penampil PDF yang memenuhi standar. Spesifikasi PDF mendefinisikan tombol radio dan berbagai atributnya, menjadikannya dikenali secara universal dalam format PDF. Namun, penting untuk menguji tampilan dan perilaku tombol radio di berbagai penampil PDF untuk memastikan rendering yang konsisten di berbagai platform.
+J: Ya, tata letak dan pengaturan tampilan tombol radio didukung di semua penampil dan aplikasi PDF yang sesuai standar. Spesifikasi PDF mendefinisikan tombol radio dan berbagai atributnya, sehingga dapat dikenali secara universal dalam format PDF. Namun, penting untuk menguji tampilan dan perilaku tombol radio di berbagai penampil PDF guna memastikan tampilan yang konsisten di berbagai platform.

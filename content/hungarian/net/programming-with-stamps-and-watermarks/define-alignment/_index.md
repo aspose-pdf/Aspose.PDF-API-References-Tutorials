@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 2. lépés: A PDF dokumentum betöltése
 
-Az első lépés a meglévő PDF dokumentum betöltése a projektbe. Itt van, hogyan:
+Az első lépés a meglévő PDF dokumentum betöltése a projektbe. Íme, hogyan:
 
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
@@ -32,7 +32,7 @@ Feltétlenül cserélje ki a „DOKUMENTUMKÖNYVTÁR” elemet a PDF-dokumentum 
 
 ## 3. lépés: Az igazítás meghatározása
 
-Most, hogy betöltötte a PDF dokumentumot, beállíthatja a szövegbélyegző igazítását. Itt van, hogyan:
+Most, hogy betöltötte a PDF dokumentumot, beállíthatja a szövegbélyegző igazítását. Íme, hogyan:
 
 ```csharp
 // Példányosítson egy FormattedText objektumot a példakarakterlánc segítségével
@@ -67,7 +67,7 @@ fenti kód a FormattedText osztály segítségével középre állított szöveg
 
 ## 4. lépés: Mentse el a kimeneti dokumentumot
 
-Miután beállította a szövegbélyegző igazítását, mentheti a módosított PDF dokumentumot. Itt van, hogyan:
+Miután beállította a szövegbélyegző igazítását, mentheti a módosított PDF dokumentumot. Íme, hogyan:
 
 ```csharp
 // Mentse el a frissített dokumentumot

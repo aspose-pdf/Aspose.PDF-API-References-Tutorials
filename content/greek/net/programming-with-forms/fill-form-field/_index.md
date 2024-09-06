@@ -66,7 +66,7 @@ pdfDocument.Save(dataDir);
 Console.WriteLine("\nForm field filled successfully.\nFile saved at " + dataDir);
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Σε αυτό το σεμινάριο, μάθαμε πώς να συμπληρώνουμε ένα πεδίο φόρμας χρησιμοποιώντας το Aspose.PDF για .NET. Ακολουθώντας αυτά τα βήματα, μπορείτε εύκολα να αλλάξετε τις τιμές των πεδίων φόρμας στα έγγραφα PDF χρησιμοποιώντας το Aspose.PDF.
 

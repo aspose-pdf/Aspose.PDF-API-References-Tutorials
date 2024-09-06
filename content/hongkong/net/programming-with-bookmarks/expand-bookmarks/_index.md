@@ -2,157 +2,124 @@
 title: 展開 PDF 檔案中的書籤
 linktitle: 展開 PDF 檔案中的書籤
 second_title: Aspose.PDF for .NET API 參考
-description: 使用 Aspose.PDF for .NET 輕鬆擴充 PDF 檔案中的書籤以改善導航。
+description: 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 擴充 PDF 檔案中的書籤。非常適合希望增強 PDF 導航的開發人員。
 type: docs
 weight: 50
 url: /zh-hant/net/programming-with-bookmarks/expand-bookmarks/
 ---
-預設情況下，展開 PDF 檔案中的書籤將顯示所有開啟的書籤。使用Aspose.PDF for .NET，您可以透過以下原始程式碼輕鬆擴充書籤：
+## 介紹
 
-## 步驟1：導入所需的庫
+您是否曾經打開過 PDF 檔案卻發現書籤全部折疊起來？這可能會令人沮喪，尤其是當您嘗試瀏覽冗長的文件時。幸運的是，使用 Aspose.PDF for .NET，您可以輕鬆地以程式方式擴充 PDF 檔案中的書籤。本指南將逐步引導您完成整個過程，確保您了解程式碼的每個部分及其工作原理。那麼，拿起您最喜歡的飲料，讓我們深入 PDF 操作的世界吧！
 
-在開始之前，您需要為 C# 專案匯入必要的程式庫。這是必要的導入指令：
+## 先決條件
+
+在我們開始之前，您需要準備好一些東西：
+
+1. Visual Studio：確保您的電腦上安裝了 Visual Studio。它是 .NET 開發的最佳環境。
+2.  Aspose.PDF for .NET：您需要下載並安裝 Aspose.PDF 庫。你可以找到它[這裡](https://releases.aspose.com/pdf/net/).
+3. C# 基礎知識：熟悉 C# 程式設計將有助於您更好地理解程式碼片段。
+
+## 導入包
+
+首先，您需要在 C# 專案中匯入必要的套件。您可以這樣做：
+
+### 建立一個新項目
+
+開啟 Visual Studio 並建立一個新的 C# 專案。為了簡單起見，您可以選擇控制台應用程式。
+
+### 新增 Aspose.PDF 參考
+
+1. 在解決方案資源管理器中以滑鼠右鍵按一下您的專案。
+2. 選擇“管理 NuGet 套件”。
+3. 搜尋“Aspose.PDF”並安裝最新版本。
+
+### 導入命名空間
+
+在 C# 檔案的頂部，匯入 Aspose.PDF 命名空間：
 
 ```csharp
+using System;
+using System.IO;
 using Aspose.Pdf;
 ```
 
-## 步驟 2：設定文件資料夾路徑
+現在您已完成所有設置，讓我們繼續編寫實際程式碼！
 
-在此步驟中，您需要指定包含要展開其書籤的 PDF 檔案的資料夾的路徑。代替`"YOUR DOCUMENT DIRECTORY"`在以下程式碼中使用文件資料夾的實際路徑：
+## 第 1 步：設定您的文件目錄
 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-```
+首先，您需要指定文檔目錄的路徑。這是輸入 PDF 檔案所在的位置以及輸出檔案的儲存位置。
 
-## 步驟 3：開啟 PDF 文檔
-
-現在我們將使用以下程式碼開啟要擴展其書籤的PDF文件：
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
-## 第四步：設定頁面顯示模式
-
-在這一步驟中，我們將頁面顯示模式設定為預設顯示書籤。我們使用`PageMode`的財產`doc`物件設定所需的頁面模式。這是對應的程式碼：
-
-```csharp
-doc.PageMode = PageMode.UseOutlines;
-```
-
-## 第 5 步：瀏覽書籤並展開它們
-
-現在我們將循環遍歷文件書籤集合中的每個書籤項，並將每個項的開啟狀態設為`true`預設情況下展開它們。這是對應的程式碼：
-
-```csharp
-foreach(OutlineItemCollection item in doc.Outlines)
-{
-     item. Open = true;
-}
-```
-
-## 第 6 步：儲存更新的文件
-
-最後，我們使用以下命令儲存更新後的 PDF 文件`Save`的方法`doc`目的。這是對應的程式碼：
-
-```csharp
-dataDir = dataDir + "ExpandBookmarks_out.pdf";
-doc.Save(dataDir);
-```
-
-### 使用 Aspose.PDF for .NET 展開書籤的範例原始碼 
 ```csharp
 //文檔目錄的路徑。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+## 第 2 步：開啟 PDF 文檔
+
+接下來，您將開啟包含要展開的書籤的 PDF 文件。這是使用以下方法完成的`Document`來自 Aspose.PDF 庫的類別。
+
+```csharp
 //開啟文件
-Document doc = new Document(dataDir + "input.pdf");
+Document doc = new Document(dataDir + "input-bookmark.pdf");
+```
+
+## 第三步：設定頁面查看模式
+
+現在，您需要設定文件的頁面檢視模式。這決定了開啟 PDF 時的顯示方式。在這種情況下，我們要使用輪廓（書籤）。
+
+```csharp
 //設定頁面檢視模式，即顯示縮圖、全螢幕、顯示附件面板
 doc.PageMode = PageMode.UseOutlines;
-//遍歷 PDF 檔案輪廓集合中的每個 Ouline 項目
+```
+
+## 第 4 步：遍歷大綱項
+
+有趣的部分來了！您將循環瀏覽 PDF 的大綱集合中的每個大綱項目，並將其開啟狀態設為 true。這將擴展書籤。
+
+```csharp
+//遍歷PDF文件的大綱集合中的每個大綱項
 foreach (OutlineItemCollection item in doc.Outlines)
 {
-	//設定大綱項目的開啟狀態
-	item.Open = true;
+    //設定大綱項目的開啟狀態
+    item.Open = true;
 }
+```
+
+## 第 5 步：儲存輸出文檔
+
+展開書籤後，就可以儲存修改後的文件了。您將為輸出 PDF 指定新檔案名稱。
+
+```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 //保存輸出
 doc.Save(dataDir);
+```
+
+## 步驟6：確認訊息
+
+最後，您可以在控制台列印確認訊息，讓您知道書籤已成功展開。
+
+```csharp
 Console.WriteLine("\nBookmarks expanded successfully.\nFile saved at " + dataDir);
 ```
 
 ## 結論
 
-恭喜！您現在已經有了使用 Aspose.PDF for .NET 開發書籤的逐步指南。您可以使用此程式碼顯示 PDF 文件中的所有預設書籤。
+現在你就擁有了！您已使用 Aspose.PDF for .NET 成功擴充了 PDF 檔案中的書籤。這個簡單但功能強大的庫可讓您輕鬆操作 PDF 文檔，讓您的生活變得更加輕鬆。無論您是在處理個人專案還是專業應用程序，Aspose.PDF 都是您的工具庫中的絕佳工具。
 
-請務必查看官方 Aspose.PDF 文檔，以獲取有關高級書籤操作功能的更多資訊。
+## 常見問題解答
 
-### PDF 檔案中展開書籤的常見問題解答
+### 什麼是 Aspose.PDF for .NET？
+Aspose.PDF for .NET 是一個功能強大的程式庫，可讓開發人員以程式設計方式建立、操作和轉換 PDF 文件。
 
-#### Q：PDF 文件中的書籤是什麼？
+### 我可以免費使用 Aspose.PDF 嗎？
+是的，Aspose 提供免費試用版，您可以使用它來探索該程式庫的功能。你可以下載它[這裡](https://releases.aspose.com/).
 
-答：PDF 文件中的書籤是一種導航輔助工具，允許使用者快速跳到文件中的特定部分或頁面。它們提供了存取文件不同部分的便捷方法。
+### 在哪裡可以找到更多文件？
+您可以在 Aspose.PDF for .NET 上找到全面的文檔[這裡](https://reference.aspose.com/pdf/net/).
 
-#### Q：為什麼我要在 PDF 文件中展開書籤？
+### 是否支援 Aspose.PDF？
+絕對地！您可以從 Aspose 社區獲得支持[這裡](https://forum.aspose.com/c/pdf/10).
 
-答：展開書籤可以提高使用者體驗，所有書籤預設以展開狀態顯示。這使用戶可以清楚地了解文件的結構，並允許他們輕鬆導航到不同的部分。
-
-#### Q：如何導入 C# 專案所需的庫？
-
-答：要匯入 C# 專案所需的函式庫，請使用下列導入指令：
-
-```csharp
-using Aspose.Pdf;
-```
-
-此指令可讓您利用 Aspose.PDF for .NET 提供的類別和方法。
-
-#### Q：如何指定文件資料夾的路徑？
-
- A：在提供的源代碼中，替換`"YOUR DOCUMENT DIRECTORY"`包含您要使用的 PDF 檔案的資料夾的實際路徑。這可確保程式碼可以找到目標 PDF 檔案。
-
-#### Q：如何開啟 PDF 文件以展開其書籤？
-
-答：要開啟 PDF 文件以展開書籤，請使用以下程式碼：
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
-代替`"input.pdf"`與實際的檔案名稱。
-
-#### Q：如何設定頁面顯示方式預設顯示書籤？
-
-A：若要將頁面顯示模式設定為預設顯示書籤，請使用`PageMode`的財產`doc`目的：
-
-```csharp
-doc.PageMode = PageMode.UseOutlines;
-```
-
-#### Q：如何展開PDF文件中的所有書籤？
-
-答：要展開所有書籤，請循環瀏覽文件大綱集合中的每個書籤項目並設定`Open`財產給`true`:
-
-```csharp
-foreach (OutlineItemCollection item in doc.Outlines)
-{
-    item.Open = true;
-}
-```
-
-#### Q：如果書籤有嵌套子書籤會怎樣？
-
-答：如果書籤有嵌套的子書籤，則展開父書籤也會展開其子書籤，從而提供文檔結構的全面視圖。
-
-#### Q：展開書籤後如何儲存更新的PDF檔案？
-
-答：要在展開書籤後儲存更新的 PDF 文件，請使用以下程式碼：
-
-```csharp
-dataDir = dataDir + "ExpandBookmarks_out.pdf";
-doc.Save(dataDir);
-```
-
-#### Q：我可以自訂展開書籤的外觀嗎？
-
-答：雖然本教學預設重點介紹擴充書籤，但您可以使用 Aspose.PDF 的其他功能和屬性自訂書籤的外觀。
+### 如何購買 Aspose.PDF 的授權？
+您可以購買 Aspose.PDF 的許可證[這裡](https://purchase.aspose.com/buy).

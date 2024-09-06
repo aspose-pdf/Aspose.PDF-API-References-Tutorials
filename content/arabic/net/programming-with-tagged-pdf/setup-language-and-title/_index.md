@@ -1,47 +1,47 @@
 ---
-title: لغة الإعداد والعنوان
-linktitle: لغة الإعداد والعنوان
-second_title: Aspose.PDF لمرجع .NET API
-description: دليل خطوة بخطوة لتكوين لغة وعنوان مستند PDF باستخدام Aspose.PDF لـ .NET. إنشاء مستندات مخصصة متعددة اللغات.
+title: إعداد اللغة والعنوان
+linktitle: إعداد اللغة والعنوان
+second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
+description: دليل خطوة بخطوة لتكوين لغة وعنوان مستند PDF باستخدام Aspose.PDF لـ .NET. قم بإنشاء مستندات متعددة اللغات مخصصة.
 type: docs
 weight: 140
 url: /ar/net/programming-with-tagged-pdf/setup-language-and-title/
 ---
-سنخبرك في هذا الدليل بكيفية تكوين لغة وعنوان مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. Aspose.PDF هي مكتبة قوية تتيح لك إنشاء ملفات PDF ومعالجتها وتحويلها برمجيًا.
+في هذا الدليل، سنخبرك بكيفية تكوين لغة وعنوان مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. Aspose.PDF هي مكتبة قوية تتيح لك إنشاء ملفات PDF ومعالجتها وتحويلها برمجيًا.
 
-دعنا نتعمق في التعليمات البرمجية ونتعلم كيفية تكوين لغة وعنوان مستند PDF باستخدام Aspose.PDF لـ .NET.
+دعنا نتعمق في الكود ونتعلم كيفية تكوين اللغة وعنوان مستند PDF باستخدام Aspose.PDF لـ .NET.
 
 ## المتطلبات الأساسية
 
 قبل البدء، تأكد من تثبيت Aspose.PDF لـ .NET وإعداد بيئة التطوير الخاصة بك.
 
-## الخطوة 1: إنشاء الوثيقة
+## الخطوة 1: إنشاء المستند
 
- الخطوة الأولى هي إنشاء مستند PDF جديد باستخدام الملف`Document` فصل.
+ الخطوة الأولى هي إنشاء مستند PDF جديد باستخدام`Document` فصل.
 
 ```csharp
-// قم بإنشاء مستند PDF
+// إنشاء مستند PDF
 Document document = new Document();
 ```
 
-## الخطوة 2: الوصول إلى المحتوى الموسوم
+## الخطوة 2: الوصول إلى المحتوى المُوسوم
 
- بعد ذلك، نصل إلى المحتوى المميز للمستند باستخدام الملف`ITaggedContent` هدف.
+ بعد ذلك، نقوم بالوصول إلى المحتوى المُوسوم للمستند باستخدام`ITaggedContent` هدف.
 
 ```csharp
-// الوصول إلى المحتوى الموسوم
+// الوصول إلى المحتوى المُوسوم
 Tagged.ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## الخطوة 3: تحديد العنوان واللغة
+## الخطوة 3: تعيين العنوان واللغة
 
- يمكننا الآن ضبط عنوان المستند ولغته باستخدام الأمر`SetTitle` و`SetLanguage` أساليب`ITaggedContent` هدف.
+ الآن يمكننا تعيين عنوان المستند واللغة باستخدام`SetTitle` و`SetLanguage` طرق`ITaggedContent` هدف.
 
 ```csharp
-// تحديد عنوان الوثيقة
+// حدد عنوان الوثيقة
 taggedContent.SetTitle("Example of tagged document");
 
-// ضبط لغة الوثيقة
+// ضبط لغة المستند
 taggedContent.SetLanguage("fr-FR");
 ```
 
@@ -50,41 +50,41 @@ taggedContent.SetLanguage("fr-FR");
 بعد ذلك، نضيف محتوى متعدد اللغات إلى المستند باستخدام عناصر الفقرة لكل لغة.
 
 ```csharp
-// إضافة فقرة باللغة الإنجليزية
+// أضف فقرة باللغة الإنجليزية
 LogicalStructure.ParagraphElement pEN = taggedContent.CreateParagraphElement();
 pEN.SetText("Hello, World!");
 pEN.Language = "en-US";
 taggedContent.RootElement.AppendChild(pEN);
 
-// إضافة فقرة باللغة الألمانية
+// أضف فقرة باللغة الألمانية
 LogicalStructure.ParagraphElement pDE = taggedContent.CreateParagraphElement();
 pDE.SetText("Hello Welt!");
 pDE.Language = "de-DE";
 taggedContent.RootElement.AppendChild(pDE);
 
-//إضافة فقرة باللغة الفرنسية
+//أضف فقرة باللغة الفرنسية
 LogicalStructure.ParagraphElement pFR = taggedContent.CreateParagraphElement();
 pFR.SetText("Hello world!");
 pFR.Language = "fr-FR";
 taggedContent.RootElement.AppendChild(pFR);
 
-// إضافة فقرة باللغة الإسبانية
+// أضف فقرة باللغة الإسبانية
 LogicalStructure.ParagraphElement pSP = taggedContent.CreateParagraphElement();
 pSP.SetText("¡Hola Mundo!");
 pSP.Language = "es-ES";
 taggedContent.RootElement.AppendChild(pSP);
 ```
 
-## الخطوة 5: احفظ مستند PDF الذي تم وضع علامة عليه
+## الخطوة 5: احفظ مستند PDF المُوسوم
 
-وأخيرًا، نقوم بحفظ مستند PDF الذي تم وضع علامة عليه.
+وأخيرًا، نحفظ مستند PDF المُوسوم.
 
 ```csharp
-// احفظ مستند PDF الذي تم وضع علامة عليه
+// احفظ مستند PDF المُوسوم
 document.Save(dataDir + "SetupLanguageAndTitle.pdf");
 ```
 
-### نموذج التعليمات البرمجية المصدر لإعداد اللغة والعنوان باستخدام Aspose.PDF لـ .NET 
+### عينة من كود المصدر لإعداد اللغة والعنوان باستخدام Aspose.PDF لـ .NET 
 ```csharp
 
 Document document = new Document();
@@ -92,89 +92,89 @@ Document document = new Document();
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// احصل على المحتوى الموسوم
+// احصل على المحتوى المميز
 Tagged.ITaggedContent taggedContent = document.TaggedContent;
 
 // تعيين العنوان واللغة
 taggedContent.SetTitle("Example Tagged Document");
 taggedContent.SetLanguage("en-US");
 
-// الرأس (en-US، موروث من المستند)
+// العنوان (en-US، موروث من المستند)
 LogicalStructure.HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 h1.SetText("Phrase on different languages");
 taggedContent.RootElement.AppendChild(h1);
 
-// الفقرة (الإنجليزية)
+// فقرة (انجليزي)
 LogicalStructure.ParagraphElement pEN = taggedContent.CreateParagraphElement();
 pEN.SetText("Hello, World!");
 pEN.Language = "en-US";
 taggedContent.RootElement.AppendChild(pEN);
 
-// الفقرة (الألمانية)
+// فقرة (بالألمانية)
 LogicalStructure.ParagraphElement pDE = taggedContent.CreateParagraphElement();
 pDE.SetText("Hallo Welt!");
 pDE.Language = "de-DE";
 taggedContent.RootElement.AppendChild(pDE);
 
-// الفقرة (الفرنسية)
+// فقرة (بالفرنسية)
 LogicalStructure.ParagraphElement pFR = taggedContent.CreateParagraphElement();
 pFR.SetText("Bonjour le monde!");
 pFR.Language = "fr-FR";
 taggedContent.RootElement.AppendChild(pFR);
 
-// الفقرة (الإسبانية)
+// فقرة (إسبانية)
 LogicalStructure.ParagraphElement pSP = taggedContent.CreateParagraphElement();
 pSP.SetText("¡Hola Mundo!");
 pSP.Language = "es-ES";
 taggedContent.RootElement.AppendChild(pSP);
 
-// حفظ وثيقة PDF ذات العلامات
+// حفظ مستند PDF المُوسوم
 document.Save(dataDir + "SetupLanguageAndTitle.pdf");
 
 ```
 
 ## خاتمة
 
-تهنئة ! أنت تعرف الآن كيفية تكوين لغة وعنوان مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك أيضًا استكشاف ميزات Aspose.PDF لإنشاء مستندات PDF مخصصة ومتعددة اللغات.
+تهانينا! أنت الآن تعرف كيفية تكوين لغة وعنوان مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك استكشاف المزيد من ميزات Aspose.PDF لإنشاء مستندات PDF مخصصة ومتعددة اللغات.
 
 ### الأسئلة الشائعة
 
-#### س: ما أهمية تكوين لغة وعنوان مستند PDF؟
+#### س: ما أهمية تحديد اللغة وعنوان مستند PDF؟
 
-ج: يعد تكوين لغة وعنوان مستند PDF أمرًا مهمًا لإمكانية الوصول والبيانات التعريفية. يضمن تحديد اللغة الصحيحة وضع علامات مناسبة على اللغة واستخراج النص، بينما يؤدي توفير عنوان مناسب إلى تحسين تعريف المستند وتنظيمه.
+ج: يعد تكوين لغة وعنوان مستند PDF أمرًا مهمًا لسهولة الوصول إليه والبيانات الوصفية. يضمن ضبط اللغة الصحيحة وضع علامات اللغة واستخراج النص بشكل صحيح، بينما يعمل توفير عنوان مناسب على تحسين تحديد المستند وتنظيمه.
 
-#### س: كيف يسهل Aspose.PDF for .NET تكوين لغة المستند وعنوانه؟
+#### س: كيف يسهل Aspose.PDF لـ .NET تكوين لغة المستند والعنوان؟
 
- ج: يوفر Aspose.PDF for .NET واجهات برمجة التطبيقات لتعيين عنوان المستند ولغته بسهولة باستخدام`SetTitle` و`SetLanguage` أساليب`ITaggedContent` هدف. يتيح لك ذلك ضمان التمثيل اللغوي الدقيق وعناوين المستندات ذات المعنى.
+ أ: يوفر Aspose.PDF لـ .NET واجهات برمجة التطبيقات لتعيين عنوان المستند واللغة بسهولة باستخدام`SetTitle` و`SetLanguage` طرق`ITaggedContent` يتيح لك هذا ضمان تمثيل اللغة بدقة وعناوين المستندات ذات المعنى.
 
 #### س: هل يمكنني تعيين لغات مختلفة لأجزاء معينة من مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
- ج: نعم، يمكنك تعيين لغات مختلفة لأجزاء معينة من مستند PDF باستخدام Aspose.PDF لـ .NET. من خلال تطبيق`Language` لعناصر الفقرة، يمكنك تحديد اللغة لكل جزء من المحتوى، مما يتيح المستندات متعددة اللغات.
+ ج: نعم، يمكنك تعيين لغات مختلفة لأجزاء معينة من مستند PDF باستخدام Aspose.PDF لـ .NET. من خلال تطبيق`Language` من خلال تخصيص عناصر الفقرة، يمكنك تحديد اللغة لكل جزء من المحتوى، مما يتيح إمكانية إنشاء مستندات متعددة اللغات.
 
-#### س: ما سبب أهمية المحتوى متعدد اللغات، وكيف يمكنني إضافته إلى مستند PDF باستخدام Aspose.PDF لـ .NET؟
+#### س: لماذا يعد المحتوى متعدد اللغات مهمًا، وكيف يمكنني إضافته إلى مستند PDF باستخدام Aspose.PDF لـ .NET؟
 
-ج: يعمل المحتوى متعدد اللغات على تحسين إمكانية الوصول إلى مستندات PDF والوصول إليها عالميًا. يتيح لك Aspose.PDF for .NET إضافة محتوى متعدد اللغات عن طريق إنشاء عناصر فقرة لكل لغة، وتعيين خصائص النص واللغة وفقًا لذلك.
+ج: يعزز المحتوى متعدد اللغات إمكانية الوصول إلى مستندات PDF والوصول إليها على مستوى العالم. يتيح لك Aspose.PDF for .NET إضافة محتوى متعدد اللغات من خلال إنشاء عناصر فقرة لكل لغة وتعيين خصائص النص واللغة وفقًا لذلك.
 
-####  س: كيف`SetTitle` method contribute to improving document accessibility and organization?
+####  س: كيف يتم ذلك؟`SetTitle` method contribute to improving document accessibility and organization?
 
- ج: ال`SetTitle` تحدد هذه الطريقة عنوان مستند PDF، والذي يُستخدم لتحديد المستند ونتائج البحث والتنظيم. يؤدي توفير عنوان واضح وهادف إلى تعزيز إمكانية الوصول إلى المستندات وتحسين تجربة المستخدم.
+ أ: ال`SetTitle` تحدد الطريقة عنوان مستند PDF، والذي يُستخدم لتحديد هوية المستند ونتائج البحث والتنظيم. يؤدي توفير عنوان واضح وذو معنى إلى تحسين إمكانية الوصول إلى المستند وتحسين تجربة المستخدم.
 
 ####  س: ما هو دور`SetLanguage` method in PDF document configuration?
 
- ج: ال`SetLanguage` تقوم الطريقة بتعيين اللغة الافتراضية لمستند PDF، مما يضمن وضع علامات دقيقة على اللغة واستخراج النص. فهو يساعد في الحفاظ على اتساق اللغة وإمكانية الوصول إليها عبر المستند.
+ أ: ال`SetLanguage` تحدد الطريقة اللغة الافتراضية لمستند PDF، مما يضمن دقة وضع العلامات اللغوية واستخراج النص. كما تساعد في الحفاظ على اتساق اللغة وإمكانية الوصول عبر المستند.
 
-#### س: هل يمكنني استخدام Aspose.PDF لـ .NET لتعيين عنوان المستند ولغته ديناميكيًا بناءً على تفضيلات المستخدم؟
+#### س: هل يمكنني استخدام Aspose.PDF لـ .NET لتعيين عنوان المستند واللغة بشكل ديناميكي استنادًا إلى تفضيلات المستخدم؟
 
-ج: نعم، يمكنك تعيين عنوان المستند ولغته ديناميكيًا بناءً على تفضيلات المستخدم باستخدام Aspose.PDF لـ .NET. من خلال دمج مدخلات المستخدم أو بيانات النظام، يمكنك تخصيص عنوان المستند واللغة وفقًا لذلك.
+ج: نعم، يمكنك تعيين عنوان المستند واللغة بشكل ديناميكي بناءً على تفضيلات المستخدم باستخدام Aspose.PDF for .NET. من خلال دمج إدخال المستخدم أو بيانات النظام، يمكنك تخصيص عنوان المستند واللغة وفقًا لذلك.
 
-#### س: كيف يمكنني التحقق من تطبيق تكوين اللغة والعنوان بشكل صحيح على مستند PDF؟
+#### س: كيف يمكنني التأكد من أن تكوين اللغة والعنوان تم تطبيقه بشكل صحيح على مستند PDF؟
 
-ج: يمكنك التحقق من تكوين اللغة والعنوان من خلال فحص خصائص مستند PDF وبياناته التعريفية. يمكنك أيضًا استخدام عارضات PDF أو أدوات استخراج النص للتأكد من دقة علامات اللغة وعنوان المستند.
+ج: يمكنك التحقق من تكوين اللغة والعنوان من خلال فحص خصائص مستند PDF والبيانات الوصفية. يمكنك أيضًا استخدام عارضات PDF أو أدوات استخراج النص للتأكد من دقة علامات اللغة وعنوان المستند.
 
-#### س: هل هناك أي أفضل الممارسات التي يجب اتباعها عند تكوين لغة وعنوان مستند PDF؟
+#### س: هل هناك أي ممارسات أفضل يجب اتباعها عند تكوين اللغة وعنوان مستند PDF؟
 
-ج: عند تكوين اللغة والعنوان، ضع في اعتبارك الجمهور المستهدف ومحتوى المستند ومتطلبات إمكانية الوصول. اختر عناوين وصفية وإعدادات لغة دقيقة لتحسين سهولة استخدام المستند وإمكانية الوصول إليه.
+ج: عند تكوين اللغة والعنوان، ضع في اعتبارك الجمهور المستهدف ومحتوى المستند ومتطلبات إمكانية الوصول. اختر عناوين وصفية وإعدادات لغة دقيقة لتحسين قابلية استخدام المستند وإمكانية الوصول إليه.
 
-#### س: هل يمكنني تعديل لغة وعنوان مستند PDF موجود باستخدام Aspose.PDF لـ .NET؟
+#### س: هل يمكنني تعديل اللغة وعنوان مستند PDF موجود باستخدام Aspose.PDF لـ .NET؟
 
- ج: نعم، يمكنك تعديل لغة وعنوان مستند PDF موجود باستخدام Aspose.PDF لـ .NET. عن طريق تحميل المستند، والوصول إلى محتواه المميز، واستخدام`SetTitle` و`SetLanguage`الطرق، يمكنك تحديث هذه السمات حسب الحاجة.
+ ج: نعم، يمكنك تعديل لغة وعنوان مستند PDF موجود باستخدام Aspose.PDF لـ .NET. من خلال تحميل المستند والوصول إلى محتواه المُوسوم واستخدام`SetTitle` و`SetLanguage`الأساليب، يمكنك تحديث هذه السمات حسب الحاجة.

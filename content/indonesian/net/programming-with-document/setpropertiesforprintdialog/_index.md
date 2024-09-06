@@ -1,13 +1,13 @@
 ---
-title: Atur Properti Untuk Dialog Cetak
-linktitle: Atur Properti Untuk Dialog Cetak
-second_title: Aspose.PDF untuk Referensi .NET API
+title: Tetapkan Properti untuk Dialog Cetak
+linktitle: Tetapkan Properti untuk Dialog Cetak
+second_title: Referensi API Aspose.PDF untuk .NET
 description: Pelajari cara mengatur properti untuk dialog cetak di Aspose.PDF untuk .NET menggunakan panduan langkah demi langkah.
 type: docs
 weight: 320
 url: /id/net/programming-with-document/setpropertiesforprintdialog/
 ---
-berikut panduan langkah demi langkah untuk mengatur properti dialog cetak menggunakan Aspose.PDF untuk .NET:
+berikut panduan langkah demi langkah untuk menetapkan properti untuk dialog cetak menggunakan Aspose.PDF untuk .NET:
 
 
 ## Langkah 1: Tentukan direktori tempat dokumen PDF Anda berada:
@@ -31,7 +31,7 @@ using (Document doc = new Document())
 doc.Pages.Add();
 ```
    
-##  Langkah 4: Atur properti dupleks menjadi`DuplexFlipLongEdge`:
+##  Langkah 4: Atur properti dupleks ke`DuplexFlipLongEdge`:
 
 ```csharp
 doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
@@ -43,7 +43,7 @@ doc.Duplex = PrintDuplex.DuplexFlipLongEdge;
 doc.Save(dataDir + "35297_out.pdf", SaveFormat.Pdf);
 ```
 
-### Contoh kode sumber untuk Mengatur Properti Untuk Dialog Cetak menggunakan Aspose.PDF untuk .NET
+### Contoh kode sumber untuk Set Properties For Print Dialog menggunakan Aspose.PDF untuk .NET
 
 ```csharp
 var dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -58,18 +58,18 @@ using (Document doc = new Document())
 
 ## Kesimpulan
 
-Aspose.PDF untuk .NET memudahkan pengaturan properti untuk dialog cetak di file PDF Anda. Dengan mengikuti panduan langkah demi langkah di atas, Anda dapat dengan cepat mengoptimalkan file PDF untuk dicetak.
+Aspose.PDF untuk .NET memudahkan pengaturan properti untuk dialog cetak di file PDF Anda. Dengan mengikuti panduan langkah demi langkah di atas, Anda dapat dengan cepat mengoptimalkan file PDF Anda untuk dicetak.
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
-#### T: Dapatkah saya mengatur properti dialog cetak lainnya selain mode dupleks menggunakan Aspose.PDF untuk .NET?
+#### T: Dapatkah saya mengatur properti dialog cetak lain selain mode dupleks menggunakan Aspose.PDF untuk .NET?
 
-J: Ya, selain mengatur mode dupleks, Aspose.PDF untuk .NET memungkinkan Anda mengatur berbagai properti lain untuk dialog pencetakan. Beberapa contohnya termasuk mengatur kualitas cetak, rentang halaman, jumlah salinan, ukuran kertas, dan lainnya. Anda dapat merujuk ke dokumentasi Aspose.PDF untuk .NET untuk menjelajahi daftar lengkap properti yang tersedia.
+A: Ya, selain menyetel mode dupleks, Aspose.PDF untuk .NET memungkinkan Anda menyetel berbagai properti lain untuk dialog cetak. Beberapa contohnya termasuk menyetel kualitas cetak, rentang halaman, jumlah salinan, ukuran kertas, dan banyak lagi. Anda dapat merujuk ke dokumentasi Aspose.PDF untuk .NET guna menjelajahi daftar lengkap properti yang tersedia.
 
 #### T: Bagaimana cara mengatur kualitas cetak saat mencetak dokumen PDF?
 
- J: Untuk mengatur kualitas cetak, Anda dapat menggunakan`PrintQuality` properti dari`Document` kelas di Aspose.PDF untuk .NET. Anda dapat memilih dari berbagai pilihan kualitas cetak seperti tinggi, sedang, atau rendah, berdasarkan kebutuhan Anda.
+ A: Untuk mengatur kualitas cetak, Anda dapat menggunakan`PrintQuality` milik`Document` kelas di Aspose.PDF untuk .NET. Anda dapat memilih dari berbagai pilihan kualitas cetak seperti tinggi, sedang, atau rendah, berdasarkan kebutuhan Anda.
 
-#### T: Apakah mungkin untuk menentukan pengaturan cetak khusus untuk halaman berbeda di dokumen PDF?
+#### T: Apakah mungkin untuk menentukan pengaturan cetak khusus untuk halaman yang berbeda dalam dokumen PDF?
 
- J: Ya, Anda dapat mengatur pengaturan cetak khusus untuk halaman berbeda dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Anda dapat mengakses halaman individual melalui`doc.Pages` koleksi dan atur pengaturan cetak khusus untuk setiap halaman secara terpisah.
+ A: Ya, Anda dapat mengatur pengaturan cetak khusus untuk halaman yang berbeda dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Anda dapat mengakses halaman individual melalui`doc.Pages` koleksi dan tetapkan pengaturan cetak khusus untuk setiap halaman secara terpisah.

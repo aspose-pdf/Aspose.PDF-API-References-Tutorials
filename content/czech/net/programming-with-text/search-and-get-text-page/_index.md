@@ -42,7 +42,7 @@ Document pdfDocument = new Document(dataDir + "SearchAndGetTextPage.pdf");
 
 ## Krok 4: Vyhledejte a extrahujte text ze stránky
 
- Vytvořit`TextFragmentAbsorber`objekt k nalezení všech výskytů vstupní vyhledávací fráze na konkrétní stránce:
+ Vytvořte a`TextFragmentAbsorber`objekt k nalezení všech výskytů vstupní vyhledávací fráze na konkrétní stránce:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("Figure");
@@ -60,7 +60,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## Krok 6: Získejte extrahované fragmenty textu
 
-Získejte extrahované fragmenty textu pomocí`TextFragments` vlastnictvím`TextFragmentAbsorber` objekt:
+Získejte extrahované fragmenty textu pomocí`TextFragments` majetek z`TextFragmentAbsorber` objekt:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -124,7 +124,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 
 ## Závěr
 
-Gratulujeme! Úspěšně jste se naučili, jak vyhledávat a získávat text z konkrétní stránky dokumentu PDF pomocí Aspose.PDF for .NET. Tento výukový program poskytl průvodce krok za krokem, od načtení dokumentu až po přístup k extrahovaným textovým segmentům. Nyní můžete začlenit
+Gratuluji! Úspěšně jste se naučili, jak vyhledávat a získávat text z konkrétní stránky dokumentu PDF pomocí Aspose.PDF for .NET. Tento výukový program poskytl průvodce krok za krokem, od načtení dokumentu až po přístup k extrahovaným textovým segmentům. Nyní můžete začlenit
 
 ### FAQ
 
@@ -150,7 +150,7 @@ Odpověď: Ano, tento tutoriál ukazuje, jak hledat text na konkrétní stránce
 
 #### Otázka: Jak získám přístup k extrahovaným textovým segmentům z konkrétní stránky?
 
- Odpověď: Po vyhledání textu na určené stránce můžete získat přístup k extrahovaným textovým segmentům pomocí`TextSegments` vlastnictvím`TextFragment` objekt. Tato vlastnost poskytuje přístup ke sbírce`TextSegment` objekty, které obsahují extrahovaný text a související informace.
+ Odpověď: Po vyhledání textu na určené stránce můžete získat přístup k extrahovaným textovým segmentům pomocí`TextSegments` majetek z`TextFragment` objekt. Tato vlastnost poskytuje přístup ke sbírce`TextSegment` objekty, které obsahují extrahovaný text a související informace.
 
 #### Otázka: Jaké informace mohu získat z extrahovaných textových segmentů?
 

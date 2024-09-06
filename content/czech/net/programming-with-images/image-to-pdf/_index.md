@@ -2,7 +2,7 @@
 title: Obrázek do PDF
 linktitle: Obrázek do PDF
 second_title: Aspose.PDF pro .NET API Reference
-description: Snadno převádějte obrázek do PDF pomocí Aspose.PDF pro .NET.
+description: Snadno převeďte obrázek do PDF pomocí Aspose.PDF pro .NET.
 type: docs
 weight: 180
 url: /cs/net/programming-with-images/image-to-pdf/
@@ -76,7 +76,7 @@ Tato nastavení zajistí, že se obrázek vejde na stránku bez dalších okraj�
 
 ## Krok 7: Vytvoření objektu obrázku
 
-Nyní vytvoříme`Aspose.Pdf.Image` objekt pro uložení obrazových dat. Přidejte do svého projektu následující kód:
+ Nyní vytvoříme`Aspose.Pdf.Image` objekt pro uložení obrazových dat. Přidejte do svého projektu následující kód:
 
 ```csharp
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
@@ -86,14 +86,14 @@ Tento objekt bude představovat obrázek, který chceme přidat na stránku PDF.
 
 ## Krok 8: Přidání obrázku na stránku
 
- Chcete-li přidat obrázek na stránku PDF, musíme přiřadit data obrázku k`ImageStream` vlastnictvím`Aspose.Pdf.Image` objekt. K přidání obrázku použijte následující kód:
+ Chcete-li přidat obrázek na stránku PDF, musíme přiřadit data obrázku k`ImageStream` majetek z`Aspose.Pdf.Image` objekt. K přidání obrázku použijte následující kód:
 
 ```csharp
 image1.ImageStream = mystream;
 page.Paragraphs.Add(image1);
 ```
 
- Zde přiřadíme proud obrazu k`ImageStream` vlastnost a poté přidejte objekt obrázku do`Paragraphs` kolekce stránky.
+ Zde přiřadíme tok obrázků k`ImageStream` vlastnost a poté přidejte objekt obrázku do`Paragraphs` kolekce stránky.
 
 ## Krok 9: Uložení souboru PDF
 

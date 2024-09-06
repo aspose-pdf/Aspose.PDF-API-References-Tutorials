@@ -66,7 +66,7 @@ Därefter lägger vi till en cell i raden:
 Aspose.Pdf.Cell cell = row.Cells.Add("some text");
 ```
 
-## Steg 9: Ställ in cellkanten
+## Steg 9: Ställa in cellkanten
 Vi kommer att definiera cellens kant (dubbel kant):
 
 ```csharp

@@ -7,13 +7,13 @@ type: docs
 weight: 70
 url: /sv/net/programming-with-graphs/dash-length/
 ---
-I den här handledningen går vi igenom följande C#-källkod steg för steg för att ställa in längden på streck med Aspose.PDF för .NET.
+den här handledningen går vi igenom följande C#-källkod steg för steg för att ställa in längden på streck med Aspose.PDF för .NET.
 
 Se till att du har installerat Aspose.PDF-biblioteket och ställt in din utvecklingsmiljö innan du börjar. Har även grundläggande kunskaper i C#-programmering.
 
 ## Steg 1: Installation av dokumentkatalog
 
-den medföljande källkoden måste du ange katalogen där du vill spara den resulterande PDF-filen. Ändra variabeln "dataDir" till önskad katalog.
+I den medföljande källkoden måste du ange katalogen där du vill spara den resulterande PDF-filen. Ändra variabeln "dataDir" till önskad katalog.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -80,7 +80,7 @@ Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 page.Paragraphs.Add(canvas);
 // Skapa linjeobjekt
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { 100, 100, 200, 100 });
-// Ställ in färg för linjeobjekt
+// Ställ in färg för Linjeobjekt
 line.GraphInfo.Color = Aspose.Pdf.Color.Red;
 // Ange streckmatris för linjeobjekt
 line.GraphInfo.DashArray = new int[] { 0, 1, 0 };
@@ -97,7 +97,7 @@ Console.WriteLine("\nLength dashed successfully in black and white.\nFile saved 
 
 ## Slutsats
 
-I den här handledningen förklarade vi hur man ställer in längden på streck med Aspose.PDF för .NET. Nu kan du använda denna kunskap för att skapa linjer med anpassade streckmönster i dina PDF-filer.
+den här handledningen förklarade vi hur man ställer in längden på streck med Aspose.PDF för .NET. Nu kan du använda denna kunskap för att skapa linjer med anpassade streckmönster i dina PDF-filer.
 
 ## Vanliga frågor
 

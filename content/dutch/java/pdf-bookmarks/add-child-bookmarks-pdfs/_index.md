@@ -1,40 +1,40 @@
 ---
-title: Voeg onderliggende bladwijzers toe aan PDF's
-linktitle: Voeg onderliggende bladwijzers toe aan PDF's
+title: Kinderbladwijzers toevoegen aan PDF's
+linktitle: Kinderbladwijzers toevoegen aan PDF's
 second_title: Aspose.PDF Java PDF-verwerkings-API
-description: Leer hoe u PDF-documenten kunt verbeteren met onderliggende bladwijzers met behulp van Aspose.PDF voor Java. Stapsgewijze handleiding met codevoorbeelden voor verbeterde navigatie en organisatie.
+description: Leer hoe u PDF-documenten kunt verbeteren met onderliggende bladwijzers met Aspose.PDF voor Java. Stapsgewijze handleiding met codevoorbeelden voor verbeterde navigatie en organisatie.
 type: docs
 weight: 11
 url: /nl/java/pdf-bookmarks/add-child-bookmarks-pdfs/
 ---
 
-## Inleiding tot het toevoegen van onderliggende bladwijzers aan PDF's
+## Inleiding tot het toevoegen van kinderbladwijzers aan PDF's
 
-In dit artikel zullen we onderzoeken hoe u onderliggende bladwijzers aan PDF-documenten kunt toevoegen met behulp van Aspose.PDF voor Java. Onderliggende bladwijzers zijn een handige manier om de inhoud van een PDF-document te ordenen en er doorheen te navigeren, waardoor gebruikers gemakkelijker specifieke secties of onderwerpen in het document kunnen vinden.
+In dit artikel gaan we onderzoeken hoe u kinderbladwijzers kunt toevoegen aan PDF-documenten met Aspose.PDF voor Java. Kinderbladwijzers zijn een handige manier om de inhoud van een PDF-document te ordenen en erdoorheen te navigeren, waardoor het voor gebruikers gemakkelijker wordt om specifieke secties of onderwerpen in het document te vinden.
 
 ## Vereisten
 
-Voordat we ingaan op de implementatie, moet u ervoor zorgen dat u aan de volgende vereisten voldoet:
+Voordat we met de implementatie beginnen, moet u ervoor zorgen dat de volgende vereisten aanwezig zijn:
 
 - Java-ontwikkelomgeving op uw systeem geïnstalleerd.
--  Aspose.PDF voor Java-bibliotheek. Je kunt het downloaden van[hier](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF voor Java-bibliotheek. U kunt het downloaden van[hier](https://releases.aspose.com/pdf/java/).
 
 ## De omgeving instellen
 
 1. Download de Aspose.PDF voor Java-bibliotheek via de meegeleverde link.
 2. Voeg de bibliotheek toe aan uw Java-project.
 
-Laten we nu beginnen met het maken van een nieuw PDF-document en stap voor stap onderliggende bladwijzers eraan toevoegen.
+Laten we beginnen met het maken van een nieuw PDF-document en stap voor stap onderliggende bladwijzers toevoegen.
 
 ## Een nieuw PDF-document maken
 
-Om te beginnen moeten we een PDF-document initialiseren en er pagina's aan toevoegen. Hier is het codefragment om aan de slag te gaan:
+Om te beginnen moeten we een PDF-document initialiseren en er pagina's aan toevoegen. Hier is het codefragment om te beginnen:
 
 ```java
-// Initialiseer een PDF-document
+// Een PDF-document initialiseren
 Document pdfDocument = new Document();
 
-// Voeg pagina's toe aan de PDF
+// Pagina's toevoegen aan de PDF
 pdfDocument.getPages().add();
 pdfDocument.getPages().add();
 ```
@@ -43,10 +43,10 @@ In dit voorbeeld hebben we een nieuw PDF-document gemaakt en er twee pagina's aa
 
 ## Bovenliggende bladwijzers toevoegen
 
-Bovenliggende bladwijzers dienen als de hoofdsecties of categorieën in uw PDF-document. Laten we enkele bovenliggende bladwijzers maken:
+Parent bookmarks dienen als de hoofdsecties of categorieën in uw PDF-document. Laten we wat parent bookmarks maken:
 
 ```java
-// Maak bovenliggende bladwijzers
+// Bovenliggende bladwijzers maken
 OutlineItemCollection outline = pdfDocument.getOutlines();
 OutlineItemCollection parentBookmark = new OutlineItemCollection(outline);
 parentBookmark.setTitle("Parent Bookmark 1");
@@ -57,14 +57,14 @@ parentBookmark.setTitle("Parent Bookmark 2");
 outline.add(parentBookmark);
 ```
 
-We hebben twee bovenliggende bladwijzers toegevoegd: 'Ouderbladwijzer 1' en 'Ouderbladwijzer 2'.
+We hebben twee bovenliggende bladwijzers toegevoegd: 'Bovenliggende bladwijzer 1' en 'Bovenliggende bladwijzer 2'.
 
-## Onderliggende bladwijzers toevoegen
+## Kinderbladwijzers toevoegen
 
-Nu is het tijd om onderliggende bladwijzers toe te voegen aan de bovenliggende bladwijzers die we eerder hebben gemaakt. Onderliggende bladwijzers vertegenwoordigen specifieke onderwerpen of subsecties binnen elke bovenliggende bladwijzer. Hier ziet u hoe u het kunt doen:
+Nu is het tijd om child bookmarks toe te voegen aan de parent bookmarks die we eerder hebben gemaakt. Child bookmarks vertegenwoordigen specifieke onderwerpen of subsecties binnen elke parent bookmark. Dit is hoe je dat kunt doen:
 
 ```java
-// Onderliggende bladwijzers toevoegen aan bovenliggende bladwijzer 1
+// Voeg onderliggende bladwijzers toe aan bovenliggende bladwijzer 1
 OutlineItemCollection childBookmark = new OutlineItemCollection(outline);
 childBookmark.setTitle("Child Bookmark 1.1");
 parentBookmark.add(childBookmark);
@@ -79,11 +79,11 @@ childBookmark.setTitle("Child Bookmark 2.1");
 parentBookmark.add(childBookmark);
 ```
 
-We hebben onderliggende bladwijzers toegevoegd aan zowel 'Ouderbladwijzer 1' als 'Ouderbladwijzer 2'.
+We hebben onderliggende bladwijzers toegevoegd aan zowel 'Bovenliggende bladwijzer 1' als 'Bovenliggende bladwijzer 2'.
 
 ## Het uiterlijk van bladwijzers aanpassen
 
-U kunt het uiterlijk van bladwijzers aanpassen door de tekst en stijl ervan te wijzigen. Bovendien kunt u pictogrammen aan bladwijzers toevoegen voor een betere visuele weergave. Hier is een voorbeeld van hoe u dit moet doen:
+U kunt het uiterlijk van bladwijzers aanpassen door hun tekst en stijl te wijzigen. Daarnaast kunt u pictogrammen toevoegen aan bladwijzers voor een betere visuele weergave. Hier is een voorbeeld van hoe u dit kunt doen:
 
 ```java
 // Pas het uiterlijk van de bladwijzer aan
@@ -94,42 +94,42 @@ childBookmark.setIcon(OutlineItemCollection.getItalicIcon());
 
 In dit voorbeeld hebben we de bovenliggende bladwijzer cursief gemaakt, de tekstkleur van de onderliggende bladwijzer gewijzigd in groen en een cursief pictogram aan de onderliggende bladwijzer toegevoegd.
 
-## Gebeurtenissen afhandelen
+## Afhandeling van gebeurtenissen
 
-Aan bladwijzers kunnen ook acties zijn gekoppeld. U kunt bijvoorbeeld acties toevoegen die worden geactiveerd wanneer een gebruiker op een bladwijzer klikt. Zo kunt u klikgebeurtenissen voor bladwijzers verwerken:
+Bladwijzers kunnen ook acties hebben die eraan gekoppeld zijn. U kunt bijvoorbeeld acties toevoegen die worden geactiveerd wanneer een gebruiker op een bladwijzer klikt. Zo kunt u bladwijzerklikgebeurtenissen afhandelen:
 
 ```java
-// Voeg een actie toe aan een bladwijzer
+// Een actie toevoegen aan een bladwijzer
 GoToAction action = new GoToAction(pdfDocument.getPages().get_Item(1));
 childBookmark.setAction(action);
 ```
 
-In deze code hebben we een actie 'GoTo' toegevoegd aan een onderliggende bladwijzer, waardoor de gebruiker naar de tweede pagina van de pdf wordt geleid wanneer erop wordt geklikt.
+In deze code hebben we een 'Ga naar'-actie toegevoegd aan een onderliggende bladwijzer. Wanneer de gebruiker hierop klikt, wordt hij doorgestuurd naar de tweede pagina van de PDF.
 
-## De PDF opslaan
+## PDF opslaan
 
-Nadat u alle benodigde bladwijzers heeft toegevoegd en hun uiterlijk en acties heeft aangepast, kunt u het gewijzigde PDF-document opslaan:
+Nadat u alle benodigde bladwijzers hebt toegevoegd en hun uiterlijk en acties hebt aangepast, kunt u het gewijzigde PDF-document opslaan:
 
 ```java
 // Sla het PDF-document op
 pdfDocument.save("output.pdf");
 ```
 
-Uw PDF-document met onderliggende bladwijzers is nu klaar.
+Uw PDF-document met onderliggende bladwijzers is nu gereed.
 
 ## Volledige broncode
 
-Hier is de volledige broncode voor het toevoegen van onderliggende bladwijzers aan een PDF-document met Aspose.PDF voor Java:
+Hier is de volledige broncode voor het toevoegen van onderliggende bladwijzers aan een PDF-document met behulp van Aspose.PDF voor Java:
 
 ```java
-// Initialiseer een PDF-document
+// Een PDF-document initialiseren
 Document pdfDocument = new Document();
 
-// Voeg pagina's toe aan de PDF
+// Pagina's toevoegen aan de PDF
 pdfDocument.getPages().add();
 pdfDocument.getPages().add();
 
-// Maak bovenliggende bladwijzers
+// Bovenliggende bladwijzers maken
 OutlineItemCollection outline = pdfDocument.getOutlines();
 OutlineItemCollection parentBookmark = new OutlineItemCollection(outline);
 parentBookmark.setTitle("Parent Bookmark 1");
@@ -139,7 +139,7 @@ parentBookmark = new OutlineItemCollection(outline);
 parentBookmark.setTitle("Parent Bookmark 2");
 outline.add(parentBookmark);
 
-// Onderliggende bladwijzers toevoegen aan bovenliggende bladwijzer 1
+// Voeg onderliggende bladwijzers toe aan bovenliggende bladwijzer 1
 OutlineItemCollection childBookmark = new OutlineItemCollection(outline);
 childBookmark.setTitle("Child Bookmark 1.1");
 parentBookmark.add(childBookmark);
@@ -158,7 +158,7 @@ parentBookmark.setItalic(true);
 childBookmark.setForegroundColor(Color.getGreen());
 childBookmark.setIcon(OutlineItemCollection.getItalicIcon());
 
-// Voeg een actie toe aan een bladwijzer
+// Een actie toevoegen aan een bladwijzer
 GoToAction action = new GoToAction(pdfDocument.getPages().get_Item(1));
 childBookmark.setAction(action);
 
@@ -168,7 +168,7 @@ pdfDocument.save("output.pdf");
 
 ## Conclusie
 
-Het toevoegen van onderliggende bladwijzers aan PDF's met Aspose.PDF voor Java is een krachtige functie die de navigatie en organisatie van uw documenten verbetert. Door de stappen in dit artikel te volgen, kunt u goed gestructureerde PDF's maken met bovenliggende en onderliggende bladwijzers, het uiterlijk ervan aanpassen en zelfs acties toevoegen om de gebruikerservaring te verbeteren.
+Het toevoegen van onderliggende bladwijzers aan PDF's met Aspose.PDF voor Java is een krachtige functie die de navigatie en organisatie van uw documenten verbetert. Door de stappen in dit artikel te volgen, kunt u goed gestructureerde PDF's maken met bovenliggende en onderliggende bladwijzers, hun uiterlijk aanpassen en zelfs acties toevoegen om de gebruikerservaring te verbeteren.
 
 ## Veelgestelde vragen
 
@@ -176,18 +176,18 @@ Het toevoegen van onderliggende bladwijzers aan PDF's met Aspose.PDF voor Java i
 
  U kunt Aspose.PDF voor Java downloaden van de website[hier](https://releases.aspose.com/pdf/java/).
 
-### Worden onderliggende bladwijzers ondersteund in alle PDF-viewers?
+### Worden kinderbladwijzers in alle PDF-viewers ondersteund?
 
-Ja, onderliggende bladwijzers worden ondersteund in de meeste moderne PDF-viewers en bieden een verbeterde gebruikerservaring bij het navigeren door PDF-documenten.
+Ja, kinderbladwijzers worden ondersteund in de meeste moderne PDF-viewers en zorgen voor een verbeterde gebruikerservaring bij het navigeren door PDF-documenten.
 
 ### Kan ik het uiterlijk van bladwijzers verder aanpassen?
 
-Ja, u kunt het uiterlijk van bladwijzers aanpassen door tekststijlen, kleuren en pictogrammen aan te passen aan het ontwerp van uw document.
+Ja, u kunt het uiterlijk van bladwijzers aanpassen door de tekststijl, kleuren en pictogrammen aan te passen aan het ontwerp van uw document.
 
-### Welke andere acties kan ik toevoegen aan bladwijzers?
+### Welke andere acties kan ik aan bladwijzers toevoegen?
 
-Naast "GoTo"-acties kunt u acties toevoegen zoals "URI"-acties om weblinks te openen of "JavaScript"-acties om aangepaste scripts uit te voeren wanneer op een bladwijzer wordt geklikt.
+Naast 'GoTo'-acties kunt u ook acties toevoegen, zoals 'URI'-acties om weblinks te openen of 'JavaScript'-acties om aangepaste scripts uit te voeren wanneer er op een bladwijzer wordt geklikt.
 
 ### Is Aspose.PDF voor Java geschikt voor commerciële projecten?
 
-Ja, Aspose.PDF voor Java is geschikt voor zowel persoonlijke als commerciële projecten en biedt een breed scala aan functies voor het manipuleren en genereren van PDF's.
+Ja, Aspose.PDF voor Java is geschikt voor zowel persoonlijke als commerciële projecten en biedt een breed scala aan functies voor het bewerken en genereren van PDF-bestanden.

@@ -1,40 +1,40 @@
 ---
-title: Konvertieren Sie PDF mit Schriftartenersetzung in HTML
-linktitle: Konvertieren Sie PDF mit Schriftartenersetzung in HTML
+title: Konvertieren Sie PDF in HTML mit Schriftartenersetzung
+linktitle: Konvertieren Sie PDF in HTML mit Schriftartenersetzung
 second_title: Aspose.PDF Java PDF-Verarbeitungs-API
-description: Erfahren Sie, wie Sie mit Aspose.PDF für Java PDF-Dateien mit Schriftartersetzung in HTML konvertieren. Schritt-für-Schritt-Anleitung mit Quellcode für nahtlose Konvertierungen. Optimieren Sie jetzt Ihre Webinhalte!
+description: Erfahren Sie, wie Sie mit Aspose.PDF für Java PDF in HTML mit Schriftartenersetzung konvertieren. Schritt-für-Schritt-Anleitung mit Quellcode für nahtlose Konvertierungen. Optimieren Sie jetzt Ihre Webinhalte!
 type: docs
 weight: 30
 url: /de/java/pdf-conversion-transformation/convert-pdf-to-html-with-font-substitution/
 ---
 
-In dieser Schritt-für-Schritt-Anleitung erfahren Sie, wie Sie mit Aspose.PDF für Java ein PDF-Dokument mit Schriftartersetzung in HTML konvertieren. Die Schriftartersetzung ist eine entscheidende Funktion beim Umgang mit PDF-Dokumenten, die Schriftarten verwenden, die in HTML nicht ohne weiteres verfügbar sind. Am Ende dieses Tutorials werden Sie in der Lage sein, nahtlose Konvertierungen durchzuführen und dabei die Integrität des Dokuments zu wahren.
+In dieser Schritt-für-Schritt-Anleitung erfahren Sie, wie Sie mit Aspose.PDF für Java ein PDF-Dokument mit Schriftartenersetzung in HTML konvertieren. Die Schriftartenersetzung ist eine wichtige Funktion beim Umgang mit PDF-Dokumenten, die Schriftarten verwenden, die in HTML nicht ohne Weiteres verfügbar sind. Am Ende dieses Tutorials können Sie nahtlose Konvertierungen durchführen und dabei die Integrität des Dokuments wahren.
 
 ## Einführung
 
-Aspose.PDF für Java ist eine leistungsstarke Java-Bibliothek, mit der Sie programmgesteuert mit PDF-Dokumenten arbeiten können. Es bietet verschiedene Funktionen, einschließlich der Konvertierung von PDF in HTML mit Schriftartenersetzung, auf die wir uns in diesem Handbuch konzentrieren werden.
+Aspose.PDF für Java ist eine leistungsstarke Java-Bibliothek, mit der Sie programmgesteuert mit PDF-Dokumenten arbeiten können. Sie bietet verschiedene Funktionen, darunter die Konvertierung von PDF in HTML mit Schriftartenersetzung, auf die wir uns in diesem Handbuch konzentrieren werden.
 
 ## Was ist Aspose.PDF für Java?
 
-Aspose.PDF für Java ist eine robuste API, die Entwicklern das Erstellen, Bearbeiten und Bearbeiten von PDF-Dokumenten in Java-Anwendungen ermöglicht. Es bietet umfassende Unterstützung für verschiedene PDF-bezogene Vorgänge und ist damit die erste Wahl für die PDF-Verarbeitung in Java.
+Aspose.PDF für Java ist eine robuste API, mit der Entwickler PDF-Dokumente in Java-Anwendungen erstellen, bearbeiten und manipulieren können. Es bietet umfassende Unterstützung für verschiedene PDF-bezogene Vorgänge und ist damit die erste Wahl für die PDF-Verarbeitung in Java.
 
 ## Warum PDF mit Schriftartenersetzung in HTML konvertieren?
 
-Die Konvertierung von PDF in HTML ist unerlässlich, wenn Sie PDF-Inhalte im Web anzeigen müssen. Allerdings können PDFs Schriftarten enthalten, die nicht websicher sind, was zu Darstellungsproblemen führen kann. Durch die Schriftartersetzung wird sichergestellt, dass das konvertierte HTML-Dokument das gleiche Erscheinungsbild behält, indem nicht verfügbare Schriftarten durch geeignete Alternativen ersetzt werden.
+Die Konvertierung von PDF in HTML ist unerlässlich, wenn Sie PDF-Inhalte im Web anzeigen müssen. PDFs können jedoch Schriftarten enthalten, die nicht websicher sind, was zu Darstellungsproblemen führt. Durch die Schriftartenersetzung wird sichergestellt, dass das konvertierte HTML-Dokument dasselbe Erscheinungsbild beibehält, indem nicht verfügbare Schriftarten durch geeignete Alternativen ersetzt werden.
 
 ## Voraussetzungen
 
 Bevor wir beginnen, stellen Sie sicher, dass die folgenden Voraussetzungen erfüllt sind:
 
 - Java Development Kit (JDK) installiert
--  Aspose.PDF für Java-Bibliothek (Sie können sie herunterladen von[Hier](https://releases.aspose.com/pdf/java/)
+-  Aspose.PDF für Java-Bibliothek (Sie können es herunterladen von[Hier](https://releases.aspose.com/pdf/java/)
 - Integrierte Entwicklungsumgebung (IDE) Ihrer Wahl
 
 ## Einrichten der Entwicklungsumgebung
 
 1. Öffnen Sie Ihre IDE.
 2. Erstellen Sie ein neues Java-Projekt.
-3. Fügen Sie die Aspose.PDF for Java-Bibliothek zu den Abhängigkeiten Ihres Projekts hinzu.
+3. Fügen Sie die Aspose.PDF-Bibliothek für Java zu den Abhängigkeiten Ihres Projekts hinzu.
 
 ## Aspose.PDF für Java importieren
 
@@ -50,16 +50,16 @@ import com.aspose.pdf.HtmlSaveOptions;
 Document pdfDocument = new Document("input.pdf");
 ```
 
-## Konfigurieren der Schriftartersetzung
+## Konfigurieren der Schriftartenersetzung
 
 ```java
 //Erstellen Sie eine Instanz von HtmlSaveOptions
 HtmlSaveOptions saveOptions = new HtmlSaveOptions();
 
-// Schriftartersetzung aktivieren
+// Schriftartenersetzung aktivieren
 saveOptions.setUseSubstitutions(true);
 
-// Legen Sie bei Bedarf benutzerdefinierte Schriftartenzuordnungen fest
+// Legen Sie bei Bedarf benutzerdefinierte Schriftartzuordnungen fest
 saveOptions.setFontSavingMode(HtmlSaveOptions.FontSavingModes.SAVE_IN_ALL_FORMATS);
 ```
 
@@ -70,7 +70,7 @@ saveOptions.setFontSavingMode(HtmlSaveOptions.FontSavingModes.SAVE_IN_ALL_FORMAT
 pdfDocument.save("output.html", saveOptions);
 ```
 
-## Umgang mit Ausnahmen
+## Ausnahmen behandeln
 
 ```java
 try {
@@ -83,32 +83,32 @@ try {
 
 ## Anpassen der Konvertierung
 
- Sie können die HTML-Ausgabe weiter anpassen, indem Sie die anpassen`HtmlSaveOptions` Parameter. Dadurch können Sie verschiedene Aspekte der Konvertierung steuern, wie z. B. Bildkomprimierung und Textformatierung.
+ Sie können die HTML-Ausgabe weiter anpassen, indem Sie die`HtmlSaveOptions` Parameter. Damit können Sie verschiedene Aspekte der Konvertierung steuern, beispielsweise Bildkomprimierung und Textformatierung.
 
 ## Abschluss
 
-In diesem Leitfaden haben wir den Prozess der Konvertierung von PDF in HTML mit Schriftartenersetzung mithilfe von Aspose.PDF für Java behandelt. Diese leistungsstarke Bibliothek vereinfacht den Konvertierungsprozess und stellt sicher, dass Ihre HTML-Dokumente auch dann das gleiche Erscheinungsbild behalten, wenn sie mit nicht websicheren Schriftarten arbeiten.
+In diesem Handbuch haben wir den Prozess der Konvertierung von PDF in HTML mit Schriftartenersetzung mithilfe von Aspose.PDF für Java behandelt. Diese leistungsstarke Bibliothek vereinfacht den Konvertierungsprozess und stellt sicher, dass Ihre HTML-Dokumente auch bei nicht websicheren Schriftarten dasselbe Erscheinungsbild beibehalten.
 
-Jetzt können Sie die PDF-zu-HTML-Konvertierung nahtlos in Ihre Java-Anwendungen integrieren. Wenn Sie Fragen haben oder vor Herausforderungen stehen, schauen Sie sich die FAQs unten an.
+Jetzt können Sie die Konvertierung von PDF in HTML nahtlos in Ihre Java-Anwendungen integrieren. Wenn Sie Fragen haben oder auf Herausforderungen stoßen, lesen Sie die FAQs weiter unten.
 
 ## FAQs
 
-### Wie funktioniert die Schriftartersetzung in Aspose.PDF für Java?
+### Wie funktioniert die Schriftartenersetzung in Aspose.PDF für Java?
 
-Aspose.PDF für Java erkennt automatisch Schriftarten im PDF-Dokument, die nicht für die HTML-Wiedergabe verfügbar sind. Es ersetzt sie durch ähnliche websichere Schriftarten, um eine konsistente visuelle Darstellung im konvertierten HTML zu gewährleisten.
+Aspose.PDF für Java erkennt automatisch Schriftarten im PDF-Dokument, die für die HTML-Wiedergabe nicht verfügbar sind. Es ersetzt sie durch ähnliche websichere Schriftarten, um eine konsistente visuelle Darstellung im konvertierten HTML sicherzustellen.
 
-### Kann ich benutzerdefinierte Schriftarten als Ersatz angeben?
+### Kann ich benutzerdefinierte Schriftarten zum Ersetzen angeben?
 
-Ja, Sie können benutzerdefinierte Schriftartzuordnungen definieren, um anzugeben, welche Schriftarten die nicht verfügbaren Schriftarten während des Konvertierungsprozesses ersetzen sollen. Dies ermöglicht eine differenzierte Kontrolle über die Substitution.
+Ja, Sie können benutzerdefinierte Schriftartzuordnungen definieren, um anzugeben, welche Schriftarten die nicht verfügbaren während des Konvertierungsprozesses ersetzen sollen. Dies ermöglicht eine detaillierte Kontrolle über die Ersetzung.
 
 ### Welche Vorteile bietet die Konvertierung von PDF in HTML mit Schriftartenersetzung?
 
-Durch die Konvertierung von PDF in HTML mit Schriftartenersetzung wird sichergestellt, dass Ihre Dokumente im Web wie beabsichtigt angezeigt werden, auch wenn die Original-PDF-Datei ungewöhnliche Schriftarten verwendet. Es gewährleistet die Konsistenz der visuellen Darstellung über verschiedene Plattformen und Browser hinweg.
+Durch die Konvertierung von PDF in HTML mit Schriftartenersetzung wird sichergestellt, dass Ihre Dokumente im Web wie vorgesehen angezeigt werden, selbst wenn im Original-PDF ungewöhnliche Schriftarten verwendet werden. Die visuelle Darstellung bleibt auf verschiedenen Plattformen und Browsern konsistent.
 
-### Gibt es Einschränkungen beim Ersetzen von Schriftarten?
+### Gibt es Einschränkungen bei der Schriftartenersetzung?
 
-Obwohl die Schriftartersetzung eine wertvolle Funktion ist, entspricht sie möglicherweise nicht perfekt der Ästhetik des ursprünglichen PDF-Dokuments. Es ist wichtig, den konvertierten HTML-Code zu überprüfen und gegebenenfalls Anpassungen vorzunehmen.
+Obwohl die Schriftartenersetzung eine wertvolle Funktion ist, entspricht sie möglicherweise nicht perfekt der Ästhetik des ursprünglichen PDF-Dokuments. Es ist wichtig, das konvertierte HTML zu überprüfen und die erforderlichen Anpassungen vorzunehmen.
 
-### Ist Aspose.PDF für Java für umfangreiche PDF-zu-HTML-Konvertierungen geeignet?
+### Ist Aspose.PDF für Java für groß angelegte PDF-zu-HTML-Konvertierungen geeignet?
 
-Ja, Aspose.PDF für Java eignet sich sowohl für kleine als auch große PDF-zu-HTML-Konvertierungen. Seine robuste Leistung und Anpassungsmöglichkeiten machen es zu einer zuverlässigen Wahl für verschiedene Projekte.
+Ja, Aspose.PDF für Java eignet sich sowohl für kleine als auch für große PDF-zu-HTML-Konvertierungen. Seine robuste Leistung und Anpassungsoptionen machen es zu einer zuverlässigen Wahl für verschiedene Projekte.

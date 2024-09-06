@@ -2,12 +2,12 @@
 title: Dokumentum beszerzése ablak
 linktitle: Dokumentum beszerzése ablak
 second_title: Aspose.PDF for .NET API Reference
-description: Ismerje meg, hogyan használhatja az Aspose.PDF for .NET GetDocumentWindow szolgáltatását a PDF-dokumentum ablaktulajdonságaival kapcsolatos információk lekéréséhez.
+description: Ismerje meg, hogyan használhatja az Aspose.PDF for .NET GetDocumentWindow funkcióját a PDF-dokumentum ablaktulajdonságaival kapcsolatos információk lekéréséhez.
 type: docs
 weight: 170
 url: /hu/net/programming-with-document/getdocumentwindow/
 ---
- Az Aspose.PDF for .NET egy hatékony PDF-manipulációs könyvtár, amely lehetővé teszi a fejlesztők számára PDF-fájlok létrehozását, szerkesztését és konvertálását .NET-alkalmazásaikban. A könyvtár által kínált szolgáltatások egyike a dokumentum ablak tulajdonságaival kapcsolatos információk lekérése. Ez az oktatóanyag végigvezeti Önt a használatának lépésein`GetDocumentWindow` Az Aspose.PDF for .NET szolgáltatása a PDF-dokumentum ablaktulajdonságaival kapcsolatos információk lekéréséhez.
+Az Aspose.PDF for .NET egy hatékony PDF-manipulációs könyvtár, amely lehetővé teszi a fejlesztők számára PDF-fájlok létrehozását, szerkesztését és konvertálását .NET-alkalmazásaikban. A könyvtár által kínált szolgáltatások egyike a dokumentum ablaktulajdonságaival kapcsolatos információk lekérése. Ez az oktatóanyag végigvezeti Önt a használatának lépésein`GetDocumentWindow` Az Aspose.PDF for .NET szolgáltatása a PDF-dokumentum ablaktulajdonságaival kapcsolatos információk lekéréséhez.
 
 ## 1. lépés: Telepítse az Aspose.PDF for .NET fájlt
 
@@ -17,7 +17,7 @@ Miután letöltötte a könyvtárat, bontsa ki a ZIP-fájl tartalmát egy mappá
 
 ## 2. lépés: Töltse be a PDF-dokumentumot
 
-Miután telepítette az Aspose.PDF for .NET fájlt, és hozzáadott egy hivatkozást a DLL-re a .NET projektben, elkezdheti használni a`GetDocumentWindow` funkció a PDF-dokumentum ablaktulajdonságaival kapcsolatos információk lekéréséhez.
+ Miután telepítette az Aspose.PDF for .NET fájlt, és hozzáadott egy hivatkozást a DLL-re a .NET projektben, elkezdheti használni a`GetDocumentWindow`funkció a PDF-dokumentum ablaktulajdonságaival kapcsolatos információk lekéréséhez.
 
 A funkció használatának első lépése annak a PDF-dokumentumnak a betöltése, amelyről információkat szeretne lekérni. Ehhez a következő kódot használhatja:
 
@@ -25,7 +25,7 @@ A funkció használatának első lépése annak a PDF-dokumentumnak a betöltés
 // A PDF dokumentum elérési útja
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Nyissa meg a PDF dokumentumot
+// Nyissa meg a PDF dokumentumot
 Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 ```
 
@@ -49,7 +49,7 @@ Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
 Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 ```
 
-fenti kódban minden sor lekéri a PDF dokumentum különböző ablaktulajdonságait, és kiadja azt a konzolnak. Ezt a kódot testreszabhatja úgy, hogy csak az Önt érdeklő tulajdonságokat kérje le.
+A fenti kódban minden sor lekéri a PDF dokumentum különböző ablaktulajdonságait, és kiadja azt a konzolnak. Ezt a kódot testreszabhatja úgy, hogy csak az Önt érdeklő tulajdonságokat kérje le.
 
 ### Példa forráskódra a PDF-fájl dokumentumablakának lekéréséhez az Aspose.PDF for .NET használatával 
 
@@ -81,14 +81,14 @@ Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
 // A megjelenítő alkalmazás menüsorának elrejtése - Alapértelmezés: false
 Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
 
-// megjelenítő alkalmazás eszköztárának elrejtése - Alapértelmezés: false
+// A megjelenítő alkalmazás eszköztárának elrejtése - Alapértelmezés: false
 Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
 
 // El kell-e rejteni a felhasználói felület elemeit, például a görgetősávokat
 // És csak az oldal tartalma marad meg – Alapértelmezés: false
 Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
 
-// A dokumentum oldalmódja. A dokumentum megjelenítése a teljes képernyős módból való kilépéskor.
+// dokumentum oldalmódja. A dokumentum megjelenítése a teljes képernyős módból való kilépéskor.
 Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
 
 // Az oldalelrendezés, azaz egyetlen oldal, egy oszlop

@@ -1,33 +1,33 @@
 ---
-title: Sembunyikan Nomor Halaman Di TOC
-linktitle: Sembunyikan Nomor Halaman Di TOC
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Pelajari cara menyembunyikan nomor halaman di daftar isi menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah ini.
+title: Sembunyikan Nomor Halaman Di Daftar Isi
+linktitle: Sembunyikan Nomor Halaman Di Daftar Isi
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Pelajari cara menyembunyikan nomor halaman dalam daftar isi menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah ini.
 type: docs
 weight: 220
 url: /id/net/programming-with-document/hidepagenumbersintoc/
 ---
-Pada artikel ini, kita akan membahas implementasi fitur Sembunyikan Nomor Halaman Dalam TOC Aspose.PDF untuk .NET menggunakan C#. Kami akan mulai dengan pengenalan singkat tentang Aspose.PDF untuk .NET dan kemudian mendalami panduan langkah demi langkah untuk mengimplementasikan fitur ini. 
+Dalam artikel ini, kita akan membahas penerapan fitur Sembunyikan Nomor Halaman di Daftar Isi Aspose.PDF untuk .NET menggunakan C#. Kita akan mulai dengan pengenalan singkat tentang Aspose.PDF untuk .NET, lalu menyelami panduan langkah demi langkah untuk menerapkan fitur ini. 
 
 ## Pengantar Aspose.PDF untuk .NET
 
-Aspose.PDF untuk .NET adalah komponen manipulasi PDF yang kuat yang memungkinkan pengembang membuat, mengedit, dan memanipulasi file PDF secara terprogram. Ini menyediakan berbagai fitur dan fungsi yang memudahkan bekerja dengan dokumen PDF. Aspose.PDF untuk .NET mendukung sistem operasi 32-bit dan 64-bit dan dapat digunakan dengan platform .NET Framework, .NET Core, dan Xamarin. 
+Aspose.PDF untuk .NET adalah komponen manipulasi PDF yang canggih yang memungkinkan pengembang untuk membuat, mengedit, dan memanipulasi file PDF secara terprogram. Komponen ini menyediakan berbagai fitur dan fungsi yang memudahkan pengerjaan dokumen PDF. Aspose.PDF untuk .NET mendukung sistem operasi 32-bit dan 64-bit dan dapat digunakan dengan platform .NET Framework, .NET Core, dan Xamarin. 
 
-## Apa itu fitur Sembunyikan Nomor Halaman di TOC?
+## Apa itu fitur Sembunyikan Nomor Halaman di Daftar Isi?
 
-Daftar Isi (TOC) adalah bagian penting dari dokumen PDF yang memberikan gambaran singkat tentang konten kepada pengguna. Terkadang, pengguna mungkin ingin menyembunyikan nomor halaman di TOC agar lebih ramah pengguna. Aspose.PDF untuk .NET menyediakan fitur bawaan untuk menyembunyikan nomor halaman di TOC. Fitur ini dapat digunakan untuk membuat dokumen PDF yang lebih ramah pengguna. 
+Daftar Isi (TOC) merupakan bagian penting dari dokumen PDF yang memberikan gambaran singkat tentang konten kepada pengguna. Terkadang, pengguna mungkin ingin menyembunyikan nomor halaman di TOC agar lebih mudah digunakan. Aspose.PDF untuk .NET menyediakan fitur bawaan untuk menyembunyikan nomor halaman di TOC. Fitur ini dapat digunakan untuk membuat dokumen PDF yang lebih mudah digunakan. 
 
 ## Prasyarat
 
-Untuk mengikuti tutorial ini, Anda memerlukan yang berikut ini:
+Untuk mengikuti tutorial ini, Anda memerlukan hal berikut:
 
-- Visual Studio 2010 atau lebih baru
-- Aspose.PDF untuk .NET diinstal pada sistem Anda
+- Visual Studio 2010 atau yang lebih baru
+- Aspose.PDF untuk .NET terinstal di sistem Anda
 - Pengetahuan dasar bahasa pemrograman C#
 
-## Panduan langkah demi langkah untuk menerapkan fitur Sembunyikan Nomor Halaman Dalam TOC
+## Panduan langkah demi langkah untuk menerapkan fitur Sembunyikan Nomor Halaman di Daftar Isi
 
-Ikuti langkah-langkah di bawah ini untuk mengimplementasikan fitur Sembunyikan Nomor Halaman Dalam TOC menggunakan Aspose.PDF untuk .NET:
+Ikuti langkah-langkah di bawah ini untuk menerapkan fitur Sembunyikan Nomor Halaman di Daftar Isi menggunakan Aspose.PDF untuk .NET:
 
 ## Langkah 1: Buat aplikasi konsol C# baru di Visual Studio
 
@@ -35,7 +35,7 @@ Buka Visual Studio dan buat aplikasi konsol C# baru.
 
 ## Langkah 2: Tambahkan referensi ke Aspose.PDF untuk .NET
 
-Klik kanan pada folder Referensi di proyek Anda dan pilih Tambahkan Referensi. Telusuri ke lokasi tempat Aspose.PDF untuk .NET diinstal pada sistem Anda dan tambahkan referensi ke sana.
+Klik kanan pada folder Referensi di proyek Anda dan pilih Tambahkan Referensi. Telusuri lokasi tempat Aspose.PDF for .NET diinstal di sistem Anda dan tambahkan referensi ke sana.
 
 ## Langkah 1: Buat dokumen PDF baru
 
@@ -47,7 +47,7 @@ string outFile = dataDir + "HiddenPageNumbers_out.pdf";
 Document doc = new Document();
 ```
 
-## Langkah 2: Buat halaman Daftar Isi
+## Langkah 2: Buat halaman TOC
 
 Buat halaman baru untuk TOC dan tambahkan ke dokumen PDF menggunakan kode berikut:
 
@@ -60,9 +60,9 @@ title.TextState.FontStyle = FontStyles.Bold;
 tocInfo.Title = title;
 ```
 
-## Langkah 3: Tambahkan bagian daftar ke kumpulan bagian dokumen PDF
+## Langkah 3: Tambahkan bagian daftar ke koleksi bagian dokumen PDF
 
-Tambahkan bagian daftar ke kumpulan bagian dokumen PDF menggunakan kode berikut:
+Tambahkan bagian daftar ke koleksi bagian dokumen PDF menggunakan kode berikut:
 
 ```csharp
 tocPage.TocInfo = tocInfo;
@@ -104,7 +104,7 @@ doc.Save(outFile);
 
 ```
 
-### Contoh Kode Sumber untuk Menyembunyikan Nomor Halaman Di TOC menggunakan Aspose.PDF untuk .NET
+### Contoh Kode Sumber untuk Menyembunyikan Nomor Halaman di Daftar Isi menggunakan Aspose.PDF untuk .NET
 
 ```csharp
 // Jalur ke direktori dokumen.
@@ -117,9 +117,9 @@ TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
 tocInfo.Title = title;
-//Tambahkan bagian daftar ke kumpulan bagian dokumen Pdf
+//Tambahkan bagian daftar ke koleksi bagian dokumen Pdf
 tocPage.TocInfo = tocInfo;
-//Tentukan format daftar empat tingkat dengan mengatur margin kiri dan
+//Tentukan format daftar empat level dengan mengatur margin kiri dan
 //pengaturan format teks setiap level
 
 tocInfo.IsShowPageNumbers = false;
@@ -149,18 +149,18 @@ doc.Save(outFile);
 
 ## Kesimpulan
 
-Dalam tutorial ini, kita menjelajahi cara bekerja dengan metadata XMP dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Metadata XMP memberikan informasi berharga tentang dokumen PDF, termasuk judul, penulis, tanggal pembuatan, dan banyak lagi. Aspose.PDF untuk .NET memungkinkan pengembang mengakses dan memanipulasi metadata ini, menyediakan API yang fleksibel dan kuat untuk bekerja dengan dokumen PDF.
+Dalam tutorial ini, kami mengeksplorasi cara bekerja dengan metadata XMP dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Metadata XMP menyediakan informasi berharga tentang dokumen PDF, termasuk judul, penulis, tanggal pembuatan, dan banyak lagi. Aspose.PDF untuk .NET memungkinkan pengembang untuk mengakses dan memanipulasi metadata ini, menyediakan API yang fleksibel dan canggih untuk bekerja dengan dokumen PDF.
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
-#### T: Apa yang dimaksud dengan metadata XMP dalam dokumen PDF?
+#### T: Apa itu metadata XMP dalam dokumen PDF?
 
-J: Metadata XMP (Extensible Metadata Platform) dalam dokumen PDF adalah format standar untuk menyimpan informasi metadata tentang dokumen tersebut. Ini mencakup detail seperti judul dokumen, penulis, tanggal pembuatan, kata kunci, dan banyak lagi. Metadata XMP menyediakan cara terstruktur dan terstandar untuk menyimpan dan berbagi informasi tentang dokumen PDF.
+J: Metadata XMP (Extensible Metadata Platform) dalam dokumen PDF adalah format standar untuk menyimpan informasi metadata tentang dokumen tersebut. Metadata ini mencakup detail seperti judul dokumen, penulis, tanggal pembuatan, kata kunci, dan banyak lagi. Metadata XMP menyediakan cara terstruktur dan terstandarisasi untuk menyimpan dan berbagi informasi tentang dokumen PDF.
 
-#### T: Bisakah saya mengubah metadata XMP dokumen PDF menggunakan Aspose.PDF untuk .NET?
+#### T: Dapatkah saya mengubah metadata XMP dokumen PDF menggunakan Aspose.PDF untuk .NET?
 
- J: Ya, Anda dapat mengubah metadata XMP dokumen PDF secara terprogram menggunakan Aspose.PDF untuk .NET. Anda dapat mengakses`Info` properti dari`Document` objek, yang memberi Anda akses ke properti metadata XMP. Anda kemudian dapat memperbarui nilai properti ini untuk mengubah metadata XMP dokumen PDF.
+ A: Ya, Anda dapat mengubah metadata XMP dari dokumen PDF secara terprogram menggunakan Aspose.PDF untuk .NET. Anda dapat mengakses`Info` milik`Document` objek, yang memberi Anda akses ke properti metadata XMP. Anda kemudian dapat memperbarui nilai properti ini untuk mengubah metadata XMP dari dokumen PDF.
 
-#### T: Bisakah saya mengekstrak properti metadata XMP khusus dari dokumen PDF menggunakan Aspose.PDF untuk .NET?
+#### T: Dapatkah saya mengekstrak properti metadata XMP kustom dari dokumen PDF menggunakan Aspose.PDF untuk .NET?
 
- J: Ya, Anda dapat mengekstrak properti metadata XMP khusus dari dokumen PDF menggunakan Aspose.PDF untuk .NET. Anda dapat menggunakan`Metadata` properti dari`Document`objek, yang menyediakan akses ke semua properti metadata XMP dari dokumen PDF. Anda kemudian dapat mengekstrak properti khusus dan menggunakan nilainya sesuai kebutuhan.
+ A: Ya, Anda dapat mengekstrak properti metadata XMP khusus dari dokumen PDF menggunakan Aspose.PDF untuk .NET. Anda dapat menggunakan`Metadata` milik`Document`objek, yang menyediakan akses ke semua properti metadata XMP dari dokumen PDF. Anda kemudian dapat mengekstrak properti kustom dan menggunakan nilainya sesuai kebutuhan.

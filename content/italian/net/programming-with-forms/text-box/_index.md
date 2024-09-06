@@ -1,20 +1,20 @@
 ---
 title: Casella di testo
 linktitle: Casella di testo
-second_title: Aspose.PDF per riferimento all'API .NET
+second_title: Riferimento API Aspose.PDF per .NET
 description: Scopri come creare un campo di testo in un documento PDF utilizzando Aspose.PDF per .NET.
 type: docs
 weight: 290
 url: /it/net/programming-with-forms/text-box/
 ---
-In questa guida spiegheremo passo dopo passo come utilizzare la libreria Aspose.PDF per .NET per creare un campo di testo in un documento PDF. Ti mostreremo come aprire il documento, creare il campo di testo, personalizzarne le proprietà e salvare il PDF modificato.
+In questa guida, spiegheremo passo dopo passo come usare la libreria Aspose.PDF per .NET per creare un campo di testo in un documento PDF. Ti mostreremo come aprire il documento, creare il campo di testo, personalizzarne le proprietà e salvare il PDF modificato.
 
-## Passaggio 1: configurazione della directory dei documenti
+## Fase 1: Configurazione della directory dei documenti
 
- Il primo passo è configurare la directory dei documenti in cui si trova il file PDF su cui vuoi lavorare. Puoi usare il`dataDir` variabile per specificare il percorso della directory.
+ Il primo passo è configurare la directory dei documenti in cui si trova il file PDF su cui si desidera lavorare. È possibile utilizzare`dataDir` variabile per specificare il percorso della directory.
 
 ```csharp
-// Il percorso della directory dei documenti.
+// Percorso verso la directory dei documenti.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
@@ -22,17 +22,17 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 ## Passaggio 2: apertura del documento PDF
 
-In questo passaggio, apriremo il documento PDF utilizzando il file`Document` classe di Aspose.PDF.
+ In questo passaggio, apriremo il documento PDF utilizzando`Document` classe di Aspose.PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "TextField.pdf");
 ```
 
-Assicurati che il file PDF sia presente nella directory dei documenti specificata.
+Assicurarsi che il file PDF sia presente nella directory dei documenti specificata.
 
-## Passaggio 3: creazione del campo di testo
+## Fase 3: Creazione del campo di testo
 
- Creeremo un campo di testo utilizzando il file`TextBoxField` classe. È possibile specificare le coordinate di posizione e la dimensione del campo utilizzando`Rectangle` classe.
+ Creeremo un campo di testo utilizzando il`TextBoxField` classe. È possibile specificare le coordinate di posizione e la dimensione del campo utilizzando`Rectangle` classe.
 
 ```csharp
 TextBoxField textBoxField = new TextBoxField(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(100, 200, 300, 300));
@@ -40,11 +40,11 @@ textBoxField. PartialName = "textbox1";
 textBoxField.Value = "Text Field";
 ```
 
-Personalizza le coordinate, le dimensioni, il nome parziale e il valore del campo di testo secondo necessità.
+Personalizza le coordinate, le dimensioni, il nome parziale e il valore del campo di testo in base alle tue esigenze.
 
-## Passaggio 4: personalizza le proprietà del campo di testo
+## Passaggio 4: personalizzare le proprietà del campo di testo
 
-In questo passaggio personalizzeremo le proprietà del campo di testo come bordo, colore, ecc.
+In questa fase personalizzeremo le proprietà del campo di testo, come bordo, colore, ecc.
 
 ```csharp
 Border border = new Border(textBoxField);
@@ -66,26 +66,26 @@ pdfDocument.Form.Add(textBoxField, 1);
 
 ## Passaggio 6: salvataggio del PDF modificato
 
- Infine, possiamo salvare il PDF modificato utilizzando il file`Save` metodo del`Document` classe.
+ Infine, possiamo salvare il PDF modificato utilizzando il`Save` metodo del`Document` classe.
 
 ```csharp
 dataDir = dataDir + "TextBox_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-Assicurati di specificare il percorso completo e il nome file del PDF modificato.
+Assicuratevi di specificare il percorso completo e il nome file del PDF modificato.
 
-### Codice sorgente di esempio per casella di testo utilizzando Aspose.PDF per .NET 
+### Esempio di codice sorgente per Text Box utilizzando Aspose.PDF per .NET 
 ```csharp
-// Il percorso della directory dei documenti.
+// Percorso verso la directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Apri documento
 Document pdfDocument = new Document(dataDir + "TextField.pdf");
-// Crea un campo
+//Crea un campo
 TextBoxField textBoxField = new TextBoxField(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(100, 200, 300, 300));
 textBoxField.PartialName = "textbox1";
 textBoxField.Value = "Text Box";
-//TextBoxField.Border = nuovo bordo(
+// TextBoxField.Border = nuovo bordo(
 Border border = new Border(textBoxField);
 border.Width = 5;
 border.Dash = new Dash(1, 1);
@@ -101,26 +101,26 @@ Console.WriteLine("\nTextbox field added successfully.\nFile saved at " + dataDi
 
 ## Conclusione
 
-In questa guida abbiamo imparato come utilizzare la libreria Aspose.PDF per .NET per creare un campo di testo in un documento PDF. Seguendo i passaggi descritti, è possibile personalizzare le proprietà del campo di testo e aggiungerlo al documento secondo necessità. Sentiti libero di esplorare ulteriormente le funzionalità di Aspose.PDF per .NET per espandere le possibilità di manipolazione dei file PDF.
+In questa guida, abbiamo imparato come usare la libreria Aspose.PDF per .NET per creare un campo di testo in un documento PDF. Seguendo i passaggi descritti, puoi personalizzare le proprietà del campo di testo e aggiungerlo al documento in base alle tue esigenze. Sentiti libero di esplorare ulteriormente le funzionalità di Aspose.PDF per .NET per espandere le possibilità di manipolazione dei file PDF.
 
 ### Domande frequenti
 
-#### D: Posso utilizzare Aspose.PDF per .NET per creare più campi di testo in un singolo documento PDF?
+#### D: Posso usare Aspose.PDF per .NET per creare più campi di testo in un singolo documento PDF?
 
-R: Sì, puoi creare più campi di testo in un singolo documento PDF utilizzando Aspose.PDF per .NET. Ripeti semplicemente il processo di creazione e personalizzazione dei campi di testo per ciascuna posizione desiderata nel documento.
+R: Sì, puoi creare più campi di testo in un singolo documento PDF usando Aspose.PDF per .NET. Ripeti semplicemente il processo di creazione e personalizzazione dei campi di testo per ogni posizione desiderata nel documento.
 
 #### D: Come posso personalizzare l'aspetto del campo di testo, ad esempio la dimensione e il colore del carattere?
 
-R: Puoi personalizzare l'aspetto del campo di testo modificandone le proprietà, come dimensione del carattere, stile del carattere, colore, stile del bordo, colore dello sfondo e altro. Nel codice sorgente di esempio fornito, la larghezza del bordo, il motivo del trattino del bordo e il colore del testo sono personalizzati.
+R: Puoi personalizzare l'aspetto del campo di testo regolandone le proprietà, come dimensione del carattere, stile del carattere, colore, stile del bordo, colore di sfondo e altro. Nel codice sorgente di esempio fornito, la larghezza del bordo, il motivo del tratteggio del bordo e il colore del testo sono personalizzati.
 
-#### D: È possibile estrarre il testo inserito dall'utente dal campo di testo creato?
+#### D: È possibile estrarre il testo immesso dall'utente dal campo di testo creato?
 
-R: Sì, puoi estrarre il testo inserito dall'utente dal campo di testo creato. Dopo che gli utenti hanno compilato il campo di testo nel documento PDF, è possibile recuperare il valore del campo a livello di codice utilizzando Aspose.PDF per .NET.
+R: Sì, puoi estrarre il testo immesso dall'utente dal campo di testo creato. Dopo che gli utenti hanno compilato il campo di testo nel documento PDF, puoi recuperare programmaticamente il valore del campo utilizzando Aspose.PDF per .NET.
 
 #### D: Posso aggiungere campi di testo a un documento PDF esistente senza crearne uno nuovo?
 
 R: Sì, puoi aggiungere campi di testo a un documento PDF esistente senza crearne uno nuovo. Aspose.PDF per .NET offre la possibilità di modificare documenti PDF esistenti, inclusa l'aggiunta di campi di testo, caselle di controllo e altri elementi del modulo.
 
-#### D: Aspose.PDF per .NET supporta altri tipi di campi modulo, come caselle di controllo e pulsanti di opzione?
+#### D: Aspose.PDF per .NET supporta altri tipi di campi modulo, come caselle di controllo e pulsanti di scelta?
 
-R: Sì, Aspose.PDF per .NET supporta vari tipi di campi modulo, incluse caselle di controllo, pulsanti di opzione, elenchi a discesa e altro. È possibile utilizzare la libreria per lavorare con diversi tipi di elementi del modulo nei documenti PDF.
+R: Sì, Aspose.PDF per .NET supporta vari tipi di campi modulo, tra cui caselle di controllo, pulsanti di scelta, elenchi a discesa e altro. Puoi usare la libreria per lavorare con diversi tipi di elementi modulo nei documenti PDF.

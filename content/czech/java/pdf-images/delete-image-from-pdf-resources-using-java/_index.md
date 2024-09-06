@@ -20,7 +20,7 @@ Než začneme, ujistěte se, že máte splněny následující předpoklady:
 
 - Java Development Kit (JDK) nainstalovaný ve vašem systému
 - Integrované vývojové prostředí (IDE) pro Javu (např. Eclipse, IntelliJ IDEA)
--  Aspose.PDF pro knihovnu Java, kterou si můžete stáhnout[tady](https://releases.aspose.com/pdf/java/)
+-  Aspose.PDF pro knihovnu Java, kterou si můžete stáhnout[zde](https://releases.aspose.com/pdf/java/)
 
 ## Nastavení vývojového prostředí
 
@@ -111,7 +111,7 @@ V tomto podrobném průvodci jsme se naučili, jak odstranit obrázky z dokument
 
 ### Jak nainstaluji Aspose.PDF pro Javu?
 
- Chcete-li nainstalovat Aspose.PDF pro Java, můžete si stáhnout knihovnu z webu[tady](https://releases.aspose.com/pdf/java/). Postupujte podle pokynů k instalaci uvedených v dokumentaci.
+ Chcete-li nainstalovat Aspose.PDF pro Java, můžete si stáhnout knihovnu z webu[zde](https://releases.aspose.com/pdf/java/). Postupujte podle pokynů k instalaci uvedených v dokumentaci.
 
 ### Mohu odstranit konkrétní obrázky z PDF pomocí Aspose.PDF for Java?
 

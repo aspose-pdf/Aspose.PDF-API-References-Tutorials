@@ -21,7 +21,7 @@ using Aspose.Pdf.InteractiveFeatures;
 
 ## Krok 2: Nastavte cestu ke složce dokumentů
 
- V tomto kroku musíte zadat cestu ke složce obsahující soubor PDF, do kterého chcete přidat odkaz na aplikaci. Nahradit`"YOUR DOCUMENT DIRECTORY"` následujícím kódu se skutečnou cestou ke složce dokumentů:
+ tomto kroku musíte zadat cestu ke složce obsahující soubor PDF, do kterého chcete přidat odkaz na aplikaci. Nahradit`"YOUR DOCUMENT DIRECTORY"` v následujícím kódu se skutečnou cestou ke složce dokumentů:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -37,7 +37,7 @@ Document document = new Document(dataDir + "CreateApplicationLink.pdf");
 
 ## Krok 4: Vytvořte odkaz na aplikaci
 
- V tomto kroku vytvoříme odkaz na aplikaci pomocí`LinkAnnotation`anotace. Upřesníme souřadnice a oblast odkazu a také akci spuštění aplikace. Zde je odpovídající kód:
+ V tomto kroku vytvoříme odkaz na aplikaci pomocí`LinkAnnotation` anotace. Upřesníme souřadnice a oblast odkazu a také akci spuštění aplikace. Zde je odpovídající kód:
 
 ```csharp
 Page page = document.Pages[1];
@@ -49,7 +49,7 @@ page.Annotations.Add(link);
 
 ## Krok 5: Uložte aktualizovaný soubor
 
- Nyní uložme aktualizovaný soubor PDF pomocí`Save` metoda`document` objekt. Zde je odpovídající kód:
+Nyní uložme aktualizovaný soubor PDF pomocí`Save` metoda`document` objekt. Zde je odpovídající kód:
 
 ```csharp
 dataDir = dataDir + "CreateApplicationLink_out.pdf";

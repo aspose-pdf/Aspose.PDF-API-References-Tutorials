@@ -65,7 +65,7 @@ Ebben a cikkben megvizsgáltuk a kiterjesztett könyvjelzők fontosságát a PDF
 
 ### Hogyan tölthetem le az Aspose.PDF-et Java-hoz?
 
- Az Aspose.PDF for Java letölthető innen:[ez a link](https://releases.aspose.com/pdf/java/).
+ Az Aspose.PDF for Java letölthető innen:[ezt a linket](https://releases.aspose.com/pdf/java/).
 
 ### Használhatom az Aspose.PDF for Java-t kereskedelmi projektekben?
 

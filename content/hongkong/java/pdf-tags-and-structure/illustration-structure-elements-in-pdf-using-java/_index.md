@@ -40,7 +40,7 @@ import com.aspose.pdf.TextFragment;
 
 ### 新增文字到 PDF
 
-讓我們先在 PDF 文件中添加文字。我們將創建一個簡單的“Hello，PDF！”插圖。
+讓我們先為 PDF 文件添加文字。我們將創建一個簡單的“Hello，PDF！”插圖。
 
 ```java
 //建立一個新文檔

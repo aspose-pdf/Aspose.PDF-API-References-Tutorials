@@ -10,7 +10,7 @@ url: /hu/java/pdf-bookmarks/update-bookmarks-pdfs/
 
 ## Bevezetés
 
-Ebben az oktatóanyagban megvizsgáljuk, hogyan frissíthetjük a könyvjelzőket PDF-fájlokban az Aspose.PDF for Java segítségével, amely egy hatékony Java-könyvtár a PDF-dokumentumokkal való munkavégzéshez. A könyvjelzők nélkülözhetetlenek a PDF-fájlok navigációjának és használhatóságának javításához, az Aspose.PDF for Java pedig kényelmes módot kínál ezek programozott módosítására.
+Ebben az oktatóanyagban megvizsgáljuk, hogyan frissíthetjük a könyvjelzőket PDF-fájlokban az Aspose.PDF for Java segítségével, amely egy hatékony Java-könyvtár a PDF-dokumentumokkal való munkavégzéshez. A könyvjelzők nélkülözhetetlenek a PDF-fájlok navigációjának és használhatóságának javításához, az Aspose.PDF for Java pedig kényelmes módot biztosít ezek programozott módosítására.
 
 ## Az Aspose.PDF for Java megértése
 
@@ -38,7 +38,7 @@ Most hozzunk létre egy új Java projektet az IDE-ben:
 
 1. Nyissa meg az IDE-jét.
 2. Válassza a "Fájl" > "Új projekt" lehetőséget.
-3. Válassza a „Java”-t projekttípusként.
+3. Projekttípusként válassza a „Java”-t.
 4. Kövesse a varázslót a projekt létrehozásához.
 
 ## Aspose.PDF for Java hozzáadása projektjéhez

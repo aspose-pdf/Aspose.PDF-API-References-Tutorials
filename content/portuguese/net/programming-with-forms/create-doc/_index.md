@@ -1,13 +1,13 @@
 ---
 title: Criar documento
 linktitle: Criar documento
-second_title: Referência da API Aspose.PDF para .NET
-description: Crie facilmente um documento com botões de opção usando Aspose.PDF for .NET.
+second_title: Referência da API do Aspose.PDF para .NET
+description: Crie facilmente um documento com botões de opção usando o Aspose.PDF para .NET.
 type: docs
 weight: 40
 url: /pt/net/programming-with-forms/create-doc/
 ---
-Neste tutorial, mostraremos como criar um documento com botões de opção usando Aspose.PDF for .NET. Explicaremos o código-fonte C# passo a passo para guiá-lo nesse processo.
+Neste tutorial, mostraremos como criar um documento com botões de opção usando Aspose.PDF para .NET. Explicaremos o código-fonte C# passo a passo para guiá-lo por esse processo.
 
 ##Etapa 1: Preparação
 
@@ -17,15 +17,15 @@ Primeiro, certifique-se de ter importado as bibliotecas necessárias e definido 
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Passo 2: Crie um novo documento
+## Etapa 2: Crie um novo documento
 
-Crie um novo objeto Document para armazenar o documento PDF:
+Crie um novo objeto Documento para armazenar o documento PDF:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Etapa 3: adicionar uma página
+## Etapa 3: Adicionar uma página
 
 Adicione uma nova página ao documento:
 
@@ -43,7 +43,7 @@ field.Rect = new Aspose.Pdf.Rectangle(40, 650, 100, 720);
 field. PartialName = "NewField";
 ```
 
-## Etapa 5: adicionar opções de botão de opção
+## Etapa 5: Adicionar opções de botão de opção
 
 Adicione as opções desejadas ao campo do botão de opção. Você pode definir as coordenadas e o tamanho de cada opção conforme necessário:
 
@@ -74,15 +74,15 @@ field. Add(opt2);
 field. Add(opt3);
 ```
 
-## Etapa 6: adicione o campo do botão de opção ao formulário
+## Etapa 6: adicione o campo de botão de opção ao formulário
 
-Adicione o campo do botão de opção à coleção Document Form Fields:
+Adicione o campo de botão de opção à coleção Campos de Formulário de Documento:
 
 ```csharp
 doc.Form.Add(field);
 ```
 
-## Etapa 7: salve o documento
+## Etapa 7: Salve o documento
 
 Salve o documento PDF:
 
@@ -91,20 +91,20 @@ dataDir = dataDir + "CreateDoc_out.pdf";
 doc.Save(dataDir);
 ```
 
-### Exemplo de código-fonte para Create Doc usando Aspose.PDF para .NET 
+### Código-fonte de exemplo para Create Doc usando Aspose.PDF para .NET 
 ```csharp
 try
 {
 	// O caminho para o diretório de documentos.
 	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Crie um novo documento
+	// Criar um novo documento
 	Document doc = new Document();
 	Page page = doc.Pages.Add();
 	// Adicionar campo de botão de opção
 	RadioButtonField field = new RadioButtonField(page);
 	field.Rect = new Aspose.Pdf.Rectangle(40, 650, 100, 720);
 	field.PartialName = "NewField";
-	// Adicione opções de botão de opção. observe que essas opções estão situadas
+	// Adicione opções de botões de rádio. Observe que essas opções estão situadas
 	// Nem horizontalmente nem verticalmente.
 	// Você pode tentar definir quaisquer coordenadas (e até mesmo tamanho) para eles.
 	RadioButtonOptionField opt1 = new RadioButtonOptionField();
@@ -130,7 +130,7 @@ try
 	field.Add(opt3);
 	doc.Form.Add(field);
 	dataDir = dataDir + "CreateDoc_out.pdf";
-	// Salve o documento PDF
+	// Salvar o documento PDF
 	doc.Save(dataDir);
 	Console.WriteLine("\nNew doc with 3 items radio button created successfully.\nFile saved at " + dataDir);
 }
@@ -142,26 +142,26 @@ catch (Exception ex)
 
 ## Conclusão
 
-Neste tutorial, aprendemos como criar um documento com botões de opção usando Aspose.PDF for .NET. Seguindo essas etapas, você pode adicionar facilmente botões de opção aos seus documentos PDF usando Aspose.PDF.
+Neste tutorial, aprendemos como criar um documento com botões de opção usando Aspose.PDF para .NET. Seguindo essas etapas, você pode facilmente adicionar botões de opção aos seus documentos PDF usando Aspose.PDF.
 
 ### Perguntas frequentes
 
-#### P: Posso personalizar a aparência dos botões de opção no documento usando Aspose.PDF for .NET?
+#### P: Posso personalizar a aparência dos botões de opção no documento usando o Aspose.PDF para .NET?
 
-R: Sim, você pode personalizar a aparência dos botões de opção no documento usando Aspose.PDF for .NET. Você pode definir propriedades como tamanho, cor, estilo de borda e muito mais para personalizar a aparência dos botões de opção.
+R: Sim, você pode personalizar a aparência dos botões de opção no documento usando o Aspose.PDF para .NET. Você pode definir propriedades como tamanho, cor, estilo de borda e mais para personalizar a aparência dos botões de opção.
 
 #### P: Como posso adicionar grupos de botões de opção com opções mutuamente exclusivas?
 
-R: Para criar opções mutuamente exclusivas, você pode adicionar vários campos de botão de opção com o mesmo nome. Isso garantirá que quando uma opção for selecionada, as outras opções com o mesmo nome serão automaticamente desmarcadas.
+R: Para criar opções mutuamente exclusivas, você pode adicionar vários campos de botão de opção com o mesmo nome. Isso garantirá que, quando uma opção for selecionada, as outras opções com o mesmo nome serão automaticamente desmarcadas.
 
-#### P: É possível definir uma opção padrão selecionada para os botões de opção?
+#### P: É possível definir uma opção selecionada padrão para os botões de opção?
 
-R: Sim, você pode definir uma opção selecionada padrão para os botões de opção usando Aspose.PDF for .NET. Você pode usar o`Selected` propriedade do`RadioButtonOptionField` objeto para marcar uma opção como selecionada por padrão.
+R: Sim, você pode definir uma opção selecionada padrão para os botões de opção usando Aspose.PDF para .NET. Você pode usar o`Selected` propriedade do`RadioButtonOptionField` objeto para marcar uma opção como selecionada por padrão.
 
 #### P: Posso adicionar manipuladores de eventos aos botões de opção?
 
- R: Sim, você pode adicionar manipuladores de eventos aos botões de opção usando Aspose.PDF for .NET. Você pode associar ações JavaScript, como`OnValueChanged`, aos botões de opção para executar ações específicas quando o usuário seleciona uma opção.
+ R: Sim, você pode adicionar manipuladores de eventos aos botões de opção usando Aspose.PDF para .NET. Você pode associar ações JavaScript, como`OnValueChanged`, aos botões de opção para executar ações específicas quando o usuário seleciona uma opção.
 
 #### P: Como posso recuperar a opção selecionada do grupo de botões de opção depois que o usuário faz uma seleção?
 
- R: Você pode recuperar a opção selecionada do grupo de botões de opção usando Aspose.PDF for .NET. Depois que o usuário fizer uma seleção, você poderá acessar o`Selected` propriedade do`RadioButtonOptionField` objeto para verificar qual opção está selecionada.
+ R: Você pode recuperar a opção selecionada do grupo de botões de opção usando o Aspose.PDF para .NET. Depois que o usuário faz uma seleção, você pode acessar o`Selected` propriedade do`RadioButtonOptionField` objeto para verificar qual opção está selecionada.

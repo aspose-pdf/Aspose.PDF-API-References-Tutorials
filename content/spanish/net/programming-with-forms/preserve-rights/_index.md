@@ -1,23 +1,23 @@
 ---
 title: Preservar los derechos
 linktitle: Preservar los derechos
-second_title: Aspose.PDF para referencia de API .NET
+second_title: Referencia de API de Aspose.PDF para .NET
 description: Conserve los derechos de formulario en sus documentos PDF con Aspose.PDF para .NET.
 type: docs
 weight: 210
 url: /es/net/programming-with-forms/preserve-rights/
 ---
-En este tutorial, le mostraremos cómo preservar los derechos de formulario en un documento PDF usando Aspose.PDF para .NET. Explicaremos el código fuente de C# paso a paso para guiarlo a través de este proceso.
+En este tutorial, le mostraremos cómo conservar los derechos de formulario en un documento PDF con Aspose.PDF para .NET. Le explicaremos el código fuente de C# paso a paso para guiarlo en este proceso.
 
-## Paso 1: preparación
+## Paso 1: Preparación
 
-Asegúrese de haber importado las bibliotecas necesarias y establecer la ruta a su directorio de documentos:
+Asegúrese de haber importado las bibliotecas necesarias y de haber configurado la ruta al directorio de sus documentos:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Paso 2: abre el documento
+## Paso 2: Abra el documento
 
  Abra el documento PDF de origen utilizando un`FileStream` con permiso de lectura y escritura:
 
@@ -26,9 +26,9 @@ FileStream fs = new FileStream(dataDir + "input.pdf", FileMode.Open, FileAccess.
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(fs);
 ```
 
-## Paso 3: editar los campos del formulario
+## Paso 3: Editar campos del formulario
 
-Revise todos los campos del formulario en el documento y realice los cambios necesarios. En este ejemplo, cambiaremos el valor de un campo de formulario que tiene "A1" en su nombre:
+Revise todos los campos de formulario del documento y realice los cambios necesarios. En este ejemplo, vamos a cambiar el valor de un campo de formulario que tiene "A1" en su nombre:
 
 ```csharp
 foreach(Field formField in pdfDocument.Form)
@@ -41,7 +41,7 @@ textBoxField.Value = "Testing";
 }
 ```
 
-## Paso 4: guarde el documento actualizado
+## Paso 4: Guarde el documento actualizado
 
 Guarde el documento PDF modificado:
 
@@ -49,7 +49,7 @@ Guarde el documento PDF modificado:
 pdfDocument.Save();
 ```
 
-##  Paso 5: cierre el`FileStream`
+##  Paso 5: Cerrar el`FileStream`
 
  No olvides cerrar el`FileStream` objeto cuando hayas terminado:
 
@@ -57,11 +57,11 @@ pdfDocument.Save();
 fs. Close();
 ```
 
-### Código fuente de muestra para Preservar derechos usando Aspose.PDF para .NET 
+### Código fuente de muestra para preservar derechos con Aspose.PDF para .NET 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Lea el formulario PDF de origen con FileAccess de lectura y escritura.
+// Lea el formato PDF de origen con FileAccess de lectura y escritura.
 // Necesitamos permiso de lectura y escritura porque después de la modificación,
 // Necesitamos guardar el contenido actualizado en el mismo documento/archivo.
 FileStream fs = new FileStream(dataDir + "input.pdf", FileMode.Open, FileAccess.ReadWrite);
@@ -73,13 +73,13 @@ foreach (Field formField in pdfDocument.Form)
 	// Si el nombre completo del campo contiene A1, realice la operación
 	if (formField.FullName.Contains("A1"))
 	{
-		// Transmitir campo de formulario como TextBox
+		// Convertir un campo de formulario en un cuadro de texto
 		TextBoxField textBoxField = formField as TextBoxField;
-		// Modificar valor de campo
+		// Modificar el valor del campo
 		textBoxField.Value = "Testing";
 	}
 }
-// Guarde el documento actualizado en guardar FileStream
+// Guarde el documento actualizado en el archivo save FileStream
 pdfDocument.Save();
 // Cerrar el objeto File Stream
 fs.Close();
@@ -87,22 +87,22 @@ fs.Close();
 
 ## Conclusión
 
-En este tutorial, aprendimos cómo preservar los derechos de un formulario en un documento PDF usando Aspose.PDF para .NET. Si sigue estos pasos, podrá acceder fácilmente a los campos del formulario y realizar cambios específicos mientras conserva los permisos de acceso y escritura.
+En este tutorial, aprendimos a conservar los derechos de un formulario en un documento PDF con Aspose.PDF para .NET. Si sigue estos pasos, podrá acceder fácilmente a los campos del formulario y realizar cambios específicos mientras conserva los permisos de acceso y escritura.
 
 
 ### Preguntas frecuentes
 
 #### P: ¿Puedo conservar los derechos de campos de formulario específicos sin afectar a otros en el documento PDF?
 
- R: Sí, usando el`FullName` propiedad de los campos del formulario, puede seleccionar campos de formulario específicos para conservarlos sin afectar a otros.
+ A: Sí, mediante el uso del`FullName` propiedad de los campos de formulario, puede seleccionar campos de formulario específicos para su conservación mientras deja otros intactos.
 
 #### P: ¿Puedo conservar los derechos de un formulario en un documento PDF protegido con contraseña?
 
 R: Sí, Aspose.PDF para .NET le permite conservar los derechos de un formulario incluso en documentos PDF protegidos con contraseña, siempre que proporcione la contraseña correcta para acceder y modificar el archivo.
 
-#### P: ¿Qué sucede si intento modificar los campos del formulario sin los derechos de acceso adecuados?
+#### P: ¿Qué sucede si intento modificar campos de formulario sin los derechos de acceso adecuados?
 
-R: Si intenta modificar los campos del formulario sin los derechos de acceso adecuados, los cambios no se guardarán en el documento PDF y es posible que reciba una excepción o un mensaje de error.
+R: Si intenta modificar campos de formulario sin los derechos de acceso adecuados, los cambios no se guardarán en el documento PDF y es posible que reciba una excepción o un mensaje de error.
 
 #### P: ¿Aspose.PDF para .NET es compatible con todas las versiones de .NET Framework?
 

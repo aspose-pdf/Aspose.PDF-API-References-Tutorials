@@ -1,42 +1,42 @@
 ---
-title: PDF Dosyasındaki Bağlantıları Çıkart
-linktitle: PDF Dosyasındaki Bağlantıları Çıkart
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET'i kullanarak PDF dosyasındaki bağlantıları kolayca çıkarın.
+title: PDF Dosyasındaki Bağlantıları Çıkar
+linktitle: PDF Dosyasındaki Bağlantıları Çıkar
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki bağlantıları kolayca çıkarın.
 type: docs
 weight: 50
 url: /tr/net/programming-with-links-and-actions/extract-links/
 ---
-PDF dosyasındaki bağlantıların çıkarılması, belgede bulunan tüm köprü metni bağlantılarını kurtarmanıza olanak tanır. Aspose.PDF for .NET ile aşağıdaki kaynak kodunu takip ederek bu bağlantıları kolayca çıkarabilirsiniz:
+PDF dosyasındaki bağlantıları çıkarmak, belgede bulunan tüm köprü metin bağlantılarını kurtarmanızı sağlar. Aspose.PDF for .NET ile aşağıdaki kaynak kodunu izleyerek bu bağlantıları kolayca çıkarabilirsiniz:
 
-## 1. Adım: Gerekli Kitaplıkları İçe Aktarın
+## Adım 1: Gerekli Kitaplıkları İçe Aktarın
 
-Başlamadan önce C# projeniz için gerekli kütüphaneleri içe aktarmanız gerekir. Gerekli ithalat direktifi aşağıdadır:
+Başlamadan önce, C# projeniz için gerekli kütüphaneleri içe aktarmanız gerekir. İşte gerekli içe aktarma yönergesi:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Annotations;
 ```
 
-## 2. Adım: Belgeler klasörünün yolunu ayarlayın
+## Adım 2: Belgeler klasörüne giden yolu ayarlayın
 
- Bu adımda, bağlantıları çıkarmak istediğiniz PDF dosyasını içeren klasörün yolunu belirtmeniz gerekir. Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"`belgeler klasörünüzün gerçek yolunu içeren aşağıdaki kodda:
+ Bu adımda, bağlantıları çıkarmak istediğiniz PDF dosyasını içeren klasörün yolunu belirtmeniz gerekir. Değiştir`"YOUR DOCUMENT DIRECTORY"` Aşağıdaki kodda belgeler klasörünüzün gerçek yolunu bulabilirsiniz:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## 3. Adım: PDF belgesini açın
+## Adım 3: PDF belgesini açın
 
-PDF belgesini kullanarak açacağız.`Document` sınıf. İşte ilgili kod:
+ PDF belgesini kullanarak açacağız`Document` sınıf. İşte karşılık gelen kod:
 
 ```csharp
 Document document = new Document(dataDir + "ExtractLinks.pdf");
 ```
 
-## 4. Adım: Bağlantıları çıkarın
+## Adım 4: Bağlantıları ayıkla
 
- Bu adımda, PDF belgesinde bulunan bağlantıları kullanarak çıkaracağız.`AnnotationSelector` sınıf. İşte ilgili kod:
+ Bu adımda, PDF belgesinde bulunan bağlantıları kullanarak çıkaracağız.`AnnotationSelector` sınıf. İşte karşılık gelen kod:
 
 ```csharp
 Page page = document.Pages[1];
@@ -46,22 +46,22 @@ IList<Annotation> list = selector. Selected;
 Annotation annotation = (Annotation)list[0];
 ```
 
-## 5. Adım: Güncellenen belgeyi kaydedin
+## Adım 5: Güncellenen belgeyi kaydedin
 
- Şimdi güncellenen PDF dosyasını kullanarak kaydedelim.`Save` yöntemi`document` nesne. İşte ilgili kod:
+Şimdi güncellenen PDF dosyasını kullanarak kaydedelim`Save` yöntemi`document` nesne. İşte karşılık gelen kod:
 
 ```csharp
 dataDir = dataDir + "ExtractLinks_out.pdf";
 document. Save(dataDir);
 ```
 
-### Aspose.PDF for .NET kullanan Bağlantıları Çıkarma için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Bağlantıları Çıkarmak için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Belgeyi aç
 Document document = new Document(dataDir+ "ExtractLinks.pdf");
-// Eylemleri çıkar
+// Eylemleri ayıkla
 Page page = document.Pages[1];
 AnnotationSelector selector = new AnnotationSelector(new LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
 page.Accept(selector);
@@ -75,7 +75,7 @@ Console.WriteLine("\nLinks extracted successfully.\nFile saved at " + dataDir);
 
 ## Çözüm
 
-Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF belgesinden bağlantıları ayıklamak için adım adım bir kılavuza sahipsiniz. Belgede bulunan tüm köprüleri almak için bu kodu kullanabilirsiniz.
+Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF belgesinden bağlantıları çıkarmak için adım adım bir kılavuzunuz var. Bu kodu kullanarak belgede bulunan tüm köprüleri alabilirsiniz.
 
 Gelişmiş bağlantı çıkarma özellikleri hakkında daha fazla bilgi için resmi Aspose.PDF belgelerine göz atmayı unutmayın.
 
@@ -83,36 +83,36 @@ Gelişmiş bağlantı çıkarma özellikleri hakkında daha fazla bilgi için re
 
 #### S: PDF dosyasındaki bağlantı çıkarma nedir?
 
-C: Bir PDF dosyasındaki bağlantı çıkarma, belgede bulunan tüm köprü metni bağlantılarının kurtarılması işlemini ifade eder. Bu, URL'leri, dahili belge bağlantılarını ve diğer etkileşimli öğeleri almanızı sağlar.
+A: Bir PDF dosyasındaki bağlantı çıkarma, belgede bulunan tüm köprü metin bağlantılarını kurtarma sürecini ifade eder. Bu, URL'leri, dahili belge bağlantılarını ve diğer etkileşimli öğeleri almanıza olanak tanır.
 
-#### S: Bağlantı çıkarma, PDF belge analizime nasıl fayda sağlayabilir?
+#### S: Bağlantı çıkarma PDF belge analizime nasıl fayda sağlar?
 
-C: Bağlantı çıkarma, içerik doğrulama, veri madenciliği ve analiz gibi çeşitli amaçlar için değerlidir. Daha fazla araştırma için bir PDF belgesindeki tüm bağlantıları tanımlamanıza ve kataloglamanıza olanak tanır.
+A: Bağlantı çıkarma, içerik doğrulama, veri madenciliği ve analiz gibi çeşitli amaçlar için değerlidir. Daha fazla araştırma için bir PDF belgesindeki tüm bağlantıları tanımlamanızı ve kataloglamanızı sağlar.
 
-#### S: Aspose.PDF for .NET bağlantı çıkarmayı nasıl destekler?
+#### S: Aspose.PDF for .NET bağlantı çıkarmayı nasıl destekliyor?
 
-C: Aspose.PDF for .NET, PDF belgelerinden bağlantıları kolaylıkla çıkarmak için güçlü API'ler sağlar. Bu kılavuzda özetlenen adım adım eğitim, C# kullanarak bağlantıların nasıl çıkarılacağını gösterir.
+A: Aspose.PDF for .NET, PDF belgelerinden bağlantıları kolayca çıkarmak için güçlü API'ler sağlar. Bu kılavuzda özetlenen adım adım eğitim, C# kullanarak bağlantıların nasıl çıkarılacağını gösterir.
 
-#### S: Köprüler veya dahili belge bağlantıları gibi belirli bağlantı türlerini çıkarabilir miyim?
+#### S: Köprü metinleri veya dahili belge bağlantıları gibi belirli türdeki bağlantıları çıkarabilir miyim?
 
- C: Evet, belirli türdeki bağlantıları seçerek çıkarabilirsiniz.`AnnotationSelector` sınıf. Bu, gereksinimlerinize göre istediğiniz bağlantıları filtrelemenize ve almanıza olanak tanır.
+ A: Evet, belirli bağlantı türlerini seçerek çıkarabilirsiniz`AnnotationSelector`sınıf. Bu, gereksinimlerinize göre istediğiniz bağlantıları filtrelemenize ve almanıza olanak tanır.
 
-#### S: Bir PDF belgesinin belirli sayfalarından bağlantıları çıkarmak mümkün müdür?
+#### S: PDF belgesinin belirli sayfalarından bağlantıları çıkarmak mümkün müdür?
 
- C: Kesinlikle! Hedef sayfayı belirterek, bir PDF belgesinin belirli sayfalarından bağlantıları çıkarabilirsiniz.`Document.Pages` Toplamak. Bu, belirli bölümlere odaklanmanızı sağlar.
+ A: Kesinlikle! Hedef sayfayı belirterek PDF belgesinin belirli sayfalarından bağlantıları çıkarabilirsiniz.`Document.Pages` koleksiyon. Bu, belirli bölümlere odaklanmanızı sağlar.
 
-#### S: Çıkarılan bağlantılar hangi formatta döndürülür?
+#### S: Çıkarılan bağlantılar hangi formatta döndürülüyor?
 
- C: Çıkarılan bağlantılar, örnekleri olarak döndürülür.`Annotation` sınıf. Hedef URL'ler ve bağlantı türleri de dahil olmak üzere bağlantı ayrıntılarını almak için bu ek açıklamaları işleyebilir ve analiz edebilirsiniz.
+ A: Çıkarılan bağlantılar, aşağıdakilerin örnekleri olarak döndürülür:`Annotation` sınıf. Hedef URL'ler ve bağlantı türleri dahil olmak üzere bağlantı ayrıntılarını almak için bu açıklamaları işleyebilir ve analiz edebilirsiniz.
 
-#### S: Bağlantı çıkarmanın doğru olduğunu nasıl doğrulayabilirim?
+#### S: Bağlantı çıkarma işleminin doğru olduğunu nasıl doğrulayabilirim?
 
-C: Sağlanan eğitimi ve örnek kodu takip ederek doğru bağlantı çıkarmayı sağlayabilirsiniz. Çıkarılan ek açıklamaları analiz edebilir ve URL'leri ve bağlantı özelliklerini doğrulayabilirsiniz.
+A: Verilen öğreticiyi ve örnek kodu takip ederek doğru bağlantı çıkarımından emin olabilirsiniz. Çıkarılan açıklamaları analiz edebilir ve URL'leri ve bağlantı niteliklerini doğrulayabilirsiniz.
 
 #### S: Bağlantıları çıkarırken herhangi bir sınırlama var mı?
 
-C: Bağlantı çıkarma güçlü bir özellik olsa da PDF belgesinin yapısını dikkate almak önemlidir. Resimlere, tablolara veya multimedya içeriğine gömülü bağlantılar ek işlem gerektirebilir.
+A: Bağlantı çıkarma güçlü bir özellik olsa da, PDF belgesinin yapısını dikkate almak önemlidir. Görüntüler, tablolar veya multimedya içeriklerine gömülü bağlantılar ek işlem gerektirebilir.
 
-#### S: Parola korumalı PDF belgelerinden bağlantıları çıkarabilir miyim?
+#### S: Parola korumalı PDF belgelerindeki bağlantıları çıkarabilir miyim?
 
 C: Aspose.PDF for .NET, belgeyi açarken gerekli kimlik doğrulama bilgilerini sağladığınız sürece parola korumalı PDF belgelerinden bağlantıları çıkarabilir.

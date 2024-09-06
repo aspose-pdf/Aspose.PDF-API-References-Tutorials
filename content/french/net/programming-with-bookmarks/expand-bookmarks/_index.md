@@ -1,158 +1,125 @@
 ---
 title: Développer les signets dans le fichier PDF
 linktitle: Développer les signets dans le fichier PDF
-second_title: Aspose.PDF pour la référence de l'API .NET
-description: Développez facilement les signets dans un fichier PDF pour une navigation améliorée avec Aspose.PDF pour .NET.
+second_title: Référence de l'API Aspose.PDF pour .NET
+description: Découvrez comment développer les signets dans les fichiers PDF à l'aide d'Aspose.PDF pour .NET grâce à ce guide étape par étape. Idéal pour les développeurs souhaitant améliorer la navigation dans les fichiers PDF.
 type: docs
 weight: 50
 url: /fr/net/programming-with-bookmarks/expand-bookmarks/
 ---
-Le développement des signets dans un fichier PDF affichera tous les signets ouverts par défaut. Avec Aspose.PDF pour .NET, vous pouvez facilement développer les signets en suivant le code source suivant :
+## Introduction
 
-## Étape 1 : Importer les bibliothèques requises
+Avez-vous déjà ouvert un fichier PDF et découvert que tous les signets étaient réduits ? Cela peut être frustrant, surtout lorsque vous essayez de naviguer dans un long document. Heureusement, avec Aspose.PDF pour .NET, vous pouvez facilement développer les signets de vos fichiers PDF par programmation. Ce guide vous guidera tout au long du processus, en vous assurant de comprendre chaque partie du code et son fonctionnement. Alors, prenez votre boisson préférée et plongeons dans le monde de la manipulation PDF !
 
-Avant de commencer, vous devez importer les bibliothèques nécessaires à votre projet C#. Voici la directive d'importation nécessaire :
+## Prérequis
+
+Avant de commencer, vous devez mettre en place quelques éléments :
+
+1. Visual Studio : assurez-vous que Visual Studio est installé sur votre ordinateur. Il s'agit du meilleur environnement pour le développement .NET.
+2.  Aspose.PDF pour .NET : vous devez télécharger et installer la bibliothèque Aspose.PDF. Vous pouvez la trouver[ici](https://releases.aspose.com/pdf/net/).
+3. Connaissances de base de C# : la familiarité avec la programmation C# vous aidera à mieux comprendre les extraits de code.
+
+## Paquets d'importation
+
+Pour commencer, vous devez importer les packages nécessaires dans votre projet C#. Voici comment procéder :
+
+### Créer un nouveau projet
+
+Ouvrez Visual Studio et créez un nouveau projet C#. Vous pouvez choisir une application console pour plus de simplicité.
+
+### Ajouter une référence Aspose.PDF
+
+1. Faites un clic droit sur votre projet dans l’Explorateur de solutions.
+2. Sélectionnez « Gérer les packages NuGet ».
+3. Recherchez « Aspose.PDF » et installez la dernière version.
+
+### Importer l'espace de noms
+
+En haut de votre fichier C#, importez l'espace de noms Aspose.PDF :
 
 ```csharp
+using System;
+using System.IO;
 using Aspose.Pdf;
 ```
 
-## Étape 2 : Définir le chemin d'accès au dossier de documents
+Maintenant que vous avez tout configuré, passons au code réel !
 
- Dans cette étape, vous devez spécifier le chemin d'accès au dossier contenant le fichier PDF dont vous souhaitez développer les signets. Remplacer`"YOUR DOCUMENT DIRECTORY"`dans le code suivant avec le chemin réel de votre dossier de documents :
+## Étape 1 : Configurez votre répertoire de documents
+
+Tout d'abord, vous devez spécifier le chemin d'accès à votre répertoire de documents. C'est là que se trouve votre fichier PDF d'entrée et où le fichier de sortie sera enregistré.
 
 ```csharp
+// Le chemin vers le répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Étape 3 : Ouvrez le document PDF
+## Étape 2 : Ouvrir le document PDF
 
-Nous allons maintenant ouvrir le document PDF dont nous souhaitons développer les signets en utilisant le code suivant :
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
-## Étape 4 : Définir le mode d'affichage de la page
-
-Dans cette étape, nous définirons le mode d'affichage de la page pour afficher les signets par défaut. Nous utilisons le`PageMode` propriété du`doc` objet pour définir le mode de page souhaité. Voici le code correspondant :
+ Ensuite, vous ouvrez le document PDF qui contient les signets que vous souhaitez développer. Pour cela, utilisez le`Document` classe de la bibliothèque Aspose.PDF.
 
 ```csharp
-doc.PageMode = PageMode.UseOutlines;
-```
-
-## Étape 5 : Parcourir les favoris et les développer
-
- Nous allons maintenant parcourir chaque élément de signet dans la collection de signets du document et définir l'état ouvert de chaque élément sur`true` pour les développer par défaut. Voici le code correspondant :
-
-```csharp
-foreach(OutlineItemCollection item in doc.Outlines)
-{
-     item. Open = true;
-}
-```
-
-## Étape 6 : Enregistrez le fichier mis à jour
-
- Enfin, nous enregistrons le fichier PDF mis à jour en utilisant le`Save` méthode du`doc` objet. Voici le code correspondant :
-
-```csharp
-dataDir = dataDir + "ExpandBookmarks_out.pdf";
-doc.Save(dataDir);
-```
-
-### Exemple de code source pour développer les signets à l'aide d'Aspose.PDF pour .NET 
-```csharp
-// Le chemin d'accès au répertoire des documents.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Ouvrir le document
-Document doc = new Document(dataDir + "input.pdf");
-// Définir le mode d'affichage de la page, c'est-à-dire afficher les vignettes, le plein écran, afficher le panneau des pièces jointes
+Document doc = new Document(dataDir + "input-bookmark.pdf");
+```
+
+## Étape 3 : définir le mode d’affichage de la page
+
+Vous devez maintenant définir le mode d'affichage de la page du document. Cela détermine la manière dont le PDF s'affichera une fois ouvert. Dans ce cas, nous souhaitons utiliser des contours (signets).
+
+```csharp
+//Définir le mode d'affichage de la page, c'est-à-dire afficher les miniatures, plein écran, afficher le panneau des pièces jointes
 doc.PageMode = PageMode.UseOutlines;
-// Parcourez chaque élément Ouline dans la collection de contours du fichier PDF
+```
+
+## Étape 4 : Parcourez les éléments du plan
+
+Voici la partie amusante ! Vous allez parcourir chaque élément de plan dans la collection de plans du PDF et définir leur statut d'ouverture sur vrai. Cela développera les signets.
+
+```csharp
+// Parcourez chaque élément de plan dans la collection de plans du fichier PDF
 foreach (OutlineItemCollection item in doc.Outlines)
 {
-	// Définir le statut ouvert pour l'élément de plan
-	item.Open = true;
+    // Définir le statut ouvert pour l'élément de plan
+    item.Open = true;
 }
+```
+
+## Étape 5 : Enregistrer le document de sortie
+
+Après avoir développé les signets, il est temps d'enregistrer le document modifié. Vous devez spécifier un nouveau nom de fichier pour le PDF de sortie.
+
+```csharp
 dataDir = dataDir + "ExpandBookmarks_out.pdf";
 // Enregistrer la sortie
 doc.Save(dataDir);
+```
+
+## Étape 6 : Message de confirmation
+
+Enfin, vous pouvez imprimer un message de confirmation sur la console pour vous informer que les signets ont été développés avec succès.
+
+```csharp
 Console.WriteLine("\nBookmarks expanded successfully.\nFile saved at " + dataDir);
 ```
 
 ## Conclusion
 
-Félicitation ! Vous disposez désormais d'un guide étape par étape pour développer des signets avec Aspose.PDF pour .NET. Vous pouvez utiliser ce code pour afficher tous les signets par défaut dans vos documents PDF.
+Et voilà ! Vous avez réussi à développer les signets d'un fichier PDF à l'aide d'Aspose.PDF pour .NET. Cette bibliothèque simple mais puissante vous permet de manipuler facilement des documents PDF, ce qui vous simplifie grandement la vie. Que vous travailliez sur un projet personnel ou sur une application professionnelle, Aspose.PDF est un outil fantastique à avoir dans votre arsenal.
 
-Assurez-vous de consulter la documentation officielle Aspose.PDF pour plus d'informations sur les fonctionnalités avancées de manipulation de signets.
+## FAQ
 
-### FAQ pour développer les signets dans un fichier PDF
+### Qu'est-ce qu'Aspose.PDF pour .NET ?
+Aspose.PDF pour .NET est une bibliothèque puissante qui permet aux développeurs de créer, manipuler et convertir des documents PDF par programmation.
 
-#### Q : Que sont les signets dans un fichier PDF ?
+### Puis-je utiliser Aspose.PDF gratuitement ?
+ Oui, Aspose propose une version d'essai gratuite que vous pouvez utiliser pour explorer les fonctionnalités de la bibliothèque. Vous pouvez la télécharger[ici](https://releases.aspose.com/).
 
-R : Les signets dans un fichier PDF sont des aides à la navigation qui permettent aux utilisateurs d'accéder rapidement à des sections ou des pages spécifiques du document. Ils offrent un moyen pratique d’accéder à différentes parties d’un document.
+### Où puis-je trouver plus de documentation ?
+ Vous trouverez une documentation complète sur Aspose.PDF pour .NET[ici](https://reference.aspose.com/pdf/net/).
 
-#### Q : Pourquoi voudrais-je développer les signets dans un fichier PDF ?
+### Existe-t-il un support disponible pour Aspose.PDF ?
+ Absolument ! Vous pouvez obtenir du soutien auprès de la communauté Aspose[ici](https://forum.aspose.com/c/pdf/10).
 
-R : Le développement des signets peut améliorer l'expérience utilisateur en affichant par défaut tous les signets dans un état développé. Cela donne aux utilisateurs un aperçu clair de la structure du document et leur permet de naviguer facilement entre les différentes sections.
-
-#### Q : Comment importer les bibliothèques nécessaires pour mon projet C# ?
-
-R : Pour importer la bibliothèque requise pour votre projet C#, utilisez la directive d'importation suivante :
-
-```csharp
-using Aspose.Pdf;
-```
-
-Cette directive vous permet d'utiliser les classes et méthodes fournies par Aspose.PDF pour .NET.
-
-#### Q : Comment puis-je spécifier le chemin d'accès au dossier de documents ?
-
- R : Dans le code source fourni, remplacez`"YOUR DOCUMENT DIRECTORY"` avec le chemin réel du dossier contenant le fichier PDF avec lequel vous souhaitez travailler. Cela garantit que le code peut localiser le fichier PDF cible.
-
-#### Q : Comment puis-je ouvrir un document PDF pour développer ses signets ?
-
-R : Pour ouvrir un document PDF afin de développer les signets, utilisez le code suivant :
-
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
-
- Remplacer`"input.pdf"` avec le nom réel du fichier.
-
-#### Q : Comment puis-je définir le mode d'affichage des pages pour afficher les favoris par défaut ?
-
-R : Pour définir le mode d'affichage de la page afin qu'il affiche les signets par défaut, utilisez l'option`PageMode` propriété du`doc` objet:
-
-```csharp
-doc.PageMode = PageMode.UseOutlines;
-```
-
-#### Q : Comment puis-je développer tous les signets dans le document PDF ?
-
- R : Pour développer tous les signets, parcourez chaque élément de signet dans la collection de plans du document et définissez le`Open` propriété à`true`:
-
-```csharp
-foreach (OutlineItemCollection item in doc.Outlines)
-{
-    item.Open = true;
-}
-```
-
-#### Q : Que se passe-t-il si un signet contient des signets enfants imbriqués ?
-
-R : Si un signet comporte des signets enfants imbriqués, le développement du signet parent développera également ses signets enfants, offrant ainsi une vue complète de la structure du document.
-
-#### Q : Comment puis-je enregistrer le fichier PDF mis à jour après avoir développé les favoris ?
-
-R : Pour enregistrer le fichier PDF mis à jour après avoir développé les signets, utilisez le code suivant :
-
-```csharp
-dataDir = dataDir + "ExpandBookmarks_out.pdf";
-doc.Save(dataDir);
-```
-
-#### Q : Puis-je personnaliser l’apparence des signets développés ?
-
-R : Bien que ce didacticiel se concentre sur le développement des signets par défaut, vous pouvez personnaliser l'apparence des signets à l'aide des autres fonctionnalités et propriétés d'Aspose.PDF.
+### Comment acheter une licence pour Aspose.PDF ?
+ Vous pouvez acheter une licence pour Aspose.PDF[ici](https://purchase.aspose.com/buy).

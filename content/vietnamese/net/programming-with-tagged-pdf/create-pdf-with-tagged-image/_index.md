@@ -1,8 +1,8 @@
 ---
 title: Tạo PDF với hình ảnh được gắn thẻ
 linktitle: Tạo PDF với hình ảnh được gắn thẻ
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Hướng dẫn từng bước tạo PDF có hình ảnh được gắn thẻ bằng Aspose.PDF cho .NET.
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Hướng dẫn từng bước để tạo PDF có gắn thẻ hình ảnh bằng Aspose.PDF cho .NET.
 type: docs
 weight: 40
 url: /vi/net/programming-with-tagged-pdf/create-pdf-with-tagged-image/
@@ -11,18 +11,18 @@ Trong hướng dẫn này, chúng tôi sẽ cung cấp cho bạn hướng dẫn 
 
 ## Điều kiện tiên quyết
 
-Trước khi bắt đầu, hãy đảm bảo bạn có sẵn các điều kiện tiên quyết sau:
+Trước khi bắt đầu, hãy đảm bảo bạn đã đáp ứng đủ các điều kiện tiên quyết sau:
 
 1. Visual Studio được cài đặt với .NET framework.
-2. Thư viện Aspose.PDF cho .NET.
+2. Thư viện Aspose.PDF dành cho .NET.
 
 ## Bước 1: Thiết lập dự án
 
-Để bắt đầu, hãy tạo một dự án mới trong Visual Studio và thêm tham chiếu đến thư viện Aspose.PDF cho .NET. Bạn có thể tải xuống thư viện từ trang web chính thức của Aspose và cài đặt nó trên máy của mình.
+Để bắt đầu, hãy tạo một dự án mới trong Visual Studio và thêm tham chiếu đến thư viện Aspose.PDF cho .NET. Bạn có thể tải xuống thư viện từ trang web chính thức của Aspose và cài đặt trên máy của mình.
 
 ## Bước 2: Nhập các không gian tên cần thiết
 
-Trong tệp mã C# của bạn, hãy nhập các vùng tên cần thiết để truy cập các lớp và phương thức do Aspose.PDF cung cấp:
+Trong tệp mã C# của bạn, hãy nhập các không gian tên cần thiết để truy cập các lớp và phương thức do Aspose.PDF cung cấp:
 
 ```csharp
 using System;
@@ -30,9 +30,9 @@ using Aspose.Pdf;
 using Aspose.Pdf.Tagged;
 ```
 
-## Bước 3: Tạo tài liệu PDF có hình ảnh được gắn thẻ
+## Bước 3: Tạo tài liệu PDF có gắn thẻ hình ảnh
 
-Sử dụng mã sau để tạo tài liệu PDF có hình ảnh được gắn thẻ:
+Sử dụng mã sau để tạo tài liệu PDF có gắn thẻ hình ảnh:
 
 ```csharp
 string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
@@ -53,13 +53,13 @@ Mã này tạo một tài liệu PDF trống và thêm hình ảnh được gắ
 
 ## Bước 4: Lưu tài liệu PDF
 
-Sử dụng đoạn mã sau để lưu tài liệu PDF:
+Sử dụng mã sau để lưu tài liệu PDF:
 
 ```csharp
 document.Save(dataDir + "PDFwithTaggedImage.pdf");
 ```
 
-Mã này lưu tài liệu PDF có hình ảnh được gắn thẻ vào một tệp được chỉ định.
+Mã này lưu tài liệu PDF có gắn thẻ hình ảnh vào một tệp được chỉ định.
 
 ### Mã nguồn mẫu để tạo PDF với hình ảnh được gắn thẻ bằng Aspose.PDF cho .NET 
 ```csharp
@@ -75,7 +75,7 @@ taggedContent.RootElement.AppendChild(figure1);
 figure1.AlternativeText = "Aspose Logo";
 figure1.Title = "Image 1";
 figure1.SetTag("Fig");
-// Thêm hình ảnh có độ phân giải 300 dpi (mặc định)
+// Thêm hình ảnh có độ phân giải 300 DPI (mặc định)
 figure1.SetImage(dataDir + @"aspose-logo.jpg");
 // Lưu tài liệu PDF
 document.Save(dataDir + "PDFwithTaggedImage.pdf");
@@ -88,42 +88,42 @@ Trong hướng dẫn này, bạn đã học cách tạo tài liệu PDF có hìn
 
 ### Câu hỏi thường gặp
 
-#### Hỏi: Mục đích của việc tạo tài liệu PDF có hình ảnh được gắn thẻ bằng Aspose.PDF cho .NET là gì?
+#### H: Mục đích của việc tạo tài liệu PDF có gắn thẻ hình ảnh bằng Aspose.PDF cho .NET là gì?
 
-Trả lời: Tạo tài liệu PDF có hình ảnh được gắn thẻ bằng Aspose.PDF cho .NET cho phép bạn thêm hình ảnh được gắn thẻ vào nội dung tài liệu. Hình ảnh được gắn thẻ cung cấp thông tin có cấu trúc, chẳng hạn như văn bản thay thế và tiêu đề, nâng cao khả năng truy cập và tổ chức.
+A: Tạo tài liệu PDF có hình ảnh được gắn thẻ bằng Aspose.PDF cho .NET cho phép bạn thêm hình ảnh được gắn thẻ vào nội dung tài liệu. Hình ảnh được gắn thẻ cung cấp thông tin có cấu trúc, chẳng hạn như văn bản thay thế và tiêu đề, tăng cường khả năng truy cập và tổ chức.
 
-#### Câu hỏi: Thư viện Aspose.PDF hỗ trợ tạo tài liệu PDF có hình ảnh được gắn thẻ như thế nào?
+#### H: Thư viện Aspose.PDF hỗ trợ tạo tài liệu PDF có gắn thẻ hình ảnh như thế nào?
 
-Trả lời: Aspose.PDF for .NET là một thư viện mạnh mẽ cung cấp các chức năng để tạo, thao tác và chuyển đổi tài liệu PDF theo chương trình. Trong hướng dẫn này, các tính năng cấu trúc nội dung được gắn thẻ của thư viện được sử dụng để thêm hình ảnh được gắn thẻ vào tài liệu PDF.
+A: Aspose.PDF for .NET là một thư viện mạnh mẽ cung cấp các chức năng để tạo, thao tác và chuyển đổi tài liệu PDF theo chương trình. Trong hướng dẫn này, các tính năng cấu trúc nội dung được gắn thẻ của thư viện được sử dụng để thêm hình ảnh được gắn thẻ vào tài liệu PDF.
 
-#### Câu hỏi: Điều kiện tiên quyết để tạo tài liệu PDF có hình ảnh được gắn thẻ bằng Aspose.PDF cho .NET là gì?
+#### H: Điều kiện tiên quyết để tạo tài liệu PDF có gắn thẻ hình ảnh bằng Aspose.PDF cho .NET là gì?
 
-Đáp: Trước khi bắt đầu, hãy đảm bảo rằng bạn đã cài đặt Visual Studio với .NET framework và có thư viện Aspose.PDF cho .NET được tham chiếu trong dự án của bạn.
+A: Trước khi bắt đầu, hãy đảm bảo rằng bạn đã cài đặt Visual Studio với .NET framework và có thư viện Aspose.PDF cho .NET được tham chiếu trong dự án của bạn.
 
-#### Câu hỏi: Mã C# được cung cấp tạo tài liệu PDF có hình ảnh được gắn thẻ như thế nào?
+#### H: Mã C# được cung cấp tạo ra tài liệu PDF có gắn thẻ hình ảnh như thế nào?
 
-Đáp: Mã này trình bày cách tạo tài liệu PDF, xác định thành phần hình ảnh được gắn thẻ và thêm thành phần đó vào nội dung của tài liệu. Hình ảnh được gắn thẻ bao gồm văn bản thay thế, tiêu đề và thẻ bằng các phương pháp do Aspose.PDF cung cấp.
+A: Mã này trình bày cách tạo tài liệu PDF, xác định phần tử hình ảnh được gắn thẻ và thêm vào nội dung của tài liệu. Hình ảnh được gắn thẻ bao gồm văn bản thay thế, tiêu đề và thẻ bằng các phương pháp do Aspose.PDF cung cấp.
 
-#### Hỏi: Tôi có thể sử dụng các định dạng hình ảnh khác nhau cho hình ảnh được gắn thẻ không?
+#### H: Tôi có thể sử dụng các định dạng hình ảnh khác nhau cho hình ảnh được gắn thẻ không?
 
-Đáp: Có, bạn có thể sử dụng các định dạng hình ảnh khác nhau cho hình ảnh được gắn thẻ, chẳng hạn như JPEG, PNG, GIF, v.v. Ví dụ về mã được cung cấp trong hướng dẫn sử dụng hình ảnh JPEG nhưng bạn có thể thay thế nó bằng đường dẫn đến tệp hình ảnh trong định dạng ưa thích của bạn.
+A: Có, bạn có thể sử dụng các định dạng hình ảnh khác nhau cho hình ảnh được gắn thẻ, chẳng hạn như JPEG, PNG, GIF, v.v. Mã ví dụ được cung cấp trong hướng dẫn sử dụng hình ảnh JPEG, nhưng bạn có thể thay thế bằng đường dẫn đến tệp hình ảnh ở định dạng bạn thích.
 
-#### Câu hỏi: Văn bản thay thế (văn bản thay thế) được sử dụng như thế nào trong các hình ảnh được gắn thẻ?
+#### H: Văn bản thay thế (alt text) được sử dụng như thế nào trong hình ảnh được gắn thẻ?
 
- Đáp: Văn bản thay thế cung cấp mô tả văn bản của hình ảnh, được đọc to bằng trình đọc màn hình cho người dùng khiếm thị. Trong mã được cung cấp, văn bản thay thế được đặt bằng cách sử dụng`AlternativeText` tài sản của`IllustrationElement` đại diện cho hình ảnh được gắn thẻ.
+ A: Văn bản thay thế cung cấp mô tả bằng văn bản về hình ảnh, được đọc to bằng trình đọc màn hình dành cho người dùng khiếm thị. Trong mã được cung cấp, văn bản thay thế được đặt bằng cách sử dụng`AlternativeText` tài sản của`IllustrationElement` đại diện cho hình ảnh được gắn thẻ.
 
-####  Hỏi: Làm thế nào`SetTitle` method contribute to the PDF document's tagged image?
+####  Q: Làm thế nào để`SetTitle` method contribute to the PDF document's tagged image?
 
- Đáp: Cái`SetTitle` phương pháp đặt tiêu đề nội dung được gắn thẻ của tài liệu PDF, cung cấp ngữ cảnh bổ sung cho hình ảnh được gắn thẻ. Tiêu đề này có thể giúp xác định mục đích hoặc chủ đề của nội dung được gắn thẻ.
+ A: Cái`SetTitle` phương pháp này đặt tiêu đề cho nội dung được gắn thẻ của tài liệu PDF, cung cấp ngữ cảnh bổ sung cho hình ảnh được gắn thẻ. Tiêu đề này có thể giúp xác định mục đích hoặc chủ đề của nội dung được gắn thẻ.
 
-#### Hỏi: Tôi có thể tùy chỉnh thẻ và tiêu đề của hình ảnh được gắn thẻ không?
+#### H: Tôi có thể tùy chỉnh thẻ và tiêu đề của hình ảnh được gắn thẻ không?
 
- Đáp: Có, bạn có thể tùy chỉnh thẻ và tiêu đề của hình ảnh được gắn thẻ bằng cách sử dụng`SetTag` Và`Title` các phương pháp của`IllustrationElement`. Ví dụ về mã trình bày cách đặt thẻ thành "Hình" và tiêu đề thành "Hình 1".
+ A: Có, bạn có thể tùy chỉnh thẻ và tiêu đề của hình ảnh được gắn thẻ bằng cách sử dụng`SetTag` Và`Title` phương pháp của`IllustrationElement`. Ví dụ mã minh họa cách đặt thẻ thành "Hình" và tiêu đề thành "Hình ảnh 1".
 
-#### Câu hỏi: Làm cách nào tôi có thể đảm bảo rằng hình ảnh được gắn thẻ có thể truy cập được và tuân thủ các tiêu chuẩn về khả năng truy cập?
+#### H: Làm sao tôi có thể đảm bảo hình ảnh được gắn thẻ có thể truy cập được và tuân thủ các tiêu chuẩn về khả năng truy cập?
 
-Đáp: Bằng cách sử dụng các tính năng cấu trúc nội dung được gắn thẻ của Aspose.PDF và cung cấp văn bản thay thế cũng như thông tin liên quan khác, bạn góp phần tăng khả năng truy cập của hình ảnh được gắn thẻ. Việc đảm bảo tuân thủ các tiêu chuẩn về khả năng truy cập bao gồm việc tuân theo các phương pháp hay nhất đối với cấu trúc tài liệu và văn bản thay thế.
+A: Bằng cách sử dụng các tính năng cấu trúc nội dung được gắn thẻ của Aspose.PDF và cung cấp văn bản thay thế và thông tin liên quan khác, bạn đóng góp vào khả năng truy cập của hình ảnh được gắn thẻ. Đảm bảo tuân thủ các tiêu chuẩn về khả năng truy cập bao gồm việc tuân theo các thông lệ tốt nhất cho văn bản thay thế và cấu trúc tài liệu.
 
-#### Hỏi: Có thể thêm nhiều hình ảnh được gắn thẻ vào cùng một tài liệu PDF bằng các kỹ thuật tương tự không?
+#### H: Có thể thêm nhiều hình ảnh được gắn thẻ vào cùng một tài liệu PDF bằng các kỹ thuật tương tự không?
 
- Đáp: Có, bạn có thể thêm nhiều hình ảnh được gắn thẻ vào cùng một tài liệu PDF bằng các kỹ thuật tương tự. Bạn sẽ tạo thêm`IllustrationElement` các phiên bản cho mỗi hình ảnh được gắn thẻ và tùy chỉnh các thuộc tính của chúng nếu cần.
+ A: Có, bạn có thể thêm nhiều hình ảnh được gắn thẻ vào cùng một tài liệu PDF bằng các kỹ thuật tương tự. Bạn sẽ tạo thêm`IllustrationElement` các trường hợp cho mỗi hình ảnh được gắn thẻ và tùy chỉnh các thuộc tính của chúng khi cần thiết.

@@ -9,7 +9,7 @@ url: /cs/java/pdf-tags-and-structure/create-structure-element-in-pdf-using-java/
 ---
 tomto tutoriálu prozkoumáme, jak vytvořit prvek struktury v PDF pomocí Java s knihovnou Aspose.PDF. Prvky struktury jsou nezbytné pro zpřístupnění dokumentů PDF a poskytování logické struktury obsahu.
 
-## Úvod
+## Zavedení
 
 Dokumenty PDF slouží k různým účelům, od sdílení informací po vytváření přístupného obsahu. Chcete-li zajistit, aby soubory PDF byly přístupné všem uživatelům, je důležité vytvořit prvky struktury, které poskytují logické pořadí čtení a definují sémantickou strukturu dokumentu.
 
@@ -19,7 +19,7 @@ V tomto tutoriálu použijeme knihovnu Aspose.PDF for Java k vytvoření prvků 
 Než začneme, ujistěte se, že máte splněny následující předpoklady:
 
 1. Vývojové prostředí Java: Ujistěte se, že máte v systému nainstalovanou Javu.
-2.  Aspose.PDF for Java: Stáhněte si a zahrňte knihovnu Aspose.PDF do svého projektu Java. Odkaz ke stažení najdete[tady](https://releases.aspose.com/pdf/java/).
+2.  Aspose.PDF for Java: Stáhněte si a zahrňte knihovnu Aspose.PDF do svého projektu Java. Odkaz ke stažení najdete[zde](https://releases.aspose.com/pdf/java/).
 
 ## Krok 1: Vytvořte nový dokument PDF
 Začněme vytvořením nového dokumentu PDF pomocí Aspose.PDF for Java. Zde je jednoduchý úryvek kódu, který vám pomůže začít:
@@ -62,7 +62,7 @@ pdfDocument.save("structured_document.pdf");
 ## Závěr:
 V tomto tutoriálu jsme se naučili, jak vytvořit prvky struktury v dokumentu PDF pomocí Java a knihovny Aspose.PDF for Java. Prvky struktury jsou nezbytné pro zpřístupnění souborů PDF a zajištění logického pořadí čtení. Soubory PDF můžete dále vylepšit přidáním dalšího obsahu a prvků struktury podle potřeby.
 
-Neváhejte a prozkoumejte dokumentaci Aspose.PDF[tady](https://reference.aspose.com/pdf/java/) pro pokročilejší funkce a možnosti přizpůsobení.
+Neváhejte a prozkoumejte dokumentaci Aspose.PDF[zde](https://reference.aspose.com/pdf/java/) pro pokročilejší funkce a možnosti přizpůsobení.
 
 ## FAQ
 

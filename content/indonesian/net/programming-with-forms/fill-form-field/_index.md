@@ -1,8 +1,8 @@
 ---
-title: Isi Bidang Formulir PDF
-linktitle: Isi Bidang Formulir PDF
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Isi kolom formulir dengan mudah di dokumen PDF Anda menggunakan Aspose.PDF untuk .NET.
+title: Isi Kolom Formulir PDF
+linktitle: Isi Kolom Formulir PDF
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Isi kolom formulir di dokumen PDF Anda dengan mudah menggunakan Aspose.PDF untuk .NET.
 type: docs
 weight: 80
 url: /id/net/programming-with-forms/fill-form-field/
@@ -11,7 +11,7 @@ Dalam tutorial ini, kami akan menunjukkan cara mengisi kolom formulir menggunaka
 
 ## Langkah 1: Persiapan
 
-Pertama, pastikan Anda telah mengimpor perpustakaan yang diperlukan dan mengatur jalur ke direktori dokumen:
+Pertama, pastikan Anda telah mengimpor pustaka yang diperlukan dan mengatur jalur ke direktori dokumen:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -25,9 +25,9 @@ Buka dokumen PDF yang ada:
 Document pdfDocument = new Document(dataDir + "FillFormField.pdf");
 ```
 
-## Langkah 3: Dapatkan Bidang
+## Langkah 3: Dapatkan Lapangan
 
-Dapatkan kolom formulir yang diinginkan (dalam contoh ini, kami menggunakan kolom "kotak teks1"):
+Dapatkan bidang formulir yang diinginkan (dalam contoh ini, kami menggunakan bidang "textbox1"):
 
 ```csharp
 TextBoxField textBoxField = pdfDocument.Form["textbox1"] as TextBoxField;
@@ -50,7 +50,7 @@ dataDir = dataDir + "FillFormField_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Contoh kode sumber untuk Isi Bidang Formulir menggunakan Aspose.PDF untuk .NET 
+### Contoh kode sumber untuk Mengisi Kolom Formulir menggunakan Aspose.PDF untuk .NET 
 ```csharp
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -68,26 +68,26 @@ Console.WriteLine("\nForm field filled successfully.\nFile saved at " + dataDir)
 
 ## Kesimpulan
 
-Dalam tutorial ini, kita mempelajari cara mengisi kolom formulir menggunakan Aspose.PDF untuk .NET. Dengan mengikuti langkah-langkah ini, Anda dapat dengan mudah mengubah nilai bidang formulir di dokumen PDF Anda menggunakan Aspose.PDF.
+Dalam tutorial ini, kita mempelajari cara mengisi kolom formulir menggunakan Aspose.PDF untuk .NET. Dengan mengikuti langkah-langkah ini, Anda dapat dengan mudah mengubah nilai kolom formulir dalam dokumen PDF Anda menggunakan Aspose.PDF.
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
-#### T: Bisakah saya mengisi beberapa kolom formulir dalam dokumen PDF menggunakan Aspose.PDF untuk .NET?
+#### T: Dapatkah saya mengisi beberapa kolom formulir dalam dokumen PDF menggunakan Aspose.PDF untuk .NET?
 
-J: Ya, Anda dapat mengisi beberapa kolom formulir dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Setelah membuka dokumen PDF, Anda bisa mendapatkan setiap kolom formulir satu per satu dan mengubah nilainya sesuai kebutuhan.
+A: Ya, Anda dapat mengisi beberapa kolom formulir dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Setelah membuka dokumen PDF, Anda dapat memperoleh setiap kolom formulir secara individual dan mengubah nilainya sesuai kebutuhan.
 
-#### T: Bagaimana cara menemukan nama bidang formulir dalam dokumen PDF?
+#### T: Bagaimana cara menemukan nama kolom formulir dalam dokumen PDF?
 
- J: Untuk menemukan nama kolom formulir dalam dokumen PDF, Anda dapat mengulanginya melalui`pdfDocument.Form.Fields` koleksi. Setiap bidang formulir memiliki a`FullName` properti yang berisi nama uniknya. Anda dapat menggunakan nama-nama ini untuk mengidentifikasi dan mengubah bidang formulir tertentu.
+ A: Untuk menemukan nama bidang formulir dalam dokumen PDF, Anda dapat mengulanginya melalui`pdfDocument.Form.Fields` koleksi. Setiap bidang formulir memiliki`FullName` properti yang berisi nama uniknya. Anda dapat menggunakan nama ini untuk mengidentifikasi dan mengubah bidang formulir tertentu.
 
-#### Q: Bagaimana jika kolom formulir yang ingin saya isi tidak ada di dokumen PDF?
+#### T: Bagaimana jika kolom formulir yang ingin saya isi tidak ada dalam dokumen PDF?
 
- A: Jika kolom formulir yang ingin diisi tidak ada di dokumen PDF, coba akses menggunakan`pdfDocument.Form["fieldName"]`akan mengembalikan nol. Oleh karena itu, penting untuk memastikan bahwa kolom formulir ada sebelum mencoba mengisinya. Anda dapat menambahkan bidang formulir baru secara terprogram menggunakan Aspose.PDF untuk .NET jika diperlukan.
+ A: Jika bidang formulir yang ingin Anda isi tidak ada dalam dokumen PDF, mencoba mengaksesnya menggunakan`pdfDocument.Form["fieldName"]`akan mengembalikan null. Oleh karena itu, penting untuk memastikan bahwa kolom formulir ada sebelum mencoba mengisinya. Anda dapat menambahkan kolom formulir baru secara terprogram menggunakan Aspose.PDF for .NET jika diperlukan.
 
-#### T: Bisakah saya mengisi kolom formulir dengan data dinamis dari database atau sumber data lainnya?
+#### T: Dapatkah saya mengisi kolom formulir dengan data dinamis dari basis data atau sumber data lainnya?
 
-J: Ya, Anda bisa mengisi kolom formulir dengan data dinamis dari database atau sumber data lainnya. Sebelum mengatur nilai bidang, ambil data dari sumber dan gunakan untuk mengatur nilai bidang formulir yang sesuai.
+A: Ya, Anda dapat mengisi kolom formulir dengan data dinamis dari database atau sumber data lainnya. Sebelum menetapkan nilai kolom, ambil data dari sumber dan gunakan untuk menetapkan nilai kolom formulir sebagaimana mestinya.
 
-#### Q: Apakah ada batasan saat mengisi kolom formulir pada dokumen PDF berbasis XFA?
+#### T: Apakah ada batasan saat mengisi kolom formulir dalam dokumen PDF berbasis XFA?
 
-J: Mengisi kolom formulir dalam dokumen PDF berbasis XFA (Arsitektur Formulir XML) mungkin memiliki beberapa keterbatasan karena struktur formulir XFA yang rumit. Aspose.PDF untuk .NET mendukung pengisian bidang formulir di formulir XFA, namun beberapa properti bidang formulir tertentu yang unik untuk formulir XFA mungkin tidak sepenuhnya didukung di AcroForms.
+A: Mengisi kolom formulir dalam dokumen PDF berbasis XFA (Arsitektur Formulir XML) dapat memiliki beberapa keterbatasan karena struktur formulir XFA yang rumit. Aspose.PDF untuk .NET mendukung pengisian kolom formulir dalam formulir XFA, tetapi beberapa properti kolom formulir khusus yang unik untuk formulir XFA mungkin tidak sepenuhnya didukung dalam AcroForms.

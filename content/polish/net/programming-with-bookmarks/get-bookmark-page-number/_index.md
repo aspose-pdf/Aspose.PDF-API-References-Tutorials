@@ -1,168 +1,115 @@
 ---
 title: Pobierz numer strony zakładki w pliku PDF
 linktitle: Pobierz numer strony zakładki w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Z łatwością uzyskaj numer strony zakładek w pliku PDF za pomocą Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: W tym kompleksowym samouczku dowiesz się, jak wyodrębnić numery stron zakładek z plików PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 60
 url: /pl/net/programming-with-bookmarks/get-bookmark-page-number/
 ---
-Pobieranie numerów stron powiązanych z zakładkami w pliku PDF może być przydatne do nawigacji. Dzięki Aspose.PDF dla .NET możesz łatwo uzyskać numer strony zakładek, postępując zgodnie z następującym kodem źródłowym:
+## Wstęp
 
-## Krok 1: Zaimportuj wymagane biblioteki
+erze cyfrowej efektywne zarządzanie dokumentami PDF jest kluczowe zarówno do użytku osobistego, jak i zawodowego. Niezależnie od tego, czy jesteś programistą, który chce ulepszyć swoją aplikację, czy profesjonalistą biznesowym, który musi uporządkować swoje dokumenty, zrozumienie, jak manipulować plikami PDF, może zaoszczędzić Ci czasu i wysiłku. Jedną z podstawowych funkcji zarządzania plikami PDF jest możliwość wyodrębniania zakładek i odpowiadających im numerów stron. W tym samouczku przyjrzymy się, jak to osiągnąć, używając Aspose.PDF dla .NET, potężnej biblioteki, która upraszcza manipulowanie plikami PDF.
 
-Zanim zaczniesz, musisz zaimportować niezbędne biblioteki dla swojego projektu C#. Oto niezbędna dyrektywa importowa:
+## Wymagania wstępne
 
-```csharp
-using Aspose.Pdf.Facades;
-```
+Zanim zaczniesz pisać kod, upewnij się, że spełniasz następujące wymagania:
 
-## Krok 2: Ustaw ścieżkę do folderu dokumentów
+1. Visual Studio: Upewnij się, że masz zainstalowane Visual Studio na swoim komputerze. To będzie Twoje środowisko programistyczne.
+2.  Aspose.PDF dla .NET: Musisz mieć bibliotekę Aspose.PDF. Możesz ją pobrać ze strony[strona internetowa](https://releases.aspose.com/pdf/net/).
+3. Podstawowa wiedza o języku C#: Znajomość programowania w języku C# pomoże Ci lepiej zrozumieć fragmenty kodu.
 
- W tym kroku musisz określić ścieżkę do folderu zawierającego plik PDF, z którego chcesz wyodrębnić numery stron zakładek. Zastępować`"YOUR DOCUMENT DIRECTORY"` następującym kodzie z rzeczywistą ścieżką do folderu dokumentów:
+## Importuj pakiety
 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-```
+Aby zacząć, musisz zaimportować niezbędne pakiety do swojego projektu C#. Oto, jak możesz to zrobić:
 
-## Krok 3: Utwórz edytor zakładek
+1. Otwórz projekt programu Visual Studio.
+2. Kliknij prawym przyciskiem myszy swój projekt w Eksploratorze rozwiązań i wybierz opcję „Zarządzaj pakietami NuGet”.
+3.  Szukaj`Aspose.PDF` i zainstaluj najnowszą wersję.
 
- Teraz utworzymy`PdfBookmarkEditor` obiekt do manipulowania zakładkami dokumentu. Użyj następującego kodu:
+Teraz, gdy wszystko już skonfigurowałeś, przeanalizujmy krok po kroku proces wyodrębniania numerów stron zakładek.
 
-```csharp
-PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
-```
+## Krok 1: Skonfiguruj katalog dokumentów
 
-## Krok 4: Otwórz plik PDF
+Zanim będziesz mógł wyodrębnić zakładki, musisz określić ścieżkę do swojego dokumentu PDF. Tutaj znajduje się Twój plik PDF.
 
- Na tym etapie otwieramy plik PDF za pomocą`BindPdf` metoda edytora zakładek. Oto odpowiedni kod:
-
-```csharp
-bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
-```
-
-## Krok 5: Wyodrębnij zakładki
-
- Teraz wyodrębnimy zakładki z dokumentu za pomocą`ExtractBookmarks` metoda edytora zakładek. Oto odpowiedni kod:
-
-```csharp
-Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
-```
-
-## Krok 6: Przeglądaj zakładki i uzyskaj numery stron
-
- Na koniec przeglądamy wyodrębnione zakładki i uzyskujemy numery stron powiązane z każdą zakładką za pomocą a`foreach` pętla. Oto odpowiedni kod:
-
-```csharp
-foreach (Bookmark bookmark in bookmarks)
-{
-     string strLevelSeprator = string.Empty;
-     for (int i = 1; i < bookmark.Level; i++)
-     {
-         strLevelSeprator += "----";
-     }
-     Console.WriteLine("{0}Title: {1}", strLevelSeprator, bookmark.Title);
-     Console.WriteLine("{0}Page number: {1}", strLevelSeprator, bookmark.PageNumber);
-     Console.WriteLine("{0}Page Action: {1}", strLevelSeprator, bookmark.Action);
-}
-```
-
-### Przykładowy kod źródłowy dla opcji Pobierz numer strony zakładek przy użyciu Aspose.PDF dla .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ W tym kroku zastąp`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką, gdzie przechowywany jest Twój plik PDF. Ta ścieżka jest kluczowa, ponieważ informuje program, gdzie szukać pliku PDF, z którym chcesz pracować.
+
+## Krok 2: Utwórz instancję PdfBookmarkEditor
+
+ Następnie musisz utworzyć instancję`PdfBookmarkEditor`klasa. Ta klasa udostępnia metody manipulowania zakładkami w plikach PDF.
+
+```csharp
 // Utwórz edytor zakładek PDF
 PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
+```
+
+ Tutaj tworzymy instancję`PdfBookmarkEditor`. Ten obiekt pozwoli nam powiązać nasz plik PDF i wyodrębnić z niego zakładki.
+
+## Krok 3: Otwórz plik PDF
+
+ Teraz czas na powiązanie pliku PDF z`PdfBookmarkEditor` instancji, którą właśnie utworzyłeś.
+
+```csharp
 // Otwórz plik PDF
 bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
+```
+
+ W tym wierszu używamy`BindPdf` metoda otwierania pliku PDF o nazwie`GetBookmarks.pdf`. Upewnij się, że ten plik istnieje w określonym katalogu; w przeciwnym razie wystąpi błąd.
+
+## Krok 4: Wyodrębnij zakładki
+
+ Po otwarciu pliku PDF możesz wyodrębnić zakładki za pomocą`ExtractBookmarks` metoda.
+
+```csharp
 // Wyodrębnij zakładki
 Aspose.Pdf.Facades.Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
+```
+
+ Ten krok pobiera wszystkie zakładki z pliku PDF i zapisuje je w zmiennej o nazwie`bookmarks`. Ta zmienna będzie zawierać wszystkie informacje o zakładkach, które przetworzymy w następnym kroku.
+
+## Krok 5: Przejrzyj zakładki
+
+Gdy już masz zakładki, możesz je przeglądać, aby wyświetlić ich tytuły i numery stron.
+
+```csharp
 foreach (Aspose.Pdf.Facades.Bookmark bookmark in bookmarks)
 {
-	string strLevelSeprator = string.Empty;
-	for (int i = 1; i < bookmark.Level; i++)
-	{
-		strLevelSeprator += "----";
-	}
-	Console.WriteLine("{0}Title: {1}", strLevelSeprator, bookmark.Title);
-	Console.WriteLine("{0}Page Number: {1}", strLevelSeprator, bookmark.PageNumber);
-	Console.WriteLine("{0}Page Action: {1}", strLevelSeprator, bookmark.Action);
+    string strLevelSeprator = string.Empty;
+    for (int i = 1; i < bookmark.Level; i++)
+    {
+        strLevelSeprator += "----";
+    }
+    Console.WriteLine("{0}Title: {1}", strLevelSeprator, bookmark.Title);
+    Console.WriteLine("{0}Page Number: {1}", strLevelSeprator, bookmark.PageNumber);
+    Console.WriteLine("{0}Page Action: {1}", strLevelSeprator, bookmark.Action);
 }
 ```
+
+W tej pętli iterujemy przez każdą zakładkę. Dla każdej zakładki tworzymy separator ciągu na podstawie jej poziomu (aby wizualnie przedstawić hierarchię zakładek). Następnie drukujemy tytuł, numer strony i akcję powiązaną z każdą zakładką na konsoli.
 
 ## Wniosek
 
-Gratulacje! Teraz masz przewodnik krok po kroku, jak uzyskać numery stron zakładek za pomocą Aspose.PDF dla .NET. Możesz użyć tego kodu, aby pobrać informacje nawigacyjne powiązane z każdą zakładką w dokumentach PDF.
+Wyodrębnianie numerów stron zakładek z pliku PDF przy użyciu Aspose.PDF dla .NET to prosty proces. Postępując zgodnie z krokami opisanymi w tym samouczku, możesz sprawnie zarządzać zakładkami w dokumentach PDF. Niezależnie od tego, czy rozwijasz aplikację, czy po prostu musisz uporządkować pliki PDF, ta wiedza niewątpliwie okaże się przydatna.
 
-Koniecznie zapoznaj się z oficjalną dokumentacją Aspose.PDF, aby uzyskać więcej informacji na temat zaawansowanych funkcji manipulacji zakładkami.
+## Najczęściej zadawane pytania
 
-### Często zadawane pytania dotyczące pobierania numeru strony zakładki w pliku PDF
+### Czym jest Aspose.PDF dla .NET?
+Aspose.PDF dla platformy .NET to biblioteka umożliwiająca programistom programowe tworzenie, modyfikowanie i konwertowanie dokumentów PDF.
 
-#### P: Czym są zakładki w pliku PDF?
+### Czy mogę używać Aspose.PDF bezpłatnie?
+ Tak, Aspose oferuje bezpłatną wersję próbną, której możesz użyć do oceny biblioteki. Możesz ją pobrać[Tutaj](https://releases.aspose.com/).
 
-Odp.: Zakładki w pliku PDF to pomoce w nawigacji, które umożliwiają użytkownikom szybkie przechodzenie do określonych sekcji lub stron dokumentu. Poprawiają wygodę użytkownika, udostępniając skróty do odpowiednich treści.
+### Gdzie mogę znaleźć dokumentację dla Aspose.PDF?
+ Dokumentacja jest dostępna[Tutaj](https://reference.aspose.com/pdf/net/).
 
-#### P: Dlaczego miałbym chcieć pobrać numery stron zakładek z pliku PDF?
+### Jak kupić licencję na Aspose.PDF?
+ Możesz kupić licencję od[strona zakupu](https://purchase.aspose.com/buy).
 
-O: Pobieranie numerów stron zakładek pomaga użytkownikom efektywniej poruszać się po dokumencie, zapewniając jasne wskazanie, dokąd prowadzi każda zakładka. Jest to szczególnie przydatne w przypadku dłuższych dokumentów zawierających wiele sekcji.
-
-#### P: Jak zaimportować niezbędne biblioteki do mojego projektu C#?
-
-Odp.: Aby zaimportować wymaganą bibliotekę do projektu C#, użyj następującej dyrektywy importu:
-
-```csharp
-using Aspose.Pdf.Facades;
-```
-
-Ta dyrektywa pozwala na wykorzystanie klas i metod dostarczonych przez Aspose.PDF dla .NET.
-
-#### P: Jak określić ścieżkę do folderu dokumentów?
-
- Odp.: W dostarczonym kodzie źródłowym zamień`"YOUR DOCUMENT DIRECTORY"` rzeczywistą ścieżką do folderu zawierającego plik PDF, z którego chcesz wyodrębnić numery stron zakładek. Dzięki temu kod będzie mógł zlokalizować docelowy plik PDF.
-
-#### P: Jak utworzyć edytor zakładek?
-
-O: Aby utworzyć edytor zakładek, użyj następującego kodu:
-
-```csharp
-PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
-```
-
-#### P: Jak otworzyć plik PDF w celu manipulowania zakładkami?
-
-Odp.: Aby otworzyć plik PDF w celu wyodrębnienia informacji o zakładkach, użyj następującego kodu:
-
-```csharp
-bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
-```
-
- Zastępować`"GetBookmarks.pdf"` z rzeczywistą nazwą pliku.
-
-#### P: Jak wyodrębnić zakładki z pliku PDF?
-
- Odp.: Aby wyodrębnić zakładki z pliku PDF, użyj metody`ExtractBookmarks` metoda edytora zakładek:
-
-```csharp
-Bookmarks bookmarks = bookmarkEditor.ExtractBookmarks();
-```
-
-#### P: Jak odzyskać i wyświetlić numery stron zakładek?
-
- Odp.: Przeglądaj wyodrębnione zakładki za pomocą a`foreach` pętli i uzyskaj dostęp do`PageNumber` właściwość każdej zakładki, aby pobrać i wyświetlić powiązany numer strony:
-
-```csharp
-foreach (Bookmark bookmark in bookmarks)
-{
-    Console.WriteLine("Title: " + bookmark.Title);
-    Console.WriteLine("Page Number: " + bookmark.PageNumber);
-    Console.WriteLine("Page Action: " + bookmark.Action);
-}
-```
-
-#### P: Czy mogę modyfikować właściwości zakładek, korzystając z tego podejścia?
-
- Odp.: Chociaż ten samouczek koncentruje się na pobieraniu numerów stron zakładek, możesz modyfikować inne właściwości zakładek, korzystając z tego samego`Bookmark`obiekt i związane z nim właściwości.
-
-#### P: Jak zapisać zaktualizowany plik PDF po wyodrębnieniu informacji o zakładkach?
-
-Odp.: Wyodrębnianie zakładek nie modyfikuje oryginalnego pliku PDF. Jeśli chcesz zapisać jakiekolwiek zmiany, możesz to zrobić za pomocą innych metod dostarczonych przez Aspose.PDF dla .NET.
+### Co powinienem zrobić, jeśli napotkam problemy?
+ Jeśli napotkasz jakiekolwiek problemy, możesz szukać pomocy na[Forum wsparcia Aspose](https://forum.aspose.com/c/pdf/10).

@@ -97,7 +97,7 @@ page.getAnnotations().add(checkboxField);
 RadioButtonOptionField option1 = new RadioButtonOptionField(page, new Rectangle(100, 200, 20, 20));
 RadioButtonOptionField option2 = new RadioButtonOptionField(page, new Rectangle(100, 180, 20, 20));
 option1.setPartialName("optYes"); // Ορίστε το όνομα πεδίου για την επιλογή 1
-option2.setPartialName("optNo"); // Ορίστε όνομα πεδίου για την επιλογή 2
+option2.setPartialName("optNo"); // Ορίστε το όνομα πεδίου για την επιλογή 2
 
 //Προσθήκη επιλογών σε μια ομάδα κουμπιών επιλογής
 RadioButtonOptionField[] options = {option1, option2};
@@ -184,7 +184,7 @@ doc.save(outputStream);
 outputStream.close();
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Σε αυτόν τον περιεκτικό οδηγό, έχουμε εξερευνήσει πώς να προσθέτουμε πεδία φόρμας σε ένα έγγραφο PDF χρησιμοποιώντας Java και Aspose.PDF για Java. Έχετε μάθει πώς να δημιουργείτε πεδία κειμένου, πλαίσια ελέγχου και κουμπιά επιλογής, να προσαρμόζετε τις ιδιότητές τους, να ορίζετε προεπιλεγμένες τιμές, να ενεργοποιείτε την υποβολή και την επικύρωση φόρμας και να αποθηκεύετε/εξάγετε το έγγραφο PDF.
 

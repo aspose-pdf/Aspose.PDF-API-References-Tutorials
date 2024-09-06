@@ -1,27 +1,27 @@
 ---
-title: Tableau dans la section d'en-tête et de pied de page
-linktitle: Tableau dans la section d'en-tête et de pied de page
-second_title: Aspose.PDF pour la référence de l'API .NET
+title: Tableau dans la section En-tête/Pied de page
+linktitle: Tableau dans la section En-tête/Pied de page
+second_title: Référence de l'API Aspose.PDF pour .NET
 description: Découvrez comment ajouter un tableau dans la section en-tête/pied de page d'un document PDF avec Aspose.PDF pour .NET.
 type: docs
 weight: 170
 url: /fr/net/programming-with-stamps-and-watermarks/table-in-header-footer-section/
 ---
-Dans ce didacticiel, nous vous guiderons étape par étape sur la façon d'ajouter un tableau dans la section d'en-tête ou de pied de page d'un document PDF à l'aide d'Aspose.PDF pour .NET. Le code source C# fourni vous montre comment créer un document PDF vide, ajouter une page, configurer la section d'en-tête, créer un tableau, ajouter des lignes et des cellules au tableau et enfin enregistrer le document PDF.
+Dans ce tutoriel, nous vous expliquerons étape par étape comment ajouter un tableau dans la section d'en-tête ou de pied de page d'un document PDF à l'aide d'Aspose.PDF pour .NET. Le code source C# fourni vous montre comment créer un document PDF vide, ajouter une page, configurer la section d'en-tête, créer un tableau, ajouter des lignes et des cellules au tableau, et enfin enregistrer le document PDF.
 
 ## Étape 1 : Configuration de l'environnement
 
-Avant de commencer, assurez-vous d'avoir les éléments suivants :
+Avant de commencer, assurez-vous de disposer des éléments suivants :
 
 - Un environnement de développement .NET installé.
 - La bibliothèque Aspose.PDF pour .NET téléchargée et référencée dans votre projet.
 
-## Étape 2 : Création du document PDF et de la page
+## Étape 2 : Création du document et de la page PDF
 
- La première étape consiste à créer une instance du`Document` classe et ajoutez une page au document. Voici comment:
+ La première étape consiste à créer une instance de`Document` classe et ajouter une page au document. Voici comment procéder :
 
 ```csharp
-// Le chemin d'accès au répertoire des documents.
+// Le chemin vers le répertoire des documents.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
 // Instancier un objet Document
@@ -31,11 +31,11 @@ Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = pdfDocument.Pages.Add();
 ```
 
-Assurez-vous de remplacer « VOTRE RÉPERTOIRE DE DOCUMENTS » par le chemin réel du répertoire dans lequel vous souhaitez enregistrer le document PDF.
+Assurez-vous de remplacer « VOTRE RÉPERTOIRE DE DOCUMENTS » par le chemin réel vers le répertoire dans lequel vous souhaitez enregistrer le document PDF.
 
-## Étape 3 : Configuration de la section d'en-tête
+## Étape 3 : Configuration de la section d’en-tête
 
- Nous allons maintenant configurer la section d'en-tête du document PDF en créant une instance du`HeaderFooter` classe. Voici comment:
+ Nous allons maintenant configurer la section d'en-tête du document PDF en créant une instance de`HeaderFooter` classe. Voici comment :
 
 ```csharp
 // Créer une section d'en-tête pour le fichier PDF
@@ -50,13 +50,13 @@ header. Margin. Top = 20;
 
 ## Étape 4 : Création du tableau
 
- Nous allons maintenant créer un tableau en utilisant le`Table` classe et ajoutez-le à la collection de paragraphes de la section de titre. Voici comment:
+ Nous allons maintenant créer un tableau en utilisant le`Table` classe et ajoutez-la à la collection de paragraphes de la section d'en-tête. Voici comment procéder :
 
 ```csharp
 // Instancier un objet Table
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
-// Ajouter le tableau à la collection de paragraphes de la section d'en-tête
+// Ajoutez le tableau à la collection de paragraphes de la section d'en-tête
 header.Paragraphs.Add(tab1);
 
 // Définir les largeurs des colonnes du tableau
@@ -67,7 +67,7 @@ Le code ci-dessus crée un tableau avec deux colonnes de largeurs spécifiées.
 
 ## Étape 5 : Ajouter des lignes et des cellules au tableau
 
- Nous allons maintenant ajouter des lignes et des cellules au tableau en utilisant le`Row` la classe et le`Cell` classe. Voici comment:
+ Nous allons maintenant ajouter des lignes et des cellules au tableau en utilisant le`Row` classe et la`Cell` classe. Voici comment :
 
 ```csharp
 // Créez une ligne dans le tableau et ajoutez des cellules
@@ -94,42 +94,42 @@ row2.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
 row2.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 ```
 
-## Étape 6 : Enregistrement du document PDF
+## Étape 6 : Enregistrer le document PDF
 
-Une fois le tableau ajouté à la section d'en-tête, nous pouvons enregistrer le document PDF. Voici comment:
+Une fois le tableau ajouté à la section d'en-tête, nous pouvons enregistrer le document PDF. Voici comment procéder :
 
 ```csharp
-// Enregistrez le fichier PDF
+// Enregistrer le fichier PDF
 pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
 ```
 
-Assurez-vous de remplacer « VOTRE RÉPERTOIRE DE DOCUMENTS » par le chemin réel du répertoire dans lequel vous souhaitez enregistrer le document PDF.
+Assurez-vous de remplacer « VOTRE RÉPERTOIRE DE DOCUMENTS » par le chemin réel vers le répertoire dans lequel vous souhaitez enregistrer le document PDF.
 
-### Exemple de code source pour la section Tableau dans l'en-tête et le pied de page utilisant Aspose.PDF pour .NET 
+### Exemple de code source pour la section Tableau dans l'en-tête et le pied de page à l'aide d'Aspose.PDF pour .NET 
 ```csharp
 
-// Le chemin d'accès au répertoire des documents.
+// Le chemin vers le répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 // Instancier l'instance de document en appelant un constructeur vide
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
 
-// Créer une page dans le document pdf
+// Créer une page dans le document PDF
 Aspose.Pdf.Page page = pdfDocument.Pages.Add();
 
-// Créer une section d'en-tête du fichier PDF
+//Créer une section d'en-tête du fichier PDF
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
 
-//Définir l'en-tête impair pour le fichier PDF
+// Définir l'en-tête impair pour le fichier PDF
 page.Header = header;
 
-// Définir la marge supérieure de la section d'en-tête
+// Définir la marge supérieure pour la section d'en-tête
 header.Margin.Top = 20;
 
-// Instancier un objet table
+// Instancier un objet de table
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
-// Ajouter le tableau dans la collection de paragraphes de la section souhaitée
+// Ajoutez le tableau dans la collection de paragraphes de la section souhaitée
 header.Paragraphs.Add(tab1);
 
 // Définir la bordure de cellule par défaut à l'aide de l'objet BorderInfo
@@ -140,26 +140,26 @@ tab1.ColumnWidths = "60 300";
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose-logo.jpg";
 
-// Créez des lignes dans le tableau puis des cellules dans les lignes
+// Créez des lignes dans le tableau, puis des cellules dans les lignes
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Table in Header Section");
 row1.BackgroundColor = Color.Gray;
 
-// Définissez la valeur d'étendue de ligne pour la première ligne sur 2
+// Définissez la valeur de l'étendue de ligne pour la première ligne sur 2
 tab1.Rows[0].Cells[0].ColSpan = 2;
 tab1.Rows[0].Cells[0].DefaultCellTextState.ForegroundColor = Color.Cyan;
 tab1.Rows[0].Cells[0].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
 
-// Créez des lignes dans le tableau puis des cellules dans les lignes
+// Créez des lignes dans le tableau, puis des cellules dans les lignes
 Aspose.Pdf.Row row2 = tab1.Rows.Add();
 
-// Définir la couleur d'arrière-plan de Row2
+// Définir la couleur d'arrière-plan pour la ligne 2
 row2.BackgroundColor = Color.White;
 
-// Ajouter la cellule qui contient l'image
+// Ajoutez la cellule qui contient l'image
 Aspose.Pdf.Cell cell2 = row2.Cells.Add();
 
-// Réglez la largeur de l'image sur 60
+// Réglez la largeur de l'image à 60
 img.FixWidth = 60;
 
 // Ajouter l'image à la cellule du tableau
@@ -167,55 +167,55 @@ cell2.Paragraphs.Add(img);
 row2.Cells.Add("Logo is looking fine !");
 row2.Cells[1].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
 
-// Définissez l'alignement vertical du texte comme étant aligné au centre
+// Définir l'alignement vertical du texte comme étant centré
 row2.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
 row2.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 
-// Enregistrez le fichier PDF
+// Enregistrer le fichier PDF
 pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
 
 ```
 
 ## Conclusion
 
-Félicitation ! Vous avez appris à ajouter un tableau dans la section d'en-tête ou de pied de page d'un document PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez désormais personnaliser vos en-têtes et pieds de page en ajoutant des tableaux pour afficher des informations supplémentaires dans vos documents PDF.
+Félicitations ! Vous avez appris à ajouter un tableau dans la section en-tête ou pied de page d'un document PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez désormais personnaliser vos en-têtes et pieds de page en ajoutant des tableaux pour afficher des informations supplémentaires dans vos documents PDF.
 
-### FAQ pour le tableau dans la section d'en-tête et de pied de page
+### FAQ pour le tableau dans la section en-tête/pied de page
 
-#### Q : A quoi sert l'ajout d'un tableau dans la section d'en-tête ou de pied de page d'un document PDF ?
+#### Q : Quel est le but de l’ajout d’un tableau dans la section en-tête ou pied de page d’un document PDF ?
 
-: L'ajout d'un tableau dans la section d'en-tête ou de pied de page d'un document PDF vous permet d'afficher des informations structurées et organisées telles que des titres, des sous-titres, des logos ou tout autre contenu que vous souhaitez afficher de manière cohérente sur chaque page du document.
+R : L’ajout d’un tableau dans la section d’en-tête ou de pied de page d’un document PDF vous permet d’afficher des informations structurées et organisées telles que des titres, des sous-titres, des logos ou tout autre contenu que vous souhaitez voir apparaître de manière cohérente sur chaque page du document.
 
 #### Q : Comment le code source C# fourni permet-il d'ajouter un tableau dans la section d'en-tête ou de pied de page d'un document PDF ?
 
-R : Le code montre le processus de création d'un document PDF vide, d'ajout d'une page, de configuration de la section d'en-tête, de création d'un tableau avec des lignes et des cellules et enfin d'enregistrement du document PDF. Le résultat est un tableau affiché dans la section d'en-tête du document PDF.
+R : Le code illustre le processus de création d'un document PDF vide, d'ajout d'une page, de configuration de la section d'en-tête, de création d'un tableau avec des lignes et des cellules, et enfin d'enregistrement du document PDF. Le résultat est un tableau affiché dans la section d'en-tête du document PDF.
 
-#### Q : Puis-je personnaliser l’apparence des cellules du tableau, comme les bordures, la couleur d’arrière-plan et le style du texte ?
+#### Q : Puis-je personnaliser l’apparence des cellules du tableau, comme les bordures, la couleur d’arrière-plan et le style de texte ?
 
-R : Oui, vous pouvez personnaliser l'apparence des cellules du tableau en définissant des propriétés telles que les bordures des cellules, la couleur d'arrière-plan, le style du texte, la police, la taille de la police, etc.
+: Oui, vous pouvez personnaliser l’apparence des cellules du tableau en définissant des propriétés telles que les bordures des cellules, la couleur d’arrière-plan, le style de texte, la police, la taille de la police, etc.
 
 #### Q : Comment le tableau est-il ajouté à la section d'en-tête du document PDF ?
 
-R : Le code ajoute le tableau à la collection de paragraphes de la section d'en-tête, ce qui garantit que le tableau est affiché dans l'en-tête de chaque page.
+R : Le code ajoute le tableau à la collection de paragraphes de la section d’en-tête, ce qui garantit que le tableau est affiché dans l’en-tête de chaque page.
 
-#### Q : Puis-je ajouter davantage de lignes et de cellules au tableau si nécessaire ?
+#### Q : Puis-je ajouter des lignes et des cellules supplémentaires au tableau selon mes besoins ?
 
- R : Absolument, vous pouvez ajouter plus de lignes et de cellules au tableau en utilisant l'option`Rows.Add()` et`Cells.Add()` méthodes. Cela vous permet de structurer le contenu du tableau comme vous le souhaitez.
+ R : Absolument, vous pouvez ajouter plus de lignes et de cellules au tableau en utilisant le`Rows.Add()` et`Cells.Add()` méthodes. Cela vous permet de structurer le contenu du tableau comme vous le souhaitez.
 
 #### Q : Est-il possible d'ajuster la largeur des colonnes du tableau ?
- R : Oui, vous pouvez ajuster la largeur des colonnes du tableau à l'aide du bouton`ColumnWidths` propriété. Cela vous permet de contrôler la disposition du tableau.
+ R : Oui, vous pouvez ajuster la largeur des colonnes du tableau à l'aide du`ColumnWidths` propriété. Cela vous permet de contrôler la disposition du tableau.
 
-#### Q : Comment puis-je répartir les cellules sur plusieurs colonnes ou lignes du tableau ?
- R : Pour répartir les cellules sur plusieurs colonnes, vous pouvez utiliser l'option`ColSpan` propriété de la cellule correspondante. De la même manière, vous pouvez utiliser le`RowSpan` propriété pour étendre les cellules sur plusieurs lignes.
+#### Q : Comment puis-je répartir des cellules sur plusieurs colonnes ou lignes du tableau ?
+ A : Pour étendre les cellules sur plusieurs colonnes, vous pouvez utiliser le`ColSpan`propriété de la cellule correspondante. De même, vous pouvez utiliser la`RowSpan` propriété permettant d'étendre les cellules sur plusieurs lignes.
 
-#### Q : Que se passe-t-il si je souhaite ajouter un tableau aux sections d'en-tête et de pied de page du document PDF ?
+#### Q : Que se passe-t-il si je souhaite ajouter un tableau aux sections d’en-tête et de pied de page du document PDF ?
 
-R : Vous pouvez suivre une approche similaire pour les sections d’en-tête et de pied de page. Créez simplement un`HeaderFooter` instance pour le pied de page, configurez-le et ajoutez le tableau à sa collection de paragraphes.
+ R : Vous pouvez suivre une approche similaire pour les sections d'en-tête et de pied de page. Créez simplement un`HeaderFooter` instance pour le pied de page, configurez-le et ajoutez le tableau à sa collection de paragraphes.
 
-#### Q : Puis-je utiliser des images dans les cellules du tableau, et comment y parvenir ?
+#### Q : Puis-je utiliser des images dans les cellules du tableau et comment y parvenir ?
 
- R : Oui, vous pouvez ajouter des images dans les cellules du tableau. L'exemple de code montre l'ajout d'une image à une cellule en créant un`Image` objet, en définissant son chemin de fichier et ses dimensions, puis en l'ajoutant aux paragraphes d'une cellule.
+ R : Oui, vous pouvez ajouter des images dans les cellules d'un tableau. L'exemple de code montre comment ajouter une image à une cellule en créant une`Image` objet, en définissant son chemin de fichier et ses dimensions, puis en l'ajoutant aux paragraphes d'une cellule.
 
-#### Q : Comment puis-je m'assurer que le tableau apparaît de manière cohérente sur toutes les pages du document PDF ?
+#### Q : Comment puis-je garantir que le tableau s’affiche de manière cohérente sur toutes les pages du document PDF ?
 
- R : Lorsque vous ajoutez le tableau à la section d'en-tête ou de pied de page à l'aide du`HeaderFooter` Par exemple, Aspose.PDF garantit que le tableau apparaît de manière cohérente sur chaque page, offrant une mise en page uniforme.
+ R : Lorsque vous ajoutez le tableau à la section d'en-tête ou de pied de page à l'aide de la`HeaderFooter` Par exemple, Aspose.PDF garantit que le tableau apparaît de manière cohérente sur chaque page, offrant ainsi une mise en page uniforme.

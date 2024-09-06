@@ -10,7 +10,7 @@ url: /cs/java/pdf-conversion-transformation/convert-pdf-to-html-with-font-substi
 
 V tomto podrobném průvodci prozkoumáme, jak převést dokument PDF do HTML s náhradou písem pomocí Aspose.PDF for Java. Náhrada písem je zásadní funkcí při práci s dokumenty PDF, které používají písma, která nejsou snadno dostupná v HTML. Na konci tohoto kurzu budete schopni provádět bezproblémové převody při zachování integrity dokumentu.
 
-## Úvod
+## Zavedení
 
 Aspose.PDF for Java je výkonná knihovna Java, která vám umožňuje programově pracovat s dokumenty PDF. Nabízí různé funkce, včetně převodu PDF do HTML s náhradou písem, na kterou se zaměříme v této příručce.
 
@@ -27,7 +27,7 @@ Převod PDF do HTML je nezbytný, když potřebujete zobrazit obsah PDF na webu.
 Než začneme, ujistěte se, že máte splněny následující předpoklady:
 
 - Java Development Kit (JDK) nainstalován
--  Aspose.PDF pro knihovnu Java (můžete si ji stáhnout z[tady](https://releases.aspose.com/pdf/java/)
+-  Aspose.PDF pro knihovnu Java (můžete si ji stáhnout z[zde](https://releases.aspose.com/pdf/java/)
 - Integrované vývojové prostředí (IDE) dle vašeho výběru
 
 ## Nastavení vývojového prostředí
@@ -95,7 +95,7 @@ Nyní můžete bez problémů integrovat převod PDF do HTML do vašich aplikac�
 
 ### Jak funguje náhrada písem v Aspose.PDF pro Javu?
 
-Aspose.PDF for Java automaticky detekuje písma v dokumentu PDF, která nejsou dostupná pro vykreslování HTML. Nahrazuje je podobnými webovými bezpečnými fonty, aby byla zajištěna konzistentní vizuální reprezentace v převedeném HTML.
+Aspose.PDF for Java automaticky detekuje písma v dokumentu PDF, která nejsou dostupná pro vykreslování HTML. Nahrazuje je podobnými webovými bezpečnými fonty, aby zajistil konzistentní vizuální reprezentaci v převedeném HTML.
 
 ### Mohu určit vlastní písma pro nahrazení?
 

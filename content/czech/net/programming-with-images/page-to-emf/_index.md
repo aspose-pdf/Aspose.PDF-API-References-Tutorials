@@ -89,7 +89,7 @@ using (FileStream imageStream = new FileStream(dataDir + "image_out.emf", FileMo
 	// Vytvořte EMF zařízení se zadanými atributy
 	// Šířka, Výška, Rozlišení
 	EmfDevice emfDevice = new EmfDevice(500, 700, resolution);
-	//Převeďte konkrétní stránku a uložte obrázek do streamu
+	// Převeďte konkrétní stránku a uložte obrázek do streamu
 	emfDevice.Process(pdfDocument.Pages[1], imageStream);
 	// Zavřít stream
 	imageStream.Close();
@@ -99,7 +99,7 @@ System.Console.WriteLine("PDF page is converted to EMF successfully!");
 
 ## Závěr
 
-Gratulujeme! Úspěšně jste se naučili, jak převést stránku PDF do formátu EMF pomocí Aspose.PDF pro .NET. Tento podrobný průvodce pokryl proces od nastavení prostředí až po skutečný konverzní kód. Nyní můžete tento kód implementovat do svých vlastních projektů a automatizovat tak převod stránek PDF na obrázky EMF.
+Gratuluji! Úspěšně jste se naučili, jak převést stránku PDF do formátu EMF pomocí Aspose.PDF pro .NET. Tento podrobný průvodce pokryl proces od nastavení prostředí až po skutečný konverzní kód. Nyní můžete tento kód implementovat do svých vlastních projektů a automatizovat tak převod stránek PDF na obrázky EMF.
 
 ### FAQ
 
@@ -115,7 +115,7 @@ Odpověď: Než začnete, ujistěte se, že máte základní znalosti programova
 
 Odpověď: Převod stránky PDF do formátu EMF je užitečný, když potřebujete zachovat vektorovou grafiku a vysoce kvalitní prvky stránky PDF pro použití v aplikacích, které podporují obrazy EMF.
 
-#### Otázka: Jak nastavím své prostředí, aby začalo převádět stránky PDF na EMF?
+#### Otázka: Jak nastavím své prostředí, aby začalo převádět stránky PDF do EMF?
 
 A: Chcete-li začít, vytvořte nový projekt C# ve vámi preferovaném vývojovém prostředí. Poté do projektu přidejte odkaz na knihovnu Aspose.PDF for .NET.
 

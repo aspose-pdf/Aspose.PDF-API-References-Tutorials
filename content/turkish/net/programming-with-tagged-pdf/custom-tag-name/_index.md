@@ -1,51 +1,51 @@
 ---
 title: Özel Etiket Adı
 linktitle: Özel Etiket Adı
-second_title: .NET API Referansı için Aspose.PDF
+second_title: Aspose.PDF for .NET API Referansı
 description: Aspose.PDF for .NET ile özel etiket adı kullanma konusunda adım adım kılavuz. Özel etiketlerle PDF'lerinizin yapısını iyileştirin.
 type: docs
 weight: 90
 url: /tr/net/programming-with-tagged-pdf/custom-tag-name/
 ---
-Bu adım adım kılavuzda, Aspose.PDF for .NET ile özel etiket adının nasıl kullanılacağı konusunda size yol göstereceğiz. Aspose.PDF, PDF belgelerini programlı olarak değiştirmenizi sağlayan güçlü bir kütüphanedir. Özel etiketlerin kullanılması, PDF belgenize belirli yapısal bilgiler eklemenizi sağlayarak, belgenin kullanımını ve erişimini kolaylaştırır.
+Bu adım adım kılavuzda, .NET için Aspose.PDF ile özel bir etiket adının nasıl kullanılacağını göstereceğiz. Aspose.PDF, PDF belgelerini programatik olarak düzenlemenize olanak tanıyan güçlü bir kütüphanedir. Özel etiketler kullanmak, PDF belgenize belirli yapısal bilgiler eklemenize olanak tanır ve bu da kullanımını ve erişimini kolaylaştırır.
 
-Haydi kodun derinliklerine inelim ve Aspose.PDF for .NET ile özel etiket adının nasıl kullanılacağını öğrenelim.
+Gelin kodlara bir göz atalım ve Aspose.PDF for .NET ile özel etiket adının nasıl kullanılacağını öğrenelim.
 
-## Önkoşullar
+## Ön koşullar
 
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
 1. .NET için Aspose.PDF kütüphanesi kuruldu.
-2. C# programlama dili hakkında temel bilgi.
+2. C# programlama dilinin temel bilgisi.
 
-## 1. Adım: Ortamı ayarlama
+## Adım 1: Ortamı kurma
 
-Başlamak için C# geliştirme ortamınızı açın ve yeni bir proje oluşturun. Projenize .NET için Aspose.PDF kütüphanesine bir referans eklediğinizden emin olun.
+Başlamak için C# geliştirme ortamınızı açın ve yeni bir proje oluşturun. Projenize .NET için Aspose.PDF kütüphanesine bir başvuru eklediğinizden emin olun.
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Adım 2: Belgeyi oluşturma
+## Adım 2: Belgenin oluşturulması
 
- İlk adım, kullanarak yeni bir PDF belgesi oluşturmaktır.`Document` sınıf.
+ İlk adım, yeni bir PDF belgesi oluşturmaktır`Document` sınıf.
 
 ```csharp
 // PDF belgesini oluşturun
 Document document = new Document();
 ```
 
-## 3. Adım: Etiketli içerikle çalışın
+## Adım 3: Etiketli içerikle çalışın
 
-Daha sonra üzerinde çalışacağımız belgenin etiketli içeriğini alıyoruz.
+Daha sonra belgenin etiketli içeriğini alıp çalışmaya başlıyoruz.
 
 ```csharp
 // Belgenin etiketli içeriğini alın
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## 4. Adım: Belge başlığını ve dilini ayarlayın
+## Adım 4: Belge başlığını ve dilini ayarlayın
 
 Artık belge başlığını ve dilini ayarlayabiliriz.
 
@@ -57,10 +57,10 @@ taggedContent.SetLanguage("fr-FR");
 
 ## Adım 5: Mantıksal Yapı Öğeleri Oluşturun
 
-Şimdi içeriğimizi düzenlemek için bazı mantıksal yapı öğeleri oluşturalım.
+Şimdi içeriğimizi organize etmek için bazı mantıksal yapı öğeleri oluşturalım.
 
 ```csharp
-// Mantıksal yapı öğeleri oluşturma
+// Mantıksal yapı öğeleri oluşturun
 SectElement sect = taggedContent.CreateSectElement();
 taggedContent.RootElement.AppendChild(sect);
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
@@ -97,34 +97,34 @@ p3.AppendChild(span3);
 p4.AppendChild(span4);
 ```
 
-Burada içeriğimiz için paragraf öğeleri ve yayılma öğeleri oluşturup bunlara özel etiketler atadık.
+Burada içeriğimiz için paragraf öğeleri ve span öğeleri oluşturuyoruz ve bunlara özel etiketler atıyoruz.
 
-## 6. Adım: Etiketli PDF belgesini kaydedin
+## Adım 6: Etiketli PDF belgesini kaydedin
 
-Son olarak etiketlenen PDF belgesini kaydediyoruz.
+Son olarak etiketli PDF dokümanını kaydediyoruz.
 
 ```csharp
 // Etiketli PDF belgesini kaydedin
 document.Save(dataDir + "CustomTag.pdf");
 ```
 
-### Aspose.PDF for .NET kullanan Özel Etiket Adı için örnek kaynak kodu 
+### .NET için Aspose.PDF'yi kullanarak Özel Etiket Adı için örnek kaynak kodu 
 ```csharp
 
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Pdf Belgesi Oluştur
+// PDF Belgesi Oluştur
 Document document = new Document();
 
-// TaggedPdf ile çalışmaya yönelik İçerik edinin
+// TaggedPdf ile çalışmak için İçerik Alın
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Documnet için Başlığı ve Dili Ayarlayın
+// Belge için Başlık ve Dil Ayarla
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Mantıksal Yapı Öğeleri Oluşturun
+// Mantıksal Yapı Elemanları Oluştur
 SectElement sect = taggedContent.CreateSectElement();
 taggedContent.RootElement.AppendChild(sect);
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
@@ -160,53 +160,53 @@ p2.AppendChild(span2);
 p3.AppendChild(span3);
 p4.AppendChild(span4);
 
-// Etiketli Pdf Belgesini Kaydet
+// Etiketli PDF Belgesini Kaydet
 document.Save(dataDir + "CustomTag.pdf");
 
 ```
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET ile özel etiket adının nasıl kullanılacağını öğrendiniz. Artık özel etiketleri kullanarak PDF belgenize belirli yapısal bilgiler ekleyebilirsiniz. Aspose.PDF'in tüm potansiyelini keşfetmek için diğer özelliklerini keşfedin.
+Tebrikler! Aspose.PDF for .NET ile özel bir etiket adının nasıl kullanılacağını öğrendiniz. Artık özel etiketler kullanarak PDF belgenize belirli yapısal bilgiler ekleyebilirsiniz. Tam potansiyelini keşfetmek için Aspose.PDF'nin diğer özelliklerini keşfedin.
 
-### SSS'ler
+### SSS
 
-#### S: PDF belgeleri bağlamında özel etiket adı nedir ve onu neden Aspose.PDF for .NET ile kullanayım?
+#### S: PDF belgeleri bağlamında özel etiket adı nedir ve bunu neden Aspose.PDF for .NET ile kullanmalıyım?
 
-C: PDF belgesindeki özel etiket adı, belgenin içeriğine ilişkin belirli yapısal bilgiler sağlayan kullanıcı tanımlı bir etikettir. Aspose.PDF for .NET ile özel etiket adları kullanmak, PDF belgesinin erişilebilirliğini ve organizasyonunu geliştirerek gezinmeyi, anlamayı ve etkileşimi kolaylaştırmanıza olanak tanır.
+A: PDF belgesindeki özel etiket adı, belgenin içeriğine belirli yapısal bilgiler sağlayan kullanıcı tanımlı bir etikettir. .NET için Aspose.PDF ile özel etiket adları kullanmak, PDF belgesinin erişilebilirliğini ve organizasyonunu geliştirmenize olanak tanır, gezinmeyi, anlamayı ve etkileşim kurmayı kolaylaştırır.
 
 #### S: Aspose.PDF for .NET, PDF belgelerinde özel etiket adlarının kullanımını nasıl kolaylaştırır?
 
-C: Aspose.PDF for .NET, bir PDF belgesi içindeki farklı yapısal öğelere özel etiket adları oluşturmanıza, değiştirmenize ve atamanıza olanak tanıyan bir dizi sınıf ve yöntem sağlar. Bu, belgenin içeriğine anlamsal anlam ve bağlam eklemenize yardımcı olur.
+A: .NET için Aspose.PDF, bir PDF belgesindeki farklı yapısal öğelere özel etiket adları oluşturmanıza, düzenlemenize ve atamanıza olanak tanıyan bir dizi sınıf ve yöntem sağlar. Bu, belgenin içeriğine anlamsal anlam ve bağlam eklemenize yardımcı olur.
 
-####  S: Hangi rol`taggedContent` object play in using custom tag names?
+####  S: Rolü nedir?`taggedContent` object play in using custom tag names?
 
- C:`taggedContent` belgeden elde edilen nesne`TaggedContent` özelliği, PDF belgesindeki yapılandırılmış öğelerle çalışmanıza olanak tanır. Belgenin anlamsal yapısını geliştirerek bu öğelere özel etiket adları oluşturabilir, düzenleyebilir ve atayabilirsiniz.
+ A:`taggedContent` nesne, belgenin kendisinden elde edilen`TaggedContent` özelliği, PDF belgesinde yapılandırılmış öğelerle çalışmanıza olanak tanır. Bu öğelere özel etiket adları oluşturabilir, düzenleyebilir ve atayabilir, belgenin anlamsal yapısını geliştirebilirsiniz.
 
-#### S: Özel etiket adları belgenin erişilebilirliğini ve kullanılabilirliğini nasıl geliştirir?
+#### S: Özel etiket adları belge erişilebilirliğini ve kullanılabilirliğini nasıl iyileştirir?
 
-C: Özel etiket adları, belgenin içeriğine ek bağlam ve anlam bilgisi sağlar, bu da yardımcı teknolojiler için erişilebilirliği artırır ve genel kullanıcı deneyimini geliştirir. Ekran okuyucular ve diğer yardımcı cihazlar, kullanıcılara anlamlı bilgiler iletmek için özel etiket adlarını kullanabilir.
+A: Özel etiket adları, belgenin içeriğine ek bağlam ve anlam bilgisi sağlar; bu da yardımcı teknolojiler için erişilebilirliğini artırır ve genel kullanıcı deneyimini geliştirir. Ekran okuyucular ve diğer yardımcı cihazlar, kullanıcılara anlamlı bilgiler iletmek için özel etiket adları kullanabilir.
 
-#### S: Bir PDF belgesindeki çeşitli yapısal öğe türleri için özel etiket adlarını kullanabilir miyim?
+#### S: PDF belgesinde çeşitli yapısal eleman tipleri için özel etiket adları kullanabilir miyim?
 
-C: Evet, paragraflar, açıklıklar, bölümler ve daha fazlasını içeren çok çeşitli yapısal öğelere özel etiket adları atayabilirsiniz. Bu, belge içeriğinin farklı bölümlerini kategorilere ayırmanıza ve etiketlemenize olanak tanıyarak daha düzenli ve anlaşılır bir düzen oluşturmanıza olanak tanır.
+A: Evet, paragraflar, aralıklar, bölümler ve daha fazlası dahil olmak üzere çok çeşitli yapısal öğelere özel etiket adları atayabilirsiniz. Bu, belgenin içeriğinin farklı bölümlerini kategorilere ayırmanıza ve etiketlemenize olanak tanır, böylece daha düzenli ve anlaşılır bir düzen oluşturursunuz.
 
-#### S: Aspose.PDF for .NET'i kullanarak bir PDF belgesindeki öğelere özel etiket adlarını nasıl tanımlayabilirim ve atayabilirim?
+#### S: Aspose.PDF for .NET kullanarak bir PDF belgesindeki öğelere özel etiket adlarını nasıl tanımlar ve atarım?
 
- C: Paragraflar ve aralıklar gibi mantıksal yapı öğeleri oluşturarak ve ardından Özel etiket adlarını tanımlayabilir ve atayabilirsiniz.`SetTag` bu öğelere istenen özel etiket adını atama yöntemini kullanın. Sağlanan kod örneği bu işlemi göstermektedir.
+ A: Paragraflar ve aralıklar gibi mantıksal yapı öğeleri oluşturarak ve ardından`SetTag` Bu öğelere istenen özel etiket adını atama yöntemi. Sağlanan kod örneği bu işlemi göstermektedir.
 
 #### S: Kullandığım özel etiket adlarının erişilebilirlik standartları ve en iyi uygulamalarla uyumlu olduğundan nasıl emin olabilirim?
 
-C: Özel etiket adlarını seçerken erişilebilirlik kurallarına uymanız ve içeriği doğru şekilde temsil eden açıklayıcı ve anlamlı etiketler kullanmanız önerilir. İlgili erişilebilirlik standartlarına ve belgelere başvurmak, uygun özel etiket adlarını seçmenize yardımcı olabilir.
+A: Özel etiket adları seçerken erişilebilirlik yönergelerini takip etmeniz ve içeriği doğru şekilde temsil eden açıklayıcı ve anlamlı etiketler kullanmanız önerilir. İlgili erişilebilirlik standartlarına ve belgelere başvurmak, uygun özel etiket adlarını seçmenize yardımcı olabilir.
 
-#### S: Özel etiket adlarının kullanımını Aspose.PDF for .NET'in sunduğu diğer PDF işleme özellikleriyle birleştirebilir miyim?
+#### S: Aspose.PDF for .NET tarafından sunulan diğer PDF düzenleme özellikleriyle özel etiket adlarının kullanımını birleştirebilir miyim?
 
-C: Kesinlikle! Özel etiket adlarının kullanımını Aspose.PDF for .NET'in tablo oluşturma, resim ekleme, köprü ekleme ve daha fazlası gibi diğer özellikleriyle birleştirebilirsiniz. Bu, yapılandırılmış içeriğe sahip zengin ve erişilebilir PDF belgeleri oluşturmanıza olanak tanır.
+A: Kesinlikle! Özel etiket adlarının kullanımını, tablolar oluşturma, resim ekleme, köprü metinleri ekleme ve daha fazlası gibi Aspose.PDF for .NET'in diğer özellikleriyle birleştirebilirsiniz. Bu, yapılandırılmış içerikle zengin ve erişilebilir PDF belgeleri oluşturmanıza olanak tanır.
 
-#### S: PDF belgelerimde erişilebilirlik ve kullanılabilirlik için özel etiket adları kullanmanın etkinliğini nasıl doğrulayabilirim?
+#### S: PDF belgelerimde erişilebilirlik ve kullanılabilirlik açısından özel etiket adlarının kullanımının etkinliğini nasıl doğrulayabilirim?
 
-C: PDF belgesinde gezinmek ve belgeyle etkileşimde bulunmak için ekran okuyucular gibi yardımcı teknolojileri kullanarak özel etiket adlarının etkinliğini doğrulayabilirsiniz. Ayrıca araçları ve doğrulayıcıları kullanarak belgenin erişilebilirlik standartlarına ve yönergelere uygunluğunu test edebilirsiniz.
+A: PDF belgesinde gezinmek ve etkileşim kurmak için ekran okuyucular gibi yardımcı teknolojileri kullanarak özel etiket adlarının etkinliğini doğrulayabilirsiniz. Ayrıca, araçlar ve doğrulayıcılar kullanarak belgenin erişilebilirlik standartları ve yönergeleriyle uyumluluğunu test edebilirsiniz.
 
-#### S: Bu bilgiyi daha karmaşık belge yapıları oluşturacak ve gelişmiş senaryolar için özel etiket adlarını kullanacak şekilde nasıl genişletebilirim?
+#### S: Bu bilgiyi daha karmaşık belge yapıları oluşturmak ve gelişmiş senaryolar için özel etiket adlarını kullanmak üzere nasıl genişletebilirim?
 
-C: Aspose.PDF for .NET'in iç içe yapı elemanları oluşturma, form alanları için özel etiketler kullanma, multimedya elemanları ekleme ve daha fazlası gibi ek özelliklerini keşfederek bu bilgiyi genişletebilirsiniz. Kitaplığın belgeleri ve örnekleri bu gelişmiş senaryolar için rehberlik sağlar.
+A: Bu bilgiyi, Aspose.PDF for .NET'in iç içe geçmiş yapı öğeleri oluşturma, form alanları için özel etiketler kullanma, multimedya öğelerini dahil etme ve daha fazlası gibi ek özelliklerini keşfederek genişletebilirsiniz. Kütüphanenin belgeleri ve örnekleri, bu gelişmiş senaryolar için rehberlik sağlar.

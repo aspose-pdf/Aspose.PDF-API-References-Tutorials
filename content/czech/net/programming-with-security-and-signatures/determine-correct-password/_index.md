@@ -42,7 +42,7 @@ Nezapomeňte nahradit zástupné symboly skutečnými umístěními vašeho soub
 
 ## Krok 4: Určete zdrojové šifrování PDF
 
-Jakmile nahrajete zdrojový soubor PDF, můžete určit, zda je zašifrován pomocí`IsEncrypted` metoda`PdfFileInfo` objekt.
+ Jakmile nahrajete zdrojový soubor PDF, můžete určit, zda je zašifrován pomocí`IsEncrypted` metoda`PdfFileInfo` objekt.
 
 ```csharp
 Console.WriteLine("The file is password protected: " + info.IsEncrypted);
@@ -81,7 +81,7 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 // Načíst zdrojový soubor PDF
 PdfFileInfo info = new PdfFileInfo();
 info.BindPdf(dataDir + "IsPasswordProtected.pdf");
-// Zjistěte, zda je zdrojové PDF zašifrováno
+//Zjistěte, zda je zdrojové PDF zašifrováno
 Console.WriteLine("File is password protected " + info.IsEncrypted);
 String[] passwords = new String[5] { "test", "test1", "test2", "test3", "sample" };
 for (int passwordcount = 0; passwordcount < passwords.Length; passwordcount++)
@@ -119,7 +119,7 @@ Odpověď: Podle poskytnutých kroků nastavte vývojové prostředí, včetně 
 
 #### Otázka: Jak zjistím, zda je soubor PDF zašifrován?
 
- A: Použijte`PdfFileInfo` třídy pro svázání zdrojového souboru PDF. Poté použijte`IsEncrypted` vlastnost k určení, zda je soubor PDF chráněn heslem.
+ A: Použijte`PdfFileInfo` třídy pro svázání zdrojového souboru PDF. Poté použijte`IsEncrypted`vlastnost k určení, zda je soubor PDF chráněn heslem.
 
 #### Otázka: Jak mohu najít správné heslo pro soubor PDF?
 

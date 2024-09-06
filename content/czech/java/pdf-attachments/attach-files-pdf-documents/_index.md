@@ -17,7 +17,7 @@ Aspose.PDF for Java je knihovna bohatá na funkce, která umožňuje vývojář�
 Než začneme, ujistěte se, že máte splněny následující předpoklady:
 
 - Vývojové prostředí Java: Ujistěte se, že máte v systému nainstalovanou Javu a vhodné IDE.
--  Aspose.PDF for Java: Stáhněte si a nainstalujte knihovnu Aspose.PDF for Java z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF for Java: Stáhněte si a nainstalujte knihovnu Aspose.PDF for Java z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Nastavení vašeho projektu Java
 
@@ -93,4 +93,4 @@ Ano, Aspose.PDF for Java je kompatibilní s řadou verzí Java. Ujistěte se, ž
 
 ### Kde najdu další zdroje a dokumentaci k Aspose.PDF pro Javu?
 
-Komplexní dokumentaci a další zdroje pro Aspose.PDF pro Javu naleznete na[tady](https://reference.aspose.com/pdf/java/).
+Komplexní dokumentaci a další zdroje pro Aspose.PDF pro Javu naleznete na[zde](https://reference.aspose.com/pdf/java/).

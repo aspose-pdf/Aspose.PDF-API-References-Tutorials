@@ -2,7 +2,7 @@
 title: 在最後插入空白頁
 linktitle: 在最後插入空白頁
 second_title: Aspose.PDF for .NET API 參考
-description: 使用 Aspose.PDF for .NET 在 PDF 文件末尾插入空白頁面的逐步指南。簡單又快速！
+description: 使用 Aspose.PDF for .NET 在 PDF 文件末尾插入空白頁的逐步指南。簡單又快速！
 type: docs
 weight: 130
 url: /zh-hant/net/programming-with-pdf-pages/insert-empty-page-at-end/
@@ -62,7 +62,7 @@ System.Console.WriteLine("\nEmpty page inserted successfully at the end of docum
 ```
 
 ## 結論
-在本教學中，我們學習如何使用 Aspose.PDF for .NET 在 PDF 文件末尾插入空白頁。透過遵循此逐步指南，您可以輕鬆地在 PDF 文件末尾添加空白頁。 Aspose.PDF提供了強大且靈活的API來處理PDF文件，讓您可以根據您的特定需求操作、修改和產生PDF文件。
+在本教學中，我們學習如何使用 Aspose.PDF for .NET 在 PDF 文件末尾插入空白頁。透過遵循此逐步指南，您可以輕鬆地在 PDF 文件末尾添加空白頁。 Aspose.PDF 提供了強大且靈活的 API 來處理 PDF 文件，讓您可以根據您的特定需求操作、修改和產生 PDF 文件。
 
 ### 常見問題解答
 

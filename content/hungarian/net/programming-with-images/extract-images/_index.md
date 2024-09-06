@@ -11,7 +11,7 @@ Ez az útmutató lépésről lépésre bemutatja, hogyan bonthat ki képeket PDF
 
 ## 1. lépés: Határozza meg a dokumentumkönyvtárat
 
- Mielőtt elkezdené, győződjön meg arról, hogy a megfelelő könyvtárat állította be a dokumentumokhoz. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a kódban annak a könyvtárnak az elérési útjával, ahol a PDF-dokumentum található.
+Mielőtt elkezdené, győződjön meg arról, hogy a megfelelő könyvtárat állította be a dokumentumokhoz. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a kódban annak a könyvtárnak az elérési útjával, ahol a PDF-dokumentum található.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 2. lépés: Nyissa meg a PDF dokumentumot
 
-Ebben a lépésben megnyitjuk a PDF dokumentumot a`Document` osztályú Aspose.PDF. Használja a`Document` konstruktort, és adja át a PDF dokumentum elérési útját.
+ Ebben a lépésben megnyitjuk a PDF dokumentumot a`Document` osztályú Aspose.PDF. Használja a`Document` konstruktort, és adja át a PDF dokumentum elérési útját.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractImages.pdf");
@@ -27,7 +27,7 @@ Document pdfDocument = new Document(dataDir + "ExtractImages.pdf");
 
 ## 3. lépés: Egy adott kép kibontása
 
- Ebben a lépésben egy adott képet fogunk kivonni egy adott oldalról. Használja a`Images` az oldal gyűjteménye`s `Erőforrások objektuma a kívánt kép eléréséhez. Az alábbi példában az 1-es indexű képet kinyerjük az első oldalról.
+Ebben a lépésben egy adott képet fogunk kivonni egy adott oldalról. Használja a`Images` az oldal gyűjteménye`s `Erőforrások objektuma a kívánt kép eléréséhez. Az alábbi példában az 1-es indexű képet kinyerjük az első oldalról.
 
 ```csharp
 XImage xImage = pdfDocument.Pages[1].Resources.Images[1];
@@ -35,7 +35,7 @@ XImage xImage = pdfDocument.Pages[1].Resources.Images[1];
 
 ## 4. lépés: Mentse el a kibontott képet
 
- Mentse a kibontott képet fájlba a`Save` módszere a`xImage` tárgy. Adja meg a kimeneti útvonalat és a képformátumot (ebben a példában JPEG formátumot használunk).
+ Mentse a kibontott képet fájlba a`Save` módszere a`xImage` objektum. Adja meg a kimeneti útvonalat és a képformátumot (ebben a példában JPEG formátumot használunk).
 
 ```csharp
 FileStream outputImage = new FileStream(dataDir + "output.jpg", FileMode.Create);
@@ -45,7 +45,7 @@ outputImage.Close();
 
 ## 5. lépés: Mentse el a frissített PDF-fájlt
 
- Mentse el a frissített PDF fájlt a`Save` módszere a`pdfDocument` tárgy. Adja meg a PDF-fájl kimeneti útvonalát.
+ Mentse el a frissített PDF fájlt a`Save` módszere a`pdfDocument` objektum. Adja meg a PDF-fájl kimeneti útvonalát.
 
 ```csharp
 dataDir = dataDir + "ExtractImages_out.pdf";
@@ -72,7 +72,7 @@ Console.WriteLine("\nImages extracted successfully.\nFile saved at " + dataDir);
 
 ## Következtetés
 
-Gratulálok ! Sikeresen kibontotta a képeket a PDF-ből az Aspose.PDF for .NET segítségével. A kicsomagolt kép a megadott könyvtárba kerül mentésre, és a frissített PDF fájl is mentésre kerül. Ezeket a fájlokat mostantól saját igényei szerint használhatja.
+Gratulálok ! Sikeresen kibontotta a képeket PDF-ből az Aspose.PDF for .NET segítségével. A kicsomagolt kép a megadott könyvtárba kerül mentésre, és a frissített PDF fájl is mentésre kerül. Ezeket a fájlokat mostantól saját igényei szerint használhatja.
 
 ### GYIK a képek PDF-fájlból való kivonásához
 
@@ -90,7 +90,7 @@ V: Az Aspose.PDF for .NET lépésről lépésre nyújt egy PDF-dokumentum megnyi
 
 #### K: Hogyan adhatom meg a PDF-oldalról kivonni kívánt képet?
 
-V: Használhatja a`Images` oldal gyűjteménye`Resources` objektumot, hogy indexe alapján hozzáférjen a kívánt képhez. Például,`pdfDocument.Pages[1].Resources.Images[1]` az első oldalon lévő első képet éri el.
+ V: Használhatja a`Images` oldal gyűjteménye`Resources` objektumot, hogy indexe alapján hozzáférjen a kívánt képhez. Például,`pdfDocument.Pages[1].Resources.Images[1]` az első oldalon lévő első képet éri el.
 
 #### K: Kivonhatok képeket a PDF dokumentum bármely oldaláról?
 

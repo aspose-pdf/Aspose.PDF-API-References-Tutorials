@@ -39,8 +39,8 @@ optimizationOptions.ImageCompressionOptions.ImageQuality = 10;
 Ebben a példában a következő beállításokat állítjuk be:
 - `LinkDuplcateStreams`: Ez az opció lehetővé teszi a duplikált adatfolyamok eltávolítását a PDF-dokumentumból, ami segíthet csökkenteni a fájlméretet.
 - `RemoveUnusedObjects`: Ez az opció lehetővé teszi a nem használt objektumok eltávolítását a PDF-dokumentumból, ami szintén segíthet a fájl méretének csökkentésében.
-- `RemoveUnusedStreams`Ez az opció lehetővé teszi a nem használt adatfolyamok eltávolítását a PDF-dokumentumból, ami tovább csökkentheti a fájl méretét.
-- `CompressImages`: Ez az opció lehetővé teszi a képek tömörítését a PDF dokumentumban, ami jelentősen csökkentheti a fájl méretét.
+- `RemoveUnusedStreams`: Ez az opció lehetővé teszi a nem használt adatfolyamok eltávolítását a PDF-dokumentumból, ami tovább csökkentheti a fájl méretét.
+- `CompressImages`Ez az opció lehetővé teszi a képek tömörítését a PDF dokumentumban, ami jelentősen csökkentheti a fájl méretét.
 - `ImageQuality`: Ez az opció beállítja a tömörített képek minőségét. A gyengébb minőségi beállítás kisebb fájlméretet eredményez, de gyengébb képminőséget is eredményezhet.
 
 ## 4. lépés: Optimalizálja a PDF-dokumentumot
@@ -100,4 +100,4 @@ V: Az Aspose.PDF for .NET különféle optimalizálási lehetőségeket kínál 
 
 #### K: A fejlesztők egyensúlyba tudják hozni a fájlméret csökkentését a képminőséggel a PDF-dokumentumok optimalizálásakor?
 
-V: Igen, a fejlesztők szabályozhatják a képtömörítési beállításokat, például a képminőség beállítását. Sajátos igényeik alapján választhatnak egyensúlyt a fájlméret-csökkentés és a képminőség között.
+V: Igen, a fejlesztők szabályozhatják a képtömörítési beállításokat, például a képminőség beállítását. Sajátos igényeik alapján választhatnak egyensúlyt a fájlméret csökkentése és a képminőség között.

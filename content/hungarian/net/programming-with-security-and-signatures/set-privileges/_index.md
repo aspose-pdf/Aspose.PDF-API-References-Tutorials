@@ -19,7 +19,7 @@ using Aspose.Pdf;
 
 ## 2. lépés: Állítsa be a dokumentumok mappa elérési útját
 
- Ebben a lépésben meg kell adnia a szerkeszteni kívánt PDF-fájlt tartalmazó mappa elérési útját. Cserélje ki`"YOUR DOCUMENTS DIRECTORY"` következő kódban a dokumentummappa tényleges elérési útjával:
+ Ebben a lépésben meg kell adnia a szerkeszteni kívánt PDF-fájlt tartalmazó mappa elérési útját. Cserélje ki`"YOUR DOCUMENTS DIRECTORY"` a következő kódban a dokumentummappa tényleges elérési útjával:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -35,7 +35,7 @@ using (Document document = new Document(dataDir + "input.pdf"))
 
 ## 4. lépés: Állítsa be a hozzáférési jogosultságokat
 
- Ebben a lépésben példányosítjuk a`DocumentPrivilege` objektumot a kívánt hozzáférési jogosultságok beállításához. Korlátozásokat alkalmazhat az összes jogosultságra vonatkozóan`DocumentPrivilege.ForbidAll` . Például, ha csak a képernyőolvasást szeretné engedélyezni, beállíthatja`AllowScreenReaders` nak nek`true`. Itt van a megfelelő kód:
+ Ebben a lépésben példányosítjuk a`DocumentPrivilege` objektumot a kívánt hozzáférési jogosultságok beállításához. Korlátozásokat alkalmazhat az összes jogosultságra vonatkozóan`DocumentPrivilege.ForbidAll` . Például, ha csak a képernyőolvasást szeretné engedélyezni, beállíthatja`AllowScreenReaders` hogy`true`. Itt van a megfelelő kód:
 
 ```csharp
 DocumentPrivilege documentPrivilege = DocumentPrivilege.ForbidAll;

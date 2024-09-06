@@ -72,7 +72,7 @@ page.getAnnotations().add(hyperlink);
 pdfDocument.save("hyperlink_example.pdf");
 ```
 
-Ez az! Sikeresen hozzáadott egy hiperhivatkozást egy PDF-fájlhoz az Aspose.PDF for Java használatával.
+Ennyi! Sikeresen hozzáadott egy hiperhivatkozást egy PDF-fájlhoz az Aspose.PDF for Java használatával.
 
 ## Következtetés
 

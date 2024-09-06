@@ -12,7 +12,7 @@ url: /hu/java/pdf-form-fields/define-alignment-for-text-stamp-object-in-pdf-usin
 
 szövegbélyegzők sokoldalú eszközt jelentenek a megjegyzések fűzésére és a PDF-fájlokhoz való információk hozzáadására. Ahhoz azonban, hogy valóban hatékonyak legyenek, elengedhetetlen a megfelelő összehangolás. Ebben a cikkben megvizsgáljuk, hogyan határozható meg a szövegbélyegző objektumok igazítása a PDF-fájlokban Java használatával, különösen az Aspose.PDF for Java erejét kihasználva.
 
-## Elkezdeni
+## Kezdő lépések
 
 Mielőtt belemerülnénk a szövegbélyegző-igazítás sajátosságaiba, kulcsfontosságú a fejlesztői környezet beállítása. Győződjön meg arról, hogy az Aspose.PDF for Java telepítve van és be van állítva a Java projektben. Itt érheti el a szükséges forrásokat:
 

@@ -209,7 +209,7 @@ A: Výchozí rozlišení se používá jako referenční bod pro výpočet skute
 
 #### Otázka: Jak lze extrahované obrazové informace využít ve scénářích reálného světa?
 
-Odpověď: Extrahované obrazové informace lze použít pro úkoly, jako je hodnocení kvality obrazu, optimalizace obrazu, generování miniatur snímků a usnadnění rozhodovacích procesů souvisejících s obrazem.
+Odpověď: Extrahované obrazové informace lze použít pro úkoly, jako je hodnocení kvality obrazu, optimalizace obrazu, generování miniatur obrazu a usnadnění rozhodovacích procesů souvisejících s obrazem.
 
 #### Otázka: Mohu upravit kód a extrahovat další atributy související s obrázkem?
 

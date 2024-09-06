@@ -1,32 +1,32 @@
 ---
-title: تسليط الضوء على الحرف في ملف PDF
-linktitle: تسليط الضوء على الحرف في ملف PDF
-second_title: Aspose.PDF لمرجع .NET API
+title: إبراز الحرف في ملف PDF
+linktitle: إبراز الحرف في ملف PDF
+second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
 description: تعرف على كيفية تمييز الأحرف في ملف PDF باستخدام Aspose.PDF لـ .NET.
 type: docs
 weight: 240
 url: /ar/net/programming-with-text/highlight-character-in-pdf/
 ---
-سنشرح في هذا البرنامج التعليمي كيفية تمييز الأحرف في ملف PDF باستخدام مكتبة Aspose.PDF لـ .NET. سنتابع عملية تمييز الأحرف خطوة بخطوة في ملف PDF باستخدام كود مصدر C# المقدم.
+في هذا البرنامج التعليمي، سنشرح كيفية تمييز الأحرف في ملف PDF باستخدام مكتبة Aspose.PDF لـ .NET. سنتناول عملية تمييز الأحرف في ملف PDF خطوة بخطوة باستخدام كود المصدر C# المقدم.
 
 ## متطلبات
 
 قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- تم تثبيت Aspose.PDF لمكتبة .NET.
-- فهم أساسي للبرمجة C#.
+- تم تثبيت مكتبة Aspose.PDF لـ .NET.
+- فهم أساسي لبرمجة C#.
 
 ## الخطوة 1: إعداد دليل المستندات
 
- أولاً، تحتاج إلى تعيين المسار إلى الدليل الذي يوجد به ملف PDF الذي قمت بإدخاله. يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir` متغير مع المسار إلى ملف PDF الخاص بك.
+ أولاً، تحتاج إلى تعيين المسار إلى الدليل الذي يوجد به ملف PDF المدخل. استبدل`"YOUR DOCUMENT DIRECTORY"` في`dataDir` متغير يحتوي على المسار إلى ملف PDF الخاص بك.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## الخطوة 2: قم بتحميل مستند PDF
+## الخطوة 2: تحميل مستند PDF
 
- بعد ذلك، نقوم بتحميل مستند PDF المدخل باستخدام ملف`Aspose.Pdf.Document` فصل.
+ بعد ذلك، نقوم بتحميل مستند PDF المدخل باستخدام`Aspose.Pdf.Document` فصل.
 
 ```csharp
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
@@ -34,7 +34,7 @@ Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf")
 
 ## الخطوة 3: تحويل PDF إلى صورة
 
- لتسليط الضوء على الحروف، نقوم بتحويل وثيقة PDF إلى صورة باستخدام`PdfConverter` فصل. قمنا بتعيين دقة التحويل واسترجاع الصورة كملف`Bitmap` هدف.
+ لتسليط الضوء على الأحرف، نقوم بتحويل مستند PDF إلى صورة باستخدام`PdfConverter` الصف. نقوم بتعيين الدقة للتحويل واسترداد الصورة كملف`Bitmap` هدف.
 
 ```csharp
 int resolution = 150;
@@ -46,29 +46,29 @@ using (MemoryStream ms = new MemoryStream())
      Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
 ```
 
-## الخطوة 4: تسليط الضوء على الشخصيات
+## الخطوة 4: إبراز الشخصيات
 
- نقوم بالتكرار خلال كل صفحة من مستند PDF ونستخدم ملف`TextFragmentAbsorber` كائن للعثور على جميع الكلمات في الصفحة. نقوم بعد ذلك بالتكرار على أجزاء النص والأجزاء والأحرف لتمييزها باستخدام المستطيلات.
+ نقوم بالتنقل عبر كل صفحة من مستند PDF واستخدام`TextFragmentAbsorber` نستخدم كائنًا للعثور على جميع الكلمات الموجودة في الصفحة. ثم نكرر البحث على أجزاء النص والمقاطع والأحرف لتسليط الضوء عليها باستخدام المستطيلات.
 
 ```csharp
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 {
-     //ضبط الحجم والتحويل
+     // تعيين المقياس والتحويل
      float scale = resolution / 72f;
      gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
 
-     // حلقة من خلال الصفحات
+     // التنقل عبر الصفحات
      for (int i = 0; i < pdfDocument.Pages.Count; i++)
      {
          Page page = pdfDocument.Pages[1];
 
-         // البحث عن جميع الكلمات في الصفحة
+         //ابحث عن جميع الكلمات في الصفحة
          TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
          textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
          page. Accept(textFragmentAbsorber);
          TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 
-         // حلقة من خلال أجزاء النص
+         // التنقل عبر أجزاء النص
          foreach(TextFragment textFragment in textFragmentCollection)
          {
              if (i == 0)
@@ -81,7 +81,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
                      (float)textFragment.Rectangle.Width,
                      (float)textFragment.Rectangle.Height);
 
-                 // حلقة من خلال القطاعات
+                 // التكرار خلال المقاطع
                  foreach(TextSegment segment in textFragment.Segments)
                  {
                      // تسليط الضوء على الجزء
@@ -92,10 +92,10 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
                          (float)segment.Rectangle.Width,
                          (float)segment.Rectangle.Height);
 
-                     // حلقة من خلال الشخصيات
+                     // التنقل بين الشخصيات
                      foreach(CharInfo characterInfo in segment.Characters)
                      {
-                         // تسليط الضوء على الحرف
+                         // إبراز الحرف
                          gr.DrawRectangle(
                              Think.Black,
                              (float)characterInfo.Rectangle.LLx,
@@ -110,16 +110,16 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 }
 ```
 
-## الخطوة 5: احفظ صورة الإخراج
+## الخطوة 5: احفظ الصورة الناتجة
 
-وأخيرًا، نقوم بحفظ الصورة المعدلة بالأحرف المميزة في ملف الإخراج المحدد.
+وأخيرًا، نقوم بحفظ الصورة المعدلة مع الأحرف المميزة في ملف الإخراج المحدد.
 
 ```csharp
 dataDir = dataDir + "HighlightCharacterInPDF_out.png";
 bmp.Save(dataDir, System.Drawing.Imaging.ImageFormat.Png);
 ```
 
-### نموذج التعليمات البرمجية المصدر لـ Highlight Character In PDF باستخدام Aspose.PDF لـ .NET 
+### عينة من كود المصدر لتمييز الأحرف في PDF باستخدام Aspose.PDF لـ .NET 
 ```csharp
 try
 {
@@ -140,13 +140,13 @@ try
 			for (int i = 0; i < pdfDocument.Pages.Count; i++)
 			{
 				Page page = pdfDocument.Pages[1];
-				// قم بإنشاء كائن TextAbsorter للعثور على جميع الكلمات
+				// إنشاء كائن TextAbsorber للبحث عن جميع الكلمات
 				TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
 				textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
 				page.Accept(textFragmentAbsorber);
 				// احصل على أجزاء النص المستخرجة
 				TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-				// حلقة من خلال الشظايا
+				// التنقل عبر الشظايا
 				foreach (TextFragment textFragment in textFragmentCollection)
 				{
 					if (i == 0)
@@ -197,40 +197,40 @@ catch (Exception ex)
 
 ## خاتمة
 
-في هذا البرنامج التعليمي، تعلمت كيفية تمييز الأحرف في مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. باتباع الدليل الموضح خطوة بخطوة وتنفيذ كود C# المقدم، يمكنك تمييز الأحرف في ملف PDF وحفظ الإخراج كصورة.
+في هذا البرنامج التعليمي، تعلمت كيفية تمييز الأحرف في مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. باتباع الدليل خطوة بخطوة وتنفيذ التعليمات البرمجية C# المقدمة، يمكنك تمييز الأحرف في ملف PDF وحفظ الناتج كصورة.
 
 ### الأسئلة الشائعة
 
-#### س: ما هو الغرض من البرنامج التعليمي "تمييز الأحرف في ملف PDF"؟
+#### س: ما هو الغرض من البرنامج التعليمي "تمييز الحرف في ملف PDF"؟
 
-ج: يشرح البرنامج التعليمي "Highlight Character In PDF File" كيفية استخدام مكتبة Aspose.PDF لـ .NET لتمييز الأحرف داخل مستند PDF. يوفر البرنامج التعليمي دليلاً خطوة بخطوة وكود مصدر C# لتحقيق ذلك.
+ج: يوضح البرنامج التعليمي "تمييز الأحرف في ملف PDF" كيفية استخدام مكتبة Aspose.PDF لـ .NET لتمييز الأحرف داخل مستند PDF. يوفر البرنامج التعليمي دليلاً خطوة بخطوة وكود مصدر C# لتحقيق ذلك.
 
-#### س: لماذا أرغب في تمييز الأحرف في مستند PDF؟
+#### س: لماذا أرغب في تسليط الضوء على الأحرف في مستند PDF؟
 
-ج: يمكن أن يكون تمييز الأحرف في مستند PDF مفيدًا لأغراض متعددة، مثل إبراز محتوى معين أو جعل نص معين أكثر وضوحًا وتمييزًا.
+أ: يمكن أن يكون تمييز الأحرف في مستند PDF مفيدًا لأغراض مختلفة، مثل التأكيد على محتوى معين أو جعل نص معين أكثر وضوحًا وقابلية للتمييز.
 
 #### س: كيف أقوم بإعداد دليل المستندات؟
 
-ج: لإعداد دليل المستندات:
+أ: لإعداد دليل المستندات:
 
-1.  يستبدل`"YOUR DOCUMENT DIRECTORY"` في ال`dataDir` متغير مع المسار إلى الدليل حيث يوجد ملف PDF المدخل الخاص بك.
+1.  يستبدل`"YOUR DOCUMENT DIRECTORY"` في`dataDir` متغير يحتوي على المسار إلى الدليل الذي يوجد به ملف PDF المدخل الخاص بك.
 
-#### س: كيف يمكنني تحميل مستند PDF وتحويله إلى صورة؟
+#### س: كيف أقوم بتحميل مستند PDF وتحويله إلى صورة؟
 
- ج: في البرنامج التعليمي،`Aspose.Pdf.Document` يتم استخدام الفئة لتحميل مستند PDF الإدخال. ثم،`PdfConverter` يتم استخدام الفصل لتحويل مستند PDF إلى صورة. يتم تعيين دقة الصورة، ويتم استرداد الصورة كملف`Bitmap` هدف.
+ أ: في البرنامج التعليمي،`Aspose.Pdf.Document` يتم استخدام الفئة لتحميل مستند PDF المدخل. بعد ذلك،`PdfConverter` يتم استخدام الفئة لتحويل مستند PDF إلى صورة. يتم تعيين دقة الصورة، ويتم استرداد الصورة كملف PDF.`Bitmap` هدف.
 
-#### س: كيف يمكنني تمييز الأحرف في صورة مستند PDF؟
+#### س: كيف أقوم بتسليط الضوء على الأحرف في صورة مستند PDF؟
 
-ج: يرشدك البرنامج التعليمي خلال عملية التكرار خلال كل صفحة من مستند PDF، والبحث عن الكلمات باستخدام ملف`TextFragmentAbsorber`، والتكرار عبر أجزاء النص والأجزاء والأحرف لتمييزها باستخدام المستطيلات.
+أ: يرشدك البرنامج التعليمي خلال عملية التنقل عبر كل صفحة من مستند PDF، والبحث عن الكلمات باستخدام`TextFragmentAbsorber`، والتكرار عبر أجزاء النص والأجزاء والأحرف لتسليط الضوء عليها باستخدام المستطيلات.
 
-#### س: هل يمكنني تخصيص مظهر الشخصيات والمقاطع المميزة؟
+#### س: هل يمكنني تخصيص مظهر الشخصيات والأجزاء المميزة؟
 
-ج: نعم، يمكنك تخصيص مظهر الأحرف والمقاطع المميزة عن طريق تعديل الألوان والأنماط المستخدمة في عمليات الرسم.
+ج: نعم، يمكنك تخصيص مظهر الأحرف والأجزاء المميزة عن طريق تعديل الألوان والأنماط المستخدمة في عمليات الرسم.
 
-#### س: كيف أحفظ الصورة المعدلة بالأحرف المميزة؟
+#### س: كيف أحفظ الصورة المعدلة مع الأحرف المميزة؟
 
- ج: يوضح البرنامج التعليمي كيفية حفظ الصورة المعدلة بالأحرف المميزة في ملف الإخراج المحدد باستخدام ملف`Save` طريقة`Bitmap` فصل.
+ أ: يوضح البرنامج التعليمي كيفية حفظ الصورة المعدلة بالأحرف المميزة في ملف الإخراج المحدد باستخدام`Save` طريقة`Bitmap` فصل.
 
-#### س: هل يلزم وجود ترخيص Aspose صالح لهذا البرنامج التعليمي؟
+#### س: هل يلزم الحصول على ترخيص Aspose صالح لهذا البرنامج التعليمي؟
 
-ج: نعم، يلزم وجود ترخيص Aspose صالح حتى يعمل هذا البرنامج التعليمي بشكل صحيح. يمكنك شراء ترخيص كامل أو الحصول على ترخيص مؤقت لمدة 30 يومًا من موقع Aspose.
+ج: نعم، يلزم الحصول على ترخيص Aspose صالح حتى يعمل هذا البرنامج التعليمي بشكل صحيح. يمكنك شراء ترخيص كامل أو الحصول على ترخيص مؤقت لمدة 30 يومًا من موقع Aspose على الويب.

@@ -1,25 +1,25 @@
 ---
 title: Określ prawidłowe hasło w pliku PDF
 linktitle: Określ prawidłowe hasło w pliku PDF
-second_title: Aspose.PDF z dokumentacją API .NET
-description: Dowiedz się, jak ustalić prawidłowe hasło w pliku PDF za pomocą Aspose.PDF dla .NET.
+second_title: Aspose.PDF dla .NET API Reference
+description: Dowiedz się, jak ustalić prawidłowe hasło w pliku PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 30
 url: /pl/net/programming-with-security-and-signatures/determine-correct-password/
 ---
-W tym samouczku przeprowadzimy Cię przez proces ustalania prawidłowego hasła w pliku PDF przy użyciu Aspose.PDF dla .NET. Ta funkcja pozwala sprawdzić, czy plik PDF jest chroniony hasłem i znaleźć prawidłowe hasło ze wstępnie zdefiniowanej listy.
+W tym samouczku przeprowadzimy Cię przez proces określania prawidłowego hasła w pliku PDF przy użyciu Aspose.PDF dla .NET. Ta funkcja umożliwia sprawdzenie, czy plik PDF jest chroniony hasłem i znalezienie prawidłowego hasła z predefiniowanej listy.
 
-## Krok 1: Warunki wstępne
+## Krok 1: Wymagania wstępne
 
-Zanim zaczniesz, upewnij się, że masz następujące wymagania wstępne:
+Zanim zaczniesz, upewnij się, że spełniasz następujące wymagania wstępne:
 
 - Podstawowa znajomość języka programowania C#
 - Instalowanie programu Visual Studio na komputerze
-- Zainstalowana biblioteka Aspose.PDF dla .NET
+- Zainstalowano bibliotekę Aspose.PDF dla .NET
 
 ## Krok 2: Konfiguracja środowiska
 
-Aby rozpocząć, wykonaj następujące kroki, aby skonfigurować środowisko programistyczne:
+Aby rozpocząć, wykonaj poniższe kroki, aby skonfigurować środowisko programistyczne:
 
 1. Otwórz program Visual Studio i utwórz nowy projekt C#.
 2. Zaimportuj wymagane przestrzenie nazw do pliku kodu:
@@ -28,9 +28,9 @@ Aby rozpocząć, wykonaj następujące kroki, aby skonfigurować środowisko pro
 using Aspose.Pdf;
 ```
 
-## Krok 3: Ładowanie źródłowego pliku PDF
+## Krok 3: Ładowanie pliku źródłowego PDF
 
-Pierwszym krokiem jest przesłanie źródłowego pliku PDF, który chcesz zweryfikować. W tym przykładzie zakładamy, że masz plik PDF o nazwie „IsPasswordProtected.pdf” w określonym katalogu.
+Pierwszym krokiem jest przesłanie pliku PDF źródłowego, który chcesz zweryfikować. W tym przykładzie zakładamy, że masz plik PDF o nazwie „IsPasswordProtected.pdf” w określonym katalogu.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
@@ -42,17 +42,17 @@ Pamiętaj, aby zastąpić symbole zastępcze rzeczywistymi lokalizacjami pliku P
 
 ## Krok 4: Określ szyfrowanie źródłowego pliku PDF
 
-Po przesłaniu źródłowego pliku PDF możesz określić, czy jest on zaszyfrowany za pomocą`IsEncrypted` metoda`PdfFileInfo` obiekt.
+ Po przesłaniu pliku PDF źródłowego możesz sprawdzić, czy jest on zaszyfrowany, korzystając z`IsEncrypted` metoda`PdfFileInfo` obiekt.
 
 ```csharp
 Console.WriteLine("The file is password protected: " + info.IsEncrypted);
 ```
 
-To oświadczenie wyświetla, czy plik PDF jest chroniony hasłem, czy nie.
+To oświadczenie wyświetla informację, czy plik PDF jest chroniony hasłem, czy nie.
 
 ## Krok 5: Znalezienie prawidłowego hasła
 
-Następnie wyszukamy prawidłowe hasło korzystając z predefiniowanej listy haseł. Przeglądamy każde hasło na liście i próbujemy załadować dokument PDF z tym hasłem.
+Następnie wyszukamy poprawne hasło, używając wstępnie zdefiniowanej listy haseł. Przejdziemy przez każde hasło na liście i spróbujemy załadować dokument PDF z tym hasłem.
 
 ```csharp
 String[] passwords = new String[5] { "test", "test1", "test2", "test3", "sample" };
@@ -71,17 +71,17 @@ Console.WriteLine("The password " + passwords[passwordcount] + " is not correct.
 }
 ```
 
-Ta pętla sprawdza każde słowo pass z listy. Jeżeli hasło jest prawidłowe, wyświetlona zostanie liczba stron dokumentu. W przeciwnym razie wyświetli się komunikat informujący, że hasło jest nieprawidłowe.
+Ta pętla testuje każde słowo pass z listy. Jeśli hasło jest poprawne, wyświetlana jest liczba stron w dokumencie. W przeciwnym razie wyświetlana jest wiadomość wskazująca, że hasło jest nieprawidłowe.
 
 
-### Przykładowy kod źródłowy dla określenia prawidłowego hasła przy użyciu Aspose.PDF dla .NET 
+### Przykładowy kod źródłowy dla funkcji Określ prawidłowe hasło za pomocą Aspose.PDF dla platformy .NET 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";            
-// Załaduj źródłowy plik PDF
+// Załaduj plik źródłowy PDF
 PdfFileInfo info = new PdfFileInfo();
 info.BindPdf(dataDir + "IsPasswordProtected.pdf");
-// Sprawdź, czy źródłowy plik PDF jest zaszyfrowany
+//Określ, czy źródłowy plik PDF jest zaszyfrowany
 Console.WriteLine("File is password protected " + info.IsEncrypted);
 String[] passwords = new String[5] { "test", "test1", "test2", "test3", "sample" };
 for (int passwordcount = 0; passwordcount < passwords.Length; passwordcount++)
@@ -101,46 +101,46 @@ for (int passwordcount = 0; passwordcount < passwords.Length; passwordcount++)
 
 ## Wniosek
 
-Gratulacje! Pomyślnie ustaliłeś prawidłowe hasło do pliku PDF przy użyciu Aspose.PDF dla .NET. W tym samouczku omówiono proces krok po kroku, od weryfikacji szyfrowania plików po znalezienie prawidłowego hasła z predefiniowanej listy. Teraz możesz użyć tej funkcji, aby sprawdzić i znaleźć prawidłowe hasło do swoich plików PDF.
+Gratulacje! Udało Ci się ustalić prawidłowe hasło do pliku PDF za pomocą Aspose.PDF dla .NET. Ten samouczek obejmuje proces krok po kroku, od weryfikacji szyfrowania pliku do znalezienia prawidłowego hasła z predefiniowanej listy. Teraz możesz użyć tej funkcji, aby sprawdzić i znaleźć prawidłowe hasło do swoich plików PDF.
 
-### Często zadawane pytania dotyczące ustalenia prawidłowego hasła w pliku PDF
+### FAQ dotyczące ustalania prawidłowego hasła w pliku PDF
 
-#### P: Jaki jest cel tego samouczka?
+#### P: Jaki jest cel tego poradnika?
 
-Odp.: Ten samouczek ma na celu poprowadzić Cię przez proces ustalania prawidłowego hasła do pliku PDF przy użyciu Aspose.PDF dla .NET. Ta funkcja pozwala sprawdzić, czy plik PDF jest chroniony hasłem i spróbować znaleźć prawidłowe hasło ze wstępnie zdefiniowanej listy.
+A: Ten samouczek ma na celu przeprowadzenie Cię przez proces określania prawidłowego hasła dla pliku PDF przy użyciu Aspose.PDF dla .NET. Ta funkcja umożliwia sprawdzenie, czy plik PDF jest chroniony hasłem i próbę znalezienia prawidłowego hasła z predefiniowanej listy.
 
-#### P: Jakie wymagania wstępne są wymagane przed rozpoczęciem?
+#### P: Jakie warunki wstępne należy spełnić przed rozpoczęciem?
 
-O: Zanim zaczniesz, upewnij się, że masz podstawową wiedzę na temat języka programowania C#, masz zainstalowany program Visual Studio na swoim komputerze i masz zainstalowaną bibliotekę Aspose.PDF dla .NET.
+O: Zanim zaczniesz, upewnij się, że posiadasz podstawową wiedzę na temat języka programowania C#, że na Twoim komputerze jest zainstalowany program Visual Studio i że jest zainstalowana biblioteka Aspose.PDF dla platformy .NET.
 
 #### P: Jak skonfigurować środowisko programistyczne?
 
-Odp.: Wykonaj podane kroki, aby skonfigurować środowisko programistyczne, w tym utworzyć nowy projekt C# w programie Visual Studio i zaimportować wymagane przestrzenie nazw.
+A: Wykonaj podane kroki, aby skonfigurować środowisko programistyczne, m.in. utwórz nowy projekt C# w programie Visual Studio i zaimportuj wymagane przestrzenie nazw.
 
 #### P: Jak sprawdzić, czy plik PDF jest zaszyfrowany?
 
- O: Skorzystaj z`PdfFileInfo` class, aby powiązać źródłowy plik PDF. Następnie skorzystaj z`IsEncrypted` właściwość, aby określić, czy plik PDF jest chroniony hasłem.
+ A: Użyj`PdfFileInfo` klasa do powiązania pliku PDF źródłowego. Następnie użyj`IsEncrypted`właściwość określająca, czy plik PDF jest chroniony hasłem.
 
-#### P: Jak znaleźć prawidłowe hasło do pliku PDF?
+#### P: Jak mogę znaleźć prawidłowe hasło do pliku PDF?
 
-O: Po ustaleniu, że plik PDF jest zaszyfrowany, możesz spróbować znaleźć prawidłowe hasło, korzystając ze wstępnie zdefiniowanej listy haseł. Dostarczony przykładowy kod demonstruje, jak przeglądać listę, wypróbowywać każde hasło i sprawdzać, czy jest ono poprawne.
+A: Po ustaleniu, że plik PDF jest zaszyfrowany, możesz spróbować znaleźć prawidłowe hasło, korzystając z predefiniowanej listy haseł. Dostarczony przykładowy kod pokazuje, jak przejść przez listę, wypróbować każde hasło i ustalić, czy hasło jest prawidłowe.
 
-#### P: Co się stanie, jeśli zostanie znalezione prawidłowe hasło?
+#### P: Co się stanie, jeśli uda się znaleźć prawidłowe hasło?
 
-Odp.: Jeśli zostanie znalezione prawidłowe hasło, przykładowy kod wyświetli liczbę stron w dokumencie PDF.
+A: Jeśli znalezione zostanie prawidłowe hasło, przykładowy kod wyświetli liczbę stron w dokumencie PDF.
 
-#### P: Co się stanie, jeśli hasło nie będzie poprawne?
+#### P: Co się stanie, jeśli hasło będzie nieprawidłowe?
 
- Odp.: Jeśli hasło jest nieprawidłowe, przykładowy kod przechwyci błąd`InvalidPasswordException` i wyświetlić komunikat informujący, że hasło jest nieprawidłowe.
+ A: Jeśli hasło jest nieprawidłowe, przykładowy kod je wychwyci`InvalidPasswordException` i wyświetla komunikat informujący, że hasło jest nieprawidłowe.
 
 #### P: Czy mogę użyć innej listy haseł?
 
- Odp.: Tak, możesz modyfikować plik`passwords` array w przykładowym kodzie, aby uwzględnić hasła, które chcesz przetestować.
+ A: Tak, możesz modyfikować`passwords` w przykładowym kodzie umieść tablicę zawierającą hasła, które chcesz przetestować.
 
-#### P: Skąd mam wiedzieć, że hasło zostało pomyślnie ustalone?
+#### P: Skąd będę wiedzieć, że hasło zostało pomyślnie ustalone?
 
-Odp.: Jeśli przykładowy kod pomyślnie załaduje dokument PDF z hasłem i wyświetli liczbę stron, oznacza to, że ustalono prawidłowe hasło.
+O: Jeśli przykładowy kod poprawnie wczytuje dokument PDF z hasłem i wyświetla liczbę stron, oznacza to, że hasło zostało ustalone prawidłowo.
 
-#### P: Jak mogę zapewnić bezpieczeństwo moich haseł podczas testowania?
+#### P: Jak mogę zagwarantować bezpieczeństwo moich haseł podczas testów?
 
-O: Zachowaj ostrożność podczas korzystania z predefiniowanej listy haseł i unikaj używania wrażliwych lub poufnych haseł do celów testowych. Ponadto przed wdrożeniem aplikacji usuń lub zmodyfikuj kod testowy.
+A: Zachowaj ostrożność podczas korzystania z predefiniowanej listy haseł i unikaj używania poufnych lub wrażliwych haseł do celów testowych. Ponadto usuń lub zmodyfikuj kod testowy przed wdrożeniem aplikacji.

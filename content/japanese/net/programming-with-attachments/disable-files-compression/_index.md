@@ -1,123 +1,124 @@
 ---
-title: PDF ファイルのファイル圧縮を無効にする
-linktitle: PDF ファイルのファイル圧縮を無効にする
+title: PDFファイル内のファイル圧縮を無効にする
+linktitle: PDFファイル内のファイル圧縮を無効にする
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して PDF ファイルのファイル圧縮を無効にする方法を学びます。簡単に操作できるステップバイステップのガイド。
+description: このステップバイステップ ガイドでは、Aspose.PDF for .NET を使用して PDF ファイル内のファイル圧縮を無効にする方法を学習します。PDF 管理スキルを強化します。
 type: docs
 weight: 30
 url: /ja/net/programming-with-attachments/disable-files-compression/
 ---
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF のファイル圧縮を無効にする次の C# ソース コードを段階的に説明します。
+## 導入
 
-始める前に、Aspose.PDF ライブラリをインストールし、開発環境をセットアップしていることを確認してください。 C# プログラミングの基本的な知識も必要です。
+デジタル時代では、PDF ファイルを効率的に管理することは、個人的および専門的な用途の両方で重要です。アプリケーションの強化を目指す開発者でも、ドキュメントを管理するビジネス プロフェッショナルでも、PDF ファイルの操作方法を理解することで時間と労力を節約できます。一般的な要件の 1 つは、PDF ドキュメントでファイル圧縮を無効にすることです。これは、埋め込まれたファイルを変更せずに元の形式のままにしておきたい場合に特に役立ちます。このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ファイルでファイル圧縮を無効にする方法について説明します。 
 
-### ステップ 1: ドキュメント ディレクトリのセットアップ
+## 前提条件
 
-提供されたソース コードでは、ファイル圧縮を無効にする PDF ファイルが配置されているディレクトリを指定する必要があります。 「dataDir」変数を目的のディレクトリに変更します。
+コードに進む前に、いくつかの前提条件を満たす必要があります。
+
+1.  Aspose.PDF for .NET: Aspose.PDFライブラリがインストールされていることを確認してください。[Webサイト](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: .NET コードを記述して実行できる開発環境。
+3. C# の基礎知識: C# プログラミングに精通していると、コード スニペットをよりよく理解できるようになります。
+
+## パッケージのインポート
+
+まず、C# プロジェクトに必要なパッケージをインポートする必要があります。手順は次のとおりです。
+
+### 新しいプロジェクトを作成する
+
+Visual Studio を開き、新しい C# プロジェクトを作成します。簡単にするために、コンソール アプリケーションを選択できます。
+
+### Aspose.PDF 参照の追加
+
+1. ソリューション エクスプローラーでプロジェクトを右クリックします。
+2. 「NuGet パッケージの管理」を選択します。
+3. 「Aspose.PDF」を検索し、最新バージョンをインストールしてください。
+
+### 名前空間をインポートする
+
+C# ファイルの先頭で、Aspose.PDF 名前空間をインポートします。
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-### ステップ 2: 既存の PDF ドキュメントを開く
+すべての設定が完了したので、PDF ファイルでファイル圧縮を無効にするプロセスを管理しやすい手順に分解してみましょう。
 
-指定されたパスを使用して既存の PDF ドキュメントを開きます。
+## ステップ1: ドキュメントディレクトリを定義する
 
-```csharp
-Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-```
-
-### ステップ 3: 添付ファイルとして追加する新しいファイルを設定する
-
-添付ファイルとして追加する新しいファイルを構成します。この例では、「test_out.txt」という名前と「サンプル テキスト ファイル」という説明を持つテキスト ファイルを追加します。
+まず、PDF ファイルが保存されているディレクトリへのパスを指定する必要があります。これは、操作するファイルの場所をプログラムに伝えるため、非常に重要です。
 
 ```csharp
-FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
-```
-
-### ステップ 4: ファイル圧縮を無効にする
-
-FileSpecific オブジェクトの Encoding プロパティを FileEncoding.None に設定することで、ファイル圧縮を無効にします。
-
-```csharp
-fileSpecification.Encoding = FileEncoding.None;
-```
-
-### ステップ 5: ドキュメントの添付ファイル コレクションに添付ファイルを追加する
-
-添付ファイルをドキュメントの添付ファイル コレクションに追加します。
-
-```csharp
-pdfDocument.EmbeddedFiles.Add(fileSpecification);
-```
-
-### ステップ 6: 新しい出力ファイルを保存する
-
-最後に、結果の新しい PDF ファイルを「DisableFilesCompression_out.pdf」という名前で指定したディレクトリに保存します。
-
-```csharp
-pdfDocument.Save(dataDir + "DisableFilesCompression_out.pdf");
-```
-
-
-### Aspose.PDF for .NET を使用してファイル圧縮を無効にするサンプル ソース コード 
-
-```csharp
-
-//ドキュメントディレクトリへのパス。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
-//添付ファイルとして追加する新しいファイルを設定します
-FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
-//Encoding プロパーティを FileEncoding.None に設定して指定します。
-fileSpecification.Encoding = FileEncoding.None;
-//ドキュメントの添付ファイル コレクションに添付ファイルを追加する
-pdfDocument.EmbeddedFiles.Add(fileSpecification);
-dataDir = dataDir + "DisableFilesCompression_out.pdf";
-//新しい出力を保存する
-pdfDocument.Save(dataDir);
-Console.WriteLine("\nFile compression disabled successfully.\nFile saved at " + dataDir);
+```
 
+## ステップ2: PDFドキュメントを読み込む
+
+次に、変更したいPDF文書を読み込みます。これは、`Document` Aspose.PDF によって提供されるクラス。
+
+```csharp
+Document pdfDocument = new Document(dataDir + "GetAlltheAttachments.pdf");
+```
+
+## ステップ3: 添付ファイルとして追加するファイルを設定する
+
+ここで、PDF に追加する添付ファイルの新しいファイル仕様を作成する必要があります。これには、ファイルの名前とタイプの指定が含まれます。
+
+```csharp
+FileSpecification fileSpecification = new FileSpecification("test_out.txt", "Sample text file");
+```
+
+## ステップ4: エンコーディングプロパティを指定する
+
+ファイルが圧縮されずに追加されるようにするには、ファイル仕様のエンコーディングプロパティを次のように設定する必要があります。`FileEncoding.None`この手順は、ファイルが PDF に埋め込まれる方法に直接影響するため、非常に重要です。
+
+```csharp
+fileSpecification.Encoding = FileEncoding.None;
+```
+
+## ステップ5: ドキュメントに添付ファイルを追加する
+
+ファイル仕様が準備できたら、ドキュメントの添付ファイル コレクションに添付ファイルを追加できます。この手順により、ファイルが PDF に統合されます。
+
+```csharp
+pdfDocument.EmbeddedFiles.Add(fileSpecification);
+```
+
+## ステップ6: 新しい出力を保存する
+
+最後に、変更した PDF ドキュメントを保存する必要があります。新しいファイルを保存する出力パスを指定します。
+
+```csharp
+dataDir = dataDir + "DisableFilesCompression_out.pdf";
+pdfDocument.Save(dataDir);
+```
+
+## ステップ7: 操作を確認する
+
+すべてがスムーズに進んだことを確認するために、コンソールに確認メッセージを出力できます。
+
+```csharp
+Console.WriteLine("\nFile compression disabled successfully.\nFile saved at " + dataDir);
 ```
 
 ## 結論
 
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF のファイル圧縮を無効にする方法を説明しました。この知識を利用して、圧縮せずに添付ファイルの整合性を維持できるようになりました。
+PDF ドキュメントのファイル圧縮を無効にするのは、適切なツールを使用すれば簡単なプロセスです。このチュートリアルで説明されている手順に従うことで、PDF ファイルを簡単に管理し、埋め込まれた添付ファイルが元の形式を維持するようにすることができます。Aspose.PDF for .NET は、PDF ドキュメントを操作するための強力で柔軟な方法を提供するため、開発者や企業にとって最適な選択肢となります。
 
-## PDF ファイルのファイル圧縮を無効にするための FAQ
+## よくある質問
 
-#### Q: PDF ドキュメントのファイル圧縮を無効にする必要があるのはなぜですか?
+### Aspose.PDF for .NET とは何ですか?
+Aspose.PDF for .NET は、開発者がプログラムによって PDF ドキュメントを作成、操作、変換できるようにするライブラリです。
 
-A: ファイル圧縮を無効にすると、PDF ドキュメント内の添付ファイルは圧縮されず、元の品質と内容が維持されます。
+### PDF でファイル圧縮を無効にする必要があるのはなぜですか?
+ファイル圧縮を無効にすると、埋め込まれたファイルが元の形式のまま維持され、データの整合性にとって重要になります。
 
-#### Q: ファイル圧縮を無効にすると、PDF 添付ファイルにどのようなメリットがありますか?
+### Aspose.PDF を無料で使用できますか?
+はい、Asposeはライブラリを評価するために使用できる無料試用版を提供しています。ダウンロードできます。[ここ](https://releases.aspose.com/).
 
-A: 圧縮を無効にすると、圧縮プロセス中に発生する可能性のあるデータや品質の損失が防止され、添付ファイルがそのまま表示されます。
+### Aspose.PDF に関する詳細なドキュメントはどこで見つかりますか?
+包括的なドキュメントは、[Aspose ウェブサイト](https://reference.aspose.com/pdf/net/).
 
-#### Q: このチュートリアルを使用して、特定の添付ファイルの圧縮を選択的に無効にすることはできますか?
-
-A: はい。このチュートリアルでは、PDF ドキュメント内の個々の添付ファイルのファイル圧縮を無効にして、きめ細かい制御を提供する方法を説明します。
-
-#### Q: どのような種類の添付ファイルの圧縮を無効にできますか?
-
-A: 画像、ドキュメント、スプレッドシートなど、あらゆる種類の添付ファイルの圧縮を無効にして、その整合性を確保できます。
-
-#### Q: 圧縮を無効にすると、PDF ドキュメント全体のファイル サイズに影響しますか?
-
-A: 添付ファイルの圧縮を無効にすると、非圧縮ファイルがより多くのスペースを占有するため、PDF ドキュメント全体のファイル サイズが若干増加する可能性があります。
-
-#### Q: Aspose.PDF for .NET は、ファイル圧縮を無効にするプロセスをどのように容易にしますか?
-
-A: Aspose.PDF for .NET は、提供されたソース コードで示されているように、添付ファイルのファイル圧縮を無効にすることができる使いやすい API を提供します。
-
-#### Q: 必要に応じて、後で添付ファイルの圧縮を再度有効にすることはできますか?
-
-A: はい、必要に応じて添付ファイルの設定を変更して圧縮を再度有効にすることができます。
-
-#### Q: 圧縮をサポートするデバイスまたはソフトウェアで PDF を開くとどうなりますか?
-
-A: 圧縮をサポートするデバイスまたはソフトウェアで PDF を開くと、添付ファイルが圧縮されずに表示される可能性があり、ファイル サイズとレンダリング パフォーマンスに影響を与える可能性があります。
-
-#### Q: 圧縮を無効にすることが推奨される特定のシナリオはありますか?
-
-A: 高解像度の画像や機密文書など、元の品質とデータの整合性を維持することが優先される添付ファイルについては、圧縮を無効にすることをお勧めします。
+### Aspose.PDF のサポートを受けるにはどうすればよいですか?
+サポートを受けるには、[Aspose フォーラム](https://forum.aspose.com/c/pdf/10).

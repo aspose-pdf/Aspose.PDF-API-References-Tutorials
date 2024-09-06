@@ -1,7 +1,7 @@
 ---
 title: Render Tabel Dalam Dokumen PDF
 linktitle: Render Tabel Dalam Dokumen PDF
-second_title: Aspose.PDF untuk Referensi .NET API
+second_title: Referensi API Aspose.PDF untuk .NET
 description: Pelajari cara menampilkan tabel dalam dokumen PDF menggunakan Aspose.PDF untuk .NET.
 type: docs
 weight: 170
@@ -21,7 +21,7 @@ Document doc = new Document();
 ```
 
 ## Langkah 2: Mengonfigurasi margin dan orientasi halaman
-Selanjutnya, kita akan mengonfigurasi margin halaman dan mengatur orientasi ke mode lanskap:
+Berikutnya, kita akan mengonfigurasi margin halaman dan mengatur orientasi ke mode lanskap:
 
 ```csharp
 PageInfo pageInfo = doc.PageInfo;
@@ -36,7 +36,7 @@ pageInfo.IsLandscape = true;
 ```
 
 ## Langkah 3: Membuat tabel dan kolom
-Sekarang mari buat tabel dan atur lebar kolom:
+Sekarang mari kita membuat tabel dan mengatur lebar kolom:
 
 ```csharp
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
@@ -44,7 +44,7 @@ table. ColumnWidths = "50 100";
 ```
 
 ## Langkah 4: Tambahkan baris dan sel ke tabel
-Selanjutnya, kita akan menambahkan baris dan sel ke tabel menggunakan loop:
+Berikutnya, kita akan menambahkan baris dan sel ke tabel menggunakan loop:
 
 ```csharp
 for (int i = 1; i <= 120; i++)
@@ -139,7 +139,7 @@ for (int i = 1; i <= 10; i++)
 	cell2.Paragraphs.Add(new TextFragment("LAAGGGGGG"));
 }
 table1.IsInNewPage = true;
-// Saya ingin menyimpan tabel 1 ke halaman berikutnya...
+// Saya ingin tabel 1 disimpan di halaman berikutnya ya...
 paragraphs.Add(table1);
 dataDir = dataDir + "IsNewPageProperty_Test_out.pdf";
 doc.Save(dataDir);
@@ -148,26 +148,26 @@ Console.WriteLine("\nTable render successfully on a page.\nFile saved at " + dat
 ```
 
 ## Kesimpulan
-Selamat! Anda sekarang telah mempelajari cara menampilkan tabel dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Panduan langkah demi langkah ini menunjukkan kepada Anda cara membuat dokumen, mengonfigurasi margin dan orientasi halaman, menambahkan tabel, dan menampilkan tabel di halaman baru. Sekarang Anda dapat menerapkan pengetahuan ini pada proyek Anda sendiri.
+Selamat! Anda sekarang telah mempelajari cara menampilkan tabel dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Panduan langkah demi langkah ini menunjukkan kepada Anda cara membuat dokumen, mengonfigurasi margin dan orientasi halaman, menambahkan tabel, dan menampilkan tabel di halaman baru. Sekarang Anda dapat menerapkan pengetahuan ini ke proyek Anda sendiri.
 
-### FAQ untuk tabel render dalam dokumen PDF
+### FAQ untuk membuat tabel render dalam dokumen PDF
 
 #### T: Bagaimana cara mengubah tampilan tabel, seperti mengubah warna sel atau menambahkan batas?
 
-A: Untuk mengubah tampilan tabel, Anda dapat mengatur berbagai properti`Aspose.Pdf.Table` dan sel-selnya. Misalnya, Anda dapat mengatur`BackgroundColor` properti sel untuk mengubah warna latar belakangnya. Anda juga dapat mengatur`Border` properti tabel atau sel individual untuk menambahkan batas. Selain itu, Anda dapat mengkustomisasi font, warna teks, dan perataan konten tabel dengan memodifikasi`TextState` dari`TextFragment` objek yang ditambahkan ke sel.
+A: Untuk mengubah tampilan tabel, Anda dapat mengatur berbagai properti tabel.`Aspose.Pdf.Table` dan sel-selnya. Misalnya, Anda dapat mengatur`BackgroundColor` properti sel untuk mengubah warna latar belakangnya. Anda juga dapat mengatur`Border` properti tabel atau sel individual untuk menambahkan batas. Selain itu, Anda dapat menyesuaikan font, warna teks, dan perataan konten tabel dengan memodifikasi`TextState` dari`TextFragment` objek yang ditambahkan ke sel.
 
-#### T: Dapatkah saya menambahkan header atau footer ke tabel?
+#### T: Dapatkah saya menambahkan header dan footer ke tabel?
 
-J: Ya, Anda bisa menambahkan header atau footer ke tabel dengan membuat baris tambahan di awal atau akhir tabel dan mengatur konten yang sesuai di dalam sel. Anda dapat mengkustomisasi header atau footer secara terpisah dari konten tabel lainnya dengan menambahkan gaya atau konten berbeda ke baris spesifik ini.
+A: Ya, Anda dapat menambahkan header atau footer ke tabel dengan membuat baris tambahan di awal atau akhir tabel dan mengatur konten yang sesuai di dalam sel. Anda dapat menyesuaikan header atau footer secara terpisah dari konten tabel lainnya dengan menambahkan gaya atau konten yang berbeda ke baris-baris tertentu ini.
 
 #### T: Bagaimana cara mengontrol posisi tabel di halaman?
 
- A: Untuk mengontrol posisi tabel pada halaman, Anda dapat mengaturnya`MarginInfo` dari`PageInfo` obyek. Itu`MarginInfo`memungkinkan Anda mengatur margin kiri, kanan, atas, dan bawah halaman, yang memengaruhi ruang yang tersedia untuk tabel. Anda juga dapat menggunakan`PositioningType` properti dari`Aspose.Pdf.Table` untuk mengontrol perataan horizontal dan vertikal dalam area konten halaman.
+ A: Untuk mengontrol posisi tabel di halaman, Anda dapat menyesuaikan`MarginInfo` dari`PageInfo` objek. Itu`MarginInfo`memungkinkan Anda untuk mengatur margin kiri, kanan, atas, dan bawah halaman, yang memengaruhi ruang yang tersedia untuk tabel. Anda juga dapat menggunakan`PositioningType` milik`Aspose.Pdf.Table` untuk mengontrol perataan horizontal dan vertikal dalam area konten halaman.
 
 #### T: Dapatkah saya mengekspor tabel ke format file lain, seperti Excel atau CSV?
 
-J: Aspose.PDF untuk .NET terutama dirancang untuk bekerja dengan dokumen PDF. Meskipun dapat mengekspor dokumen PDF sebagai gambar atau XPS, ini tidak secara langsung mendukung ekspor tabel ke format seperti Excel atau CSV. Untuk mengekspor data tabel ke format file berbeda, Anda mungkin perlu menggunakan pustaka atau metode tambahan untuk mengonversi konten PDF ke format yang diinginkan.
+J: Aspose.PDF untuk .NET terutama dirancang untuk bekerja dengan dokumen PDF. Meskipun dapat mengekspor dokumen PDF sebagai gambar atau XPS, Aspose.PDF tidak secara langsung mendukung ekspor tabel ke format seperti Excel atau CSV. Untuk mengekspor data tabel ke format file yang berbeda, Anda mungkin perlu menggunakan pustaka atau metode tambahan untuk mengonversi konten PDF ke format yang diinginkan.
 
 #### T: Bagaimana cara menambahkan hyperlink ke sel tabel?
 
- A: Untuk menambahkan hyperlink ke sel tabel, Anda bisa menggunakan`Aspose.Pdf.WebHyperlink` kelas untuk membuat hyperlink dan kemudian menambahkannya sebagai jangkar ke`TextFragment`di dalam sel. Hal ini memungkinkan Anda mengaitkan URL atau target tautan dengan teks atau konten tertentu di dalam sel, sehingga menciptakan hyperlink yang dapat diklik.
+ A: Untuk menambahkan hyperlink ke sel tabel, Anda dapat menggunakan`Aspose.Pdf.WebHyperlink` kelas untuk membuat hyperlink dan kemudian menambahkannya sebagai jangkar ke`TextFragment`di dalam sel. Ini memungkinkan Anda untuk mengaitkan URL atau target tautan dengan teks atau konten tertentu di dalam sel, sehingga menciptakan hyperlink yang dapat diklik.

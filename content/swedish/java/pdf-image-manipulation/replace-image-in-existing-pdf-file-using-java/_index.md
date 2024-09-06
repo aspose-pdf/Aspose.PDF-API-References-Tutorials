@@ -47,9 +47,9 @@ För att komma igång behöver du en befintlig PDF-fil med en bild som du vill e
 Document pdfDocument = new Document("path/to/your/pdf/file.pdf");
 ```
 
- Byta ut`"path/to/your/pdf/file.pdf"` med den faktiska sökvägen till din PDF-fil.
+ Ersätta`"path/to/your/pdf/file.pdf"` med den faktiska sökvägen till din PDF-fil.
 
-## Ersätta en bild i PDF-filen
+## Ersätta en bild i PDF:en
 
 Låt oss nu ersätta bilden i PDF-filen med en ny. Du måste ange sidnummer och koordinater där bilden ska ersättas. Du behöver också sökvägen till den nya bilden som du vill infoga.
 
@@ -79,7 +79,7 @@ När du har bytt ut bilden kan du spara det ändrade PDF-dokumentet.
 pdfDocument.save("path/to/your/output/modified.pdf");
 ```
 
- Byta ut`"path/to/your/output/modified.pdf"` med önskad sökväg och filnamn för den ändrade PDF-filen.
+ Ersätta`"path/to/your/output/modified.pdf"` med önskad sökväg och filnamn för den ändrade PDF-filen.
 
 ## Slutsats
 

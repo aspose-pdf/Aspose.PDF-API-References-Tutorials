@@ -93,7 +93,7 @@ Aspose.Pdf.Page page = doc.Pages.Add();
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 // Δημιουργήστε ορθογώνιο αντικείμενο με συγκεκριμένες διαστάσεις
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 100);
-//Ορίστε το χρώμα πλήρωσης γραφήματος από τη δομή System.Drawing.Color από μια τιμή ARGB 32 bit
+// Ορίστε το χρώμα πλήρωσης γραφήματος από τη δομή System.Drawing.Color από μια τιμή ARGB 32 bit
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
 // Προσθήκη ορθογωνίου αντικειμένου στη συλλογή σχημάτων της παρουσίας γραφήματος
 canvas.Shapes.Add(rect);
@@ -110,7 +110,7 @@ Console.WriteLine("\nRectangle object created successfully with alpha color.\nFi
 
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Σε αυτό το σεμινάριο, εξηγήσαμε πώς να δημιουργήσετε ένα ορθογώνιο με χρώμα άλφα χρησιμοποιώντας το Aspose.PDF για .NET. Τώρα μπορείτε να χρησιμοποιήσετε αυτή τη γνώση για να δημιουργήσετε γεωμετρικά σχήματα με διαφανή χρώματα στα αρχεία PDF σας.
 
@@ -134,7 +134,7 @@ Console.WriteLine("\nRectangle object created successfully with alpha color.\nFi
 
 #### Ε: Πώς μπορώ να ρυθμίσω ένα χρώμα άλφα για το ορθογώνιο;
 
-Α: Μπορείτε να καθορίσετε ένα χρώμα άλφα για το ορθογώνιο χρησιμοποιώντας το`FillColor` ιδιοκτησία του`GraphInfo` αντικείμενο και το`Color.FromRgb` μέθοδος με τιμή ARGB.
+ Α: Μπορείτε να καθορίσετε ένα χρώμα άλφα για το ορθογώνιο χρησιμοποιώντας το`FillColor` ιδιοκτησία του`GraphInfo` αντικείμενο και το`Color.FromRgb` μέθοδος με τιμή ARGB.
 
 #### Ε: Μπορώ να δημιουργήσω πολλά ορθογώνια με διαφορετικά χρώματα άλφα;
 

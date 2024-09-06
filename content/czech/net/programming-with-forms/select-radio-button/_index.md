@@ -7,7 +7,7 @@ type: docs
 weight: 250
 url: /cs/net/programming-with-forms/select-radio-button/
 ---
-Zde je podrobný návod, jak vybrat přepínač pomocí Aspose.PDF pro .NET. Následuj tyto kroky:
+Zde je podrobný návod, jak vybrat přepínač pomocí Aspose.PDF pro .NET. Postupujte takto:
 
 ##  Krok 1: Začněte definováním adresáře vašich dokumentů zadáním cesty v`dataDir` variable.
 
@@ -88,7 +88,7 @@ Odpověď: Ne, přepínače ve skupině jsou navrženy tak, aby se vzájemně vy
 
 #### Otázka: Jak získám vybraný přepínač ve skupině pomocí Aspose.PDF pro .NET?
 
- A: Chcete-li načíst vybraný přepínač ve skupině, můžete použít`Selected` vlastnictvím`RadioButtonField` třída. Vrátí index vybraného přepínače ve skupině.
+ A: Chcete-li načíst vybraný přepínač ve skupině, můžete použít`Selected` majetek z`RadioButtonField` třída. Vrátí index vybraného přepínače ve skupině.
 
 #### Otázka: Mohu upravit vzhled vybraného přepínače v dokumentu PDF?
 

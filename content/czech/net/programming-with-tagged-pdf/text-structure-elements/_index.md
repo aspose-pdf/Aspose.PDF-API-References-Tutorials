@@ -75,7 +75,7 @@ Do našeho dokumentu PDF jsme přidali prvek struktury odstavce s textem.
 Nyní, když jsme dokončili úpravy dokumentu PDF, uložme jej do souboru.
 
 ```csharp
-// Uložte tagovaný dokument PDF
+// Uložte označený dokument PDF
 document.Save(dataDir + "ElementDeStructureDeTexte.pdf");
 ```
 

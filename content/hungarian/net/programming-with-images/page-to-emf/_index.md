@@ -89,7 +89,7 @@ using (FileStream imageStream = new FileStream(dataDir + "image_out.emf", FileMo
 	// Hozzon létre EMF-eszközt meghatározott attribútumokkal
 	// Szélesség, Magasság, Felbontás
 	EmfDevice emfDevice = new EmfDevice(500, 700, resolution);
-	//Konvertálja az adott oldalt, és mentse a képet adatfolyamba
+	// Konvertálja az adott oldalt, és mentse a képet adatfolyamba
 	emfDevice.Process(pdfDocument.Pages[1], imageStream);
 	// Folyamat bezárása
 	imageStream.Close();
@@ -99,7 +99,7 @@ System.Console.WriteLine("PDF page is converted to EMF successfully!");
 
 ## Következtetés
 
-Gratulálunk! Sikeresen megtanulta, hogyan konvertálhat PDF-oldalt EMF formátumba az Aspose.PDF for .NET segítségével. Ez a lépésenkénti útmutató a környezet beállításától a tényleges konverziós kódig terjedő folyamatot ismertette. Most már implementálhatja ezt a kódot saját projektjeibe, hogy automatizálja a PDF-oldalak EMF-képekké alakítását.
+Gratulálok! Sikeresen megtanulta, hogyan konvertálhat PDF-oldalt EMF formátumba az Aspose.PDF for .NET segítségével. Ez a lépésenkénti útmutató a környezet beállításától a tényleges konverziós kódig terjedő folyamatot ismertette. Most már implementálhatja ezt a kódot saját projektjeibe, hogy automatizálja a PDF-oldalak EMF-képekké alakítását.
 
 ### GYIK
 
@@ -125,7 +125,7 @@ V: A kezdéshez hozzon létre egy új C# projektet a kívánt fejlesztői körny
 
 #### K: Hogyan szabhatom testre az EMF-kép felbontását és méreteit az átalakítás során?
 
- V: A felbontás és a méretek testreszabásához hozzon létre a`Resolution` objektumot a kívánt felbontással, majd hozzon létre egy`EmfDevice` objektum szélességének, magasságának és a létrehozott objektum megadásával`Resolution` tárgy.
+ V: A felbontás és a méretek testreszabásához hozzon létre a`Resolution` objektumot a kívánt felbontással, majd hozzon létre egy`EmfDevice` objektum szélességének, magasságának és a létrehozott objektum megadásával`Resolution` objektum.
 
 #### K: Átalakíthatok egy adott oldalt PDF dokumentumból EMF formátumba?
 

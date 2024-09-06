@@ -1,26 +1,26 @@
 ---
-title: Nama Tag Khusus
-linktitle: Nama Tag Khusus
-second_title: Aspose.PDF untuk Referensi .NET API
-description: Panduan langkah demi langkah untuk menggunakan nama tag khusus dengan Aspose.PDF untuk .NET. Tingkatkan struktur PDF Anda dengan tag khusus.
+title: Nama Tag Kustom
+linktitle: Nama Tag Kustom
+second_title: Referensi API Aspose.PDF untuk .NET
+description: Panduan langkah demi langkah untuk menggunakan nama tag khusus dengan Aspose.PDF untuk .NET. Perbaiki struktur PDF Anda dengan tag khusus.
 type: docs
 weight: 90
 url: /id/net/programming-with-tagged-pdf/custom-tag-name/
 ---
-Dalam panduan langkah demi langkah ini, kami akan memandu Anda tentang cara menggunakan nama tag khusus dengan Aspose.PDF untuk .NET. Aspose.PDF adalah perpustakaan canggih yang memungkinkan Anda memanipulasi dokumen PDF secara terprogram. Menggunakan tag khusus memungkinkan Anda menambahkan informasi struktural spesifik ke dokumen PDF Anda, membuatnya lebih mudah digunakan dan diakses.
+Dalam panduan langkah demi langkah ini, kami akan memandu Anda tentang cara menggunakan nama tag kustom dengan Aspose.PDF untuk .NET. Aspose.PDF adalah pustaka canggih yang memungkinkan Anda memanipulasi dokumen PDF secara terprogram. Penggunaan tag kustom memungkinkan Anda menambahkan informasi struktural tertentu ke dokumen PDF, sehingga lebih mudah digunakan dan diakses.
 
-Mari selami kodenya dan pelajari cara menggunakan nama tag khusus dengan Aspose.PDF untuk .NET.
+Mari selami kodenya dan pelajari cara menggunakan nama tag kustom dengan Aspose.PDF untuk .NET.
 
 ## Prasyarat
 
 Sebelum memulai, pastikan Anda memiliki hal berikut:
 
-1. Pustaka Aspose.PDF untuk .NET diinstal.
+1. Pustaka Aspose.PDF untuk .NET terpasang.
 2. Pengetahuan dasar tentang bahasa pemrograman C#.
 
 ## Langkah 1: Menyiapkan lingkungan
 
-Untuk memulai, buka lingkungan pengembangan C# Anda dan buat proyek baru. Pastikan Anda telah menambahkan referensi ke perpustakaan Aspose.PDF untuk .NET di proyek Anda.
+Untuk memulai, buka lingkungan pengembangan C# Anda dan buat proyek baru. Pastikan Anda telah menambahkan referensi ke pustaka Aspose.PDF untuk .NET dalam proyek Anda.
 
 ```csharp
 // Jalur ke direktori dokumen.
@@ -38,16 +38,16 @@ Document document = new Document();
 
 ## Langkah 3: Bekerja dengan konten yang diberi tag
 
-Kemudian kita mendapatkan konten dokumen yang diberi tag untuk dikerjakan.
+Lalu, kita dapatkan konten dokumen yang diberi tag untuk dikerjakan.
 
 ```csharp
-// Dapatkan konten dokumen yang diberi tag
+// Dapatkan konten yang ditandai dari dokumen
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
 ## Langkah 4: Tetapkan judul dan bahasa dokumen
 
-Sekarang kita dapat mengatur judul dan bahasa dokumen.
+Sekarang kita dapat mengatur judul dokumen dan bahasa.
 
 ```csharp
 // Tentukan judul dan bahasa dokumen
@@ -55,12 +55,12 @@ taggedContent.SetTitle("Tagged PDF document");
 taggedContent.SetLanguage("fr-FR");
 ```
 
-## Langkah 5: Buat Elemen Struktur Logis
+## Langkah 5: Buat Elemen Struktur Logika
 
 Sekarang mari kita buat beberapa elemen struktur logis untuk mengatur konten kita.
 
 ```csharp
-// Buat elemen struktur logis
+// Membuat elemen struktur logis
 SectElement sect = taggedContent.CreateSectElement();
 taggedContent.RootElement.AppendChild(sect);
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
@@ -97,7 +97,7 @@ p3.AppendChild(span3);
 p4.AppendChild(span4);
 ```
 
-Di sini kita membuat elemen paragraf dan elemen span untuk konten kita, dan menetapkan tag khusus padanya.
+Di sini kita membuat elemen paragraf dan elemen span untuk konten kita, lalu menetapkan tag khusus untuk elemen-elemen tersebut.
 
 ## Langkah 6: Simpan dokumen PDF yang diberi tag
 
@@ -108,7 +108,7 @@ Terakhir, kami menyimpan dokumen PDF yang diberi tag.
 document.Save(dataDir + "CustomTag.pdf");
 ```
 
-### Contoh kode sumber untuk Nama Tag Khusus menggunakan Aspose.PDF untuk .NET 
+### Contoh kode sumber untuk Nama Tag Kustom menggunakan Aspose.PDF untuk .NET 
 ```csharp
 
 // Jalur ke direktori dokumen.
@@ -120,11 +120,11 @@ Document document = new Document();
 // Dapatkan Konten untuk bekerja dengan TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
 
-// Tetapkan Judul dan Bahasa untuk Documnet
+// Mengatur Judul dan Bahasa untuk Dokumen
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
 
-// Buat Elemen Struktur Logis
+// Membuat Elemen Struktur Logika
 SectElement sect = taggedContent.CreateSectElement();
 taggedContent.RootElement.AppendChild(sect);
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
@@ -167,46 +167,46 @@ document.Save(dataDir + "CustomTag.pdf");
 
 ## Kesimpulan
 
-Selamat! Anda telah mempelajari cara menggunakan nama tag khusus dengan Aspose.PDF untuk .NET. Anda sekarang dapat menambahkan informasi struktural spesifik ke dokumen PDF Anda menggunakan tag khusus. Jelajahi lebih banyak fitur Aspose.PDF untuk menemukan potensi penuhnya.
+Selamat! Anda telah mempelajari cara menggunakan nama tag khusus dengan Aspose.PDF untuk .NET. Kini Anda dapat menambahkan informasi struktural tertentu ke dokumen PDF Anda menggunakan tag khusus. Jelajahi lebih banyak fitur Aspose.PDF untuk menemukan potensinya secara penuh.
 
-### FAQ
+### Pertanyaan yang Sering Diajukan
 
-#### T: Apa yang dimaksud dengan nama tag khusus dalam konteks dokumen PDF, dan mengapa saya menggunakannya dengan Aspose.PDF untuk .NET?
+#### T: Apa nama tag kustom dalam konteks dokumen PDF, dan mengapa saya harus menggunakannya dengan Aspose.PDF untuk .NET?
 
-J: Nama tag khusus dalam dokumen PDF adalah label yang ditentukan pengguna yang memberikan informasi struktural spesifik pada konten dokumen. Menggunakan nama tag khusus dengan Aspose.PDF untuk .NET memungkinkan Anda meningkatkan aksesibilitas dan pengorganisasian dokumen PDF, sehingga lebih mudah untuk dinavigasi, dipahami, dan berinteraksi.
+J: Nama tag kustom dalam dokumen PDF adalah label yang ditentukan pengguna yang menyediakan informasi struktural khusus untuk konten dokumen. Menggunakan nama tag kustom dengan Aspose.PDF for .NET memungkinkan Anda untuk meningkatkan aksesibilitas dan pengaturan dokumen PDF, sehingga lebih mudah dinavigasi, dipahami, dan digunakan.
 
-#### T: Bagaimana Aspose.PDF untuk .NET memfasilitasi penggunaan nama tag khusus dalam dokumen PDF?
+#### T: Bagaimana Aspose.PDF untuk .NET memfasilitasi penggunaan nama tag kustom dalam dokumen PDF?
 
-J: Aspose.PDF untuk .NET menyediakan serangkaian kelas dan metode yang memungkinkan Anda membuat, memanipulasi, dan menetapkan nama tag khusus ke elemen struktural berbeda dalam dokumen PDF. Ini membantu Anda menambahkan makna semantik dan konteks pada konten dokumen.
+J: Aspose.PDF untuk .NET menyediakan serangkaian kelas dan metode yang memungkinkan Anda membuat, memanipulasi, dan menetapkan nama tag khusus ke berbagai elemen struktural dalam dokumen PDF. Ini membantu Anda menambahkan makna semantik dan konteks ke konten dokumen.
 
-####  T: Peran apa yang dilakukan`taggedContent` object play in using custom tag names?
+####  T: Apa peran`taggedContent` object play in using custom tag names?
 
- J: Itu`taggedContent` objek, diperoleh dari dokumen itu`TaggedContent` properti, memungkinkan Anda bekerja dengan elemen terstruktur dalam dokumen PDF. Anda dapat membuat, mengatur, dan menetapkan nama tag khusus ke elemen ini, sehingga meningkatkan struktur semantik dokumen.
+ Sebuah:`taggedContent` objek, diperoleh dari dokumen`TaggedContent` properti, memungkinkan Anda bekerja dengan elemen terstruktur dalam dokumen PDF. Anda dapat membuat, mengatur, dan menetapkan nama tag khusus untuk elemen-elemen ini, yang akan meningkatkan struktur semantik dokumen.
 
 #### T: Bagaimana nama tag khusus meningkatkan aksesibilitas dan kegunaan dokumen?
 
-J: Nama tag khusus memberikan konteks dan semantik tambahan pada konten dokumen, sehingga meningkatkan aksesibilitasnya terhadap teknologi pendukung dan meningkatkan pengalaman pengguna secara keseluruhan. Pembaca layar dan perangkat bantu lainnya dapat menggunakan nama tag khusus untuk menyampaikan informasi bermakna kepada pengguna.
+J: Nama tag kustom memberikan konteks dan semantik tambahan pada konten dokumen, yang meningkatkan aksesibilitasnya untuk teknologi bantuan dan meningkatkan pengalaman pengguna secara keseluruhan. Pembaca layar dan perangkat bantuan lainnya dapat menggunakan nama tag kustom untuk menyampaikan informasi yang bermakna kepada pengguna.
 
-#### T: Dapatkah saya menggunakan nama tag khusus untuk berbagai jenis elemen struktur dalam dokumen PDF?
+#### T: Dapatkah saya menggunakan nama tag khusus untuk berbagai jenis elemen struktural dalam dokumen PDF?
 
-J: Ya, Anda dapat menetapkan nama tag khusus ke berbagai elemen struktur, termasuk paragraf, bentang, bagian, dan lainnya. Hal ini memungkinkan Anda untuk mengkategorikan dan memberi label pada berbagai bagian konten dokumen, sehingga menciptakan tata letak yang lebih terorganisir dan mudah dipahami.
+A: Ya, Anda dapat menetapkan nama tag khusus untuk berbagai elemen struktural, termasuk paragraf, rentang, bagian, dan banyak lagi. Ini memungkinkan Anda untuk mengkategorikan dan memberi label pada berbagai bagian konten dokumen, sehingga menciptakan tata letak yang lebih teratur dan mudah dipahami.
 
-#### T: Bagaimana cara menentukan dan menetapkan nama tag khusus ke elemen dalam dokumen PDF menggunakan Aspose.PDF untuk .NET?
+#### T: Bagaimana cara menentukan dan menetapkan nama tag khusus untuk elemen dalam dokumen PDF menggunakan Aspose.PDF untuk .NET?
 
- J: Anda dapat menentukan dan menetapkan nama tag khusus dengan membuat elemen struktur logis, seperti paragraf dan bentang, lalu menggunakan`SetTag` metode untuk menetapkan nama tag khusus yang diinginkan ke elemen ini. Contoh kode yang diberikan menunjukkan proses ini.
+ A: Anda dapat menentukan dan menetapkan nama tag khusus dengan membuat elemen struktur logis, seperti paragraf dan rentang, lalu menggunakan`SetTag` metode untuk menetapkan nama tag kustom yang diinginkan pada elemen-elemen ini. Contoh kode yang diberikan menunjukkan proses ini.
 
-#### T: Bagaimana cara memastikan bahwa nama tag khusus yang saya gunakan kompatibel dengan standar aksesibilitas dan praktik terbaik?
+#### T: Bagaimana cara memastikan bahwa nama tag kustom yang saya gunakan kompatibel dengan standar aksesibilitas dan praktik terbaik?
 
-J: Saat memilih nama tag khusus, sebaiknya ikuti panduan aksesibilitas dan gunakan label deskriptif dan bermakna yang mewakili konten secara akurat. Mengkonsultasikan standar dan dokumentasi aksesibilitas yang relevan dapat membantu Anda memilih nama tag khusus yang sesuai.
+J: Saat memilih nama tag kustom, sebaiknya ikuti panduan aksesibilitas dan gunakan label yang deskriptif dan bermakna yang secara akurat mewakili konten. Konsultasikan standar aksesibilitas dan dokumentasi yang relevan dapat membantu Anda memilih nama tag kustom yang tepat.
 
-#### T: Dapatkah saya menggabungkan penggunaan nama tag khusus dengan fitur manipulasi PDF lainnya yang ditawarkan oleh Aspose.PDF untuk .NET?
+#### T: Dapatkah saya menggabungkan penggunaan nama tag kustom dengan fitur manipulasi PDF lain yang ditawarkan oleh Aspose.PDF untuk .NET?
 
-J: Tentu saja! Anda dapat menggabungkan penggunaan nama tag kustom dengan fitur Aspose.PDF untuk .NET lainnya, seperti membuat tabel, menambahkan gambar, menyisipkan hyperlink, dan banyak lagi. Ini memungkinkan Anda membuat dokumen PDF yang kaya dan mudah diakses dengan konten terstruktur.
+A: Tentu saja! Anda dapat menggabungkan penggunaan nama tag kustom dengan fitur Aspose.PDF for .NET lainnya, seperti membuat tabel, menambahkan gambar, menyisipkan hyperlink, dan banyak lagi. Ini memungkinkan Anda membuat dokumen PDF yang kaya dan mudah diakses dengan konten terstruktur.
 
-#### T: Bagaimana cara memvalidasi efektivitas penggunaan nama tag khusus untuk aksesibilitas dan kegunaan dalam dokumen PDF saya?
+#### T: Bagaimana saya dapat memvalidasi efektivitas penggunaan nama tag khusus untuk aksesibilitas dan kegunaan dalam dokumen PDF saya?
 
-J: Anda dapat memvalidasi efektivitas nama tag khusus dengan menggunakan teknologi bantu seperti pembaca layar untuk menavigasi dan berinteraksi dengan dokumen PDF. Selain itu, Anda dapat menguji kepatuhan dokumen terhadap standar dan pedoman aksesibilitas menggunakan alat dan validator.
+J: Anda dapat memvalidasi keefektifan nama tag kustom dengan menggunakan teknologi bantuan seperti pembaca layar untuk menavigasi dan berinteraksi dengan dokumen PDF. Selain itu, Anda dapat menguji kepatuhan dokumen dengan standar dan pedoman aksesibilitas menggunakan alat dan validator.
 
-#### T: Bagaimana cara memperluas pengetahuan ini untuk membuat struktur dokumen yang lebih kompleks dan menggunakan nama tag khusus untuk skenario tingkat lanjut?
+#### T: Bagaimana saya dapat memperluas pengetahuan ini untuk membuat struktur dokumen yang lebih kompleks dan memanfaatkan nama tag khusus untuk skenario tingkat lanjut?
 
-J: Anda dapat memperluas pengetahuan ini dengan menjelajahi fitur tambahan Aspose.PDF untuk .NET, seperti membuat elemen struktur bertumpuk, menggunakan tag khusus untuk bidang formulir, menggabungkan elemen multimedia, dan banyak lagi. Dokumentasi dan contoh perpustakaan memberikan panduan untuk skenario tingkat lanjut ini.
+J: Anda dapat memperluas pengetahuan ini dengan menjelajahi fitur-fitur tambahan Aspose.PDF untuk .NET, seperti membuat elemen struktur bertingkat, menggunakan tag khusus untuk bidang formulir, menggabungkan elemen multimedia, dan banyak lagi. Dokumentasi dan contoh pustaka menyediakan panduan untuk skenario tingkat lanjut ini.

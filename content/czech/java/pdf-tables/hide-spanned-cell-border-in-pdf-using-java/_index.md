@@ -26,7 +26,7 @@ Aspose.PDF for Java je robustní knihovna, která vám umožňuje programově ma
 
 ### Krok 1: Nastavení vývojového prostředí
 
-Než se ponoříme do kódu, ujistěte se, že máte na místě potřebné nástroje. Budeš potřebovat:
+Než se ponoříme do kódu, ujistěte se, že máte na místě potřebné nástroje. Budete potřebovat:
 
 - Java Development Kit (JDK)
 - Aspose.PDF pro knihovnu Java
@@ -34,7 +34,7 @@ Než se ponoříme do kódu, ujistěte se, že máte na místě potřebné nást
 
 ### Krok 2: Vytvoření dokumentu PDF
 
- Začněte vytvořením nového projektu Java ve vašem IDE. Poté přidejte knihovnu Aspose.PDF for Java do závislostí vašeho projektu. Knihovnu si můžete stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+ Začněte vytvořením nového projektu Java ve vašem IDE. Poté přidejte knihovnu Aspose.PDF for Java do závislostí vašeho projektu. Knihovnu si můžete stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 Dále vytvořte novou třídu Java a začněme importem potřebných balíčků:
 
@@ -109,4 +109,4 @@ Ano, existují další knihovny jako Apache PDFBox a iText, které můžete proz
 
 ### Mohu skrýt okraje selektivně pro konkrétní buňky?
 
-Rozhodně! Logiku skrytí ohraničení můžete použít selektivně na základě struktury a návrhu tabulky.
+Jistě! Logiku skrytí ohraničení můžete použít selektivně na základě struktury a návrhu tabulky.

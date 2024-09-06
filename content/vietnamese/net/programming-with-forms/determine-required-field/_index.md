@@ -1,13 +1,13 @@
 ---
-title: Xác định trường bắt buộc ở dạng PDF
-linktitle: Xác định trường bắt buộc ở dạng PDF
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
+title: Xác định trường bắt buộc trong biểu mẫu PDF
+linktitle: Xác định trường bắt buộc trong biểu mẫu PDF
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
 description: Dễ dàng xác định các trường bắt buộc ở dạng PDF bằng Aspose.PDF cho .NET.
 type: docs
 weight: 60
 url: /vi/net/programming-with-forms/determine-required-field/
 ---
-Trong hướng dẫn này, chúng tôi sẽ chỉ cho bạn cách xác định các trường bắt buộc của biểu mẫu PDF bằng Aspose.PDF cho .NET. Chúng tôi sẽ giải thích từng bước về mã nguồn C# để hướng dẫn bạn thực hiện quy trình này.
+Trong hướng dẫn này, chúng tôi sẽ chỉ cho bạn cách xác định các trường bắt buộc của biểu mẫu PDF bằng Aspose.PDF cho .NET. Chúng tôi sẽ giải thích mã nguồn C# từng bước để hướng dẫn bạn thực hiện quy trình này.
 
 ## Bước 1: Chuẩn bị
 
@@ -17,7 +17,7 @@ Trước tiên, hãy đảm bảo bạn đã nhập các thư viện cần thi�
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Bước 2: Tải file PDF nguồn
+## Bước 2: Tải tệp PDF nguồn
 
 Tải tệp PDF nguồn:
 
@@ -25,9 +25,9 @@ Tải tệp PDF nguồn:
 Document pdf = new Document(dataDir + "DetermineRequiredField.pdf");
 ```
 
-## Bước 3: Khởi tạo đối tượng biểu mẫu
+## Bước 3: Khởi tạo đối tượng Form
 
-Khởi tạo một đối tượng Biểu mẫu cho PDF:
+Khởi tạo đối tượng Form cho PDF:
 
 ```csharp
 Aspose.Pdf.Facades.Form pdfForm = new Aspose.Pdf.Facades.Form(pdf);
@@ -35,7 +35,7 @@ Aspose.Pdf.Facades.Form pdfForm = new Aspose.Pdf.Facades.Form(pdf);
 
 ## Bước 4: Duyệt qua từng trường biểu mẫu
 
-Đi qua từng trường của biểu mẫu PDF:
+Duyệt qua từng trường của biểu mẫu PDF:
 
 ```csharp
 foreach(Field field in pdf.Form.Fields)
@@ -50,11 +50,11 @@ Console.WriteLine("The field " + field.FullName + " is required");
 }
 ```
 
-### Mã nguồn mẫu để xác định trường bắt buộc bằng Aspose.PDF cho .NET 
+### Mã nguồn mẫu để Xác định trường bắt buộc sử dụng Aspose.PDF cho .NET 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Tải tập tin PDF nguồn
+// Tải tệp PDF nguồn
 Document pdf = new Document(dataDir + "DetermineRequiredField.pdf");
 //Khởi tạo đối tượng Form
 Aspose.Pdf.Facades.Form pdfForm = new Aspose.Pdf.Facades.Form(pdf);
@@ -65,7 +65,7 @@ foreach (Field field in pdf.Form.Fields)
 	bool isRequired = pdfForm.IsRequiredField(field.FullName);
 	if (isRequired)
 	{
-		// In trường được đánh dấu là bắt buộc hay không
+		// In ra trường được đánh dấu là bắt buộc hay không
 		Console.WriteLine("The field named " + field.FullName + " is required");
 	}
 }
@@ -73,29 +73,29 @@ foreach (Field field in pdf.Form.Fields)
 
 ## Phần kết luận
 
-Trong hướng dẫn này, chúng ta đã tìm hiểu cách xác định các trường bắt buộc của biểu mẫu PDF bằng Aspose.PDF cho .NET. Bằng cách làm theo các bước này, bạn có thể dễ dàng kiểm tra trường nào được đánh dấu là bắt buộc trong biểu mẫu PDF của mình bằng Aspose.PDF.
+Trong hướng dẫn này, chúng ta đã học cách xác định các trường bắt buộc của biểu mẫu PDF bằng Aspose.PDF cho .NET. Bằng cách làm theo các bước này, bạn có thể dễ dàng kiểm tra những trường nào được đánh dấu là bắt buộc trong biểu mẫu PDF của mình bằng Aspose.PDF.
 
 ### Câu hỏi thường gặp
 
-#### Câu hỏi: Tôi có thể xác định xem trường biểu mẫu có cần thiết trong biểu mẫu PDF bằng Aspose.PDF cho .NET không?
+#### H: Tôi có thể xác định xem trường biểu mẫu có bắt buộc phải có trong biểu mẫu PDF hay không bằng cách sử dụng Aspose.PDF cho .NET không?
 
- Trả lời: Có, bạn có thể xác định xem trường biểu mẫu có cần thiết trong biểu mẫu PDF hay không bằng cách sử dụng Aspose.PDF for .NET. Như được hiển thị trong hướng dẫn, bạn có thể sử dụng`IsRequiredField` phương pháp của`Aspose.Pdf.Facades.Form` class để kiểm tra xem một trường cụ thể có được đánh dấu là bắt buộc hay không.
+ A: Có, bạn có thể xác định xem trường biểu mẫu có bắt buộc trong biểu mẫu PDF hay không bằng cách sử dụng Aspose.PDF cho .NET. Như đã trình bày trong hướng dẫn, bạn có thể sử dụng`IsRequiredField` phương pháp của`Aspose.Pdf.Facades.Form` lớp để kiểm tra xem trường cụ thể nào đó có được đánh dấu là bắt buộc hay không.
 
-####  Hỏi: Làm thế nào`IsRequiredField` method work in Aspose.PDF for .NET?
+####  Q: Làm thế nào để`IsRequiredField` method work in Aspose.PDF for .NET?
 
- Đáp: Cái`IsRequiredField` phương thức lấy tên đầy đủ của trường biểu mẫu làm tham số và trả về giá trị boolean cho biết trường đó có được đánh dấu là bắt buộc hay không. Nếu trường này là bắt buộc, phương thức sẽ trả về`true` ; nếu không, nó sẽ trả về`false`.
+ A: Cái`IsRequiredField` phương thức lấy tên đầy đủ của một trường biểu mẫu làm tham số của nó và trả về một giá trị boolean cho biết trường đó được đánh dấu là bắt buộc hay không. Nếu trường đó là bắt buộc, phương thức trả về`true` ; nếu không, nó sẽ trả về`false`.
 
-####  Hỏi: Điều gì xảy ra nếu tôi chuyển tên của một trường không tồn tại vào`IsRequiredField` method?
+####  Q: Điều gì xảy ra nếu tôi truyền tên của một trường không tồn tại cho`IsRequiredField` method?
 
-Đáp: Nếu bạn chuyển tên của một trường không tồn tại vào`IsRequiredField` phương thức, nó sẽ trở lại`false`, cho biết trường này không được đánh dấu là bắt buộc vì nó không tồn tại ở dạng PDF.
+A: Nếu bạn truyền tên của một trường không tồn tại vào`IsRequiredField` phương pháp, nó sẽ trả về`false`, cho biết trường này không được đánh dấu là bắt buộc vì nó không tồn tại trong biểu mẫu PDF.
 
-####  Hỏi: Tôi có thể sử dụng`IsRequiredField` method to determine if a field is required in an XFA form?
+####  Q: Tôi có thể sử dụng`IsRequiredField` method to determine if a field is required in an XFA form?
 
- Đ: Không, cái`IsRequiredField` được thiết kế để hoạt động với AcroForms trong tài liệu PDF, không phải với biểu mẫu XFA (Kiến trúc biểu mẫu XML). Các biểu mẫu XFA có các cơ chế khác nhau để xác định các yêu cầu của trường.
+ A: Không,`IsRequiredField` phương pháp này được thiết kế để hoạt động với AcroForms trong tài liệu PDF, không phải với biểu mẫu XFA (Kiến trúc biểu mẫu XML). Biểu mẫu XFA có các cơ chế khác nhau để xác định các yêu cầu về trường.
 
-#### Câu hỏi: Tôi có thể sửa đổi trạng thái bắt buộc của trường biểu mẫu bằng Aspose.PDF cho .NET không?
+#### H: Tôi có thể sửa đổi trạng thái bắt buộc của trường biểu mẫu bằng Aspose.PDF cho .NET không?
 
- Trả lời: Có, bạn có thể sửa đổi trạng thái bắt buộc của trường biểu mẫu bằng Aspose.PDF cho .NET. Các`IsRequired` tài sản của`Field` lớp cho phép bạn đặt hoặc thay đổi trạng thái bắt buộc của trường biểu mẫu. Ví dụ: để đánh dấu một trường là bắt buộc, bạn có thể sử dụng:
+ A: Có, bạn có thể sửa đổi trạng thái bắt buộc của trường biểu mẫu bằng Aspose.PDF cho .NET.`IsRequired` tài sản của`Field` lớp cho phép bạn thiết lập hoặc thay đổi trạng thái bắt buộc của một trường biểu mẫu. Ví dụ, để đánh dấu một trường là bắt buộc, bạn có thể sử dụng:
 
 ```csharp
 field.IsRequired = true;

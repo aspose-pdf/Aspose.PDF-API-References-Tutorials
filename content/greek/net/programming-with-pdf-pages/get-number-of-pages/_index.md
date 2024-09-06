@@ -44,12 +44,12 @@ System.Console.WriteLine("Number of pages: {0}", pdfDocument.Pages.Count);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Άνοιγμα εγγράφου
 Document pdfDocument = new Document(dataDir + "GetNumberofPages.pdf");
-// Λήψη αριθμού σελίδων
+// Λάβετε τον αριθμό σελίδων
 System.Console.WriteLine("Page Count : {0}", pdfDocument.Pages.Count);
 
 ```
 
-## συμπέρασμα
+## Σύναψη
 Σε αυτό το σεμινάριο, μάθαμε πώς να λαμβάνουμε τον αριθμό σελίδων ενός αρχείου PDF χρησιμοποιώντας το Aspose.PDF για .NET. Ακολουθώντας τα βήματα που περιγράφονται παραπάνω, μπορείτε εύκολα να εφαρμόσετε αυτήν τη λειτουργία στα δικά σας έργα. Μη διστάσετε να εξερευνήσετε περαιτέρω την τεκμηρίωση του Aspose.PDF για να ανακαλύψετε άλλες χρήσιμες λειτουργίες για την εργασία με αρχεία PDF.
 
 ### Συχνές ερωτήσεις για λήψη αριθμού σελίδων σε αρχείο PDF

@@ -1,26 +1,26 @@
 ---
 title: Thêm văn bản trong suốt vào tệp PDF
 linktitle: Thêm văn bản trong suốt vào tệp PDF
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
 description: Tìm hiểu cách thêm văn bản trong suốt vào tệp PDF bằng Aspose.PDF cho .NET.
 type: docs
 weight: 100
 url: /vi/net/programming-with-text/add-transparent-text/
 ---
-Hướng dẫn này sẽ hướng dẫn bạn quy trình thêm văn bản trong suốt vào tài liệu PDF bằng Aspose.PDF cho .NET. Mã nguồn C# được cung cấp thể hiện các bước cần thiết.
+Hướng dẫn này sẽ hướng dẫn bạn quy trình thêm văn bản trong suốt vào tài liệu PDF bằng Aspose.PDF cho .NET. Mã nguồn C# được cung cấp sẽ trình bày các bước cần thiết.
 
 ## Yêu cầu
-Trước khi bắt đầu, hãy đảm bảo rằng bạn có những điều sau:
+Trước khi bắt đầu, hãy đảm bảo bạn có những điều sau:
 
 - Visual Studio hoặc bất kỳ trình biên dịch C# nào khác được cài đặt trên máy của bạn.
-- Aspose.PDF cho thư viện .NET. Bạn có thể tải xuống từ trang web chính thức của Aspose hoặc sử dụng trình quản lý gói như NuGet để cài đặt nó.
+- Aspose.PDF cho thư viện .NET. Bạn có thể tải xuống từ trang web chính thức của Aspose hoặc sử dụng trình quản lý gói như NuGet để cài đặt.
 
 ## Bước 1: Thiết lập dự án
-1. Tạo một dự án C# mới trong môi trường phát triển ưa thích của bạn.
-2. Thêm tham chiếu đến thư viện Aspose.PDF for .NET.
+1. Tạo một dự án C# mới trong môi trường phát triển mà bạn thích.
+2. Thêm tham chiếu đến thư viện Aspose.PDF cho .NET.
 
-## Bước 2: Nhập các không gian tên bắt buộc
-Trong tệp mã mà bạn muốn thêm văn bản trong suốt, hãy thêm các lệnh sử dụng sau vào đầu tệp:
+## Bước 2: Nhập các không gian tên cần thiết
+Trong tệp mã mà bạn muốn thêm văn bản trong suốt, hãy thêm lệnh using sau vào đầu tệp:
 
 ```csharp
 using Aspose.Pdf;
@@ -28,16 +28,16 @@ using Aspose.Pdf.Drawing;
 ```
 
 ## Bước 3: Thiết lập thư mục tài liệu
- Trong mã, xác định dòng có nội dung`string dataDir = "YOUR DOCUMENT DIRECTORY";` và thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn đến thư mục nơi tài liệu của bạn được lưu trữ.
+ Trong mã, hãy xác định vị trí dòng ghi`string dataDir = "YOUR DOCUMENT DIRECTORY";` và thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn đến thư mục lưu trữ tài liệu của bạn.
 
-## Bước 4: Tạo phiên bản Tài liệu mới
+## Bước 4: Tạo một phiên bản Tài liệu mới
  Khởi tạo một cái mới`Document` đối tượng bằng cách thêm dòng mã sau:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Bước 5: Thêm trang vào tài liệu
+## Bước 5: Thêm một trang vào tài liệu
  Thêm một trang mới vào tài liệu bằng cách sử dụng`Add` phương pháp của`Pages`bộ sưu tập. Trong mã được cung cấp, trang mới được gán cho biến`page`.
 
 ```csharp
@@ -51,8 +51,8 @@ Aspose.Pdf.Page page = doc.Pages.Add();
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
 ```
 
-## Bước 7: Tạo hình chữ nhật trong suốt
- Tạo một hình chữ nhật với các kích thước cụ thể và đặt màu tô của nó thành màu trong suốt bằng cách sử dụng`Color.FromRgb` phương pháp.
+## Bước 7: Tạo một hình chữ nhật có độ trong suốt
+ Tạo một hình chữ nhật có kích thước cụ thể và đặt màu tô của nó thành màu trong suốt bằng cách sử dụng`Color.FromRgb` phương pháp.
 
 ```csharp
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 400, 400);
@@ -61,21 +61,21 @@ canvas.Shapes.Add(rect);
 ```
 
 ## Bước 8: Thêm đối tượng Graph vào trang
- Thêm`Graph` phản đối việc thu thập đoạn văn của trang.
+ Thêm vào`Graph` phản đối việc thu thập đoạn văn của trang.
 
 ```csharp
 page.Paragraphs.Add(canvas);
 ```
 
-## Bước 9: Thiết lập vị trí cho đối tượng Graph
- Đặt`IsChangePosition` tài sản của`Graph` chủ đề`false` để ngăn nó thay đổi vị trí.
+## Bước 9: Đặt vị trí cho đối tượng Graph
+ Đặt`IsChangePosition` tài sản của`Graph` phản đối`false` để ngăn không cho nó thay đổi vị trí.
 
 ```csharp
 canvas. IsChangePosition = false;
 ```
 
 ## Bước 10: Tạo TextFragment có độ trong suốt
- Tạo một`TextFragment` đối tượng và đặt nội dung của nó thành văn bản mong muốn. Đặt`ForegroundColor` tài sản của`TextState` sang màu có độ trong suốt bằng cách sử dụng`Color.FromArgb` phương pháp.
+ Tạo một`TextFragment` đối tượng và đặt nội dung của nó thành văn bản mong muốn. Đặt`ForegroundColor` tài sản của`TextState` đến một màu sắc có độ trong suốt bằng cách sử dụng`Color.FromArgb` phương pháp.
 
 ```csharp
 TextFragment text = new TextFragment("transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text ");
@@ -93,33 +93,33 @@ doc.Save(dataDir);
 Console.WriteLine("\nTransparent text added successfully.\nFile saved at " + dataDir);
 ```
 
-### Mã nguồn mẫu để Thêm văn bản trong suốt bằng Aspose.PDF cho .NET 
+### Mã nguồn mẫu để Thêm Văn bản Trong suốt bằng Aspose.PDF cho .NET 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Tạo phiên bản tài liệu
+// Tạo phiên bản Tài liệu
 Document doc = new Document();
-// Tạo bộ sưu tập trang này sang trang khác của tệp PDF
+// Tạo bộ sưu tập trang thành trang của tệp PDF
 Aspose.Pdf.Page page = doc.Pages.Add();
-// Tạo đối tượng đồ thị
+// Tạo đối tượng Graph
 Aspose.Pdf.Drawing.Graph canvas = new Aspose.Pdf.Drawing.Graph(100, 400);
-// Tạo thể hiện hình chữ nhật với các kích thước nhất định
+// Tạo phiên bản hình chữ nhật có kích thước nhất định
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 400, 400);
 // Tạo đối tượng màu từ kênh màu Alpha
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
-// Thêm hình chữ nhật vào bộ sưu tập hình của đối tượng Graph
+// Thêm hình chữ nhật vào bộ sưu tập hình dạng của đối tượng Graph
 canvas.Shapes.Add(rect);
-//Thêm đối tượng đồ thị vào bộ sưu tập đoạn văn của đối tượng trang
+//Thêm đối tượng đồ thị vào tập hợp đoạn văn của đối tượng trang
 page.Paragraphs.Add(canvas);
-// Đặt giá trị để không thay đổi vị trí cho đối tượng biểu đồ
+// Đặt giá trị không thay đổi vị trí cho đối tượng đồ thị
 canvas.IsChangePosition = false;
 // Tạo phiên bản TextFragment với giá trị mẫu
 TextFragment text = new TextFragment("transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text ");
 // Tạo đối tượng màu từ kênh Alpha
 Aspose.Pdf.Color color = Aspose.Pdf.Color.FromArgb(30, 0, 255, 0);
-// Đặt thông tin màu cho ví dụ văn bản
+// Đặt thông tin màu cho trường hợp văn bản
 text.TextState.ForegroundColor = color;
-// Thêm văn bản vào bộ sưu tập đoạn văn của phiên bản trang
+// Thêm văn bản vào bộ sưu tập đoạn văn của trang
 page.Paragraphs.Add(text);
 dataDir = dataDir + "AddTransparentText_out.pdf";
 doc.Save(dataDir);
@@ -128,59 +128,59 @@ Console.WriteLine("\nTransparent text added successfully.\nFile saved at " + dat
 
 
 ## Phần kết luận
-Bạn đã thêm thành công văn bản trong suốt vào tài liệu PDF của mình bằng Aspose.PDF for .NET. Bây giờ có thể tìm thấy tệp PDF kết quả tại đường dẫn tệp đầu ra được chỉ định.
+Bạn đã thêm thành công văn bản trong suốt vào tài liệu PDF của mình bằng Aspose.PDF cho .NET. Tệp PDF kết quả hiện có thể được tìm thấy tại đường dẫn tệp đầu ra đã chỉ định.
 
 ### Câu hỏi thường gặp
 
-#### Hỏi: Trọng tâm của hướng dẫn này là gì?
+#### H: Trọng tâm của hướng dẫn này là gì?
 
-Đáp: Hướng dẫn này tập trung vào việc thêm văn bản trong suốt vào tài liệu PDF bằng thư viện Aspose.PDF cho .NET. Mã nguồn C# được cung cấp thể hiện các bước cần thiết để đạt được hiệu ứng này.
+A: Hướng dẫn này tập trung vào việc thêm văn bản trong suốt vào tài liệu PDF bằng thư viện Aspose.PDF cho .NET. Mã nguồn C# được cung cấp sẽ trình bày các bước cần thiết để đạt được hiệu ứng này.
 
-#### Câu hỏi: Những không gian tên nào cần được nhập cho hướng dẫn này?
+#### H: Những không gian tên nào cần được nhập cho hướng dẫn này?
 
-Đáp: Trong tệp mã nơi bạn muốn thêm văn bản trong suốt, hãy nhập các vùng tên sau vào đầu tệp:
+A: Trong tệp mã mà bạn muốn thêm văn bản trong suốt, hãy nhập các không gian tên sau vào đầu tệp:
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Drawing;
 ```
 
-#### Câu hỏi: Làm cách nào để chỉ định thư mục tài liệu?
+#### H: Làm thế nào để chỉ định thư mục tài liệu?
 
  A: Trong mã, tìm dòng`string dataDir = "YOUR DOCUMENT DIRECTORY";` và thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế đến thư mục tài liệu của bạn.
 
-#### Câu hỏi: Làm cách nào để tạo một phiên bản Tài liệu mới?
+#### H: Làm thế nào để tạo một phiên bản Tài liệu mới?
 
- Đáp: Ở Bước 4, bạn sẽ khởi tạo một`Document` đối tượng bằng cách sử dụng mã được cung cấp.
+ A: Ở Bước 4, bạn sẽ tạo một phiên bản mới`Document` đối tượng sử dụng mã được cung cấp.
 
-#### Hỏi: Làm cách nào để thêm một trang vào tài liệu?
+#### H: Làm thế nào để thêm trang vào tài liệu?
 
- Đáp: Ở Bước 5, bạn sẽ thêm một trang mới vào tài liệu bằng cách sử dụng`Add` phương pháp của`Pages` bộ sưu tập.
+ A: Ở Bước 5, bạn sẽ thêm một trang mới vào tài liệu bằng cách sử dụng`Add` phương pháp của`Pages` bộ sưu tập.
 
-#### Câu hỏi: Làm cách nào để tạo một đối tượng Đồ thị?
+#### H: Làm thế nào để tạo một đối tượng Graph?
 
- Đáp: Ở Bước 6, bạn sẽ tạo một`Graph` đối tượng có chiều rộng và chiều cao cụ thể.
+ A: Ở Bước 6, bạn sẽ tạo một`Graph` đối tượng có chiều rộng và chiều cao cụ thể.
 
-#### Câu hỏi: Làm cách nào để tạo hình chữ nhật có độ trong suốt?
+#### H: Làm thế nào để tạo hình chữ nhật có độ trong suốt?
 
-Đáp: Ở Bước 7, bạn sẽ tạo một hình chữ nhật với các kích thước cụ thể và đặt màu tô của nó thành màu trong suốt bằng cách sử dụng`Color.FromRgb` phương pháp.
+A: Ở Bước 7, bạn sẽ tạo một hình chữ nhật có kích thước cụ thể và đặt màu tô của nó thành màu trong suốt bằng cách sử dụng`Color.FromRgb` phương pháp.
 
-#### Câu hỏi: Làm cách nào để thêm đối tượng Biểu đồ vào trang?
+#### H: Làm thế nào để thêm đối tượng Graph vào trang?
 
- Đáp: Ở Bước 8, bạn sẽ thêm`Graph` phản đối việc thu thập đoạn văn của trang.
+ A: Ở Bước 8, bạn sẽ thêm`Graph` phản đối việc thu thập đoạn văn của trang.
 
-#### Câu hỏi: Làm cách nào để đặt vị trí cho đối tượng Biểu đồ?
+#### H: Làm thế nào để thiết lập vị trí cho đối tượng Đồ thị?
 
- Đáp: Ở Bước 9, bạn sẽ đặt`IsChangePosition` tài sản của`Graph` chủ đề`false` để ngăn nó thay đổi vị trí.
+ A: Ở Bước 9, bạn sẽ thiết lập`IsChangePosition` tài sản của`Graph` phản đối`false` để ngăn không cho nó thay đổi vị trí.
 
-#### Câu hỏi: Làm cách nào để tạo TextFragment có độ trong suốt?
+#### H: Làm thế nào để tạo một TextFragment có tính trong suốt?
 
- Đáp: Ở Bước 10, bạn sẽ tạo một`TextFragment` đối tượng và thiết lập nội dung của nó và`ForegroundColor` tài sản để đạt được văn bản trong suốt.
+ A: Ở Bước 10, bạn sẽ tạo một`TextFragment` đối tượng và thiết lập nội dung của nó và`ForegroundColor` thuộc tính để đạt được văn bản trong suốt.
 
-#### Hỏi: Làm cách nào để lưu tài liệu PDF?
+#### H: Làm thế nào để lưu tài liệu PDF?
 
- Đáp: Ở Bước 11, bạn sẽ lưu tài liệu PDF bằng cách sử dụng`Save` phương pháp của`Document` sự vật.
+ A: Ở Bước 11, bạn sẽ lưu tài liệu PDF bằng cách sử dụng`Save` phương pháp của`Document` sự vật.
 
-#### Hỏi: Điểm chính của hướng dẫn này là gì?
+#### H: Nội dung chính rút ra từ hướng dẫn này là gì?
 
-Đáp: Bằng cách làm theo hướng dẫn này, bạn đã học cách thêm văn bản trong suốt vào tài liệu PDF bằng Aspose.PDF cho .NET. Điều này có thể hữu ích để tạo các tài liệu PDF sáng tạo và hấp dẫn về mặt hình ảnh.
+A: Bằng cách làm theo hướng dẫn này, bạn đã học cách thêm văn bản trong suốt vào tài liệu PDF bằng Aspose.PDF cho .NET. Điều này có thể hữu ích để tạo tài liệu PDF hấp dẫn và sáng tạo.

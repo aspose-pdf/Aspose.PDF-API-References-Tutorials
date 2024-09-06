@@ -10,7 +10,7 @@ url: /zh-hant/java/pdf-document-links/add-hyperlink-in-pdf-file-using-java/
 
 ## 使用Java在PDF檔案中新增超連結簡介
 
-PDF 文件中的超連結是增強文件互動性和可用性的重要功能。透過 Java 和 Aspose.PDF for Java 等函式庫，您可以輕鬆地在 PDF 檔案中新增超連結。本逐步指南將引導您完成整個過程，並提供程式碼範例和解釋。
+PDF 文件中的超連結是增強文件互動性和可用性的重要功能。透過 Java 和 Aspose.PDF for Java 等函式庫，您可以輕鬆地在 PDF 檔案中新增超連結。本逐步指南將引導您完成整個過程，並提供程式碼範例和說明。
 
 ## 了解 PDF 中的超鏈接
 

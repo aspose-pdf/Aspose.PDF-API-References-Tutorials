@@ -18,7 +18,7 @@ Než začneme, ujistěte se, že máte splněny následující předpoklady:
 
 - Java Development Kit (JDK) nainstalován
 - Integrované vývojové prostředí (IDE) pro Javu, jako je IntelliJ IDEA nebo Eclipse
--  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF pro knihovnu Java. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Co je Aspose.PDF pro Java?
 
@@ -30,7 +30,7 @@ Obrazová razítka v souborech PDF jsou grafické prvky, které lze přidat do d
 
 ## Příprava vašeho vývojového prostředí
 
- Než se vrhneme na kód, musíte nastavit vývojové prostředí. Ujistěte se, že máte v projektu Java nainstalovanou a nakonfigurovanou knihovnu Aspose.PDF for Java. Knihovnu si můžete stáhnout z[tady](https://releases.aspose.com/pdf/java/).
+ Než se vrhneme na kód, musíte nastavit vývojové prostředí. Ujistěte se, že máte v projektu Java nainstalovanou a nakonfigurovanou knihovnu Aspose.PDF for Java. Knihovnu si můžete stáhnout z[zde](https://releases.aspose.com/pdf/java/).
 
 ## Vytvoření dokumentu PDF
 
@@ -101,8 +101,8 @@ Ano, Aspose.PDF for Java je vhodný pro komerční i osobní použití. Nabízí
 
 ### Mohu přidat textová razítka spolu s obrazovými razítky?
 
-Rozhodně! Vedle obrazových razítek můžete přidat textová razítka a poskytnout tak další informace nebo štítky v dokumentech PDF.
+Jistě! Vedle obrazových razítek můžete přidat textová razítka a poskytnout tak další informace nebo štítky v dokumentech PDF.
 
 ### Kde najdu další příklady a dokumentaci k Aspose.PDF pro Javu?
 
- Úplnou dokumentaci a příklady můžete najít na stránce dokumentace Aspose.PDF for Java:[tady](https://reference.aspose.com/pdf/java/).
+ Úplnou dokumentaci a příklady můžete najít na stránce dokumentace Aspose.PDF for Java:[zde](https://reference.aspose.com/pdf/java/).

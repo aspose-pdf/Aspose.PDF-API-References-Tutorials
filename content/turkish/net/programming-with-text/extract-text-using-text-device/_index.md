@@ -1,26 +1,26 @@
 ---
-title: Metin Aygıtını Kullanarak Metni Çıkarma
-linktitle: Metin Aygıtını Kullanarak Metni Çıkarma
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET'teki Metin Aygıtını kullanarak bir PDF belgesinden nasıl metin çıkaracağınızı öğrenin.
+title: Metin Aygıtını Kullanarak Metni Çıkarın
+linktitle: Metin Aygıtını Kullanarak Metni Çıkarın
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET'teki Metin Aygıtını kullanarak bir PDF belgesinden metnin nasıl çıkarılacağını öğrenin.
 type: docs
 weight: 210
 url: /tr/net/programming-with-text/extract-text-using-text-device/
 ---
-Bu eğitim, Aspose.PDF for .NET'teki Metin Aygıtını kullanarak bir PDF belgesinden metin çıkarma sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları gösterir.
+Bu eğitim, .NET için Aspose.PDF'deki Metin Aygıtını kullanarak bir PDF belgesinden metin çıkarma sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları göstermektedir.
 
 ## Gereksinimler
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Makinenizde kurulu Visual Studio veya başka herhangi bir C# derleyicisi.
-- Aspose.PDF for .NET kitaplığı. Resmi Aspose web sitesinden indirebilir veya yüklemek için NuGet gibi bir paket yöneticisi kullanabilirsiniz.
+- Bilgisayarınızda Visual Studio veya herhangi bir C# derleyicisi yüklü olmalıdır.
+- Aspose.PDF for .NET kütüphanesi. Resmi Aspose web sitesinden indirebilir veya NuGet gibi bir paket yöneticisi kullanarak kurabilirsiniz.
 
-## 1. Adım: Projeyi ayarlayın
+## Adım 1: Projeyi kurun
 1. Tercih ettiğiniz geliştirme ortamında yeni bir C# projesi oluşturun.
-2. Aspose.PDF for .NET kitaplığına bir referans ekleyin.
+2. .NET için Aspose.PDF kitaplığına bir referans ekleyin.
 
-## 2. Adım: Gerekli ad alanlarını içe aktarın
-Metni çıkarmak istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki kullanma yönergelerini ekleyin:
+## Adım 2: Gerekli ad alanlarını içe aktarın
+Metni çıkarmak istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki using yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
@@ -29,18 +29,18 @@ using System.IO;
 using System.Text;
 ```
 
-## 3. Adım: Belge dizinini ayarlayın
- Kodda yazan satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belgelerinizin saklandığı dizinin yolu ile birlikte.
+## Adım 3: Belge dizinini ayarlayın
+ Kodda şu satırı bulun:`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` Belgelerinizin saklandığı dizinin yolunu içeren.
 
-## 4. Adım: PDF belgesini açın
- Mevcut bir PDF belgesini kullanarak açın.`Document`yapıcı ve yolu giriş PDF dosyasına geçirme.
+## Adım 4: PDF belgesini açın
+ Mevcut bir PDF belgesini şu şekilde açın:`Document` yapıcı ve giriş PDF dosyasına giden yolu geçirme.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
 ## Adım 5: Metin Aygıtını kullanarak metni çıkarın
- Oluşturmak`StringBuilder` Çıkarılan metni tutacak nesne. Belgenin her sayfasını yineleyin ve bir`TextDevice` Metni her sayfadan çıkarmak için.
+ Bir tane oluştur`StringBuilder` Çıkarılan metni tutmak için nesne. Belgenin her sayfasını yineleyin ve bir`TextDevice` her sayfadan metni çıkarmak için.
 
 ```csharp
 StringBuilder builder = new StringBuilder();
@@ -60,17 +60,17 @@ builder. Append(extractedText);
 }
 ```
 
-## 6. Adım: Çıkarılan metni kaydedin
- Çıktı dosyası yolunu belirtin ve çıkartılan metni kullanarak bir metin dosyasına kaydedin.`File.WriteAllText` yöntem.
+## Adım 6: Çıkarılan metni kaydedin
+ Çıktı dosyası yolunu belirtin ve çıkarılan metni bir metin dosyasına kaydedin`File.WriteAllText` Yöntem.
 
 ```csharp
 dataDir = dataDir + "input_Text_Extracted_out.txt";
 File.WriteAllText(dataDir, builder.ToString());
 ```
 
-### Aspose.PDF for .NET kullanarak Metin Aygıtını Kullanarak Metin Çıkarma için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Metin Aygıtı Kullanarak Metin Çıkarma için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Belgeyi aç
 Document pdfDocument = new Document( dataDir + "input.pdf");
@@ -81,7 +81,7 @@ foreach (Page pdfPage in pdfDocument.Pages)
 {
 	using (MemoryStream textStream = new MemoryStream())
 	{
-		// Metin cihazı oluştur
+		// Metin aygıtı oluştur
 		TextDevice textDevice = new TextDevice();
 		// Metin çıkarma seçeneklerini ayarlayın - metin çıkarma modunu ayarlayın (Ham veya Saf)
 		TextExtractionOptions textExtOptions = new
@@ -93,7 +93,7 @@ foreach (Page pdfPage in pdfDocument.Pages)
 		textDevice.Process(pdfDocument.Pages[1], textStream);
 		// Bellek akışını kapat
 		textStream.Close();
-		// Bellek akışından metin alın
+		// Bellek akışından metin al
 		extractedText = Encoding.Unicode.GetString(textStream.ToArray());
 	}
 	builder.Append(extractedText);
@@ -107,15 +107,15 @@ Console.WriteLine("\nText extracted successfully using text device from page of 
 ## Çözüm
 Aspose.PDF for .NET'teki Metin Aygıtını kullanarak bir PDF belgesinden metni başarıyla çıkardınız. Çıkarılan metin belirtilen çıktı dosyasına kaydedildi.
 
-### SSS'ler
+### SSS
 
 #### S: Bu eğitimin amacı nedir?
 
-C: Bu eğitim, Aspose.PDF for .NET'teki Metin Aygıtı özelliğini kullanarak bir PDF belgesinden metin çıkarma konusunda rehberlik sağlar. Ekteki C# kaynak kodu, bu görevi gerçekleştirmek için gerekli adımları gösterir.
+A: Bu eğitim, .NET için Aspose.PDF'deki Metin Aygıtı özelliğini kullanarak bir PDF belgesinden metin çıkarma konusunda rehberlik sağlar. Eşlik eden C# kaynak kodu, bu görevi başarmak için gerekli adımları gösterir.
 
 #### S: Hangi ad alanlarını içe aktarmalıyım?
 
-C: Metni çıkarmayı planladığınız kod dosyasında, dosyanın başına aşağıdaki kullanma yönergelerini ekleyin:
+A: Metni çıkarmayı planladığınız kod dosyasında, dosyanın başına aşağıdaki using yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
@@ -126,20 +126,20 @@ using System.Text;
 
 #### S: Belge dizinini nasıl belirlerim?
 
- C: Kodda şunu yazan satırı bulun:`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
+ A: Kodda şunu söyleyen satırı bulun:`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belge dizininize giden gerçek yol ile.
 
-#### S: Mevcut bir PDF belgesini nasıl açarım?
+#### S: Mevcut bir PDF belgesini nasıl açabilirim?
 
- C: 4. Adımda, mevcut bir PDF belgesini aşağıdaki komutu kullanarak açacaksınız:`Document` yapıcı ve giriş PDF dosyasının yolunu sağlama.
+ A: 4. Adımda, mevcut bir PDF belgesini kullanarak açacaksınız.`Document` yapıcı ve giriş PDF dosyasına giden yolu sağlama.
 
-#### S: Metin Aygıtını kullanarak nasıl metin ayıklayabilirim?
+#### S: Metin Aygıtını kullanarak metni nasıl çıkarabilirim?
 
- C: Adım 5, bir`StringBuilder` Çıkarılan metni tutacak nesne. Daha sonra belgenin her sayfasını yineleyecek ve bir`TextDevice` ile birlikte`TextExtractionOptions` Her sayfadan metin çıkarmak için.
+ A: 5. Adım, bir`StringBuilder` Çıkarılan metni tutacak nesne. Daha sonra belgenin her sayfasında yineleme yapacaksınız ve bir`TextDevice` ile birlikte`TextExtractionOptions` her sayfadan metin çıkarmak için.
 
 #### S: Çıkarılan metni bir dosyaya nasıl kaydederim?
 
- C: 6. Adımda çıktı dosyasının yolunu belirleyecek ve`File.WriteAllText`Çıkarılan metni bir metin dosyasına kaydetme yöntemi.
+ A: 6. Adımda çıktı dosyası yolunu belirtecek ve`File.WriteAllText`Çıkarılan metni bir metin dosyasına kaydetme yöntemi.
 
-#### S: Bu eğitimden çıkarılacak önemli sonuç nedir?
+#### S: Bu eğitimden çıkarılacak en önemli ders nedir?
 
-C: Bu eğitimi takip ederek Aspose.PDF for .NET'teki Metin Aygıtı özelliğinden yararlanarak bir PDF belgesinden metin çıkarmayı öğrendiniz. Çıkarılan metin, belirtilen çıktı dosyasına kaydedilerek, çıkarılan içeriği gerektiği gibi değiştirmenize ve kullanmanıza olanak tanır.
+A: Bu öğreticiyi takip ederek, .NET için Aspose.PDF'deki Metin Aygıtı özelliğinden yararlanarak bir PDF belgesinden metin çıkarmayı öğrendiniz. Çıkarılan metin, belirtilen bir çıktı dosyasına kaydedildi ve bu sayede çıkarılan içeriği gerektiği gibi düzenleyip kullanabilirsiniz.

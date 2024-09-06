@@ -31,7 +31,7 @@ Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(fs);
 
 ## Krok 2: Otevřete pole TextBoxField
 
- Abychom mohli vyplnit pole formuláře arabským textem, musíme mít přístup ke konkrétnímu`TextBoxField` pole, které chceme vyplnit. V tomto příkladu předpokládáme, že název pole je "textbox1". Můžeme získat odkaz na pole pomocí`Form` vlastnictvím`pdfDocument` objekt:
+ Abychom mohli vyplnit pole formuláře arabským textem, musíme mít přístup ke konkrétnímu`TextBoxField` pole, které chceme vyplnit. V tomto příkladu předpokládáme, že název pole je "textbox1". Můžeme získat odkaz na pole pomocí`Form` majetek z`pdfDocument` objekt:
 
 ```csharp
 TextBoxField txtFld = pdfDocument.Form["textbox1"] as TextBoxField;
@@ -64,9 +64,9 @@ Console.WriteLine("\nArabic text successfully filled in the form field.\nFile sa
 ```csharp
 // Cesta k adresáři dokumentů.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Načíst obsah formuláře PDF
+//Načíst obsah formuláře PDF
 FileStream fs = new FileStream(dataDir + "FillFormField.pdf", FileMode.Open, FileAccess.ReadWrite);
-//Okamžitě vytvořit instanci dokumentu pomocí souboru formuláře pro uložení proudu
+// Okamžitě vytvořit instanci dokumentu pomocí souboru formuláře pro uložení proudu
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(fs);
 // Získejte referecne pro particuarl TextBoxField
 TextBoxField txtFld = pdfDocument.Form["textbox1"] as TextBoxField;
@@ -86,7 +86,7 @@ V tomto tutoriálu jsme prozkoumali, jak naplnit pole formuláře PDF arabským 
 
 #### Otázka: Mohu pomocí Aspose.PDF for .NET vyplnit jiné typy polí formuláře arabským textem?
 
- Odpověď: Ano, můžete použít Aspose.PDF pro .NET k vyplnění jiných typů polí formulářů arabským textem, jako jsou zaškrtávací políčka, přepínače, pole se seznamem a další. Postup je podobný jako při plnění a`TextBoxField` . Jednoduše přejděte do konkrétního pole pomocí jeho názvu nebo ID a nastavte jej`Value` vlastnost na požadovaný arabský text.
+ Odpověď: Ano, můžete použít Aspose.PDF pro .NET k vyplnění jiných typů polí formulářů arabským textem, jako jsou zaškrtávací políčka, přepínače, pole se seznamem a další. Postup je podobný jako při plnění a`TextBoxField` . Jednoduše přejděte do konkrétního pole pomocí jeho názvu nebo ID a nastavte jej`Value`vlastnost na požadovaný arabský text.
 
 #### Otázka: Je Aspose.PDF for .NET kompatibilní s arabským textem a psaním zprava doleva (RTL)?
 

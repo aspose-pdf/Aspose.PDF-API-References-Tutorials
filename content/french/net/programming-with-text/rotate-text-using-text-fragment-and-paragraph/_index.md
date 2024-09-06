@@ -1,22 +1,22 @@
 ---
 title: Faire pivoter le texte à l'aide d'un fragment de texte et d'un paragraphe
 linktitle: Faire pivoter le texte à l'aide d'un fragment de texte et d'un paragraphe
-second_title: Aspose.PDF pour la référence de l'API .NET
+second_title: Référence de l'API Aspose.PDF pour .NET
 description: Découvrez comment faire pivoter du texte à l'aide d'un fragment de texte et d'un paragraphe dans un document PDF à l'aide d'Aspose.PDF pour .NET.
 type: docs
 weight: 400
 url: /fr/net/programming-with-text/rotate-text-using-text-fragment-and-paragraph/
 ---
-Ce didacticiel explique comment utiliser Aspose.PDF pour .NET pour faire pivoter du texte à l'aide d'un fragment de texte et d'un paragraphe. Le code source C# fourni illustre le processus étape par étape.
+Ce tutoriel explique comment utiliser Aspose.PDF pour .NET pour faire pivoter du texte à l'aide d'un fragment de texte et d'un paragraphe. Le code source C# fourni illustre le processus étape par étape.
 
-## Conditions préalables
+## Prérequis
 
-Avant de poursuivre le didacticiel, assurez-vous d'avoir les éléments suivants :
+Avant de poursuivre le didacticiel, assurez-vous de disposer des éléments suivants :
 
 - Connaissance de base du langage de programmation C#.
-- Aspose.PDF pour la bibliothèque .NET installée. Vous pouvez l'obtenir sur le site Web Aspose ou utiliser NuGet pour l'installer dans votre projet.
+- Bibliothèque Aspose.PDF pour .NET installée. Vous pouvez l'obtenir sur le site Web d'Aspose ou utiliser NuGet pour l'installer dans votre projet.
 
-## Étape 1 : Configurer le projet
+## Étape 1 : Configurer le projet
 
 Commencez par créer un nouveau projet C# dans votre environnement de développement intégré (IDE) préféré et ajoutez une référence à la bibliothèque Aspose.PDF pour .NET.
 
@@ -31,7 +31,7 @@ using Aspose.Pdf.Text;
 
 ## Étape 3 : Créer le document PDF
 
- Initialisez le`Document` objet pour créer un nouveau document PDF :
+ Initialiser le`Document` objet pour créer un nouveau document PDF :
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -40,17 +40,17 @@ Document pdfDocument = new Document();
 
  Assurez-vous de remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin réel vers votre répertoire de documents.
 
-## Étape 4 : Ajouter une page
+## Étape 4 : Ajouter une page
 
- Obtenez une page particulière du document en utilisant le`Pages.Add()` méthode:
+ Obtenir une page particulière du document à l'aide de la`Pages.Add()` méthode:
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
-## Étape 5 : Créer des fragments de texte
+## Étape 5 : Créer des fragments de texte
 
- Créer plusieurs`TextFragment` objets, définissez leur texte et leurs propriétés, et spécifiez l'angle de rotation :
+ Créer plusieurs`TextFragment` objets, définissez leur texte et leurs propriétés et spécifiez l'angle de rotation :
 
 ```csharp
 TextFragment textFragment1 = new TextFragment("main text");
@@ -68,9 +68,9 @@ textFragment3.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 textFragment3.TextState.Rotation = 270;
 ```
 
-Ajustez le texte, l'angle de rotation et d'autres propriétés comme vous le souhaitez.
+Ajustez le texte, l’angle de rotation et d’autres propriétés comme vous le souhaitez.
 
-## Étape 6 : Ajouter des fragments de texte à la page
+## Étape 6 : ajouter des fragments de texte à la page
 
  Ajoutez les fragments de texte créés à la page en les ajoutant au`Paragraphs` collection:
 
@@ -80,9 +80,9 @@ pdfPage.Paragraphs.Add(textFragment2);
 pdfPage.Paragraphs.Add(textFragment3);
 ```
 
-## Étape 7 : Enregistrez le document PDF
+## Étape 7 : Enregistrez le document PDF
 
- Enregistrez le document PDF modifié dans un fichier à l'aide du`Save` méthode:
+ Enregistrez le document PDF modifié dans un fichier à l'aide de la commande`Save` méthode:
 
 ```csharp
 pdfDocument.Save(dataDir + "TextFragmentTests_Rotated3_out.pdf");
@@ -125,40 +125,40 @@ pdfDocument.Save(dataDir + "TextFragmentTests_Rotated3_out.pdf");
 
 ## Conclusion
 
-Toutes nos félicitations! Vous avez appris avec succès comment faire pivoter du texte à l'aide de fragments de texte et de paragraphes dans un document PDF à l'aide d'Aspose.PDF pour .NET. Ce didacticiel fournit un guide étape par étape, depuis la création du document jusqu'à l'enregistrement de la version modifiée. Vous pouvez désormais intégrer ce code dans vos propres projets C# pour manipuler la rotation du texte dans les fichiers PDF.
+Félicitations ! Vous avez appris avec succès à faire pivoter du texte à l'aide de fragments de texte et de paragraphes dans un document PDF à l'aide d'Aspose.PDF pour .NET. Ce didacticiel fournit un guide étape par étape, de la création du document à l'enregistrement de la version modifiée. Vous pouvez désormais incorporer ce code dans vos propres projets C# pour manipuler la rotation du texte dans les fichiers PDF.
 
 ### FAQ
 
-#### Q : Quel est l'objectif du didacticiel « Faire pivoter le texte à l'aide d'un fragment de texte et d'un paragraphe » ?
+#### Q : Quel est le but du didacticiel « Faire pivoter le texte à l’aide d’un fragment de texte et d’un paragraphe » ?
 
-R : Le didacticiel « Faire pivoter le texte à l'aide de fragments de texte et de paragraphes » vise à vous guider tout au long du processus d'utilisation de la bibliothèque Aspose.PDF pour .NET afin de faire pivoter le texte à l'aide de fragments de texte et de paragraphes dans un document PDF. Le didacticiel fournit des instructions étape par étape et un exemple de code pour réaliser cette fonctionnalité.
+R : Le didacticiel « Faire pivoter du texte à l'aide d'un fragment de texte et d'un paragraphe » vise à vous guider dans le processus d'utilisation de la bibliothèque Aspose.PDF pour .NET pour faire pivoter du texte à l'aide de fragments de texte et de paragraphes dans un document PDF. Le didacticiel fournit des instructions étape par étape et un exemple de code pour réaliser cette fonctionnalité.
 
-#### Q : En quoi ce didacticiel diffère-t-il des didacticiels précédents sur la rotation de texte ?
+#### Q : En quoi ce tutoriel diffère-t-il des tutoriels précédents sur la rotation de texte ?
 
-R : Ce didacticiel combine l'utilisation de fragments de texte et de paragraphes pour réaliser la rotation du texte dans un document PDF. Il montre comment faire pivoter des fragments de texte individuellement, puis les ajouter au contenu d'une page.`Paragraphs` collection pour obtenir un effet de rotation de texte plus complet.
+ : Ce didacticiel combine l'utilisation de fragments de texte et de paragraphes pour réaliser une rotation de texte dans un document PDF. Il montre comment faire pivoter des fragments de texte individuellement, puis les ajouter à la page d'une page.`Paragraphs` collection pour obtenir un effet de rotation de texte plus complet.
 
-#### Q : Quels sont les avantages d’utiliser des fragments de texte et des paragraphes pour la rotation du texte ?
+#### Q : Quels sont les avantages de l’utilisation de fragments de texte et de paragraphes pour la rotation de texte ?
 
-R : L’utilisation conjointe de fragments de texte et de paragraphes permet une plus grande flexibilité dans la rotation du texte. Les fragments de texte permettent des paramètres de rotation et de formatage individuels, tandis que les paragraphes fournissent une structure pour organiser et positionner les fragments de texte dans une page.
+R : L'utilisation conjointe de fragments de texte et de paragraphes permet une plus grande flexibilité dans la rotation du texte. Les fragments de texte permettent des paramètres de rotation et de formatage individuels, tandis que les paragraphes fournissent une structure pour organiser et positionner les fragments de texte dans une page.
 
-#### Q : Puis-je appliquer différents angles de rotation à différents fragments de texte dans le même paragraphe ?
+#### Q : Puis-je appliquer différents angles de rotation à différents fragments de texte dans le même paragraphe ?
 
- R : Oui, vous pouvez appliquer différents angles de rotation à différents`TextFragment` objets dans le même paragraphe. Chaque fragment de texte peut avoir son propre angle de rotation spécifié à l'aide du`TextState.Rotation` propriété.
+ R : Oui, vous pouvez appliquer différents angles de rotation à différents`TextFragment` objets dans le même paragraphe. Chaque fragment de texte peut avoir son propre angle de rotation spécifié à l'aide de la`TextState.Rotation` propriété.
 
 #### Q : Est-il possible d’obtenir des effets de rotation de texte complexes en utilisant cette méthode ?
 
 : Oui, en combinant des fragments de texte avec différents angles de rotation et en les organisant dans des paragraphes, vous pouvez obtenir des effets de rotation de texte complexes et personnalisés, améliorant ainsi l'attrait visuel de vos documents PDF.
 
-#### Q : Quelles sont les étapes impliquées dans la rotation du texte à l'aide de fragments de texte et de paragraphes ?
+#### Q : Quelles étapes sont impliquées dans la rotation de texte à l’aide de fragments de texte et de paragraphes ?
 
-R : Les étapes comprennent :
+R : Les étapes comprennent :
 
 1. Configuration du projet en créant un nouveau projet C# et en ajoutant une référence à la bibliothèque Aspose.PDF pour .NET.
 2. Création du document PDF et ajout d'une page.
-3. Créer des fragments de texte, définir leurs propriétés et spécifier les angles de rotation.
-4.  Ajout de fragments de texte à la page à l'aide de l'outil`Paragraphs` collection.
+3. Création de fragments de texte, définition de leurs propriétés et spécification des angles de rotation.
+4.  Ajout de fragments de texte à la page à l'aide de la`Paragraphs` collection.
 5. Enregistrement du document PDF modifié.
 
-#### Q : Puis-je appliquer une rotation à des paragraphes entiers ?
+#### Q : Puis-je appliquer une rotation à des paragraphes entiers ?
 
- R : Oui, vous pouvez appliquer une rotation à des paragraphes entiers en définissant l'option`TextState.Rotation` propriété du paragraphe lui-même. Cela fera pivoter tous les fragments de texte de ce paragraphe.
+ R : Oui, vous pouvez appliquer une rotation à des paragraphes entiers en définissant le`TextState.Rotation` propriété du paragraphe lui-même. Cela fera pivoter tous les fragments de texte dans ce paragraphe.

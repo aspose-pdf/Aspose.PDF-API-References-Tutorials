@@ -275,7 +275,7 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 答：本教學介紹如何使用 Aspose.PDF for .NET 提供的適當方法建立頁首、正文行和頁尾並將其新增至表格元素。
 
-#### Q：什麼是 PDF/UA 合規性？如何驗證我的已標記 PDF 文件的合規性？
+#### Q：什麼是 PDF/UA 合規性？
 
 答：PDF/UA 合規性可確保 PDF 文件符合輔助功能標準，從而更方便殘障使用者使用。本教學示範如何使用以下方法驗證 PDF/UA 一致性`Validate()`方法並產生 XML 合規性報表。
 

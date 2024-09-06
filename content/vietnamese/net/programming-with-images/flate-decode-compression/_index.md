@@ -1,17 +1,17 @@
 ---
-title: Nén giải mã Flate
-linktitle: Nén giải mã Flate
-second_title: Aspose.PDF cho tài liệu tham khảo API .NET
-description: Nén hình ảnh trong PDF một cách hiệu quả bằng cách sử dụng nén Flate Decode với Aspose.PDF cho .NET.
+title: Nén giải mã phẳng
+linktitle: Nén giải mã phẳng
+second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
+description: Nén hình ảnh hiệu quả trong PDF bằng tính năng nén Flate Decode với Aspose.PDF cho .NET.
 type: docs
 weight: 140
 url: /vi/net/programming-with-images/flate-decode-compression/
 ---
-Hướng dẫn này sẽ hướng dẫn bạn từng bước cách nén hình ảnh bằng cách sử dụng tính năng nén Flate Decode thành tệp PDF bằng Aspose.PDF cho .NET. Đảm bảo bạn đã thiết lập môi trường của mình và làm theo các bước dưới đây:
+Hướng dẫn này sẽ hướng dẫn bạn từng bước cách nén hình ảnh bằng Flate Decode nén thành tệp PDF bằng Aspose.PDF cho .NET. Đảm bảo bạn đã thiết lập môi trường của mình và làm theo các bước dưới đây:
 
 ## Bước 1: Xác định thư mục tài liệu
 
- Đảm bảo đặt đúng thư mục tài liệu. Thay thế`"YOUR DOCUMENT DIRECTORY"` trong mã có đường dẫn đến thư mục chứa tài liệu PDF của bạn.
+ Hãy đảm bảo thiết lập đúng thư mục tài liệu. Thay thế`"YOUR DOCUMENT DIRECTORY"` trong mã có đường dẫn đến thư mục chứa tài liệu PDF của bạn.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -19,7 +19,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Bước 2: Mở tài liệu PDF
 
-Trong bước này, chúng tôi sẽ mở tài liệu PDF bằng cách sử dụng`Document` lớp Aspose.PDF. Sử dụng`Document` constructor và chuyển đường dẫn đến tài liệu PDF.
+ Trong bước này, chúng ta sẽ mở tài liệu PDF bằng cách sử dụng`Document` lớp Aspose.PDF. Sử dụng`Document` hàm tạo và truyền đường dẫn đến tài liệu PDF.
 
 ```csharp
 Document doc = new Document(dataDir + "AddImage.pdf");
@@ -27,7 +27,7 @@ Document doc = new Document(dataDir + "AddImage.pdf");
 
 ## Bước 3: Khởi tạo các tùy chọn tối ưu hóa
 
-Ở bước này, chúng ta sẽ khởi tạo các tùy chọn tối ưu hóa cho việc nén ảnh. Tạo một thể hiện của`OptimizationOptions` và thiết lập các tùy chọn thích hợp. Trong ví dụ này, chúng tôi đang sử dụng tính năng nén Flate Decode để tối ưu hóa hình ảnh.
+ Trong bước này, chúng tôi sẽ khởi tạo các tùy chọn tối ưu hóa cho nén hình ảnh. Tạo một phiên bản của`OptimizationOptions` và thiết lập các tùy chọn phù hợp. Trong ví dụ này, chúng tôi sử dụng nén Flate Decode để tối ưu hóa hình ảnh.
 
 ```csharp
 var optimizationOptions = new Aspose.Pdf.Optimization.OptimizationOptions();
@@ -36,7 +36,7 @@ optimizationOptions.ImageCompressionOptions.Encoding = ImageEncoding.Flate;
 
 ## Bước 4: Tối ưu hóa tài liệu PDF
 
- Trong bước này, chúng tôi sẽ tối ưu hóa tài liệu PDF bằng các tùy chọn tối ưu hóa được xác định trước đó. Gọi`OptimizeResources` phương pháp của`doc` đối tượng và vượt qua các tùy chọn tối ưu hóa.
+Trong bước này, chúng tôi sẽ tối ưu hóa tài liệu PDF bằng cách sử dụng các tùy chọn tối ưu hóa được xác định trước đó. Gọi`OptimizeResources` phương pháp của`doc` đối tượng và chuyển các tùy chọn tối ưu hóa.
 
 ```csharp
 doc.OptimizeResources(optimizationOptions);
@@ -44,70 +44,70 @@ doc.OptimizeResources(optimizationOptions);
 
 ## Bước 5: Lưu tài liệu PDF đã cập nhật
 
- Lưu tài liệu PDF đã cập nhật bằng cách sử dụng`Save` phương pháp của`doc` sự vật. Chỉ định đường dẫn đầu ra cho tệp PDF.
+ Lưu tài liệu PDF đã cập nhật bằng cách sử dụng`Save` phương pháp của`doc` đối tượng. Chỉ định đường dẫn đầu ra cho tệp PDF.
 
 ```csharp
 doc.Save(dataDir + "FlateDecodeCompression.pdf");
 ```
 
-### Mã nguồn mẫu cho Nén giải mã Flate bằng Aspose.PDF cho .NET 
+### Mã nguồn mẫu cho Flate Decode Compression sử dụng Aspose.PDF cho .NET 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Mở tài liệu
+// Mở Tài liệu
 Document doc = new Document(dataDir + "AddImage.pdf");
-// Khởi tạo các tùy chọn tối ưu hóa
+// Khởi tạo tùy chọn tối ưu hóa
 var optimizationOptions = new Aspose.Pdf.Optimization.OptimizationOptions();
 // Để tối ưu hóa hình ảnh bằng cách sử dụng FlateDecode Compression, hãy đặt tùy chọn tối ưu hóa thành Flate
 optimizationOptions.ImageCompressionOptions.Encoding = ImageEncoding.Flate;
-// Đặt tùy chọn tối ưu hóa
+// Thiết lập tùy chọn tối ưu hóa
 doc.OptimizeResources(optimizationOptions);
-// Lưu tài liệu
+// Lưu Tài Liệu
 doc.Save(dataDir + "FlateDecodeCompression.pdf");
 ```
 
 ## Phần kết luận
 
-Xin chúc mừng! Bạn đã nén thành công hình ảnh thành PDF bằng cách sử dụng nén Flate Decode với Aspose.PDF cho .NET. Tệp PDF được tối ưu hóa sẽ được lưu trong thư mục được chỉ định. Bây giờ bạn có thể sử dụng tệp PDF này cho nhu cầu lưu trữ hoặc chia sẻ hiệu quả hơn.
+Xin chúc mừng! Bạn đã nén thành công hình ảnh thành PDF bằng cách sử dụng nén Flate Decode với Aspose.PDF cho .NET. Tệp PDF được tối ưu hóa được lưu trong thư mục đã chỉ định. Bây giờ bạn có thể sử dụng tệp PDF này để lưu trữ hoặc chia sẻ hiệu quả hơn.
 
 ### Câu hỏi thường gặp
 
-#### Hỏi: Nén Flate Decode là gì và tại sao nó được sử dụng trong các tài liệu PDF?
+#### H: Nén Flate Decode là gì và tại sao nó được sử dụng trong tài liệu PDF?
 
-Trả lời: Nén Flate Decode là phương pháp nén dữ liệu thường được sử dụng để giảm kích thước dữ liệu trong tài liệu PDF. Nó đặc biệt hiệu quả trong việc nén hình ảnh, giảm kích thước tập tin tổng thể và nâng cao hiệu quả trong quá trình lưu trữ và truyền tải.
+A: Nén Flate Decode là phương pháp nén dữ liệu thường được sử dụng để giảm kích thước dữ liệu trong tài liệu PDF. Phương pháp này đặc biệt hiệu quả khi nén hình ảnh, giảm kích thước tệp tổng thể và cải thiện hiệu quả trong quá trình lưu trữ và truyền tải.
 
-#### Câu hỏi: Aspose.PDF cho .NET hỗ trợ nén Flate Decode trong tài liệu PDF như thế nào?
+#### H: Aspose.PDF for .NET hỗ trợ nén Flate Decode trong tài liệu PDF như thế nào?
 
-Trả lời: Aspose.PDF for .NET cung cấp một quy trình hợp lý để mở tài liệu PDF, áp dụng tính năng nén Flate Decode cho hình ảnh và lưu tệp PDF được tối ưu hóa cùng với hình ảnh nén.
+A: Aspose.PDF cho .NET cung cấp quy trình hợp lý để mở tài liệu PDF, áp dụng nén Flate Decode cho hình ảnh và lưu tệp PDF đã tối ưu hóa với hình ảnh được nén.
 
-#### Câu hỏi: Lợi ích của việc sử dụng tính năng nén Flate Decode để tối ưu hóa hình ảnh trong tài liệu PDF là gì?
+#### H: Sử dụng nén Flate Decode để tối ưu hóa hình ảnh trong tài liệu PDF có những lợi thế gì?
 
-Trả lời: Nén Flate Decode cung cấp khả năng nén hình ảnh hiệu quả và không bị mất dữ liệu, giúp giảm kích thước tệp mà không ảnh hưởng đến chất lượng hình ảnh. Điều này có thể giúp tải tài liệu nhanh hơn và truyền dữ liệu được cải thiện.
+A: Nén Flate Decode cung cấp khả năng nén hình ảnh hiệu quả và không mất dữ liệu, giúp giảm kích thước tệp mà không làm giảm chất lượng hình ảnh. Điều này có thể giúp tải tài liệu nhanh hơn và cải thiện khả năng truyền dữ liệu.
 
-####  Hỏi: Làm thế nào`ImageEncoding.Flate` option contribute to image optimization in Flate Decode compression?
+####  Q: Làm thế nào để`ImageEncoding.Flate` option contribute to image optimization in Flate Decode compression?
 
- Đáp: Cái`ImageEncoding.Flate`tùy chọn chỉ định việc sử dụng nén Flate Decode để tối ưu hóa hình ảnh trong tài liệu PDF, đảm bảo rằng hình ảnh được nén hiệu quả bằng phương pháp này.
+ A: Cái`ImageEncoding.Flate`tùy chọn này chỉ định việc sử dụng nén Flate Decode để tối ưu hóa hình ảnh trong tài liệu PDF, đảm bảo rằng hình ảnh được nén hiệu quả bằng phương pháp này.
 
-#### Câu hỏi: Tôi có thể áp dụng chọn lọc tính năng nén Flate Decode cho các hình ảnh cụ thể trong tài liệu PDF không?
+#### H: Tôi có thể áp dụng tính năng nén Flate Decode một cách có chọn lọc cho các hình ảnh cụ thể trong tài liệu PDF không?
 
- Trả lời: Có, bạn có thể áp dụng chọn lọc nén Flate Decode cho các hình ảnh cụ thể bằng cách đặt`ImageCompressionOptions.Encoding` tài sản để`ImageEncoding.Flate` cho những hình ảnh mong muốn.
+ A: Có, bạn có thể áp dụng nén Flate Decode một cách có chọn lọc cho các hình ảnh cụ thể bằng cách thiết lập`ImageCompressionOptions.Encoding` tài sản để`ImageEncoding.Flate` để có được hình ảnh mong muốn.
 
-####  Hỏi: Làm thế nào`OptimizeResources` method work to apply Flate Decode compression in a PDF document?
+####  Q: Làm thế nào để`OptimizeResources` method work to apply Flate Decode compression in a PDF document?
 
- Đáp: Cái`OptimizeResources` Phương pháp này phân tích tài liệu PDF và áp dụng các tùy chọn tối ưu hóa được chỉ định, bao gồm nén Flate Decode, cho hình ảnh và các tài nguyên khác, giúp giảm kích thước tệp một cách hiệu quả.
+ A: Cái`OptimizeResources` Phương pháp này phân tích tài liệu PDF và áp dụng các tùy chọn tối ưu hóa đã chỉ định, bao gồm nén Flate Decode, cho hình ảnh và các tài nguyên khác, giúp giảm kích thước tệp hiệu quả.
 
-#### Câu hỏi: Tính năng nén Flate Decode trong tài liệu PDF mang lại lợi ích gì?
+#### H: Những trường hợp nào được hưởng lợi từ tính năng nén Flate Decode trong tài liệu PDF?
 
-Trả lời: Nén Flate Decode đặc biệt có lợi khi chuẩn bị tệp PDF để phân phối, lưu trữ hoặc chia sẻ trực tuyến vì nó làm giảm kích thước tệp trong khi vẫn duy trì hình ảnh chất lượng cao.
+A: Nén Flate Decode đặc biệt có lợi khi chuẩn bị các tệp PDF để phân phối, lưu trữ hoặc chia sẻ trực tuyến vì nó làm giảm kích thước tệp trong khi vẫn duy trì hình ảnh chất lượng cao.
 
-#### Câu hỏi: Việc nén Flate Decode có ảnh hưởng đến chất lượng hình ảnh của hình ảnh trong tài liệu PDF không?
+#### H: Việc nén Flate Decode có ảnh hưởng đến chất lượng hình ảnh trong tài liệu PDF không?
 
-Trả lời: Nén Flate Decode là phương pháp nén không mất dữ liệu, nghĩa là nó không ảnh hưởng đến chất lượng hình ảnh của hình ảnh. Hình ảnh không thay đổi trong khi kích thước tập tin được giảm.
+A: Nén Flate Decode là phương pháp nén không mất dữ liệu, nghĩa là không ảnh hưởng đến chất lượng hình ảnh. Hình ảnh vẫn không thay đổi trong khi kích thước tệp giảm.
 
-#### Hỏi: Có thể đảo ngược quá trình nén Flate Decode và khôi phục hình ảnh gốc từ tệp PDF được tối ưu hóa không?
+#### H: Có thể đảo ngược quá trình nén Flate Decode và khôi phục hình ảnh gốc từ tệp PDF đã tối ưu hóa không?
 
-Trả lời: Không, nén Flate Decode là phương pháp không mất dữ liệu và dữ liệu hình ảnh gốc được giữ lại. Không cần phải nén ngược để truy cập hình ảnh gốc.
+A: Không, nén Flate Decode là phương pháp không mất dữ liệu và dữ liệu hình ảnh gốc được giữ nguyên. Không cần phải nén ngược để truy cập hình ảnh gốc.
 
-#### Hỏi: Việc nén Flate Decode ảnh hưởng như thế nào đến hiệu suất của tài liệu PDF?
+#### H: Nén Flate Decode ảnh hưởng đến hiệu suất của tài liệu PDF như thế nào?
 
-Trả lời: Nén Flate Decode có thể cải thiện hiệu suất của tài liệu PDF bằng cách giảm kích thước tệp của chúng, dẫn đến thời gian tải nhanh hơn và truyền dữ liệu hiệu quả hơn.
+A: Nén Flate Decode có thể cải thiện hiệu suất của tài liệu PDF bằng cách giảm kích thước tệp, giúp thời gian tải nhanh hơn và truyền dữ liệu hiệu quả hơn.

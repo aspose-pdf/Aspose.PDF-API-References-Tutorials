@@ -1,167 +1,127 @@
 ---
-title: Actualizar marcadores secundarios en un archivo PDF
-linktitle: Actualizar marcadores secundarios en un archivo PDF
-second_title: Aspose.PDF para referencia de API .NET
-description: Actualice fácilmente los marcadores secundarios en un archivo PDF con Aspose.PDF para .NET.
+title: Actualizar marcadores infantiles en archivo PDF
+linktitle: Actualizar marcadores infantiles en archivo PDF
+second_title: Referencia de API de Aspose.PDF para .NET
+description: Aprenda a actualizar los marcadores secundarios en archivos PDF con Aspose.PDF para .NET con esta guía paso a paso. Mejore la navegación en PDF.
 type: docs
 weight: 110
 url: /es/net/programming-with-bookmarks/update-child-bookmarks/
 ---
-La actualización de marcadores secundarios en un archivo PDF le permite modificar las propiedades de marcadores específicos dentro de un marcador principal. Con Aspose.PDF para .NET, puede actualizar fácilmente los marcadores secundarios siguiendo el siguiente código fuente:
+## Introducción
 
-## Paso 1: importar las bibliotecas necesarias
+¿Alguna vez se ha encontrado navegando por un documento PDF con una estructura compleja y se ha dado cuenta de que los marcadores están desactualizados o son incorrectos? Puede ser frustrante, ¿verdad? ¡No tema! En este tutorial, nos sumergiremos en el mundo de Aspose.PDF para .NET y aprenderemos a actualizar los marcadores secundarios en un archivo PDF. Esta potente biblioteca le permite manipular documentos PDF con facilidad y, al final de esta guía, podrá mejorar su experiencia de navegación en PDF sin esfuerzo.
 
-Antes de comenzar, debe importar las bibliotecas necesarias para su proyecto C#. Aquí está la directiva de importación necesaria:
+## Prerrequisitos
+
+Antes de pasar al código, asegurémonos de que tienes todo lo que necesitas para comenzar:
+
+1. Visual Studio: asegúrese de tener Visual Studio instalado en su equipo. Es el IDE ideal para el desarrollo de .NET.
+2.  Aspose.PDF para .NET: Deberá descargar e instalar la biblioteca Aspose.PDF. Puede encontrarla[aquí](https://releases.aspose.com/pdf/net/).
+3. Conocimientos básicos de C#: la familiaridad con la programación en C# le ayudará a comprender mejor los fragmentos de código.
+
+## Importar paquetes
+
+Para trabajar con Aspose.PDF, debe importar los espacios de nombres necesarios en su proyecto de C#. A continuación, le indicamos cómo hacerlo:
 
 ```csharp
 using Aspose.Pdf;
+using Aspose.Pdf.Outline;
 ```
 
-## Paso 2: establezca la ruta a la carpeta de documentos
+Estos espacios de nombres le darán acceso a las clases y métodos necesarios para manipular documentos PDF y sus marcadores.
 
- En este paso, debe especificar la ruta a la carpeta que contiene el archivo PDF que desea actualizar. Reemplazar`"YOUR DOCUMENT DIRECTORY"`en el siguiente código con la ruta real a su carpeta de documentos:
+Ahora que hemos resuelto nuestros requisitos previos, dividamos el proceso de actualización de marcadores secundarios en pasos manejables.
+
+## Paso 1: Configurar el directorio de documentos
+
+Lo primero es lo primero: debes especificar la ruta del directorio de tus documentos, donde se encuentra tu archivo PDF. Puedes hacerlo de la siguiente manera:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Paso 3: abre el documento PDF
+ Reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta real donde se almacena el archivo PDF. Este paso es crucial porque le indica al programa dónde encontrar el PDF con el que desea trabajar.
 
-Ahora abriremos el documento PDF que queremos actualizar usando el siguiente código:
+## Paso 2: Abra el documento PDF
+
+continuación, debemos abrir el documento PDF que contiene los marcadores que desea actualizar. Este es el código para hacerlo:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
 ```
 
-## Paso 4: obtener el objeto de marcador principal
+ Esta línea de código crea una nueva`Document` objeto, que representa el archivo PDF. Asegúrese de que el nombre del archivo coincida con el que tiene en el directorio.
 
-En este paso, obtendremos el objeto de marcador principal específico desde el cual queremos actualizar los marcadores secundarios. En el siguiente ejemplo, recuperamos el marcador principal en el índice 1 (el segundo marcador de la colección de marcadores). Puede ajustar el índice según sus necesidades. Aquí está el código correspondiente:
+## Paso 3: Acceda a la colección de marcadores
+
+ Ahora que tenemos el documento abierto, es hora de acceder a los marcadores. Los marcadores de un PDF se organizan en una colección llamada`Outlines`Aquí te explicamos cómo puedes acceder a ellos:
 
 ```csharp
 OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 ```
 
-## Paso 5: Obtener el objeto de marcador secundario
+En esta línea, accedemos al segundo marcador de la colección (índice 1). Recuerde que, en programación, las colecciones suelen empezar desde cero, por lo que debe realizar los ajustes correspondientes en función de la estructura de su documento.
 
-Ahora obtengamos el objeto de marcador secundario específico que queremos actualizar. En el siguiente ejemplo, recuperamos el marcador secundario en el índice 1 (el segundo marcador secundario en la colección de marcadores secundarios del marcador principal). Puede ajustar el índice según sus necesidades. Aquí está el código correspondiente:
+## Paso 4: Consigue el marcapáginas para niños
+
+Una vez que tenga el marcador principal, podrá acceder a sus marcadores secundarios. Supongamos que desea actualizar el segundo marcador secundario. A continuación, le indicamos cómo hacerlo:
 
 ```csharp
 OutlineItemCollection childOutline = pdfOutline[1];
 ```
 
-## Paso 6: actualice las propiedades del marcador secundario
+Esta línea recupera el segundo marcador secundario del marcador principal al que accedimos en el paso anterior.
 
-Ahora actualicemos las propiedades del marcador secundario, como el título, el estilo en cursiva y el estilo en negrita. Puede ajustar estas propiedades según sus necesidades. Aquí está el código correspondiente:
+## Paso 5: Actualizar las propiedades del marcador secundario
 
-```csharp
-childOutline.Title = "Updated Outline";
-childOutline. Italic = true;
-childOutline. Bold = true;
-```
-
-## Paso 7: guarde el archivo actualizado
-
- Ahora guardemos el archivo PDF actualizado usando el`Save` método de la`pdfDocument` objeto. Aquí está el código correspondiente:
+Ahora viene la parte divertida. Puedes actualizar las propiedades del marcador secundario. Por ejemplo, cambiemos el título y lo pongamos en negrita y cursiva:
 
 ```csharp
-dataDir = dataDir + "UpdateChildBookmarks_out.pdf";
-pdfDocument.Save(dataDir);
-```
-
-### Código fuente de muestra para actualizar marcadores secundarios usando Aspose.PDF para .NET 
-```csharp
-// La ruta al directorio de documentos.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Abrir documento
-Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
-// Obtener un objeto de marcador
-OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
-//Obtener objeto de marcador secundario
-OutlineItemCollection childOutline = pdfOutline[1];
 childOutline.Title = "Updated Outline";
 childOutline.Italic = true;
 childOutline.Bold = true;
+```
+
+Siéntete libre de personalizar el título como quieras. Esta es tu oportunidad de hacer que el marcador sea más descriptivo y visualmente atractivo.
+
+## Paso 6: Guarde el documento PDF actualizado
+
+Después de realizar los cambios necesarios, es momento de guardar el documento PDF actualizado. A continuación, le indicamos cómo hacerlo:
+
+```csharp
 dataDir = dataDir + "UpdateChildBookmarks_out.pdf";            
-// Guardar salida
 pdfDocument.Save(dataDir);
+```
+
+Este código guarda el PDF modificado con un nuevo nombre, garantizando así que el documento original permanecerá intacto. 
+
+## Paso 7: Confirmar la actualización
+
+Por último, confirmemos que todo ha ido bien. Puedes imprimir un mensaje en la consola para informarte de que los marcadores secundarios se han actualizado correctamente:
+
+```csharp
 Console.WriteLine("\nChild bookmarks updated successfully.\nFile saved at " + dataDir);
 ```
 
+Este simple mensaje le dará tranquilidad de que sus cambios se aplicaron correctamente.
+
 ## Conclusión
 
-¡Enhorabuena! Ahora tiene una guía paso a paso para actualizar los marcadores secundarios con Aspose.PDF para .NET. Puede utilizar este código para modificar las propiedades de los marcadores secundarios en sus documentos PDF.
+¡Y ya está! Has actualizado correctamente los marcadores secundarios en un archivo PDF con Aspose.PDF para .NET. Con solo unas pocas líneas de código, puedes mejorar la experiencia de navegación de tus documentos PDF, haciéndolos más fáciles de usar y organizados. Ya sea que estés trabajando en un proyecto personal o en una aplicación profesional, dominar la manipulación de archivos PDF puede ser un cambio radical.
 
-Asegúrese de consultar la documentación oficial de Aspose.PDF para obtener más información sobre las funciones avanzadas de manipulación de marcadores.
+## Preguntas frecuentes
 
-### Preguntas frecuentes para actualizar marcadores secundarios en un archivo PDF
+### ¿Qué es Aspose.PDF para .NET?
+Aspose.PDF para .NET es una potente biblioteca que permite a los desarrolladores crear, manipular y convertir documentos PDF mediante programación.
 
-#### P: ¿Qué son los marcadores secundarios en un archivo PDF?
+### ¿Puedo utilizar Aspose.PDF gratis?
+ Sí, Aspose ofrece una versión de prueba gratuita que puedes usar para explorar sus funciones. Puedes descargarla[aquí](https://releases.aspose.com/).
 
-R: Los marcadores secundarios son marcadores anidados dentro de un marcador principal. Le permiten crear una estructura jerárquica para navegar por el contenido de un documento PDF.
+### ¿Cómo puedo obtener soporte para Aspose.PDF?
+ Puede obtener ayuda visitando el foro de Aspose[aquí](https://forum.aspose.com/c/pdf/10).
 
-#### P: ¿Por qué necesitaría actualizar los marcadores infantiles?
+### ¿Existe una licencia temporal disponible?
+ Sí, Aspose proporciona una licencia temporal que puedes obtener[aquí](https://purchase.aspose.com/temporary-license/).
 
-R: Actualizar los marcadores secundarios es útil cuando desea modificar las propiedades, títulos o estilos de marcadores específicos dentro de un marcador principal. Esto ayuda a personalizar la estructura de navegación del documento.
-
-#### P: ¿Cómo importo las bibliotecas necesarias para mi proyecto C#?
-
-R: Para importar las bibliotecas necesarias para su proyecto C#, incluya la siguiente directiva de importación:
-
-```csharp
-using Aspose.Pdf;
-```
-
-Esta directiva le permite acceder a las clases y métodos necesarios para trabajar con documentos y marcadores PDF.
-
-#### P: ¿Cómo especifico la ruta a la carpeta de documentos?
-
- R: Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el código fuente proporcionado con la ruta real a la carpeta que contiene el archivo PDF que desea actualizar.
-
-#### P: ¿Cómo abro un documento PDF para actualizar los marcadores secundarios?
-
-R: Para abrir un documento PDF y actualizar los marcadores secundarios, utilice el siguiente código:
-
-```csharp
-Document pdfDocument = new Document(dataDir + "UpdateChildBookmarks.pdf");
-```
-
- Reemplazar`"UpdateChildBookmarks.pdf"` con el nombre del archivo real.
-
-#### P: ¿Cómo obtengo el objeto de marcador principal desde el cual deseo actualizar los marcadores secundarios?
-
- R: Para recuperar un marcador principal específico y actualizar los marcadores secundarios, acceda al`Outlines` propiedad de la`pdfDocument` objeto. En el siguiente ejemplo, recuperamos el marcador principal en el índice 1:
-
-```csharp
-OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
-```
-
-#### P: ¿Cómo obtengo el objeto de marcador secundario que deseo actualizar?
-
- R: Para recuperar un marcador infantil específico para actualizarlo, acceda al`OutlineItemCollection` del marcador principal. En el siguiente ejemplo, recuperamos el marcador secundario en el índice 1:
-
-```csharp
-OutlineItemCollection childOutline = pdfOutline[1];
-```
-
-#### P: ¿Qué propiedades de marcadores secundarios puedo actualizar?
-
-R: Puede actualizar varias propiedades de un marcador secundario, como su título, estilo en cursiva y estilo en negrita. Personaliza estas propiedades según tus necesidades:
-
-```csharp
-childOutline.Title = "Updated Outline";
-childOutline.Italic = true;
-childOutline.Bold = true;
-```
-
-#### P: ¿Puedo actualizar varios marcadores secundarios usando este método?
-
-R: Sí, puedes repetir los pasos del 4 al 7 para cada marcador infantil que quieras actualizar. Modifique el índice principal y el índice secundario según sea necesario.
-
-#### P: ¿Cómo guardo el archivo PDF actualizado?
-
- R: Guarde el archivo PDF actualizado usando el`Save` método de la`pdfDocument` objeto:
-
-```csharp
-dataDir = dataDir + "UpdateChildBookmarks_out.pdf";
-pdfDocument.Save(dataDir);
-```
+### ¿Dónde puedo comprar Aspose.PDF para .NET?
+ Puede comprar Aspose.PDF para .NET desde su sitio web[aquí](https://purchase.aspose.com/buy).

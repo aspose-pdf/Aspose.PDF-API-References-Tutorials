@@ -39,7 +39,7 @@ TextBoxField txtFld = pdfDocument.Form["textbox1"] as TextBoxField;
 
 ## Steg 3: Fyll formulärfältet med arabisk text
 
- Nu när vi har`TextBoxField` referens, kan vi tilldela den arabiska texten till dess`Value` fast egendom:
+ Nu när vi har`TextBoxField` referens, kan vi tilldela den arabiska texten till dess`Value` egendom:
 
 ```csharp
 txtFld.Value = "يولد جميع الناس أحراراً متساوين في";
@@ -64,9 +64,9 @@ Console.WriteLine("\nArabic text successfully filled in the form field.\nFile sa
 ```csharp
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Ladda PDF-formulärinnehåll
+//Ladda PDF-formulärinnehåll
 FileStream fs = new FileStream(dataDir + "FillFormField.pdf", FileMode.Open, FileAccess.ReadWrite);
-//Instantiera dokumentinstans med strömhållningsformulärfil
+// Instantiera dokumentinstans med strömhållningsformulärfil
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(fs);
 // Hämta referensen till särskilt TextBoxField
 TextBoxField txtFld = pdfDocument.Form["textbox1"] as TextBoxField;
@@ -86,7 +86,7 @@ I den här handledningen undersökte vi hur man fyller i ett PDF-formulärfält 
 
 #### F: Kan jag fylla andra typer av formulärfält med arabisk text med Aspose.PDF för .NET?
 
- S: Ja, du kan använda Aspose.PDF för .NET för att fylla andra typer av formulärfält med arabisk text, såsom kryssrutor, alternativknappar, kombinationsrutor och mer. Processen liknar att fylla en`TextBoxField` . Gå bara till det specifika fältet med dess namn eller ID och ställ in dess`Value` egenskap till önskad arabisk text.
+ S: Ja, du kan använda Aspose.PDF för .NET för att fylla andra typer av formulärfält med arabisk text, såsom kryssrutor, alternativknappar, kombinationsrutor och mer. Processen liknar att fylla en`TextBoxField` . Gå bara till det specifika fältet med dess namn eller ID och ställ in dess`Value`egenskap till önskad arabisk text.
 
 #### F: Är Aspose.PDF för .NET kompatibelt med arabisk text och höger-till-vänster-skrivning (RTL)?
 

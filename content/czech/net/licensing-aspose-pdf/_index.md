@@ -11,8 +11,8 @@ Výukové programy "Licencování Aspose.PDF pro .NET" podrobně vysvětlují, j
 ## Tutoriály
 | Titul | Popis |
 | --- | --- | 
-| [Konfigurace měřených licenčních klíčů v souboru PDF](./configure-metered-license/) | Podrobný průvodce nastavením měřených licenčních klíčů v souboru PDF pomocí Aspose.PDF pro .NET a těží z pokročilých funkcí. |  
-| [Načíst licenci ze souboru](./load-license-from-file/) | Krok za krokem průvodce načtením licence ze souboru pomocí Aspose.PDF pro .NET. Odemkněte další funkce a používejte Aspose.PDF optimálně. |  
-| [Načíst licenci z objektu Stream](./load-license-from-stream-object/) | Podrobný průvodce načtením licence z objektu Stream pomocí Aspose.PDF pro .NET. Odemkněte další funkce. |  
-| [Zabezpečená licence v souboru PDF](./secure-license/) | Podrobný průvodce zabezpečením licence v souboru PDF pomocí Aspose.PDF pro .NET. Chraňte svou aplikaci PDF před neoprávněným přístupem. |  
-| [Nastavit licenci pomocí Embedded Resource](./set-license-using-embedded-resource/) | Podrobný průvodce nastavením licence pomocí vloženého prostředku s Aspose.PDF pro .NET. Odemkněte všechny funkce. |  
+| [Konfigurace měřených licenčních klíčů v souboru PDF](./configure-metered-license/) | Naučte se, jak konfigurovat měřené licenční klíče ve vašich souborech PDF pomocí Aspose.PDF for .NET, pomocí tohoto komplexního průvodce krok za krokem. |  
+| [Načíst licenci ze souboru](./load-license-from-file/) | Naučte se, jak načíst licenci ze souboru v Aspose.PDF pro .NET pomocí tohoto komplexního průvodce. Zajistěte plnou funkčnost správným nastavením licence. |  
+| [Načíst licenci z objektu Stream](./load-license-from-stream-object/) | Naučte se, jak načíst licenci z objektu streamu v Aspose.PDF pro .NET pomocí tohoto komplexního průvodce krok za krokem. |  
+| [Zabezpečená licence v souboru PDF](./secure-license/) | Naučte se, jak zabezpečit licenci Aspose.PDF v souboru PDF pomocí tohoto podrobného průvodce. Odemkněte pokročilé funkce a zajistěte dodržování předpisů bez námahy. |  
+| [Nastavit licenci pomocí Embedded Resource](./set-license-using-embedded-resource/) | Odemkněte sílu Aspose.PDF pro .NET pomocí tohoto komplexního průvodce. Naučte se nastavovat licence, manipulovat s PDF a další. |  

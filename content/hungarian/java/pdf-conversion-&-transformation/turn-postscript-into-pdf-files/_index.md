@@ -8,7 +8,7 @@ weight: 23
 url: /hu/java/pdf-conversion-transformation/turn-postscript-into-pdf-files/
 ---
 
-A mai digitális korban elengedhetetlen a különféle fájlformátumok konvertálásának képessége. A PostScript oldalleíró nyelvet széles körben használják a nyomdaiparban és a grafikai iparban. Ha azonban dokumentumok megosztásáról vagy archiválásáról van szó, a PDF a legjobb formátum. Ebben a lépésenkénti útmutatóban végigvezetjük a PostScript-fájlok PDF-fájlokká alakításának folyamatán az Aspose.PDF for Java használatával. 
+A mai digitális korban elengedhetetlen a különféle fájlformátumok konvertálásának képessége. A PostScript oldalleíró nyelvet széles körben használják a nyomdaiparban és a grafikus iparban. Ha azonban dokumentumok megosztásáról vagy archiválásáról van szó, a PDF a legjobb formátum. Ebben a lépésenkénti útmutatóban végigvezetjük a PostScript-fájlok PDF-fájlokká alakításának folyamatán az Aspose.PDF for Java használatával. 
 
 ## Előfeltételek
 

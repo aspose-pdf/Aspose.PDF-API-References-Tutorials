@@ -7,7 +7,7 @@ type: docs
 weight: 100
 url: /zh-hant/net/programming-with-tables/html-tags-inside-table/
 ---
-在本教學中，我們將學習如何使用 Aspose.PDF for .NET 在 PDF 文件的表格內使用 HTML 標籤。我們將一步步解釋C#的原始碼。在本教學結束時，您將了解如何將 HTML 內容插入 PDF 文件的表格中。開始吧！
+在本教學中，我們將學習如何使用 Aspose.PDF for .NET 在 PDF 文件的表格內使用 HTML 標籤。我們將一步步解釋C#的原始碼。在本教學結束時，您將了解如何將 HTML 內容插入 PDF 文件的表格中。讓我們開始吧！
 
 ## 第一步：建構環境
 請確定您已使用 Aspose.PDF for .NET 配置 C# 開發環境。新增對庫的引用並導入必要的命名空間。
@@ -117,7 +117,7 @@ doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 
 #### Q：我可以在表格單元格內使用其他 HTML 標籤和屬性嗎？
 
-答：是的，您可以在表格單元格內使用各種 HTML 標籤和屬性，例如`<b>`, `<i>`, `<a>`， 還有很多。 Aspose.PDF for .NET 支援多種 HTML 元素和樣式，您可以使用它們來格式化表格單元格中的內容。
+答：是的，您可以在表格單元格內使用各種 HTML 標籤和屬性，例如`<b>`, `<i>`, `<a>`，等等。 Aspose.PDF for .NET 支援多種 HTML 元素和樣式，您可以使用它們來格式化表格單元格中的內容。
 
 #### Q：我可以將 CSS 樣式套用到表格儲存格內的 HTML 內容嗎？
 

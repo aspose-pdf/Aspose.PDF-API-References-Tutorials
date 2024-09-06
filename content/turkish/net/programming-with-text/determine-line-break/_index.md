@@ -1,51 +1,51 @@
 ---
-title: PDF Dosyasında Satır Sonunu Belirleme
-linktitle: PDF Dosyasında Satır Sonunu Belirleme
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET kullanarak PDF dosyasındaki satır sonlarını nasıl belirleyeceğinizi öğrenin.
+title: PDF Dosyasında Satır Sonunu Belirle
+linktitle: PDF Dosyasında Satır Sonunu Belirle
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET kullanarak PDF dosyasındaki satır sonlarının nasıl belirleneceğini öğrenin.
 type: docs
 weight: 130
 url: /tr/net/programming-with-text/determine-line-break/
 ---
-Bu eğitim, Aspose.PDF for .NET kullanarak PDF dosyasındaki satır sonlarını belirleme sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları gösterir.
+Bu eğitim, .NET için Aspose.PDF kullanarak PDF dosyasındaki satır sonlarını belirleme sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları göstermektedir.
 
 ## Gereksinimler
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
 
-- Makinenizde kurulu Visual Studio veya başka herhangi bir C# derleyicisi.
-- Aspose.PDF for .NET kitaplığı. Resmi Aspose web sitesinden indirebilir veya yüklemek için NuGet gibi bir paket yöneticisi kullanabilirsiniz.
+- Bilgisayarınızda Visual Studio veya herhangi bir C# derleyicisi yüklü olmalıdır.
+- Aspose.PDF for .NET kütüphanesi. Resmi Aspose web sitesinden indirebilir veya NuGet gibi bir paket yöneticisi kullanarak kurabilirsiniz.
 
-## 1. Adım: Projeyi ayarlayın
+## Adım 1: Projeyi kurun
 1. Tercih ettiğiniz geliştirme ortamında yeni bir C# projesi oluşturun.
-2. Aspose.PDF for .NET kitaplığına bir referans ekleyin.
+2. .NET için Aspose.PDF kitaplığına bir referans ekleyin.
 
-## 2. Adım: Gerekli ad alanlarını içe aktarın
-Satır sonlarını belirlemek istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki kullanma yönergelerini ekleyin:
+## Adım 2: Gerekli ad alanlarını içe aktarın
+Satır sonlarını belirlemek istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki using yönergelerini ekleyin:
 
 ```csharp
 using Aspose.Pdf;
 using System.IO;
 ```
 
-## 3. Adım: Belge dizinini ayarlayın
- Kodda yazan satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belgelerinizin saklandığı dizinin yolu ile birlikte.
+## Adım 3: Belge dizinini ayarlayın
+ Kodda şu satırı bulun:`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` Belgelerinizin saklandığı dizinin yolunu içeren.
 
-## 4. Adım: Yeni bir Belge örneği oluşturun
- Yeni bir örnek oluştur`Document` Aşağıdaki kod satırını ekleyerek nesne:
+## Adım 4: Yeni bir Belge örneği oluşturun
+ Yeni bir örnek oluştur`Document` Aşağıdaki kod satırını ekleyerek nesneyi oluşturun:
 
 ```csharp
 Document doc = new Document();
 ```
 
-## 5. Adım: Belgeye bir sayfa ekleyin
- kullanarak belgeye yeni bir sayfa ekleyin.`Add` yöntemi`Pages`Toplamak. Verilen kodda yeni sayfa değişkene atanır.`page`.
+## Adım 5: Belgeye bir sayfa ekleyin
+ Belgeye yeni bir sayfa eklemek için şunu kullanın:`Add` yöntemi`Pages`koleksiyon. Sağlanan kodda, yeni sayfa değişkene atanır`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
 ```
 
-## 6. Adım: Satır sonlarıyla metin parçaları ekleyin
-Sayfaya, her biri satır sonları içeren bir paragraf içeren birden çok metin parçası eklemek için bir döngü oluşturun.
+## Adım 6: Satır sonları içeren metin parçaları ekleyin
+Sayfaya her biri satır sonları içeren bir paragraf içeren birden fazla metin parçası eklemek için bir döngü oluşturun.
 
 ```csharp
 for (int i = 0; i < 4; i++)
@@ -57,7 +57,7 @@ for (int i = 0; i < 4; i++)
 ```
 
 ## Adım 7: PDF belgesini kaydedin ve satır sonu bilgilerini çıkarın
- PDF belgesini kullanarak kaydedin.`Save` yöntemi`Document` nesne. Daha sonra satır sonu bilgisini aşağıdaki komutu kullanarak çıkarın.`GetNotifications` İstenilen sayfanın yöntemi.
+ PDF belgesini kullanarak kaydedin`Save` yöntemi`Document` nesne. Ardından, satır sonu bilgilerini kullanarak çıkarın`GetNotifications` İstenilen sayfanın yöntemi.
 
 ```csharp
 doc.Save(dataDir + "DetermineLineBreak_out.pdf");
@@ -65,9 +65,9 @@ string notifications = doc.Pages[1].GetNotifications();
 File.WriteAllText(dataDir + "notifications_out.txt", notifications);
 ```
 
-### Aspose.PDF for .NET kullanarak Satır Sonunu Belirleme için örnek kaynak kodu 
+### .NET için Aspose.PDF kullanarak Satır Sonunu Belirleme için örnek kaynak kodu 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
 Page page = doc.Pages.Add();
@@ -83,17 +83,17 @@ File.WriteAllText(dataDir + "notifications_out.txt", notifications);
 ```
 
 ## Çözüm
-Aspose.PDF for .NET'i kullanarak bir PDF belgesinde satır sonlarını başarıyla belirlediniz. Satır sonu bilgisi çıkarıldı ve bir metin dosyasına kaydedildi.
+.NET için Aspose.PDF kullanarak bir PDF belgesinde satır sonlarını başarıyla belirlediniz. Satır sonu bilgisi çıkarıldı ve bir metin dosyasına kaydedildi.
 
-### SSS'ler
+### SSS
 
-#### S: Bu eğitimin ana odağı nedir?
+#### S: Bu eğitimin ana odak noktası nedir?
 
-C: Bu eğitim, Aspose.PDF for .NET kütüphanesini kullanarak bir PDF dosyasındaki satır sonlarını belirleme sürecinde size rehberlik etmeye odaklanmıştır. Sağlanan C# kaynak kodu, bunu başarmak için gerekli adımları gösterir.
+A: Bu eğitim, .NET için Aspose.PDF kitaplığını kullanarak bir PDF dosyasındaki satır sonlarını belirleme sürecinde size rehberlik etmeye odaklanmıştır. Sağlanan C# kaynak kodu, bunu başarmak için gerekli adımları göstermektedir.
 
 #### S: Bu eğitim için hangi ad alanlarını içe aktarmalıyım?
 
-C: Satır sonlarını belirlemek istediğiniz kod dosyasında, dosyanın başında aşağıdaki ad alanlarını içe aktarın:
+A: Satır sonlarını belirlemek istediğiniz kod dosyasında, dosyanın başına aşağıdaki ad alanlarını içe aktarın:
 
 ```csharp
 using Aspose.Pdf;
@@ -102,28 +102,28 @@ using System.IO;
 
 #### S: Belge dizinini nasıl belirlerim?
 
- A: Kodda satırı bulun`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belge dizininizin gerçek yolu ile.
+ A: Kodda şu satırı bulun:`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belge dizininize giden gerçek yol ile.
 
-#### S: Yeni bir Belge örneğini nasıl oluşturabilirim?
+#### S: Yeni bir Belge örneği nasıl oluştururum?
 
- C: 4. Adımda yeni bir örnek oluşturacaksınız.`Document` sağlanan kodu kullanarak nesne.
+ A: 4. Adımda yeni bir örnek oluşturacaksınız`Document` Sağlanan kodu kullanarak nesne.
 
 #### S: Belgeye nasıl sayfa eklerim?
 
- C: 5. Adımda belgeye yeni bir sayfa ekleyeceksiniz.`Add` yöntemi`Pages` Toplamak.
+ A: 5. Adımda, belgeye yeni bir sayfa ekleyeceksiniz`Add` yöntemi`Pages` koleksiyon.
 
-#### S: Satır sonları olan metin parçalarını nasıl eklerim?
+#### S: Satır sonları içeren metin parçalarını nasıl eklerim?
 
-C: 6. Adımda, sayfaya her biri satır sonları olan bir paragraf içeren birden çok metin parçası eklemek için bir döngü oluşturacaksınız.
+A: 6. Adımda, her biri satır sonları içeren bir paragraf içeren birden fazla metin parçasını sayfaya eklemek için bir döngü oluşturacaksınız.
 
-#### S: PDF belgesini nasıl kaydederim ve satır sonu bilgilerini nasıl çıkarırım?
+#### S: PDF belgesini nasıl kaydedebilirim ve satır sonu bilgilerini nasıl çıkarabilirim?
 
- C: 7. Adımda, PDF belgesini aşağıdaki komutu kullanarak kaydedeceksiniz:`Save` yöntemi`Document` nesne. Daha sonra satır sonu bilgisini kullanarak çıkaracaksınız.`GetNotifications` İstediğiniz sayfanın yöntemini seçin ve bir metin dosyasına kaydedin.
+ A: 7. Adımda, PDF belgesini kullanarak kaydedeceksiniz`Save` yöntemi`Document` nesne. Ardından, satır sonu bilgilerini kullanarak çıkaracaksınız`GetNotifications`İstenilen sayfanın yöntemini seçip bir metin dosyasına kaydedin.
 
-#### S: Çıkarılan satır sonu bilgilerinin amacı nedir?
+#### S: Çıkarılan satır sonu bilgisinin amacı nedir?
 
-C: Çıkarılan satır sonu bilgileri, PDF belgesinde bulunan satır sonları ve bildirimler hakkında ayrıntılı bilgi sağlar. Bu, belgedeki metin ve paragrafların nasıl yapılandırıldığını analiz etmek ve anlamak için yararlı olabilir.
+A: Çıkarılan satır sonu bilgisi, PDF belgesinde bulunan satır sonları ve bildirimler hakkında ayrıntılar sağlar. Bu, metnin ve paragrafların belge içinde nasıl yapılandırıldığını analiz etmek ve anlamak için yararlı olabilir.
 
-#### S: Bu eğitimden çıkan ana sonuç nedir?
+#### S: Bu eğitimden çıkarılacak en önemli ders nedir?
 
-C: Bu eğitimi takip ederek Aspose.PDF for .NET kullanarak bir PDF belgesindeki satır sonlarını nasıl belirleyeceğinizi öğrendiniz. Bu bilgiyi, PDF dosyalarından satır sonu bilgilerini programlı olarak çıkarmak ve analiz etmek için kullanabilirsiniz.
+A: Bu öğreticiyi takip ederek, .NET için Aspose.PDF kullanarak bir PDF belgesindeki satır sonlarını nasıl belirleyeceğinizi öğrendiniz. Bu bilgiyi kullanarak PDF dosyalarından satır sonu bilgilerini programatik olarak çıkarabilir ve analiz edebilirsiniz.

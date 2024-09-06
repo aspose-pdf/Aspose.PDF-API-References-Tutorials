@@ -42,7 +42,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## 4. lépés: Szöveg keresése és cseréje
 
- Hozzon létre egy`TextFragmentAbsorber` objektumot a bemeneti keresési kifejezés összes példányának megtalálásához:
+ Hozzon létre a`TextFragmentAbsorber` objektumot a bemeneti keresési kifejezés összes példányának megtalálásához:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
@@ -62,7 +62,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## 6. lépés: A kibontott szövegrészletek lekérése
 
-Szerezze be a kivont szövegrészleteket a`TextFragments` tulajdona a`TextFragmentAbsorber` tárgy:
+Szerezze be a kivont szövegrészleteket a`TextFragments` tulajdona a`TextFragmentAbsorber` objektum:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -122,7 +122,7 @@ pdfDocument.Save(dataDir + "ReplaceTextPage_out.pdf");
 
 ## Következtetés
 
-Gratulálunk! Sikeresen megtanulta, hogyan cserélhet le szöveget egy PDF-dokumentum adott oldalán az Aspose.PDF for .NET használatával. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a dokumentum betöltésétől a módosított verzió mentéséig. Most már beépítheti ezt a kódot saját C#-projektjébe, hogy automatizálja a szövegcserét a PDF-fájlokban.
+Gratulálok! Sikeresen megtanulta, hogyan cserélhet le szöveget egy PDF-dokumentum adott oldalán az Aspose.PDF for .NET használatával. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a dokumentum betöltésétől a módosított verzió mentéséig. Most már beépítheti ezt a kódot saját C#-projektjébe, hogy automatizálja a szövegcserét a PDF-fájlokban.
 
 ### GYIK
 
@@ -169,8 +169,8 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 #### K: Hogyan szabhatom testre a helyettesítő szöveget az egyes szövegrészletekhez?
 
-V: A cikluson belül, amely a`TextFragmentCollection` , mindegyikhez személyre szabhatja a helyettesítő szöveget`TextFragment` egyénileg úgy, hogy egy másik karakterláncot rendel hozzá a`Text` ingatlan.
+ V: A cikluson belül, amely a`TextFragmentCollection` , mindegyikhez személyre szabhatja a helyettesítő szöveget`TextFragment` egyénileg úgy, hogy egy másik karakterláncot rendel hozzá a`Text` ingatlan.
 
 #### K: Lehetséges a szöveg cseréje a kis- és nagybetűk megkülönböztetése nélkül?
 
- V: Igen, a reguláris kifejezés mintájának módosításával végrehajthat kis- és nagybetűket nem érzékeny keresést. Például használhatja`"text"` ahelyett`"text"` ban,-ben`TextFragmentAbsorber` konstruktőr.
+ V: Igen, a reguláris kifejezés mintájának módosításával végrehajthat kis- és nagybetűket nem érzékeny keresést. Például használhatja`"text"` helyett`"text"` a`TextFragmentAbsorber` konstruktőr.

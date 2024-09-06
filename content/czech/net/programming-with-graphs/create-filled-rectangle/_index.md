@@ -7,13 +7,13 @@ type: docs
 weight: 50
 url: /cs/net/programming-with-graphs/create-filled-rectangle/
 ---
-V tomto tutoriálu vás krok za krokem provedeme následujícím zdrojovým kódem C#, abyste vytvořili vyplněný obdélník pomocí Aspose.PDF for .NET.
+tomto tutoriálu vás krok za krokem provedeme následujícím zdrojovým kódem C#, abyste vytvořili vyplněný obdélník pomocí Aspose.PDF for .NET.
 
 Než začnete, ujistěte se, že jste nainstalovali knihovnu Aspose.PDF a nastavili své vývojové prostředí. Také mít základní znalosti programování v C#.
 
 ## Krok 1: Nastavení adresáře dokumentů
 
-poskytnutém zdrojovém kódu musíte určit adresář, kam chcete uložit výsledný soubor PDF. Změňte proměnnou "dataDir" na požadovaný adresář.
+V poskytnutém zdrojovém kódu musíte určit adresář, kam chcete uložit výsledný soubor PDF. Změňte proměnnou "dataDir" na požadovaný adresář.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";

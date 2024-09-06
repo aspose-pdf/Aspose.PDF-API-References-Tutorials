@@ -7,18 +7,18 @@ type: docs
 weight: 160
 url: /nl/net/programming-with-stamps-and-watermarks/page-number-stamps/
 ---
-In deze zelfstudie begeleiden we u stap voor stap bij het toevoegen van paginanummerstempels aan een PDF-bestand met Aspose.PDF voor .NET. We gebruiken de meegeleverde C#-broncode om een bestaand PDF-document te openen, een paginanummerstempel te maken, de eigenschappen ervan in te stellen en deze toe te voegen aan een specifieke pagina in het PDF-bestand.
+In deze tutorial laten we u stap voor stap zien hoe u paginanummerstempels toevoegt aan een PDF-bestand met Aspose.PDF voor .NET. We gebruiken de meegeleverde C#-broncode om een bestaand PDF-document te openen, een paginanummerstempel te maken, de eigenschappen ervan in te stellen en deze toe te voegen aan een specifieke pagina in het PDF-bestand.
 
 ## Stap 1: De omgeving instellen
 
-Zorg ervoor dat u over het volgende beschikt voordat u begint:
+Voordat u begint, moet u ervoor zorgen dat u het volgende bij de hand hebt:
 
 - Een geïnstalleerde .NET-ontwikkelomgeving.
-- De Aspose.PDF-bibliotheek voor .NET gedownload en waarnaar wordt verwezen in uw project.
+- De Aspose.PDF-bibliotheek voor .NET is gedownload en wordt in uw project gebruikt.
 
 ## Stap 2: Het bestaande PDF-document laden
 
-De eerste stap is het laden van het bestaande PDF-document in uw project. Hier is hoe:
+De eerste stap is om het bestaande PDF-document in uw project te laden. Dit doet u als volgt:
 
 ```csharp
 // Het pad naar de documentenmap.
@@ -28,32 +28,32 @@ string dataDir = "YOUR DOCUMENTS DIRECTORY";
 Document pdfDocument = new Document(dataDir + "PageNumberStamp.pdf");
 ```
 
-Zorg ervoor dat u "UW DOCUMENTENMAP" vervangt door het daadwerkelijke pad naar de map waar uw PDF-document zich bevindt.
+Zorg ervoor dat u "UW DOCUMENTENMAP" vervangt door het daadwerkelijke pad naar de map waarin uw PDF-document zich bevindt.
 
-## Stap 3: De paginanummeringsstempel maken en configureren
+## Stap 3: Het paginanummeringstempel maken en configureren
 
-Nu het PDF-document is geladen, kunnen we een paginanummeringsbuffer maken en deze naar onze behoeften configureren. Hier is hoe:
+Nu het PDF-document is geladen, kunnen we een paginanummeringsbuffer maken en deze naar wens configureren. Dit is hoe:
 
 ```csharp
-// Maak een paginanummerbuffer
+// Een paginanummerbuffer maken
 PageNumberStamp pageNumberStamp = new PageNumberStamp();
 
-// Bepaal of de buffer zich op de achtergrond bevindt of niet
+// Definieer of de buffer zich op de achtergrond bevindt of niet
 pageNumberStamp.Background = false;
 
-// Formaat van de paginanummeringsbuffer
+// Formaat van de paginanummerbuffer
 pageNumberStamp.Format = "Page # of " + pdfDocument.Pages.Count;
 
-// Ondermarge van paginanummeringsbuffer
+// Onderste marge van de buffer voor paginanummering
 pageNumberStamp.BottomMargin = 10;
 
 // Horizontale uitlijning van de paginanummeringsbuffer
 pageNumberStamp.HorizontalAlignment = HorizontalAlignment.Center;
 
-// Beginnummer van paginanummering
+// Startnummer van paginanummering
 pageNumberStamp.StartingNumber = 1;
 
-// Stel teksteigenschappen voor de paginanummerbuffer in
+// Eigenschappen van paginanummerbuffertekst instellen
 pageNumberStamp.TextState.Font = FontRepository.FindFont("Arial");
 pageNumberStamp.TextState.FontSize = 14.0F;
 pageNumberStamp.TextState.FontStyle = FontStyles.Bold;
@@ -61,31 +61,31 @@ pageNumberStamp.TextState.FontStyle = FontStyles.Italic;
 pageNumberStamp.TextState.ForegroundColor = Color.Aqua;
 ```
 
-De bovenstaande code creëert een paginanummerstempel met eigenschappen zoals het paginanummerformaat, de ondermarge, horizontale uitlijning, startnummer en teksteigenschappen.
+De bovenstaande code maakt een paginanummerstempel met eigenschappen zoals paginanummeropmaak, ondermarge, horizontale uitlijning, beginnummer en teksteigenschappen.
 
-## Stap 4: Het paginanummerstempel toevoegen aan een specifieke pagina
+## Stap 4: Het paginanummerstempel aan een specifieke pagina toevoegen
 
-Zodra de paginanummerstempel is geconfigureerd, kunnen we deze aan een specifieke pagina van het PDF-document toevoegen. Hier is hoe:
+Zodra de paginanummerstempel is geconfigureerd, kunnen we deze toevoegen aan een specifieke pagina van het PDF-document. Dit is hoe:
 
 ```csharp
 // Voeg de paginanummerbuffer toe aan een specifieke pagina
 pdfDocument.Pages[1].AddStamp(pageNumberStamp);
 ```
 
-De bovenstaande code voegt het paginanummerstempel toe aan de eerste pagina van het PDF-document. U kunt het paginanummer indien nodig wijzigen.
+De bovenstaande code voegt de paginanummerstempel toe aan de eerste pagina van het PDF-document. U kunt het paginanummer naar wens wijzigen.
 
 ## Stap 5: Het gewijzigde PDF-document opslaan
 
-Zodra de paginanummerstempel aan het PDF-document is toegevoegd, kunnen we het gewijzigde PDF-document opslaan. Hier is hoe:
+Zodra de paginanummerstempel is toegevoegd aan het PDF-document, kunnen we het gewijzigde PDF-document opslaan. Dit is hoe:
 
 ```csharp
 // Sla het gewijzigde PDF-document op
 pdfDocument.Save(dataDir + "PageNumberStamp_out.pdf");
 ```
 
-Zorg ervoor dat u "UW DOCUMENTENMAP" vervangt door het daadwerkelijke pad naar de map waar u het bewerkte PDF-document wilt opslaan.
+Zorg ervoor dat u "UW DOCUMENTENMAP" vervangt door het daadwerkelijke pad naar de map waarin u het bewerkte PDF-document wilt opslaan.
 
-### Voorbeeldbroncode voor paginanummerstempels met Aspose.PDF voor .NET 
+### Voorbeeldbroncode voor paginanummerstempels met behulp van Aspose.PDF voor .NET 
 ```csharp
 
 // Het pad naar de documentenmap.
@@ -94,10 +94,10 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Document openen
 Document pdfDocument = new Document(dataDir+ "PageNumberStamp.pdf");
 
-// Paginanummerstempel maken
+// Paginanummer stempel maken
 PageNumberStamp pageNumberStamp = new PageNumberStamp();
 
-// Of de stempel een achtergrond is
+// Of de postzegel nu achtergrond is
 pageNumberStamp.Background = false;
 pageNumberStamp.Format = "Page # of " + pdfDocument.Pages.Count;
 pageNumberStamp.BottomMargin = 10;
@@ -111,11 +111,11 @@ pageNumberStamp.TextState.FontStyle = FontStyles.Bold;
 pageNumberStamp.TextState.FontStyle = FontStyles.Italic;
 pageNumberStamp.TextState.ForegroundColor = Color.Aqua;
 
-// Voeg een stempel toe aan een bepaalde pagina
+// Voeg stempel toe aan specifieke pagina
 pdfDocument.Pages[1].AddStamp(pageNumberStamp);
 dataDir = dataDir + "PageNumberStamp_out.pdf";
 
-// Sla het uitvoerdocument op
+// Uitvoerdocument opslaan
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nPage number stamp added successfully.\nFile saved at " + dataDir);
 
@@ -123,46 +123,46 @@ Console.WriteLine("\nPage number stamp added successfully.\nFile saved at " + da
 
 ## Conclusie
 
-Gefeliciteerd! U hebt geleerd hoe u paginanummerstempels aan een PDF-document kunt toevoegen met Aspose.PDF voor .NET. U kunt nu uw PDF-documenten personaliseren door duidelijke en informatieve paginanummers toe te voegen.
+Gefeliciteerd! U hebt geleerd hoe u paginanummerstempels toevoegt aan een PDF-document met Aspose.PDF voor .NET. U kunt nu uw PDF-documenten personaliseren door duidelijke en informatieve paginanummers toe te voegen.
 
-### Veelgestelde vragen over paginanummerstempels in PDF-bestand
+### FAQ's voor paginanummerstempels in PDF-bestand
 
-#### Vraag: Wat is een paginanummerstempel en hoe wordt deze gebruikt om paginanummers aan een PDF-bestand toe te voegen?
+#### V: Wat is een paginanummerstempel en hoe wordt deze gebruikt om paginanummers aan een PDF-bestand toe te voegen?
 
-A: Een paginanummerstempel is een functie in Aspose.PDF waarmee u dynamische paginanummers kunt toevoegen aan specifieke pagina's van een PDF-document. In deze zelfstudie wordt dit bereikt door een PageNumberStamp-object te maken, de eigenschappen ervan te configureren en het aan een aangewezen pagina toe te voegen.
+A: Een Page Number Stamp is een functie in Aspose.PDF waarmee u dynamische paginanummers kunt toevoegen aan specifieke pagina's van een PDF-document. In deze tutorial wordt dit bereikt door een PageNumberStamp-object te maken, de eigenschappen ervan te configureren en het toe te voegen aan een aangewezen pagina.
 
-#### Vraag: Hoe kan de meegeleverde C#-broncode paginanummerstempels toevoegen aan een PDF-bestand?
+#### V: Hoe voegt de meegeleverde C#-broncode paginanummerstempels toe aan een PDF-bestand?
 
-A: De code laat zien hoe u een bestaand PDF-document laadt, een PageNumberStamp maakt, verschillende eigenschappen instelt (zoals formaat, lettertype, uitlijning, enz.) en vervolgens de stempel aan een specifieke pagina toevoegt. De stempel berekent automatisch het totale aantal pagina's en voegt de juiste paginanummers in.
+A: De code laat zien hoe u een bestaand PDF-document laadt, een PageNumberStamp maakt, verschillende eigenschappen instelt (zoals opmaak, lettertype, uitlijning, etc.) en vervolgens de stempel aan een specifieke pagina toevoegt. De stempel berekent automatisch het totale aantal pagina's en voegt de juiste paginanummers in.
 
-#### Vraag: Kan ik de weergave van het paginanummer aanpassen, zoals lettertype, kleur en grootte?
+#### V: Kan ik het uiterlijk van het paginanummer aanpassen, zoals het lettertype, de kleur en de grootte?
 
-A: Absoluut, u kunt het uiterlijk van de paginanummerstempel aanpassen door eigenschappen zoals lettertype, lettergrootte, letterstijl (vet, cursief, enz.) en tekstkleur aan te passen.
+A: Absoluut. U kunt het uiterlijk van de paginanummerstempel aanpassen door eigenschappen als lettertype, lettergrootte, letterstijl (vet, cursief, enz.) en tekstkleur aan te passen.
 
-#### Vraag: Is het mogelijk om paginanummerstempels toe te voegen aan meerdere pagina's binnen een PDF-document?
+#### V: Is het mogelijk om paginanummerstempels toe te voegen aan meerdere pagina's in een PDF-document?
 
-A: Ja, u kunt paginanummerstempels aan meerdere pagina's toevoegen door meerdere PageNumberStamp-objecten te maken en deze allemaal aan de gewenste pagina's toe te voegen.
+A: Ja, u kunt paginanummerstempels aan meerdere pagina's toevoegen door meerdere PageNumberStamp-objecten te maken en deze elk aan de gewenste pagina's toe te voegen.
 
-#### Vraag: Kan ik kiezen of de paginanummerstempel wordt weergegeven als onderdeel van de pagina-inhoud of als achtergrondelement?
+#### V: Kan ik kiezen of de paginanummerstempel wordt weergegeven als onderdeel van de inhoud van de pagina of als achtergrondelement?
 
- A: Ja, u kunt bepalen of de paginanummerstempel wordt weergegeven als onderdeel van de inhoud van de pagina of als achtergrondelement door de`Background` eigenschap van de PageNumberStamp.
+ A: Ja, u kunt bepalen of de paginanummerstempel wordt weergegeven als onderdeel van de inhoud van de pagina of als een achtergrondelement door de`Background` Eigenschap van PageNumberStamp.
 
-#### Vraag: Hoe geef ik het formaat van het paginanummer op, inclusief het totale aantal pagina's?
+#### V: Hoe geef ik de notatie van het paginanummer op, inclusief het totale aantal pagina's?
 
- A: De code gebruikt de`Format`eigenschap van PageNumberStamp om de notatie van het paginanummer op te geven. De macro "# of" wordt gebruikt om het totale aantal pagina's weer te geven.
+ A: De code gebruikt de`Format`eigenschap van de PageNumberStamp om de opmaak van het paginanummer te specificeren. De macro "# of" wordt gebruikt om het totale aantal pagina's weer te geven.
 
-#### Vraag: Wat gebeurt er als ik dezelfde paginanummerstempel aan meerdere pagina's toevoeg?
+#### V: Wat gebeurt er als ik hetzelfde paginanummer aan meerdere pagina's toevoeg?
 
-A: Als u dezelfde PageNumberStamp-instantie aan meerdere pagina's toevoegt, worden voor elke pagina de juiste paginanummers weergegeven. De stempel past automatisch het paginanummer en het totale aantal pagina's aan.
+A: Het toevoegen van dezelfde PageNumberStamp-instantie aan meerdere pagina's zal de juiste paginanummers voor elke pagina weergeven. De stempel past automatisch het paginanummer en het totale aantal pagina's aan.
 
-#### Vraag: Kan ik paginanummerstempels toevoegen aan kop- of voettekstsecties van een PDF-document?
+#### V: Kan ik paginanummerstempels toevoegen aan de kop- of voettekst van een PDF-document?
 
-A: Hoewel PageNumberStamps doorgaans rechtstreeks aan de inhoud van de pagina worden toegevoegd, kunt u FloatingBox of andere technieken gebruiken om ze in kop- of voettekstsecties te plaatsen.
+A: Hoewel PageNumberStamps doorgaans rechtstreeks aan de inhoud van de pagina worden toegevoegd, kunt u FloatingBox of andere technieken gebruiken om ze in de kop- of voettekstsecties te plaatsen.
 
-#### Vraag: Hoe geef ik de positie van de paginanummerstempel op de pagina op?
+#### V: Hoe kan ik de positie van het paginanummer op de pagina aangeven?
 
- EEN: De`BottomMargin` En`HorizontalAlignment` Met de eigenschappen van PageNumberStamp kunt u de positie van de stempel op de pagina bepalen.
+ A: De`BottomMargin` En`HorizontalAlignment` Met de eigenschappen van PageNumberStamp kunt u de positie van de stempel op de pagina bepalen.
 
-#### Vraag: Wat moet ik doen als ik de paginanummering wil laten beginnen met een ander nummer in plaats van 1?
+#### V: Wat als ik de paginanummering wil laten beginnen met een ander nummer dan 1?
 
- A: U kunt de`StartingNumber`eigenschap van PageNumberStamp om het startpaginanummer op te geven.
+ A: U kunt de`StartingNumber`eigenschap van de PageNumberStamp om het startpaginanummer op te geven.

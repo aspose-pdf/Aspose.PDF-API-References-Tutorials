@@ -1,38 +1,38 @@
 ---
-title: Converti PDF in HTML con la sostituzione dei caratteri
-linktitle: Converti PDF in HTML con la sostituzione dei caratteri
-second_title: Aspose.PDF API di elaborazione PDF Java
-description: Scopri come convertire PDF in HTML con la sostituzione dei caratteri utilizzando Aspose.PDF per Java. Guida passo passo con codice sorgente per conversioni senza interruzioni. Ottimizza subito i tuoi contenuti web!
+title: Converti PDF in HTML con la sostituzione dei font
+linktitle: Converti PDF in HTML con la sostituzione dei font
+second_title: API di elaborazione PDF Java Aspose.PDF
+description: Scopri come convertire PDF in HTML con sostituzione font usando Aspose.PDF per Java. Guida passo passo con codice sorgente per conversioni senza soluzione di continuità. Ottimizza subito i tuoi contenuti web!
 type: docs
 weight: 30
 url: /it/java/pdf-conversion-transformation/convert-pdf-to-html-with-font-substitution/
 ---
 
-In questa guida passo passo, esploreremo come convertire un documento PDF in HTML con la sostituzione dei caratteri utilizzando Aspose.PDF per Java. La sostituzione dei caratteri è una funzionalità cruciale quando si ha a che fare con documenti PDF che utilizzano caratteri non immediatamente disponibili in HTML. Al termine di questo tutorial sarai in grado di eseguire conversioni senza interruzioni mantenendo l'integrità del documento.
+In questa guida passo passo, esploreremo come convertire un documento PDF in HTML con la sostituzione dei font usando Aspose.PDF per Java. La sostituzione dei font è una funzionalità cruciale quando si ha a che fare con documenti PDF che usano font non prontamente disponibili in HTML. Alla fine di questo tutorial, sarai in grado di eseguire conversioni senza problemi mantenendo l'integrità del documento.
 
-## introduzione
+## Introduzione
 
-Aspose.PDF per Java è una potente libreria Java che ti consente di lavorare con documenti PDF a livello di codice. Offre varie funzionalità, inclusa la conversione da PDF a HTML con sostituzione dei caratteri, su cui ci concentreremo in questa guida.
+Aspose.PDF per Java è una potente libreria Java che consente di lavorare con documenti PDF a livello di programmazione. Offre varie funzionalità, tra cui la conversione da PDF a HTML con sostituzione dei font, su cui ci concentreremo in questa guida.
 
-## Cos'è Aspose.PDF per Java?
+## Che cos'è Aspose.PDF per Java?
 
-Aspose.PDF per Java è una solida API che consente agli sviluppatori di creare, modificare e manipolare documenti PDF nelle applicazioni Java. Fornisce un supporto completo per varie operazioni relative ai PDF, rendendolo la scelta ideale per la gestione dei PDF in Java.
+Aspose.PDF per Java è una solida API che consente agli sviluppatori di creare, modificare e manipolare documenti PDF in applicazioni Java. Fornisce un supporto completo per varie operazioni correlate a PDF, rendendolo una scelta ideale per la gestione di PDF in Java.
 
-## Perché convertire PDF in HTML con la sostituzione dei caratteri?
+## Perché convertire PDF in HTML con la sostituzione dei font?
 
-La conversione da PDF a HTML è essenziale quando è necessario visualizzare il contenuto PDF sul Web. Tuttavia, i PDF possono contenere caratteri non sicuri per il Web, con conseguenti problemi di rendering. La sostituzione dei caratteri garantisce che il documento HTML convertito mantenga lo stesso aspetto sostituendo i caratteri non disponibili con alternative adeguate.
+La conversione da PDF a HTML è essenziale quando si desidera visualizzare contenuti PDF sul Web. Tuttavia, i PDF possono contenere font non sicuri per il Web, con conseguenti problemi di rendering. La sostituzione dei font garantisce che il documento HTML convertito mantenga lo stesso aspetto sostituendo i font non disponibili con alternative idonee.
 
 ## Prerequisiti
 
-Prima di iniziare, assicurati di disporre dei seguenti prerequisiti:
+Prima di iniziare, assicurati di avere i seguenti prerequisiti:
 
-- Kit di sviluppo Java (JDK) installato
+- Java Development Kit (JDK) installato
 -  Aspose.PDF per la libreria Java (puoi scaricarlo da[Qui](https://releases.aspose.com/pdf/java/)
 - Ambiente di sviluppo integrato (IDE) di tua scelta
 
 ## Impostazione dell'ambiente di sviluppo
 
-1. Apri il tuo IDE.
+1. Apri l'IDE.
 2. Crea un nuovo progetto Java.
 3. Aggiungi la libreria Aspose.PDF per Java alle dipendenze del tuo progetto.
 
@@ -50,23 +50,23 @@ import com.aspose.pdf.HtmlSaveOptions;
 Document pdfDocument = new Document("input.pdf");
 ```
 
-## Configurazione della sostituzione dei caratteri
+## Configurazione della sostituzione dei font
 
 ```java
 //Crea un'istanza di HtmlSaveOptions
 HtmlSaveOptions saveOptions = new HtmlSaveOptions();
 
-// Abilita la sostituzione dei caratteri
+// Abilita la sostituzione del carattere
 saveOptions.setUseSubstitutions(true);
 
-// Imposta mappature dei caratteri personalizzate, se necessario
+// Imposta le mappature dei font personalizzate se necessario
 saveOptions.setFontSavingMode(HtmlSaveOptions.FontSavingModes.SAVE_IN_ALL_FORMATS);
 ```
 
-## Conversione di PDF in HTML con sostituzione dei caratteri
+## Conversione da PDF a HTML con sostituzione dei font
 
 ```java
-// Converti PDF in HTML con la sostituzione dei caratteri
+// Converti PDF in HTML con sostituzione dei font
 pdfDocument.save("output.html", saveOptions);
 ```
 
@@ -83,32 +83,32 @@ try {
 
 ## Personalizzazione della conversione
 
- È possibile personalizzare ulteriormente l'output HTML modificando il file`HtmlSaveOptions` parametri. Ciò ti consente di controllare vari aspetti della conversione, come la compressione delle immagini e la formattazione del testo.
+ È possibile personalizzare ulteriormente l'output HTML regolando il`HtmlSaveOptions` parametri. Ciò consente di controllare vari aspetti della conversione, come la compressione delle immagini e la formattazione del testo.
 
 ## Conclusione
 
-In questa guida, abbiamo trattato il processo di conversione da PDF a HTML con sostituzione dei caratteri utilizzando Aspose.PDF per Java. Questa potente libreria semplifica il processo di conversione e garantisce che i tuoi documenti HTML mantengano lo stesso aspetto, anche quando si tratta di caratteri non sicuri per il web.
+In questa guida, abbiamo trattato il processo di conversione da PDF a HTML con sostituzione dei font tramite Aspose.PDF per Java. Questa potente libreria semplifica il processo di conversione e garantisce che i tuoi documenti HTML mantengano lo stesso aspetto, anche quando si tratta di font non sicuri per il web.
 
-Ora puoi integrare perfettamente la conversione da PDF a HTML nelle tue applicazioni Java. Se hai domande o affronti sfide, fai riferimento alle domande frequenti di seguito.
+Ora puoi integrare senza problemi la conversione da PDF a HTML nelle tue applicazioni Java. Se hai domande o riscontri difficoltà, fai riferimento alle FAQ qui sotto.
 
 ## Domande frequenti
 
-### Come funziona la sostituzione dei caratteri in Aspose.PDF per Java?
+### Come funziona la sostituzione dei font in Aspose.PDF per Java?
 
-Aspose.PDF per Java rileva automaticamente i caratteri nel documento PDF che non sono disponibili per il rendering HTML. Li sostituisce con caratteri simili sicuri per il Web per garantire una rappresentazione visiva coerente nell'HTML convertito.
+Aspose.PDF per Java rileva automaticamente i font nel documento PDF che non sono disponibili per il rendering HTML. Li sostituisce con font web-safe simili per garantire una rappresentazione visiva coerente nell'HTML convertito.
 
-### Posso specificare caratteri personalizzati per la sostituzione?
+### Posso specificare font personalizzati da sostituire?
 
-Sì, puoi definire mappature dei caratteri personalizzate per specificare quali caratteri devono sostituire quelli non disponibili durante il processo di conversione. Ciò fornisce un controllo capillare sulla sostituzione.
+Sì, puoi definire mapping di font personalizzati per specificare quali font devono sostituire quelli non disponibili durante il processo di conversione. Ciò fornisce un controllo dettagliato sulla sostituzione.
 
-### Quali sono i vantaggi della conversione da PDF a HTML con la sostituzione dei caratteri?
+### Quali sono i vantaggi della conversione da PDF a HTML con la sostituzione dei font?
 
-La conversione da PDF a HTML con la sostituzione dei caratteri garantisce che i tuoi documenti vengano visualizzati come previsto sul Web, anche se il PDF originale utilizza caratteri non comuni. Mantiene la coerenza nella presentazione visiva su diverse piattaforme e browser.
+La conversione da PDF a HTML con sostituzione dei font assicura che i tuoi documenti appaiano come previsto sul web, anche se il PDF originale utilizza font non comuni. Mantiene la coerenza nella presentazione visiva su diverse piattaforme e browser.
 
-### Ci sono limitazioni alla sostituzione dei caratteri?
+### Esistono delle limitazioni alla sostituzione dei font?
 
-Sebbene la sostituzione dei caratteri sia una funzionalità preziosa, potrebbe non corrispondere perfettamente all'estetica del documento PDF originale. È essenziale rivedere l'HTML convertito e apportare le modifiche necessarie.
+Sebbene la sostituzione dei font sia una funzionalità preziosa, potrebbe non corrispondere perfettamente all'estetica del documento PDF originale. È essenziale rivedere l'HTML convertito e apportare le modifiche necessarie.
 
-### Aspose.PDF per Java è adatto per conversioni da PDF a HTML su larga scala?
+### Aspose.PDF per Java è adatto per conversioni PDF in HTML su larga scala?
 
-Sì, Aspose.PDF per Java è adatto per conversioni da PDF a HTML sia su piccola che su larga scala. Le sue robuste prestazioni e le opzioni di personalizzazione lo rendono una scelta affidabile per vari progetti.
+Sì, Aspose.PDF per Java è adatto sia per conversioni PDF in HTML su piccola che su larga scala. Le sue prestazioni robuste e le opzioni di personalizzazione lo rendono una scelta affidabile per vari progetti.

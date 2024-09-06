@@ -1,105 +1,105 @@
 ---
-title: Tablo Hücresine Resim Ekleme
-linktitle: Tablo Hücresine Resim Ekleme
-second_title: .NET API Referansı için Aspose.PDF
-description: Aspose.PDF for .NET ile tablo hücresine bir görüntü ekleyin; PDF belgelerindeki görüntülerin hassas şekilde işlenmesi için adım adım kılavuz.
+title: Tablo Hücresine Resim Ekle
+linktitle: Tablo Hücresine Resim Ekle
+second_title: Aspose.PDF for .NET API Referansı
+description: Aspose.PDF for .NET ile bir tablo hücresine resim ekleyin. PDF belgelerindeki resimlerin hassas bir şekilde işlenmesi için adım adım bir kılavuz.
 type: docs
 weight: 10
 url: /tr/net/programming-with-tables/add-image-in-a-table-cell/
 ---
-Bu eğitimde, Aspose.PDF for .NET kullanarak bir tablo hücresine görüntü ekleme sürecinde size rehberlik edeceğiz. Sağlanan C# kaynak kodu, bu işlevselliğe nasıl ulaşılacağını gösterir. Aşağıda özetlenen adımları takip ederek resimleri tablo hücrelerinize etkili bir şekilde dahil edebileceksiniz.
+Bu eğitimde, .NET için Aspose.PDF kullanarak bir tablo hücresine resim ekleme sürecinde size rehberlik edeceğiz. Sağlanan C# kaynak kodu bu işlevselliğin nasıl elde edileceğini gösterir. Aşağıda özetlenen adımları izleyerek, resimleri tablo hücrelerinize etkili bir şekilde dahil edebileceksiniz.
 
-Kodun ayrıntılarına girmeden önce Aspose.PDF for .NET kütüphanesinin kurulu olduğundan ve projenizde referans verildiğinden emin olun.
+Koda dalmadan önce, Aspose.PDF for .NET kütüphanesinin projenizde yüklü olduğundan ve referans verildiğinden emin olun.
 
-## 1. Adım: Belgeyi Ayarlama
+## Adım 1: Belgeyi Ayarlama
 
- Başlamak için yeni bir örneğini oluşturmamız gerekiyor.`Document` Aspose.Pdf ad alanından sınıf. Bu sınıf bir PDF belgesini temsil eder.
+ Başlamak için, yeni bir örnek oluşturmamız gerekiyor`Document` Aspose.Pdf ad alanından sınıf. Bu sınıf bir PDF belgesini temsil eder.
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Bir Belge nesnesinin örneğini oluşturma
+// Bir Belge nesnesi örneği oluşturun
 Document pdfDocument = new Document();
 ```
 
-## Adım 2: Sayfa Oluşturma
+## Adım 2: Bir Sayfa Oluşturma
 
-Daha sonra PDF belgesine bir sayfa eklememiz gerekiyor. Sayfa, tablo ve diğer öğeler için bir kap görevi görür.
+Sonra, PDF belgesine bir sayfa eklememiz gerekiyor. Bir sayfa, tablo ve diğer öğeler için bir kapsayıcı görevi görür.
 
 ```csharp
-// Pdf belgesinde bir sayfa oluşturun
+// PDF belgesinde bir sayfa oluşturun
 Page sec1 = pdfDocument.Pages.Add();
 ```
 
 ## Adım 3: Tablo Ekleme
 
- Bu adımda, örnekleyerek bir tablo oluşturacağız.`Table` Aspose.Pdf ad alanından sınıf.
+ Bu adımda, örnek oluşturarak bir tablo oluşturacağız`Table` Aspose.Pdf ad alanından sınıf.
 
 ```csharp
-// Bir tablo nesnesinin örneğini oluşturma
+// Bir tablo nesnesi örneği oluşturun
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 ```
 
-## Adım 4: Varsayılan Hücre Sınırını Ayarlama
+## Adım 4: Varsayılan Hücre Kenarlığını Ayarlama
 
- Tutarlılığı sağlamak için varsayılan hücre kenarlığını aşağıdaki komutu kullanarak ayarlayabiliriz:`DefaultCellBorder`tablonun özelliği`BorderInfo` nesne.
+ Tutarlılığı sağlamak için, varsayılan bir hücre kenarlığı ayarlayabiliriz`DefaultCellBorder`tablonun özelliği`BorderInfo` nesne.
 
 ```csharp
-// BorderInfo nesnesini kullanarak varsayılan hücre kenarlığını ayarlama
+// BorderInfo nesnesini kullanarak varsayılan hücre kenarlığını ayarlayın
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 ```
 
 ## Adım 5: Sütun Genişliklerini Ayarlama
 
- Tablodaki her bir sütunun genişliğini tanımlamak için`ColumnWidths` mülk. Genişlikleri boşlukla ayrılmış değerler içeren bir dize olarak belirtin.
+ Tablodaki her sütunun genişliğini tanımlamak için şunu ayarlayabiliriz:`ColumnWidths` özellik. Genişlikleri boşluklarla ayrılmış değerler içeren bir dize olarak belirtin.
 
 ```csharp
-// Tablonun sütun genişliklerine göre ayarlama
+// Tablonun sütun genişlikleriyle ayarlayın
 tab1.ColumnWidths = "100 100 120";
 ```
 
-## Adım 6: Tablo Hücresine Görüntü Ekleme
+## Adım 6: Bir Tablo Hücresine Resim Ekleme
 
-Şimdi heyecan verici kısım geliyor: tablo hücresine resim ekleme. Bunu yapmak için şu alt adımları izleyeceğiz:
+Şimdi heyecan verici kısma geliyoruz, bir tablo hücresine resim ekleme. Bunu yapmak için şu alt adımları takip edeceğiz:
 
-## Adım 6.1: Görüntü Nesnesi Oluşturma
+## Adım 6.1: Bir Görüntü Nesnesi Oluşturma
 
- Bir örneğini oluşturun`Image` Aspose.Pdf ad alanından sınıf. Yı kur`File` özelliğini eklemek istediğiniz görüntü dosyasının yoluna ekleyin.
+ Bir örneğini oluşturun`Image` Aspose.Pdf ad alanından sınıf.`File` Eklemek istediğiniz resim dosyasının yoluna ait özellik.
 
 ```csharp
-// Bir Görüntü nesnesi oluşturma
+// Bir Görüntü nesnesi oluşturun
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose.jpg";
 ```
 
-## Adım 6.2: Satır ve Hücre Oluşturma
+## Adım 6.2: Satır ve Hücreler Oluşturma
 
-Görseli tabloya eklemek için öncelikle bir satır ve gerekli hücreleri oluşturmamız gerekiyor.
+Resmi tabloya eklemek için öncelikle bir satır ve gerekli hücreleri oluşturmamız gerekiyor.
 
 ```csharp
 // Tabloda bir satır oluşturun
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 
-// Satıra bir metin hücresi ekleme
+// Satıra bir metin hücresi ekle
 row1.Cells.Add("Sample text in cell");
 
-// Resmin bulunduğu hücreyi ekleyin
+// Resmi tutan hücreyi ekleyin
 Aspose.Pdf.Cell cell2 = row1.Cells.Add();
 ```
 
-## Adım 6.3: Görüntüyü Tablo Hücresine Ekleme
+## Adım 6.3: Resmi Tablo Hücresine Ekleme
 
-Son olarak görseli hücre içerisinde paragraf olarak ekleyerek tablo hücresine ekleyebiliriz.
+Son olarak, resmi hücrenin içine paragraf olarak ekleyerek tablo hücresine ekleyebiliriz.
 
 ```csharp
-// Resmi tablo hücresine ekleyin
+// Resmi tablo hücresine ekle
 cell2.Paragraphs.Add(img);
 ```
 
-## Adım 6.4: Ek Hücre Ekleme
+## Adım 6.4: Ek Hücreler Ekleme
 
-Görüntü hücresini ekledikten sonra gerekirse satıra daha fazla hücre ekleyebiliriz.
+Resim hücresini ekledikten sonra, ihtiyaç halinde satıra daha fazla hücre ekleyebiliriz.
 
 ```csharp
 //Satıra başka bir hücre ekle
@@ -111,41 +111,41 @@ row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
 
 ## Adım 7: Belgeyi Kaydetme
 
- Son olarak, değiştirilen belgeyi aşağıdaki komutu kullanarak belirtilen bir konuma kaydedebiliriz:`Save` yöntem.
+ Son olarak, değiştirilen belgeyi belirtilen bir konuma şu şekilde kaydedebiliriz:`Save` Yöntem.
 
 ```csharp
 // Belgeyi Kaydet
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
-Tebrikler! Aspose.PDF for .NET kullanarak bir tablo hücresine nasıl resim ekleyeceğinizi başarıyla öğrendiniz. Daha fazla özelleştirme seçeneğini keşfetmekten ve bu işlevselliği projelerinize entegre etmekten çekinmeyin.
+Tebrikler! Aspose.PDF for .NET kullanarak bir tablo hücresine resim eklemeyi başarıyla öğrendiniz. Daha fazla özelleştirme seçeneğini keşfetmekten ve bu işlevselliği projelerinize entegre etmekten çekinmeyin.
 
-### Aspose.PDF for .NET kullanarak tablo hücresine resim eklemek için örnek kaynak kodu
+### .NET için Aspose.PDF kullanarak bir tablo hücresine resim eklemek için örnek kaynak kodu
 
 ```csharp
-// Belgeler dizininin yolu.
+// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Bir Belge nesnesinin örneğini oluşturma
+// Bir Belge nesnesi örneği oluşturun
 Document pdfDocument = new Document();
-// Pdf belgesinde bir sayfa oluşturun
+// PDF belgesinde bir sayfa oluşturun
 Page sec1 = pdfDocument.Pages.Add();
-// Bir tablo nesnesinin örneğini oluşturma
+// Bir tablo nesnesi örneği oluşturun
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
-// Tabloyu istediğiniz sayfanın paragraf koleksiyonuna ekleyin
+// İstenilen sayfanın paragraf koleksiyonuna tabloyu ekleyin
 sec1.Paragraphs.Add(tab1);
-// BorderInfo nesnesini kullanarak varsayılan hücre kenarlığını ayarlama
+// BorderInfo nesnesini kullanarak varsayılan hücre kenarlığını ayarlayın
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
-// Tablonun sütun genişliklerine göre ayarlama
+// Tablonun sütun genişlikleriyle ayarlayın
 tab1.ColumnWidths = "100 100 120";
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose.jpg";
 // Tabloda satırlar ve ardından satırlarda hücreler oluşturun
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Sample text in cell");
-// Resmin bulunduğu hücreyi ekleyin
+// Resmi tutan hücreyi ekleyin
 Aspose.Pdf.Cell cell2 = row1.Cells.Add();
-// Resmi tablo hücresine ekleyin
+// Resmi tablo hücresine ekle
 cell2.Paragraphs.Add(img);
 row1.Cells.Add("Previous cell with image");
 row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
@@ -155,26 +155,26 @@ pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 
 ## Çözüm
 
-Bu eğitimde Aspose.PDF for .NET kullanarak bir tablo hücresine nasıl resim ekleneceğine dair adım adım bir kılavuz ele aldık. Belgeyi ayarlayarak, bir sayfa oluşturarak ve bir tablo ekleyerek başladık. Daha sonra varsayılan hücre kenarlığını ve sütun genişliklerini ayarlıyoruz. Tablo hücresine nasıl resim ekleneceğini ve hücrenin dikey hizasının nasıl ayarlanacağını gösterdik. Son olarak değiştirilen belgeyi kaydettik. Bu adımları izleyerek PDF belgelerinizi tablo hücrelerindeki resimlerle verimli bir şekilde geliştirebilirsiniz.
+Bu eğitimde, .NET için Aspose.PDF kullanarak bir tablo hücresine resim ekleme konusunda adım adım bir kılavuz ele aldık. Belgeyi ayarlayarak, bir sayfa oluşturarak ve bir tablo ekleyerek başladık. Ardından, varsayılan hücre kenarlığını ve sütun genişliklerini ayarladık. Bir tablo hücresine resim eklemeyi ve hücrenin dikey hizalamasını ayarlamayı gösterdik. Son olarak, değiştirilen belgeyi kaydettik. Bu adımları izleyerek, PDF belgelerinizi tablo hücrelerindeki resimlerle verimli bir şekilde geliştirebilirsiniz.
 
-### SSS'ler
+### SSS
 
-#### S: Aspose.PDF for .NET'i kullanarak aynı tablodaki farklı hücrelere birden fazla görüntü ekleyebilir miyim?
+#### S: Aspose.PDF for .NET kullanarak aynı tablo içindeki farklı hücrelere birden fazla resim ekleyebilir miyim?
 
-C: Evet, Aspose.PDF for .NET'i kullanarak aynı tablodaki farklı hücrelere birden fazla görüntü ekleyebilirsiniz. Tabloya eklemek istediğiniz her görüntü için eğitimde gösterilen işlemin aynısını uygulamanız yeterlidir.
+A: Evet, Aspose.PDF for .NET kullanarak aynı tablo içindeki farklı hücrelere birden fazla resim ekleyebilirsiniz. Tabloya eklemek istediğiniz her resim için eğitimde gösterilen aynı işlemi takip etmeniz yeterlidir.
 
-#### S: Tablo hücresindeki görüntü boyutunu ve konumunu özelleştirebilir miyim?
+#### S: Resim boyutunu ve tablo hücresi içindeki konumunu özelleştirebilir miyim?
 
- C: Evet, tablo hücresinin özelliklerini ayarlayarak tablo hücresi içindeki görüntü boyutunu ve konumunu özelleştirebilirsiniz.`Image`nesne. Görüntünün genişliğini ve yüksekliğini ve ayrıca hücre içindeki hizalamayı ayarlayabilirsiniz.
+ A: Evet, özellikleri ayarlayarak resim boyutunu ve tablo hücresi içindeki konumunu özelleştirebilirsiniz.`Image`nesne. Görüntünün genişliğini ve yüksekliğini, ayrıca hücre içindeki hizalamayı ayarlayabilirsiniz.
 
-#### S: Dinamik sayıda satır ve sütuna sahip bir tabloya resim ekleyebilir miyim?
+#### S: Satır ve sütun sayısı dinamik olan bir tabloya resim ekleyebilir miyim?
 
-C: Evet, dinamik sayıda satır ve sütun içeren bir tabloya görseller ekleyebilirsiniz. Aspose.PDF for .NET, farklı boyutlarda tablolar oluşturmada esneklik sağlar. Gerektiğinde satır ve hücre ekleyebilir ve ardından belirli hücrelere uygun şekilde görseller ekleyebilirsiniz.
+A: Evet, dinamik satır ve sütun sayısına sahip bir tabloya resim ekleyebilirsiniz. Aspose.PDF for .NET, farklı boyutlarda tablolar oluşturmada esneklik sağlar. Gerektiğinde satır ve hücre ekleyebilir ve ardından belirli hücrelere buna göre resim ekleyebilirsiniz.
 
-#### S: Tablo hücrelerine resim eklemek için Aspose.PDF for .NET hangi resim formatlarını destekliyor?
+#### S: Aspose.PDF for .NET tarafından tablo hücrelerine resim eklemek için hangi resim formatları destekleniyor?
 
-C: Aspose.PDF for .NET, JPEG, PNG, GIF, BMP ve TIFF dahil çok çeşitli görüntü formatlarını destekler. Tablo hücrelerine eklemek için bu formatlardan herhangi birinin görsellerini kullanabilirsiniz.
+A: Aspose.PDF for .NET, JPEG, PNG, GIF, BMP ve TIFF dahil olmak üzere çok çeşitli resim formatlarını destekler. Bu formatlardan herhangi birinin resimlerini kullanarak tablo hücrelerine ekleyebilirsiniz.
 
 #### S: Mevcut bir PDF belgesindeki tablolara resim ekleyebilir miyim?
 
-C: Evet, Aspose.PDF for .NET'i kullanarak mevcut bir PDF belgesindeki tablolara görüntüler ekleyebilirsiniz. Mevcut belgeyi yükleyin ve öğreticide gösterildiği gibi tabloya resim eklemek için aynı adımları izleyin.
+A: Evet, Aspose.PDF for .NET kullanarak mevcut bir PDF belgesindeki tablolara resim ekleyebilirsiniz. Sadece mevcut belgeyi yükleyin ve öğreticide gösterildiği gibi tabloya resim eklemek için aynı adımları izleyin.

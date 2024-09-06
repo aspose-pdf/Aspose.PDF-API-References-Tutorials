@@ -32,7 +32,7 @@ using Aspose.Pdf.Text;
 
 ## Krok 3: Vytvořte a nakonfigurujte dokument
 
- Vytvoř nový`Document` objekt a přidejte k němu stránku:
+ Vytvořte nový`Document` objekt a přidejte k němu stránku:
 
 ```csharp
 Document doc = new Document();
@@ -104,11 +104,11 @@ doc.Save(dataDir + "LatextScriptInPdf_out.pdf");
 
 ## Závěr
 
-Gratulujeme! Úspěšně jste se naučili používat skript Latex k přidávání matematických výrazů nebo vzorců do dokumentu PDF pomocí Aspose.PDF pro .NET. Tento tutoriál poskytuje podrobné pokyny k vytvoření dokumentu, přidání tabulky s buňkou obsahující skript LaTeX a uložení dokumentu. Nyní můžete tento kód začlenit do svých vlastních projektů C# a generovat soubory PDF s matematickým obsahem.
+Gratuluji! Úspěšně jste se naučili používat skript Latex k přidávání matematických výrazů nebo vzorců do dokumentu PDF pomocí Aspose.PDF pro .NET. Tento tutoriál poskytuje podrobné pokyny k vytvoření dokumentu, přidání tabulky s buňkou obsahující skript LaTeX a uložení dokumentu. Nyní můžete tento kód začlenit do svých vlastních projektů C# a generovat soubory PDF s matematickým obsahem.
 
 ### FAQ
 
-#### Otázka: Jaký je účel výukového programu "Použít skript Latex v souboru PDF"?
+#### Otázka: Jaký je účel výukového programu "Použít Latexový skript v souboru PDF"?
 
 Odpověď: Výukový program "Použít Latexový skript v souboru PDF" má za cíl vést uživatele, jak začlenit skript LaTeX pro přidávání matematických výrazů nebo vzorců do dokumentu PDF pomocí Aspose.PDF pro .NET. Výukový program poskytuje podrobné pokyny a ukázky kódu C# pro vytvoření dokumentu, vložení tabulky s buňkou obsahující skript LaTeX a uložení dokumentu.
 
@@ -156,4 +156,4 @@ doc.Save(dataDir + "LatextScriptInPdf_out.pdf");
 
 #### Otázka: Mohu do jednoho dokumentu PDF zahrnout více výrazů založených na LaTeXu?
 
- Odpověď: Ano, do jednoho dokumentu PDF můžete zahrnout více výrazů založených na LaTeXu. Jednoduše opakujte kroky vytváření buněk a přidávání`LatexFragment` objekty do těchto buněk podle potřeby.
+ Odpověď: Ano, do stejného dokumentu PDF můžete zahrnout více výrazů založených na LaTeXu. Jednoduše opakujte kroky vytváření buněk a přidávání`LatexFragment` objekty do těchto buněk podle potřeby.

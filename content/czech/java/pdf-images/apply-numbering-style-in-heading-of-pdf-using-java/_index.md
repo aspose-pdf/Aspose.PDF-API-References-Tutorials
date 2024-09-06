@@ -2,7 +2,7 @@
 title: Použijte styl číslování v záhlaví PDF pomocí Java
 linktitle: Použijte styl číslování v záhlaví PDF pomocí Java
 second_title: Aspose.PDF Java PDF Processing API
-description: Naučte se, jak použít styly číslování na nadpisy PDF pomocí Aspose.PDF pro Java. Náš podrobný průvodce poskytuje příklady zdrojového kódu pro profesionální úpravu vašich dokumentů.
+description: Naučte se používat styly číslování na nadpisy PDF pomocí Aspose.PDF for Java. Náš podrobný průvodce poskytuje příklady zdrojového kódu pro profesionální úpravu vašich dokumentů.
 type: docs
 weight: 14
 url: /cs/java/pdf-images/apply-numbering-style-in-heading-of-pdf-using-java/
@@ -96,8 +96,8 @@ tomto podrobném průvodci jsme prozkoumali, jak použít styly číslování na
 
 Chcete-li nainstalovat Aspose.PDF for Java, postupujte takto:
 
-1.  Navštivte Aspose.PDF pro dokumentaci Java na adrese[tady](https://reference.aspose.com/pdf/java/).
-2.  Stáhněte si nejnovější verzi knihovny z[tady](https://releases.aspose.com/pdf/java/).
+1.  Navštivte Aspose.PDF pro dokumentaci Java na adrese[zde](https://reference.aspose.com/pdf/java/).
+2.  Stáhněte si nejnovější verzi knihovny z[zde](https://releases.aspose.com/pdf/java/).
 3. Integrujte knihovnu do svého projektu Java podle pokynů k instalaci uvedených v dokumentaci.
 
 ### Mohu používat Aspose.PDF pro Javu zdarma?
@@ -114,4 +114,4 @@ Ano, Aspose.PDF for Java poskytuje možnost exportovat dokumenty PDF s číslova
 
 ### Kde najdu další příklady a dokumentaci k Aspose.PDF pro Javu?
 
- Úplnou dokumentaci, příklady kódu a reference API pro Aspose.PDF for Java můžete najít na webové stránce s dokumentací na adrese[tady](https://reference.aspose.com/pdf/java/).
+ Úplnou dokumentaci, příklady kódu a reference API pro Aspose.PDF for Java můžete najít na webové stránce s dokumentací na adrese[zde](https://reference.aspose.com/pdf/java/).

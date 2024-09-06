@@ -17,7 +17,7 @@ När du har laddat ner biblioteket, extrahera innehållet i ZIP-filen till en ma
 
 ## Steg 2: Ladda PDF-dokumentet
 
-När du har installerat Aspose.PDF för .NET och lagt till en referens till DLL-filen i ditt .NET-projekt kan du börja använda`GetFileInfo` funktion för att hämta information om ett PDF-dokuments metadata.
+ När du har installerat Aspose.PDF för .NET och lagt till en referens till DLL-filen i ditt .NET-projekt kan du börja använda`GetFileInfo` funktion för att hämta information om ett PDF-dokuments metadata.
 
 Det första steget i att använda den här funktionen är att ladda PDF-dokumentet som du vill hämta information om. För att göra detta kan du använda följande kod:
 
@@ -25,7 +25,7 @@ Det första steget i att använda den här funktionen är att ladda PDF-dokument
 // Sökvägen till PDF-dokumentet
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Öppna PDF-dokumentet
+// Öppna PDF-dokumentet
 Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
 ```
 
@@ -58,7 +58,7 @@ I koden ovan hämtar varje rad en annan metadataegenskap för PDF-dokumentet och
 // Sökvägen till PDF-dokumentet
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Öppna PDF-dokumentet
+// Öppna PDF-dokumentet
 Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
 
 // Få dokumentinformation

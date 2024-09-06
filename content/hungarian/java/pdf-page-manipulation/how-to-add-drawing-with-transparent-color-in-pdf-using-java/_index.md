@@ -10,7 +10,7 @@ url: /hu/java/pdf-page-manipulation/how-to-add-drawing-with-transparent-color-in
 
 ## Bevezetés
 
-Ebben az oktatóanyagban megvizsgáljuk, hogyan adhatunk átlátszó színű rajzokat PDF-dokumentumokhoz a Java és az Aspose.PDF for Java API használatával. Átlátszó színű rajzok hozzáadása hasznos lehet, ha tetszetős és dinamikus PDF-dokumentumokat szeretne létrehozni. Lépésről lépésre lefedjük a teljes folyamatot, beleértve a környezet beállítását, PDF-dokumentum létrehozását, rajzok hozzáadását, valamint a rajzokon használt színek átláthatóságának biztosítását.
+Ebben az oktatóanyagban megvizsgáljuk, hogyan adhatunk átlátszó színű rajzokat PDF-dokumentumokhoz a Java és az Aspose.PDF for Java API használatával. Átlátszó színű rajzok hozzáadása hasznos lehet, ha tetszetős és dinamikus PDF-dokumentumokat szeretne létrehozni. Lépésről lépésre lefedjük a teljes folyamatot, beleértve a környezet beállítását, PDF-dokumentum létrehozását, rajzok hozzáadását és a rajzokon használt színek átláthatóságának biztosítását.
 
 ## Előfeltételek
 
@@ -98,7 +98,7 @@ Teljesen! Az Aspose.PDF for Java API segítségével különféle alakzatokat, p
 
 ### Hogyan menthetem el a PDF-dokumentumot más néven vagy hellyel?
 
- Megadhatja a kívánt fájl elérési utat és nevet a hívásakor`save` módszer a`Document`tárgy. Egyszerűen adja meg a teljes elérési utat, beleértve a fájl nevét és kiterjesztését.
+ Megadhatja a kívánt fájl elérési utat és nevet a hívásakor`save` módszer a`Document`objektum. Egyszerűen adja meg a teljes elérési utat, beleértve a fájl nevét és kiterjesztését.
 
 ### Hol találhatok további információt és dokumentációt az Aspose.PDF for Java fájlhoz?
 

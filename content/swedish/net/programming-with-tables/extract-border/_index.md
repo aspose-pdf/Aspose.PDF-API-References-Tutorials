@@ -235,7 +235,7 @@ Console.WriteLine("\nBorder extracted successfully as image.\nFile saved at " + 
 ## Slutsats
 I den här handledningen lärde vi oss hur man extraherar gränsen från ett PDF-dokument med Aspose.PDF för .NET. Du kan använda den här steg-för-steg-guiden för att extrahera ramar från andra PDF-dokument.
 
-### Vanliga frågor för extrahera gräns i PDF-fil
+### Vanliga frågor om extrahera gräns i PDF-fil
 
 #### F: Vad är syftet med att extrahera gränsen från en PDF-fil?
 

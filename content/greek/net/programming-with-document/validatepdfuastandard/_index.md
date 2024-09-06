@@ -52,7 +52,7 @@ Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
 bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1); 
 ```
 
-## συμπέρασμα
+## Σύναψη
 
 Η διασφάλιση ότι τα έγγραφα PDF είναι προσβάσιμα σε όλους τους χρήστες, συμπεριλαμβανομένων των ατόμων με αναπηρίες, είναι ζωτικής σημασίας για τη δημιουργία περιεχομένου χωρίς αποκλεισμούς και φιλικό προς τον χρήστη. Το Aspose.PDF για .NET απλοποιεί τη διαδικασία επικύρωσης εγγράφων PDF σε σχέση με το πρότυπο PDF/UA, βοηθώντας τους προγραμματιστές να δημιουργήσουν πιο προσβάσιμα αρχεία PDF.
 

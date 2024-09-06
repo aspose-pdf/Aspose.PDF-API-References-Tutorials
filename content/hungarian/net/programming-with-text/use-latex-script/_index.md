@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 1. lépés: Állítsa be a projektet
 
-Hozzon létre egy új C#-projektet a kívánt integrált fejlesztői környezetben (IDE), és adjon hozzá hivatkozást az Aspose.PDF for .NET könyvtárhoz.
+Hozzon létre egy új C#-projektet az előnyben részesített integrált fejlesztői környezetben (IDE), és adjon hozzá hivatkozást az Aspose.PDF for .NET könyvtárhoz.
 
 ## 2. lépés: Importálja a szükséges névtereket
 
@@ -32,7 +32,7 @@ using Aspose.Pdf.Text;
 
 ## 3. lépés: A dokumentum létrehozása és konfigurálása
 
- Újat csinálni`Document` objektumot, és adjunk hozzá egy oldalt:
+ Hozzon létre egy újat`Document` objektumot, és adjunk hozzá egy oldalt:
 
 ```csharp
 Document doc = new Document();
@@ -59,7 +59,7 @@ LatexFragment ltext1 = new LatexFragment(latexText1, true);
 cell.Paragraphs.Add(ltext1);
 ```
 
- Vegye figyelembe, hogy a`true` paraméter a`LatexFragment` A konstruktor kiküszöböli a Latex bekezdés behúzásait.
+ Vegye figyelembe, hogy a`true` paraméter a`LatexFragment` A konstruktor kiküszöböli a Latex bekezdések behúzását.
 
 ## 6. lépés: Adja hozzá a táblázatot az oldalhoz
 
@@ -104,7 +104,7 @@ doc.Save(dataDir + "LatextScriptInPdf_out.pdf");
 
 ## Következtetés
 
-Gratulálunk! Sikeresen megtanulta, hogyan lehet Latex szkriptet matematikai kifejezések vagy képletek PDF-dokumentumokhoz való hozzáadására az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre útmutatást ad a dokumentum létrehozásához, a LaTeX szkriptet tartalmazó cellát tartalmazó táblázat hozzáadásához és a dokumentum mentéséhez. Most már beépítheti ezt a kódot saját C#-projektjébe, hogy matematikai tartalmú PDF-fájlokat állítson elő.
+Gratulálok! Sikeresen megtanulta, hogyan kell Latex szkriptet használni matematikai kifejezések vagy képletek PDF-dokumentumokhoz való hozzáadásához az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre útmutatást ad a dokumentum létrehozásához, a LaTeX szkriptet tartalmazó cellát tartalmazó táblázat hozzáadásához és a dokumentum mentéséhez. Most már beépítheti ezt a kódot saját C#-projektjébe, hogy matematikai tartalmú PDF-fájlokat állítson elő.
 
 ### GYIK
 
@@ -120,13 +120,13 @@ V: Ez az oktatóanyag segít a felhasználóknak megérteni, hogyan használhatj
 
 V: Az oktatóanyag sikeres követéséhez alapvető ismeretekkel kell rendelkeznie a C# programozási nyelvről. Ezenkívül győződjön meg arról, hogy az Aspose.PDF for .NET könyvtár telepítve van. Beszerezheti az Aspose webhelyéről, vagy a NuGet segítségével telepítheti a projektbe.
 
-#### K: Hogyan állíthatom be a projektemet, hogy LaTeX szkriptet használjon egy PDF dokumentumban?
+#### K: Hogyan állíthatom be a projektemet, hogy a LaTeX szkriptet használja egy PDF dokumentumban?
 
 V: Kezdésként hozzon létre egy új C# projektet a választott integrált fejlesztői környezetben (IDE), és adjon hozzá egy hivatkozást az Aspose.PDF for .NET könyvtárhoz. Ez biztosítja a szükséges eszközöket a PDF dokumentumok és a LaTeX szkript használatához.
 
 #### K: Milyen névtereket kell importálnom az Aspose.PDF for .NET használatához?
 
-V: A C# kódfájlba az elejére írja be a következőket direktívák használatával a szükséges névterek importálásához:
+V: A C# kódfájlba az elejére direktívák használatával adja meg a következőket a szükséges névterek importálásához:
 
 ```csharp
 using Aspose.Pdf;

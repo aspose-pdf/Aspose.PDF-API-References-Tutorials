@@ -1,93 +1,117 @@
 ---
-title: Incrustar fuentes en archivos PDF con estrategia de subconjunto
+title: Incrustar fuentes en un archivo PDF con la estrategia de subconjuntos
 linktitle: Incrustar fuentes con estrategia de subconjunto
-second_title: Aspose.PDF para referencia de API .NET
-description: Aprenda a incrustar fuentes en un archivo PDF con Subset Strategy usando Aspose.PDF para .NET. Optimice el tamaño de su PDF incorporando solo los caracteres necesarios.
+second_title: Referencia de API de Aspose.PDF para .NET
+description: Aprenda a incrustar fuentes en un archivo PDF con la estrategia de subconjuntos mediante Aspose.PDF para .NET. Optimice el tamaño de su PDF incrustando solo los caracteres necesarios.
 type: docs
 weight: 130
 url: /es/net/programming-with-document/embedfontsusingsubsetstrategy/
 ---
-En este tutorial, discutiremos cómo incrustar fuentes en un archivo PDF con una estrategia de subconjunto usando Aspose.PDF para .NET. Aspose.PDF para .NET es una poderosa biblioteca que permite a los desarrolladores crear, editar y manipular documentos PDF mediante programación. Incrustar fuentes en un archivo PDF es un paso importante para garantizar que el documento se muestre correctamente en diferentes dispositivos, independientemente de si las fuentes requeridas están instaladas en esos dispositivos o no.
+## Introducción
 
-## Paso 1: crear una nueva aplicación de consola C#
-Para comenzar, cree una nueva aplicación de consola C# en Visual Studio. Puedes nombrarlo como quieras. Una vez creado el proyecto, debe agregar una referencia a la biblioteca Aspose.PDF para .NET.
+En la era digital, los archivos PDF se han convertido en un elemento básico para compartir documentos. Ya sea que esté enviando un informe, una presentación o un libro electrónico, es fundamental asegurarse de que las fuentes se muestren correctamente. ¿Alguna vez ha abierto un PDF y se ha dado cuenta de que el texto se ve diferente al deseado? Esto suele suceder cuando las fuentes utilizadas en el documento no están incrustadas correctamente. ¡Ahí es donde entra en juego Aspose.PDF para .NET! En este tutorial, exploraremos cómo incrustar fuentes en un archivo PDF utilizando la estrategia de subconjunto, lo que garantizará que sus documentos se vean exactamente como deseaba, sin importar dónde se visualicen.
 
-## Paso 2: Importe el espacio de nombres Aspose.PDF
-Agregue la siguiente línea de código en la parte superior de su archivo C# para importar el espacio de nombres Aspose.PDF:
+## Prerrequisitos
+
+Antes de sumergirnos en los detalles de la incrustación de fuentes, hay algunas cosas que deberá tener en cuenta:
+
+1.  Aspose.PDF para .NET: Asegúrese de tener instalada la biblioteca Aspose.PDF. Puede descargarla desde[aquí](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: un entorno de desarrollo donde puedes escribir y probar tu código .NET.
+3. Conocimientos básicos de C#: la familiaridad con la programación en C# le ayudará a comprender mejor los fragmentos de código.
+
+## Importar paquetes
+
+Para comenzar, deberá importar los paquetes necesarios en su proyecto de C#. A continuación, le indicamos cómo hacerlo:
+
+### Crear un nuevo proyecto
+
+Abra Visual Studio y cree un nuevo proyecto de C#. Puede elegir una aplicación de consola para simplificar el proceso.
+
+### Añadir referencia de Aspose.PDF
+
+1. Haga clic derecho en su proyecto en el Explorador de soluciones.
+2. Seleccione "Administrar paquetes NuGet".
+3. Busque "Aspose.PDF" e instale la última versión.
 
 ```csharp
-using Aspose.Pdf;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Paso 3: cargue un archivo PDF existente
-Para incrustar fuentes en un archivo PDF existente, debe cargar ese archivo usando la clase Documento. El siguiente código demuestra cómo cargar un archivo PDF existente:
+Ahora que tenemos todo configurado, analicemos el proceso de incrustar fuentes en un archivo PDF paso a paso.
+
+## Paso 1: Configurar el directorio de documentos
+
+Lo primero es lo primero: debemos definir dónde se almacenan nuestros documentos. Esto es fundamental porque leeremos y escribiremos en este directorio.
 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
-// Cargar un archivo PDF existente
+ Reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta real donde se encuentran sus archivos PDF. Podría ser algo como`@"C:\Documents\"`.
+
+## Paso 2: Cargue el documento PDF
+
+continuación, cargaremos el documento PDF que queremos modificar. Aquí es donde Aspose.PDF destaca, ya que nos permite manipular archivos PDF fácilmente.
+
+```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Paso 4: incrustar fuentes con estrategia de subconjunto
-Aspose.PDF para .NET proporciona dos estrategias para la incrustación de fuentes: SubsetAllFonts y SubsetEmbeddedFontsOnly.
+ Asegúrese de tener una`input.pdf` archivo en el directorio especificado. Este archivo será el que modifiquemos.
 
-La estrategia SubsetAllFonts incrustará todas las fuentes del documento como un subconjunto. Un subconjunto es una parte de la fuente que contiene sólo los caracteres utilizados en el documento. Esta estrategia es útil para reducir el tamaño del archivo del documento PDF.
+## Paso 3: Crear subconjuntos de todas las fuentes
 
-La estrategia SubsetEmbeddedFontsOnly incrustará solo el subconjunto de fuentes que ya están incrustadas en el documento. Si una fuente no está incrustada, esta estrategia no la afectará.
-
-El siguiente código demuestra cómo incrustar fuentes en un archivo PDF con una estrategia de subconjunto:
+Ahora, vayamos al meollo del asunto: la incrustación de fuentes. Comenzaremos incrustando todas las fuentes como subconjuntos. Esto significa que solo se incrustarán los caracteres utilizados en el documento, lo que puede reducir significativamente el tamaño del archivo.
 
 ```csharp
-// Todas las fuentes se incrustarán como subconjunto en el documento en el caso de SubsetAllFonts.
+// Todas las fuentes se integrarán como subconjunto en el documento en el caso de SubsetAllFonts.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
+```
 
-// El subconjunto de fuentes se incrustará en el caso de las fuentes totalmente incrustadas, pero las fuentes que no estén incrustadas en el documento no se verán afectadas.
+ Mediante el uso`SubsetAllFonts`Nos aseguramos de que cada fuente utilizada en el documento esté incrustada, pero solo se incluirán los caracteres que realmente se utilizan.
+
+## Paso 4: Subconjunto de fuentes incrustadas únicamente
+
+En algunos casos, es posible que desees incrustar solo las fuentes que ya están incrustadas en el documento. Esto resulta útil si deseas mantener el aspecto original sin agregar fuentes nuevas.
+
+```csharp
+//El subconjunto de fuentes se integrará para fuentes completamente integradas, pero las fuentes que no estén integradas en el documento no se verán afectadas.
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
 ```
 
-## Paso 5: guarde el documento PDF
-Una vez que haya incrustado todas las fuentes en el archivo PDF con una estrategia de subconjunto, deberá guardar el documento. El siguiente código demuestra cómo guardar el archivo PDF:
+Esta línea de código garantiza que solo se crearán subconjuntos de las fuentes que ya están incrustadas, dejando intactas las fuentes que no están incrustadas.
+
+## Paso 5: Guardar el documento modificado
+
+Por último, debemos guardar los cambios. Aquí es donde escribimos el documento modificado nuevamente en el disco.
 
 ```csharp
 doc.Save(dataDir + "Output_out.pdf");
 ```
 
-### Código fuente de ejemplo para incrustar fuentes con estrategia de subconjunto usando Aspose.PDF para .NET. 
-
-```csharp
-// La ruta al directorio de documentos.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document doc = new Document(dataDir + "input.pdf");
-// Todas las fuentes se incrustarán como subconjunto en el documento en el caso de SubsetAllFonts.
-doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
-// El subconjunto de fuentes se incrustará en el caso de las fuentes totalmente incrustadas, pero las fuentes que no estén incrustadas en el documento no se verán afectadas.
-doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
-doc.Save(dataDir + "Output_out.pdf");
-```
+ Esto creará un nuevo archivo PDF llamado`Output_out.pdf` en el directorio especificado, completo con las fuentes integradas.
 
 ## Conclusión
-En este artículo, analizamos cómo incrustar fuentes en un archivo PDF con una estrategia de subconjunto usando Aspose.PDF para .NET. Aspose.PDF para .NET proporciona una API simple y fácil de usar para trabajar con documentos PDF, incluida la adición e incrustación de fuentes con diferentes estrategias. Incrustar fuentes en un archivo PDF es un paso importante para garantizar que el documento se muestre correctamente en diferentes dispositivos, y la estrategia de subconjunto es una característica útil para reducir el tamaño del archivo del documento PDF.
 
-### Preguntas frecuentes sobre incrustar fuentes en archivos PDF con estrategia de subconjunto
+¡Y ya está! Ha incorporado fuentes con éxito en un archivo PDF con Aspose.PDF para .NET. Si sigue estos pasos, podrá asegurarse de que sus documentos mantengan la apariencia deseada, independientemente de dónde se visualicen. Ya sea que esté compartiendo informes, presentaciones o cualquier otro tipo de documento, incorporar fuentes es un paso crucial para mantener el profesionalismo y la claridad.
 
-#### P: ¿Cuál es una estrategia de subconjunto para incrustar fuentes en un archivo PDF?
+## Preguntas frecuentes
 
-R: Una estrategia de subconjunto para incrustar fuentes en un archivo PDF significa que solo se incrustará una parte de la fuente que contiene los caracteres utilizados en el documento. Esto ayuda a reducir el tamaño del archivo del documento PDF al eliminar datos de fuentes innecesarios.
+### ¿Qué es el subconjunto de fuentes?
+La creación de subconjuntos de fuentes es el proceso de incluir solo los caracteres utilizados en un documento, en lugar de la fuente completa, lo que ayuda a reducir el tamaño del archivo.
 
-#### P: ¿Cuál es la diferencia entre las estrategias SubsetAllFonts y SubsetEmbeddedFontsOnly?
+### ¿Por qué debería incrustar fuentes en mi PDF?
+La incorporación de fuentes garantiza que su documento aparezca igual en todos los dispositivos, evitando problemas de sustitución de fuentes.
 
- R: El`SubsetAllFonts`La estrategia incrustará todas las fuentes en el documento como un subconjunto, mientras que la`SubsetEmbeddedFontsOnly` La estrategia solo incrustará el subconjunto de fuentes que ya están incrustadas en el documento. La última estrategia no afectará a las fuentes que aún no estén incrustadas.
+### ¿Puedo utilizar Aspose.PDF gratis?
+ Sí, Aspose ofrece una versión de prueba gratuita que puedes usar para probar la biblioteca antes de comprarla. Puedes encontrarla[aquí](https://releases.aspose.com/).
 
-#### P: ¿Por qué es importante la incrustación de fuentes con una estrategia de subconjunto?
+### ¿Dónde puedo encontrar más documentación?
+ Puede acceder a la documentación completa de Aspose.PDF para .NET[aquí](https://reference.aspose.com/pdf/net/).
 
-R: La incrustación de fuentes con una estrategia de subconjunto es importante para garantizar que el archivo PDF contenga los datos de fuente necesarios para mostrar el texto correctamente y, al mismo tiempo, mantener el tamaño del archivo más pequeño al incluir solo los caracteres utilizados en el documento.
-
-#### P: ¿Puedo usar Aspose.PDF para .NET para incrustar fuentes con diferentes estrategias?
-
- R: Sí, Aspose.PDF para .NET proporciona varias estrategias para incrustar fuentes, incluyendo`SubsetAllFonts` y`SubsetEmbeddedFontsOnly`. Puede elegir la estrategia adecuada según sus necesidades.
-
-#### P: ¿Aspose.PDF para .NET es una biblioteca confiable para trabajar con documentos PDF?
-
-R: Sí, Aspose.PDF para .NET es una biblioteca poderosa y confiable para trabajar con documentos PDF. Proporciona amplias funciones para crear, editar y manipular archivos PDF en aplicaciones .NET.
+### ¿Qué pasa si encuentro problemas?
+ Si tiene algún problema, puede buscar ayuda en el foro de soporte de Aspose.[aquí](https://forum.aspose.com/c/pdf/10).

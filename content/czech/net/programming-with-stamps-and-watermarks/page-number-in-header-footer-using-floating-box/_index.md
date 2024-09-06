@@ -79,7 +79,7 @@ Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
 // Přidejte stránku do dokumentu pdf
 Aspose.Pdf.Page page = pdf.Pages.Add();
 
-//Inicializuje novou instanci třídy FloatingBox
+// Inicializuje novou instanci třídy FloatingBox
 Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
 
 // Plovoucí hodnota, která označuje levou pozici odstavce
@@ -128,7 +128,7 @@ Odpověď: Samozřejmě můžete přidávat různé dynamické prvky, jako je da
 
 Odpověď: Ano, můžete upravit písmo, styl a další vlastnosti formátování textu čísla stránky úpravou vlastností TextFragment v rámci FloatingBox.
 
-#### Otázka: Co se stane, pokud obsah ve FloatingBox přesáhne své rozměry?
+#### Otázka: Co se stane, když obsah ve FloatingBox přesáhne své rozměry?
 
 Odpověď: Pokud obsah ve FloatingBox přesáhne své rozměry, může být oříznut nebo mohou nastat problémy s rozložením. Ujistěte se, že rozměry FloatingBoxu jsou vhodné pro umístění obsahu, a v případě potřeby zvažte úpravu rozvržení stránky.
 

@@ -83,7 +83,7 @@ File.WriteAllText(dataDir + "notifications_out.txt", notifications);
 ```
 
 ## Závěr
-Úspěšně jste určili zalomení řádků v dokumentu PDF pomocí Aspose.PDF pro .NET. Informace o zalomení řádku byly extrahovány a uloženy do textového souboru.
+Úspěšně jste určili zalomení řádků v dokumentu PDF pomocí Aspose.PDF for .NET. Informace o zalomení řádku byly extrahovány a uloženy do textového souboru.
 
 ### FAQ
 
@@ -118,7 +118,7 @@ Odpověď: V kroku 6 vytvoříte smyčku pro přidání více fragmentů textu n
 
 #### Otázka: Jak uložím dokument PDF a extrahuji informace o zalomení řádku?
 
- Odpověď: V kroku 7 uložíte dokument PDF pomocí`Save` metoda`Document` objekt. Poté extrahujete informace o zalomení řádku pomocí`GetNotifications` metodu požadované stránky a uložte ji do textového souboru.
+ Odpověď: V kroku 7 uložíte dokument PDF pomocí`Save` metoda`Document` objekt. Poté extrahujete informace o zalomení řádku pomocí`GetNotifications`metodu požadované stránky a uložte ji do textového souboru.
 
 #### Otázka: Jaký je účel extrahovaných informací o zalomení řádku?
 

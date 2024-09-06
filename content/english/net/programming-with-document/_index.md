@@ -25,18 +25,18 @@ The resource includes tutorials on the Aspose.PDF for .NET library's programming
 | [Embed Font In PDF File](./embedfont/) | Learn how to embed fonts in a PDF file using Aspose.PDF for .NET with this step-by-step guide. Ensure your documents are displayed correctly on any device. |  
 | [Embed Fonts In PDF File With Subset Strategy](./embedfontsusingsubsetstrategy/) | Learn how to embed fonts in a PDF file with Subset Strategy using Aspose.PDF for .NET. Optimize your PDF size by embedding only necessary characters. |  
 | [Embed Font While PDF Doc Creation](./embedfontwhiledoccreation/) | Learn how to embed fonts in PDF documents using Aspose.PDF for .NET with this step-by-step guide. Enhance your PDF's appearance. |  
-| [Flatten Annotation In PDF File](./flattenannotation/) | Learn how to flatten annotations in a PDF file using Aspose.PDF for .NET. Preserve annotations and prevent accidental alteration. |  
-| [Get All Fonts In PDF File](./getallfonts/) | Learn how to use Aspose.PDF for .NET to get all the fonts used in a PDF file programmatically with this step-by-step guide and example code. |  
+| [Flatten Annotation In PDF File](./flattenannotation/) | Learn how to flatten annotations in a PDF file using Aspose.PDF for .NET in this guide. Simplify your PDF management process with our detailed tutorial. |  
+| [Get All Fonts In PDF File](./getallfonts/) | Learn how to extract all fonts from a PDF file using Aspose.PDF for .NET in this step-by-step tutorial. Perfect for developers and PDF enthusiasts. |  
 | [Get Document Window](./getdocumentwindow/) | Learn how to use the GetDocumentWindow feature of Aspose.PDF for .NET to retrieve information about a PDF document's window properties. |  
 | [Get File Info In PDF File](./getfileinfo/) | Learn how to use the GetFileInfo in PDF file feature of Aspose.PDF for .NET to retrieve metadata information about a PDF document. |  
 | [Get Warnings For Font Substitution](./getwarningsforfontsubstitution/) | Learn how to use the GetWarningsForFontSubstitution feature of Aspose.PDF for .NET to detect font substitution warnings when opening a PDF document. |  
-| [Get XMP Metadata](./getxmpmetadata/) | Learn how to use the GetXmpMetadata feature of Aspose.PDF for .NET to extract XMP metadata from a PDF document using C# source code. |  
+| [Get XMP Metadata](./getxmpmetadata/) | Learn how to extract XMP metadata from PDFs using Aspose.PDF for .NET in this step-by-step guide. Unlock valuable insights from your PDF documents easily. |  
 | [Get Warnings For Font Substitution](./getwarningsforfontsubstitution/) | Learn how to use the GetWarningsForFontSubstitution feature of Aspose.PDF for .NET to detect font substitution warnings when opening a PDF document. |  
 | [Get Zoom Factor In PDF File](./getzoomfactor/) | Learn how to use Aspose.PDF for .NET to get the zoom factor in PDF file with this step-by-step guide. |  
-| [Hide Page Numbers In TOC](./hidepagenumbersintoc/) | Learn how to hide page numbers in a table of contents using Aspose.PDF for .NET with this step-by-step guide. |  
-| [Link Duplicate Streams](./linkduplicatestreams/) | Learn how to use Aspose.PDF for .NET Link Duplicate Streams feature to optimize your PDF documents with this step-by-step guide. |  
-| [Optimize PDF Document](./optimizedocument/) | Optimize PDF Document for the web is essential for user experience. Learn how to do it using Aspose.PDF for .NET with this step-by-step guide. |  
-| [Optimize File Size In PDF File](./optimizefilesize/) | Learn how to optimize file size in PDF file with Aspose.PDF for .NET using this step-by-step guide. |  
+| [Hide Page Numbers In TOC](./hidepagenumbersintoc/) | Learn how to hide page numbers in the Table of Contents using Aspose.PDF for .NET. Follow this detailed guide with code examples to create professional PDFs. |  
+| [Link Duplicate Streams](./linkduplicatestreams/) | Learn how to link duplicate streams in PDF documents using Aspose.PDF for .NET. Optimize your PDFs for better performance and reduced file size. |  
+| [Optimize PDF Document](./optimizedocument/) | Learn how to optimize PDF documents using Aspose.PDF for .NET with our step-by-step guide. Enhance web performance by reducing file size and complexity. |  
+| [Optimize File Size In PDF File](./optimizefilesize/) | Learn how to optimize PDF file size using Aspose.PDF for .NET with this step-by-step guide. Reduce file size without losing quality. |  
 | [Remove Unused Objects In PDF File](./removeunusedobjects/) | Learn how to use Aspose.PDF for .NET to remove unused objects in PDF file with this step-by-step guide |  
 | [Remove Unused Streams](./removeunusedstreams/) | Learn how to remove unused streams from PDF files using Aspose.PDF for .NET. Our step-by-step guide. |  
 | [Set Default Font](./setdefaultfont/) | Learn how to set the default font for a PDF document using Aspose.PDF for .NET with this step-by-step guide. |  

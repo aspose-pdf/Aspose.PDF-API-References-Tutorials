@@ -37,16 +37,16 @@ The resource includes tutorials on the Aspose.PDF for .NET library's programming
 | [Link Duplicate Streams](./linkduplicatestreams/) | Learn how to link duplicate streams in PDF documents using Aspose.PDF for .NET. Optimize your PDFs for better performance and reduced file size. |  
 | [Optimize PDF Document](./optimizedocument/) | Learn how to optimize PDF documents using Aspose.PDF for .NET with our step-by-step guide. Enhance web performance by reducing file size and complexity. |  
 | [Optimize File Size In PDF File](./optimizefilesize/) | Learn how to optimize PDF file size using Aspose.PDF for .NET with this step-by-step guide. Reduce file size without losing quality. |  
-| [Remove Unused Objects In PDF File](./removeunusedobjects/) | Learn how to use Aspose.PDF for .NET to remove unused objects in PDF file with this step-by-step guide |  
-| [Remove Unused Streams](./removeunusedstreams/) | Learn how to remove unused streams from PDF files using Aspose.PDF for .NET. Our step-by-step guide. |  
-| [Set Default Font](./setdefaultfont/) | Learn how to set the default font for a PDF document using Aspose.PDF for .NET with this step-by-step guide. |  
-| [Set Expiry Date](./setexpirydate/) | Learn how to set expiry date in PDF documents using Aspose.PDF for .NET with this step-by-step guide. |  
-| [Set File Info In PDF File](./setfileinfo/) | Learn how to use Aspose.PDF for .NET to set file info in PDF file with this step-by-step guide. |  
-| [Set Properties For Print Dialog](./setpropertiesforprintdialog/) | Learn how to set properties for print dialog in Aspose.PDF for .NET using step-by-step guide. |  
-| [Set XMP Metadata In PDF File](./setxmpmetadata/) | Learn how to set XMPMetadata in PDF file using Aspose.PDF for .NET. Follow this step-by-step guide. |  
-| [Set Zoom Factor In PDF File](./setzoomfactor/) | Learn how to set the zoom factor in PDF file using Aspose.PDF for .NET with our step-by-step guide. |  
-| [Shrink PDF Documents](./shrinkdocuments/) | Learn how to use Aspose.PDF for .NET to shrink PDF documents with this step-by-step guide.  |  
-| [Unembed Fonts And Optimize PDF Files](./unembedfonts/) | Learn how to use Aspose.PDF for .NET to get Unembed Fonts and optimize PDF files. A step-by-step guide. |  
-| [Validate PDF AB Standard](./validatepdfabstandard/) | Learn how to use Aspose.PDF for .NET to validate PDF documents against the PDFABStandard with our step-by-step guide and code example. |  
-| [Validate PDF Files A Standard](./validatepdfastandard/) | Learn how to use Aspose.PDF for .NET to validate PDF files for PDFAStandard with this step-by-step guide. |  
-| [Validate PDF UA Standard](./validatepdfuastandard/) | Learn how to use Aspose.PDF for .NET to validate PDFUAstandard using C# code. Step-by-step guide. |  
+| [Remove Unused Objects In PDF File](./removeunusedobjects/) | Learn how to optimize PDF files by removing unused objects using Aspose.PDF for .NET. Step-by-step guide to reducing file size and improving performance. |  
+| [Remove Unused Streams](./removeunusedstreams/) | Learn how to remove unused streams in a PDF file using Aspose.PDF for .NET to optimize file size and performance. |  
+| [Set Default Font](./setdefaultfont/) | Learn how to set a default font in PDF files using Aspose.PDF for .NET with this step-by-step guide. Perfect for developers looking to enhance PDF documents. |  
+| [Set Expiry Date](./setexpirydate/) | Learn how to set an expiry date in PDF files using Aspose.PDF for .NET. Enhance document security with this step-by-step guide. |  
+| [Set File Info In PDF File](./setfileinfo/) | Learn how to set file info in PDF documents using Aspose.PDF for .NET with this step-by-step guide. Enhance your PDFs with metadata easily. |  
+| [Set Properties For Print Dialog](./setpropertiesforprintdialog/) | Unlock the potential of PDF creation with Aspose.PDF for .NET. This guide helps you set up print properties effortlessly. |  
+| [Set XMP Metadata In PDF File](./setxmpmetadata/) | Learn how to set XMP metadata in a PDF file using Aspose.PDF for .NET. This step-by-step guide walks you through the entire process, from setting up to saving the document. |  
+| [Set Zoom Factor In PDF File](./setzoomfactor/) | Learn how to set a zoom factor in PDF files using Aspose.PDF for .NET. Enhance user experience with this step-by-step guide. |  
+| [Shrink PDF Documents](./shrinkdocuments/) | Learn how to shrink PDF documents using Aspose.PDF for .NET in this step-by-step guide. Optimize PDF resources and reduce file size without compromising quality.  |  
+| [Unembed Fonts And Optimize PDF Files](./unembedfonts/) | Learn how to unembed fonts and optimize PDF files using Aspose.PDF for .NET in this step-by-step tutorial. |  
+| [Validate PDF AB Standard](./validatepdfabstandard/) | Learn how to validate a PDF for PDF/A-1b standard using Aspose.PDF for .NET in this step-by-step tutorial. Ensure compliance for long-term archiving. |  
+| [Validate PDF Files A Standard](./validatepdfastandard/) | Learn how to validate PDF files against the PDF/A-1a standard using Aspose.PDF for .NET in this comprehensive step-by-step tutorial. |  
+| [Validate PDF UA Standard](./validatepdfuastandard/) | Learn how to validate a PDF for the PDF/UA accessibility standard using Aspose.PDF for .NET with our step-by-step guide and detailed explanations. |  

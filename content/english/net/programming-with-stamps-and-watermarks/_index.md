@@ -12,22 +12,22 @@ Aspose.PDF's "Programming with Stamps and Watermarks" tutorials for .NET walk yo
 ## Tutorials
 | Title | Description |
 | --- | --- | 
-| [Add Date Time Stamp In PDF File](./add-date-time-stamp/) | Learn how to easily add a date and time stamp in PDF file with Aspose.PDF for .NET. |  
-| [Add Image Stamp In PDF File](./add-image-stamp/) | Learn how to easily add an image stamp in PDF file with Aspose.PDF for .NET. |  
-| [Adding Different Headers In PDF File](./adding-different-headers/) | Learn how to easily add different headers to each page in PDF file with Aspose.PDF for .NET. |  
-| [Add PDF Page Stamp In PDF File](./add-pdf-page-stamp/) | Learn how to easily add a PDF page stamp in PDF file with Aspose.PDF for .NET. |  
-| [Add Text Stamp In PDF File](./add-text-stamp/) | Learn how to easily add a text stamp in PDF file with Aspose.PDF for .NET. |  
-| [Counting Artifacts In PDF File](./counting-artifacts/) | Learn how to easily count watermarks in PDF file with Aspose.PDF for .NET. |  
-| [Define Alignment In PDF File](./define-alignment/) | Learn how to easily set text alignment in PDF file with Aspose.PDF for .NET. |  
-| [Extract Text From Stamp Annotation](./extract-text-from-stamp-annotation/) | Learn how to easily extract text from a stamp annotation in your PDF documents with Aspose.PDF for .NET. |  
-| [Fill Stroke Text In PDF File](./fill-stroke-text/) | Learn how to easily fill and outline text in PDF file with Aspose.PDF for .NET. |  
-| [Get Watermark From PDF File](./get-watermark/) | Learn how to extract watermarks from PDF file with Aspose.PDF for .NET. |  
-| [Image and Page Number in Header Footer Section](./image-and-page-number-in-header-footer-section/) | Find out how to add an image and a page number in the header and footer of a PDF document with Aspose. |  
-| [Image and Page Number in Header Footer Section Inline](./image-and-page-number-in-header-footer-section-inline/) | Learn how to add image and page number in header and footer using inline paragraphs with Aspose.PDF for .NET. |  
-| [Image In Footer](./image-in-footer/) | Learn how to add an image in the footer section of a PDF document with Aspose.PDF for .NET. |  
-| [Image In Header](./image-in-header/) | Learn how to add an image in the header section of a PDF document with Aspose.PDF for .NET. |  
-| [Page Number In Header Footer Using Floating Box](./page-number-in-header-footer-using-floating-box/) | Learn how to add the page number in the header and footer of a PDF document with Aspose.PDF for .NET. |  
-| [Page Number Stamps In PDF File](./page-number-stamps/) | Learn how to add page number stamps in PDF file with Aspose.PDF for .NET. |  
-| [Table In Header Footer Section](./table-in-header-footer-section/) | Learn how to add a table in the header/footer section of a PDF document with Aspose.PDF for .NET. |  
+| [Add Date Time Stamp In PDF File](./add-date-time-stamp/) | Learn how to add a date and time stamp to your PDF files using Aspose.PDF for .NET with this step-by-step guide. Perfect for enhancing document authenticity. |  
+| [Add Image Stamp In PDF File](./add-image-stamp/) | Learn how to add an image stamp to PDF files using Aspose.PDF for .NET with step-by-step guidance and example code. |  
+| [Adding Different Headers In PDF File](./adding-different-headers/) | Learn how to add different headers to PDF files using Aspose.PDF for .NET. Step-by-step guide for customizing your PDFs. |  
+| [Add PDF Page Stamp In PDF File](./add-pdf-page-stamp/) | Learn how to add a PDF page stamp using Aspose.PDF for .NET with this detailed guide. Boost your PDF documents' impact. |  
+| [Add Text Stamp In PDF File](./add-text-stamp/) | Learn how to add a text stamp in a PDF file using Aspose.PDF for .NET with our step-by-step guide and elevate your document presentations. |  
+| [Counting Artifacts In PDF File](./counting-artifacts/) | Learn how to count watermarks in a PDF using Aspose.PDF for .NET. Step-by-step guide for beginners with no prior experience required. |  
+| [Define Alignment In PDF File](./define-alignment/) | This guide covers how to define text alignment in PDF files using Aspose.PDF for .NET, complete with a step-by-step tutorial. |  
+| [Extract Text From Stamp Annotation](./extract-text-from-stamp-annotation/) | Learn how to extract text from a stamp annotation in PDF using Aspose.PDF for .NET with this step-by-step tutorial, complete with a detailed code example. |  
+| [Fill Stroke Text In PDF File](./fill-stroke-text/) | Learn how to fill stroke text in PDF files effortlessly using Aspose.PDF for .NET with this step-by-step guide packed with practical examples. |  
+| [Get Watermark From PDF File](./get-watermark/) | Learn how to extract watermarks from PDF files using Aspose.PDF for .NET with a step-by-step guide. Detailed tutorial for watermark extraction. |  
+| [Image and Page Number in Header Footer Section](./image-and-page-number-in-header-footer-section/) | Learn how to add an image and page numbers to your PDF’s header and footer using Aspose.PDF for .NET in this step-by-step tutorial. |  
+| [Image and Page Number in Header Footer Section Inline](./image-and-page-number-in-header-footer-section-inline/) | Learn how to add an image and page number inline in the header section of a PDF using Aspose.PDF for .NET with this step-by-step guide. |  
+| [Image In Footer](./image-in-footer/) | Learn how to add an image in the footer of a PDF using Aspose.PDF for .NET with this detailed step-by-step tutorial. Perfect for enhancing your documents. |  
+| [Image In Header](./image-in-header/) | Learn how to add an image to the header of a PDF using Aspose.PDF for .NET in this step-by-step tutorial. |  
+| [Page Number In Header Footer Using Floating Box](./page-number-in-header-footer-using-floating-box/) | Easily add page numbers in your PDF header and footer using a Floating Box with Aspose.PDF for .NET in this step-by-step tutorial. |  
+| [Page Number Stamps In PDF File](./page-number-stamps/) | Learn how to add page number stamps to PDF files using Aspose.PDF for .NET through our easy-to-follow guide, complete with code example. |  
+| [Table In Header Footer Section](./table-in-header-footer-section/) | Learn how to easily add text to the footer of a PDF file using Aspose.PDF for .NET. Step-by-step guide included for seamless integration. |  
 | [Text In Footer Of PDF File](./text-in-footer/) | Learn how to add text in the footer of PDF file with Aspose.PDF for .NET. |  
-| [Text In Header Of PDF File](./text-in-header/) | Learn how to add text in the header of PDF file with Aspose.PDF for .NET. |  
+| [Text In Header Of PDF File](./text-in-header/) | Learn to add text headers to PDFs using Aspose.PDF for .NET with this step-by-step tutorial. Enhance your documents efficiently and effectively. |  

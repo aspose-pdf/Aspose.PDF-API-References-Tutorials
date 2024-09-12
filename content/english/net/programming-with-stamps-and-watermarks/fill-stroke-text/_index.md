@@ -2,164 +2,191 @@
 title: Fill Stroke Text In PDF File
 linktitle: Fill Stroke Text In PDF File
 second_title: Aspose.PDF for .NET API Reference
-description: Learn how to easily fill and outline text in PDF file with Aspose.PDF for .NET.
+description: Learn how to fill stroke text in PDF files effortlessly using Aspose.PDF for .NET with this step-by-step guide packed with practical examples.
 type: docs
 weight: 90
 url: /net/programming-with-stamps-and-watermarks/fill-stroke-text/
 ---
-In this tutorial, we will take you step by step on how to fill and outline text in PDF file using Aspose.PDF for .NET. We'll show you how to use the provided C# source code to apply fill and outline colors to text in the PDF file.
+## Introduction
 
-## Step 1: Setting up the environment
+Have you ever wanted to modify a PDF file to make it stand out? Maybe you need to add a striking watermark or a bold stamp that makes an important document unmistakably yours. With Aspose.PDF for .NET, you can easily fill stroke text in a PDF file, adding artistic flair that catches the eye. In today’s tutorial, we’ll walk through the process of doing just that—filling stroke text in a PDF using C#. By the end, you’ll have a solid grasp of how to manipulate PDF files like a pro.
 
-Before you begin, make sure you have the following:
+## Prerequisites
 
-- An installed .NET development environment.
-- The Aspose.PDF library for .NET downloaded and referenced in your project.
+Before we dive into the coding, there are a few things you’ll need to have in place to make this tutorial a breeze:
 
-## Step 2: Creating the TextState Object
+1. Visual Studio: Ensure you have Visual Studio installed on your machine since we’ll be writing C# code.
+2. Aspose.PDF Library: Make sure you’ve downloaded the Aspose.PDF for .NET library. You can grab it [here](https://releases.aspose.com/pdf/net/).
+3. Basic Knowledge of C#: Familiarity with C# programming will help you understand the tutorial more easily.
+4. Sample PDF File: You’ll need a sample PDF file (`input.pdf`) for testing purposes. You can create a simple one or use any existing PDF you have.
 
-The first step is to create a TextState object to pass the advanced properties. Here's how:
+Now that we have everything in place, let’s get into the nitty-gritty of filling stroke text in your PDF file.
+
+## Import Packages
+
+To start, we'll need to import the necessary packages. Here's a brief overview of the essential imports for our project:
 
 ```csharp
-// Create TextState object to transfer advanced properties
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+These packages will allow us to use the robust functionalities of the Aspose.PDF library.
+
+Let’s break down the main task into clear steps. By following these steps, you can easily fill stroke text into your PDF files. 
+
+## Step 1: Set Up Your Environment
+
+First, ensure you have everything correctly set up in your Visual Studio project. Create a new project or choose an existing one. If you need assistance, here's how:
+
+1. Open Visual Studio.
+2. Create a new C# project (e.g., Console Application).
+3. Right-click on the project in Solution Explorer, select “Manage NuGet Packages.”
+4. Search for `Aspose.PDF` and install it.
+
+## Step 2: Define Your Document Directory
+
+Every journey needs a starting point, and in our case, it’s the documents directory where the input and output files will reside. 
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+Replace `"YOUR DOCUMENT DIRECTORY"` with the actual path where your input PDF file is located. 
+
+## Step 3: Create the TextState Object
+
+This step is where you begin to define the properties of the text you want to add. 
+
+```csharp
 TextState ts = new TextState();
+```
 
-// Set outline color
+The `TextState` object will hold the styling options for your stroke text.
+
+## Step 4: Set the Color for Stroke
+
+Next, you’ll want to define the color of the stroke for your text. 
+
+```csharp
 ts.StrokingColor = Color.Gray;
+```
 
-// Define the text rendering mode
+In this code, we’re using a gray color for the stroke. Feel free to change the color to suit your needs!
+
+## Step 5: Configure Rendering Mode
+
+To ensure your text displays as intended, set the rendering mode:
+
+```csharp
 ts.RenderingMode = TextRenderingMode.StrokeText;
 ```
 
-The above code creates a new TextState object and sets the outline color as well as how the text is rendered.
+This instructs the Aspose library that we’re working with stroke text.
 
-## Step 3: Loading the PDF document
+## Step 6: Load Your Input PDF Document
 
-Now that the TextState object is ready, we can load the PDF document where we want to apply the text fill and outline. Here's how:
+Now it’s time to load the PDF file that you are going to modify. 
 
 ```csharp
-// Load the PDF document as input
 Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
 ```
 
-The code above loads the existing PDF document using the PdfFileStamp class from the Aspose.PDF.Facades library.
+Make sure your input PDF (`input.pdf`) is located in the documents directory defined in earlier steps.
 
-## Step 4: Add Fill and Stroke to Text
+## Step 7: Create a Stamp Object
 
-Now that the PDF document is loaded, we can add the fill and outline to the text. Here's how:
+Next, create a stamp that will hold your stroke text. 
 
 ```csharp
-// Create a stamp (Stamp) with the defined text and properties
 Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
+```
+
+This stamp will be used to overlay your text on the PDF.
+
+## Step 8: Define the Text to Stamp
+
+You’ll need to specify what text you want to add to the PDF:
+
+```csharp
 stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
+```
 
-// Bind the TextState object
+Here, “PAID IN FULL” is the text we’re adding, along with its styling attributes. Customize it as per your requirements!
+
+## Step 9: Bind the Text State
+
+Now, bind the `TextState` you defined previously to the stamp. 
+
+```csharp
 stamp.BindTextState(ts);
+```
 
-// Set origin X, Y
+This step applies all the styles such as color and rendering mode to your text.
+
+## Step 10: Set the Position of the Stamp
+
+Determine where your stamp will appear in the PDF:
+
+```csharp
 stamp.SetOrigin(100, 100);
-stamp. Opacity = 5;
+```
+
+The arguments `(100, 100)` denote the X and Y coordinates (in points) for the origin of the text. Adjust these values to position your text perfectly!
+
+## Step 11: Configure Opacity and Rotation
+
+Here’s where you can play around with the appearance of your text:
+
+```csharp
+stamp.Opacity = 5;
 stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
 stamp.Rotation = 45.0F;
-stamp. IsBackground = false;
+```
 
-// Add the stamp to the document
+In this case, an opacity value and a rotation angle of 45 degrees add a unique flair to your text. Feel free to modify these settings for different effects.
+
+## Step 12: Add the Stamp to the PDF
+
+This is the crucial step where we finally add our stamp which includes the stroke text to the PDF:
+
+```csharp
 fileStamp.AddStamp(stamp);
 ```
 
-The above code creates a Stamp with the specified text and defined Fill and Stroke properties.
+And just like that, your text is ready to make a statement!
 
-## Step 5: Save the output document
+## Step 13: Save and Close the Document
 
-Once the text stamp is added, we can save the modified PDF document. Here's how:
+Lastly, save your changes and ensure everything is cleaned up properly. 
 
 ```csharp
-// Save the modified document
 fileStamp.Save(dataDir + "output_out.pdf");
 fileStamp.Close();
 ```
 
-The above code saves the edited PDF document to the specified directory.
-
-### Sample source code for Fill Stroke Text using Aspose.PDF for .NET 
-```csharp
-
-// The path to the documents directory.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Create TextState object to transfer advanced properties
-TextState ts = new TextState();
-
-// Set color for stroke
-ts.StrokingColor = Color.Gray;
-
-// Set text rendering mode
-ts.RenderingMode = TextRenderingMode.StrokeText;
-
-// Load an input PDF document
-Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
-Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
-stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
-
-// Bind TextState
-stamp.BindTextState(ts);
-
-// Set X,Y origin
-stamp.SetOrigin(100, 100);
-stamp.Opacity = 5;
-stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
-stamp.Rotation = 45.0F;
-stamp.IsBackground = false;
-
-// Add Stamp
-fileStamp.AddStamp(stamp);
-fileStamp.Save(dataDir + "ouput_out.pdf");
-fileStamp.Close();
-
-```
+Your newly modified PDF file containing the stroke text will be saved as `output_out.pdf` in your documents directory. 
 
 ## Conclusion
 
-Congratulation ! You have learned how to fill and outline text in a PDF document using Aspose.PDF for .NET. Now you can apply this knowledge to customize fill and outline colors in your PDF documents.
+And there you have it! By following these simple steps, you can easily fill stroke text in a PDF file using Aspose.PDF for .NET. Whether for business documents or personal projects, this technique allows you to add a unique touch to your PDFs, making them stand out in any stack of papers.
 
-### FAQ's for fill stroke text in PDF file
+## FAQ's
 
-#### Q: What does it mean to fill and outline text in a PDF document, and when might I need to do so?
+### What is Aspose.PDF for .NET?
+Aspose.PDF for .NET is a library that allows developers to create, manipulate, and convert PDF files programmatically.
 
-A: Filling and outlining text in a PDF document involves applying colors to the interior of the text characters (fill) and to the borders around the text (outline). This can be used to enhance the visual appearance of the text, create emphasis, or highlight specific content within the PDF.
+### Can I use Aspose.PDF for free?
+Yes, Aspose offers a free trial. You can get it [here](https://releases.aspose.com/).
 
-#### Q: How does the provided C# source code accomplish filling and outlining text in a PDF file?
+### Do I need to pay for a license?
+While the library has a free trial, a temporary license can also be purchased at [this link](https://purchase.aspose.com/temporary-license/).
 
-A: The provided source code demonstrates how to create a `TextState` object to define advanced text properties, such as outline color and rendering mode. It then uses Aspose.PDF.Facades to load an existing PDF document, create a stamp containing the text with specified fill and stroke properties, and add the stamp to the document.
+### Where can I find the documentation?
+You can access the complete documentation [here](https://reference.aspose.com/pdf/net/).
 
-#### Q: What is the purpose of the `TextState` object in the code?
-
-A: The `TextState` object is used to define advanced text properties, including the color of the text outline (stroke) and the rendering mode. It allows you to customize how the text appears in terms of stroke and fill.
-
-#### Q: Can I apply different fill and outline colors to different parts of the same text?
-
-A: Yes, you can modify the code to create different `TextState` objects with distinct fill and outline colors and apply them to specific parts of the text using separate `Stamp` objects.
-
-#### Q: Can I apply fill and outline colors to text that is already present in the PDF document?
-
-A: Yes, you can use similar principles to apply fill and outline colors to existing text in the PDF document by selecting the appropriate text objects and adding them as stamps with the desired `TextState` properties.
-
-#### Q: How can I adjust the opacity and blending of the filled and outlined text?
-
-A: The provided code allows you to set the opacity and blending properties of the stamp using the `Opacity` and `BlendingSpace` properties, respectively. You can adjust these values to achieve the desired visual effect.
-
-#### Q: How can I apply different fill and outline colors to multiple stamps within the same PDF document?
-
-A: You can create multiple `TextState` objects with different fill and outline colors, and then create separate `Stamp` objects for each set of text with distinct colors. Add these stamps to the same PDF document using the `PdfFileStamp` class.
-
-#### Q: Can I use fonts other than Arial for the outlined and filled text?
-
-A: Yes, you can change the font by modifying the font name parameter in the `FormattedText` constructor when creating the stamp. You can use any font available on your system.
-
-#### Q: How can I modify the rotation angle of the outlined and filled text?
-
-A: The provided code allows you to set the rotation angle of the stamp using the `Rotation` property. You can adjust this property to specify the desired rotation angle for the text.
-
-#### Q: How can I control the position and size of the outlined and filled text on the page?
-
-A: You can use the `SetOrigin` method of the `Stamp` object to set the X and Y coordinates of the stamp's position on the page. Additionally, you can adjust the font size in the `FormattedText` constructor to control the size of the text.
+### Is there support available if I run into issues?
+Absolutely! You can get support on the Aspose forum [here](https://forum.aspose.com/c/pdf/10).

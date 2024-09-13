@@ -96,7 +96,7 @@ A: Samouczek przeprowadzi Cię przez cały proces krok po kroku:
 
 A: Samouczek koncentruje się na usuwaniu całego tekstu z całego dokumentu PDF. Jeśli chcesz selektywnie usunąć tekst z określonych obszarów, musisz zmodyfikować podejście i użyć bardziej złożonej logiki, aby zidentyfikować i usunąć określone fragmenty tekstu.
 
-####  P: Jak to działa?`TextFragmentAbsorber` work to remove text?
+#### P: Jak to działa?`TextFragmentAbsorber` work to remove text?
 
  A: Ten`TextFragmentAbsorber`jest klasą udostępnianą przez bibliotekę Aspose.PDF, która może absorbować fragmenty tekstu z dokumentu PDF. Za pomocą`RemoveAllText` metoda`TextFragmentAbsorber` klasie, możesz usunąć wszystkie wchłonięte fragmenty tekstu z dokumentu.
 
@@ -106,8 +106,8 @@ A: Postępując zgodnie z instrukcjami zawartymi w samouczku i uruchamiając dos
 
 #### P: Czy mogę zmodyfikować kod, aby usunąć tekst tylko z określonych stron lub obszarów?
 
-A: Tak, możesz zmodyfikować kod, aby to osiągnąć. Aby usunąć selektywny tekst, musisz dostosować kod, aby kierował się na określone strony lub obszary w dokumencie PDF.
+A: Tak, możesz zmodyfikować kod, aby to osiągnąć. Aby usunąć selektywny tekst, musisz dostosować kod, aby kierować go na określone strony lub obszary w dokumencie PDF.
 
 #### P: Czy do skorzystania z tego samouczka wymagana jest ważna licencja Aspose?
 
-A: Tak, ważna licencja Aspose jest wymagana do pomyślnego wykonania kodu w tym samouczku. Możesz uzyskać pełną licencję lub 30-dniową licencję tymczasową ze strony internetowej Aspose.
+A: Tak, ważna licencja Aspose jest niezbędna do pomyślnego wykonania kodu w tym samouczku. Możesz uzyskać pełną licencję lub 30-dniową licencję tymczasową ze strony internetowej Aspose.

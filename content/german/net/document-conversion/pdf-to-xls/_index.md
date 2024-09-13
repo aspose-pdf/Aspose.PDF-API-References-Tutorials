@@ -79,7 +79,7 @@ pdfDocument.Save("PDFToXLS_out.xls", excelsave);
 
 ## Abschluss
 
-Und da haben Sie es! Sie haben ein PDF-Dokument erfolgreich mit Aspose.PDF für .NET in eine XLS-Datei konvertiert. Diese leistungsstarke Bibliothek erleichtert die Bearbeitung von PDF-Dateien und das Extrahieren von Daten zur weiteren Analyse. Egal, ob Sie Entwickler sind, der seinen Arbeitsablauf optimieren möchte, oder Geschäftsprofi, der Daten analysieren muss, Aspose.PDF bietet Ihnen alles. Also, worauf warten Sie noch? Tauchen Sie ein in die Welt der PDF-Konvertierungen und schöpfen Sie das Potenzial Ihrer Daten aus!
+Und da haben Sie es! Sie haben ein PDF-Dokument erfolgreich mit Aspose.PDF für .NET in eine XLS-Datei konvertiert. Diese leistungsstarke Bibliothek erleichtert die Bearbeitung von PDF-Dateien und das Extrahieren von Daten zur weiteren Analyse. Egal, ob Sie ein Entwickler sind, der seinen Arbeitsablauf optimieren möchte, oder ein Geschäftsmann, der Daten analysieren muss, Aspose.PDF hat alles für Sie. Also, worauf warten Sie noch? Tauchen Sie ein in die Welt der PDF-Konvertierungen und schöpfen Sie das Potenzial Ihrer Daten aus!
 
 ## Häufig gestellte Fragen
 

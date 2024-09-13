@@ -1,6 +1,6 @@
 ---
-title: Rejtett szöveg hozzáadása és keresése PDF-fájlban
-linktitle: Rejtett szöveg hozzáadása és keresése PDF-fájlban
+title: Rejtett szöveg hozzáadása és keresése PDF fájlban
+linktitle: Rejtett szöveg hozzáadása és keresése PDF fájlban
 second_title: Aspose.PDF for .NET API Reference
 description: Útmutató lépésről lépésre rejtett szöveg hozzáadásához és kereséséhez PDF-fájlban az Aspose.PDF for .NET használatával.
 type: docs
@@ -48,7 +48,7 @@ TextFragmentAbsorber absorb = new TextFragmentAbsorber();
 absorb.Visit(doc.Pages[1]);
 foreach(TextFragment fragment in absorber.TextFragments)
 {
-//Csinálj valamit a töredékekkel
+// Csinálj valamit a töredékekkel
 Console.WriteLine("Text '{0}' at position {1}, invisibility: {2} ",
 fragment.Text, fragment.Position.ToString(), fragment.TextState.Invisible);
 }

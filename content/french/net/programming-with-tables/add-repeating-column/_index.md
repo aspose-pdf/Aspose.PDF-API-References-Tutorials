@@ -60,7 +60,7 @@ headerRow.Cells.Add("header 1");
 headerRow.Cells.Add("header 2");
 headerRow.Cells.Add("header 3");
 // ...
-// Ajoutez d'autres en-têtes ici
+//Ajoutez d'autres en-têtes ici
 
 for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
 {
@@ -101,7 +101,7 @@ Aspose.Pdf.Table outerTable = new Aspose.Pdf.Table();
 outerTable.ColumnWidths = "100%";
 outerTable.HorizontalAlignment = HorizontalAlignment.Left;
 
-//Instancier un objet de table qui sera imbriqué dans une table externe qui sera interrompue dans la même page
+// Instancier un objet de table qui sera imbriqué dans une table externe qui sera interrompue dans la même page
 Aspose.Pdf.Table mytable = new Aspose.Pdf.Table();
 mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
@@ -170,7 +170,7 @@ R : Oui, vous pouvez ajouter dynamiquement des lignes supplémentaires à la ta
 
 #### Q : Puis-je appliquer des styles et une mise en forme au tableau et à ses cellules ?
 
-R : Oui, vous pouvez appliquer des styles et des mises en forme au tableau et à ses cellules à l'aide d'Aspose.PDF pour .NET. La bibliothèque fournit diverses propriétés et méthodes pour personnaliser l'apparence du tableau et de son contenu.
+: Oui, vous pouvez appliquer des styles et des mises en forme au tableau et à ses cellules à l'aide d'Aspose.PDF pour .NET. La bibliothèque fournit diverses propriétés et méthodes pour personnaliser l'apparence du tableau et de son contenu.
 
 #### Q : Aspose.PDF pour .NET est-il compatible avec .NET Core ?
 

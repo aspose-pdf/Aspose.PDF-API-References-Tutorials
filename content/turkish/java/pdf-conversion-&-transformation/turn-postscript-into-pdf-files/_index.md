@@ -2,7 +2,7 @@
 title: PostScript'i PDF Dosyalarına Dönüştürün
 linktitle: PostScript'i PDF Dosyalarına Dönüştürün
 second_title: Aspose.PDF Java PDF İşleme API'si
-description: Java için Aspose.PDF kullanarak PostScript dosyalarını zahmetsizce PDF'lere nasıl dönüştüreceğinizi öğrenin. Sorunsuz dosya biçimi dönüşümü için adım adım kılavuzumuzu izleyin.
+description: Aspose.PDF for Java kullanarak PostScript dosyalarını zahmetsizce PDF'lere nasıl dönüştüreceğinizi öğrenin. Sorunsuz dosya biçimi dönüşümü için adım adım kılavuzumuzu izleyin.
 type: docs
 weight: 23
 url: /tr/java/pdf-conversion-transformation/turn-postscript-into-pdf-files/

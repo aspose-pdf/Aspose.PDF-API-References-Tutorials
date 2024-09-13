@@ -31,7 +31,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("Arial");
 ```
 
- código acima encontra a fonte Arial usando o`FindFont` método do`FontRepository` classe. Se você quiser usar uma fonte diferente, substitua`"Arial"` com o nome da fonte desejada.
+ O código acima encontra a fonte Arial usando o`FindFont`método do`FontRepository` classe. Se você quiser usar uma fonte diferente, substitua`"Arial"` com o nome da fonte desejada.
 
 ## Etapa 3: Defina o estado do texto
 

@@ -114,7 +114,7 @@ Kode ini menyimpan dokumen PDF dengan elemen terstruktur ke berkas tertentu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
 string logFile = dataDir + "46144_log.xml";
-// Dokumen pembuatan dan mendapatkan Konten Pdf yang Ditandai
+//Dokumen pembuatan dan mendapatkan Konten Pdf yang Ditandai
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 // Pengaturan Judul dan Bahasa Alam untuk dokumen
@@ -209,7 +209,7 @@ J: Membuat struktur hierarki dalam dokumen PDF meningkatkan aksesibilitas, navig
 
 #### T: Bagaimana saya dapat memvalidasi kepatuhan PDF/UA setelah menambahkan elemen struktur?
 
- A: Kode yang diberikan dalam tutorial menunjukkan cara memvalidasi kepatuhan PDF/UA menggunakan`Validate` metode. Dengan memvalidasi dokumen terhadap standar PDF/UA, Anda dapat memastikan bahwa elemen struktur yang ditambahkan sesuai dengan pedoman aksesibilitas.
+A: Kode yang diberikan dalam tutorial menunjukkan cara memvalidasi kepatuhan PDF/UA menggunakan`Validate` metode. Dengan memvalidasi dokumen terhadap standar PDF/UA, Anda dapat memastikan bahwa elemen struktur yang ditambahkan sesuai dengan pedoman aksesibilitas.
 
 #### T: Dapatkah saya menggunakan pendekatan ini untuk menambahkan elemen struktur ke dokumen PDF yang ada?
 

@@ -11,16 +11,16 @@ Aspose.PDF for .NET 上的“使用链接和操作进行编程”教程页面为
 ## 教程
 | 标题 | 描述 |
 | --- | --- | 
-| [在 PDF 文件中添加超链接](./add-hyperlink/) | 使用 Aspose.PDF for .NET 轻松在 PDF 文件中添加交互式超链接。 |  
-| [在 PDF 文件中创建应用程序链接](./create-application-link/) | 使用 Aspose.PDF for .NET 轻松在 PDF 文件中创建应用程序链接。 |  
-| [创建文档链接](./create-document-link/) | 使用 Aspose.PDF for .NET 轻松创建到其他 PDF 文档的链接。 |  
-| [在 PDF 文件中创建本地超链接](./create-local-hyperlink/) | 使用 Aspose.PDF for .NET 轻松在 PDF 文件中创建本地超链接。 |  
-| [提取PDF文件内的链接](./extract-links/) | 使用 Aspose.PDF for .NET 轻松提取 PDF 文件中的链接。 |  
-| [获取 PDF 文件中的超链接目标](./get-hyperlink-destinations/) | 了解如何使用 Aspose.PDF for .NET 提取 PDF 文件中的超链接目标。 |  
-| [获取 PDF 文件中的超链接文本](./get-hyperlink-text/) | 了解如何使用 Aspose.PDF for .NET 提取 PDF 文件中的超链接文本。 |  
-| [移除打开的动作](./remove-open-action/) | 了解如何使用 Aspose.PDF for .NET 从 PDF 中删除打开操作。 |  
-| [在 PDF 文件中设置目标链接](./set-destination-link/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中设置目标链接。 |  
-| [在 PDF 文件中设置目标链接](./set-target-link/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中设置目标链接。 |  
-| [查看时指定页面](./specify-page-when-viewing/) | 了解如何在使用 Aspose.PDF for .NET 查看 PDF 时指定页面。 |  
-| [更新 PDF 文件中的链接](./update-links/) | 了解如何使用 Aspose.PDF for .NET 更新 PDF 文件中的链接。 |  
-| [更新 PDF 文件中的链接文本颜色](./update-link-text-color/) | 了解如何使用 Aspose.PDF for .NET 更新 PDF 文件中链接的文本颜色。 |  
+| [在 PDF 文件中添加超链接](./add-hyperlink/) | 了解如何使用 Aspose.PDF for .NET 轻松地将超链接添加到您的 PDF。增强文档的交互性和用户参与度。 |  
+| [在 PDF 文件中创建应用程序链接](./create-application-link/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中创建应用程序链接。分步指南可增强 PDF 中的交互性。 |  
+| [创建文档链接](./create-document-link/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 中创建文档链接。增强 PDF 文档中的导航和交互性。 |  
+| [在 PDF 文件中创建本地超链接](./create-local-hyperlink/) | 通过我们的分步指南学习如何使用 Aspose.PDF for .NET 轻松在 PDF 文件中创建本地超链接。 |  
+| [提取PDF文件内的链接](./extract-links/) | 在本分步教程中了解如何使用 Aspose.PDF for .NET 轻松地从 PDF 文件中提取链接。 |  
+| [获取 PDF 文件中的超链接目标](./get-hyperlink-destinations/) | 了解如何使用 Aspose.PDF for .NET 轻松从 PDF 文件中提取超链接目标。请遵循此简单的分步教程。 |  
+| [获取 PDF 文件中的超链接文本](./get-hyperlink-text/) | 了解如何使用 Aspose.PDF for .NET 轻松从 PDF 文件中提取超链接文本。包含分步指南和代码。 |  
+| [移除打开的动作](./remove-open-action/) | 使用 Aspose.PDF for .NET 轻松从 PDF 中删除打开的操作！一个简单的教程，一步一步指导如何有效地管理 PDF。 |  
+| [在 PDF 文件中设置目标链接](./set-destination-link/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中设置目标链接。提高 PDF 交互性的分步指南。 |  
+| [在 PDF 文件中设置目标链接](./set-target-link/) | 通过我们的分步指南学习如何使用 Aspose.PDF for .NET 在 PDF 文件中有效设置目标链接。非常适合增强文档导航。 |  
+| [查看时指定页面](./specify-page-when-viewing/) | 了解如何使用 Aspose.PDF for .NET 指定要在 PDF 中查看的页面。使用此简单指南增强用户导航。 |  
+| [更新 PDF 文件中的链接](./update-links/) | 了解如何使用 Aspose.PDF for .NET 更新 PDF 文件中的链接文本颜色。本分步指南将通过简单易懂的示例向您介绍每个细节。 |  
+| [更新 PDF 文件中的链接文本颜色](./update-link-text-color/) | 按照这份全面的分步指南，使用 Aspose.PDF for .NET 轻松更新 PDF 文件中的链接。简化您的 PDF 编辑。 |  

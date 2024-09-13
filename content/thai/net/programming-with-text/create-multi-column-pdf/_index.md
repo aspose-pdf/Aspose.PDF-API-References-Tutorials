@@ -46,7 +46,7 @@ doc.PageInfo.Margin.Right = 40;
 ```
 
 ## ขั้นตอนที่ 6: เพิ่มหน้าลงในเอกสาร
- เพิ่มหน้าใหม่ลงในเอกสารโดยใช้`Add` วิธีการของ`Pages`คอลเลกชัน ในโค้ดที่ให้มา หน้าใหม่จะถูกกำหนดให้กับตัวแปร`page`.
+ เพิ่มหน้าใหม่ลงในเอกสารโดยใช้`Add` วิธีการของ`Pages` คอลเลกชัน ในโค้ดที่ให้มา หน้าใหม่จะถูกกำหนดให้กับตัวแปร`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -112,7 +112,7 @@ doc.Save(dataDir);
 // เส้นทางไปยังไดเร็กทอรีเอกสาร
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
-//ระบุข้อมูลระยะขอบด้านซ้ายของไฟล์ PDF
+// ระบุข้อมูลระยะขอบด้านซ้ายของไฟล์ PDF
 doc.PageInfo.Margin.Left = 40;
 // ระบุข้อมูลระยะขอบด้านขวาของไฟล์ PDF
 doc.PageInfo.Margin.Right = 40;
@@ -149,7 +149,7 @@ Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50, 10);
 float[] posArr2 = new float[] { 1, 10, 100, 10 };
 Aspose.Pdf.Drawing.Line l2 = new Aspose.Pdf.Drawing.Line(posArr2);
 graph2.Shapes.Add(l2);
-// เพิ่มบรรทัดลงในคอลเลกชันย่อหน้าของวัตถุส่วน
+//เพิ่มบรรทัดลงในคอลเลกชันย่อหน้าของวัตถุส่วน
 box.Paragraphs.Add(graph2);
 TextFragment text2 = new TextFragment(@"Sed augue tortor, sodales id, luctus et, pulvinar ut, eros. Suspendisse vel dolor. Sed quam. Curabitur ut massa vitae eros euismod aliquam. Pellentesque sit amet elit. Vestibulum interdum pellentesque augue. Cras mollis arcu sit amet purus. Donec augue. Nam mollis tortor a elit. Nulla viverra nisl vel mauris. Vivamus sapien. nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et,nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.");
 box.Paragraphs.Add(text2);
@@ -200,7 +200,7 @@ using Aspose.Pdf.Drawing;
 
 #### ถาม: ฉันจะเพิ่มข้อความหัวเรื่องด้วยการจัดรูปแบบ HTML ได้อย่างไร
 
- A: ในขั้นตอนที่ 8 คุณจะสร้าง`HtmlFragment` วัตถุและกำหนดเนื้อหาให้เป็นข้อความ HTML ที่ต้องการ จากนั้นเพิ่มส่วนย่อยลงใน`Paragraphs` การรวบรวมหน้า
+A: ในขั้นตอนที่ 8 คุณจะสร้าง`HtmlFragment` วัตถุและกำหนดเนื้อหาให้เป็นข้อความ HTML ที่ต้องการ จากนั้นเพิ่มส่วนย่อยลงใน`Paragraphs` การรวบรวมหน้า
 
 #### ถาม: ฉันจะสร้าง FloatingBox ที่มีหลายคอลัมน์ได้อย่างไร
 

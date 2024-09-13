@@ -52,7 +52,7 @@ using Aspose.Pdf;
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- 바꾸다`"YOUR DOCUMENT DIRECTORY"` 귀하의 머신의 실제 경로와 함께. 이것은 다음과 같을 수 있습니다.`@"C:\Documents\"`.
+ 바꾸다`"YOUR DOCUMENT DIRECTORY"` 머신의 실제 경로와 함께. 이것은 다음과 같을 수 있습니다.`@"C:\Documents\"`.
 
 ## 2단계: MHT 옵션 로드
 

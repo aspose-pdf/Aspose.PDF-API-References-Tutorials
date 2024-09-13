@@ -96,7 +96,7 @@ masz to! Konwersja EPUB do PDF przy użyciu Aspose.PDF dla .NET to prosty proces
 ### Czym jest Aspose.PDF?
 Aspose.PDF to zaawansowana biblioteka służąca do tworzenia i edytowania dokumentów PDF w aplikacjach .NET.
 
-### Czy mogę konwertować inne formaty do PDF za pomocą Aspose?
+### Czy za pomocą Aspose mogę konwertować inne formaty do formatu PDF?
 Tak, Aspose.PDF obsługuje różne formaty, w tym DOCX, HTML i inne.
 
 ### Czy jest dostępna bezpłatna wersja próbna?

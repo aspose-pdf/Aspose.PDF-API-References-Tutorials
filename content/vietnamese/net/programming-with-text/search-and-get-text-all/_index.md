@@ -60,7 +60,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## Bước 6: trích xuất các đoạn văn bản
 
-Lấy các đoạn văn bản được trích xuất bằng cách sử dụng`TextFragments` tài sản của`TextFragmentAbsorber` sự vật:
+ Lấy các đoạn văn bản được trích xuất bằng cách sử dụng`TextFragments` tài sản của`TextFragmentAbsorber` sự vật:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

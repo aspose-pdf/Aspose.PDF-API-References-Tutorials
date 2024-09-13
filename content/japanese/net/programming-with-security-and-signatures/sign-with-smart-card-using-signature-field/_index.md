@@ -2,168 +2,190 @@
 title: 署名フィールドを使用してスマートカードで署名する
 linktitle: 署名フィールドを使用してスマートカードで署名する
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して、スマート カードで PDF ファイルに安全に署名します。
+description: Aspose.PDF for .NET でスマート カードを使用して PDF に安全に署名する方法を学びます。簡単な実装については、ステップ バイ ステップ ガイドに従ってください。
 type: docs
 weight: 120
 url: /ja/net/programming-with-security-and-signatures/sign-with-smart-card-using-signature-field/
 ---
-スマート カードを使用したデジタル署名は、PDF ファイルに署名するための安全な方法です。Aspose.PDF for .NET を使用すると、次のソース コードに従って、署名フィールドとスマート カードを使用して PDF ファイルに簡単に署名できます。
+## 導入
 
-## ステップ1: 必要なライブラリをインポートする
+今日のデジタル世界では、ドキュメントのセキュリティ保護がこれまで以上に重要になっています。開発者、ビジネス オーナー、または機密情報を扱う人であっても、PDF に電子署名する方法を知っていれば、時間を節約し、ドキュメントの認証を確実に行うことができます。このガイドでは、スマート カードと Aspose.PDF for .NET の署名フィールドを使用して PDF に署名するプロセスについて説明します。 
 
-始める前に、C# プロジェクトに必要なライブラリをインポートする必要があります。必要なインポート ディレクティブは次のとおりです。
+## 前提条件
+
+署名プロセスの詳細に入る前に、開始するために必要なものがすべて揃っていることを確認しましょう。前提条件のチェックリストは次のとおりです。
+
+1. Aspose.PDF for .NET: .NET環境にAspose.PDFライブラリがインストールされていることを確認してください。[サイト](https://releases.aspose.com/pdf/net/).
+
+2. Visual Studio: .NET コードを記述して実行するには IDE が必要です。Visual Studio Community Edition は優れた無料オプションです。
+
+3. スマート カード: PDF に署名するにはこれが不可欠です。スマート カード リーダーと必要な証明書がマシンにインストールされていることを確認してください。
+
+4. C# の基礎知識: C# プログラミングの知識があると、使用するコード スニペットを理解するのに役立ちます。
+
+5. サンプル PDF ドキュメント: テスト用にサンプル PDF ドキュメントを用意します。空白の PDF を作成することも、既存の PDF を使用することもできます。
+
+## パッケージのインポート
+
+コーディングを始める前に、必要なパッケージをインポートしましょう。C# ファイルに次の名前空間を含める必要があります。
 
 ```csharp
-using Aspose.Pdf;
+using Aspose.Pdf.Facades;
 using Aspose.Pdf.Forms;
-using System.Security.Cryptography.X509Certificates;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
 ```
 
-## ステップ2: ドキュメントフォルダへのパスを設定する
+これらの名前空間を使用すると、PDF の操作やデジタル署名の処理に必要なクラスとメソッドにアクセスできるようになります。
 
-この手順では、署名するPDFファイルを含むフォルダへのパスを指定する必要があります。`"YOUR DOCUMENTS DIRECTORY"`次のコードでは、ドキュメント フォルダーへの実際のパスを指定します。
+## スマートカードで PDF に署名するためのステップバイステップガイド
+
+前提条件が整理されたので、署名プロセスを管理しやすいステップに分解してみましょう。各ステップを詳細に説明し、内部で何が起こっているかを理解できるようにします。
+
+### ステップ1: ドキュメントディレクトリを設定する
+
+対処方法: ドキュメント ディレクトリへのパスを定義します。
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## ステップ3: PDF文書をコピーして開く
+説明: 置き換え`"YOUR DOCUMENTS DIRECTORY"` PDF ファイルが保存されている実際のパスを入力します。ここで、空白の PDF を読み取り、署名されたドキュメントを保存します。
 
-ここで、次のコードを使用して、署名する PDF ドキュメントをコピーして開きます。
+### ステップ2: 空白のPDFをコピーする
+
+対処方法: 作業に使用する空白の PDF のコピーを作成します。
 
 ```csharp
 File.Copy(dataDir + "blank.pdf", dataDir + "externalSignature1.pdf", true);
+```
 
+説明: この行は、`blank.pdf`ファイルを新しいファイルに`externalSignature1.pdf` 。`true`パラメータにより、ファイルがすでに存在する場合に上書きが可能になります。
+
+### ステップ3: PDFドキュメントを開く
+
+対処方法: コピーした PDF を開いて、読み書きします。
+
+```csharp
 using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMode.Open, FileAccess.ReadWrite))
 {
-     using (Document doc = new Document(fs))
-     {
-         //署名フィールドを作成する
-         SignatureField field1 = new SignatureField(doc.Pages[1], new Rectangle(100, 400, 10, 10));
-
-         //ストアで証明書を選択する
-         X509Store store = new X509Store(StoreLocation.CurrentUser);
-         store.Open(OpenFlags.ReadOnly);
-         X509Certificate2Collection sel = X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, X509SelectionFlag.SingleSelection);
-        
-         //必要な情報を含む外部署名を作成する
-         ExternalSignature externalSignature = new ExternalSignature(sel[0])
-         {
-             Authority = "Me",
-             Reason = "Reason",
-             ContactInfo = "Contact"
-         };
-
-         field1.PartialName = "sig1";
-         doc.Form.Add(field1, 1);
-         field1.Sign(externalSignature);
-         doc.Save();
-     }
+    using (Document doc = new Document(fs))
+    {
+        //以降の手順はここを参照してください
+    }
 }
 ```
 
-## ステップ4: 署名を確認する
+説明: 私たちは`FileStream`PDFファイルを開くには`Document`Aspose.PDF のクラスを使用すると、PDF コンテンツを操作できます。
 
-最後に、署名されたPDFファイルの署名を検証します。`PdfFileSignature`クラス。署名名を取得して、1 つずつチェックします。署名の検証に失敗した場合は、例外がスローされます。対応するコードは次のとおりです。
+### ステップ4: 署名フィールドを作成する
+
+対処方法: 署名を配置する PDF に署名フィールドを定義します。
+
+```csharp
+SignatureField field1 = new SignatureField(doc.Pages[1], new Rectangle(100, 400, 10, 10));
+```
+
+説明: ここでは、`SignatureField` PDFの2ページ目（ページインデックスは1から始まります）にあります。`Rectangle`署名フィールドの位置とサイズを定義します。
+
+### ステップ5: スマートカード証明書ストアにアクセスする
+
+対処方法: 証明書ストアを開いて、スマート カード証明書を選択します。
+
+```csharp
+X509Store store = new X509Store(StoreLocation.CurrentUser);
+store.Open(OpenFlags.ReadOnly);
+```
+
+説明: 現在のユーザーの証明書ストアにアクセスします。ここにスマート カード証明書が保存されます。
+
+### ステップ6: 証明書を選択する
+
+対処方法: ユーザーにストアから証明書を選択するよう求めます。
+
+```csharp
+X509Certificate2Collection sel = X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, X509SelectionFlag.SingleSelection);
+```
+
+説明: この行では、証明書を選択するためのダイアログが開きます。スマート カードに関連付けられている証明書を選択できます。
+
+### ステップ7: 外部署名を作成する
+
+やるべきこと: インスタンスを作成する`ExternalSignature`選択した証明書を使用します。
+
+```csharp
+Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0])
+{
+    Authority = "Me",
+    Reason = "Reason",
+    ContactInfo = "Contact"
+};
+```
+
+説明: 初期化します`ExternalSignature`選択した証明書で署名します。権限、署名理由、連絡先情報も設定できます。
+
+### ステップ8: 文書に署名フィールドを追加する
+
+対処方法: ドキュメントに署名フィールドを追加します。
+
+```csharp
+field1.PartialName = "sig1";
+doc.Form.Add(field1, 1);
+```
+
+説明: 署名フィールドに名前を付け、ドキュメントの最初のページに追加します。これにより、署名用の PDF が準備されます。
+
+### ステップ9: 文書に署名する
+
+対処方法: 外部署名を使用して PDF に署名します。
+
+```csharp
+field1.Sign(externalSignature);
+doc.Save();
+```
+
+説明: この行は、外部署名を使用してドキュメントに署名し、変更を PDF に保存します。これでドキュメントが署名されました。
+
+### ステップ10: 署名を確認する
+
+対処方法: 署名が有効かどうかを確認します。
 
 ```csharp
 using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "externalSignature1.pdf")))
 {
-     IList<string> sigNames = pdfSign. GetSignNames();
-     for (int index = 0; index <= sigNames.Count - 1; index++)
-     {
-         if (!pdfSign.VerifySigned(sigNames[index]) || !pdfSign.VerifySignature(sigNames[index]))
-         {
-             throw new ApplicationException("Unverified");
-         }
-     }
+    IList<string> sigNames = pdfSign.GetSignNames();
+    for (int index = 0; index <= sigNames.Count - 1; index++)
+    {
+        if (!pdfSign.VerifySigned(sigNames[index]) || !pdfSign.VerifySignature(sigNames[index]))
+        {
+            throw new ApplicationException("Not verified");
+        }
+    }
 }
 ```
 
-### Aspose.PDF for .NET を使用した署名フィールドを使用したスマート カード署名のサンプル ソース コード 
-```csharp
-//ドキュメント ディレクトリへのパス。
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-File.Copy(dataDir + "blank.pdf", dataDir + "externalSignature1.pdf", true);
-using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMode.Open, FileAccess.ReadWrite))
-{
-	using (Document doc = new Document(fs))
-	{
-		SignatureField field1 = new SignatureField(doc.Pages[1], new Rectangle(100, 400, 10, 10));
-		//Windows 証明書ストアで証明書を選択して署名する
-		System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
-		store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
-		//ストアで証明書を手動で選択
-		System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel = System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
-		Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0])
-		{
-			Authority = "Me",
-			Reason = "Reason",
-			ContactInfo = "Contact"
-		};
-		field1.PartialName = "sig1";
-		doc.Form.Add(field1, 1);
-		field1.Sign(externalSignature);
-		doc.Save();
-	}
-}
-using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "externalSignature1.pdf")))
-{
-	IList<string> sigNames = pdfSign.GetSignNames();
-	for (int index = 0; index <= sigNames.Count - 1; index++)
-	{
-		if (!pdfSign.VerifySigned(sigNames[index]) || !pdfSign.VerifySignature(sigNames[index]))
-		{
-			throw new ApplicationException("Not verified");
-		}
-	}
-}
-```
+説明: インスタンスを作成します`PdfFileSignature`ドキュメント内の署名を検証します。署名が有効でない場合は、例外がスローされます。
 
 ## 結論
 
-おめでとうございます! Aspose.PDF for .NET の署名フィールドを使用してスマート カードで PDF ファイルに署名するための手順ガイドが完成しました。このコードを使用して、PDF ドキュメントに安全なデジタル署名を追加できます。
+おめでとうございます。Aspose.PDF for .NET でスマート カードと署名フィールドを使用して PDF ドキュメントに署名する方法を学習しました。このプロセスはドキュメントのセキュリティを確保するだけでなく、信頼性も保証するため、今日のデジタル環境では欠かせないスキルとなっています。契約書、請求書、その他の重要なドキュメントに署名する場合、デジタル署名の実装方法を知っておくと、時間を節約でき、安心できます。
 
-高度なデジタル署名および証明書管理機能の詳細については、Aspose.PDF の公式ドキュメントを必ず確認してください。
+## よくある質問
 
-### よくある質問
+### Aspose.PDF for .NET とは何ですか?
+Aspose.PDF for .NET は、開発者が .NET アプリケーションで PDF ドキュメントを作成、操作、変換できるようにする強力なライブラリです。
 
-#### Q: スマート カードによるデジタル署名に署名フィールドを使用する利点は何ですか?
+### PDF に署名するにはスマート カードが必要ですか?
+はい、デジタル証明書を使用して PDF に安全に署名するにはスマート カードが必要です。
 
-A: スマート カードによるデジタル署名に署名フィールドを使用すると、PDF 内に署名が適用される指定領域が提供されます。これにより、ドキュメントの明瞭性が向上し、署名の信頼性が確保されます。
+### Aspose.PDF を無料で使用できますか?
+ Aspose.PDFは無料トライアルを提供しており、ダウンロードすることができます。[ここ](https://releases.aspose.com/).
 
-#### Q: Aspose.PDF for .NET ライブラリは、署名フィールドを使用したスマート カード ベースのデジタル署名をどのように実現しますか?
+### 署名された PDF を検証するにはどうすればよいですか?
+あなたは`PdfFileSignature` Aspose.PDF のクラスを使用して、PDF ドキュメント内の署名を検証します。
 
-A: Aspose.PDF for .NET を使用すると、署名フィールドの作成、スマート カード証明書の選択、PDF ドキュメント内の特定の領域へのデジタル署名の適用のプロセスが簡素化されます。
-
-#### Q: スマート カード ベースの署名では特定の証明書を選択することがなぜ重要ですか?
-
-A: 特定の証明書を選択すると、署名者を一意に識別し、署名の整合性を確保できます。これにより、デジタル署名標準に対する信頼性とコンプライアンスを確立できます。
-
-#### Q: 提供されたソース コードは、署名フィールドを使用したスマート カード ベースの署名プロセスをどのように処理しますか?
-
-A: ソース コードでは、署名フィールドを作成し、スマート カード証明書を選択し、特定の署名情報を使用してデジタル署名を適用する方法を示しています。また、署名の有効性を検証する方法も示されています。
-
-#### Q: 署名フィールドの外観をカスタマイズできますか?
-
-A: はい、署名フィールドのサイズ、位置、視覚的表現などの外観を、ドキュメントのレイアウトに合わせてカスタマイズできます。
-
-#### Q: 検証手順中に署名の検証に失敗した場合はどうなりますか?
-
-A: 署名の検証に失敗した場合、署名が有効でないことを示す例外がスローされます。これにより、有効で信頼できる署名のみが受け入れられるようになります。
-
-#### Q: 1 つの PDF ドキュメントに複数の署名フィールドとスマート カード ベースの署名を適用できますか?
-
-A: もちろんです。同じ PDF ドキュメントの異なる領域に複数の署名フィールドとスマート カード ベースの署名を適用して、複数のセキュリティ層を実現できます。
-
-#### Q: 署名フィールドを使用すると、ドキュメントの署名プロセス全体がどのように強化されますか?
-
-A: 署名フィールドを使用すると、署名者が指定された領域に署名するようにガイドされるため、ドキュメントの署名プロセスが効率化され、署名プロセスがより整理され、ユーザーフレンドリーになります。
-
-#### Q: スマート カード ベースの署名で署名フィールドを使用する場合、制限はありますか?
-
-A: スマート カード ベースの署名で署名フィールドを使用する場合、固有の制限はありません。ただし、選択した署名フィールドの場所によって重要なドキュメントの内容が隠れないようにすることが重要です。
-
-#### Q: 署名フィールドを使用したスマート カード ベースの署名の実装に関する詳細な支援やサポートはどこで受けられますか?
-
-A: 追加のガイダンスとサポートについては、安全なデジタル署名を実装するための貴重な洞察とソリューションを提供する Aspose.PDF の公式ドキュメントとコミュニティ フォーラムを参照してください。
+### Aspose.PDF に関する詳細なドキュメントはどこで見つかりますか?
+確認するには[Aspose.PDF ドキュメント](https://reference.aspose.com/pdf/net/)詳細と例についてはこちらをご覧ください。

@@ -1,7 +1,7 @@
 ---
 title: Expandera bokmärken i PDF-fil
 linktitle: Expandera bokmärken i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du utökar bokmärken i PDF-filer med Aspose.PDF för .NET med denna steg-för-steg-guide. Perfekt för utvecklare som vill förbättra PDF-navigering.
 type: docs
 weight: 50

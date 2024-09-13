@@ -117,7 +117,7 @@ Console.WriteLine("\nSVG image added successfully inside a table cell.\nFile sav
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantieer Document object
+// Instantieer Document-object
 Document doc = new Document();
 // Een afbeeldinginstantie maken
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();

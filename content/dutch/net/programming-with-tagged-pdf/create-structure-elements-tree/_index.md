@@ -152,7 +152,7 @@ A: Door een structuur van boomelementen in een PDF-document te maken met Aspose.
 
 A: Het codevoorbeeld laat zien hoe u een hiërarchische structuur van logische elementen kunt maken met behulp van de`SectElement`, `DivElement` , En`ArtElement` klassen die worden geleverd door Aspose.PDF. Deze elementen zijn georganiseerd als ouder- en kindknooppunten, die een boomstructuur vormen binnen het document.
 
-####  V: Hoe werkt de`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
+#### V: Hoe werkt de`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
 
  A: De`TaggedContent` property biedt toegang tot de functies voor getagde inhoud van het PDF-document. Hiermee kunt u gestructureerde elementen maken en bewerken, hun relaties definiëren en ze hiërarchisch ordenen, waardoor de structuur en toegankelijkheid van het document worden verbeterd.
 
@@ -168,7 +168,7 @@ A: Het codevoorbeeld laat zien hoe u een hiërarchische structuur van logische e
 
 A: Elementen hiërarchisch organiseren verbetert de organisatie, navigatie en semantiek van documenten. Het stelt gebruikers en ondersteunende technologieën in staat de structuur en relaties van de content te begrijpen, wat de algehele gebruikerservaring verbetert.
 
-####  V: Hoe werkt de`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
+#### V: Hoe werkt de`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
 
  A: De`Save` methode slaat het PDF-document op samen met de hiërarchische structuur die is gemaakt met behulp van de`AppendChild` methode. Dit zorgt ervoor dat de structuur intact blijft, waardoor het document toegankelijk en overzichtelijk blijft.
 

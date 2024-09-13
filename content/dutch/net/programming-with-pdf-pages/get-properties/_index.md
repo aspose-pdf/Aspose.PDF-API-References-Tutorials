@@ -2,125 +2,142 @@
 title: PDF-eigenschappen ophalen
 linktitle: PDF-eigenschappen ophalen
 second_title: Aspose.PDF voor .NET API-referentie
-description: Stapsgewijze handleiding voor het verkrijgen van PDF-eigenschappen zoals doosafmetingen en rotatie met behulp van Aspose.PDF voor .NET.
+description: Leer hoe u PDF-eigenschappen efficiënt kunt extraheren met Aspose.PDF voor .NET. Stapsgewijze handleiding met codevoorbeelden en best practices.
 type: docs
 weight: 100
 url: /nl/net/programming-with-pdf-pages/get-properties/
 ---
-In deze tutorial leiden we u door het stapsgewijze proces om de eigenschappen van een PDF te verkrijgen met Aspose.PDF voor .NET. We leggen de gebundelde C#-broncode uit en bieden u een uitgebreide gids om u te helpen deze functie te begrijpen en te implementeren in uw eigen projecten. Aan het einde van deze tutorial weet u hoe u toegang krijgt tot verschillende eigenschappen van een PDF-pagina, zoals art box, crop box, crop box, etc., met Aspose.PDF voor .NET.
+## Invoering
+
+Als het gaat om het programmatisch manipuleren van PDF's, is Aspose.PDF voor .NET een van die betrouwbare tools die opvallen. Of u nu informatie wilt extraheren, documenten wilt wijzigen of gewoon PDF-eigenschappen wilt lezen, deze bibliotheek biedt een reeks functionaliteiten om uw taak gemakkelijker te maken. In deze gids duiken we diep in hoe u PDF-eigenschappen kunt verkrijgen, een taak die in eerste instantie ontmoedigend kan lijken, maar met de juiste tools een fluitje van een cent wordt. Dus, gesp je vast! We zullen de technische aspecten of de mogelijkheden verkennen die gepaard gaan met het werken met PDF-bestanden.
 
 ## Vereisten
-Voordat u begint, moet u ervoor zorgen dat u het volgende bij de hand hebt:
 
-- Basiskennis van de programmeertaal C#
-- Aspose.PDF voor .NET geïnstalleerd in uw ontwikkelomgeving
+Voordat u in de code duikt, is het essentieel om ervoor te zorgen dat u alle benodigde componenten op hun plaats hebt. Deze sectie helpt u om aan de slag te gaan met de Aspose.PDF-bibliotheek.
 
-## Stap 1: Documentdirectory instellen
-Eerst moet u het pad naar uw documentenmap instellen. Dit is de locatie van het PDF-bestand waarvan u de eigenschappen wilt ophalen. Vervang "UW DOCUMENTENMAP" door het juiste pad.
+1. .NET-omgeving: Zorg dat u een werkende .NET-omgeving hebt. U kunt Visual Studio of een andere geschikte IDE gebruiken.
+   
+2.  Aspose.PDF voor .NET: U moet Aspose.PDF geïnstalleerd hebben. U kunt de bibliotheek downloaden van de[Aspose PDF-releases](https://releases.aspose.com/pdf/net/) pagina.
+
+3. Basiskennis van C#: Kennis van C#-programmering is nuttig omdat we de code in C# gaan schrijven.
+
+4. PDF-bestand: U hebt een voorbeeld-PDF-bestand nodig om mee te werken. Voor dit voorbeeld verwijzen we naar "GetProperties.pdf".
+
+### Uw project instellen
+
+Zodra u uw gereedschappen en het PDF-bestand gereed hebt, kunt u uw project als volgt instellen:
+
+1. Maak een nieuw project: Open uw IDE en maak een nieuw C#-project.
+
+2. Add References: Voeg de Aspose.PDF-assembly toe. U kunt dit doen via NuGet Package Manager of door direct een referentie naar de DLL toe te voegen.
+
+3.  Bereid uw PDF-bestand voor: Plaats uw voorbeeld "GetProperties.pdf" in een map die uw code gemakkelijk kan openen, bijvoorbeeld`"YOUR DOCUMENT DIRECTORY"`.
+
+## Pakketten importeren
+
+Zodra uw projectinstelling is voltooid, moet u als eerste de benodigde naamruimten importeren. De Aspose.PDF-bibliotheek biedt verschillende klassen waarmee u met PDF-documenten kunt werken.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-## Stap 2: Open het PDF-document
- Vervolgens moet u het PDF-document openen met behulp van de`Document` klasse van Aspose.PDF. Zorg ervoor dat u het juiste pad naar het PDF-bestand opgeeft.
+Met deze eenvoudige stap zorgt u ervoor dat u toegang hebt tot de klassen die u nodig hebt om efficiënt informatie uit uw PDF-bestand te halen en te bewerken.
+
+Laten we nu de taak van het ophalen van PDF-eigenschappen opsplitsen in uitvoerbare stappen. Deze sectie begeleidt u door elke stap, zodat u het proces eenvoudig kunt volgen en begrijpen.
+
+## Stap 1: Definieer de documentdirectory
+
+De eerste stap in onze reis is om te definiëren waar ons PDF-document zich bevindt. We willen verwijzen naar de locatie van "GetProperties.pdf".
 
 ```csharp
-Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
-```
-
-## Stap 3: Toegang tot de paginaverzameling
- U kunt nu toegang krijgen tot de paginaverzameling van het document met behulp van de`Pages` eigendom van de`pdfDocument` voorwerp.
-
-```csharp
-PageCollection pageCollection = pdfDocument.Pages;
-```
-
-## Stap 4: Ga naar een specifieke pagina
-Vervolgens kunt u naar een specifieke pagina springen met behulp van de index van de pagina in de collectie. In het onderstaande voorbeeld benaderen we de tweede pagina (index 1).
-
-```csharp
-Page pdfPage = pageCollection[1];
-```
-
-## Stap 5: Pagina-eigenschappen ophalen
- Nu kunt u de verschillende eigenschappen van de PDF-pagina, zoals art box, crop box, crop box, etc., verkrijgen door de overeenkomstige eigenschappen van de`pdfPage` voorwerp.
-
-```csharp
-Console.WriteLine("ArtBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
-Console.WriteLine("BleedBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.BleedBox.Height, pdf
-
-Page.BleedBox.Width, pdfPage.BleedBox.LLX, pdfPage.BleedBox.LLY, pdfPage.BleedBox.URX, pdfPage.BleedBox.URY);
-Console.WriteLine("CropBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.CropBox.Height, pdfPage.CropBox.Width, pdfPage.CropBox.LLX, pdfPage.CropBox.LLY, pdfPage.CropBox.URX, pdfPage.CropBox.URY);
-Console.WriteLine("MediaBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.MediaBox.Height, pdfPage.MediaBox.Width, pdfPage.MediaBox.LLX, pdfPage.MediaBox.LLY, pdfPage.MediaBox.URX, pdfPage.MediaBox.URY);
-Console.WriteLine("TrimBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.TrimBox.Height, pdfPage.TrimBox.Width, pdfPage.TrimBox.LLX, pdfPage.TrimBox.LLY, pdfPage.TrimBox.URX, pdfPage.TrimBox.URY);
-Console.WriteLine("Rect: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.Rect.Height, pdfPage.Rect.Width, pdfPage.Rect.LLX, pdfPage.Rect.LLY, pdfPage.Rect.URX, pdfPage.Rect.URY);
-Console.WriteLine("Page number: {0}", pdfPage.Number);
-Console.WriteLine("Rotate: {0}", pdfPage.Rotate);
-```
-
-### Voorbeeldbroncode voor Eigenschappen ophalen met Aspose.PDF voor .NET 
-
-```csharp
-
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Document openen
-Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
-// Paginaverzameling ophalen
-PageCollection pageCollection = pdfDocument.Pages;
-// Specifieke pagina ophalen
-Page pdfPage = pageCollection[1];
-// Pagina-eigenschappen ophalen
-System.Console.WriteLine("ArtBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
-System.Console.WriteLine("BleedBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.BleedBox.Height, pdfPage.BleedBox.Width, pdfPage.BleedBox.LLX, pdfPage.BleedBox.LLY, pdfPage.BleedBox.URX, pdfPage.BleedBox.URY);
-System.Console.WriteLine("CropBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.CropBox.Height, pdfPage.CropBox.Width, pdfPage.CropBox.LLX, pdfPage.CropBox.LLY, pdfPage.CropBox.URX, pdfPage.CropBox.URY);
-System.Console.WriteLine("MediaBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.MediaBox.Height, pdfPage.MediaBox.Width, pdfPage.MediaBox.LLX, pdfPage.MediaBox.LLY, pdfPage.MediaBox.URX, pdfPage.MediaBox.URY);
-System.Console.WriteLine("TrimBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.TrimBox.Height, pdfPage.TrimBox.Width, pdfPage.TrimBox.LLX, pdfPage.TrimBox.LLY, pdfPage.TrimBox.URX, pdfPage.TrimBox.URY);
-System.Console.WriteLine("Rect : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.Rect.Height, pdfPage.Rect.Width, pdfPage.Rect.LLX, pdfPage.Rect.LLY, pdfPage.Rect.URX, pdfPage.Rect.URY);
-System.Console.WriteLine("Page Number : {0}", pdfPage.Number);
-System.Console.WriteLine("Rotate : {0}", pdfPage.Rotate);
-
 ```
 
+Met deze coderegel geven we aan waar Aspose het PDF-bestand kan vinden waarmee we willen werken.
+
+## Stap 2: Open het PDF-document
+
+ Vervolgens openen we het PDF-document met behulp van de`Document` klasse uit de Aspose.PDF-bibliotheek. Dit is een cruciale stap omdat het de PDF in het geheugen laadt.
+
+```csharp
+// Document openen
+Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
+```
+
+ Door deze regel uit te voeren, maken we een instantie van de`Document` klasse die ons PDF-bestand vertegenwoordigt, waardoor alle eigenschappen ervan toegankelijk worden.
+
+## Stap 3: Toegang tot de paginaverzameling
+
+Nadat we het document hebben geopend, moeten we de pagina's in dat document openen. Elke PDF kan meerdere pagina's hebben, dus we werken met een verzameling die alle pagina's bevat.
+
+```csharp
+// Paginaverzameling ophalen
+PageCollection pageCollection = pdfDocument.Pages;
+```
+
+ Denk aan`PageCollection` als index die ons helpt navigeren door de pagina's in ons PDF-document.
+
+## Stap 4: Een specifieke pagina verkrijgen
+
+Nu we toegang hebben tot onze pagina's, is het tijd om dieper te graven. We halen een specifieke pagina uit de collectie; in dit geval krijgen we de eerste pagina.
+
+```csharp
+// Specifieke pagina ophalen
+Page pdfPage = pageCollection[1];
+```
+
+ Onthoud dat dit zero-based indexering is. Dus als u de eerste pagina wilt openen, moet u deze indexeren als`1`.
+
+## Stap 5: Pagina-eigenschappen ophalen en weergeven
+
+Nu komen we bij het spannende gedeelte: de eigenschappen van de pagina extraheren! Elke pagina heeft verschillende eigenschappen zoals ArtBox, BleedBox, CropBox, MediaBox en TrimBox die de afmetingen en positionering beschrijven. Laten we deze eigenschappen benaderen en weergeven.
+
+```csharp
+// Pagina-eigenschappen ophalen
+System.Console.WriteLine("ArtBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, 
+    pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
+System.Console.WriteLine("BleedBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.BleedBox.Height, pdfPage.BleedBox.Width, pdfPage.BleedBox.LLX, pdfPage.BleedBox.LLY, 
+    pdfPage.BleedBox.URX, pdfPage.BleedBox.URY);
+System.Console.WriteLine("CropBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.CropBox.Height, pdfPage.CropBox.Width, pdfPage.CropBox.LLX, pdfPage.CropBox.LLY, 
+    pdfPage.CropBox.URX, pdfPage.CropBox.URY);
+System.Console.WriteLine("MediaBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.MediaBox.Height, pdfPage.MediaBox.Width, pdfPage.MediaBox.LLX, pdfPage.MediaBox.LLY, 
+    pdfPage.MediaBox.URX, pdfPage.MediaBox.URY);
+System.Console.WriteLine("TrimBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.TrimBox.Height, pdfPage.TrimBox.Width, pdfPage.TrimBox.LLX, pdfPage.TrimBox.LLY, 
+    pdfPage.TrimBox.URX, pdfPage.TrimBox.URY);
+System.Console.WriteLine("Rect : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.Rect.Height, pdfPage.Rect.Width, pdfPage.Rect.LLX, pdfPage.Rect.LLY, 
+    pdfPage.Rect.URX, pdfPage.Rect.URY);
+System.Console.WriteLine("Page Number : {0}", pdfPage.Number);
+System.Console.WriteLine("Rotate : {0}", pdfPage.Rotate);
+```
+
+Dit stukje code doet een paar geweldige dingen. Het benadert elke eigenschap die gerelateerd is aan de afmetingen en oriëntatie van de pagina en print de informatie vervolgens naar de console. Wat u krijgt is een overzicht van de eigenschappen van de pagina die kunnen helpen bij verdere aanpassingen of analyses.
+
 ## Conclusie
-Gefeliciteerd! U hebt met succes de eigenschappen van een PDF verkregen met Aspose.PDF voor .NET. U hebt geleerd hoe u een PDF-document opent, naar een specifieke pagina navigeert en verschillende pagina-eigenschappen verkrijgt, zoals dimensievakken en rotatie. U kunt deze informatie nu gebruiken om de verwerking van uw PDF-bestanden aan te passen op basis van hun eigenschappen.
 
-Raadpleeg de officiële Aspose.PDF voor .NET-documentatie voor meer informatie over geavanceerde functies en aanpassingsmogelijkheden.
+En daar heb je het — een complete walkthrough over hoe je PDF-eigenschappen kunt verkrijgen met Aspose.PDF voor .NET! Je hebt nu de kennis om moeiteloos essentiële informatie uit PDF-documenten te halen. Of je nu gegevens uit je PDF's wilt analyseren, rapporteren of loggen, deze robuuste bibliotheek is een betrouwbare bondgenoot. Door deze stappen onder de knie te krijgen, ben je goed op weg om een PDF-manipulatiewizard te worden! Aarzel niet om meer functies en functionaliteiten te verkennen die Aspose.PDF te bieden heeft.
 
-### Veelgestelde vragen
+## Veelgestelde vragen
 
-#### V: Hoe kan ik de eigenschappen van een PDF ophalen met Aspose.PDF voor .NET?
+### Hoe kan ik Aspose.PDF voor .NET installeren?  
+U kunt het installeren via NuGet Package Manager in Visual Studio of rechtstreeks downloaden van de Aspose-website.
 
-A: Om de eigenschappen van een PDF op te halen met Aspose.PDF voor .NET, kunt u de volgende stappen volgen:
+### Kan ik Aspose.PDF gratis gebruiken?  
+ Ja, Aspose biedt een gratis proefperiode aan die u kunt krijgen[hier](https://releases.aspose.com/).
 
-1. Stel de documentmap in door het pad op te geven naar het PDF-bestand waarvan u de eigenschappen wilt ophalen.
-2.  Open het PDF-document met behulp van de`Document` klasse Aspose.PDF, met het juiste pad naar het PDF-bestand.
-3.  Krijg toegang tot de paginaverzameling van het document met behulp van de`Pages` eigendom van de`pdfDocument` voorwerp.
-4. Ga naar een specifieke pagina met behulp van de index van de pagina in de verzameling (indexering begint bij 1).
-5.  Haal de verschillende eigenschappen van de PDF-pagina op, zoals ArtBox, BleedBox, CropBox, MediaBox, TrimBox, Rect, Page Number en Rotation, door de overeenkomstige eigenschappen van de`pdfPage` voorwerp.
+### Waar kan ik documentatie voor Aspose.PDF vinden?  
+ U kunt de documentatie raadplegen op[Aspose.pdf Documentatie](https://reference.aspose.com/pdf/net/).
 
-#### V: Wat zijn de verschillende eigenschappen van een PDF-pagina die ik kan ophalen met Aspose.PDF voor .NET?
+### Hoe krijg ik ondersteuning als ik problemen ondervind?  
+ U kunt het Aspose-forum bezoeken voor ondersteuning, waar u vragen kunt stellen over uw problemen[hier](https://forum.aspose.com/c/pdf/10).
 
-A: Met Aspose.PDF voor .NET kunt u verschillende eigenschappen van een PDF-pagina ophalen, zoals:
-
-- ArtBox: Geeft de afmetingen van het artwork op de pagina weer.
-- BleedBox: Geeft de afmetingen van de afloop van de pagina weer.
-- CropBox: Geeft de afmetingen van de zichtbare inhoud van de pagina weer na het bijsnijden.
-- MediaBox: Geeft de afmetingen van de fysieke media van de pagina weer.
-- TrimBox: Geeft de afmetingen van de bijgesneden inhoud van de pagina weer.
-- Rect: Geeft de afmetingen van het omsluitende kader van de pagina weer.
-- Paginanummer: Geeft het paginanummer in het document weer.
-- Roteren: Geeft de rotatiehoek van de pagina weer.
-
-#### V: Hoe krijg ik toegang tot een specifieke pagina in het PDF-document om de eigenschappen ervan op te halen?
-
- A: Om toegang te krijgen tot een specifieke pagina in het PDF-document en de eigenschappen ervan op te halen, kunt u de`Pages` eigendom van de`pdfDocument` object om toegang te krijgen tot de paginaverzameling van het document. Vervolgens kunt u de index van de pagina in de verzameling gebruiken om naar de gewenste pagina te springen. Om bijvoorbeeld toegang te krijgen tot de tweede pagina, kunt u`pdfDocument.Pages[1]` (indexering start bij 1).
-
-#### V: Kan ik bewerkingen uitvoeren op de opgehaalde eigenschappen, zoals het wijzigen of vergroten/verkleinen van de paginavakken?
-
-A: Ja, zodra u de eigenschappen van een PDF-pagina ophaalt met Aspose.PDF voor .NET, kunt u er verschillende bewerkingen op uitvoeren. U kunt bijvoorbeeld de afmetingen van de paginavakken wijzigen, de pagina roteren of de opgehaalde informatie gebruiken voor aangepaste verwerking en manipulatie van het PDF-document.
-
-#### V: Ondersteunt Aspose.PDF voor .NET het extraheren van eigenschappen uit gecodeerde of met een wachtwoord beveiligde PDF-bestanden?
-
-A: Ja, Aspose.PDF voor .NET ondersteunt het extraheren van eigenschappen uit gecodeerde of met een wachtwoord beveiligde PDF-bestanden. Zolang u het juiste wachtwoord invoert om het PDF-document te openen, kunt u de eigenschappen ervan openen en ophalen met dezelfde aanpak die in de tutorial is gedemonstreerd.
+### Is er een tijdelijke licentie beschikbaar?  
+Ja, u kunt een tijdelijke vergunning voor evaluatie aanvragen door naar[deze link](https://purchase.aspose.com/temporary-license/).

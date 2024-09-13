@@ -2,178 +2,185 @@
 title: PDF Dosyasına Tarih Saat Damgası Ekle
 linktitle: PDF Dosyasına Tarih Saat Damgası Ekle
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET ile PDF dosyasına kolayca tarih ve saat damgası eklemeyi öğrenin.
+description: Bu adım adım kılavuzla Aspose.PDF for .NET kullanarak PDF dosyalarınıza tarih ve saat damgası eklemeyi öğrenin. Belgenin gerçekliğini artırmak için mükemmeldir.
 type: docs
 weight: 10
 url: /tr/net/programming-with-stamps-and-watermarks/add-date-time-stamp/
 ---
-Bu makalede, .NET için Aspose.PDF kullanarak PDF dosyasına tarih ve saat damgasının nasıl ekleneceğini adım adım anlatacağız. Mevcut bir PDF dosyasına tarih ve saat damgası eklemek için sağlanan C# kaynak kodunu nasıl kullanacağınızı göstereceğiz.
+## giriiş
 
-## Gereksinimler
+Belgeleri, özellikle PDF'leri yönetmeye gelince, tarih ve saat damgası eklemek oyunun kurallarını değiştirebilir. İster yasal belgeler, ister proje raporları veya faturalar üzerinde çalışıyor olun, bir zaman damgası yalnızca özgünlük katmakla kalmaz, aynı zamanda belgenin ne zaman oluşturulduğuna veya değiştirildiğine dair net bir kayıt da sağlar. Bu kılavuzda, .NET için Aspose.PDF kitaplığını kullanarak bir PDF dosyasına tarih ve saat damgası ekleme sürecini adım adım anlatacağız. 
 
-Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
+Bu makale anlaşılır ve takip etmesi kolay olacak şekilde tasarlanmıştır, bu nedenle programlamaya veya Aspose.PDF kütüphanesine yeni başlamış olsanız bile bu özelliği güvenle uygulayabilirsiniz. Hadi başlayalım!
 
-- Kurulu bir .NET geliştirme ortamı.
-- .NET için Aspose.PDF kütüphanesi indirildi ve projenizde referans olarak kullanıldı.
+## Ön koşullar
 
-## Adım 1: Ortamı kurma
+Başlamadan önce, yerine getirmeniz gereken birkaç ön koşul var:
 
-Bir PDF belgesine tarih ve saat damgası ekleyebilmeniz için geliştirme ortamınızı ayarlamanız gerekir. İzlenecek adımlar şunlardır:
+1. Visual Studio: Makinenizde Visual Studio'nun yüklü olduğundan emin olun. Kodunuzu burada yazacak ve çalıştıracaksınız.
+2. .NET için Aspose.PDF: Aspose.PDF kütüphanesini indirip yüklemeniz gerekir. En son sürümü bulabilirsiniz[Burada](https://releases.aspose.com/pdf/net/).
+3. Temel C# Bilgisi: C# programlamaya aşina olmak örnekleri daha iyi anlamanıza yardımcı olacaktır, ancak yeni başlıyorsanız endişelenmeyin; her şeyi adım adım açıklayacağız.
+4.  Bir PDF Dosyası: Hazır bir örnek PDF dosyanız olsun. Örneğimiz için, adlı bir dosya kullanacağız`AddTextStamp.pdf`.
 
-1. Favori IDE'nizi (Bütünleşik Geliştirme Ortamı) açın.
-2. Yeni bir C# projesi oluşturun.
-3. .NET için Aspose.PDF kütüphanesine bir referans eklediğinizden emin olun.
+Bu ön koşullara sahip olduğunuzda, PDF dosyalarınıza tarih ve saat damgaları eklemeye başlayabilirsiniz!
 
-## Adım 2: Aspose.PDF kitaplığını ekleme
+## Paketleri İçe Aktar
 
-Projenizde PDF belgeleriyle çalışabilmeniz için .NET için Aspose.PDF kütüphanesine ihtiyacınız vardır.
+Başlamak için, C# projenize gerekli ad alanlarını içe aktarmanız gerekir. Bunu nasıl yapacağınız aşağıda açıklanmıştır:
 
-## Adım 3: PDF belgesini yükleme
+### Yeni Bir Proje Oluştur
 
-Tarih ve saat damgası eklemenin ilk adımı, mevcut PDF belgesini projenize yüklemektir. İşte nasıl:
+1. Visual Studio'yu açın: Visual Studio uygulamanızı başlatın.
+2. Yeni Proje Oluşturma: Başlangıç ekranından “Yeni proje oluştur” seçeneğini seçin.
+3. Konsol Uygulamasını Seçin: Proje şablonları listesinden “Konsol Uygulaması (.NET Framework)” seçeneğini belirleyin.
+4.  Projenize İsim Verin: Projenize bir isim verin, örneğin:`PDFDateTimeStamp`.
+
+### Aspose.PDF Referansını Ekle
+
+1. Referanslar’a sağ tıklayın: Çözüm Gezgini’nde projenizin “Referanslar” klasörüne sağ tıklayın.
+2. “Referans Ekle”yi seçin: Bağlam menüsünden “Referans Ekle”yi seçin.
+3. Aspose.PDF'yi arayın: Aspose.PDF'yi indirdiğiniz konuma gidin ve seçin. Projenize eklemek için "Tamam"a tıklayın.
+
+### Gerekli Ad Alanlarını İçe Aktar
+
+ En üstte`Program.cs` dosyanız varsa, aşağıdaki ad alanlarını içe aktarmanız gerekir:
+
+```csharp
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System;
+using Aspose.Pdf.Annotations;
+```
+
+Artık her şeyi ayarladığımıza göre, bir PDF dosyasına tarih ve saat damgası ekleme sürecini açık ve yönetilebilir adımlara bölelim.
+
+## Adım 1: Belge Dizinini Ayarlayın
+
+Öncelikle PDF dosyanızın bulunduğu dizini belirtmeniz gerekir. Bu önemlidir çünkü kod PDF'yi bu dizinde arayacaktır.
 
 ```csharp
 // Belgeler dizinine giden yol.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Gerçek yolunuzla değiştirin
+```
 
+ Değiştirdiğinizden emin olun`YOUR DOCUMENT DIRECTORY` PDF dosyanızın gerçek yolunu belirtin.
+
+## Adım 2: PDF Belgesini açın
+
+Daha sonra zaman damgasını eklemek istediğiniz PDF belgesini açacaksınız. 
+
+```csharp
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir + "AddTextStamp.pdf");
 ```
 
-"BELGELERİNİZ DİZİNİ" ifadesini PDF belgenizin bulunduğu dizinin gerçek yoluyla değiştirdiğinizden emin olun.
+ Bu kod satırı şunu başlatır:`Document` sınıfa yükleyin ve PDF dosyanızı yükleyin`pdfDocument` nesne.
 
-## Adım 4: Tarih ve saat damgasını oluşturma
+## Adım 3: Tarih Saat Damgasını Oluşturun
 
-Artık belgeyi yüklediğinize göre
-
-  PDF, eklemek için tarih ve saat damgası oluşturabilirsiniz. İşte nasıl yapılacağı:
+Şimdi tarih ve saat damgasını oluşturma zamanı. Bunu belirli bir şekilde görüntülenecek şekilde biçimlendireceksiniz. 
 
 ```csharp
-string annotationText = string.Empty;
-annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt");
-
-// Bir metin arabelleği oluşturun
-TextStamp textStamp = new TextStamp(annotationText);
+string annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt ");
 ```
 
-Yukarıdaki kod, geçerli tarih ve saati içeren yeni bir metin tamponu oluşturur.
+ Burada,`DateTime.Now` geçerli tarih ve saati alır ve`ToString` istediğiniz formata dönüştürür.
 
-## Adım 5: Damga Özelliklerini Yapılandırma
+## Adım 4: Bir Metin Damgası Oluşturun
 
-Damgayı PDF belgesine eklemeden önce, kenar boşluğu, yatay ve dikey hizalama vb. gibi damganın çeşitli özelliklerini yapılandırabilirsiniz. İşte nasıl:
-
-```csharp
-// Arabellek özelliklerini ayarla
-textStamp.BottomMargin = 10;
-textStamp. RightMargin = 20;
-textStamp.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
-textStamp.VerticalAlignment = VerticalAlignment.Bottom;
-```
-
-Bu özellikleri ihtiyaçlarınıza göre ayarlayabilirsiniz.
-
-## Adım 6: PDF'ye Damga Ekleme
-
-Artık tarih ve saat damgası hazır olduğuna göre, bunu PDF belgesinin belirli bir sayfasına ekleyebilirsiniz. İşte nasıl:
+Tarih ve saat dizesi hazır olduğuna göre artık PDF'nize eklenecek bir metin damgası oluşturabilirsiniz.
 
 ```csharp
-// Pulunuzu sayfanın pul koleksiyonuna ekleyin
-pdfDocument.Pages[1].AddStamp(textStamp);
-```
-
-Yukarıdaki kod, damgayı PDF belgesinin ilk sayfasına ekler. Gerekirse başka bir sayfa belirtebilirsiniz.
-
-## Adım 7: Çıktı belgesini kaydedin
-
-Tarih ve saat damgasını ekledikten sonra, değiştirilen PDF belgesini kaydedebilirsiniz. İşte nasıl:
-
-```csharp
-// Çıktı belgesini kaydedin
-pdfDocument.Save(dataDir);
-```
-
-Yukarıdaki kod düzenlenen PDF belgesini belirtilen dizine kaydeder.
-
-### .NET için Aspose.PDF kullanarak Tarih Saat Damgası Ekleme için örnek kaynak kodu 
-```csharp
-
-// Belgeler dizinine giden yol.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Belgeyi aç
-Document pdfDocument = new Document(dataDir+ "AddTextStamp.pdf");
-string annotationText = string.Empty;
-annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt ");
-
 // Metin damgası oluştur
 TextStamp textStamp = new TextStamp(annotationText);
+```
 
+ Bu satır yeni bir örnek oluşturur`TextStamp` biçimlendirilmiş tarih ve saat dizesini kullanarak.
+
+## Adım 5: Damganın Özelliklerini Ayarlayın
+
+Damganın görünümünü ve konumunu özelleştirebilirsiniz. Özelliklerini ayarlama yöntemi şu şekildedir:
+
+```csharp
 // Damganın özelliklerini ayarla
 textStamp.BottomMargin = 10;
 textStamp.RightMargin = 20;
 textStamp.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
 textStamp.VerticalAlignment = VerticalAlignment.Bottom;
+```
 
+Bu adımda kenar boşluklarını ayarlıyoruz ve damgayı PDF sayfasının sağ alt köşesine hizalıyoruz.
+
+## Adım 6: PDF'ye Damgayı Ekleyin
+
+Artık PDF belgenize metin damgasını eklemenin zamanı geldi. 
+
+```csharp
 // Pul koleksiyonuna pul ekleme
 pdfDocument.Pages[1].AddStamp(textStamp);
+```
+
+Bu satır, damgayı PDF'in ilk sayfasına ekler. Farklı bir sayfaya yerleştirmek isterseniz sayfa numarasını değiştirebilirsiniz.
+
+## Adım 7: Ücretsiz Metin Açıklaması Oluşturun (İsteğe bağlı)
+
+Damgaya bir açıklama eklemek istiyorsanız, bir`FreeTextAnnotation` aşağıdaki gibi:
+
+```csharp
 DefaultAppearance default_appearance = new DefaultAppearance("Arial", 6, System.Drawing.Color.Black);
 FreeTextAnnotation textAnnotation = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(0, 0, 0, 0), default_appearance);
 textAnnotation.Name = "Stamp";
 textAnnotation.Accept(new AnnotationSelector(textAnnotation));
 textAnnotation.Contents = textStamp.Value;
+```
 
+Bu isteğe bağlı adım, pul hakkında ek bağlam veya bilgi sağlayabilen serbest metin açıklaması oluşturur.
+
+## Adım 8: Açıklama Sınırını Yapılandırın
+
+Eğer açıklamanızın kenarlığını özelleştirmek istiyorsanız bunu da yapabilirsiniz:
+
+```csharp
 Border border = new Border(textAnnotation);
 border.Width = 0;
 border.Dash = new Dash(1, 1);
 textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(0, 0, 0, 0);
 pdfDocument.Pages[1].Annotations.Add(textAnnotation);
-dataDir = dataDir + "AddDateTimeStamp_out.pdf";
-
-// Çıktı belgesini kaydet
-pdfDocument.Save(dataDir);
-Console.WriteLine("\nDate time stamp added successfully.\nFile saved at " + dataDir);  
-          
 ```
+
+Bu kod parçacığı kenarlık genişliğini 0'a ayarlayarak görünmez hale getirir ve PDF'e açıklama ekler.
+
+## Adım 9: PDF Belgesini Kaydedin
+
+Son olarak değiştirdiğiniz PDF belgesini kaydetmeniz gerekiyor. 
+
+```csharp
+dataDir = dataDir + "AddDateTimeStamp_out.pdf"; // Çıktı dosya adını belirtin
+pdfDocument.Save(dataDir);
+Console.WriteLine("\nDate time stamp added successfully.\nFile saved at " + dataDir);
+```
+
+Bu satır eklenen zaman damgasıyla PDF'yi yeni bir dosyaya kaydeder. Çıktıyı görmek için belirtilen dizini kontrol edebilirsiniz.
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET kullanarak tarih ve saat damgası eklemeyi öğrendiniz. Şimdi bu bilgiyi kendi projelerinize uygulayarak PDF belgelerine tarih ve saat damgaları ekleyebilirsiniz.
+Tebrikler! Aspose.PDF for .NET kullanarak bir PDF dosyasına başarıyla tarih ve saat damgası eklediniz. Bu basit ama etkili özellik belgelerinizi geliştirebilir, onları daha profesyonel hale getirebilir ve ne zaman oluşturuldukları veya değiştirildikleri konusunda net bir kayıt sağlayabilir. 
 
-### PDF dosyasına tarih saat damgası ekleme hakkında SSS
+## SSS
 
-#### S: Aspose.PDF for .NET kullanarak bir PDF belgesine tarih ve saat damgası eklemenin amacı nedir?
+### Zaman damgasındaki tarih biçimini özelleştirebilir miyim?
+ Evet, değiştirebilirsiniz`ToString`Tarih formatını kendi isteğinize göre değiştirme yöntemi.
 
-A: Bir PDF belgesine tarih ve saat damgası eklemek, belgenin ne zaman değiştirildiğini veya oluşturulduğunu belirterek bilgi değerini artırır. Bu özellik, belge değişikliklerini izlemek ve belge geçmişi için bir referans noktası sağlamak için yararlıdır.
+### Aspose.PDF'i kullanmak ücretsiz mi?
+ Aspose.PDF ücretsiz deneme sunuyor ancak tüm özellikler için bir lisans satın almanız gerekiyor. Geçici bir lisans alabilirsiniz[Burada](https://purchase.aspose.com/temporary-license/).
 
-#### S: Tarih ve saat damgasının biçimini belirli gereksinimleri karşılayacak şekilde özelleştirebilir miyim?
+### Bir PDF'e birden fazla zaman damgası ekleyebilir miyim?
+ Kesinlikle! Birden fazla oluşturabilirsiniz`TextStamp` Örnekleri oluşturun ve bunları PDF'deki farklı sayfalara veya konumlara ekleyin.
 
- A: Evet, tarih ve saat damgasının biçimini tercihlerinize göre özelleştirebilirsiniz. Sağlanan C# kaynak kodu,`DateTime.Now.ToString()` Belirli bir formatta zaman damgası oluşturma yöntemi. Bu kodu, zaman damgasını gerektiği gibi biçimlendirmek için değiştirebilirsiniz.
+### Ya Visual Studio'm yoksa?
+Herhangi bir C# IDE'sini veya metin düzenleyicisini kullanabilirsiniz, ancak projenizi çalıştırmak ve hata ayıklamak için Visual Studio önerilir.
 
-#### S: PDF sayfasında belirli bir yere tarih ve saat damgası eklemek mümkün müdür?
-
- A: Kesinlikle, PDF sayfasındaki tarih ve saat damgasının yerleşimini, özelliklerini değiştirerek ayarlayabilirsiniz.`TextStamp` nesne. Eğitimde sağlanan kod, kenar boşluğu, hizalama ve dikey konumlandırma gibi özelliklerin nasıl ayarlanacağını gösterir.
-
-#### S: Aynı PDF belgesinin farklı sayfalarına birden fazla tarih ve saat damgası ekleyebilir miyim?
-
- A: Evet, aynı PDF belgesinin farklı sayfalarına birden fazla tarih ve saat damgası ekleyebilirsiniz. Basitçe bir tarih ve saat damgası oluşturma sürecini tekrarlayın.`TextStamp` Her istenilen sayfa için nesne ve özelliklerinin yapılandırılması.
-
-#### S: Tarih ve saat damgası metninin yazı tipini, boyutunu veya rengini nasıl değiştirebilirim?
-
- A: Tarih ve saat damgası metninin yazı tipini, boyutunu veya rengini değiştirmek için,`DefaultAppearance` oluşturmak için kullanılan nesne`TextStamp`İstediğiniz görünümü elde etmek için yazı tipi adını, boyutunu ve renk değerlerini ayarlayın.
-
-#### S: Aspose.PDF for .NET kullanarak bir PDF belgesine başka türde açıklamalar veya damgalar eklemek mümkün müdür?
-
-C: Evet, Aspose.PDF for .NET, metin açıklamaları, damgalar, çizgiler, şekiller ve daha fazlası dahil olmak üzere PDF belgelerine ekleyebileceğiniz çok çeşitli açıklama türleri sağlar. Açıklamalarla çalışma hakkında daha fazla ayrıntı için Aspose.PDF belgelerini inceleyebilirsiniz.
-
-#### S: Bir PDF belgesine tarih ve saat damgası eklerken herhangi bir sınırlama veya dikkat edilmesi gereken husus var mıdır?
-
-A: Tarih ve saat damgası eklemek basit olsa da, belgenin düzeni ve mevcut içerik gibi faktörleri göz önünde bulundurun. Damganın yerleşiminin önemli bilgileri gizlemediğinden veya belgenin okunabilirliğini etkilemediğinden emin olun.
-
-#### S: Bu yöntemi kendi projelerime nasıl entegre ederek PDF belgelerine tarih ve saat damgası ekleyebilirim?
-
-A: Bu yöntemi entegre etmek için, verilen adımları izleyin ve kodu projenizin yapısına uyacak şekilde ayarlayın. Kullanışlılıklarını artırmak ve değişikliklerin net bir zaman çizelgesini sağlamak için mevcut PDF belgelerine tarih ve saat damgaları ekleyebilirsiniz.
-
-#### S: Birden fazla PDF belgesine tarih ve saat damgası ekleme sürecini otomatikleştirebilir miyim?
-
-C: Evet, birden fazla PDF belgesine tarih ve saat damgası ekleme sürecini, bir belge listesi üzerinde yineleme yapan ve her birine aynı damgalama işlemini uygulayan bir betik veya program oluşturarak otomatikleştirebilirsiniz.
+### Aspose.PDF kullanımına dair daha fazla örneği nerede bulabilirim?
+ Daha fazla örnek ve öğreticiyi şu adreste inceleyebilirsiniz:[Aspose.PDF belgeleri](https://reference.aspose.com/pdf/net/).

@@ -110,7 +110,7 @@ doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to d
 doc.Save(outputFile);
 // فتح مستند يحتوي على نص
 Document document = new Document(outputFile);
-// إنشاء كائن TextAbsorber للعثور على جميع العبارات المطابقة للتعبير العادي
+//إنشاء كائن TextAbsorber للعثور على جميع العبارات المطابقة للتعبير العادي
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
 // قبول الممتص لصفحات الوثيقة
 document.Pages.Accept(absorber);

@@ -28,7 +28,7 @@ Naučte se, jak přidat interaktivní pole formuláře do dokumentů PDF pomocí
 ### [Přidejte popisek do pole formuláře PDF pomocí Java](./add-tooltip-to-pdf-form-field-with-java/)
 Přečtěte si, jak přidat popisky do polí formuláře PDF pomocí Javy. Podrobný průvodce pomocí Aspose.PDF pro Java API.
 ### [Převeďte dynamický formulář XFA na standardní AcroForm v PDF](./convert-dynamic-xfa-form-to-standard-acroform-in-pdf/)
-Naučte se, jak bez námahy převádět dynamické formuláře XFA na standardní AcroForms v PDF pomocí Aspose.PDF pro Java. Zajistěte kompatibilitu a dostupnost.
+Naučte se, jak bez námahy převést dynamické formuláře XFA na standardní AcroForms v PDF pomocí Aspose.PDF pro Java. Zajistěte kompatibilitu a dostupnost.
 ### [Odstranit konkrétní pole formuláře z dokumentu PDF v Javě](./delete-particular-form-field-from-pdf-document-in-java/)
 Naučte se, jak odstranit konkrétní pole formuláře z dokumentu PDF v Javě bez námahy pomocí Aspose.PDF for Java. K dispozici je podrobný průvodce a zdrojový kód.
 ### [Vyplňte pole formuláře v dokumentu PDF pomocí Java](./fill-form-field-in-pdf-document-with-java/)

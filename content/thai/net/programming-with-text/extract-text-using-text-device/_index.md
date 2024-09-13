@@ -33,7 +33,7 @@ using System.Text;
  ในโค้ด ให้ค้นหาบรรทัดที่ระบุว่า`string dataDir = "YOUR DOCUMENT DIRECTORY";` และแทนที่`"YOUR DOCUMENT DIRECTORY"` พร้อมเส้นทางไปยังไดเร็กทอรีที่คุณเก็บเอกสารไว้
 
 ## ขั้นตอนที่ 4: เปิดเอกสาร PDF
- เปิดเอกสาร PDF ที่มีอยู่โดยใช้`Document` ตัวสร้างและส่งผ่านเส้นทางไปยังไฟล์ PDF อินพุต
+ เปิดเอกสาร PDF ที่มีอยู่โดยใช้`Document`ตัวสร้างและส่งผ่านเส้นทางไปยังไฟล์ PDF อินพุต
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");

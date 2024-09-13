@@ -1,6 +1,6 @@
 ---
-title: Skrýt Spanned Cell Border v PDF pomocí Java
-linktitle: Skrýt Spanned Cell Border v PDF pomocí Java
+title: Skryjte ohraničení rozložené buňky v PDF pomocí Java
+linktitle: Skryjte ohraničení rozložené buňky v PDF pomocí Java
 second_title: Aspose.PDF Java PDF Processing API
 description: Naučte se, jak skrýt ohraničení rozložených buněk v PDF pomocí Java pomocí podrobného kurzu Aspose.PDF for Java.
 type: docs

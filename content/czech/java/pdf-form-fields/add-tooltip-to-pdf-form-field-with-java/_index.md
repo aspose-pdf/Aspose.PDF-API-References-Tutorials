@@ -76,7 +76,7 @@ Přidání popisků do polí formuláře PDF pomocí Java a Aspose.PDF je jednod
 
 ### Jak nainstaluji Aspose.PDF pro Javu?
 
-Aspose.PDF pro Java si můžete stáhnout z webu Aspose. Postupujte podle pokynů k instalaci uvedených na jejich webových stránkách a nastavte jej ve svém projektu Java.
+Aspose.PDF pro Java si můžete stáhnout z webu Aspose. Postupujte podle pokynů k instalaci uvedených na jejich webu a nastavte jej ve svém projektu Java.
 
 ### Mohu přizpůsobit vzhled popisků?
 

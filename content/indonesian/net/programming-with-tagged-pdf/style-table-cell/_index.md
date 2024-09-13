@@ -35,7 +35,7 @@ Kami telah membuat dokumen baru dan menetapkan judul dan bahasa dokumen.
 Pada langkah ini kita akan mendapatkan elemen struktur akar untuk dokumen kita.
 
 ```csharp
-//Dapatkan elemen struktur akar
+// Dapatkan elemen struktur akar
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
@@ -293,7 +293,7 @@ J: Sebelum memulai, pastikan Anda telah menginstal Aspose.PDF untuk .NET dan tel
 
 #### T: Bagaimana cara membuat dokumen PDF baru menggunakan Aspose.PDF untuk .NET?
 
-A: Untuk membuat dokumen PDF baru, Anda perlu membuat instance`Document` objek dari pustaka Aspose.PDF. Kode sumber C# yang disediakan menunjukkan cara membuat dokumen dan mengatur judul serta bahasanya.
+ A: Untuk membuat dokumen PDF baru, Anda perlu membuat instance`Document` objek dari pustaka Aspose.PDF. Kode sumber C# yang disediakan menunjukkan cara membuat dokumen dan mengatur judul serta bahasanya.
 
 #### T: Apa pentingnya elemen struktur akar dalam dokumen PDF?
 

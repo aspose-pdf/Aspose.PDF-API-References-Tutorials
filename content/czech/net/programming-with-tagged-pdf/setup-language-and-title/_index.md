@@ -155,7 +155,7 @@ Odpověď: Konfigurace jazyka a názvu dokumentu PDF je důležitá pro usnadně
 
 Odpověď: Vícejazyčný obsah zlepšuje dostupnost a globální dosah dokumentů PDF. Aspose.PDF for .NET vám umožňuje přidávat vícejazyčný obsah vytvořením prvků odstavce pro každý jazyk, odpovídajícím nastavením vlastností textu a jazyka.
 
-####  Otázka: Jak to`SetTitle` method contribute to improving document accessibility and organization?
+#### Otázka: Jak to`SetTitle` method contribute to improving document accessibility and organization?
 
  A:`SetTitle` metoda nastavuje název dokumentu PDF, který se používá pro identifikaci dokumentu, výsledky vyhledávání a organizaci. Poskytnutí jasného a smysluplného názvu zlepšuje dostupnost dokumentů a zlepšuje uživatelský dojem.
 
@@ -177,4 +177,4 @@ Odpověď: Při konfiguraci jazyka a názvu zvažte zamýšlené publikum, obsah
 
 #### Otázka: Mohu upravit jazyk a název existujícího dokumentu PDF pomocí Aspose.PDF pro .NET?
 
- Odpověď: Ano, můžete upravit jazyk a název existujícího dokumentu PDF pomocí Aspose.PDF pro .NET. Načtením dokumentu, přístupem k jeho označenému obsahu a použitím`SetTitle` a`SetLanguage`metod, můžete tyto atributy podle potřeby aktualizovat.
+ Odpověď: Ano, můžete upravit jazyk a název existujícího dokumentu PDF pomocí Aspose.PDF pro .NET. Načtením dokumentu, přístupem k jeho označenému obsahu a použitím`SetTitle` a`SetLanguage` metod, můžete tyto atributy podle potřeby aktualizovat.

@@ -63,7 +63,7 @@ tab1.Border = bInfo;
 ## Závěr
 gratuluji! Nyní jste se naučili, jak vytvořit zaoblený rohový stůl v dokumentu PDF pomocí Aspose.PDF pro .NET. Tento podrobný průvodce vám ukázal, jak nastavit styl zaobleného rohu a ohraničení stolu. Nyní můžete tyto znalosti aplikovat na své vlastní projekty.
 
-### Nejčastější dotazy pro stůl se zaobleným rohem v dokumentu PDF
+### Často kladené otázky pro zaoblený rohový stůl v dokumentu PDF
 
 #### Otázka: Mohu přizpůsobit poloměr zaoblených rohů stolu?
 

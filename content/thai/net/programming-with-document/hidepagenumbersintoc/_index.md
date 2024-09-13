@@ -2,109 +2,40 @@
 title: ซ่อนหมายเลขหน้าในสารบัญ
 linktitle: ซ่อนหมายเลขหน้าในสารบัญ
 second_title: เอกสารอ้างอิง Aspose.PDF สำหรับ API ของ .NET
-description: เรียนรู้วิธีซ่อนหมายเลขหน้าในสารบัญโดยใช้ Aspose.PDF สำหรับ .NET ด้วยคู่มือทีละขั้นตอนนี้
+description: เรียนรู้วิธีซ่อนหมายเลขหน้าในสารบัญโดยใช้ Aspose.PDF สำหรับ .NET ทำตามคำแนะนำโดยละเอียดนี้พร้อมตัวอย่างโค้ดเพื่อสร้าง PDF แบบมืออาชีพ
 type: docs
 weight: 220
 url: /th/net/programming-with-document/hidepagenumbersintoc/
 ---
-ในบทความนี้ เราจะพูดถึงการนำฟีเจอร์ Hide Page Numbers In TOC ของ Aspose.PDF สำหรับ .NET ไปใช้โดยใช้ C# เราจะเริ่มด้วยการแนะนำ Aspose.PDF สำหรับ .NET สั้นๆ จากนั้นจะเจาะลึกคู่มือทีละขั้นตอนในการนำฟีเจอร์นี้ไปใช้ 
+## การแนะนำ
 
-## บทนำสู่ Aspose.PDF สำหรับ .NET
-
-Aspose.PDF สำหรับ .NET เป็นส่วนประกอบการจัดการ PDF ที่มีประสิทธิภาพซึ่งช่วยให้นักพัฒนาสามารถสร้าง แก้ไข และจัดการไฟล์ PDF ได้ด้วยโปรแกรม ส่วนประกอบนี้มีคุณสมบัติและฟังก์ชันมากมายที่ทำให้ทำงานกับเอกสาร PDF ได้ง่าย Aspose.PDF สำหรับ .NET รองรับระบบปฏิบัติการทั้งแบบ 32 บิตและ 64 บิต และสามารถใช้กับแพลตฟอร์ม .NET Framework, .NET Core และ Xamarin 
-
-## คุณลักษณะซ่อนหมายเลขหน้าในสารบัญคืออะไร
-
-สารบัญ (TOC) เป็นส่วนสำคัญของเอกสาร PDF ที่ให้ผู้ใช้ดูภาพรวมของเนื้อหาได้อย่างรวดเร็ว บางครั้งผู้ใช้ต้องการซ่อนหมายเลขหน้าในสารบัญเพื่อให้ใช้งานได้ง่ายขึ้น Aspose.PDF สำหรับ .NET มีฟีเจอร์ในตัวสำหรับซ่อนหมายเลขหน้าในสารบัญ ซึ่งสามารถใช้ฟีเจอร์นี้เพื่อสร้างเอกสาร PDF ที่ใช้งานง่ายยิ่งขึ้นได้ 
+เมื่อคุณทำงานกับ PDF บางครั้งคุณอาจต้องการสร้างสารบัญ (TOC) แต่ต้องการให้ทุกอย่างดูสวยงามด้วยการซ่อนหมายเลขหน้า บางทีเอกสารอาจไหลลื่นขึ้นหากไม่มีหมายเลขหน้า หรือบางทีอาจเป็นเพราะความสวยงามก็ได้ ไม่ว่าเหตุผลของคุณจะเป็นอย่างไร หากคุณกำลังทำงานกับ Aspose.PDF สำหรับ .NET บทช่วยสอนนี้จะแสดงให้คุณเห็นอย่างชัดเจนว่าต้องซ่อนหมายเลขหน้าในสารบัญอย่างไร
 
 ## ข้อกำหนดเบื้องต้น
 
-หากต้องการทำตามบทช่วยสอนนี้ คุณจะต้องมีสิ่งต่อไปนี้:
+ก่อนที่เราจะเริ่มต้น มีบางสิ่งที่คุณต้องมี นี่คือรายการตรวจสอบอย่างรวดเร็ว:
 
-- Visual Studio 2010 หรือใหม่กว่า
-- Aspose.PDF สำหรับ .NET ติดตั้งบนระบบของคุณ
-- ความรู้พื้นฐานเกี่ยวกับภาษาการเขียนโปรแกรม C#
+- ติดตั้ง Visual Studio แล้ว: คุณจะต้องมี Visual Studio เวอร์ชันที่ใช้งานได้เพื่อเขียนโค้ด
+- ไลบรารี Aspose.PDF สำหรับ .NET: ตรวจสอบให้แน่ใจว่าคุณได้ติดตั้งไลบรารี Aspose.PDF สำหรับ .NET แล้ว
+  -  ลิงค์ดาวน์โหลด:[Aspose.PDF สำหรับ .NET](https://releases.aspose.com/pdf/net/)
+- ใบอนุญาตชั่วคราว: หากคุณกำลังทดสอบคุณสมบัติต่างๆ การมีใบอนุญาตชั่วคราวก็จะเป็นประโยชน์
+  -  ใบอนุญาตชั่วคราว:[รับได้ที่นี่](https://purchase.aspose.com/temporary-license/)
 
-## คำแนะนำทีละขั้นตอนในการนำฟีเจอร์ซ่อนหมายเลขหน้าใน TOC ไปใช้
+## แพ็คเกจนำเข้า
 
-ปฏิบัติตามขั้นตอนต่อไปนี้เพื่อใช้งานคุณลักษณะซ่อนหมายเลขหน้าใน TOC โดยใช้ Aspose.PDF สำหรับ .NET:
-
-## ขั้นตอนที่ 1: สร้างแอปพลิเคชันคอนโซล C# ใหม่ใน Visual Studio
-
-เปิด Visual Studio และสร้างแอปพลิเคชันคอนโซล C# ใหม่
-
-## ขั้นตอนที่ 2: เพิ่มการอ้างอิงถึง Aspose.PDF สำหรับ .NET
-
-คลิกขวาที่โฟลเดอร์ References ในโปรเจ็กต์ของคุณ และเลือก Add Reference ค้นหาตำแหน่งที่ติดตั้ง Aspose.PDF for .NET ไว้ในระบบของคุณ และเพิ่มการอ้างอิงลงไป
-
-## ขั้นตอนที่ 1: สร้างเอกสาร PDF ใหม่
-
-สร้างเอกสาร PDF ใหม่โดยใช้โค้ดดังต่อไปนี้:
+ก่อนจะเริ่มเขียนโค้ด ให้แน่ใจว่าคุณได้นำเข้าเนมสเปซต่อไปนี้ในโปรเจ็กต์ C# ของคุณแล้ว ซึ่งเนมสเปซเหล่านี้จะมีคลาสและวิธีการที่จำเป็นสำหรับการทำงานกับเอกสาร PDF และการสร้างสารบัญ (TOC)
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outFile = dataDir + "HiddenPageNumbers_out.pdf";
-Document doc = new Document();
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-## ขั้นตอนที่ 2: สร้างหน้า TOC
+ตอนนี้สภาพแวดล้อมของคุณพร้อมแล้วและแพ็กเกจก็นำเข้าแล้ว มาดูขั้นตอนต่างๆ ของกระบวนการกัน เราจะอธิบายทุกส่วนของโค้ดเพื่อให้แน่ใจว่ามีความชัดเจน คุณจึงทำตามได้ง่าย
 
-สร้างหน้าใหม่สำหรับ TOC และเพิ่มลงในเอกสาร PDF โดยใช้โค้ดต่อไปนี้:
+## ขั้นตอนที่ 1: เริ่มต้นเอกสาร PDF ของคุณ
 
-```csharp
-Page tocPage = doc.Pages.Add();
-TocInfo tocInfo = new TocInfo();
-TextFragment title = new TextFragment("Table Of Contents");
-title.TextState.FontSize = 20;
-title.TextState.FontStyle = FontStyles.Bold;
-tocInfo.Title = title;
-```
+สิ่งแรกที่เราต้องทำคือสร้างเอกสาร PDF ใหม่และเพิ่มหน้าสำหรับสารบัญ (TOC)
 
-## ขั้นตอนที่ 3: เพิ่มส่วนรายการลงในคอลเล็กชันส่วนของเอกสาร PDF
-
-เพิ่มส่วนรายการลงในคอลเล็กชันส่วนของเอกสาร PDF โดยใช้โค้ดต่อไปนี้:
-
-```csharp
-tocPage.TocInfo = tocInfo;
-```
-
-## ขั้นตอนที่ 4: กำหนดรูปแบบของรายการทั้งสี่ระดับ
-
-กำหนดรูปแบบของรายการทั้งสี่ระดับโดยกำหนดระยะขอบด้านซ้ายและการตั้งค่ารูปแบบข้อความของแต่ละระดับโดยใช้โค้ดต่อไปนี้:
-
-```csharp
-tocInfo.IsShowPageNumbers = false;
-tocInfo.FormatArrayLength = 4;
-tocInfo.FormatArray[0].Margin.Right = 0;
-tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
-tocInfo.FormatArray[1].Margin.Left = 30;
-tocInfo.FormatArray[1].TextState.Underline = true;
-tocInfo.FormatArray[1].TextState.FontSize = 10;
-tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
-tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
-Page page = doc.Pages.Add();
-```
-
-## ขั้นตอนที่ 5: เพิ่มหัวข้อสี่หัวข้อในส่วน
-
-```csharp
-
-for (int Level = 1; Level != 5; Level++)
-{ 
-	Heading heading2 = new Heading(Level); 
-	TextSegment segment2 = new TextSegment(); 
-	heading2.TocPage = tocPage; 
-	heading2.Segments.Add(segment2); 
-	heading2.IsAutoSequence = true; 
-	segment2.Text = "this is heading of level " + Level; 
-	heading2.IsInList = true; 
-	page.Paragraphs.Add(heading2); 
-}
-doc.Save(outFile);
-
-```
-
-### ตัวอย่างโค้ดต้นฉบับสำหรับการซ่อนหมายเลขหน้าใน TOC โดยใช้ Aspose.PDF สำหรับ .NET
 
 ```csharp
 // เส้นทางไปยังไดเร็กทอรีเอกสาร
@@ -112,18 +43,47 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "HiddenPageNumbers_out.pdf";
 Document doc = new Document();
 Page tocPage = doc.Pages.Add();
+```
+
+- dataDir: นี่คือไดเร็กทอรีที่ไฟล์เอาต์พุตของคุณจะถูกบันทึก
+- Document(): เริ่มต้นเอกสาร PDF ใหม่
+- Pages.Add(): เพิ่มหน้าว่างใหม่ลงในเอกสาร ซึ่งภายหลังจะเก็บ TOC ของคุณไว้
+
+## ขั้นตอนที่ 2: ตั้งค่าข้อมูล TOC และชื่อเรื่อง
+
+ต่อไปเราจะกำหนดข้อมูล TOC รวมถึงกำหนดชื่อเรื่องที่จะปรากฏที่ด้านบนของ TOC
+
+```csharp
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
 tocInfo.Title = title;
-//เพิ่มส่วนรายการลงในคอลเล็กชันส่วนของเอกสาร Pdf
 tocPage.TocInfo = tocInfo;
-//กำหนดรูปแบบของรายการสี่ระดับโดยตั้งค่าระยะขอบซ้ายและ
-//การตั้งค่ารูปแบบข้อความของแต่ละระดับ
+```
 
+- TocInfo: อ็อบเจ็กต์นี้เก็บข้อมูลทั้งหมดเกี่ยวกับ TOC
+- TextFragment: แสดงข้อความในหัวเรื่อง TOC ในที่นี้เราตั้งค่าเป็น "สารบัญ"
+- FontStyle: เรากำหนดสไตล์ของชื่อ TOC โดยตั้งขนาดเป็น 20 และทำตัวหนา
+- tocPage.TocInfo: เรากำหนดข้อมูล TOC ให้กับหน้าที่จะแสดง TOC
+
+## ขั้นตอนที่ 3: ซ่อนหมายเลขหน้าใน TOC
+
+ตอนนี้มาถึงส่วนสนุก ๆ แล้ว! เราจะกำหนดค่า TOC เพื่อซ่อนหมายเลขหน้าในที่นี้
+
+```csharp
 tocInfo.IsShowPageNumbers = false;
 tocInfo.FormatArrayLength = 4;
+```
+
+-  IsShowPageNumbers: นี่คือสวิตช์วิเศษที่ซ่อนหมายเลขหน้า ตั้งค่าเป็น`false`และหมายเลขหน้าจะไม่ปรากฏใน TOC
+- FormatArrayLength: เราตั้งค่านี้เป็น 4 ซึ่งระบุว่าเราต้องการกำหนดการจัดรูปแบบให้กับหัวข้อ TOC สี่ระดับ
+
+## ขั้นตอนที่ 4: ปรับแต่งรูปแบบ TOC
+
+เพื่อเพิ่มรูปแบบให้กับ TOC ของคุณ เราจะกำหนดการจัดรูปแบบสำหรับหัวเรื่องในระดับต่างๆ กัน
+
+```csharp
 tocInfo.FormatArray[0].Margin.Right = 0;
 tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
 tocInfo.FormatArray[1].Margin.Left = 30;
@@ -131,36 +91,61 @@ tocInfo.FormatArray[1].TextState.Underline = true;
 tocInfo.FormatArray[1].TextState.FontSize = 10;
 tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
 tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
+```
+
+- FormatArray: อาร์เรย์นี้ควบคุมการจัดรูปแบบของรายการ TOC โดยดัชนีแต่ละรายการจะแสดงระดับหัวเรื่องที่แตกต่างกัน
+- ระยะขอบและรูปแบบข้อความ: เราตั้งค่าระยะขอบและใช้รูปแบบตัวอักษรเช่น ตัวหนา ตัวเอียง และขีดเส้นใต้ ให้กับระดับหัวเรื่องแต่ละระดับ
+
+## ขั้นตอนที่ 5: เพิ่มหัวข้อลงในเอกสาร
+
+สุดท้ายนี้ เรามาเพิ่มหัวข้อจริง ๆ ที่จะเป็นส่วนหนึ่งของ TOC กัน
+
+```csharp
 Page page = doc.Pages.Add();
-//เพิ่มหัวข้อสี่หัวข้อในส่วน
 for (int Level = 1; Level != 5; Level++)
-	{ 
-		Heading heading2 = new Heading(Level); 
-		TextSegment segment2 = new TextSegment(); 
-		heading2.TocPage = tocPage; 
-		heading2.Segments.Add(segment2); 
-		heading2.IsAutoSequence = true; 
-		segment2.Text = "this is heading of level " + Level; 
-		heading2.IsInList = true; 
-		page.Paragraphs.Add(heading2); 
-	}
+{ 
+    Heading heading2 = new Heading(Level); 
+    TextSegment segment2 = new TextSegment(); 
+    heading2.TocPage = tocPage; 
+    heading2.Segments.Add(segment2); 
+    heading2.IsAutoSequence = true; 
+    segment2.Text = "this is heading of level " + Level; 
+    heading2.IsInList = true; 
+    page.Paragraphs.Add(heading2); 
+}
+```
+
+- ส่วนหัวและส่วนข้อความ: แสดงถึงส่วนหัวที่จะปรากฏใน TOC ของคุณ แต่ละระดับจะมีส่วนหัวของตัวเอง
+- IsAutoSequence: กำหนดหมายเลขหัวเรื่องโดยอัตโนมัติ
+- IsInList: ทำให้แน่ใจว่าแต่ละหัวข้อปรากฏใน TOC
+
+## ขั้นตอนที่ 6: บันทึกเอกสาร
+
+เมื่อทุกอย่างพร้อมแล้วให้บันทึกเอกสาร PDF ลงในไฟล์เอาต์พุตที่คุณระบุ
+
+```csharp
 doc.Save(outFile);
 ```
 
+และเสร็จเรียบร้อย! คุณได้สร้าง PDF พร้อมสารบัญสำเร็จแล้ว และหมายเลขหน้าก็ถูกซ่อนไว้!
+
 ## บทสรุป
 
-ในบทช่วยสอนนี้ เราได้เรียนรู้วิธีการทำงานกับข้อมูลเมตา XMP ในเอกสาร PDF โดยใช้ Aspose.PDF สำหรับ .NET ข้อมูลเมตา XMP ให้ข้อมูลอันมีค่าเกี่ยวกับเอกสาร PDF รวมถึงชื่อ ผู้แต่ง วันที่สร้าง และอื่นๆ อีกมากมาย Aspose.PDF สำหรับ .NET ช่วยให้นักพัฒนาเข้าถึงและจัดการข้อมูลเมตาเหล่านี้ได้ โดยให้ API ที่ยืดหยุ่นและทรงพลังสำหรับการทำงานกับเอกสาร PDF
+การสร้างสารบัญใน PDF และการซ่อนหมายเลขหน้าอาจดูยุ่งยาก แต่ด้วย Aspose.PDF สำหรับ .NET จะทำให้ทุกอย่างง่ายดายขึ้น ด้วยการทำตามคำแนะนำทีละขั้นตอนนี้ คุณจะได้เรียนรู้วิธีปรับแต่งรูปแบบ TOC ซ่อนหมายเลขหน้า และใช้รูปแบบต่างๆ กับหัวเรื่องของคุณ ตอนนี้คุณสามารถสร้าง PDF แบบมืออาชีพที่ปรับแต่งตามความต้องการของคุณได้
 
-### คำถามที่พบบ่อย
+## คำถามที่พบบ่อย
 
-#### ถาม: เมตาข้อมูล XMP ในเอกสาร PDF คืออะไร
+### ฉันสามารถแสดงหมายเลขหน้าสำหรับหัวเรื่องเฉพาะใน TOC ได้หรือไม่
+ไม่ Aspose.PDF จะซ่อนหรือแสดงหมายเลขหน้าสำหรับ TOC ทั้งหมด คุณไม่สามารถซ่อนหมายเลขหน้าสำหรับรายการเฉพาะเจาะจงได้
 
-A: เมตาดาต้า XMP (Extensible Metadata Platform) ในเอกสาร PDF เป็นรูปแบบมาตรฐานสำหรับการจัดเก็บข้อมูลเมตาดาต้าเกี่ยวกับเอกสาร ซึ่งประกอบด้วยรายละเอียดต่างๆ เช่น ชื่อเอกสาร ผู้เขียน วันที่สร้าง คำสำคัญ และอื่นๆ เมตาดาต้า XMP มอบวิธีการจัดเก็บและแบ่งปันข้อมูลเกี่ยวกับเอกสาร PDF ที่มีโครงสร้างและเป็นมาตรฐาน
+### สามารถเพิ่มระดับให้กับ TOC ได้อีกหรือไม่?
+ ใช่ คุณสามารถเพิ่มได้`FormatArrayLength` เพื่อกำหนดระดับหัวข้อ TOC ให้มากขึ้น
 
-#### ถาม: ฉันสามารถปรับเปลี่ยนข้อมูลเมตา XMP ของเอกสาร PDF โดยใช้ Aspose.PDF สำหรับ .NET ได้หรือไม่
+### ฉันจะเปลี่ยนแบบอักษรสำหรับรายการ TOC ทั้งหมดได้อย่างไร
+ คุณสามารถเปลี่ยนแบบอักษรได้โดยการแก้ไข`TextState.Font` ทรัพย์สินของแต่ละระดับใน`FormatArray`.
 
- A: ใช่ คุณสามารถแก้ไขข้อมูลเมตา XMP ของเอกสาร PDF ได้ด้วยโปรแกรมโดยใช้ Aspose.PDF สำหรับ .NET คุณสามารถเข้าถึง`Info` ทรัพย์สินของ`Document` อ็อบเจ็กต์ที่ให้คุณเข้าถึงคุณสมบัติเมตาข้อมูล XMP จากนั้นคุณสามารถอัปเดตค่าของคุณสมบัติเหล่านี้เพื่อปรับเปลี่ยนเมตาข้อมูล XMP ของเอกสาร PDF
+### ฉันสามารถแทรกไฮเปอร์ลิงก์ลงใน TOC ได้หรือไม่?
+ ใช่ คุณสามารถเชื่อมโยงรายการ TOC แต่ละรายการกับส่วนเฉพาะในเอกสารโดยใช้`Heading.TocPage` คุณสมบัติ.
 
-#### ถาม: ฉันสามารถแยกคุณสมบัติเมตาข้อมูล XMP แบบกำหนดเองจากเอกสาร PDF โดยใช้ Aspose.PDF สำหรับ .NET ได้หรือไม่
-
- A: ใช่ คุณสามารถแยกคุณสมบัติเมตาข้อมูล XMP ที่กำหนดเองจากเอกสาร PDF ได้โดยใช้ Aspose.PDF สำหรับ .NET คุณสามารถใช้`Metadata` ทรัพย์สินของ`Document`อ็อบเจ็กต์ซึ่งให้การเข้าถึงคุณสมบัติเมตาข้อมูล XMP ทั้งหมดของเอกสาร PDF จากนั้นคุณสามารถแยกคุณสมบัติที่กำหนดเองและใช้ค่าตามต้องการได้
+### ฉันต้องมีใบอนุญาตสำหรับ Aspose.PDF หรือไม่?
+ใช่ ต้องมีใบอนุญาตที่ถูกต้องสำหรับการใช้ในการผลิต คุณสามารถขอใบอนุญาตชั่วคราวได้[ที่นี่](https://purchase.aspose.com/temporary-license/) เพื่อทดสอบคุณสมบัติ

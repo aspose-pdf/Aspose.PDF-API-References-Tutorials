@@ -12,6 +12,6 @@ Tutorial "Pemrograman dengan Operator" Aspose.PDF untuk .NET memandu Anda melalu
 ## Tutorial
 | Judul | Keterangan |
 | --- | --- | 
-| [Menggambar XForm Di Halaman](./draw-xform-on-page/) | Panduan langkah demi langkah untuk menggambar formulir XForm pada halaman PDF menggunakan Aspose.PDF untuk .NET. Tambahkan dan posisikan formulir pada halaman. |  
+| [Menggambar XForm Di Halaman](./draw-xform-on-page/) | pelajari cara menggambar XForms dalam PDF menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah yang komprehensif ini. |  
 | [Operator PDF](./pdf-operators/) | Panduan langkah demi langkah untuk menggunakan operator PDF dengan Aspose.PDF untuk .NET. Tambahkan gambar ke halaman PDF dan tentukan posisinya. |  
-| [Hapus Objek Grafik Dalam File PDF](./remove-graphics-objects/) | Panduan langkah demi langkah untuk menghapus objek grafis dalam file PDF menggunakan Aspose.PDF untuk .NET. Sesuaikan dan bersihkan PDF Anda. |  
+| [Hapus Objek Grafik Dalam File PDF](./remove-graphics-objects/) | Pelajari cara menghapus objek grafik dari berkas PDF menggunakan Aspose.PDF untuk .NET dalam panduan langkah demi langkah ini. Sederhanakan tugas manipulasi PDF Anda. |  

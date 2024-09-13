@@ -1,7 +1,7 @@
 ---
-title: Sök efter text och rita rektangel
-linktitle: Sök efter text och rita rektangel
-second_title: Aspose.PDF för .NET API-referens
+title: Sök text och rita rektangel
+linktitle: Sök text och rita rektangel
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du söker efter text i en PDF, ritar rektanglar runt den hittade texten och sparar det modifierade dokumentet med Aspose.PDF för .NET.
 type: docs
 weight: 460
@@ -110,7 +110,7 @@ document.Save(dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Öppna dokumentet
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-// Skapa TextAbsorber-objekt för att hitta alla fraser som matchar det reguljära uttrycket
+//Skapa TextAbsorber-objekt för att hitta alla fraser som matchar det reguljära uttrycket
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;

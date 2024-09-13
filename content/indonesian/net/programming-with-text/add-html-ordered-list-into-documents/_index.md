@@ -47,7 +47,7 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 ```
 
 ## Langkah 6: Tambahkan halaman ke dokumen
- Tambahkan halaman baru ke dokumen dengan menggunakan`Add` metode dari`Pages`koleksi. Dalam kode yang diberikan, halaman baru ditetapkan ke variabel`page`.
+ Tambahkan halaman baru ke dokumen dengan menggunakan`Add` metode dari`Pages` koleksi. Dalam kode yang diberikan, halaman baru ditetapkan ke variabel`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -81,7 +81,7 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 Page page = doc.Pages.Add();
 // Tambahkan HtmlFragment di dalam halaman
 page.Paragraphs.Add(t);
-// Simpan file PDF yang dihasilkan
+//Simpan file PDF yang dihasilkan
 doc.Save(outFile);
 ```
 
@@ -115,7 +115,7 @@ using Aspose.Pdf.Text;
 
 #### T: Bagaimana cara menambahkan daftar HTML yang diurutkan ke suatu halaman dalam dokumen?
 
- A: Pada Langkah 7, Anda akan menambahkan`HtmlFragment` objek (`t` ) ke halaman menggunakan`Add` metode dari`Paragraphs`koleksi. Ini akan mengintegrasikan daftar HTML yang diurutkan ke dalam dokumen dengan lancar.
+ A: Pada Langkah 7, Anda akan menambahkan`HtmlFragment` objek (`t` ) ke halaman menggunakan`Add` metode dari`Paragraphs` koleksi. Ini akan mengintegrasikan daftar HTML yang diurutkan ke dalam dokumen dengan lancar.
 
 #### T: Bagaimana cara menyimpan dokumen PDF yang dihasilkan?
 

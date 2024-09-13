@@ -152,7 +152,7 @@ document.Save(dataDir + "StructureElementsTree.pdf");
 
 उत्तर: कोड उदाहरण दर्शाता है कि तार्किक तत्वों की पदानुक्रमित संरचना का निर्माण कैसे किया जाता है`SectElement`, `DivElement` , और`ArtElement` Aspose.PDF द्वारा प्रदान की गई कक्षाएं। इन तत्वों को पैरेंट और चाइल्ड नोड्स के रूप में व्यवस्थित किया जाता है, जो दस्तावेज़ के भीतर एक पेड़ जैसी संरचना बनाते हैं।
 
-####  प्रश्न:`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
+#### प्रश्न:`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
 
  उत्तर:`TaggedContent` प्रॉपर्टी पीडीएफ दस्तावेज़ की टैग की गई सामग्री सुविधाओं तक पहुँच प्रदान करती है। यह आपको संरचित तत्वों को बनाने और उनमें हेरफेर करने, उनके संबंधों को परिभाषित करने और उन्हें पदानुक्रमिक रूप से व्यवस्थित करने की अनुमति देता है, जिससे दस्तावेज़ की संरचना और पहुँच में वृद्धि होती है।
 
@@ -168,7 +168,7 @@ document.Save(dataDir + "StructureElementsTree.pdf");
 
 उत्तर: तत्वों को पदानुक्रमिक रूप से व्यवस्थित करने से दस्तावेज़ संगठन, नेविगेशन और शब्दार्थ में सुधार होता है। यह उपयोगकर्ताओं और सहायक तकनीकों को सामग्री की संरचना और संबंधों को समझने की अनुमति देता है, जिससे समग्र उपयोगकर्ता अनुभव में वृद्धि होती है।
 
-####  प्रश्न:`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
+#### प्रश्न:`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
 
  उत्तर:`Save` विधि पीडीएफ दस्तावेज़ को उपयोग करके बनाई गई पदानुक्रमित संरचना के साथ सहेजती है`AppendChild` यह सुनिश्चित करता है कि संरचना बरकरार रहे, जिससे दस्तावेज़ सुलभ और सुव्यवस्थित रहे।
 

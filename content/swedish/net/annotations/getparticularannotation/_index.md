@@ -1,7 +1,7 @@
 ---
 title: Få särskild anteckning i PDF-fil
 linktitle: Få särskild anteckning i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du extraherar en specifik anteckning från en PDF-fil med Aspose.PDF för .NET i denna detaljerade självstudiekurs på 2000 ord. Perfekt för utvecklare.
 type: docs
 weight: 80
@@ -39,7 +39,7 @@ Låt oss nu bryta ner processen för att få en viss anteckning i en PDF-fil. Vi
 
 Först och främst måste du ställa in ditt projekt i Visual Studio. 
 
--  Skapa ett nytt projekt: Starta Visual Studio och skapa en ny C# Console Application. Nämn det något meningsfullt, som`PDFAnnotationExtractor`.
+-  Skapa ett nytt projekt: Starta Visual Studio och skapa en ny C# Console Application. Namnge det något meningsfullt, som`PDFAnnotationExtractor`.
   
 -  Lägg till Aspose.PDF-referens: Högerklicka på ditt projekt i Solution Explorer, gå till "Hantera NuGet-paket" och sök efter`Aspose.PDF`Installera den och du är redo att rulla!
 

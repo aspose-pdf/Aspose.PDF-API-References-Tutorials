@@ -43,7 +43,7 @@ Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
 ## Paso 4: Establecer el borde de celda predeterminado
 
- Para garantizar la coherencia, podemos establecer un borde de celda predeterminado utilizando el`DefaultCellBorder`propiedad de la tabla`BorderInfo` objeto.
+ Para garantizar la coherencia, podemos establecer un borde de celda predeterminado utilizando el`DefaultCellBorder` propiedad de la tabla`BorderInfo` objeto.
 
 ```csharp
 // Establecer el borde de celda predeterminado utilizando el objeto BorderInfo
@@ -93,7 +93,7 @@ Aspose.Pdf.Cell cell2 = row1.Cells.Add();
 Finalmente, podemos agregar la imagen a la celda de la tabla agregándola como un párrafo dentro de la celda.
 
 ```csharp
-// Agregar la imagen a la celda de la tabla
+//Agregar la imagen a la celda de la tabla
 cell2.Paragraphs.Add(img);
 ```
 
@@ -102,7 +102,7 @@ cell2.Paragraphs.Add(img);
 Después de agregar la celda de imagen, podemos agregar más celdas a la fila si es necesario.
 
 ```csharp
-//Agregar otra celda a la fila
+// Agregar otra celda a la fila
 row1.Cells.Add("Previous cell with image");
 
 // Ajustar la alineación vertical de la tercera celda
@@ -114,7 +114,7 @@ row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
  Finalmente, podemos guardar el documento modificado en una ubicación específica usando el`Save` método.
 
 ```csharp
-// Guardar el documento
+//Guardar el documento
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
@@ -140,16 +140,16 @@ tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.
 tab1.ColumnWidths = "100 100 120";
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose.jpg";
-// Crea filas en la tabla y luego celdas en las filas.
+//Crea filas en la tabla y luego celdas en las filas.
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Sample text in cell");
 // Añade la celda que contiene la imagen
 Aspose.Pdf.Cell cell2 = row1.Cells.Add();
-// Agregar la imagen a la celda de la tabla
+//Agregar la imagen a la celda de la tabla
 cell2.Paragraphs.Add(img);
 row1.Cells.Add("Previous cell with image");
 row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
-// Guardar el documento
+//Guardar el documento
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
@@ -165,7 +165,7 @@ R: Sí, puede agregar varias imágenes a distintas celdas dentro de la misma tab
 
 #### P: ¿Puedo personalizar el tamaño y la posición de la imagen dentro de la celda de la tabla?
 
- R: Sí, puede personalizar el tamaño y la posición de la imagen dentro de la celda de la tabla ajustando las propiedades de la`Image`objeto. Puede configurar el ancho y la altura de la imagen, así como la alineación dentro de la celda.
+ R: Sí, puede personalizar el tamaño y la posición de la imagen dentro de la celda de la tabla ajustando las propiedades de la`Image` objeto. Puede configurar el ancho y la altura de la imagen, así como la alineación dentro de la celda.
 
 #### P: ¿Puedo agregar imágenes a una tabla con un número dinámico de filas y columnas?
 

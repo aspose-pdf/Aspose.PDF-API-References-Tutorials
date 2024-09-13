@@ -47,7 +47,7 @@ Nastavili jsme název a jazyk tagovaného dokumentu PDF.
 Nyní pojďme získat prvek kořenové struktury dokumentu PDF.
 
 ```csharp
-//Získejte prvek kořenové struktury
+// Získejte prvek kořenové struktury
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
@@ -58,7 +58,7 @@ Získali jsme prvek kořenové struktury dokumentu PDF.
 Nyní do našeho PDF dokumentu přidáme nadpisy různých úrovní a tagované odstavce.
 
 ```csharp
-// Vytvářejte záhlaví různých úrovní
+// Vytvořte záhlaví různých úrovní
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 HeaderElement h2 = taggedContent.CreateHeaderElement(2);
 HeaderElement h3 = taggedContent.CreateHeaderElement(3);

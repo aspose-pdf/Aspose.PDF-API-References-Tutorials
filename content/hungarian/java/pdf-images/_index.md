@@ -33,7 +33,7 @@ Ismerje meg, hogyan alkalmazhat számozási stílusokat PDF fejlécekre az Aspos
 Ismerje meg, hogyan törölhet képeket PDF-dokumentumokból az Aspose.PDF for Java segítségével. Lépésről lépésre útmutató forráskóddal a hatékony PDF-kezeléshez.
 ### [Képek törlése PDF fájlból Java segítségével](./delete-images-from-pdf-file-using-java/)
 Ismerje meg, hogyan törölhet képeket PDF-fájlból Java használatával az Aspose.PDF for Java segítségével. Lépésről lépésre útmutató forráskóddal a hatékony képeltávolításhoz PDF-ben.
-### [Kivonja a kép tulajdonságait a PDF-ből Java nyelven](./extract-image-properties-from-pdf-in-java/)
+### [Kivonat a kép tulajdonságait a PDF-ből Java nyelven](./extract-image-properties-from-pdf-in-java/)
 Ismerje meg, hogyan bonthat ki képtulajdonságokat PDF-fájlokból Java nyelven az Aspose.PDF for Java segítségével. Lépésről lépésre útmutató forráskóddal. Fejlessze PDF-feldolgozási készségeit még ma!
 ### [Képek kibontása PDF fájlból Java segítségével](./extract-images-from-pdf-file-using-java/)
 Ismerje meg, hogyan bonthat ki képeket PDF-fájlból Java használatával az Aspose.PDF for Java segítségével. Lépésről lépésre útmutató forráskóddal. Oldja fel a PDF-képek kivonatát most.

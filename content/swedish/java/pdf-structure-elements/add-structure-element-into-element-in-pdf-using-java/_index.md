@@ -48,7 +48,7 @@ heading.setText("Introduction");
 Låt oss nu lägga till strukturelementet i vårt PDF-dokument:
 
 ```java
-// Lägg till rubrikstrukturelementet i PDF:en
+// Lägg till rubrikstrukturelementet i PDF-filen
 pdfDocument.getPage().getParagraphs().add(heading);
 ```
 

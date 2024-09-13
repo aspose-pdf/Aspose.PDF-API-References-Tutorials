@@ -7,7 +7,7 @@ type: docs
 weight: 10
 url: /zh-hant/net/programming-with-tables/add-image-in-a-table-cell/
 ---
-在本教學中，我們將引導您完成使用 Aspose.PDF for .NET 將影像新增至表格儲存格的過程。提供的 C# 原始程式碼演示瞭如何實現此功能。透過執行下面列出的步驟，您將能夠有效地將影像合併到表格儲存格中。
+在本教學中，我們將引導您完成使用 Aspose.PDF for .NET 將影像新增至表格儲存格的過程。提供的 C# 原始程式碼演示瞭如何實現此功能。透過執行下面概述的步驟，您將能夠有效地將影像合併到表格儲存格中。
 
 在我們深入研究程式碼之前，請確保您已在專案中安裝並引用了 Aspose.PDF for .NET 程式庫。
 

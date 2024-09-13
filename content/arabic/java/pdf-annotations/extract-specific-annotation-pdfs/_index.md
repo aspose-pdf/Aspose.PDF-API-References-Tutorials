@@ -93,7 +93,7 @@ for (Annotation annotation : page.getAnnotations()) {
 
 ## الأسئلة الشائعة
 
-### كيف أقوم بتثبيت Aspose.PDF لـJava؟
+### كيف أقوم بتثبيت Aspose.PDF لـ Java؟
 
  يمكنك تنزيل Aspose.PDF لـ Java من[هنا](https://releases.aspose.com/pdf/java/)اتبع تعليمات التثبيت المقدمة على موقع الويب لإعداده في مشروع Java الخاص بك.
 

@@ -50,7 +50,7 @@ taggedContent.SetLanguage("fr-FR");
 Ezután többnyelvű tartalmat adunk a dokumentumhoz az egyes nyelvekhez tartozó bekezdéselemek használatával.
 
 ```csharp
-// Adjon hozzá egy bekezdést angolul
+// Adjon hozzá egy angol nyelvű bekezdést
 LogicalStructure.ParagraphElement pEN = taggedContent.CreateParagraphElement();
 pEN.SetText("Hello, World!");
 pEN.Language = "en-US";
@@ -155,7 +155,7 @@ V: A PDF-dokumentum nyelvének és címének konfigurálása fontos a hozzáfér
 
 V: A többnyelvű tartalom javítja a PDF-dokumentumok hozzáférhetőségét és globális elérhetőségét. Az Aspose.PDF for .NET lehetővé teszi többnyelvű tartalom hozzáadását az egyes nyelvekhez bekezdéselemek létrehozásával, a szöveg és a nyelvi tulajdonságok megfelelő beállításával.
 
-####  K: Hogyan működik a`SetTitle` method contribute to improving document accessibility and organization?
+#### K: Hogyan működik a`SetTitle` method contribute to improving document accessibility and organization?
 
  V: A`SetTitle` metódus beállítja a PDF-dokumentum címét, amelyet a dokumentum azonosítására, a keresési eredményekre és a rendszerezésre használnak. A világos és értelmes cím megadása javítja a dokumentumok hozzáférhetőségét és javítja a felhasználói élményt.
 
@@ -177,4 +177,4 @@ V: A nyelv és a cím konfigurálásakor vegye figyelembe a célközönséget, a
 
 #### K: Módosíthatom egy meglévő PDF-dokumentum nyelvét és címét az Aspose.PDF for .NET használatával?
 
- V: Igen, módosíthatja egy meglévő PDF-dokumentum nyelvét és címét az Aspose.PDF for .NET használatával. A dokumentum betöltésével, a címkézett tartalmának elérésével és a`SetTitle` és`SetLanguage`módszereket, szükség szerint frissítheti ezeket az attribútumokat.
+ V: Igen, módosíthatja egy meglévő PDF-dokumentum nyelvét és címét az Aspose.PDF for .NET használatával. A dokumentum betöltésével, a címkézett tartalmának elérésével és a`SetTitle` és`SetLanguage` módszereket, szükség szerint frissítheti ezeket az attribútumokat.

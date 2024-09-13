@@ -13,4 +13,4 @@ Aspose.PDF for .NET eğitimleri, PDF belgelerinizdeki başlıklarla programlamad
 ## Eğitimler
 | Başlık | Tanım |
 | --- | --- | 
-| [PDF Dosyasına Sayı Stili Uygula](./apply-number-style/) | Aspose.PDF for .NET kullanarak PDF dosyasındaki başlıklara numaralandırma stilinin nasıl uygulanacağını öğrenin. Adım adım kılavuz. |   
+| [PDF Dosyasına Sayı Stili Uygula](./apply-number-style/) | Bu adım adım kılavuzla Aspose.PDF for .NET'i kullanarak bir PDF'deki başlıklara farklı sayı stilleri (Romen rakamları, alfabetik) uygulamayı öğrenin. |   

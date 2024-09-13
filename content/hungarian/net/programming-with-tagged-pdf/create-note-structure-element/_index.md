@@ -13,7 +13,7 @@ Ebben az oktatóanyagban lépésről lépésre bemutatjuk, hogyan hozhat létre 
 
 Mielőtt elkezdené, győződjön meg arról, hogy a következő előfeltételeket teljesítette:
 
-1. Visual Studio .NET keretrendszerrel telepítve.
+1. A Visual Studio .NET keretrendszerrel telepítve.
 2. Az Aspose.PDF könyvtár a .NET-hez.
 
 ## 1. lépés: A projekt beállítása
@@ -22,7 +22,7 @@ A kezdéshez hozzon létre egy új projektet a Visual Studióban, és adjon hozz
 
 ## 2. lépés: Importálja a szükséges névtereket
 
-A C# kódfájlba importálja az Aspose.PDF által biztosított osztályok és metódusok eléréséhez szükséges névtereket:
+C# kódfájlba importálja az Aspose.PDF által biztosított osztályok és metódusok eléréséhez szükséges névtereket:
 
 ```csharp
 using System;
@@ -103,7 +103,7 @@ NoteElement note3 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note3);
 note3.SetText("Note with ID = 'note_003'. ");
 note3.SetId("note_003");
-// Kivételt kell dobni – Aspose.Pdf.Tagged.TaggedException : A(z) 'note_002' azonosítójú szerkezetelem már létezik
+//Kivételt kell dobni – Aspose.Pdf.Tagged.TaggedException : A(z) 'note_002' azonosítójú szerkezetelem már létezik
 //note3.SetId("note_002");
 // Az eredményül kapott dokumentum nem felel meg a PDF/UA szabványnak, ha a ClearId() függvényt a jegyzetszerkezeti elemhez használja
 //note3.ClearId();
@@ -124,7 +124,7 @@ Ebben az oktatóanyagban megtanulta, hogyan hozhat létre jegyzetszerkezeti elem
 
 #### K: Mi a célja a jegyzetszerkezeti elemek létrehozásának egy PDF-dokumentumban az Aspose.PDF for .NET használatával?
 
-V: Ha PDF-dokumentumban jegyzetszerkezeti elemeket hoz létre az Aspose.PDF for .NET használatával, strukturált jegyzeteket adhat hozzá a dokumentum tartalmához. Ezek a megjegyzések további kontextust, magyarázatokat vagy hivatkozásokat adhatnak a tartalom bizonyos részeire.
+V: Ha PDF-dokumentumban jegyzetszerkezeti elemeket hoz létre az Aspose.PDF for .NET használatával, strukturált jegyzeteket adhat hozzá a dokumentum tartalmához. Ezek a megjegyzések további kontextust, magyarázatokat vagy hivatkozásokat adhatnak a tartalom meghatározott részeihez.
 
 #### K: Hogyan segít az Aspose.PDF könyvtár a jegyzetszerkezeti elemek létrehozásában egy PDF-dokumentumban?
 
@@ -148,7 +148,7 @@ V: Igen, testreszabhatja a jegyzetszerkezet elemeinek tartalmát és tulajdonsá
 
 #### K: Hozzárendelhetek egyedi azonosítókat a jegyzetszerkezet elemeihez?
 
-V: Igen, egyedi azonosítókat rendelhet a jegyzetszerkezet elemeihez a segítségével`SetId` módszer. A kód bemutatja, hogyan állíthatja be a jegyzetelemek azonosítóit egyedi értékekre.
+ V: Igen, egyedi azonosítókat rendelhet a jegyzetszerkezet elemeihez a segítségével`SetId` módszer. A kód bemutatja, hogyan állíthatja be a jegyzetelemek azonosítóit egyedi értékekre.
 
 #### K: Mi történik, ha megpróbálok ismétlődő azonosítót rendelni egy jegyzetszerkezet elemhez?
 
@@ -156,7 +156,7 @@ V: Ha ismétlődő azonosítót próbál hozzárendelni egy jegyzetszerkezet ele
 
 #### K: Hogyan biztosíthatom a PDF/UA megfelelőséget a jegyzetszerkezeti elemek létrehozásakor?
 
- V: Az oktatóanyagban található kód bemutatja, hogyan ellenőrizhető a PDF/UA megfelelőség a`Validate` módszer. A dokumentum PDF/UA szabvány szerinti érvényesítésével biztosíthatja, hogy a hozzáadott jegyzetszerkezeti elemek megfeleljenek a kisegítő lehetőségeknek.
+V: Az oktatóanyagban található kód bemutatja, hogyan ellenőrizhető a PDF/UA megfelelőség a`Validate` módszer. A dokumentum PDF/UA szabvány szerinti érvényesítésével biztosíthatja, hogy a hozzáadott jegyzetszerkezeti elemek megfeleljenek a kisegítő lehetőségeknek.
 
 #### K: Használhatom ezt a megközelítést jegyzetszerkezeti elemek hozzáadására egy meglévő PDF-dokumentumhoz?
 

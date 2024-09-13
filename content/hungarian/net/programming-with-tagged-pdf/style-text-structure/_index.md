@@ -119,7 +119,7 @@ document.Save(dataDir + "StyleTextStructure.pdf");
 
 ## Következtetés
 
-Ebben az oktatóanyagban megtanultuk, hogyan lehet stílust és formázni egy PDF-dokumentum szövegszerkezetét az Aspose.PDF for .NET használatával. Mostantól az Aspose.PDF-et használhatja PDF-dokumentumok létrehozására egyéni szövegformázással.
+Ebben az oktatóanyagban megtanultuk, hogyan lehet stílust és formázni egy PDF-dokumentum szövegszerkezetét az Aspose.PDF for .NET használatával. Mostantól az Aspose.PDF segítségével PDF-dokumentumokat hozhat létre egyéni szövegformázással.
 
 ### GYIK
 
@@ -127,7 +127,7 @@ Ebben az oktatóanyagban megtanultuk, hogyan lehet stílust és formázni egy PD
 
 V: Ennek az oktatóanyagnak az elsődleges célja, hogy végigvezesse a PDF-dokumentum szövegének formázásán és stíluskezelésén az Aspose.PDF for .NET használatával. Részletes utasításokat és C#-forráskód-példákat tartalmaz, amelyek segítenek megérteni, hogyan kell stílusokat és formázást alkalmazni szövegelemekre.
 
-#### K: Milyen előfeltételei vannak ennek az oktatóanyagnak a PDF szövegszerkezet-stílusáról az Aspose.PDF for .NET használatával?
+#### K: Milyen előfeltételei vannak ennek az oktatóanyagnak a PDF-ben található szövegszerkezet-stílusról az Aspose.PDF for .NET használatával?
 
 V: Mielőtt elkezdené, győződjön meg arról, hogy a fejlesztői környezetet az Aspose.PDF for .NET használatára állította be. Ez magában foglalja az Aspose.PDF könyvtár telepítését és a projekt konfigurálását, hogy hivatkozzon rá.
 

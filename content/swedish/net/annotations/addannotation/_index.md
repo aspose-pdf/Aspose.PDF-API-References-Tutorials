@@ -1,7 +1,7 @@
 ---
 title: Lägg till PDF-anteckning
 linktitle: Lägg till anteckning
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lägg enkelt till anpassade kommentarer till dina PDF-filer med Aspose.PDF för .NET med denna steg-för-steg-guide. Anpassa dina kommentarer med specifika detaljer och ikoner.
 type: docs
 weight: 10
@@ -64,7 +64,7 @@ textAnnotation.Icon = TextIcon.Key;
 I detta utdrag:
 -  Plats och storlek: The`Rectangle` klass definierar var på sidan din kommentar kommer att visas och dess dimensioner.
 - Titel, ämne och innehåll: Dessa egenskaper låter dig specificera vad din kommentar handlar om och vad den kommer att innehålla.
--  Ikon: Den`TextIcon.Key` anger en ikon för annoteringen, vilket gör den mer visuellt tilltalande.
+-  Ikon: The`TextIcon.Key` anger en ikon för annoteringen, vilket gör den mer visuellt tilltalande.
 
 ## Steg 3: Anpassa anteckningens utseende
 

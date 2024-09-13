@@ -80,7 +80,7 @@ DataTable dt = new DataTable("Employee");
 dt.Columns.Add("Employee_ID", typeof(Int32));
 dt.Columns.Add("Employee_Name", typeof(string));
 dt.Columns.Add("Gender", typeof(string));
-// Aggiungere 2 righe nell'oggetto DataTable a livello di programmazione
+//Aggiungere 2 righe nell'oggetto DataTable a livello di programmazione
 DataRow dr = dt.NewRow();
 dr[0] = 1;
 dr[1] = "John Smith";
@@ -132,7 +132,7 @@ R: Sì, puoi aggiungere collegamenti ipertestuali o altri elementi interattivi a
 
 #### D: Posso suddividere le pagine della tabella se supera un certo numero di righe?
 
- A: Sì, puoi impaginare la tabella se supera un certo numero di righe. Per ottenere questo risultato, puoi usare il`IsInNewPage`proprietà dell'oggetto Row per indicare che una nuova pagina dovrebbe iniziare dopo una riga specifica. Puoi calcolare il numero di righe da visualizzare per pagina e impostare la`IsInNewPage` proprietà di conseguenza.
+A: Sì, puoi impaginare la tabella se supera un certo numero di righe. Per ottenere questo risultato, puoi usare il`IsInNewPage` proprietà dell'oggetto Row per indicare che una nuova pagina dovrebbe iniziare dopo una riga specifica. Puoi calcolare il numero di righe da visualizzare per pagina e impostare la`IsInNewPage` proprietà di conseguenza.
 
 #### D: Come posso esportare il documento PDF con i dati del database incorporati in diversi formati di file come DOCX o XLSX?
 

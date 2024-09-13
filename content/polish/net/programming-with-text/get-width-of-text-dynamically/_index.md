@@ -31,7 +31,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("Arial");
 ```
 
-Powyższy kod wyszukuje czcionkę Arial za pomocą`FindFont` metoda z`FontRepository` klasa. Jeśli chcesz użyć innej czcionki, zamień`"Arial"` z wybraną nazwą czcionki.
+ Powyższy kod wyszukuje czcionkę Arial za pomocą`FindFont`metoda z`FontRepository` klasa. Jeśli chcesz użyć innej czcionki, zamień`"Arial"` z wybraną nazwą czcionki.
 
 ## Krok 3: Ustaw stan tekstu
 

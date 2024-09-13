@@ -120,7 +120,7 @@ A: Das Tutorial führt Sie Schritt für Schritt durch den Vorgang:
 
 A: Ja, Sie können den Code ändern, um nicht verwendete Schriftarten durch eine Schriftart Ihrer Wahl zu ersetzen. Im bereitgestellten Beispielcode wird die Schriftart „Arial, Bold“ als Ersatz verwendet.
 
-####  F: Wie funktioniert das`TextFragmentAbsorber` work to remove unused fonts?
+#### F: Wie funktioniert das`TextFragmentAbsorber` work to remove unused fonts?
 
  A: Die`TextFragmentAbsorber` ist konfiguriert mit dem`TextEditOptions.FontReplace.RemoveUnusedFonts` Parameter, der nicht verwendete Schriftarten innerhalb der Textfragmente des PDF identifiziert. Nach der Absorption können Sie durch die`TextFragments` und stellen Sie deren Schriftarten auf die gewünschten Ersatzschriftarten ein.
 

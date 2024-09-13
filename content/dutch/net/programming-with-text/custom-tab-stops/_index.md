@@ -39,7 +39,7 @@ Document _pdfdocument = new Document();
 ```
 
 ## Stap 5: Voeg een pagina toe aan het document
- Voeg een nieuwe pagina toe aan het document met behulp van de`Add` methode van de`Pages`verzameling. In de meegeleverde code wordt de nieuwe pagina toegewezen aan de variabele`page`.
+ Voeg een nieuwe pagina toe aan het document met behulp van de`Add` methode van de`Pages` verzameling. In de meegeleverde code wordt de nieuwe pagina toegewezen aan de variabele`page`.
 
 ```csharp
 Page page = _pdfdocument.Pages.Add();

@@ -2,105 +2,128 @@
 title: Állítsa be a fájladatokat a PDF-fájlban
 linktitle: Állítsa be a fájladatokat a PDF-fájlban
 second_title: Aspose.PDF for .NET API Reference
-description: Ebből a lépésről lépésre szóló útmutatóból megtudhatja, hogyan használhatja az Aspose.PDF for .NET-et a fájladatok PDF-fájlban történő beállításához.
+description: Ebből a lépésről lépésre szóló útmutatóból megtudhatja, hogyan állíthat be fájladatokat PDF-dokumentumokban az Aspose.PDF for .NET használatával. Egyszerűen javíthatja PDF-fájljait metaadatokkal.
 type: docs
 weight: 310
 url: /hu/net/programming-with-document/setfileinfo/
 ---
-Ha olyan projekten dolgozik, amelyhez PDF-fájlok kezelését igényli az Aspose.PDF for .NET használatával, akkor az egyik hasznos funkció a PDF-dokumentum fájlinformációinak megadása. A fájlinformációk különféle részleteket tartalmaznak, például a szerzőt, a létrehozás dátumát, a kulcsszavakat, a módosítás dátumát, a tárgyat és a címet. Ez az útmutató végigvezeti Önt egy PDF-dokumentum fájlinformációinak beállításán C# forráskóddal az Aspose.PDF for .NET-hez.
+## Bevezetés
 
-## Lépésről lépésre a fájladatok beállításához az Aspose.PDF for .NET használatával
+A PDF-fájlok kezelésénél kulcsfontosságú a dokumentumok metaadatainak ellenőrzése. Akár szerzői információkat, kulcsszavakat vagy akár tárgysort szeretne hozzáadni, az Aspose.PDF for .NET zökkenőmentes módot kínál a fájladatok megadására PDF-dokumentumaiban. Ez az oktatóanyag lépésről lépésre végigvezeti Önt a folyamaton, biztosítva, hogy a folyamat során megértse a kód minden részét. Tehát fogd a kódoló kalapod, és merüljünk el a PDF-manipuláció világában!
 
-1. Hozzon létre egy új C#-projektet a Visual Studio IDE-ben.
-2. Adjon hozzá hivatkozást az Aspose.PDF for .NET könyvtárra a projektben.
-3. Hozzon létre egy új PDF-dokumentumobjektumot annak a PDF-fájlnak az elérési útjának megadásával, amelynek fájlinformációit módosítani szeretné.
+## Előfeltételek
 
-## 1. lépés: Állítsa be a dokumentumok könyvtárának elérési útját.
+Mielőtt elkezdenénk, néhány dolgot meg kell tennie:
 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-```
+1. Visual Studio: Győződjön meg arról, hogy a Visual Studio telepítve van a gépen. Itt kell írni és végrehajtani a .NET kódot.
+   
+2.  Aspose.PDF .NET-hez: Le kell töltenie és telepítenie kell az Aspose.PDF könyvtárat. Beszerezheti a[Aspose Letöltések oldal](https://releases.aspose.com/pdf/net/).
 
-## 2. lépés: Nyissa meg a PDF dokumentumot
+3. Alapvető C# ismerete: A C# programozás ismerete segít megérteni az általunk használt kódrészleteket.
 
-```csharp
-// Nyissa meg a dokumentumot
-Document pdfDocument = new Document(dataDir + "SetFileInfo.pdf");
-```
+4.  PDF-fájl: Készítsen egy minta PDF-fájlt, amelyet módosítani szeretne. Ebben az oktatóanyagban a következőképpen fogunk hivatkozni rá:`SetFileInfo.pdf`.
 
-## 3. lépés: Használja a DocumentInfo objektumot a PDF-dokumentum fájlinformációinak eléréséhez.
+Ha mindezt beállította, készen állunk, hogy belevágjunk a kódba!
 
-```csharp
-DocumentInfo docInfo = new DocumentInfo(pdfDocument);
-```
+## Csomagok importálása
 
-## 4. lépés: Állítsa be a kívánt fájlinformációs értékeket a DocumentInfo objektum tulajdonságainak használatával.
+A kezdéshez importálnia kell a szükséges csomagokat, amelyek lehetővé teszik a PDF fájlokkal való munkát. A C# projektben adja hozzá a következőket a kódfájl tetején található direktívák használatával:
 
 ```csharp
-docInfo.Author = "Aspose";
-docInfo.CreationDate = DateTime.Now;
-docInfo.Keywords = "Aspose.Pdf, DOM, API";
-docInfo.ModDate = DateTime.Now;
-docInfo.Subject = "PDF Information";
-docInfo.Title = "Setting PDF Document Information";
+using System;
+using System.IO;
+using Aspose.Pdf;
 ```
 
-## 5. lépés: Mentse el a frissített PDF dokumentumot a megadott helyre.
+Ezek a névterek hozzáférést biztosítanak a PDF-dokumentumok hatékony kezeléséhez szükséges osztályokhoz és módszerekhez.
 
-```csharp
-dataDir = dataDir + "SetFileInfo_out.pdf";
-pdfDocument.Save(dataDir);
-```
+## 1. lépés: Határozza meg a dokumentumkönyvtárat
 
-## 6. lépés: Ellenőrizze, hogy a fájlinformációk frissítése sikeresen megtörtént.
-
-```csharp
-Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + dataDir);
-```
-
-Sikeresen beállította egy PDF-dokumentum fájlinformációit az Aspose.PDF for .NET használatával.
-
-### Példa forráskódra a Set File Info-hoz az Aspose.PDF segítségével a .NET-hez
-
+Először is meg kell adnia a könyvtárat, ahol a PDF-fájl található. Ez döntő fontosságú, mert a fájlt erről az útvonalról fogja megnyitni.
 
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+ Magyarázat: Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a mappát tartalmazó mappa tényleges elérési útjával`SetFileInfo.pdf`. Ez megmondja a programnak, hogy hol keresse a PDF-fájlt.
+
+## 2. lépés: Nyissa meg a PDF-dokumentumot
+
+ Ezután nyissa meg a módosítani kívánt PDF-dokumentumot. Ez a`Document` osztály az Aspose.PDF könyvtárból.
+
+```csharp
 // Nyissa meg a dokumentumot
 Document pdfDocument = new Document(dataDir + "SetFileInfo.pdf");
+```
 
+ Magyarázat: Itt létrehozzuk a`Document`osztályt, és adja át a PDF fájl elérési útját. Ezzel betölti a dokumentumot a memóriába, és készen áll a szerkesztésre.
+
+## 3. lépés: Hozzon létre dokumentuminformációs objektumot
+
+Most, hogy a dokumentum nyitva van, létre kell hoznunk egy objektumot, amely a dokumentum információit fogja tárolni.
+
+```csharp
 // Adja meg a dokumentum adatait
 DocumentInfo docInfo = new DocumentInfo(pdfDocument);
+```
 
+ Magyarázat: A`DocumentInfo` osztály lehetővé teszi különböző metaadat-tulajdonságok beállítását a PDF-hez. Ez az objektum olyan információk tárolására szolgál, mint a szerző, a létrehozás dátuma stb.
+
+## 4. lépés: Állítsa be a dokumentum metaadatait
+
+ A`DocumentInfo` az objektum készen áll, ideje feltölteni a megfelelő metaadatokkal. Itt adhatja meg a szerzőt, a létrehozás dátumát, a kulcsszavakat, a módosítás dátumát, a tárgyat és a dokumentum címét.
+
+```csharp
 docInfo.Author = "Aspose";
 docInfo.CreationDate = DateTime.Now;
 docInfo.Keywords = "Aspose.Pdf, DOM, API";
 docInfo.ModDate = DateTime.Now;
 docInfo.Subject = "PDF Information";
 docInfo.Title = "Setting PDF Document Information";
+```
 
+ Magyarázat: Minden sor a dokumentum egy adott tulajdonságát állítja be. Például,`docInfo.Author` beállítja a szerző nevét, míg`docInfo.CreationDate` beállítja a dokumentum létrehozásának dátumát. Ezeket az értékeket szükség szerint személyre szabhatja.
+
+## 5. lépés: Mentse el a dokumentumot
+
+kívánt metaadatok beállítása után a következő lépés a módosított PDF mentése. Meg kell adnia egy új elérési utat a kimeneti fájlhoz.
+
+```csharp
 dataDir = dataDir + "SetFileInfo_out.pdf";
 // Mentse a kimeneti dokumentumot
 pdfDocument.Save(dataDir);
+```
 
+ Magyarázat: Íme, hozzáfűzzük`_out.pdf` az eredeti fájlnévre, hogy új fájlt hozzon létre a módosított dokumentumhoz. A`Save` metódus, majd beírja a módosításokat az új fájlba.
+
+## 6. lépés: Erősítse meg a változtatásokat
+
+Végül mindig jó ötlet ellenőrizni, hogy az információ helyesen lett-e beállítva. Ezt úgy teheti meg, hogy sikerüzenetet nyomtat a konzolra.
+
+```csharp
 Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + dataDir);
 ```
 
+Magyarázat: Ez a sor egy üzenetet ad ki, amely jelzi, hogy a fájl sikeresen el lett mentve, az új fájl elérési útjával együtt. Ez egy egyszerű módja annak, hogy minden a terv szerint haladjon.
+
 ## Következtetés
 
-Összefoglalva, az Aspose.PDF for .NET egyszerű és hatékony módot kínál a PDF-dokumentumok fájlinformációinak beállítására. A fent említett lépések követésével könnyedén beállíthatja a kívánt fájlinformáció-értékeket PDF-dokumentumaihoz C# forráskód használatával.
+fájladatok beállítása PDF-dokumentumokban az Aspose.PDF for .NET használatával egyszerű folyamat, amely nagymértékben javíthatja a PDF-fájlok használhatóságát. Ha követi ezeket a lépéseket, könnyen hozzáadhat metaadatokat, például a szerzőt, a létrehozás dátumát és egyebeket, így a dokumentumok informatívabbak és professzionálisabbak. Függetlenül attól, hogy PDF-eket generáló alkalmazásokat fejleszt, vagy egyszerűen csak jobban szeretné kezelni a dokumentumokat, az Aspose.PDF biztosítja a munka hatékony elvégzéséhez szükséges eszközöket.
 
-### GYIK a beállított fájlinformációkhoz PDF fájlban
+## GYIK
 
-#### K: Beállíthatok további, a példában nem említett fájlinformációs tulajdonságokat?
+### Mi az Aspose.PDF for .NET?
+Az Aspose.PDF for .NET egy hatékony könyvtár, amely lehetővé teszi a fejlesztők számára PDF-dokumentumok programozott létrehozását, kezelését és konvertálását.
 
- V: Igen, beállíthat további fájlinformációs tulajdonságokat a`DocumentInfo` objektum az Aspose.PDF-ben .NET-hez. A`DocumentInfo`osztály különféle tulajdonságokat biztosít, amelyek lehetővé teszik további információk, például a gyártó, a verzió és az egyéni tulajdonságok beállítását.
+### Használhatom ingyenesen az Aspose.PDF-et?
+ Igen, az Aspose ingyenes próbaverziót kínál, amellyel értékelheti a könyvtárat. Látogassa meg a[Ingyenes próbaoldal](https://releases.aspose.com/) további információkért.
 
-#### K: Lekérhető-e a fájlinformáció egy meglévő PDF-dokumentumból?
+### Hol találom a dokumentációt?
+ Az Aspose.PDF teljes dokumentációja megtalálható[itt](https://reference.aspose.com/pdf/net/).
 
- V: Igen, lekérheti a fájlinformációkat egy meglévő PDF-dokumentumból az Aspose.PDF for .NET használatával. Ehhez használhatja a`DocumentInfo` objektumot, hogy hozzáférjen a fájlinformáció tulajdonságaihoz és elolvassa a PDF dokumentumban tárolt információkat.
+### Hogyan vásárolhatom meg az Aspose.PDF-et?
+ Az Aspose.PDF licencét a következőn keresztül vásárolhatja meg[vásárlási oldal](https://purchase.aspose.com/buy).
 
-#### K: A fájlinformációk beállítása módosítja az eredeti PDF dokumentumot?
-
-V: Nem, a fájlinformációk Aspose.PDF for .NET használatával beállítása nem módosítja az eredeti PDF-dokumentumot. Ehelyett új PDF-dokumentumot hoz létre a frissített fájlinformációkkal. Az eredeti PDF dokumentum változatlan marad.
+### Mi van, ha támogatásra van szükségem?
+Ha bármilyen kérdése van, vagy segítségre van szüksége, keresse fel a[Aspose támogatási fórum](https://forum.aspose.com/c/pdf/10).

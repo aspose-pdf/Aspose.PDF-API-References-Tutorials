@@ -124,7 +124,7 @@ Igen, az Aspose.PDF for Java kompatibilis a Java 8 és újabb verzióival. Győz
 
 ### Hogyan tudok szöveget hozzáadni a rajzolt vonal fölé?
 
- Ha szöveget szeretne hozzáadni a sor fölé, használja a`TextFragment` osztály által biztosított Aspose.PDF. Hozzon létre a`TextFragment` objektumot, és adja hozzá az oldalhoz.
+ Ha szöveget szeretne hozzáadni a sor fölé, használja a`TextFragment` osztályt az Aspose.PDF biztosítja. Hozzon létre a`TextFragment` objektumot, és adja hozzá az oldalhoz.
 
 ### Hol találok további példákat és dokumentációt az Aspose.PDF for Java fájlhoz?
 

@@ -31,7 +31,7 @@ table1. Margin. Top = 300;
 page.Paragraphs.Add(table1);
 ```
 
-Außerdem legen wir für die Tabelle einen oberen Rand von 300 Punkten fest. Diesen Wert können Sie nach Ihren Wünschen anpassen.
+Außerdem geben wir für die Tabelle einen oberen Rand von 300 Punkten vor. Diesen Wert können Sie nach Ihren Bedürfnissen anpassen.
 
 ## Schritt 4: Tabellenaufbau
 In diesem Schritt konfigurieren wir Tabelleneigenschaften wie Spaltenbreiten und Ränder.
@@ -117,7 +117,7 @@ table1.DefaultCellPadding = margin;
 // Weil es auf dieser Seite nicht mehr Platz findet
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
-	// Erstellen Sie Zeilen in der Tabelle und dann Zellen in den Zeilen
+	//Erstellen Sie Zeilen in der Tabelle und dann Zellen in den Zeilen
 	Aspose.Pdf.Row row1 = table1.Rows.Add();
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");

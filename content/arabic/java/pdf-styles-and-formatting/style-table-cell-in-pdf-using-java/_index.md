@@ -79,7 +79,7 @@ pdfDocument.save("StyledTable.pdf");
 
 ## الأسئلة الشائعة
 
-### كيف أقوم بتثبيت Aspose.PDF لـJava؟
+### كيف أقوم بتثبيت Aspose.PDF لـ Java؟
 
 إن تثبيت Aspose.PDF لـ Java أمر بسيط. يمكنك تنزيل المكتبة من موقع Aspose على الويب على[هنا](https://releases.aspose.com/pdf/java/).
 

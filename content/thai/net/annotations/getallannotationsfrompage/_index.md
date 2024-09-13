@@ -2,7 +2,7 @@
 title: รับคำอธิบายประกอบทั้งหมดจากหน้า
 linktitle: รับคำอธิบายประกอบทั้งหมดจากหน้า
 second_title: เอกสารอ้างอิง Aspose.PDF สำหรับ API ของ .NET
-description: เรียนรู้วิธีการแยกคำอธิบายประกอบจากไฟล์ PDF โดยใช้ Aspose.PDF สำหรับ .NET ในคู่มือทีละขั้นตอนนี้ เหมาะสำหรับนักพัฒนาในทุกระดับ
+description: เรียนรู้วิธีแยกคำอธิบายประกอบจากไฟล์ PDF โดยใช้ Aspose.PDF สำหรับ .NET ในคู่มือทีละขั้นตอนนี้ เหมาะสำหรับนักพัฒนาในทุกระดับ
 type: docs
 weight: 70
 url: /th/net/annotations/getallannotationsfrompage/

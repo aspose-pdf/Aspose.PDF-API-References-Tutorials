@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Krok 5: Dodaj stronę do dokumentu
- Dodaj nową stronę do dokumentu za pomocą`Add` metoda`Pages`kolekcja. W podanym kodzie nowa strona jest przypisana do zmiennej`page`.
+ Dodaj nową stronę do dokumentu za pomocą`Add` metoda`Pages` kolekcja. W podanym kodzie nowa strona jest przypisana do zmiennej`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -118,7 +118,7 @@ A: W kroku 6 utworzysz pętlę, aby dodać do strony wiele fragmentów tekstu, z
 
 #### P: Jak zapisać dokument PDF i wyodrębnić informacje o podziale wiersza?
 
- A: W kroku 7 zapiszesz dokument PDF za pomocą`Save` metoda`Document` obiekt. Następnie wyodrębnisz informacje o podziale wiersza za pomocą`GetNotifications`metodę wybranej strony i zapisać ją do pliku tekstowego.
+ A: W kroku 7 zapiszesz dokument PDF za pomocą`Save` metoda`Document` obiekt. Następnie wyodrębnisz informacje o podziale wiersza za pomocą`GetNotifications` metodę wybranej strony i zapisać ją do pliku tekstowego.
 
 #### P: Jaki jest cel wyodrębnionych informacji o podziale wiersza?
 

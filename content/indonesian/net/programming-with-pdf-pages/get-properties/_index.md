@@ -2,125 +2,142 @@
 title: Dapatkan Properti PDF
 linktitle: Dapatkan Properti PDF
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Panduan langkah demi langkah untuk mendapatkan properti PDF seperti dimensi kotak dan rotasi menggunakan Aspose.PDF untuk .NET.
+description: Pelajari cara mengekstrak properti PDF secara efisien menggunakan Aspose.PDF untuk .NET. Panduan langkah demi langkah dengan contoh kode dan praktik terbaik.
 type: docs
 weight: 100
 url: /id/net/programming-with-pdf-pages/get-properties/
 ---
-Dalam tutorial ini, kami akan memandu Anda melalui proses langkah demi langkah untuk mendapatkan properti PDF menggunakan Aspose.PDF untuk .NET. Kami akan menjelaskan kode sumber C# yang disertakan dan memberi Anda panduan komprehensif untuk membantu Anda memahami dan menerapkan fitur ini dalam proyek Anda sendiri. Di akhir tutorial ini, Anda akan mengetahui cara mengakses berbagai properti halaman PDF seperti kotak seni, kotak potong, kotak potong, dll., menggunakan Aspose.PDF untuk .NET.
+## Perkenalan
+
+Jika berbicara tentang memanipulasi PDF secara terprogram, Aspose.PDF for .NET adalah salah satu alat andal yang menonjol. Baik Anda ingin mengekstrak informasi, memodifikasi dokumen, atau sekadar membaca properti PDF, pustaka ini menyediakan serangkaian fungsi untuk mempermudah tugas Anda. Dalam panduan ini, kita akan membahas secara mendalam cara mendapatkan properti PDF, tugas yang mungkin tampak menakutkan pada awalnya, tetapi menjadi mudah dengan alat yang tepat. Jadi, bersiaplah! Kita akan menjelajahi hal-hal teknis atau kemungkinan yang muncul saat bekerja dengan file PDF.
 
 ## Prasyarat
-Sebelum memulai, pastikan Anda memiliki hal berikut:
 
-- Pengetahuan dasar tentang bahasa pemrograman C#
-- Aspose.PDF untuk .NET terinstal di lingkungan pengembangan Anda
+Sebelum mulai membuat kode, penting untuk memastikan Anda memiliki semua komponen yang diperlukan. Bagian ini akan membantu Anda menyiapkan diri untuk mulai bekerja dengan pustaka Aspose.PDF.
 
-## Langkah 1: Atur direktori dokumen
-Pertama, Anda perlu mengatur jalur ke direktori dokumen Anda. Ini adalah lokasi berkas PDF yang propertinya ingin Anda dapatkan. Ganti "DIREKTORI DOKUMEN ANDA" dengan jalur yang sesuai.
+1. Lingkungan .NET: Pastikan Anda memiliki lingkungan .NET yang berfungsi. Anda dapat menggunakan Visual Studio atau IDE lain yang sesuai.
+   
+2.  Aspose.PDF untuk .NET: Anda perlu menginstal Aspose.PDF. Anda dapat mengunduh pustaka dari[Rilis PDF Aspose](https://releases.aspose.com/pdf/net/) halaman.
+
+3. Pemahaman Dasar tentang C#: Keakraban dengan pemrograman C# akan membantu karena kita akan menulis kode dalam C#.
+
+4. Berkas PDF: Anda memerlukan contoh berkas PDF untuk digunakan. Untuk contoh ini, kami akan merujuk ke "GetProperties.pdf".
+
+### Menyiapkan Proyek Anda
+
+Setelah Anda menyiapkan alat dan berkas PDF, berikut cara menyiapkan proyek Anda:
+
+1. Buat Proyek Baru: Buka IDE Anda dan buat proyek C# baru.
+
+2. Tambahkan Referensi: Sertakan assembly Aspose.PDF. Anda dapat melakukannya melalui NuGet Package Manager atau dengan menambahkan referensi ke DLL secara langsung.
+
+3.  Siapkan File PDF Anda: Tempatkan sampel "GetProperties.pdf" Anda di direktori yang dapat diakses dengan mudah oleh kode Anda, misalnya`"YOUR DOCUMENT DIRECTORY"`.
+
+## Paket Impor
+
+Setelah pengaturan proyek Anda selesai, hal pertama yang perlu Anda lakukan adalah mengimpor namespace yang diperlukan. Pustaka Aspose.PDF menyediakan berbagai kelas yang memungkinkan Anda berinteraksi dengan dokumen PDF.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-## Langkah 2: Buka dokumen PDF
- Selanjutnya, Anda perlu membuka dokumen PDF menggunakan`Document` kelas Aspose.PDF. Pastikan untuk menentukan jalur yang benar ke berkas PDF.
+Langkah sederhana ini memastikan bahwa Anda memiliki akses ke kelas yang dibutuhkan untuk memanipulasi dan mengekstrak informasi dari berkas PDF Anda secara efisien.
+
+Sekarang, mari kita uraikan tugas mengambil properti PDF menjadi beberapa langkah yang dapat ditindaklanjuti. Bagian ini akan memandu Anda melalui setiap langkah sehingga Anda dapat dengan mudah mengikuti dan memahami cara kerja prosesnya.
+
+## Langkah 1: Tentukan Direktori Dokumen
+
+Langkah pertama dalam perjalanan kita adalah menentukan di mana dokumen PDF kita berada. Kita ingin mengarahkan ke lokasi "GetProperties.pdf".
 
 ```csharp
-Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
-```
-
-## Langkah 3: Akses Koleksi Halaman
- Sekarang Anda dapat mengakses koleksi halaman dokumen menggunakan`Pages` milik`pdfDocument` obyek.
-
-```csharp
-PageCollection pageCollection = pdfDocument.Pages;
-```
-
-## Langkah 4: Buka halaman tertentu
-Kemudian Anda dapat melompat ke halaman tertentu menggunakan indeks halaman dalam koleksi. Dalam contoh di bawah ini, kita mengakses halaman kedua (indeks 1).
-
-```csharp
-Page pdfPage = pageCollection[1];
-```
-
-## Langkah 5: Dapatkan properti halaman
- Sekarang Anda bisa mendapatkan properti yang berbeda dari halaman PDF, seperti kotak seni, kotak potong, kotak potong, dll., dengan menggunakan properti yang sesuai dari`pdfPage` obyek.
-
-```csharp
-Console.WriteLine("ArtBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
-Console.WriteLine("BleedBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.BleedBox.Height, pdf
-
-Page.BleedBox.Width, pdfPage.BleedBox.LLX, pdfPage.BleedBox.LLY, pdfPage.BleedBox.URX, pdfPage.BleedBox.URY);
-Console.WriteLine("CropBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.CropBox.Height, pdfPage.CropBox.Width, pdfPage.CropBox.LLX, pdfPage.CropBox.LLY, pdfPage.CropBox.URX, pdfPage.CropBox.URY);
-Console.WriteLine("MediaBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.MediaBox.Height, pdfPage.MediaBox.Width, pdfPage.MediaBox.LLX, pdfPage.MediaBox.LLY, pdfPage.MediaBox.URX, pdfPage.MediaBox.URY);
-Console.WriteLine("TrimBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.TrimBox.Height, pdfPage.TrimBox.Width, pdfPage.TrimBox.LLX, pdfPage.TrimBox.LLY, pdfPage.TrimBox.URX, pdfPage.TrimBox.URY);
-Console.WriteLine("Rect: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.Rect.Height, pdfPage.Rect.Width, pdfPage.Rect.LLX, pdfPage.Rect.LLY, pdfPage.Rect.URX, pdfPage.Rect.URY);
-Console.WriteLine("Page number: {0}", pdfPage.Number);
-Console.WriteLine("Rotate: {0}", pdfPage.Rotate);
-```
-
-### Contoh kode sumber untuk Mendapatkan Properti menggunakan Aspose.PDF untuk .NET 
-
-```csharp
-
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Buka dokumen
-Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
-// Dapatkan koleksi halaman
-PageCollection pageCollection = pdfDocument.Pages;
-// Dapatkan halaman tertentu
-Page pdfPage = pageCollection[1];
-// Dapatkan properti halaman
-System.Console.WriteLine("ArtBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
-System.Console.WriteLine("BleedBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.BleedBox.Height, pdfPage.BleedBox.Width, pdfPage.BleedBox.LLX, pdfPage.BleedBox.LLY, pdfPage.BleedBox.URX, pdfPage.BleedBox.URY);
-System.Console.WriteLine("CropBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.CropBox.Height, pdfPage.CropBox.Width, pdfPage.CropBox.LLX, pdfPage.CropBox.LLY, pdfPage.CropBox.URX, pdfPage.CropBox.URY);
-System.Console.WriteLine("MediaBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.MediaBox.Height, pdfPage.MediaBox.Width, pdfPage.MediaBox.LLX, pdfPage.MediaBox.LLY, pdfPage.MediaBox.URX, pdfPage.MediaBox.URY);
-System.Console.WriteLine("TrimBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.TrimBox.Height, pdfPage.TrimBox.Width, pdfPage.TrimBox.LLX, pdfPage.TrimBox.LLY, pdfPage.TrimBox.URX, pdfPage.TrimBox.URY);
-System.Console.WriteLine("Rect : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.Rect.Height, pdfPage.Rect.Width, pdfPage.Rect.LLX, pdfPage.Rect.LLY, pdfPage.Rect.URX, pdfPage.Rect.URY);
-System.Console.WriteLine("Page Number : {0}", pdfPage.Number);
-System.Console.WriteLine("Rotate : {0}", pdfPage.Rotate);
-
 ```
 
+Baris kode ini memastikan bahwa kita menentukan di mana Aspose dapat menemukan berkas PDF yang ingin kita gunakan.
+
+## Langkah 2: Buka Dokumen PDF
+
+ Selanjutnya, kita akan membuka dokumen PDF menggunakan`Document` kelas dari pustaka Aspose.PDF. Ini merupakan langkah penting karena memuat PDF ke dalam memori.
+
+```csharp
+// Buka dokumen
+Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
+```
+
+ Dengan mengeksekusi baris ini, kita membuat sebuah instance dari`Document` kelas yang merepresentasikan berkas PDF kita, membuat semua propertinya dapat diakses.
+
+## Langkah 3: Akses Koleksi Halaman
+
+Setelah membuka dokumen, kita perlu mengakses halaman-halaman dalam dokumen tersebut. Setiap PDF dapat memiliki beberapa halaman, jadi kita akan bekerja dengan koleksi yang menampung semua halaman.
+
+```csharp
+// Dapatkan koleksi halaman
+PageCollection pageCollection = pdfDocument.Pages;
+```
+
+ Pikirkanlah`PageCollection` sebagai indeks yang membantu kita menavigasi halaman-halaman dalam dokumen PDF kita.
+
+## Langkah 4: Dapatkan Halaman Tertentu
+
+Sekarang setelah kita memiliki akses ke halaman-halaman kita, saatnya untuk menggali lebih dalam. Kita akan mengambil halaman tertentu dari koleksi; dalam kasus ini, kita akan mendapatkan halaman pertama.
+
+```csharp
+// Dapatkan halaman tertentu
+Page pdfPage = pageCollection[1];
+```
+
+ Ingat bahwa ini adalah pengindeksan berbasis nol. Jadi, jika Anda ingin mengakses halaman pertama, Anda perlu mengindeksnya sebagai`1`.
+
+## Langkah 5: Ambil dan Tampilkan Properti Halaman
+
+Sekarang kita sampai pada bagian yang menarik — mengekstrak properti halaman! Setiap halaman memiliki beberapa properti seperti ArtBox, BleedBox, CropBox, MediaBox, dan TrimBox yang menjelaskan dimensi dan posisinya. Mari kita akses properti ini dan tampilkan.
+
+```csharp
+// Dapatkan properti halaman
+System.Console.WriteLine("ArtBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, 
+    pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
+System.Console.WriteLine("BleedBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.BleedBox.Height, pdfPage.BleedBox.Width, pdfPage.BleedBox.LLX, pdfPage.BleedBox.LLY, 
+    pdfPage.BleedBox.URX, pdfPage.BleedBox.URY);
+System.Console.WriteLine("CropBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.CropBox.Height, pdfPage.CropBox.Width, pdfPage.CropBox.LLX, pdfPage.CropBox.LLY, 
+    pdfPage.CropBox.URX, pdfPage.CropBox.URY);
+System.Console.WriteLine("MediaBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.MediaBox.Height, pdfPage.MediaBox.Width, pdfPage.MediaBox.LLX, pdfPage.MediaBox.LLY, 
+    pdfPage.MediaBox.URX, pdfPage.MediaBox.URY);
+System.Console.WriteLine("TrimBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.TrimBox.Height, pdfPage.TrimBox.Width, pdfPage.TrimBox.LLX, pdfPage.TrimBox.LLY, 
+    pdfPage.TrimBox.URX, pdfPage.TrimBox.URY);
+System.Console.WriteLine("Rect : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.Rect.Height, pdfPage.Rect.Width, pdfPage.Rect.LLX, pdfPage.Rect.LLY, 
+    pdfPage.Rect.URX, pdfPage.Rect.URY);
+System.Console.WriteLine("Page Number : {0}", pdfPage.Number);
+System.Console.WriteLine("Rotate : {0}", pdfPage.Rotate);
+```
+
+Potongan kode ini melakukan beberapa hal hebat. Ia mengakses setiap properti yang terkait dengan dimensi dan orientasi halaman, lalu mencetak informasi tersebut ke konsol. Yang Anda dapatkan adalah ikhtisar properti halaman yang dapat membantu modifikasi atau analisis lebih lanjut.
+
 ## Kesimpulan
-Selamat! Anda telah berhasil memperoleh properti PDF menggunakan Aspose.PDF untuk .NET. Anda telah mempelajari cara membuka dokumen PDF, menavigasi ke halaman tertentu, dan memperoleh berbagai properti halaman, seperti kotak dimensi dan rotasi. Kini Anda dapat menggunakan informasi ini untuk menyesuaikan penanganan berkas PDF berdasarkan propertinya.
 
-Pastikan untuk memeriksa dokumentasi resmi Aspose.PDF untuk .NET untuk informasi lebih lanjut tentang fitur lanjutan dan kemungkinan penyesuaian.
+Dan itu dia — panduan lengkap tentang cara mendapatkan properti PDF menggunakan Aspose.PDF untuk .NET! Kini Anda memiliki pengetahuan untuk mengekstrak informasi penting dari dokumen PDF dengan mudah. Baik Anda ingin menganalisis, melaporkan, atau sekadar mencatat data dari PDF, pustaka yang tangguh ini adalah sekutu yang andal. Dengan menguasai langkah-langkah ini, Anda sudah berada di jalur yang tepat untuk menjadi ahli manipulasi PDF! Jangan ragu untuk menjelajahi lebih banyak fitur dan fungsi yang ditawarkan Aspose.PDF.
 
-### Pertanyaan yang Sering Diajukan
+## Pertanyaan yang Sering Diajukan
 
-#### T: Bagaimana cara mendapatkan properti PDF menggunakan Aspose.PDF untuk .NET?
+### Bagaimana cara menginstal Aspose.PDF untuk .NET?  
+Anda dapat menginstalnya melalui NuGet Package Manager di Visual Studio atau mengunduhnya langsung dari situs web Aspose.
 
-A: Untuk mendapatkan properti PDF menggunakan Aspose.PDF untuk .NET, Anda dapat mengikuti langkah-langkah berikut:
+### Dapatkah saya menggunakan Aspose.PDF secara gratis?  
+ Ya, Aspose menawarkan uji coba gratis yang bisa Anda dapatkan[Di Sini](https://releases.aspose.com/).
 
-1. Tetapkan direktori dokumen dengan menentukan jalur ke file PDF yang propertinya ingin Anda ambil.
-2.  Buka dokumen PDF menggunakan`Document` kelas Aspose.PDF, menyediakan jalur yang benar ke berkas PDF.
-3.  Akses koleksi halaman dokumen menggunakan`Pages` milik`pdfDocument` obyek.
-4. Lompat ke halaman tertentu menggunakan indeks halaman dalam koleksi (pengindeksan dimulai dari 1).
-5.  Dapatkan properti yang berbeda dari halaman PDF, seperti ArtBox, BleedBox, CropBox, MediaBox, TrimBox, Rect, Page Number, dan Rotation, dengan menggunakan properti yang sesuai dari`pdfPage` obyek.
+### Di mana saya dapat menemukan dokumentasi untuk Aspose.PDF?  
+ Anda dapat merujuk ke dokumentasi di[Dokumentasi Aspose.pdf](https://reference.aspose.com/pdf/net/).
 
-#### T: Apa saja properti berbeda dari halaman PDF yang dapat saya ambil menggunakan Aspose.PDF untuk .NET?
+### Bagaimana cara mendapatkan dukungan jika saya mengalami masalah?  
+ Anda dapat mengunjungi forum Aspose untuk mendapatkan dukungan di mana Anda dapat mengajukan pertanyaan tentang masalah Anda[Di Sini](https://forum.aspose.com/c/pdf/10).
 
-A: Anda dapat mengambil berbagai properti halaman PDF menggunakan Aspose.PDF untuk .NET, seperti:
-
-- ArtBox: Mewakili dimensi karya seni halaman.
-- BleedBox: Mewakili dimensi bleed halaman.
-- CropBox: Mewakili dimensi konten halaman yang terlihat setelah pemotongan.
-- MediaBox: Mewakili dimensi media fisik halaman.
-- TrimBox: Mewakili dimensi konten halaman yang dipangkas.
-- Persegi Panjang: Mewakili dimensi kotak pembatas halaman.
-- Nomor Halaman: Mewakili nomor halaman dalam dokumen.
-- Putar: Mewakili sudut rotasi halaman.
-
-#### T: Bagaimana cara mengakses halaman tertentu dalam dokumen PDF untuk mengambil propertinya?
-
- A: Untuk mengakses halaman tertentu dalam dokumen PDF dan mengambil propertinya, Anda dapat menggunakan`Pages` milik`pdfDocument` objek untuk mengakses koleksi halaman dokumen. Kemudian, Anda dapat menggunakan indeks halaman dalam koleksi untuk melompat ke halaman yang diinginkan. Misalnya, untuk mengakses halaman kedua, Anda dapat menggunakan`pdfDocument.Pages[1]` (pengindeksan dimulai dari 1).
-
-#### T: Dapatkah saya melakukan operasi pada properti yang diambil, seperti memodifikasi atau mengubah ukuran kotak halaman?
-
-A: Ya, setelah Anda mengambil properti halaman PDF menggunakan Aspose.PDF for .NET, Anda dapat melakukan berbagai operasi pada properti tersebut. Misalnya, Anda dapat mengubah dimensi kotak halaman, memutar halaman, atau menggunakan informasi yang diambil untuk pemrosesan dan manipulasi dokumen PDF secara khusus.
-
-#### T: Apakah Aspose.PDF untuk .NET mendukung ekstraksi properti dari file PDF yang dienkripsi atau dilindungi kata sandi?
-
-A: Ya, Aspose.PDF untuk .NET mendukung ekstraksi properti dari file PDF yang dienkripsi atau dilindungi kata sandi. Selama Anda memberikan kata sandi yang benar untuk membuka dokumen PDF, Anda dapat mengakses dan mengambil propertinya menggunakan pendekatan yang sama yang ditunjukkan dalam tutorial.
+### Apakah ada lisensi sementara yang tersedia?  
+Ya, Anda dapat meminta lisensi sementara untuk evaluasi dengan mengunjungi[tautan ini](https://purchase.aspose.com/temporary-license/).

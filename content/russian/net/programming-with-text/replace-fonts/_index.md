@@ -34,7 +34,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## Шаг 3: Поиск и замена шрифтов
 
- Мы создаем`TextFragmentAbsorber`объект и устанавливаем опцию редактирования для удаления неиспользуемых шрифтов. Затем принимаем поглотитель для всех страниц документа PDF для поиска фрагментов текста.
+ Мы создаем`TextFragmentAbsorber` объект и устанавливаем опцию редактирования для удаления неиспользуемых шрифтов. Затем принимаем поглотитель для всех страниц документа PDF для поиска фрагментов текста.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));

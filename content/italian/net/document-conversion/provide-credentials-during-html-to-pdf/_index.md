@@ -9,7 +9,7 @@ url: /it/net/document-conversion/provide-credentials-during-html-to-pdf/
 ---
 ## Introduzione
 
-Nel mondo dello sviluppo software, convertire HTML in PDF è un requisito comune. Che tu stia generando report, fatture o qualsiasi altro documento, avere una libreria affidabile per gestire questa attività può farti risparmiare molto tempo e fatica. Entra in Aspose.PDF per .NET, una potente libreria che consente agli sviluppatori di creare, manipolare e convertire documenti PDF con facilità. In questo tutorial, ti guideremo attraverso il processo di utilizzo di Aspose.PDF per convertire HTML in PDF, fornendo al contempo credenziali per un accesso sicuro. Quindi, prendi il tuo cappello da programmatore e tuffiamoci!
+Nel mondo dello sviluppo software, convertire HTML in PDF è un requisito comune. Che tu stia generando report, fatture o qualsiasi altro documento, avere una libreria affidabile per gestire questa attività può farti risparmiare molto tempo e fatica. Entra in gioco Aspose.PDF per .NET, una potente libreria che consente agli sviluppatori di creare, manipolare e convertire documenti PDF con facilità. In questo tutorial, ti guideremo attraverso il processo di utilizzo di Aspose.PDF per convertire HTML in PDF, fornendo al contempo credenziali per un accesso sicuro. Quindi, prendi il tuo cappello da programmatore e tuffiamoci!
 
 ## Prerequisiti
 

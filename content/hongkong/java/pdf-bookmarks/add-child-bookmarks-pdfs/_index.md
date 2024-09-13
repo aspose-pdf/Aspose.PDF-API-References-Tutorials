@@ -186,7 +186,7 @@ pdfDocument.save("output.pdf");
 
 ### 我還可以為書籤添加哪些其他操作？
 
-除了「GoTo」操作之外，您還可以新增「URI」操作等操作來開啟 Web 鏈接，或新增「JavaScript」操作來在按一下書籤時執行自訂腳本。
+除了“GoTo”操作之外，您還可以添加“URI”操作等操作來打開 Web 鏈接，或添加“JavaScript”操作來在單擊書籤時執行自訂腳本。
 
 ### Aspose.PDF for Java 適合商業專案嗎？
 

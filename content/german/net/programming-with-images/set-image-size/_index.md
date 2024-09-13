@@ -2,133 +2,159 @@
 title: Bildgröße in PDF-Datei festlegen
 linktitle: Bildgröße in PDF-Datei festlegen
 second_title: Aspose.PDF für .NET API-Referenz
-description: Schritt-für-Schritt-Anleitung zum Festlegen der Größe eines Bildes in einer PDF-Datei mit Aspose.PDF für .NET.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET die Bildgröße in einer PDF-Datei festlegen. Diese Schritt-für-Schritt-Anleitung hilft Ihnen, die Größe von Bildern zu ändern, Seiteneigenschaften anzupassen und PDF-Dateien zu speichern.
 type: docs
 weight: 270
 url: /de/net/programming-with-images/set-image-size/
 ---
-In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET die Größe eines Bilds in einer PDF-Datei festlegen. Befolgen Sie diese Schritte, um diesen Vorgang problemlos durchzuführen.
+## Einführung
+
+Das Arbeiten mit PDFs ist eine häufige Anforderung für viele Anwendungen, und die Möglichkeit, Elemente in einer PDF-Datei zu bearbeiten, kann entscheidend sein. Egal, ob Sie einen Berichtsgenerator erstellen oder Ihrem PDF dynamische Inhalte hinzufügen, die Kontrolle der Bildgröße in Ihrem Dokument ist eine wesentliche Funktion. In diesem Tutorial zeigen wir Ihnen, wie Sie die Bildgröße in einer PDF-Datei mit Aspose.PDF für .NET festlegen. Diese leistungsstarke Bibliothek bietet umfassende Kontrolle über PDF-Inhalte, und wir werden sie Schritt für Schritt aufschlüsseln, um Ihnen zu zeigen, wie einfach das sein kann. Am Ende können Sie die Größe von Bildern sicher ändern und verstehen, wie diese Funktion Ihre PDF-Workflows verbessern kann.
+
 
 ## Voraussetzungen
 
-Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
+Bevor wir uns in den Code vertiefen, müssen Sie einige Dinge vorbereitet haben, um diesem Tutorial folgen zu können.
 
-- Visual Studio oder eine andere Entwicklungsumgebung installiert und konfiguriert.
-- Grundkenntnisse der Programmiersprache C#.
-- Aspose.PDF-Bibliothek für .NET installiert. Sie können sie von der offiziellen Aspose-Website herunterladen.
+1.  Aspose.PDF für .NET: Stellen Sie sicher, dass Sie die neueste Version der Aspose.PDF-Bibliothek installiert haben. Sie können[Laden Sie es hier herunter](https://releases.aspose.com/pdf/net/).
+2. .NET Framework oder .NET Core: Stellen Sie sicher, dass Sie eine Arbeitsumgebung mit .NET Framework oder .NET Core eingerichtet haben.
+3. Grundkenntnisse in C#: Wir verwenden C# als Programmiersprache, daher ist die Vertrautheit damit unerlässlich.
+4. Beispielbild: Sie benötigen ein Beispielbild zum Einbetten in die PDF-Datei. Sie können jedes beliebige Bild verwenden, stellen Sie jedoch sicher, dass es in Ihrem Projektverzeichnis zugänglich ist.
 
-## Schritt 1: Erstellen des PDF-Dokuments
+## Pakete importieren
 
-Verwenden Sie zunächst den folgenden Code, um ein neues PDF-Dokument zu erstellen:
+Um Aspose.PDF für .NET zu verwenden, müssen Sie zunächst die erforderlichen Namespaces importieren. Hier ist eine einfache Einrichtung:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Instanziieren eines Dokumentobjekts
-Document doc = new Document();
-
-// Fügen Sie der Seitensammlung der PDF-Datei eine Seite hinzu
-Aspose.Pdf.Page page = doc.Pages.Add();
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Schritt 2: Bild hinzugefügt
+Nachdem wir nun die Grundlagen abgedeckt haben, fahren wir mit dem Erstellen und Ändern eines PDF-Dokuments fort.
 
-Als Nächstes fügen wir der Seite des PDF-Dokuments ein Bild hinzu. Verwenden Sie den folgenden Code:
+## Schritt 1: Initialisieren Sie Ihr PDF-Dokument
+
+ Als erstes müssen wir ein neues PDF-Dokument erstellen. Wir verwenden das`Document` Klasse von Aspose.PDF, um dies zu erreichen.
+
+```csharp
+// Der Pfad zum Dokumentverzeichnis.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Document-Objekt instanziieren
+Document doc = new Document();
+```
+ 
+ Hier instantiieren wir ein`Document` Objekt, das unsere PDF-Datei darstellen wird. Wir geben auch das Verzeichnis an, in dem sich unsere Dateien befinden, mit dem`dataDir` Variable. Dies ist der Ausgangspunkt zum Erstellen einer beliebigen PDF-Datei mit Aspose.PDF.
+
+## Schritt 2: Fügen Sie Ihrer PDF-Datei eine neue Seite hinzu
+
+Sobald unser Dokument fertig ist, müssen wir eine Seite hinzufügen. Jedes PDF muss mindestens eine Seite haben, also fügen wir eine hinzu.
+
+```csharp
+// Seite zur Seitensammlung der PDF-Datei hinzufügen
+Aspose.Pdf.Page page = doc.Pages.Add();
+```
+ 
+ Wir fügen dem Dokument eine neue Seite hinzu mit dem`Pages.Add()` Methode. Diese Seite dient als Leinwand, auf der wir unser Bild platzieren. Jede Seite in einer PDF-Datei ist im Wesentlichen eine leere Tafel, auf der Sie Text, Bilder oder andere Inhalte hinzufügen können.
+
+## Schritt 3: Erstellen einer Image-Instanz
+
+ Jetzt ist es an der Zeit, das Bild vorzubereiten, das wir in das PDF einfügen möchten. Aspose.PDF bietet eine`Image` Klasse zur Verarbeitung von Bildern.
 
 ```csharp
 // Erstellen einer Imageinstanz
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
+```
+ 
+ Wir erstellen eine neue Instanz des`Image` Klasse. Dieses Objekt enthält die Eigenschaften des Bildes, das wir dem PDF hinzufügen möchten. In den nächsten Schritten konfigurieren wir die Größe und den Typ des Bildes.
 
-// Legen Sie die Breite und Höhe des Bildes in Punkten fest
-img. FixWidth = 100;
-img. FixHeight = 100;
+## Schritt 4: Bildgröße festlegen (Breite und Höhe)
 
-//Bildtyp auf unbekannt (Unbekannt) setzen
+Hier kommen wir zum Kern unseres Tutorials: Festlegen der Bildgröße. Aspose.PDF ermöglicht es Ihnen, die Breite und Höhe des Bildes in Punkten anzugeben.
+
+```csharp
+// Bildbreite und -höhe in Punkten festlegen
+img.FixWidth = 100;
+img.FixHeight = 100;
+```
+ 
+ Der`FixWidth` Und`FixHeight`Mit den Eigenschaften können Sie die genauen Abmessungen des Bildes in Punkten festlegen. In diesem Beispiel ändern wir die Größe des Bildes auf 100 x 100 Punkte. Sie können diese Werte Ihren Bedürfnissen entsprechend anpassen.
+
+## Schritt 5: Bildtyp festlegen
+
+Abhängig vom Bildformat, mit dem Sie arbeiten, müssen Sie möglicherweise den Bildtyp festlegen. Aspose.PDF unterstützt verschiedene Bildformate. Hier definieren wir den Dateityp.
+
+```csharp
+// Bildtyp als SVG festlegen
 img.FileType = Aspose.Pdf.ImageFileType.Unknown;
+```
+ 
+ In diesem Fall belassen wir den Dateityp als`Unknown` , wodurch die Bibliothek den Bildtyp automatisch erkennt. Wenn Sie den spezifischen Dateityp kennen, können Sie ihn festlegen (z. B.`ImageFileType.Jpeg` für JPEG-Bilder). Dieser Schritt stellt sicher, dass Aspose weiß, wie das Bild richtig zu verarbeiten ist.
 
-// Pfad zur Bildquelldatei
+## Schritt 6: Legen Sie den Pfad zu Ihrer Bilddatei fest
+
+Jetzt müssen wir Aspose mitteilen, wo die Bilddatei zu finden ist. Stellen Sie sicher, dass Ihr Bild im angegebenen Verzeichnis zugänglich ist.
+
+```csharp
+// Pfad zur Quelldatei
 img.File = dataDir + "aspose-logo.jpg";
+```
+ 
+ Hier legen wir den Dateipfad zum Bild fest. Das Bild befindet sich in diesem Fall im`dataDir` Ordner und hat den Namen`aspose-logo.jpg`Stellen Sie sicher, dass Sie dies durch den tatsächlichen Namen und Speicherort Ihrer Bilddatei ersetzen.
 
-// Fügen Sie das Bild zur Absatzsammlung der Seite hinzu
+## Schritt 7: Fügen Sie das Bild zur Seite hinzu
+
+Nachdem wir das Bild konfiguriert und den Dateipfad festgelegt haben, können wir das Bild nun zu unserer Seite hinzufügen.
+
+```csharp
+// Fügen Sie das Bild zur Absatzsammlung hinzu
 page.Paragraphs.Add(img);
 ```
+ 
+ Der`Paragraphs.Add()` Methode ermöglicht es uns, das Bild zur Seite hinzuzufügen. Denken Sie an die`Paragraphs` Sammlung als Liste von Elementen, die auf der PDF-Seite gerendert werden. Wir können dieser Sammlung mehrere Elemente hinzufügen, z. B. Bilder, Text und Formen.
 
-Achten Sie darauf, den richtigen Pfad zur Bildquelldatei anzugeben.
+## Schritt 8: Seiteneigenschaften anpassen
 
-## Schritt 3: Seiteneigenschaften festlegen
-
-Zum Schluss legen wir die Eigenschaften der Seite fest, einschließlich ihrer Breite und Höhe. Verwenden Sie den folgenden Code:
+Um sicherzustellen, dass unser Bild gut passt, passen wir die Seitengröße an. Dadurch wird sichergestellt, dass die Seitenabmessungen mit dem von uns hinzugefügten Inhalt übereinstimmen.
 
 ```csharp
 // Festlegen der Seiteneigenschaften
 page.PageInfo.Width = 800;
 page.PageInfo.Height = 800;
 ```
+ 
+Hier stellen wir die Seitenbreite und -höhe auf 800 Punkte ein. Dieser Schritt ist optional, stellt aber sicher, dass die Seite das skalierte Bild aufnehmen kann. Sie können diese Werte Ihren spezifischen Anforderungen entsprechend anpassen.
 
-### Beispielquellcode zum Festlegen der Bildgröße mit Aspose.PDF für .NET 
+## Schritt 9: Speichern Sie das PDF
+
+Nachdem wir abschließend die Bild- und Seiteneigenschaften konfiguriert haben, können wir das PDF speichern.
+
 ```csharp
-// Der Pfad zum Dokumentverzeichnis.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Document-Objekt instanziieren
-Document doc = new Document();
-// Seite zur Seitensammlung von PDF-Dateien hinzufügen
-Aspose.Pdf.Page page = doc.Pages.Add();
-// Erstellen einer Imageinstanz
-Aspose.Pdf.Image img = new Aspose.Pdf.Image();
-// Bildbreite und -höhe in Punkten festlegen
-img.FixWidth = 100;
-img.FixHeight = 100;
-// Bildtyp als SVG festlegen
-img.FileType = Aspose.Pdf.ImageFileType.Unknown;
-// Pfad zur Quelldatei
-img.File = dataDir + "aspose-logo.jpg";
-page.Paragraphs.Add(img);
-//Festlegen der Seiteneigenschaften
-page.PageInfo.Width = 800;
-page.PageInfo.Height = 800;
+//Speichern Sie die resultierende PDF-Datei
 dataDir = dataDir + "SetImageSize_out.pdf";
-// Speichern Sie die resultierende PDF-Datei
 doc.Save(dataDir);
-Console.WriteLine("\nImage size added successfully.\nFile saved at " + dataDir);
 ```
+ 
+ Wir speichern das geänderte Dokument als`SetImageSize_out.pdf` im selben Verzeichnis. Diese Datei enthält nun das von Ihnen hinzugefügte, skalierte Bild.
 
 ## Abschluss
 
-Herzlichen Glückwunsch! Sie haben die Größe eines Bildes in einem PDF-Dokument mit Aspose.PDF für .NET erfolgreich festgelegt. Sie können diese Methode jetzt auf Ihre eigenen Projekte anwenden, um die Größe von Bildern in PDF-Dateien anzupassen.
+In diesem Tutorial haben wir erläutert, wie Sie die Bildgröße in einer PDF-Datei mit Aspose.PDF für .NET festlegen. Wir haben das Erstellen eines Dokuments, das Hinzufügen einer Seite, das Konfigurieren eines Bilds und das Speichern des Ergebnisses durchgegangen. Diese Schritt-für-Schritt-Anleitung ist nur der Anfang dessen, was Sie mit Aspose.PDF für .NET tun können. Nachdem Sie nun gelernt haben, wie Sie die Größe von Bildern ändern, können Sie weitere Funktionen wie Textformatierung, Tabellenerstellung und sogar das Hinzufügen von Anmerkungen zu Ihrer PDF-Datei erkunden.
 
-### FAQs zum Festlegen der Bildgröße in einer PDF-Datei
+## Häufig gestellte Fragen
 
-#### F: Was ist der Zweck des Festlegens der Größe eines Bildes in einem PDF-Dokument mit Aspose.PDF für .NET?
+### Kann ich mit Aspose.PDF für .NET verschiedene Bildformate verwenden?  
+Ja, Aspose.PDF unterstützt verschiedene Bildformate wie JPEG, PNG, BMP und SVG.
 
-A: Der Zweck der Größeneinstellung eines Bildes in einem PDF-Dokument besteht darin, die Abmessungen des Bildes zu steuern, wenn es zum PDF hinzugefügt wird. Auf diese Weise können Sie das Erscheinungsbild und Layout von Bildern in Ihren PDF-Dateien anpassen.
+### Wie behalte ich das Seitenverhältnis des Bildes bei?  
+ Sie können das Seitenverhältnis beibehalten, indem Sie entweder`FixWidth` oder`FixHeight` während die andere Dimension nicht festgelegt wird.
 
-#### F: Wie funktioniert die Größeneinstellung eines Bildes in einem PDF-Dokument?
+### Kann ich einer einzelnen PDF-Seite mehrere Bilder hinzufügen?  
+Absolut! Wiederholen Sie einfach den Vorgang des Hinzufügens einer Bildinstanz und fügen Sie jede einzelne zur`Paragraphs` Sammlung.
 
- A: Der Prozess umfasst die Erstellung eines`Aspose.Pdf.Image` Instanz, indem Sie die Breite und Höhe mit den`FixWidth` Und`FixHeight` Eigenschaften und fügen Sie dann das Bild zum PDF-Dokument hinzu. Darüber hinaus können Sie die Abmessungen der Seite selbst so festlegen, dass das Bild hineinpasst.
+### Ist es möglich, die Bildgröße in anderen Einheiten als Punkten einzustellen?  
+Aspose.PDF arbeitet hauptsächlich mit Punkten, aber Sie können andere Einheiten wie Zoll oder Millimeter in Punkte umrechnen (1 Zoll = 72 Punkte).
 
-#### F: Kann ich die Größe eines Bildes auf einen bestimmten Prozentsatz der Seitenabmessungen einstellen?
-
-A: Der bereitgestellte Code legt die absolute Breite und Höhe des Bildes in Punkten fest. Wenn Sie die Größe eines Bildes basierend auf einem Prozentsatz der Seitenabmessungen festlegen möchten, müssen Sie die Abmessungen entsprechend berechnen und den Code entsprechend anpassen.
-
-####  F: Welche Bedeutung hat das`FileType` property when adding an image to the PDF document?
-
- A: Die`FileType`Eigenschaft gibt den Typ des Bildes an, das dem PDF-Dokument hinzugefügt wird. Im bereitgestellten Code ist der Wert`Unknown` zeigt an, dass der Bildtyp unbekannt ist und Aspose.PDF versucht, den Bildtyp anhand der Dateierweiterung zu bestimmen.
-
-#### F: Kann ich mit dieser Methode mehrere Bilder zu einer einzigen Seite hinzufügen?
-
- A: Ja, Sie können mehrere Bilder zu einer Seite hinzufügen, indem Sie mehrere`Aspose.Pdf.Image` Instanzen und fügen Sie sie der Absatzsammlung der Seite hinzu. Stellen Sie sicher, dass Sie die Positionierung und das Layout der Bilder nach Bedarf anpassen.
-
-#### F: Wie kann ich die Platzierung und Ausrichtung des hinzugefügten Bildes auf der Seite steuern?
-
- A: Die Platzierung und Ausrichtung des hinzugefügten Bildes kann durch Anpassen der Koordinaten und des Layouts des Bildes mithilfe von Eigenschaften wie`img.Left`, `img.Top`und Absatzformatierungseigenschaften.
-
-####  F: Was ist der Zweck der Festlegung der Seiteneigenschaften mit`page.PageInfo.Width` and `page.PageInfo.Height`?
-
-A: Durch das Festlegen der Seiteneigenschaften können Sie die Abmessungen der Seite selbst definieren. Dadurch wird sichergestellt, dass die Seitenabmessungen dem hinzugefügten Bild und allen anderen Inhalten, die Sie auf der Seite haben, gerecht werden.
-
-#### F: Kann ich für verschiedene Bilder im selben PDF-Dokument unterschiedliche Größen festlegen?
-
- A: Ja, Sie können verschiedene Größen für verschiedene Bilder festlegen, indem Sie separate`Aspose.Pdf.Image` Instanzen und Anpassen der`FixWidth`, `FixHeight`und Platzierungseigenschaften für jedes Bild.
-
-#### F: Wie kann ich diese Methode zum Festlegen von Bildgrößen in PDF-Dateien in meine eigenen Projekte integrieren?
-
-A: Um diese Methode in Ihre Projekte zu integrieren, folgen Sie den beschriebenen Schritten und ändern Sie den Code nach Bedarf. Sie können diese Methode verwenden, um Ihren PDF-Dokumenten Bilder bestimmter Größen basierend auf den Anforderungen Ihrer Anwendung hinzuzufügen.
+### Wie positioniere ich ein Bild an einer bestimmten Stelle auf der Seite?  
+ Sie können die`Image.LowerLeftX` Und`Image.LowerLeftY` Eigenschaften, um das Bild auf der Seite zu positionieren.

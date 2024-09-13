@@ -7,7 +7,7 @@ type: docs
 weight: 340
 url: /it/net/programming-with-text/replace-fonts/
 ---
-In questo tutorial, spiegheremo come sostituire specifici font in un file PDF usando la libreria Aspose.PDF per .NET. Esamineremo passo dopo passo il processo di caricamento di un documento PDF, la ricerca di frammenti di testo, l'identificazione dei font da sostituire, la sostituzione dei font e il salvataggio del PDF modificato usando il codice sorgente C# fornito.
+In questo tutorial, spiegheremo come sostituire specifici font in un file PDF usando la libreria Aspose.PDF per .NET. Passeremo attraverso il processo passo dopo passo di caricamento di un documento PDF, ricerca di frammenti di testo, identificazione dei font da sostituire, sostituzione dei font e salvataggio del PDF modificato usando il codice sorgente C# fornito.
 
 ## Prerequisiti
 
@@ -34,7 +34,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## Passaggio 3: Cerca e sostituisci i caratteri
 
- Creiamo un`TextFragmentAbsorber`oggetto e impostiamo l'opzione di modifica per rimuovere i font inutilizzati. Quindi, accettiamo l'assorbitore per tutte le pagine del documento PDF per cercare frammenti di testo.
+ Creiamo un`TextFragmentAbsorber` oggetto e impostiamo l'opzione di modifica per rimuovere i font inutilizzati. Quindi, accettiamo l'assorbitore per tutte le pagine del documento PDF per cercare frammenti di testo.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));

@@ -7,116 +7,172 @@ type: docs
 weight: 170
 url: /zh/net/programming-with-document/getdocumentwindow/
 ---
-Aspose.PDF for .NET 是一个功能强大的 PDF 操作库，允许开发人员在其 .NET 应用程序中创建、编辑和转换 PDF 文件。此库提供的功能之一是能够检索有关文档窗口属性的信息。本教程将指导您完成使用`GetDocumentWindow`Aspose.PDF for .NET 的功能用于检索有关 PDF 文档窗口属性的信息。
+# 介绍
 
-## 步骤 1：安装 Aspose.PDF for .NET
+您是否正在使用 PDF 并希望更好地控制它们打开时的外观？无论是隐藏菜单栏还是调整窗口大小以适合第一页，Aspose.Pdf for .NET 都为您提供了自定义 PDF 在查看器中打开时的行为所需的所有工具。在本教程中，我们将详细介绍如何在 Aspose.Pdf for .NET 中检索和操作文档窗口设置。
 
-要在 .NET 应用程序中使用 Aspose.PDF for .NET，您必须首先安装该库。您可以从[Aspose.PDF for .NET 下载页面](https://releases.aspose.com/pdf/net).
 
-下载库后，将 ZIP 文件的内容解压到计算机上的文件夹中。然后，您需要在 .NET 项目中添加对 Aspose.PDF for .NET DLL 的引用。
+# 先决条件
 
-## 第 2 步：加载 PDF 文档
+在深入学习本教程之前，请确保您已满足以下先决条件：
 
-一旦安装了 Aspose.PDF for .NET 并在 .NET 项目中添加了对 DLL 的引用，您就可以开始使用`GetDocumentWindow`用于检索有关 PDF 文档窗口属性的信息的功能。
+- 在您的开发环境中安装 Aspose.PDF for .NET。
+  - [下载 Aspose.PDF for .NET](https://releases.aspose.com/pdf/net/)
+-  Aspose.PDF 的有效许可证，或者您可以获取[免费试用](https://releases.aspose.com/)或者[临时执照](https://purchase.aspose.com/temporary-license/).
+- 对 .NET 和 C# 有基本的了解。
+- Visual Studio 或其他合适的 IDE。
 
-使用此功能的第一步是加载要检索信息的 PDF 文档。为此，您可以使用以下代码：
+# 导入包
+
+在开始编写任何代码之前，您需要导入必要的包。打开您的项目，然后在 C# 文件的顶部添加以下命名空间：
 
 ```csharp
-// PDF 文档的路径
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
+```
 
-//打开 PDF 文档
+这将使您能够访问使用 Aspose.PDF for .NET 处理 PDF 文档所需的所有类和方法。
+
+现在让我们分解一下检索不同文档窗口设置的过程。在本示例中，我们将使用名为`GetDocumentWindow.pdf`.
+
+## 步骤 1：设置文档目录路径
+
+首先，我们需要定义 PDF 文件的路径。拥有正确的文件路径至关重要，以避免执行过程中出现任何错误。
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+在这里，替换`"YOUR DOCUMENT DIRECTORY"`替换为 PDF 文件所在的实际目录。这是您加载 PDF 文档的工作目录。
+
+## 第 2 步：打开 PDF 文档
+
+现在文件路径已设置，下一步是使用 Aspose.PDF 打开 PDF 文档。这会将文档加载到内存中，以便您检索其属性。
+
+```csharp
 Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 ```
 
-在上面的代码中，替换`"YOUR DOCUMENT DIRECTORY"`以及 PDF 文档所在目录的路径。此代码会将 PDF 文档加载到`Document`对象，然后您可以使用它来检索有关文档窗口属性的信息。
+通过这行简单的代码，您已成功将 PDF 文件加载到`pdfDocument`对象，现在您可以访问其所有属性。
 
-## 步骤 3：检索文档的窗口属性
+## 步骤 3：检索窗口居中状态
 
-要检索有关 PDF 文档窗口属性的信息，您可以使用以下代码：
-
-```csharp
-//检索文档的窗口属性
-Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
-```
-
-在上面的代码中，每一行都会检索 PDF 文档的不同窗口属性并将其输出到控制台。您可以自定义此代码以仅检索您感兴趣的属性。
-
-### 使用 Aspose.PDF for .NET 获取 PDF 文件文档窗口的示例源代码 
-
-以下是使用以下函数检索 PDF 文档窗口属性的完整源代码：`GetDocumentWindow` Aspose.PDF for .NET的功能：
+接下来，让我们检查文档窗口在打开时是否应居中。默认值为`false`.
 
 ```csharp
-//文档目录的路径。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-//打开文档
-Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
-
-//获取不同的文档属性
-//文档窗口的位置 - 默认值：false
 Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-
-//主要阅读顺序；决定页面的位置
-//并排显示时 - 默认：L2R
-Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-
-//窗口的标题栏是否应显示文档标题
-//如果为 false，则标题栏显示 PDF 文件名 - 默认值：false
-Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-
-//是否调整文档窗口的大小以适应
-//第一个显示的页面 - 默认值：false
-Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-
-//是否隐藏查看器应用程序的菜单栏 - 默认值：false
-Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-
-//是否隐藏查看器应用程序的工具栏 - 默认值：false
-Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-
-//是否隐藏滚动条等 UI 元素
-//仅显示页面内容 - 默认值：false
-Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-
-//文档的页面模式。如何在退出全屏模式时显示文档。
-Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-
-//页面布局即单页，单列
-Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-
-//文档打开时应如何显示
-//即显示缩略图、全屏、显示附件面板
-Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 ```
+
+如果输出是`true`，文档窗口将在屏幕中央打开。否则，它将在默认位置打开。
+
+## 步骤 4：检查文本方向
+
+PDF 外观的另一个重要方面是文本方向，它决定了文本是从左到右 (L2R) 还是从右到左 (R2L) 阅读。您可以使用以下代码检索此信息：
+
+```csharp
+Console.WriteLine("Direction : {0}", pdfDocument.Direction);
+```
+
+输出将是`L2R`对于从左到右的文本和`R2L`适用于从右到左的文本。此设置对于阿拉伯语或希伯来语等语言的文档特别有用。
+
+## 步骤 5：在窗口中显示文档标题
+
+下一个属性允许您控制文档标题或文件名是否显示在窗口的标题栏上。默认情况下，此属性设置为`false`，表示将显示文件名。
+
+```csharp
+Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
+```
+
+如果您希望显示文档的标题而不是文件名，则必须启用此设置。
+
+## 步骤 6：调整窗口大小以适合第一页
+
+有时，您可能希望文档窗口在打开时自动调整大小以适合 PDF 的第一页。以下是检查该功能是否已启用的方法：
+
+```csharp
+Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
+```
+
+默认情况下，设置为`false`，这意味着无论第一页的大小如何，窗口大小都将保持原样。
+
+## 步骤 7：隐藏菜单栏
+
+为了获得更专注的阅读体验，您可能希望隐藏查看器应用程序的菜单栏。您可以使用以下行检索此设置：
+
+```csharp
+Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
+```
+
+这将返回`true`如果菜单栏被隐藏，并且`false`否则。
+
+## 步骤 8：隐藏工具栏
+
+同样，您可能还想隐藏 PDF 查看器中的工具栏，以获得更简洁的用户界面。此设置可以按如下方式检索：
+
+```csharp
+Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
+```
+
+如果启用此设置，则打开 PDF 时工具栏将被隐藏。
+
+## 步骤 9：隐藏滚动条和 UI 元素
+
+如果您希望仅显示页面内容而不显示任何其他 UI 元素（如滚动条），则此设置可以控制该行为：
+
+```csharp
+Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
+```
+
+当设置为`true`，PDF 查看器将隐藏滚动条和其他用户界面元素，只留下文档内容。
+
+## 步骤 10：设置非全屏页面模式
+
+您可以使用`NonFullScreenPageMode`属性。此设置有助于定义用户在非全屏模式下应如何与文档交互。
+
+```csharp
+Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
+```
+
+输出可以设置为不同的模式，如缩略图、轮廓或附件面板。
+
+## 步骤 11：定义页面布局
+
+此设置允许您控制文档页面的布局方式。例如，您可以选择单页视图或连续列视图：
+
+```csharp
+Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
+```
+
+这使得用户可以灵活地阅读或查看文档内容。
+
+## 步骤 12：指定页面模式
+
+最后，`PageMode`属性定义文档打开时的显示方式。选项包括显示缩略图、进入全屏模式或显示附件面板。
+
+```csharp
+Console.WriteLine("PageMode : {0}", pdfDocument.PageMode);
+```
+
+根据您的需要，您可以将其设置为适合您的 PDF 用途的任何模式。
 
 ## 结论
 
-在本教程中，我们学习了如何使用 Aspose.PDF for .NET 检索有关 PDF 文档窗口属性的信息。通过加载 PDF 文档并访问其窗口属性，您可以收集有关在查看器应用程序中打开时应如何显示文档的信息。Aspose.PDF for .NET 提供了一组强大的功能，可用于以编程方式处理 PDF 文件，使其成为 .NET 应用程序中 PDF 操作的宝贵工具。
+如您所见，Aspose.PDF for .NET 提供了全面的工具来控制 PDF 文档在各种 PDF 查看器中的显示方式。无论您是想隐藏工具栏、将窗口居中还是控制文本方向，Aspose.PDF 都能提供灵活性来增强用户的查看体验。
 
-### 常见问题解答
+# 常见问题解答
 
-#### 问：检索 PDF 文档的窗口属性的目的是什么？
+### 我可以自定义 PDF 的初始缩放级别吗？
+是的，Aspose.PDF 允许您设置文档打开时的缩放级别。
 
-答：检索 PDF 文档的窗口属性可让您收集有关在查看器应用程序中打开时应如何显示 PDF 文档的信息。这些属性控制各个方面，例如窗口位置、显示模式和 UI 元素的可见性。
+### 如何锁定 PDF 的窗口大小？
+您可以设置`FitWindow`属性来防止窗口调整大小。
 
-#### 问：如何在我的.NET 项目中安装 Aspose.PDF for .NET？
+### Aspose.PDF 是否支持不同的阅读模式？
+是的，它支持全屏、缩略图和附件等不同模式。
 
-答：要安装 Aspose.PDF for .NET，您需要从[Aspose.PDF for .NET 下载页面](https://releases.aspose.com/pdf/net)。下载后，解压ZIP文件的内容并在您的.NET项目中添加对Aspose.PDF for .NET DLL的引用。
+### 是否可以隐藏 PDF 查看器中的滚动条？
+当然，你可以通过设置`HideWindowUI`财产`true`.
 
-#### 问：我可以自定义代码以仅检索特定的窗口属性吗？
-
-答：是的，您可以通过注释掉不需要的行来自定义代码以检索特定的窗口属性。代码中的每一行都对应一个特定的窗口属性，因此您可以根据需要包含或排除属性。
-
-#### 问：使用 Aspose.PDF for .NET 可以检索哪些类型的窗口属性？
-
-答：使用 Aspose.PDF for .NET，您可以检索 PDF 文档的各种窗口属性，包括居中窗口、设置页面布局、控制工具栏和菜单栏的显示等。
+### 我可以将文档窗口打开后置于中央吗？
+是的，您可以通过设置来控制`CenterWindow`财产。

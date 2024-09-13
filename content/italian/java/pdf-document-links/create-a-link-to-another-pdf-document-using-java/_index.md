@@ -10,7 +10,7 @@ url: /it/java/pdf-document-links/create-a-link-to-another-pdf-document-using-jav
 
 ## Introduzione alla creazione di un collegamento a un altro documento PDF utilizzando Java
 
-In questo tutorial, esploreremo come creare un collegamento a un altro documento PDF usando Java e la libreria Aspose.PDF per Java. I collegamenti all'interno dei documenti PDF possono essere incredibilmente utili per creare PDF interattivi e interconnessi. Che tu voglia fornire informazioni aggiuntive, creare un indice o semplicemente collegare documenti correlati, questa guida ti guiderà passo dopo passo nel processo.
+In questo tutorial, esploreremo come creare un collegamento a un altro documento PDF usando Java e la libreria Aspose.PDF per Java. I collegamenti all'interno dei documenti PDF possono essere incredibilmente utili per creare PDF interattivi e interconnessi. Che tu voglia fornire informazioni aggiuntive, creare un indice o semplicemente collegare insieme documenti correlati, questa guida ti guiderà passo dopo passo nel processo.
 
 ## Informazioni su Aspose.PDF per Java
 
@@ -67,7 +67,7 @@ link.getBorder().setWidth(1);
 
 ## Salvataggio del documento PDF
 
-Dopo aver apportato tutte le modifiche necessarie, non dimenticare di salvare il documento PDF.
+Non dimenticare di salvare il documento PDF dopo aver apportato tutte le modifiche necessarie.
 
 ## Test del documento PDF collegato
 

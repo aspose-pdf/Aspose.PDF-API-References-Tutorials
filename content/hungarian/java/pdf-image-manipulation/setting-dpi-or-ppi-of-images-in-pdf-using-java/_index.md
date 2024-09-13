@@ -60,7 +60,7 @@ A PDF-képek DPI/PPI-jének beállítása után feltétlenül ellenőrizze, hogy
 
 ## Következtetés
 
-Összefoglalva, a PDF-fájlokban lévő képek DPI-jének vagy PPI-jének Java használatával történő beállítása jelentősen befolyásolhatja a dokumentumok minőségét és használhatóságát. Feltérképeztük az Aspose.PDF for Java-n keresztül elérhető módszereket, és megvitattuk a DPI/PPI-értékekkel kapcsolatos megalapozott döntések meghozatalának legjobb gyakorlatait. Ezen irányelvek követésével javíthatja PDF-dokumentumai vizuális vonzerejét és funkcionalitását.
+Összefoglalva, a PDF-fájlokban lévő képek DPI-jének vagy PPI-jének Java használatával történő beállítása jelentősen befolyásolhatja a dokumentumok minőségét és használhatóságát. Feltérképeztük a Java Aspose.PDF-en keresztül elérhető módszereket, és megvitattuk a DPI/PPI-értékekkel kapcsolatos megalapozott döntések meghozatalának bevált gyakorlatait. Ezen irányelvek követésével javíthatja PDF-dokumentumai vizuális vonzerejét és funkcionalitását.
 
 ## GYIK
 

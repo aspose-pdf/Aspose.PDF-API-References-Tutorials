@@ -50,7 +50,7 @@ ITaggedContent taggedContent = document.TaggedContent;
 
 ## 4. lépés: Állítsa be a dokumentum címét és nyelvét
 
-Most már beállíthatjuk a dokumentum címét és nyelvét.
+Most beállíthatjuk a dokumentum címét és nyelvét.
 
 ```csharp
 // Határozza meg a dokumentum címét és nyelvét
@@ -156,7 +156,7 @@ string outFile = dataDir + "LinkStructureElements_Output.pdf";
 string logFile = dataDir + "46035_log.xml";
 string imgFile = dataDir + "google-icon-512.png";
 
-// Dokumentum létrehozása és címkézett PDF tartalom beszerzése
+//Dokumentum létrehozása és címkézett PDF tartalom beszerzése
 Document document = new Document(); 
 ITaggedContent taggedContent = document.TaggedContent;
 

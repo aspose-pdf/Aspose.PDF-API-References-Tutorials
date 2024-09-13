@@ -1,7 +1,7 @@
 ---
 title: Ta bort oanvända teckensnitt i PDF-fil
 linktitle: Ta bort oanvända teckensnitt i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du tar bort oanvända teckensnitt i PDF-filer med Aspose.PDF för .NET.
 type: docs
 weight: 300
@@ -120,7 +120,7 @@ S: Handledningen guidar dig genom processen steg för steg:
 
 S: Ja, du kan ändra koden för att ersätta oanvända teckensnitt med ett valfritt teckensnitt. I den medföljande exempelkoden används typsnittet "Arial, Bold" som ersättning.
 
-####  F: Hur fungerar`TextFragmentAbsorber` work to remove unused fonts?
+#### F: Hur fungerar`TextFragmentAbsorber` work to remove unused fonts?
 
  A: Den`TextFragmentAbsorber` är konfigurerad med`TextEditOptions.FontReplace.RemoveUnusedFonts` parameter, som identifierar oanvända teckensnitt i textfragmenten i PDF-filen. Efter absorption kan du iterera dig igenom`TextFragments` och ställ in deras typsnitt till önskade ersättningsteckensnitt.
 

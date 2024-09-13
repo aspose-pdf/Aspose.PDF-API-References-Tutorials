@@ -2,140 +2,146 @@
 title: Numero di pagina nell'intestazione e nel piè di pagina tramite casella mobile
 linktitle: Numero di pagina nell'intestazione e nel piè di pagina tramite casella mobile
 second_title: Riferimento API Aspose.PDF per .NET
-description: Scopri come aggiungere il numero di pagina nell'intestazione e nel piè di pagina di un documento PDF con Aspose.PDF per .NET.
+description: Aggiungi facilmente i numeri di pagina nell'intestazione e nel piè di pagina del tuo PDF utilizzando una casella mobile con Aspose.PDF per .NET in questa guida dettagliata.
 type: docs
 weight: 150
 url: /it/net/programming-with-stamps-and-watermarks/page-number-in-header-footer-using-floating-box/
 ---
-In questo tutorial, ti guideremo passo dopo passo su come aggiungere il numero di pagina nell'intestazione e nel piè di pagina di un documento PDF utilizzando FloatingBox con Aspose.PDF per .NET. Utilizzeremo il codice sorgente C# fornito per creare un documento PDF, aggiungere una pagina, creare un FloatingBox, impostarne la posizione e aggiungervi il numero di pagina, quindi salvare il documento PDF modificato.
+## Introduzione
 
-## Fase 1: Impostazione dell'ambiente
+Quando si tratta di gestire i documenti PDF a livello di programmazione, Aspose.PDF per .NET si distingue come uno strumento eccezionale. Semplifica il modo in cui creiamo, modifichiamo e manipoliamo i file PDF nelle applicazioni .NET. Che tu stia generando fatture, report o qualsiasi tipo di documento, aggiungere numeri di pagina in modo elegante può migliorare la professionalità e l'organizzazione dei tuoi PDF. In questo tutorial, ci immergiamo in come aggiungere numeri di pagina nell'intestazione e nel piè di pagina del tuo PDF utilizzando una Floating Box. Pronti per iniziare? Andiamo!
 
-Prima di iniziare, assicurati di avere quanto segue:
+## Prerequisiti
 
-- Un ambiente di sviluppo .NET installato.
-- La libreria Aspose.PDF per .NET è stata scaricata e a cui si fa riferimento nel progetto.
+Prima di iniziare questo entusiasmante viaggio nel regno della manipolazione dei PDF, ecco alcune cose che devi sapere:
 
-## Fase 2: Creazione del documento PDF e aggiunta di una pagina
+### Configurazione dell'ambiente .NET
+Assicurati di avere un ambiente di sviluppo .NET. Puoi usare Visual Studio, che è una scelta popolare tra gli sviluppatori per le applicazioni .NET.
 
-Il primo passo è creare un'istanza del documento PDF e aggiungervi una pagina. Ecco come:
+### Libreria Aspose.PDF
+Installa la libreria Aspose.PDF. Puoi scaricarla facilmente dal sito web:
+
+- [Scarica Aspose.PDF per .NET](https://releases.aspose.com/pdf/net/)
+
+### Conoscenza di base della programmazione C#
+Una conoscenza di base del linguaggio C# ti aiuterà ad afferrare i concetti e gli spezzoni di codice presentati in questo tutorial.
+
+### Accesso alla documentazione
+ È sempre utile avere il[Documentazione Aspose.PDF](https://reference.aspose.com/pdf/net/) utile per la consultazione e l'esplorazione più approfondita di eventuali funzionalità aggiuntive.
+
+## Importa pacchetti
+
+Per iniziare, dovrai importare i pacchetti necessari nel tuo progetto. Questo assicura che l'assembly Aspose.PDF sia accessibile per l'uso nel tuo codice. Ecco come fare:
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Ora, scomponiamo il processo di aggiunta dei numeri di pagina tramite una Floating Box in passaggi gestibili. Seguiteci mentre procediamo.
+
+## Passaggio 1: configura l'ambiente del documento
+
+Iniziamo specificando la directory in cui verrà archiviato il tuo documento PDF. Questo è fondamentale perché determina dove verrà salvato il tuo file di output.
 
 ```csharp
 // Percorso verso la directory dei documenti.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
-// Crea un'istanza del documento PDF
+ Sostituire`YOUR DOCUMENT DIRECTORY` con il percorso di tua scelta in cui desideri salvare il file PDF di output.
+
+## Passaggio 2: creare un'istanza del documento
+
+ Il passo successivo è creare un nuovo documento PDF. Ciò comporta l'utilizzo di`Document` classe dalla libreria Aspose.PDF.
+
+```csharp
+// Crea un'istanza del documento
 Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
+```
+ Qui creiamo una nuova istanza di`Document` classe, che funge da tela per la nostra manipolazione.
 
+## Passaggio 3: aggiungere una nuova pagina
+
+Ora, aggiungiamo una pagina al nostro documento PDF. Ogni PDF ha bisogno di almeno una pagina, giusto?
+
+```csharp
 // Aggiungere una pagina al documento PDF
 Aspose.Pdf.Page page = pdf.Pages.Add();
 ```
+Questo frammento di codice aggiunge una nuova pagina al nostro documento, rendendolo pronto a ricevere contenuti, tra cui la nostra casella mobile con i numeri di pagina.
 
-Assicurati di sostituire "LA TUA DIRECTORY DEI DOCUMENTI" con il percorso effettivo della directory in cui desideri salvare il documento PDF.
+## Passaggio 4: creare una casella mobile
 
-## Passaggio 3: creazione del FloatingBox e aggiunta del numero di pagina
-
-Ora che la pagina è stata aggiunta al documento PDF, possiamo creare un FloatingBox, impostarne la posizione e aggiungervi il numero di pagina. Ecco come:
-
-```csharp
-// Crea un FloatingBox con una larghezza di 140 e un'altezza di 80
-Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
-
-// Imposta la posizione sinistra del paragrafo
-box1. Left = 2;
-
-// Imposta la posizione superiore del paragrafo
-box1. Top = 10;
-
-// Aggiungere il numero di pagina al FloatingBox
-box1.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Page: ($p/ $P )"));
-
-// Aggiungere FloatingBox alla pagina
-page.Paragraphs.Add(box1);
-```
-
-Il codice sopra crea un FloatingBox con larghezza 140 e altezza 80. Quindi, ne impostiamo la posizione specificando i valori left e top. Infine, aggiungiamo il numero di pagina al FloatingBox utilizzando un TextFragment contenente la sintassi "($p/ $P )" che verrà sostituito con il numero di pagina corrente e il numero totale di pagine.
-
-## Passaggio 4: salvataggio del documento PDF modificato
-
-Una volta aggiunto il numero di pagina all'intestazione o al piè di pagina tramite FloatingBox, possiamo salvare il documento PDF modificato. Ecco come:
+ Successivamente, è il momento di creare la nostra casella mobile che conterrà il numero di pagina.`FloatingBox`La classe ci consente di posizionare liberamente i contenuti sulla pagina.
 
 ```csharp
-// Salvare il documento PDF modificato
-pdf.Save(dataDir + "PageNumberinHeaderFooterUsingFloatingBox_out.pdf");
-```
-
-Il codice soprastante salva il documento PDF modificato nella directory specificata.
-
-### Esempio di codice sorgente per il numero di pagina nell'intestazione e nel piè di pagina utilizzando la casella mobile con Aspose.PDF per .NET 
-```csharp
-
-// Percorso verso la directory dei documenti.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Crea un'istanza del documento
-Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
-
-// Aggiungere una pagina nel documento PDF
-Aspose.Pdf.Page page = pdf.Pages.Add();
-
 // Inizializza una nuova istanza della classe FloatingBox
 Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
+```
+ Qui, i parametri`(140, 80)` specifica la larghezza e l'altezza del Floating Box. Puoi regolare questi valori in base alle tue preferenze di layout.
 
+## Fase 5: Posizionamento della scatola galleggiante
+
+ Il posizionamento è fondamentale! Devi stabilire dove apparirà il numero di pagina sulla pagina. Lavorerai con il`Left` E`Top` proprietà per specificare la posizione.
+
+```csharp
 // Valore float che indica la posizione a sinistra del paragrafo
 box1.Left = 2;
-
 // Valore float che indica la posizione superiore del paragrafo
 box1.Top = 10;
+```
+Questi valori determinano il posizionamento del Floating Box sulla pagina. Sentiti libero di sperimentarli per vedere cosa sembra migliore per il tuo documento.
 
+## Passaggio 6: aggiungere testo con la macro del numero di pagina
+
+Ora aggiungeremo una stringa che mostra dinamicamente il numero di pagina. È qui che avviene la magia!
+
+```csharp
 // Aggiungere le macro alla raccolta di paragrafi di FloatingBox
 box1.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Page: ($p/ $P )"));
+```
+ In questo caso,`($p/ $P)`è una macro che visualizzerà il numero di pagina corrente (`$p`) e il numero totale di pagine (`$P`). Di conseguenza, formatta il testo in modo che venga visualizzato qualcosa del tipo "Pagina: 1/5".
 
+## Passaggio 7: aggiungere la casella mobile alla pagina
+
+È il momento di aggiungere la casella mobile, insieme al testo del numero di pagina, alla nostra pagina appena creata.
+
+```csharp
 // Aggiungi un floatingBox alla pagina
 page.Paragraphs.Add(box1);
+```
+Questa riga sostanzialmente incorpora la casella mobile nella pagina, rendendola parte del layout del documento. 
 
+## Passaggio 8: salva il documento
+
+Infine, non dimenticare di salvare il tuo lavoro! L'ultimo passaggio è salvare il tuo documento PDF con un nome file appropriato.
+
+```csharp
 // Salva il documento
 pdf.Save(dataDir + "PageNumberinHeaderFooterUsingFloatingBox_out.pdf");
-
 ```
+Assicurati che il percorso specificato includa il nome file desiderato. Ora, il tuo fantastico PDF con numeri di pagina è stato creato! 
 
 ## Conclusione
 
-Congratulazioni! Hai imparato come aggiungere il numero di pagina nell'intestazione e nel piè di pagina del documento PDF usando FloatingBox con Aspose.PDF per .NET. Ora puoi personalizzare le tue intestazioni e i tuoi piè di pagina aggiungendo informazioni dinamiche come il numero di pagina.
+Ed ecco fatto, gente! Aggiungere numeri di pagina all'intestazione e al piè di pagina del tuo PDF usando Aspose.PDF per .NET è semplicissimo. Con solo poche righe di codice, hai intrapreso un viaggio per padroneggiare l'elaborazione dei documenti nelle tue applicazioni. Non esitare a sperimentare diversi layout e formattazioni: dopotutto, la creatività non ha limiti! Pronti a generare quel documento professionale? Prendi il tuo cappello da programmatore e inizia a sperimentare.
 
-### Domande frequenti
+## Domande frequenti
 
-#### D: Cos'è un FloatingBox e come viene utilizzato per aggiungere numeri di pagina nell'intestazione o nel piè di pagina di un documento PDF?
+### Posso personalizzare l'aspetto del testo del numero di pagina?  
+ Sì, puoi personalizzare le proprietà del testo, come la dimensione del carattere, il colore e lo stile, regolando il`TextFragment` proprietà.
 
-R: Un FloatingBox è un elemento di layout versatile in Aspose.PDF che può contenere vari contenuti, tra cui testo e immagini. In questo tutorial, viene utilizzato per creare un contenitore per il numero di pagina, consentendo di inserire dinamicamente il numero di pagina corrente e il conteggio totale delle pagine nell'intestazione o nel piè di pagina.
+### Aspose.PDF è gratuito?  
+ Mentre Aspose.PDF offre una prova gratuita, è un prodotto a pagamento per uso produttivo. Puoi[compralo qui](https://purchase.aspose.com/buy).
 
-#### D: In che modo il codice sorgente C# fornito riesce ad aggiungere numeri di pagina utilizzando un FloatingBox?
+### Dove posso trovare una documentazione più dettagliata?  
+ Puoi trovare una documentazione completa su[Sito di documentazione Aspose.PDF](https://reference.aspose.com/pdf/net/).
 
-A: Il frammento di codice mostra come creare un documento PDF, aggiungere una pagina, creare un FloatingBox, impostarne la posizione all'interno della pagina e inserire il numero di pagina utilizzando un TextFragment. La sintassi "($p/ $P )" nel TextFragment viene sostituita con il numero di pagina corrente e il conteggio totale delle pagine.
+### Come faccio ad applicare intestazioni e piè di pagina a più pagine?  
+È possibile scorrere tutte le pagine del documento e applicare la casella mobile a ciascuna di esse in modo simile.
 
-#### D: Posso personalizzare l'aspetto e la formattazione del numero di pagina aggiunto tramite FloatingBox?
-
-R: Sì, puoi personalizzare l'aspetto del numero di pagina modificando le proprietà del TextFragment all'interno del FloatingBox. Puoi cambiare la dimensione del carattere, il colore, lo stile, l'allineamento e altre opzioni di formattazione.
-
-#### D: È possibile aggiungere diversi elementi dinamici, come data e ora, all'intestazione o al piè di pagina utilizzando un approccio simile?
-
-R: Assolutamente, puoi aggiungere diversi elementi dinamici come data, ora, metadati del documento o testo personalizzato modificando il contenuto di TextFragment all'interno di FloatingBox. Puoi usare macro come "($p/ $P )" per i numeri di pagina o "($date)" per la data corrente.
-
-#### D: Come faccio a specificare la posizione del FloatingBox all'interno della sezione dell'intestazione o del piè di pagina?
- A: Il codice fornito imposta la posizione del FloatingBox utilizzando`Left` E`Top` proprietà. Puoi regolare questi valori per posizionare FloatingBox come desideri all'interno della sezione header o footer.
-
-#### D: Posso usare un font o uno stile diverso per il numero di pagina nell'intestazione o nel piè di pagina?
-
-R: Sì, puoi personalizzare il font, lo stile e altre proprietà di formattazione del testo del numero di pagina modificando le proprietà TextFragment all'interno di FloatingBox.
-
-#### D: Cosa succede se il contenuto del FloatingBox supera le sue dimensioni?
-
-R: Se il contenuto all'interno del FloatingBox supera le sue dimensioni, potrebbe essere tagliato o potrebbero sorgere problemi di layout. Assicurati che le dimensioni del FloatingBox siano adatte ad accogliere il contenuto e, se necessario, valuta di modificare il layout della pagina.
-
-#### D: È possibile aggiungere più FloatingBox con contenuti diversi all'intestazione o al piè di pagina della stessa pagina?
-
-R: Sì, puoi aggiungere più FloatingBox con contenuti diversi all'intestazione o al piè di pagina della stessa pagina creando istanze di FloatingBox separate e aggiungendole alla raccolta Paragrafi della pagina.
-
-#### D: Posso utilizzare l'approccio FloatingBox per aggiungere contenuto ad altre sezioni del documento PDF, come il corpo o i margini?
-
-R: Sebbene i FloatingBox siano comunemente utilizzati per intestazioni e piè di pagina, è possibile utilizzarli anche per aggiungere contenuto ad altre sezioni del documento PDF, come il corpo o i margini, posizionandoli di conseguenza all'interno della pagina.
+### Cosa succede se ho bisogno di supporto per funzionalità aggiuntive?  
+Per qualsiasi ulteriore domanda o supporto, puoi visitare il[Forum di Aspose](https://forum.aspose.com/c/pdf/10).

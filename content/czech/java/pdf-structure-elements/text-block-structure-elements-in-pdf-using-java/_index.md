@@ -29,7 +29,7 @@ Textové bloky jsou základními součástmi dokumentu PDF, protože představuj
 
 Než začnete pracovat s PDF v Javě, ujistěte se, že máte nainstalované potřebné nástroje a knihovny. Můžete použít Aspose.PDF for Java, výkonnou knihovnu pro manipulaci s PDF. Postup nastavení:
 
-1.  Stáhněte si Aspose.PDF pro Java z[zde](https://releases.aspose.com/pdf/java/).
+1.  Stáhněte si Aspose.PDF pro Javu z[zde](https://releases.aspose.com/pdf/java/).
 2. Přidejte knihovnu do svého projektu Java.
 
 ### Krok 2: Načtěte dokument PDF

@@ -2,133 +2,159 @@
 title: Afbeeldingsgrootte in PDF-bestand instellen
 linktitle: Afbeeldingsgrootte in PDF-bestand instellen
 second_title: Aspose.PDF voor .NET API-referentie
-description: Stapsgewijze handleiding voor het instellen van de grootte van een afbeelding in een PDF-bestand met Aspose.PDF voor .NET.
+description: Leer hoe u de afbeeldingsgrootte in een PDF instelt met Aspose.PDF voor .NET. Deze stapsgewijze handleiding helpt u bij het aanpassen van de grootte van afbeeldingen, het aanpassen van pagina-eigenschappen en het opslaan van PDF's.
 type: docs
 weight: 270
 url: /nl/net/programming-with-images/set-image-size/
 ---
-In deze tutorial laten we u zien hoe u de grootte van een afbeelding in een PDF-bestand instelt met Aspose.PDF voor .NET. Volg deze stappen om deze bewerking eenvoudig uit te voeren.
+## Invoering
+
+Werken met PDF's is een veelvoorkomende vereiste voor veel toepassingen en de mogelijkheid om elementen in een PDF-bestand te manipuleren kan cruciaal zijn. Of u nu een rapportgenerator bouwt of dynamische inhoud toevoegt aan uw PDF, het regelen van de grootte van afbeeldingen in uw document is een essentiële functie. In deze tutorial laten we u zien hoe u de afbeeldingsgrootte in een PDF-bestand instelt met Aspose.PDF voor .NET. Deze krachtige bibliotheek biedt uitgebreide controle over PDF-inhoud en we zullen het stap voor stap uitleggen om u te laten zien hoe eenvoudig het kan zijn. Aan het einde kunt u afbeeldingen met vertrouwen van grootte veranderen en begrijpen hoe deze functionaliteit uw PDF-workflows kan verbeteren.
+
 
 ## Vereisten
 
-Voordat u begint, moet u ervoor zorgen dat u het volgende bij de hand hebt:
+Voordat we in de code duiken, zijn er een paar dingen die je nodig hebt om deze tutorial te kunnen volgen.
 
-- Visual Studio of een andere ontwikkelomgeving geïnstalleerd en geconfigureerd.
-- Basiskennis van de programmeertaal C#.
-- Aspose.PDF bibliotheek voor .NET geïnstalleerd. U kunt het downloaden van de officiële website van Aspose.
+1.  Aspose.PDF voor .NET: Zorg ervoor dat u de nieuwste versie van de Aspose.PDF-bibliotheek hebt geïnstalleerd. U kunt[download het hier](https://releases.aspose.com/pdf/net/).
+2. .NET Framework of .NET Core: Zorg ervoor dat u een werkomgeving hebt met .NET Framework of .NET Core ingesteld.
+3. Basiskennis van C#: We gebruiken C# als programmeertaal, dus vertrouwdheid ermee is essentieel.
+4. Voorbeeldafbeelding: U hebt een voorbeeldafbeelding nodig om in de PDF te embedden. U kunt elke afbeelding gebruiken die u wilt, maar zorg ervoor dat deze toegankelijk is in uw projectdirectory.
 
-## Stap 1: Het PDF-document maken
+## Pakketten importeren
 
-Om te beginnen gebruikt u de volgende code om een nieuw PDF-document te maken:
+Om Aspose.PDF voor .NET te gebruiken, moet u eerst de benodigde naamruimten importeren. Hier is een eenvoudige installatie:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Een Document-object instantiëren
-Document doc = new Document();
-
-// Voeg een pagina toe aan de verzameling pagina's van het PDF-bestand
-Aspose.Pdf.Page page = doc.Pages.Add();
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Stap 2: Foto toegevoegd
+Nu we de basis onder de knie hebben, gaan we verder met het maken en wijzigen van een PDF-document.
 
-Vervolgens voegen we een afbeelding toe aan de pagina van het PDF-document. Gebruik de volgende code:
+## Stap 1: Initialiseer uw PDF-document
+
+ Het eerste wat we moeten doen is een nieuw PDF-document maken. We gebruiken de`Document` klasse van Aspose.PDF om dit te bereiken.
+
+```csharp
+// Het pad naar de documentenmap.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Instantieer Document-object
+Document doc = new Document();
+```
+ 
+ Hier instantiëren we een`Document` object, dat ons PDF-bestand zal vertegenwoordigen. We specificeren ook de directory waar onze bestanden zich bevinden met behulp van de`dataDir` variabele. Dit is het startpunt voor het maken van een PDF met Aspose.PDF.
+
+## Stap 2: Voeg een nieuwe pagina toe aan uw PDF
+
+Zodra we ons document klaar hebben, moeten we er een pagina aan toevoegen. Elke PDF moet minstens één pagina hebben, dus laten we er een toevoegen.
+
+```csharp
+// Pagina toevoegen aan paginaverzameling van PDF-bestand
+Aspose.Pdf.Page page = doc.Pages.Add();
+```
+ 
+ We voegen een nieuwe pagina toe aan het document met behulp van de`Pages.Add()` methode. Deze pagina fungeert als canvas waarop we onze afbeelding plaatsen. Elke pagina in een PDF is in feite een blanco lei waar u tekst, afbeeldingen of andere content aan kunt toevoegen.
+
+## Stap 3: Een afbeeldinginstantie maken
+
+ Nu is het tijd om de afbeelding voor te bereiden die we in de PDF willen invoegen. Aspose.PDF biedt een`Image` klasse om afbeeldingen te verwerken.
 
 ```csharp
 // Een afbeeldinginstantie maken
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
+```
+ 
+ We maken een nieuw exemplaar van de`Image` klasse. Dit object bevat de eigenschappen van de afbeelding die we aan de PDF willen toevoegen. In de volgende stappen configureren we de grootte en het type van de afbeelding.
 
+## Stap 4: Stel de afbeeldingsgrootte in (breedte en hoogte)
+
+Hier komen we tot de kern van onze tutorial: het instellen van de grootte van de afbeelding. Met Aspose.PDF kunt u de breedte en hoogte van de afbeelding in punten opgeven.
+
+```csharp
 // Stel de breedte en hoogte van de afbeelding in punten in
-img. FixWidth = 100;
-img. FixHeight = 100;
+img.FixWidth = 100;
+img.FixHeight = 100;
+```
+ 
+ De`FixWidth` En`FixHeight`Met eigenschappen kunt u de exacte afmetingen van de afbeelding in punten instellen. In dit voorbeeld wijzigen we de grootte van de afbeelding naar 100x100 punten. U kunt deze waarden aanpassen aan uw behoeften.
 
-//Stel het afbeeldingstype in op onbekend (Onbekend)
+## Stap 5: Geef het afbeeldingstype op
+
+Afhankelijk van het afbeeldingsformaat waarmee u werkt, moet u mogelijk het afbeeldingstype instellen. Aspose.PDF ondersteunt verschillende afbeeldingsformaten en hier definiëren we het bestandstype.
+
+```csharp
+// Stel het afbeeldingstype in als SVG
 img.FileType = Aspose.Pdf.ImageFileType.Unknown;
+```
+ 
+ In dit geval laten we het bestandstype zoals`Unknown` , waarmee de bibliotheek het afbeeldingstype automatisch kan detecteren. Als u het specifieke bestandstype weet, kunt u dit instellen (bijv.`ImageFileType.Jpeg` voor JPEG-afbeeldingen). Met deze stap weet Aspose hoe de afbeelding correct moet worden verwerkt.
 
-// Pad naar het bronbestand van de afbeelding
+## Stap 6: Stel het pad naar uw afbeeldingsbestand in
+
+Nu moeten we Aspose vertellen waar het het imagebestand kan vinden. Zorg ervoor dat uw image toegankelijk is in de opgegeven directory.
+
+```csharp
+// Pad voor bronbestand
 img.File = dataDir + "aspose-logo.jpg";
+```
+ 
+ Hier stellen we het bestandspad naar de afbeelding in. De afbeelding bevindt zich in dit geval in de`dataDir` map en is genoemd`aspose-logo.jpg`Zorg ervoor dat u dit vervangt door de werkelijke naam en locatie van uw afbeeldingsbestand.
 
-// Voeg de afbeelding toe aan de alineaverzameling van de pagina
+## Stap 7: Voeg de afbeelding toe aan de pagina
+
+Nu de afbeelding geconfigureerd is en het bestandspad is ingesteld, kunnen we de afbeelding aan onze pagina toevoegen.
+
+```csharp
+// Voeg de afbeelding toe aan de alineaverzameling
 page.Paragraphs.Add(img);
 ```
+ 
+ De`Paragraphs.Add()` methode stelt ons in staat om de afbeelding aan de pagina toe te voegen. Denk aan de`Paragraphs` verzameling als een lijst met items die op de PDF-pagina worden weergegeven. We kunnen meerdere elementen aan deze verzameling toevoegen, zoals afbeeldingen, tekst en vormen.
 
-Zorg ervoor dat u het juiste pad naar het bronbestand van de afbeelding opgeeft.
+## Stap 8: Pagina-eigenschappen aanpassen
 
-## Stap 3: Pagina-eigenschappen instellen
-
-Ten slotte stellen we de eigenschappen van de pagina in, waaronder de breedte en hoogte. Gebruik de volgende code:
+Om ervoor te zorgen dat onze afbeelding goed past, passen we de paginagrootte aan. Dit zorgt ervoor dat de pagina-afmetingen overeenkomen met de content die we toevoegen.
 
 ```csharp
 // Pagina-eigenschappen instellen
 page.PageInfo.Width = 800;
 page.PageInfo.Height = 800;
 ```
+ 
+Hier stellen we de paginabreedte en -hoogte in op 800 punten. Deze stap is optioneel, maar zorgt ervoor dat de pagina de aangepaste afbeelding kan bevatten. U kunt deze waarden aanpassen op basis van uw specifieke vereisten.
 
-### Voorbeeldbroncode voor Set Image Size met behulp van Aspose.PDF voor .NET 
+## Stap 9: Sla de PDF op
+
+Nadat we de afbeeldings- en pagina-eigenschappen hebben geconfigureerd, kunnen we de PDF opslaan.
+
 ```csharp
-// Het pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantieer Document object
-Document doc = new Document();
-// pagina toevoegen aan pagina's verzameling van PDF-bestand
-Aspose.Pdf.Page page = doc.Pages.Add();
-// Een afbeeldinginstantie maken
-Aspose.Pdf.Image img = new Aspose.Pdf.Image();
-// Stel de breedte en hoogte van de afbeelding in punten in
-img.FixWidth = 100;
-img.FixHeight = 100;
-// Stel het afbeeldingstype in als SVG
-img.FileType = Aspose.Pdf.ImageFileType.Unknown;
-// Pad voor bronbestand
-img.File = dataDir + "aspose-logo.jpg";
-page.Paragraphs.Add(img);
-//Pagina-eigenschappen instellen
-page.PageInfo.Width = 800;
-page.PageInfo.Height = 800;
+//Sla het resulterende PDF-bestand op
 dataDir = dataDir + "SetImageSize_out.pdf";
-// resulterend PDF-bestand opslaan
 doc.Save(dataDir);
-Console.WriteLine("\nImage size added successfully.\nFile saved at " + dataDir);
 ```
+ 
+ We slaan het gewijzigde document op als`SetImageSize_out.pdf` in dezelfde directory. Dit bestand zal nu de aangepaste afbeelding bevatten die u hebt toegevoegd.
 
 ## Conclusie
 
-Gefeliciteerd! U hebt met succes de grootte van een afbeelding in een PDF-document ingesteld met Aspose.PDF voor .NET. U kunt deze methode nu toepassen op uw eigen projecten om de grootte van afbeeldingen in PDF-bestanden aan te passen.
+In deze tutorial hebben we behandeld hoe u de afbeeldingsgrootte in een PDF instelt met Aspose.PDF voor .NET. We hebben u door het maken van een document, het toevoegen van een pagina, het configureren van een afbeelding en het opslaan van het resultaat geleid. Deze stapsgewijze handleiding is slechts het begin van wat u kunt doen met Aspose.PDF voor .NET. Nu u hebt geleerd hoe u de grootte van afbeeldingen kunt wijzigen, kunt u gerust andere functies verkennen, zoals tekstopmaak, het maken van tabellen en zelfs het toevoegen van aantekeningen aan uw PDF.
 
-### FAQ's voor het instellen van de afbeeldingsgrootte in een PDF-bestand
+## Veelgestelde vragen
 
-#### V: Wat is het doel van het instellen van de grootte van een afbeelding in een PDF-document met Aspose.PDF voor .NET?
+### Kan ik verschillende afbeeldingsformaten gebruiken met Aspose.PDF voor .NET?  
+Ja, Aspose.PDF ondersteunt verschillende afbeeldingsformaten, zoals JPEG, PNG, BMP en SVG.
 
-A: Het doel van het instellen van de grootte van een afbeelding in een PDF-document is om de afmetingen van de afbeelding te bepalen wanneer deze aan de PDF wordt toegevoegd. Hiermee kunt u het uiterlijk en de lay-out van afbeeldingen in uw PDF-bestanden aanpassen.
+### Hoe behoud ik de beeldverhouding van de afbeelding?  
+ U kunt de beeldverhouding behouden door de volgende instellingen te kiezen:`FixWidth` of`FixHeight` terwijl de andere dimensie oningesteld blijft.
 
-#### V: Hoe werkt het instellen van de grootte van een afbeelding in een PDF-document?
+### Kan ik meerdere afbeeldingen aan één PDF-pagina toevoegen?  
+Absoluut! Herhaal gewoon het proces van het toevoegen van een afbeeldinginstantie en voeg elk exemplaar toe aan de`Paragraphs` verzameling.
 
- A: Het proces omvat het creëren van een`Aspose.Pdf.Image` bijvoorbeeld door de breedte en hoogte ervan te specificeren met behulp van de`FixWidth` En`FixHeight` eigenschappen en voeg vervolgens de afbeelding toe aan het PDF-document. Daarnaast kunt u de afmetingen van de pagina zelf instellen om de afbeelding te kunnen plaatsen.
+### Is het mogelijk om de afbeeldingsgrootte in andere eenheden dan punten in te stellen?  
+Aspose.PDF werkt voornamelijk met punten, maar u kunt ook andere eenheden, zoals inches of millimeters, omzetten in punten (1 inch = 72 punten).
 
-#### V: Kan ik de grootte van een afbeelding instellen op een specifiek percentage van de pagina-afmetingen?
-
-A: De meegeleverde code stelt de absolute breedte en hoogte van de afbeelding in punten in. Als u de grootte van een afbeelding wilt instellen op basis van een percentage van de pagina-afmetingen, moet u de afmetingen dienovereenkomstig berekenen en de code dienovereenkomstig aanpassen.
-
-####  V: Wat is de betekenis van de`FileType` property when adding an image to the PDF document?
-
- A: De`FileType`eigenschap specificeert het type afbeelding dat aan het PDF-document wordt toegevoegd. In de meegeleverde code is de waarde`Unknown` geeft aan dat het type afbeelding onbekend is en dat Aspose.PDF zal proberen het type afbeelding te bepalen op basis van de bestandsextensie.
-
-#### V: Kan ik met deze methode meerdere afbeeldingen aan één pagina toevoegen?
-
- A: Ja, u kunt meerdere afbeeldingen aan één pagina toevoegen door meerdere afbeeldingen te maken.`Aspose.Pdf.Image` instanties en voeg ze toe aan de alineaverzameling van de pagina. Zorg ervoor dat u de positionering en lay-out van de afbeeldingen indien nodig aanpast.
-
-#### V: Hoe kan ik de plaatsing en uitlijning van de toegevoegde afbeelding op de pagina bepalen?
-
- A: De plaatsing en uitlijning van de toegevoegde afbeelding kunnen worden geregeld door de coördinaten en de lay-out van de afbeelding aan te passen met behulp van eigenschappen zoals`img.Left`, `img.Top`en eigenschappen voor alinea-opmaak.
-
-####  V: Wat is het doel van het instellen van de pagina-eigenschappen met behulp van`page.PageInfo.Width` and `page.PageInfo.Height`?
-
-A: Met het instellen van de pagina-eigenschappen kunt u de afmetingen van de pagina zelf definiëren. Dit zorgt ervoor dat de pagina-afmetingen geschikt zijn voor de toegevoegde afbeelding en alle andere content die u op de pagina hebt staan.
-
-#### V: Kan ik verschillende formaten instellen voor verschillende afbeeldingen in hetzelfde PDF-document?
-
- A: Ja, u kunt verschillende formaten voor verschillende afbeeldingen instellen door aparte`Aspose.Pdf.Image` instanties en het aanpassen van de`FixWidth`, `FixHeight`en plaatsingseigenschappen voor elke afbeelding.
-
-#### V: Hoe kan ik deze methode integreren in mijn eigen projecten om de afbeeldingsgroottes in PDF-bestanden in te stellen?
-
-A: Om deze methode in uw projecten te integreren, volgt u de beschreven stappen en wijzigt u de code indien nodig. U kunt deze methode gebruiken om afbeeldingen van specifieke formaten toe te voegen aan uw PDF-documenten op basis van de vereisten van uw toepassing.
+### Hoe plaats ik een afbeelding op een specifieke locatie op de pagina?  
+ U kunt de`Image.LowerLeftX` En`Image.LowerLeftY` Eigenschappen om de afbeelding op de pagina te positioneren.

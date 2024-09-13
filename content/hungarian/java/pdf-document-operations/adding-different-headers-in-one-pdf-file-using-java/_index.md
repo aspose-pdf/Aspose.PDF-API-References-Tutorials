@@ -44,7 +44,7 @@ Document pdfDocument = new Document();
 
 ## 4. lépés: Oldalak hozzáadása a PDF-hez
 
-Adja hozzá a szükséges oldalakat a PDF dokumentumhoz. Minden oldalhoz szükség szerint különböző fejléceket határozhat meg. Íme egy példa három oldal hozzáadására:
+Adja hozzá a szükséges oldalakat a PDF-dokumentumhoz. Minden oldalhoz szükség szerint különböző fejléceket határozhat meg. Íme egy példa három oldal hozzáadására:
 
 ```java
 Page page1 = pdfDocument.getPages().add();

@@ -1,7 +1,7 @@
 ---
 title: HTML-taggar inuti tabellen i PDF-fil
 linktitle: HTML-taggar inuti tabellen i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du använder HTML-taggar i en tabell i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 100

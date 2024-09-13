@@ -69,7 +69,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## ขั้นตอนที่ 7: ดึงข้อมูลข้อความที่แยกออกมา
 
-รับชิ้นส่วนข้อความที่แยกออกมาโดยใช้`TextFragments` ทรัพย์สินของ`TextFragmentAbsorber` วัตถุ:
+ รับชิ้นส่วนข้อความที่แยกออกมาโดยใช้`TextFragments` ทรัพย์สินของ`TextFragmentAbsorber` วัตถุ:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -103,7 +103,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // เปิดเอกสาร
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionAll.pdf");
-// สร้างวัตถุ TextAbsorber เพื่อค้นหาวลีทั้งหมดที่ตรงกับนิพจน์ทั่วไป
+//สร้างวัตถุ TextAbsorber เพื่อค้นหาวลีทั้งหมดที่ตรงกับนิพจน์ทั่วไป
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // ประมาณปี 1999-2000
 // ตั้งค่าตัวเลือกการค้นหาข้อความเพื่อระบุการใช้งานนิพจน์ปกติ
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);

@@ -53,7 +53,7 @@ public class PCLtoPDFConverter {
 
 ## Steg 2: Ladda PCL-fil
 
-Ladda sedan PCL-filen som du vill konvertera till en PDF. Du kan ange sökvägen till PCL-filen du vill konvertera.
+Ladda sedan PCL-filen som du vill konvertera till en PDF. Du kan ange sökvägen till PCL-filen som du vill konvertera.
 
 ```java
 String pclFilePath = "path/to/your/file.pcl";

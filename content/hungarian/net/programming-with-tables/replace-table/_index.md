@@ -88,7 +88,7 @@ TableAbsorber absorber = new TableAbsorber();
 // Látogassa meg az első oldalt abszorberrel
 absorber.Visit(pdfDocument.Pages[1]);
 
-// Szerezd meg az első táblázatot az oldalon
+// Szerezze meg az első táblázatot az oldalon
 AbsorbedTable table = absorber.TableList[0];
 
 // Új táblázat létrehozása

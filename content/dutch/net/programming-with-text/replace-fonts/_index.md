@@ -34,7 +34,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## Stap 3: Lettertypen zoeken en vervangen
 
- Wij creëren een`TextFragmentAbsorber`object en stel de bewerkingsoptie in om ongebruikte lettertypen te verwijderen. Vervolgens accepteren we de absorber voor alle pagina's van het PDF-document om te zoeken naar tekstfragmenten.
+ Wij creëren een`TextFragmentAbsorber` object en stel de bewerkingsoptie in om ongebruikte lettertypen te verwijderen. Vervolgens accepteren we de absorber voor alle pagina's van het PDF-document om te zoeken naar tekstfragmenten.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));
@@ -105,7 +105,7 @@ In deze tutorial hebt u geleerd hoe u specifieke lettertypen in een PDF-document
 
 #### V: Wat is het doel van de tutorial 'Lettertypen in PDF-bestand vervangen'?
 
-A: De tutorial "Lettertypen in PDF-bestand vervangen" laat zien hoe u de Aspose.PDF-bibliotheek voor .NET kunt gebruiken om specifieke lettertypen in een PDF-document te vervangen. Het biedt een stapsgewijze handleiding over hoe u een PDF-document kunt laden, tekstfragmenten kunt zoeken, lettertypen kunt identificeren om te vervangen, de lettertypen kunt vervangen en de gewijzigde PDF kunt opslaan.
+A: De tutorial "Lettertypen in PDF-bestand vervangen" laat zien hoe u de Aspose.PDF-bibliotheek voor .NET kunt gebruiken om specifieke lettertypen in een PDF-document te vervangen. Het biedt een stapsgewijze handleiding over hoe u een PDF-document laadt, tekstfragmenten zoekt, te vervangen lettertypen identificeert, de lettertypen vervangt en de gewijzigde PDF opslaat.
 
 #### V: Waarom zou ik lettertypen in een PDF-document willen vervangen?
 

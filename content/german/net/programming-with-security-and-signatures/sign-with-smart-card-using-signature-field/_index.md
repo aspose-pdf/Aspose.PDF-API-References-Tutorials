@@ -2,168 +2,190 @@
 title: Mit Smartcard unterschreiben und dabei das Signaturfeld verwenden
 linktitle: Mit Smartcard unterschreiben und dabei das Signaturfeld verwenden
 second_title: Aspose.PDF für .NET API-Referenz
-description: Signieren Sie Ihre PDF-Dateien sicher mit einer Smartcard mit Aspose.PDF für .NET.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET PDFs mithilfe einer Smartcard sicher signieren. Folgen Sie unserer Schritt-für-Schritt-Anleitung für eine einfache Implementierung.
 type: docs
 weight: 120
 url: /de/net/programming-with-security-and-signatures/sign-with-smart-card-using-signature-field/
 ---
-Die digitale Signatur mit einer Smartcard ist eine sichere Methode zum Signieren von PDF-Dateien. Mit Aspose.PDF für .NET können Sie eine PDF-Datei ganz einfach mithilfe eines Signaturfelds und einer Smartcard signieren, indem Sie den folgenden Quellcode befolgen:
+## Einführung
 
-## Schritt 1: Erforderliche Bibliotheken importieren
+In der heutigen digitalen Welt ist die Sicherung von Dokumenten wichtiger denn je. Egal, ob Sie Entwickler, Geschäftsinhaber oder einfach jemand sind, der mit vertraulichen Informationen umgeht: Wenn Sie wissen, wie Sie PDFs elektronisch signieren, können Sie Zeit sparen und sicherstellen, dass Ihre Dokumente authentifiziert sind. In dieser Anleitung führen wir Sie durch den Prozess der Signierung einer PDF-Datei mithilfe einer Smartcard und eines Signaturfelds mit Aspose.PDF für .NET. 
 
-Bevor Sie beginnen, müssen Sie die erforderlichen Bibliotheken für Ihr C#-Projekt importieren. Hier sind die erforderlichen Importanweisungen:
+## Voraussetzungen
+
+Bevor wir uns in die Einzelheiten des Signiervorgangs stürzen, stellen wir sicher, dass Sie alles haben, was Sie für den Start benötigen. Hier ist eine Checkliste der Voraussetzungen:
+
+1. Aspose.PDF für .NET: Stellen Sie sicher, dass die Aspose.PDF-Bibliothek in Ihrer .NET-Umgebung installiert ist. Sie können sie von der[Website](https://releases.aspose.com/pdf/net/).
+
+2. Visual Studio: Sie benötigen eine IDE, um Ihren .NET-Code zu schreiben und auszuführen. Visual Studio Community Edition ist eine großartige kostenlose Option.
+
+3. Eine Smartcard: Diese ist zum Signieren Ihrer PDF-Datei unbedingt erforderlich. Stellen Sie sicher, dass auf Ihrem Computer ein Smartcard-Lesegerät und die erforderlichen Zertifikate installiert sind.
+
+4. Grundlegende C#-Kenntnisse: Wenn Sie mit der C#-Programmierung vertraut sind, können Sie die von uns verwendeten Codeausschnitte besser verstehen.
+
+5. Beispiel-PDF-Dokument: Halten Sie ein Beispiel-PDF-Dokument zum Testen bereit. Sie können ein leeres PDF erstellen oder ein vorhandenes verwenden.
+
+## Pakete importieren
+
+Bevor wir mit dem Programmieren beginnen, importieren wir die erforderlichen Pakete. Sie müssen die folgenden Namespaces in Ihre C#-Datei aufnehmen:
 
 ```csharp
-using Aspose.Pdf;
+using Aspose.Pdf.Facades;
 using Aspose.Pdf.Forms;
-using System.Security.Cryptography.X509Certificates;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
 ```
 
-## Schritt 2: Pfad zum Dokumentenordner festlegen
+Über diese Namespaces erhalten Sie Zugriff auf die Klassen und Methoden, die für die Arbeit mit PDFs und die Handhabung digitaler Signaturen erforderlich sind.
 
- In diesem Schritt müssen Sie den Pfad zum Ordner angeben, der die zu signierende PDF-Datei enthält. Ersetzen Sie`"YOUR DOCUMENTS DIRECTORY"` ersetzen Sie den folgenden Code durch den tatsächlichen Pfad zu Ihrem Dokumentordner:
+## Schritt-für-Schritt-Anleitung zum Signieren einer PDF-Datei mit einer Smartcard
+
+Nachdem wir nun unsere Voraussetzungen geklärt haben, unterteilen wir den Signiervorgang in überschaubare Schritte. Wir gehen jeden Schritt im Detail durch, um sicherzustellen, dass Sie verstehen, was im Hintergrund passiert.
+
+### Schritt 1: Richten Sie Ihr Dokumentverzeichnis ein
+
+Vorgehensweise: Definieren Sie den Pfad zu Ihrem Dokumentverzeichnis.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Schritt 3: PDF-Dokument kopieren und öffnen
+ Erklärung: Ersetzen`"YOUR DOCUMENTS DIRECTORY"` mit dem tatsächlichen Pfad, in dem sich Ihre PDF-Dateien befinden. Hier lesen wir das leere PDF und speichern das signierte Dokument.
 
-Nun kopieren und öffnen wir das zu signierende PDF-Dokument mit dem folgenden Code:
+### Schritt 2: Kopieren Sie das leere PDF
+
+Was zu tun ist: Erstellen Sie eine Kopie Ihrer leeren PDF-Datei zum Arbeiten.
 
 ```csharp
 File.Copy(dataDir + "blank.pdf", dataDir + "externalSignature1.pdf", true);
+```
 
+ Erklärung: Diese Zeile kopiert die`blank.pdf`Datei in eine neue Datei mit dem Namen`externalSignature1.pdf` . Der`true` Der Parameter ermöglicht das Überschreiben, wenn die Datei bereits vorhanden ist.
+
+### Schritt 3: Öffnen Sie das PDF-Dokument
+
+Vorgehensweise: Öffnen Sie die kopierte PDF-Datei zum Lesen und Schreiben.
+
+```csharp
 using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMode.Open, FileAccess.ReadWrite))
 {
-     using (Document doc = new Document(fs))
-     {
-         // Erstellen eines Signaturfelds
-         SignatureField field1 = new SignatureField(doc.Pages[1], new Rectangle(100, 400, 10, 10));
-
-         // Wählen Sie das Zertifikat im Store aus
-         X509Store store = new X509Store(StoreLocation.CurrentUser);
-         store.Open(OpenFlags.ReadOnly);
-         X509Certificate2Collection sel = X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, X509SelectionFlag.SingleSelection);
-        
-         // Erstellen Sie eine externe Signatur mit den erforderlichen Informationen
-         ExternalSignature externalSignature = new ExternalSignature(sel[0])
-         {
-             Authority = "Me",
-             Reason = "Reason",
-             ContactInfo = "Contact"
-         };
-
-         field1.PartialName = "sig1";
-         doc.Form.Add(field1, 1);
-         field1.Sign(externalSignature);
-         doc.Save();
-     }
+    using (Document doc = new Document(fs))
+    {
+        // Weitere Schritte folgen hier
+    }
 }
 ```
 
-## Schritt 4: Signatur überprüfen
+ Erklärung: Wir verwenden eine`FileStream` um unsere PDF-Datei zu öffnen.`Document` Klasse von Aspose.PDF ermöglicht uns, den PDF-Inhalt zu bearbeiten.
 
- Abschließend überprüfen wir die Signatur der signierten PDF-Datei mit dem`PdfFileSignature` Klasse. Wir holen uns die Signaturnamen und prüfen sie einzeln. Wenn eine Signatur die Überprüfung nicht besteht, wird eine Exception ausgelöst. Hier ist der entsprechende Code:
+### Schritt 4: Erstellen Sie ein Signaturfeld
+
+Vorgehensweise: Definieren Sie im PDF ein Signaturfeld, in dem die Signatur platziert wird.
+
+```csharp
+SignatureField field1 = new SignatureField(doc.Pages[1], new Rectangle(100, 400, 10, 10));
+```
+
+ Erklärung: Hier erstellen wir eine`SignatureField` auf der zweiten Seite (Seitenindex beginnt bei 1) des PDFs. Die`Rectangle` definiert die Position und Größe des Signaturfeldes.
+
+### Schritt 5: Zugriff auf den Smartcard-Zertifikatspeicher
+
+Vorgehensweise: Öffnen Sie den Zertifikatspeicher, um Ihr Smartcard-Zertifikat auszuwählen.
+
+```csharp
+X509Store store = new X509Store(StoreLocation.CurrentUser);
+store.Open(OpenFlags.ReadOnly);
+```
+
+Erklärung: Wir greifen auf den Zertifikatsspeicher des aktuellen Benutzers zu. Hier sind Ihre Smartcard-Zertifikate gespeichert.
+
+### Schritt 6: Wählen Sie das Zertifikat aus
+
+Vorgehensweise: Fordern Sie den Benutzer auf, ein Zertifikat aus dem Speicher auszuwählen.
+
+```csharp
+X509Certificate2Collection sel = X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, X509SelectionFlag.SingleSelection);
+```
+
+Erklärung: Diese Zeile öffnet einen Dialog zur Auswahl eines Zertifikats. Sie können das Zertifikat auswählen, das Ihrer Smartcard zugeordnet ist.
+
+### Schritt 7: Erstellen einer externen Signatur
+
+ Vorgehensweise: Erstellen Sie eine Instanz von`ExternalSignature` unter Verwendung des ausgewählten Zertifikats.
+
+```csharp
+Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0])
+{
+    Authority = "Me",
+    Reason = "Reason",
+    ContactInfo = "Contact"
+};
+```
+
+ Erklärung: Wir initialisieren die`ExternalSignature` mit dem ausgewählten Zertifikat. Sie können auch die Autorität, den Grund für die Signatur und die Kontaktinformationen festlegen.
+
+### Schritt 8: Signaturfeld zum Dokument hinzufügen
+
+Vorgehensweise: Fügen Sie dem Dokument das Signaturfeld hinzu.
+
+```csharp
+field1.PartialName = "sig1";
+doc.Form.Add(field1, 1);
+```
+
+Erklärung: Wir geben dem Signaturfeld einen Namen und fügen es auf der ersten Seite des Dokuments ein. Damit bereiten wir das PDF für die Unterschrift vor.
+
+### Schritt 9: Unterschreiben Sie das Dokument
+
+Vorgehensweise: Verwenden Sie die externe Signatur, um das PDF zu signieren.
+
+```csharp
+field1.Sign(externalSignature);
+doc.Save();
+```
+
+Erklärung: Diese Zeile unterschreibt das Dokument mit der externen Signatur und speichert die Änderungen im PDF. Ihr Dokument ist nun unterschrieben!
+
+### Schritt 10: Überprüfen der Signatur
+
+Vorgehensweise: Überprüfen Sie, ob die Signatur gültig ist.
 
 ```csharp
 using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "externalSignature1.pdf")))
 {
-     IList<string> sigNames = pdfSign. GetSignNames();
-     for (int index = 0; index <= sigNames.Count - 1; index++)
-     {
-         if (!pdfSign.VerifySigned(sigNames[index]) || !pdfSign.VerifySignature(sigNames[index]))
-         {
-             throw new ApplicationException("Unverified");
-         }
-     }
+    IList<string> sigNames = pdfSign.GetSignNames();
+    for (int index = 0; index <= sigNames.Count - 1; index++)
+    {
+        if (!pdfSign.VerifySigned(sigNames[index]) || !pdfSign.VerifySignature(sigNames[index]))
+        {
+            throw new ApplicationException("Not verified");
+        }
+    }
 }
 ```
 
-### Beispielquellcode zum Unterschreiben mit Smartcard unter Verwendung des Signaturfelds unter Verwendung von Aspose.PDF für .NET 
-```csharp
-// Der Pfad zum Dokumentverzeichnis.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-File.Copy(dataDir + "blank.pdf", dataDir + "externalSignature1.pdf", true);
-using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMode.Open, FileAccess.ReadWrite))
-{
-	using (Document doc = new Document(fs))
-	{
-		SignatureField field1 = new SignatureField(doc.Pages[1], new Rectangle(100, 400, 10, 10));
-		// Signieren mit Zertifikatauswahl im Windows-Zertifikatspeicher
-		System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
-		store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
-		// Wählen Sie das Zertifikat manuell im Store aus
-		System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel = System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
-		Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0])
-		{
-			Authority = "Me",
-			Reason = "Reason",
-			ContactInfo = "Contact"
-		};
-		field1.PartialName = "sig1";
-		doc.Form.Add(field1, 1);
-		field1.Sign(externalSignature);
-		doc.Save();
-	}
-}
-using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "externalSignature1.pdf")))
-{
-	IList<string> sigNames = pdfSign.GetSignNames();
-	for (int index = 0; index <= sigNames.Count - 1; index++)
-	{
-		if (!pdfSign.VerifySigned(sigNames[index]) || !pdfSign.VerifySignature(sigNames[index]))
-		{
-			throw new ApplicationException("Not verified");
-		}
-	}
-}
-```
+Erklärung: Wir erstellen eine Instanz von`PdfFileSignature` um die Signaturen im Dokument zu überprüfen. Wenn die Signatur ungültig ist, wird eine Ausnahme ausgelöst.
 
 ## Abschluss
 
-Herzlichen Glückwunsch! Sie haben jetzt eine Schritt-für-Schritt-Anleitung zum Signieren einer PDF-Datei mit einer Smartcard unter Verwendung eines Signaturfelds mit Aspose.PDF für .NET. Mit diesem Code können Sie Ihren PDF-Dokumenten sichere digitale Signaturen hinzufügen.
+Herzlichen Glückwunsch! Sie haben gerade gelernt, wie Sie mit Aspose.PDF für .NET ein PDF-Dokument mithilfe einer Smartcard und eines Signaturfelds signieren. Dieser Vorgang sichert nicht nur Ihre Dokumente, sondern gewährleistet auch deren Authentizität und ist damit eine unverzichtbare Fähigkeit in der heutigen digitalen Landschaft. Egal, ob Sie Verträge, Rechnungen oder andere wichtige Dokumente unterzeichnen, das Wissen, wie Sie digitale Signaturen implementieren, kann Ihnen Zeit sparen und Ihnen ein beruhigendes Gefühl geben.
 
-Weitere Informationen zu erweiterten Funktionen für digitale Signaturen und Zertifikatsverwaltung finden Sie in der offiziellen Aspose.PDF-Dokumentation.
+## Häufig gestellte Fragen
 
-### Häufig gestellte Fragen
+### Was ist Aspose.PDF für .NET?
+Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, mit der Entwickler PDF-Dokumente in .NET-Anwendungen erstellen, bearbeiten und konvertieren können.
 
-#### F: Welchen Vorteil bietet die Verwendung eines Signaturfelds zum digitalen Signieren mit einer Smartcard?
+### Benötige ich zum Signieren von PDFs eine Smartcard?
+Ja, zum sicheren Signieren von PDFs mit einem digitalen Zertifikat ist eine Smartcard erforderlich.
 
-A: Durch die Verwendung eines Signaturfelds für die digitale Signatur mit einer Smartcard wird ein spezieller Bereich innerhalb der PDF-Datei bereitgestellt, in dem die Signatur angewendet wird. Dies verbessert die Dokumentübersichtlichkeit und stellt die Authentizität der Signatur sicher.
+### Kann ich Aspose.PDF kostenlos nutzen?
+ Aspose.PDF bietet eine kostenlose Testversion an, die Sie herunterladen können[Hier](https://releases.aspose.com/).
 
-#### F: Wie erleichtert die Aspose.PDF-Bibliothek für .NET die digitale Signatur auf Smartcard-Basis mit einem Signaturfeld?
+### Wie kann ich ein signiertes PDF verifizieren?
+ Sie können die`PdfFileSignature` Klasse in Aspose.PDF, um die Signaturen in Ihrem PDF-Dokument zu überprüfen.
 
-A: Aspose.PDF für .NET vereinfacht das Erstellen eines Signaturfelds, das Auswählen eines Smartcard-Zertifikats und das Anwenden einer digitalen Signatur auf einen bestimmten Bereich innerhalb des PDF-Dokuments.
-
-#### F: Warum ist die Auswahl eines bestimmten Zertifikats für die Smartcard-basierte Signatur wichtig?
-
-A: Durch die Auswahl eines bestimmten Zertifikats können Sie den Unterzeichner eindeutig identifizieren und die Integrität der Signatur sicherstellen. Dies trägt dazu bei, Vertrauen aufzubauen und die Einhaltung digitaler Signaturstandards zu gewährleisten.
-
-#### F: Wie handhabt der bereitgestellte Quellcode den Smartcard-basierten Signaturprozess mit einem Signaturfeld?
-
-A: Der Quellcode zeigt, wie man ein Signaturfeld erstellt, ein Smartcard-Zertifikat auswählt und eine digitale Signatur mit spezifischen Signaturinformationen anwendet. Außerdem wird gezeigt, wie die Gültigkeit der Signatur überprüft wird.
-
-#### F: Kann ich das Erscheinungsbild des Signaturfelds anpassen?
-
-A: Ja, Sie können das Erscheinungsbild des Signaturfelds, beispielsweise seine Größe, Position und visuelle Darstellung, anpassen, um es an das Layout Ihres Dokuments anzupassen.
-
-#### F: Was passiert, wenn eine Signatur im Überprüfungsschritt nicht überprüft wird?
-
-A: Wenn die Überprüfung einer Signatur fehlschlägt, wird eine Ausnahme ausgelöst, die angibt, dass die Signatur ungültig ist. Dadurch wird sichergestellt, dass nur gültige und vertrauenswürdige Signaturen akzeptiert werden.
-
-#### F: Kann ich einem einzelnen PDF-Dokument mehrere Signaturfelder und Smartcard-basierte Signaturen hinzufügen?
-
-A: Auf jeden Fall. Sie können mehrere Signaturfelder und Smartcard-basierte Signaturen auf verschiedene Bereiche desselben PDF-Dokuments anwenden und so mehrere Sicherheitsebenen bereitstellen.
-
-#### F: Wie verbessert die Verwendung eines Signaturfelds den gesamten Dokumentsignaturprozess?
-
-A: Die Verwendung eines Signaturfelds vereinfacht den Dokumentsignaturvorgang, da es den Unterzeichner anleitet, seine Unterschrift in einem dafür vorgesehenen Bereich zu platzieren. Dadurch wird der Signaturvorgang übersichtlicher und benutzerfreundlicher.
-
-#### F: Gibt es Einschränkungen bei der Verwendung von Signaturfeldern bei der Smartcard-basierten Signatur?
-
-A: Es gibt keine grundsätzlichen Einschränkungen bei der Verwendung von Signaturfeldern bei der Smartcard-basierten Signatur. Es ist jedoch wichtig sicherzustellen, dass die gewählte Position des Signaturfelds wichtige Dokumentinhalte nicht verdeckt.
-
-#### F: Wo finde ich weitere Hilfe oder Unterstützung bei der Implementierung einer Smartcard-basierten Signatur mit einem Signaturfeld?
-
-A: Weitere Anleitungen und Unterstützung erhalten Sie in der offiziellen Aspose.PDF-Dokumentation und in den Community-Foren, die wertvolle Einblicke und Lösungen zur Implementierung sicherer digitaler Signaturen bieten.
+### Wo finde ich weitere Dokumentation zu Aspose.PDF?
+ Sie können die[Aspose.PDF-Dokumentation](https://reference.aspose.com/pdf/net/) für weitere Einzelheiten und Beispiele.

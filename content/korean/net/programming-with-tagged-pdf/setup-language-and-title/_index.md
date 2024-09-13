@@ -155,7 +155,7 @@ A: PDF 문서의 언어와 제목을 구성하는 것은 접근성과 메타데�
 
 A: 다국어 콘텐츠는 PDF 문서의 접근성과 글로벌 도달 범위를 향상시킵니다. Aspose.PDF for .NET을 사용하면 각 언어에 대한 문단 요소를 만들고 텍스트 및 언어 속성을 적절히 설정하여 다국어 콘텐츠를 추가할 수 있습니다.
 
-####  Q: 어떻게`SetTitle` method contribute to improving document accessibility and organization?
+#### Q: 어떻게`SetTitle` method contribute to improving document accessibility and organization?
 
  A: 그`SetTitle` 방법은 PDF 문서의 제목을 설정하는데, 이는 문서 식별, 검색 결과 및 구성에 사용됩니다. 명확하고 의미 있는 제목을 제공하면 문서 접근성이 향상되고 사용자 경험이 개선됩니다.
 
@@ -177,4 +177,4 @@ A: 언어와 제목을 구성할 때 대상 독자, 문서 내용 및 접근성 
 
 #### 질문: Aspose.PDF for .NET을 사용하여 기존 PDF 문서의 언어와 제목을 수정할 수 있나요?
 
- A: 네, Aspose.PDF for .NET을 사용하여 기존 PDF 문서의 언어와 제목을 수정할 수 있습니다. 문서를 로드하고 태그가 지정된 콘텐츠에 액세스하고 다음을 사용하여`SetTitle` 그리고`SetLanguage`이러한 속성을 필요에 따라 업데이트할 수 있습니다.
+ A: 네, Aspose.PDF for .NET을 사용하여 기존 PDF 문서의 언어와 제목을 수정할 수 있습니다. 문서를 로드하고 태그가 지정된 콘텐츠에 액세스하고 다음을 사용하여`SetTitle` 그리고`SetLanguage` 이러한 속성을 필요에 따라 업데이트할 수 있습니다.

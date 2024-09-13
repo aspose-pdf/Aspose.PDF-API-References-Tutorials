@@ -152,7 +152,7 @@ A: Tworzenie struktury elementów drzewa w dokumencie PDF przy użyciu Aspose.PD
 
 A: Przykład kodu pokazuje, jak utworzyć hierarchiczną strukturę elementów logicznych za pomocą`SectElement`, `DivElement` , I`ArtElement` klasy dostarczone przez Aspose.PDF. Elementy te są zorganizowane jako węzły nadrzędne i podrzędne, tworząc strukturę przypominającą drzewo w dokumencie.
 
-####  P: Jak to działa?`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
+#### P: Jak to działa?`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
 
  A: Ten`TaggedContent` właściwość zapewnia dostęp do oznaczonych funkcji zawartości dokumentu PDF. Umożliwia to tworzenie i manipulowanie elementami strukturalnymi, definiowanie ich relacji i organizowanie ich hierarchicznie, co poprawia strukturę i dostępność dokumentu.
 
@@ -168,7 +168,7 @@ A: Przykład kodu pokazuje, jak utworzyć hierarchiczną strukturę elementów l
 
 A: Hierarchiczna organizacja elementów poprawia organizację dokumentu, nawigację i semantykę. Umożliwia użytkownikom i technologiom wspomagającym zrozumienie struktury i relacji treści, co poprawia ogólne wrażenia użytkownika.
 
-####  P: Jak to działa?`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
+#### P: Jak to działa?`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
 
  A: Ten`Save` Metoda ta zapisuje dokument PDF wraz ze strukturą hierarchiczną utworzoną za pomocą`AppendChild` Metoda ta zapewnia, że struktura pozostaje nienaruszona, dzięki czemu dokument jest dostępny i dobrze zorganizowany.
 

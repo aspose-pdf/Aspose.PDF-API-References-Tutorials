@@ -32,7 +32,7 @@ using System.Text;
  No código, localize a linha que diz`string dataDir = "YOUR DOCUMENT DIRECTORY";` e substituir`"YOUR DOCUMENT DIRECTORY"` com o caminho para o diretório onde seus documentos estão armazenados.
 
 ## Etapa 4: Abra o documento PDF
- Abra um documento PDF existente usando o`Document` construtor e passando o caminho para o arquivo PDF de entrada.
+ Abra um documento PDF existente usando o`Document`construtor e passando o caminho para o arquivo PDF de entrada.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");

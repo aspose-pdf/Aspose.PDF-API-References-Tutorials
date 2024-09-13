@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Stap 5: Voeg een pagina toe aan het document
- Voeg een nieuwe pagina toe aan het document met behulp van de`Add` methode van de`Pages`verzameling. In de meegeleverde code wordt de nieuwe pagina toegewezen aan de variabele`page`.
+ Voeg een nieuwe pagina toe aan het document met behulp van de`Add` methode van de`Pages` verzameling. In de meegeleverde code wordt de nieuwe pagina toegewezen aan de variabele`page`.
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
@@ -109,7 +109,7 @@ Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 4
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
 // Rechthoek toevoegen aan vormenverzameling van Grafiekobject
 canvas.Shapes.Add(rect);
-//Grafiekobject toevoegen aan alineaverzameling van paginaobject
+// Grafiekobject toevoegen aan alineaverzameling van paginaobject
 page.Paragraphs.Add(canvas);
 // Waarde instellen om de positie van het grafiekobject niet te wijzigen
 canvas.IsChangePosition = false;
@@ -128,7 +128,7 @@ Console.WriteLine("\nTransparent text added successfully.\nFile saved at " + dat
 
 
 ## Conclusie
-U hebt met succes transparante tekst toegevoegd aan uw PDF-document met Aspose.PDF voor .NET. Het resulterende PDF-bestand is nu te vinden op het opgegeven pad naar het uitvoerbestand.
+hebt met succes transparante tekst toegevoegd aan uw PDF-document met Aspose.PDF voor .NET. Het resulterende PDF-bestand is nu te vinden op het opgegeven pad naar het uitvoerbestand.
 
 ### Veelgestelde vragen
 
@@ -163,7 +163,7 @@ using Aspose.Pdf.Drawing;
 
 #### V: Hoe maak ik een rechthoek met transparantie?
 
-A: In stap 7 maakt u een rechthoek met specifieke afmetingen en stelt u de vulkleur in op een transparante kleur met behulp van de`Color.FromRgb` methode.
+ A: In stap 7 maakt u een rechthoek met specifieke afmetingen en stelt u de vulkleur in op een transparante kleur met behulp van de`Color.FromRgb` methode.
 
 #### V: Hoe voeg ik het grafiekobject toe aan de pagina?
 
@@ -175,7 +175,7 @@ A: In stap 7 maakt u een rechthoek met specifieke afmetingen en stelt u de vulkl
 
 #### V: Hoe maak ik een TextFragment met transparantie?
 
- A: In stap 10 maakt u een`TextFragment` object en stel de inhoud ervan in en`ForegroundColor` eigenschap om transparante tekst te verkrijgen.
+A: In stap 10 maakt u een`TextFragment` object en stel de inhoud ervan in en`ForegroundColor` eigenschap om transparante tekst te verkrijgen.
 
 #### V: Hoe kan ik het PDF-document opslaan?
 

@@ -2,7 +2,7 @@
 title: PDF PDFA-ba
 linktitle: PDF PDFA-ba
 second_title: Aspose.PDF for .NET API Reference
-description: Ebben a lépésenkénti oktatóanyagban megtudhatja, hogyan konvertálhat PDF-fájlokat PDF/A formátumba az Aspose.PDF for .NET használatával.
+description: Ebből a lépésről lépésre mutató oktatóanyagból megtudhatja, hogyan konvertálhat PDF-fájlokat PDF/A formátumba az Aspose.PDF for .NET használatával.
 type: docs
 weight: 140
 url: /hu/net/document-conversion/pdf-to-pdfa/

@@ -124,12 +124,12 @@ formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 TextFragment textFragment = new TextFragment("Hello world");
 if (fontFile != "")
 {
-	// स्ट्रीम ऑब्जेक्ट में ट्रू टाइप फ़ॉन्ट लोड करें
+	//स्ट्रीम ऑब्जेक्ट में ट्रू टाइप फ़ॉन्ट लोड करें
 	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
 	{
 		// टेक्स्ट स्ट्रिंग के लिए फ़ॉन्ट नाम सेट करें
 		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		//टेक्स्ट फ़्रैगमेंट के लिए स्थिति निर्दिष्ट करें
+		// टेक्स्ट फ़्रैगमेंट के लिए स्थिति निर्दिष्ट करें
 		textFragment.Position = new Position(100, 600);
 		//वर्तमान खंड के TextFormattingOptions को पूर्वनिर्धारित पर सेट करें (जो LineSpacingMode.FullSize को इंगित करता है)
 		textFragment.TextState.FormattingOptions = formattingOptions;

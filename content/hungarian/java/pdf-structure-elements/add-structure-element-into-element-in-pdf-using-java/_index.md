@@ -74,12 +74,12 @@ imageElement.setFile("image.png");
 
 ### Strukturáló táblázatok
 
-A táblázatok a strukturált PDF-ek másik fontos részét képezik. Használja a TableElement elemet a táblázatok strukturálásához:
+A táblázatok a strukturált PDF-ek másik fontos részét képezik. A TableElement használata a táblázatok strukturálásához:
 
 ```java
 // Hozzon létre egy táblázat szerkezeti elemet
 TableElement tableElement = new TableElement();
-// Adja hozzá ide a táblázat sorait és celláit
+// Adjon hozzá táblázatsorokat és cellákat ide
 ```
 
 ### A PDF mentése és bezárása

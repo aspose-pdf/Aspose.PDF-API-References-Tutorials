@@ -62,7 +62,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## Adım 6: Çıkarılan metin parçalarını alın
 
-Çıkarılan metin parçalarını kullanarak alın`TextFragments` mülkiyeti`TextFragmentAbsorber` nesne:
+ Çıkarılan metin parçalarını kullanarak alın`TextFragments` mülkiyeti`TextFragmentAbsorber` nesne:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -165,7 +165,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 #### S: Aranan ifade belirtilen sayfada bulunamazsa ne olur?
 
- A: Aranan ifade belirtilen sayfada bulunamazsa,`TextFragmentCollection` boş olacak ve hiçbir değişiklik yapılmayacak. Arama ifadesinin hedeflediğiniz sayfada mevcut olduğundan emin olun.
+A: Aranan ifade belirtilen sayfada bulunamazsa,`TextFragmentCollection` boş olacak ve hiçbir değişiklik yapılmayacak. Arama ifadesinin hedeflediğiniz sayfada mevcut olduğundan emin olun.
 
 #### S: Her metin parçası için değiştirme metnini nasıl özelleştirebilirim?
 

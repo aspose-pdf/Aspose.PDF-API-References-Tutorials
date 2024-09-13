@@ -2,125 +2,142 @@
 title: Λάβετε Ιδιότητες PDF
 linktitle: Λάβετε Ιδιότητες PDF
 second_title: Aspose.PDF για Αναφορά API .NET
-description: Οδηγός βήμα προς βήμα για να λάβετε ιδιότητες PDF, όπως διαστάσεις κουτιού και περιστροφή, χρησιμοποιώντας το Aspose.PDF για .NET.
+description: Μάθετε πώς να εξάγετε αποτελεσματικά ιδιότητες PDF χρησιμοποιώντας το Aspose.PDF για .NET. Οδηγός βήμα προς βήμα με παραδείγματα κώδικα και βέλτιστες πρακτικές.
 type: docs
 weight: 100
 url: /el/net/programming-with-pdf-pages/get-properties/
 ---
-Σε αυτό το σεμινάριο, θα σας καθοδηγήσουμε στη διαδικασία βήμα προς βήμα για να αποκτήσετε τις ιδιότητες ενός PDF χρησιμοποιώντας το Aspose.PDF για .NET. Θα εξηγήσουμε τον πηγαίο κώδικα C# και θα σας παρέχουμε έναν ολοκληρωμένο οδηγό που θα σας βοηθήσει να κατανοήσετε και να εφαρμόσετε αυτήν τη δυνατότητα στα δικά σας έργα. Στο τέλος αυτού του σεμιναρίου, θα ξέρετε πώς να αποκτήσετε πρόσβαση σε διάφορες ιδιότητες μιας σελίδας PDF, όπως πλαίσιο τέχνης, πλαίσιο περικοπής, πλαίσιο περικοπής κ.λπ., χρησιμοποιώντας το Aspose.PDF για .NET.
+## Εισαγωγή
+
+Όσον αφορά τον προγραμματισμό των αρχείων PDF, το Aspose.PDF για .NET είναι ένα από εκείνα τα αξιόπιστα εργαλεία που ξεχωρίζουν. Είτε θέλετε να εξαγάγετε πληροφορίες, να τροποποιήσετε έγγραφα ή απλά να διαβάσετε ιδιότητες PDF, αυτή η βιβλιοθήκη παρέχει μια σειρά λειτουργιών για να διευκολύνει την εργασία σας. Σε αυτόν τον οδηγό, θα βουτήξουμε βαθιά στο πώς να αποκτήσετε ιδιότητες PDF, μια εργασία που μπορεί να φαίνεται τρομακτική στην αρχή, αλλά γίνεται παιχνιδάκι με τα σωστά εργαλεία. Λοιπόν, κουμπώστε! Θα διερευνήσουμε είτε τις τεχνικές λεπτομέρειες είτε τις δυνατότητες που συνοδεύουν την εργασία με αρχεία PDF.
 
 ## Προαπαιτούμενα
-Πριν ξεκινήσετε, βεβαιωθείτε ότι έχετε τα ακόλουθα:
 
-- Βασική γνώση της γλώσσας προγραμματισμού C#
-- Το Aspose.PDF για .NET είναι εγκατεστημένο στο περιβάλλον ανάπτυξης σας
+Πριν μεταβείτε στον κώδικα, είναι απαραίτητο να βεβαιωθείτε ότι έχετε όλα τα απαραίτητα στοιχεία στη θέση τους. Αυτή η ενότητα θα σας βοηθήσει να ρυθμίσετε την έναρξη της εργασίας με τη βιβλιοθήκη Aspose.PDF.
 
-## Βήμα 1: Ορισμός καταλόγου εγγράφων
-Πρώτα, πρέπει να ορίσετε τη διαδρομή προς τον κατάλογο των εγγράφων σας. Αυτή είναι η θέση του αρχείου PDF του οποίου τις ιδιότητες θέλετε να αποκτήσετε. Αντικαταστήστε τον "ΚΑΤΑΛΟΓΟ ΕΓΓΡΑΦΩΝ ΣΑΣ" με την κατάλληλη διαδρομή.
+1. .NET Environment: Βεβαιωθείτε ότι έχετε ένα λειτουργικό περιβάλλον .NET. Μπορείτε να χρησιμοποιήσετε το Visual Studio ή οποιοδήποτε άλλο κατάλληλο IDE.
+   
+2.  Aspose.PDF για .NET: Πρέπει να έχετε εγκατεστημένο το Aspose.PDF. Μπορείτε να κατεβάσετε τη βιβλιοθήκη από το[Aspose PDF Releases](https://releases.aspose.com/pdf/net/) σελίδα.
+
+3. Βασική κατανόηση της C#: Η εξοικείωση με τον προγραμματισμό C# θα είναι χρήσιμη καθώς θα γράφουμε τον κώδικα σε C#.
+
+4. Αρχείο PDF: Χρειάζεστε ένα δείγμα αρχείου PDF για να εργαστείτε. Για αυτό το παράδειγμα, θα αναφερθούμε στο "GetProperties.pdf".
+
+### Ρύθμιση του έργου σας
+
+Αφού ετοιμάσετε τα εργαλεία σας και το αρχείο PDF, δείτε πώς μπορείτε να ρυθμίσετε το έργο σας:
+
+1. Δημιουργία νέου έργου: Ανοίξτε το IDE σας και δημιουργήστε ένα νέο έργο C#.
+
+2. Προσθήκη αναφορών: Συμπεριλάβετε τη διάταξη Aspose.PDF. Μπορείτε να το κάνετε αυτό μέσω του NuGet Package Manager ή προσθέτοντας απευθείας μια αναφορά στο DLL.
+
+3.  Προετοιμάστε το αρχείο PDF σας: Τοποθετήστε το δείγμα "GetProperties.pdf" σε έναν κατάλογο στον οποίο μπορεί να έχει εύκολη πρόσβαση ο κώδικάς σας, ας πούμε`"YOUR DOCUMENT DIRECTORY"`.
+
+## Εισαγωγή πακέτων
+
+Μόλις ολοκληρωθεί η ρύθμιση του έργου σας, το πρώτο πράγμα που πρέπει να κάνετε είναι να εισαγάγετε τους απαραίτητους χώρους ονομάτων. Η βιβλιοθήκη Aspose.PDF παρέχει διάφορες κλάσεις που σας επιτρέπουν να αλληλεπιδράτε με έγγραφα PDF.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-## Βήμα 2: Ανοίξτε το έγγραφο PDF
- Στη συνέχεια, πρέπει να ανοίξετε το έγγραφο PDF χρησιμοποιώντας το`Document` κλάση του Aspose.PDF. Βεβαιωθείτε ότι έχετε καθορίσει τη σωστή διαδρομή προς το αρχείο PDF.
+Αυτό το απλό βήμα διασφαλίζει ότι έχετε πρόσβαση στις τάξεις που απαιτούνται για τον αποτελεσματικό χειρισμό και εξαγωγή πληροφοριών από το αρχείο PDF σας.
+
+Τώρα, ας αναλύσουμε το έργο της ανάκτησης ιδιοτήτων PDF σε βήματα που μπορούν να γίνουν. Αυτή η ενότητα θα σας καθοδηγήσει σε κάθε βήμα, ώστε να μπορείτε εύκολα να ακολουθήσετε και να κατανοήσετε πώς λειτουργεί η διαδικασία.
+
+## Βήμα 1: Ορίστε τον Κατάλογο Εγγράφων
+
+Το πρώτο βήμα στο ταξίδι μας είναι να καθορίσουμε πού βρίσκεται το έγγραφο PDF μας. Θέλουμε να δείξουμε τη θέση του "GetProperties.pdf".
 
 ```csharp
-Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
-```
-
-## Βήμα 3: Πρόσβαση στη Συλλογή Σελίδων
- Τώρα μπορείτε να αποκτήσετε πρόσβαση στη συλλογή σελίδων του εγγράφου χρησιμοποιώντας το`Pages` ιδιοκτησία του`pdfDocument` αντικείμενο.
-
-```csharp
-PageCollection pageCollection = pdfDocument.Pages;
-```
-
-## Βήμα 4: Μεταβείτε σε μια συγκεκριμένη σελίδα
-Στη συνέχεια, μπορείτε να μεταβείτε σε μια συγκεκριμένη σελίδα χρησιμοποιώντας το ευρετήριο της σελίδας στη συλλογή. Στο παρακάτω παράδειγμα, έχουμε πρόσβαση στη δεύτερη σελίδα (ευρετήριο 1).
-
-```csharp
-Page pdfPage = pageCollection[1];
-```
-
-## Βήμα 5: Λήψη ιδιοτήτων σελίδας
- Τώρα μπορείτε να λάβετε τις διαφορετικές ιδιότητες της σελίδας PDF, όπως πλαίσιο τέχνης, πλαίσιο περικοπής, πλαίσιο περικοπής κ.λπ., χρησιμοποιώντας τις αντίστοιχες ιδιότητες του`pdfPage` αντικείμενο.
-
-```csharp
-Console.WriteLine("ArtBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
-Console.WriteLine("BleedBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.BleedBox.Height, pdf
-
-Page.BleedBox.Width, pdfPage.BleedBox.LLX, pdfPage.BleedBox.LLY, pdfPage.BleedBox.URX, pdfPage.BleedBox.URY);
-Console.WriteLine("CropBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.CropBox.Height, pdfPage.CropBox.Width, pdfPage.CropBox.LLX, pdfPage.CropBox.LLY, pdfPage.CropBox.URX, pdfPage.CropBox.URY);
-Console.WriteLine("MediaBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.MediaBox.Height, pdfPage.MediaBox.Width, pdfPage.MediaBox.LLX, pdfPage.MediaBox.LLY, pdfPage.MediaBox.URX, pdfPage.MediaBox.URY);
-Console.WriteLine("TrimBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.TrimBox.Height, pdfPage.TrimBox.Width, pdfPage.TrimBox.LLX, pdfPage.TrimBox.LLY, pdfPage.TrimBox.URX, pdfPage.TrimBox.URY);
-Console.WriteLine("Rect: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.Rect.Height, pdfPage.Rect.Width, pdfPage.Rect.LLX, pdfPage.Rect.LLY, pdfPage.Rect.URX, pdfPage.Rect.URY);
-Console.WriteLine("Page number: {0}", pdfPage.Number);
-Console.WriteLine("Rotate: {0}", pdfPage.Rotate);
-```
-
-### Δείγμα πηγαίου κώδικα για Λήψη Ιδιοτήτων χρησιμοποιώντας Aspose.PDF για .NET 
-
-```csharp
-
 // Η διαδρομή προς τον κατάλογο εγγράφων.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Άνοιγμα εγγράφου
-Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
-// Λήψη συλλογής σελίδων
-PageCollection pageCollection = pdfDocument.Pages;
-// Λάβετε συγκεκριμένη σελίδα
-Page pdfPage = pageCollection[1];
-// Λάβετε ιδιότητες σελίδας
-System.Console.WriteLine("ArtBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
-System.Console.WriteLine("BleedBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.BleedBox.Height, pdfPage.BleedBox.Width, pdfPage.BleedBox.LLX, pdfPage.BleedBox.LLY, pdfPage.BleedBox.URX, pdfPage.BleedBox.URY);
-System.Console.WriteLine("CropBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.CropBox.Height, pdfPage.CropBox.Width, pdfPage.CropBox.LLX, pdfPage.CropBox.LLY, pdfPage.CropBox.URX, pdfPage.CropBox.URY);
-System.Console.WriteLine("MediaBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.MediaBox.Height, pdfPage.MediaBox.Width, pdfPage.MediaBox.LLX, pdfPage.MediaBox.LLY, pdfPage.MediaBox.URX, pdfPage.MediaBox.URY);
-System.Console.WriteLine("TrimBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.TrimBox.Height, pdfPage.TrimBox.Width, pdfPage.TrimBox.LLX, pdfPage.TrimBox.LLY, pdfPage.TrimBox.URX, pdfPage.TrimBox.URY);
-System.Console.WriteLine("Rect : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.Rect.Height, pdfPage.Rect.Width, pdfPage.Rect.LLX, pdfPage.Rect.LLY, pdfPage.Rect.URX, pdfPage.Rect.URY);
-System.Console.WriteLine("Page Number : {0}", pdfPage.Number);
-System.Console.WriteLine("Rotate : {0}", pdfPage.Rotate);
-
 ```
 
+Αυτή η γραμμή κώδικα διασφαλίζει ότι καθορίζουμε πού μπορεί η Aspose να βρει το αρχείο PDF με το οποίο θέλουμε να εργαστούμε.
+
+## Βήμα 2: Ανοίξτε το έγγραφο PDF
+
+ Στη συνέχεια, θα ανοίξουμε το έγγραφο PDF χρησιμοποιώντας το`Document` τάξη από τη βιβλιοθήκη Aspose.PDF. Αυτό είναι ένα κρίσιμο βήμα γιατί φορτώνει το PDF στη μνήμη.
+
+```csharp
+// Άνοιγμα εγγράφου
+Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
+```
+
+ Εκτελώντας αυτή τη γραμμή, δημιουργούμε ένα στιγμιότυπο του`Document` κλάση που αντιπροσωπεύει το αρχείο PDF μας, καθιστώντας όλες τις ιδιότητές του προσβάσιμες.
+
+## Βήμα 3: Πρόσβαση στη Συλλογή Σελίδων
+
+Αφού ανοίξουμε το έγγραφο, πρέπει να έχουμε πρόσβαση στις σελίδες αυτού του εγγράφου. Κάθε PDF μπορεί να έχει πολλές σελίδες, επομένως θα εργαστούμε με μια συλλογή που περιέχει όλες τις σελίδες.
+
+```csharp
+// Λήψη συλλογής σελίδων
+PageCollection pageCollection = pdfDocument.Pages;
+```
+
+ Σκέφτομαι`PageCollection` ως ευρετήριο που μας βοηθά να περιηγηθούμε στις σελίδες του εγγράφου PDF μας.
+
+## Βήμα 4: Λάβετε μια συγκεκριμένη σελίδα
+
+Τώρα που έχουμε πρόσβαση στις σελίδες μας, ήρθε η ώρα να εμβαθύνουμε. Θα ανακτήσουμε μια συγκεκριμένη σελίδα από τη συλλογή. Σε αυτήν την περίπτωση, θα έχουμε την πρώτη σελίδα.
+
+```csharp
+// Λάβετε συγκεκριμένη σελίδα
+Page pdfPage = pageCollection[1];
+```
+
+ Να θυμάστε ότι πρόκειται για μηδενική ευρετηρίαση. Επομένως, εάν θέλετε να αποκτήσετε πρόσβαση στην πρώτη σελίδα, πρέπει να την καταχωρήσετε ως`1`.
+
+## Βήμα 5: Ανάκτηση και εμφάνιση ιδιοτήτων σελίδας
+
+Τώρα ερχόμαστε στο συναρπαστικό μέρος — εξαγωγή των ιδιοτήτων της σελίδας! Κάθε σελίδα έχει πολλές ιδιότητες όπως ArtBox, BleedBox, CropBox, MediaBox και TrimBox που περιγράφουν τις διαστάσεις και τη θέση της. Ας αποκτήσουμε πρόσβαση σε αυτές τις ιδιότητες και ας τις εμφανίσουμε.
+
+```csharp
+// Λάβετε ιδιότητες σελίδας
+System.Console.WriteLine("ArtBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, 
+    pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
+System.Console.WriteLine("BleedBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.BleedBox.Height, pdfPage.BleedBox.Width, pdfPage.BleedBox.LLX, pdfPage.BleedBox.LLY, 
+    pdfPage.BleedBox.URX, pdfPage.BleedBox.URY);
+System.Console.WriteLine("CropBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.CropBox.Height, pdfPage.CropBox.Width, pdfPage.CropBox.LLX, pdfPage.CropBox.LLY, 
+    pdfPage.CropBox.URX, pdfPage.CropBox.URY);
+System.Console.WriteLine("MediaBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.MediaBox.Height, pdfPage.MediaBox.Width, pdfPage.MediaBox.LLX, pdfPage.MediaBox.LLY, 
+    pdfPage.MediaBox.URX, pdfPage.MediaBox.URY);
+System.Console.WriteLine("TrimBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.TrimBox.Height, pdfPage.TrimBox.Width, pdfPage.TrimBox.LLX, pdfPage.TrimBox.LLY, 
+    pdfPage.TrimBox.URX, pdfPage.TrimBox.URY);
+System.Console.WriteLine("Rect : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.Rect.Height, pdfPage.Rect.Width, pdfPage.Rect.LLX, pdfPage.Rect.LLY, 
+    pdfPage.Rect.URX, pdfPage.Rect.URY);
+System.Console.WriteLine("Page Number : {0}", pdfPage.Number);
+System.Console.WriteLine("Rotate : {0}", pdfPage.Rotate);
+```
+
+Αυτό το κομμάτι κώδικα κάνει μερικά δυνατά πράγματα. Έχει πρόσβαση σε κάθε ιδιότητα που σχετίζεται με τις διαστάσεις και τον προσανατολισμό της σελίδας και στη συνέχεια εκτυπώνει τις πληροφορίες στην κονσόλα. Αυτό που λαμβάνετε είναι μια επισκόπηση των ιδιοτήτων της σελίδας που μπορεί να βοηθήσει σε περαιτέρω τροποποιήσεις ή ανάλυση.
+
 ## Σύναψη
-Συγχαρητήρια ! Έχετε αποκτήσει με επιτυχία τις ιδιότητες ενός PDF χρησιμοποιώντας το Aspose.PDF για .NET. Μάθατε πώς να ανοίγετε ένα έγγραφο PDF, να πλοηγείστε σε μια συγκεκριμένη σελίδα και να λαμβάνετε διάφορες ιδιότητες σελίδας, όπως πλαίσια διαστάσεων και περιστροφή. Τώρα μπορείτε να χρησιμοποιήσετε αυτές τις πληροφορίες για να προσαρμόσετε τον χειρισμό των αρχείων PDF σας με βάση τις ιδιότητές τους.
 
-Βεβαιωθείτε ότι έχετε ελέγξει την επίσημη τεκμηρίωση του Aspose.PDF για .NET για περισσότερες πληροφορίες σχετικά με τις προηγμένες λειτουργίες και τις δυνατότητες προσαρμογής.
+Και να το έχετε — μια πλήρης περιγραφή για το πώς να αποκτήσετε ιδιότητες PDF χρησιμοποιώντας το Aspose.PDF για .NET! Τώρα έχετε τη γνώση να εξάγετε αβίαστα ζωτικές πληροφορίες από έγγραφα PDF. Είτε θέλετε να αναλύσετε, να αναφέρετε ή απλώς να καταγράφετε δεδομένα από τα PDF σας, αυτή η ισχυρή βιβλιοθήκη είναι ένας αξιόπιστος σύμμαχος. Κατακτώντας αυτά τα βήματα, είστε σε καλό δρόμο για να γίνετε οδηγός χειρισμού PDF! Μη διστάσετε να εξερευνήσετε περισσότερες δυνατότητες και λειτουργίες που έχει να προσφέρει το Aspose.PDF.
 
-### Συχνές ερωτήσεις
+## Συχνές ερωτήσεις
 
-#### Ε: Πώς μπορώ να αποκτήσω τις ιδιότητες ενός PDF χρησιμοποιώντας το Aspose.PDF για .NET;
+### Πώς μπορώ να εγκαταστήσω το Aspose.PDF για .NET;  
+Μπορείτε να το εγκαταστήσετε μέσω του NuGet Package Manager στο Visual Studio ή να το κατεβάσετε απευθείας από τον ιστότοπο Aspose.
 
-Α: Για να λάβετε τις ιδιότητες ενός PDF χρησιμοποιώντας το Aspose.PDF για .NET, μπορείτε να ακολουθήσετε τα εξής βήματα:
+### Μπορώ να χρησιμοποιήσω το Aspose.PDF δωρεάν;  
+ Ναι, το Aspose προσφέρει μια δωρεάν δοκιμή που μπορείτε να αποκτήσετε[εδώ](https://releases.aspose.com/).
 
-1. Ορίστε τον κατάλογο του εγγράφου καθορίζοντας τη διαδρομή προς το αρχείο PDF του οποίου οι ιδιότητες θέλετε να ανακτήσετε.
-2.  Ανοίξτε το έγγραφο PDF χρησιμοποιώντας το`Document` κλάση του Aspose.PDF, παρέχοντας τη σωστή διαδρομή προς το αρχείο PDF.
-3.  Αποκτήστε πρόσβαση στη συλλογή σελίδων του εγγράφου χρησιμοποιώντας το`Pages` ιδιοκτησία του`pdfDocument` αντικείμενο.
-4. Μεταβείτε σε μια συγκεκριμένη σελίδα χρησιμοποιώντας το ευρετήριο της σελίδας στη συλλογή (η δημιουργία ευρετηρίου ξεκινά από το 1).
-5.  Αποκτήστε τις διαφορετικές ιδιότητες της σελίδας PDF, όπως ArtBox, BleedBox, CropBox, MediaBox, TrimBox, Rect, Page Number και Rotation, χρησιμοποιώντας τις αντίστοιχες ιδιότητες του`pdfPage` αντικείμενο.
+### Πού μπορώ να βρω τεκμηρίωση για το Aspose.PDF;  
+ Μπορείτε να ανατρέξετε στην τεκμηρίωση στη διεύθυνση[Aspose.pdf Τεκμηρίωση](https://reference.aspose.com/pdf/net/).
 
-#### Ε: Ποιες είναι οι διαφορετικές ιδιότητες μιας σελίδας PDF που μπορώ να ανακτήσω χρησιμοποιώντας το Aspose.PDF για .NET;
+### Πώς μπορώ να λάβω υποστήριξη εάν αντιμετωπίσω προβλήματα;  
+ Μπορείτε να επισκεφτείτε το φόρουμ του Aspose για υποστήριξη, όπου μπορείτε να κάνετε ερωτήσεις σχετικά με τα προβλήματά σας[εδώ](https://forum.aspose.com/c/pdf/10).
 
-Α: Μπορείτε να ανακτήσετε διάφορες ιδιότητες μιας σελίδας PDF χρησιμοποιώντας το Aspose.PDF για .NET, όπως:
-
-- ArtBox: Αντιπροσωπεύει τις διαστάσεις του γραφικού της σελίδας.
-- BleedBox: Αντιπροσωπεύει τις διαστάσεις του bleed της σελίδας.
-- CropBox: Αντιπροσωπεύει τις διαστάσεις του ορατού περιεχομένου της σελίδας μετά την περικοπή.
-- MediaBox: Αντιπροσωπεύει τις διαστάσεις των φυσικών μέσων της σελίδας.
-- TrimBox: Αντιπροσωπεύει τις διαστάσεις του περικομμένου περιεχομένου της σελίδας.
-- Rect: Αντιπροσωπεύει τις διαστάσεις του πλαισίου οριοθέτησης της σελίδας.
-- Αριθμός σελίδας: Αντιπροσωπεύει τον αριθμό σελίδας στο έγγραφο.
-- Rotate: Αντιπροσωπεύει τη γωνία περιστροφής της σελίδας.
-
-#### Ε: Πώς μπορώ να αποκτήσω πρόσβαση σε μια συγκεκριμένη σελίδα στο έγγραφο PDF για να ανακτήσω τις ιδιότητές της;
-
- Α: Για να αποκτήσετε πρόσβαση σε μια συγκεκριμένη σελίδα στο έγγραφο PDF και να ανακτήσετε τις ιδιότητές της, μπορείτε να χρησιμοποιήσετε το`Pages` ιδιοκτησία του`pdfDocument` αντικείμενο για πρόσβαση στη συλλογή σελίδων του εγγράφου. Στη συνέχεια, μπορείτε να χρησιμοποιήσετε το ευρετήριο της σελίδας στη συλλογή για να μεταβείτε στην επιθυμητή σελίδα. Για παράδειγμα, για πρόσβαση στη δεύτερη σελίδα, μπορείτε να χρησιμοποιήσετε`pdfDocument.Pages[1]` (η ευρετηρίαση ξεκινά από το 1).
-
-#### Ε: Μπορώ να εκτελέσω λειτουργίες στις ανακτημένες ιδιότητες, όπως τροποποίηση ή αλλαγή μεγέθους των πλαισίων σελίδας;
-
-Α: Ναι, μόλις ανακτήσετε τις ιδιότητες μιας σελίδας PDF χρησιμοποιώντας το Aspose.PDF για .NET, μπορείτε να εκτελέσετε διάφορες λειτουργίες σε αυτές. Για παράδειγμα, μπορείτε να τροποποιήσετε τις διαστάσεις των πλαισίων σελίδας, να περιστρέψετε τη σελίδα ή να χρησιμοποιήσετε τις ανακτημένες πληροφορίες για προσαρμοσμένη επεξεργασία και χειρισμό του εγγράφου PDF.
-
-#### Ε: Το Aspose.PDF για .NET υποστηρίζει την εξαγωγή ιδιοτήτων από κρυπτογραφημένα ή προστατευμένα με κωδικό πρόσβασης αρχεία PDF;
-
-Α: Ναι, το Aspose.PDF για .NET υποστηρίζει την εξαγωγή ιδιοτήτων από κρυπτογραφημένα ή προστατευμένα με κωδικό πρόσβασης αρχεία PDF. Εφόσον παρέχετε τον σωστό κωδικό πρόσβασης για να ανοίξετε το έγγραφο PDF, μπορείτε να αποκτήσετε πρόσβαση και να ανακτήσετε τις ιδιότητές του χρησιμοποιώντας την ίδια προσέγγιση που παρουσιάζεται στο σεμινάριο.
+### Υπάρχει διαθέσιμη προσωρινή άδεια;  
+Ναι, μπορείτε να ζητήσετε μια προσωρινή άδεια για αξιολόγηση κάνοντας μια επίσκεψη[αυτόν τον σύνδεσμο](https://purchase.aspose.com/temporary-license/).

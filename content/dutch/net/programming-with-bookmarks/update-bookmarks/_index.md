@@ -80,7 +80,7 @@ pdfOutline.Bold = true;
 
 ## Stap 5: Sla het bijgewerkte PDF-bestand op
 
-Nadat u alle wijzigingen in uw bladwijzer hebt aangebracht, is de laatste stap het opslaan van het bijgewerkte PDF-bestand. U kunt het opslaan in dezelfde map of een nieuwe map als u het originele bestand ongewijzigd wilt laten.
+Nadat u alle wijzigingen in uw bladwijzer hebt aangebracht, is de laatste stap het opslaan van het bijgewerkte PDF-bestand. U kunt het opslaan in dezelfde map of een nieuwe map als u het originele bestand ongewijzigd wilt houden.
 
 ```csharp
 dataDir = dataDir + "UpdateBookmarks_out.pdf";

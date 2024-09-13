@@ -60,7 +60,7 @@ headerRow.Cells.Add("header 1");
 headerRow.Cells.Add("header 2");
 headerRow.Cells.Add("header 3");
 // ...
-// Thêm các tiêu đề khác ở đây
+//Thêm các tiêu đề khác ở đây
 
 for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
 {
@@ -101,7 +101,7 @@ Aspose.Pdf.Table outerTable = new Aspose.Pdf.Table();
 outerTable.ColumnWidths = "100%";
 outerTable.HorizontalAlignment = HorizontalAlignment.Left;
 
-//Khởi tạo một đối tượng bảng sẽ được lồng bên trong outerTable sẽ ngắt bên trong cùng một trang
+// Khởi tạo một đối tượng bảng sẽ được lồng bên trong outerTable sẽ ngắt bên trong cùng một trang
 Aspose.Pdf.Table mytable = new Aspose.Pdf.Table();
 mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;

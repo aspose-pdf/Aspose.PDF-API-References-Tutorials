@@ -43,7 +43,7 @@ Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
 ## Bước 4: Thiết lập đường viền ô mặc định
 
- Để đảm bảo tính nhất quán, chúng ta có thể thiết lập đường viền ô mặc định bằng cách sử dụng`DefaultCellBorder`tính chất của bảng`BorderInfo` sự vật.
+ Để đảm bảo tính nhất quán, chúng ta có thể thiết lập đường viền ô mặc định bằng cách sử dụng`DefaultCellBorder` tính chất của bảng`BorderInfo` sự vật.
 
 ```csharp
 // Đặt đường viền ô mặc định bằng cách sử dụng đối tượng BorderInfo
@@ -93,7 +93,7 @@ Aspose.Pdf.Cell cell2 = row1.Cells.Add();
 Cuối cùng, chúng ta có thể thêm hình ảnh vào ô của bảng bằng cách thêm nó dưới dạng một đoạn văn trong ô.
 
 ```csharp
-// Thêm hình ảnh vào ô bảng
+//Thêm hình ảnh vào ô bảng
 cell2.Paragraphs.Add(img);
 ```
 
@@ -102,7 +102,7 @@ cell2.Paragraphs.Add(img);
 Sau khi thêm ô hình ảnh, chúng ta có thể thêm nhiều ô vào hàng nếu cần.
 
 ```csharp
-//Thêm một ô nữa vào hàng
+// Thêm một ô nữa vào hàng
 row1.Cells.Add("Previous cell with image");
 
 // Điều chỉnh căn chỉnh theo chiều dọc của ô thứ ba
@@ -114,7 +114,7 @@ row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
  Cuối cùng, chúng ta có thể lưu tài liệu đã sửa đổi vào một vị trí đã chỉ định bằng cách sử dụng`Save` phương pháp.
 
 ```csharp
-// Lưu tài liệu
+//Lưu tài liệu
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
@@ -140,16 +140,16 @@ tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.
 tab1.ColumnWidths = "100 100 120";
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose.jpg";
-// Tạo các hàng trong bảng và sau đó tạo các ô trong các hàng
+//Tạo các hàng trong bảng và sau đó tạo các ô trong các hàng
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Sample text in cell");
 // Thêm ô chứa hình ảnh
 Aspose.Pdf.Cell cell2 = row1.Cells.Add();
-// Thêm hình ảnh vào ô bảng
+//Thêm hình ảnh vào ô bảng
 cell2.Paragraphs.Add(img);
 row1.Cells.Add("Previous cell with image");
 row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
-// Lưu tài liệu
+//Lưu tài liệu
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
@@ -165,7 +165,7 @@ A: Có, bạn có thể thêm nhiều hình ảnh vào các ô khác nhau trong 
 
 #### H: Tôi có thể tùy chỉnh kích thước và vị trí hình ảnh trong ô bảng không?
 
- A: Có, bạn có thể tùy chỉnh kích thước và vị trí hình ảnh trong ô bảng bằng cách điều chỉnh các thuộc tính của`Image`đối tượng. Bạn có thể thiết lập chiều rộng và chiều cao của hình ảnh, cũng như căn chỉnh trong ô.
+ A: Có, bạn có thể tùy chỉnh kích thước và vị trí hình ảnh trong ô bảng bằng cách điều chỉnh các thuộc tính của`Image` đối tượng. Bạn có thể thiết lập chiều rộng và chiều cao của hình ảnh, cũng như căn chỉnh trong ô.
 
 #### H: Tôi có thể thêm hình ảnh vào bảng có số lượng hàng và cột động không?
 

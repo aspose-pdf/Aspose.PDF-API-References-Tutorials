@@ -35,7 +35,7 @@ Page page = doc.Pages.Add();
 
 ## Stap 3: Marges instellen
 
-We stellen de marges voor de pagina in met behulp van de`MarginInfo` klasse. Pas de margewaarden aan volgens uw vereisten.
+ We stellen de marges voor de pagina in met behulp van de`MarginInfo` klasse. Pas de margewaarden aan volgens uw vereisten.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -110,7 +110,7 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-// Wijs het marginInfo-exemplaar toe aan de Margin-eigenschap van sec1.PageInfo
+//Wijs het marginInfo-exemplaar toe aan de Margin-eigenschap van sec1.PageInfo
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
@@ -148,7 +148,7 @@ Table tab2 = new Table();
 hfFoot.Paragraphs.Add(tab2);
 // Instellen met kolombreedtes van de tabel
 tab2.ColumnWidths = "165 172 165";
-// Maak rijen in de tabel en vervolgens cellen in de rijen
+//Maak rijen in de tabel en vervolgens cellen in de rijen
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
@@ -173,7 +173,7 @@ table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
 // Stel de tabelrand in met behulp van een ander aangepast BorderInfo-object
 table.Border = new BorderInfo(BorderSide.All, 1f);
 table.RepeatingRowsCount = 1;
-// Maak rijen in de tabel en vervolgens cellen in de rijen
+//Maak rijen in de tabel en vervolgens cellen in de rijen
 Row row1 = table.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

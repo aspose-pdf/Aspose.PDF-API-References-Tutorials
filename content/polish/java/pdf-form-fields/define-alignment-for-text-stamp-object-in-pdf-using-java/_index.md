@@ -83,7 +83,7 @@ Teraz, gdy zaimplementowaliśmy wyrównanie w naszym kodzie, czas przetestować 
 
 ## Wniosek
 
-W tym artykule przyjrzeliśmy się sposobowi definiowania wyrównania obiektów znaczników tekstowych w plikach PDF przy użyciu Java i Aspose.PDF dla Java. Prawidłowo wyrównane znaczniki tekstowe mogą poprawić atrakcyjność wizualną i przejrzystość dokumentów. Dzięki elastyczności i mocy Aspose.PDF dla Java możesz uzyskać precyzyjne wyrównanie, aby spełnić swoje specyficzne wymagania.
+W tym artykule przyjrzeliśmy się, jak zdefiniować wyrównanie obiektów znaczników tekstowych w plikach PDF przy użyciu Java i Aspose.PDF dla Java. Prawidłowo wyrównane znaczniki tekstowe mogą poprawić atrakcyjność wizualną i przejrzystość dokumentów. Dzięki elastyczności i mocy Aspose.PDF dla Java możesz uzyskać precyzyjne wyrównanie, aby spełnić swoje specyficzne wymagania.
 
 ## Najczęściej zadawane pytania
 

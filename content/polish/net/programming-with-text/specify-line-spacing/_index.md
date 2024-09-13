@@ -124,12 +124,12 @@ formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 TextFragment textFragment = new TextFragment("Hello world");
 if (fontFile != "")
 {
-	// Załaduj czcionkę TrueType do obiektu strumieniowego
+	//Załaduj czcionkę TrueType do obiektu strumieniowego
 	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
 	{
 		// Ustaw nazwę czcionki dla ciągu tekstowego
 		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		//Określ pozycję dla fragmentu tekstu
+		// Określ pozycję dla fragmentu tekstu
 		textFragment.Position = new Position(100, 600);
 		//Ustaw opcję TextFormattingOptions bieżącego fragmentu na wstępnie zdefiniowaną (co wskazuje na LineSpacingMode.FullSize)
 		textFragment.TextState.FormattingOptions = formattingOptions;
@@ -156,7 +156,7 @@ A: Samouczek „Określ odstępy między wierszami w pliku PDF” ma na celu pop
 
 #### P: W jaki sposób ten samouczek jest pomocny w określaniu odstępu między wierszami w dokumencie PDF?
 
-A: Ten samouczek pomaga użytkownikom zrozumieć, jak wykorzystać możliwości Aspose.PDF dla .NET do określania odstępu między wierszami dla tekstu w dokumencie PDF. Postępując zgodnie z podanymi krokami i przykładami kodu, użytkownicy mogą dostosować odstęp między wierszami zgodnie ze swoimi preferencjami.
+A: Ten samouczek pomaga użytkownikom zrozumieć, jak wykorzystać możliwości Aspose.PDF dla .NET do określania odstępu między wierszami dla tekstu w dokumencie PDF. Postępując zgodnie z podanymi krokami i przykładami kodu, użytkownicy mogą dostosować odstępy między wierszami zgodnie ze swoimi preferencjami.
 
 #### P: Jakie warunki wstępne muszę spełnić, aby móc skorzystać z tego samouczka?
 

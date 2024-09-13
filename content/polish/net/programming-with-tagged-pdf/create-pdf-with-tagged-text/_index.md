@@ -7,7 +7,7 @@ type: docs
 weight: 50
 url: /pl/net/programming-with-tagged-pdf/create-pdf-with-tagged-text/
 ---
-tym samouczku przedstawimy Ci przewodnik krok po kroku, jak utworzyć dokument PDF z tagowanym tekstem przy użyciu Aspose.PDF dla .NET. Aspose.PDF to potężna biblioteka, która umożliwia programowe tworzenie, manipulowanie i konwertowanie dokumentów PDF. Korzystając z funkcji tagowanej struktury treści Aspose.PDF, możesz dodać tagowany tekst do swojego dokumentu PDF.
+W tym samouczku przedstawimy Ci przewodnik krok po kroku, jak utworzyć dokument PDF z tagowanym tekstem przy użyciu Aspose.PDF dla .NET. Aspose.PDF to potężna biblioteka, która umożliwia programowe tworzenie, manipulowanie i konwertowanie dokumentów PDF. Korzystając z funkcji tagowanej struktury treści Aspose.PDF, możesz dodać tagowany tekst do swojego dokumentu PDF.
 
 ## Wymagania wstępne
 
@@ -22,7 +22,7 @@ Aby rozpocząć, utwórz nowy projekt w Visual Studio i dodaj odwołanie do bibl
 
 ## Krok 2: Zaimportuj niezbędne przestrzenie nazw
 
-W pliku kodu C# zaimportuj przestrzenie nazw wymagane do uzyskania dostępu do klas i metod udostępnianych przez Aspose.PDF:
+pliku kodu C# zaimportuj przestrzenie nazw wymagane do uzyskania dostępu do klas i metod udostępnianych przez Aspose.PDF:
 
 ```csharp
 using System;
@@ -91,7 +91,7 @@ document.Save( dataDir + "PDFwithTaggedText.pdf");
 
 ## Wniosek
 
-tym samouczku dowiedziałeś się, jak utworzyć dokument PDF z oznaczonym tekstem przy użyciu Aspose.PDF dla .NET. Funkcje strukturyzowania oznaczonej zawartości Aspose.PDF pozwalają na ustrukturyzowanie i zorganizowanie tekstu w celu zapewnienia lepszej dostępności i semantyki.
+W tym samouczku dowiedziałeś się, jak utworzyć dokument PDF z oznaczonym tekstem przy użyciu Aspose.PDF dla .NET. Funkcje strukturyzowania oznaczonej zawartości Aspose.PDF pozwalają na ustrukturyzowanie i zorganizowanie tekstu w celu zapewnienia lepszej dostępności i semantyki.
 
 ### Najczęściej zadawane pytania
 
@@ -119,7 +119,7 @@ A: Przykład kodu pokazuje, jak utworzyć dokument PDF, zdefiniować różne ozn
 
 A: Tak, możesz dodać inne oznaczone elementy tekstowe, takie jak listy, linki lub inne niestandardowe struktury, używając podobnych technik. Aspose.PDF udostępnia różne metody tworzenia różnych typów oznaczonej zawartości, umożliwiając ulepszenie semantyki dokumentu.
 
-####  P: Jak to działa?`SetTitle` method contribute to the PDF document's tagged text?
+#### P: Jak to działa?`SetTitle` method contribute to the PDF document's tagged text?
 
  A: Ten`SetTitle` Metoda ustawia tytuł oznaczonej zawartości dokumentu PDF, podając krótki opis celu lub tematu dokumentu. Informacje te pomagają użytkownikom zrozumieć kontekst oznaczonego tekstu.
 
@@ -127,9 +127,9 @@ A: Tak, możesz dodać inne oznaczone elementy tekstowe, takie jak listy, linki 
 
 A: Oznaczony tekst dodaje semantyczne znaczenie do dokumentu, czyniąc go bardziej dostępnym dla użytkowników niepełnosprawnych lub korzystających z technologii wspomagających. Czytniki ekranu i inne urządzenia wspomagające mogą interpretować i prezentować oznaczony tekst, aby poprawić wrażenia użytkownika.
 
-####  P: Jak to działa?`SetLanguage` method enhance the tagged text in a PDF document?
+#### P: Jak to działa?`SetLanguage` method enhance the tagged text in a PDF document?
 
- A: Ten`SetLanguage`Metoda ustawia atrybut języka oznaczonej zawartości dokumentu PDF. Pomaga to wskazać język, w którym napisany jest oznaczony tekst, poprawiając dostępność i umożliwiając właściwe renderowanie specyficzne dla języka.
+ A: Ten`SetLanguage` Metoda ustawia atrybut języka oznaczonej zawartości dokumentu PDF. Pomaga to wskazać język, w którym napisany jest oznaczony tekst, poprawiając dostępność i umożliwiając właściwe renderowanie specyficzne dla języka.
 
 #### P: Czy możliwe jest dodanie innych elementów, takich jak obrazy lub multimedia, obok oznaczonego tekstu, przy użyciu podobnych technik?
 

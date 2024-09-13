@@ -53,7 +53,7 @@ Den här koden skapar en grundläggande tabell med två kolumner: "Namn" och "Å
 Nu när vi har vår grundläggande tabell, låt oss gå vidare till styling av tabellcellerna. Vi kommer att fokusera på att ändra bakgrundsfärgen för specifika celler.
 
 ```java
-// Java-kod för att utforma tabellceller i en PDF
+// Java-kod för att formatera tabellceller i en PDF
 // Ladda det befintliga PDF-dokumentet
 Document pdfDocument = new Document("SimpleTable.pdf");
 
@@ -97,4 +97,4 @@ Ja, Aspose.PDF för Java är en kommersiell produkt. Du kan behöva skaffa en li
 
 ### Var kan jag hitta mer Aspose.PDF för Java tutorials och resurser?
 
- För omfattande handledningar och dokumentation, besök Aspose.PDF för Java-dokumentation på[här](https://reference.aspose.com/pdf/java/).
+ För omfattande handledning och dokumentation, besök Aspose.PDF för Java-dokumentation på[här](https://reference.aspose.com/pdf/java/).

@@ -10,9 +10,9 @@ url: /it/java/pdf-page-manipulation/change-color-space-of-pdf-document-using-jav
 
 ## Introduzione alla modifica dello spazio colore del documento PDF tramite Java
 
-Nel mondo della manipolazione di documenti PDF, gli sviluppatori Java spesso incontrano situazioni in cui hanno bisogno di cambiare lo spazio colore di un documento PDF. Ciò può essere necessario per vari motivi, come l'ottimizzazione del documento per la stampa, la garanzia della precisione del colore o l'adattamento a diversi dispositivi di visualizzazione.
+Nel mondo della manipolazione dei documenti PDF, gli sviluppatori Java spesso incontrano situazioni in cui hanno bisogno di cambiare lo spazio colore di un documento PDF. Ciò può essere necessario per vari motivi, come l'ottimizzazione del documento per la stampa, la garanzia della precisione del colore o l'adattamento a diversi dispositivi di visualizzazione.
 
-In questa guida passo-passo, esploreremo come modificare lo spazio colore di un documento PDF usando Java. Utilizzeremo la libreria Aspose.PDF per Java, un potente strumento per lavorare con i PDF a livello di programmazione. Alla fine di questo tutorial, sarai dotato delle conoscenze per eseguire questa attività in modo efficiente nelle tue applicazioni Java.
+In questa guida passo passo, esploreremo come modificare lo spazio colore di un documento PDF usando Java. Utilizzeremo la libreria Aspose.PDF per Java, un potente strumento per lavorare con i PDF a livello di programmazione. Alla fine di questo tutorial, sarai dotato delle conoscenze per eseguire questa attività in modo efficiente nelle tue applicazioni Java.
 
 ## Informazioni sugli spazi colore nei PDF
 

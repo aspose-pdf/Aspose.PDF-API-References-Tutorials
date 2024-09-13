@@ -35,7 +35,7 @@ taggedContent.SetLanguage("fr-FR");
 في هذه الخطوة سوف نحصل على عنصر البنية الجذرية لمستندنا.
 
 ```csharp
-//الحصول على عنصر البنية الجذرية
+// الحصول على عنصر البنية الجذرية
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

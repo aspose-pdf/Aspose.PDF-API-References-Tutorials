@@ -105,7 +105,7 @@ dataDir = dataDir + "ExtractBorder_out.png";
 bitmap.Save(dataDir, ImageFormat.Png);
 ```
 
-출력 이미지를 저장하려면 올바른 디렉토리와 파일 이름을 지정해야 합니다.
+출력 이미지를 저장하려면 올바른 디렉토리와 파일 이름을 지정하세요.
 
 ### .NET용 Aspose.PDF를 사용하여 테두리 추출을 위한 예제 소스 코드
 
@@ -149,7 +149,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 
 		if (opSaveState != null)
 		{
-			//이전 상태를 저장하고 현재 상태를 스택 맨 위로 푸시합니다.
+			// 이전 상태를 저장하고 현재 상태를 스택 맨 위로 푸시합니다.
 			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
@@ -243,7 +243,7 @@ A: PDF 파일에서 테두리를 추출하는 것은 다양한 목적에 유용�
 
 #### 질문: PDF 문서 내 특정 페이지나 영역의 테두리를 추출할 수 있나요?
 
-A: 네, 제공된 C# 소스 코드를 수정하여 PDF 문서 내의 특정 페이지나 영역에서 테두리를 추출할 수 있습니다.`doc.Pages` 테두리를 수집하고 사용자 정의 기준을 지정하여 특정 페이지나 관심 영역에서 테두리를 추출할 수 있습니다.
+ A: 네, 제공된 C# 소스 코드를 수정하여 PDF 문서 내의 특정 페이지나 영역에서 테두리를 추출할 수 있습니다.`doc.Pages` 테두리를 수집하고 사용자 정의 기준을 지정하여 특정 페이지나 관심 영역에서 테두리를 추출할 수 있습니다.
 
 #### 질문: 출력 이미지 형식과 품질을 어떻게 사용자 지정할 수 있나요?
 

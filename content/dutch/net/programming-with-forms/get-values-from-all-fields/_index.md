@@ -2,77 +2,101 @@
 title: Waarden ophalen uit alle velden in PDF-document
 linktitle: Waarden ophalen uit alle velden in PDF-document
 second_title: Aspose.PDF voor .NET API-referentie
-description: Haal eenvoudig de waarden van alle formuliervelden op in een PDF-document met Aspose.PDF voor .NET.
+description: Leer hoe u waarden uit alle velden in een PDF-document kunt extraheren met Aspose.PDF voor .NET met deze stapsgewijze handleiding.
 type: docs
 weight: 150
 url: /nl/net/programming-with-forms/get-values-from-all-fields/
 ---
-In deze tutorial laten we u zien hoe u de waarden van alle formuliervelden in een PDF-document kunt ophalen met Aspose.PDF voor .NET. We leggen de C#-broncode stap voor stap uit om u door dit proces te leiden.
+## Invoering
 
-## Stap 1: Voorbereiding
+Heb je ooit gegevens uit een PDF-formulier moeten halen? Of het nu voor gegevensanalyse, administratie of gewoon om je leven makkelijker te maken is, het halen van waarden uit PDF-velden kan een ontmoedigende taak zijn. Maar vrees niet! Met Aspose.PDF voor .NET wordt dit proces een fluitje van een cent. In deze tutorial leiden we je door de stappen om waarden uit alle velden in een PDF-document te halen.
 
-Zorg ervoor dat u de benodigde bibliotheken hebt geïmporteerd en het pad naar uw documentenmap hebt ingesteld:
+## Vereisten
+
+Voordat we in de code duiken, controleren we of je alles hebt wat je nodig hebt om te beginnen:
+
+1. .NET Framework: Zorg ervoor dat u het .NET Framework op uw machine hebt geïnstalleerd. Aspose.PDF werkt naadloos met .NET-toepassingen.
+2.  Aspose.PDF voor .NET: U moet de Aspose.PDF-bibliotheek downloaden en installeren. U kunt deze vinden[hier](https://releases.aspose.com/pdf/net/).
+3. Visual Studio: Een goede IDE maakt uw codeerervaring soepeler. Visual Studio is een populaire keuze voor .NET-ontwikkeling.
+4. Basiskennis van C#: Kennis van C#-programmering helpt u de voorbeelden beter te begrijpen.
+
+## Pakketten importeren
+
+Om te beginnen moet u de benodigde pakketten importeren in uw C#-project. Dit is hoe u dat kunt doen:
+
+### Een nieuw project maken
+
+Open Visual Studio en maak een nieuw C#-project. Kies een consoletoepassing voor de eenvoud.
+
+### Voeg Aspose.PDF-referentie toe
+
+1. Klik met de rechtermuisknop op uw project in de Solution Explorer.
+2. Selecteer 'NuGet-pakketten beheren'.
+3. Zoek naar "Aspose.PDF" en installeer de nieuwste versie.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Forms;
+using System;
 ```
 
-## Stap 2: Open het document
+Nu alles is ingesteld, kunnen we verder met de code!
 
-Open het PDF-document:
+## Stap 1: Stel uw documentenmap in
 
-```csharp
-Document pdfDocument = new Document(dataDir + "GetValuesFromAllFields.pdf");
-```
+Allereerst moet u het pad naar uw PDF-document opgeven. Dit is waar Aspose.PDF naar het bestand zoekt waarmee u wilt werken.
 
-## Stap 3: Waarden voor alle velden ophalen
-
-Doorloop alle formuliervelden in het document en haal hun namen en waarden op:
-
-```csharp
-foreach(Field formField in pdfDocument.Form)
-{
-Console.WriteLine("Field name: {0} ", formField.PartialName);
-Console.WriteLine("Value: {0}", formField.Value);
-}
-```
-
-### Voorbeeldbroncode voor Waarden ophalen uit alle velden met Aspose.PDF voor .NET 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Vervangen`"YOUR DOCUMENT DIRECTORY"` met het werkelijke pad waar uw PDF-bestand zich bevindt. Dit is cruciaal, want als het pad onjuist is, kan het programma uw PDF niet vinden.
+
+## Stap 2: Open het PDF-document
+
+Nu we het pad hebben ingesteld, is het tijd om het PDF-document te openen. Dit is waar de magie begint!
+
+```csharp
 // Document openen
 Document pdfDocument = new Document(dataDir + "GetValuesFromAllFields.pdf");
-// Waarden uit alle velden ophalen
+```
+
+ Hier maken we een nieuw exemplaar van de`Document` class en geef het pad van ons PDF-bestand door. Deze regel code laadt de PDF in het geheugen, waardoor deze gereed is voor manipulatie.
+
+## Stap 3: Toegang tot de formuliervelden
+
+Met het document open, hebben we nu toegang tot de velden van het formulier. Aspose.PDF stelt ons in staat om eenvoudig door alle velden in het PDF-formulier te itereren.
+
+```csharp
+//Waarden uit alle velden ophalen
 foreach (Field formField in pdfDocument.Form)
 {
-	Console.WriteLine("Field Name : {0} ", formField.PartialName);
-	Console.WriteLine("Value : {0} ", formField.Value);
+    Console.WriteLine("Field Name : {0} ", formField.PartialName);
+    Console.WriteLine("Value : {0} ", formField.Value);
 }
 ```
 
+ In deze lus doorlopen we elk veld in het PDF-formulier.`PartialName` eigenschap geeft ons de naam van het veld, terwijl de`Value` property geeft de gegevens die in dat veld zijn ingevoerd. Hier ziet u de resultaten van uw harde werk!
+
 ## Conclusie
 
-In deze tutorial hebben we geleerd hoe u de waarden van alle formuliervelden in een PDF-document kunt ophalen met Aspose.PDF voor .NET. Door deze stappen te volgen, kunt u eenvoudig de waarden van alle formuliervelden uit uw PDF-documenten extraheren met Aspose.PDF.
+Gefeliciteerd! U hebt zojuist geleerd hoe u waarden uit alle velden in een PDF-document kunt extraheren met Aspose.PDF voor .NET. Deze krachtige bibliotheek vereenvoudigt het proces van werken met PDF-formulieren, waardoor u gemakkelijker gegevens kunt beheren en analyseren. Of u nu een ontwikkelaar bent die uw applicaties wil verbeteren of gewoon iemand die PDF's efficiënter moet verwerken, Aspose.PDF is een fantastische tool om in uw arsenaal te hebben.
 
-### Veelgestelde vragen
+## Veelgestelde vragen
 
-#### V: Kan ik de waarden van formuliervelden wijzigen terwijl ik ze ophaal met Aspose.PDF voor .NET?
+### Wat is Aspose.PDF voor .NET?
+Aspose.PDF voor .NET is een bibliotheek waarmee ontwikkelaars PDF-documenten in .NET-toepassingen kunnen maken, bewerken en converteren.
 
- A: Ja, u kunt de waarden van formuliervelden wijzigen terwijl u ze ophaalt met Aspose.PDF voor .NET. Zodra u de`Field` object dat een formulierveld vertegenwoordigt, kunt u de`Value`eigenschap met de gewenste waarde. Nadat u de nodige wijzigingen hebt aangebracht, kunt u het bijgewerkte PDF-document opslaan om de wijzigingen weer te geven.
+### Kan ik Aspose.PDF gratis gebruiken?
+ Ja, Aspose biedt een gratis proefversie die u kunt gebruiken om de functies van de bibliotheek te verkennen. U kunt deze downloaden[hier](https://releases.aspose.com/).
 
-#### V: Hoe kan ik specifieke formuliervelden filteren en ophalen op basis van hun type (bijvoorbeeld tekstvelden, selectievakjes)?
+### Waar kan ik de documentatie vinden?
+ De documentatie voor Aspose.PDF voor .NET is te vinden[hier](https://reference.aspose.com/pdf/net/).
 
- A: Om specifieke formuliervelden op te halen op basis van hun typen, kunt u voorwaardelijke statements of LINQ-query's gebruiken om de velden van interesse te filteren. U kunt het type van elk formulierveld controleren met behulp van de veldnaam.`FieldType` eigenschap en haal vervolgens de waarden dienovereenkomstig op.
+### Hoe koop ik een licentie?
+ U kunt een licentie voor Aspose.PDF kopen door de aankooppagina te bezoeken[hier](https://purchase.aspose.com/buy).
 
-#### V: Wat gebeurt er als het PDF-document geen formuliervelden heeft?
-
- A: Als het PDF-document geen formuliervelden bevat,`pdfDocument.Form` property retourneert een lege verzameling. In dergelijke gevallen wordt de lus om waarden op te halen niet uitgevoerd en worden er geen waarden weergegeven.
-
-#### V: Kan ik de waarden van de formuliervelden in een specifieke volgorde ophalen of alfabetisch sorteren?
-
-A: De volgorde waarin de formuliervelden worden opgehaald, is afhankelijk van de onderliggende structuur van het PDF-document. Aspose.PDF voor .NET retourneert de formuliervelden in de volgorde waarin ze aan het document zijn toegevoegd. Als u de formuliervelden in een specifieke volgorde wilt weergeven of verwerken, kunt u aangepaste sorteerlogica implementeren op basis van uw vereisten.
-
-#### V: Hoe kan ik omgaan met versleutelde PDF-documenten met wachtwoordbeveiligde formuliervelden?
-
- A: Aspose.PDF voor .NET biedt functies om te werken met gecodeerde PDF-documenten en met wachtwoord beveiligde formuliervelden. Voordat u het document laadt, kunt u het wachtwoord instellen met behulp van de`pdfDocument.Password` eigenschap om toegang te krijgen tot het beveiligde PDF-document en de bijbehorende formuliervelden.
+### Wat als ik ondersteuning nodig heb?
+ Als u vragen hebt of hulp nodig hebt, kunt u het Aspose-ondersteuningsforum bezoeken[hier](https://forum.aspose.com/c/pdf/10).

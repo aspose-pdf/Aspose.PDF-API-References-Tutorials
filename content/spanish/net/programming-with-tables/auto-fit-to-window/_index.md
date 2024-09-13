@@ -126,7 +126,7 @@ margin.Bottom = 5f;
 // Establezca el relleno de celda predeterminado en el objeto MarginInfo
 tab1.DefaultCellPadding = margin;
 
-// Crea filas en la tabla y luego celdas en las filas.
+//Crea filas en la tabla y luego celdas en las filas.
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

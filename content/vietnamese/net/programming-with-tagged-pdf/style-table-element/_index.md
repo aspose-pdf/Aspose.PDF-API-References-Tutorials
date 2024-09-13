@@ -35,7 +35,7 @@ Chúng tôi đã tạo một tài liệu mới và đặt tiêu đề và ngôn 
 Ở bước này, chúng ta sẽ lấy phần tử cấu trúc gốc cho tài liệu của mình.
 
 ```csharp
-//Lấy phần tử cấu trúc gốc
+// Lấy phần tử cấu trúc gốc
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

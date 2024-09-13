@@ -2,144 +2,159 @@
 title: PDF 파일에 로컬 하이퍼링크 만들기
 linktitle: PDF 파일에 로컬 하이퍼링크 만들기
 second_title: .NET API 참조를 위한 Aspose.PDF
-description: Aspose.PDF for .NET을 사용하여 PDF 파일에 로컬 하이퍼링크를 쉽게 만들 수 있습니다.
+description: 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF 파일에 로컬 하이퍼링크를 쉽게 만드는 방법을 알아보세요.
 type: docs
 weight: 40
 url: /ko/net/programming-with-links-and-actions/create-local-hyperlink/
 ---
-PDF 파일에 로컬 하이퍼링크를 만들면 사용자를 동일한 PDF 문서의 다른 페이지로 안내하는 클릭 가능한 링크를 만들 수 있습니다. Aspose.PDF for .NET을 사용하면 다음 소스 코드를 따라 이러한 링크를 쉽게 만들 수 있습니다.
+## 소개
 
-## 1단계: 필요한 라이브러리 가져오기
+이 가이드에서는 Aspose.PDF for .NET을 사용하여 PDF 파일에 로컬 하이퍼링크를 만드는 과정을 안내해 드리겠습니다. 각 단계를 명확하게 나누어 PDF 조작의 세계에 새로 입문한 사람이라도 손쉽게 따라할 수 있도록 하겠습니다.
 
-시작하기 전에 C# 프로젝트에 필요한 라이브러리를 가져와야 합니다. 필요한 가져오기 지시문은 다음과 같습니다.
+## 필수 조건
+
+코드를 자세히 살펴보기 전에 먼저 필요한 모든 것이 있는지 확인해 보겠습니다.
+
+1.  Visual Studio: .NET 애플리케이션을 개발하려면 이것이 필요합니다. 다음에서 다운로드하세요.[웹사이트](https://visualstudio.microsoft.com/).
+2.  .NET용 Aspose.PDF: 이 라이브러리는 다음을 통해 다운로드할 수 있습니다.[다운로드 링크는 여기입니다](https://releases.aspose.com/pdf/net/)PDF 조작을 위한 다양한 기능이 포함되어 있습니다.
+3. C#에 대한 기본 지식: C# 프로그래밍에 대한 지식이 조금 있으면 도움이 되지만 걱정하지 마세요. 코드를 줄별로 살펴보겠습니다.
+4.  .NET Framework: 컴퓨터에 .NET framework가 설치되어 있는지 확인하세요. Aspose.PDF에서 요구 사항을 확인할 수 있습니다.[선적 서류 비치](https://reference.aspose.com/pdf/net/).
+
+이러한 필수 구성 요소를 갖추면 PDF 문서에서 로컬 하이퍼링크를 만드는 방법을 배울 준비가 된 것입니다!
+
+## 패키지 가져오기
+
+이제 모든 준비가 끝났으니, C# 프로젝트에 필요한 패키지를 가져올 차례입니다. Aspose.PDF 라이브러리에는 필요한 모든 클래스가 들어 있습니다. 방법은 다음과 같습니다.
+
+### 프로젝트 열기
+
+기존 .NET 프로젝트를 열거나 Visual Studio에서 새 프로젝트를 만듭니다. 새로 시작하는 경우 시작 화면에서 "새 프로젝트 만들기"를 선택합니다.
+
+### Aspose.PDF에 참조 추가
+
+ 솔루션 탐색기에서 프로젝트 폴더의 "종속성"을 마우스 오른쪽 버튼으로 클릭합니다. "NuGet 패키지 관리"를 선택한 다음 검색합니다.`Aspose.PDF`. 사용 가능한 최신 버전을 설치하세요. 그러면 PDF를 만들고 조작하는 데 필요한 모든 도구가 제공됩니다.
+
+### 네임스페이스 가져오기
+
+.cs 파일 맨 위에 다음과 같이 Aspose.PDF 라이브러리에 대한 using 지침을 추가합니다.
 
 ```csharp
+using System;
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## 2단계: 문서 폴더 경로 설정
+이렇게 하면 라이브러리의 기능에 접근할 수 있습니다.
 
- 이 단계에서는 결과 PDF 파일을 저장할 폴더 경로를 지정해야 합니다. 바꾸기`"YOUR DOCUMENT DIRECTORY"` 다음 코드에서는 문서 폴더의 실제 경로를 사용합니다.
+로컬 하이퍼링크를 만드는 과정을 간단한 단계로 나누어 보겠습니다. 각 단계는 그 뒤에 있는 논리를 이해하는 데 도움이 되도록 포괄적으로 설명하겠습니다.
+
+## 1단계: 문서 인스턴스 설정
+
+이 단계에서는 작업할 PDF 파일을 나타내는 Document 클래스의 새 인스턴스를 만듭니다.
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // 문서 디렉토리 설정
+Document doc = new Document(); // 문서 인스턴스 생성
 ```
+ 그만큼`dataDir` 변수는 새로 만든 PDF가 상주할 위치입니다. 다음을 교체해야 합니다.`"YOUR DOCUMENT DIRECTORY"` 시스템의 실제 경로와 함께.`Document` 클래스는 페이지와 링크를 추가할 수 있는 새로운 PDF 문서를 만듭니다.
 
-## 3단계: Document 인스턴스 생성
+## 2단계: 문서에 페이지 추가
 
- 우리는 인스턴스를 생성할 것입니다`Document` PDF 문서를 나타내는 클래스입니다. 해당 코드는 다음과 같습니다.
+다음으로, PDF 문서에 페이지를 추가합니다. 
 
 ```csharp
-Document doc = new Document();
+Page page = doc.Pages.Add(); // 페이지 컬렉션에 페이지 추가
 ```
+ 그만큼`Pages.Add()` 방법은 문서에 새 페이지를 추가합니다. 여기에 모든 콘텐츠가 저장됩니다.
 
-## 4단계: 하이퍼링크가 있는 페이지 및 텍스트 추가
+## 3단계: 텍스트 조각 만들기
 
-이 단계에서는 PDF 문서에 페이지를 추가하고 로컬 하이퍼링크가 포함된 텍스트를 추가합니다. 각 링크에 대한 대상 페이지를 정의합니다. 해당 코드는 다음과 같습니다.
-
-```csharp
-Page page = doc.Pages.Add();
-
-TextFragment text = new TextFragment("Link to page 7");
-LocalHyperlink link = new LocalHyperlink();
-link.TargetPageNumber = 7;
-text. Hyperlink = link;
-page.Paragraphs.Add(text);
-
-text = new TextFragment("Link to page 1");
-text. IsInNewPage = true;
-link = new LocalHyperlink();
-link.TargetPageNumber = 1;
-text. Hyperlink = link;
-page.Paragraphs.Add(text);
-```
-
-## 5단계: 업데이트된 문서 저장
-
-이제 업데이트된 PDF 파일을 다음을 사용하여 저장해 보겠습니다.`Save` 의 방법`doc` 객체입니다. 해당 코드는 다음과 같습니다.
+이제 클릭할 수 있는 링크 역할을 하는 텍스트를 만들어 보겠습니다.
 
 ```csharp
-dataDir = dataDir + "CreateLocalHyperlink_out.pdf";
-doc.Save(dataDir);
-```
-
-### .NET용 Aspose.PDF를 사용하여 로컬 하이퍼링크 만들기 샘플 소스 코드 
-```csharp
-// 문서 디렉토리의 경로입니다.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// 문서 인스턴스 생성
-Document doc = new Document();
-// PDF 파일의 페이지 컬렉션에 페이지 추가
-Page page = doc.Pages.Add();
-// Text Fragment 인스턴스 생성
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("link page number test to page 7");
-// 로컬 하이퍼링크 인스턴스 생성
-Aspose.Pdf.LocalHyperlink link = new Aspose.Pdf.LocalHyperlink();
-// 링크 인스턴스에 대한 대상 페이지 설정
-link.TargetPageNumber = 7;
-// TextFragment 하이퍼링크 설정
-text.Hyperlink = link;
-// 페이지의 문단 컬렉션에 텍스트 추가
-page.Paragraphs.Add(text);
-// 새로운 TextFragment 인스턴스를 만듭니다.
-text = new TextFragment("link page number test to page 1");
-// TextFragment는 새 페이지에 추가되어야 합니다.
-text.IsInNewPage = true;
-// 다른 로컬 하이퍼링크 인스턴스를 만듭니다.
-link = new LocalHyperlink();
-// 두 번째 하이퍼링크에 대한 대상 페이지 설정
-link.TargetPageNumber = 1;
-// 두 번째 TextFragment에 대한 링크 설정
-text.Hyperlink = link;
-// 페이지 객체의 문단 컬렉션에 텍스트 추가
-page.Paragraphs.Add(text);    
-dataDir = dataDir + "CreateLocalHyperlink_out.pdf";
-// 업데이트된 문서 저장
-doc.Save(dataDir);
-Console.WriteLine("\nLocal hyperlink created successfully.\nFile saved at " + dataDir);            
 ```
+ 그만큼`TextFragment` PDF의 텍스트 세그먼트를 나타냅니다. 여기서는 사용자에게 7페이지로 이동한다는 것을 알려주는 링크를 만들고 있습니다.
+
+## 4단계: 로컬 하이퍼링크 만들기
+
+마법이 일어나는 곳이 바로 여기입니다! 텍스트 조각이 가리킬 곳을 알려주는 로컬 하이퍼링크를 만들어야 합니다.
+
+```csharp
+Aspose.Pdf.LocalHyperlink link = new Aspose.Pdf.LocalHyperlink(); // 로컬 하이퍼링크 생성
+link.TargetPageNumber = 7; //링크 인스턴스에 대한 대상 페이지 설정
+text.Hyperlink = link; // TextFragment 하이퍼링크 설정
+```
+ 그만큼`LocalHyperlink` 클래스는 우리가 같은 문서의 다른 페이지를 가리킬 수 있게 해줍니다. 설정함으로써`TargetPageNumber` 7번에서 하이퍼링크를 클릭하면 해당 특정 페이지로 이동하도록 지정합니다.
+
+## 5단계: 페이지에 텍스트 조각 추가
+
+하이퍼링크를 설정한 후에는 우리가 만든 페이지에 텍스트 조각을 추가할 차례입니다.
+
+```csharp
+page.Paragraphs.Add(text); // 페이지의 문단 컬렉션에 텍스트 추가
+```
+이 줄은 클릭 가능한 텍스트를 페이지의 문단 모음에 추가합니다.
+
+## 6단계: 다른 텍스트 조각 만들기(선택 사항)
+
+1페이지로 돌아갈 수 있는 하이퍼링크를 하나 더 추가해 보겠습니다.
+
+```csharp
+text = new TextFragment("link page number test to page 1"); // 새로운 TextFragment를 만듭니다
+text.IsInNewPage = true; // 새 페이지에 추가하세요
+```
+ 새로운 것을 만듭니다`TextFragment` 두 번째 링크의 경우 다음을 설정합니다.`IsInNewPage` true로 설정하면 이 텍스트가 새 페이지에 표시됩니다.
+
+## 7단계: 두 번째 로컬 하이퍼링크 설정
+
+이전과 마찬가지로 1페이지에 대한 또 다른 로컬 하이퍼링크를 만듭니다.
+
+```csharp
+link = new LocalHyperlink(); // 다른 로컬 하이퍼링크 인스턴스를 만듭니다.
+link.TargetPageNumber = 1; //두 번째 하이퍼링크에 대한 대상 페이지 설정
+text.Hyperlink = link; // 두 번째 TextFragment에 대한 링크 설정
+```
+이 하이퍼링크는 1페이지를 대상으로 하며, 사용자는 2페이지에 도달하면 뒤로 돌아갈 수 있습니다.
+
+## 8단계: 새 페이지에 두 번째 텍스트 조각 추가
+
+이제 이 텍스트를 해당 페이지에 추가해 보겠습니다.
+
+```csharp
+page.Paragraphs.Add(text); // 페이지 객체의 문단 컬렉션에 텍스트 추가
+```
+5단계와 마찬가지로 이 줄은 새로 만든 페이지에 새로운 하이퍼링크 텍스트를 추가합니다.
+
+## 9단계: 문서 저장
+
+마지막으로, 열심히 일한 결과를 저장할 시간입니다! 
+
+```csharp
+dataDir = dataDir + "CreateLocalHyperlink_out.pdf"; // 출력 파일 이름을 지정하세요
+doc.Save(dataDir); // 업데이트된 문서 저장
+Console.WriteLine("\nLocal hyperlink created successfully.\nFile saved at " + dataDir);
+```
+ 이것은 디렉토리 경로를 파일 이름과 결합합니다.`Save()` 이 방법을 사용하면 문서가 저장되고, 확인 메시지가 나타나 모든 것이 원활하게 진행되었음을 알려줍니다!
 
 ## 결론
 
-축하합니다! 이제 Aspose.PDF for .NET을 사용하여 PDF에서 로컬 하이퍼링크를 만드는 단계별 가이드가 있습니다. 이 코드를 사용하여 사용자를 같은 문서의 다른 페이지로 안내하는 클릭 가능한 링크를 만들 수 있습니다.
+Aspose.PDF for .NET을 사용하여 PDF 파일에 로컬 하이퍼링크를 만드는 것은 멋진 트릭일 뿐만 아니라 탐색 및 사용자 경험을 향상시키는 실용적인 기능입니다. 이제 독자에게 필요한 정보를 직접 알려줄 수 있는 지식을 갖추게 되었습니다. 처음 비유를 떠올려 보세요. 끝없는 페이지를 헤매는 잃어버린 영혼은 더 이상 없습니다.
 
-고급 하이퍼링크 기능에 대한 자세한 내용은 공식 Aspose.PDF 문서를 확인하세요.
+## 자주 묻는 질문
 
-### PDF 파일에 로컬 하이퍼링크를 만드는 방법에 대한 FAQ
+### .NET용 Aspose.PDF란 무엇인가요?
+.NET용 Aspose.PDF는 개발자가 .NET 프레임워크를 사용하여 프로그래밍 방식으로 PDF 문서를 만들고, 조작하고, 변환할 수 있는 라이브러리입니다.
 
-#### 질문: PDF 파일의 로컬 하이퍼링크란 무엇입니까?
+### 외부 웹 페이지에 하이퍼링크를 만들 수 있나요?
+네, Aspose.PDF는 PDF 내의 로컬 하이퍼링크 외에도 외부 URL에 대한 하이퍼링크를 만드는 것을 지원합니다.
 
-A: PDF 파일의 로컬 하이퍼링크는 사용자를 동일한 문서 내의 다른 페이지로 안내하는 클릭 가능한 링크입니다. 이러한 링크는 탐색을 향상시키고 독자가 관련 섹션에 빠르게 액세스할 수 있도록 합니다.
+### Aspose.PDF 무료 평가판이 있나요?
+ 물론입니다! 무료 체험판을 다음에서 이용할 수 있습니다.[대지](https://releases.aspose.com/).
 
-#### 질문: 로컬 하이퍼링크는 PDF 문서에 어떤 이점이 있나요?
+### Aspose는 어떤 프로그래밍 언어를 지원하나요?
+Aspose는 Java, C를 포함한 다양한 프로그래밍 언어에 대한 라이브러리를 제공합니다.++, Python 등이 있습니다.
 
-A: 로컬 하이퍼링크는 동일한 PDF 문서 내에서 관련 콘텐츠를 연결하는 효율적인 방법을 제공합니다. 이는 독자가 전체 문서를 스크롤하지 않고도 특정 섹션으로 빠르게 이동할 수 있도록 하여 사용자 경험을 개선합니다.
-
-#### 질문: Aspose.PDF for .NET은 로컬 하이퍼링크 생성을 어떻게 지원하나요?
-A: Aspose.PDF for .NET은 로컬 하이퍼링크를 만드는 데 대한 포괄적인 지원을 제공합니다. 이 가이드에 제공된 단계별 튜토리얼은 C#을 사용하여 PDF 문서에 로컬 하이퍼링크를 추가하는 방법을 보여줍니다.
-
-#### 질문: 로컬 하이퍼링크의 모양을 사용자 지정할 수 있나요?
-
-대답: 네, 로컬 하이퍼링크의 모양(텍스트 색상 및 스타일 포함)을 사용자 지정하여 문서 디자인과 일치하고 일관된 시각적 환경을 제공할 수 있습니다.
-
-#### 질문: 단일 PDF 페이지 내에 여러 개의 로컬 하이퍼링크를 만들 수 있나요?
-
-A: 물론입니다! 단일 PDF 페이지 내에 여러 로컬 하이퍼링크를 만들 수 있어 독자가 필요에 따라 다양한 섹션이나 페이지로 이동할 수 있습니다. 각 로컬 하이퍼링크는 해당 대상에 맞게 조정할 수 있습니다.
-
-#### 질문: 로컬 하이퍼링크를 사용하여 페이지의 특정 섹션에 링크할 수 있나요?
-
-A: 로컬 하이퍼링크는 일반적으로 전체 페이지로 이동하지만 PDF 문서 내에 앵커나 북마크를 만들어서 타겟 링크를 만들 수 있습니다. Aspose.PDF for .NET은 다양한 하이퍼링크 옵션을 지원합니다.
-
-#### 질문: 로컬 하이퍼링크가 제대로 작동하는지 어떻게 확인할 수 있나요?
-
-A: 제공된 튜토리얼과 샘플 코드를 따르면 자신 있게 기능적인 로컬 하이퍼링크를 만들 수 있습니다. 생성된 PDF 문서를 열고 하이퍼링크된 텍스트를 클릭하여 링크를 테스트할 수 있습니다.
-
-#### 질문: 로컬 하이퍼링크를 사용할 때 제한이 있나요?
-
-A: 로컬 하이퍼링크는 문서 탐색을 향상시키는 효과적인 방법이지만, 문서의 구조가 명확하고 직관적으로 유지되도록 하는 것이 중요합니다. 적절하게 레이블이 지정된 하이퍼링크와 앵커는 긍정적인 사용자 경험에 기여합니다.
-
-#### 질문: 표나 이미지 내에 로컬 하이퍼링크를 만들 수 있나요?
-
-A: 네, 표, 이미지, 텍스트를 포함하여 PDF 문서의 다양한 요소 내에 로컬 하이퍼링크를 만들 수 있습니다. Aspose.PDF for .NET은 다양한 유형의 콘텐츠에 하이퍼링크를 추가하는 데 유연성을 제공합니다.
+### Aspose 제품에 대한 지원은 어떻게 받을 수 있나요?
+ 지원을 요청할 수 있습니다.[애스포지 포럼](https://forum.aspose.com/c/pdf/10).

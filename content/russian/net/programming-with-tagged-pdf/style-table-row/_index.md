@@ -35,7 +35,7 @@ taggedContent.SetLanguage("fr-FR");
 На этом этапе мы получим корневой элемент структуры для нашего документа.
 
 ```csharp
-//Получить корневой структурный элемент
+// Получить корневой структурный элемент
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

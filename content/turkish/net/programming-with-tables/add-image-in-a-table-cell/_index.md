@@ -43,7 +43,7 @@ Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
 ## Adım 4: Varsayılan Hücre Kenarlığını Ayarlama
 
- Tutarlılığı sağlamak için, varsayılan bir hücre kenarlığı ayarlayabiliriz`DefaultCellBorder`tablonun özelliği`BorderInfo` nesne.
+ Tutarlılığı sağlamak için, varsayılan bir hücre kenarlığı ayarlayabiliriz`DefaultCellBorder` tablonun özelliği`BorderInfo` nesne.
 
 ```csharp
 // BorderInfo nesnesini kullanarak varsayılan hücre kenarlığını ayarlayın
@@ -93,7 +93,7 @@ Aspose.Pdf.Cell cell2 = row1.Cells.Add();
 Son olarak, resmi hücrenin içine paragraf olarak ekleyerek tablo hücresine ekleyebiliriz.
 
 ```csharp
-// Resmi tablo hücresine ekle
+//Resmi tablo hücresine ekle
 cell2.Paragraphs.Add(img);
 ```
 
@@ -102,7 +102,7 @@ cell2.Paragraphs.Add(img);
 Resim hücresini ekledikten sonra, ihtiyaç halinde satıra daha fazla hücre ekleyebiliriz.
 
 ```csharp
-//Satıra başka bir hücre ekle
+// Satıra başka bir hücre ekle
 row1.Cells.Add("Previous cell with image");
 
 // Üçüncü hücrenin dikey hizalamasını ayarlayın
@@ -114,7 +114,7 @@ row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
  Son olarak, değiştirilen belgeyi belirtilen bir konuma şu şekilde kaydedebiliriz:`Save` Yöntem.
 
 ```csharp
-// Belgeyi Kaydet
+//Belgeyi Kaydet
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
@@ -140,16 +140,16 @@ tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.
 tab1.ColumnWidths = "100 100 120";
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose.jpg";
-// Tabloda satırlar ve ardından satırlarda hücreler oluşturun
+//Tabloda satırlar ve ardından satırlarda hücreler oluşturun
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Sample text in cell");
 // Resmi tutan hücreyi ekleyin
 Aspose.Pdf.Cell cell2 = row1.Cells.Add();
-// Resmi tablo hücresine ekle
+//Resmi tablo hücresine ekle
 cell2.Paragraphs.Add(img);
 row1.Cells.Add("Previous cell with image");
 row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
-// Belgeyi Kaydet
+//Belgeyi Kaydet
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
@@ -165,7 +165,7 @@ A: Evet, Aspose.PDF for .NET kullanarak aynı tablo içindeki farklı hücrelere
 
 #### S: Resim boyutunu ve tablo hücresi içindeki konumunu özelleştirebilir miyim?
 
- A: Evet, özellikleri ayarlayarak resim boyutunu ve tablo hücresi içindeki konumunu özelleştirebilirsiniz.`Image`nesne. Görüntünün genişliğini ve yüksekliğini, ayrıca hücre içindeki hizalamayı ayarlayabilirsiniz.
+ A: Evet, özellikleri ayarlayarak resim boyutunu ve tablo hücresi içindeki konumunu özelleştirebilirsiniz.`Image` nesne. Görüntünün genişliğini ve yüksekliğini, ayrıca hücre içindeki hizalamayı ayarlayabilirsiniz.
 
 #### S: Satır ve sütun sayısı dinamik olan bir tabloya resim ekleyebilir miyim?
 

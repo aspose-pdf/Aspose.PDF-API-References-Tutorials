@@ -103,7 +103,7 @@ public class DeleteImagesFromPDF {
 
 ## 結論
 
-在本逐步指南中，我們學習如何使用 Aspose.PDF for Java 從 PDF 文件中刪除影像。這個強大的程式庫使您可以輕鬆地以程式設計方式操作 PDF 文件，從而使您可以完全控制內容。
+在本逐步指南中，我們學習如何使用 Aspose.PDF for Java 從 PDF 文件中刪除影像。這個功能強大的程式庫使您可以輕鬆地以程式設計方式操作 PDF 文件，從而使您能夠完全控制內容。
 
 有關更多資訊和詳細文檔，請訪問[Aspose.PDF for Java API 參考](https://reference.aspose.com/pdf/java/).
 

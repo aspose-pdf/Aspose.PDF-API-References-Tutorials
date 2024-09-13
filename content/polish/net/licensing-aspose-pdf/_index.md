@@ -6,7 +6,7 @@ weight: 21
 url: /pl/net/licensing-aspose-pdf/
 description: Samouczki dotyczące licencjonowania Aspose.PDF dla platformy .NET przeprowadzą Cię przez proces zarządzania licencją na korzystanie z Aspose.PDF dla platformy .NET, obejmujący również ładowanie i stosowanie licencji.
 ---
-Samouczki „Licensing Aspose.PDF for .NET” szczegółowo wyjaśniają, jak zarządzać licencją na korzystanie z Aspose.PDF for .NET. Te samouczki przeprowadzą Cię przez różne metody przesyłania i stosowania licencji, w tym korzystanie z zewnętrznego pliku licencji lub osadzonego łańcucha licencji. Dowiesz się również, jak sprawdzić status licencji i zarządzać wyjątkami licencji. Te zasoby pomogą Ci zrozumieć podstawowe aspekty zarządzania licencją Aspose.PDF for .NET w Twoich projektach.
+Samouczki „Licensing Aspose.PDF for .NET” szczegółowo wyjaśniają, jak zarządzać licencją, aby używać Aspose.PDF for .NET. Te samouczki przeprowadzą Cię przez różne metody przesyłania i stosowania licencji, w tym korzystanie z zewnętrznego pliku licencji lub osadzonego łańcucha licencji. Dowiesz się również, jak sprawdzić status licencji i zarządzać wyjątkami licencji. Te zasoby pomogą Ci zrozumieć podstawowe aspekty zarządzania licencją Aspose.PDF for .NET w Twoich projektach.
 
 ## Samouczki
 | Tytuł | Opis |

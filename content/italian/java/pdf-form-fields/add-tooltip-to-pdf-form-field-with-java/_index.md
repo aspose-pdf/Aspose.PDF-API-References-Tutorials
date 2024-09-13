@@ -14,7 +14,7 @@ In questo articolo, esploreremo come aggiungere tooltip ai campi modulo PDF util
 
 ## Informazioni sui suggerimenti nei campi dei moduli PDF
 
-tooltip sono piccoli messaggi pop-up che compaiono quando un utente passa il puntatore del mouse su un elemento specifico. Nel contesto dei campi dei moduli PDF, i tooltip possono fornire istruzioni, spiegazioni o suggerimenti aggiuntivi sullo scopo di un campo specifico. Sono particolarmente utili per guidare gli utenti nella compilazione corretta dei moduli.
+tooltip sono piccoli messaggi pop-up che compaiono quando un utente passa il puntatore del mouse su un elemento specifico. Nel contesto dei campi dei moduli PDF, i tooltip possono fornire istruzioni aggiuntive, spiegazioni o suggerimenti sullo scopo di un campo specifico. Sono particolarmente utili per guidare gli utenti nella compilazione corretta dei moduli.
 
 ## Preparazione dell'ambiente
 

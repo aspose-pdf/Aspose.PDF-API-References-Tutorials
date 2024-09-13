@@ -32,7 +32,7 @@ using System.IO;
  Dans le code, recherchez la ligne qui dit`string dataDir = "YOUR DOCUMENT DIRECTORY";` et remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin vers le répertoire où sont stockés vos documents.
 
 ## Étape 4 : Ouvrir le document PDF
- Ouvrez un document PDF existant à l'aide de la`Document` constructeur et en passant le chemin vers le fichier PDF d'entrée.
+ Ouvrez un document PDF existant à l'aide de la`Document`constructeur et en passant le chemin vers le fichier PDF d'entrée.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
@@ -138,7 +138,7 @@ R : L'étape 5 consiste à réduire la taille de police des fragments de texte 
 
 R : À l’étape 7, vous enregistrerez le texte extrait dans un fichier texte au chemin de fichier de sortie spécifié.
 
-#### : Pourquoi réduire la taille de la police avant l’extraction ?
+#### Q : Pourquoi réduire la taille de la police avant l’extraction ?
 
 R : La réduction de la taille de la police permet de garantir que le texte extrait s’aligne correctement dans les colonnes, offrant ainsi une représentation plus précise de la mise en page d’origine.
 

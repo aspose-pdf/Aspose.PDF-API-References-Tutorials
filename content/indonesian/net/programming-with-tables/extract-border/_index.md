@@ -149,7 +149,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 
 		if (opSaveState != null)
 		{
-			//Simpan status sebelumnya dan pindahkan status saat ini ke bagian atas tumpukan
+			// Simpan status sebelumnya dan pindahkan status saat ini ke bagian atas tumpukan
 			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
@@ -243,7 +243,7 @@ A: Mengekstrak border dari file PDF dapat berguna untuk berbagai keperluan. Hal 
 
 #### T: Dapatkah saya mengekstrak batas dari halaman atau area tertentu dalam dokumen PDF?
 
-A: Ya, Anda dapat memodifikasi kode sumber C# yang disediakan untuk mengekstrak batas dari halaman atau wilayah tertentu dalam dokumen PDF. Dengan memanipulasi`doc.Pages` koleksi dan menentukan kriteria khusus, Anda dapat memilih untuk mengekstrak batas dari halaman atau area minat tertentu.
+ A: Ya, Anda dapat memodifikasi kode sumber C# yang disediakan untuk mengekstrak batas dari halaman atau wilayah tertentu dalam dokumen PDF. Dengan memanipulasi`doc.Pages` koleksi dan menentukan kriteria khusus, Anda dapat memilih untuk mengekstrak batas dari halaman atau area minat tertentu.
 
 #### T: Bagaimana saya dapat menyesuaikan format dan kualitas gambar keluaran?
 

@@ -42,4 +42,4 @@ Découvrez comment contrôler la qualité de l'image lors de l'ajout de tampons 
 ### [Définir l'alignement de l'objet de tampon de texte dans un PDF à l'aide de Java](./define-alignment-for-text-stamp-object-in-pdf-using-java/)
 Découvrez comment aligner précisément les objets de tampon de texte dans les fichiers PDF à l'aide de Java avec Aspose.PDF pour Java. Améliorez l'apparence et la lisibilité des documents.
 ### [Extraire le texte d'une annotation de tampon dans un PDF à l'aide de Java](./extract-text-from-stamp-annotation-in-pdf-using-java/)
-Découvrez comment extraire du texte des annotations de tampon dans un PDF à l'aide de Java grâce à ce guide complet. Utilisez Aspose.PDF pour Java pour un traitement efficace des documents PDF.
+Découvrez comment extraire du texte des annotations de tampon dans un PDF à l'aide de Java avec ce guide complet. Utilisez Aspose.PDF pour Java pour un traitement efficace des documents PDF.

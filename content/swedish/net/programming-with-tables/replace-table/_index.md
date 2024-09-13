@@ -1,7 +1,7 @@
 ---
 title: Ersätt tabell i PDF-dokument
 linktitle: Ersätt tabell i PDF-dokument
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du ersätter en tabell i PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 180

@@ -48,7 +48,7 @@ Java için Aspose.PDF ile PDF'leri XLSX elektronik tablolarına nasıl dönüşt
 ### [PDF'leri XML Formatına Dönüştür](./convert-pdfs-to-xml-format/)
 Aspose.PDF for Java ile PDF'leri zahmetsizce XML'e nasıl dönüştüreceğinizi öğrenin. Verimli dönüşüm için adım adım kılavuz ve en iyi uygulamalar.
 ### [PostScript'i PDF Dosyalarına Dönüştürün](./turn-postscript-into-pdf-files/)
-Java için Aspose.PDF kullanarak PostScript dosyalarını zahmetsizce PDF'lere nasıl dönüştüreceğinizi öğrenin. Sorunsuz dosya biçimi dönüşümü için adım adım kılavuzumuzu izleyin.
+Aspose.PDF for Java kullanarak PostScript dosyalarını zahmetsizce PDF'lere nasıl dönüştüreceğinizi öğrenin. Sorunsuz dosya biçimi dönüşümü için adım adım kılavuzumuzu izleyin.
 ### [SVG'yi PDF Formatına Dönüştür](./convert-svg-to-pdf-format/)
 Bu adım adım kılavuzda Java için Aspose.PDF'yi kullanarak SVG'yi zahmetsizce PDF'ye nasıl dönüştüreceğinizi öğrenin. SVG dosyalarınızdan kolaylıkla yüksek kaliteli PDF belgeleri oluşturun.
 ### [Metni PDF Dosyalarına Dönüştür](./change-text-to-pdf-files/)

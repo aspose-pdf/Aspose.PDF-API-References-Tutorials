@@ -1,6 +1,6 @@
 ---
-title: TIFF–PDF teljesítményjavítás
-linktitle: TIFF–PDF teljesítményjavítás
+title: A TIFF-ből PDF-be történő teljesítmény javítása
+linktitle: A TIFF-ből PDF-be történő teljesítmény javítása
 second_title: Aspose.PDF for .NET API Reference
 description: A TIFF-képek hatékony konvertálása PDF-formátumba az Aspose.PDF for .NET segítségével. Ismerje meg lépésről lépésre a teljesítményoptimalizálási tippeket a nagy képfájlok zökkenőmentes kezeléséhez.
 type: docs

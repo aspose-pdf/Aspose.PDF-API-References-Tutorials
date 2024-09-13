@@ -108,7 +108,7 @@ Ja, Sie können mit Aspose.PDF für Java mehrere SVG-Dateien stapelweise in PDF 
 
 ### Ist die Nutzung von Aspose.PDF für Java kostenlos?
 
-Aspose.PDF für Java ist eine kommerzielle Bibliothek und Sie müssen für bestimmte Nutzungsszenarien möglicherweise eine Lizenz erwerben. Weitere Informationen zu Preisen und Lizenzen finden Sie auf der Aspose-Website.
+Aspose.PDF für Java ist eine kommerzielle Bibliothek und für bestimmte Nutzungsszenarien müssen Sie möglicherweise eine Lizenz erwerben. Weitere Informationen zu Preisen und Lizenzen finden Sie auf der Aspose-Website.
 
 ### Kann ich das Erscheinungsbild der konvertierten PDF-Datei anpassen?
 

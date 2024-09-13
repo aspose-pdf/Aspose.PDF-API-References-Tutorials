@@ -20,7 +20,7 @@ Bevor wir uns in den Code vertiefen, stellen Sie sicher, dass die folgenden Vora
 ## Einrichten Ihres Java-Projekts
 
 1. Erstellen Sie ein neues Java-Projekt in Ihrer bevorzugten integrierten Entwicklungsumgebung (IDE).
-2. Fügen Sie die Aspose.PDF-Bibliothek für Java zum Klassenpfad Ihres Projekts hinzu.
+2. Fügen Sie die Bibliothek Aspose.PDF für Java zum Klassenpfad Ihres Projekts hinzu.
 
 ## Schreiben des Codes
 

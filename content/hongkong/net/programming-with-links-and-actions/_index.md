@@ -11,16 +11,16 @@ Aspose.PDF for .NET 上的「使用連結和操作進行程式設計」教學頁
 ## 教學
 | 標題 | 描述 |
 | --- | --- | 
-| [在 PDF 文件中添加超鏈接](./add-hyperlink/) | 使用 Aspose.PDF for .NET 在 PDF 檔案中輕鬆新增互動式超連結。 |  
-| [在 PDF 文件中建立申請鏈接](./create-application-link/) | 使用 Aspose.PDF for .NET 在 PDF 檔案中輕鬆建立應用程式連結。 |  
-| [建立文件連結](./create-document-link/) | 使用 Aspose.PDF for .NET 輕鬆建立指向其他 PDF 文件的連結。 |  
-| [在 PDF 文件中建立本地超鏈接](./create-local-hyperlink/) | 使用 Aspose.PDF for .NET 在 PDF 檔案中輕鬆建立本機超連結。 |  
-| [提取 PDF 文件中的鏈接](./extract-links/) | 使用 Aspose.PDF for .NET 輕鬆擷取 PDF 檔案中的連結。 |  
-| [取得 PDF 檔案中的超連結目標](./get-hyperlink-destinations/) | 了解如何使用 Aspose.PDF for .NET 提取 PDF 檔案中的超連結目標。 |  
-| [取得PDF檔案中的超連結文本](./get-hyperlink-text/) | 了解如何使用 Aspose.PDF for .NET 提取 PDF 文件中的超連結文字。 |  
-| [刪除已開啟的操作](./remove-open-action/) | 了解如何使用 Aspose.PDF for .NET 從 PDF 中刪除開啟操作。 |  
-| [在 PDF 文件中設定目標鏈接](./set-destination-link/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中設定目標連結。 |  
-| [在 PDF 文件中設定目標鏈接](./set-target-link/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中設定目標連結。 |  
-| [查看時指定頁面](./specify-page-when-viewing/) | 了解如何使用 Aspose.PDF for .NET 檢視 PDF 時指定頁面。 |  
-| [更新 PDF 文件中的鏈接](./update-links/) | 了解如何使用 Aspose.PDF for .NET 更新 PDF 檔案中的連結。 |  
-| [更新 PDF 檔案中的連結文字顏色](./update-link-text-color/) | 了解如何使用 Aspose.PDF for .NET 更新 PDF 檔案中連結的文字顏色。 |  
+| [在 PDF 文件中添加超鏈接](./add-hyperlink/) | 了解如何使用 Aspose.PDF for .NET 輕鬆新增超連結到 PDF。提高文件的互動性和使用者參與度。 |  
+| [在 PDF 文件中建立申請鏈接](./create-application-link/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中建立應用程式連結。增強 PDF 互動性的逐步指南。 |  
+| [建立文件連結](./create-document-link/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 中建立文件連結。增強 PDF 文件中的導覽和互動性。 |  
+| [在 PDF 文件中建立本地超鏈接](./create-local-hyperlink/) | 透過我們的逐步指南，了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中輕鬆建立本機超連結。 |  
+| [提取 PDF 文件中的鏈接](./extract-links/) | 在此逐步教學中，了解如何使用 Aspose.PDF for .NET 輕鬆從 PDF 檔案中提取連結。 |  
+| [取得 PDF 檔案中的超連結目標](./get-hyperlink-destinations/) | 了解如何使用 Aspose.PDF for .NET 輕鬆從 PDF 檔案中提取超連結目標。請按照這個簡單的逐步教學進行操作。 |  
+| [取得PDF檔案中的超連結文本](./get-hyperlink-text/) | 了解如何使用 Aspose.PDF for .NET 輕鬆從 PDF 檔案中提取超連結文字。包含逐步指南和程式碼。 |  
+| [刪除已開啟的操作](./remove-open-action/) | 使用 Aspose.PDF for .NET 輕鬆刪除 PDF 中開啟的操作！簡單的教程，提供有效 PDF 管理的逐步指導。 |  
+| [在 PDF 文件中設定目標鏈接](./set-destination-link/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中設定目標連結。增強 PDF 互動性的逐步指南。 |  
+| [在 PDF 文件中設定目標鏈接](./set-target-link/) | 透過我們的逐步指南，了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中有效設定目標連結。非常適合增強文件導航。 |  
+| [查看時指定頁面](./specify-page-when-viewing/) | 了解如何使用 Aspose.PDF for .NET 指定在 PDF 中要查看的頁面。透過這個簡單的指南增強使用者導航。 |  
+| [更新 PDF 文件中的鏈接](./update-links/) | 了解如何使用 Aspose.PDF for .NET 更新 PDF 檔案中的連結文字顏色。本逐步指南透過易於理解的範例引導您完成每個細節。 |  
+| [更新 PDF 檔案中的連結文字顏色](./update-link-text-color/) | 透過這份全面的逐步指南，使用 Aspose.PDF for .NET 輕鬆更新 PDF 檔案中的連結。簡化您的 PDF 編輯。 |  

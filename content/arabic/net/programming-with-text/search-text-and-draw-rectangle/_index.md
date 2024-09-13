@@ -110,7 +110,7 @@ document.Save(dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // فتح المستند
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-// إنشاء كائن TextAbsorber للعثور على جميع العبارات المطابقة للتعبير العادي
+//إنشاء كائن TextAbsorber للعثور على جميع العبارات المطابقة للتعبير العادي
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;

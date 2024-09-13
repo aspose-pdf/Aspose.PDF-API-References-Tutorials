@@ -120,14 +120,14 @@ A: Samouczek przeprowadzi Cię przez cały proces krok po kroku:
 
 A: Tak, możesz zmodyfikować kod, aby zastąpić nieużywane czcionki czcionką swojego wyboru. W podanym przykładowym kodzie czcionka „Arial, Bold” jest używana jako zamiennik.
 
-####  P: Jak to działa?`TextFragmentAbsorber` work to remove unused fonts?
+#### P: Jak to działa?`TextFragmentAbsorber` work to remove unused fonts?
 
- A: Ten`TextFragmentAbsorber` jest skonfigurowany za pomocą`TextEditOptions.FontReplace.RemoveUnusedFonts` parametr, który identyfikuje nieużywane czcionki w obrębie fragmentów tekstu PDF. Po wchłonięciu możesz przejść przez iterację`TextFragments` i ustaw ich czcionki na pożądane czcionki zamienne.
+ A: Ten`TextFragmentAbsorber` jest skonfigurowany za pomocą`TextEditOptions.FontReplace.RemoveUnusedFonts` parametr, który identyfikuje nieużywane czcionki w obrębie fragmentów tekstu PDF. Po wchłonięciu możesz przejść przez iterację`TextFragments` i ustawić ich czcionki na pożądane czcionki zamienne.
 
 #### P: Jakiego wyniku można oczekiwać po wykonaniu dostarczonego kodu?
 
 A: Postępując zgodnie z instrukcjami zawartymi w samouczku i uruchamiając dostarczony kod C#, usuniesz nieużywane czcionki z wejściowego dokumentu PDF i zapiszesz zaktualizowaną wersję jako wyjściowy plik PDF.
 
-#### P: Czy mogę zmodyfikować kod, aby usunąć czcionki tylko z określonych stron lub obszarów?
+#### P: Czy mogę zmodyfikować kod tak, aby usunąć czcionki tylko z określonych stron lub obszarów?
 
 A: Dostarczony kod koncentruje się na usuwaniu nieużywanych czcionek z całego dokumentu PDF. Jeśli chcesz wybrać konkretne strony lub regiony do usunięcia czcionek, musisz zmodyfikować podejście i użyć bardziej złożonej logiki, aby zidentyfikować nieużywane czcionki w tych obszarach.

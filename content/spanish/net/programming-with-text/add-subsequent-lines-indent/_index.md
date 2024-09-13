@@ -38,14 +38,14 @@ Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
 ## Paso 5: Agregar una página al documento
- Agregue una nueva página al documento utilizando el`Add` método de la`Pages`colección. En el código proporcionado, la nueva página se asigna a la variable`page`.
+ Agregue una nueva página al documento utilizando el`Add` método de la`Pages` colección. En el código proporcionado, la nueva página se asigna a la variable`page`.
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
 ## Paso 6: Crear un TextFragment con sangría en las líneas subsiguientes
- Crear una instancia`TextFragment` objeto y proporcione el texto deseado. En el código proporcionado, el texto se asigna a la variable`text` Luego, inicializar`TextFormattingOptions` Para el`TextFragment` especificar el`SubsequentLinesIndent` valor.
+ Crear una instancia`TextFragment` objeto y proporcione el texto deseado. En el código proporcionado, el texto se asigna a la variable`text` Luego, inicializar`TextFormattingOptions` Para el`TextFragment` y especificar el`SubsequentLinesIndent` valor.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
@@ -91,7 +91,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = document.Pages.Add();
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-// Inicialice TextFormattingOptions para el fragmento de texto y especifique el valor de FollowingLinesIndent
+//Inicialice TextFormattingOptions para el fragmento de texto y especifique el valor de FollowingLinesIndent
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
 	SubsequentLinesIndent = 20
@@ -148,7 +148,7 @@ Aspose.Pdf.Page page = document.Pages.Add();
 
 #### P: ¿Cómo puedo agregar sangría en las líneas subsiguientes del texto?
 
- A: En el paso 6, crearás un`TextFragment` objeto y asignarle el texto deseado. Luego, inicializará`TextFormattingOptions` Para el`TextFragment` especificar el`SubsequentLinesIndent` valor:
+ A: En el paso 6, crearás un`TextFragment` objeto y asignarle el texto deseado. Luego, inicializará`TextFormattingOptions` Para el`TextFragment` y especificar el`SubsequentLinesIndent` valor:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
@@ -168,7 +168,7 @@ page.Paragraphs.Add(text);
 
 #### P: ¿Puedo repetir el proceso para líneas adicionales?
 
- R: Sí, en el paso 8, puede repetir el proceso para líneas adicionales con la misma sangría creando nuevas`TextFragment` objetos y agregarlos a la colección de párrafos de la página.
+R: Sí, en el paso 8, puede repetir el proceso para líneas adicionales con la misma sangría creando nuevas`TextFragment` objetos y agregarlos a la colección de párrafos de la página.
 
 #### P: ¿Cómo guardo el documento PDF resultante?
 

@@ -110,7 +110,7 @@ document.Save(dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Buka dokumen
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-// Buat objek TextAbsorber untuk menemukan semua frasa yang cocok dengan ekspresi reguler
+//Buat objek TextAbsorber untuk menemukan semua frasa yang cocok dengan ekspresi reguler
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;

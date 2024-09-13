@@ -7,7 +7,7 @@ type: docs
 weight: 10
 url: /pl/net/programming-with-tables/add-image-in-a-table-cell/
 ---
-tym samouczku przeprowadzimy Cię przez proces dodawania obrazu do komórki tabeli za pomocą Aspose.PDF dla .NET. Dostarczony kod źródłowy C# pokazuje, jak osiągnąć tę funkcjonalność. Postępując zgodnie z poniższymi krokami, będziesz w stanie skutecznie włączać obrazy do komórek tabeli.
+W tym samouczku przeprowadzimy Cię przez proces dodawania obrazu do komórki tabeli za pomocą Aspose.PDF dla .NET. Dostarczony kod źródłowy C# pokazuje, jak osiągnąć tę funkcjonalność. Postępując zgodnie z poniższymi krokami, będziesz w stanie skutecznie włączać obrazy do komórek tabeli.
 
 Zanim zagłębisz się w kod, upewnij się, że biblioteka Aspose.PDF dla .NET jest zainstalowana i odwołana do niej w Twoim projekcie.
 
@@ -43,7 +43,7 @@ Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
 ## Krok 4: Ustawianie domyślnej ramki komórki
 
- Aby zapewnić spójność, możemy ustawić domyślną ramkę komórki za pomocą`DefaultCellBorder`Właściwość tabeli`BorderInfo` obiekt.
+ Aby zapewnić spójność, możemy ustawić domyślną ramkę komórki za pomocą`DefaultCellBorder` Właściwość tabeli`BorderInfo` obiekt.
 
 ```csharp
 // Ustaw domyślną ramkę komórki za pomocą obiektu BorderInfo
@@ -93,7 +93,7 @@ Aspose.Pdf.Cell cell2 = row1.Cells.Add();
 Na koniec możemy dodać obraz do komórki tabeli, dodając go jako akapit w komórce.
 
 ```csharp
-// Dodaj obraz do komórki tabeli
+//Dodaj obraz do komórki tabeli
 cell2.Paragraphs.Add(img);
 ```
 
@@ -102,7 +102,7 @@ cell2.Paragraphs.Add(img);
 Po dodaniu komórki obrazu możemy w razie potrzeby dodać do wiersza więcej komórek.
 
 ```csharp
-//Dodaj kolejną komórkę do wiersza
+// Dodaj kolejną komórkę do wiersza
 row1.Cells.Add("Previous cell with image");
 
 // Dostosuj wyrównanie pionowe trzeciej komórki
@@ -114,7 +114,7 @@ row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
  Na koniec możemy zapisać zmodyfikowany dokument w określonej lokalizacji, korzystając z`Save` metoda.
 
 ```csharp
-// Zapisz dokument
+//Zapisz dokument
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
@@ -140,22 +140,22 @@ tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.
 tab1.ColumnWidths = "100 100 120";
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose.jpg";
-// Utwórz wiersze w tabeli, a następnie komórki w wierszach
+//Utwórz wiersze w tabeli, a następnie komórki w wierszach
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Sample text in cell");
 // Dodaj komórkę, która zawiera obraz
 Aspose.Pdf.Cell cell2 = row1.Cells.Add();
-// Dodaj obraz do komórki tabeli
+//Dodaj obraz do komórki tabeli
 cell2.Paragraphs.Add(img);
 row1.Cells.Add("Previous cell with image");
 row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
-// Zapisz dokument
+//Zapisz dokument
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
 ## Wniosek
 
-tym samouczku omówiliśmy przewodnik krok po kroku, jak dodać obraz do komórki tabeli za pomocą Aspose.PDF dla .NET. Zaczęliśmy od skonfigurowania dokumentu, utworzenia strony i dodania tabeli. Następnie ustawiliśmy domyślne obramowanie komórki i szerokości kolumn. Pokazaliśmy, jak dodać obraz do komórki tabeli i dostosować pionowe wyrównanie komórki. Na koniec zapisaliśmy zmodyfikowany dokument. Postępując zgodnie z tymi krokami, możesz skutecznie ulepszyć swoje dokumenty PDF za pomocą obrazów w komórkach tabeli.
+W tym samouczku omówiliśmy przewodnik krok po kroku, jak dodać obraz do komórki tabeli za pomocą Aspose.PDF dla .NET. Zaczęliśmy od skonfigurowania dokumentu, utworzenia strony i dodania tabeli. Następnie ustawiliśmy domyślne obramowanie komórki i szerokości kolumn. Pokazaliśmy, jak dodać obraz do komórki tabeli i dostosować pionowe wyrównanie komórki. Na koniec zapisaliśmy zmodyfikowany dokument. Postępując zgodnie z tymi krokami, możesz skutecznie wzbogacić swoje dokumenty PDF o obrazy w komórkach tabeli.
 
 ### Najczęściej zadawane pytania
 
@@ -165,7 +165,7 @@ A: Tak, możesz dodać wiele obrazów do różnych komórek w tej samej tabeli z
 
 #### P: Czy mogę dostosować rozmiar i położenie obrazu w komórce tabeli?
 
- O: Tak, możesz dostosować rozmiar i położenie obrazu w komórce tabeli, dostosowując właściwości`Image`obiekt. Możesz ustawić szerokość i wysokość obrazu, a także wyrównanie w komórce.
+ O: Tak, możesz dostosować rozmiar i położenie obrazu w komórce tabeli, dostosowując właściwości`Image` obiekt. Możesz ustawić szerokość i wysokość obrazu, a także wyrównanie w komórce.
 
 #### P: Czy mogę dodawać obrazy do tabeli z dynamiczną liczbą wierszy i kolumn?
 

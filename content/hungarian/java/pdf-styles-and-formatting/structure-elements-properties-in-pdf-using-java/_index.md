@@ -1,6 +1,6 @@
 ---
-title: Struktúraelemek tulajdonságai PDF-ben Java használatával
-linktitle: Struktúraelemek tulajdonságai PDF-ben Java használatával
+title: Struktúraelemek tulajdonságai a PDF-ben Java használatával
+linktitle: Struktúraelemek tulajdonságai a PDF-ben Java használatával
 second_title: Aspose.PDF Java PDF feldolgozó API
 description: Fedezze fel a PDF szerkezeti elemek erejét a Java nyelven az Aspose.PDF segítségével. Ismerje meg a PDF-fájlok létrehozását, módosítását és optimalizálását a kisegítő lehetőségek érdekében.
 type: docs

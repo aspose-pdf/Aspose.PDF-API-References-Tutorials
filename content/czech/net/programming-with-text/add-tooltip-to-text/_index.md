@@ -32,7 +32,7 @@ using Aspose.Pdf.Text;
  V kódu vyhledejte řádek, který říká`string dataDir = "YOUR DOCUMENT DIRECTORY";` a nahradit`"YOUR DOCUMENT DIRECTORY"` s cestou k adresáři, kde jsou uloženy vaše dokumenty.
 
 ## Krok 4: Vytvořte vzorový dokument s textem
- Vytvořte nový`Document` objekt a přidat stránky s textovými fragmenty. V poskytnutém kódu jsou do dokumentu přidány dva textové fragmenty s příslušným textem nápovědy.
+ Vytvořte nový`Document`objekt a přidat stránky s textovými fragmenty. V poskytnutém kódu jsou do dokumentu přidány dva textové fragmenty s příslušným textem nápovědy.
 
 ```csharp
 Document doc = new Document();
@@ -52,7 +52,7 @@ TextFragmentCollection textFragments = absorb.TextFragments;
 ```
 
 ## Krok 6: Přidejte k fragmentům textu nápovědu
- Procházejte extrahované části textu a na jejich pozicích vytvořte neviditelná tlačítka. Přiřaďte požadovaný text popisku k`AlternateName` majetek z`ButtonField`. Přidejte pole tlačítka do formuláře dokumentu.
+ Procházejte extrahované části textu a na jejich pozicích vytvořte neviditelná tlačítka. Přiřaďte požadovaný text popisku k`AlternateName` vlastnictví`ButtonField`. Přidejte pole tlačítka do formuláře dokumentu.
 
 ```csharp
 foreach(TextFragment fragment in textFragments)
@@ -98,7 +98,7 @@ doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to disp
 doc.Save(outputFile);
 // Otevřete dokument s textem
 Document document = new Document(outputFile);
-// Vytvořte objekt TextAbsorber a najděte všechny fráze odpovídající regulárnímu výrazu
+//Vytvořte objekt TextAbsorber a najděte všechny fráze odpovídající regulárnímu výrazu
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
 // Přijměte absorbér pro stránky dokumentu
 document.Pages.Accept(absorber);
@@ -169,7 +169,7 @@ using Aspose.Pdf.Text;
 
 #### Otázka: Jak přidám popisky k fragmentům textu?
 
- Odpověď: V kroku 6 budete procházet extrahované části textu a na jejich pozicích vytvoříte neviditelná tlačítka. Text popisku je přiřazen k`AlternateName` majetek z`ButtonField`který je přidán do formuláře dokumentu.
+ Odpověď: V kroku 6 budete procházet extrahované části textu a na jejich pozicích vytvoříte neviditelná tlačítka. Text popisku je přiřazen k`AlternateName` vlastnictví`ButtonField`, který je přidán do formuláře dokumentu.
 
 #### Otázka: Jak zopakuji proces pro další fragmenty textu s dlouhými popisky?
 

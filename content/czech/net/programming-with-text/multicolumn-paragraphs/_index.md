@@ -18,7 +18,7 @@ Než začnete, ujistěte se, že máte následující:
 
 ## Krok 1: Nastavte adresář dokumentů
 
- Nejprve musíte nastavit cestu k adresáři, kde se nachází váš vstupní soubor PDF. Nahradit`"YOUR DOCUMENT DIRECTORY"` v`dataDir` proměnnou s cestou k vašemu PDF souboru.
+ Nejprve musíte nastavit cestu k adresáři, kde se nachází váš vstupní soubor PDF. Nahradit`"YOUR DOCUMENT DIRECTORY"` v`dataDir` proměnná s cestou k vašemu PDF souboru.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -137,7 +137,7 @@ A: Chcete-li nastavit adresář dokumentů:
 
 #### Otázka: Jak povolím vícesloupcové odstavce?
 
- A: Chcete-li povolit vícesloupcové odstavce, můžete nastavit`IsMulticolumnParagraphsAllowed` majetek z`PageMarkup` namítat proti`true`.
+ A: Chcete-li povolit vícesloupcové odstavce, můžete nastavit`IsMulticolumnParagraphsAllowed` vlastnictví`PageMarkup` namítat proti`true`.
 
 #### Otázka: Jaký je očekávaný výstup tohoto tutoriálu?
 

@@ -16,7 +16,7 @@ url: /zh-hant/net/programming-with-attachments/add-attachment/
 在我們深入了解添加附件的細節之前，您需要滿足一些先決條件：
 
 1.  Aspose.PDF for .NET：請確定您已安裝 Aspose.PDF 庫。您可以從[地點](https://releases.aspose.com/pdf/net/).
-2. Visual Studio：一個開發環境，您可以在其中編寫和測試 .NET 程式碼。
+2. Visual Studio：您可以在其中編寫和測試 .NET 程式碼的開發環境。
 3. C# 基礎知識：熟悉 C# 程式設計將有助於您更好地理解程式碼片段。
 
 ## 導入包
@@ -101,7 +101,7 @@ Console.WriteLine("\nSample text file attached successfully.\nFile saved at " + 
 
 ## 結論
 
-使用 Aspose.PDF for .NET 新增附件到 PDF 檔案是一個簡單的過程，可以顯著增強文件的功能。透過遵循本教學中概述的步驟，您可以輕鬆地將文件附加到 PDF，從而使它們對您的受眾提供更多資訊和有用。無論您正在處理報告、簡報或任何其他類型的文檔，此功能都可以改變遊戲規則。
+使用 Aspose.PDF for .NET 新增附件到 PDF 檔案是一個簡單的過程，可以顯著增強文件的功能。透過遵循本教學中概述的步驟，您可以輕鬆地將文件附加到 PDF，從而使它們對您的受眾來說更具資訊性和實用性。無論您正在處理報告、簡報或任何其他類型的文檔，此功能都可以改變遊戲規則。
 
 ## 常見問題解答
 

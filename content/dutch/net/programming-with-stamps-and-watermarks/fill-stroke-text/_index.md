@@ -2,164 +2,191 @@
 title: Vul lijntekst in PDF-bestand
 linktitle: Vul lijntekst in PDF-bestand
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u eenvoudig tekst in een PDF-bestand kunt invullen en schetsen met Aspose.PDF voor .NET.
+description: Leer hoe u moeiteloos lijntekst in PDF-bestanden kunt invullen met Aspose.PDF voor .NET met behulp van deze stapsgewijze handleiding vol praktische voorbeelden.
 type: docs
 weight: 90
 url: /nl/net/programming-with-stamps-and-watermarks/fill-stroke-text/
 ---
-In deze tutorial laten we u stap voor stap zien hoe u tekst in een PDF-bestand kunt opvullen en omlijnen met Aspose.PDF voor .NET. We laten u zien hoe u de meegeleverde C#-broncode kunt gebruiken om opvul- en omlijningskleuren toe te passen op tekst in het PDF-bestand.
+## Invoering
 
-## Stap 1: De omgeving instellen
+Heb je ooit een PDF-bestand willen aanpassen om het te laten opvallen? Misschien moet je een opvallend watermerk of een vette stempel toevoegen die een belangrijk document onmiskenbaar van jou maakt. Met Aspose.PDF voor .NET kun je eenvoudig tekst in een PDF-bestand invullen, wat een artistieke flair toevoegt die de aandacht trekt. In de tutorial van vandaag doorlopen we het proces om precies dat te doen: tekst in een PDF invullen met C#. Aan het einde heb je een goed begrip van hoe je PDF-bestanden als een professional kunt bewerken.
 
-Voordat u begint, moet u ervoor zorgen dat u het volgende bij de hand hebt:
+## Vereisten
 
-- Een geïnstalleerde .NET-ontwikkelomgeving.
-- De Aspose.PDF-bibliotheek voor .NET is gedownload en wordt in uw project gebruikt.
+Voordat we beginnen met coderen, zijn er een paar dingen die je nodig hebt om deze tutorial makkelijk te kunnen volgen:
 
-## Stap 2: Het TextState-object maken
+1. Visual Studio: Zorg ervoor dat u Visual Studio op uw computer hebt geïnstalleerd, aangezien we C#-code gaan schrijven.
+2.  Aspose.PDF-bibliotheek: zorg dat u de Aspose.PDF voor .NET-bibliotheek hebt gedownload. U kunt deze downloaden[hier](https://releases.aspose.com/pdf/net/).
+3. Basiskennis van C#: Als u bekend bent met C#-programmering, begrijpt u de tutorial beter.
+4. Voorbeeld PDF-bestand: U hebt een voorbeeld PDF-bestand nodig (`input.pdf`voor testdoeleinden. U kunt een eenvoudige maken of een bestaande PDF gebruiken die u hebt.
 
-De eerste stap is het maken van een TextState-object om de geavanceerde eigenschappen door te geven. Dit doet u als volgt:
+Nu we alles op zijn plek hebben, gaan we dieper in op het opvullen van tekststroken in uw PDF-bestand.
+
+## Pakketten importeren
+
+Om te beginnen moeten we de benodigde pakketten importeren. Hier is een kort overzicht van de essentiële imports voor ons project:
 
 ```csharp
-// Maak een TextState-object om geavanceerde eigenschappen over te dragen
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Met deze pakketten kunnen we de robuuste functionaliteiten van de Aspose.PDF-bibliotheek gebruiken.
+
+Laten we de hoofdtaak opsplitsen in duidelijke stappen. Door deze stappen te volgen, kunt u eenvoudig tekst in uw PDF-bestanden invullen. 
+
+## Stap 1: Stel uw omgeving in
+
+Zorg er eerst voor dat alles correct is ingesteld in uw Visual Studio-project. Maak een nieuw project of kies een bestaand project. Als u hulp nodig hebt, kunt u dit als volgt doen:
+
+1. Open Visual Studio.
+2. Maak een nieuw C#-project (bijvoorbeeld een consoletoepassing).
+3. Klik met de rechtermuisknop op het project in Solution Explorer en selecteer 'NuGet-pakketten beheren'.
+4.  Zoeken naar`Aspose.PDF` en installeer het.
+
+## Stap 2: Definieer uw documentendirectory
+
+Elke reis heeft een startpunt nodig. In ons geval is dat de documentenmap, waar de invoer- en uitvoerbestanden worden opgeslagen. 
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Vervangen`"YOUR DOCUMENT DIRECTORY"` met het werkelijke pad waar uw PDF-invoerbestand zich bevindt. 
+
+## Stap 3: Het TextState-object maken
+
+In deze stap begint u met het definiëren van de eigenschappen van de tekst die u wilt toevoegen. 
+
+```csharp
 TextState ts = new TextState();
+```
 
-// Omtrekkleur instellen
+ De`TextState` object bevat de stijlopties voor uw tekstlijn.
+
+## Stap 4: Stel de kleur voor de streek in
+
+Vervolgens wilt u de kleur van de lijn voor uw tekst definiëren. 
+
+```csharp
 ts.StrokingColor = Color.Gray;
+```
 
-// Definieer de tekstweergavemodus
+In deze code gebruiken we een grijze kleur voor de streek. Voel je vrij om de kleur te veranderen naar jouw wensen!
+
+## Stap 5: Rendermodus configureren
+
+Om ervoor te zorgen dat uw tekst wordt weergegeven zoals bedoeld, stelt u de renderingmodus in:
+
+```csharp
 ts.RenderingMode = TextRenderingMode.StrokeText;
 ```
 
-De bovenstaande code maakt een nieuw TextState-object en stelt de omtrekkleur in en bepaalt hoe de tekst wordt weergegeven.
+Hiermee wordt aan de Aspose-bibliotheek doorgegeven dat we met tekst met een lijntekening werken.
 
-## Stap 3: Het PDF-document laden
+## Stap 6: Laad uw invoer-PDF-document
 
-Nu het TextState-object gereed is, kunnen we het PDF-document laden waar we de tekstopvulling en -omtrek willen toepassen. Dit doet u als volgt:
+Nu is het tijd om het PDF-bestand te laden dat u wilt wijzigen. 
 
 ```csharp
-// Laad het PDF-document als invoer
 Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
 ```
 
-De bovenstaande code laadt het bestaande PDF-document met behulp van de klasse PdfFileStamp uit de bibliotheek Aspose.PDF.Facades.
+Zorg ervoor dat uw invoer PDF (`input.pdf`bevindt zich in de documentenmap die in eerdere stappen is gedefinieerd.
 
-## Stap 4: Vulling en lijn toevoegen aan tekst
+## Stap 7: Een stempelobject maken
 
-Nu het PDF-document is geladen, kunnen we de vulling en omtrek aan de tekst toevoegen. Dit is hoe:
+Maak vervolgens een stempel waarop de tekst met de penseelstreek komt te staan. 
 
 ```csharp
-// Maak een stempel (Stempel) met de gedefinieerde tekst en eigenschappen
 Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
+```
+
+Deze stempel wordt gebruikt om uw tekst over de PDF te leggen.
+
+## Stap 8: Definieer de tekst die u wilt stempelen
+
+U moet aangeven welke tekst u aan de PDF wilt toevoegen:
+
+```csharp
 stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
+```
 
-// Bind het TextState-object
+Hier is "VOLLEDIG BETAALD" de tekst die we toevoegen, samen met de stylingattributen. Pas het aan naar uw wensen!
+
+## Stap 9: Bind de tekststatus
+
+ Bind nu de`TextState` die u eerder aan de postzegel hebt gedefinieerd. 
+
+```csharp
 stamp.BindTextState(ts);
+```
 
-// Stel oorsprong X, Y in
+Met deze stap worden alle stijlen, zoals kleur en renderingmodus, op uw tekst toegepast.
+
+## Stap 10: Stel de positie van de stempel in
+
+Bepaal waar uw postzegel in de PDF zal verschijnen:
+
+```csharp
 stamp.SetOrigin(100, 100);
-stamp. Opacity = 5;
+```
+
+ De argumenten`(100, 100)` geven de X- en Y-coördinaten (in punten) aan voor de oorsprong van de tekst. Pas deze waarden aan om uw tekst perfect te positioneren!
+
+## Stap 11: Dekking en rotatie configureren
+
+Hier kunt u experimenteren met het uiterlijk van uw tekst:
+
+```csharp
+stamp.Opacity = 5;
 stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
 stamp.Rotation = 45.0F;
-stamp. IsBackground = false;
+```
 
-// Voeg de stempel toe aan het document
+In dit geval voegen een opaciteitswaarde en een rotatiehoek van 45 graden een unieke flair toe aan uw tekst. U kunt deze instellingen gerust aanpassen voor verschillende effecten.
+
+## Stap 12: Voeg de stempel toe aan de PDF
+
+Dit is de cruciale stap, waarbij we uiteindelijk onze stempel, inclusief de tekst, aan de PDF toevoegen:
+
+```csharp
 fileStamp.AddStamp(stamp);
 ```
 
-De bovenstaande code maakt een stempel met de opgegeven tekst en gedefinieerde eigenschappen voor vulling en lijn.
+En zo is uw tekst klaar om een statement te maken!
 
-## Stap 5: Sla het uitvoerdocument op
+## Stap 13: Sla het document op en sluit het
 
-Zodra de tekststempel is toegevoegd, kunnen we het aangepaste PDF-document opslaan. Dit is hoe:
+Sla ten slotte uw wijzigingen op en zorg ervoor dat alles goed is opgeruimd. 
 
 ```csharp
-// Sla het gewijzigde document op
 fileStamp.Save(dataDir + "output_out.pdf");
 fileStamp.Close();
 ```
 
-De bovenstaande code slaat het bewerkte PDF-document op in de opgegeven map.
-
-### Voorbeeldbroncode voor Fill Stroke Text met behulp van Aspose.PDF voor .NET 
-```csharp
-
-// Het pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Maak een TextState-object om geavanceerde eigenschappen over te dragen
-TextState ts = new TextState();
-
-// Kleur voor lijn instellen
-ts.StrokingColor = Color.Gray;
-
-// Tekstweergavemodus instellen
-ts.RenderingMode = TextRenderingMode.StrokeText;
-
-// Een invoer-PDF-document laden
-Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
-Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
-stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
-
-// Bind TextState
-stamp.BindTextState(ts);
-
-// Stel X,Y oorsprong in
-stamp.SetOrigin(100, 100);
-stamp.Opacity = 5;
-stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
-stamp.Rotation = 45.0F;
-stamp.IsBackground = false;
-
-// Stempel toevoegen
-fileStamp.AddStamp(stamp);
-fileStamp.Save(dataDir + "ouput_out.pdf");
-fileStamp.Close();
-
-```
+ Uw nieuw aangepaste PDF-bestand met de lijntekst wordt opgeslagen als`output_out.pdf` in uw documentenmap. 
 
 ## Conclusie
 
-Gefeliciteerd! U hebt geleerd hoe u tekst in een PDF-document kunt vullen en omlijnen met Aspose.PDF voor .NET. Nu kunt u deze kennis toepassen om de kleuren van de vulling en omlijning in uw PDF-documenten aan te passen.
+En daar heb je het! Door deze eenvoudige stappen te volgen, kun je eenvoudig tekst in een PDF-bestand invullen met Aspose.PDF voor .NET. Of het nu gaat om zakelijke documenten of persoonlijke projecten, met deze techniek kun je een uniek tintje aan je PDF's toevoegen, waardoor ze opvallen in elke stapel papier.
 
-### FAQ's voor vulstreeptekst in PDF-bestand
+## Veelgestelde vragen
 
-#### V: Wat betekent het om tekst in een PDF-document in te vullen en te schetsen, en wanneer moet ik dat doen?
+### Wat is Aspose.PDF voor .NET?
+Aspose.PDF voor .NET is een bibliotheek waarmee ontwikkelaars programmatisch PDF-bestanden kunnen maken, bewerken en converteren.
 
-A: Tekst in een PDF-document opvullen en omlijnen houdt in dat kleuren worden toegepast op de binnenkant van de teksttekens (opvullen) en op de randen rond de tekst (omlijning). Dit kan worden gebruikt om het visuele uiterlijk van de tekst te verbeteren, nadruk te leggen of specifieke inhoud in de PDF te markeren.
+### Kan ik Aspose.PDF gratis gebruiken?
+Ja, Aspose biedt een gratis proefperiode aan. Je kunt het krijgen[hier](https://releases.aspose.com/).
 
-#### V: Hoe wordt met de meegeleverde C#-broncode de tekst in een PDF-bestand ingevuld en omlijnd?
+### Moet ik betalen voor een licentie?
+ Hoewel de bibliotheek een gratis proefperiode heeft, kan er ook een tijdelijke licentie worden gekocht bij[deze link](https://purchase.aspose.com/temporary-license/).
 
- A: De meegeleverde broncode laat zien hoe je een`TextState` object om geavanceerde teksteigenschappen te definiëren, zoals omtrekkleur en renderingmodus. Vervolgens wordt Aspose.PDF.Facades gebruikt om een bestaand PDF-document te laden, een stempel te maken met de tekst met opgegeven vulling- en lijneigenschappen en de stempel aan het document toe te voegen.
+### Waar kan ik de documentatie vinden?
+ U kunt de volledige documentatie raadplegen[hier](https://reference.aspose.com/pdf/net/).
 
-####  V: Wat is het doel van de`TextState` object in the code?
-
- A: De`TextState`object wordt gebruikt om geavanceerde teksteigenschappen te definiëren, waaronder de kleur van de tekstomtrek (lijn) en de weergavemodus. Hiermee kunt u aanpassen hoe de tekst eruitziet in termen van lijn en vulling.
-
-#### V: Kan ik verschillende opvul- en omtrekkleuren toepassen op verschillende delen van dezelfde tekst?
-
- A: Ja, u kunt de code aanpassen om verschillende`TextState` objecten met verschillende vul- en omtrekkleuren en pas deze toe op specifieke delen van de tekst met behulp van afzonderlijke`Stamp` objecten.
-
-#### V: Kan ik opvul- en omtrekkleuren toepassen op tekst die al in het PDF-document aanwezig is?
-
- A: Ja, u kunt vergelijkbare principes gebruiken om opvul- en omtrekkleuren toe te passen op bestaande tekst in het PDF-document door de juiste tekstobjecten te selecteren en ze toe te voegen als stempels met de gewenste`TextState` eigenschappen.
-
-#### V: Hoe kan ik de dekking en overvloeiing van de gevulde en omlijnde tekst aanpassen?
-
- A: Met de meegeleverde code kunt u de dekking en de mengeigenschappen van de stempel instellen met behulp van de`Opacity` En`BlendingSpace`eigenschappen. U kunt deze waarden aanpassen om het gewenste visuele effect te bereiken.
-
-#### V: Hoe kan ik verschillende vul- en omtrekkleuren toepassen op meerdere stempels in hetzelfde PDF-document?
-
- A: Je kunt meerdere`TextState` objecten met verschillende vul- en omtrekkleuren en maak vervolgens afzonderlijke`Stamp` objecten voor elke set tekst met verschillende kleuren. Voeg deze stempels toe aan hetzelfde PDF-document met behulp van de`PdfFileStamp` klas.
-
-#### V: Kan ik andere lettertypen dan Arial gebruiken voor de omlijnde en gevulde tekst?
-
- A: Ja, u kunt het lettertype wijzigen door de parameter voor de lettertypenaam in de`FormattedText` constructor bij het maken van de stempel. U kunt elk lettertype gebruiken dat beschikbaar is op uw systeem.
-
-#### V: Hoe kan ik de rotatiehoek van de omlijnde en gevulde tekst aanpassen?
-
- A: Met de meegeleverde code kunt u de rotatiehoek van de postzegel instellen met behulp van de`Rotation` eigenschap. U kunt deze eigenschap aanpassen om de gewenste rotatiehoek voor de tekst op te geven.
-
-#### V: Hoe kan ik de positie en grootte van de omlijnde en gevulde tekst op de pagina bepalen?
-
- A: U kunt de`SetOrigin` methode van de`Stamp` object om de X- en Y-coördinaten van de positie van de postzegel op de pagina in te stellen. Bovendien kunt u de lettergrootte in de`FormattedText` constructor om de grootte van de tekst te bepalen.
+### Is er ondersteuning beschikbaar als ik problemen tegenkom?
+ Absoluut! Je kunt ondersteuning krijgen op het Aspose forum[hier](https://forum.aspose.com/c/pdf/10).

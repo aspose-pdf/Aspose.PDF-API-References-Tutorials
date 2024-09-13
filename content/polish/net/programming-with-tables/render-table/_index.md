@@ -154,7 +154,7 @@ Gratulacje! Teraz nauczyłeś się, jak wyświetlić tabelę w dokumencie PDF za
 
 #### P: W jaki sposób mogę zmienić wygląd tabeli, np. zmienić kolory komórek lub dodać obramowania?
 
-A: Aby zmienić wygląd tabeli, możesz ustawić różne właściwości`Aspose.Pdf.Table` i jego komórki. Na przykład możesz ustawić`BackgroundColor` właściwość komórek, aby zmienić ich kolor tła. Możesz również ustawić`Border` właściwość tabeli lub poszczególnych komórek, aby dodać obramowania. Ponadto możesz dostosować czcionkę, kolor tekstu i wyrównanie zawartości tabeli, modyfikując`TextState` z`TextFragment` obiekty dodane do komórek.
+ A: Aby zmienić wygląd tabeli, możesz ustawić różne właściwości`Aspose.Pdf.Table` i jego komórki. Na przykład możesz ustawić`BackgroundColor` właściwość komórek, aby zmienić ich kolor tła. Możesz również ustawić`Border` właściwość tabeli lub poszczególnych komórek, aby dodać obramowania. Ponadto możesz dostosować czcionkę, kolor tekstu i wyrównanie zawartości tabeli, modyfikując`TextState` z`TextFragment` obiekty dodane do komórek.
 
 #### P: Czy mogę dodać nagłówki i stopki do tabeli?
 
@@ -162,7 +162,7 @@ A: Tak, możesz dodać nagłówki lub stopki do tabeli, tworząc dodatkowe wiers
 
 #### P: Jak mogę kontrolować położenie tabeli na stronie?
 
- A: Aby kontrolować położenie tabeli na stronie, można dostosować`MarginInfo` z`PageInfo` obiekt.`MarginInfo`pozwala ustawić lewy, prawy, górny i dolny margines strony, co wpływa na dostępną przestrzeń dla tabeli. Możesz również użyć`PositioningType` własność`Aspose.Pdf.Table` aby kontrolować jego wyrównanie w poziomie i pionie w obrębie obszaru zawartości strony.
+A: Aby kontrolować położenie tabeli na stronie, można dostosować`MarginInfo` z`PageInfo` obiekt.`MarginInfo` pozwala ustawić lewy, prawy, górny i dolny margines strony, co wpływa na dostępną przestrzeń dla tabeli. Możesz również użyć`PositioningType` własność`Aspose.Pdf.Table` aby kontrolować jego wyrównanie w poziomie i pionie w obrębie obszaru zawartości strony.
 
 #### P: Czy mogę wyeksportować tabelę do innych formatów plików, np. Excel lub CSV?
 

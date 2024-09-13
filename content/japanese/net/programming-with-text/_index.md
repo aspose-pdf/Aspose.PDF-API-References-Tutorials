@@ -19,7 +19,7 @@ Aspose.PDF の .NET 用「テキストを使用したプログラミング」チ
 | [PDF ファイルにテキスト枠線を追加する](./add-text-border/) | Aspose.PDF for .NET を使用して PDF ファイルにテキスト境界線を追加する方法を学習します。 |  
 | [PDF ファイルに網掛けカラーのテキストを追加する](./add-text-with-shading-colors/) | Aspose.PDF for .NET を使用して PDF ファイルに網掛けカラーのテキストを追加する方法を学習します。 |  
 | [PDF ファイル内のテキストにツールヒントを追加する](./add-tooltip-to-text/) | Aspose.PDF for .NET を使用して PDF ファイル内のテキストにツールヒントを追加する方法を学習します。 |  
-| [PDF ファイルに透明テキストを追加する](./add-transparent-text/) | Aspose.PDF for .NET を使用して PDF ファイルに透明なテキストを追加する方法を学習します。 |  
+| [PDF ファイルに透明なテキストを追加する](./add-transparent-text/) | Aspose.PDF for .NET を使用して PDF ファイルに透明なテキストを追加する方法を学習します。 |  
 | [複数列の PDF を作成する](./create-multi-column-pdf/) | Aspose.PDF for .NET を使用して複数列の PDF を作成する方法を学習します。 |  
 | [PDF ファイル内のカスタム タブ ストップ](./custom-tab-stops/) | Aspose.PDF for .NET を使用して PDF ファイルにカスタム タブ ストップを作成する方法を学習します。 |  
 | [PDF ファイル内の改行を決定する](./determine-line-break/) | Aspose.PDF for .NET を使用して PDF ファイル内の改行を決定する方法を学習します。 |  

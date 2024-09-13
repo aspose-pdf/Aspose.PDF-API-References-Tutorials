@@ -119,7 +119,7 @@ A: Contoh kode menunjukkan cara membuat dokumen PDF, menentukan berbagai elemen 
 
 A: Ya, Anda dapat menambahkan elemen teks bertag lainnya seperti daftar, tautan, atau struktur kustom lainnya menggunakan teknik serupa. Aspose.PDF menyediakan berbagai metode untuk membuat berbagai jenis konten bertag, yang memungkinkan Anda untuk meningkatkan semantik dokumen.
 
-####  T: Bagaimana caranya`SetTitle` method contribute to the PDF document's tagged text?
+#### T: Bagaimana caranya`SetTitle` method contribute to the PDF document's tagged text?
 
  Sebuah:`SetTitle` metode menetapkan judul konten yang diberi tag pada dokumen PDF, yang memberikan deskripsi singkat tentang tujuan atau subjek dokumen. Informasi ini membantu pengguna memahami konteks teks yang diberi tag.
 
@@ -127,9 +127,9 @@ A: Ya, Anda dapat menambahkan elemen teks bertag lainnya seperti daftar, tautan,
 
 A: Teks yang diberi tag menambahkan makna semantik ke dalam dokumen, sehingga lebih mudah diakses oleh pengguna penyandang disabilitas atau mereka yang menggunakan teknologi bantuan. Pembaca layar dan perangkat bantuan lainnya dapat menginterpretasikan dan menyajikan teks yang diberi tag untuk meningkatkan pengalaman pengguna.
 
-####  T: Bagaimana caranya`SetLanguage` method enhance the tagged text in a PDF document?
+#### T: Bagaimana caranya`SetLanguage` method enhance the tagged text in a PDF document?
 
- Sebuah:`SetLanguage`metode menetapkan atribut bahasa dari konten yang diberi tag pada dokumen PDF. Ini membantu menunjukkan bahasa yang digunakan untuk menulis teks yang diberi tag, meningkatkan aksesibilitas dan memungkinkan rendering yang sesuai dengan bahasa tertentu.
+ Sebuah:`SetLanguage` metode menetapkan atribut bahasa dari konten yang diberi tag pada dokumen PDF. Ini membantu menunjukkan bahasa yang digunakan untuk menulis teks yang diberi tag, meningkatkan aksesibilitas dan memungkinkan rendering yang sesuai dengan bahasa tertentu.
 
 #### T: Apakah mungkin untuk menambahkan elemen lain, seperti gambar atau multimedia, di samping teks yang diberi tag menggunakan teknik serupa?
 

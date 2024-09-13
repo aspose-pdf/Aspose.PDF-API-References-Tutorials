@@ -13,11 +13,11 @@ Aspose.PDF for .NET 的图形编程教程适合各个级别的开发人员，从
 ## 教程
 | 标题 | 描述 |
 | --- | --- | 
-| [在 PDF 文件中添加绘图](./add-drawing/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中添加绘图。按照本分步指南创建具有绘图功能的精美 PDF 文档。 |  
-| [添加带渐变填充的绘图](./add-drawing-with-gradient-fill/) | 了解如何使用 Aspose.PDF for .NET 添加带有渐变填充的绘图。分步教程，创建有吸引力的 PDF 文档。 |  
-| [在 PDF 文件中添加线对象](./add-line-object/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中添加自定义线条对象。 |  
-| [控制矩形 Z 顺序](./control-rectangle-z-order/) | 了解如何使用 Aspose.PDF for .NET 控制 PDF 文件中矩形的 Z 顺序。  |  
-| [创建填充矩形](./create-filled-rectangle/) | 了解如何使用 Aspose.PDF for .NET 创建填充矩形。逐步指导如何自定义填充颜色。 |  
-| [创建具有 Alpha 颜色的矩形](./create-rectangle-with-alpha-color/) | 了解如何使用 Aspose.PDF for .NET 创建具有透明颜色的矩形。自定义透明度的分步指南。 |  
-| [划线长度](./dash-length/) | 了解如何使用 Aspose.PDF for .NET 设置虚线的长度。逐步指导如何自定义虚线图案。 |  
-| [绘制线](./drawing-line/) | 了解如何使用 Aspose.PDF for .NET 在页面上画线。创建自定义线条的分步指南。 |  
+| [在 PDF 文件中添加绘图](./add-drawing/) | 了解如何使用 Aspose.PDF for .NET 将绘图添加到 PDF 文件。本分步指南涵盖颜色设置、添加形状和保存 PDF。 |  
+| [添加带渐变填充的绘图](./add-drawing-with-gradient-fill/) | 通过本分步指南学习如何使用 Aspose.PDF for .NET 在 PDF 中添加令人惊叹的渐变图，非常适合增强文档视觉效果。 |  
+| [在 PDF 文件中添加线对象](./add-line-object/) | 在本分步教程中学习如何使用 Aspose.PDF for .NET 将线条对象添加到 PDF 文件。非常适合初学者。 |  
+| [控制矩形 Z 顺序](./control-rectangle-z-order/) | 在本详细的分步教程中学习如何使用 Aspose.PDF for .NET 控制 PDF 中的矩形 Z 顺序。非常适合希望增强 PDF 文档的开发人员。 |  
+| [创建填充矩形](./create-filled-rectangle/) | 通过本分步教程学习如何使用 Aspose.PDF for .NET 在 PDF 中创建填充矩形。适合所有级别的开发人员。 |  
+| [创建具有 Alpha 颜色的矩形](./create-rectangle-with-alpha-color/) | 通过本分步教程学习如何使用 Aspose.PDF for .NET 在 PDF 中创建透明矩形。轻松使用 alpha 颜色增强您的 PDF。 |  
+| [划线长度](./dash-length/) | 通过我们的分步指南学习如何使用 Aspose.PDF for .NET 自定义 PDF 中的线虚线图案。非常适合为您的文档添加样式。 |  
+| [绘制线](./drawing-line/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 文档中绘制线条。本分步指南涵盖了设置文档、添加线条和保存文件。 |  

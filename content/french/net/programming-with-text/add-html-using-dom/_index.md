@@ -37,7 +37,7 @@ Document doc = new Document();
 ```
 
 ## Étape 5 : Ajouter une page au document
- Ajoutez une nouvelle page au document en utilisant le`Add` méthode de la`Pages`collection. Dans le code fourni, la nouvelle page est attribuée à la variable`page`.
+ Ajoutez une nouvelle page au document en utilisant le`Add` méthode de la`Pages` collection. Dans le code fourni, la nouvelle page est attribuée à la variable`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -149,7 +149,7 @@ HtmlFragment titel = new HtmlFragment("<fontsize=10><b><i>Table</i></b></fontsiz
 
 #### Q : Puis-je ajuster la marge du contenu HTML ?
 
-R : Oui, à l’étape 7, vous pouvez ajuster les marges inférieure et supérieure du fragment HTML selon vos besoins :
+: Oui, à l’étape 7, vous pouvez ajuster les marges inférieure et supérieure du fragment HTML selon vos besoins :
 
 ```csharp
 titel.Margin.Bottom = 10;
@@ -183,4 +183,4 @@ Console.WriteLine("\nHTML using DOM added successfully.\nFile saved at " + dataD
 
 #### Q : Quel est le point clé à retenir de ce tutoriel ?
 
-: En suivant ce didacticiel, vous avez appris à utiliser le modèle d'objet de document (DOM) dans Aspose.PDF pour .NET pour ajouter du contenu HTML à un document PDF. Ces connaissances vous permettent d'améliorer vos capacités de génération de PDF.
+R : En suivant ce didacticiel, vous avez appris à utiliser le modèle d'objet de document (DOM) dans Aspose.PDF pour .NET pour ajouter du contenu HTML à un document PDF. Ces connaissances vous permettent d'améliorer vos capacités de génération de PDF.

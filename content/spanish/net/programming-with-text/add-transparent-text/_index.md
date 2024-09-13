@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Paso 5: Agregar una página al documento
- Agregue una nueva página al documento utilizando el`Add` método de la`Pages`colección. En el código proporcionado, la nueva página se asigna a la variable`page`.
+ Agregue una nueva página al documento utilizando el`Add` método de la`Pages` colección. En el código proporcionado, la nueva página se asigna a la variable`page`.
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
@@ -109,7 +109,7 @@ Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 4
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
 // Agregar rectángulo a la colección de formas del objeto Gráfico
 canvas.Shapes.Add(rect);
-//Agregar objeto gráfico a la colección de párrafos del objeto de página
+// Agregar objeto gráfico a la colección de párrafos del objeto de página
 page.Paragraphs.Add(canvas);
 // Establecer valor para no cambiar la posición del objeto gráfico
 canvas.IsChangePosition = false;
@@ -163,7 +163,7 @@ using Aspose.Pdf.Drawing;
 
 #### P: ¿Cómo puedo crear un rectángulo con transparencia?
 
-A: En el paso 7, creará un rectángulo con dimensiones específicas y establecerá su color de relleno en un color transparente usando el`Color.FromRgb` método.
+ A: En el paso 7, creará un rectángulo con dimensiones específicas y establecerá su color de relleno en un color transparente usando el`Color.FromRgb` método.
 
 #### P: ¿Cómo agrego el objeto Gráfico a la página?
 
@@ -175,7 +175,7 @@ A: En el paso 7, creará un rectángulo con dimensiones específicas y establece
 
 #### P: ¿Cómo puedo crear un TextFragment con transparencia?
 
- A: En el paso 10, crearás un`TextFragment` objeto y establecer su contenido y`ForegroundColor` Propiedad para lograr texto transparente.
+A: En el paso 10, crearás un`TextFragment` objeto y establecer su contenido y`ForegroundColor` Propiedad para lograr texto transparente.
 
 #### P: ¿Cómo guardo el documento PDF?
 

@@ -22,7 +22,7 @@ PDF 文件廣泛用於共享和演示訊息，但有時您可能需要透過添�
 
 ## 新增依賴項
 
-一旦您擁有了 Aspose.PDF for Java，請將其作為依賴項新增至您的專案。如果您使用 Maven，請將以下依賴項新增至您的`pom.xml`：
+一旦您擁有了 Aspose.PDF for Java，請將其作為依賴項新增至您的專案。如果您使用 Maven，請將以下依賴項新增至您的`pom.xml`:
 
 ```xml
 <dependency>
@@ -35,7 +35,7 @@ PDF 文件廣泛用於共享和演示訊息，但有時您可能需要透過添�
 如果您更喜歡 Gradle，請將其包含在您的`build.gradle`文件：
 
 ```gradle
-implementation group: 'com.aspose', name: 'aspose-pdf', version: '21.11' //更換為最新版本
+implementation group: 'com.aspose', name: 'aspose-pdf', version: '21.11' //替換為最新版本
 ```
 
 ## 編碼頁碼標記

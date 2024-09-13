@@ -7,7 +7,7 @@ type: docs
 weight: 150
 url: /ja/net/programming-with-tagged-pdf/structure-elements-properties/
 ---
-このガイドでは、.NET 用の Aspose.PDF ライブラリを使用して PDF ファイル内の構造要素プロパティを操作する方法を説明します。Aspose.PDF は、プログラムで PDF ファイルを作成、操作、変換できる強力なライブラリです。
+このガイドでは、.NET 用の Aspose.PDF ライブラリを使用して PDF ファイル内の構造要素プロパティを操作する方法を説明します。Aspose.PDF は、プログラムによって PDF ファイルを作成、操作、変換できる強力なライブラリです。
 
 コードを調べて、Aspose.PDF for .NET を使用して PDF ドキュメント内の構造要素プロパティを操作する方法を学びましょう。
 

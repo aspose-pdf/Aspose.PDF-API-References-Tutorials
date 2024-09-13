@@ -131,4 +131,4 @@ A: Wenn die neue Tabelle eine andere Spaltenanzahl als die Originaltabelle hat, 
 
 #### F: Hat das Ersetzen einer Tabelle Auswirkungen auf das Inhaltslayout des restlichen PDF-Dokuments?
 
-A: Das Ersetzen einer Tabelle kann sich auf das Inhaltslayout auswirken, wenn die Größe oder Struktur der neuen Tabelle erheblich von der ursprünglichen Tabelle abweicht. Der restliche Inhalt auf der Seite wird neu umbrochen, um der neuen Tabelle Platz zu bieten. Es ist wichtig, die neue Tabelle sorgfältig zu entwerfen, damit sie nahtlos in das vorhandene Layout passt und Layoutprobleme vermieden werden.
+A: Das Ersetzen einer Tabelle kann sich auf das Inhaltslayout auswirken, wenn die Größe oder Struktur der neuen Tabelle erheblich von der Originaltabelle abweicht. Der restliche Inhalt auf der Seite wird neu umbrochen, um der neuen Tabelle Platz zu bieten. Es ist wichtig, die neue Tabelle sorgfältig zu entwerfen, damit sie nahtlos in das vorhandene Layout passt und Layoutprobleme vermieden werden.

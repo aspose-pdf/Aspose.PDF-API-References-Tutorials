@@ -1,7 +1,7 @@
 ---
 title: Efterskrift till PDF
 linktitle: Efterskrift till PDF
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du konverterar Postscript-filer till PDF med Aspose.PDF för .NET i denna steg-för-steg handledning. Perfekt för utvecklare på alla nivåer.
 type: docs
 weight: 230

@@ -2,109 +2,40 @@
 title: 目次内のページ番号を非表示にする
 linktitle: 目次内のページ番号を非表示にする
 second_title: Aspose.PDF for .NET API リファレンス
-description: このステップバイステップ ガイドでは、Aspose.PDF for .NET を使用して目次のページ番号を非表示にする方法を説明します。
+description: Aspose.PDF for .NET を使用して目次のページ番号を非表示にする方法を学びます。コード例を含むこの詳細なガイドに従って、プロフェッショナルな PDF を作成します。
 type: docs
 weight: 220
 url: /ja/net/programming-with-document/hidepagenumbersintoc/
 ---
-この記事では、C# を使用して Aspose.PDF for .NET の目次でページ番号を非表示にする機能を実装する方法について説明します。まず Aspose.PDF for .NET について簡単に紹介し、次にこの機能を実装するためのステップ バイ ステップ ガイドに進みます。 
+## 導入
 
-## Aspose.PDF for .NET の紹介
-
-Aspose.PDF for .NET は、開発者がプログラムで PDF ファイルを作成、編集、操作できるようにする強力な PDF 操作コンポーネントです。PDF ドキュメントの操作を容易にする幅広い機能を提供します。Aspose.PDF for .NET は、32 ビットと 64 ビットの両方のオペレーティング システムをサポートし、.NET Framework、.NET Core、および Xamarin プラットフォームで使用できます。 
-
-## TOC 内のページ番号を非表示にする機能とは何ですか?
-
-目次 (TOC) は、ユーザーにコンテンツの概要を素早く提供する PDF ドキュメントの重要な部分です。場合によっては、TOC のページ番号を非表示にして、ユーザー フレンドリにしたい場合があります。Aspose.PDF for .NET には、TOC のページ番号を非表示にする組み込み機能が用意されています。この機能を使用すると、よりユーザー フレンドリな PDF ドキュメントを作成できます。 
+PDF を操作しているとき、目次 (TOC) を生成しながらも、ページ番号を非表示にしてすっきりさせたい場合があります。ページ番号がない方がドキュメントの流れがスムーズになる場合もあれば、見た目を優先する場合もあります。理由が何であれ、Aspose.PDF for .NET を使用している場合、このチュートリアルでは TOC でページ番号を非表示にする方法を詳しく説明します。
 
 ## 前提条件
 
-このチュートリアルを実行するには、次のものが必要です。
+始める前に、いくつか準備しておく必要があります。簡単なチェックリストを以下に示します。
 
-- Visual Studio 2010 以降
-- システムに Aspose.PDF for .NET がインストールされている
-- C#プログラミング言語の基礎知識
+- Visual Studio がインストールされている: コーディングするには、動作するバージョンの Visual Studio が必要です。
+- Aspose.PDF for .NET ライブラリ: Aspose.PDF for .NET ライブラリがインストールされていることを確認してください。
+  - ダウンロードリンク:[Aspose.PDF の .NET 版](https://releases.aspose.com/pdf/net/)
+- 一時ライセンス: 機能をテストする場合は、一時ライセンスがあると便利です。
+  - 一時ライセンス:[ここから入手](https://purchase.aspose.com/temporary-license/)
 
-## 目次でページ番号を非表示にする機能を実装するためのステップバイステップガイド
+## パッケージのインポート
 
-Aspose.PDF for .NET を使用して TOC でページ番号を非表示にする機能を実装するには、以下の手順に従います。
-
-## ステップ 1: Visual Studio で新しい C# コンソール アプリケーションを作成する
-
-Visual Studio を開き、新しい C# コンソール アプリケーションを作成します。
-
-## ステップ 2: Aspose.PDF for .NET への参照を追加する
-
-プロジェクトの [参照] フォルダーを右クリックし、[参照の追加] を選択します。システム上で Aspose.PDF for .NET がインストールされている場所を参照して、参照を追加します。
-
-## ステップ1: 新しいPDFドキュメントを作成する
-
-次のコードを使用して新しい PDF ドキュメントを作成します。
+コードに進む前に、C# プロジェクトに次の名前空間をインポートしてください。これらは、PDF ドキュメントの操作と目次 (TOC) の作成に必要なクラスとメソッドを提供します。
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outFile = dataDir + "HiddenPageNumbers_out.pdf";
-Document doc = new Document();
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-## ステップ2: TOCページを作成する
+環境の準備が整い、パッケージがインポートされたので、プロセスの各ステップを詳しく説明します。わかりやすくするためにコードのすべての部分をカバーしているので、簡単に理解できます。
 
-次のコードを使用して、目次用の新しいページを作成し、それを PDF ドキュメントに追加します。
+## ステップ1: PDFドキュメントを初期化する
 
-```csharp
-Page tocPage = doc.Pages.Add();
-TocInfo tocInfo = new TocInfo();
-TextFragment title = new TextFragment("Table Of Contents");
-title.TextState.FontSize = 20;
-title.TextState.FontStyle = FontStyles.Bold;
-tocInfo.Title = title;
-```
+最初に行う必要があるのは、新しい PDF ドキュメントを作成し、目次 (TOC) のページを追加することです。
 
-## ステップ3: PDFドキュメントのセクションコレクションにリストセクションを追加する
-
-次のコードを使用して、PDF ドキュメントのセクション コレクションにリスト セクションを追加します。
-
-```csharp
-tocPage.TocInfo = tocInfo;
-```
-
-## ステップ4: 4つのレベルリストの形式を定義する
-
-次のコードを使用して、各レベルの左余白とテキスト形式の設定を指定して、4 つのレベルのリストの形式を定義します。
-
-```csharp
-tocInfo.IsShowPageNumbers = false;
-tocInfo.FormatArrayLength = 4;
-tocInfo.FormatArray[0].Margin.Right = 0;
-tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
-tocInfo.FormatArray[1].Margin.Left = 30;
-tocInfo.FormatArray[1].TextState.Underline = true;
-tocInfo.FormatArray[1].TextState.FontSize = 10;
-tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
-tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
-Page page = doc.Pages.Add();
-```
-
-## ステップ5: セクションに4つの見出しを追加する
-
-```csharp
-
-for (int Level = 1; Level != 5; Level++)
-{ 
-	Heading heading2 = new Heading(Level); 
-	TextSegment segment2 = new TextSegment(); 
-	heading2.TocPage = tocPage; 
-	heading2.Segments.Add(segment2); 
-	heading2.IsAutoSequence = true; 
-	segment2.Text = "this is heading of level " + Level; 
-	heading2.IsInList = true; 
-	page.Paragraphs.Add(heading2); 
-}
-doc.Save(outFile);
-
-```
-
-### Aspose.PDF for .NET を使用して目次でページ番号を非表示にするサンプル ソース コード
 
 ```csharp
 //ドキュメント ディレクトリへのパス。
@@ -112,18 +43,47 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "HiddenPageNumbers_out.pdf";
 Document doc = new Document();
 Page tocPage = doc.Pages.Add();
+```
+
+- dataDir: 出力ファイルが保存されるディレクトリです。
+- Document(): 新しい PDF ドキュメントを初期化します。
+- Pages.Add(): ドキュメントに新しい空白ページを追加します。このページには後で目次が保持されます。
+
+## ステップ2: TOC情報とタイトルを設定する
+
+次に、目次の上部に表示されるタイトルの設定など、目次情報を定義します。
+
+```csharp
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
 tocInfo.Title = title;
-//PDFドキュメントのセクションコレクションにリストセクションを追加します
 tocPage.TocInfo = tocInfo;
-//左余白と
-//各レベルのテキストフォーマット設定
+```
 
+- TocInfo: このオブジェクトは TOC に関するすべての情報を保持します。
+- TextFragment: TOC タイトルのテキストを表します。ここでは「Table Of Contents」として設定します。
+- FontStyle: TOC タイトルのサイズを 20 に設定し、太字にしてスタイルを設定します。
+- tocPage.TocInfo: TOC を表示するページに TOC 情報を割り当てます。
+
+## ステップ3: 目次のページ番号を非表示にする
+
+さて、ここからが楽しい部分です。ここでは、ページ番号を非表示にするように目次を構成します。
+
+```csharp
 tocInfo.IsShowPageNumbers = false;
 tocInfo.FormatArrayLength = 4;
+```
+
+-  IsShowPageNumbers: これはページ番号を非表示にする魔法のスイッチです。`false`ページ番号は目次に表示されません。
+- FormatArrayLength: これを 4 に設定し、4 つのレベルの TOC 見出しの書式設定を定義することを示します。
+
+## ステップ4: TOCのフォーマットをカスタマイズする
+
+TOC にさらにスタイルを追加するために、見出しのさまざまなレベルの書式を定義します。
+
+```csharp
 tocInfo.FormatArray[0].Margin.Right = 0;
 tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
 tocInfo.FormatArray[1].Margin.Left = 30;
@@ -131,36 +91,61 @@ tocInfo.FormatArray[1].TextState.Underline = true;
 tocInfo.FormatArray[1].TextState.FontSize = 10;
 tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
 tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
+```
+
+- FormatArray: この配列は TOC エントリの書式を制御します。各インデックスは異なる見出しレベルを表します。
+- 余白とテキスト スタイル: 見出しレベルごとに余白を設定し、太字、斜体、下線などのフォント スタイルを適用します。
+
+## ステップ5: 文書に見出しを追加する
+
+最後に、目次の一部となる実際の見出しを追加しましょう。
+
+```csharp
 Page page = doc.Pages.Add();
-//セクションに4つの見出しを追加する
 for (int Level = 1; Level != 5; Level++)
-	{ 
-		Heading heading2 = new Heading(Level); 
-		TextSegment segment2 = new TextSegment(); 
-		heading2.TocPage = tocPage; 
-		heading2.Segments.Add(segment2); 
-		heading2.IsAutoSequence = true; 
-		segment2.Text = "this is heading of level " + Level; 
-		heading2.IsInList = true; 
-		page.Paragraphs.Add(heading2); 
-	}
+{ 
+    Heading heading2 = new Heading(Level); 
+    TextSegment segment2 = new TextSegment(); 
+    heading2.TocPage = tocPage; 
+    heading2.Segments.Add(segment2); 
+    heading2.IsAutoSequence = true; 
+    segment2.Text = "this is heading of level " + Level; 
+    heading2.IsInList = true; 
+    page.Paragraphs.Add(heading2); 
+}
+```
+
+- 見出しとテキスト セグメント: これらは TOC に表示される見出しを表します。各レベルには独自の見出しが割り当てられます。
+- IsAutoSequence: 見出しに自動的に番号を付けます。
+- IsInList: 各見出しが目次に表示されるようにします。
+
+## ステップ6: ドキュメントを保存する
+
+すべての設定が完了したら、PDF ドキュメントを指定した出力ファイルに保存します。
+
+```csharp
 doc.Save(outFile);
 ```
 
+これで完了です。目次付きの PDF が正常に作成され、ページ番号が非表示になりました。
+
 ## 結論
 
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメント内の XMP メタデータを操作する方法について説明しました。XMP メタデータは、タイトル、作成者、作成日など、PDF ドキュメントに関する貴重な情報を提供します。Aspose.PDF for .NET を使用すると、開発者はこのメタデータにアクセスして操作することができ、PDF ドキュメントを操作するための柔軟で強力な API が提供されます。
+PDF に目次を作成し、ページ番号を非表示にするのは難しそうに思えるかもしれませんが、Aspose.PDF for .NET を使えば簡単です。このステップ バイ ステップ ガイドに従うことで、目次形式をカスタマイズし、ページ番号を非表示にし、見出しにさまざまなスタイルを適用する方法を学習しました。これで、ニーズにぴったり合ったプロフェッショナルな PDF を作成できます。
 
-### よくある質問
+## よくある質問
 
-#### Q: PDF ドキュメント内の XMP メタデータとは何ですか?
+### 目次内の特定の見出しのページ番号を表示できますか?
+いいえ、Aspose.PDF は目次全体のページ番号を非表示または表示します。特定のエントリに対して選択的にページ番号を非表示にすることはできません。
 
-A: PDF ドキュメント内の XMP (Extensible Metadata Platform) メタデータは、ドキュメントに関するメタデータ情報を格納するための標準形式です。これには、ドキュメントのタイトル、作成者、作成日、キーワードなどの詳細が含まれます。XMP メタデータは、PDF ドキュメントに関する情報を格納および共有するための構造化された標準化された方法を提供します。
+### TOC にさらにレベルを追加することは可能ですか?
+はい、増やすことができます`FormatArrayLength`より多くのレベルの TOC 見出しを定義します。
 
-#### Q: Aspose.PDF for .NET を使用して PDF ドキュメントの XMP メタデータを変更できますか?
+### すべての TOC エントリのフォントを変更するにはどうすればよいですか?
+フォントを変更するには、`TextState.Font`各レベルのプロパティ`FormatArray`.
 
- A: はい、Aspose.PDF for .NETを使用してPDFドキュメントのXMPメタデータをプログラム的に変更できます。`Info`の財産`Document`オブジェクトを使用すると、XMP メタデータ プロパティにアクセスできます。その後、これらのプロパティの値を更新して、PDF ドキュメントの XMP メタデータを変更できます。
+### TOC にハイパーリンクを挿入できますか?
+はい、各目次エントリを文書内の特定のセクションにリンクすることができます。`Heading.TocPage`財産。
 
-#### Q: Aspose.PDF for .NET を使用して PDF ドキュメントからカスタム XMP メタデータ プロパティを抽出できますか?
-
- A: はい、Aspose.PDF for .NETを使用してPDFドキュメントからカスタムXMPメタデータプロパティを抽出できます。`Metadata`の財産`Document`オブジェクトは、PDF ドキュメントのすべての XMP メタデータ プロパティへのアクセスを提供します。その後、カスタム プロパティを抽出し、必要に応じてその値を使用できます。
+### Aspose.PDF にはライセンスが必要ですか?
+はい、本番環境での使用には有効なライセンスが必要です。一時ライセンスを取得できます。[ここ](https://purchase.aspose.com/temporary-license/)機能をテストします。

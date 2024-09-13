@@ -1,7 +1,7 @@
 ---
 title: Taggad PDF-innehåll
 linktitle: Taggad PDF-innehåll
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du arbetar med taggat innehåll i ett PDF-dokument med Aspose.PDF för .NET. En steg-för-steg-guide för att använda taggar.
 type: docs
 weight: 200

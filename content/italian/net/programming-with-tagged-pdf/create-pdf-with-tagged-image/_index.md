@@ -112,7 +112,7 @@ R: Sì, puoi utilizzare diversi formati di immagine per l'immagine taggata, come
 
  A: Il testo alternativo fornisce una descrizione testuale dell'immagine, che viene letta ad alta voce dagli screen reader per gli utenti ipovedenti. Nel codice fornito, il testo alternativo viene impostato utilizzando`AlternativeText` proprietà del`IllustrationElement` che rappresenta l'immagine taggata.
 
-####  D: Come funziona il`SetTitle` method contribute to the PDF document's tagged image?
+#### D: Come funziona il`SetTitle` method contribute to the PDF document's tagged image?
 
  A: Il`SetTitle` imposta il titolo del contenuto taggato del documento PDF, fornendo contesto aggiuntivo per l'immagine taggata. Questo titolo può aiutare a identificare lo scopo o l'oggetto del contenuto taggato.
 
@@ -126,4 +126,4 @@ R: Utilizzando le funzionalità di struttura del contenuto taggato di Aspose.PDF
 
 #### D: È possibile aggiungere più immagini taggate allo stesso documento PDF utilizzando tecniche simili?
 
- R: Sì, puoi aggiungere più immagini taggate allo stesso documento PDF utilizzando tecniche simili. Creeresti ulteriori`IllustrationElement` istanze per ogni immagine taggata e personalizzarne le proprietà in base alle esigenze.
+R: Sì, puoi aggiungere più immagini taggate allo stesso documento PDF utilizzando tecniche simili. Creeresti ulteriori`IllustrationElement` istanze per ogni immagine taggata e personalizzarne le proprietà in base alle esigenze.

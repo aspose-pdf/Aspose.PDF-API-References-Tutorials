@@ -7,7 +7,7 @@ type: docs
 weight: 320
 url: /cs/net/programming-with-text/replaceable-symbols-in-header-footer/
 ---
-V tomto tutoriálu si vysvětlíme, jak používat vyměnitelné symboly v záhlaví a zápatí dokumentu PDF pomocí knihovny Aspose.PDF pro .NET. Projdeme si krok za krokem proces vytvoření PDF, nastavení okrajů, přidání záhlaví a zápatí s vyměnitelnými symboly a uložení PDF pomocí dodaného zdrojového kódu C#.
+tomto tutoriálu si vysvětlíme, jak používat vyměnitelné symboly v záhlaví a zápatí dokumentu PDF pomocí knihovny Aspose.PDF pro .NET. Projdeme si krok za krokem proces vytvoření PDF, nastavení okrajů, přidání záhlaví a zápatí s vyměnitelnými symboly a uložení PDF pomocí dodaného zdrojového kódu C#.
 
 ## Předpoklady
 
@@ -35,7 +35,7 @@ Page page = doc.Pages.Add();
 
 ## Krok 3: Nastavte okraje
 
-Okraje stránky nastavíme pomocí`MarginInfo` třída. Upravte hodnoty okrajů podle svých požadavků.
+ Okraje stránky nastavíme pomocí`MarginInfo` třída. Upravte hodnoty okrajů podle svých požadavků.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -110,7 +110,7 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-// Přiřaďte instanci marginInfo vlastnosti Margin sec1.PageInfo
+//Přiřaďte instanci marginInfo vlastnosti Margin sec1.PageInfo
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
@@ -148,7 +148,7 @@ Table tab2 = new Table();
 hfFoot.Paragraphs.Add(tab2);
 // Nastavte šířku sloupců tabulky
 tab2.ColumnWidths = "165 172 165";
-// Vytvořte řádky v tabulce a poté buňky v řádcích
+//Vytvořte řádky v tabulce a poté buňky v řádcích
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
@@ -160,7 +160,7 @@ row3.Cells[2].Alignment = Aspose.Pdf.HorizontalAlignment.Right;
 row3.Cells[0].Paragraphs.Add(t3);
 row3.Cells[1].Paragraphs.Add(t4);
 row3.Cells[2].Paragraphs.Add(t5);
-//Sec1.Paragraphs.Add(New Text("Aspose.Total for Java je kompilací všech komponent Java nabízených společností Aspose. Je kompilován na #$NL" + "denně, aby bylo zajištěno, že obsahuje nejaktuálnější verze každého #$NL " + "Pomocí Aspose.Total for Java mohou vývojáři vytvořit širokou škálu aplikací. nabízený Aspose je kompilován na #$NL" + "denně, aby bylo zajištěno, že obsahuje nejaktuálnější verze každé z našich komponent Java " + "Použití Aspose.Total pro vývojáře Java může vytvořit širokou rozsah aplikací aktuální verze každé z našich komponent Java " + "Pomocí Aspose.Total pro vývojáře Java mohou vytvářet širokou škálu aplikací.
+//Sec1.Paragraphs.Add(New Text("Aspose.Total for Java je kompilací všech komponent Java nabízených společností Aspose. Je kompilován na #$NL" + "denně, aby bylo zajištěno, že obsahuje nejaktuálnější verze každého #$NL " + "Pomocí Aspose.Total for Java mohou vývojáři vytvořit širokou škálu aplikací. nabízený Aspose je kompilován na #$NL" + "denně, aby bylo zajištěno, že obsahuje nejaktuálnější verze každé z našich komponent Java " + "Pomocí Aspose.Total for Java mohou vývojáři vytvořit širokou rozsah aplikací aktuální verze každé z našich komponent Java " + "Pomocí Aspose.Total pro vývojáře Java mohou vytvářet širokou škálu aplikací.
 Table table = new Table();
 table.ColumnWidths = "33% 33% 34%";
 table.DefaultCellPadding = new MarginInfo();
@@ -173,7 +173,7 @@ table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
 // Nastavte ohraničení tabulky pomocí jiného přizpůsobeného objektu BorderInfo
 table.Border = new BorderInfo(BorderSide.All, 1f);
 table.RepeatingRowsCount = 1;
-// Vytvořte řádky v tabulce a poté buňky v řádcích
+//Vytvořte řádky v tabulce a poté buňky v řádcích
 Row row1 = table.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -221,7 +221,7 @@ Odpověď: Nahraditelné symboly v záhlaví a zápatí jsou užitečné, když 
 
 #### Otázka: Jak mohu nastavit okraje pro stránku PDF?
 
- Odpověď: Okraje stránky PDF můžete nastavit pomocí`MarginInfo` třídy a přiřadit ji k`Margin` majetek z`PageInfo` stránky. Podle potřeby upravte hodnoty okrajů.
+ Odpověď: Okraje stránky PDF můžete nastavit pomocí`MarginInfo` třídy a přiřadit ji k`Margin` vlastnictví`PageInfo` stránky. Podle potřeby upravte hodnoty okrajů.
 
 #### Otázka: Jak přidám vyměnitelné symboly do záhlaví a zápatí?
 

@@ -1,7 +1,7 @@
 ---
 title: Ta bort tabell i PDF-dokument
 linktitle: Ta bort tabell i PDF-dokument
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du tar bort en tabell i PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 160
@@ -96,7 +96,7 @@ Grattis! Du har nu lärt dig hur du tar bort en tabell i ett PDF-dokument med As
 
 #### F: Vad händer om den angivna sidan inte innehåller några tabeller?
 
- S: Om den angivna sidan inte innehåller några tabeller kommer koden att kasta en`IndexOutOfRangeException` när du försöker komma åt`absorb.TableList[0]` . För att undvika detta problem bör du kontrollera om`absorb.TableList`innehåller alla element innan du kommer åt tabellen.
+ S: Om den angivna sidan inte innehåller några tabeller kommer koden att kasta en`IndexOutOfRangeException` när du försöker komma åt`absorb.TableList[0]` . För att undvika detta problem bör du kontrollera om`absorb.TableList` innehåller alla element innan du kommer åt tabellen.
 
 #### F: Kan jag ta bort tabeller från andra sidor än den första sidan?
 

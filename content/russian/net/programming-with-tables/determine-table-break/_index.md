@@ -117,7 +117,7 @@ table1.DefaultCellPadding = margin;
 // Потому что больше не может быть размещено на этой странице.
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
-	// Создайте строки в таблице, а затем ячейки в строках.
+	//Создайте строки в таблице, а затем ячейки в строках.
 	Aspose.Pdf.Row row1 = table1.Rows.Add();
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");

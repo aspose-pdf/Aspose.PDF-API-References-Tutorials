@@ -1,13 +1,13 @@
 ---
 title: Lägg till SVG-objekt i PDF-fil
 linktitle: Lägg till SVG-objekt i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lägg enkelt till SVG-objekt i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 30
 url: /sv/net/programming-with-tables/add-svg-object/
 ---
-I den här handledningen kommer vi att lära oss hur du lägger till ett SVG-objekt i PDF-fil med Aspose.PDF för .NET-biblioteket. SVG (Scalable Vector Graphics) är ett populärt format för vektorgrafik som enkelt kan skalas utan att förlora kvalitet. Med Aspose.PDF kan du lägga till SVG-objekt till dina PDF-dokument programmatiskt.
+den här handledningen kommer vi att lära oss hur du lägger till ett SVG-objekt i PDF-fil med Aspose.PDF för .NET-biblioteket. SVG (Scalable Vector Graphics) är ett populärt format för vektorgrafik som enkelt kan skalas utan att förlora kvalitet. Med Aspose.PDF kan du lägga till SVG-objekt till dina PDF-dokument programmatiskt.
 
 ## Krav
 

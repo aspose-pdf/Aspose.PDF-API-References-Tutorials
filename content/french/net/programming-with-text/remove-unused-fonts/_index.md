@@ -120,7 +120,7 @@ R : Le tutoriel vous guide tout au long du processus étape par étape :
 
 R : Oui, vous pouvez modifier le code pour remplacer les polices inutilisées par une police de votre choix. Dans l'exemple de code fourni, la police « Arial, Bold » est utilisée en remplacement.
 
-####  Q : Comment fonctionne le`TextFragmentAbsorber` work to remove unused fonts?
+####  : Comment fonctionne le`TextFragmentAbsorber` work to remove unused fonts?
 
  A : Le`TextFragmentAbsorber` est configuré avec le`TextEditOptions.FontReplace.RemoveUnusedFonts` paramètre, qui identifie les polices inutilisées dans les fragments de texte du PDF. Après absorption, vous pouvez parcourir le`TextFragments` et définissez leurs polices sur les polices de remplacement souhaitées.
 

@@ -91,7 +91,7 @@ public class PDFColorSpaceConverter {
 
 ## Abschluss
 
-In diesem Tutorial haben wir untersucht, wie man den Farbraum eines PDF-Dokuments mit Java und der Bibliothek Aspose.PDF für Java ändert. Wir haben die Bedeutung von Farbräumen in PDFs kennengelernt, die benötigten Tools und Bibliotheken sowie eine Schritt-für-Schritt-Anleitung zur Durchführung der Farbraumkonvertierung erhalten.
+In diesem Tutorial haben wir untersucht, wie man den Farbraum eines PDF-Dokuments mit Java und der Aspose.PDF-Bibliothek für Java ändert. Wir haben die Bedeutung von Farbräumen in PDFs kennengelernt, die benötigten Tools und Bibliotheken sowie eine Schritt-für-Schritt-Anleitung zur Durchführung der Farbraumkonvertierung erhalten.
 
 ## Häufig gestellte Fragen
 

@@ -1,7 +1,7 @@
 ---
 title: CGM till PDF-filer
 linktitle: CGM till PDF-filer
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du konverterar CGM-filer till PDF med Aspose.PDF för .NET med denna steg-för-steg-guide. Perfekt för både utvecklare och designers.
 type: docs
 weight: 20
@@ -65,7 +65,7 @@ Aspose.Pdf.CgmLoadOptions cgmload = new Aspose.Pdf.CgmLoadOptions();
 
 ## Steg 3: Skapa ett dokumentobjekt
 
- Nu kommer du att skapa en`Document` objekt. Detta objekt kommer att representera din CGM-fil i minnet, vilket gör att du kan manipulera den innan du sparar den som en PDF.
+ Nu ska du skapa en`Document` objekt. Detta objekt kommer att representera din CGM-fil i minnet, vilket gör att du kan manipulera den innan du sparar den som en PDF.
 
 ```csharp
 // Instantiera dokumentobjekt

@@ -10,7 +10,7 @@ url: /de/java/pdf-form-fields/add-page-number-stamp-in-pdf-using-java/
 
 ## Einführung zum Hinzufügen eines Seitenzahlstempels in PDF mit Java
 
-PDF-Dokumente werden häufig zum Teilen und Präsentieren von Informationen verwendet, aber manchmal müssen Sie sie durch das Hinzufügen von Seitenzahlen aufwerten. Egal, ob Sie an Berichten, Handbüchern oder wissenschaftlichen Arbeiten arbeiten, Seitenzahlen helfen den Lesern, effizient durch Ihre Inhalte zu navigieren. In diesem Tutorial führen wir Sie durch den Prozess des Hinzufügens von Seitenzahlenstempeln zu PDF-Dateien mit Java. Wir verwenden Aspose.PDF für Java, eine leistungsstarke Bibliothek, die die PDF-Bearbeitung vereinfacht.
+PDF-Dokumente werden häufig zum Teilen und Präsentieren von Informationen verwendet, aber manchmal müssen Sie sie durch das Hinzufügen von Seitenzahlen aufwerten. Egal, ob Sie an Berichten, Handbüchern oder akademischen Arbeiten arbeiten, Seitenzahlen helfen den Lesern, effizient durch Ihre Inhalte zu navigieren. In diesem Tutorial führen wir Sie durch den Prozess des Hinzufügens von Seitenzahlenstempeln zu PDF-Dateien mit Java. Wir verwenden Aspose.PDF für Java, eine leistungsstarke Bibliothek, die die PDF-Bearbeitung vereinfacht.
 
 ## Einrichten von Aspose.PDF für Java
 

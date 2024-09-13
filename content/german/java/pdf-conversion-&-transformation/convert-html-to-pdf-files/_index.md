@@ -10,7 +10,7 @@ url: /de/java/pdf-conversion-transformation/convert-html-to-pdf-files/
 
 ## Einführung zum Konvertieren von HTML- in PDF-Dateien
 
-In der heutigen digitalen Welt ist die Notwendigkeit, HTML-Inhalte in PDF-Dateien zu konvertieren, allgegenwärtig. Ob Sie Webseiten archivieren, Berichte erstellen oder einfach nur Webinhalte aufbewahren, die Konvertierung von HTML in PDF ist eine wertvolle Funktion. Dieser Artikel führt Sie durch den Prozess der Konvertierung von HTML- in PDF-Dateien mithilfe der Aspose.PDF für Java-Bibliothek, einem leistungsstarken Tool, das diese Aufgabe vereinfacht.
+In der heutigen digitalen Welt ist die Notwendigkeit, HTML-Inhalte in PDF-Dateien zu konvertieren, allgegenwärtig. Egal, ob Sie Webseiten archivieren, Berichte erstellen oder einfach nur Webinhalte aufbewahren, die Konvertierung von HTML in PDF ist eine wertvolle Funktion. Dieser Artikel führt Sie durch den Prozess der Konvertierung von HTML- in PDF-Dateien mithilfe der Aspose.PDF für Java-Bibliothek, einem leistungsstarken Tool, das diese Aufgabe vereinfacht.
 
 ## Grundlegendes zur Aspose.PDF-Bibliothek für Java
 
@@ -69,7 +69,7 @@ Das ist es! Sie haben HTML erfolgreich mit Aspose.PDF für Java in PDF konvertie
 
 ### Formatieren des PDF
 
-Sie können das Erscheinungsbild der PDF-Datei anpassen, indem Sie Stile auf den HTML-Inhalt anwenden. Aspose.PDF für Java bietet verschiedene Optionen für die Gestaltung, einschließlich Schriftarten, Farben und Seitenabmessungen.
+Sie können das Erscheinungsbild der PDF-Datei anpassen, indem Sie Stile auf den HTML-Inhalt anwenden. Aspose.PDF für Java bietet verschiedene Optionen für den Stil, einschließlich Schriftarten, Farben und Seitenabmessungen.
 
 ### Umgang mit Bildern und Links
 

@@ -56,7 +56,7 @@ StructureElement element = pdfDocument.getTaggedContent().getElementByPage(1).ge
 
 ## 訪問子元素
 
-到達結構元素後，您可以存取其子元素。子元素可以是文字、圖像、表格或 PDF 中存在的任何其他內容。以下是檢索子元素的方法：
+一旦到達結構元素，您就可以存取其子元素。子元素可以是文字、圖像、表格或 PDF 中存在的任何其他內容。以下是檢索子元素的方法：
 
 ```java
 //訪問子元素
@@ -97,7 +97,7 @@ for (Element child : children) {
 ### 如何安裝 Aspose.PDF for Java？
 
 若要安裝 Aspose.PDF for Java，請依照下列步驟操作：
-1. 造訪 Aspose 網站。
+1. 請造訪 Aspose 網站。
 2. 下載 Aspose.PDF for Java 函式庫。
 3. 將庫新增至 Java 專案的依賴項。
 4. 您已準備好在專案中使用 Aspose.PDF for Java。

@@ -47,7 +47,7 @@ Beállítottuk a címkézett PDF dokumentum címét és nyelvét.
 Most nézzük meg a PDF dokumentum gyökérstruktúra elemét.
 
 ```csharp
-//Szerezze meg a gyökérszerkezet elemet
+// Szerezze meg a gyökérszerkezet elemet
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
@@ -139,7 +139,7 @@ V: Az oktatóanyag C# forráskód példákat tartalmaz, amelyek bemutatják, hog
 
 #### K: Hogyan hozhatok létre bekezdés szövegszerkezeti elemet egy PDF-dokumentumban az Aspose.PDF for .NET használatával?
 
- V: Az oktatóanyag C# forráskód példákat tartalmaz, amelyek bemutatják, hogyan lehet bekezdés szövegszerkezeti elemet létrehozni a`CreateParagraphElement()`metódust, és adjon hozzá szöveget a`SetText()` módszer. A bekezdés ezután hozzá lesz fűzve a címkézett PDF-dokumentum gyökérszerkezet-eleméhez.
+ V: Az oktatóanyag C# forráskód példákat tartalmaz, amelyek bemutatják, hogyan lehet bekezdés szövegszerkezeti elemet létrehozni a`CreateParagraphElement()`módszert, és adjon hozzá szöveget a`SetText()` módszer. A bekezdés ezután hozzá lesz fűzve a címkézett PDF-dokumentum gyökérszerkezet-eleméhez.
 
 #### K: Testreszabhatom a PDF dokumentumhoz hozzáadott szövegszerkezeti elemek megjelenését és formázását?
 

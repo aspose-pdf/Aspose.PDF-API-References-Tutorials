@@ -38,14 +38,14 @@ Document pdfDocument = new Document();
 ```
 
 ## Krok 5: Přidejte do dokumentu stránku
- Přidejte do dokumentu novou stránku pomocí`Add` metoda`Pages`sbírka. V poskytnutém kódu je nová stránka přiřazena k proměnné`pdfPage`.
+ Přidejte do dokumentu novou stránku pomocí`Add` metoda`Pages` sbírka. V poskytnutém kódu je nová stránka přiřazena k proměnné`pdfPage`.
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
 ## Krok 6: Vytvořte TextFragment
- Vytvořte a`TextFragment` objekt a zadejte požadovaný text. Nastavte polohu textového fragmentu pomocí`Position` vlastnictví. V poskytnutém kódu je text nastaven na "hlavní text" a umístěn na stránce (100, 600).
+ Vytvořte a`TextFragment`objekt a zadejte požadovaný text. Nastavte polohu textového fragmentu pomocí`Position` vlastnictví. V poskytnutém kódu je text nastaven na "hlavní text" a umístěn na stránce (100, 600).
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -64,7 +64,7 @@ textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 ```
 
 ## Krok 8: Povolte ohraničení textu
- Chcete-li povolit ohraničení textu, nastavte`DrawTextRectangleBorder`vlastnost fragmentu textu`TextState` na`true`.
+ Chcete-li povolit ohraničení textu, nastavte`DrawTextRectangleBorder` vlastnost fragmentu textu`TextState` na`true`.
 
 ```csharp
 textFragment.TextState.DrawTextRectangleBorder = true;
@@ -151,7 +151,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 
 #### Otázka: Jak vytvořím TextFragment a nastavím jeho pozici?
 
- Odpověď: V kroku 6 vytvoříte a`TextFragment`objektu a nastavte jeho pozici na stránce pomocí`Position` vlastnictví:
+ Odpověď: V kroku 6 vytvoříte a`TextFragment` objektu a nastavte jeho pozici na stránce pomocí`Position` vlastnictví:
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -182,7 +182,7 @@ tb.AppendText(textFragment);
 
 #### Otázka: Jak uložím výsledný dokument PDF?
 
- A: Po přidání textu s okrajem použijte`Save` metoda`Document` objekt pro uložení dokumentu PDF:
+A: Po přidání textu s okrajem použijte`Save` metoda`Document` objekt pro uložení dokumentu PDF:
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");

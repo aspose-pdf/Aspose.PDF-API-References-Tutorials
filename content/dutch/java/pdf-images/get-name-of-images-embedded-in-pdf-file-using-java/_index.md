@@ -63,7 +63,7 @@ for (com.aspose.pdf.XImage image : images) {
 
 ## Uitzonderingen afhandelen
 
-Het is essentieel om uitzonderingen te verwerken die tijdens het proces kunnen optreden, zoals wanneer het PDF-bestand niet wordt gevonden of niet in het juiste formaat is. Overweeg het gebruik van try-catch-blokken om uitzonderingen netjes te verwerken.
+Het is essentieel om uitzonderingen te verwerken die tijdens het proces kunnen optreden, zoals wanneer het PDF-bestand niet wordt gevonden of niet in het juiste formaat is. Overweeg try-catch-blokken te gebruiken om uitzonderingen netjes te verwerken.
 
 ## De code compileren en uitvoeren
 

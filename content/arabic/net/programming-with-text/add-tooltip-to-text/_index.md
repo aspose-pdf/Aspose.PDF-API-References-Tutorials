@@ -32,7 +32,7 @@ using Aspose.Pdf.Text;
  في الكود، حدد السطر الذي يقول`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدالها`"YOUR DOCUMENT DIRECTORY"` مع المسار إلى الدليل الذي يتم تخزين مستنداتك فيه.
 
 ## الخطوة 4: إنشاء مستند نموذجي يحتوي على نص
- إنشاء جديد`Document` كائن وإضافة صفحات تحتوي على أجزاء نصية. في الكود المقدم، تتم إضافة جزءين نصيين إلى المستند مع نص الإرشاد الخاص بكل منهما.
+ إنشاء جديد`Document`كائن وإضافة صفحات تحتوي على أجزاء نصية. في الكود المقدم، تتم إضافة جزءين نصيين إلى المستند مع نص الإرشاد الخاص بكل منهما.
 
 ```csharp
 Document doc = new Document();
@@ -98,7 +98,7 @@ doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to disp
 doc.Save(outputFile);
 // فتح مستند يحتوي على نص
 Document document = new Document(outputFile);
-// إنشاء كائن TextAbsorber للعثور على جميع العبارات المطابقة للتعبير العادي
+//إنشاء كائن TextAbsorber للعثور على جميع العبارات المطابقة للتعبير العادي
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
 // قبول الممتص لصفحات الوثيقة
 document.Pages.Accept(absorber);

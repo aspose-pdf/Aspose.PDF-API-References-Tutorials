@@ -1,7 +1,7 @@
 ---
 title: PDF till XPS
 linktitle: PDF till XPS
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du konverterar PDF till XPS med Aspose.PDF för .NET med denna steg-för-steg-guide. Perfekt för utvecklare och dokumenthanteringsentusiaster.
 type: docs
 weight: 220
@@ -17,7 +17,7 @@ Innan vi sätter igång finns det några förutsättningar du måste ha på plat
 
 1. Visual Studio: Se till att du har Visual Studio installerat på din dator. Det är här du ska skriva och köra din .NET-kod.
 2. .NET Framework: Bekantskap med .NET-ramverket är viktigt, eftersom vi kommer att använda C# för våra exempel.
-3.  Aspose.PDF-bibliotek: Du måste ha Aspose.PDF-biblioteket installerat. Du kan ladda ner den från[Aspose PDF för .NET versioner sida](https://releases.aspose.com/pdf/net/).
+3.  Aspose.PDF-bibliotek: Du måste ha Aspose.PDF-biblioteket installerat. Du kan ladda ner den från[Aspose PDF för .NET-versioner sida](https://releases.aspose.com/pdf/net/).
 4. Grundläggande C#-kunskap: En grundläggande förståelse för C#-programmering hjälper dig att följa exemplen.
 
 ## Importera paket

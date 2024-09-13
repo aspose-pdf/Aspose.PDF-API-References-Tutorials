@@ -31,7 +31,7 @@ Otwórz Visual Studio i utwórz nowy projekt C#. Wybierz aplikację konsolową d
 
 Po skonfigurowaniu projektu należy dodać odniesienie do biblioteki Aspose.PDF. Można to zrobić w następujący sposób:
 
-- Kliknij prawym przyciskiem myszy swój projekt w Eksploratorze rozwiązań.
+- Kliknij prawym przyciskiem myszy na swoim projekcie w Eksploratorze rozwiązań.
 - Wybierz opcję „Zarządzaj pakietami NuGet”.
 - Wyszukiwanie pliku „Aspose.PDF” i jego instalacja.
 

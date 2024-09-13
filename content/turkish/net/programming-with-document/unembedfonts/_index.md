@@ -2,135 +2,129 @@
 title: Yazı Tiplerini Kaldırın ve PDF Dosyalarını Optimize Edin
 linktitle: Yazı Tiplerini Kaldırın ve PDF Dosyalarını Optimize Edin
 second_title: Aspose.PDF for .NET API Referansı
-description: .NET için Aspose.PDF'yi kullanarak Unembed Fonts'u nasıl alacağınızı ve PDF dosyalarını nasıl optimize edeceğinizi öğrenin. Adım adım bir kılavuz.
+description: Bu adım adım eğitimde Aspose.PDF for .NET kullanarak yazı tiplerini nasıl kaldıracağınızı ve PDF dosyalarını nasıl optimize edeceğinizi öğrenin.
 type: docs
 weight: 370
 url: /tr/net/programming-with-document/unembedfonts/
 ---
-Aspose.PDF for .NET, PDF belgeleriyle çalışmak için geniş bir özellik yelpazesi sunan güçlü bir kütüphanedir. Özelliklerinden biri de PDF belgesinden gömülü fontları çıkarmaktır. Bu, bir PDF belgesinden fontları çıkarmanız ve bunları diğer uygulamalarda kullanmanız gerektiğinde yararlı olabilir.
+## giriiş
 
-.NET için Aspose.PDF'nin gömülü yazı tiplerini kaldırma özelliğinin C# kaynak kodunu açıklamak için adım adım bir kılavuz sağlayacağız.
+Dijital çağda PDF'ler her yerdedir. İster raporlar, ister sunumlar veya e-kitaplar paylaşın, Taşınabilir Belge Biçimi (PDF), belgelerinizin bütünlüğünü korumak için tercih edilen seçenektir. Ancak daha fazla PDF oluşturup paylaştıkça dosya boyutları şişebilir ve bunları göndermek veya depolamak zahmetli hale gelebilir. İşte tam bu noktada Aspose.PDF for .NET devreye girerek PDF dosyalarınızı optimize etmek için güçlü araçlar sunar. Bu eğitimde, Aspose.PDF for .NET kullanarak yazı tiplerini nasıl kaldıracağınızı ve PDF dosyalarını nasıl optimize edeceğinizi inceleyeceğiz.
 
-## Adım 1: Belge dizinine giden yolu ayarlayın
+## Ön koşullar
 
-Başlamadan önce, PDF belgemizin bulunduğu dizine giden yolu ayarlamamız gerekiyor. Bu yolu "dataDir" adlı bir değişkende saklayacağız.
+Ayrıntılara girmeden önce, başlamak için ihtiyacınız olan her şeye sahip olduğunuzdan emin olalım:
+
+1. Visual Studio: Makinenizde Visual Studio'nun yüklü olduğundan emin olun. .NET kodumuzu yazmak ve çalıştırmak için kullanacağımız IDE budur.
+2.  .NET için Aspose.PDF: Aspose.PDF kütüphanesini indirip yüklemeniz gerekecek. Bunu şuradan alabilirsiniz:[indirme bağlantısı](https://releases.aspose.com/pdf/net/).
+3. Temel C# Bilgisi: C# programlamaya aşinalık, kullanacağımız kod parçacıklarını anlamanıza yardımcı olacaktır.
+4.  Bir PDF Dosyası: Optimize etmek istediğiniz hazır bir PDF dosyanız olsun. Herhangi bir PDF kullanabilirsiniz, ancak gösterim için buna şu şekilde atıfta bulunacağız:`OptimizeDocument.pdf`.
+
+## Paketleri İçe Aktar
+
+Başlamak için, C# projenize gerekli paketleri içe aktarmanız gerekir. Bunu nasıl yapabileceğiniz aşağıda açıklanmıştır:
+
+1. Projenizi Visual Studio’da açın.
+2. Aspose.PDF'ye bir başvuru ekleyin: Çözüm Gezgini'nde projenize sağ tıklayın, "NuGet Paketlerini Yönet" seçeneğini seçin ve şunu arayın:`Aspose.PDF`. Paketi kurun.
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Artık her şeyi ayarladığımıza göre, optimizasyon sürecini yönetilebilir adımlara bölelim.
+
+## Adım 1: Belge Dizininizi Ayarlayın
+
+İlk önce, belgeler dizininize giden yolu tanımlamanız gerekir. PDF dosyalarınız burada saklanacaktır. Bunu nasıl yapacağınız aşağıda açıklanmıştır:
 
 ```csharp
 // Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-"BELGE DİZİNİNİZ" ifadesini PDF belgenizin bulunduğu dizinin gerçek yoluyla değiştirin.
+ Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` PDF dosyanızın bulunduğu gerçek yol ile. Bu önemlidir çünkü programın optimize etmek istediğiniz PDF'i nerede bulacağını bilmesi gerekir.
 
 ## Adım 2: PDF Belgesini açın
 
- İlk adım, bunu yapmak istediğiniz PDF belgesini yüklemektir,`Document` .NET için Aspose.PDF sınıfı. Aşağıdaki kod parçacığı PDF belgesinin nasıl yükleneceğini gösterir:
+Artık dizinimizi kurduğumuza göre, optimize etmek istediğimiz PDF belgesini açmanın zamanı geldi. Bunu yapmak için kod şu şekilde:
 
 ```csharp
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-## Adım3: UnembedFonts Seçeneğini Ayarlayın
+ Bu kod satırı yeni bir`Document` PDF dosyanızı temsil eden nesne. Dosya adının dizininizdeki adla eşleştiğinden emin olun.
 
- PDF belgesinden gömülü yazı tiplerini kaldırmak için, şunu ayarlamanız gerekir:`UnembedFonts` seçeneği`true` Bu seçenek şurada mevcuttur:`OptimizationOptions` Aşağıdaki kod parçacığı, sınıfın nasıl ayarlanacağını gösterir.`UnembedFonts` seçenek:
+## Adım 3: Optimizasyon Seçeneklerini Ayarlayın
+
+Sonra, optimizasyon seçeneklerini belirtmemiz gerekiyor. Bu durumda, fontları gömmeyi kaldırmak istiyoruz. Bunu nasıl ayarlayacağınız aşağıda açıklanmıştır:
 
 ```csharp
 // UnembedFonts seçeneğini ayarlayın
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
-	UnembedFonts = true
+    UnembedFonts = true
 };
 ```
+
+ Ayarlayarak`UnembedFonts` ile`true`, Aspose.PDF'e yazı tiplerini kaldırarak PDF'yi optimize etmesi talimatını veriyoruz. Bu, özellikle PDF çok sayıda gömülü yazı tipi içeriyorsa dosya boyutunu önemli ölçüde azaltabilir.
 
 ## Adım 4: PDF Belgesini Optimize Edin
 
- Ayarladıktan sonra`UnembedFonts` seçeneğiyle PDF belgesini optimize edebilirsiniz`OptimizeResources` yöntemi`Document` sınıf. Aşağıdaki kod parçacığı PDF belgesinin nasıl optimize edileceğini gösterir:
+Seçeneklerimiz ayarlandığında, PDF belgesini optimize etme zamanı geldi. Bunu yapmak için kod şu şekilde:
 
 ```csharp
-// OptimizationOptions kullanarak PDF belgesini optimize edin
-pdfDocument.OptimizeResources(optimizeOptions);
-```
-
-## Adım 5: Güncellenen Belgeyi Kaydedin
-
- PDF belgesi optimize edildikten sonra, güncellenen belgeyi kullanarak kaydedebilirsiniz.`Save` yöntemi`Document`Aşağıdaki kod parçacığı güncellenen belgenin nasıl kaydedileceğini gösterir:
-
-```csharp
-// Güncellenen belgeyi kaydet
-pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
-```
-
-## Adım 6: Orijinal ve Küçültülmüş Dosya Boyutunu Alın
-
- Son olarak, PDF belgesinin orijinal ve küçültülmüş dosya boyutunu şu şekilde elde edebilirsiniz:`FileInfo` System.IO sınıfı. Aşağıdaki kod parçası orijinal ve küçültülmüş dosya boyutunun nasıl alınacağını gösterir:
-
-```csharp
-var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
-var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
-Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
-```
-
-### .NET için Aspose.PDF kullanarak Gömülü Yazı Tiplerini Kaldırmak için Örnek Kaynak Kodu
-
-İşte Aspose.PDF for .NET kullanarak bir PDF belgesinden gömülü yazı tiplerini almaya yönelik tam örnek kaynak kodu:
-
-```csharp
-// Belgeler dizinine giden yol.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Belgeyi aç
-Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// UnembedFonts seçeneğini ayarlayın
-var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-{
-	UnembedFonts = true
-};
 Console.WriteLine("Start");
 // OptimizationOptions kullanarak PDF belgesini optimize edin
 pdfDocument.OptimizeResources(optimizeOptions);
+```
+
+Bu kod parçacığı şunu çağırır:`OptimizeResources` yöntem üzerinde`pdfDocument` nesne, daha önce tanımladığımız optimizasyon seçeneklerini uygular. Konsolda optimizasyon sürecinin başladığını belirten bir mesaj göreceksiniz.
+
+## Adım 5: Güncellenen Belgeyi Kaydedin
+
+PDF'yi optimize ettikten sonra güncellenen belgeyi kaydetmemiz gerekiyor. Bunu nasıl yapacağınız aşağıda açıklanmıştır:
+
+```csharp
 // Güncellenen belgeyi kaydet
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Finished");
+```
+
+ Bu kod optimize edilmiş PDF'yi şu şekilde kaydeder:`OptimizeDocument_out.pdf` aynı dizinde. İsterseniz farklı bir isim seçebilirsiniz, ancak benzer tutmak orijinal ve optimize edilmiş sürümleri tanımlamaya yardımcı olur.
+
+## Adım 6: Dosya Boyutlarını Karşılaştırın
+
+Son olarak, ne kadar alan kazandığınızı kontrol etmek her zaman iyidir. Orijinal ve optimize edilmiş dosya boyutlarını karşılaştırmanın yolu:
+
+```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
 var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```
+
+Bu kod hem orijinal hem de optimize edilmiş PDF'lerin dosya boyutlarını alır ve bunları konsola yazdırır. Dosya boyutunu ne kadar küçülttüğünüzü görmek tatmin edici bir andır!
 
 ## Çözüm
 
-Bu eğitimde, bir PDF belgesinden gömülü olmayan fontları almak için Aspose.PDF for .NET'in nasıl kullanılacağını gösterdik. Adım adım kılavuzu izleyerek, bu özelliği C# uygulamalarınızda kolayca uygulayabilirsiniz. Çıkarılan fontlarla ayrı ayrı çalışmanız veya çeşitli platformlarda tutarlı font kullanımı sağlamanız gerektiğinde, gömülü olmayan fontlar avantajlı olabilir.
+Ve işte oldu! Aspose.PDF for .NET kullanarak yazı tiplerini başarıyla kaldırdınız ve bir PDF dosyasını optimize ettiniz. Bu işlem yalnızca dosya boyutlarını küçültmenize yardımcı olmakla kalmaz, aynı zamanda PDF belgelerinizin performansını da artırır. Dosyaları e-postayla paylaşıyor veya bulutta saklıyor olun, daha küçük bir dosya boyutu büyük fark yaratabilir.
 
 ## SSS
 
-#### S: PDF belgesinden yazı tiplerinin kaldırılmasının amacı nedir?
+### Aspose.PDF for .NET nedir?
+Aspose.PDF for .NET, geliştiricilerin PDF belgelerini programlı bir şekilde oluşturmalarına, düzenlemelerine ve optimize etmelerine olanak tanıyan güçlü bir kütüphanedir.
 
-A: Bir PDF belgesinden fontları gömmeyi kaldırmak, gömülü fontları çıkarmanıza ve bunları diğer uygulamalarda kullanmanıza olanak tanır. Bu, tutarlı font oluşturmayı sağlamak ve belgenin görsel görünümünü korumak için yararlı olabilir.
+### Aspose.PDF'yi ücretsiz kullanabilir miyim?
+ Evet, Aspose ücretsiz deneme sürümü sunuyor. Bunu şuradan indirebilirsiniz:[Burada](https://releases.aspose.com/).
 
-#### S: C# kodunda belge dizinine giden yolu nasıl belirtirim?
+### Aspose.PDF için nasıl destek alabilirim?
+ Destek almak için:[Aspose forumu](https://forum.aspose.com/c/pdf/10).
 
- A: Belge dizinine giden yolu belirtmek için şunu değiştirin:`"YOUR DOCUMENT DIRECTORY"` PDF belgenizin bulunduğu dizinin gerçek yolunu içeren kodda.
+### PDF'lerde hangi tür optimizasyonları gerçekleştirebilirim?
+PDF dosyalarınızı optimize etmek için yazı tiplerini kaldırabilir, görselleri sıkıştırabilir, kullanılmayan nesneleri kaldırabilir ve daha fazlasını yapabilirsiniz.
 
-####  S: Ne anlama geliyor?`UnembedFonts` option do, and where is it set?
-
- A:`UnembedFonts` seçeneği, mevcuttur`OptimizationOptions` sınıf, PDF belgesinden yazı tiplerinin gömülmesini kaldırır veya devre dışı bırakır. Bu seçeneği ayarlamak için`true`, aşağıdaki kodu kullanın:
-
-```csharp
-var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-{
-	UnembedFonts = true
-};
-```
-
-#### S: Optimizasyon sürecinde yapılan değişiklikleri geri alabilir miyim?
-
-A: Aspose.PDF for .NET, optimizasyon sırasında orijinal PDF belgesinde kalıcı değişiklikler yapmaz. Optimizasyon işlemi, orijinali bozulmadan bırakarak belgenin bir kopyası üzerinde gerçekleştirilir.
-
-#### S: Optimizasyondan sonra orijinal ve küçültülmüş dosya boyutunu nasıl kontrol edebilirim?
-
- A: Kullanabilirsiniz`FileInfo` sınıfı`System.IO` orijinal ve küçültülmüş dosya boyutunu elde etmek için. Bunu başarmak için örnek bir kod parçası:
-
-```csharp
-var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
-var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
-Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
-```
+### Aspose.PDF for .NET'i nereden satın alabilirim?
+ Lisansı şuradan satın alabilirsiniz:[Aspose satın alma sayfası](https://purchase.aspose.com/buy).

@@ -114,7 +114,7 @@ Dieser Code speichert das PDF-Dokument mit den strukturierten Elementen in einer
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
 string logFile = dataDir + "46144_log.xml";
-// Dokument erstellen und getaggten PDF-Inhalt erhalten
+//Dokument erstellen und getaggten PDF-Inhalt erhalten
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 // Festlegen von Titel und Artsprache für das Dokument
@@ -209,7 +209,7 @@ A: Das Erstellen einer hierarchischen Struktur in einem PDF-Dokument verbessert 
 
 #### F: Wie kann ich die PDF/UA-Konformität nach dem Hinzufügen von Strukturelementen validieren?
 
- A: Der im Tutorial bereitgestellte Code zeigt, wie die PDF/UA-Konformität mithilfe des`Validate` Methode. Durch die Validierung des Dokuments anhand des PDF/UA-Standards können Sie sicherstellen, dass die hinzugefügten Strukturelemente den Richtlinien zur Barrierefreiheit entsprechen.
+A: Der im Tutorial bereitgestellte Code zeigt, wie die PDF/UA-Konformität mithilfe des`Validate` Methode. Durch die Validierung des Dokuments anhand des PDF/UA-Standards können Sie sicherstellen, dass die hinzugefügten Strukturelemente den Richtlinien zur Barrierefreiheit entsprechen.
 
 #### F: Kann ich mit diesem Ansatz Strukturelemente zu einem bestehenden PDF-Dokument hinzufügen?
 

@@ -143,7 +143,7 @@ tady to máte! S Aspose.PDF pro .NET je přidání obsahu do PDF nejen snadné, 
 Ano, můžete si plně přizpůsobit vzhled obsahu, včetně stylu písma, velikosti a zarovnání.
 
 ### Jak přidám podnadpisy do obsahu?  
- Podnadpisy můžete přidat úpravou`Heading` úroveň (např.`Heading(2)`) vytvořit hierarchický TOC.
+ Můžete přidat podnadpisy úpravou`Heading` úroveň (např.`Heading(2)`) vytvořit hierarchický TOC.
 
 ### Je možné automaticky aktualizovat TOC, pokud se dokument změní?  
 Ne, obsah se neaktualizuje automaticky. Pokud se změní struktura dokumentu, budete jej muset znovu vytvořit.

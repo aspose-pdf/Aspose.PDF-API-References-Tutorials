@@ -35,7 +35,7 @@ Wir haben ein neues Dokument erstellt und den Dokumenttitel und die Sprache fest
 In diesem Schritt erhalten wir das Stammstrukturelement für unser Dokument.
 
 ```csharp
-//Erhalten Sie das Stammstrukturelement
+// Erhalten Sie das Stammstrukturelement
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
@@ -293,7 +293,7 @@ A: Bevor Sie beginnen, stellen Sie sicher, dass Sie Aspose.PDF für .NET install
 
 #### F: Wie erstelle ich mit Aspose.PDF für .NET ein neues PDF-Dokument?
 
-A: Um ein neues PDF-Dokument zu erstellen, müssen Sie eine`Document` Objekt aus der Aspose.PDF-Bibliothek. Der bereitgestellte C#-Quellcode zeigt, wie ein Dokument erstellt und dessen Titel und Sprache festgelegt wird.
+ A: Um ein neues PDF-Dokument zu erstellen, müssen Sie eine`Document` Objekt aus der Aspose.PDF-Bibliothek. Der bereitgestellte C#-Quellcode zeigt, wie ein Dokument erstellt und dessen Titel und Sprache festgelegt wird.
 
 #### F: Welche Bedeutung hat das Stammstrukturelement in einem PDF-Dokument?
 

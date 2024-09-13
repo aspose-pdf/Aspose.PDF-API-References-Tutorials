@@ -120,7 +120,7 @@ A: De tutorial begeleidt u stap voor stap door het proces:
 
 A: Ja, u kunt de code aanpassen om ongebruikte lettertypen te vervangen door een lettertype naar keuze. In de meegeleverde voorbeeldcode wordt het lettertype "Arial, Bold" gebruikt als vervanging.
 
-####  V: Hoe werkt de`TextFragmentAbsorber` work to remove unused fonts?
+#### V: Hoe werkt de`TextFragmentAbsorber` work to remove unused fonts?
 
  A: De`TextFragmentAbsorber` is geconfigureerd met de`TextEditOptions.FontReplace.RemoveUnusedFonts` parameter, die ongebruikte lettertypen binnen de tekstfragmenten van de PDF identificeert. Na absorptie kunt u door de`TextFragments` en hun lettertypen instellen op de gewenste vervangende lettertypen.
 

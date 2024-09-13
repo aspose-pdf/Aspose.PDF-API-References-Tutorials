@@ -1,7 +1,7 @@
 ---
 title: Text till PDF
 linktitle: Text till PDF
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du konverterar textfiler till PDF med Aspose.PDF för .NET i den här steg-för-steg-guiden. Perfekt för utvecklare som vill förbättra sina applikationer.
 type: docs
 weight: 300

@@ -42,7 +42,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 ```
 
 ## 5단계: 수정할 텍스트 찾기
- 사용`TextFragmentAbsorber` 문서 내에서 원하는 텍스트를 찾습니다. 제공된 코드에서 "Lorem ipsum"이라는 텍스트를 찾습니다.
+사용`TextFragmentAbsorber` 문서 내에서 원하는 텍스트를 찾습니다. 제공된 코드에서 "Lorem ipsum"이라는 텍스트를 찾습니다.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -129,7 +129,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 
 #### 질문: PDF 문서에서 특정 텍스트를 찾아 수정하려면 어떻게 해야 하나요?
 
- A: 5단계에서는 다음을 사용합니다.`TextFragmentAbsorber`문서 내에서 원하는 텍스트를 찾으려면. 그런 다음 속성을 수정할 수 있습니다.
+ A: 5단계에서는 다음을 사용합니다.`TextFragmentAbsorber` 문서 내에서 원하는 텍스트를 찾으려면. 그런 다음 속성을 수정할 수 있습니다.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -150,7 +150,7 @@ textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 
 #### 질문: 수정된 텍스트에 추가적인 텍스트 서식을 적용할 수 있나요?
 
- A: 예, 7단계에서 밑줄과 같은 추가 텍스트 서식을 적용할 수 있습니다.`TextState` 물체:
+A: 예, 7단계에서 밑줄과 같은 추가 텍스트 서식을 적용할 수 있습니다.`TextState` 물체:
 
 ```csharp
 textFragment.TextState.Underline = true;

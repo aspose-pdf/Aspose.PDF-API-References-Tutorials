@@ -66,7 +66,7 @@ page.Paragraphs.Add(text);
 Aspose.Pdf.Image image = new Aspose.Pdf.Image();
 image.IsInLineParagraph = true;
 image.File = dataDir + "aspose-logo.jpg";
-image.FixHeight = 30; // Volitelné: Nastavte výšku obrazu
+image.FixHeight = 30; // Volitelné: Nastavte výšku obrázku
 image.FixWidth = 100; // Volitelné: Nastavte šířku obrázku
 page.Paragraphs.Add(image);
 ```

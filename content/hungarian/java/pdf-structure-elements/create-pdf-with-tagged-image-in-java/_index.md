@@ -2,7 +2,7 @@
 title: Hozzon létre PDF-et címkézett képpel Java nyelven
 linktitle: Hozzon létre PDF-et címkézett képpel Java nyelven
 second_title: Aspose.PDF Java PDF feldolgozó API
-description: Ismerje meg, hogyan hozhat létre hozzáférhető címkézett PDF-fájlokat Java nyelven az Aspose.PDF for Java segítségével. Kövesse lépésenkénti útmutatónkat a zökkenőmentes PDF generáláshoz.
+description: Ismerje meg, hogyan hozhat létre hozzáférhető címkézett PDF-fájlokat Java nyelven az Aspose.PDF for Java segítségével. Kövesse lépésről lépésre útmutatónkat a zökkenőmentes PDF generáláshoz.
 type: docs
 weight: 13
 url: /hu/java/pdf-structure-elements/create-pdf-with-tagged-image-in-java/

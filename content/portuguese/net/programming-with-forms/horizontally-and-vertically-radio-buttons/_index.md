@@ -2,126 +2,134 @@
 title: Botões de opção horizontal e vertical
 linktitle: Botões de opção horizontal e vertical
 second_title: Referência da API do Aspose.PDF para .NET
-description: Crie facilmente botões de opção horizontais e verticais em seus documentos PDF com Aspose.PDF para .NET.
+description: Aprenda a criar botões de opção alinhados horizontal e verticalmente em PDF usando o Aspose.PDF para .NET com este tutorial passo a passo.
 type: docs
 weight: 180
 url: /pt/net/programming-with-forms/horizontally-and-vertically-radio-buttons/
 ---
-Neste tutorial, mostraremos como criar botões de rádio dispostos horizontal e verticalmente em um documento PDF usando Aspose.PDF para .NET. Explicaremos o código-fonte C# passo a passo para guiá-lo por esse processo.
+## Introdução
 
-## Etapa 1: Preparação
+Criar formulários PDF interativos pode melhorar significativamente a experiência do usuário, especialmente quando se trata de coletar informações. Um dos elementos de formulário mais comuns é o botão de opção, que permite que os usuários selecionem uma opção de um conjunto. Neste tutorial, exploraremos como criar botões de opção alinhados horizontal e verticalmente usando o Aspose.PDF para .NET. Seja você um desenvolvedor experiente ou apenas iniciante, este guia o guiará pelo processo passo a passo, garantindo que você tenha uma compreensão clara de cada parte.
 
-Certifique-se de ter importado as bibliotecas necessárias e definido o caminho para o diretório de documentos:
+## Pré-requisitos
+
+Antes de mergulhar no código, há alguns pré-requisitos que você deve ter em mente:
+
+1.  Aspose.PDF para .NET: Certifique-se de ter a biblioteca Aspose.PDF instalada. Você pode baixá-la do[site](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: um ambiente de desenvolvimento onde você pode escrever e testar seu código.
+3. Conhecimento básico de C#: A familiaridade com a programação em C# ajudará você a entender melhor os trechos de código.
+
+## Pacotes de importação
+
+Para começar, você precisa importar os pacotes necessários no seu projeto C#. Veja como você pode fazer isso:
+
+### Criar um novo projeto
+
+Abra o Visual Studio e crie um novo projeto C#. Você pode escolher um Console Application para simplificar.
+
+### Adicionar referência Aspose.PDF
+
+1. Clique com o botão direito do mouse no seu projeto no Solution Explorer.
+2. Selecione "Gerenciar pacotes NuGet".
+3. Procure por "Aspose.PDF" e instale a versão mais recente.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using System.IO;
+using Aspose.Pdf.Facades;
+using Aspose.Pdf;
+using Aspose.Pdf.Forms;
 ```
 
-## Etapa 2: Carregue o documento
+Agora que você configurou tudo, vamos dividir o código para criar botões de opção alinhados horizontal e verticalmente.
 
-Carregue o documento PDF existente:
+## Etapa 1: Configurar o diretório de documentos
+
+Nesta etapa, definiremos o caminho para o diretório onde seus documentos PDF serão armazenados.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Substituir`"YOUR DOCUMENT DIRECTORY"` com o caminho real onde você quer salvar seu arquivo PDF. Isso é crucial, pois diz ao programa onde procurar por arquivos de entrada e onde salvar a saída.
+
+## Etapa 2: Carregue o documento PDF existente
+
+ Em seguida, precisamos carregar o documento PDF com o qual trabalharemos. Isso é feito usando o`FormEditor` aula.
 
 ```csharp
 FormEditor formEditor = new FormEditor();
 formEditor.BindPdf(dataDir + "input.pdf");
 ```
 
-## Etapa 3: personalizar opções de botão de opção
+Aqui, criamos uma instância de`FormEditor` e vinculá-lo a um arquivo PDF existente chamado`input.pdf`. Certifique-se de que este arquivo existe no diretório especificado.
 
-Personalize as opções dos botões de opção definindo as seguintes propriedades:
+## Etapa 3: Configurar propriedades do botão de opção
+
+Agora, vamos definir algumas propriedades para nossos botões de rádio. Isso inclui o espaço entre os botões, sua orientação e seu tamanho.
 
 ```csharp
-formEditor. RadioGap = 4; // Distância entre duas opções de botão de rádio
-formEditor. RadioHoriz = true; //Layout horizontal de botões de opção
-formEditor.RadioButtonItemSize = 20; // Tamanho dos botões de opção
-formEditor.Facade.BorderWidth = 1; // Largura da borda do botão de opção
-formEditor.Facade.BorderColor = System.Drawing.Color.Black; // Cor da borda do botão de opção
+formEditor.RadioGap = 4; // Distância entre as opções do botão de rádio
+formEditor.RadioHoriz = true; // Definir como verdadeiro para alinhamento horizontal
+formEditor.RadioButtonItemSize = 20; // Tamanho do botão de opção
+formEditor.Facade.BorderWidth = 1; // Largura da borda
+formEditor.Facade.BorderColor = System.Drawing.Color.Black; // Cor da borda
 ```
+
+ Essas propriedades ajudarão a definir como os botões de opção aparecerão no PDF.`RadioGap` propriedade controla o espaço entre os botões, enquanto`RadioHoriz` determina seu layout.
 
 ## Etapa 4: Adicionar botões de opção horizontais
 
-Adicione botões de opção organizados horizontalmente especificando as opções e a posição do campo:
+Agora, vamos adicionar os botões de opção horizontais ao PDF.
 
 ```csharp
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
 ```
 
-## Etapa 5: adicione botões de opção verticais
+ Neste código, definimos os itens para os botões de opção e os adicionamos ao PDF. O`AddField` método usa vários parâmetros, incluindo o tipo de campo, o nome do campo e as coordenadas para posicionamento.
 
-Adicione botões de opção organizados verticalmente especificando as opções e a posição do campo:
+## Etapa 5: Adicionar botões de opção verticais
+
+Em seguida, adicionaremos os botões de rádio verticais. Para fazer isso, precisamos mudar a orientação de volta para vertical.
 
 ```csharp
-formEditor. RadioHoriz = false; // Layout vertical dos botões de opção
+formEditor.RadioHoriz = false; // Definir como falso para alinhamento vertical
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
 ```
 
-## Etapa 6: Salve o documento
+Assim como antes, definimos os itens e os adicionamos ao PDF, mas desta vez eles serão alinhados verticalmente.
 
-Salve o documento PDF modificado:
+## Etapa 6: Salve o documento PDF
+
+Por fim, precisamos salvar o documento PDF modificado.
 
 ```csharp
 dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
 formEditor.Save(dataDir);
+Console.WriteLine("\nHorizontally and vertically laid out radio buttons successfully.\nFile saved at " + dataDir);
 ```
 
-### Exemplo de código-fonte para botões de opção horizontais e verticais usando Aspose.PDF para .NET 
-```csharp
-try
-{
-	// O caminho para o diretório de documentos.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Carregue o documento salvo anteriormente
-	FormEditor formEditor = new FormEditor();
-	formEditor.BindPdf(dataDir + "input.pdf");
-	// RadioGap é a distância entre duas opções de botões de rádio.
-	formEditor.RadioGap = 4;
-	// Adicionar botão de opção horizontal
-	formEditor.RadioHoriz = true;
-	// RadioButtonItemSize se o tamanho do item do botão de opção.
-	formEditor.RadioButtonItemSize = 20;
-	formEditor.Facade.BorderWidth = 1;
-	formEditor.Facade.BorderColor = System.Drawing.Color.Black;
-	formEditor.Items = new string[] { "First", "Second", "Third" };
-	formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
-	// Adicionar outro botão de opção situado verticalmente
-	formEditor.RadioHoriz = false;
-	formEditor.Items = new string[] { "First", "Second", "Third" };
-	formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
-	dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
-	// Salvar o documento PDF
-	formEditor.Save(dataDir);
-	Console.WriteLine("\nHorizontally and vertically laid out radio buttons successfully.\nFile saved at " + dataDir);
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+Este código salva o PDF com os novos botões de opção adicionados. Certifique-se de verificar o diretório especificado para o arquivo de saída.
 
 ## Conclusão
 
-Neste tutorial, aprendemos como criar botões de opção dispostos horizontal e verticalmente em um documento PDF usando o Aspose.PDF para .NET. Seguindo essas etapas, você pode personalizar facilmente o layout dos botões de opção e adicioná-los aos seus documentos PDF usando o Aspose.PDF.
+Criar botões de opção em um PDF usando Aspose.PDF para .NET é um processo direto. Seguindo as etapas descritas neste tutorial, você pode facilmente adicionar botões de opção alinhados horizontal e verticalmente aos seus formulários PDF. Isso não apenas melhora a interatividade dos seus documentos, mas também melhora a experiência geral do usuário. Então, vá em frente e experimente!
 
-### Perguntas frequentes
+## Perguntas frequentes
 
-#### P: O que são botões de opção dispostos horizontalmente e verticalmente em um documento PDF?
+### O que é Aspose.PDF para .NET?
+Aspose.PDF para .NET é uma biblioteca poderosa que permite aos desenvolvedores criar, manipular e converter documentos PDF programaticamente.
 
-R: Botões de opção dispostos horizontal e verticalmente em um documento PDF referem-se à orientação do layout das opções de botões de opção. O layout horizontal coloca as opções de botões de opção lado a lado, permitindo que os usuários façam uma seleção da esquerda para a direita. O layout vertical, por outro lado, empilha as opções de botões de opção umas sobre as outras, permitindo que os usuários façam uma seleção de cima para baixo.
+### Posso usar o Aspose.PDF gratuitamente?
+ Sim, o Aspose oferece uma versão de teste gratuita que você pode usar para avaliar a biblioteca. Você pode baixá-la[aqui](https://releases.aspose.com/).
 
-#### P: Como posso personalizar a aparência das opções de botões de opção no Aspose.PDF para .NET?
+### Como obtenho suporte para o Aspose.PDF?
+ Você pode obter suporte visitando o[Fórum Aspose](https://forum.aspose.com/c/pdf/10).
 
-R: Você pode personalizar a aparência das opções de botões de rádio no Aspose.PDF para .NET ajustando várias propriedades. A API fornece opções para definir a distância entre duas opções de botões de rádio (`RadioGap`), a orientação do layout (`RadioHoriz`), o tamanho dos itens do botão de opção (`RadioButtonItemSize`), a largura da borda e a cor dos botões de opção e muito mais.
+### É possível criar outros elementos de formulário com Aspose.PDF?
+Absolutamente! O Aspose.PDF suporta vários elementos de formulário, incluindo campos de texto, caixas de seleção e menus suspensos.
 
-#### P: Posso adicionar botões de opção horizontais e verticais ao mesmo documento PDF?
-
-R: Sim, você pode adicionar botões de opção horizontais e verticais ao mesmo documento PDF usando o Aspose.PDF para .NET. O código-fonte de exemplo fornecido no tutorial demonstra como primeiro adicionar botões de opção dispostos horizontalmente e, em seguida, adicionar outro conjunto de botões de opção dispostos verticalmente ao mesmo documento PDF.
-
-#### P: Posso definir opções diferentes de botões de opção para cada grupo de botões de opção?
-
- R: Sim, você pode definir diferentes opções de botões de rádio para cada grupo de botões de rádio. Cada grupo deve ter um único`RadioButtonField` objeto, e o`RadioButtonOptionField` objetos dentro de cada grupo devem compartilhar a mesma página e nomes exclusivos para suas opções. Isso garante que os botões de opção dentro de cada grupo funcionem corretamente, e as seleções sejam mutuamente exclusivas.
-
-#### P: As configurações de layout e aparência dos botões de opção são suportadas em todos os aplicativos e visualizadores de PDF?
-
-R: Sim, as configurações de layout e aparência dos botões de opção são suportadas em todos os visualizadores e aplicativos de PDF compatíveis com o padrão. A especificação PDF define botões de opção e seus vários atributos, tornando-os universalmente reconhecidos no formato PDF. No entanto, é essencial testar a aparência e o comportamento dos botões de opção em diferentes visualizadores de PDF para garantir uma renderização consistente em várias plataformas.
+### Onde posso comprar o Aspose.PDF para .NET?
+ Você pode comprar Aspose.PDF para .NET no[página de compra](https://purchase.aspose.com/buy).

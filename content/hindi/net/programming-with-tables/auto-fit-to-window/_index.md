@@ -126,7 +126,7 @@ margin.Bottom = 5f;
 // डिफ़ॉल्ट सेल पैडिंग को MarginInfo ऑब्जेक्ट पर सेट करें
 tab1.DefaultCellPadding = margin;
 
-// तालिका में पंक्तियाँ बनाएँ और फिर पंक्तियों में कक्ष बनाएँ
+//तालिका में पंक्तियाँ बनाएँ और फिर पंक्तियों में कक्ष बनाएँ
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

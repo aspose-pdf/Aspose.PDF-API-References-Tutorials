@@ -31,4 +31,4 @@ Naučte se, jak zobrazit rozšířené záložky v PDF pomocí Aspose.PDF for Ja
 ### [Načtení záložek z dokumentů PDF](./retrieve-bookmarks-pdf-documents/)
 V této komplexní příručce se dozvíte, jak efektivně načítat záložky PDF pomocí Aspose.PDF for Java.
 ### [Aktualizujte záložky v PDF](./update-bookmarks-pdfs/)
-Naučte se, jak efektivně aktualizovat záložky PDF pomocí Aspose.PDF for Java. Náš průvodce krok za krokem celý proces zjednodušuje.
+Naučte se, jak efektivně aktualizovat záložky PDF pomocí Aspose.PDF for Java. Náš průvodce krok za krokem tento proces zjednodušuje.

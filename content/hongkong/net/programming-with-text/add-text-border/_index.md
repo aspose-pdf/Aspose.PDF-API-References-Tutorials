@@ -182,7 +182,7 @@ tb.AppendText(textFragment);
 
 #### Q：如何保存產生的 PDF 文件？
 
- A：新增有邊框的文字後，使用`Save`的方法`Document`儲存 PDF 文件的物件：
+A：新增有邊框的文字後，使用`Save`的方法`Document`儲存 PDF 文件的物件：
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");

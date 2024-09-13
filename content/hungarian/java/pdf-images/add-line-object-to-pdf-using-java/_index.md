@@ -10,7 +10,7 @@ url: /hu/java/pdf-images/add-line-object-to-pdf-using-java/
 
 ## Bevezetés: Sorobjektum hozzáadása PDF-hez Java használatával
 
-Ebben az oktatóanyagban megvizsgáljuk, hogyan adhatunk vonalobjektumokat PDF-fájlokhoz Java használatával az Aspose.PDF for Java segítségével. A vonalakat gyakran használják szöveg aláhúzására, alakzatok létrehozására vagy meghatározott területek kiemelésére a PDF-dokumentumban. Lépésről lépésre végigvesszük a teljes folyamatot, a fejlesztői környezet beállításától a sor tulajdonságainak testreszabásáig és a PDF mentéséig. Kezdjük is!
+Ebben az oktatóanyagban megvizsgáljuk, hogyan adhatunk vonalobjektumokat PDF-fájlokhoz Java használatával az Aspose.PDF for Java segítségével. A vonalakat gyakran használják szöveg aláhúzására, alakzatok létrehozására vagy meghatározott területek kiemelésére a PDF-dokumentumban. Lépésről lépésre végig fogjuk vinni a teljes folyamatot, a fejlesztői környezet beállításától a sortulajdonságok testreszabásáig és a PDF mentéséig. Kezdjük is!
 
 ## A környezet beállítása
 
@@ -115,7 +115,7 @@ Ha több sort szeretne hozzáadni egyetlen oldalhoz, hozzon létre több sorobje
 
 ### Hozzáadhatok ívelt vonalakat egy PDF dokumentumhoz?
 
-Igen, ívelt vonalakat is hozzáadhat egy PDF-dokumentumhoz. Az Aspose.PDF for Java biztosítja a szükséges eszközöket különféle formák, köztük ívelt vonalak létrehozásához. Ezt úgy érheti el, hogy ennek megfelelően módosítja a vonal kezdő- és véghelyzetét.
+Igen, ívelt vonalakat is hozzáadhat a PDF-dokumentumokhoz. Az Aspose.PDF for Java biztosítja a szükséges eszközöket különféle formák, köztük ívelt vonalak létrehozásához. Ezt úgy érheti el, hogy ennek megfelelően módosítja a vonal kezdő- és véghelyzetét.
 
 ### Hol találhatok további információt az Aspose.PDF for Java fájlról?
 

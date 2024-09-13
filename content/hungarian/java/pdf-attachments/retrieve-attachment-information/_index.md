@@ -32,7 +32,7 @@ Először is be kell töltenie a mellékleteket tartalmazó PDF dokumentumot. PD
 Document pdfDocument = new Document("path/to/your/pdf/document.pdf");
 ```
 
-## 3. lépés: A melléklet információinak lekérése
+## 3. lépés: A melléklet adatainak lekérése
 
 Mostantól lekérheti a mellékletadatokat a betöltött PDF-dokumentumból. Így kaphat listát a mellékletekről, és jelenítheti meg azok részleteit:
 

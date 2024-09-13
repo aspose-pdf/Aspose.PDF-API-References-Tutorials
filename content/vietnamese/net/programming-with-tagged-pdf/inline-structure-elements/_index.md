@@ -307,7 +307,7 @@ A: Có, bạn có thể tùy chỉnh giao diện và định dạng của các t
 
 #### H: Làm thế nào để tạo và thêm tiêu đề ở nhiều cấp độ khác nhau vào tài liệu PDF bằng các thành phần cấu trúc nội tuyến trong Aspose.PDF cho .NET?
 
- A: Bạn có thể tạo các tiêu đề ở nhiều cấp độ khác nhau bằng cách sử dụng`CreateHeaderElement` phương pháp và sau đó thêm chúng vào phần tử cấu trúc gốc. Sau đó, bạn có thể thêm nội dung vào từng phần tử tiêu đề bằng cách sử dụng`CreateSpanElement` phương pháp tạo khoảng văn bản.
+ A: Bạn có thể tạo các tiêu đề ở nhiều cấp độ khác nhau bằng cách sử dụng`CreateHeaderElement`phương pháp và sau đó thêm chúng vào phần tử cấu trúc gốc. Sau đó, bạn có thể thêm nội dung vào từng phần tử tiêu đề bằng cách sử dụng`CreateSpanElement` phương pháp tạo khoảng văn bản.
 
 #### H: Tôi có thể sử dụng các thành phần cấu trúc nội tuyến để tạo danh sách, dấu đầu dòng hoặc các loại tổ chức nội dung khác trong tài liệu PDF không?
 

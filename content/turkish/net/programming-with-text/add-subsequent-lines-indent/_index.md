@@ -38,14 +38,14 @@ Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
 ## Adım 5: Belgeye bir sayfa ekleyin
- Belgeye yeni bir sayfa eklemek için şunu kullanın:`Add` yöntemi`Pages`koleksiyon. Sağlanan kodda, yeni sayfa değişkene atanır`page`.
+ Belgeye yeni bir sayfa eklemek için şunu kullanın:`Add` yöntemi`Pages` koleksiyon. Sağlanan kodda, yeni sayfa değişkene atanır`page`.
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
 ## Adım 6: Sonraki satırların girintisiyle bir TextFragment oluşturun
- Bir örnek oluştur`TextFragment` nesne ve istenen metni sağlayın. Sağlanan kodda, metin değişkene atanır`text` . Ardından, başlatın`TextFormattingOptions` için`TextFragment`ve belirtin`SubsequentLinesIndent` değer.
+ Bir örnek oluştur`TextFragment` nesne ve istenen metni sağlayın. Sağlanan kodda, metin değişkene atanır`text` . Ardından, başlatın`TextFormattingOptions` için`TextFragment` ve belirtin`SubsequentLinesIndent` değer.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
@@ -91,7 +91,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = document.Pages.Add();
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-// Metin parçası için TextFormattingOptions'ı başlatın ve SubsequentLinesIndent değerini belirtin
+//Metin parçası için TextFormattingOptions'ı başlatın ve SubsequentLinesIndent değerini belirtin
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
 	SubsequentLinesIndent = 20
@@ -148,7 +148,7 @@ Aspose.Pdf.Page page = document.Pages.Add();
 
 #### S: Metne sonraki satır girintisini nasıl ekleyebilirim?
 
- A: 6. Adımda bir tane oluşturacaksınız`TextFragment` nesneyi seçin ve ona istediğiniz metni atayın. Ardından, başlatacaksınız`TextFormattingOptions` için`TextFragment`ve belirtin`SubsequentLinesIndent` değer:
+ A: 6. Adımda bir tane oluşturacaksınız`TextFragment` nesneyi seçin ve ona istediğiniz metni atayın. Ardından, başlatacaksınız`TextFormattingOptions` için`TextFragment` ve belirtin`SubsequentLinesIndent` değer:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
@@ -168,7 +168,7 @@ page.Paragraphs.Add(text);
 
 #### S: Ek satırlar için işlemi tekrarlayabilir miyim?
 
- A: Evet, 8. Adımda, yeni bir girinti oluşturarak aynı girintiye sahip ek satırlar için işlemi tekrarlayabilirsiniz.`TextFragment` nesneleri seçip sayfanın paragraf koleksiyonuna ekleyin.
+A: Evet, 8. Adımda, yeni bir girinti oluşturarak aynı girintiye sahip ek satırlar için işlemi tekrarlayabilirsiniz.`TextFragment` nesneleri seçip sayfanın paragraf koleksiyonuna ekleyin.
 
 #### S: Ortaya çıkan PDF belgesini nasıl kaydedebilirim?
 

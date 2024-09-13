@@ -2,7 +2,7 @@
 title: TeX PDF-be
 linktitle: TeX PDF-be
 second_title: Aspose.PDF for .NET API Reference
-description: Ebből a részletes, lépésenkénti útmutatóból megtudhatja, hogyan konvertálhat TeX-et PDF-be az Aspose.PDF for .NET használatával. Tökéletes fejlesztők és dokumentumokkal foglalkozó szakemberek számára.
+description: Ebből a részletes, lépésenkénti útmutatóból megtudhatja, hogyan konvertálhat TeX-et PDF-be az Aspose.PDF for .NET használatával. Tökéletes fejlesztők és dokumentum-szakemberek számára.
 type: docs
 weight: 290
 url: /hu/net/document-conversion/tex-to-pdf/

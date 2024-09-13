@@ -38,7 +38,7 @@ Jakmile budete mít tyto nástroje na místě, jste připraveni pokračovat.
 
 ## Načítání dokumentu PDF
 
-Prvním krokem je načtení dokumentu PDF, který chcete převést. Zde je jednoduchý fragment kódu, jak to provést:
+Prvním krokem je načtení dokumentu PDF, který chcete převést. Zde je jednoduchý fragment kódu, jak to udělat:
 
 ```java
 // Načtěte dokument PDF

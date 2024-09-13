@@ -110,7 +110,7 @@ doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to d
 doc.Save(outputFile);
 // Открыть документ с текстом
 Document document = new Document(outputFile);
-// Создайте объект TextAbsorber для поиска всех фраз, соответствующих регулярному выражению.
+//Создайте объект TextAbsorber для поиска всех фраз, соответствующих регулярному выражению.
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
 // Принять поглотитель для страниц документа
 document.Pages.Accept(absorber);

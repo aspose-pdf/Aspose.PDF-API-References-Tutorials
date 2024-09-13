@@ -2,97 +2,83 @@
 title: Tekststempel toevoegen in PDF-bestand
 linktitle: Tekststempel toevoegen in PDF-bestand
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u eenvoudig een tekststempel aan een PDF-bestand kunt toevoegen met Aspose.PDF voor .NET.
+description: Leer hoe u met Aspose.PDF voor .NET een tekststempel toevoegt aan een PDF-bestand met behulp van onze stapsgewijze handleiding en verbeter de presentatie van uw documenten.
 type: docs
 weight: 50
 url: /nl/net/programming-with-stamps-and-watermarks/add-text-stamp/
 ---
-In deze tutorial laten we u stap voor stap zien hoe u een tekststempel toevoegt aan een PDF-bestand met Aspose.PDF voor .NET. We laten u zien hoe u de meegeleverde C#-broncode gebruikt om een aangepaste tekststempel toe te voegen aan een specifieke pagina van het PDF-bestand.
+## Invoering
 
-## Stap 1: De omgeving instellen
+In het digitale tijdperk van vandaag zijn PDF's een veelgebruikt formaat voor het delen en leveren van documenten. Of u nu een ontwikkelaar, een content creator of gewoon iemand bent die zijn PDF-bestanden wil verbeteren, weten hoe u PDF's programmatisch kunt bewerken, kan een game-changer zijn. Een handige functie die u wellicht wilt gebruiken, is de mogelijkheid om tekststempels toe te voegen aan uw PDF-bestanden. Het toevoegen van een tekststempel kan uw documenten een professionele uitstraling geven of belangrijke informatie overbrengen, zoals 'Voorbeeld', 'Vertrouwelijk' of zelfs een watermerk.
 
-Voordat u begint, moet u ervoor zorgen dat u het volgende bij de hand hebt:
+## Vereisten
 
-- Een geïnstalleerde .NET-ontwikkelomgeving.
-- De Aspose.PDF-bibliotheek voor .NET is gedownload en wordt in uw project gebruikt.
+Voordat we in de code duiken, zijn er een paar vereisten om ervoor te zorgen dat alles correct is ingesteld. Dit is wat je nodig hebt:
 
-## Stap 2: Het PDF-document laden
+1.  Aspose.PDF voor .NET: Zorg ervoor dat u de Aspose.PDF-bibliotheek in uw project hebt geïnstalleerd. Als u dit nog niet hebt gedaan, kunt u deze downloaden van de[Aspose-website](https://releases.aspose.com/pdf/net/).
+2. Visual Studio of Compatible IDE: U hebt een ontwikkelomgeving nodig om uw .NET-code te schrijven en uit te voeren. Visual Studio is de meest voorkomende keuze onder ontwikkelaars.
+3. Basiskennis van C#: Kennis van C# en de principes van objectgeoriënteerd programmeren helpt u de voorbeelden beter te begrijpen.
+4. Voorbeeld PDF-bestand: U zou een PDF-bestand gereed moeten hebben om mee te werken. U kunt een basis-PDF maken of een bestaande PDF gebruiken om de functionaliteit te testen.
 
-De eerste stap is om het bestaande PDF-document in uw project te laden. Dit doet u als volgt:
+Zodra je aan deze voorwaarden hebt voldaan, kunnen we verder met coderen!
+
+## Pakketten importeren
+
+Laten we nu de benodigde pakketten importeren. Deze stap is cruciaal omdat het de klassen en methoden uit de Aspose-bibliotheek beschikbaar maakt in uw project.
+
+### Importeer Aspose.PDF-assemblage
+
+Om te beginnen moet u de Aspose.PDF-naamruimte importeren. Voeg bovenaan uw C#-bestand de volgende using-richtlijn toe:
+
+```csharp
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System;
+```
+
+Hiermee krijgt u toegang tot klassen die essentieel zijn voor het maken en bewerken van PDF-documenten.
+
+Laten we nu naar de kern van de tutorial gaan. We zullen het proces opsplitsen in duidelijke en beknopte stappen. Elke stap zal u door de code leiden om een tekststempel toe te voegen aan een PDF-bestand.
+
+## Stap 1: De documentenmap instellen
+
+Eerst moet u de directory bepalen waar uw PDF-document is opgeslagen. Dit betekent dat uw code moet weten waar het PDF-bestand dat u wilt bewerken, te vinden is.
 
 ```csharp
 // Het pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
-// Open het document
+ Uitleg: Vervangen`"YOUR DOCUMENT DIRECTORY"` met het werkelijke pad waar uw PDF-bestand (`AddTextStamp.pdf`) wordt opgeslagen. Dit pad wordt later gebruikt om de gewijzigde PDF te openen en op te slaan.
+
+## Stap 2: Open het PDF-document
+
+ Vervolgens openen we het PDF-document met behulp van de`Document` klasse uit de Aspose.PDF-naamruimte.
+
+```csharp
+// Document openen
 Document pdfDocument = new Document(dataDir + "AddTextStamp.pdf");
 ```
 
-Zorg ervoor dat u "UW DOCUMENTENMAP" vervangt door het daadwerkelijke pad naar de map waarin uw PDF-document zich bevindt.
+ Uitleg: Hier maken we een instantie van de`Document` class en het pad naar ons PDF-bestand doorgeven. Dit laadt de PDF zodat we deze kunnen bewerken.
 
-## Stap 3: De tekstbuffer maken
+## Stap 3: Maak een tekststempel
 
-Nu u het PDF-document hebt geüpload, kunt u de tekststempel maken die u wilt toevoegen. Dit is hoe u dat doet:
-
-```csharp
-// Maak de tekstbuffer
-TextStamp textStamp = new TextStamp("Example Stamp");
-```
-
-De bovenstaande code maakt een nieuwe tekstbuffer aan die de opgegeven tekst bevat.
-
-## Stap 4: Tekststempeleigenschappen configureren
-
-Voordat u de tekststempel aan het PDF-document toevoegt, kunt u verschillende eigenschappen van de stempel configureren, zoals achtergrond, positie, rotatie, lettertype, grootte, enz. Dit doet u als volgt:
+Nu gaan we een tekststempel maken die we later op ons PDF-document toepassen.
 
 ```csharp
-// Eigenschappen van tekstbuffer configureren
-textStamp. Background = true;
-textStamp. XIndent = 100;
-textStamp. YIndent = 100;
-textStamp.Rotate = Rotate.on90;
-textStamp.TextState.Font = FontRepository.FindFont("Arial");
-textStamp.TextState.FontSize = 14.0F;
-textStamp.TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
-textStamp.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Aqua);
-```
-
-U kunt deze eigenschappen naar wens aanpassen.
-
-## Stap 5: Tekststempel toevoegen aan PDF
-
-Nu de tekststempel klaar is, kunt u deze toevoegen aan een specifieke pagina van het PDF-document. Dit doet u als volgt:
-
-```csharp
-//Voeg tekstbuffer toe aan specifieke pagina
-pdfDocument.Pages[1].AddStamp(textStamp);
-```
-
-De bovenstaande code voegt de tekststempel toe aan de eerste pagina van het PDF-document. U kunt indien nodig een andere pagina opgeven.
-
-## Stap 6: Sla het uitvoerdocument op
-
-Zodra u de tekststempel hebt toegevoegd, kunt u het bewerkte PDF-document opslaan. Dit doet u als volgt:
-
-```csharp
-// Sla het uitvoerdocument op
-pdfDocument.Save(dataDir);
-```
-
-De bovenstaande code slaat het gewijzigde PDF-document op in de opgegeven map.
-
-### Voorbeeldbroncode voor Add Text Stamp met behulp van Aspose.PDF voor .NET 
-```csharp
-
-// Het pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Document openen
-Document pdfDocument = new Document(dataDir+ "AddTextStamp.pdf");
-
 // Tekststempel maken
 TextStamp textStamp = new TextStamp("Sample Stamp");
+```
 
+ Uitleg: De`TextStamp` object wordt gemaakt met de tekst die u wilt weergeven. In dit geval gebruiken we "Sample Stamp" als tekst voor onze stempel.
+
+## Stap 4: Stempeleigenschappen instellen
+
+Om uw stempel te personaliseren, kunnen we verschillende eigenschappen instellen, zoals achtergrondkleur, positie en rotatie. Laten we dat nu doen:
+
+```csharp
 // Instellen of stempel achtergrond is
 textStamp.Background = true;
 
@@ -102,62 +88,72 @@ textStamp.YIndent = 100;
 
 // Draai stempel
 textStamp.Rotate = Rotation.on90;
+```
 
+Uitleg:
+- Achtergrond: Als u dit instelt op`true` betekent dat de stempel achter de inhoud van de PDF wordt weergegeven.
+- XIndent & YIndent: Deze eigenschappen bepalen de positie van de stempel op de pagina. In dit voorbeeld wordt de stempel 100 eenheden vanaf de linker- en bovenrand van de pagina geplaatst.
+- Roteren: Hiermee wordt de stempel 90 graden gedraaid. U kunt verschillende rotatieopties kiezen op basis van uw ontwerpvereisten.
+
+## Stap 5: Teksteigenschappen aanpassen
+
+Laten we nu creatief aan de slag gaan en het uiterlijk van de tekst op onze stempel aanpassen:
+
+```csharp
 // Teksteigenschappen instellen
 textStamp.TextState.Font = FontRepository.FindFont("Arial");
 textStamp.TextState.FontSize = 14.0F;
-textStamp.TextState.FontStyle = FontStyles.Bold;
-textStamp.TextState.FontStyle = FontStyles.Italic;
-textStamp.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Aqua);
+textStamp.TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
+textStamp.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(Color.Aqua);
+```
 
+Uitleg:
+- Lettertype: We gebruiken het lettertype Arial en maken het vet en cursief.
+- Lettergrootte: Deze is ingesteld op 14 punten.
+- ForegroundColor: RGB gebruiken om de tekstkleur in te stellen op Aqua. Voel je vrij om de kleur te veranderen om aan je branding of designbehoeften te voldoen!
+
+## Stap 6: Voeg een stempel toe aan de PDF-pagina
+
+Nu is het tijd om de stempel aan een specifieke pagina van het PDF-document toe te voegen.
+
+```csharp
 // Voeg stempel toe aan specifieke pagina
 pdfDocument.Pages[1].AddStamp(textStamp);
+```
+
+Uitleg: In dit voorbeeld wordt de stempel toegevoegd aan de eerste pagina van de PDF (pagina's zijn 1-geïndexeerd). Pas het paginanummer indien nodig aan voor uw document.
+
+## Stap 7: Sla de gewijzigde PDF op
+
+Tot slot slaan we het document op met de nieuw toegevoegde tekststempel.
+
+```csharp
 dataDir = dataDir + "AddTextStamp_out.pdf";
 
 // Uitvoerdocument opslaan
 pdfDocument.Save(dataDir);
-Console.WriteLine("\nText stamp added successfully.\nFile saved at " + dataDir);            
-
+Console.WriteLine("\nText stamp added successfully.\nFile saved at " + dataDir);
 ```
+
+Uitleg: We definiëren een nieuw pad voor het uitvoerbestand en slaan vervolgens het gewijzigde document op. Na het opslaan wordt het pad afgedrukt op de console, waarmee de succesvolle bewerking wordt bevestigd.
 
 ## Conclusie
 
-Gefeliciteerd! U hebt geleerd hoe u een tekststempel kunt toevoegen met Aspose.PDF voor .NET. Nu kunt u deze kennis toepassen op uw eigen projecten om aangepaste tekststempels toe te voegen aan PDF-documenten.
+Gefeliciteerd! U hebt met succes een tekststempel toegevoegd aan een PDF-bestand met Aspose.PDF voor .NET. Met deze methode kunt u uw documenten efficiënt annoteren, wat zowel hun professionaliteit als bruikbaarheid verbetert. Of u nu watermerken, handtekeningen of eenvoudige notities toevoegt, de Aspose-bibliotheek biedt krachtige tools om uw PDF's eenvoudig te bewerken.
 
-### FAQ's voor het toevoegen van een tekststempel in een PDF-bestand
+## Veelgestelde vragen
 
-#### V: Wat is het doel van het toevoegen van een tekststempel aan een PDF-bestand met Aspose.PDF voor .NET?
+### Wat is een tekststempel in een PDF?
+Een tekststempel is een grafische overlay met tekst die op een PDF-document kan worden geplaatst. Deze overlay wordt vaak gebruikt voor aantekeningen of watermerken.
 
-A: Door een tekststempel toe te voegen, kunt u aangepaste tekst op een specifieke pagina van een PDF-document plaatsen. Deze functie is handig voor het toevoegen van labels, opmerkingen, watermerken of andere tekstuele informatie om de inhoud van het document te verbeteren en extra context te bieden.
+### Kan ik de postzegel personaliseren met afbeeldingen?
+Ja, Aspose.PDF ondersteunt ook het toevoegen van afbeeldingsstempels, wat zorgt voor meer ontwerpflexibiliteit.
 
-#### V: Kan ik het uiterlijk van de tekststempel aanpassen, zoals lettertype, grootte, kleur en rotatie?
+### Welke programmeertalen kan ik gebruiken met Aspose.PDF?
+Aspose.PDF is primair gericht op .NET, maar er zijn versies beschikbaar voor andere talen, zoals Java en Python.
 
- A: Ja, u kunt het uiterlijk van de tekststempel volledig aanpassen. De meegeleverde C#-broncode laat zien hoe u verschillende eigenschappen van de`TextStamp` object, inclusief lettertype, lettergrootte, letterstijl, tekstkleur, achtergrondkleur en rotatie.
+### Hoe krijg ik een tijdelijke licentie voor Aspose.PDF?
+ U kunt een tijdelijke vergunning aanvragen door naar de website te gaan[aankooplink](https://purchase.aspose.com/temporary-license/) op hun website.
 
-#### V: Is het mogelijk om meerdere tekststempels aan verschillende pagina's van hetzelfde PDF-document toe te voegen?
-
-A: Absoluut, u kunt meerdere tekststempels toevoegen aan verschillende pagina's van hetzelfde PDF-document. De code van de tutorial stelt u in staat om de doelpagina te specificeren voor het toevoegen van de tekststempel, waardoor het veelzijdig is voor verschillende pagina's in het document.
-
-#### V: Hoe geef ik de positie van de tekststempel in het PDF-document op?
-
- A: U kunt de positie van de tekststempel aanpassen door de`XIndent` En`YIndent` eigenschappen van de`TextStamp` object. Deze eigenschappen definiëren de coördinaten van de linkerbovenhoek van de postzegel ten opzichte van de oorsprong van de pagina.
-
-#### V: Kan ik deze methode toepassen op bestaande PDF-documenten om tekststempels toe te voegen?
-
-A: Ja, u kunt deze methode toepassen op bestaande PDF-documenten om tekststempels toe te voegen. De code in de tutorial laat zien hoe u een bestaand PDF-document laadt en een tekststempel toevoegt aan een specifieke pagina.
-
-#### V: Kan ik zowel een achtergrond- als voorgrondkleur aan de tekststempel toevoegen?
-
- A: Ja, u kunt zowel achtergrond- als voorgrondkleuren toevoegen aan de tekststempel. Door de`Background` eigendom van`true` , kunt u een gekleurde achtergrond voor de tekststempel opgeven. Daarnaast kunt u de`TextState.ForegroundColor` Eigenschap om de kleur van de tekst zelf te specificeren.
-
-#### V: Hoe kan ik ervoor zorgen dat de tekststempel de onderliggende inhoud van het PDF-document niet bedekt?
-
-A: Wanneer u een tekststempel toevoegt, moet u op de plaatsing letten om ervoor te zorgen dat deze geen belangrijke informatie blokkeert of de leesbaarheid van het document negatief beïnvloedt. U kunt de`XIndent` En`YIndent` eigenschappen om de tekststempel op de juiste plaats te zetten.
-
-#### V: Kan ik deze methode gebruiken om andere stempels dan tekst toe te voegen, bijvoorbeeld afbeeldingen of logo's?
-
-A: Deze specifieke tutorial richt zich op het toevoegen van tekststempels, maar u kunt op dezelfde manier andere typen stempels toevoegen, zoals afbeeldingen of logo's, met behulp van Aspose.PDF voor .NET. Het proces omvat het maken van het juiste stempelobject en het configureren van de eigenschappen ervan.
-
-#### V: Hoe kan ik het proces van het toevoegen van tekststempels aan meerdere PDF-documenten automatiseren?
-
-A: U kunt het proces voor het toevoegen van tekststempels aan meerdere PDF-documenten automatiseren door een script of programma te maken dat door een lijst met documenten itereert en hetzelfde tekststempelproces op elk document toepast.
+### Waar kan ik ondersteuning vinden voor Aspose.PDF?
+ Ondersteuning voor Aspose.PDF is beschikbaar op hun[ondersteuningsforum](https://forum.aspose.com/c/pdf/10).

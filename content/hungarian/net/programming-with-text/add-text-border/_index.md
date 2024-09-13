@@ -38,14 +38,14 @@ Document pdfDocument = new Document();
 ```
 
 ## 5. lépés: Adjon hozzá egy oldalt a dokumentumhoz
- Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`pdfPage`.
+ Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages` gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`pdfPage`.
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
 ## 6. lépés: Hozzon létre egy szövegrészletet
- Hozzon létre a`TextFragment` objektumot, és adja meg a kívánt szöveget. Állítsa be a szövegrészlet pozícióját a gombbal`Position` ingatlan. A megadott kódban a szöveg „főszöveg”-re van állítva, és az oldalon (100, 600) található.
+ Hozzon létre a`TextFragment`objektumot, és adja meg a kívánt szöveget. Állítsa be a szövegrészlet pozícióját a gombbal`Position` ingatlan. A megadott kódban a szöveg „főszöveg”-re van állítva, és az oldalon (100, 600) található.
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -64,7 +64,7 @@ textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 ```
 
 ## 8. lépés: Engedélyezze a szövegszegélyt
- A szövegszegély engedélyezéséhez állítsa be a`DrawTextRectangleBorder` szövegrészlet tulajdonsága`TextState` hogy`true`.
+ A szövegszegély engedélyezéséhez állítsa be a`DrawTextRectangleBorder` a szövegrészlet tulajdonsága`TextState` hogy`true`.
 
 ```csharp
 textFragment.TextState.DrawTextRectangleBorder = true;
@@ -151,7 +151,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 
 #### K: Hogyan hozhatok létre szövegtöredéket és állíthatom be a pozícióját?
 
- V: A 6. lépésben létrehoz egy`TextFragment`objektumot, és állítsa be a pozícióját az oldalon a gombbal`Position` ingatlan:
+ V: A 6. lépésben létrehoz egy`TextFragment` objektumot, és állítsa be a pozícióját az oldalon a gombbal`Position` ingatlan:
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -182,7 +182,7 @@ tb.AppendText(textFragment);
 
 #### K: Hogyan menthetem el az eredményül kapott PDF-dokumentumot?
 
- V: Miután hozzáadta a szöveget szegéllyel, használja a`Save` módszere a`Document` objektum a PDF dokumentum mentéséhez:
+V: Miután hozzáadta a szöveget szegéllyel, használja a`Save` módszere a`Document` objektum a PDF dokumentum mentéséhez:
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");

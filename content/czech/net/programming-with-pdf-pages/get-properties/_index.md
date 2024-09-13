@@ -2,125 +2,142 @@
 title: Získejte vlastnosti PDF
 linktitle: Získejte vlastnosti PDF
 second_title: Aspose.PDF pro .NET API Reference
-description: Podrobný průvodce pro získání vlastností PDF, jako jsou rozměry a rotace krabice pomocí Aspose.PDF pro .NET.
+description: Naučte se, jak efektivně extrahovat vlastnosti PDF pomocí Aspose.PDF pro .NET. Podrobný průvodce s příklady kódu a osvědčenými postupy.
 type: docs
 weight: 100
 url: /cs/net/programming-with-pdf-pages/get-properties/
 ---
-tomto tutoriálu vás provedeme krok za krokem procesem získání vlastností PDF pomocí Aspose.PDF for .NET. Vysvětlíme vám přibalený zdrojový kód C# a poskytneme vám komplexního průvodce, který vám pomůže pochopit a implementovat tuto funkci ve vašich vlastních projektech. Na konci tohoto tutoriálu budete vědět, jak přistupovat k různým vlastnostem stránky PDF, jako je rámeček umění, rámeček oříznutí, rámeček oříznutí atd., pomocí Aspose.PDF pro .NET.
+## Zavedení
+
+Pokud jde o programovou manipulaci s PDF, Aspose.PDF for .NET je jedním z těch spolehlivých nástrojů, které vynikají. Ať už chcete extrahovat informace, upravovat dokumenty nebo jednoduše číst vlastnosti PDF, tato knihovna poskytuje sadu funkcí, které vám usnadní práci. V této příručce se ponoříme hluboko do toho, jak získat vlastnosti PDF, což je úkol, který se na první pohled může zdát skličující, ale se správnými nástroji se stane hračkou. Tak se připoutejte! Prozkoumáme buď technické detaily, nebo možnosti, které přináší práce se soubory PDF.
 
 ## Předpoklady
-Než začnete, ujistěte se, že máte následující:
 
-- Základní znalost programovacího jazyka C#
-- Aspose.PDF for .NET nainstalovaný ve vašem vývojovém prostředí
+Než se pustíte do kódu, je nezbytné se ujistit, že máte na svém místě všechny potřebné komponenty. Tato část vám pomůže nastavit, abyste mohli začít pracovat s knihovnou Aspose.PDF.
 
-## Krok 1: Nastavte adresář dokumentů
-Nejprve musíte nastavit cestu k adresáři dokumentů. Toto je umístění souboru PDF, jehož vlastnosti chcete získat. Nahraďte "VAŠE ADRESÁŘ DOKUMENTŮ" příslušnou cestou.
+1. Prostředí .NET: Ujistěte se, že máte funkční prostředí .NET. Můžete použít Visual Studio nebo jakékoli jiné vhodné IDE.
+   
+2.  Aspose.PDF pro .NET: Musíte mít nainstalovaný Aspose.PDF. Knihovnu si můžete stáhnout z[Aspose PDF Releases](https://releases.aspose.com/pdf/net/) strana.
+
+3. Základní porozumění C#: Znalost programování v C# bude užitečná, protože kód budeme psát v C#.
+
+4. Soubor PDF: K práci potřebujete vzorový soubor PDF. Pro tento příklad budeme odkazovat na "GetProperties.pdf".
+
+### Nastavení vašeho projektu
+
+Jakmile budete mít připravené nástroje a soubor PDF, můžete svůj projekt nastavit takto:
+
+1. Vytvoření nového projektu: Otevřete své IDE a vytvořte nový projekt C#.
+
+2. Přidat odkazy: Zahrňte sestavu Aspose.PDF. Můžete to udělat pomocí NuGet Package Manager nebo přidáním odkazu na DLL přímo.
+
+3.  Připravte svůj soubor PDF: Umístěte svůj ukázkový soubor „GetProperties.pdf“ do adresáře, ke kterému má váš kód snadný přístup, řekněme`"YOUR DOCUMENT DIRECTORY"`.
+
+## Importujte balíčky
+
+Jakmile je nastavení projektu dokončeno, první věc, kterou musíte udělat, je importovat potřebné jmenné prostory. Knihovna Aspose.PDF poskytuje různé třídy, které vám umožňují pracovat s dokumenty PDF.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-## Krok 2: Otevřete dokument PDF
- Dále musíte otevřít dokument PDF pomocí`Document` třída Aspose.PDF. Ujistěte se, že jste zadali správnou cestu k souboru PDF.
+Tento jednoduchý krok zajistí, že budete mít přístup ke třídám potřebným pro efektivní manipulaci a extrahování informací ze souboru PDF.
+
+Nyní si rozdělme úlohu načítání vlastností PDF na proveditelné kroky. Tato část vás provede každým krokem, abyste jej mohli snadno sledovat a porozumět tomu, jak proces funguje.
+
+## Krok 1: Definujte adresář dokumentů
+
+Prvním krokem na naší cestě je definovat, kde se náš dokument PDF nachází. Chceme ukázat na umístění "GetProperties.pdf".
 
 ```csharp
-Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
-```
-
-## Krok 3: Přístup ke kolekci stránek
- Nyní můžete přistupovat ke kolekci stránek dokumentu pomocí`Pages` majetek z`pdfDocument` objekt.
-
-```csharp
-PageCollection pageCollection = pdfDocument.Pages;
-```
-
-## Krok 4: Přejděte na konkrétní stránku
-Poté můžete přejít na konkrétní stránku pomocí indexu stránky v kolekci. V níže uvedeném příkladu přistupujeme na druhou stránku (index 1).
-
-```csharp
-Page pdfPage = pageCollection[1];
-```
-
-## Krok 5: Získejte vlastnosti stránky
- Nyní můžete získat různé vlastnosti stránky PDF, jako je umělecký rámeček, rámeček oříznutí, rámeček oříznutí atd., pomocí odpovídajících vlastností`pdfPage` objekt.
-
-```csharp
-Console.WriteLine("ArtBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
-Console.WriteLine("BleedBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.BleedBox.Height, pdf
-
-Page.BleedBox.Width, pdfPage.BleedBox.LLX, pdfPage.BleedBox.LLY, pdfPage.BleedBox.URX, pdfPage.BleedBox.URY);
-Console.WriteLine("CropBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.CropBox.Height, pdfPage.CropBox.Width, pdfPage.CropBox.LLX, pdfPage.CropBox.LLY, pdfPage.CropBox.URX, pdfPage.CropBox.URY);
-Console.WriteLine("MediaBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.MediaBox.Height, pdfPage.MediaBox.Width, pdfPage.MediaBox.LLX, pdfPage.MediaBox.LLY, pdfPage.MediaBox.URX, pdfPage.MediaBox.URY);
-Console.WriteLine("TrimBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.TrimBox.Height, pdfPage.TrimBox.Width, pdfPage.TrimBox.LLX, pdfPage.TrimBox.LLY, pdfPage.TrimBox.URX, pdfPage.TrimBox.URY);
-Console.WriteLine("Rect: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.Rect.Height, pdfPage.Rect.Width, pdfPage.Rect.LLX, pdfPage.Rect.LLY, pdfPage.Rect.URX, pdfPage.Rect.URY);
-Console.WriteLine("Page number: {0}", pdfPage.Number);
-Console.WriteLine("Rotate: {0}", pdfPage.Rotate);
-```
-
-### Ukázkový zdrojový kód pro Get Properties pomocí Aspose.PDF pro .NET 
-
-```csharp
-
 // Cesta k adresáři dokumentů.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Otevřete dokument
-Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
-// Získejte kolekci stránek
-PageCollection pageCollection = pdfDocument.Pages;
-// Získejte konkrétní stránku
-Page pdfPage = pageCollection[1];
-// Získejte vlastnosti stránky
-System.Console.WriteLine("ArtBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
-System.Console.WriteLine("BleedBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.BleedBox.Height, pdfPage.BleedBox.Width, pdfPage.BleedBox.LLX, pdfPage.BleedBox.LLY, pdfPage.BleedBox.URX, pdfPage.BleedBox.URY);
-System.Console.WriteLine("CropBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.CropBox.Height, pdfPage.CropBox.Width, pdfPage.CropBox.LLX, pdfPage.CropBox.LLY, pdfPage.CropBox.URX, pdfPage.CropBox.URY);
-System.Console.WriteLine("MediaBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.MediaBox.Height, pdfPage.MediaBox.Width, pdfPage.MediaBox.LLX, pdfPage.MediaBox.LLY, pdfPage.MediaBox.URX, pdfPage.MediaBox.URY);
-System.Console.WriteLine("TrimBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.TrimBox.Height, pdfPage.TrimBox.Width, pdfPage.TrimBox.LLX, pdfPage.TrimBox.LLY, pdfPage.TrimBox.URX, pdfPage.TrimBox.URY);
-System.Console.WriteLine("Rect : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.Rect.Height, pdfPage.Rect.Width, pdfPage.Rect.LLX, pdfPage.Rect.LLY, pdfPage.Rect.URX, pdfPage.Rect.URY);
-System.Console.WriteLine("Page Number : {0}", pdfPage.Number);
-System.Console.WriteLine("Rotate : {0}", pdfPage.Rotate);
-
 ```
 
+Tento řádek kódu zajišťuje, že určíme, kde může Aspose najít soubor PDF, se kterým chceme pracovat.
+
+## Krok 2: Otevřete dokument PDF
+
+ Dále otevřeme dokument PDF pomocí`Document` třídy z knihovny Aspose.PDF. Toto je zásadní krok, protože načte PDF do paměti.
+
+```csharp
+// Otevřete dokument
+Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
+```
+
+ Spuštěním tohoto řádku vytvoříme instanci souboru`Document` třída, která představuje náš soubor PDF a zpřístupňuje všechny jeho vlastnosti.
+
+## Krok 3: Přístup ke kolekci stránek
+
+Po otevření dokumentu potřebujeme přistupovat na stránky v tomto dokumentu. Každý PDF může mít více stránek, takže budeme pracovat s kolekcí, která obsahuje všechny stránky.
+
+```csharp
+// Získejte kolekci stránek
+PageCollection pageCollection = pdfDocument.Pages;
+```
+
+ Myslete na to`PageCollection` jako index, který nám pomáhá procházet stránkami v našem dokumentu PDF.
+
+## Krok 4: Získejte konkrétní stránku
+
+Nyní, když máme přístup na naše stránky, je čas jít hlouběji. Načteme konkrétní stránku z kolekce; v tomto případě dostaneme první stránku.
+
+```csharp
+// Získejte konkrétní stránku
+Page pdfPage = pageCollection[1];
+```
+
+ Pamatujte, že toto je indexování založené na nule. Pokud tedy chcete získat přístup k první stránce, musíte ji indexovat jako`1`.
+
+## Krok 5: Načtení a zobrazení vlastností stránky
+
+Nyní se dostáváme k vzrušující části – extrahování vlastností stránky! Každá stránka má několik vlastností, jako je ArtBox, BleedBox, CropBox, MediaBox a TrimBox, které popisují její rozměry a umístění. Pojďme k těmto vlastnostem a zobrazme je.
+
+```csharp
+// Získejte vlastnosti stránky
+System.Console.WriteLine("ArtBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, 
+    pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
+System.Console.WriteLine("BleedBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.BleedBox.Height, pdfPage.BleedBox.Width, pdfPage.BleedBox.LLX, pdfPage.BleedBox.LLY, 
+    pdfPage.BleedBox.URX, pdfPage.BleedBox.URY);
+System.Console.WriteLine("CropBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.CropBox.Height, pdfPage.CropBox.Width, pdfPage.CropBox.LLX, pdfPage.CropBox.LLY, 
+    pdfPage.CropBox.URX, pdfPage.CropBox.URY);
+System.Console.WriteLine("MediaBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.MediaBox.Height, pdfPage.MediaBox.Width, pdfPage.MediaBox.LLX, pdfPage.MediaBox.LLY, 
+    pdfPage.MediaBox.URX, pdfPage.MediaBox.URY);
+System.Console.WriteLine("TrimBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.TrimBox.Height, pdfPage.TrimBox.Width, pdfPage.TrimBox.LLX, pdfPage.TrimBox.LLY, 
+    pdfPage.TrimBox.URX, pdfPage.TrimBox.URY);
+System.Console.WriteLine("Rect : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.Rect.Height, pdfPage.Rect.Width, pdfPage.Rect.LLX, pdfPage.Rect.LLY, 
+    pdfPage.Rect.URX, pdfPage.Rect.URY);
+System.Console.WriteLine("Page Number : {0}", pdfPage.Number);
+System.Console.WriteLine("Rotate : {0}", pdfPage.Rotate);
+```
+
+Tento kus kódu dělá několik mocných věcí. Přistupuje ke každé vlastnosti související s rozměry a orientací stránky a poté vytiskne informace do konzoly. Získáte přehled vlastností stránky, který může pomoci při dalších úpravách nebo analýzách.
+
 ## Závěr
-gratuluji! Úspěšně jste získali vlastnosti PDF pomocí Aspose.PDF pro .NET. Naučili jste se, jak otevřít dokument PDF, přejít na konkrétní stránku a získat různé vlastnosti stránky, jako jsou kótovací rámečky a otočení. Tyto informace nyní můžete použít k přizpůsobení zacházení se soubory PDF na základě jejich vlastností.
 
-Nezapomeňte se podívat na oficiální dokumentaci Aspose.PDF pro .NET, kde najdete další informace o pokročilých funkcích a možnostech přizpůsobení.
+A tady to máte – kompletní návod, jak získat vlastnosti PDF pomocí Aspose.PDF pro .NET! Nyní máte znalosti, jak bez námahy extrahovat důležité informace z dokumentů PDF. Ať už chcete analyzovat, hlásit nebo pouze protokolovat data z vašich PDF, tato robustní knihovna je spolehlivým spojencem. Zvládnutím těchto kroků jste na dobré cestě stát se průvodcem manipulace s PDF! Neváhejte prozkoumat další funkce a funkce, které Aspose.PDF nabízí.
 
-### FAQ
+## FAQ
 
-#### Otázka: Jak mohu získat vlastnosti PDF pomocí Aspose.PDF pro .NET?
+### Jak mohu nainstalovat Aspose.PDF pro .NET?  
+Můžete si jej nainstalovat přes NuGet Package Manager ve Visual Studiu nebo si jej stáhnout přímo z webu Aspose.
 
-A: Chcete-li získat vlastnosti PDF pomocí Aspose.PDF pro .NET, můžete postupovat takto:
+### Mohu používat Aspose.PDF zdarma?  
+ Ano, Aspose nabízí bezplatnou zkušební verzi, kterou můžete získat[zde](https://releases.aspose.com/).
 
-1. Nastavte adresář dokumentu zadáním cesty k souboru PDF, jehož vlastnosti chcete načíst.
-2.  Otevřete dokument PDF pomocí`Document` třídy Aspose.PDF poskytující správnou cestu k souboru PDF.
-3.  Přístup ke kolekci stránek dokumentu pomocí`Pages` majetek z`pdfDocument` objekt.
-4. Přejít na konkrétní stránku pomocí indexu stránky v kolekci (indexování začíná od 1).
-5.  Získejte různé vlastnosti stránky PDF, jako je ArtBox, BleedBox, CropBox, MediaBox, TrimBox, Rect, Číslo stránky a Rotace, pomocí odpovídajících vlastností`pdfPage` objekt.
+### Kde najdu dokumentaci k Aspose.PDF?  
+ Můžete se podívat na dokumentaci na adrese[Dokumentace Aspose.pdf](https://reference.aspose.com/pdf/net/).
 
-#### Otázka: Jaké jsou různé vlastnosti stránky PDF, které mohu načíst pomocí Aspose.PDF pro .NET?
+### Jak získám podporu, pokud narazím na problémy?  
+ Pro podporu můžete navštívit fórum Aspose, kde můžete klást otázky týkající se vašich problémů[zde](https://forum.aspose.com/c/pdf/10).
 
-Odpověď: Pomocí Aspose.PDF pro .NET můžete načíst různé vlastnosti stránky PDF, například:
-
-- ArtBox: Představuje rozměry kresby stránky.
-- BleedBox: Představuje rozměry spadávky stránky.
-- CropBox: Představuje rozměry viditelného obsahu stránky po oříznutí.
-- MediaBox: Představuje rozměry fyzického média stránky.
-- TrimBox: Představuje rozměry oříznutého obsahu stránky.
-- Obdélník: Představuje rozměry ohraničovacího rámečku stránky.
-- Číslo stránky: Představuje číslo stránky v dokumentu.
-- Otočit: Představuje úhel otočení stránky.
-
-#### Otázka: Jak získám přístup ke konkrétní stránce v dokumentu PDF, abych získal její vlastnosti?
-
- Odpověď: Pro přístup ke konkrétní stránce v dokumentu PDF a načtení jejích vlastností můžete použít`Pages` majetek z`pdfDocument` objekt pro přístup ke kolekci stránek dokumentu. Poté můžete pomocí indexu stránky v kolekci přejít na požadovanou stránku. Například pro přístup na druhou stránku můžete použít`pdfDocument.Pages[1]` (indexování začíná od 1).
-
-#### Otázka: Mohu provádět operace s načtenými vlastnostmi, jako je úprava nebo změna velikosti rámečků stránky?
-
-Odpověď: Ano, jakmile načtete vlastnosti stránky PDF pomocí Aspose.PDF pro .NET, můžete s nimi provádět různé operace. Můžete například upravit rozměry rámečků stránky, otočit stránku nebo použít načtené informace pro vlastní zpracování a manipulaci s dokumentem PDF.
-
-#### Otázka: Podporuje Aspose.PDF for .NET extrahování vlastností ze zašifrovaných nebo heslem chráněných souborů PDF?
-
-Odpověď: Ano, Aspose.PDF for .NET podporuje extrahování vlastností ze zašifrovaných nebo heslem chráněných souborů PDF. Pokud zadáte správné heslo pro otevření dokumentu PDF, můžete přistupovat k jeho vlastnostem a získávat je pomocí stejného přístupu, který je ukázán ve výukovém programu.
+### Je k dispozici dočasná licence?  
+Ano, můžete požádat o dočasnou licenci k vyzkoušení návštěvou[tento odkaz](https://purchase.aspose.com/temporary-license/).

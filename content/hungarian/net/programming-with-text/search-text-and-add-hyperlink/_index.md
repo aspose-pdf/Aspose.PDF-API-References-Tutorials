@@ -80,7 +80,7 @@ editor.Document.Pages[1].Accept(absorber);
 
  Cserélje ki`1` a kívánt oldalszámmal.
 
-## 8. lépés: Adjon hozzá hivatkozásokat a talált szöveghez
+## 8. lépés: Adjon hozzá hiperhivatkozásokat a talált szöveghez
 
 Lapozzon át a letöltött szövegrészleteken, és adjon hozzá hivatkozásokat:
 

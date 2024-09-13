@@ -152,7 +152,7 @@ Odpověď: Vytvoření struktury stromových prvků v dokumentu PDF pomocí Aspo
 
 Odpověď: Příklad kódu ukazuje, jak vytvořit hierarchickou strukturu logických prvků pomocí`SectElement`, `DivElement` a`ArtElement` třídy poskytuje Aspose.PDF. Tyto prvky jsou organizovány jako nadřazené a podřízené uzly a tvoří v dokumentu stromovou strukturu.
 
-####  Otázka: Jak to`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
+#### Otázka: Jak to`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
 
  A:`TaggedContent` vlastnost poskytuje přístup k funkcím tagovaného obsahu dokumentu PDF. To vám umožňuje vytvářet a manipulovat se strukturovanými prvky, definovat jejich vztahy a hierarchicky je organizovat, čímž se zlepšuje struktura a dostupnost dokumentu.
 
@@ -168,7 +168,7 @@ Odpověď: Příklad kódu ukazuje, jak vytvořit hierarchickou strukturu logick
 
 Odpověď: Uspořádání prvků hierarchicky zlepšuje organizaci dokumentu, navigaci a sémantiku. Umožňuje uživatelům a asistenčním technologiím porozumět struktuře obsahu a vztahům, čímž zlepšuje celkovou uživatelskou zkušenost.
 
-####  Otázka: Jak to`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
+#### Otázka: Jak to`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
 
  A:`Save` metoda uloží dokument PDF spolu s hierarchickou strukturou vytvořenou pomocí`AppendChild` metoda. Tím je zajištěno, že struktura zůstane nedotčená a dokument je tak přístupný a dobře organizovaný.
 

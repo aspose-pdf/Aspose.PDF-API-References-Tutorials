@@ -2,150 +2,154 @@
 title: Dapatkan Tujuan Hyperlink Dalam File PDF
 linktitle: Dapatkan Tujuan Hyperlink Dalam File PDF
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Pelajari cara mengekstrak tujuan hyperlink dalam berkas PDF menggunakan Aspose.PDF untuk .NET.
+description: Pelajari cara mengekstrak tujuan hyperlink dari file PDF dengan mudah menggunakan Aspose.PDF untuk .NET. Ikuti tutorial langkah demi langkah yang mudah ini.
 type: docs
 weight: 60
 url: /id/net/programming-with-links-and-actions/get-hyperlink-destinations/
 ---
-Aspose.PDF untuk .NET adalah pustaka yang hebat untuk memanipulasi dan mengekstrak informasi dalam berkas PDF menggunakan bahasa pemrograman C#. Dalam tutorial ini, kami akan fokus pada ekstraksi tujuan hyperlink dari berkas PDF menggunakan Aspose.PDF untuk .NET.
+## Perkenalan
+
+Dalam hal mengelola PDF, mengekstrak tujuan hyperlink bisa menjadi tugas yang sangat sulit. Baik Anda sedang mengerjakan laporan bisnis, makalah penelitian, atau dokumen apa pun yang berisi tautan, Anda mungkin perlu mengakses hyperlink ini dengan cepat. Bagaimana jika saya memberi tahu Anda bahwa ada cara mudah untuk melakukannya menggunakan Aspose.PDF untuk .NET? Tetaplah bersama kami saat kami mengungkap cara mengekstrak tujuan hyperlink dengan gaya—tanpa membuat kita pusing dengan kerumitan kode!
 
 ## Prasyarat
 
-Sebelum memulai, pastikan Anda memiliki hal berikut:
+Sebelum Anda membaca artikel ini, mari pastikan Anda sudah menyiapkan semua perlengkapannya.
 
-- Lingkungan pengembangan terpadu (IDE) seperti Visual Studio.
-- Pustaka Aspose.PDF untuk .NET terinstal di komputer Anda.
+### Lingkungan .NET 
+Pastikan Anda telah menyiapkan lingkungan pengembangan .NET. Anda dapat menggunakan Visual Studio atau IDE C# lain sesuai pilihan Anda. 
 
-## Langkah 1: Menyiapkan lingkungan pengembangan
+### Aspose.PDF untuk Pustaka .NET 
+ Anda memerlukan pustaka Aspose.PDF. Jika Anda belum memilikinya, Anda dapat mengunduhnya dari[tautan ini](https://releases.aspose.com/pdf/net/) Ingin mengujinya sebelum berkomitmen? Cobalah[uji coba gratis](https://releases.aspose.com/) Pertama!
 
-Sebelum Anda mulai menulis kode, Anda perlu menyiapkan lingkungan pengembangan Anda dengan membuat proyek C# baru di IDE favorit Anda.
+### Pengetahuan Pemrograman Dasar 
+Keakraban dengan C# dan pemrograman berorientasi objek adalah suatu keharusan. Jika Anda pernah membuat kode sebelumnya, Anda berada di posisi yang tepat!
 
-## Langkah 2: Impor referensi Aspose.PDF
+### File PDF Masukan 
+Ambil berkas PDF yang berisi hyperlink—ini akan menjadi tikus laboratorium Anda untuk proses ekstraksi!
 
-Untuk menggunakan Aspose.PDF untuk .NET, Anda perlu menambahkan referensi yang sesuai ke proyek Anda. Ikuti langkah-langkah di bawah ini untuk mengimpor referensi yang diperlukan:
+Sekarang Anda sudah menyiapkan semuanya, mari masuk ke bagian yang menyenangkan!
 
-1. Di proyek Anda, klik kanan "Referensi" dan pilih "Tambahkan Referensi".
-2. Di jendela "Tambahkan Referensi", temukan dan pilih file DLL Aspose.PDF untuk .NET.
-3. Klik "OK" untuk mengimpor referensi ke proyek Anda.
+## Paket Impor
 
-## Langkah 3: Memuat File PDF
-
-Sebelum Anda dapat mengekstrak tujuan hyperlink, Anda harus memuat berkas PDF ke dalam aplikasi Anda. Gunakan kode berikut untuk memuat berkas PDF:
+Untuk memulai kode C#, Anda harus memastikan bahwa Anda mengimpor namespace Aspose yang diperlukan. Berikut tampilannya:
 
 ```csharp
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Muat file PDF
+using System;
+using System.IO;
+using Aspose.Pdf;
+using System.Collections;
+using Aspose.Pdf.Annotations;
+using System.Collections.Generic;
+```
+
+Baris-baris ini pada dasarnya memberi tahu program kita pustaka mana yang ingin kita gunakan, sehingga program dapat mengenali kelas dan metode yang hendak kita gunakan. 
+
+## Langkah 1: Siapkan Proyek Anda
+
+Mulailah dengan membuat proyek C# baru. Berikut cara melakukannya:
+
+1. Buka Visual Studio atau IDE pilihan Anda.
+2. Buat Proyek Baru dan pilih Aplikasi Konsol.
+3. Beri nama proyek Anda seperti "PDFHyperlinkExtractor".
+
+Sekarang, pastikan proyek Anda diatur untuk menjalankan .NET Core atau kerangka kerja mana pun yang Anda sukai.
+
+## Langkah 2: Menambahkan Pustaka Aspose.PDF
+
+Untuk memanfaatkan fitur-fitur hebat yang disediakan Aspose.PDF, Anda perlu menambahkan pustaka ke proyek Anda.
+
+1. Gunakan Pengelola Paket NuGet:
+   - Klik kanan pada proyek Anda di Solution Explorer.
+   - Klik "Kelola Paket NuGet".
+   -  Pencarian untuk`Aspose.PDF` dan menginstalnya.
+
+Ini akan menambahkan berkas rakitan yang diperlukan sehingga Anda dapat memulai membuat kode.
+
+## Langkah 3: Muat Dokumen PDF Anda
+
+Sekarang, mari muat berkas PDF yang ingin Anda gunakan. Anda perlu mengatur jalur ke berkas PDF dengan benar.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-Pastikan untuk menentukan jalur yang benar ke direktori dokumen Anda dan berkas PDF yang ingin Anda proses.
+ Penjelasan: Ganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya tempat PDF Anda berada. Bagian kode ini menginisialisasi`Document` kelas yang disediakan oleh Aspose, yang benar-benar membuka PDF Anda untuk bisnis!
 
-## Langkah 4: Menavigasi halaman dokumen
+## Langkah 4: Telusuri Halaman PDF
 
-Sekarang setelah file PDF dimuat, Anda perlu menelusuri semua halaman dokumen. Ini akan memungkinkan Anda untuk mendapatkan
-
-ir anotasi hyperlink yang ada di setiap halaman. Gunakan kode berikut untuk mengulang melalui halaman dokumen:
+Selanjutnya, kita akan mengulang setiap halaman dalam dokumen PDF. Ini seperti membalik halaman buku.
 
 ```csharp
-foreach(Aspose.Pdf.Page page in document.Pages)
+foreach (Aspose.Pdf.Page page in document.Pages)
 {
-     // Dapatkan anotasi tautan dari halaman tertentu
-     AnnotationSelector selector = new AnnotationSelector(new Aspose.Pdf.Annotations.LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
-     page. Accept(selector);
-     // Buat daftar untuk menyimpan semua tautan
-     IList<Annotation> list = selector. Selected;
-     // Ulangi setiap item dalam daftar
-     foreach(LinkAnnotation a in list)
-     {
-         // Cetak URL tujuan
-         Console.WriteLine("\nDestination: " + (a.Action as Aspose.Pdf.Annotations.GoToURIAction).URI + "\n");
-     }
+    //...kode untuk mengekstrak tautan ada di sini
 }
 ```
 
-Kode ini akan menelusuri setiap halaman dokumen dan memilih anotasi hyperlink yang ada di setiap halaman. Kemudian, kode ini akan menyimpan anotasi ini dalam sebuah daftar dan mencetak URL tujuan untuk setiap tautan.
+Mengapa Loop?: Setiap halaman dapat memiliki tautan yang berbeda, dan kami ingin memeriksa setiap tautan. Dengan cara ini, Anda tidak akan melewatkan satu pun informasi berharga yang tersembunyi di dalamnya.
 
-## Langkah 5: Mendapatkan Tujuan Hyperlink
+## Langkah 5: Ambil Anotasi Tautan
 
-Langkah terakhir adalah mengekstrak tujuan hyperlink dari anotasi hyperlink. Kode berikut menunjukkan cara melakukannya:
+ Setelah kita berada di halaman, mari kita cari anotasi tautan. Kita akan menggunakan`AnnotationSelector`.
 
 ```csharp
-foreach(Aspose.Pdf.Page page in document.Pages)
+AnnotationSelector selector = new AnnotationSelector(new LinkAnnotation(page, Rectangle.Trivial));
+page.Accept(selector);
+```
+
+ Memahami`AnnotationSelector` :Kelas ini membantu mengidentifikasi tautan pada halaman dengan memilih anotasi yang bertipe`LinkAnnotation`. 
+
+## Langkah 6: Simpan dan Ulangi Melalui Anotasi Tautan
+
+Sekarang kita akan mengumpulkan tautan dalam sebuah daftar dan mengulanginya untuk menampilkan tujuannya.
+
+```csharp
+IList<Annotation> list = selector.Selected;
+foreach (LinkAnnotation a in list)
 {
-     AnnotationSelector selector = new AnnotationSelector(new Aspose.Pdf.Annotations.LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
-     page. Accept(selector);
-     IList<Annotation> list = selector. Selected;
-     foreach(LinkAnnotation a in list)
-     {
-         string destination = (a.Action as Aspose.Pdf.Annotations.GoToURIAction).URI;
-         // Gunakan tujuan sesuai keinginan Anda
-     }
+    Console.WriteLine("\nDestination: " + (a.Action as GoToURIAction).URI + "\n");
 }
 ```
 
-Dalam kode ini, kita mendapatkan setiap tujuan hyperlink dari anotasi tautan dan menyimpan tujuan tersebut dalam sebuah variabel. Anda kemudian dapat menggunakan tujuan ini sesuai keinginan dalam aplikasi Anda.
+Rincian lebih lanjut:
+- `IList<Annotation> list`: Ini menyimpan semua anotasi tautan yang dipilih.
+- Mengulangi daftar: Untuk setiap tautan, kami mengambil URI tujuan dan mencetaknya. 
 
-### Contoh kode sumber untuk Mendapatkan Tujuan Hyperlink menggunakan Aspose.PDF untuk .NET 
+## Langkah 7: Menangani Pengecualian
+
+Pastikan untuk membungkus pekerjaan Anda dalam blok try-catch. Ini membantu menangkap masalah apa pun yang mungkin muncul, seperti mengakses file yang tidak ada atau anotasi tautan yang salah.
+
 ```csharp
-try
-{
-	// Jalur ke direktori dokumen.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Muat file PDF
-	Document document = new Document(dataDir + "input.pdf");
-	// Melintasi semua halaman PDF
-	foreach (Aspose.Pdf.Page page in document.Pages)
-	{
-		// Dapatkan anotasi tautan dari halaman tertentu
-		AnnotationSelector selector = new AnnotationSelector(new Aspose.Pdf.Annotations.LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
-		page.Accept(selector);
-		// Buat daftar yang berisi semua tautan
-		IList<Annotation> list = selector.Selected;
-		// Beriterasi melalui item individual di dalam daftar
-		foreach (LinkAnnotation a in list)
-		{
-			// Cetak URL tujuan
-			Console.WriteLine("\nDestination: " + (a.Action as Aspose.Pdf.Annotations.GoToURIAction).URI + "\n");
-		}
-	}
-}
 catch (Exception ex)
 {
-	Console.WriteLine(ex.Message);
+    Console.WriteLine(ex.Message);
 }
 ```
 
-### FAQ untuk mendapatkan tujuan hyperlink dalam file PDF
+Mengapa Ini Penting?: Tidak ada yang suka crash yang tidak terduga, bukan? Ini menjaga program Anda tetap tangguh dan mudah digunakan.
 
-#### T: Apa tujuan hyperlink dalam berkas PDF?
+## Langkah 8: Kompilasi dan Jalankan
 
-J: Tujuan hyperlink dalam file PDF adalah lokasi atau target tertentu yang dituju hyperlink. Bisa berupa URL, halaman dalam dokumen yang sama, atau dokumen eksternal.
+Akhirnya, tibalah saatnya untuk momen kebenaran! Tekan tombol jalankan dan lihat apakah program Anda berfungsi seperti yang diharapkan. Anda akan melihat tujuan hyperlink yang diekstrak tercetak di konsol Anda.
 
-#### T: Bagaimana ekstraksi tujuan hyperlink dapat bermanfaat bagi analisis dokumen PDF saya?
+## Kesimpulan
 
-A: Mengekstrak tujuan hyperlink memungkinkan Anda mengidentifikasi dan membuat katalog semua target yang dituju hyperlink dalam dokumen PDF. Informasi ini dapat berguna untuk validasi konten, verifikasi tautan, dan analisis data.
+Mengekstrak tujuan hyperlink dari file PDF menggunakan Aspose.PDF untuk .NET cukup mudah, bukan? Hanya dengan beberapa baris kode, Anda dapat mengumpulkan tautan dengan mudah, menghemat waktu dan kerepotan. Struktur pustaka yang berorientasi objek membuatnya intuitif untuk digunakan, dan hasilnya adalah keluaran konsol yang bersih yang mencerminkan semua kerja keras Anda. Siap untuk mengotomatiskan lebih banyak tugas dalam manajemen PDF Anda? Langit adalah batasnya!
 
-#### T: Bagaimana Aspose.PDF untuk .NET membantu dalam mengekstrak tujuan hyperlink?
+## Pertanyaan yang Sering Diajukan
 
-A: Aspose.PDF untuk .NET menyediakan API yang canggih untuk mengekstrak tujuan hyperlink dengan mudah. Tutorial ini menunjukkan langkah demi langkah cara mengekstrak tujuan hyperlink menggunakan C#.
+### Apa itu Aspose.PDF untuk .NET?
+Aspose.PDF untuk .NET adalah pustaka hebat yang menyediakan metode untuk memanipulasi dan membuat PDF secara terprogram.
 
-#### T: Dapatkah saya mengekstrak tujuan hyperlink secara selektif berdasarkan kriteria tertentu?
+### Dapatkah saya menggunakan Aspose.PDF secara gratis?
+ Ya! Anda dapat mencobanya menggunakan[uji coba gratis](https://releases.aspose.com/).
 
-A: Ya, Anda dapat mengekstrak tujuan hyperlink secara selektif dengan mengulangi halaman-halaman dokumen PDF dan memfilter anotasi hyperlink yang diinginkan berdasarkan kriteria Anda.
+### Bahasa pemrograman apa yang didukung Aspose?
+Selain .NET, Aspose juga menawarkan pustaka untuk Java, Python, dan bahasa lainnya.
 
-#### T: Apakah mungkin untuk mengekstrak tujuan hyperlink dari dokumen PDF yang dilindungi kata sandi?
+### Apakah saya memerlukan pengalaman pemrograman sebelumnya?
+Keterampilan pemrograman dasar dalam C# atau bahasa .NET lainnya akan membantu Anda memahami contoh dengan lebih baik.
 
-A: Aspose.PDF untuk .NET dapat mengekstrak tujuan hyperlink dari dokumen PDF yang dilindungi kata sandi selama Anda memberikan kredensial autentikasi yang diperlukan saat membuka dokumen tersebut.
-
-#### T: Bagaimana saya dapat memanfaatkan tujuan hyperlink yang diekstrak dalam aplikasi saya?
-
-A: Setelah Anda mengekstrak tujuan hyperlink, Anda dapat menggunakannya untuk melakukan berbagai tindakan, seperti memvalidasi URL tautan, membuat laporan, atau menerapkan navigasi khusus.
-
-#### T: Apakah ada batasan saat mengekstrak tujuan hyperlink?
-
-J: Meskipun ekstraksi tujuan hyperlink sangat ampuh, penting untuk mempertimbangkan struktur dokumen PDF. Hyperlink yang disematkan dalam grafik kompleks atau konten multimedia mungkin memerlukan penanganan tambahan.
-
-#### T: Dapatkah saya mengekstrak atribut hyperlink lainnya, seperti jenis tautan atau koordinat?
-
-J: Tutorial ini berfokus pada ekstraksi tujuan hyperlink. Namun, Anda dapat merujuk ke dokumentasi resmi Aspose.PDF untuk menjelajahi fitur-fitur lanjutan, termasuk mengekstrak jenis dan koordinat tautan.
+### Di mana saya dapat menemukan dukungan dan dokumentasi tambahan?
+ Anda dapat menelusuri[dokumentasi](https://reference.aspose.com/pdf/net/) atau[forum dukungan](https://forum.aspose.com/c/pdf/10) untuk bantuan.

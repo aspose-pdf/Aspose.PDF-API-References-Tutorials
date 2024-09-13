@@ -35,7 +35,7 @@ Létrehoztunk egy új dokumentumot, és beállítottuk a dokumentum címét és 
 Ebben a lépésben megkapjuk a dokumentumunk gyökérstruktúra elemét.
 
 ```csharp
-//Szerezze meg a gyökérszerkezet elemet
+// Szerezze meg a gyökérszerkezet elemet
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
@@ -46,7 +46,7 @@ Megkaptuk a gyökérstruktúra elemet, amely a tömbelemek tárolójaként fog s
 Most hozzunk létre egy új táblázatszerkezet elemet a dokumentumunkhoz.
 
 ```csharp
-// Hozza létre a tömbszerkezet elemet
+// Hozd létre a tömbstruktúra elemet
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
@@ -197,7 +197,7 @@ taggedContent.SetLanguage("en-US");
 // Gyökérstruktúra elem lekérése
 StructureElement rootElement = taggedContent.RootElement;
 
-// Táblázatstruktúra elem létrehozása
+// Táblázatszerkezet elem létrehozása
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
@@ -293,7 +293,7 @@ V: Mielőtt elkezdené, győződjön meg arról, hogy telepítette az Aspose.PDF
 
 #### K: Hogyan hozhatok létre új PDF-dokumentumot az Aspose.PDF for .NET használatával?
 
-V: Új PDF-dokumentum létrehozásához példányosítania kell a`Document` objektum az Aspose.PDF könyvtárból. A mellékelt C# forráskód bemutatja, hogyan hozhat létre dokumentumot, és hogyan állíthatja be a címét és a nyelvét.
+ V: Új PDF-dokumentum létrehozásához példányosítania kell a`Document` objektum az Aspose.PDF könyvtárból. A mellékelt C# forráskód bemutatja, hogyan hozhat létre dokumentumot, és hogyan állíthatja be a címét és a nyelvét.
 
 #### K: Mi a jelentősége a gyökérstruktúra elemnek egy PDF dokumentumban?
 
@@ -305,7 +305,7 @@ V: A gyökérstruktúra elem tárolóként szolgál más szerkezeti elemek szám
 
 #### K: Hozzáadhatok több sort és oszlopot a táblázat törzséhez, és testreszabhatom a formázásukat?
 
-V: Igen, az oktatóanyag bemutatja, hogyan lehet több sort és oszlopot hozzáadni a táblázat törzséhez hurkok segítségével. Példákat ad a cellaformázás testreszabására is, mint például a háttérszín, a szegélyek, a szövegigazítás, a betűstílus stb.
+V: Igen, az oktatóanyag bemutatja, hogyan lehet több sort és oszlopot hozzáadni a táblázat törzséhez hurkok segítségével. Példákat kínál a cellaformázás testreszabására is, mint például a háttérszín, a szegélyek, a szövegigazítás, a betűstílus stb.
 
 #### K: Mi a célja a PDF/UA megfelelőség ellenőrzésének, és hogyan végezhetem el ezt az ellenőrzést?
 

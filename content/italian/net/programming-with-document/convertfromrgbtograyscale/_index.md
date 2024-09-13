@@ -96,7 +96,7 @@ document.Save(dataDir + "Test-gray_out.pdf");
 
 ## Conclusione
 
-Congratulazioni! Hai appena imparato a convertire un file PDF da RGB a scala di grigi usando Aspose.PDF per .NET. Che tu stia cercando di ridurre le dimensioni del file, stampare in modo economicamente conveniente o semplicemente creare un documento più pulito, questo tutorial ti ha fornito tutto ciò di cui hai bisogno.
+Congratulazioni! Hai appena imparato a convertire un file PDF da RGB a scala di grigi usando Aspose.PDF per .NET. Che tu stia cercando di ridurre le dimensioni del file, stampare in modo conveniente o semplicemente creare un documento più pulito, questo tutorial ti ha fornito tutto ciò di cui hai bisogno.
 
 ## Domande frequenti
 

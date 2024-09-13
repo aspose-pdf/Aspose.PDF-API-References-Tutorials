@@ -116,7 +116,7 @@ Eenmaal verwijderde bijlagen kunnen niet meer worden hersteld, tenzij u een back
 Aspose.PDF biedt een gratis proefversie, maar voor volledige functionaliteit moet u een licentie kopen. Bekijk de[koop pagina](https://purchase.aspose.com/buy) voor meer informatie.
 
 ### Waar kan ik meer documentatie vinden?
- U kunt uitgebreide documentatie vinden op Aspose.PDF voor .NET[hier](https://reference.aspose.com/pdf/net/).
+ Uitgebreide documentatie vindt u op Aspose.PDF voor .NET[hier](https://reference.aspose.com/pdf/net/).
 
 ### Hoe krijg ik ondersteuning als ik problemen ondervind?
  U kunt hulp zoeken bij de Aspose-community op hun[ondersteuningsforum](https://forum.aspose.com/c/pdf/10).

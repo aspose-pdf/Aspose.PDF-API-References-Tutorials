@@ -22,7 +22,7 @@ Antes de sumergirnos en el proceso de conversión, asegúrese de tener los sigui
 
 ## Configuración de su proyecto
 
-1. Cree un nuevo proyecto Java: comience creando un nuevo proyecto Java en su entorno de desarrollo integrado (IDE) favorito. Puede utilizar IntelliJ IDEA, Eclipse o cualquier otro IDE que prefiera.
+1. Cree un nuevo proyecto Java: comience creando un nuevo proyecto Java en su entorno de desarrollo integrado (IDE) favorito. Puede utilizar IntelliJ IDEA, Eclipse o cualquier otro IDE que elija.
 
 2. Agregar la biblioteca Aspose.PDF para Java: una vez que el proyecto esté configurado, agregue la biblioteca Aspose.PDF para Java a la ruta de clases del proyecto. Esto generalmente se puede hacer incluyendo los archivos JAR en las dependencias del proyecto.
 

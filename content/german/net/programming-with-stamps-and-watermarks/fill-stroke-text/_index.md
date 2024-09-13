@@ -2,164 +2,191 @@
 title: Strichtext in PDF-Datei füllen
 linktitle: Strichtext in PDF-Datei füllen
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET einfach Text in PDF-Dateien ausfüllen und skizzieren.
+description: Erfahren Sie in dieser Schritt-für-Schritt-Anleitung voller praktischer Beispiele, wie Sie mit Aspose.PDF für .NET mühelos Strichtext in PDF-Dateien füllen.
 type: docs
 weight: 90
 url: /de/net/programming-with-stamps-and-watermarks/fill-stroke-text/
 ---
-In diesem Tutorial zeigen wir Ihnen Schritt für Schritt, wie Sie mit Aspose.PDF für .NET Text in einer PDF-Datei ausfüllen und umranden. Wir zeigen Ihnen, wie Sie mit dem bereitgestellten C#-Quellcode Füll- und Umrandungsfarben auf Text in der PDF-Datei anwenden.
+## Einführung
 
-## Schritt 1: Einrichten der Umgebung
+Wollten Sie schon einmal eine PDF-Datei ändern, um sie hervorzuheben? Vielleicht möchten Sie ein auffälliges Wasserzeichen oder einen auffälligen Stempel hinzufügen, der ein wichtiges Dokument unverkennbar von Ihnen abhebt. Mit Aspose.PDF für .NET können Sie Strichtext in einer PDF-Datei ganz einfach ausfüllen und so künstlerisches Flair hinzufügen, das ins Auge fällt. Im heutigen Tutorial führen wir Sie durch den Vorgang, genau das zu tun – das Ausfüllen von Strichtext in einer PDF-Datei mit C#. Am Ende haben Sie ein solides Verständnis dafür, wie Sie PDF-Dateien wie ein Profi bearbeiten.
 
-Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
+## Voraussetzungen
 
-- Eine installierte .NET-Entwicklungsumgebung.
-- Die Aspose.PDF-Bibliothek für .NET wurde heruntergeladen und in Ihrem Projekt referenziert.
+Bevor wir uns in die Codierung stürzen, müssen Sie ein paar Dinge vorbereitet haben, damit dieses Tutorial ein Kinderspiel wird:
 
-## Schritt 2: Erstellen des TextState-Objekts
+1. Visual Studio: Stellen Sie sicher, dass Visual Studio auf Ihrem Computer installiert ist, da wir C#-Code schreiben werden.
+2.  Aspose.PDF-Bibliothek: Stellen Sie sicher, dass Sie die Aspose.PDF-Bibliothek für .NET heruntergeladen haben. Sie können sie herunterladen[Hier](https://releases.aspose.com/pdf/net/).
+3. Grundkenntnisse in C#: Wenn Sie mit der C#-Programmierung vertraut sind, können Sie das Tutorial leichter verstehen.
+4. Beispiel-PDF-Datei: Sie benötigen eine Beispiel-PDF-Datei (`input.pdf`zu Testzwecken. Sie können eine einfache erstellen oder eine vorhandene PDF-Datei verwenden.
 
-Der erste Schritt besteht darin, ein TextState-Objekt zu erstellen, um die erweiterten Eigenschaften zu übergeben. So geht's:
+Nachdem wir nun alles vorbereitet haben, können wir uns an die Details des Ausfüllens von Strichtext in Ihrer PDF-Datei machen.
+
+## Pakete importieren
+
+Zu Beginn müssen wir die erforderlichen Pakete importieren. Hier ist ein kurzer Überblick über die wesentlichen Importe für unser Projekt:
 
 ```csharp
-// Erstellen Sie ein TextState-Objekt, um erweiterte Eigenschaften zu übertragen
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Diese Pakete ermöglichen uns, die robusten Funktionen der Aspose.PDF-Bibliothek zu nutzen.
+
+Lassen Sie uns die Hauptaufgabe in klare Schritte unterteilen. Wenn Sie diese Schritte befolgen, können Sie Strichtext ganz einfach in Ihre PDF-Dateien einfügen. 
+
+## Schritt 1: Richten Sie Ihre Umgebung ein
+
+Stellen Sie zunächst sicher, dass in Ihrem Visual Studio-Projekt alles richtig eingerichtet ist. Erstellen Sie ein neues Projekt oder wählen Sie ein vorhandenes aus. Wenn Sie Hilfe benötigen, gehen Sie wie folgt vor:
+
+1. Öffnen Sie Visual Studio.
+2. Erstellen Sie ein neues C#-Projekt (z. B. eine Konsolenanwendung).
+3. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt und wählen Sie „NuGet-Pakete verwalten“ aus.
+4.  Suchen nach`Aspose.PDF` und installieren Sie es.
+
+## Schritt 2: Definieren Sie Ihr Dokumentverzeichnis
+
+Jede Reise braucht einen Ausgangspunkt, und in unserem Fall ist das das Dokumentenverzeichnis, in dem die Eingabe- und Ausgabedateien gespeichert werden. 
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Ersetzen`"YOUR DOCUMENT DIRECTORY"` durch den tatsächlichen Pfad, in dem sich Ihre Eingabe-PDF-Datei befindet. 
+
+## Schritt 3: Erstellen des TextState-Objekts
+
+In diesem Schritt beginnen Sie, die Eigenschaften des Textes zu definieren, den Sie hinzufügen möchten. 
+
+```csharp
 TextState ts = new TextState();
+```
 
-// Umrissfarbe festlegen
+ Der`TextState` Das Objekt enthält die Stiloptionen für Ihren Strichtext.
+
+## Schritt 4: Farbe für Strich festlegen
+
+Als Nächstes möchten Sie die Strichfarbe für Ihren Text definieren. 
+
+```csharp
 ts.StrokingColor = Color.Gray;
+```
 
-// Definieren des Textwiedergabemodus
+In diesem Code verwenden wir für den Strich eine graue Farbe. Sie können die Farbe gerne nach Bedarf ändern!
+
+## Schritt 5: Rendering-Modus konfigurieren
+
+Um sicherzustellen, dass Ihr Text wie gewünscht angezeigt wird, legen Sie den Rendering-Modus fest:
+
+```csharp
 ts.RenderingMode = TextRenderingMode.StrokeText;
 ```
 
-Der obige Code erstellt ein neues TextState-Objekt und legt die Umrissfarbe sowie die Art und Weise der Textdarstellung fest.
+Dies weist die Aspose-Bibliothek an, dass wir mit Strichtext arbeiten.
 
-## Schritt 3: Laden des PDF-Dokuments
+## Schritt 6: Laden Sie Ihr Eingabe-PDF-Dokument
 
-Nachdem das TextState-Objekt nun bereit ist, können wir das PDF-Dokument laden, in dem wir die Textfüllung und den Umriss anwenden möchten. So geht's:
+Jetzt ist es an der Zeit, die PDF-Datei zu laden, die Sie ändern möchten. 
 
 ```csharp
-// Laden Sie das PDF-Dokument als Eingabe
 Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
 ```
 
-Der obige Code lädt das vorhandene PDF-Dokument mithilfe der Klasse PdfFileStamp aus der Bibliothek Aspose.PDF.Facades.
+Stellen Sie sicher, dass Ihr Eingabe-PDF (`input.pdf`befindet sich im Dokumentverzeichnis, das in früheren Schritten definiert wurde.
 
-## Schritt 4: Dem Text Füllung und Kontur hinzufügen
+## Schritt 7: Erstellen Sie ein Stempelobjekt
 
-Nachdem das PDF-Dokument geladen ist, können wir dem Text Füllung und Umriss hinzufügen. So geht's:
+Erstellen Sie als Nächstes einen Stempel, der Ihren Strichtext enthält. 
 
 ```csharp
-// Erstellen Sie einen Stempel (Stempel) mit dem definierten Text und den Eigenschaften
 Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
+```
+
+Dieser Stempel wird verwendet, um Ihren Text auf das PDF zu legen.
+
+## Schritt 8: Definieren Sie den zu stempelnden Text
+
+Sie müssen angeben, welchen Text Sie der PDF-Datei hinzufügen möchten:
+
+```csharp
 stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
+```
 
-// Binden des TextState-Objekts
+Hier fügen wir den Text „VOLLSTÄNDIG BEZAHLT“ zusammen mit seinen Stilattributen hinzu. Passen Sie ihn Ihren Anforderungen entsprechend an!
+
+## Schritt 9: Den Textstatus binden
+
+ Binden Sie nun die`TextState` den Sie zuvor für den Stempel definiert haben. 
+
+```csharp
 stamp.BindTextState(ts);
+```
 
-// Ursprung X, Y festlegen
+Dieser Schritt wendet alle Stile wie Farbe und Wiedergabemodus auf Ihren Text an.
+
+## Schritt 10: Position des Stempels festlegen
+
+Bestimmen Sie, wo Ihr Stempel in der PDF-Datei erscheinen soll:
+
+```csharp
 stamp.SetOrigin(100, 100);
-stamp. Opacity = 5;
+```
+
+ Die Argumente`(100, 100)` geben die X- und Y-Koordinaten (in Punkten) für den Ursprung des Textes an. Passen Sie diese Werte an, um Ihren Text perfekt zu positionieren!
+
+## Schritt 11: Opazität und Rotation konfigurieren
+
+Hier können Sie mit dem Erscheinungsbild Ihres Textes experimentieren:
+
+```csharp
+stamp.Opacity = 5;
 stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
 stamp.Rotation = 45.0F;
-stamp. IsBackground = false;
+```
 
-// Fügen Sie dem Dokument den Stempel hinzu
+In diesem Fall verleihen ein Deckkraftwert und ein Drehwinkel von 45 Grad Ihrem Text eine einzigartige Note. Sie können diese Einstellungen gerne ändern, um verschiedene Effekte zu erzielen.
+
+## Schritt 12: Stempel zum PDF hinzufügen
+
+Dies ist der entscheidende Schritt, bei dem wir abschließend unseren Stempel, der den Strichtext enthält, zum PDF hinzufügen:
+
+```csharp
 fileStamp.AddStamp(stamp);
 ```
 
-Der obige Code erstellt einen Stempel mit dem angegebenen Text und den definierten Füll- und Stricheigenschaften.
+Und schon ist Ihr Text bereit, eine Aussage zu machen!
 
-## Schritt 5: Speichern des Ausgabedokuments
+## Schritt 13: Speichern und Schließen des Dokuments
 
-Sobald der Textstempel hinzugefügt wurde, können wir das geänderte PDF-Dokument speichern. So geht's:
+Speichern Sie abschließend Ihre Änderungen und stellen Sie sicher, dass alles ordnungsgemäß bereinigt wurde. 
 
 ```csharp
-// Speichern des geänderten Dokuments
 fileStamp.Save(dataDir + "output_out.pdf");
 fileStamp.Close();
 ```
 
-Der obige Code speichert das bearbeitete PDF-Dokument im angegebenen Verzeichnis.
-
-### Beispielquellcode für Fill Stroke Text mit Aspose.PDF für .NET 
-```csharp
-
-// Der Pfad zum Dokumentverzeichnis.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Erstellen Sie ein TextState-Objekt, um erweiterte Eigenschaften zu übertragen
-TextState ts = new TextState();
-
-// Farbe für Strich festlegen
-ts.StrokingColor = Color.Gray;
-
-// Textwiedergabemodus festlegen
-ts.RenderingMode = TextRenderingMode.StrokeText;
-
-// Laden eines PDF-Eingabedokuments
-Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
-Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
-stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
-
-// TextState binden
-stamp.BindTextState(ts);
-
-// X,Y-Ursprung festlegen
-stamp.SetOrigin(100, 100);
-stamp.Opacity = 5;
-stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
-stamp.Rotation = 45.0F;
-stamp.IsBackground = false;
-
-// Stempel hinzufügen
-fileStamp.AddStamp(stamp);
-fileStamp.Save(dataDir + "ouput_out.pdf");
-fileStamp.Close();
-
-```
+ Ihre neu geänderte PDF-Datei mit dem Strichtext wird gespeichert als`output_out.pdf` in Ihrem Dokumentverzeichnis. 
 
 ## Abschluss
 
-Herzlichen Glückwunsch! Sie haben gelernt, wie Sie mit Aspose.PDF für .NET Text in einem PDF-Dokument ausfüllen und umreißen. Jetzt können Sie dieses Wissen anwenden, um Füll- und Umrissfarben in Ihren PDF-Dokumenten anzupassen.
+Und da haben Sie es! Indem Sie diese einfachen Schritte befolgen, können Sie mit Aspose.PDF für .NET ganz einfach Strichtext in eine PDF-Datei einfügen. Ob für Geschäftsdokumente oder persönliche Projekte, mit dieser Technik können Sie Ihren PDFs eine einzigartige Note verleihen, sodass sie in jedem Papierstapel hervorstechen.
 
-### FAQs zum Füllen von Strichtext in PDF-Dateien
+## Häufig gestellte Fragen
 
-#### F: Was bedeutet es, Text in einem PDF-Dokument auszufüllen und zu skizzieren, und wann muss ich dies möglicherweise tun?
+### Was ist Aspose.PDF für .NET?
+Aspose.PDF für .NET ist eine Bibliothek, mit der Entwickler PDF-Dateien programmgesteuert erstellen, bearbeiten und konvertieren können.
 
-A: Beim Füllen und Konturieren von Text in einem PDF-Dokument werden Farben auf das Innere der Textzeichen (Füllen) und auf die Ränder um den Text (Kontur) angewendet. Dies kann verwendet werden, um das visuelle Erscheinungsbild des Textes zu verbessern, Hervorhebungen vorzunehmen oder bestimmte Inhalte im PDF hervorzuheben.
+### Kann ich Aspose.PDF kostenlos nutzen?
+Ja, Aspose bietet eine kostenlose Testversion an. Sie können es bekommen[Hier](https://releases.aspose.com/).
 
-#### F: Wie ermöglicht der bereitgestellte C#-Quellcode das Ausfüllen und Umreißen von Text in einer PDF-Datei?
+### Muss ich für eine Lizenz bezahlen?
+ Während die Bibliothek eine kostenlose Testversion bietet, kann eine temporäre Lizenz auch erworben werden unter[dieser Link](https://purchase.aspose.com/temporary-license/).
 
- A: Der bereitgestellte Quellcode zeigt, wie man ein`TextState` Objekt, um erweiterte Texteigenschaften wie Umrissfarbe und Rendering-Modus zu definieren. Anschließend wird Aspose.PDF.Facades verwendet, um ein vorhandenes PDF-Dokument zu laden, einen Stempel mit dem Text mit angegebenen Füll- und Stricheigenschaften zu erstellen und den Stempel dem Dokument hinzuzufügen.
+### Wo finde ich die Dokumentation?
+ Sie können auf die vollständige Dokumentation zugreifen[Hier](https://reference.aspose.com/pdf/net/).
 
-####  F: Was ist der Zweck der`TextState` object in the code?
-
- A: Die`TextState`Das Objekt wird verwendet, um erweiterte Texteigenschaften zu definieren, einschließlich der Farbe der Textkontur (Strich) und des Rendering-Modus. Sie können damit anpassen, wie der Text in Bezug auf Strich und Füllung angezeigt wird.
-
-#### F: Kann ich auf verschiedene Teile desselben Textes unterschiedliche Füll- und Umrissfarben anwenden?
-
- A: Ja, Sie können den Code ändern, um verschiedene`TextState` Objekte mit unterschiedlichen Füll- und Umrissfarben und wenden Sie diese auf bestimmte Teile des Textes an, indem Sie separate`Stamp` Objekte.
-
-#### F: Kann ich Füll- und Umrissfarben auf Text anwenden, der bereits im PDF-Dokument vorhanden ist?
-
- A: Ja, Sie können ähnliche Prinzipien verwenden, um Füll- und Umrissfarben auf vorhandenen Text im PDF-Dokument anzuwenden, indem Sie die entsprechenden Textobjekte auswählen und sie als Stempel mit den gewünschten`TextState` Eigenschaften.
-
-#### F: Wie kann ich die Deckkraft und Mischung des ausgefüllten und umrissenen Textes anpassen?
-
- A: Mit dem bereitgestellten Code können Sie die Deckkraft und die Mischeigenschaften des Stempels mithilfe der`Opacity` Und`BlendingSpace`Eigenschaften. Sie können diese Werte anpassen, um den gewünschten visuellen Effekt zu erzielen.
-
-#### F: Wie kann ich mehreren Stempeln im selben PDF-Dokument unterschiedliche Füll- und Umrissfarben zuweisen?
-
- A: Sie können mehrere`TextState` Objekte mit unterschiedlichen Füll- und Umrissfarben und erstellen Sie dann separate`Stamp` Objekte für jeden Textsatz mit unterschiedlichen Farben. Fügen Sie diese Stempel zum selben PDF-Dokument hinzu, indem Sie`PdfFileStamp` Klasse.
-
-#### F: Kann ich für den umrandeten und ausgefüllten Text andere Schriftarten als Arial verwenden?
-
- A: Ja, Sie können die Schriftart ändern, indem Sie den Parameter für den Schriftartnamen im`FormattedText` Konstruktor beim Erstellen des Stempels. Sie können jede auf Ihrem System verfügbare Schriftart verwenden.
-
-#### F: Wie kann ich den Drehwinkel des umrandeten und ausgefüllten Textes ändern?
-
- A: Mit dem bereitgestellten Code können Sie den Drehwinkel des Stempels mithilfe der`Rotation` Eigenschaft. Sie können diese Eigenschaft anpassen, um den gewünschten Drehwinkel für den Text anzugeben.
-
-#### F: Wie kann ich die Position und Größe des umrandeten und ausgefüllten Textes auf der Seite steuern?
-
- A: Sie können die`SetOrigin` Methode der`Stamp` Objekt, um die X- und Y-Koordinaten der Position des Stempels auf der Seite festzulegen. Darüber hinaus können Sie die Schriftgröße im`FormattedText` Konstruktor zur Steuerung der Textgröße.
+### Gibt es Support, wenn ich auf Probleme stoße?
+ Auf jeden Fall! Sie können Unterstützung im Aspose-Forum erhalten[Hier](https://forum.aspose.com/c/pdf/10).

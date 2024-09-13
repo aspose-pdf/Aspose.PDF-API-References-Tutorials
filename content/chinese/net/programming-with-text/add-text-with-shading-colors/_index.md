@@ -13,7 +13,7 @@ url: /zh/net/programming-with-text/add-text-with-shading-colors/
 开始之前，请确保您已准备好以下物品：
 
 - 您的机器上安装的 Visual Studio 或任何其他 C# 编译器。
-- Aspose.PDF for .NET 库。您可以从 Aspose 官方网站下载它，或者使用 NuGet 等包管理器来安装它。
+- Aspose.PDF for .NET 库。您可以从 Aspose 官方网站下载它，也可以使用 NuGet 等包管理器来安装它。
 
 ## 步骤 1：设置项目
 1. 在您首选的开发环境中创建一个新的 C# 项目。
@@ -104,7 +104,7 @@ using (Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 
 #### 问：本教程需要导入哪些命名空间？
 
-答：在您想要添加带有阴影颜色的文本的代码文件中，在文件开头导入以下命名空间：
+答：在要添加带有阴影颜色的文本的代码文件中，在文件开头导入以下命名空间：
 
 ```csharp
 using Aspose.Pdf;

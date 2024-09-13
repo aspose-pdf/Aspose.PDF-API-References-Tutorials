@@ -103,7 +103,7 @@ NoteElement note3 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note3);
 note3.SetText("Note with ID = 'note_003'. ");
 note3.SetId("note_003");
-// Harus memunculkan pengecualian - Aspose.Pdf.Tagged.TaggedException : Elemen struktur dengan ID='note_002' sudah ada
+//Harus memunculkan pengecualian - Aspose.Pdf.Tagged.TaggedException : Elemen struktur dengan ID='note_002' sudah ada
 //note3.SetId("catatan_002");
 // Dokumen yang dihasilkan tidak sesuai dengan PDF/UA Jika ClearId() digunakan untuk Elemen Struktur Catatan
 //catatan3.ClearId();
@@ -148,7 +148,7 @@ A: Ya, Anda dapat menyesuaikan konten dan properti elemen struktur catatan denga
 
 #### T: Dapatkah saya menetapkan ID unik untuk elemen struktur catatan?
 
-A: Ya, Anda dapat menetapkan ID unik untuk elemen struktur catatan menggunakan`SetId` metode. Kode ini menunjukkan cara mengatur ID elemen catatan ke nilai yang unik.
+ A: Ya, Anda dapat menetapkan ID unik untuk elemen struktur catatan menggunakan`SetId` metode. Kode ini menunjukkan cara mengatur ID elemen catatan ke nilai yang unik.
 
 #### T: Apa yang terjadi jika saya mencoba menetapkan ID duplikat ke elemen struktur catatan?
 
@@ -156,7 +156,7 @@ A: Mencoba menetapkan ID duplikat ke elemen struktur catatan akan mengakibatkan 
 
 #### T: Bagaimana saya dapat memastikan kepatuhan PDF/UA saat membuat elemen struktur catatan?
 
- A: Kode yang diberikan dalam tutorial menunjukkan cara memvalidasi kepatuhan PDF/UA menggunakan`Validate` metode. Dengan memvalidasi dokumen terhadap standar PDF/UA, Anda dapat memastikan bahwa elemen struktur catatan yang ditambahkan mematuhi pedoman aksesibilitas.
+A: Kode yang diberikan dalam tutorial menunjukkan cara memvalidasi kepatuhan PDF/UA menggunakan`Validate` metode. Dengan memvalidasi dokumen terhadap standar PDF/UA, Anda dapat memastikan bahwa elemen struktur catatan yang ditambahkan mematuhi pedoman aksesibilitas.
 
 #### T: Dapatkah saya menggunakan pendekatan ini untuk menambahkan elemen struktur catatan ke dokumen PDF yang ada?
 

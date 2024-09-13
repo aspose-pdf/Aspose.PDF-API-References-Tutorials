@@ -7,7 +7,7 @@ type: docs
 weight: 20
 url: /pl/net/programming-with-tagged-pdf/add-structure-element-into-element/
 ---
-W tym samouczku przedstawimy Ci przewodnik krok po kroku, jak dodać element struktury do elementu w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Aspose.PDF to potężna biblioteka, która umożliwia programowe tworzenie, manipulowanie i konwertowanie dokumentów PDF. Korzystając z oznaczonych funkcji struktury treści Aspose.PDF, możesz utworzyć hierarchiczną strukturę w swoim dokumencie PDF.
+tym samouczku przedstawimy Ci przewodnik krok po kroku, jak dodać element struktury do elementu w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Aspose.PDF to potężna biblioteka, która umożliwia programowe tworzenie, manipulowanie i konwertowanie dokumentów PDF. Korzystając z oznaczonych funkcji struktury treści Aspose.PDF, możesz utworzyć hierarchiczną strukturę w swoim dokumencie PDF.
 
 ## Wymagania wstępne
 
@@ -22,7 +22,7 @@ Aby rozpocząć, utwórz nowy projekt w Visual Studio i dodaj odwołanie do bibl
 
 ## Krok 2: Zaimportuj niezbędne przestrzenie nazw
 
-W pliku kodu C# zaimportuj przestrzenie nazw wymagane do uzyskania dostępu do klas i metod udostępnianych przez Aspose.PDF:
+pliku kodu C# zaimportuj przestrzenie nazw wymagane do uzyskania dostępu do klas i metod udostępnianych przez Aspose.PDF:
 
 ```csharp
 using System;
@@ -114,7 +114,7 @@ Ten kod zapisuje dokument PDF ze strukturą elementów do określonego pliku.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
 string logFile = dataDir + "46144_log.xml";
-// Dokument tworzenia i uzyskiwania oznaczonych treści PDF
+//Dokument tworzenia i uzyskiwania oznaczonych treści PDF
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 // Ustawianie tytułu i języka natury dla dokumentu
@@ -209,7 +209,7 @@ A: Tworzenie hierarchicznej struktury w dokumencie PDF zwiększa jego dostępno�
 
 #### P: W jaki sposób mogę sprawdzić zgodność z PDF/UA po dodaniu elementów struktury?
 
- A: Kod podany w samouczku pokazuje, jak sprawdzić zgodność PDF/UA za pomocą`Validate` metoda. Walidując dokument względem standardu PDF/UA, możesz upewnić się, że dodane elementy struktury są zgodne z wytycznymi dostępności.
+A: Kod podany w samouczku pokazuje, jak sprawdzić zgodność PDF/UA za pomocą`Validate` metoda. Walidując dokument względem standardu PDF/UA, możesz upewnić się, że dodane elementy struktury są zgodne z wytycznymi dostępności.
 
 #### P: Czy mogę użyć tego podejścia, aby dodać elementy struktury do istniejącego dokumentu PDF?
 

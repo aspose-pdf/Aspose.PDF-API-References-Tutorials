@@ -135,7 +135,7 @@ Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at "
 
 ## 結論
 
-現在你就擁有了！透過 Aspose.PDF for .NET，在 PDF 中新增目錄不僅簡單，而且可以自訂。無論您需要建立簡單的導航連結還是複雜的結構，這個工具都能滿足您的需求。因此，下次您處理冗長的 PDF 時，請不要忘記添加目錄以實現專業的風格！
+現在你就得到它了！透過 Aspose.PDF for .NET，在 PDF 中新增目錄不僅簡單，而且可以自訂。無論您需要建立簡單的導航連結還是複雜的結構，這個工具都能滿足您的需求。因此，下次您處理冗長的 PDF 時，請不要忘記添加目錄以實現專業的風格！
 
 ## 常見問題解答
 
@@ -146,7 +146,7 @@ Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at "
 您可以透過調整來新增副標題`Heading`水平（例如，`Heading(2)`）建立分層目錄。
 
 ### 如果文件發生變化，是否可以自動更新目錄？  
-不，目錄不會自動更新。如果文件結構發生更改，您將需要重新建立它。
+不，目錄不會自動更新。如果文件結構發生變化，您需要重新建立它。
 
 ### 我可以將目錄條目連結到外部文件嗎？  
 是的，您可以使用超連結將目錄條目連結到外部 PDF 或 URL。

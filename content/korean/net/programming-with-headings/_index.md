@@ -13,4 +13,4 @@ description: .NET용 Aspose.PDF 튜토리얼은 제목을 사용하여 PDF 문�
 ## 튜토리얼
 | 제목 | 설명 |
 | --- | --- | 
-| [PDF 파일에 숫자 스타일 적용](./apply-number-style/) | Aspose.PDF for .NET을 사용하여 PDF 파일의 제목에 번호 매기기 스타일을 적용하는 방법을 알아보세요. 단계별 가이드. |   
+| [PDF 파일에 숫자 스타일 적용](./apply-number-style/) | 이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF의 제목에 다양한 숫자 스타일(로마 숫자, 알파벳)을 적용하는 방법을 알아보세요. |   

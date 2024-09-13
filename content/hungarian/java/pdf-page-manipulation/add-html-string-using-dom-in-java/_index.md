@@ -25,7 +25,7 @@ Document pdfDocument = new Document();
 ```
 
 ## 2. lépés: Adjon hozzá egy oldalt a dokumentumhoz
-Ezután hozzá kell adnia egy oldalt a PDF-dokumentumhoz, ahová a HTML-tartalmat be kívánja szúrni:
+Ezután hozzá kell adnia egy oldalt a PDF-dokumentumhoz, ahová be kívánja szúrni a HTML-tartalmat:
 
 ```java
 // Adjon hozzá egy oldalt a dokumentumhoz

@@ -2,135 +2,129 @@
 title: Zrušte vložení písem a optimalizujte soubory PDF
 linktitle: Zrušte vložení písem a optimalizujte soubory PDF
 second_title: Aspose.PDF pro .NET API Reference
-description: Naučte se používat Aspose.PDF pro .NET k získání Unembed Fonts a optimalizaci souborů PDF. Průvodce krok za krokem.
+description: V tomto podrobném návodu se dozvíte, jak zrušit vložení písem a optimalizovat soubory PDF pomocí Aspose.PDF for .NET.
 type: docs
 weight: 370
 url: /cs/net/programming-with-document/unembedfonts/
 ---
-Aspose.PDF for .NET je výkonná knihovna, která poskytuje širokou škálu funkcí pro práci s dokumenty PDF. Jednou z jeho funkcí je získání nevložených písem z dokumentu PDF. To může být užitečné, pokud potřebujete extrahovat písma z dokumentu PDF a použít je v jiných aplikacích.
+## Zavedení
 
-poskytneme průvodce krok za krokem, který vysvětlí následující zdrojový kód C# funkce get unembed fonts Aspose.PDF for .NET.
+digitálním věku jsou soubory PDF všudypřítomné. Ať už sdílíte zprávy, prezentace nebo elektronické knihy, formát Portable Document Format (PDF) je tou správnou volbou pro zachování integrity vašich dokumentů. Jak však vytváříme a sdílíme více souborů PDF, velikost souborů se může zvětšovat, takže odesílání nebo ukládání je těžkopádné. Zde vstupuje do hry Aspose.PDF for .NET, který nabízí výkonné nástroje pro optimalizaci vašich souborů PDF. V tomto tutoriálu se ponoříme do toho, jak zrušit vložení písem a optimalizovat soubory PDF pomocí Aspose.PDF pro .NET.
 
-## Krok 1: Nastavte cestu k adresáři dokumentů
+## Předpoklady
 
-Než začneme, musíme nastavit cestu k adresáři, kde se nachází náš PDF dokument. Tuto cestu uložíme do proměnné s názvem „dataDir“.
+Než se vrhneme na to, abychom mohli začít, ujistěte se, že máte vše, co potřebujete:
+
+1. Visual Studio: Ujistěte se, že máte na svém počítači nainstalované Visual Studio. Je to IDE, které budeme používat k psaní a spouštění našeho .NET kódu.
+2.  Aspose.PDF for .NET: Budete si muset stáhnout a nainstalovat knihovnu Aspose.PDF. Můžete to vzít z[odkaz ke stažení](https://releases.aspose.com/pdf/net/).
+3. Základní znalost C#: Znalost programování v C# vám pomůže porozumět úryvkům kódu, které budeme používat.
+4.  Soubor PDF: Připravte si soubor PDF, který chcete optimalizovat. Můžete použít jakýkoli soubor PDF, ale pro demonstraci jej budeme označovat jako`OptimizeDocument.pdf`.
+
+## Importujte balíčky
+
+Chcete-li začít, musíte do svého projektu C# importovat potřebné balíčky. Můžete to udělat takto:
+
+1. Otevřete projekt v sadě Visual Studio.
+2. Přidejte odkaz na Aspose.PDF: Klikněte pravým tlačítkem na svůj projekt v Průzkumníku řešení, vyberte „Spravovat balíčky NuGet“ a vyhledejte`Aspose.PDF`. Nainstalujte balíček.
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Nyní, když máme vše nastaveno, rozdělíme proces optimalizace do zvládnutelných kroků.
+
+## Krok 1: Nastavte adresář dokumentů
+
+Nejprve musíte definovat cestu k adresáři dokumentů. Zde budou uloženy vaše soubory PDF. Jak na to:
 
 ```csharp
 // Cesta k adresáři dokumentů.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Nahraďte "VÁŠ ADRESÁŘ DOKUMENTŮ" skutečnou cestou k adresáři, kde se nachází váš dokument PDF.
+ Nahradit`"YOUR DOCUMENT DIRECTORY"` se skutečnou cestou, kde se nachází váš soubor PDF. To je zásadní, protože program potřebuje vědět, kde najde PDF, které chcete optimalizovat.
 
 ## Krok 2: Otevřete dokument PDF
 
- Prvním krokem je načíst dokument PDF, který chcete provést, použijte`Document` třídy Aspose.PDF pro .NET. Následující fragment kódu ukazuje, jak načíst dokument PDF:
+Nyní, když máme nastavený adresář, je čas otevřít dokument PDF, který chceme optimalizovat. Zde je kód, jak to udělat:
 
 ```csharp
 // Otevřete dokument
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-## Krok 3: Nastavte možnost UnembedFonts
+ Tento řádek kódu vytvoří nový`Document` objekt, který představuje váš soubor PDF. Ujistěte se, že název souboru odpovídá názvu, který máte v adresáři.
 
- Chcete-li získat nevložená písma z dokumentu PDF, musíte nastavit`UnembedFonts` možnost`true` . Tato možnost je k dispozici v`OptimizationOptions` třída. Následující fragment kódu ukazuje, jak nastavit`UnembedFonts` volba:
+## Krok 3: Nastavte možnosti optimalizace
+
+Dále musíme specifikovat možnosti optimalizace. V tomto případě chceme zrušit vložení písem. Zde je návod, jak to nastavit:
 
 ```csharp
 // Nastavte možnost UnembedFonts
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
-	UnembedFonts = true
+    UnembedFonts = true
 };
 ```
+
+ Nastavením`UnembedFonts` na`true`, dáváme Aspose.PDF pokyn k optimalizaci PDF zrušením vkládání písem. To může výrazně snížit velikost souboru, zejména pokud PDF obsahuje mnoho vložených písem.
 
 ## Krok 4: Optimalizujte dokument PDF
 
- Po nastavení`UnembedFonts` můžete optimalizovat dokument PDF pomocí`OptimizeResources` metoda`Document` třída. Následující fragment kódu ukazuje, jak optimalizovat dokument PDF:
+S našimi nastavenými možnostmi je čas na optimalizaci dokumentu PDF. Zde je kód, jak to udělat:
 
 ```csharp
-// Optimalizujte dokument PDF pomocí OptimizationOptions
-pdfDocument.OptimizeResources(optimizeOptions);
-```
-
-## Krok 5: Uložte aktualizovaný dokument
-
- Jakmile je dokument PDF optimalizován, můžete aktualizovaný dokument uložit pomocí`Save` metoda`Document`třída. Následující fragment kódu ukazuje, jak uložit aktualizovaný dokument:
-
-```csharp
-// Uložit aktualizovaný dokument
-pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
-```
-
-## Krok 6: Získejte původní a zmenšenou velikost souboru
-
- Nakonec můžete získat původní a zmenšenou velikost souboru PDF dokumentu pomocí`FileInfo` třídy System.IO. Následující fragment kódu ukazuje, jak získat původní a zmenšenou velikost souboru:
-
-```csharp
-var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
-var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
-Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
-```
-
-### Příklad zdrojového kódu pro Get Unembed Fonts pomocí Aspose.PDF for .NET
-
-Zde je úplný ukázkový zdrojový kód pro získání nevložených písem z dokumentu PDF pomocí Aspose.PDF pro .NET:
-
-```csharp
-// Cesta k adresáři dokumentů.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Otevřete dokument
-Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// Nastavte možnost UnembedFonts
-var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-{
-	UnembedFonts = true
-};
 Console.WriteLine("Start");
 // Optimalizujte dokument PDF pomocí OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
+```
+
+Tento fragment kódu volá`OptimizeResources` metoda na`pdfDocument` objekt s použitím možností optimalizace, které jsme definovali dříve. V konzole se zobrazí zpráva oznamující, že proces optimalizace byl zahájen.
+
+## Krok 5: Uložte aktualizovaný dokument
+
+Po optimalizaci PDF musíme aktualizovaný dokument uložit. Jak na to:
+
+```csharp
 // Uložit aktualizovaný dokument
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Finished");
+```
+
+ Tento kód uloží optimalizované PDF jako`OptimizeDocument_out.pdf` ve stejném adresáři. Pokud chcete, můžete zvolit jiný název, ale jeho zachování pomáhá při identifikaci původní a optimalizované verze.
+
+## Krok 6: Porovnejte velikosti souborů
+
+Nakonec je vždy dobré zkontrolovat, kolik místa jste ušetřili. Zde je návod, jak porovnat původní a optimalizované velikosti souborů:
+
+```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
 var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```
+
+Tento kód načte velikosti souborů původních i optimalizovaných PDF a vytiskne je do konzoly. Je to uspokojující okamžik vidět, jak moc jste zmenšili velikost souboru!
 
 ## Závěr
 
-V tomto tutoriálu jsme si ukázali, jak používat Aspose.PDF pro .NET k získání nevložených písem z dokumentu PDF. Podle podrobného průvodce můžete tuto funkci snadno implementovat do svých aplikací C#. Zrušení vkládání písem může být výhodné, když potřebujete pracovat s extrahovanými písmy samostatně nebo zajistit konzistentní používání písem na různých platformách.
+tady to máte! Úspěšně jste odstranili vložená písma a optimalizovali soubor PDF pomocí Aspose.PDF pro .NET. Tento proces nejen pomáhá zmenšit velikost souborů, ale také zvyšuje výkon vašich dokumentů PDF. Ať už sdílíte soubory e-mailem nebo je ukládáte do cloudu, menší velikost souboru může znamenat velký rozdíl.
 
 ## FAQ
 
-#### Otázka: Jaký je účel zrušení vkládání písem z dokumentu PDF?
+### Co je Aspose.PDF pro .NET?
+Aspose.PDF for .NET je výkonná knihovna, která umožňuje vývojářům vytvářet, manipulovat a optimalizovat dokumenty PDF programově.
 
-Odpověď: Zrušení vložení písem z dokumentu PDF umožňuje extrahovat vložená písma a použít je v jiných aplikacích. To může být užitečné pro zajištění konzistentního vykreslování písem a zachování vizuálního vzhledu dokumentu.
+### Mohu používat Aspose.PDF zdarma?
+ Ano, Aspose nabízí bezplatnou zkušební verzi. Můžete si jej stáhnout z[zde](https://releases.aspose.com/).
 
-#### Otázka: Jak mohu zadat cestu k adresáři dokumentů v kódu C#?
+### Jak získám podporu pro Aspose.PDF?
+ Podporu můžete získat prostřednictvím[Aspose fórum](https://forum.aspose.com/c/pdf/10).
 
- A: Chcete-li zadat cestu k adresáři dokumentů, nahraďte`"YOUR DOCUMENT DIRECTORY"` v kódu se skutečnou cestou k adresáři, kde se nachází váš dokument PDF.
+### Jaké typy optimalizací mohu provádět na souborech PDF?
+Můžete zrušit vložení písem, komprimovat obrázky, odstranit nepoužívané objekty a další pro optimalizaci souborů PDF.
 
-####  Q: Co dělá`UnembedFonts` option do, and where is it set?
-
- A:`UnembedFonts` možnost, dostupná v`OptimizationOptions` třídy, povolí nebo zakáže zrušení vkládání písem z dokumentu PDF. Chcete-li tuto možnost nastavit na`true`, použijte následující kód:
-
-```csharp
-var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-{
-	UnembedFonts = true
-};
-```
-
-#### Otázka: Mohu vrátit změny provedené během procesu optimalizace?
-
-Odpověď: Aspose.PDF for .NET neprovádí trvalé změny původního dokumentu PDF během optimalizace. Proces optimalizace se provádí na kopii dokumentu, přičemž originál zůstává nedotčen.
-
-#### Otázka: Jak mohu po optimalizaci zkontrolovat původní a zmenšenou velikost souboru?
-
- A: Můžete použít`FileInfo` třídy`System.IO` získat původní a zmenšenou velikost souboru. Zde je příklad fragmentu kódu, jak toho dosáhnout:
-
-```csharp
-var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
-var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
-Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
-```
+### Kde si mohu koupit Aspose.PDF pro .NET?
+ Licenci si můžete zakoupit od[Aspose nákupní stránku](https://purchase.aspose.com/buy).

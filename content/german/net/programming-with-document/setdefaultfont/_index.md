@@ -2,84 +2,128 @@
 title: Standardschriftart in PDF-Datei festlegen
 linktitle: Standardschriftart in PDF-Datei festlegen
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie in dieser Schritt-für-Schritt-Anleitung, wie Sie mit Aspose.PDF für .NET die Standardschriftart in einer PDF-Datei festlegen.
+description: Erfahren Sie in dieser Schritt-für-Schritt-Anleitung, wie Sie mit Aspose.PDF für .NET eine Standardschriftart in PDF-Dateien festlegen. Perfekt für Entwickler, die PDF-Dokumente verbessern möchten.
 type: docs
 weight: 280
 url: /de/net/programming-with-document/setdefaultfont/
 ---
-Wenn Sie mit PDF-Dokumenten in .NET arbeiten, kann es vorkommen, dass die im PDF verwendete Schriftart auf dem System, auf dem das Dokument angezeigt oder gedruckt wird, nicht verfügbar ist. Dies kann dazu führen, dass der Text falsch oder gar nicht angezeigt wird. Aspose.PDF für .NET bietet eine Lösung für dieses Problem, indem Sie eine Standardschriftart für das Dokument festlegen können. In diesem Beispiel wird gezeigt, wie Sie die Standardschriftart mit Aspose.PDF für .NET festlegen.
+## Einführung
 
-## Schritt 1: Pfad zum Dokumentverzeichnis festlegen
+Haben Sie schon einmal ein PDF-Dokument geöffnet und festgestellt, dass die Schriftarten fehlen oder nicht richtig angezeigt werden? Das kann frustrierend sein, oder? Aber keine Angst! In diesem Tutorial erfahren Sie, wie Sie mit Aspose.PDF für .NET eine Standardschriftart in einer PDF-Datei festlegen. Mit dieser leistungsstarken Bibliothek können Sie PDF-Dokumente ganz einfach bearbeiten, und das Festlegen einer Standardschriftart ist nur eine der vielen Funktionen, die sie bietet. Also schnappen Sie sich Ihren Programmierhut und legen Sie los!
 
-Wir müssen den Pfad zum Verzeichnis festlegen, in dem sich unser PDF-Dokument befindet. Wir speichern diesen Pfad in einer Variablen namens „dataDir“.
+## Voraussetzungen
+
+Bevor wir uns in den Code stürzen, müssen Sie ein paar Dinge vorbereitet haben:
+
+1. Visual Studio: Stellen Sie sicher, dass Visual Studio auf Ihrem Computer installiert ist. Es ist die beste IDE für die .NET-Entwicklung.
+2.  Aspose.PDF für .NET: Sie müssen die Aspose.PDF-Bibliothek herunterladen und installieren. Sie finden sie[Hier](https://releases.aspose.com/pdf/net/).
+3. Grundkenntnisse in C#: Ein wenig Vertrautheit mit der C#-Programmierung trägt wesentlich zum Verständnis der Beispiele bei, die wir behandeln.
+
+## Pakete importieren
+
+Um zu beginnen, müssen Sie die erforderlichen Pakete in Ihr C#-Projekt importieren. So können Sie das tun:
+
+1. Öffnen Sie Ihr Visual Studio-Projekt.
+2. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf Ihr Projekt und wählen Sie „NuGet-Pakete verwalten“ aus.
+3.  Suchen nach`Aspose.PDF` und installieren Sie die neueste Version.
+
+Sobald Sie das Paket installiert haben, können Sie mit der Codierung beginnen!
+
+## Schritt 1: Richten Sie Ihr Projekt ein
+
+### Neues Projekt erstellen
+
+Als Erstes erstellen wir ein neues C#-Projekt in Visual Studio:
+
+- Öffnen Sie Visual Studio und wählen Sie „Neues Projekt erstellen“ aus.
+- Wählen Sie „Konsolen-App (.NET Core)“ und klicken Sie auf „Weiter“.
+-  Geben Sie Ihrem Projekt einen Namen (z. B.`AsposePdfExample`) und klicken Sie auf „Erstellen“.
+
+### Using-Direktiven hinzufügen
+
+ Fügen wir nun die notwendigen using-Direktiven oben in Ihrem`Program.cs` Datei:
 
 ```csharp
-// Der Pfad zum Dokumentverzeichnis.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System.IO;
 ```
+
+Diese Anweisungen ermöglichen Ihnen den Zugriff auf die Klassen und Methoden von Aspose.PDF.
 
 ## Schritt 2: Laden Sie das PDF-Dokument
 
- Wir beginnen mit dem Laden eines vorhandenen PDF-Dokuments, in dem Schriftarten fehlen. In diesem Beispiel gehen wir davon aus, dass sich das PDF-Dokument in dem durch den`dataDir` Variable.
+### Geben Sie den Dokumentpfad an
+
+Als Nächstes müssen Sie den Pfad zum PDF-Dokument angeben, mit dem Sie arbeiten möchten. So geht's:
 
 ```csharp
-string documentName = dataDir + "input.pdf";
-using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
-using (Document document = new Document(fs))
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Ersetzen Sie es durch Ihr aktuelles Verzeichnis
+string documentName = Path.Combine(dataDir, "input.pdf");
+```
+
+ Ersetzen Sie unbedingt`"YOUR DOCUMENT DIRECTORY"` durch den tatsächlichen Pfad, in dem sich Ihre PDF-Datei befindet.
+
+### Laden Sie das Dokument
+
+Laden wir nun das vorhandene PDF-Dokument:
+
+```csharp
+using (FileStream fs = new FileStream(documentName, FileMode.Open))
 {
-    // Code kommt hier rein
+    Document document = new Document(fs);
 }
 ```
 
-## Schritt 3: Standardschriftart festlegen
+ Dieser Codeausschnitt öffnet die PDF-Datei und erstellt eine`Document` Objekt, das Sie manipulieren können.
 
- Als nächstes legen wir die Standardschriftart für das PDF-Dokument fest. Dazu verwenden wir`PdfSaveOptions`Klasse. In diesem Beispiel legen wir die Standardschriftart auf „Arial“ fest.
+## Schritt 3: Legen Sie die Standardschriftart fest
+
+### PdfSaveOptions erstellen
+
+ Jetzt kommt der spannende Teil! Sie müssen eine Instanz von`PdfSaveOptions` So legen Sie die Standardschriftart fest:
 
 ```csharp
 PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
+```
+
+### Geben Sie den Standardschriftnamen an
+
+Als Nächstes legen Sie den Standardschriftnamen fest. Für dieses Beispiel verwenden wir „Arial“:
+
+```csharp
 pdfSaveOptions.DefaultFontName = "Arial";
 ```
 
-## Schritt 4: Speichern Sie das aktualisierte Dokument
+Diese Zeile weist Aspose.PDF an, Arial als Standardschriftart für jeden Text zu verwenden, für den keine Schriftart angegeben ist.
 
-Zum Schluss speichern wir das aktualisierte Dokument in einer neuen Datei. In diesem Beispiel speichern wir das aktualisierte Dokument in einer Datei namens „output_out.pdf“ im selben Verzeichnis wie die Eingabedatei.
+## Schritt 4: Speichern Sie das Dokument
 
-```csharp
-document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
-```
-
-### Beispiel-Quellcode zum Festlegen der Standardschriftart mit Aspose.PDF für .NET
+Abschließend ist es an der Zeit, das geänderte PDF-Dokument mit der neuen Standardschriftart zu speichern:
 
 ```csharp
-// Der Pfad zum Dokumentverzeichnis.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Laden Sie ein vorhandenes PDF-Dokument mit fehlender Schriftart
-string documentName = dataDir + "input.pdf";
-string newName = "Arial";
-using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
-using (Document document = new Document(fs))
-{
-	PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
-	// Standard-Schriftartnamen angeben
-	pdfSaveOptions.DefaultFontName = newName;
-	document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
-}
+document.Save(Path.Combine(dataDir, "output_out.pdf"), pdfSaveOptions);
 ```
+
+ Diese Zeile speichert das Dokument als`output_out.pdf` im angegebenen Verzeichnis.
 
 ## Abschluss
 
-Das Festlegen einer Standardschriftart in PDF-Dokumenten mit Aspose.PDF für .NET ist eine einfache und effektive Möglichkeit, um sicherzustellen, dass der Text korrekt angezeigt wird, auch wenn die Originalschriftarten nicht verfügbar sind. Indem Entwickler der Schritt-für-Schritt-Anleitung folgen und den bereitgestellten C#-Quellcode verwenden, können sie problemlos die Standardschriftart festlegen und PDFs erstellen, die in verschiedenen Umgebungen ein konsistentes und zuverlässiges Anzeigeerlebnis bieten. Diese Funktion ist besonders in Szenarien nützlich, in denen die PDFs auf verschiedenen Systemen angezeigt oder gedruckt werden, auf denen möglicherweise unterschiedliche Schriftarten installiert sind.
+Und da haben Sie es! Sie haben mit Aspose.PDF für .NET erfolgreich eine Standardschriftart in einer PDF-Datei festgelegt. Mit dieser einfachen, aber leistungsstarken Funktion können Sie sicherstellen, dass Ihre Dokumente genau so aussehen, wie Sie es möchten, selbst wenn Schriftarten fehlen. Wenn Sie also das nächste Mal auf eine PDF-Datei mit Schriftartproblemen stoßen, wissen Sie genau, was zu tun ist!
 
-### FAQs zum Festlegen der Standardschriftart in einer PDF-Datei
+## Häufig gestellte Fragen
 
-#### F: Warum ist es wichtig, in PDF-Dokumenten eine Standardschriftart festzulegen?
+### Was ist Aspose.PDF für .NET?
+Aspose.PDF für .NET ist eine Bibliothek, die es Entwicklern ermöglicht, PDF-Dokumente programmgesteuert zu erstellen, zu bearbeiten und zu konvertieren.
 
-A: Das Festlegen einer Standardschriftart in PDF-Dokumenten ist wichtig, da dadurch sichergestellt wird, dass der Text korrekt angezeigt wird, auch wenn die Originalschriftarten auf dem System, auf dem das PDF angezeigt oder gedruckt wird, nicht verfügbar sind. Dadurch werden Probleme wie fehlender oder verstümmelter Text vermieden und ein konsistentes und zuverlässiges Anzeigeerlebnis gewährleistet.
+### Kann ich außer Arial auch andere Schriftarten verwenden?
+Ja, Sie können jede auf Ihrem System installierte Schriftart als Standardschriftart festlegen.
 
-#### F: Kann ich mit Aspose.PDF für .NET eine beliebige Schriftart als Standardschriftart auswählen?
+### Ist die Nutzung von Aspose.PDF kostenlos?
+Aspose.PDF bietet eine kostenlose Testversion, für die volle Funktionalität müssen Sie jedoch eine Lizenz erwerben.
 
- A: Ja, Sie können mit Aspose.PDF für .NET jede auf dem System verfügbare Schriftart als Standardschriftart auswählen. Geben Sie einfach den Namen der Schriftart im`DefaultFontName` Eigentum der`PdfSaveOptions` Klasse.
+### Wo finde ich weitere Dokumentation?
+ Eine ausführliche Dokumentation finden Sie[Hier](https://reference.aspose.com/pdf/net/).
 
-#### F: Was passiert, wenn die angegebene Standardschriftart auf dem System nicht verfügbar ist?
-
-A: Wenn die angegebene Standardschriftart auf dem System nicht verfügbar ist, verwendet der PDF-Viewer eine Ersatzschriftart zur Anzeige des Textes. Es ist ratsam, eine allgemein verfügbare Schriftart wie Arial oder Times New Roman zu wählen, um die Kompatibilität zwischen verschiedenen Systemen sicherzustellen.
+### Wie erhalte ich Support für Aspose.PDF?
+ Sie können Unterstützung über das Aspose-Forum erhalten[Hier](https://forum.aspose.com/c/pdf/10).

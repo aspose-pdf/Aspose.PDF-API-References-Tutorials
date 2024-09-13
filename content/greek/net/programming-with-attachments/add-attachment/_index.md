@@ -115,7 +115,7 @@ Console.WriteLine("\nSample text file attached successfully.\nFile saved at " + 
 Ναι, μπορείτε να προσθέσετε πολλά αρχεία στη συλλογή συνημμένων του PDF.
 
 ### Πού μπορώ να βρω περισσότερη τεκμηρίωση στο Aspose.PDF;
- Μπορείτε να βρείτε ολοκληρωμένη τεκμηρίωση για το[Aspose website](https://reference.aspose.com/pdf/net/).
+ Μπορείτε να βρείτε ολοκληρωμένη τεκμηρίωση για το[Aspose ιστότοπο](https://reference.aspose.com/pdf/net/).
 
 ### Πώς μπορώ να λάβω υποστήριξη για το Aspose.PDF;
  Μπορείτε να λάβετε υποστήριξη μεταβαίνοντας στο[Aspose φόρουμ](https://forum.aspose.com/c/pdf/10).

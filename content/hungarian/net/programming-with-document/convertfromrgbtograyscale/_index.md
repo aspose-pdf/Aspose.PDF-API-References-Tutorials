@@ -100,7 +100,7 @@ Gratulálok! Most tanulta meg, hogyan alakíthat át egy PDF-fájlt RGB-ből sz�
 
 ## GYIK
 
-### Visszaállíthatok egy szürkeárnyalatos PDF-fájlt RGB-re?
+### Visszaállíthatok egy szürkeárnyalatos PDF-et RGB-re?
 
 Nem, sajnos, ha egy PDF-fájlt szürkeárnyalatossá alakítanak, lehetetlen visszakeresni az eredeti színeket. Meg kell őriznie az eredeti RGB PDF másolatát.
 

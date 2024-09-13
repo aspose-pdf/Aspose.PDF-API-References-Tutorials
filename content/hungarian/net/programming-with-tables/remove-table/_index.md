@@ -75,7 +75,7 @@ TableAbsorber absorber = new TableAbsorber();
 // Látogassa meg az első oldalt abszorberrel
 absorber.Visit(pdfDocument.Pages[1]);
 
-// Szerezd meg az első táblázatot az oldalon
+// Szerezze meg az első táblázatot az oldalon
 AbsorbedTable table = absorber.TableList[0];
 
 // Távolítsa el az asztalt
@@ -96,7 +96,7 @@ Gratulálok ! Most megtanulta, hogyan távolíthat el táblázatot egy PDF-dokum
 
 #### K: Mi történik, ha a megadott oldal nem tartalmaz táblázatokat?
 
- V: Ha a megadott oldal nem tartalmaz táblákat, a kód egy`IndexOutOfRangeException` amikor megpróbál hozzáférni`absorb.TableList[0]` . A probléma elkerülése érdekében ellenőriznie kell, hogy`absorb.TableList`tartalmaz bármilyen elemet, mielőtt hozzáférne a táblázathoz.
+ V: Ha a megadott oldal nem tartalmaz táblákat, a kód egy`IndexOutOfRangeException` amikor megpróbál hozzáférni`absorb.TableList[0]` . A probléma elkerülése érdekében ellenőriznie kell, hogy`absorb.TableList` tartalmaz bármilyen elemet, mielőtt hozzáférne a táblázathoz.
 
 #### K: Eltávolíthatok táblázatokat az első oldaltól eltérő oldalakról?
 

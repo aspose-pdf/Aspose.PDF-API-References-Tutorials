@@ -2,7 +2,7 @@
 title: Crea PDF con immagine taggata in Java
 linktitle: Crea PDF con immagine taggata in Java
 second_title: API di elaborazione PDF Java Aspose.PDF
-description: Scopri come creare PDF di immagini taggate accessibili in Java usando Aspose.PDF per Java. Segui la nostra guida passo dopo passo per una generazione di PDF senza problemi.
+description: Scopri come creare PDF di immagini taggate accessibili in Java usando Aspose.PDF per Java. Segui la nostra guida passo passo per una generazione di PDF senza problemi.
 type: docs
 weight: 13
 url: /it/java/pdf-structure-elements/create-pdf-with-tagged-image-in-java/

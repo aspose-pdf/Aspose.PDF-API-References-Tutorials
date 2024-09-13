@@ -126,7 +126,7 @@ margin.Bottom = 5f;
 // Tetapkan bantalan sel default ke objek MarginInfo
 tab1.DefaultCellPadding = margin;
 
-// Buat baris dalam tabel dan kemudian sel dalam baris
+//Buat baris dalam tabel dan kemudian sel dalam baris
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

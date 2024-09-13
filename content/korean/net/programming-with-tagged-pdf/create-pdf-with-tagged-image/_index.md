@@ -112,7 +112,7 @@ A: 네, 태그가 지정된 이미지에 JPEG, PNG, GIF 등 다양한 이미지 
 
  A: 대체 텍스트는 시각 장애인 사용자를 위해 화면 판독기에서 소리 내어 읽어주는 이미지의 텍스트 설명을 제공합니다. 제공된 코드에서 대체 텍스트는 다음을 사용하여 설정됩니다.`AlternativeText` 의 속성`IllustrationElement` 태그된 이미지를 나타냅니다.
 
-####  Q: 어떻게`SetTitle` method contribute to the PDF document's tagged image?
+#### Q: 어떻게`SetTitle` method contribute to the PDF document's tagged image?
 
  A: 그`SetTitle` 방법은 PDF 문서의 태그가 지정된 콘텐츠의 제목을 설정하여 태그가 지정된 이미지에 대한 추가 컨텍스트를 제공합니다. 이 제목은 태그가 지정된 콘텐츠의 목적이나 주제를 식별하는 데 도움이 될 수 있습니다.
 
@@ -126,4 +126,4 @@ A: Aspose.PDF의 태그가 지정된 콘텐츠 구조 기능을 사용하고 대
 
 #### 질문: 비슷한 기술을 사용해 동일한 PDF 문서에 여러 개의 태그가 지정된 이미지를 추가하는 것이 가능할까요?
 
- A: 네, 유사한 기술을 사용하여 동일한 PDF 문서에 태그가 지정된 여러 이미지를 추가할 수 있습니다. 추가`IllustrationElement` 태그가 지정된 각 이미지에 대한 인스턴스를 만들고 필요에 따라 속성을 사용자 정의합니다.
+A: 네, 유사한 기술을 사용하여 동일한 PDF 문서에 태그가 지정된 여러 이미지를 추가할 수 있습니다. 추가`IllustrationElement` 태그가 지정된 각 이미지에 대한 인스턴스를 만들고 필요에 따라 속성을 사용자 정의합니다.

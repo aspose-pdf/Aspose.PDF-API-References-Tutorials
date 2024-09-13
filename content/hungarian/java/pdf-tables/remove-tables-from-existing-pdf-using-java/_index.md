@@ -41,7 +41,7 @@ Ezután be kell töltenie azt a PDF-dokumentumot, amelyből el szeretné távol�
 Document pdfDocument = new Document("path/to/your/document.pdf");
 ```
 
-## 4. lépés: A táblázatok azonosítása és eltávolítása
+## 4. lépés: Táblázatok azonosítása és eltávolítása
 
 Most azonosítsuk és távolítsuk el a táblázatokat a betöltött PDF dokumentumból. Ezt az oldalak iterációjával és a táblázatelemek azonosításával érheti el.
 

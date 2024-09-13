@@ -88,7 +88,7 @@ page.Accept(textFragmentAbsorber);
 
 ## الخطوة 9: استرداد أجزاء النص المستخرجة
 
-احصل على أجزاء النص المستخرجة باستخدام`TextFragments` ممتلكات`TextFragmentAbsorber` هدف:
+ احصل على أجزاء النص المستخرجة باستخدام`TextFragments` ممتلكات`TextFragmentAbsorber` هدف:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

@@ -35,7 +35,7 @@ We hebben een nieuw document gemaakt en de documenttitel en taal ingesteld.
 In deze stap verkrijgen we het rootstructuurelement voor ons document.
 
 ```csharp
-//Verkrijg het wortelstructuurelement
+// Verkrijg het wortelstructuurelement
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
@@ -293,7 +293,7 @@ A: Voordat u begint, moet u ervoor zorgen dat u Aspose.PDF voor .NET hebt geïns
 
 #### V: Hoe maak ik een nieuw PDF-document met Aspose.PDF voor .NET?
 
-A: Om een nieuw PDF-document te maken, moet u een`Document` object uit de Aspose.PDF-bibliotheek. De meegeleverde C#-broncode laat zien hoe u een document maakt en de titel en taal instelt.
+ A: Om een nieuw PDF-document te maken, moet u een`Document` object uit de Aspose.PDF-bibliotheek. De meegeleverde C#-broncode laat zien hoe u een document maakt en de titel en taal instelt.
 
 #### V: Wat is de betekenis van het rootstructuurelement in een PDF-document?
 

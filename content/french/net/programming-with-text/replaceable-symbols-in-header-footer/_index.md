@@ -35,7 +35,7 @@ Page page = doc.Pages.Add();
 
 ## Étape 3 : Définir les marges
 
-Nous définissons les marges de la page en utilisant le`MarginInfo` classe. Ajustez les valeurs de marge en fonction de vos besoins.
+ Nous définissons les marges de la page en utilisant le`MarginInfo` classe. Ajustez les valeurs de marge en fonction de vos besoins.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -110,7 +110,7 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-// Affecter l'instance marginInfo à la propriété Margin de sec1.PageInfo
+//Affecter l'instance marginInfo à la propriété Margin de sec1.PageInfo
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
@@ -148,7 +148,7 @@ Table tab2 = new Table();
 hfFoot.Paragraphs.Add(tab2);
 // Définir avec les largeurs de colonnes du tableau
 tab2.ColumnWidths = "165 172 165";
-// Créez des lignes dans le tableau, puis des cellules dans les lignes
+//Créez des lignes dans le tableau, puis des cellules dans les lignes
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
@@ -173,7 +173,7 @@ table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
 // Définir la bordure du tableau à l’aide d’un autre objet BorderInfo personnalisé
 table.Border = new BorderInfo(BorderSide.All, 1f);
 table.RepeatingRowsCount = 1;
-// Créez des lignes dans le tableau, puis des cellules dans les lignes
+//Créez des lignes dans le tableau, puis des cellules dans les lignes
 Row row1 = table.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

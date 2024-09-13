@@ -145,7 +145,7 @@ row1.Cells.Add();
 row1.Cells[1].Paragraphs.Add(TitleText);
 // Imposta l'allineamento verticale del contenuto della riga come In alto
 row1.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-// Crea righe nella tabella e poi celle nelle righe
+//Crea righe nella tabella e poi celle nelle righe
 Aspose.Pdf.Row SecondRow = table1.Rows.Add();
 SecondRow.Cells.Add();
 // Imposta il valore dell'intervallo di riga per la seconda riga su 2

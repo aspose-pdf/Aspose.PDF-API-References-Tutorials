@@ -2,104 +2,47 @@
 title: Aplicar estilo numérico em arquivo PDF
 linktitle: Aplicar estilo numérico em arquivo PDF
 second_title: Referência da API do Aspose.PDF para .NET
-description: Aprenda como aplicar um estilo de numeração a títulos em arquivo PDF usando Aspose.PDF para .NET. Guia passo a passo.
+description: Aprenda a aplicar diferentes estilos numéricos (numerais romanos, alfabéticos) a títulos em um PDF usando o Aspose.PDF para .NET com este guia passo a passo.
 type: docs
 weight: 10
 url: /pt/net/programming-with-headings/apply-number-style/
 ---
-Neste tutorial, mostraremos passo a passo o seguinte código-fonte em C# para aplicar estilo de numeração em arquivo PDF usando Aspose.PDF para .NET.
+## Introdução
 
-Certifique-se de ter instalado a biblioteca Aspose.PDF e configurado seu ambiente de desenvolvimento antes de começar. Também tenha conhecimento básico de programação C#.
+Já se viu precisando adicionar listas lindamente numeradas aos seus documentos PDF? Não importa se você está formatando documentos legais, relatórios ou apresentações, estilos de numeração adequados são essenciais para organizar informações. Com o Aspose.PDF para .NET, você pode aplicar vários estilos de numeração aos títulos do seu arquivo PDF, criando documentos bem estruturados e profissionais. 
 
-### Etapa 1: Configuração do diretório de documentos
+## Pré-requisitos
 
-No código-fonte fornecido, você precisa especificar o diretório onde deseja salvar o arquivo PDF gerado. Altere a variável "dataDir" para o diretório desejado.
+Antes de mergulhar na codificação, vamos ver o que você precisa:
+
+1. Aspose.PDF para .NET: Baixe a versão mais recente do Aspose.PDF em[aqui](https://releases.aspose.com/pdf/net/).
+2. Ambiente de desenvolvimento: certifique-se de ter o Visual Studio ou qualquer outro IDE compatível com .NET.
+3. .NET Framework: certifique-se de ter o .NET Framework 4.0 ou superior instalado.
+4.  Licença: Você pode usar uma licença temporária de[aqui](https://purchase.aspose.com/temporary-license/) ou explorar o[teste gratuito](https://releases.aspose.com/) opções.
+
+## Pacotes de importação
+
+Para começar, certifique-se de ter os seguintes namespaces importados em seu projeto:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-### Etapa 2: Criando o documento PDF
+## Etapa 1: Configurando o documento
 
-Criamos um novo documento PDF com dimensões e margens especificadas.
+Vamos começar criando um novo documento PDF e configurando suas configurações de página. Definiremos o tamanho da página e as margens para controlar o layout do nosso conteúdo.
 
-```csharp
-Document pdfDoc = new Document();
-pdfDoc.PageInfo.Width = 612.0;
-pdfDoc.PageInfo.Height = 792.0;
-pdfDoc.PageInfo.Margin = new Aspose.Pdf.MarginInfo();
-pdfDoc.PageInfo.Margin.Left = 72;
-pdfDoc.PageInfo.Margin.Right = 72;
-pdfDoc.PageInfo.Margin.Top = 72;
-pdfDoc.PageInfo.Margin.Bottom = 72;
-```
-
-### Etapa 3: Criando uma página e um contêiner flutuante
-
-Adicionamos uma página ao documento e criamos um contêiner flutuante para organizar o conteúdo.
+Explicação: Nesta etapa, estamos configurando a estrutura básica do PDF, o que inclui definir o tamanho da página, a altura e as margens para uma formatação consistente.
 
 ```csharp
-Aspose.Pdf.Page pdfPage = pdfDoc.Pages.Add();
-pdfPage.PageInfo.Width = 612.0;
-pdfPage.PageInfo.Height = 792.0;
-pdfPage.PageInfo.Margin = new Aspose.Pdf.MarginInfo();
-pdfPage.PageInfo.Margin.Left = 72;
-pdfPage.PageInfo.Margin.Right = 72;
-pdfPage.PageInfo.Margin.Top = 72;
-pdfPage.PageInfo.Margin.Bottom = 72;
-Aspose.Pdf.FloatingBox floatBox = new Aspose.Pdf.FloatingBox();
-floatBox.Margin = pdfPage.PageInfo.Margin;
-pdfPage.Paragraphs.Add(floatBox);
-```
-
-### Etapa 4: adicione títulos com numeração
-
-Criamos cabeçalhos com numerações especificadas e os adicionamos ao contêiner flutuante.
-
-```csharp
-Aspose.Pdf.Heading heading = new Aspose.Pdf.Heading(1);
-heading. IsInList = true;
-heading. StartNumber = 1;
-heading.Text = "List 1";
-heading.Style = NumberingStyle.NumeralsRomanLowercase;
-heading. IsAutoSequence = true;
-floatBox.Paragraphs.Add(heading);
-
-Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
-heading2.IsInList = true;
-heading2.StartNumber = 13;
-heading2.Text = "Listing 2";
-heading2.Style = NumberingStyle.NumeralsRomanLowercase;
-heading2.IsAutoSequence = true;
-floatBox.Paragraphs.Add(heading2);
-
-Aspose.Pdf.Heading heading3 = new Aspose.Pdf.Heading(2);
-heading3.IsInList = true;
-heading3.StartNumber = 1;
-heading3.Text = "The value, at the effective date of the plan, of the assets to be distributed under the plan
-
-";
-heading3.Style = NumberingStyle.LettersLowercase;
-heading3.IsAutoSequence = true;
-floatBox.Paragraphs.Add(heading3);
-```
-
-### Etapa 5: Salvando o documento PDF
-
-Salvamos o documento PDF gerado no diretório especificado.
-
-```csharp
-dataDir = dataDir + "ApplyNumberStyle_out.pdf";
-pdfDoc.Save(dataDir);
-Console.WriteLine("\nNumbering style successfully applied to headers.\nFile saved as: " + dataDir);
-```
-
-### Código-fonte de exemplo para Aplicar estilo numérico usando Aspose.PDF para .NET 
-```csharp
-
 // O caminho para o diretório de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDoc = new Document();
+
+// Definir dimensões e margens da página
 pdfDoc.PageInfo.Width = 612.0;
 pdfDoc.PageInfo.Height = 792.0;
 pdfDoc.PageInfo.Margin = new Aspose.Pdf.MarginInfo();
@@ -107,6 +50,18 @@ pdfDoc.PageInfo.Margin.Left = 72;
 pdfDoc.PageInfo.Margin.Right = 72;
 pdfDoc.PageInfo.Margin.Top = 72;
 pdfDoc.PageInfo.Margin.Bottom = 72;
+```
+
+Ao fazer isso, seu documento terá um tamanho de página padrão, equivalente a uma página de 8,5 x 11 polegadas, e uma margem de 72 pontos (ou 1 polegada) em todos os lados.
+
+## Etapa 2: Adicionar uma página ao PDF
+
+Em seguida, adicionaremos uma nova página ao documento PDF onde aplicaremos posteriormente os estilos de numeração.
+
+Explicação: Todo PDF requer páginas! Esta etapa adiciona uma página em branco ao PDF e define suas margens para corresponder às configurações de nível de documento.
+
+```csharp
+// Adicionar uma nova página ao documento PDF
 Aspose.Pdf.Page pdfPage = pdfDoc.Pages.Add();
 pdfPage.PageInfo.Width = 612.0;
 pdfPage.PageInfo.Height = 792.0;
@@ -115,11 +70,29 @@ pdfPage.PageInfo.Margin.Left = 72;
 pdfPage.PageInfo.Margin.Right = 72;
 pdfPage.PageInfo.Margin.Top = 72;
 pdfPage.PageInfo.Margin.Bottom = 72;
+```
+
+## Etapa 3: Crie uma caixa flutuante
+
+Um FloatingBox permite que você coloque conteúdo (como texto ou títulos) dentro de uma caixa que se comporta independentemente do fluxo da página. Isso é útil quando você quer controle completo sobre o layout do seu conteúdo.
+
+Explicação: Aqui, estamos configurando um FloatingBox para conter os títulos que terão estilos numéricos aplicados.
+
+```csharp
+// Crie um FloatingBox para conteúdo estruturado
 Aspose.Pdf.FloatingBox floatBox = new Aspose.Pdf.FloatingBox();
 floatBox.Margin = pdfPage.PageInfo.Margin;
 pdfPage.Paragraphs.Add(floatBox);
-TextFragment textFragment = new TextFragment();
-TextSegment segment = new TextSegment();
+```
+
+## Etapa 4: adicione o primeiro título com algarismos romanos
+
+Agora vem a parte emocionante! Vamos adicionar o primeiro título com numeração em algarismos romanos minúsculos.
+
+Explicação: Estamos aplicando o estilo NumberingStyle.NumeralsRomanLowercase ao título, que exibirá a numeração em algarismos romanos (i, ii, iii, etc.).
+
+```csharp
+// Crie o primeiro título com algarismos romanos
 Aspose.Pdf.Heading heading = new Aspose.Pdf.Heading(1);
 heading.IsInList = true;
 heading.StartNumber = 1;
@@ -127,6 +100,16 @@ heading.Text = "List 1";
 heading.Style = NumberingStyle.NumeralsRomanLowercase;
 heading.IsAutoSequence = true;
 floatBox.Paragraphs.Add(heading);
+```
+
+## Etapa 5: adicione um segundo título de numeral romano
+
+Para fins de demonstração, vamos adicionar um segundo título de algarismo romano, mas desta vez começaremos com 13.
+
+Explicação: A propriedade StartNumber permite que você comece a numerar a partir de um número personalizado — neste caso, estamos começando em 13.
+
+```csharp
+// Crie um segundo título começando no numeral romano 13
 Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
 heading2.IsInList = true;
 heading2.StartNumber = 13;
@@ -134,95 +117,55 @@ heading2.Text = "List 2";
 heading2.Style = NumberingStyle.NumeralsRomanLowercase;
 heading2.IsAutoSequence = true;
 floatBox.Paragraphs.Add(heading2);
+```
+
+## Etapa 6: Adicione um título com numeração alfabética
+
+Para variar, vamos adicionar um terceiro título, mas desta vez usaremos numeração alfabética em letras minúsculas (a, b, c, etc.).
+
+Explicação: Alterar o NumberingStyle para LettersLowercase nos permite aplicar numeração alfabética aos nossos títulos.
+
+```csharp
+// Crie um título com numeração alfabética
 Aspose.Pdf.Heading heading3 = new Aspose.Pdf.Heading(2);
 heading3.IsInList = true;
 heading3.StartNumber = 1;
-heading3.Text = "the value, as of the effective date of the plan, of property to be distributed under the plan onaccount of each allowed";
+heading3.Text = "the value, as of the effective date of the plan, of property to be distributed under the plan on account of each allowed";
 heading3.Style = NumberingStyle.LettersLowercase;
 heading3.IsAutoSequence = true;
 floatBox.Paragraphs.Add(heading3);
+```
+
+## Etapa 7: Salvando o PDF
+
+Por fim, depois de aplicar todos os títulos e estilos de numeração, vamos salvar o arquivo PDF no diretório desejado.
+
+Explicação: Esta etapa salva o arquivo PDF contendo todos os títulos formatados com estilos de numeração aplicados.
+
+```csharp
+// Salvar o documento PDF
 dataDir = dataDir + "ApplyNumberStyle_out.pdf";
 pdfDoc.Save(dataDir);
-Console.WriteLine("\nNumber style applied successfully in headings.\nFile saved at " + dataDir);  
-          
+Console.WriteLine("\nNumber style applied successfully in headings.\nFile saved at " + dataDir);
 ```
 
 ## Conclusão
 
-Neste tutorial, explicamos como aplicar um estilo de numeração a títulos em um documento PDF usando o Aspose.PDF para .NET. Agora você pode usar esse conhecimento para criar documentos PDF com numerações personalizadas para títulos.
+E aí está! Você aplicou com sucesso estilos de numeração — algarismos romanos e alfabéticos — a títulos em um arquivo PDF usando o Aspose.PDF para .NET. A flexibilidade fornecida pelo Aspose.PDF para controlar o layout da página, estilos de numeração e posicionamento de conteúdo fornece um poderoso conjunto de ferramentas para criar documentos PDF profissionais e bem organizados.
 
-### Perguntas frequentes sobre como aplicar estilo numérico em arquivo PDF
+## Perguntas frequentes
 
-#### P: O que é estilo de numeração em um documento PDF?
+### Posso aplicar diferentes estilos numéricos ao mesmo documento PDF?  
+Sim, o Aspose.PDF para .NET permite que você misture diferentes estilos de numeração, como algarismos romanos, algarismos arábicos e numeração alfabética no mesmo documento.
 
-R: O estilo de numeração se refere ao formato em que os títulos ou seções são numerados em um documento PDF. Ele pode incluir numerais, letras ou outros caracteres para fornecer uma estrutura hierárquica.
+### Como posso personalizar o número inicial dos títulos?  
+ Você pode definir o número inicial para qualquer título usando o`StartNumber` propriedade.
 
-#### P: Por que preciso aplicar estilo de numeração aos títulos em um documento PDF?
+### Existe uma maneira de redefinir a sequência de numeração?  
+Sim, você pode redefinir a numeração ajustando o`StartNumber` propriedade para cada título.
 
-A: Aplicar estilo de numeração aos títulos melhora a legibilidade e a organização do seu documento PDF. Ajuda os leitores a navegar facilmente e entender a estrutura hierárquica do conteúdo.
+### Posso aplicar estilo negrito ou itálico aos títulos, além da numeração?  
+ Absolutamente! Você pode personalizar os estilos de título modificando propriedades como fonte, tamanho, negrito e itálico usando o`TextState` objeto.
 
-#### P: O que é Aspose.PDF para .NET?
-
-A: Aspose.PDF para .NET é uma biblioteca que permite que desenvolvedores trabalhem com arquivos PDF programaticamente em aplicativos .NET. Ela fornece uma ampla gama de recursos para criar, editar, converter e manipular documentos PDF.
-
-#### P: Como importo as bibliotecas necessárias para meu projeto C#?
-
-R: Para importar as bibliotecas necessárias para seu projeto C#, inclua as seguintes diretivas de importação:
-
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.InteractiveFeatures;
-```
-
-Essas diretivas permitem que você acesse as classes e os métodos necessários para trabalhar com documentos PDF e aplicar estilos de numeração.
-
-#### P: Como especifico o diretório para salvar o arquivo PDF gerado?
-
-R: No código-fonte fornecido, modifique a variável "dataDir" para especificar o diretório onde você deseja salvar o arquivo PDF gerado.
-
-```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-```
-
- Substituir`"YOUR DOCUMENTS DIRECTORY"` com o caminho do diretório real.
-
-#### P: Como posso criar um documento PDF com dimensões e margens especificadas?
-
-R: Para criar um documento PDF com dimensões e margens especificadas, use o seguinte código:
-
-```csharp
-Document pdfDoc = new Document();
-pdfDoc.PageInfo.Width = 612.0;
-pdfDoc.PageInfo.Height = 792.0;
-pdfDoc.PageInfo.Margin = new Aspose.Pdf.MarginInfo();
-pdfDoc.PageInfo.Margin.Left = 72;
-pdfDoc.PageInfo.Margin.Right = 72;
-pdfDoc.PageInfo.Margin.Top = 72;
-pdfDoc.PageInfo.Margin.Bottom = 72;
-```
-
-#### P: Como adiciono títulos com estilo de numeração ao documento PDF?
-
-R: Para adicionar títulos com estilo de numeração ao documento PDF, use os exemplos de código fornecidos para criar títulos e personalizar seus estilos de numeração. Ajuste propriedades como texto, estilo de numeração, número inicial e sequência automática conforme necessário.
-
-#### P: Como faço para salvar o documento PDF gerado?
-
- A: Para salvar o documento PDF gerado, utilize o`Save` método do`pdfDoc` objeto:
-
-```csharp
-dataDir = dataDir + "ApplyNumberStyle_out.pdf";
-pdfDoc.Save(dataDir);
-Console.WriteLine("\nNumbering style applied to headers.\nFile saved as: " + dataDir);
-```
-
-#### P: Como posso confirmar se o estilo de numeração foi aplicado?
-
-R: Abra o arquivo PDF gerado para verificar se o estilo de numeração especificado foi aplicado aos títulos.
-
-#### P: Posso personalizar ainda mais o estilo de numeração?
-
- R: Sim, você pode personalizar ainda mais o estilo de numeração ajustando as propriedades do`Heading` objetos, como tipo de estilo de numeração, número inicial e sequência automática.
-
-#### P: Posso aplicar diferentes estilos de numeração a diferentes seções do documento?
-
- R: Sim, você pode aplicar diferentes estilos de numeração a diferentes seções do documento criando vários`Heading` objetos com diferentes estilos e sequências.
+### Como obtenho uma licença temporária para o Aspose.PDF?  
+ Você pode obter uma licença temporária em[aqui](https://purchase.aspose.com/temporary-license/) para testar o Aspose.PDF sem restrições.

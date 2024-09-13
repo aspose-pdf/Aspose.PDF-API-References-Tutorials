@@ -115,7 +115,7 @@ using Aspose.Pdf.Text;
 
 #### Q：如何將 HTML 有序清單新增至文件的頁面？
 
-答：在步驟 7 中，您將會加入`HtmlFragment`目的 （`t`）到頁面使用`Add`的方法`Paragraphs`收藏。這會將 HTML 有序列表無縫整合到文件中。
+答：在步驟 7 中，您將會加入`HtmlFragment`目的 （`t` ）到頁面使用`Add`的方法`Paragraphs`收藏。這會將 HTML 有序列表無縫整合到文件中。
 
 #### Q：如何保存產生的 PDF 文件？
 

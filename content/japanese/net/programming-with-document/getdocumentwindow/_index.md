@@ -7,116 +7,172 @@ type: docs
 weight: 170
 url: /ja/net/programming-with-document/getdocumentwindow/
 ---
-Aspose.PDF for .NET は、開発者が .NET アプリケーションで PDF ファイルを作成、編集、変換できるようにする強力な PDF 操作ライブラリです。このライブラリが提供する機能の 1 つは、ドキュメントのウィンドウ プロパティに関する情報を取得する機能です。このチュートリアルでは、`GetDocumentWindow` Aspose.PDF for .NET の機能を使用して、PDF ドキュメントのウィンドウ プロパティに関する情報を取得します。
+# 導入
 
-## ステップ 1: Aspose.PDF for .NET をインストールする
+PDF を扱っていて、開いたときの表示をより細かく制御したいと思いませんか? メニュー バーを非表示にしたり、ウィンドウのサイズを変更して最初のページに合わせたり、Aspose.PDF for .NET には、ビューアで開いたときの PDF の動作をカスタマイズするために必要なすべてのツールが用意されています。このチュートリアルでは、Aspose.PDF for .NET でドキュメント ウィンドウの設定を取得および操作する方法について詳しく説明します。
 
-.NETアプリケーションでAspose.PDF for .NETを使用するには、まずライブラリをインストールする必要があります。ライブラリの最新バージョンは、[Aspose.PDF for .NET ダウンロード ページ](https://releases.aspose.com/pdf/net).
 
-ライブラリをダウンロードしたら、ZIP ファイルの内容をコンピューターのフォルダーに解凍します。次に、.NET プロジェクトに Aspose.PDF for .NET DLL への参照を追加する必要があります。
+# 前提条件
 
-## ステップ2: PDFドキュメントを読み込む
+チュートリアルに進む前に、次の前提条件が満たされていることを確認してください。
 
- Aspose.PDF for .NETをインストールし、.NETプロジェクトにDLLへの参照を追加したら、`GetDocumentWindow`PDF ドキュメントのウィンドウ プロパティに関する情報を取得する機能。
+- 開発環境に Aspose.PDF for .NET がインストールされていること。
+  - [Aspose.PDF for .NET をダウンロード](https://releases.aspose.com/pdf/net/)
+- Aspose.PDFの有効なライセンス、または[無料トライアル](https://releases.aspose.com/)または[一時ライセンス](https://purchase.aspose.com/temporary-license/).
+- .NET と C# の基本的な理解。
+- Visual Studio または他の適切な IDE。
 
-この機能を使用するための最初のステップは、情報を取得する PDF ドキュメントを読み込むことです。これを行うには、次のコードを使用します。
+# パッケージのインポート
+
+コードの記述を始める前に、必要なパッケージをインポートする必要があります。プロジェクトを開き、C# ファイルの先頭に次の名前空間を追加します。
 
 ```csharp
-// PDF文書へのパス
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
+```
 
-// PDF文書を開く
+これにより、Aspose.PDF for .NET を使用して PDF ドキュメントを操作するために必要なすべてのクラスとメソッドにアクセスできるようになります。
+
+それでは、さまざまなドキュメントウィンドウ設定を取得するプロセスを詳しく見ていきましょう。この例では、サンプルPDFファイルを使用します。`GetDocumentWindow.pdf`.
+
+## ステップ1: ドキュメントディレクトリパスを設定する
+
+まず最初に、PDF ファイルへのパスを定義する必要があります。実行中にエラーが発生しないように、正しいファイル パスを設定することが重要です。
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ここで、`"YOUR DOCUMENT DIRECTORY"` PDF ファイルが実際に配置されているディレクトリに置き換えます。これは、PDF ドキュメントを読み込む作業ディレクトリです。
+
+## ステップ2: PDFドキュメントを開く
+
+ファイル パスが設定されたので、次の手順では Aspose.PDF を使用して PDF ドキュメントを開きます。これにより、ドキュメントがメモリに読み込まれ、そのプロパティを取得できるようになります。
+
+```csharp
 Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 ```
 
-上記のコードでは、`"YOUR DOCUMENT DIRECTORY"` PDF文書があるディレクトリへのパスを入力します。このコードはPDF文書を`Document`オブジェクトを使用して、ドキュメントのウィンドウ プロパティに関する情報を取得できます。
+この簡単なコードで、PDFファイルを`pdfDocument`オブジェクトのすべてのプロパティにアクセスできるようになります。
 
-## ステップ3: ドキュメントのウィンドウプロパティを取得する
+## ステップ3: ウィンドウの中央揃えステータスを取得する
 
-PDF ドキュメントのウィンドウ プロパティに関する情報を取得するには、次のコードを使用できます。
-
-```csharp
-//ドキュメントのウィンドウプロパティを取得する
-Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
-```
-
-上記のコードでは、各行で PDF ドキュメントの異なるウィンドウ プロパティを取得し、コンソールに出力します。このコードをカスタマイズして、必要なプロパティのみを取得できます。
-
-### Aspose.PDF for .NET を使用して PDF ファイルのドキュメント ウィンドウを取得するためのサンプル ソース コード 
-
-以下はPDF文書のウィンドウプロパティを取得するための完全なソースコードです。`GetDocumentWindow` Aspose.PDF for .NET の機能:
+次に、ドキュメントウィンドウを開いたときに中央に配置するかどうかを確認します。デフォルト値は`false`.
 
 ```csharp
-//ドキュメント ディレクトリへのパス。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-//ドキュメントを開く
-Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
-
-//さまざまなドキュメントプロパティを取得する
-//ドキュメントのウィンドウの位置 - デフォルト: false
 Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-
-//主な読み順。ページの位置を決定します。
-//並べて表示する場合 - デフォルト: L2R
-Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-
-//ウィンドウのタイトルバーにドキュメントのタイトルを表示するかどうか
-//false の場合、タイトルバーに PDF ファイル名が表示されます - デフォルト: false
-Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-
-//ドキュメントのウィンドウをサイズに合わせて変更するかどうか
-//最初に表示されるページ - デフォルト: false
-Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-
-//ビューアアプリケーションのメニューバーを非表示にするかどうか - デフォルト: false
-Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-
-//ビューアアプリケーションのツールバーを非表示にするかどうか - デフォルト: false
-Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-
-//スクロールバーなどのUI要素を非表示にするかどうか
-//ページの内容のみを表示したままにします - デフォルト: false
-Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-
-//ドキュメントのページ モード。フルスクリーン モードを終了したときにドキュメントを表示する方法。
-Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-
-//ページレイアウト（単一ページ、1列）
-Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-
-//ドキュメントを開いたときにどのように表示されるか
-//つまり、サムネイルを表示、全画面表示、添付ファイルパネルを表示
-Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 ```
+
+出力が`true`の場合、ドキュメントのウィンドウは画面の中央に開きます。それ以外の場合は、デフォルトの位置で開きます。
+
+## ステップ4: テキストの方向を確認する
+
+PDF の外観におけるもう 1 つの重要な側面は、テキストの方向です。テキストの方向によって、テキストが左から右 (L2R) に読み取られるか、右から左 (R2L) に読み取られるかが決まります。この情報は、次のコードを使用して取得できます。
+
+```csharp
+Console.WriteLine("Direction : {0}", pdfDocument.Direction);
+```
+
+出力は次のようになります`L2R`左から右へのテキストの場合`R2L`右から左に書くテキスト用です。この設定は、アラビア語やヘブライ語などの言語の文書に特に役立ちます。
+
+## ステップ5: ウィンドウにドキュメントのタイトルを表示する
+
+次のプロパティでは、ウィンドウのタイトルバーにドキュメントのタイトルまたはファイル名を表示するかどうかを制御できます。デフォルトでは、これは次のように設定されています。`false`つまり、ファイル名が表示されます。
+
+```csharp
+Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
+```
+
+ファイル名の代わりにドキュメントのタイトルを表示する場合は、この設定を有効にする必要があります。
+
+## ステップ6: 最初のページに合わせてウィンドウのサイズを変更する
+
+場合によっては、PDF を開いたときに、ドキュメント ウィンドウのサイズを PDF の最初のページに合わせて自動的に変更したいことがあります。その機能が有効になっているかどうかを確認する方法は次のとおりです。
+
+```csharp
+Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
+```
+
+デフォルトでは、`false`つまり、最初のページのサイズに関係なく、ウィンドウのサイズはそのまま残ります。
+
+## ステップ7: メニューバーを非表示にする
+
+より集中して読むために、ビューア アプリケーションのメニュー バーを非表示にすることもできます。この設定は、次の行を使用して取得できます。
+
+```csharp
+Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
+```
+
+これは戻ってくる`true`メニューバーが非表示の場合、`false`さもないと。
+
+## ステップ8: ツールバーを非表示にする
+
+同様に、ユーザー インターフェイスをすっきりさせるために、PDF ビューアーのツールバーを非表示にすることもできます。この設定は次のように取得できます。
+
+```csharp
+Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
+```
+
+この設定を有効にすると、PDF を開いたときにツールバーが非表示になります。
+
+## ステップ9: スクロールバーとUI要素を非表示にする
+
+スクロール バーなどの追加の UI 要素なしでページ コンテンツのみを表示する場合は、次の設定でその動作を制御します。
+
+```csharp
+Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
+```
+
+に設定すると`true`、PDF ビューアーはスクロール バーやその他のユーザー インターフェイス要素を非表示にし、ドキュメント コンテンツのみを表示します。
+
+## ステップ10: 非全画面ページモードを設定する
+
+フルスクリーンモードを終了するときにドキュメントの表示方法を制御できます。`NonFullScreenPageMode`プロパティ。この設定は、ユーザーが非フルスクリーン モードでドキュメントを操作する方法を定義するのに役立ちます。
+
+```csharp
+Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
+```
+
+出力は、サムネイル、アウトライン、添付ファイルパネルなどのさまざまなモードに設定できます。
+
+## ステップ11: ページレイアウトを定義する
+
+この設定により、ドキュメント ページのレイアウトを制御できます。たとえば、単一ページ表示または連続列表示を選択できます。
+
+```csharp
+Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
+```
+
+これにより、ユーザーはドキュメントのコンテンツを読んだり表示したりする方法に関して柔軟性が得られます。
+
+## ステップ12: ページモードを指定する
+
+最後に、`PageMode`プロパティは、ドキュメントを開いたときにどのように表示するかを定義します。オプションには、サムネイルの表示、全画面モードの開始、添付ファイル パネルの表示などがあります。
+
+```csharp
+Console.WriteLine("PageMode : {0}", pdfDocument.PageMode);
+```
+
+必要に応じて、PDF の目的に合った任意のモードに設定できます。
 
 ## 結論
 
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメントのウィンドウ プロパティに関する情報を取得する方法を学習しました。PDF ドキュメントを読み込み、そのウィンドウ プロパティにアクセスすることで、ビューアー アプリケーションで開いたときにドキュメントがどのように表示されるかに関する情報を収集できます。Aspose.PDF for .NET は、PDF ファイルをプログラムで操作するための強力な機能セットを提供するため、.NET アプリケーションで PDF を操作するための貴重なツールとなります。
+ご覧のとおり、Aspose.PDF for .NET には、さまざまな PDF ビューアーで PDF ドキュメントを表示する方法を操作するための包括的なツールが用意されています。ツール バーを非表示にしたり、ウィンドウを中央に配置したり、テキストの方向を制御したりする場合でも、Aspose.PDF はユーザーの表示エクスペリエンスを向上させる柔軟性を提供します。
 
-### よくある質問
+# よくある質問
 
-#### Q: PDF ドキュメントのウィンドウ プロパティを取得する目的は何ですか?
+### PDF の初期ズーム レベルをカスタマイズできますか?
+はい、Aspose.PDF では、ドキュメントを開いたときにズーム レベルを設定できます。
 
-A: PDF ドキュメントのウィンドウ プロパティを取得すると、ビューア アプリケーションで開いたときに PDF ドキュメントがどのように表示されるかに関する情報を収集できます。これらのプロパティは、ウィンドウの位置、表示モード、UI 要素の表示など、さまざまな側面を制御します。
+### PDF のウィンドウ サイズをロックするにはどうすればよいですか?
+設定できるのは`FitWindow`ウィンドウのサイズ変更を防止するプロパティ。
 
-#### Q: .NET プロジェクトに Aspose.PDF for .NET をインストールするにはどうすればよいですか?
+### Aspose.PDF はさまざまな読み取りモードをサポートしていますか?
+はい、全画面、サムネイル、添付ファイルなどのさまざまなモードをサポートしています。
 
- A: Aspose.PDF for .NETをインストールするには、以下のサイトからライブラリをダウンロードする必要があります。[Aspose.PDF for .NET ダウンロード ページ](https://releases.aspose.com/pdf/net)ダウンロード後、ZIP ファイルの内容を抽出し、.NET プロジェクトに Aspose.PDF for .NET DLL への参照を追加します。
+### PDF ビューアーでスクロール バーを非表示にすることは可能ですか?
+もちろん、スクロールバーを非表示にするには、`HideWindowUI`財産に`true`.
 
-#### Q: 特定のウィンドウ プロパティのみを取得するようにコードをカスタマイズできますか?
-
-A: はい、不要な行をコメント アウトすることで、特定のウィンドウ プロパティを取得するようにコードをカスタマイズできます。コード内の各行は特定のウィンドウ プロパティに対応しているため、要件に応じてプロパティを含めたり除外したりできます。
-
-#### Q: Aspose.PDF for .NET を使用して取得できるウィンドウ プロパティの種類は何ですか?
-
-A: Aspose.PDF for .NET を使用すると、ウィンドウの中央配置、ページ レイアウトの設定、ツール バーやメニュー バーの表示の制御など、PDF ドキュメントのさまざまなウィンドウ プロパティを取得できます。
+### ドキュメントウィンドウを開いたときに中央に配置できますか?
+はい、設定することでこれを制御できます`CenterWindow`財産。

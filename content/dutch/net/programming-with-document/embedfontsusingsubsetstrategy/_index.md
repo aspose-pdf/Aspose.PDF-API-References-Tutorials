@@ -83,11 +83,11 @@ In sommige gevallen wilt u misschien alleen de lettertypen insluiten die al in h
 doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetEmbeddedFontsOnly);
 ```
 
-Deze regel code zorgt ervoor dat alleen de lettertypen die al zijn ingesloten, worden gesubset, terwijl niet-ingesloten lettertypen onaangetast blijven.
+Deze coderegel zorgt ervoor dat alleen de lettertypen die al zijn ingesloten, worden gesubset, terwijl niet-ingesloten lettertypen onaangetast blijven.
 
 ## Stap 5: Sla het gewijzigde document op
 
-Ten slotte moeten we onze wijzigingen opslaan. Dit is waar we het gewijzigde document terugschrijven naar de schijf.
+Ten slotte moeten we onze wijzigingen opslaan. Dit is waar we het gewijzigde document terug naar de schijf schrijven.
 
 ```csharp
 doc.Save(dataDir + "Output_out.pdf");
@@ -97,7 +97,7 @@ doc.Save(dataDir + "Output_out.pdf");
 
 ## Conclusie
 
-En daar heb je het! Je hebt succesvol lettertypen ingesloten in een PDF-bestand met Aspose.PDF voor .NET. Door deze stappen te volgen, kun je ervoor zorgen dat je documenten hun beoogde uiterlijk behouden, ongeacht waar ze worden bekeken. Of je nu rapporten, presentaties of een ander type document deelt, het insluiten van lettertypen is een cruciale stap in het behouden van professionaliteit en duidelijkheid.
+En daar heb je het! Je hebt met succes lettertypen ingesloten in een PDF-bestand met Aspose.PDF voor .NET. Door deze stappen te volgen, kun je ervoor zorgen dat je documenten hun beoogde uiterlijk behouden, ongeacht waar ze worden bekeken. Of je nu rapporten, presentaties of een ander type document deelt, het insluiten van lettertypen is een cruciale stap in het behouden van professionaliteit en duidelijkheid.
 
 ## Veelgestelde vragen
 

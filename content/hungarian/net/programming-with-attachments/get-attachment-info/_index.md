@@ -56,7 +56,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "GetAttachmentInfo.pdf");
 ```
 
- Itt létrehozunk egy új példányt a`Document` osztályt, és adja át a PDF fájlunk elérési útját. Ez lehetővé teszi számunkra, hogy kapcsolatba léphessünk a PDF tartalmával.
+ Itt létrehozunk egy új példányt a`Document` osztályt, és adja át a PDF-fájlunk elérési útját. Ez lehetővé teszi számunkra, hogy kapcsolatba léphessünk a PDF tartalmával.
 
 ## 3. lépés: Nyissa meg a beágyazott fájlokat
 

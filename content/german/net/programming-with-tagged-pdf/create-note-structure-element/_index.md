@@ -103,7 +103,7 @@ NoteElement note3 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note3);
 note3.SetText("Note with ID = 'note_003'. ");
 note3.SetId("note_003");
-// Ausnahme muss ausgelöst werden – Aspose.Pdf.Tagged.TaggedException: Strukturelement mit ID='note_002' ist bereits vorhanden
+//Ausnahme muss ausgelöst werden – Aspose.Pdf.Tagged.TaggedException: Strukturelement mit ID='note_002' ist bereits vorhanden
 //note3.SetId("note_002");
 // Das resultierende Dokument entspricht nicht PDF/UA, wenn ClearId() für das Note Structure Element verwendet wird.
 //note3.ClearId();
@@ -148,7 +148,7 @@ A: Ja, Sie können den Inhalt und die Eigenschaften von Notizstrukturelementen a
 
 #### F: Kann ich den Elementen der Notizstruktur eindeutige IDs zuweisen?
 
-A: Ja, Sie können den Notizstrukturelementen eindeutige IDs zuweisen, indem Sie`SetId` Methode. Der Code zeigt, wie die IDs von Notizelementen auf eindeutige Werte gesetzt werden.
+ A: Ja, Sie können den Notizstrukturelementen eindeutige IDs zuweisen, indem Sie`SetId` Methode. Der Code zeigt, wie die IDs von Notizelementen auf eindeutige Werte gesetzt werden.
 
 #### F: Was passiert, wenn ich versuche, einem Notizstrukturelement eine doppelte ID zuzuweisen?
 
@@ -156,7 +156,7 @@ A: Der Versuch, einem Notizstrukturelement eine doppelte ID zuzuweisen, führt z
 
 #### F: Wie kann ich beim Erstellen von Notizstrukturelementen die PDF/UA-Konformität sicherstellen?
 
- A: Der im Tutorial bereitgestellte Code zeigt, wie die PDF/UA-Konformität mithilfe des`Validate` Methode. Indem Sie das Dokument anhand des PDF/UA-Standards validieren, können Sie sicherstellen, dass die hinzugefügten Notizstrukturelemente den Richtlinien zur Barrierefreiheit entsprechen.
+A: Der im Tutorial bereitgestellte Code zeigt, wie die PDF/UA-Konformität mithilfe des`Validate` Methode. Indem Sie das Dokument anhand des PDF/UA-Standards validieren, können Sie sicherstellen, dass die hinzugefügten Notizstrukturelemente den Richtlinien zur Barrierefreiheit entsprechen.
 
 #### F: Kann ich mit diesem Ansatz einem vorhandenen PDF-Dokument Notizstrukturelemente hinzufügen?
 

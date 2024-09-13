@@ -155,7 +155,7 @@ A: Cấu hình ngôn ngữ và tiêu đề của tài liệu PDF rất quan tr�
 
 A: Nội dung đa ngôn ngữ tăng cường khả năng truy cập và phạm vi tiếp cận toàn cầu của tài liệu PDF. Aspose.PDF cho .NET cho phép bạn thêm nội dung đa ngôn ngữ bằng cách tạo các thành phần đoạn văn cho từng ngôn ngữ, thiết lập thuộc tính văn bản và ngôn ngữ cho phù hợp.
 
-####  Q: Làm thế nào để`SetTitle` method contribute to improving document accessibility and organization?
+#### Q: Làm thế nào để`SetTitle` method contribute to improving document accessibility and organization?
 
  A: Cái`SetTitle` phương pháp đặt tiêu đề của tài liệu PDF, được sử dụng để nhận dạng tài liệu, kết quả tìm kiếm và tổ chức. Cung cấp tiêu đề rõ ràng và có ý nghĩa giúp tăng khả năng truy cập tài liệu và cải thiện trải nghiệm của người dùng.
 
@@ -177,4 +177,4 @@ A: Khi cấu hình ngôn ngữ và tiêu đề, hãy cân nhắc đối tượng
 
 #### H: Tôi có thể sửa đổi ngôn ngữ và tiêu đề của tài liệu PDF hiện có bằng Aspose.PDF cho .NET không?
 
- A: Có, bạn có thể sửa đổi ngôn ngữ và tiêu đề của một tài liệu PDF hiện có bằng cách sử dụng Aspose.PDF cho .NET. Bằng cách tải tài liệu, truy cập nội dung được gắn thẻ của nó và sử dụng`SetTitle` Và`SetLanguage`phương pháp, bạn có thể cập nhật các thuộc tính này khi cần thiết.
+ A: Có, bạn có thể sửa đổi ngôn ngữ và tiêu đề của một tài liệu PDF hiện có bằng cách sử dụng Aspose.PDF cho .NET. Bằng cách tải tài liệu, truy cập nội dung được gắn thẻ của nó và sử dụng`SetTitle` Và`SetLanguage` phương pháp, bạn có thể cập nhật các thuộc tính này khi cần thiết.

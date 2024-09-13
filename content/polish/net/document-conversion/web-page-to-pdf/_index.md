@@ -62,7 +62,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY"; // Zastąp swoją ścieżką
 Następnie musisz utworzyć żądanie pobrania zawartości ze strony internetowej, którą chcesz przekonwertować. Oto, jak to zrobić:
 
 ```csharp
-WebRequest request = WebRequest.Create("https://pl.wikipedia.org/wiki/Strona_główna");
+WebRequest request = WebRequest.Create("https://pl.wikipedia.org/wiki/Main_Page");
 request.Credentials = CredentialCache.DefaultCredentials;
 ```
 

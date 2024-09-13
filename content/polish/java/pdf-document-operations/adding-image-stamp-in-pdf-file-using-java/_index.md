@@ -10,7 +10,7 @@ url: /pl/java/pdf-document-operations/adding-image-stamp-in-pdf-file-using-java/
 
 ## Wprowadzenie do dodawania pieczątki graficznej do pliku PDF za pomocą języka Java
 
-Dodawanie stempli graficznych do plików PDF za pomocą Java może poprawić branding i identyfikację dokumentu. W tym przewodniku krok po kroku pokażemy, jak to osiągnąć za pomocą biblioteki Aspose.PDF for Java. Pod koniec tego samouczka będziesz w stanie wydajnie dodawać stemple graficzne do dokumentów PDF.
+Dodawanie stempli graficznych do plików PDF za pomocą Java może poprawić branding i identyfikację dokumentu. W tym przewodniku krok po kroku sprawdzimy, jak to osiągnąć za pomocą biblioteki Aspose.PDF for Java. Pod koniec tego samouczka będziesz w stanie wydajnie dodawać stemple graficzne do swoich dokumentów PDF.
 
 ## Wymagania wstępne
 

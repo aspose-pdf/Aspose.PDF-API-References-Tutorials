@@ -8,7 +8,7 @@ weight: 10
 url: /de/java/pdf-annotations/
 ---
 
-PDF-Anmerkungen hauchen statischen Dokumenten Leben ein und machen sie dynamisch und interaktiv. In unserer umfassenden Reihe von Tutorials, unterstützt von Aspose.PDF für Java, entdecken Sie die Kunst, Ihren PDF-Dateien Anmerkungen hinzuzufügen. Ob Sie wichtige Punkte hervorheben, Kommentare hinzufügen oder Multimedia-Elemente einbetten möchten – diese Tutorials vermitteln Ihnen die Fähigkeiten, Ihr Publikum durch angereicherte PDFs zu fesseln.
+PDF-Anmerkungen hauchen statischen Dokumenten Leben ein und machen sie dynamisch und interaktiv. In unserer umfassenden Tutorial-Reihe, unterstützt von Aspose.PDF für Java, entdecken Sie die Kunst, Ihren PDF-Dateien Anmerkungen hinzuzufügen. Ob Sie wichtige Punkte hervorheben, Kommentare hinzufügen oder Multimedia-Elemente einbetten möchten – diese Tutorials vermitteln Ihnen die Fähigkeiten, Ihr Publikum durch angereicherte PDFs zu fesseln.
 
 ## Freischalten der PDF-Interaktivität
 

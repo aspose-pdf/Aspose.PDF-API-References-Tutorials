@@ -2,227 +2,160 @@
 title: معلومات الصورة في ملف PDF
 linktitle: معلومات الصورة في ملف PDF
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: استخراج معلومات الصورة في ملف PDF باستخدام Aspose.PDF لـ .NET.
+description: تعلم كيفية استخراج معلومات الصورة من ملفات PDF باستخدام Aspose.PDF لـ .NET من خلال دليلنا الشامل خطوة بخطوة.
 type: docs
 weight: 160
 url: /ar/net/programming-with-images/image-information/
 ---
-سيرشدك هذا الدليل خطوة بخطوة إلى كيفية استخراج المعلومات حول الصور في ملف PDF باستخدام Aspose.PDF لـ .NET. تأكد من إعداد البيئة الخاصة بك بالفعل واتبع الخطوات التالية:
+## مقدمة
 
-## الخطوة 1: تحديد دليل المستندات
+أصبحت ملفات PDF موجودة في كل مكان هذه الأيام، حيث تجد كل وثيقة مهنية وشخصية تقريبًا طريقها إلى هذا التنسيق في مرحلة ما. سواء كان تقريرًا أو كتيبًا أو كتابًا إلكترونيًا، فإن فهم كيفية التعامل مع هذه الملفات برمجيًا يوفر عددًا لا يحصى من الاحتمالات. أحد المتطلبات الشائعة هو استخراج معلومات الصور من ملفات PDF. في هذا الدليل، سنتعمق في كيفية استخدام مكتبة Aspose.PDF لـ .NET لاستخراج تفاصيل مهمة حول الصور المضمنة في مستند PDF.
 
- تأكد من تعيين دليل المستند الصحيح. استبدل`"YOUR DOCUMENT DIRECTORY"` في الكود مع المسار إلى الدليل الذي يوجد به مستند PDF الخاص بك.
+## المتطلبات الأساسية
+
+قبل أن ننتقل إلى التفاصيل الدقيقة للترميز، هناك بعض المتطلبات الأساسية التي ستحتاج إلى توافرها:
+
+1. بيئة التطوير: ستحتاج إلى إعداد بيئة تطوير .NET. قد تكون هذه البيئة عبارة عن Visual Studio أو أي بيئة تطوير متكاملة أخرى متوافقة مع .NET.
+2.  مكتبة Aspose.PDF: تأكد من أن لديك إمكانية الوصول إلى مكتبة Aspose.PDF. يمكنك تنزيلها من[موقع اسبوس](https://releases.aspose.com/pdf/net/). 
+3. المعرفة الأساسية بلغة C#: ستساعدك المعرفة بلغة C# ومفاهيم البرمجة الموجهة للكائنات على متابعة البرنامج التعليمي بسهولة.
+4. مستند PDF: احتفظ بمستند PDF نموذجي في متناول يدك يحتوي على صور لاختبار الكود الخاص بك. 
+
+## استيراد الحزم
+
+للبدء في استخدام مكتبة Aspose.PDF، ستحتاج إلى استيراد المساحات الأساسية اللازمة إلى ملف C# الخاص بك. فيما يلي شرح سريع:
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using System;
 ```
 
-## الخطوة 2: تحميل ملف PDF المصدر
+ستوفر لك هذه المساحات الاسمية إمكانية الوصول إلى الفئات والطرق المطلوبة للتعامل مع ملفات PDF واستخراج بيانات الصور.
 
- في هذه الخطوة، سنقوم بتحميل ملف PDF المصدر باستخدام`Document` فئة Aspose.PDF. استخدم`Document` منشئ ومرر المسار إلى مستند PDF.
+الآن بعد أن قمت بإعداد كل شيء، حان الوقت لتقسيم ذلك إلى خطوات يمكن إدارتها. سنكتب برنامجًا بلغة C# يقوم بتحميل مستند PDF، ويفحص كل صفحة، ويستخرج أبعاد ودقة كل صورة في المستند.
+
+## الخطوة 1: تهيئة المستند
+
+ في هذه الخطوة، سنقوم بتهيئة مستند PDF باستخدام المسار إلى ملف PDF الخاص بك. يجب استبدال`"YOUR DOCUMENT DIRECTORY"` مع المسار الفعلي الذي يقع فيه ملف PDF الخاص بك.
 
 ```csharp
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// تحميل ملف PDF المصدر
 Document doc = new Document(dataDir + "ImageInformation.pdf");
 ```
+ نحن ننشئ`Document` الكائن الذي يقوم بتحميل ملف PDF من الدليل المحدد. سيسمح لنا هذا بالعمل مع محتويات الملف.
 
-## الخطوة 3: تعيين الدقة الافتراضية
+## الخطوة 2: تعيين الدقة الافتراضية وتهيئة هياكل البيانات
 
-في هذه الخطوة، سنقوم بتعيين الدقة الافتراضية للصور. في المثال، تم تعيين الدقة الافتراضية على 72.
+بعد ذلك، نقوم بتعيين دقة افتراضية للصور، وهو أمر مفيد للحسابات. وسنقوم أيضًا بإعداد مصفوفة لحمل أسماء الصور ومكدس لإدارة الحالات الرسومية.
 
 ```csharp
+// تحديد الدقة الافتراضية للصورة
 int defaultResolution = 72;
-```
-
-## الخطوة 4: تهيئة الكائنات والعدادات
-
-في هذه الخطوة، سنقوم بتهيئة الكائنات والعدادات اللازمة لاسترجاع معلومات الصورة.
-
-```csharp
 System.Collections.Stack graphicsState = new System.Collections.Stack();
+// قم بتعريف كائن قائمة المصفوفة الذي سيحمل أسماء الصور
 System.Collections.ArrayList imageNames = new System.Collections.ArrayList(doc.Pages[1].Resources.Images.Names);
 ```
+ ال`defaultResolution` يساعدنا المتغير في حساب دقة الصور بشكل صحيح.`graphicsState`تُستخدم المكدس كوسيلة لتخزين الحالة الرسومية الحالية للمستند عندما نواجه مشغلي التحويل.
 
-## الخطوة 5: التنقل بين المشغلات في الصفحة الأولى من المستند
+## الخطوة 3: معالجة كل عامل على الصفحة
 
-في هذه الخطوة، سننتقل عبر المشغلات الموجودة في الصفحة الأولى من المستند لتحديد العمليات المتعلقة بالصورة.
+نقوم الآن بتكرار جميع العمليات في الصفحة الأولى من المستند. وهنا يحدث الجزء الأصعب. 
 
 ```csharp
-foreach(Operator op in doc.Pages[1].Contents)
+foreach (Operator op in doc.Pages[1].Contents)
 {
+    // مشغلي العملية...
+}
 ```
+كل مشغل في ملف PDF هو أمر يخبر المعالج بكيفية إدارة العناصر الرسومية، بما في ذلك الصور.
 
-## الخطوة 6: إدارة المشغلين واستخراج معلومات الصورة
+## الخطوة 4: التعامل مع مشغلي GSave/GRestore
 
-في هذه الخطوة، سنقوم بإدارة أنواع مختلفة من المشغلين واستخراج المعلومات حول الصور.
+داخل الحلقة، سوف نقوم بالتعامل مع أوامر حفظ الرسومات واستعادتها لتتبع التغييرات التي تم إجراؤها على الحالة الرسومية.
 
 ```csharp
-Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
-Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-Aspose.Pdf.Operators.Do opDo = op as Aspose.Pdf.Operators.Do;
+if (opSaveState != null) 
+{
+    // حفظ الحالة السابقة
+    graphicsState.Push(((Matrix)graphicsState.Peek()).Clone());
+} 
+else if (opRestoreState != null) 
+{
+    // استعادة الحالة السابقة
+    graphicsState.Pop();
+}
+```
+`GSave` يحفظ الحالة الرسومية الحالية، بينما`GRestore` يستعيد الحالة المحفوظة الأخيرة، مما يسمح لنا بعكس أي تحويلات عند معالجة الصور.
 
-//التعامل مع عمليات GSave وGRestore للتحويلات
-if (opSaveState != null)
+## الخطوة 5: إدارة مصفوفات التحويل
+
+بعد ذلك، نقوم بالتعامل مع سلسلة مصفوفات التحويل عند تطبيق التحويلات على الصور.
+
+```csharp
+else if (opCtm != null) 
 {
-     graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-}
-else if (opRestoreState != null)
-{
-     graphicsState. Pop();
-}
-// التعامل مع عملية ConcatenateMatrix للتحويلات
-else if (opCtm != null)
-{
-     // تطبيق مصفوفة التحويل
-     System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
+    Matrix cm = new Matrix(
         (float)opCtm.Matrix.A,
         (float)opCtm.Matrix.B,
         (float)opCtm.Matrix.C,
         (float)opCtm.Matrix.D,
         (float)opCtm.Matrix.E,
         (float)opCtm.Matrix.F);
-
-
-     ((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-     keep on going;
-}
-// التعامل مع عملية Do للصور
-else if (opDo != null)
-{
-     if (imageNames.Contains(opDo.Name))
-     {
-         // استرجاع الصورة
-         XImage image = doc.Pages[1].Resources.Images[opDo.Name];
-         // استرجاع أبعاد الصورة
-         double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
-         double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
-         // احسب الدقة بناءً على المعلومات المذكورة أعلاه
-         double resHorizontal = originalWidth * defaultResolution / scaledWidth;
-         double resVertical = originalHeight * defaultResolution / scaledHeight;
-         // عرض معلومات الصورة
-         Console.Out.WriteLine(
-                 string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
-								 opDo.Name, scaledWidth, scaledHeight, resHorizontal,
-								 resVertical));
-     }
+    
+    ((Matrix)graphicsState.Peek()).Multiply(cm);
+    continue;
 }
 ```
+عندما يتم تطبيق مصفوفة التحويل، نقوم بضربها بالمصفوفة الحالية المخزنة في حالة الرسومات حتى نتمكن من متابعة أي تغيير في القياس أو الترجمة يتم تطبيقه على الصورة.
 
-### عينة من كود المصدر لمعلومات الصورة باستخدام Aspose.PDF لـ .NET 
+## الخطوة 6: استخراج معلومات الصورة
+
+وأخيرًا، نقوم بمعالجة عامل الرسم للصور واستخراج المعلومات الضرورية، مثل الأبعاد والدقة.
+
 ```csharp
-// المسار إلى دليل المستندات.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// تحميل ملف PDF المصدر
-Document doc = new Document(dataDir+ "ImageInformation.pdf");
-// تحديد الدقة الافتراضية للصورة
-int defaultResolution = 72;
-System.Collections.Stack graphicsState = new System.Collections.Stack();
-// قم بتعريف كائن قائمة المصفوفة الذي سيحمل أسماء الصور
-System.Collections.ArrayList imageNames = new System.Collections.ArrayList(doc.Pages[1].Resources.Images.Names);
-// إدراج كائن للتكديس
-graphicsState.Push(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, 0, 0));
-// احصل على جميع المشغلين في الصفحة الأولى من المستند
-foreach (Operator op in doc.Pages[1].Contents)
+else if (opDo != null) 
 {
-	// استخدم مشغلي GSave/GRestore لإرجاع التحويلات إلى ما تم تعيينه مسبقًا
-	Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
-	Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-	// قم بإنشاء كائن ConcatenateMatrix كما يحدد مصفوفة التحويل الحالية.
-	Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-	// إنشاء عامل Do الذي يرسم الكائنات من الموارد. يرسم كائنات النموذج وكائنات الصورة
-	Aspose.Pdf.Operators.Do opDo = op as Aspose.Pdf.Operators.Do;
-	if (opSaveState != null)
-	{
-		//احفظ الحالة السابقة وادفع الحالة الحالية إلى أعلى المكدس
-		graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-	}
-	else if (opRestoreState != null)
-	{
-		// التخلص من الحالة الحالية واستعادة الحالة السابقة
-		graphicsState.Pop();
-	}
-	else if (opCtm != null)
-	{
-		System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
-		   (float)opCtm.Matrix.A,
-		   (float)opCtm.Matrix.B,
-		   (float)opCtm.Matrix.C,
-		   (float)opCtm.Matrix.D,
-		   (float)opCtm.Matrix.E,
-		   (float)opCtm.Matrix.F);
-		// ضرب مصفوفة التيار بمصفوفة الحالة
-		((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-		continue;
-	}
-	else if (opDo != null)
-	{
-		// في حالة أن هذا هو عامل رسم الصورة
-		if (imageNames.Contains(opDo.Name))
-		{
-			System.Drawing.Drawing2D.Matrix lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-			// إنشاء كائن XImage لحمل صور الصفحة الأولى من ملف pdf
-			XImage image = doc.Pages[1].Resources.Images[opDo.Name];
-			// الحصول على أبعاد الصورة
-			double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
-			double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
-			// احصل على معلومات ارتفاع وعرض الصورة
-			double originalWidth = image.Width;
-			double originalHeight = image.Height;
-			// حساب الدقة بناءً على المعلومات المذكورة أعلاه
-			double resHorizontal = originalWidth * defaultResolution / scaledWidth;
-			double resVertical = originalHeight * defaultResolution / scaledHeight;
-			// عرض معلومات الأبعاد والدقة لكل صورة
-			Console.Out.WriteLine(
-					string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
-								 opDo.Name, scaledWidth, scaledHeight, resHorizontal,
-								 resVertical));
-		}
-	}
+    // عامل التشغيل Do الذي يرسم الكائنات
+    if (imageNames.Contains(opDo.Name)) 
+    {
+        Matrix lastCTM = (Matrix)graphicsState.Peek();
+        XImage image = doc.Pages[1].Resources.Images[opDo.Name];
+        double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
+        double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
+        double originalWidth = image.Width;
+        double originalHeight = image.Height;
+        
+        double resHorizontal = originalWidth * defaultResolution / scaledWidth;
+        double resVertical = originalHeight * defaultResolution / scaledHeight;
+        
+        // إخراج المعلومات
+        Console.Out.WriteLine(string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
+                         opDo.Name, scaledWidth, scaledHeight, resHorizontal, resVertical));
+    }
 }
 ```
+هنا، نتحقق مما إذا كان المشغل مسؤولاً عن رسم صورة. إذا كان الأمر كذلك، نحصل على كائن XImage المقابل، ونحسب أبعاده ودقته، ونطبع المعلومات اللازمة.
 
 ## خاتمة
 
-تهانينا! لقد تعلمت الآن كيفية استخراج معلومات الصورة في ملف PDF باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذه المعلومات في مهام معالجة الصور المختلفة في تطبيقاتك.
+تهانينا! لقد قمت للتو بإنشاء مثال عملي لكيفية استخراج معلومات الصورة من ملف PDF باستخدام Aspose.PDF لـ .NET. يمكن أن تكون هذه الإمكانية مفيدة بشكل لا يصدق للمطورين الذين يحتاجون إلى تحليل أو معالجة مستندات PDF لتطبيقات مختلفة، مثل إعداد التقارير أو استخراج البيانات أو حتى عارضات PDF المخصصة. 
 
-### الأسئلة الشائعة حول معلومات الصورة في ملف PDF
 
-#### س: ما هو الغرض من استخراج معلومات الصورة من مستند PDF باستخدام Aspose.PDF لـ .NET؟
+## الأسئلة الشائعة
 
-أ: إن استخراج معلومات الصورة من مستند PDF يوفر نظرة ثاقبة للأبعاد والدقة والسمات الأخرى للصور داخل المستند. ويمكن استخدام هذه المعلومات في مهام معالجة الصور أو تحليلها أو تحسينها.
+### ما هي مكتبة Aspose.PDF؟
+تُعد مكتبة Aspose.PDF أداة فعّالة لإنشاء ملفات PDF ومعالجتها وتحويلها في تطبيقات .NET.
 
-#### س: كيف يساعد Aspose.PDF for .NET في استخراج معلومات الصورة من مستند PDF؟
+### هل يمكنني استخدام المكتبة مجانًا؟
+ نعم، تقدم Aspose نسخة تجريبية مجانية. يمكنك تنزيلها[هنا](https://releases.aspose.com/).
 
-ج: يوفر Aspose.PDF for .NET أدوات للوصول إلى محتوى مستند PDF وتحليله، بما في ذلك صوره. يوضح الكود المقدم كيفية استخراج معلومات الصورة وعرضها باستخدام مشغلات مختلفة.
+### ما هي أنواع تنسيقات الصور التي يمكن استخراجها؟
+تدعم المكتبة تنسيقات الصور المختلفة، بما في ذلك JPEG وPNG وTIFF، طالما أنها مضمنة في ملف PDF.
 
-#### س: ما نوع معلومات الصورة التي يمكن استخراجها باستخدام هذه الطريقة؟
+### هل يتم استخدام Aspose لأغراض تجارية؟
+ نعم، يمكنك استخدام منتجات Aspose تجاريًا. للحصول على الترخيص، تفضل بزيارة[صفحة الشراء](https://purchase.aspose.com/buy).
 
-ج: تتيح لك هذه الطريقة استخراج وعرض معلومات مثل الأبعاد المُدرجة والدقة وأسماء الصور داخل مستند PDF.
-
-#### س: كيف يقوم الكود بتحديد ومعالجة مشغلي الصور المرتبطة داخل مستند PDF؟
-
-ج: يتكرر الكود من خلال المشغلات الموجودة في صفحة محددة من مستند PDF. فهو يحدد المشغلات المتعلقة بعمليات الصور والتحويلات والرسم ويقوم بمعالجتها.
-
-#### س: ما أهمية الدقة الافتراضية وكيف يتم استخدامها في الكود؟
-
-ج: يتم استخدام الدقة الافتراضية كنقطة مرجعية لحساب الدقة الفعلية للصور. يحسب الكود دقة كل صورة بناءً على أبعادها وإعداد الدقة الافتراضية.
-
-#### س: كيف يمكن الاستفادة من معلومات الصورة المستخرجة في سيناريوهات العالم الحقيقي؟
-
-أ: يمكن استخدام معلومات الصورة المستخرجة لمهام مثل تقييم جودة الصورة، وتحسين الصورة، وإنشاء صور مصغرة للصور، وتسهيل عمليات اتخاذ القرار المتعلقة بالصورة.
-
-#### س: هل يمكنني تعديل الكود لاستخراج سمات إضافية متعلقة بالصورة؟
-
-ج: نعم، يمكنك تخصيص الكود لاستخراج سمات إضافية للصور، مثل مساحة اللون، أو عمق البكسل، أو نوع الصورة.
-
-#### س: هل عملية استخراج معلومات الصورة تتطلب الكثير من الموارد أو تستغرق وقتا طويلا؟
-
-أ: عملية استخراج معلومات الصورة فعالة ومُحسَّنة للأداء، مما يضمن الحد الأدنى من التأثير على استخدام الموارد ووقت المعالجة.
-
-#### س: كيف يمكن للمطورين الاستفادة من تحديد معلومات الصورة واستخراجها من مستندات PDF؟
-
-أ: يمكن للمطورين الحصول على رؤى حول خصائص الصور داخل مستندات PDF، مما يمكنهم من اتخاذ قرارات مستنيرة فيما يتعلق بمعالجة الصور وتحسينها.
-
-#### س: هل يمكن استخدام هذه الطريقة لمعالجة دفعات من مستندات PDF التي تحتوي على صور؟
-
-ج: نعم، يمكن توسيع هذه الطريقة لتشمل المعالجة الدفعية من خلال التكرار عبر صفحات أو مستندات متعددة، واستخراج معلومات الصورة، وتنفيذ المهام المتعلقة بالصورة.
+### كيف أحصل على الدعم لـ Aspose؟
+ يمكنك الوصول إلى منتدى الدعم[هنا](https://forum.aspose.com/c/pdf/10).

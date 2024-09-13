@@ -103,7 +103,7 @@ NoteElement note3 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note3);
 note3.SetText("Note with ID = 'note_003'. ");
 note3.SetId("note_003");
-// Moet uitzondering genereren - Aspose.Pdf.Tagged.TaggedException: Structuurelement met ID='note_002' bestaat al
+//Moet uitzondering genereren - Aspose.Pdf.Tagged.TaggedException: Structuurelement met ID='note_002' bestaat al
 //opmerking3.SetId("noot_002");
 // Het resulterende document voldoet niet aan PDF/UA als ClearId() wordt gebruikt voor het notitiestructuurelement
 //opmerking3.ClearId();
@@ -148,7 +148,7 @@ A: Ja, u kunt de inhoud en eigenschappen van notitiestructuurelementen aanpassen
 
 #### V: Kan ik unieke ID's toewijzen aan elementen in de notitiestructuur?
 
-A: Ja, u kunt unieke ID's toewijzen aan elementen van de notitiestructuur met behulp van de`SetId` methode. De code laat zien hoe de ID's van notitie-elementen op unieke waarden worden ingesteld.
+ A: Ja, u kunt unieke ID's toewijzen aan elementen van de notitiestructuur met behulp van de`SetId` methode. De code laat zien hoe de ID's van notitie-elementen op unieke waarden worden ingesteld.
 
 #### V: Wat gebeurt er als ik probeer een dubbele ID toe te wijzen aan een element in de notitiestructuur?
 
@@ -156,7 +156,7 @@ A: Pogingen om een duplicaat-ID toe te wijzen aan een element van de notitiestru
 
 #### V: Hoe kan ik PDF/UA-conformiteit garanderen bij het maken van notitiestructuurelementen?
 
- A: De code in de tutorial laat zien hoe u PDF/UA-naleving kunt valideren met behulp van de`Validate` methode. Door het document te valideren tegen de PDF/UA-standaard, kunt u ervoor zorgen dat de toegevoegde elementen van de notitiestructuur voldoen aan de richtlijnen voor toegankelijkheid.
+A: De code in de tutorial laat zien hoe u PDF/UA-naleving kunt valideren met behulp van de`Validate` methode. Door het document te valideren tegen de PDF/UA-standaard, kunt u ervoor zorgen dat de toegevoegde elementen van de notitiestructuur voldoen aan de richtlijnen voor toegankelijkheid.
 
 #### V: Kan ik deze aanpak gebruiken om notitiestructuurelementen toe te voegen aan een bestaand PDF-document?
 

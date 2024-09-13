@@ -92,7 +92,7 @@ V: A PDF-dokumentum érvényesítése biztosítja, hogy megfeleljen a szabványo
 
 #### K: Testreszabhatom az érvényesítési folyamatot, vagy megadhatom az érvényesítéshez különböző szabványokat az Aspose.PDF for .NET használatával?
 
-V: Igen, testreszabhatja az érvényesítési folyamatot különböző érvényesítési szabványok (például PDF/A vagy PDF/X) kiválasztásával, valamint további érvényesítési beállítások megadásával. A mellékelt C# forráskód a PDF/UA érvényesítésre összpontosít, de további lehetőségeket a hivatalos dokumentációban találhat.
+V: Igen, testreszabhatja az érvényesítési folyamatot különböző érvényesítési szabványok (például PDF/A vagy PDF/X) kiválasztásával és további érvényesítési beállítások konfigurálásával. A mellékelt C# forráskód a PDF/UA érvényesítésre összpontosít, de további lehetőségeket a hivatalos dokumentációban találhat.
 
 #### K: Hogyan értelmezhetem és használhatom fel az Aspose.PDF által generált érvényesítési jelentést a .NET számára?
 

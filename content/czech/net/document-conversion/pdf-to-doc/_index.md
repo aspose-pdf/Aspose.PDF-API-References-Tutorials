@@ -13,7 +13,7 @@ Vítejte ve světě Aspose.PDF pro .NET! Pokud jste někdy zápasili se soubory 
 
 ## Předpoklady
 
-Než se pustíme do hrubky kódování, je třeba mít na paměti několik věcí:
+Než se pustíme do groteskního kódování, je potřeba mít připraveno několik věcí:
 
 1. .NET Framework: Ujistěte se, že máte na svém počítači nainstalované rozhraní .NET Framework. Aspose.PDF bezproblémově spolupracuje s aplikacemi .NET.
 2.  Knihovna Aspose.PDF: Budete si muset stáhnout knihovnu Aspose.PDF. Můžete to vzít z[odkaz ke stažení](https://releases.aspose.com/pdf/net/).

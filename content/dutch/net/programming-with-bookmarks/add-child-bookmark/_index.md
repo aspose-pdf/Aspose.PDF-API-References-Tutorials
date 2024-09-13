@@ -100,7 +100,7 @@ Vergelijkbaar met de parent bookmark, maken we een child bookmark met een eigen 
 Nu beide bladwijzers zijn gemaakt, is het tijd om ze aan elkaar te koppelen.
 
 ```csharp
-// Voeg een kinderbladwijzer toe aan de verzameling van de bovenliggende bladwijzer
+// Voeg een onderliggende bladwijzer toe aan de verzameling van de bovenliggende bladwijzer
 pdfOutline.Add(pdfChildOutline);
 ```
 
@@ -146,7 +146,7 @@ Ja, u kunt meerdere onderliggende bladwijzers onder één bovenliggende bladwijz
  Aspose.PDF biedt een gratis proefversie, maar voor volledige functionaliteit moet u een licentie aanschaffen. Bekijk de[koop pagina](https://purchase.aspose.com/buy) voor meer informatie.
 
 ### Waar kan ik meer documentatie vinden?
- U kunt uitgebreide documentatie vinden op Aspose.PDF voor .NET[hier](https://reference.aspose.com/pdf/net/).
+ Uitgebreide documentatie vindt u op Aspose.PDF voor .NET[hier](https://reference.aspose.com/pdf/net/).
 
 ### Wat als ik problemen tegenkom?
 Als u problemen ondervindt, kunt u hulp zoeken op de[Aspose ondersteuningsforum](https://forum.aspose.com/c/pdf/10).

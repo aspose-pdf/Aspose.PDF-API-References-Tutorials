@@ -42,7 +42,7 @@ Document doc = new Document();
 ```
 
 ## Bước 5: Thêm một trang vào tài liệu
- Thêm một trang mới vào tài liệu bằng cách sử dụng`Add` phương pháp của`Pages`bộ sưu tập. Trong mã được cung cấp, trang mới được gán cho biến`page`.
+ Thêm một trang mới vào tài liệu bằng cách sử dụng`Add` phương pháp của`Pages` bộ sưu tập. Trong mã được cung cấp, trang mới được gán cho biến`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -159,7 +159,7 @@ HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Tab
 
 #### H: Làm thế nào tôi có thể ghi đè lên kiểu nội dung HTML?
 
- A: Ở Bước 7, bạn sẽ ghi đè các kiểu của nội dung HTML bằng cách sửa đổi`TextState` tính chất của`HtmlFragment` đối tượng. Ví dụ, bạn có thể thay đổi họ phông chữ thành "Arial" và đặt kích thước phông chữ thành 20:
+ A: Ở Bước 7, bạn sẽ ghi đè các kiểu của nội dung HTML bằng cách sửa đổi`TextState` tính chất của`HtmlFragment`đối tượng. Ví dụ, bạn có thể thay đổi họ phông chữ thành "Arial" và đặt kích thước phông chữ thành 20:
 
 ```csharp
 title.TextState = new TextState("Arial");

@@ -2,125 +2,142 @@
 title: 取得 PDF 屬性
 linktitle: 取得 PDF 屬性
 second_title: Aspose.PDF for .NET API 參考
-description: 使用 Aspose.PDF for .NET 取得 PDF 屬性（例如框尺寸和旋轉）的逐步指南。
+description: 了解如何使用 Aspose.PDF for .NET 高效率地擷取 PDF 屬性。包含程式碼範例和最佳實踐的逐步指南。
 type: docs
 weight: 100
 url: /zh-hant/net/programming-with-pdf-pages/get-properties/
 ---
-在本教學中，我們將引導您逐步完成使用 Aspose.PDF for .NET 取得 PDF 屬性的過程。我們將解釋捆綁的 C# 原始程式碼，並為您提供全面的指南，幫助您理解並在自己的專案中實現此功能。在本教學結束時，您將了解如何使用 Aspose.PDF for .NET 存取 PDF 頁面的不同屬性，例如藝術框、裁切框、裁切框等。
+## 介紹
+
+當談到以程式方式操作 PDF 時，Aspose.PDF for .NET 是脫穎而出的可靠工具之一。無論您是要提取資訊、修改文件還是只是讀取 PDF 屬性，該程式庫都提供了一套功能來讓您的任務更輕鬆。在本指南中，我們將深入探討如何取得 PDF 屬性，這項任務乍看之下似乎令人畏懼，但使用正確的工具就會變得輕而易舉。所以，係好安全帶！我們將探討處理 PDF 檔案的技術細節或可能性。
 
 ## 先決條件
-在開始之前，請確保您具備以下條件：
 
-- C# 程式語言的基礎知識
-- 在您的開發環境中安裝 Aspose.PDF for .NET
+在開始編寫程式碼之前，必須確保所有必要的元件都已就位。本部分將協助您開始使用 Aspose.PDF 庫。
 
-## 步驟1：設定文檔目錄
-首先，您需要設定文檔目錄的路徑。這是您要取得其屬性的 PDF 檔案的位置。將“您的文件目錄”替換為適當的路徑。
+1. .NET 環境：確保您有一個有效的 .NET 環境。您可以使用 Visual Studio 或任何其他適當的 IDE。
+   
+2.  Aspose.PDF for .NET：您需要安裝Aspose.PDF。您可以從以下位置下載該程式庫[Aspose PDF 版本](https://releases.aspose.com/pdf/net/)頁。
+
+3. 對 C# 的基本了解：熟悉 C# 程式設計將會很有幫助，因為我們將以 C# 編寫程式碼。
+
+4. PDF 檔案：您需要一個範例 PDF 檔案才能使用。對於此範例，我們將引用“GetProperties.pdf”。
+
+### 設定您的項目
+
+準備好工具和 PDF 文件後，您可以按照以下步驟設定項目：
+
+1. 建立新專案：開啟 IDE 並建立新的 C# 專案。
+
+2. 新增引用：包含 Aspose.PDF 程式集。您可以透過 NuGet 套件管理員或直接新增對 DLL 的參考來完成此操作。
+
+3. 準備您的 PDF 檔案：將範例「GetProperties.pdf」放在您的程式碼可以輕鬆存取的目錄中，例如`"YOUR DOCUMENT DIRECTORY"`.
+
+## 導入包
+
+專案設定完成後，您需要做的第一件事是匯入必要的命名空間。 Aspose.PDF 庫提供了各種允許您與 PDF 文件互動的類別。
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-## 步驟 2：開啟 PDF 文檔
-接下來，您需要使用以下命令開啟 PDF 文檔`Document`Aspose.PDF 類別。請務必指定 PDF 檔案的正確路徑。
+這個簡單的步驟可確保您能夠存取有效操作 PDF 文件並從中提取資訊所需的類別。
+
+現在，讓我們將取得 PDF 屬性的任務分解為可操作的步驟。本部分將引導您完成每個步驟，以便您可以輕鬆遵循並了解流程的工作原理。
+
+## 第 1 步：定義文檔目錄
+
+我們旅程的第一步是定義 PDF 文件所在的位置。我們想要指向「GetProperties.pdf」的位置。
 
 ```csharp
-Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
-```
-
-## 第 3 步：訪問頁面集合
-現在您可以使用以下命令存取文件的頁面集合`Pages`的財產`pdfDocument`目的。
-
-```csharp
-PageCollection pageCollection = pdfDocument.Pages;
-```
-
-## 第四步：進入指定頁面
-然後，您可以使用集合中頁面的索引跳到特定頁面。在下面的範例中，我們造訪第二頁（索引 1）。
-
-```csharp
-Page pdfPage = pageCollection[1];
-```
-
-## 第5步：取得頁面屬性
-現在您可以透過使用PDF頁面的相應屬性來取得PDF頁面的不同屬性，例如藝術框，裁剪框，裁剪框等`pdfPage`目的。
-
-```csharp
-Console.WriteLine("ArtBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
-Console.WriteLine("BleedBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.BleedBox.Height, pdf
-
-Page.BleedBox.Width, pdfPage.BleedBox.LLX, pdfPage.BleedBox.LLY, pdfPage.BleedBox.URX, pdfPage.BleedBox.URY);
-Console.WriteLine("CropBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.CropBox.Height, pdfPage.CropBox.Width, pdfPage.CropBox.LLX, pdfPage.CropBox.LLY, pdfPage.CropBox.URX, pdfPage.CropBox.URY);
-Console.WriteLine("MediaBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.MediaBox.Height, pdfPage.MediaBox.Width, pdfPage.MediaBox.LLX, pdfPage.MediaBox.LLY, pdfPage.MediaBox.URX, pdfPage.MediaBox.URY);
-Console.WriteLine("TrimBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.TrimBox.Height, pdfPage.TrimBox.Width, pdfPage.TrimBox.LLX, pdfPage.TrimBox.LLY, pdfPage.TrimBox.URX, pdfPage.TrimBox.URY);
-Console.WriteLine("Rect: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.Rect.Height, pdfPage.Rect.Width, pdfPage.Rect.LLX, pdfPage.Rect.LLY, pdfPage.Rect.URX, pdfPage.Rect.URY);
-Console.WriteLine("Page number: {0}", pdfPage.Number);
-Console.WriteLine("Rotate: {0}", pdfPage.Rotate);
-```
-
-### 使用 Aspose.PDF for .NET 取得屬性的範例原始碼 
-
-```csharp
-
 //文檔目錄的路徑。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//開啟文件
-Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
-//取得頁面集合
-PageCollection pageCollection = pdfDocument.Pages;
-//取得特定頁面
-Page pdfPage = pageCollection[1];
-//取得頁面屬性
-System.Console.WriteLine("ArtBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
-System.Console.WriteLine("BleedBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.BleedBox.Height, pdfPage.BleedBox.Width, pdfPage.BleedBox.LLX, pdfPage.BleedBox.LLY, pdfPage.BleedBox.URX, pdfPage.BleedBox.URY);
-System.Console.WriteLine("CropBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.CropBox.Height, pdfPage.CropBox.Width, pdfPage.CropBox.LLX, pdfPage.CropBox.LLY, pdfPage.CropBox.URX, pdfPage.CropBox.URY);
-System.Console.WriteLine("MediaBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.MediaBox.Height, pdfPage.MediaBox.Width, pdfPage.MediaBox.LLX, pdfPage.MediaBox.LLY, pdfPage.MediaBox.URX, pdfPage.MediaBox.URY);
-System.Console.WriteLine("TrimBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.TrimBox.Height, pdfPage.TrimBox.Width, pdfPage.TrimBox.LLX, pdfPage.TrimBox.LLY, pdfPage.TrimBox.URX, pdfPage.TrimBox.URY);
-System.Console.WriteLine("Rect : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.Rect.Height, pdfPage.Rect.Width, pdfPage.Rect.LLX, pdfPage.Rect.LLY, pdfPage.Rect.URX, pdfPage.Rect.URY);
-System.Console.WriteLine("Page Number : {0}", pdfPage.Number);
-System.Console.WriteLine("Rotate : {0}", pdfPage.Rotate);
-
 ```
 
+這行程式碼確保我們指定 Aspose 可以在哪裡找到我們想要使用的 PDF 檔案。
+
+## 第 2 步：開啟 PDF 文檔
+
+接下來，我們將使用以下命令開啟 PDF 文檔`Document`來自 Aspose.PDF 庫的類別。這是至關重要的一步，因為它將 PDF 載入到記憶體中。
+
+```csharp
+//開啟文件
+Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
+```
+
+透過執行這一行，我們創建了一個實例`Document`代表我們的 PDF 文件的類，使其所有屬性都可存取。
+
+## 第 3 步：訪問頁面集合
+
+開啟文件後，我們需要造訪該文件中的頁面。每個 PDF 可以有多個頁面，因此我們將使用包含所有頁面的集合。
+
+```csharp
+//取得頁面集合
+PageCollection pageCollection = pdfDocument.Pages;
+```
+
+想想`PageCollection`作為幫助我們瀏覽 PDF 文件頁面的索引。
+
+## 第 4 步：取得特定頁面
+
+現在我們已經可以訪問我們的頁面了，是時候深入挖掘了。我們將從集合中檢索特定頁面；在這種情況下，我們將獲得第一頁。
+
+```csharp
+//取得特定頁面
+Page pdfPage = pageCollection[1];
+```
+
+請記住，這是從零開始的索引。所以，如果你想訪問第一頁，你需要將其索引為`1`.
+
+## 第 5 步：檢索並顯示頁面屬性
+
+現在我們來到了令人興奮的部分——提取頁面的屬性！每個頁面都有多個屬性，例如 ArtBox、BleedBox、CropBox、MediaBox 和 TrimBox，用於描述其尺寸和位置。讓我們訪問這些屬性並顯示它們。
+
+```csharp
+//取得頁面屬性
+System.Console.WriteLine("ArtBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, 
+    pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
+System.Console.WriteLine("BleedBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.BleedBox.Height, pdfPage.BleedBox.Width, pdfPage.BleedBox.LLX, pdfPage.BleedBox.LLY, 
+    pdfPage.BleedBox.URX, pdfPage.BleedBox.URY);
+System.Console.WriteLine("CropBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.CropBox.Height, pdfPage.CropBox.Width, pdfPage.CropBox.LLX, pdfPage.CropBox.LLY, 
+    pdfPage.CropBox.URX, pdfPage.CropBox.URY);
+System.Console.WriteLine("MediaBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.MediaBox.Height, pdfPage.MediaBox.Width, pdfPage.MediaBox.LLX, pdfPage.MediaBox.LLY, 
+    pdfPage.MediaBox.URX, pdfPage.MediaBox.URY);
+System.Console.WriteLine("TrimBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.TrimBox.Height, pdfPage.TrimBox.Width, pdfPage.TrimBox.LLX, pdfPage.TrimBox.LLY, 
+    pdfPage.TrimBox.URX, pdfPage.TrimBox.URY);
+System.Console.WriteLine("Rect : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.Rect.Height, pdfPage.Rect.Width, pdfPage.Rect.LLX, pdfPage.Rect.LLY, 
+    pdfPage.Rect.URX, pdfPage.Rect.URY);
+System.Console.WriteLine("Page Number : {0}", pdfPage.Number);
+System.Console.WriteLine("Rotate : {0}", pdfPage.Rotate);
+```
+
+這段程式碼做了一些強大的事情。它存取與頁面尺寸和方向相關的每個屬性，然後將資訊列印到控制台。您得到的是頁面屬性的概述，可以幫助進一步修改或分析。
+
 ## 結論
-恭喜！您已使用 Aspose.PDF for .NET 成功取得 PDF 的屬性。您學習如何開啟 PDF 文件、導覽至特定頁面以及取得各種頁面屬性，例如尺寸方塊和旋轉。現在，您可以使用此資訊根據 PDF 文件的屬性自訂 PDF 文件的處理方式。
 
-請務必查看官方 Aspose.PDF for .NET 文檔，以取得更多有關高級功能和自訂可能性的資訊。
+現在您已經了解如何使用 Aspose.PDF for .NET 取得 PDF 屬性的完整演練！您現在已經掌握了輕鬆從 PDF 文件中提取重要資訊的知識。無論您是想分析、報告還是只是記錄 PDF 中的數據，這個強大的程式庫都是您可靠的盟友。透過掌握這些步驟，您就可以順利成為 PDF 操作嚮導了！不要猶豫，探索 Aspose.PDF 提供的更多功能和功能。
 
-### 常見問題解答
+## 常見問題解答
 
-#### Q：如何使用 Aspose.PDF for .NET 取得 PDF 的屬性？
+### 如何安裝 Aspose.PDF for .NET？  
+您可以透過 Visual Studio 中的 NuGet 套件管理器安裝它，也可以直接從 Aspose 網站下載。
 
-答：要使用 Aspose.PDF for .NET 取得 PDF 的屬性，您可以依照下列步驟操作：
+### 我可以免費使用 Aspose.PDF 嗎？  
+是的，Aspose 提供免費試用版，您可以獲得[這裡](https://releases.aspose.com/).
 
-1. 透過指定要檢索其屬性的 PDF 檔案的路徑來設定文件目錄。
-2. 使用以下命令開啟 PDF 文檔`Document` Aspose.PDF 類，提供 PDF 檔案的正確路徑。
-3. 使用以下命令存取文件的頁面集合`Pages`的財產`pdfDocument`目的。
-4. 使用集合中頁面的索引跳到特定頁面（索引從1開始）。
-5. 透過使用 PDF 頁面的相應屬性來取得 PDF 頁面的不同屬性，例如 ArtBox、BleedBox、CropBox、MediaBox、TrimBox、Rect、Page Number 和 Rotation`pdfPage`目的。
+### 在哪裡可以找到 Aspose.PDF 的文件？  
+您可以參考文檔[Aspose.pdf 文檔](https://reference.aspose.com/pdf/net/).
 
-#### Q：使用 Aspose.PDF for .NET 可以擷取的 PDF 頁面有哪些不同屬性？
+### 如果遇到問題，我該如何獲得支援？  
+您可以訪問 Aspose 論壇尋求支持，在這裡您可以提出有關您的問題的問題[這裡](https://forum.aspose.com/c/pdf/10).
 
-答：您可以使用 Aspose.PDF for .NET 來擷取 PDF 頁面的各種屬性，例如：
-
-- ArtBox：表示頁面藝術品的尺寸。
-- BleedBox：表示頁面出血的尺寸。
-- CropBox：表示裁切後頁面可見內容的尺寸。
-- MediaBox：表示頁面實體媒體的尺寸。
-- TrimBox：表示頁面修剪內容的尺寸。
-- 矩形：表示頁面邊框的尺寸。
-- 頁碼：表示文件中的頁碼。
-- Rotate：表示頁面的旋轉角度。
-
-#### Q：如何存取 PDF 文件中的特定頁面以檢索其屬性？
-
-答：要存取 PDF 文件中的特定頁面並檢索其屬性，您可以使用`Pages`的財產`pdfDocument`物件來存取文件的頁面集合。然後，您可以使用集合中頁面的索引來跳到所需的頁面。例如，要存取第二頁，您可以使用`pdfDocument.Pages[1]`（索引從1開始）。
-
-#### Q：我可以對檢索到的屬性執行操作，例如修改頁框或調整頁框大小嗎？
-
-答：是的，一旦您使用 Aspose.PDF for .NET 檢索 PDF 頁面的屬性，您就可以對它們執行各種操作。例如，您可以修改頁面框的尺寸、旋轉頁面或使用檢索到的信息對 PDF 文件進行自訂處理和操作。
-
-#### Q：Aspose.PDF for .NET 支援從加密或受密碼保護的 PDF 檔案中提取屬性嗎？
-
-答：是的，Aspose.PDF for .NET 支援從加密或受密碼保護的 PDF 檔案中提取屬性。只要您提供正確的密碼來開啟 PDF 文檔，您就可以使用教學中示範的相同方法存取和檢索其屬性。
+### 有臨時許可證嗎？  
+是的，您可以透過造訪來申請臨時評估許可證[這個連結](https://purchase.aspose.com/temporary-license/).

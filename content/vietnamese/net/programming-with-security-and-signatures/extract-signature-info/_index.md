@@ -2,210 +2,141 @@
 title: Trích xuất thông tin chữ ký
 linktitle: Trích xuất thông tin chữ ký
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Trích xuất thông tin chữ ký bằng Aspose.PDF cho .NET.
+description: Tìm hiểu cách trích xuất chữ ký số và thông tin chứng chỉ từ tài liệu PDF bằng Aspose.PDF cho .NET. Hướng dẫn từng bước đầy đủ dành cho nhà phát triển C#.
 type: docs
 weight: 80
 url: /vi/net/programming-with-security-and-signatures/extract-signature-info/
 ---
-Quá trình trích xuất thông tin chữ ký từ tài liệu PDF có thể khá hữu ích trong nhiều tình huống khác nhau. Cho dù bạn cần xác thực tính xác thực của tài liệu đã ký hay phân tích chứng chỉ được sử dụng cho chữ ký, thư viện Aspose.PDF cho .NET đều cung cấp giải pháp tiện lợi. Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn từng bước trích xuất thông tin chữ ký bằng mã nguồn C# được cung cấp.
+## Giới thiệu
 
-## Yêu cầu
+Trong thế giới kỹ thuật số ngày nay, việc đảm bảo tính bảo mật và toàn vẹn của tài liệu là rất quan trọng. Một trong những phương pháp phổ biến được sử dụng để bảo mật PDF là thêm chữ ký số. Tuy nhiên, việc truy xuất và xác minh thông tin chi tiết của chữ ký đôi khi có thể là một thách thức, đặc biệt là khi bạn đang xử lý nhiều chứng chỉ khác nhau. Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn quy trình trích xuất thông tin chữ ký từ các tài liệu PDF bằng Aspose.PDF cho .NET, giúp công việc này trở nên dễ dàng. Bạn sẽ học cách truy cập các trường chữ ký, trích xuất thông tin chứng chỉ và lưu vào tệp.
 
-Trước khi bắt đầu, hãy đảm bảo bạn đã đáp ứng đủ các điều kiện tiên quyết sau:
+## Điều kiện tiên quyết
 
-1. Kiến thức cơ bản về ngôn ngữ lập trình C#.
-2. Thư viện Aspose.PDF cho .NET được cài đặt trên hệ thống của bạn.
-3. Một tài liệu PDF hợp lệ có một hoặc nhiều trường chữ ký.
+Trước khi bắt đầu, hãy đảm bảo bạn đã sẵn sàng mọi thứ để bắt đầu.
 
-Bây giờ, chúng ta hãy đi sâu vào chi tiết triển khai.
+-  Aspose.PDF cho Thư viện .NET: Nếu bạn chưa có, bạn có thể tải xuống từ[Trang tải xuống Aspose.PDF cho .NET](https://releases.aspose.com/pdf/net/). 
+- Môi trường phát triển .NET: Bạn sẽ cần một IDE như Visual Studio.
+- Kiến thức cơ bản về C#: Sự quen thuộc với C# sẽ hữu ích cho việc hiểu các đoạn mã trong hướng dẫn này.
+- Tài liệu PDF có chữ ký số: Để thử nghiệm, hãy đảm bảo bạn có tệp PDF có chứa ít nhất một chữ ký số.
 
-## Bước 1: Nhập các thư viện cần thiết
+## Nhập không gian tên bắt buộc
 
- Để bắt đầu, bạn cần nhập các thư viện cần thiết vào dự án C# của mình. Trong trường hợp này, chúng ta cần nhập`Aspose.Pdf` Và`System.IO` không gian tên. Bạn có thể thực hiện điều này bằng cách thêm đoạn mã sau vào đầu tệp C# của mình:
+Trước khi bắt đầu code, điều quan trọng là phải import các namespace cần thiết. Các namespace này sẽ cho phép bạn truy cập chức năng Aspose.PDF và làm việc với các tài liệu PDF.
 
 ```csharp
-using Aspose.Pdf;
 using System.IO;
+using Aspose.Pdf.Forms;
+using Aspose.Pdf;
+using System;
 ```
 
-## Bước 2: Thiết lập đường dẫn tài liệu
+Bây giờ bạn đã thiết lập xong những điều cần thiết, hãy chuyển sang quá trình trích xuất thông tin chữ ký từ tệp PDF.
 
-Tiếp theo, bạn cần thiết lập đường dẫn đến tài liệu PDF mà bạn muốn trích xuất thông tin chữ ký. Thay thế`"YOUR DOCUMENTS DIRECTORY"` trong đoạn mã sau với đường dẫn thực tế đến tài liệu của bạn:
+## Bước 1: Thiết lập thư mục tài liệu
+
+ Trước khi làm việc trên một tài liệu PDF, bạn cần phải chỉ định vị trí của tập tin bạn sẽ sử dụng. Bạn có thể thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế của thư mục nơi lưu trữ các tệp PDF của bạn.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+// Đường dẫn đến thư mục tài liệu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 string input = dataDir + "ExtractSignatureInfo.pdf";
 ```
 
-## Bước 3: Trích xuất thông tin chữ ký
+Ở đây, chúng tôi chỉ định thư mục chứa tệp PDF và tên tệp. Hãy đảm bảo tệp tồn tại trong thư mục đó!
 
-Bây giờ, chúng ta hãy chuyển sang phần chính của mã, nơi chúng ta trích xuất thông tin chữ ký từ tài liệu PDF. Chúng ta lặp lại từng trường trong biểu mẫu của tài liệu và kiểm tra xem đó có phải là trường chữ ký hay không. Nếu tìm thấy trường chữ ký, chúng ta sẽ tiến hành trích xuất chứng chỉ. Thêm đoạn mã sau:
+## Bước 2: Tải tài liệu PDF
+
+ Bây giờ bạn đã thiết lập thư mục của mình, bước tiếp theo là tải tài liệu PDF bằng cách sử dụng`Document` lớp từ Aspose.PDF.
 
 ```csharp
 using (Document pdfDocument = new Document(input))
 {
-     foreach(Field field in pdfDocument.Form)
-     {
-         SignatureField sf = field as SignatureField;
-         if (sf != null)
-         {
-             // Trích xuất chứng chỉ
-             Stream cerStream = sf.ExtractCertificate();
-             if (cerStream != null)
-             {
-                 using (cerStream)
-                 {
-                     byte[] bytes = new byte[cerStream.Length];
-                     using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
-                     {
-                         cerStream.Read(bytes, 0, bytes.Length);
-                         fs.Write(bytes, 0, bytes.Length);
-                     }
-                 }
-             }
-         }
-     }
+    // Xử lý PDF tại đây.
 }
 ```
 
-## Bước 4: Trích xuất chứng chỉ
+ Dòng mã này khởi tạo một`Document`đối tượng đại diện cho tệp PDF.`using` câu lệnh đảm bảo rằng các tài nguyên được dọn sạch sau khi tài liệu được xử lý.
 
-Trong bước này, chúng tôi trích xuất chứng chỉ từ trường chữ ký và lưu dưới dạng tệp. Chứng chỉ được trích xuất có thể được phân tích thêm hoặc sử dụng cho mục đích xác thực. Đoạn mã dưới đây minh họa quá trình trích xuất và lưu:
+## Bước 3: Truy cập vào các trường biểu mẫu
+
+Trong bước này, chúng ta sẽ lặp qua tất cả các trường biểu mẫu trong tài liệu PDF. Vì chữ ký thường được lưu trữ dưới dạng trường biểu mẫu, bước này sẽ giúp chúng ta xác định các trường chữ ký.
+
+```csharp
+foreach (Field field in pdfDocument.Form)
+{
+    // Xác định các trường chữ ký ở đây.
+}
+```
+
+ Bằng cách lặp lại thông qua`Form` tài sản của`Document` đối tượng, chúng ta có thể kiểm tra từng trường biểu mẫu để xem đó có phải là trường chữ ký hay không.
+
+## Bước 4: Xác định các trường chữ ký
+
+ Sau khi bạn đã truy cập vào các trường biểu mẫu, bước tiếp theo là xác định trường nào là trường chữ ký. Chúng ta có thể thực hiện điều này bằng cách chuyển đổi từng trường thành một`SignatureField` sự vật.
+
+```csharp
+SignatureField sf = field as SignatureField;
+if (sf != null)
+{
+    // Trích xuất thông tin chữ ký.
+}
+```
+
+ Ở đây, chúng tôi sử dụng`as` từ khóa để cố gắng chuyển đổi từng trường biểu mẫu thành một`SignatureField`. Nếu việc đúc thành công, chúng ta biết rằng trường đó là một chữ ký.
+
+## Bước 5: Trích xuất chứng chỉ
+
+Bây giờ bạn đã xác định được trường chữ ký, nhiệm vụ tiếp theo là trích xuất chứng chỉ từ chữ ký. Chứng chỉ chứa thông tin quan trọng về người ký và tính hợp lệ của chữ ký.
 
 ```csharp
 Stream cerStream = sf.ExtractCertificate();
+```
+
+ Các`ExtractCertificate` phương pháp trả về một`Stream` đối tượng chứa dữ liệu chứng chỉ. Luồng này có thể được sử dụng để lưu chứng chỉ để phân tích hoặc lưu trữ thêm.
+
+## Bước 6: Lưu chứng chỉ vào tệp
+
+ Sau khi bạn đã trích xuất chứng chỉ, bước cuối cùng là lưu nó vào một tệp. Trong trường hợp này, chúng tôi sẽ lưu chứng chỉ dưới dạng`.cer` tài liệu.
+
+```csharp
 if (cerStream != null)
 {
-     using (cerStream)
-     {
-         byte[] bytes = new byte[cerStream.Length];
-         using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
-         {
-             cerStream.Read(bytes, 0, bytes.Length);
-             fs.Write(bytes, 0, bytes.Length);
-         }
-     }
+    using (cerStream)
+    {
+        byte[] bytes = new byte[cerStream.Length];
+        using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
+        {
+            cerStream.Read(bytes, 0, bytes.Length);
+            fs.Write(bytes, 0, bytes.Length);
+        }
+    }
 }
 ```
 
-## Bước 5
+Trong khối mã này, chúng tôi:
 
-: Lưu chứng chỉ
-
-Cuối cùng, chúng ta lưu chứng chỉ đã trích xuất dưới dạng tệp. Trong ví dụ này, chứng chỉ được lưu với tên "input.cer" trong thư mục đã chỉ định. Bạn có thể sửa đổi mã cho phù hợp với yêu cầu của mình. Sau đây là đoạn mã để lưu chứng chỉ:
-
-```csharp
-using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
-{
-     fs.Write(bytes, 0, bytes.Length);
-}
-```
-
-Vậy là xong! Bạn đã trích xuất thành công thông tin chữ ký bằng Aspose.PDF cho .NET. Hãy thoải mái tích hợp mã này vào các ứng dụng của riêng bạn hoặc sửa đổi nó theo nhu cầu của bạn.
-
-### Mã nguồn mẫu để trích xuất thông tin chữ ký bằng Aspose.PDF cho .NET 
-```csharp
-try
-{
-	// Đường dẫn đến thư mục tài liệu.
-	string dataDir = "YOUR DOCUMENTS DIRECTORY";
-	string input = dataDir + "ExtractSignatureInfo.pdf";
-	using (Document pdfDocument = new Document(input))
-	{
-		foreach (Field field in pdfDocument.Form)
-		{
-			SignatureField sf = field as SignatureField;
-			if (sf != null)
-			{
-				Stream cerStream = sf.ExtractCertificate();
-				if (cerStream != null)
-				{
-					using (cerStream)
-					{
-						byte[] bytes = new byte[cerStream.Length];
-						using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
-						{
-							cerStream.Read(bytes, 0, bytes.Length);
-							fs.Write(bytes, 0, bytes.Length);
-						}
-					}
-				}
-			}
-		}
-	}
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+1. Kiểm tra xem luồng chứng chỉ có phải là null không.
+2. Đọc dữ liệu chứng chỉ vào một mảng byte.
+3.  Viết mảng byte vào một`.cer` tập tin trong thư mục tài liệu.
 
 ## Phần kết luận
 
-Trong hướng dẫn này, chúng tôi đã hướng dẫn từng bước về cách trích xuất thông tin chữ ký từ tài liệu PDF bằng thư viện Aspose.PDF cho .NET. Chúng tôi đã đề cập đến quy trình nhập các thư viện cần thiết, thiết lập đường dẫn tài liệu, trích xuất thông tin chữ ký, trích xuất chứng chỉ và lưu vào tệp. Bằng cách làm theo các bước này, bạn có thể dễ dàng lấy thông tin chi tiết về chữ ký và làm việc với chúng khi cần.
+Trích xuất chữ ký số và thông tin chứng chỉ liên quan từ các tài liệu PDF bằng Aspose.PDF cho .NET khá đơn giản khi được chia thành các bước đơn giản. Cho dù bạn đang kiểm tra tài liệu, xác minh chữ ký hay chỉ lưu trữ chứng chỉ để bảo quản, hướng dẫn này sẽ cung cấp cho bạn kiến thức để thực hiện hiệu quả. Hãy nhớ rằng, bảo mật và xác minh tài liệu là rất quan trọng trong thế giới kỹ thuật số ngày nay và việc sử dụng các công cụ như Aspose.PDF cho .NET giúp bạn xử lý dễ dàng hơn nhiều.
 
-### Câu hỏi thường gặp
+## Câu hỏi thường gặp
 
-#### H: Tại sao tôi cần phải trích xuất thông tin chữ ký từ tài liệu PDF?
+### Tôi có thể trích xuất nhiều chữ ký từ một tệp PDF bằng Aspose.PDF cho .NET không?
+Có, đoạn mã này lặp qua tất cả các trường biểu mẫu trong tài liệu, cho phép bạn trích xuất nhiều chữ ký nếu chúng tồn tại.
 
-A: Trích xuất thông tin chữ ký từ tài liệu PDF rất hữu ích để xác thực tính xác thực của tài liệu đã ký và phân tích chứng chỉ được sử dụng cho chữ ký. Quá trình này giúp đảm bảo tính toàn vẹn của nội dung đã ký và có thể cần thiết cho mục đích pháp lý và bảo mật.
+### Điều gì xảy ra nếu không tìm thấy chữ ký trong tệp PDF?
+Nếu không có trường chữ ký nào, mã sẽ bỏ qua chúng mà không báo lỗi.
 
-#### H: Aspose.PDF dành cho .NET là gì?
+### Tôi có thể sử dụng cách này để xác minh tính hợp lệ của chữ ký không?
+Mặc dù bạn có thể trích xuất chứng chỉ, việc xác minh tính hợp lệ của chữ ký đòi hỏi các bước bổ sung, chẳng hạn như kiểm tra chuỗi tin cậy của chứng chỉ.
 
-A: Aspose.PDF for .NET là một thư viện cho phép các nhà phát triển làm việc với các tài liệu PDF trong các ứng dụng .NET. Nó cung cấp nhiều tính năng để tạo, sửa đổi và tương tác với các tệp PDF theo chương trình.
+### Có thể trích xuất dữ liệu trường biểu mẫu khác bằng Aspose.PDF cho .NET không?
+Có, Aspose.PDF cho phép bạn truy cập và thao tác nhiều loại trường biểu mẫu khác nhau trong PDF, không chỉ các trường chữ ký.
 
-#### H: Điều kiện tiên quyết để trích xuất thông tin chữ ký bằng Aspose.PDF cho .NET là gì?
-
-A: Để trích xuất thông tin chữ ký, bạn cần có kiến thức cơ bản về ngôn ngữ lập trình C#, thư viện Aspose.PDF cho .NET được cài đặt trên hệ thống của bạn và một tài liệu PDF hợp lệ chứa một hoặc nhiều trường chữ ký.
-
-#### H: Làm thế nào để nhập các thư viện cần thiết cho quá trình trích xuất?
-
-A: Bạn có thể nhập các thư viện cần thiết bằng cách thêm`using` chỉ thị cho`Aspose.Pdf` Và`System.IO` ở đầu tệp C# của bạn. Các chỉ thị này cho phép bạn sử dụng các lớp và phương thức cần thiết để trích xuất thông tin chữ ký.
-
-#### H: Làm thế nào để chỉ định tài liệu PDF để trích xuất thông tin chữ ký?
-
- A: Bạn có thể thiết lập đường dẫn đến tài liệu PDF bằng cách thay thế`"YOUR DOCUMENTS DIRECTORY"` với đường dẫn thực tế đến tài liệu của bạn trong đoạn mã được cung cấp. Đường dẫn này được sử dụng để tải tài liệu PDF mà bạn muốn trích xuất thông tin chữ ký.
-
-#### H: Quy trình trích xuất thông tin chữ ký từ tài liệu PDF là gì?
-
-A: Quá trình trích xuất bao gồm việc lặp lại qua các trường biểu mẫu của tài liệu PDF, kiểm tra xem mỗi trường có phải là trường chữ ký hay không và nếu có, trích xuất chứng chỉ liên quan. Chứng chỉ đã trích xuất có thể được lưu dưới dạng tệp để phân tích hoặc xác thực thêm.
-
-#### H: Chứng chỉ được trích xuất từ trường chữ ký như thế nào?
-
-A: Chứng chỉ được trích xuất từ trường chữ ký bằng cách sử dụng`ExtractCertificate()` phương pháp được cung cấp bởi`SignatureField` lớp trong Aspose.PDF cho .NET. Phương pháp này trả về một luồng chứa dữ liệu chứng chỉ.
-
-#### H: Làm thế nào để lưu chứng chỉ đã trích xuất thành một tệp?
-
- A: Bạn có thể lưu chứng chỉ đã trích xuất dưới dạng tệp bằng cách đọc luồng chứng chỉ và ghi nội dung của nó vào tệp bằng cách sử dụng`FileStream` lớp. Mã được cung cấp trong hướng dẫn minh họa quá trình này.
-
-#### H: Tôi có thể sử dụng chứng chỉ đã trích xuất này để xác thực chữ ký không?
-
-A: Có, chứng chỉ đã trích xuất có thể được sử dụng để xác thực chữ ký. Bạn có thể phân tích chi tiết chứng chỉ và xác minh tính xác thực của nó để đảm bảo tính toàn vẹn của tài liệu đã ký.
-
-#### H: Làm sao tôi có thể tích hợp mã này vào ứng dụng của mình?
-
-A: Bạn có thể tích hợp mã được cung cấp vào các ứng dụng C# của riêng bạn bằng cách làm theo hướng dẫn từng bước. Sửa đổi đường dẫn và tên tệp khi cần thiết và kết hợp mã vào các dự án hiện có của bạn.
-
-#### H: Có những tính năng nào khác trong Aspose.PDF dành cho .NET liên quan đến quản lý chữ ký không?
-
-A: Có, Aspose.PDF for .NET cung cấp nhiều tính năng để làm việc với chữ ký số, bao gồm ký tài liệu, xác minh chữ ký và thêm thông tin dấu thời gian. Bạn có thể khám phá tài liệu chính thức để biết thêm chi tiết về các tính năng này.
-
-#### H: Tôi có thể tìm thêm tài nguyên về cách sử dụng Aspose.PDF cho .NET ở đâu?
-
- A: Để biết thêm thông tin, hướng dẫn và tài nguyên về cách sử dụng Aspose.PDF cho .NET,[Aspose.PDF cho .NET](https://reference.aspose.com/pdf/net/).
-
-#### H: Có thể trích xuất chữ ký từ các tài liệu PDF được mã hóa không?
-
-A: Khả năng trích xuất chữ ký từ các tài liệu PDF được mã hóa có thể phụ thuộc vào cài đặt mã hóa và quyền của tài liệu. Bạn có thể cần đảm bảo rằng mình có các quyền cần thiết để truy cập và trích xuất thông tin chữ ký.
-
-#### H: Tôi có thể trích xuất nhiều chữ ký từ một tài liệu PDF không?
-
-A: Có, bạn có thể sửa đổi mã được cung cấp để lặp qua tất cả các trường chữ ký trong tài liệu PDF và trích xuất thông tin chữ ký từ mỗi trường. Điều này cho phép bạn trích xuất thông tin về nhiều chữ ký có trong tài liệu.
-
-#### H: Một số trường hợp sử dụng thực tế để trích xuất thông tin chữ ký là gì?
-
-A: Một số trường hợp sử dụng thực tế để trích xuất thông tin chữ ký bao gồm xác thực tính xác thực của các tài liệu được ký kỹ thuật số, phân tích chi tiết chứng chỉ cho mục đích tuân thủ và lưu giữ hồ sơ chữ ký và người ký cho mục đích kiểm toán.
-
-#### H: Có cân nhắc nào về mặt pháp lý khi trích xuất thông tin chữ ký không?
-
-A: Việc trích xuất thông tin chữ ký có thể có những tác động pháp lý, đặc biệt là khi xử lý các tài liệu ràng buộc về mặt pháp lý. Đảm bảo rằng bạn tuân thủ các quy định và luật pháp có liên quan đến chữ ký điện tử và tính xác thực của tài liệu trong phạm vi quyền hạn của bạn.
+### Tôi có thể xem thông tin chi tiết của chứng chỉ đã trích xuất như thế nào?
+ Sau khi chứng chỉ được lưu dưới dạng`.cer` tệp, bạn có thể mở tệp đó bằng bất kỳ trình xem chứng chỉ nào hoặc nhập tệp đó vào kho chứng chỉ hệ thống để kiểm tra thêm.

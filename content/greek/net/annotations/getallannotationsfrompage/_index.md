@@ -80,7 +80,7 @@ foreach (MarkupAnnotation annotation in pdfDocument.Pages[1].Annotations)
 Το Aspose.PDF για .NET είναι μια βιβλιοθήκη που επιτρέπει στους προγραμματιστές να δημιουργούν, να χειρίζονται και να διαχειρίζονται έγγραφα PDF μέσω προγραμματισμού.
 
 ### Πώς μπορώ να εγκαταστήσω το Aspose.PDF;
-Μπορείτε να εγκαταστήσετε το Aspose.PDF μέσω του NuGet Package Manager στο Visual Studio ή να το κατεβάσετε απευθείας από το[Aspose website](https://releases.aspose.com/pdf/net/).
+Μπορείτε να εγκαταστήσετε το Aspose.PDF μέσω του NuGet Package Manager στο Visual Studio ή να το κατεβάσετε απευθείας από το[Aspose ιστότοπο](https://releases.aspose.com/pdf/net/).
 
 ### Μπορώ να εξαγάγω σχολιασμούς από πολλές σελίδες;
 Ναι, μπορείτε να κάνετε κύκλο σε όλες τις σελίδες του εγγράφου και να εξαγάγετε σχολιασμούς από κάθε μία.

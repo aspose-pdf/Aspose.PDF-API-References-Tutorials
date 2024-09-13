@@ -24,7 +24,7 @@ A felhasználói élmény a PDF dokumentumhivatkozások élén áll. Megvizsgál
 
 Az Aspose.PDF for Java oktatóanyag segítségével tárja fel a PDF-dokumentumhivatkozásokban rejlő lehetőségeket Java nyelven. Emelje fel PDF-fájljait hiperhivatkozásokkal, könyvjelzőkkel és interaktivitással, és vonzza be közönségét, mint még soha.
 
-## PDF-dokumentumhivatkozások oktatóanyagok
+## PDF dokumentumhivatkozások oktatóanyagok
 ### [Hiperhivatkozás hozzáadása PDF-fájlhoz Java használatával](./add-hyperlink-in-pdf-file-using-java/)
 Ismerje meg, hogyan adhat hiperhivatkozásokat PDF-fájlokhoz Java használatával a lépésenkénti utasítások és a forráskód segítségével. Növelje PDF-dokumentumait interaktivitással.
 ### [Hozzon létre hivatkozást egy másik PDF-dokumentumhoz Java használatával](./create-a-link-to-another-pdf-document-using-java/)

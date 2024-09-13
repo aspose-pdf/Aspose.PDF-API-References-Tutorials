@@ -30,7 +30,7 @@ using Aspose.Pdf;
  Dans le code, recherchez la ligne qui dit`string dataDir = "YOUR DOCUMENT DIRECTORY";` et remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin vers le répertoire où sont stockés vos documents.
 
 ## Étape 4 : charger le document PDF existant
- Charger un document PDF existant à l'aide de la`Document` constructeur et en passant le chemin vers le fichier PDF d'entrée.
+ Charger un document PDF existant à l'aide de la`Document`constructeur et en passant le chemin vers le fichier PDF d'entrée.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
@@ -129,11 +129,11 @@ using Aspose.Pdf;
 
 #### Q : Comment enregistrer le document PDF mis à jour ?
 
- A : À l'étape 7, vous utiliserez le`Save` méthode de la`Document`objet pour enregistrer le document PDF mis à jour, en spécifiant le chemin du fichier de sortie.
+ A : À l'étape 7, vous utiliserez le`Save` méthode de la`Document` objet pour enregistrer le document PDF mis à jour, en spécifiant le chemin du fichier de sortie.
 
 #### Q : Quelle est l’importance d’intégrer des polices dans un document PDF ?
 
-R : L'intégration des polices garantit que les polices utilisées dans le PDF sont incluses dans le fichier lui-même. Cela garantit un affichage cohérent du texte même si le système du destinataire ne dispose pas des polices requises installées.
+: L'intégration des polices garantit que les polices utilisées dans le PDF sont incluses dans le fichier lui-même. Cela garantit un affichage cohérent du texte même si le système du destinataire ne dispose pas des polices requises installées.
 
 #### Q : Quel est le principal point à retenir de ce tutoriel ?
 

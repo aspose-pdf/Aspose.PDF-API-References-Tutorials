@@ -70,7 +70,7 @@ pdfDocument.save("tagged_image.pdf");
 
 ## الأسئلة الشائعة
 
-### كيف أقوم بتثبيت Aspose.PDF لـJava؟
+### كيف أقوم بتثبيت Aspose.PDF لـ Java؟
 
 لتثبيت Aspose.PDF لـ Java، اتبع الخطوات التالية:
 

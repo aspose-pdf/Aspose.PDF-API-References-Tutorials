@@ -34,7 +34,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## Bước 3: Tìm kiếm và thay thế phông chữ
 
- Chúng tôi tạo ra một`TextFragmentAbsorber`đối tượng và đặt tùy chọn chỉnh sửa để xóa phông chữ không sử dụng. Sau đó, chúng tôi chấp nhận bộ hấp thụ cho tất cả các trang của tài liệu PDF để tìm kiếm các đoạn văn bản.
+ Chúng tôi tạo ra một`TextFragmentAbsorber` đối tượng và đặt tùy chọn chỉnh sửa để xóa phông chữ không sử dụng. Sau đó, chúng tôi chấp nhận bộ hấp thụ cho tất cả các trang của tài liệu PDF để tìm kiếm các đoạn văn bản.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));

@@ -168,7 +168,7 @@ table.DefaultCellPadding.Top = 10;
 table.DefaultCellPadding.Bottom = 10;
 //希望するセクションの段落コレクションに表を追加します
 page.Paragraphs.Add(table);
-//BorderInfo オブジェクトを使用してデフォルトのセル境界線を設定する
+// BorderInfo オブジェクトを使用してデフォルトのセル境界線を設定する
 table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
 //別のカスタマイズされたBorderInfoオブジェクトを使用して表の境界線を設定する
 table.Border = new BorderInfo(BorderSide.All, 1f);

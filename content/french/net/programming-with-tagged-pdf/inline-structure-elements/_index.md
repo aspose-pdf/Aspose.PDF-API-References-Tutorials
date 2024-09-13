@@ -299,7 +299,7 @@ R : Aspose.PDF pour .NET propose des classes et des méthodes pour créer et man
 
 #### Q : Comment les éléments de structure en ligne aident-ils à créer une hiérarchie de documents claire ?
 
-: Les éléments de structure en ligne, tels que les titres de différents niveaux, contribuent à établir une hiérarchie claire et bien définie dans le document. Les lecteurs peuvent identifier rapidement les sujets principaux, les sous-sujets et le contenu associé, ce qui facilite la navigation et la compréhension du document.
+R : Les éléments de structure en ligne, tels que les titres de différents niveaux, contribuent à établir une hiérarchie claire et bien définie dans le document. Les lecteurs peuvent identifier rapidement les sujets principaux, les sous-sujets et le contenu associé, ce qui facilite la navigation et la compréhension du document.
 
 #### Q : Puis-je personnaliser l'apparence et la mise en forme des éléments de structure en ligne à l'aide d'Aspose.PDF pour .NET ?
 
@@ -307,7 +307,7 @@ R : Oui, vous pouvez personnaliser l'apparence et la mise en forme des élément
 
 #### Q : Comment créer et ajouter des titres de différents niveaux à un document PDF à l'aide d'éléments de structure en ligne dans Aspose.PDF pour .NET ?
 
- A : Vous pouvez créer des titres de différents niveaux à l'aide de la`CreateHeaderElement` méthode, puis ajoutez-les à l'élément de structure racine. Par la suite, vous pouvez ajouter du contenu à chaque élément d'en-tête à l'aide de la méthode`CreateSpanElement` méthode pour créer des étendues de texte.
+ A : Vous pouvez créer des titres de différents niveaux à l'aide de la`CreateHeaderElement`méthode, puis ajoutez-les à l'élément de structure racine. Par la suite, vous pouvez ajouter du contenu à chaque élément d'en-tête à l'aide de la méthode`CreateSpanElement` méthode pour créer des étendues de texte.
 
 #### Q : Puis-je utiliser des éléments de structure en ligne pour créer des listes, des puces ou d’autres types d’organisation de contenu dans un document PDF ?
 
@@ -319,4 +319,4 @@ R : Les éléments de structure en ligne jouent un rôle crucial dans l'amélior
 
 #### Q : Puis-je explorer des utilisations plus avancées des éléments de structure en ligne, telles que la création d’éléments interactifs ou l’intégration de contenu multimédia ?
 
-: Absolument ! Bien que ce didacticiel se concentre sur la création de titres et de paragraphes, Aspose.PDF pour .NET offre des fonctionnalités avancées pour créer des éléments interactifs, intégrer du contenu multimédia, ajouter des hyperliens, etc. Consultez la documentation et les exemples de la bibliothèque pour découvrir ces fonctionnalités avancées.
+R : Absolument ! Bien que ce didacticiel se concentre sur la création de titres et de paragraphes, Aspose.PDF pour .NET offre des fonctionnalités avancées pour créer des éléments interactifs, intégrer du contenu multimédia, ajouter des hyperliens, etc. Consultez la documentation et les exemples de la bibliothèque pour découvrir ces fonctionnalités avancées.

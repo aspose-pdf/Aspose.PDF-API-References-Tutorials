@@ -103,7 +103,7 @@ NoteElement note3 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note3);
 note3.SetText("Note with ID = 'note_003'. ");
 note3.SetId("note_003");
-// İstisna atılmalıdır - Aspose.Pdf.Tagged.TaggedException: ID='note_002' olan yapı öğesi zaten mevcut
+//İstisna atılmalıdır - Aspose.Pdf.Tagged.TaggedException: ID='note_002' olan yapı öğesi zaten mevcut
 //not3.SetId("not_002");
 // ClearId() Not Yapı Elemanı için kullanılırsa, ortaya çıkan belge PDF/UA ile uyumlu değildir
 //not3.ClearId();
@@ -148,7 +148,7 @@ C: Evet, Aspose.PDF kütüphanesi tarafından sağlanan yöntemleri ve özellikl
 
 #### S: Not yapı elemanlarına benzersiz kimlikler atayabilir miyim?
 
-A: Evet, not yapı öğelerine benzersiz kimlikler atayabilirsiniz.`SetId` yöntem. Kod, not öğelerinin kimliklerinin benzersiz değerlere nasıl ayarlanacağını gösterir.
+ A: Evet, not yapı öğelerine benzersiz kimlikler atayabilirsiniz.`SetId` yöntem. Kod, not öğelerinin kimliklerinin benzersiz değerlere nasıl ayarlanacağını gösterir.
 
 #### S: Bir not yapı öğesine yinelenen bir kimlik atamayı denersem ne olur?
 
@@ -156,7 +156,7 @@ A: Bir not yapı öğesine yinelenen bir kimlik atamaya çalışmak bir istisnay
 
 #### S: Not yapı öğeleri oluştururken PDF/UA uyumluluğunu nasıl sağlayabilirim?
 
- A: Eğitimde sağlanan kod, PDF/UA uyumluluğunun nasıl doğrulanacağını göstermektedir.`Validate` yöntem. Belgeyi PDF/UA standardına göre doğrulayarak, eklenen not yapı öğelerinin erişilebilirlik yönergelerine uymasını sağlayabilirsiniz.
+A: Eğitimde sağlanan kod, PDF/UA uyumluluğunun nasıl doğrulanacağını göstermektedir.`Validate` yöntem. Belgeyi PDF/UA standardına göre doğrulayarak, eklenen not yapı öğelerinin erişilebilirlik yönergelerine uymasını sağlayabilirsiniz.
 
 #### S: Bu yaklaşımı mevcut bir PDF belgesine not yapısı öğeleri eklemek için kullanabilir miyim?
 

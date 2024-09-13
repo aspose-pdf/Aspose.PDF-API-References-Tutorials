@@ -140,7 +140,7 @@ Congratulazioni! Ora hai imparato come impostare un bordo in una tabella di un d
 
 #### D: È possibile applicare bordi a singole celle all'interno della tabella con impostazioni diverse (ad esempio, colori o stili di bordo diversi)?
 
- A: Sì, puoi applicare bordi a singole celle all'interno della tabella con impostazioni diverse configurando il`cell.Border` proprietà per ogni cella singolarmente. Ciò ti consente di avere stili e colori di bordo specifici per ogni cella in base alle tue esigenze.
+ A: Sì, puoi applicare bordi a singole celle all'interno della tabella con impostazioni diverse configurando il`cell.Border` proprietà per ogni cella singolarmente. Questo ti consente di avere stili e colori di bordo specifici per ogni cella in base alle tue esigenze.
 
 #### D: Posso rimuovere il bordo da lati specifici della tabella (ad esempio, i bordi sinistro e destro)?
 

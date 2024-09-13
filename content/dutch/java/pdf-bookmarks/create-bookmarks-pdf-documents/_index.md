@@ -10,7 +10,7 @@ url: /nl/java/pdf-bookmarks/create-bookmarks-pdf-documents/
 
 ## Invoering
 
-In het digitale tijdperk kan het beheren en navigeren door grote PDF-documenten een ontmoedigende taak zijn. Stel je voor dat je een document van honderd pagina's hebt en snel specifieke secties probeert te vinden. Dit is waar bladwijzers te hulp schieten. Met bladwijzers kun je een klikbare inhoudsopgave maken in je PDF-document, waardoor lezers gemakkelijk naar specifieke secties kunnen springen. In deze tutorial onderzoeken we hoe je bladwijzers in PDF-documenten kunt maken met Aspose.PDF voor Java, een krachtige API die het werken met PDF's in Java-applicaties vereenvoudigt.
+In het digitale tijdperk kan het beheren en navigeren door grote PDF-documenten een ontmoedigende taak zijn. Stel je voor dat je een document van honderd pagina's hebt en snel specifieke secties probeert te vinden. Dit is waar bladwijzers te hulp schieten. Met bladwijzers kun je een klikbare inhoudsopgave maken in je PDF-document, waardoor lezers gemakkelijk naar specifieke secties kunnen springen. In deze tutorial onderzoeken we hoe je bladwijzers maakt in PDF-documenten met Aspose.PDF voor Java, een krachtige API die het werken met PDF's in Java-applicaties vereenvoudigt.
 
 ## Vereisten
 

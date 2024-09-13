@@ -2,62 +2,88 @@
 title: Lấy lại trường biểu mẫu theo thứ tự tab
 linktitle: Lấy lại trường biểu mẫu theo thứ tự tab
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Tìm hiểu cách lấy các trường biểu mẫu theo thứ tự tab bằng Aspose.PDF cho .NET.
+description: Tìm hiểu cách truy xuất và sửa đổi các trường biểu mẫu theo thứ tự tab bằng Aspose.PDF cho .NET. Hướng dẫn từng bước với các ví dụ mã để hợp lý hóa điều hướng biểu mẫu PDF.
 type: docs
 weight: 240
 url: /vi/net/programming-with-forms/retrieve-form-field-in-tab-order/
 ---
-Khi làm việc với các tài liệu PDF trong C# bằng Aspose.PDF cho .NET, bạn có thể gặp phải tình huống cần truy xuất các trường biểu mẫu theo thứ tự tab cụ thể. Điều này có thể hữu ích khi bạn muốn thực hiện các thao tác trên các trường biểu mẫu dựa trên trình tự tab của chúng. Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn từng bước về cách truy xuất các trường biểu mẫu theo thứ tự tab bằng Aspose.PDF cho .NET.
+## Giới thiệu
 
-## Yêu cầu
+Quản lý tài liệu PDF và đảm bảo chúng hoạt động như mong đợi, đặc biệt là với các trường tương tác, đôi khi có thể giống như chăn dắt mèo. Nhưng đừng lo lắng, với các công cụ phù hợp, bạn có thể kiểm soát và làm cho PDF của mình hoạt động chính xác như bạn muốn. Trong hướng dẫn này, chúng tôi sẽ đi sâu vào cách lấy các trường biểu mẫu theo thứ tự tab bằng Aspose.PDF cho .NET. Đây là một mẹo thiết yếu để hợp lý hóa trải nghiệm người dùng, đảm bảo điều hướng biểu mẫu liền mạch. 
 
-Trước khi bắt đầu, hãy đảm bảo bạn đáp ứng đủ các điều kiện tiên quyết sau:
+## Điều kiện tiên quyết
 
-- Visual Studio được cài đặt trên hệ thống của bạn
-- Đã cài đặt thư viện Aspose.PDF cho .NET
+Trước khi bắt đầu viết mã, hãy đảm bảo rằng bạn đã thiết lập mọi thứ cần thiết:
 
-Bây giờ, chúng ta hãy tìm hiểu các bước để lấy các trường biểu mẫu theo thứ tự tab.
+- Aspose.PDF cho .NET: Bạn cần cài đặt thư viện Aspose.PDF trong dự án của mình. Nếu bạn chưa có, hãy tải xuống[đây](https://releases.aspose.com/pdf/net/).
+- Môi trường phát triển: Thiết lập môi trường phát triển C# như Visual Studio.
+- .NET Framework: Đảm bảo rằng .NET đã được cài đặt trên hệ thống của bạn.
+- Tài liệu PDF: Chuẩn bị sẵn một tài liệu PDF có các trường biểu mẫu để thử nghiệm.
+  
+Khi đã nắm vững những kiến thức cơ bản này, bạn đã sẵn sàng để truy xuất và thao tác các trường biểu mẫu theo thứ tự tab một cách chuyên nghiệp.
 
-## Bước 1: Thiết lập thư mục tài liệu
+## Nhập gói
 
- Để bắt đầu, bạn cần thiết lập thư mục tài liệu nơi tài liệu PDF của bạn được lưu trữ. Bạn có thể thực hiện việc này bằng cách chỉ định đường dẫn đến thư mục trong`dataDir` biến đổi.
+Để làm việc với Aspose.PDF, trước tiên bạn cần nhập các không gian tên cần thiết vào dự án của mình. Các không gian tên này cung cấp cho bạn quyền truy cập vào tất cả các chức năng để thao tác với PDF.
 
 ```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using Aspose.Pdf.Forms;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
- Thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế đến thư mục tài liệu của bạn.
+Đây là những lệnh nhập cốt lõi cần thiết để làm việc với PDF và các trường biểu mẫu của nó.
 
-## Bước 2: Tải tài liệu PDF
+## Bước 1: Tải Tài liệu PDF
 
- Trong bước này, chúng tôi sẽ tải tài liệu PDF bằng Aspose.PDF cho .NET.`Document` Lớp này cung cấp khả năng tải và thao tác với các tài liệu PDF.
+Trước khi chúng ta có thể làm bất cứ điều gì với các trường biểu mẫu, chúng ta cần tải tài liệu PDF. Đây là điểm khởi đầu cho tất cả các tương tác với PDF của bạn.
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "Test2.pdf");
 ```
 
- Đây,`"Test2.pdf"`là tên của tài liệu PDF bạn muốn tải. Đảm bảo tài liệu có trong thư mục tài liệu đã chỉ định.
+ Ở đây, chúng tôi khởi tạo`Document`đối tượng bằng cách truyền đường dẫn đến tệp PDF mà chúng ta muốn làm việc. Đảm bảo đường dẫn trỏ đến vị trí lưu trữ tài liệu của bạn.
 
-## Bước 3: Lấy các trường biểu mẫu theo thứ tự tab
+## Bước 2: Truy cập trang đầu tiên
 
- Để lấy các trường biểu mẫu theo thứ tự tab, chúng ta cần truy cập`FieldsInTabOrder` tài sản của`Page` lớp. Thuộc tính này trả về danh sách các trường biểu mẫu được sắp xếp theo trình tự tab của chúng.
+Tiếp theo, chúng ta cần truy cập trang chứa các trường biểu mẫu. Để đơn giản, chúng ta tập trung vào trang đầu tiên, nhưng bạn có thể sửa đổi trang này cho bất kỳ trang nào trong tài liệu của mình.
 
 ```csharp
 Page page = doc.Pages[1];
+```
+
+Dòng này sẽ lấy trang đầu tiên của PDF. Nếu các trường biểu mẫu của bạn trải rộng trên nhiều trang, bạn có thể điều chỉnh chỉ mục trang cho phù hợp.
+
+## Bước 3: Lấy các trường theo thứ tự tab
+
+ Bây giờ đến phần thú vị: lấy các trường biểu mẫu dựa trên thứ tự tab của chúng.`FieldsInTabOrder` Thuộc tính này giúp sắp xếp các trường theo thứ tự xuất hiện khi người dùng điều hướng qua biểu mẫu bằng phím Tab.
+
+```csharp
 IList<Field> fields = page.FieldsInTabOrder;
+```
+
+Đoạn mã này cung cấp cho chúng ta danh sách các trường, được sắp xếp theo thứ tự tab.
+
+## Bước 4: Hiển thị tên trường
+
+Khi đã có các trường, hãy xuất tên của chúng để xem trường nào là một phần của biểu mẫu và trình tự của chúng.
+
+```csharp
 string s = "";
 foreach (Field field in fields)
 {
-     s += field. PartialName;
+    s += field.PartialName + ", ";
 }
 ```
 
-Trong đoạn mã trên, chúng tôi lấy các trường biểu mẫu từ trang thứ hai (`doc.Pages[1]` ) và lặp lại qua từng trường để nối các tên một phần của chúng vào`s` biến. Bạn có thể sửa đổi đoạn mã này dựa trên các yêu cầu cụ thể của mình.
+Ở đây, chúng tôi lặp qua từng trường trong danh sách và nối các`PartialName` của mỗi lĩnh vực.`PartialName` biểu thị tên của trường biểu mẫu trong tài liệu PDF. Bước này đặc biệt hữu ích để gỡ lỗi hoặc xác minh tên trường.
 
-## Bước 4: Sửa đổi thứ tự Tab
+## Bước 5: Sửa đổi thứ tự tab
 
- Nếu bạn muốn sửa đổi thứ tự tab của các trường biểu mẫu, bạn có thể thực hiện bằng cách truy cập`TabOrder` thuộc tính của mỗi trường và gán giá trị thứ tự tab mới. Sau đây là một ví dụ:
+Đôi khi, bạn có thể muốn thay đổi thứ tự tab của các trường biểu mẫu để cải thiện trải nghiệm của người dùng. Ví dụ, biểu mẫu có thể yêu cầu trường đầu tiên là trường thứ ba và trường thứ ba là trường đầu tiên. Sau đây là cách bạn có thể điều chỉnh thứ tự tab:
 
 ```csharp
 (doc.Form[3] as Field).TabOrder = 1;
@@ -65,70 +91,52 @@ Trong đoạn mã trên, chúng tôi lấy các trường biểu mẫu từ tran
 (doc.Form[2] as Field).TabOrder = 3;
 ```
 
-Trong đoạn mã trên, chúng tôi gán các giá trị thứ tự tab mới cho ba trường biểu mẫu (`doc.Form[3]`, `doc.Form[1]` , Và`doc.Form[2]`). Điều chỉnh chỉ số trường và giá trị thứ tự tab theo yêu cầu cụ thể của bạn.
+ Trong ví dụ này, chúng tôi đang thay đổi thứ tự tab của ba trường trong biểu mẫu. Bạn có thể điều chỉnh`TabOrder` thuộc tính phù hợp với trình tự mong muốn của bạn.
 
-## Bước 5: Lưu tài liệu đã sửa đổi
+## Bước 6: Lưu PDF đã sửa đổi
 
- Sau khi sửa đổi thứ tự tab của các trường biểu mẫu, bạn cần lưu tài liệu đã sửa đổi. Bạn có thể thực hiện việc này bằng cách sử dụng`Save` phương pháp của`Document` lớp học.
+Sau khi bạn đã cập nhật thứ tự tab, bạn sẽ muốn lưu PDF với các thay đổi. Đây là bước quan trọng để đảm bảo các sửa đổi của bạn được phản ánh trong tài liệu.
 
 ```csharp
 doc.Save(dataDir + "39522_out.pdf");
 ```
 
- Đây,`"39522_out.pdf"` là tên của tệp đầu ra nơi tài liệu đã sửa đổi sẽ được lưu. Chỉ định tên và vị trí mong muốn cho tệp đầu ra.
+Thao tác này sẽ lưu tệp PDF đã cập nhật vào một tệp mới. Luôn lưu tệp dưới dạng tệp mới để tránh ghi đè lên tài liệu gốc của bạn.
 
-### Mã nguồn mẫu cho Lấy trường biểu mẫu theo thứ tự tab bằng Aspose.PDF cho .NET 
+## Bước 7: Xác minh các thay đổi
+
+Sau khi lưu PDF, bạn nên mở lại tài liệu và xác minh rằng các thay đổi đã được áp dụng đúng. Sau đây là cách bạn có thể kiểm tra thứ tự tab sau khi sửa đổi:
+
 ```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document doc = new Document(dataDir + "Test2.pdf");
-Page page = doc.Pages[1];
-IList<Field> fields = page.FieldsInTabOrder;
-string s = "";
-foreach (Field field in fields)
-{
-	s += field.PartialName;
-}
-(doc.Form[3] as Field).TabOrder = 1;
-(doc.Form[1] as Field).TabOrder = 2;
-(doc.Form[2] as Field).TabOrder = 3;
-doc.Save(dataDir + "39522_out.pdf");
 Document doc1 = new Document(dataDir + "39522_out.pdf");
-s = "";
-foreach (Field field in doc1.Pages[1].FieldsInTabOrder)
-{
-	s += field.PartialName;
-}
 string index = "";
 foreach (Field field in doc1.Form)
 {
-	index += field.TabOrder;
+    index += field.TabOrder + ", ";
 }
 ```
 
+Mã này tải tài liệu đã cập nhật và xuất ra thứ tự tab mới cho tất cả các trường. Nó đảm bảo rằng các thay đổi của bạn đã thành công.
+
+---
+
 ## Phần kết luận
 
-Trong hướng dẫn này, chúng ta đã học cách lấy các trường biểu mẫu theo thứ tự tab bằng Aspose.PDF cho .NET. Chúng tôi đã đề cập đến các bước liên quan đến việc tải tài liệu PDF, lấy các trường biểu mẫu theo thứ tự tab, sửa đổi thứ tự tab và lưu tài liệu đã sửa đổi. Bằng cách làm theo các bước này, bạn có thể làm việc hiệu quả với các trường biểu mẫu và tùy chỉnh trình tự tab của chúng theo yêu cầu của bạn.
+Và bạn đã có nó! Việc truy xuất và sửa đổi thứ tự tab trường biểu mẫu trong tài liệu PDF không chỉ dễ quản lý mà còn cần thiết để tạo ra trải nghiệm người dùng liền mạch. Sử dụng Aspose.PDF cho .NET, bạn có thể dễ dàng kiểm soát cách người dùng điều hướng qua các biểu mẫu PDF của mình, đảm bảo mọi thứ hoạt động đúng như bạn mong đợi.
 
+## Câu hỏi thường gặp
 
-### Câu hỏi thường gặp
+### Tôi có thể áp dụng phương pháp này cho các biểu mẫu PDF nhiều trang không?  
+Có, bạn có thể. Chỉ cần truy cập vào trang cụ thể nơi chứa các trường biểu mẫu và áp dụng phương pháp tương tự.
 
-#### H: Làm thế nào tôi có thể sử dụng các trường biểu mẫu đã lấy trong mã C# của mình để xử lý thêm?
+### Làm thế nào để cài đặt Aspose.PDF cho .NET vào dự án của tôi?  
+Bạn có thể tải xuống thư viện từ[đây](https://releases.aspose.com/pdf/net/) và tích hợp nó bằng NuGet trong Visual Studio.
 
- A: Bạn có thể sử dụng các trường biểu mẫu đã truy xuất trong mã C# của mình bằng cách truy cập các thuộc tính của chúng như`Value`, `Name`, `Rect`v.v. Các thuộc tính này cho phép bạn đọc và sửa đổi dữ liệu trường biểu mẫu khi cần.
+### Tôi có thể sắp xếp lại các trường trên cùng một trang không?  
+ Chắc chắn rồi! Chỉ cần sử dụng`TabOrder`Thuộc tính để tùy chỉnh thứ tự các trường trên bất kỳ trang nào.
 
-#### H: Tôi có thể lấy các trường biểu mẫu từ tất cả các trang của tài liệu PDF theo thứ tự tab không?
+### Điều gì xảy ra nếu tôi không chỉ định thứ tự tab?  
+Nếu bạn không thiết lập thứ tự tab một cách rõ ràng, các trường sẽ tuân theo thứ tự mặc định dựa trên cách chúng được thêm vào PDF.
 
- A: Có, bạn có thể lấy các trường biểu mẫu từ tất cả các trang của tài liệu PDF bằng cách lặp qua từng trang và truy cập`FieldsInTabOrder` thuộc tính như được hiển thị trong hướng dẫn. Điều này sẽ cung cấp cho bạn các trường biểu mẫu được sắp xếp theo trình tự tab của chúng trên tất cả các trang.
-
-#### H: Có thể chỉ lấy các loại trường biểu mẫu cụ thể, chẳng hạn như trường văn bản hoặc hộp kiểm, theo thứ tự tab không?
-
-A: Có, bạn có thể lọc các trường biểu mẫu dựa trên loại của chúng, chẳng hạn như trường văn bản hoặc hộp kiểm, sau khi truy xuất chúng theo thứ tự tab. Bạn có thể sử dụng các câu lệnh có điều kiện để kiểm tra loại của từng trường biểu mẫu và xử lý chúng cho phù hợp.
-
-#### H: Tôi có thể lấy các trường biểu mẫu dựa trên tên thay vì thứ tự tab không?
-
- A: Có, bạn có thể lấy các trường biểu mẫu dựa trên tên của chúng bằng cách sử dụng`doc.Form` bộ sưu tập và chỉ định tên trường làm chỉ mục. Ví dụ,`doc.Form["fieldName"]`sẽ lấy trường biểu mẫu có tên đã chỉ định.
-
-#### H: Aspose.PDF cho .NET có hỗ trợ làm việc với các tài liệu PDF được mã hóa không?
-
-A: Có, Aspose.PDF for .NET cung cấp hỗ trợ làm việc với các tài liệu PDF được mã hóa. Bạn có thể tải và thao tác các tệp PDF được mã hóa bằng các tham số mật khẩu phù hợp.
+### Có thể thêm trường biểu mẫu mới theo chương trình được không?  
+Có, Aspose.PDF cho phép bạn tạo và thêm các trường biểu mẫu mới theo chương trình.

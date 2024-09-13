@@ -87,7 +87,7 @@ pdfDocument.save("output.pdf");
 
 ## Conclusione
 
-In questo articolo, abbiamo esplorato come nascondere i bordi delle celle estese in una tabella PDF utilizzando Java e Aspose.PDF per Java. Questa libreria semplifica il processo e consente di ottenere un aspetto raffinato e professionale per i documenti PDF.
+In questo articolo, abbiamo esplorato come nascondere i bordi delle celle estese in una tabella PDF usando Java e Aspose.PDF per Java. Questa libreria semplifica il processo e ti consente di ottenere un aspetto raffinato e professionale per i tuoi documenti PDF.
 
 ## Domande frequenti
 

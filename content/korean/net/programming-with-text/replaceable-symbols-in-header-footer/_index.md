@@ -35,7 +35,7 @@ Page page = doc.Pages.Add();
 
 ## 3단계: 여백 설정
 
-우리는 페이지의 여백을 다음을 사용하여 설정합니다.`MarginInfo` 클래스. 요구 사항에 따라 여백 값을 조정하세요.
+ 우리는 페이지의 여백을 다음을 사용하여 설정합니다.`MarginInfo` 클래스. 요구 사항에 따라 여백 값을 조정하세요.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -110,7 +110,7 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-// sec1.PageInfo의 Margin 속성에 marginInfo 인스턴스를 할당합니다.
+//sec1.PageInfo의 Margin 속성에 marginInfo 인스턴스를 할당합니다.
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
@@ -148,7 +148,7 @@ Table tab2 = new Table();
 hfFoot.Paragraphs.Add(tab2);
 // 표의 열 너비로 설정
 tab2.ColumnWidths = "165 172 165";
-// 표에 행을 만든 다음 행에 셀을 만듭니다.
+//표에 행을 만든 다음 행에 셀을 만듭니다.
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
@@ -173,7 +173,7 @@ table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
 // 다른 사용자 지정 BorderInfo 개체를 사용하여 테이블 테두리 설정
 table.Border = new BorderInfo(BorderSide.All, 1f);
 table.RepeatingRowsCount = 1;
-// 표에 행을 만든 다음 행에 셀을 만듭니다.
+//표에 행을 만든 다음 행에 셀을 만듭니다.
 Row row1 = table.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

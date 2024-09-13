@@ -2,135 +2,129 @@
 title: Bỏ nhúng phông chữ và tối ưu hóa tệp PDF
 linktitle: Bỏ nhúng phông chữ và tối ưu hóa tệp PDF
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Tìm hiểu cách sử dụng Aspose.PDF cho .NET để lấy Phông chữ Unembed và tối ưu hóa tệp PDF. Hướng dẫn từng bước.
+description: Tìm hiểu cách bỏ nhúng phông chữ và tối ưu hóa tệp PDF bằng Aspose.PDF cho .NET trong hướng dẫn từng bước này.
 type: docs
 weight: 370
 url: /vi/net/programming-with-document/unembedfonts/
 ---
-Aspose.PDF for .NET là một thư viện mạnh mẽ cung cấp nhiều tính năng để làm việc với các tài liệu PDF. Một trong những tính năng của nó là lấy các phông chữ không nhúng từ một tài liệu PDF. Điều này có thể hữu ích nếu bạn cần trích xuất phông chữ từ một tài liệu PDF và sử dụng chúng trong các ứng dụng khác.
+## Giới thiệu
 
-chúng tôi sẽ cung cấp hướng dẫn từng bước để giải thích mã nguồn C# sau đây về tính năng lấy phông chữ chưa nhúng của Aspose.PDF cho .NET.
+Trong thời đại kỹ thuật số, PDF có mặt ở khắp mọi nơi. Cho dù bạn đang chia sẻ báo cáo, bài thuyết trình hay sách điện tử, Định dạng tài liệu di động (PDF) là lựa chọn phù hợp để duy trì tính toàn vẹn của tài liệu. Tuy nhiên, khi chúng ta tạo và chia sẻ nhiều PDF hơn, kích thước tệp có thể tăng lên, khiến việc gửi hoặc lưu trữ trở nên cồng kềnh. Đây là lúc Aspose.PDF cho .NET phát huy tác dụng, cung cấp các công cụ mạnh mẽ để tối ưu hóa tệp PDF của bạn. Trong hướng dẫn này, chúng ta sẽ tìm hiểu cách bỏ nhúng phông chữ và tối ưu hóa tệp PDF bằng Aspose.PDF cho .NET.
 
-## Bước 1: Đặt đường dẫn đến thư mục tài liệu
+## Điều kiện tiên quyết
 
-Trước khi bắt đầu, chúng ta cần thiết lập đường dẫn đến thư mục chứa tài liệu PDF của chúng ta. Chúng ta sẽ lưu trữ đường dẫn này trong một biến có tên là "dataDir".
+Trước khi đi sâu vào vấn đề chính, hãy đảm bảo rằng bạn có mọi thứ cần thiết để bắt đầu:
+
+1. Visual Studio: Đảm bảo bạn đã cài đặt Visual Studio trên máy của mình. Đây là IDE mà chúng ta sẽ sử dụng để viết và chạy mã .NET.
+2.  Aspose.PDF cho .NET: Bạn sẽ cần tải xuống và cài đặt thư viện Aspose.PDF. Bạn có thể lấy nó từ[liên kết tải xuống](https://releases.aspose.com/pdf/net/).
+3. Kiến thức cơ bản về C#: Sự quen thuộc với lập trình C# sẽ giúp bạn hiểu các đoạn mã chúng ta sẽ sử dụng.
+4.  Tệp PDF: Chuẩn bị tệp PDF mà bạn muốn tối ưu hóa. Bạn có thể sử dụng bất kỳ tệp PDF nào, nhưng để minh họa, chúng tôi sẽ gọi là`OptimizeDocument.pdf`.
+
+## Nhập gói
+
+Để bắt đầu, bạn cần nhập các gói cần thiết vào dự án C# của mình. Sau đây là cách bạn có thể thực hiện:
+
+1. Mở dự án của bạn trong Visual Studio.
+2. Thêm tham chiếu đến Aspose.PDF: Nhấp chuột phải vào dự án của bạn trong Solution Explorer, chọn "Manage NuGet Packages" và tìm kiếm`Aspose.PDF`. Cài đặt gói.
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Bây giờ chúng ta đã thiết lập mọi thứ, hãy chia nhỏ quá trình tối ưu hóa thành các bước dễ quản lý hơn.
+
+## Bước 1: Thiết lập thư mục tài liệu của bạn
+
+Trước tiên, bạn cần xác định đường dẫn đến thư mục tài liệu của mình. Đây là nơi các tệp PDF của bạn sẽ được lưu trữ. Sau đây là cách thực hiện:
 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Thay thế "THƯ MỤC TÀI LIỆU CỦA BẠN" bằng đường dẫn thực tế đến thư mục chứa tài liệu PDF của bạn.
+ Thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế nơi tệp PDF của bạn nằm. Điều này rất quan trọng vì chương trình cần biết nơi tìm tệp PDF bạn muốn tối ưu hóa.
 
 ## Bước 2: Mở Tài liệu PDF
 
- Bước đầu tiên là tải tài liệu PDF mà bạn muốn thực hiện việc này, sử dụng`Document` lớp Aspose.PDF cho .NET. Đoạn mã sau đây cho thấy cách tải tài liệu PDF:
+Bây giờ chúng ta đã thiết lập xong thư mục, đã đến lúc mở tài liệu PDF mà chúng ta muốn tối ưu hóa. Sau đây là mã để thực hiện việc đó:
 
 ```csharp
 // Mở tài liệu
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-## Bước 3: Thiết lập tùy chọn UnembedFonts
+ Dòng mã này tạo ra một cái mới`Document` đối tượng, đại diện cho tệp PDF của bạn. Đảm bảo tên tệp khớp với tên bạn có trong thư mục.
 
- Để lấy phông chữ chưa nhúng từ tài liệu PDF, bạn cần thiết lập`UnembedFonts` tùy chọn để`true` . Tùy chọn này có sẵn trong`OptimizationOptions` lớp. Đoạn mã sau đây cho thấy cách thiết lập`UnembedFonts` lựa chọn:
+## Bước 3: Thiết lập tùy chọn tối ưu hóa
+
+Tiếp theo, chúng ta cần chỉ định các tùy chọn tối ưu hóa. Trong trường hợp này, chúng ta muốn bỏ nhúng phông chữ. Sau đây là cách thiết lập:
 
 ```csharp
 // Đặt tùy chọn UnembedFonts
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
-	UnembedFonts = true
+    UnembedFonts = true
 };
 ```
+
+ Bằng cách thiết lập`UnembedFonts` ĐẾN`true`, chúng tôi đang hướng dẫn Aspose.PDF tối ưu hóa PDF bằng cách bỏ nhúng phông chữ. Điều này có thể làm giảm đáng kể kích thước tệp, đặc biệt nếu PDF chứa nhiều phông chữ nhúng.
 
 ## Bước 4: Tối ưu hóa tài liệu PDF
 
- Sau khi thiết lập`UnembedFonts` tùy chọn, bạn có thể tối ưu hóa tài liệu PDF bằng cách sử dụng`OptimizeResources` phương pháp của`Document` lớp. Đoạn mã sau đây cho thấy cách tối ưu hóa tài liệu PDF:
+Với các tùy chọn đã thiết lập, đã đến lúc tối ưu hóa tài liệu PDF. Sau đây là mã để thực hiện việc đó:
 
 ```csharp
-// Tối ưu hóa tài liệu PDF bằng OptimizationOptions
-pdfDocument.OptimizeResources(optimizeOptions);
-```
-
-## Bước 5: Lưu tài liệu đã cập nhật
-
- Sau khi tài liệu PDF được tối ưu hóa, bạn có thể lưu tài liệu đã cập nhật bằng cách sử dụng`Save` phương pháp của`Document`lớp. Đoạn mã sau đây cho biết cách lưu tài liệu đã cập nhật:
-
-```csharp
-// Lưu tài liệu đã cập nhật
-pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
-```
-
-## Bước 6: Lấy kích thước tệp gốc và tệp đã giảm
-
- Cuối cùng, bạn có thể lấy được kích thước tệp gốc và kích thước tệp đã giảm của tài liệu PDF bằng cách sử dụng`FileInfo` lớp System.IO. Đoạn mã sau đây cho thấy cách lấy kích thước tệp gốc và kích thước tệp đã giảm:
-
-```csharp
-var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
-var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
-Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
-```
-
-### Mã nguồn ví dụ để lấy phông chữ không nhúng bằng Aspose.PDF cho .NET
-
-Sau đây là mã nguồn ví dụ đầy đủ để lấy phông chữ không nhúng từ tài liệu PDF bằng Aspose.PDF cho .NET:
-
-```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Mở tài liệu
-Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// Đặt tùy chọn UnembedFonts
-var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-{
-	UnembedFonts = true
-};
 Console.WriteLine("Start");
 // Tối ưu hóa tài liệu PDF bằng OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
+```
+
+Đoạn mã này gọi`OptimizeResources` phương pháp trên`pdfDocument` đối tượng, áp dụng các tùy chọn tối ưu hóa mà chúng tôi đã xác định trước đó. Bạn sẽ thấy một thông báo trong bảng điều khiển cho biết quá trình tối ưu hóa đã bắt đầu.
+
+## Bước 5: Lưu tài liệu đã cập nhật
+
+Sau khi tối ưu hóa PDF, chúng ta cần lưu tài liệu đã cập nhật. Sau đây là cách thực hiện:
+
+```csharp
 // Lưu tài liệu đã cập nhật
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Finished");
+```
+
+ Mã này lưu PDF đã được tối ưu hóa dưới dạng`OptimizeDocument_out.pdf` trong cùng một thư mục. Bạn có thể chọn tên khác nếu muốn, nhưng giữ nguyên tên sẽ giúp xác định phiên bản gốc và phiên bản đã tối ưu.
+
+## Bước 6: So sánh kích thước tệp
+
+Cuối cùng, bạn nên kiểm tra xem mình đã tiết kiệm được bao nhiêu dung lượng. Sau đây là cách so sánh kích thước tệp gốc và tệp đã tối ưu hóa:
+
+```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
 var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```
+
+Mã này sẽ lấy kích thước tệp của cả PDF gốc và PDF đã tối ưu hóa và in chúng ra bảng điều khiển. Thật là một khoảnh khắc thỏa mãn khi thấy bạn đã giảm được bao nhiêu kích thước tệp!
 
 ## Phần kết luận
 
-Trong hướng dẫn này, chúng tôi đã trình bày cách sử dụng Aspose.PDF cho .NET để lấy phông chữ không nhúng từ tài liệu PDF. Bằng cách làm theo hướng dẫn từng bước, bạn có thể dễ dàng triển khai tính năng này trong các ứng dụng C# của mình. Việc không nhúng phông chữ có thể có lợi khi bạn cần làm việc riêng với các phông chữ đã trích xuất hoặc đảm bảo sử dụng phông chữ nhất quán trên nhiều nền tảng khác nhau.
+Và bạn đã có nó! Bạn đã bỏ nhúng phông chữ thành công và tối ưu hóa tệp PDF bằng Aspose.PDF cho .NET. Quá trình này không chỉ giúp giảm kích thước tệp mà còn tăng cường hiệu suất của tài liệu PDF của bạn. Cho dù bạn đang chia sẻ tệp qua email hay lưu trữ chúng trên đám mây, kích thước tệp nhỏ hơn có thể tạo ra sự khác biệt lớn.
 
 ## Câu hỏi thường gặp
 
-#### H: Mục đích của việc hủy nhúng phông chữ khỏi tài liệu PDF là gì?
+### Aspose.PDF dành cho .NET là gì?
+Aspose.PDF for .NET là một thư viện mạnh mẽ cho phép các nhà phát triển tạo, chỉnh sửa và tối ưu hóa các tài liệu PDF theo chương trình.
 
-A: Việc bỏ nhúng phông chữ khỏi tài liệu PDF cho phép bạn trích xuất phông chữ nhúng và sử dụng chúng trong các ứng dụng khác. Điều này có thể hữu ích để đảm bảo hiển thị phông chữ nhất quán và giữ nguyên giao diện trực quan của tài liệu.
+### Tôi có thể sử dụng Aspose.PDF miễn phí không?
+ Có, Aspose cung cấp phiên bản dùng thử miễn phí. Bạn có thể tải xuống từ[đây](https://releases.aspose.com/).
 
-#### H: Làm thế nào để chỉ định đường dẫn đến thư mục tài liệu trong mã C#?
+### Làm thế nào để tôi nhận được hỗ trợ cho Aspose.PDF?
+ Bạn có thể nhận được hỗ trợ thông qua[Diễn đàn Aspose](https://forum.aspose.com/c/pdf/10).
 
- A: Để chỉ định đường dẫn đến thư mục tài liệu, hãy thay thế`"YOUR DOCUMENT DIRECTORY"` trong mã có đường dẫn thực tế đến thư mục chứa tài liệu PDF của bạn.
+### Tôi có thể thực hiện những loại tối ưu hóa nào trên tệp PDF?
+Bạn có thể bỏ nhúng phông chữ, nén hình ảnh, loại bỏ các đối tượng không sử dụng và nhiều thao tác khác để tối ưu hóa tệp PDF của mình.
 
-####  Q: Cái gì làm`UnembedFonts` option do, and where is it set?
-
- A: Cái`UnembedFonts` tùy chọn, có sẵn trong`OptimizationOptions` lớp, bật hoặc tắt việc bỏ nhúng phông chữ khỏi tài liệu PDF. Để đặt tùy chọn này thành`true`, sử dụng mã sau:
-
-```csharp
-var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-{
-	UnembedFonts = true
-};
-```
-
-#### H: Tôi có thể hoàn nguyên những thay đổi đã thực hiện trong quá trình tối ưu hóa không?
-
-A: Aspose.PDF for .NET không thực hiện thay đổi vĩnh viễn đối với tài liệu PDF gốc trong quá trình tối ưu hóa. Quá trình tối ưu hóa được thực hiện trên một bản sao của tài liệu, giữ nguyên bản gốc.
-
-#### H: Làm thế nào tôi có thể kiểm tra kích thước file gốc và file đã giảm sau khi tối ưu hóa?
-
- A: Bạn có thể sử dụng`FileInfo` lớp của`System.IO` để có được kích thước tệp gốc và tệp đã giảm. Sau đây là đoạn mã ví dụ để đạt được điều này:
-
-```csharp
-var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
-var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
-Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
-```
+### Tôi có thể mua Aspose.PDF cho .NET ở đâu?
+ Bạn có thể mua giấy phép từ[Trang mua hàng Aspose](https://purchase.aspose.com/buy).

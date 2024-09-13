@@ -2,164 +2,191 @@
 title: Rellenar texto con trazo en archivo PDF
 linktitle: Rellenar texto con trazo en archivo PDF
 second_title: Referencia de API de Aspose.PDF para .NET
-description: Aprenda a rellenar y delinear fácilmente texto en archivos PDF con Aspose.PDF para .NET.
+description: Aprenda a rellenar texto con trazos en archivos PDF sin esfuerzo usando Aspose.PDF para .NET con esta guía paso a paso repleta de ejemplos prácticos.
 type: docs
 weight: 90
 url: /es/net/programming-with-stamps-and-watermarks/fill-stroke-text/
 ---
-En este tutorial, le mostraremos paso a paso cómo rellenar y delinear texto en un archivo PDF con Aspose.PDF para .NET. Le mostraremos cómo usar el código fuente de C# proporcionado para aplicar colores de relleno y delineado al texto en el archivo PDF.
+## Introducción
 
-## Paso 1: Configuración del entorno
+¿Alguna vez ha deseado modificar un archivo PDF para que se destaque? Tal vez necesite agregar una marca de agua llamativa o un sello llamativo que haga que un documento importante sea inconfundiblemente suyo. Con Aspose.PDF para .NET, puede rellenar fácilmente el texto con trazos en un archivo PDF, agregando un toque artístico que llame la atención. En el tutorial de hoy, veremos el proceso para hacer exactamente eso: rellenar el texto con trazos en un PDF con C#. Al final, tendrá una sólida comprensión de cómo manipular archivos PDF como un profesional.
 
-Antes de comenzar, asegúrese de tener lo siguiente:
+## Prerrequisitos
 
-- Un entorno de desarrollo .NET instalado.
-- La biblioteca Aspose.PDF para .NET descargada y referenciada en su proyecto.
+Antes de sumergirnos en la codificación, hay algunas cosas que necesitarás tener en cuenta para que este tutorial sea muy sencillo:
 
-## Paso 2: Creación del objeto TextState
+1. Visual Studio: asegúrese de tener Visual Studio instalado en su máquina, ya que escribiremos código C#.
+2.  Biblioteca Aspose.PDF: asegúrese de haber descargado la biblioteca Aspose.PDF para .NET. Puede descargarla[aquí](https://releases.aspose.com/pdf/net/).
+3. Conocimientos básicos de C#: La familiaridad con la programación en C# le ayudará a comprender el tutorial más fácilmente.
+4. Archivo PDF de muestra: Necesitará un archivo PDF de muestra (`input.pdf`para realizar pruebas. Puedes crear uno simple o usar cualquier PDF que tengas.
 
-El primer paso es crear un objeto TextState para pasar las propiedades avanzadas. A continuación, se explica cómo hacerlo:
+Ahora que tenemos todo en su lugar, entremos en los detalles de cómo rellenar el texto del trazo en su archivo PDF.
+
+## Importar paquetes
+
+Para comenzar, necesitaremos importar los paquetes necesarios. A continuación, se incluye una breve descripción de las importaciones esenciales para nuestro proyecto:
 
 ```csharp
-// Crear un objeto TextState para transferir propiedades avanzadas
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Estos paquetes nos permitirán utilizar las robustas funcionalidades de la biblioteca Aspose.PDF.
+
+Dividamos la tarea principal en pasos claros. Si sigue estos pasos, podrá rellenar fácilmente texto con trazos en sus archivos PDF. 
+
+## Paso 1: Configura tu entorno
+
+En primer lugar, asegúrese de que todo esté configurado correctamente en su proyecto de Visual Studio. Cree un proyecto nuevo o elija uno existente. Si necesita ayuda, siga estos pasos:
+
+1. Abra Visual Studio.
+2. Cree un nuevo proyecto de C# (por ejemplo, aplicación de consola).
+3. Haga clic derecho en el proyecto en el Explorador de soluciones y seleccione “Administrar paquetes NuGet”.
+4.  Buscar`Aspose.PDF` e instalarlo.
+
+## Paso 2: Defina su directorio de documentos
+
+Todo viaje necesita un punto de partida, y en nuestro caso es el directorio de documentos donde residirán los archivos de entrada y salida. 
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta real donde se encuentra su archivo PDF de entrada. 
+
+## Paso 3: Crear el objeto TextState
+
+Este paso es donde comienzas a definir las propiedades del texto que deseas agregar. 
+
+```csharp
 TextState ts = new TextState();
+```
 
-// Establecer el color del contorno
+ El`TextState` El objeto contendrá las opciones de estilo para el texto del trazo.
+
+## Paso 4: Establezca el color del trazo
+
+A continuación, querrás definir el color del trazo de tu texto. 
+
+```csharp
 ts.StrokingColor = Color.Gray;
+```
 
-// Definir el modo de representación del texto
+En este código, usamos un color gris para el trazo. ¡Siéntete libre de cambiar el color para adaptarlo a tus necesidades!
+
+## Paso 5: Configurar el modo de renderizado
+
+Para garantizar que el texto se muestre como se espera, configure el modo de representación:
+
+```csharp
 ts.RenderingMode = TextRenderingMode.StrokeText;
 ```
 
-El código anterior crea un nuevo objeto TextState y establece el color del contorno y la forma en que se representa el texto.
+Esto le indica a la biblioteca Aspose que estamos trabajando con texto de trazo.
 
-## Paso 3: Cargar el documento PDF
+## Paso 6: Cargue el documento PDF de entrada
 
-Ahora que el objeto TextState está listo, podemos cargar el documento PDF en el que queremos aplicar el relleno y el contorno del texto. A continuación, se muestra el procedimiento:
+Ahora es el momento de cargar el archivo PDF que vas a modificar. 
 
 ```csharp
-// Cargar el documento PDF como entrada
 Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
 ```
 
-El código anterior carga el documento PDF existente utilizando la clase PdfFileStamp de la biblioteca Aspose.PDF.Facades.
+Asegúrese de que su PDF de entrada (`input.pdf`se encuentra en el directorio de documentos definido en los pasos anteriores.
 
-## Paso 4: Agregar relleno y trazo al texto
+## Paso 7: Crear un objeto de sello
 
-Ahora que el documento PDF está cargado, podemos agregar el relleno y el contorno al texto. A continuación, le indicamos cómo hacerlo:
+A continuación, crea un sello que contendrá el texto del trazo. 
 
 ```csharp
-// Crear un sello (Stamp) con el texto y las propiedades definidas
 Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
+```
+
+Este sello se utilizará para superponer su texto en el PDF.
+
+## Paso 8: Definir el texto a estampar
+
+Necesitarás especificar qué texto quieres agregar al PDF:
+
+```csharp
 stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
+```
 
-// Vincular el objeto TextState
+Aquí, "PAGADO EN SU TOTALIDAD" es el texto que estamos agregando, junto con sus atributos de estilo. ¡Personalícelo según sus requisitos!
+
+## Paso 9: Vincular el estado del texto
+
+ Ahora, ata el`TextState` usted definió previamente el sello. 
+
+```csharp
 stamp.BindTextState(ts);
+```
 
-// Establecer origen X, Y
+Este paso aplica todos los estilos como el color y el modo de representación a su texto.
+
+## Paso 10: Establezca la posición del sello
+
+Determina dónde aparecerá tu sello en el PDF:
+
+```csharp
 stamp.SetOrigin(100, 100);
-stamp. Opacity = 5;
+```
+
+ Los argumentos`(100, 100)` Indica las coordenadas X e Y (en puntos) del origen del texto. ¡Ajusta estos valores para posicionar el texto a la perfección!
+
+## Paso 11: Configurar la opacidad y la rotación
+
+Aquí puedes jugar con la apariencia de tu texto:
+
+```csharp
+stamp.Opacity = 5;
 stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
 stamp.Rotation = 45.0F;
-stamp. IsBackground = false;
+```
 
-// Añade el sello al documento
+En este caso, un valor de opacidad y un ángulo de rotación de 45 grados le aportan un toque único al texto. No dude en modificar estos ajustes para obtener diferentes efectos.
+
+## Paso 12: Añade el sello al PDF
+
+Este es el paso crucial donde finalmente agregamos nuestro sello que incluye el texto del trazo al PDF:
+
+```csharp
 fileStamp.AddStamp(stamp);
 ```
 
-El código anterior crea un sello con el texto especificado y las propiedades de relleno y trazo definidas.
+¡Y así, tu texto estará listo para hacer una declaración!
 
-## Paso 5: Guardar el documento de salida
+## Paso 13: Guardar y cerrar el documento
 
-Una vez que se haya añadido el sello de texto, podemos guardar el documento PDF modificado. A continuación, le indicamos cómo hacerlo:
+Por último, guarde los cambios y asegúrese de que todo esté limpio correctamente. 
 
 ```csharp
-// Guardar el documento modificado
 fileStamp.Save(dataDir + "output_out.pdf");
 fileStamp.Close();
 ```
 
-El código anterior guarda el documento PDF editado en el directorio especificado.
-
-### Código fuente de muestra para rellenar texto con trazo utilizando Aspose.PDF para .NET 
-```csharp
-
-// La ruta al directorio de documentos.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Crear un objeto TextState para transferir propiedades avanzadas
-TextState ts = new TextState();
-
-// Establecer color para el trazo
-ts.StrokingColor = Color.Gray;
-
-// Establecer el modo de representación de texto
-ts.RenderingMode = TextRenderingMode.StrokeText;
-
-// Cargar un documento PDF de entrada
-Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
-Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
-stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
-
-// Vincular TextState
-stamp.BindTextState(ts);
-
-// Establecer origen X,Y
-stamp.SetOrigin(100, 100);
-stamp.Opacity = 5;
-stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
-stamp.Rotation = 45.0F;
-stamp.IsBackground = false;
-
-// Añadir sello
-fileStamp.AddStamp(stamp);
-fileStamp.Save(dataDir + "ouput_out.pdf");
-fileStamp.Close();
-
-```
+ El archivo PDF recién modificado que contiene el texto del trazo se guardará como`output_out.pdf` en su directorio de documentos. 
 
 ## Conclusión
 
-¡Felicitaciones! Aprendió a rellenar y delinear texto en un documento PDF con Aspose.PDF para .NET. Ahora puede aplicar este conocimiento para personalizar los colores de relleno y delineado en sus documentos PDF.
+¡Y ya lo tienes! Siguiendo estos sencillos pasos, puedes rellenar fácilmente el texto con trazos de un archivo PDF con Aspose.PDF para .NET. Ya sea para documentos empresariales o proyectos personales, esta técnica te permite añadir un toque único a tus archivos PDF, haciéndolos destacar en cualquier pila de papeles.
 
-### Preguntas frecuentes sobre el texto con trazo de relleno en archivos PDF
+## Preguntas frecuentes
 
-#### P: ¿Qué significa rellenar y delinear texto en un documento PDF y cuándo podría necesitar hacerlo?
+### ¿Qué es Aspose.PDF para .NET?
+Aspose.PDF para .NET es una biblioteca que permite a los desarrolladores crear, manipular y convertir archivos PDF mediante programación.
 
-R: Para rellenar y delinear texto en un documento PDF, se aplican colores en el interior de los caracteres del texto (relleno) y en los bordes que rodean el texto (contorno). Esto se puede utilizar para mejorar la apariencia visual del texto, crear énfasis o resaltar contenido específico dentro del PDF.
+### ¿Puedo utilizar Aspose.PDF gratis?
+Sí, Aspose ofrece una prueba gratuita. Puedes obtenerla[aquí](https://releases.aspose.com/).
 
-#### P: ¿Cómo logra el código fuente C# proporcionado rellenar y delinear texto en un archivo PDF?
+### ¿Necesito pagar por una licencia?
+ Si bien la biblioteca ofrece una prueba gratuita, también se puede comprar una licencia temporal en[Este enlace](https://purchase.aspose.com/temporary-license/).
 
- A: El código fuente proporcionado demuestra cómo crear un`TextState` Objeto para definir propiedades de texto avanzadas, como el color del contorno y el modo de representación. Luego, utiliza Aspose.PDF.Facades para cargar un documento PDF existente, crear un sello que contenga el texto con propiedades de relleno y trazo especificadas y agregar el sello al documento.
+### ¿Dónde puedo encontrar la documentación?
+ Puedes acceder a la documentación completa[aquí](https://reference.aspose.com/pdf/net/).
 
-####  P: ¿Cuál es el propósito de la`TextState` object in the code?
-
- A: El`TextState`El objeto se utiliza para definir propiedades avanzadas del texto, incluido el color del contorno del texto (trazo) y el modo de representación. Permite personalizar la apariencia del texto en términos de trazo y relleno.
-
-#### P: ¿Puedo aplicar diferentes colores de relleno y contorno a diferentes partes del mismo texto?
-
- R: Sí, puedes modificar el código para crear diferentes`TextState` objetos con colores de relleno y contorno distintos y aplicarlos a partes específicas del texto mediante colores separados.`Stamp` objetos.
-
-#### P: ¿Puedo aplicar colores de relleno y contorno al texto que ya está presente en el documento PDF?
-
- R: Sí, puede utilizar principios similares para aplicar colores de relleno y contorno al texto existente en el documento PDF seleccionando los objetos de texto adecuados y agregándolos como sellos con el texto deseado.`TextState` propiedades.
-
-#### P: ¿Cómo puedo ajustar la opacidad y la combinación del texto relleno y delineado?
-
- A: El código proporcionado le permite configurar la opacidad y las propiedades de fusión del sello usando el`Opacity` y`BlendingSpace`propiedades, respectivamente. Puede ajustar estos valores para lograr el efecto visual deseado.
-
-#### P: ¿Cómo puedo aplicar diferentes colores de relleno y contorno a varios sellos dentro del mismo documento PDF?
-
- A: Puedes crear varios`TextState` objetos con diferentes colores de relleno y contorno y luego crear objetos separados`Stamp` objetos para cada conjunto de texto con colores distintos. Agregue estos sellos al mismo documento PDF utilizando el`PdfFileStamp` clase.
-
-#### P: ¿Puedo utilizar fuentes distintas a Arial para el texto delineado y relleno?
-
- R: Sí, puede cambiar la fuente modificando el parámetro del nombre de la fuente en el`FormattedText` constructor al crear el sello. Puede utilizar cualquier fuente disponible en su sistema.
-
-#### P: ¿Cómo puedo modificar el ángulo de rotación del texto delineado y relleno?
-
- A: El código proporcionado le permite configurar el ángulo de rotación del sello usando el`Rotation` Propiedad. Puede ajustar esta propiedad para especificar el ángulo de rotación deseado para el texto.
-
-#### P: ¿Cómo puedo controlar la posición y el tamaño del texto delineado y relleno en la página?
-
- A: Puedes utilizar el`SetOrigin` método de la`Stamp` objeto para establecer las coordenadas X e Y de la posición del sello en la página. Además, puede ajustar el tamaño de la fuente en el`FormattedText` constructor para controlar el tamaño del texto.
+### ¿Hay soporte disponible si tengo problemas?
+ ¡Por supuesto! Puedes obtener ayuda en el foro de Aspose[aquí](https://forum.aspose.com/c/pdf/10).

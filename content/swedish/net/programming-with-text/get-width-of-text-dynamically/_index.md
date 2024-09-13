@@ -1,7 +1,7 @@
 ---
 title: Få textbredd dynamiskt
 linktitle: Få textbredd dynamiskt
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du dynamiskt får textbredden med Aspose.PDF för .NET.
 type: docs
 weight: 220
@@ -31,7 +31,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("Arial");
 ```
 
-Koden ovan hittar Arial-teckensnittet med hjälp av`FindFont` metod från`FontRepository` klass. Om du vill använda ett annat teckensnitt, byt ut`"Arial"` med önskat teckensnittsnamn.
+ Koden ovan hittar Arial-fonten med hjälp av`FindFont`metod från`FontRepository` klass. Om du vill använda ett annat teckensnitt, byt ut`"Arial"` med önskat teckensnittsnamn.
 
 ## Steg 3: Ställ in texttillstånd
 

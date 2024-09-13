@@ -2,126 +2,134 @@
 title: Yatay ve Dikey Radyo Düğmeleri
 linktitle: Yatay ve Dikey Radyo Düğmeleri
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET ile PDF belgelerinizde kolayca yatay ve dikey radyo düğmeleri oluşturun.
+description: Bu adım adım eğitimle Aspose.PDF for .NET kullanarak PDF'te yatay ve dikey hizalanmış radyo düğmelerinin nasıl oluşturulacağını öğrenin.
 type: docs
 weight: 180
 url: /tr/net/programming-with-forms/horizontally-and-vertically-radio-buttons/
 ---
-Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF belgesinde yatay ve dikey olarak düzenlenmiş radyo düğmelerinin nasıl oluşturulacağını göstereceğiz. Bu süreçte size rehberlik etmek için C# kaynak kodunu adım adım açıklayacağız.
+## giriiş
 
-## Adım 1: Hazırlık
+Etkileşimli PDF formları oluşturmak, özellikle bilgi toplama söz konusu olduğunda kullanıcı deneyimini önemli ölçüde iyileştirebilir. En yaygın form öğelerinden biri, kullanıcıların bir dizi seçenekten birini seçmesine olanak tanıyan radyo düğmesidir. Bu eğitimde, .NET için Aspose.PDF kullanarak yatay ve dikey hizalanmış radyo düğmelerinin nasıl oluşturulacağını inceleyeceğiz. İster deneyimli bir geliştirici olun ister yeni başlıyor olun, bu kılavuz sizi adım adım süreçte yönlendirecek ve her bir parçayı net bir şekilde anlamanızı sağlayacaktır.
 
-Gerekli kütüphaneleri içe aktardığınızdan ve belgelerinizin dizinine giden yolu ayarladığınızdan emin olun:
+## Ön koşullar
+
+Koda dalmadan önce, yerine getirmeniz gereken birkaç ön koşul vardır:
+
+1.  .NET için Aspose.PDF: Aspose.PDF kütüphanesinin yüklü olduğundan emin olun. Bunu şuradan indirebilirsiniz:[alan](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: Kodunuzu yazıp test edebileceğiniz bir geliştirme ortamı.
+3. Temel C# Bilgisi: C# programlamaya aşina olmak, kod parçacıklarını daha iyi anlamanıza yardımcı olacaktır.
+
+## Paketleri İçe Aktar
+
+Başlamak için, C# projenize gerekli paketleri içe aktarmanız gerekir. Bunu nasıl yapabileceğiniz aşağıda açıklanmıştır:
+
+### Yeni Bir Proje Oluştur
+
+Visual Studio'yu açın ve yeni bir C# projesi oluşturun. Basitlik için bir Konsol Uygulaması seçebilirsiniz.
+
+### Aspose.PDF Referansını Ekle
+
+1. Çözüm Gezgini’nde projenizin üzerine sağ tıklayın.
+2. "NuGet Paketlerini Yönet" seçeneğini seçin.
+3. "Aspose.PDF" dosyasını arayın ve en son sürümü yükleyin.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using System.IO;
+using Aspose.Pdf.Facades;
+using Aspose.Pdf;
+using Aspose.Pdf.Forms;
 ```
 
-## Adım 2: Belgeyi yükleyin
+Artık her şeyi ayarladığınıza göre, yatay ve dikey hizalanmış radyo düğmeleri oluşturmak için kodu parçalara ayıralım.
 
-Mevcut PDF belgesini yükleyin:
+## Adım 1: Belge Dizinini Ayarlayın
+
+Bu adımda PDF belgelerinizin saklanacağı dizinin yolunu tanımlayacağız.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` PDF dosyanızı kaydetmek istediğiniz gerçek yol ile. Bu önemlidir çünkü programa girdi dosyalarını nerede arayacağını ve çıktıyı nerede kaydedeceğini söyler.
+
+## Adım 2: Mevcut PDF Belgesini Yükleyin
+
+ Sonra, üzerinde çalışacağımız PDF belgesini yüklememiz gerekiyor. Bu, şu şekilde yapılır:`FormEditor` sınıf.
 
 ```csharp
 FormEditor formEditor = new FormEditor();
 formEditor.BindPdf(dataDir + "input.pdf");
 ```
 
-## Adım 3: Radyo düğmesi seçeneklerini özelleştirin
+Burada, bir örnek oluşturuyoruz`FormEditor` ve onu mevcut bir PDF dosyasına bağlayın`input.pdf`Bu dosyanın belirttiğiniz dizinde bulunduğundan emin olun.
 
-Aşağıdaki özellikleri ayarlayarak radyo düğmesi seçeneklerini özelleştirin:
+## Adım 3: Radyo Düğmesi Özelliklerini Yapılandırın
+
+Şimdi, radyo düğmelerimiz için bazı özellikler ayarlayalım. Bunlara düğmeler arasındaki boşluk, yönlendirmeleri ve boyutları dahildir.
 
 ```csharp
-formEditor. RadioGap = 4; // İki radyo düğmesi seçeneği arasındaki mesafe
-formEditor. RadioHoriz = true; //Radyo düğmelerinin yatay düzeni
-formEditor.RadioButtonItemSize = 20; // Radyo düğmelerinin boyutu
-formEditor.Facade.BorderWidth = 1; // Radyo düğmesi kenarlığının genişliği
-formEditor.Facade.BorderColor = System.Drawing.Color.Black; // Radyo düğmesi kenarlık rengi
+formEditor.RadioGap = 4; // Radyo düğmesi seçenekleri arasındaki mesafe
+formEditor.RadioHoriz = true; // Yatay hizalama için doğru olarak ayarlayın
+formEditor.RadioButtonItemSize = 20; // Radyo düğmesinin boyutu
+formEditor.Facade.BorderWidth = 1; // Sınır genişliği
+formEditor.Facade.BorderColor = System.Drawing.Color.Black; // Sınır rengi
 ```
+
+ Bu özellikler, radyo düğmelerinin PDF'de nasıl görüneceğini tanımlamaya yardımcı olacaktır.`RadioGap` özellik, düğmeler arasındaki boşluğu kontrol ederken`RadioHoriz` düzenlerini belirler.
 
 ## Adım 4: Yatay Radyo Düğmeleri Ekleyin
 
-Alanın seçeneklerini ve konumunu belirterek yatay olarak düzenlenmiş radyo düğmeleri ekleyin:
+Şimdi PDF'e yatay radyo düğmelerini ekleyelim.
 
 ```csharp
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
 ```
 
-## Adım 5: Dikey radyo düğmeleri ekleyin
+ Bu kodda, radyo düğmeleri için öğeleri tanımlıyoruz ve bunları PDF'e ekliyoruz.`AddField`yöntem, alan türü, alan adı ve yerleştirme koordinatları da dahil olmak üzere çeşitli parametreler alır.
 
-Alanın seçeneklerini ve konumunu belirterek dikey olarak düzenlenmiş radyo düğmeleri ekleyin:
+## Adım 5: Dikey Radyo Düğmeleri Ekleyin
+
+Sonra, dikey radyo düğmelerini ekleyeceğiz. Bunu yapmak için, yönelimi tekrar dikey olarak değiştirmemiz gerekiyor.
 
 ```csharp
-formEditor. RadioHoriz = false; // Radyo düğmelerinin dikey düzeni
+formEditor.RadioHoriz = false; // Dikey hizalama için false olarak ayarlayın
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
 ```
 
-## Adım 6: Belgeyi kaydedin
+Daha önce olduğu gibi öğeleri tanımlayıp PDF'e ekliyoruz, ancak bu sefer öğeler dikey olarak hizalanacak.
 
-Değiştirilen PDF belgesini kaydedin:
+## Adım 6: PDF Belgesini Kaydedin
+
+Son olarak değiştirdiğimiz PDF belgesini kaydetmemiz gerekiyor.
 
 ```csharp
 dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
 formEditor.Save(dataDir);
+Console.WriteLine("\nHorizontally and vertically laid out radio buttons successfully.\nFile saved at " + dataDir);
 ```
 
-### .NET için Aspose.PDF kullanarak Yatay ve Dikey Radyo Düğmeleri için örnek kaynak kodu 
-```csharp
-try
-{
-	// Belgeler dizinine giden yol.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Daha önce kaydedilmiş belgeyi yükleyin
-	FormEditor formEditor = new FormEditor();
-	formEditor.BindPdf(dataDir + "input.pdf");
-	// RadioGap, iki radyo düğmesi seçeneği arasındaki mesafedir.
-	formEditor.RadioGap = 4;
-	// Yatay radyo düğmesi ekle
-	formEditor.RadioHoriz = true;
-	// RadioButtonItemSize, radyo düğmesi öğesinin boyutunu belirtir.
-	formEditor.RadioButtonItemSize = 20;
-	formEditor.Facade.BorderWidth = 1;
-	formEditor.Facade.BorderColor = System.Drawing.Color.Black;
-	formEditor.Items = new string[] { "First", "Second", "Third" };
-	formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
-	// Dikey olarak konumlandırılmış başka bir radyo düğmesi ekleyin
-	formEditor.RadioHoriz = false;
-	formEditor.Items = new string[] { "First", "Second", "Third" };
-	formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
-	dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
-	// PDF belgesini kaydedin
-	formEditor.Save(dataDir);
-	Console.WriteLine("\nHorizontally and vertically laid out radio buttons successfully.\nFile saved at " + dataDir);
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+Bu kod PDF'yi yeni eklenen radyo düğmeleriyle kaydeder. Çıktı dosyası için belirtilen dizini kontrol ettiğinizden emin olun.
 
 ## Çözüm
 
-Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF belgesinde yatay ve dikey olarak düzenlenmiş radyo düğmelerinin nasıl oluşturulacağını öğrendik. Bu adımları izleyerek, radyo düğmelerinin düzenini kolayca özelleştirebilir ve bunları Aspose.PDF kullanarak PDF belgelerinize ekleyebilirsiniz.
+Aspose.PDF for .NET kullanarak bir PDF'de radyo düğmeleri oluşturmak basit bir işlemdir. Bu eğitimde özetlenen adımları izleyerek, PDF formlarınıza hem yatay hem de dikey olarak hizalanmış radyo düğmeleri kolayca ekleyebilirsiniz. Bu yalnızca belgelerinizin etkileşimini geliştirmekle kalmaz, aynı zamanda genel kullanıcı deneyimini de iyileştirir. O halde devam edin ve deneyin!
 
-### SSS
+## SSS
 
-#### S: PDF belgesinde yatay ve dikey olarak düzenlenmiş radyo düğmeleri nelerdir?
+### Aspose.PDF for .NET nedir?
+Aspose.PDF for .NET, geliştiricilerin PDF belgelerini programlı bir şekilde oluşturmalarına, düzenlemelerine ve dönüştürmelerine olanak tanıyan güçlü bir kütüphanedir.
 
-A: Bir PDF belgesinde yatay ve dikey olarak düzenlenmiş radyo düğmeleri, radyo düğmesi seçeneklerinin düzen yönelimini ifade eder. Yatay düzen, radyo düğmesi seçeneklerini yan yana yerleştirir ve kullanıcıların soldan sağa doğru seçim yapmasını sağlar. Öte yandan dikey düzen, radyo düğmesi seçeneklerini üst üste istifler ve kullanıcıların yukarıdan aşağıya doğru seçim yapmasını sağlar.
+### Aspose.PDF'yi ücretsiz kullanabilir miyim?
+ Evet, Aspose kütüphaneyi değerlendirmek için kullanabileceğiniz ücretsiz bir deneme sürümü sunuyor. İndirebilirsiniz[Burada](https://releases.aspose.com/).
 
-#### S: Aspose.PDF for .NET'te radyo düğmesi seçeneklerinin görünümünü nasıl özelleştirebilirim?
+### Aspose.PDF için nasıl destek alabilirim?
+ Destek almak için şu adresi ziyaret edebilirsiniz:[Aspose forumu](https://forum.aspose.com/c/pdf/10).
 
-A: Aspose.PDF for .NET'te radyo düğmesi seçeneklerinin görünümünü çeşitli özellikleri ayarlayarak özelleştirebilirsiniz. API, iki radyo düğmesi seçeneği arasındaki mesafeyi ayarlamak için seçenekler sunar (`RadioGap`), düzen yönü (`RadioHoriz`), radyo düğmesi öğelerinin boyutu (`RadioButtonItemSize`), radyo düğmelerinin kenarlık genişliği ve rengi ve daha fazlası.
+### Aspose.PDF ile başka form elemanları oluşturmak mümkün müdür?
+Kesinlikle! Aspose.PDF, metin alanları, onay kutuları ve açılır listeler dahil olmak üzere çeşitli form öğelerini destekler.
 
-#### S: Aynı PDF belgesine hem yatay hem de dikey radyo düğmeleri ekleyebilir miyim?
-
-A: Evet, Aspose.PDF for .NET kullanarak aynı PDF belgesine hem yatay hem de dikey radyo düğmeleri ekleyebilirsiniz. Eğitimde sağlanan örnek kaynak kodu, önce yatay olarak düzenlenmiş radyo düğmelerinin nasıl ekleneceğini ve ardından aynı PDF belgesine dikey olarak düzenlenmiş başka bir radyo düğmesi setinin nasıl ekleneceğini gösterir.
-
-#### S: Her bir radyo düğmesi grubu için farklı radyo düğmesi seçenekleri belirleyebilir miyim?
-
- A: Evet, her bir radyo düğmesi grubu için farklı radyo düğmesi seçenekleri ayarlayabilirsiniz. Her grubun kendine özgü bir`RadioButtonField` nesne ve`RadioButtonOptionField` her gruptaki nesneler aynı sayfayı ve seçenekleri için benzersiz adları paylaşmalıdır. Bu, her gruptaki radyo düğmelerinin doğru şekilde çalışmasını ve seçimlerin karşılıklı olarak özel olmasını sağlar.
-
-#### S: Radyo düğmelerinin düzen ve görünüm ayarları tüm PDF görüntüleyicilerinde ve uygulamalarında destekleniyor mu?
-
-A: Evet, radyo düğmelerinin düzeni ve görünüm ayarları tüm standart uyumlu PDF görüntüleyicilerinde ve uygulamalarında desteklenir. PDF belirtimi radyo düğmelerini ve çeşitli niteliklerini tanımlar ve bunları PDF formatında evrensel olarak tanınır hale getirir. Ancak, çeşitli platformlarda tutarlı bir işleme sağlamak için radyo düğmelerinin görünümünü ve davranışını farklı PDF görüntüleyicilerinde test etmek önemlidir.
+### Aspose.PDF for .NET'i nereden satın alabilirim?
+ Aspose.PDF for .NET'i şu adresten satın alabilirsiniz:[satın alma sayfası](https://purchase.aspose.com/buy).

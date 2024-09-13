@@ -12,6 +12,6 @@ description: تُعلمك دروس Aspose.PDF لـ .NET Programming with Operato
 ## دروس تعليمية
 | عنوان | وصف |
 | --- | --- | 
-| [ارسم XForm على الصفحة](./draw-xform-on-page/) | دليل خطوة بخطوة لرسم نموذج XForm على صفحة PDF باستخدام Aspose.PDF لـ .NET. أضف النموذج وضعه على الصفحة. |  
+| [ارسم XForm على الصفحة](./draw-xform-on-page/) | تعلم كيفية رسم XForms في PDF باستخدام Aspose.PDF لـ .NET باستخدام هذا الدليل الشامل خطوة بخطوة. |  
 | [مشغلات PDF](./pdf-operators/) | دليل خطوة بخطوة لاستخدام مشغلات PDF مع Aspose.PDF لـ .NET. أضف صورة إلى صفحة PDF وحدد موضعها. |  
-| [إزالة الكائنات الرسومية في ملف PDF](./remove-graphics-objects/) | دليل خطوة بخطوة لإزالة الكائنات الرسومية من ملف PDF باستخدام Aspose.PDF لـ .NET. تخصيص ملفات PDF وتنظيفها. |  
+| [إزالة الكائنات الرسومية في ملف PDF](./remove-graphics-objects/) | تعرف على كيفية إزالة الكائنات الرسومية من ملف PDF باستخدام Aspose.PDF for .NET في هذا الدليل التفصيلي. قم بتبسيط مهام معالجة ملفات PDF. |  

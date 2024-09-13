@@ -86,7 +86,7 @@ annot.TextAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 
 該行將覆蓋文字設定為“REDACTED”並將其置於註釋區域的中心。現在很明顯，出於保密目的，該部分已被隱藏。
 
-## 第 6 步：設定疊加行為
+## 第 6 步：設定覆蓋行為
 
 您想要重複疊加文字嗎？如果是這樣，請像這樣啟用該功能：
 

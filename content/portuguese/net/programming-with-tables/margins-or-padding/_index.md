@@ -63,7 +63,7 @@ tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
 Agora, vamos adicionar linhas e células à tabela. Criaremos uma nova linha e adicionaremos células a ela:
 
 ```csharp
-// Crie linhas na tabela e depois células nas linhas
+//Crie linhas na tabela e depois células nas linhas
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -117,7 +117,7 @@ margin.Right = 5f;
 margin.Bottom = 5f;
 // Defina o preenchimento de célula padrão para o objeto MarginInfo
 tab1.DefaultCellPadding = margin;
-// Crie linhas na tabela e depois células nas linhas
+//Crie linhas na tabela e depois células nas linhas
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -145,7 +145,7 @@ Parabéns! Você aprendeu com sucesso como definir margens ou preenchimento em u
 
 #### P: Posso definir margens ou preenchimento diferentes para células individuais em uma tabela?
 
-R: Sim, você pode definir margens ou preenchimentos diferentes para células individuais em uma tabela usando Aspose.PDF para .NET. No exemplo fornecido, definimos o preenchimento de célula padrão para toda a tabela usando o`DefaultCellPadding` propriedade. Para definir preenchimento diferente para células específicas, você pode acessar o`MarginInfo` de cada célula individualmente e modificar suas margens.
+ R: Sim, você pode definir margens ou preenchimentos diferentes para células individuais em uma tabela usando Aspose.PDF para .NET. No exemplo fornecido, definimos o preenchimento de célula padrão para toda a tabela usando o`DefaultCellPadding` propriedade. Para definir preenchimento diferente para células específicas, você pode acessar o`MarginInfo` de cada célula individualmente e modificar suas margens.
 
 #### P: Como posso alterar a cor ou o estilo da borda da tabela?
 
@@ -161,4 +161,4 @@ R: Sim, você pode adicionar cabeçalhos ou rodapés à tabela usando o Aspose.P
 
 #### P: Posso adicionar imagens às células da tabela em vez de texto?
 
- R: Sim, você pode adicionar imagens às células da tabela usando Aspose.PDF para .NET. Em vez de criar uma`TextFragment` objeto, você pode criar um`Image` objeto, carregue o arquivo de imagem e adicione-o à célula desejada usando o`cell.Paragraphs.Add(image);` método. Isso permite que você insira imagens na tabela junto com o conteúdo do texto.
+ R: Sim, você pode adicionar imagens às células da tabela usando Aspose.PDF para .NET. Em vez de criar uma`TextFragment` objeto, você pode criar um`Image` objeto, carregue o arquivo de imagem e adicione-o à célula desejada usando o`cell.Paragraphs.Add(image);`método. Isso permite que você insira imagens na tabela junto com o conteúdo do texto.

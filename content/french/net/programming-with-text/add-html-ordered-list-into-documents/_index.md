@@ -47,7 +47,7 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 ```
 
 ## Étape 6 : Ajouter une page au document
- Ajoutez une nouvelle page au document en utilisant le`Add` méthode de la`Pages`collection. Dans le code fourni, la nouvelle page est attribuée à la variable`page`.
+ Ajoutez une nouvelle page au document en utilisant le`Add` méthode de la`Pages` collection. Dans le code fourni, la nouvelle page est attribuée à la variable`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -81,7 +81,7 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 Page page = doc.Pages.Add();
 // Ajouter un fragment HTML à l'intérieur de la page
 page.Paragraphs.Add(t);
-// Enregistrer le fichier PDF résultant
+//Enregistrer le fichier PDF résultant
 doc.Save(outFile);
 ```
 
@@ -115,7 +115,7 @@ using Aspose.Pdf.Text;
 
 #### Q : Comment ajouter la liste ordonnée HTML à une page du document ?
 
- A : À l'étape 7, vous ajouterez le`HtmlFragment` objet (`t` ) à la page en utilisant le`Add` méthode de la`Paragraphs`collection. Cela intégrera de manière transparente la liste ordonnée HTML dans le document.
+ A : À l'étape 7, vous ajouterez le`HtmlFragment` objet (`t` ) à la page en utilisant le`Add` méthode de la`Paragraphs` collection. Cela intégrera de manière transparente la liste ordonnée HTML dans le document.
 
 #### Q : Comment puis-je enregistrer le document PDF obtenu ?
 
@@ -137,4 +137,4 @@ doc.Save(outFile);
 
 #### Q : Quel est le point clé à retenir de ce tutoriel ?
 
-R : En suivant ce tutoriel, vous avez appris à exploiter la bibliothèque Aspose.PDF pour .NET pour intégrer une liste ordonnée HTML dans un document. Ces nouvelles connaissances peuvent être appliquées pour améliorer vos processus de création et de manipulation de documents.
+: En suivant ce tutoriel, vous avez appris à exploiter la bibliothèque Aspose.PDF pour .NET pour intégrer une liste ordonnée HTML dans un document. Ces nouvelles connaissances peuvent être appliquées pour améliorer vos processus de création et de manipulation de documents.

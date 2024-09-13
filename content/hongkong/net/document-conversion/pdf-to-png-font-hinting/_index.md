@@ -55,7 +55,7 @@ Document pdfDocument = new Document(dataDir + "input.pdf");
 
 ## 第 3 步：啟用字體提示
 
-字體提示是一項很棒的功能，有助於提高轉換後圖像中字體的清晰度。為了實現這一點，我們將創建一個`RenderingOptions`物件和集合`UseFontHinting`到`true`：
+字體提示是一項很棒的功能，有助於提高轉換後圖像中字體的清晰度。為了實現這一點，我們將創建一個`RenderingOptions`物件和集合`UseFontHinting`到`true`:
 
 ```csharp
 RenderingOptions opts = new RenderingOptions();
@@ -108,7 +108,7 @@ imageStream.Close();
 
 ## 結論
 
-現在你就擁有了！您已經了解如何使用 Aspose.PDF for .NET 的字體提示將 PDF 轉換為 PNG 影像，同時確保字體銳利且清晰。此過程對於建立用於演示、網路使用或存檔目的的影像非常有益。
+現在你就得到它了！您已經了解如何使用 Aspose.PDF for .NET 的字體提示將 PDF 轉換為 PNG 影像，同時確保字體銳利且清晰。此過程對於建立用於演示、網路使用或存檔目的的影像非常有益。
 
 ## 常見問題解答
 

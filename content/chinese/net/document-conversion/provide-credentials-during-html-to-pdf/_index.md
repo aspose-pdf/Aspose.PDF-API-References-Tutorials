@@ -48,7 +48,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 步骤 2：创建 Web 请求
 
-接下来，我们需要创建一个请求来从特定的 URL 获取 HTML 内容。在这里我们将使用`WebRequest`班级。
+接下来，我们需要创建一个请求来从特定 URL 获取 HTML 内容。在这里我们将使用`WebRequest`班级。
 
 ```csharp
 WebRequest request = WebRequest.Create("http://My.signchart.com/Report/PrintBook.asp?ProjectGuid=6FB9DBB0-");

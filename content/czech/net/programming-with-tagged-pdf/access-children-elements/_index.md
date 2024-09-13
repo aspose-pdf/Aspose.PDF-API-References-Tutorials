@@ -105,7 +105,7 @@ foreach (Element element in elementList)
 		string alternativeText = structureElement.AlternativeText;
 	}
 }
-// Přístup k dětským prvkům prvního prvku v kořenovém prvku
+//Přístup k dětským prvkům prvního prvku v kořenovém prvku
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
 foreach (Element element in elementList)
 {

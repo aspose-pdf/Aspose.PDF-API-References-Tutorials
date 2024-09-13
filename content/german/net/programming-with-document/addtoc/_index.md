@@ -135,7 +135,7 @@ Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at "
 
 ## Abschluss
 
-Und da haben Sie es! Mit Aspose.PDF für .NET ist das Hinzufügen eines Inhaltsverzeichnisses zu einer PDF-Datei nicht nur einfach, sondern auch anpassbar. Egal, ob Sie einfache Navigationslinks oder komplexe Strukturen erstellen müssen, dieses Tool bietet Ihnen alles. Vergessen Sie also nicht, beim nächsten Mal, wenn Sie an einer langen PDF-Datei arbeiten, ein Inhaltsverzeichnis für den professionellen Touch hinzuzufügen!
+Und da haben Sie es! Mit Aspose.PDF für .NET ist das Hinzufügen eines Inhaltsverzeichnisses zu einer PDF-Datei nicht nur einfach, sondern auch anpassbar. Egal, ob Sie einfache Navigationslinks oder komplexe Strukturen erstellen müssen, dieses Tool bietet alles. Vergessen Sie also nicht, beim nächsten Mal, wenn Sie an einer langen PDF-Datei arbeiten, ein Inhaltsverzeichnis für den professionellen Touch hinzuzufügen!
 
 ## Häufig gestellte Fragen
 

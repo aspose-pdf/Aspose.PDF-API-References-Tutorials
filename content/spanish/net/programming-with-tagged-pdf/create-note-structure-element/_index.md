@@ -103,7 +103,7 @@ NoteElement note3 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note3);
 note3.SetText("Note with ID = 'note_003'. ");
 note3.SetId("note_003");
-// Se debe lanzar una excepción - Aspose.Pdf.Tagged.TaggedException: El elemento de estructura con ID='note_002' ya existe
+//Se debe lanzar una excepción - Aspose.Pdf.Tagged.TaggedException: El elemento de estructura con ID='note_002' ya existe
 //nota3.SetId("nota_002");
 // El documento resultante no cumple con los requisitos de PDF/UA si se utiliza ClearId() para el elemento de estructura de nota
 //nota3.ClearId();
@@ -148,7 +148,7 @@ R: Sí, puedes personalizar el contenido y las propiedades de los elementos de l
 
 #### P: ¿Puedo asignar identificadores únicos a los elementos de la estructura de notas?
 
-R: Sí, puede asignar identificaciones únicas a los elementos de la estructura de notas utilizando el`SetId` método. El código demuestra cómo establecer los identificadores de los elementos de nota en valores únicos.
+ R: Sí, puede asignar identificaciones únicas a los elementos de la estructura de notas utilizando el`SetId` método. El código demuestra cómo establecer los identificadores de los elementos de nota en valores únicos.
 
 #### P: ¿Qué sucede si intento asignar una ID duplicada a un elemento de estructura de nota?
 
@@ -156,7 +156,7 @@ A: Intentar asignar un ID duplicado a un elemento de la estructura de una nota g
 
 #### P: ¿Cómo puedo garantizar la conformidad con PDF/UA al crear elementos de estructura de notas?
 
- A: El código proporcionado en el tutorial demuestra cómo validar la conformidad con PDF/UA utilizando el`Validate` Método. Al validar el documento con el estándar PDF/UA, puede asegurarse de que los elementos de estructura de notas agregados cumplan con las pautas de accesibilidad.
+A: El código proporcionado en el tutorial demuestra cómo validar la conformidad con PDF/UA utilizando el`Validate` Método. Al validar el documento con el estándar PDF/UA, puede asegurarse de que los elementos de estructura de notas agregados cumplan con las pautas de accesibilidad.
 
 #### P: ¿Puedo utilizar este enfoque para agregar elementos de estructura de notas a un documento PDF existente?
 

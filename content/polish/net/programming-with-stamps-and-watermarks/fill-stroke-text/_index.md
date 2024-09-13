@@ -2,164 +2,191 @@
 title: Wypełnij tekst obrysu w pliku PDF
 linktitle: Wypełnij tekst obrysu w pliku PDF
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak łatwo wypełniać i konturować tekst w pliku PDF za pomocą Aspose.PDF dla platformy .NET.
+description: Dowiedz się, jak bez wysiłku wypełniać tekst obrysowy w plikach PDF za pomocą Aspose.PDF dla .NET, korzystając z tego przewodnika krok po kroku wypełnionego praktycznymi przykładami.
 type: docs
 weight: 90
 url: /pl/net/programming-with-stamps-and-watermarks/fill-stroke-text/
 ---
-tym samouczku pokażemy Ci krok po kroku, jak wypełnić i obrysować tekst w pliku PDF za pomocą Aspose.PDF dla .NET. Pokażemy Ci, jak użyć dostarczonego kodu źródłowego C#, aby zastosować kolory wypełnienia i obrysu do tekstu w pliku PDF.
+## Wstęp
 
-## Krok 1: Konfigurowanie środowiska
+Czy kiedykolwiek chciałeś zmodyfikować plik PDF, aby się wyróżniał? Może musisz dodać uderzający znak wodny lub pogrubiony stempel, który sprawi, że ważny dokument będzie niewątpliwie Twój. Dzięki Aspose.PDF dla .NET możesz łatwo wypełnić tekst obrysu w pliku PDF, dodając artystyczny polot, który przyciąga wzrok. W dzisiejszym samouczku przejdziemy przez proces robienia właśnie tego — wypełniania tekstu obrysu w pliku PDF za pomocą C#. Pod koniec będziesz mieć solidne pojęcie o tym, jak manipulować plikami PDF jak profesjonalista.
 
-Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
+## Wymagania wstępne
 
-- Zainstalowane środowisko programistyczne .NET.
-- Biblioteka Aspose.PDF dla platformy .NET pobrana i wykorzystana w projekcie.
+Zanim przejdziemy do kodowania, jest kilka rzeczy, które musisz zrobić, aby ten samouczek był łatwy:
 
-## Krok 2: Tworzenie obiektu TextState
+1. Visual Studio: Upewnij się, że na Twoim komputerze jest zainstalowany program Visual Studio, ponieważ będziemy pisać kod w języku C#.
+2.  Biblioteka Aspose.PDF: Upewnij się, że pobrałeś bibliotekę Aspose.PDF dla .NET. Możesz ją pobrać[Tutaj](https://releases.aspose.com/pdf/net/).
+3. Podstawowa wiedza o języku C#: Znajomość programowania w języku C# pomoże Ci łatwiej zrozumieć ten samouczek.
+4. Przykładowy plik PDF: Będziesz potrzebować przykładowego pliku PDF (`input.pdf`w celach testowych. Możesz utworzyć prosty plik lub użyć dowolnego istniejącego pliku PDF, który posiadasz.
 
-Pierwszym krokiem jest utworzenie obiektu TextState, aby przekazać zaawansowane właściwości. Oto jak to zrobić:
+Teraz, gdy wszystko mamy już na swoim miejscu, możemy przejść do szczegółów wypełniania tekstu obrysu w pliku PDF.
+
+## Importuj pakiety
+
+Na początek musimy zaimportować niezbędne pakiety. Oto krótki przegląd niezbędnych importów dla naszego projektu:
 
 ```csharp
-// Utwórz obiekt TextState, aby przenieść zaawansowane właściwości
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Pakiety te pozwolą nam wykorzystać rozbudowane funkcjonalności biblioteki Aspose.PDF.
+
+Podzielmy główne zadanie na jasne kroki. Postępując zgodnie z tymi krokami, możesz łatwo wypełnić tekstem obrysu swoje pliki PDF. 
+
+## Krok 1: Skonfiguruj swoje środowisko
+
+Najpierw upewnij się, że wszystko jest poprawnie skonfigurowane w projekcie Visual Studio. Utwórz nowy projekt lub wybierz istniejący. Jeśli potrzebujesz pomocy, oto jak to zrobić:
+
+1. Otwórz program Visual Studio.
+2. Utwórz nowy projekt C# (np. aplikację konsolową).
+3. Kliknij prawym przyciskiem myszy projekt w Eksploratorze rozwiązań i wybierz opcję „Zarządzaj pakietami NuGet”.
+4.  Szukaj`Aspose.PDF` i zainstaluj.
+
+## Krok 2: Zdefiniuj katalog dokumentów
+
+Każda podróż potrzebuje punktu początkowego, a w naszym przypadku jest to katalog dokumentów, w którym będą znajdować się pliki wejściowe i wyjściowe. 
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Zastępować`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką, gdzie znajduje się Twój plik PDF. 
+
+## Krok 3: Utwórz obiekt TextState
+
+Na tym etapie rozpoczynasz definiowanie właściwości tekstu, który chcesz dodać. 
+
+```csharp
 TextState ts = new TextState();
+```
 
-// Ustaw kolor konturu
+ Ten`TextState` Obiekt będzie zawierał opcje stylizacji tekstu obrysu.
+
+## Krok 4: Ustaw kolor obrysu
+
+Następnie należy określić kolor obrysu tekstu. 
+
+```csharp
 ts.StrokingColor = Color.Gray;
+```
 
-// Zdefiniuj tryb renderowania tekstu
+W tym kodzie używamy szarego koloru dla obrysu. Możesz swobodnie zmienić kolor, aby dopasować go do swoich potrzeb!
+
+## Krok 5: Skonfiguruj tryb renderowania
+
+Aby mieć pewność, że tekst będzie wyświetlany zgodnie z oczekiwaniami, ustaw tryb renderowania:
+
+```csharp
 ts.RenderingMode = TextRenderingMode.StrokeText;
 ```
 
-Powyższy kod tworzy nowy obiekt TextState i ustawia kolor obrysu oraz sposób renderowania tekstu.
+Informuje to bibliotekę Aspose, że pracujemy z tekstem obrysu.
 
-## Krok 3: Ładowanie dokumentu PDF
+## Krok 6: Załaduj swój dokument wejściowy PDF
 
-Teraz, gdy obiekt TextState jest gotowy, możemy załadować dokument PDF, w którym chcemy zastosować wypełnienie i kontur tekstu. Oto jak to zrobić:
+Teraz pora na załadowanie pliku PDF, który chcesz zmodyfikować. 
 
 ```csharp
-// Załaduj dokument PDF jako dane wejściowe
 Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
 ```
 
-Powyższy kod ładuje istniejący dokument PDF korzystając z klasy PdfFileStamp z biblioteki Aspose.PDF.Facades.
+Upewnij się, że Twój plik wejściowy PDF (`input.pdf`znajduje się w katalogu dokumentów zdefiniowanym w poprzednich krokach.
 
-## Krok 4: Dodaj wypełnienie i obrys do tekstu
+## Krok 7: Utwórz obiekt stempla
 
-Teraz, gdy dokument PDF jest załadowany, możemy dodać wypełnienie i kontur do tekstu. Oto jak to zrobić:
+Następnie stwórz stempel, w którym zostanie umieszczony tekst. 
 
 ```csharp
-// Utwórz stempel (Stempel) ze zdefiniowanym tekstem i właściwościami
 Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
+```
+
+Ten znaczek będzie używany do nałożenia Twojego tekstu na plik PDF.
+
+## Krok 8: Zdefiniuj tekst do stemplowania
+
+Musisz określić, jaki tekst chcesz dodać do pliku PDF:
+
+```csharp
 stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
+```
 
-// Powiąż obiekt TextState
+Tutaj „PAID IN FULL” to tekst, który dodajemy, wraz z jego atrybutami stylistycznymi. Dostosuj go zgodnie ze swoimi wymaganiami!
+
+## Krok 9: Powiąż stan tekstu
+
+ Teraz zwiąż`TextState` zdefiniowałeś wcześniej dla znaczka. 
+
+```csharp
 stamp.BindTextState(ts);
+```
 
-// Ustaw początek X, Y
+Ten krok powoduje zastosowanie do tekstu wszystkich stylów, takich jak kolor i tryb renderowania.
+
+## Krok 10: Ustaw pozycję stempla
+
+Określ, gdzie w pliku PDF będzie pojawiać się Twój znaczek:
+
+```csharp
 stamp.SetOrigin(100, 100);
-stamp. Opacity = 5;
+```
+
+ Argumenty`(100, 100)` oznacz współrzędne X i Y (w punktach) dla początku tekstu. Dostosuj te wartości, aby idealnie umieścić tekst!
+
+## Krok 11: Skonfiguruj krycie i obrót
+
+Tutaj możesz zmienić wygląd swojego tekstu:
+
+```csharp
+stamp.Opacity = 5;
 stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
 stamp.Rotation = 45.0F;
-stamp. IsBackground = false;
+```
 
-// Dodaj pieczątkę do dokumentu
+W tym przypadku wartość krycia i kąt obrotu 45 stopni dodają Twojemu tekstowi wyjątkowego charakteru. Możesz swobodnie modyfikować te ustawienia, aby uzyskać różne efekty.
+
+## Krok 12: Dodaj znaczek do pliku PDF
+
+To kluczowy krok, w którym ostatecznie dodamy do pliku PDF nasz stempel zawierający tekst obrysu:
+
+```csharp
 fileStamp.AddStamp(stamp);
 ```
 
-Powyższy kod tworzy stempel z określonym tekstem i zdefiniowanymi właściwościami wypełnienia i obrysu.
+I tak oto Twój tekst jest gotowy, by przekazać przesłanie!
 
-## Krok 5: Zapisz dokument wyjściowy
+## Krok 13: Zapisz i zamknij dokument
 
-Po dodaniu znacznika tekstowego możemy zapisać zmodyfikowany dokument PDF. Oto jak to zrobić:
+Na koniec zapisz zmiany i sprawdź, czy wszystko zostało poprawnie wyczyszczone. 
 
 ```csharp
-// Zapisz zmodyfikowany dokument
 fileStamp.Save(dataDir + "output_out.pdf");
 fileStamp.Close();
 ```
 
-Powyższy kod zapisuje edytowany dokument PDF w określonym katalogu.
-
-### Przykładowy kod źródłowy dla funkcji Wypełnij tekst obrysu przy użyciu Aspose.PDF dla .NET 
-```csharp
-
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Utwórz obiekt TextState, aby przenieść zaawansowane właściwości
-TextState ts = new TextState();
-
-// Ustaw kolor dla obrysu
-ts.StrokingColor = Color.Gray;
-
-// Ustaw tryb renderowania tekstu
-ts.RenderingMode = TextRenderingMode.StrokeText;
-
-// Załaduj dokument wejściowy PDF
-Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
-Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
-stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
-
-// Powiąż tekst stanu
-stamp.BindTextState(ts);
-
-// Ustaw początek X,Y
-stamp.SetOrigin(100, 100);
-stamp.Opacity = 5;
-stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
-stamp.Rotation = 45.0F;
-stamp.IsBackground = false;
-
-// Dodaj znaczek
-fileStamp.AddStamp(stamp);
-fileStamp.Save(dataDir + "ouput_out.pdf");
-fileStamp.Close();
-
-```
+ Twój nowo zmodyfikowany plik PDF zawierający tekst obrysu zostanie zapisany jako`output_out.pdf` w katalogu dokumentów. 
 
 ## Wniosek
 
-Gratulacje! Nauczyłeś się wypełniać i konturować tekst w dokumencie PDF za pomocą Aspose.PDF dla .NET. Teraz możesz zastosować tę wiedzę, aby dostosować kolory wypełnienia i konturu w dokumentach PDF.
+I masz to! Postępując zgodnie z tymi prostymi krokami, możesz łatwo wypełnić tekst obrysu w pliku PDF za pomocą Aspose.PDF dla .NET. Niezależnie od tego, czy chodzi o dokumenty biznesowe, czy projekty osobiste, ta technika pozwala dodać unikalny akcent do plików PDF, dzięki czemu wyróżniają się one w każdym stosie papierów.
 
-### Często zadawane pytania dotyczące tekstu obrysu wypełnienia w pliku PDF
+## Najczęściej zadawane pytania
 
-#### P: Na czym polega wypełnianie i konturowanie tekstu w dokumencie PDF i kiedy mogę być zmuszony to zrobić?
+### Czym jest Aspose.PDF dla .NET?
+Aspose.PDF dla platformy .NET to biblioteka umożliwiająca programistom programowe tworzenie, edytowanie i konwertowanie plików PDF.
 
-A: Wypełnianie i konturowanie tekstu w dokumencie PDF obejmuje stosowanie kolorów do wnętrza znaków tekstowych (wypełnienie) i do obramowań wokół tekstu (kontur). Można tego użyć do poprawienia wyglądu wizualnego tekstu, stworzenia nacisku lub wyróżnienia określonej zawartości w pliku PDF.
+### Czy mogę używać Aspose.PDF bezpłatnie?
+Tak, Aspose oferuje bezpłatny okres próbny. Możesz go otrzymać[Tutaj](https://releases.aspose.com/).
 
-#### P: W jaki sposób dostarczony kod źródłowy C# realizuje wypełnianie i konturowanie tekstu w pliku PDF?
+### Czy muszę płacić za licencję?
+ Chociaż biblioteka oferuje bezpłatny okres próbny, licencję tymczasową można również zakupić pod adresem[ten link](https://purchase.aspose.com/temporary-license/).
 
- A: Dostarczony kod źródłowy pokazuje, jak utworzyć`TextState` obiekt do definiowania zaawansowanych właściwości tekstu, takich jak kolor obrysu i tryb renderowania. Następnie używa Aspose.PDF.Facades do załadowania istniejącego dokumentu PDF, utworzenia stempla zawierającego tekst z określonymi właściwościami wypełnienia i obrysu, a następnie dodania stempla do dokumentu.
+### Gdzie mogę znaleźć dokumentację?
+ Możesz uzyskać dostęp do pełnej dokumentacji[Tutaj](https://reference.aspose.com/pdf/net/).
 
-####  P: Jaki jest cel`TextState` object in the code?
-
- A: Ten`TextState`obiekt służy do definiowania zaawansowanych właściwości tekstu, w tym koloru konturu tekstu (obrysu) i trybu renderowania. Umożliwia dostosowanie sposobu wyświetlania tekstu pod względem obrysu i wypełnienia.
-
-#### P: Czy mogę zastosować różne kolory wypełnienia i konturu do różnych części tego samego tekstu?
-
- A: Tak, możesz zmodyfikować kod, aby utworzyć różne`TextState` obiekty z różnymi kolorami wypełnienia i konturu i stosować je do określonych części tekstu za pomocą oddzielnych`Stamp` obiekty.
-
-#### P: Czy mogę zastosować kolory wypełnienia i konturu do tekstu, który już znajduje się w dokumencie PDF?
-
- O: Tak, możesz zastosować podobne zasady, aby zastosować kolory wypełnienia i konturu do istniejącego tekstu w dokumencie PDF, wybierając odpowiednie obiekty tekstowe i dodając je jako stemple z pożądanym kolorem.`TextState` Właściwości.
-
-#### P: W jaki sposób mogę dostosować krycie i mieszanie tekstu wypełnionego i obrysowanego?
-
- A: Dostarczony kod umożliwia ustawienie właściwości krycia i mieszania stempla za pomocą`Opacity` I`BlendingSpace`właściwości. Możesz dostosować te wartości, aby uzyskać pożądany efekt wizualny.
-
-#### P: Jak mogę zastosować różne kolory wypełnienia i konturu do wielu stempli w tym samym dokumencie PDF?
-
- A: Możesz utworzyć wiele`TextState` obiekty o różnych kolorach wypełnienia i konturu, a następnie utwórz oddzielne`Stamp` obiekty dla każdego zestawu tekstu z różnymi kolorami. Dodaj te znaczki do tego samego dokumentu PDF za pomocą`PdfFileStamp` klasa.
-
-#### P: Czy mogę używać innych czcionek niż Arial do tekstu konturowanego i wypełnionego?
-
- A: Tak, możesz zmienić czcionkę, modyfikując parametr nazwy czcionki w`FormattedText` konstruktora podczas tworzenia znaczka. Możesz użyć dowolnego fontu dostępnego w systemie.
-
-#### P: W jaki sposób mogę zmienić kąt obrotu tekstu obrysowanego i wypełnionego?
-
- A: Dostarczony kod pozwala na ustawienie kąta obrotu znaczka za pomocą`Rotation` Właściwość. Możesz dostosować tę właściwość, aby określić pożądany kąt obrotu tekstu.
-
-#### P: W jaki sposób mogę kontrolować położenie i rozmiar tekstu obrysowanego i wypełnionego na stronie?
-
- A: Możesz użyć`SetOrigin` metoda`Stamp` obiekt, aby ustawić współrzędne X i Y pozycji znaczka na stronie. Dodatkowo możesz dostosować rozmiar czcionki w`FormattedText` konstruktor kontrolujący rozmiar tekstu.
+### Czy mogę liczyć na pomoc, jeśli wystąpią jakieś problemy?
+ Oczywiście! Możesz uzyskać wsparcie na forum Aspose[Tutaj](https://forum.aspose.com/c/pdf/10).

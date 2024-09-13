@@ -62,7 +62,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## ขั้นตอนที่ 6: ดึงข้อมูลข้อความที่แยกออกมา
 
-รับชิ้นส่วนข้อความที่แยกออกมาโดยใช้`TextFragments` ทรัพย์สินของ`TextFragmentAbsorber` วัตถุ:
+ รับชิ้นส่วนข้อความที่แยกออกมาโดยใช้`TextFragments` ทรัพย์สินของ`TextFragmentAbsorber` วัตถุ:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -165,7 +165,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 #### ถาม: จะเกิดอะไรขึ้นหากไม่พบวลีการค้นหาในหน้าที่ระบุ?
 
- ก: หากไม่พบวลีการค้นหาในหน้าที่ระบุ`TextFragmentCollection` จะว่างเปล่าและจะไม่มีการแทนที่ใดๆ โปรดตรวจสอบให้แน่ใจว่าวลีการค้นหามีอยู่ในเพจที่คุณกำหนดเป้าหมาย
+ก: หากไม่พบวลีการค้นหาในหน้าที่ระบุ`TextFragmentCollection` จะว่างเปล่าและจะไม่มีการแทนที่ใดๆ โปรดตรวจสอบให้แน่ใจว่าวลีการค้นหามีอยู่ในเพจที่คุณกำหนดเป้าหมาย
 
 #### ถาม: ฉันจะปรับแต่งข้อความแทนที่สำหรับแต่ละส่วนของข้อความได้อย่างไร
 

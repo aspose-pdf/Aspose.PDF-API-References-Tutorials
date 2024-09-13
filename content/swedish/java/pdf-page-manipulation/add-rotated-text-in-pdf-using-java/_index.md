@@ -81,7 +81,7 @@ page.getParagraphs().add(textFragment);
 
 ## Steg 6: Spara PDF-filen
 
-Spara slutligen PDF-dokumentet med den roterade texten:
+Slutligen sparar du PDF-dokumentet med den roterade texten:
 
 ```java
 // Spara PDF-dokumentet
@@ -90,7 +90,7 @@ pdfDocument.save("output.pdf");
 
 ## Slutsats
 
-I den här handledningen har vi utforskat processen att lägga till roterad text till ett PDF-dokument med Java och Aspose.PDF för Java. Du har lärt dig hur du skapar en ny PDF, definierar roterad text med anpassade stilar, placerar den på sidan och sparar den ändrade PDF-filen.
+I den här handledningen har vi utforskat processen att lägga till roterad text till ett PDF-dokument med hjälp av Java och Aspose.PDF för Java. Du har lärt dig hur du skapar en ny PDF, definierar roterad text med anpassade stilar, placerar den på sidan och sparar den ändrade PDF-filen.
 
 Roterad text kan vara ett värdefullt tillägg till dina PDF-filer för olika ändamål, som att märka diagram, vattenmärka eller lägga till kreativa element i dina dokument.
 

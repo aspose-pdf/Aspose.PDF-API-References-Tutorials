@@ -31,7 +31,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("Arial");
 ```
 
-De bovenstaande code vindt het Arial-lettertype met behulp van de`FindFont` methode van de`FontRepository` klasse. Als u een ander lettertype wilt gebruiken, vervangt u`"Arial"` met de gewenste lettertypenaam.
+ De bovenstaande code vindt het Arial-lettertype met behulp van de`FindFont`methode van de`FontRepository` klasse. Als u een ander lettertype wilt gebruiken, vervangt u`"Arial"` met de gewenste lettertypenaam.
 
 ## Stap 3: Stel de tekststatus in
 
@@ -115,6 +115,6 @@ A: De tutorial laat zien hoe je de breedte van tekst kunt meten met behulp van h
 
  A: Ja, u kunt de lettergrootte en andere eigenschappen in de`TextState` object om de tekstbreedte te meten voor verschillende grootten en stijlen.
 
-#### V: Wat benadrukt de conclusie van de tutorial?
+#### V: Waarop ligt de nadruk in de conclusie van de tutorial?
 
 A: De conclusie vat de inhoud van de tutorial samen en benadrukt dat u hebt geleerd hoe u dynamisch de tekstbreedte in een PDF-document kunt meten met Aspose.PDF voor .NET en C#. Deze kennis kan bijdragen aan het verbeteren van uw PDF-lay-outontwerp en renderingnauwkeurigheid.

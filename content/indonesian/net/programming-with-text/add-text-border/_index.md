@@ -38,14 +38,14 @@ Document pdfDocument = new Document();
 ```
 
 ## Langkah 5: Tambahkan halaman ke dokumen
- Tambahkan halaman baru ke dokumen dengan menggunakan`Add` metode dari`Pages`koleksi. Dalam kode yang diberikan, halaman baru ditetapkan ke variabel`pdfPage`.
+ Tambahkan halaman baru ke dokumen dengan menggunakan`Add` metode dari`Pages` koleksi. Dalam kode yang diberikan, halaman baru ditetapkan ke variabel`pdfPage`.
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
 ## Langkah 6: Buat TextFragment
- Membuat sebuah`TextFragment` objek dan berikan teks yang diinginkan. Atur posisi fragmen teks menggunakan`Position` properti. Dalam kode yang diberikan, teks diatur ke "teks utama" dan diposisikan pada (100, 600) di halaman.
+ Membuat sebuah`TextFragment`objek dan berikan teks yang diinginkan. Atur posisi fragmen teks menggunakan`Position` properti. Dalam kode yang diberikan, teks diatur ke "teks utama" dan diposisikan pada (100, 600) di halaman.
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -64,7 +64,7 @@ textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 ```
 
 ## Langkah 8: Aktifkan batas teks
- Untuk mengaktifkan batas teks, atur`DrawTextRectangleBorder`properti dari fragmen teks`TextState` ke`true`.
+ Untuk mengaktifkan batas teks, atur`DrawTextRectangleBorder` properti dari fragmen teks`TextState` ke`true`.
 
 ```csharp
 textFragment.TextState.DrawTextRectangleBorder = true;
@@ -151,7 +151,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 
 #### T: Bagaimana cara membuat TextFragment dan mengatur posisinya?
 
- A: Pada Langkah 6, Anda akan membuat`TextFragment`objek dan mengatur posisinya di halaman menggunakan`Position` milik:
+ A: Pada Langkah 6, Anda akan membuat`TextFragment` objek dan mengatur posisinya di halaman menggunakan`Position` milik:
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -182,7 +182,7 @@ tb.AppendText(textFragment);
 
 #### T: Bagaimana cara menyimpan dokumen PDF yang dihasilkan?
 
- A: Setelah menambahkan teks dengan batas, gunakan`Save` metode dari`Document` objek untuk menyimpan dokumen PDF:
+A: Setelah menambahkan teks dengan batas, gunakan`Save` metode dari`Document` objek untuk menyimpan dokumen PDF:
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");

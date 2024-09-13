@@ -57,7 +57,7 @@ string alternativeText = structureElement.AlternativeText;
 
 此程式碼可讓您存取 PDF 文件結構根的子元素並取得每個元素的屬性。
 
-## 步驟 4： 存取根元素子元素並更改屬性
+## 步驟 4：存取根元素子元素並更改屬性
 
 使用以下程式碼存取根元素的子元素並修改屬性：
 

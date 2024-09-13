@@ -2,130 +2,140 @@
 title: Java Scriptを設定する
 linktitle: Java Scriptを設定する
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して PDF ファイルのフォーム フィールドに JavaScript を設定する方法を学習します。
+description: Aspose.PDF for .NET のパワーを解き放ちましょう。ステップバイステップ ガイドを使用して、フォーム フィールドに JavaScript を設定する方法を学びます。
 type: docs
 weight: 270
 url: /ja/net/programming-with-forms/set-java-script/
 ---
-このガイドでは、.NET 用の Aspose.PDF ライブラリを使用して PDF ドキュメントのフォーム フィールドに JavaScript を定義する方法を段階的に説明します。テキスト フィールドで特定の操作を実行するように JavaScript アクションを構成する方法を説明します。
+## 導入
+
+動的でインタラクティブな PDF を作成すると、特にドキュメント内にフォームとフィールドを統合する場合に、ユーザー エクスペリエンスを大幅に向上できます。これを可能にする強力なライブラリの 1 つが Aspose.PDF for .NET です。この記事では、Aspose.PDF を使用してフォーム フィールドの JavaScript を設定する方法について詳しく説明し、PDF が見栄えが良いだけでなく、機能も優れていることを確認します。
 
 ## 前提条件
 
-始める前に、次のものがあることを確認してください。
+コーディングを始める前に、スムーズに進めるために必要なものがすべて揃っていることを確認しましょう。
 
-- システムにインストールされた .NET 開発環境。
-- .NET 用の Aspose.PDF ライブラリ。Aspose の公式 Web サイトからダウンロードできます。
+- Visual Studio (または任意の .NET IDE): 正しくインストールされ、設定されていることを確認します。
+  
+-  Aspose.PDFライブラリ: このライブラリの最新バージョンが必要になります。ダウンロードできます。[ここ](https://releases.aspose.com/pdf/net/).
 
-## ステップ1: ドキュメントディレクトリの構成
+- C# の基礎知識: C# プログラミングに精通していると、コード スニペットをよりよく理解できるようになります。
 
-最初のステップは、作業したいPDFファイルが保存されているドキュメントディレクトリを設定することです。`dataDir`ディレクトリ パスを指定する変数。
+-  PDFファイル: テスト用にPDFファイルを用意する必要があります。この例では、次のファイルを使用します。`SetJavaScript.pdf`.
+
+- ドキュメント ディレクトリ: ドキュメント ファイルが保存されている場所を把握します。コード内でこのパスを参照します。
+
+これらの前提条件が準備できたら、どのツールを活用すればよいでしょうか? Aspose.PDF で何ができるのか見てみましょう。
+
+## パッケージのインポート
+
+まず、C# プロジェクトに必要な名前空間を含める必要があります。メインの C# ファイルを開き、次のインポート ステートメントを追加します。
 
 ```csharp
-//ドキュメント ディレクトリへのパス。
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using System.IO;
+using Aspose.Pdf.Forms;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf;
 ```
 
-必ず交換してください`"YOUR DOCUMENTS DIRECTORY"`ドキュメント ディレクトリへの実際のパスを入力します。
+これらの名前空間は、Aspose.PDF ライブラリ内の PDF およびフォーム関連の機能へのアクセスを提供します。
 
-## ステップ2: 入力PDFファイルの読み込み
+PDF をインタラクティブにする準備はできましたか? コーディングの準備をして、ステップごとに説明しましょう。
 
-このステップでは、入力PDFファイルを読み込みます。`Document` Aspose.PDF のクラス。
+## ステップ1: ドキュメントパスを定義する
 
-```csharp
-//入力PDFファイルを読み込む
-Document doc = new Document(dataDir + "SetJavaScript.pdf");
-```
-
-入力 PDF ファイルが指定されたドキュメント ディレクトリに存在することを確認します。
-
-## ステップ3: TextBoxフィールドにアクセスする
-
-特定のテキストフィールドにJavaScriptを適用するには、まずそのフィールドにアクセスする必要があります。この例では、テキストフィールドの名前は「textbox1」であると仮定します。`doc.Form["textbox1"]`対応するものを取得する方法`TextBoxField`物体。
+まず、PDF ファイルの場所を指定する必要があります。これにより、以降のすべての作業の準備が整います。手順は次のとおりです。
 
 ```csharp
-TextBoxField field = (TextBoxField)doc.Form["textbox1"];
-```
-
-指定されたテキスト フィールドが入力 PDF ファイルに存在することを確認します。
-
-## ステップ4: JavaScriptアクションを構成する
-
-テキスト フィールドにアクセスしたので、このフィールドに関連付けられた JavaScript アクションを構成できます。この例では、次の 2 つのアクションを使用します。`OnModifyCharacter`そして`OnFormat`これらのアクションは次のように定義されます。`JavascriptAction`オブジェクト。
-
-```csharp
-field.Actions.OnModifyCharacter = new JavascriptAction("AFNumber_Keystroke(2, 1, 1, 0, \"\", true)");
-field.Actions.OnFormat = new JavascriptAction("AFNumber_Format(2, 1, 1, 0, \"\", true)");
-```
-
-必要に応じて JavaScript アクションをカスタマイズしてください。
-
-## ステップ5: 初期フィールド値の設定
-
-結果の PDF を保存する前に、テキスト フィールドの初期値を設定できます。この例では、フィールドに値「123」を設定します。
-
-```csharp
-field.Value = "123";
-```
-
-必要に応じてこの値をカスタマイズします。
-
-## ステップ6: 結果のPDFを保存する
-
-テキストフィールドとJavaScriptアクションの設定が完了したので、結果のPDFを`Save`方法の`Document`クラス。
-
-```csharp
-dataDir = dataDir + "Restricted_out.pdf";
-//結果のPDFを保存する
-doc.Save(dataDir);
-```
-
-結果の PDF の完全なパスとファイル名を必ず指定してください。
-
-
-### Aspose.PDF for .NET を使用して Java Script を設定するためのサンプル ソース コード 
-```csharp
-//ドキュメント ディレクトリへのパス。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//入力PDFファイルを読み込む
+```
+
+交換する`"YOUR DOCUMENT DIRECTORY"` PDF ファイルが保存されている実際のパスを入力します。これは宝の地図の座標を設定するようなもので、「X」印がどこにあるかを知っておく必要があります。
+
+## ステップ2: PDFドキュメントを読み込む
+
+ディレクトリを定義したら、PDF ファイルを読み込みます。 
+
+```csharp
 Document doc = new Document(dataDir + "SetJavaScript.pdf");
+```
+
+この行は、指定された PDF ファイルを開き、操作できるように準備します。 
+
+## ステップ3: フォームフィールドにアクセスする
+
+次に、JavaScript を適用するフォーム フィールドにアクセスします。 
+
+```csharp
 TextBoxField field = (TextBoxField)doc.Form["textbox1"];
-//小数点以下の2桁
-//区切りなし
-//ネガティブスタイル = マイナス
-//通貨なし
+```
+
+ここでは、PDFに次の名前のテキストボックスがあると仮定します。`textbox1`この名前のフィールドがない場合は、名前を変更するか、それに応じてコードを調整することができます。 
+
+## ステップ4: JavaScriptアクションを設定する
+
+それでは、テキスト ボックスに機能を追加してみましょう。特定のイベントでトリガーされる JavaScript アクションを設定します。 
+
+```csharp
 field.Actions.OnModifyCharacter = new JavascriptAction("AFNumber_Keystroke(2, 1, 1, 0, \"\", true)");
 field.Actions.OnFormat = new JavascriptAction("AFNumber_Format(2, 1, 1, 0, \"\", true)");
-//初期フィールド値を設定する
+```
+
+何が起こっているか見てみましょう:
+- OnModifyCharacter: この JavaScript 関数は、文字が変更された場合のフィールドの動作を指定します。この場合、数字の後に区切り記号なしで 2 つの小数点を使用できます。
+- OnFormat: これにより、ユーザーが数値をフォーマットするときに、同じルールが遵守されるようになります。
+
+これらのアクションを設定することで、テキスト ボックスに個性を与えることができます。ダンスの動きを教えるようなものです。
+
+## ステップ5: フィールド値を初期化する
+
+次に、初期値を設定してテキスト ボックスに開始点を設定します。 
+
+```csharp
 field.Value = "123";
+```
+
+この行は、テキスト ボックス内の事前入力値として「123」を設定します。これは、パフォーマンスのためにステージを準備するようなものです。
+
+## ステップ6: 変更したPDFを保存する
+
+最後に、これらすべての変更を行った後、ドキュメントを保存する必要があります。
+
+```csharp
 dataDir = dataDir + "Restricted_out.pdf";
-//結果のPDFを保存する
 doc.Save(dataDir);
+```
+
+これにより、元のファイルに変更が反映され、次のように保存されます。`Restricted_out.pdf`これを PDF の運命を決定づけるものと考えてください。保存すれば、世界に公開する準備が整います。
+
+## ステップ7: 成功を確認する
+
+最後に、すべてがスムーズに進んだかどうかを確認しましょう。 
+
+```csharp
 Console.WriteLine("\nJavaScript on form field setup successfully.\nFile saved at " + dataDir);
 ```
 
+このメッセージを実行すると、素晴らしいパフォーマンスの後に観客から拍手を受けるのと同じように、操作が正常に完了したことを確認できます。
+
 ## 結論
 
-このガイドでは、Aspose.PDF ライブラリ for .NET を使用して PDF ドキュメントのフォーム フィールドに JavaScript を設定する方法を学習しました。説明されている手順に従うことで、JavaScript アクションをカスタマイズし、テキスト フィールドでさまざまな操作を実行できます。Aspose.PDF for .NET の機能をさらに詳しく調べて、PDF ファイルの操作の可能性を広げてください。
-
+おめでとうございます。Aspose.PDF for .NET を使用して、PDF のフォーム フィールドに JavaScript を正常に設定しました。このチュートリアルでは、ユーザー インタラクションを強化するツールを紹介しただけでなく、プロのようにドキュメントをパーソナライズする方法について学びました。請求書、アンケート、その他のインタラクティブな PDF のフォームを扱う場合でも、可能性は無限です。
 
 ### よくある質問
 
-#### Q: Aspose.PDF for .NET を使用して、チェックボックスやラジオ ボタンなどの他のフォーム要素に JavaScript を追加できますか?
+### Aspose.PDF for .NET とは何ですか?  
+Aspose.PDF は、.NET アプリケーション内で PDF ファイルを作成、編集、操作するために設計されたライブラリであり、強力な PDF 機能を提供します。
 
- A: はい、Aspose.PDF for .NETでは、チェックボックス、ラジオボタン、ドロップダウンリストなど、さまざまなフォーム要素にJavaScriptを追加できます。`JavascriptAction`さまざまなフォーム要素の JavaScript アクションを定義するクラス。
+### Aspose.PDF を使用するにはライセンスが必要ですか?  
+無料トライアルは利用可能ですが、制限なくフル機能を使用するにはライセンスが必要です。ライセンスを購入することができます。[ここ](https://purchase.aspose.com/buy).
 
-#### Q: フォーム フィールドで JavaScript を使用してユーザー入力を検証することは可能ですか?
+### 他の種類のフォーム フィールドに JavaScript を設定できますか?  
+もちろんです! Aspose.PDF では、チェックボックス、ラジオ ボタン、ドロップダウンなどのさまざまなフォーム フィールドで JavaScript アクションを実行できます。
 
- A: はい、JavaScriptを使用してフォームフィールドのユーザー入力を検証できます。次のようなJavaScriptアクションを定義することで、`OnBlur`または`OnKeystroke`フォーム フィールドでは、入力されたデータを検証し、必要に応じてエラー メッセージを表示できます。
+### Aspose.PDF の問題に関するサポートを受けるにはどうすればよいですか?  
+サポートは、[フォーラム](https://forum.aspose.com/c/pdf/10)ご質問や問題がございましたら、
 
-#### Q: Aspose.PDF for .NET を使用して複雑な JavaScript 関数を実行できますか?
-
- A: はい、Aspose.PDF for .NETを使用して複雑なJavaScript関数を実行できます。カスタムJavaScript関数を定義し、それを`JavascriptAction`.
-
-#### Q: Aspose.PDF for .NET は、このチュートリアルで説明されている以外の JavaScript イベントをサポートしていますか?
-
- A: はい、Aspose.PDF for .NETは、次のような幅広いJavaScriptイベントをサポートしています。`OnMouseEnter`, `OnMouseExit`, `OnMouseDown` 、 そして`OnMouseUp`などがあります。これらのイベントを使用して、ユーザーの操作に基づいて JavaScript アクションをトリガーできます。
-
-#### Q: Aspose.PDF for .NET を使用して既存の PDF ドキュメントから JavaScript コードを抽出できますか?
-
- A: Aspose.PDF for .NETは、既存のPDFドキュメントからJavaScriptコードを抽出する機能を提供します。`JavascriptAction`クラスとその他の関連メソッドを使用して、PDF フォーム内の JavaScript アクションにアクセスし、分析します。
+### 購入せずに Aspose.PDF をテストする方法はありますか?  
+はい！Asposeは[無料トライアル](https://releases.aspose.com/)購入する前にライブラリの機能をテストします。

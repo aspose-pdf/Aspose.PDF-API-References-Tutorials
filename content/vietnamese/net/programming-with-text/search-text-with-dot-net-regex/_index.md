@@ -88,7 +88,7 @@ page.Accept(textFragmentAbsorber);
 
 ## Bước 9: Lấy lại các đoạn văn bản đã trích xuất
 
-Lấy các đoạn văn bản được trích xuất bằng cách sử dụng`TextFragments` tài sản của`TextFragmentAbsorber` sự vật:
+ Lấy các đoạn văn bản được trích xuất bằng cách sử dụng`TextFragments` tài sản của`TextFragmentAbsorber` sự vật:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

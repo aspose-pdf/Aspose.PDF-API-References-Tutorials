@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Bước 5: Thêm một trang vào tài liệu
- Thêm một trang mới vào tài liệu bằng cách sử dụng`Add` phương pháp của`Pages`bộ sưu tập. Trong mã được cung cấp, trang mới được gán cho biến`page`.
+ Thêm một trang mới vào tài liệu bằng cách sử dụng`Add` phương pháp của`Pages` bộ sưu tập. Trong mã được cung cấp, trang mới được gán cho biến`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -118,7 +118,7 @@ A: Ở Bước 6, bạn sẽ tạo một vòng lặp để thêm nhiều đoạn
 
 #### H: Làm thế nào để lưu tài liệu PDF và trích xuất thông tin ngắt dòng?
 
- A: Ở Bước 7, bạn sẽ lưu tài liệu PDF bằng cách sử dụng`Save` phương pháp của`Document` đối tượng. Sau đó, bạn sẽ trích xuất thông tin ngắt dòng bằng cách sử dụng`GetNotifications`phương pháp của trang mong muốn và lưu nó vào một tập tin văn bản.
+ A: Ở Bước 7, bạn sẽ lưu tài liệu PDF bằng cách sử dụng`Save` phương pháp của`Document` đối tượng. Sau đó, bạn sẽ trích xuất thông tin ngắt dòng bằng cách sử dụng`GetNotifications` phương pháp của trang mong muốn và lưu nó vào một tập tin văn bản.
 
 #### H: Mục đích của thông tin ngắt dòng được trích xuất là gì?
 

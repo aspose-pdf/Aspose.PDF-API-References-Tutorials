@@ -7,7 +7,7 @@ type: docs
 weight: 60
 url: /pt/net/programming-with-tagged-pdf/create-structure-elements/
 ---
-O código-fonte C# a seguir usa Aspose.PDF para .NET para criar elementos de estrutura. Siga os passos abaixo para entender como o código funciona.
+código-fonte C# a seguir usa Aspose.PDF para .NET para criar elementos de estrutura. Siga os passos abaixo para entender como o código funciona.
 
 ## Etapa 1: Importe as bibliotecas necessárias
 

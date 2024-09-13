@@ -1,7 +1,7 @@
 ---
 title: Skapa flerskikts PDF-fil första tillvägagångssätt
 linktitle: Skapa flerskikts PDF First Approach
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du skapar en PDF-fil i flera lager med hjälp av First Approach med Aspose.PDF för .NET. Lägg till text, bilder och mer för att förbättra dina PDF-filer.
 type: docs
 weight: 70
@@ -46,7 +46,7 @@ Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
 
  Här,`dataDir` är där din PDF kommer att lagras när den väl har skapats. Du skapar också en tom`pdf` dokument med hjälp av`Document` klass från Aspose.PDF.
 
-## Steg 2: Lägg till en ny sida till din PDF
+## Steg 2: Lägg till en ny sida i din PDF
 
 Därefter lägger du till en sida i din PDF. Se det här som att placera det första lagret av din tårta! Utan en sida finns det inget att bygga på.
 

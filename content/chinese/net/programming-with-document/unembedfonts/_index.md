@@ -2,135 +2,129 @@
 title: 取消嵌入字体并优化 PDF 文件
 linktitle: 取消嵌入字体并优化 PDF 文件
 second_title: Aspose.PDF for .NET API 参考
-description: 了解如何使用 Aspose.PDF for .NET 获取未嵌入字体并优化 PDF 文件。分步指南。
+description: 在本分步教程中了解如何使用 Aspose.PDF for .NET 取消嵌入字体和优化 PDF 文件。
 type: docs
 weight: 370
 url: /zh/net/programming-with-document/unembedfonts/
 ---
-Aspose.PDF for .NET 是一个功能强大的库，它提供了处理 PDF 文档的各种功能。它的一个功能是从 PDF 文档中获取未嵌入的字体。如果您需要从 PDF 文档中提取字体并在其他应用程序中使用它们，这将非常有用。
+## 介绍
 
-我们将提供分步指南来解释 Aspose.PDF for .NET 获取未嵌入字体功能的以下 C# 源代码。
+在数字时代，PDF 无处不在。无论您共享的是报告、演示文稿还是电子书，便携式文档格式 (PDF) 都是维护文档完整性的首选。但是，随着我们创建和共享的 PDF 越来越多，文件大小也会膨胀，发送或存储起来很麻烦。这就是 Aspose.PDF for .NET 发挥作用的地方，它提供了强大的工具来优化您的 PDF 文件。在本教程中，我们将深入研究如何使用 Aspose.PDF for .NET 取消嵌入字体和优化 PDF 文件。
 
-## 步骤1：设置文档目录的路径
+## 先决条件
 
-在开始之前，我们需要设置 PDF 文档所在目录的路径。我们将此路径存储在名为“dataDir”的变量中。
+在我们讨论细节之前，让我们确保您已准备好开始所需的一切：
+
+1. Visual Studio：确保您的机器上安装了 Visual Studio。这是我们用来编写和运行 .NET 代码的 IDE。
+2.  Aspose.PDF for .NET：您需要下载并安装 Aspose.PDF 库。您可以从[下载链接](https://releases.aspose.com/pdf/net/).
+3. C# 基础知识：熟悉 C# 编程将帮助您理解我们将使用的代码片段。
+4.  PDF 文件：准备好要优化的 PDF 文件。您可以使用任何 PDF，但为了演示，我们将其称为`OptimizeDocument.pdf`.
+
+## 导入包
+
+首先，您需要在 C# 项目中导入必要的包。具体操作如下：
+
+1. 在 Visual Studio 中打开您的项目。
+2. 添加对 Aspose.PDF 的引用：在解决方案资源管理器中右键单击您的项目，选择“管理 NuGet 包”，然后搜索`Aspose.PDF`安装包。
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+现在我们已经完成所有设置，让我们将优化过程分解为易于管理的步骤。
+
+## 步骤 1：设置文档目录
+
+首先，您需要定义文档目录的路径。这是存储 PDF 文件的位置。操作方法如下：
 
 ```csharp
 //文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-将“您的文档目录”替换为您的 PDF 文档所在目录的实际路径。
+代替`"YOUR DOCUMENT DIRECTORY"`与您的 PDF 文件所在的实际路径。这很重要，因为程序需要知道在哪里找到您想要优化的 PDF。
 
 ## 第 2 步：打开 PDF 文档
 
-第一步是加载要执行此操作的 PDF 文档，使用`Document`Aspose.PDF for .NET 的类。以下代码片段显示了如何加载 PDF 文档：
+现在我们已经设置了目录，是时候打开我们要优化的 PDF 文档了。以下是执行此操作的代码：
 
 ```csharp
 //打开文档
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-## 步骤3：设置 UnembedFonts 选项
+这行代码创建一个新的`Document`对象，代表您的 PDF 文件。请确保文件名与您目录中的文件名匹配。
 
-要从 PDF 文档中获取未嵌入的字体，您需要设置`UnembedFonts`选择`true`。此选项在`OptimizationOptions`类。以下代码片段显示了如何设置`UnembedFonts`选项：
+## 步骤 3：设置优化选项
+
+接下来，我们需要指定优化选项。在本例中，我们要取消嵌入字体。设置方法如下：
 
 ```csharp
 //设置 UnembedFonts 选项
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
-	UnembedFonts = true
+    UnembedFonts = true
 };
 ```
+
+通过设置`UnembedFonts`到`true`，我们指示 Aspose.PDF 通过取消嵌入字体来优化 PDF。这可以显著减小文件大小，特别是当 PDF 包含许多嵌入字体时。
 
 ## 步骤4：优化PDF文档
 
-设置后`UnembedFonts`选项，您可以使用`OptimizeResources`方法`Document`类。以下代码片段显示了如何优化PDF文档：
+设置好选项后，就该优化 PDF 文档了。以下是执行此操作的代码：
 
 ```csharp
-//使用 OptimizationOptions 优化 PDF 文档
-pdfDocument.OptimizeResources(optimizeOptions);
-```
-
-## 步骤 5：保存更新后的文档
-
- PDF 文档优化完成后，您可以使用`Save`方法`Document`类。以下代码片段显示了如何保存更新后的文档：
-
-```csharp
-//保存更新的文档
-pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
-```
-
-## 步骤 6：获取原始文件和缩小的文件大小
-
-最后，您可以使用以下方法获取 PDF 文档的原始文件和缩小文件大小：`FileInfo` System.IO 类。以下代码片段显示了如何获取原始文件大小和缩小后的文件大小：
-
-```csharp
-var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
-var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
-Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
-```
-
-### 使用 Aspose.PDF for .NET 获取未嵌入字体的示例源代码
-
-以下是使用 Aspose.PDF for .NET 从 PDF 文档获取未嵌入字体的完整示例源代码：
-
-```csharp
-//文档目录的路径。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-//打开文档
-Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-//设置 UnembedFonts 选项
-var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-{
-	UnembedFonts = true
-};
 Console.WriteLine("Start");
 //使用 OptimizationOptions 优化 PDF 文档
 pdfDocument.OptimizeResources(optimizeOptions);
+```
+
+此代码片段调用`OptimizeResources`方法`pdfDocument`对象，应用我们之前定义的优化选项。您将在控制台中看到一条消息，表明优化过程已开始。
+
+## 步骤 5：保存更新后的文档
+
+优化 PDF 后，我们需要保存更新后的文档。操作方法如下：
+
+```csharp
 //保存更新的文档
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Finished");
+```
+
+此代码将优化的 PDF 保存为`OptimizeDocument_out.pdf`在同一目录中。您可以根据需要选择不同的名称，但保持相似有助于识别原始版本和优化版本。
+
+## 步骤 6：比较文件大小
+
+最后，检查一下节省了多少空间总是好的。下面介绍如何比较原始文件和优化文件的大小：
+
+```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
 var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```
+
+此代码检索原始 PDF 和优化 PDF 的文件大小并将其打印到控制台。看到文件大小减少了多少，真是令人欣慰！
 
 ## 结论
 
-在本教程中，我们演示了如何使用 Aspose.PDF for .NET 从 PDF 文档中获取未嵌入的字体。按照分步指南，您可以轻松地在 C# 应用程序中实现此功能。当您需要单独使用提取的字体或确保在不同平台上使用一致的字体时，取消嵌入字体会很有用。
+就这样！您已成功使用 Aspose.PDF for .NET 取消嵌入字体并优化 PDF 文件。此过程不仅有助于减小文件大小，而且还能提高 PDF 文档的性能。无论您是通过电子邮件共享文件还是将其存储在云中，较小的文件大小都会带来巨大的变化。
 
 ## 常见问题解答
 
-#### 问：从 PDF 文档中取消嵌入字体的目的是什么？
+### 什么是 Aspose.PDF for .NET？
+Aspose.PDF for .NET 是一个功能强大的库，允许开发人员以编程方式创建、操作和优化 PDF 文档。
 
-答：从 PDF 文档中取消嵌入字体允许您提取嵌入的字体并在其他应用程序中使用它们。这对于确保字体渲染的一致性和保留文档的视觉外观非常有用。
+### 我可以免费使用 Aspose.PDF 吗？
+是的，Aspose 提供免费试用版。您可以从以下网址下载[这里](https://releases.aspose.com/).
 
-#### 问：如何在 C# 代码中指定文档目录的路径？
+### 如何获得 Aspose.PDF 的支持？
+您可以通过以下方式获得支持[Aspose 论坛](https://forum.aspose.com/c/pdf/10).
 
-答：要指定文档目录的路径，请替换`"YOUR DOCUMENT DIRECTORY"`在代码中使用 PDF 文档所在目录的实际路径。
+### 我可以对 PDF 执行哪些类型的优化？
+您可以取消嵌入字体、压缩图像、删除未使用的对象等来优化您的 PDF 文件。
 
-#### 问：`UnembedFonts` option do, and where is it set?
-
-答：`UnembedFonts`选项，可在`OptimizationOptions`类，启用或禁用从 PDF 文档中取消嵌入字体。要将此选项设置为`true`，使用以下代码：
-
-```csharp
-var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-{
-	UnembedFonts = true
-};
-```
-
-#### 问：我可以撤消优化过程中所做的更改吗？
-
-答：Aspose.PDF for .NET 在优化过程中不会对原始 PDF 文档进行永久性更改。优化过程是在文档的副本上进行的，原始文档保持不变。
-
-#### 问：如何查看优化后文件的原始大小和缩小后的大小？
-
-答：您可以使用`FileInfo`类`System.IO`以获得原始文件大小和缩小后的文件大小。以下是实现此目的的示例代码片段：
-
-```csharp
-var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
-var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
-Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
-```
+### 我可以在哪里购买 Aspose.PDF for .NET？
+您可以从[Aspose 购买页面](https://purchase.aspose.com/buy).

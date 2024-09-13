@@ -35,7 +35,7 @@ Page page = doc.Pages.Add();
 
 ## Schritt 3: Ränder festlegen
 
-Wir setzen die Ränder für die Seite mit dem`MarginInfo` Klasse. Passen Sie die Randwerte entsprechend Ihren Anforderungen an.
+ Wir setzen die Ränder für die Seite mit dem`MarginInfo` Klasse. Passen Sie die Randwerte entsprechend Ihren Anforderungen an.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -110,7 +110,7 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-// Weisen Sie die marginInfo-Instanz der Margin-Eigenschaft von sec1.PageInfo zu.
+//Weisen Sie die marginInfo-Instanz der Margin-Eigenschaft von sec1.PageInfo zu.
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
@@ -148,7 +148,7 @@ Table tab2 = new Table();
 hfFoot.Paragraphs.Add(tab2);
 // Mit Spaltenbreiten der Tabelle festlegen
 tab2.ColumnWidths = "165 172 165";
-// Erstellen Sie Zeilen in der Tabelle und dann Zellen in den Zeilen
+//Erstellen Sie Zeilen in der Tabelle und dann Zellen in den Zeilen
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
@@ -173,7 +173,7 @@ table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
 // Festlegen des Tabellenrahmens mithilfe eines anderen benutzerdefinierten BorderInfo-Objekts
 table.Border = new BorderInfo(BorderSide.All, 1f);
 table.RepeatingRowsCount = 1;
-// Erstellen Sie Zeilen in der Tabelle und dann Zellen in den Zeilen
+//Erstellen Sie Zeilen in der Tabelle und dann Zellen in den Zeilen
 Row row1 = table.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

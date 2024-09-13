@@ -2,7 +2,7 @@
 title: Zoeken en tekst ophalen Alles
 linktitle: Zoeken en tekst ophalen Alles
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u tekst op alle pagina's van een PDF-document kunt zoeken en ophalen met Aspose.PDF voor .NET.
+description: Leer hoe u met Aspose.PDF voor .NET tekst op alle pagina's van een PDF-document kunt zoeken en ophalen.
 type: docs
 weight: 420
 url: /nl/net/programming-with-text/search-and-get-text-all/
@@ -60,7 +60,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## Stap 6: geëxtraheerde tekstfragmenten verkrijgen
 
-Haal de geëxtraheerde tekstfragmenten op met behulp van de`TextFragments` eigendom van de`TextFragmentAbsorber` voorwerp:
+ Haal de geëxtraheerde tekstfragmenten op met behulp van de`TextFragments` eigendom van de`TextFragmentAbsorber` voorwerp:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

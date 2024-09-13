@@ -88,7 +88,7 @@ page.Accept(textFragmentAbsorber);
 
 ## Stap 9: Haal de geëxtraheerde tekstfragmenten op
 
-Haal de geëxtraheerde tekstfragmenten op met behulp van de`TextFragments` eigendom van de`TextFragmentAbsorber` voorwerp:
+ Haal de geëxtraheerde tekstfragmenten op met behulp van de`TextFragments` eigendom van de`TextFragmentAbsorber` voorwerp:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

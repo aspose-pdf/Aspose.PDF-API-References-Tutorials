@@ -102,7 +102,7 @@ Console.WriteLine("\nAll attachments deleted successfully.\nFile saved at " + da
 
 ## 結論
 
-現在你就擁有了！您已成功學習如何使用 Aspose.PDF for .NET 從 PDF 檔案中刪除所有附件。這種簡單而強大的技術可以幫助您更有效地管理 PDF 文件。無論您是為了個人用途清理文件還是為了專業目的準備文檔，了解如何操作 PDF 附件都是一項寶貴的技能。
+現在你就得到它了！您已成功學習如何使用 Aspose.PDF for .NET 從 PDF 檔案中刪除所有附件。這種簡單而強大的技術可以幫助您更有效地管理 PDF 文件。無論您是為了個人用途清理文件還是為了專業目的準備文檔，了解如何操作 PDF 附件都是一項寶貴的技能。
 
 ## 常見問題解答
 

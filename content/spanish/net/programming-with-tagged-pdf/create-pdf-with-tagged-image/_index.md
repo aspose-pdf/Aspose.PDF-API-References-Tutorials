@@ -112,7 +112,7 @@ R: Sí, puedes usar diferentes formatos de imagen para la imagen etiquetada, com
 
  A: El texto alternativo proporciona una descripción textual de la imagen, que los lectores de pantalla leen en voz alta para usuarios con discapacidad visual. En el código proporcionado, el texto alternativo se configura mediante el`AlternativeText` propiedad de la`IllustrationElement` representando la imagen etiquetada.
 
-####  P: ¿Cómo funciona el`SetTitle` method contribute to the PDF document's tagged image?
+#### P: ¿Cómo funciona el`SetTitle` method contribute to the PDF document's tagged image?
 
  A: El`SetTitle` El método establece el título del contenido etiquetado del documento PDF, lo que proporciona contexto adicional para la imagen etiquetada. Este título puede ayudar a identificar el propósito o el tema del contenido etiquetado.
 
@@ -126,4 +126,4 @@ R: Al utilizar las funciones de estructura de contenido etiquetado de Aspose.PDF
 
 #### P: ¿Es posible agregar varias imágenes etiquetadas al mismo documento PDF utilizando técnicas similares?
 
- R: Sí, puedes agregar varias imágenes etiquetadas al mismo documento PDF utilizando técnicas similares. Debes crear imágenes adicionales`IllustrationElement` instancias para cada imagen etiquetada y personalizar sus propiedades según sea necesario.
+R: Sí, puedes agregar varias imágenes etiquetadas al mismo documento PDF utilizando técnicas similares. Debes crear imágenes adicionales`IllustrationElement` instancias para cada imagen etiquetada y personalizar sus propiedades según sea necesario.

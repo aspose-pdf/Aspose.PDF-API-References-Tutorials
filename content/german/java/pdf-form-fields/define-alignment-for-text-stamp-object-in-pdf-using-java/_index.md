@@ -83,7 +83,7 @@ Nachdem wir die Ausrichtung nun in unseren Code implementiert haben, ist es an d
 
 ## Abschluss
 
-In diesem Artikel haben wir untersucht, wie man die Ausrichtung für Textstempelobjekte in PDFs mit Java und Aspose.PDF für Java definiert. Richtig ausgerichtete Textstempel können die visuelle Attraktivität und Klarheit Ihrer Dokumente verbessern. Mit der Flexibilität und Leistung von Aspose.PDF für Java können Sie eine präzise Ausrichtung erreichen, die Ihren spezifischen Anforderungen entspricht.
+In diesem Artikel haben wir untersucht, wie Sie die Ausrichtung für Textstempelobjekte in PDFs mit Java und Aspose.PDF für Java definieren. Richtig ausgerichtete Textstempel können die visuelle Attraktivität und Klarheit Ihrer Dokumente verbessern. Mit der Flexibilität und Leistung von Aspose.PDF für Java können Sie eine präzise Ausrichtung erreichen, die Ihren spezifischen Anforderungen entspricht.
 
 ## Häufig gestellte Fragen
 

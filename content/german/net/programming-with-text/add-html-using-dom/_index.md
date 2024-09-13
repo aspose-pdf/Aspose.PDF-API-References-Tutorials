@@ -37,7 +37,7 @@ Document doc = new Document();
 ```
 
 ## Schritt 5: Dem Dokument eine Seite hinzufügen
- Fügen Sie dem Dokument eine neue Seite hinzu, indem Sie das`Add` Methode der`Pages`Sammlung. Im bereitgestellten Code wird die neue Seite der Variablen zugewiesen`page`.
+ Fügen Sie dem Dokument eine neue Seite hinzu, indem Sie das`Add` Methode der`Pages` Sammlung. Im bereitgestellten Code wird die neue Seite der Variablen zugewiesen`page`.
 
 ```csharp
 Page page = doc.Pages.Add();

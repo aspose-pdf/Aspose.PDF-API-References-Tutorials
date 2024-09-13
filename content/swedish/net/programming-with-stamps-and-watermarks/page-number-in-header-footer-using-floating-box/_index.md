@@ -1,141 +1,147 @@
 ---
 title: Sidnummer i sidhuvudet med hjälp av flytande låda
 linktitle: Sidnummer i sidhuvudet med hjälp av flytande låda
-second_title: Aspose.PDF för .NET API-referens
-description: Lär dig hur du lägger till sidnumret i sidhuvudet och sidfoten i ett PDF-dokument med Aspose.PDF för .NET.
+second_title: Aspose.PDF för .NET API Referens
+description: Lägg enkelt till sidnummer i din PDF-sidhuvud och sidfot med hjälp av en flytande låda med Aspose.PDF för .NET i denna steg-för-steg handledning.
 type: docs
 weight: 150
 url: /sv/net/programming-with-stamps-and-watermarks/page-number-in-header-footer-using-floating-box/
 ---
-I den här handledningen guidar vi dig steg för steg om hur du lägger till sidnummer i sidhuvud och sidfot i ett PDF-dokument med FloatingBox med Aspose.PDF för .NET. Vi kommer att använda den medföljande C#-källkoden för att skapa ett PDF-dokument, lägga till en sida, skapa en FloatingBox, ställa in dess position och lägga till sidnumret till den, spara sedan det modifierade PDF-dokumentet.
+## Introduktion
 
-## Steg 1: Sätta upp miljön
+När det gäller att hantera PDF-dokument programmatiskt framstår Aspose.PDF för .NET som ett exceptionellt verktyg. Det förenklar sättet vi skapar, redigerar och manipulerar PDF-filer i .NET-program. Oavsett om du genererar fakturor, rapporter eller vilken typ av dokument som helst, kan en elegant lägga till sidnummer förbättra professionalismen och organisationen av dina PDF-filer. I den här handledningen fördjupar vi oss i hur du lägger till sidnummer i sidhuvudet och sidfoten i din PDF med hjälp av en flytande ruta. Redo att börja? Låt oss gå!
 
-Innan du börjar, se till att du har följande:
+## Förutsättningar
 
-- En installerad .NET-utvecklingsmiljö.
-- Aspose.PDF-biblioteket för .NET laddas ner och refereras till i ditt projekt.
+Innan vi börjar denna spännande resa in i PDF-manipulationsområdet, finns det några saker du behöver ha:
 
-## Steg 2: Skapa PDF-dokumentet och lägga till en sida
+### .NET-miljöinställningar
+Se till att du har en .NET-utvecklingsmiljö. Du kan använda Visual Studio, som är ett populärt val bland utvecklare för .NET-applikationer.
 
-Det första steget är att skapa en instans av PDF-dokumentet och lägga till en sida till det. Så här gör du:
+### Aspose.PDF-bibliotek
+Installera Aspose.PDF-biblioteket. Du kan enkelt ladda ner den från hemsidan:
+
+- [Ladda ner Aspose.PDF för .NET](https://releases.aspose.com/pdf/net/)
+
+### Grundläggande kunskaper i C#-programmering
+En grundläggande förståelse för C# hjälper dig att förstå begreppen och kodningsfragmenten som presenteras i denna handledning.
+
+### Tillgång till dokumentationen
+ Det är alltid fördelaktigt att ha[Aspose.PDF-dokumentation](https://reference.aspose.com/pdf/net/) praktiskt för referens och djupare utforskning av eventuella ytterligare funktioner.
+
+## Importera paket
+
+För att komma igång måste du importera de nödvändiga paketen i ditt projekt. Detta säkerställer att Aspose.PDF-sammansättningen är tillgänglig för användning i din kod. Så här gör du:
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Låt oss nu dela upp processen att lägga till sidnummer med hjälp av en flytande låda i hanterbara steg. Följ med när vi går igenom.
+
+## Steg 1: Konfigurera din dokumentmiljö
+
+Låt oss börja med att ange katalogen där ditt PDF-dokument ska lagras. Detta är avgörande eftersom det dikterar var din utdatafil sparas.
 
 ```csharp
 // Sökvägen till dokumentkatalogen.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
-// Instantiera PDF-dokumentet
+ Ersätta`YOUR DOCUMENT DIRECTORY` med sökvägen som du väljer där du vill spara den utgående PDF-filen.
+
+## Steg 2: Instantiera dokumentet
+
+ Att skapa ett nytt PDF-dokument är nästa steg. Detta innebär att använda`Document` klass från Aspose.PDF-biblioteket.
+
+```csharp
+// Instantiera dokumentinstans
 Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
+```
+ Här skapar vi en ny instans av`Document` klass, som fungerar som vår duk för manipulation.
 
+## Steg 3: Lägg till en ny sida
+
+Låt oss nu lägga till en sida i vårt PDF-dokument. Varje PDF-fil behöver minst en sida, eller hur?
+
+```csharp
 // Lägg till en sida i PDF-dokumentet
 Aspose.Pdf.Page page = pdf.Pages.Add();
 ```
+Det här kodavsnittet lägger till en ny sida i vårt dokument, vilket gör det redo att ta emot innehåll, inklusive vår flytande ruta med sidnummer.
 
-Var noga med att ersätta "DIN DOKUMENTKATOLOG" med den faktiska sökvägen till katalogen där du vill spara PDF-dokumentet.
+## Steg 4: Skapa en flytande låda
 
-## Steg 3: Skapa FloatingBox och lägg till sidnumret
-
-Nu när sidan har lagts till i PDF-dokumentet kan vi skapa en FloatingBox, ställa in dess position och lägga till sidnumret till den. Så här gör du:
-
-```csharp
-// Skapa en FloatingBox med en bredd på 140 och en höjd på 80
-Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
-
-// Ställ in styckets vänstra position
-box1. Left = 2;
-
-// Ställ in styckets översta position
-box1. Top = 10;
-
-// Lägg till sidnumret i FloatingBox
-box1.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Page: ($p/ $P )"));
-
-// Lägg till FloatingBox på sidan
-page.Paragraphs.Add(box1);
-```
-
-Koden ovan skapar en FloatingBox med en bredd på 140 och en höjd på 80. Därefter ställer vi in dess position genom att ange de vänstra och övre värdena. Slutligen lägger vi till sidnumret i FloatingBox med hjälp av ett TextFragment som innehåller syntaxen "($p/ $P )" som kommer att ersättas med det aktuella sidnumret och det totala antalet sidor.
-
-## Steg 4: Spara det ändrade PDF-dokumentet
-
-När sidnumret har lagts till i sidhuvudet eller sidfoten med FloatingBox kan vi spara det modifierade PDF-dokumentet. Så här gör du:
+ Därefter är det dags att skapa vår flytande box som kommer att hålla sidnumret. De`FloatingBox`klass låter oss placera innehåll fritt på sidan.
 
 ```csharp
-// Spara det ändrade PDF-dokumentet
-pdf.Save(dataDir + "PageNumberinHeaderFooterUsingFloatingBox_out.pdf");
-```
-
-Ovanstående kod sparar det redigerade PDF-dokumentet i den angivna katalogen.
-
-### Exempel på källkod för sidnummer i sidhuvud med sidfot med flytande box med Aspose.PDF för .NET 
-```csharp
-
-// Sökvägen till dokumentkatalogen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Instantiera dokumentinstans
-Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
-
-// Lägg till en sida i pdf-dokumentet
-Aspose.Pdf.Page page = pdf.Pages.Add();
-
 // Initierar en ny instans av FloatingBox-klassen
 Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
+```
+ Här, parametrarna`(140, 80)` ange bredd och höjd på den flytande lådan. Du kan justera dessa värden baserat på dina layoutpreferenser.
 
+## Steg 5: Placera den flytande lådan
+
+ Positionering är nyckeln! Du vill bestämma var sidnumret ska visas på sidan. Du kommer att arbeta med`Left` och`Top` egenskaper för att ange positionen.
+
+```csharp
 // Flytande värde som anger styckets vänstra position
 box1.Left = 2;
-
 // Flytande värde som anger styckets topposition
 box1.Top = 10;
+```
+Dessa värden dikterar placeringen av den flytande lådan på sidan. Experimentera gärna med dem för att se vad som ser bäst ut för ditt dokument.
 
+## Steg 6: Lägg till text med sidnummermakrot
+
+Nu kommer vi att lägga till en sträng som dynamiskt visar sidnumret. Det är här magin händer!
+
+```csharp
 // Lägg till makron till styckesamlingen i FloatingBox
 box1.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Page: ($p/ $P )"));
+```
+ I det här fallet,`($p/ $P)`är ett makro som visar det aktuella sidnumret (`$p`) och det totala antalet sidor (`$P`). Som ett resultat formaterar den texten så att den läses något som "Sida: 1/5".
 
+## Steg 7: Lägg till den flytande lådan på sidan
+
+Det är dags att lägga till Floating Box, tillsammans med sidnummertexten, på vår nyskapade sida.
+
+```csharp
 // Lägg till en floatingBox på sidan
 page.Paragraphs.Add(box1);
+```
+Den här raden bäddar i huvudsak in din flytande box på sidan, vilket gör den till en del av dokumentets layout. 
 
+## Steg 8: Spara ditt dokument
+
+Slutligen, glöm inte att spara ditt arbete! Det sista steget är att spara ditt PDF-dokument med ett korrekt filnamn.
+
+```csharp
 // Spara dokumentet
 pdf.Save(dataDir + "PageNumberinHeaderFooterUsingFloatingBox_out.pdf");
-
 ```
+Se till att den angivna sökvägen inkluderar ditt önskade filnamn. Nu är din fantastiska PDF med sidnummer skapad! 
 
 ## Slutsats
 
-Grattis! Du har lärt dig hur du lägger till sidnummer i sidhuvud och sidfot i PDF-dokument med FloatingBox med Aspose.PDF för .NET. Du kan nu anpassa dina sidhuvuden och sidfötter genom att lägga till dynamisk information som sidnummer.
+Och där har ni det, gott folk! Att lägga till sidnummer i sidhuvudet och sidfoten i din PDF med Aspose.PDF för .NET är så enkelt. Med bara några rader kod har du gett dig ut på en resa för att bemästra dokumentbehandlingen i dina applikationer. Tveka inte att experimentera med olika layouter och formatering – trots allt vet kreativiteten inga gränser! Är du redo att skapa det där professionella dokumentet? Ta tag i din kodningshatt och börja experimentera.
 
-### FAQ's
+## FAQ's
 
-#### F: Vad är en FloatingBox och hur används den för att lägga till sidnummer i sidhuvudet eller sidfoten i ett PDF-dokument?
+### Kan jag anpassa utseendet på sidnummertexten?  
+ Ja, du kan anpassa textegenskaper, såsom teckenstorlek, färg och stil genom att justera`TextFragment` fastigheter.
 
-S: En FloatingBox är ett mångsidigt layoutelement i Aspose.PDF som kan innehålla olika innehåll, inklusive text och bilder. I den här handledningen används den för att skapa en behållare för sidnumret, så att du dynamiskt kan infoga det aktuella sidnumret och det totala antalet sidor i sidhuvudet eller sidfoten.
+### Är Aspose.PDF gratis att använda?  
+ Medan Aspose.PDF erbjuder en gratis provperiod, är det en betald produkt för produktionsanvändning. Du kan[köp den här](https://purchase.aspose.com/buy).
 
-#### F: Hur kan den medföljande C#-källkoden lägga till sidnummer med en FloatingBox?
+### Var kan jag hitta mer detaljerad dokumentation?  
+ Du kan hitta omfattande dokumentation på[Aspose.PDF Dokumentationssida](https://reference.aspose.com/pdf/net/).
 
-S: Kodavsnittet visar hur man skapar ett PDF-dokument, lägger till en sida, skapar en FloatingBox, ställer in dess position på sidan och infogar sidnumret med hjälp av ett TextFragment. Syntaxen "($p/ $P )" i TextFragmentet ersätts med nuvarande sidnummer och totalt antal sidor.
+### Hur använder jag sidhuvuden och sidfötter på flera sidor?  
+Du kan gå igenom alla sidor i ditt dokument och tillämpa den flytande rutan på var och en på samma sätt.
 
-#### F: Kan jag anpassa utseendet och formateringen av sidnumret som lagts till med FloatingBox?
-
-S: Ja, du kan anpassa utseendet på sidnumret genom att ändra egenskaperna för TextFragment i FloatingBox. Du kan ändra teckenstorlek, färg, stil, justering och andra formateringsalternativ.
-
-#### F: Är det möjligt att lägga till olika dynamiska element, såsom datum och tid, i sidhuvudet eller sidfoten med ett liknande tillvägagångssätt?
-
-S: Absolut, du kan lägga till olika dynamiska element som datum, tid, dokumentmetadata eller anpassad text genom att ändra TextFragment-innehållet i FloatingBox. Du kan använda makron som "($p/ $P )" för sidnummer eller "($date)" för det aktuella datumet.
-
-#### F: Hur anger jag positionen för FloatingBox i sidhuvudet eller sidfoten?
- S: Den medföljande koden ställer in positionen för FloatingBox med hjälp av`Left` och`Top` fastigheter. Du kan justera dessa värden för att placera FloatingBox efter önskemål inom sidhuvudet eller sidfoten.
-
-#### F: Kan jag använda ett annat teckensnitt eller stil för sidnumret i sidhuvudet eller sidfoten?
-
-S: Ja, du kan anpassa teckensnitt, stil och andra formateringsegenskaper för sidnummertexten genom att ändra TextFragment-egenskaperna i FloatingBox.
-
-#### F: Vad händer om innehållet i FloatingBox överskrider dess dimensioner?
-
-S: Om innehållet i FloatingBox överskrider dess dimensioner, kan det skäras av eller layoutproblem kan uppstå. Se till att måtten på FloatingBox är lämpliga för innehållet och överväg att justera sidlayouten om det behövs.
-
-#### F: Är det möjligt att lägga till flera FloatingBoxes med olika innehåll i sidhuvudet eller sidfoten på samma sida?
-
-S: Ja, du kan lägga till flera FloatingBoxar med olika innehåll i sidhuvudet eller sidfoten på samma sida genom att skapa separata FloatingBox-instanser och lägga till dem i sidans Paragraphs-samling.
-
-#### F: Kan jag använda FloatingBox-metoden för att lägga till innehåll till andra delar av PDF-dokumentet, till exempel brödtexten eller marginalerna?
-
-S: Även om FloatingBoxes vanligtvis används för sidhuvuden och sidfötter, kan du också använda dem för att lägga till innehåll i andra delar av PDF-dokumentet, såsom brödtexten eller marginalerna, genom att placera dem på sidan.
+### Vad händer om jag behöver support för ytterligare funktioner?  
+För ytterligare frågor eller support kan du besöka[Aspose Forum](https://forum.aspose.com/c/pdf/10).

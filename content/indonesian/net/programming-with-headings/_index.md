@@ -13,4 +13,4 @@ Jelajahi fitur-fitur Aspose.PDF untuk .NET dengan tutorial khusus. Pelajari cara
 ## Tutorial
 | Judul | Keterangan |
 | --- | --- | 
-| [Terapkan Gaya Angka Dalam File PDF](./apply-number-style/) | Pelajari cara menerapkan gaya penomoran pada judul dalam berkas PDF menggunakan Aspose.PDF untuk .NET. Panduan langkah demi langkah. |   
+| [Terapkan Gaya Angka Dalam File PDF](./apply-number-style/) | Pelajari cara menerapkan gaya angka yang berbeda (angka Romawi, alfabet) ke judul dalam PDF menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah ini. |   

@@ -74,7 +74,7 @@ Zde je to, co se děje:
 -  Změníme barvu textu na červenou pomocí`ForegroundColor` vlastnictví.
 -  Velikost textu je nastavena na 12 bodů a je umístěn in-line v rámci odstavce pomocí`IsInLineParagraph`.
 
-## Krok 4: Přidejte textový fragment do FloatingBox
+## Krok 4: Přidejte textový fragment do FloatingBoxu
 
  Nyní, když máme textový fragment, musíme jej umístit do PDF. Místo přímého přidání na stránku použijeme a`FloatingBox` dát mu konkrétní místo.
 

@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## الخطوة 5: إضافة صفحة إلى المستند
- أضف صفحة جديدة إلى المستند باستخدام`Add` طريقة`Pages`المجموعة. في الكود المقدم، يتم تعيين الصفحة الجديدة للمتغير`page`.
+ أضف صفحة جديدة إلى المستند باستخدام`Add` طريقة`Pages` المجموعة. في الكود المقدم، يتم تعيين الصفحة الجديدة للمتغير`page`.
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
@@ -109,7 +109,7 @@ Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 4
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
 // إضافة مستطيل إلى مجموعة الأشكال الخاصة بكائن الرسم البياني
 canvas.Shapes.Add(rect);
-//إضافة كائن الرسم البياني إلى مجموعة فقرات كائن الصفحة
+// إضافة كائن الرسم البياني إلى مجموعة فقرات كائن الصفحة
 page.Paragraphs.Add(canvas);
 // تعيين القيمة لعدم تغيير الموضع لكائن الرسم البياني
 canvas.IsChangePosition = false;
@@ -163,7 +163,7 @@ using Aspose.Pdf.Drawing;
 
 #### س: كيف أقوم بإنشاء مستطيل مع الشفافية؟
 
-أ: في الخطوة 7، ستقوم بإنشاء مستطيل بأبعاد محددة وتعيين لون تعبئته إلى لون شفاف باستخدام`Color.FromRgb` طريقة.
+ أ: في الخطوة 7، ستقوم بإنشاء مستطيل بأبعاد محددة وتعيين لون تعبئته إلى لون شفاف باستخدام`Color.FromRgb` طريقة.
 
 #### س: كيف أضيف كائن الرسم البياني إلى الصفحة؟
 
@@ -175,7 +175,7 @@ using Aspose.Pdf.Drawing;
 
 #### س: كيف أقوم بإنشاء TextFragment مع الشفافية؟
 
- أ: في الخطوة 10، ستقوم بإنشاء`TextFragment` الكائن وتعيين محتواه و`ForegroundColor` خاصية لتحقيق نص شفاف.
+أ: في الخطوة 10، ستقوم بإنشاء`TextFragment` الكائن وتعيين محتواه و`ForegroundColor` خاصية لتحقيق نص شفاف.
 
 #### س: كيف أحفظ مستند PDF؟
 

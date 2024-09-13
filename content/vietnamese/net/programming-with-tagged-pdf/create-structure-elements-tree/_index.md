@@ -152,7 +152,7 @@ A: Tạo cấu trúc các thành phần cây trong tài liệu PDF bằng Aspose
 
 A: Ví dụ mã chứng minh cách tạo cấu trúc phân cấp các phần tử logic bằng cách sử dụng`SectElement`, `DivElement` , Và`ArtElement` các lớp do Aspose.PDF cung cấp. Các phần tử này được tổ chức thành các nút cha và con, tạo thành cấu trúc dạng cây trong tài liệu.
 
-####  Q: Làm thế nào để`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
+#### Q: Làm thế nào để`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
 
  A: Cái`TaggedContent` thuộc tính cung cấp quyền truy cập vào các tính năng nội dung được gắn thẻ của tài liệu PDF. Điều này cho phép bạn tạo và thao tác các thành phần có cấu trúc, xác định mối quan hệ của chúng và sắp xếp chúng theo thứ bậc, nâng cao cấu trúc và khả năng truy cập của tài liệu.
 
@@ -168,7 +168,7 @@ A: Ví dụ mã chứng minh cách tạo cấu trúc phân cấp các phần t�
 
 A: Việc sắp xếp các thành phần theo thứ bậc cải thiện tổ chức, điều hướng và ngữ nghĩa của tài liệu. Nó cho phép người dùng và các công nghệ hỗ trợ hiểu được cấu trúc và mối quan hệ của nội dung, nâng cao trải nghiệm chung của người dùng.
 
-####  Q: Làm thế nào để`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
+#### Q: Làm thế nào để`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
 
  A: Cái`Save` phương pháp lưu tài liệu PDF cùng với cấu trúc phân cấp được tạo bằng cách sử dụng`AppendChild` phương pháp. Điều này đảm bảo rằng cấu trúc vẫn còn nguyên vẹn, giúp tài liệu dễ truy cập và được tổ chức tốt.
 

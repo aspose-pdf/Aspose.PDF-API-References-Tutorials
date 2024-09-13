@@ -47,7 +47,7 @@ Ustawiliśmy tytuł i język oznaczonego dokumentu PDF.
 Teraz zajmiemy się elementem struktury głównej dokumentu PDF.
 
 ```csharp
-//Uzyskaj element struktury korzenia
+// Uzyskaj element struktury korzenia
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

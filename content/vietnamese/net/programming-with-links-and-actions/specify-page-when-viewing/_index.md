@@ -2,144 +2,167 @@
 title: Chỉ định trang khi xem
 linktitle: Chỉ định trang khi xem
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Tìm hiểu cách chỉ định trang khi xem PDF bằng Aspose.PDF cho .NET.
+description: Tìm hiểu cách chỉ định trang để xem trong PDF bằng Aspose.PDF cho .NET. Cải thiện khả năng điều hướng của người dùng bằng hướng dẫn đơn giản này.
 type: docs
 weight: 110
 url: /vi/net/programming-with-links-and-actions/specify-page-when-viewing/
 ---
-Tìm hiểu cách chỉ định trang khi xem tệp PDF bằng Aspose.PDF cho .NET với hướng dẫn từng bước này.
+## Giới thiệu
 
-## Bước 1: Thiết lập môi trường
+Bạn có muốn cải thiện ứng dụng PDF của mình bằng cách hướng người dùng đến các trang cụ thể khi mở tài liệu không? Bạn đã đến đúng nơi rồi! Trong hướng dẫn này, chúng ta sẽ đi sâu vào chi tiết về việc sử dụng Aspose.PDF cho .NET để chỉ định trang sẽ hiển thị khi mở PDF. Chức năng này có thể cải thiện đáng kể trải nghiệm của người dùng, đặc biệt là khi bạn cần thu hút sự chú ý vào các phần quan trọng trong tài liệu của mình.
 
-Hãy đảm bảo rằng bạn đã thiết lập môi trường phát triển của mình với dự án C# và các tham chiếu Aspose.PDF phù hợp.
+## Điều kiện tiên quyết
+
+Trước khi bắt đầu viết mã, hãy đảm bảo rằng bạn có mọi thứ cần thiết để bắt đầu. Sau đây là những gì bạn cần:
+
+1. Kiến thức cơ bản về .NET: Sự quen thuộc với .NET framework là điều cần thiết. Nếu bạn thoải mái với C# và có hiểu biết cơ bản về lập trình hướng đối tượng, bạn đã sẵn sàng!
+
+2.  Aspose.PDF cho .NET: Bạn sẽ cần phải cài đặt thư viện Aspose.PDF trong dự án của mình. Nếu bạn chưa cài đặt, bạn có thể tải xuống[đây](https://releases.aspose.com/pdf/net/).
+
+3. Visual Studio: Hướng dẫn này giả định rằng bạn đang sử dụng Visual Studio làm IDE của mình. Đảm bảo rằng bạn đã cài đặt nó trên máy của mình.
+
+4. Tệp PDF: Bạn sẽ cần một tệp PDF hiện có mà bạn sẽ sử dụng. Nếu bạn không có, bạn có thể tạo một tài liệu mẫu hoặc sử dụng bất kỳ tệp PDF nào bạn chọn.
+
+Khi bạn đã có đủ những điều kiện tiên quyết này, chúng ta có thể bắt tay vào viết mã!
+
+## Nhập gói
+
+Bây giờ chúng ta đã thiết lập xong, hãy nhập các gói cần thiết vào dự án của chúng ta. Thực hiện theo các bước sau:
+
+### Bắt đầu Visual Studio
+
+Mở Visual Studio và tạo một dự án mới hoặc tải một dự án hiện có mà bạn muốn triển khai chức năng xem trang PDF.
+
+### Tham khảo Aspose.PDF
+
+Để sử dụng thư viện Aspose.PDF, bạn cần thêm tham chiếu đến thư viện này:
+
+1. Nhấp chuột phải vào dự án của bạn trong Solution Explorer.
+2. Chọn 'Quản lý gói NuGet'.
+3.  Tìm kiếm`Aspose.PDF` và cài đặt gói.
+
+### Nhập không gian tên
+
+Thêm lệnh using sau vào đầu tệp mã của bạn:
+
+```csharp
+using System;
+using System.IO;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf;
+```
+
+Bây giờ, bạn đã sẵn sàng để bắt đầu xây dựng logic điều hướng trang PDF của mình!
+
+Hãy chia nhỏ nhiệm vụ của chúng ta thành các bước dễ quản lý. Chúng ta sẽ viết mã để mở tài liệu PDF, chỉ định trang cụ thể sẽ hiển thị khi xem và lưu tài liệu đã cập nhật. 
+
+## Bước 1: Thiết lập thư mục tài liệu
+
+Đầu tiên, bạn cần thiết lập đường dẫn đến tài liệu của mình:
+
+```csharp
+// Đường dẫn đến thư mục tài liệu.
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Thay thế bằng thư mục của bạn
+```
+
+ Dòng này về cơ bản là lộ trình của bạn. Bạn đang cho mã của mình biết nơi tìm tệp PDF. Hãy đảm bảo thay thế`YOUR DOCUMENT DIRECTORY` với đường dẫn thực tế trên máy của bạn.
 
 ## Bước 2: Tải tệp PDF
 
-Thiết lập đường dẫn thư mục tài liệu của bạn và tải tệp PDF lên bằng mã sau:
+Tiếp theo, bạn sẽ tải tệp PDF vào ứng dụng của mình:
 
 ```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
 // Tải tệp PDF
 Document doc = new Document(dataDir + "SpecifyPageWhenViewing.pdf");
 ```
 
-## Bước 3: Xác định trang đích
+ Điều đang xảy ra ở đây là bạn đang tạo một phiên bản mới của`Document`đối tượng trong khi chỉ định đường dẫn đến tệp PDF của bạn. Bạn có thể nghĩ về việc này như việc mở cuốn sách bạn vừa đặt trên bàn.
 
-Lấy phiên bản trang đích bằng cách sử dụng mã sau:
+## Bước 3: Truy cập vào trang mong muốn
+
+Bây giờ, hãy truy cập vào trang mà bạn muốn hiển thị khi mở tài liệu:
 
 ```csharp
-Page page2 = doc.Pages[2];
+// Lấy ví dụ về trang thứ hai của tài liệu
+Page page2 = doc.Pages[2]; // Hãy nhớ rằng, việc lập chỉ mục bắt đầu từ 1
 ```
 
- Bạn có thể điều chỉnh chỉ số`[2]` để chọn trang mong muốn.
+Ở đây, chúng ta đang truy cập trang thứ hai của tài liệu. Cần lưu ý rằng đánh số trang bắt đầu từ 1 trong ngữ cảnh này, vì vậy nếu bạn đang nghĩ đến trang 2, bạn cần sử dụng chỉ mục là 2.
 
-## Bước 4: Cấu hình cài đặt thu phóng
+## Bước 4: Thiết lập Hệ số thu phóng
 
-Tạo một biến để thiết lập hệ số thu phóng trang mục tiêu:
+Bạn có thể điều chỉnh mức độ thu phóng cho trang sẽ được hiển thị:
 
 ```csharp
-double zoom = 1;
+// Tạo biến để thiết lập hệ số thu phóng của trang đích
+double zoom = 1; // 1 có nghĩa là phóng to 100%
 ```
 
-Bạn có thể điều chỉnh giá trị thu phóng theo nhu cầu của mình.
+Thiết lập hệ số thu phóng giúp xác định phần trang mà người dùng nhìn thấy ngay khi mở. Giá trị 1 có nghĩa là trang sẽ được hiển thị ở mức thu phóng 100%, thường là giá trị mặc định tốt.
 
-## Bước 5: Tạo hành động điều hướng
+## Bước 5: Tạo phiên bản GoToAction
 
-Tạo một phiên bản của hành động điều hướng bằng cách sử dụng trang đích đã chỉ định:
+Hãy cùng đưa các tính năng điều hướng vào hoạt động:
 
 ```csharp
-GoToAction action = new GoToAction(doc.Pages[2]);
+// Tạo phiên bản GoToAction
+GoToAction action = new GoToAction(doc.Pages[2]); 
 ```
 
-## Bước 6: Thiết lập điểm đến
+ Trong bước này, bạn đang tạo một phiên bản của`GoToAction` về cơ bản biểu thị hành động điều hướng đến một điểm cụ thể trong PDF – trong trường hợp này là trang thứ hai.
 
-Đặt đích đến để đi đến trang đích bằng cách sử dụng tọa độ và thu phóng:
+## Bước 6: Xác định đích đến
+
+Bây giờ, bạn cần xác định hành động sẽ dẫn tới đâu:
 
 ```csharp
+// Đi tới trang 2
 action.Destination = new XYZExplicitDestination(page2, 0, page2.Rect.Height, zoom);
 ```
 
-## Bước 7: Cấu hình Hành động Mở Tài liệu
+Dòng này giống như thiết lập điểm đến GPS cho GoToAction. Bạn đang bảo nó đi đến trang 2 ở đầu trang (chiều cao) và ở mức thu phóng đã chỉ định.
 
-Thiết lập hành động mở tài liệu bằng hành động điều hướng đã tạo:
+## Bước 7: Thiết lập Hành động Mở
+
+Hãy đảm bảo hành động này diễn ra khi tài liệu được mở:
 
 ```csharp
-doc. OpenAction = action;
+// Thiết lập hành động mở tài liệu
+doc.OpenAction = action;
 ```
+
+Với điều này, bạn đã tuyên bố rằng khi PDF của bạn được mở, hành động điều hướng mà chúng tôi vừa xác định sẽ được kích hoạt. Giống như bạn đã đặt tấm thảm chào mừng ở cửa trước của tài liệu của mình.
 
 ## Bước 8: Lưu tài liệu đã cập nhật
 
- Lưu tài liệu đã cập nhật bằng cách sử dụng`Save` phương pháp:
+Cuối cùng, hãy lưu tài liệu với những thay đổi đã thực hiện:
 
 ```csharp
-doc.Save(dataDir + "goto2page_out.pdf");
-```
-
-### Mã nguồn mẫu cho Chỉ định trang khi xem bằng Aspose.PDF cho .NET 
-```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Tải tệp PDF
-Document doc = new Document(dataDir + "SpecifyPageWhenViewing.pdf");
-// Lấy ví dụ về trang thứ hai của tài liệu
-Page page2 = doc.Pages[2];
-// Tạo biến để thiết lập hệ số thu phóng của trang đích
-double zoom = 1;
-// Tạo phiên bản GoToAction
-GoToAction action = new GoToAction(doc.Pages[2]);
-// Đi tới trang 2
-action.Destination = new XYZExplicitDestination(page2, 0, page2.Rect.Height, zoom);
-// Thiết lập hành động mở tài liệu
-doc.OpenAction = action;
 // Lưu tài liệu đã cập nhật
 doc.Save(dataDir + "goto2page_out.pdf");
 ```
 
+Bước này hoàn tất công việc của bạn! Bạn sẽ có một tệp PDF mới có tên`goto2page_out.pdf` mở trực tiếp đến trang bạn đã chỉ định.
+
+Như vậy là phần mã hóa đã hoàn tất! Bạn đã lập trình thành công Aspose.PDF để hiển thị một trang cụ thể khi mở PDF. 
+
 ## Phần kết luận
 
-Xin chúc mừng! Bây giờ bạn đã biết cách chỉ định một trang khi xem PDF bằng Aspose.PDF cho .NET. Sử dụng kiến thức này để tùy chỉnh trải nghiệm xem của người dùng trong tài liệu PDF của bạn.
+Trong hướng dẫn này, chúng tôi đã thực hiện phương pháp từng bước để hiểu cách chỉ định một trang trong tệp PDF bằng Aspose.PDF cho .NET. Chức năng này không chỉ cải thiện khả năng điều hướng cho người dùng của bạn mà còn hợp lý hóa tương tác của họ với nội dung quan trọng trong tài liệu của bạn. Bằng cách áp dụng các tính năng như vậy, bạn đang tạo ra trải nghiệm thân thiện hơn với người dùng có thể giúp các ứng dụng PDF của bạn trở nên khác biệt.
 
-Bây giờ bạn đã hoàn thành hướng dẫn này, bạn có thể áp dụng những khái niệm này vào các dự án của riêng mình và khám phá thêm các tính năng mà Aspose.PDF cung cấp cho .NET.
+## Câu hỏi thường gặp
 
-### Câu hỏi thường gặp 
+### Aspose.PDF dành cho .NET là gì?
+Aspose.PDF for .NET là thư viện cho phép các nhà phát triển tạo, chỉnh sửa và quản lý tài liệu PDF trong các ứng dụng .NET.
 
-#### H: Mục đích của việc chỉ định trang đích khi xem tệp PDF là gì?
+### Tôi có thể chỉ định nhiều trang để xem không?
+Không, bạn chỉ có thể thiết lập tài liệu mở ở một trang cụ thể. Tuy nhiên, bạn có thể tạo các tài liệu khác nhau cho các trang đầu khác nhau.
 
-A: Chỉ định trang đích cho phép bạn kiểm soát trang nào của tài liệu PDF được hiển thị khi tệp được mở. Điều này có thể nâng cao trải nghiệm của người dùng bằng cách hướng họ đến trang cụ thể mà họ quan tâm.
+### Tôi phải làm sao nếu muốn xem một trang ở mức thu phóng khác?
+ Bạn có thể thay đổi mức thu phóng bằng cách điều chỉnh`zoom` biến trước khi lưu tài liệu.
 
-#### H: Việc chỉ định trang đích có thể hữu ích như thế nào trong tài liệu PDF?
+### Tôi có thể tìm thêm ví dụ về cách sử dụng Aspose.PDF ở đâu?
+ Bạn có thể kiểm tra[tài liệu](https://reference.aspose.com/pdf/net/) để biết thêm ví dụ và chức năng.
 
-A: Việc chỉ định trang đích sẽ có lợi khi bạn muốn hướng dẫn người dùng đến một phần hoặc nội dung cụ thể trong tài liệu PDF mà không yêu cầu họ phải điều hướng thủ công qua các trang.
-
-#### H: Aspose.PDF cho .NET hỗ trợ việc chỉ định trang đích để xem như thế nào?
-
-A: Aspose.PDF cho .NET cung cấp các API cho phép bạn thiết lập chế độ xem ban đầu của tài liệu PDF, bao gồm trang đích, mức thu phóng và các thuộc tính hiển thị khác.
-
-#### H: Tôi có thể chỉ định bất kỳ trang nào làm trang mục tiêu không?
-
-A: Có, bạn có thể chỉ định bất kỳ trang nào trong tài liệu PDF làm trang đích để xem. Chỉ cần sử dụng chỉ mục thích hợp để chọn trang mong muốn.
-
-#### H: Hệ số thu phóng có ý nghĩa gì khi chỉ định trang mục tiêu?
-
-A: Hệ số thu phóng xác định mức độ phóng đại được áp dụng cho trang đích khi tài liệu PDF được mở. Nó kiểm soát lượng nội dung được hiển thị trong khung nhìn.
-
-#### H: Tôi có thể thiết lập các hệ số thu phóng khác nhau cho các trang mục tiêu khác nhau không?
-
-A: Có, bạn có thể thiết lập các hệ số thu phóng khác nhau cho các trang mục tiêu khác nhau bằng cách tạo riêng`GoToAction` các trường hợp và cấu hình đích đến của chúng cho phù hợp.
-
-#### H: Có hạn chế nào khi chỉ định trang mục tiêu không?
-
-A: Việc chỉ định trang đích chỉ giới hạn ở việc kiểm soát chế độ xem ban đầu khi PDF được mở. Nó không ảnh hưởng đến tương tác hoặc điều hướng của người dùng sau khi PDF được hiển thị.
-
-#### H: Tôi có thể sử dụng tính năng này để tạo bài thuyết trình trong tài liệu PDF không?
-
-A: Có, bạn có thể sử dụng tính năng này để tạo trải nghiệm giống như bài thuyết trình trong tài liệu PDF, hướng dẫn người dùng qua các phần hoặc chủ đề khác nhau.
-
-#### H: Tôi có thể tùy chỉnh các khía cạnh khác của giao diện ban đầu, chẳng hạn như bố cục trang không?
-
-A: Có, Aspose.PDF cho .NET cung cấp các thuộc tính để tùy chỉnh các khía cạnh khác của chế độ xem ban đầu, bao gồm bố cục trang, chế độ trang, v.v.
-
-#### H: Làm sao tôi có thể kiểm tra xem trang đích và hệ số thu phóng đã chỉ định có hoạt động như mong muốn không?
-
-A: Sau khi áp dụng mã được cung cấp để chỉ định trang đích và hệ số thu phóng, hãy mở tệp PDF đã sửa đổi và xác minh rằng tệp mở với đúng trang và mức thu phóng.
+### Có bản dùng thử miễn phí Aspose.PDF cho .NET không?
+ Có! Bạn có thể tải xuống bản dùng thử miễn phí của Aspose.PDF[đây](https://releases.aspose.com/).

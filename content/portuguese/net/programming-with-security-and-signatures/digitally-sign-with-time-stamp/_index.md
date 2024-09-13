@@ -2,126 +2,142 @@
 title: Assine digitalmente com carimbo de hora em arquivo PDF
 linktitle: Assine digitalmente com carimbo de hora em arquivo PDF
 second_title: Referência da API do Aspose.PDF para .NET
-description: Aprenda como executar uma assinatura digital com carimbo de data/hora em arquivo PDF usando o Aspose.PDF para .NET.
+description: Aprenda como assinar digitalmente um PDF com um carimbo de data/hora usando o Aspose.PDF para .NET. Este guia passo a passo abrange pré-requisitos, configuração de certificado, carimbo de data/hora e muito mais.
 type: docs
 weight: 50
 url: /pt/net/programming-with-security-and-signatures/digitally-sign-with-time-stamp/
 ---
-Neste tutorial, vamos guiá-lo pelo processo de assinatura digital em arquivo PDF com carimbo de tempo usando Aspose.PDF para .NET. A assinatura digital com carimbo de tempo garante a autenticidade e integridade do documento, adicionando uma impressão digital eletrônica com carimbo de tempo.
+## Introdução
 
-## Etapa 1: Pré-requisitos
+Você já precisou assinar digitalmente um PDF e incluir um carimbo de data/hora para segurança extra? Não importa se você está trabalhando em documentos legais, contratos ou qualquer coisa que exija autenticação segura, uma assinatura digital com um carimbo de data/hora adiciona uma camada extra de credibilidade. Neste tutorial, vamos detalhar como você pode usar o Aspose.PDF para .NET para adicionar uma assinatura digital junto com um carimbo de data/hora aos seus documentos PDF. Não se preocupe, vamos fazer isso passo a passo!
 
-Antes de começar, certifique-se de ter os seguintes pré-requisitos:
+## Pré-requisitos
 
-- Conhecimento básico da linguagem de programação C#
-- Instalando o Visual Studio em sua máquina
-- Biblioteca Aspose.PDF para .NET instalada
+Antes de mergulharmos no código, há algumas coisas que você precisa configurar para seguir adiante. Aqui está uma lista de verificação rápida dos pré-requisitos para você começar:
 
-## Etapa 2: Configuração do ambiente
+-  Biblioteca Aspose.PDF para .NET: Você precisará da biblioteca Aspose.PDF para .NET instalada em seu projeto. Você pode[baixe a última versão aqui](https://releases.aspose.com/pdf/net/) ou adicione-o ao seu projeto via NuGet.
+- Um documento PDF: Você precisará de um arquivo PDF de amostra para trabalhar. Certifique-se de ter um arquivo no diretório do seu projeto que você queira assinar.
+-  Certificado Digital (arquivo PFX): Certifique-se de ter um certificado digital (um`.pfx` arquivo) para assinar digitalmente o documento.
+- URL de registro de data e hora: Este é um serviço de registro de data e hora online que será usado para anexar um registro de data e hora à assinatura digital. 
+- Conhecimento básico de C#: você não precisa ser um especialista, mas conhecer os conceitos básicos de C# ajudará você a entender e personalizar o código.
 
-Para começar, siga estas etapas para configurar seu ambiente de desenvolvimento:
+Depois de marcar todas essas caixas, você estará pronto para começar a programar!
 
-1. Abra o Visual Studio e crie um novo projeto C#.
-2. Importe os namespaces necessários para seu arquivo de código:
+## Pacotes de importação
+
+Para começar, você precisará importar os seguintes namespaces para seu projeto C#. Isso garante que você tenha acesso às classes e funções Aspose.PDF relevantes.
 
 ```csharp
+using System.IO;
+using System;
 using Aspose.Pdf;
+using Aspose.Pdf.Facades;
 using Aspose.Pdf.Forms;
+using System.Collections;
 ```
 
-## Etapa 3: Assinatura digital com carimbo de data/hora
+## Etapa 1: Carregue o documento PDF
 
-primeiro passo é executar a assinatura digital com timestamp no arquivo PDF. O código fornecido mostra como obter essa assinatura com Aspose.PDF para .NET.
+A primeira coisa que precisamos fazer é carregar o documento PDF que queremos assinar. Veja como fazer isso:
 
 ```csharp
+// Defina o caminho para o diretório do seu documento
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-string pfxFile = "";
-using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
-{
-     using (PdfFileSignature signature = new PdfFileSignature(document))
-     {
-         PKCS7 pkcs = new PKCS7(pfxFile, "pfx_password");
-         TimestampSettings timestampSettings = new TimestampSettings("https:\\your_timestamp_settings", "user:password");
-         pkcs. TimestampSettings = timestampSettings;
-         System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-         signature.Sign(1, "Reason for signing", "Contact", "Location", true, rect, pkcs);
-         signature.Save(dataDir + "DigitallySignWithTimeStamp_out.pdf");
-     }
-}
+
+// Carregue o documento PDF
+Document document = new Document(dataDir + @"DigitallySign.pdf");
 ```
 
-Este código carrega um arquivo PDF, cria uma assinatura digital com timestamp usando um arquivo PFX (chave privada) e os parâmetros de timestamp especificados. A assinatura é então adicionada ao arquivo PDF e salva com o sufixo "_fora".
+ Este passo é bem direto. Estamos simplesmente definindo o caminho para o documento que queremos assinar. O`Document` A classe do Aspose.PDF manipula o carregamento do arquivo.
 
-### Código-fonte de exemplo para Assinar digitalmente com carimbo de data/hora usando Aspose.PDF para .NET 
+## Etapa 2: Configurar a assinatura digital
+
+Em seguida, criaremos a assinatura digital usando a classe PKCS7 e carregaremos o arquivo PFX. Este arquivo PFX contém seu certificado e chave privada, que são necessários para assinar o documento.
+
 ```csharp
-// O caminho para o diretório de documentos.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-string pfxFile = "";
-using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
-{
-	using (PdfFileSignature signature = new PdfFileSignature(document))
-	{
-		PKCS7 pkcs = new PKCS7(pfxFile, "pfx_password");
-		TimestampSettings timestampSettings = new TimestampSettings("https:\\your_timestamp_settings", "user:password"); // Usuário/Senha podem ser omitidos
-		pkcs.TimestampSettings = timestampSettings;
-		System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-		// Crie qualquer um dos três tipos de assinatura
-		signature.Sign(1, "Signature Reason", "Contact", "Location", true, rect, pkcs);
-		// Salvar arquivo PDF de saída
-		signature.Save(dataDir + "DigitallySignWithTimeStamp_out.pdf");
-	}
-}
+// Caminho para seu arquivo .pfx
+string pfxFile = "YOUR DOCUMENTS DIRECTORY\\certificate.pfx";
+
+// Inicializar o objeto de assinatura
+PdfFileSignature signature = new PdfFileSignature(document);
+
+// Carregue o arquivo PFX com uma senha
+PKCS7 pkcs = new PKCS7(pfxFile, "pfx_password");
 ```
+
+ Neste ponto, você está dizendo ao Aspose para usar seu certificado digital para assinar o documento. O`PKCS7` objeto cuida de todo o trabalho criptográfico para você, para que você não precise se preocupar com detalhes essenciais.
+
+## Etapa 3: adicione as configurações de carimbo de data/hora
+
+Um dos principais componentes de uma assinatura digital robusta é o carimbo de data/hora. Isso garante que a assinatura do documento possa ser verificada mesmo após o certificado ter expirado. Vamos configurar o carimbo de data/hora usando uma autoridade de carimbo de data/hora online.
+
+```csharp
+// Definir configurações de carimbo de data/hora
+TimestampSettings timestampSettings = new TimestampSettings("https://your_timestamp_url", "usuário:senha");
+
+// Adicionar configurações de registro de data e hora ao objeto PKCS7
+pkcs.TimestampSettings = timestampSettings;
+```
+
+Aqui, você está especificando a URL para o serviço de timestamping, que fornecerá automaticamente uma hora e data para sua assinatura. Isso pode ser feito com ou sem autenticação.
+
+## Etapa 4: Defina a localização e a aparência da assinatura
+
+Agora, definiremos onde a assinatura aparecerá no PDF e suas dimensões. Você pode personalizar a posição da caixa de assinatura na página, bem como o tamanho.
+
+```csharp
+//Defina a aparência e a localização da assinatura (página 1, com retângulo especificado)
+System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
+```
+
+Aqui, estamos definindo um retângulo que posiciona a assinatura nas coordenadas (100, 100) na primeira página do PDF, com largura de 200 e altura de 100. Você pode alterar esses valores para ajustá-los ao seu design.
+
+## Etapa 5: Assine o documento PDF
+
+Com tudo configurado, é hora de realmente aplicar a assinatura digital ao PDF. Esta etapa combina o certificado, o carimbo de data/hora e o posicionamento em um comando simples.
+
+```csharp
+// Assine o documento na primeira página
+signature.Sign(1, "Signature Reason", "Contact", "Location", true, rect, pkcs);
+```
+
+Veja o que está acontecendo:
+- 1: Isso indica que a assinatura deve ser aplicada na primeira página.
+- "Motivo da assinatura": aqui você pode especificar o motivo pelo qual está assinando o documento.
+- "Contato": Insira as informações de contato do signatário.
+- "Localização": especifique a localização do signatário.
+- true: Este valor booleano indica se a assinatura está visível no documento.
+- rect: O retângulo que definimos anteriormente especifica o tamanho e a posição da assinatura.
+- pkcs: O objeto PKCS7 contém as configurações do certificado digital e do registro de data e hora.
+
+## Etapa 6: Salve o PDF assinado
+
+Depois que o documento for assinado, tudo o que resta fazer é salvá-lo. Você pode escolher um novo nome de arquivo para manter tanto a versão original quanto a assinada.
+
+```csharp
+// Salvar o documento PDF assinado
+signature.Save(dataDir + "DigitallySignWithTimeStamp_out.pdf");
+```
+
+Seu PDF recém-assinado e com carimbo de data/hora agora está salvo no diretório especificado!
 
 ## Conclusão
 
-Parabéns! Você executou com sucesso uma assinatura digital com carimbo de data/hora em um arquivo PDF usando o Aspose.PDF para .NET. Este tutorial cobriu o processo passo a passo, desde a criação da assinatura até o salvamento do arquivo PDF atualizado. Agora você pode usar este recurso para adicionar assinaturas digitais com carimbo de data/hora aos seus arquivos PDF.
+E aí está! Você assinou digitalmente com sucesso um PDF com um carimbo de data/hora usando o Aspose.PDF para .NET. Esse processo garante a autenticidade e a integridade dos seus documentos, dando a você e ao destinatário paz de espírito. Assinaturas digitais estão se tornando cada vez mais essenciais no mundo digital de hoje, então dominar esse processo é definitivamente uma habilidade que vale a pena ter.
 
-### Perguntas frequentes sobre assinatura digital com carimbo de data/hora em arquivo PDF
+## Perguntas frequentes
 
-#### P: Qual é o propósito de assinar digitalmente com um carimbo de data/hora?
+### Posso usar um formato de arquivo diferente para o certificado?  
+Sim, mas o tutorial se concentra no uso de um arquivo PFX, que é o formato mais comum para certificados digitais.
 
-R: A assinatura digital com carimbo de data/hora adiciona uma impressão digital eletrônica com carimbo de data/hora a um arquivo PDF, garantindo a autenticidade e a integridade do documento em um momento específico.
+### Preciso de uma conexão com a internet para aplicar o carimbo de data/hora?  
+Sim, como o registro de data e hora é obtido de uma autoridade de registro de data e hora on-line, você precisará de acesso à Internet.
 
-#### P: Quais são os pré-requisitos necessários para iniciar este tutorial?
+### Posso assinar várias páginas em um PDF?  
+ Absolutamente! Você pode modificar o`signature.Sign()` método para atingir várias páginas ou percorrer todas as páginas.
 
-R: Antes de começar, certifique-se de ter um conhecimento básico da linguagem de programação C#, ter o Visual Studio instalado e ter a biblioteca Aspose.PDF para .NET instalada.
+### O que acontece se a senha do arquivo PFX estiver incorreta?  
+Você receberá uma exceção se a senha estiver errada, então certifique-se de que ela foi digitada corretamente.
 
-#### P: Como posso configurar meu ambiente de desenvolvimento?
-
-R: Siga as etapas fornecidas para configurar seu ambiente de desenvolvimento, incluindo a criação de um novo projeto C# no Visual Studio e a importação dos namespaces necessários.
-
-#### P: Como adiciono uma assinatura digital com carimbo de data/hora a um PDF?
-
-R: O código de exemplo fornecido demonstra como carregar um arquivo PDF, criar uma assinatura digital com um registro de data e hora usando um arquivo PFX (chave privada) e configurações de registro de data e hora especificadas, adicionar a assinatura ao arquivo PDF e salvar o arquivo atualizado.
-
-#### P: O que é um arquivo PFX e por que ele é usado no exemplo?
-
-R: Um arquivo PFX (Personal Exchange Format) contém uma chave privada e um certificado. Ele é usado aqui para fornecer funcionalidade criptográfica para assinaturas digitais. Certifique-se de substituir o placeholder pelo seu arquivo PFX e senha.
-
-#### P: O que são TimestampSettings?
-
-A: TimestampSettings define as configurações para o servidor de timestamp usado para adicionar o timestamp eletrônico à assinatura. Inclui a URL do servidor de timestamp e credenciais de usuário opcionais.
-
-#### P: Posso usar um servidor de registro de data e hora diferente do do exemplo?
- R: Sim, você pode usar qualquer servidor de timestamp compatível. Substitua a URL e, se necessário, forneça as credenciais de usuário apropriadas no`TimestampSettings` objeto.
-
-#### P: Qual é o propósito de especificar o retângulo de assinatura?
-
-A: O retângulo de assinatura define a posição e as dimensões da aparência da assinatura digital na página PDF. Ajuste esses valores para posicionar a assinatura conforme desejado.
-
-#### P: O que acontece se o servidor de registro de data e hora não estiver disponível durante a assinatura?
-
-R: Se o servidor de timestamp não estiver disponível durante a assinatura, o processo pode falhar ou demorar mais. Garanta que seu servidor de timestamp seja confiável e acessível.
-
-#### P: Como posso verificar a presença de um carimbo de data/hora no PDF assinado?
-
- A: Você pode examinar o PDF assinado usando o código de amostra fornecido. O`TimestampSettings` que você usou durante a assinatura deve estar disponível nos detalhes da assinatura.
-
-#### P: Assinaturas digitais com carimbos de data/hora são juridicamente vinculativas?
-
-R: Assinaturas digitais com carimbos de data/hora têm valor legal em muitas jurisdições e são frequentemente consideradas mais confiáveis do que assinaturas digitais simples. Consulte especialistas jurídicos em sua jurisdição para regulamentações específicas.
-
-#### P: Posso adicionar várias assinaturas digitais com carimbos de data/hora a um PDF?
-
-R: Sim, você pode adicionar várias assinaturas digitais com carimbos de data/hora a um arquivo PDF chamando o processo de criação de assinatura várias vezes. Cada assinatura terá seu próprio carimbo de data/hora.
+### Posso tornar a assinatura invisível?  
+ Sim, você pode passar`false` para o`Sign` parâmetro de visibilidade do método para tornar a assinatura invisível.

@@ -10,7 +10,7 @@ url: /pt/java/pdf-form-fields/control-image-quality-when-adding-image-stamp-in-p
 
 ## Introdução ao controle de qualidade de imagem ao adicionar carimbo de imagem em PDF usando Java
 
-Na era digital, documentos PDF são uma forma comum de compartilhar informações e geralmente incluem imagens para aprimorar o conteúdo. No entanto, ao adicionar carimbos de imagem a PDFs usando Java, é crucial manter o controle sobre a qualidade da imagem. Neste guia, vamos orientá-lo no processo de controle da qualidade da imagem ao adicionar carimbos de imagem a PDFs usando a biblioteca Aspose.PDF para Java.
+Na era digital, documentos PDF são uma forma comum de compartilhar informações e geralmente incluem imagens para aprimorar o conteúdo. No entanto, ao adicionar carimbos de imagem a PDFs usando Java, é crucial manter o controle sobre a qualidade da imagem. Neste guia, mostraremos a você o processo de controle da qualidade da imagem ao adicionar carimbos de imagem a PDFs usando a biblioteca Aspose.PDF para Java.
 
 ## Pré-requisitos
 

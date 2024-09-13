@@ -110,7 +110,7 @@ document.Save(dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Nyissa meg a dokumentumot
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-// Hozzon létre TextAbsorber objektumot a reguláris kifejezésnek megfelelő kifejezések megtalálásához
+//Hozzon létre TextAbsorber objektumot a reguláris kifejezésnek megfelelő kifejezések megtalálásához
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;

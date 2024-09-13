@@ -1,7 +1,7 @@
 ---
 title: Ta bort visst bokmärke i PDF-fil
 linktitle: Ta bort visst bokmärke i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du tar bort ett visst bokmärke i en PDF-fil med Aspose.PDF för .NET med denna steg-för-steg-guide.
 type: docs
 weight: 40

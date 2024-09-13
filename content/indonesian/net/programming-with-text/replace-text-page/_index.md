@@ -62,7 +62,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## Langkah 6: Ambil fragmen teks yang diekstraksi
 
-Dapatkan fragmen teks yang diekstraksi menggunakan`TextFragments` milik`TextFragmentAbsorber` obyek:
+ Dapatkan fragmen teks yang diekstraksi menggunakan`TextFragments` milik`TextFragmentAbsorber` obyek:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -165,7 +165,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 #### T: Apa yang terjadi jika frasa pencarian tidak ditemukan pada halaman yang ditentukan?
 
- A: Jika frase pencarian tidak ditemukan pada halaman yang ditentukan,`TextFragmentCollection` akan kosong, dan tidak akan ada penggantian yang dilakukan. Pastikan frasa pencarian ada di halaman yang Anda targetkan.
+A: Jika frase pencarian tidak ditemukan pada halaman yang ditentukan,`TextFragmentCollection` akan kosong, dan tidak akan ada penggantian yang dilakukan. Pastikan frasa pencarian ada di halaman yang Anda targetkan.
 
 #### T: Bagaimana saya dapat menyesuaikan teks pengganti untuk setiap fragmen teks?
 

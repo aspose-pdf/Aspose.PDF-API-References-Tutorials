@@ -13,7 +13,7 @@ url: /zh/net/programming-with-text/add-html-ordered-list-into-documents/
 开始之前，请确保您已准备好以下物品：
 
 - 您的机器上安装的 Visual Studio 或任何其他 C# 编译器。
-- Aspose.PDF for .NET 库。您可以从 Aspose 官方网站下载它，或者使用 NuGet 等包管理器来安装它。
+- Aspose.PDF for .NET 库。您可以从 Aspose 官方网站下载它，也可以使用 NuGet 等包管理器来安装它。
 
 ## 步骤 1：设置项目
 1. 在您首选的开发环境中创建一个新的 C# 项目。
@@ -115,7 +115,7 @@ using Aspose.Pdf.Text;
 
 #### 问：如何将 HTML 有序列表添加到文档的页面中？
 
-答：在第 7 步中，您将添加`HtmlFragment`目的 （`t`）使用`Add`方法`Paragraphs`集合。这将无缝地将 HTML 有序列表集成到文档中。
+答：在第 7 步中，您将添加`HtmlFragment`目的 （`t` ）使用`Add`方法`Paragraphs`集合。这将无缝地将 HTML 有序列表集成到文档中。
 
 #### 问：如何保存生成的 PDF 文档？
 
@@ -137,4 +137,4 @@ doc.Save(outFile);
 
 #### 问：本教程的重点是什么？
 
-答：通过本教程，您已成功学会了如何利用 Aspose.PDF for .NET 库将 HTML 有序列表合并到文档中。这些新知识可用于增强您的文档创建和操作过程。
+答：通过本教程，您已成功学会了如何利用 Aspose.PDF for .NET 库将 HTML 有序列表合并到文档中。这些新知识可用于增强文档创建和操作过程。

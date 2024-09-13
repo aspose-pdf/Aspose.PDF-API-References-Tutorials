@@ -42,7 +42,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 ```
 
 ## चरण 5: संशोधित करने के लिए पाठ ढूंढें
- उपयोग`TextFragmentAbsorber` दस्तावेज़ के भीतर वांछित पाठ खोजने के लिए। प्रदान किए गए कोड में, यह "Lorem ipsum" पाठ की तलाश करता है।
+उपयोग`TextFragmentAbsorber` दस्तावेज़ के भीतर वांछित पाठ खोजने के लिए। प्रदान किए गए कोड में, यह "Lorem ipsum" पाठ की तलाश करता है।
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -129,7 +129,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 
 #### प्रश्न: मैं पीडीएफ दस्तावेज़ में विशिष्ट पाठ कैसे ढूंढूं और संशोधित करूं?
 
- उत्तर: चरण 5 में, आप इसका उपयोग करेंगे`TextFragmentAbsorber`दस्तावेज़ में वांछित पाठ ढूँढ़ने के लिए। फिर, आप इसके गुणों को संशोधित कर सकते हैं:
+ उत्तर: चरण 5 में, आप इसका उपयोग करेंगे`TextFragmentAbsorber` दस्तावेज़ में वांछित पाठ ढूँढ़ने के लिए। फिर, आप इसके गुणों को संशोधित कर सकते हैं:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -150,7 +150,7 @@ textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 
 #### प्रश्न: क्या मैं संशोधित पाठ पर अतिरिक्त पाठ स्वरूपण लागू कर सकता हूँ?
 
- उत्तर: हां, चरण 7 में, आप गुणों को संशोधित करके अतिरिक्त पाठ स्वरूपण जैसे रेखांकन लागू कर सकते हैं।`TextState` वस्तु:
+उत्तर: हां, चरण 7 में, आप गुणों को संशोधित करके अतिरिक्त पाठ स्वरूपण जैसे रेखांकन लागू कर सकते हैं।`TextState` वस्तु:
 
 ```csharp
 textFragment.TextState.Underline = true;

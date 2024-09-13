@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Schritt 5: Seitenränder festlegen
- Geben Sie die linken und rechten Randinformationen für die PDF-Datei an.`PageInfo.Margin` Eigentum der`Document`.
+ Geben Sie die linken und rechten Randinformationen für die PDF-Datei mit den`PageInfo.Margin` Eigentum der`Document`.
 
 ```csharp
 doc.PageInfo.Margin.Left = 40;
@@ -46,7 +46,7 @@ doc.PageInfo.Margin.Right = 40;
 ```
 
 ## Schritt 6: Dem Dokument eine Seite hinzufügen
- Fügen Sie dem Dokument eine neue Seite hinzu, indem Sie das`Add` Methode der`Pages`Sammlung. Im bereitgestellten Code wird die neue Seite der Variablen zugewiesen`page`.
+ Fügen Sie dem Dokument eine neue Seite hinzu, indem Sie das`Add` Methode der`Pages` Sammlung. Im bereitgestellten Code wird die neue Seite der Variablen zugewiesen`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -112,7 +112,7 @@ doc.Save(dataDir);
 // Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
-//Geben Sie die Informationen zum linken Rand für die PDF-Datei an
+// Geben Sie die Informationen zum linken Rand für die PDF-Datei an
 doc.PageInfo.Margin.Left = 40;
 // Geben Sie die Informationen zum rechten Rand für die PDF-Datei an
 doc.PageInfo.Margin.Right = 40;
@@ -149,7 +149,7 @@ Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50, 10);
 float[] posArr2 = new float[] { 1, 10, 100, 10 };
 Aspose.Pdf.Drawing.Line l2 = new Aspose.Pdf.Drawing.Line(posArr2);
 graph2.Shapes.Add(l2);
-// Fügen Sie die Zeile zur Absatzsammlung des Abschnittsobjekts hinzu
+//Fügen Sie die Zeile zur Absatzsammlung des Abschnittsobjekts hinzu
 box.Paragraphs.Add(graph2);
 TextFragment text2 = new TextFragment(@"Sed augue tortor, sodales id, luctus et, pulvinar ut, eros. Suspendisse vel dolor. Sed quam. Curabitur ut massa vitae eros euismod aliquam. Pellentesque sit amet elit. Vestibulum interdum pellentesque augue. Cras mollis arcu sit amet purus. Donec augue. Nam mollis tortor a elit. Nulla viverra nisl vel mauris. Vivamus sapien. nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et,nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.");
 box.Paragraphs.Add(text2);
@@ -200,7 +200,7 @@ using Aspose.Pdf.Drawing;
 
 #### F: Wie füge ich Überschriftentext mit HTML-Formatierung hinzu?
 
- A: In Schritt 8 erstellen Sie ein`HtmlFragment` Objekt und setzen Sie seinen Inhalt auf den gewünschten HTML-Text, dann fügen Sie das Fragment zum`Paragraphs` Sammlung der Seite.
+A: In Schritt 8 erstellen Sie ein`HtmlFragment` Objekt und setzen Sie seinen Inhalt auf den gewünschten HTML-Text, dann fügen Sie das Fragment zum`Paragraphs` Sammlung der Seite.
 
 #### F: Wie erstelle ich eine FloatingBox mit mehreren Spalten?
 

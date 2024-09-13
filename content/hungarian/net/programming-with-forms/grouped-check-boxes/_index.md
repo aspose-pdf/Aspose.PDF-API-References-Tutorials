@@ -2,156 +2,159 @@
 title: Csoportosított jelölőnégyzetek a PDF-dokumentumban
 linktitle: Csoportosított jelölőnégyzetek a PDF-dokumentumban
 second_title: Aspose.PDF for .NET API Reference
-description: Könnyen hozhat létre csoportosított jelölőnégyzeteket PDF-dokumentumban az Aspose.PDF for .NET segítségével.
+description: Ebből a lépésenkénti oktatóanyagból megtudhatja, hogyan hozhat létre csoportosított jelölőnégyzeteket (választógombokat) PDF-dokumentumban az Aspose.PDF for .NET használatával.
 type: docs
 weight: 170
 url: /hu/net/programming-with-forms/grouped-check-boxes/
 ---
-Ebben az oktatóanyagban bemutatjuk, hogyan hozhat létre csoportosított jelölőnégyzeteket egy PDF-dokumentumban az Aspose.PDF for .NET használatával. Lépésről lépésre elmagyarázzuk a C# forráskódot, hogy végigvezetjük Önt ezen a folyamaton.
+## Bevezetés
 
-## 1. lépés: Előkészítés
+Az interaktív PDF-fájlok létrehozása nem olyan nehéz, mint amilyennek hangzik, különösen akkor, ha olyan hatékony eszközök állnak rendelkezésére, mint az Aspose.PDF for .NET. Az egyik interaktív elem, amelyet hozzá kell adnia a PDF-dokumentumokhoz, a csoportos jelölőnégyzetek, pontosabban a választógombok, amelyek lehetővé teszik a felhasználók számára, hogy egy beállítást válasszanak a készletből. Ez az oktatóanyag végigvezeti a csoportosított jelölőnégyzetek (rádiógombok) PDF-dokumentumokhoz való hozzáadásának folyamatán az Aspose.PDF for .NET használatával. Akár kezdő, akár tapasztalt fejlesztő, ezt az útmutatót lebilincselőnek, részletesnek és könnyen követhetőnek találja.
 
-Győződjön meg arról, hogy importálta a szükséges könyvtárakat, és beállította a dokumentumkönyvtár elérési útját:
+## Előfeltételek
+
+Mielőtt belemerülnénk a lépésről lépésre szóló útmutatóba, tekintsünk át néhány alapvető előfeltételt:
+
+1.  Aspose.PDF for .NET: Győződjön meg arról, hogy telepítve van az Aspose.PDF könyvtár. Ha nem, akkor megteheti[töltse le itt](https://releases.aspose.com/pdf/net/).
+2. IDE: Be kell állítania egy fejlesztői környezetet, például a Visual Studio-t.
+3. .NET-keretrendszer: A projektnek meg kell céloznia a .NET-keretrendszer Aspose.PDF-fel kompatibilis verzióját.
+4. Alapvető C# ismeretek: A zökkenőmentes követéshez a C# és a PDF-kezelés ismerete szükséges.
+5.  Licenc: Az Aspose.PDF teljes funkcióihoz licenc szükséges. Tudod[ideiglenes engedélyt szerezni](https://purchase.aspose.com/temporary-license/) ha szükséges.
+
+## Csomagok importálása
+
+Mielőtt elkezdené, győződjön meg róla, hogy importálta a szükséges névtereket a projektbe:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Forms;
 ```
 
-## 2. lépés: Példányosítson egy dokumentumobjektumot
+Ezek a csomagok hozzáférést biztosítanak a PDF dokumentumok kezeléséhez szükséges összes osztályhoz és módszerhez, beleértve a választógombok létrehozását és tulajdonságaik meghatározását.
 
-Dokumentum objektum példányosítása:
+Ebben a részben a csoportosított jelölőnégyzetek (rádiógombok) létrehozásának folyamatát világos, könnyen követhető lépésekre bontjuk.
+
+## 1. lépés: Hozzon létre egy új PDF-dokumentumot
+
+ Az első lépés egy példány létrehozása a`Document` objektum, amely az Ön PDF-fájlját fogja képviselni. Ezután adjon hozzá egy üres oldalt a dokumentumhoz, ahol elhelyezheti a csoportosított jelölőnégyzeteket.
 
 ```csharp
+// Dokumentum objektum példányosítása
 Document pdfDocument = new Document();
-```
 
-## 3. lépés: Oldal hozzáadása a PDF dokumentumhoz
-
-Oldal hozzáadása a PDF dokumentumhoz:
-
-```csharp
+// Adjon hozzá egy oldalt a PDF-fájlhoz
 Page page = pdfDocument.Pages.Add();
 ```
 
-## 4. lépés: Példányosítson egy RadioButtonField objektumot
+Ez megteremti az alapot bármely elem, például rádiógombok PDF-hez való hozzáadásához.
 
-Példányosítson egy RadioButtonField objektumot az oldalszámmal argumentumként:
+## 2. lépés: Inicializálja a rádiógomb mezőt
+
+Ezután létre kell hoznunk a`RadioButtonField` objektum, amely a csoportosított jelölőnégyzeteket (rádiógombokat) fogja tartalmazni. Ez a mező hozzáadódik ahhoz az oldalhoz, ahol a jelölőnégyzetek megjelennek.
 
 ```csharp
+// Példányosítsa a RadioButtonField objektumot, és rendelje hozzá az első oldalhoz
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## 5. lépés: Adja hozzá a választógomb opcióit
+Tekintse ezt úgy, mint egy tárolót, amely csoportosítja az egyes választógomb-beállításokat.
 
-Adjon hozzá választógomb-beállításokat a RadioButtonOptionField objektum segítségével, és adja meg helyzetüket a Rectangle objektum segítségével:
+## 3. lépés: Adja hozzá a választógomb opcióit
+
+ Most adjuk hozzá az egyes választógomb-beállításokat a mezőhöz. Ebben a példában két választógombot adunk hozzá, és adjuk meg a pozíciójukat a gombbal`Rectangle` objektum.
 
 ```csharp
+// Adja hozzá az első választógombot, és adja meg a pozícióját a Téglalap segítségével
 RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
 RadioButtonOptionField opt2 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(100, 0, 120, 20));
-opt1.OptionName = "Test1";
-opt2.OptionName = "Test2";
-radio.Add(opt1);
-radio.Add(opt2);
+
+// Állítsa be az azonosításhoz szükséges opcióneveket
+opt1.OptionName = "Option1";
+opt2.OptionName = "Option2";
 ```
 
-## 6. lépés: A választógomb opcióinak testreszabása
+ Itt, a`Rectangle` objektum határozza meg az oldalon lévő egyes rádiógombok koordinátáit és méretét.
 
-Testreszabhatja a választógomb opcióit stílusuk, szegélyük és megjelenésük beállításával:
+## 4. lépés: A rádiógombok stílusának testreszabása
+
+ Testreszabhatja a rádiógombok megjelenését azok beállításával`Style` ingatlan. Például érdemes lehet négyzet alakú jelölőnégyzeteket vagy kereszt alakúakat.
 
 ```csharp
+// Állítsa be a rádiógombok stílusát
 opt1.Style = BoxStyle.Square;
-opt2.Style = BoxStyle.Square;
+opt2.Style = BoxStyle.Cross;
+```
+
+Ez lehetővé teszi a jelölőnégyzetek megjelenésének szabályozását, felhasználóbarátabbá és látványosabbá téve azokat.
+
+## 5. lépés: Állítsa be a szegély tulajdonságait
+
+A szegélyek létfontosságú szerepet játszanak abban, hogy a jelölőnégyzetek könnyen azonosíthatók legyenek. Itt tömör kereteket adunk az egyes választógombok körül, és meghatározzuk a szélességet és a színt.
+
+```csharp
+// Állítsa be az első rádiógomb szegélyét
 opt1.Border = new Border(opt1);
 opt1.Border.Style = BorderStyle.Solid;
 opt1.Border.Width = 1;
+opt1.Characteristics.Border = Color.Black;
+
+// Állítsa be a második rádiógomb szegélyét
 opt2.Border = new Border(opt2);
-opt2.Border.Width = 1;
 opt2.Border.Style = BorderStyle.Solid;
+opt2.Border.Width = 1;
+opt2.Characteristics.Border = Color.Black;
 ```
 
-## 7. lépés: Adja hozzá a rádiógombokat az űrlaphoz
+Ez a lépés biztosítja, hogy minden rádiógombnak jól meghatározott szegélye legyen, javítva a dokumentum olvashatóságát.
 
-Adja hozzá a választógombokat a dokumentum űrlap objektumhoz:
+## 6. lépés: Adja hozzá a választógomb opciókat az űrlaphoz
+
+Most hozzáadjuk a választógombokat a dokumentum űrlapjához. Ez az utolsó lépés a jelölőnégyzetek egyetlen mező alá történő csoportosításában.
 
 ```csharp
+// Rádiógomb mező hozzáadása a dokumentum űrlapobjektumához
 pdfDocument.Form.Add(radio);
 ```
 
-## 8. lépés: Mentse el a dokumentumot
+Az űrlapobjektum az összes interaktív elem tárolójaként működik, beleértve a csoportosított jelölőnégyzeteinket is.
 
-Mentse el a PDF dokumentumot:
+## 7. lépés: Mentse el a PDF-dokumentumot
+
+Végül, miután mindent beállított, elmentheti a PDF dokumentumot a kívánt helyre.
 
 ```csharp
-dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
+// Határozza meg a kimeneti fájl elérési útját
+string dataDir = "YOUR DOCUMENT DIRECTORY" + "GroupedCheckBoxes_out.pdf";
+
+// Mentse el a PDF dokumentumot
 pdfDocument.Save(dataDir);
+
+// Erősítse meg a sikeres létrehozást
+Console.WriteLine("Grouped checkboxes added successfully. File saved at " + dataDir);
 ```
 
-### Minta forráskód csoportos jelölőnégyzetekhez az Aspose.PDF for .NET használatával 
-```csharp
-try
-{
-	// A dokumentumok könyvtárának elérési útja.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Dokumentum objektum példányosítása
-	Document pdfDocument = new Document();
-	// Oldal hozzáadása a PDF-fájlhoz
-	Page page = pdfDocument.Pages.Add();
-	// Állítsa be a RadioButtonField objektumot oldalszámmal argumentumként
-	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
-	// Adja hozzá az első választógombot, és adja meg annak eredetét is a Rectangle objektum segítségével
-	RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
-	RadioButtonOptionField opt2 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(100, 0, 120, 20));
-	opt1.OptionName = "Test1";
-	opt2.OptionName = "Test2";
-	radio.Add(opt1);
-	radio.Add(opt2);
-	opt1.Style = BoxStyle.Square;
-	opt2.Style = BoxStyle.Square;
-	opt1.Style = BoxStyle.Cross;
-	opt2.Style = BoxStyle.Cross;
-	opt1.Border = new Border(opt1);
-	opt1.Border.Style = BorderStyle.Solid;
-	opt1.Border.Width = 1;
-	opt1.Characteristics.Border = System.Drawing.Color.Black;
-	opt2.Border = new Border(opt2);
-	opt2.Border.Width = 1;
-	opt2.Border.Style = BorderStyle.Solid;
-	opt2.Characteristics.Border = System.Drawing.Color.Black;
-	// Rádiógomb hozzáadása a Dokumentumobjektum objektumának létrehozásához
-	pdfDocument.Form.Add(radio);
-	dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
-	// Mentse el a PDF dokumentumot
-	pdfDocument.Save(dataDir);
-	Console.WriteLine("\nGrouped checkboxes added successfully.\nFile saved at " + dataDir);
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+És ennyi! Sikeresen létrehozott egy PDF-et csoportosított jelölőnégyzetekkel az Aspose.PDF for .NET használatával.
 
 ## Következtetés
 
-Ebben az oktatóanyagban megtanultuk, hogyan hozhat létre csoportosított jelölőnégyzeteket egy PDF-dokumentumban az Aspose.PDF for .NET használatával. Ezeket a lépéseket követve egyszerűen hozzáadhat egyéni választógomb-beállításokat, és az Aspose.PDF segítségével PDF-dokumentumaiba kötegelheti őket.
+Interaktív elemek, például csoportos jelölőnégyzetek hozzáadása a PDF-dokumentumokhoz elsőre trükkösnek tűnhet, de az Aspose.PDF for .NET használatával gyerekjáték. Ennek a lépésenkénti útmutatónak a követésével megtanulta, hogyan állíthat be egy alapvető PDF-dokumentumot, hogyan adhat hozzá csoportosított választógombokat, hogyan szabhatja testre megjelenésüket, és hogyan mentheti el a végeredményt. Akár nyomtatványokat, felméréseket vagy bármilyen más interaktív PDF-t készít, ez az útmutató szilárd alapot ad a kezdéshez.
 
-### GYIK
+## GYIK
 
-#### K: Mik azok a csoportosított jelölőnégyzetek egy PDF-dokumentumban?
+### Hozzáadhatok kettőnél több választógombot egy csoporthoz?
+ Teljesen! Egyszerűen további példányosítás`RadioButtonOptionField` objektumokat, és add hozzá őket a`RadioButtonField` az oktatóanyagban látható módon.
 
-V: A PDF-dokumentumban lévő csoportosított jelölőnégyzetek egy csoportba sorolt választógomb-beállításokra utalnak. A választógombok lehetővé teszik a felhasználók számára, hogy csak egy opciót válasszanak ki az egymást kölcsönösen kizáró lehetőségek közül. Ha valamelyik választógombot kiválasztja, az ugyanabban a csoportban lévő többi választógomb kijelölése automatikusan megszűnik. Ez a csoportosítási viselkedés akkor hasznos, ha több lehetőséget szeretne felkínálni a felhasználóknak, de csak egy lehetőségre korlátozza a választást.
+### Hogyan kezelhetek több jelölőnégyzetcsoportot egy dokumentumban?
+Több csoport létrehozásához példányosítsa el őket külön`RadioButtonField` objektumok minden csoporthoz.
 
-#### K: Testreszabhatom a csoportosított jelölőnégyzetek megjelenését az Aspose.PDF for .NET fájlban?
+### Korlátozott a hozzáadható jelölőnégyzetek száma?
+Nem, az Aspose.PDF for .NET nem szab semmilyen korlátozást a PDF-hez hozzáadható jelölőnégyzetek számára.
 
-V: Igen, testreszabhatja a csoportosított jelölőnégyzetek megjelenését az Aspose.PDF for .NET fájlban. Az API különféle lehetőségeket kínál a választógomb-opciók stílusának, szegélyének és megjelenésének beállítására. Meghatározhatja az egyes opciók helyzetét, választhat a különböző dobozstílusok közül (pl. négyzet, kör, kereszt), és módosíthatja a szegély tulajdonságait a kívánt vizuális megjelenítés eléréséhez.
+### Módosíthatom a jelölőnégyzetek megjelenését a hozzáadása után?
+Igen, a jelölőnégyzetek hozzáadása után módosíthatja a tulajdonságokat, például a szegély stílusát, szélességét és színét.
 
-#### K: Hogyan adhatok csoportosított jelölőnégyzeteket egy PDF-dokumentum egy adott oldalához?
-
-V: Ha csoportosított jelölőnégyzeteket szeretne hozzáadni egy PDF-dokumentum egy adott oldalához, példányosítania kell a`RadioButtonField` objektum a kívánt oldalszámmal argumentumként. Ezután hozzon létre`RadioButtonOptionField` az egyes választógomb opciókat képviselő objektumokat, és adjuk meg pozíciójukat a gombbal`Rectangle` objektum. Végül adja hozzá ezeket a beállításokat a`RadioButtonField` és szükség szerint testreszabhatja megjelenésüket, mielőtt hozzáadná a`RadioButtonField` a dokumentum űrlapra.
-
-#### K: Hozzáadhatok több jelölőnégyzetcsoportot egyetlen PDF-dokumentumhoz?
-
- V: Igen, több jelölőnégyzetcsoportot is hozzáadhat egyetlen PDF-dokumentumhoz. Minden csoportnak egyedinek kell lennie`RadioButtonField` objektum, és a`RadioButtonOptionField` Az egyes csoportokon belüli objektumok ugyanazon az oldalon osztoznak, és egyedi neveket kell megadniuk a beállításokhoz. Ez biztosítja, hogy az egyes csoportokon belüli rádiógombok megfelelően működjenek, és a kijelölések kölcsönösen kizárják egymást.
-
-#### K: Minden PDF-megjelenítő és alkalmazás támogatja a csoportosított jelölőnégyzeteket?
-
-V: Igen, a csoportosított jelölőnégyzetek minden szabványnak megfelelő PDF-megtekintőben és alkalmazásban támogatottak. A PDF specifikáció meghatározza a választógombokat és csoportosítási viselkedésüket, így általánosan felismerhetőek a PDF formátumban. Mindazonáltal elengedhetetlen a funkcionalitás tesztelése a különböző PDF-megtekintőkben, hogy a különböző platformokon egységes viselkedést biztosítsunk.
+### Lehetséges a képeket rádiógombként használni?
+ Igen, az Aspose.PDF lehetővé teszi egyéni képek rádiógombként történő használatát a`Appearance` az egyes választógomb opciók tulajdonsága.

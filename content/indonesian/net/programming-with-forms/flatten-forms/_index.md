@@ -2,94 +2,115 @@
 title: Ratakan Formulir Dalam Dokumen PDF
 linktitle: Ratakan Formulir Dalam Dokumen PDF
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Ratakan formulir dalam dokumen PDF dengan mudah menggunakan Aspose.PDF untuk .NET.
+description: Pelajari cara meratakan formulir dalam dokumen PDF menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah ini. Amankan data Anda dengan mudah.
 type: docs
 weight: 100
 url: /id/net/programming-with-forms/flatten-forms/
 ---
-Dalam tutorial ini, kami akan menunjukkan cara meratakan formulir menggunakan Aspose.PDF untuk .NET. Kami akan menjelaskan kode sumber C# langkah demi langkah untuk memandu Anda melalui proses ini.
+## Perkenalan
 
-## Langkah 1: Persiapan
+Pernahkah Anda berhadapan dengan formulir PDF yang tidak berfungsi? Anda mengisinya, tetapi formulir tersebut tetap dapat diedit, membuat Anda bertanya-tanya bagaimana cara membuatnya permanen. Nah, Anda beruntung! Dalam tutorial ini, kita akan menyelami dunia Aspose.PDF untuk .NET dan mempelajari cara meratakan formulir dalam dokumen PDF. Meratakan formulir adalah trik praktis yang mengubah bidang interaktif menjadi konten statis, memastikan bahwa data Anda terpelihara dan tidak dapat diubah. Jadi, ambil minuman favorit Anda, dan mari kita mulai!
 
-Pertama, pastikan Anda telah mengimpor pustaka yang diperlukan dan mengatur jalur ke direktori dokumen:
+## Prasyarat
 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-```
+Sebelum kita masuk ke kode, mari pastikan Anda memiliki semua yang perlu diikuti:
 
-## Langkah 2: Muat formulir PDF sumber
+1. Visual Studio: Anda memerlukan IDE untuk menulis dan menjalankan kode .NET. Visual Studio adalah pilihan yang tepat.
+2.  Aspose.PDF untuk .NET: Pustaka canggih ini akan membantu kita memanipulasi file PDF. Anda dapat mengunduhnya dari[Di Sini](https://releases.aspose.com/pdf/net/).
+3. Pengetahuan Dasar C#: Sedikit pengetahuan tentang C# akan sangat membantu dalam memahami potongan kode yang akan kita gunakan.
 
-Muat formulir PDF sumber:
+## Paket Impor
 
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
+Untuk memulai, kita perlu mengimpor paket-paket yang diperlukan. Berikut ini cara melakukannya:
 
-## Langkah 3: Ratakan formulirnya
+### Buat Proyek Baru
 
-Pertama, periksa apakah ada kolom formulir di dalam dokumen. Jika ada, ulangi setiap kolom dan terapkan perataan:
+Buka Visual Studio dan buat proyek C# baru. Pilih Aplikasi Konsol untuk mempermudah.
 
-```csharp
-if (doc.Form.Fields.Count() > 0)
-{
-foreach (var item in doc.Form.Fields)
-{
-item. Flatten();
-}
-}
-```
+### Tambahkan Referensi Aspose.PDF
 
-## Langkah 4: Simpan dokumen yang diperbarui
-
-Simpan dokumen PDF yang diperbarui:
+1. Klik kanan pada proyek Anda di Solution Explorer.
+2. Pilih "Kelola Paket NuGet."
+3. Cari "Aspose.PDF" dan instal versi terbaru.
 
 ```csharp
-dataDir = dataDir + "FlattenForms_out.pdf";
-doc.Save(dataDir);
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-### Contoh kode sumber untuk Flatten Forms menggunakan Aspose.PDF untuk .NET 
+Sekarang setelah semuanya disiapkan, mari masuk ke kodenya!
+
+## Langkah 1: Siapkan Direktori Dokumen Anda
+
+Pertama-tama, kita perlu menentukan di mana file PDF kita berada. Ini penting karena kita akan memuat PDF sumber dari direktori ini.
+
 ```csharp
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya tempat file PDF Anda disimpan. Ini seperti menyiapkan panggung untuk penampilan kami!
+
+## Langkah 2: Muat Formulir PDF Sumber
+
+Sekarang setelah direktori kita siap, saatnya memuat formulir PDF yang ingin kita gunakan. Di sinilah keajaiban dimulai!
+
+```csharp
 // Muat formulir PDF sumber
 Document doc = new Document(dataDir + "input.pdf");
+```
+
+ Di sini, kita membuat yang baru`Document`objek dan memuat file PDF kita ke dalamnya. Pastikan Anda memiliki file PDF bernama`input.pdf` di direktori yang Anda tentukan.
+
+## Langkah 3: Periksa Kolom Formulir
+
+Sebelum kita meratakan formulir, kita perlu memeriksa apakah ada kolom dalam dokumen. Ini seperti memeriksa apakah bahan-bahan kita masih segar sebelum dimasak!
+
+```csharp
 // Meratakan Formulir
 if (doc.Form.Fields.Count() > 0)
 {
-	foreach (var item in doc.Form.Fields)
-	{
-		item.Flatten();
-	}
+    foreach (var item in doc.Form.Fields)
+    {
+        item.Flatten();
+    }
 }
+```
+
+Dalam cuplikan ini, kami memeriksa jumlah kolom formulir. Jika ada, kami akan mengulang setiap kolom dan meratakannya. Meratakan itu seperti menyegel kesepakatan—setelah selesai, tidak ada jalan kembali!
+
+## Langkah 4: Simpan Dokumen yang Diperbarui
+
+Setelah meratakan formulir, kita perlu menyimpan perubahan. Ini adalah langkah terakhir dalam perjalanan kita!
+
+```csharp
 dataDir = dataDir + "FlattenForms_out.pdf";
 // Simpan dokumen yang diperbarui
 doc.Save(dataDir);
 Console.WriteLine("\nForms flattened successfully.\nFile saved at " + dataDir);
 ```
 
+ Di sini, kami menyimpan dokumen yang diperbarui dengan nama baru,`FlattenForms_out.pdf`Dengan cara ini, kita menjaga berkas asli tetap utuh saat membuat versi baru dengan bentuk yang diratakan.
+
 ## Kesimpulan
 
-Dalam tutorial ini, kita mempelajari cara meratakan formulir menggunakan Aspose.PDF untuk .NET. Dengan mengikuti langkah-langkah ini, Anda dapat dengan mudah meratakan formulir dalam dokumen PDF Anda, membuat kolom tidak dapat diedit, dan menggabungkan anotasi dengan konten dokumen.
+Nah, itu dia! Anda telah berhasil meratakan formulir dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Teknik sederhana namun ampuh ini memastikan bahwa data Anda tetap aman dan tidak dapat diedit. Baik Anda mengerjakan formulir untuk klien, dokumen internal, atau apa pun di antaranya, meratakan formulir adalah keterampilan praktis yang harus dimiliki dalam perangkat Anda.
 
-### Pertanyaan yang Sering Diajukan
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa yang dimaksud dengan "meratakan formulir" di Aspose.PDF untuk .NET?
+### Apa itu perataan dalam PDF?
+Perataan dalam PDF mengacu pada proses mengubah bidang formulir interaktif menjadi konten statis, membuatnya tidak dapat diedit.
 
-A: Meratakan formulir di Aspose.PDF untuk .NET mengacu pada proses membuat kolom formulir dalam dokumen PDF tidak dapat diedit dan menggabungkan anotasi (seperti kolom formulir, anotasi, dan tanda tangan digital) dengan konten dokumen. Setelah formulir diratakan, pengguna tidak dapat mengubah kolom formulir, dan tampilan visual kolom formulir menjadi bagian dari konten statis dokumen PDF.
+### Bisakah saya meratakan formulir di PDF apa pun?
+Ya, selama PDF berisi kolom formulir, Anda dapat meratakannya menggunakan Aspose.PDF untuk .NET.
 
-#### T: Dapatkah saya membalikkan proses perataan dan membuat kolom formulir dapat diedit lagi?
+### Apakah Aspose.PDF gratis untuk digunakan?
+ Aspose.PDF menawarkan uji coba gratis, tetapi untuk fitur lengkap, Anda perlu membeli lisensi. Lihat[tautan pembelian](https://purchase.aspose.com/buy).
 
-J: Tidak, setelah kolom formulir diratakan, proses tersebut tidak dapat dibatalkan menggunakan Aspose.PDF untuk .NET. Perataan secara permanen menggabungkan tampilan kolom formulir dengan konten PDF, dan elemen kolom formulir individual tidak lagi dapat diakses atau diedit.
+### Di mana saya dapat menemukan dokumentasi lebih lanjut?
+ Anda dapat menemukan dokumentasi lengkap di Aspose.PDF untuk .NET[Di Sini](https://reference.aspose.com/pdf/net/).
 
-#### T: Kapan saya harus meratakan formulir dalam dokumen PDF?
-
-A: Meratakan formulir berguna saat Anda ingin mempertahankan tampilan visual bidang formulir dan anotasi dalam dokumen PDF sekaligus mencegah pengguna mengubah data. Hal ini biasanya dilakukan saat Anda ingin berbagi dokumen PDF dengan data formulir yang telah diisi sebelumnya atau anotasi yang tidak boleh diubah oleh penerima.
-
-#### T: Apakah perataan formulir akan memengaruhi anotasi lain, seperti tanda tangan digital?
-
-A: Ya, perataan formulir akan menggabungkan semua anotasi, termasuk tanda tangan digital, dengan konten PDF. Setelah formulir diratakan, tanda tangan digital yang ada akan menjadi bagian permanen dari dokumen, dan pengguna tidak dapat mengubah atau menghapusnya.
-
-#### T: Dapatkah saya meratakan bidang formulir tertentu secara selektif dan membiarkan bidang lainnya dapat diedit?
-
-A: Ya, Anda dapat meratakan kolom formulir tertentu secara selektif dalam dokumen PDF sambil membiarkan kolom lainnya tetap dapat diedit. Daripada menggunakan kode untuk meratakan semua kolom formulir, Anda dapat memilih untuk meratakan hanya kolom formulir yang diinginkan berdasarkan nama atau kriteria lainnya.
+### Bagaimana jika saya mengalami masalah?
+ Jika Anda mengalami masalah, jangan ragu untuk menghubungi dukungan di[Forum Aspose](https://forum.aspose.com/c/pdf/10).

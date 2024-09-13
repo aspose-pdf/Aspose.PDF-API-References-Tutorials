@@ -69,7 +69,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## Schritt 7: Extrahierte Textfragmente abrufen
 
-Holen Sie sich die extrahierten Textfragmente mit dem`TextFragments` Eigentum der`TextFragmentAbsorber` Objekt:
+ Holen Sie sich die extrahierten Textfragmente mit dem`TextFragments` Eigentum der`TextFragmentAbsorber` Objekt:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -103,7 +103,7 @@ Sie können den Code innerhalb der Schleife ändern, um für jedes Textfragment 
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Dokument öffnen
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionAll.pdf");
-// Erstellen Sie ein TextAbsorber-Objekt, um alle Phrasen zu finden, die dem regulären Ausdruck entsprechen
+//Erstellen Sie ein TextAbsorber-Objekt, um alle Phrasen zu finden, die dem regulären Ausdruck entsprechen
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Wie 1999-2000
 // Legen Sie die Textsuchoption fest, um die Verwendung regulärer Ausdrücke anzugeben
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);

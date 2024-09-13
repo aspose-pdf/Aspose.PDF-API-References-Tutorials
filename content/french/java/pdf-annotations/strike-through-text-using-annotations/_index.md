@@ -90,7 +90,7 @@ Aspose.PDF pour Java est compatible avec différentes versions de Java. Assurez-
 
 ### Existe-t-il d’autres types d’annotations que je peux ajouter à l’aide d’Aspose.PDF pour Java ?
 
-Oui, Aspose.PDF pour Java prend en charge différents types d'annotations, notamment le texte, le surlignage, le soulignement, etc. Vous pouvez consulter la documentation pour des exemples détaillés et des conseils d'utilisation.
+Oui, Aspose.PDF pour Java prend en charge différents types d'annotations, notamment le texte, le surlignage, le soulignement, etc. Vous pouvez consulter la documentation pour obtenir des exemples détaillés et des conseils d'utilisation.
 
 ### Où puis-je trouver plus de ressources et de documentation pour Aspose.PDF pour Java ?
 

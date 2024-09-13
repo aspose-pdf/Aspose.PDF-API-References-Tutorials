@@ -32,7 +32,7 @@ using Aspose.Pdf.Text;
  Dalam kode, temukan baris yang bertuliskan`string dataDir = "YOUR DOCUMENT DIRECTORY";` dan mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur ke direktori tempat dokumen Anda disimpan.
 
 ## Langkah 4: Buat dokumen contoh dengan teks
- Buat yang baru`Document` objek dan tambahkan halaman dengan fragmen teks. Dalam kode yang diberikan, dua fragmen teks ditambahkan ke dokumen dengan teks keterangan alat masing-masing.
+ Buat yang baru`Document`objek dan tambahkan halaman dengan fragmen teks. Dalam kode yang diberikan, dua fragmen teks ditambahkan ke dokumen dengan teks keterangan alat masing-masing.
 
 ```csharp
 Document doc = new Document();
@@ -98,7 +98,7 @@ doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to disp
 doc.Save(outputFile);
 // Buka dokumen dengan teks
 Document document = new Document(outputFile);
-// Buat objek TextAbsorber untuk menemukan semua frasa yang cocok dengan ekspresi reguler
+//Buat objek TextAbsorber untuk menemukan semua frasa yang cocok dengan ekspresi reguler
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
 // Terima penyerap untuk halaman dokumen
 document.Pages.Accept(absorber);
@@ -169,7 +169,7 @@ using Aspose.Pdf.Text;
 
 #### T: Bagaimana cara menambahkan keterangan alat pada fragmen teks?
 
- A: Pada Langkah 6, Anda akan mengulang fragmen teks yang diekstrak dan membuat tombol tak terlihat pada posisinya. Teks keterangan alat ditetapkan ke`AlternateName` milik`ButtonField`yang ditambahkan ke formulir dokumen.
+ A: Pada Langkah 6, Anda akan mengulang fragmen teks yang diekstrak dan membuat tombol tak terlihat pada posisinya. Teks keterangan alat ditetapkan ke`AlternateName` milik`ButtonField`, yang ditambahkan ke formulir dokumen.
 
 #### T: Bagaimana cara mengulang proses untuk fragmen teks tambahan dengan tooltip yang panjang?
 

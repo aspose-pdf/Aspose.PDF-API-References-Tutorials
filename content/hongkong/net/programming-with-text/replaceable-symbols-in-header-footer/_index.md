@@ -160,7 +160,7 @@ row3.Cells[2].Alignment = Aspose.Pdf.HorizontalAlignment.Right;
 row3.Cells[0].Paragraphs.Add(t3);
 row3.Cells[1].Paragraphs.Add(t4);
 row3.Cells[2].Paragraphs.Add(t5);
-//Sec1.Paragraphs.Add(New Text("Aspose.Total for Java 是Aspose 提供的每個Java 元件的編譯。它是在#$NL" + "每日基礎上編譯的，以確保它包含每個元件的最新版本#$NL " + "使用 Aspose.Total for Java 開發人員可以建立廣泛的應用程式 #$NL #$NL #$NP" + "Aspose.Total for Java 是每個 Java 元件的編譯。提供。 for Java 是Aspose 提供的每個Java 元件的編譯，它每天都會編譯，以確保它包含最多的內容。 。
+//Sec1.Paragraphs.Add(New Text("Aspose.Total for Java 是Aspose 提供的每個Java 元件的編譯。它是在#$NL" + "每日基礎上編譯的，以確保它包含每個元件的最新版本#$NL " + "使用 Aspose.Total for Java 開發人員可以建立廣泛的應用程式 #$NL #$NL #$NP" + "Aspose.Total for Java 是每個 Java 元件的編譯。 Aspose 提供的。 .Total for Java 是Aspose 提供的每個Java 元件的編譯，它每天都會編譯，以確保它包含最多的內容。應用程式.
 Table table = new Table();
 table.ColumnWidths = "33% 33% 34%";
 table.DefaultCellPadding = new MarginInfo();

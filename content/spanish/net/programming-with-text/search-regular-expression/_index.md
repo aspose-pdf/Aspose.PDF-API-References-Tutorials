@@ -69,7 +69,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## Paso 7: Recuperar fragmentos de texto extraídos
 
-Obtenga los fragmentos de texto extraídos utilizando el`TextFragments` propiedad de la`TextFragmentAbsorber` objeto:
+ Obtenga los fragmentos de texto extraídos utilizando el`TextFragments` propiedad de la`TextFragmentAbsorber` objeto:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -103,7 +103,7 @@ Puede modificar el código dentro del bucle para realizar más acciones en cada 
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Abrir documento
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionAll.pdf");
-// Cree un objeto TextAbsorber para encontrar todas las frases que coincidan con la expresión regular
+//Cree un objeto TextAbsorber para encontrar todas las frases que coincidan con la expresión regular
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Como 1999-2000
 // Establecer la opción de búsqueda de texto para especificar el uso de expresiones regulares
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);

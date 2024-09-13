@@ -117,7 +117,7 @@ table1.DefaultCellPadding = margin;
 // Çünkü bu sayfaya daha fazla yer verilemez
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
-	// Tabloda satırlar ve ardından satırlarda hücreler oluşturun
+	//Tabloda satırlar ve ardından satırlarda hücreler oluşturun
 	Aspose.Pdf.Row row1 = table1.Rows.Add();
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");

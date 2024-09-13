@@ -42,12 +42,12 @@ taggedContent.SetLanguage("fr-FR");
 
 Nous avons défini le titre et la langue du document PDF balisé.
 
-## Étape 4 : Obtention de l'élément de structure racinaire
+## Étape 4 : Obtention de l'élément de structure racine
 
 Obtenons maintenant l’élément de structure racine du document PDF.
 
 ```csharp
-//Obtenir l'élément de structure racinaire
+// Obtenir l'élément de structure racinaire
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
@@ -137,7 +137,7 @@ R : L'ajout d'éléments de structure de texte améliore la structure sémantiqu
 
 R : Le didacticiel fournit des exemples de code source C# qui illustrent comment définir le titre et la langue d’un document PDF balisé à l’aide d’Aspose.PDF pour .NET.
 
-#### Q : Comment puis-je créer un élément de structure de texte de paragraphe dans un document PDF à l'aide d'Aspose.PDF pour .NET ?
+#### Q : Comment puis-je créer un élément de structure de texte de paragraphe dans un document PDF à l’aide d’Aspose.PDF pour .NET ?
 
  R : Le didacticiel comprend des exemples de code source C# qui montrent comment créer un élément de structure de texte de paragraphe à l'aide de`CreateParagraphElement()`méthode et ajoutez-y du texte à l'aide de la`SetText()` méthode. Le paragraphe est ensuite ajouté à l'élément de structure racine du document PDF balisé.
 

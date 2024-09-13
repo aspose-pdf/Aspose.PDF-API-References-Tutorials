@@ -1,7 +1,7 @@
 ---
 title: Rotstruktur
 linktitle: Rotstruktur
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Steg-för-steg-guide för att använda rotstrukturelement med Aspose.PDF för .NET för att komma åt rot- och StructTreeRoot-objektet i PDF-dokumentet.
 type: docs
 weight: 130

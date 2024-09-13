@@ -65,7 +65,7 @@ for (Page page : pdfDocument.getPages()) {
 
 ## الأسئلة الشائعة
 
-### كيف أقوم بتثبيت Aspose.PDF لـJava؟
+### كيف أقوم بتثبيت Aspose.PDF لـ Java؟
 
  يمكنك تنزيل مكتبة Aspose.PDF لـ Java من[هنا](https://releases.aspose.com/pdf/java/)اتبع تعليمات التثبيت المقدمة على موقع الويب لإعداده في بيئة Java الخاصة بك.
 

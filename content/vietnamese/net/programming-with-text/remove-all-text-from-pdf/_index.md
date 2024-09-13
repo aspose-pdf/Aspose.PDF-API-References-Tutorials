@@ -96,7 +96,7 @@ A: Hướng dẫn sẽ hướng dẫn bạn từng bước trong quy trình này
 
 A: Hướng dẫn tập trung vào việc xóa toàn bộ văn bản khỏi toàn bộ tài liệu PDF. Nếu bạn muốn xóa có chọn lọc văn bản khỏi các khu vực cụ thể, bạn sẽ cần phải sửa đổi cách tiếp cận và sử dụng logic phức tạp hơn để xác định và xóa các đoạn văn bản cụ thể.
 
-####  Q: Làm thế nào để`TextFragmentAbsorber` work to remove text?
+#### Q: Làm thế nào để`TextFragmentAbsorber` work to remove text?
 
  A: Cái`TextFragmentAbsorber`là một lớp được cung cấp bởi thư viện Aspose.PDF có thể hấp thụ các đoạn văn bản từ một tài liệu PDF. Bằng cách sử dụng`RemoveAllText` phương pháp của`TextFragmentAbsorber` lớp, bạn có thể xóa tất cả các đoạn văn bản đã hấp thụ khỏi tài liệu.
 

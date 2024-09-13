@@ -60,7 +60,7 @@ PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
 bookmarkEditor.BindPdf(dataDir + "GetBookmarks.pdf");
 ```
 
- In questa linea, stiamo utilizzando il`BindPdf` metodo per aprire il file PDF denominato`GetBookmarks.pdf`Assicurati che questo file esista nella directory specificata; in caso contrario, verrà visualizzato un errore.
+ In questa linea, stiamo usando il`BindPdf` metodo per aprire il file PDF denominato`GetBookmarks.pdf`Assicurati che questo file esista nella directory specificata; in caso contrario, verrà visualizzato un errore.
 
 ## Passaggio 4: estrai i segnalibri
 

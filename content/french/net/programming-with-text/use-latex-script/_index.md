@@ -93,7 +93,7 @@ Row row = table.Rows.Add();
 string latexText1 = "$123456789+\\sqrt{1}+\\int_a^b f(x)dx$";
 Cell cell = row.Cells.Add();
 cell.Margin = new MarginInfo { Left = 20, Right = 20, Top = 20, Bottom = 20 };
-// Le deuxième paramètre booléen du constructeur LatexFragment permet l'élimination des retraits de paragraphe LaTeX.
+// Le deuxième paramètre booléen du constructeur LatexFragment permet d'éliminer les retraits de paragraphe LaTeX.
 LatexFragment ltext1 = new LatexFragment(latexText1, true);
 cell.Paragraphs.Add(ltext1);
 // Ajouter un tableau à l'intérieur de la page

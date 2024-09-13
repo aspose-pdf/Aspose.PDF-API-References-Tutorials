@@ -114,7 +114,7 @@ Este código salva o documento PDF com os elementos estruturados em um arquivo e
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
 string logFile = dataDir + "46144_log.xml";
-// Criação de documento e obtenção de conteúdo PDF marcado
+//Criação de documento e obtenção de conteúdo PDF marcado
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 // Definir título e idioma da natureza para o documento
@@ -209,7 +209,7 @@ R: Criar uma estrutura hierárquica em um documento PDF melhora sua acessibilida
 
 #### P: Como posso validar a conformidade com PDF/UA depois de adicionar elementos de estrutura?
 
- R: O código fornecido no tutorial demonstra como validar a conformidade com PDF/UA usando o`Validate` método. Ao validar o documento em relação ao padrão PDF/UA, você pode garantir que os elementos de estrutura adicionados estejam em conformidade com as diretrizes de acessibilidade.
+R: O código fornecido no tutorial demonstra como validar a conformidade com PDF/UA usando o`Validate` método. Ao validar o documento em relação ao padrão PDF/UA, você pode garantir que os elementos de estrutura adicionados estejam em conformidade com as diretrizes de acessibilidade.
 
 #### P: Posso usar essa abordagem para adicionar elementos de estrutura a um documento PDF existente?
 

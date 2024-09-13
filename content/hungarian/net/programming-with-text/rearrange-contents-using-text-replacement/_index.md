@@ -1,6 +1,6 @@
 ---
-title: A tartalom átrendezése szövegcsere használatával
-linktitle: A tartalom átrendezése szövegcsere használatával
+title: Tartalom átrendezése szövegcsere használatával
+linktitle: Tartalom átrendezése szövegcsere használatával
 second_title: Aspose.PDF for .NET API Reference
 description: Ismerje meg, hogyan rendezheti át a PDF-dokumentumok tartalmát az Aspose.PDF for .NET-hez történő szövegcserével.
 type: docs

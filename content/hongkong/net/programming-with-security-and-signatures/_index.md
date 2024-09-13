@@ -13,15 +13,15 @@ description: 使用安全性和簽名進行程式設計教學教您如何保護�
 ## 教學
 | 標題 | 描述 |
 | --- | --- | 
-| [更改 PDF 文件中的密碼](./change-password/) | 了解如何使用 Aspose.PDF for .NET 變更 PDF 檔案中的密碼。 |  
-| [解密PDF文件](./decrypt/) | 了解如何使用 Aspose.PDF for .NET 解密 PDF 檔案。 |  
-| [確定 PDF 檔案中的正確密碼](./determine-correct-password/) | 了解如何使用 Aspose.PDF for .NET 確定 PDF 檔案中的正確密碼。 |  
-| [數位登入 PDF 文件](./digitally-sign/) | 了解如何使用 Aspose.PDF for .NET 對 PDF 檔案進行數位簽章。 |  
-| [在 PDF 檔案中使用時間戳進行數位簽名](./digitally-sign-with-time-stamp/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中執行帶有時間戳記的數位簽章。 |  
-| [加密 PDF 文件](./encrypt/) | 使用 Aspose.PDF for .NET 安全地加密您的 PDF 檔案。 |  
-| [擷取影像](./extracting-image/) | 使用 Aspose.PDF for .NET 輕鬆從 PDF 文件中擷取影像。 |  
-| [提取簽名資訊](./extract-signature-info/) | 使用 Aspose.PDF for .NET 擷取簽章資訊。 |  
-| [受密碼保護](./is-password-protected/) | 使用 Aspose.PDF for .NET 輕鬆檢查 PDF 文件是否受密碼保護。 |  
-| [在 PDF 檔案中設定權限](./set-privileges/) | 使用 Aspose.PDF for .NET 輕鬆設定 PDF 檔案的存取權限。 |  
-| [使用 Pdf 檔案簽名透過智慧卡進行簽名](./sign-with-smart-card-using-pdf-file-signature/) | 使用 Aspose.PDF for .NET 透過智慧卡安全地簽署您的 PDF 檔案。 |  
-| [使用簽名字段透過智慧卡進行簽名](./sign-with-smart-card-using-signature-field/) | 使用 Aspose.PDF for .NET 透過智慧卡安全地簽署您的 PDF 檔案。 |  
+| [更改 PDF 文件中的密碼](./change-password/) | 學習使用 Aspose.PDF for .NET 輕鬆更改 PDF 密碼。我們的逐步指南將引導您安全地完成整個過程。 |  
+| [解密PDF文件](./decrypt/) | 了解如何使用 Aspose.PDF for .NET 安全性解密 PDF 檔案。取得逐步指導以增強您的文件管理技能。 |  
+| [確定 PDF 檔案中的正確密碼](./determine-correct-password/) | 使用 Aspose.PDF for .NET 使用正確的密碼解鎖 PDF 檔案。了解如何輕鬆識別正確的密碼。 |  
+| [數位登入 PDF 文件](./digitally-sign/) | 了解如何使用 Aspose.PDF for .NET 對 PDF 檔案進行數位簽章。逐步指南可確保您的文件安全且真實。 |  
+| [在 PDF 檔案中使用時間戳進行數位簽名](./digitally-sign-with-time-stamp/) | 了解如何使用 Aspose.PDF for .NET 對帶有時間戳記的 PDF 進行數位簽章。本逐步指南涵蓋先決條件、證書設定、時間戳記等。 |  
+| [加密 PDF 文件](./encrypt/) | 了解如何使用 Aspose.PDF for .NET 輕鬆加密 PDF 檔案。透過我們簡單的逐步指南保護敏感資訊。 |  
+| [擷取影像](./extracting-image/) | 輕鬆學習如何使用 Aspose.PDF for .NET 從 PDF 擷取影像。請按照我們的逐步指南進行無縫影像擷取。 |  
+| [提取簽名資訊](./extract-signature-info/) | 了解如何使用 Aspose.PDF for .NET 從 PDF 文件中提取數位簽章和憑證資訊。面向 C# 開發人員的完整逐步指南。 |  
+| [受密碼保護](./is-password-protected/) | 在此綜合逐步指南中了解如何使用 Aspose.PDF for .NET 檢查 PDF 是否受密碼保護。 |  
+| [在 PDF 檔案中設定權限](./set-privileges/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 設定 PDF 權限。有效保護您的文件。 |  
+| [使用 Pdf 檔案簽名透過智慧卡進行簽名](./sign-with-smart-card-using-pdf-file-signature/) | 了解如何使用智慧卡和 Aspose.PDF for .NET 對 PDF 檔案進行簽署。請遵循此安全數位簽章逐步指南。 |  
+| [使用簽名字段透過智慧卡進行簽名](./sign-with-smart-card-using-signature-field/) | 了解如何使用智慧卡和 Aspose.PDF for .NET 對 PDF 進行安全簽署。請遵循我們的逐步指南以輕鬆實施。 |  

@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Krok 5: Dodaj stronę do dokumentu
- Dodaj nową stronę do dokumentu za pomocą`Add` metoda`Pages`kolekcja. W podanym kodzie nowa strona jest przypisana do zmiennej`page`.
+ Dodaj nową stronę do dokumentu za pomocą`Add` metoda`Pages` kolekcja. W podanym kodzie nowa strona jest przypisana do zmiennej`page`.
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
@@ -109,7 +109,7 @@ Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 4
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
 // Dodaj prostokąt do kolekcji kształtów obiektu Graph
 canvas.Shapes.Add(rect);
-//Dodaj obiekt graficzny do zbioru akapitów obiektu strony
+// Dodaj obiekt graficzny do zbioru akapitów obiektu strony
 page.Paragraphs.Add(canvas);
 // Ustaw wartość, aby nie zmieniać pozycji obiektu wykresu
 canvas.IsChangePosition = false;
@@ -163,7 +163,7 @@ using Aspose.Pdf.Drawing;
 
 #### P: Jak utworzyć prostokąt z przezroczystością?
 
-A: W kroku 7 utworzysz prostokąt o określonych wymiarach i ustawisz kolor jego wypełnienia na kolor przezroczysty, używając`Color.FromRgb` metoda.
+ A: W kroku 7 utworzysz prostokąt o określonych wymiarach i ustawisz kolor jego wypełnienia na kolor przezroczysty, używając`Color.FromRgb` metoda.
 
 #### P: Jak dodać obiekt Graph do strony?
 
@@ -175,7 +175,7 @@ A: W kroku 7 utworzysz prostokąt o określonych wymiarach i ustawisz kolor jego
 
 #### P: Jak utworzyć fragment tekstu z przezroczystością?
 
- A: W kroku 10 utworzysz`TextFragment` obiekt i ustaw jego zawartość i`ForegroundColor` właściwość umożliwiająca uzyskanie przejrzystego tekstu.
+A: W kroku 10 utworzysz`TextFragment` obiekt i ustaw jego zawartość i`ForegroundColor` właściwość umożliwiająca uzyskanie przejrzystego tekstu.
 
 #### P: Jak zapisać dokument PDF?
 

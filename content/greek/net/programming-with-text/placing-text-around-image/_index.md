@@ -145,7 +145,7 @@ row1.Cells.Add();
 row1.Cells[1].Paragraphs.Add(TitleText);
 // Ορίστε την κατακόρυφη στοίχιση των περιεχομένων της σειράς ως επάνω
 row1.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-// Δημιουργήστε σειρές στον πίνακα και μετά κελιά στις σειρές
+//Δημιουργήστε σειρές στον πίνακα και μετά κελιά στις σειρές
 Aspose.Pdf.Row SecondRow = table1.Rows.Add();
 SecondRow.Cells.Add();
 // Ορίστε την τιμή του εύρους γραμμής για τη Δεύτερη σειρά ως 2

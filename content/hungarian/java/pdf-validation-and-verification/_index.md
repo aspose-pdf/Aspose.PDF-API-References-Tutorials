@@ -20,7 +20,7 @@ Oktatóanyagaink második részében a PDF dokumentumokon belüli digitális al�
 
 ## A dokumentumok integritása és megfelelősége
 
-Oktatóanyagaink utolsó része a dokumentumok integritásával és megfelelőségével foglalkozik. Elvezetjük Önt a PDF-fájlok szerkezeti és tartalmi integritásának megőrzéséhez szükséges technikákon. Azt is megtudhatja, hogyan adhat hozzá érvényesítési információkat, időbélyegeket és biztonsági intézkedéseket a dokumentumok biztonságának fokozása érdekében. Ezeknek az oktatóanyagoknak a végére jól felkészült lesz arra, hogy magabiztosan érvényesítse és ellenőrizhesse a PDF-fájlokat, biztosítva azok megbízhatóságát és a szabványoknak való megfelelést. Csatlakozzon hozzánk ezen az úton, és váljon PDF-ellenőrzési és -ellenőrzési szakértővé az Aspose.PDF for Java használatával.
+Oktatóanyagaink utolsó része a dokumentumok integritásával és megfelelőségével foglalkozik. Elvezetjük Önt a PDF-fájlok szerkezeti és tartalmi integritásának megőrzéséhez szükséges technikákon. Azt is megtudhatja, hogyan adhat hozzá érvényesítési információkat, időbélyegeket és biztonsági intézkedéseket a dokumentumok biztonságának fokozása érdekében. Ezeknek az oktatóanyagoknak a végére jól felkészült lesz arra, hogy magabiztosan érvényesítse és ellenőrizhesse a PDF-fájlokat, biztosítva azok megbízhatóságát és a szabványok betartását. Csatlakozzon hozzánk ezen az úton, és váljon PDF-ellenőrzési és -ellenőrzési szakértővé az Aspose.PDF for Java használatával.
 
 ## PDF érvényesítési és ellenőrzési oktatóanyagok
 ### [A PDF érvényesítése Java nyelven](./validate-pdf-in-java/)

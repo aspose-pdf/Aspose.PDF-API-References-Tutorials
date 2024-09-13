@@ -95,6 +95,6 @@ Ano, Aspose.PDF for Java je kompatibilní s různými verzemi Java. Nezapomeňte
 
  Můžete použít`GoToAction`třídy v Aspose.PDF pro Java k vytvoření odkazů na konkrétní stránky v dokumentu PDF. Podrobné příklady naleznete v dokumentaci.
 
-### Mohu si vzhled odkazu dále přizpůsobit?
+### Mohu dále upravit vzhled odkazu?
 
 Absolutně! Aspose.PDF pro Java poskytuje rozsáhlé možnosti pro přizpůsobení vzhledu odkazů, včetně barvy, stylu a dalších. Pokročilé techniky přizpůsobení naleznete v dokumentaci.

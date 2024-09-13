@@ -48,7 +48,7 @@ TextFragmentAbsorber absorb = new TextFragmentAbsorber();
 absorb.Visit(doc.Pages[1]);
 foreach(TextFragment fragment in absorber.TextFragments)
 {
-//Faire quelque chose avec les fragments
+// Faire quelque chose avec les fragments
 Console.WriteLine("Text '{0}' at position {1}, invisibility: {2} ",
 fragment.Text, fragment.Position.ToString(), fragment.TextState.Invisible);
 }
@@ -101,7 +101,7 @@ R : Absolument ! Le texte masqué peut servir de moyen efficace pour filigraner 
 
 #### Q : Est-il possible de révéler du texte caché dans un document PDF ?
 
-: Oui, le processus de recherche et de révélation de texte caché dans un document PDF peut être réalisé à l’aide des techniques décrites dans ce didacticiel.
+R : Oui, le processus de recherche et de révélation de texte caché dans un document PDF peut être réalisé à l’aide des techniques décrites dans ce didacticiel.
 
 #### Q : Quelles autres fonctionnalités offre Aspose.PDF pour .NET ?
 

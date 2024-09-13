@@ -119,7 +119,7 @@ A: Ví dụ mã trình bày cách tạo tài liệu PDF, xác định các thàn
 
 A: Có, bạn có thể thêm các thành phần văn bản được gắn thẻ khác như danh sách, liên kết hoặc các cấu trúc tùy chỉnh khác bằng các kỹ thuật tương tự. Aspose.PDF cung cấp nhiều phương pháp khác nhau để tạo các loại nội dung được gắn thẻ khác nhau, cho phép bạn nâng cao ngữ nghĩa của tài liệu.
 
-####  Q: Làm thế nào để`SetTitle` method contribute to the PDF document's tagged text?
+#### Q: Làm thế nào để`SetTitle` method contribute to the PDF document's tagged text?
 
  A: Cái`SetTitle` phương pháp này đặt tiêu đề cho nội dung được gắn thẻ của tài liệu PDF, cung cấp mô tả ngắn gọn về mục đích hoặc chủ đề của tài liệu. Thông tin này giúp người dùng hiểu ngữ cảnh của văn bản được gắn thẻ.
 
@@ -127,9 +127,9 @@ A: Có, bạn có thể thêm các thành phần văn bản được gắn thẻ
 
 A: Văn bản được gắn thẻ thêm ý nghĩa ngữ nghĩa vào tài liệu, giúp người dùng khuyết tật hoặc những người sử dụng công nghệ hỗ trợ dễ tiếp cận hơn. Trình đọc màn hình và các thiết bị hỗ trợ khác có thể diễn giải và hiển thị văn bản được gắn thẻ để cải thiện trải nghiệm của người dùng.
 
-####  Q: Làm thế nào để`SetLanguage` method enhance the tagged text in a PDF document?
+#### Q: Làm thế nào để`SetLanguage` method enhance the tagged text in a PDF document?
 
- A: Cái`SetLanguage`phương pháp này thiết lập thuộc tính ngôn ngữ của nội dung được gắn thẻ trong tài liệu PDF. Điều này giúp chỉ ra ngôn ngữ mà văn bản được gắn thẻ được viết, cải thiện khả năng truy cập và cho phép hiển thị ngôn ngữ cụ thể phù hợp.
+ A: Cái`SetLanguage` phương pháp này thiết lập thuộc tính ngôn ngữ của nội dung được gắn thẻ trong tài liệu PDF. Điều này giúp chỉ ra ngôn ngữ mà văn bản được gắn thẻ được viết, cải thiện khả năng truy cập và cho phép hiển thị ngôn ngữ cụ thể phù hợp.
 
 #### H: Có thể thêm các thành phần khác, chẳng hạn như hình ảnh hoặc đa phương tiện, cùng với văn bản được gắn thẻ bằng các kỹ thuật tương tự không?
 

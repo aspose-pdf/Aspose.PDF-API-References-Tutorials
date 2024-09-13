@@ -20,7 +20,7 @@ Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
 2. Dodaj odwołanie do biblioteki Aspose.PDF dla platformy .NET.
 
 ## Krok 2: Importuj wymagane przestrzenie nazw
-pliku kodu, z którego chcesz wyodrębnić tekst kolumn, dodaj na początku pliku następujące dyrektywy using:
+W pliku kodu, z którego chcesz wyodrębnić tekst kolumn, dodaj na początku pliku następujące dyrektywy using:
 
 ```csharp
 using Aspose.Pdf;
@@ -32,7 +32,7 @@ using System.IO;
  W kodzie znajdź linię, która mówi`string dataDir = "YOUR DOCUMENT DIRECTORY";` i zastąpić`"YOUR DOCUMENT DIRECTORY"` ze ścieżką do katalogu, w którym przechowywane są Twoje dokumenty.
 
 ## Krok 4: Otwórz dokument PDF
- Otwórz istniejący dokument PDF za pomocą`Document` konstruktora i przekazując ścieżkę do pliku wejściowego PDF.
+ Otwórz istniejący dokument PDF za pomocą`Document`konstruktora i przekazując ścieżkę do pliku wejściowego PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");

@@ -105,7 +105,7 @@ Igen, a könyvtárában több fájlt is átböngészhet, és egyenként konvert�
 Az Aspose.PDF ingyenes próbaverziót kínál, de a teljes funkciók használatához licencet kell vásárolnia.
 
 ### Hol találok további dokumentációt?
- Részletes dokumentációt találhat a[Aspose honlapja](https://reference.aspose.com/pdf/net/).
+ A részletes dokumentációt megtalálja a[Aspose honlapja](https://reference.aspose.com/pdf/net/).
 
 ### Mi a teendő, ha hibát észlelek az átalakítás során?
 A részletekért tekintse meg a kivételüzenetet, és segítségért keresse fel az Aspose támogatási fórumát.

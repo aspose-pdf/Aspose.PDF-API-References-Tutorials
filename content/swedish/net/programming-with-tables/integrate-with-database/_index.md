@@ -1,7 +1,7 @@
 ---
 title: Integrera med databas i PDF-fil
 linktitle: Integrera med databas i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Bädda in data från en databas i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 120
@@ -80,7 +80,7 @@ DataTable dt = new DataTable("Employee");
 dt.Columns.Add("Employee_ID", typeof(Int32));
 dt.Columns.Add("Employee_Name", typeof(string));
 dt.Columns.Add("Gender", typeof(string));
-// Lägg till 2 rader i DataTable-objektet programmatiskt
+//Lägg till 2 rader i DataTable-objektet programmatiskt
 DataRow dr = dt.NewRow();
 dr[0] = 1;
 dr[1] = "John Smith";
@@ -114,7 +114,7 @@ Console.WriteLine("\nDatabase integrated successfully.\nFile saved at " + dataDi
 ```
 
 ## Slutsats
-den här handledningen lärde vi oss hur man bäddar in data från en databas i ett PDF-dokument med Aspose.PDF för .NET. Du kan använda den här steg-för-steg-guiden för att importera data från din egen databas och visa dem i PDF-dokument. Utforska Aspose.PDF-dokumentationen ytterligare för att upptäcka andra funktioner och möjligheter som detta kraftfulla bibliotek erbjuder.
+I den här handledningen lärde vi oss hur man bäddar in data från en databas i ett PDF-dokument med Aspose.PDF för .NET. Du kan använda den här steg-för-steg-guiden för att importera data från din egen databas och visa dem i PDF-dokument. Utforska Aspose.PDF-dokumentationen ytterligare för att upptäcka andra funktioner och möjligheter som detta kraftfulla bibliotek erbjuder.
 
 ### Vanliga frågor för att integrera med databasen i PDF-fil
 
@@ -132,7 +132,7 @@ S: Ja, du kan lägga till hyperlänkar eller andra interaktiva element till data
 
 #### F: Kan jag paginera tabellen om den överskrider ett visst antal rader?
 
- S: Ja, du kan paginera tabellen om den överskrider ett visst antal rader. För att uppnå detta kan du använda`IsInNewPage`egenskapen för Row-objektet för att indikera att en ny sida ska starta efter en specifik rad. Du kan beräkna antalet rader som ska visas per sida och ställa in`IsInNewPage` egendom i enlighet därmed.
+S: Ja, du kan paginera tabellen om den överskrider ett visst antal rader. För att uppnå detta kan du använda`IsInNewPage` egenskapen för Row-objektet för att indikera att en ny sida ska starta efter en specifik rad. Du kan beräkna antalet rader som ska visas per sida och ställa in`IsInNewPage` egendom i enlighet därmed.
 
 #### F: Hur kan jag exportera PDF-dokumentet med inbäddad databasdata till olika filformat som DOCX eller XLSX?
 

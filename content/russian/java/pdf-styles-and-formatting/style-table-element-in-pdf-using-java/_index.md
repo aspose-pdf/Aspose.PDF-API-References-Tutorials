@@ -62,7 +62,7 @@ table.setDefaultCellTextState(new TextState());
 Давайте добавим некоторые данные в таблицу. Вы можете заполнить ячейки желаемым содержимым.
 
 ```java
-// Java-код для добавления данных в таблицу
+// Код Java для добавления данных в таблицу
 Row row = table.getRows().add();
 row.getCells().add("Name");
 row.getCells().add("Age");
@@ -110,7 +110,7 @@ table.setTop(header);
 Наконец, сохраните PDF-документ в желаемом месте.
 
 ```java
-// Java-код для сохранения PDF-документа
+// Код Java для сохранения документа PDF
 pdfDocument.save("styled_table_example.pdf");
 ```
 

@@ -31,7 +31,7 @@ using System.IO;
  في الكود، حدد السطر الذي يقول`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدالها`"YOUR DOCUMENT DIRECTORY"` مع المسار إلى الدليل الذي يتم تخزين مستنداتك فيه.
 
 ## الخطوة 4: افتح مستند PDF
- افتح مستند PDF موجودًا باستخدام`Document` المنشئ وتمرير المسار إلى ملف PDF المدخل.
+ افتح مستند PDF موجودًا باستخدام`Document`المنشئ وتمرير المسار إلى ملف PDF المدخل.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");

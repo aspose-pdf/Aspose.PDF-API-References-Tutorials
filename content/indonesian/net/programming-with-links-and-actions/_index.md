@@ -11,16 +11,16 @@ Halaman tutorial "Pemrograman dengan Tautan dan Tindakan" di Aspose.PDF untuk .N
 ## Tutorial
 | Judul | Keterangan |
 | --- | --- | 
-| [Tambahkan Hyperlink Dalam File PDF](./add-hyperlink/) | tambahkan hyperlink interaktif dengan mudah dalam file PDF dengan Aspose.PDF untuk .NET. |  
-| [Buat Tautan Aplikasi Dalam File PDF](./create-application-link/) | Buat tautan aplikasi dengan mudah dalam berkas PDF dengan Aspose.PDF untuk .NET. |  
-| [Buat Tautan Dokumen](./create-document-link/) | Buat tautan ke dokumen PDF lain dengan mudah dengan Aspose.PDF untuk .NET. |  
-| [Buat Hyperlink Lokal Dalam File PDF](./create-local-hyperlink/) | Buat hyperlink lokal dengan mudah dalam berkas PDF menggunakan Aspose.PDF untuk .NET. |  
-| [Ekstrak Tautan Dalam File PDF](./extract-links/) | Ekstrak tautan dalam berkas PDF dengan mudah menggunakan Aspose.PDF untuk .NET. |  
-| [Dapatkan Tujuan Hyperlink Dalam File PDF](./get-hyperlink-destinations/) | Pelajari cara mengekstrak tujuan hyperlink dalam berkas PDF menggunakan Aspose.PDF untuk .NET. |  
-| [Dapatkan Teks Hyperlink Dalam File PDF](./get-hyperlink-text/) | Pelajari cara mengekstrak teks hyperlink dalam berkas PDF menggunakan Aspose.PDF untuk .NET. |  
-| [Hapus Tindakan Terbuka](./remove-open-action/) | Pelajari cara menghapus tindakan terbuka dari PDF menggunakan Aspose.PDF untuk .NET. |  
-| [Tetapkan Tautan Tujuan Dalam File PDF](./set-destination-link/) | Pelajari cara menetapkan tautan tujuan dalam berkas PDF menggunakan Aspose.PDF untuk .NET. |  
-| [Tetapkan Tautan Target Dalam File PDF](./set-target-link/) | Pelajari cara menetapkan tautan target dalam berkas PDF menggunakan Aspose.PDF untuk .NET. |  
-| [Tentukan Halaman Saat Melihat](./specify-page-when-viewing/) | Pelajari cara menentukan halaman saat melihat PDF menggunakan Aspose.PDF untuk .NET. |  
-| [Perbarui Tautan Dalam File PDF](./update-links/) | Pelajari cara memperbarui tautan dalam berkas PDF dengan Aspose.PDF untuk .NET. |  
-| [Perbarui Warna Teks Tautan Dalam File PDF](./update-link-text-color/) | Pelajari cara memperbarui warna teks tautan dalam berkas PDF dengan Aspose.PDF untuk .NET. |  
+| [Tambahkan Hyperlink Dalam File PDF](./add-hyperlink/) | Pelajari cara mudah menambahkan hyperlink ke PDF Anda menggunakan Aspose.PDF for .NET. Tingkatkan interaktivitas dan keterlibatan pengguna dalam dokumen Anda. |  
+| [Buat Tautan Aplikasi Dalam File PDF](./create-application-link/) | Pelajari cara membuat tautan aplikasi dalam file PDF menggunakan Aspose.PDF for .NET. Panduan langkah demi langkah untuk meningkatkan interaktivitas dalam PDF Anda. |  
+| [Buat Tautan Dokumen](./create-document-link/) | Temukan cara membuat tautan dokumen dalam PDF menggunakan Aspose.PDF untuk .NET. Tingkatkan navigasi dan interaktivitas dalam dokumen PDF Anda. |  
+| [Buat Hyperlink Lokal Dalam File PDF](./create-local-hyperlink/) | Pelajari cara membuat hyperlink lokal dalam berkas PDF menggunakan Aspose.PDF for .NET dengan mudah dengan panduan langkah demi langkah kami. |  
+| [Ekstrak Tautan Dalam File PDF](./extract-links/) | Pelajari cara mudah mengekstrak tautan dari file PDF menggunakan Aspose.PDF untuk .NET dalam tutorial langkah demi langkah ini. |  
+| [Dapatkan Tujuan Hyperlink Dalam File PDF](./get-hyperlink-destinations/) | Pelajari cara mengekstrak tujuan hyperlink dari file PDF dengan mudah menggunakan Aspose.PDF untuk .NET. Ikuti tutorial langkah demi langkah yang mudah ini. |  
+| [Dapatkan Teks Hyperlink Dalam File PDF](./get-hyperlink-text/) | Pelajari cara mengekstrak teks hyperlink dari file PDF dengan mudah menggunakan Aspose.PDF for .NET. Panduan langkah demi langkah dan kode disertakan. |  
+| [Hapus Tindakan Terbuka](./remove-open-action/) | Hapus tindakan terbuka dari PDF dengan mudah menggunakan Aspose.PDF untuk .NET! Tutorial sederhana dengan panduan langkah demi langkah untuk manajemen PDF yang efektif. |  
+| [Tetapkan Tautan Tujuan Dalam File PDF](./set-destination-link/) | Pelajari cara mengatur tautan tujuan dalam file PDF dengan Aspose.PDF untuk .NET. Panduan langkah demi langkah untuk meningkatkan interaktivitas PDF Anda. |  
+| [Tetapkan Tautan Target Dalam File PDF](./set-target-link/) | Pelajari cara mengatur tautan target secara efisien dalam file PDF menggunakan Aspose.PDF for .NET dengan panduan langkah demi langkah kami. Sempurna untuk meningkatkan navigasi dokumen. |  
+| [Tentukan Halaman Saat Melihat](./specify-page-when-viewing/) | Pelajari cara menentukan halaman yang akan dilihat dalam PDF menggunakan Aspose.PDF untuk .NET. Tingkatkan navigasi pengguna dengan panduan sederhana ini. |  
+| [Perbarui Tautan Dalam File PDF](./update-links/) | Pelajari cara memperbarui warna teks tautan dalam file PDF menggunakan Aspose.PDF untuk .NET. Panduan langkah demi langkah ini memandu Anda melalui setiap detail dengan contoh yang mudah diikuti. |  
+| [Perbarui Warna Teks Tautan Dalam File PDF](./update-link-text-color/) | Perbarui tautan dalam berkas PDF Anda dengan mudah menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah yang komprehensif ini. Sederhanakan pengeditan PDF Anda. |  

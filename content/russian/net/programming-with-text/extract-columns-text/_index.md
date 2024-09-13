@@ -32,7 +32,7 @@ using System.IO;
  В коде найдите строку, которая гласит:`string dataDir = "YOUR DOCUMENT DIRECTORY";` и заменить`"YOUR DOCUMENT DIRECTORY"` с путем к каталогу, где хранятся ваши документы.
 
 ## Шаг 4: Откройте PDF-документ.
- Откройте существующий PDF-документ с помощью`Document` конструктор и передача пути к входному PDF-файлу.
+ Откройте существующий PDF-документ с помощью`Document`конструктор и передача пути к входному PDF-файлу.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");

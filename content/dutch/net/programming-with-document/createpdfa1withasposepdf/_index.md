@@ -70,7 +70,7 @@ pdf1.Pages.Add().Paragraphs.Add(new TextFragment("Hello World!"));
 
 ## Stap 4: Sla de PDF op in het geheugen
 
- Zodra de inhoud is toegevoegd, moeten we de PDF opslaan. Hier slaan we het op in een`MemoryStream`, waarmee we de PDF indien nodig verder kunnen bewerken.
+ Zodra de inhoud is toegevoegd, moeten we de PDF opslaan. Hier slaan we het op in een`MemoryStream`, waardoor we de PDF indien nodig verder kunnen bewerken.
 
 ```csharp
 MemoryStream ms = new MemoryStream();

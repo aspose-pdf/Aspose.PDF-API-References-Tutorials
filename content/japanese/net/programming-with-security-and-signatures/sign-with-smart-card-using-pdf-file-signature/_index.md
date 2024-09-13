@@ -2,154 +2,167 @@
 title: PDF ファイル署名を使用してスマート カードで署名する
 linktitle: PDF ファイル署名を使用してスマート カードで署名する
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して、スマート カードで PDF ファイルに安全に署名します。
+description: Aspose.PDF for .NET でスマート カードを使用して PDF ファイルに署名する方法を学びます。安全なデジタル署名については、このステップ バイ ステップ ガイドに従ってください。
 type: docs
 weight: 110
 url: /ja/net/programming-with-security-and-signatures/sign-with-smart-card-using-pdf-file-signature/
 ---
-スマート カードを使用したデジタル署名は、PDF ファイルに署名するための安全な方法です。Aspose.PDF for .NET を使用すると、次のソース コードに従って、スマート カードを使用して PDF ファイルに簡単に署名できます。
+## 導入
 
-## ステップ1: 必要なライブラリをインポートする
+デジタル時代では、文書のセキュリティ保護がこれまで以上に重要になっています。契約書、合意書、機密情報など、文書が本物であり、改ざんされていないことを確認することが最も重要です。そこでデジタル署名の出番です。今日は、Aspose.PDF for .NET でスマート カードを使用して PDF ファイルに署名する方法について詳しく説明します。この強力なライブラリにより、開発者は PDF 文書を効率的に操作および作成でき、安全なデジタル署名を追加することもできます。スマート カードを用意して、始めましょう。
 
-始める前に、C# プロジェクトに必要なライブラリをインポートする必要があります。必要なインポート ディレクティブは次のとおりです。
+## 前提条件
+
+PDF ファイルに署名する手順に入る前に、必要なものがすべて揃っていることを確認しましょう。準備に役立つチェックリストを以下に示します。
+
+1.  Aspose.PDF for .NET: Aspose.PDFライブラリがインストールされていることを確認してください。[サイト](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: .NET コードを記述して実行できる開発環境。
+3. スマート カード: 有効なデジタル証明書がインストールされたスマート カードが必要です。
+4. C# の基本的な理解: この言語でコード スニペットを記述するため、C# プログラミングの知識があると役立ちます。
+5. PDFドキュメント: サンプルPDFファイル（`blank.pdf`) を使用して署名プロセスをテストします。
+
+これらの前提条件が整ったら、コードに取り組む準備が整いました。
+
+## パッケージのインポート
+
+まず最初に、必要なパッケージをインポートしましょう。プロジェクトに Aspose.PDF ライブラリへの参照を追加する必要があります。方法は次のとおりです。
+
+1. Visual Studio を開きます。
+2. 新しいプロジェクトを作成するか、既存のプロジェクトを開きます。
+3. ソリューションエクスプローラーでプロジェクトを右クリックし、`Manage NuGet Packages`.
+4. 検索する`Aspose.PDF`最新バージョンをインストールしてください。
 
 ```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Facades;
-using Aspose.Pdf.Forms;
-using System.Security.Cryptography.X509Certificates;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## ステップ2: ドキュメントフォルダへのパスを設定する
+必要なパッケージをインポートしたので、コードを段階的に分解してみましょう。
 
-この手順では、署名するPDFファイルを含むフォルダへのパスを指定する必要があります。`"YOUR DOCUMENTS DIRECTORY"`次のコードでは、ドキュメント フォルダーへの実際のパスを指定します。
+## ステップ1: ドキュメントを設定する
+
+プロセスの最初のステップは、署名する PDF ドキュメントを設定することです。手順は次のとおりです。
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-```
-
-## ステップ3: PDF文書を読み込む
-
-ここで、次のコードを使用して署名する PDF ドキュメントを読み込みます。
-
-```csharp
 Document doc = new Document(dataDir + "blank.pdf");
 ```
+このスニペットでは、ドキュメントディレクトリへのパスを定義し、`Document`サンプルPDFファイルを使用したクラス`blank.pdf`必ず交換してください`"YOUR DOCUMENTS DIRECTORY"` PDF が配置されている実際のパスを入力します。
 
-## ステップ4: スマートカードで署名を実行する
+## ステップ2: PdfFileSignatureを初期化する
 
-このステップでは、スマートカードを使用して署名を実行します。`PdfFileSignature`クラスから`Facades`ライブラリ。Windows 証明書ストアからスマート カード証明書を選択し、必要な署名情報を指定します。対応するコードは次のとおりです。
-
-```csharp
-using (PdfFileSignature pdfSign = new PdfFileSignature())
-{
-     pdfSign.BindPdf(doc);
-
-     //ストアで証明書を選択する
-     X509Store store = new X509Store(StoreLocation.CurrentUser);
-     store.Open(OpenFlags.ReadOnly);
-     X509Certificate2Collection sel = X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, X509SelectionFlag.SingleSelection);
-     ExternalSignature externalSignature = new ExternalSignature(sel[0]);
-
-     pdfSign.SignatureAppearance = dataDir + "demo.png";
-     pdfSign.Sign(1, "Reason", "Contact", "Location", true, new System.Drawing.Rectangle(100, 100, 200, 200), externalSignature);
-     pdfSign.Save(dataDir + "externalSignature2.pdf");
-}
-```
-
-## ステップ5: 署名を確認する
-
-最後に、署名されたPDFファイルの署名を検証します。`PdfFileSignature`クラス。署名名を取得して、1 つずつチェックします。署名の検証に失敗した場合は、例外がスローされます。対応するコードは次のとおりです。
+次に、`PdfFileSignature`署名プロセスの処理を担当するクラスです。
 
 ```csharp
-using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "externalSignature2.pdf")))
-{
-     IList<string> sigNames = pdfSign. GetSignNames();
-     for (int index = 0; index <= sigNames.Count - 1; index++)
-     {
-         if (!pdfSign.VerifySigned(sigNames[index]) || !pdfSign.VerifySignature(sigNames[index]))
-         {
-             throw new ApplicationException("Unverified");
-         }
-     }
-}
-```
-
-### Aspose.PDF for .NET を使用した PDF ファイル署名によるスマート カード署名のサンプル ソース コード 
-```csharp
-//ドキュメント ディレクトリへのパス。
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-Document doc = new Document(dataDir + "blank.pdf");
 using (Facades.PdfFileSignature pdfSign = new Facades.PdfFileSignature())
 {
-	pdfSign.BindPdf(doc);
-	//Windows 証明書ストアで証明書を選択して署名する
-	System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
-	store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
-	//ストアで証明書を手動で選択
-	System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel = System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
-	Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0]);
-	pdfSign.SignatureAppearance = dataDir + "demo.png";
-	pdfSign.Sign(1, "Reason", "Contact", "Location", true, new System.Drawing.Rectangle(100, 100, 200, 200), externalSignature);
-	pdfSign.Save(dataDir + "externalSignature2.pdf");
-}
+    pdfSign.BindPdf(doc);
+```
+ここでは、`PdfFileSignature`これを PDF ドキュメントにバインドします。これで、ドキュメントに署名する準備が整います。
+
+## ステップ3: スマートカード証明書にアクセスする
+
+ここで重要な部分、つまりスマート カードに保存されているデジタル証明書にアクセスする部分が登場します。その方法は次のとおりです。
+
+### 証明書ストアを開く
+
+```csharp
+System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
+store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
+```
+現在のユーザーのプロファイルにある証明書ストアを開きます。これにより、スマート カード上の証明書を含む、マシンにインストールされている証明書にアクセスできるようになります。
+
+### 証明書を選択
+
+```csharp
+System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel =
+    System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(
+        store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
+```
+このコードは、ユーザーにコレクションから証明書を選択するよう求めます。ユーザー インターフェイスには利用可能なすべての証明書が表示され、スマート カードに関連付けられている証明書を選択できます。
+
+## ステップ4: 外部署名を作成する
+
+証明書を選択したら、次のステップは、選択した証明書を使用して外部署名を作成することです。
+
+```csharp
+Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0]);
+```
+ここでは、`ExternalSignature`選択した証明書を使用します。このオブジェクトは PDF ドキュメントに署名するために使用されます。
+
+## ステップ5: 署名の外観を設定する
+
+次に、署名の外観を設定しましょう。ここで、文書上での署名の外観をカスタマイズできます。
+
+```csharp
+pdfSign.SignatureAppearance = dataDir + "demo.png";
+```
+このスニペットでは、画像ファイル（ロゴや署名グラフィックなど）へのパスを指定して署名の外観を指定します。`"demo.png"`実際に使用する画像を使用します。
+
+## ステップ6: PDFに署名する
+
+すべての設定が完了したら、PDF ドキュメントに署名します。
+
+```csharp
+pdfSign.Sign(1, "Reason", "Contact", "Location", true, new System.Drawing.Rectangle(100, 100, 200, 200), externalSignature);
+pdfSign.Save(dataDir + "externalSignature2.pdf");
+```
+このステップでは、`Sign`私たちの方法`pdfSign`オブジェクト。各パラメータの意味は次のとおりです。
+- `1`: 署名が表示されるページ番号。
+- `"Reason"`: 文書に署名する理由。
+- `"Contact"`: 署名者の連絡先情報。
+- `"Location"`: 署名者の所在地。
+- `true`: 可視署名を作成するかどうかを示します。
+- `new System.Drawing.Rectangle(100, 100, 200, 200)`: PDF 上の署名の位置とサイズ。
+- `externalSignature`: 先ほど作成した署名オブジェクト。
+
+最後に、署名された文書を次のように保存します。`externalSignature2.pdf`.
+
+## ステップ7: 署名を確認する
+
+文書に署名した後は、署名が有効であることを確認することが重要です。その方法は次のとおりです。
+
+### 検証プロセスの初期化
+
+```csharp
 using (Facades.PdfFileSignature pdfSign = new Facades.PdfFileSignature(new Document(dataDir + "externalSignature2.pdf")))
 {
-	IList<string> sigNames = pdfSign.GetSignNames();
-	for (int index = 0; index <= sigNames.Count - 1; index++)
-	{
-		if (!pdfSign.VerifySigned(sigNames[index]) || !pdfSign.VerifySignature(sigNames[index]))
-		{
-			throw new ApplicationException("Not verified");
-		}
-	}
+    IList<string> sigNames = pdfSign.GetSignNames();
+```
+新しいインスタンスを作成します`PdfFileSignature`署名された文書の場合、文書内に存在するすべての署名の名前を取得します。
+
+### 署名の有効性を確認する
+
+```csharp
+for (int index = 0; index <= sigNames.Count - 1; index++)
+{
+    if (!pdfSign.VerifySigned(sigNames[index]) || !pdfSign.VerifySignature(sigNames[index]))
+    {
+        throw new ApplicationException("Not verified");
+    }
 }
 ```
+各署名名をループして、その有効性を検証します。いずれかの署名が検証に失敗した場合、署名が無効であることを示す例外がスローされます。
 
 ## 結論
 
-おめでとうございます! Aspose.PDF for .NET を使用してスマート カードで PDF ファイルに署名するためのステップ バイ ステップ ガイドが完成しました。このコードを使用して、PDF ドキュメントに安全なデジタル署名を追加できます。
+これで完了です。Aspose.PDF for .NET でスマート カードを使用して PDF ドキュメントに署名できました。このプロセスはドキュメントのセキュリティを確保するだけでなく、今日のデジタル世界では極めて重要な信頼性のレイヤーを追加します。契約書、法的文書、または機密情報を扱う場合でも、デジタル署名の実装方法を知ることは貴重なスキルです。 
 
-高度なデジタル署名および証明書管理機能の詳細については、Aspose.PDF の公式ドキュメントを必ず確認してください。
+## よくある質問
 
-### よくある質問
+### Aspose.PDF for .NET とは何ですか?
+Aspose.PDF for .NET は、開発者が .NET アプリケーション内で PDF ドキュメントを作成、操作、変換できるようにする強力なライブラリです。
 
-#### Q: スマート カードを使用して PDF ファイルに署名することを検討する必要があるのはなぜですか?
+### PDF に署名するにはスマート カードが必要ですか?
+スマート カードは必須ではありませんが、セキュリティがさらに強化されるため、安全なデジタル署名には強く推奨されます。
 
-A: スマート カードを使用して PDF ファイルに署名すると、ドキュメントの信頼性と整合性が確保され、セキュリティが強化されます。スマート カード ベースの署名により、より高いレベルの信頼性とコンプライアンスが実現します。
+### 任意の PDF ファイルを使用して署名できますか?
+はい、どの PDF ファイルでも使用できますが、パスワードで保護されていないことを確認してください。保護されている場合は、まずロックを解除する必要があります。
 
-#### Q: スマート カード ベースのデジタル署名はどのように機能しますか?
+### デジタル証明書を持っていない場合はどうなりますか?
+信頼できる証明機関 (CA) からデジタル証明書を取得するか、テスト目的で自己署名証明書を使用することができます。
 
-A: スマート カード ベースのデジタル署名では、スマート カードに保存されている暗号化キーを使用して一意のデジタル署名を作成します。この署名は PDF ファイルに添付され、受信者はドキュメントの出所と整合性を検証できます。
-
-#### Q: スマート カード ベースの署名における Aspose.PDF for .NET の役割は何ですか?
-
-A: Aspose.PDF for .NET は、PDF ファイルのスマート カード ベースのデジタル署名を容易にする包括的なツールとライブラリのセットを提供します。これによりプロセスが簡素化され、ドキュメントの署名が安全に行われます。
-
-#### Q: 署名に特定のスマート カード証明書を選択できますか?
-
-A: はい、Windows 証明書ストアから特定のスマート カード証明書を選択して署名することができます。Aspose.PDF for .NET を使用すると、証明書の選択をアプリケーションにシームレスに統合できます。
-
-#### Q: 提供されたソース コードはスマート カード ベースの署名をどのように処理しますか?
-
-A: ソース コードは、PDF ドキュメントをバインドし、スマート カード証明書を選択し、署名情報を指定して、デジタル署名を作成する方法を示しています。また、署名の有効性を検証する方法も示しています。
-
-#### Q: 1 つの PDF ファイルにスマート カードを使用して複数の署名を適用できますか?
-
-A: もちろんです。1 つの PDF ファイルに複数のスマート カード ベースの署名を適用できます。各署名は一意であり、ドキュメント全体のセキュリティに貢献します。
-
-#### Q: 検証手順中に署名の検証に失敗した場合はどうなりますか?
-
-A: 署名の検証に失敗した場合、署名が有効でないことを示す例外がスローされます。これにより、有効で信頼できる署名のみが受け入れられるようになります。
-
-#### Q: スマート カード ベースの署名は、すべての種類の PDF ドキュメントと互換性がありますか?
-
-A: はい、スマート カード ベースの署名は、すべての種類の PDF ドキュメントと互換性があります。フォーム、レポートなど、さまざまな種類の PDF ファイルにデジタル署名を適用できます。
-
-#### Q: 高度なデジタル署名と証明書の管理について詳しく知るにはどうすればよいですか?
-
-A: 高度なデジタル署名機能、証明書管理、ドキュメントのセキュリティを確保するためのベスト プラクティスの詳細については、Aspose.PDF の公式ドキュメントを参照してください。
-
-#### Q: スマート カード ベースの署名の実装に関する詳細な支援やサポートはどこで受けられますか?
-
-A: 追加のガイダンスとサポートについては、Aspose.PDF コミュニティ フォーラムにアクセスするか、スマート カード ベースの署名に関する包括的な情報が記載されたドキュメントを参照してください。
+### Aspose.PDF の試用版はありますか?
+はい、無料試用版をこちらからダウンロードできます。[Aspose ウェブサイト](https://releases.aspose.com/).

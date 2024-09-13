@@ -2,156 +2,159 @@
 title: Gruppierte Kontrollkästchen im PDF-Dokument
 linktitle: Gruppierte Kontrollkästchen im PDF-Dokument
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erstellen Sie mit Aspose.PDF für .NET ganz einfach gruppierte Kontrollkästchen in PDF-Dokumenten.
+description: Erfahren Sie in diesem Schritt-für-Schritt-Tutorial, wie Sie mit Aspose.PDF für .NET gruppierte Kontrollkästchen (Optionsfelder) in einem PDF-Dokument erstellen.
 type: docs
 weight: 170
 url: /de/net/programming-with-forms/grouped-check-boxes/
 ---
-In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET gruppierte Kontrollkästchen in einem PDF-Dokument erstellen. Wir erklären Ihnen den C#-Quellcode Schritt für Schritt, um Sie durch diesen Prozess zu führen.
+## Einführung
 
-## Schritt 1: Vorbereitung
+Das Erstellen interaktiver PDFs ist nicht so schwierig, wie es sich anhört, insbesondere wenn Ihnen leistungsstarke Tools wie Aspose.PDF für .NET zur Verfügung stehen. Eines der interaktiven Elemente, die Sie möglicherweise zu Ihren PDF-Dokumenten hinzufügen müssen, sind gruppierte Kontrollkästchen oder genauer gesagt Optionsfelder, mit denen Benutzer eine Option aus einer Gruppe auswählen können. Dieses Tutorial führt Sie durch den Vorgang des Hinzufügens gruppierter Kontrollkästchen (Optionsfelder) zu einem PDF-Dokument mit Aspose.PDF für .NET. Egal, ob Sie Anfänger oder erfahrener Entwickler sind, Sie werden diese Anleitung interessant, detailliert und leicht verständlich finden.
 
-Stellen Sie sicher, dass Sie die erforderlichen Bibliotheken importiert haben, und legen Sie den Pfad zu Ihrem Dokumentverzeichnis fest:
+## Voraussetzungen
+
+Bevor wir uns in die Schritt-für-Schritt-Anleitung vertiefen, wollen wir einige wesentliche Voraussetzungen klären:
+
+1.  Aspose.PDF für .NET: Stellen Sie sicher, dass Sie die Aspose.PDF-Bibliothek installiert haben. Wenn nicht, können Sie[Laden Sie es hier herunter](https://releases.aspose.com/pdf/net/).
+2. IDE: Sie sollten eine Entwicklungsumgebung wie Visual Studio eingerichtet haben.
+3. .NET Framework: Das Projekt sollte auf eine Version des .NET Frameworks abzielen, die mit Aspose.PDF kompatibel ist.
+4. Grundlegende C#-Kenntnisse: Um problemlos mitarbeiten zu können, sind Kenntnisse in C# und der PDF-Bearbeitung erforderlich.
+5.  Lizenz: Für die volle Funktionalität von Aspose.PDF ist eine Lizenz erforderlich. Sie können[eine vorübergehende Lizenz erhalten](https://purchase.aspose.com/temporary-license/) falls erforderlich.
+
+## Pakete importieren
+
+Stellen Sie vor dem Start sicher, dass Sie die erforderlichen Namespaces in Ihr Projekt importiert haben:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Forms;
 ```
 
-## Schritt 2: Instanziieren eines Dokumentobjekts
+Diese Pakete geben Ihnen Zugriff auf alle Klassen und Methoden, die zum Bearbeiten von PDF-Dokumenten erforderlich sind, einschließlich der Erstellung von Optionsfeldern und der Definition ihrer Eigenschaften.
 
-Instanziieren Sie ein Dokumentobjekt:
+In diesem Abschnitt unterteilen wir den Vorgang zum Erstellen gruppierter Kontrollkästchen (Optionsfelder) in klare, leicht verständliche Schritte.
+
+## Schritt 1: Ein neues PDF-Dokument erstellen
+
+ Der erste Schritt besteht in der Erstellung einer Instanz des`Document` Objekt, das Ihre PDF-Datei darstellt. Fügen Sie dann Ihrem Dokument eine leere Seite hinzu, auf der Sie Ihre gruppierten Kontrollkästchen platzieren.
 
 ```csharp
+// Document-Objekt instanziieren
 Document pdfDocument = new Document();
-```
 
-## Schritt 3: Seite zum PDF-Dokument hinzufügen
-
-Fügen Sie dem PDF-Dokument eine Seite hinzu:
-
-```csharp
+// Fügen Sie der PDF-Datei eine Seite hinzu
 Page page = pdfDocument.Pages.Add();
 ```
 
-## Schritt 4: Instanziieren eines RadioButtonField-Objekts
+Dadurch wird die Grundlage für das Hinzufügen beliebiger Elemente, beispielsweise Optionsfelder, zur PDF-Datei geschaffen.
 
-Instanziieren Sie ein RadioButtonField-Objekt mit der Seitenzahl als Argument:
+## Schritt 2: Radiobutton-Feld initialisieren
+
+Als nächstes müssen wir ein`RadioButtonField` Objekt, das die gruppierten Kontrollkästchen (Optionsfelder) enthält. Dieses Feld wird der jeweiligen Seite hinzugefügt, auf der die Kontrollkästchen angezeigt werden.
 
 ```csharp
+// RadioButtonField-Objekt instantiieren und der ersten Seite zuweisen
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## Schritt 5: Optionsfeldoptionen hinzufügen
+Stellen Sie sich dies als einen Container vor, der die einzelnen Optionsfeldoptionen zusammenfasst.
 
-Fügen Sie Optionsfelder mit dem Objekt „RadioButtonOptionField“ hinzu und geben Sie deren Position mit dem Objekt „Rectangle“ an:
+## Schritt 3: Optionsfeldoptionen hinzufügen
+
+ Fügen wir nun die einzelnen Optionsfelder zum Feld hinzu. In diesem Beispiel fügen wir zwei Optionsfelder hinzu und geben ihre Positionen mit dem`Rectangle` Objekt.
 
 ```csharp
+// Fügen Sie die erste Optionsfeldoption hinzu und geben Sie ihre Position mit Rechteck an
 RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
 RadioButtonOptionField opt2 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(100, 0, 120, 20));
-opt1.OptionName = "Test1";
-opt2.OptionName = "Test2";
-radio.Add(opt1);
-radio.Add(opt2);
+
+// Festlegen von Optionsnamen zur Identifizierung
+opt1.OptionName = "Option1";
+opt2.OptionName = "Option2";
 ```
 
-## Schritt 6: Optionsfeldoptionen anpassen
+ Hier die`Rectangle` Das Objekt definiert die Koordinaten und die Größe jedes Optionsfelds auf der Seite.
 
-Passen Sie die Optionsfeldoptionen an, indem Sie deren Stil, Rahmen und Erscheinungsbild festlegen:
+## Schritt 4: Passen Sie den Stil der Optionsfelder an
+
+ Sie können das Erscheinungsbild der Optionsfelder anpassen, indem Sie deren`Style` Eigenschaft. Sie möchten vielleicht quadratische oder kreuzförmige Kontrollkästchen.
 
 ```csharp
+// Legen Sie den Stil der Optionsfelder fest
 opt1.Style = BoxStyle.Square;
-opt2.Style = BoxStyle.Square;
+opt2.Style = BoxStyle.Cross;
+```
+
+Dadurch können Sie das Erscheinungsbild der Kontrollkästchen steuern und sie benutzerfreundlicher und optisch ansprechender gestalten.
+
+## Schritt 5: Rahmeneigenschaften konfigurieren
+
+Rahmen spielen eine wichtige Rolle, um die Kontrollkästchen leicht erkennbar zu machen. Hier fügen wir um jede Optionsfeldoption durchgehende Rahmen hinzu und definieren deren Breite und Farbe.
+
+```csharp
+// Konfigurieren Sie den Rahmen des ersten Optionsfelds
 opt1.Border = new Border(opt1);
 opt1.Border.Style = BorderStyle.Solid;
 opt1.Border.Width = 1;
+opt1.Characteristics.Border = Color.Black;
+
+// Konfigurieren Sie den Rahmen des zweiten Optionsfelds
 opt2.Border = new Border(opt2);
-opt2.Border.Width = 1;
 opt2.Border.Style = BorderStyle.Solid;
+opt2.Border.Width = 1;
+opt2.Characteristics.Border = Color.Black;
 ```
 
-## Schritt 7: Fügen Sie dem Formular die Optionsfelder hinzu
+Dieser Schritt stellt sicher, dass jedes Optionsfeld einen klar definierten Rahmen hat, was die Lesbarkeit des Dokuments verbessert.
 
-Fügen Sie dem Dokumentformularobjekt die Optionsfelder hinzu:
+## Schritt 6: Optionsfeldoptionen zum Formular hinzufügen
+
+Jetzt fügen wir die Optionsfelder zum Formular des Dokuments hinzu. Dies ist der letzte Schritt beim Gruppieren der Kontrollkästchen in einem einzigen Feld.
 
 ```csharp
+// Radiobutton-Feld zum Formularobjekt des Dokuments hinzufügen
 pdfDocument.Form.Add(radio);
 ```
 
-## Schritt 8: Speichern Sie das Dokument
+Das Formularobjekt fungiert als Container für alle interaktiven Elemente, einschließlich unserer gruppierten Kontrollkästchen.
 
-Speichern Sie das PDF-Dokument:
+## Schritt 7: Speichern Sie das PDF-Dokument
+
+Wenn alles eingerichtet ist, können Sie das PDF-Dokument am gewünschten Speicherort speichern.
 
 ```csharp
-dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
+// Definieren Sie den Ausgabedateipfad
+string dataDir = "YOUR DOCUMENT DIRECTORY" + "GroupedCheckBoxes_out.pdf";
+
+// Speichern des PDF-Dokuments
 pdfDocument.Save(dataDir);
+
+// Erfolgreiche Erstellung bestätigen
+Console.WriteLine("Grouped checkboxes added successfully. File saved at " + dataDir);
 ```
 
-### Beispiel-Quellcode für gruppierte Kontrollkästchen mit Aspose.PDF für .NET 
-```csharp
-try
-{
-	// Der Pfad zum Dokumentverzeichnis.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Document-Objekt instanziieren
-	Document pdfDocument = new Document();
-	// Fügen Sie einer PDF-Datei eine Seite hinzu
-	Page page = pdfDocument.Pages.Add();
-	// RadioButtonField-Objekt mit Seitenzahl als Argument instanziieren
-	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
-	// Fügen Sie die erste Optionsfeldoption hinzu und geben Sie ihren Ursprung mithilfe des Rechteckobjekts an
-	RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
-	RadioButtonOptionField opt2 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(100, 0, 120, 20));
-	opt1.OptionName = "Test1";
-	opt2.OptionName = "Test2";
-	radio.Add(opt1);
-	radio.Add(opt2);
-	opt1.Style = BoxStyle.Square;
-	opt2.Style = BoxStyle.Square;
-	opt1.Style = BoxStyle.Cross;
-	opt2.Style = BoxStyle.Cross;
-	opt1.Border = new Border(opt1);
-	opt1.Border.Style = BorderStyle.Solid;
-	opt1.Border.Width = 1;
-	opt1.Characteristics.Border = System.Drawing.Color.Black;
-	opt2.Border = new Border(opt2);
-	opt2.Border.Width = 1;
-	opt2.Border.Style = BorderStyle.Solid;
-	opt2.Characteristics.Border = System.Drawing.Color.Black;
-	// Optionsfeld zum Formularobjekt des Dokumentobjekts hinzufügen
-	pdfDocument.Form.Add(radio);
-	dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
-	// Speichern des PDF-Dokuments
-	pdfDocument.Save(dataDir);
-	Console.WriteLine("\nGrouped checkboxes added successfully.\nFile saved at " + dataDir);
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+Und das war’s! Sie haben erfolgreich ein PDF mit gruppierten Kontrollkästchen mit Aspose.PDF für .NET erstellt.
 
 ## Abschluss
 
-In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET gruppierte Kontrollkästchen in einem PDF-Dokument erstellt. Indem Sie diese Schritte befolgen, können Sie ganz einfach benutzerdefinierte Optionsfeldoptionen hinzufügen und diese mit Aspose.PDF in Ihren PDF-Dokumenten bündeln.
+Das Hinzufügen interaktiver Elemente wie gruppierter Kontrollkästchen zu PDF-Dokumenten kann zunächst schwierig erscheinen, aber mit Aspose.PDF für .NET wird es zum Kinderspiel. In dieser Schritt-für-Schritt-Anleitung haben Sie gelernt, wie Sie ein einfaches PDF-Dokument einrichten, gruppierte Optionsfelder hinzufügen, deren Erscheinungsbild anpassen und das Endergebnis speichern. Egal, ob Sie Formulare, Umfragen oder andere Arten interaktiver PDFs erstellen, diese Anleitung bietet Ihnen eine solide Grundlage für den Anfang.
 
-### Häufig gestellte Fragen
+## Häufig gestellte Fragen
 
-#### F: Was sind gruppierte Kontrollkästchen in einem PDF-Dokument?
+### Kann ich einer Gruppe mehr als zwei Optionsfelder hinzufügen?
+ Absolut! Instanziieren Sie einfach weitere`RadioButtonOptionField` Objekte und fügen Sie sie dem`RadioButtonField` wie im Tutorial gezeigt.
 
-A: Gruppierte Kontrollkästchen in einem PDF-Dokument beziehen sich auf eine Reihe von Optionsfeldern, die gruppiert sind. Mit Optionsfeldern können Benutzer nur eine Option aus einer Gruppe sich gegenseitig ausschließender Auswahlmöglichkeiten auswählen. Wenn ein Optionsfeld ausgewählt ist, werden die anderen in derselben Gruppe automatisch abgewählt. Dieses Gruppierungsverhalten ist nützlich, wenn Sie Benutzern mehrere Optionen präsentieren, ihre Auswahl jedoch auf nur eine Auswahl beschränken möchten.
+### Wie gehe ich mit mehreren Gruppen von Kontrollkästchen in einem Dokument um?
+Um mehrere Gruppen zu erstellen, instanziieren Sie separate`RadioButtonField` Objekte für jede Gruppe.
 
-#### F: Kann ich das Erscheinungsbild gruppierter Kontrollkästchen in Aspose.PDF für .NET anpassen?
+### Gibt es eine Begrenzung für die Anzahl der Kontrollkästchen, die ich hinzufügen kann?
+Nein, Aspose.PDF für .NET legt keine Beschränkungen hinsichtlich der Anzahl der Kontrollkästchen fest, die Sie einem PDF hinzufügen können.
 
-A: Ja, Sie können das Erscheinungsbild gruppierter Kontrollkästchen in Aspose.PDF für .NET anpassen. Die API bietet verschiedene Optionen zum Festlegen des Stils, des Rahmens und des Erscheinungsbilds von Optionsfeldoptionen. Sie können die Position jeder Option definieren, zwischen verschiedenen Feldstilen wählen (z. B. Quadrat, Kreis, Kreuz) und die Rahmeneigenschaften anpassen, um die gewünschte visuelle Darstellung zu erzielen.
+### Kann ich das Erscheinungsbild von Kontrollkästchen nach dem Hinzufügen ändern?
+Ja, Sie können die Eigenschaften wie Rahmenstil, Breite und Farbe ändern, nachdem die Kontrollkästchen hinzugefügt wurden.
 
-#### F: Wie füge ich einer bestimmten Seite in einem PDF-Dokument gruppierte Kontrollkästchen hinzu?
-
-A: Um gruppierte Kontrollkästchen zu einer bestimmten Seite in einem PDF-Dokument hinzuzufügen, müssen Sie eine`RadioButtonField` Objekt mit der gewünschten Seitenzahl als Argument. Erstellen Sie dann`RadioButtonOptionField` Objekte, die die einzelnen Optionsfelder darstellen, und geben Sie deren Position mit dem`Rectangle` Objekt. Fügen Sie diese Optionen schließlich dem`RadioButtonField` und passen Sie deren Erscheinungsbild nach Bedarf an, bevor Sie die`RadioButtonField` zum Dokumentformular.
-
-#### F: Kann ich einem einzelnen PDF-Dokument mehrere Gruppen von Kontrollkästchen hinzufügen?
-
- A: Ja, Sie können mehrere Gruppen von Kontrollkästchen zu einem einzigen PDF-Dokument hinzufügen. Jede Gruppe sollte eine eindeutige`RadioButtonField` Objekt, und die`RadioButtonOptionField` Objekte innerhalb jeder Gruppe sollten dieselbe Seite und eindeutige Namen für ihre Optionen verwenden. Dadurch wird sichergestellt, dass die Optionsfelder innerhalb jeder Gruppe ordnungsgemäß funktionieren und die Auswahlmöglichkeiten sich gegenseitig ausschließen.
-
-#### F: Werden gruppierte Kontrollkästchen in allen PDF-Viewern und -Anwendungen unterstützt?
-
-A: Ja, gruppierte Kontrollkästchen werden in allen standardkonformen PDF-Viewern und -Anwendungen unterstützt. Die PDF-Spezifikation definiert Optionsfelder und ihr Gruppierungsverhalten, sodass sie im PDF-Format universell erkannt werden. Es ist jedoch wichtig, die Funktionalität in verschiedenen PDF-Viewern zu testen, um ein konsistentes Verhalten auf verschiedenen Plattformen sicherzustellen.
+### Ist es möglich, Bilder als Optionsfelder zu verwenden?
+ Ja, Aspose.PDF ermöglicht Ihnen die Verwendung von benutzerdefinierten Bildern als Optionsfelder durch die Einstellung der`Appearance` Eigenschaft jeder Optionsfeldoption.

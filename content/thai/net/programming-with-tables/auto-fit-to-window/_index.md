@@ -126,7 +126,7 @@ margin.Bottom = 5f;
 // ตั้งค่าการเติมเซลล์เริ่มต้นเป็นวัตถุ MarginInfo
 tab1.DefaultCellPadding = margin;
 
-// สร้างแถวในตารางแล้วสร้างเซลล์ในแถว
+//สร้างแถวในตารางแล้วสร้างเซลล์ในแถว
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

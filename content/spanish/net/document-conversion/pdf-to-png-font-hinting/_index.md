@@ -90,7 +90,7 @@ PngDevice pngDevice = new PngDevice(resolution);
 pngDevice.RenderingOptions = opts;
 ```
 
-Con una resolución de 300 DPI (puntos por pulgada), las imágenes resultantes serán de alta calidad. Por supuesto, ¡siéntete libre de modificar este número en función de tus requisitos específicos!
+Con una resolución de 300 DPI (puntos por pulgada), las imágenes resultantes serán de alta calidad. Por supuesto, ¡siéntete libre de ajustar este número según tus requisitos específicos!
 
 ## Paso 6: Convertir las páginas a PNG
 

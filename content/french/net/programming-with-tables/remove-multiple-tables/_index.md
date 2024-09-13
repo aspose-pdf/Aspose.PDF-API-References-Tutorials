@@ -40,7 +40,7 @@ absorb.Visit(pdfDocument.Pages[1]);
 Pour pouvoir supprimer les tables, nous devons obtenir une copie de la collection de tables :
 
 ```csharp
-//Obtenez une copie de la collection de tables
+// Obtenez une copie de la collection de tables
 AbsorbedTable[] tables = new AbsorbedTable[absorb.TableList.Count];
 absorb.TableList.CopyTo(tables, 0);
 ```
@@ -96,7 +96,7 @@ Félicitations ! Vous savez maintenant comment supprimer plusieurs tableaux dans
 
 #### Q : Puis-je supprimer des tableaux spécifiques au lieu de tous les tableaux d’un document PDF ?
 
- : Oui, vous pouvez supprimer des tables spécifiques au lieu de toutes les tables d'un document PDF à l'aide d'Aspose.PDF pour .NET. Dans l'exemple fourni, toutes les tables de la deuxième page sont supprimées. Cependant, vous pouvez modifier le code pour cibler et supprimer des tables spécifiques en fonction de vos besoins. Pour ce faire, vous devez identifier les tables que vous souhaitez supprimer, puis appeler la commande`absorber.Remove(table)` méthode pour chaque table spécifique que vous souhaitez supprimer.
+ R : Oui, vous pouvez supprimer des tables spécifiques au lieu de toutes les tables d'un document PDF à l'aide d'Aspose.PDF pour .NET. Dans l'exemple fourni, toutes les tables de la deuxième page sont supprimées. Cependant, vous pouvez modifier le code pour cibler et supprimer des tables spécifiques en fonction de vos besoins. Pour ce faire, vous devez identifier les tables que vous souhaitez supprimer, puis appeler la commande`absorber.Remove(table)` méthode pour chaque table spécifique que vous souhaitez supprimer.
 
 #### Q : Comment puis-je supprimer des tableaux de plusieurs pages dans un document PDF ?
 
@@ -104,7 +104,7 @@ Félicitations ! Vous savez maintenant comment supprimer plusieurs tableaux dans
 
 #### Q : Que se passe-t-il si j’essaie de supprimer un tableau qui n’existe pas sur la page spécifiée ?
 
- : Si vous essayez de supprimer un tableau qui n'existe pas sur la page spécifiée, cela n'entraînera pas d'erreur.`absorber.Remove(table)` La méthode ignorera simplement la demande de suppression et le document PDF restera inchangé.
+ R : Si vous essayez de supprimer un tableau qui n'existe pas sur la page spécifiée, cela n'entraînera pas d'erreur.`absorber.Remove(table)` La méthode ignorera simplement la demande de suppression et le document PDF restera inchangé.
 
 #### Q : Puis-je annuler la suppression des tableaux après avoir enregistré le document ?
 
@@ -112,4 +112,4 @@ R : Non, une fois que vous avez enregistré le document PDF modifié après avoi
 
 #### Q : Existe-t-il des restrictions sur le type de tables qui peuvent être supprimées à l’aide de cette méthode ?
 
-R : La méthode présentée dans ce didacticiel vous permet de supprimer des tableaux d'un document PDF sans restrictions en fonction du contenu du tableau. Cependant, il est essentiel de prendre en compte la structure et la présentation globales du document pour garantir que la suppression des tableaux n'affecte pas négativement le contenu restant et la lisibilité.
+: La méthode présentée dans ce didacticiel vous permet de supprimer des tableaux d'un document PDF sans restrictions en fonction du contenu du tableau. Cependant, il est essentiel de prendre en compte la structure et la présentation globales du document pour garantir que la suppression des tableaux n'affecte pas négativement le contenu restant et la lisibilité.

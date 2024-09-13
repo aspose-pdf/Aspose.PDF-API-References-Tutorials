@@ -10,7 +10,7 @@ url: /pl/java/pdf-page-manipulation/get-product-and-build-information-of-pdf-in-
 
 ## Wprowadzenie do pobierania informacji o produkcie i kompilacji pliku PDF w języku Java
 
-Aspose.PDF for Java to potężna biblioteka, która pozwala programistom pracować z plikami PDF w aplikacjach Java. W tym artykule przyjrzymy się, jak wyodrębnić informacje o produkcie i kompilacji z dokumentów PDF przy użyciu Aspose.PDF for Java.
+Aspose.PDF for Java to potężna biblioteka, która umożliwia programistom pracę z plikami PDF w aplikacjach Java. W tym artykule przyjrzymy się, jak wyodrębnić informacje o produkcie i kompilacji z dokumentów PDF przy użyciu Aspose.PDF for Java.
 
 ## Wymagania wstępne
 

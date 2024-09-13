@@ -88,7 +88,7 @@ page.Accept(textFragmentAbsorber);
 
 ## ขั้นตอนที่ 9: ดึงข้อมูลส่วนที่แยกออกมา
 
-รับชิ้นส่วนข้อความที่แยกออกมาโดยใช้`TextFragments` ทรัพย์สินของ`TextFragmentAbsorber` วัตถุ:
+ รับชิ้นส่วนข้อความที่แยกออกมาโดยใช้`TextFragments` ทรัพย์สินของ`TextFragmentAbsorber` วัตถุ:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

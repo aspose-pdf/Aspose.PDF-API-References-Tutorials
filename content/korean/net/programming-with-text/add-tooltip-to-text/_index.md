@@ -32,7 +32,7 @@ using Aspose.Pdf.Text;
  코드에서 다음 줄을 찾으세요.`string dataDir = "YOUR DOCUMENT DIRECTORY";` 그리고 교체하다`"YOUR DOCUMENT DIRECTORY"` 문서가 저장된 디렉토리 경로를 포함합니다.
 
 ## 4단계: 텍스트가 포함된 샘플 문서 만들기
- 새로운 것을 만드세요`Document` 객체와 텍스트 조각이 있는 페이지를 추가합니다. 제공된 코드에서 두 개의 텍스트 조각이 해당 도구 설명 텍스트와 함께 문서에 추가됩니다.
+ 새로운 것을 만드세요`Document`객체와 텍스트 조각이 있는 페이지를 추가합니다. 제공된 코드에서 두 개의 텍스트 조각이 해당 도구 설명 텍스트와 함께 문서에 추가됩니다.
 
 ```csharp
 Document doc = new Document();
@@ -98,7 +98,7 @@ doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to disp
 doc.Save(outputFile);
 // 텍스트가 있는 문서 열기
 Document document = new Document(outputFile);
-// 정규 표현식과 일치하는 모든 구문을 찾기 위해 TextAbsorber 객체를 생성합니다.
+//정규 표현식과 일치하는 모든 구문을 찾기 위해 TextAbsorber 객체를 생성합니다.
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
 // 문서 페이지에 대한 흡수체를 수락합니다.
 document.Pages.Accept(absorber);

@@ -1,7 +1,7 @@
 ---
 title: Lägg till bilaga till PDFA
 linktitle: Lägg till bilaga till PDFA
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du lägger till bilagor till ett PDF/A-dokument med Aspose.PDF för .NET med denna steg-för-steg-guide.
 type: docs
 weight: 10

@@ -16,7 +16,7 @@ Tehát van egy PDF-fájlja, és át kell konvertálnia PDF/A-3B formátumba? Sem
 Mielőtt belemerülne a kódba, győződjön meg arról, hogy minden készen áll. Íme, amire szüksége van:
 
 1. Visual Studio: Először is szüksége van egy kódoló környezetre. Ha nincs telepítve a Visual Studio, letöltheti a webhelyről[telek](https://visualstudio.microsoft.com/).
-2.  Aspose.PDF .NET-hez: Meg kell ragadnia az Aspose.PDF könyvtárat. Megteheti[töltse le itt](https://releases.aspose.com/pdf/net/).
+2.  Aspose.PDF .NET-hez: Meg kell ragadnia az Aspose.PDF könyvtárat. Tudod[töltse le itt](https://releases.aspose.com/pdf/net/).
 3. C# alapismeretek: A C# ismerete elengedhetetlen. Ha tudja, hogyan kell konzolalkalmazást létrehozni, és dolgozik a névterekkel, akkor kész!
 
 ## Csomagok importálása

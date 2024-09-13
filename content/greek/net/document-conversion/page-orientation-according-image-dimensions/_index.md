@@ -17,7 +17,7 @@ url: /el/net/document-conversion/page-orientation-according-image-dimensions/
 
 1. Visual Studio: Βεβαιωθείτε ότι έχετε εγκαταστήσει το Visual Studio στον υπολογιστή σας. Είναι το καλύτερο IDE για ανάπτυξη .NET.
 2. .NET Framework: Αυτός ο οδηγός προϋποθέτει ότι χρησιμοποιείτε .NET Framework. Βεβαιωθείτε ότι έχετε εγκαταστήσει την κατάλληλη έκδοση.
-3.  Aspose.PDF για .NET: Μπορείτε να κάνετε λήψη της βιβλιοθήκης από το[Aspose website](https://releases.aspose.com/pdf/net/) . Αν θέλετε να το δοκιμάσετε πρώτα, μπορείτε να πάρετε ένα[δωρεάν δοκιμή](https://releases.aspose.com/).
+3.  Aspose.PDF για .NET: Μπορείτε να κάνετε λήψη της βιβλιοθήκης από το[Aspose ιστότοπο](https://releases.aspose.com/pdf/net/) . Αν θέλετε να το δοκιμάσετε πρώτα, μπορείτε να πάρετε ένα[δωρεάν δοκιμή](https://releases.aspose.com/).
 4. Βασικές γνώσεις C#: Η εξοικείωση με τον προγραμματισμό C# θα σας βοηθήσει να κατανοήσετε καλύτερα τα παραδείγματα.
 
 ## Εισαγωγή πακέτων
@@ -131,7 +131,7 @@ doc.Save(dataDir + "SetPageOrientation_out.pdf");
 Το Aspose.PDF για .NET είναι μια βιβλιοθήκη που επιτρέπει στους προγραμματιστές να δημιουργούν, να χειρίζονται και να μετατρέπουν έγγραφα PDF μέσω προγραμματισμού.
 
 ### Πώς μπορώ να εγκαταστήσω το Aspose.PDF;
- Μπορείτε να εγκαταστήσετε το Aspose.PDF μέσω του NuGet Package Manager στο Visual Studio ή να το κατεβάσετε από το[Aspose website](https://releases.aspose.com/pdf/net/).
+ Μπορείτε να εγκαταστήσετε το Aspose.PDF μέσω του NuGet Package Manager στο Visual Studio ή να το κατεβάσετε από το[Aspose ιστότοπο](https://releases.aspose.com/pdf/net/).
 
 ### Μπορώ να χρησιμοποιήσω το Aspose.PDF δωρεάν;
  Ναι, η Aspose προσφέρει α[δωρεάν δοκιμή](https://releases.aspose.com/) για να δοκιμάσετε τη βιβλιοθήκη πριν την αγοράσετε.

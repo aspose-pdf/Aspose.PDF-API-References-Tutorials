@@ -127,7 +127,7 @@ R: Se a nova tabela tiver um número diferente de colunas do que a tabela origin
 
 #### P: Posso personalizar a aparência da nova tabela, como adicionar cor de fundo ou bordas?
 
- R: Sim, você pode personalizar a aparência da nova tabela definindo várias propriedades dela.`Table` e suas células. Por exemplo, você pode definir o`BackgroundColor` propriedade das células para adicionar cor de fundo. Você também pode definir a`DefaultCellBorder` propriedade da nova tabela ou células individuais para adicionar bordas.
+ R: Sim, você pode personalizar a aparência da nova tabela definindo várias propriedades da mesma.`Table` e suas células. Por exemplo, você pode definir o`BackgroundColor` propriedade das células para adicionar cor de fundo. Você também pode definir a`DefaultCellBorder` propriedade da nova tabela ou células individuais para adicionar bordas.
 
 #### P: A substituição de uma tabela afeta o layout do conteúdo do restante do documento PDF?
 

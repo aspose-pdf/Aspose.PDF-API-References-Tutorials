@@ -1,7 +1,7 @@
 ---
 title: Extrahera kant i PDF-fil
 linktitle: Extrahera kant i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du extraherar gränsen i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 80
@@ -149,7 +149,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 
 		if (opSaveState != null)
 		{
-			//Spara föregående tillstånd och tryck aktuellt tillstånd till toppen av stacken
+			// Spara föregående tillstånd och tryck aktuellt tillstånd till toppen av stacken
 			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
@@ -235,7 +235,7 @@ Console.WriteLine("\nBorder extracted successfully as image.\nFile saved at " + 
 ## Slutsats
 I den här handledningen lärde vi oss hur man extraherar gränsen från ett PDF-dokument med Aspose.PDF för .NET. Du kan använda den här steg-för-steg-guiden för att extrahera ramar från andra PDF-dokument.
 
-### Vanliga frågor om extrahera gräns i PDF-fil
+### Vanliga frågor för extrahera gräns i PDF-fil
 
 #### F: Vad är syftet med att extrahera gränsen från en PDF-fil?
 
@@ -243,7 +243,7 @@ S: Att extrahera gränsen från en PDF-fil kan vara användbart för olika ända
 
 #### F: Kan jag extrahera gränsen från specifika sidor eller områden i PDF-dokumentet?
 
-S: Ja, du kan ändra den medföljande C#-källkoden för att extrahera gränsen från specifika sidor eller regioner i PDF-dokumentet. Genom att manipulera`doc.Pages` insamling och specificering av anpassade kriterier kan du välja att extrahera gränsen från särskilda sidor eller intresseområden.
+ S: Ja, du kan ändra den medföljande C#-källkoden för att extrahera gränsen från specifika sidor eller regioner i PDF-dokumentet. Genom att manipulera`doc.Pages` insamling och specificering av anpassade kriterier kan du välja att extrahera gränsen från särskilda sidor eller intresseområden.
 
 #### F: Hur kan jag anpassa utdatabildens format och kvalitet?
 

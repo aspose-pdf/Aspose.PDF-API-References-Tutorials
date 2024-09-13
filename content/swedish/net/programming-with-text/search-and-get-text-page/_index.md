@@ -1,7 +1,7 @@
 ---
 title: Sök och hämta textsida i PDF-fil
 linktitle: Sök och hämta textsida i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du söker och hämtar text från en specifik sida i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 430
@@ -60,7 +60,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## Steg 6: hämta extraherade textfragment
 
-Hämta de extraherade textfragmenten med hjälp av`TextFragments` egendom av`TextFragmentAbsorber` objekt:
+ Hämta de extraherade textfragmenten med hjälp av`TextFragments` egendom av`TextFragmentAbsorber` objekt:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

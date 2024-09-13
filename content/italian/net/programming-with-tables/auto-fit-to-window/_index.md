@@ -126,7 +126,7 @@ margin.Bottom = 5f;
 // Imposta la spaziatura predefinita delle celle sull'oggetto MarginInfo
 tab1.DefaultCellPadding = margin;
 
-// Crea righe nella tabella e poi celle nelle righe
+//Crea righe nella tabella e poi celle nelle righe
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

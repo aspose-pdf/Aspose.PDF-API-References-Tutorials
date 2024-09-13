@@ -13,4 +13,4 @@ Explore the features of Aspose.PDF for .NET with dedicated tutorials. Learn how 
 ## Tutorials
 | Title | Description |
 | --- | --- | 
-| [Apply Number Style In PDF File](./apply-number-style/) | Learn how to apply a numbering style to headings in PDF file using Aspose.PDF for .NET. Step by step guide. |   
+| [Apply Number Style In PDF File](./apply-number-style/) | Learn how to apply different number styles (Roman numerals, alphabetical) to headings in a PDF using Aspose.PDF for .NET with this step-by-step guide. |   

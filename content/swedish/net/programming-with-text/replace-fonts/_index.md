@@ -1,7 +1,7 @@
 ---
 title: Ersätt teckensnitt i PDF-fil
 linktitle: Ersätt teckensnitt i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du ersätter teckensnitt i PDF-filer med Aspose.PDF för .NET.
 type: docs
 weight: 340
@@ -34,7 +34,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## Steg 3: Sök och ersätt teckensnitt
 
- Vi skapar en`TextFragmentAbsorber`objekt och ställ in redigeringsalternativet för att ta bort oanvända teckensnitt. Sedan accepterar vi absorbenten för alla sidor i PDF-dokumentet för att söka efter textfragment.
+ Vi skapar en`TextFragmentAbsorber` objekt och ställ in redigeringsalternativet för att ta bort oanvända teckensnitt. Sedan accepterar vi absorbenten för alla sidor i PDF-dokumentet för att söka efter textfragment.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));

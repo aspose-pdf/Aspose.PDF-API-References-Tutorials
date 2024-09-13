@@ -74,7 +74,7 @@ Console.WriteLine("\nText replaced successfully based on a regular expression.\n
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Nyissa meg a dokumentumot
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionPage.pdf");
-// Hozzon létre TextAbsorber objektumot a reguláris kifejezésnek megfelelő kifejezések megtalálásához
+//Hozzon létre TextAbsorber objektumot a reguláris kifejezésnek megfelelő kifejezések megtalálásához
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Mint 1999-2000
 // Állítsa be a szöveges keresési beállítást a reguláris kifejezés használatának megadásához
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);

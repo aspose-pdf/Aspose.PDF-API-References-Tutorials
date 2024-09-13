@@ -2,227 +2,160 @@
 title: Informacje o obrazie w pliku PDF
 linktitle: Informacje o obrazie w pliku PDF
 second_title: Aspose.PDF dla .NET API Reference
-description: Wyodrębnij informacje o obrazie z pliku PDF przy użyciu Aspose.PDF dla .NET.
+description: Naucz się wyodrębniać informacje o obrazach z plików PDF za pomocą Aspose.PDF dla .NET dzięki naszemu kompleksowemu przewodnikowi krok po kroku.
 type: docs
 weight: 160
 url: /pl/net/programming-with-images/image-information/
 ---
-Ten przewodnik krok po kroku pokaże Ci, jak wyodrębnić informacje o obrazach w pliku PDF za pomocą Aspose.PDF dla .NET. Upewnij się, że skonfigurowałeś już swoje środowisko i wykonaj poniższe kroki:
+## Wstęp
 
-## Krok 1: Zdefiniuj katalog dokumentów
+Pliki PDF są obecnie wszędzie — praktycznie każdy dokument zawodowy i osobisty w pewnym momencie trafia do tego formatu. Niezależnie od tego, czy jest to raport, broszura czy e-book, zrozumienie, jak programowo wchodzić w interakcję z tymi plikami, oferuje niezliczone możliwości. Jednym z powszechnych wymagań jest wyodrębnianie informacji o obrazach z plików PDF. W tym przewodniku zagłębimy się w to, jak używać biblioteki Aspose.PDF dla .NET, aby wyodrębnić kluczowe szczegóły dotyczące obrazów osadzonych w dokumencie PDF.
 
- Upewnij się, że ustawiłeś poprawny katalog dokumentów. Zastąp`"YOUR DOCUMENT DIRECTORY"` w kodzie podając ścieżkę do katalogu, w którym znajduje się Twój dokument PDF.
+## Wymagania wstępne
+
+Zanim przejdziemy do szczegółów kodowania, musisz spełnić kilka warunków wstępnych:
+
+1. Środowisko programistyczne: Będziesz potrzebować skonfigurowanego środowiska programistycznego .NET. Może to być Visual Studio lub inne IDE zgodne z .NET.
+2.  Biblioteka Aspose.PDF: Upewnij się, że masz dostęp do biblioteki Aspose.PDF. Możesz ją pobrać z[Strona internetowa Aspose](https://releases.aspose.com/pdf/net/). 
+3. Podstawowa wiedza o języku C#: Znajomość języka C# i koncepcji programowania obiektowego pomoże Ci bez problemu podążać za nauką tego samouczka.
+4. Dokument PDF: Przygotuj przykładowy dokument PDF zawierający obrazy, aby móc przetestować swój kod. 
+
+## Importowanie pakietów
+
+Aby rozpocząć korzystanie z biblioteki Aspose.PDF, musisz zaimportować niezbędne przestrzenie nazw do pliku C#. Oto krótki przegląd:
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using System;
 ```
 
-## Krok 2: Załaduj plik źródłowy PDF
+Te przestrzenie nazw zapewnią Ci dostęp do wymaganych klas i metod umożliwiających manipulowanie plikami PDF i wyodrębnianie danych obrazu.
 
- W tym kroku załadujemy plik źródłowy PDF za pomocą`Document` klasa Aspose.PDF. Użyj`Document` konstruktora i przekazuje ścieżkę do dokumentu PDF.
+Teraz, gdy wszystko jest już skonfigurowane, czas podzielić to na łatwe do opanowania kroki. Napiszemy program C#, który wczyta dokument PDF, przejdzie przez każdą stronę i wyodrębni wymiary i rozdzielczość każdego obrazu w dokumencie.
+
+## Krok 1: Zainicjuj dokument
+
+ W tym kroku zainicjujemy dokument PDF, używając ścieżki do pliku PDF. Powinieneś zastąpić`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką, gdzie znajduje się Twój plik PDF.
 
 ```csharp
+// Ścieżka do katalogu dokumentów.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Załaduj plik źródłowy PDF
 Document doc = new Document(dataDir + "ImageInformation.pdf");
 ```
+ Tworzymy`Document` obiekt, który ładuje PDF z określonego katalogu. To pozwoli nam pracować z zawartością pliku.
 
-## Krok 3: Ustaw domyślną rozdzielczość
+## Krok 2: Ustaw domyślną rozdzielczość i zainicjuj struktury danych
 
-W tym kroku ustawimy domyślną rozdzielczość dla obrazów. W tym przykładzie domyślna rozdzielczość jest ustawiona na 72.
+Następnie ustawiamy domyślną rozdzielczość obrazów, co jest przydatne do obliczeń. Przygotujemy również tablicę do przechowywania nazw obrazów i stos do zarządzania stanami graficznymi.
 
 ```csharp
+// Zdefiniuj domyślną rozdzielczość obrazu
 int defaultResolution = 72;
-```
-
-## Krok 4: Zainicjuj obiekty i liczniki
-
-W tym kroku zainicjujemy obiekty i liczniki potrzebne do pobrania informacji o obrazie.
-
-```csharp
 System.Collections.Stack graphicsState = new System.Collections.Stack();
+// Zdefiniuj obiekt listy tablicowej, który będzie zawierał nazwy obrazów
 System.Collections.ArrayList imageNames = new System.Collections.ArrayList(doc.Pages[1].Resources.Images.Names);
 ```
+ Ten`defaultResolution` zmienna pomaga nam poprawnie obliczyć rozdzielczość obrazów.`graphicsState`Stos służy do przechowywania bieżącego stanu graficznego dokumentu w przypadku napotkania operatorów transformacji.
 
-## Krok 5: Przejdź przez operatory na pierwszej stronie dokumentu
+## Krok 3: Przetwórz każdego operatora na stronie
 
-W tym kroku przejdziemy przez operatory znajdujące się na pierwszej stronie dokumentu, aby zidentyfikować operacje związane z obrazami.
+Teraz przechodzimy przez wszystkich operatorów na pierwszej stronie dokumentu. To tutaj odbywa się ciężka praca. 
 
 ```csharp
-foreach(Operator op in doc.Pages[1].Contents)
+foreach (Operator op in doc.Pages[1].Contents)
 {
+    // Operatorzy procesów...
+}
 ```
+Każdy operator w pliku PDF to polecenie, które informuje moduł renderujący, w jaki sposób zarządzać elementami graficznymi, w tym obrazami.
 
-## Krok 6: Zarządzaj operatorami i wyodrębniaj informacje o obrazie
+## Krok 4: Obsługa operatorów GSave/GRestore
 
-W tym kroku zajmiemy się różnymi typami operatorów i wyodrębnimy informacje o obrazach.
+Wewnątrz pętli będziemy obsługiwać polecenia zapisywania i przywracania grafiki, aby śledzić zmiany wprowadzone w stanie graficznym.
 
 ```csharp
-Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
-Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-Aspose.Pdf.Operators.Do opDo = op as Aspose.Pdf.Operators.Do;
+if (opSaveState != null) 
+{
+    // Zapisz poprzedni stan
+    graphicsState.Push(((Matrix)graphicsState.Peek()).Clone());
+} 
+else if (opRestoreState != null) 
+{
+    // Przywróć poprzedni stan
+    graphicsState.Pop();
+}
+```
+`GSave` zapisuje aktualny stan graficzny, podczas gdy`GRestore` przywraca ostatnio zapisany stan, umożliwiając cofnięcie wszelkich transformacji podczas przetwarzania obrazów.
 
-//Obsługa operacji GSave i GRestore dla transformacji
-if (opSaveState != null)
+## Krok 5: Zarządzaj macierzami transformacji
+
+Następnie zajmujemy się łączeniem macierzy transformacji podczas stosowania transformacji do obrazów.
+
+```csharp
+else if (opCtm != null) 
 {
-     graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-}
-else if (opRestoreState != null)
-{
-     graphicsState. Pop();
-}
-// Obsługuj operację ConcatenateMatrix dla transformacji
-else if (opCtm != null)
-{
-     // Zastosuj macierz transformacji
-     System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
+    Matrix cm = new Matrix(
         (float)opCtm.Matrix.A,
         (float)opCtm.Matrix.B,
         (float)opCtm.Matrix.C,
         (float)opCtm.Matrix.D,
         (float)opCtm.Matrix.E,
         (float)opCtm.Matrix.F);
-
-
-     ((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-     keep on going;
-}
-// Obsługuj operację Do dla obrazów
-else if (opDo != null)
-{
-     if (imageNames.Contains(opDo.Name))
-     {
-         // Pobierz obraz
-         XImage image = doc.Pages[1].Resources.Images[opDo.Name];
-         // Pobierz wymiary obrazu
-         double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
-         double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
-         // Oblicz rozdzielczość na podstawie powyższych informacji
-         double resHorizontal = originalWidth * defaultResolution / scaledWidth;
-         double resVertical = originalHeight * defaultResolution / scaledHeight;
-         // Wyświetl informacje o obrazie
-         Console.Out.WriteLine(
-                 string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
-								 opDo.Name, scaledWidth, scaledHeight, resHorizontal,
-								 resVertical));
-     }
+    
+    ((Matrix)graphicsState.Peek()).Multiply(cm);
+    continue;
 }
 ```
+Gdy stosowana jest macierz transformacji, mnożymy ją przez bieżącą macierz zapisaną w stanie grafiki, dzięki czemu możemy śledzić wszelkie skalowanie lub translację stosowane do obrazu.
 
-### Przykładowy kod źródłowy dla informacji o obrazie przy użyciu Aspose.PDF dla .NET 
+## Krok 6: Wyodrębnij informacje o obrazie
+
+Na koniec przetwarzamy operator rysowania obrazów i wyodrębniamy niezbędne informacje, takie jak wymiary i rozdzielczość.
+
 ```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Załaduj plik źródłowy PDF
-Document doc = new Document(dataDir+ "ImageInformation.pdf");
-// Zdefiniuj domyślną rozdzielczość obrazu
-int defaultResolution = 72;
-System.Collections.Stack graphicsState = new System.Collections.Stack();
-// Zdefiniuj obiekt listy tablicowej, który będzie zawierał nazwy obrazów
-System.Collections.ArrayList imageNames = new System.Collections.ArrayList(doc.Pages[1].Resources.Images.Names);
-// Wstaw obiekt do stosu
-graphicsState.Push(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, 0, 0));
-// Umieść wszystkich operatorów na pierwszej stronie dokumentu
-foreach (Operator op in doc.Pages[1].Contents)
+else if (opDo != null) 
 {
-	// Użyj operatorów GSave/GRestore, aby przywrócić poprzednio ustawione transformacje
-	Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
-	Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-	// Utwórz obiekt ConcatenateMatrix, ponieważ definiuje on bieżącą macierz transformacji.
-	Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-	// Utwórz operator Do, który rysuje obiekty z zasobów. Rysuje obiekty Form i Image
-	Aspose.Pdf.Operators.Do opDo = op as Aspose.Pdf.Operators.Do;
-	if (opSaveState != null)
-	{
-		//Zapisz poprzedni stan i przenieś bieżący stan na górę stosu
-		graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-	}
-	else if (opRestoreState != null)
-	{
-		// Wyrzuć obecny stan i przywróć poprzedni
-		graphicsState.Pop();
-	}
-	else if (opCtm != null)
-	{
-		System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
-		   (float)opCtm.Matrix.A,
-		   (float)opCtm.Matrix.B,
-		   (float)opCtm.Matrix.C,
-		   (float)opCtm.Matrix.D,
-		   (float)opCtm.Matrix.E,
-		   (float)opCtm.Matrix.F);
-		// Pomnóż macierz bieżącą przez macierz stanu
-		((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-		continue;
-	}
-	else if (opDo != null)
-	{
-		// W przypadku, gdy jest to operator rysowania obrazu
-		if (imageNames.Contains(opDo.Name))
-		{
-			System.Drawing.Drawing2D.Matrix lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-			// Utwórz obiekt XImage, aby przechowywać obrazy pierwszej strony pliku PDF
-			XImage image = doc.Pages[1].Resources.Images[opDo.Name];
-			// Pobierz wymiary obrazu
-			double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
-			double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
-			// Uzyskaj informacje o wysokości i szerokości obrazu
-			double originalWidth = image.Width;
-			double originalHeight = image.Height;
-			// Oblicz rozdzielczość na podstawie powyższych informacji
-			double resHorizontal = originalWidth * defaultResolution / scaledWidth;
-			double resVertical = originalHeight * defaultResolution / scaledHeight;
-			// Wyświetl informacje o wymiarach i rozdzielczości każdego obrazu
-			Console.Out.WriteLine(
-					string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
-								 opDo.Name, scaledWidth, scaledHeight, resHorizontal,
-								 resVertical));
-		}
-	}
+    // Operator Do obsługujący obiekty
+    if (imageNames.Contains(opDo.Name)) 
+    {
+        Matrix lastCTM = (Matrix)graphicsState.Peek();
+        XImage image = doc.Pages[1].Resources.Images[opDo.Name];
+        double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
+        double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
+        double originalWidth = image.Width;
+        double originalHeight = image.Height;
+        
+        double resHorizontal = originalWidth * defaultResolution / scaledWidth;
+        double resVertical = originalHeight * defaultResolution / scaledHeight;
+        
+        // Wyjście informacji
+        Console.Out.WriteLine(string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
+                         opDo.Name, scaledWidth, scaledHeight, resHorizontal, resVertical));
+    }
 }
 ```
+Tutaj sprawdzamy, czy operator jest odpowiedzialny za rysowanie obrazu. Jeśli tak, pobieramy odpowiadający mu obiekt XImage, obliczamy jego skalowane wymiary i rozdzielczość oraz drukujemy niezbędne informacje.
 
 ## Wniosek
 
-Gratulacje! Teraz nauczyłeś się, jak wyodrębnić informacje o obrazie z pliku PDF za pomocą Aspose.PDF dla .NET. Możesz użyć tych informacji do różnych zadań przetwarzania obrazu w swoich aplikacjach.
+Gratulacje! Właśnie stworzyłeś działający przykład wyodrębniania informacji o obrazie z pliku PDF przy użyciu Aspose.PDF dla .NET. Ta możliwość może być niezwykle przydatna dla programistów, którzy muszą analizować lub manipulować dokumentami PDF dla różnych aplikacji, takich jak raportowanie, ekstrakcja danych, a nawet niestandardowe przeglądarki PDF. 
 
-### Często zadawane pytania dotyczące informacji o obrazie w pliku PDF
 
-#### P: Jaki jest cel wyodrębniania informacji o obrazie z dokumentu PDF za pomocą Aspose.PDF dla platformy .NET?
+## Najczęściej zadawane pytania
 
-A: Wyodrębnianie informacji o obrazie z dokumentu PDF zapewnia wgląd w wymiary, rozdzielczość i inne atrybuty obrazów w dokumencie. Informacje te można wykorzystać do zadań przetwarzania, analizy lub optymalizacji obrazu.
+### Czym jest biblioteka Aspose.PDF?
+Biblioteka Aspose.PDF to potężne narzędzie do tworzenia, edytowania i konwertowania plików PDF w aplikacjach .NET.
 
-#### P: W jaki sposób Aspose.PDF dla .NET pomaga wyodrębnić informacje o obrazie z dokumentu PDF?
+### Czy mogę korzystać z biblioteki bezpłatnie?
+ Tak, Aspose oferuje bezpłatną wersję próbną. Możesz ją pobrać[Tutaj](https://releases.aspose.com/).
 
-A: Aspose.PDF dla .NET udostępnia narzędzia do uzyskiwania dostępu i analizowania zawartości dokumentu PDF, w tym jego obrazów. Dostarczony kod pokazuje, jak wyodrębnić i wyświetlić informacje o obrazie za pomocą różnych operatorów.
+### Jakie typy formatów obrazów można wyodrębnić?
+Biblioteka obsługuje różne formaty obrazów, w tym JPEG, PNG i TIFF, pod warunkiem, że są osadzone w pliku PDF.
 
-#### P: Jakiego rodzaju informacje o obrazie można uzyskać za pomocą tej metody?
+### Czy Aspose jest używany w celach komercyjnych?
+ Tak, możesz używać produktów Aspose komercyjnie. Aby uzyskać licencję, odwiedź stronę[strona zakupu](https://purchase.aspose.com/buy).
 
-A: Ta metoda umożliwia wyodrębnienie i wyświetlenie informacji, takich jak wymiary skalowane, rozdzielczość i nazwy obrazów w dokumencie PDF.
-
-#### P: W jaki sposób kod identyfikuje i przetwarza operatory związane z obrazami w dokumencie PDF?
-
-A: Kod przechodzi przez operatory na określonej stronie dokumentu PDF. Identyfikuje i przetwarza operatory związane z operacjami obrazu, transformacjami i renderowaniem.
-
-#### P: Jakie znaczenie ma rozdzielczość domyślna i jak jest ona wykorzystywana w kodzie?
-
-A: Domyślna rozdzielczość jest używana jako punkt odniesienia do obliczania rzeczywistej rozdzielczości obrazów. Kod oblicza rozdzielczość każdego obrazu na podstawie jego wymiarów i domyślnego ustawienia rozdzielczości.
-
-#### P: W jaki sposób można wykorzystać wyodrębnione informacje o obrazie w scenariuszach z życia wziętych?
-
-A: Wyodrębnione informacje o obrazie można wykorzystać do takich zadań, jak ocena jakości obrazu, optymalizacja obrazu, generowanie miniatur obrazów i ułatwianie podejmowania decyzji związanych z obrazami.
-
-#### P: Czy mogę zmodyfikować kod, aby wyodrębnić dodatkowe atrybuty związane z obrazem?
-
-O: Tak, możesz dostosować kod, aby wyodrębnić dodatkowe atrybuty obrazów, takie jak przestrzeń kolorów, głębia pikseli lub typ obrazu.
-
-#### P: Czy proces ekstrakcji informacji z obrazu wymaga dużych zasobów lub jest czasochłonny?
-
-A: Proces ekstrakcji informacji z obrazu jest wydajny i zoptymalizowany pod kątem wydajności, zapewniając minimalny wpływ na wykorzystanie zasobów i czas przetwarzania.
-
-#### P: Jakie korzyści mogą odnieść deweloperzy dzięki identyfikowaniu i wyodrębnianiu informacji o obrazie z dokumentów PDF?
-
-A: Programiści mogą dzięki temu poznać charakterystykę obrazów w dokumentach PDF, co pozwala im podejmować świadome decyzje dotyczące obróbki, przetwarzania i optymalizacji obrazów.
-
-#### P: Czy tę metodę można stosować do przetwarzania wsadowego dokumentów PDF zawierających obrazy?
-
-O: Tak, tę metodę można rozszerzyć o przetwarzanie wsadowe poprzez iteracyjne przeglądanie wielu stron lub dokumentów, wyodrębnianie informacji o obrazie i wykonywanie zadań związanych z obrazem.
+### Jak uzyskać wsparcie dla Aspose?
+ Możesz uzyskać dostęp do forum wsparcia[Tutaj](https://forum.aspose.com/c/pdf/10).

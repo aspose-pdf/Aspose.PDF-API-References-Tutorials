@@ -1,7 +1,7 @@
 ---
 title: Ta bort hyperlänkar efter konvertering från HTML
 linktitle: Ta bort hyperlänkar efter konvertering från HTML
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du tar bort hyperlänkar från HTML-dokument efter konvertering till PDF med Aspose.PDF för .NET i denna steg-för-steg-guide.
 type: docs
 weight: 250
@@ -66,7 +66,7 @@ doc.Save(new MemoryStream());
 
 Den här raden sparar dokumentet i minnet, så att vi kan arbeta med det utan att skriva det till disk ännu.
 
-## Steg 4: Iterera genom kommentarer
+## Steg 4: Iterera genom anteckningar
 
 Nu ska vi iterera igenom kommentarerna i dokumentet. Anteckningar är element som länkar, kommentarer och höjdpunkter. Vi är särskilt intresserade av länkkommentarer.
 

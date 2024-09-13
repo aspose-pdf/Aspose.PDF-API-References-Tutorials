@@ -151,7 +151,7 @@ Page page = doc.Pages.Add();
 
 #### Q：如何使用 DOM 設定 HTML 內容？
 
-答：在步驟 6 中，您將建立一個`HtmlFragment`物件並將您想要的 HTML 內容指派給它。 HTML 內容被指派給變數`title`：
+答：在步驟 6 中，您將建立一個`HtmlFragment`物件並將您想要的 HTML 內容指派給它。 HTML 內容被指派給變數`title`:
 
 ```csharp
 HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Table contains text</i></b></p>");

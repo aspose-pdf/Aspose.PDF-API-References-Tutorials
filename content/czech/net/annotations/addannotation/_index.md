@@ -15,7 +15,7 @@ Anotace jsou skvělým způsobem, jak obohatit dokumenty PDF a učinit je intera
 
 Než se ponoříme do kódu, ujistěte se, že máte vše, co potřebujete:
 
--  Aspose.PDF pro .NET: Ujistěte se, že máte nainstalovanou knihovnu Aspose.PDF. Můžete si jej stáhnout z[Stránka ke stažení Aspose.PDF pro .NET](https://releases.aspose.com/pdf/net/).
+-  Aspose.PDF pro .NET: Ujistěte se, že máte nainstalovanou knihovnu Aspose.PDF. Můžete si jej stáhnout z[Stránka pro stahování Aspose.PDF pro .NET](https://releases.aspose.com/pdf/net/).
 - Vývojové prostředí: Visual Studio nebo jakékoli jiné C# IDE dle vašeho výběru.
 - Základní znalost C#: Tato příručka předpokládá, že se vyznáte v programování v C#.
 - Dokument PDF: Ukázkový soubor PDF, do kterého budete přidávat anotace.

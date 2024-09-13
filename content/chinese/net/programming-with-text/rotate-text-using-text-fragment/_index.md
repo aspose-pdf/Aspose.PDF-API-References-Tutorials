@@ -144,7 +144,7 @@ pdfDocument.Save(dataDir + "TextFragmentTests_Rotated1_out.pdf");
 
 #### 问：什么是“使用文本片段旋转文本”？
 
-答：使用文本片段旋转文本是指使用 Aspose.PDF 库对 PDF 文档中的各个文本片段应用旋转的功能。此技术允许您控制 PDF 内容中不同角度或位置的文本方向。
+答：使用文本片段旋转文本是指使用 Aspose.PDF 库对 PDF 文档中的单个文本片段应用旋转的功能。此技术允许您控制 PDF 内容中不同角度或位置的文本方向。
 
 #### 问：为什么我要旋转 PDF 文档中的文本片段？
 

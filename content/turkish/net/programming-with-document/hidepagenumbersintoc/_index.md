@@ -2,109 +2,40 @@
 title: İçindekiler Tablosunda Sayfa Numaralarını Gizle
 linktitle: İçindekiler Tablosunda Sayfa Numaralarını Gizle
 second_title: Aspose.PDF for .NET API Referansı
-description: Bu adım adım kılavuzla Aspose.PDF for .NET'i kullanarak içindekiler tablosunda sayfa numaralarının nasıl gizleneceğini öğrenin.
+description: İçindekiler Tablosunda sayfa numaralarını Aspose.PDF for .NET kullanarak nasıl gizleyeceğinizi öğrenin. Profesyonel PDF'ler oluşturmak için bu ayrıntılı kılavuzu kod örnekleriyle takip edin.
 type: docs
 weight: 220
 url: /tr/net/programming-with-document/hidepagenumbersintoc/
 ---
-Bu makalede, Aspose.PDF for .NET'in İçindekiler Tablosunda Sayfa Numaralarını Gizle özelliğinin C# kullanılarak uygulanmasını ele alacağız. Aspose.PDF for .NET'e kısa bir girişle başlayıp ardından bu özelliği uygulamak için adım adım kılavuza dalacağız. 
+## giriiş
 
-## .NET için Aspose.PDF'ye Giriş
-
-Aspose.PDF for .NET, geliştiricilerin PDF dosyalarını programatik olarak oluşturmasına, düzenlemesine ve işlemesine olanak tanıyan güçlü bir PDF işleme bileşenidir. PDF belgeleriyle çalışmayı kolaylaştıran çok çeşitli özellikler ve işlevler sunar. Aspose.PDF for .NET, hem 32 bit hem de 64 bit işletim sistemlerini destekler ve .NET Framework, .NET Core ve Xamarin platformlarıyla kullanılabilir. 
-
-## İçindekiler Tablosunda Sayfa Numaralarını Gizle özelliği nedir?
-
-İçindekiler Tablosu (TOC), kullanıcılara içerik hakkında hızlı bir genel bakış sağlayan bir PDF belgesinin temel bir parçasıdır. Bazen kullanıcılar, TOC'yi daha kullanıcı dostu hale getirmek için sayfa numaralarını gizlemek isteyebilir. .NET için Aspose.PDF, TOC'deki sayfa numaralarını gizlemek için yerleşik bir özellik sunar. Bu özellik, daha kullanıcı dostu PDF belgeleri oluşturmak için kullanılabilir. 
+PDF'lerle çalışırken, bazen bir İçindekiler Tablosu (TOC) oluşturmak isteyebilirsiniz ancak sayfa numaralarını gizleyerek işleri düzgün tutmak isteyebilirsiniz. Belki de belge onlarsız daha iyi akıyor veya belki de estetik bir tercih. Nedeniniz ne olursa olsun, .NET için Aspose.PDF ile çalışıyorsanız, bu eğitim size TOC'nizdeki sayfa numaralarını tam olarak nasıl gizleyeceğinizi gösterecektir.
 
 ## Ön koşullar
 
-Bu eğitimi takip etmek için aşağıdakilere ihtiyacınız olacak:
+Başlamadan önce, yerinde olması gereken birkaç şey var. İşte hızlı bir kontrol listesi:
 
-- Visual Studio 2010 veya üzeri
-- Sisteminizde .NET için Aspose.PDF yüklü
-- C# programlama dilinin temel bilgisi
+- Visual Studio Kurulu: Kodlama yapabilmek için çalışan bir Visual Studio sürümüne ihtiyacınız olacak.
+- Aspose.PDF for .NET Kütüphanesi: Aspose.PDF for .NET kütüphanesini yüklediğinizden emin olun.
+  -  İndirme bağlantısı:[.NET için Aspose.PDF](https://releases.aspose.com/pdf/net/)
+- Geçici Lisans: Özellikleri test ediyorsanız, geçici bir lisansa sahip olmak faydalı olacaktır.
+  -  Geçici lisans:[Buradan edinin](https://purchase.aspose.com/temporary-license/)
 
-## İçindekiler Tablosunda Sayfa Numaralarını Gizle özelliğini uygulamak için adım adım kılavuz
+## Paketleri İçe Aktar
 
-Aspose.PDF for .NET'i kullanarak İçindekiler Tablosunda Sayfa Numaralarını Gizle özelliğini uygulamak için aşağıdaki adımları izleyin:
-
-## Adım 1: Visual Studio'da yeni bir C# konsol uygulaması oluşturun
-
-Visual Studio'yu açın ve yeni bir C# konsol uygulaması oluşturun.
-
-## Adım 2: .NET için Aspose.PDF'ye referans ekleyin
-
-Projenizdeki Referanslar klasörüne sağ tıklayın ve Referans Ekle'yi seçin. Aspose.PDF for .NET'in sisteminizde kurulu olduğu konuma gidin ve ona bir referans ekleyin.
-
-## Adım 1: Yeni bir PDF belgesi oluşturun
-
-Aşağıdaki kodu kullanarak yeni bir PDF belgesi oluşturun:
+Koda atlamadan önce, C# projenize aşağıdaki ad alanlarını içe aktardığınızdan emin olun. Bunlar, PDF belgeleriyle çalışmak ve İçindekiler Tablonuzu (TOC) oluşturmak için gerekli sınıfları ve yöntemleri sağlayacaktır.
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outFile = dataDir + "HiddenPageNumbers_out.pdf";
-Document doc = new Document();
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-## Adım 2: İçindekiler sayfası oluşturun
+Artık ortamınız hazır ve paketler içe aktarılmış olduğuna göre, sürecin her adımını parçalara ayıralım. Kolayca takip edebilmeniz için kodun her bölümünü açıklığa kavuşturacağız.
 
-İçindekiler için yeni bir sayfa oluşturun ve aşağıdaki kodu kullanarak bunu PDF belgesine ekleyin:
+## Adım 1: PDF Belgenizi Başlatın
 
-```csharp
-Page tocPage = doc.Pages.Add();
-TocInfo tocInfo = new TocInfo();
-TextFragment title = new TextFragment("Table Of Contents");
-title.TextState.FontSize = 20;
-title.TextState.FontStyle = FontStyles.Bold;
-tocInfo.Title = title;
-```
+İlk yapmamız gereken yeni bir PDF belgesi oluşturmak ve İçindekiler (TOC) sayfası eklemek.
 
-## Adım 3: PDF belgesinin bölümler koleksiyonuna liste bölümü ekleyin
-
-Aşağıdaki kodu kullanarak PDF belgesinin bölümler koleksiyonuna liste bölümünü ekleyin:
-
-```csharp
-tocPage.TocInfo = tocInfo;
-```
-
-## Adım 4: Dört seviyeli listenin formatını tanımlayın
-
-Aşağıdaki kodu kullanarak her seviyenin sol kenar boşluklarını ve metin biçimi ayarlarını belirleyerek dört seviyeli listenin biçimini tanımlayın:
-
-```csharp
-tocInfo.IsShowPageNumbers = false;
-tocInfo.FormatArrayLength = 4;
-tocInfo.FormatArray[0].Margin.Right = 0;
-tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
-tocInfo.FormatArray[1].Margin.Left = 30;
-tocInfo.FormatArray[1].TextState.Underline = true;
-tocInfo.FormatArray[1].TextState.FontSize = 10;
-tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
-tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
-Page page = doc.Pages.Add();
-```
-
-## Adım 5: Bölüme dört başlık ekleyin
-
-```csharp
-
-for (int Level = 1; Level != 5; Level++)
-{ 
-	Heading heading2 = new Heading(Level); 
-	TextSegment segment2 = new TextSegment(); 
-	heading2.TocPage = tocPage; 
-	heading2.Segments.Add(segment2); 
-	heading2.IsAutoSequence = true; 
-	segment2.Text = "this is heading of level " + Level; 
-	heading2.IsInList = true; 
-	page.Paragraphs.Add(heading2); 
-}
-doc.Save(outFile);
-
-```
-
-### .NET için Aspose.PDF kullanarak İçindekiler Tablosunda Sayfa Numaralarını Gizlemek için Örnek Kaynak Kodu
 
 ```csharp
 // Belgeler dizinine giden yol.
@@ -112,18 +43,47 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "HiddenPageNumbers_out.pdf";
 Document doc = new Document();
 Page tocPage = doc.Pages.Add();
+```
+
+- dataDir: Bu, çıktı dosyanızın kaydedileceği dizindir.
+- Document(): Yeni bir PDF belgesi başlatır.
+- Pages.Add(): Belgeye daha sonra İçindekiler bölümünüzü tutacak yeni bir boş sayfa ekler.
+
+## Adım 2: İçindekiler Bilgilerini ve Başlığını Ayarlayın
+
+Daha sonra, İçindekiler tablosunun en üstünde görünecek başlığı ayarlamak da dahil olmak üzere İçindekiler tablosu bilgilerini tanımlayacağız.
+
+```csharp
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
 tocInfo.Title = title;
-//Liste bölümünü Pdf belgesinin bölümler koleksiyonuna ekleyin
 tocPage.TocInfo = tocInfo;
-//Sol kenar boşluklarını ayarlayarak dört seviyeli listenin biçimini tanımlayın ve
-//her seviyenin metin biçimi ayarları
+```
 
+- TocInfo: Bu nesne TOC hakkındaki tüm bilgileri tutar.
+- TextFragment: İçindekiler başlığının metnini temsil eder, burada bunu "İçindekiler Tablosu" olarak ayarladık.
+- FontStyle: İçindekiler başlığının stilini, boyutunu 20 olarak ayarlayıp kalınlaştırarak belirliyoruz.
+- tocPage.TocInfo: İçindekiler bilgisini, İçindekiler'in görüntüleneceği sayfaya atıyoruz.
+
+## Adım 3: İçindekiler Tablosunda Sayfa Numaralarını Gizle
+
+Şimdi eğlenceli kısma geçelim! İşte TOC'yi sayfa numaralarını gizleyecek şekilde yapılandıracağımız yer.
+
+```csharp
 tocInfo.IsShowPageNumbers = false;
 tocInfo.FormatArrayLength = 4;
+```
+
+-  IsShowPageNumbers: Bu, sayfa numaralarını gizleyen sihirli anahtardır. Bunu şu şekilde ayarlayın:`false`ve sayfa numaraları İçindekiler'de görünmeyecektir.
+- FormatArrayLength: Bunu 4 olarak ayarlıyoruz; bu, İçindekiler başlıklarının dört düzeyi için biçimlendirme tanımlamak istediğimizi gösteriyor.
+
+## Adım 4: İçindekiler Biçimlendirmesini Özelleştirin
+
+İçindekiler tablonuza daha fazla stil katmak için, artık farklı düzeylerdeki başlıklar için biçimlendirme tanımlayacağız.
+
+```csharp
 tocInfo.FormatArray[0].Margin.Right = 0;
 tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
 tocInfo.FormatArray[1].Margin.Left = 30;
@@ -131,36 +91,61 @@ tocInfo.FormatArray[1].TextState.Underline = true;
 tocInfo.FormatArray[1].TextState.FontSize = 10;
 tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
 tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
+```
+
+- FormatArray: Bu dizi TOC girdilerinin biçimlendirmesini kontrol eder. Her dizin farklı bir başlık düzeyini temsil eder.
+- Kenar Boşluğu ve Metin Stili: Her başlık düzeyi için kenar boşluklarını ayarlıyoruz ve kalın, italik, altı çizili gibi yazı tipleri uyguluyoruz.
+
+## Adım 5: Belgeye Başlıklar Ekleyin
+
+Son olarak İçindekiler bölümünün parçası olacak gerçek başlıkları ekleyelim.
+
+```csharp
 Page page = doc.Pages.Add();
-//Bölüme dört başlık ekleyin
 for (int Level = 1; Level != 5; Level++)
-	{ 
-		Heading heading2 = new Heading(Level); 
-		TextSegment segment2 = new TextSegment(); 
-		heading2.TocPage = tocPage; 
-		heading2.Segments.Add(segment2); 
-		heading2.IsAutoSequence = true; 
-		segment2.Text = "this is heading of level " + Level; 
-		heading2.IsInList = true; 
-		page.Paragraphs.Add(heading2); 
-	}
+{ 
+    Heading heading2 = new Heading(Level); 
+    TextSegment segment2 = new TextSegment(); 
+    heading2.TocPage = tocPage; 
+    heading2.Segments.Add(segment2); 
+    heading2.IsAutoSequence = true; 
+    segment2.Text = "this is heading of level " + Level; 
+    heading2.IsInList = true; 
+    page.Paragraphs.Add(heading2); 
+}
+```
+
+- Başlık ve TextSegment: Bunlar TOC'nizde görünecek başlıkları temsil eder. Her seviye kendi başlığını alır.
+- IsAutoSequence: Başlıkları otomatik olarak numaralandırır.
+- IsInList: Her başlığın İçindekiler tablosunda görünmesini sağlar.
+
+## Adım 6: Belgeyi Kaydedin
+
+Her şey ayarlandıktan sonra PDF belgesini belirttiğiniz çıktı dosyasına kaydedin.
+
+```csharp
 doc.Save(outFile);
 ```
 
+Ve işte bu kadar! İçindekiler Tablosu olan bir PDF'i başarıyla oluşturdunuz ve sayfa numaraları gizlendi!
+
 ## Çözüm
 
-Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF belgesinde XMP meta verileriyle nasıl çalışılacağını inceledik. XMP meta verileri, PDF belgesinin başlığı, yazarı, oluşturulma tarihi ve daha fazlası dahil olmak üzere değerli bilgiler sağlar. .NET için Aspose.PDF, geliştiricilerin bu meta verilere erişmesine ve bunları düzenlemesine olanak tanır ve PDF belgeleriyle çalışmak için esnek ve güçlü bir API sağlar.
+PDF'de İçindekiler Tablosu oluşturmak ve sayfa numaralarını gizlemek zor görünebilir, ancak .NET için Aspose.PDF ile bu çok kolaydır. Bu adım adım kılavuzu izleyerek, İçindekiler formatını nasıl özelleştireceğinizi, sayfa numaralarını nasıl gizleyeceğinizi ve başlıklarınıza farklı stiller nasıl uygulayacağınızı öğrendiniz. Artık tam ihtiyaçlarınıza göre uyarlanmış profesyonel PDF'ler oluşturabilirsiniz.
 
-### SSS
+## SSS
 
-#### S: PDF belgesinde XMP meta verisi nedir?
+### İçindekiler tablosunda belirli başlıklar için sayfa numaraları gösterebilir miyim?
+Hayır, Aspose.PDF tüm TOC için sayfa numaralarını gizler veya gösterir. Belirli girdiler için bunları seçici olarak gizleyemezsiniz.
 
-A: PDF belgesindeki XMP (Genişletilebilir Meta Veri Platformu) meta verisi, belge hakkında meta veri bilgilerini depolamak için standart bir biçimdir. Belge başlığı, yazar, oluşturma tarihi, anahtar sözcükler ve daha fazlası gibi ayrıntıları içerir. XMP meta verisi, PDF belgesi hakkında bilgi depolamak ve paylaşmak için yapılandırılmış ve standartlaştırılmış bir yol sağlar.
+### İçindekiler tablosuna daha fazla seviye eklemek mümkün mü?
+ Evet, artırabilirsiniz`FormatArrayLength` İçindekiler başlıklarının daha fazla düzeyini tanımlamak için.
 
-#### S: Aspose.PDF for .NET kullanarak bir PDF belgesinin XMP meta verilerini değiştirebilir miyim?
+### Tüm İçindekiler girişlerinin yazı tipini nasıl değiştirebilirim?
+ Yazı tipini değiştirerek değiştirebilirsiniz.`TextState.Font` her seviyedeki mülk`FormatArray`.
 
- A: Evet, .NET için Aspose.PDF'yi kullanarak bir PDF belgesinin XMP meta verilerini programatik olarak değiştirebilirsiniz. Şuraya erişebilirsiniz:`Info` mülkiyeti`Document` XMP meta veri özelliklerine erişmenizi sağlayan nesne. Daha sonra bu özelliklerin değerlerini güncelleyerek PDF belgesinin XMP meta verilerini değiştirebilirsiniz.
+### İçindekiler bölümüne köprü metni ekleyebilir miyim?
+ Evet, her İçindekiler girişini belgedeki belirli bir bölüme bağlamak için`Heading.TocPage` mülk.
 
-#### S: Aspose.PDF for .NET kullanarak bir PDF belgesinden özel XMP meta veri özelliklerini çıkarabilir miyim?
-
- A: Evet, Aspose.PDF for .NET kullanarak bir PDF belgesinden özel XMP meta veri özelliklerini çıkarabilirsiniz.`Metadata` mülkiyeti`Document`PDF belgesinin tüm XMP meta veri özelliklerine erişim sağlayan nesne. Daha sonra özel özellikleri çıkarabilir ve değerlerini gerektiği gibi kullanabilirsiniz.
+### Aspose.PDF için lisansa ihtiyacım var mı?
+Evet, üretim kullanımı için geçerli bir lisans gereklidir. Geçici bir lisans alabilirsiniz[Burada](https://purchase.aspose.com/temporary-license/) Özellikleri test etmek için.

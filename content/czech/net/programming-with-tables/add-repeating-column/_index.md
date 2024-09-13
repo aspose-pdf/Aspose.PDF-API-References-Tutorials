@@ -60,7 +60,7 @@ headerRow.Cells.Add("header 1");
 headerRow.Cells.Add("header 2");
 headerRow.Cells.Add("header 3");
 // ...
-// Zde přidejte další záhlaví
+//Zde přidejte další záhlaví
 
 for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
 {
@@ -101,7 +101,7 @@ Aspose.Pdf.Table outerTable = new Aspose.Pdf.Table();
 outerTable.ColumnWidths = "100%";
 outerTable.HorizontalAlignment = HorizontalAlignment.Left;
 
-//Vytvořte instanci objektu tabulky, který bude vnořen do externalTable, který se rozpadne na stejné stránce
+// Vytvořte instanci objektu tabulky, který bude vnořen do externalTable, který se rozpadne na stejné stránce
 Aspose.Pdf.Table mytable = new Aspose.Pdf.Table();
 mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
@@ -156,7 +156,7 @@ doc.Save(outFile);
 ```
 
 ## Závěr
-V tomto tutoriálu jsme se naučili, jak přidat opakující se sloupec do dokumentu PDF pomocí Aspose.PDF pro .NET. Tento podrobný průvodce můžete použít k vytvoření tabulek s opakujícími se sloupci ve vašich vlastních projektech C#.
+tomto tutoriálu jsme se naučili, jak přidat opakující se sloupec do dokumentu PDF pomocí Aspose.PDF pro .NET. Tento podrobný průvodce můžete použít k vytvoření tabulek s opakujícími se sloupci ve vašich vlastních projektech C#.
 
 ### Časté dotazy pro přidání opakujícího se sloupce do dokumentu PDF
 

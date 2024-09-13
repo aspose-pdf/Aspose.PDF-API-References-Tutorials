@@ -13,7 +13,7 @@ url: /zh/net/programming-with-text/extract-text-all/
 开始之前，请确保您已准备好以下物品：
 
 - 您的机器上安装的 Visual Studio 或任何其他 C# 编译器。
-- Aspose.PDF for .NET 库。您可以从 Aspose 官方网站下载它，或者使用 NuGet 等包管理器来安装它。
+- Aspose.PDF for .NET 库。您可以从 Aspose 官方网站下载它，也可以使用 NuGet 等包管理器来安装它。
 
 ## 步骤 1：设置项目
 1. 在您首选的开发环境中创建一个新的 C# 项目。
@@ -88,7 +88,7 @@ tw.Close();
 
 #### 问：本教程的目的是什么？
 
-答：本教程可作为指南，帮助您使用 Aspose.PDF for .NET 从 PDF 文件中提取所有文本。随附的 C# 源代码提供了完成此任务的分步说明。
+答：本教程可作为指南帮助您使用 Aspose.PDF for .NET 从 PDF 文件中提取所有文本。随附的 C# 源代码提供了完成此任务的分步说明。
 
 #### 问：我应该导入哪些命名空间？
 

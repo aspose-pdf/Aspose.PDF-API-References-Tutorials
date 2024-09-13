@@ -1,7 +1,7 @@
 ---
 title: XML till PDFSet Image Path
 linktitle: XML till PDFSet Image Path
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du enkelt konverterar XML till PDF med Aspose.PDF för .NET. Denna detaljerade guide leder dig genom processen steg för steg, från installation till slutförande.
 type: docs
 weight: 340
@@ -61,7 +61,7 @@ Document doc = new Document();
 
 ## Steg 3: Bind XML-data till dokumentet
 
- Därefter kommer du att binda dina XML-data till`Document` objekt. Detta steg laddar i huvudsak din XML-data till PDF-dokumentet.
+ Därefter ska du binda dina XML-data till`Document` objekt. Detta steg laddar i huvudsak din XML-data till PDF-dokumentet.
 
 ```csharp
 doc.BindXml(inXml);

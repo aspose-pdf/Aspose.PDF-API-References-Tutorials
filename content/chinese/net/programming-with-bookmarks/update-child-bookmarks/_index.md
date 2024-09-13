@@ -64,7 +64,7 @@ OutlineItemCollection pdfOutline = pdfDocument.Outlines[1];
 
 ## 步骤 4：获取子书签
 
-获得父书签后，您就可以访问其子书签。假设您想更新第二个子书签。您可以按照以下步骤操作：
+获得父书签后，您就可以访问其子书签。假设您想要更新第二个子书签。您可以按照以下步骤操作：
 
 ```csharp
 OutlineItemCollection childOutline = pdfOutline[1];

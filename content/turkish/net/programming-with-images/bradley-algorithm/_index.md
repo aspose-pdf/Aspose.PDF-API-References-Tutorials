@@ -2,49 +2,82 @@
 title: Bradley Algoritması
 linktitle: Bradley Algoritması
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET ile Bradley algoritmasını kullanarak bir PDF belgesini dönüştürün.
+description: Aspose.PDF for .NET'te Bradley algoritmasını kullanarak bir PDF'yi TIFF'e nasıl dönüştüreceğinizi öğrenin. Sorunsuz dönüşüm için adım adım kılavuz, ön koşullar ve SSS.
 type: docs
 weight: 30
 url: /tr/net/programming-with-images/bradley-algorithm/
 ---
-Bu adım adım kılavuz, Bradley Algoritmasının .NET için Aspose.PDF ile nasıl kullanılacağını açıklar. Ortamınızı önceden kurduğunuzdan ve aşağıdaki adımları izlediğinizden emin olun:
+## giriiş
 
-## Adım 1: Belge dizinini tanımlayın
+PDF dosyalarıyla çalışmak bazen onları okumaktan veya düzenlemekten daha fazlasını gerektirebilir; onları resimlere dönüştürmeniz gerekebilir. PDF'leri TIFF resimlerine dönüştürmenin güçlü bir yolu, Aspose.PDF for .NET kitaplığı aracılığıyla Bradley Algoritmasını kullanmaktır. Bu yöntem, belge arşivleme ve diğer özel kullanım durumları için mükemmel olan yüksek kaliteli ikili resimler sağlar.
 
-Başlamadan önce, belgeler için doğru dizini ayarladığınızdan emin olun. Değiştir`"YOUR DOCUMENT DIRECTORY"` PDF belgenizin bulunduğu dizinin yolunu içeren kodda.
+Bu eğitim, Bradley Binarization Algorithm ile bir PDF sayfasını TIFF görüntüsüne dönüştürmek için ayrıntılı ve kolay takip edilebilir bir süreçte size yol gösterecektir. Aspose.PDF for .NET bu görevi basitleştirerek belge iş akışlarınızı otomatikleştirme ve kolaylaştırma olanağı sağlar.
+
+## Ön koşullar
+
+Koda dalmadan önce, takip etmeniz gereken her şeye sahip olduğunuzdan emin olalım:
+
+-  .NET için Aspose.PDF: Kütüphaneye ihtiyacınız olacak. Buradan indirin[Burada](https://releases.aspose.com/pdf/net/).
+- Visual Studio (veya herhangi bir C# IDE).
+- Temel C# bilgisi.
+-  Geçerli bir lisans veya[geçici lisans](https://purchase.aspose.com/temporary-license/) Aspose'dan.
+
+## Paketleri İçe Aktar
+
+İlk önce, gerekli ad alanlarını projenize aktardığınızdan emin olun. Bu kütüphaneler size PDF belgelerini düzenlemeniz, bunları TIFF formatına dönüştürmeniz ve Bradley ikilileştirme algoritmasını uygulamanız için araçlar sağlayacaktır.
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-## Adım 2: Belgeyi açın
+Süreci sorunsuz bir şekilde takip edebilmeniz için süreci kolay adımlara bölelim. Bu kılavuzun sonunda, Bradley algoritmasını kullanarak bir PDF sayfasını ikili TIFF görüntüsüne başarıyla dönüştürmüş olacaksınız.
 
- Bu adımda PDF belgesini şu şekilde açacağız:`Document` Aspose.PDF sınıfı. Kullanın`Document` oluşturucuyu kullanın ve PDF belgesinin yolunu geçirin.
+## Adım 1: Belge Dizinini Ayarlayın
+
+İlk adım, PDF belgenizin bulunduğu dizine giden yolu belirtmektir. Ayrıca, oluşturulacak TIFF görüntüleri için çıktı yollarını da tanımlayacaksınız.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // PDF dosyanıza giden yol
+```
+
+Burada hem kaynak PDF'yi hem de dönüştürülmüş TIFF dosyalarını depolarsınız. Kodun dosyaları hatasız okuyabilmesi ve yazabilmesi için dizinin düzgün ayarlandığından emin olun.
+
+## Adım 2: PDF Belgesini açın
+
+Artık yol ayarlandığına göre, dönüştürmek istediğiniz PDF belgesini açmanın zamanı geldi. Aspose.PDF for .NET, daha fazla işlem için bir belgenin yüklenmesini kolaylaştırır.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "PageToTIFF.pdf");
 ```
 
-## Adım 3: Çıktı dosyalarını tanımlayın
+ Burada,`PageToTIFF.pdf` örnek dosyadır. Bunu istediğiniz herhangi bir PDF dosyasıyla değiştirebilirsiniz. Belge nesnesi artık daha fazla düzenleme için PDF'yi tutar.
 
- Sonuç görüntüsü ve ikili görüntü için çıktı dosya adlarını tanımlayın. Değiştir`"resultant_out.tif"` Ve`"37116-bin_out.tif"` çıktı dosyaları için istenilen isimlerle.
+## Adım 3: Görüntüler için Çıktı Yollarını Tanımlayın
+
+Daha sonra, hem standart TIFF hem de ikili sürüm dahil olmak üzere, oluşturulan TIFF dosyaları için çıktı yollarını belirteceksiniz.
 
 ```csharp
 string outputImageFile = dataDir + "resultant_out.tif";
 string outputBinImageFile = dataDir + "37116-bin_out.tif";
 ```
 
-## Adım 4: Resolution nesnesini oluşturun
+Bu yolları ayırarak, standart TIFF dönüşümü için bir dosyanız ve Bradley algoritması uygulandıktan sonra ikili görüntü için başka bir dosyanız olur.
 
- Bir tane oluştur`Resolution` TIFF görüntüsünün çözünürlüğünü ayarlamak için nesne. Bu örnekte, 300 dpi çözünürlük kullanıyoruz.
+## Adım 4: Bir Çözünürlük Nesnesi Oluşturun
+
+PDF'leri TIFF'e dönüştürürken çözünürlük, görüntü kalitesini belirlemede önemli bir rol oynar. Bizim amacımız için, yüksek kaliteli çıktı sağlamak için bunu 300 DPI olarak ayarlayacağız.
 
 ```csharp
 Resolution resolution = new Resolution(300);
 ```
 
-## Adım 5: TiffSettings nesnesini oluşturun
+Daha yüksek DPI, özellikle yazdırılacak veya arşivlenecek belgeler söz konusu olduğunda daha iyi görüntü netliği anlamına gelir.
 
- Bir tane oluştur`TiffSettings` çıktı TIFF dosyası için ayarları belirtmek için nesne. Bu örnekte, LZW sıkıştırması ve piksel başına 1 bitlik (1 bpp biçimi) bir renk derinliği kullanıyoruz.
+## Adım 5: TIFF Ayarlarını Yapılandırın
+
+Sonra, TIFF görüntüsü için ayarları yapılandırmanız gerekecek. Burada, LZW Sıkıştırmayı kullanacağız ve ikili bir görüntü elde etmek için renk derinliğini 1bpp'ye (piksel başına 1 bit) ayarlayacağız.
 
 ```csharp
 TiffSettings tiffSettings = new TiffSettings();
@@ -52,103 +85,71 @@ tiffSettings.Compression = CompressionType.LZW;
 tiffSettings.Depth = Aspose.Pdf.Devices.ColorDepth.Format1bpp;
 ```
 
-## Adım 6: TIFF aygıtını oluşturun
+Derinliği 1bpp'ye ayarlayarak görüntüyü ikili çıktı için hazırlıyoruz. LZW sıkıştırma, kaliteyi kaybetmeden dosya boyutunu azaltmadaki verimliliği nedeniyle seçilmiştir.
 
- TIFF aygıtı oluşturmak için şunu kullanın:`TiffDevice` Çözünürlük ve TIFF ayarlarını belirten nesne.
+## Adım 6: TIFF Aygıtını Oluşturun
+
+Şimdi, dönüşümü işleyecek bir TIFF aygıtı oluşturmanız gerekecek. Bu aygıt daha önce tanımlanan çözünürlük ve TIFF ayarlarını kullanır.
 
 ```csharp
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
 ```
 
-## Adım 7: Belirli sayfayı dönüştürün ve resmi kaydedin
+TIFF aygıtı bu işlemin çekirdeğidir. PDF belgesini alır ve her sayfayı önceden tanımladığınız ayarlara göre bir TIFF görüntüsüne dönüştürür.
 
- Kullanın`Process` TIFF aygıtının PDF belgesinin belirli bir sayfasını dönüştürme ve görüntüyü bir TIFF dosyasına kaydetme yöntemi. Dosya çıktı yolunu belirtin.
+## Adım 7: PDF Sayfasını TIFF'e Dönüştürün
+
+ PDF'yi işleme ve ilk sayfayı bir TIFF görüntüsüne dönüştürme zamanı.`Process` yöntemi belirli sayfaları veya tüm belgeyi dönüştürmenize olanak tanır. Bu örnekte, ilk sayfayı dönüştürüyoruz.
 
 ```csharp
 tiffDevice.Process(pdfDocument, outputImageFile);
 ```
 
-## Adım 8: Bradley algoritmasını kullanarak görüntüyü ikili hale getirin
+Yöntem tamamlandığında, daha önce tanımladığınız konuma kaydedilmiş bir TIFF görüntünüz olacak.
 
- Kullanın`BinarizeBradley`Bradley algoritmasını kullanarak görüntüyü ikili hale getirmek için TIFF aygıtının yöntemi. Bu yöntem, orijinal görüntünün bir giriş akışını ve ikili görüntü için bir çıkış akışını alır. İkili hale getirme eşiğini belirtin (bu örnekte 0,1).
+## Adım 8: Bradley İkilileştirme Algoritmasını Uygulayın
+
+Şimdi sihir geliyor—Bradley Algoritması! Bu algoritma, gri tonlamalı TIFF görüntüsünü ikili bir görüntüye dönüştürerek belge tanıma sistemleri için optimize eder.
 
 ```csharp
-using (FileStream
-
-  inStream = new FileStream(outputImageFile, FileMode.Open))
-{
-using (FileStream outStream = new FileStream(outputBinImageFile, FileMode.Create))
-{
-tiffDevice. Binarize Bradley(inStream, outStream, 0.1);
-}
-}
-```
-
-### .NET için Aspose.PDF kullanılarak Bradley Algoritması için örnek kaynak kodu 
-```csharp
-// Belgeler dizinine giden yol.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Belgeyi aç
-Document pdfDocument = new Document(dataDir+ "PageToTIFF.pdf");
-string outputImageFile = dataDir + "resultant_out.tif";
-string outputBinImageFile = dataDir + "37116-bin_out.tif";
-// Çözünürlük nesnesi oluştur
-Resolution resolution = new Resolution(300);
-// TiffSettings nesnesi oluştur
-TiffSettings tiffSettings = new TiffSettings();
-tiffSettings.Compression = CompressionType.LZW;
-tiffSettings.Depth = Aspose.Pdf.Devices.ColorDepth.Format1bpp;
-// TIFF aygıtı oluştur
-TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
-// Belirli bir sayfayı dönüştürün ve görüntüyü akışa kaydedin
-tiffDevice.Process(pdfDocument, outputImageFile);
 using (FileStream inStream = new FileStream(outputImageFile, FileMode.Open))
 {
-	using (FileStream outStream = new FileStream(outputBinImageFile, FileMode.Create))
-	{
-		tiffDevice.BinarizeBradley(inStream, outStream, 0.1);
-	}
+    using (FileStream outStream = new FileStream(outputBinImageFile, FileMode.Create))
+    {
+        tiffDevice.BinarizeBradley(inStream, outStream, 0.1);
+    }
 }
-System.Console.WriteLine("Conversion using bradley algorithm performed successfully!");
 ```
+
+ BinarizeBradley yöntemi iki dosya akışı (giriş ve çıkış) ve bir eşik değeri (burada) alır`0.1`) ikilileştirme seviyesini belirler. Yürütmenin ardından, kullanıma hazır mükemmel bir şekilde ikilileştirilmiş bir görüntünüz olacak.
+
+## Adım 9: Başarılı Dönüşümü Onaylayın
+
+Son olarak, kullanıcıya işlemin başarılı olduğunu bildirmek iyi bir uygulamadır. Bunu basit bir konsol çıktısıyla yapabilirsiniz.
+
+```csharp
+System.Console.WriteLine("Conversion using Bradley algorithm performed successfully!");
+```
+
+Bunu yazdırdığınızda PDF sayfanızın ikili TIFF görüntüsüne başarıyla dönüştürüldüğünü anlarsınız!
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET ile Bradley algoritmasını kullanarak dönüştürmeyi başarıyla tamamladınız. Artık ortaya çıkan görüntüleri projelerinizde veya uygulamalarınızda kullanabilirsiniz.
+İşte oldu! Aspose.PDF for .NET kullanarak bir PDF sayfasını bir TIFF görüntüsüne nasıl dönüştüreceğinizi ve Bradley ikilileştirme algoritmasını nasıl uygulayacağınızı öğrendiniz. Bu işlem, belge arşivleme, optik karakter tanıma (OCR) ve diğer profesyonel uygulamalar için olmazsa olmazdır. Yüksek kaliteli çözünürlük ve verimli sıkıştırma ile belge görüntülerinizin hem net hem de boyut olarak yönetilebilir olmasını sağlayabilirsiniz.
 
-### SSS
+## SSS
 
-#### S: Bradley Algoritması nedir ve .NET için Aspose.PDF ile nasıl bir ilişkisi vardır?
+### Bradley Algoritması Nedir?
+Bradley Algoritması, her piksel için çevresine bağlı olarak uyarlanabilir bir eşik değeri belirleyerek gri tonlamalı görüntüleri ikili (siyah-beyaz) görüntülere dönüştüren bir ikilileştirme tekniğidir.
 
-A: Bradley Algoritması, görüntü kalitesini ve netliğini artırmak için kullanılan bir görüntü işleme tekniğidir. Aspose.PDF for .NET, Bradley Algoritmasını PDF belgelerine uygulamanın kolay bir yolunu sunarak gelişmiş görüntüler elde edilmesini sağlar.
+### Bu yöntemi kullanarak birden fazla PDF sayfasını TIFF'e dönüştürebilir miyim?
+ Evet, değiştirebilirsiniz`Process` Belgedeki sayfalar arasında döngü yaparak tüm sayfaları dönüştürme yöntemi.
 
-#### S: Aspose.PDF for .NET ile Bradley Algoritmasını kullanmak için ortamımı nasıl ayarlarım?
+### PDF'leri TIFF'e dönüştürmek için en uygun çözünürlük nedir?
+Yüksek kaliteli görüntüler için genellikle 300 DPI önerilir. Ancak bu değeri ihtiyaçlarınıza göre ayarlayabilirsiniz.
 
-C: Başlamadan önce, Aspose.PDF for .NET'in düzgün şekilde yüklendiğinden ve geliştirme ortamınızın yapılandırıldığından emin olun.
+### Renk derinliğinde 1bpp ne anlama geliyor?
+1bpp (piksel başına 1 bit), görüntünün siyah beyaz olacağı ve her pikselin ya tamamen siyah ya da tamamen beyaz olacağı anlamına gelir.
 
-#### S: Bradley Algoritması sürecinde belge dizininin tanımlanmasının önemi nedir?
-
-A: PDF belgesinin işleme için doğru yolda bulunduğundan emin olmak için doğru belge dizinini belirtmek çok önemlidir.
-
-#### S: Bradley Algoritması'nı kullanarak .NET için Aspose.PDF'yi kullanarak bir PDF belgesini nasıl açarım?
-
- A: Şunu kullanın:`Document` Bradley Algoritması sürecinin girdisi olarak hizmet eden PDF belgesini açmak için kullanılan sınıf.
-
-#### S: Bradley Algoritması sürecinde görüntü ve ikili görüntü için çıktı dosya adlarını tanımlamanın amacı nedir?
-
-A: Çıktı dosya adlarını tanımlamak, Bradley Algoritması uygulandıktan sonra ortaya çıkan görüntünün ve ikili görüntünün nereye kaydedileceğini belirtmenize olanak tanır.
-
-#### S: Bradley Algoritması sürecinde çözünürlük ayarı TIFF görüntü kalitesini nasıl etkiler?
-
-A: Çözünürlük ayarı, Bradley Algoritması uygulandıktan sonra elde edilen TIFF görüntüsündeki ayrıntı ve netlik düzeyini belirler.
-
-#### S: Bradley Algoritması sürecinde çıktı TIFF görüntüsü için hangi ayarları özelleştirebilirim?
-A: TIFF görüntünüz için istediğiniz çıktıyı elde etmek amacıyla sıkıştırma türü ve renk derinliği gibi ayarları özelleştirebilirsiniz.
-
-#### S: TIFF aygıtı Bradley Algoritması sürecine nasıl katkıda bulunur?
-
-A: TIFF aygıtı, görüntüleri işleme ve Bradley Algoritmasını uygulama aracı olarak görev yapar ve bunun sonucunda gelişmiş görüntü kalitesi elde edilir.
-
-#### S: Bradley Algoritması sürecinde PDF belgesinin belirli bir sayfasını TIFF görüntüsüne nasıl dönüştürebilirim?
-
- A: Şunu kullanın:`Process` TIFF aygıtının PDF belgesinin belirli bir sayfasını daha sonra Bradley Algoritması kullanılarak işlenebilecek bir TIFF görüntüsüne dönüştürme yöntemi.
+### Bradley Algoritması OCR için uygun mudur?
+Evet, Bradley Algoritması taranan belgelerdeki metnin kontrastını artırdığı için OCR ön işlemede sıklıkla kullanılır.

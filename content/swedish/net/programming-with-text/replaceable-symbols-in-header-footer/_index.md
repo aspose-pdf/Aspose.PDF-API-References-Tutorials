@@ -1,13 +1,13 @@
 ---
 title: Utbytbara symboler i sidhuvudet
 linktitle: Utbytbara symboler i sidhuvudet
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du använder utbytbara symboler i sidhuvudet och sidfoten i ett PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 320
 url: /sv/net/programming-with-text/replaceable-symbols-in-header-footer/
 ---
-I den här handledningen kommer vi att förklara hur man använder utbytbara symboler i sidhuvudet och sidfoten i ett PDF-dokument med hjälp av Aspose.PDF-biblioteket för .NET. Vi kommer att gå igenom steg-för-steg-processen för att skapa en PDF, ställa in marginaler, lägga till sidhuvud och sidfot med utbytbara symboler och spara PDF:en med den medföljande C#-källkoden.
+den här handledningen kommer vi att förklara hur man använder utbytbara symboler i sidhuvudet och sidfoten i ett PDF-dokument med hjälp av Aspose.PDF-biblioteket för .NET. Vi kommer att gå igenom steg-för-steg-processen för att skapa en PDF, ställa in marginaler, lägga till sidhuvud och sidfot med utbytbara symboler och spara PDF:en med den medföljande C#-källkoden.
 
 ## Förutsättningar
 
@@ -35,7 +35,7 @@ Page page = doc.Pages.Add();
 
 ## Steg 3: Ställ in marginaler
 
-Vi ställer in marginalerna för sidan med hjälp av`MarginInfo` klass. Justera marginalvärdena enligt dina krav.
+ Vi ställer in marginalerna för sidan med hjälp av`MarginInfo` klass. Justera marginalvärdena enligt dina krav.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -110,7 +110,7 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-// Tilldela marginInfo-instansen Margin-egenskapen för sec1.PageInfo
+//Tilldela marginInfo-instansen Margin-egenskapen för sec1.PageInfo
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
@@ -148,7 +148,7 @@ Table tab2 = new Table();
 hfFoot.Paragraphs.Add(tab2);
 // Ställ in med tabellens kolumnbredder
 tab2.ColumnWidths = "165 172 165";
-// Skapa rader i tabellen och sedan celler i raderna
+//Skapa rader i tabellen och sedan celler i raderna
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
@@ -173,7 +173,7 @@ table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
 // Ställ in tabellkanten med ett annat anpassat BorderInfo-objekt
 table.Border = new BorderInfo(BorderSide.All, 1f);
 table.RepeatingRowsCount = 1;
-// Skapa rader i tabellen och sedan celler i raderna
+//Skapa rader i tabellen och sedan celler i raderna
 Row row1 = table.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

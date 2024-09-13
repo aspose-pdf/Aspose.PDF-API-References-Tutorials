@@ -62,7 +62,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## चरण 6: निकाले गए पाठ अंशों को पुनः प्राप्त करें
 
-का उपयोग करके निकाले गए पाठ अंश प्राप्त करें`TextFragments` की संपत्ति`TextFragmentAbsorber` वस्तु:
+ का उपयोग करके निकाले गए पाठ अंश प्राप्त करें`TextFragments` की संपत्ति`TextFragmentAbsorber` वस्तु:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -165,7 +165,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 #### प्रश्न: यदि खोज वाक्यांश निर्दिष्ट पृष्ठ पर नहीं मिलता है तो क्या होगा?
 
- उत्तर: यदि खोज वाक्यांश निर्दिष्ट पृष्ठ पर नहीं मिलता है, तो`TextFragmentCollection` खाली हो जाएगा, और कोई प्रतिस्थापन नहीं किया जाएगा। सुनिश्चित करें कि खोज वाक्यांश उस पृष्ठ पर मौजूद है जिसे आप लक्षित कर रहे हैं।
+उत्तर: यदि खोज वाक्यांश निर्दिष्ट पृष्ठ पर नहीं मिलता है, तो`TextFragmentCollection` खाली हो जाएगा, और कोई प्रतिस्थापन नहीं किया जाएगा। सुनिश्चित करें कि खोज वाक्यांश उस पृष्ठ पर मौजूद है जिसे आप लक्षित कर रहे हैं।
 
 #### प्रश्न: मैं प्रत्येक पाठ खंड के लिए प्रतिस्थापन पाठ को कैसे अनुकूलित कर सकता हूं?
 

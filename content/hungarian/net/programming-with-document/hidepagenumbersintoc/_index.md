@@ -2,109 +2,40 @@
 title: Oldalszámok elrejtése a TOC-ban
 linktitle: Oldalszámok elrejtése a TOC-ban
 second_title: Aspose.PDF for .NET API Reference
-description: Ebből a lépésről lépésre szóló útmutatóból megtudhatja, hogyan rejtheti el az oldalszámokat a tartalomjegyzékben az Aspose.PDF for .NET használatával.
+description: Ismerje meg, hogyan rejtheti el az oldalszámokat a tartalomjegyzékben az Aspose.PDF for .NET használatával. Kövesse ezt a részletes útmutatót a kódpéldákkal a professzionális PDF-ek létrehozásához.
 type: docs
 weight: 220
 url: /hu/net/programming-with-document/hidepagenumbersintoc/
 ---
-Ebben a cikkben az Aspose.PDF for .NET oldalszámok elrejtése a tartalomjegyzékben funkciójának megvalósítását tárgyaljuk C# használatával. Kezdjük az Aspose.PDF for .NET rövid bemutatásával, majd belevessünk a funkció megvalósításának lépésenkénti útmutatójába. 
+## Bevezetés
 
-## Az Aspose.PDF .NET-hez bemutatása
-
-Az Aspose.PDF for .NET egy hatékony PDF-manipulációs összetevő, amely lehetővé teszi a fejlesztők számára, hogy programozottan hozzanak létre, szerkesszenek és kezeljenek PDF-fájlokat. Funkciók és funkciók széles skáláját kínálja, amelyek megkönnyítik a PDF-dokumentumok kezelését. Az Aspose.PDF for .NET támogatja a 32 bites és 64 bites operációs rendszereket is, és használható .NET Framework, .NET Core és Xamarin platformokkal. 
-
-## Mi az az oldalszámok elrejtése a tartalomjegyzékben funkció?
-
-A tartalomjegyzék (TOC) a PDF-dokumentum lényeges része, amely gyors áttekintést nyújt a felhasználóknak a tartalomról. Előfordulhat, hogy a felhasználók el akarják rejteni az oldalszámokat a tartalomjegyzékben, hogy felhasználóbarátabbá tegyék. Az Aspose.PDF for .NET beépített funkciót biztosít az oldalszámok elrejtésére a tartalomjegyzékben. Ezzel a funkcióval felhasználóbarátabb PDF dokumentumokat lehet létrehozni. 
+Amikor PDF-ekkel dolgozik, előfordulhat, hogy érdemes létrehozni egy tartalomjegyzéket (TOC), de az oldalszámok elrejtésével a dolgokat karcsúsíthatja. Lehet, hogy a dokumentum jobban megy nélkülük, vagy talán esztétikai választás. Bármi legyen is az oka, ha az Aspose.PDF for .NET-hez dolgozik, ez az oktatóanyag pontosan megmutatja, hogyan rejtheti el az oldalszámokat a tartalomjegyzékben.
 
 ## Előfeltételek
 
-Az oktatóanyag követéséhez a következőkre lesz szüksége:
+Mielőtt elkezdenénk, néhány dolgot meg kell tennie. Íme egy gyors ellenőrző lista:
 
-- Visual Studio 2010 vagy újabb
-- Aspose.PDF for .NET telepítve van a rendszerére
-- C# programozási nyelv alapismerete
+- Visual Studio telepítve: A kódoláshoz szüksége lesz a Visual Studio működő verziójára.
+- Aspose.PDF for .NET Library: Győződjön meg arról, hogy telepítette az Aspose.PDF for .NET könyvtárat.
+  -  Letöltési link:[Aspose.PDF .NET-hez](https://releases.aspose.com/pdf/net/)
+- Ideiglenes licenc: Ha teszteli a szolgáltatásokat, hasznos, ha rendelkezik ideiglenes licenccel.
+  -  Ideiglenes jogosítvány:[Szerezd meg itt](https://purchase.aspose.com/temporary-license/)
 
-## Útmutató lépésről lépésre az Oldalszámok elrejtése a tartalomjegyzékben funkció megvalósításához
+## Csomagok importálása
 
-Kövesse az alábbi lépéseket az Oldalszámok elrejtése a tartalomjegyzékben funkció megvalósításához az Aspose.PDF for .NET használatával:
-
-## 1. lépés: Hozzon létre egy új C# konzolalkalmazást a Visual Studióban
-
-Nyissa meg a Visual Studio-t, és hozzon létre egy új C# konzolalkalmazást.
-
-## 2. lépés: Adjon hozzá hivatkozást az Aspose.PDF fájlhoz a .NET-hez
-
-Kattintson a jobb gombbal a References mappára a projektben, és válassza a Hivatkozás hozzáadása lehetőséget. Keresse meg azt a helyet, ahol az Aspose.PDF for .NET telepítve van a rendszerén, és adjon hozzá hivatkozást.
-
-## 1. lépés: Hozzon létre egy új PDF-dokumentumot
-
-Hozzon létre egy új PDF dokumentumot a következő kóddal:
+Mielőtt belevágna a kódba, győződjön meg róla, hogy importálja a következő névtereket a C# projektbe. Ezek biztosítják a szükséges osztályokat és módszereket a PDF-dokumentumokkal való munkához és a tartalomjegyzék (TOC) létrehozásához.
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outFile = dataDir + "HiddenPageNumbers_out.pdf";
-Document doc = new Document();
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-## 2. lépés: Hozzon létre egy TOC oldalt
+Most, hogy a környezet készen áll, és a csomagok importálva vannak, bontsuk le a folyamat egyes lépéseit. Az egyértelműség érdekében a kód minden részét lefedjük, így könnyen követheti a lépést.
 
-Hozzon létre egy új oldalt a TOC számára, és adja hozzá a PDF dokumentumhoz a következő kóddal:
+## 1. lépés: Inicializálja a PDF-dokumentumot
 
-```csharp
-Page tocPage = doc.Pages.Add();
-TocInfo tocInfo = new TocInfo();
-TextFragment title = new TextFragment("Table Of Contents");
-title.TextState.FontSize = 20;
-title.TextState.FontStyle = FontStyles.Bold;
-tocInfo.Title = title;
-```
+Először is létre kell hoznunk egy új PDF-dokumentumot, és hozzá kell adni egy oldalt a tartalomjegyzékhez (TOC).
 
-## 3. lépés: Adja hozzá a lista szakaszt a PDF dokumentum szakaszgyűjteményéhez
-
-Adja hozzá a lista részt a PDF-dokumentum szakaszgyűjteményéhez a következő kóddal:
-
-```csharp
-tocPage.TocInfo = tocInfo;
-```
-
-## 4. lépés: Határozza meg a négyszintű lista formátumát
-
-Határozza meg a négyszintű lista formátumát az egyes szintek bal margóinak és szövegformátum-beállításainak megadásával a következő kód segítségével:
-
-```csharp
-tocInfo.IsShowPageNumbers = false;
-tocInfo.FormatArrayLength = 4;
-tocInfo.FormatArray[0].Margin.Right = 0;
-tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
-tocInfo.FormatArray[1].Margin.Left = 30;
-tocInfo.FormatArray[1].TextState.Underline = true;
-tocInfo.FormatArray[1].TextState.FontSize = 10;
-tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
-tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
-Page page = doc.Pages.Add();
-```
-
-## 5. lépés: Adjon hozzá négy címsort a szakaszhoz
-
-```csharp
-
-for (int Level = 1; Level != 5; Level++)
-{ 
-	Heading heading2 = new Heading(Level); 
-	TextSegment segment2 = new TextSegment(); 
-	heading2.TocPage = tocPage; 
-	heading2.Segments.Add(segment2); 
-	heading2.IsAutoSequence = true; 
-	segment2.Text = "this is heading of level " + Level; 
-	heading2.IsInList = true; 
-	page.Paragraphs.Add(heading2); 
-}
-doc.Save(outFile);
-
-```
-
-### Példa forráskód az oldalszámok elrejtéséhez a tartalomjegyzékben az Aspose.PDF for .NET használatával
 
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
@@ -112,18 +43,47 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "HiddenPageNumbers_out.pdf";
 Document doc = new Document();
 Page tocPage = doc.Pages.Add();
+```
+
+- dataDir: Ez az a könyvtár, ahová a kimeneti fájl mentésre kerül.
+- Document(): Új PDF dokumentum inicializálása.
+- Pages.Add(): Új üres oldalt ad a dokumentumhoz, amely később tartalmazza a tartalomjegyzékét.
+
+## 2. lépés: Állítsa be a TOC-adatokat és a címet
+
+Ezután meghatározzuk a tartalomjegyzék-információkat, beleértve a tartalomjegyzék tetején megjelenő cím beállítását.
+
+```csharp
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
 tocInfo.Title = title;
-//Adja hozzá a lista részt a PDF dokumentum szakaszgyűjteményéhez
 tocPage.TocInfo = tocInfo;
-//Határozza meg a négyszintű lista formátumát a bal margók és a
-//az egyes szintek szövegformátum beállításait
+```
 
+- TocInfo: Ez az objektum tartalmazza a tartalomjegyzékről szóló összes információt.
+- TextFragment: A tartalomjegyzék címének szövegét képviseli, itt "Tartalomjegyzék"-ként állítjuk be.
+- FontStyle: A TOC címet úgy alakítjuk ki, hogy a méretét 20-ra állítjuk, és félkövérre szedjük.
+- tocPage.TocInfo: A tartalomjegyzék-információt hozzárendeljük ahhoz az oldalhoz, amelyen megjelenik a tartalomjegyzék.
+
+## 3. lépés: Az oldalszámok elrejtése a TOC-ban
+
+Most jöjjön a szórakoztató rész! Itt állítjuk be a TOC-t az oldalszámok elrejtésére.
+
+```csharp
 tocInfo.IsShowPageNumbers = false;
 tocInfo.FormatArrayLength = 4;
+```
+
+-  IsShowPageNumbers: Ez a varázskapcsoló, amely elrejti az oldalszámokat. Állítsa be`false`, és az oldalszámok nem jelennek meg a tartalomjegyzékben.
+- FormatArrayLength: Ezt 4-re állítjuk, jelezve, hogy a TOC címsorok négy szintjéhez szeretnénk formázást definiálni.
+
+## 4. lépés: A TOC formázásának testreszabása
+
+A TOC stílusosabbá tétele érdekében a címsorok különböző szintjeihez formázást határozunk meg.
+
+```csharp
 tocInfo.FormatArray[0].Margin.Right = 0;
 tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
 tocInfo.FormatArray[1].Margin.Left = 30;
@@ -131,36 +91,61 @@ tocInfo.FormatArray[1].TextState.Underline = true;
 tocInfo.FormatArray[1].TextState.FontSize = 10;
 tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
 tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
+```
+
+- FormatArray: Ez a tömb szabályozza a TOC bejegyzések formázását. Minden index más-más címsorszintet jelöl.
+- Margó és szövegstílus: Minden címsorszinthez margókat állítunk be, és betűstílusokat alkalmazunk, például félkövér, dőlt és aláhúzott.
+
+## 5. lépés: Adjon hozzá címeket a dokumentumhoz
+
+Végül adjuk hozzá a tényleges címsorokat, amelyek a TOC részét képezik.
+
+```csharp
 Page page = doc.Pages.Add();
-//Adjon hozzá négy címsort a szakaszhoz
 for (int Level = 1; Level != 5; Level++)
-	{ 
-		Heading heading2 = new Heading(Level); 
-		TextSegment segment2 = new TextSegment(); 
-		heading2.TocPage = tocPage; 
-		heading2.Segments.Add(segment2); 
-		heading2.IsAutoSequence = true; 
-		segment2.Text = "this is heading of level " + Level; 
-		heading2.IsInList = true; 
-		page.Paragraphs.Add(heading2); 
-	}
+{ 
+    Heading heading2 = new Heading(Level); 
+    TextSegment segment2 = new TextSegment(); 
+    heading2.TocPage = tocPage; 
+    heading2.Segments.Add(segment2); 
+    heading2.IsAutoSequence = true; 
+    segment2.Text = "this is heading of level " + Level; 
+    heading2.IsInList = true; 
+    page.Paragraphs.Add(heading2); 
+}
+```
+
+- Címsor és szövegszegmens: Ezek a tartalomjegyzékben megjelenő címsorok. Minden szintnek megvan a maga címe.
+- IsAutoSequence: Automatikusan számozza a címsorokat.
+- IsInList: Biztosítja, hogy minden címsor megjelenjen a tartalomjegyzékben.
+
+## 6. lépés: Mentse el a dokumentumot
+
+Ha mindent beállított, mentse a PDF-dokumentumot a megadott kimeneti fájlba.
+
+```csharp
 doc.Save(outFile);
 ```
 
+És ennyi! Sikeresen létrehozott egy PDF-t tartalomjegyzékkel, és az oldalszámok el vannak rejtve!
+
 ## Következtetés
 
-Ebben az oktatóanyagban megvizsgáltuk, hogyan dolgozhatunk XMP-metaadatokkal egy PDF-dokumentumban az Aspose.PDF for .NET használatával. Az XMP metaadatok értékes információkat nyújtanak a PDF-dokumentumról, beleértve a címet, a szerzőt, a létrehozás dátumát és egyebeket. Az Aspose.PDF for .NET lehetővé teszi a fejlesztők számára a metaadatok elérését és kezelését, rugalmas és hatékony API-t biztosítva a PDF-dokumentumok kezeléséhez.
+tartalomjegyzék létrehozása PDF-ben és az oldalszámok elrejtése bonyolultnak tűnhet, de a .NET-hez készült Aspose.PDF használatával ez gyerekjáték. A lépésenkénti útmutató követésével megtanulta, hogyan szabhatja testre a tartalomjegyzék formátumát, hogyan rejtheti el az oldalszámokat, és hogyan alkalmazhat különböző stílusokat a címsorokhoz. Mostantól professzionális PDF-fájlokat készíthet, amelyek pontosan az Ön igényeihez vannak szabva.
 
-### GYIK
+## GYIK
 
-#### K: Mi az XMP-metaadat egy PDF-dokumentumban?
+### Megmutathatok oldalszámokat a tartalomjegyzékben bizonyos címsorokhoz?
+Nem, az Aspose.PDF elrejti vagy megjeleníti a teljes tartalomjegyzék oldalszámait. Ezeket nem lehet szelektíven elrejteni bizonyos bejegyzéseknél.
 
-V: A PDF-dokumentumban lévő XMP (Extensible Metadata Platform) metaadatok szabványos formátum a dokumentum metaadat-információinak tárolására. Olyan részleteket tartalmaz, mint a dokumentum címe, szerzője, létrehozásának dátuma, kulcsszavak stb. Az XMP metaadatok strukturált és szabványosított módot biztosítanak a PDF-dokumentum információinak tárolására és megosztására.
+### Lehetséges több szintet hozzáadni a TOC-hoz?
+ Igen, növelheti a`FormatArrayLength` a TOC címsorok több szintjének meghatározásához.
 
-#### K: Módosíthatom egy PDF-dokumentum XMP-metaadatait az Aspose.PDF for .NET használatával?
+### Hogyan változtathatom meg az összes TOC-bejegyzés betűtípusát?
+ A betűtípust módosíthatja a`TextState.Font` tulajdonság minden szinten a`FormatArray`.
 
- V: Igen, a PDF-dokumentumok XMP-metaadatait programozottan módosíthatja az Aspose.PDF for .NET használatával. Hozzáférhet a`Info` tulajdona a`Document` objektum, amely hozzáférést biztosít az XMP metaadat tulajdonságaihoz. Ezután frissítheti ezen tulajdonságok értékeit a PDF-dokumentum XMP-metaadatainak módosításához.
+### Beilleszthetek hiperhivatkozásokat a tartalomjegyzékbe?
+ Igen, az egyes TOC bejegyzéseket a dokumentum egy adott szakaszához kapcsolhatja a következővel`Heading.TocPage` ingatlan.
 
-#### K: Kibonthatok egyéni XMP-metaadat-tulajdonságokat egy PDF-dokumentumból az Aspose.PDF for .NET használatával?
-
- V: Igen, az Aspose.PDF for .NET használatával kinyerhet egyéni XMP-metaadat-tulajdonságokat egy PDF-dokumentumból. Használhatja a`Metadata` tulajdona a`Document`objektum, amely hozzáférést biztosít a PDF-dokumentum összes XMP-metaadat-tulajdonságához. Ezután kibonthatja az egyéni tulajdonságokat, és szükség szerint használhatja azok értékeit.
+### Szükségem van licencre az Aspose.PDF fájlhoz?
+Igen, a termelési felhasználáshoz érvényes engedély szükséges. Kaphat ideiglenes engedélyt[itt](https://purchase.aspose.com/temporary-license/) a funkciók tesztelésére.

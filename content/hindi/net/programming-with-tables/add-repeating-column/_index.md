@@ -60,7 +60,7 @@ headerRow.Cells.Add("header 1");
 headerRow.Cells.Add("header 2");
 headerRow.Cells.Add("header 3");
 // ...
-// अन्य शीर्षलेख यहां जोड़ें
+//अन्य शीर्षलेख यहां जोड़ें
 
 for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
 {
@@ -101,7 +101,7 @@ Aspose.Pdf.Table outerTable = new Aspose.Pdf.Table();
 outerTable.ColumnWidths = "100%";
 outerTable.HorizontalAlignment = HorizontalAlignment.Left;
 
-//एक टेबल ऑब्जेक्ट को इंस्टैंसिएट करें जो आउटरटेबल के अंदर नेस्टेड होगा जो उसी पेज के अंदर टूट जाएगा
+// एक टेबल ऑब्जेक्ट को इंस्टैंसिएट करें जो आउटरटेबल के अंदर नेस्टेड होगा जो उसी पेज के अंदर टूट जाएगा
 Aspose.Pdf.Table mytable = new Aspose.Pdf.Table();
 mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;

@@ -80,7 +80,7 @@ DataTable dt = new DataTable("Employee");
 dt.Columns.Add("Employee_ID", typeof(Int32));
 dt.Columns.Add("Employee_Name", typeof(string));
 dt.Columns.Add("Gender", typeof(string));
-// Adicione 2 linhas ao objeto DataTable programaticamente
+//Adicione 2 linhas ao objeto DataTable programaticamente
 DataRow dr = dt.NewRow();
 dr[0] = 1;
 dr[1] = "John Smith";
@@ -132,7 +132,7 @@ R: Sim, você pode adicionar hiperlinks ou outros elementos interativos aos dado
 
 #### P: Posso paginar a tabela se ela exceder um certo número de linhas?
 
- R: Sim, você pode paginar a tabela se ela exceder um certo número de linhas. Para conseguir isso, você pode usar o`IsInNewPage`propriedade do objeto Row para indicar que uma nova página deve começar após uma linha específica. Você pode calcular o número de linhas a serem exibidas por página e definir o`IsInNewPage` propriedade de acordo.
+R: Sim, você pode paginar a tabela se ela exceder um certo número de linhas. Para conseguir isso, você pode usar o`IsInNewPage` propriedade do objeto Row para indicar que uma nova página deve começar após uma linha específica. Você pode calcular o número de linhas a serem exibidas por página e definir o`IsInNewPage` propriedade de acordo.
 
 #### P: Como posso exportar o documento PDF com dados de banco de dados incorporados para diferentes formatos de arquivo, como DOCX ou XLSX?
 

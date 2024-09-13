@@ -1,7 +1,7 @@
 ---
 title: Extrahera markerad text i PDF-fil
 linktitle: Extrahera markerad text i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du effektivt extraherar markerad text från en PDF-fil med Aspose.PDF för .NET med denna handledning. Perfekt för dataanalys och innehållsgranskning.
 type: docs
 weight: 60

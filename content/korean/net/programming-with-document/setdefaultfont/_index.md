@@ -2,84 +2,128 @@
 title: PDF 파일에 기본 글꼴 설정
 linktitle: PDF 파일에 기본 글꼴 설정
 second_title: .NET API 참조를 위한 Aspose.PDF
-description: 이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF 파일에 기본 글꼴을 설정하는 방법을 알아보세요.
+description: 이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF 파일에 기본 글꼴을 설정하는 방법을 알아보세요. PDF 문서를 향상시키고자 하는 개발자에게 완벽합니다.
 type: docs
 weight: 280
 url: /ko/net/programming-with-document/setdefaultfont/
 ---
-.NET에서 PDF 문서로 작업하는 경우 PDF에 사용된 글꼴을 해당 PDF를 보거나 인쇄하는 시스템에서 사용할 수 없는 문제가 발생할 수 있습니다. 이로 인해 텍스트가 잘못 표시되거나 전혀 표시되지 않을 수 있습니다. Aspose.PDF for .NET은 문서의 기본 글꼴을 설정할 수 있도록 하여 이 문제에 대한 솔루션을 제공합니다. 이 예에서는 Aspose.PDF for .NET을 사용하여 기본 글꼴을 설정하는 방법입니다.
+## 소개
 
-## 1단계: 문서 디렉토리 경로 설정
+PDF 문서를 열었는데 글꼴이 없거나 제대로 표시되지 않는 것을 본 적이 있습니까? 짜증이 날 수 있죠? 걱정하지 마세요! 이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 PDF 파일에 기본 글꼴을 설정하는 방법을 알아보겠습니다. 이 강력한 라이브러리를 사용하면 PDF 문서를 쉽게 조작할 수 있으며, 기본 글꼴 설정은 제공하는 많은 기능 중 하나일 뿐입니다. 그러니 코딩 모자를 쓰고 시작해 봅시다!
 
-PDF 문서가 있는 디렉토리 경로를 설정해야 합니다. 이 경로를 "dataDir"이라는 변수에 저장합니다.
+## 필수 조건
+
+코드로 들어가기 전에 먼저 준비해야 할 몇 가지 사항이 있습니다.
+
+1. Visual Studio: 컴퓨터에 Visual Studio가 설치되어 있는지 확인하세요. .NET 개발을 위한 최고의 IDE입니다.
+2.  .NET용 Aspose.PDF: Aspose.PDF 라이브러리를 다운로드하여 설치해야 합니다. 찾을 수 있습니다.[여기](https://releases.aspose.com/pdf/net/).
+3. C#에 대한 기본 지식: C# 프로그래밍에 대한 약간의 지식은 우리가 다룰 예제들을 이해하는 데 큰 도움이 됩니다.
+
+## 패키지 가져오기
+
+시작하려면 C# 프로젝트에서 필요한 패키지를 가져와야 합니다. 방법은 다음과 같습니다.
+
+1. Visual Studio 프로젝트를 엽니다.
+2. 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 버튼으로 클릭하고 "NuGet 패키지 관리"를 선택합니다.
+3.  검색`Aspose.PDF` 최신 버전을 설치하세요.
+
+패키지를 설치하면 코딩을 시작할 준비가 된 것입니다!
+
+## 1단계: 프로젝트 설정
+
+### 새 프로젝트 만들기
+
+우선, Visual Studio에서 새로운 C# 프로젝트를 만들어 보겠습니다.
+
+- Visual Studio를 열고 "새 프로젝트 만들기"를 선택합니다.
+- "콘솔 앱(.NET Core)"을 선택하고 "다음"을 클릭합니다.
+-  프로젝트 이름을 지정하세요(예:`AsposePdfExample`)을 클릭하고 "만들기"를 클릭합니다.
+
+### 사용 지침 추가
+
+ 이제 필요한 using 지시문을 맨 위에 추가해 보겠습니다.`Program.cs` 파일:
 
 ```csharp
-// 문서 디렉토리의 경로입니다.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System.IO;
 ```
+
+이러한 지침을 사용하면 Aspose.PDF 클래스와 메서드에 액세스할 수 있습니다.
 
 ## 2단계: PDF 문서 로드
 
- 글꼴이 없는 기존 PDF 문서를 로드하는 것으로 시작하겠습니다. 이 예에서 PDF 문서가 지정된 디렉토리에 있다고 가정합니다.`dataDir` 변하기 쉬운.
+### 문서 경로 지정
+
+다음으로, 작업하려는 PDF 문서의 경로를 지정해야 합니다. 방법은 다음과 같습니다.
 
 ```csharp
-string documentName = dataDir + "input.pdf";
-using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
-using (Document document = new Document(fs))
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // 실제 디렉토리로 대체하세요
+string documentName = Path.Combine(dataDir, "input.pdf");
+```
+
+ 교체를 꼭 해주세요`"YOUR DOCUMENT DIRECTORY"` PDF 파일이 위치한 실제 경로를 포함합니다.
+
+### 문서 로드
+
+이제 기존 PDF 문서를 로드해 보겠습니다.
+
+```csharp
+using (FileStream fs = new FileStream(documentName, FileMode.Open))
 {
-    // 코드는 여기에 있습니다
+    Document document = new Document(fs);
 }
 ```
+
+ 이 코드 조각은 PDF 파일을 열고 다음을 생성합니다.`Document` 조작할 수 있는 객체.
 
 ## 3단계: 기본 글꼴 설정
 
- 다음으로, 다음을 사용하여 PDF 문서의 기본 글꼴을 설정합니다.`PdfSaveOptions`클래스. 이 예에서, 우리는 기본 글꼴을 "Arial"로 설정합니다.
+### PdfSaveOptions 생성
+
+ 이제 흥미로운 부분이 시작됩니다! 인스턴스를 만들어야 합니다.`PdfSaveOptions` 기본 글꼴을 지정하려면:
 
 ```csharp
 PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
+```
+
+### 기본 글꼴 이름 지정
+
+다음으로 기본 글꼴 이름을 설정합니다. 이 예에서는 "Arial"을 사용합니다.
+
+```csharp
 pdfSaveOptions.DefaultFontName = "Arial";
 ```
 
-## 4단계: 업데이트된 문서 저장
+이 줄은 Aspose.PDF에서 지정된 글꼴이 없는 모든 텍스트에 대해 Arial을 기본 글꼴로 사용하도록 지시합니다.
 
-마지막으로 업데이트된 문서를 새 파일에 저장합니다. 이 예에서는 업데이트된 문서를 입력 파일과 같은 디렉토리에 있는 "output_out.pdf"라는 파일에 저장합니다.
+## 4단계: 문서 저장
 
-```csharp
-document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
-```
-
-### .NET용 Aspose.PDF를 사용하여 기본 글꼴 설정을 위한 예제 소스 코드
+마지막으로, 새로운 기본 글꼴로 수정된 PDF 문서를 저장할 시간입니다.
 
 ```csharp
-// 문서 디렉토리의 경로입니다.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// 글꼴이 누락된 기존 PDF 문서 로드
-string documentName = dataDir + "input.pdf";
-string newName = "Arial";
-using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
-using (Document document = new Document(fs))
-{
-	PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
-	// 기본 글꼴 이름 지정
-	pdfSaveOptions.DefaultFontName = newName;
-	document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
-}
+document.Save(Path.Combine(dataDir, "output_out.pdf"), pdfSaveOptions);
 ```
+
+ 이 줄은 문서를 다음과 같이 저장합니다.`output_out.pdf` 지정된 디렉토리에 있습니다.
 
 ## 결론
 
-Aspose.PDF for .NET을 사용하여 PDF 문서에 기본 글꼴을 설정하는 것은 원래 글꼴을 사용할 수 없더라도 텍스트가 올바르게 표시되도록 하는 간단하고 효과적인 방법입니다. 단계별 가이드를 따르고 제공된 C# 소스 코드를 사용하면 개발자는 기본 글꼴을 쉽게 설정하고 다양한 환경에서 일관되고 안정적인 보기 환경을 제공하는 PDF를 만들 수 있습니다. 이 기능은 다양한 글꼴 세트가 설치된 다양한 시스템에서 PDF를 보거나 인쇄하는 시나리오에서 특히 유용합니다.
+이제 다 됐습니다! Aspose.PDF for .NET을 사용하여 PDF 파일에 기본 글꼴을 성공적으로 설정했습니다. 이 간단하면서도 강력한 기능은 글꼴이 없어도 문서가 원하는 대로 정확하게 보이도록 하는 데 도움이 될 수 있습니다. 따라서 다음에 글꼴 문제가 있는 PDF를 접하게 되면 정확히 무엇을 해야 할지 알게 될 것입니다!
 
-### PDF 파일에 기본 글꼴을 설정하는 방법에 대한 FAQ
+## 자주 묻는 질문
 
-#### 질문: PDF 문서에서 기본 글꼴을 설정하는 것이 중요한 이유는 무엇입니까?
+### .NET용 Aspose.PDF란 무엇인가요?
+.NET용 Aspose.PDF는 개발자가 PDF 문서를 프로그래밍 방식으로 만들고, 조작하고, 변환할 수 있는 라이브러리입니다.
 
-A: PDF 문서에서 기본 글꼴을 설정하는 것은 중요합니다. PDF를 보거나 인쇄하는 시스템에서 원래 글꼴을 사용할 수 없더라도 텍스트가 올바르게 표시되도록 보장하기 때문입니다. 누락되거나 왜곡된 텍스트와 같은 문제를 방지하여 일관되고 안정적인 보기 환경을 보장합니다.
+### Arial 외에 다른 글꼴을 사용할 수 있나요?
+네, 시스템에 설치된 모든 글꼴을 기본 글꼴로 지정할 수 있습니다.
 
-#### 질문: Aspose.PDF for .NET을 사용하여 기본 글꼴로 원하는 글꼴을 선택할 수 있나요?
+### Aspose.PDF는 무료로 사용할 수 있나요?
+Aspose.PDF는 무료 평가판을 제공하지만, 모든 기능을 사용하려면 라이선스를 구매해야 합니다.
 
- A: 네, Aspose.PDF for .NET을 사용하여 시스템에서 사용 가능한 모든 글꼴을 기본 글꼴로 선택할 수 있습니다. 글꼴 이름을 지정하기만 하면 됩니다.`DefaultFontName` 의 속성`PdfSaveOptions` 수업.
+### 더 많은 문서는 어디에서 찾을 수 있나요?
+ 포괄적인 문서를 찾을 수 있습니다[여기](https://reference.aspose.com/pdf/net/).
 
-#### 질문: 지정된 기본 글꼴을 시스템에서 사용할 수 없는 경우 어떻게 되나요?
-
-A: 지정된 기본 글꼴을 시스템에서 사용할 수 없는 경우 PDF 뷰어는 대체 글꼴을 사용하여 텍스트를 표시합니다. Arial이나 Times New Roman과 같이 일반적으로 사용 가능한 글꼴을 선택하여 다양한 시스템에서 호환성을 보장하는 것이 좋습니다.
+### Aspose.PDF에 대한 지원은 어떻게 받을 수 있나요?
+ Aspose 포럼을 통해 지원을 받을 수 있습니다.[여기](https://forum.aspose.com/c/pdf/10).

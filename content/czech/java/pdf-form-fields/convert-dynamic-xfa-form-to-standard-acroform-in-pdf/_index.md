@@ -2,7 +2,7 @@
 title: Převeďte dynamický formulář XFA na standardní AcroForm v PDF
 linktitle: Převeďte dynamický formulář XFA na standardní AcroForm v PDF
 second_title: Aspose.PDF Java PDF Processing API
-description: Naučte se, jak bez námahy převádět dynamické formuláře XFA na standardní AcroForms v PDF pomocí Aspose.PDF pro Java. Zajistěte kompatibilitu a dostupnost.
+description: Naučte se, jak bez námahy převést dynamické formuláře XFA na standardní AcroForms v PDF pomocí Aspose.PDF pro Java. Zajistěte kompatibilitu a dostupnost.
 type: docs
 weight: 12
 url: /cs/java/pdf-form-fields/convert-dynamic-xfa-form-to-standard-acroform-in-pdf/

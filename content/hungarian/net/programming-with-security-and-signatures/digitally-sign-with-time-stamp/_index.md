@@ -2,126 +2,142 @@
 title: Digitális aláírás Időbélyeggel PDF Fájlban
 linktitle: Digitális aláírás Időbélyeggel PDF Fájlban
 second_title: Aspose.PDF for .NET API Reference
-description: Ismerje meg, hogyan hajthat végre digitális aláírást időbélyeggel PDF-fájlban az Aspose.PDF for .NET használatával.
+description: Ismerje meg, hogyan írhat alá digitálisan egy PDF-et időbélyeggel az Aspose.PDF for .NET használatával. Ez a lépésenkénti útmutató az előfeltételeket, a tanúsítvány beállítását, az időbélyegzést és egyebeket ismerteti.
 type: docs
 weight: 50
 url: /hu/net/programming-with-security-and-signatures/digitally-sign-with-time-stamp/
 ---
-Ebben az oktatóanyagban végigvezetjük az időbélyeggel ellátott PDF-fájlba történő digitális aláírás folyamatán az Aspose.PDF for .NET használatával. Az időbélyegzővel ellátott digitális aláírás garantálja a dokumentum hitelességét és sértetlenségét, időbélyegzővel ellátott elektronikus ujjlenyomat hozzáadásával.
+## Bevezetés
 
-## 1. lépés: Előfeltételek
+Szüksége volt már arra, hogy digitálisan aláírjon egy PDF-dokumentumot, és a nagyobb biztonság érdekében időbélyegzőt adjon hozzá? Legyen szó jogi dokumentumokról, szerződésekről vagy bármiről, ami biztonságos hitelesítést igényel, az időbélyeggel ellátott digitális aláírás további hitelességet biztosít. Ebben az oktatóanyagban bemutatjuk, hogyan használhatja az Aspose.PDF for .NET fájlt digitális aláírás és időbélyegző hozzáadására PDF-dokumentumaihoz. Ne aggódj, lépésről lépésre megtesszük!
 
-Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következő előfeltételekkel:
+## Előfeltételek
 
-- C# programozási nyelv alapismerete
-- A Visual Studio telepítése a gépre
-- Aspose.PDF könyvtár a .NET-hez telepítve
+Mielőtt belemerülnénk a kódba, néhány dolgot be kell állítania a követéshez. Íme egy gyors ellenőrző lista a kezdéshez szükséges előfeltételekről:
 
-## 2. lépés: A környezet beállítása
+-  Aspose.PDF for .NET Library: A projektben telepíteni kell az Aspose.PDF for .NET könyvtárat. Tudod[töltse le a legújabb verziót innen](https://releases.aspose.com/pdf/net/) vagy adja hozzá a projekthez a NuGet segítségével.
+- PDF-dokumentum: Szüksége lesz egy minta PDF-fájlra a munkához. Győződjön meg arról, hogy a projekt könyvtárában van egy fájl, amelyet alá szeretne írni.
+-  Digitális tanúsítvány (PFX fájl): Győződjön meg arról, hogy rendelkezik digitális tanúsítvánnyal (a`.pfx` fájl) a dokumentum digitális aláírásához.
+- Időbélyegző URL: Ez egy online időbélyegző szolgáltatás, amely időbélyegző csatolására szolgál a digitális aláíráshoz. 
+- Alapvető C# ismeretek: Nem kell szakértőnek lenned, de a C# alapjainak ismerete segít megérteni és testreszabni a kódot.
 
-A kezdéshez kövesse az alábbi lépéseket a fejlesztői környezet beállításához:
+Miután bejelölte ezeket a négyzeteket, készen áll a kódolás megkezdésére!
 
-1. Nyissa meg a Visual Studio-t, és hozzon létre egy új C#-projektet.
-2. Importálja a szükséges névtereket a kódfájlba:
+## Csomagok importálása
+
+kezdéshez importálnia kell a következő névtereket a C# projektbe. Ez biztosítja, hogy hozzáférjen a megfelelő Aspose.PDF osztályokhoz és funkciókhoz.
 
 ```csharp
+using System.IO;
+using System;
 using Aspose.Pdf;
+using Aspose.Pdf.Facades;
 using Aspose.Pdf.Forms;
+using System.Collections;
 ```
 
-## 3. lépés: Digitális aláírás időbélyeggel
+## 1. lépés: Töltse be a PDF-dokumentumot
 
-Az első lépés az időbélyeggel ellátott digitális aláírás végrehajtása a PDF-fájlon. A mellékelt kód bemutatja, hogyan érhető el ez az aláírás az Aspose.PDF for .NET segítségével.
+Az első dolog, amit tennünk kell, hogy betöltsük az aláírni kívánt PDF-dokumentumot. Íme, hogyan kell ezt megtenni:
 
 ```csharp
+// Határozza meg a dokumentumkönyvtár elérési útját
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-string pfxFile = "";
-using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
-{
-     using (PdfFileSignature signature = new PdfFileSignature(document))
-     {
-         PKCS7 pkcs = new PKCS7(pfxFile, "pfx_password");
-         TimestampSettings timestampSettings = new TimestampSettings("https:\\your_timestamp_settings", "user:password");
-         pkcs. TimestampSettings = timestampSettings;
-         System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-         signature.Sign(1, "Reason for signing", "Contact", "Location", true, rect, pkcs);
-         signature.Save(dataDir + "DigitallySignWithTimeStamp_out.pdf");
-     }
-}
+
+// Töltse be a PDF dokumentumot
+Document document = new Document(dataDir + @"DigitallySign.pdf");
 ```
 
-Ez a kód betölt egy PDF-fájlt, digitális aláírást hoz létre időbélyeggel egy PFX-fájl (privát kulcs) és a megadott időbélyeg-paraméterek használatával. Az aláírás ezután hozzáadásra kerül a PDF-fájlhoz, és a " utótaggal mentve"_ki".
+ Ez a lépés meglehetősen egyszerű. Egyszerűen meghatározzuk az aláírni kívánt dokumentum elérési útját. A`Document` osztály az Aspose.PDF-ből kezeli a fájl betöltését.
 
-### Minta forráskód a digitális aláíráshoz időbélyeggel az Aspose.PDF for .NET használatával 
+## 2. lépés: Állítsa be a digitális aláírást
+
+Ezután létrehozzuk a digitális aláírást a PKCS7 osztály használatával, és betöltjük a PFX fájlt. Ez a PFX fájl tartalmazza az Ön tanúsítványát és privát kulcsát, amelyek a dokumentum aláírásához szükségesek.
+
 ```csharp
-// A dokumentumok könyvtárának elérési útja.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-string pfxFile = "";
-using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
-{
-	using (PdfFileSignature signature = new PdfFileSignature(document))
-	{
-		PKCS7 pkcs = new PKCS7(pfxFile, "pfx_password");
-		TimestampSettings timestampSettings = new TimestampSettings("https:\\your_timestamp_settings", "user:password"); // A felhasználó/jelszó elhagyható
-		pkcs.TimestampSettings = timestampSettings;
-		System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-		// Hozza létre a három aláírástípus bármelyikét
-		signature.Sign(1, "Signature Reason", "Contact", "Location", true, rect, pkcs);
-		// Mentse a kimeneti PDF fájlt
-		signature.Save(dataDir + "DigitallySignWithTimeStamp_out.pdf");
-	}
-}
+// A .pfx fájl elérési útja
+string pfxFile = "YOUR DOCUMENTS DIRECTORY\\certificate.pfx";
+
+// Inicializálja az aláírás objektumot
+PdfFileSignature signature = new PdfFileSignature(document);
+
+// Töltse be a PFX fájlt jelszóval
+PKCS7 pkcs = new PKCS7(pfxFile, "pfx_password");
 ```
+
+ Ezen a ponton azt mondja az Aspose-nak, hogy használja a digitális tanúsítványt a dokumentum aláírásához. A`PKCS7`Az objektum elvégzi helyetted az összes kriptográfiai munkát, így nem kell aggódnod a finom részletek miatt.
+
+## 3. lépés: Adja hozzá az Időbélyeg beállításait
+
+A robusztus digitális aláírás egyik kulcseleme az időbélyeg. Ez biztosítja, hogy a dokumentum aláírása a tanúsítvány lejárta után is ellenőrizhető legyen. Állítsuk be az időbélyeget egy online időbélyegző hatóság segítségével.
+
+```csharp
+// Adja meg az időbélyeg beállításait
+TimestampSettings timestampSettings = new TimestampSettings("https://your_timestamp_url", "user:password");
+
+// Adja hozzá az időbélyeg beállításait a PKCS7 objektumhoz
+pkcs.TimestampSettings = timestampSettings;
+```
+
+Itt adja meg az időbélyegző szolgáltatás URL-címét, amely automatikusan megadja az időpontot és a dátumot az aláírásához. Ez megtehető hitelesítéssel vagy anélkül.
+
+## 4. lépés: Határozza meg az aláírás helyét és megjelenését
+
+Most meghatározzuk, hogy az aláírás hol jelenjen meg a PDF-ben, és annak méreteit. Testreszabhatja az aláírási mező pozícióját az oldalon, valamint a méretét.
+
+```csharp
+//Határozza meg az aláírás megjelenését és helyét (1. oldal, megadott téglalappal)
+System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
+```
+
+Itt definiálunk egy téglalapot, amely az aláírást a PDF első oldalán koordinátákra (100, 100) helyezi el, szélessége 200 és magassága 100. Ezeket az értékeket módosíthatja, hogy illeszkedjen a tervhez.
+
+## 5. lépés: Aláírja a PDF-dokumentumot
+
+Miután minden be van állítva, itt az ideje, hogy ténylegesen alkalmazza a digitális aláírást a PDF-re. Ez a lépés egyetlen egyszerű parancsban egyesíti a tanúsítványt, az időbélyeget és a pozicionálást.
+
+```csharp
+// Az első oldalon írja alá a dokumentumot
+signature.Sign(1, "Signature Reason", "Contact", "Location", true, rect, pkcs);
+```
+
+Íme, mi történik:
+- 1: Ez azt jelzi, hogy az aláírást az első oldalon kell alkalmazni.
+- "Aláírás oka": Itt adhatja meg, hogy miért írja alá a dokumentumot.
+- "Kapcsolat": Adja meg az aláíró elérhetőségét.
+- „Hely”: Adja meg az aláíró helyét.
+- true: Ez a logikai érték azt jelzi, hogy az aláírás látható-e a dokumentumban.
+- rect: A korábban definiált téglalap határozza meg az aláírás méretét és helyzetét.
+- pkcs: A PKCS7 objektum tartalmazza a digitális tanúsítványt és az időbélyeg beállításait.
+
+## 6. lépés: Mentse el az aláírt PDF-fájlt
+
+A dokumentum aláírása után már csak menteni kell. Választhat új fájlnevet, hogy az eredeti és az aláírt verzió is megmaradjon.
+
+```csharp
+// Mentse el az aláírt PDF dokumentumot
+signature.Save(dataDir + "DigitallySignWithTimeStamp_out.pdf");
+```
+
+Az újonnan aláírt és időbélyeggel ellátott PDF-fájl most a megadott könyvtárba kerül!
 
 ## Következtetés
 
-Gratulálok ! Sikeresen hajtott végre digitális aláírást időbélyeggel egy PDF-fájlon az Aspose.PDF for .NET használatával. Ez az oktatóanyag az aláírás létrehozásától a frissített PDF-fájl mentéséig lépésről lépésre haladó folyamatot ismertette. Mostantól használhatja ezt a funkciót, hogy digitális aláírásokat adjon időbélyeggel a PDF-fájlokhoz.
+És megvan! Sikeresen digitálisan aláírt egy PDF-et időbélyeggel az Aspose.PDF for .NET használatával. Ez a folyamat biztosítja a dokumentumok hitelességét és sértetlenségét, nyugalmat biztosítva Önnek és a címzettnek. A digitális aláírások egyre fontosabbá válnak a mai digitális világban, így ennek a folyamatnak az elsajátítása mindenképpen megéri.
 
-### GYIK az időbélyeggel ellátott digitális aláíráshoz PDF-fájlban
+## GYIK
 
-#### K: Mi a célja az időbélyeggel történő digitális aláírásnak?
+### Használhatok más fájlformátumot a tanúsítványhoz?  
+Igen, de az oktatóanyag a PFX-fájl használatára összpontosít, amely a digitális tanúsítványok leggyakoribb formátuma.
 
-V: Az időbélyeggel ellátott digitális aláírás egy időbélyegzővel ellátott elektronikus ujjlenyomatot ad a PDF-fájlhoz, biztosítva a dokumentum hitelességét és integritását egy adott időpontban.
+### Szükségem van internetkapcsolatra az időbélyeg alkalmazásához?  
+Igen, mivel az időbélyeget egy online időbélyegző hatóságtól kérik le, internet-hozzáférésre lesz szüksége.
 
-#### K: Milyen előfeltételek szükségesek az oktatóanyag elindításához?
+### Aláírhatok több oldalt egy PDF-ben?  
+ Teljesen! Módosíthatja a`signature.Sign()` módszer több oldal megcélzására vagy az összes oldal végigjátszására.
 
-V: Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a C# programozási nyelv alapvető ismereteivel, telepítette a Visual Studio programot, és telepítette a .NET Aspose.PDF könyvtárát.
+### Mi történik, ha a PFX fájl jelszava helytelen?  
+Kivételt kap, ha a jelszó rossz, ezért ellenőrizze, hogy helyesen adta-e meg.
 
-#### K: Hogyan állíthatom be a fejlesztői környezetemet?
-
-V: Kövesse a megadott lépéseket a fejlesztői környezet beállításához, beleértve egy új C#-projekt létrehozását a Visual Studióban és a szükséges névterek importálását.
-
-#### K: Hogyan adhatok hozzá időbélyegzővel ellátott digitális aláírást a PDF-hez?
-
-V: A mellékelt mintakód bemutatja, hogyan tölthet be egy PDF-fájlt, hogyan hozhat létre digitális aláírást időbélyeggel egy PFX-fájl (privát kulcs) és meghatározott időbélyeg-beállítások használatával, hogyan adja hozzá az aláírást a PDF-fájlhoz, és hogyan mentheti el a frissített fájlt.
-
-#### K: Mi az a PFX-fájl, és miért használják a példában?
-
-V: A PFX (Personal Exchange Format) fájl privát kulcsot és tanúsítványt tartalmaz. Itt a digitális aláírások kriptográfiai funkcióinak biztosítására használják. Cserélje ki a helyőrzőt a PFX-fájljával és jelszavával.
-
-#### K: Mik azok az időbélyegbeállítások?
-
-V: A TimestampSettings határozza meg az időbélyegzőszerver beállításait, amellyel az elektronikus időbélyegzőt az aláíráshoz adják. Tartalmazza az időbélyeg-kiszolgáló URL-címét és az opcionális felhasználói hitelesítő adatokat.
-
-#### K: Használhatok a példában szereplőtől eltérő időbélyeg-kiszolgálót?
- V: Igen, bármilyen kompatibilis időbélyeg-kiszolgálót használhat. Cserélje ki az URL-t, és ha szükséges, adja meg a megfelelő felhasználói hitelesítő adatokat`TimestampSettings` objektum.
-
-#### K: Mi a célja az aláírási téglalap megadásának?
-
-V: Az aláírási téglalap határozza meg a digitális aláírás megjelenésének helyét és méreteit a PDF oldalon. Módosítsa ezeket az értékeket az aláírás kívánt elhelyezéséhez.
-
-#### K: Mi történik, ha az időbélyeg-szerver nem elérhető az aláírás során?
-
-V: Ha az időbélyeg-kiszolgáló nem érhető el az aláírás során, a folyamat meghiúsulhat vagy tovább tarthat. Győződjön meg arról, hogy időbélyeg-szervere megbízható és hozzáférhető.
-
-#### K: Hogyan ellenőrizhetem az időbélyeg jelenlétét az aláírt PDF-ben?
-
- V: Megvizsgálhatja az aláírt PDF-fájlt a mellékelt mintakód segítségével. A`TimestampSettings` Az aláíráskor használtnak elérhetőnek kell lennie az aláírási adatok között.
-
-#### K: Az időbélyeggel ellátott digitális aláírások jogilag kötelező érvényűek?
-
-V: Az időbélyeggel ellátott digitális aláírások számos joghatóságban jogi értékkel bírnak, és gyakran megbízhatóbbnak tartják, mint az egyszerű digitális aláírásokat. A konkrét szabályozásokért forduljon az Ön joghatósága szerinti jogi szakértőhöz.
-
-#### K: Hozzáadhatok több digitális aláírást időbélyeggel egy PDF-hez?
-
-V: Igen, több időbélyeggel ellátott digitális aláírást is hozzáadhat egy PDF-fájlhoz, ha többször meghívja az aláírás-létrehozási folyamatot. Minden aláírásnak saját időbélyegzője lesz.
+### Láthatatlanná tehetem az aláírást?  
+ Igen, átmehet`false` a`Sign` metódus láthatósági paramétere, hogy az aláírás láthatatlan legyen.

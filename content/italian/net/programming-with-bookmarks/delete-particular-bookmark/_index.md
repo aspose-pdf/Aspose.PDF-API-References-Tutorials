@@ -89,7 +89,7 @@ Console.WriteLine("\nParticular bookmark deleted successfully.\nFile saved at " 
 
 ## Conclusione
 
-Ed ecco fatto! Hai eliminato con successo un particolare segnalibro da un file PDF usando Aspose.PDF per .NET. Questa libreria semplice ma potente ti consente di manipolare i documenti PDF con facilità, rendendola uno strumento prezioso per qualsiasi sviluppatore che lavora con i PDF. Che tu stia pulendo un documento o apportando aggiornamenti, sapere come gestire i segnalibri può migliorare notevolmente il tuo flusso di lavoro.
+Ed ecco fatto! Hai eliminato con successo un particolare segnalibro da un file PDF usando Aspose.PDF per .NET. Questa libreria semplice ma potente ti consente di manipolare i documenti PDF con facilità, rendendola uno strumento prezioso per qualsiasi sviluppatore che lavora con i PDF. Che tu stia ripulendo un documento o apportando aggiornamenti, sapere come gestire i segnalibri può migliorare notevolmente il tuo flusso di lavoro.
 
 ## Domande frequenti
 

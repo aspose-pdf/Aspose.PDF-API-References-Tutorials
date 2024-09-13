@@ -1,7 +1,7 @@
 ---
 title: Uppdatera fritext PDF-anteckning
 linktitle: Uppdatera fritext PDF-anteckning
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du uppdaterar fritextkommentarer i PDF-dokument med Aspose.PDF för .NET med denna steg-för-steg-guide.
 type: docs
 weight: 160

@@ -26,7 +26,7 @@ Dowiedz się, jak pobierać miejsca docelowe hiperłączy PDF za pomocą Java z 
 ### [Usuń akcję otwierania dokumentu z pliku PDF za pomocą Java](./remove-document-open-action-from-pdf-file-using-java/)
 Dowiedz się, jak usunąć Document Open Action z plików PDF za pomocą Java i Aspose.PDF dla Java. Zwiększ bezpieczeństwo i personalizację.
 ### [Zmiana przestrzeni kolorów dokumentu PDF za pomocą Java](./change-color-space-of-pdf-document-using-java/)
-Dowiedz się, jak zmienić przestrzeń kolorów dokumentu PDF za pomocą Java. Przewodnik krok po kroku z przykładami kodu. Zoptymalizuj swoje pliki PDF do drukowania i wyświetlania.
+Dowiedz się, jak zmienić przestrzeń kolorów dokumentu PDF za pomocą Javy. Przewodnik krok po kroku z przykładami kodu. Zoptymalizuj swoje pliki PDF do drukowania i wyświetlania.
 ### [Pobierz informacje o produkcie i kompilacji pliku PDF w języku Java](./get-product-and-build-information-of-pdf-in-java/)
 Dowiedz się, jak wyodrębnić informacje o produkcie i kompilacji z plików PDF w Javie przy użyciu Aspose.PDF dla Javy. Przewodnik krok po kroku z przykładami kodu do wydajnej ekstrakcji danych PDF.
 ### [Jak dodać rysunek z przezroczystym kolorem do pliku PDF za pomocą Java](./how-to-add-drawing-with-transparent-color-in-pdf-using-java/)

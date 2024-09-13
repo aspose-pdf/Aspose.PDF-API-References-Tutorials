@@ -33,7 +33,7 @@ using System.Text;
  A kódban keresse meg azt a sort, amely ezt mondja`string dataDir = "YOUR DOCUMENT DIRECTORY";` és cserélje ki`"YOUR DOCUMENT DIRECTORY"` annak a könyvtárnak az elérési útjával, ahol a dokumentumokat tárolják.
 
 ## 4. lépés: Nyissa meg a PDF dokumentumot
- Nyisson meg egy meglévő PDF dokumentumot a`Document` konstruktort, és átadja a bemeneti PDF-fájl elérési útját.
+ Nyisson meg egy meglévő PDF dokumentumot a`Document`konstruktort, és átadja a bemeneti PDF-fájl elérési útját.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
@@ -105,13 +105,13 @@ Console.WriteLine("\nText extracted successfully using text device from page of 
 ```
 
 ## Következtetés
-Sikeresen kibontotta a szöveget egy PDF-dokumentumból az Aspose.PDF for .NET szövegeszközével. A kivont szöveget a rendszer a megadott kimeneti fájlba mentette.
+Sikeresen kibontotta a szöveget egy PDF-dokumentumból az Aspose.PDF for .NET szövegeszközével. A kicsomagolt szöveg a megadott kimeneti fájlba került.
 
 ### GYIK
 
 #### K: Mi a célja ennek az oktatóanyagnak?
 
-V: Ez az oktatóanyag útmutatást ad a szöveg PDF-dokumentumból történő kibontásához az Aspose.PDF for .NET szövegeszköz funkciójával. A mellékelt C# forráskód bemutatja a feladat végrehajtásához szükséges lépéseket.
+V: Ez az oktatóanyag útmutatást nyújt a szöveg PDF-dokumentumból történő kibontásához az Aspose.PDF for .NET szövegeszköz funkciójával. A mellékelt C# forráskód bemutatja a feladat végrehajtásához szükséges lépéseket.
 
 #### K: Milyen névtereket kell importálnom?
 

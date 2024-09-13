@@ -1,140 +1,150 @@
 ---
-title: تعيين تسمية توضيحية لأزرار الاختيار
-linktitle: تعيين تسمية توضيحية لأزرار الاختيار
+title: تعيين تسمية توضيحية لأزرار الراديو
+linktitle: تعيين تسمية توضيحية لأزرار الراديو
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: تعرف على كيفية استخدام Aspose.PDF لـ .NET لتعيين التسمية التوضيحية لزر الاختيار في نموذج PDF.
+description: تعرف على كيفية تعيين تسميات أزرار الاختيار في ملفات PDF باستخدام Aspose.PDF لـ .NET. يرشدك هذا الدليل خطوة بخطوة خلال تحميل نماذج PDF وتعديلها وحفظها.
 type: docs
 weight: 280
 url: /ar/net/programming-with-forms/set-radio-button-caption/
 ---
-في هذا الدليل، سنشرح خطوة بخطوة كيفية استخدام مكتبة Aspose.PDF لـ .NET لتحديد تسمية توضيحية لزر الاختيار في نموذج PDF. وسنوضح لك كيفية الوصول إلى حقل زر الاختيار وإنشاء خيار زر اختيار جديد وتخصيص تسمية توضيحية للزر.
+## مقدمة
 
-## الخطوة 1: تكوين دليل المستندات
+إذا كنت تتعمق في معالجة ملفات PDF باستخدام Aspose.PDF لـ .NET، فأنت على موعد مع متعة لا تُنسى! اليوم، نركز على ميزة عملية: تعيين تسميات أزرار الاختيار في نماذج PDF الخاصة بك. تعد أزرار الاختيار ضرورية لنماذج المستخدم حيث تحتاج إلى الاختيار من مجموعة من الخيارات. تخيلها على أنها أسئلة متعددة الخيارات حيث يُسمح بإجابة واحدة فقط. سيرشدك هذا البرنامج التعليمي خلال عملية تحديث تسميات أزرار الاختيار في نموذج PDF، بحيث تكون مستنداتك تفاعلية وسهلة الاستخدام. 
 
- الخطوة الأولى هي تكوين دليل المستندات الذي يوجد به نموذج PDF الذي تريد العمل عليه. يمكنك استخدام`dataDir` متغير لتحديد مسار الدليل.
+## المتطلبات الأساسية
+
+قبل الغوص في الكود، هناك بعض الأشياء التي ستحتاج إلى التأكد من توفرها لديك:
+
+1. Aspose.PDF لـ .NET: تأكد من تثبيت مكتبة Aspose.PDF. ستساعدك هذه المكتبة على التعامل مع ملفات PDF برمجيًا.
+2. بيئة التطوير: يجب أن يكون لديك بيئة تطوير .NET مهيأة، مثل Visual Studio.
+3. نموذج نموذج PDF: لهذا البرنامج التعليمي، ستحتاج إلى نموذج نموذج PDF يحتوي على أزرار اختيار. يمكنك استخدام أي نموذج PDF موجود أو إنشاء نموذج جديد يحتوي على أزرار اختيار.
+4. المعرفة الأساسية بلغة C#: يفترض هذا الدليل أن لديك فهمًا أساسيًا لمفاهيم برمجة C# و.NET.
+
+ إذا لم تقم بتثبيت Aspose.PDF لـ .NET بعد أو كنت بحاجة إلى ترخيص مؤقت، فيمكنك[تحميله هنا](https://releases.aspose.com/pdf/net/) أو[احصل على رخصة مؤقتة](https://purchase.aspose.com/temporary-license/).
+
+## استيراد الحزم
+
+للبدء، تحتاج إلى استيراد الحزم اللازمة في مشروع C# الخاص بك. فيما يلي كيفية تضمين مكتبة Aspose.PDF:
 
 ```csharp
-// المسار إلى دليل المستندات.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using Aspose.Pdf.Forms;
+using System.Collections.Generic;
+using Aspose.Pdf.Text;
 ```
 
- تأكد من الاستبدال`"YOUR DOCUMENTS DIRECTORY"` مع المسار الفعلي إلى دليل المستندات الخاص بك.
+تأكد من إضافة هذه الحزم إلى مشروعك عبر NuGet أو الطريقة المفضلة لديك.
 
-## الخطوة 2: تحميل نموذج PDF المصدر
+## الخطوة 1: تحميل نموذج PDF
 
- في هذه الخطوة، سنقوم بتحميل نموذج PDF المصدر باستخدام`Aspose.Pdf.Facades.Form` فئة Aspose.PDF.
-
-```csharp
-Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
-```
-
-تأكد من أن ملف PDF الذي يحتوي على النموذج موجود في دليل المستندات المحدد.
-
-## الخطوة 3: تحرير تسمية زر الاختيار
-
-سنبحث في أسماء حقول النموذج عن حقول أزرار الاختيار. إذا تم العثور على حقل مطابق، فسنقوم بإنشاء خيار زر اختيار جديد مع تسمية توضيحية مخصصة وإضافته إلى الحقل الموجود.
+ أولاً، عليك تحميل نموذج PDF الذي يحتوي على أزرار الاختيار.`Aspose.Pdf.Facades.Form`يتم استخدام class لهذا الغرض. إليك كيفية القيام بذلك:
 
 ```csharp
-foreach(var item in form1.FieldNames)
-{
-if (item.Contains("radio1"))
-{
-Aspose.Pdf.Forms.RadioButtonField field0 = PDF_Template_PDF_HTML.Form[item] as Aspose.Pdf.Forms.RadioButtonField;
-Aspose.Pdf.Forms.RadioButtonOptionField fieldoption = new Aspose.Pdf.Forms.RadioButtonOptionField();
-fieldoption.OptionName = "Yes";
-fieldoption.PartialName = "Yesname";
-var updatedFragment = new Aspose.Pdf.Text.TextFragment("test123");
-updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
-updatedFragment.TextState.FontSize = 10;
-updatedFragment.TextState.LineSpacing = 6.32f;
-// إنشاء كائن TextParagraph
-TextParagraph par = new TextParagraph();
-// تعيين موضع الفقرة
-par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
-// تحديد وضع التفاف الكلمات
-by.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
-// أضف TextFragment الجديد إلى الفقرة
-par.AppendLine(updatedFragment);
-// أضف TextParagraph باستخدام TextBuilder
-TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
-textBuilder.AppendParagraph(par);
-field0.DeleteOption("item1");
-}
-}
-```
-
-قم بتخصيص زر الاختيار الخاص بالتسمية التوضيحية والإعدادات الأخرى حسب الحاجة.
-
-## الخطوة 4: حفظ ملف PDF الناتج
-
- الآن بعد أن انتهينا من تعديل تسمية زر الاختيار، يمكننا حفظ ملف PDF الناتج باستخدام`Save` طريقة`Document` فصل.
-
-```csharp
-PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
-```
-
-تأكد من تحديد المسار الكامل واسم الملف لملف PDF الناتج.
-
-### عينة من كود المصدر لتعيين تسمية توضيحية لأزرار الراديو باستخدام Aspose.PDF لـ .NET 
-```csharp
-// المسار إلى دليل المستندات.
+// قم بتحديد المسار إلى دليل المستند الخاص بك
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+
 // تحميل نموذج PDF المصدر
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
 Document PDF_Template_PDF_HTML = new Document(dataDir + "RadioButtonField.pdf");
+```
+
+في مقتطف التعليمات البرمجية هذا:
+- `dataDir` يحدد المسار الذي يتواجد فيه ملف PDF الخاص بك.
+- `Form` يتم استخدام الفئة للتفاعل مع حقول النموذج داخل ملف PDF.
+- `Document` توفر الفئة إمكانية الوصول إلى صفحات مستند PDF.
+
+## الخطوة 2: التكرار خلال حقول أزرار الاختيار
+
+بعد ذلك، ستحتاج إلى تكرار الحقول الموجودة في النموذج لتحديد حقول أزرار الاختيار ومعالجتها:
+
+```csharp
 foreach (var item in form1.FieldNames)
 {
-	Console.WriteLine(item.ToString());
-	Dictionary<string, string> radioOptions = form1.GetButtonOptionValues(item);
-	if (item.Contains("radio1"))
-	{
-		Aspose.Pdf.Forms.RadioButtonField field0 = PDF_Template_PDF_HTML.Form[item] as Aspose.Pdf.Forms.RadioButtonField;
-		Aspose.Pdf.Forms.RadioButtonOptionField fieldoption = new Aspose.Pdf.Forms.RadioButtonOptionField();
-		fieldoption.OptionName = "Yes";
-		fieldoption.PartialName = "Yesname";
-		var updatedFragment = new Aspose.Pdf.Text.TextFragment("test123");
-		updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
-		updatedFragment.TextState.FontSize = 10;
-		updatedFragment.TextState.LineSpacing = 6.32f;
-		// إنشاء كائن TextParagraph
-		TextParagraph par = new TextParagraph();
-		// تعيين موضع الفقرة
-		par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
-		// تحديد وضع التفاف الكلمات
-		par.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
-		// إضافة جزء نصي جديد إلى الفقرة
-		par.AppendLine(updatedFragment);
-		// أضف TextParagraph باستخدام TextBuilder
-		TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
-		textBuilder.AppendParagraph(par);
-		field0.DeleteOption("item1");
-	}
+    Console.WriteLine(item.ToString());
+    Dictionary<string, string> radioOptions = form1.GetButtonOptionValues(item);
+```
+
+في هذه الحلقة:
+- `FieldNames` يوفر قائمة بجميع أسماء الحقول في ملف PDF.
+- `GetButtonOptionValues(item)` يسترجع الخيارات المتاحة لكل زر اختيار.
+
+## الخطوة 3: تعديل خيارات أزرار الاختيار
+
+ بمجرد تحديد حقول أزرار الاختيار، يمكنك تعديل خياراتها. للقيام بذلك، تحتاج إلى تحويل الحقل إلى`RadioButtonField` وتحديث خياراته:
+
+```csharp
+    if (item.Contains("radio1"))
+    {
+        Aspose.Pdf.Forms.RadioButtonField field0 = PDF_Template_PDF_HTML.Form[item] as Aspose.Pdf.Forms.RadioButtonField;
+        Aspose.Pdf.Forms.RadioButtonOptionField fieldoption = new Aspose.Pdf.Forms.RadioButtonOptionField();
+        fieldoption.OptionName = "Yes";
+        fieldoption.PartialName = "Yesname";
+```
+
+هنا:
+- نتحقق مما إذا كان اسم الحقل يحتوي على "radio1" لتحديد حقل زر الاختيار المحدد الذي نريد تعديله.
+- `RadioButtonField`يتم إرسالها من حقول النموذج لإجراء تعديلات محددة.
+
+## الخطوة 4: تعيين التسمية التوضيحية لزر الاختيار
+
+ لتعيين أو تحديث التسمية التوضيحية لزر الاختيار، ستحتاج إلى إنشاء`TextFragment` و استخدم`TextBuilder` لوضعه في المكان المطلوب:
+
+```csharp
+        var updatedFragment = new Aspose.Pdf.Text.TextFragment("test123");
+        updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
+        updatedFragment.TextState.FontSize = 10;
+        updatedFragment.TextState.LineSpacing = 6.32f;
+
+        // إنشاء كائن TextParagraph
+        TextParagraph par = new TextParagraph();
+        // تعيين موضع الفقرة
+        par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
+        // تحديد وضع التفاف الكلمات
+        par.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
+        // إضافة جزء نصي جديد إلى الفقرة
+        par.AppendLine(updatedFragment);
+        // أضف TextParagraph باستخدام TextBuilder
+        TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
+        textBuilder.AppendParagraph(par);
+```
+
+في هذا الجزء:
+- `TextFragment` يتم استخدامه لتحديد النص ومظهره.
+- `TextParagraph` يساعد على تحديد موضع النص وتنسيقه.
+- `TextBuilder` يضيف النص إلى الصفحة المحددة من ملف PDF.
+
+## الخطوة 5: احفظ ملف PDF المحدث
+
+وأخيرًا، احفظ ملف PDF المحدث في ملف جديد:
+
+```csharp
+        field0.DeleteOption("item1");
+    }
 }
 PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 ```
 
+وهذا سيضمن أن:
+- يتم تطبيق التغييرات على ملف PDF.
+- تم إزالة خيار زر الراديو الأصلي كما هو محدد.
+
 ## خاتمة
 
-في هذا الدليل، تعلمنا كيفية استخدام مكتبة Aspose.PDF لـ .NET لتعيين التسمية التوضيحية لزر الاختيار في نموذج PDF. باتباع الخطوات الموضحة، يمكنك تخصيص خيارات زر الاختيار وتغيير التسمية التوضيحية حسب الحاجة. لا تتردد في استكشاف ميزات Aspose.PDF لـ .NET بشكل أكبر لتوسيع إمكانيات التعامل مع ملفات PDF.
+إن تعديل تسميات أزرار الاختيار في نموذج PDF باستخدام Aspose.PDF لـ .NET يمكن أن يعزز بشكل كبير من التفاعلية وسهولة استخدام مستنداتك. باستخدام الخطوات الموضحة في هذا البرنامج التعليمي، يمكنك بسهولة تحميل ملف PDF وتحديث خيارات أزرار الاختيار وحفظ التغييرات. هذا النهج مفيد لإدارة النماذج ويضمن أن ملفات PDF الخاصة بك تلبي الاحتياجات الدقيقة للمستخدمين. انغمس في Aspose.PDF واستكشف قدراته لمعالجة ملفات PDF الأخرى!
 
-### الأسئلة الشائعة
+## الأسئلة الشائعة
 
-#### س: هل يمكنني استخدام Aspose.PDF لـ .NET لتعيين تسميات توضيحية لأزرار الاختيار في نموذج PDF؟
+### هل يمكنني تحديث حقول أزرار الاختيار المتعددة مرة واحدة؟
+نعم، يمكنك تكرار جميع حقول أزرار الاختيار وتطبيق التغييرات حسب الحاجة.
 
-ج: نعم، يمكنك استخدام Aspose.PDF لـ .NET لتعيين تسميات توضيحية لأزرار الاختيار في نموذج PDF. يوضح كود المصدر المقدم كيفية الوصول إلى حقل زر الاختيار وإنشاء خيار زر اختيار جديد مع تسمية توضيحية مخصصة وتحديث الحقل الحالي.
+### هل أحتاج إلى ترخيص لاستخدام Aspose.PDF؟
+ يمكنك البدء بإصدار تجريبي مجاني، ولكن يلزم الحصول على ترخيص للاستخدام الموسع.[احصل على الترخيص هنا](https://purchase.aspose.com/buy).
 
-#### س: كيف يمكنني تخصيص مظهر تسمية زر الاختيار، مثل حجم الخط ولونه؟
+### كيف يمكنني اختبار التغييرات قبل حفظ ملف PDF؟
+يمكنك معاينة ملف PDF في بيئة التطوير الخاصة بك أو استخدام عارض PDF للتحقق من التعديلات.
 
- أ: يمكنك تخصيص مظهر تسمية زر الاختيار عن طريق ضبط خصائص`TextFragment` تُستخدم للتسمية التوضيحية. على سبيل المثال، يمكنك ضبط الخط وحجمه ولونه ومسافة السطور وخيارات تنسيق النص الأخرى.
+### هل Aspose.PDF متوافق مع كافة إصدارات .NET؟
+يدعم Aspose.PDF إصدارات مختلفة من .NET. تأكد من التحقق من التوافق مع إصدار .NET الخاص بك.
 
-#### س: هل من الممكن إضافة خيارات أزرار الاختيار المتعددة مع تسميات توضيحية مختلفة لمجموعة أزرار الاختيار الواحدة؟
-
-ج: نعم، يمكنك إضافة خيارات متعددة لأزرار الاختيار مع تسميات توضيحية مختلفة إلى مجموعة أزرار اختيار واحدة. سيمثل كل خيار خيارًا مختلفًا، ويمكن للمستخدمين تحديد خيار واحد فقط من المجموعة.
-
-#### س: هل يمكنني استخدام Aspose.PDF لـ .NET لتعديل حقول النموذج الأخرى في مستند PDF؟
-
-ج: نعم، توفر Aspose.PDF for .NET مجموعة شاملة من الميزات للتعامل مع حقول النماذج المختلفة في مستند PDF، مثل حقول النص ومربعات الاختيار والقوائم المنسدلة والمزيد. يمكنك استخدام المكتبة لتعيين القيم وتعديل المظاهر وإضافة التفاعل إلى حقول النماذج.
-
-#### س: هل يدعم Aspose.PDF لـ .NET العمل مع ملفات PDF التي تم إنشاؤها من مصادر أخرى، مثل المستندات الممسوحة ضوئيًا؟
-
-ج: نعم، يدعم Aspose.PDF for .NET العمل مع ملفات PDF التي تم إنشاؤها من مصادر مختلفة، بما في ذلك المستندات الممسوحة ضوئيًا. توفر المكتبة إمكانيات التعرف الضوئي على الحروف (OCR) لاستخراج النص من ملفات PDF الممسوحة ضوئيًا ومعالجة المحتوى برمجيًا.
+### هل يمكنني معالجة حقول النماذج الأخرى بنفس الطريقة؟
+نعم، يمكن تطبيق تقنيات مماثلة على أنواع أخرى من حقول النموذج في مستندات PDF.

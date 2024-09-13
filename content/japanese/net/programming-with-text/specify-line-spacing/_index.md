@@ -65,7 +65,7 @@ formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 TextFragment textFragment = new TextFragment("Hello world");
 ```
 
-## ステップ7: フォントファイルを読み込む（オプション）
+## ステップ 7: フォント ファイルを読み込む (オプション)
 
 テキストに特定のフォントを使用する場合は、TrueTypeフォントファイルを`FileStream`物体：
 

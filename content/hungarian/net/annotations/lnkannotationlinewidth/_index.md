@@ -40,7 +40,7 @@ Most, hogy megvannak az előfeltételeink, bontsuk le a tinta annotáció vonals
 
 ## 1. lépés: Inicializálja a PDF-dokumentumot
 
-Először létre kell hoznunk vagy megnyitnunk egy PDF dokumentumot. Ehhez az oktatóanyaghoz egy új PDF-dokumentumot készítünk a semmiből.
+Először is létre kell hoznunk vagy meg kell nyitnunk egy PDF dokumentumot. Ehhez az oktatóanyaghoz egy új PDF-dokumentumot készítünk a semmiből.
 
 ```csharp
 // Inicializálja a PDF-dokumentumot
@@ -51,7 +51,7 @@ doc.Pages.Add(); // Adjon hozzá egy üres oldalt a dokumentumhoz
 
  Itt inicializálunk egy újat`Document` objektum, amely a mi PDF fájlunkat képviseli. Ezután hozzáadunk egy üres oldalt ehhez a dokumentumhoz.
 
-## 2. lépés: Hozzon létre tintajegyzetet
+## 2. lépés: Hozza létre a tintajegyzetet
 
 Ezután létrehozzuk magát a tinta-annotációt. Ez magában foglalja a tintavonásokat alkotó pontok meghatározását.
 

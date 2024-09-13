@@ -13,7 +13,7 @@ Ebben az oktatóanyagban lépésről lépésre bemutatjuk, hogyan hozhat létre 
 
 Mielőtt elkezdené, győződjön meg arról, hogy a következő előfeltételeket teljesítette:
 
-1. Visual Studio .NET keretrendszerrel telepítve.
+1. A Visual Studio .NET keretrendszerrel telepítve.
 2. Az Aspose.PDF könyvtár a .NET-hez.
 
 ## 1. lépés: A projekt beállítása
@@ -22,7 +22,7 @@ A kezdéshez hozzon létre egy új projektet a Visual Studióban, és adjon hozz
 
 ## 2. lépés: Importálja a szükséges névtereket
 
-A C# kódfájlba importálja az Aspose.PDF által biztosított osztályok és metódusok eléréséhez szükséges névtereket:
+C# kódfájlba importálja az Aspose.PDF által biztosított osztályok és metódusok eléréséhez szükséges névtereket:
 
 ```csharp
 using System;
@@ -112,7 +112,7 @@ V: Igen, különböző képformátumokat használhat a címkézett képhez, pél
 
  V: Az alternatív szöveg szöveges leírást ad a képről, amelyet a képernyőolvasók felolvasnak a látássérült felhasználók számára. A megadott kódban az alternatív szöveg a következővel van beállítva`AlternativeText` tulajdona a`IllustrationElement` a címkézett képet reprezentálja.
 
-####  K: Hogyan működik a`SetTitle` method contribute to the PDF document's tagged image?
+#### K: Hogyan működik a`SetTitle` method contribute to the PDF document's tagged image?
 
  V: A`SetTitle` metódus beállítja a PDF-dokumentum címkézett tartalmának címét, további kontextust biztosítva a címkézett képhez. Ez a cím segíthet azonosítani a címkézett tartalom célját vagy tárgyát.
 
@@ -126,4 +126,4 @@ V: Az Aspose.PDF címkézett tartalomszerkezeti funkcióinak használatával, va
 
 #### K: Lehetséges több címkézett képet hozzáadni ugyanahhoz a PDF-dokumentumhoz hasonló technikákkal?
 
- V: Igen, több címkézett képet is hozzáadhat ugyanahhoz a PDF-dokumentumhoz hasonló technikákkal. Létrehozna további`IllustrationElement` példányokat minden egyes címkézett képhez, és szükség szerint testreszabhatja tulajdonságaikat.
+V: Igen, több címkézett képet is hozzáadhat ugyanahhoz a PDF-dokumentumhoz hasonló technikákkal. Létrehozna további`IllustrationElement` példányokat minden egyes címkézett képhez, és szükség szerint testreszabhatja tulajdonságaikat.

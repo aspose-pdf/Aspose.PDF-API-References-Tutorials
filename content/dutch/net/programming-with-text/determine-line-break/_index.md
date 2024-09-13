@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Stap 5: Voeg een pagina toe aan het document
- Voeg een nieuwe pagina toe aan het document met behulp van de`Add` methode van de`Pages`verzameling. In de meegeleverde code wordt de nieuwe pagina toegewezen aan de variabele`page`.
+ Voeg een nieuwe pagina toe aan het document met behulp van de`Add` methode van de`Pages` verzameling. In de meegeleverde code wordt de nieuwe pagina toegewezen aan de variabele`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -118,7 +118,7 @@ A: In stap 6 maakt u een lus om meerdere tekstfragmenten aan de pagina toe te vo
 
 #### V: Hoe kan ik het PDF-document opslaan en informatie over regeleinden extraheren?
 
- A: In stap 7 slaat u het PDF-document op met behulp van de`Save` methode van de`Document` object. Vervolgens extraheert u de regelafbrekingsinformatie met behulp van de`GetNotifications`methode van de gewenste pagina en sla deze op in een tekstbestand.
+ A: In stap 7 slaat u het PDF-document op met behulp van de`Save` methode van de`Document` object. Vervolgens extraheert u de regelafbrekingsinformatie met behulp van de`GetNotifications` methode van de gewenste pagina en sla deze op in een tekstbestand.
 
 #### V: Wat is het doel van de geëxtraheerde regelovergangsinformatie?
 

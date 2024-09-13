@@ -154,7 +154,7 @@ Selamat! Anda sekarang telah mempelajari cara menampilkan tabel dalam dokumen PD
 
 #### T: Bagaimana cara mengubah tampilan tabel, seperti mengubah warna sel atau menambahkan batas?
 
-A: Untuk mengubah tampilan tabel, Anda dapat mengatur berbagai properti tabel.`Aspose.Pdf.Table` dan sel-selnya. Misalnya, Anda dapat mengatur`BackgroundColor` properti sel untuk mengubah warna latar belakangnya. Anda juga dapat mengatur`Border` properti tabel atau sel individual untuk menambahkan batas. Selain itu, Anda dapat menyesuaikan font, warna teks, dan perataan konten tabel dengan memodifikasi`TextState` dari`TextFragment` objek yang ditambahkan ke sel.
+ A: Untuk mengubah tampilan tabel, Anda dapat mengatur berbagai properti tabel.`Aspose.Pdf.Table` dan sel-selnya. Misalnya, Anda dapat mengatur`BackgroundColor` properti sel untuk mengubah warna latar belakangnya. Anda juga dapat mengatur`Border` properti tabel atau sel individual untuk menambahkan batas. Selain itu, Anda dapat menyesuaikan font, warna teks, dan perataan konten tabel dengan memodifikasi`TextState` dari`TextFragment` objek yang ditambahkan ke sel.
 
 #### T: Dapatkah saya menambahkan header dan footer ke tabel?
 
@@ -162,7 +162,7 @@ A: Ya, Anda dapat menambahkan header atau footer ke tabel dengan membuat baris t
 
 #### T: Bagaimana cara mengontrol posisi tabel di halaman?
 
- A: Untuk mengontrol posisi tabel di halaman, Anda dapat menyesuaikan`MarginInfo` dari`PageInfo` objek. Itu`MarginInfo`memungkinkan Anda untuk mengatur margin kiri, kanan, atas, dan bawah halaman, yang memengaruhi ruang yang tersedia untuk tabel. Anda juga dapat menggunakan`PositioningType` milik`Aspose.Pdf.Table` untuk mengontrol perataan horizontal dan vertikal dalam area konten halaman.
+A: Untuk mengontrol posisi tabel di halaman, Anda dapat menyesuaikan`MarginInfo` dari`PageInfo` objek. Itu`MarginInfo` memungkinkan Anda untuk mengatur margin kiri, kanan, atas, dan bawah halaman, yang memengaruhi ruang yang tersedia untuk tabel. Anda juga dapat menggunakan`PositioningType` milik`Aspose.Pdf.Table` untuk mengontrol perataan horizontal dan vertikal dalam area konten halaman.
 
 #### T: Dapatkah saya mengekspor tabel ke format file lain, seperti Excel atau CSV?
 

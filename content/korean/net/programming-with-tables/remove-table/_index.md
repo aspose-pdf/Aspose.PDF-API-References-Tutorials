@@ -96,7 +96,7 @@ pdfDocument.Save(dataDir + "Table_out.pdf");
 
 #### 질문: 지정된 페이지에 표가 하나도 없으면 어떻게 되나요?
 
- A: 지정된 페이지에 테이블이 하나도 포함되어 있지 않으면 코드는 다음을 발생시킵니다.`IndexOutOfRangeException` 접근을 시도할 때`absorb.TableList[0]` . 이 문제를 방지하려면 다음을 확인해야 합니다.`absorb.TableList`테이블에 접근하기 전에 모든 요소가 포함되어 있어야 합니다.
+ A: 지정된 페이지에 테이블이 하나도 포함되어 있지 않으면 코드는 다음을 발생시킵니다.`IndexOutOfRangeException` 접근을 시도할 때`absorb.TableList[0]` . 이 문제를 방지하려면 다음을 확인해야 합니다.`absorb.TableList` 테이블에 접근하기 전에 모든 요소가 포함되어 있어야 합니다.
 
 #### 질문: 첫 번째 페이지가 아닌 다른 페이지에서 표를 제거할 수 있나요?
 

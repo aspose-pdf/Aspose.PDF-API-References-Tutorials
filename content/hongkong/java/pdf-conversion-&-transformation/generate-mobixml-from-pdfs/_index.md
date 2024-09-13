@@ -53,7 +53,7 @@ public class PDFtoMobiXMLConverter {
 
 ## 常見問題解答
 
-### 如何取得 Aspose.PDF for Java？
+### 如何取得 Java 版 Aspose.PDF？
 
 您可以從發布連結下載 Aspose.PDF for Java：[Aspose.PDF for Java 下載](https://releases.aspose.com/pdf/java/).
 

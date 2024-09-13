@@ -155,7 +155,7 @@ A: Bir PDF belgesinin dilini ve başlığını yapılandırmak erişilebilirlik 
 
 A: Çok dilli içerik, PDF belgelerinin erişilebilirliğini ve küresel erişimini artırır. Aspose.PDF for .NET, her dil için paragraf öğeleri oluşturarak, metin ve dil özelliklerini buna göre ayarlayarak çok dilli içerik eklemenize olanak tanır.
 
-####  S: Nasıl?`SetTitle` method contribute to improving document accessibility and organization?
+#### S: Nasıl?`SetTitle` method contribute to improving document accessibility and organization?
 
  A:`SetTitle` method, belge tanımlama, arama sonuçları ve organizasyon için kullanılan bir PDF belgesinin başlığını ayarlar. Net ve anlamlı bir başlık sağlamak, belge erişilebilirliğini artırır ve kullanıcı deneyimini iyileştirir.
 
@@ -177,4 +177,4 @@ A: Dil ve başlığı yapılandırırken hedef kitleyi, belge içeriğini ve eri
 
 #### S: Aspose.PDF for .NET kullanarak mevcut bir PDF belgesinin dilini ve başlığını değiştirebilir miyim?
 
- A: Evet, Aspose.PDF for .NET kullanarak mevcut bir PDF belgesinin dilini ve başlığını değiştirebilirsiniz. Belgeyi yükleyerek, etiketli içeriğine erişerek ve`SetTitle` Ve`SetLanguage`yöntemlerini kullanarak, bu öznitelikleri gerektiği gibi güncelleyebilirsiniz.
+ A: Evet, Aspose.PDF for .NET kullanarak mevcut bir PDF belgesinin dilini ve başlığını değiştirebilirsiniz. Belgeyi yükleyerek, etiketli içeriğine erişerek ve`SetTitle` Ve`SetLanguage` yöntemlerini kullanarak, bu öznitelikleri gerektiği gibi güncelleyebilirsiniz.

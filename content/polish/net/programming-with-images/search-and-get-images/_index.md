@@ -2,132 +2,120 @@
 title: Wyszukaj i pobierz obrazy w pliku PDF
 linktitle: Wyszukaj i pobierz obrazy w pliku PDF
 second_title: Aspose.PDF dla .NET API Reference
-description: Przewodnik krok po kroku dotyczący wyszukiwania i pobierania obrazów w plikach PDF przy użyciu Aspose.PDF dla platformy .NET.
+description: Dowiedz się, jak bez wysiłku wyodrębniać obrazy z plików PDF za pomocą Aspose.PDF dla .NET. Postępuj zgodnie z tym przewodnikiem krok po kroku, aby udoskonalić swoje umiejętności przetwarzania plików PDF.
 type: docs
 weight: 260
 url: /pl/net/programming-with-images/search-and-get-images/
 ---
-W tym samouczku pokażemy Ci, jak wyszukiwać i pobierać obrazy w pliku PDF za pomocą Aspose.PDF dla .NET. Wykonaj poniższe kroki, aby łatwo wykonać tę operację.
+## Wstęp
+
+Szukasz prostego sposobu na wyodrębnianie obrazów z plików PDF przy użyciu Aspose.PDF dla .NET? Trafiłeś we właściwe miejsce! W tym artykule zagłębimy się w szczegóły skutecznego wyszukiwania i pobierania obrazów osadzonych w dokumencie PDF. Niezależnie od tego, czy jesteś doświadczonym programistą, czy dopiero zaczynasz przygodę ze światem manipulacji plikami PDF, ten przewodnik przeprowadzi Cię przez cały proces krok po kroku.
 
 ## Wymagania wstępne
 
-Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
+Zanim zagłębimy się w szczegóły kodu, jest kilka wymagań wstępnych, które musisz spełnić, aby znaleźć się na Twojej liście. 
 
-- Zainstalowany i skonfigurowany program Visual Studio lub inne środowisko programistyczne.
-- Podstawowa znajomość języka programowania C#.
-- Biblioteka Aspose.PDF dla .NET zainstalowana. Możesz ją pobrać z oficjalnej strony Aspose.
+### .NET Framework
 
-## Krok 1: Ładowanie dokumentu PDF
+Upewnij się, że masz zainstalowany .NET Framework na swoim komputerze. Aspose.PDF dla .NET jest kompatybilny z różnymi wersjami, ale najlepiej jest używać najnowszej stabilnej wersji, aby cieszyć się wszystkimi najnowszymi funkcjami i ulepszeniami.
 
-Aby rozpocząć, użyj następującego kodu, aby załadować dokument PDF:
+### Biblioteka Aspose.PDF
+
+ Będziesz potrzebować dostępu do biblioteki Aspose.PDF. Jeśli jeszcze jej nie masz, możesz ją pobrać z tego linku:[Pobierz Aspose.PDF dla .NET](https://releases.aspose.com/pdf/net/) Dodatkowo możesz je eksplorować[miesięczny bezpłatny okres próbny](https://releases.aspose.com/) aby rozpocząć realizację Twoich projektów bez żadnych kosztów.
+
+### Środowisko programistyczne
+
+Aby umożliwić bezproblemowe pisanie i uruchamianie kodu, należy skonfigurować odpowiednie środowisko programistyczne, np. Visual Studio lub dowolne inne preferowane środowisko IDE.
+
+## Importuj pakiety
+
+Aby pracować z Aspose.PDF dla .NET, musisz najpierw zaimportować odpowiednie przestrzenie nazw do swojego projektu. Oto, co musisz zrobić:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Otwórz dokument
+using System.IO;
+using Aspose.Pdf;
+using System;
+```
+
+ Każdy z tych pakietów służy określonym celom podczas manipulowania dokumentami PDF.`Aspose.Pdf` przestrzeń nazw stanowi podstawę Twoich operacji, natomiast pozostałe dwa pomagają w zarządzaniu obrazami i tekstem w pliku PDF.
+
+## Krok 1: Ustaw ścieżkę dokumentu
+
+Przed wszystkim musisz zdefiniować ścieżkę, w której znajduje się Twój plik PDF. Ten fragment kodu to ustawia:
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Zastąp „TWÓJ KATALOG DOKUMENTÓW” rzeczywistą ścieżką do katalogu zawierającego plik PDF, na przykład:`C:\Documents\`.
+
+## Krok 2: Otwórz dokument PDF
+
+ Następnie będziesz chciał załadować dokument PDF do swojej aplikacji. Można to zrobić, tworząc nowy`Document` wystąpienie ze ścieżką do pliku, którą właśnie określiłeś:
+
+```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "SearchAndGetImages.pdf");
 ```
 
-Pamiętaj o podaniu prawidłowej ścieżki do dokumentu PDF.
+## Krok 3: Utwórz ImagePlacementAbsorber
 
-## Krok 2: wyszukiwanie lokalizacji obrazów
-
-Aby przeszukać lokalizację obrazów w dokumencie PDF, użyj następującego kodu:
+ Aby wyszukać obrazy w pliku PDF, potrzebujesz`ImagePlacementAbsorber` obiekt. Ta klasa pomaga w absorbowaniu obrazów z pliku PDF podczas procesu ekstrakcji:
 
 ```csharp
-// Utwórz obiekt ImagePlacementAbsorber, aby wyszukać lokalizacje obrazów
 ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
+```
 
-// Zaakceptuj absorber dla wszystkich stron dokumentu
+## Krok 4: Akceptuj Absorber dla wszystkich stron
+
+ Ten krok jest kluczowy, ponieważ informuje`Document` aby zastosować pochłaniacz obrazu na wszystkich stronach. Zapewnia, że wszystkie obrazy umieszczone w dowolnym miejscu w dokumencie zostaną zidentyfikowane:
+
+```csharp
 doc.Pages.Accept(abs);
 ```
 
-Spowoduje to zebranie lokalizacji obrazów w absorberze.
+## Krok 5: Przejrzyj umiejscowienia obrazów
 
-## Krok 3: Przeglądaj lokalizacje obrazów i pobieraj obrazy oraz ich właściwości
-
-Następnie przejrzymy zebrane lokalizacje obrazów i pobierzemy obrazy i ich właściwości. Użyj następującego kodu:
+Teraz, gdy już wchłonąłeś obrazy, czas się w nie zagłębić. Przejdziesz przez każde umiejscowienie obrazu wyodrębnione z pliku PDF:
 
 ```csharp
-foreach(ImagePlacement imagePlacement in abs.ImagePlacements)
-{
-     // Pobierz obraz za pomocą obiektu ImagePlacement
-     XImage image = imagePlacement.Image;
-
-     // Wyświetl właściwości lokalizacji obrazu
-     Console.Out.WriteLine("Image Width: " + imagePlacement.Rectangle.Width);
-     Console.Out.WriteLine("Image Height: " + imagePlacement.Rectangle.Height);
-     Console.Out.WriteLine("LLX of image: " + imagePlacement.Rectangle.LLX);
-     Console.Out.WriteLine("LLY of image: " + imagePlacement.Rectangle.LLY);
-     Console.Out.WriteLine("Horizontal image resolution: " + imagePlacement.Resolution.X);
-     Console.Out.WriteLine("Vertical image resolution: " + imagePlacement.Resolution.Y);
-}
-```
-
-Spowoduje to przejrzenie wszystkich lokalizacji obrazów, pobranie pasujących obrazów i wyświetlenie ich właściwości.
-
-### Przykładowy kod źródłowy dla funkcji Szukaj i pobieraj obrazy za pomocą Aspose.PDF dla .NET 
-```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Otwórz dokument
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "SearchAndGetImages.pdf");
-// Utwórz obiekt ImagePlacementAbsorber, aby wykonać wyszukiwanie rozmieszczenia obrazu
-ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
-// Zaakceptuj absorber dla wszystkich stron
-doc.Pages.Accept(abs);
-// Przejdź przez wszystkie ImagePlacements, pobierz właściwości image i ImagePlacement
 foreach (ImagePlacement imagePlacement in abs.ImagePlacements)
 {
-	// Pobierz obraz za pomocą obiektu ImagePlacement
-	XImage image = imagePlacement.Image;
-	// Wyświetl właściwości rozmieszczenia obrazu dla wszystkich rozmieszczeń
-	Console.Out.WriteLine("image width:" + imagePlacement.Rectangle.Width);
-	Console.Out.WriteLine("image height:" + imagePlacement.Rectangle.Height);
-	Console.Out.WriteLine("image LLX:" + imagePlacement.Rectangle.LLX);
-	Console.Out.WriteLine("image LLY:" + imagePlacement.Rectangle.LLY);
-	Console.Out.WriteLine("image horizontal resolution:" + imagePlacement.Resolution.X);
-	Console.Out.WriteLine("image vertical resolution:" + imagePlacement.Resolution.Y);
+    // Dalsze kroki w celu uzyskania właściwości obrazu
 }
+```
+
+## Krok 6: Wyodrębnij właściwości obrazu
+
+ Wewnątrz pętli możesz zacząć pobierać wartościowe właściwości każdego obrazu. Używając`imagePlacement` obiekt, możesz uzyskać dostęp do wymiarów i rozdzielczości:
+
+```csharp
+XImage image = imagePlacement.Image; // Pobierz obraz
+
+Console.Out.WriteLine("image width:" + imagePlacement.Rectangle.Width);
+Console.Out.WriteLine("image height:" + imagePlacement.Rectangle.Height);
+Console.Out.WriteLine("image LLX:" + imagePlacement.Rectangle.LLX);
+Console.Out.WriteLine("image LLY:" + imagePlacement.Rectangle.LLY);
+Console.Out.WriteLine("image horizontal resolution:" + imagePlacement.Resolution.X);
+Console.Out.WriteLine("image vertical resolution:" + imagePlacement.Resolution.Y);
 ```
 
 ## Wniosek
 
-Gratulacje! Udało Ci się wyszukać i uzyskać obrazy w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Teraz możesz zastosować tę metodę do własnych projektów, aby wyodrębnić obrazy i uzyskać ich właściwości z plików PDF.
+I masz to! Wykonując te kroki, możesz sprawnie wyszukiwać i pobierać obrazy z plików PDF za pomocą Aspose.PDF dla .NET. Za pomocą zaledwie kilku linijek kodu możesz wyodrębnić cenne obrazy i ich właściwości, otwierając drzwi do wielu możliwości w swojej aplikacji.
 
-### FAQ dotyczące wyszukiwania i pobierania obrazów w plikach PDF
+## Najczęściej zadawane pytania
 
-#### P: Jaki jest cel wyszukiwania i pobierania obrazów w dokumencie PDF za pomocą Aspose.PDF dla platformy .NET?
+### Czy korzystanie z biblioteki Aspose.PDF jest bezpłatne?  
+Aspose.PDF dla platformy .NET jest biblioteką płatną, ale można pobrać bezpłatną wersję próbną na jeden miesiąc.
 
-A: Wyszukiwanie i uzyskiwanie obrazów w dokumencie PDF umożliwia zlokalizowanie i wyodrębnienie obrazów w pliku PDF. Może to być przydatne do różnych celów, takich jak analiza zawartości, weryfikacja właściwości obrazu lub dalsze przetwarzanie obrazów.
+### Czy mogę wyodrębnić obrazy z plików PDF chronionych hasłem?  
+Tak, ale musisz podać hasło podczas otwierania dokumentu.
 
-#### P: Jak wygląda proces wyszukiwania obrazów w dokumencie PDF?
+### Jakie typy obrazów można wyodrębnić z pliku PDF?  
+Można wyodrębnić wszystkie osadzone obrazy, niezależnie od formatu (JPEG, PNG itp.).
 
- A: Proces ten obejmuje użycie`ImagePlacementAbsorber` obiekt do wyszukiwania umiejscowienia obrazów na wszystkich stronach dokumentu PDF. Absorber zbiera informacje o lokalizacji, rozmiarze i rozdzielczości każdego obrazu w dokumencie.
+### Czy liczba obrazów, które mogę wyodrębnić, jest ograniczona?  
+Nie ma sztywnego limitu, zależy to od samego pliku PDF.
 
-####  P: Jaki jest cel`ImagePlacement` object in the code?
-
- A: Ten`ImagePlacement`obiekt reprezentuje umiejscowienie obrazu w dokumencie PDF. Dostarcza właściwości, które pozwalają na dostęp do szczegółów, takich jak wymiary obrazu, współrzędne i rozdzielczość.
-
-#### P: Czy mogę filtrować obrazy, które są wyszukiwane i uzyskiwane na podstawie określonych kryteriów?
-
-A: Dostarczony kod zbiera informacje o wszystkich obrazach w dokumencie PDF. Jeśli chcesz filtrować obrazy na podstawie określonych kryteriów (np. typu obrazu, wymiarów, rozdzielczości), może być konieczne zmodyfikowanie kodu, aby uwzględnić odpowiednie warunki filtrowania.
-
-#### P: W jaki sposób mogę uzyskać dostęp do faktycznej zawartości obrazu po uzyskaniu informacji o jego umiejscowieniu?
-
- A: Ten`XImage` obiekt uzyskany z`ImagePlacement` obiekt reprezentuje rzeczywistą zawartość obrazu. Możesz dalej przetwarzać ten`XImage` obiektu, np. zapisując go do pliku lub wyświetlając w aplikacji.
-
-#### P: Co mogę zrobić z uzyskanymi właściwościami obrazu?
-
-A: Uzyskane właściwości obrazu, takie jak szerokość, wysokość, współrzędne i rozdzielczość, można wykorzystać do różnych celów. Właściwości można analizować, wyświetlać użytkownikowi lub wykorzystywać jako dane wejściowe do dalszego przetwarzania.
-
-#### P: Czy mogę modyfikować lub edytować obrazy w dokumencie PDF, korzystając z tej metody?
-
-A: Dostarczony kod koncentruje się na wyszukiwaniu i uzyskiwaniu informacji o umiejscowieniu obrazu. Aby modyfikować lub edytować obrazy, może być konieczne zintegrowanie dodatkowej funkcjonalności, takiej jak manipulacja obrazem, przy użyciu biblioteki Aspose.PDF.
-
-#### P: W jaki sposób mogę zintegrować tę metodę we własnych projektach?
-
-A: Aby zintegrować tę metodę ze swoimi projektami, wykonaj opisane kroki i zmodyfikuj kod w razie potrzeby. Możesz użyć uzyskanych informacji o umiejscowieniu obrazu i właściwości zgodnie z wymaganiami swojej aplikacji.
-
-#### P: Czy Aspose.PDF dla platformy .NET oferuje inne funkcje związane z manipulacją obrazami w dokumentach PDF?
-
-A: Tak, Aspose.PDF dla .NET oferuje szereg funkcji do pracy z obrazami w dokumentach PDF, w tym wstawianie obrazów, zmianę rozmiaru, obrót, ekstrakcję i wiele innych. Możesz przejrzeć dokumentację biblioteki i przykłady, aby odkryć jej pełne możliwości.
+### Czy mogę zapisać wyodrębnione obrazy na dysku?  
+ Tak, możesz zapisać obrazy na dysku za pomocą`XImage` obiekt w kodzie.

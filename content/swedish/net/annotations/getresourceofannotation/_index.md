@@ -1,7 +1,7 @@
 ---
 title: Hämta Resource Of Annotation
 linktitle: Hämta Resource Of Annotation
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lås upp kraften i PDF-hantering med Aspose.PDF för .NET - ditt favoritbibliotek för sömlös PDF-kommentarer och manipulering.
 type: docs
 weight: 90
@@ -66,7 +66,7 @@ I det här exemplet öppnar vi en PDF som heter AddAnnotation.pdf. Se till att d
 
 ## Steg 3: Skapa en anteckning
 
- Därefter skapar vi en ny anteckning. Här använder vi en`ScreenAnnotation`som låter dig bifoga multimediafiler som SWF i PDF:en.
+ Därefter skapar vi en ny kommentar. Här använder vi en`ScreenAnnotation`som låter dig bifoga multimediafiler som SWF i PDF:en.
 
 ```csharp
 // Skapa anteckning
@@ -75,7 +75,7 @@ ScreenAnnotation sa = new ScreenAnnotation(doc.Pages[1], new Rectangle(100, 400,
 
 Du kommer att märka att vi anger sidnumret och storleken på anteckningen. Det här är som att skapa ett fönster som du fyller med ditt multimediainnehåll. 
 
-## Steg 4: Lägg till kommentaren till PDF-filen
+## Steg 4: Lägg till anteckningen till PDF-filen
 
 Nu när du har skapat anteckningen är det dags att lägga till den i dokumentet.
 

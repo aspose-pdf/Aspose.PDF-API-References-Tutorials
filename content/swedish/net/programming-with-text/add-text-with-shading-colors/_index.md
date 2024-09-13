@@ -1,7 +1,7 @@
 ---
 title: Lägg till text med skuggande färger i PDF-fil
 linktitle: Lägg till text med skuggande färger i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du lägger till text med skuggfärger i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 80
@@ -42,7 +42,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 ```
 
 ## Steg 5: Hitta texten som ska ändras
- Använda`TextFragmentAbsorber` för att hitta önskad text i dokumentet. I den medföljande koden letar den efter texten "Lorem ipsum".
+Använda`TextFragmentAbsorber` för att hitta önskad text i dokumentet. I den medföljande koden letar den efter texten "Lorem ipsum".
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -129,7 +129,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 
 #### F: Hur hittar och ändrar jag specifik text i PDF-dokumentet?
 
- S: I steg 5 kommer du att använda`TextFragmentAbsorber`för att hitta önskad text i dokumentet. Sedan kan du ändra dess egenskaper:
+ S: I steg 5 kommer du att använda`TextFragmentAbsorber` för att hitta önskad text i dokumentet. Sedan kan du ändra dess egenskaper:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -150,7 +150,7 @@ textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 
 #### F: Kan jag använda ytterligare textformatering på den ändrade texten?
 
- S: Ja, i steg 7 kan du använda ytterligare textformatering som understrykning genom att ändra egenskaperna för`TextState` objekt:
+S: Ja, i steg 7 kan du använda ytterligare textformatering som understrykning genom att ändra egenskaperna för`TextState` objekt:
 
 ```csharp
 textFragment.TextState.Underline = true;

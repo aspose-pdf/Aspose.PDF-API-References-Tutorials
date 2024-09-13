@@ -60,7 +60,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## Шаг 6: получение извлеченных фрагментов текста
 
-Получите извлеченные фрагменты текста с помощью`TextFragments` собственность`TextFragmentAbsorber` объект:
+ Получите извлеченные фрагменты текста с помощью`TextFragments` собственность`TextFragmentAbsorber` объект:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

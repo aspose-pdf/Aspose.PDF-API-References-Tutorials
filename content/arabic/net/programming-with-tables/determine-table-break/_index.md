@@ -117,7 +117,7 @@ table1.DefaultCellPadding = margin;
 // لأنه لا يمكن استيعاب المزيد من خلال هذه الصفحة
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
-	// إنشاء صفوف في الجدول ثم خلايا في الصفوف
+	//إنشاء صفوف في الجدول ثم خلايا في الصفوف
 	Aspose.Pdf.Row row1 = table1.Rows.Add();
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");

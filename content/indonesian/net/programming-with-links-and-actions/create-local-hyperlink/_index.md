@@ -2,144 +2,159 @@
 title: Buat Hyperlink Lokal Dalam File PDF
 linktitle: Buat Hyperlink Lokal Dalam File PDF
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Buat hyperlink lokal dengan mudah dalam berkas PDF menggunakan Aspose.PDF untuk .NET.
+description: Pelajari cara membuat hyperlink lokal dalam berkas PDF menggunakan Aspose.PDF for .NET dengan mudah dengan panduan langkah demi langkah kami.
 type: docs
 weight: 40
 url: /id/net/programming-with-links-and-actions/create-local-hyperlink/
 ---
-Membuat hyperlink lokal dalam berkas PDF memungkinkan Anda membuat tautan yang dapat diklik yang membawa pengguna ke halaman lain dalam dokumen PDF yang sama. Dengan Aspose.PDF untuk .NET, Anda dapat dengan mudah membuat tautan tersebut dengan mengikuti kode sumber berikut:
+## Perkenalan
 
-## Langkah 1: Impor Pustaka yang Diperlukan
+Dalam panduan ini, kami akan memandu Anda melalui proses pembuatan hyperlink lokal dalam file PDF menggunakan Aspose.PDF untuk .NET. Kami akan menguraikan setiap langkah dengan jelas, memastikan bahwa meskipun Anda baru dalam dunia manipulasi PDF, Anda akan dapat mengikutinya dengan mudah.
 
-Sebelum memulai, Anda perlu mengimpor pustaka yang diperlukan untuk proyek C# Anda. Berikut ini adalah perintah impor yang diperlukan:
+## Prasyarat
+
+Sebelum menyelami kodenya, mari pastikan Anda memiliki semua yang dibutuhkan:
+
+1.  Visual Studio: Anda akan memerlukan ini untuk mengembangkan aplikasi .NET Anda. Unduh dari[situs web](https://visualstudio.microsoft.com/).
+2.  Aspose.PDF untuk .NET: Anda dapat mengunduh pustaka ini melalui[tautan unduhan di sini](https://releases.aspose.com/pdf/net/)Dilengkapi dengan serangkaian fitur lengkap untuk manipulasi PDF.
+3. Pengetahuan Dasar C#: Sedikit pengetahuan tentang pemrograman C# akan membantu, tetapi jangan khawatir; kita akan membahas kode tersebut baris demi baris.
+4.  .NET Framework: Pastikan Anda telah menginstal .NET Framework di komputer Anda. Anda dapat memeriksa persyaratannya di Aspose.PDF[dokumentasi](https://reference.aspose.com/pdf/net/).
+
+Dengan prasyarat ini yang disiapkan, Anda siap mempelajari cara membuat hyperlink lokal dalam dokumen PDF Anda!
+
+## Paket Impor
+
+Setelah semuanya siap, saatnya mengimpor paket yang diperlukan ke dalam proyek C# Anda. Pustaka Aspose.PDF berisi semua kelas yang kita butuhkan. Berikut cara melakukannya:
+
+### Buka Proyek Anda
+
+Buka proyek .NET yang sudah ada atau buat yang baru di Visual Studio. Jika Anda memulai dari awal, pilih “Buat proyek baru” dari layar awal.
+
+### Tambahkan Referensi ke Aspose.PDF
+
+ Klik kanan pada "Dependencies" di folder proyek Anda di Solution Explorer. Pilih "Manage NuGet Packages," lalu cari`Aspose.PDF`. Instal versi terbaru yang tersedia. Ini akan menyediakan semua alat yang Anda perlukan untuk membuat dan memanipulasi PDF.
+
+### Mengimpor Ruang Nama
+
+Di bagian atas file .cs Anda, tambahkan arahan penggunaan untuk pustaka Aspose.PDF seperti ini:
 
 ```csharp
+using System;
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Langkah 2: Tetapkan jalur ke folder dokumen
+Dengan cara ini, Anda akan dapat mengakses fitur-fitur perpustakaan.
 
- Pada langkah ini, Anda perlu menentukan jalur ke folder tempat Anda ingin menyimpan file PDF yang dihasilkan. Ganti`"YOUR DOCUMENT DIRECTORY"` dalam kode berikut dengan jalur sebenarnya ke folder dokumen Anda:
+Mari kita uraikan proses pembuatan hyperlink lokal ke dalam beberapa langkah sederhana. Setiap langkah akan dijelaskan secara komprehensif untuk membantu Anda memahami logika di baliknya.
+
+## Langkah 1: Siapkan Instansi Dokumen
+
+Pada langkah ini, Anda akan membuat contoh baru kelas Dokumen, yang mewakili berkas PDF yang akan Anda kerjakan.
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Atur direktori dokumen Anda
+Document doc = new Document(); // Buat contoh Dokumen
 ```
+ Itu`dataDir` variabel adalah tempat PDF yang baru Anda buat akan berada. Anda perlu mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya pada sistem Anda.`Document` Kelas membuat dokumen PDF baru tempat kita dapat menambahkan halaman dan tautan.
 
-## Langkah 3: Buat contoh Dokumen
+## Langkah 2: Tambahkan Halaman ke Dokumen
 
- Kita akan membuat sebuah instance dari`Document` class untuk mewakili dokumen PDF kita. Berikut kode yang sesuai:
+Berikutnya, Anda akan menambahkan halaman ke dokumen PDF Anda. 
 
 ```csharp
-Document doc = new Document();
+Page page = doc.Pages.Add(); // Tambahkan halaman ke koleksi halaman
 ```
+ Itu`Pages.Add()` metode menambahkan halaman baru ke dokumen. Di sinilah semua konten Anda akan berada.
 
-## Langkah 4: Tambahkan halaman dan teks dengan hyperlink
+## Langkah 3: Buat Fragmen Teks
 
-Pada langkah ini, kita akan menambahkan halaman ke dokumen PDF kita dan menambahkan beberapa teks yang berisi hyperlink lokal. Kita akan menentukan halaman target untuk setiap tautan. Berikut ini kode yang sesuai:
-
-```csharp
-Page page = doc.Pages.Add();
-
-TextFragment text = new TextFragment("Link to page 7");
-LocalHyperlink link = new LocalHyperlink();
-link.TargetPageNumber = 7;
-text. Hyperlink = link;
-page.Paragraphs.Add(text);
-
-text = new TextFragment("Link to page 1");
-text. IsInNewPage = true;
-link = new LocalHyperlink();
-link.TargetPageNumber = 1;
-text. Hyperlink = link;
-page.Paragraphs.Add(text);
-```
-
-## Langkah 5: Simpan dokumen yang diperbarui
-
-Sekarang mari simpan file PDF yang diperbarui menggunakan`Save` metode dari`doc` objek. Berikut kode terkait:
+Sekarang, mari kita membuat sepotong teks yang akan berfungsi sebagai tautan yang dapat diklik.
 
 ```csharp
-dataDir = dataDir + "CreateLocalHyperlink_out.pdf";
-doc.Save(dataDir);
-```
-
-### Contoh kode sumber untuk Membuat Hyperlink Lokal menggunakan Aspose.PDF untuk .NET 
-```csharp
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Buat contoh Dokumen
-Document doc = new Document();
-// Tambahkan halaman ke koleksi halaman file PDF
-Page page = doc.Pages.Add();
-// Buat contoh Fragmen Teks
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("link page number test to page 7");
-// Buat contoh hyperlink lokal
-Aspose.Pdf.LocalHyperlink link = new Aspose.Pdf.LocalHyperlink();
-// Tetapkan halaman target untuk contoh tautan
-link.TargetPageNumber = 7;
-// Tetapkan hyperlink TextFragment
-text.Hyperlink = link;
-// Tambahkan teks ke koleksi paragraf Halaman
-page.Paragraphs.Add(text);
-// Buat instance TextFragment baru
-text = new TextFragment("link page number test to page 1");
-// TextFragment harus ditambahkan di halaman baru
-text.IsInNewPage = true;
-// Buat instance hyperlink lokal lainnya
-link = new LocalHyperlink();
-// Tetapkan halaman Target untuk hyperlink kedua
-link.TargetPageNumber = 1;
-// Tetapkan tautan untuk TextFragment kedua
-text.Hyperlink = link;
-// Tambahkan teks ke kumpulan paragraf objek halaman
-page.Paragraphs.Add(text);    
-dataDir = dataDir + "CreateLocalHyperlink_out.pdf";
-// Simpan dokumen yang diperbarui
-doc.Save(dataDir);
-Console.WriteLine("\nLocal hyperlink created successfully.\nFile saved at " + dataDir);            
 ```
+ Itu`TextFragment` mewakili segmen teks dalam PDF. Di sini, kami membuat tautan yang memberi tahu pengguna bahwa tautan tersebut akan membawa mereka ke halaman 7.
+
+## Langkah 4: Buat Hyperlink Lokal
+
+Di sinilah keajaiban terjadi! Anda perlu membuat hyperlink lokal yang akan memberi tahu fragmen teks ke mana harus diarahkan.
+
+```csharp
+Aspose.Pdf.LocalHyperlink link = new Aspose.Pdf.LocalHyperlink(); // Buat hyperlink lokal
+link.TargetPageNumber = 7; //Tetapkan halaman target untuk contoh tautan
+text.Hyperlink = link; // Tetapkan hyperlink TextFragment
+```
+ Itu`LocalHyperlink` kelas adalah apa yang memungkinkan kita untuk menunjuk ke halaman lain dalam dokumen yang sama. Dengan mengatur`TargetPageNumber` ke 7, Anda memberi tahu hyperlink untuk melompat ke halaman tertentu saat diklik.
+
+## Langkah 5: Tambahkan Fragmen Teks ke Halaman
+
+Setelah menyiapkan hyperlink, saatnya menambahkan fragmen teks ke halaman yang kita buat.
+
+```csharp
+page.Paragraphs.Add(text); // Tambahkan teks ke koleksi paragraf Halaman
+```
+Baris ini menambahkan teks yang dapat diklik ke kumpulan paragraf halaman.
+
+## Langkah 6: Buat Fragmen Teks Lain (Opsional)
+
+Mari tambahkan hyperlink lain untuk menavigasi kembali ke halaman 1.
+
+```csharp
+text = new TextFragment("link page number test to page 1"); // Buat TextFragment baru
+text.IsInNewPage = true; // Tambahkan ke halaman baru
+```
+ Membuat yang baru`TextFragment` untuk link kedua kita atur`IsInNewPage` menjadi benar, yang menunjukkan teks ini akan berpindah ke halaman baru.
+
+## Langkah 7: Siapkan Hyperlink Lokal Kedua
+
+Sama seperti sebelumnya, Anda akan membuat hyperlink lokal lain untuk halaman 1.
+
+```csharp
+link = new LocalHyperlink(); // Buat instance hyperlink lokal lainnya
+link.TargetPageNumber = 1; //Tetapkan halaman Target untuk hyperlink kedua
+text.Hyperlink = link; // Tetapkan tautan untuk TextFragment kedua
+```
+Hyperlink ini menargetkan halaman 1, yang memungkinkan pengguna untuk melompat kembali saat mereka mencapai halaman kedua.
+
+## Langkah 8: Tambahkan Fragmen Teks Kedua ke Halaman Baru
+
+Sekarang, mari tambahkan teks ini ke halamannya.
+
+```csharp
+page.Paragraphs.Add(text); // Tambahkan teks ke kumpulan paragraf objek halaman
+```
+Mirip dengan langkah 5, baris ini menambahkan teks hyperlink baru ke halaman yang baru dibuat.
+
+## Langkah 9: Simpan Dokumen
+
+Akhirnya, tibalah waktunya untuk menyimpan kerja keras Anda! 
+
+```csharp
+dataDir = dataDir + "CreateLocalHyperlink_out.pdf"; // Tentukan nama file keluaran
+doc.Save(dataDir); // Simpan dokumen yang diperbarui
+Console.WriteLine("\nLocal hyperlink created successfully.\nFile saved at " + dataDir);
+```
+ Ini menggabungkan jalur direktori Anda dengan nama file.`Save()` metode ini menyimpan dokumen Anda dan pesan konfirmasi memberi tahu Anda bahwa semuanya berjalan lancar!
 
 ## Kesimpulan
 
-Selamat! Sekarang Anda memiliki panduan langkah demi langkah untuk membuat hyperlink lokal dalam PDF menggunakan Aspose.PDF untuk .NET. Anda dapat menggunakan kode ini untuk membuat tautan yang dapat diklik yang membawa pengguna ke halaman lain dalam dokumen yang sama.
+Membuat hyperlink lokal dalam file PDF menggunakan Aspose.PDF untuk .NET bukan sekadar trik keren; ini adalah fitur praktis yang meningkatkan navigasi dan pengalaman pengguna. Kini Anda dibekali dengan pengetahuan untuk mengarahkan pembaca langsung ke informasi yang mereka butuhkan. Coba ingat kembali analogi awal kita—tidak ada lagi jiwa yang tersesat yang berkeliaran di halaman yang tak berujung.
 
-Pastikan untuk memeriksa dokumentasi resmi Aspose.PDF untuk informasi lebih lanjut tentang fitur hyperlink tingkat lanjut.
+## Pertanyaan yang Sering Diajukan
 
-### FAQ untuk membuat hyperlink lokal dalam file PDF
+### Apa itu Aspose.PDF untuk .NET?
+Aspose.PDF untuk .NET adalah pustaka yang memungkinkan pengembang untuk membuat, memanipulasi, dan mengonversi dokumen PDF secara terprogram menggunakan kerangka kerja .NET.
 
-#### T: Apa itu hyperlink lokal dalam berkas PDF?
+### Bisakah saya membuat hyperlink ke halaman web eksternal?
+Ya, Aspose.PDF juga mendukung pembuatan hyperlink ke URL eksternal selain hyperlink lokal dalam PDF.
 
-J: Hyperlink lokal dalam berkas PDF adalah tautan yang dapat diklik yang mengarahkan pengguna ke berbagai halaman dalam dokumen yang sama. Tautan ini meningkatkan navigasi dan memungkinkan pembaca mengakses bagian yang relevan dengan cepat.
+### Apakah ada uji coba gratis untuk Aspose.PDF?
+ Tentu saja! Anda dapat mengakses uji coba gratis dari[lokasi](https://releases.aspose.com/).
 
-#### T: Bagaimana hyperlink lokal dapat bermanfaat bagi dokumen PDF saya?
+### Bahasa pemrograman apa yang didukung Aspose?
+Aspose menawarkan pustaka untuk berbagai bahasa pemrograman, termasuk Java, CBahasa Indonesia: ++, dan Python, antara lain.
 
-J: Hyperlink lokal menyediakan cara yang efisien untuk menghubungkan konten terkait dalam dokumen PDF yang sama. Hyperlink lokal meningkatkan pengalaman pengguna dengan memungkinkan pembaca untuk melompat ke bagian tertentu dengan cepat tanpa harus menggulir seluruh dokumen.
-
-#### T: Bagaimana Aspose.PDF untuk .NET mendukung pembuatan hyperlink lokal?
-J: Aspose.PDF untuk .NET menawarkan dukungan komprehensif untuk membuat hyperlink lokal. Tutorial langkah demi langkah yang disediakan dalam panduan ini menunjukkan cara menambahkan hyperlink lokal ke dokumen PDF Anda menggunakan C#.
-
-#### T: Dapatkah saya menyesuaikan tampilan hyperlink lokal?
-
-A: Ya, Anda dapat menyesuaikan tampilan hyperlink lokal, termasuk warna dan gaya teks, untuk memastikan tampilannya sesuai dengan desain dokumen Anda dan memberikan pengalaman visual yang konsisten.
-
-#### T: Apakah mungkin untuk membuat beberapa hyperlink lokal dalam satu halaman PDF?
-
-A: Tentu saja! Anda dapat membuat beberapa hyperlink lokal dalam satu halaman PDF, yang memungkinkan pembaca untuk berpindah ke berbagai bagian atau halaman sesuai kebutuhan. Setiap hyperlink lokal dapat disesuaikan dengan targetnya masing-masing.
-
-#### T: Dapatkah saya menautkan ke bagian tertentu halaman menggunakan hyperlink lokal?
-
-J: Meskipun hyperlink lokal biasanya mengarah ke seluruh halaman, Anda dapat membuat jangkar atau penanda di dalam dokumen PDF Anda untuk mencapai penautan yang terarah. Aspose.PDF untuk .NET mendukung berbagai opsi hyperlink.
-
-#### T: Bagaimana saya dapat memverifikasi bahwa hyperlink lokal saya berfungsi dengan benar?
-
-A: Dengan mengikuti tutorial dan contoh kode yang diberikan, Anda dapat dengan yakin membuat hyperlink lokal yang fungsional. Anda dapat menguji tautan dengan membuka dokumen PDF yang dihasilkan dan mengklik teks yang diberi hyperlink.
-
-#### T: Apakah ada batasan saat menggunakan hyperlink lokal?
-
-J: Hyperlink lokal merupakan cara yang efektif untuk meningkatkan navigasi dokumen, tetapi penting untuk memastikan bahwa struktur dokumen tetap jelas dan intuitif. Hyperlink dan jangkar yang diberi label dengan tepat berkontribusi pada pengalaman pengguna yang positif.
-
-#### T: Dapatkah saya membuat hyperlink lokal dalam tabel atau gambar?
-
-A: Ya, Anda dapat membuat hyperlink lokal dalam berbagai elemen dokumen PDF, termasuk tabel, gambar, dan teks. Aspose.PDF untuk .NET menawarkan fleksibilitas dalam menambahkan hyperlink ke berbagai jenis konten.
+### Bagaimana cara mendapatkan dukungan untuk produk Aspose?
+ Anda dapat mencari dukungan melalui[Forum Aspose](https://forum.aspose.com/c/pdf/10).

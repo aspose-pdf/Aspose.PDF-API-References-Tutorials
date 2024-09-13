@@ -139,7 +139,7 @@ textFragment3.TextState.FontSize = 12;
 textFragment3.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 //回転を設定する
 textFragment3.TextState.Rotation = -45;
-//段落にテキストフラグメントを追加します
+//段落にテキストフラグメントを追加する
 paragraph.AppendLine(textFragment1);
 paragraph.AppendLine(textFragment2);
 paragraph.AppendLine(textFragment3);

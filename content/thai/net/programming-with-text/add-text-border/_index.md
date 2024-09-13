@@ -38,14 +38,14 @@ Document pdfDocument = new Document();
 ```
 
 ## ขั้นตอนที่ 5: เพิ่มหน้าลงในเอกสาร
- เพิ่มหน้าใหม่ลงในเอกสารโดยใช้`Add` วิธีการของ`Pages`คอลเลกชัน ในโค้ดที่ให้มา หน้าใหม่จะถูกกำหนดให้กับตัวแปร`pdfPage`.
+ เพิ่มหน้าใหม่ลงในเอกสารโดยใช้`Add` วิธีการของ`Pages` คอลเลกชัน ในโค้ดที่ให้มา หน้าใหม่จะถูกกำหนดให้กับตัวแปร`pdfPage`.
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
 ## ขั้นตอนที่ 6: สร้าง TextFragment
- สร้าง`TextFragment` วัตถุและจัดเตรียมข้อความที่ต้องการ กำหนดตำแหน่งของส่วนข้อความโดยใช้`Position` คุณสมบัติ ในโค้ดที่ให้มา ข้อความจะถูกตั้งเป็น "ข้อความหลัก" และอยู่ในตำแหน่ง (100, 600) บนหน้า
+ สร้าง`TextFragment`วัตถุและจัดเตรียมข้อความที่ต้องการ กำหนดตำแหน่งของส่วนข้อความโดยใช้`Position` คุณสมบัติ ในโค้ดที่ให้มา ข้อความจะถูกตั้งเป็น "ข้อความหลัก" และอยู่ในตำแหน่ง (100, 600) บนหน้า
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -64,7 +64,7 @@ textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 ```
 
 ## ขั้นตอนที่ 8: เปิดใช้งานเส้นขอบข้อความ
- หากต้องการเปิดใช้งานเส้นขอบข้อความ ให้ตั้งค่า`DrawTextRectangleBorder`คุณสมบัติของชิ้นส่วนข้อความ`TextState` ถึง`true`.
+ หากต้องการเปิดใช้งานเส้นขอบข้อความ ให้ตั้งค่า`DrawTextRectangleBorder` คุณสมบัติของชิ้นส่วนข้อความ`TextState` ถึง`true`.
 
 ```csharp
 textFragment.TextState.DrawTextRectangleBorder = true;
@@ -151,7 +151,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 
 #### ถาม: ฉันจะสร้าง TextFragment และกำหนดตำแหน่งได้อย่างไร
 
- A: ในขั้นตอนที่ 6 คุณจะสร้าง`TextFragment`วัตถุและกำหนดตำแหน่งบนหน้าโดยใช้`Position` คุณสมบัติ:
+ A: ในขั้นตอนที่ 6 คุณจะสร้าง`TextFragment` วัตถุและกำหนดตำแหน่งบนหน้าโดยใช้`Position` คุณสมบัติ:
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -182,7 +182,7 @@ tb.AppendText(textFragment);
 
 #### ถาม: ฉันจะบันทึกเอกสาร PDF ผลลัพธ์ได้อย่างไร
 
- ก: หลังจากเพิ่มข้อความพร้อมขอบแล้ว ให้ใช้`Save` วิธีการของ`Document` วัตถุที่จะบันทึกเอกสาร PDF:
+ก: หลังจากเพิ่มข้อความพร้อมขอบแล้ว ให้ใช้`Save` วิธีการของ`Document` วัตถุที่จะบันทึกเอกสาร PDF:
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");

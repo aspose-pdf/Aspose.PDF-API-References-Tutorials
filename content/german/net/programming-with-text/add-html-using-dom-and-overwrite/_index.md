@@ -42,7 +42,7 @@ Document doc = new Document();
 ```
 
 ## Schritt 5: Dem Dokument eine Seite hinzufügen
- Fügen Sie dem Dokument eine neue Seite hinzu, indem Sie das`Add` Methode der`Pages`Sammlung. Im bereitgestellten Code wird die neue Seite der Variablen zugewiesen`page`.
+ Fügen Sie dem Dokument eine neue Seite hinzu, indem Sie das`Add` Methode der`Pages` Sammlung. Im bereitgestellten Code wird die neue Seite der Variablen zugewiesen`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -159,7 +159,7 @@ HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Tab
 
 #### F: Wie kann ich die Stile des HTML-Inhalts überschreiben?
 
- A: In Schritt 7 überschreiben Sie die Stile des HTML-Inhalts, indem Sie die`TextState` Eigenschaften der`HtmlFragment` Objekt. Sie können beispielsweise die Schriftfamilie in „Arial“ ändern und die Schriftgröße auf 20 festlegen:
+ A: In Schritt 7 überschreiben Sie die Stile des HTML-Inhalts, indem Sie die`TextState` Eigenschaften der`HtmlFragment`Objekt. Sie können beispielsweise die Schriftfamilie in „Arial“ ändern und die Schriftgröße auf 20 festlegen:
 
 ```csharp
 title.TextState = new TextState("Arial");

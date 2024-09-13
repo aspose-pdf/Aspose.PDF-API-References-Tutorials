@@ -38,14 +38,14 @@ Document pdfDocument = new Document();
 ```
 
 ## الخطوة 5: إضافة صفحة إلى المستند
- أضف صفحة جديدة إلى المستند باستخدام`Add` طريقة`Pages`المجموعة. في الكود المقدم، يتم تعيين الصفحة الجديدة للمتغير`pdfPage`.
+ أضف صفحة جديدة إلى المستند باستخدام`Add` طريقة`Pages` المجموعة. في الكود المقدم، يتم تعيين الصفحة الجديدة للمتغير`pdfPage`.
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
 ## الخطوة 6: إنشاء جزء نصي
- إنشاء`TextFragment` الكائن وتوفير النص المطلوب. اضبط موضع جزء النص باستخدام`Position` في الكود المقدم، يتم تعيين النص على "النص الرئيسي" ووضعه عند (100، 600) على الصفحة.
+ إنشاء`TextFragment`الكائن وتوفير النص المطلوب. اضبط موضع جزء النص باستخدام`Position` في الكود المقدم، يتم تعيين النص على "النص الرئيسي" ووضعه عند (100، 600) على الصفحة.
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -64,7 +64,7 @@ textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 ```
 
 ## الخطوة 8: تمكين حدود النص
- لتمكين حدود النص، اضبط`DrawTextRectangleBorder`خاصية جزء النص`TextState` ل`true`.
+ لتمكين حدود النص، اضبط`DrawTextRectangleBorder` خاصية جزء النص`TextState` ل`true`.
 
 ```csharp
 textFragment.TextState.DrawTextRectangleBorder = true;
@@ -151,7 +151,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 
 #### س: كيف أقوم بإنشاء TextFragment وتعيين موضعه؟
 
- أ: في الخطوة 6، ستقوم بإنشاء`TextFragment`الكائن وتعيين موضعه على الصفحة باستخدام`Position` ملكية:
+ أ: في الخطوة 6، ستقوم بإنشاء`TextFragment` الكائن وتعيين موضعه على الصفحة باستخدام`Position` ملكية:
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -182,7 +182,7 @@ tb.AppendText(textFragment);
 
 #### س: كيف أحفظ مستند PDF الناتج؟
 
- أ: بعد إضافة النص مع الحدود، استخدم`Save` طريقة`Document` كائن لحفظ مستند PDF:
+أ: بعد إضافة النص مع الحدود، استخدم`Save` طريقة`Document` كائن لحفظ مستند PDF:
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");

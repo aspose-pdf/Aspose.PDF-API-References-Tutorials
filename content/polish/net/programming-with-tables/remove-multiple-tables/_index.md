@@ -40,7 +40,7 @@ absorb.Visit(pdfDocument.Pages[1]);
 Aby móc usunąć tabele, musimy uzyskać kopię kolekcji tabel:
 
 ```csharp
-//Pobierz kopię zbioru tabel
+// Pobierz kopię zbioru tabel
 AbsorbedTable[] tables = new AbsorbedTable[absorb.TableList.Count];
 absorb.TableList.CopyTo(tables, 0);
 ```
@@ -96,7 +96,7 @@ Gratulacje! Teraz nauczyłeś się, jak usuwać wiele tabel w dokumencie PDF za 
 
 #### P: Czy mogę usunąć konkretne tabele zamiast wszystkich tabel w dokumencie PDF?
 
-A: Tak, możesz usunąć konkretne tabele zamiast wszystkich tabel w dokumencie PDF za pomocą Aspose.PDF dla .NET. W podanym przykładzie wszystkie tabele na drugiej stronie są usuwane. Możesz jednak zmodyfikować kod, aby wybrać i usunąć konkretne tabele na podstawie swoich wymagań. Aby to zrobić, musisz zidentyfikować tabele, które chcesz usunąć, a następnie wywołać`absorber.Remove(table)` metodę dla każdej konkretnej tabeli, którą chcesz usunąć.
+ A: Tak, możesz usunąć konkretne tabele zamiast wszystkich tabel w dokumencie PDF za pomocą Aspose.PDF dla .NET. W podanym przykładzie wszystkie tabele na drugiej stronie są usuwane. Możesz jednak zmodyfikować kod, aby wybrać i usunąć konkretne tabele na podstawie swoich wymagań. Aby to zrobić, musisz zidentyfikować tabele, które chcesz usunąć, a następnie wywołać`absorber.Remove(table)` metodę dla każdej konkretnej tabeli, którą chcesz usunąć.
 
 #### P: Jak mogę usunąć tabele z wielu stron w dokumencie PDF?
 
@@ -104,7 +104,7 @@ A: Tak, możesz usunąć konkretne tabele zamiast wszystkich tabel w dokumencie 
 
 #### P: Co się stanie, jeśli spróbuję usunąć tabelę, która nie istnieje na określonej stronie?
 
-A: Jeśli spróbujesz usunąć tabelę, która nie istnieje na określonej stronie, nie spowoduje to błędu.`absorber.Remove(table)` Metoda po prostu zignoruje prośbę o usunięcie, a dokument PDF pozostanie niezmieniony.
+ A: Jeśli spróbujesz usunąć tabelę, która nie istnieje na określonej stronie, nie spowoduje to błędu.`absorber.Remove(table)` Metoda po prostu zignoruje prośbę o usunięcie, a dokument PDF pozostanie niezmieniony.
 
 #### P: Czy mogę cofnąć usunięcie tabel po zapisaniu dokumentu?
 

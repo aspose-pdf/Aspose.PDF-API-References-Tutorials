@@ -126,7 +126,7 @@ doc.Save(dataDir + "LatextScriptInPdf_out.pdf");
 
 #### 问：我需要导入哪些命名空间才能使用 Aspose.PDF for .NET？
 
-答：在您的 C# 代码文件中，在开头包含以下 using 指令以导入所需的命名空间：
+答：在您的 C# 代码文件中，在开头包含以下 using 指令来导入所需的命名空间：
 
 ```csharp
 using Aspose.Pdf;

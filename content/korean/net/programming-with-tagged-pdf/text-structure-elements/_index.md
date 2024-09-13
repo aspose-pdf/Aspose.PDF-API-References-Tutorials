@@ -47,7 +47,7 @@ taggedContent.SetLanguage("fr-FR");
 이제 PDF 문서의 루트 구조 요소를 살펴보겠습니다.
 
 ```csharp
-//루트 구조 요소를 얻습니다
+// 루트 구조 요소를 얻습니다
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

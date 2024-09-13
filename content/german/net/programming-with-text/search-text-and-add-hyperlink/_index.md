@@ -171,7 +171,7 @@ A: Beginnen Sie mit der Erstellung eines neuen C#-Projekts in Ihrer bevorzugten 
 
 #### F: Kann ich mit diesem Tutorial Hyperlinks zu bestimmten Texten hinzufügen?
 
-A: Ja, dieses Tutorial konzentriert sich speziell auf das Hinzufügen von Hyperlinks zu bestimmten Texten in einem PDF-Dokument. Es zeigt, wie Sie den gewünschten Text mithilfe regulärer Ausdrücke finden und extrahieren, Hyperlinks erstellen, die mit den Textfragmenten verknüpft sind, und das geänderte PDF speichern.
+A: Ja, dieses Tutorial konzentriert sich speziell auf das Hinzufügen von Hyperlinks zu bestimmten Texten in einem PDF-Dokument. Es zeigt, wie Sie den gewünschten Text mithilfe regulärer Ausdrücke finden und extrahieren, mit den Textfragmenten verknüpfte Hyperlinks erstellen und das geänderte PDF speichern.
 
 #### F: Wie definiere ich den Text, nach dem ich suchen und dem ich einen Hyperlink hinzufügen möchte?
 

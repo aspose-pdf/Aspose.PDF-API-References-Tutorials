@@ -154,7 +154,7 @@ Xin chúc mừng! Bây giờ bạn đã học được cách hiển thị bảng
 
 #### H: Làm thế nào để thay đổi giao diện của bảng, chẳng hạn như thay đổi màu ô hoặc thêm đường viền?
 
-A: Để sửa đổi giao diện của bảng, bạn có thể thiết lập nhiều thuộc tính khác nhau của`Aspose.Pdf.Table` và các ô của nó. Ví dụ, bạn có thể thiết lập`BackgroundColor` thuộc tính của các ô để thay đổi màu nền của chúng. Bạn cũng có thể thiết lập`Border` thuộc tính của bảng hoặc các ô riêng lẻ để thêm đường viền. Ngoài ra, bạn có thể tùy chỉnh phông chữ, màu chữ và căn chỉnh nội dung bảng bằng cách sửa đổi`TextState` của`TextFragment` các đối tượng được thêm vào ô.
+ A: Để sửa đổi giao diện của bảng, bạn có thể thiết lập nhiều thuộc tính khác nhau của`Aspose.Pdf.Table` và các ô của nó. Ví dụ, bạn có thể thiết lập`BackgroundColor` thuộc tính của các ô để thay đổi màu nền của chúng. Bạn cũng có thể thiết lập`Border` thuộc tính của bảng hoặc các ô riêng lẻ để thêm đường viền. Ngoài ra, bạn có thể tùy chỉnh phông chữ, màu chữ và căn chỉnh nội dung bảng bằng cách sửa đổi`TextState` của`TextFragment` các đối tượng được thêm vào ô.
 
 #### H: Tôi có thể thêm tiêu đề hoặc chân trang vào bảng không?
 
@@ -162,7 +162,7 @@ A: Có, bạn có thể thêm tiêu đề hoặc chân trang vào bảng bằng 
 
 #### H: Làm thế nào tôi có thể kiểm soát vị trí của bảng trên trang?
 
- A: Để kiểm soát vị trí của bảng trên trang, bạn có thể điều chỉnh`MarginInfo` của`PageInfo` đối tượng. Các`MarginInfo`cho phép bạn thiết lập lề trái, phải, trên và dưới của trang, điều này ảnh hưởng đến không gian có sẵn cho bảng. Bạn cũng có thể sử dụng`PositioningType` tài sản của`Aspose.Pdf.Table` để kiểm soát sự căn chỉnh theo chiều ngang và chiều dọc trong vùng nội dung của trang.
+A: Để kiểm soát vị trí của bảng trên trang, bạn có thể điều chỉnh`MarginInfo` của`PageInfo` đối tượng. Các`MarginInfo` cho phép bạn thiết lập lề trái, phải, trên và dưới của trang, điều này ảnh hưởng đến không gian có sẵn cho bảng. Bạn cũng có thể sử dụng`PositioningType` tài sản của`Aspose.Pdf.Table` để kiểm soát sự căn chỉnh theo chiều ngang và chiều dọc trong vùng nội dung của trang.
 
 #### H: Tôi có thể xuất bảng sang các định dạng tệp khác như Excel hoặc CSV không?
 

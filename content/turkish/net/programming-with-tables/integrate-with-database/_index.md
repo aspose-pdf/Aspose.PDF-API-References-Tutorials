@@ -80,7 +80,7 @@ DataTable dt = new DataTable("Employee");
 dt.Columns.Add("Employee_ID", typeof(Int32));
 dt.Columns.Add("Employee_Name", typeof(string));
 dt.Columns.Add("Gender", typeof(string));
-// DataTable nesnesine programlı olarak 2 satır ekleyin
+//DataTable nesnesine programlı olarak 2 satır ekleyin
 DataRow dr = dt.NewRow();
 dr[0] = 1;
 dr[1] = "John Smith";
@@ -132,7 +132,7 @@ A: Evet, veritabanından içe aktarılan verilere köprü metinleri veya diğer 
 
 #### S: Tablo belirli sayıda satırı aşarsa sayfalandırabilir miyim?
 
- A: Evet, tablo belirli sayıda satırı aşarsa sayfalandırabilirsiniz. Bunu başarmak için şunu kullanabilirsiniz:`IsInNewPage`Satır nesnesinin, belirli bir satırdan sonra yeni bir sayfanın başlaması gerektiğini belirten özelliği. Sayfa başına görüntülenecek satır sayısını hesaplayabilir ve`IsInNewPage` mülkiyet buna göre.
+A: Evet, tablo belirli sayıda satırı aşarsa sayfalandırabilirsiniz. Bunu başarmak için şunu kullanabilirsiniz:`IsInNewPage` Satır nesnesinin, belirli bir satırdan sonra yeni bir sayfanın başlaması gerektiğini belirten özelliği. Sayfa başına görüntülenecek satır sayısını hesaplayabilir ve`IsInNewPage` mülkiyet buna göre.
 
 #### S: Gömülü veritabanı verilerinin bulunduğu PDF belgesini DOCX veya XLSX gibi farklı dosya formatlarına nasıl aktarabilirim?
 

@@ -60,7 +60,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## Βήμα 6: λάβετε εξαγόμενα τμήματα κειμένου
 
-Λάβετε τα εξαγόμενα τμήματα κειμένου χρησιμοποιώντας το`TextFragments` ιδιοκτησία του`TextFragmentAbsorber` αντικείμενο:
+ Λάβετε τα εξαγόμενα τμήματα κειμένου χρησιμοποιώντας το`TextFragments` ιδιοκτησία του`TextFragmentAbsorber` αντικείμενο:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

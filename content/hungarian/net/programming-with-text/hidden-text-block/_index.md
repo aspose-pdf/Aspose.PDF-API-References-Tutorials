@@ -110,9 +110,9 @@ doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to d
 doc.Save(outputFile);
 // Nyissa meg a dokumentumot szöveggel
 Document document = new Document(outputFile);
-// Hozzon létre TextAbsorber objektumot a reguláris kifejezésnek megfelelő kifejezések megtalálásához
+//Hozzon létre TextAbsorber objektumot a reguláris kifejezésnek megfelelő kifejezések megtalálásához
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-// Fogadja el a dokumentumoldalak elnyelőjét
+// Fogadja el az elnyelőt a dokumentumoldalakhoz
 document.Pages.Accept(absorber);
 // Szerezd meg az első kivont szövegrészletet
 TextFragmentCollection textFragments = absorber.TextFragments;

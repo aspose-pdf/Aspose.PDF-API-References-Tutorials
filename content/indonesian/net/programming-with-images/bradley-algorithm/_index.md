@@ -2,49 +2,82 @@
 title: Algoritma Bradley
 linktitle: Algoritma Bradley
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Konversi dokumen PDF menggunakan algoritma Bradley dengan Aspose.PDF untuk .NET.
+description: Pelajari cara mengonversi PDF ke TIFF menggunakan algoritma Bradley di Aspose.PDF untuk .NET. Panduan langkah demi langkah, prasyarat, dan Tanya Jawab Umum untuk konversi yang lancar.
 type: docs
 weight: 30
 url: /id/net/programming-with-images/bradley-algorithm/
 ---
-Panduan langkah demi langkah ini menjelaskan cara menggunakan Algoritma Bradley dengan Aspose.PDF untuk .NET. Pastikan Anda telah menyiapkan lingkungan Anda dan ikuti langkah-langkah di bawah ini:
+## Perkenalan
 
-## Langkah 1: Tentukan direktori dokumen
+Bekerja dengan file PDF terkadang menuntut lebih dari sekadar membaca atau mengeditnya—Anda mungkin perlu mengubahnya menjadi gambar. Salah satu cara ampuh untuk mengubah PDF menjadi gambar TIFF adalah dengan menggunakan Algoritma Bradley melalui pustaka Aspose.PDF for .NET. Metode ini memastikan gambar biner berkualitas tinggi, sempurna untuk pengarsipan dokumen dan kasus penggunaan khusus lainnya.
 
-Sebelum memulai, pastikan Anda mengatur direktori yang benar untuk dokumen tersebut. Ganti`"YOUR DOCUMENT DIRECTORY"` dalam kode dengan jalur ke direktori tempat dokumen PDF Anda berada.
+Tutorial ini akan memandu Anda melalui proses yang terperinci dan mudah diikuti untuk mengonversi halaman PDF menjadi gambar TIFF dengan Algoritma Binarisasi Bradley. Aspose.PDF untuk .NET menyederhanakan tugas ini, memberi Anda kemampuan untuk mengotomatiskan dan menyederhanakan alur kerja dokumen Anda.
+
+## Prasyarat
+
+Sebelum kita masuk ke kodenya, mari pastikan Anda sudah memiliki semua yang perlu diikuti:
+
+-  Aspose.PDF untuk .NET: Anda memerlukan pustakanya. Unduh dari[Di Sini](https://releases.aspose.com/pdf/net/).
+- Visual Studio (atau IDE C# apa pun).
+- Pengetahuan dasar tentang C#.
+-  Lisensi yang valid atau[lisensi sementara](https://purchase.aspose.com/temporary-license/) dari Aspose.
+
+## Paket Impor
+
+Pertama-tama, pastikan untuk mengimpor namespace yang diperlukan ke dalam proyek Anda. Pustaka ini akan menyediakan alat untuk memanipulasi dokumen PDF, mengonversinya ke format TIFF, dan menerapkan algoritma binarisasi Bradley.
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-## Langkah 2: Buka dokumen
+Mari kita uraikan prosesnya menjadi beberapa langkah mudah untuk memastikan Anda dapat mengikutinya dengan lancar. Di akhir panduan ini, Anda akan berhasil mengonversi halaman PDF menjadi gambar TIFF biner menggunakan algoritma Bradley.
 
- Pada langkah ini, kita akan membuka dokumen PDF menggunakan`Document` kelas Aspose.PDF. Gunakan`Document` konstruktor dan meneruskan jalur ke dokumen PDF.
+## Langkah 1: Mengatur Direktori Dokumen
+
+Langkah pertama adalah menentukan jalur ke direktori tempat dokumen PDF Anda berada. Anda juga akan menentukan jalur keluaran untuk gambar TIFF yang akan dihasilkan.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Jalur ke file PDF Anda
+```
+
+Di sinilah Anda menyimpan file PDF sumber dan file TIFF yang dikonversi. Pastikan direktori diatur dengan benar sehingga kode dapat membaca dan menulis file tanpa kesalahan.
+
+## Langkah 2: Buka Dokumen PDF
+
+Setelah jalurnya ditetapkan, saatnya membuka dokumen PDF yang ingin Anda konversi. Aspose.PDF untuk .NET memudahkan pemuatan dokumen untuk diproses lebih lanjut.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "PageToTIFF.pdf");
 ```
 
-## Langkah 3: Tentukan file keluaran
+ Di Sini,`PageToTIFF.pdf` adalah contoh berkas. Anda dapat menggantinya dengan berkas PDF pilihan Anda. Objek dokumen sekarang menyimpan PDF untuk manipulasi lebih lanjut.
 
- Tentukan nama file keluaran untuk gambar yang dihasilkan dan gambar biner. Ganti`"resultant_out.tif"` Dan`"37116-bin_out.tif"` dengan nama yang diinginkan untuk file keluaran.
+## Langkah 3: Tentukan Jalur Output untuk Gambar
+
+Berikutnya, Anda akan menentukan jalur keluaran untuk file TIFF yang dihasilkan, termasuk TIFF standar dan versi biner.
 
 ```csharp
 string outputImageFile = dataDir + "resultant_out.tif";
 string outputBinImageFile = dataDir + "37116-bin_out.tif";
 ```
 
-## Langkah 4: Buat objek Resolusi
+Dengan memisahkan jalur ini, Anda akan memiliki satu file untuk konversi TIFF standar dan file lainnya untuk gambar biner setelah algoritma Bradley diterapkan.
 
- Membuat sebuah`Resolution` objek untuk mengatur resolusi gambar TIFF. Dalam contoh ini, kami menggunakan resolusi 300 dpi.
+## Langkah 4: Buat Objek Resolusi
+
+Saat mengonversi PDF ke TIFF, resolusi memegang peranan penting dalam menentukan kualitas gambar. Untuk keperluan kita, kita akan menyetelnya ke 300 DPI untuk memastikan hasil berkualitas tinggi.
 
 ```csharp
 Resolution resolution = new Resolution(300);
 ```
 
-## Langkah 5: Buat objek TiffSettings
+DPI yang lebih tinggi berarti kejelasan gambar yang lebih baik, terutama saat menangani dokumen yang akan dicetak atau diarsipkan.
 
- Membuat sebuah`TiffSettings` objek untuk menentukan pengaturan untuk file TIFF keluaran. Dalam contoh ini, kami menggunakan kompresi LZW dan kedalaman warna 1 bit per piksel (format 1 bpp).
+## Langkah 5: Konfigurasikan Pengaturan TIFF
+
+Selanjutnya, Anda perlu mengonfigurasi pengaturan untuk gambar TIFF. Di sini, kita akan menggunakan Kompresi LZW dan mengatur kedalaman warna menjadi 1bpp (1-bit per piksel) untuk memperoleh gambar biner.
 
 ```csharp
 TiffSettings tiffSettings = new TiffSettings();
@@ -52,103 +85,71 @@ tiffSettings.Compression = CompressionType.LZW;
 tiffSettings.Depth = Aspose.Pdf.Devices.ColorDepth.Format1bpp;
 ```
 
-## Langkah 6: Buat perangkat TIFF
+Dengan menetapkan kedalaman ke 1bpp, kami menyiapkan gambar untuk keluaran biner. Kompresi LZW dipilih karena efisiensinya dalam mengurangi ukuran file tanpa kehilangan kualitas.
 
- Buat perangkat TIFF menggunakan`TiffDevice` objek, menentukan resolusi dan pengaturan TIFF.
+## Langkah 6: Buat Perangkat TIFF
+
+Sekarang, Anda perlu membuat perangkat TIFF yang akan menangani konversi. Perangkat ini menggunakan resolusi dan pengaturan TIFF yang ditetapkan sebelumnya.
 
 ```csharp
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
 ```
 
-## Langkah 7: Konversi halaman tertentu dan simpan gambarnya
+Perangkat TIFF merupakan inti dari operasi ini. Perangkat ini mengambil dokumen PDF dan mengonversi setiap halaman menjadi gambar TIFF, berdasarkan pengaturan yang telah Anda tentukan sebelumnya.
 
- Gunakan`Process` metode perangkat TIFF untuk mengonversi halaman tertentu dari dokumen PDF dan menyimpan gambar ke berkas TIFF. Tentukan jalur keluaran berkas.
+## Langkah 7: Ubah Halaman PDF ke TIFF
+
+ Saatnya memproses PDF dan mengonversi halaman pertama menjadi gambar TIFF.`Process` Metode ini memungkinkan Anda mengonversi halaman tertentu atau seluruh dokumen. Dalam contoh ini, kami mengonversi halaman pertama.
 
 ```csharp
 tiffDevice.Process(pdfDocument, outputImageFile);
 ```
 
-## Langkah 8: Binerisasi gambar menggunakan algoritma Bradley
+Setelah metode selesai, Anda akan memiliki gambar TIFF yang tersimpan di lokasi yang ditentukan sebelumnya.
 
- Gunakan`BinarizeBradley`metode perangkat TIFF untuk melakukan binerisasi gambar menggunakan algoritma Bradley. Metode ini mengambil aliran masukan dari gambar asli dan aliran keluaran untuk gambar biner. Tentukan ambang binerisasi (0,1 dalam contoh ini).
+## Langkah 8: Terapkan Algoritma Binarisasi Bradley
+
+Kini hadir keajaiban—Algoritma Bradley! Algoritma ini mengubah gambar TIFF skala abu-abu menjadi gambar biner, mengoptimalkannya untuk sistem pengenalan dokumen.
 
 ```csharp
-using (FileStream
-
-  inStream = new FileStream(outputImageFile, FileMode.Open))
-{
-using (FileStream outStream = new FileStream(outputBinImageFile, FileMode.Create))
-{
-tiffDevice. Binarize Bradley(inStream, outStream, 0.1);
-}
-}
-```
-
-### Contoh kode sumber untuk Algoritma Bradley menggunakan Aspose.PDF untuk .NET 
-```csharp
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Buka dokumen
-Document pdfDocument = new Document(dataDir+ "PageToTIFF.pdf");
-string outputImageFile = dataDir + "resultant_out.tif";
-string outputBinImageFile = dataDir + "37116-bin_out.tif";
-// Buat objek Resolusi
-Resolution resolution = new Resolution(300);
-// Buat objek TiffSettings
-TiffSettings tiffSettings = new TiffSettings();
-tiffSettings.Compression = CompressionType.LZW;
-tiffSettings.Depth = Aspose.Pdf.Devices.ColorDepth.Format1bpp;
-// Buat perangkat TIFF
-TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
-// Konversi halaman tertentu dan simpan gambar ke streaming
-tiffDevice.Process(pdfDocument, outputImageFile);
 using (FileStream inStream = new FileStream(outputImageFile, FileMode.Open))
 {
-	using (FileStream outStream = new FileStream(outputBinImageFile, FileMode.Create))
-	{
-		tiffDevice.BinarizeBradley(inStream, outStream, 0.1);
-	}
+    using (FileStream outStream = new FileStream(outputBinImageFile, FileMode.Create))
+    {
+        tiffDevice.BinarizeBradley(inStream, outStream, 0.1);
+    }
 }
-System.Console.WriteLine("Conversion using bradley algorithm performed successfully!");
 ```
+
+ Metode BinarizeBradley mengambil dua aliran file (input dan output), serta nilai ambang batas (di sini,`0.1`) yang menentukan tingkat binerisasi. Setelah eksekusi, Anda akan memiliki gambar binerisasi sempurna yang siap digunakan.
+
+## Langkah 9: Konfirmasikan Konversi Berhasil
+
+Terakhir, sebaiknya Anda memberi tahu pengguna bahwa prosesnya berhasil. Anda dapat melakukannya dengan output konsol sederhana.
+
+```csharp
+System.Console.WriteLine("Conversion using Bradley algorithm performed successfully!");
+```
+
+Setelah dicetak, Anda tahu halaman PDF Anda telah berhasil diubah menjadi gambar TIFF biner!
 
 ## Kesimpulan
 
-Selamat! Anda telah berhasil menyelesaikan konversi menggunakan algoritma Bradley dengan Aspose.PDF untuk .NET. Kini Anda dapat menggunakan gambar yang dihasilkan dalam proyek atau aplikasi Anda.
+Nah, itu dia! Anda baru saja mempelajari cara mengonversi halaman PDF menjadi gambar TIFF dan menerapkan algoritma binarisasi Bradley menggunakan Aspose.PDF untuk .NET. Proses ini penting untuk pengarsipan dokumen, pengenalan karakter optik (OCR), dan aplikasi profesional lainnya. Dengan resolusi berkualitas tinggi dan kompresi yang efisien, Anda dapat memastikan bahwa gambar dokumen Anda jelas dan ukurannya dapat diatur.
 
-### Pertanyaan yang Sering Diajukan
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa itu Algoritma Bradley dan bagaimana hubungannya dengan Aspose.PDF untuk .NET?
+### Apa itu Algoritma Bradley?
+Algoritma Bradley adalah teknik binarisasi yang mengubah gambar skala abu-abu menjadi gambar biner (hitam dan putih) dengan menentukan ambang batas adaptif untuk setiap piksel berdasarkan lingkungannya.
 
-J: Algoritma Bradley adalah teknik pemrosesan gambar yang digunakan untuk meningkatkan kualitas dan kejelasan gambar. Aspose.PDF untuk .NET menyediakan cara mudah untuk menerapkan Algoritma Bradley ke dokumen PDF, sehingga menghasilkan gambar yang lebih baik.
+### Bisakah saya mengonversi beberapa halaman PDF ke TIFF menggunakan metode ini?
+ Ya, Anda dapat memodifikasi`Process` metode untuk mengonversi semua halaman dengan melakukan pengulangan melalui halaman-halaman dalam dokumen.
 
-#### T: Bagaimana cara mengatur lingkungan saya untuk menggunakan Algoritma Bradley dengan Aspose.PDF untuk .NET?
+### Berapa resolusi optimal untuk mengonversi PDF ke TIFF?
+Untuk gambar berkualitas tinggi, 300 DPI umumnya direkomendasikan. Namun, Anda dapat menyesuaikan nilai ini berdasarkan kebutuhan Anda.
 
-A: Sebelum memulai, pastikan Anda telah menginstal Aspose.PDF untuk .NET dengan benar dan lingkungan pengembangan Anda dikonfigurasi.
+### Apa arti 1bpp dalam kedalaman warna?
+1bpp (1 bit per piksel) berarti gambar akan berwarna hitam dan putih, dengan setiap piksel sepenuhnya hitam atau sepenuhnya putih.
 
-#### T: Apa pentingnya mendefinisikan direktori dokumen dalam proses Algoritma Bradley?
-
-A: Menentukan direktori dokumen yang benar sangat penting untuk memastikan bahwa dokumen PDF berada di jalur yang tepat untuk diproses.
-
-#### T: Bagaimana cara membuka dokumen PDF menggunakan Aspose.PDF untuk .NET dalam Algoritma Bradley?
-
- A: Gunakan`Document` kelas untuk membuka dokumen PDF, yang berfungsi sebagai input untuk proses Algoritma Bradley.
-
-#### T: Apa tujuan mendefinisikan nama file keluaran untuk gambar dan gambar biner dalam proses Algoritma Bradley?
-
-A: Menentukan nama file keluaran memungkinkan Anda menentukan di mana gambar yang dihasilkan dan gambar biner akan disimpan setelah menerapkan Algoritma Bradley.
-
-#### T: Bagaimana pengaturan resolusi memengaruhi kualitas gambar TIFF dalam proses Algoritma Bradley?
-
-A: Pengaturan resolusi menentukan tingkat detail dan kejelasan pada gambar TIFF yang dihasilkan setelah menerapkan Algoritma Bradley.
-
-#### T: Pengaturan apa yang dapat saya sesuaikan untuk gambar TIFF keluaran dalam proses Algoritma Bradley?
-A: Anda dapat menyesuaikan pengaturan seperti jenis kompresi dan kedalaman warna untuk mencapai hasil yang diinginkan untuk gambar TIFF.
-
-#### T: Bagaimana perangkat TIFF berkontribusi pada proses Algoritma Bradley?
-
-A: Perangkat TIFF berfungsi sebagai alat untuk memproses gambar dan menerapkan Algoritma Bradley, sehingga menghasilkan peningkatan kualitas gambar.
-
-#### T: Bagaimana cara mengonversi halaman tertentu dari dokumen PDF ke gambar TIFF dalam proses Algoritma Bradley?
-
- A: Memanfaatkan`Process` metode perangkat TIFF untuk mengubah halaman tertentu dokumen PDF menjadi gambar TIFF, yang kemudian dapat diproses lebih lanjut menggunakan Algoritma Bradley.
+### Apakah Algoritma Bradley cocok untuk OCR?
+Ya, Algoritma Bradley sering digunakan dalam praproses OCR karena meningkatkan kontras teks dalam dokumen yang dipindai.

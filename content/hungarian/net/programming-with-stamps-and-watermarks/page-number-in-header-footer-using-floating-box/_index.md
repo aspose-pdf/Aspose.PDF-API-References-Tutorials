@@ -2,140 +2,146 @@
 title: Oldalszám a fejléc láblécében úszó doboz használatával
 linktitle: Oldalszám a fejléc láblécében úszó doboz használatával
 second_title: Aspose.PDF for .NET API Reference
-description: Ismerje meg, hogyan adhatja hozzá az oldalszámot egy PDF-dokumentum fejlécéhez és láblécéhez az Aspose.PDF for .NET segítségével.
+description: Könnyen hozzáadhat oldalszámokat PDF fejlécéhez és láblécéhez a .NET-hez készült Aspose.PDF-et tartalmazó lebegő doboz segítségével ebben a lépésről lépésre bemutatott oktatóanyagban.
 type: docs
 weight: 150
 url: /hu/net/programming-with-stamps-and-watermarks/page-number-in-header-footer-using-floating-box/
 ---
-Ebben az oktatóanyagban lépésről lépésre bemutatjuk, hogyan adhat hozzá oldalszámot egy PDF-dokumentum fejlécéhez és láblécéhez a FloatingBox with Aspose.PDF for .NET használatával. A mellékelt C# forráskódot használjuk PDF dokumentum létrehozásához, oldal hozzáadásához, FloatingBox létrehozásához, beállítjuk a pozícióját és hozzáadjuk az oldalszámot, majd mentjük a módosított PDF dokumentumot.
+## Bevezetés
 
-## 1. lépés: A környezet beállítása
+Ha a PDF-dokumentumok programozott kezeléséről van szó, az Aspose.PDF for .NET kivételes eszközként tűnik ki. Leegyszerűsíti a PDF-fájlok létrehozását, szerkesztését és kezelését a .NET-alkalmazásokban. Akár számlákat, jelentéseket vagy bármilyen dokumentumtípust állít elő, az oldalszámok elegáns hozzáadásával javíthatja a PDF-ek professzionalizmusát és rendszerezését. Ebben az oktatóanyagban belemerülünk abba, hogyan lehet oldalszámokat hozzáadni a PDF-fájl fejlécéhez és láblécéhez a Floating Box segítségével. Készen áll az indulásra? Menjünk!
 
-Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel:
+## Előfeltételek
 
-- Telepített .NET fejlesztői környezet.
-- A projektben letöltött és hivatkozott Aspose.PDF könyvtár a .NET-hez.
+Mielőtt elkezdené ezt az izgalmas utazást a PDF-manipuláció birodalmába, néhány dologra szüksége van:
 
-## 2. lépés: A PDF dokumentum létrehozása és egy oldal hozzáadása
+### .NET-környezet beállítása
+Győződjön meg arról, hogy rendelkezik .NET fejlesztői környezettel. Használhatja a Visual Studio-t, amely népszerű választás a .NET-alkalmazások fejlesztői körében.
 
-Az első lépés a PDF-dokumentum példányának létrehozása és egy oldal hozzáadása. Íme, hogyan:
+### Aspose.PDF Library
+Telepítse az Aspose.PDF könyvtárat. Könnyen letöltheti a weboldalról:
+
+- [Töltse le az Aspose.PDF-et .NET-hez](https://releases.aspose.com/pdf/net/)
+
+### C# programozási alapismeretek
+A C# alapvető ismerete segít megérteni az oktatóanyagban bemutatott fogalmakat és kódrészleteket.
+
+### Hozzáférés a Dokumentációhoz
+ Mindig előnyös, ha a[Aspose.PDF dokumentáció](https://reference.aspose.com/pdf/net/) hasznos referenciaként és minden további funkció mélyebb felfedezéséhez.
+
+## Csomagok importálása
+
+A kezdéshez importálnia kell a szükséges csomagokat a projektbe. Ez biztosítja, hogy az Aspose.PDF összeállítás elérhető legyen a kódban való használatra. Íme, hogyan kell csinálni:
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Most bontsuk fel kezelhető lépésekre az oldalszámok lebegő doboz használatával történő hozzáadásának folyamatát. Kövesd, ahogy átsétálunk.
+
+## 1. lépés: Állítsa be a dokumentumkörnyezetet
+
+Kezdjük a PDF-dokumentum tárolási könyvtárának megadásával. Ez döntő fontosságú, mert ez határozza meg, hogy a kimeneti fájl hova kerüljön mentésre.
 
 ```csharp
 // A dokumentumok könyvtárának elérési útja.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
-// Példányosítsa a PDF dokumentumot
+ Cserélje ki`YOUR DOCUMENT DIRECTORY` a választott elérési úttal, ahová menteni szeretné a kimeneti PDF-fájlt.
+
+## 2. lépés: Példányosítsa a dokumentumot
+
+ A következő lépés egy új PDF dokumentum létrehozása. Ez magában foglalja a`Document` osztály az Aspose.PDF könyvtárból.
+
+```csharp
+// Példányos dokumentum példány
 Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
+```
+ Itt létrehozunk egy új példányt a`Document` osztály, amely a manipuláció vásznánkként szolgál.
 
+## 3. lépés: Új oldal hozzáadása
+
+Most adjunk hozzá egy oldalt a PDF dokumentumunkhoz. Minden PDF-nek legalább egy oldalra van szüksége, igaz?
+
+```csharp
 // Adjon hozzá egy oldalt a PDF dokumentumhoz
 Aspose.Pdf.Page page = pdf.Pages.Add();
 ```
+Ez a kódrészlet új oldalt ad a dokumentumunkhoz, így készen áll a tartalom fogadására, beleértve az oldalszámokat tartalmazó lebegő dobozunkat.
 
-Feltétlenül cserélje ki a "DOKUMENTUMKÖNYVTÁR" elemet annak a könyvtárnak az elérési útjára, ahová a PDF-dokumentumot menteni szeretné.
+## 4. lépés: Hozzon létre egy úszó dobozt
 
-## 3. lépés: A FloatingBox létrehozása és az oldalszám hozzáadása
-
-Most, hogy az oldal hozzáadásra került a PDF dokumentumhoz, létrehozhatunk egy FloatingBox-ot, beállíthatjuk a pozícióját, és hozzáadhatjuk az oldalszámot. Íme, hogyan:
-
-```csharp
-// Hozzon létre egy úszódobozt, amelynek szélessége 140 és magassága 80
-Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
-
-// Állítsa be a bekezdés bal oldali pozícióját
-box1. Left = 2;
-
-// Állítsa be a bekezdés felső pozícióját
-box1. Top = 10;
-
-// Adja hozzá az oldalszámot a FloatingBoxhoz
-box1.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Page: ($p/ $P )"));
-
-// Adja hozzá a FloatingBoxot az oldalhoz
-page.Paragraphs.Add(box1);
-```
-
-A fenti kód egy FloatingBoxot hoz létre, amelynek szélessége 140 és magassága 80. Ezután a bal és felső értékek megadásával állítjuk be a pozícióját. Végül a „($p/ $P )” szintaxist tartalmazó TextFragment segítségével hozzáadjuk az oldalszámot a FloatingBox-hoz, amely az aktuális oldalszámmal és az összes oldalszámmal lesz helyettesítve.
-
-## 4. lépés: Mentse el a módosított PDF dokumentumot
-
-Miután az oldalszámot hozzáadtuk a fejléchez vagy a lábléchez a FloatingBox segítségével, elmenthetjük a módosított PDF dokumentumot. Íme, hogyan:
+ Ezután itt az ideje létrehozni a Lebegő dobozunkat, amely az oldalszámot fogja tárolni. A`FloatingBox`osztály lehetővé teszi számunkra, hogy a tartalmat szabadon helyezzük el az oldalon.
 
 ```csharp
-// Mentse el a módosított PDF dokumentumot
-pdf.Save(dataDir + "PageNumberinHeaderFooterUsingFloatingBox_out.pdf");
-```
-
-A fenti kód a szerkesztett PDF dokumentumot a megadott könyvtárba menti.
-
-### Minta forráskód az oldalszámfejléc láblécéhez a lebegő mező használatával az Aspose.PDF for .NET használatával 
-```csharp
-
-// A dokumentumok könyvtárának elérési útja.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Példányos dokumentum példány
-Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
-
-// Adjon hozzá egy oldalt a pdf dokumentumhoz
-Aspose.Pdf.Page page = pdf.Pages.Add();
-
 // Inicializálja a FloatingBox osztály új példányát
 Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
+```
+ Itt a paraméterek`(140, 80)` adja meg a Lebegő doboz szélességét és magasságát. Ezeket az értékeket az elrendezési preferenciái alapján módosíthatja.
 
+## 5. lépés: Az úszó doboz elhelyezése
+
+ A pozicionálás kulcsfontosságú! Meg akarja határozni, hogy az oldalon hol jelenjen meg az oldalszám. Együtt fogsz dolgozni a`Left` és`Top` tulajdonságok a pozíció megadásához.
+
+```csharp
 // Lebegő érték, amely a bekezdés bal oldali pozícióját jelzi
 box1.Left = 2;
-
 // Lebegő érték, amely a bekezdés felső pozícióját jelzi
 box1.Top = 10;
+```
+Ezek az értékek határozzák meg a Lebegő doboz elhelyezését az oldalon. Nyugodtan kísérletezzen velük, hogy megtudja, mi áll a legjobban a dokumentumhoz.
 
+## 6. lépés: Szöveg hozzáadása az oldalszámmakróval
+
+Most hozzáadunk egy karakterláncot, amely dinamikusan mutatja az oldalszámot. Itt történik a varázslat!
+
+```csharp
 // Adja hozzá a makrókat a FloatingBox bekezdésgyűjteményéhez
 box1.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Page: ($p/ $P )"));
+```
+ Ebben az esetben`($p/ $P)`egy makró, amely megjeleníti az aktuális oldalszámot (`$p`) és az oldalak teljes száma (`$P`). Ennek eredményeként a szöveget úgy formázza, hogy az „Oldal: 1/5”-hez hasonló legyen.
 
+## 7. lépés: Adja hozzá a Lebegő dobozt az oldalhoz
+
+Ideje hozzáadni a Lebegő dobozt az oldalszám szövegével együtt az újonnan létrehozott oldalunkhoz.
+
+```csharp
 // Adjon hozzá egy floatingBoxot az oldalhoz
 page.Paragraphs.Add(box1);
+```
+Ez a sor lényegében beágyazza a Lebegő dobozt az oldalba, így a dokumentum elrendezésének részévé válik. 
 
+## 8. lépés: Mentse el a dokumentumot
+
+Végül ne felejtse el menteni a munkáját! Az utolsó lépés a PDF-dokumentum megfelelő fájlnévvel történő mentése.
+
+```csharp
 // Mentse el a dokumentumot
 pdf.Save(dataDir + "PageNumberinHeaderFooterUsingFloatingBox_out.pdf");
-
 ```
+Győződjön meg arról, hogy a megadott elérési út tartalmazza a kívánt fájlnevet. Most elkészült az oldalszámokkal ellátott csodálatos PDF-je! 
 
 ## Következtetés
 
-Gratulálok ! Megtanulta, hogyan adhat hozzá oldalszámot a PDF-dokumentum fejlécéhez és láblécéhez a FloatingBox és az Aspose.PDF for .NET használatával. Mostantól személyre szabhatja fejléceit és lábléceit dinamikus információk, például oldalszám hozzáadásával.
+És itt van, emberek! Az oldalszámok hozzáadása a PDF fejlécéhez és láblécéhez az Aspose.PDF for .NET használatával ilyen egyszerű. Csak néhány sornyi kóddal elindult a dokumentumfeldolgozás elsajátítása felé vezető úton. Ne habozzon kísérletezni a különböző elrendezésekkel és formázással – elvégre a kreativitás nem ismer határokat! Készen áll a professzionális dokumentum létrehozására? Fogja meg kódoló kalapját, és kezdjen el kísérletezni.
 
-### GYIK
+## GYIK
 
-#### K: Mi az a FloatingBox, és hogyan lehet vele oldalszámokat hozzáadni egy PDF-dokumentum fejlécéhez vagy láblécéhez?
+### Testreszabhatom az oldalszám szövegének megjelenését?  
+ Igen, személyre szabhatja a szöveg tulajdonságait, például a betűméretet, a színt és a stílust a`TextFragment` tulajdonságait.
 
-V: A FloatingBox egy sokoldalú elrendezési elem az Aspose.PDF-ben, amely különféle tartalmakat, például szöveget és képeket tartalmazhat. Ebben az oktatóanyagban egy tároló létrehozására szolgál az oldalszám számára, amely lehetővé teszi az aktuális oldalszám és a teljes oldalszám dinamikus beszúrását a fejlécbe vagy a láblécbe.
+### Ingyenesen használható az Aspose.PDF?  
+ Míg az Aspose.PDF ingyenes próbaverziót kínál, ez egy fizetős termék éles használatra. Tudod[vásárold meg itt](https://purchase.aspose.com/buy).
 
-#### K: Hogyan teszi lehetővé a megadott C# forráskód oldalszámok hozzáadását a FloatingBox segítségével?
+### Hol találok részletesebb dokumentációt?  
+ Részletes dokumentációt találhat a[Aspose.PDF Dokumentációs oldal](https://reference.aspose.com/pdf/net/).
 
-V: A kódrészlet bemutatja, hogyan kell PDF-dokumentumot létrehozni, oldalt hozzáadni, FloatingBox-ot létrehozni, beállítani az oldalon belüli pozícióját, és beilleszteni az oldalszámot TextFragment segítségével. A szövegrészletben a "($p/ $P )" szintaxis helyére az aktuális oldalszám és a teljes oldalszám kerül.
+### Hogyan alkalmazhatok fejlécet és láblécet több oldalra?  
+Végigpörgetheti a dokumentum összes oldalát, és mindegyikre hasonlóan alkalmazhatja a Lebegő dobozt.
 
-#### K: Testreszabhatom a FloatingBox segítségével hozzáadott oldalszám megjelenését és formázását?
-
-V: Igen, testreszabhatja az oldalszám megjelenését a TextFragment tulajdonságainak módosításával a FloatingBoxon belül. Módosíthatja a betűméretet, színt, stílust, igazítást és egyéb formázási beállításokat.
-
-#### K: Lehetséges különböző dinamikus elemeket, például dátumot és időt hozzáadni a fejléchez vagy lábléchez hasonló megközelítéssel?
-
-V: Természetesen felvehet különféle dinamikus elemeket, például dátumot, időt, dokumentum metaadatokat vagy egyéni szöveget, ha módosítja a TextFragment tartalmát a FloatingBoxon belül. Használhat olyan makrókat, mint a "($p/ $P )" az oldalszámokhoz vagy a "($date)" az aktuális dátumhoz.
-
-#### K: Hogyan határozhatom meg a FloatingBox pozícióját a fejlécben vagy láblécben?
- V: A megadott kód beállítja a FloatingBox pozícióját a`Left` és`Top` tulajdonságait. Ezeket az értékeket módosíthatja, hogy a FloatingBox tetszőlegesen helyezkedjen el a fejlécben vagy láblécben.
-
-#### K: Használhatok más betűtípust vagy stílust az oldalszámhoz a fejlécben vagy láblécben?
-
-V: Igen, testreszabhatja az oldalszám szövegének betűtípusát, stílusát és egyéb formázási tulajdonságait a TextFragment tulajdonságainak módosításával a FloatingBoxon belül.
-
-#### K: Mi történik, ha a FloatingBoxban lévő tartalom meghaladja a méreteit?
-
-V: Ha a FloatingBoxon belüli tartalom meghaladja a méreteit, akkor levágható, vagy elrendezési problémák léphetnek fel. Győződjön meg arról, hogy a FloatingBox méretei alkalmasak a tartalom befogadására, és szükség esetén fontolja meg az oldal elrendezésének módosítását.
-
-#### K: Lehetséges több különböző tartalmú FloatingBoxot hozzáadni ugyanazon oldal fejlécéhez vagy láblécéhez?
-
-V: Igen, több különböző tartalmú FloatingBoxot is hozzáadhat ugyanazon oldal fejlécéhez vagy láblécéhez úgy, hogy külön FloatingBox példányokat hoz létre, és hozzáadja azokat az oldal Bekezdések gyűjteményéhez.
-
-#### K: Használhatom a FloatingBox megközelítést tartalom hozzáadására a PDF-dokumentum más részeihez, például a törzshöz vagy a margókhoz?
-
-V: Bár a FloatingBoxokat általában fejlécekhez és láblécekhez használják, a PDF-dokumentum más részeihez, például a törzshöz vagy a margókhoz is hozzáadhat tartalmat, ha megfelelően helyezi el őket az oldalon.
+### Mi a teendő, ha támogatásra van szükségem a további funkciókhoz?  
+További kérdéseivel vagy támogatásával keresse fel a[Aspose fórum](https://forum.aspose.com/c/pdf/10).

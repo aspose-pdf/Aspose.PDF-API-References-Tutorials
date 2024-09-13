@@ -74,7 +74,7 @@ Console.WriteLine("\nText replaced successfully based on a regular expression.\n
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Mở tài liệu
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionPage.pdf");
-// Tạo đối tượng TextAbsorber để tìm tất cả các cụm từ khớp với biểu thức chính quy
+//Tạo đối tượng TextAbsorber để tìm tất cả các cụm từ khớp với biểu thức chính quy
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Giống như 1999-2000
 // Đặt tùy chọn tìm kiếm văn bản để chỉ định cách sử dụng biểu thức chính quy
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);

@@ -1,7 +1,7 @@
 ---
 title: Rotera text med hjälp av textfragment och stycke
 linktitle: Rotera text med hjälp av textfragment och stycke
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du roterar text med textfragment och stycke i ett PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 400

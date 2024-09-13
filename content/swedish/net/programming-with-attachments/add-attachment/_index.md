@@ -1,7 +1,7 @@
 ---
 title: Lägg till bilaga i PDF-fil
 linktitle: Lägg till bilaga i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du lägger till bilagor till PDF-filer med Aspose.PDF för .NET med denna steg-för-steg-guide. Förbättra dina dokument utan ansträngning.
 type: docs
 weight: 10

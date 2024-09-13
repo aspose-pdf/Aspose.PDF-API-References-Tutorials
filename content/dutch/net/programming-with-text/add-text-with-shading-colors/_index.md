@@ -42,7 +42,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 ```
 
 ## Stap 5: Zoek de tekst die u wilt wijzigen
- Gebruik`TextFragmentAbsorber` om de gewenste tekst in het document te vinden. In de meegeleverde code wordt gezocht naar de tekst "Lorem ipsum".
+Gebruik`TextFragmentAbsorber` om de gewenste tekst in het document te vinden. In de meegeleverde code wordt gezocht naar de tekst "Lorem ipsum".
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -129,7 +129,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 
 #### V: Hoe kan ik specifieke tekst in het PDF-document vinden en wijzigen?
 
- A: In stap 5 gebruikt u de`TextFragmentAbsorber`om de gewenste tekst in het document te vinden. Vervolgens kunt u de eigenschappen ervan wijzigen:
+ A: In stap 5 gebruikt u de`TextFragmentAbsorber` om de gewenste tekst in het document te vinden. Vervolgens kunt u de eigenschappen ervan wijzigen:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -150,7 +150,7 @@ textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 
 #### V: Kan ik extra tekstopmaak toepassen op de gewijzigde tekst?
 
- A: Ja, in stap 7 kunt u extra tekstopmaak toepassen, zoals onderstrepen, door de eigenschappen van de tekst te wijzigen.`TextState` voorwerp:
+A: Ja, in stap 7 kunt u extra tekstopmaak toepassen, zoals onderstrepen, door de eigenschappen van de tekst te wijzigen.`TextState` voorwerp:
 
 ```csharp
 textFragment.TextState.Underline = true;

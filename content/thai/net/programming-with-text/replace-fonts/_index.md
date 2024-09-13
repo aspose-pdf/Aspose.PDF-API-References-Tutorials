@@ -34,7 +34,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## ขั้นตอนที่ 3: ค้นหาและแทนที่แบบอักษร
 
- เราสร้าง`TextFragmentAbsorber`วัตถุและตั้งค่าตัวเลือกแก้ไขเพื่อลบแบบอักษรที่ไม่ได้ใช้ จากนั้นเราจะยอมรับตัวดูดซับสำหรับทุกหน้าของเอกสาร PDF เพื่อค้นหาชิ้นส่วนข้อความ
+ เราสร้าง`TextFragmentAbsorber` วัตถุและตั้งค่าตัวเลือกแก้ไขเพื่อลบแบบอักษรที่ไม่ได้ใช้ จากนั้นเราจะยอมรับตัวดูดซับสำหรับทุกหน้าของเอกสาร PDF เพื่อค้นหาชิ้นส่วนข้อความ
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));

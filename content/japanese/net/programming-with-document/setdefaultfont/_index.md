@@ -2,84 +2,128 @@
 title: PDF ファイルのデフォルトフォントを設定する
 linktitle: PDF ファイルのデフォルトフォントを設定する
 second_title: Aspose.PDF for .NET API リファレンス
-description: このステップバイステップ ガイドでは、Aspose.PDF for .NET を使用して PDF ファイルの既定のフォントを設定する方法を学習します。
+description: このステップバイステップ ガイドでは、Aspose.PDF for .NET を使用して PDF ファイルに既定のフォントを設定する方法を学習します。PDF ドキュメントを強化したい開発者に最適です。
 type: docs
 weight: 280
 url: /ja/net/programming-with-document/setdefaultfont/
 ---
-.NET で PDF ドキュメントを操作している場合、PDF で使用されているフォントが、それを表示または印刷するシステムで使用できないという問題が発生することがあります。その結果、テキストが正しく表示されないか、まったく表示されないことがあります。Aspose.PDF for .NET では、ドキュメントの既定のフォントを設定できるようにすることで、この問題を解決できます。この例では、Aspose.PDF for .NET を使用して既定のフォントを設定する方法を説明します。
+## 導入
 
-## ステップ1: ドキュメントディレクトリへのパスを設定する
+PDF ドキュメントを開いたら、フォントが見つからない、または正しく表示されないことに気づいたことはありませんか? イライラしますよね? でも、心配はいりません! このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ファイルに既定のフォントを設定する方法について詳しく説明します。 この強力なライブラリを使用すると、PDF ドキュメントを簡単に操作できます。既定のフォントの設定は、このライブラリが提供する多くの機能の 1 つにすぎません。 では、コーディングの帽子をかぶって、始めましょう!
 
-PDF ドキュメントが保存されているディレクトリへのパスを設定する必要があります。このパスは「dataDir」という変数に保存します。
+## 前提条件
+
+コードに進む前に、準備しておく必要があるものがいくつかあります。
+
+1. Visual Studio: お使いのマシンに Visual Studio がインストールされていることを確認してください。これは .NET 開発に最適な IDE です。
+2.  Aspose.PDF for .NET: Aspose.PDFライブラリをダウンロードしてインストールする必要があります。[ここ](https://releases.aspose.com/pdf/net/).
+3. C# の基礎知識: C# プログラミングに少し精通していると、ここで取り上げる例を理解するのに大いに役立ちます。
+
+## パッケージのインポート
+
+まず、C# プロジェクトに必要なパッケージをインポートする必要があります。手順は次のとおりです。
+
+1. Visual Studio プロジェクトを開きます。
+2. ソリューション エクスプローラーでプロジェクトを右クリックし、[NuGet パッケージの管理] を選択します。
+3. 検索する`Aspose.PDF`最新バージョンをインストールしてください。
+
+パッケージをインストールしたら、コーディングを開始する準備が整います。
+
+## ステップ1: プロジェクトを設定する
+
+### 新しいプロジェクトを作成する
+
+まず最初に、Visual Studio で新しい C# プロジェクトを作成しましょう。
+
+- Visual Studio を開き、「新しいプロジェクトの作成」を選択します。
+- 「コンソール アプリ (.NET Core)」を選択し、「次へ」をクリックします。
+- プロジェクトに名前を付けます（例：`AsposePdfExample`）をクリックし、「作成」をクリックします。
+
+### Usingディレクティブを追加する
+
+さて、必要なusingディレクティブをコードの先頭に追加しましょう。`Program.cs`ファイル：
 
 ```csharp
-//ドキュメント ディレクトリへのパス。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System.IO;
 ```
 
-## ステップ2: PDF文書を読み込む
+これらのディレクティブを使用すると、Aspose.PDF のクラスとメソッドにアクセスできるようになります。
 
-まず、フォントが不足している既存のPDF文書を読み込みましょう。この例では、PDF文書が`dataDir`変数。
+## ステップ2: PDFドキュメントを読み込む
+
+### ドキュメントパスを指定する
+
+次に、操作する PDF ドキュメントへのパスを指定する必要があります。手順は次のとおりです。
 
 ```csharp
-string documentName = dataDir + "input.pdf";
-using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
-using (Document document = new Document(fs))
+string dataDir = "YOUR DOCUMENT DIRECTORY"; //実際のディレクトリに置き換えます
+string documentName = Path.Combine(dataDir, "input.pdf");
+```
+
+必ず交換してください`"YOUR DOCUMENT DIRECTORY"` PDF ファイルが保存されている実際のパスを入力します。
+
+### ドキュメントを読み込む
+
+次に、既存の PDF ドキュメントを読み込みます。
+
+```csharp
+using (FileStream fs = new FileStream(documentName, FileMode.Open))
 {
-    //コードはここに
+    Document document = new Document(fs);
 }
 ```
+
+このコードスニペットはPDFファイルを開き、`Document`操作できるオブジェクト。
 
 ## ステップ3: デフォルトのフォントを設定する
 
-次に、PDF文書のデフォルトのフォントを設定します。`PdfSaveOptions`クラス。この例では、デフォルトのフォントを「Arial」に設定します。
+### PdfSaveOptions を作成する
+
+いよいよ面白い部分です！インスタンスを作成する必要があります`PdfSaveOptions`デフォルトのフォントを指定するには:
 
 ```csharp
 PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
+```
+
+### デフォルトのフォント名を指定する
+
+次に、デフォルトのフォント名を設定します。この例では、「Arial」を使用します。
+
+```csharp
 pdfSaveOptions.DefaultFontName = "Arial";
 ```
 
-## ステップ4: 更新したドキュメントを保存する
+この行は、指定されたフォントがないテキストに対して Arial を既定のフォントとして使用するように Aspose.PDF に指示します。
 
-最後に、更新されたドキュメントを新しいファイルに保存します。この例では、更新されたドキュメントを入力ファイルと同じディレクトリ内の「output_out.pdf」という名前のファイルに保存します。
+## ステップ4: ドキュメントを保存する
 
-```csharp
-document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
-```
-
-### Aspose.PDF for .NET を使用して既定のフォントを設定するためのサンプル ソース コード
+最後に、変更した PDF ドキュメントを新しいデフォルト フォントで保存します。
 
 ```csharp
-//ドキュメント ディレクトリへのパス。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-//フォントが欠落している既存のPDF文書を読み込む
-string documentName = dataDir + "input.pdf";
-string newName = "Arial";
-using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
-using (Document document = new Document(fs))
-{
-	PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
-	//デフォルトのフォント名を指定する
-	pdfSaveOptions.DefaultFontName = newName;
-	document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
-}
+document.Save(Path.Combine(dataDir, "output_out.pdf"), pdfSaveOptions);
 ```
+
+この行は文書を次のように保存します`output_out.pdf`指定されたディレクトリ内。
 
 ## 結論
 
-Aspose.PDF for .NET を使用して PDF ドキュメントに既定のフォントを設定することは、元のフォントが利用できない場合でもテキストが正しく表示されるようにするための簡単で効果的な方法です。開発者は、ステップ バイ ステップ ガイドに従い、提供されている C# ソース コードを使用することで、既定のフォントを簡単に設定し、さまざまな環境で一貫性のある信頼性の高い表示エクスペリエンスを提供する PDF を作成できます。この機能は、異なるフォント セットがインストールされている可能性のあるさまざまなシステムで PDF を表示または印刷するシナリオで特に役立ちます。
+これで完了です。Aspose.PDF for .NET を使用して PDF ファイルに既定のフォントを設定することができました。このシンプルでありながら強力な機能により、フォントが不足している場合でも、ドキュメントが希望どおりに表示されるようになります。次にフォントの問題のある PDF に遭遇したときには、何をすべきか正確にわかるでしょう。
 
-### PDF ファイルのデフォルト フォントの設定に関する FAQ
+## よくある質問
 
-#### Q: PDF ドキュメントでデフォルトのフォントを設定することが重要なのはなぜですか?
+### Aspose.PDF for .NET とは何ですか?
+Aspose.PDF for .NET は、開発者がプログラムによって PDF ドキュメントを作成、操作、変換できるようにするライブラリです。
 
-A: PDF ドキュメントにデフォルトのフォントを設定することは重要です。PDF を表示または印刷するシステムで元のフォントが利用できない場合でも、テキストが正しく表示されるためです。これにより、テキストの欠落や文字化けなどの問題を防ぎ、一貫性のある信頼性の高い表示エクスペリエンスを確保できます。
+### Arial 以外のフォントも使用できますか?
+はい、システムにインストールされている任意のフォントをデフォルトのフォントとして指定できます。
 
-#### Q: Aspose.PDF for .NET を使用して、任意のフォントを既定のフォントとして選択できますか?
+### Aspose.PDF は無料で使用できますか?
+Aspose.PDF は無料試用版を提供していますが、完全な機能を使用するにはライセンスを購入する必要があります。
 
- A: はい、Aspose.PDF for .NETを使用して、システムで利用可能な任意のフォントをデフォルトのフォントとして選択できます。`DefaultFontName`の財産`PdfSaveOptions`クラス。
+### さらに詳しいドキュメントはどこで見つかりますか?
+包括的なドキュメントが見つかります[ここ](https://reference.aspose.com/pdf/net/).
 
-#### Q: 指定したデフォルトのフォントがシステムで使用できない場合はどうなりますか?
-
-A: 指定されたデフォルト フォントがシステムで使用できない場合、PDF ビューアは代替フォントを使用してテキストを表示します。異なるシステム間での互換性を確保するには、Arial や Times New Roman などの一般的に使用可能なフォントを選択することをお勧めします。
+### Aspose.PDF のサポートを受けるにはどうすればよいですか?
+ Asposeフォーラムを通じてサポートを受けることができます[ここ](https://forum.aspose.com/c/pdf/10).

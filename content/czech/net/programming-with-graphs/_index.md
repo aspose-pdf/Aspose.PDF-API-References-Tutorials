@@ -13,11 +13,11 @@ Výukové programy programování s grafikou z Aspose.PDF pro .NET jsou určeny 
 ## Tutoriály
 | Titul | Popis |
 | --- | --- | 
-| [Přidat výkres do souboru PDF](./add-drawing/) | Naučte se, jak přidat výkres do souboru PDF pomocí Aspose.PDF pro .NET. Postupujte podle tohoto podrobného průvodce a vytvořte atraktivní dokumenty PDF s funkcemi kreslení. |  
-| [Přidat kresbu s přechodovou výplní](./add-drawing-with-gradient-fill/) | Naučte se, jak přidat kresbu s přechodovou výplní pomocí Aspose.PDF pro .NET. Návod krok za krokem k vytváření atraktivních dokumentů PDF. |  
-| [Přidat čárový objekt do souboru PDF](./add-line-object/) | Naučte se, jak přidat vlastní čárový objekt do souboru PDF pomocí Aspose.PDF for .NET. |  
-| [Řídicí obdélník Z pořadí](./control-rectangle-z-order/) | Naučte se ovládat Z-pořadí obdélníků v souboru PDF pomocí Aspose.PDF pro .NET.  |  
-| [Vytvořte vyplněný obdélník](./create-filled-rectangle/) | Naučte se, jak vytvořit vyplněný obdélník pomocí Aspose.PDF pro .NET. Krok za krokem průvodce přizpůsobením barvy výplně. |  
-| [Vytvořit Obdélník S Alfa Barvou](./create-rectangle-with-alpha-color/) | Naučte se, jak vytvořit obdélník s průhlednou barvou pomocí Aspose.PDF pro .NET. Podrobný průvodce přizpůsobením průhlednosti. |  
-| [Délka pomlčky](./dash-length/) | Naučte se, jak nastavit délku pomlček pomocí Aspose.PDF pro .NET. Krok za krokem průvodce přizpůsobením vzorů čárek. |  
-| [Kreslení Linka](./drawing-line/) | Naučte se nakreslit čáru přes stránku pomocí Aspose.PDF for .NET. Podrobný průvodce vytvářením vlastních čar. |  
+| [Přidat výkres do souboru PDF](./add-drawing/) | Naučte se přidávat výkresy do souborů PDF pomocí Aspose.PDF pro .NET. Tento podrobný průvodce obsahuje nastavení barev, přidávání tvarů a ukládání PDF. |  
+| [Přidat kresbu s přechodovou výplní](./add-drawing-with-gradient-fill/) | Naučte se přidávat úžasné přechodové kresby do PDF pomocí Aspose.PDF for .NET pomocí tohoto podrobného průvodce, který je ideální pro vylepšení vizuálů dokumentů. |  
+| [Přidat čárový objekt do souboru PDF](./add-line-object/) | tomto podrobném návodu se dozvíte, jak přidat čárový objekt do souboru PDF pomocí Aspose.PDF for .NET. Ideální pro začátečníky. |  
+| [Řídicí obdélník Z pořadí](./control-rectangle-z-order/) | V tomto podrobném návodu krok za krokem se dozvíte, jak ovládat Z-pořadí obdélníku v PDF pomocí Aspose.PDF for .NET. Ideální pro vývojáře, kteří chtějí vylepšit dokumenty PDF. |  
+| [Vytvořte vyplněný obdélník](./create-filled-rectangle/) | Naučte se, jak vytvořit vyplněný obdélník v PDF pomocí Aspose.PDF for .NET pomocí tohoto podrobného návodu. Ideální pro vývojáře všech úrovní. |  
+| [Vytvořit Obdélník S Alfa Barvou](./create-rectangle-with-alpha-color/) | Naučte se vytvářet průhledné obdélníky v PDF pomocí Aspose.PDF for .NET pomocí tohoto podrobného návodu. Vylepšete své soubory PDF pomocí barev alfa bez námahy. |  
+| [Délka pomlčky](./dash-length/) | Naučte se, jak přizpůsobit vzory čárových čárek v PDF pomocí Aspose.PDF for .NET s naším podrobným průvodcem. Ideální pro přidání stylu do vašich dokumentů. |  
+| [Kreslení Linka](./drawing-line/) | Naučte se kreslit čáry v dokumentu PDF pomocí Aspose.PDF pro .NET. Tento průvodce krok za krokem popisuje nastavení dokumentu, přidávání řádků a ukládání souboru. |  

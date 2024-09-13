@@ -47,7 +47,7 @@ Wir haben den Titel und die Sprache des getaggten PDF-Dokuments festgelegt.
 Holen wir uns nun das Stammstrukturelement des PDF-Dokuments.
 
 ```csharp
-//Erhalten Sie das Stammstrukturelement
+// Erhalten Sie das Stammstrukturelement
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

@@ -1,7 +1,7 @@
 ---
 title: Ge referenser under HTML till PDF
 linktitle: Ge referenser under HTML till PDF
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du konverterar HTML till PDF med Aspose.PDF för .NET med denna steg-för-steg-guide. Perfekt för utvecklare som vill effektivisera dokumentgenereringen.
 type: docs
 weight: 240

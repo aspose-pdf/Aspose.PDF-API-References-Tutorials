@@ -69,7 +69,7 @@ FileSpecification fileSpecification = new FileSpecification(dataDir + "aspose-lo
 doc.EmbeddedFiles.Add(fileSpecification);
 ```
 
- Εξήγηση: Το`EmbeddedFiles` ιδιοκτησία του`Document` αντικείμενο είναι μια συλλογή που περιέχει όλα τα συνημμένα για το έγγραφο. Με την προσθήκη του`FileSpecification` σε αυτήν τη συλλογή, επισυνάπτουμε αποτελεσματικά το αρχείο μας στο PDF.
+ Εξήγηση: Το`EmbeddedFiles` ιδιοκτησία του`Document` αντικείμενο είναι μια συλλογή που περιέχει όλα τα συνημμένα για το έγγραφο. Προσθέτοντας το`FileSpecification` σε αυτήν τη συλλογή, επισυνάπτουμε αποτελεσματικά το αρχείο μας στο PDF.
 
 ## Βήμα 4: Μετατρέψτε το PDF σε μορφή PDF/A
 

@@ -35,7 +35,7 @@ Page page = doc.Pages.Add();
 
 ## Βήμα 3: Ορισμός περιθωρίων
 
-Ορίζουμε τα περιθώρια για τη σελίδα χρησιμοποιώντας το`MarginInfo` τάξη. Προσαρμόστε τις τιμές περιθωρίου σύμφωνα με τις απαιτήσεις σας.
+ Ορίζουμε τα περιθώρια για τη σελίδα χρησιμοποιώντας το`MarginInfo` τάξη. Προσαρμόστε τις τιμές περιθωρίου σύμφωνα με τις απαιτήσεις σας.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -110,7 +110,7 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-// Αντιστοιχίστε το στιγμιότυπο marginInfo στην ιδιότητα Margin του sec1.PageInfo
+//Αντιστοιχίστε το στιγμιότυπο marginInfo στην ιδιότητα Margin του sec1.PageInfo
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
@@ -148,7 +148,7 @@ Table tab2 = new Table();
 hfFoot.Paragraphs.Add(tab2);
 // Σετ με τα πλάτη στηλών του πίνακα
 tab2.ColumnWidths = "165 172 165";
-// Δημιουργήστε σειρές στον πίνακα και μετά κελιά στις σειρές
+//Δημιουργήστε σειρές στον πίνακα και μετά κελιά στις σειρές
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
@@ -173,7 +173,7 @@ table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
 // Ορισμός περιγράμματος πίνακα χρησιμοποιώντας ένα άλλο προσαρμοσμένο αντικείμενο BorderInfo
 table.Border = new BorderInfo(BorderSide.All, 1f);
 table.RepeatingRowsCount = 1;
-// Δημιουργήστε σειρές στον πίνακα και μετά κελιά στις σειρές
+//Δημιουργήστε σειρές στον πίνακα και μετά κελιά στις σειρές
 Row row1 = table.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

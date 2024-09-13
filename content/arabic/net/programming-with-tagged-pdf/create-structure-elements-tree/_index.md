@@ -152,7 +152,7 @@ document.Save(dataDir + "StructureElementsTree.pdf");
 
 أ: يوضح مثال الكود كيفية إنشاء هيكل هرمي للعناصر المنطقية باستخدام`SectElement`, `DivElement` ، و`ArtElement` يتم توفير الفئات بواسطة Aspose.PDF. يتم تنظيم هذه العناصر كعقد رئيسية وعقد فرعية، مما يشكل بنية تشبه الشجرة داخل المستند.
 
-####  س: كيف يتم ذلك؟`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
+#### س: كيف يتم ذلك؟`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
 
  أ: ال`TaggedContent` تتيح لك الخاصية الوصول إلى ميزات المحتوى المميز في مستند PDF. يتيح لك هذا إنشاء عناصر منظمة ومعالجتها، وتحديد علاقاتها، وتنظيمها بشكل هرمي، مما يعزز بنية المستند وإمكانية الوصول إليه.
 
@@ -168,7 +168,7 @@ document.Save(dataDir + "StructureElementsTree.pdf");
 
 أ: يؤدي تنظيم العناصر بشكل هرمي إلى تحسين تنظيم المستندات والتنقل بينها ودلالاتها. كما يسمح للمستخدمين والتقنيات المساعدة بفهم بنية المحتوى والعلاقات بينه، مما يعزز تجربة المستخدم بشكل عام.
 
-####  س: كيف يتم ذلك؟`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
+#### س: كيف يتم ذلك؟`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
 
  أ: ال`Save` تحفظ الطريقة مستند PDF مع الهيكل الهرمي الذي تم إنشاؤه باستخدام`AppendChild` الطريقة تضمن بقاء البنية سليمة، مما يجعل الوثيقة سهلة الوصول إليها ومنظمة بشكل جيد.
 

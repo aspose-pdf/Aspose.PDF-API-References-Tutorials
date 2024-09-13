@@ -13,15 +13,15 @@ Tutorial ini memberikan gambaran terperinci tentang metode dan teknik untuk mema
 ## Tutorial
 | Judul | Keterangan |
 | --- | --- | 
-| [Ubah Kata Sandi Dalam File PDF](./change-password/) | Pelajari cara mengubah kata sandi dalam berkas PDF menggunakan Aspose.PDF untuk .NET. |  
-| [Dekripsi File PDF](./decrypt/) | Pelajari cara mendekripsi berkas PDF menggunakan Aspose.PDF untuk .NET. |  
-| [Tentukan Kata Sandi yang Benar Dalam File PDF](./determine-correct-password/) | Pelajari cara menentukan kata sandi yang benar dalam berkas PDF dengan Aspose.PDF untuk .NET. |  
-| [Masuk Secara Digital ke File PDF](./digitally-sign/) | Pelajari cara menandatangani secara digital pada berkas PDF dengan Aspose.PDF untuk .NET. |  
-| [Tanda Tangan Digital Dengan Cap Waktu Dalam File PDF](./digitally-sign-with-time-stamp/) | Pelajari cara membuat tanda tangan digital dengan cap waktu di berkas PDF menggunakan Aspose.PDF untuk .NET. |  
-| [Enkripsikan File PDF](./encrypt/) | Enkripsikan file PDF Anda dengan aman dengan Aspose.PDF untuk .NET. |  
-| [Mengekstrak Gambar](./extracting-image/) | Ekstrak gambar dengan mudah dari dokumen PDF dengan Aspose.PDF untuk .NET. |  
-| [Ekstrak Info Tanda Tangan](./extract-signature-info/) | Mengekstrak informasi tanda tangan menggunakan Aspose.PDF untuk .NET. |  
-| [Apakah Dilindungi Kata Sandi?](./is-password-protected/) | Periksa dengan mudah apakah dokumen PDF dilindungi kata sandi dengan Aspose.PDF untuk .NET. |  
-| [Mengatur Hak Istimewa Dalam File PDF](./set-privileges/) | Tetapkan hak akses dengan mudah dalam berkas PDF dengan Aspose.PDF untuk .NET. |  
-| [Tanda Tangan Dengan Kartu Pintar Menggunakan Tanda Tangan File Pdf](./sign-with-smart-card-using-pdf-file-signature/) | Tanda tangani berkas PDF Anda dengan aman dengan kartu pintar menggunakan Aspose.PDF untuk .NET. |  
-| [Tanda Tangan Dengan Kartu Pintar Menggunakan Kolom Tanda Tangan](./sign-with-smart-card-using-signature-field/) | Tanda tangani berkas PDF Anda dengan aman dengan kartu pintar menggunakan Aspose.PDF untuk .NET. |  
+| [Ubah Kata Sandi Dalam File PDF](./change-password/) | Pelajari cara mengubah kata sandi PDF dengan mudah menggunakan Aspose.PDF untuk .NET. Panduan langkah demi langkah kami akan memandu Anda melalui proses ini dengan aman. |  
+| [Dekripsi File PDF](./decrypt/) | Pelajari cara mendekripsi file PDF dengan aman menggunakan Aspose.PDF untuk .NET. Dapatkan panduan langkah demi langkah untuk meningkatkan keterampilan manajemen dokumen Anda. |  
+| [Tentukan Kata Sandi yang Benar Dalam File PDF](./determine-correct-password/) | Buka kunci file PDF dengan kata sandi yang tepat menggunakan Aspose.PDF untuk .NET. Pelajari cara mengidentifikasi kata sandi yang tepat dengan mudah. |  
+| [Masuk Secara Digital ke File PDF](./digitally-sign/) | Pelajari cara menandatangani file PDF secara digital dengan Aspose.PDF untuk .NET. Panduan langkah demi langkah untuk memastikan dokumen Anda aman dan autentik. |  
+| [Tanda Tangan Digital Dengan Cap Waktu Dalam File PDF](./digitally-sign-with-time-stamp/) | Pelajari cara menandatangani PDF secara digital dengan stempel waktu menggunakan Aspose.PDF untuk .NET. Panduan langkah demi langkah ini mencakup prasyarat, pengaturan sertifikat, pemberian stempel waktu, dan banyak lagi. |  
+| [Enkripsikan File PDF](./encrypt/) | Pelajari cara mengenkripsi file PDF Anda dengan mudah menggunakan Aspose.PDF untuk .NET. Amankan informasi sensitif dengan panduan langkah demi langkah kami yang mudah. |  
+| [Mengekstrak Gambar](./extracting-image/) | Pelajari cara mengekstrak gambar dari PDF dengan mudah menggunakan Aspose.PDF for .NET. Ikuti panduan langkah demi langkah kami untuk ekstraksi gambar yang lancar. |  
+| [Ekstrak Info Tanda Tangan](./extract-signature-info/) | Pelajari cara mengekstrak tanda tangan digital dan informasi sertifikat dari dokumen PDF menggunakan Aspose.PDF untuk .NET. Panduan langkah demi langkah lengkap untuk pengembang C#. |  
+| [Apakah Dilindungi Kata Sandi?](./is-password-protected/) | Pelajari cara memeriksa apakah PDF dilindungi kata sandi menggunakan Aspose.PDF untuk .NET dalam panduan langkah demi langkah yang komprehensif ini. |  
+| [Mengatur Hak Istimewa Dalam File PDF](./set-privileges/) | Pelajari cara mengatur hak akses PDF menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah ini. Amankan dokumen Anda secara efektif. |  
+| [Tanda Tangan Dengan Kartu Pintar Menggunakan Tanda Tangan File Pdf](./sign-with-smart-card-using-pdf-file-signature/) | Pelajari cara menandatangani file PDF menggunakan kartu pintar dengan Aspose.PDF untuk .NET. Ikuti panduan langkah demi langkah ini untuk mendapatkan tanda tangan digital yang aman. |  
+| [Tanda Tangan Dengan Kartu Pintar Menggunakan Kolom Tanda Tangan](./sign-with-smart-card-using-signature-field/) | Pelajari cara menandatangani PDF dengan aman menggunakan kartu pintar dengan Aspose.PDF untuk .NET. Ikuti panduan langkah demi langkah kami untuk penerapan yang mudah. |  

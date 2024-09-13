@@ -34,7 +34,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## चरण 3: फ़ॉन्ट खोजें और बदलें
 
- हम एक बनाते हैं`TextFragmentAbsorber`ऑब्जेक्ट और अप्रयुक्त फ़ॉन्ट्स को हटाने के लिए संपादन विकल्प सेट करें। फिर, हम पाठ अंशों की खोज करने के लिए पीडीएफ दस्तावेज़ के सभी पृष्ठों के लिए अवशोषक को स्वीकार करते हैं।
+ हम एक बनाते हैं`TextFragmentAbsorber` ऑब्जेक्ट और अप्रयुक्त फ़ॉन्ट्स को हटाने के लिए संपादन विकल्प सेट करें। फिर, हम पाठ अंशों की खोज करने के लिए पीडीएफ दस्तावेज़ के सभी पृष्ठों के लिए अवशोषक को स्वीकार करते हैं।
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));

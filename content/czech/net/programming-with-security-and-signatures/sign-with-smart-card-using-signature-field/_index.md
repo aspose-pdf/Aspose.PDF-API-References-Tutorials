@@ -1,169 +1,191 @@
 ---
-title: Podepište Chytrou Kartou Pomocí Pole Podpisu
-linktitle: Podepište Chytrou Kartou Pomocí Pole Podpisu
+title: Podepsat S Chytrou Kartou Pomocí Pole Podpisu
+linktitle: Podepsat S Chytrou Kartou Pomocí Pole Podpisu
 second_title: Aspose.PDF pro .NET API Reference
-description: Podepište své soubory PDF bezpečně pomocí čipové karty pomocí Aspose.PDF for .NET.
+description: Naučte se, jak bezpečně podepisovat soubory PDF pomocí čipové karty s Aspose.PDF pro .NET. Pro snadnou implementaci postupujte podle našeho podrobného průvodce.
 type: docs
 weight: 120
 url: /cs/net/programming-with-security-and-signatures/sign-with-smart-card-using-signature-field/
 ---
-Digitální podepisování pomocí čipové karty je bezpečný způsob podepisování souborů PDF. S Aspose.PDF pro .NET můžete snadno podepsat soubor PDF pomocí pole podpisu a čipové karty podle následujícího zdrojového kódu:
+## Zavedení
 
-## Krok 1: Importujte požadované knihovny
+dnešním digitálním světě je zabezpečení dokumentů důležitější než kdy jindy. Ať už jste vývojář, majitel firmy nebo jen někdo, kdo zpracovává citlivé informace, znalost elektronického podepisování PDF vám může ušetřit čas a zajistit ověření vašich dokumentů. V této příručce vás provedeme procesem podepisování PDF pomocí čipové karty a pole pro podpis pomocí Aspose.PDF pro .NET. 
 
-Než začnete, musíte importovat potřebné knihovny pro váš projekt C#. Zde jsou nezbytné importní směrnice:
+## Předpoklady
+
+Než se ponoříme do toho nejnutnějšího procesu podepisování, ujistěte se, že máte vše, co potřebujete, abyste mohli začít. Zde je kontrolní seznam předpokladů:
+
+1. Aspose.PDF for .NET: Ujistěte se, že máte ve svém prostředí .NET nainstalovanou knihovnu Aspose.PDF. Můžete si jej stáhnout z[místo](https://releases.aspose.com/pdf/net/).
+
+2. Visual Studio: K zápisu a spuštění kódu .NET budete potřebovat IDE. Visual Studio Community Edition je skvělá bezplatná možnost.
+
+3. Čipová karta: To je nezbytné pro podepisování vašeho PDF. Ujistěte se, že máte v počítači nainstalovanou čtečku čipových karet a potřebné certifikáty.
+
+4. Základní znalost C#: Znalost programování v C# vám pomůže porozumět úryvkům kódu, které budeme používat.
+
+5. Vzorový dokument PDF: Připravte si vzorový dokument PDF k testování. Můžete vytvořit prázdné PDF nebo použít existující.
+
+## Importujte balíčky
+
+Než začneme kódovat, naimportujme potřebné balíčky. Do souboru C# budete muset zahrnout následující jmenné prostory:
 
 ```csharp
-using Aspose.Pdf;
+using Aspose.Pdf.Facades;
 using Aspose.Pdf.Forms;
-using System.Security.Cryptography.X509Certificates;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
 ```
 
-## Krok 2: Nastavte cestu ke složce dokumentů
+Tyto jmenné prostory vám umožní přístup ke třídám a metodám potřebným pro práci s PDF a zpracování digitálních podpisů.
 
- V tomto kroku musíte zadat cestu ke složce obsahující soubor PDF, který chcete podepsat. Nahradit`"YOUR DOCUMENTS DIRECTORY"` v následujícím kódu se skutečnou cestou ke složce dokumentů:
+## Podrobný průvodce podpisem PDF pomocí čipové karty
+
+Nyní, když máme naše předpoklady vyřešené, pojďme si proces podepisování rozdělit na zvládnutelné kroky. Projdeme si každý krok podrobně, abyste pochopili, co se děje pod kapotou.
+
+### Krok 1: Nastavte adresář dokumentů
+
+Co dělat: Definujte cestu k adresáři dokumentů.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
-## Krok 3: Zkopírujte a otevřete dokument PDF
+ Vysvětlení: Vyměnit`"YOUR DOCUMENTS DIRECTORY"` se skutečnou cestou, kde jsou umístěny vaše soubory PDF. Zde si přečteme prázdné PDF a podepsaný dokument uložíme.
 
-Nyní zkopírujeme a otevřeme dokument PDF k podpisu pomocí následujícího kódu:
+### Krok 2: Zkopírujte prázdný PDF
+
+Co dělat: Vytvořte kopii svého prázdného PDF, se kterým budete pracovat.
 
 ```csharp
 File.Copy(dataDir + "blank.pdf", dataDir + "externalSignature1.pdf", true);
+```
 
+ Vysvětlení: Tento řádek kopíruje`blank.pdf`soubor do nového souboru s názvem`externalSignature1.pdf` . The`true` parametr umožňuje přepsání, pokud soubor již existuje.
+
+### Krok 3: Otevřete dokument PDF
+
+Co dělat: Otevřete zkopírovaný soubor PDF pro čtení a zápis.
+
+```csharp
 using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMode.Open, FileAccess.ReadWrite))
 {
-     using (Document doc = new Document(fs))
-     {
-         // Vytvořte pole pro podpis
-         SignatureField field1 = new SignatureField(doc.Pages[1], new Rectangle(100, 400, 10, 10));
-
-         // Vyberte certifikát v obchodě
-         X509Store store = new X509Store(StoreLocation.CurrentUser);
-         store.Open(OpenFlags.ReadOnly);
-         X509Certificate2Collection sel = X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, X509SelectionFlag.SingleSelection);
-        
-         // Vytvořte externí podpis s potřebnými informacemi
-         ExternalSignature externalSignature = new ExternalSignature(sel[0])
-         {
-             Authority = "Me",
-             Reason = "Reason",
-             ContactInfo = "Contact"
-         };
-
-         field1.PartialName = "sig1";
-         doc.Form.Add(field1, 1);
-         field1.Sign(externalSignature);
-         doc.Save();
-     }
+    using (Document doc = new Document(fs))
+    {
+        // Další kroky budou směřovat sem
+    }
 }
 ```
 
-## Krok 4: Ověřte podpis
+ Vysvětlení: Používáme a`FileStream` otevřít náš soubor PDF. The`Document` třída z Aspose.PDF nám umožňuje manipulovat s obsahem PDF.
 
- Nakonec ověříme podpis podepsaného souboru PDF pomocí`PdfFileSignature` třída. Získáme jména podpisů a zkontrolujeme je jeden po druhém. Pokud se podpis nepodaří ověřit, je vyvolána výjimka. Zde je odpovídající kód:
+### Krok 4: Vytvořte pole podpisu
+
+Co dělat: Definujte pole podpisu v PDF, kam bude podpis umístěn.
+
+```csharp
+SignatureField field1 = new SignatureField(doc.Pages[1], new Rectangle(100, 400, 10, 10));
+```
+
+ Vysvětlení: Zde vytvoříme a`SignatureField` na druhé stránce (index stránek začíná od 1) PDF. The`Rectangle` definuje polohu a velikost pole podpisu.
+
+### Krok 5: Vstupte do úložiště certifikátů Smart Card
+
+Co dělat: Otevřete úložiště certifikátů a vyberte certifikát čipové karty.
+
+```csharp
+X509Store store = new X509Store(StoreLocation.CurrentUser);
+store.Open(OpenFlags.ReadOnly);
+```
+
+Vysvětlení: Přistupujeme k paměti certifikátů pro aktuálního uživatele. Zde jsou uloženy certifikáty vašich čipových karet.
+
+### Krok 6: Vyberte certifikát
+
+Co dělat: Vyzvěte uživatele, aby si vybral certifikát z úložiště.
+
+```csharp
+X509Certificate2Collection sel = X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, X509SelectionFlag.SingleSelection);
+```
+
+Vysvětlení: Tento řádek otevře dialogové okno pro výběr certifikátu. Můžete si vybrat certifikát spojený s vaší čipovou kartou.
+
+### Krok 7: Vytvořte externí podpis
+
+ Co dělat: Vytvořte instanci`ExternalSignature` pomocí vybraného certifikátu.
+
+```csharp
+Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0])
+{
+    Authority = "Me",
+    Reason = "Reason",
+    ContactInfo = "Contact"
+};
+```
+
+ Vysvětlení: Inicializujeme soubor`ExternalSignature` s vybraným certifikátem. Můžete také nastavit oprávnění, důvod podpisu a kontaktní informace.
+
+### Krok 8: Přidejte pole podpisu do dokumentu
+
+Co dělat: Přidejte pole podpisu do dokumentu.
+
+```csharp
+field1.PartialName = "sig1";
+doc.Form.Add(field1, 1);
+```
+
+Vysvětlení: Pole podpisu pojmenujeme a přidáme na první stránku dokumentu. Tím se PDF připraví k podpisu.
+
+### Krok 9: Podepište dokument
+
+Co dělat: K podepsání PDF použijte externí podpis.
+
+```csharp
+field1.Sign(externalSignature);
+doc.Save();
+```
+
+Vysvětlení: Tento řádek podepíše dokument pomocí externího podpisu a uloží změny do PDF. Váš dokument je nyní podepsán!
+
+### Krok 10: Ověřte podpis
+
+Co dělat: Zkontrolujte, zda je podpis platný.
 
 ```csharp
 using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "externalSignature1.pdf")))
 {
-     IList<string> sigNames = pdfSign. GetSignNames();
-     for (int index = 0; index <= sigNames.Count - 1; index++)
-     {
-         if (!pdfSign.VerifySigned(sigNames[index]) || !pdfSign.VerifySignature(sigNames[index]))
-         {
-             throw new ApplicationException("Unverified");
-         }
-     }
+    IList<string> sigNames = pdfSign.GetSignNames();
+    for (int index = 0; index <= sigNames.Count - 1; index++)
+    {
+        if (!pdfSign.VerifySigned(sigNames[index]) || !pdfSign.VerifySignature(sigNames[index]))
+        {
+            throw new ApplicationException("Not verified");
+        }
+    }
 }
 ```
 
-### Ukázkový zdrojový kód pro Podepsat pomocí čipové karty pomocí pole podpisu pomocí Aspose.PDF pro .NET 
-```csharp
-// Cesta k adresáři dokumentů.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-File.Copy(dataDir + "blank.pdf", dataDir + "externalSignature1.pdf", true);
-using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMode.Open, FileAccess.ReadWrite))
-{
-	using (Document doc = new Document(fs))
-	{
-		SignatureField field1 = new SignatureField(doc.Pages[1], new Rectangle(100, 400, 10, 10));
-		// Podepište se výběrem certifikátu v úložišti certifikátů systému Windows
-		System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
-		store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
-		// Manuálně vyberte certifikát v obchodě
-		System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel = System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
-		Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0])
-		{
-			Authority = "Me",
-			Reason = "Reason",
-			ContactInfo = "Contact"
-		};
-		field1.PartialName = "sig1";
-		doc.Form.Add(field1, 1);
-		field1.Sign(externalSignature);
-		doc.Save();
-	}
-}
-using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "externalSignature1.pdf")))
-{
-	IList<string> sigNames = pdfSign.GetSignNames();
-	for (int index = 0; index <= sigNames.Count - 1; index++)
-	{
-		if (!pdfSign.VerifySigned(sigNames[index]) || !pdfSign.VerifySignature(sigNames[index]))
-		{
-			throw new ApplicationException("Not verified");
-		}
-	}
-}
-```
+Vysvětlení: Vytvoříme instanci`PdfFileSignature` ověřit podpisy v dokumentu. Pokud podpis není platný, je vyvolána výjimka.
 
 ## Závěr
 
-gratuluji! Nyní máte krok za krokem průvodce podepsáním souboru PDF pomocí čipové karty pomocí pole pro podpis pomocí Aspose.PDF pro .NET. Tento kód můžete použít k přidání bezpečných digitálních podpisů do dokumentů PDF.
+Gratuluji! Právě jste se naučili, jak podepsat dokument PDF pomocí čipové karty a pole pro podpis pomocí Aspose.PDF pro .NET. Tento proces nejen zabezpečuje vaše dokumenty, ale také zajišťuje autenticitu, což z něj činí základní dovednost v dnešním digitálním prostředí. Ať už podepisujete smlouvy, faktury nebo jiné důležité dokumenty, znalost implementace digitálních podpisů vám může ušetřit čas a zajistit klid.
 
-Nezapomeňte se podívat na oficiální dokumentaci Aspose.PDF, kde najdete další informace o pokročilém digitálním podpisu a funkcích správy certifikátů.
+## FAQ
 
-### FAQ
+### Co je Aspose.PDF pro .NET?
+Aspose.PDF for .NET je výkonná knihovna, která umožňuje vývojářům vytvářet, manipulovat a převádět dokumenty PDF v aplikacích .NET.
 
-#### Otázka: Jaká je výhoda použití pole pro podpis pro digitální podepisování pomocí čipové karty?
+### Potřebuji k podepisování souborů PDF čipovou kartu?
+Ano, pro bezpečné podepisování PDF pomocí digitálního certifikátu je vyžadována čipová karta.
 
-Odpověď: Použití pole podpisu pro digitální podepisování pomocí čipové karty poskytuje v PDF určenou oblast, kde je podpis aplikován. To zvyšuje srozumitelnost dokumentu a zajišťuje pravost podpisu.
+### Mohu používat Aspose.PDF zdarma?
+ Aspose.PDF nabízí bezplatnou zkušební verzi, kterou si můžete stáhnout[zde](https://releases.aspose.com/).
 
-#### Otázka: Jak knihovna Aspose.PDF for .NET usnadňuje digitální podepisování založené na čipových kartách s polem pro podpis?
+### Jak mohu ověřit podepsané PDF?
+ Můžete použít`PdfFileSignature` třídy v Aspose.PDF k ověření podpisů ve vašem dokumentu PDF.
 
-Odpověď: Aspose.PDF for .NET zjednodušuje proces vytváření pole pro podpis, výběr certifikátu čipové karty a použití digitálního podpisu na určitou oblast v dokumentu PDF.
-
-#### Otázka: Proč je výběr konkrétního certifikátu důležitý pro podepisování pomocí čipových karet?
-
-Odpověď: Výběr konkrétního certifikátu vám umožní jednoznačně identifikovat podepisujícího a zajistit integritu podpisu. To pomáhá vytvořit důvěru a shodu se standardy digitálního podepisování.
-
-#### Otázka: Jak poskytnutý zdrojový kód zpracovává proces podepisování založený na čipové kartě s polem pro podpis?
-
-Odpověď: Zdrojový kód ukazuje, jak vytvořit pole pro podpis, vybrat certifikát čipové karty a použít digitální podpis se specifickými informacemi pro podpis. Ukazuje také, jak ověřit platnost podpisu.
-
-#### Otázka: Mohu upravit vzhled pole podpisu?
-
-Odpověď: Ano, vzhled pole podpisu, jako je jeho velikost, poloha a vizuální reprezentace, můžete přizpůsobit tak, aby odpovídal rozvržení vašeho dokumentu.
-
-#### Otázka: Co se stane, když podpis během kroku ověření selže?
-
-Odpověď: Pokud se ověření podpisu nezdaří, je vyvolána výjimka označující, že podpis není platný. To zajišťuje, že jsou přijímány pouze platné a důvěryhodné podpisy.
-
-#### Otázka: Mohu použít více podpisových polí a podpisů založených na čipových kartách na jeden dokument PDF?
-
-Odpověď: Rozhodně můžete použít více podpisových polí a podpisů založených na čipových kartách na různé oblasti stejného dokumentu PDF, což poskytuje více vrstev zabezpečení.
-
-#### Otázka: Jak použití pole pro podpis zlepšuje celkový proces podepisování dokumentů?
-
-Odpověď: Použití pole pro podpis zjednodušuje proces podepisování dokumentů, protože vede podepisujícího k umístění podpisu do určené oblasti, díky čemuž je proces podepisování organizovanější a uživatelsky přívětivější.
-
-#### Otázka: Existují nějaká omezení pro používání podpisových polí při podepisování pomocí čipových karet?
-
-Odpověď: Neexistují žádná přirozená omezení pro používání podpisových polí s podepisováním pomocí čipových karet. Je však důležité zajistit, aby zvolené umístění pole podpisu nezakrývalo důležitý obsah dokumentu.
-
-#### Otázka: Kde najdu další pomoc nebo podporu pro implementaci podepisování pomocí čipových karet s polem pro podpis?
-
-Odpověď: Další pokyny a podporu naleznete v oficiální dokumentaci Aspose.PDF a komunitních fórech, které nabízejí cenné poznatky a řešení pro implementaci bezpečných digitálních podpisů.
+### Kde najdu další dokumentaci na Aspose.PDF?
+ Můžete zkontrolovat[Dokumentace Aspose.PDF](https://reference.aspose.com/pdf/net/) pro další podrobnosti a příklady.

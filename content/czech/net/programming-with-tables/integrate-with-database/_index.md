@@ -80,7 +80,7 @@ DataTable dt = new DataTable("Employee");
 dt.Columns.Add("Employee_ID", typeof(Int32));
 dt.Columns.Add("Employee_Name", typeof(string));
 dt.Columns.Add("Gender", typeof(string));
-// Přidejte 2 řádky do objektu DataTable programově
+//Přidejte 2 řádky do objektu DataTable programově
 DataRow dr = dt.NewRow();
 dr[0] = 1;
 dr[1] = "John Smith";
@@ -114,7 +114,7 @@ Console.WriteLine("\nDatabase integrated successfully.\nFile saved at " + dataDi
 ```
 
 ## Závěr
-tomto tutoriálu jsme se naučili, jak vložit data z databáze do dokumentu PDF pomocí Aspose.PDF for .NET. Pomocí tohoto podrobného průvodce můžete importovat data z vlastní databáze a zobrazit je v dokumentech PDF. Prozkoumejte dále dokumentaci Aspose.PDF a objevte další funkce a možnosti, které nabízí tato výkonná knihovna.
+V tomto tutoriálu jsme se naučili, jak vložit data z databáze do dokumentu PDF pomocí Aspose.PDF for .NET. Pomocí tohoto podrobného průvodce můžete importovat data z vlastní databáze a zobrazit je v dokumentech PDF. Prozkoumejte dále dokumentaci Aspose.PDF a objevte další funkce a možnosti, které nabízí tato výkonná knihovna.
 
 ### Časté dotazy pro integraci s databází v souboru PDF
 
@@ -132,7 +132,7 @@ Odpověď: Ano, k datům importovaným z databáze můžete přidat hypertextov�
 
 #### Otázka: Mohu stránkovat tabulku, pokud překračuje určitý počet řádků?
 
- Odpověď: Ano, můžete stránkovat tabulku, pokud přesáhne určitý počet řádků. Chcete-li toho dosáhnout, můžete použít`IsInNewPage`vlastnost objektu Row, která označuje, že nová stránka by měla začínat po určitém řádku. Můžete vypočítat počet řádků, které se mají zobrazit na stránce, a nastavit`IsInNewPage` majetek podle toho.
+Odpověď: Ano, můžete stránkovat tabulku, pokud přesáhne určitý počet řádků. Chcete-li toho dosáhnout, můžete použít`IsInNewPage` vlastnost objektu Row, která označuje, že nová stránka by měla začínat po určitém řádku. Můžete vypočítat počet řádků, které se mají zobrazit na stránce, a nastavit`IsInNewPage` majetek podle toho.
 
 #### Otázka: Jak mohu exportovat dokument PDF s vloženými daty databáze do různých formátů souborů, jako je DOCX nebo XLSX?
 

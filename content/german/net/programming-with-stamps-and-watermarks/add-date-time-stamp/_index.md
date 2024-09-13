@@ -2,178 +2,185 @@
 title: Datums-/Zeitstempel zur PDF-Datei hinzufügen
 linktitle: Datums-/Zeitstempel zur PDF-Datei hinzufügen
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET ganz einfach einen Datums- und Zeitstempel in eine PDF-Datei einfügen.
+description: Erfahren Sie in dieser Schritt-für-Schritt-Anleitung, wie Sie Ihren PDF-Dateien mit Aspose.PDF für .NET einen Datums- und Zeitstempel hinzufügen. Perfekt zur Verbesserung der Dokumentauthentizität.
 type: docs
 weight: 10
 url: /de/net/programming-with-stamps-and-watermarks/add-date-time-stamp/
 ---
-In diesem Artikel zeigen wir Ihnen Schritt für Schritt, wie Sie mit Aspose.PDF für .NET einen Datums- und Zeitstempel in eine PDF-Datei einfügen. Wir zeigen Ihnen, wie Sie mit dem bereitgestellten C#-Quellcode einer vorhandenen PDF-Datei einen Datums- und Zeitstempel hinzufügen.
+## Einführung
 
-## Anforderungen
+Wenn es um die Verwaltung von Dokumenten, insbesondere PDFs, geht, kann das Hinzufügen eines Datums- und Zeitstempels von entscheidender Bedeutung sein. Egal, ob Sie an juristischen Dokumenten, Projektberichten oder Rechnungen arbeiten, ein Zeitstempel verleiht nicht nur Authentizität, sondern liefert auch eine klare Aufzeichnung darüber, wann das Dokument erstellt oder geändert wurde. In dieser Anleitung führen wir Sie durch den Prozess des Hinzufügens eines Datums- und Zeitstempels zu einer PDF-Datei mithilfe der Aspose.PDF-Bibliothek für .NET. 
 
-Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
+Dieser Artikel ist so konzipiert, dass er unkompliziert und leicht verständlich ist. Selbst wenn Sie neu in der Programmierung oder der Aspose.PDF-Bibliothek sind, können Sie diese Funktion problemlos implementieren. Tauchen Sie ein!
 
-- Eine installierte .NET-Entwicklungsumgebung.
-- Die Aspose.PDF-Bibliothek für .NET wurde heruntergeladen und in Ihrem Projekt referenziert.
+## Voraussetzungen
 
-## Schritt 1: Einrichten der Umgebung
+Bevor wir beginnen, müssen einige Voraussetzungen erfüllt sein:
 
-Bevor Sie einem PDF-Dokument einen Datums- und Zeitstempel hinzufügen können, müssen Sie Ihre Entwicklungsumgebung einrichten. Hier sind die folgenden Schritte:
+1. Visual Studio: Stellen Sie sicher, dass Visual Studio auf Ihrem Computer installiert ist. Hier schreiben und führen Sie Ihren Code aus.
+2. Aspose.PDF für .NET: Sie müssen die Aspose.PDF-Bibliothek herunterladen und installieren. Die neueste Version finden Sie[Hier](https://releases.aspose.com/pdf/net/).
+3. Grundkenntnisse in C#: Wenn Sie mit der C#-Programmierung vertraut sind, können Sie die Beispiele besser verstehen. Aber keine Sorge, wenn Sie gerade erst anfangen, wir erklären Ihnen alles Schritt für Schritt.
+4.  Eine PDF-Datei: Halten Sie eine Beispiel-PDF-Datei bereit. Für unser Beispiel verwenden wir eine Datei mit dem Namen`AddTextStamp.pdf`.
 
-1. Öffnen Sie Ihre bevorzugte IDE (Integrated Development Environment).
-2. Erstellen Sie ein neues C#-Projekt.
-3. Stellen Sie sicher, dass Sie einen Verweis auf die Aspose.PDF-Bibliothek für .NET hinzugefügt haben.
+Wenn diese Voraussetzungen erfüllt sind, können Sie mit dem Hinzufügen von Datums- und Zeitstempeln zu Ihren PDF-Dateien beginnen!
 
-## Schritt 2: Hinzufügen der Aspose.PDF-Bibliothek
+## Pakete importieren
 
-Die Aspose.PDF-Bibliothek für .NET wird zum Arbeiten mit PDF-Dokumenten in Ihrem Projekt benötigt.
+Zunächst müssen Sie die erforderlichen Namespaces in Ihr C#-Projekt importieren. Gehen Sie dazu wie folgt vor:
 
-## Schritt 3: Laden des PDF-Dokuments
+### Neues Projekt erstellen
 
-Der erste Schritt zum Hinzufügen eines Datums- und Zeitstempels besteht darin, das vorhandene PDF-Dokument in Ihr Projekt zu laden. So geht's:
+1. Öffnen Sie Visual Studio: Starten Sie Ihre Visual Studio-Anwendung.
+2. Neues Projekt erstellen: Wählen Sie auf dem Startbildschirm „Neues Projekt erstellen“ aus.
+3. Konsolen-App auswählen: Wählen Sie „Konsolen-App (.NET Framework)“ aus der Liste der Projektvorlagen.
+4.  Benennen Sie Ihr Projekt: Geben Sie Ihrem Projekt einen Namen, zum Beispiel`PDFDateTimeStamp`.
+
+### Aspose.PDF-Referenz hinzufügen
+
+1. Klicken Sie mit der rechten Maustaste auf „Referenzen“: Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Ordner „Referenzen“ Ihres Projekts.
+2. Wählen Sie „Referenz hinzufügen“: Wählen Sie „Referenz hinzufügen“ aus dem Kontextmenü.
+3. Suchen Sie nach Aspose.PDF: Navigieren Sie zu dem Speicherort, an dem Sie Aspose.PDF heruntergeladen haben, und wählen Sie es aus. Klicken Sie auf „OK“, um es Ihrem Projekt hinzuzufügen.
+
+### Erforderliche Namespaces importieren
+
+ Ganz oben auf Ihrer`Program.cs` Datei müssen Sie die folgenden Namespaces importieren:
+
+```csharp
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System;
+using Aspose.Pdf.Annotations;
+```
+
+Nachdem wir nun alles eingerichtet haben, unterteilen wir den Vorgang des Hinzufügens eines Datums- und Zeitstempels zu einer PDF-Datei in klare, überschaubare Schritte.
+
+## Schritt 1: Dokumentverzeichnis festlegen
+
+Zuerst müssen Sie das Verzeichnis angeben, in dem sich Ihre PDF-Datei befindet. Dies ist wichtig, da der Code in diesem Verzeichnis nach der PDF-Datei sucht.
 
 ```csharp
 // Der Pfad zum Dokumentverzeichnis.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Ersetzen Sie es durch Ihren tatsächlichen Pfad.
+```
 
-// Öffnen Sie das Dokument
+ Ersetzen Sie unbedingt`YOUR DOCUMENT DIRECTORY` durch den tatsächlichen Pfad zu Ihrer PDF-Datei.
+
+## Schritt 2: Öffnen Sie das PDF-Dokument
+
+Als Nächstes öffnen Sie das PDF-Dokument, in dem Sie den Zeitstempel hinzufügen möchten. 
+
+```csharp
+// Dokument öffnen
 Document pdfDocument = new Document(dataDir + "AddTextStamp.pdf");
 ```
 
-Ersetzen Sie „IHR DOKUMENTVERZEICHNIS“ unbedingt durch den tatsächlichen Pfad zum Verzeichnis, in dem sich Ihr PDF-Dokument befindet.
+ Diese Codezeile initialisiert den`Document` Klasse und lädt Ihre PDF-Datei in die`pdfDocument` Objekt.
 
-## Schritt 4: Datums- und Zeitstempel erstellen
+## Schritt 3: Erstellen Sie den Datums-/Zeitstempel
 
-Nachdem Sie das Dokument hochgeladen haben
-
-  PDF können Sie den hinzuzufügenden Datums- und Zeitstempel erstellen. So geht's:
+Jetzt ist es an der Zeit, den Datums- und Zeitstempel zu generieren. Sie formatieren ihn so, dass er auf eine bestimmte Weise angezeigt wird. 
 
 ```csharp
-string annotationText = string.Empty;
-annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt");
-
-// Erstellen eines Textpuffers
-TextStamp textStamp = new TextStamp(annotationText);
+string annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt ");
 ```
 
-Der obige Code erstellt einen neuen Textpuffer, der das aktuelle Datum und die aktuelle Uhrzeit enthält.
+ Hier,`DateTime.Now` ruft das aktuelle Datum und die Uhrzeit ab und`ToString` formatiert es in das gewünschte Format.
 
-## Schritt 5: Stempeleigenschaften konfigurieren
+## Schritt 4: Erstellen Sie einen Textstempel
 
-Bevor Sie den Stempel zum PDF-Dokument hinzufügen, können Sie verschiedene Eigenschaften des Stempels konfigurieren, wie etwa Rand, horizontale und vertikale Ausrichtung usw. So gehen Sie vor:
-
-```csharp
-// Puffereigenschaften festlegen
-textStamp.BottomMargin = 10;
-textStamp. RightMargin = 20;
-textStamp.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
-textStamp.VerticalAlignment = VerticalAlignment.Bottom;
-```
-
-Sie können diese Eigenschaften Ihren Bedürfnissen entsprechend anpassen.
-
-## Schritt 6: Stempel zum PDF hinzufügen
-
-Nachdem der Datums- und Zeitstempel nun fertig ist, können Sie ihn einer bestimmten Seite des PDF-Dokuments hinzufügen. So geht's:
+Wenn die Datums- und Uhrzeitzeichenfolge bereit ist, können Sie jetzt einen Textstempel erstellen, der Ihrer PDF-Datei hinzugefügt wird.
 
 ```csharp
-// Den Stempel zur Stempelsammlung der Seite hinzufügen
-pdfDocument.Pages[1].AddStamp(textStamp);
-```
-
-Der obige Code fügt den Stempel der ersten Seite des PDF-Dokuments hinzu. Sie können bei Bedarf eine andere Seite angeben.
-
-## Schritt 7: Speichern des Ausgabedokuments
-
-Nachdem Sie Datum und Zeitstempel hinzugefügt haben, können Sie das geänderte PDF-Dokument speichern. So geht's:
-
-```csharp
-// Speichern des Ausgabedokuments
-pdfDocument.Save(dataDir);
-```
-
-Der obige Code speichert das bearbeitete PDF-Dokument im angegebenen Verzeichnis.
-
-### Beispielquellcode zum Hinzufügen eines Datums-/Zeitstempels mit Aspose.PDF für .NET 
-```csharp
-
-// Der Pfad zum Dokumentverzeichnis.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Dokument öffnen
-Document pdfDocument = new Document(dataDir+ "AddTextStamp.pdf");
-string annotationText = string.Empty;
-annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt ");
-
 // Textstempel erstellen
 TextStamp textStamp = new TextStamp(annotationText);
+```
 
+ Diese Zeile erstellt eine neue Instanz von`TextStamp` unter Verwendung der formatierten Datums- und Uhrzeitzeichenfolge.
+
+## Schritt 5: Eigenschaften des Stempels festlegen
+
+Sie können das Aussehen und die Position des Stempels anpassen. So legen Sie seine Eigenschaften fest:
+
+```csharp
 // Eigenschaften des Stempels festlegen
 textStamp.BottomMargin = 10;
 textStamp.RightMargin = 20;
 textStamp.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
 textStamp.VerticalAlignment = VerticalAlignment.Bottom;
+```
 
+In diesem Schritt legen wir die Ränder fest und richten den Stempel an der unteren rechten Ecke der PDF-Seite aus.
+
+## Schritt 6: Stempel zum PDF hinzufügen
+
+Jetzt ist es Zeit, Ihrem PDF-Dokument den Textstempel hinzuzufügen. 
+
+```csharp
 // Briefmarke zur Briefmarkensammlung hinzufügen
 pdfDocument.Pages[1].AddStamp(textStamp);
+```
+
+Diese Zeile fügt den Stempel zur ersten Seite des PDFs hinzu. Sie können die Seitenzahl ändern, wenn Sie den Stempel auf einer anderen Seite platzieren möchten.
+
+## Schritt 7: Erstellen Sie eine Freitextanmerkung (optional)
+
+Wenn Sie dem Stempel eine Anmerkung hinzufügen möchten, können Sie eine`FreeTextAnnotation` wie folgt:
+
+```csharp
 DefaultAppearance default_appearance = new DefaultAppearance("Arial", 6, System.Drawing.Color.Black);
 FreeTextAnnotation textAnnotation = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(0, 0, 0, 0), default_appearance);
 textAnnotation.Name = "Stamp";
 textAnnotation.Accept(new AnnotationSelector(textAnnotation));
 textAnnotation.Contents = textStamp.Value;
+```
 
+Dieser optionale Schritt erstellt eine Freitextanmerkung, die zusätzlichen Kontext oder Informationen zum Stempel liefern kann.
+
+## Schritt 8: Konfigurieren des Anmerkungsrahmens
+
+Wenn Sie den Rahmen Ihrer Anmerkung anpassen möchten, können Sie das auch tun:
+
+```csharp
 Border border = new Border(textAnnotation);
 border.Width = 0;
 border.Dash = new Dash(1, 1);
 textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(0, 0, 0, 0);
 pdfDocument.Pages[1].Annotations.Add(textAnnotation);
-dataDir = dataDir + "AddDateTimeStamp_out.pdf";
-
-// Ausgabedokument speichern
-pdfDocument.Save(dataDir);
-Console.WriteLine("\nDate time stamp added successfully.\nFile saved at " + dataDir);  
-          
 ```
+
+Dieser Codeausschnitt setzt die Rahmenbreite auf 0, macht sie unsichtbar und fügt die Anmerkung zum PDF hinzu.
+
+## Schritt 9: Speichern Sie das PDF-Dokument
+
+Abschließend müssen Sie das geänderte PDF-Dokument speichern. 
+
+```csharp
+dataDir = dataDir + "AddDateTimeStamp_out.pdf"; // Geben Sie den Namen der Ausgabedatei an
+pdfDocument.Save(dataDir);
+Console.WriteLine("\nDate time stamp added successfully.\nFile saved at " + dataDir);
+```
+
+Diese Zeile speichert das PDF mit dem hinzugefügten Zeitstempel in einer neuen Datei. Sie können das von Ihnen angegebene Verzeichnis überprüfen, um die Ausgabe anzuzeigen.
 
 ## Abschluss
 
-Herzlichen Glückwunsch! Sie haben gelernt, wie Sie mit Aspose.PDF für .NET einen Datums- und Zeitstempel hinzufügen. Jetzt können Sie dieses Wissen in Ihren eigenen Projekten anwenden, um Datums- und Zeitstempel zu PDF-Dokumenten hinzuzufügen.
+Herzlichen Glückwunsch! Sie haben mit Aspose.PDF für .NET erfolgreich einen Datums- und Zeitstempel zu einer PDF-Datei hinzugefügt. Diese einfache, aber effektive Funktion kann Ihre Dokumente verbessern, sie professioneller gestalten und einen klaren Nachweis darüber liefern, wann sie erstellt oder geändert wurden. 
 
-### FAQs zum Hinzufügen eines Datums-/Zeitstempels in einer PDF-Datei
+## Häufig gestellte Fragen
 
-#### F: Was ist der Zweck des Hinzufügens eines Datums- und Zeitstempels zu einem PDF-Dokument mit Aspose.PDF für .NET?
+### Kann ich das Datumsformat im Zeitstempel anpassen?
+ Ja, Sie können die`ToString`Methode, um das Datumsformat nach Ihren Wünschen zu ändern.
 
-A: Durch das Hinzufügen eines Datums- und Zeitstempels zu einem PDF-Dokument wird dessen Informationswert erhöht, da dadurch angezeigt wird, wann das Dokument geändert oder erstellt wurde. Diese Funktion ist nützlich, um Dokumentänderungen zu verfolgen und einen Referenzpunkt für den Dokumentverlauf bereitzustellen.
+### Ist die Nutzung von Aspose.PDF kostenlos?
+ Aspose.PDF bietet eine kostenlose Testversion an, aber für den vollen Funktionsumfang müssen Sie eine Lizenz erwerben. Sie können eine temporäre Lizenz erhalten[Hier](https://purchase.aspose.com/temporary-license/).
 
-#### F: Kann ich das Format des Datums- und Zeitstempels an bestimmte Anforderungen anpassen?
+### Kann ich einem PDF mehrere Zeitstempel hinzufügen?
+ Auf jeden Fall! Sie können mehrere`TextStamp` Instanzen und fügen Sie sie zu verschiedenen Seiten oder Positionen im PDF ein.
 
- A: Ja, Sie können das Format des Datums- und Zeitstempels nach Ihren Wünschen anpassen. Der bereitgestellte C#-Quellcode verwendet das`DateTime.Now.ToString()` Methode, um den Zeitstempel in einem bestimmten Format zu generieren. Sie können diesen Code ändern, um den Zeitstempel nach Bedarf zu formatieren.
+### Was ist, wenn ich Visual Studio nicht habe?
+Sie können jede C#-IDE oder jeden Texteditor verwenden, zum Ausführen und Debuggen Ihres Projekts wird jedoch Visual Studio empfohlen.
 
-#### F: Ist es möglich, an einer bestimmten Stelle auf einer PDF-Seite einen Datums- und Zeitstempel hinzuzufügen?
-
- A: Natürlich. Sie können die Platzierung des Datums- und Zeitstempels auf der PDF-Seite anpassen, indem Sie die Eigenschaften des`TextStamp` Objekt. Der im Tutorial bereitgestellte Code zeigt, wie Eigenschaften wie Rand, Ausrichtung und vertikale Positionierung festgelegt werden.
-
-#### F: Kann ich verschiedenen Seiten desselben PDF-Dokuments mehrere Datums- und Zeitstempel hinzufügen?
-
- A: Ja, Sie können mehrere Datums- und Zeitstempel auf verschiedenen Seiten desselben PDF-Dokuments hinzufügen. Wiederholen Sie einfach den Vorgang zum Erstellen eines`TextStamp` -Objekt und Konfigurieren seiner Eigenschaften für jede gewünschte Seite.
-
-#### F: Wie kann ich die Schriftart, Größe oder Farbe des Datums- und Zeitstempeltextes ändern?
-
- A: Um die Schriftart, Größe oder Farbe des Datums- und Zeitstempeltextes zu ändern, können Sie die Eigenschaften des`DefaultAppearance` Objekt zum Erstellen des`TextStamp`. Passen Sie den Schriftnamen, die Größe und die Farbwerte an, um das gewünschte Erscheinungsbild zu erzielen.
-
-#### F: Ist es möglich, mit Aspose.PDF für .NET einem PDF-Dokument andere Arten von Anmerkungen oder Stempeln hinzuzufügen?
-
-A: Ja, Aspose.PDF für .NET bietet eine breite Palette von Anmerkungstypen, die Sie zu PDF-Dokumenten hinzufügen können, darunter Textanmerkungen, Stempel, Linien, Formen und mehr. Weitere Einzelheiten zum Arbeiten mit Anmerkungen finden Sie in der Aspose.PDF-Dokumentation.
-
-#### F: Gibt es Einschränkungen oder Überlegungen beim Hinzufügen eines Datums- und Zeitstempels zu einem PDF-Dokument?
-
-A: Das Hinzufügen eines Datums- und Zeitstempels ist zwar unkompliziert, berücksichtigen Sie jedoch Faktoren wie das Layout des Dokuments und den vorhandenen Inhalt. Stellen Sie sicher, dass die Platzierung des Stempels keine wichtigen Informationen verdeckt oder die Lesbarkeit des Dokuments beeinträchtigt.
-
-#### F: Wie kann ich diese Methode in meine eigenen Projekte integrieren, um PDF-Dokumente mit Datums- und Zeitstempeln zu versehen?
-
-A: Um diese Methode zu integrieren, folgen Sie den angegebenen Schritten und passen Sie den Code an die Struktur Ihres Projekts an. Sie können vorhandenen PDF-Dokumenten Datums- und Zeitstempel hinzufügen, um ihre Nützlichkeit zu verbessern und eine klare Zeitleiste der Änderungen bereitzustellen.
-
-#### F: Kann ich das Hinzufügen von Datums- und Zeitstempeln zu mehreren PDF-Dokumenten automatisieren?
-
-A: Ja, Sie können das Hinzufügen von Datums- und Zeitstempeln zu mehreren PDF-Dokumenten automatisieren, indem Sie ein Skript oder Programm erstellen, das eine Liste von Dokumenten durchläuft und auf jedes Dokument denselben Stempelvorgang anwendet.
+### Wo finde ich weitere Beispiele zur Verwendung von Aspose.PDF?
+ Weitere Beispiele und Tutorials finden Sie im[Aspose.PDF-Dokumentation](https://reference.aspose.com/pdf/net/).

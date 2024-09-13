@@ -42,7 +42,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 ```
 
 ## Adım 5: Değiştirilecek metni bulun
- Kullanmak`TextFragmentAbsorber` istenen metni belge içinde bulmak için. Sağlanan kodda, "Lorem ipsum" metnini arar.
+Kullanmak`TextFragmentAbsorber` istenen metni belge içinde bulmak için. Sağlanan kodda, "Lorem ipsum" metnini arar.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -129,7 +129,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 
 #### S: PDF belgesindeki belirli bir metni nasıl bulabilir ve değiştirebilirim?
 
- A: 5. Adımda şunu kullanacaksınız:`TextFragmentAbsorber`İstenilen metni belge içinde bulmak için. Daha sonra, özelliklerini değiştirebilirsiniz:
+ A: 5. Adımda şunu kullanacaksınız:`TextFragmentAbsorber` İstenilen metni belge içinde bulmak için. Daha sonra, özelliklerini değiştirebilirsiniz:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -150,7 +150,7 @@ textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 
 #### S: Değiştirilen metne ek metin biçimlendirmesi uygulayabilir miyim?
 
- A: Evet, 7. Adımda, metnin özelliklerini değiştirerek alt çizgi gibi ek metin biçimlendirmeleri uygulayabilirsiniz.`TextState` nesne:
+A: Evet, 7. Adımda, metnin özelliklerini değiştirerek alt çizgi gibi ek metin biçimlendirmeleri uygulayabilirsiniz.`TextState` nesne:
 
 ```csharp
 textFragment.TextState.Underline = true;

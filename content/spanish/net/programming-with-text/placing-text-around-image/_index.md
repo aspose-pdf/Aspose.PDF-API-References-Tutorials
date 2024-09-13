@@ -145,7 +145,7 @@ row1.Cells.Add();
 row1.Cells[1].Paragraphs.Add(TitleText);
 // Establezca la alineación vertical del contenido de la fila como Superior
 row1.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-// Crea filas en la tabla y luego celdas en las filas.
+//Crea filas en la tabla y luego celdas en las filas.
 Aspose.Pdf.Row SecondRow = table1.Rows.Add();
 SecondRow.Cells.Add();
 // Establezca el valor de intervalo de filas para la segunda fila como 2

@@ -1,7 +1,7 @@
 ---
 title: Stryk ut ord
 linktitle: Stryk ut ord
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du stryker ut ord i en PDF med Aspose.PDF för .NET med den här omfattande steg-för-steg-guiden. Förbättra dina färdigheter i dokumentredigering.
 type: docs
 weight: 150
@@ -161,7 +161,7 @@ Grattis! Du har lyckats stryka ut specifika ord i ett PDF-dokument med Aspose.PD
 
 ### Vad händer om jag bara vill stryka text på specifika sidor?
 
- Du kan ändra slingan som itererar genom sidorna så att den bara inkluderar de sidor du vill ändra. Till exempel,`for (int i = 1; i <= 3; i++)` skulle tillämpa strykningen endast på de tre första sidorna.
+ Du kan ändra slingan som itererar genom sidorna så att den bara inkluderar de sidor du vill ändra. Till exempel,`for (int i = 1; i <= 3; i++)` skulle tillämpa strykningen endast på de första tre sidorna.
 
 ### Hur kan jag justera tjockleken på strecklinjen?
 

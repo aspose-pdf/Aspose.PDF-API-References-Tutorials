@@ -124,12 +124,12 @@ formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 TextFragment textFragment = new TextFragment("Hello world");
 if (fontFile != "")
 {
-	// Načtěte písmo TrueType do objektu streamu
+	//Načtěte písmo TrueType do objektu streamu
 	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
 	{
 		// Nastavte název písma pro textový řetězec
 		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		//Určete pozici pro textový fragment
+		// Určete pozici pro textový fragment
 		textFragment.Position = new Position(100, 600);
 		//Nastavit TextFormattingOptions aktuálního fragmentu na předdefinovaný (který ukazuje na LineSpacingMode.FullSize)
 		textFragment.TextState.FormattingOptions = formattingOptions;

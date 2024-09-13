@@ -40,7 +40,7 @@ absorb.Visit(pdfDocument.Pages[1]);
 Per poter eliminare le tabelle, dobbiamo ottenere una copia della raccolta delle tabelle:
 
 ```csharp
-//Ottieni una copia della raccolta di tabelle
+// Ottieni una copia della raccolta di tabelle
 AbsorbedTable[] tables = new AbsorbedTable[absorb.TableList.Count];
 absorb.TableList.CopyTo(tables, 0);
 ```
@@ -96,7 +96,7 @@ Congratulazioni! Ora hai imparato come rimuovere più tabelle in un documento PD
 
 #### D: Posso rimuovere tabelle specifiche invece di tutte le tabelle da un documento PDF?
 
-R: Sì, puoi rimuovere tabelle specifiche anziché tutte le tabelle in un documento PDF utilizzando Aspose.PDF per .NET. Nell'esempio fornito, vengono rimosse tutte le tabelle nella seconda pagina. Tuttavia, puoi modificare il codice per indirizzare e rimuovere tabelle specifiche in base alle tue esigenze. Per fare ciò, devi identificare le tabelle che vuoi rimuovere e quindi chiamare il`absorber.Remove(table)` metodo per ogni tabella specifica che desideri eliminare.
+ R: Sì, puoi rimuovere tabelle specifiche anziché tutte le tabelle in un documento PDF utilizzando Aspose.PDF per .NET. Nell'esempio fornito, vengono rimosse tutte le tabelle nella seconda pagina. Tuttavia, puoi modificare il codice per indirizzare e rimuovere tabelle specifiche in base alle tue esigenze. Per fare ciò, devi identificare le tabelle che vuoi rimuovere e quindi chiamare il`absorber.Remove(table)` metodo per ogni tabella specifica che desideri eliminare.
 
 #### D: Come posso rimuovere tabelle da più pagine nel documento PDF?
 
@@ -104,7 +104,7 @@ R: Sì, puoi rimuovere tabelle specifiche anziché tutte le tabelle in un docume
 
 #### D: Cosa succede se provo a rimuovere una tabella che non esiste nella pagina specificata?
 
-A: Se si tenta di rimuovere una tabella che non esiste nella pagina specificata, non verrà generato alcun errore.`absorber.Remove(table)` Il metodo ignorerà semplicemente la richiesta di rimozione e il documento PDF rimarrà invariato.
+ A: Se si tenta di rimuovere una tabella che non esiste nella pagina specificata, non verrà generato alcun errore.`absorber.Remove(table)` Il metodo ignorerà semplicemente la richiesta di rimozione e il documento PDF rimarrà invariato.
 
 #### D: Posso annullare la rimozione delle tabelle dopo aver salvato il documento?
 

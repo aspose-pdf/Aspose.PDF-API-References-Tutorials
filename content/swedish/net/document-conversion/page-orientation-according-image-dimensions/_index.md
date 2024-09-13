@@ -1,7 +1,7 @@
 ---
 title: Sidorientering enligt bildmått
 linktitle: Sidorientering enligt bildmått
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du skapar PDF-filer med Aspose.PDF för .NET och ställer in sidorientering baserat på bildens dimensioner i denna steg-för-steg-guide.
 type: docs
 weight: 80
@@ -49,7 +49,7 @@ Därefter skapar du ett nytt PDF-dokument. Det är här alla dina bilder kommer 
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
- Denna rad initierar en ny instans av`Document` klass, som representerar din PDF-fil.
+ Den här raden initierar en ny instans av`Document` klass, som representerar din PDF-fil.
 
 ## Steg 3: Hämta bildfiler
 

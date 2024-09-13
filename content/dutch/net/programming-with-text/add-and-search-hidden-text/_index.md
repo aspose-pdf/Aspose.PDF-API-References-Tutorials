@@ -48,7 +48,7 @@ TextFragmentAbsorber absorb = new TextFragmentAbsorber();
 absorb.Visit(doc.Pages[1]);
 foreach(TextFragment fragment in absorber.TextFragments)
 {
-//Doe iets met de fragmenten
+// Doe iets met de fragmenten
 Console.WriteLine("Text '{0}' at position {1}, invisibility: {2} ",
 fragment.Text, fragment.Position.ToString(), fragment.TextState.Invisible);
 }
@@ -97,7 +97,7 @@ A: Aspose.PDF voor .NET is een robuuste bibliotheek waarmee ontwikkelaars PDF-do
 
 #### V: Kan verborgen tekst worden gebruikt voor watermerken?
 
-A: Absoluut! Verborgen tekst kan dienen als een effectief middel om PDF-documenten van een watermerk te voorzien, wat een extra beveiligingslaag toevoegt.
+A: Absoluut! Verborgen tekst kan dienen als een effectief middel om PDF-documenten van een watermerk te voorzien en een extra beveiligingslaag toe te voegen.
 
 #### V: Is het mogelijk om verborgen tekst in een PDF-document zichtbaar te maken?
 

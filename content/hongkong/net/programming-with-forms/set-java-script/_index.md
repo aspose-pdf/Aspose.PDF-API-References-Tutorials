@@ -2,130 +2,140 @@
 title: 設定Java腳本
 linktitle: 設定Java腳本
 second_title: Aspose.PDF for .NET API 參考
-description: 了解如何使用 Aspose.PDF for .NET 在 PDF 檔案的表單欄位中設定 JavaScript。
+description: 釋放 Aspose.PDF for .NET 的強大功能。透過我們的逐步指南了解如何在表單欄位上設定 JavaScript。
 type: docs
 weight: 270
 url: /zh-hant/net/programming-with-forms/set-java-script/
 ---
-在本指南中，我們將逐步解釋如何使用 .NET 的 Aspose.PDF 庫在 PDF 文件的表單欄位中定義 JavaScript。我們將向您展示如何配置 JavaScript 操作以在文字欄位上執行特定操作。
+## 介紹
+
+建立動態和互動式 PDF 可以顯著增強使用者體驗，尤其是在文件中整合表單和欄位時。 Aspose.PDF for .NET 是一個功能強大的函式庫，可以實現這一點。在本文中，我們將深入研究使用 Aspose.PDF 為表單欄位設定 JavaScript，確保您的 PDF 不僅看起來不錯，而且功能也很漂亮。
 
 ## 先決條件
 
-在開始之前，請確保您具備以下條件：
+在我們開始編碼之前，讓我們確保您擁有順利進行編碼所需的一切：
 
-- 您的系統上安裝了 .NET 開發環境。
-- 適用於 .NET 的 Aspose.PDF 庫。您可以從Aspose官方網站下載。
+- Visual Studio（或任何 .NET IDE）：確保已正確安裝並設定它。
+  
+-  Aspose.PDF Library：您需要該程式庫的最新版本。你可以下載它[這裡](https://releases.aspose.com/pdf/net/).
 
-## 步驟1：配置文檔目錄
+- C#基礎知識：熟悉C#程式設計將有助於您更好地理解程式碼片段。
 
-第一步是配置您要處理的 PDF 文件所在的文檔目錄。您可以使用`dataDir`變數來指定目錄路徑。
+-  PDF 檔案：您應該有一個可供測試的 PDF 檔案。在我們的範例中，我們將使用一個名為`SetJavaScript.pdf`.
+
+- 您的文件目錄：了解文件檔案的儲存位置。我們將在程式碼中引用此路徑。
+
+一旦準備好這些先決條件，我們將利用哪些工具？讓我們來探索一下 Aspose.PDF 的功能。
+
+## 導入包
+
+首先，您需要在 C# 專案中包含必要的命名空間。開啟主 C# 檔案並新增以下導入語句：
 
 ```csharp
-//文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using System.IO;
+using Aspose.Pdf.Forms;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf;
 ```
 
-一定要更換`"YOUR DOCUMENTS DIRECTORY"`與文檔目錄的實際路徑。
+這些命名空間提供對 Aspose.PDF 庫中 PDF 和表單相關功能的存取。
 
-## 第 2 步：載入輸入 PDF 文件
+準備好讓您的 PDF 具有互動性了嗎？拿起你的編碼帽，讓我們一步步分解它！
 
-在此步驟中，我們將使用以下命令載入輸入 PDF 文件`Document`Aspose.PDF 類別。
+## 第 1 步：定義文檔路徑
 
-```csharp
-//加載輸入 PDF 文件
-Document doc = new Document(dataDir + "SetJavaScript.pdf");
-```
-
-確保輸入的 PDF 檔案存在於指定的文件目錄中。
-
-## 第 3 步：存取文字方塊字段
-
-要將 JavaScript 應用於特定文字字段，我們首先需要存取該字段。在此範例中，我們假設文字欄位稱為“textbox1”。使用`doc.Form["textbox1"]`方法取得對應的`TextBoxField`目的。
+首先，我們需要指定 PDF 檔案的位置。這為接下來的一切奠定了基礎。操作方法如下：
 
 ```csharp
-TextBoxField field = (TextBoxField)doc.Form["textbox1"];
-```
-
-確保輸入 PDF 文件中存在指定的文字欄位。
-
-## 第 4 步：配置 JavaScript 操作
-
-現在我們已經存取了文字字段，我們可以配置與該字段關聯的 JavaScript 操作。在此範例中，我們將使用兩個操作：`OnModifyCharacter`和`OnFormat` 。這些操作將使用定義`JavascriptAction`對象。
-
-```csharp
-field.Actions.OnModifyCharacter = new JavascriptAction("AFNumber_Keystroke(2, 1, 1, 0, \"\", true)");
-field.Actions.OnFormat = new JavascriptAction("AFNumber_Format(2, 1, 1, 0, \"\", true)");
-```
-
-請務必根據您的需求自訂 JavaScript 操作。
-
-## 步驟5：設定初始欄位值
-
-在儲存產生的 PDF 之前，我們可以為文字欄位設定初始值。在此範例中，我們將為該欄位設定值「123」。
-
-```csharp
-field.Value = "123";
-```
-
-根據您的需求自訂該值。
-
-## 第 6 步：儲存產生的 PDF
-
-現在我們已經完成了文字欄位和 JavaScript 操作的設置，我們可以使用以下命令保存生成的 PDF：`Save`的方法`Document`班級。
-
-```csharp
-dataDir = dataDir + "Restricted_out.pdf";
-//儲存生成的 PDF
-doc.Save(dataDir);
-```
-
-請務必指定產生的 PDF 的完整路徑和檔案名稱。
-
-
-### 使用 Aspose.PDF for .NET 設定 Java 腳本的範例原始碼 
-```csharp
-//文檔目錄的路徑。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//加載輸入 PDF 文件
+```
+
+代替`"YOUR DOCUMENT DIRECTORY"`與您的 PDF 檔案所在的實際路徑。將此視為設定藏寶圖的座標 - 您需要知道「X」標記位置的位置！
+
+## 第 2 步：載入 PDF 文檔
+
+定義目錄後，我們將載入 PDF 檔案。 
+
+```csharp
 Document doc = new Document(dataDir + "SetJavaScript.pdf");
+```
+
+此行打開您指定的 PDF 文件並準備對其進行操作。 
+
+## 第 3 步：存取表單字段
+
+接下來，我們要存取將套用 JavaScript 的表單欄位。 
+
+```csharp
 TextBoxField field = (TextBoxField)doc.Form["textbox1"];
-//點後2位數字
-//無分隔符
-//負風格 = 減號
-//沒有貨幣
+```
+
+在這裡，我們假設您的 PDF 中有一個名為`textbox1`。如果您沒有具有此名稱的字段，您可以重新命名它或相應地調整代碼。 
+
+## 第 4 步：設定 JavaScript 操作
+
+現在，讓我們為文字方塊添加一些功能！我們將設定在某些事件上觸發的 JavaScript 操作。 
+
+```csharp
 field.Actions.OnModifyCharacter = new JavascriptAction("AFNumber_Keystroke(2, 1, 1, 0, \"\", true)");
 field.Actions.OnFormat = new JavascriptAction("AFNumber_Format(2, 1, 1, 0, \"\", true)");
-//設定初始欄位值
+```
+
+這是發生的事情：
+- OnModifyCharacter：此 JavaScript 函數指定修改字元時欄位的行為方式。在這種情況下，數字後面允許有兩位小數，不帶分隔符號。
+- OnFormat：這確保當使用者格式化數字時，它遵循相同的規則。
+
+透過設定這些動作，我們實質上是給了文字框個性——就像教它跳舞一樣！
+
+## 第5步：初始化欄位值
+
+接下來，讓我們透過設定初始值來為文字方塊提供一個起點。 
+
+```csharp
 field.Value = "123";
+```
+
+此行將「123」設定為文字方塊中的預填值。這就像為表演準備舞台一樣。
+
+## 第6步：儲存修改後的PDF
+
+最後，我們需要在進行所有這些更改後保存文件。
+
+```csharp
 dataDir = dataDir + "Restricted_out.pdf";
-//儲存生成的 PDF
 doc.Save(dataDir);
+```
+
+這將使用您的變更更新原始檔案並將其另存為`Restricted_out.pdf`。將此視為決定了 PDF 的命運 — 一旦保存，它就可以面向全世界了！
+
+## 第7步：確認成功
+
+最後，讓我們檢查一下一切是否順利。 
+
+```csharp
 Console.WriteLine("\nJavaScript on form field setup successfully.\nFile saved at " + dataDir);
 ```
 
+運行此訊息將使您確信操作已成功完成，就像在一場精彩的表演後收到觀眾的掌聲一樣。
+
 ## 結論
 
-在本指南中，我們學習如何使用 .NET 的 Aspose.PDF 庫在 PDF 文件的表單欄位中設定 JavaScript。透過執行概述的步驟，您可以自訂 JavaScript 操作以在文字欄位上執行各種操作。請隨意進一步探索 Aspose.PDF for .NET 的功能，以擴充處理 PDF 檔案的可能性。
-
+恭喜！您已使用 Aspose.PDF for .NET 成功地為 PDF 中的表單欄位設定了 JavaScript。本教學不僅為您提供了增強使用者互動的工具，還使您能夠像專業人士一樣個性化您的文件。無論您使用的是發票、調查或其他互動式 PDF 中的表單，可能性都是無限的。
 
 ### 常見問題解答
 
-#### Q：我可以使用 Aspose.PDF for .NET 將 JavaScript 新增到其他表單元素（例如複選框和單選按鈕）嗎？
+### 什麼是 Aspose.PDF for .NET？  
+Aspose.PDF 是一個旨在在 .NET 應用程式中建立、編輯和操作 PDF 文件的程式庫，提供強大的 PDF 功能。
 
-答：是的，Aspose.PDF for .NET 可讓您將 JavaScript 新增至各種表單元素，包括核取方塊、單選按鈕和下拉清單。您可以使用`JavascriptAction`類別來定義不同表單元素的 JavaScript 操作。
+### 我需要許可證才能使用 Aspose.PDF 嗎？  
+雖然可以免費試用，但需要許可證才能不受限制地完全使用。您可以購買許可證[這裡](https://purchase.aspose.com/buy).
 
-#### Q：是否可以在表單欄位中使用 JavaScript 驗證使用者輸入？
+### 我可以在其他類型的表單欄位上設定 JavaScript 嗎？  
+絕對地！ Aspose.PDF 允許在各種表單欄位（例如複選框、單選按鈕和下拉式清單）上執行 JavaScript 操作。
 
-答：是的，您可以使用 JavaScript 來驗證表單欄位中的使用者輸入。透過定義 JavaScript 操作，例如`OnBlur`或者`OnKeystroke`對於表單字段，您可以驗證輸入的資料並在必要時顯示錯誤訊息。
+### 如何獲得 Aspose.PDF 問題的支援？  
+您可以透過他們獲得支持[論壇](https://forum.aspose.com/c/pdf/10)如有任何疑問或問題。
 
-#### Q：我可以使用 Aspose.PDF for .NET 執行複雜的 JavaScript 函數嗎？
-
-答：是的，您可以使用 Aspose.PDF for .NET 執行複雜的 JavaScript 函數。您可以靈活地定義自訂 JavaScript 函數並在`JavascriptAction`.
-
-#### Q：Aspose.PDF for .NET 是否支援本教學中提到的 JavaScript 事件？
-
-答：是的，Aspose.PDF for .NET 支援廣泛的 JavaScript 事件，包括`OnMouseEnter`, `OnMouseExit`, `OnMouseDown`， 和`OnMouseUp`等。您可以使用這些事件根據使用者互動觸發 JavaScript 操作。
-
-#### Q：我可以使用 Aspose.PDF for .NET 從現有 PDF 文件中提取 JavaScript 程式碼嗎？
-
-答：Aspose.PDF for .NET 提供了從現有 PDF 文件中提取 JavaScript 程式碼的功能。您可以使用`JavascriptAction`類別和其他相關方法來存取和分析 PDF 表單中的 JavaScript 操作。
+### 有沒有一種方法可以在不購買的情況下測試Aspose.PDF？  
+是的！ Aspose 提供了一個[免費試用](https://releases.aspose.com/)在購買之前測試圖書館的功能。

@@ -27,7 +27,7 @@ Egal, ob Sie Entwickler sind und integrative Inhalte erstellen möchten, oder ob
 ### [Strukturelemente in PDF mit Java erstellen](./create-structure-element-in-pdf-using-java/)
 Erfahren Sie, wie Sie mit Aspose.PDF PDF-Strukturelemente in Java erstellen. Verbessern Sie die PDF-Zugänglichkeit und den logischen Inhaltsfluss.
 ### [Erstellen eines Strukturelementbaums in PDF mit Java](./create-structure-element-tree-in-pdf-using-java/)
-Erfahren Sie, wie Sie mit Aspose.PDF eine barrierefreie PDF-Datei mit einem Strukturelementbaum in Java erstellen und so die Inklusivität für alle Benutzer gewährleisten.
+Erfahren Sie, wie Sie mit Aspose.PDF ein barrierefreies PDF mit einem Strukturelementbaum in Java erstellen und so die Inklusivität für alle Benutzer gewährleisten.
 ### [Erstellen Sie mit Java ein Tabellenelement in PDF](./create-table-element-in-pdf-using-java/)
 Erfahren Sie, wie Sie mit Java und Aspose.PDF für Java Tabellen in PDF-Dokumenten erstellen und anpassen. Folgen Sie unserer ausführlichen Anleitung mit Quellcodebeispielen für eine präzise Kontrolle über Ihre PDF-Tabellen.
 ### [Benutzerdefinierter Tag-Name für PDF mit Java](./custom-tag-name-for-pdf-using-java/)

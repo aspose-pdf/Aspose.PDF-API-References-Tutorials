@@ -71,7 +71,7 @@ pdfDocument.Save(dataDir + "RemoveAllText_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 
 #### F: Was ist der Zweck des Tutorials „Gesamten Text aus PDF entfernen“?
 
- A: Das Tutorial „Entfernen des gesamten Textes aus PDF“ enthält Anweisungen zur Verwendung der Aspose.PDF-Bibliothek für .NET, um den gesamten Text aus einem PDF-Dokument zu entfernen. Das Tutorial führt Sie durch den Vorgang des Öffnens einer PDF-Datei mithilfe eines`TextFragmentAbsorber` um den gesamten Text zu entfernen und die geänderte PDF-Datei zu speichern.
+ A: Das Tutorial „Alle Texte aus PDF entfernen“ enthält Anweisungen, wie Sie mit der Aspose.PDF-Bibliothek für .NET alle Texte aus einem PDF-Dokument entfernen können. Das Tutorial führt Sie durch den Vorgang des Öffnens einer PDF-Datei mit einem`TextFragmentAbsorber` um den gesamten Text zu entfernen und die geänderte PDF-Datei zu speichern.
 
 #### F: Warum sollte ich den gesamten Text aus einem PDF-Dokument entfernen wollen?
 
@@ -96,7 +96,7 @@ A: Das Tutorial führt Sie Schritt für Schritt durch den Vorgang:
 
 A: Das Tutorial konzentriert sich auf das Entfernen des gesamten Textes aus dem gesamten PDF-Dokument. Wenn Sie Text aus bestimmten Bereichen selektiv entfernen möchten, müssen Sie den Ansatz ändern und eine komplexere Logik verwenden, um bestimmte Textfragmente zu identifizieren und zu entfernen.
 
-####  F: Wie funktioniert das`TextFragmentAbsorber` work to remove text?
+#### F: Wie funktioniert das`TextFragmentAbsorber` work to remove text?
 
  A: Die`TextFragmentAbsorber`ist eine Klasse der Aspose.PDF-Bibliothek, die Textfragmente aus einem PDF-Dokument aufnehmen kann. Durch die Verwendung der`RemoveAllText` Methode der`TextFragmentAbsorber` Klasse können Sie alle aufgenommenen Textfragmente aus dem Dokument entfernen.
 

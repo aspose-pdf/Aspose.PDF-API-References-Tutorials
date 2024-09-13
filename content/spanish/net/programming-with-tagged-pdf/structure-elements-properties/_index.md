@@ -47,7 +47,7 @@ taggedContent.SetLanguage("fr-FR");
 
 ## Paso 4: Creación de elementos estructurales
 
-A continuación, creamos los elementos estructurales en el documento PDF. En este ejemplo, crearemos un elemento de sección (`SectElement`) y un elemento de encabezado (`HeaderElement`).
+continuación, creamos los elementos estructurales en el documento PDF. En este ejemplo, crearemos un elemento de sección (`SectElement`) y un elemento de encabezado (`HeaderElement`).
 
 ```csharp
 // Crear un elemento de sección
@@ -125,7 +125,7 @@ R: Aspose.PDF para .NET ofrece API para crear y manipular elementos estructurale
 
 ####  P: ¿Cuál es el papel de la`SetTitle` and `SetLanguage` methods in working with structural element properties?
 
- A: El`SetTitle` y`SetLanguage` métodos de la`ITaggedContent`El objeto permite configurar el título y el idioma del documento, que influyen en las propiedades de los elementos estructurales. Configurar el título y el idioma garantiza la coherencia y la significación de los metadatos del documento.
+ A: El`SetTitle` y`SetLanguage` métodos de la`ITaggedContent` El objeto permite configurar el título y el idioma del documento, que influyen en las propiedades de los elementos estructurales. Configurar el título y el idioma garantiza la coherencia y la significación de los metadatos del documento.
 
 #### P: ¿Cómo puedo crear y manipular elementos estructurales en un documento PDF usando Aspose.PDF para .NET?
 

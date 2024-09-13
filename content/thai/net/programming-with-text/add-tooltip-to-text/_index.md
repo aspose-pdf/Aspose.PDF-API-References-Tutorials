@@ -32,7 +32,7 @@ using Aspose.Pdf.Text;
  ในโค้ด ให้ค้นหาบรรทัดที่ระบุว่า`string dataDir = "YOUR DOCUMENT DIRECTORY";` และแทนที่`"YOUR DOCUMENT DIRECTORY"` พร้อมเส้นทางไปยังไดเร็กทอรีที่คุณเก็บเอกสารไว้
 
 ## ขั้นตอนที่ 4: สร้างเอกสารตัวอย่างด้วยข้อความ
- สร้างใหม่`Document` วัตถุและเพิ่มหน้าที่มีข้อความแยกส่วน ในโค้ดที่ให้มา จะมีการเพิ่มข้อความแยกส่วนสองส่วนลงในเอกสารพร้อมข้อความคำอธิบายที่เกี่ยวข้อง
+ สร้างใหม่`Document`วัตถุและเพิ่มหน้าที่มีข้อความแยกส่วน ในโค้ดที่ให้มา จะมีการเพิ่มข้อความแยกส่วนสองส่วนลงในเอกสารพร้อมข้อความคำอธิบายที่เกี่ยวข้อง
 
 ```csharp
 Document doc = new Document();
@@ -98,7 +98,7 @@ doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to disp
 doc.Save(outputFile);
 // เปิดเอกสารที่มีข้อความ
 Document document = new Document(outputFile);
-// สร้างวัตถุ TextAbsorber เพื่อค้นหาวลีทั้งหมดที่ตรงกับนิพจน์ทั่วไป
+//สร้างวัตถุ TextAbsorber เพื่อค้นหาวลีทั้งหมดที่ตรงกับนิพจน์ทั่วไป
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
 // รับตัวดูดซับหน้าเอกสาร
 document.Pages.Accept(absorber);

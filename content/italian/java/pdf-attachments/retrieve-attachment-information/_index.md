@@ -57,7 +57,7 @@ if (attachments.size() > 0) {
 }
 ```
 
-## Passaggio 4: Salvare o elaborare gli allegati
+## Passaggio 4: salvare o elaborare gli allegati
 
 Puoi elaborare ulteriormente o salvare gli allegati in base alle tue esigenze. Ad esempio, puoi estrarli e salvarli in una directory locale o eseguire azioni aggiuntive in base ai requisiti della tua applicazione.
 

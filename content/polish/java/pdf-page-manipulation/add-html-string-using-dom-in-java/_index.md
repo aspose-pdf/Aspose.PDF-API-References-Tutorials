@@ -61,7 +61,7 @@ pdfDocument.save("output.pdf");
 To wszystko! Udało Ci się dodać ciąg HTML do dokumentu PDF przy użyciu Aspose.PDF dla Java.
 
 # Wniosek
-W tym samouczku nauczyliśmy się, jak dodawać ciągi HTML do dokumentów PDF za pomocą biblioteki Aspose.PDF for Java. Może to być skuteczny sposób na dołączenie dynamicznej i sformatowanej zawartości do plików PDF. Możesz dodatkowo dostosować wygląd i układ zawartości HTML, aby spełnić swoje specyficzne wymagania.
+W tym samouczku nauczyliśmy się, jak dodawać ciągi HTML do dokumentów PDF za pomocą biblioteki Aspose.PDF for Java. Może to być skuteczny sposób na dołączenie dynamicznej i sformatowanej zawartości do plików PDF. Możesz dodatkowo dostosować wygląd i układ zawartości HTML, aby spełnić swoje konkretne wymagania.
 
  Jeśli masz jakiekolwiek pytania lub potrzebujesz dalszej pomocy, możesz skontaktować się z[Aspose.PDF dla dokumentacji API Java](https://reference.aspose.com/pdf/java/) po więcej szczegółów.
 

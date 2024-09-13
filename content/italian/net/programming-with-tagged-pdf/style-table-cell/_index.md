@@ -35,7 +35,7 @@ Abbiamo creato un nuovo documento e impostato il titolo e la lingua.
 In questo passaggio otterremo l'elemento struttura radice per il nostro documento.
 
 ```csharp
-//Ottieni l'elemento della struttura radice
+// Ottieni l'elemento della struttura radice
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
@@ -293,7 +293,7 @@ R: Prima di iniziare, assicurati di aver installato Aspose.PDF per .NET e di ave
 
 #### D: Come posso creare un nuovo documento PDF utilizzando Aspose.PDF per .NET?
 
-A: Per creare un nuovo documento PDF, è necessario creare un'istanza di`Document` oggetto dalla libreria Aspose.PDF. Il codice sorgente C# fornito dimostra come creare un documento e impostarne il titolo e la lingua.
+ A: Per creare un nuovo documento PDF, è necessario creare un'istanza di`Document` oggetto dalla libreria Aspose.PDF. Il codice sorgente C# fornito dimostra come creare un documento e impostarne il titolo e la lingua.
 
 #### D: Qual è il significato dell'elemento struttura radice in un documento PDF?
 

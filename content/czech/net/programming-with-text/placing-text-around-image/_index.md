@@ -145,7 +145,7 @@ row1.Cells.Add();
 row1.Cells[1].Paragraphs.Add(TitleText);
 // Nastavte svislé zarovnání obsahu řádku jako Horní
 row1.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-// Vytvořte řádky v tabulce a poté buňky v řádcích
+//Vytvořte řádky v tabulce a poté buňky v řádcích
 Aspose.Pdf.Row SecondRow = table1.Rows.Add();
 SecondRow.Cells.Add();
 // Nastavte hodnotu rozsahu řádku pro druhý řádek jako 2

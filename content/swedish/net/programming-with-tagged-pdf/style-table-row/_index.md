@@ -1,7 +1,7 @@
 ---
 title: Stiltabellrad
 linktitle: Stiltabellrad
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du anpassar tabellrader med Aspose.PDF för .NET steg för steg guide till stil och formatering av rader.
 type: docs
 weight: 180
@@ -35,7 +35,7 @@ Vi har skapat ett nytt dokument och ställt in dokumentets titel och språk.
 I detta steg kommer vi att få rotstrukturelementet för vårt dokument.
 
 ```csharp
-//Skaffa rotstrukturelementet
+// Skaffa rotstrukturelementet
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
@@ -248,7 +248,7 @@ S: Handledningen ger exempel på hur du skapar och lägger till sidhuvuden, brö
 
 #### F: Vad är PDF/UA-kompatibilitet och hur kan jag validera det för mitt taggade PDF-dokument?
 
- S: PDF/UA-kompatibilitet säkerställer att PDF-dokumentet överensstämmer med tillgänglighetsstandarder, vilket gör det mer tillgängligt för användare med funktionshinder. Handledningen visar hur man validerar PDF/UA-överensstämmelse med hjälp av`Validate()` metod och generera en XML-efterlevnadsrapport.
+ S: PDF/UA-kompatibilitet säkerställer att PDF-dokumentet överensstämmer med tillgänglighetsstandarder, vilket gör det mer tillgängligt för användare med funktionshinder. Handledningen visar hur man validerar PDF/UA-överensstämmelse med hjälp av`Validate()` metod och generera en rapport om XML-efterlevnad.
 
 #### F: Hur kan jag införliva dessa koncept i mina egna .NET-applikationer?
 

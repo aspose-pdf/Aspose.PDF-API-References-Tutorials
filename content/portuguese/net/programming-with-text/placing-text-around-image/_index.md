@@ -145,7 +145,7 @@ row1.Cells.Add();
 row1.Cells[1].Paragraphs.Add(TitleText);
 // Defina o alinhamento vertical do conteúdo da linha como Topo
 row1.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-// Crie linhas na tabela e depois células nas linhas
+//Crie linhas na tabela e depois células nas linhas
 Aspose.Pdf.Row SecondRow = table1.Rows.Add();
 SecondRow.Cells.Add();
 // Defina o valor do intervalo de linha para a segunda linha como 2

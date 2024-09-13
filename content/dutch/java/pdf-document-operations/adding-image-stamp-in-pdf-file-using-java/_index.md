@@ -57,7 +57,7 @@ U kunt het uiterlijk en de positie van de afbeeldingsstempel aanpassen aan uw ve
 
 ## Stap 6: Sla het PDF-document op
 
-Nadat u de afbeeldingsstempel hebt toegevoegd, slaat u het gewijzigde PDF-document op als een bestand.
+Nadat u de afbeeldingsstempel hebt toegevoegd, slaat u het gewijzigde PDF-document op als bestand.
 
 ```java
 // Code om het PDF-document op te slaan

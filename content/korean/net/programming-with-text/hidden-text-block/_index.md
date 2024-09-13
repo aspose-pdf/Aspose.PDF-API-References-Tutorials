@@ -110,7 +110,7 @@ doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to d
 doc.Save(outputFile);
 // 텍스트가 있는 문서 열기
 Document document = new Document(outputFile);
-// 정규 표현식과 일치하는 모든 구문을 찾기 위해 TextAbsorber 객체를 생성합니다.
+//정규 표현식과 일치하는 모든 구문을 찾기 위해 TextAbsorber 객체를 생성합니다.
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
 // 문서 페이지에 대한 흡수체를 수락합니다.
 document.Pages.Accept(absorber);

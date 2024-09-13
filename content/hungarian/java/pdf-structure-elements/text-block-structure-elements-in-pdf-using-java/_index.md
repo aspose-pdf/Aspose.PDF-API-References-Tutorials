@@ -32,7 +32,7 @@ Mielőtt PDF-ekkel dolgozna Java nyelven, győződjön meg arról, hogy telepít
 1.  Az Aspose.PDF for Java letöltése innen:[itt](https://releases.aspose.com/pdf/java/).
 2. Adja hozzá a könyvtárat a Java projekthez.
 
-### 2. lépés: Töltse be a PDF-dokumentumot
+### 2. lépés: Töltsön be egy PDF-dokumentumot
 
 A szövegblokk szerkezeti elemeivel való munkavégzéshez PDF-dokumentum szükséges. Töltse be a PDF dokumentumot az Aspose.PDF használatával:
 

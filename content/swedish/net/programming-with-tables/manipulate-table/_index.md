@@ -1,7 +1,7 @@
 ---
 title: Manipulera tabell i PDF-fil
 linktitle: Manipulera tabell i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Hantera enkelt tabeller i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 130
@@ -121,7 +121,7 @@ S: Ja, du kan manipulera tabeller i flersidiga PDF-dokument med Aspose.PDF för 
 
 #### F: Är det möjligt att ta bort en tabell från ett PDF-dokument?
 
- S: Ja, du kan ta bort en tabell från ett PDF-dokument med Aspose.PDF för .NET. För att uppnå detta kan du ta bort det specifika`Table` objekt från`Page.Paragraphs` samling. Du kan identifiera tabellen som ska tas bort genom att använda egenskaper som`Table.NumberOfColumns`, `Table.NumberOfRows`, och andra unika identifierare.
+ S: Ja, du kan ta bort en tabell från ett PDF-dokument med Aspose.PDF för .NET. För att uppnå detta kan du ta bort det specifika`Table` objekt från`Page.Paragraphs` samling. Du kan identifiera tabellen som ska tas bort genom att använda egenskaper som`Table.NumberOfColumns`, `Table.NumberOfRows`och andra unika identifierare.
 
 #### F: Kan jag ändra formateringen (teckensnitt, färg, justering) av tabelltexten?
 

@@ -2,164 +2,191 @@
 title: PDF 파일에서 스트로크 텍스트 채우기
 linktitle: PDF 파일에서 스트로크 텍스트 채우기
 second_title: .NET API 참조를 위한 Aspose.PDF
-description: Aspose.PDF for .NET을 사용하여 PDF 파일의 텍스트를 쉽게 채우고 윤곽을 그리는 방법을 알아보세요.
+description: 이 단계별 가이드에는 실용적인 예제가 가득 담겨 있으며, Aspose.PDF for .NET을 사용하여 PDF 파일의 획 텍스트를 손쉽게 채우는 방법을 알아보세요.
 type: docs
 weight: 90
 url: /ko/net/programming-with-stamps-and-watermarks/fill-stroke-text/
 ---
-이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 PDF 파일의 텍스트를 채우고 윤곽을 그리는 방법을 단계별로 안내합니다. 제공된 C# 소스 코드를 사용하여 PDF 파일의 텍스트에 채우기 및 윤곽 색상을 적용하는 방법을 보여드리겠습니다.
+## 소개
+
+PDF 파일을 수정하여 눈에 띄게 만들고 싶었던 적이 있나요? 중요한 문서를 틀림없이 당신의 것으로 보이게 하는 인상적인 워터마크나 굵은 스탬프를 추가해야 할 수도 있습니다. Aspose.PDF for .NET을 사용하면 PDF 파일에 획 텍스트를 쉽게 채워 눈길을 끄는 예술적 감각을 더할 수 있습니다. 오늘의 튜토리얼에서는 C#을 사용하여 PDF에 획 텍스트를 채우는 과정을 살펴보겠습니다. 마지막에는 전문가처럼 PDF 파일을 조작하는 방법을 확실히 이해하게 될 것입니다.
+
+## 필수 조건
+
+코딩에 들어가기 전에 이 튜토리얼을 쉽게 진행하기 위해 꼭 준비해야 할 몇 가지 사항이 있습니다.
+
+1. Visual Studio: C# 코드를 작성할 것이므로 컴퓨터에 Visual Studio가 설치되어 있는지 확인하세요.
+2.  Aspose.PDF 라이브러리: .NET 라이브러리용 Aspose.PDF를 다운로드했는지 확인하세요. 가져올 수 있습니다.[여기](https://releases.aspose.com/pdf/net/).
+3. C#에 대한 기본 지식: C# 프로그래밍에 익숙하면 튜토리얼을 더 쉽게 이해하는 데 도움이 됩니다.
+4. 샘플 PDF 파일: 샘플 PDF 파일이 필요합니다.`input.pdf`테스트 목적으로. 간단한 PDF를 만들거나 기존 PDF를 사용할 수 있습니다.
+
+이제 모든 준비가 끝났으니, PDF 파일에서 획 텍스트를 채우는 구체적인 작업에 들어가겠습니다.
+
+## 패키지 가져오기
+
+시작하려면 필요한 패키지를 가져와야 합니다. 다음은 프로젝트에 필수적인 가져오기에 대한 간략한 개요입니다.
+
+```csharp
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+이러한 패키지를 사용하면 Aspose.PDF 라이브러리의 강력한 기능을 사용할 수 있습니다.
+
+주요 작업을 명확한 단계로 나누어 보겠습니다. 이러한 단계를 따르면 PDF 파일에 스트로크 텍스트를 쉽게 채울 수 있습니다. 
 
 ## 1단계: 환경 설정
 
-시작하기 전에 다음 사항이 있는지 확인하세요.
+먼저, Visual Studio 프로젝트에서 모든 것이 올바르게 설정되었는지 확인하세요. 새 프로젝트를 만들거나 기존 프로젝트를 선택하세요. 도움이 필요하면 다음과 같이 하세요.
 
-- .NET 개발 환경이 설치되어 있습니다.
-- 프로젝트에서 다운로드하여 참조할 수 있는 .NET용 Aspose.PDF 라이브러리입니다.
+1. Visual Studio를 엽니다.
+2. 새로운 C# 프로젝트(예: 콘솔 애플리케이션)를 만듭니다.
+3. 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 버튼으로 클릭하고 "NuGet 패키지 관리"를 선택합니다.
+4.  검색`Aspose.PDF` 설치하세요.
 
-## 2단계: TextState 객체 생성
+## 2단계: 문서 디렉토리 정의
 
-첫 번째 단계는 고급 속성을 전달하기 위해 TextState 객체를 만드는 것입니다. 방법은 다음과 같습니다.
+모든 여정에는 시작점이 필요하며, 우리의 경우 입력 및 출력 파일이 저장되는 문서 디렉토리가 시작점입니다. 
 
 ```csharp
-// 고급 속성을 전송하기 위해 TextState 객체를 만듭니다.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ 바꾸다`"YOUR DOCUMENT DIRECTORY"` 입력 PDF 파일이 위치한 실제 경로를 포함합니다. 
+
+## 3단계: TextState 객체 생성
+
+이 단계에서는 추가하려는 텍스트의 속성을 정의하기 시작합니다. 
+
+```csharp
 TextState ts = new TextState();
+```
 
-// 윤곽선 색상 설정
+ 그만큼`TextState` 객체는 획 텍스트에 대한 스타일 옵션을 보유합니다.
+
+## 4단계: 선의 색상 설정
+
+다음으로, 텍스트의 획 색상을 정의해야 합니다. 
+
+```csharp
 ts.StrokingColor = Color.Gray;
+```
 
-// 텍스트 렌더링 모드 정의
+이 코드에서는 획에 회색을 사용합니다. 필요에 맞게 색상을 자유롭게 변경하세요!
+
+## 5단계: 렌더링 모드 구성
+
+텍스트가 의도한 대로 표시되도록 하려면 렌더링 모드를 설정하세요.
+
+```csharp
 ts.RenderingMode = TextRenderingMode.StrokeText;
 ```
 
-위 코드는 새로운 TextState 객체를 생성하고 윤곽선 색상과 텍스트 렌더링 방법을 설정합니다.
+이는 Aspose 라이브러리에 스트로크 텍스트를 사용하고 있다는 것을 알려줍니다.
 
-## 3단계: PDF 문서 로딩
+## 6단계: 입력 PDF 문서 로드
 
-이제 TextState 객체가 준비되었으므로 텍스트 채우기와 윤곽선을 적용하려는 PDF 문서를 로드할 수 있습니다. 방법은 다음과 같습니다.
+이제 수정할 PDF 파일을 로드할 시간입니다. 
 
 ```csharp
-// PDF 문서를 입력으로 로드합니다
 Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
 ```
 
-위 코드는 Aspose.PDF.Facades 라이브러리의 PdfFileStamp 클래스를 사용하여 기존 PDF 문서를 로드합니다.
+입력 PDF를 확인하세요(`input.pdf`)는 이전 단계에서 정의한 문서 디렉토리에 있습니다.
 
-## 4단계: 텍스트에 채우기 및 획 추가
+## 7단계: 스탬프 객체 만들기
 
-이제 PDF 문서가 로드되었으므로 텍스트에 채우기와 윤곽선을 추가할 수 있습니다. 방법은 다음과 같습니다.
+다음으로, 획 텍스트를 담을 스탬프를 만듭니다. 
 
 ```csharp
-// 정의된 텍스트와 속성으로 스탬프(Stamp)를 생성합니다.
 Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
+```
+
+이 스탬프는 PDF에 텍스트를 오버레이하는 데 사용됩니다.
+
+## 8단계: 스탬프할 텍스트 정의
+
+PDF에 추가할 텍스트를 지정해야 합니다.
+
+```csharp
 stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
+```
 
-// TextState 객체를 바인딩합니다
+여기서 "PAID IN FULL"은 우리가 스타일링 속성과 함께 추가하는 텍스트입니다. 요구 사항에 맞게 사용자 정의하세요!
+
+## 9단계: 텍스트 상태 바인딩
+
+ 이제 바인딩하세요`TextState` 이전에 스탬프에 정의한 내용입니다. 
+
+```csharp
 stamp.BindTextState(ts);
+```
 
-// 원점 X, Y 설정
+이 단계에서는 색상과 렌더링 모드 등 모든 스타일을 텍스트에 적용합니다.
+
+## 10단계: 스탬프 위치 설정
+
+PDF에서 스탬프가 나타날 위치를 결정하세요.
+
+```csharp
 stamp.SetOrigin(100, 100);
-stamp. Opacity = 5;
+```
+
+ 주장`(100, 100)` 텍스트의 원점에 대한 X 및 Y 좌표(포인트)를 나타냅니다. 이 값을 조정하여 텍스트를 완벽하게 배치하세요!
+
+## 11단계: 불투명도 및 회전 구성
+
+텍스트의 모양을 다음과 같이 변경할 수 있습니다.
+
+```csharp
+stamp.Opacity = 5;
 stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
 stamp.Rotation = 45.0F;
-stamp. IsBackground = false;
+```
 
-// 문서에 스탬프를 추가하세요
+이 경우 불투명도 값과 45도 회전 각도는 텍스트에 독특한 분위기를 더합니다. 이러한 설정을 자유롭게 수정하여 다양한 효과를 얻으세요.
+
+## 12단계: PDF에 스탬프 추가
+
+이것은 우리가 최종적으로 PDF에 스트로크 텍스트를 포함하는 스탬프를 추가하는 중요한 단계입니다:
+
+```csharp
 fileStamp.AddStamp(stamp);
 ```
 
-위 코드는 지정된 텍스트와 정의된 채우기 및 획 속성을 사용하여 스탬프를 만듭니다.
+이렇게 하면 여러분의 텍스트가 의미를 전달할 준비가 됩니다!
 
-## 5단계: 출력 문서 저장
+## 13단계: 문서 저장 및 닫기
 
-텍스트 스탬프가 추가되면 수정된 PDF 문서를 저장할 수 있습니다. 방법은 다음과 같습니다.
+마지막으로 변경 사항을 저장하고 모든 것이 제대로 정리되었는지 확인하세요. 
 
 ```csharp
-// 수정된 문서를 저장합니다
 fileStamp.Save(dataDir + "output_out.pdf");
 fileStamp.Close();
 ```
 
-위 코드는 편집된 PDF 문서를 지정된 디렉토리에 저장합니다.
-
-### .NET용 Aspose.PDF를 사용한 Fill Stroke Text의 샘플 소스 코드 
-```csharp
-
-// 문서 디렉토리의 경로입니다.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// 고급 속성을 전송하기 위해 TextState 객체를 만듭니다.
-TextState ts = new TextState();
-
-// 획에 대한 색상 설정
-ts.StrokingColor = Color.Gray;
-
-// 텍스트 렌더링 모드 설정
-ts.RenderingMode = TextRenderingMode.StrokeText;
-
-// 입력 PDF 문서 로드
-Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
-Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
-stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
-
-// TextState 바인딩
-stamp.BindTextState(ts);
-
-// X,Y 원점 설정
-stamp.SetOrigin(100, 100);
-stamp.Opacity = 5;
-stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
-stamp.Rotation = 45.0F;
-stamp.IsBackground = false;
-
-// 스탬프 추가
-fileStamp.AddStamp(stamp);
-fileStamp.Save(dataDir + "ouput_out.pdf");
-fileStamp.Close();
-
-```
+ 스트로크 텍스트가 포함된 새로 수정된 PDF 파일은 다음과 같이 저장됩니다.`output_out.pdf` 문서 디렉토리에 있습니다. 
 
 ## 결론
 
-축하합니다! Aspose.PDF for .NET을 사용하여 PDF 문서에서 텍스트를 채우고 윤곽을 그리는 방법을 배웠습니다. 이제 이 지식을 적용하여 PDF 문서에서 채우기 및 윤곽 색상을 사용자 지정할 수 있습니다.
+이제 다 됐습니다! 간단한 단계를 따르면 Aspose.PDF for .NET을 사용하여 PDF 파일에 스트로크 텍스트를 쉽게 채울 수 있습니다. 비즈니스 문서든 개인 프로젝트든 이 기술을 사용하면 PDF에 독특한 터치를 추가하여 모든 서류 더미에서 눈에 띄게 만들 수 있습니다.
 
-### PDF 파일의 채우기 획 텍스트에 대한 FAQ
+## 자주 묻는 질문
 
-#### 질문: PDF 문서에서 텍스트를 채우고 윤곽을 잡는다는 것은 무슨 의미이며, 언제 이 작업이 필요할까요?
+### .NET용 Aspose.PDF란 무엇인가요?
+.NET용 Aspose.PDF는 개발자가 프로그래밍 방식으로 PDF 파일을 만들고, 조작하고, 변환할 수 있는 라이브러리입니다.
 
-A: PDF 문서에서 텍스트를 채우고 윤곽을 그리는 것은 텍스트 문자의 내부(채우기)와 텍스트 주변의 테두리(윤곽선)에 색상을 적용하는 것을 포함합니다. 이것은 텍스트의 시각적 모양을 향상시키거나, 강조하거나, PDF 내의 특정 콘텐츠를 강조하는 데 사용할 수 있습니다.
+### Aspose.PDF를 무료로 사용할 수 있나요?
+네, Aspose는 무료 체험판을 제공합니다. 받으실 수 있습니다.[여기](https://releases.aspose.com/).
 
-#### 질문: 제공된 C# 소스 코드는 어떻게 PDF 파일에 텍스트를 채우고 윤곽을 그리는 작업을 수행합니까?
+### 라이센스 비용을 지불해야 합니까?
+ 도서관에서는 무료 체험판을 제공하지만 임시 라이센스도 구매할 수 있습니다.[이 링크](https://purchase.aspose.com/temporary-license/).
 
- A: 제공된 소스 코드는 다음을 만드는 방법을 보여줍니다.`TextState` 객체는 윤곽선 색상 및 렌더링 모드와 같은 고급 텍스트 속성을 정의합니다. 그런 다음 Aspose.PDF.Facades를 사용하여 기존 PDF 문서를 로드하고 지정된 채우기 및 획 속성이 있는 텍스트가 포함된 스탬프를 만들고 문서에 스탬프를 추가합니다.
+### 해당 문서는 어디서 찾을 수 있나요?
+ 전체 문서에 액세스할 수 있습니다[여기](https://reference.aspose.com/pdf/net/).
 
-####  Q: 목적은 무엇입니까?`TextState` object in the code?
-
- A: 그`TextState`객체는 텍스트 윤곽선(획)의 색상과 렌더링 모드를 포함한 고급 텍스트 속성을 정의하는 데 사용됩니다. 이를 통해 텍스트가 획과 채우기 측면에서 어떻게 나타나는지 사용자 정의할 수 있습니다.
-
-#### 질문: 같은 텍스트의 다른 부분에 다른 채우기 및 윤곽선 색상을 적용할 수 있나요?
-
- A: 네, 코드를 수정하여 다양한 것을 만들 수 있습니다.`TextState` 고유한 채우기 및 윤곽선 색상이 있는 개체를 만들고 이를 별도의 도구를 사용하여 텍스트의 특정 부분에 적용합니다.`Stamp` 사물.
-
-#### 질문: PDF 문서에 이미 있는 텍스트에 채우기 및 윤곽선 색상을 적용할 수 있나요?
-
- A: 예, 적절한 텍스트 객체를 선택하고 원하는 스탬프로 추가하여 PDF 문서의 기존 텍스트에 채우기 및 윤곽선 색상을 적용하는 것과 유사한 원리를 사용할 수 있습니다.`TextState` 속성.
-
-#### 질문: 채워진 텍스트와 윤곽선이 그려진 텍스트의 불투명도와 혼합을 어떻게 조정할 수 있나요?
-
- A: 제공된 코드를 사용하면 스탬프의 불투명도 및 혼합 속성을 설정할 수 있습니다.`Opacity` 그리고`BlendingSpace`각각 속성입니다. 이러한 값을 조정하여 원하는 시각적 효과를 얻을 수 있습니다.
-
-#### 질문: 동일한 PDF 문서 내에서 여러 스탬프에 다른 채우기 및 윤곽선 색상을 적용하려면 어떻게 해야 하나요?
-
- A: 여러 개를 생성할 수 있습니다.`TextState` 채우기 및 윤곽선 색상이 다른 객체를 만든 다음 별도로 만듭니다.`Stamp` 각 텍스트 세트에 대해 고유한 색상을 가진 개체. 이러한 스탬프를 동일한 PDF 문서에 추가하려면 다음을 사용합니다.`PdfFileStamp` 수업.
-
-#### 질문: 윤곽선과 채워진 텍스트에 Arial 이외의 글꼴을 사용할 수 있나요?
-
- A: 예, 글꼴 이름 매개변수를 수정하여 글꼴을 변경할 수 있습니다.`FormattedText` 스탬프를 만들 때 생성자를 사용합니다. 시스템에서 사용 가능한 모든 글꼴을 사용할 수 있습니다.
-
-#### 질문: 윤곽선이 그려진 텍스트와 채워진 텍스트의 회전 각도를 어떻게 수정할 수 있나요?
-
- A: 제공된 코드를 사용하면 스탬프의 회전 각도를 설정할 수 있습니다.`Rotation` 속성. 이 속성을 조정하여 텍스트의 원하는 회전 각도를 지정할 수 있습니다.
-
-#### 질문: 페이지에서 윤곽선이 그려진 텍스트와 채워진 텍스트의 위치와 크기를 어떻게 제어할 수 있나요?
-
- A: 다음을 사용할 수 있습니다.`SetOrigin` 의 방법`Stamp` 페이지에서 스탬프 위치의 X 및 Y 좌표를 설정하는 개체입니다. 또한 글꼴 크기를 조정할 수 있습니다.`FormattedText` 텍스트 크기를 제어하는 생성자입니다.
+### 문제가 발생하면 지원을 받을 수 있나요?
+ 물론입니다! Aspose 포럼에서 지원을 받을 수 있습니다.[여기](https://forum.aspose.com/c/pdf/10).

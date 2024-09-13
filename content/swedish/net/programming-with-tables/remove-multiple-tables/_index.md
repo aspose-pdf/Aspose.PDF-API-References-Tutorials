@@ -1,7 +1,7 @@
 ---
 title: Ta bort flera tabeller i PDF-dokument
 linktitle: Ta bort flera tabeller i PDF-dokument
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du tar bort flera tabeller i PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 150
@@ -40,7 +40,7 @@ absorb.Visit(pdfDocument.Pages[1]);
 För att kunna släppa tabellerna behöver vi få en kopia av tabellsamlingen:
 
 ```csharp
-//Få en kopia av bordssamlingen
+// Få en kopia av bordssamlingen
 AbsorbedTable[] tables = new AbsorbedTable[absorb.TableList.Count];
 absorb.TableList.CopyTo(tables, 0);
 ```
@@ -96,7 +96,7 @@ Grattis! Du har nu lärt dig hur du tar bort flera tabeller i ett PDF-dokument m
 
 #### F: Kan jag ta bort specifika tabeller istället för alla tabeller i ett PDF-dokument?
 
-S: Ja, du kan ta bort specifika tabeller istället för alla tabeller i ett PDF-dokument med Aspose.PDF för .NET. I det angivna exemplet tas alla tabeller på den andra sidan bort. Du kan dock ändra koden för att rikta in och ta bort specifika tabeller baserat på dina krav. För att göra detta måste du identifiera tabellerna du vill ta bort och sedan anropa`absorber.Remove(table)` metod för varje specifik tabell du vill ta bort.
+ S: Ja, du kan ta bort specifika tabeller istället för alla tabeller i ett PDF-dokument med Aspose.PDF för .NET. I det angivna exemplet tas alla tabeller på den andra sidan bort. Du kan dock ändra koden för att rikta in och ta bort specifika tabeller baserat på dina krav. För att göra detta måste du identifiera tabellerna du vill ta bort och sedan anropa`absorber.Remove(table)` metod för varje specifik tabell du vill ta bort.
 
 #### F: Hur kan jag ta bort tabeller från flera sidor i PDF-dokumentet?
 
@@ -104,7 +104,7 @@ S: Ja, du kan ta bort specifika tabeller istället för alla tabeller i ett PDF-
 
 #### F: Vad händer om jag försöker ta bort en tabell som inte finns på den angivna sidan?
 
-S: Om du försöker ta bort en tabell som inte finns på den angivna sidan kommer det inte att resultera i ett fel. De`absorber.Remove(table)` metoden ignorerar helt enkelt borttagningsbegäran, och PDF-dokumentet förblir oförändrat.
+ S: Om du försöker ta bort en tabell som inte finns på den angivna sidan kommer det inte att resultera i ett fel. De`absorber.Remove(table)` metoden ignorerar helt enkelt borttagningsbegäran, och PDF-dokumentet förblir oförändrat.
 
 #### F: Kan jag ångra borttagningen av tabeller efter att ha sparat dokumentet?
 

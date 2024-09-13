@@ -50,7 +50,7 @@ Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
 ## 第 2 步：為 PDF 文件新增頁面
 
-每個 PDF 文件都由一頁或多頁組成。讓我們為文件新增一個頁面。
+每個 PDF 文件都包含一頁或多頁。讓我們為文件新增一個頁面。
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
@@ -135,7 +135,7 @@ doc.Save(dataDir + @"Multilayer-2ndApproach_out.pdf");
 是的，您可以透過呼叫來新增任意數量的頁面`doc.Pages.Add()`對於每個頁面。
 
 ### 如何在 PDF 中分層添加更多元素，例如形狀或註釋？  
-您可以使用`FloatingBox`適用於任何類型的內容，包括形狀、註釋甚至表格。
+你可以使用`FloatingBox`適用於任何類型的內容，包括形狀、註釋甚至表格。
 
 ### Aspose.PDF for .NET 支援哪些影像格式？  
 Aspose.PDF支援各種影像格式，包括PNG、JPEG、GIF和BMP。

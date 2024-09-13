@@ -145,7 +145,7 @@ row1.Cells.Add();
 row1.Cells[1].Paragraphs.Add(TitleText);
 // Ustaw wyrównanie pionowe zawartości wiersza jako Górne
 row1.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-// Utwórz wiersze w tabeli, a następnie komórki w wierszach
+//Utwórz wiersze w tabeli, a następnie komórki w wierszach
 Aspose.Pdf.Row SecondRow = table1.Rows.Add();
 SecondRow.Cells.Add();
 // Ustaw wartość rozpiętości wiersza dla drugiego wiersza na 2
@@ -162,7 +162,7 @@ doc.Save(dataDir + "PlacingTextAroundImage_out.pdf");
 
 ## Wniosek
 
-W tym samouczku nauczyłeś się, jak umieszczać tekst wokół obrazu w dokumencie PDF za pomocą biblioteki Aspose.PDF dla .NET. Postępując zgodnie z przewodnikiem krok po kroku i wykonując dostarczony kod C#, możesz utworzyć tabelę, dodać obraz i umieścić tekst wokół obrazu w dokumencie PDF.
+W tym samouczku nauczyłeś się, jak umieścić tekst wokół obrazu w dokumencie PDF, używając biblioteki Aspose.PDF dla .NET. Postępując zgodnie z przewodnikiem krok po kroku i wykonując dostarczony kod C#, możesz utworzyć tabelę, dodać obraz i umieścić tekst wokół obrazu w dokumencie PDF.
 
 ### Najczęściej zadawane pytania
 

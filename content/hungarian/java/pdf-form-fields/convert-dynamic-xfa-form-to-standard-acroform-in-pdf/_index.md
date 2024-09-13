@@ -43,7 +43,7 @@ Ezután be kell töltenie az XFA űrlapot egy meglévő PDF-fájlból. Használj
 pdfDocument.setXfa(dataDir + "input.pdf");
 ```
 
-### 3. lépés: Konvertálás AcroForm-ra
+### 3. lépés: Átalakítás AcroForm-ra
 
 Most itt az ideje végrehajtani az átalakítást. Az Aspose.PDF for Java egy egyszerű módszert kínál az XFA-űrlapok AcroForms-okká konvertálására:
 

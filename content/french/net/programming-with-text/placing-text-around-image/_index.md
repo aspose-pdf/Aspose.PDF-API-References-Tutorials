@@ -145,7 +145,7 @@ row1.Cells.Add();
 row1.Cells[1].Paragraphs.Add(TitleText);
 // Définir l'alignement vertical du contenu de la ligne sur Top
 row1.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-// Créez des lignes dans le tableau, puis des cellules dans les lignes
+//Créez des lignes dans le tableau, puis des cellules dans les lignes
 Aspose.Pdf.Row SecondRow = table1.Rows.Add();
 SecondRow.Cells.Add();
 // Définissez la valeur de l'étendue de ligne pour la deuxième ligne sur 2

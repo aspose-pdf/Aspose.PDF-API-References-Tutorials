@@ -31,7 +31,7 @@ using System.IO;
  W kodzie znajdź linię, która mówi`string dataDir = "YOUR DOCUMENT DIRECTORY";` i zastąpić`"YOUR DOCUMENT DIRECTORY"` ze ścieżką do katalogu, w którym przechowywane są Twoje dokumenty.
 
 ## Krok 4: Otwórz dokument PDF
- Otwórz istniejący dokument PDF za pomocą`Document` konstruktora i przekazując ścieżkę do pliku wejściowego PDF.
+ Otwórz istniejący dokument PDF za pomocą`Document`konstruktora i przekazując ścieżkę do pliku wejściowego PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");

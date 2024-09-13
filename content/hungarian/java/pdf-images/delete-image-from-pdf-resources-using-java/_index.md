@@ -105,7 +105,7 @@ Futtassa a Java programot a kód teszteléséhez. Ez betölti a PDF-fájlt, tör
 
 Ebben a lépésenkénti útmutatóban megtanultuk, hogyan törölhet képeket PDF-dokumentumból az Aspose.PDF for Java segítségével. Ez a nagy teljesítményű könyvtár megkönnyíti a PDF-fájlok programozott kezelését, teljes ellenőrzést biztosítva a tartalom felett.
 
- További információkért és részletes dokumentációért látogassa meg a[Aspose.PDF a Java API-referenciához](https://reference.aspose.com/pdf/java/).
+ További információkért és részletes dokumentációért látogassa meg a[Aspose.PDF for Java API Reference](https://reference.aspose.com/pdf/java/).
 
 ## GYIK
 

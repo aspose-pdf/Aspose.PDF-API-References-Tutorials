@@ -32,7 +32,7 @@ Nu we alles hebben ingesteld, gaan we het voorbeeld stap voor stap uitleggen.
 
 ## Stap 1: Stel uw documentenmap in
 
-Allereerst moet u het pad naar uw documentenmap opgeven waar uw afbeeldingen zijn opgeslagen. Dit is waar Aspose naar de JPG-bestanden zal zoeken.
+Allereerst moet u het pad naar uw documentenmap opgeven waar uw afbeeldingen zijn opgeslagen. Dit is waar Aspose naar de JPG-bestanden zoekt.
 
 ```csharp
 // Het pad naar de documentenmap.

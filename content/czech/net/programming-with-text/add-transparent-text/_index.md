@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Krok 5: Přidejte do dokumentu stránku
- Přidejte do dokumentu novou stránku pomocí`Add` metoda`Pages`sbírka. V poskytnutém kódu je nová stránka přiřazena k proměnné`page`.
+ Přidejte do dokumentu novou stránku pomocí`Add` metoda`Pages` sbírka. V poskytnutém kódu je nová stránka přiřazena k proměnné`page`.
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
@@ -68,14 +68,14 @@ page.Paragraphs.Add(canvas);
 ```
 
 ## Krok 9: Nastavte pozici pro objekt Graph
- Nastavte`IsChangePosition` majetek z`Graph` namítat proti`false` aby nedošlo ke změně polohy.
+ Nastavte`IsChangePosition` vlastnictví`Graph` namítat proti`false` aby nedošlo ke změně polohy.
 
 ```csharp
 canvas. IsChangePosition = false;
 ```
 
 ## Krok 10: Vytvořte TextFragment s průhledností
- Vytvořte a`TextFragment` objekt a nastavte jeho obsah na požadovaný text. Nastavte`ForegroundColor` majetek z`TextState` na barvu s průhledností pomocí`Color.FromArgb` metoda.
+ Vytvořte a`TextFragment` objekt a nastavte jeho obsah na požadovaný text. Nastavte`ForegroundColor` vlastnictví`TextState` na barvu s průhledností pomocí`Color.FromArgb` metoda.
 
 ```csharp
 TextFragment text = new TextFragment("transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text transparent text ");
@@ -109,7 +109,7 @@ Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 4
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
 // Přidejte obdélník do kolekce tvarů objektu Graph
 canvas.Shapes.Add(rect);
-//Přidejte objekt grafu do kolekce odstavců objektu stránky
+// Přidejte objekt grafu do kolekce odstavců objektu stránky
 page.Paragraphs.Add(canvas);
 // Nastavte hodnotu tak, aby neměnila polohu objektu grafu
 canvas.IsChangePosition = false;
@@ -163,7 +163,7 @@ using Aspose.Pdf.Drawing;
 
 #### Otázka: Jak vytvořím obdélník s průhledností?
 
-Odpověď: V kroku 7 vytvoříte obdélník se specifickými rozměry a nastavíte jeho barvu výplně na průhlednou pomocí`Color.FromRgb` metoda.
+ Odpověď: V kroku 7 vytvoříte obdélník se specifickými rozměry a nastavíte jeho barvu výplně na průhlednou pomocí`Color.FromRgb` metoda.
 
 #### Otázka: Jak přidám objekt Graph na stránku?
 
@@ -171,11 +171,11 @@ Odpověď: V kroku 7 vytvoříte obdélník se specifickými rozměry a nastaví
 
 #### Otázka: Jak nastavím pozici pro objekt Graph?
 
- A: V kroku 9 nastavíte`IsChangePosition` majetek z`Graph` namítat proti`false` aby nedošlo ke změně polohy.
+ A: V kroku 9 nastavíte`IsChangePosition` vlastnictví`Graph` namítat proti`false` aby nedošlo ke změně polohy.
 
 #### Otázka: Jak vytvořím TextFragment s průhledností?
 
- Odpověď: V kroku 10 vytvoříte a`TextFragment` objekt a nastavit jeho obsah a`ForegroundColor` vlastnost k dosažení průhledného textu.
+Odpověď: V kroku 10 vytvoříte a`TextFragment` objekt a nastavit jeho obsah a`ForegroundColor` vlastnost k dosažení průhledného textu.
 
 #### Otázka: Jak uložím dokument PDF?
 

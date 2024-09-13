@@ -20,7 +20,7 @@ Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
 2. Dodaj odwołanie do biblioteki Aspose.PDF dla platformy .NET.
 
 ## Krok 2: Importuj wymagane przestrzenie nazw
-pliku kodu, w którym chcesz osadzić standardowe czcionki Type 1, dodaj następującą dyrektywę using na początku pliku:
+W pliku kodu, w którym chcesz osadzić standardowe czcionki Type 1, dodaj następującą dyrektywę using na początku pliku:
 
 ```csharp
 using Aspose.Pdf;
@@ -30,7 +30,7 @@ using Aspose.Pdf;
  W kodzie znajdź linię, która mówi`string dataDir = "YOUR DOCUMENT DIRECTORY";` i zastąpić`"YOUR DOCUMENT DIRECTORY"` ze ścieżką do katalogu, w którym przechowywane są Twoje dokumenty.
 
 ## Krok 4: Załaduj istniejący dokument PDF
- Załaduj istniejący dokument PDF za pomocą`Document` konstruktora i przekazując ścieżkę do pliku wejściowego PDF.
+ Załaduj istniejący dokument PDF za pomocą`Document`konstruktora i przekazując ścieżkę do pliku wejściowego PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
@@ -129,7 +129,7 @@ using Aspose.Pdf;
 
 #### P: Jak zapisać zaktualizowany dokument PDF?
 
- A: W kroku 7 użyjesz`Save` metoda`Document`obiekt umożliwiający zapisanie zaktualizowanego dokumentu PDF, określając ścieżkę do pliku wyjściowego.
+ A: W kroku 7 użyjesz`Save` metoda`Document` obiekt umożliwiający zapisanie zaktualizowanego dokumentu PDF, określając ścieżkę do pliku wyjściowego.
 
 #### P: Jakie znaczenie ma osadzanie czcionek w dokumencie PDF?
 
@@ -137,4 +137,4 @@ A: Osadzanie czcionek zapewnia, że czcionki używane w pliku PDF są zawarte w 
 
 #### P: Jakie są najważniejsze wnioski z tego samouczka?
 
-A: Postępując zgodnie z tym samouczkiem, uzyskałeś wiedzę i umiejętności, aby osadzać standardowe czcionki Type 1 w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Zapewnia to prawidłowe renderowanie tekstu w różnych systemach.
+A: Postępując zgodnie z tym samouczkiem, uzyskałeś wiedzę i umiejętności, aby osadzić standardowe czcionki Type 1 w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Zapewnia to prawidłowe renderowanie tekstu w różnych systemach.

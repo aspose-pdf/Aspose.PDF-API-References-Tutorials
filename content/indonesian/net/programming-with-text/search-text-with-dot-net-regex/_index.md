@@ -88,7 +88,7 @@ page.Accept(textFragmentAbsorber);
 
 ## Langkah 9: Ambil fragmen teks yang diekstraksi
 
-Dapatkan fragmen teks yang diekstraksi menggunakan`TextFragments` milik`TextFragmentAbsorber` obyek:
+ Dapatkan fragmen teks yang diekstraksi menggunakan`TextFragments` milik`TextFragmentAbsorber` obyek:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

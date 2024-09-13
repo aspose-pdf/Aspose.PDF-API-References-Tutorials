@@ -42,7 +42,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 ```
 
 ## Bước 5: Tìm văn bản để sửa đổi
- Sử dụng`TextFragmentAbsorber` để tìm văn bản mong muốn trong tài liệu. Trong mã được cung cấp, nó sẽ tìm kiếm văn bản "Lorem ipsum".
+Sử dụng`TextFragmentAbsorber` để tìm văn bản mong muốn trong tài liệu. Trong mã được cung cấp, nó sẽ tìm kiếm văn bản "Lorem ipsum".
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -129,7 +129,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 
 #### H: Làm thế nào để tìm và sửa đổi văn bản cụ thể trong tài liệu PDF?
 
- A: Ở Bước 5, bạn sẽ sử dụng`TextFragmentAbsorber`để tìm văn bản mong muốn trong tài liệu. Sau đó, bạn có thể sửa đổi các thuộc tính của nó:
+ A: Ở Bước 5, bạn sẽ sử dụng`TextFragmentAbsorber` để tìm văn bản mong muốn trong tài liệu. Sau đó, bạn có thể sửa đổi các thuộc tính của nó:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -150,7 +150,7 @@ textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 
 #### H: Tôi có thể áp dụng định dạng văn bản bổ sung cho văn bản đã sửa đổi không?
 
- A: Có, ở Bước 7, bạn có thể áp dụng định dạng văn bản bổ sung như gạch chân bằng cách sửa đổi các thuộc tính của`TextState` sự vật:
+A: Có, ở Bước 7, bạn có thể áp dụng định dạng văn bản bổ sung như gạch chân bằng cách sửa đổi các thuộc tính của`TextState` sự vật:
 
 ```csharp
 textFragment.TextState.Underline = true;

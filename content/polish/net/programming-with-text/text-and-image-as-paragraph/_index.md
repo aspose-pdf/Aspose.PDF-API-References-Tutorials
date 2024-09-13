@@ -154,7 +154,7 @@ A: Na początek utwórz nowy projekt C# w preferowanym zintegrowanym środowisku
 
 #### P: Czy mogę użyć tego samouczka, aby dodać wiele akapitów tekstowych i graficznych do pliku PDF?
 
-A: Tak, możesz użyć dostarczonych przykładów kodu, aby dodać wiele wystąpień akapitów tekstowych i graficznych w tym samym dokumencie PDF. Ten samouczek pokazuje, jak tworzyć akapity inline, ułatwiając dołączanie różnych kombinacji tekstu i obrazów.
+A: Tak, możesz użyć dostarczonych przykładów kodu, aby dodać wiele wystąpień akapitów tekstowych i graficznych w tym samym dokumencie PDF. Ten samouczek pokazuje, jak tworzyć akapity inline, ułatwiając dodawanie różnych kombinacji tekstu i obrazów.
 
 #### P: Jak mogę określić zawartość i wygląd akapitów tekstowych i obrazów?
 
@@ -162,8 +162,8 @@ A: Tak, możesz użyć dostarczonych przykładów kodu, aby dodać wiele wystąp
 
 #### P: Czy mogę zmienić układ akapitów w tekście?
 
- A: Tak, możesz dostosować układ akapitów inline, kontrolując ich położenie, wymiary i kolejność na stronie. Samouczek pokazuje, jak ustawić atrybuty inline, takie jak`IsInLineParagraph`, aby kontrolować układ akapitów tekstu i obrazów.
+ A: Tak, możesz dostosować układ akapitów inline, kontrolując ich położenie, wymiary i kolejność na stronie. Samouczek pokazuje, jak ustawić atrybuty inline, takie jak`IsInLineParagraph`, aby kontrolować układ akapitów tekstowych i graficznych.
 
 #### P: Jak zapisać zmodyfikowany dokument PDF?
 
- A: Aby zapisać zmodyfikowany dokument PDF, możesz użyć`Save` metoda`Document` obiekt. Samouczek zawiera przykłady kodu, które pokazują, jak zapisać wynikowy dokument PDF.
+ A: Aby zapisać zmodyfikowany dokument PDF, możesz użyć`Save` metoda`Document` obiekt. W tym samouczku przedstawiono przykłady kodu, które pokazują, jak zapisać wynikowy dokument PDF.

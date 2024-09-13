@@ -35,7 +35,7 @@ taggedContent.SetLanguage("fr-FR");
 इस चरण में हम अपने दस्तावेज़ के लिए मूल संरचना तत्व प्राप्त करेंगे।
 
 ```csharp
-//मूल संरचना तत्व प्राप्त करें
+// मूल संरचना तत्व प्राप्त करें
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

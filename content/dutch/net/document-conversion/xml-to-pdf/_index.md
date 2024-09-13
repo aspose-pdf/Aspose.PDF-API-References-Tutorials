@@ -31,7 +31,7 @@ using Aspose.Pdf;
 using Aspose.Pdf.Text;
 ```
 
-Deze imports brengen de kernfunctionaliteiten van de Aspose.PDF-bibliotheek binnen, waardoor we moeiteloos PDF-bestanden kunnen maken en bewerken.
+Deze imports brengen de kernfunctionaliteiten van de Aspose.PDF-bibliotheek met zich mee, waardoor we moeiteloos PDF-bestanden kunnen maken en bewerken.
 
 ## Stap 1: De documentenmap instellen
 

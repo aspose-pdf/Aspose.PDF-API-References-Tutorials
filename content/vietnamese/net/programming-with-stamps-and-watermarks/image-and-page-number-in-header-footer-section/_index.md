@@ -2,177 +2,158 @@
 title: Hình ảnh và số trang trong phần Header Footer
 linktitle: Hình ảnh và số trang trong phần Header Footer
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Tìm hiểu cách thêm hình ảnh và số trang vào đầu trang và chân trang của tài liệu PDF bằng Aspose.
+description: Tìm hiểu cách thêm hình ảnh và số trang vào đầu trang và chân trang của tệp PDF bằng Aspose.PDF cho .NET trong hướng dẫn từng bước này.
 type: docs
 weight: 110
 url: /vi/net/programming-with-stamps-and-watermarks/image-and-page-number-in-header-footer-section/
 ---
-Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn từng bước về cách thêm hình ảnh và số trang vào phần đầu trang và chân trang của tài liệu PDF bằng Aspose.PDF cho .NET. Chúng tôi sẽ chỉ cho bạn cách sử dụng mã nguồn C# được cung cấp để tạo trang, đặt đầu trang và chân trang, thêm hình ảnh vào đầu trang và văn bản có số trang vào chân trang tài liệu PDF.
+## Giới thiệu
 
-## Bước 1: Thiết lập môi trường
+Khi nói đến việc tạo tài liệu PDF chuyên nghiệp, việc kiểm soát các chi tiết nhỏ như tiêu đề và chân trang là điều cần thiết. Bạn muốn tài liệu của mình trông bóng bẩy và được sắp xếp hợp lý, phải không? Vâng, với Aspose.PDF cho .NET, bạn có thể thêm hình ảnh và số trang một cách liền mạch vào phần tiêu đề và chân trang của tài liệu. Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn từng bước, giúp bạn dễ dàng thực hiện theo.
 
-Trước khi bắt đầu, hãy đảm bảo bạn có những điều sau:
+## Điều kiện tiên quyết
 
-- Môi trường phát triển .NET đã được cài đặt.
-- Thư viện Aspose.PDF dành cho .NET đã được tải xuống và tham chiếu trong dự án của bạn.
+Trước khi đi sâu vào hướng dẫn này, hãy đảm bảo bạn đã sắp xếp các mục sau:
 
-## Bước 2: Tạo Tài liệu PDF và Trang
+1. .NET Framework: Bạn cần cài đặt bất kỳ phiên bản .NET framework nào trên máy tính của mình. Nếu bạn không có, bạn có thể dễ dàng tải xuống từ trang web của Microsoft.
+2.  Aspose.PDF cho .NET: Vì chúng ta sẽ sử dụng Aspose.PDF, hãy đảm bảo bạn đã cài đặt nó trong dự án của mình. Bạn có thể tải xuống phiên bản dùng thử[đây](https://releases.aspose.com/pdf/net/).
+3. Kiến thức cơ bản về C#: Sự quen thuộc với lập trình C# cơ bản chắc chắn sẽ giúp bạn hiểu được mã mà không gặp nhiều khó khăn.
+4. Tệp hình ảnh: Bạn sẽ cần một hình ảnh mà bạn muốn đặt vào tiêu đề của tài liệu PDF, chẳng hạn như logo. Lưu nó trong một thư mục có thể truy cập được. 
+5. IDE: Sử dụng Môi trường phát triển tích hợp (IDE) theo lựa chọn của bạn, như Visual Studio, để làm việc với dự án .NET của bạn.
 
-Bước đầu tiên là tạo một đối tượng Document mới và một trang trong tài liệu PDF. Thực hiện như sau:
+Khi đã chuẩn bị đủ các điều kiện tiên quyết, bạn sẽ có thể tạo một tệp PDF tuyệt đẹp!
+
+## Nhập gói
+
+Để bắt đầu sử dụng Aspose.PDF cho .NET, bạn cần nhập các không gian tên cần thiết. Ở đầu tệp C# của bạn, bạn sẽ thêm:
 
 ```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// Tạo một đối tượng Tài liệu mới
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-
-// Tạo một trang trong tài liệu
-Aspose.Pdf.Page page = doc.Pages.Add();
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using Aspose.Pdf.Image;
 ```
 
-Đoạn mã trên tạo ra một đối tượng Tài liệu mới và một trang trống trong tài liệu PDF.
+Các không gian tên này sẽ cung cấp cho bạn quyền truy cập vào các lớp cần thiết để thao tác với các tệp PDF.
 
-## Bước 3: Thêm tiêu đề bằng hình ảnh
+Bây giờ chúng ta hãy bắt tay vào thực hiện! Thực hiện theo các bước sau để tạo tài liệu PDF, chèn hình ảnh vào tiêu đề và số trang vào chân trang.
 
-Bây giờ trang đã được tạo, chúng ta có thể thêm phần tiêu đề có hình ảnh. Thực hiện như sau:
+## Bước 1: Thiết lập thư mục tài liệu của bạn
 
-```csharp
-// Tạo phần tiêu đề
-Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
-
-// Đặt tiêu đề trang
-page. Header = header;
-
-// Tạo một đối tượng hình ảnh
-Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
-
-// Đặt đường dẫn hình ảnh
-image1.File = dataDir + "aspose-logo.jpg";
-
-// Thêm hình ảnh vào tiêu đề trang của tài liệu PDF
-header.Paragraphs.Add(image1);
-```
-
-Đoạn mã trên tạo ra một phần tiêu đề, đặt tiêu đề trang bằng phần này và thêm hình ảnh vào tiêu đề.
-
-## Bước 4: Thêm chân trang với số trang
-
-Bây giờ tiêu đề đã được thêm vào, chúng ta có thể thêm phần chân trang có số trang. Thực hiện như sau:
+Mọi dự án tốt đều bắt đầu bằng việc tổ chức. Xác định thư mục tài liệu nơi bạn sẽ lưu các tệp và nơi lưu trữ hình ảnh của bạn. Sau đây là cách thực hiện:
 
 ```csharp
-// Tạo phần chân trang
-Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
-
-// Xác định chân trang của tài liệu PDF
-page. Footer = footer;
-
-// Tạo một đối tượng TextFragment
-Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P)");
-
-// Thêm văn bản có số trang vào chân trang của tài liệu PDF
-footer.Paragraphs.Add(txt);
-```
-
-Đoạn mã trên tạo một phần chân trang, đặt phần chân trang của trang bằng phần này và thêm một TextFragment chứa văn bản "Trang: ($p của $P)"
-
-  hiển thị số trang.
-
-## Bước 5: Lưu tài liệu PDF đã sửa đổi
-
-Sau khi thêm phần đầu trang và phần chân trang, chúng ta có thể lưu tài liệu PDF đã sửa đổi. Thực hiện như sau:
-
-```csharp
-// Lưu tài liệu PDF đã sửa đổi
-doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
-```
-
-Đoạn mã trên sẽ lưu tài liệu PDF đã chỉnh sửa vào thư mục đã chỉ định.
-
-### Mã nguồn mẫu cho Hình ảnh và Số trang trong phần Đầu trang/Chân trang sử dụng Aspose.PDF cho .NET 
-```csharp
-
-// Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-
-// Tạo một trang trong đối tượng tài liệu
-Aspose.Pdf.Page page = doc.Pages.Add();
-
-// Tạo phần Tiêu đề của tài liệu
-Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
-
-// Đặt tiêu đề cho tệp PDF
-page.Header = header;
-
-// Tạo một đối tượng hình ảnh trong trang
-Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
-
-// Thiết lập đường dẫn của tập tin hình ảnh
-image1.File = dataDir + "aspose-logo.jpg";
-
-// Thêm hình ảnh vào trang Header của file Pdf
-header.Paragraphs.Add(image1);
-
-//Tạo Phần Chân trang của tài liệu
-Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
-
-// Đặt chân trang của tệp PDF
-page.Footer = footer;
-
-// Tạo một đối tượng Văn bản
-Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P ) ");
-
-// Thêm văn bản vào phần Tiêu đề của tệp Pdf
-footer.Paragraphs.Add(txt);
-
-// Lưu tệp PDF
-doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
-
 ```
+
+ Nhớ thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế mà bạn muốn lưu tệp PDF và nơi lưu trữ hình ảnh của bạn.
+
+## Bước 2: Tạo một tài liệu PDF mới
+
+Tiếp theo, chúng ta sẽ tạo một tài liệu PDF mới, nơi mọi điều kỳ diệu sẽ diễn ra:
+
+```csharp
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+```
+
+Lúc này, bạn đã tạo được một tài liệu PDF trống. Thật thú vị phải không?
+
+## Bước 3: Thêm Trang vào Tài liệu
+
+PDF là tất cả về các trang. Hãy thêm một trang mới vào tài liệu của chúng ta bằng cách sử dụng:
+
+```csharp
+Aspose.Pdf.Page page = doc.Pages.Add();
+```
+
+Bây giờ bạn đã có một khung vẽ để bắt đầu thiết kế!
+
+## Bước 4: Tạo phần Tiêu đề
+
+Tiêu đề của bạn sẽ chứa hình ảnh (như logo) mà bạn muốn hiển thị. Tạo phần tiêu đề bằng mã sau:
+
+```csharp
+Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
+page.Header = header;
+```
+
+Bây giờ bạn đã có tiêu đề có thể tùy chỉnh!
+
+## Bước 5: Thêm hình ảnh vào tiêu đề
+
+Bây giờ chúng ta đến phần thú vị! Bạn cần thêm hình ảnh vào tiêu đề của mình. Đầu tiên, tạo một đối tượng hình ảnh:
+
+```csharp
+Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
+```
+
+Đặt đường dẫn tệp hình ảnh của bạn:
+
+```csharp
+image1.File = dataDir + "aspose-logo.jpg";
+```
+
+Cuối cùng, thêm hình ảnh vào tiêu đề của bạn:
+
+```csharp
+header.Paragraphs.Add(image1);
+```
+
+Xin chúc mừng! Bạn vừa thêm hình ảnh vào tiêu đề PDF của mình.
+
+## Bước 6: Tạo phần chân trang
+
+Bây giờ chúng ta hãy làm việc trên footer. Tương tự như quy trình header, hãy tạo một đối tượng footer:
+
+```csharp
+Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
+page.Footer = footer;
+```
+
+Đây là nơi bạn sẽ đặt số trang. 
+
+## Bước 7: Thêm văn bản vào chân trang
+
+Tạo một đoạn văn bản chứa số trang:
+
+```csharp
+Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P ) ");
+```
+
+Sau đó thêm đoạn văn bản này vào chân trang:
+
+```csharp
+footer.Paragraphs.Add(txt);
+```
+
+Bạn thấy đấy, việc này dễ dàng thế nào? Bạn đã thiết lập số trang một cách linh hoạt!
+
+## Bước 8: Lưu tài liệu PDF
+
+Bước cuối cùng trong cuộc phiêu lưu của chúng ta là lưu tài liệu. Sử dụng lệnh này để lưu PDF mới tạo của bạn:
+
+```csharp
+doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
+```
+
+Và chỉ cần thế thôi, tệp PDF của bạn đã sẵn sàng và được tải kèm hình ảnh tiêu đề và số trang ở chân trang!
 
 ## Phần kết luận
 
-Xin chúc mừng! Bạn đã học được cách thêm hình ảnh và số trang vào phần đầu trang và chân trang của tài liệu PDF bằng Aspose.PDF cho .NET. Bây giờ bạn có thể sử dụng phương pháp này để tùy chỉnh phần đầu trang và chân trang trong tài liệu PDF của mình.
+Và bạn đã có nó! Bạn vừa tạo một tệp PDF có hình ảnh ở tiêu đề và số trang động ở chân trang bằng Aspose.PDF cho .NET. Thật đáng kinh ngạc khi chỉ một vài dòng mã có thể tạo ra một đầu ra được trau chuốt như vậy. Cho dù đó là báo cáo của công ty hay tài liệu cá nhân, việc thêm các thành phần này sẽ thay đổi tông màu và tính chuyên nghiệp của tệp PDF của bạn.
 
-### Câu hỏi thường gặp
+## Câu hỏi thường gặp
 
-#### H: Mục đích của việc thêm hình ảnh và số trang vào phần đầu trang và chân trang của tài liệu PDF là gì?
+### Tôi có thể sử dụng Aspose.PDF trên bất kỳ nền tảng .NET nào không?
+Có, Aspose.PDF cho .NET hỗ trợ nhiều nền tảng .NET bao gồm .NET Framework, .NET Core, v.v.
 
-A: Thêm hình ảnh và số trang vào phần đầu trang và chân trang của tài liệu PDF có thể tăng cường sức hấp dẫn trực quan, thương hiệu và các yếu tố điều hướng. Hình ảnh có thể đại diện cho logo, hình mờ hoặc bất kỳ yếu tố đồ họa nào, trong khi số trang giúp người dùng theo dõi tiến trình của họ và xác định vị trí các trang cụ thể.
+### Có bản dùng thử miễn phí Aspose.PDF không?
+ Chắc chắn rồi! Bạn có thể tải xuống phiên bản dùng thử miễn phí[đây](https://releases.aspose.com/).
 
-#### H: Mã nguồn C# được cung cấp giúp thêm hình ảnh và số trang vào đầu trang và chân trang của tài liệu PDF như thế nào?
+### Định dạng hình ảnh nào được hỗ trợ cho tiêu đề?
+Aspose.PDF hỗ trợ hầu hết các định dạng hình ảnh phổ biến như JPG, PNG và BMP cho phần đầu trang và chân trang.
 
-A: Mã được cung cấp minh họa cách tạo tài liệu PDF, thêm trang và sau đó tùy chỉnh phần đầu trang và chân trang. Mã này cho biết cách thêm hình ảnh vào đầu trang và đoạn văn bản có đánh số trang vào chân trang.
+### Tôi có thể tùy chỉnh định dạng số trang không?
+Có, bạn có thể dễ dàng tùy chỉnh văn bản và định dạng chân trang theo nhu cầu của mình.
 
-#### H: Tôi có thể sử dụng bất kỳ định dạng hình ảnh nào cho phần đầu trang không và làm thế nào để chỉ định đường dẫn của nó?
-
- A: Có, bạn có thể sử dụng nhiều định dạng hình ảnh khác nhau (như JPEG, PNG, GIF, v.v.) cho hình ảnh tiêu đề. Đường dẫn của hình ảnh được chỉ định bằng cách sử dụng`File` tài sản của`Aspose.Pdf.Image` sự vật.
-
-#### H: Làm thế nào để tùy chỉnh giao diện và vị trí của hình ảnh trong phần tiêu đề?
-
- A: Bạn có thể tùy chỉnh giao diện và vị trí của hình ảnh bằng cách điều chỉnh các thuộc tính của`Aspose.Pdf.Image` đối tượng trước khi thêm nó vào phần tiêu đề. Ví dụ, bạn có thể thiết lập kích thước, căn chỉnh, xoay, độ mờ, v.v. của hình ảnh.
-
-####  Q: Mục đích của việc này là gì?`TextFragment` object used for the footer?
-
- A: Cái`TextFragment` Đối tượng được sử dụng để tạo và định dạng văn bản sẽ được hiển thị trong phần chân trang. Trong mã được cung cấp, nó được sử dụng để hiển thị số trang và tổng số trang.
-
-#### H: Tôi có thể sửa đổi văn bản chân trang để bao gồm thông tin bổ sung hoặc định dạng không?
-
- A: Có, bạn có thể sửa đổi văn bản chân trang bằng cách sửa đổi nội dung của`TextFragment` đối tượng. Bạn có thể thêm văn bản bổ sung, thay đổi phông chữ, màu sắc và định dạng theo yêu cầu của bạn.
-
-#### H: Tôi có thể áp dụng nội dung đầu trang và chân trang khác nhau cho các trang khác nhau của tài liệu PDF không?
-
- A: Có, bạn có thể áp dụng nội dung tiêu đề và chân trang khác nhau cho các trang khác nhau bằng cách tạo riêng`HeaderFooter` các đối tượng và gán chúng vào các trang cụ thể bằng cách sử dụng`Header` Và`Footer` tính chất của`Aspose.Pdf.Page` sự vật.
-
-#### H: Tôi có thể tùy chỉnh thêm phần đầu trang và chân trang như thế nào, chẳng hạn như thay đổi kiểu phông chữ hoặc thêm các thành phần bổ sung?
-
-A: Bạn có thể tùy chỉnh header và footer bằng cách sử dụng nhiều lớp và thuộc tính khác nhau do Aspose.PDF cung cấp cho .NET. Ví dụ, bạn có thể sử dụng các tùy chọn định dạng văn bản khác nhau, thêm nhiều đoạn văn, hình ảnh hoặc thậm chí là bảng vào phần header và footer.
-
-#### H: Tôi có thể xóa hoặc xóa phần đầu trang và chân trang nếu cần không?
-
-A: Có, bạn có thể xóa hoặc xóa phần đầu trang và chân trang bằng cách thiết lập`Header` Và`Footer` tính chất của`Aspose.Pdf.Page` phản đối`null`.
-
-#### H: Làm sao tôi có thể đảm bảo hình ảnh và số trang được thêm vào luôn nhất quán trên các thiết bị và trình xem khác nhau?
-
-A: Aspose.PDF cho .NET cung cấp chức năng tạo các tài liệu PDF chuẩn hóa và thống nhất, đảm bảo rằng hình ảnh và số trang được thêm vào sẽ xuất hiện thống nhất trên các thiết bị và trình xem PDF khác nhau.
+### Có hỗ trợ kỹ thuật không?
+ Có, Aspose cung cấp hỗ trợ chuyên dụng thông qua diễn đàn của họ. Bạn có thể liên hệ để được trợ giúp[đây](https://forum.aspose.com/c/pdf/10).

@@ -2,130 +2,140 @@
 title: Java Script'i Ayarla
 linktitle: Java Script'i Ayarla
 second_title: Aspose.PDF for .NET API Referansı
-description: PDF dosyalarındaki form alanlarına JavaScript eklemek için Aspose.PDF for .NET'in nasıl kullanılacağını öğrenin.
+description: .NET için Aspose.PDF'nin gücünü açığa çıkarın. Adım adım kılavuzumuzla form alanlarında JavaScript'i nasıl kuracağınızı öğrenin.
 type: docs
 weight: 270
 url: /tr/net/programming-with-forms/set-java-script/
 ---
-Bu kılavuzda, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesinin form alanında JavaScript'i nasıl tanımlayacağınızı adım adım açıklayacağız. JavaScript eylemlerini metin alanında belirli işlemleri gerçekleştirecek şekilde nasıl yapılandıracağınızı göstereceğiz.
+## giriiş
+
+Dinamik ve etkileşimli PDF'ler oluşturmak, özellikle bir belge içinde formlar ve alanlar entegre edildiğinde kullanıcı deneyimini önemli ölçüde iyileştirebilir. Bunu mümkün kılan güçlü bir kütüphane .NET için Aspose.PDF'dir. Bu makalede, Aspose.PDF kullanarak form alanları için JavaScript'i ayarlamaya derinlemesine dalacağız ve PDF'lerinizin yalnızca iyi görünmesini değil, aynı zamanda güzel bir şekilde çalışmasını sağlayacağız.
 
 ## Ön koşullar
 
-Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
+Kodlamaya başlamadan önce, sorunsuz bir şekilde takip edebilmeniz için ihtiyacınız olan her şeye sahip olduğunuzdan emin olalım:
 
-- Sisteminizde yüklü bir .NET geliştirme ortamı.
-- .NET için Aspose.PDF kütüphanesi. Bunu Aspose resmi web sitesinden indirebilirsiniz.
+- Visual Studio (veya herhangi bir .NET IDE): Yüklediğinizden ve doğru şekilde ayarladığınızdan emin olun.
+  
+-  Aspose.PDF Kütüphanesi: Bu kütüphanenin en son sürümünü isteyeceksiniz. İndirebilirsiniz[Burada](https://releases.aspose.com/pdf/net/).
 
-## Adım 1: Belge dizinini yapılandırma
+- Temel C# Bilgisi: C# programlamaya aşinalık, kod parçacıklarını daha iyi anlamanıza yardımcı olacaktır.
 
- İlk adım, üzerinde çalışmak istediğiniz PDF dosyasının bulunduğu belge dizinini yapılandırmaktır.`dataDir` dizin yolunu belirtmek için kullanılan değişken.
+-  PDF Dosyaları: Test için hazır bir PDF dosyanız olmalı. Örneğimizde, şu adlı bir dosya kullanacağız:`SetJavaScript.pdf`.
+
+- Belge Dizininiz: Belge dosyalarınızın nerede saklandığını bilin. Bu yola kodumuzda referans vereceğiz.
+
+Bu ön koşullar hazır olduğunda, hangi araçları kullanacağız? Aspose.PDF'in neler yapabileceğini inceleyelim.
+
+## Paketleri İçe Aktar
+
+Başlamak için, C# projenize gerekli ad alanlarını eklemeniz gerekir. Ana C# dosyanızı açın ve aşağıdaki içe aktarma ifadelerini ekleyin:
 
 ```csharp
-// Belgeler dizinine giden yol.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using System.IO;
+using Aspose.Pdf.Forms;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf;
 ```
 
- Değiştirdiğinizden emin olun`"YOUR DOCUMENTS DIRECTORY"` Belgelerinizin bulunduğu dizinin gerçek yolunu belirtin.
+Bu ad alanları, Aspose.PDF kitaplığındaki PDF ve formla ilgili işlevlere erişim sağlar.
 
-## Adım 2: Girdi PDF dosyasını yükleme
+PDF'nizi etkileşimli hale getirmeye hazır mısınız? Kodlama şapkanızı alın ve bunu adım adım inceleyelim!
 
- Bu adımda, giriş PDF dosyasını kullanarak yükleyeceğiz`Document` Aspose.PDF sınıfı.
+## Adım 1: Belge Yolunu Tanımlayın
 
-```csharp
-// Giriş PDF dosyasını yükle
-Document doc = new Document(dataDir + "SetJavaScript.pdf");
-```
-
-Giriş PDF dosyasının belirtilen belgeler dizininde mevcut olduğundan emin olun.
-
-## Adım 3: TextBox alanına erişim
-
- Belirli bir metin alanına JavaScript uygulamak için, önce o alana erişmemiz gerekir. Bu örnekte, metin alanının "textbox1" olarak adlandırıldığını varsayıyoruz. Şunu kullanın:`doc.Form["textbox1"]` karşılık geleni elde etmek için yöntem`TextBoxField` nesne.
+Öncelikle PDF dosyamızın konumunu belirtmemiz gerekiyor. Bu, takip eden her şey için ortamı hazırlar. İşte bunu nasıl yapacağınız:
 
 ```csharp
-TextBoxField field = (TextBoxField)doc.Form["textbox1"];
-```
-
-Belirtilen metin alanının giriş PDF dosyasında mevcut olduğundan emin olun.
-
-## Adım 4: JavaScript eylemlerini yapılandırın
-
- Artık metin alanına eriştiğimize göre, bu alanla ilişkili JavaScript eylemlerini yapılandırabiliriz. Bu örnekte, iki eylem kullanacağız:`OnModifyCharacter` Ve`OnFormat` Bu eylemler kullanılarak tanımlanacaktır`JavascriptAction` nesneler.
-
-```csharp
-field.Actions.OnModifyCharacter = new JavascriptAction("AFNumber_Keystroke(2, 1, 1, 0, \"\", true)");
-field.Actions.OnFormat = new JavascriptAction("AFNumber_Format(2, 1, 1, 0, \"\", true)");
-```
-
-JavaScript eylemlerini ihtiyaçlarınıza göre özelleştirdiğinizden emin olun.
-
-## Adım 5: Başlangıç alan değerini ayarlama
-
-Elde edilen PDF'i kaydetmeden önce, metin alanı için bir başlangıç değeri ayarlayabiliriz. Bu örnekte, alan için "123" değerini ayarlayacağız.
-
-```csharp
-field.Value = "123";
-```
-
-Bu değeri ihtiyaçlarınıza göre özelleştirin.
-
-## Adım 6: Ortaya Çıkan PDF'yi Kaydetme
-
- Artık metin alanını ve JavaScript eylemlerini ayarlamayı tamamladığımıza göre, ortaya çıkan PDF'yi şu şekilde kaydedebiliriz:`Save` yöntemi`Document` sınıf.
-
-```csharp
-dataDir = dataDir + "Restricted_out.pdf";
-// Sonuç PDF'ini kaydet
-doc.Save(dataDir);
-```
-
-Elde edilen PDF için tam yolu ve dosya adını belirttiğinizden emin olun.
-
-
-### .NET için Aspose.PDF kullanarak Set Java Script için örnek kaynak kodu 
-```csharp
-// Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Giriş PDF dosyasını yükle
+```
+
+ Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` PDF dosyanızın bulunduğu gerçek yol ile. Bunu bir hazine haritası için koordinatları ayarlamak olarak düşünün—'X'in yeri işaretlediği yeri bilmeniz gerekir!
+
+## Adım 2: PDF Belgesini Yükleyin
+
+Dizini tanımladıktan sonra PDF dosyamızı yükleyeceğiz. 
+
+```csharp
 Document doc = new Document(dataDir + "SetJavaScript.pdf");
+```
+
+Bu satır belirttiğiniz PDF dosyasını açar ve düzenlemeye hazırlar. 
+
+## Adım 3: Form Alanına Erişim
+
+Daha sonra JavaScript'imizi uygulayacağımız form alanına erişmek istiyoruz. 
+
+```csharp
 TextBoxField field = (TextBoxField)doc.Form["textbox1"];
-// Noktadan sonra 2 rakam
-// Ayırıcı yok
-// Neg stili = eksi
-// Para birimi yok
+```
+
+ Burada, PDF'nizde adında bir metin kutusu olduğunu varsayıyoruz`textbox1`Eğer bu isimde bir alanınız yoksa, ya adını değiştirebilir ya da kodu buna göre ayarlayabilirsiniz. 
+
+## Adım 4: JavaScript Eylemlerini Ayarlayın
+
+Şimdi, metin kutumuza biraz işlevsellik ekleyelim! Belirli olaylarda tetiklenecek JavaScript eylemleri ayarlayacağız. 
+
+```csharp
 field.Actions.OnModifyCharacter = new JavascriptAction("AFNumber_Keystroke(2, 1, 1, 0, \"\", true)");
 field.Actions.OnFormat = new JavascriptAction("AFNumber_Format(2, 1, 1, 0, \"\", true)");
-// Başlangıç alanı değerini ayarlayın
+```
+
+İşte olanlar:
+- OnModifyCharacter: Bu JavaScript işlevi, bir karakter değiştirildiğinde alanın nasıl davranması gerektiğini belirtir. Bu durumda, ayırıcı olmadan sayıdan sonra iki ondalık noktaya izin verir.
+- OnFormat: Kullanıcı sayıyı biçimlendirdiğinde aynı kurala uyulmasını sağlar.
+
+Bu eylemleri ayarlayarak, aslında metin kutumuza bir kişilik kazandırıyoruz; ona bir dans hareketi öğretiyoruz!
+
+## Adım 5: Alan Değerini Başlatın
+
+Şimdi metin kutumuza bir başlangıç değeri atayarak bir başlangıç noktası verelim. 
+
+```csharp
 field.Value = "123";
+```
+
+Bu satır, metin kutusunda önceden doldurulmuş değeri "123" olarak ayarlar. Bu, bir performans için sahneyi hazırlamak gibidir.
+
+## Adım 6: Değiştirilen PDF'yi Kaydedin
+
+Son olarak tüm bu değişiklikleri yaptıktan sonra belgemizi kaydetmemiz gerekiyor.
+
+```csharp
 dataDir = dataDir + "Restricted_out.pdf";
-// Sonuç PDF'ini kaydet
 doc.Save(dataDir);
+```
+
+ Bu, orijinal dosyayı değişikliklerinizle günceller ve kaydeder`Restricted_out.pdf`Bunu PDF'imizin kaderini mühürlemek olarak düşünün; bir kez kaydedildiğinde, dünyaya açılmaya hazırdır!
+
+## Adım 7: Başarıyı Onaylayın
+
+Son olarak her şeyin yolunda gidip gitmediğini kontrol edelim. 
+
+```csharp
 Console.WriteLine("\nJavaScript on form field setup successfully.\nFile saved at " + dataDir);
 ```
 
+Bu mesajı çalıştırmak, harika bir performansın ardından seyircilerden alkış almak gibi, operasyonun başarıyla tamamlandığına dair sizi rahatlatacaktır.
+
 ## Çözüm
 
-Bu kılavuzda, bir PDF belgesinin form alanına JavaScript yerleştirmek için Aspose.PDF kütüphanesini .NET için nasıl kullanacağınızı öğrendik. Belirtilen adımları izleyerek, metin alanlarında çeşitli işlemler gerçekleştirmek için JavaScript eylemlerini özelleştirebilirsiniz. PDF dosyalarını düzenleme olanaklarını genişletmek için Aspose.PDF for .NET'in özelliklerini daha fazla keşfetmekten çekinmeyin.
-
+Tebrikler! Aspose.PDF for .NET kullanarak bir PDF'deki form alanları için JavaScript'i başarıyla ayarladınız. Bu eğitim size yalnızca kullanıcı etkileşimini geliştirmek için araçlar sağlamakla kalmadı, aynı zamanda belgelerinizi bir profesyonel gibi kişiselleştirmenize de olanak tanıdı. İster faturalardaki, anketlerdeki veya diğer etkileşimli PDF'lerdeki formlarla çalışın, olasılıklar gerçekten sonsuzdur.
 
 ### SSS
 
-#### S: Aspose.PDF for .NET'i onay kutuları ve radyo düğmeleri gibi diğer form öğelerine JavaScript eklemek için kullanabilir miyim?
+### Aspose.PDF for .NET nedir?  
+Aspose.PDF, .NET uygulamaları içerisinde PDF dosyaları oluşturmak, düzenlemek ve işlemek için tasarlanmış, güçlü PDF işlevleri sağlayan bir kütüphanedir.
 
- A: Evet, Aspose.PDF for .NET, onay kutuları, radyo düğmeleri ve açılır listeler dahil olmak üzere çeşitli form öğelerine JavaScript eklemenize olanak tanır.`JavascriptAction` Farklı form elemanları için JavaScript eylemlerini tanımlayan sınıf.
+### Aspose.PDF'i kullanmak için lisansa ihtiyacım var mı?  
+ Ücretsiz deneme mevcut olsa da, sınırlama olmaksızın tam kullanım için bir lisans gereklidir. Bir lisans satın alabilirsiniz[Burada](https://purchase.aspose.com/buy).
 
-#### S: Form alanlarında JavaScript kullanarak kullanıcı girdisini doğrulamak mümkün müdür?
+### Diğer form alanlarına JavaScript ayarlayabilir miyim?  
+Kesinlikle! Aspose.PDF, onay kutuları, radyo düğmeleri ve açılır listeler gibi çeşitli form alanlarında JavaScript eylemlerine izin verir.
 
- A: Evet, form alanlarında kullanıcı girdisini doğrulamak için JavaScript kullanabilirsiniz. JavaScript eylemlerini şu şekilde tanımlayarak:`OnBlur` veya`OnKeystroke` Bir form alanı için girilen verileri doğrulayabilir ve gerekirse hata mesajları görüntüleyebilirsiniz.
+### Aspose.PDF sorunları için nasıl destek alabilirim?  
+ Desteklerine şu adreslerden ulaşabilirsiniz:[forum](https://forum.aspose.com/c/pdf/10) Herhangi bir soru veya sorun için.
 
-#### S: Aspose.PDF for .NET kullanarak karmaşık JavaScript fonksiyonlarını çalıştırabilir miyim?
-
- A: Evet, .NET için Aspose.PDF'yi kullanarak karmaşık JavaScript işlevlerini yürütebilirsiniz. Özel JavaScript işlevlerini tanımlama ve bunları`JavascriptAction`.
-
-#### S: Aspose.PDF for .NET bu eğitimde belirtilenlerin dışında JavaScript olaylarını da destekliyor mu?
-
- A: Evet, Aspose.PDF for .NET, JavaScript olaylarının geniş bir yelpazesini destekler; bunlara şunlar dahildir:`OnMouseEnter`, `OnMouseExit`, `OnMouseDown` , Ve`OnMouseUp`, diğerleri arasında. Bu olayları, kullanıcı etkileşimlerine dayalı JavaScript eylemlerini tetiklemek için kullanabilirsiniz.
-
-#### S: Mevcut PDF belgelerinden JavaScript kodunu çıkarmak için Aspose.PDF for .NET'i kullanabilir miyim?
-
- A: Aspose.PDF for .NET, mevcut PDF belgelerinden JavaScript kodunu çıkarma olanağı sağlar.`JavascriptAction` PDF formunda JavaScript eylemlerine erişmek ve bunları analiz etmek için sınıf ve diğer ilgili yöntemler.
+### Aspose.PDF'yi satın almadan test etmenin bir yolu var mı?  
+Evet! Aspose bir[ücretsiz deneme](https://releases.aspose.com/) Satın alma işlemine başlamadan önce kütüphanenin özelliklerini test etmek.

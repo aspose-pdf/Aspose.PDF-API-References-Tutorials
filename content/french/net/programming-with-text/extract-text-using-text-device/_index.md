@@ -33,7 +33,7 @@ using System.Text;
  Dans le code, recherchez la ligne qui dit`string dataDir = "YOUR DOCUMENT DIRECTORY";` et remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin vers le répertoire où sont stockés vos documents.
 
 ## Étape 4 : Ouvrir le document PDF
- Ouvrez un document PDF existant à l'aide de la`Document` constructeur et en passant le chemin vers le fichier PDF d'entrée.
+ Ouvrez un document PDF existant à l'aide de la`Document`constructeur et en passant le chemin vers le fichier PDF d'entrée.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
@@ -91,7 +91,7 @@ foreach (Page pdfPage in pdfDocument.Pages)
 		textDevice.Process(pdfPage, textStream);
 		// Convertir une page particulière et enregistrer le texte dans le flux
 		textDevice.Process(pdfDocument.Pages[1], textStream);
-		// Fermer le flux mémoire
+		// Fermer le flux de mémoire
 		textStream.Close();
 		// Récupérer du texte à partir du flux mémoire
 		extractedText = Encoding.Unicode.GetString(textStream.ToArray());

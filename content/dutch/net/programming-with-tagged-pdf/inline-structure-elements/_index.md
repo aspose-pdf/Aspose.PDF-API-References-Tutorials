@@ -307,7 +307,7 @@ A: Ja, u kunt het uiterlijk en de opmaak van inline-structuurelementen aanpassen
 
 #### V: Hoe kan ik koppen van verschillende niveaus maken en toevoegen aan een PDF-document met behulp van inline-structuurelementen in Aspose.PDF voor .NET?
 
- A: U kunt koppen van verschillende niveaus maken met behulp van de`CreateHeaderElement` methode en voeg ze vervolgens toe aan het rootstructuurelement. Vervolgens kunt u inhoud toevoegen aan elk kopelement met behulp van de`CreateSpanElement` Methode om tekststroken te creëren.
+ A: U kunt koppen van verschillende niveaus maken met behulp van de`CreateHeaderElement`methode en voeg ze vervolgens toe aan het rootstructuurelement. Vervolgens kunt u inhoud toevoegen aan elk kopelement met behulp van de`CreateSpanElement` Methode om tekststroken te creëren.
 
 #### V: Kan ik inline-structuurelementen gebruiken om lijsten, opsommingstekens of andere typen inhoudsorganisatie in een PDF-document te maken?
 

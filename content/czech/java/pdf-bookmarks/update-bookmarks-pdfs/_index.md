@@ -2,7 +2,7 @@
 title: Aktualizujte záložky v PDF
 linktitle: Aktualizujte záložky v PDF
 second_title: Aspose.PDF Java PDF Processing API
-description: Naučte se, jak efektivně aktualizovat záložky PDF pomocí Aspose.PDF for Java. Náš průvodce krok za krokem celý proces zjednodušuje.
+description: Naučte se, jak efektivně aktualizovat záložky PDF pomocí Aspose.PDF for Java. Náš průvodce krok za krokem tento proces zjednodušuje.
 type: docs
 weight: 16
 url: /cs/java/pdf-bookmarks/update-bookmarks-pdfs/

@@ -307,7 +307,7 @@ Odpověď: Ano, vzhled a formátování prvků inline struktury můžete přizp�
 
 #### Otázka: Jak vytvořím a přidám nadpisy různých úrovní do dokumentu PDF pomocí prvků vložené struktury v Aspose.PDF pro .NET?
 
- Odpověď: Můžete vytvořit nadpisy různých úrovní pomocí`CreateHeaderElement` a poté je připojit ke kořenovému prvku struktury. Následně můžete ke každému prvku nadpisu přidat obsah pomocí`CreateSpanElement` způsob vytváření rozsahů textu.
+ Odpověď: Můžete vytvořit nadpisy různých úrovní pomocí`CreateHeaderElement` poté je připojit ke kořenovému prvku struktury. Následně můžete ke každému prvku nadpisu přidat obsah pomocí`CreateSpanElement` způsob vytváření rozsahů textu.
 
 #### Otázka: Mohu použít prvky vložené struktury k vytvoření seznamů, odrážek nebo jiných typů organizace obsahu v dokumentu PDF?
 

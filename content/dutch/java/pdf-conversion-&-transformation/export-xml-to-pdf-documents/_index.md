@@ -25,7 +25,7 @@ Laten we beginnen met het opzetten van een nieuw Java-project. U kunt uw favorie
 
 ## Aspose.PDF toevoegen aan uw project
 
-Om Aspose.PDF voor Java te kunnen gebruiken, moet u de Aspose.PDF-bibliotheek aan uw project toevoegen. U kunt de bibliotheek downloaden van de website en deze als afhankelijkheid aan uw project toevoegen.
+Om Aspose.PDF voor Java te gaan gebruiken, moet u de Aspose.PDF-bibliotheek aan uw project toevoegen. U kunt de bibliotheek downloaden van de website en deze als afhankelijkheid aan uw project toevoegen.
 
 ```java
 // Aspose.PDF toevoegen als afhankelijkheid

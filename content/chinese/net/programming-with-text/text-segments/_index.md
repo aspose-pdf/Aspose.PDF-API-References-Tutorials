@@ -83,7 +83,7 @@ textFragmentAbsorber = new TextFragmentAbsorber(@"(http|ftp|https):\/\/([\w\-_]+
 
 使用创建的`TextFragmentAbsorber`对象并根据您的要求处理结果。
 
-### 使用 Aspose.PDF for .NET 的文本片段示例源代码 
+### 使用 Aspose.Pdf for .NET 的文本片段示例源代码 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber;
 //为了搜索单词的完全匹配，您可以考虑使用正则表达式。

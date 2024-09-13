@@ -2,7 +2,7 @@
 title: PDFA에서 PDF로
 linktitle: PDFA에서 PDF로
 second_title: .NET API 참조를 위한 Aspose.PDF
-description: 이 포괄적인 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF/A를 PDF로 변환하는 방법을 알아보세요.
+description: 이 포괄적인 단계별 가이드를 통해 .NET용 Aspose.PDF를 사용하여 PDF/A를 PDF로 변환하는 방법을 알아보세요.
 type: docs
 weight: 100
 url: /ko/net/document-conversion/pdfa-to-pdf/

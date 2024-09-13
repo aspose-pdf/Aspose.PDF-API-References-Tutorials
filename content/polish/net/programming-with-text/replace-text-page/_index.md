@@ -62,7 +62,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## Krok 6: Pobierz wyodrębnione fragmenty tekstu
 
-Pobierz wyodrębnione fragmenty tekstu za pomocą`TextFragments` własność`TextFragmentAbsorber` obiekt:
+ Pobierz wyodrębnione fragmenty tekstu za pomocą`TextFragments` własność`TextFragmentAbsorber` obiekt:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -165,7 +165,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 #### P: Co się stanie, jeśli szukana fraza nie zostanie znaleziona na określonej stronie?
 
- A: Jeżeli fraza wyszukiwania nie zostanie znaleziona na określonej stronie,`TextFragmentCollection` będzie pusty i nie zostaną dokonane żadne zamienniki. Upewnij się, że fraza wyszukiwania istnieje na stronie, do której kierujesz.
+A: Jeżeli fraza wyszukiwania nie zostanie znaleziona na określonej stronie,`TextFragmentCollection` będzie pusty i nie zostaną dokonane żadne zamienniki. Upewnij się, że fraza wyszukiwania istnieje na stronie, do której kierujesz.
 
 #### P: W jaki sposób mogę dostosować tekst zastępczy dla każdego fragmentu tekstu?
 

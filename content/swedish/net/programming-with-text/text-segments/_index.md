@@ -1,7 +1,7 @@
 ---
 title: Textsegment i PDF-fil
 linktitle: Textsegment i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du söker efter specifika textsegment i PDF-fil med reguljära uttryck i Aspose.PDF för .NET.
 type: docs
 weight: 540
@@ -31,7 +31,7 @@ using Aspose.Pdf.Text;
 
 ## Steg 3: Använd TextFragmentAbsorber för textsökning
 
- Skapa en`TextFragmentAbsorber` objekt för att söka efter specifika textsegment med reguljära uttryck:
+ Skapa en`TextFragmentAbsorber` objekt för att söka efter specifika textsegment med hjälp av reguljära uttryck:
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber;

@@ -66,7 +66,7 @@ for (LinkAnnotation link : linkAnnotations) {
 
 ## الأسئلة الشائعة
 
-### كيف أقوم بتثبيت Aspose.PDF لـJava؟
+### كيف أقوم بتثبيت Aspose.PDF لـ Java؟
 
  لتثبيت Aspose.PDF لـ Java، قم بتنزيل المكتبة من[هنا](https://releases.aspose.com/pdf/java/) وأضفه إلى تبعيات مشروع Java الخاص بك.
 

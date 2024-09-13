@@ -127,7 +127,7 @@ Rendition rendition = ((doc.Pages[1].Annotations[1] as ScreenAnnotation).Action 
 
 A megjelenítések azok a formátumok, amelyekben a multimédiás fájlokat tárolja. Ez segít megérteni, hogy az eredeti tartalom hogyan jelenik meg a PDF-ben.
 
-## 9. lépés: Szerezze be a médiaklipet
+## 9. lépés: Szerezze be a média klipet
 
 Most menjünk egy lépéssel tovább, és érjük el a média klipet a megjelenítésből.
 

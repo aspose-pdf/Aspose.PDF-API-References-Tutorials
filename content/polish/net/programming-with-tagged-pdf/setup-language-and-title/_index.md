@@ -155,7 +155,7 @@ A: Skonfigurowanie języka i tytułu dokumentu PDF jest ważne dla dostępności
 
 A: Treści wielojęzyczne zwiększają dostępność i globalny zasięg dokumentów PDF. Aspose.PDF dla .NET umożliwia dodawanie treści wielojęzycznych poprzez tworzenie elementów akapitu dla każdego języka, odpowiednio ustawiając właściwości tekstu i języka.
 
-####  P: Jak to działa?`SetTitle` method contribute to improving document accessibility and organization?
+#### P: Jak to działa?`SetTitle` method contribute to improving document accessibility and organization?
 
  A: Ten`SetTitle` metoda ustawia tytuł dokumentu PDF, który jest używany do identyfikacji dokumentu, wyników wyszukiwania i organizacji. Podanie jasnego i znaczącego tytułu zwiększa dostępność dokumentu i poprawia doświadczenie użytkownika.
 
@@ -177,4 +177,4 @@ A: Podczas konfigurowania języka i tytułu należy wziąć pod uwagę docelową
 
 #### P: Czy mogę zmienić język i tytuł istniejącego dokumentu PDF, korzystając z Aspose.PDF dla platformy .NET?
 
- A: Tak, możesz modyfikować język i tytuł istniejącego dokumentu PDF za pomocą Aspose.PDF dla .NET. Ładując dokument, uzyskując dostęp do jego oznaczonej zawartości i używając`SetTitle` I`SetLanguage`metod, możesz aktualizować te atrybuty według potrzeb.
+ A: Tak, możesz modyfikować język i tytuł istniejącego dokumentu PDF za pomocą Aspose.PDF dla .NET. Ładując dokument, uzyskując dostęp do jego oznaczonej zawartości i używając`SetTitle` I`SetLanguage` metod, możesz aktualizować te atrybuty według potrzeb.

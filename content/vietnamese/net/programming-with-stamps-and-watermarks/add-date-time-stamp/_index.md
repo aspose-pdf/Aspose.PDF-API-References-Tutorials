@@ -2,178 +2,185 @@
 title: Thêm Ngày Giờ Vào Tệp PDF
 linktitle: Thêm Ngày Giờ Vào Tệp PDF
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Tìm hiểu cách dễ dàng thêm dấu ngày tháng và thời gian vào tệp PDF bằng Aspose.PDF cho .NET.
+description: Tìm hiểu cách thêm dấu ngày tháng và thời gian vào tệp PDF của bạn bằng Aspose.PDF cho .NET với hướng dẫn từng bước này. Hoàn hảo để tăng cường tính xác thực của tài liệu.
 type: docs
 weight: 10
 url: /vi/net/programming-with-stamps-and-watermarks/add-date-time-stamp/
 ---
-Trong bài viết này, chúng tôi sẽ hướng dẫn bạn từng bước cách thêm dấu ngày và giờ vào tệp PDF bằng Aspose.PDF cho .NET. Chúng tôi sẽ chỉ cho bạn cách sử dụng mã nguồn C# được cung cấp để thêm dấu ngày và giờ vào tệp PDF hiện có.
+## Giới thiệu
 
-## Yêu cầu
+Khi nói đến việc quản lý tài liệu, đặc biệt là PDF, việc thêm dấu ngày và giờ có thể là một bước ngoặt. Cho dù bạn đang làm việc trên các tài liệu pháp lý, báo cáo dự án hay hóa đơn, dấu thời gian không chỉ tăng thêm tính xác thực mà còn cung cấp hồ sơ rõ ràng về thời điểm tài liệu được tạo hoặc sửa đổi. Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn quy trình thêm dấu ngày và giờ vào tệp PDF bằng thư viện Aspose.PDF cho .NET. 
 
-Trước khi bắt đầu, hãy đảm bảo bạn có những điều sau:
+Bài viết này được thiết kế đơn giản và dễ hiểu, vì vậy ngay cả khi bạn mới làm quen với lập trình hoặc thư viện Aspose.PDF, bạn vẫn có thể triển khai tính năng này một cách tự tin. Hãy cùng tìm hiểu nhé!
 
-- Môi trường phát triển .NET đã được cài đặt.
-- Thư viện Aspose.PDF dành cho .NET đã được tải xuống và tham chiếu trong dự án của bạn.
+## Điều kiện tiên quyết
 
-## Bước 1: Thiết lập môi trường
+Trước khi bắt đầu, bạn cần phải có một số điều kiện tiên quyết sau:
 
-Trước khi bạn có thể thêm ngày và dấu thời gian vào tài liệu PDF, bạn cần thiết lập môi trường phát triển của mình. Sau đây là các bước cần thực hiện:
+1. Visual Studio: Đảm bảo bạn đã cài đặt Visual Studio trên máy của mình. Đây là nơi bạn sẽ viết và thực thi mã của mình.
+2. Aspose.PDF cho .NET: Bạn cần tải xuống và cài đặt thư viện Aspose.PDF. Bạn có thể tìm thấy phiên bản mới nhất[đây](https://releases.aspose.com/pdf/net/).
+3. Kiến thức cơ bản về C#: Sự quen thuộc với lập trình C# sẽ giúp bạn hiểu các ví dụ tốt hơn, nhưng đừng lo lắng nếu bạn mới bắt đầu; chúng tôi sẽ giải thích mọi thứ theo từng bước.
+4.  Tệp PDF: Chuẩn bị một tệp PDF mẫu. Đối với ví dụ của chúng tôi, chúng tôi sẽ sử dụng tệp có tên`AddTextStamp.pdf`.
 
-1. Mở IDE (Môi trường phát triển tích hợp) yêu thích của bạn.
-2. Tạo một dự án C# mới.
-3. Hãy đảm bảo rằng bạn đã thêm tham chiếu đến thư viện Aspose.PDF cho .NET.
+Khi đã đáp ứng được những điều kiện tiên quyết này, bạn đã sẵn sàng để thêm dấu ngày tháng và thời gian vào tệp PDF của mình!
 
-## Bước 2: Thêm thư viện Aspose.PDF
+## Nhập gói
 
-Thư viện Aspose.PDF dành cho .NET là cần thiết để làm việc với các tài liệu PDF trong dự án của bạn.
+Để bắt đầu, bạn cần nhập các không gian tên cần thiết vào dự án C# của mình. Sau đây là cách thực hiện:
 
-## Bước 3: Tải tài liệu PDF
+### Tạo một dự án mới
 
-Bước đầu tiên để thêm ngày và dấu thời gian là tải tài liệu PDF hiện có vào dự án của bạn. Thực hiện như sau:
+1. Mở Visual Studio: Khởi chạy ứng dụng Visual Studio của bạn.
+2. Tạo dự án mới: Chọn “Tạo dự án mới” từ màn hình bắt đầu.
+3. Chọn Console App: Chọn “Console App (.NET Framework)” từ danh sách mẫu dự án.
+4.  Đặt tên cho dự án của bạn: Đặt tên cho dự án của bạn, ví dụ:`PDFDateTimeStamp`.
+
+### Thêm tham chiếu Aspose.PDF
+
+1. Nhấp chuột phải vào References: Trong Solution Explorer, nhấp chuột phải vào thư mục “References” của dự án của bạn.
+2. Chọn “Thêm tham chiếu”: Chọn “Thêm tham chiếu” từ menu ngữ cảnh.
+3. Duyệt tìm Aspose.PDF: Điều hướng đến vị trí bạn đã tải xuống Aspose.PDF và chọn nó. Nhấp vào “OK” để thêm nó vào dự án của bạn.
+
+### Nhập không gian tên bắt buộc
+
+ Ở đầu trang của bạn`Program.cs` tệp, bạn cần nhập các không gian tên sau:
+
+```csharp
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System;
+using Aspose.Pdf.Annotations;
+```
+
+Bây giờ chúng ta đã thiết lập xong mọi thứ, hãy chia nhỏ quy trình thêm dấu ngày tháng và thời gian vào tệp PDF thành các bước rõ ràng, dễ quản lý.
+
+## Bước 1: Thiết lập thư mục tài liệu
+
+Đầu tiên, bạn cần chỉ định thư mục chứa tệp PDF của bạn. Điều này rất quan trọng vì mã sẽ tìm kiếm tệp PDF trong thư mục này.
 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Thay thế bằng đường dẫn thực tế của bạn
+```
 
+ Hãy chắc chắn thay thế`YOUR DOCUMENT DIRECTORY` với đường dẫn thực tế đến tệp PDF của bạn.
+
+## Bước 2: Mở Tài liệu PDF
+
+Tiếp theo, bạn sẽ mở tài liệu PDF mà bạn muốn thêm dấu thời gian. 
+
+```csharp
 // Mở tài liệu
 Document pdfDocument = new Document(dataDir + "AddTextStamp.pdf");
 ```
 
-Hãy nhớ thay thế "YOUR DOCUMENTS DIRECTORY" bằng đường dẫn thực tế đến thư mục chứa tài liệu PDF của bạn.
+ Dòng mã này khởi tạo`Document` lớp và tải tệp PDF của bạn vào`pdfDocument` sự vật.
 
-## Bước 4: Tạo dấu ngày và giờ
+## Bước 3: Tạo Dấu thời gian Ngày tháng
 
-Bây giờ bạn đã tải tài liệu lên
-
-  PDF, bạn có thể tạo ngày và dấu thời gian để thêm. Sau đây là cách thực hiện:
+Bây giờ là lúc tạo ngày và dấu thời gian. Bạn sẽ định dạng nó để hiển thị theo cách cụ thể. 
 
 ```csharp
-string annotationText = string.Empty;
-annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt");
-
-// Tạo vùng đệm văn bản
-TextStamp textStamp = new TextStamp(annotationText);
+string annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt ");
 ```
 
-Đoạn mã trên tạo ra một vùng đệm văn bản mới chứa ngày và giờ hiện tại.
+ Đây,`DateTime.Now` lấy ngày và giờ hiện tại và`ToString` định dạng nó theo định dạng bạn mong muốn.
 
-## Bước 5: Cấu hình Thuộc tính tem
+## Bước 4: Tạo một con dấu văn bản
 
-Trước khi thêm dấu vào tài liệu PDF, bạn có thể cấu hình nhiều thuộc tính khác nhau của dấu, chẳng hạn như lề, căn chỉnh theo chiều ngang và chiều dọc, v.v. Thực hiện như sau:
-
-```csharp
-// Đặt thuộc tính bộ đệm
-textStamp.BottomMargin = 10;
-textStamp. RightMargin = 20;
-textStamp.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
-textStamp.VerticalAlignment = VerticalAlignment.Bottom;
-```
-
-Bạn có thể điều chỉnh các thuộc tính này tùy theo nhu cầu của mình.
-
-## Bước 6: Thêm tem vào PDF
-
-Bây giờ ngày và giờ đã sẵn sàng, bạn có thể thêm nó vào một trang cụ thể của tài liệu PDF. Thực hiện như sau:
+Khi chuỗi ngày và giờ đã sẵn sàng, giờ đây bạn có thể tạo dấu văn bản để thêm vào tệp PDF của mình.
 
 ```csharp
-// Thêm tem vào bộ sưu tập tem của trang
-pdfDocument.Pages[1].AddStamp(textStamp);
-```
-
-Mã ở trên thêm dấu vào trang đầu tiên của tài liệu PDF. Bạn có thể chỉ định trang khác nếu cần.
-
-## Bước 7: Lưu tài liệu đầu ra
-
-Sau khi thêm ngày và dấu thời gian, bạn có thể lưu tài liệu PDF đã sửa đổi. Thực hiện như sau:
-
-```csharp
-// Lưu tài liệu đầu ra
-pdfDocument.Save(dataDir);
-```
-
-Đoạn mã trên sẽ lưu tài liệu PDF đã chỉnh sửa vào thư mục đã chỉ định.
-
-### Mã nguồn mẫu để Thêm Dấu thời gian Ngày tháng bằng Aspose.PDF cho .NET 
-```csharp
-
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Mở tài liệu
-Document pdfDocument = new Document(dataDir+ "AddTextStamp.pdf");
-string annotationText = string.Empty;
-annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt ");
-
 // Tạo con dấu văn bản
 TextStamp textStamp = new TextStamp(annotationText);
+```
 
+ Dòng này tạo ra một trường hợp mới của`TextStamp` sử dụng chuỗi ngày và giờ đã định dạng.
+
+## Bước 5: Thiết lập Thuộc tính của Con dấu
+
+Bạn có thể tùy chỉnh giao diện và vị trí của tem. Sau đây là cách thiết lập thuộc tính của tem:
+
+```csharp
 // Thiết lập thuộc tính của tem
 textStamp.BottomMargin = 10;
 textStamp.RightMargin = 20;
 textStamp.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
 textStamp.VerticalAlignment = VerticalAlignment.Bottom;
+```
 
+Ở bước này, chúng ta thiết lập lề và căn chỉnh con dấu vào góc dưới bên phải của trang PDF.
+
+## Bước 6: Thêm tem vào PDF
+
+Bây giờ là lúc thêm dấu văn bản vào tài liệu PDF của bạn. 
+
+```csharp
 // Thêm tem vào bộ sưu tập tem
 pdfDocument.Pages[1].AddStamp(textStamp);
+```
+
+Dòng này thêm dấu vào trang đầu tiên của PDF. Bạn có thể thay đổi số trang nếu muốn đặt nó ở một trang khác.
+
+## Bước 7: Tạo chú thích văn bản tự do (Tùy chọn)
+
+Nếu bạn muốn thêm chú thích vào tem, bạn có thể tạo một`FreeTextAnnotation` như sau:
+
+```csharp
 DefaultAppearance default_appearance = new DefaultAppearance("Arial", 6, System.Drawing.Color.Black);
 FreeTextAnnotation textAnnotation = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(0, 0, 0, 0), default_appearance);
 textAnnotation.Name = "Stamp";
 textAnnotation.Accept(new AnnotationSelector(textAnnotation));
 textAnnotation.Contents = textStamp.Value;
+```
 
+Bước tùy chọn này sẽ tạo chú thích văn bản tự do có thể cung cấp thêm bối cảnh hoặc thông tin về tem.
+
+## Bước 8: Cấu hình Đường viền chú thích
+
+Nếu bạn muốn tùy chỉnh đường viền chú thích, bạn cũng có thể thực hiện như sau:
+
+```csharp
 Border border = new Border(textAnnotation);
 border.Width = 0;
 border.Dash = new Dash(1, 1);
 textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(0, 0, 0, 0);
 pdfDocument.Pages[1].Annotations.Add(textAnnotation);
-dataDir = dataDir + "AddDateTimeStamp_out.pdf";
-
-// Lưu tài liệu đầu ra
-pdfDocument.Save(dataDir);
-Console.WriteLine("\nDate time stamp added successfully.\nFile saved at " + dataDir);  
-          
 ```
+
+Đoạn mã này đặt độ rộng đường viền thành 0, làm cho đường viền trở nên vô hình và thêm chú thích vào PDF.
+
+## Bước 9: Lưu tài liệu PDF
+
+Cuối cùng, bạn cần lưu tài liệu PDF đã chỉnh sửa. 
+
+```csharp
+dataDir = dataDir + "AddDateTimeStamp_out.pdf"; // Chỉ định tên tệp đầu ra
+pdfDocument.Save(dataDir);
+Console.WriteLine("\nDate time stamp added successfully.\nFile saved at " + dataDir);
+```
+
+Dòng này lưu tệp PDF có dấu thời gian đã thêm vào một tệp mới. Bạn có thể kiểm tra thư mục đã chỉ định để xem đầu ra.
 
 ## Phần kết luận
 
-Xin chúc mừng! Bạn đã học được cách thêm dấu ngày và giờ bằng Aspose.PDF cho .NET. Bây giờ bạn có thể áp dụng kiến thức này vào các dự án của riêng mình để thêm dấu ngày và giờ vào tài liệu PDF.
+Xin chúc mừng! Bạn đã thêm thành công dấu ngày và giờ vào tệp PDF bằng Aspose.PDF cho .NET. Tính năng đơn giản nhưng hiệu quả này có thể cải thiện tài liệu của bạn, giúp chúng chuyên nghiệp hơn và cung cấp hồ sơ rõ ràng về thời điểm chúng được tạo hoặc sửa đổi. 
 
-### Câu hỏi thường gặp về việc thêm dấu thời gian ngày tháng vào tệp PDF
+## Câu hỏi thường gặp
 
-#### H: Mục đích của việc thêm ngày tháng và thời gian vào tài liệu PDF bằng Aspose.PDF cho .NET là gì?
+### Tôi có thể tùy chỉnh định dạng ngày tháng trong dấu thời gian không?
+ Có, bạn có thể sửa đổi`ToString`phương pháp thay đổi định dạng ngày tháng theo ý thích của bạn.
 
-A: Thêm dấu ngày tháng và thời gian vào tài liệu PDF sẽ tăng giá trị thông tin của tài liệu bằng cách chỉ ra thời điểm tài liệu được sửa đổi hoặc tạo. Tính năng này hữu ích để theo dõi các thay đổi của tài liệu và cung cấp điểm tham chiếu cho lịch sử tài liệu.
+### Aspose.PDF có miễn phí sử dụng không?
+ Aspose.PDF cung cấp bản dùng thử miễn phí, nhưng để có đầy đủ tính năng, bạn cần mua giấy phép. Bạn có thể nhận được giấy phép tạm thời[đây](https://purchase.aspose.com/temporary-license/).
 
-#### H: Tôi có thể tùy chỉnh định dạng ngày tháng và thời gian để phù hợp với các yêu cầu cụ thể không?
+### Tôi có thể thêm nhiều dấu thời gian vào một tệp PDF không?
+ Chắc chắn rồi! Bạn có thể tạo nhiều`TextStamp` trường hợp và thêm chúng vào các trang hoặc vị trí khác nhau trong PDF.
 
- A: Có, bạn có thể tùy chỉnh định dạng của ngày và dấu thời gian theo sở thích của bạn. Mã nguồn C# được cung cấp sử dụng`DateTime.Now.ToString()` phương pháp tạo dấu thời gian theo định dạng cụ thể. Bạn có thể sửa đổi mã này để định dạng dấu thời gian theo nhu cầu.
+### Nếu tôi không có Visual Studio thì sao?
+Bạn có thể sử dụng bất kỳ IDE C# hoặc trình soạn thảo văn bản nào, nhưng để chạy và gỡ lỗi dự án, chúng tôi khuyên dùng Visual Studio.
 
-#### H: Có thể thêm ngày tháng và dấu thời gian vào một vị trí cụ thể trên trang PDF không?
-
- A: Hoàn toàn có thể, bạn có thể điều chỉnh vị trí của dấu ngày và giờ trên trang PDF bằng cách sửa đổi các thuộc tính của`TextStamp` đối tượng. Mã được cung cấp trong hướng dẫn trình bày cách thiết lập các thuộc tính như lề, căn chỉnh và định vị theo chiều dọc.
-
-#### H: Tôi có thể thêm nhiều dấu ngày tháng và thời gian vào nhiều trang khác nhau của cùng một tài liệu PDF không?
-
- A: Có, bạn có thể thêm nhiều dấu ngày tháng và thời gian vào các trang khác nhau của cùng một tài liệu PDF. Chỉ cần lặp lại quy trình tạo`TextStamp` đối tượng và cấu hình các thuộc tính của nó cho mỗi trang mong muốn.
-
-#### H: Làm thế nào để thay đổi phông chữ, kích thước hoặc màu sắc của văn bản ngày tháng và thời gian?
-
- A: Để sửa đổi phông chữ, kích thước hoặc màu sắc của văn bản ngày tháng và dấu thời gian, bạn có thể tùy chỉnh các thuộc tính của`DefaultAppearance` đối tượng được sử dụng để tạo ra`TextStamp`. Điều chỉnh tên phông chữ, kích thước và giá trị màu sắc để đạt được giao diện mong muốn.
-
-#### H: Có thể thêm các loại chú thích hoặc dấu khác vào tài liệu PDF bằng Aspose.PDF cho .NET không?
-
-A: Có, Aspose.PDF for .NET cung cấp nhiều loại chú thích mà bạn có thể thêm vào tài liệu PDF, bao gồm chú thích văn bản, tem, đường kẻ, hình dạng, v.v. Bạn có thể khám phá tài liệu Aspose.PDF để biết thêm chi tiết về cách làm việc với chú thích.
-
-#### H: Có hạn chế hoặc lưu ý nào khi thêm dấu ngày tháng và thời gian vào tài liệu PDF không?
-
-A: Mặc dù việc thêm dấu ngày tháng và thời gian rất đơn giản, hãy cân nhắc các yếu tố như bố cục của tài liệu và nội dung hiện có. Đảm bảo vị trí đóng dấu không che khuất thông tin quan trọng hoặc ảnh hưởng đến khả năng đọc của tài liệu.
-
-#### H: Làm thế nào tôi có thể tích hợp phương pháp này vào các dự án của mình để thêm dấu ngày tháng và thời gian vào tài liệu PDF?
-
-A: Để tích hợp phương pháp này, hãy làm theo các bước được cung cấp và điều chỉnh mã cho phù hợp với cấu trúc dự án của bạn. Bạn có thể thêm dấu ngày và giờ vào các tài liệu PDF hiện có để tăng tính hữu ích của chúng và cung cấp mốc thời gian rõ ràng về các thay đổi.
-
-#### H: Tôi có thể tự động hóa quy trình thêm dấu ngày tháng và thời gian vào nhiều tài liệu PDF không?
-
-A: Có, bạn có thể tự động hóa quy trình thêm dấu ngày tháng và thời gian vào nhiều tài liệu PDF bằng cách tạo một tập lệnh hoặc chương trình lặp qua danh sách các tài liệu và áp dụng cùng một quy trình đóng dấu cho từng tài liệu.
+### Tôi có thể tìm thêm ví dụ về cách sử dụng Aspose.PDF ở đâu?
+ Bạn có thể khám phá thêm các ví dụ và hướng dẫn trong[Tài liệu Aspose.PDF](https://reference.aspose.com/pdf/net/).

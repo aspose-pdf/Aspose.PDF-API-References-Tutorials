@@ -2,7 +2,7 @@
 title: PDF-ből HTML-be
 linktitle: PDF-ből HTML-be
 second_title: Aspose.PDF for .NET API Reference
-description: Ebből a lépésről-lépésre szóló útmutatóból megtudhatja, hogyan konvertálhat PDF-et HTML-vé az Aspose.PDF for .NET használatával. Tökéletes fejlesztők és tartalomkészítők számára.
+description: Ebből a lépésenkénti útmutatóból megtudhatja, hogyan konvertálhat PDF-et HTML-be az Aspose.PDF for .NET használatával. Tökéletes fejlesztők és tartalomkészítők számára.
 type: docs
 weight: 130
 url: /hu/net/document-conversion/pdf-to-html/

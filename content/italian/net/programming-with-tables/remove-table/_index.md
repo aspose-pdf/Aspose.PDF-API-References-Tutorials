@@ -96,7 +96,7 @@ Congratulazioni! Ora hai imparato come rimuovere una tabella in un documento PDF
 
 #### D: Cosa succede se la pagina specificata non contiene tabelle?
 
- A: Se la pagina specificata non contiene alcuna tabella, il codice genererà un'eccezione`IndexOutOfRangeException` quando si tenta di accedere`absorb.TableList[0]` Per evitare questo problema, dovresti controllare se`absorb.TableList`contiene elementi prima di accedere alla tabella.
+ A: Se la pagina specificata non contiene alcuna tabella, il codice genererà un'eccezione`IndexOutOfRangeException` quando si tenta di accedere`absorb.TableList[0]` Per evitare questo problema, dovresti controllare se`absorb.TableList` contiene elementi prima di accedere alla tabella.
 
 #### D: Posso rimuovere le tabelle da pagine diverse dalla prima?
 

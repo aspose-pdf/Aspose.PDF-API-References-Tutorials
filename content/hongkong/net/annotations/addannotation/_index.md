@@ -44,7 +44,7 @@ string dataDir = "YOUR DATA DIRECTORY";
 Document pdfDocument = new Document(dataDir + "AddAnnotation.pdf");
 ```
 
-發生的事情是這樣的：您指定 PDF 檔案的儲存目錄，然後使用`Document`由 Aspose.PDF 提供的類別。此步驟至關重要，因為如果不載入文檔，您就無法對其進行任何變更。
+發生的事情是這樣的：您指定 PDF 檔案的儲存目錄，然後使用`Document`由 Aspose.PDF 提供的類別。此步驟至關重要，因為如果不載入文檔，您就無法對其進行任何更改。
 
 ## 第 2 步：建立註釋
 

@@ -7,116 +7,172 @@ type: docs
 weight: 170
 url: /vi/net/programming-with-document/getdocumentwindow/
 ---
-Aspose.PDF for .NET là một thư viện thao tác PDF mạnh mẽ cho phép các nhà phát triển tạo, chỉnh sửa và chuyển đổi các tệp PDF trong các ứng dụng .NET của họ. Một trong những tính năng mà thư viện này cung cấp là khả năng truy xuất thông tin về các thuộc tính cửa sổ của tài liệu. Hướng dẫn này sẽ hướng dẫn bạn qua các bước sử dụng`GetDocumentWindow` tính năng của Aspose.PDF dành cho .NET để lấy thông tin về thuộc tính cửa sổ của tài liệu PDF.
+# Giới thiệu
 
-## Bước 1: Cài đặt Aspose.PDF cho .NET
+Bạn đang làm việc với PDF và muốn kiểm soát nhiều hơn cách chúng xuất hiện khi mở? Cho dù đó là ẩn thanh menu hay thay đổi kích thước cửa sổ để vừa với trang đầu tiên, Aspose.PDF for .NET cung cấp cho bạn tất cả các công cụ bạn cần để tùy chỉnh cách PDF hoạt động khi mở trong trình xem. Trong hướng dẫn này, chúng tôi sẽ phân tích cách truy xuất và thao tác cài đặt cửa sổ tài liệu trong Aspose.PDF for .NET.
 
- Để sử dụng Aspose.PDF cho .NET trong các ứng dụng .NET của bạn, trước tiên bạn phải cài đặt thư viện. Bạn có thể tải xuống phiên bản mới nhất của thư viện từ[Trang tải xuống Aspose.PDF cho .NET](https://releases.aspose.com/pdf/net).
 
-Sau khi tải xuống thư viện, hãy giải nén nội dung của tệp ZIP vào một thư mục trên máy tính của bạn. Sau đó, bạn sẽ cần thêm tham chiếu đến Aspose.PDF cho DLL .NET trong dự án .NET của mình.
+# Điều kiện tiên quyết
 
-## Bước 2: Tải Tài liệu PDF
+Trước khi bắt đầu hướng dẫn, hãy đảm bảo rằng bạn đã đáp ứng đủ các điều kiện tiên quyết sau:
 
- Sau khi bạn đã cài đặt Aspose.PDF cho .NET và thêm tham chiếu đến DLL trong dự án .NET của mình, bạn có thể bắt đầu sử dụng`GetDocumentWindow`tính năng để lấy thông tin về thuộc tính cửa sổ của tài liệu PDF.
+- Aspose.PDF cho .NET được cài đặt trên môi trường phát triển của bạn.
+  - [Tải xuống Aspose.PDF cho .NET](https://releases.aspose.com/pdf/net/)
+-  Giấy phép hợp lệ cho Aspose.PDF hoặc bạn có thể nhận được[dùng thử miễn phí](https://releases.aspose.com/) hoặc[giấy phép tạm thời](https://purchase.aspose.com/temporary-license/).
+- Hiểu biết cơ bản về .NET và C#.
+- Visual Studio hoặc IDE phù hợp khác.
 
-Bước đầu tiên để sử dụng tính năng này là tải tài liệu PDF mà bạn muốn lấy thông tin. Để thực hiện việc này, bạn có thể sử dụng mã sau:
+# Nhập gói
+
+Trước khi bắt đầu viết bất kỳ mã nào, bạn sẽ cần nhập các gói cần thiết. Mở dự án của bạn và ở đầu tệp C#, thêm không gian tên sau:
 
 ```csharp
-// Đường dẫn đến tài liệu PDF
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
+```
 
-// Mở tài liệu PDF
+Điều này sẽ giúp bạn truy cập vào tất cả các lớp và phương thức cần thiết để thao tác với tài liệu PDF bằng Aspose.PDF cho .NET.
+
+ Bây giờ chúng ta hãy phân tích quá trình lấy các thiết lập cửa sổ tài liệu khác nhau. Đối với ví dụ này, chúng ta sẽ sử dụng một tệp PDF mẫu có tên`GetDocumentWindow.pdf`.
+
+## Bước 1: Đặt Đường dẫn Thư mục Tài liệu
+
+Trước tiên, chúng ta cần xác định đường dẫn đến tệp PDF của mình. Điều quan trọng là bạn phải có đường dẫn tệp chính xác để tránh mọi lỗi trong quá trình thực hiện.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Ở đây, thay thế`"YOUR DOCUMENT DIRECTORY"` với thư mục thực tế nơi tệp PDF của bạn nằm. Đây là thư mục làm việc của bạn, nơi bạn sẽ tải tài liệu PDF.
+
+## Bước 2: Mở Tài liệu PDF
+
+Bây giờ đường dẫn tệp đã được thiết lập, bước tiếp theo là mở tài liệu PDF bằng Aspose.PDF. Thao tác này sẽ tải tài liệu vào bộ nhớ, cho phép bạn truy xuất các thuộc tính của tài liệu.
+
+```csharp
 Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 ```
 
- Trong đoạn mã trên, hãy thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn đến thư mục nơi tài liệu PDF của bạn được đặt. Mã này sẽ tải tài liệu PDF vào một`Document` đối tượng mà sau đó bạn có thể sử dụng để lấy thông tin về thuộc tính cửa sổ của tài liệu.
+Với dòng mã đơn giản này, bạn đã tải thành công tệp PDF của mình vào`pdfDocument` đối tượng, cho phép bạn truy cập tất cả các thuộc tính của đối tượng đó.
 
-## Bước 3: Lấy Thuộc tính Cửa sổ của Tài liệu
+## Bước 3: Lấy lại trạng thái căn giữa cửa sổ
 
-Để lấy thông tin về thuộc tính cửa sổ của tài liệu PDF, bạn có thể sử dụng mã sau:
-
-```csharp
-// Lấy lại các thuộc tính cửa sổ của tài liệu
-Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
-```
-
-Trong đoạn mã trên, mỗi dòng sẽ lấy một thuộc tính cửa sổ khác nhau của tài liệu PDF và xuất ra bảng điều khiển. Bạn có thể tùy chỉnh đoạn mã này để chỉ lấy các thuộc tính mà bạn quan tâm.
-
-### Mã nguồn ví dụ để lấy cửa sổ tài liệu của tệp PDF bằng Aspose.PDF cho .NET 
-
- Sau đây là mã nguồn đầy đủ để lấy các thuộc tính cửa sổ của tài liệu PDF bằng cách sử dụng`GetDocumentWindow` Tính năng của Aspose.PDF dành cho .NET:
+ Tiếp theo, hãy kiểm tra xem cửa sổ tài liệu có được căn giữa khi mở hay không. Giá trị mặc định cho việc này là`false`.
 
 ```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Mở tài liệu
-Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
-
-// Nhận các thuộc tính tài liệu khác nhau
-// Vị trí của cửa sổ tài liệu - Mặc định: false
 Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-
-// Thứ tự đọc chủ yếu; xác định vị trí của trang
-// Khi hiển thị cạnh nhau - Mặc định: L2R
-Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-
-// Thanh tiêu đề của cửa sổ có hiển thị tiêu đề tài liệu không
-// Nếu sai, thanh tiêu đề sẽ hiển thị tên tệp PDF - Mặc định: sai
-Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-
-// Có nên thay đổi kích thước cửa sổ tài liệu để phù hợp với kích thước của
-// Trang hiển thị đầu tiên - Mặc định: false
-Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-
-// Có nên ẩn thanh menu của ứng dụng xem không - Mặc định: false
-Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-
-// Có nên ẩn thanh công cụ của ứng dụng xem không - Mặc định: false
-Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-
-// Có nên ẩn các thành phần UI như thanh cuộn không
-// Và chỉ hiển thị nội dung trang - Mặc định: false
-Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-
-//Chế độ trang của tài liệu. Cách hiển thị tài liệu khi thoát khỏi chế độ toàn màn hình.
-Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-
-// Bố cục trang tức là một trang, một cột
-Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-
-// Tài liệu sẽ hiển thị như thế nào khi mở
-// Tức là hiển thị hình thu nhỏ, toàn màn hình, hiển thị bảng đính kèm
-Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 ```
+
+ Nếu đầu ra là`true`, cửa sổ tài liệu sẽ mở ở giữa màn hình. Nếu không, nó sẽ mở ở vị trí mặc định.
+
+## Bước 4: Kiểm tra hướng văn bản
+
+Một khía cạnh quan trọng khác của giao diện PDF là hướng văn bản, xác định xem văn bản được đọc từ trái sang phải (L2R) hay từ phải sang trái (R2L). Bạn có thể lấy thông tin này bằng cách sử dụng mã sau:
+
+```csharp
+Console.WriteLine("Direction : {0}", pdfDocument.Direction);
+```
+
+ Đầu ra sẽ là`L2R` cho văn bản từ trái sang phải và`R2L` cho văn bản từ phải sang trái. Thiết lập này đặc biệt hữu ích cho các tài liệu bằng các ngôn ngữ như tiếng Ả Rập hoặc tiếng Do Thái.
+
+## Bước 5: Hiển thị Tiêu đề Tài liệu trong Cửa sổ
+
+Thuộc tính tiếp theo cho phép bạn kiểm soát xem tiêu đề tài liệu hay tên tệp sẽ được hiển thị trên thanh tiêu đề của cửa sổ. Theo mặc định, điều này được đặt thành`false`, nghĩa là tên tệp sẽ được hiển thị.
+
+```csharp
+Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
+```
+
+Nếu bạn muốn hiển thị tiêu đề của tài liệu thay vì tên tệp, bạn phải bật cài đặt này.
+
+## Bước 6: Thay đổi kích thước cửa sổ để vừa với trang đầu tiên
+
+Đôi khi, bạn có thể muốn cửa sổ tài liệu tự động thay đổi kích thước để vừa với trang đầu tiên của PDF khi mở. Sau đây là cách kiểm tra xem tính năng đó có được bật hay không:
+
+```csharp
+Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
+```
+
+ Theo mặc định, điều này được thiết lập thành`false`, nghĩa là kích thước cửa sổ sẽ vẫn giữ nguyên bất kể kích thước của trang đầu tiên.
+
+## Bước 7: Ẩn thanh Menu
+
+Để có trải nghiệm đọc tập trung hơn, bạn có thể muốn ẩn thanh menu của ứng dụng trình xem. Bạn có thể lấy lại cài đặt này bằng cách sử dụng dòng sau:
+
+```csharp
+Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
+```
+
+ Điều này sẽ trở lại`true` nếu thanh menu bị ẩn và`false` nếu không thì.
+
+## Bước 8: Ẩn thanh công cụ
+
+Tương tự, bạn cũng có thể muốn ẩn thanh công cụ trong trình xem PDF để có giao diện người dùng sạch hơn. Cài đặt này có thể được lấy lại như sau:
+
+```csharp
+Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
+```
+
+Nếu bật cài đặt này, thanh công cụ sẽ bị ẩn khi mở tệp PDF.
+
+## Bước 9: Ẩn thanh cuộn và các thành phần UI
+
+Nếu bạn chỉ muốn hiển thị nội dung trang mà không có bất kỳ thành phần UI bổ sung nào như thanh cuộn, thiết lập này sẽ kiểm soát hành vi đó:
+
+```csharp
+Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
+```
+
+ Khi thiết lập thành`true`, trình xem PDF sẽ ẩn thanh cuộn và các thành phần giao diện người dùng khác, chỉ để lại nội dung tài liệu.
+
+## Bước 10: Đặt chế độ trang không toàn màn hình
+
+ Bạn có thể kiểm soát cách tài liệu xuất hiện khi thoát khỏi chế độ toàn màn hình bằng cách sử dụng`NonFullScreenPageMode` thuộc tính. Thiết lập này hữu ích để xác định cách người dùng tương tác với tài liệu ở chế độ không toàn màn hình.
+
+```csharp
+Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
+```
+
+Đầu ra có thể được thiết lập ở nhiều chế độ khác nhau như hình thu nhỏ, phác thảo hoặc bảng tệp đính kèm.
+
+## Bước 11: Xác định Bố cục Trang
+
+Thiết lập này cho phép bạn kiểm soát cách bố trí các trang tài liệu. Ví dụ, bạn có thể chọn chế độ xem một trang hoặc chế độ xem cột liên tục:
+
+```csharp
+Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
+```
+
+Điều này mang lại cho người dùng sự linh hoạt trong cách họ đọc hoặc xem nội dung tài liệu.
+
+## Bước 12: Chỉ định chế độ trang
+
+ Cuối cùng,`PageMode` thuộc tính xác định cách tài liệu sẽ được hiển thị khi mở. Các tùy chọn bao gồm hiển thị hình thu nhỏ, vào chế độ toàn màn hình hoặc hiển thị bảng đính kèm.
+
+```csharp
+Console.WriteLine("PageMode : {0}", pdfDocument.PageMode);
+```
+
+Tùy thuộc vào nhu cầu của mình, bạn có thể cài đặt chế độ này phù hợp với mục đích của tệp PDF.
 
 ## Phần kết luận
 
-Trong hướng dẫn này, chúng ta đã học cách sử dụng Aspose.PDF cho .NET để lấy thông tin về thuộc tính cửa sổ của tài liệu PDF. Bằng cách tải tài liệu PDF và truy cập thuộc tính cửa sổ của tài liệu, bạn có thể thu thập thông tin về cách tài liệu sẽ được hiển thị khi mở trong ứng dụng xem. Aspose.PDF cho .NET cung cấp một bộ tính năng mạnh mẽ để làm việc với các tệp PDF theo chương trình, khiến nó trở thành một công cụ hữu ích để thao tác PDF trong các ứng dụng .NET.
+Như bạn có thể thấy, Aspose.PDF for .NET cung cấp các công cụ toàn diện để thao tác cách hiển thị tài liệu PDF của bạn trong nhiều trình xem PDF khác nhau. Cho dù bạn muốn ẩn thanh công cụ, căn giữa cửa sổ hay kiểm soát hướng văn bản, Aspose.PDF đều cung cấp tính linh hoạt để nâng cao trải nghiệm xem của người dùng.
 
-### Câu hỏi thường gặp
+# Câu hỏi thường gặp
 
-#### H: Mục đích của việc lấy thuộc tính cửa sổ của tài liệu PDF là gì?
+### Tôi có thể tùy chỉnh mức thu phóng ban đầu của tệp PDF không?
+Có, Aspose.PDF cho phép bạn cài đặt mức thu phóng khi mở tài liệu.
 
-A: Truy xuất thuộc tính cửa sổ của tài liệu PDF cho phép bạn thu thập thông tin về cách tài liệu PDF sẽ được hiển thị khi mở trong ứng dụng xem. Các thuộc tính này kiểm soát nhiều khía cạnh khác nhau như vị trí cửa sổ, chế độ hiển thị và khả năng hiển thị của các thành phần UI.
+### Làm thế nào để khóa kích thước cửa sổ của tệp PDF?
+ Bạn có thể thiết lập`FitWindow` thuộc tính để ngăn cửa sổ thay đổi kích thước.
 
-#### H: Làm thế nào tôi có thể cài đặt Aspose.PDF cho .NET vào dự án .NET của mình?
+### Aspose.PDF có hỗ trợ các chế độ đọc khác nhau không?
+Có, nó hỗ trợ nhiều chế độ khác nhau như toàn màn hình, hình thu nhỏ và tệp đính kèm.
 
- A: Để cài đặt Aspose.PDF cho .NET, bạn cần tải xuống thư viện từ[Trang tải xuống Aspose.PDF cho .NET](https://releases.aspose.com/pdf/net). Sau khi tải xuống, hãy giải nén nội dung của tệp ZIP và thêm tham chiếu đến Aspose.PDF cho .NET DLL trong dự án .NET của bạn.
+### Có thể ẩn thanh cuộn trong trình xem PDF không?
+ Hoàn toàn có thể ẩn thanh cuộn bằng cách thiết lập`HideWindowUI` tài sản để`true`.
 
-#### H: Tôi có thể tùy chỉnh mã để chỉ lấy các thuộc tính cửa sổ cụ thể không?
-
-A: Có, bạn có thể tùy chỉnh mã để lấy các thuộc tính cửa sổ cụ thể bằng cách bình luận các dòng bạn không cần. Mỗi dòng trong mã tương ứng với một thuộc tính cửa sổ cụ thể, do đó bạn có thể bao gồm hoặc loại trừ các thuộc tính dựa trên yêu cầu của mình.
-
-#### H: Tôi có thể lấy những loại thuộc tính cửa sổ nào khi sử dụng Aspose.PDF cho .NET?
-
-A: Khi sử dụng Aspose.PDF cho .NET, bạn có thể truy xuất nhiều thuộc tính cửa sổ khác nhau của tài liệu PDF, bao gồm căn giữa cửa sổ, thiết lập bố cục trang, kiểm soát cách hiển thị thanh công cụ và thanh menu, v.v.
+### Tôi có thể căn giữa cửa sổ tài liệu khi mở không?
+ Có, bạn có thể kiểm soát điều này bằng cách thiết lập`CenterWindow` tài sản.

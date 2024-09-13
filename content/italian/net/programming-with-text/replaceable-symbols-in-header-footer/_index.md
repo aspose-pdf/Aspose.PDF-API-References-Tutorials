@@ -35,7 +35,7 @@ Page page = doc.Pages.Add();
 
 ## Passaggio 3: imposta i margini
 
-Impostiamo i margini per la pagina utilizzando`MarginInfo` classe. Regola i valori del margine in base alle tue esigenze.
+ Impostiamo i margini per la pagina utilizzando`MarginInfo` classe. Regola i valori del margine in base alle tue esigenze.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -110,7 +110,7 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-// Assegnare l'istanza marginInfo alla proprietà Margin di sec1.PageInfo
+//Assegnare l'istanza marginInfo alla proprietà Margin di sec1.PageInfo
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
@@ -148,7 +148,7 @@ Table tab2 = new Table();
 hfFoot.Paragraphs.Add(tab2);
 // Impostato con le larghezze delle colonne della tabella
 tab2.ColumnWidths = "165 172 165";
-// Crea righe nella tabella e poi celle nelle righe
+//Crea righe nella tabella e poi celle nelle righe
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
@@ -173,7 +173,7 @@ table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
 // Imposta il bordo della tabella utilizzando un altro oggetto BorderInfo personalizzato
 table.Border = new BorderInfo(BorderSide.All, 1f);
 table.RepeatingRowsCount = 1;
-// Crea righe nella tabella e poi celle nelle righe
+//Crea righe nella tabella e poi celle nelle righe
 Row row1 = table.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

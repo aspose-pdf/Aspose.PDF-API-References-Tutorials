@@ -68,7 +68,7 @@ Aspose.Pdf.CgmLoadOptions cgmload = new Aspose.Pdf.CgmLoadOptions();
  Nu ga je een`Document` object. Dit object vertegenwoordigt uw CGM-bestand in het geheugen, zodat u het kunt bewerken voordat u het opslaat als PDF.
 
 ```csharp
-// Instantieer Document object
+// Instantieer Document-object
 Document doc = new Document(dataDir + "CGMToPDF.CGM", cgmload);
 ```
 

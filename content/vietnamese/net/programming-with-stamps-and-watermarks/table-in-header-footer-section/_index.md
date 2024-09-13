@@ -7,215 +7,245 @@ type: docs
 weight: 170
 url: /vi/net/programming-with-stamps-and-watermarks/table-in-header-footer-section/
 ---
-Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn từng bước về cách thêm bảng vào phần đầu trang hoặc chân trang của tài liệu PDF bằng Aspose.PDF cho .NET. Mã nguồn C# được cung cấp sẽ chỉ cho bạn cách tạo tài liệu PDF trống, thêm trang, cấu hình phần đầu trang, tạo bảng, thêm hàng và ô vào bảng và cuối cùng là lưu tài liệu PDF.
+## Giới thiệu
 
-## Bước 1: Thiết lập môi trường
+Bạn đã bao giờ thấy mình đang nhìn chằm chằm vào một tài liệu PDF đơn giản, ước rằng nó có thêm nét riêng biệt đó không? Vâng, bạn thật may mắn! Aspose.PDF cho .NET cho phép bạn tạo và thao tác các tệp PDF như một chuyên gia. Hôm nay, chúng ta sẽ tìm hiểu một tính năng tiện dụng cho phép bạn thêm một bảng vào tiêu đề của tài liệu PDF. Bạn sẽ không chỉ học cách thực hiện mà tôi còn hướng dẫn bạn từng bước, giúp toàn bộ quá trình trở nên dễ dàng như bơ. 🎉
 
-Trước khi bắt đầu, hãy đảm bảo bạn có những điều sau:
+## Điều kiện tiên quyết
 
-- Môi trường phát triển .NET đã được cài đặt.
-- Thư viện Aspose.PDF dành cho .NET đã được tải xuống và tham chiếu trong dự án của bạn.
+Trước khi chúng ta bắt đầu phần mã hóa thực tế, hãy đảm bảo rằng bạn có mọi thứ cần thiết để bắt đầu. Sau đây là những gì bạn cần:
 
-## Bước 2: Tạo Tài liệu PDF và Trang
+1.  Visual Studio: Đảm bảo rằng bạn đã cài đặt Visual Studio trên máy tính của mình. Nếu chưa, bạn có thể tải xuống từ[Trang web của Microsoft](https://visualstudio.microsoft.com/).
+2.  Thư viện Aspose.PDF: Bạn phải có thư viện Aspose.PDF cho .NET. Bạn có thể sử dụng liên kết sau để lấy[Aspose.PDF cho gói .NET](https://releases.aspose.com/pdf/net/).
+3. Kiến thức cơ bản về C#: Bạn nên có ít nhất một hiểu biết cơ bản về C#. Đừng lo lắng nếu bạn vẫn đang học; Tôi sẽ làm cho nó đơn giản nhất có thể!
 
- Bước đầu tiên là tạo một phiên bản của`Document` lớp và thêm một trang vào tài liệu. Sau đây là cách thực hiện:
+## Nhập gói
+
+Được rồi, đã đến lúc xắn tay áo lên và bắt tay vào viết mã! Nhưng trước tiên, chúng ta cần thiết lập môi trường của mình bằng cách nhập các gói cần thiết. Sau đây là cách thực hiện:
+
+###  Mở dự án của bạn
+Mở dự án Visual Studio nơi bạn sẽ thực hiện thao tác tạo PDF. 
+
+###  Thêm tham chiếu đến Aspose.PDF
+1. Trình quản lý gói NuGet: Nhấp chuột phải vào dự án của bạn trong Solution Explorer và chọn "Quản lý gói NuGet".
+2. Tìm kiếm Aspose.PDF: Trong thanh tìm kiếm, nhập "Aspose.PDF" và cài đặt gói.
+
+Đến cuối bước này, mọi thứ sẽ được thiết lập xong và sẵn sàng để bắt đầu viết mã!
+
+Bây giờ, hãy bắt tay vào làm một số mã! Thực hiện theo các bước sau để tạo một bảng trong phần tiêu đề của tệp PDF của bạn:
+
+## Bước 1: Đặt đường dẫn đến thư mục tài liệu của bạn
+
+Trước khi bắt đầu tạo PDF, chúng ta cần xác định nơi lưu trữ tài liệu. Sau đây là cách thực hiện:
 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// Khởi tạo một đối tượng Tài liệu
-Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
-
-// Tạo một trang trong tài liệu PDF
-Aspose.Pdf.Page page = pdfDocument.Pages.Add();
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Thay đổi thư mục này thành thư mục thực tế của bạn
 ```
 
-Hãy nhớ thay thế "YOUR DOCUMENTS DIRECTORY" bằng đường dẫn thực tế đến thư mục mà bạn muốn lưu tài liệu PDF.
+ Thay thế`YOUR DOCUMENT DIRECTORY`với đường dẫn mà bạn muốn lưu PDF. Đường dẫn này có thể nằm ở bất kỳ đâu trên hệ thống của bạn—chỉ cần đảm bảo rằng đường dẫn đó có thể truy cập được!
 
-## Bước 3: Cấu hình phần tiêu đề
+## Bước 2: Khởi tạo tài liệu
 
- Bây giờ chúng ta sẽ cấu hình phần tiêu đề của tài liệu PDF bằng cách tạo một phiên bản của`HeaderFooter` lớp. Đây là cách thực hiện:
-
-```csharp
-// Tạo phần tiêu đề cho tệp PDF
-Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
-
-// Xác định phần tiêu đề cho trang
-page. Header = header;
-
-// Đặt lề trên của phần tiêu đề
-header. Margin. Top = 20;
-```
-
-## Bước 4: Tạo bảng
-
- Bây giờ chúng ta sẽ tạo một bảng bằng cách sử dụng`Table` lớp và thêm nó vào bộ sưu tập đoạn văn của phần tiêu đề. Sau đây là cách thực hiện:
+Tiếp theo, chúng ta sẽ tạo một tài liệu PDF mới.
 
 ```csharp
-// Khởi tạo một đối tượng Bảng
-Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
-
-// Thêm bảng vào bộ sưu tập đoạn văn của phần tiêu đề
-header.Paragraphs.Add(tab1);
-
-// Xác định độ rộng của các cột trong bảng
-tab1.ColumnWidths = "60,300";
-```
-
-Đoạn mã trên tạo ra một bảng có hai cột có độ rộng được chỉ định.
-
-## Bước 5: Thêm hàng và ô vào bảng
-
- Bây giờ chúng ta sẽ thêm các hàng và ô vào bảng bằng cách sử dụng`Row` lớp và`Cell` lớp. Đây là cách thực hiện:
-
-```csharp
-// Tạo một hàng trong bảng và thêm ô
-Aspose.Pdf.Row row1 = tab1.Rows.Add();
-row1.Cells.Add("Table in header section");
-row1.BackgroundColor = Color.Gray;
-
-// Gộp ô đầu tiên của hàng đầu tiên
-tab1.Rows[0].Cells[0].ColSpan = 2;
-tab1.Rows[0].Cells[0].DefaultCellTextState.ForegroundColor = Color.Cyan;
-tab1.Rows[0].Cells[0].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
-
-// Tạo một hàng khác trong bảng và thêm một ô có hình ảnh
-Aspose.Pdf.Row row2 = tab1.Rows.Add();
-row2.BackgroundColor = Color.White;
-Aspose.Pdf.Cell cell2 = row2.Cells.Add();
-Aspose.Pdf.Image img = new Aspose.Pdf.Image();
-img.File = dataDir + "aspose-logo.jpg";
-img. FixWidth = 60;
-cell2.Paragraphs.Add(img);
-row2.Cells.Add("The logo is beautiful!");
-row2.Cells[1].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
-row2.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
-row2.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
-```
-
-## Bước 6: Lưu tài liệu PDF
-
-Sau khi bảng đã được thêm vào phần tiêu đề, chúng ta có thể lưu tài liệu PDF. Thực hiện như sau:
-
-```csharp
-// Lưu tệp PDF
-pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
-```
-
-Hãy nhớ thay thế "YOUR DOCUMENTS DIRECTORY" bằng đường dẫn thực tế đến thư mục mà bạn muốn lưu tài liệu PDF.
-
-### Mã nguồn mẫu cho Bảng trong Phần Đầu trang Chân trang sử dụng Aspose.PDF cho .NET 
-```csharp
-
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
 // Khởi tạo thể hiện Document bằng cách gọi hàm tạo rỗng
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document();
+```
 
+Những gì chúng ta đang làm ở đây là tạo một tài liệu PDF trống để thêm tất cả các nội dung bổ sung.
+
+## Bước 3: Tạo một trang mới
+
+Hãy thêm một trang mới vào tài liệu của chúng ta. 
+
+```csharp
 // Tạo một trang trong tài liệu pdf
 Aspose.Pdf.Page page = pdfDocument.Pages.Add();
+```
 
-//Tạo Phần Tiêu đề của tệp PDF
+Hãy coi trang này như một tấm vải trắng để chúng ta có thể vẽ nên kiệt tác của mình!
+
+## Bước 4: Tạo phần tiêu đề
+
+Bây giờ chúng ta sẽ thiết lập tiêu đề cho tệp PDF.
+
+```csharp
+// Tạo Phần Tiêu đề của tệp PDF
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
+```
 
+Phần đầu này sẽ giữ bảng của chúng ta. 
+
+## Bước 5: Gán Header cho Trang
+
+Tiếp theo, chúng ta muốn đảm bảo tiêu đề xuất hiện trên trang.
+
+```csharp
 // Đặt Tiêu đề Lẻ cho tệp PDF
 page.Header = header;
+```
 
-// Đặt lề trên cho phần tiêu đề
+## Bước 6: Đặt lề trên cùng
+
+Để đảm bảo phần tiêu đề có đủ khoảng trống ở phía trên, hãy điều chỉnh lề.
+
+```csharp
+//Đặt lề trên cho phần tiêu đề
 header.Margin.Top = 20;
+```
 
+Việc đặt lề giống như cung cấp cho văn bản của bạn một khoảng không gian riêng tư—không ai thích bị chật chội cả!
+
+## Bước 7: Tạo bảng
+
+Bây giờ là lúc tạo bảng sẽ đưa vào tiêu đề của chúng ta.
+
+```csharp
 // Khởi tạo một đối tượng bảng
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
+```
 
+## Bước 8: Thêm Bảng vào Tiêu đề
+
+Chúng ta sẽ thêm bảng mới tạo vào bộ sưu tập đoạn văn của tiêu đề.
+
+```csharp
 // Thêm bảng vào bộ sưu tập đoạn văn của phần mong muốn
 header.Paragraphs.Add(tab1);
+```
 
+## Bước 9: Thiết lập đường viền ô
+
+Hãy cung cấp cho bảng của chúng ta một số cấu trúc bằng cách xác định đường viền ô mặc định.
+
+```csharp
 // Đặt đường viền ô mặc định bằng cách sử dụng đối tượng BorderInfo
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
+```
 
+## Bước 10: Xác định độ rộng cột
+
+Bạn có thể chỉ định độ rộng của mỗi cột trong bảng.
+
+```csharp
 // Thiết lập với chiều rộng cột của bảng
 tab1.ColumnWidths = "60 300";
-Aspose.Pdf.Image img = new Aspose.Pdf.Image();
-img.File = dataDir + "aspose-logo.jpg";
+```
 
-// Tạo các hàng trong bảng và sau đó tạo các ô trong các hàng
+Các giá trị thể hiện chiều rộng của mỗi cột theo điểm. Hãy thoải mái điều chỉnh chúng cho phù hợp với nhu cầu của bạn!
+
+## Bước 11: Tạo hàng và thêm ô
+
+Đã đến lúc thêm vào một số hàng và ô! 
+
+```csharp
+//Tạo các hàng trong bảng và sau đó tạo các ô trong các hàng
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Table in Header Section");
 row1.BackgroundColor = Color.Gray;
+```
 
+Thao tác này sẽ tạo ra hàng đầu tiên có ô chứa văn bản và đặt màu nền của ô này thành màu xám.
+
+## Bước 12: Thiết lập khoảng cách hàng và kiểu văn bản
+
+Bạn có muốn hàng của mình trải dài trên nhiều cột không? Đây là cách thực hiện:
+
+```csharp
 // Đặt giá trị khoảng cách hàng cho hàng đầu tiên là 2
 tab1.Rows[0].Cells[0].ColSpan = 2;
 tab1.Rows[0].Cells[0].DefaultCellTextState.ForegroundColor = Color.Cyan;
 tab1.Rows[0].Cells[0].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
+```
 
-// Tạo các hàng trong bảng và sau đó tạo các ô trong các hàng
+Bước này không chỉ thiết lập khoảng cách hàng mà còn thay đổi màu chữ và phông chữ.
+
+## Bước 13: Thêm hàng thứ hai
+
+Chúng ta hãy thêm một hàng nữa vào bảng nhé?
+
+```csharp
+// Tạo một hàng khác trong bảng
 Aspose.Pdf.Row row2 = tab1.Rows.Add();
 
 // Đặt màu nền cho Row2
 row2.BackgroundColor = Color.White;
+```
 
+## Bước 14: Thêm hình ảnh vào hàng thứ hai
+
+Bây giờ chúng ta sẽ thêm logo vào để làm cho chiếc bàn trông thật bắt mắt!
+
+```csharp
 // Thêm ô chứa hình ảnh
-Aspose.Pdf.Cell cell2 = row2.Cells.Add();
+Aspose.Pdf.Image img = new Aspose.Pdf.Image();
+img.File = dataDir + "aspose-logo.jpg"; // Hãy chắc chắn đặt hình ảnh vào thư mục của bạn
+```
 
+ Đừng quên thay thế`"aspose-logo.jpg"` với tên thực tế của hình ảnh của bạn!
+
+## Bước 15: Điều chỉnh chiều rộng hình ảnh
+
+Đặt chiều rộng hình ảnh để đảm bảo hình ảnh trông vừa vặn trong ô.
+
+```csharp
 // Đặt chiều rộng hình ảnh là 60
 img.FixWidth = 60;
 
-// Thêm hình ảnh vào ô bảng
+//Thêm hình ảnh vào ô bảng
+Aspose.Pdf.Cell cell2 = row2.Cells.Add();
 cell2.Paragraphs.Add(img);
+```
+
+## Bước 16: Thêm văn bản vào ô thứ hai
+
+Đã đến lúc thêm một đoạn văn bản nhỏ bên cạnh logo của chúng tôi!
+
+```csharp
 row2.Cells.Add("Logo is looking fine !");
 row2.Cells[1].DefaultCellTextState.Font = FontRepository.FindFont("Helvetica");
+```
 
+## Bước 17: Căn chỉnh văn bản theo chiều dọc và chiều ngang
+
+Đảm bảo mọi thứ trông gọn gàng. Căn chỉnh văn bản của bạn!
+
+```csharp
 // Đặt căn chỉnh theo chiều dọc của văn bản thành căn giữa
 row2.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
 row2.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
+```
 
+## Bước 18: Lưu tài liệu PDF
+
+Cuối cùng nhưng không kém phần quan trọng, hãy cùng lưu lại sáng tạo của chúng ta!
+
+```csharp
 // Lưu tệp PDF
 pdfDocument.Save(dataDir + "TableInHeaderFooterSection_out.pdf");
-
 ```
+
+Và thế là xong! Bạn đã tạo được một tệp PDF tuyệt đẹp có kèm theo một bảng ở phần tiêu đề!
 
 ## Phần kết luận
 
-Xin chúc mừng! Bạn đã học cách thêm bảng vào phần đầu trang hoặc chân trang của tài liệu PDF bằng Aspose.PDF cho .NET. Bây giờ bạn có thể tùy chỉnh phần đầu trang và chân trang bằng cách thêm bảng để hiển thị thông tin bổ sung trong tài liệu PDF của mình.
+Và thế là xong! Bạn đã thêm thành công một bảng vào tiêu đề của tài liệu PDF bằng Aspose.PDF cho .NET. Thật tuyệt vời khi chỉ cần một vài dòng mã có thể biến một tệp PDF đơn giản thành một tài liệu trông chuyên nghiệp. Cho dù bạn đang chuẩn bị báo cáo, hóa đơn hay bài thuyết trình, thêm một chút sáng tạo có thể tạo nên sự khác biệt. 
 
-### Câu hỏi thường gặp về bảng trong phần đầu trang và chân trang
+## Câu hỏi thường gặp
 
-#### H: Mục đích của việc thêm bảng vào phần đầu trang hoặc chân trang của tài liệu PDF là gì?
+### Aspose.PDF dành cho .NET là gì?
+Aspose.PDF for .NET là một thư viện mạnh mẽ cho phép các nhà phát triển tạo và xử lý các tài liệu PDF theo chương trình.
 
-A: Thêm bảng vào phần đầu trang hoặc chân trang của tài liệu PDF cho phép bạn hiển thị thông tin có cấu trúc và được sắp xếp hợp lý như tiêu đề, phụ đề, logo hoặc bất kỳ nội dung nào khác mà bạn muốn hiển thị thống nhất trên mỗi trang của tài liệu.
+### Tôi có cần giấy phép để sử dụng Aspose.PDF không?
+ Trong khi bạn có thể sử dụng thư viện miễn phí trong thời gian dùng thử, bạn cần phải có giấy phép để sử dụng lâu dài. Bạn có thể lấy[giấy phép tạm thời](https://purchase.aspose.com/temporary-license/) để đánh giá.
 
-#### H: Mã nguồn C# được cung cấp thực hiện chức năng thêm bảng vào phần đầu trang hoặc chân trang của tài liệu PDF như thế nào?
+### Tôi có thể tìm tài liệu ở đâu?
+Bạn có thể tìm thấy tài liệu và ví dụ toàn diện trên[Trang tài liệu Aspose.PDF](https://reference.aspose.com/pdf/net/).
 
-A: Mã này minh họa quá trình tạo một tài liệu PDF trống, thêm trang, cấu hình phần tiêu đề, tạo bảng có hàng và ô, và cuối cùng là lưu tài liệu PDF. Kết quả là một bảng được hiển thị trong phần tiêu đề của tài liệu PDF.
+### Tôi có thể liên hệ với bộ phận hỗ trợ về các vấn đề kỹ thuật bằng cách nào?
+ Bạn có thể liên hệ để được hỗ trợ thông qua[Diễn đàn Aspose](https://forum.aspose.com/c/pdf/10).
 
-#### H: Tôi có thể tùy chỉnh giao diện của các ô trong bảng như đường viền, màu nền và kiểu văn bản không?
-
-A: Có, bạn có thể tùy chỉnh giao diện của các ô trong bảng bằng cách thiết lập các thuộc tính như đường viền ô, màu nền, kiểu văn bản, phông chữ, cỡ chữ, v.v.
-
-#### H: Làm thế nào để thêm bảng vào phần tiêu đề của tài liệu PDF?
-
-A: Mã này thêm bảng vào bộ sưu tập đoạn văn của phần tiêu đề, đảm bảo rằng bảng được hiển thị ở phần tiêu đề của mỗi trang.
-
-#### H: Tôi có thể thêm nhiều hàng và ô vào bảng khi cần không?
-
- A: Hoàn toàn có thể, bạn có thể thêm nhiều hàng và ô vào bảng bằng cách sử dụng`Rows.Add()` Và`Cells.Add()` phương pháp. Điều này cho phép bạn cấu trúc nội dung bảng theo ý muốn.
-
-#### H: Có thể điều chỉnh độ rộng của các cột trong bảng không?
- A: Có, bạn có thể điều chỉnh chiều rộng của các cột trong bảng bằng cách sử dụng`ColumnWidths` thuộc tính. Điều này cho phép bạn kiểm soát bố cục của bảng.
-
-#### H: Làm thế nào tôi có thể kéo dài các ô trên nhiều cột hoặc hàng trong bảng?
- A: Để kéo dài các ô trên nhiều cột, bạn có thể sử dụng`ColSpan`thuộc tính của ô tương ứng. Tương tự, bạn có thể sử dụng`RowSpan` thuộc tính kéo dài các ô trên nhiều hàng.
-
-#### H: Điều gì xảy ra nếu tôi muốn thêm bảng vào cả phần đầu trang và phần chân trang của tài liệu PDF?
-
- A: Bạn có thể làm theo cách tiếp cận tương tự cho cả phần đầu trang và phần chân trang. Chỉ cần tạo một`HeaderFooter` trường hợp cho phần chân trang, cấu hình nó và thêm bảng vào bộ sưu tập đoạn văn của nó.
-
-#### H: Tôi có thể sử dụng hình ảnh trong các ô của bảng không và thực hiện như thế nào?
-
- A: Có, bạn có thể thêm hình ảnh vào các ô của bảng. Ví dụ mã minh họa việc thêm hình ảnh vào một ô bằng cách tạo một`Image` đối tượng, thiết lập đường dẫn tệp và kích thước của nó, sau đó thêm nó vào các đoạn văn của ô.
-
-#### H: Làm thế nào để đảm bảo bảng xuất hiện thống nhất trên tất cả các trang trong tài liệu PDF?
-
- A: Khi bạn thêm bảng vào phần đầu trang hoặc chân trang bằng cách sử dụng`HeaderFooter` Ví dụ, Aspose.PDF đảm bảo rằng bảng xuất hiện nhất quán trên mỗi trang, mang lại bố cục thống nhất.
+### Tôi có thể tạo bảng ở các phần khác của tệp PDF không?
+Hoàn toàn được! Bạn cũng có thể tạo bảng ở phần chân trang và phần thân bài; chỉ cần làm theo các bước tương tự.

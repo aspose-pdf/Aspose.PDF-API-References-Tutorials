@@ -2,181 +2,170 @@
 title: Đăng nhập kỹ thuật số vào tệp PDF
 linktitle: Đăng nhập kỹ thuật số vào tệp PDF
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Tìm hiểu cách ký kỹ thuật số vào tệp PDF bằng Aspose.PDF cho .NET.
+description: Tìm hiểu cách ký số vào tệp PDF bằng Aspose.PDF cho .NET. Hướng dẫn từng bước để đảm bảo tài liệu của bạn an toàn và xác thực.
 type: docs
 weight: 40
 url: /vi/net/programming-with-security-and-signatures/digitally-sign/
 ---
-Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn quy trình ký số vào tệp PDF bằng Aspose.PDF cho .NET. Chữ ký số đảm bảo tính xác thực và toàn vẹn của tài liệu bằng cách thêm dấu vân tay điện tử duy nhất.
+## Giới thiệu
 
-## Bước 1: Điều kiện tiên quyết
+Trong thế giới số của chúng ta, tầm quan trọng của việc bảo mật tài liệu không thể được cường điệu hóa. Cho dù bạn là một người làm việc tự do gửi hợp đồng, một chủ doanh nghiệp nhỏ quản lý hóa đơn hay một phần của một tập đoàn lớn, việc đảm bảo tài liệu của bạn vẫn xác thực và không bị giả mạo là rất quan trọng. Một cách hiệu quả để đạt được bảo mật này là thông qua chữ ký số. Trong bài viết này, chúng ta sẽ khám phá cách ký số vào tệp PDF bằng thư viện Aspose.PDF cho .NET. Chúng tôi sẽ hướng dẫn bạn từng bước một.
 
-Trước khi bắt đầu, hãy đảm bảo bạn có đủ các điều kiện tiên quyết sau:
+## Điều kiện tiên quyết
 
-- Kiến thức cơ bản về ngôn ngữ lập trình C#
-- Cài đặt Visual Studio trên máy của bạn
-- Thư viện Aspose.PDF cho .NET đã được cài đặt
+Trước khi đi sâu vào chi tiết, hãy đảm bảo rằng bạn có mọi thứ cần thiết để bắt đầu ký kỹ thuật số cho các tệp PDF. Sau đây là danh sách các điều kiện tiên quyết:
 
-## Bước 2: Thiết lập môi trường
+1. .NET Framework: Đảm bảo rằng bạn đã cài đặt .NET Framework trên máy của mình. Aspose.PDF cho .NET hỗ trợ nhiều phiên bản của framework.
+2.  Thư viện Aspose.PDF: Bạn sẽ cần tải xuống và cài đặt thư viện Aspose.PDF. Bạn có thể lấy nó từ[liên kết phát hành](https://releases.aspose.com/pdf/net/).
+3.  Chứng chỉ số: Để ký PDF, bạn sẽ cần một chứng chỉ số —`.pfx` tập tin thông thường.
+4. Môi trường phát triển: Sử dụng Visual Studio hoặc bất kỳ IDE nào bạn chọn có hỗ trợ C#.
 
-Để bắt đầu, hãy làm theo các bước sau để thiết lập môi trường phát triển của bạn:
+Khi đã đáp ứng được những điều kiện tiên quyết này, bạn đã sẵn sàng để ký các tài liệu PDF!
 
-1. Mở Visual Studio và tạo một dự án C# mới.
-2. Nhập các không gian tên cần thiết vào tệp mã của bạn:
+## Nhập gói
+
+Bây giờ bạn đã thiết lập mọi thứ, hãy nhập các gói cần thiết để chạy dự án của chúng ta. Ở đầu lớp C# của bạn, hãy bao gồm các không gian tên có liên quan:
 
 ```csharp
+using System.IO;
+using System;
 using Aspose.Pdf;
+using Aspose.Pdf.Facades;
+using System.Collections;
 using Aspose.Pdf.Forms;
 using System.Collections.Generic;
 ```
 
-## Bước 3: Chữ ký số
+Các không gian tên này cung cấp các lớp và phương thức cần thiết mà bạn sẽ sử dụng để thao tác với các tệp PDF bằng Aspose.PDF.
 
-Bước đầu tiên là ký số vào tệp PDF. Mã được cung cấp cho biết cách tạo chữ ký số bằng Aspose.PDF cho .NET.
+## Bước 1: Thiết lập đường dẫn tài liệu của bạn
+
+Bước đầu tiên là thiết lập đường dẫn cho các tệp PDF đầu vào và đầu ra cũng như chứng chỉ kỹ thuật số của bạn. Thay thế`YOUR DOCUMENTS DIRECTORY` với đường dẫn thực tế trên hệ thống nơi lưu trữ các tập tin của bạn.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-string pbxFile = "";
+string pbxFile = ""; // Đường dẫn đến chứng chỉ số của bạn (.pfx)
 string inFile = dataDir + @"DigitallySign.pdf";
 string outFile = dataDir + @"DigitallySign_out.pdf";
+```
+ Trong đoạn trích này,`inFile` là bản PDF gốc mà bạn muốn ký và`outFile` là nơi tệp PDF đã ký sẽ được lưu.
+
+## Bước 2: Tải Tài liệu PDF
+
+ Tiếp theo, chúng ta cần tải tài liệu PDF mà chúng ta muốn ký.`Document` lớp trong Aspose.PDF được sử dụng ở đây:
+
+```csharp
 using (Document document = new Document(inFile))
 {
-     using (PdfFileSignature signature = new PdfFileSignature(document))
-     {
-         PKCS7 pkcs = new PKCS7(pbxFile, "WebSales");
-         DocMDPSignature docMdpSignature = new DocMDPSignature(pkcs, DocMDPAccessPermissions.FillingInForms);
-         System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-         signature.SignatureAppearance = dataDir + @"aspose-logo.jpg";
-         signature.Certify(1, "Reason for signing", "Contact", "Location", true, rect, docMdpSignature);
-         signature.Save(outFile);
-     }
+    // Tiến hành ký logic ở đây...
 }
 ```
 
-Mã này tải tệp PDF, tạo chữ ký số có giao diện được chỉ định, sau đó lưu tệp PDF có chữ ký đã thêm vào.
+Mã này sẽ mở tệp PDF của bạn và chuẩn bị cho các thao tác tiếp theo.
 
-## Bước 4: Xác minh chữ ký
+## Bước 3: Khởi tạo lớp PdfFileSignature
 
-Sau khi thêm chữ ký số, bạn có thể kiểm tra xem tệp PDF có chứa chữ ký hợp lệ hay không.
+ Sau khi tài liệu được tải, chúng tôi tạo một phiên bản của`PdfFileSignature` lớp này cho phép chúng ta làm việc với chữ ký số trên tài liệu PDF đã tải của mình.
 
 ```csharp
-using(Document document = new Document(outFile))
+using (PdfFileSignature signature = new PdfFileSignature(document))
 {
-     using (PdfFileSignature signature = new PdfFileSignature(document))
-     {
-         IList<string> sigNames = signature. GetSignNames();
-         if (sigNames.Count > 0)
-         {
-             if (signature.VerifySigned(sigNames[0] as string))
-             {
-                 if (signature.IsCertified)
-                 {
-                     if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms)
-                     {
-                         // Làm gì đó
-                     }
-                 }
-             }
-         }
-     }
+    // Chuẩn bị quá trình ký kết
 }
 ```
 
-Mã này xác minh chữ ký đầu tiên của tệp PDF và thực hiện các hành động bổ sung nếu chữ ký đã được chứng thực và có các quyền cụ thể.
+Lớp học này là nơi lý tưởng cho bạn để tìm hiểu mọi thứ liên quan đến chữ ký PDF!
 
-### Mã nguồn mẫu cho Digitally Sign sử dụng Aspose.PDF cho .NET 
+## Bước 4: Tạo một phiên bản chứng chỉ số
+
+Đây là nơi bạn thiết lập chứng chỉ sẽ được sử dụng để ký PDF. Bạn cần cung cấp đường dẫn của`.pfx` tập tin cùng với mật khẩu liên quan đến nó.
+
 ```csharp
-try
+PKCS7 pkcs = new PKCS7(pbxFile, "WebSales");
+```
+
+ Hãy chắc chắn thay thế`"WebSales"` bằng mật khẩu chứng chỉ thực tế của bạn.
+
+## Bước 5: Cấu hình giao diện chữ ký
+
+Tiếp theo, chúng ta sẽ xác định chữ ký sẽ xuất hiện như thế nào trong PDF. Bạn có thể tùy chỉnh vị trí và hình thức của chữ ký bằng hình chữ nhật. 
+
+```csharp
+System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
+signature.SignatureAppearance = dataDir + @"aspose-logo.jpg";
+```
+
+Ở đây, chúng ta định vị chữ ký tại tọa độ (100, 100) với chiều rộng là 200 và chiều cao là 100.
+
+## Bước 6: Tạo và Lưu Chữ ký
+
+Bây giờ là lúc thực sự tạo chữ ký và lưu PDF đã ký của chúng ta. Bạn có thể mô tả lý do ký, thông tin liên lạc và vị trí của bạn. Điều này có thể hỗ trợ cho quá trình xác minh sau này.
+
+```csharp
+DocMDPSignature docMdpSignature = new DocMDPSignature(pkcs, DocMDPAccessPermissions.FillingInForms);
+signature.Certify(1, "Signature Reason", "Contact", "Location", true, rect, docMdpSignature);
+signature.Save(outFile);
+```
+
+## Bước 7: Xác minh chữ ký
+
+Sau khi lưu tệp PDF đã ký, bạn nên kiểm tra xem chữ ký đã được thêm đúng chưa. Chúng ta có thể lấy tên chữ ký và kiểm tra xem nó có hợp lệ không. 
+
+```csharp
+using (Document document = new Document(outFile))
 {
-	// Đường dẫn đến thư mục tài liệu.
-	string dataDir = "YOUR DOCUMENTS DIRECTORY";
-	string pbxFile = "";
-	string inFile = dataDir + @"DigitallySign.pdf";
-	string outFile = dataDir + @"DigitallySign_out.pdf";
-	using (Document document = new Document(inFile))
-	{
-		using (PdfFileSignature signature = new PdfFileSignature(document))
-		{
-			PKCS7 pkcs = new PKCS7(pbxFile, "WebSales"); // Sử dụng các đối tượng PKCS7/PKCS7Detached
-			DocMDPSignature docMdpSignature = new DocMDPSignature(pkcs, DocMDPAccessPermissions.FillingInForms);
-			System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-			// Thiết lập giao diện chữ ký
-			signature.SignatureAppearance = dataDir + @"aspose-logo.jpg";
-			// Tạo bất kỳ loại chữ ký nào trong ba loại
-			signature.Certify(1, "Signature Reason", "Contact", "Location", true, rect, docMdpSignature);
-			// Lưu tệp PDF đầu ra
-			signature.Save(outFile);
-		}
-	}
-	using (Document document = new Document(outFile))
-	{
-		using (PdfFileSignature signature = new PdfFileSignature(document))
-		{
-			IList<string> sigNames = signature.GetSignNames();
-			if (sigNames.Count > 0) // Có chữ ký nào không?
-			{
-				if (signature.VerifySigned(sigNames[0] as string)) // Xác minh đầu tiên
-				{
-					if (signature.IsCertified) // Đã được chứng nhận?
-					{
-						if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms) // Nhận quyền truy cập
-						{
-							// Làm gì đó
-						}
-					}
-				}
-			}
-		}
-	}
+    using (PdfFileSignature signature = new PdfFileSignature(document))
+    {
+        IList<string> sigNames = signature.GetSignNames();
+        if (sigNames.Count > 0) 
+        {
+            if (signature.VerifySigned(sigNames[0] as string)) 
+            {
+                if (signature.IsCertified) 
+                {
+                    if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms) 
+                    {
+                        //Chữ ký có giá trị và được chứng thực
+                    }
+                }
+            }
+        }
+    }
 }
+```
+
+Phần này đảm bảo rằng công việc của bạn được xác thực; xét cho cùng, bạn sẽ không muốn gửi một tài liệu chưa được ký!
+
+## Bước 8: Xử lý ngoại lệ
+
+Luôn là khôn ngoan khi bọc mã của bạn trong khối try-catch để xử lý mọi ngoại lệ một cách khéo léo. 
+
+```csharp
 catch (Exception ex)
 {
-	Console.WriteLine(ex.Message);
+    Console.WriteLine(ex.Message);
 }
 ```
+
+Bằng cách này, nếu có điều gì bất ngờ xảy ra, bạn sẽ biết chính xác lỗi ở đâu mà không làm ứng dụng bị sập.
 
 ## Phần kết luận
 
-Xin chúc mừng! Bạn đã thực hiện thành công chữ ký số trên tệp PDF bằng Aspose.PDF cho .NET. Hướng dẫn này bao gồm quy trình từng bước, từ việc thêm chữ ký số đến xác minh tính hợp lệ của nó. Bây giờ bạn có thể sử dụng tính năng này để bảo mật tệp PDF của mình bằng chữ ký số.
+Chữ ký số cung cấp biện pháp bảo vệ thiết yếu cho tài liệu, chứng minh tính xác thực và toàn vẹn. Với Aspose.PDF cho .NET, việc ký tệp PDF là một quy trình đơn giản có thể cải thiện đáng kể quy trình quản lý tài liệu của bạn. Bây giờ bạn đã biết cách số hóa chữ ký của mình, bạn có thể đảm bảo với khách hàng và đối tác về tính chuyên nghiệp và xử lý tài liệu an toàn của mình.
 
-### Câu hỏi thường gặp
+## Câu hỏi thường gặp
 
-#### H: Mục đích của hướng dẫn này là gì?
+### Chữ ký số là gì?
+Chữ ký số là một dạng mật mã tương đương với chữ ký viết tay. Nó đảm bảo tính xác thực và toàn vẹn của dữ liệu.
 
-A: Hướng dẫn này hướng dẫn bạn quy trình ký số tệp PDF bằng Aspose.PDF cho .NET. Chữ ký số thêm dấu vân tay điện tử để đảm bảo tính xác thực và toàn vẹn của tài liệu.
+### Tôi có thể sử dụng Aspose.PDF để ký các tệp PDF trong bất kỳ ứng dụng .NET nào không?
+Có! Aspose.PDF cho .NET tương thích với nhiều ứng dụng .NET khác nhau, bao gồm máy tính để bàn, web và dịch vụ.
 
-#### H: Cần có những điều kiện tiên quyết nào trước khi bắt đầu?
+### Tôi có thể sử dụng loại chứng chỉ số nào?
+ Bạn có thể sử dụng bất kỳ chứng chỉ PKCS#12 nào, thường được lưu trong`.pfx` hoặc`.p12` tài liệu.
 
-A: Trước khi bắt đầu, hãy đảm bảo bạn có hiểu biết cơ bản về ngôn ngữ lập trình C#, đã cài đặt Visual Studio và thư viện Aspose.PDF cho .NET.
+### Có phiên bản dùng thử của Aspose.PDF không?
+ Có! Bạn có thể tải xuống phiên bản dùng thử miễn phí từ[Trang phát hành Aspose](https://releases.aspose.com/).
 
-#### H: Tôi thiết lập môi trường phát triển như thế nào?
-
-A: Thực hiện theo các bước được cung cấp để thiết lập môi trường phát triển của bạn, bao gồm tạo một dự án C# mới trong Visual Studio và nhập các không gian tên cần thiết.
-
-#### H: Làm thế nào để thêm chữ ký số vào tệp PDF?
-
- A: Mã mẫu được cung cấp minh họa cách tải tệp PDF, tạo chữ ký số, chỉ định giao diện và lưu tệp PDF đã ký. Chữ ký số được thêm bằng cách sử dụng`Certify` phương pháp của`PdfFileSignature` sự vật.
-
-#### H: Làm thế nào để xác minh tính hợp lệ của chữ ký số?
-
-A: Sau khi thêm chữ ký số, bạn có thể sử dụng mã mẫu để xác minh tính hợp lệ của chữ ký. Mã này kiểm tra xem chữ ký có được chứng thực và có quyền truy cập cụ thể hay không.
-
-####  Q: Cái gì làm`PKCS7` object represent?
-
- A: Cái`PKCS7` Đối tượng được sử dụng để cung cấp chức năng mã hóa cho chữ ký số. Nó được sử dụng để tạo chữ ký số trong mã mẫu được cung cấp.
-
-#### H: Tôi có thể tùy chỉnh giao diện của chữ ký số không?
-
- A: Có, bạn có thể tùy chỉnh giao diện của chữ ký số bằng cách chỉ định đường dẫn đến hình ảnh trong`SignatureAppearance` tài sản của`PdfFileSignature` sự vật.
-
-#### H: Điều gì xảy ra nếu chữ ký không hợp lệ?
-
-A: Nếu chữ ký không hợp lệ, quá trình xác minh sẽ không thành công và các hành động tương ứng trong khối mã xác minh sẽ không được thực hiện.
-
-#### H: Làm thế nào tôi có thể đảm bảo tính bảo mật cho chữ ký số của mình?
-
-A: Chữ ký số được thiết kế an toàn và sử dụng các kỹ thuật mã hóa để đảm bảo tính xác thực và toàn vẹn. Hãy đảm bảo rằng bạn giữ khóa riêng của mình an toàn và tuân thủ các biện pháp tốt nhất để xử lý chữ ký số.
-
-#### H: Tôi có thể thêm nhiều chữ ký số vào một tệp PDF không?
-
- A: Có, bạn có thể thêm nhiều chữ ký số vào một tệp PDF bằng cách sử dụng`PdfFileSignature` đối tượng của`Sign` hoặc`Certify` phương pháp. Mỗi chữ ký sẽ có giao diện và cấu hình riêng.
+### Tôi có thể nhận được hỗ trợ như thế nào nếu gặp vấn đề?
+ Để được hỗ trợ, bạn có thể truy cập[Diễn đàn PDF Aspose](https://forum.aspose.com/c/pdf/10).

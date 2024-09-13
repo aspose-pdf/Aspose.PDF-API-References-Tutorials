@@ -2,48 +2,80 @@
 title: PDF Dosyasında Son Kullanma Tarihini Ayarla
 linktitle: PDF Dosyasında Son Kullanma Tarihini Ayarla
 second_title: Aspose.PDF for .NET API Referansı
-description: Bu adım adım kılavuzla Aspose.PDF for .NET kullanarak PDF dosyasına son kullanma tarihinin nasıl ayarlanacağını öğrenin.
+description: Aspose.PDF for .NET kullanarak PDF dosyalarında son kullanma tarihi ayarlamayı öğrenin. Bu adım adım kılavuzla belge güvenliğini artırın.
 type: docs
 weight: 300
 url: /tr/net/programming-with-document/setexpirydate/
 ---
-Aspose.PDF for .NET, PDF dosyalarıyla çalışmak için çeşitli özellikler sağlayan güçlü bir kütüphanedir. Bu özelliklerden biri de PDF belgesi için son kullanma tarihi belirleme yeteneğidir. Bu eğitimde, Aspose.PDF for .NET kullanarak PDF belgesi için son kullanma tarihi belirleme sürecini adım adım anlatacağız. 
+## giriiş
 
-## Adım 1: Belge dizinine giden yolu ayarlayın
+Günümüzün dijital çağında, belgeleri yönetmek ve güvence altına almak her zamankinden daha önemli. Belirli bir tarihten sonra otomatik olarak erişilemez hale gelen bir PDF gönderdiğinizi düşünün. Kulağa sihir gibi geliyor, değil mi? Aspose.PDF for .NET ile PDF dosyalarınız için kolayca bir son kullanma tarihi belirleyebilirsiniz. Bu özellik, belirli bir süreden sonra kısıtlanması gereken hassas belgeler için özellikle yararlıdır. Bu eğitimde, bir PDF dosyasında son kullanma tarihi belirleme sürecini adım adım anlatacağız. O halde, kodlama şapkanızı alın ve başlayalım!
 
-Başlamadan önce, PDF belgemizin bulunduğu dizine giden yolu ayarlamamız gerekiyor. Bu yolu "dataDir" adlı bir değişkende saklayacağız.
+## Ön koşullar
+
+Başlamadan önce, yerinde olması gereken birkaç şey var:
+
+1. Geliştirme Ortamı: .NET geliştirme ortamınızın kurulu olduğundan emin olun. Bu, Visual Studio veya .NET'i destekleyen herhangi bir IDE olabilir.
+2.  .NET için Aspose.PDF: Aspose.PDF kütüphanesinin kurulu olması gerekir. Bunu henüz yapmadıysanız, şuradan indirebilirsiniz:[Burada](https://releases.aspose.com/pdf/net/).
+3. C# Temel Bilgisi: Bu eğitim, C# programlama konusunda temel bir anlayışa sahip olduğunuzu varsayar. C#'a yeniyseniz endişelenmeyin! Bunu basit ve anlaşılır tutacağız.
+
+## Paketleri İçe Aktar
+
+Aspose.PDF'ye başlamak için, C# projenize gerekli ad alanlarını içe aktarmanız gerekir. Bunu şu şekilde yapabilirsiniz:
+
+```csharp
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Text;
+```
+
+Bu ad alanları, Aspose.PDF'de PDF belgeleriyle çalışmak için gereken temel işlevlere erişmenizi sağlar.
+
+## Adım 1: Belge Dizininizi Ayarlayın
+
+İlk önce, belgeler dizininize giden yolu belirtmeniz gerekir. Çıktı PDF'niz buraya kaydedilecektir. 
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Adım 2: Yeni bir PDF belgesi oluşturma
+ Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` PDF dosyanızı kaydetmek istediğiniz gerçek yol ile. Programınıza "Hey, dosyalarımı burada saklıyorum!" demeye benzer.
 
- Yeni bir PDF belgesi oluşturmak için yeni bir örnek oluşturmamız gerekir`Aspose.Pdf.Document` nesne. Bunu aşağıdaki kodu kullanarak yapabiliriz:
+## Adım 2: Belge Nesnesini Örneklendirin
+
+ Daha sonra, yeni bir örnek oluşturmanız gerekir`Document` sınıf. Bu, PDF'nizi oluşturacağınız tuvalinizdir.
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## Adım 3: PDF belgesine yeni bir sayfa ekleme
+ Şunu düşünün:`Document` nesneyi boş bir kağıt parçası olarak düşünün. İstediğiniz gibi içerik ekleyebilirsiniz!
 
-PDF belgesini oluşturduğumuzda, ona yeni bir sayfa ekleyebiliriz. Bunu aşağıdaki kodu kullanarak yapabiliriz:
+## Adım 3: PDF'ye bir Sayfa Ekleyin
+
+Artık belgeniz ayarlandığına göre, ona bir sayfa ekleme zamanı geldi. İçeriğiniz buraya gidecek.
 
 ```csharp
 doc.Pages.Add();
 ```
 
-## Adım 4: PDF Belgesine Metin Ekleme
+PDF'inizde yeni bir sayfa oluşturdunuz. Bu, düşüncelerinizi not edebileceğiniz defterinize yeni bir sayfa eklemek gibidir.
 
- PDF belgesine bir sayfa ekledikten sonra, şunu kullanarak ona metin ekleyebiliriz:`Paragraphs` koleksiyon. Bunu aşağıdaki kodu kullanarak yapabiliriz:
+## Adım 4: Sayfaya Metin Ekleyin
+
+Biraz metin ekleyerek bu sayfayı biraz daha ilgi çekici hale getirelim. Basit bir "Merhaba Dünya" mesajı ekleyelim.
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
 ```
 
-## Adım 5: JavaScript kullanarak PDF son kullanma tarihini ayarlama
+Bu kod satırı PDF'nizin ilk sayfasına bir metin parçası ekler. Sayfanızın en üstüne bir başlık yazmak gibidir!
 
-PDF son kullanma tarihini ayarlamak için bir JavaScript nesnesi oluşturmamız gerekir. Bunu aşağıdaki kodu kullanarak yapabiliriz:
+## Adım 5: Son Kullanma Tarihi için JavaScript Oluşturun
+
+Şimdi eğlenceli kısma geliyoruz! PDF'nin son kullanma tarihini kontrol edecek bir JavaScript eylemi oluşturacaksınız. Mevcut tarih son kullanma tarihini aşarsa, kullanıcıyı uyaran bir mesaj gönderilecektir.
 
 ```csharp
 JavascriptAction javaScript = new JavascriptAction(
@@ -53,67 +85,52 @@ JavascriptAction javaScript = new JavascriptAction(
 + "expiry = new Date(year, month);"
 + "if (today.getTime() > expiry.getTime())"
 + "app.alert('The file is expired. You need a new one.');");
+```
 
-// JavaScript'i PDF olarak ayarla açık eylem
+İşte olanlar:
+- Son kullanma yılını ve ayını siz belirlersiniz.
+- Bugünün tarihini aldın.
+- Bugünün tarihini son kullanma tarihiyle karşılaştırıyorsunuz.
+- Eğer bugünün tarihi son kullanma tarihini geçtiyse bir mesaj belirir!
+
+## Adım 6: JavaScript'i PDF Açma Eylemi Olarak Ayarla
+
+Şimdi, JavaScript eylemini PDF belgeniz için açma eylemi olarak ayarlamanız gerekiyor. Bu, JavaScript'in PDF açılır açılmaz çalışacağı anlamına gelir.
+
+```csharp
 doc.OpenAction = javaScript;
 ```
 
-Bu kodda son kullanma tarihini Mayıs 2017 olarak ayarlıyoruz.
+Bu satır, PDF'e birisi açtığında JavaScript'i çalıştırmasını söyler. Takviminizi açtığınız anda çalan bir hatırlatıcı ayarlamak gibidir!
 
-## Adım 6: PDF Dosyasını Kaydedin
+## Adım 7: PDF Belgesini Kaydedin
 
- Son kullanma tarihini ayarladıktan sonra PDF dosyasını kaydetmeniz gerekir. Bunu yapmak için şunu kullanabilirsiniz:`Save` yöntemi`Document` nesnesini seçin ve güncellenmiş PDF dosyasını kaydetmek istediğiniz yolu girin.
+Son olarak PDF belgenizi son kullanma tarihi özelliğiyle kaydetmenin zamanı geldi. 
 
 ```csharp
 dataDir = dataDir + "SetExpiryDate_out.pdf";
-// PDF Belgesini Kaydet
 doc.Save(dataDir);
 ```
 
-### .NET için Aspose.PDF kullanarak Son Kullanma Tarihini Ayarlamak için örnek kaynak kodu
-
-İşte .NET için Aspose.PDF kullanarak son kullanma tarihini ayarlamaya yönelik tam örnek kaynak kodu:
-
-```csharp
-// Belgeler dizinine giden yol.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Belge nesnesini örnekle
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-// PDF dosyasının sayfa sayfa koleksiyonunu ekle
-doc.Pages.Add();
-// Sayfa nesnesinin paragraf koleksiyonuna metin parçası ekle
-doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
-// PDF son kullanma tarihini ayarlamak için JavaScript nesnesi oluşturun
-JavascriptAction javaScript = new JavascriptAction(
-"var year=2017;"
-+ "var month=5;"
-+ "today = new Date(); today = new Date(today.getFullYear(), today.getMonth());"
-+ "expiry = new Date(year, month);"
-+ "if (today.getTime() > expiry.getTime())"
-+ "app.alert('The file is expired. You need a new one.');");
-// JavaScript'i PDF olarak ayarla açık eylem
-doc.OpenAction = javaScript;
-
-dataDir = dataDir + "SetExpiryDate_out.pdf";
-// PDF Belgesini Kaydet
-doc.Save(dataDir);
-```
+Bu satır PDF'nizi "SetExpiryDate_out.pdf" adıyla belirtilen dizine kaydeder. Bu, bitmiş sanat eserinizi bir çerçeveye koymak gibidir!
 
 ## Çözüm
 
-Aspose.PDF for .NET kullanarak bir PDF belgesi için son kullanma tarihi belirlemek, belgenin yalnızca belirli bir süre için geçerli olduğundan emin olmak için kullanışlı bir özelliktir. Adım adım kılavuzu izleyerek ve sağlanan C# kaynak kodunu kullanarak, geliştiriciler son kullanma tarihini kolayca ayarlayabilir ve zaman sınırlı geçerliliğe sahip PDF'ler oluşturabilir. Bu özellik, sınırlı bir süre için erişilmesi veya dağıtılması gereken belgeler için özellikle yararlı olabilir.
+İşte karşınızda! Aspose.PDF for .NET kullanarak son kullanma tarihi olan bir PDF dosyasını başarıyla oluşturdunuz. Bu özellik yalnızca güvenliği artırmakla kalmaz, aynı zamanda hassas bilgilerin kontrol altında tutulmasını da sağlar. İster sözleşmeler, raporlar veya başka önemli belgeler gönderiyor olun, bir son kullanma tarihi belirlemek oyunun kurallarını değiştirebilir.
 
-### PDF dosyasında son kullanma tarihi belirlemeye ilişkin SSS
+## SSS
 
-#### S: PDF belgesi için farklı bir son kullanma tarihi belirleyebilir miyim?
+### Aspose.PDF for .NET nedir?
+Aspose.PDF for .NET, geliştiricilerin .NET uygulamalarında PDF belgeleri oluşturmasına, düzenlemesine ve dönüştürmesine olanak tanıyan güçlü bir kütüphanedir.
 
- A: Evet, Adım 5'teki JavaScript kodunu değiştirerek PDF belgesi için farklı bir son kullanma tarihi belirleyebilirsiniz. Sağlanan örnekte son kullanma tarihi Mayıs 2017 olarak ayarlanmıştır. Farklı bir son kullanma tarihi belirlemek için,`year` Ve`month` JavaScript kodundaki değişkenleri istenilen yıl ve aya ayarlayın.
+### Aspose.PDF'yi ücretsiz kullanabilir miyim?
+ Evet, Aspose.PDF'in ücretsiz deneme sürümünü kullanabilirsiniz. İndirebilirsiniz[Burada](https://releases.aspose.com/).
 
-#### S: PDF belgesinin süresi dolduğunda ne olur?
+### Aspose.PDF'i nasıl satın alabilirim?
+Aspose.PDF'yi şuraya tıklayarak satın alabilirsiniz:[satın alma sayfası](https://purchase.aspose.com/buy).
 
-A: JavaScript kodunda belirtildiği gibi PDF belgesinin süresi dolduğunda, görüntüleyici dosyanın süresinin dolduğunu ve kullanıcının yenisine ihtiyacı olduğunu belirten bir uyarı mesajı görüntüler. Bu uyarı mesajı PDF açıldığında gösterilir.
+### Desteğe ihtiyacım olursa ne olur?
+Herhangi bir sorunuz varsa veya yardıma ihtiyacınız varsa, şu adresi ziyaret edebilirsiniz:[Aspose destek forumu](https://forum.aspose.com/c/pdf/10).
 
-#### S: Sadece tarih yerine son kullanma tarihi için belirli bir zaman kullanabilir miyim?
-
- A: Evet, JavaScript kodunda son kullanma tarihi için belirli bir zaman belirleyebilirsiniz.`expiry` JavaScript kodunda istediğiniz zamanı ekleyebileceğiniz bir değişken kullanarak, son kullanma tarihi için belirli bir zaman belirleyebilirsiniz.
+### Aspose.PDF için geçici lisans alabilir miyim?
+ Evet, geçici lisans talebinde bulunabilirsiniz[Burada](https://purchase.aspose.com/temporary-license/).

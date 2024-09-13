@@ -11,16 +11,16 @@ De tutorialpagina "Programming with Links and Actions" op Aspose.PDF voor .NET b
 ## Zelfstudies
 | Titel | Beschrijving |
 | --- | --- | 
-| [Hyperlink toevoegen in PDF-bestand](./add-hyperlink/) | Voeg eenvoudig interactieve hyperlinks toe aan een PDF-bestand met Aspose.PDF voor .NET. |  
-| [Maak een applicatielink in een PDF-bestand](./create-application-link/) | Maak eenvoudig applicatiekoppelingen in een PDF-bestand met Aspose.PDF voor .NET. |  
-| [Documentkoppeling maken](./create-document-link/) | Maak eenvoudig koppelingen naar andere PDF-documenten met Aspose.PDF voor .NET. |  
-| [Lokale hyperlink maken in PDF-bestand](./create-local-hyperlink/) | Maak eenvoudig lokale hyperlinks in een PDF-bestand met Aspose.PDF voor .NET. |  
-| [Koppelingen uit PDF-bestand extraheren](./extract-links/) | Haal eenvoudig links uit een PDF-bestand met Aspose.PDF voor .NET. |  
-| [Hyperlinkbestemmingen in PDF-bestand ophalen](./get-hyperlink-destinations/) | Leer hoe u hyperlinkbestemmingen uit een PDF-bestand kunt extraheren met Aspose.PDF voor .NET. |  
-| [Hyperlinktekst in PDF-bestand ophalen](./get-hyperlink-text/) | Leer hoe u hyperlinktekst uit een PDF-bestand kunt extraheren met Aspose.PDF voor .NET. |  
-| [Open actie verwijderen](./remove-open-action/) | Leer hoe u de openactie uit een PDF verwijdert met Aspose.PDF voor .NET. |  
-| [Bestemmingslink in PDF-bestand instellen](./set-destination-link/) | Leer hoe u een bestemmingskoppeling in een PDF-bestand instelt met Aspose.PDF voor .NET. |  
-| [Doelkoppeling instellen in PDF-bestand](./set-target-link/) | Leer hoe u een doelkoppeling in een PDF-bestand instelt met Aspose.PDF voor .NET. |  
-| [Geef pagina op bij het bekijken](./specify-page-when-viewing/) | Leer hoe u een pagina kunt opgeven bij het bekijken van een PDF met Aspose.PDF voor .NET. |  
-| [Links in PDF-bestand bijwerken](./update-links/) | Leer hoe u koppelingen in een PDF-bestand kunt bijwerken met Aspose.PDF voor .NET. |  
-| [Linktekstkleur in PDF-bestand bijwerken](./update-link-text-color/) | Leer hoe u de tekstkleur van koppelingen in een PDF-bestand kunt bijwerken met Aspose.PDF voor .NET. |  
+| [Hyperlink toevoegen in PDF-bestand](./add-hyperlink/) | Leer hoe u eenvoudig hyperlinks aan uw PDF's kunt toevoegen met Aspose.PDF voor .NET. Vergroot de interactiviteit en betrokkenheid van gebruikers bij uw documenten. |  
+| [Maak een applicatielink in een PDF-bestand](./create-application-link/) | Leer hoe u toepassingskoppelingen in PDF-bestanden maakt met Aspose.PDF voor .NET. Stapsgewijze handleiding om de interactiviteit in uw PDF's te verbeteren. |  
+| [Documentkoppeling maken](./create-document-link/) | Ontdek hoe u documentkoppelingen in PDF's kunt maken met Aspose.PDF voor .NET. Verbeter de navigatie en interactiviteit in uw PDF-documenten. |  
+| [Lokale hyperlink maken in PDF-bestand](./create-local-hyperlink/) | Leer hoe u moeiteloos lokale hyperlinks in PDF-bestanden kunt maken met Aspose.PDF voor .NET met onze stapsgewijze handleiding. |  
+| [Koppelingen uit PDF-bestand extraheren](./extract-links/) | Leer in deze stapsgewijze zelfstudie hoe u eenvoudig koppelingen uit PDF-bestanden kunt extraheren met Aspose.PDF voor .NET. |  
+| [Hyperlinkbestemmingen in PDF-bestand ophalen](./get-hyperlink-destinations/) | Leer hoe u eenvoudig hyperlinkbestemmingen uit PDF-bestanden kunt extraheren met Aspose.PDF voor .NET. Volg deze eenvoudige stapsgewijze tutorial. |  
+| [Hyperlinktekst in PDF-bestand ophalen](./get-hyperlink-text/) | Leer hoe u moeiteloos hyperlinktekst uit een PDF-bestand kunt extraheren met Aspose.PDF voor .NET. Inclusief stapsgewijze handleiding en code. |  
+| [Open actie verwijderen](./remove-open-action/) | Verwijder eenvoudig geopende acties uit PDF's met Aspose.PDF voor .NET! Een eenvoudige tutorial met stapsgewijze instructies voor effectief PDF-beheer. |  
+| [Bestemmingslink in PDF-bestand instellen](./set-destination-link/) | Leer hoe u bestemmingskoppelingen in PDF-bestanden instelt met Aspose.PDF voor .NET. Een stapsgewijze handleiding voor het verbeteren van uw PDF-interactiviteit. |  
+| [Doelkoppeling instellen in PDF-bestand](./set-target-link/) | Leer hoe u efficiënt doelkoppelingen in PDF-bestanden instelt met Aspose.PDF voor .NET met onze stapsgewijze handleiding. Perfect voor het verbeteren van documentnavigatie. |  
+| [Geef pagina op bij het bekijken](./specify-page-when-viewing/) | Leer hoe u een pagina kunt opgeven om te bekijken in een PDF met Aspose.PDF voor .NET. Verbeter de gebruikersnavigatie met deze eenvoudige handleiding. |  
+| [Links in PDF-bestand bijwerken](./update-links/) | Leer hoe u de linktekstkleur in een PDF-bestand kunt bijwerken met Aspose.PDF voor .NET. Deze stapsgewijze handleiding leidt u door elk detail met eenvoudig te volgen voorbeelden. |  
+| [Linktekstkleur in PDF-bestand bijwerken](./update-link-text-color/) | Werk moeiteloos links bij in uw PDF-bestanden met Aspose.PDF voor .NET met deze uitgebreide stapsgewijze handleiding. Vereenvoudig uw PDF-bewerking. |  

@@ -60,7 +60,7 @@ headerRow.Cells.Add("header 1");
 headerRow.Cells.Add("header 2");
 headerRow.Cells.Add("header 3");
 // -
-// เพิ่มหัวข้ออื่น ๆ ที่นี่
+//เพิ่มหัวข้ออื่น ๆ ที่นี่
 
 for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
 {
@@ -101,7 +101,7 @@ Aspose.Pdf.Table outerTable = new Aspose.Pdf.Table();
 outerTable.ColumnWidths = "100%";
 outerTable.HorizontalAlignment = HorizontalAlignment.Left;
 
-//สร้างอินสแตนซ์ของวัตถุตารางที่จะซ้อนอยู่ภายใน outerTable ที่จะแยกออกภายในหน้าเดียวกัน
+// สร้างอินสแตนซ์ของวัตถุตารางที่จะซ้อนอยู่ภายใน outerTable ที่จะแยกออกภายในหน้าเดียวกัน
 Aspose.Pdf.Table mytable = new Aspose.Pdf.Table();
 mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;

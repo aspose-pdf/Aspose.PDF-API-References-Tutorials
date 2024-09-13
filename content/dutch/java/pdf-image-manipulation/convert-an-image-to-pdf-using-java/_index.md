@@ -86,7 +86,7 @@ Aspose.PDF voor Java is een commerciële bibliotheek met een gratis proefversie 
 
 ### Zijn er beperkingen aan de grootte van de afbeelding die naar een PDF kan worden geconverteerd?
 
-Aspose.PDF voor Java stelt geen strikte beperkingen aan de grootte van de afbeelding die naar een PDF kan worden geconverteerd. Zeer grote afbeeldingen kunnen echter extra geheugen en verwerkingstijd vereisen. Het wordt aanbevolen om grote afbeeldingen te optimaliseren en de grootte ervan aan te passen vóór de conversie voor betere prestaties.
+Aspose.PDF voor Java stelt geen strikte beperkingen aan de grootte van de afbeelding die kan worden geconverteerd naar een PDF. Zeer grote afbeeldingen kunnen echter extra geheugen en verwerkingstijd vereisen. Het wordt aanbevolen om grote afbeeldingen te optimaliseren en de grootte ervan aan te passen vóór de conversie voor betere prestaties.
 
 ### Kan ik het gegenereerde PDF-document met een wachtwoord beveiligen?
 

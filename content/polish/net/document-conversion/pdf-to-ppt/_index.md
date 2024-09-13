@@ -31,7 +31,7 @@ Otwórz Visual Studio i utwórz nowy projekt C#. Możesz wybrać aplikację kons
 
 Po utworzeniu projektu należy dodać odniesienie do biblioteki Aspose.PDF. Można to zrobić w następujący sposób:
 
-- Kliknij prawym przyciskiem myszy swój projekt w Eksploratorze rozwiązań.
+- Kliknij prawym przyciskiem myszy na swoim projekcie w Eksploratorze rozwiązań.
 - Wybierz opcję „Zarządzaj pakietami NuGet”.
 - Wyszukiwanie pliku „Aspose.PDF” i jego instalacja.
 
@@ -69,7 +69,7 @@ Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "input.pdf");
 
 ## Krok 3: Utwórz instancję PptxSaveOptions
 
- Teraz musimy utworzyć instancję`PptxSaveOptions`Ta klasa umożliwia określenie opcji zapisywania pliku PDF jako pliku PPTX.
+ Teraz musimy utworzyć instancję`PptxSaveOptions`Ta klasa umożliwia nam określenie opcji zapisywania pliku PDF jako pliku PPTX.
 
 ```csharp
 //Utwórz wystąpienie PptxSaveOptions
@@ -81,7 +81,7 @@ Aspose.Pdf.PptxSaveOptions pptx_save = new Aspose.Pdf.PptxSaveOptions();
  Na koniec zapiszemy załadowany dokument PDF jako plik PPTX za pomocą`Save` metoda. To tutaj dzieje się magia!
 
 ```csharp
-// Zapisz dane wyjściowe w formacie PPTX
+// Zapisz wynik w formacie PPTX
 doc.Save(dataDir + "PDFToPPT_out.pptx", pptx_save);
 ```
 

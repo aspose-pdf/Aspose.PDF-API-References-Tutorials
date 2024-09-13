@@ -89,7 +89,7 @@ try {
 
 In deze gids hebben we het proces van het converteren van PDF naar HTML met lettertypevervanging met Aspose.PDF voor Java behandeld. Deze krachtige bibliotheek vereenvoudigt het conversieproces en zorgt ervoor dat uw HTML-documenten hetzelfde uiterlijk behouden, zelfs bij het werken met niet-webveilige lettertypen.
 
-Nu kunt u PDF naar HTML-conversie naadloos integreren in uw Java-applicaties. Als u vragen hebt of tegen uitdagingen aanloopt, raadpleeg dan de FAQ's hieronder.
+Nu kunt u PDF naar HTML-conversie naadloos integreren in uw Java-applicaties. Als u vragen hebt of uitdagingen tegenkomt, raadpleeg dan de FAQ's hieronder.
 
 ## Veelgestelde vragen
 

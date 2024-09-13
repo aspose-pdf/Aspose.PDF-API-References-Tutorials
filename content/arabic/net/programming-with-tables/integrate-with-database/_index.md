@@ -80,7 +80,7 @@ DataTable dt = new DataTable("Employee");
 dt.Columns.Add("Employee_ID", typeof(Int32));
 dt.Columns.Add("Employee_Name", typeof(string));
 dt.Columns.Add("Gender", typeof(string));
-// إضافة صفين إلى كائن DataTable برمجيًا
+//إضافة صفين إلى كائن DataTable برمجيًا
 DataRow dr = dt.NewRow();
 dr[0] = 1;
 dr[1] = "John Smith";
@@ -132,7 +132,7 @@ Console.WriteLine("\nDatabase integrated successfully.\nFile saved at " + dataDi
 
 #### س: هل يمكنني تقسيم الجدول إلى صفحات إذا تجاوز عدد معين من الصفوف؟
 
- ج: نعم، يمكنك ترقيم صفحات الجدول إذا تجاوز عدد الصفوف المسموح به. لتحقيق ذلك، يمكنك استخدام`IsInNewPage`خاصية كائن الصف للإشارة إلى أنه يجب بدء صفحة جديدة بعد صف معين. يمكنك حساب عدد الصفوف المراد عرضها في كل صفحة وتعيين`IsInNewPage` الممتلكات وفقا لذلك.
+ج: نعم، يمكنك ترقيم صفحات الجدول إذا تجاوز عدد الصفوف المسموح به. لتحقيق ذلك، يمكنك استخدام`IsInNewPage` خاصية كائن الصف للإشارة إلى أنه يجب بدء صفحة جديدة بعد صف معين. يمكنك حساب عدد الصفوف المراد عرضها في كل صفحة وتعيين`IsInNewPage` الممتلكات وفقا لذلك.
 
 #### س: كيف يمكنني تصدير مستند PDF مع بيانات قاعدة البيانات المضمنة إلى تنسيقات ملفات مختلفة مثل DOCX أو XLSX؟
 

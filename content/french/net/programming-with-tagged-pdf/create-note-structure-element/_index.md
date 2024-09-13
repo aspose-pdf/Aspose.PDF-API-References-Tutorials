@@ -103,7 +103,7 @@ NoteElement note3 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note3);
 note3.SetText("Note with ID = 'note_003'. ");
 note3.SetId("note_003");
-// Doit générer une exception - Aspose.Pdf.Tagged.TaggedException : l'élément de structure avec l'ID = 'note_002' existe déjà
+//Doit générer une exception - Aspose.Pdf.Tagged.TaggedException : l'élément de structure avec l'ID = 'note_002' existe déjà
 //note3.SetId("note_002");
 // Le document résultant n'est pas conforme à PDF/UA si ClearId() est utilisé pour l'élément de structure de note
 //note3.ClearId();
@@ -148,7 +148,7 @@ R : Oui, vous pouvez personnaliser le contenu et les propriétés des élément
 
 #### Q : Puis-je attribuer des identifiants uniques aux éléments de structure de notes ?
 
- : Oui, vous pouvez attribuer des identifiants uniques aux éléments de structure de note à l'aide de l'`SetId` méthode. Le code montre comment définir les identifiants des éléments de note sur des valeurs uniques.
+ R : Oui, vous pouvez attribuer des identifiants uniques aux éléments de structure de note à l'aide de l'`SetId` méthode. Le code montre comment définir les identifiants des éléments de note sur des valeurs uniques.
 
 #### Q : Que se passe-t-il si j’essaie d’attribuer un ID en double à un élément de structure de note ?
 
@@ -156,8 +156,8 @@ R : Toute tentative d'attribution d'un identifiant en double à un élément de
 
 #### Q : Comment puis-je garantir la conformité PDF/UA lors de la création d’éléments de structure de notes ?
 
- R : Le code fourni dans le didacticiel montre comment valider la conformité PDF/UA à l'aide de`Validate` méthode. En validant le document par rapport à la norme PDF/UA, vous pouvez garantir que les éléments de structure de note ajoutés respectent les directives d'accessibilité.
+R : Le code fourni dans le didacticiel montre comment valider la conformité PDF/UA à l'aide de`Validate` méthode. En validant le document par rapport à la norme PDF/UA, vous pouvez garantir que les éléments de structure de note ajoutés respectent les directives d'accessibilité.
 
 #### Q : Puis-je utiliser cette approche pour ajouter des éléments de structure de note à un document PDF existant ?
 
-: Oui, vous pouvez modifier l'approche fournie pour ajouter des éléments de structure de note à un document PDF existant. Au lieu de créer un nouveau document, vous devez charger le document existant à l'aide d'Aspose.PDF, puis suivre des étapes similaires pour ajouter des éléments de note.
+R : Oui, vous pouvez modifier l'approche fournie pour ajouter des éléments de structure de note à un document PDF existant. Au lieu de créer un nouveau document, vous devez charger le document existant à l'aide d'Aspose.PDF, puis suivre des étapes similaires pour ajouter des éléments de note.

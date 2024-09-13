@@ -1,7 +1,7 @@
 ---
 title: Ställ in kant i PDF till tabell
 linktitle: Ställ in kant i PDF till tabell
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du ställer in en ram i PDF till tabell med Aspose.PDF för .NET.
 type: docs
 weight: 200
@@ -66,7 +66,7 @@ Därefter lägger vi till en cell i raden:
 Aspose.Pdf.Cell cell = row.Cells.Add("some text");
 ```
 
-## Steg 9: Ställa in cellkanten
+## Steg 9: Ställ in cellkanten
 Vi kommer att definiera cellens kant (dubbel kant):
 
 ```csharp
@@ -114,9 +114,9 @@ table.ColumnWidths = "100";
 Aspose.Pdf.Row row = table.Rows.Add();
 // Lägg till en tabellcell till cellsamlingen av rad
 Aspose.Pdf.Cell cell = row.Cells.Add("some text");
-// Ställ in ram för cellobjekt (dubbel ram)
+// Ställ in ram för cellobjekt (dubbel kant)
 cell.Border = border;
-// Lägg till tabell i styckesamlingen på sidan
+// Lägg till tabell till styckesamlingen på sidan
 page.Paragraphs.Add(table);
 dataDir = dataDir + "TableBorderTest_out.pdf";
 // Spara PDF-dokumentet

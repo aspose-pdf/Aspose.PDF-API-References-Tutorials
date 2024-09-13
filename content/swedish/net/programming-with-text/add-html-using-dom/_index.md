@@ -1,7 +1,7 @@
 ---
 title: Lägg till HTML med DOM
 linktitle: Lägg till HTML med DOM
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du lägger till HTML-innehåll med DOM i Aspose.PDF för .NET.
 type: docs
 weight: 40
@@ -37,7 +37,7 @@ Document doc = new Document();
 ```
 
 ## Steg 5: Lägg till en sida i dokumentet
- Lägg till en ny sida i dokumentet med hjälp av`Add` metod för`Pages`samling. I den angivna koden är den nya sidan tilldelad variabeln`page`.
+ Lägg till en ny sida i dokumentet med hjälp av`Add` metod för`Pages` samling. I den angivna koden är den nya sidan tilldelad variabeln`page`.
 
 ```csharp
 Page page = doc.Pages.Add();

@@ -2,156 +2,159 @@
 title: Kotak Centang yang Dikelompokkan dalam Dokumen PDF
 linktitle: Kotak Centang yang Dikelompokkan dalam Dokumen PDF
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Buat kotak centang yang dikelompokkan dengan mudah dalam dokumen PDF dengan Aspose.PDF untuk .NET.
+description: Pelajari cara membuat kotak centang yang dikelompokkan (tombol radio) dalam dokumen PDF menggunakan Aspose.PDF untuk .NET dengan tutorial langkah demi langkah ini.
 type: docs
 weight: 170
 url: /id/net/programming-with-forms/grouped-check-boxes/
 ---
-Dalam tutorial ini, kami akan menunjukkan cara membuat kotak centang berkelompok dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Kami akan menjelaskan kode sumber C# langkah demi langkah untuk memandu Anda melalui proses ini.
+## Perkenalan
 
-## Langkah 1: Persiapan
+Membuat PDF interaktif tidak sesulit kedengarannya, terutama jika Anda memiliki alat canggih seperti Aspose.PDF for .NET. Salah satu elemen interaktif yang mungkin perlu Anda tambahkan ke dokumen PDF adalah kotak centang berkelompok, atau lebih tepatnya, tombol radio yang memungkinkan pengguna memilih satu opsi dari sekumpulan opsi. Tutorial ini akan memandu Anda melalui proses penambahan kotak centang berkelompok (tombol radio) ke dokumen PDF menggunakan Aspose.PDF for .NET. Baik Anda seorang pemula atau pengembang berpengalaman, Anda akan merasa panduan ini menarik, terperinci, dan mudah diikuti.
 
-Pastikan Anda telah mengimpor pustaka yang diperlukan dan mengatur jalur ke direktori dokumen Anda:
+## Prasyarat
+
+Sebelum kita menyelami panduan langkah demi langkah, mari kita bahas beberapa prasyarat penting:
+
+1.  Aspose.PDF untuk .NET: Pastikan Anda telah menginstal pustaka Aspose.PDF. Jika tidak, Anda dapat[unduh disini](https://releases.aspose.com/pdf/net/).
+2. IDE: Anda harus menyiapkan lingkungan pengembangan, seperti Visual Studio.
+3. .NET Framework: Proyek harus menargetkan versi .NET Framework yang kompatibel dengan Aspose.PDF.
+4. Pengetahuan Dasar C#: Keakraban dengan C# dan manipulasi PDF diperlukan untuk mengikutinya dengan lancar.
+5.  Lisensi: Aspose.PDF memerlukan lisensi untuk fungsionalitas penuh. Anda dapat[memperoleh lisensi sementara](https://purchase.aspose.com/temporary-license/) jika diperlukan.
+
+## Paket Impor
+
+Sebelum memulai, pastikan Anda telah mengimpor namespace yang diperlukan ke proyek Anda:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Forms;
 ```
 
-## Langkah 2: Membuat Instansi Objek Dokumen
+Paket-paket ini akan memberi Anda akses ke semua kelas dan metode yang diperlukan untuk memanipulasi dokumen PDF, termasuk membuat tombol radio dan menentukan propertinya.
 
-Membuat instance objek Dokumen:
+Di bagian ini, kami akan menguraikan proses pembuatan kotak centang berkelompok (tombol radio) menjadi langkah-langkah yang jelas dan mudah diikuti.
+
+## Langkah 1: Buat Dokumen PDF Baru
+
+ Langkah pertama adalah membuat instance dari`Document` objek, yang akan mewakili berkas PDF Anda. Lalu, tambahkan halaman kosong ke dokumen Anda tempat Anda akan menempatkan kotak centang yang dikelompokkan.
 
 ```csharp
+// Membuat instance objek Dokumen
 Document pdfDocument = new Document();
-```
 
-## Langkah 3: Tambahkan halaman ke dokumen PDF
-
-Tambahkan halaman ke dokumen PDF:
-
-```csharp
+// Tambahkan halaman ke file PDF
 Page page = pdfDocument.Pages.Add();
 ```
 
-## Langkah 4: Membuat Instansiasi Objek RadioButtonField
+Ini menyiapkan fondasi untuk menambahkan elemen apa pun, seperti tombol radio, ke PDF.
 
-Buat instance objek RadioButtonField dengan nomor halaman sebagai argumen:
+## Langkah 2: Inisialisasi Bidang Tombol Radio
+
+Selanjutnya, kita perlu membuat`RadioButtonField` objek, yang akan menampung kotak centang yang dikelompokkan (tombol radio). Bidang ini ditambahkan ke halaman tertentu tempat kotak centang akan muncul.
 
 ```csharp
+// Buat instance objek RadioButtonField dan tetapkan ke halaman pertama
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## Langkah 5: Tambahkan opsi tombol radio
+Anggap ini sebagai wadah yang akan mengelompokkan opsi tombol radio individual bersama-sama.
 
-Tambahkan opsi tombol radio menggunakan objek RadioButtonOptionField dan tentukan posisinya menggunakan objek Rectangle:
+## Langkah 3: Tambahkan Opsi Tombol Radio
+
+ Sekarang, mari tambahkan opsi tombol radio individual ke kolom. Dalam contoh ini, kita akan menambahkan dua tombol radio dan menentukan posisinya menggunakan`Rectangle` obyek.
 
 ```csharp
+// Tambahkan opsi tombol radio pertama dan tentukan posisinya menggunakan Persegi Panjang
 RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
 RadioButtonOptionField opt2 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(100, 0, 120, 20));
-opt1.OptionName = "Test1";
-opt2.OptionName = "Test2";
-radio.Add(opt1);
-radio.Add(opt2);
+
+// Tetapkan nama opsi untuk identifikasi
+opt1.OptionName = "Option1";
+opt2.OptionName = "Option2";
 ```
 
-## Langkah 6: Sesuaikan opsi tombol radio
+ Di sini,`Rectangle` Objek mendefinisikan koordinat dan ukuran setiap tombol radio pada halaman.
 
-Sesuaikan opsi tombol radio dengan mengatur gaya, batas, dan tampilannya:
+## Langkah 4: Sesuaikan Gaya Tombol Radio
+
+ Anda dapat menyesuaikan tampilan tombol radio dengan mengaturnya`Style` properti. Misalnya, Anda mungkin menginginkan kotak centang berbentuk persegi atau berbentuk silang.
 
 ```csharp
+// Mengatur gaya tombol radio
 opt1.Style = BoxStyle.Square;
-opt2.Style = BoxStyle.Square;
+opt2.Style = BoxStyle.Cross;
+```
+
+Hal ini memungkinkan Anda untuk mengontrol tampilan dan nuansa kotak centang, menjadikannya lebih mudah digunakan dan menarik secara visual.
+
+## Langkah 5: Konfigurasikan Properti Perbatasan
+
+Batas memainkan peran penting dalam membuat kotak centang mudah dikenali. Di sini, kita akan menambahkan batas solid di sekitar setiap opsi tombol radio dan menentukan lebar dan warnanya.
+
+```csharp
+// Konfigurasikan batas tombol radio pertama
 opt1.Border = new Border(opt1);
 opt1.Border.Style = BorderStyle.Solid;
 opt1.Border.Width = 1;
+opt1.Characteristics.Border = Color.Black;
+
+// Konfigurasikan batas tombol radio kedua
 opt2.Border = new Border(opt2);
-opt2.Border.Width = 1;
 opt2.Border.Style = BorderStyle.Solid;
+opt2.Border.Width = 1;
+opt2.Characteristics.Border = Color.Black;
 ```
 
-## Langkah 7: Tambahkan tombol radio ke formulir
+Langkah ini memastikan bahwa setiap tombol radio memiliki batas yang jelas, sehingga meningkatkan keterbacaan dokumen.
 
-Tambahkan tombol radio ke objek formulir dokumen:
+## Langkah 6: Tambahkan Opsi Tombol Radio ke Formulir
+
+Sekarang, kita akan menambahkan tombol radio ke formulir dokumen. Ini adalah langkah terakhir dalam mengelompokkan kotak centang bersama-sama di bawah satu bidang.
 
 ```csharp
+// Tambahkan bidang tombol radio ke objek formulir dokumen
 pdfDocument.Form.Add(radio);
 ```
 
-## Langkah 8: Simpan dokumen
+Objek formulir berfungsi sebagai wadah untuk semua elemen interaktif, termasuk kotak centang yang dikelompokkan.
 
-Simpan dokumen PDF:
+## Langkah 7: Simpan Dokumen PDF
+
+Terakhir, setelah semuanya disiapkan, Anda dapat menyimpan dokumen PDF ke lokasi yang Anda inginkan.
 
 ```csharp
-dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
+// Tentukan jalur file keluaran
+string dataDir = "YOUR DOCUMENT DIRECTORY" + "GroupedCheckBoxes_out.pdf";
+
+// Simpan dokumen PDF
 pdfDocument.Save(dataDir);
+
+// Konfirmasikan pembuatan yang berhasil
+Console.WriteLine("Grouped checkboxes added successfully. File saved at " + dataDir);
 ```
 
-### Contoh kode sumber untuk Kotak Centang yang Dikelompokkan menggunakan Aspose.PDF untuk .NET 
-```csharp
-try
-{
-	// Jalur ke direktori dokumen.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Membuat instance objek Dokumen
-	Document pdfDocument = new Document();
-	// Tambahkan halaman ke file PDF
-	Page page = pdfDocument.Pages.Add();
-	// Buat objek RadioButtonField dengan nomor halaman sebagai argumen
-	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
-	// Tambahkan opsi tombol radio pertama dan tentukan juga asalnya menggunakan objek Persegi Panjang
-	RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
-	RadioButtonOptionField opt2 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(100, 0, 120, 20));
-	opt1.OptionName = "Test1";
-	opt2.OptionName = "Test2";
-	radio.Add(opt1);
-	radio.Add(opt2);
-	opt1.Style = BoxStyle.Square;
-	opt2.Style = BoxStyle.Square;
-	opt1.Style = BoxStyle.Cross;
-	opt2.Style = BoxStyle.Cross;
-	opt1.Border = new Border(opt1);
-	opt1.Border.Style = BorderStyle.Solid;
-	opt1.Border.Width = 1;
-	opt1.Characteristics.Border = System.Drawing.Color.Black;
-	opt2.Border = new Border(opt2);
-	opt2.Border.Width = 1;
-	opt2.Border.Style = BorderStyle.Solid;
-	opt2.Characteristics.Border = System.Drawing.Color.Black;
-	// Tambahkan tombol radio ke objek formulir objek Dokumen
-	pdfDocument.Form.Add(radio);
-	dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
-	// Simpan dokumen PDF
-	pdfDocument.Save(dataDir);
-	Console.WriteLine("\nGrouped checkboxes added successfully.\nFile saved at " + dataDir);
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+Selesai! Anda telah berhasil membuat PDF dengan kotak centang yang dikelompokkan menggunakan Aspose.PDF untuk .NET.
 
 ## Kesimpulan
 
-Dalam tutorial ini, kita mempelajari cara membuat kotak centang yang dikelompokkan dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Dengan mengikuti langkah-langkah ini, Anda dapat dengan mudah menambahkan opsi tombol radio khusus dan menggabungkannya dalam dokumen PDF Anda menggunakan Aspose.PDF.
+Menambahkan elemen interaktif seperti kotak centang yang dikelompokkan ke dokumen PDF mungkin tampak rumit pada awalnya, tetapi dengan Aspose.PDF untuk .NET, hal itu menjadi mudah. Dengan mengikuti panduan langkah demi langkah ini, Anda telah mempelajari cara menyiapkan dokumen PDF dasar, menambahkan tombol radio yang dikelompokkan, menyesuaikan tampilannya, dan menyimpan hasil akhirnya. Baik Anda membuat formulir, survei, atau jenis PDF interaktif lainnya, panduan ini memberi Anda dasar yang kuat untuk memulai.
 
-### Pertanyaan yang Sering Diajukan
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa itu kotak centang yang dikelompokkan dalam dokumen PDF?
+### Bisakah saya menambahkan lebih dari dua tombol radio ke satu grup?
+ Tentu saja! Cukup buat instance tambahan`RadioButtonOptionField` objek dan menambahkannya ke`RadioButtonField` seperti yang ditunjukkan dalam tutorial.
 
-A: Kotak centang yang dikelompokkan dalam dokumen PDF merujuk pada serangkaian opsi tombol radio yang dikelompokkan bersama. Tombol radio memungkinkan pengguna untuk memilih hanya satu opsi dari sekelompok pilihan yang saling eksklusif. Ketika satu tombol radio dipilih, tombol radio lainnya dalam kelompok yang sama akan otomatis tidak dipilih. Perilaku pengelompokan ini berguna ketika Anda ingin menyajikan beberapa opsi kepada pengguna tetapi membatasi pilihan mereka hanya pada satu pilihan.
+### Bagaimana cara menangani beberapa kelompok kotak centang dalam satu dokumen?
+Untuk membuat beberapa grup, buat instance terpisah`RadioButtonField` objek untuk setiap kelompok.
 
-#### T: Dapatkah saya menyesuaikan tampilan kotak centang yang dikelompokkan dalam Aspose.PDF untuk .NET?
+### Apakah ada batasan jumlah kotak centang yang dapat saya tambahkan?
+Tidak, Aspose.PDF untuk .NET tidak memberlakukan batasan apa pun pada jumlah kotak centang yang dapat Anda tambahkan ke PDF.
 
-A: Ya, Anda dapat menyesuaikan tampilan kotak centang yang dikelompokkan di Aspose.PDF untuk .NET. API menyediakan berbagai opsi untuk mengatur gaya, batas, dan tampilan opsi tombol radio. Anda dapat menentukan posisi setiap opsi, memilih di antara berbagai gaya kotak (misalnya, persegi, lingkaran, silang), dan menyesuaikan properti batas untuk mencapai representasi visual yang diinginkan.
+### Bisakah saya mengubah tampilan kotak centang setelah ditambahkan?
+Ya, Anda dapat mengubah properti seperti gaya batas, lebar, dan warna setelah kotak centang ditambahkan.
 
-#### T: Bagaimana cara menambahkan kotak centang yang dikelompokkan ke halaman tertentu dalam dokumen PDF?
-
-A: Untuk menambahkan kotak centang yang dikelompokkan ke halaman tertentu dalam dokumen PDF, Anda perlu membuat instance`RadioButtonField` objek dengan nomor halaman yang diinginkan sebagai argumen. Kemudian, buat`RadioButtonOptionField` objek yang mewakili setiap opsi tombol radio dan menentukan posisinya menggunakan`Rectangle` objek. Terakhir, tambahkan opsi ini ke`RadioButtonField` dan menyesuaikan tampilannya sesuai kebutuhan sebelum menambahkan`RadioButtonField` ke formulir dokumen.
-
-#### T: Dapatkah saya menambahkan beberapa grup kotak centang ke satu dokumen PDF?
-
- A: Ya, Anda dapat menambahkan beberapa grup kotak centang ke satu dokumen PDF. Setiap grup harus memiliki nama yang unik.`RadioButtonField` objek, dan`RadioButtonOptionField` Objek dalam setiap grup harus berbagi halaman yang sama dan nama yang unik untuk opsinya. Ini memastikan bahwa tombol radio dalam setiap grup berfungsi dengan benar, dan pilihannya saling eksklusif.
-
-#### T: Apakah kotak centang yang dikelompokkan didukung di semua penampil dan aplikasi PDF?
-
-J: Ya, kotak centang yang dikelompokkan didukung di semua penampil dan aplikasi PDF yang sesuai standar. Spesifikasi PDF mendefinisikan tombol radio dan perilaku pengelompokannya, sehingga dikenal secara universal dalam format PDF. Namun, penting untuk menguji fungsionalitas di berbagai penampil PDF guna memastikan perilaku yang konsisten di berbagai platform.
+### Apakah mungkin untuk menggunakan gambar sebagai tombol radio?
+ Ya, Aspose.PDF memungkinkan Anda menggunakan gambar kustom sebagai tombol radio dengan mengatur`Appearance` properti setiap opsi tombol radio.

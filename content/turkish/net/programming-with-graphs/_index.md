@@ -13,11 +13,11 @@ Aspose.PDF for .NET'ten grafiklerle programlama eğitimleri, yeni başlayanlarda
 ## Eğitimler
 | Başlık | Tanım |
 | --- | --- | 
-| [PDF Dosyasına Çizim Ekle](./add-drawing/) | .NET için Aspose.PDF kullanarak PDF dosyasına çizim eklemeyi öğrenin. Çizim özellikleriyle çekici PDF belgeleri oluşturmak için bu adım adım kılavuzu izleyin. |  
-| [Gradyan Dolgulu Çizim Ekle](./add-drawing-with-gradient-fill/) | Aspose.PDF for .NET ile degrade dolgulu bir çizimin nasıl ekleneceğini öğrenin. Çekici PDF belgeleri oluşturmak için adım adım eğitim. |  
-| [PDF Dosyasına Satır Nesnesi Ekle](./add-line-object/) | Aspose.PDF for .NET kullanarak bir PDF dosyasına özel satır nesnesinin nasıl ekleneceğini öğrenin. |  
-| [Kontrol Dikdörtgeni Z Sırası](./control-rectangle-z-order/) | Aspose.PDF for .NET kullanarak bir PDF dosyasındaki dikdörtgenlerin Z düzenini nasıl kontrol edeceğinizi öğrenin.  |  
-| [Dolu Dikdörtgen Oluştur](./create-filled-rectangle/) | .NET için Aspose.PDF ile dolu bir dikdörtgenin nasıl oluşturulacağını öğrenin. Dolgu rengini özelleştirmek için adım adım kılavuz. |  
-| [Alfa Rengiyle Dikdörtgen Oluştur](./create-rectangle-with-alpha-color/) | Aspose.PDF for .NET kullanarak şeffaf renkli bir dikdörtgenin nasıl oluşturulacağını öğrenin. Şeffaflığı özelleştirmek için adım adım kılavuz. |  
-| [Çizgi Uzunluğu](./dash-length/) | .NET için Aspose.PDF ile çizgi uzunluğunun nasıl ayarlanacağını öğrenin. Çizgi desenlerini özelleştirmek için adım adım kılavuz. |  
-| [Çizgi Çizimi](./drawing-line/) | .NET için Aspose.PDF'i kullanarak bir sayfaya çizgi çizmeyi öğrenin. Özel çizgiler oluşturmaya yönelik adım adım kılavuz. |  
+| [PDF Dosyasına Çizim Ekle](./add-drawing/) | Aspose.PDF for .NET kullanarak PDF dosyalarına çizim eklemeyi öğrenin. Bu adım adım kılavuz renk ayarlarını, şekil eklemeyi ve PDF'nizi kaydetmeyi kapsar. |  
+| [Gradyan Dolgulu Çizim Ekle](./add-drawing-with-gradient-fill/) | Bu adım adım kılavuzla, .NET için Aspose.PDF'yi kullanarak PDF'lere çarpıcı degrade çizimlerin nasıl ekleneceğini öğrenin. Bu kılavuz, belge görsellerini geliştirmek için mükemmeldir. |  
+| [PDF Dosyasına Satır Nesnesi Ekle](./add-line-object/) | Bu adım adım eğitimde Aspose.PDF for .NET kullanarak bir PDF dosyasına çizgi nesnesi eklemeyi öğrenin. Yeni başlayanlar için mükemmel. |  
+| [Kontrol Dikdörtgeni Z Sırası](./control-rectangle-z-order/) | Bu ayrıntılı adım adım eğitimde .NET için Aspose.PDF kullanarak PDF'deki dikdörtgen Z düzenini nasıl kontrol edeceğinizi öğrenin. PDF belgelerini geliştirmek isteyen geliştiriciler için idealdir. |  
+| [Dolu Dikdörtgen Oluştur](./create-filled-rectangle/) | Bu adım adım eğitimle .NET için Aspose.PDF kullanarak PDF'de dolu bir dikdörtgenin nasıl oluşturulacağını öğrenin. Her seviyedeki geliştirici için mükemmel. |  
+| [Alfa Rengiyle Dikdörtgen Oluştur](./create-rectangle-with-alpha-color/) | Bu adım adım eğitimle Aspose.PDF for .NET kullanarak PDF'lerde şeffaf dikdörtgenler oluşturmayı öğrenin. PDF'lerinizi alfa renklerle zahmetsizce geliştirin. |  
+| [Çizgi Uzunluğu](./dash-length/) | Aspose.PDF for .NET'i kullanarak PDF'lerdeki çizgi desenlerini adım adım kılavuzumuzla nasıl özelleştireceğinizi öğrenin. Belgelerinize stil katmak için mükemmeldir. |  
+| [Çizgi Çizimi](./drawing-line/) | .NET için Aspose.PDF kullanarak bir PDF belgesinde çizgilerin nasıl çizileceğini öğrenin. Bu adım adım kılavuz, belgenizi ayarlamayı, çizgiler eklemeyi ve dosyayı kaydetmeyi kapsar. |  

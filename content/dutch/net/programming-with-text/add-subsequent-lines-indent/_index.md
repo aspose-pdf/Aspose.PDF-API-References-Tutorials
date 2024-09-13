@@ -38,14 +38,14 @@ Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
 ## Stap 5: Voeg een pagina toe aan het document
- Voeg een nieuwe pagina toe aan het document met behulp van de`Add` methode van de`Pages`verzameling. In de meegeleverde code wordt de nieuwe pagina toegewezen aan de variabele`page`.
+ Voeg een nieuwe pagina toe aan het document met behulp van de`Add` methode van de`Pages` verzameling. In de meegeleverde code wordt de nieuwe pagina toegewezen aan de variabele`page`.
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
 ## Stap 6: Maak een TextFragment met inspringing van opeenvolgende regels
- Instantieer een`TextFragment` object en geef de gewenste tekst. In de meegeleverde code wordt de tekst toegewezen aan de variabele`text` . Initialiseer vervolgens`TextFormattingOptions` voor de`TextFragment`en specificeer de`SubsequentLinesIndent` waarde.
+ Instantieer een`TextFragment` object en geef de gewenste tekst. In de meegeleverde code wordt de tekst toegewezen aan de variabele`text` . Initialiseer vervolgens`TextFormattingOptions` voor de`TextFragment` en specificeer de`SubsequentLinesIndent` waarde.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
@@ -91,7 +91,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = document.Pages.Add();
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-// Initialiseer TextFormattingOptions voor het tekstfragment en geef de waarde SubsequentLinesIndent op
+//Initialiseer TextFormattingOptions voor het tekstfragment en geef de waarde SubsequentLinesIndent op
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
 	SubsequentLinesIndent = 20
@@ -148,7 +148,7 @@ Aspose.Pdf.Page page = document.Pages.Add();
 
 #### V: Hoe kan ik inspringing toevoegen aan de volgende regels tekst?
 
- A: In stap 6 maak je een`TextFragment` object en wijs de gewenste tekst eraan toe. Vervolgens initialiseert u`TextFormattingOptions` voor de`TextFragment`en specificeer de`SubsequentLinesIndent` waarde:
+ A: In stap 6 maak je een`TextFragment` object en wijs de gewenste tekst eraan toe. Vervolgens initialiseert u`TextFormattingOptions` voor de`TextFragment` en specificeer de`SubsequentLinesIndent` waarde:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
@@ -168,7 +168,7 @@ page.Paragraphs.Add(text);
 
 #### V: Kan ik het proces herhalen voor extra regels?
 
- A: Ja, in stap 8 kunt u het proces herhalen voor extra regels met dezelfde inspringing door nieuwe regels te maken.`TextFragment` objecten en deze toevoegen aan de alineaverzameling van de pagina.
+A: Ja, in stap 8 kunt u het proces herhalen voor extra regels met dezelfde inspringing door nieuwe regels te maken.`TextFragment` objecten en deze toevoegen aan de alineaverzameling van de pagina.
 
 #### V: Hoe kan ik het resulterende PDF-document opslaan?
 

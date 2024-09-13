@@ -46,7 +46,7 @@ doc.PageInfo.Margin.Right = 40;
 ```
 
 ## चरण 6: दस्तावेज़ में एक पृष्ठ जोड़ें
- दस्तावेज़ में नया पृष्ठ जोड़ने के लिए निम्न का उपयोग करें:`Add` की विधि`Pages`संग्रह। प्रदान किए गए कोड में, नया पृष्ठ चर को सौंपा गया है`page`.
+ दस्तावेज़ में नया पृष्ठ जोड़ने के लिए निम्न का उपयोग करें:`Add` की विधि`Pages` संग्रह। प्रदान किए गए कोड में, नया पृष्ठ चर को सौंपा गया है`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -112,7 +112,7 @@ doc.Save(dataDir);
 // दस्तावेज़ निर्देशिका का पथ.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
-//पीडीएफ फाइल के लिए बाएं मार्जिन की जानकारी निर्दिष्ट करें
+// पीडीएफ फाइल के लिए बाएं मार्जिन की जानकारी निर्दिष्ट करें
 doc.PageInfo.Margin.Left = 40;
 // पीडीएफ फाइल के लिए दाएँ मार्जिन की जानकारी निर्दिष्ट करें
 doc.PageInfo.Margin.Right = 40;
@@ -149,7 +149,7 @@ Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50, 10);
 float[] posArr2 = new float[] { 1, 10, 100, 10 };
 Aspose.Pdf.Drawing.Line l2 = new Aspose.Pdf.Drawing.Line(posArr2);
 graph2.Shapes.Add(l2);
-// सेक्शन ऑब्जेक्ट के पैराग्राफ़ संग्रह में लाइन जोड़ें
+//सेक्शन ऑब्जेक्ट के पैराग्राफ़ संग्रह में लाइन जोड़ें
 box.Paragraphs.Add(graph2);
 TextFragment text2 = new TextFragment(@"Sed augue tortor, sodales id, luctus et, pulvinar ut, eros. Suspendisse vel dolor. Sed quam. Curabitur ut massa vitae eros euismod aliquam. Pellentesque sit amet elit. Vestibulum interdum pellentesque augue. Cras mollis arcu sit amet purus. Donec augue. Nam mollis tortor a elit. Nulla viverra nisl vel mauris. Vivamus sapien. nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et,nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.");
 box.Paragraphs.Add(text2);
@@ -200,7 +200,7 @@ using Aspose.Pdf.Drawing;
 
 #### प्रश्न: मैं HTML स्वरूपण के साथ शीर्षक पाठ कैसे जोड़ूं?
 
- उत्तर: चरण 8 में, आप एक बनाएंगे`HtmlFragment` ऑब्जेक्ट और इसकी सामग्री को वांछित HTML पाठ पर सेट करें, फिर खंड को इसमें जोड़ें`Paragraphs` पृष्ठ का संग्रह.
+उत्तर: चरण 8 में, आप एक बनाएंगे`HtmlFragment` ऑब्जेक्ट और इसकी सामग्री को वांछित HTML पाठ पर सेट करें, फिर खंड को इसमें जोड़ें`Paragraphs` पृष्ठ का संग्रह.
 
 #### प्रश्न: मैं एकाधिक कॉलम वाला फ्लोटिंगबॉक्स कैसे बनाऊं?
 

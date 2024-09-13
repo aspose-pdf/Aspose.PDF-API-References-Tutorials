@@ -2,104 +2,47 @@
 title: PDF Dosyasına Sayı Stili Uygula
 linktitle: PDF Dosyasına Sayı Stili Uygula
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET kullanarak PDF dosyasındaki başlıklara numaralandırma stilinin nasıl uygulanacağını öğrenin. Adım adım kılavuz.
+description: Bu adım adım kılavuzla Aspose.PDF for .NET'i kullanarak bir PDF'deki başlıklara farklı sayı stilleri (Romen rakamları, alfabetik) uygulamayı öğrenin.
 type: docs
 weight: 10
 url: /tr/net/programming-with-headings/apply-number-style/
 ---
-Bu eğitimde, Aspose.PDF for .NET kullanarak PDF dosyasına numaralandırma stilini uygulamak için aşağıdaki C# kaynak kodunu adım adım inceleyeceğiz.
+## giriiş
 
-Başlamadan önce Aspose.PDF kütüphanesini yüklediğinizden ve geliştirme ortamınızı ayarladığınızdan emin olun. Ayrıca C# programlamanın temel bilgisine sahip olun.
+PDF belgelerinize güzel numaralandırılmış listeler ekleme ihtiyacı hissettiniz mi hiç? İster yasal belgeleri, ister raporları veya sunumları biçimlendiriyor olun, bilgileri düzenlemek için doğru numaralandırma stilleri olmazsa olmazdır. Aspose.PDF for .NET ile PDF dosyanızın başlıklarına çeşitli numaralandırma stilleri uygulayabilir, iyi yapılandırılmış ve profesyonel belgeler oluşturabilirsiniz. 
 
-### Adım 1: Belge Dizini Kurulumu
+## Ön koşullar
 
-Sağlanan kaynak kodunda, oluşturulan PDF dosyasını kaydetmek istediğiniz dizini belirtmeniz gerekir. "dataDir" değişkenini istediğiniz dizine değiştirin.
+Kodlamaya başlamadan önce, neye ihtiyacınız olacağına bir bakalım:
+
+1. .NET için Aspose.PDF: Aspose.PDF'in en son sürümünü şu adresten indirin:[Burada](https://releases.aspose.com/pdf/net/).
+2. Geliştirme Ortamı: Visual Studio veya herhangi bir .NET uyumlu IDE'ye sahip olduğunuzdan emin olun.
+3. .NET Framework: .NET Framework 4.0 veya üzeri sürümün yüklü olduğundan emin olun.
+4.  Lisans: Geçici bir lisans kullanabilirsiniz.[Burada](https://purchase.aspose.com/temporary-license/) veya keşfedin[ücretsiz deneme](https://releases.aspose.com/) seçenekler.
+
+## Paketleri İçe Aktar
+
+Başlamak için projenize aşağıdaki ad alanlarının aktarıldığından emin olun:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-### Adım 2: PDF Belgesini Oluşturma
+## Adım 1: Belgeyi Ayarlama
 
-Belirtilen boyutlar ve kenar boşluklarıyla yeni bir PDF belgesi oluşturuyoruz.
+Yeni bir PDF belgesi oluşturarak ve sayfa ayarlarını yapılandırarak başlayalım. İçeriğimizin düzenini kontrol etmek için sayfa boyutunu ve kenar boşluklarını ayarlayacağız.
 
-```csharp
-Document pdfDoc = new Document();
-pdfDoc.PageInfo.Width = 612.0;
-pdfDoc.PageInfo.Height = 792.0;
-pdfDoc.PageInfo.Margin = new Aspose.Pdf.MarginInfo();
-pdfDoc.PageInfo.Margin.Left = 72;
-pdfDoc.PageInfo.Margin.Right = 72;
-pdfDoc.PageInfo.Margin.Top = 72;
-pdfDoc.PageInfo.Margin.Bottom = 72;
-```
-
-### Adım 3: Bir Sayfa ve Yüzen Kapsayıcı Oluşturma
-
-Belgeye bir sayfa ekliyoruz ve içeriği düzenlemek için yüzen bir kapsayıcı oluşturuyoruz.
+Açıklama: Bu adımda, tutarlı biçimlendirme için sayfa boyutunu, yüksekliğini ve kenar boşluklarını tanımlamayı içeren PDF'nin temel yapısını kuruyoruz.
 
 ```csharp
-Aspose.Pdf.Page pdfPage = pdfDoc.Pages.Add();
-pdfPage.PageInfo.Width = 612.0;
-pdfPage.PageInfo.Height = 792.0;
-pdfPage.PageInfo.Margin = new Aspose.Pdf.MarginInfo();
-pdfPage.PageInfo.Margin.Left = 72;
-pdfPage.PageInfo.Margin.Right = 72;
-pdfPage.PageInfo.Margin.Top = 72;
-pdfPage.PageInfo.Margin.Bottom = 72;
-Aspose.Pdf.FloatingBox floatBox = new Aspose.Pdf.FloatingBox();
-floatBox.Margin = pdfPage.PageInfo.Margin;
-pdfPage.Paragraphs.Add(floatBox);
-```
-
-### Adım 4: Numaralandırma ile başlıklar ekleyin
-
-Belirtilen numaralandırmalarla başlıklar oluşturuyoruz ve bunları yüzen konteynere ekliyoruz.
-
-```csharp
-Aspose.Pdf.Heading heading = new Aspose.Pdf.Heading(1);
-heading. IsInList = true;
-heading. StartNumber = 1;
-heading.Text = "List 1";
-heading.Style = NumberingStyle.NumeralsRomanLowercase;
-heading. IsAutoSequence = true;
-floatBox.Paragraphs.Add(heading);
-
-Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
-heading2.IsInList = true;
-heading2.StartNumber = 13;
-heading2.Text = "Listing 2";
-heading2.Style = NumberingStyle.NumeralsRomanLowercase;
-heading2.IsAutoSequence = true;
-floatBox.Paragraphs.Add(heading2);
-
-Aspose.Pdf.Heading heading3 = new Aspose.Pdf.Heading(2);
-heading3.IsInList = true;
-heading3.StartNumber = 1;
-heading3.Text = "The value, at the effective date of the plan, of the assets to be distributed under the plan
-
-";
-heading3.Style = NumberingStyle.LettersLowercase;
-heading3.IsAutoSequence = true;
-floatBox.Paragraphs.Add(heading3);
-```
-
-### Adım 5: PDF Belgesini Kaydetme
-
-Oluşturulan PDF dokümanını belirtilen dizine kaydediyoruz.
-
-```csharp
-dataDir = dataDir + "ApplyNumberStyle_out.pdf";
-pdfDoc.Save(dataDir);
-Console.WriteLine("\nNumbering style successfully applied to headers.\nFile saved as: " + dataDir);
-```
-
-### .NET için Aspose.PDF kullanarak Sayı Stili Uygula için örnek kaynak kodu 
-```csharp
-
 // Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDoc = new Document();
+
+// Sayfa boyutlarını ve kenar boşluklarını ayarlayın
 pdfDoc.PageInfo.Width = 612.0;
 pdfDoc.PageInfo.Height = 792.0;
 pdfDoc.PageInfo.Margin = new Aspose.Pdf.MarginInfo();
@@ -107,6 +50,18 @@ pdfDoc.PageInfo.Margin.Left = 72;
 pdfDoc.PageInfo.Margin.Right = 72;
 pdfDoc.PageInfo.Margin.Top = 72;
 pdfDoc.PageInfo.Margin.Bottom = 72;
+```
+
+Bunu yaptığınızda, belgeniz 8,5 x 11 inçlik bir sayfaya eşdeğer standart bir sayfa boyutuna ve her tarafta 72 puntoluk (veya 1 inçlik) bir kenar boşluğuna sahip olacaktır.
+
+## Adım 2: PDF'ye Sayfa Ekleme
+
+Daha sonra PDF belgesine numaralandırma stillerini uygulayacağımız yeni bir sayfa ekleyeceğiz.
+
+Açıklama: Her PDF'in sayfalara ihtiyacı vardır! Bu adım PDF'e boş bir sayfa ekler ve kenar boşluklarını belge düzeyindeki ayarlarla eşleşecek şekilde ayarlar.
+
+```csharp
+// PDF belgesine yeni bir sayfa ekleyin
 Aspose.Pdf.Page pdfPage = pdfDoc.Pages.Add();
 pdfPage.PageInfo.Width = 612.0;
 pdfPage.PageInfo.Height = 792.0;
@@ -115,11 +70,29 @@ pdfPage.PageInfo.Margin.Left = 72;
 pdfPage.PageInfo.Margin.Right = 72;
 pdfPage.PageInfo.Margin.Top = 72;
 pdfPage.PageInfo.Margin.Bottom = 72;
+```
+
+## Adım 3: Yüzen Kutu Oluşturun
+
+Bir FloatingBox, içeriği (metin veya başlıklar gibi) sayfanın akışından bağımsız davranan bir kutunun içine yerleştirmenize olanak tanır. Bu, içeriğinizin düzeni üzerinde tam kontrole sahip olmak istediğinizde faydalıdır.
+
+Açıklama: Burada, sayı stilleri uygulanacak başlıkları içerecek bir FloatingBox ayarlıyoruz.
+
+```csharp
+// Yapılandırılmış içerik için bir FloatingBox oluşturun
 Aspose.Pdf.FloatingBox floatBox = new Aspose.Pdf.FloatingBox();
 floatBox.Margin = pdfPage.PageInfo.Margin;
 pdfPage.Paragraphs.Add(floatBox);
-TextFragment textFragment = new TextFragment();
-TextSegment segment = new TextSegment();
+```
+
+## Adım 4: İlk Başlığı Roma Rakamlarıyla Ekleyin
+
+Şimdi heyecan verici kısma geliyoruz! İlk başlığı küçük harfli Roma rakamlarıyla ekleyelim.
+
+Açıklama: Başlığa NumberingStyle.NumeralsRomanLowercase stilini uyguluyoruz. Bu stil numaralandırmayı Roma rakamlarıyla (i, ii, iii, vb.) görüntüleyecektir.
+
+```csharp
+// İlk başlığı Roma rakamlarıyla oluşturun
 Aspose.Pdf.Heading heading = new Aspose.Pdf.Heading(1);
 heading.IsInList = true;
 heading.StartNumber = 1;
@@ -127,6 +100,16 @@ heading.Text = "List 1";
 heading.Style = NumberingStyle.NumeralsRomanLowercase;
 heading.IsAutoSequence = true;
 floatBox.Paragraphs.Add(heading);
+```
+
+## Adım 5: İkinci Bir Roma Rakamı Başlığı Ekleyin
+
+Örnek amaçlı olarak ikinci bir Roma rakamı başlığı ekleyelim, ancak bu sefer 13'ten başlayalım.
+
+Açıklama: StartNumber özelliği numaralandırmaya özel bir sayıdan başlamanızı sağlar; bu durumda 13'ten başlıyoruz.
+
+```csharp
+// Roma rakamı 13'ten başlayarak ikinci bir başlık oluşturun
 Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
 heading2.IsInList = true;
 heading2.StartNumber = 13;
@@ -134,95 +117,55 @@ heading2.Text = "List 2";
 heading2.Style = NumberingStyle.NumeralsRomanLowercase;
 heading2.IsAutoSequence = true;
 floatBox.Paragraphs.Add(heading2);
+```
+
+## Adım 6: Alfabetik Numaralandırma ile Başlık Ekleyin
+
+Çeşitlilik olsun diye üçüncü bir başlık ekleyelim; ancak bu sefer küçük harflerle alfabetik numaralandırma kullanalım (a, b, c, vb.).
+
+Açıklama: NumberingStyle'ı LettersLowercase olarak değiştirmek, başlıklarımıza alfabetik numaralandırma uygulamamızı sağlar.
+
+```csharp
+// Alfabetik numaralandırma ile bir başlık oluşturun
 Aspose.Pdf.Heading heading3 = new Aspose.Pdf.Heading(2);
 heading3.IsInList = true;
 heading3.StartNumber = 1;
-heading3.Text = "the value, as of the effective date of the plan, of property to be distributed under the plan onaccount of each allowed";
+heading3.Text = "the value, as of the effective date of the plan, of property to be distributed under the plan on account of each allowed";
 heading3.Style = NumberingStyle.LettersLowercase;
 heading3.IsAutoSequence = true;
 floatBox.Paragraphs.Add(heading3);
+```
+
+## Adım 7: PDF'yi kaydetme
+
+Son olarak tüm başlık ve numaralandırma stillerini uyguladıktan sonra PDF dosyasını istediğiniz dizine kaydedelim.
+
+Açıklama: Bu adım, tüm biçimlendirilmiş başlıkları içeren PDF dosyasını uygulanan numaralandırma stilleriyle kaydeder.
+
+```csharp
+// PDF belgesini kaydedin
 dataDir = dataDir + "ApplyNumberStyle_out.pdf";
 pdfDoc.Save(dataDir);
-Console.WriteLine("\nNumber style applied successfully in headings.\nFile saved at " + dataDir);  
-          
+Console.WriteLine("\nNumber style applied successfully in headings.\nFile saved at " + dataDir);
 ```
 
 ## Çözüm
 
-Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF belgesindeki başlıklara numaralandırma stilinin nasıl uygulanacağını açıkladık. Artık bu bilgiyi kullanarak başlıklar için özel numaralandırmalara sahip PDF belgeleri oluşturabilirsiniz.
+İşte karşınızda! Aspose.PDF for .NET kullanarak bir PDF dosyasındaki başlıklara numaralandırma stilleri (Romen rakamları ve alfabetik) başarıyla uyguladınız. Aspose.PDF'nin sayfa düzenini, numaralandırma stillerini ve içerik konumlandırmasını kontrol etmek için sağladığı esneklik, iyi organize edilmiş, profesyonel PDF belgeleri oluşturmanız için güçlü bir araç seti sunar.
 
-### PDF dosyasında numara stilini uygulama hakkında SSS
+## SSS
 
-#### S: PDF belgesinde numaralandırma stili nedir?
+### Aynı PDF belgesine farklı numara stilleri uygulayabilir miyim?  
+Evet, Aspose.PDF for .NET, aynı belge içerisinde Roma rakamları, Arap rakamları ve alfabetik numaralandırma gibi farklı numaralandırma stillerini karıştırmanıza olanak tanır.
 
-A: Numaralandırma stili, bir PDF belgesinde başlıkların veya bölümlerin numaralandırıldığı biçimi ifade eder. Hiyerarşik bir yapı sağlamak için sayılar, harfler veya diğer karakterleri içerebilir.
+### Başlıkların başlangıç numarasını nasıl özelleştirebilirim?  
+ Herhangi bir başlık için başlangıç numarasını, kullanarak ayarlayabilirsiniz.`StartNumber` mülk.
 
-#### S: PDF belgesindeki başlıklara neden numaralandırma stili uygulamam gerekir?
+### Numaralandırma sırasını sıfırlamanın bir yolu var mı?  
+Evet, numaralandırmayı ayarlayarak sıfırlayabilirsiniz.`StartNumber` Her başlık için özellik.
 
-A: Başlıklara numaralandırma stili uygulamak PDF belgenizin okunabilirliğini ve organizasyonunu artırır. Okuyucuların içeriğin hiyerarşik yapısını kolayca gezinmesine ve anlamasına yardımcı olur.
+### Numaralandırmaya ek olarak başlıklara kalın veya italik stili uygulayabilir miyim?  
+ Kesinlikle! Yazı tipi, boyut, kalın ve italik gibi özellikleri değiştirerek başlık stillerini özelleştirebilirsiniz.`TextState` nesne.
 
-#### S: Aspose.PDF for .NET nedir?
-
-A: Aspose.PDF for .NET, geliştiricilerin .NET uygulamalarında PDF dosyalarıyla programatik olarak çalışmasına olanak tanıyan bir kütüphanedir. PDF belgeleri oluşturmak, düzenlemek, dönüştürmek ve düzenlemek için çok çeşitli özellikler sunar.
-
-#### S: C# projem için gerekli kütüphaneleri nasıl içe aktarabilirim?
-
-A: C# projeniz için gerekli kütüphaneleri içe aktarmak için aşağıdaki içe aktarma yönergelerini ekleyin:
-
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.InteractiveFeatures;
-```
-
-Bu yönergeler, PDF belgeleriyle çalışmak ve numaralandırma stilleri uygulamak için gereken sınıflara ve yöntemlere erişmenizi sağlar.
-
-#### S: Oluşturulan PDF dosyasının kaydedileceği dizini nasıl belirlerim?
-
-A: Sağlanan kaynak kodunda, oluşturulan PDF dosyasını kaydetmek istediğiniz dizini belirtmek için "dataDir" değişkenini değiştirin.
-
-```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-```
-
- Yer değiştirmek`"YOUR DOCUMENTS DIRECTORY"` gerçek dizin yolu ile.
-
-#### S: Belirtilen boyutlar ve kenar boşluklarıyla bir PDF belgesi nasıl oluşturabilirim?
-
-A: Belirtilen boyutlara ve kenar boşluklarına sahip bir PDF belgesi oluşturmak için aşağıdaki kodu kullanın:
-
-```csharp
-Document pdfDoc = new Document();
-pdfDoc.PageInfo.Width = 612.0;
-pdfDoc.PageInfo.Height = 792.0;
-pdfDoc.PageInfo.Margin = new Aspose.Pdf.MarginInfo();
-pdfDoc.PageInfo.Margin.Left = 72;
-pdfDoc.PageInfo.Margin.Right = 72;
-pdfDoc.PageInfo.Margin.Top = 72;
-pdfDoc.PageInfo.Margin.Bottom = 72;
-```
-
-#### S: PDF belgesine numaralandırma stiliyle başlıklar nasıl eklerim?
-
-A: PDF belgesine numaralandırma stiline sahip başlıklar eklemek için, başlıklar oluşturmak ve numaralandırma stillerini özelleştirmek için sağlanan kod örneklerini kullanın. Metin, numaralandırma stili, başlangıç numarası ve otomatik sıra gibi özellikleri gerektiği gibi ayarlayın.
-
-#### S: Oluşturulan PDF belgesini nasıl kaydedebilirim?
-
- A: Oluşturulan PDF belgesini kaydetmek için şunu kullanın:`Save` yöntemi`pdfDoc` nesne:
-
-```csharp
-dataDir = dataDir + "ApplyNumberStyle_out.pdf";
-pdfDoc.Save(dataDir);
-Console.WriteLine("\nNumbering style applied to headers.\nFile saved as: " + dataDir);
-```
-
-#### S: Numaralandırma stilinin uygulandığını nasıl teyit edebilirim?
-
-A: Başlıklara belirtilen numaralandırma stilinin uygulandığını doğrulamak için oluşturulan PDF dosyasını açın.
-
-#### S: Numaralandırma stilini daha fazla özelleştirebilir miyim?
-
- A: Evet, numaralandırma stilini, numaralandırma özelliklerini ayarlayarak daha da özelleştirebilirsiniz.`Heading` numaralandırma stili türü, başlangıç numarası ve otomatik sıra gibi nesneler.
-
-#### S: Belgenin farklı bölümlerine farklı numaralandırma stilleri uygulayabilir miyim?
-
- A: Evet, birden fazla numaralandırma stili oluşturarak belgenin farklı bölümlerine farklı numaralandırma stilleri uygulayabilirsiniz.`Heading` farklı stil ve dizilişlere sahip nesneler.
+### Aspose.PDF için geçici lisansı nasıl alabilirim?  
+ Geçici lisansı şuradan alabilirsiniz:[Burada](https://purchase.aspose.com/temporary-license/) Aspose.PDF'yi kısıtlama olmaksızın test etmek için.

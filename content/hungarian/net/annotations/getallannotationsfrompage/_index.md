@@ -9,7 +9,7 @@ url: /hu/net/annotations/getallannotationsfrompage/
 ---
 ## Bevezetés
 
-Üdvözöljük az Aspose.PDF for .NET világában! Ha programozottan szeretné kezelni a PDF-dokumentumokat, akkor jó helyen jár. Az Aspose.PDF egy hatékony könyvtár, amely lehetővé teszi a fejlesztők számára a PDF-fájlok egyszerű létrehozását, szerkesztését és kezelését. Ebben az oktatóanyagban egy speciális funkcióval foglalkozunk: a megjegyzések kinyerésével egy PDF-oldalról. Akár tapasztalt fejlesztő, akár csak most kezdi, ez az útmutató lépésről lépésre végigvezeti a folyamaton, és biztosítja, hogy minden részletet megértsen.
+Üdvözöljük az Aspose.PDF for .NET világában! Ha programozottan szeretné kezelni a PDF-dokumentumokat, akkor jó helyen jár. Az Aspose.PDF egy hatékony könyvtár, amely lehetővé teszi a fejlesztők számára a PDF-fájlok egyszerű létrehozását, szerkesztését és kezelését. Ebben az oktatóanyagban egy speciális funkcióval foglalkozunk: a megjegyzések kinyerésével egy PDF-oldalról. Akár tapasztalt fejlesztő, akár csak most kezdő, ez az útmutató lépésről lépésre végigvezeti Önt a folyamaton, biztosítva, hogy minden részletet megértsen.
 
 ## Előfeltételek
 
@@ -51,7 +51,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "GetAllAnnotationsFromPage.pdf");
 ```
 
- Ebben a sorban létrehozunk egy új példányt a`Document` osztályt, és adja át a PDF fájlunk elérési útját. Ez lehetővé teszi számunkra, hogy kapcsolatba léphessünk a PDF tartalmával.
+ Ebben a sorban létrehozunk egy új példányt a`Document` osztályt, és adja át a PDF-fájlunk elérési útját. Ez lehetővé teszi számunkra, hogy kapcsolatba léphessünk a PDF tartalmával.
 
 ## 3. lépés: Ismételje meg a megjegyzéseket
 

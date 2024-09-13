@@ -37,7 +37,7 @@ is_root: true
 - [Ссылки на PDF-документы](./java/pdf-document-links/)
 - [Манипуляции со страницами PDF](./java/pdf-page-manipulation/)
 - [Операции с PDF-документами](./java/pdf-document-operations/)
-- [Поля формы PDF](./java/pdf-form-fields/)
+- [Поля PDF-формы](./java/pdf-form-fields/)
 - [Таблицы PDF](./java/pdf-tables/)
 - [Элементы структуры PDF](./java/pdf-structure-elements/)
 - [Теги и структура PDF](./java/pdf-tags-and-structure/)

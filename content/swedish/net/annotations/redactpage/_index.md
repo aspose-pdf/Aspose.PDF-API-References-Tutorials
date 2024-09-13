@@ -1,7 +1,7 @@
 ---
 title: Redigera sida
 linktitle: Redigera sida
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du effektivt redigerar dokument med Aspose.PDF för .NET med denna omfattande, steg-för-steg-guide.
 type: docs
 weight: 120

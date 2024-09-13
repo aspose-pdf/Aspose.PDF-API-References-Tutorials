@@ -1,7 +1,7 @@
 ---
 title: Länkstrukturelement
 linktitle: Länkstrukturelement
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Steg-för-steg-guide för att använda länkstrukturelement med Aspose.PDF för .NET. Skapa hyperlänkar i dina PDF-dokument.
 type: docs
 weight: 120
@@ -156,7 +156,7 @@ string outFile = dataDir + "LinkStructureElements_Output.pdf";
 string logFile = dataDir + "46035_log.xml";
 string imgFile = dataDir + "google-icon-512.png";
 
-// Skapa dokument och få taggat pdf-innehåll
+//Skapa dokument och få taggat pdf-innehåll
 Document document = new Document(); 
 ITaggedContent taggedContent = document.TaggedContent;
 

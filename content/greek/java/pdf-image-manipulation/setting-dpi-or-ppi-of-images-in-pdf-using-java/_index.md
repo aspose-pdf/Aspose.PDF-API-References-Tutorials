@@ -2,7 +2,7 @@
 title: Ρύθμιση DPI ή PPI εικόνων σε PDF χρησιμοποιώντας Java
 linktitle: Ρύθμιση DPI ή PPI εικόνων σε PDF χρησιμοποιώντας Java
 second_title: Aspose.PDF Java PDF Processing API
-description: Βελτιστοποιήστε την ποιότητα εικόνας PDF με τον βήμα προς βήμα οδηγό μας για τη ρύθμιση DPI/PPI σε PDF χρησιμοποιώντας Java. Μάθετε πώς να βελτιώσετε τα έγγραφά σας για εκτύπωση και ψηφιακή προβολή.
+description: Βελτιστοποιήστε την ποιότητα εικόνας PDF με τον βήμα προς βήμα οδηγό μας για τη ρύθμιση DPI/PPI σε PDF χρησιμοποιώντας Java. Μάθετε πώς να βελτιώσετε τα έγγραφά σας για εκτύπωση και ψηφιακή απεικόνιση.
 type: docs
 weight: 12
 url: /el/java/pdf-image-manipulation/setting-dpi-or-ppi-of-images-in-pdf-using-java/

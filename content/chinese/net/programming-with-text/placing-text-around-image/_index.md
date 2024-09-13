@@ -35,7 +35,7 @@ Aspose.Pdf.Page page = doc.Pages.Add();
 
 ## 步骤 3：创建表
 
-我们使用`Table`类并将其添加到页面的段落集合中。
+我们使用创建一个表`Table`类并将其添加到页面的段落集合中。
 
 ```csharp
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();

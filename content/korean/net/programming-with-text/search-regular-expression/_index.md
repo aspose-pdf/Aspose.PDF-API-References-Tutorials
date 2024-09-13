@@ -69,7 +69,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## 7단계: 추출된 텍스트 조각 검색
 
-다음을 사용하여 추출된 텍스트 조각을 가져옵니다.`TextFragments` 의 속성`TextFragmentAbsorber` 물체:
+ 다음을 사용하여 추출된 텍스트 조각을 가져옵니다.`TextFragments` 의 속성`TextFragmentAbsorber` 물체:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -103,7 +103,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // 문서 열기
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionAll.pdf");
-// 정규 표현식과 일치하는 모든 구문을 찾기 위해 TextAbsorber 객체를 생성합니다.
+//정규 표현식과 일치하는 모든 구문을 찾기 위해 TextAbsorber 객체를 생성합니다.
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // 1999-2000년처럼
 // 정규 표현식 사용을 지정하기 위한 텍스트 검색 옵션 설정
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);

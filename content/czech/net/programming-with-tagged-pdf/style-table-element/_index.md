@@ -35,7 +35,7 @@ Vytvořili jsme nový dokument a nastavili jsme název dokumentu a jazyk.
 V tomto kroku získáme element kořenové struktury pro náš dokument.
 
 ```csharp
-//Získejte prvek kořenové struktury
+// Získejte prvek kořenové struktury
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

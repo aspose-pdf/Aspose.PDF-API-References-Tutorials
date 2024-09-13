@@ -60,7 +60,7 @@ ParagraphElement p = taggedContent.CreateParagraphElement();
 taggedContent.RootElement.AppendChild(p);
 ```
 
-Utworzyliśmy nowy element akapitu i dodaliśmy go do korzenia struktury tagów.
+Stworzyliśmy nowy element akapitu i dodaliśmy go do korzenia struktury tagów.
 
 ## Krok 6: Formatowanie tekstu
 

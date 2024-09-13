@@ -7,7 +7,7 @@ type: docs
 weight: 40
 url: /tr/net/programming-with-text/add-html-using-dom/
 ---
-Bu eğitim, .NET için Aspose.PDF'de DOM (Belge Nesne Modeli) kullanarak HTML içeriği ekleme sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları göstermektedir.
+Bu eğitim, Aspose.PDF for .NET'te DOM (Document Object Model) kullanarak HTML içeriği ekleme sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları göstermektedir.
 
 ## Gereksinimler
 Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
@@ -37,7 +37,7 @@ Document doc = new Document();
 ```
 
 ## Adım 5: Belgeye bir sayfa ekleyin
- Belgeye yeni bir sayfa eklemek için şunu kullanın:`Add` yöntemi`Pages`koleksiyon. Sağlanan kodda, yeni sayfa değişkene atanır`page`.
+ Belgeye yeni bir sayfa eklemek için şunu kullanın:`Add` yöntemi`Pages` koleksiyon. Sağlanan kodda, yeni sayfa değişkene atanır`page`.
 
 ```csharp
 Page page = doc.Pages.Add();

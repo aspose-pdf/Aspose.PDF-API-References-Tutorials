@@ -126,7 +126,7 @@ margin.Bottom = 5f;
 // Ustaw domyślne wypełnienie komórki na obiekt MarginInfo
 tab1.DefaultCellPadding = margin;
 
-// Utwórz wiersze w tabeli, a następnie komórki w wierszach
+//Utwórz wiersze w tabeli, a następnie komórki w wierszach
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

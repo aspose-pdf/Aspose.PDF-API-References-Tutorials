@@ -30,7 +30,7 @@ using Aspose.Pdf;
  Zoek in de code de regel met de tekst`string dataDir = "YOUR DOCUMENT DIRECTORY";` en vervangen`"YOUR DOCUMENT DIRECTORY"` met het pad naar de map waar uw documenten zijn opgeslagen.
 
 ## Stap 4: Laad het bestaande PDF-document
- Laad een bestaand PDF-document met behulp van de`Document` constructor en het pad naar het PDF-invoerbestand doorgeven.
+ Laad een bestaand PDF-document met behulp van de`Document`constructor en het pad naar het PDF-invoerbestand doorgeven.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
@@ -95,7 +95,7 @@ pdfDocument.Save(dataDir + "EmbeddedFonts-updated_out.pdf");
 ```
 
 ## Conclusie
-hebt met succes standaard Type 1-lettertypen in een PDF-document ingesloten met Aspose.PDF voor .NET. Het bijgewerkte PDF-bestand met ingesloten lettertypen is opgeslagen op het opgegeven pad voor het uitvoerbestand.
+U hebt met succes standaard Type 1-lettertypen in een PDF-document ingesloten met Aspose.PDF voor .NET. Het bijgewerkte PDF-bestand met ingesloten lettertypen is opgeslagen op het opgegeven pad voor het uitvoerbestand.
 
 ### Veelgestelde vragen
 
@@ -129,7 +129,7 @@ using Aspose.Pdf;
 
 #### V: Hoe kan ik het bijgewerkte PDF-document opslaan?
 
- A: In stap 7 gebruikt u de`Save` methode van de`Document`object om het bijgewerkte PDF-document op te slaan, waarbij u het pad naar het uitvoerbestand opgeeft.
+ A: In stap 7 gebruikt u de`Save` methode van de`Document` object om het bijgewerkte PDF-document op te slaan, waarbij u het pad naar het uitvoerbestand opgeeft.
 
 #### V: Wat is het belang van het insluiten van lettertypen in een PDF-document?
 

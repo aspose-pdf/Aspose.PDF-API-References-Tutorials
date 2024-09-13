@@ -1,6 +1,6 @@
 ---
-title: Kivonja a kép tulajdonságait a PDF-ből Java nyelven
-linktitle: Kivonja a kép tulajdonságait a PDF-ből Java nyelven
+title: Kivonat a kép tulajdonságait a PDF-ből Java nyelven
+linktitle: Kivonat a kép tulajdonságait a PDF-ből Java nyelven
 second_title: Aspose.PDF Java PDF feldolgozó API
 description: Ismerje meg, hogyan bonthat ki képtulajdonságokat PDF-fájlokból Java nyelven az Aspose.PDF for Java segítségével. Lépésről lépésre útmutató forráskóddal. Fejlessze PDF-feldolgozási készségeit még ma!
 type: docs
@@ -29,7 +29,7 @@ Document pdfDocument = new Document("example.pdf");
 
  Cserélje ki`"example.pdf"` a PDF-fájl elérési útjával.
 
-## 4. A kép tulajdonságainak kibontása
+## 4. Képtulajdonságok kibontása
 
  Most, hogy betöltöttük a PDF dokumentumot, bontsa ki a kép tulajdonságait. Az Aspose.PDF for Java biztosítja a`Page.getResources()` módszer az oldal erőforrásaihoz, beleértve a képeket is.
 

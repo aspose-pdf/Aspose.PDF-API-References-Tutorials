@@ -60,7 +60,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## Passaggio 6: ottenere frammenti di testo estratti
 
-Ottieni i frammenti di testo estratti utilizzando`TextFragments` proprietà del`TextFragmentAbsorber` oggetto:
+ Ottieni i frammenti di testo estratti utilizzando`TextFragments` proprietà del`TextFragmentAbsorber` oggetto:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

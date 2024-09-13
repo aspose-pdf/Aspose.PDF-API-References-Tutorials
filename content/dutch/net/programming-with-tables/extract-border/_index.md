@@ -149,7 +149,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 
 		if (opSaveState != null)
 		{
-			//Vorige staat opslaan en huidige staat bovenaan de stapel plaatsen
+			// Vorige staat opslaan en huidige staat bovenaan de stapel plaatsen
 			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
@@ -243,7 +243,7 @@ A: Het extraheren van de rand uit een PDF-bestand kan voor verschillende doelein
 
 #### V: Kan ik de rand van specifieke pagina's of gebieden in het PDF-document extraheren?
 
-A: Ja, u kunt de meegeleverde C#-broncode aanpassen om de rand van specifieke pagina's of regio's in het PDF-document te extraheren. Door de`doc.Pages` Door het verzamelen en specificeren van aangepaste criteria kunt u ervoor kiezen om de rand van specifieke pagina's of interessegebieden te extraheren.
+ A: Ja, u kunt de meegeleverde C#-broncode aanpassen om de rand van specifieke pagina's of regio's in het PDF-document te extraheren. Door de`doc.Pages` Door het verzamelen en specificeren van aangepaste criteria kunt u ervoor kiezen om de rand van specifieke pagina's of interessegebieden te extraheren.
 
 #### V: Hoe kan ik het uitvoerformaat en de kwaliteit van de afbeelding aanpassen?
 
@@ -251,7 +251,7 @@ A: Ja, u kunt de meegeleverde C#-broncode aanpassen om de rand van specifieke pa
 
 #### V: Welke andere handelingen kan ik uitvoeren op de geëxtraheerde grens?
 
-A: Nadat u de rand als afbeelding hebt geëxtraheerd, kunt u deze verder verwerken met behulp van beeldverwerkingsbibliotheken of algoritmen. U kunt de afbeelding analyseren, beeldfilters toepassen, patronen detecteren of OCR (Optical Character Recognition) uitvoeren om tekst uit de afbeelding te extraheren, indien nodig.
+A: Zodra u de rand als afbeelding hebt geëxtraheerd, kunt u deze verder verwerken met behulp van beeldverwerkingsbibliotheken of algoritmen. U kunt de afbeelding analyseren, beeldfilters toepassen, patronen detecteren of OCR (Optical Character Recognition) uitvoeren om tekst uit de afbeelding te extraheren, indien nodig.
 
 #### V: Zijn er beperkingen of overwegingen bij het extraheren van randen uit complexe PDF-documenten?
 

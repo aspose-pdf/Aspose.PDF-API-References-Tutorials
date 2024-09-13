@@ -1,7 +1,7 @@
 ---
 title: Få bokmärkesidnummer i PDF-fil
 linktitle: Få bokmärkesidnummer i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du extraherar bokmärkessidnummer från PDF-filer med Aspose.PDF för .NET i denna omfattande handledning.
 type: docs
 weight: 60

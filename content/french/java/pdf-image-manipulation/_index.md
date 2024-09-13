@@ -26,7 +26,7 @@ Rejoignez-nous dans ce voyage pour devenir un expert en manipulation d'images PD
 
 ## Tutoriels de manipulation d'images PDF
 ### [Ajouter une image au PDF à l'aide de Java](./add-image-to-pdf-using-java/)
-Découvrez comment ajouter des images à des fichiers PDF à l'aide de Java grâce à notre guide étape par étape. Améliorez vos documents PDF avec des éléments visuels sans effort.
+Découvrez comment ajouter des images à des PDF à l'aide de Java grâce à notre guide étape par étape. Améliorez vos documents PDF avec des éléments visuels sans effort.
 ### [Ajouter une image à un fichier PDF existant en Java](./add-image-to-an-existing-pdf-file-in-java/)
 Découvrez comment ajouter des images à des fichiers PDF existants en Java sans effort avec Aspose.PDF pour Java. Améliorez vos documents PDF avec des instructions étape par étape et des exemples de code.
 ### [Convertir une image en PDF avec Java](./convert-an-image-to-pdf-using-java/)

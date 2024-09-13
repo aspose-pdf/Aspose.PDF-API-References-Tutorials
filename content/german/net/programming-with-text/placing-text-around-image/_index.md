@@ -145,7 +145,7 @@ row1.Cells.Add();
 row1.Cells[1].Paragraphs.Add(TitleText);
 // Stellen Sie die vertikale Ausrichtung des Zeileninhalts auf Oben ein.
 row1.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-// Erstellen Sie Zeilen in der Tabelle und dann Zellen in den Zeilen
+//Erstellen Sie Zeilen in der Tabelle und dann Zellen in den Zeilen
 Aspose.Pdf.Row SecondRow = table1.Rows.Add();
 SecondRow.Cells.Add();
 // Legen Sie den Zeilenspannwert für die zweite Zeile auf 2 fest.

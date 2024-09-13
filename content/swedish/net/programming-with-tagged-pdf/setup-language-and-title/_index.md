@@ -1,7 +1,7 @@
 ---
 title: Ställ in språk och titel
 linktitle: Ställ in språk och titel
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Steg-för-steg-guide för att konfigurera språket och titeln på ett PDF-dokument med Aspose.PDF för .NET. Skapa personliga flerspråkiga dokument.
 type: docs
 weight: 140
@@ -155,7 +155,7 @@ S: Att konfigurera språket och titeln på ett PDF-dokument är viktigt för til
 
 S: Flerspråkigt innehåll förbättrar tillgängligheten och den globala räckvidden för PDF-dokument. Aspose.PDF för .NET låter dig lägga till flerspråkigt innehåll genom att skapa styckeelement för varje språk, ställa in text- och språkegenskaperna därefter.
 
-####  F: Hur fungerar`SetTitle` method contribute to improving document accessibility and organization?
+#### F: Hur fungerar`SetTitle` method contribute to improving document accessibility and organization?
 
  A: Den`SetTitle` metoden anger titeln på ett PDF-dokument, som används för dokumentidentifiering, sökresultat och organisation. Att tillhandahålla en tydlig och meningsfull titel förbättrar dokumenttillgängligheten och förbättrar användarupplevelsen.
 
@@ -177,4 +177,4 @@ S: När du konfigurerar språk och titel, överväg den avsedda målgruppen, dok
 
 #### F: Kan jag ändra språket och titeln på ett befintligt PDF-dokument med Aspose.PDF för .NET?
 
- S: Ja, du kan ändra språket och titeln på ett befintligt PDF-dokument med Aspose.PDF för .NET. Genom att ladda dokumentet, komma åt dess taggade innehåll och använda`SetTitle` och`SetLanguage`metoder kan du uppdatera dessa attribut efter behov.
+ S: Ja, du kan ändra språket och titeln på ett befintligt PDF-dokument med Aspose.PDF för .NET. Genom att ladda dokumentet, komma åt dess taggade innehåll och använda`SetTitle` och`SetLanguage` metoder kan du uppdatera dessa attribut efter behov.

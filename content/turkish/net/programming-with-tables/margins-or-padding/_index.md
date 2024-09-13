@@ -63,7 +63,7 @@ tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
 Şimdi tabloya satırlar ve hücreler ekleyelim. Yeni bir satır oluşturacağız ve ona hücreler ekleyeceğiz:
 
 ```csharp
-// Tabloda satırlar ve ardından satırlarda hücreler oluşturun
+//Tabloda satırlar ve ardından satırlarda hücreler oluşturun
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -117,7 +117,7 @@ margin.Right = 5f;
 margin.Bottom = 5f;
 // Varsayılan hücre dolgusunu MarginInfo nesnesine ayarlayın
 tab1.DefaultCellPadding = margin;
-// Tabloda satırlar ve ardından satırlarda hücreler oluşturun
+//Tabloda satırlar ve ardından satırlarda hücreler oluşturun
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -145,13 +145,13 @@ Tebrikler! Aspose.PDF for .NET kullanarak bir tabloda kenar boşluklarını veya
 
 #### S: Bir tablodaki her bir hücre için farklı kenar boşlukları veya dolgu belirleyebilir miyim?
 
-A: Evet, .NET için Aspose.PDF kullanarak bir tablodaki tek tek hücreler için farklı kenar boşlukları veya dolgular ayarlayabilirsiniz. Sağlanan örnekte, tüm tablo için varsayılan hücre dolgusunu şu şekilde ayarladık:`DefaultCellPadding` Özellik. Belirli hücreler için farklı dolgu ayarlamak için, şuraya erişebilirsiniz:`MarginInfo` Her hücrenin ayrı ayrı boyutlarını belirleyip kenar boşluklarını değiştirebilirsiniz.
+ A: Evet, .NET için Aspose.PDF kullanarak bir tablodaki tek tek hücreler için farklı kenar boşlukları veya dolgular ayarlayabilirsiniz. Sağlanan örnekte, tüm tablo için varsayılan hücre dolgusunu şu şekilde ayarladık:`DefaultCellPadding` Özellik. Belirli hücreler için farklı dolgu ayarlamak için, şuraya erişebilirsiniz:`MarginInfo` Her hücrenin ayrı ayrı boyutlarını belirleyip kenar boşluklarını değiştirebilirsiniz.
 
 #### S: Tablonun kenarlık rengini veya stilini nasıl değiştirebilirim?
 
  A: Tablonun kenarlık rengini veya stilini değiştirmek için,`Color` Ve`Width` özellikleri`BorderInfo` nesne. Verilen örnekte, kenarlık rengini siyaha ve genişliğini 1F (bir nokta) olarak ayarladık`tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);`. Rengi ve genişliğini isteğinize göre ayarlayabilirsiniz.
 
-#### S: Tabloya üstbilgi veya altbilgi eklemek mümkün müdür?
+#### S: Tabloya üstbilgi veya altbilgi eklemek mümkün mü?
 
 A: Evet, .NET için Aspose.PDF kullanarak tabloya başlıklar veya altbilgiler ekleyebilirsiniz. Başlıklar ve altbilgiler genellikle sütun etiketleri, tablo başlıkları veya özet veriler gibi ek bilgiler içeren ayrı satırlardır. Ek satırlar oluşturabilir, bunları farklı şekilde biçimlendirebilir ve bunları tablo içeriğinin üstüne veya altına ekleyebilirsiniz.
 
@@ -161,4 +161,4 @@ A: Evet, .NET için Aspose.PDF kullanarak tabloya başlıklar veya altbilgiler e
 
 #### S: Tablo hücrelerine metin yerine resim ekleyebilir miyim?
 
- A: Evet, .NET için Aspose.PDF'yi kullanarak tablo hücrelerine resim ekleyebilirsiniz. Bir`TextFragment` nesne, bir tane yaratabilirsiniz`Image` nesneyi seçin, resim dosyasını yükleyin ve istediğiniz hücreye ekleyin`cell.Paragraphs.Add(image);` yöntem. Bu, metin içeriğinin yanında tabloya resim eklemenize olanak tanır.
+ A: Evet, .NET için Aspose.PDF'yi kullanarak tablo hücrelerine resim ekleyebilirsiniz. Bir`TextFragment` nesne, bir tane yaratabilirsiniz`Image` nesneyi seçin, resim dosyasını yükleyin ve istediğiniz hücreye ekleyin`cell.Paragraphs.Add(image);`yöntem. Bu, metin içeriğinin yanında tabloya resim eklemenize olanak tanır.

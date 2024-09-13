@@ -187,7 +187,7 @@ Odpověď: Použití odstavců a tvůrců textu umožňuje lepší kontrolu rota
 
 #### Otázka: Mohu na každý textový odstavec použít různé úhly otočení?
 
- Odpověď: Ano, na každý textový odstavec můžete použít různé úhly otočení nastavením`Rotation` majetek z`TextParagraph` objekt. To vám umožňuje vytvářet různé a dynamické efekty rotace textu v dokumentu PDF.
+ Odpověď: Ano, na každý textový odstavec můžete použít různé úhly otočení nastavením`Rotation` vlastnictví`TextParagraph` objekt. To vám umožňuje vytvářet různé a dynamické efekty rotace textu v dokumentu PDF.
 
 #### Otázka: Jak přizpůsobím formátování fragmentů textu v odstavcích textu?
 

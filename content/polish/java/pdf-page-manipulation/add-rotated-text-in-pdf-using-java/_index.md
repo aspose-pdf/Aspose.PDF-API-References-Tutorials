@@ -113,4 +113,4 @@ Ulepsz swoje dokumenty PDF, z łatwością dodając obrócony tekst dzięki moż
    Tak, możesz obrócić tekst o 90 stopni, aby utworzyć tekst pionowy. Wystarczy ustawić kąt obrotu na 90 stopni, a tekst pojawi się pionowo na stronie.
 
 ### 5. Czy istnieją inne biblioteki do pracy z plikami PDF w Javie?
-   Tak, kilka bibliotek, takich jak iText i PDFBox, jest dostępnych do manipulacji PDF w Javie. Każda biblioteka ma swoje unikalne cechy i możliwości, więc wybierz tę, która najlepiej odpowiada potrzebom Twojego projektu.
+   Tak, kilka bibliotek, takich jak iText i PDFBox, jest dostępnych do manipulacji PDF w Javie. Każda biblioteka ma swoje unikalne funkcje i możliwości, więc wybierz tę, która najlepiej odpowiada potrzebom Twojego projektu.

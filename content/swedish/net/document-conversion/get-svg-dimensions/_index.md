@@ -1,7 +1,7 @@
 ---
 title: Skaffa SVG Dimensions
 linktitle: Skaffa SVG Dimensions
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du använder Aspose.PDF för .NET för att konvertera SVG-filer till PDF med denna steg-för-steg-guide. Perfekt för utvecklare som vill manipulera PDF-filer.
 type: docs
 weight: 40

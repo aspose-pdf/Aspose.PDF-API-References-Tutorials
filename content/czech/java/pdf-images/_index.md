@@ -28,7 +28,7 @@ Naučte se vytvářet vyplněné obdélníky v PDF pomocí Java s Aspose.PDF pro
 ### [Kreslení čáry přes stránku v PDF pomocí Java](./drawing-line-across-the-page-in-pdf-with-java/)
 Naučte se kreslit čáry v PDF pomocí Java pomocí Aspose.PDF for Java. Podrobný průvodce se zdrojovým kódem pro kreslení čar PDF.
 ### [Použijte styl číslování v záhlaví PDF pomocí Java](./apply-numbering-style-in-heading-of-pdf-using-java/)
-Naučte se používat styly číslování na nadpisy PDF pomocí Aspose.PDF for Java. Náš podrobný průvodce poskytuje příklady zdrojového kódu pro profesionální úpravu vašich dokumentů.
+Naučte se, jak použít styly číslování na nadpisy PDF pomocí Aspose.PDF pro Java. Náš podrobný průvodce poskytuje příklady zdrojového kódu pro profesionální úpravu vašich dokumentů.
 ### [Odstraňte obrázek ze zdrojů PDF pomocí Java](./delete-image-from-pdf-resources-using-java/)
 Přečtěte si, jak odstranit obrázky z dokumentů PDF pomocí Aspose.PDF for Java. Podrobný průvodce se zdrojovým kódem pro efektivní manipulaci s PDF.
 ### [Odstraňte obrázky ze souboru PDF pomocí Java](./delete-images-from-pdf-file-using-java/)

@@ -20,7 +20,7 @@ Az Aspose.PDF for .NET "Programozás címkézett PDF-ekkel" című oktatóanyaga
 | [Struktúraelemek létrehozása](./create-structure-elements/) | Ebből az oktatóanyagból megtudhatja, hogyan használhatja az Aspose.PDF for .NET fájlt szerkezeti elemek létrehozásához egy címkézett PDF-dokumentumban. |  
 | [Hozzon létre Struktúraelem-fát](./create-structure-elements-tree/) | Hozzon létre egy struktúrát faelemekből az Aspose.PDF for .NET használatával. Lépésről lépésre útmutató strukturált PDF-dokumentum létrehozásához. |  
 | [Táblázatelem létrehozása](./create-table-element/) | Lépésről lépésre útmutató egy tömbelem létrehozásához az Aspose.PDF segítségével .NET-hez. Egyszerűen generálhat dinamikus PDF-eket táblázatokkal. |  
-| [Egyéni címkenév](./custom-tag-name/) | Útmutató lépésről lépésre egyéni címkenév használatához az Aspose.PDF for .NET-hez. Egyéni címkékkel javíthatja PDF-fájljai szerkezetét. |  
+| [Egyéni címke neve](./custom-tag-name/) | Útmutató lépésről lépésre egyéni címkenév használatához az Aspose.PDF for .NET-hez. Egyéni címkékkel javíthatja PDF-fájljai szerkezetét. |  
 | [Illusztráció szerkezeti elemek](./illustration-structure-elements/) | Lépésről lépésre az illusztrációs eszközök használatához az Aspose.PDF for .NET-hez. Javítsa PDF-jei megjelenítését képekkel. |  
 | [Soron belüli szerkezeti elemek](./inline-structure-elements/) | Lépésről lépésre az online szerkezeti elemek használatához az Aspose.PDF for .NET-hez. Rendezze PDF-fájljait címsorokkal és bekezdésekkel. |  
 | [Link szerkezeti elemek](./link-structure-elements/) | Útmutató lépésről lépésre a hivatkozásszerkezet elemeinek használatához az Aspose.PDF for .NET-hez. Hozzon létre hiperhivatkozásokat PDF-dokumentumaiban. |  

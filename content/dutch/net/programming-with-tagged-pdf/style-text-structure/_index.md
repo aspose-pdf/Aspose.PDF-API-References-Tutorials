@@ -52,7 +52,7 @@ We hebben de titel en de taal van het PDF-document gedefinieerd.
 
 ## Stap 5: Een alinea-element maken
 
-In deze stap maken we een nieuw alinea-element en voegen dit toe aan de getagde structuur.
+In deze stap maken we een nieuw alinea-element en voegen dit toe aan de tagstructuur.
 
 ```csharp
 // Een alinea-element maken

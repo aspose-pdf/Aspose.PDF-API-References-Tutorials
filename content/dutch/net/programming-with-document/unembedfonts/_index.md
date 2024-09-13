@@ -2,135 +2,129 @@
 title: Lettertypen verwijderen en PDF-bestanden optimaliseren
 linktitle: Lettertypen verwijderen en PDF-bestanden optimaliseren
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u Aspose.PDF voor .NET gebruikt om Unembed Fonts te krijgen en PDF-bestanden te optimaliseren. Een stapsgewijze handleiding.
+description: Leer in deze stapsgewijze zelfstudie hoe u lettertypen kunt verwijderen en PDF-bestanden kunt optimaliseren met Aspose.PDF voor .NET.
 type: docs
 weight: 370
 url: /nl/net/programming-with-document/unembedfonts/
 ---
-Aspose.PDF voor .NET is een krachtige bibliotheek die een breed scala aan functies biedt om met PDF-documenten te werken. Een van de functies is om niet-ingebedde lettertypen uit een PDF-document te halen. Dit kan handig zijn als u lettertypen uit een PDF-document wilt extraheren en ze in andere toepassingen wilt gebruiken.
+## Invoering
 
-We bieden een stapsgewijze handleiding om de volgende C#-broncode van de functie 'get unembed fonts' van Aspose.PDF voor .NET uit te leggen.
+In het digitale tijdperk zijn PDF's alomtegenwoordig. Of u nu rapporten, presentaties of eBooks deelt, het Portable Document Format (PDF) is de beste keuze om de integriteit van uw documenten te behouden. Naarmate we echter meer PDF's maken en delen, kunnen de bestandsgroottes toenemen, waardoor ze lastig te verzenden of op te slaan zijn. Dit is waar Aspose.PDF voor .NET in het spel komt, met krachtige tools om uw PDF-bestanden te optimaliseren. In deze tutorial duiken we in hoe u lettertypen kunt verwijderen en PDF-bestanden kunt optimaliseren met Aspose.PDF voor .NET.
 
-## Stap 1: Stel het pad naar de documentmap in
+## Vereisten
 
-Voordat we beginnen, moeten we het pad instellen naar de directory waar ons PDF-document zich bevindt. We slaan dit pad op in een variabele genaamd "dataDir".
+Voordat we in de details duiken, willen we ervoor zorgen dat u alles bij de hand hebt om te beginnen:
+
+1. Visual Studio: Zorg ervoor dat Visual Studio op uw machine is geïnstalleerd. Het is de IDE die we gebruiken om onze .NET-code te schrijven en uit te voeren.
+2.  Aspose.PDF voor .NET: U moet de Aspose.PDF-bibliotheek downloaden en installeren. U kunt deze ophalen uit de[downloadlink](https://releases.aspose.com/pdf/net/).
+3. Basiskennis van C#: Kennis van C#-programmering helpt u de codefragmenten die we gaan gebruiken te begrijpen.
+4.  Een PDF-bestand: Zorg dat u een PDF-bestand gereed hebt dat u wilt optimaliseren. U kunt elke PDF gebruiken, maar voor de demonstratie noemen we het`OptimizeDocument.pdf`.
+
+## Pakketten importeren
+
+Om te beginnen moet u de benodigde pakketten importeren in uw C#-project. Dit is hoe u dat kunt doen:
+
+1. Open uw project in Visual Studio.
+2. Voeg een verwijzing toe naar Aspose.PDF: Klik met de rechtermuisknop op uw project in de Solution Explorer, selecteer 'NuGet-pakketten beheren' en zoek naar`Aspose.PDF`. Installeer het pakket.
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Nu we alles hebben ingesteld, kunnen we het optimalisatieproces opdelen in beheersbare stappen.
+
+## Stap 1: Stel uw documentenmap in
+
+Allereerst moet u het pad naar uw documentenmap definiëren. Dit is waar uw PDF-bestanden worden opgeslagen. Dit is hoe u dat doet:
 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Vervang "UW DOCUMENTENMAP" door het daadwerkelijke pad naar de map waarin uw PDF-document zich bevindt.
+ Vervangen`"YOUR DOCUMENT DIRECTORY"` met het daadwerkelijke pad waar uw PDF-bestand zich bevindt. Dit is cruciaal omdat het programma moet weten waar het de PDF kan vinden die u wilt optimaliseren.
 
 ## Stap 2: Open het PDF-document
 
- De eerste stap is het laden van het PDF-document dat u hiervoor wilt gebruiken, gebruik hiervoor de`Document` klasse van Aspose.PDF voor .NET. Het volgende codefragment laat zien hoe u het PDF-document laadt:
+Nu we onze directory hebben ingesteld, is het tijd om het PDF-document te openen dat we willen optimaliseren. Hier is de code om dat te doen:
 
 ```csharp
 // Document openen
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-## Stap 3: Stel de optie UnembedFonts in
+ Deze regel code creëert een nieuwe`Document` object, dat uw PDF-bestand vertegenwoordigt. Zorg ervoor dat de bestandsnaam overeenkomt met de naam die u in uw directory hebt.
 
- Om niet-ingesloten lettertypen uit het PDF-document te halen, moet u de`UnembedFonts` optie om`true` Deze optie is beschikbaar in de`OptimizationOptions` klasse. Het volgende codefragment laat zien hoe u de`UnembedFonts` optie:
+## Stap 3: Optimalisatieopties instellen
+
+Vervolgens moeten we de optimalisatieopties specificeren. In dit geval willen we lettertypen unembedden. Dit is hoe je dat instelt:
 
 ```csharp
 // Optie UnembedFonts instellen
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
-	UnembedFonts = true
+    UnembedFonts = true
 };
 ```
+
+ Door het instellen`UnembedFonts` naar`true`, geven we Aspose.PDF de opdracht om de PDF te optimaliseren door de lettertypen te unembedden. Dit kan de bestandsgrootte aanzienlijk verkleinen, vooral als de PDF veel ingesloten lettertypen bevat.
 
 ## Stap 4: Optimaliseer het PDF-document
 
- Nadat u de`UnembedFonts` optie, kunt u het PDF-document optimaliseren met behulp van de`OptimizeResources` methode van de`Document` klasse. Het volgende codefragment laat zien hoe u het PDF-document kunt optimaliseren:
+Nu onze opties zijn ingesteld, is het tijd om het PDF-document te optimaliseren. Hier is de code om dat te doen:
 
 ```csharp
-// Optimaliseer PDF-document met OptimizationOptions
-pdfDocument.OptimizeResources(optimizeOptions);
-```
-
-## Stap 5: Sla het bijgewerkte document op
-
- Zodra het PDF-document is geoptimaliseerd, kunt u het bijgewerkte document opslaan met behulp van de`Save` methode van de`Document`klasse. Het volgende codefragment laat zien hoe u het bijgewerkte document kunt opslaan:
-
-```csharp
-// Bijgewerkt document opslaan
-pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
-```
-
-## Stap 6: Haal het originele en verkleinde bestandsformaat op
-
- Ten slotte kunt u het originele en verkleinde bestandsformaat van het PDF-document verkrijgen met behulp van de`FileInfo` klasse van System.IO. Het volgende codefragment laat zien hoe u de originele en gereduceerde bestandsgrootte kunt krijgen:
-
-```csharp
-var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
-var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
-Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
-```
-
-### Voorbeeldbroncode voor het ophalen van niet-ingebedde lettertypen met behulp van Aspose.PDF voor .NET
-
-Hier is de volledige voorbeeldbroncode voor het ophalen van niet-ingesloten lettertypen uit een PDF-document met behulp van Aspose.PDF voor .NET:
-
-```csharp
-// Het pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Document openen
-Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// Optie UnembedFonts instellen
-var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-{
-	UnembedFonts = true
-};
 Console.WriteLine("Start");
 // Optimaliseer PDF-document met OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
+```
+
+Dit codefragment roept de`OptimizeResources` methode op de`pdfDocument` object, waarbij de optimalisatieopties worden toegepast die we eerder hebben gedefinieerd. U ziet een bericht in de console dat aangeeft dat het optimalisatieproces is gestart.
+
+## Stap 5: Sla het bijgewerkte document op
+
+Nadat we de PDF hebben geoptimaliseerd, moeten we het bijgewerkte document opslaan. Dit is hoe je dat doet:
+
+```csharp
 // Bijgewerkt document opslaan
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Finished");
+```
+
+ Deze code slaat de geoptimaliseerde PDF op als`OptimizeDocument_out.pdf` in dezelfde directory. U kunt een andere naam kiezen als u dat wilt, maar door het vergelijkbaar te houden, kunt u de originele en geoptimaliseerde versies beter identificeren.
+
+## Stap 6: Vergelijk bestandsgroottes
+
+Ten slotte is het altijd goed om te controleren hoeveel ruimte u hebt bespaard. Hier ziet u hoe u de originele en geoptimaliseerde bestandsgroottes kunt vergelijken:
+
+```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
 var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```
+
+Deze code haalt de bestandsgroottes van zowel de originele als de geoptimaliseerde PDF's op en print ze naar de console. Het is een bevredigend moment om te zien hoeveel je de bestandsgrootte hebt verkleind!
 
 ## Conclusie
 
-In deze tutorial hebben we laten zien hoe u Aspose.PDF voor .NET kunt gebruiken om unembed-lettertypen uit een PDF-document te halen. Door de stapsgewijze handleiding te volgen, kunt u deze functie eenvoudig implementeren in uw C#-toepassingen. Unembedding-lettertypen kan voordelig zijn wanneer u afzonderlijk met de geëxtraheerde lettertypen moet werken of consistent lettertypegebruik op verschillende platforms moet garanderen.
+En daar heb je het! Je hebt succesvol lettertypen verwijderd en een PDF-bestand geoptimaliseerd met Aspose.PDF voor .NET. Dit proces helpt niet alleen bij het verkleinen van bestandsgroottes, maar verbetert ook de prestaties van je PDF-documenten. Of je nu bestanden deelt via e-mail of ze opslaat in de cloud, een kleinere bestandsgrootte kan een wereld van verschil maken.
 
 ## Veelgestelde vragen
 
-#### V: Wat is het doel van het verwijderen van lettertypen uit een PDF-document?
+### Wat is Aspose.PDF voor .NET?
+Aspose.PDF voor .NET is een krachtige bibliotheek waarmee ontwikkelaars programmatisch PDF-documenten kunnen maken, bewerken en optimaliseren.
 
-A: Door lettertypen uit een PDF-document te verwijderen, kunt u de ingesloten lettertypen extraheren en ze in andere toepassingen gebruiken. Dit kan handig zijn om consistente lettertypeweergave te garanderen en het visuele uiterlijk van het document te behouden.
+### Kan ik Aspose.PDF gratis gebruiken?
+ Ja, Aspose biedt een gratis proefversie. U kunt deze downloaden van[hier](https://releases.aspose.com/).
 
-#### V: Hoe geef ik het pad naar de documentdirectory op in de C#-code?
+### Hoe krijg ik ondersteuning voor Aspose.PDF?
+ U kunt ondersteuning krijgen via de[Aspose-forum](https://forum.aspose.com/c/pdf/10).
 
- A: Om het pad naar de documentmap op te geven, vervangt u`"YOUR DOCUMENT DIRECTORY"` in de code het daadwerkelijke pad naar de map waar uw PDF-document zich bevindt.
+### Welke optimalisaties kan ik op PDF's uitvoeren?
+U kunt lettertypen verwijderen, afbeeldingen comprimeren, ongebruikte objecten verwijderen en meer om uw PDF-bestanden te optimaliseren.
 
-####  V: Wat betekent de`UnembedFonts` option do, and where is it set?
-
- A: De`UnembedFonts` optie, beschikbaar in de`OptimizationOptions` klasse, schakelt het verwijderen van lettertypen uit het PDF-document in of uit. Om deze optie in te stellen op`true`, gebruik de volgende code:
-
-```csharp
-var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-{
-	UnembedFonts = true
-};
-```
-
-#### V: Kan ik de wijzigingen die tijdens het optimalisatieproces zijn aangebracht, ongedaan maken?
-
-A: Aspose.PDF voor .NET brengt geen permanente wijzigingen aan in het originele PDF-document tijdens de optimalisatie. Het optimalisatieproces wordt uitgevoerd op een kopie van het document, waarbij het origineel intact blijft.
-
-#### V: Hoe kan ik de originele en verkleinde bestandsgrootte controleren na optimalisatie?
-
- A: U kunt de`FileInfo` klasse van`System.IO` om de originele en gereduceerde bestandsgrootte te krijgen. Hier is een voorbeeldcodefragment om dit te bereiken:
-
-```csharp
-var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
-var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
-Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
-```
+### Waar kan ik Aspose.PDF voor .NET kopen?
+ U kunt een licentie kopen bij de[Aspose aankooppagina](https://purchase.aspose.com/buy).

@@ -35,7 +35,7 @@ taggedContent.SetLanguage("fr-FR");
 ในขั้นตอนนี้เราจะได้รับองค์ประกอบโครงสร้างรากสำหรับเอกสารของเรา
 
 ```csharp
-//รับองค์ประกอบโครงสร้างราก
+// รับองค์ประกอบโครงสร้างราก
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

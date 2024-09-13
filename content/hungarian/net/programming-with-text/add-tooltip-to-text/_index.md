@@ -32,7 +32,7 @@ using Aspose.Pdf.Text;
  A kódban keresse meg azt a sort, amely ezt mondja`string dataDir = "YOUR DOCUMENT DIRECTORY";` és cserélje ki`"YOUR DOCUMENT DIRECTORY"` annak a könyvtárnak az elérési útjával, ahol a dokumentumokat tárolják.
 
 ## 4. lépés: Hozzon létre egy mintadokumentumot szöveggel
- Hozzon létre egy újat`Document` objektumot, és adjon hozzá oldalakat szövegtöredékekkel. A megadott kódban két szövegrészletet adunk a dokumentumhoz a megfelelő eszköztipp szöveggel.
+ Hozzon létre egy újat`Document`objektumot, és adjon hozzá oldalakat szövegtöredékekkel. A megadott kódban két szövegrészletet adunk a dokumentumhoz a megfelelő eszköztipp szöveggel.
 
 ```csharp
 Document doc = new Document();
@@ -98,9 +98,9 @@ doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to disp
 doc.Save(outputFile);
 // Nyissa meg a dokumentumot szöveggel
 Document document = new Document(outputFile);
-// Hozzon létre TextAbsorber objektumot a reguláris kifejezésnek megfelelő kifejezések megtalálásához
+//Hozzon létre TextAbsorber objektumot a reguláris kifejezésnek megfelelő kifejezések megtalálásához
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
-// Fogadja el a dokumentumoldalak elnyelőjét
+// Fogadja el az elnyelőt a dokumentumoldalakhoz
 document.Pages.Accept(absorber);
 // Szerezze be a kivont szövegrészleteket
 TextFragmentCollection textFragments = absorber.TextFragments;
@@ -169,7 +169,7 @@ using Aspose.Pdf.Text;
 
 #### K: Hogyan adhatok eszköztippeket a szövegrészletekhez?
 
- V: A 6. lépésben végigpörgeti a kibontott szövegrészleteket, és a helyükön láthatatlan gombokat hoz létre. Az eszköztipp szövege hozzá van rendelve a`AlternateName` tulajdona a`ButtonField`amely hozzáadódik a dokumentum űrlapjához.
+ V: A 6. lépésben végigpörgeti a kibontott szövegrészleteket, és a helyükön láthatatlan gombokat hoz létre. Az eszköztipp szövege hozzá van rendelve a`AlternateName` tulajdona a`ButtonField`, amely hozzáadódik a dokumentum űrlapjához.
 
 #### K: Hogyan ismételhetem meg a folyamatot további szövegtöredékek esetén, hosszú eszköztippekkel?
 

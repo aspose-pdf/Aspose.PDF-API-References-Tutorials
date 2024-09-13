@@ -14,7 +14,7 @@ url: /zh-hant/net/programming-with-tables/export-excel-worksheet-data-to-table/
 
 - C# 程式語言基礎知識
 - 您的電腦上安裝了 Visual Studio
-- Aspose.PDF for .NET 程式庫已新增至您的專案中
+- Aspose.PDF for .NET 庫已新增至您的專案中
 
 ## 第 1 步：設定環境
 首先，在 Visual Studio 中建立一個新的 C# 專案。透過在解決方案資源管理器中右鍵點擊您的項目，選擇“管理 NuGet 套件”並搜尋“Aspose.PDF”，新增對 Aspose.PDF for .NET 程式庫的參考。安裝軟體包即可開始使用。
@@ -212,7 +212,7 @@ pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
 ```
 
 ## 結論
-在本教學中，我們學習如何使用 Aspose.PDF for .NET 函式庫將資料從 Excel 工作表匯出到 PDF 表格。我們介紹了載入 Excel 工作表、建立 PDF 文件、新增表格、匯入資料和設定表格格式的逐步流程。現在您可以透過程式設計產生包含 Excel 資料的表格的 PDF 檔案。
+在本教學中，我們學習如何使用 Aspose.PDF for .NET 函式庫將資料從 Excel 工作表匯出到 PDF 表格。我們介紹了載入 Excel 工作表、建立 PDF 文件、新增表格、匯入資料以及設定表格格式的逐步流程。現在您可以透過程式設計產生包含 Excel 資料的表格的 PDF 檔案。
 
 ### 常見問題解答
 

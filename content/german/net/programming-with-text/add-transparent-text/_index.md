@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Schritt 5: Dem Dokument eine Seite hinzufügen
- Fügen Sie dem Dokument eine neue Seite hinzu, indem Sie das`Add` Methode der`Pages`Sammlung. Im bereitgestellten Code wird die neue Seite der Variablen zugewiesen`page`.
+ Fügen Sie dem Dokument eine neue Seite hinzu, indem Sie das`Add` Methode der`Pages` Sammlung. Im bereitgestellten Code wird die neue Seite der Variablen zugewiesen`page`.
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
@@ -109,7 +109,7 @@ Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 4
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
 // Rechteck zur Formensammlung des Graph-Objekts hinzufügen
 canvas.Shapes.Add(rect);
-//Fügen Sie der Absatzsammlung des Seitenobjekts ein Diagrammobjekt hinzu
+// Fügen Sie der Absatzsammlung des Seitenobjekts ein Diagrammobjekt hinzu
 page.Paragraphs.Add(canvas);
 // Legen Sie einen Wert fest, um die Position des Diagrammobjekts nicht zu ändern.
 canvas.IsChangePosition = false;
@@ -163,7 +163,7 @@ using Aspose.Pdf.Drawing;
 
 #### F: Wie erstelle ich ein Rechteck mit Transparenz?
 
-A: In Schritt 7 erstellen Sie ein Rechteck mit bestimmten Abmessungen und legen die Füllfarbe auf eine transparente Farbe fest. Verwenden Sie dazu`Color.FromRgb` Verfahren.
+ A: In Schritt 7 erstellen Sie ein Rechteck mit bestimmten Abmessungen und legen die Füllfarbe auf eine transparente Farbe fest. Verwenden Sie dazu`Color.FromRgb` Verfahren.
 
 #### F: Wie füge ich der Seite das Graph-Objekt hinzu?
 
@@ -175,7 +175,7 @@ A: In Schritt 7 erstellen Sie ein Rechteck mit bestimmten Abmessungen und legen 
 
 #### F: Wie erstelle ich ein TextFragment mit Transparenz?
 
- A: In Schritt 10 erstellen Sie eine`TextFragment` Objekt und legen Sie dessen Inhalt fest und`ForegroundColor` Eigenschaft, um transparenten Text zu erhalten.
+A: In Schritt 10 erstellen Sie eine`TextFragment` Objekt und legen Sie dessen Inhalt fest und`ForegroundColor` Eigenschaft, um transparenten Text zu erhalten.
 
 #### F: Wie speichere ich das PDF-Dokument?
 

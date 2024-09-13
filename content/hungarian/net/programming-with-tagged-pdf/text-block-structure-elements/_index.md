@@ -47,7 +47,7 @@ Beállítottuk a címkézett PDF dokumentum címét és nyelvét.
 Most nézzük meg a PDF dokumentum gyökérstruktúra elemét.
 
 ```csharp
-//Szerezze meg a gyökérszerkezet elemet
+// Szerezze meg a gyökérszerkezet elemet
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

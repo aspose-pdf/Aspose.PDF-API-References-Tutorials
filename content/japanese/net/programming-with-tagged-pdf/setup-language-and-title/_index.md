@@ -155,7 +155,7 @@ A: PDF ドキュメントの言語とタイトルを構成することは、ア�
 
 A: 多言語コンテンツにより、PDF ドキュメントのアクセシビリティとグローバルな範囲が強化されます。Aspose.PDF for .NET では、各言語の段落要素を作成し、それに応じてテキストと言語のプロパティを設定することで、多言語コンテンツを追加できます。
 
-####  Q:`SetTitle` method contribute to improving document accessibility and organization?
+#### Q:`SetTitle` method contribute to improving document accessibility and organization?
 
  A:`SetTitle`メソッドは、ドキュメントの識別、検索結果、および整理に使用される PDF ドキュメントのタイトルを設定します。明確で意味のあるタイトルを指定すると、ドキュメントのアクセシビリティが向上し、ユーザー エクスペリエンスが向上します。
 

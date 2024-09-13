@@ -1,13 +1,13 @@
 ---
 title: Skapa anteckningsstrukturelement
 linktitle: Skapa anteckningsstrukturelement
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Steg-för-steg-guide för att skapa strukturerade anteckningsobjekt i ett PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 30
 url: /sv/net/programming-with-tagged-pdf/create-note-structure-element/
 ---
-I den här handledningen kommer vi att ge dig en steg-för-steg-guide om hur du skapar ett anteckningsstrukturelement i ett PDF-dokument med Aspose.PDF för .NET. Aspose.PDF är ett kraftfullt bibliotek som låter dig skapa, manipulera och konvertera PDF-dokument programmatiskt. Med hjälp av de markerade innehållsstrukturfunktionerna i Aspose.PDF kan du lägga till strukturerade anteckningar till ditt PDF-dokument.
+den här handledningen kommer vi att ge dig en steg-för-steg-guide om hur du skapar ett anteckningsstrukturelement i ett PDF-dokument med Aspose.PDF för .NET. Aspose.PDF är ett kraftfullt bibliotek som låter dig skapa, manipulera och konvertera PDF-dokument programmatiskt. Med hjälp av de markerade innehållsstrukturfunktionerna i Aspose.PDF kan du lägga till strukturerade anteckningar till ditt PDF-dokument.
 
 ## Förutsättningar
 
@@ -22,7 +22,7 @@ För att komma igång, skapa ett nytt projekt i Visual Studio och lägg till en 
 
 ## Steg 2: Importera de nödvändiga namnrymden
 
-I din C#-kodfil, importera de namnutrymmen som krävs för att komma åt klasserna och metoderna som tillhandahålls av Aspose.PDF:
+din C#-kodfil, importera de namnutrymmen som krävs för att komma åt klasserna och metoderna som tillhandahålls av Aspose.PDF:
 
 ```csharp
 using System;
@@ -103,7 +103,7 @@ NoteElement note3 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note3);
 note3.SetText("Note with ID = 'note_003'. ");
 note3.SetId("note_003");
-// Måste kasta undantag - Aspose.Pdf.Tagged.TaggedException : Strukturelement med ID='note_002' finns redan
+//Måste kasta undantag - Aspose.Pdf.Tagged.TaggedException : Strukturelement med ID='note_002' finns redan
 //note3.SetId("note_002");
 // Det resulterande dokumentet överensstämmer inte med PDF/UA om ClearId() används för Note Structure Element
 //note3.ClearId();
@@ -148,7 +148,7 @@ S: Ja, du kan anpassa innehållet och egenskaperna för anteckningsstruktureleme
 
 #### F: Kan jag tilldela unika ID:n till anteckningsstrukturelement?
 
-S: Ja, du kan tilldela unika ID:n till noteringsstrukturelement med hjälp av`SetId` metod. Koden visar hur man ställer in ID:n för anteckningselement till unika värden.
+ S: Ja, du kan tilldela unika ID:n till noteringsstrukturelement med hjälp av`SetId` metod. Koden visar hur man ställer in ID:n för anteckningselement till unika värden.
 
 #### F: Vad händer om jag försöker tilldela ett dubblett-ID till ett anteckningsstrukturelement?
 
@@ -156,7 +156,7 @@ S: Ett försök att tilldela ett duplicerat ID till ett anteckningsstruktureleme
 
 #### F: Hur kan jag säkerställa PDF/UA-kompatibilitet när jag skapar anteckningsstrukturelement?
 
- S: Koden som tillhandahålls i handledningen visar hur man validerar PDF/UA-efterlevnad med hjälp av`Validate` metod. Genom att validera dokumentet mot PDF/UA-standarden kan du säkerställa att de tillagda anteckningsstrukturelementen följer riktlinjerna för tillgänglighet.
+S: Koden som tillhandahålls i handledningen visar hur man validerar PDF/UA-efterlevnad med hjälp av`Validate` metod. Genom att validera dokumentet mot PDF/UA-standarden kan du säkerställa att de tillagda anteckningsstrukturelementen följer riktlinjerna för tillgänglighet.
 
 #### F: Kan jag använda detta tillvägagångssätt för att lägga till anteckningsstrukturelement till ett befintligt PDF-dokument?
 

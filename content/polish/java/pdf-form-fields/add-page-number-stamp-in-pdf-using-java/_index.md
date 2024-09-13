@@ -8,7 +8,7 @@ weight: 11
 url: /pl/java/pdf-form-fields/add-page-number-stamp-in-pdf-using-java/
 ---
 
-## Wprowadzenie do dodawania stempla numeru strony w pliku PDF przy użyciu języka Java
+## Wprowadzenie do dodawania stempla z numerem strony w pliku PDF przy użyciu języka Java
 
 Dokumenty PDF są powszechnie używane do udostępniania i prezentowania informacji, ale czasami może być konieczne ich ulepszenie poprzez dodanie numerów stron. Niezależnie od tego, czy pracujesz nad raportami, podręcznikami czy pracami naukowymi, numery stron pomagają czytelnikom sprawnie poruszać się po Twoich treściach. W tym samouczku przeprowadzimy Cię przez proces dodawania znaczników numeracji stron do plików PDF za pomocą Javy. Będziemy używać Aspose.PDF dla Javy, potężnej biblioteki, która upraszcza manipulację plikami PDF.
 

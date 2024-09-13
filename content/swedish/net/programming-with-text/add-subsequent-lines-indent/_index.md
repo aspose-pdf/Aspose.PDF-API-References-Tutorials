@@ -1,7 +1,7 @@
 ---
 title: Lägg till efterföljande rader indrag i PDF-fil
 linktitle: Lägg till efterföljande rader indrag i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du lägger till efterföljande rader indrag i text i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 60
@@ -38,14 +38,14 @@ Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
 ## Steg 5: Lägg till en sida i dokumentet
- Lägg till en ny sida i dokumentet med hjälp av`Add` metod för`Pages`samling. I den angivna koden är den nya sidan tilldelad variabeln`page`.
+ Lägg till en ny sida i dokumentet med hjälp av`Add` metod för`Pages` samling. I den angivna koden är den nya sidan tilldelad variabeln`page`.
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
 ## Steg 6: Skapa ett TextFragment med efterföljande rader indrag
- Instantiera en`TextFragment` objekt och ge önskad text. I den angivna koden är texten tilldelad variabeln`text` . Initiera sedan`TextFormattingOptions` för`TextFragment`och specificera`SubsequentLinesIndent` värde.
+ Instantiera en`TextFragment` objekt och ge önskad text. I den angivna koden är texten tilldelad variabeln`text` . Initiera sedan`TextFormattingOptions` för`TextFragment` och specificera`SubsequentLinesIndent` värde.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
@@ -91,7 +91,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = document.Pages.Add();
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-// Initiera TextFormattingOptions för textfragmentet och ange SubsequentLinesIndent-värdet
+//Initiera TextFormattingOptions för textfragmentet och ange SubsequentLinesIndent-värdet
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
 	SubsequentLinesIndent = 20
@@ -148,7 +148,7 @@ Aspose.Pdf.Page page = document.Pages.Add();
 
 #### F: Hur kan jag lägga till efterföljande rader indrag i text?
 
- S: I steg 6 skapar du en`TextFragment` objekt och tilldela önskad text till det. Sedan initierar du`TextFormattingOptions` för`TextFragment`och specificera`SubsequentLinesIndent` värde:
+ S: I steg 6 skapar du en`TextFragment` objekt och tilldela önskad text till det. Sedan initierar du`TextFormattingOptions` för`TextFragment` och specificera`SubsequentLinesIndent` värde:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
@@ -168,7 +168,7 @@ page.Paragraphs.Add(text);
 
 #### F: Kan jag upprepa processen för ytterligare rader?
 
- S: Ja, i steg 8 kan du upprepa processen för ytterligare rader med samma indrag genom att skapa en ny`TextFragment` objekt och lägga till dem i styckesamlingen på sidan.
+S: Ja, i steg 8 kan du upprepa processen för ytterligare rader med samma indrag genom att skapa en ny`TextFragment` objekt och lägga till dem i styckesamlingen på sidan.
 
 #### F: Hur sparar jag det resulterande PDF-dokumentet?
 

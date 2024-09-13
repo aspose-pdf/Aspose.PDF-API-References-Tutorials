@@ -108,14 +108,14 @@ textFragment1.Position = new Position(100, 600);
 // Teksteigenschappen instellen
 textFragment1.TextState.FontSize = 12;
 textFragment1.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-// Geroteerd tekstfragment maken
+// Maak een gedraaid tekstfragment
 TextFragment textFragment2 = new TextFragment("rotated text");
 textFragment2.Position = new Position(200, 600);
 // Teksteigenschappen instellen
 textFragment2.TextState.FontSize = 12;
 textFragment2.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 textFragment2.TextState.Rotation = 45;
-// Geroteerd tekstfragment maken
+// Maak een gedraaid tekstfragment
 TextFragment textFragment3 = new TextFragment("rotated text");
 textFragment3.Position = new Position(300, 600);
 // Teksteigenschappen instellen

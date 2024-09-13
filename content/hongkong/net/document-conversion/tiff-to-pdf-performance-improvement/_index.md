@@ -148,7 +148,7 @@ currpage.Paragraphs.Add(image1);
 
 ## 步驟 11：優化影像效能
 
-為了提高效能，特別是在處理大型或大量 TIFF 影像時，您可以設定`IsBlackWhite`財產給`true`。這會將影像轉換為黑白影像，從而減少檔案大小並縮短處理時間。
+為了提高效能，特別是在處理大型或大量 TIFF 影像時，您可以設定`IsBlackWhite`財產給`true`。這會將影像轉換為黑白影像，從而減小檔案大小並縮短處理時間。
 
 ```csharp
 image1.IsBlackWhite = true;
@@ -179,7 +179,7 @@ doc.Save(dataDir + "PerformaceImprovement_out.pdf");
 
 ## 結論
 
-現在你就擁有了！透過 Aspose.PDF for .NET，將 TIFF 影像轉換為 PDF 同時提高效能非常簡單。透過執行這些步驟，您甚至可以有效地處理大量影像。無論您是處理小型專案還是管理較大批量的影像，此方法都可確保您的 PDF 轉換流程順利且最佳化。
+現在你就得到它了！透過 Aspose.PDF for .NET，將 TIFF 影像轉換為 PDF 同時提高效能非常簡單。透過執行這些步驟，您甚至可以有效地處理大量影像。無論您是處理小型專案還是管理較大批量的影像，此方法都可確保您的 PDF 轉換流程順利且最佳化。
 
 ## 常見問題解答
 

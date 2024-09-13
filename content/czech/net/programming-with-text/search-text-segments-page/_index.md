@@ -7,7 +7,7 @@ type: docs
 weight: 470
 url: /cs/net/programming-with-text/search-text-segments-page/
 ---
-Tento výukový program vysvětluje, jak používat Aspose.PDF for .NET k vyhledávání specifických textových segmentů na stránce souboru PDF a získávání jejich vlastností. Poskytnutý zdrojový kód C# demonstruje proces krok za krokem.
+Tento tutoriál vysvětluje, jak používat Aspose.PDF for .NET k vyhledávání specifických textových segmentů na stránce souboru PDF a získávání jejich vlastností. Poskytnutý zdrojový kód C# demonstruje proces krok za krokem.
 
 ## Předpoklady
 
@@ -71,7 +71,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## Krok 7: Načtěte extrahované textové segmenty
 
- Získejte extrahované textové segmenty pomocí`TextFragments` majetek z`TextFragmentAbsorber` objekt:
+ Získejte extrahované textové segmenty pomocí`TextFragments` vlastnictví`TextFragmentAbsorber` objekt:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

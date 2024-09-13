@@ -30,7 +30,7 @@ using Aspose.Pdf;
  Dalam kode, temukan baris yang bertuliskan`string dataDir = "YOUR DOCUMENT DIRECTORY";` dan mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur ke direktori tempat dokumen Anda disimpan.
 
 ## Langkah 4: Muat dokumen PDF yang ada
- Memuat dokumen PDF yang ada menggunakan`Document` konstruktor dan meneruskan jalur ke berkas PDF masukan.
+ Memuat dokumen PDF yang ada menggunakan`Document`konstruktor dan meneruskan jalur ke berkas PDF masukan.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
@@ -129,7 +129,7 @@ using Aspose.Pdf;
 
 #### T: Bagaimana cara menyimpan dokumen PDF yang diperbarui?
 
- A: Pada Langkah 7, Anda akan menggunakan`Save` metode dari`Document`objek untuk menyimpan dokumen PDF yang diperbarui dan menentukan jalur berkas keluaran.
+ A: Pada Langkah 7, Anda akan menggunakan`Save` metode dari`Document` objek untuk menyimpan dokumen PDF yang diperbarui dan menentukan jalur berkas keluaran.
 
 #### T: Apa pentingnya menyematkan font dalam dokumen PDF?
 

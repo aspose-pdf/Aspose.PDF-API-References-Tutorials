@@ -2,7 +2,7 @@
 title: PDF에서 MobiXML 생성
 linktitle: PDF에서 MobiXML 생성
 second_title: Aspose.PDF Java PDF 처리 API
-description: Aspose.PDF for Java를 사용하여 PDF에서 MobiXML을 생성하는 방법을 알아보세요. 코드 예제가 포함된 단계별 가이드. PDF를 MobiXML 형식으로 매끄럽게 변환합니다.
+description: Aspose.PDF for Java를 사용하여 PDF에서 MobiXML을 생성하는 방법을 알아보세요. 코드 예제가 포함된 단계별 가이드. PDF를 MobiXML 형식으로 원활하게 변환합니다.
 type: docs
 weight: 17
 url: /ko/java/pdf-conversion-transformation/generate-mobixml-from-pdfs/

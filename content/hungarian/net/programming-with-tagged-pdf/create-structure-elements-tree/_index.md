@@ -152,7 +152,7 @@ V: Ha PDF-dokumentumban faelemekből struktúrát hoz létre az Aspose.PDF for .
 
 V: A kódpélda bemutatja, hogyan hozható létre a logikai elemek hierarchikus struktúrája a`SectElement`, `DivElement` , és`ArtElement` osztályok által biztosított Aspose.PDF. Ezek az elemek szülő- és gyermekcsomópontokba vannak szervezve, és a dokumentumon belül faszerű struktúrát alkotnak.
 
-####  K: Hogyan működik a`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
+#### K: Hogyan működik a`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
 
  V: A`TaggedContent` tulajdonság hozzáférést biztosít a PDF-dokumentum címkézett tartalmi jellemzőihez. Ez lehetővé teszi strukturált elemek létrehozását és kezelését, kapcsolataik meghatározását és hierarchikus rendszerezését, javítva a dokumentum szerkezetét és hozzáférhetőségét.
 
@@ -168,7 +168,7 @@ V: A kódpélda bemutatja, hogyan hozható létre a logikai elemek hierarchikus 
 
 V: Az elemek hierarchikus rendszerezése javítja a dokumentumszervezést, a navigációt és a szemantikát. Lehetővé teszi a felhasználók és a kisegítő technológiák számára, hogy megértsék a tartalom szerkezetét és kapcsolatait, javítva az általános felhasználói élményt.
 
-####  K: Hogyan működik a`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
+#### K: Hogyan működik a`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
 
  V: A`Save` metódus menti a PDF dokumentumot a segítségével létrehozott hierarchikus struktúrával együtt`AppendChild` módszer. Ez biztosítja, hogy a szerkezet sértetlen marad, így a dokumentum hozzáférhető és jól szervezett.
 

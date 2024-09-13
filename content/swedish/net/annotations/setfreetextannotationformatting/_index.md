@@ -1,7 +1,7 @@
 ---
 title: Ställ in formatering av fritextkommentarer
 linktitle: Ställ in formatering av fritextkommentarer
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du ställer in fritextkommentarformatering i PDF-dokument med Aspose.PDF för .NET med denna steg-för-steg-guide.
 type: docs
 weight: 140

@@ -63,7 +63,7 @@ tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
 Maintenant, ajoutons des lignes et des cellules au tableau. Nous allons créer une nouvelle ligne et y ajouter des cellules :
 
 ```csharp
-// Créez des lignes dans le tableau, puis des cellules dans les lignes
+//Créez des lignes dans le tableau, puis des cellules dans les lignes
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -117,7 +117,7 @@ margin.Right = 5f;
 margin.Bottom = 5f;
 // Définir le remplissage de cellule par défaut sur l'objet MarginInfo
 tab1.DefaultCellPadding = margin;
-// Créez des lignes dans le tableau, puis des cellules dans les lignes
+//Créez des lignes dans le tableau, puis des cellules dans les lignes
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -145,7 +145,7 @@ Félicitations ! Vous avez appris avec succès à définir des marges ou un rem
 
 #### Q : Puis-je définir des marges ou un remplissage différents pour des cellules individuelles dans un tableau ?
 
- : Oui, vous pouvez définir des marges ou des marges intérieures différentes pour les cellules individuelles d'un tableau à l'aide d'Aspose.PDF pour .NET. Dans l'exemple fourni, nous définissons le remplissage de cellule par défaut pour l'ensemble du tableau à l'aide de`DefaultCellPadding` propriété. Pour définir un remplissage différent pour des cellules spécifiques, vous pouvez accéder à la`MarginInfo` de chaque cellule individuellement et modifier leurs marges.
+ R : Oui, vous pouvez définir des marges ou des marges intérieures différentes pour les cellules individuelles d'un tableau à l'aide d'Aspose.PDF pour .NET. Dans l'exemple fourni, nous définissons le remplissage de cellule par défaut pour l'ensemble du tableau à l'aide de`DefaultCellPadding` propriété. Pour définir un remplissage différent pour des cellules spécifiques, vous pouvez accéder à la`MarginInfo` de chaque cellule individuellement et modifier leurs marges.
 
 #### Q : Comment puis-je modifier la couleur ou le style de la bordure du tableau ?
 
@@ -161,4 +161,4 @@ R : Oui, vous pouvez ajouter des en-têtes ou des pieds de page au tableau à l
 
 #### Q : Puis-je ajouter des images aux cellules du tableau au lieu du texte ?
 
- R : Oui, vous pouvez ajouter des images aux cellules du tableau à l'aide d'Aspose.PDF pour .NET. Au lieu de créer un`TextFragment` objet, vous pouvez créer un`Image` objet, chargez le fichier image et ajoutez-le à la cellule souhaitée à l'aide de la`cell.Paragraphs.Add(image);` méthode. Cela vous permet d'insérer des images dans le tableau à côté du contenu textuel.
+ R : Oui, vous pouvez ajouter des images aux cellules du tableau à l'aide d'Aspose.PDF pour .NET. Au lieu de créer un`TextFragment` objet, vous pouvez créer un`Image` objet, chargez le fichier image et ajoutez-le à la cellule souhaitée à l'aide de la`cell.Paragraphs.Add(image);`méthode. Cela vous permet d'insérer des images dans le tableau à côté du contenu textuel.

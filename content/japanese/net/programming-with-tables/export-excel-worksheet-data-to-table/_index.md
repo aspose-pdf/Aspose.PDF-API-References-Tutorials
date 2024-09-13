@@ -129,7 +129,7 @@ for (int All_Rows = 1; All_Rows <= dataTable.Rows.Count; All_Rows++)
          //交互の行のセルの背景色を設定する
          curCell.BackgroundColor = Color.Gray;
         
-         //交互の行のセルのテキストの色を設定する
+         //交互の行のセルのテキストの色を設定します
          curCell.DefaultCellTextState.ForegroundColor = Color.White;
      }
 }
@@ -207,7 +207,7 @@ for (int All_Rows = 1; All_Rows <= dataTable.Rows.Count; All_Rows++)
 	}
 }
 
-//PDFを保存する
+// PDFを保存する
 pdf1.Save(dataDir + @"Exceldata_toPdf_table.pdf");
 ```
 

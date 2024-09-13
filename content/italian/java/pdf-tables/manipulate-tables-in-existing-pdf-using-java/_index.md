@@ -109,7 +109,7 @@ pdfDocument.save("modified_document.pdf");
 
 ## Conclusione
 
-Manipolare tabelle in documenti PDF esistenti usando Java e Aspose.PDF per Java è un modo potente e flessibile per lavorare con contenuti PDF. Sia che tu debba estrarre dati, aggiornare tabelle esistenti o crearne di completamente nuove, Aspose.PDF per Java fornisce gli strumenti di cui hai bisogno per svolgere il lavoro in modo efficiente.
+Manipolare tabelle in documenti PDF esistenti usando Java e Aspose.PDF per Java è un modo potente e flessibile per lavorare con contenuti PDF. Che tu abbia bisogno di estrarre dati, aggiornare tabelle esistenti o crearne di completamente nuove, Aspose.PDF per Java fornisce gli strumenti di cui hai bisogno per svolgere il lavoro in modo efficiente.
 
 ## Domande frequenti
 

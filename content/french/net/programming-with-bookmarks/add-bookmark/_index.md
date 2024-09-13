@@ -9,7 +9,7 @@ url: /fr/net/programming-with-bookmarks/add-bookmark/
 ---
 ## Introduction
 
-Vous est-il déjà arrivé de parcourir un long document PDF, à la recherche désespérée de la section dont vous avez besoin ? Si c'est le cas, vous n'êtes pas seul ! Naviguer dans de longs documents peut être un véritable casse-tête. Mais que diriez-vous si je vous disais qu'il existe un moyen de rendre vos PDF plus conviviaux ? C'est là qu'interviennent les signets ! Dans ce tutoriel, nous allons découvrir comment ajouter des signets à un fichier PDF à l'aide d'Aspose.PDF pour .NET. Cette puissante bibliothèque vous permet de manipuler facilement des documents PDF, ce qui vous simplifie grandement la vie. Alors, plongeons-nous dans le vif du sujet !
+Vous est-il déjà arrivé de parcourir un long document PDF, à la recherche désespérée de la section dont vous avez besoin ? Si c'est le cas, vous n'êtes pas seul ! Naviguer dans des documents volumineux peut être un véritable casse-tête. Mais que diriez-vous si je vous disais qu'il existe un moyen de rendre vos PDF plus conviviaux ? C'est là qu'interviennent les signets ! Dans ce tutoriel, nous allons découvrir comment ajouter des signets à un fichier PDF à l'aide d'Aspose.PDF pour .NET. Cette puissante bibliothèque vous permet de manipuler facilement des documents PDF, ce qui vous simplifie grandement la vie. Alors, plongeons-nous dans le vif du sujet !
 
 ## Prérequis
 

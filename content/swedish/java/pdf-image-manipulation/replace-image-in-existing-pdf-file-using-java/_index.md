@@ -49,7 +49,7 @@ Document pdfDocument = new Document("path/to/your/pdf/file.pdf");
 
  Ersätta`"path/to/your/pdf/file.pdf"` med den faktiska sökvägen till din PDF-fil.
 
-## Ersätta en bild i PDF:en
+## Ersätta en bild i PDF-filen
 
 Låt oss nu ersätta bilden i PDF-filen med en ny. Du måste ange sidnummer och koordinater där bilden ska ersättas. Du behöver också sökvägen till den nya bilden som du vill infoga.
 

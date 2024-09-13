@@ -35,7 +35,7 @@ Yeni bir belge oluşturduk ve belge başlığını ve dilini ayarladık.
 Bu adımda belgemiz için kök yapı elemanını elde edeceğiz.
 
 ```csharp
-//Kök yapı elemanını elde edin
+// Kök yapı elemanını elde edin
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

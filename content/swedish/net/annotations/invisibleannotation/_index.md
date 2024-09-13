@@ -1,7 +1,7 @@
 ---
 title: Osynlig anteckning i PDF-fil
 linktitle: Osynlig anteckning i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du lägger till en osynlig anteckning till en PDF-fil med Aspose.PDF för .NET. Följ vår steg-för-steg-guide för att bemästra denna kraftfulla funktion.
 type: docs
 weight: 100

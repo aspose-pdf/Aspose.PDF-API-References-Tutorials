@@ -9,7 +9,7 @@ url: /cs/net/annotations/getallannotationsfrompage/
 ---
 ## Zavedení
 
-Vítejte ve světě Aspose.PDF pro .NET! Pokud chcete programově manipulovat s dokumenty PDF, jste na správném místě. Aspose.PDF je výkonná knihovna, která umožňuje vývojářům snadno vytvářet, upravovat a spravovat soubory PDF. V tomto tutoriálu se ponoříme do specifické funkce: extrahování anotací ze stránky PDF. Ať už jste zkušený vývojář nebo teprve začínáte, tento průvodce vás provede procesem krok za krokem a zajistí vám, že během cesty pochopíte každý detail.
+Vítejte ve světě Aspose.PDF pro .NET! Pokud chcete programově manipulovat s dokumenty PDF, jste na správném místě. Aspose.PDF je výkonná knihovna, která umožňuje vývojářům snadno vytvářet, upravovat a spravovat soubory PDF. V tomto tutoriálu se ponoříme do specifické funkce: extrahování anotací ze stránky PDF. Ať už jste ostřílený vývojář nebo teprve začínáte, tento průvodce vás provede procesem krok za krokem a zajistí vám, že během cesty pochopíte každý detail.
 
 ## Předpoklady
 

@@ -2,126 +2,142 @@
 title: Digitálně podepsat s časovým razítkem v souboru PDF
 linktitle: Digitálně podepsat s časovým razítkem v souboru PDF
 second_title: Aspose.PDF pro .NET API Reference
-description: Naučte se provádět digitální podpis s časovým razítkem v souboru PDF pomocí Aspose.PDF pro .NET.
+description: Naučte se, jak digitálně podepsat PDF s časovým razítkem pomocí Aspose.PDF pro .NET. Tento podrobný průvodce pokrývá předpoklady, nastavení certifikátu, časové razítko a další.
 type: docs
 weight: 50
 url: /cs/net/programming-with-security-and-signatures/digitally-sign-with-time-stamp/
 ---
-V tomto tutoriálu vás provedeme procesem digitálního podepisování v souboru PDF s časovým razítkem pomocí Aspose.PDF pro .NET. Digitální podpis s časovým razítkem zaručuje pravost a integritu dokumentu přidáním elektronického otisku prstu s časovým razítkem.
+## Zavedení
 
-## Krok 1: Předpoklady
+Potřebovali jste někdy digitálně podepsat PDF a přidat časové razítko pro větší zabezpečení? Ať už pracujete na právních dokumentech, smlouvách nebo na čemkoli, co vyžaduje bezpečné ověření, digitální podpis s časovým razítkem přidává další vrstvu důvěryhodnosti. V tomto tutoriálu rozebereme, jak můžete použít Aspose.PDF pro .NET k přidání digitálního podpisu spolu s časovým razítkem do vašich dokumentů PDF. Nebojte se, půjdeme na to krok za krokem!
 
-Než začnete, ujistěte se, že máte následující předpoklady:
+## Předpoklady
 
-- Základní znalost programovacího jazyka C#
-- Instalace sady Visual Studio na váš počítač
-- Nainstalovaná knihovna Aspose.PDF pro .NET
+Než se ponoříme do kódu, je potřeba nastavit několik věcí, abyste je mohli sledovat. Zde je rychlý kontrolní seznam nezbytných předpokladů, abyste mohli začít:
 
-## Krok 2: Nastavení prostředí
+-  Knihovna Aspose.PDF for .NET: Ve svém projektu budete potřebovat nainstalovanou knihovnu Aspose.PDF for .NET. Můžete[stáhněte si nejnovější verzi zde](https://releases.aspose.com/pdf/net/) nebo jej přidejte do svého projektu prostřednictvím NuGet.
+- Dokument PDF: K práci budete potřebovat vzorový soubor PDF. Ujistěte se, že máte v adresáři projektu soubor, který chcete podepsat.
+-  Digitální certifikát (soubor PFX): Ujistěte se, že máte digitální certifikát (a`.pfx` soubor) k digitálnímu podepsání dokumentu.
+- Adresa URL časového razítka: Toto je online služba časového razítka, která bude použita k připojení časového razítka k digitálnímu podpisu. 
+- Základní znalost C#: Nemusíte být expert, ale znalost základů C# vám pomůže porozumět a přizpůsobit kód.
 
-Chcete-li začít, postupujte podle následujících kroků a nastavte vývojové prostředí:
+Jakmile zaškrtnete všechna tato políčka, jste připraveni začít kódovat!
 
-1. Otevřete Visual Studio a vytvořte nový projekt C#.
-2. Importujte požadované jmenné prostory do souboru kódu:
+## Importujte balíčky
+
+Chcete-li začít, budete muset do svého projektu C# importovat následující jmenné prostory. To zajišťuje, že máte přístup k příslušným třídám a funkcím Aspose.PDF.
 
 ```csharp
+using System.IO;
+using System;
 using Aspose.Pdf;
+using Aspose.Pdf.Facades;
 using Aspose.Pdf.Forms;
+using System.Collections;
 ```
 
-## Krok 3: Digitální podpis s časovým razítkem
+## Krok 1: Načtěte dokument PDF
 
-Prvním krokem je provedení digitálního podpisu s časovým razítkem na souboru PDF. Poskytnutý kód ukazuje, jak dosáhnout tohoto podpisu pomocí Aspose.PDF pro .NET.
+První věc, kterou musíme udělat, je načíst dokument PDF, který chceme podepsat. Postupujte takto:
 
 ```csharp
+// Definujte cestu k adresáři dokumentů
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-string pfxFile = "";
-using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
-{
-     using (PdfFileSignature signature = new PdfFileSignature(document))
-     {
-         PKCS7 pkcs = new PKCS7(pfxFile, "pfx_password");
-         TimestampSettings timestampSettings = new TimestampSettings("https:\\your_timestamp_settings", "user:password");
-         pkcs. TimestampSettings = timestampSettings;
-         System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-         signature.Sign(1, "Reason for signing", "Contact", "Location", true, rect, pkcs);
-         signature.Save(dataDir + "DigitallySignWithTimeStamp_out.pdf");
-     }
-}
+
+// Načtěte dokument PDF
+Document document = new Document(dataDir + @"DigitallySign.pdf");
 ```
 
-Tento kód načte soubor PDF, vytvoří digitální podpis s časovým razítkem pomocí souboru PFX (soukromý klíč) a zadaných parametrů časového razítka. Podpis je poté přidán do souboru PDF a uložen s příponou "_ven".
+ Tento krok je docela přímočarý. Jednoduše definujeme cestu k dokumentu, který chceme podepsat. The`Document` class z Aspose.PDF zpracovává načítání souboru.
 
-### Ukázka zdrojového kódu pro Digitally Sign With Time Stamp pomocí Aspose.PDF pro .NET 
+## Krok 2: Nastavte digitální podpis
+
+Dále vytvoříme digitální podpis pomocí třídy PKCS7 a načteme soubor PFX. Tento soubor PFX obsahuje váš certifikát a soukromý klíč, které jsou nezbytné pro podepsání dokumentu.
+
 ```csharp
-// Cesta k adresáři dokumentů.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-string pfxFile = "";
-using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
-{
-	using (PdfFileSignature signature = new PdfFileSignature(document))
-	{
-		PKCS7 pkcs = new PKCS7(pfxFile, "pfx_password");
-		TimestampSettings timestampSettings = new TimestampSettings("https:\\your_timestamp_settings", "user:password"); // Uživatel/Heslo lze vynechat
-		pkcs.TimestampSettings = timestampSettings;
-		System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-		// Vytvořte libovolný ze tří typů podpisů
-		signature.Sign(1, "Signature Reason", "Contact", "Location", true, rect, pkcs);
-		// Uložit výstupní soubor PDF
-		signature.Save(dataDir + "DigitallySignWithTimeStamp_out.pdf");
-	}
-}
+// Cesta k vašemu souboru .pfx
+string pfxFile = "YOUR DOCUMENTS DIRECTORY\\certificate.pfx";
+
+// Inicializujte objekt podpisu
+PdfFileSignature signature = new PdfFileSignature(document);
+
+// Načtěte soubor PFX s heslem
+PKCS7 pkcs = new PKCS7(pfxFile, "pfx_password");
 ```
+
+ V tomto okamžiku říkáte Aspose, aby použil váš digitální certifikát k podepsání dokumentu. The`PKCS7`objekt za vás zařídí veškerou kryptografickou práci, takže se nemusíte starat o ty nejhrubší detaily.
+
+## Krok 3: Přidejte nastavení časového razítka
+
+Jednou z klíčových součástí robustního digitálního podpisu je časové razítko. Tím je zajištěno, že podpis dokumentu lze ověřit i po vypršení platnosti certifikátu. Pojďme nastavit časové razítko pomocí online autority pro časové razítko.
+
+```csharp
+// Definujte nastavení časového razítka
+TimestampSettings timestampSettings = new TimestampSettings("https://your_timestamp_url", "user:password");
+
+// Přidejte nastavení časového razítka do objektu PKCS7
+pkcs.TimestampSettings = timestampSettings;
+```
+
+Zde zadáváte URL pro službu časového razítka, která automaticky poskytne čas a datum vašemu podpisu. To lze provést s ověřením nebo bez něj.
+
+## Krok 4: Definujte umístění a vzhled podpisu
+
+Nyní definujeme, kde se podpis v PDF objeví a jeho rozměry. Pozici pole pro podpis na stránce si můžete přizpůsobit, stejně jako jeho velikost.
+
+```csharp
+//Definujte vzhled a umístění podpisu (strana 1, se zadaným obdélníkem)
+System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
+```
+
+Zde definujeme obdélník, který umístí podpis na souřadnice (100, 100) na první stránce PDF, o šířce 200 a výšce 100. Tyto hodnoty můžete změnit, aby odpovídaly vašemu návrhu.
+
+## Krok 5: Podepište dokument PDF
+
+Když je vše nastaveno, je čas skutečně použít digitální podpis na PDF. Tento krok kombinuje certifikát, časové razítko a umístění do jednoho jednoduchého příkazu.
+
+```csharp
+// Podepište dokument na první stránce
+signature.Sign(1, "Signature Reason", "Contact", "Location", true, rect, pkcs);
+```
+
+Zde je to, co se děje:
+- 1: Označuje, že podpis by měl být aplikován na první stránku.
+- "Důvod podpisu": Zde můžete určit, proč dokument podepisujete.
+- "Kontakt": Zadejte kontaktní informace podepisujícího.
+- "Umístění": Zadejte umístění podepisujícího.
+- true: Tato logická hodnota označuje, zda je podpis v dokumentu viditelný.
+- rect: Obdélník, který jsme definovali dříve, určuje velikost a polohu podpisu.
+- pkcs: Objekt PKCS7 obsahuje nastavení digitálního certifikátu a časového razítka.
+
+## Krok 6: Uložte podepsaný PDF
+
+Jakmile je dokument podepsán, zbývá jej pouze uložit. Chcete-li zachovat původní i podepsanou verzi, můžete zvolit nový název souboru.
+
+```csharp
+// Uložte podepsaný dokument PDF
+signature.Save(dataDir + "DigitallySignWithTimeStamp_out.pdf");
+```
+
+Váš nově podepsaný a časově označený PDF je nyní uložen do určeného adresáře!
 
 ## Závěr
 
-gratuluji! Úspěšně jste provedli digitální podpis s časovým razítkem na souboru PDF pomocí Aspose.PDF pro .NET. Tento výukový program popsal proces krok za krokem od vytvoření podpisu po uložení aktualizovaného souboru PDF. Tuto funkci nyní můžete použít k přidávání digitálních podpisů s časovým razítkem do souborů PDF.
+A tady to máte! Úspěšně jste digitálně podepsali PDF s časovým razítkem pomocí Aspose.PDF pro .NET. Tento proces zajišťuje pravost a integritu vašich dokumentů, což vám i příjemci poskytne klid. Digitální podpisy jsou v dnešním digitálním světě stále důležitější, takže zvládnutí tohoto procesu rozhodně stojí za to.
 
-### Časté dotazy pro digitální podpis s časovým razítkem v souboru PDF
+## FAQ
 
-#### Otázka: Jaký je účel digitálního podepisování s časovým razítkem?
+### Mohu pro certifikát použít jiný formát souboru?  
+Ano, ale tutoriál se zaměřuje na použití souboru PFX, což je nejběžnější formát pro digitální certifikáty.
 
-Odpověď: Digitální podepisování s časovým razítkem přidá do souboru PDF elektronický otisk s časovým razítkem, což zajistí autentičnost a integritu dokumentu v konkrétním okamžiku.
+### Potřebuji k použití časového razítka internetové připojení?  
+Ano, protože časové razítko je získáváno od online úřadu pro časové razítko, budete potřebovat přístup k internetu.
 
-#### Otázka: Jaké předpoklady jsou potřeba ke spuštění tohoto kurzu?
+### Mohu podepsat více stránek v PDF?  
+ Absolutně! Můžete upravit`signature.Sign()` způsob cílení na více stránek nebo procházení všech stránek.
 
-Odpověď: Než začnete, ujistěte se, že máte základní znalosti programovacího jazyka C#, máte nainstalované Visual Studio a máte nainstalovanou knihovnu Aspose.PDF pro .NET.
+### Co se stane, když je heslo souboru PFX nesprávné?  
+Pokud je heslo nesprávné, obdržíte výjimku, takže se ujistěte, že je zadáno správně.
 
-#### Otázka: Jak mohu nastavit své vývojové prostředí?
-
-Odpověď: Podle poskytnutých kroků nastavte vývojové prostředí, včetně vytvoření nového projektu C# v sadě Visual Studio a importu potřebných oborů názvů.
-
-#### Otázka: Jak přidám digitální podpis s časovým razítkem do PDF?
-
-Odpověď: Poskytnutý ukázkový kód ukazuje, jak načíst soubor PDF, vytvořit digitální podpis s časovým razítkem pomocí souboru PFX (soukromý klíč) a zadaných nastavení časového razítka, přidat podpis do souboru PDF a uložit aktualizovaný soubor.
-
-#### Otázka: Co je soubor PFX a proč je použit v příkladu?
-
-Odpověď: Soubor PFX (Personal Exchange Format) obsahuje soukromý klíč a certifikát. Zde se používá k poskytování kryptografických funkcí pro digitální podpisy. Ujistěte se, že jste zástupný symbol nahradili vaším souborem PFX a heslem.
-
-#### Otázka: Co jsou TimestampSettings?
-
-A: TimestampSettings definují nastavení pro server časového razítka, který se používá k přidání elektronického časového razítka k podpisu. Zahrnuje adresu URL serveru časového razítka a volitelné přihlašovací údaje uživatele.
-
-#### Otázka: Mohu použít jiný server časových razítek než ten v příkladu?
- Odpověď: Ano, můžete použít jakýkoli kompatibilní server časových razítek. Nahraďte adresu URL a v případě potřeby zadejte příslušné přihlašovací údaje uživatele`TimestampSettings` objekt.
-
-#### Otázka: Jaký je účel určení obdélníku podpisu?
-
-Odpověď: Podpisový obdélník definuje polohu a rozměry vzhledu digitálního podpisu na stránce PDF. Upravte tyto hodnoty pro umístění podpisu podle potřeby.
-
-#### Otázka: Co se stane, když je server časového razítka během podepisování nedostupný?
-
-Odpověď: Pokud je server časových razítek během podepisování nedostupný, proces může selhat nebo trvat déle. Ujistěte se, že váš server časových razítek je spolehlivý a dostupný.
-
-#### Otázka: Jak mohu ověřit přítomnost časového razítka v podepsaném PDF?
-
- Odpověď: Podepsané PDF si můžete prohlédnout pomocí poskytnutého ukázkového kódu. The`TimestampSettings` použitý při podepisování by měl být k dispozici v podrobnostech podpisu.
-
-#### Otázka: Jsou digitální podpisy s časovými razítky právně závazné?
-
-Odpověď: Digitální podpisy s časovými razítky mají právní hodnotu v mnoha jurisdikcích a jsou často považovány za spolehlivější než jednoduché digitální podpisy. Konkrétní předpisy konzultujte s právními odborníky ve vaší jurisdikci.
-
-#### Otázka: Mohu do PDF přidat více digitálních podpisů s časovými razítky?
-
-Odpověď: Ano, do souboru PDF můžete přidat více digitálních podpisů s časovými razítky opakovaným voláním procesu vytváření podpisu. Každý podpis bude mít své vlastní časové razítko.
+### Mohu učinit podpis neviditelným?  
+ Ano, můžete projít`false` k`Sign` parametr viditelnosti metody, aby byl podpis neviditelný.

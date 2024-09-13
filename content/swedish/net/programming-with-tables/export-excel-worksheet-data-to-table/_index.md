@@ -1,7 +1,7 @@
 ---
 title: Exportera Excel-kalkylbladsdata till tabell
 linktitle: Exportera Excel-kalkylbladsdata till tabell
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Exportera data från ett Excel-ark till en PDF-tabell med Aspose.PDF för .NET.
 type: docs
 weight: 70

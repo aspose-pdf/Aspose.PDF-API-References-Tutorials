@@ -42,7 +42,7 @@ Document doc = new Document();
 ```
 
 ## Krok 5: Dodaj stronę do dokumentu
- Dodaj nową stronę do dokumentu za pomocą`Add` metoda`Pages`kolekcja. W podanym kodzie nowa strona jest przypisana do zmiennej`page`.
+ Dodaj nową stronę do dokumentu za pomocą`Add` metoda`Pages` kolekcja. W podanym kodzie nowa strona jest przypisana do zmiennej`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -64,7 +64,7 @@ title.TextState.FontSize = 20;
 ```
 
 ## Krok 8: Ustaw informacje o marginesie
-razie potrzeby dostosuj dolny i górny margines fragmentu HTML. W podanym kodzie dolny margines jest ustawiony na 10, a górny na 400.
+W razie potrzeby dostosuj dolny i górny margines fragmentu HTML. W podanym kodzie dolny margines jest ustawiony na 10, a górny na 400.
 
 ```csharp
 title. Margin. Bottom = 10;
@@ -159,7 +159,7 @@ HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Tab
 
 #### P: Jak mogę nadpisać style zawartości HTML?
 
- A: W kroku 7 nadpiszesz style zawartości HTML, modyfikując`TextState` właściwości`HtmlFragment` obiekt. Na przykład możesz zmienić rodzinę czcionek na „Arial” i ustawić rozmiar czcionki na 20:
+ A: W kroku 7 nadpiszesz style zawartości HTML, modyfikując`TextState` właściwości`HtmlFragment`obiekt. Na przykład możesz zmienić rodzinę czcionek na „Arial” i ustawić rozmiar czcionki na 20:
 
 ```csharp
 title.TextState = new TextState("Arial");

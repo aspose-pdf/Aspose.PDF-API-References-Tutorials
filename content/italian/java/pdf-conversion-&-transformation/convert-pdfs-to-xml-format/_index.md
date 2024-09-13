@@ -100,7 +100,7 @@ Sì, Aspose.PDF per Java supporta la conversione di PDF protetti da password in 
 
 ### Aspose.PDF per Java è adatto alla conversione batch?
 
-Assolutamente. Aspose.PDF per Java consente l'elaborazione batch, rendendolo adatto per convertire più PDF in XML in una volta sola. Consulta la documentazione per i dettagli sulla conversione batch.
+Assolutamente. Aspose.PDF per Java consente l'elaborazione in batch, rendendolo adatto per convertire più PDF in XML in una volta sola. Consulta la documentazione per i dettagli sulla conversione in batch.
 
 ### Quali sono i vantaggi della conversione da PDF a XML?
 

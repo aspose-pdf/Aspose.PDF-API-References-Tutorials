@@ -145,7 +145,7 @@ row1.Cells.Add();
 row1.Cells[1].Paragraphs.Add(TitleText);
 // 행 내용의 수직 정렬을 위쪽으로 설정하세요.
 row1.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-// 표에 행을 만든 다음 행에 셀을 만듭니다.
+//표에 행을 만든 다음 행에 셀을 만듭니다.
 Aspose.Pdf.Row SecondRow = table1.Rows.Add();
 SecondRow.Cells.Add();
 // 두 번째 행의 행 범위 값을 2로 설정합니다.

@@ -82,7 +82,7 @@ System.out.println("Document Summary:\n" + documentSummary);
 
 ## Conclusione
 
-In questo articolo, abbiamo esplorato come estrarre informazioni su prodotti e build da file PDF in Java utilizzando Aspose.PDF per Java. Abbiamo trattato i passaggi di base per iniziare, estrarre i dettagli su prodotti e build e combinarli in un utile riepilogo del documento. Aspose.PDF per Java è uno strumento prezioso per gli sviluppatori che lavorano con documenti PDF, che fornisce la flessibilità e la funzionalità necessarie per varie attività.
+In questo articolo, abbiamo esplorato come estrarre informazioni su prodotti e build da file PDF in Java utilizzando Aspose.PDF per Java. Abbiamo trattato i passaggi di base per iniziare, estrarre dettagli su prodotti e build e combinarli in un utile riepilogo del documento. Aspose.PDF per Java è uno strumento prezioso per gli sviluppatori che lavorano con documenti PDF, che fornisce la flessibilità e la funzionalità necessarie per varie attività.
 
 ## Domande frequenti
 

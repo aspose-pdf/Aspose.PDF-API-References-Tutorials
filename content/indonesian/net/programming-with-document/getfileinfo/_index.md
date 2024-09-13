@@ -7,19 +7,59 @@ type: docs
 weight: 180
 url: /id/net/programming-with-document/getfileinfo/
 ---
- Aspose.PDF untuk .NET adalah pustaka manipulasi PDF populer yang memungkinkan pengembang untuk membuat, mengedit, dan mengonversi file PDF dalam aplikasi .NET mereka. Salah satu fitur yang ditawarkan oleh pustaka ini adalah kemampuan untuk mengambil informasi tentang metadata dokumen PDF. Tutorial ini akan memandu Anda melalui langkah-langkah penggunaan`GetFileInfo` fitur Aspose.PDF untuk .NET untuk mengambil informasi tentang metadata dokumen PDF.
+## Perkenalan
 
-## Langkah 1: Instal Aspose.PDF untuk .NET
+Pernahkah Anda bertanya-tanya rahasia apa yang tersimpan dalam berkas PDF? Baik itu penulis, tanggal pembuatan, atau bahkan kata kunci, dokumen PDF sering kali menyimpan metadata berharga yang dapat menjadi krusial untuk berbagai aplikasi. Dalam tutorial ini, kita akan membahas cara mengekstrak informasi berkas dari PDF menggunakan Aspose.PDF for .NET. Pustaka canggih ini memungkinkan pengembang untuk memanipulasi berkas PDF dengan mudah, menjadikannya pilihan utama bagi banyak orang. Jadi, ambil topi koding Anda, dan mari selami dunia ekstraksi metadata PDF!
 
- Untuk menggunakan Aspose.PDF for .NET di aplikasi .NET Anda, Anda harus menginstal pustaka terlebih dahulu. Anda dapat mengunduh versi terbaru pustaka dari[Halaman unduhan Aspose.PDF untuk .NET](https://releases.aspose.com/pdf/net).
+## Prasyarat
 
-Setelah Anda mengunduh pustaka, ekstrak isi berkas ZIP ke folder di komputer Anda. Anda kemudian perlu menambahkan referensi ke Aspose.PDF untuk .NET DLL di proyek .NET Anda.
+Sebelum kita masuk ke kode, ada beberapa hal yang perlu Anda siapkan:
 
-## Langkah 2: Muat Dokumen PDF
+1. Visual Studio: Pastikan Anda telah menginstal Visual Studio di komputer Anda. Ini akan menjadi lingkungan pengembangan kita.
+2.  Aspose.PDF untuk .NET: Anda perlu mengunduh dan menginstal pustaka Aspose.PDF. Anda bisa mendapatkannya dari[tautan unduhan](https://releases.aspose.com/pdf/net/).
+3. Pengetahuan Dasar C#: Keakraban dengan pemrograman C# akan membantu Anda memahami potongan kode dengan lebih baik.
 
- Setelah Anda menginstal Aspose.PDF untuk .NET dan menambahkan referensi ke DLL di proyek .NET Anda, Anda dapat mulai menggunakan`GetFileInfo` fitur untuk mengambil informasi tentang metadata dokumen PDF.
+## Paket Impor
 
-Langkah pertama dalam menggunakan fitur ini adalah memuat dokumen PDF yang ingin Anda ambil informasinya. Untuk melakukannya, Anda dapat menggunakan kode berikut:
+Untuk memulai, kita perlu mengimpor paket yang diperlukan. Buka proyek C# Anda di Visual Studio dan tambahkan referensi ke pustaka Aspose.PDF. Anda dapat melakukannya dengan menggunakan NuGet Package Manager:
+
+1. Klik kanan pada proyek Anda di Solution Explorer.
+2. Pilih "Kelola Paket NuGet."
+3. Cari "Aspose.PDF" dan instal.
+
+Setelah pustaka terinstal, Anda dapat mulai menulis kode.
+
+## Langkah 1: Siapkan Proyek Anda
+
+### Buat Proyek Baru
+
+Hal pertama yang pertama, mari buat proyek C# baru di Visual Studio:
+
+1. Buka Visual Studio dan pilih "Buat proyek baru."
+2. Pilih "Aplikasi Konsol (.NET Framework)" dan klik "Berikutnya."
+3.  Beri nama proyek Anda (misalnya,`PDFFileInfoExtractor`) dan klik "Buat."
+
+### Tambahkan Referensi Aspose.PDF
+
+Sekarang proyek Anda sudah disiapkan, Anda perlu menambahkan referensi Aspose.PDF:
+
+1. Klik kanan pada proyek Anda di Solution Explorer.
+2. Pilih "Tambah" > "Referensi."
+3. Di Reference Manager, temukan dan centang Aspose.PDF, lalu klik "OK."
+
+## Langkah 2: Tulis Kode
+
+### Inisialisasi Dokumen
+
+ Sekarang, mari kita tulis kode untuk membuka dokumen PDF dan mengekstrak informasinya. Mulailah dengan menambahkan perintah berikut di bagian atas dokumen PDF Anda.`Program.cs` mengajukan:
+
+```csharp
+using System.IO;
+using Aspose.Pdf;
+using System;
+```
+
+Berikutnya, kita akan menginisialisasi dokumen:
 
 ```csharp
 // Jalur menuju dokumen PDF
@@ -29,41 +69,20 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
 ```
 
- Pada kode di atas, ganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur ke direktori tempat dokumen PDF Anda berada. Kode ini akan memuat dokumen PDF ke dalam`Document` objek, yang kemudian dapat Anda gunakan untuk mengambil informasi tentang metadata dokumen.
+### Ekstrak Informasi Dokumen
 
-## Langkah 3: Ambil Metadata Dokumen
-
-Untuk mengambil informasi tentang metadata dokumen PDF, Anda dapat menggunakan kode berikut:
+Sekarang setelah kita membuka dokumen PDF, mari ekstrak metadatanya:
 
 ```csharp
 // Dapatkan informasi dokumen
 DocumentInfo docInfo = pdfDocument.Info;
-
-// Tampilkan informasi dokumen
-Console.WriteLine("Author: {0}", docInfo.Author);
-Console.WriteLine("Creation Date: {0}", docInfo.CreationDate);
-Console.WriteLine("Keywords: {0}", docInfo.Keywords);
-Console.WriteLine("Modify Date: {0}", docInfo.ModDate);
-Console.WriteLine("Subject: {0}", docInfo.Subject);
-Console.WriteLine("Title: {0}", docInfo.Title);
 ```
 
-Pada kode di atas, setiap baris mengambil properti metadata yang berbeda dari dokumen PDF dan menampilkannya di konsol. Anda dapat menyesuaikan kode ini untuk mengambil hanya properti yang Anda minati.
+### Menampilkan Informasi
 
-### Contoh kode sumber untuk mendapatkan info file PDF menggunakan Aspose.PDF untuk .NET
-
- Berikut adalah kode sumber lengkap untuk mengambil metadata dokumen PDF menggunakan`GetFileInfo` fitur Aspose.PDF untuk .NET:
+Terakhir, mari kita tampilkan informasi yang diekstrak di konsol:
 
 ```csharp
-// Jalur menuju dokumen PDF
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Buka dokumen PDF
-Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
-
-// Dapatkan informasi dokumen
-DocumentInfo docInfo = pdfDocument.Info;
-
 // Tampilkan informasi dokumen
 Console.WriteLine("Author: {0}", docInfo.Author);
 Console.WriteLine("Creation Date: {0}", docInfo.CreationDate);
@@ -75,22 +94,21 @@ Console.WriteLine("Title: {0}", docInfo.Title);
 
 ## Kesimpulan
 
-Dalam tutorial ini, kami telah membahas cara menggunakan Aspose.PDF untuk .NET guna mengambil informasi tentang metadata dokumen PDF. Dengan memuat dokumen PDF dan mengakses properti metadatanya, Anda dapat mengumpulkan informasi tentang karakteristik dan properti dokumen. Aspose.PDF untuk .NET menyediakan API yang sederhana dan mudah digunakan untuk bekerja dengan dokumen PDF, termasuk mengambil informasi metadata, menjadikannya alat yang berharga untuk manipulasi PDF dalam aplikasi .NET.
+Selamat! Anda telah berhasil mengekstrak informasi file dari PDF menggunakan Aspose.PDF untuk .NET. Pustaka canggih ini tidak hanya memungkinkan Anda membaca metadata tetapi juga menyediakan banyak fitur untuk memanipulasi file PDF. Baik Anda sedang mengembangkan sistem manajemen dokumen atau hanya perlu mengekstrak informasi untuk pelaporan, Aspose.PDF siap membantu Anda. 
 
-### Pertanyaan yang Sering Diajukan
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa itu metadata dalam dokumen PDF?
+### Apa itu Aspose.PDF untuk .NET?
+Aspose.PDF untuk .NET adalah pustaka yang memungkinkan pengembang untuk membuat, memanipulasi, dan mengonversi dokumen PDF dalam aplikasi .NET.
 
-J: Metadata dalam dokumen PDF merujuk pada informasi yang menjelaskan properti dan karakteristik dokumen. Informasi ini biasanya mencakup judul dokumen, penulis, subjek, kata kunci, tanggal pembuatan, tanggal modifikasi, dan lain-lain.
+### Bagaimana cara menginstal Aspose.PDF?
+ Anda dapat menginstal Aspose.PDF melalui NuGet Package Manager di Visual Studio atau mengunduhnya dari[tautan unduhan](https://releases.aspose.com/pdf/net/).
 
-#### T: Bagaimana cara menginstal Aspose.PDF untuk .NET di proyek .NET saya?
+### Bisakah saya mengekstrak gambar dari PDF menggunakan Aspose.PDF?
+Ya, Aspose.PDF menyediakan metode untuk mengekstrak gambar dari dokumen PDF.
 
- A: Untuk menginstal Aspose.PDF untuk .NET, Anda perlu mengunduh pustaka dari[Halaman unduhan Aspose.PDF untuk .NET](https://releases.aspose.com/pdf/net)Setelah mengunduh, ekstrak isi file ZIP dan tambahkan referensi ke Aspose.PDF for .NET DLL di proyek .NET Anda.
+### Apakah ada uji coba gratis yang tersedia untuk Aspose.PDF?
+ Ya, Anda bisa mendapatkan uji coba gratis dari[Situs web Aspose](https://releases.aspose.com/).
 
-#### T: Dapatkah saya menyesuaikan kode untuk mengambil properti metadata tertentu saja?
-
-A: Ya, Anda dapat menyesuaikan kode untuk mengambil properti metadata tertentu dengan memberi komentar pada baris yang tidak Anda perlukan. Setiap baris dalam kode sesuai dengan properti metadata tertentu, sehingga Anda dapat menyertakan atau mengecualikan properti berdasarkan kebutuhan Anda.
-
-#### T: Jenis properti metadata apa yang dapat saya ambil menggunakan Aspose.PDF untuk .NET?
-
-A: Dengan menggunakan Aspose.PDF untuk .NET, Anda dapat mengambil berbagai properti metadata dari dokumen PDF, termasuk penulis, judul, subjek, kata kunci, tanggal pembuatan, dan tanggal modifikasi.
+### Di mana saya dapat menemukan dukungan untuk Aspose.PDF?
+ Anda dapat menemukan dukungan dan mengajukan pertanyaan di[Forum Aspose](https://forum.aspose.com/c/pdf/10).

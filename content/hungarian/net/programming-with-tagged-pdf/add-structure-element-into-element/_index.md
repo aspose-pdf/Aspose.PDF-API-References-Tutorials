@@ -13,7 +13,7 @@ Ebben az oktatóanyagban lépésről lépésre bemutatjuk, hogyan adhat hozzá s
 
 Mielőtt elkezdené, győződjön meg arról, hogy a következő előfeltételeket teljesítette:
 
-1. Visual Studio .NET keretrendszerrel telepítve.
+1. A Visual Studio .NET keretrendszerrel telepítve.
 2. Az Aspose.PDF könyvtár a .NET-hez.
 
 ## 1. lépés: A projekt beállítása
@@ -22,7 +22,7 @@ A kezdéshez hozzon létre egy új projektet a Visual Studióban, és adjon hozz
 
 ## 2. lépés: Importálja a szükséges névtereket
 
-A C# kódfájlba importálja az Aspose.PDF által biztosított osztályok és metódusok eléréséhez szükséges névtereket:
+C# kódfájlba importálja az Aspose.PDF által biztosított osztályok és metódusok eléréséhez szükséges névtereket:
 
 ```csharp
 using System;
@@ -114,7 +114,7 @@ Ez a kód elmenti a PDF dokumentumot a strukturált elemekkel egy megadott fájl
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
 string logFile = dataDir + "46144_log.xml";
-// Dokumentum létrehozása és címkézett PDF tartalom beszerzése
+//Dokumentum létrehozása és címkézett PDF tartalom beszerzése
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 // A dokumentum címének és természetének nyelvének beállítása
@@ -209,7 +209,7 @@ V: Hierarchikus struktúra létrehozása PDF-dokumentumban javítja a hozzáfér
 
 #### K: Hogyan ellenőrizhetem a PDF/UA megfelelőséget a szerkezeti elemek hozzáadása után?
 
- V: Az oktatóanyagban található kód bemutatja, hogyan ellenőrizhető a PDF/UA megfelelőség a`Validate` módszer. A dokumentum PDF/UA szabvány szerinti érvényesítésével biztosíthatja, hogy a hozzáadott szerkezeti elemek megfeleljenek az akadálymentesítési irányelveknek.
+V: Az oktatóanyagban található kód bemutatja, hogyan ellenőrizhető a PDF/UA megfelelőség a`Validate` módszer. A dokumentum PDF/UA szabvány szerinti érvényesítésével biztosíthatja, hogy a hozzáadott szerkezeti elemek megfeleljenek az akadálymentesítési irányelveknek.
 
 #### K: Használhatom ezt a megközelítést szerkezeti elemek hozzáadására egy meglévő PDF-dokumentumhoz?
 

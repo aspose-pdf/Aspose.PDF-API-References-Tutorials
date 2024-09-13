@@ -96,7 +96,7 @@ V: Az oktatóanyag lépésről lépésre végigvezeti a folyamaton:
 
 V: Az oktatóanyag a teljes szöveg eltávolítására összpontosít a teljes PDF-dokumentumból. Ha szelektíven szeretne eltávolítani szöveget bizonyos területekről, módosítania kell a megközelítést, és összetettebb logikát kell használnia bizonyos szövegtöredékek azonosításához és eltávolításához.
 
-####  K: Hogyan működik a`TextFragmentAbsorber` work to remove text?
+#### K: Hogyan működik a`TextFragmentAbsorber` work to remove text?
 
  V: A`TextFragmentAbsorber`az Aspose.PDF könyvtár által biztosított osztály, amely képes szövegtöredékeket elnyelni egy PDF dokumentumból. Használatával a`RemoveAllText` módszere a`TextFragmentAbsorber` osztályban eltávolíthatja az összes elnyelt szövegrészletet a dokumentumból.
 

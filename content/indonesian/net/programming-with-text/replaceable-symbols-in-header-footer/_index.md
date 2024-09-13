@@ -35,7 +35,7 @@ Page page = doc.Pages.Add();
 
 ## Langkah 3: Tetapkan Margin
 
-Kami mengatur margin untuk halaman menggunakan`MarginInfo` kelas. Sesuaikan nilai margin sesuai dengan kebutuhan Anda.
+ Kami mengatur margin untuk halaman menggunakan`MarginInfo` kelas. Sesuaikan nilai margin sesuai dengan kebutuhan Anda.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -110,7 +110,7 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-// Tetapkan instance marginInfo ke properti Margin dari sec1.PageInfo
+//Tetapkan instance marginInfo ke properti Margin dari sec1.PageInfo
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
@@ -148,7 +148,7 @@ Table tab2 = new Table();
 hfFoot.Paragraphs.Add(tab2);
 // Diatur dengan lebar kolom tabel
 tab2.ColumnWidths = "165 172 165";
-// Buat baris dalam tabel dan kemudian sel dalam baris
+//Buat baris dalam tabel dan kemudian sel dalam baris
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
@@ -173,7 +173,7 @@ table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
 // Tetapkan batas tabel menggunakan objek BorderInfo lain yang disesuaikan
 table.Border = new BorderInfo(BorderSide.All, 1f);
 table.RepeatingRowsCount = 1;
-// Buat baris dalam tabel dan kemudian sel dalam baris
+//Buat baris dalam tabel dan kemudian sel dalam baris
 Row row1 = table.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

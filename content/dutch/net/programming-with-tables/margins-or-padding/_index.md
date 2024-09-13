@@ -63,7 +63,7 @@ tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
 Laten we nu rijen en cellen aan de tabel toevoegen. We maken een nieuwe rij en voegen er cellen aan toe:
 
 ```csharp
-// Maak rijen in de tabel en vervolgens cellen in de rijen
+//Maak rijen in de tabel en vervolgens cellen in de rijen
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -117,7 +117,7 @@ margin.Right = 5f;
 margin.Bottom = 5f;
 // Stel de standaard celopvulling in op het MarginInfo-object
 tab1.DefaultCellPadding = margin;
-// Maak rijen in de tabel en vervolgens cellen in de rijen
+//Maak rijen in de tabel en vervolgens cellen in de rijen
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -145,7 +145,7 @@ Gefeliciteerd! U hebt succesvol geleerd hoe u marges of opvulling in een tabel i
 
 #### V: Kan ik verschillende marges of opvulling instellen voor afzonderlijke cellen in een tabel?
 
-A: Ja, u kunt verschillende marges of opvulling instellen voor afzonderlijke cellen in een tabel met Aspose.PDF voor .NET. In het gegeven voorbeeld stellen we de standaard celopvulling in voor de hele tabel met behulp van`DefaultCellPadding` eigenschap. Om verschillende opvulling voor specifieke cellen in te stellen, kunt u de`MarginInfo` van elke cel afzonderlijk en wijzig hun marges.
+ A: Ja, u kunt verschillende marges of opvulling instellen voor afzonderlijke cellen in een tabel met Aspose.PDF voor .NET. In het gegeven voorbeeld stellen we de standaard celopvulling in voor de hele tabel met behulp van`DefaultCellPadding` eigenschap. Om verschillende opvulling voor specifieke cellen in te stellen, kunt u de`MarginInfo` van elke cel afzonderlijk en wijzig hun marges.
 
 #### V: Hoe kan ik de randkleur of -stijl van de tabel wijzigen?
 
@@ -161,4 +161,4 @@ A: Ja, u kunt kop- of voetteksten toevoegen aan de tabel met Aspose.PDF voor .NE
 
 #### V: Kan ik afbeeldingen toevoegen aan de tabelcellen in plaats van tekst?
 
- A: Ja, u kunt afbeeldingen toevoegen aan de tabelcellen met behulp van Aspose.PDF voor .NET. In plaats van een`TextFragment` object, kunt u een`Image` object, laad het afbeeldingsbestand en voeg het toe aan de gewenste cel met behulp van de`cell.Paragraphs.Add(image);` methode. Hiermee kunt u afbeeldingen in de tabel invoegen naast tekstinhoud.
+ A: Ja, u kunt afbeeldingen toevoegen aan de tabelcellen met behulp van Aspose.PDF voor .NET. In plaats van een`TextFragment` object, kunt u een`Image` object, laad het afbeeldingsbestand en voeg het toe aan de gewenste cel met behulp van de`cell.Paragraphs.Add(image);`methode. Hiermee kunt u afbeeldingen in de tabel invoegen naast tekstinhoud.

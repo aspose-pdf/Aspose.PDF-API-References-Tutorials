@@ -299,7 +299,7 @@ A: Aspose.PDF für .NET bietet Klassen und Methoden zum Erstellen und Bearbeiten
 
 #### F: Wie helfen Inline-Strukturelemente beim Erstellen einer klaren Dokumenthierarchie?
 
-A: Inline-Strukturelemente wie Überschriften auf verschiedenen Ebenen tragen dazu bei, eine klare und wohldefinierte Hierarchie im Dokument zu schaffen. Leser können die Hauptthemen, Unterthemen und verwandten Inhalte schnell identifizieren, was die Navigation und das Verständnis des Dokuments erleichtert.
+A: Inline-Strukturelemente wie Überschriften unterschiedlicher Ebenen tragen dazu bei, eine klare und wohldefinierte Hierarchie im Dokument zu schaffen. Leser können die Hauptthemen, Unterthemen und verwandten Inhalte schnell identifizieren, was die Navigation und das Verständnis des Dokuments erleichtert.
 
 #### F: Kann ich das Erscheinungsbild und die Formatierung von Inline-Strukturelementen mit Aspose.PDF für .NET anpassen?
 
@@ -307,7 +307,7 @@ A: Ja, Sie können das Erscheinungsbild und die Formatierung von Inline-Struktur
 
 #### F: Wie erstelle und füge ich mithilfe von Inline-Strukturelementen in Aspose.PDF für .NET Überschriften verschiedener Ebenen zu einem PDF-Dokument hinzu?
 
- A: Sie können Überschriften auf verschiedenen Ebenen erstellen, indem Sie`CreateHeaderElement` -Methode und hängen Sie diese dann an das Stammstrukturelement an. Anschließend können Sie jedem Überschriftenelement mit der`CreateSpanElement` Methode zum Erstellen von Textabschnitten.
+ A: Sie können Überschriften auf verschiedenen Ebenen erstellen, indem Sie`CreateHeaderElement`-Methode und hängen Sie diese dann an das Stammstrukturelement an. Anschließend können Sie jedem Überschriftenelement mit der`CreateSpanElement` Methode zum Erstellen von Textabschnitten.
 
 #### F: Kann ich Inline-Strukturelemente verwenden, um Listen, Aufzählungspunkte oder andere Arten der Inhaltsorganisation in einem PDF-Dokument zu erstellen?
 

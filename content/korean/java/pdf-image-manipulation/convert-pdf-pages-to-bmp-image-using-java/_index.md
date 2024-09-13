@@ -97,7 +97,7 @@ imageDevice.save("path/to/save/image.bmp", ImageFormat.getBmp());
 
 ### Aspose.PDF for Java를 사용하여 PDF를 BMP로 변환하는 데 제한이 있습니까?
 
-Java용 Aspose.PDF는 강력한 라이브러리이지만 복잡한 레이아웃이나 BMP 이미지에서 완벽하게 렌더링되지 않을 수 있는 글꼴과 같은 잠재적인 제한 사항을 알고 있는 것이 중요합니다.
+Java용 Aspose.PDF는 강력한 라이브러리이지만, 복잡한 레이아웃이나 BMP 이미지에서 완벽하게 렌더링되지 않을 수 있는 글꼴과 같은 잠재적인 제한 사항을 알고 있는 것이 중요합니다.
 
 ### BMP 이미지 변환 설정을 사용자 정의할 수 있나요?
 

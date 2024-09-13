@@ -32,7 +32,7 @@ using Aspose.Pdf.Text;
  No código, localize a linha que diz`string dataDir = "YOUR DOCUMENT DIRECTORY";` e substituir`"YOUR DOCUMENT DIRECTORY"` com o caminho para o diretório onde seus documentos estão armazenados.
 
 ## Etapa 4: Crie um documento de amostra com texto
- Criar um novo`Document` objeto e adicione páginas com fragmentos de texto. No código fornecido, dois fragmentos de texto são adicionados ao documento com o respectivo texto de dica de ferramenta.
+ Criar um novo`Document`objeto e adicione páginas com fragmentos de texto. No código fornecido, dois fragmentos de texto são adicionados ao documento com o respectivo texto de dica de ferramenta.
 
 ```csharp
 Document doc = new Document();
@@ -98,7 +98,7 @@ doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to disp
 doc.Save(outputFile);
 // Abrir documento com texto
 Document document = new Document(outputFile);
-// Crie um objeto TextAbsorber para encontrar todas as frases que correspondem à expressão regular
+//Crie um objeto TextAbsorber para encontrar todas as frases que correspondem à expressão regular
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
 // Aceite o absorvedor para as páginas do documento
 document.Pages.Accept(absorber);
@@ -169,7 +169,7 @@ using Aspose.Pdf.Text;
 
 #### P: Como adiciono dicas de ferramentas aos fragmentos de texto?
 
- A: Na Etapa 6, você percorrerá os fragmentos de texto extraídos e criará botões invisíveis em suas posições. O texto da dica de ferramenta é atribuído ao`AlternateName` propriedade do`ButtonField`que é adicionado ao formulário do documento.
+ A: Na Etapa 6, você percorrerá os fragmentos de texto extraídos e criará botões invisíveis em suas posições. O texto da dica de ferramenta é atribuído ao`AlternateName` propriedade do`ButtonField`, que é adicionado ao formulário do documento.
 
 #### P: Como repito o processo para fragmentos de texto adicionais com dicas de ferramentas longas?
 

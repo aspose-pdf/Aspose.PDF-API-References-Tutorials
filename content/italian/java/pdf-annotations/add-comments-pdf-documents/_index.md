@@ -82,4 +82,4 @@ Il numero di commenti che è possibile aggiungere a un documento PDF dipende da 
 
 ### Come posso estrarre i commenti da un PDF tramite programmazione?
 
-È possibile estrarre commenti da un documento PDF utilizzando Aspose.PDF per Java scorrendo le annotazioni del documento.
+È possibile estrarre commenti da un documento PDF utilizzando Aspose.PDF per Java, scorrendo le annotazioni del documento.

@@ -150,8 +150,8 @@ V: Igen, ez az oktatóanyag útmutatást ad arról, hogyan igazíthat szöveget 
 
 #### K: Hozzáadhatok több lebegő dobozt különböző igazításokkal ugyanabban a PDF dokumentumban?
 
- V: Igen, az oktatóanyag bemutatja, hogyan hozhat létre több példányt`FloatingBox` különböző függőleges és vízszintes igazítású objektumokat, és adja hozzá őket ugyanahhoz a PDF dokumentumhoz. Ez lehetővé teszi, hogy megtekinthesse a különböző igazítások hatásait ugyanazon a dokumentumon belül.
+ V: Igen, az oktatóanyag bemutatja, hogyan hozhat létre több példányt`FloatingBox` különböző függőleges és vízszintes igazítású objektumokat, és adja hozzá őket ugyanahhoz a PDF dokumentumhoz. Ez lehetővé teszi a különböző igazítások hatásainak megtekintését ugyanazon a dokumentumon belül.
 
 #### K: Hogyan menthetem el a módosított PDF dokumentumot?
 
- V: A módosított PDF dokumentum mentéséhez használhatja a`Save` módszere a`Document` objektum. Az oktatóanyag kódmintákat tartalmaz, amelyek bemutatják, hogyan kell elmenteni az eredményül kapott PDF-dokumentumot.
+ V: A módosított PDF dokumentum mentéséhez használhatja a`Save` módszere a`Document` objektum. Az oktatóanyag kódmintákat tartalmaz, amelyek bemutatják, hogyan kell menteni az eredményül kapott PDF-dokumentumot.

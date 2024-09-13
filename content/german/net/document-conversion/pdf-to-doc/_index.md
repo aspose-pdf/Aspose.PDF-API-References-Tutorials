@@ -74,7 +74,7 @@ Sie sind fast da! Führen Sie nun Ihre Anwendung aus. Wenn alles richtig eingeri
 
 ## Abschluss
 
-Und da haben Sie es! Sie haben gerade gelernt, wie Sie PDF-Dateien mit Aspose.PDF für .NET in das DOC-Format konvertieren. Diese leistungsstarke Bibliothek macht die Handhabung von PDF-Dokumenten zum Kinderspiel, sodass Sie sich auf das konzentrieren können, was wirklich zählt – Ihren Inhalt. Egal, ob Sie Dokumente für die Arbeit, die Schule oder persönliche Projekte konvertieren, Aspose.PDF unterstützt Sie. Also, worauf warten Sie noch? Tauchen Sie ein in die Welt der PDF-Manipulation und entfesseln Sie Ihre Kreativität!
+Und da haben Sie es! Sie haben gerade gelernt, wie Sie PDF-Dateien mit Aspose.PDF für .NET in das DOC-Format konvertieren. Diese leistungsstarke Bibliothek macht die Handhabung von PDF-Dokumenten zum Kinderspiel, sodass Sie sich auf das konzentrieren können, was wirklich zählt – Ihren Inhalt. Egal, ob Sie Dokumente für die Arbeit, die Schule oder persönliche Projekte konvertieren, Aspose.PDF unterstützt Sie. Also, worauf warten Sie noch? Tauchen Sie ein in die Welt der PDF-Bearbeitung und entfesseln Sie Ihre Kreativität!
 
 ## Häufig gestellte Fragen
 

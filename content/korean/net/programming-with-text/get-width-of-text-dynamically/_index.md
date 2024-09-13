@@ -31,7 +31,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("Arial");
 ```
 
-위의 코드는 다음을 사용하여 Arial 글꼴을 찾습니다.`FindFont` 방법에서`FontRepository` 클래스. 다른 글꼴을 사용하려면 다음을 바꾸세요.`"Arial"` 원하는 글꼴 이름을 입력합니다.
+ 위의 코드는 다음을 사용하여 Arial 글꼴을 찾습니다.`FindFont`방법에서`FontRepository` 클래스. 다른 글꼴을 사용하려면 다음을 바꾸세요.`"Arial"` 원하는 글꼴 이름을 입력합니다.
 
 ## 3단계: 텍스트 상태 설정
 

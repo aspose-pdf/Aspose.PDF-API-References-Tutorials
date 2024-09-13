@@ -68,7 +68,7 @@ for (int row_count = 1; row_count < 10; row_count++)
 }
 ```
 
-Ebben a lépésben létrehozunk egy hurkot, amellyel 10 sort adunk a táblázathoz. Minden soron belül hozzáadunk három cellát mintaadatokkal. Módosíthatja a kódot, hogy sorokat és cellákat adjon hozzá sajátos igényei szerint.
+Ebben a lépésben létrehozunk egy hurkot, amellyel 10 sort adunk a táblázathoz. Minden soron belül hozzáadunk három cellát a mintaadatokkal. Módosíthatja a kódot úgy, hogy sorokat és cellákat adjon hozzá saját igényei szerint.
 
 ## 6. lépés: A táblázat objektum hozzáadása a dokumentumhoz
 

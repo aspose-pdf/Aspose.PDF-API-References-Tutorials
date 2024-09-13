@@ -8,7 +8,7 @@ weight: 12
 url: /cs/java/pdf-conversion-transformation/transform-pcl-to-pdfs/
 ---
 
-tomto podrobném průvodci prozkoumáme, jak transformovat soubory PCL (Printer Command Language) do PDF pomocí výkonného Aspose.PDF for Java API. Ať už pracujete se staršími soubory PCL nebo je potřebujete převést pro moderní správu dokumentů, tento tutoriál vás provede celým procesem s podrobnými příklady kódu.
+tomto podrobném průvodci prozkoumáme, jak převést soubory PCL (Printer Command Language) do PDF pomocí výkonného Aspose.PDF for Java API. Ať už pracujete se staršími soubory PCL nebo je potřebujete převést pro moderní správu dokumentů, tento tutoriál vás provede celým procesem s podrobnými příklady kódu.
 
 ## Předpoklady
 

@@ -39,7 +39,7 @@ Document _pdfdocument = new Document();
 ```
 
 ## Bước 5: Thêm một trang vào tài liệu
- Thêm một trang mới vào tài liệu bằng cách sử dụng`Add` phương pháp của`Pages`bộ sưu tập. Trong mã được cung cấp, trang mới được gán cho biến`page`.
+ Thêm một trang mới vào tài liệu bằng cách sử dụng`Add` phương pháp của`Pages` bộ sưu tập. Trong mã được cung cấp, trang mới được gán cho biến`page`.
 
 ```csharp
 Page page = _pdfdocument.Pages.Add();

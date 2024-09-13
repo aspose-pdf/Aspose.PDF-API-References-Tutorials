@@ -2,132 +2,120 @@
 title: Cari dan Dapatkan Gambar dalam File PDF
 linktitle: Cari dan Dapatkan Gambar dalam File PDF
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Panduan langkah demi langkah untuk mencari dan mendapatkan gambar dalam berkas PDF menggunakan Aspose.PDF untuk .NET.
+description: Pelajari cara mengekstrak gambar dari file PDF dengan mudah menggunakan Aspose.PDF untuk .NET. Ikuti panduan langkah demi langkah ini untuk meningkatkan keterampilan pemrosesan PDF Anda.
 type: docs
 weight: 260
 url: /id/net/programming-with-images/search-and-get-images/
 ---
-Dalam tutorial ini, kami akan memandu Anda untuk mencari dan mendapatkan gambar dalam file PDF menggunakan Aspose.PDF for .NET. Ikuti langkah-langkah berikut untuk melakukan operasi ini dengan mudah.
+## Perkenalan
+
+Apakah Anda mencari cara mudah untuk mengekstrak gambar dari berkas PDF menggunakan Aspose.PDF untuk .NET? Anda telah datang ke tempat yang tepat! Dalam artikel ini, kita akan membahas secara spesifik cara mencari dan mengambil gambar yang disematkan dalam dokumen PDF secara efektif. Apakah Anda seorang pengembang berpengalaman atau baru saja terjun ke dunia manipulasi PDF, panduan ini akan memandu Anda melalui seluruh proses langkah demi langkah.
 
 ## Prasyarat
 
-Sebelum memulai, pastikan Anda memiliki hal berikut:
+Sebelum kita masuk ke inti kode, ada beberapa prasyarat yang perlu Anda periksa dari daftar Anda. 
 
-- Visual Studio atau lingkungan pengembangan lainnya terinstal dan dikonfigurasi.
-- Pengetahuan dasar tentang bahasa pemrograman C#.
-- Pustaka Aspose.PDF untuk .NET telah terinstal. Anda dapat mengunduhnya dari situs web resmi Aspose.
+### Kerangka .NET
 
-## Langkah 1: Memuat dokumen PDF
+Pastikan Anda telah menginstal .NET Framework di komputer Anda. Aspose.PDF untuk .NET kompatibel dengan berbagai versi, tetapi sebaiknya gunakan rilis stabil terbaru untuk menikmati semua fitur dan penyempurnaan terbaru.
 
-Untuk memulai, gunakan kode berikut untuk memuat dokumen PDF:
+### Pustaka Aspose.PDF
+
+ Anda memerlukan akses ke pustaka Aspose.PDF. Jika belum, Anda dapat mengunduhnya dari tautan ini:[Unduh Aspose.PDF untuk .NET](https://releases.aspose.com/pdf/net/) Selain itu, Anda dapat menjelajahinya[uji coba gratis satu bulan](https://releases.aspose.com/) untuk memulai proyek Anda tanpa biaya apa pun.
+
+### Lingkungan Pengembangan
+
+Lingkungan pengembangan yang cocok seperti Visual Studio atau IDE pilihan Anda harus disiapkan untuk menulis dan menjalankan kode dengan lancar.
+
+## Paket Impor
+
+Untuk bekerja dengan Aspose.PDF untuk .NET, pertama-tama Anda perlu mengimpor namespace yang sesuai ke dalam proyek Anda. Berikut ini yang perlu Anda lakukan:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Buka dokumennya
+using System.IO;
+using Aspose.Pdf;
+using System;
+```
+
+ Masing-masing paket ini memiliki tujuan khusus saat memanipulasi dokumen PDF.`Aspose.Pdf` namespace adalah landasan operasi Anda, sementara dua lainnya membantu menangani gambar dan teks dalam PDF.
+
+## Langkah 1: Tetapkan Jalur Dokumen Anda
+
+Sebelum melakukan hal lain, Anda perlu menentukan jalur tempat file PDF Anda berada. Kode ini mengaturnya:
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Ganti "DIREKTORI DOKUMEN ANDA" dengan jalur sebenarnya ke direktori yang berisi file PDF Anda, misalnya,`C:\Documents\`.
+
+## Langkah 2: Buka Dokumen PDF
+
+ Selanjutnya, Anda ingin memuat dokumen PDF ke dalam aplikasi Anda. Ini dilakukan dengan membuat file PDF baru.`Document` contoh dengan jalur berkas yang baru saja Anda tentukan:
+
+```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "SearchAndGetImages.pdf");
 ```
 
-Pastikan untuk memberikan jalur yang benar ke dokumen PDF Anda.
+## Langkah 3: Buat ImagePlacementAbsorber
 
-## Langkah 2: Mencari Lokasi Gambar
-
-Untuk mencari lokasi gambar dalam dokumen PDF, gunakan kode berikut:
+ Untuk mencari gambar dalam PDF, Anda memerlukan`ImagePlacementAbsorber` objek. Kelas ini membantu menyerap gambar dari PDF selama proses ekstraksi:
 
 ```csharp
-// Buat objek ImagePlacementAbsorber untuk mencari lokasi gambar
 ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
+```
 
-// Terima penyerap untuk semua halaman dokumen
+## Langkah 4: Terima Penyerap untuk Semua Halaman
+
+ Langkah ini penting karena memberi tahu`Document` untuk menerapkan penyerap gambar di semua halaman. Ini memastikan bahwa gambar apa pun yang ditempatkan di mana pun dalam dokumen akan teridentifikasi:
+
+```csharp
 doc.Pages.Accept(abs);
 ```
 
-Ini akan mengumpulkan lokasi gambar dalam penyerap.
+## Langkah 5: Ulangi Penempatan Gambar
 
-## Langkah 3: Telusuri lokasi gambar dan dapatkan gambar dan propertinya
-
-Selanjutnya, kita akan menelusuri lokasi gambar yang dikumpulkan dan mendapatkan gambar beserta propertinya. Gunakan kode berikut:
+Sekarang setelah Anda menyerap gambar-gambar tersebut, saatnya untuk mempelajarinya lebih dalam. Anda akan mengulang setiap penempatan gambar yang diekstrak dari PDF:
 
 ```csharp
-foreach(ImagePlacement imagePlacement in abs.ImagePlacements)
-{
-     // Dapatkan gambar menggunakan objek ImagePlacement
-     XImage image = imagePlacement.Image;
-
-     // Menampilkan properti lokasi gambar
-     Console.Out.WriteLine("Image Width: " + imagePlacement.Rectangle.Width);
-     Console.Out.WriteLine("Image Height: " + imagePlacement.Rectangle.Height);
-     Console.Out.WriteLine("LLX of image: " + imagePlacement.Rectangle.LLX);
-     Console.Out.WriteLine("LLY of image: " + imagePlacement.Rectangle.LLY);
-     Console.Out.WriteLine("Horizontal image resolution: " + imagePlacement.Resolution.X);
-     Console.Out.WriteLine("Vertical image resolution: " + imagePlacement.Resolution.Y);
-}
-```
-
-Ini akan menelusuri semua lokasi gambar, mendapatkan gambar yang cocok dan menampilkan propertinya.
-
-### Contoh kode sumber untuk Pencarian dan Dapatkan Gambar menggunakan Aspose.PDF untuk .NET 
-```csharp
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Buka dokumen
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "SearchAndGetImages.pdf");
-// Buat objek ImagePlacementAbsorber untuk melakukan pencarian penempatan gambar
-ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
-// Terima penyerap untuk semua halaman
-doc.Pages.Accept(abs);
-// Ulangi semua ImagePlacements, dapatkan gambar dan Properti ImagePlacement
 foreach (ImagePlacement imagePlacement in abs.ImagePlacements)
 {
-	// Dapatkan gambar menggunakan objek ImagePlacement
-	XImage image = imagePlacement.Image;
-	// Menampilkan properti penempatan gambar untuk semua penempatan
-	Console.Out.WriteLine("image width:" + imagePlacement.Rectangle.Width);
-	Console.Out.WriteLine("image height:" + imagePlacement.Rectangle.Height);
-	Console.Out.WriteLine("image LLX:" + imagePlacement.Rectangle.LLX);
-	Console.Out.WriteLine("image LLY:" + imagePlacement.Rectangle.LLY);
-	Console.Out.WriteLine("image horizontal resolution:" + imagePlacement.Resolution.X);
-	Console.Out.WriteLine("image vertical resolution:" + imagePlacement.Resolution.Y);
+    // Langkah selanjutnya untuk mendapatkan properti gambar
 }
+```
+
+## Langkah 6: Ekstrak Properti Gambar
+
+ Di dalam loop, Anda dapat mulai mengambil properti berharga tentang setiap gambar. Menggunakan`imagePlacement` objek, Anda dapat mengakses dimensi dan resolusi:
+
+```csharp
+XImage image = imagePlacement.Image; // Dapatkan gambarnya
+
+Console.Out.WriteLine("image width:" + imagePlacement.Rectangle.Width);
+Console.Out.WriteLine("image height:" + imagePlacement.Rectangle.Height);
+Console.Out.WriteLine("image LLX:" + imagePlacement.Rectangle.LLX);
+Console.Out.WriteLine("image LLY:" + imagePlacement.Rectangle.LLY);
+Console.Out.WriteLine("image horizontal resolution:" + imagePlacement.Resolution.X);
+Console.Out.WriteLine("image vertical resolution:" + imagePlacement.Resolution.Y);
 ```
 
 ## Kesimpulan
 
-Selamat! Anda telah berhasil mencari dan memperoleh gambar dalam dokumen PDF menggunakan Aspose.PDF for .NET. Sekarang Anda dapat menerapkan metode ini ke proyek Anda sendiri untuk mengekstrak gambar dan mendapatkan propertinya dari file PDF.
+Nah, itu dia! Dengan mengikuti langkah-langkah ini, Anda dapat mencari dan mengambil gambar dari file PDF secara efisien menggunakan Aspose.PDF for .NET. Hanya dengan beberapa baris kode, Anda dapat mengekstrak gambar yang berharga beserta propertinya, yang membuka banyak kemungkinan dalam aplikasi Anda.
 
-### FAQ untuk mencari dan mendapatkan gambar dalam file PDF
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa tujuan mencari dan memperoleh gambar dalam dokumen PDF menggunakan Aspose.PDF for .NET?
+### Apakah pustaka Aspose.PDF gratis untuk digunakan?  
+Aspose.PDF untuk .NET adalah pustaka berbayar, tetapi Anda dapat mengunduh uji coba gratis selama satu bulan.
 
-A: Pencarian dan perolehan gambar dalam dokumen PDF memungkinkan Anda menemukan dan mengekstrak gambar dalam berkas PDF. Hal ini dapat berguna untuk berbagai keperluan seperti menganalisis konten, memverifikasi properti gambar, atau memproses gambar lebih lanjut.
+### Bisakah saya mengekstrak gambar dari file PDF yang dilindungi kata sandi?  
+Ya, tetapi Anda perlu memberikan kata sandi saat membuka dokumen.
 
-#### T: Bagaimana cara kerja proses pencarian gambar dalam dokumen PDF?
+### Jenis gambar apa yang dapat diekstrak dari PDF?  
+Semua gambar yang tertanam apa pun formatnya (JPEG, PNG, dll.) dapat diekstraksi.
 
- A: Proses ini melibatkan penggunaan`ImagePlacementAbsorber` objek untuk melakukan pencarian penempatan gambar pada semua halaman dokumen PDF. Penyerap mengumpulkan informasi tentang lokasi, ukuran, dan resolusi setiap gambar dalam dokumen.
+### Apakah ada batasan jumlah gambar yang dapat saya ekstrak?  
+Tidak ada batasan yang pasti; semuanya tergantung pada berkas PDF itu sendiri.
 
-####  T: Apa tujuan dari`ImagePlacement` object in the code?
-
- Sebuah:`ImagePlacement`Objek mewakili penempatan gambar dalam dokumen PDF. Objek ini menyediakan properti yang memungkinkan Anda mengakses detail seperti dimensi, koordinat, dan resolusi gambar.
-
-#### T: Dapatkah saya memfilter gambar yang dicari dan diperoleh berdasarkan kriteria tertentu?
-
-A: Kode yang diberikan mengumpulkan informasi tentang semua gambar dalam dokumen PDF. Jika Anda ingin memfilter gambar berdasarkan kriteria tertentu (misalnya, jenis gambar, dimensi, resolusi), Anda mungkin perlu mengubah kode untuk menyertakan kondisi pemfilteran yang sesuai.
-
-#### T: Bagaimana saya dapat mengakses konten gambar sebenarnya setelah memperoleh informasi penempatannya?
-
- Sebuah:`XImage` objek yang diperoleh dari`ImagePlacement` objek mewakili konten gambar sebenarnya. Anda dapat memproses ini lebih lanjut`XImage` objek, seperti menyimpannya ke file atau menampilkannya di aplikasi Anda.
-
-#### T: Apa yang dapat saya lakukan dengan properti gambar yang diperoleh?
-
-A: Properti gambar yang diperoleh, seperti lebar, tinggi, koordinat, dan resolusi, dapat digunakan untuk berbagai keperluan. Anda dapat menganalisis properti tersebut, menampilkannya kepada pengguna, atau menggunakannya sebagai input untuk pemrosesan lebih lanjut.
-
-#### T: Dapatkah saya mengubah atau mengedit gambar dalam dokumen PDF menggunakan metode ini?
-
-A: Kode yang diberikan berfokus pada pencarian dan perolehan informasi penempatan gambar. Untuk mengubah atau mengedit gambar, Anda mungkin perlu mengintegrasikan fungsi tambahan, seperti manipulasi gambar, menggunakan pustaka Aspose.PDF.
-
-#### T: Bagaimana saya dapat mengintegrasikan metode ini ke dalam proyek saya sendiri?
-
-J: Untuk mengintegrasikan metode ini ke dalam proyek Anda, ikuti langkah-langkah yang diuraikan dan ubah kode sesuai kebutuhan. Anda dapat menggunakan informasi dan properti penempatan gambar yang diperoleh sesuai dengan persyaratan aplikasi Anda.
-
-#### T: Apakah Aspose.PDF untuk .NET menawarkan fitur lain yang terkait dengan manipulasi gambar dalam dokumen PDF?
-
-A: Ya, Aspose.PDF untuk .NET menyediakan berbagai fitur untuk bekerja dengan gambar dalam dokumen PDF, termasuk penyisipan gambar, pengubahan ukuran, rotasi, ekstraksi, dan banyak lagi. Anda dapat menjelajahi dokumentasi dan contoh pustaka untuk menemukan kemampuan lengkapnya.
+### Bisakah saya menyimpan gambar yang diekstrak ke dalam disk?  
+ Ya, Anda dapat menyimpan gambar ke disk menggunakan`XImage` objek dalam kode Anda.

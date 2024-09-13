@@ -2,126 +2,134 @@
 title: 水平和垂直单选按钮
 linktitle: 水平和垂直单选按钮
 second_title: Aspose.PDF for .NET API 参考
-description: 使用 Aspose.PDF for .NET 轻松在 PDF 文档中创建水平和垂直单选按钮。
+description: 通过本分步教程学习如何使用 Aspose.PDF for .NET 在 PDF 中创建水平和垂直对齐的单选按钮。
 type: docs
 weight: 180
 url: /zh/net/programming-with-forms/horizontally-and-vertically-radio-buttons/
 ---
-在本教程中，我们将向您展示如何使用 Aspose.PDF for .NET 在 PDF 文档中创建水平和垂直排列的单选按钮。我们将逐步解释 C# 源代码以指导您完成此过程。
+## 介绍
 
-## 步骤 1：准备
+创建交互式 PDF 表单可以显著提升用户体验，尤其是在收集信息时。最常见的表单元素之一是单选按钮，它允许用户从一组选项中选择一个选项。在本教程中，我们将探讨如何使用 Aspose.PDF for .NET 创建水平和垂直对齐的单选按钮。无论您是经验丰富的开发人员还是刚刚入门，本指南都将逐步指导您完成整个过程，确保您清楚了解每个部分。
 
-确保您已导入必要的库并设置文档目录的路径：
+## 先决条件
+
+在深入研究代码之前，您应该满足一些先决条件：
+
+1.  Aspose.PDF for .NET：确保已安装 Aspose.PDF 库。您可以从[地点](https://releases.aspose.com/pdf/net/).
+2. Visual Studio：您可以编写和测试代码的开发环境。
+3. C# 基础知识：熟悉 C# 编程将帮助您更好地理解代码片段。
+
+## 导入包
+
+首先，您需要在 C# 项目中导入必要的包。具体操作如下：
+
+### 创建新项目
+
+打开 Visual Studio 并创建一个新的 C# 项目。为了简单起见，您可以选择控制台应用程序。
+
+### 添加 Aspose.PDF 参考
+
+1. 在解决方案资源管理器中右键单击您的项目。
+2. 选择“管理 NuGet 包”。
+3. 搜索“Aspose.PDF”并安装最新版本。
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using System.IO;
+using Aspose.Pdf.Facades;
+using Aspose.Pdf;
+using Aspose.Pdf.Forms;
 ```
 
-## 第 2 步：加载文档
+现在您已完成所有设置，让我们分解代码以创建水平和垂直对齐的单选按钮。
 
-加载现有的PDF文档：
+## 步骤 1：设置文档目录
+
+在此步骤中，我们将定义存储 PDF 文档的目录的路径。
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+代替`"YOUR DOCUMENT DIRECTORY"`替换为您想要保存 PDF 文件的实际路径。这很重要，因为它告诉程序在哪里查找输入文件以及在哪里保存输出。
+
+## 步骤 2：加载现有 PDF 文档
+
+接下来，我们需要加载要处理的 PDF 文档。这是使用`FormEditor`班级。
 
 ```csharp
 FormEditor formEditor = new FormEditor();
 formEditor.BindPdf(dataDir + "input.pdf");
 ```
 
-## 步骤 3：自定义单选按钮选项
+在这里，我们创建一个实例`FormEditor`并将其绑定到名为`input.pdf`确保此文件存在于您指定的目录中。
 
-通过设置以下属性来自定义单选按钮选项：
+## 步骤 3：配置单选按钮属性
+
+现在，让我们为单选按钮设置一些属性。这包括按钮之间的间隙、按钮的方向和按钮的大小。
 
 ```csharp
-formEditor. RadioGap = 4; //两个单选按钮选项之间的距离
-formEditor. RadioHoriz = true; //单选按钮的水平布局
+formEditor.RadioGap = 4; //单选按钮选项之间的距离
+formEditor.RadioHoriz = true; //设置为 true 以进行水平对齐
 formEditor.RadioButtonItemSize = 20; //单选按钮的大小
-formEditor.Facade.BorderWidth = 1; //单选按钮边框的宽度
-formEditor.Facade.BorderColor = System.Drawing.Color.Black; //单选按钮边框颜色
+formEditor.Facade.BorderWidth = 1; //边框宽度
+formEditor.Facade.BorderColor = System.Drawing.Color.Black; //边框颜色
 ```
+
+这些属性将有助于定义单选按钮在 PDF 中的显示方式。`RadioGap`属性控制按钮之间的空间，而`RadioHoriz`决定其布局。
 
 ## 步骤 4：添加水平单选按钮
 
-通过指定字段的选项和位置来添加水平排列的单选按钮：
+现在，让我们将水平单选按钮添加到 PDF 中。
 
 ```csharp
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
 ```
 
+在此代码中，我们定义单选按钮的项目并将它们添加到 PDF。`AddField`方法采用几个参数，包括字段类型、字段名称和放置坐标。
+
 ## 步骤 5：添加垂直单选按钮
 
-通过指定字段的选项和位置来添加垂直排列的单选按钮：
+接下来，我们将添加垂直单选按钮。为此，我们需要将方向改回垂直。
 
 ```csharp
-formEditor. RadioHoriz = false; //单选按钮的垂直布局
+formEditor.RadioHoriz = false; //设置为 false 以进行垂直对齐
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
 ```
 
-## 步骤 6：保存文档
+就像之前一样，我们定义项目并将它们添加到 PDF，但这次它们将垂直对齐。
 
-保存修改后的PDF文档：
+## 步骤 6：保存 PDF 文档
+
+最后，我们需要保存修改后的PDF文档。
 
 ```csharp
 dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
 formEditor.Save(dataDir);
+Console.WriteLine("\nHorizontally and vertically laid out radio buttons successfully.\nFile saved at " + dataDir);
 ```
 
-### 使用 Aspose.PDF for .NET 的水平和垂直单选按钮的示例源代码 
-```csharp
-try
-{
-	//文档目录的路径。
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	//加载先前保存的文档
-	FormEditor formEditor = new FormEditor();
-	formEditor.BindPdf(dataDir + "input.pdf");
-	//RadioGap 是两个单选按钮选项之间的距离。
-	formEditor.RadioGap = 4;
-	//添加水平单选按钮
-	formEditor.RadioHoriz = true;
-	//RadioButtonItemSize 是单选按钮项的大小。
-	formEditor.RadioButtonItemSize = 20;
-	formEditor.Facade.BorderWidth = 1;
-	formEditor.Facade.BorderColor = System.Drawing.Color.Black;
-	formEditor.Items = new string[] { "First", "Second", "Third" };
-	formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
-	//添加其他垂直放置的单选按钮
-	formEditor.RadioHoriz = false;
-	formEditor.Items = new string[] { "First", "Second", "Third" };
-	formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
-	dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
-	//保存 PDF 文档
-	formEditor.Save(dataDir);
-	Console.WriteLine("\nHorizontally and vertically laid out radio buttons successfully.\nFile saved at " + dataDir);
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+此代码使用新添加的单选按钮保存 PDF。请确保检查输出文件的指定目录。
 
 ## 结论
 
-在本教程中，我们学习了如何使用 Aspose.PDF for .NET 在 PDF 文档中创建水平和垂直排列的单选按钮。通过遵循这些步骤，您可以轻松自定义单选按钮的布局并使用 Aspose.PDF 将它们添加到您的 PDF 文档中。
+使用 Aspose.PDF for .NET 在 PDF 中创建单选按钮是一个简单的过程。按照本教程中概述的步骤，您可以轻松地将水平和垂直对齐的单选按钮添加到 PDF 表单中。这不仅可以增强文档的交互性，还可以改善整体用户体验。所以，继续尝试吧！
 
-### 常见问题解答
+## 常见问题解答
 
-#### 问：PDF 文档中水平和垂直排列的单选按钮是什么？
+### 什么是 Aspose.PDF for .NET？
+Aspose.PDF for .NET 是一个功能强大的库，允许开发人员以编程方式创建、操作和转换 PDF 文档。
 
-答：PDF 文档中单选按钮的水平和垂直排列是指单选按钮选项的布局方向。水平布局将单选按钮选项并排放置，允许用户从左到右进行选择。而垂直布局将单选按钮选项堆叠在一起，允许用户从上到下进行选择。
+### 我可以免费使用 Aspose.PDF 吗？
+是的，Aspose 提供免费试用版，您可以使用它来评估该库。您可以下载它[这里](https://releases.aspose.com/).
 
-#### 问：如何自定义 Aspose.PDF for .NET 中单选按钮选项的外观？
+### 如何获得 Aspose.PDF 的支持？
+您可以通过访问获得支持[Aspose 论坛](https://forum.aspose.com/c/pdf/10).
 
-答：您可以通过调整几个属性来自定义 Aspose.PDF for .NET 中单选按钮选项的外观。API 提供了设置两个单选按钮选项之间距离的选项（`RadioGap`)、布局方向（`RadioHoriz`）、单选按钮项的大小（`RadioButtonItemSize`)、单选按钮的边框宽度和颜色等等。
+### 是否可以使用 Aspose.PDF 创建其他表单元素？
+当然！Aspose.PDF 支持各种表单元素，包括文本字段、复选框和下拉菜单。
 
-#### 问：我可以向同一个 PDF 文档同时添加水平和垂直单选按钮吗？
-
-答：是的，您可以使用 Aspose.PDF for .NET 将水平和垂直单选按钮添加到同一个 PDF 文档中。本教程中提供的示例源代码演示了如何首先添加水平排列的单选按钮，然后将另一组垂直排列的单选按钮添加到同一个 PDF 文档中。
-
-#### 问：我可以为每组单选按钮设置不同的单选按钮选项吗？
-
-答：是的，您可以为每组单选按钮设置不同的单选按钮选项。每组应该有一个唯一的单选按钮选项`RadioButtonField`对象，以及`RadioButtonOptionField`每个组内的对象应共享相同的页面和其选项的唯一名称。这可确保每个组内的单选按钮正常工作，并且选项是互斥的。
-
-#### 问：所有 PDF 查看器和应用程序是否都支持单选按钮的布局和外观设置？
-
-答：是的，所有符合标准的 PDF 查看器和应用程序都支持单选按钮的布局和外观设置。PDF 规范定义了单选按钮及其各种属性，使它们在 PDF 格式中得到普遍认可。但是，有必要在不同的 PDF 查看器中测试单选按钮的外观和行为，以确保在各个平台上的渲染一致。
+### 我可以在哪里购买 Aspose.PDF for .NET？
+您可以从以下网站购买 Aspose.PDF for .NET[购买页面](https://purchase.aspose.com/buy).

@@ -150,8 +150,8 @@ A: Tak, ten samouczek zawiera instrukcje dotyczące wyrównywania tekstu w rucho
 
 #### P: Czy mogę dodać wiele ruchomych pól z różnym wyrównaniem w tym samym dokumencie PDF?
 
- A: Tak, samouczek pokazuje, jak utworzyć wiele`FloatingBox` obiekty o różnych wyrównaniach pionowych i poziomych i dodaj je do tego samego dokumentu PDF. Pozwala to zobaczyć efekty różnych wyrównań w tym samym dokumencie.
+ A: Tak, samouczek pokazuje, jak utworzyć wiele`FloatingBox` obiekty o różnym wyrównaniu pionowym i poziomym i dodaj je do tego samego dokumentu PDF. Pozwala to zobaczyć efekty różnych wyrównań w tym samym dokumencie.
 
 #### P: Jak zapisać zmodyfikowany dokument PDF?
 
- A: Aby zapisać zmodyfikowany dokument PDF, możesz użyć`Save` metoda`Document` obiekt. Samouczek zawiera przykłady kodu, które pokazują, jak zapisać wynikowy dokument PDF.
+ A: Aby zapisać zmodyfikowany dokument PDF, możesz użyć`Save` metoda`Document` obiekt. W tym samouczku przedstawiono przykłady kodu, które pokazują, jak zapisać wynikowy dokument PDF.

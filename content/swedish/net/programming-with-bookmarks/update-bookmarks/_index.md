@@ -1,7 +1,7 @@
 ---
 title: Uppdatera bokmärken i PDF-fil
 linktitle: Uppdatera bokmärken i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du uppdaterar bokmärken i en PDF-fil med Aspose.PDF för .NET med den här guiden. Perfekt för utvecklare som vill modifiera PDF-bokmärken effektivt.
 type: docs
 weight: 100
@@ -68,7 +68,7 @@ I det här exemplet kommer vi åt det andra bokmärket (`[1]`). Om du har flera 
 
 ## Steg 4: Uppdatera bokmärkesegenskaperna
 
-Det är här magin händer. När du har kommit åt bokmärket kan du börja ändra dess egenskaper. För det här exemplet uppdaterar vi titeln, gör texten kursiv och fetstil.
+Här händer magin. När du har kommit åt bokmärket kan du börja ändra dess egenskaper. För det här exemplet uppdaterar vi titeln, gör texten kursiv och fetstil.
 
 ```csharp
 pdfOutline.Title = "Updated Outline";

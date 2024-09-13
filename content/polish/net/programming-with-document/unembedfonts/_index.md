@@ -2,135 +2,129 @@
 title: Usuń osadzone czcionki i zoptymalizuj pliki PDF
 linktitle: Usuń osadzone czcionki i zoptymalizuj pliki PDF
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak używać Aspose.PDF dla .NET, aby uzyskać czcionki Unembed i zoptymalizować pliki PDF. Przewodnik krok po kroku.
+description: W tym samouczku krok po kroku dowiesz się, jak usuwać osadzone czcionki i optymalizować pliki PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 370
 url: /pl/net/programming-with-document/unembedfonts/
 ---
-Aspose.PDF dla .NET to potężna biblioteka, która oferuje szeroki zakres funkcji do pracy z dokumentami PDF. Jedną z jej funkcji jest pobieranie nieosadzonych czcionek z dokumentu PDF. Może to być przydatne, jeśli musisz wyodrębnić czcionki z dokumentu PDF i użyć ich w innych aplikacjach.
+## Wstęp
 
-udostępnimy przewodnik krok po kroku objaśniający poniższy kod źródłowy C# funkcji pobierania nieosadzonych czcionek Aspose.PDF dla platformy .NET.
+erze cyfrowej pliki PDF są wszechobecne. Niezależnie od tego, czy udostępniasz raporty, prezentacje czy e-booki, Portable Document Format (PDF) jest najlepszym wyborem, jeśli chodzi o zachowanie integralności dokumentów. Jednak w miarę tworzenia i udostępniania większej liczby plików PDF, rozmiary plików mogą się zwiększać, co utrudnia ich wysyłanie lub przechowywanie. W tym miejscu wkracza Aspose.PDF dla .NET, oferując potężne narzędzia do optymalizacji plików PDF. W tym samouczku zagłębimy się w to, jak usuwać osadzone czcionki i optymalizować pliki PDF za pomocą Aspose.PDF dla .NET.
 
-## Krok 1: Ustaw ścieżkę do katalogu dokumentu
+## Wymagania wstępne
 
-Zanim zaczniemy, musimy ustawić ścieżkę do katalogu, w którym znajduje się nasz dokument PDF. Zapiszemy tę ścieżkę w zmiennej o nazwie „dataDir”.
+Zanim przejdziemy do szczegółów, upewnijmy się, że masz wszystko, czego potrzebujesz, aby zacząć:
+
+1. Visual Studio: Upewnij się, że masz zainstalowany Visual Studio na swoim komputerze. To IDE, którego będziemy używać do pisania i uruchamiania naszego kodu .NET.
+2.  Aspose.PDF dla .NET: Musisz pobrać i zainstalować bibliotekę Aspose.PDF. Możesz ją pobrać z[link do pobrania](https://releases.aspose.com/pdf/net/).
+3. Podstawowa wiedza o języku C#: Znajomość programowania w języku C# pomoże Ci zrozumieć fragmenty kodu, z których będziemy korzystać.
+4.  Plik PDF: Przygotuj plik PDF, który chcesz zoptymalizować. Możesz użyć dowolnego pliku PDF, ale dla demonstracji będziemy się do niego odwoływać jako`OptimizeDocument.pdf`.
+
+## Importuj pakiety
+
+Aby zacząć, musisz zaimportować niezbędne pakiety do swojego projektu C#. Oto, jak możesz to zrobić:
+
+1. Otwórz projekt w programie Visual Studio.
+2. Dodaj odwołanie do Aspose.PDF: Kliknij prawym przyciskiem myszy swój projekt w Eksploratorze rozwiązań, wybierz opcję „Zarządzaj pakietami NuGet” i wyszukaj`Aspose.PDF`. Zainstaluj pakiet.
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Teraz, gdy wszystko mamy już skonfigurowane, możemy podzielić proces optymalizacji na łatwiejsze do wykonania kroki.
+
+## Krok 1: Skonfiguruj katalog dokumentów
+
+Po pierwsze, musisz zdefiniować ścieżkę do katalogu dokumentów. To tutaj będą przechowywane Twoje pliki PDF. Oto jak to zrobić:
 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Zastąp „KATALOG DOKUMENTÓW” rzeczywistą ścieżką do katalogu, w którym znajduje się Twój dokument PDF.
+ Zastępować`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką, w której znajduje się Twój plik PDF. Jest to kluczowe, ponieważ program musi wiedzieć, gdzie znaleźć plik PDF, który chcesz zoptymalizować.
 
 ## Krok 2: Otwórz dokument PDF
 
- Pierwszym krokiem jest załadowanie dokumentu PDF, który chcesz wykonać, korzystając z`Document` Klasa Aspose.PDF dla .NET. Poniższy fragment kodu pokazuje, jak załadować dokument PDF:
+Teraz, gdy mamy już skonfigurowany katalog, czas otworzyć dokument PDF, który chcemy zoptymalizować. Oto kod, który to umożliwia:
 
 ```csharp
 // Otwórz dokument
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-## Krok 3: Ustaw opcję UnembedFonts
+ Ta linia kodu tworzy nowy`Document` obiekt, który reprezentuje Twój plik PDF. Upewnij się, że nazwa pliku jest taka sama jak ta, którą masz w swoim katalogu.
 
- Aby uzyskać nieosadzone czcionki z dokumentu PDF, należy ustawić`UnembedFonts` opcja do`true` . Ta opcja jest dostępna w`OptimizationOptions` klasa. Poniższy fragment kodu pokazuje, jak ustawić`UnembedFonts` opcja:
+## Krok 3: Ustaw opcje optymalizacji
+
+Następnie musimy określić opcje optymalizacji. W tym przypadku chcemy usunąć osadzone czcionki. Oto jak to skonfigurować:
 
 ```csharp
 // Ustaw opcję UnembedFonts
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
-	UnembedFonts = true
+    UnembedFonts = true
 };
 ```
+
+ Poprzez ustawienie`UnembedFonts` Do`true`, instruujemy Aspose.PDF, aby zoptymalizował plik PDF poprzez usunięcie osadzonych czcionek. Może to znacznie zmniejszyć rozmiar pliku, zwłaszcza jeśli plik PDF zawiera wiele osadzonych czcionek.
 
 ## Krok 4: Zoptymalizuj dokument PDF
 
- Po ustawieniu`UnembedFonts` opcja, możesz zoptymalizować dokument PDF za pomocą`OptimizeResources` metoda`Document` klasa. Poniższy fragment kodu pokazuje, jak zoptymalizować dokument PDF:
+Mając ustawione opcje, czas zoptymalizować dokument PDF. Oto kod, który to umożliwia:
 
 ```csharp
-// Zoptymalizuj dokument PDF za pomocą OptimizationOptions
-pdfDocument.OptimizeResources(optimizeOptions);
-```
-
-## Krok 5: Zapisz zaktualizowany dokument
-
- Po zoptymalizowaniu dokumentu PDF możesz zapisać zaktualizowany dokument, korzystając z`Save` metoda`Document`klasa. Poniższy fragment kodu pokazuje, jak zapisać zaktualizowany dokument:
-
-```csharp
-// Zapisz zaktualizowany dokument
-pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
-```
-
-## Krok 6: Pobierz oryginalny i zmniejszony rozmiar pliku
-
- Na koniec możesz uzyskać oryginalny i zmniejszony rozmiar pliku dokumentu PDF, korzystając z`FileInfo` Klasa System.IO. Poniższy fragment kodu pokazuje, jak uzyskać oryginalny i zmniejszony rozmiar pliku:
-
-```csharp
-var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
-var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
-Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
-```
-
-### Przykładowy kod źródłowy do pobierania nieosadzonych czcionek przy użyciu Aspose.PDF dla .NET
-
-Oto kompletny przykładowy kod źródłowy umożliwiający pobranie nieosadzonych czcionek z dokumentu PDF przy użyciu Aspose.PDF dla platformy .NET:
-
-```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Otwórz dokument
-Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// Ustaw opcję UnembedFonts
-var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-{
-	UnembedFonts = true
-};
 Console.WriteLine("Start");
 // Zoptymalizuj dokument PDF za pomocą OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
+```
+
+Ten fragment kodu wywołuje`OptimizeResources` metoda na`pdfDocument` obiekt, stosując opcje optymalizacji, które zdefiniowaliśmy wcześniej. Zobaczysz komunikat w konsoli wskazujący, że proces optymalizacji został rozpoczęty.
+
+## Krok 5: Zapisz zaktualizowany dokument
+
+Po zoptymalizowaniu pliku PDF musimy zapisać zaktualizowany dokument. Oto jak to zrobić:
+
+```csharp
 // Zapisz zaktualizowany dokument
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Finished");
+```
+
+ Ten kod zapisuje zoptymalizowany plik PDF jako`OptimizeDocument_out.pdf` w tym samym katalogu. Możesz wybrać inną nazwę, jeśli wolisz, ale zachowanie podobnej nazwy pomaga w identyfikacji wersji oryginalnej i zoptymalizowanej.
+
+## Krok 6: Porównaj rozmiary plików
+
+Na koniec, zawsze dobrze jest sprawdzić, ile miejsca zaoszczędziłeś. Oto jak porównać oryginalne i zoptymalizowane rozmiary plików:
+
+```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
 var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```
+
+Ten kod pobiera rozmiary plików zarówno oryginalnych, jak i zoptymalizowanych plików PDF i drukuje je na konsoli. To satysfakcjonujący moment, aby zobaczyć, jak bardzo zmniejszyłeś rozmiar pliku!
 
 ## Wniosek
 
-W tym samouczku pokazaliśmy, jak używać Aspose.PDF dla .NET, aby uzyskać nieosadzone czcionki z dokumentu PDF. Postępując zgodnie z przewodnikiem krok po kroku, możesz łatwo zaimplementować tę funkcję w swoich aplikacjach C#. Nieosadzone czcionki mogą być korzystne, gdy musisz pracować z wyodrębnionymi czcionkami osobno lub zapewnić spójne użycie czcionek na różnych platformach.
+masz to! Udało Ci się usunąć osadzone czcionki i zoptymalizować plik PDF za pomocą Aspose.PDF dla .NET. Ten proces nie tylko pomaga w zmniejszaniu rozmiarów plików, ale także poprawia wydajność dokumentów PDF. Niezależnie od tego, czy udostępniasz pliki za pośrednictwem poczty e-mail, czy przechowujesz je w chmurze, mniejszy rozmiar pliku może mieć ogromne znaczenie.
 
 ## Najczęściej zadawane pytania
 
-#### P: Jaki jest cel usuwania czcionek z dokumentu PDF?
+### Czym jest Aspose.PDF dla .NET?
+Aspose.PDF dla platformy .NET to zaawansowana biblioteka umożliwiająca programistom programowe tworzenie, modyfikowanie i optymalizowanie dokumentów PDF.
 
-A: Usunięcie osadzonych czcionek z dokumentu PDF umożliwia wyodrębnienie osadzonych czcionek i wykorzystanie ich w innych aplikacjach. Może to być przydatne do zapewnienia spójnego renderowania czcionek i zachowania wyglądu wizualnego dokumentu.
+### Czy mogę używać Aspose.PDF bezpłatnie?
+ Tak, Aspose oferuje bezpłatną wersję próbną. Możesz ją pobrać z[Tutaj](https://releases.aspose.com/).
 
-#### P: Jak określić ścieżkę do katalogu dokumentu w kodzie C#?
+### Jak uzyskać pomoc techniczną dotyczącą Aspose.PDF?
+ Możesz uzyskać wsparcie poprzez[Forum Aspose](https://forum.aspose.com/c/pdf/10).
 
- A: Aby określić ścieżkę do katalogu dokumentu, zamień`"YOUR DOCUMENT DIRECTORY"` w kodzie podaj rzeczywistą ścieżkę do katalogu, w którym znajduje się Twój dokument PDF.
+### Jakiego typu optymalizacje mogę wykonywać w plikach PDF?
+Możesz usuwać osadzone czcionki, kompresować obrazy, usuwać nieużywane obiekty i wykonywać wiele innych czynności, aby zoptymalizować pliki PDF.
 
-####  P: Co to jest`UnembedFonts` option do, and where is it set?
-
- A: Ten`UnembedFonts` opcja dostępna w`OptimizationOptions` class, włącza lub wyłącza usuwanie osadzania czcionek z dokumentu PDF. Aby ustawić tę opcję na`true`, użyj następującego kodu:
-
-```csharp
-var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-{
-	UnembedFonts = true
-};
-```
-
-#### P: Czy mogę cofnąć zmiany wprowadzone w procesie optymalizacji?
-
-A: Aspose.PDF dla .NET nie wprowadza trwałych zmian do oryginalnego dokumentu PDF podczas optymalizacji. Proces optymalizacji jest wykonywany na kopii dokumentu, pozostawiając oryginał nienaruszony.
-
-#### P: Jak mogę sprawdzić oryginalny i zmniejszony rozmiar pliku po optymalizacji?
-
- A: Możesz użyć`FileInfo` klasa`System.IO` aby uzyskać oryginalny i zmniejszony rozmiar pliku. Oto przykładowy fragment kodu, aby to osiągnąć:
-
-```csharp
-var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
-var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
-Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
-```
+### Gdzie mogę kupić Aspose.PDF dla .NET?
+ Możesz zakupić licencję od[Strona zakupu Aspose](https://purchase.aspose.com/buy).

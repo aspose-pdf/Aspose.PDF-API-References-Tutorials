@@ -34,7 +34,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## Schritt 3: Schriftarten suchen und ersetzen
 
- Wir schaffen eine`TextFragmentAbsorber`Objekt und setzen Sie die Bearbeitungsoption, um nicht verwendete Schriftarten zu entfernen. Anschließend akzeptieren wir den Absorber für alle Seiten des PDF-Dokuments, um nach Textfragmenten zu suchen.
+ Wir schaffen eine`TextFragmentAbsorber` Objekt und setzen Sie die Bearbeitungsoption, um nicht verwendete Schriftarten zu entfernen. Anschließend akzeptieren wir den Absorber für alle Seiten des PDF-Dokuments, um nach Textfragmenten zu suchen.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));

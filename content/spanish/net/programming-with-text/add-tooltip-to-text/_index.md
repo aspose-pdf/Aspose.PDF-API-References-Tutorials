@@ -32,7 +32,7 @@ using Aspose.Pdf.Text;
  En el código, localiza la línea que dice`string dataDir = "YOUR DOCUMENT DIRECTORY";` y reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta al directorio donde se almacenan sus documentos.
 
 ## Paso 4: Crea un documento de muestra con texto
- Crear uno nuevo`Document` objeto y agregar páginas con fragmentos de texto. En el código proporcionado, se agregan dos fragmentos de texto al documento con el texto de información sobre herramientas correspondiente.
+ Crear uno nuevo`Document`objeto y agregar páginas con fragmentos de texto. En el código proporcionado, se agregan dos fragmentos de texto al documento con el texto de información sobre herramientas correspondiente.
 
 ```csharp
 Document doc = new Document();
@@ -98,7 +98,7 @@ doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to disp
 doc.Save(outputFile);
 // Abrir documento con texto
 Document document = new Document(outputFile);
-// Cree un objeto TextAbsorber para encontrar todas las frases que coincidan con la expresión regular
+//Cree un objeto TextAbsorber para encontrar todas las frases que coincidan con la expresión regular
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
 // Acepta el absorbedor para las páginas del documento.
 document.Pages.Accept(absorber);
@@ -169,7 +169,7 @@ using Aspose.Pdf.Text;
 
 #### P: ¿Cómo puedo agregar información sobre herramientas a los fragmentos de texto?
 
- A: En el paso 6, recorrerá los fragmentos de texto extraídos y creará botones invisibles en sus posiciones. El texto de la información sobre herramientas se asigna a la`AlternateName` propiedad de la`ButtonField`que se añade al formato del documento.
+ A: En el paso 6, recorrerá los fragmentos de texto extraídos y creará botones invisibles en sus posiciones. El texto de la información sobre herramientas se asigna a la`AlternateName` propiedad de la`ButtonField`, que se añade al formato del documento.
 
 #### P: ¿Cómo repito el proceso para fragmentos de texto adicionales con información sobre herramientas larga?
 

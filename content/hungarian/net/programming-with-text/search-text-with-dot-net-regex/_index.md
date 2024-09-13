@@ -88,7 +88,7 @@ page.Accept(textFragmentAbsorber);
 
 ## 9. lépés: Töltse le a kibontott szövegrészleteket
 
-Szerezze be a kivont szövegrészleteket a`TextFragments` tulajdona a`TextFragmentAbsorber` objektum:
+ Szerezze be a kivont szövegrészleteket a`TextFragments` tulajdona a`TextFragmentAbsorber` objektum:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

@@ -2,178 +2,185 @@
 title: Tambahkan Cap Tanggal Waktu Dalam File PDF
 linktitle: Tambahkan Cap Tanggal Waktu Dalam File PDF
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Pelajari cara mudah menambahkan cap tanggal dan waktu dalam berkas PDF dengan Aspose.PDF untuk .NET.
+description: Pelajari cara menambahkan cap tanggal dan waktu ke berkas PDF Anda menggunakan Aspose.PDF for .NET dengan panduan langkah demi langkah ini. Sempurna untuk meningkatkan keaslian dokumen.
 type: docs
 weight: 10
 url: /id/net/programming-with-stamps-and-watermarks/add-date-time-stamp/
 ---
-Dalam artikel ini, kami akan memandu Anda langkah demi langkah tentang cara menambahkan cap tanggal dan waktu dalam berkas PDF menggunakan Aspose.PDF untuk .NET. Kami akan menunjukkan cara menggunakan kode sumber C# yang disediakan untuk menambahkan cap tanggal dan waktu ke berkas PDF yang sudah ada.
+## Perkenalan
 
-## Persyaratan
+Dalam hal mengelola dokumen, terutama PDF, menambahkan cap tanggal dan waktu dapat menjadi pengubah permainan. Baik Anda mengerjakan dokumen hukum, laporan proyek, atau faktur, cap waktu tidak hanya menambah keaslian tetapi juga memberikan catatan yang jelas tentang kapan dokumen tersebut dibuat atau dimodifikasi. Dalam panduan ini, kami akan memandu Anda melalui proses menambahkan cap tanggal dan waktu ke file PDF menggunakan pustaka Aspose.PDF untuk .NET. 
 
-Sebelum memulai, pastikan Anda memiliki hal berikut:
+Artikel ini dirancang agar mudah dipahami dan diikuti, jadi meskipun Anda baru mengenal pemrograman atau pustaka Aspose.PDF, Anda akan dapat menerapkan fitur ini dengan percaya diri. Mari kita mulai!
 
-- Lingkungan pengembangan .NET yang terinstal.
-- Pustaka Aspose.PDF untuk .NET diunduh dan dirujuk dalam proyek Anda.
+## Prasyarat
 
-## Langkah 1: Menyiapkan lingkungan
+Sebelum kita memulai, ada beberapa prasyarat yang perlu Anda penuhi:
 
-Sebelum Anda dapat menambahkan tanggal dan stempel waktu ke dokumen PDF, Anda perlu menyiapkan lingkungan pengembangan Anda. Berikut ini langkah-langkah yang harus diikuti:
+1. Visual Studio: Pastikan Anda telah menginstal Visual Studio di komputer Anda. Di sinilah Anda akan menulis dan menjalankan kode Anda.
+2. Aspose.PDF untuk .NET: Anda perlu mengunduh dan menginstal pustaka Aspose.PDF. Anda dapat menemukan versi terbaru[Di Sini](https://releases.aspose.com/pdf/net/).
+3. Pengetahuan Dasar C#: Keakraban dengan pemrograman C# akan membantu Anda memahami contoh-contohnya dengan lebih baik, tetapi jangan khawatir jika Anda baru memulai; kami akan menjelaskan semuanya langkah demi langkah.
+4.  File PDF: Siapkan contoh file PDF. Untuk contoh kita, kita akan menggunakan file bernama`AddTextStamp.pdf`.
 
-1. Buka IDE (Integrated Development Environment) favorit Anda.
-2. Buat proyek C# baru.
-3. Pastikan Anda telah menambahkan referensi ke pustaka Aspose.PDF untuk .NET.
+Setelah Anda memiliki prasyarat ini, Anda siap untuk mulai menambahkan cap tanggal dan waktu ke file PDF Anda!
 
-## Langkah 2: Menambahkan pustaka Aspose.PDF
+## Paket Impor
 
-Pustaka Aspose.PDF untuk .NET diperlukan untuk bekerja dengan dokumen PDF di proyek Anda.
+Untuk memulai, Anda perlu mengimpor namespace yang diperlukan dalam proyek C# Anda. Berikut cara melakukannya:
 
-## Langkah 3: Memuat dokumen PDF
+### Buat Proyek Baru
 
-Langkah pertama untuk menambahkan cap tanggal dan waktu adalah memuat dokumen PDF yang ada ke dalam proyek Anda. Berikut caranya:
+1. Buka Visual Studio: Luncurkan aplikasi Visual Studio Anda.
+2. Buat Proyek Baru: Pilih “Buat proyek baru” dari layar awal.
+3. Pilih Aplikasi Konsol: Pilih “Aplikasi Konsol (.NET Framework)” dari daftar templat proyek.
+4.  Beri Nama Proyek Anda: Berikan nama pada proyek Anda, misalnya,`PDFDateTimeStamp`.
+
+### Tambahkan Referensi Aspose.PDF
+
+1. Klik kanan pada Referensi: Di Solution Explorer, klik kanan pada folder “Referensi” pada proyek Anda.
+2. Pilih “Tambahkan Referensi”: Pilih “Tambahkan Referensi” dari menu konteks.
+3. Telusuri Aspose.PDF: Arahkan ke lokasi tempat Anda mengunduh Aspose.PDF dan pilih. Klik “OK” untuk menambahkannya ke proyek Anda.
+
+### Mengimpor Ruang Nama yang Diperlukan
+
+ Di bagian atas Anda`Program.cs` file, Anda perlu mengimpor namespace berikut:
+
+```csharp
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System;
+using Aspose.Pdf.Annotations;
+```
+
+Sekarang setelah semuanya disiapkan, mari kita uraikan proses penambahan cap tanggal dan waktu ke berkas PDF ke dalam langkah-langkah yang jelas dan mudah dikelola.
+
+## Langkah 1: Mengatur Direktori Dokumen
+
+Pertama, Anda perlu menentukan direktori tempat file PDF Anda berada. Hal ini penting karena kode akan mencari PDF di direktori ini.
 
 ```csharp
 // Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Ganti dengan jalur Anda yang sebenarnya
+```
 
-// Buka dokumennya
+ Pastikan untuk mengganti`YOUR DOCUMENT DIRECTORY` dengan jalur sebenarnya ke berkas PDF Anda.
+
+## Langkah 2: Buka Dokumen PDF
+
+Berikutnya, Anda akan membuka dokumen PDF tempat Anda ingin menambahkan stempel waktu. 
+
+```csharp
+// Buka dokumen
 Document pdfDocument = new Document(dataDir + "AddTextStamp.pdf");
 ```
 
-Pastikan untuk mengganti "DIREKTORI DOKUMEN ANDA" dengan jalur sebenarnya ke direktori tempat dokumen PDF Anda berada.
+ Baris kode ini menginisialisasi`Document` kelas dan memuat file PDF Anda ke dalam`pdfDocument` obyek.
 
-## Langkah 4: Membuat cap tanggal dan waktu
+## Langkah 3: Buat Cap Tanggal Waktu
 
-Sekarang setelah Anda mengunggah dokumen
-
-  PDF, Anda dapat membuat stempel tanggal dan waktu untuk ditambahkan. Berikut cara melakukannya:
+Sekarang saatnya membuat cap tanggal dan waktu. Anda akan memformatnya untuk ditampilkan dengan cara tertentu. 
 
 ```csharp
-string annotationText = string.Empty;
-annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt");
-
-// Membuat buffer teks
-TextStamp textStamp = new TextStamp(annotationText);
+string annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt ");
 ```
 
-Kode di atas membuat buffer teks baru yang berisi tanggal dan waktu saat ini.
+ Di Sini,`DateTime.Now` mendapatkan tanggal dan waktu saat ini, dan`ToString` memformatnya ke format yang Anda inginkan.
 
-## Langkah 5: Mengonfigurasi Properti Prangko
+## Langkah 4: Buat Stempel Teks
 
-Sebelum menambahkan stempel ke dokumen PDF, Anda dapat mengonfigurasi berbagai properti stempel, seperti margin, perataan horizontal dan vertikal, dll. Berikut caranya:
-
-```csharp
-// Mengatur properti buffer
-textStamp.BottomMargin = 10;
-textStamp. RightMargin = 20;
-textStamp.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
-textStamp.VerticalAlignment = VerticalAlignment.Bottom;
-```
-
-Anda dapat menyesuaikan properti ini menurut kebutuhan Anda.
-
-## Langkah 6: Tambahkan Stempel ke PDF
-
-Setelah tanggal dan waktu sudah siap, Anda dapat menambahkannya ke halaman tertentu pada dokumen PDF. Berikut caranya:
+Dengan rangkaian tanggal dan waktu yang siap, Anda sekarang dapat membuat stempel teks yang akan ditambahkan ke PDF Anda.
 
 ```csharp
-// Tambahkan prangko ke koleksi prangko halaman
-pdfDocument.Pages[1].AddStamp(textStamp);
-```
-
-Kode di atas menambahkan stempel pada halaman pertama dokumen PDF. Anda dapat menentukan halaman lain jika diperlukan.
-
-## Langkah 7: Simpan dokumen keluaran
-
-Setelah Anda menambahkan tanggal dan stempel waktu, Anda dapat menyimpan dokumen PDF yang telah dimodifikasi. Berikut caranya:
-
-```csharp
-// Simpan dokumen keluaran
-pdfDocument.Save(dataDir);
-```
-
-Kode di atas menyimpan dokumen PDF yang telah diedit ke direktori yang ditentukan.
-
-### Contoh kode sumber untuk Menambahkan Cap Tanggal Waktu menggunakan Aspose.PDF untuk .NET 
-```csharp
-
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Buka dokumen
-Document pdfDocument = new Document(dataDir+ "AddTextStamp.pdf");
-string annotationText = string.Empty;
-annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt ");
-
 // Buat stempel teks
 TextStamp textStamp = new TextStamp(annotationText);
+```
 
+ Baris ini membuat contoh baru dari`TextStamp` menggunakan format tanggal dan waktu.
+
+## Langkah 5: Mengatur Properti Prangko
+
+Anda dapat menyesuaikan tampilan dan posisi prangko. Berikut cara mengatur propertinya:
+
+```csharp
 // Mengatur properti prangko
 textStamp.BottomMargin = 10;
 textStamp.RightMargin = 20;
 textStamp.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
 textStamp.VerticalAlignment = VerticalAlignment.Bottom;
+```
 
+Pada langkah ini, kita mengatur margin dan menyelaraskan stempel ke sudut kanan bawah halaman PDF.
+
+## Langkah 6: Tambahkan Stempel ke PDF
+
+Sekarang saatnya menambahkan stempel teks ke dokumen PDF Anda. 
+
+```csharp
 // Menambahkan prangko pada koleksi prangko
 pdfDocument.Pages[1].AddStamp(textStamp);
+```
+
+Baris ini menambahkan stempel pada halaman pertama PDF. Anda dapat mengubah nomor halaman jika ingin meletakkannya di halaman lain.
+
+## Langkah 7: Buat Anotasi Teks Gratis (Opsional)
+
+Jika Anda ingin menambahkan anotasi pada prangko, Anda dapat membuatnya`FreeTextAnnotation` sebagai berikut:
+
+```csharp
 DefaultAppearance default_appearance = new DefaultAppearance("Arial", 6, System.Drawing.Color.Black);
 FreeTextAnnotation textAnnotation = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(0, 0, 0, 0), default_appearance);
 textAnnotation.Name = "Stamp";
 textAnnotation.Accept(new AnnotationSelector(textAnnotation));
 textAnnotation.Contents = textStamp.Value;
+```
 
+Langkah opsional ini membuat anotasi teks bebas yang dapat memberikan konteks atau informasi tambahan tentang prangko.
+
+## Langkah 8: Konfigurasikan Batas Anotasi
+
+Jika Anda ingin menyesuaikan batas anotasi Anda, Anda juga dapat melakukannya:
+
+```csharp
 Border border = new Border(textAnnotation);
 border.Width = 0;
 border.Dash = new Dash(1, 1);
 textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(0, 0, 0, 0);
 pdfDocument.Pages[1].Annotations.Add(textAnnotation);
-dataDir = dataDir + "AddDateTimeStamp_out.pdf";
-
-// Simpan dokumen keluaran
-pdfDocument.Save(dataDir);
-Console.WriteLine("\nDate time stamp added successfully.\nFile saved at " + dataDir);  
-          
 ```
+
+Potongan kode ini menetapkan lebar batas menjadi 0, membuatnya tidak terlihat, dan menambahkan anotasi ke PDF.
+
+## Langkah 9: Simpan Dokumen PDF
+
+Terakhir, Anda perlu menyimpan dokumen PDF yang telah dimodifikasi. 
+
+```csharp
+dataDir = dataDir + "AddDateTimeStamp_out.pdf"; // Tentukan nama file keluaran
+pdfDocument.Save(dataDir);
+Console.WriteLine("\nDate time stamp added successfully.\nFile saved at " + dataDir);
+```
+
+Baris ini menyimpan PDF dengan stempel waktu yang ditambahkan ke file baru. Anda dapat memeriksa direktori yang ditentukan untuk melihat hasilnya.
 
 ## Kesimpulan
 
-Selamat! Anda telah mempelajari cara menambahkan cap tanggal dan waktu menggunakan Aspose.PDF untuk .NET. Sekarang Anda dapat menerapkan pengetahuan ini ke proyek Anda sendiri untuk menambahkan cap tanggal dan waktu ke dokumen PDF.
+Selamat! Anda telah berhasil menambahkan cap tanggal dan waktu ke berkas PDF menggunakan Aspose.PDF untuk .NET. Fitur sederhana namun efektif ini dapat menyempurnakan dokumen Anda, membuatnya lebih profesional, dan memberikan catatan yang jelas tentang kapan dokumen tersebut dibuat atau dimodifikasi. 
 
-### FAQ untuk menambahkan cap tanggal waktu dalam file PDF
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa tujuan menambahkan cap tanggal dan waktu ke dokumen PDF menggunakan Aspose.PDF untuk .NET?
+### Bisakah saya menyesuaikan format tanggal di stempel waktu?
+ Ya, Anda dapat memodifikasi`ToString`metode untuk mengubah format tanggal sesuai keinginan Anda.
 
-J: Menambahkan cap tanggal dan waktu ke dokumen PDF akan meningkatkan nilai informasinya dengan menunjukkan kapan dokumen tersebut dimodifikasi atau dibuat. Fitur ini berguna untuk melacak perubahan dokumen dan menyediakan titik referensi untuk riwayat dokumen.
+### Apakah Aspose.PDF gratis untuk digunakan?
+ Aspose.PDF menawarkan uji coba gratis, tetapi untuk fitur lengkap, Anda perlu membeli lisensi. Anda bisa mendapatkan lisensi sementara[Di Sini](https://purchase.aspose.com/temporary-license/).
 
-#### T: Dapatkah saya menyesuaikan format cap tanggal dan waktu agar sesuai dengan persyaratan tertentu?
+### Bisakah saya menambahkan beberapa stempel waktu ke PDF?
+ Tentu saja! Anda dapat membuat beberapa`TextStamp` contoh dan menambahkannya ke halaman atau posisi berbeda dalam PDF.
 
- A: Ya, Anda dapat menyesuaikan format tanggal dan stempel waktu sesuai dengan preferensi Anda. Kode sumber C# yang disediakan menggunakan`DateTime.Now.ToString()` metode untuk menghasilkan stempel waktu dalam format tertentu. Anda dapat mengubah kode ini untuk memformat stempel waktu sesuai kebutuhan.
+### Bagaimana jika saya tidak memiliki Visual Studio?
+Anda dapat menggunakan IDE C# atau editor teks apa pun, tetapi untuk menjalankan dan men-debug proyek Anda, Visual Studio direkomendasikan.
 
-#### T: Apakah mungkin untuk menambahkan cap tanggal dan waktu ke lokasi tertentu pada halaman PDF?
-
- A: Tentu saja, Anda dapat menyesuaikan penempatan cap tanggal dan waktu pada halaman PDF dengan mengubah properti`TextStamp` objek. Kode yang diberikan dalam tutorial ini menunjukkan cara mengatur properti seperti margin, perataan, dan posisi vertikal.
-
-#### T: Dapatkah saya menambahkan beberapa cap tanggal dan waktu ke halaman berbeda dalam dokumen PDF yang sama?
-
- A: Ya, Anda dapat menambahkan beberapa cap tanggal dan waktu ke halaman yang berbeda dari dokumen PDF yang sama. Cukup ulangi proses pembuatannya`TextStamp` objek dan mengonfigurasi propertinya untuk setiap halaman yang diinginkan.
-
-#### T: Bagaimana cara mengubah font, ukuran, atau warna teks cap tanggal dan waktu?
-
- A: Untuk mengubah font, ukuran, atau warna teks cap tanggal dan waktu, Anda dapat menyesuaikan properti`DefaultAppearance` objek yang digunakan untuk membuat`TextStamp`Sesuaikan nama font, ukuran, dan nilai warna untuk mendapatkan tampilan yang diinginkan.
-
-#### T: Apakah mungkin untuk menambahkan jenis anotasi atau stempel lain ke dokumen PDF menggunakan Aspose.PDF untuk .NET?
-
-J: Ya, Aspose.PDF untuk .NET menyediakan berbagai jenis anotasi yang dapat Anda tambahkan ke dokumen PDF, termasuk anotasi teks, stempel, garis, bentuk, dan banyak lagi. Anda dapat menjelajahi dokumentasi Aspose.PDF untuk detail lebih lanjut tentang cara menggunakan anotasi.
-
-#### T: Apakah ada batasan atau pertimbangan saat menambahkan cap tanggal dan waktu ke dokumen PDF?
-
-J: Meskipun menambahkan cap tanggal dan waktu mudah dilakukan, pertimbangkan faktor-faktor seperti tata letak dokumen dan konten yang ada. Pastikan penempatan cap tidak mengaburkan informasi penting atau memengaruhi keterbacaan dokumen.
-
-#### T: Bagaimana saya dapat mengintegrasikan metode ini ke dalam proyek saya sendiri untuk menambahkan cap tanggal dan waktu ke dokumen PDF?
-
-J: Untuk mengintegrasikan metode ini, ikuti langkah-langkah yang diberikan dan sesuaikan kode agar sesuai dengan struktur proyek Anda. Anda dapat menambahkan cap tanggal dan waktu ke dokumen PDF yang ada untuk meningkatkan kegunaannya dan memberikan garis waktu perubahan yang jelas.
-
-#### T: Dapatkah saya mengotomatiskan proses penambahan cap tanggal dan waktu ke beberapa dokumen PDF?
-
-A: Ya, Anda dapat mengotomatiskan proses penambahan cap tanggal dan waktu ke beberapa dokumen PDF dengan membuat skrip atau program yang mengulangi daftar dokumen dan menerapkan proses pemberian cap yang sama untuk setiap dokumen.
+### Di mana saya dapat menemukan lebih banyak contoh penggunaan Aspose.PDF?
+ Anda dapat menjelajahi lebih banyak contoh dan tutorial di[Dokumentasi Aspose.PDF](https://reference.aspose.com/pdf/net/).

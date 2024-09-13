@@ -62,7 +62,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## 6단계: 추출된 텍스트 조각 검색
 
-다음을 사용하여 추출된 텍스트 조각을 가져옵니다.`TextFragments` 의 속성`TextFragmentAbsorber` 물체:
+ 다음을 사용하여 추출된 텍스트 조각을 가져옵니다.`TextFragments` 의 속성`TextFragmentAbsorber` 물체:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -165,7 +165,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 #### 질문: 지정된 페이지에서 검색어를 찾을 수 없으면 어떻게 되나요?
 
- A: 지정된 페이지에서 검색어가 발견되지 않는 경우,`TextFragmentCollection` 비어 있고, 대체가 이루어지지 않습니다. 타겟팅하는 페이지에 검색어가 있는지 확인하세요.
+A: 지정된 페이지에서 검색어가 발견되지 않는 경우,`TextFragmentCollection` 비어 있고, 대체가 이루어지지 않습니다. 타겟팅하는 페이지에 검색어가 있는지 확인하세요.
 
 #### 질문: 각 텍스트 조각에 대한 대체 텍스트를 사용자 지정하려면 어떻게 해야 하나요?
 

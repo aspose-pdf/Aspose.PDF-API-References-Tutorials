@@ -2,177 +2,158 @@
 title: Obrázek a číslo stránky v části Zápatí záhlaví
 linktitle: Obrázek a číslo stránky v části Zápatí záhlaví
 second_title: Aspose.PDF pro .NET API Reference
-description: Zjistěte, jak přidat obrázek a číslo stránky do záhlaví a zápatí dokumentu PDF pomocí Aspose.
+description: tomto podrobném návodu se dozvíte, jak přidat obrázek a čísla stránek do záhlaví a zápatí PDF pomocí Aspose.PDF for .NET.
 type: docs
 weight: 110
 url: /cs/net/programming-with-stamps-and-watermarks/image-and-page-number-in-header-footer-section/
 ---
-tomto tutoriálu vás krok za krokem provedeme přidáním obrázku a čísla stránky do sekce záhlaví a zápatí dokumentu PDF pomocí Aspose.PDF pro .NET. Ukážeme vám, jak pomocí poskytnutého zdrojového kódu C# vytvořit stránku, nastavit záhlaví a zápatí, přidat obrázek do záhlaví a text s číslem stránky do zápatí dokumentu PDF.
+## Zavedení
 
-## Krok 1: Nastavení prostředí
+Pokud jde o vytváření dokumentů PDF profesionální kvality, je nezbytné mít kontrolu nad drobnými detaily, jako jsou záhlaví a zápatí. Chcete, aby vaše dokumenty vypadaly uhlazeně a dobře uspořádané, že? S Aspose.PDF pro .NET můžete do záhlaví a zápatí vašeho dokumentu bez problémů přidávat obrázky a čísla stránek. V tomto tutoriálu vás provedeme každým krokem, aby bylo snadné ho sledovat.
 
-Než začnete, ujistěte se, že máte následující:
+## Předpoklady
 
-- Nainstalované vývojové prostředí .NET.
-- Knihovna Aspose.PDF pro .NET stažená a odkazovaná ve vašem projektu.
+Než se ponoříte do hlubin tohoto tutoriálu, ujistěte se, že máte seřazeno následující:
 
-## Krok 2: Vytvoření dokumentu a stránky PDF
+1. .NET Framework: V počítači musíte mít nainstalovanou jakoukoli verzi .NET Framework. Pokud jej nemáte, můžete si jej snadno stáhnout z webu Microsoftu.
+2.  Aspose.PDF pro .NET: Protože budeme používat Aspose.PDF, ujistěte se, že jej máte nainstalovaný ve svém projektu. Můžete si stáhnout zkušební verzi[zde](https://releases.aspose.com/pdf/net/).
+3. Základní znalost C#: Znalost základního programování v C# vám jistě pomůže porozumět kódu bez větších potíží.
+4. Soubor obrázku: Budete potřebovat obrázek, který chcete vložit do záhlaví dokumentu PDF, například logo. Uložte jej do přístupného adresáře. 
+5. IDE: Pro práci s vaším projektem .NET použijte integrované vývojové prostředí (IDE) dle vašeho výběru, jako je Visual Studio.
 
-Prvním krokem je vytvoření nového objektu dokumentu a stránky v dokumentu PDF. Zde je postup:
+Jakmile budete mít připravené předpoklady, budete připraveni vytvořit báječný soubor PDF!
+
+## Importujte balíčky
+
+Chcete-li začít používat Aspose.PDF pro .NET, musíte importovat potřebné jmenné prostory. V horní části souboru C# byste přidali:
 
 ```csharp
-// Cesta k adresáři dokumentů.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// Vytvořte nový objekt dokumentu
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-
-// Vytvořte stránku v dokumentu
-Aspose.Pdf.Page page = doc.Pages.Add();
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using Aspose.Pdf.Image;
 ```
 
-Výše uvedený kód vytvoří nový objekt dokumentu a prázdnou stránku v dokumentu PDF.
+Tyto jmenné prostory vám poskytnou přístup ke třídám potřebným pro manipulaci se soubory PDF.
 
-## Krok 3: Přidání záhlaví s obrázkem
+Nyní pojďme k tomu skutečnému! Chcete-li vytvořit dokument PDF, použijte obrázek v záhlaví a čísla stránek v zápatí podle následujících kroků.
 
-Nyní, když je stránka vytvořena, můžeme přidat sekci záhlaví s obrázkem. Zde je postup:
+## Krok 1: Nastavte adresář dokumentů
 
-```csharp
-// Vytvořte sekci záhlaví
-Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
-
-// Nastavte záhlaví stránky
-page. Header = header;
-
-// Vytvořte objekt Image
-Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
-
-// Nastavit cestu obrázku
-image1.File = dataDir + "aspose-logo.jpg";
-
-// Přidejte obrázek do záhlaví stránky dokumentu PDF
-header.Paragraphs.Add(image1);
-```
-
-Výše uvedený kód vytvoří sekci záhlaví, nastaví záhlaví stránky s touto sekcí a přidá do záhlaví obrázek.
-
-## Krok 4: Přidání zápatí s číslem stránky
-
-Nyní, když je přidáno záhlaví, můžeme přidat sekci zápatí s číslem stránky. Zde je postup:
+Každý dobrý projekt začíná organizací. Definujte adresář dokumentů, kam budete ukládat soubory a kde se nachází váš obrázek. Jak na to:
 
 ```csharp
-// Vytvořte sekci zápatí
-Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
-
-// Definujte zápatí dokumentu PDF
-page. Footer = footer;
-
-// Vytvořte objekt TextFragment
-Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P)");
-
-// Přidejte text s číslem stránky do zápatí dokumentu PDF
-footer.Paragraphs.Add(txt);
-```
-
-Výše uvedený kód vytvoří sekci zápatí, nastaví zápatí stránky s touto částí a přidá TextFragment obsahující text "Stránka: ($p z $P )"
-
-  který zobrazuje číslo stránky.
-
-## Krok 5: Uložení upraveného dokumentu PDF
-
-Po přidání záhlaví a zápatí můžeme upravený dokument PDF uložit. Zde je postup:
-
-```csharp
-// Uložte upravený dokument PDF
-doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
-```
-
-Výše uvedený kód uloží upravený dokument PDF do určeného adresáře.
-
-### Ukázkový zdrojový kód pro obrázek a číslo stránky v zápatí záhlaví pomocí Aspose.PDF pro .NET 
-```csharp
-
-// Cesta k adresáři dokumentů.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-
-// Vytvořte stránku v objektu dokumentu
-Aspose.Pdf.Page page = doc.Pages.Add();
-
-// Vytvořte sekci záhlaví dokumentu
-Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
-
-// Nastavte záhlaví pro soubor PDF
-page.Header = header;
-
-// Vytvořte na stránce objekt obrázku
-Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
-
-// Nastavte cestu k souboru obrázku
-image1.File = dataDir + "aspose-logo.jpg";
-
-// Přidejte obrázek na stránku záhlaví souboru Pdf
-header.Paragraphs.Add(image1);
-
-//Vytvořte sekci zápatí dokumentu
-Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
-
-// Nastavte zápatí souboru PDF
-page.Footer = footer;
-
-// Vytvořte textový objekt
-Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P ) ");
-
-// Přidejte text do části Záhlaví souboru Pdf
-footer.Paragraphs.Add(txt);
-
-// Uložte soubor Pdf
-doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
-
 ```
+
+ Nezapomeňte vyměnit`"YOUR DOCUMENT DIRECTORY"` se skutečnou cestou, kam chcete PDF uložit a kde váš obrázek existuje.
+
+## Krok 2: Vytvořte nový dokument PDF
+
+Dále vytvoříme nový dokument PDF, kde se stane všechna kouzla:
+
+```csharp
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+```
+
+V tomto okamžiku jste vytvořili prázdný dokument PDF. Vzrušující, že?
+
+## Krok 3: Přidejte stránku do dokumentu
+
+PDF je o stránkách. Pojďme do našeho dokumentu přidat novou stránku pomocí:
+
+```csharp
+Aspose.Pdf.Page page = doc.Pages.Add();
+```
+
+Nyní máte plátno, na kterém můžete začít navrhovat!
+
+## Krok 4: Vytvořte sekci záhlaví
+
+Vaše záhlaví bude obsahovat obrázek (jako logo), který chcete zobrazit. Vytvořte sekci záhlaví s následujícím kódem:
+
+```csharp
+Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
+page.Header = header;
+```
+
+Nyní máte záhlaví, které si můžete přizpůsobit!
+
+## Krok 5: Přidejte obrázek do záhlaví
+
+Nyní se dostáváme k zábavnější části! Musíte přidat obrázek do záhlaví. Nejprve vytvořte objekt obrázku:
+
+```csharp
+Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
+```
+
+Nastavte cestu k souboru vašeho obrázku:
+
+```csharp
+image1.File = dataDir + "aspose-logo.jpg";
+```
+
+Nakonec přidejte obrázek do záhlaví:
+
+```csharp
+header.Paragraphs.Add(image1);
+```
+
+Gratuluji! Právě jste přidali obrázek do záhlaví PDF.
+
+## Krok 6: Vytvořte sekci zápatí
+
+Nyní pojďme pracovat na zápatí. Podobně jako u procesu záhlaví vytvořte objekt zápatí:
+
+```csharp
+Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
+page.Footer = footer;
+```
+
+Zde umístíte číslo své stránky. 
+
+## Krok 7: Přidejte text do zápatí
+
+Vytvořte fragment textu, který bude obsahovat číslo stránky:
+
+```csharp
+Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P ) ");
+```
+
+Poté přidejte tento fragment textu do zápatí:
+
+```csharp
+footer.Paragraphs.Add(txt);
+```
+
+Vidíš, jak to bylo snadné? Číslo stránky jste nastavili dynamicky!
+
+## Krok 8: Uložte dokument PDF
+
+Posledním krokem v našem dobrodružství je uložení dokumentu. Tento příkaz použijte k uložení nově vytvořeného PDF:
+
+```csharp
+doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
+```
+
+A právě tak je váš PDF připraven a načten s obrázkem záhlaví a čísly stránek v zápatí!
 
 ## Závěr
 
-gratuluji! Naučili jste se, jak přidat obrázek a číslo stránky do části záhlaví a zápatí dokumentu PDF pomocí Aspose.PDF for .NET. Nyní můžete tuto metodu použít k přizpůsobení záhlaví a zápatí v dokumentech PDF.
+tady to máte! Právě jste vytvořili PDF s obrázkem v záhlaví a dynamickými čísly stránek v zápatí pomocí Aspose.PDF for .NET. Je až neuvěřitelné, jak pár řádků kódu může vést k tak vypilovanému výstupu. Ať už se jedná o podnikovou zprávu nebo personalizovaný dokument, přidání těchto prvků změní tón a profesionalitu vašeho PDF.
 
-### FAQ
+## FAQ
 
-#### Otázka: Jaký je účel přidání obrázku a čísla stránky do části záhlaví a zápatí dokumentu PDF?
+### Mohu použít Aspose.PDF na jakékoli platformě .NET?
+Ano, Aspose.PDF pro .NET podporuje více platforem .NET včetně .NET Framework, .NET Core a dalších.
 
-Odpověď: Přidání obrázku a čísla stránky do části záhlaví a zápatí dokumentu PDF může zlepšit jeho vizuální přitažlivost, branding a navigační prvky. Obrázek může představovat logo, vodoznak nebo jakýkoli grafický prvek, zatímco číslo stránky pomáhá uživatelům sledovat jejich pokrok a najít konkrétní stránky.
+### Je k dispozici bezplatná zkušební verze pro Aspose.PDF?
+ Absolutně! Můžete si stáhnout bezplatnou zkušební verzi[zde](https://releases.aspose.com/).
 
-#### Otázka: Jak dodaný zdrojový kód C# pomáhá při přidávání obrázku a čísla stránky do záhlaví a zápatí dokumentu PDF?
+### Jaké formáty obrázků jsou podporovány pro záhlaví?
+Aspose.PDF podporuje většinu běžných obrazových formátů jako JPG, PNG a BMP pro záhlaví a zápatí.
 
-Odpověď: Poskytnutý kód ukazuje, jak vytvořit dokument PDF, přidat stránku a poté upravit sekce záhlaví a zápatí. Ukazuje, jak přidat obrázek do záhlaví a textový fragment s číslováním stránek do zápatí.
+### Mohu přizpůsobit formát čísel stránek?
+Ano, text a formát zápatí si můžete snadno přizpůsobit podle svých potřeb.
 
-#### Otázka: Mohu pro záhlaví použít jakýkoli formát obrázku a jak určím jeho cestu?
-
- Odpověď: Ano, pro obrázek záhlaví můžete použít různé formáty obrázků (jako JPEG, PNG, GIF atd.). Cesta k obrázku je určena pomocí`File` majetek z`Aspose.Pdf.Image` objekt.
-
-#### Otázka: Jak přizpůsobím vzhled a umístění obrázku v sekci záhlaví?
-
- Odpověď: Vzhled a umístění obrázku můžete upravit úpravou vlastností`Aspose.Pdf.Image` objekt před jeho přidáním do sekce záhlaví. Můžete například nastavit rozměry obrázku, zarovnání, otočení, krytí atd.
-
-####  Otázka: Jaký je účel`TextFragment` object used for the footer?
-
- A:`TextFragment` objekt slouží k vytvoření a formátování textu, který se zobrazí v zápatí. V poskytnutém kódu se používá k zobrazení čísla stránky a celkového počtu stránek.
-
-#### Otázka: Mohu upravit text zápatí tak, aby obsahoval další informace nebo formátování?
-
- Odpověď: Ano, text zápatí můžete upravit úpravou obsahu souboru`TextFragment` objekt. Můžete přidat další text, změnit písma, barvy a formátování podle svých požadavků.
-
-#### Otázka: Mohu použít jiný obsah záhlaví a zápatí na různé stránky dokumentu PDF?
-
- Odpověď: Ano, můžete použít různé obsahy záhlaví a zápatí na různé stránky vytvořením samostatných stránek`HeaderFooter` objektů a jejich přiřazení ke konkrétním stránkám pomocí`Header` a`Footer` vlastnosti`Aspose.Pdf.Page` objekt.
-
-#### Otázka: Jak mohu dále upravit záhlaví a zápatí, například změnit styly písma nebo přidat další prvky?
-
-Odpověď: Záhlaví a zápatí můžete přizpůsobit pomocí různých tříd a vlastností poskytovaných Aspose.PDF pro .NET. Můžete například použít různé možnosti formátování textu, přidat více odstavců, obrázků nebo dokonce tabulek do částí záhlaví a zápatí.
-
-#### Otázka: Mohu v případě potřeby odstranit nebo vymazat sekce záhlaví a zápatí?
-
-Odpověď: Ano, můžete odstranit nebo vymazat sekce záhlaví a zápatí nastavením`Header` a`Footer` vlastnosti`Aspose.Pdf.Page` namítat proti`null`.
-
-#### Otázka: Jak mohu zajistit, aby přidaný obrázek a číslo stránky zůstaly konzistentní na různých zařízeních a prohlížečích?
-
-Odpověď: Aspose.PDF for .NET poskytuje funkce pro vytváření standardizovaných a konzistentních dokumentů PDF, což zajišťuje, že se přidaný obrázek a číslo stránky budou zobrazovat konzistentně na různých zařízeních a prohlížečích PDF.
+### Je k dispozici technická podpora?
+ Ano, Aspose poskytuje specializovanou podporu prostřednictvím svého fóra. Můžete se obrátit na pomoc[zde](https://forum.aspose.com/c/pdf/10).

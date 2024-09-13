@@ -10,7 +10,7 @@ url: /nl/java/pdf-bookmarks/add-child-bookmarks-pdfs/
 
 ## Inleiding tot het toevoegen van kinderbladwijzers aan PDF's
 
-In dit artikel gaan we onderzoeken hoe u kinderbladwijzers kunt toevoegen aan PDF-documenten met Aspose.PDF voor Java. Kinderbladwijzers zijn een handige manier om de inhoud van een PDF-document te ordenen en erdoorheen te navigeren, waardoor het voor gebruikers gemakkelijker wordt om specifieke secties of onderwerpen in het document te vinden.
+In dit artikel gaan we onderzoeken hoe u kinderbladwijzers kunt toevoegen aan PDF-documenten met behulp van Aspose.PDF voor Java. Kinderbladwijzers zijn een handige manier om de inhoud van een PDF-document te ordenen en erdoorheen te navigeren, waardoor het voor gebruikers gemakkelijker wordt om specifieke secties of onderwerpen in het document te vinden.
 
 ## Vereisten
 

@@ -1,7 +1,7 @@
 ---
 title: Anpassa sidnummer medan du lägger till innehållsförteckning
 linktitle: Anpassa sidnummer medan du lägger till innehållsförteckning
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du anpassar sidnummer samtidigt som du lägger till en innehållsförteckning till dina PDF-dokument med Aspose.PDF för .NET i denna omfattande handledning.
 type: docs
 weight: 100

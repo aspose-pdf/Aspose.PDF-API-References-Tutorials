@@ -43,7 +43,7 @@ Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
 ## الخطوة 4: تعيين حدود الخلية الافتراضية
 
- لضمان الاتساق، يمكننا تعيين حدود خلية افتراضية باستخدام`DefaultCellBorder`خاصية الجدول`BorderInfo` هدف.
+ لضمان الاتساق، يمكننا تعيين حدود خلية افتراضية باستخدام`DefaultCellBorder` خاصية الجدول`BorderInfo` هدف.
 
 ```csharp
 // تعيين حدود الخلية الافتراضية باستخدام كائن BorderInfo
@@ -93,7 +93,7 @@ Aspose.Pdf.Cell cell2 = row1.Cells.Add();
 وأخيرا، يمكننا إضافة الصورة إلى خلية الجدول عن طريق إضافتها كفقرة داخل الخلية.
 
 ```csharp
-// أضف الصورة إلى خلية الجدول
+//أضف الصورة إلى خلية الجدول
 cell2.Paragraphs.Add(img);
 ```
 
@@ -102,7 +102,7 @@ cell2.Paragraphs.Add(img);
 بعد إضافة خلية الصورة، يمكننا إضافة المزيد من الخلايا إلى الصف إذا لزم الأمر.
 
 ```csharp
-//إضافة خلية أخرى إلى الصف
+// إضافة خلية أخرى إلى الصف
 row1.Cells.Add("Previous cell with image");
 
 // ضبط المحاذاة الرأسية للخلية الثالثة
@@ -114,7 +114,7 @@ row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
  أخيرًا، يمكننا حفظ المستند المعدّل في موقع محدد باستخدام`Save` طريقة.
 
 ```csharp
-// حفظ المستند
+//حفظ المستند
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
@@ -140,16 +140,16 @@ tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.
 tab1.ColumnWidths = "100 100 120";
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose.jpg";
-// إنشاء صفوف في الجدول ثم خلايا في الصفوف
+//إنشاء صفوف في الجدول ثم خلايا في الصفوف
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Sample text in cell");
 // أضف الخلية التي تحتوي على الصورة
 Aspose.Pdf.Cell cell2 = row1.Cells.Add();
-// أضف الصورة إلى خلية الجدول
+//أضف الصورة إلى خلية الجدول
 cell2.Paragraphs.Add(img);
 row1.Cells.Add("Previous cell with image");
 row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
-// حفظ المستند
+//حفظ المستند
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
@@ -165,7 +165,7 @@ pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 
 #### س: هل يمكنني تخصيص حجم الصورة وموقعها داخل خلية الجدول؟
 
- ج: نعم، يمكنك تخصيص حجم الصورة وموضعها داخل خلية الجدول عن طريق ضبط خصائص`Image`الكائن. يمكنك ضبط عرض الصورة وارتفاعها، بالإضافة إلى المحاذاة داخل الخلية.
+ ج: نعم، يمكنك تخصيص حجم الصورة وموضعها داخل خلية الجدول عن طريق ضبط خصائص`Image` الكائن. يمكنك ضبط عرض الصورة وارتفاعها، بالإضافة إلى المحاذاة داخل الخلية.
 
 #### س: هل يمكنني إضافة صور إلى جدول يحتوي على عدد ديناميكي من الصفوف والأعمدة؟
 

@@ -110,7 +110,7 @@ doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to d
 doc.Save(outputFile);
 // Buka dokumen dengan teks
 Document document = new Document(outputFile);
-// Buat objek TextAbsorber untuk menemukan semua frasa yang cocok dengan ekspresi reguler
+//Buat objek TextAbsorber untuk menemukan semua frasa yang cocok dengan ekspresi reguler
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
 // Terima penyerap untuk halaman dokumen
 document.Pages.Accept(absorber);

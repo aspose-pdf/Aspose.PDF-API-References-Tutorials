@@ -103,7 +103,7 @@ NoteElement note3 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note3);
 note3.SetText("Note with ID = 'note_003'. ");
 note3.SetId("note_003");
-// Deve lançar uma exceção - Aspose.Pdf.Tagged.TaggedException: O elemento de estrutura com ID='note_002' já existe
+//Deve lançar uma exceção - Aspose.Pdf.Tagged.TaggedException: O elemento de estrutura com ID='note_002' já existe
 //nota3.SetId("nota_002");
 // O documento resultante não está em conformidade com PDF/UA se ClearId() for usado para o elemento de estrutura de nota
 //nota3.ClearId();
@@ -148,7 +148,7 @@ R: Sim, você pode personalizar o conteúdo e as propriedades dos elementos da e
 
 #### P: Posso atribuir IDs exclusivos aos elementos da estrutura de notas?
 
-R: Sim, você pode atribuir IDs exclusivos para observar elementos de estrutura usando o`SetId` método. O código demonstra como definir os IDs dos elementos de nota para valores exclusivos.
+ R: Sim, você pode atribuir IDs exclusivos para observar elementos de estrutura usando o`SetId` método. O código demonstra como definir os IDs dos elementos de nota para valores exclusivos.
 
 #### P: O que acontece se eu tentar atribuir um ID duplicado a um elemento da estrutura de nota?
 
@@ -156,7 +156,7 @@ A: Tentar atribuir um ID duplicado a um elemento de estrutura de nota resultará
 
 #### P: Como posso garantir a conformidade com PDF/UA ao criar elementos de estrutura de notas?
 
- R: O código fornecido no tutorial demonstra como validar a conformidade com PDF/UA usando o`Validate` método. Ao validar o documento em relação ao padrão PDF/UA, você pode garantir que os elementos de estrutura de nota adicionados estejam de acordo com as diretrizes de acessibilidade.
+R: O código fornecido no tutorial demonstra como validar a conformidade com PDF/UA usando o`Validate` método. Ao validar o documento em relação ao padrão PDF/UA, você pode garantir que os elementos de estrutura de nota adicionados estejam de acordo com as diretrizes de acessibilidade.
 
 #### P: Posso usar essa abordagem para adicionar elementos de estrutura de nota a um documento PDF existente?
 

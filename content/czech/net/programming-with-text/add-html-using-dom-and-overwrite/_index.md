@@ -42,7 +42,7 @@ Document doc = new Document();
 ```
 
 ## Krok 5: Přidejte do dokumentu stránku
- Přidejte do dokumentu novou stránku pomocí`Add` metoda`Pages`sbírka. V poskytnutém kódu je nová stránka přiřazena k proměnné`page`.
+ Přidejte do dokumentu novou stránku pomocí`Add` metoda`Pages` sbírka. V poskytnutém kódu je nová stránka přiřazena k proměnné`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -64,7 +64,7 @@ title.TextState.FontSize = 20;
 ```
 
 ## Krok 8: Nastavte informace o okrajích
-případě potřeby upravte spodní a horní okraj fragmentu HTML. V poskytnutém kódu je spodní okraj nastaven na 10 a horní okraj na 400.
+V případě potřeby upravte spodní a horní okraj fragmentu HTML. V poskytnutém kódu je spodní okraj nastaven na 10 a horní okraj na 400.
 
 ```csharp
 title. Margin. Bottom = 10;
@@ -159,7 +159,7 @@ HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Tab
 
 #### Otázka: Jak mohu přepsat styly obsahu HTML?
 
- Odpověď: V kroku 7 přepíšete styly obsahu HTML úpravou`TextState` vlastnosti`HtmlFragment` objekt. Můžete například změnit rodinu písem na „Arial“ a nastavit velikost písma na 20:
+ Odpověď: V kroku 7 přepíšete styly obsahu HTML úpravou`TextState` vlastnosti`HtmlFragment`objekt. Můžete například změnit rodinu písem na „Arial“ a nastavit velikost písma na 20:
 
 ```csharp
 title.TextState = new TextState("Arial");

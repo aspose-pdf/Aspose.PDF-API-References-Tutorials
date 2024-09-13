@@ -10,7 +10,7 @@ url: /hu/java/pdf-document-operations/adding-text-in-header-or-footer-of-pdf-fil
 
 ## Bevezetés a PDF-fájl fejlécébe vagy láblécébe szöveg hozzáadásához Java használatával
 
-Ebben az átfogó útmutatóban megvizsgáljuk, hogyan lehet szöveget hozzáadni egy PDF-fájl fejlécéhez vagy láblécéhez Java használatával. Az Aspose.PDF for Java robusztus API-t biztosít a PDF-dokumentumokkal való munkavégzéshez, megkönnyítve a fejlécek és láblécek testreszabását az Ön speciális követelményeinek megfelelően.
+Ebben az átfogó útmutatóban megvizsgáljuk, hogyan lehet szöveget hozzáadni egy PDF-fájl fejlécéhez vagy láblécéhez Java használatával. Az Aspose.PDF for Java robusztus API-t biztosít a PDF-dokumentumokkal való munkavégzéshez, megkönnyítve ezzel a fejlécek és láblécek testreszabását az Ön speciális követelményeinek megfelelően.
 
 ## Előfeltételek
 

@@ -2,125 +2,124 @@
 title: Kombinationsfeld
 linktitle: Kombinationsfeld
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erstellen Sie mit Aspose.PDF für .NET ganz einfach Kombinationsfeldlisten in Ihren PDF-Dokumenten.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET einer PDF-Datei ein Kombinationsfeld hinzufügen. Folgen Sie unserer Schritt-für-Schritt-Anleitung, um ganz einfach interaktive PDF-Formulare zu erstellen.
 type: docs
 weight: 30
 url: /de/net/programming-with-forms/combo-box/
 ---
-In diesem Tutorial zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET eine Kombinationsfeldliste erstellen. Wir erklären Ihnen den C#-Quellcode Schritt für Schritt, um Sie durch diesen Prozess zu führen.
+## Einführung
 
-## Schritt 1: Vorbereitung
+Haben Sie sich schon einmal gefragt, wie Sie mit .NET interaktive Formulare in Ihren PDFs erstellen können? Eines der wichtigsten Elemente, die Sie hinzufügen können, ist ein Kombinationsfeld, das Benutzern die Auswahl aus einer Liste von Optionen ermöglicht. Dies ist praktisch, wenn Sie Formulare für Umfragen, Anwendungen oder Fragebögen entwickeln. Glücklicherweise macht Aspose.PDF für .NET diesen Vorgang ganz einfach. Heute zeigen wir Ihnen, wie Sie mit Aspose.PDF für .NET ein Kombinationsfeld zu einem PDF hinzufügen. Am Ende dieses Handbuchs wissen Sie nicht nur, wie Sie es implementieren, sondern sind auch in der Lage, Formulare in einem PDF anzupassen.
 
-Stellen Sie zunächst sicher, dass Sie die erforderlichen Bibliotheken importiert haben, und legen Sie den Pfad zum Dokumentverzeichnis fest:
+## Voraussetzungen
+
+Bevor wir uns in den Code vertiefen, stellen wir sicher, dass Sie alles haben, was Sie zum Einstieg benötigen:
+
+- Aspose.PDF für .NET-Bibliothek: Laden Sie es herunter und installieren Sie es von der[Aspose.PDF für .NET-Downloadseite](https://releases.aspose.com/pdf/net/).
+- Eine .NET-Entwicklungsumgebung wie Visual Studio.
+- Grundkenntnisse der C#-Programmierung und der Arbeit mit .NET-Anwendungen.
+-  Eine gültige Aspose.PDF-Lizenz (Sie erhalten eine[vorläufige Lizenz](https://purchase.aspose.com/temporary-license/) oder verwenden Sie es im Testmodus).
+
+Sobald diese Voraussetzungen erfüllt sind, können Sie sich in den Programmierspaß stürzen!
+
+## Namespaces importieren
+
+Bevor Sie Code schreiben, müssen Sie die erforderlichen Namespaces in Ihr Projekt importieren. Dies ist wichtig für den Zugriff auf die Klassen und Methoden, mit denen Sie PDFs bearbeiten können.
+
+Hier ist ein kurzer Blick auf die Namespaces, die Sie benötigen:
 
 ```csharp
+using System;
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Forms;
+```
+
+ Diese drei Zeilen stellen sicher, dass Sie Zugriff auf die erforderlichen Klassen haben, wie zum Beispiel`Document`, `ComboBoxField`und andere Dienstprogramme, die Aspose.PDF für .NET bereitstellt.
+
+In dieser Anleitung unterteilen wir den Vorgang in einfache Schritte, damit er leicht nachvollziehbar ist. Legen wir los!
+
+## Schritt 1: Einrichten des Dokuments
+
+Als Erstes benötigen Sie ein PDF-Dokument, mit dem Sie arbeiten können. Lassen Sie uns ein neues PDF von Grund auf erstellen und ihm eine Seite hinzufügen.
+
+```csharp
+// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-```
-
-## Schritt 2: Erstellen Sie ein Dokumentobjekt
-
-Erstellen Sie ein Dokumentobjekt zur Aufnahme des PDF-Formulars:
-
-```csharp
+// Dokumentobjekt erstellen
 Document doc = new Document();
-```
-
-## Schritt 3: Seite hinzufügen
-
-Fügen Sie dem Dokument eine Seite hinzu:
-
-```csharp
+// Seite zum Dokumentobjekt hinzufügen
 doc.Pages.Add();
 ```
 
-## Schritt 4: Instanziieren eines ComboBoxField-Objekts
+ Hier initiieren wir eine`Document` Objekt und fügen Sie eine neue leere Seite hinzu. Sie können sich das vorstellen`Document` Objekt als leere Leinwand. Ohne Seite ist es, als würde man versuchen, in die Luft zu zeichnen – Sie brauchen diese Grundlage!
 
-Instanziieren Sie ein ComboBoxField-Objekt mit den gewünschten Abmessungen:
+## Schritt 2: Instanziieren des Kombinationsfelds
+
+Nachdem wir nun unser Dokument eingerichtet haben, ist es an der Zeit, die Kombinationsbox zu erstellen. Stellen Sie sich eine Kombinationsbox wie ein Dropdown-Menü vor, das im PDF angezeigt wird, damit Benutzer eine Option auswählen können.
 
 ```csharp
+// ComboBox-Feldobjekt instantiieren
 ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 600, 150, 616));
 ```
 
-## Schritt 5: Optionen zur Dropdown-Liste hinzufügen
+ In diesem Schritt erstellen wir eine`ComboBoxField` Objekt. Die Parameter im Konstruktor definieren, wo auf der Seite die Combobox angezeigt wird. Wir verwenden Koordinaten (100, 600, 150, 616), um die Position und Größe der Combobox auf der PDF-Seite anzugeben.
 
-Fügen Sie der Dropdown-Liste die gewünschten Optionen hinzu:
+## Schritt 3: Optionen zum Kombinationsfeld hinzufügen
+
+Die Combobox wäre ohne Optionen nicht besonders nützlich! Fügen wir einige Farben als Optionen hinzu, aus denen die Benutzer auswählen können.
 
 ```csharp
+//Hinzufügen von Optionen zur ComboBox
 combo.AddOption("Red");
 combo.AddOption("Yellow");
 combo.AddOption("Green");
 combo.AddOption("Blue");
 ```
 
-## Schritt 6: Hinzufügen der Kombinationsfeldliste zum Formular
+Hier haben wir vier Farboptionen hinzugefügt: Rot, Gelb, Grün und Blau. Jede dieser Optionen steht den Benutzern im Dropdown-Menü zur Auswahl.
 
-Fügen Sie das ComboBoxField-Objekt zur Sammlung „Document Form Fields“ hinzu:
+## Schritt 4: Hinzufügen des Kombinationsfelds zur Formularfeldsammlung
+
+Nachdem wir nun die Kombinationsbox erstellt und Optionen hinzugefügt haben, müssen wir sie in die Formularfelder des PDF-Dokuments platzieren.
 
 ```csharp
+// Kombinationsfeldobjekt zur Formularfeldsammlung des Dokumentobjekts hinzufügen
 doc.Form.Add(combo);
 ```
 
-## Schritt 7: Speichern Sie das Dokument
+Diese Codezeile fügt im Wesentlichen das Kombinationsfeld zu den Formularfeldern der PDF-Datei hinzu. Stellen Sie es sich so vor, als würden Sie das Dropdown-Menü in das Dokument selbst einbetten, damit es tatsächlich verwendet werden kann.
 
-Speichern Sie das PDF-Dokument:
+## Schritt 5: Speichern Sie das Dokument
+
+Wenn alles eingerichtet ist, müssen Sie nur noch das Dokument speichern, damit Sie Ihre Kombinationsbox in Aktion sehen können.
 
 ```csharp
 dataDir = dataDir + "ComboBox_out.pdf";
+// Speichern des PDF-Dokuments
 doc.Save(dataDir);
+Console.WriteLine("\nCombobox field added successfully.\nFile saved at " + dataDir);
 ```
 
-### Beispiel-Quellcode für Combo Box mit Aspose.PDF für .NET 
-```csharp
-try
-{
-	// Der Pfad zum Dokumentverzeichnis.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Dokumentobjekt erstellen
-	Document doc = new Document();
-	// Seite zum Dokumentobjekt hinzufügen
-	doc.Pages.Add();
-	// ComboBox-Feldobjekt instantiieren
-	ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 600, 150, 616));
-	// Option zur ComboBox hinzufügen
-	combo.AddOption("Red");
-	combo.AddOption("Yellow");
-	combo.AddOption("Green");
-	combo.AddOption("Blue");
-	// Kombinationsfeldobjekt zur Formularfeldsammlung des Dokumentobjekts hinzufügen
-	doc.Form.Add(combo);
-	dataDir = dataDir + "ComboBox_out.pdf";
-	// Speichern des PDF-Dokuments
-	doc.Save(dataDir);
-	Console.WriteLine("\nCombobox field added successfully.\nFile saved at " + dataDir);
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+ Wir speichern das Dokument in einer Datei namens`ComboBox_out.pdf`. Die Konsolenausgabe informiert Sie darüber, dass die Datei erfolgreich gespeichert wurde. Überprüfen Sie nun Ihr Ausgabeverzeichnis. Dort finden Sie die PDF-Datei mit Ihrer Combobox, die einsatzbereit ist!
 
 ## Abschluss
 
-In diesem Tutorial haben wir gelernt, wie man mit Aspose.PDF für .NET eine Kombinationsfeldliste erstellt. Indem Sie diese Schritte befolgen, können Sie Ihren PDF-Dokumenten mit Aspose.PDF ganz einfach eine Kombinationsfeldliste hinzufügen.
+Und da haben Sie es! In nur fünf einfachen Schritten haben Sie mit Aspose.PDF für .NET erfolgreich ein Kombinationsfeld zu einem PDF hinzugefügt. Diese leistungsstarke Funktion ist nur eine von vielen, die Aspose.PDF zum Anpassen und Bearbeiten von PDF-Dokumenten bietet. Egal, ob Sie komplexe Formulare oder einfache Dropdown-Listen erstellen, Aspose.PDF für .NET bietet alles. Nachdem Sie nun gesehen haben, wie einfach es ist, warum erkunden Sie nicht einige andere Formularfelder wie Kontrollkästchen, Textfelder oder Optionsfelder?
 
-### Häufig gestellte Fragen
+## Häufig gestellte Fragen
 
-#### F: Kann ich das Erscheinungsbild der Kombinationsfeldliste mit Aspose.PDF für .NET anpassen?
+### Kann ich der Kombinationsbox nach ihrer Erstellung weitere Optionen hinzufügen?
+ Ja! Sie können die`ComboBoxField` Objekt, um vor dem Speichern des Dokuments weitere Optionen hinzuzufügen.
 
-A: Ja, Sie können das Erscheinungsbild der Kombinationsfeldliste mit Aspose.PDF für .NET anpassen. Sie können Eigenschaften wie Schriftgröße, Farbe, Hintergrundfarbe, Rahmenstil und mehr festlegen, um es an Ihr gewünschtes Erscheinungsbild anzupassen.
+### Ist es möglich, die Größe der Kombinationsbox zu ändern?
+ Absolut. Sie können die Abmessungen des Rechtecks im`ComboBoxField` Konstruktor zum Ändern der Größe der Kombinationsbox.
 
-#### F: Kann ich in der Kombinationsfeldliste standardmäßig ausgewählte Optionen festlegen?
+### Unterstützt Aspose.PDF für .NET andere Formularfelder?
+Ja, Aspose.PDF unterstützt eine Vielzahl von Formularfeldern, darunter Textfelder, Optionsfelder und Kontrollkästchen.
 
- A: Ja, Sie können standardmäßig ausgewählte Optionen in der Kombinationsfeldliste mit Aspose.PDF für .NET festlegen. Sie können die`Selected` Eigentum der`ComboBoxField` Objekt, um eine oder mehrere Optionen als standardmäßig ausgewählt zu markieren.
+### Kann ich diesen Code mit einem vorhandenen PDF-Dokument verwenden?
+Ja, anstatt ein neues Dokument zu erstellen, können Sie eine vorhandene PDF-Datei laden und die Kombinationsbox hinzufügen.
 
-#### F: Wie kann ich den ausgewählten Wert aus der Kombinationsfeldliste abrufen, nachdem der Benutzer eine Auswahl getroffen hat?
-
- A: Sie können den ausgewählten Wert aus der Kombinationsfeldliste mit Aspose.PDF für .NET abrufen. Nachdem der Benutzer eine Auswahl getroffen hat, können Sie auf die`Value` Eigentum der`ComboBoxField`Objekt, um den ausgewählten Wert zu erhalten.
-
-#### F: Ist es möglich, der Kombinationsfeldliste Ereignishandler oder Aktionen hinzuzufügen?
-
- A: Ja, Aspose.PDF für .NET ermöglicht es Ihnen, Ereignishandler oder Aktionen zur Kombinationsfeldliste hinzuzufügen. Sie können JavaScript-Aktionen verknüpfen, wie zum Beispiel`OnValueChanged`, zur Kombinationsfeldliste, um bestimmte Aktionen auszuführen, wenn der Benutzer eine Option auswählt.
-
-#### F: Kann ich den Optionen in der Kombinationsfeldliste Tooltips oder Beschreibungen hinzufügen?
-
- A: Ja, Sie können den Optionen in der Kombinationsfeldliste mit Aspose.PDF für .NET Tooltips oder Beschreibungen hinzufügen. Sie können die`AlternateName` -Eigenschaft jeder Option, um einen Tooltip oder eine Beschreibung bereitzustellen, die angezeigt wird, wenn der Benutzer mit der Maus über die Option fährt.
+### Benötige ich eine Lizenz, um Aspose.PDF für .NET zu verwenden?
+ Obwohl Aspose.PDF für .NET eine kostenlose Testversion anbietet, benötigen Sie für die volle Funktionalität eine gültige Lizenz. Sie erhalten eine[vorläufige Lizenz](https://purchase.aspose.com/temporary-license/) um alle Funktionen zu testen.

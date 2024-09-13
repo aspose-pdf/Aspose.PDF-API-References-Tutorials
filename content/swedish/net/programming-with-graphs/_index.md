@@ -13,11 +13,11 @@ Programmeringshandledningar med grafik från Aspose.PDF för .NET är designade 
 ## Handledningar
 | Titel | Beskrivning |
 | --- | --- | 
-| [Lägg till ritning i PDF-fil](./add-drawing/) | Lär dig hur du lägger till ritning i PDF-fil med Aspose.PDF för .NET. Följ den här steg-för-steg-guiden för att skapa attraktiva PDF-dokument med ritfunktioner. |  
-| [Lägg till ritning med gradientfyllning](./add-drawing-with-gradient-fill/) | Lär dig hur du lägger till en ritning med gradientfyllning med Aspose.PDF för .NET. Steg för steg handledning för att skapa attraktiva PDF-dokument. |  
-| [Lägg till linjeobjekt i PDF-fil](./add-line-object/) | Lär dig hur du lägger till ett anpassat linjeobjekt i en PDF-fil med Aspose.PDF för .NET. |  
-| [Kontroll Rectangle Z Order](./control-rectangle-z-order/) | Lär dig hur du styr Z-ordningen av rektanglar i en PDF-fil med Aspose.PDF för .NET.  |  
-| [Skapa fylld rektangel](./create-filled-rectangle/) | Lär dig hur du skapar en fylld rektangel med Aspose.PDF för .NET. Steg för steg guide för att anpassa fyllningsfärgen. |  
-| [Skapa rektangel med alfafärg](./create-rectangle-with-alpha-color/) | Lär dig hur du skapar en rektangel med transparent färg med Aspose.PDF för .NET. Steg-för-steg-guide för att anpassa transparens. |  
-| [Strecklängd](./dash-length/) | Lär dig hur du ställer in längden på streck med Aspose.PDF för .NET. Steg för steg guide för att anpassa streckmönster. |  
-| [Rita linje](./drawing-line/) | Lär dig hur du drar en linje över en sida med Aspose.PDF för .NET. Steg-för-steg-guide för att skapa anpassade linjer. |  
+| [Lägg till ritning i PDF-fil](./add-drawing/) | Lär dig hur du lägger till ritningar till PDF-filer med Aspose.PDF för .NET. Den här steg-för-steg-guiden täcker färginställningar, lägga till former och spara din PDF. |  
+| [Lägg till ritning med gradientfyllning](./add-drawing-with-gradient-fill/) | Lär dig hur du lägger till fantastiska gradientritningar i PDF-filer med Aspose.PDF för .NET med den här steg-för-steg-guiden, perfekt för att förbättra dokumentbilden. |  
+| [Lägg till linjeobjekt i PDF-fil](./add-line-object/) | Lär dig hur du lägger till ett linjeobjekt till en PDF-fil med Aspose.PDF för .NET i den här steg-för-steg handledningen. Perfekt för nybörjare. |  
+| [Kontroll Rectangle Z Order](./control-rectangle-z-order/) | Lär dig hur du styr rektangel Z-order i PDF med Aspose.PDF för .NET i denna detaljerade steg-för-steg-handledning. Perfekt för utvecklare som vill förbättra PDF-dokument. |  
+| [Skapa fylld rektangel](./create-filled-rectangle/) | Lär dig hur du skapar en fylld rektangel i en PDF med Aspose.PDF för .NET med denna steg-för-steg handledning. Perfekt för utvecklare på alla nivåer. |  
+| [Skapa rektangel med alfafärg](./create-rectangle-with-alpha-color/) | Lär dig hur du skapar genomskinliga rektanglar i en PDF med Aspose.PDF för .NET med denna steg-för-steg handledning. Förbättra dina PDF-filer med alfafärger utan ansträngning. |  
+| [Strecklängd](./dash-length/) | Lär dig hur du anpassar streckmönster i PDF-filer med Aspose.PDF för .NET med vår steg-för-steg-guide. Perfekt för att lägga till stil till dina dokument. |  
+| [Rita linje](./drawing-line/) | Lär dig hur du ritar linjer i ett PDF-dokument med Aspose.PDF för .NET. Denna steg-för-steg-guide tar upp hur du ställer in ditt dokument, lägger till rader och sparar filen. |  

@@ -74,7 +74,7 @@ Console.WriteLine("\nText replaced successfully based on a regular expression.\n
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // 문서 열기
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionPage.pdf");
-// 정규 표현식과 일치하는 모든 구문을 찾기 위해 TextAbsorber 객체를 생성합니다.
+//정규 표현식과 일치하는 모든 구문을 찾기 위해 TextAbsorber 객체를 생성합니다.
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // 1999-2000년처럼
 // 정규 표현식 사용을 지정하기 위한 텍스트 검색 옵션 설정
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);

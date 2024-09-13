@@ -7,41 +7,79 @@ type: docs
 weight: 190
 url: /ja/net/programming-with-document/getwarningsforfontsubstitution/
 ---
-Aspose.PDF for .NETは、開発者が.NETアプリケーションでPDFファイルを作成、編集、変換できるようにする人気のPDF操作ライブラリです。このライブラリが提供する機能の1つは、PDFドキュメントを開いたときにフォント置換の警告を検出する機能です。このチュートリアルでは、`GetWarningsForFontSubstitution` PDF ドキュメントを開くときにフォント置換の警告を検出する Aspose.PDF for .NET の機能。
+## 導入
 
-## ステップ 1: Aspose.PDF for .NET をインストールする
+ドキュメント処理の世界では、PDF が意図したとおりに表示されるようにすることが重要です。PDF を開いたらフォントがすべて間違っていることに気づいたことはありませんか? これは、ドキュメントで使用されている元のフォントが PDF を表示しているシステムで使用できない場合に発生することがあります。幸い、Aspose.PDF for .NET はフォント置換の警告を検出するための堅牢なソリューションを提供し、ドキュメントの整合性を維持できます。このガイドでは、Aspose.PDF for .NET を使用して PDF ドキュメントでフォント置換の検出を設定する手順について説明します。
 
-.NETアプリケーションでAspose.PDF for .NETを使用するには、まずライブラリをインストールする必要があります。ライブラリの最新バージョンは、[Aspose.PDF for .NET ダウンロード ページ](https://relases.aspose.com/pdf/net).
+## 前提条件
 
-ライブラリをダウンロードしたら、ZIP ファイルの内容をコンピューターのフォルダーに解凍します。次に、.NET プロジェクトに Aspose.PDF for .NET DLL への参照を追加する必要があります。
+コードに進む前に、準備しておくべきことがいくつかあります。
 
-## ステップ2: PDFドキュメントを読み込む
+1. Visual Studio: マシンに Visual Studio がインストールされていることを確認してください。ここで .NET コードを記述して実行します。
+2.  Aspose.PDF for .NET: Aspose.PDFライブラリが必要です。ダウンロードは以下から行えます。[サイト](https://releases.aspose.com/pdf/net/).
+3. C# の基礎知識: C# プログラミングに精通していると、コード スニペットをよりよく理解できるようになります。
+4. PDF ドキュメント: フォント置換検出をテストするために使用できるサンプル PDF ドキュメントを用意します。
 
- Aspose.PDF for .NETをインストールし、.NETプロジェクトにDLLへの参照を追加したら、`GetWarningsForFontSubstitution` PDF ドキュメントを開くときにフォント置換の警告を検出する機能。
+## パッケージのインポート
 
-この機能を使用する最初の手順は、フォント置換警告を検出する PDF ドキュメントを読み込むことです。これを行うには、次のコードを使用します。
+まず、C# プロジェクトに必要なパッケージをインポートする必要があります。手順は次のとおりです。
+
+### 新しいプロジェクトを作成する
+
+Visual Studio を開き、新しい C# プロジェクトを作成します。簡単にするために、コンソール アプリケーションを選択できます。
+
+### Aspose.PDF 参照の追加
+
+1. ソリューション エクスプローラーでプロジェクトを右クリックします。
+2. 「NuGet パッケージの管理」を選択します。
+3. 「Aspose.PDF」を検索し、最新バージョンをインストールしてください。
+
+### 名前空間をインポートする
+
+C# ファイルの先頭で、Aspose.PDF 名前空間をインポートします。
 
 ```csharp
-// PDF文書へのパス
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
 
-// PDF文書を開く
+これですべての設定が完了したので、フォント置換警告を検出するプロセスを管理しやすいステップに分解してみましょう。
+
+## ステップ1: ドキュメントパスを定義する
+
+まず、PDF ドキュメントへのパスを指定する必要があります。これは、Aspose.PDF がファイルを検索する場所です。
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+交換する`"YOUR DOCUMENT DIRECTORY"` PDF ファイルが保存されている実際のパスを入力します。
+
+## ステップ2: PDFドキュメントを開く
+
+次に、PDF文書を`Document` Aspose.PDF によって提供されるクラス。
+
+```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-上記のコードでは、`"YOUR DOCUMENT DIRECTORY"` PDF文書があるディレクトリへのパスを入力します。このコードはPDF文書を`Document`オブジェクトを使用して、フォント置換の警告を検出できます。
+このコード行は新しい`Document` PDF ファイルにオブジェクトを追加します。
 
-## ステップ3: フォント置換の警告を検出する
+## ステップ3: フォント置換検出を設定する
 
-PDF ドキュメントを開くときにフォント置換の警告を検出するには、次のコードを使用できます。
+さて、フォント置換の警告を検出するイベントハンドラを設定します。`FontSubstitution`イベントの`Document`クラス。
 
 ```csharp
 doc.FontSubstitution += new Document.FontSubstitutionHandler(OnFontSubstitution);
 ```
 
-上記のコードでは、`OnFontSubstitution`フォント置換の警告が検出されるたびに呼び出されるメソッドです。このメソッドをカスタマイズして、フォント置換の警告を任意の方法で処理できます。
+この行は、次に定義するカスタム メソッドにイベントを接続します。
 
-以下は、`OnFontSubstitution`方法：
+## ステップ4: フォント置換の警告を処理する
+
+フォント置換の警告を処理するメソッドを作成する必要があります。このメソッドは、フォント置換が発生するたびに呼び出されます。
 
 ```csharp
 private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArgs e)
@@ -50,47 +88,29 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 }
 ```
 
-上記のコードでは、`OnFontSubstitution`このメソッドは、フォント置換の警告が検出されるたびに、元のフォント名と置換されたフォント名をコンソールに出力するだけです。このメソッドをカスタマイズして、フォント置換の警告を任意の方法で処理できます。
+この方法では、元のフォント名と置換されたフォント名をコンソールに記録できます。これにより、どのような変更が行われたかを正確に把握できます。
 
-### Aspose.NET for PDF を使用してフォント置換の警告を取得するためのサンプル ソース コード
+## ステップ5: コードを実行する
 
-以下は、PDF文書を開くときにフォント置換の警告を検出するための完全なソースコードです。`GetWarningsForFontSubstitution` Aspose.PDF for .NET の機能:
-
-```csharp
-// PDF文書へのパス
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// PDF文書を開く
-Document doc = new Document(dataDir + "input.pdf");
-
-//フォント置換の警告を検出する
-doc.FontSubstitution += new Document.FontSubstitutionHandler(OnFontSubstitution);
-
-//フォント置換の警告を処理する
-private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArgs e)
-{
-    Console.WriteLine("Font substitution: {0} => {1}", e.OriginalFontName, e.SubstitutedFontName);
-}
-```
+最後に、アプリケーションを実行します。PDF ドキュメントにフォントの置換がある場合は、コンソールに警告が表示されます。
 
 ## 結論
 
-このチュートリアルでは、PDF文書を開くときにフォント置換の警告を検出するためにAspose.PDF for .NETを使用する方法について説明しました。`FontSubstitution`イベントでは、開発者はフォント置換の状況を検出し、アプリケーションのニーズに応じて処理できます。Aspose.PDF for .NET は、フォント置換の警告を検出して処理するための簡単な API を提供し、開発者がさまざまなシステム間で PDF ドキュメントの視覚的な忠実度と一貫性を確保できるようにします。
+PDF ドキュメント内のフォント置換警告を検出することは、ファイルの外観の整合性を維持するために不可欠です。Aspose.PDF for .NET を使用すると、このプロセスは簡単かつ効率的になります。このガイドで説明されている手順に従うことで、フォント置換検出を簡単に設定し、PDF が意図したとおりに表示されることを確認できます。
 
-### よくある質問
+## よくある質問
 
-#### Q: PDF 文書におけるフォントの置換とは何ですか?
+### フォントの置換とは何ですか?
+フォントの置換は、ドキュメントで使用されている元のフォントが使用できず、代わりに別のフォントが使用される場合に発生します。
 
-A: PDF ドキュメントでのフォントの置換は、ドキュメントで使用されているフォントが利用できないか、ファイルに埋め込まれていない場合に発生します。このような場合、ビューアまたはプリンタは、不足しているフォントをシステムで利用可能な類似のフォントに置き換えます。フォントの置換は、ドキュメントの外観とレイアウトに影響を与える可能性があります。
+### フォントの置換を防ぐにはどうすればよいですか?
+フォントの置換を防ぐには、PDF で使用されるすべてのフォントがドキュメント内に埋め込まれていることを確認してください。
 
-#### Q: フォントの置換を検出することが重要なのはなぜですか?
+### Aspose.PDF を無料で使用できますか?
+はい、Aspose.PDF では機能をテストできる無料トライアルを提供しています。
 
-A: フォントの置換は、PDF ドキュメントの視覚的な忠実度とレイアウトに影響を与える可能性があるため、検出することが重要です。フォントの置換の警告を検出することで、開発者はフォントが置換されている状況を特定し、適切なアクションを実行して、異なるシステム間でドキュメントの外観が一貫していることを確認できます。
+### さらに詳しいドキュメントはどこで見つかりますか?
+ Aspose.PDF for .NETの詳細なドキュメントをご覧ください。[ここ](https://reference.aspose.com/pdf/net/).
 
-#### Q: フォント置換の警告にはどのように対処すればよいですか?
-
- A: フォント置換の警告に対処するには、`FontSubstitution`イベントの`Document`クラスを作成し、イベントを処理するカスタム メソッドを提供します。このカスタム メソッドでは、フォント置換の警告をログに記録したり、ユーザーに通知したり、アプリケーションの要件に基づいてその他のアクションを実行したりできます。
-
-#### Q: フォント置換警告の処理をカスタマイズできますか?
-
- A: はい、フォント置換警告の処理をカスタマイズするには、カスタムメソッドを用意します。`FontSubstitution`イベント。このカスタム メソッドでは、フォント置換の警告をログに記録したり、ユーザーに通知したり、アプリケーションの要件に基づいてその他の適切なアクションを実行したりできます。
+### Aspose.PDF のサポートを受けるにはどうすればよいですか?
+サポートを受けるには、[Aspose サポート フォーラム](https://forum.aspose.com/c/pdf/10).

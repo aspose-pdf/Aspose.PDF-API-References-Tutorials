@@ -37,7 +37,7 @@ Document doc = new Document();
 ```
 
 ## Krok 5: Dodaj stronę do dokumentu
- Dodaj nową stronę do dokumentu za pomocą`Add` metoda`Pages`kolekcja. W podanym kodzie nowa strona jest przypisana do zmiennej`page`.
+ Dodaj nową stronę do dokumentu za pomocą`Add` metoda`Pages` kolekcja. W podanym kodzie nowa strona jest przypisana do zmiennej`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -51,7 +51,7 @@ HtmlFragment titel = new HtmlFragment("<fontsize=10><b><i>Table</i></b></fontsiz
 ```
 
 ## Krok 7: Ustaw informacje o marginesie
-W razie potrzeby dostosuj dolny i górny margines fragmentu HTML. W podanym kodzie dolny margines jest ustawiony na 10, a górny na 200.
+razie potrzeby dostosuj dolny i górny margines fragmentu HTML. W podanym kodzie dolny margines jest ustawiony na 10, a górny na 200.
 
 ```csharp
 title. Margin. Bottom = 10;

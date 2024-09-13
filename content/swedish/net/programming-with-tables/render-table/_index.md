@@ -1,7 +1,7 @@
 ---
 title: Återge tabell i PDF-dokument
 linktitle: Återge tabell i PDF-dokument
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du visar en tabell i PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 170
@@ -154,7 +154,7 @@ Grattis! Du har nu lärt dig hur du visar en tabell i ett PDF-dokument med Aspos
 
 #### F: Hur kan jag ändra tabellens utseende, som att ändra cellfärger eller lägga till kanter?
 
-S: För att ändra tabellens utseende kan du ställa in olika egenskaper för`Aspose.Pdf.Table` och dess celler. Du kan till exempel ställa in`BackgroundColor` egenskap hos celler för att ändra deras bakgrundsfärg. Du kan också ställa in`Border` egenskapen för tabellen eller enskilda celler för att lägga till ramar. Dessutom kan du anpassa teckensnitt, textfärg och justering av tabellinnehållet genom att ändra`TextState` av`TextFragment` objekt som lagts till i cellerna.
+ S: För att ändra tabellens utseende kan du ställa in olika egenskaper för`Aspose.Pdf.Table` och dess celler. Du kan till exempel ställa in`BackgroundColor` egenskap hos celler för att ändra deras bakgrundsfärg. Du kan också ställa in`Border` egenskapen för tabellen eller enskilda celler för att lägga till ramar. Dessutom kan du anpassa teckensnitt, textfärg och justering av tabellinnehållet genom att ändra`TextState` av`TextFragment` objekt som lagts till i cellerna.
 
 #### F: Kan jag lägga till sidhuvuden eller sidfötter i tabellen?
 
@@ -162,7 +162,7 @@ S: Ja, du kan lägga till sidhuvuden eller sidfötter i tabellen genom att skapa
 
 #### F: Hur kan jag kontrollera tabellens position på sidan?
 
- S: För att kontrollera tabellens position på sidan kan du justera`MarginInfo` av`PageInfo` objekt. De`MarginInfo`låter dig ställa in vänster, höger, övre och nedre marginalerna på sidan, vilket påverkar det tillgängliga utrymmet för tabellen. Du kan också använda`PositioningType` egendom av`Aspose.Pdf.Table` för att kontrollera dess horisontella och vertikala justering inom sidans innehållsområde.
+S: För att kontrollera tabellens position på sidan kan du justera`MarginInfo` av`PageInfo` objekt. De`MarginInfo` låter dig ställa in vänster, höger, övre och nedre marginalerna på sidan, vilket påverkar det tillgängliga utrymmet för tabellen. Du kan också använda`PositioningType` egendom av`Aspose.Pdf.Table` för att kontrollera dess horisontella och vertikala justering inom sidans innehållsområde.
 
 #### F: Kan jag exportera tabellen till olika filformat, som Excel eller CSV?
 

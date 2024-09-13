@@ -307,7 +307,7 @@ A: Ya, Anda dapat menyesuaikan tampilan dan format elemen struktur sebaris. Anda
 
 #### T: Bagaimana cara membuat dan menambahkan judul berbagai tingkatan ke dokumen PDF menggunakan elemen struktur sebaris di Aspose.PDF untuk .NET?
 
- A: Anda dapat membuat judul dengan level berbeda menggunakan`CreateHeaderElement` metode dan kemudian menambahkannya ke elemen struktur akar. Selanjutnya, Anda dapat menambahkan konten ke setiap elemen judul menggunakan`CreateSpanElement` metode untuk membuat rentang teks.
+ A: Anda dapat membuat judul dengan level berbeda menggunakan`CreateHeaderElement`metode dan kemudian menambahkannya ke elemen struktur akar. Selanjutnya, Anda dapat menambahkan konten ke setiap elemen judul menggunakan`CreateSpanElement` metode untuk membuat rentang teks.
 
 #### T: Dapatkah saya menggunakan elemen struktur sebaris untuk membuat daftar, poin-poin penting, atau jenis organisasi konten lainnya dalam dokumen PDF?
 

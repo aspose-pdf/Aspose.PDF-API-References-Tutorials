@@ -32,7 +32,7 @@ using Aspose.Pdf.Text;
  Suchen Sie im Code nach der Zeile, die besagt:`string dataDir = "YOUR DOCUMENT DIRECTORY";` und ersetzen`"YOUR DOCUMENT DIRECTORY"` durch den Pfad zum Verzeichnis, in dem Ihre Dokumente gespeichert sind.
 
 ## Schritt 4: Erstellen Sie ein Beispieldokument mit Text
- Erstellen Sie ein neues`Document` Objekt und Seiten mit Textfragmenten hinzufügen. Im bereitgestellten Code werden dem Dokument zwei Textfragmente mit dem jeweiligen Tooltip-Text hinzugefügt.
+ Erstellen Sie ein neues`Document`Objekt und Seiten mit Textfragmenten hinzufügen. Im bereitgestellten Code werden dem Dokument zwei Textfragmente mit dem jeweiligen Tooltip-Text hinzugefügt.
 
 ```csharp
 Document doc = new Document();
@@ -98,7 +98,7 @@ doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to disp
 doc.Save(outputFile);
 // Dokument mit Text öffnen
 Document document = new Document(outputFile);
-// Erstellen Sie ein TextAbsorber-Objekt, um alle Phrasen zu finden, die dem regulären Ausdruck entsprechen
+//Erstellen Sie ein TextAbsorber-Objekt, um alle Phrasen zu finden, die dem regulären Ausdruck entsprechen
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
 // Akzeptieren Sie den Absorber für die Dokumentseiten
 document.Pages.Accept(absorber);
@@ -143,7 +143,7 @@ Sie haben mit Aspose.PDF für .NET erfolgreich Tooltips zum Text in einem PDF-Do
 
 #### F: Worauf liegt der Schwerpunkt dieses Tutorials?
 
-A: In diesem Tutorial geht es darum, mithilfe der Bibliothek Aspose.PDF für .NET Tooltips zu Text in einer PDF-Datei hinzuzufügen. Der bereitgestellte C#-Quellcode zeigt die dazu erforderlichen Schritte.
+A: In diesem Tutorial geht es darum, mithilfe der Aspose.PDF-Bibliothek für .NET Tooltips zu Text in einer PDF-Datei hinzuzufügen. Der bereitgestellte C#-Quellcode zeigt die dazu erforderlichen Schritte.
 
 #### F: Welche Namespaces müssen für dieses Tutorial importiert werden?
 
@@ -169,7 +169,7 @@ using Aspose.Pdf.Text;
 
 #### F: Wie füge ich den Textfragmenten Tooltips hinzu?
 
- A: In Schritt 6 durchlaufen Sie die extrahierten Textfragmente und erstellen unsichtbare Schaltflächen an deren Positionen. Der Tooltip-Text wird dem`AlternateName` Eigentum der`ButtonField`das dem Formular des Dokuments hinzugefügt wird.
+ A: In Schritt 6 durchlaufen Sie die extrahierten Textfragmente und erstellen unsichtbare Schaltflächen an deren Positionen. Der Tooltip-Text wird dem`AlternateName` Eigentum der`ButtonField`, das dem Formular des Dokuments hinzugefügt wird.
 
 #### F: Wie wiederhole ich den Vorgang für weitere Textfragmente mit langen Tooltips?
 

@@ -1,8 +1,8 @@
 ---
-title: Fájltömörítés letiltása PDF fájlban
-linktitle: Fájltömörítés letiltása PDF fájlban
+title: Fájlok tömörítésének letiltása PDF fájlban
+linktitle: Fájlok tömörítésének letiltása PDF fájlban
 second_title: Aspose.PDF for .NET API Reference
-description: Ebből a lépésről lépésre szóló útmutatóból megtudhatja, hogyan tilthatja le a PDF-fájlok tömörítését az Aspose.PDF for .NET használatával. Javítsa PDF-kezelési készségeit.
+description: Ebből a lépésről lépésre szóló útmutatóból megtudhatja, hogyan tilthatja le a PDF-fájlok tömörítését az Aspose.PDF for .NET használatával. Növelje PDF-kezelési készségeit.
 type: docs
 weight: 30
 url: /hu/net/programming-with-attachments/disable-files-compression/

@@ -110,7 +110,7 @@ doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to d
 doc.Save(outputFile);
 // पाठ सहित दस्तावेज़ खोलें
 Document document = new Document(outputFile);
-// नियमित अभिव्यक्ति से मेल खाने वाले सभी वाक्यांशों को खोजने के लिए TextAbsorber ऑब्जेक्ट बनाएं
+//नियमित अभिव्यक्ति से मेल खाने वाले सभी वाक्यांशों को खोजने के लिए TextAbsorber ऑब्जेक्ट बनाएं
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
 // दस्तावेज़ पृष्ठों के लिए अवशोषक स्वीकार करें
 document.Pages.Accept(absorber);

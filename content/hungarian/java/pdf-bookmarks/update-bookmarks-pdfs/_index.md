@@ -14,7 +14,7 @@ Ebben az oktatóanyagban megvizsgáljuk, hogyan frissíthetjük a könyvjelzőke
 
 ## Az Aspose.PDF for Java megértése
 
-Az Aspose.PDF for Java egy funkciókban gazdag PDF-manipulációs könyvtár, amely lehetővé teszi a fejlesztők számára PDF-dokumentumok létrehozását, szerkesztését és kezelését Java alkalmazásokban. A lehetőségek széles skáláját kínálja, beleértve a könyvjelzők használatát is, amelyek interaktív hivatkozások vagy vázlatok, amelyek tartalomjegyzéket biztosítanak a PDF-fájlok számára.
+Az Aspose.PDF for Java egy funkciókban gazdag PDF-manipulációs könyvtár, amely lehetővé teszi a fejlesztők számára PDF-dokumentumok létrehozását, szerkesztését és kezelését Java alkalmazásokban. A lehetőségek széles skáláját kínálja, beleértve a könyvjelzőkkel való munkát is, amelyek interaktív hivatkozások vagy vázlatok, amelyek tartalomjegyzéket biztosítanak a PDF-fájlok számára.
 
 ## Előfeltételek
 

@@ -7,105 +7,131 @@ type: docs
 weight: 10
 url: /nl/net/programming-with-pdf-pages/change-orientation/
 ---
-In deze tutorial leiden we u stapsgewijs door het proces om de pagina-oriëntatie van een PDF-document te wijzigen met Aspose.PDF voor .NET. We leggen de gebundelde C#-broncode uit en bieden u een uitgebreide handleiding om u te helpen deze functie te begrijpen en te implementeren in uw eigen projecten. Aan het einde van deze tutorial weet u hoe u de pagina-oriëntatie van uw PDF-documenten kunt wijzigen met Aspose.PDF voor .NET.
+## Invoering
+
+Heb je ooit moeite gehad met een PDF-bestand waarvan de pagina-oriëntatie gewoon... niet klopte? Misschien heb je te maken met een document dat verkeerd is gescand of gemaakt, en de pagina's moeten worden gedraaid om logisch te zijn. Gelukkig voor ons biedt Aspose.PDF voor .NET een eenvoudige, krachtige manier om PDF-bestanden op vrijwel elke denkbare manier te manipuleren, inclusief het wijzigen van de oriëntatie van je pagina's. Of je nu wilt overschakelen van staand naar liggend of andersom, deze gids leidt je stap voor stap door het proces.
+
+Dus, als u er klaar voor bent om aan de slag te gaan en die PDF-pagina's eenvoudig te roteren, laten we dan beginnen!
 
 ## Vereisten
-Voordat u begint, moet u ervoor zorgen dat u het volgende bij de hand hebt:
 
-- Basiskennis van de programmeertaal C#
-- Aspose.PDF voor .NET geïnstalleerd in uw ontwikkelomgeving
+Voordat we dieper ingaan op het wijzigen van de pagina-oriëntatie in uw PDF, leggen we eerst kort uit wat u hiervoor nodig hebt:
 
-## Stap 1: Definieer de documentdirectory
-Eerst moet u het pad naar uw documentenmap instellen. Dit is de locatie waar uw invoer-PDF-bestand zich bevindt en waar u uw gewijzigde uitvoer-PDF-bestand wilt opslaan. Vervang "UW DOCUMENTENMAP" door het juiste pad.
+-  Aspose.PDF voor .NET: Zorg ervoor dat u de Aspose.PDF-bibliotheek voor .NET hebt geïnstalleerd. Als u dat niet hebt gedaan, kunt u[download het hier](https://releases.aspose.com/pdf/net/).
+- Een .NET-ontwikkelomgeving: u kunt Visual Studio, JetBrains Rider of een andere gewenste IDE gebruiken om met .NET te werken.
+- Basiskennis van C#: Hoewel deze gids eenvoudig is, is het met enige basiskennis van C# nog makkelijker te volgen.
+- Een PDF-bestand: In het onderstaande voorbeeld wordt ervan uitgegaan dat u een PDF-bestand met meerdere pagina's hebt. Als u er geen bij de hand hebt, kunt u een voorbeeld-PDF maken of downloaden om mee te werken.
+
+ Als u nog maar net begint, kunt u Aspose.PDF ook proberen met een[gratis tijdelijke licentie](https://purchase.aspose.com/temporary-license/) voordat u besluit om[koop de volledige versie](https://purchase.aspose.com/buy).
+
+## Naamruimten importeren
+
+Voordat u de oriëntatie van pagina's in uw PDF kunt manipuleren, moet u de benodigde naamruimten importeren in uw C#-project. Zorg ervoor dat u het volgende hebt:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
 ```
 
-## Stap 2: Laad het PDF-document
- Vervolgens kunt u het PDF-document vanuit het invoerbestand laden met behulp van de`Document` klasse van Aspose.PDF. Zorg ervoor dat u het juiste pad naar het PDF-bestand opgeeft.
+Nu we dit hebben geïmporteerd, kunnen we verder met het hoofdonderdeel van de tutorial.
+
+## Stap 1: Laad het PDF-document
+
+ Het eerste wat we moeten doen is het PDF-bestand laden dat u wilt wijzigen. U kunt de`Document` klasse uit de Aspose.PDF-naamruimte om uw PDF te openen.
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Stap 3: Wijzig de pagina-oriëntatie
-Nu gaan we elke pagina van het document doorlopen en de oriëntatie ervan wijzigen. Voor elke pagina wijzigen we de afmetingen van de mediabox (`MediaBox`) door de breedte en hoogte om te wisselen, dan passen we de coördinaten van de mediabox aan om de positie van de pagina te behouden. Tot slot stellen we de paginarotatie in op 90 graden.
+ Deze regel laadt de PDF uit uw opgegeven directory. Zorg ervoor dat u vervangt`"YOUR DOCUMENT DIRECTORY"` met het werkelijke pad naar uw bestand. De`"input.pdf"` is de PDF waarvan u de oriëntatie wilt wijzigen.
+
+## Stap 2: Loop door elke pagina
+
+ Nu we het document hebben geladen, gaan we door elke pagina in de PDF heen. We gebruiken een`foreach` doorloop elke pagina, zodat we de oriëntatiewijziging op alle pagina's kunnen toepassen.
 
 ```csharp
-foreach(Page page in doc.Pages)
+foreach (Page page in doc.Pages)
 {
+    // Manipuleer elke pagina
+}
+```
+
+Deze lus doorloopt alle pagina's in het document.
+
+## Stap 3: Haal de MediaBox van de pagina op
+
+ Elke pagina in een PDF heeft een`MediaBox` die de grenzen van de pagina definieert. We moeten hier toegang toe hebben om de huidige oriëntatie te bepalen en deze te wijzigen.
+
+```csharp
 Aspose.Pdf.Rectangle r = page.MediaBox;
+```
+
+ De`MediaBox` geeft ons de afmetingen van de pagina, zoals de breedte, hoogte en positionering.
+
+## Stap 4: Wissel de breedte en hoogte om
+
+Om de pagina-oriëntatie te veranderen van staand naar liggend of van liggend naar staand, wisselen we simpelweg de breedte- en hoogtewaarden om. Deze stap past de afmetingen van de pagina aan.
+
+```csharp
 double newHeight = r.Width;
 double newWidth = r.Height;
 double newLLX = r.LLX;
 double newLLY = r.LLY + (r.Height - newHeight);
+```
+
+Deze code verwisselt de hoogte en breedte en verplaatst de linkerbenedenhoek (`LLY`) zodat de inhoud na rotatie netjes blijft passen.
+
+## Stap 5: MediaBox en CropBox updaten
+
+Nu we de nieuwe hoogte en breedte hebben, kunnen we de wijzigingen toepassen op de pagina.`MediaBox` En`CropBox` . De`CropBox` is essentieel als het originele document één set had, zodat de hele pagina correct wordt weergegeven.
+
+```csharp
 page.MediaBox = new Aspose.Pdf.Rectangle(newLLX, newLLY, newLLX + newWidth, newLLY + newHeight);
 page.CropBox = new Aspose.Pdf.Rectangle(newLLX, newLLY, newLLX + newWidth, newLLY + newHeight);
-page. Rotate = Rotate. on90;
-}
 ```
 
-## Stap 4: Sla het gewijzigde PDF-document op
- Ten slotte kunt u het gewijzigde PDF-document opslaan als een uitvoerbestand met behulp van de`Save()` methode van de`Document`klasse. Zorg ervoor dat u het juiste pad en de juiste bestandsnaam opgeeft.
+Met deze stap wordt de pagina aangepast op basis van de nieuwe afmetingen die we zojuist hebben berekend.
+
+## Stap 6: Draai de pagina
+
+Tot slot stellen we de rotatiehoek van de pagina in. Aspose.PDF maakt dit supersimpel. We kunnen de pagina 90 graden draaien om van portret naar landschap te gaan of andersom.
+
+```csharp
+page.Rotate = Rotation.on90;
+```
+
+Met deze code wordt de pagina 90 graden gedraaid, waardoor deze in de gewenste stand komt.
+
+## Stap 7: Sla de uitvoer-PDF op
+
+Nadat we de gewijzigde oriëntatie op alle pagina's hebben toegepast, slaan we het gewijzigde document op in een nieuw bestand. 
 
 ```csharp
 dataDir = dataDir + "ChangeOrientation_out.pdf";
-doc.Save(dataDir);
-```
-
-### Voorbeeldbroncode voor Wijzigingsoriëntatie met behulp van Aspose.PDF voor .NET 
-
-```csharp
-
-// Het pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document doc = new Document(dataDir + "input.pdf");
-foreach (Page page in doc.Pages)
-{
-	Aspose.Pdf.Rectangle r = page.MediaBox;
-	double newHeight = r.Width;
-	double newWidth = r.Height;
-	double newLLX = r.LLX;
-	// We moeten de pagina naar boven verplaatsen om de veranderende paginagrootte te compenseren
-	// (onderkant van de pagina is 0,0 en informatie wordt meestal geplaatst vanaf de
-	// Bovenaan de pagina. Daarom verplaatsen we lover edge upper op verschil tussen
-	// Oude en nieuwe hoogte.
-	double newLLY = r.LLY + (r.Height - newHeight);
-	page.MediaBox = new Aspose.Pdf.Rectangle(newLLX, newLLY, newLLX + newWidth, newLLY + newHeight);
-	// Soms moeten we ook CropBox instellen (als dit in het originele bestand was ingesteld)
-	page.CropBox = new Aspose.Pdf.Rectangle(newLLX, newLLY, newLLX + newWidth, newLLY + newHeight);
-	// Rotatiehoek van de pagina instellen
-	page.Rotate = Rotation.on90;
-}
-dataDir = dataDir + "ChangeOrientation_out.pdf";
-// Uitvoerbestand opslaan
 doc.Save(dataDir);
 System.Console.WriteLine("\nPage orientation changed successfully.\nFile saved at " + dataDir);
-
 ```
 
-## Conclusie
-In deze tutorial hebben we geleerd hoe u de pagina-oriëntatie van een PDF-document kunt wijzigen met Aspose.PDF voor .NET. Door de hierboven beschreven stappen te volgen, kunt u deze functionaliteit eenvoudig implementeren in uw eigen projecten. U kunt de Aspose.PDF-documentatie verder verkennen om andere handige functies voor het werken met PDF-bestanden te ontdekken.
+ Zorg ervoor dat u een nieuwe bestandsnaam opgeeft (in dit geval`ChangeOrientation_out.pdf`) om de uitvoer op te slaan. Op deze manier overschrijf je je originele bestand niet.
 
-### Veelgestelde vragen
+### Conclusie
 
-#### V: Wat is het doel van het wijzigen van de pagina-oriëntatie in een PDF-document?
+En daar heb je het! Het wijzigen van de pagina-oriëntatie van een PDF-bestand met Aspose.PDF voor .NET is net zo eenvoudig als het laden van het document, het doorlopen van de pagina's, het aanpassen van de MediaBox en het opslaan van het bijgewerkte bestand. Of je nu te maken hebt met een slecht gescand document of pagina's moet roteren om ze aan te passen aan je opmaakbehoeften, deze stapsgewijze handleiding zou je moeten helpen.
 
-A: Door de pagina-oriëntatie in een PDF-document te wijzigen, kunt u de inhoud van de pagina 90 graden draaien. Dit kan handig zijn in scenario's waarin de originele inhoud in een andere oriëntatie moet worden weergegeven of afgedrukt, zoals het wisselen van portret- naar landschapsmodus of omgekeerd.
+## Veelgestelde vragen
 
-#### V: Kan ik de afdrukstand van specifieke pagina's in het PDF-document wijzigen?
+### Kan ik specifieke pagina's roteren in plaats van alle pagina's in de PDF?  
+Ja, u kunt de lus aanpassen om specifieke pagina's te targeten met behulp van hun index in plaats van door alle pagina's te lussen.
 
- A: Ja, u kunt de oriëntatie van specifieke pagina's in het PDF-document wijzigen. In de meegeleverde C#-broncode staat de`foreach` loop wordt gebruikt om elke pagina van het document te doorlopen en de oriëntatie te wijzigen. Als u alleen de oriëntatie van specifieke pagina's wilt wijzigen, kunt u de loop aanpassen om die pagina's te targeten op basis van hun paginanummers of andere criteria.
+###  Wat is de`MediaBox`?  
+ De`MediaBox` definieert de grootte en vorm van de pagina in een PDF-bestand. Het is waar de inhoud van de pagina wordt geplaatst.
 
-#### V: Heeft het wijzigen van de paginaoriëntatie invloed op de lay-out van de inhoud op de pagina?
+### Werkt Aspose.PDF voor .NET met andere bestandsformaten?  
+Ja, Aspose.PDF kan verschillende bestandsformaten verwerken, zoals HTML, XML, XPS en meer.
 
-A: Ja, het wijzigen van de pagina-oriëntatie heeft invloed op de lay-out van de content op de pagina. De content wordt 90 graden gedraaid en de breedte en hoogte van de pagina worden verwisseld. Als gevolg hiervan kunnen de plaatsing en uitlijning van de content op de pagina veranderen.
+### Bestaat er een gratis versie van Aspose.PDF voor .NET?  
+ Ja, u kunt beginnen met een[gratis proefperiode](https://releases.aspose.com/) of vraag een[tijdelijke licentie](https://purchase.aspose.com/temporary-license/).
 
-#### V: Kan ik de pagina in een andere hoek dan 90 graden draaien?
-
- A: In de meegeleverde C#-broncode is de paginarotatie ingesteld op 90 graden met behulp van`page.Rotate = Rotate.on90;` . U kunt de rotatiehoek echter naar andere waarden wijzigen indien nodig. U kunt bijvoorbeeld gebruiken`Rotate.on180` om de pagina 180 graden te draaien of`Rotate.on270` om het 270 graden te draaien.
-
-#### V: Hoe ga ik om met de pagina-inhoud die overloopt nadat ik de oriëntatie heb gewijzigd?
-
-A: Wanneer u de pagina-oriëntatie wijzigt, kunnen de afmetingen van de pagina veranderen, wat kan leiden tot overloop van de inhoud. Om dit te verwerken, moet u mogelijk de lay-out en opmaak van de inhoud op de pagina aanpassen. U kunt functies gebruiken die worden geboden door Aspose.PDF voor .NET, zoals het wijzigen van de grootte van elementen, het aanpassen van marges of het reorganiseren van inhoud, om ervoor te zorgen dat de pagina-inhoud goed past na de wijziging van de oriëntatie.
+### Kan ik de wijzigingen ongedaan maken nadat ik ze heb opgeslagen?  
+Zodra u het document opslaat, zijn de wijzigingen permanent. Zorg ervoor dat u aan een kopie werkt of een back-up van het originele bestand bewaart.

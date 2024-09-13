@@ -10,7 +10,7 @@ url: /fr/java/pdf-annotations/apply-redaction-sensitive-content/
 
 ## Introduction à la rédaction
 
-La rédaction est le processus qui consiste à supprimer ou à masquer de manière permanente des informations sensibles contenues dans un document, les rendant inaccessibles à toute personne qui ne devrait pas y avoir accès. Ce processus est couramment utilisé pour protéger des données confidentielles, telles que des numéros de sécurité sociale, des informations financières ou des adresses personnelles, dans des documents tels que des contrats juridiques, des rapports financiers ou des documents gouvernementaux.
+La rédaction est le processus qui consiste à supprimer ou à masquer de manière permanente des informations sensibles dans un document, les rendant inaccessibles à toute personne qui ne devrait pas y avoir accès. Ce processus est couramment utilisé pour protéger des données confidentielles, telles que des numéros de sécurité sociale, des informations financières ou des adresses personnelles, dans des documents tels que des contrats juridiques, des rapports financiers ou des documents gouvernementaux.
 
 ## Prérequis
 

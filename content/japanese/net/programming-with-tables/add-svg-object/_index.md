@@ -105,7 +105,7 @@ page.Paragraphs.Add(table);
 
 ```csharp
 dataDir = dataDir + "AddSVGObject_out.pdf";
-//PDFファイルを保存
+// PDFファイルを保存
 doc.Save(dataDir);
 
 Console.WriteLine("\nSVG image added successfully inside a table cell.\nFile saved at " + dataDir);
@@ -149,7 +149,7 @@ Page page = doc.Pages.Add();
 page.Paragraphs.Add(table);
 
 dataDir = dataDir + "AddSVGObject_out.pdf";
-//PDFファイルを保存
+// PDFファイルを保存
 doc.Save(dataDir);
 
 Console.WriteLine("\nSVG image added successfully inside a table cell.\nFile saved at " + dataDir);            

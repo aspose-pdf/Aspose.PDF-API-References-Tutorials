@@ -42,7 +42,7 @@ Document doc = new Document();
 ```
 
 ## Stap 5: Voeg een pagina toe aan het document
- Voeg een nieuwe pagina toe aan het document met behulp van de`Add` methode van de`Pages`verzameling. In de meegeleverde code wordt de nieuwe pagina toegewezen aan de variabele`page`.
+ Voeg een nieuwe pagina toe aan het document met behulp van de`Add` methode van de`Pages` verzameling. In de meegeleverde code wordt de nieuwe pagina toegewezen aan de variabele`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -90,7 +90,7 @@ doc.Save(dataDir);
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantieer Document object
+// Instantieer Document-object
 Document doc = new Document();
 // Voeg een pagina toe aan de paginaverzameling van een PDF-bestand
 Page page = doc.Pages.Add();
@@ -112,7 +112,7 @@ doc.Save(dataDir);
 ```
 
 ## Conclusie
-U hebt HTML-inhoud succesvol toegevoegd met behulp van DOM in Aspose.PDF voor .NET en de stijlen voor de HTML-inhoud overschreven. Het resulterende PDF-bestand is nu te vinden op het opgegeven pad naar het uitvoerbestand.
+hebt HTML-inhoud succesvol toegevoegd met behulp van DOM in Aspose.PDF voor .NET en de stijlen voor de HTML-inhoud overschreven. Het resulterende PDF-bestand is nu te vinden op het opgegeven pad naar het uitvoerbestand.
 
 ### Veelgestelde vragen
 
@@ -159,7 +159,7 @@ HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Tab
 
 #### V: Hoe kan ik de stijlen van de HTML-inhoud overschrijven?
 
- A: In stap 7 overschrijft u de stijlen van de HTML-inhoud door de`TextState` eigenschappen van de`HtmlFragment` object. U kunt bijvoorbeeld het lettertype wijzigen naar "Arial" en de lettergrootte instellen op 20:
+ A: In stap 7 overschrijft u de stijlen van de HTML-inhoud door de`TextState` eigenschappen van de`HtmlFragment`object. U kunt bijvoorbeeld het lettertype wijzigen naar "Arial" en de lettergrootte instellen op 20:
 
 ```csharp
 title.TextState = new TextState("Arial");

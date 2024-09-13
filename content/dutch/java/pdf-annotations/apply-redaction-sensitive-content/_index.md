@@ -83,7 +83,7 @@ pdfDocument.save("redacted.pdf");
 
 ## Conclusie
 
-In deze gids hebben we onderzocht hoe u redactie toepast op gevoelige inhoud in PDF-documenten met behulp van Aspose.PDF voor Java. Door deze stappen te volgen, kunt u ervoor zorgen dat gevoelige informatie beschermd en vertrouwelijk blijft.
+In deze handleiding hebben we onderzocht hoe u redactie toepast op gevoelige inhoud in PDF-documenten met behulp van Aspose.PDF voor Java. Door deze stappen te volgen, kunt u ervoor zorgen dat gevoelige informatie beschermd en vertrouwelijk blijft.
 
 ## Veelgestelde vragen
 

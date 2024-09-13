@@ -82,7 +82,7 @@ Hier ist eine Aufschlüsselung der Geschehnisse:
 -  Grenze: Wir schaffen eine`Border` Objekt und legen Sie seine Breite auf 5 fest, um unserer Anmerkung einen deutlichen Umriss zu verleihen.
 -  Strichmuster: Das`Dash` Mit der Eigenschaft können Sie einen gestrichelten Rahmen erstellen und so der Anmerkung etwas Stil verleihen.
 
-## Schritt 4: Hinzufügen der Anmerkung zur PDF-Seite
+## Schritt 4: Fügen Sie der PDF-Seite die Anmerkung hinzu
 
 Nachdem Sie die Anmerkung erstellt und angepasst haben, ist es an der Zeit, sie Ihrer PDF-Seite hinzuzufügen.
 

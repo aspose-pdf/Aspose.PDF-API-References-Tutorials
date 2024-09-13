@@ -2,113 +2,115 @@
 title: PDF Dosyasında Eserlerin Sayımı
 linktitle: PDF Dosyasında Eserlerin Sayımı
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET ile PDF dosyasındaki filigranları nasıl kolayca sayacağınızı öğrenin.
+description: Aspose.PDF for .NET kullanarak bir PDF'deki filigranları nasıl sayacağınızı öğrenin. Herhangi bir ön deneyim gerektirmeyen yeni başlayanlar için adım adım kılavuz.
 type: docs
 weight: 60
 url: /tr/net/programming-with-stamps-and-watermarks/counting-artifacts/
 ---
-Bu eğitimde, .NET için Aspose.PDF kullanarak PDF dosyasındaki eserleri nasıl sayacağınızı adım adım göstereceğiz. PDF dosyasının belirli bir sayfasındaki "filigran" eserlerinin sayısını saymak için sağlanan C# kaynak kodunu nasıl kullanacağınızı göstereceğiz.
+## giriiş
 
-## Adım 1: Ortamı kurma
+PDF'lerle uğraşırken, dosyanın içinde filigranlar, açıklamalar ve diğer eserler gibi birçok ek öğe gizlenmiş olabilir. Bu öğeleri anlamak, bir belgeyi denetlemekten bir sonraki büyük sunumunuz için hazırlamaya kadar uzanan görevler için çok önemli olabilir. Aspose.PDF for .NET kullanarak bir PDF dosyasındaki o sinir bozucu eserleri (özellikle filigranları) nasıl sayacağınızı merak ettiyseniz, sizi bir sürpriz bekliyor! Bu eğitimde, bunu adım adım açıklayacağız ve süreçte güvenle ilerleyebilmenizi sağlayacağız. 
 
-Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
+## Ön koşullar
 
-- Kurulu bir .NET geliştirme ortamı.
-- .NET için Aspose.PDF kütüphanesi indirildi ve projenizde referans olarak kullanıldı.
+Koda girip bu anlaşılması zor eser sayılarını çıkarmaya başlamadan önce, yerine getirmeniz gereken birkaç ön koşul var:
 
-## Adım 2: PDF belgesini yükleme
+1. Geliştirme Ortamı: .NET geliştirme ortamınızın kurulu olduğundan emin olun. Bu, Visual Studio veya .NET'i destekleyen herhangi bir IDE olabilir.
+2. .NET için Aspose.PDF: Aspose.PDF kütüphanesinin kurulu olması gerekir. Bunu Visual Studio'daki NuGet Paket Yöneticisi aracılığıyla kolayca yapabilir veya şuradan indirebilirsiniz:[Aspose web sitesi](https://releases.aspose.com/pdf/net/).
+3. Temel C# Bilgisi: Bu eğitimi takip etmek için C# programlamanın temellerini anlamak şarttır.
+4.  Örnek PDF Belgesi: Hazırlanmış bir örnek PDF dosyasına sahip olun, muhtemelen şu şekilde adlandırılmış olsun:`watermark.pdf`Bu belge, eser sayımımızı test etmek için bazı filigranlar içermelidir.
 
-İlk adım, mevcut PDF belgesini projenize yüklemektir. İşte nasıl:
+Artık ön koşullarınızı tamamladığınıza göre, asıl önemli kısma geçelim: Gerekli paketleri içe aktarmak!
+
+## Paketleri İçe Aktar
+
+Koda dalmadan önce, Aspose.PDF paketini içe aktarmanız gerekir. Bu, faydalanmak üzere olduğumuz tüm özelliklere ve işlevlere erişmenizi sağlayacaktır. İşte nasıl olduğu:
+
+```csharp
+using System.IO;
+using System;
+using Aspose.Pdf;
+```
+
+Bu satırların C# dosyanızın en üstünde olduğundan emin olun. Bunlar Aspose.PDF tarafından sağlanan sınıflardan ve yöntemlerden yararlanmanızı sağlar. 
+
+Şimdi ayrıntılara inelim. Bir PDF'deki filigranları (veya genel olarak eserleri) sayma sürecini açık, yönetilebilir adımlara böleceğiz.
+
+## Adım 1: Belge Dizinini Ayarlayın
+
+ İlk önce, PDF dosyalarınızın saklandığı belge dizininiz için yolu ayarlamanız gerekir. Bu, PDF dosyalarınızı bulmak için önemlidir.`watermark.pdf` dosya.
 
 ```csharp
 // Belgeler dizinine giden yol.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Gerçek yolunuzla değiştirin
+```
 
+ Şunlardan emin olmak isteyeceksiniz:`dataDir` değişkeni PDF dosyanızın doğru konumunu gösterir. 
+
+## Adım 2: Belgeyi açın
+
+Sonra, Aspose.PDF kullanarak PDF belgesini açacağız. Bu adımda, belgenizin içeriğine erişeceksiniz.
+
+```csharp
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir + "watermark.pdf");
 ```
 
-"BELGELERİNİZ DİZİNİ" ifadesini PDF belgenizin bulunduğu dizinin gerçek yoluyla değiştirdiğinizden emin olun.
+ Burada yeni bir örnek oluşturuyoruz`Document` PDF dosyamız için nesne. Bu nesne artık PDF'nizdeki verileri temsil ediyor ve bu sayede ondan bilgi çıkarmamıza veya onu düzenlememize olanak sağlıyor.
 
-## Adım 3: Eserleri sayın
+## Adım 3: Sayacı Başlatın
 
-Artık PDF belgesini yüklediğinize göre, belgenin belirli bir sayfasındaki "filigran" türü eserleri sayabilirsiniz. İşte nasıl:
+Keşfetmek üzere olduğunuz filigran sayısını takip etmek için bir sayaca ihtiyacınız olacak. Bu sayacı başlangıçta sıfıra ayarlayın.
 
 ```csharp
-// Sayacı başlat
 int count = 0;
-
-// Tüm ilk sayfa eserlerini dolaş
-foreach(Artifact artifact in pdfDocument.Pages[1].Artifacts)
-{
-     //Eser alt türü "filigran" ise, sayacı artırın
-     if (artifact.Subtype == Artifact.ArtifactSubtype.Watermark)
-         count++;
-}
-
-// "Filigran" türü eserlerin sayısını göster
-Console.WriteLine("The page contains " + count + " watermarks");
 ```
 
-Yukarıdaki kod, PDF belgesinin ilk sayfasındaki tüm eserleri dolaşır ve karşılaşılan her "filigran" türü eser için sayacı artırır.
+Özel bir sayaç kullanmak, sayısal hesaplamalarda kaybolmadan bulduğumuz filigranları toplamamıza yardımcı olacaktır.
 
-### .NET için Aspose.PDF kullanarak Eserleri Sayma için örnek kaynak kodu 
+## Adım 4: Eserler Arasında Döngü Oluşturun
+
+Şimdi eğlenceli kısma geliyoruz: filigranları bulmak! PDF belgenizin ilk sayfasında bulunan eserler arasında gezinmek isteyeceksiniz.
+
 ```csharp
-
-// Belgeler dizinine giden yol.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Belgeyi aç
-Document pdfDocument = new Document( dataDir +  "watermark.pdf");
-
-int count = 0;
 foreach (Artifact artifact in pdfDocument.Pages[1].Artifacts)
 {
-	// Eğer eser türü filigran ise, sayacı artırın
-	if (artifact.Subtype == Artifact.ArtifactSubtype.Watermark) count++;
+    // Eser türü filigran ise, sayacı artırın
+    if (artifact.Subtype == Artifact.ArtifactSubtype.Watermark) count++;
 }
-Console.WriteLine("Page contains " + count + " watermarks");
-
 ```
 
-## Çözüm
+Bu kod parçasında, her bir yapıtı yineliyoruz ve alt türünün bir filigranın alt türüyle eşleşip eşleşmediğini kontrol ediyoruz. Eşleşiyorsa, sayacımızı akıllıca artırıyoruz!
 
-Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesindeki "filigran" eserlerini nasıl sayacağınızı öğrendiniz. Artık bu bilgiyi kullanarak PDF belgelerinizdeki eserler üzerinde belirli analizler ve işlemler gerçekleştirebilirsiniz.
+## Adım 5: Sonucu Çıktı Olarak Verin
 
-### PDF dosyasındaki eserleri saymaya ilişkin SSS
+Son olarak, belgede kaç tane filigran tespit ettiğimizi görme zamanı geldi. O muhteşem sayıyı konsola yazdıralım:
 
-#### S: PDF belgesindeki eserler nelerdir ve bunları neden saymam gerekir?
+```csharp
+Console.WriteLine("Page contains " + count + " watermarks");
+```
 
-A: PDF belgesindeki eserler, belgenin içeriğini veya görünümünü doğrudan etkilemeyen ancak erişilebilirlik veya meta veri gibi belirli amaçlar için eklenen öğelerdir. Eserleri saymak, filigranlar, açıklamalar veya gizli içerik gibi bir PDF içindeki belirli öğeleri tanımlamanıza ve analiz etmenize yardımcı olabilir.
+Bu basit satır PDF'nizde kaç tane filigranın güzelce durduğunu ortaya çıkaracaktır. Perdeyi geri çekip gizli öğeleri ortaya çıkarmak gibi!
 
-#### S: Aspose.PDF for .NET kullanarak bir PDF belgesinde sayılacak yapıt türlerini nasıl belirlerim?
+## Çözüm 
 
- A: Sağlanan C# kaynak kodu, bir PDF belgesinin belirli bir sayfasındaki "filigran" yapıtlarının nasıl sayılacağını gösterir. Kodu, farklı türlerdeki yapıtları sayacak şekilde değiştirerek değiştirebilirsiniz.`ArtifactSubtype` "Açıklama", "Damga" veya "Bağlantı" gibi istenen alt türe kıyaslama.
+Tebrikler! Aspose.PDF for .NET kullanarak bir PDF dosyasındaki filigranları saymayı başarıyla öğrendiniz. Bu güçlü kütüphane PDF işlemlerini basitleştirerek geliştiriciler için süper kullanıcı dostu hale getiriyor. Yukarıda özetlenen adımları izleyerek artık filigranları tespit edebilir ve belgelerinizdeki diğer eser türlerini keşfedebilirsiniz.
 
-#### S: Bir PDF belgesinin birden fazla sayfasındaki eserleri sayabilir miyim?
+Peki, sırada ne var? Farklı PDF dosyaları deneyerek veya Aspose.PDF'in sunduğu diğer özellikleri deneyerek anlayışınızı derinleştirebilirsiniz. 
 
- A: Evet, kodu, PDF belgesinin birden fazla sayfasındaki eserler arasında yineleme yaparak genişletebilirsiniz.`pdfDocument.Pages` her sayfadaki eserlerin toplanması ve sayılması.
+## SSS
 
-#### S: Sayılan eser bilgilerini daha ileri işlemler için nasıl kullanabilirim?
+### PDF dosyasındaki eserler nelerdir?  
+Eserler, filigranlar veya açıklamalar gibi PDF içindeki görünmeyen, görsel içeriğe katkıda bulunmayan ancak anlam taşıyabilen öğelerdir.
 
-A: İstediğiniz eserleri saydıktan sonra, raporlar oluşturmak, hedeflenen değişiklikleri gerçekleştirmek veya PDF belgesindeki belirli öğelerin varlığını doğrulamak gibi çeşitli amaçlar için bilgileri kullanabilirsiniz.
+### Aynı yöntemi kullanarak başka türdeki eserleri de sayabilir miyim?  
+Evet! Sadece durumunuzdaki farklı alt tiplere karşı kontrol etmeniz gerekiyor.
 
-#### S: Eserlerin ek niteliklerini veya koşullarını dikkate alacak şekilde sayım sürecini özelleştirebilir miyim?
+### Aspose.PDF'i kullanmak ücretsiz mi?  
+Aspose.PDF ticari bir üründür, ancak deneme sürümüyle ücretsiz deneyebilirsiniz. 
 
-A: Kesinlikle, döngüye daha fazla koşullu kontrol ekleyerek ek nitelikleri veya koşulları dikkate almak için sayma sürecini özelleştirebilirsiniz. Örneğin, eserleri eser alt türü ve renk kombinasyonuna göre sayabilirsiniz.
+### Daha fazla örneği nerede bulabilirim?  
+ Aspose'un[belgeleme](https://reference.aspose.com/pdf/net/)Daha fazla öğretici ve örnek için.
 
-#### S: PDF belgem yalnızca filigran değil, birden fazla türde eser içeriyorsa ne olur?
-
- A: Eğitim filigran eserlerini saymaya odaklansa da, farklı türdeki eserleri saymak için kodu ayarlayarak uyarlayabilirsiniz.`ArtifactSubtype` Saymak istediğiniz istenilen alt tipe göre karşılaştırma.
-
-#### S: Bu bilgiyi, büyük bir PDF belgesi grubu için eser sayımını otomatikleştirmek amacıyla nasıl uygulayabilirim?
-
-A: PDF belgeleri listesinde gezinip her belge için eser sayma işlemini gerçekleştiren, raporlar üreten veya sayımları analiz için depolayan bir betik veya program oluşturabilirsiniz.
-
-#### S: Belirli bir renk veya boyuttaki eserler gibi, belirli niteliklere sahip eserleri saymak mümkün müdür?
-
-A: Evet, kodu belirli niteliklere sahip eserleri sayacak şekilde geliştirebilirsiniz. Döngü içinde, eserlerin rengi, boyutu veya konumu gibi nitelikleri dikkate almak için ek koşullu kontroller ekleyebilirsiniz.
-
-#### S: Bu yaklaşımı, açıklamalar veya metin nesneleri gibi diğer öğe türlerini saymak için kullanabilir miyim?
-
-C: Evet, döngüyü ve koşullu kontrolleri buna göre değiştirerek, açıklamalar veya metin nesneleri gibi diğer türdeki öğeleri saymak için sağlanan kaynak kodunu uyarlayabilirsiniz.
+### Aspose.PDF için lisans nasıl satın alabilirim?  
+ Aspose.PDF için bir lisansı şu adresten satın alabilirsiniz:[satın alma sayfası](https://purchase.aspose.com/buy).

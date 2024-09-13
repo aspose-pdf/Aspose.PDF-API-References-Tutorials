@@ -1,7 +1,7 @@
 ---
-title: Textblocksstrukturelement
-linktitle: Textblocksstrukturelement
-second_title: Aspose.PDF för .NET API-referens
+title: Textblockstrukturelement
+linktitle: Textblockstrukturelement
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du använder Aspose.PDF för .NET för att lägga till textblockstrukturelement, såsom rubriker och taggade stycken, till ett befintligt PDF-dokument.
 type: docs
 weight: 220
@@ -47,7 +47,7 @@ Vi har angett titeln och språket för det taggade PDF-dokumentet.
 Låt oss nu skaffa rotstrukturelementet i PDF-dokumentet.
 
 ```csharp
-//Skaffa rotstrukturelementet
+// Skaffa rotstrukturelementet
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

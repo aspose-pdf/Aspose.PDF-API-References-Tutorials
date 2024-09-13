@@ -2,7 +2,7 @@
 title: Stiltabellenelement in PDF mit Java
 linktitle: Stiltabellenelement in PDF mit Java
 second_title: Aspose.PDF Java PDF-Verarbeitungs-API
-description: Lernen Sie, Tabellen in PDF-Dokumenten mit Java und Aspose.PDF zu formatieren. Erstellen Sie optisch ansprechende Tabellen und passen Sie deren Erscheinungsbild für professionelle PDFs an.
+description: Erfahren Sie, wie Sie Tabellen in PDF-Dokumenten mit Java und Aspose.PDF formatieren. Erstellen Sie optisch ansprechende Tabellen und passen Sie deren Erscheinungsbild für professionelle PDFs an.
 type: docs
 weight: 14
 url: /de/java/pdf-styles-and-formatting/style-table-element-in-pdf-using-java/

@@ -170,7 +170,7 @@ Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 // Adja hozzá a Table objektumot a szakasz bekezdésgyűjteményéhez
 sec1.Paragraphs.Add(tab1);
 
-// Állítsa be a táblázat oszlopszélességét. A ColumnCount-ot kézzel kell megadnunk.
+// Állítsa be a táblázat oszlopszélességét. A ColumnCount-ot manuálisan kell megadnunk.
 // Mivel a jelenlegi excel munkalapnak három oszlopa van, ezért ugyanazt a számot adjuk meg
 tab1.ColumnWidths = "40 100 100";
 

@@ -126,7 +126,7 @@ margin.Bottom = 5f;
 // Varsayılan hücre dolgusunu MarginInfo nesnesine ayarlayın
 tab1.DefaultCellPadding = margin;
 
-// Tabloda satırlar ve ardından satırlarda hücreler oluşturun
+//Tabloda satırlar ve ardından satırlarda hücreler oluşturun
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

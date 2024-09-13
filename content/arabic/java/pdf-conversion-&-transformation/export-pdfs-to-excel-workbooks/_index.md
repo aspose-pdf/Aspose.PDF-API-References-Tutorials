@@ -86,7 +86,7 @@ excelWorkbook.save("path/to/your/excel/workbook.xlsx");
 
 ## الأسئلة الشائعة
 
-### كيف أقوم بتثبيت Aspose.PDF لـJava؟
+### كيف أقوم بتثبيت Aspose.PDF لـ Java؟
 
  يعد تثبيت Aspose.PDF لـ Java أمرًا سهلاً. يمكنك تنزيله من[هنا](https://releases.aspose.com/pdf/java/) واتبع تعليمات التثبيت المقدمة على موقعهم الإلكتروني.
 

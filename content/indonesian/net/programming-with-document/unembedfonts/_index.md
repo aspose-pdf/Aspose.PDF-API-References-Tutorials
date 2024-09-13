@@ -2,135 +2,129 @@
 title: Hapus Font yang Disematkan dan Optimalkan File PDF
 linktitle: Hapus Font yang Disematkan dan Optimalkan File PDF
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Pelajari cara menggunakan Aspose.PDF untuk .NET guna mendapatkan Font yang Tidak Disematkan dan mengoptimalkan file PDF. Panduan langkah demi langkah.
+description: Pelajari cara membatalkan penyematan font dan mengoptimalkan file PDF menggunakan Aspose.PDF untuk .NET dalam tutorial langkah demi langkah ini.
 type: docs
 weight: 370
 url: /id/net/programming-with-document/unembedfonts/
 ---
-Aspose.PDF untuk .NET adalah pustaka canggih yang menyediakan berbagai fitur untuk bekerja dengan dokumen PDF. Salah satu fiturnya adalah mendapatkan font yang tidak disematkan dari dokumen PDF. Ini dapat berguna jika Anda perlu mengekstrak font dari dokumen PDF dan menggunakannya di aplikasi lain.
+## Perkenalan
 
-kami akan memberikan panduan langkah demi langkah untuk menjelaskan kode sumber C# berikut untuk fitur mendapatkan font yang tidak tertanam di Aspose.PDF untuk .NET.
+Di era digital, PDF ada di mana-mana. Baik Anda berbagi laporan, presentasi, atau eBook, Portable Document Format (PDF) adalah pilihan utama untuk menjaga integritas dokumen Anda. Namun, seiring kita membuat dan berbagi lebih banyak PDF, ukuran file dapat membengkak, sehingga sulit untuk dikirim atau disimpan. Di sinilah Aspose.PDF for .NET berperan, menawarkan alat yang hebat untuk mengoptimalkan file PDF Anda. Dalam tutorial ini, kita akan membahas cara menghapus font dan mengoptimalkan file PDF menggunakan Aspose.PDF for .NET.
 
-## Langkah 1: Tetapkan jalur ke direktori dokumen
+## Prasyarat
 
-Sebelum memulai, kita perlu mengatur jalur ke direktori tempat dokumen PDF kita berada. Kita akan menyimpan jalur ini dalam variabel yang disebut "dataDir".
+Sebelum kita masuk ke inti pembahasan, mari pastikan Anda memiliki semua yang dibutuhkan untuk memulai:
+
+1. Visual Studio: Pastikan Anda telah menginstal Visual Studio di komputer Anda. Ini adalah IDE yang akan kita gunakan untuk menulis dan menjalankan kode .NET.
+2.  Aspose.PDF untuk .NET: Anda perlu mengunduh dan memasang pustaka Aspose.PDF. Anda dapat mengunduhnya dari[tautan unduhan](https://releases.aspose.com/pdf/net/).
+3. Pengetahuan Dasar C#: Keakraban dengan pemrograman C# akan membantu Anda memahami potongan kode yang akan kita gunakan.
+4.  File PDF: Siapkan file PDF yang ingin Anda optimalkan. Anda dapat menggunakan PDF apa pun, tetapi untuk demonstrasi, kami akan menyebutnya sebagai`OptimizeDocument.pdf`.
+
+## Paket Impor
+
+Untuk memulai, Anda perlu mengimpor paket yang diperlukan ke dalam proyek C# Anda. Berikut cara melakukannya:
+
+1. Buka proyek Anda di Visual Studio.
+2. Tambahkan referensi ke Aspose.PDF: Klik kanan pada proyek Anda di Solution Explorer, pilih "Kelola Paket NuGet," dan cari`Aspose.PDF`Instal paketnya.
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Sekarang setelah semuanya disiapkan, mari kita uraikan proses pengoptimalan menjadi langkah-langkah yang lebih mudah dikelola.
+
+## Langkah 1: Siapkan Direktori Dokumen Anda
+
+Pertama-tama, Anda perlu menentukan jalur ke direktori dokumen Anda. Di sinilah file PDF Anda akan disimpan. Berikut cara melakukannya:
 
 ```csharp
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-Ganti "DIREKTORI DOKUMEN ANDA" dengan jalur sebenarnya ke direktori tempat dokumen PDF Anda berada.
+ Mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya tempat file PDF Anda berada. Hal ini penting karena program perlu mengetahui tempat menemukan PDF yang ingin Anda optimalkan.
 
 ## Langkah 2: Buka Dokumen PDF
 
- Langkah pertama adalah memuat dokumen PDF yang ingin Anda lakukan ini, gunakan`Document` kelas Aspose.PDF untuk .NET. Potongan kode berikut menunjukkan cara memuat dokumen PDF:
+Setelah direktori kita siap, saatnya membuka dokumen PDF yang ingin kita optimalkan. Berikut kode untuk melakukannya:
 
 ```csharp
 // Buka dokumen
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-## Langkah 3: Mengatur Opsi UnembedFonts
+ Baris kode ini membuat yang baru`Document` objek, yang mewakili berkas PDF Anda. Pastikan nama berkas sesuai dengan nama yang ada di direktori Anda.
 
- Untuk mendapatkan font yang tidak tertanam dari dokumen PDF, Anda perlu mengatur`UnembedFonts` pilihan untuk`true` Opsi ini tersedia di`OptimizationOptions` kelas. Potongan kode berikut menunjukkan cara mengatur`UnembedFonts` pilihan:
+## Langkah 3: Tetapkan Opsi Optimasi
+
+Selanjutnya, kita perlu menentukan opsi pengoptimalan. Dalam kasus ini, kita ingin menghapus font yang disematkan. Berikut cara mengaturnya:
 
 ```csharp
 // Tetapkan opsi UnembedFonts
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
-	UnembedFonts = true
+    UnembedFonts = true
 };
 ```
+
+ Dengan pengaturan`UnembedFonts` ke`true`, kami menginstruksikan Aspose.PDF untuk mengoptimalkan PDF dengan menghapus font yang disematkan. Hal ini dapat mengurangi ukuran file secara signifikan, terutama jika PDF berisi banyak font yang disematkan.
 
 ## Langkah 4: Optimalkan Dokumen PDF
 
- Setelah mengatur`UnembedFonts` pilihan, Anda dapat mengoptimalkan dokumen PDF menggunakan`OptimizeResources` metode dari`Document` kelas. Potongan kode berikut menunjukkan cara mengoptimalkan dokumen PDF:
+Setelah opsi yang kita tentukan, saatnya mengoptimalkan dokumen PDF. Berikut kode untuk melakukannya:
 
 ```csharp
-// Optimalkan dokumen PDF menggunakan OptimizationOptions
-pdfDocument.OptimizeResources(optimizeOptions);
-```
-
-## Langkah 5: Simpan Dokumen yang Diperbarui
-
- Setelah dokumen PDF dioptimalkan, Anda dapat menyimpan dokumen yang diperbarui menggunakan`Save` metode dari`Document`kelas. Potongan kode berikut menunjukkan cara menyimpan dokumen yang diperbarui:
-
-```csharp
-// Simpan dokumen yang diperbarui
-pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
-```
-
-## Langkah 6: Dapatkan Ukuran File Asli dan yang Diperkecil
-
- Akhirnya, Anda bisa mendapatkan ukuran file asli dan diperkecil dari dokumen PDF menggunakan`FileInfo` kelas System.IO. Potongan kode berikut menunjukkan cara mendapatkan ukuran file asli dan yang diperkecil:
-
-```csharp
-var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
-var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
-Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
-```
-
-### Contoh Kode Sumber untuk Mendapatkan Font yang Tidak Disematkan menggunakan Aspose.PDF untuk .NET
-
-Berikut adalah contoh kode sumber lengkap untuk mendapatkan font yang tidak tertanam dari dokumen PDF menggunakan Aspose.PDF untuk .NET:
-
-```csharp
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Buka dokumen
-Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// Tetapkan opsi UnembedFonts
-var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-{
-	UnembedFonts = true
-};
 Console.WriteLine("Start");
 // Optimalkan dokumen PDF menggunakan OptimizationOptions
 pdfDocument.OptimizeResources(optimizeOptions);
+```
+
+Potongan kode ini memanggil`OptimizeResources` metode pada`pdfDocument` objek, dengan menerapkan opsi pengoptimalan yang telah kami definisikan sebelumnya. Anda akan melihat pesan di konsol yang menunjukkan bahwa proses pengoptimalan telah dimulai.
+
+## Langkah 5: Simpan Dokumen yang Diperbarui
+
+Setelah mengoptimalkan PDF, kita perlu menyimpan dokumen yang telah diperbarui. Berikut cara melakukannya:
+
+```csharp
 // Simpan dokumen yang diperbarui
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Finished");
+```
+
+ Kode ini menyimpan PDF yang dioptimalkan sebagai`OptimizeDocument_out.pdf` dalam direktori yang sama. Anda dapat memilih nama yang berbeda jika Anda mau, tetapi dengan nama yang sama akan membantu mengidentifikasi versi asli dan yang sudah dioptimalkan.
+
+## Langkah 6: Bandingkan Ukuran File
+
+Terakhir, sebaiknya Anda selalu memeriksa berapa banyak ruang yang telah Anda hemat. Berikut cara membandingkan ukuran file asli dan yang dioptimalkan:
+
+```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
 var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```
+
+Kode ini mengambil ukuran file dari PDF asli dan PDF yang dioptimalkan, lalu mencetaknya ke konsol. Sungguh momen yang memuaskan untuk melihat seberapa besar Anda telah mengurangi ukuran file!
 
 ## Kesimpulan
 
-Dalam tutorial ini, kami menunjukkan cara menggunakan Aspose.PDF untuk .NET guna mendapatkan font yang tidak disematkan dari dokumen PDF. Dengan mengikuti panduan langkah demi langkah, Anda dapat dengan mudah menerapkan fitur ini dalam aplikasi C# Anda. Font yang tidak disematkan dapat bermanfaat saat Anda perlu bekerja dengan font yang diekstrak secara terpisah atau memastikan penggunaan font yang konsisten di berbagai platform.
+Nah, itu dia! Anda telah berhasil menghapus font yang disematkan dan mengoptimalkan file PDF menggunakan Aspose.PDF untuk .NET. Proses ini tidak hanya membantu mengurangi ukuran file tetapi juga meningkatkan kinerja dokumen PDF Anda. Baik Anda berbagi file melalui email atau menyimpannya di cloud, ukuran file yang lebih kecil dapat membuat perbedaan besar.
 
 ## Pertanyaan yang Sering Diajukan
 
-#### T: Apa tujuan menghapus font dari dokumen PDF?
+### Apa itu Aspose.PDF untuk .NET?
+Aspose.PDF untuk .NET adalah pustaka hebat yang memungkinkan pengembang untuk membuat, memanipulasi, dan mengoptimalkan dokumen PDF secara terprogram.
 
-A: Dengan menghapus font yang disematkan dari dokumen PDF, Anda dapat mengekstrak font yang disematkan dan menggunakannya di aplikasi lain. Ini berguna untuk memastikan tampilan font yang konsisten dan mempertahankan tampilan visual dokumen.
+### Dapatkah saya menggunakan Aspose.PDF secara gratis?
+ Ya, Aspose menawarkan versi uji coba gratis. Anda dapat mengunduhnya dari[Di Sini](https://releases.aspose.com/).
 
-#### T: Bagaimana cara menentukan jalur ke direktori dokumen dalam kode C#?
+### Bagaimana cara mendapatkan dukungan untuk Aspose.PDF?
+ Anda bisa mendapatkan dukungan melalui[Forum Aspose](https://forum.aspose.com/c/pdf/10).
 
- A: Untuk menentukan jalur ke direktori dokumen, ganti`"YOUR DOCUMENT DIRECTORY"` dalam kode dengan jalur sebenarnya ke direktori tempat dokumen PDF Anda berada.
+### Jenis optimasi apa yang dapat saya lakukan pada PDF?
+Anda dapat membatalkan penyematan font, mengompres gambar, menghapus objek yang tidak digunakan, dan masih banyak lagi untuk mengoptimalkan berkas PDF Anda.
 
-####  T: Apa yang dimaksud dengan`UnembedFonts` option do, and where is it set?
-
- Sebuah:`UnembedFonts` pilihan, tersedia di`OptimizationOptions` kelas, mengaktifkan atau menonaktifkan pelepasan font dari dokumen PDF. Untuk menyetel opsi ini ke`true`, gunakan kode berikut:
-
-```csharp
-var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-{
-	UnembedFonts = true
-};
-```
-
-#### T: Dapatkah saya mengembalikan perubahan yang dibuat selama proses pengoptimalan?
-
-J: Aspose.PDF untuk .NET tidak membuat perubahan permanen pada dokumen PDF asli selama pengoptimalan. Proses pengoptimalan dilakukan pada salinan dokumen, dengan membiarkan dokumen asli tetap utuh.
-
-#### T: Bagaimana cara memeriksa ukuran file asli dan yang diperkecil setelah pengoptimalan?
-
- A: Kamu bisa menggunakan`FileInfo` kelas dari`System.IO` untuk mendapatkan ukuran file asli dan yang diperkecil. Berikut ini contoh potongan kode untuk mencapainya:
-
-```csharp
-var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
-var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
-Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
-```
+### Di mana saya dapat membeli Aspose.PDF untuk .NET?
+ Anda dapat membeli lisensi dari[Halaman pembelian Aspose](https://purchase.aspose.com/buy).

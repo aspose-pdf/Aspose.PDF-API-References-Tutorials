@@ -7,105 +7,131 @@ type: docs
 weight: 10
 url: /id/net/programming-with-pdf-pages/change-orientation/
 ---
-Dalam tutorial ini, kami akan memandu Anda melalui proses langkah demi langkah untuk mengubah orientasi halaman dokumen PDF menggunakan Aspose.PDF untuk .NET. Kami akan menjelaskan kode sumber C# yang disertakan dan memberi Anda panduan komprehensif untuk membantu Anda memahami dan menerapkan fitur ini dalam proyek Anda sendiri. Di akhir tutorial ini, Anda akan mengetahui cara mengubah orientasi halaman dokumen PDF Anda menggunakan Aspose.PDF untuk .NET.
+## Perkenalan
+
+Pernahkah Anda mengalami kesulitan dengan file PDF yang orientasi halamannya tidak tepat? Mungkin Anda sedang menangani dokumen yang dipindai atau dibuat secara tidak benar, dan halaman-halamannya perlu diputar agar dapat dipahami. Beruntung bagi kita, Aspose.PDF untuk .NET menyediakan cara yang mudah dan canggih untuk memanipulasi file PDF dengan cara apa pun yang dapat dibayangkan—termasuk mengubah orientasi halaman Anda. Apakah Anda ingin beralih dari potret ke lanskap atau sebaliknya, panduan ini akan memandu Anda melalui proses tersebut langkah demi langkah.
+
+Jadi, jika Anda siap untuk mulai dan memutar halaman PDF tersebut dengan mudah, mari kita mulai!
 
 ## Prasyarat
-Sebelum memulai, pastikan Anda memiliki hal berikut:
 
-- Pengetahuan dasar tentang bahasa pemrograman C#
-- Aspose.PDF untuk .NET terinstal di lingkungan pengembangan Anda
+Sebelum kita membahas detail tentang mengubah orientasi halaman di PDF Anda, mari kita bahas secara singkat apa saja yang perlu Anda siapkan:
 
-## Langkah 1: Tentukan direktori dokumen
-Pertama, Anda perlu mengatur jalur ke direktori dokumen Anda. Ini adalah lokasi tempat berkas PDF masukan Anda berada dan tempat Anda ingin menyimpan berkas PDF keluaran yang telah dimodifikasi. Ganti "DIREKTORI DOKUMEN ANDA" dengan jalur yang sesuai.
+-  Aspose.PDF untuk .NET: Pastikan Anda telah menginstal pustaka Aspose.PDF untuk .NET. Jika belum, Anda dapat[unduh disini](https://releases.aspose.com/pdf/net/).
+- Lingkungan Pengembangan .NET: Anda dapat menggunakan Visual Studio, JetBrains Rider, atau IDE pilihan apa pun untuk bekerja dengan .NET.
+- Pengetahuan Dasar C#: Meskipun panduan ini mudah dipahami, pemahaman dasar tentang C# akan membuatnya lebih mudah diikuti.
+- Berkas PDF: Contoh di bawah ini mengasumsikan Anda memiliki berkas PDF dengan beberapa halaman. Jika Anda tidak memilikinya, buat atau unduh contoh PDF untuk digunakan.
+
+ Selain itu, jika Anda baru memulai, Anda dapat mencoba Aspose.PDF dengan[lisensi sementara gratis](https://purchase.aspose.com/temporary-license/) sebelum memutuskan untuk[beli versi lengkapnya](https://purchase.aspose.com/buy).
+
+## Mengimpor Ruang Nama
+
+Sebelum Anda dapat memanipulasi orientasi halaman dalam PDF, Anda perlu mengimpor namespace yang diperlukan dalam proyek C# Anda. Pastikan Anda memiliki yang berikut ini:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
 ```
 
-## Langkah 2: Muat dokumen PDF
- Kemudian Anda dapat memuat dokumen PDF dari file input menggunakan`Document` kelas Aspose.PDF. Pastikan untuk menentukan jalur yang benar ke berkas PDF.
+Setelah ini diimpor, mari masuk ke bagian utama tutorial.
+
+## Langkah 1: Muat Dokumen PDF
+
+ Hal pertama yang perlu kita lakukan adalah memuat file PDF yang ingin Anda ubah. Anda dapat menggunakan`Document` kelas dari namespace Aspose.PDF untuk membuka PDF Anda.
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Langkah 3: Ubah orientasi halaman
-Sekarang kita akan menelusuri setiap halaman dokumen dan mengubah orientasinya. Untuk setiap halaman, kita mengubah dimensi kotak media (`MediaBox`) dengan menukar lebar dan tinggi, lalu kita sesuaikan koordinat kotak media untuk mempertahankan posisi halaman. Terakhir, kita atur rotasi halaman ke 90 derajat.
+ Baris ini memuat PDF dari direktori yang Anda tentukan. Pastikan untuk mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya ke file Anda.`"input.pdf"` adalah PDF yang ingin Anda ubah orientasinya.
+
+## Langkah 2: Ulangi Setiap Halaman
+
+ Sekarang setelah dokumen dimuat, mari kita ulangi setiap halaman dalam PDF. Kita akan menggunakan`foreach` loop untuk menelusuri setiap halaman, sehingga memungkinkan kita menerapkan perubahan orientasi ke semuanya.
 
 ```csharp
-foreach(Page page in doc.Pages)
+foreach (Page page in doc.Pages)
 {
+    // Memanipulasi setiap halaman
+}
+```
+
+Perulangan ini akan mengulangi semua halaman dalam dokumen.
+
+## Langkah 3: Dapatkan MediaBox Halaman
+
+ Setiap halaman dalam PDF memiliki`MediaBox` yang menentukan batas halaman. Kita perlu mengaksesnya untuk menentukan orientasi saat ini dan mengubahnya.
+
+```csharp
 Aspose.Pdf.Rectangle r = page.MediaBox;
+```
+
+ Itu`MediaBox` memberi kita dimensi halaman, seperti lebar, tinggi, dan posisinya.
+
+## Langkah 4: Tukar Lebar dan Tinggi
+
+Untuk mengubah orientasi halaman dari potret ke lanskap atau lanskap ke potret, kita cukup menukar nilai lebar dan tinggi. Langkah ini akan menyesuaikan dimensi halaman.
+
+```csharp
 double newHeight = r.Width;
 double newWidth = r.Height;
 double newLLX = r.LLX;
 double newLLY = r.LLY + (r.Height - newHeight);
+```
+
+Kode ini menukar tinggi dan lebar dan memposisikan ulang sudut kiri bawah (`LLY`) sehingga konten terpasang rapi setelah diputar.
+
+## Langkah 5: Perbarui MediaBox dan CropBox
+
+Sekarang setelah kita memiliki tinggi dan lebar baru, mari terapkan perubahan ke halaman`MediaBox` Dan`CropBox` . Itu`CropBox` penting jika dokumen asli memiliki satu set, memastikan seluruh halaman ditampilkan dengan benar.
+
+```csharp
 page.MediaBox = new Aspose.Pdf.Rectangle(newLLX, newLLY, newLLX + newWidth, newLLY + newHeight);
 page.CropBox = new Aspose.Pdf.Rectangle(newLLX, newLLY, newLLX + newWidth, newLLY + newHeight);
-page. Rotate = Rotate. on90;
-}
 ```
 
-## Langkah 4: Simpan dokumen PDF yang dimodifikasi
- Terakhir, Anda dapat menyimpan dokumen PDF yang dimodifikasi ke file keluaran menggunakan`Save()` metode dari`Document`kelas. Pastikan untuk menentukan jalur dan nama file yang benar.
+Langkah ini mengubah ukuran halaman berdasarkan dimensi baru yang baru saja kita hitung.
+
+## Langkah 6: Putar Halaman
+
+Terakhir, kita atur sudut rotasi halaman. Aspose.PDF membuat ini sangat mudah. Kita dapat memutar halaman 90 derajat untuk beralih dari potret ke lanskap atau sebaliknya.
+
+```csharp
+page.Rotate = Rotation.on90;
+```
+
+Kode ini memutar halaman sebesar 90 derajat, membaliknya ke orientasi yang diinginkan.
+
+## Langkah 7: Simpan PDF Output
+
+Setelah menerapkan perubahan orientasi pada semua halaman, kami menyimpan dokumen yang dimodifikasi ke berkas baru. 
 
 ```csharp
 dataDir = dataDir + "ChangeOrientation_out.pdf";
-doc.Save(dataDir);
-```
-
-### Contoh kode sumber untuk Mengubah Orientasi menggunakan Aspose.PDF untuk .NET 
-
-```csharp
-
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document doc = new Document(dataDir + "input.pdf");
-foreach (Page page in doc.Pages)
-{
-	Aspose.Pdf.Rectangle r = page.MediaBox;
-	double newHeight = r.Width;
-	double newWidth = r.Height;
-	double newLLX = r.LLX;
-	// Kita harus memindahkan halaman ke atas untuk mengimbangi perubahan ukuran halaman
-	// (tepi bawah halaman adalah 0,0 dan informasi biasanya ditempatkan dari
-	// Atas halaman. Itulah sebabnya kami memindahkan tepi kekasih ke atas pada perbedaan antara
-	// Ketinggian lama dan baru.
-	double newLLY = r.LLY + (r.Height - newHeight);
-	page.MediaBox = new Aspose.Pdf.Rectangle(newLLX, newLLY, newLLX + newWidth, newLLY + newHeight);
-	// Terkadang kita juga perlu mengatur CropBox (jika sudah diatur di file asli)
-	page.CropBox = new Aspose.Pdf.Rectangle(newLLX, newLLY, newLLX + newWidth, newLLY + newHeight);
-	// Mengatur sudut rotasi halaman
-	page.Rotate = Rotation.on90;
-}
-dataDir = dataDir + "ChangeOrientation_out.pdf";
-// Simpan file keluaran
 doc.Save(dataDir);
 System.Console.WriteLine("\nPage orientation changed successfully.\nFile saved at " + dataDir);
-
 ```
 
-## Kesimpulan
-Dalam tutorial ini, kita mempelajari cara mengubah orientasi halaman dokumen PDF menggunakan Aspose.PDF untuk .NET. Dengan mengikuti langkah-langkah yang diuraikan di atas, Anda dapat dengan mudah menerapkan fungsi ini dalam proyek Anda sendiri. Jangan ragu untuk menjelajahi dokumentasi Aspose.PDF lebih lanjut untuk menemukan fitur-fitur bermanfaat lainnya untuk bekerja dengan file PDF.
+ Pastikan Anda memberikan nama file baru (dalam kasus ini,`ChangeOrientation_out.pdf`) untuk menyimpan output. Dengan cara ini, Anda tidak akan menimpa file asli.
 
-### Pertanyaan yang Sering Diajukan
+### Kesimpulan
 
-#### T: Apa tujuan mengubah orientasi halaman dalam dokumen PDF?
+Nah, itu dia! Mengubah orientasi halaman file PDF menggunakan Aspose.PDF untuk .NET semudah memuat dokumen, mengulang halaman, menyesuaikan MediaBox, dan menyimpan file yang diperbarui. Baik Anda menangani dokumen yang dipindai dengan buruk atau perlu memutar halaman agar sesuai dengan kebutuhan pemformatan Anda, panduan langkah demi langkah ini akan membantu Anda.
 
-A: Mengubah orientasi halaman dalam dokumen PDF memungkinkan Anda memutar konten halaman hingga 90 derajat. Ini dapat berguna dalam skenario saat konten asli perlu ditampilkan atau dicetak dalam orientasi berbeda, seperti beralih dari mode potret ke lanskap atau sebaliknya.
+## Pertanyaan yang Sering Diajukan
 
-#### T: Dapatkah saya mengubah orientasi halaman tertentu dalam dokumen PDF?
+### Bisakah saya memutar halaman tertentu, bukan semua halaman dalam PDF?  
+Ya, Anda dapat memodifikasi loop untuk menargetkan halaman-halaman tertentu menggunakan indeksnya, alih-alih melakukan loop melalui semua halaman.
 
- A: Ya, Anda dapat mengubah orientasi halaman tertentu dalam dokumen PDF. Dalam kode sumber C# yang disediakan,`foreach` loop digunakan untuk menelusuri setiap halaman dokumen dan mengubah orientasinya. Jika Anda hanya ingin mengubah orientasi halaman tertentu, Anda dapat mengubah loop untuk menargetkan halaman tersebut berdasarkan nomor halaman atau kriteria lainnya.
+###  Apakah yang`MediaBox`?  
+ Itu`MediaBox` mendefinisikan ukuran dan bentuk halaman dalam berkas PDF. Di sinilah konten halaman ditempatkan.
 
-#### T: Apakah mengubah orientasi halaman memengaruhi tata letak konten pada halaman?
+### Apakah Aspose.PDF untuk .NET berfungsi dengan format file lain?  
+Ya, Aspose.PDF dapat menangani berbagai format file seperti HTML, XML, XPS, dan banyak lagi.
 
-A: Ya, mengubah orientasi halaman akan memengaruhi tata letak konten pada halaman. Konten akan diputar 90 derajat, dan lebar serta tinggi halaman akan tertukar. Akibatnya, penempatan dan perataan konten pada halaman dapat berubah.
+### Apakah ada versi gratis Aspose.PDF untuk .NET?  
+ Ya, Anda bisa memulai dengan[uji coba gratis](https://releases.aspose.com/) atau meminta[lisensi sementara](https://purchase.aspose.com/temporary-license/).
 
-#### T: Dapatkah saya memutar halaman pada sudut selain 90 derajat?
-
- A: Dalam kode sumber C# yang disediakan, rotasi halaman diatur ke 90 derajat menggunakan`page.Rotate = Rotate.on90;` . Namun, Anda dapat mengubah sudut rotasi ke nilai lain jika diperlukan. Misalnya, Anda dapat menggunakan`Rotate.on180` untuk memutar halaman sebesar 180 derajat atau`Rotate.on270` untuk memutarnya sebesar 270 derajat.
-
-#### T: Bagaimana cara menangani konten halaman yang meluap setelah orientasi diubah?
-
-A: Saat mengubah orientasi halaman, dimensi halaman dapat berubah, yang dapat mengakibatkan konten meluap. Untuk mengatasinya, Anda mungkin perlu menyesuaikan tata letak dan format konten pada halaman. Anda dapat menggunakan fitur yang disediakan oleh Aspose.PDF untuk .NET, seperti mengubah ukuran elemen, menyesuaikan margin, atau mengatur ulang konten, untuk memastikan bahwa konten halaman pas setelah perubahan orientasi.
+### Bisakah saya membatalkan perubahan yang sudah disimpan?  
+Setelah Anda menyimpan dokumen, perubahannya bersifat permanen. Pastikan untuk mengerjakan salinan atau menyimpan cadangan berkas asli.

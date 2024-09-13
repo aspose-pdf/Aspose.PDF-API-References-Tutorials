@@ -1,6 +1,6 @@
 ---
-title: Hitelesítési adatok megadása a HTML-hez PDF-be
-linktitle: Hitelesítési adatok megadása a HTML-hez PDF-be
+title: Hitelesítő adatok megadása a HTML-hez PDF-be
+linktitle: Hitelesítő adatok megadása a HTML-hez PDF-be
 second_title: Aspose.PDF for .NET API Reference
 description: Ebből a lépésenkénti útmutatóból megtudhatja, hogyan konvertálhat HTML-t PDF-be az Aspose.PDF for .NET használatával. Tökéletes azoknak a fejlesztőknek, akik egyszerűsíteni szeretnék a dokumentumkészítést.
 type: docs

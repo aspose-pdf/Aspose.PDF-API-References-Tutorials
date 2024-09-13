@@ -32,7 +32,7 @@ Document pdfDocument = new Document();
 // Lägg till en sida i dokumentet
 Page page = pdfDocument.getPages().add();
 
-// Ange sidegenskaper (t.ex. mått, marginaler)
+// Ange sidegenskaper (t.ex. dimensioner, marginaler)
 page.setPageSize(new PageSize(600, 400));
 ```
 
@@ -58,7 +58,7 @@ Nu när vi har vår textstämpel, låt oss utforska justeringsalternativen.
 
 Justering av textstämplar i ett PDF-dokument kan vara avgörande för att uppnå önskat utseende och känsla. Aspose.PDF för Java tillhandahåller olika justeringsalternativ, inklusive:
 
-- Justera längst upp till vänster, upptill i mitten, uppe till höger
+- Justera längst upp till vänster, uppe i mitten, uppe till höger
 - Justera till mitten till vänster, mitten mitten, mitten höger
 - Justera längst ned till vänster, nedre mitten, nedre höger
 

@@ -46,7 +46,7 @@ doc.PageInfo.Margin.Right = 40;
 ```
 
 ## 6단계: 문서에 페이지 추가
- 문서에 새 페이지를 추가하려면 다음을 사용합니다.`Add` 의 방법`Pages`컬렉션. 제공된 코드에서 새 페이지는 변수에 할당됩니다.`page`.
+ 문서에 새 페이지를 추가하려면 다음을 사용합니다.`Add` 의 방법`Pages` 컬렉션. 제공된 코드에서 새 페이지는 변수에 할당됩니다.`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -112,7 +112,7 @@ doc.Save(dataDir);
 // 문서 디렉토리의 경로입니다.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
-//PDF 파일의 왼쪽 여백 정보를 지정하세요
+// PDF 파일의 왼쪽 여백 정보를 지정하세요
 doc.PageInfo.Margin.Left = 40;
 // PDF 파일의 오른쪽 여백 정보를 지정하세요
 doc.PageInfo.Margin.Right = 40;
@@ -149,7 +149,7 @@ Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50, 10);
 float[] posArr2 = new float[] { 1, 10, 100, 10 };
 Aspose.Pdf.Drawing.Line l2 = new Aspose.Pdf.Drawing.Line(posArr2);
 graph2.Shapes.Add(l2);
-// section 객체의 paragraphs 컬렉션에 줄을 추가합니다.
+//section 객체의 paragraphs 컬렉션에 줄을 추가합니다.
 box.Paragraphs.Add(graph2);
 TextFragment text2 = new TextFragment(@"Sed augue tortor, sodales id, luctus et, pulvinar ut, eros. Suspendisse vel dolor. Sed quam. Curabitur ut massa vitae eros euismod aliquam. Pellentesque sit amet elit. Vestibulum interdum pellentesque augue. Cras mollis arcu sit amet purus. Donec augue. Nam mollis tortor a elit. Nulla viverra nisl vel mauris. Vivamus sapien. nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et,nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.");
 box.Paragraphs.Add(text2);
@@ -200,7 +200,7 @@ using Aspose.Pdf.Drawing;
 
 #### 질문: HTML 서식을 적용하여 제목 텍스트를 추가하려면 어떻게 해야 하나요?
 
- A: 8단계에서는 다음을 생성합니다.`HtmlFragment` 객체를 만들고 해당 내용을 원하는 HTML 텍스트로 설정한 다음 조각을 추가합니다.`Paragraphs` 페이지의 컬렉션입니다.
+A: 8단계에서는 다음을 생성합니다.`HtmlFragment` 객체를 만들고 해당 내용을 원하는 HTML 텍스트로 설정한 다음 조각을 추가합니다.`Paragraphs` 페이지의 컬렉션입니다.
 
 #### 질문: 여러 개의 열로 구성된 FloatingBox를 어떻게 만들까요?
 

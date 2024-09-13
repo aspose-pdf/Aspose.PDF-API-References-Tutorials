@@ -26,7 +26,7 @@ Dowiedz się, jak kontrolować kolejność prostokątów w plikach PDF za pomoc�
 ### [Utwórz wypełniony obiekt prostokątny w pliku PDF za pomocą języka Java](./create-filled-rectangle-object-in-pdf-using-java/)
 Dowiedz się, jak tworzyć wypełnione prostokąty w plikach PDF za pomocą języka Java z Aspose.PDF dla języka Java. Samouczek krok po kroku z przykładami kodu.
 ### [Rysowanie linii na stronie w formacie PDF za pomocą języka Java](./drawing-line-across-the-page-in-pdf-with-java/)
-Dowiedz się, jak rysować linie w plikach PDF za pomocą języka Java, używając Aspose.PDF dla języka Java. Przewodnik krok po kroku z kodem źródłowym do rysowania linii w plikach PDF.
+Dowiedz się, jak rysować linie w plikach PDF za pomocą języka Java, korzystając z Aspose.PDF dla języka Java. Przewodnik krok po kroku z kodem źródłowym do rysowania linii w plikach PDF.
 ### [Zastosuj styl numeracji w nagłówku pliku PDF za pomocą Java](./apply-numbering-style-in-heading-of-pdf-using-java/)
 Dowiedz się, jak stosować style numeracji do nagłówków PDF za pomocą Aspose.PDF dla Java. Nasz przewodnik krok po kroku zawiera przykłady kodu źródłowego, aby nadać dokumentom profesjonalny charakter.
 ### [Usuwanie obrazu z zasobów PDF za pomocą Java](./delete-image-from-pdf-resources-using-java/)

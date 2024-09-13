@@ -152,7 +152,7 @@ A: Wenn Sie mit Aspose.PDF für .NET eine Struktur aus Baumelementen in einem PD
 
 A: Das Codebeispiel zeigt, wie man eine hierarchische Struktur logischer Elemente erstellt, indem man`SectElement`, `DivElement` , Und`ArtElement` Klassen, die von Aspose.PDF bereitgestellt werden. Diese Elemente sind als übergeordnete und untergeordnete Knoten organisiert und bilden eine baumartige Struktur innerhalb des Dokuments.
 
-####  F: Wie funktioniert das`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
+#### F: Wie funktioniert das`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
 
  A: Die`TaggedContent` -Eigenschaft bietet Zugriff auf die getaggten Inhaltsfunktionen des PDF-Dokuments. Auf diese Weise können Sie strukturierte Elemente erstellen und bearbeiten, ihre Beziehungen definieren und sie hierarchisch organisieren, wodurch die Struktur und Zugänglichkeit des Dokuments verbessert wird.
 
@@ -168,7 +168,7 @@ A: Das Codebeispiel zeigt, wie man eine hierarchische Struktur logischer Element
 
 A: Die hierarchische Organisation von Elementen verbessert die Dokumentorganisation, Navigation und Semantik. Benutzer und unterstützende Technologien können so die Struktur und Beziehungen des Inhalts verstehen und das allgemeine Benutzererlebnis verbessern.
 
-####  F: Wie funktioniert das`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
+#### F: Wie funktioniert das`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
 
  A: Die`Save` Methode speichert das PDF-Dokument zusammen mit der hierarchischen Struktur, die mit dem`AppendChild` Methode. Dadurch wird sichergestellt, dass die Struktur erhalten bleibt und das Dokument zugänglich und gut organisiert ist.
 

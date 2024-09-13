@@ -83,7 +83,7 @@ saveOptions.OutDirectoryPath = pathToOutputDirectory;
 
 Ebben az esetben a kimenetet ugyanabba a könyvtárba mentjük, mint a bemeneti PDF-fájlt.
 
-## 5. lépés: Mentse el a PDF-fájlt LaTeX formátumba
+## 5. lépés: Mentse el a PDF fájlt LaTeX formátumba
 
  Végre eljött az átalakítás ideje! Használni fogja a`Save` módszere a`Document` objektumot a PDF-fájl TeX-fájlként történő mentéséhez.
 

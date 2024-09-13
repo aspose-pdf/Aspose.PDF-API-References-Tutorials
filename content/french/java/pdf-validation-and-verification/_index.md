@@ -20,7 +20,7 @@ Dans la deuxième partie de nos tutoriels, nous nous concentrons sur l'aspect cr
 
 ## Intégrité et conformité des documents
 
-La dernière partie de nos tutoriels porte sur l'intégrité et la conformité des documents. Nous vous guiderons à travers les techniques permettant de maintenir l'intégrité structurelle et du contenu de vos PDF. Vous apprendrez également à ajouter des informations de validation, des horodatages et des mesures de sécurité pour améliorer la sécurité des documents. À la fin de ces tutoriels, vous serez bien équipé pour valider et vérifier les PDF en toute confiance, garantissant ainsi leur fiabilité et leur conformité aux normes. Rejoignez-nous dans ce voyage pour devenir un expert en validation et vérification de PDF en utilisant Aspose.PDF pour Java.
+La dernière partie de nos tutoriels aborde l'intégrité et la conformité des documents. Nous vous guiderons à travers les techniques permettant de maintenir l'intégrité structurelle et du contenu de vos PDF. Vous apprendrez également à ajouter des informations de validation, des horodatages et des mesures de sécurité pour améliorer la sécurité des documents. À la fin de ces tutoriels, vous serez bien équipé pour valider et vérifier les PDF en toute confiance, garantissant ainsi leur fiabilité et leur conformité aux normes. Rejoignez-nous dans ce voyage pour devenir un expert en validation et vérification de PDF en utilisant Aspose.PDF pour Java.
 
 ## Tutoriels de validation et de vérification PDF
 ### [Valider un PDF en Java](./validate-pdf-in-java/)

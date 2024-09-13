@@ -40,7 +40,7 @@ absorb.Visit(pdfDocument.Pages[1]);
 Tabloları bırakabilmek için tablo koleksiyonunun bir kopyasını almamız gerekiyor:
 
 ```csharp
-//Tablo koleksiyonunun bir kopyasını alın
+// Tablo koleksiyonunun bir kopyasını alın
 AbsorbedTable[] tables = new AbsorbedTable[absorb.TableList.Count];
 absorb.TableList.CopyTo(tables, 0);
 ```
@@ -96,7 +96,7 @@ Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF belgesindeki birden faz
 
 #### S: Bir PDF belgesindeki tüm tablolar yerine belirli tabloları kaldırabilir miyim?
 
-A: Evet, .NET için Aspose.PDF kullanarak bir PDF belgesindeki tüm tablolar yerine belirli tabloları kaldırabilirsiniz. Sağlanan örnekte, ikinci sayfadaki tüm tablolar kaldırılır. Ancak, gereksinimlerinize göre belirli tabloları hedeflemek ve kaldırmak için kodu değiştirebilirsiniz. Bunu yapmak için, kaldırmak istediğiniz tabloları tanımlamanız ve ardından`absorber.Remove(table)` Silmek istediğiniz her bir tablo için özel bir yöntem.
+ A: Evet, .NET için Aspose.PDF kullanarak bir PDF belgesindeki tüm tablolar yerine belirli tabloları kaldırabilirsiniz. Sağlanan örnekte, ikinci sayfadaki tüm tablolar kaldırılır. Ancak, gereksinimlerinize göre belirli tabloları hedeflemek ve kaldırmak için kodu değiştirebilirsiniz. Bunu yapmak için, kaldırmak istediğiniz tabloları tanımlamanız ve ardından`absorber.Remove(table)` Silmek istediğiniz her bir tablo için özel bir yöntem.
 
 #### S: PDF belgesindeki birden fazla sayfadaki tabloları nasıl kaldırabilirim?
 
@@ -104,7 +104,7 @@ A: Evet, .NET için Aspose.PDF kullanarak bir PDF belgesindeki tüm tablolar yer
 
 #### S: Belirtilen sayfada bulunmayan bir tabloyu kaldırmaya çalışırsam ne olur?
 
-A: Belirtilen sayfada bulunmayan bir tabloyu kaldırmaya çalışırsanız, bir hatayla sonuçlanmayacaktır.`absorber.Remove(table)` yöntem kaldırma isteğini görmezden gelecek ve PDF belgesi değişmeden kalacaktır.
+ A: Belirtilen sayfada bulunmayan bir tabloyu kaldırmaya çalışırsanız, bir hatayla sonuçlanmayacaktır.`absorber.Remove(table)` yöntem kaldırma isteğini görmezden gelecek ve PDF belgesi değişmeden kalacaktır.
 
 #### S: Belgeyi kaydettikten sonra tabloların silinmesini geri alabilir miyim?
 

@@ -2,109 +2,40 @@
 title: Skrýt čísla stránek v obsahu
 linktitle: Skrýt čísla stránek v obsahu
 second_title: Aspose.PDF pro .NET API Reference
-description: Naučte se skrýt čísla stránek v obsahu pomocí Aspose.PDF for .NET pomocí tohoto podrobného průvodce.
+description: Naučte se skrýt čísla stránek v obsahu pomocí Aspose.PDF for .NET. Chcete-li vytvářet profesionální soubory PDF, postupujte podle tohoto podrobného průvodce s příklady kódu.
 type: docs
 weight: 220
 url: /cs/net/programming-with-document/hidepagenumbersintoc/
 ---
-V tomto článku budeme diskutovat o implementaci funkce Skrýt čísla stránek v obsahu Aspose.PDF pro .NET pomocí C#. Začneme krátkým úvodem do Aspose.PDF pro .NET a poté se ponoříme do podrobného průvodce implementací této funkce. 
+## Zavedení
 
-## Úvod do Aspose.PDF pro .NET
-
-Aspose.PDF for .NET je výkonná komponenta pro manipulaci s PDF, která umožňuje vývojářům vytvářet, upravovat a manipulovat soubory PDF programově. Poskytuje širokou škálu funkcí a funkcí, které usnadňují práci s dokumenty PDF. Aspose.PDF for .NET podporuje 32bitové i 64bitové operační systémy a lze jej použít s platformami .NET Framework, .NET Core a Xamarin. 
-
-## Co je funkce Skrýt čísla stránek v obsahu?
-
-Obsah (TOC) je nezbytnou součástí dokumentu PDF, který uživatelům poskytuje rychlý přehled o obsahu. Někdy mohou uživatelé chtít skrýt čísla stránek v obsahu, aby byl uživatelsky přívětivější. Aspose.PDF for .NET poskytuje vestavěnou funkci pro skrytí čísel stránek v obsahu. Tuto funkci lze použít k vytvoření uživatelsky přívětivějších dokumentů PDF. 
+Když pracujete s PDF, někdy možná budete chtít vygenerovat obsah (TOC), ale zachovat úhlednost tím, že skryjete čísla stránek. Možná, že dokument plyne lépe bez nich, nebo je to možná estetická volba. Ať už je váš důvod jakýkoli, pokud pracujete s Aspose.PDF pro .NET, tento tutoriál vám přesně ukáže, jak skrýt čísla stránek v obsahu.
 
 ## Předpoklady
 
-Abyste mohli postupovat podle tohoto návodu, budete potřebovat následující:
+Než začneme, je několik věcí, které budete potřebovat. Zde je rychlý kontrolní seznam:
 
-- Visual Studio 2010 nebo novější
-- Aspose.PDF for .NET nainstalovaný ve vašem systému
-- Základní znalost programovacího jazyka C#
+- Nainstalované Visual Studio: K kódování budete potřebovat funkční verzi Visual Studia.
+- Knihovna Aspose.PDF pro .NET: Ujistěte se, že jste nainstalovali knihovnu Aspose.PDF pro .NET.
+  -  Odkaz ke stažení:[Aspose.PDF pro .NET](https://releases.aspose.com/pdf/net/)
+- Dočasná licence: Pokud funkce testujete, je užitečné mít dočasnou licenci.
+  -  Dočasná licence:[Získejte to zde](https://purchase.aspose.com/temporary-license/)
 
-## Podrobný průvodce implementací funkce Skrýt čísla stránek v obsahu
+## Importujte balíčky
 
-Při implementaci funkce Hide Page Numbers In TOC pomocí Aspose.PDF for .NET postupujte podle následujících kroků:
-
-## Krok 1: Vytvořte novou konzolovou aplikaci C# v sadě Visual Studio
-
-Otevřete Visual Studio a vytvořte novou konzolovou aplikaci C#.
-
-## Krok 2: Přidejte odkaz na Aspose.PDF pro .NET
-
-Klepněte pravým tlačítkem myši na složku Reference ve vašem projektu a vyberte Přidat odkaz. Přejděte do umístění, kde je na vašem systému nainstalován Aspose.PDF for .NET, a přidejte na něj odkaz.
-
-## Krok 1: Vytvořte nový dokument PDF
-
-Vytvořte nový dokument PDF pomocí následujícího kódu:
+Před skokem do kódu se ujistěte, že jste do svého projektu C# importovali následující jmenné prostory. Ty poskytnou nezbytné třídy a metody pro práci s dokumenty PDF a vytváření obsahu (TOC).
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outFile = dataDir + "HiddenPageNumbers_out.pdf";
-Document doc = new Document();
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-## Krok 2: Vytvořte stránku TOC
+Nyní, když je vaše prostředí připraveno a balíčky jsou importovány, pojďme si rozebrat jednotlivé kroky procesu. Abychom zajistili srozumitelnost, pokryjeme každou část kódu, abyste jej mohli snadno sledovat.
 
-Vytvořte novou stránku obsahu a přidejte ji do dokumentu PDF pomocí následujícího kódu:
+## Krok 1: Inicializujte svůj dokument PDF
 
-```csharp
-Page tocPage = doc.Pages.Add();
-TocInfo tocInfo = new TocInfo();
-TextFragment title = new TextFragment("Table Of Contents");
-title.TextState.FontSize = 20;
-title.TextState.FontStyle = FontStyles.Bold;
-tocInfo.Title = title;
-```
+První věc, kterou musíme udělat, je vytvořit nový dokument PDF a přidat stránku pro obsah (TOC).
 
-## Krok 3: Přidejte sekci seznamu do kolekce sekcí dokumentu PDF
-
-Přidejte sekci seznamu do kolekce sekcí dokumentu PDF pomocí následujícího kódu:
-
-```csharp
-tocPage.TocInfo = tocInfo;
-```
-
-## Krok 4: Definujte formát seznamu čtyř úrovní
-
-Definujte formát seznamu čtyř úrovní nastavením levých okrajů a nastavení formátu textu každé úrovně pomocí následujícího kódu:
-
-```csharp
-tocInfo.IsShowPageNumbers = false;
-tocInfo.FormatArrayLength = 4;
-tocInfo.FormatArray[0].Margin.Right = 0;
-tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
-tocInfo.FormatArray[1].Margin.Left = 30;
-tocInfo.FormatArray[1].TextState.Underline = true;
-tocInfo.FormatArray[1].TextState.FontSize = 10;
-tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
-tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
-Page page = doc.Pages.Add();
-```
-
-## Krok 5: Přidejte do sekce čtyři nadpisy
-
-```csharp
-
-for (int Level = 1; Level != 5; Level++)
-{ 
-	Heading heading2 = new Heading(Level); 
-	TextSegment segment2 = new TextSegment(); 
-	heading2.TocPage = tocPage; 
-	heading2.Segments.Add(segment2); 
-	heading2.IsAutoSequence = true; 
-	segment2.Text = "this is heading of level " + Level; 
-	heading2.IsInList = true; 
-	page.Paragraphs.Add(heading2); 
-}
-doc.Save(outFile);
-
-```
-
-### Příklad zdrojového kódu pro Hide Page Numbers in TOC pomocí Aspose.PDF for .NET
 
 ```csharp
 // Cesta k adresáři dokumentů.
@@ -112,18 +43,47 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "HiddenPageNumbers_out.pdf";
 Document doc = new Document();
 Page tocPage = doc.Pages.Add();
+```
+
+- dataDir: Toto je adresář, kam bude uložen váš výstupní soubor.
+- Document(): Inicializuje nový dokument PDF.
+- Pages.Add(): Přidá do dokumentu novou prázdnou stránku, která bude později obsahovat váš obsah.
+
+## Krok 2: Nastavte informace o obsahu a název
+
+Dále definujeme informace o obsahu, včetně nastavení názvu, který se zobrazí v horní části obsahu.
+
+```csharp
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
 tocInfo.Title = title;
-//Přidejte sekci seznamu do kolekce sekcí dokumentu Pdf
 tocPage.TocInfo = tocInfo;
-//Definujte formát seznamu čtyř úrovní nastavením levých okrajů a
-//nastavení formátu textu každé úrovně
+```
 
+- TocInfo: Tento objekt obsahuje všechny informace o obsahu.
+- TextFragment: Představuje text názvu TOC, zde jej nastavíme jako "Table Of Contents."
+- FontStyle: Název obsahu upravíme tak, že nastavíme jeho velikost na 20 a zvýrazníme ho tučným písmem.
+- tocPage.TocInfo: Informace o obsahu přiřadíme stránce, která bude zobrazovat obsah.
+
+## Krok 3: Skryjte čísla stránek v obsahu
+
+Nyní k té zábavnější části! Zde nakonfigurujeme obsah tak, aby skryl čísla stránek.
+
+```csharp
 tocInfo.IsShowPageNumbers = false;
 tocInfo.FormatArrayLength = 4;
+```
+
+-  IsShowPageNumbers: Toto je magický přepínač, který skryje čísla stránek. Nastavte na`false`a čísla stránek se v obsahu nezobrazí.
+- FormatArrayLength: Toto jsme nastavili na 4, což znamená, že chceme definovat formátování pro čtyři úrovně nadpisů TOC.
+
+## Krok 4: Přizpůsobte formátování obsahu
+
+Chcete-li přidat více stylu do obsahu, budeme nyní definovat formátování pro různé úrovně nadpisů.
+
+```csharp
 tocInfo.FormatArray[0].Margin.Right = 0;
 tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
 tocInfo.FormatArray[1].Margin.Left = 30;
@@ -131,36 +91,61 @@ tocInfo.FormatArray[1].TextState.Underline = true;
 tocInfo.FormatArray[1].TextState.FontSize = 10;
 tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
 tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
+```
+
+- FormatArray: Toto pole řídí formátování položek obsahu. Každý index představuje jinou úroveň nadpisu.
+- Margin a TextStyle: Pro každou úroveň nadpisu nastavíme okraje a použijeme styly písma, jako je tučné písmo, kurzíva a podtržení.
+
+## Krok 5: Přidejte nadpisy do dokumentu
+
+Na závěr dodejme skutečné nadpisy, které budou součástí TOC.
+
+```csharp
 Page page = doc.Pages.Add();
-//Přidejte do oddílu čtyři nadpisy
 for (int Level = 1; Level != 5; Level++)
-	{ 
-		Heading heading2 = new Heading(Level); 
-		TextSegment segment2 = new TextSegment(); 
-		heading2.TocPage = tocPage; 
-		heading2.Segments.Add(segment2); 
-		heading2.IsAutoSequence = true; 
-		segment2.Text = "this is heading of level " + Level; 
-		heading2.IsInList = true; 
-		page.Paragraphs.Add(heading2); 
-	}
+{ 
+    Heading heading2 = new Heading(Level); 
+    TextSegment segment2 = new TextSegment(); 
+    heading2.TocPage = tocPage; 
+    heading2.Segments.Add(segment2); 
+    heading2.IsAutoSequence = true; 
+    segment2.Text = "this is heading of level " + Level; 
+    heading2.IsInList = true; 
+    page.Paragraphs.Add(heading2); 
+}
+```
+
+- Nadpis a textový segment: Představují nadpisy, které se objeví ve vašem obsahu. Každá úroveň má svůj vlastní nadpis.
+- IsAutoSequence: Automaticky čísluje nadpisy.
+- IsInList: Zajistí, aby se každý nadpis objevil v obsahu.
+
+## Krok 6: Uložte dokument
+
+Jakmile je vše nastaveno, uložte dokument PDF do zadaného výstupního souboru.
+
+```csharp
 doc.Save(outFile);
 ```
 
+A je to! Úspěšně jste vytvořili PDF s obsahem a čísla stránek jsou skrytá!
+
 ## Závěr
 
-V tomto tutoriálu jsme prozkoumali, jak pracovat s metadaty XMP v dokumentu PDF pomocí Aspose.PDF pro .NET. Metadata XMP poskytují cenné informace o dokumentu PDF, včetně jeho názvu, autora, data vytvoření a dalších. Aspose.PDF for .NET umožňuje vývojářům přistupovat a manipulovat s těmito metadaty a poskytuje flexibilní a výkonné API pro práci s dokumenty PDF.
+Vytvoření obsahu v PDF a skrytí čísel stránek se může zdát složité, ale s Aspose.PDF pro .NET je to hračka. Podle tohoto podrobného průvodce jste se naučili, jak přizpůsobit formát obsahu, skrýt čísla stránek a použít různé styly na nadpisy. Nyní můžete vytvářet profesionální soubory PDF přesně na míru vašim potřebám.
 
-### FAQ
+## FAQ
 
-#### Otázka: Co jsou metadata XMP v dokumentu PDF?
+### Mohu zobrazit čísla stránek pro konkrétní nadpisy v obsahu?
+Ne, Aspose.PDF skryje nebo zobrazí čísla stránek pro celý obsah. Nemůžete je selektivně skrýt pro konkrétní položky.
 
-Odpověď: Metadata XMP (Extensible Metadata Platform) v dokumentu PDF jsou standardním formátem pro ukládání informací metadat o dokumentu. Obsahuje podrobnosti, jako je název dokumentu, autor, datum vytvoření, klíčová slova a další. Metadata XMP poskytují strukturovaný a standardizovaný způsob ukládání a sdílení informací o dokumentu PDF.
+### Je možné přidat další úrovně do TOC?
+ Ano, můžete zvýšit`FormatArrayLength` definovat více úrovní nadpisů TOC.
 
-#### Otázka: Mohu upravit metadata XMP dokumentu PDF pomocí Aspose.PDF pro .NET?
+### Jak mohu změnit písmo pro všechny položky obsahu?
+ Písmo můžete změnit úpravou`TextState.Font` vlastnost pro každou úroveň v`FormatArray`.
 
- Odpověď: Ano, metadata XMP dokumentu PDF můžete upravit programově pomocí Aspose.PDF for .NET. Můžete přistupovat k`Info` majetek z`Document` objekt, který vám umožňuje přístup k vlastnostem metadat XMP. Poté můžete aktualizovat hodnoty těchto vlastností a upravit metadata XMP dokumentu PDF.
+### Mohu vložit hypertextové odkazy do obsahu?
+ Ano, každou položku TOC můžete propojit s konkrétní sekcí v dokumentu pomocí`Heading.TocPage` vlastnictví.
 
-#### Otázka: Mohu extrahovat vlastní vlastnosti metadat XMP z dokumentu PDF pomocí Aspose.PDF pro .NET?
-
- Odpověď: Ano, můžete extrahovat vlastní vlastnosti metadat XMP z dokumentu PDF pomocí Aspose.PDF pro .NET. Můžete použít`Metadata` majetek z`Document`objekt, který poskytuje přístup ke všem vlastnostem metadat XMP dokumentu PDF. Poté můžete extrahovat uživatelské vlastnosti a použít jejich hodnoty podle potřeby.
+### Potřebuji licenci pro Aspose.PDF?
+Ano, pro produkční použití je vyžadována platná licence. Můžete získat dočasnou licenci[zde](https://purchase.aspose.com/temporary-license/) k testování funkcí.

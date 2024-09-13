@@ -117,7 +117,7 @@ table1.DefaultCellPadding = margin;
 // Protože už to přes tuto stránku nelze umístit
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
-	// Vytvořte řádky v tabulce a poté buňky v řádcích
+	//Vytvořte řádky v tabulce a poté buňky v řádcích
 	Aspose.Pdf.Row row1 = table1.Rows.Add();
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");

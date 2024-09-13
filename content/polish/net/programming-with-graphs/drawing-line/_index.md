@@ -2,136 +2,148 @@
 title: Rysowanie linii
 linktitle: Rysowanie linii
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak narysować linię na stronie za pomocą Aspose.PDF dla .NET. Przewodnik krok po kroku dotyczący tworzenia niestandardowych linii.
+description: Dowiedz się, jak rysować linie w dokumencie PDF za pomocą Aspose.PDF dla .NET. Ten przewodnik krok po kroku obejmuje konfigurowanie dokumentu, dodawanie linii i zapisywanie pliku.
 type: docs
 weight: 80
 url: /pl/net/programming-with-graphs/drawing-line/
 ---
-W tym samouczku pokażemy Ci krok po kroku poniższy kod źródłowy w języku C#, który umożliwi Ci narysowanie linii za pomocą Aspose.PDF dla platformy .NET.
+## Wstęp
 
-Upewnij się, że zainstalowałeś bibliotekę Aspose.PDF i skonfigurowałeś środowisko programistyczne, zanim zaczniesz. Posiadaj również podstawową wiedzę na temat programowania w języku C#.
+Rysowanie linii w dokumencie PDF może wydawać się prostym zadaniem, ale może być potężnym narzędziem do tworzenia pomocy wizualnych, diagramów i podkreślania kluczowych obszarów. W tym przewodniku przeprowadzimy Cię przez proces rysowania linii w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Ten samouczek obejmuje wszystko, od konfiguracji środowiska po wykonanie kodu w celu wygenerowania pliku PDF z liniami narysowanymi w poprzek.
 
-## Krok 1: Konfiguracja katalogu dokumentów
+## Wymagania wstępne
 
-W podanym kodzie źródłowym musisz określić katalog, w którym chcesz zapisać wynikowy plik PDF. Zmień zmienną „dataDir” na żądany katalog.
+Zanim zagłębisz się w kod, będziesz potrzebować kilku rzeczy:
+
+1.  Aspose.PDF dla .NET: Musisz mieć zainstalowany Aspose.PDF dla .NET. Możesz go pobrać ze strony[Strona internetowa Aspose](https://releases.aspose.com/pdf/net/).
+2. Środowisko programistyczne .NET: Upewnij się, że masz środowisko programistyczne skonfigurowane dla aplikacji .NET. Visual Studio jest dobrym wyborem.
+3. Podstawowa wiedza o języku C#: Znajomość programowania w języku C# będzie pomocna w zrozumieniu fragmentów kodu i przykładów zawartych w tym samouczku.
+
+## Importuj pakiety
+
+Aby pracować z Aspose.PDF dla .NET, musisz zaimportować odpowiednie przestrzenie nazw. Dodaj następującą dyrektywę using na górze pliku C#:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-## Krok 2: Tworzenie instancji dokumentu i dodawanie strony
+Te przestrzenie nazw zapewniają dostęp do klas i metod wymaganych do manipulowania dokumentami PDF i rysowania kształtów.
 
-Tworzymy instancję klasy Document i dodajemy stronę do tego dokumentu.
+Podzielmy proces rysowania linii na serię kroków. Każdy krok poprowadzi Cię przez konkretną część kodu, aby pomóc Ci zrozumieć, jak osiągnąć pożądany rezultat.
 
-```csharp
-Document pDoc = new Document();
-Page pg = pDoc.Pages.Add();
-```
+## Krok 1: Skonfiguruj dokument i stronę
 
-## Krok 3: Ustawianie marginesów strony
-
-Ustawiamy marginesy strony na 0 ze wszystkich stron.
+Pierwszym krokiem jest utworzenie nowego dokumentu PDF i dodanie do niego strony. Oto jak to zrobić:
 
 ```csharp
-pg.PageInfo.Margin.Left = pg.PageInfo.Margin.Right = pg.PageInfo.Margin.Bottom = pg.PageInfo.Margin.Top = 0;
-```
-
-## Krok 4: Tworzenie obiektu wykresu i pierwszej linii
-
-Tworzymy obiekt Graph o wymiarach równych wymiarom strony i rysujemy pierwszą linię biegnącą od lewego dolnego rogu do prawego górnego rogu strony.
-
-```csharp
-Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph((float)pg.PageInfo.Width, (float)pg.PageInfo.Height);
-Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { (float)pg.Rect.LLX, 0, (float)pg.PageInfo.Width, (float)pg.Rect. URY });
-graph.Shapes.Add(line);
-```
-
-## Krok 5: Rysowanie drugiej linii
-
-Rysujemy drugą linię biegnącą od lewego górnego rogu do prawego dolnego rogu strony.
-
-```csharp
-Aspose.Pdf.Drawing.Line line2 = new Aspose.Pdf.Drawing.Line(new float[] { 0, (float)pg.Rect.URY, (float)pg.PageInfo.Width, (float)pg.Rect. LLX });
-graph.Shapes.Add(line2);
-```
-
-## Krok 6: Dodawanie obiektu wykresu do strony
-
-Dodajemy obiekt Graph do kolekcji akapitów strony.
-
-```csharp
-pg.Paragraphs.Add(graph);
-```
-
-## Krok 7: Zapisywanie wynikowego pliku PDF
-
-Na koniec zapisujemy powstały plik PDF pod nazwą „DrawingLine_out.pdf” w określonym katalogu.
-
-```csharp
-pDoc.Save(dataDir + "DrawingLine_out.pdf");
-```
-
-### Przykładowy kod źródłowy do rysowania linii przy użyciu Aspose.PDF dla .NET 
-
-```csharp
-
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+
 // Utwórz instancję dokumentu
 Document pDoc = new Document();
+
 // Dodaj stronę do zbioru stron dokumentu PDF
 Page pg = pDoc.Pages.Add();
+```
+
+ Tutaj,`dataDir` jest ścieżką, w której zostanie zapisany Twój wyjściowy plik PDF.`Document` jest główną klasą do obsługi plików PDF i`Page` oznacza pojedynczą stronę w dokumencie PDF.
+
+## Krok 2: Skonfiguruj marginesy strony
+
+Aby mieć pewność, że linie rozciągają się od krawędzi do krawędzi, należy ustawić marginesy strony na zero:
+
+```csharp
 // Ustaw margines strony ze wszystkich stron na 0
 pg.PageInfo.Margin.Left = pg.PageInfo.Margin.Right = pg.PageInfo.Margin.Bottom = pg.PageInfo.Margin.Top = 0;
+```
+
+Spowoduje to usunięcie wszystkich domyślnych marginesów i udostępni Ci płótno o powierzchni całej strony do rysowania.
+
+## Krok 3: Utwórz obiekt wykresu
+
+ Następnie utwórz`Graph` obiekt, który pasuje do wymiarów strony. Ten obiekt będzie służył jako pojemnik na twoje kształty:
+
+```csharp
 // Utwórz obiekt Graph o szerokości i wysokości równej wymiarom strony
-Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph((float)pg.PageInfo.Width , (float)pg.PageInfo.Height);
+Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(pg.PageInfo.Width, pg.PageInfo.Height);
+```
+
+ Ten`Graph` Obiekt umożliwia dodawanie i manipulowanie kształtami na stronie.
+
+## Krok 4: Narysuj pierwszą linię
+
+Teraz czas narysować pierwszą linię. Ten przykład narysuje linię od lewego dolnego rogu do prawego górnego rogu strony:
+
+```csharp
 // Utwórz obiekt pierwszego wiersza, zaczynając od lewego dolnego rogu do prawego górnego rogu strony
 Aspose.Pdf.Drawing.Line line = new Aspose.Pdf.Drawing.Line(new float[] { (float)pg.Rect.LLX, 0, (float)pg.PageInfo.Width, (float)pg.Rect.URY });
+
 // Dodaj linię do kolekcji kształtów obiektu Graph
 graph.Shapes.Add(line);
+```
+
+ Ten`Line` Klasa przyjmuje współrzędne dla punktów początkowego i końcowego linii. Tutaj,`pg.Rect.LLX` I`pg.Rect.URY` reprezentują odpowiednio lewy dolny i prawy górny róg strony.
+
+## Krok 5: Narysuj drugą linię
+
+przypadku drugiej linii narysujemy linię od lewego górnego rogu do prawego dolnego rogu:
+
+```csharp
 // Narysuj linię od lewego górnego rogu strony do prawego dolnego rogu strony
 Aspose.Pdf.Drawing.Line line2 = new Aspose.Pdf.Drawing.Line(new float[] { 0, (float)pg.Rect.URY, (float)pg.PageInfo.Width, (float)pg.Rect.LLX });
+
 // Dodaj linię do kolekcji kształtów obiektu Graph
 graph.Shapes.Add(line2);
+```
+
+Linia ta będzie przebiegać przez stronę po przekątnej, w przeciwnym kierunku.
+
+## Krok 6: Dodaj wykres do strony
+
+ Mając narysowane linie, musisz teraz dodać`Graph` sprzeciw wobec zbioru akapitów strony:
+
+```csharp
 // Dodaj obiekt Graph do zbioru akapitów strony
 pg.Paragraphs.Add(graph);
+```
+
+ Ten krok integruje`Graph` obiekt (za pomocą linii) na stronie PDF.
+
+## Krok 7: Zapisz dokument
+
+Na koniec zapisz dokument do pliku:
+
+```csharp
 dataDir = dataDir + "DrawingLine_out.pdf";
+
 // Zapisz plik PDF
 pDoc.Save(dataDir);
-Console.WriteLine("\nLine drawn successfully across the page.\nFile saved at " + dataDir);            
-
+Console.WriteLine("\nLine drawn successfully across the page.\nFile saved at " + dataDir);
 ```
+
+ Zapisuje plik PDF z narysowanymi liniami i`Console.WriteLine` oświadczenie potwierdza, że operacja zakończyła się sukcesem.
 
 ## Wniosek
 
-tym samouczku wyjaśniliśmy, jak narysować linię za pomocą Aspose.PDF dla .NET. Teraz możesz wykorzystać tę wiedzę, aby tworzyć kształty geometryczne z niestandardowymi liniami w plikach PDF.
+Rysowanie linii w dokumencie PDF przy użyciu Aspose.PDF dla .NET to prosty proces, gdy podzielisz go na łatwe do opanowania kroki. Postępując zgodnie z tym samouczkiem, nauczyłeś się, jak skonfigurować dokument PDF, rysować na nim linie i zapisywać produkt końcowy. Niezależnie od tego, czy tworzysz diagramy, podkreślasz tekst, czy po prostu eksperymentujesz z manipulacją PDF, ten przewodnik zapewnia solidne podstawy do pracy z liniami w plikach PDF.
 
-### Najczęściej zadawane pytania
+ Jeśli masz jakiekolwiek pytania lub potrzebujesz dalszej pomocy, skontaktuj się z nami[Dokumentacja Aspose.PDF](https://reference.aspose.com/pdf/net/) lub odwiedź[Forum wsparcia Aspose](https://forum.aspose.com/c/pdf/10).
 
-#### P: Jaki jest cel tego poradnika?
+## Najczęściej zadawane pytania
 
-A: Celem tego samouczka jest poprowadzenie Cię przez proces rysowania linii za pomocą Aspose.PDF dla .NET. Dowiesz się, jak tworzyć linie na stronie PDF i dostosowywać ich wygląd.
+### Czy mogę rysować inne kształty niż linie?
+ Tak, możesz rysować różne kształty, takie jak prostokąty, elipsy i wielokąty, używając`Aspose.Pdf.Drawing` przestrzeń nazw.
 
-#### P: Jakie warunki wstępne należy spełnić przed rozpoczęciem?
+### Jak dostosować kolor i grubość linii?
+ Możesz ustawić`Line` obiekt`StrokeColor` I`LineWidth` właściwości, aby dostosować wygląd linii.
 
-A: Zanim zaczniesz, upewnij się, że zainstalowałeś bibliotekę Aspose.PDF i skonfigurowałeś środowisko programistyczne. Zalecana jest również podstawowa znajomość programowania w języku C#.
+### Czy można rysować linie na określonych obszarach strony?
+ Oczywiście! Wystarczy dostosować współrzędne`Line` obiekt, aby ustawić linie w odpowiednim miejscu.
 
-#### P: Jak określić katalog, w którym zapisany zostanie plik PDF?
+### Czy mogę dodać tekst wzdłuż linii?
+ Tak, możesz dodać tekst, tworząc`TextFragment` obiektów i umieszczanie ich w`Paragraphs` kolekcja stron.
 
-A: Zmień zmienną „dataDir” w dostarczonym kodzie źródłowym, aby wskazać katalog, w którym chcesz zapisać wynikowy plik PDF.
-
-#### P: Jak tworzyć linie na stronie PDF?
-
-A: W tym samouczku pokazano tworzenie obiektu Graph o wymiarach strony, a następnie dodawanie do niego obiektów Line. Zmodyfikuj współrzędne i właściwości obiektów Line, aby utworzyć żądane linie.
-
-#### P: Czy mogę dostosować wygląd linii?
-
-A: Tak, możesz dostosować wygląd linii, modyfikując właściwości obiektów Line. Obejmuje to zmianę ich współrzędnych, koloru, grubości i innych atrybutów graficznych.
-
-#### P: Jak zapisać dokument PDF po narysowaniu linii?
-
- A: Po dodaniu obiektu Wykres z obiektami Linia do strony możesz zapisać wynikowy dokument PDF za pomocą`pDoc.Save(dataDir + "DrawingLine_out.pdf");` wiersz w dostarczonym kodzie źródłowym.
-
-#### P: Czy mogę rysować linie pod różnymi kątami i w różnych orientacjach?
-
-O: Tak, możesz rysować linie pod różnymi kątami i o różnych orientacjach, dostosowując współrzędne i właściwości obiektów linii w obrębie wykresu.
+### Co zrobić, jeśli zamiast tworzyć nowy plik PDF, chcę dodać linie do istniejącego pliku PDF?
+ Możesz załadować istniejący plik PDF za pomocą`Document` a następnie za pomocą podobnych metod dodaj wiersze do istniejących stron.

@@ -2,48 +2,80 @@
 title: Nastavte datum vypršení platnosti v souboru PDF
 linktitle: Nastavte datum vypršení platnosti v souboru PDF
 second_title: Aspose.PDF pro .NET API Reference
-description: Naučte se, jak nastavit datum vypršení platnosti v souboru PDF pomocí Aspose.PDF for .NET pomocí tohoto podrobného průvodce.
+description: Naučte se, jak nastavit datum vypršení platnosti v souborech PDF pomocí Aspose.PDF pro .NET. Vylepšete zabezpečení dokumentů pomocí tohoto podrobného průvodce.
 type: docs
 weight: 300
 url: /cs/net/programming-with-document/setexpirydate/
 ---
-Aspose.PDF for .NET je výkonná knihovna, která poskytuje různé funkce pro práci se soubory PDF. Jednou z takových funkcí je možnost nastavit datum vypršení platnosti dokumentu PDF. V tomto tutoriálu vás provedeme procesem nastavení data vypršení platnosti dokumentu PDF pomocí Aspose.PDF pro .NET. 
+## Zavedení
 
-## Krok 1: Nastavte cestu k adresáři dokumentů
+dnešní digitální době je správa a zabezpečení dokumentů důležitější než kdy jindy. Představte si, že posíláte PDF, které se po určitém datu automaticky stane nepřístupným. Zní to jako kouzlo, že? S Aspose.PDF pro .NET můžete snadno nastavit datum vypršení platnosti souborů PDF. Tato funkce je užitečná zejména pro citlivé dokumenty, které je třeba po určité době omezit. V tomto tutoriálu vás krok za krokem provedeme procesem nastavení data vypršení platnosti v souboru PDF. Takže popadněte svůj kódovací klobouk a pojďme se ponořit!
 
-Než začneme, musíme nastavit cestu k adresáři, kde se nachází náš PDF dokument. Tuto cestu uložíme do proměnné s názvem „dataDir“.
+## Předpoklady
+
+Než začneme, je třeba mít připraveno několik věcí:
+
+1. Vývojové prostředí: Ujistěte se, že máte nastavené vývojové prostředí .NET. Může to být Visual Studio nebo jakékoli jiné IDE, které podporuje .NET.
+2.  Aspose.PDF for .NET: Musíte mít nainstalovanou knihovnu Aspose.PDF. Pokud jste to ještě neudělali, můžete si to stáhnout z[zde](https://releases.aspose.com/pdf/net/).
+3. Základní znalost C#: Tento tutoriál předpokládá, že máte základní znalosti o programování v C#. Pokud jste v C# noví, nebojte se! Zachováme to jednoduché a přímočaré.
+
+## Importujte balíčky
+
+Chcete-li začít s Aspose.PDF, musíte do svého projektu C# importovat potřebné jmenné prostory. Můžete to udělat takto:
+
+```csharp
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Text;
+```
+
+Tyto jmenné prostory vám poskytují přístup k základním funkcím potřebným pro práci s dokumenty PDF v Aspose.PDF.
+
+## Krok 1: Nastavte adresář dokumentů
+
+Nejprve musíte zadat cestu k adresáři dokumentů. Zde se uloží vaše výstupní PDF. 
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Krok 2: Vytvoření nového dokumentu PDF
+ Nahradit`"YOUR DOCUMENT DIRECTORY"` se skutečnou cestou, kam chcete soubor PDF uložit. Je to, jako byste svému programu řekli: "Hej, tady si uchovávám své soubory!"
 
- Chcete-li vytvořit nový dokument PDF, musíme vytvořit instanci nového`Aspose.Pdf.Document` objekt. Můžeme to udělat pomocí následujícího kódu:
+## Krok 2: Vytvořte instanci objektu dokumentu
+
+ Dále musíte vytvořit novou instanci souboru`Document` třída. Toto je vaše plátno, na kterém vytvoříte PDF.
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## Krok 3: Přidání nové stránky do dokumentu PDF
+ Myslete na`Document` objekt jako prázdný list papíru. Můžete do něj přidávat obsah, jak chcete!
 
-Jakmile vytvoříme dokument PDF, můžeme do něj přidat novou stránku. Můžeme to udělat pomocí následujícího kódu:
+## Krok 3: Přidejte stránku do PDF
+
+Nyní, když máte dokument nastavený, je čas přidat do něj stránku. Tady bude váš obsah.
 
 ```csharp
 doc.Pages.Add();
 ```
 
-## Krok 4: Přidání textu do dokumentu PDF
+Právě jste vytvořili novou stránku ve svém PDF. Je to jako přidat do poznámkového bloku novou stránku, kam si můžete zapisovat své myšlenky.
 
- Po přidání stránky do dokumentu PDF do něj můžeme přidat text pomocí`Paragraphs` sbírka. Můžeme to udělat pomocí následujícího kódu:
+## Krok 4: Přidejte text na stránku
+
+Pojďme udělat tuto stránku trochu zajímavější přidáním nějakého textu. Přidáme jednoduchou zprávu „Ahoj světe“.
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
 ```
 
-## Krok 5: Nastavení data vypršení platnosti PDF pomocí JavaScriptu
+Tento řádek kódu přidá textový fragment na první stránku vašeho PDF. Je to jako napsat nadpis v horní části stránky!
 
-Chcete-li nastavit datum vypršení platnosti PDF, musíme vytvořit objekt JavaScript. Můžeme to udělat pomocí následujícího kódu:
+## Krok 5: Vytvořte JavaScript pro datum vypršení platnosti
+
+Nyní přichází ta zábavná část! Vytvoříte akci JavaScriptu, která zkontroluje datum vypršení platnosti PDF. Pokud aktuální datum překročí datum vypršení platnosti, upozorní uživatele zpráva.
 
 ```csharp
 JavascriptAction javaScript = new JavascriptAction(
@@ -53,67 +85,52 @@ JavascriptAction javaScript = new JavascriptAction(
 + "expiry = new Date(year, month);"
 + "if (today.getTime() > expiry.getTime())"
 + "app.alert('The file is expired. You need a new one.');");
+```
 
-// Nastavit JavaScript jako akci otevření PDF
+Zde je to, co se děje:
+- Definujete rok a měsíc platnosti.
+- Dostanete dnešní datum.
+- Porovnáte dnešní datum s datem vypršení platnosti.
+- Pokud je dnešní datum po datu vypršení platnosti, objeví se zpráva!
+
+## Krok 6: Nastavte JavaScript jako PDF Open Action
+
+Nyní musíte nastavit akci JavaScript jako akci otevření pro váš dokument PDF. To znamená, že JavaScript se spustí, jakmile se PDF otevře.
+
+```csharp
 doc.OpenAction = javaScript;
 ```
 
-V tomto kódu nastavujeme datum vypršení platnosti na květen 2017.
+Tento řádek říká PDF, aby spustil JavaScript, když jej někdo otevře. Je to jako nastavit připomenutí, které se spustí, jakmile otevřete kalendář!
 
-## Krok 6: Uložte soubor PDF
+## Krok 7: Uložte dokument PDF
 
- Po nastavení data vypršení platnosti je třeba uložit soubor PDF. Chcete-li to provést, můžete použít`Save` metoda`Document` objekt a předejte cestu k místu, kam chcete uložit aktualizovaný soubor PDF.
+Konečně je čas uložit dokument PDF pomocí funkce data vypršení platnosti. 
 
 ```csharp
 dataDir = dataDir + "SetExpiryDate_out.pdf";
-// Uložit dokument PDF
 doc.Save(dataDir);
 ```
 
-### Příklad zdrojového kódu pro Set Expiry Date pomocí Aspose.PDF for .NET
-
-Zde je úplný příklad zdrojového kódu pro nastavení data vypršení platnosti pomocí Aspose.PDF pro .NET:
-
-```csharp
-// Cesta k adresáři dokumentů.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Objekt okamžitého dokumentu
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-// Přidat stránku do kolekce stránek souboru PDF
-doc.Pages.Add();
-// Přidejte fragment textu do kolekce odstavců objektu stránky
-doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
-// Vytvořte objekt JavaScript pro nastavení data vypršení platnosti PDF
-JavascriptAction javaScript = new JavascriptAction(
-"var year=2017;"
-+ "var month=5;"
-+ "today = new Date(); today = new Date(today.getFullYear(), today.getMonth());"
-+ "expiry = new Date(year, month);"
-+ "if (today.getTime() > expiry.getTime())"
-+ "app.alert('The file is expired. You need a new one.');");
-// Nastavit JavaScript jako akci otevření PDF
-doc.OpenAction = javaScript;
-
-dataDir = dataDir + "SetExpiryDate_out.pdf";
-// Uložit dokument PDF
-doc.Save(dataDir);
-```
+Tento řádek uloží vaše PDF do zadaného adresáře s názvem "SetExpiryDate_out.pdf". Je to jako vložit hotové umělecké dílo do rámu!
 
 ## Závěr
 
-Nastavení data vypršení platnosti dokumentu PDF pomocí Aspose.PDF pro .NET je užitečná funkce, která zajistí, že dokument bude platný pouze po určitou dobu. Podle podrobného průvodce a pomocí poskytnutého zdrojového kódu C# mohou vývojáři snadno nastavit datum vypršení platnosti a vytvářet soubory PDF s časově omezenou platností. Tato funkce může být užitečná zejména pro dokumenty, které je třeba zpřístupnit nebo distribuovat po omezenou dobu.
+A tady to máte! Úspěšně jste vytvořili soubor PDF s datem vypršení platnosti pomocí Aspose.PDF pro .NET. Tato funkce nejen zvyšuje zabezpečení, ale také zajišťuje, že citlivé informace budou udržovány pod kontrolou. Ať už posíláte smlouvy, zprávy nebo jiné důležité dokumenty, nastavení data vypršení může změnit hru.
 
-### Časté dotazy pro nastavení data vypršení platnosti v souboru PDF
+## FAQ
 
-#### Otázka: Mohu pro dokument PDF nastavit jiné datum vypršení platnosti?
+### Co je Aspose.PDF pro .NET?
+Aspose.PDF for .NET je výkonná knihovna, která umožňuje vývojářům vytvářet, manipulovat a převádět dokumenty PDF v aplikacích .NET.
 
- Odpověď: Ano, můžete nastavit jiné datum vypršení platnosti dokumentu PDF úpravou kódu JavaScript v kroku 5. V uvedeném příkladu je datum vypršení platnosti nastaveno na květen 2017. Chcete-li nastavit jiné datum vypršení platnosti, musíte upravit`year` a`month` proměnné v kódu JavaScript na požadovaný rok a měsíc.
+### Mohu používat Aspose.PDF zdarma?
+ Ano, můžete použít bezplatnou zkušební verzi Aspose.PDF. Můžete si jej stáhnout[zde](https://releases.aspose.com/).
 
-#### Otázka: Co se stane, když platnost dokumentu PDF vyprší?
+### Jak koupím Aspose.PDF?
+Aspose.PDF si můžete zakoupit na adrese[nákupní stránku](https://purchase.aspose.com/buy).
 
-Odpověď: Když vypršela platnost dokumentu PDF, jak je uvedeno v kódu JavaScript, prohlížeč zobrazí varovnou zprávu oznamující, že platnost souboru vypršela a že uživatel potřebuje nový. Tato výstražná zpráva se zobrazí při otevření PDF.
+### Co když potřebuji podporu?
+Pokud máte nějaké dotazy nebo potřebujete pomoc, můžete navštívit stránku[Aspose fórum podpory](https://forum.aspose.com/c/pdf/10).
 
-#### Otázka: Mohu pro datum vypršení platnosti použít konkrétní čas namísto pouhého data?
-
- Odpověď: Ano, v kódu JavaScript můžete nastavit konkrétní čas pro datum vypršení platnosti. Úpravou`expiry` proměnnou v kódu JavaScript zahrnout požadovaný čas, můžete nastavit konkrétní čas pro datum vypršení platnosti.
+### Mohu získat dočasnou licenci pro Aspose.PDF?
+ Ano, můžete požádat o dočasnou licenci[zde](https://purchase.aspose.com/temporary-license/).

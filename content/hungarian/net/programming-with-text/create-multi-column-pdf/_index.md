@@ -46,7 +46,7 @@ doc.PageInfo.Margin.Right = 40;
 ```
 
 ## 6. lépés: Adjon hozzá egy oldalt a dokumentumhoz
- Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
+ Adjon hozzá egy új oldalt a dokumentumhoz a`Add` módszere a`Pages` gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -112,7 +112,7 @@ doc.Save(dataDir);
 // A dokumentumok könyvtárának elérési útja.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
-//Adja meg a bal margó információit a PDF-fájlhoz
+// Adja meg a bal margó információit a PDF-fájlhoz
 doc.PageInfo.Margin.Left = 40;
 // Adja meg a jobb margó információit a PDF-fájlhoz
 doc.PageInfo.Margin.Right = 40;
@@ -149,7 +149,7 @@ Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50, 10);
 float[] posArr2 = new float[] { 1, 10, 100, 10 };
 Aspose.Pdf.Drawing.Line l2 = new Aspose.Pdf.Drawing.Line(posArr2);
 graph2.Shapes.Add(l2);
-// Adja hozzá a sort a szakaszobjektum bekezdésgyűjteményéhez
+//Adja hozzá a sort a szakaszobjektum bekezdésgyűjteményéhez
 box.Paragraphs.Add(graph2);
 TextFragment text2 = new TextFragment(@"Sed augue tortor, sodales id, luctus et, pulvinar ut, eros. Suspendisse vel dolor. Sed quam. Curabitur ut massa vitae eros euismod aliquam. Pellentesque sit amet elit. Vestibulum interdum pellentesque augue. Cras mollis arcu sit amet purus. Donec augue. Nam mollis tortor a elit. Nulla viverra nisl vel mauris. Vivamus sapien. nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et,nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.");
 box.Paragraphs.Add(text2);
@@ -169,7 +169,7 @@ Sikeresen létrehozott egy több oszlopos PDF-fájlt az Aspose.PDF for .NET hasz
 
 Ez az oktatóanyag a többoszlopos PDF létrehozásának folyamatán összpontosít, az Aspose.PDF for .NET könyvtár használatával. A mellékelt C# forráskód bemutatja az ehhez szükséges lépéseket.
 
-#### K: Milyen névtereket importáljak ehhez az oktatóanyaghoz?
+#### K: Mely névtereket kell importálnom ehhez az oktatóanyaghoz?
 
 V: Abban a kódfájlban, amelyben több oszlopból álló PDF-et szeretne létrehozni, importálja a következő névtereket a fájl elejére:
 
@@ -200,7 +200,7 @@ using Aspose.Pdf.Drawing;
 
 #### K: Hogyan adhatok hozzá címsort HTML formázással?
 
- V: A 8. lépésben létrehoz egy`HtmlFragment` objektumot, és állítsa be a tartalmát a kívánt HTML szövegre, majd adja hozzá a töredéket a`Paragraphs` az oldal gyűjteménye.
+V: A 8. lépésben létrehoz egy`HtmlFragment` objektumot, és állítsa be a tartalmát a kívánt HTML szövegre, majd adja hozzá a töredéket a`Paragraphs` az oldal gyűjteménye.
 
 #### K: Hogyan hozhatok létre több oszlopos FloatingBoxot?
 

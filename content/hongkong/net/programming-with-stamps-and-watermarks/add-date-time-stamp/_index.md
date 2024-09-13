@@ -2,178 +2,185 @@
 title: 在 PDF 檔案中新增日期時間戳
 linktitle: 在 PDF 檔案中新增日期時間戳
 second_title: Aspose.PDF for .NET API 參考
-description: 了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中輕鬆新增日期和時間戳記。
+description: 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 將日期和時間戳記新增至 PDF 檔案。非常適合增強文件的真實性。
 type: docs
 weight: 10
 url: /zh-hant/net/programming-with-stamps-and-watermarks/add-date-time-stamp/
 ---
-在本文中，我們將逐步指導您如何使用 Aspose.PDF for .NET 在 PDF 文件中新增日期和時間戳記。我們將向您展示如何使用提供的 C# 原始程式碼向現有 PDF 文件新增日期和時間戳記。
+## 介紹
 
-## 要求
+在管理文件（尤其是 PDF）時，新增日期和時間戳記可能會改變遊戲規則。無論您正在處理法律文件、專案報告或發票，時間戳不僅可以增加真實性，還可以提供文件建立或修改時間的清晰記錄。在本指南中，我們將引導您完成使用 .NET 的 Aspose.PDF 庫為 PDF 檔案新增日期和時間戳記的過程。 
 
-在開始之前，請確保您具備以下條件：
+本文旨在簡單易懂，因此即使您是程式設計或 Aspose.PDF 庫的新手，您也能夠充滿信心地實現此功能。讓我們深入了解吧！
 
-- 已安裝的 .NET 開發環境。
-- 下載 .NET 的 Aspose.PDF 庫並在您的專案中引用。
+## 先決條件
 
-## 第一步：建構環境
+在我們開始之前，您需要滿足一些先決條件：
 
-在新增日期和時間戳記之前，您需要設定開發環境。以下是要遵循的步驟：
+1. Visual Studio：確保您的電腦上安裝了 Visual Studio。您將在此處編寫和執行程式碼。
+2. Aspose.PDF for .NET：您需要下載並安裝Aspose.PDF庫。你可以找到最新版本[這裡](https://releases.aspose.com/pdf/net/).
+3. C# 基礎知識：熟悉 C# 程式設計將幫助您更好地理解範例，但如果您剛開始，您不必擔心；我們將逐步解釋一切。
+4.  PDF 檔案：準備好範例 PDF 檔案。對於我們的範例，我們將使用一個名為`AddTextStamp.pdf`.
 
-1. 打開您最喜歡的 IDE（整合開發環境）。
-2. 建立一個新的 C# 專案。
-3. 請確定您已新增對 .NET 的 Aspose.PDF 庫的參考。
+滿足這些先決條件後，您就可以開始在 PDF 檔案中新增日期和時間戳記了！
 
-## 第2步：新增Aspose.PDF庫
+## 導入包
 
-需要使用適用於 .NET 的 Aspose.PDF 庫來處理專案中的 PDF 文件。
+首先，您需要在 C# 專案中匯入必要的命名空間。操作方法如下：
 
-## 第 3 步：載入 PDF 文檔
+### 建立一個新項目
 
-新增日期和時間戳的第一步是將現有 PDF 文件載入到您的專案中。方法如下：
+1. 開啟 Visual Studio：啟動 Visual Studio 應用程式。
+2. 建立新項目：從開始畫面中選擇「建立新項目」。
+3. 選擇控制台應用程式：從專案範本清單中選擇“控制台應用程式（.NET Framework）”。
+4. 為您的專案命名：為您的專案命名，例如，`PDFDateTimeStamp`.
+
+### 新增 Aspose.PDF 參考
+
+1. 右鍵點選引用：在解決方案資源管理器中，右鍵點選專案的「引用」資料夾。
+2. 選擇“新增引用”：從上下文選單中選擇“新增引用”。
+3. 瀏覽 Aspose.PDF：導航到下載 Aspose.PDF 的位置並選擇它。按一下「確定」將其新增至您的專案。
+
+### 導入所需的命名空間
+
+在你的頂部`Program.cs`文件中，需要匯入以下命名空間：
+
+```csharp
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System;
+using Aspose.Pdf.Annotations;
+```
+
+現在我們已經完成了所有設置，讓我們將向 PDF 文件添加日期和時間戳記的過程分解為清晰、可管理的步驟。
+
+## 步驟1：設定文檔目錄
+
+首先，您需要指定 PDF 檔案所在的目錄。這很重要，因為程式碼將在此目錄中找到 PDF。
 
 ```csharp
 //文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY"; //替換成你的實際路徑
+```
 
+確保更換`YOUR DOCUMENT DIRECTORY`與 PDF 檔案的實際路徑。
+
+## 第 2 步：開啟 PDF 文檔
+
+接下來，您將開啟要在其中新增時間戳記的 PDF 文件。 
+
+```csharp
 //開啟文件
 Document pdfDocument = new Document(dataDir + "AddTextStamp.pdf");
 ```
 
-請務必將「您的文件目錄」替換為 PDF 文件所在目錄的實際路徑。
+這行程式碼初始化了`Document`類別並將您的 PDF 文件加載到`pdfDocument`目的。
 
-## 步驟 4：建立日期和時間戳
+## 第 3 步：建立日期時間戳
 
-現在您已經上傳了文檔
-
-  PDF，您可以建立要新增的日期和時間戳記。操作方法如下：
+現在是時候產生日期和時間戳記了。您將其格式化為以特定方式顯示。 
 
 ```csharp
-string annotationText = string.Empty;
-annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt");
-
-//建立文字緩衝區
-TextStamp textStamp = new TextStamp(annotationText);
+string annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt ");
 ```
 
-上面的程式碼建立一個包含當前日期和時間的新文字緩衝區。
+這裡，`DateTime.Now`取得當前日期和時間，以及`ToString`將其格式化為您想要的格式。
 
-## 步驟 5：配置圖章屬性
+## 第 4 步：建立文字圖章
 
-在將圖章新增至 PDF 文件之前，您可以設定圖章的各種屬性，例如邊距、水平和垂直對齊方式等。
-
-```csharp
-//設定緩衝區屬性
-textStamp.BottomMargin = 10;
-textStamp. RightMargin = 20;
-textStamp.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
-textStamp.VerticalAlignment = VerticalAlignment.Bottom;
-```
-
-您可以根據需要調整這些屬性。
-
-## 第 6 步：將圖章新增至 PDF
-
-現在日期和時間戳記已準備就緒，您可以將其新增至 PDF 文件的特定頁面。方法如下：
+準備好日期和時間字串後，現在可以建立將新增到 PDF 中的文字圖章。
 
 ```csharp
-//將圖章加入到頁面的圖章集中
-pdfDocument.Pages[1].AddStamp(textStamp);
-```
-
-上面的程式碼將圖章新增到 PDF 文件的第一頁。如果需要，您可以指定另一個頁面。
-
-## 步驟7：儲存輸出文檔
-
-新增日期和時間戳記後，您可以儲存修改後的 PDF 文件。方法如下：
-
-```csharp
-//儲存輸出文檔
-pdfDocument.Save(dataDir);
-```
-
-上述程式碼將編輯後的PDF文件儲存到指定目錄。
-
-### 使用 Aspose.PDF for .NET 新增日期時間戳記的範例原始碼 
-```csharp
-
-//文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-//開啟文件
-Document pdfDocument = new Document(dataDir+ "AddTextStamp.pdf");
-string annotationText = string.Empty;
-annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt ");
-
 //建立文字印章
 TextStamp textStamp = new TextStamp(annotationText);
+```
 
+該行會建立一個新實例`TextStamp`使用格式化的日期和時間字串。
+
+## 第 5 步：設定圖章屬性
+
+您可以自訂圖章的外觀和位置。設定其屬性的方法如下：
+
+```csharp
 //設定圖章的屬性
 textStamp.BottomMargin = 10;
 textStamp.RightMargin = 20;
 textStamp.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
 textStamp.VerticalAlignment = VerticalAlignment.Bottom;
+```
 
+在此步驟中，我們設定邊距並將圖章與 PDF 頁面的右下角對齊。
+
+## 第 6 步：將圖章新增至 PDF
+
+現在是時候將文字圖章新增到您的 PDF 文件中了。 
+
+```csharp
 //在集郵上新增郵票
 pdfDocument.Pages[1].AddStamp(textStamp);
+```
+
+此行將圖章新增至 PDF 的第一頁。如果您想將其放置在不同的頁面上，您可以更改頁碼。
+
+## 第 7 步：建立自由文字註釋（可選）
+
+如果你想為圖章添加註釋，你可以創建一個`FreeTextAnnotation`如下：
+
+```csharp
 DefaultAppearance default_appearance = new DefaultAppearance("Arial", 6, System.Drawing.Color.Black);
 FreeTextAnnotation textAnnotation = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(0, 0, 0, 0), default_appearance);
 textAnnotation.Name = "Stamp";
 textAnnotation.Accept(new AnnotationSelector(textAnnotation));
 textAnnotation.Contents = textStamp.Value;
+```
 
+此可選步驟建立一個自由文字註釋，可以提供有關圖章的附加上下文或資訊。
+
+## 第8步：配置註解邊框
+
+如果您想自訂註解的邊框，也可以這樣做：
+
+```csharp
 Border border = new Border(textAnnotation);
 border.Width = 0;
 border.Dash = new Dash(1, 1);
 textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(0, 0, 0, 0);
 pdfDocument.Pages[1].Annotations.Add(textAnnotation);
-dataDir = dataDir + "AddDateTimeStamp_out.pdf";
-
-//儲存輸出文檔
-pdfDocument.Save(dataDir);
-Console.WriteLine("\nDate time stamp added successfully.\nFile saved at " + dataDir);  
-          
 ```
+
+此程式碼片段將邊框寬度設為 0，使其不可見，並將註解新增至 PDF。
+
+## 第9步：儲存PDF文檔
+
+最後，您需要儲存修改後的PDF文件。 
+
+```csharp
+dataDir = dataDir + "AddDateTimeStamp_out.pdf"; //指定輸出檔名
+pdfDocument.Save(dataDir);
+Console.WriteLine("\nDate time stamp added successfully.\nFile saved at " + dataDir);
+```
+
+此行將新增了時間戳記的 PDF 儲存到新文件中。您可以檢查指定的目錄以查看輸出。
 
 ## 結論
 
-恭喜！您已經了解如何使用 Aspose.PDF for .NET 新增日期和時間戳記。現在您可以將這些知識應用到您自己的專案中，以在 PDF 文件中新增日期和時間戳記。
+恭喜！您已使用 Aspose.PDF for .NET 成功為 PDF 檔案新增日期和時間戳記。這個簡單而有效的功能可以增強您的文檔，使它們更加專業，並提供創建或修改時間的清晰記錄。 
 
-### 在 PDF 檔案中新增日期時間戳記的常見問題解答
+## 常見問題解答
 
-#### Q：使用 Aspose.PDF for .NET 為 PDF 文件新增日期和時間戳記的目的是什麼？
+### 我可以自訂時間戳中的日期格式嗎？
+是的，您可以修改`ToString`方法將日期格式變更為您的偏好。
 
-答：在 PDF 文件中新增日期和時間戳記可以指示文件的修改或建立時間，從而增強其資訊價值。此功能對於追蹤文件變更並為文件歷史記錄提供參考點非常有用。
+### Aspose.PDF 可以免費使用嗎？
+ Aspose.PDF 提供免費試用版，但要獲得完整功能，您需要購買授權。您可以獲得臨時許可證[這裡](https://purchase.aspose.com/temporary-license/).
 
-#### Q：我可以自訂日期和時間戳記的格式以滿足特定要求嗎？
+### 我可以在 PDF 中新增多個時間戳記嗎？
+絕對地！您可以建立多個`TextStamp`實例並將它們新增至 PDF 中的不同頁面或位置。
 
-答：是的，您可以根據您的喜好自訂日期和時間戳記的格式。提供的 C# 原始碼使用`DateTime.Now.ToString()`方法產生特定格式的時間戳記。您可以修改此程式碼以根據需要格式化時間戳。
+### 如果我沒有 Visual Studio 怎麼辦？
+您可以使用任何 C# IDE 或文字編輯器，但為了執行和偵錯項目，建議使用 Visual Studio。
 
-#### Q：是否可以將日期和時間戳記新增至 PDF 頁面上的特定位置？
-
-答：當然可以，您可以透過修改 PDF 頁面的屬性來調整日期和時間戳記在 PDF 頁面上的位置。`TextStamp`目的。本教學中提供的程式碼示範如何設定邊距、對齊方式和垂直定位等屬性。
-
-#### Q：我可以在同一 PDF 文件的不同頁面上新增多個日期和時間戳記嗎？
-
-答：是的，您可以將多個日期和時間戳記新增至相同 PDF 文件的不同頁面。只需重複建立的過程`TextStamp`物件並為每個所需頁面配置其屬性。
-
-#### Q：如何更改日期和時間戳文字的字體、大小或顏色？
-
-答：要修改日期和時間戳文字的字體、大小或顏色，您可以自訂日期和時間戳文字的屬性。`DefaultAppearance`用於建立的對象`TextStamp`。調整字體名稱、大小和顏色值以獲得所需的外觀。
-
-#### Q：是否可以使用 Aspose.PDF for .NET 將其他類型的註解或圖章加入 PDF 文件中？
-
-答：是的，Aspose.PDF for .NET 提供了多種註解類型，您可以將其新增至 PDF 文件中，包括文字註解、圖章、線條、形狀等。您可以瀏覽 Aspose.PDF 文件以取得有關使用註解的更多詳細資訊。
-
-#### Q：在 PDF 文件中新增日期和時間戳記時有任何限製或註意事項嗎？
-
-答：雖然新增日期和時間戳很簡單，但請考慮文件佈局和現有內容等因素。確保印章的位置不會掩蓋重要資訊或影響文件的可讀性。
-
-#### Q：如何將此方法整合到我自己的專案中，為 PDF 文件添加日期和時間戳記？
-
-答：要整合此方法，請按照提供的步驟操作並調整程式碼以適合您的專案結構。您可以為現有 PDF 文件添加日期和時間戳，以增強其實用性並提供清晰的更改時間表。
-
-#### Q：我可以自動執行新增日期和時間戳記的過程嗎？
-
-答：是的，您可以透過建立腳本或程式來自動執行為多個 PDF 文件新增日期和時間戳記的過程，該腳本或程式會迭代文件清單並對每個文件套用相同的標記過程。
+### 在哪裡可以找到更多使用 Aspose.PDF 的範例？
+您可以在以下位置探索更多範例和教程[Aspose.PDF 文檔](https://reference.aspose.com/pdf/net/).

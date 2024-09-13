@@ -39,7 +39,7 @@ Document _pdfdocument = new Document();
 ```
 
 ## Paso 5: Agregar una página al documento
- Agregue una nueva página al documento usando el`Add` método de la`Pages`colección. En el código proporcionado, la nueva página se asigna a la variable`page`.
+ Agregue una nueva página al documento usando el`Add` método de la`Pages` colección. En el código proporcionado, la nueva página se asigna a la variable`page`.
 
 ```csharp
 Page page = _pdfdocument.Pages.Add();

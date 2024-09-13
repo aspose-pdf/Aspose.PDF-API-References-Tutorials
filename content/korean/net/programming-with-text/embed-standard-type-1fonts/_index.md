@@ -30,7 +30,7 @@ using Aspose.Pdf;
  코드에서 다음 줄을 찾으세요.`string dataDir = "YOUR DOCUMENT DIRECTORY";` 그리고 교체하다`"YOUR DOCUMENT DIRECTORY"` 문서가 저장된 디렉토리 경로를 포함합니다.
 
 ## 4단계: 기존 PDF 문서 로드
- 기존 PDF 문서를 로드하려면 다음을 사용합니다.`Document` 생성자를 사용하고 입력 PDF 파일의 경로를 전달합니다.
+ 기존 PDF 문서를 로드하려면 다음을 사용합니다.`Document`생성자를 사용하고 입력 PDF 파일의 경로를 전달합니다.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
@@ -129,7 +129,7 @@ using Aspose.Pdf;
 
 #### 질문: 업데이트된 PDF 문서를 어떻게 저장하나요?
 
- A: 7단계에서는 다음을 사용합니다.`Save` 의 방법`Document`업데이트된 PDF 문서를 저장할 객체를 지정하고 출력 파일 경로를 지정합니다.
+ A: 7단계에서는 다음을 사용합니다.`Save` 의 방법`Document` 업데이트된 PDF 문서를 저장할 객체를 지정하고 출력 파일 경로를 지정합니다.
 
 #### 질문: PDF 문서에 글꼴을 포함하는 것은 무슨 의미인가요?
 

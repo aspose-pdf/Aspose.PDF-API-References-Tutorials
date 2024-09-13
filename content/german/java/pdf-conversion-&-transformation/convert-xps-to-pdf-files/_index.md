@@ -25,7 +25,7 @@ Bevor wir mit dem Konvertierungsprozess beginnen, müssen Sie Ihre Entwicklungsu
 Bevor wir Aspose.PDF für Java verwenden können, müssen wir ein Java-Projekt einrichten. Folgen Sie diesen Schritten:
 
 - Erstellen Sie ein neues Java-Projekt in der von Ihnen gewählten IDE.
-- Fügen Sie die Aspose.PDF-Bibliothek für Java zum Klassenpfad Ihres Projekts hinzu.
+- Fügen Sie die Bibliothek Aspose.PDF für Java zum Klassenpfad Ihres Projekts hinzu.
 
 ## Konvertieren von XPS in PDF
 

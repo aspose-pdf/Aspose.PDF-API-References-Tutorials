@@ -154,7 +154,7 @@ Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF belgesinde tablonun nas
 
 #### S: Tablonun görünümünü nasıl değiştirebilirim? Örneğin hücre renklerini değiştirebilir veya kenarlık ekleyebilirim?
 
-A: Tablonun görünümünü değiştirmek için çeşitli özellikleri ayarlayabilirsiniz.`Aspose.Pdf.Table` ve hücreleri. Örneğin, şunu ayarlayabilirsiniz:`BackgroundColor` Hücrelerin arka plan rengini değiştirme özelliği. Ayrıca,`Border` tablonun veya tek tek hücrelerin kenarlık eklemek için özelliğini özelleştirebilirsiniz. Ayrıca, tablo içeriğinin yazı tipini, metin rengini ve hizalamasını,`TextState` of'un`TextFragment` hücrelere eklenen nesneler.
+ A: Tablonun görünümünü değiştirmek için çeşitli özellikleri ayarlayabilirsiniz.`Aspose.Pdf.Table` ve hücreleri. Örneğin, şunu ayarlayabilirsiniz:`BackgroundColor` Hücrelerin arka plan rengini değiştirme özelliği. Ayrıca,`Border` tablonun veya tek tek hücrelerin kenarlık eklemek için özelliğini özelleştirebilirsiniz. Ayrıca, tablo içeriğinin yazı tipini, metin rengini ve hizalamasını,`TextState` of'un`TextFragment` hücrelere eklenen nesneler.
 
 #### S: Tabloya üstbilgi veya altbilgi ekleyebilir miyim?
 
@@ -162,7 +162,7 @@ A: Evet, tablonun başında veya sonunda ek satırlar oluşturarak ve hücrelerd
 
 #### S: Tablonun sayfadaki konumunu nasıl kontrol edebilirim?
 
- A: Tablonun sayfadaki konumunu kontrol etmek için,`MarginInfo` of'un`PageInfo` nesne.`MarginInfo`sayfanın sol, sağ, üst ve alt kenar boşluklarını ayarlamanıza olanak tanır; bu da tablo için kullanılabilir alanı etkiler. Ayrıca şunu da kullanabilirsiniz:`PositioningType` mülkiyeti`Aspose.Pdf.Table` Sayfanın içerik alanı içerisinde yatay ve dikey hizalamasını kontrol etmek için.
+A: Tablonun sayfadaki konumunu kontrol etmek için,`MarginInfo` of'un`PageInfo` nesne.`MarginInfo` sayfanın sol, sağ, üst ve alt kenar boşluklarını ayarlamanıza olanak tanır; bu da tablo için kullanılabilir alanı etkiler. Ayrıca şunu da kullanabilirsiniz:`PositioningType` mülkiyeti`Aspose.Pdf.Table` Sayfanın içerik alanı içerisinde yatay ve dikey hizalamasını kontrol etmek için.
 
 #### S: Tabloyu Excel veya CSV gibi farklı dosya biçimlerine aktarabilir miyim?
 

@@ -1,6 +1,6 @@
 ---
-title: Törölje az összes mellékletet a PDF fájlból
-linktitle: Törölje az összes mellékletet a PDF fájlból
+title: Törölje az összes mellékletet a PDF-fájlból
+linktitle: Törölje az összes mellékletet a PDF-fájlból
 second_title: Aspose.PDF for .NET API Reference
 description: Ebből a lépésről lépésre szóló útmutatóból megtudhatja, hogyan törölheti az összes mellékletet egy PDF-fájlból az Aspose.PDF for .NET használatával. Egyszerűsítse PDF kezelését.
 type: docs

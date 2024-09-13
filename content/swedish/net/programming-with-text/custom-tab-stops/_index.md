@@ -1,7 +1,7 @@
 ---
 title: Anpassade flikstopp i PDF-fil
 linktitle: Anpassade flikstopp i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du skapar anpassade tabbstopp i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 120
@@ -21,7 +21,7 @@ Innan du börjar, se till att du har följande:
 2. Lägg till en referens till Aspose.PDF för .NET-biblioteket.
 
 ## Steg 2: Importera nödvändiga namnrymder
-I kodfilen där du vill skapa anpassade tabbstopp, lägg till följande med hjälp av direktiv överst i filen:
+kodfilen där du vill skapa anpassade tabbstopp, lägg till följande med hjälp av direktiv överst i filen:
 
 ```csharp
 using Aspose.Pdf;
@@ -39,7 +39,7 @@ Document _pdfdocument = new Document();
 ```
 
 ## Steg 5: Lägg till en sida i dokumentet
- Lägg till en ny sida i dokumentet med hjälp av`Add` metod för`Pages`samling. I den angivna koden är den nya sidan tilldelad variabeln`page`.
+ Lägg till en ny sida i dokumentet med hjälp av`Add` metod för`Pages` samling. I den angivna koden är den nya sidan tilldelad variabeln`page`.
 
 ```csharp
 Page page = _pdfdocument.Pages.Add();

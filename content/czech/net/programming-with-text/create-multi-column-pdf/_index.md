@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Krok 5: Nastavte okraje stránky
- Zadejte informace o levém a pravém okraji pro soubor PDF pomocí`PageInfo.Margin` majetek z`Document`.
+ Zadejte informace o levém a pravém okraji pro soubor PDF pomocí`PageInfo.Margin` vlastnictví`Document`.
 
 ```csharp
 doc.PageInfo.Margin.Left = 40;
@@ -46,7 +46,7 @@ doc.PageInfo.Margin.Right = 40;
 ```
 
 ## Krok 6: Přidejte do dokumentu stránku
- Přidejte do dokumentu novou stránku pomocí`Add` metoda`Pages`sbírka. V poskytnutém kódu je nová stránka přiřazena k proměnné`page`.
+ Přidejte do dokumentu novou stránku pomocí`Add` metoda`Pages` sbírka. V poskytnutém kódu je nová stránka přiřazena k proměnné`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -112,7 +112,7 @@ doc.Save(dataDir);
 // Cesta k adresáři dokumentů.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
-//Zadejte informace o levém okraji souboru PDF
+// Zadejte informace o levém okraji souboru PDF
 doc.PageInfo.Margin.Left = 40;
 // Zadejte informace o pravém okraji pro soubor PDF
 doc.PageInfo.Margin.Right = 40;
@@ -149,7 +149,7 @@ Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50, 10);
 float[] posArr2 = new float[] { 1, 10, 100, 10 };
 Aspose.Pdf.Drawing.Line l2 = new Aspose.Pdf.Drawing.Line(posArr2);
 graph2.Shapes.Add(l2);
-// Přidejte řádek do kolekce odstavců objektu sekce
+//Přidejte řádek do kolekce odstavců objektu sekce
 box.Paragraphs.Add(graph2);
 TextFragment text2 = new TextFragment(@"Sed augue tortor, sodales id, luctus et, pulvinar ut, eros. Suspendisse vel dolor. Sed quam. Curabitur ut massa vitae eros euismod aliquam. Pellentesque sit amet elit. Vestibulum interdum pellentesque augue. Cras mollis arcu sit amet purus. Donec augue. Nam mollis tortor a elit. Nulla viverra nisl vel mauris. Vivamus sapien. nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et,nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.");
 box.Paragraphs.Add(text2);
@@ -188,7 +188,7 @@ using Aspose.Pdf.Drawing;
 
 #### Otázka: Jak nastavím okraje stránky?
 
- Odpověď: V kroku 5 použijete`PageInfo.Margin` majetek z`Document` zadejte informace o levém a pravém okraji souboru PDF.
+ Odpověď: V kroku 5 použijete`PageInfo.Margin` vlastnictví`Document` zadejte informace o levém a pravém okraji souboru PDF.
 
 #### Otázka: Jak přidám stránku do dokumentu?
 
@@ -200,7 +200,7 @@ using Aspose.Pdf.Drawing;
 
 #### Otázka: Jak přidám text nadpisu s formátováním HTML?
 
- Odpověď: V kroku 8 vytvoříte soubor`HtmlFragment` objekt a nastavte jeho obsah na požadovaný text HTML, poté přidejte fragment do`Paragraphs` kolekce stránky.
+Odpověď: V kroku 8 vytvoříte soubor`HtmlFragment` objekt a nastavte jeho obsah na požadovaný text HTML, poté přidejte fragment do`Paragraphs` kolekce stránky.
 
 #### Otázka: Jak vytvořím FloatingBox s více sloupci?
 

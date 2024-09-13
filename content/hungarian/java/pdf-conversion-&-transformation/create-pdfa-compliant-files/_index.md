@@ -14,7 +14,7 @@ PDF/A szabványnak megfelelő PDF-dokumentumok létrehozása biztosítja, hogy a
 
 ## A PDF/A megfelelőség megértése
 
-A PDF/A megfelelőség garantálja, hogy a dokumentumok a jövőben pontosan ugyanúgy jelenjenek meg, mint ma, függetlenül a használt szoftvertől vagy hardvertől. Azt is biztosítja, hogy a dokumentumon belüli szöveg kereshető és kiválasztható legyen.
+A PDF/A megfelelőség garantálja, hogy a dokumentum a jövőben pontosan ugyanúgy jelenjen meg, mint ma, függetlenül a használt szoftvertől vagy hardvertől. Azt is biztosítja, hogy a dokumentumon belüli szöveg kereshető és kiválasztható legyen.
 
 ## Fejlesztői környezet beállítása
 

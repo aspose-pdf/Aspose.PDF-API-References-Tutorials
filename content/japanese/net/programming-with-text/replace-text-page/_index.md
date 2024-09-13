@@ -31,7 +31,7 @@ using Aspose.Pdf.Text;
 
 ## ステップ3: PDF文書を読み込む
 
- PDFドキュメントディレクトリへのパスを設定し、`Document`クラス：
+PDFドキュメントディレクトリへのパスを設定し、`Document`クラス：
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -165,7 +165,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 #### Q: 指定したページで検索フレーズが見つからない場合はどうなりますか?
 
- A: 指定されたページに検索語句が見つからない場合は、`TextFragmentCollection`空になり、置換は行われません。ターゲットとするページに検索フレーズが存在することを確認してください。
+A: 指定されたページに検索語句が見つからない場合は、`TextFragmentCollection`空になり、置換は行われません。ターゲットとするページに検索フレーズが存在することを確認してください。
 
 #### Q: 各テキストフラグメントの置換テキストをカスタマイズするにはどうすればよいですか?
 

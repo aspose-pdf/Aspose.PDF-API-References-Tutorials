@@ -38,14 +38,14 @@ Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
 ## Krok 5: Přidejte do dokumentu stránku
- Přidejte do dokumentu novou stránku pomocí`Add` metoda`Pages`sbírka. V poskytnutém kódu je nová stránka přiřazena k proměnné`page`.
+ Přidejte do dokumentu novou stránku pomocí`Add` metoda`Pages` sbírka. V poskytnutém kódu je nová stránka přiřazena k proměnné`page`.
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
 ## Krok 6: Vytvořte TextFragment s následným odsazením řádků
- Instantovat a`TextFragment` objekt a zadejte požadovaný text. V poskytnutém kódu je text přiřazen k proměnné`text` . Poté inicializujte`TextFormattingOptions` pro`TextFragment` specifikujte`SubsequentLinesIndent` hodnota.
+ Instantovat a`TextFragment` objekt a zadejte požadovaný text. V poskytnutém kódu je text přiřazen k proměnné`text` . Poté inicializujte`TextFormattingOptions` pro`TextFragment` a specifikujte`SubsequentLinesIndent` hodnota.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
@@ -91,7 +91,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = document.Pages.Add();
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-// Inicializujte TextFormattingOptions pro textový fragment a zadejte hodnotu SubsequentLinesIndent
+//Inicializujte TextFormattingOptions pro textový fragment a zadejte hodnotu SubsequentLinesIndent
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
 	SubsequentLinesIndent = 20
@@ -148,7 +148,7 @@ Aspose.Pdf.Page page = document.Pages.Add();
 
 #### Otázka: Jak mohu do textu přidat odsazení následujících řádků?
 
- Odpověď: V kroku 6 vytvoříte a`TextFragment` objekt a přiřadit k němu požadovaný text. Poté provedete inicializaci`TextFormattingOptions` pro`TextFragment` specifikujte`SubsequentLinesIndent` hodnota:
+ Odpověď: V kroku 6 vytvoříte a`TextFragment` objekt a přiřadit k němu požadovaný text. Poté provedete inicializaci`TextFormattingOptions` pro`TextFragment` a specifikujte`SubsequentLinesIndent` hodnota:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
@@ -168,7 +168,7 @@ page.Paragraphs.Add(text);
 
 #### Otázka: Mohu proces opakovat pro další řádky?
 
- Odpověď: Ano, v kroku 8 můžete postup zopakovat pro další řádky se stejným odsazením vytvořením nového`TextFragment` objektů a jejich přidání do kolekce odstavců na stránce.
+Odpověď: Ano, v kroku 8 můžete postup zopakovat pro další řádky se stejným odsazením vytvořením nového`TextFragment` objektů a jejich přidání do kolekce odstavců na stránce.
 
 #### Otázka: Jak uložím výsledný dokument PDF?
 

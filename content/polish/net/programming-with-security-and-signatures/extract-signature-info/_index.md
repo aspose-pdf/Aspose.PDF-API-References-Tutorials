@@ -2,210 +2,141 @@
 title: Wyodrębnij informacje o podpisie
 linktitle: Wyodrębnij informacje o podpisie
 second_title: Aspose.PDF dla .NET API Reference
-description: Wyodrębnianie informacji o podpisie przy użyciu Aspose.PDF dla .NET.
+description: Dowiedz się, jak wyodrębnić podpisy cyfrowe i informacje o certyfikacie z dokumentów PDF za pomocą Aspose.PDF dla .NET. Kompletny przewodnik krok po kroku dla programistów C#.
 type: docs
 weight: 80
 url: /pl/net/programming-with-security-and-signatures/extract-signature-info/
 ---
-Proces wyodrębniania informacji o podpisie z dokumentu PDF może być bardzo przydatny w różnych scenariuszach. Niezależnie od tego, czy musisz zweryfikować autentyczność podpisanego dokumentu, czy przeanalizować certyfikat użyty do podpisu, biblioteka Aspose.PDF dla .NET zapewnia wygodne rozwiązanie. W tym samouczku przeprowadzimy Cię przez proces krok po kroku wyodrębniania informacji o podpisie przy użyciu dostarczonego kodu źródłowego C#.
+## Wstęp
 
-## Wymagania
+dzisiejszym cyfrowym świecie zapewnienie bezpieczeństwa i integralności dokumentów jest kluczowe. Jedną z powszechnych metod zabezpieczania plików PDF jest dodawanie podpisu cyfrowego. Jednak pobieranie i weryfikowanie szczegółów podpisu może czasami stanowić wyzwanie, szczególnie gdy masz do czynienia z różnymi certyfikatami. W tym przewodniku przeprowadzimy Cię przez proces wyodrębniania informacji o podpisie z dokumentów PDF przy użyciu Aspose.PDF dla .NET, dzięki czemu zadanie to stanie się proste. Dowiesz się, jak uzyskać dostęp do pól podpisu, wyodrębnić informacje o certyfikacie i zapisać je w pliku.
 
-Zanim zaczniemy, upewnij się, że spełnione są następujące wymagania wstępne:
+## Wymagania wstępne
 
-1. Podstawowa znajomość języka programowania C#.
-2. Biblioteka Aspose.PDF dla platformy .NET zainstalowana w systemie.
-3. Prawidłowy dokument PDF z jednym lub większą liczbą pól podpisu.
+Zanim zaczniemy, upewnijmy się, że masz wszystko gotowe do rozpoczęcia pracy.
 
-Przyjrzyjmy się teraz szczegółom implementacji.
+-  Aspose.PDF dla biblioteki .NET: Jeśli jeszcze jej nie masz, możesz ją pobrać ze strony[Strona pobierania Aspose.PDF dla .NET](https://releases.aspose.com/pdf/net/). 
+- Środowisko programistyczne .NET: Będziesz potrzebować środowiska IDE, np. Visual Studio.
+- Podstawowa wiedza o języku C#: Znajomość języka C# będzie pomocna w zrozumieniu fragmentów kodu w tym samouczku.
+- Dokument PDF z podpisem cyfrowym: W celach testowych upewnij się, że masz plik PDF zawierający co najmniej jeden podpis cyfrowy.
 
-## Krok 1: Importowanie wymaganych bibliotek
+## Importowanie wymaganych przestrzeni nazw
 
- Aby rozpocząć, musisz zaimportować niezbędne biblioteki do swojego projektu C#. W tym przypadku musimy zaimportować`Aspose.Pdf` I`System.IO` przestrzenie nazw. Można to zrobić, dodając następujący kod na początku pliku C#:
+Przed rozpoczęciem kodu ważne jest zaimportowanie niezbędnych przestrzeni nazw. Te przestrzenie nazw umożliwią Ci dostęp do funkcjonalności Aspose.PDF i pracę z dokumentami PDF.
 
 ```csharp
-using Aspose.Pdf;
 using System.IO;
+using Aspose.Pdf.Forms;
+using Aspose.Pdf;
+using System;
 ```
 
-## Krok 2: Ustawianie ścieżki dokumentu
+Teraz, gdy skonfigurowałeś już podstawowe ustawienia, możemy przejść do właściwego procesu wyodrębniania informacji o podpisie z pliku PDF.
 
-Następnie musisz ustawić ścieżkę do dokumentu PDF, z którego chcesz wyodrębnić informacje o podpisie. Zastąp`"YOUR DOCUMENTS DIRECTORY"` w poniższym fragmencie kodu podaj rzeczywistą ścieżkę do swojego dokumentu:
+## Krok 1: Konfigurowanie katalogu dokumentów
+
+ Przed rozpoczęciem pracy nad dokumentem PDF musisz określić lokalizację pliku, którego będziesz używać. Możesz zastąpić`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do katalogu, w którym przechowywane są pliki PDF.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+// Ścieżka do katalogu dokumentów.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 string input = dataDir + "ExtractSignatureInfo.pdf";
 ```
 
-## Krok 3: Wyodrębnianie informacji o podpisie
+Tutaj określamy katalog zawierający plik PDF i samą nazwę pliku. Upewnij się, że plik istnieje w tym katalogu!
 
-Przejdźmy teraz do głównej części kodu, w której wyodrębniamy informacje o podpisie z dokumentu PDF. Przechodzimy przez każde pole w formularzu dokumentu i sprawdzamy, czy jest to pole podpisu. Jeśli pole podpisu zostanie znalezione, kontynuujemy wyodrębnianie certyfikatu. Dodaj następujący fragment kodu:
+## Krok 2: Ładowanie dokumentu PDF
+
+ Teraz, gdy skonfigurowałeś już swój katalog, następnym krokiem jest załadowanie dokumentu PDF za pomocą`Document` klasa z Aspose.PDF.
 
 ```csharp
 using (Document pdfDocument = new Document(input))
 {
-     foreach(Field field in pdfDocument.Form)
-     {
-         SignatureField sf = field as SignatureField;
-         if (sf != null)
-         {
-             // Wyodrębnij certyfikat
-             Stream cerStream = sf.ExtractCertificate();
-             if (cerStream != null)
-             {
-                 using (cerStream)
-                 {
-                     byte[] bytes = new byte[cerStream.Length];
-                     using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
-                     {
-                         cerStream.Read(bytes, 0, bytes.Length);
-                         fs.Write(bytes, 0, bytes.Length);
-                     }
-                 }
-             }
-         }
-     }
+    // Przetwórz plik PDF tutaj.
 }
 ```
 
-## Krok 4: Wyodrębnianie certyfikatu
+ Ta linia kodu inicjuje`Document`obiekt, który reprezentuje plik PDF.`using` Oświadczenie to zapewnia oczyszczenie zasobów po przetworzeniu dokumentu.
 
-W tym kroku wyodrębniamy certyfikat z pola podpisu i zapisujemy go jako plik. Wyodrębniony certyfikat można dalej analizować lub wykorzystać do celów walidacji. Poniższy fragment kodu demonstruje proces wyodrębniania i zapisywania:
+## Krok 3: Dostęp do pól formularza
+
+W tym kroku przejdziemy przez wszystkie pola formularza w dokumencie PDF. Ponieważ podpisy są zazwyczaj przechowywane jako pola formularza, ten krok pomoże nam zidentyfikować pola podpisu.
+
+```csharp
+foreach (Field field in pdfDocument.Form)
+{
+    // Tutaj zidentyfikuj pola podpisu.
+}
+```
+
+ Poprzez iterację`Form` własność`Document` obiekt, możemy zbadać każde pole formularza, aby sprawdzić, czy jest ono polem podpisu.
+
+## Krok 4: Identyfikacja pól podpisu
+
+ Po uzyskaniu dostępu do pól formularza, następnym krokiem jest zidentyfikowanie pól podpisu. Możemy to zrobić, rzutując każde pole na`SignatureField` obiekt.
+
+```csharp
+SignatureField sf = field as SignatureField;
+if (sf != null)
+{
+    // Wyodrębnij informacje o podpisie.
+}
+```
+
+ Tutaj używamy`as` słowo kluczowe, aby spróbować rzutować każde pole formularza na`SignatureField`. Jeśli rzut się powiedzie, wiemy, że pole jest sygnaturą.
+
+## Krok 5: Wyodrębnianie certyfikatu
+
+Teraz, gdy zidentyfikowałeś pole podpisu, następnym zadaniem jest wyodrębnienie certyfikatu z podpisu. Certyfikaty zawierają kluczowe informacje o sygnatariuszu i ważności podpisu.
 
 ```csharp
 Stream cerStream = sf.ExtractCertificate();
+```
+
+ Ten`ExtractCertificate` metoda zwraca`Stream` obiekt zawierający dane certyfikatu. Ten strumień może być użyty do zapisania certyfikatu do dalszej analizy lub przechowywania.
+
+## Krok 6: Zapisywanie certyfikatu do pliku
+
+ Po wyodrębnieniu certyfikatu ostatnim krokiem jest zapisanie go do pliku. W tym przypadku zapiszemy certyfikat jako`.cer` plik.
+
+```csharp
 if (cerStream != null)
 {
-     using (cerStream)
-     {
-         byte[] bytes = new byte[cerStream.Length];
-         using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
-         {
-             cerStream.Read(bytes, 0, bytes.Length);
-             fs.Write(bytes, 0, bytes.Length);
-         }
-     }
+    using (cerStream)
+    {
+        byte[] bytes = new byte[cerStream.Length];
+        using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
+        {
+            cerStream.Read(bytes, 0, bytes.Length);
+            fs.Write(bytes, 0, bytes.Length);
+        }
+    }
 }
 ```
 
-## Krok 5
+W tym bloku kodu:
 
-:Zapisywanie certyfikatu
-
-Na koniec zapisujemy wyodrębniony certyfikat jako plik. W tym przykładzie certyfikat jest zapisywany pod nazwą „input.cer” w określonym katalogu. Możesz zmodyfikować kod, aby dostosować go do swoich wymagań. Oto fragment kodu do zapisania certyfikatu:
-
-```csharp
-using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
-{
-     fs.Write(bytes, 0, bytes.Length);
-}
-```
-
-To wszystko! Udało Ci się wyodrębnić informacje o podpisie za pomocą Aspose.PDF dla .NET. Możesz zintegrować ten kod ze swoimi aplikacjami lub zmodyfikować go zgodnie ze swoimi potrzebami.
-
-### Przykładowy kod źródłowy do wyodrębniania informacji o podpisie przy użyciu Aspose.PDF dla .NET 
-```csharp
-try
-{
-	// Ścieżka do katalogu dokumentów.
-	string dataDir = "YOUR DOCUMENTS DIRECTORY";
-	string input = dataDir + "ExtractSignatureInfo.pdf";
-	using (Document pdfDocument = new Document(input))
-	{
-		foreach (Field field in pdfDocument.Form)
-		{
-			SignatureField sf = field as SignatureField;
-			if (sf != null)
-			{
-				Stream cerStream = sf.ExtractCertificate();
-				if (cerStream != null)
-				{
-					using (cerStream)
-					{
-						byte[] bytes = new byte[cerStream.Length];
-						using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
-						{
-							cerStream.Read(bytes, 0, bytes.Length);
-							fs.Write(bytes, 0, bytes.Length);
-						}
-					}
-				}
-			}
-		}
-	}
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+1. Sprawdź czy strumień certyfikatu nie jest pusty.
+2. Odczytaj dane certyfikatu do tablicy bajtów.
+3.  Zapisz tablicę bajtów w`.cer` plik w katalogu dokumentów.
 
 ## Wniosek
 
-W tym samouczku przeprowadziliśmy przewodnik krok po kroku, jak wyodrębnić informacje o podpisie z dokumentu PDF przy użyciu biblioteki Aspose.PDF dla .NET. Omówiliśmy proces importowania wymaganych bibliotek, ustawiania ścieżki dokumentu, wyodrębniania informacji o podpisie, wyodrębniania certyfikatu i zapisywania go w pliku. Postępując zgodnie z tymi krokami, możesz łatwo pobrać szczegóły podpisu i pracować z nimi w razie potrzeby.
+Wyodrębnianie podpisów cyfrowych i powiązanych z nimi informacji o certyfikacie z dokumentów PDF przy użyciu Aspose.PDF dla .NET jest dość proste, gdy podzielisz je na proste kroki. Niezależnie od tego, czy audytujesz dokumenty, weryfikujesz podpisy, czy po prostu przechowujesz certyfikaty w celu bezpiecznego przechowywania, ten samouczek wyposaży Cię w wiedzę, aby zrobić to sprawnie. Pamiętaj, że zabezpieczanie i weryfikowanie dokumentów ma kluczowe znaczenie w dzisiejszym cyfrowym świecie, a korzystanie z narzędzi takich jak Aspose.PDF dla .NET znacznie ułatwia obsługę.
 
-### Najczęściej zadawane pytania
+## Najczęściej zadawane pytania
 
-#### P: Dlaczego miałbym wyodrębniać informacje o podpisie z dokumentu PDF?
+### Czy mogę wyodrębnić wiele podpisów z pliku PDF korzystając z Aspose.PDF dla platformy .NET?
+Tak, kod przechodzi przez wszystkie pola formularza w dokumencie, co pozwala na wyodrębnienie wielu podpisów, jeśli takowe istnieją.
 
-A: Wyodrębnianie informacji o podpisie z dokumentu PDF jest przydatne do sprawdzania autentyczności podpisanego dokumentu i analizowania certyfikatu użytego do podpisu. Ten proces pomaga zapewnić integralność podpisanej treści i może być niezbędny do celów prawnych i bezpieczeństwa.
+### Co się stanie, jeśli w pliku PDF nie znajdzie się podpisu?
+Jeśli nie ma żadnych pól podpisu, kod po prostu je pominie, nie zgłaszając błędu.
 
-#### P: Czym jest Aspose.PDF dla platformy .NET?
+### Czy mogę użyć tego podejścia do weryfikacji ważności podpisu?
+Chociaż można wyodrębnić certyfikat, sprawdzenie ważności podpisu wymaga dodatkowych czynności, takich jak sprawdzenie łańcucha zaufania certyfikatu.
 
-A: Aspose.PDF dla .NET to biblioteka, która umożliwia programistom pracę z dokumentami PDF w aplikacjach .NET. Zapewnia szeroki zakres funkcji do tworzenia, modyfikowania i interakcji z plikami PDF programowo.
+### Czy można wyodrębnić dane z innych pól formularza za pomocą Aspose.PDF dla .NET?
+Tak, Aspose.PDF umożliwia dostęp i modyfikowanie różnych typów pól formularzy w pliku PDF, nie tylko pól podpisu.
 
-#### P: Jakie są wymagania wstępne dotyczące wyodrębniania informacji o podpisie za pomocą Aspose.PDF dla platformy .NET?
-
-O: Aby wyodrębnić informacje o podpisie, potrzebna jest podstawowa znajomość języka programowania C#, biblioteka Aspose.PDF for .NET zainstalowana w systemie oraz prawidłowy dokument PDF zawierający co najmniej jedno pole podpisu.
-
-#### P: Jak zaimportować biblioteki wymagane do procesu ekstrakcji?
-
-A: Możesz zaimportować niezbędne biblioteki, dodając`using` dyrektywy dla`Aspose.Pdf` I`System.IO` na początku pliku C#. Te dyrektywy umożliwiają użycie klas i metod wymaganych do wyodrębnienia informacji o podpisie.
-
-#### P: Jak wskazać dokument PDF, z którego zostaną wyodrębnione informacje o podpisie?
-
- A: Możesz ustawić ścieżkę do dokumentu PDF, zastępując`"YOUR DOCUMENTS DIRECTORY"` z rzeczywistą ścieżką do dokumentu w podanym fragmencie kodu. Ta ścieżka jest używana do załadowania dokumentu PDF, z którego chcesz wyodrębnić informacje o podpisie.
-
-#### P: Jak wygląda proces wyodrębniania informacji o podpisie z dokumentu PDF?
-
-A: Proces ekstrakcji obejmuje iterację przez pola formularza dokumentu PDF, sprawdzanie, czy każde pole jest polem podpisu, a jeśli tak, wyodrębnianie powiązanego certyfikatu. Wyodrębniony certyfikat można zapisać jako plik w celu dalszej analizy lub walidacji.
-
-#### P: W jaki sposób certyfikat jest wyodrębniany z pola podpisu?
-
-A: Certyfikat jest wyodrębniany z pola podpisu za pomocą`ExtractCertificate()` metoda dostarczona przez`SignatureField` Klasa w Aspose.PDF dla .NET. Ta metoda zwraca strumień zawierający dane certyfikatu.
-
-#### P: Jak zapisać wyodrębniony certyfikat jako plik?
-
- A: Możesz zapisać wyodrębniony certyfikat jako plik, odczytując strumień certyfikatów i zapisując jego zawartość do pliku za pomocą`FileStream` Klasa. Kod podany w samouczku demonstruje ten proces.
-
-#### P: Czy mogę użyć tego wyodrębnionego certyfikatu do weryfikacji podpisu?
-
-A: Tak, wyodrębniony certyfikat może być użyty do walidacji podpisu. Możesz przeanalizować szczegóły certyfikatu i zweryfikować jego autentyczność, aby zapewnić integralność podpisanego dokumentu.
-
-#### P: W jaki sposób mogę zintegrować ten kod z moimi własnymi aplikacjami?
-
-A: Możesz zintegrować dostarczony kod z własnymi aplikacjami C#, postępując zgodnie z przewodnikiem krok po kroku. Zmodyfikuj ścieżki i nazwy plików w razie potrzeby i włącz kod do istniejących projektów.
-
-#### P: Czy Aspose.PDF dla platformy .NET zawiera inne funkcje związane z zarządzaniem podpisami?
-
-A: Tak, Aspose.PDF dla .NET oferuje szereg funkcji do pracy z podpisami cyfrowymi, w tym podpisywanie dokumentów, weryfikację podpisów i dodawanie informacji o znaczniku czasu. Więcej szczegółów na temat tych funkcji można znaleźć w oficjalnej dokumentacji.
-
-#### P: Gdzie mogę znaleźć dodatkowe materiały dotyczące korzystania z pliku Aspose.PDF na platformie .NET?
-
- A: Aby uzyskać więcej informacji, samouczków i zasobów dotyczących korzystania z Aspose.PDF dla .NET,[Aspose.PDF dla .NET](https://reference.aspose.com/pdf/net/).
-
-#### P: Czy można wyodrębnić podpisy z zaszyfrowanych dokumentów PDF?
-
-A: Możliwość wyodrębniania podpisów z zaszyfrowanych dokumentów PDF może zależeć od ustawień szyfrowania i uprawnień dokumentu. Może być konieczne upewnienie się, że masz niezbędne uprawnienia do dostępu i wyodrębniania informacji o podpisie.
-
-#### P: Czy mogę wyodrębnić wiele podpisów z jednego dokumentu PDF?
-
-A: Tak, możesz zmodyfikować dostarczony kod, aby przejść przez wszystkie pola podpisu w dokumencie PDF i wyodrębnić informacje o podpisie z każdego z nich. Pozwala to wyodrębnić informacje o wielu podpisach obecnych w dokumencie.
-
-#### P: Jakie są praktyczne przypadki wykorzystania informacji o podpisie?
-
-A: Przykłady praktycznego wykorzystania informacji o podpisie obejmują weryfikację autentyczności dokumentów podpisanych cyfrowo, analizę szczegółów certyfikatów pod kątem zgodności z przepisami oraz prowadzenie rejestru podpisów i sygnatariuszy na potrzeby audytu.
-
-#### P: Czy istnieją jakieś kwestie prawne związane z pozyskiwaniem informacji o podpisie?
-
-A: Wyodrębnienie informacji o podpisie może mieć konsekwencje prawne, zwłaszcza w przypadku obsługi prawnie wiążących dokumentów. Upewnij się, że przestrzegasz odpowiednich przepisów i praw dotyczących podpisów elektronicznych i autentyczności dokumentów w swojej jurysdykcji.
+### Jak mogę wyświetlić szczegóły wyodrębnionego certyfikatu?
+ Po zapisaniu certyfikatu jako`.cer` Plik można otworzyć za pomocą dowolnej przeglądarki certyfikatów lub zaimportować do systemowego magazynu certyfikatów w celu dalszej inspekcji.

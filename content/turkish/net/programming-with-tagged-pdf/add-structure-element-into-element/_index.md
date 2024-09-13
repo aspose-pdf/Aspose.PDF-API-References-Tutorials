@@ -114,7 +114,7 @@ Bu kod, yapılandırılmış öğeler içeren PDF belgesini belirtilen bir dosya
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
 string logFile = dataDir + "46144_log.xml";
-// Belge oluşturma ve Etiketli Pdf İçeriği alma
+//Belge oluşturma ve Etiketli Pdf İçeriği alma
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 // Belge için Başlık ve Doğa Dilinin Ayarlanması
@@ -209,7 +209,7 @@ A: PDF belgesinde hiyerarşik bir yapı oluşturmak erişilebilirliğini, gezinm
 
 #### S: Yapı elemanlarını ekledikten sonra PDF/UA uyumluluğunu nasıl doğrulayabilirim?
 
- A: Eğitimde sağlanan kod, PDF/UA uyumluluğunun nasıl doğrulanacağını göstermektedir.`Validate` yöntem. Belgeyi PDF/UA standardına göre doğrulayarak, eklenen yapı öğelerinin erişilebilirlik yönergelerine uygun olduğundan emin olabilirsiniz.
+A: Eğitimde sağlanan kod, PDF/UA uyumluluğunun nasıl doğrulanacağını göstermektedir.`Validate` yöntem. Belgeyi PDF/UA standardına göre doğrulayarak, eklenen yapı öğelerinin erişilebilirlik yönergelerine uygun olduğundan emin olabilirsiniz.
 
 #### S: Bu yaklaşımı mevcut bir PDF belgesine yapı öğeleri eklemek için kullanabilir miyim?
 

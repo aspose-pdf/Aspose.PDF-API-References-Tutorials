@@ -13,7 +13,7 @@ url: /ja/net/programming-with-document/embedfontsusingsubsetstrategy/
 
 ## 前提条件
 
-フォントの埋め込みの詳細に入る前に、準備しておく必要があるものがいくつかあります。
+フォントの埋め込みの詳細に入る前に、準備しておく必要があることがいくつかあります。
 
 1.  Aspose.PDF for .NET: Aspose.PDFライブラリがインストールされていることを確認してください。ダウンロードはこちらからできます。[ここ](https://releases.aspose.com/pdf/net/).
 2. Visual Studio: .NET コードを記述およびテストできる開発環境。

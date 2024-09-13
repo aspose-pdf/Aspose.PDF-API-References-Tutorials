@@ -16,7 +16,7 @@ A címkézett PDF-ek szerkezeti információkat tartalmaznak, amelyek segítenek
 
 ## Előfeltételek
 
-Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel:
+Mielőtt elkezdenénk, győződjön meg arról, hogy rendelkezik a következőkkel:
 
 1. Java fejlesztői környezet: Győződjön meg arról, hogy a Java telepítve van a rendszeren.
 
@@ -59,7 +59,7 @@ public class TaggedPDFExtractor {
         // Hozzon létre TextAbsorber objektumot
         TextAbsorber textAbsorber = new TextAbsorber();
 
-        // Szövegkivonási beállítások megadása
+        // Állítsa be a szövegkivonási beállításokat
         TextExtractionOptions options = new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
         textAbsorber.setTextExtractionOptions(options);
 

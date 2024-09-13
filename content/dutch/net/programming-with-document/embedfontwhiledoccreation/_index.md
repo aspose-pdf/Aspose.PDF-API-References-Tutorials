@@ -132,7 +132,7 @@ Deze code koppelt de naam van het uitvoerbestand aan het pad van uw documentmap 
 
 ## Conclusie
 
-En daar heb je het! Je hebt met succes een PDF-document met ingesloten lettertypen gemaakt met Aspose.PDF voor .NET. Dit proces verbetert niet alleen de visuele aantrekkingskracht van je documenten, maar zorgt er ook voor dat ze hun opmaak behouden op verschillende platforms. 
+En daar heb je het! Je hebt met succes een PDF-document gemaakt met ingesloten lettertypen met Aspose.PDF voor .NET. Dit proces verbetert niet alleen de visuele aantrekkingskracht van je documenten, maar zorgt er ook voor dat ze hun opmaak behouden op verschillende platforms. 
 
 ## Veelgestelde vragen
 

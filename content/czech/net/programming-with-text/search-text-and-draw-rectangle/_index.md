@@ -110,7 +110,7 @@ document.Save(dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Otevřete dokument
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-// Vytvořte objekt TextAbsorber a najděte všechny fráze odpovídající regulárnímu výrazu
+//Vytvořte objekt TextAbsorber a najděte všechny fráze odpovídající regulárnímu výrazu
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;
@@ -150,7 +150,7 @@ Odpověď: Než začnete s výukovým programem, měli byste mít základní zna
 
 Odpověď: Začněte vytvořením nového projektu C# ve vašem preferovaném integrovaném vývojovém prostředí (IDE). Poté do projektu přidejte odkaz na knihovnu Aspose.PDF for .NET. To vám umožní používat funkce knihovny pro manipulaci s dokumenty PDF.
 
-#### Otázka: Mohu pomocí tohoto kurzu nakreslit obdélníky kolem určitého textu?
+#### Otázka: Mohu pomocí tohoto kurzu kreslit obdélníky kolem určitého textu?
 
 Odpověď: Ano, výukový program se zaměřuje na kreslení obdélníků kolem určitých textových segmentů v dokumentu PDF. Ukazuje, jak najít požadovaný text pomocí regulárních výrazů, vytvořit obdélníky kolem identifikovaných textových segmentů a uložit upravený PDF.
 
@@ -160,13 +160,13 @@ Odpověď: Ano, výukový program se zaměřuje na kreslení obdélníků kolem 
 
 #### Otázka: Jak povolím vyhledávání textu pomocí regulárních výrazů?
 
- A: Hledání regulárních výrazů je povoleno vytvořením a`TextSearchOptions` objektu a nastavení jeho hodnoty na`true` . Přiřaďte tento objekt k`TextSearchOptions` majetek z`TextFragmentAbsorber` instance. Tím je zajištěno, že se při vyhledávání textu použije vzor regulárního výrazu.
+ A: Hledání regulárních výrazů je povoleno vytvořením a`TextSearchOptions` objektu a nastavení jeho hodnoty na`true` . Přiřaďte tento objekt k`TextSearchOptions` vlastnictví`TextFragmentAbsorber` instance. Tím je zajištěno, že se při vyhledávání textu použije vzor regulárního výrazu.
 
 #### Otázka: Jak nakreslím kolem nalezeného textu obdélníky?
 
- A: Po identifikaci textových segmentů pomocí`TextFragmentAbsorber` , výukový program poskytuje smyčku pro iteraci těmito segmenty. Pro každý textový segment výukový program ukazuje, jak kolem něj vytvořit obdélník pomocí`DrawBox` a určete vzhled obdélníku.
+ A: Po identifikaci textových segmentů pomocí`TextFragmentAbsorber` , výukový program poskytuje smyčku pro iteraci těmito segmenty. Pro každý textový segment výukový program ukazuje, jak vytvořit obdélník kolem něj pomocí`DrawBox` a určete vzhled obdélníku.
 
-#### Otázka: Jaké jsou kroky pro uložení upraveného PDF s nakreslenými obdélníky?
+#### Otázka: Jaké jsou kroky k uložení upraveného PDF s nakreslenými obdélníky?
 
 Odpověď: Po nakreslení obdélníků kolem požadovaných textových segmentů použijte`Document` třídy`Save` způsob uložení upraveného dokumentu. Ukázkový kód výukového programu ukazuje, jak uložit upravené PDF a zobrazit zprávu o úspěchu.
 

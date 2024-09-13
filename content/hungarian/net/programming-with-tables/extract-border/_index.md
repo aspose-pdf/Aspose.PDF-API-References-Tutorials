@@ -149,7 +149,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 
 		if (opSaveState != null)
 		{
-			//Mentse el az előző állapotot, és tolja a jelenlegi állapotot a verem tetejére
+			// Mentse el az előző állapotot, és tolja a jelenlegi állapotot a verem tetejére
 			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
@@ -243,7 +243,7 @@ V: A szegély kibontása egy PDF-fájlból különféle célokra hasznos lehet. 
 
 #### K: Kivonhatom a szegélyt a PDF-dokumentum bizonyos oldalairól vagy területeiről?
 
-V: Igen, módosíthatja a mellékelt C# forráskódot, hogy kivonja a szegélyt a PDF dokumentum bizonyos oldalairól vagy régióiról. Manipulálásával a`doc.Pages` gyűjtemény és egyéni feltételek megadásával kiválaszthatja, hogy kivonja a szegélyt bizonyos oldalakról vagy érdeklődési területekről.
+ V: Igen, módosíthatja a mellékelt C# forráskódot, hogy kivonja a szegélyt a PDF dokumentum bizonyos oldalairól vagy régióiról. Manipulálásával a`doc.Pages` gyűjtemény és egyéni feltételek megadásával kiválaszthatja, hogy kivonja a szegélyt bizonyos oldalakról vagy érdeklődési területekről.
 
 #### K: Hogyan szabhatom testre a kimeneti képformátumot és minőséget?
 

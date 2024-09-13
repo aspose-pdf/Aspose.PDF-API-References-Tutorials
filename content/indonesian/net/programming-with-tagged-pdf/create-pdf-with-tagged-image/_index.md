@@ -112,7 +112,7 @@ A: Ya, Anda dapat menggunakan format gambar yang berbeda untuk gambar yang diber
 
  A: Teks alt menyediakan deskripsi tekstual dari gambar, yang dibacakan dengan keras oleh pembaca layar untuk pengguna yang memiliki gangguan penglihatan. Dalam kode yang diberikan, teks alt diatur menggunakan`AlternativeText` milik`IllustrationElement` mewakili gambar yang diberi tag.
 
-####  T: Bagaimana caranya`SetTitle` method contribute to the PDF document's tagged image?
+#### T: Bagaimana caranya`SetTitle` method contribute to the PDF document's tagged image?
 
  Sebuah:`SetTitle` metode menetapkan judul konten yang diberi tag pada dokumen PDF, yang menyediakan konteks tambahan untuk gambar yang diberi tag. Judul ini dapat membantu mengidentifikasi tujuan atau subjek konten yang diberi tag.
 
@@ -126,4 +126,4 @@ J: Dengan menggunakan fitur struktur konten bertag dari Aspose.PDF dan menyediak
 
 #### T: Apakah mungkin untuk menambahkan beberapa gambar yang diberi tag ke dokumen PDF yang sama menggunakan teknik yang sama?
 
- A: Ya, Anda dapat menambahkan beberapa gambar yang diberi tag ke dokumen PDF yang sama menggunakan teknik yang sama. Anda akan membuat gambar tambahan`IllustrationElement` contoh untuk setiap gambar yang diberi tag dan menyesuaikan propertinya sesuai kebutuhan.
+A: Ya, Anda dapat menambahkan beberapa gambar yang diberi tag ke dokumen PDF yang sama menggunakan teknik yang sama. Anda akan membuat gambar tambahan`IllustrationElement` contoh untuk setiap gambar yang diberi tag dan menyesuaikan propertinya sesuai kebutuhan.

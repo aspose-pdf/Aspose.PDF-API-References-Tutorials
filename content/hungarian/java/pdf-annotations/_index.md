@@ -16,7 +16,7 @@ A megjegyzések az interaktivitás kapuját jelentik a PDF-fájlokban, oktatóan
 
 ## dokumentum-együttműködés javítása
 
-Az annotációk nem csak a vizuális fejlesztésekről szólnak; megkönnyítik a PDF dokumentumokon belüli együttműködést és kommunikációt is. Oktatóanyagaink az együttműködés szempontjaival foglalkoznak, megtanítanak megjegyzéseket, jegyzeteket hozzáadni, és még rajzolni is PDF-oldalakra. Akár személyes használatra, akár csapatmunka vagy ügyfél-visszajelzés céljából ír megjegyzéseket, megtudhatja, hogy az Aspose.PDF for Java hogyan egyszerűsíti le a folyamatot, interaktívabbá és informatívabbá téve PDF-eit.
+A megjegyzések nem csak a vizuális fejlesztésekről szólnak; megkönnyítik a PDF dokumentumokon belüli együttműködést és kommunikációt is. Oktatóanyagaink az együttműködés szempontjaival foglalkoznak, megtanítanak megjegyzéseket, jegyzeteket hozzáadni, és még rajzolni is PDF-oldalakra. Akár személyes használatra, akár csapatmunka vagy ügyfél-visszajelzés céljából ír megjegyzéseket, megtudhatja, hogy az Aspose.PDF for Java hogyan egyszerűsíti le a folyamatot, interaktívabbá és informatívabbá téve PDF-eit.
 
 ## PDF megjegyzések oktatóanyagok
 ### [Megjegyzések hozzáadása a PDF-dokumentumokhoz](./add-comments-pdf-documents/)
@@ -27,7 +27,7 @@ Ismerje meg, hogyan távolíthat el könnyedén PDF-jegyzeteket az Aspose.PDF fo
 Tanulja meg, hogyan törölhet könnyedén meghatározott megjegyzéseket PDF-fájlokból az Aspose.PDF for Java segítségével. Lépésről lépésre útmutató kódpéldákkal a precíz PDF-annotációk kezeléséhez.
 ### [Megjegyzések lekérése PDF-oldalakról](./retrieve-annotations-pdf-pages/)
 Ismerje meg, hogyan kérhet le megjegyzéseket PDF-oldalakról az Aspose.PDF for Java segítségével. Fedezze fel a lépésenkénti utasításokat és a kódpéldákat ebben az átfogó útmutatóban.
-### [Különleges megjegyzések kibontása PDF-ekből](./extract-specific-annotation-pdfs/)
+### [Különleges megjegyzések kibontása PDF-fájlokból](./extract-specific-annotation-pdfs/)
 Ismerje meg, hogyan bonthat ki konkrét megjegyzéseket PDF-fájlokból az Aspose.PDF for Java segítségével. Ez a lépésenkénti útmutató kódpéldákat és GYIK-ket tartalmaz a hatékony PDF-annotációk kinyeréséhez.
 ### [Szerkesztés alkalmazása érzékeny tartalomra](./apply-redaction-sensitive-content/)
 Fedezze fel a PDF-fájlok kényes tartalom törlésének erejét az Aspose.PDF for Java segítségével.

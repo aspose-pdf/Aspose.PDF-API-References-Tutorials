@@ -13,7 +13,7 @@ url: /zh-hant/net/programming-with-tables/determine-table-break/
 首先，請確保您已使用 Aspose.PDF for .NET 設定 C# 開發環境。新增對庫的引用並導入必要的命名空間。
 
 ## 第 2 步：建立 PDF 文檔
-在這一步驟中，我們創建一個新的`Document`物件來表示 PDF 文件。
+在這一步驟中，我們創建一個新的`Document`代表 PDF 文檔的對象。
 
 ```csharp
 pdf-Document = new Document();

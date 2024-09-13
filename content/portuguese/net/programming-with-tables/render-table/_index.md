@@ -154,7 +154,7 @@ Parabéns! Agora você aprendeu como exibir uma tabela em um documento PDF usand
 
 #### P: Como posso modificar a aparência da tabela, como alterar as cores das células ou adicionar bordas?
 
-R: Para modificar a aparência da tabela, você pode definir várias propriedades da mesma.`Aspose.Pdf.Table` e suas células. Por exemplo, você pode definir o`BackgroundColor` propriedade das células de alterar sua cor de fundo. Você também pode definir a`Border` propriedade da tabela ou células individuais para adicionar bordas. Além disso, você pode personalizar a fonte, a cor do texto e o alinhamento do conteúdo da tabela modificando o`TextState` do`TextFragment` objetos adicionados às células.
+ R: Para modificar a aparência da tabela, você pode definir várias propriedades da mesma.`Aspose.Pdf.Table` e suas células. Por exemplo, você pode definir o`BackgroundColor` propriedade das células de alterar sua cor de fundo. Você também pode definir a`Border` propriedade da tabela ou células individuais para adicionar bordas. Além disso, você pode personalizar a fonte, a cor do texto e o alinhamento do conteúdo da tabela modificando o`TextState` do`TextFragment` objetos adicionados às células.
 
 #### P: Posso adicionar cabeçalhos ou rodapés à tabela?
 
@@ -162,7 +162,7 @@ R: Sim, você pode adicionar cabeçalhos ou rodapés à tabela criando linhas ad
 
 #### P: Como posso controlar a posição da tabela na página?
 
- R: Para controlar a posição da tabela na página, você pode ajustar a`MarginInfo` do`PageInfo` objeto. O`MarginInfo`permite que você defina as margens esquerda, direita, superior e inferior da página, o que afeta o espaço disponível para a tabela. Você também pode usar o`PositioningType` propriedade do`Aspose.Pdf.Table` para controlar seu alinhamento horizontal e vertical dentro da área de conteúdo da página.
+R: Para controlar a posição da tabela na página, você pode ajustar a`MarginInfo` do`PageInfo` objeto. O`MarginInfo` permite que você defina as margens esquerda, direita, superior e inferior da página, o que afeta o espaço disponível para a tabela. Você também pode usar o`PositioningType` propriedade do`Aspose.Pdf.Table` para controlar seu alinhamento horizontal e vertical dentro da área de conteúdo da página.
 
 #### P: Posso exportar a tabela para diferentes formatos de arquivo, como Excel ou CSV?
 

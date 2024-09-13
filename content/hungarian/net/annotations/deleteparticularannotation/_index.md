@@ -82,7 +82,7 @@ Egy adott megjegyzés törlése egy PDF-fájlból az Aspose.PDF for .NET haszná
 ### Mi az Aspose.PDF for .NET?
 Az Aspose.PDF for .NET egy hatékony könyvtár, amely lehetővé teszi a fejlesztők számára PDF-dokumentumok programozott létrehozását, kezelését és konvertálását.
 
-### Törölhetek több megjegyzést egyszerre?
+### Törölhetek egyszerre több megjegyzést?
 Igen, végignézheti a kommentárgyűjteményt, és több kommentárt törölhet a feltételek alapján.
 
 ### Elérhető az Aspose.PDF ingyenes próbaverziója?

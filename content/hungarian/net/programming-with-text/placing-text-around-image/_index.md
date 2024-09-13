@@ -145,7 +145,7 @@ row1.Cells.Add();
 row1.Cells[1].Paragraphs.Add(TitleText);
 // Állítsa be a sor tartalmának függőleges igazítását Top értékre
 row1.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-// Hozzon létre sorokat a táblázatban, majd cellákat a sorokban
+//Hozzon létre sorokat a táblázatban, majd cellákat a sorokban
 Aspose.Pdf.Row SecondRow = table1.Rows.Add();
 SecondRow.Cells.Add();
 // Állítsa be a második sor sortartományának értékét 2-re
@@ -202,7 +202,7 @@ V: Az oktatóanyag követésével és a mellékelt C# kód végrehajtásával PD
 
 #### K: Használhatok más képformátumokat a JPG-n kívül?
 
- V: Igen, használhat különböző, az Aspose.PDF könyvtár által támogatott képformátumokat, például PNG, BMP, GIF stb. Amikor létrehozza a`Image` objektumot, adja meg a kívánt képformátum fájl elérési útját.
+ V: Igen, használhat különböző, az Aspose.PDF könyvtár által támogatott képformátumokat, például PNG, BMP, GIF stb. Amikor létrehozza a`Image` objektum, adja meg a kívánt képformátum fájl elérési útját.
 
 #### K: Szükséges érvényes Aspose-licenc ehhez az oktatóanyaghoz?
 

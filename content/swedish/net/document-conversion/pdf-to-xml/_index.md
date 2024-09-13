@@ -1,7 +1,7 @@
 ---
 title: PDF till XML
 linktitle: PDF till XML
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du konverterar PDF till XML med Aspose.PDF för .NET i denna omfattande handledning. Steg-för-steg-guide med kodexempel ingår.
 type: docs
 weight: 210

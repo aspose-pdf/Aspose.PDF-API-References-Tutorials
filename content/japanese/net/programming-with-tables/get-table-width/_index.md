@@ -20,7 +20,7 @@ Document doc = new Document();
 Page page = doc.Pages.Add();
 ```
 
-## ステップ3: 新しいテーブルを初期化する
+## ステップ3: 新しいテーブルの初期化
 新しいテーブルを初期化し、列のフィットを「AutoFitToContent」に設定します。
 
 ```csharp

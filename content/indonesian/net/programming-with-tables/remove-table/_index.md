@@ -96,7 +96,7 @@ Selamat! Anda sekarang telah mempelajari cara menghapus tabel dalam dokumen PDF 
 
 #### T: Apa yang terjadi jika halaman yang ditentukan tidak berisi tabel apa pun?
 
- A: Jika halaman yang ditentukan tidak berisi tabel apa pun, kode akan menampilkan`IndexOutOfRangeException` ketika mencoba mengakses`absorb.TableList[0]` Untuk menghindari masalah ini, Anda harus memeriksa apakah`absorb.TableList`berisi elemen apa pun sebelum mengakses tabel.
+ A: Jika halaman yang ditentukan tidak berisi tabel apa pun, kode akan menampilkan`IndexOutOfRangeException` ketika mencoba mengakses`absorb.TableList[0]` Untuk menghindari masalah ini, Anda harus memeriksa apakah`absorb.TableList` berisi elemen apa pun sebelum mengakses tabel.
 
 #### T: Bisakah saya menghapus tabel dari halaman selain halaman pertama?
 

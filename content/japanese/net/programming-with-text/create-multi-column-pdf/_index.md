@@ -155,7 +155,7 @@ TextFragment text2 = new TextFragment(@"Sed augue tortor, sodales id, luctus et,
 box.Paragraphs.Add(text2);
 page.Paragraphs.Add(box);
 dataDir = dataDir + "CreateMultiColumnPdf_out.pdf";
-//PDFファイルを保存
+// PDFファイルを保存
 doc.Save(dataDir);
 Console.WriteLine("\nMulti column pdf file created successfully.\nFile saved at " + dataDir);
 ```
@@ -200,7 +200,7 @@ using Aspose.Pdf.Drawing;
 
 #### Q: HTML 形式で見出しテキストを追加するにはどうすればよいですか?
 
- A: ステップ8では、`HtmlFragment`オブジェクトを作成し、その内容を目的のHTMLテキストに設定してから、フラグメントを`Paragraphs`ページのコレクション。
+A: ステップ8では、`HtmlFragment`オブジェクトを作成し、その内容を目的のHTMLテキストに設定してから、フラグメントを`Paragraphs`ページのコレクション。
 
 #### Q: 複数の列を持つ FloatingBox を作成するにはどうすればよいですか?
 

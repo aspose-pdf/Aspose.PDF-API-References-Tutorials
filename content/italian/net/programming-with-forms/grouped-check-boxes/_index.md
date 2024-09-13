@@ -2,156 +2,159 @@
 title: Caselle di controllo raggruppate nel documento PDF
 linktitle: Caselle di controllo raggruppate nel documento PDF
 second_title: Riferimento API Aspose.PDF per .NET
-description: Crea facilmente caselle di controllo raggruppate nei documenti PDF con Aspose.PDF per .NET.
+description: Scopri come creare caselle di controllo raggruppate (pulsanti di scelta) in un documento PDF utilizzando Aspose.PDF per .NET con questo tutorial passo dopo passo.
 type: docs
 weight: 170
 url: /it/net/programming-with-forms/grouped-check-boxes/
 ---
-In questo tutorial, ti mostreremo come creare caselle di controllo raggruppate in un documento PDF usando Aspose.PDF per .NET. Spiegheremo il codice sorgente C# passo dopo passo per guidarti attraverso questo processo.
+## Introduzione
 
-## Fase 1: Preparazione
+Creare PDF interattivi non è così difficile come potrebbe sembrare, soprattutto quando hai a disposizione strumenti potenti come Aspose.PDF per .NET. Uno degli elementi interattivi che potresti dover aggiungere ai tuoi documenti PDF sono le caselle di controllo raggruppate o, più specificamente, i pulsanti di scelta che consentono agli utenti di selezionare un'opzione da un set. Questo tutorial ti guiderà attraverso il processo di aggiunta di caselle di controllo raggruppate (pulsanti di scelta) a un documento PDF utilizzando Aspose.PDF per .NET. Che tu sia un principiante o uno sviluppatore esperto, troverai questa guida coinvolgente, dettagliata e facile da seguire.
 
-Assicurati di aver importato le librerie necessarie e di aver impostato il percorso della directory dei documenti:
+## Prerequisiti
+
+Prima di addentrarci nella guida dettagliata, vediamo alcuni prerequisiti essenziali:
+
+1.  Aspose.PDF per .NET: assicurati di avere installata la libreria Aspose.PDF. In caso contrario, puoi[scaricalo qui](https://releases.aspose.com/pdf/net/).
+2. IDE: dovresti avere un ambiente di sviluppo configurato, come Visual Studio.
+3. .NET Framework: il progetto dovrebbe avere come obiettivo una versione di .NET Framework compatibile con Aspose.PDF.
+4. Conoscenza di base del linguaggio C#: per seguire il tutorial senza problemi è richiesta familiarità con il linguaggio C# e con la manipolazione dei PDF.
+5.  Licenza: Aspose.PDF richiede una licenza per la piena funzionalità. Puoi[ottenere una licenza temporanea](https://purchase.aspose.com/temporary-license/) se necessario.
+
+## Importa pacchetti
+
+Prima di iniziare, assicurati di aver importato gli spazi dei nomi necessari nel tuo progetto:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Forms;
 ```
 
-## Passaggio 2: creare un'istanza di un oggetto documento
+Questi pacchetti ti daranno accesso a tutte le classi e ai metodi necessari per manipolare i documenti PDF, inclusa la creazione di pulsanti di scelta e la definizione delle loro proprietà.
 
-Crea un'istanza di un oggetto Documento:
+In questa sezione, suddivideremo il processo di creazione di caselle di controllo raggruppate (pulsanti di scelta) in passaggi chiari e facili da seguire.
+
+## Passaggio 1: creare un nuovo documento PDF
+
+ Il primo passo è creare un'istanza di`Document` oggetto, che rappresenterà il tuo file PDF. Quindi, aggiungi una pagina vuota al tuo documento in cui inserirai le caselle di controllo raggruppate.
 
 ```csharp
+// Crea un'istanza dell'oggetto Documento
 Document pdfDocument = new Document();
-```
 
-## Passaggio 3: aggiungere la pagina al documento PDF
-
-Aggiungere una pagina al documento PDF:
-
-```csharp
+// Aggiungere una pagina al file PDF
 Page page = pdfDocument.Pages.Add();
 ```
 
-## Passaggio 4: creare un'istanza di un oggetto RadioButtonField
+In questo modo si creano le basi per aggiungere al PDF qualsiasi elemento, come ad esempio i pulsanti di scelta.
 
-Crea un'istanza di un oggetto RadioButtonField con il numero di pagina come argomento:
+## Passaggio 2: inizializzare il campo del pulsante di scelta
+
+Successivamente, dobbiamo creare un`RadioButtonField` oggetto, che conterrà le caselle di controllo raggruppate (pulsanti di scelta). Questo campo viene aggiunto alla pagina specifica in cui appariranno le caselle di controllo.
 
 ```csharp
+// Crea un'istanza dell'oggetto RadioButtonField e assegnalo alla prima pagina
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## Passaggio 5: aggiungere le opzioni del pulsante di scelta
+Consideratelo come il contenitore che raggrupperà le singole opzioni dei pulsanti di scelta.
 
-Aggiungere le opzioni dei pulsanti di scelta utilizzando l'oggetto RadioButtonOptionField e specificare la loro posizione utilizzando l'oggetto Rectangle:
+## Passaggio 3: aggiungere le opzioni del pulsante di scelta
+
+ Ora, aggiungiamo le singole opzioni del pulsante di scelta al campo. In questo esempio, aggiungeremo due pulsanti di scelta e specificheremo le loro posizioni utilizzando`Rectangle` oggetto.
 
 ```csharp
+// Aggiungere la prima opzione del pulsante di scelta e specificare la sua posizione utilizzando Rettangolo
 RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
 RadioButtonOptionField opt2 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(100, 0, 120, 20));
-opt1.OptionName = "Test1";
-opt2.OptionName = "Test2";
-radio.Add(opt1);
-radio.Add(opt2);
+
+// Imposta i nomi delle opzioni per l'identificazione
+opt1.OptionName = "Option1";
+opt2.OptionName = "Option2";
 ```
 
-## Passaggio 6: personalizzare le opzioni del pulsante di scelta
+ Qui, il`Rectangle` L'oggetto definisce le coordinate e le dimensioni di ciascun pulsante di scelta sulla pagina.
 
-Personalizza le opzioni dei pulsanti di scelta impostandone stile, bordo e aspetto:
+## Passaggio 4: personalizzare lo stile dei pulsanti di scelta
+
+ È possibile personalizzare l'aspetto dei pulsanti di scelta impostandone`Style` proprietà. Ad esempio, potresti volere caselle di controllo a forma quadrata o a forma di croce.
 
 ```csharp
+// Imposta lo stile dei pulsanti di scelta
 opt1.Style = BoxStyle.Square;
-opt2.Style = BoxStyle.Square;
+opt2.Style = BoxStyle.Cross;
+```
+
+Ciò consente di controllare l'aspetto delle caselle di controllo, rendendole più intuitive e accattivanti.
+
+## Passaggio 5: configurare le proprietà del bordo
+
+I bordi svolgono un ruolo fondamentale nel rendere le caselle di controllo facilmente identificabili. Qui aggiungeremo bordi solidi attorno a ogni opzione del pulsante di scelta e ne definiremo la larghezza e il colore.
+
+```csharp
+// Configura il bordo del primo pulsante di scelta
 opt1.Border = new Border(opt1);
 opt1.Border.Style = BorderStyle.Solid;
 opt1.Border.Width = 1;
+opt1.Characteristics.Border = Color.Black;
+
+// Configura il bordo del secondo pulsante di scelta
 opt2.Border = new Border(opt2);
-opt2.Border.Width = 1;
 opt2.Border.Style = BorderStyle.Solid;
+opt2.Border.Width = 1;
+opt2.Characteristics.Border = Color.Black;
 ```
 
-## Passaggio 7: aggiungere i pulsanti di scelta al modulo
+Questo passaggio garantisce che ogni pulsante di scelta abbia un bordo ben definito, migliorando la leggibilità del documento.
 
-Aggiungere i pulsanti di scelta all'oggetto modulo del documento:
+## Passaggio 6: aggiungere le opzioni del pulsante di scelta al modulo
+
+Ora aggiungeremo i pulsanti di scelta al modulo del documento. Questo è il passaggio finale nel raggruppamento delle caselle di controllo sotto un singolo campo.
 
 ```csharp
+// Aggiungere il campo pulsante di scelta all'oggetto modulo del documento
 pdfDocument.Form.Add(radio);
 ```
 
-## Passaggio 8: Salvare il documento
+L'oggetto modulo funge da contenitore per tutti gli elementi interattivi, comprese le nostre caselle di controllo raggruppate.
 
-Salva il documento PDF:
+## Passaggio 7: Salvare il documento PDF
+
+Infine, una volta impostato tutto, puoi salvare il documento PDF nella posizione desiderata.
 
 ```csharp
-dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
+// Definire il percorso del file di output
+string dataDir = "YOUR DOCUMENT DIRECTORY" + "GroupedCheckBoxes_out.pdf";
+
+// Salva il documento PDF
 pdfDocument.Save(dataDir);
+
+// Conferma la creazione riuscita
+Console.WriteLine("Grouped checkboxes added successfully. File saved at " + dataDir);
 ```
 
-### Esempio di codice sorgente per Grouped Check Boxes utilizzando Aspose.PDF per .NET 
-```csharp
-try
-{
-	// Percorso verso la directory dei documenti.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Crea un'istanza dell'oggetto Documento
-	Document pdfDocument = new Document();
-	// Aggiungere una pagina al file PDF
-	Page page = pdfDocument.Pages.Add();
-	// Crea un'istanza dell'oggetto RadioButtonField con il numero di pagina come argomento
-	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
-	// Aggiungere la prima opzione del pulsante di scelta e specificare anche la sua origine utilizzando l'oggetto Rettangolo
-	RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
-	RadioButtonOptionField opt2 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(100, 0, 120, 20));
-	opt1.OptionName = "Test1";
-	opt2.OptionName = "Test2";
-	radio.Add(opt1);
-	radio.Add(opt2);
-	opt1.Style = BoxStyle.Square;
-	opt2.Style = BoxStyle.Square;
-	opt1.Style = BoxStyle.Cross;
-	opt2.Style = BoxStyle.Cross;
-	opt1.Border = new Border(opt1);
-	opt1.Border.Style = BorderStyle.Solid;
-	opt1.Border.Width = 1;
-	opt1.Characteristics.Border = System.Drawing.Color.Black;
-	opt2.Border = new Border(opt2);
-	opt2.Border.Width = 1;
-	opt2.Border.Style = BorderStyle.Solid;
-	opt2.Characteristics.Border = System.Drawing.Color.Black;
-	// Aggiungere il pulsante di scelta all'oggetto modulo dell'oggetto Documento
-	pdfDocument.Form.Add(radio);
-	dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
-	// Salva il documento PDF
-	pdfDocument.Save(dataDir);
-	Console.WriteLine("\nGrouped checkboxes added successfully.\nFile saved at " + dataDir);
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+Ed ecco fatto! Hai creato con successo un PDF con caselle di controllo raggruppate utilizzando Aspose.PDF per .NET.
 
 ## Conclusione
 
-In questo tutorial, abbiamo imparato come creare caselle di controllo raggruppate in un documento PDF usando Aspose.PDF per .NET. Seguendo questi passaggi, puoi facilmente aggiungere opzioni di pulsanti di scelta personalizzati e raggrupparli nei tuoi documenti PDF usando Aspose.PDF.
+Aggiungere elementi interattivi come caselle di controllo raggruppate ai documenti PDF può sembrare complicato all'inizio, ma con Aspose.PDF per .NET diventa un gioco da ragazzi. Seguendo questa guida passo passo, hai imparato come impostare un documento PDF di base, aggiungere pulsanti di scelta raggruppati, personalizzarne l'aspetto e salvare il risultato finale. Che tu stia creando moduli, sondaggi o qualsiasi altro tipo di PDF interattivo, questa guida ti fornisce una solida base da cui iniziare.
 
-### Domande frequenti
+## Domande frequenti
 
-#### D: Cosa sono le caselle di controllo raggruppate in un documento PDF?
+### Posso aggiungere più di due pulsanti di scelta a un gruppo?
+ Assolutamente! Basta creare un'istanza aggiuntiva`RadioButtonOptionField` oggetti e aggiungerli al`RadioButtonField` come mostrato nel tutorial.
 
-R: Le caselle di controllo raggruppate in un documento PDF si riferiscono a un set di opzioni di pulsanti di scelta che sono raggruppate insieme. I pulsanti di scelta consentono agli utenti di selezionare solo un'opzione da un gruppo di scelte reciprocamente esclusive. Quando viene selezionato un pulsante di scelta, gli altri nello stesso gruppo vengono automaticamente deselezionati. Questo comportamento di raggruppamento è utile quando si desidera presentare agli utenti più opzioni ma limitare la loro selezione a una sola scelta.
+### Come faccio a gestire più gruppi di caselle di controllo in un documento?
+Per creare più gruppi, istanziare separatamente`RadioButtonField` oggetti per ogni gruppo.
 
-#### D: Posso personalizzare l'aspetto delle caselle di controllo raggruppate in Aspose.PDF per .NET?
+### C'è un limite al numero di caselle di controllo che posso aggiungere?
+No, Aspose.PDF per .NET non impone alcun limite al numero di caselle di controllo che è possibile aggiungere a un PDF.
 
-R: Sì, puoi personalizzare l'aspetto delle caselle di controllo raggruppate in Aspose.PDF per .NET. L'API fornisce varie opzioni per impostare lo stile, il bordo e l'aspetto delle opzioni dei pulsanti di scelta. Puoi definire la posizione di ogni opzione, scegliere tra diversi stili di casella (ad esempio, quadrato, cerchio, croce) e regolare le proprietà del bordo per ottenere la rappresentazione visiva desiderata.
+### Posso modificare l'aspetto delle caselle di controllo dopo averle aggiunte?
+Sì, puoi modificare proprietà come stile, larghezza e colore del bordo dopo aver aggiunto le caselle di controllo.
 
-#### D: Come posso aggiungere caselle di controllo raggruppate a una pagina specifica in un documento PDF?
-
-A: Per aggiungere caselle di controllo raggruppate a una pagina specifica in un documento PDF, è necessario creare un'istanza di`RadioButtonField` oggetto con il numero di pagina desiderato come argomento. Quindi, crea`RadioButtonOptionField` oggetti che rappresentano ciascuna opzione del pulsante di scelta e specificano la loro posizione utilizzando`Rectangle` oggetto. Infine, aggiungi queste opzioni al`RadioButtonField` e personalizzarne l'aspetto in base alle necessità prima di aggiungere il`RadioButtonField` al modulo del documento.
-
-#### D: Posso aggiungere più gruppi di caselle di controllo a un singolo documento PDF?
-
- R: Sì, puoi aggiungere più gruppi di caselle di controllo a un singolo documento PDF. Ogni gruppo dovrebbe avere un nome univoco`RadioButtonField` oggetto e il`RadioButtonOptionField` gli oggetti all'interno di ogni gruppo dovrebbero condividere la stessa pagina e nomi univoci per le loro opzioni. Ciò assicura che i pulsanti di scelta all'interno di ogni gruppo funzionino correttamente e che le selezioni siano reciprocamente esclusive.
-
-#### D: Le caselle di controllo raggruppate sono supportate in tutti i visualizzatori e le applicazioni PDF?
-
-R: Sì, le caselle di controllo raggruppate sono supportate in tutti i visualizzatori e le applicazioni PDF conformi allo standard. La specifica PDF definisce i pulsanti di scelta e il loro comportamento di raggruppamento, rendendoli universalmente riconosciuti nel formato PDF. Tuttavia, è essenziale testare la funzionalità in diversi visualizzatori PDF per garantire un comportamento coerente su diverse piattaforme.
+### È possibile utilizzare le immagini come pulsanti di scelta?
+ Sì, Aspose.PDF consente di utilizzare immagini personalizzate come pulsanti di scelta impostando`Appearance` proprietà di ciascuna opzione del pulsante di scelta.

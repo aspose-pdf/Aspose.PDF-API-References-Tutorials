@@ -149,7 +149,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 
 		if (opSaveState != null)
 		{
-			//Zapisz poprzedni stan i przenieś bieżący stan na górę stosu
+			// Zapisz poprzedni stan i przenieś bieżący stan na górę stosu
 			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
@@ -243,7 +243,7 @@ A: Wyodrębnienie obramowania z pliku PDF może być przydatne do różnych cel�
 
 #### P: Czy mogę wyodrębnić obramowanie z określonych stron lub obszarów w dokumencie PDF?
 
-A: Tak, możesz zmodyfikować dostarczony kod źródłowy C#, aby wyodrębnić obramowanie z określonych stron lub regionów w dokumencie PDF. Manipulując`doc.Pages` Po wybraniu kolekcji i określeniu niestandardowych kryteriów możesz wyodrębnić obramowanie z konkretnych stron lub obszarów zainteresowania.
+ A: Tak, możesz zmodyfikować dostarczony kod źródłowy C#, aby wyodrębnić obramowanie z określonych stron lub regionów w dokumencie PDF. Manipulując`doc.Pages` Po wybraniu kolekcji i określeniu niestandardowych kryteriów możesz wyodrębnić obramowanie z konkretnych stron lub obszarów zainteresowania.
 
 #### P: W jaki sposób mogę dostosować format i jakość obrazu wyjściowego?
 

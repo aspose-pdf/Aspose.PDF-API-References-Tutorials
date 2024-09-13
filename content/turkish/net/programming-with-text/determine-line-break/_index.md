@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Adım 5: Belgeye bir sayfa ekleyin
- Belgeye yeni bir sayfa eklemek için şunu kullanın:`Add` yöntemi`Pages`koleksiyon. Sağlanan kodda, yeni sayfa değişkene atanır`page`.
+ Belgeye yeni bir sayfa eklemek için şunu kullanın:`Add` yöntemi`Pages` koleksiyon. Sağlanan kodda, yeni sayfa değişkene atanır`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -118,7 +118,7 @@ A: 6. Adımda, her biri satır sonları içeren bir paragraf içeren birden fazl
 
 #### S: PDF belgesini nasıl kaydedebilirim ve satır sonu bilgilerini nasıl çıkarabilirim?
 
- A: 7. Adımda, PDF belgesini kullanarak kaydedeceksiniz`Save` yöntemi`Document` nesne. Ardından, satır sonu bilgilerini kullanarak çıkaracaksınız`GetNotifications`İstenilen sayfanın yöntemini seçip bir metin dosyasına kaydedin.
+ A: 7. Adımda, PDF belgesini kullanarak kaydedeceksiniz`Save` yöntemi`Document` nesne. Ardından, satır sonu bilgilerini kullanarak çıkaracaksınız`GetNotifications` İstenilen sayfanın yöntemini seçip bir metin dosyasına kaydedin.
 
 #### S: Çıkarılan satır sonu bilgisinin amacı nedir?
 

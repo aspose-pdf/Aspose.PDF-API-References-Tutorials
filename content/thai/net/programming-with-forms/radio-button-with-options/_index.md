@@ -2,54 +2,105 @@
 title: ปุ่มตัวเลือกพร้อมตัวเลือก
 linktitle: ปุ่มตัวเลือกพร้อมตัวเลือก
 second_title: เอกสารอ้างอิง Aspose.PDF สำหรับ API ของ .NET
-description: เพิ่มปุ่มตัวเลือกที่มีตัวเลือกลงในเอกสาร PDF ได้อย่างง่ายดายโดยใช้ Aspose.PDF สำหรับ .NET
+description: ปลดล็อกศักยภาพของ PDF แบบโต้ตอบโดยเพิ่มปุ่มตัวเลือกโดยใช้ Aspose.PDF สำหรับ .NET สร้างแบบฟอร์มที่น่าสนใจได้อย่างง่ายดายและปรับปรุงประสบการณ์ของผู้ใช้
 type: docs
 weight: 230
 url: /th/net/programming-with-forms/radio-button-with-options/
 ---
+## การแนะนำ
 
-ในบทช่วยสอนนี้ เราจะแสดงวิธีเพิ่มปุ่มตัวเลือกที่มีตัวเลือกในเอกสาร PDF โดยใช้ Aspose.PDF สำหรับ .NET เราจะอธิบายโค้ดต้นฉบับ C# ทีละขั้นตอนเพื่อแนะนำคุณตลอดกระบวนการนี้
+การสร้างเอกสาร PDF แบบโต้ตอบสามารถปรับปรุงการมีส่วนร่วมของผู้ใช้และปรับปรุงการรวบรวมข้อมูลได้อย่างมาก ในบรรดาองค์ประกอบต่างๆ ที่คุณสามารถรวมเข้าไปได้ ปุ่มตัวเลือกถือเป็นวิธีที่เป็นมิตรกับผู้ใช้ในการนำเสนอตัวเลือกหลายตัวเลือก การใช้ Aspose.PDF สำหรับ .NET ช่วยให้คุณสามารถเพิ่มปุ่มตัวเลือกลงในแบบฟอร์ม PDF ได้อย่างง่ายดาย ทำให้ผู้ใช้สามารถเลือกการตั้งค่าที่ต้องการได้อย่างง่ายดาย ไม่ว่าคุณจะกำลังทำงานกับแบบสำรวจ แบบฟอร์มข้อเสนอแนะ หรือแอปพลิเคชัน คู่มือนี้จะช่วยให้คุณใช้ประโยชน์จากความสามารถของ Aspose.PDF เพื่อนำปุ่มตัวเลือกไปใช้ได้อย่างมีประสิทธิภาพ
 
-## ขั้นตอนที่ 1: การเตรียมพร้อม
+## ข้อกำหนดเบื้องต้น
 
-ตรวจสอบให้แน่ใจว่าคุณได้นำเข้าไลบรารีที่จำเป็นและตั้งค่าเส้นทางไปยังไดเร็กทอรีเอกสารของคุณแล้ว:
+ก่อนที่เราจะเริ่มต้น มีบางสิ่งที่คุณจำเป็นต้องตั้งค่าเพื่อให้แน่ใจว่ากระบวนการสร้าง PDF ด้วยปุ่มตัวเลือกจะราบรื่น:
+
+1.  Aspose.PDF สำหรับ .NET: ตรวจสอบให้แน่ใจว่าคุณได้ติดตั้งไลบรารี Aspose.PDF ไว้ในโปรเจ็กต์ของคุณแล้ว หากยังไม่มี คุณสามารถดาวน์โหลดได้อย่างง่ายดายจาก[หน้าวางจำหน่าย](https://releases.aspose.com/pdf/net/).
+2. .NET Framework: ความเข้าใจพื้นฐานเกี่ยวกับ .NET framework จะช่วยให้คุณสามารถรับมือกับปัญหาต่างๆ ที่คุณพบเจอได้
+3. สภาพแวดล้อมการพัฒนา: คุณจะต้องมี IDE ที่เหมาะสมสำหรับ .NET (เช่น Visual Studio) ซึ่งคุณสามารถเขียนและทดสอบโค้ดของคุณได้
+4. ความคุ้นเคยกับ C#: แม้ว่าคุณไม่จำเป็นต้องเป็นมืออาชีพ แต่การเข้าใจการเขียนโปรแกรม C# จะทำให้กระบวนการนี้ง่ายและสนุกยิ่งขึ้นอย่างแน่นอน
+5. ความรู้พื้นฐานเกี่ยวกับโครงสร้าง PDF: การทำความเข้าใจว่าโครงสร้าง PDF เป็นอย่างไรสามารถช่วยในการแก้ไขปัญหาหรือปรับแต่งแบบฟอร์มของคุณเพิ่มเติมได้
+
+เมื่อคุณจัดการทุกสิ่งเรียบร้อยแล้ว คุณก็พร้อมที่จะปลดปล่อยความคิดสร้างสรรค์ของคุณสู่โลกของ PDF แล้ว!
+
+## แพ็คเกจนำเข้า
+
+หากต้องการเริ่มต้นใช้งานปุ่มตัวเลือกใน Aspose.PDF ก่อนอื่นคุณต้องนำเข้าแพ็คเกจที่จำเป็นไปยังโปรเจ็กต์ C# ของคุณ วิธีดำเนินการมีดังนี้:
+
+### เปิดตัวแก้ไขโค้ดของคุณ
+
+เปิดสภาพแวดล้อมการพัฒนาของคุณ (เช่น Visual Studio) และสร้างโปรเจ็กต์ C# ใหม่หากคุณยังไม่ได้ดำเนินการ 
+
+### เพิ่มการอ้างอิง Aspose.PDF
+
+คลิกขวาที่โปรเจ็กต์ของคุณใน Solution Explorer เลือก Add > Reference และในส่วน Assemblies ให้ค้นหา Aspose.PDF หากคุณติดตั้งไลบรารีอย่างถูกต้อง ไลบรารีนั้นควรปรากฏในรายการ เพียงทำเครื่องหมายแล้วคลิก OK
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using System.IO;
+using Aspose.Pdf.Forms;
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Text;
 ```
 
-## ขั้นตอนที่ 2: สร้างอินสแตนซ์ของวัตถุเอกสาร
+ตอนนี้ โปรเจ็กต์ของคุณพร้อมที่จะใช้ประโยชน์จากพลังของ Aspose แล้ว!
 
-สร้างอินสแตนซ์ของวัตถุเอกสารเพื่อสร้างเอกสาร PDF ใหม่:
+เมื่อตั้งค่าทุกอย่างเสร็จเรียบร้อยแล้ว มาสร้างเอกสาร PDF ที่เต็มไปด้วยปุ่มตัวเลือกทีละขั้นตอนกัน!
+
+## ขั้นตอนที่ 1: ตั้งค่าเอกสาร
+
+ขั้นแรก ให้สร้างเอกสาร PDF ใหม่และเพิ่มหน้าเข้าไป ซึ่งจะเป็นพื้นที่สำหรับระบายสีตัวเลือกปุ่มตัวเลือก
 
 ```csharp
+// เส้นทางไปยังไดเร็กทอรีเอกสาร
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
+Page page = doc.Pages.Add();
 ```
 
-## ขั้นตอนที่ 3: เพิ่มหน้าและตาราง
+ ในสไนปเป็ตนี้ เรากำลังสร้างใหม่`Document` วัตถุและการเพิ่ม`Page` สำหรับเนื้อหาของเรา โปรดเปลี่ยนใหม่`YOUR DOCUMENT DIRECTORY` ด้วยเส้นทางที่คุณต้องการบันทึก PDF ของคุณ
 
-เพิ่มหน้าลงในเอกสารและสร้างตารางเพื่อเก็บตัวเลือกปุ่มตัวเลือก:
+## ขั้นตอนที่ 2: สร้างตารางสำหรับเค้าโครง
+
+ขั้นต่อไป เราต้องมีเค้าโครงสำหรับปุ่มตัวเลือก การใช้ตารางจะช่วยให้จัดวางปุ่มได้สวยงามยิ่งขึ้น
 
 ```csharp
-Page page = doc.Pages.Add();
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-table. ColumnWidths = "120 120 120";
+table.ColumnWidths = "120 120 120"; // กำหนดความกว้างของคอลัมน์
 page.Paragraphs.Add(table);
 ```
 
-## ขั้นตอนที่ 4: สร้างอินสแตนซ์ของวัตถุ RadioButtonField
+ ที่นี่เราสร้าง`Table`วัตถุและระบุความกว้างสำหรับคอลัมน์ทั้งสามของเรา การดำเนินการนี้จะสร้างเค้าโครงที่เป็นระเบียบเรียบร้อยสำหรับตัวเลือกของเรา
 
-สร้างอินสแตนซ์ของวัตถุ RadioButtonField เพื่อแสดงปุ่มตัวเลือก:
+## ขั้นตอนที่ 3: เพิ่มแถวลงในตาราง
+
+ตอนนี้เราจะเพิ่มแถวลงในตารางและเซลล์ที่จะมีปุ่มตัวเลือก
+
+```csharp
+Row r1 = table.Rows.Add();
+Cell c1 = r1.Cells.Add();
+Cell c2 = r1.Cells.Add();
+Cell c3 = r1.Cells.Add();
+```
+
+เราสร้างแถวใหม่และเซลล์สามเซลล์ในแถว แต่ละเซลล์จะมีปุ่มตัวเลือก
+
+## ขั้นตอนที่ 4: เพิ่มฟิลด์ปุ่มตัวเลือก
+
+ความสนุกเริ่มต้นที่นี่ – มาเพิ่มช่องปุ่มตัวเลือกใน PDF ของเรากันเถอะ!
 
 ```csharp
 RadioButtonField rf = new RadioButtonField(page);
-rf. PartialName = "radio";
+rf.PartialName = "radio";
 doc.Form.Add(rf, 1);
 ```
 
-## ขั้นตอนที่ 5: เพิ่มตัวเลือกปุ่มตัวเลือก
+ เราสร้างตัวอย่าง`RadioButtonField`ตั้งชื่อแล้วเพิ่มลงในแบบฟอร์มเอกสาร ฟิลด์นี้จะให้ผู้ใช้เลือกชื่อได้เอง
 
-เพิ่มตัวเลือกปุ่มตัวเลือกลงในวัตถุ RadioButtonField:
+## ขั้นตอนที่ 5: กำหนดค่าตัวเลือกปุ่มตัวเลือก
+
+ถึงเวลาสร้างตัวเลือกสำหรับปุ่มตัวเลือกแล้ว! เราจะเพิ่มตัวเลือกสามตัวเลือกที่ผู้ใช้สามารถเลือกได้
 
 ```csharp
 RadioButtonOptionField opt1 = new RadioButtonOptionField();
@@ -58,20 +109,40 @@ RadioButtonOptionField opt3 = new RadioButtonOptionField();
 opt1.OptionName = "Item1";
 opt2.OptionName = "Item2";
 opt3.OptionName = "Item3";
+```
+
+ ที่นี่เราสร้างสาม`RadioButtonOptionField` อินสแตนซ์สำหรับตัวเลือกแต่ละตัวของเราและกำหนดชื่อให้กับตัวเลือกเหล่านั้น การใช้ชื่อเหล่านี้อย่างสร้างสรรค์อาจช่วยให้ผู้ใช้สามารถเลือกสิ่งที่ต้องการได้ดีขึ้น
+
+## ขั้นตอนที่ 6: กำหนดขนาดสำหรับตัวเลือก
+
+ต่อไปเรามาตั้งค่าขนาดของตัวเลือกปุ่มตัวเลือกเพื่อให้ดูน่าสนใจกัน
+
+```csharp
 opt1.Width = 15;
-opt1. Height = 15;
+opt1.Height = 15;
 opt2.Width = 15;
-opt2. Height = 15;
+opt2.Height = 15;
 opt3.Width = 15;
-opt3. Height = 15;
+opt3.Height = 15;
+```
+
+ด้วยโค้ดนี้ เราจะกำหนดขนาดของปุ่มตัวเลือกแต่ละปุ่ม คุณสามารถปรับค่าเหล่านี้ได้หากต้องการตัวเลือกที่ใหญ่ขึ้นหรือเล็กลง
+
+## ขั้นตอนที่ 7: เพิ่มตัวเลือกลงในช่องปุ่มตัวเลือก
+
+หลังจากที่สร้างตัวเลือกแล้ว เราต้องเพิ่มตัวเลือกเหล่านั้นลงในฟิลด์ปุ่มตัวเลือก
+
+```csharp
 rf.Add(opt1);
 rf.Add(opt2);
 rf.Add(opt3);
 ```
 
-## ขั้นตอนที่ 6: ปรับแต่งตัวเลือกปุ่มตัวเลือก
+โค้ดนี้ไม่เพียงแต่เพิ่มตัวเลือกเท่านั้น แต่ยังเชื่อมโยงตัวเลือกเหล่านั้นเข้ากับช่องปุ่มตัวเลือกของเราด้วย ซึ่งทำให้ผู้ใช้สามารถเลือกตัวเลือกใดตัวเลือกหนึ่งได้
 
-ปรับแต่งตัวเลือกปุ่มตัวเลือกโดยการตั้งค่าแอตทริบิวต์เช่นเส้นขอบ สีข้อความ และข้อความคำบรรยาย:
+## ขั้นตอนที่ 8: กำหนดรูปแบบตัวเลือก
+
+เพื่อให้ตัวเลือกของเราโดดเด่นขึ้น เรามาปรับแต่งรูปแบบกันเถอะ เราสามารถเพิ่มขอบและตั้งค่าสีได้
 
 ```csharp
 opt1.Border = new Border(opt1);
@@ -80,99 +151,52 @@ opt1.Border.Style = BorderStyle.Solid;
 opt1.Characteristics.Border = System.Drawing.Color.Black;
 opt1.DefaultAppearance.TextColor = System.Drawing.Color.Red;
 opt1.Caption = new TextFragment("Item1");
-
-// ทำซ้ำขั้นตอนเดียวกันสำหรับ opt2 และ opt3
-
 ```
 
-## ขั้นตอนที่ 7: เพิ่มตัวเลือกปุ่มตัวเลือกลงในตาราง
+ ทำซ้ำการจัดแต่งทรงผมนี้`opt2` และ`opt3`โดยปรับคำบรรยายให้เหมาะสม วิธีนี้จะช่วยให้แต่ละตัวเลือกดูเป็นมืออาชีพและน่าสนใจ
 
-เพิ่มตัวเลือกปุ่มตัวเลือกลงในตารางเพื่อแสดง:
+## ขั้นตอนที่ 9: เพิ่มตัวเลือกให้กับเซลล์
+
+ถัดไปเราต้องวางปุ่มตัวเลือกเหล่านี้ลงในเซลล์ที่สอดคล้องกันในตารางของเรา
 
 ```csharp
-Cell c1 = table.Rows.Add().Cells.Add();
-Cell c2 = table.Rows[table.Rows.Count].Cells.Add();
-Cell c3 = table.Rows[table.Rows.Count].Cells.Add();
-
 c1.Paragraphs.Add(opt1);
 c2.Paragraphs.Add(opt2);
 c3.Paragraphs.Add(opt3);
 ```
 
-## ขั้นตอนที่ 8: บันทึกเอกสาร PDF
+บรรทัดนี้จะเพิ่มตัวเลือกที่มีสไตล์ให้กับเซลล์ที่เราสร้างไว้ก่อนหน้านี้ โดยจัดระเบียบไว้ในตารางของเราอย่างเรียบร้อย
 
-บันทึกเอกสาร PDF ที่สร้างขึ้น:
+## ขั้นตอนที่ 10: บันทึกเอกสาร PDF
+
+ในที่สุด ก็ถึงเวลาบันทึกงานของคุณแล้ว ขั้นตอนนี้จะบันทึกทุกอย่างที่เราทำลงในไฟล์ PDF
 
 ```csharp
 dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
+// บันทึกไฟล์ PDF
 doc.Save(dataDir);
+Console.WriteLine("\nRadio button field with three options added successfully.\nFile saved at " + dataDir);
 ```
 
-### ตัวอย่างโค้ดต้นฉบับสำหรับปุ่มตัวเลือกโดยใช้ Aspose.PDF สำหรับ .NET 
-```csharp
-try
-{
-	// เส้นทางไปยังไดเร็กทอรีเอกสาร
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	Document doc = new Document();
-	Page page = doc.Pages.Add();
-	Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-	table.ColumnWidths = "120 120 120";
-	page.Paragraphs.Add(table);
-	Row r1 = table.Rows.Add();
-	Cell c1 = r1.Cells.Add();
-	Cell c2 = r1.Cells.Add();
-	Cell c3 = r1.Cells.Add();
-	RadioButtonField rf = new RadioButtonField(page);
-	rf.PartialName = "radio";
-	doc.Form.Add(rf, 1);
-	RadioButtonOptionField opt1 = new RadioButtonOptionField();
-	RadioButtonOptionField opt2 = new RadioButtonOptionField();
-	RadioButtonOptionField opt3 = new RadioButtonOptionField();
-	opt1.OptionName = "Item1";
-	opt2.OptionName = "Item2";
-	opt3.OptionName = "Item3";
-	opt1.Width = 15;
-	opt1.Height = 15;
-	opt2.Width = 15;
-	opt2.Height = 15;
-	opt3.Width = 15;
-	opt3.Height = 15;
-	rf.Add(opt1);
-	rf.Add(opt2);
-	rf.Add(opt3);
-	opt1.Border = new Border(opt1);
-	opt1.Border.Width = 1;
-	opt1.Border.Style = BorderStyle.Solid;
-	opt1.Characteristics.Border = System.Drawing.Color.Black;
-	opt1.DefaultAppearance.TextColor = System.Drawing.Color.Red;
-	opt1.Caption = new TextFragment("Item1");
-	opt2.Border = new Border(opt1);
-	opt2.Border.Width = 1;
-	opt2.Border.Style = BorderStyle.Solid;
-	opt2.Characteristics.Border = System.Drawing.Color.Black;
-	opt2.DefaultAppearance.TextColor = System.Drawing.Color.Red;
-	opt2.Caption = new TextFragment("Item2");
-	opt3.Border = new Border(opt1);
-	opt3.Border.Width = 1;
-	opt3.Border.Style = BorderStyle.Solid;
-	opt3.Characteristics.Border = System.Drawing.Color.Black;
-	opt3.DefaultAppearance.TextColor = System.Drawing.Color.Red;
-	opt3.Caption = new TextFragment("Item3");
-	c1.Paragraphs.Add(opt1);
-	c2.Paragraphs.Add(opt2);
-	c3.Paragraphs.Add(opt3);
-	dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
-	// บันทึกไฟล์ PDF
-	doc.Save(dataDir);
-	Console.WriteLine("\nRadio button field with three options added successfully.\nFile saved at " + dataDir);
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+ด้วยรหัสนี้ เอกสารของคุณจะถูกบันทึกไว้ในไดเรกทอรีที่ระบุ ตอนนี้คุณสามารถเปิดไฟล์ PDF นี้เพื่อดูปุ่มตัวเลือกในการใช้งาน ขอแสดงความยินดีกับการใช้งาน PDF แบบโต้ตอบฉบับแรกของคุณ!
 
 ## บทสรุป
 
-ขอแสดงความยินดี ! คุณได้เพิ่มปุ่มตัวเลือกลงในเอกสาร PDF สำเร็จแล้วโดยใช้ Aspose.PDF สำหรับ .NET ตอนนี้คุณสามารถใช้เมธอดนี้เพื่อสร้างแบบฟอร์มโต้ตอบในเอกสาร PDF ของคุณได้แล้ว
+การเรียนรู้วิธีสร้างองค์ประกอบแบบโต้ตอบ เช่น ปุ่มตัวเลือกด้วย Aspose.PDF สำหรับ .NET จะเปิดโอกาสใหม่ๆ มากมายให้กับเอกสาร PDF ของคุณ เมื่อปฏิบัติตามคู่มือนี้แล้ว คุณก็พร้อมที่จะรวมปุ่มตัวเลือกเข้ากับโปรเจ็กต์ของคุณได้อย่างง่ายดาย ซึ่งจะช่วยปรับปรุงประสบการณ์ของผู้ใช้และกระบวนการรวบรวมข้อมูล ไม่ว่าจะเป็นแบบสำรวจง่ายๆ หรือแบบฟอร์มที่ซับซ้อน พลังในการสร้าง PDF แบบโต้ตอบที่ปรับแต่งได้ก็อยู่ในมือคุณแล้ว
+
+## คำถามที่พบบ่อย
+
+### Aspose.PDF สำหรับ .NET คืออะไร?
+Aspose.PDF สำหรับ .NET เป็นไลบรารีที่ช่วยให้นักพัฒนาสามารถสร้างและจัดการเอกสาร PDF ผ่านโปรแกรมได้
+
+### ฉันจะติดตั้ง Aspose.PDF สำหรับ .NET ได้อย่างไร?
+ คุณสามารถดาวน์โหลดห้องสมุดได้จาก[หน้าวางจำหน่าย Aspose](https://releases.aspose.com/pdf/net/) และเพิ่มมันลงในโครงการของคุณ
+
+### ฉันสามารถสร้างปุ่มตัวเลือกใน PDF โดยใช้ภาษาการเขียนโปรแกรมอื่นได้หรือไม่
+ใช่ Aspose.PDF ยังพร้อมใช้งานสำหรับ Java และภาษาอื่นๆ ที่มีฟังก์ชันการทำงานคล้ายกัน
+
+### มีการทดลองใช้ Aspose.PDF ฟรีหรือไม่
+ ใช่ คุณสามารถสำรวจฟังก์ชันการทำงานของ Aspose.PDF ได้โดยการดาวน์โหลด[เวอร์ชันทดลองใช้งานฟรี](https://releases.aspose.com/).
+
+### ฉันจะได้รับการสนับสนุนสำหรับ Aspose.PDF ได้จากที่ไหน
+ หากต้องการความช่วยเหลือ สามารถเข้าไปเยี่ยมชมได้ที่[ฟอรั่มสนับสนุน Aspose](https://forum.aspose.com/c/pdf/10) เพื่อขอความช่วยเหลือจากผู้เชี่ยวชาญและสมาชิกชุมชน

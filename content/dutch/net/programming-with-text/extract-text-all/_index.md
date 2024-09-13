@@ -31,7 +31,7 @@ using System.IO;
  Zoek in de code de regel met de tekst`string dataDir = "YOUR DOCUMENT DIRECTORY";` en vervangen`"YOUR DOCUMENT DIRECTORY"` met het pad naar de map waar uw documenten zijn opgeslagen.
 
 ## Stap 4: Open het PDF-document
- Open een bestaand PDF-document met behulp van de`Document` constructor en het pad naar het PDF-invoerbestand doorgeven.
+ Open een bestaand PDF-document met behulp van de`Document`constructor en het pad naar het PDF-invoerbestand doorgeven.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");

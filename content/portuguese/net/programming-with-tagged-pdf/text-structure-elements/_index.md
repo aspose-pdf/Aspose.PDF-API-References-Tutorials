@@ -47,7 +47,7 @@ Definimos o título e o idioma do documento PDF marcado.
 Agora vamos obter o elemento de estrutura raiz do documento PDF.
 
 ```csharp
-//Obter o elemento de estrutura raiz
+// Obter o elemento de estrutura raiz
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

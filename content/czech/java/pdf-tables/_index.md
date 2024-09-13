@@ -23,7 +23,7 @@ Kromě základů se naše výukové programy ponoří do pokročilých technik p
 Naučte se přidávat tabulky do existujících dokumentů PDF pomocí Java a Aspose.PDF for Java. Podrobný průvodce s příklady kódu.
 ### [Vynutit vykreslování tabulky na nové stránce v PDF pomocí Java](./force-table-rendering-on-new-page-in-pdf-using-java/)
 Naučte se, jak vynutit vykreslení tabulky na nové stránce v PDF pomocí Java s Aspose.PDF. Tento podrobný průvodce obsahuje zdrojový kód a odborné tipy pro přesné formátování dokumentu PDF.
-### [Skrýt Spanned Cell Border v PDF pomocí Java](./hide-spanned-cell-border-in-pdf-using-java/)
+### [Skryjte ohraničení rozložené buňky v PDF pomocí Java](./hide-spanned-cell-border-in-pdf-using-java/)
 Naučte se, jak skrýt ohraničení rozložených buněk v PDF pomocí Java pomocí podrobného kurzu Aspose.PDF for Java.
 ### [Manipulujte s tabulkami ve stávajícím PDF pomocí Javy](./manipulate-tables-in-existing-pdf-using-java/)
 Naučte se, jak manipulovat s tabulkami PDF pomocí Javy s Aspose.PDF pro Javu. Tento podrobný průvodce pokrývá extrakci tabulek, úpravy a další pro efektivní práci s PDF.

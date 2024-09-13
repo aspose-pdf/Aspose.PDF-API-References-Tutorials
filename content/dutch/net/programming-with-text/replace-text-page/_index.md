@@ -62,7 +62,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## Stap 6: Geëxtraheerde tekstfragmenten ophalen
 
-Haal de geëxtraheerde tekstfragmenten op met behulp van de`TextFragments` eigendom van de`TextFragmentAbsorber` voorwerp:
+ Haal de geëxtraheerde tekstfragmenten op met behulp van de`TextFragments` eigendom van de`TextFragmentAbsorber` voorwerp:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -165,7 +165,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 #### V: Wat gebeurt er als de zoekterm niet op de opgegeven pagina wordt gevonden?
 
- A: Als de zoekterm niet op de opgegeven pagina wordt gevonden,`TextFragmentCollection` leeg is en er geen vervangingen worden gemaakt. Zorg ervoor dat de zoekterm bestaat op de pagina die u target.
+A: Als de zoekterm niet op de opgegeven pagina wordt gevonden,`TextFragmentCollection` leeg is en er geen vervangingen worden gemaakt. Zorg ervoor dat de zoekterm bestaat op de pagina die u target.
 
 #### V: Hoe kan ik de vervangende tekst voor elk tekstfragment aanpassen?
 

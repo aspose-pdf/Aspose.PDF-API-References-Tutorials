@@ -120,7 +120,7 @@ A: 튜토리얼은 단계별로 과정을 안내합니다.
 
 A: 네, 코드를 수정하여 사용하지 않는 글꼴을 원하는 글꼴로 바꿀 수 있습니다. 제공된 샘플 코드에서는 "Arial, Bold" 글꼴이 대체 글꼴로 사용됩니다.
 
-####  Q: 어떻게`TextFragmentAbsorber` work to remove unused fonts?
+#### Q: 어떻게`TextFragmentAbsorber` work to remove unused fonts?
 
  A: 그`TextFragmentAbsorber` 로 구성되어 있습니다`TextEditOptions.FontReplace.RemoveUnusedFonts` PDF의 텍스트 조각 내에서 사용되지 않는 글꼴을 식별하는 매개변수입니다. 흡수 후 다음을 반복할 수 있습니다.`TextFragments` 원하는 대체 글꼴로 글꼴을 설정합니다.
 

@@ -2,183 +2,159 @@
 title: Afbeelding en paginanummer in koptekst-voettekstsectie inline
 linktitle: Afbeelding en paginanummer in koptekst-voettekstsectie inline
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u een afbeelding en paginanummer toevoegt aan de kop- en voettekst met behulp van inline-alinea's met Aspose.PDF voor .NET.
+description: Leer hoe u met Aspose.PDF voor .NET een afbeelding en paginanummer inline in de headersectie van een PDF kunt toevoegen met behulp van deze stapsgewijze handleiding.
 type: docs
 weight: 120
 url: /nl/net/programming-with-stamps-and-watermarks/image-and-page-number-in-header-footer-section-inline/
 ---
-In deze tutorial laten we u stap voor stap zien hoe u een afbeelding en paginanummer toevoegt aan de header- en footersectie van een PDF-document met Aspose.PDF voor .NET. We gebruiken de meegeleverde C#-broncode om een pagina te maken, header en footer in te stellen, afbeeldingen en tekst toe te voegen met behulp van inline-paragrafen in de header van het PDF-document.
+## Invoering
 
-## Stap 1: De omgeving instellen
+Aspose.PDF voor .NET is een krachtige tool die uitgebreide mogelijkheden biedt voor het manipuleren en genereren van PDF-bestanden. Of u nu afbeeldingen wilt toevoegen, kop- en voetteksten wilt aanpassen of tekst wilt beheren, Aspose.PDF heeft het allemaal. In deze tutorial gaan we bekijken hoe u een afbeelding en een paginanummer inline in de kop- of voettekst van een PDF-document kunt toevoegen. Laten we er meteen induiken en het proces stap voor stap uitleggen.
 
-Voordat u begint, moet u ervoor zorgen dat u het volgende bij de hand hebt:
+## Vereisten
 
-- Een geïnstalleerde .NET-ontwikkelomgeving.
-- De Aspose.PDF-bibliotheek voor .NET is gedownload en wordt in uw project gebruikt.
+Voordat we met de code aan de slag gaan, willen we ervoor zorgen dat je alles op orde hebt om de code te kunnen volgen:
 
-## Stap 2: Het PDF-document en de pagina maken
+-  Aspose.PDF voor .NET: Download de nieuwste versie van de[Aspose PDF-downloadpagina](https://releases.aspose.com/pdf/net/).
+- Ontwikkelomgeving: U hebt een C# IDE nodig, zoals Visual Studio.
+-  Licentie: Als u nog geen licentie heeft, kunt u een[tijdelijke licentie hier](https://purchase.aspose.com/temporary-license/) of koop een volledige van de[Aspose-winkel](https://purchase.aspose.com/buy).
 
-De eerste stap is het maken van een nieuw Document-object en een pagina in het PDF-document. Dit doet u als volgt:
+Nu u aan de vereisten voldoet, kunnen we beginnen.
+
+## Pakketten importeren
+
+Voordat u begint met coderen, moet u ervoor zorgen dat u de benodigde naamruimten importeert:
 
 ```csharp
-// Het pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// Een nieuw Document-object maken
-Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
-
-// Een pagina in het document maken
-Aspose.Pdf.Page page = pdf1.Pages.Add();
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-De bovenstaande code maakt een nieuw Document-object en een lege pagina in het PDF-document.
+Met deze pakketten kunt u werken met PDF-bestanden en tekstmanipulatie.
 
-## Stap 3: De header toevoegen met een afbeelding en inline tekst
+## Stap 1: De documentenmap instellen
 
-Nu de pagina is gemaakt, kunnen we een headersectie met een afbeelding en tekst toevoegen met behulp van inline-paragrafen. Dit is hoe:
-
-```csharp
-// Een headersectie maken
-Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
-
-// De paginakoptekst instellen
-page. Header = header;
-
-// Maak een TextFragment-object voor de eerste inline-tekst
-Aspose.Pdf.Text.TextFragment txt1 = new Aspose.Pdf.Text.TextFragment("Aspose.Pdf is a robust component developed by");
-
-// Geef tekstkleur op
-txt1.TextState.ForegroundColor = Color.Blue;
-txt1.IsInLineParagraph = true;
-
-// Maak een Image-object voor de afbeelding
-Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
-
-// Afbeeldingspad instellen
-image1.File = dataDir + "aspose-logo.jpg";
-
-// Definieer de afmetingen van de afbeelding
-image1.FixWidth = 50;
-image1.FixHeight = 20;
-
-// Geef aan dat de eerste inline tekst een afbeelding is
-image1.IsInLineParagraph = true;
-
-// Maak een tweede inline tekst
-Aspose.Pdf.Text.TextFragment txt2 = new Aspose.Pdf.Text.TextFragment(" Pty Ltd.");
-txt2.IsInLineParagraph = true;
-txt2.TextState.ForegroundColor = Color.Maroon;
-
-// Items toevoegen aan header
-header.Paragraphs.Add(txt1);
-header.Paragraphs.Add(image1);
-header.Paragraphs.Add(txt2);
-```
-
-De bovenstaande code maakt een headersectie, stelt de paginaheader in met deze sectie, voegt een TextFragment toe met inline tekst en een inline Image-object.
-
-## Stap 4: Het gewijzigde PDF-document opslaan
-
-Zodra de header met de afbeelding en inline tekst is toegevoegd, kunnen we het aangepaste PDF-document opslaan. Dit is hoe:
+Het eerste wat we moeten doen is het pad definiëren naar de directory waar ons PDF-bestand wordt opgeslagen. Dit pad kan worden aangepast aan de map van uw project of een andere locatie op uw machine.
 
 ```csharp
-// Sla het gewijzigde PDF-document op
-pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.pdf");
-```
-
-De bovenstaande code slaat het bewerkte PDF-document op in de opgegeven map.
-
-### Voorbeeldbroncode voor Afbeelding en Paginanummer in Koptekst Voettekstsectie Inline met behulp van Aspose.PDF voor .NET 
-```csharp
-
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+ Deze variabele bevat de locatie waar uw document wordt opgeslagen. Vervangen`"YOUR DOCUMENT DIRECTORY"` met het werkelijke pad.
+
+## Stap 2: Het PDF-document instantiëren
+
+ In deze stap maken we een nieuw exemplaar van de`Aspose.Pdf.Document` object. Dit object zal dienen als de ruggengraat van uw PDF-bestand.
+
+```csharp
 // Instantieer een Document-object door de lege constructor aan te roepen
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
+```
 
+Hier maken we een leeg PDF-bestand dat we later met inhoud kunnen vullen.
+
+## Stap 3: Voeg een pagina toe aan de PDF
+
+Uw PDF heeft minimaal één pagina nodig waar u kopteksten, voetteksten en inhoud kunt toevoegen. Laten we een lege pagina aan ons document toevoegen.
+
+```csharp
 // Een pagina maken in het Pdf-object
 Aspose.Pdf.Page page = pdf1.Pages.Add();
+```
 
+ Door te bellen`pdf1.Pages.Add()`er wordt een nieuwe pagina aan het document toegevoegd, klaar voor aanpassing van de kop- en voettekst.
+
+## Stap 4: Maak en stel de header in
+
+Nu is het tijd om de header voor het document te maken. Hier voegen we de tekst, afbeelding en paginanummer toe.
+
+```csharp
 // Maak een koptekstsectie van het document
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
-
 // Stel de koptekst voor het PDF-bestand in
 page.Header = header;
+```
 
+ Wij creëren een`HeaderFooter` object en wijs het toe aan de`Header` eigenschap van de pagina, zodat alles wat we aan de header toevoegen, bovenaan de pagina verschijnt.
+
+## Stap 5: Inline-tekst toevoegen aan de koptekst
+
+ Het toevoegen van tekst is net zo eenvoudig als het maken van een`TextFragment` en specificeer de eigenschappen ervan. Laten we wat gekleurde tekst toevoegen aan onze header.
+
+```csharp
 // Een tekstobject maken
 Aspose.Pdf.Text.TextFragment txt1 = new Aspose.Pdf.Text.TextFragment("Aspose.Pdf is a Robust component by");
-
 // Geef de kleur op
 txt1.TextState.ForegroundColor = Color.Blue;
 txt1.IsInLineParagraph = true;
+```
 
+ In deze stap maken we een`TextFragment` met de inhoud "Aspose.Pdf is een robuust onderdeel van" en stel de kleur in op blauw. De`IsInLineParagraph` Deze eigenschap zorgt ervoor dat de tekst inline staat, wat betekent dat deze op dezelfde regel verschijnt als de andere elementen (zoals de afbeelding en aanvullende tekst).
+
+## Stap 6: Een inline-afbeelding in de header invoegen
+
+Om uw header visueel aantrekkelijk te maken, kunt u een afbeelding inline met de tekst toevoegen. Dit kan uw bedrijfslogo of een andere afbeelding zijn.
+
+```csharp
 // Maak een afbeeldingsobject in de sectie
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
-
 // Stel het pad van het afbeeldingsbestand in
 image1.File = dataDir + "aspose-logo.jpg";
-
-//Stel de afbeeldingbreedte in Informatie
+// Stel de afbeeldingbreedte in Informatie
 image1.FixWidth = 50;
 image1.FixHeight = 20;
-
 // Geeft aan dat de InlineParagraph van seg1 een afbeelding is.
 image1.IsInLineParagraph = true;
+```
+
+ Hier voegen we een afbeelding toe aan de header door een`Image` object, het pad ervan instellen en de breedte en hoogte aanpassen.`IsInLineParagraph` zorgt ervoor dat de afbeelding uitgelijnd is met de tekst.
+
+## Stap 7: Voeg extra inline tekst toe om de koptekst te voltooien
+
+Laten we nog wat tekst toevoegen om de inline header te voltooien.
+
+```csharp
 Aspose.Pdf.Text.TextFragment txt2 = new Aspose.Pdf.Text.TextFragment(" Pty Ltd.");
 txt2.IsInLineParagraph = true;
 txt2.TextState.ForegroundColor = Color.Maroon;
 header.Paragraphs.Add(txt1);
 header.Paragraphs.Add(image1);
 header.Paragraphs.Add(txt2);
+```
 
+ In dit onderdeel maken we nog een`TextFragment` met de inhoud "Pty Ltd." en stel de kleur in op kastanjebruin. Zowel tekstfragmenten als de afbeelding worden toegevoegd aan de header.
+
+## Stap 8: Sla de PDF op
+
+Nadat u de koptekst hebt ingesteld, is het tijd om de PDF op te slaan.
+
+```csharp
 // PDF opslaan
 pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.pdf");
-
 ```
+
+ De`Save` methode schrijft het definitieve PDF-bestand naar de opgegeven locatie.
 
 ## Conclusie
 
-Gefeliciteerd! U hebt geleerd hoe u een afbeelding en paginanummer toevoegt aan de kop- en voettekstsectie van een PDF-document met behulp van inline-paragrafen met Aspose.PDF voor .NET. U kunt nu de kop- en voettekst van uw PDF-documenten flexibel aanpassen.
+Gefeliciteerd! U hebt met succes een afbeelding en tekst toegevoegd aan de header van een PDF-document met Aspose.PDF voor .NET. Deze tutorial leidde u door de essentiële stappen, waaronder het maken van een document, het toevoegen van pagina's, het invoegen van headers en het plaatsen van inline-inhoud zoals tekst en afbeeldingen. Aspose.PDF geeft u ongelooflijke flexibiliteit om uw PDF's te beheren, of het nu gaat om het manipuleren van headers, footers of complexe inhoud. 
 
-### Veelgestelde vragen
+## Veelgestelde vragen
 
-#### V: Wat is het voordeel van het gebruik van inline-alinea's voor het toevoegen van een afbeelding en tekst aan de koptekst van een PDF-document?
+### Kan ik ook een paginanummer aan de koptekst toevoegen?
+ Ja! U kunt eenvoudig een paginanummer toevoegen met behulp van de`TextFragment` class en formatteer het indien nodig. Voeg het gewoon in de headersectie in als inline-inhoud.
 
-A: Met inline-paragrafen kunt u afbeeldingen en tekst naadloos integreren in dezelfde paragraaf, waardoor u nauwkeurige controle hebt over hun plaatsing en opmaak. Deze methode is vooral handig voor het maken van aangepaste headers met visuele elementen.
+### Hoe stel ik een achtergrondafbeelding in de header in?
+ U kunt de`BackgroundImage` eigendom van de`HeaderFooter` klasse om een achtergrondafbeelding in te stellen. Dit is echter geen inline-inhoud en het zal het hele headergebied bedekken.
 
-#### V: Hoe worden met de meegeleverde C#-broncode inline-paragrafen voor de koptekst in een PDF-document gemaakt?
+### Is het mogelijk om andere afbeeldingsformaten dan JPEG te gebruiken?
+Absoluut! Aspose.PDF ondersteunt verschillende afbeeldingsformaten zoals PNG, BMP en GIF.
 
-A: De meegeleverde code laat zien hoe u een PDF-document maakt, een pagina toevoegt en de header aanpast met behulp van inline-paragrafen. Het voegt een TextFragment toe met inline-tekst, een inline-afbeelding en nog een inline TextFragment.
+### Kan ik het lettertype van de tekst in de koptekst aanpassen?
+ Ja, u kunt de`TextState`object om het lettertype, de grootte en de stijl van de tekst te wijzigen.
 
-#### V: Hoe geef ik de kleur van de inline tekst in de koptekst op?
-
- A: De kleur van de inline tekst wordt gespecificeerd met behulp van de`ForegroundColor` eigendom van de`TextState` van de`TextFragment` voorwerp.
-
-#### V: Kan ik de afmetingen van de inline-afbeelding in de header aanpassen?
-
- A: Ja, u kunt de afmetingen van de inline-afbeelding aanpassen met behulp van de`FixWidth` En`FixHeight` eigenschappen van de`Image` object. Hiermee kunt u de breedte en hoogte van de afbeelding in de header regelen.
-
-#### V: Kan ik extra inline-elementen, zoals hyperlinks of verschillende lettertypen, in de koptekst opnemen?
-
- A: Ja, u kunt extra inline-elementen in de header opnemen door meer`TextFragment` of`Image` objecten met de gewenste eigenschappen. Hiermee kunt u de header verder aanpassen, inclusief hyperlinks, verschillende lettertypes of andere visuele elementen.
-
-#### V: Hoe kan ik ervoor zorgen dat de inline-afbeelding en tekst op verschillende apparaten en schermen goed uitgelijnd en opgemaakt blijven?
-
-A: Aspose.PDF voor .NET zorgt ervoor dat inline afbeeldingen en tekst correct worden uitgelijnd en opgemaakt, wat resulteert in een consistente weergave op verschillende apparaten en PDF-viewers.
-
-#### V: Kan ik inline-alinea's ook op de voettekst toepassen?
-
- A: Ja, u kunt dezelfde techniek van het gebruik van inline-alinea's toepassen op de voettekstsectie door een`Footer` object en het toevoegen van inline-elementen zoals tekst en afbeeldingen.
-
-#### V: Is het mogelijk om inline-alinea's te combineren met andere aanpassingsmethoden voor kop- of voetteksten?
-
-A: Ja, u kunt inline-alinea's combineren met andere aanpassingsmethoden voor kop- of voetteksten die Aspose.PDF voor .NET biedt om complexere en op maat gemaakte kop- of voettekstontwerpen te maken.
-
-#### V: Kan ik indien nodig de inline-elementen uit de header verwijderen of wissen?
-
- A: Ja, u kunt de inline-elementen verwijderen of wissen door de inhoud van de`HeaderFooter`object en het verwijderen van de betreffende inline-alinea's.
-
-#### V: Hoe kan ik inline-alinea's toepassen op specifieke pagina's van het PDF-document?
-
- A: Om inline-alinea's op specifieke pagina's toe te passen, kunt u afzonderlijke alinea's maken`HeaderFooter` objecten voor elke pagina en wijs ze toe met behulp van de`Header` eigendom van de respectievelijke`Aspose.Pdf.Page` objecten.
+### Heb ik een licentie nodig om Aspose.PDF voor .NET te gebruiken?
+ Ja, Aspose.PDF vereist een licentie voor productiegebruik, maar u kunt beginnen met een[gratis proefperiode hier](https://releases.aspose.com/).

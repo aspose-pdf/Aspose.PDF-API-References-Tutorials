@@ -110,7 +110,7 @@ doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to d
 doc.Save(outputFile);
 // Άνοιγμα εγγράφου με κείμενο
 Document document = new Document(outputFile);
-// Δημιουργήστε αντικείμενο TextAbsorber για να βρείτε όλες τις φράσεις που ταιριάζουν με την κανονική έκφραση
+//Δημιουργήστε αντικείμενο TextAbsorber για να βρείτε όλες τις φράσεις που ταιριάζουν με την κανονική έκφραση
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
 // Αποδεχτείτε τον απορροφητήρα για τις σελίδες του εγγράφου
 document.Pages.Accept(absorber);

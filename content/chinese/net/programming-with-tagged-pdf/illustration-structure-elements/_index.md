@@ -149,7 +149,7 @@ document.Save(dataDir + "IllustrationStructureElements.pdf");
 
 #### 问：我可以将插图结构元素与 Aspose.PDF for .NET 提供的其他 PDF 处理功能结合使用吗？
 
-答：当然可以！您可以将插图结构元素与 Aspose.PDF for .NET 的其他功能相结合，例如添加文本、创建表格、插入超链接等。这样您就可以创建具有视觉吸引力和信息丰富的 PDF 文档。
+答：当然可以！您可以将插图结构元素与 Aspose.PDF for .NET 的其他功能相结合，例如添加文本、创建表格、插入超链接等。这允许您创建具有视觉吸引力和信息丰富的 PDF 文档。
 
 #### 问：如何进一步探索和利用插图结构元素进行高级文档设计和视觉叙事？
 

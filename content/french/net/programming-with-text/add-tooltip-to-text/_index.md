@@ -32,7 +32,7 @@ using Aspose.Pdf.Text;
  Dans le code, recherchez la ligne qui dit`string dataDir = "YOUR DOCUMENT DIRECTORY";` et remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin vers le répertoire où sont stockés vos documents.
 
 ## Étape 4 : Créer un exemple de document avec du texte
- Créer un nouveau`Document` objet et ajouter des pages avec des fragments de texte. Dans le code fourni, deux fragments de texte sont ajoutés au document avec le texte d'info-bulle correspondant.
+ Créer un nouveau`Document`objet et ajouter des pages avec des fragments de texte. Dans le code fourni, deux fragments de texte sont ajoutés au document avec le texte d'info-bulle correspondant.
 
 ```csharp
 Document doc = new Document();
@@ -98,7 +98,7 @@ doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to disp
 doc.Save(outputFile);
 // Ouvrir un document avec du texte
 Document document = new Document(outputFile);
-// Créez un objet TextAbsorber pour trouver toutes les phrases correspondant à l'expression régulière
+//Créez un objet TextAbsorber pour trouver toutes les phrases correspondant à l'expression régulière
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
 // Accepter l'absorbeur pour les pages du document
 document.Pages.Accept(absorber);
@@ -169,7 +169,7 @@ using Aspose.Pdf.Text;
 
 #### Q : Comment ajouter des info-bulles aux fragments de texte ?
 
- A : À l'étape 6, vous parcourrez les fragments de texte extraits et créerez des boutons invisibles à leurs emplacements. Le texte de l'info-bulle est attribué à l'`AlternateName` propriété de la`ButtonField`qui est ajouté au formulaire du document.
+ A : À l'étape 6, vous parcourrez les fragments de texte extraits et créerez des boutons invisibles à leurs emplacements. Le texte de l'info-bulle est attribué à l'`AlternateName` propriété de la`ButtonField`, qui est ajouté au formulaire du document.
 
 #### Q : Comment puis-je répéter le processus pour des fragments de texte supplémentaires avec de longues info-bulles ?
 

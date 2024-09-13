@@ -307,7 +307,7 @@ R: Sì, puoi personalizzare l'aspetto e la formattazione degli elementi della st
 
 #### D: Come posso creare e aggiungere intestazioni di diversi livelli a un documento PDF utilizzando elementi di struttura in linea in Aspose.PDF per .NET?
 
- A: È possibile creare titoli di diversi livelli utilizzando`CreateHeaderElement` e poi aggiungerli all'elemento struttura radice. Successivamente, puoi aggiungere contenuto a ogni elemento di intestazione usando il metodo`CreateSpanElement` metodo per creare porzioni di testo.
+ A: È possibile creare titoli di diversi livelli utilizzando`CreateHeaderElement` poi aggiungerli all'elemento struttura radice. Successivamente, puoi aggiungere contenuto a ogni elemento di intestazione usando il metodo`CreateSpanElement` metodo per creare porzioni di testo.
 
 #### D: Posso utilizzare elementi di struttura in linea per creare elenchi, punti elenco o altri tipi di organizzazione dei contenuti in un documento PDF?
 

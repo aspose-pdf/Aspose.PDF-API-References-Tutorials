@@ -38,14 +38,14 @@ Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
 ## Шаг 5: Добавьте страницу в документ
- Добавьте новую страницу в документ, используя`Add` Метод`Pages`Коллекция. В представленном коде новая страница присваивается переменной`page`.
+ Добавьте новую страницу в документ, используя`Add` Метод`Pages` Коллекция. В представленном коде новая страница присваивается переменной`page`.
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
 ## Шаг 6: Создайте TextFragment с отступом последующих строк
- Создать экземпляр`TextFragment` объект и предоставить желаемый текст. В предоставленном коде текст присваивается переменной`text` . Затем инициализируйте`TextFormattingOptions` для`TextFragment`и укажите`SubsequentLinesIndent` ценить.
+ Создать экземпляр`TextFragment` объект и предоставить желаемый текст. В предоставленном коде текст присваивается переменной`text` . Затем инициализируйте`TextFormattingOptions` для`TextFragment` и укажите`SubsequentLinesIndent` ценить.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
@@ -91,7 +91,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = document.Pages.Add();
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-// Инициализируйте TextFormattingOptions для текстового фрагмента и укажите значение FollowingLinesIndent
+//Инициализируйте TextFormattingOptions для текстового фрагмента и укажите значение FollowingLinesIndent
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
 	SubsequentLinesIndent = 20
@@ -148,7 +148,7 @@ Aspose.Pdf.Page page = document.Pages.Add();
 
 #### В: Как добавить отступ к последующим строкам текста?
 
- A: На шаге 6 вы создадите`TextFragment` объект и присвоить ему нужный текст. Затем вы инициализируете`TextFormattingOptions` для`TextFragment`и укажите`SubsequentLinesIndent` ценить:
+ A: На шаге 6 вы создадите`TextFragment` объект и присвоить ему нужный текст. Затем вы инициализируете`TextFormattingOptions` для`TextFragment` и укажите`SubsequentLinesIndent` ценить:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
@@ -168,7 +168,7 @@ page.Paragraphs.Add(text);
 
 #### В: Могу ли я повторить процесс для дополнительных строк?
 
- A: Да, на шаге 8 вы можете повторить процесс для дополнительных строк с тем же отступом, создав новые`TextFragment` объектов и добавление их в коллекцию абзацев страницы.
+A: Да, на шаге 8 вы можете повторить процесс для дополнительных строк с тем же отступом, создав новые`TextFragment` объектов и добавление их в коллекцию абзацев страницы.
 
 #### В: Как сохранить полученный PDF-документ?
 

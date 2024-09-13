@@ -9,7 +9,7 @@ url: /fr/net/annotations/extracthighlightedtext/
 ---
 ## Introduction
 
-Lorsque vous travaillez avec des fichiers PDF, l'extraction du texte mis en surbrillance peut être une tâche cruciale, que ce soit pour l'analyse des données, la révision du contenu ou simplement l'organisation de vos notes. Si vous utilisez Aspose.PDF pour .NET, ce processus est simple et efficace. Dans ce didacticiel, nous vous expliquerons comment extraire le texte mis en surbrillance d'un document PDF à l'aide d'Aspose.PDF pour .NET. Nous aborderons tous les aspects, des conditions préalables aux instructions étape par étape, pour vous assurer d'avoir une compréhension complète à la fin.
+Lorsque vous travaillez avec des fichiers PDF, l'extraction du texte mis en surbrillance peut être une tâche cruciale, que ce soit pour l'analyse des données, la révision du contenu ou simplement l'organisation de vos notes. Si vous utilisez Aspose.PDF pour .NET, ce processus est simple et efficace. Dans ce didacticiel, nous vous expliquerons comment extraire le texte mis en surbrillance d'un document PDF à l'aide d'Aspose.PDF pour .NET. Nous aborderons tous les aspects, des prérequis aux instructions étape par étape, pour vous assurer d'avoir une compréhension complète à la fin.
 
 ## Prérequis
 

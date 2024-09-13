@@ -1,13 +1,13 @@
 ---
 title: Skapa PDF med taggad bild
 linktitle: Skapa PDF med taggad bild
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Steg för steg guide för att skapa PDF med taggad bild med Aspose.PDF för .NET.
 type: docs
 weight: 40
 url: /sv/net/programming-with-tagged-pdf/create-pdf-with-tagged-image/
 ---
-I den här handledningen kommer vi att ge dig en steg-för-steg-guide om hur du skapar ett PDF-dokument med en taggad bild med Aspose.PDF för .NET. Aspose.PDF är ett kraftfullt bibliotek som låter dig skapa, manipulera och konvertera PDF-dokument programmatiskt. Med hjälp av de taggade innehållsstrukturfunktionerna i Aspose.PDF kan du lägga till taggade bilder till ditt PDF-dokument.
+den här handledningen kommer vi att ge dig en steg-för-steg-guide om hur du skapar ett PDF-dokument med en taggad bild med Aspose.PDF för .NET. Aspose.PDF är ett kraftfullt bibliotek som låter dig skapa, manipulera och konvertera PDF-dokument programmatiskt. Med hjälp av de taggade innehållsstrukturfunktionerna i Aspose.PDF kan du lägga till taggade bilder till ditt PDF-dokument.
 
 ## Förutsättningar
 
@@ -22,7 +22,7 @@ För att komma igång, skapa ett nytt projekt i Visual Studio och lägg till en 
 
 ## Steg 2: Importera de nödvändiga namnrymden
 
-I din C#-kodfil, importera de namnutrymmen som krävs för att komma åt klasserna och metoderna som tillhandahålls av Aspose.PDF:
+din C#-kodfil, importera de namnutrymmen som krävs för att komma åt klasserna och metoderna som tillhandahålls av Aspose.PDF:
 
 ```csharp
 using System;
@@ -84,7 +84,7 @@ document.Save(dataDir + "PDFwithTaggedImage.pdf");
 
 ## Slutsats
 
-I den här handledningen lärde du dig hur du skapar ett PDF-dokument med en taggad bild med Aspose.PDF för .NET. Taggade bilder lägger till ytterligare, strukturerad information till ditt PDF-dokument.
+den här handledningen lärde du dig hur du skapar ett PDF-dokument med en taggad bild med Aspose.PDF för .NET. Taggade bilder lägger till ytterligare, strukturerad information till ditt PDF-dokument.
 
 ### FAQ's
 
@@ -112,7 +112,7 @@ S: Ja, du kan använda olika bildformat för den taggade bilden, såsom JPEG, PN
 
  S: Alt text ger en textbeskrivning av bilden, som läses upp av skärmläsare för synskadade användare. I den medföljande koden ställs alt-texten in med hjälp av`AlternativeText` egendom av`IllustrationElement` representerar den taggade bilden.
 
-####  F: Hur fungerar`SetTitle` method contribute to the PDF document's tagged image?
+#### F: Hur fungerar`SetTitle` method contribute to the PDF document's tagged image?
 
  A: Den`SetTitle` metod anger titeln på PDF-dokumentets taggade innehåll, vilket ger ytterligare sammanhang för den taggade bilden. Den här titeln kan hjälpa till att identifiera syftet med eller ämnet för det taggade innehållet.
 
@@ -126,4 +126,4 @@ S: Genom att använda de taggade innehållsstrukturfunktionerna i Aspose.PDF och
 
 #### F: Är det möjligt att lägga till flera taggade bilder till samma PDF-dokument med liknande tekniker?
 
- S: Ja, du kan lägga till flera taggade bilder till samma PDF-dokument med liknande tekniker. Du skulle skapa ytterligare`IllustrationElement` instanser för varje taggad bild och anpassa deras egenskaper efter behov.
+S: Ja, du kan lägga till flera taggade bilder till samma PDF-dokument med liknande tekniker. Du skulle skapa ytterligare`IllustrationElement` instanser för varje taggad bild och anpassa deras egenskaper efter behov.

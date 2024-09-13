@@ -9,7 +9,7 @@ url: /it/net/document-conversion/replace-missing-fonts/
 ---
 ## Introduzione
 
-Hai mai aperto un documento PDF e scoperto che alcuni font sono mancanti? Può essere frustrante, vero? I font mancanti possono portare a un documento che sembra completamente diverso da quello che il creatore intendeva. Fortunatamente, con Aspose.PDF per .NET, puoi facilmente sostituire i font mancanti e assicurarti che i tuoi documenti PDF mantengano l'aspetto previsto. In questo tutorial, ti guideremo passo dopo passo attraverso il processo, rendendolo semplice e diretto.
+Hai mai aperto un documento PDF e scoperto che alcuni font sono mancanti? Può essere frustrante, vero? I font mancanti possono portare a un documento che sembra completamente diverso da quello che il creatore intendeva. Fortunatamente, con Aspose.PDF per .NET, puoi facilmente sostituire i font mancanti e assicurarti che i tuoi documenti PDF mantengano l'aspetto previsto. In questo tutorial, ti guideremo passo dopo passo nel processo, rendendolo semplice e diretto.
 
 ## Prerequisiti
 

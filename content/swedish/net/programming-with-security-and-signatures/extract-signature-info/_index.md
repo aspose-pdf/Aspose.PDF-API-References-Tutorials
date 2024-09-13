@@ -1,211 +1,142 @@
 ---
 title: Extrahera signaturinformation
 linktitle: Extrahera signaturinformation
-second_title: Aspose.PDF för .NET API-referens
-description: Extrahera signaturinformation med Aspose.PDF för .NET.
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du extraherar digitala signaturer och certifikatinformation från PDF-dokument med Aspose.PDF för .NET. En komplett steg-för-steg-guide för C#-utvecklare.
 type: docs
 weight: 80
 url: /sv/net/programming-with-security-and-signatures/extract-signature-info/
 ---
-Processen att extrahera signaturinformation från ett PDF-dokument kan vara ganska användbar i olika scenarier. Oavsett om du behöver validera äktheten av ett signerat dokument eller analysera certifikatet som används för signaturen, erbjuder Aspose.PDF för .NET-biblioteket en bekväm lösning. I den här handledningen guidar vi dig genom steg-för-steg-processen för att extrahera signaturinformation med hjälp av den medföljande C#-källkoden.
+## Introduktion
 
-## Krav
+dagens digitala värld är det avgörande att säkerställa dokumentens säkerhet och integritet. En av de vanligaste metoderna som används för att säkra PDF-filer är att lägga till en digital signatur. Men att hämta och verifiera signaturens detaljer kan ibland vara en utmaning, särskilt när du har att göra med olika certifikat. I den här guiden går vi igenom processen att extrahera signaturinformation från PDF-dokument med Aspose.PDF för .NET, vilket gör uppgiften till en lek. Du kommer att lära dig hur du kommer åt signaturfält, extraherar certifikatinformation och sparar den i en fil.
 
-Innan vi börjar, se till att du har följande förutsättningar på plats:
+## Förutsättningar
 
-1. Grundläggande kunskaper i programmeringsspråket C#.
-2. Aspose.PDF för .NET-biblioteket installerat på ditt system.
-3. Ett giltigt PDF-dokument med ett eller flera signaturfält.
+Innan vi börjar, låt oss se till att du har allt redo för att komma igång.
 
-Låt oss nu dyka in i implementeringsdetaljerna.
+-  Aspose.PDF för .NET Library: Om du inte har det ännu kan du ladda ner det från[Aspose.PDF för .NET nedladdningssida](https://releases.aspose.com/pdf/net/). 
+- .NET-utvecklingsmiljö: Du behöver en IDE som Visual Studio.
+- Grundläggande C#-kunskaper: Bekantskap med C# är till hjälp för att förstå kodavsnitten i denna handledning.
+- PDF-dokument med en digital signatur: För teständamål, se till att du har en PDF-fil som innehåller minst en digital signatur.
 
-## Steg 1: Importera de obligatoriska biblioteken
+## Importera nödvändiga namnområden
 
- För att komma igång måste du importera de nödvändiga biblioteken till ditt C#-projekt. I det här fallet måste vi importera`Aspose.Pdf` och`System.IO` namnrymder. Detta kan göras genom att lägga till följande kod i början av din C#-fil:
+Innan du hoppar in i koden är det viktigt att importera de nödvändiga namnrymden. Dessa namnrymder ger dig tillgång till Aspose.PDF-funktionaliteten och arbetar med PDF-dokument.
 
 ```csharp
-using Aspose.Pdf;
 using System.IO;
+using Aspose.Pdf.Forms;
+using Aspose.Pdf;
+using System;
 ```
 
-## Steg 2: Ställa in dokumentsökvägen
+Nu när du har ställt in det väsentliga, låt oss gå vidare till den faktiska processen att extrahera signaturinformation från en PDF.
 
-Därefter måste du ställa in sökvägen till PDF-dokumentet som du vill extrahera signaturinformationen från. Ersätta`"YOUR DOCUMENTS DIRECTORY"` i följande kodavsnitt med den faktiska sökvägen till ditt dokument:
+## Steg 1: Konfigurera dokumentkatalogen
+
+ Innan du arbetar med ett PDF-dokument måste du ange platsen för filen du ska använda. Du kan byta ut`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen till katalogen där dina PDF-filer lagras.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+// Sökvägen till dokumentkatalogen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 string input = dataDir + "ExtractSignatureInfo.pdf";
 ```
 
-## Steg 3: Extrahera signaturinformation
+Här anger vi katalogen som innehåller PDF-filen och själva filnamnet. Se till att filen finns i den katalogen!
 
-Låt oss nu gå vidare till huvuddelen av koden där vi extraherar signaturinformationen från PDF-dokumentet. Vi itererar igenom varje fält i dokumentets formulär och kontrollerar om det är ett signaturfält. Om ett signaturfält hittas fortsätter vi med att extrahera certifikatet. Lägg till följande kodavsnitt:
+## Steg 2: Ladda PDF-dokumentet
+
+ Nu när du har ställt in din katalog är nästa steg att ladda PDF-dokumentet med hjälp av`Document` klass från Aspose.PDF.
 
 ```csharp
 using (Document pdfDocument = new Document(input))
 {
-     foreach(Field field in pdfDocument.Form)
-     {
-         SignatureField sf = field as SignatureField;
-         if (sf != null)
-         {
-             // Ta ut certifikatet
-             Stream cerStream = sf.ExtractCertificate();
-             if (cerStream != null)
-             {
-                 using (cerStream)
-                 {
-                     byte[] bytes = new byte[cerStream.Length];
-                     using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
-                     {
-                         cerStream.Read(bytes, 0, bytes.Length);
-                         fs.Write(bytes, 0, bytes.Length);
-                     }
-                 }
-             }
-         }
-     }
+    // Bearbeta PDF-filen här.
 }
 ```
 
-## Steg 4: Extrahera certifikatet
+ Denna kodrad initierar en`Document`objekt som representerar PDF-filen. De`using` statement säkerställer att resurser rensas upp efter att dokumentet har bearbetats.
 
-I det här steget extraherar vi certifikatet från signaturfältet och sparar det som en fil. Det extraherade certifikatet kan analyseras ytterligare eller användas för valideringsändamål. Kodavsnittet nedan visar utvinnings- och sparprocessen:
+## Steg 3: Åtkomst till formulärfält
+
+I det här steget går vi igenom alla formulärfält i PDF-dokumentet. Eftersom signaturer vanligtvis lagras som formulärfält hjälper det här steget oss att identifiera signaturfälten.
+
+```csharp
+foreach (Field field in pdfDocument.Form)
+{
+    // Identifiera signaturfält här.
+}
+```
+
+ Genom att iterera genom`Form` egendom av`Document` objekt kan vi undersöka varje formulärfält för att kontrollera om det är ett signaturfält.
+
+## Steg 4: Identifiera signaturfält
+
+ När du har kommit åt formulärfälten är nästa steg att identifiera vilka som är signaturfält. Vi kan göra detta genom att kasta varje fält till en`SignatureField` objekt.
+
+```csharp
+SignatureField sf = field as SignatureField;
+if (sf != null)
+{
+    // Extrahera signaturinformation.
+}
+```
+
+ Här använder vi`as` nyckelord för att försöka casta varje formulärfält till en`SignatureField`. Om skådespelaren är framgångsrik vet vi att fältet är en signatur.
+
+## Steg 5: Extrahera certifikatet
+
+Nu när du har identifierat signaturfältet är nästa uppgift att extrahera certifikatet från signaturen. Certifikaten innehåller avgörande information om undertecknaren och signaturens giltighet.
 
 ```csharp
 Stream cerStream = sf.ExtractCertificate();
+```
+
+ De`ExtractCertificate` metod returnerar en`Stream` objekt som innehåller certifikatdata. Denna ström kan användas för att spara certifikatet för vidare analys eller lagring.
+
+## Steg 6: Spara certifikatet till en fil
+
+ När du har extraherat certifikatet är det sista steget att spara det i en fil. I det här fallet sparar vi certifikatet som ett`.cer` fil.
+
+```csharp
 if (cerStream != null)
 {
-     using (cerStream)
-     {
-         byte[] bytes = new byte[cerStream.Length];
-         using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
-         {
-             cerStream.Read(bytes, 0, bytes.Length);
-             fs.Write(bytes, 0, bytes.Length);
-         }
-     }
+    using (cerStream)
+    {
+        byte[] bytes = new byte[cerStream.Length];
+        using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
+        {
+            cerStream.Read(bytes, 0, bytes.Length);
+            fs.Write(bytes, 0, bytes.Length);
+        }
+    }
 }
 ```
 
-## Steg 5
+I det här kodblocket:
 
-: Sparar certifikatet
-
-Slutligen sparar vi det extraherade certifikatet som en fil. I det här exemplet sparas certifikatet med namnet "input.cer" i den angivna katalogen. Du kan ändra koden så att den passar dina krav. Här är kodavsnittet för att spara certifikatet:
-
-```csharp
-using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
-{
-     fs.Write(bytes, 0, bytes.Length);
-}
-```
-
-Det är det! Du har framgångsrikt extraherat signaturinformation med Aspose.PDF för .NET. Integrera den här koden i dina egna applikationer eller modifiera den efter dina behov.
-
-### Exempel på källkod för att extrahera signaturinformation med Aspose.PDF för .NET 
-```csharp
-try
-{
-	// Sökvägen till dokumentkatalogen.
-	string dataDir = "YOUR DOCUMENTS DIRECTORY";
-	string input = dataDir + "ExtractSignatureInfo.pdf";
-	using (Document pdfDocument = new Document(input))
-	{
-		foreach (Field field in pdfDocument.Form)
-		{
-			SignatureField sf = field as SignatureField;
-			if (sf != null)
-			{
-				Stream cerStream = sf.ExtractCertificate();
-				if (cerStream != null)
-				{
-					using (cerStream)
-					{
-						byte[] bytes = new byte[cerStream.Length];
-						using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
-						{
-							cerStream.Read(bytes, 0, bytes.Length);
-							fs.Write(bytes, 0, bytes.Length);
-						}
-					}
-				}
-			}
-		}
-	}
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+1. Kontrollera om certifikatströmmen inte är null.
+2. Läs certifikatdata till en byte-array.
+3.  Skriv byte-arrayen till a`.cer` filen i dokumentkatalogen.
 
 ## Slutsats
 
-I den här handledningen gick vi igenom en steg-för-steg-guide om hur man extraherar signaturinformation från ett PDF-dokument med hjälp av Aspose.PDF för .NET-biblioteket. Vi täckte processen med att importera de nödvändiga biblioteken, ställa in dokumentsökvägen, extrahera signaturinformation, extrahera certifikatet och spara det i en fil. Genom att följa dessa steg kan du enkelt hämta signaturdetaljer och arbeta med dem efter behov.
+Att extrahera digitala signaturer och deras relaterade certifikatinformation från PDF-dokument med Aspose.PDF för .NET är ganska enkelt när det delas upp i enkla steg. Oavsett om du granskar dokument, verifierar signaturer eller bara lagrar certifikat för förvaring, förser den här handledningen dig med kunskapen för att få det gjort effektivt. Kom ihåg att säkra och verifiera dokument är avgörande i dagens digitala värld, och att använda verktyg som Aspose.PDF för .NET gör det mycket lättare att hantera.
 
-### FAQ's
+## FAQ's
 
-#### F: Varför skulle jag behöva extrahera signaturinformation från ett PDF-dokument?
+### Kan jag extrahera flera signaturer från en PDF med Aspose.PDF för .NET?
+Ja, koden går igenom alla formulärfält i dokumentet, så att du kan extrahera flera signaturer om de finns.
 
-S: Att extrahera signaturinformation från ett PDF-dokument är användbart för att validera äktheten av ett signerat dokument och analysera certifikatet som används för signaturen. Denna process hjälper till att säkerställa integriteten hos det signerade innehållet och kan vara avgörande för juridiska och säkerhetsmässiga ändamål.
+### Vad händer om ingen signatur hittas i PDF-filen?
+Om inga signaturfält finns, kommer koden helt enkelt att hoppa över dem utan att skapa ett fel.
 
-#### F: Vad är Aspose.PDF för .NET?
+### Kan jag använda detta tillvägagångssätt för att verifiera giltigheten av en signatur?
+Även om du kan extrahera certifikatet kräver verifiering av giltigheten av en signatur ytterligare steg, som att kontrollera certifikatets förtroendekedja.
 
-S: Aspose.PDF för .NET är ett bibliotek som gör det möjligt för utvecklare att arbeta med PDF-dokument i .NET-applikationer. Det ger ett brett utbud av funktioner för att skapa, ändra och interagera med PDF-filer programmatiskt.
+### Är det möjligt att extrahera andra formulärfältsdata med Aspose.PDF för .NET?
+Ja, Aspose.PDF låter dig komma åt och manipulera olika typer av formulärfält i en PDF, inte bara signaturfält.
 
-#### F: Vilka är förutsättningarna för att extrahera signaturinformation med Aspose.PDF för .NET?
-
-S: För att extrahera signaturinformation behöver du grundläggande kunskaper i programmeringsspråket C#, Aspose.PDF för .NET-biblioteket installerat på ditt system och ett giltigt PDF-dokument som innehåller ett eller flera signaturfält.
-
-#### F: Hur importerar jag de nödvändiga biblioteken för extraktionsprocessen?
-
-S: Du kan importera de nödvändiga biblioteken genom att lägga till`using` direktiv för`Aspose.Pdf` och`System.IO` i början av din C#-fil. Dessa direktiv gör det möjligt för dig att använda de klasser och metoder som krävs för att extrahera signaturinformation.
-
-#### F: Hur anger jag PDF-dokumentet för att extrahera signaturinformation?
-
- S: Du kan ställa in sökvägen till PDF-dokumentet genom att ersätta det`"YOUR DOCUMENTS DIRECTORY"` med den faktiska sökvägen till ditt dokument i det medföljande kodavsnittet. Den här sökvägen används för att ladda PDF-dokumentet som du vill extrahera signaturinformation från.
-
-#### F: Vad är processen för att extrahera signaturinformation från ett PDF-dokument?
-
-S: Extraheringsprocessen innefattar att iterera genom formulärfälten i PDF-dokumentet, kontrollera om varje fält är ett signaturfält och i så fall extrahera det tillhörande certifikatet. Det extraherade certifikatet kan sparas som en fil för vidare analys eller validering.
-
-#### F: Hur extraheras certifikatet från ett signaturfält?
-
-S: Certifikatet extraheras från ett signaturfält med hjälp av`ExtractCertificate()` metod som tillhandahålls av`SignatureField` klass i Aspose.PDF för .NET. Denna metod returnerar en ström som innehåller certifikatdata.
-
-#### F: Hur sparar jag det extraherade certifikatet som en fil?
-
- S: Du kan spara det extraherade certifikatet som en fil genom att läsa certifikatströmmen och skriva dess innehåll till en fil med hjälp av`FileStream` klass. Koden som tillhandahålls i handledningen visar denna process.
-
-#### F: Kan jag använda detta extraherade certifikat för signaturvalidering?
-
-S: Ja, det extraherade certifikatet kan användas för signaturvalidering. Du kan analysera certifikatets detaljer och verifiera dess äkthet för att säkerställa integriteten hos det undertecknade dokumentet.
-
-#### F: Hur kan jag integrera den här koden i mina egna applikationer?
-
-S: Du kan integrera den medföljande koden i dina egna C#-applikationer genom att följa steg-för-steg-guiden. Ändra sökvägarna och filnamnen efter behov, och infoga koden i dina befintliga projekt.
-
-#### F: Finns det andra funktioner i Aspose.PDF för .NET relaterade till signaturhantering?
-
-S: Ja, Aspose.PDF för .NET tillhandahåller en rad funktioner för att arbeta med digitala signaturer, inklusive att signera dokument, verifiera signaturer och lägga till tidsstämpelinformation. Du kan utforska den officiella dokumentationen för mer information om dessa funktioner.
-
-#### F: Var kan jag hitta ytterligare resurser för att använda Aspose.PDF för .NET?
-
- S: För mer information, handledning och resurser om att använda Aspose.PDF för .NET,[Aspose.PDF för .NET](https://reference.aspose.com/pdf/net/).
-
-#### F: Är det möjligt att extrahera signaturer från krypterade PDF-dokument?
-
-S: Möjligheten att extrahera signaturer från krypterade PDF-dokument kan bero på dokumentets krypteringsinställningar och behörigheter. Du kan behöva se till att du har nödvändiga behörigheter för att komma åt och extrahera signaturinformation.
-
-#### F: Kan jag extrahera flera signaturer från ett enda PDF-dokument?
-
-S: Ja, du kan modifiera den tillhandahållna koden så att den går igenom alla signaturfält i PDF-dokumentet och extraherar signaturinformation från var och en. Detta gör att du kan extrahera information om flera signaturer som finns i dokumentet.
-
-#### F: Vilka är några praktiska användningsfall för att extrahera signaturinformation?
-
-S: Några praktiska användningsfall för att extrahera signaturinformation inkluderar validering av äktheten av digitalt signerade dokument, analys av certifikatdetaljer för efterlevnadsändamål och upprätthållande av ett register över signaturer och undertecknare för revisionsändamål.
-
-#### F: Finns det några juridiska överväganden när man extraherar signaturinformation?
-
-S: Att extrahera signaturinformation kan ha juridiska konsekvenser, särskilt vid hantering av juridiskt bindande dokument. Se till att du följer relevanta regler och lagar relaterade till elektroniska signaturer och dokumentäkthet i din jurisdiktion.
+### Hur kan jag se detaljerna i det extraherade certifikatet?
+ När certifikatet har sparats som en`.cer` fil kan du öppna den med valfri certifikatvisare eller importera den till ett systemcertifikatlager för ytterligare inspektion.

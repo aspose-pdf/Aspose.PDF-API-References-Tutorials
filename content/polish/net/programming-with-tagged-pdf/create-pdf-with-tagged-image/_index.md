@@ -7,7 +7,7 @@ type: docs
 weight: 40
 url: /pl/net/programming-with-tagged-pdf/create-pdf-with-tagged-image/
 ---
-W tym samouczku przedstawimy Ci przewodnik krok po kroku, jak utworzyć dokument PDF z tagowanym obrazem przy użyciu Aspose.PDF dla .NET. Aspose.PDF to potężna biblioteka, która umożliwia programowe tworzenie, manipulowanie i konwertowanie dokumentów PDF. Korzystając z funkcji tagowanej struktury treści Aspose.PDF, możesz dodawać tagowane obrazy do swojego dokumentu PDF.
+tym samouczku przedstawimy Ci przewodnik krok po kroku, jak utworzyć dokument PDF z tagowanym obrazem przy użyciu Aspose.PDF dla .NET. Aspose.PDF to potężna biblioteka, która umożliwia programowe tworzenie, manipulowanie i konwertowanie dokumentów PDF. Korzystając z funkcji tagowanej struktury treści Aspose.PDF, możesz dodawać tagowane obrazy do swojego dokumentu PDF.
 
 ## Wymagania wstępne
 
@@ -22,7 +22,7 @@ Aby rozpocząć, utwórz nowy projekt w Visual Studio i dodaj odwołanie do bibl
 
 ## Krok 2: Zaimportuj niezbędne przestrzenie nazw
 
-W pliku kodu C# zaimportuj przestrzenie nazw wymagane do uzyskania dostępu do klas i metod udostępnianych przez Aspose.PDF:
+pliku kodu C# zaimportuj przestrzenie nazw wymagane do uzyskania dostępu do klas i metod udostępnianych przez Aspose.PDF:
 
 ```csharp
 using System;
@@ -84,7 +84,7 @@ document.Save(dataDir + "PDFwithTaggedImage.pdf");
 
 ## Wniosek
 
-W tym samouczku dowiedziałeś się, jak utworzyć dokument PDF z oznaczonym obrazem za pomocą Aspose.PDF dla .NET. Oznaczone obrazy dodają dodatkowe, ustrukturyzowane informacje do dokumentu PDF.
+tym samouczku dowiedziałeś się, jak utworzyć dokument PDF z oznaczonym obrazem za pomocą Aspose.PDF dla .NET. Oznaczone obrazy dodają dodatkowe, ustrukturyzowane informacje do dokumentu PDF.
 
 ### Najczęściej zadawane pytania
 
@@ -106,13 +106,13 @@ A: Kod pokazuje, jak utworzyć dokument PDF, zdefiniować oznaczony element obra
 
 #### P: Czy mogę używać różnych formatów obrazu dla oznaczonego obrazu?
 
-O: Tak, możesz użyć różnych formatów obrazu dla oznaczonego obrazu, takich jak JPEG, PNG, GIF itd. Przykład kodu podany w samouczku wykorzystuje obraz JPEG, ale możesz go zastąpić ścieżką do pliku obrazu w preferowanym formacie.
+O: Tak, możesz użyć różnych formatów obrazu dla oznaczonego obrazu, takich jak JPEG, PNG, GIF itp. Przykład kodu podany w samouczku wykorzystuje obraz JPEG, ale możesz go zastąpić ścieżką do pliku obrazu w preferowanym formacie.
 
 #### P: W jaki sposób tekst alternatywny (alt text) jest używany w oznaczonych obrazach?
 
  A: Tekst alternatywny zapewnia tekstowy opis obrazu, który jest odczytywany na głos przez czytniki ekranowe dla użytkowników z dysfunkcją wzroku. W podanym kodzie tekst alternatywny jest ustawiany za pomocą`AlternativeText` własność`IllustrationElement` reprezentujący oznaczony obraz.
 
-####  P: Jak to działa?`SetTitle` method contribute to the PDF document's tagged image?
+#### P: Jak to działa?`SetTitle` method contribute to the PDF document's tagged image?
 
  A: Ten`SetTitle` Metoda ustawia tytuł oznaczonej zawartości dokumentu PDF, zapewniając dodatkowy kontekst dla oznaczonego obrazu. Ten tytuł może pomóc zidentyfikować cel lub temat oznaczonej zawartości.
 
@@ -126,4 +126,4 @@ A: Korzystając z funkcji struktury treści oznaczonych w Aspose.PDF i podając 
 
 #### P: Czy można dodać wiele oznaczonych obrazów do tego samego dokumentu PDF, stosując podobne techniki?
 
- A: Tak, możesz dodać wiele oznaczonych obrazów do tego samego dokumentu PDF, używając podobnych technik. Utworzyłbyś dodatkowe`IllustrationElement` wystąpienia dla każdego oznaczonego obrazu i dostosować ich właściwości według potrzeb.
+A: Tak, możesz dodać wiele oznaczonych obrazów do tego samego dokumentu PDF, używając podobnych technik. Utworzyłbyś dodatkowe`IllustrationElement` wystąpienia dla każdego oznaczonego obrazu i dostosować ich właściwości według potrzeb.

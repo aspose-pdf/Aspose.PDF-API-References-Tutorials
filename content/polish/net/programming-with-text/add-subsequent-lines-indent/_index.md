@@ -38,14 +38,14 @@ Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
 ## Krok 5: Dodaj stronę do dokumentu
- Dodaj nową stronę do dokumentu za pomocą`Add` metoda`Pages`kolekcja. W podanym kodzie nowa strona jest przypisana do zmiennej`page`.
+ Dodaj nową stronę do dokumentu za pomocą`Add` metoda`Pages` kolekcja. W podanym kodzie nowa strona jest przypisana do zmiennej`page`.
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
 ## Krok 6: Utwórz fragment tekstu z wcięciem kolejnych wierszy
- Utwórz instancję`TextFragment` obiekt i podaj żądany tekst. W podanym kodzie tekst jest przypisany do zmiennej`text` . Następnie zainicjuj`TextFormattingOptions` dla`TextFragment` określ`SubsequentLinesIndent` wartość.
+ Utwórz instancję`TextFragment` obiekt i podaj żądany tekst. W podanym kodzie tekst jest przypisany do zmiennej`text` . Następnie zainicjuj`TextFormattingOptions` dla`TextFragment` i określ`SubsequentLinesIndent` wartość.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
@@ -91,7 +91,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = document.Pages.Add();
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-// Zainicjuj opcję TextFormattingOptions dla fragmentu tekstu i określ wartość FurtherLinesIndent
+//Zainicjuj opcję TextFormattingOptions dla fragmentu tekstu i określ wartość FurtherLinesIndent
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
 	SubsequentLinesIndent = 20
@@ -148,7 +148,7 @@ Aspose.Pdf.Page page = document.Pages.Add();
 
 #### P: Jak mogę dodać wcięcie do kolejnych wierszy tekstu?
 
- A: W kroku 6 utworzysz`TextFragment` obiekt i przypisz mu pożądany tekst. Następnie zainicjujesz`TextFormattingOptions` dla`TextFragment` określ`SubsequentLinesIndent` wartość:
+ A: W kroku 6 utworzysz`TextFragment` obiekt i przypisz mu pożądany tekst. Następnie zainicjujesz`TextFormattingOptions` dla`TextFragment` i określ`SubsequentLinesIndent` wartość:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
@@ -168,7 +168,7 @@ page.Paragraphs.Add(text);
 
 #### P: Czy mogę powtórzyć proces dla dodatkowych linii?
 
- A: Tak, w kroku 8 możesz powtórzyć proces dla dodatkowych wierszy z tym samym wcięciem, tworząc nowe`TextFragment` obiektów i dodawanie ich do zbioru akapitów strony.
+A: Tak, w kroku 8 możesz powtórzyć proces dla dodatkowych wierszy z tym samym wcięciem, tworząc nowe`TextFragment` obiektów i dodawanie ich do zbioru akapitów strony.
 
 #### P: Jak zapisać powstały dokument PDF?
 

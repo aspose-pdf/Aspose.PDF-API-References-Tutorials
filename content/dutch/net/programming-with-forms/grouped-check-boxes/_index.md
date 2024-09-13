@@ -2,156 +2,159 @@
 title: Gegroepeerde selectievakjes in PDF-document
 linktitle: Gegroepeerde selectievakjes in PDF-document
 second_title: Aspose.PDF voor .NET API-referentie
-description: Maak eenvoudig gegroepeerde selectievakjes in een PDF-document met Aspose.PDF voor .NET.
+description: Leer hoe u gegroepeerde selectievakjes (keuzerondjes) in een PDF-document kunt maken met Aspose.PDF voor .NET met deze stapsgewijze zelfstudie.
 type: docs
 weight: 170
 url: /nl/net/programming-with-forms/grouped-check-boxes/
 ---
-In deze tutorial laten we u zien hoe u gegroepeerde selectievakjes in een PDF-document kunt maken met Aspose.PDF voor .NET. We leggen de C#-broncode stap voor stap uit om u door dit proces te leiden.
+## Invoering
 
-## Stap 1: Voorbereiding
+Het maken van interactieve PDF's is niet zo moeilijk als het klinkt, vooral niet als u krachtige tools als Aspose.PDF voor .NET tot uw beschikking hebt. Een van de interactieve elementen die u mogelijk aan uw PDF-documenten moet toevoegen, zijn gegroepeerde selectievakjes, of specifieker, keuzerondjes waarmee gebruikers één optie uit een set kunnen selecteren. Deze tutorial leidt u door het proces van het toevoegen van gegroepeerde selectievakjes (keuzerondjes) aan een PDF-document met behulp van Aspose.PDF voor .NET. Of u nu een beginner of een doorgewinterde ontwikkelaar bent, u zult deze gids boeiend, gedetailleerd en gemakkelijk te volgen vinden.
 
-Zorg ervoor dat u de benodigde bibliotheken hebt geïmporteerd en het pad naar uw documentenmap hebt ingesteld:
+## Vereisten
+
+Voordat we in de stapsgewijze handleiding duiken, bespreken we eerst enkele essentiële vereisten:
+
+1.  Aspose.PDF voor .NET: Zorg ervoor dat u de Aspose.PDF-bibliotheek hebt geïnstalleerd. Als dat niet zo is, kunt u[download het hier](https://releases.aspose.com/pdf/net/).
+2. IDE: U moet een ontwikkelomgeving hebben ingesteld, zoals Visual Studio.
+3. .NET Framework: Het project moet gericht zijn op een versie van .NET Framework die compatibel is met Aspose.PDF.
+4. Basiskennis van C#: Kennis van C# en PDF-bewerking is vereist om de cursus soepel te kunnen volgen.
+5.  Licentie: Aspose.PDF vereist een licentie voor volledige functionaliteit. U kunt[een tijdelijke licentie verkrijgen](https://purchase.aspose.com/temporary-license/) indien nodig.
+
+## Pakketten importeren
+
+Voordat u begint, moet u ervoor zorgen dat u de benodigde naamruimten in uw project hebt geïmporteerd:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Forms;
 ```
 
-## Stap 2: Een documentobject instantiëren
+Met deze pakketten krijgt u toegang tot alle klassen en methoden die nodig zijn om PDF-documenten te bewerken, inclusief het maken van keuzerondjes en het definiëren van hun eigenschappen.
 
-Een Document-object instantiëren:
+In dit gedeelte leggen we het proces voor het maken van gegroepeerde selectievakjes (keuzerondjes) uit in duidelijke, gemakkelijk te volgen stappen.
+
+## Stap 1: Maak een nieuw PDF-document
+
+ De eerste stap is het maken van een exemplaar van de`Document` object, dat uw PDF-bestand zal vertegenwoordigen. Voeg vervolgens een lege pagina toe aan uw document waar u uw gegroepeerde selectievakjes zult plaatsen.
 
 ```csharp
+// Instantieer Document-object
 Document pdfDocument = new Document();
-```
 
-## Stap 3: Pagina toevoegen aan PDF-document
-
-Voeg een pagina toe aan het PDF-document:
-
-```csharp
+// Een pagina toevoegen aan het PDF-bestand
 Page page = pdfDocument.Pages.Add();
 ```
 
-## Stap 4: Instantieer een RadioButtonField-object
+Hiermee wordt de basis gelegd voor het toevoegen van elementen, zoals keuzerondjes, aan de PDF.
 
-Instantieer een RadioButtonField-object met het paginanummer als argument:
+## Stap 2: Initialiseer het keuzerondjeveld
+
+Vervolgens moeten we een`RadioButtonField` object, dat de gegroepeerde selectievakjes (keuzerondjes) zal bevatten. Dit veld wordt toegevoegd aan de specifieke pagina waar de selectievakjes zullen verschijnen.
 
 ```csharp
+// Instantieer RadioButtonField-object en wijs het toe aan de eerste pagina
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## Stap 5: Voeg keuzerondje-opties toe
+U kunt dit zien als de container waarin de afzonderlijke keuzerondjes worden gegroepeerd.
 
-Voeg keuzerondjes toe met behulp van het object RadioButtonOptionField en geef hun positie op met behulp van het object Rectangle:
+## Stap 3: Opties voor keuzerondjes toevoegen
+
+ Laten we nu de individuele radioknopopties aan het veld toevoegen. In dit voorbeeld voegen we twee radioknoppen toe en specificeren we hun posities met behulp van de`Rectangle` voorwerp.
 
 ```csharp
+// Voeg de eerste keuzerondje-optie toe en specificeer de positie ervan met behulp van Rechthoek
 RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
 RadioButtonOptionField opt2 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(100, 0, 120, 20));
-opt1.OptionName = "Test1";
-opt2.OptionName = "Test2";
-radio.Add(opt1);
-radio.Add(opt2);
+
+// Optienamen instellen voor identificatie
+opt1.OptionName = "Option1";
+opt2.OptionName = "Option2";
 ```
 
-## Stap 6: Pas de opties voor keuzerondjes aan
+ Hier, de`Rectangle` object definieert de coördinaten en de grootte van elke keuzerondje op de pagina.
 
-Pas de opties voor keuzerondjes aan door de stijl, rand en het uiterlijk ervan in te stellen:
+## Stap 4: Pas de stijl van de keuzerondjes aan
+
+ U kunt het uiterlijk van de keuzerondjes aanpassen door hun`Style` eigenschap. U wilt bijvoorbeeld vierkante selectievakjes of kruisvormige selectievakjes.
 
 ```csharp
+// De stijl van de keuzerondjes instellen
 opt1.Style = BoxStyle.Square;
-opt2.Style = BoxStyle.Square;
+opt2.Style = BoxStyle.Cross;
+```
+
+Hiermee kunt u het uiterlijk van de selectievakjes bepalen, waardoor ze gebruiksvriendelijker en visueel aantrekkelijker worden.
+
+## Stap 5: Randeigenschappen configureren
+
+Randen spelen een belangrijke rol bij het gemakkelijk herkenbaar maken van de selectievakjes. Hier voegen we stevige randen toe rond elke radioknopoptie en definiëren we hun breedte en kleur.
+
+```csharp
+// Configureer de rand van de eerste keuzerondje
 opt1.Border = new Border(opt1);
 opt1.Border.Style = BorderStyle.Solid;
 opt1.Border.Width = 1;
+opt1.Characteristics.Border = Color.Black;
+
+// Configureer de rand van de tweede keuzerondje
 opt2.Border = new Border(opt2);
-opt2.Border.Width = 1;
 opt2.Border.Style = BorderStyle.Solid;
+opt2.Border.Width = 1;
+opt2.Characteristics.Border = Color.Black;
 ```
 
-## Stap 7: Voeg de keuzerondjes toe aan het formulier
+Met deze stap wordt ervoor gezorgd dat elk keuzerondje een duidelijk gedefinieerde rand heeft, waardoor de leesbaarheid van het document wordt verbeterd.
 
-Voeg de keuzerondjes toe aan het documentformulierobject:
+## Stap 6: Voeg keuzerondjes toe aan het formulier
+
+Nu voegen we de radioknoppen toe aan het formulier van het document. Dit is de laatste stap in het groeperen van de selectievakjes onder één veld.
 
 ```csharp
+// Voeg een keuzerondje toe aan het formulierobject van het document
 pdfDocument.Form.Add(radio);
 ```
 
-## Stap 8: Sla het document op
+Het formulierobject fungeert als een container voor alle interactieve elementen, inclusief onze gegroepeerde selectievakjes.
 
-Sla het PDF-document op:
+## Stap 7: Sla het PDF-document op
+
+Zodra alles is ingesteld, kunt u het PDF-document opslaan op de gewenste locatie.
 
 ```csharp
-dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
+// Definieer het pad van het uitvoerbestand
+string dataDir = "YOUR DOCUMENT DIRECTORY" + "GroupedCheckBoxes_out.pdf";
+
+// Sla het PDF-document op
 pdfDocument.Save(dataDir);
+
+// Bevestig succesvolle creatie
+Console.WriteLine("Grouped checkboxes added successfully. File saved at " + dataDir);
 ```
 
-### Voorbeeldbroncode voor gegroepeerde selectievakjes met behulp van Aspose.PDF voor .NET 
-```csharp
-try
-{
-	// Het pad naar de documentenmap.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Instantieer Document object
-	Document pdfDocument = new Document();
-	// Een pagina toevoegen aan een PDF-bestand
-	Page page = pdfDocument.Pages.Add();
-	// RadioButtonField-object met paginanummer als argument instellen
-	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
-	// Voeg de eerste optie voor een keuzerondje toe en geef ook de oorsprong ervan op met behulp van het Rectangle-object
-	RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
-	RadioButtonOptionField opt2 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(100, 0, 120, 20));
-	opt1.OptionName = "Test1";
-	opt2.OptionName = "Test2";
-	radio.Add(opt1);
-	radio.Add(opt2);
-	opt1.Style = BoxStyle.Square;
-	opt2.Style = BoxStyle.Square;
-	opt1.Style = BoxStyle.Cross;
-	opt2.Style = BoxStyle.Cross;
-	opt1.Border = new Border(opt1);
-	opt1.Border.Style = BorderStyle.Solid;
-	opt1.Border.Width = 1;
-	opt1.Characteristics.Border = System.Drawing.Color.Black;
-	opt2.Border = new Border(opt2);
-	opt2.Border.Width = 1;
-	opt2.Border.Style = BorderStyle.Solid;
-	opt2.Characteristics.Border = System.Drawing.Color.Black;
-	// Keuzerondje toevoegen aan formulierobject van Documentobject
-	pdfDocument.Form.Add(radio);
-	dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
-	// Sla het PDF-document op
-	pdfDocument.Save(dataDir);
-	Console.WriteLine("\nGrouped checkboxes added successfully.\nFile saved at " + dataDir);
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+En dat is alles! U hebt met succes een PDF met gegroepeerde selectievakjes gemaakt met Aspose.PDF voor .NET.
 
 ## Conclusie
 
-In deze tutorial hebben we geleerd hoe u gegroepeerde selectievakjes in een PDF-document kunt maken met Aspose.PDF voor .NET. Door deze stappen te volgen, kunt u eenvoudig aangepaste keuzerondjes toevoegen en deze bundelen in uw PDF-documenten met Aspose.PDF.
+Het toevoegen van interactieve elementen zoals gegroepeerde selectievakjes aan PDF-documenten kan in eerste instantie lastig lijken, maar met Aspose.PDF voor .NET wordt het een fluitje van een cent. Door deze stapsgewijze handleiding te volgen, hebt u geleerd hoe u een basis-PDF-document opzet, gegroepeerde keuzerondjes toevoegt, hun uiterlijk aanpast en het uiteindelijke resultaat opslaat. Of u nu formulieren, enquêtes of een ander type interactieve PDF bouwt, deze handleiding geeft u een solide basis om mee te beginnen.
 
-### Veelgestelde vragen
+## Veelgestelde vragen
 
-#### V: Wat zijn gegroepeerde selectievakjes in een PDF-document?
+### Kan ik meer dan twee keuzerondjes aan een groep toevoegen?
+ Absoluut! Instantieer gewoon extra`RadioButtonOptionField` objecten en voeg ze toe aan de`RadioButtonField` zoals getoond in de tutorial.
 
-A: Gegroepeerde selectievakjes in een PDF-document verwijzen naar een set opties voor keuzerondjes die gegroepeerd zijn. Keuzerondjes stellen gebruikers in staat om slechts één optie te selecteren uit een groep van wederzijds exclusieve keuzes. Wanneer één keuzerondje wordt geselecteerd, worden de andere in dezelfde groep automatisch gedeselecteerd. Dit groeperingsgedrag is handig wanneer u gebruikers meerdere opties wilt bieden, maar hun selectie wilt beperken tot slechts één keuze.
+### Hoe kan ik meerdere groepen selectievakjes in één document verwerken?
+Om meerdere groepen te maken, moet u afzonderlijke groepen instantiëren`RadioButtonField` objecten voor elke groep.
 
-#### V: Kan ik het uiterlijk van gegroepeerde selectievakjes in Aspose.PDF voor .NET aanpassen?
+### Is er een limiet aan het aantal selectievakjes dat ik kan toevoegen?
+Nee, Aspose.PDF voor .NET stelt geen beperkingen aan het aantal selectievakjes dat u aan een PDF kunt toevoegen.
 
-A: Ja, u kunt het uiterlijk van gegroepeerde selectievakjes in Aspose.PDF voor .NET aanpassen. De API biedt verschillende opties om de stijl, rand en het uiterlijk van keuzerondjes in te stellen. U kunt de positie van elke optie definiëren, kiezen tussen verschillende vakstijlen (bijv. vierkant, cirkel, kruis) en de randeigenschappen aanpassen om de gewenste visuele weergave te bereiken.
+### Kan ik het uiterlijk van selectievakjes wijzigen nadat ik ze heb toegevoegd?
+Ja, u kunt eigenschappen zoals randstijl, breedte en kleur wijzigen nadat u de selectievakjes hebt toegevoegd.
 
-#### V: Hoe voeg ik gegroepeerde selectievakjes toe aan een specifieke pagina in een PDF-document?
-
-A: Om gegroepeerde selectievakjes aan een specifieke pagina in een PDF-document toe te voegen, moet u een`RadioButtonField` object met het gewenste paginanummer als argument. Maak vervolgens`RadioButtonOptionField` objecten die elke keuzerondjeoptie vertegenwoordigen en hun positie specificeren met behulp van de`Rectangle` object. Voeg ten slotte deze opties toe aan de`RadioButtonField` en pas hun uiterlijk indien nodig aan voordat u de`RadioButtonField` naar het documentformulier.
-
-#### V: Kan ik meerdere groepen selectievakjes aan één PDF-document toevoegen?
-
- A: Ja, u kunt meerdere groepen selectievakjes toevoegen aan één PDF-document. Elke groep moet een unieke`RadioButtonField` object, en de`RadioButtonOptionField` objecten binnen elke groep moeten dezelfde pagina en unieke namen voor hun opties delen. Dit zorgt ervoor dat de keuzerondjes binnen elke groep correct functioneren en de selecties elkaar uitsluiten.
-
-#### V: Worden gegroepeerde selectievakjes in alle PDF-viewers en -toepassingen ondersteund?
-
-A: Ja, gegroepeerde selectievakjes worden ondersteund in alle standaard-compatibele PDF-viewers en -toepassingen. De PDF-specificatie definieert keuzerondjes en hun groeperingsgedrag, waardoor ze universeel worden herkend in het PDF-formaat. Het is echter essentieel om de functionaliteit in verschillende PDF-viewers te testen om consistent gedrag op verschillende platforms te garanderen.
+### Is het mogelijk om afbeeldingen als keuzerondjes te gebruiken?
+ Ja, met Aspose.PDF kunt u aangepaste afbeeldingen gebruiken als keuzerondjes door de volgende instellingen in te stellen:`Appearance` eigenschap van elke keuzerondjeoptie.

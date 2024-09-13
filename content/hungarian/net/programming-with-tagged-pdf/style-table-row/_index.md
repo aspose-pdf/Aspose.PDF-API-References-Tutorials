@@ -35,7 +35,7 @@ Létrehoztunk egy új dokumentumot, és beállítottuk a dokumentum címét és 
 Ebben a lépésben megkapjuk a dokumentumunk gyökérstruktúra elemét.
 
 ```csharp
-//Szerezze meg a gyökérszerkezet elemet
+// Szerezze meg a gyökérszerkezet elemet
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
@@ -46,7 +46,7 @@ Megkaptuk a gyökérstruktúra elemet, amely a tömbelem tárolójaként fog szo
 Most hozzunk létre egy új táblázatszerkezet elemet a dokumentumunkhoz.
 
 ```csharp
-// Hozza létre a tömbszerkezet elemet
+// Hozd létre a tömbstruktúra elemet
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 ```
@@ -58,7 +58,7 @@ Létrehoztunk egy új tömbstruktúra elemet, és hozzáadtuk a gyökérstruktú
 Ebben a lépésben testre szabjuk a táblázat sorstílusait és tulajdonságait.
 
 ```csharp
-// Testreszabhatja a táblázat sorstílusait és tulajdonságait
+// Testreszabhatja a táblázatsor stílusait és tulajdonságait
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
@@ -155,7 +155,7 @@ taggedContent.SetLanguage("en-US");
 // Gyökérstruktúra elem lekérése
 StructureElement rootElement = taggedContent.RootElement;
 
-// Táblázatstruktúra elem létrehozása
+// Táblázatszerkezet elem létrehozása
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
@@ -228,7 +228,7 @@ V: Mielőtt elkezdené, győződjön meg arról, hogy a fejlesztői környezetet
 
 #### K: Hogyan hozhatok létre új PDF-dokumentumot, és állíthatom be a címét és a nyelvét az Aspose.PDF for .NET használatával?
 
- V: Új PDF-dokumentum létrehozásához létre kell hoznia a`Document` objektum az Aspose.PDF könyvtárból. Az oktatóanyagban található C# forráskód bemutatja, hogyan hozhat létre dokumentumot, és hogyan állíthatja be a címét és a nyelvi tulajdonságait.
+ V: Új PDF-dokumentum létrehozásához létre kell hoznia a`Document` objektumot az Aspose.PDF könyvtárból. Az oktatóanyagban található C# forráskód bemutatja, hogyan hozhat létre dokumentumot, és hogyan állíthatja be a címét és a nyelvi tulajdonságait.
 
 #### K: Mi a jelentősége a gyökérstruktúra elemnek egy PDF dokumentumban?
 

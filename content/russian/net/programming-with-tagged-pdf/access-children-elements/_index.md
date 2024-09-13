@@ -20,7 +20,7 @@ url: /ru/net/programming-with-tagged-pdf/access-children-elements/
 
 Для начала создайте новый проект в Visual Studio и добавьте ссылку на библиотеку Aspose.PDF for .NET. Вы можете скачать библиотеку с официального сайта Aspose и установить ее на свой компьютер.
 
-## Шаг 2: Импортируйте необходимые пространства имен
+## Шаг 2: Импортируйте необходимые пространства имен.
 
 В файле кода C# импортируйте пространства имен, необходимые для доступа к классам и методам, предоставляемым Aspose.PDF:
 
@@ -105,7 +105,7 @@ foreach (Element element in elementList)
 		string alternativeText = structureElement.AlternativeText;
 	}
 }
-// Доступ к дочерним элементам первого элемента в корневом элементе
+//Доступ к дочерним элементам первого элемента в корневом элементе
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
 foreach (Element element in elementList)
 {

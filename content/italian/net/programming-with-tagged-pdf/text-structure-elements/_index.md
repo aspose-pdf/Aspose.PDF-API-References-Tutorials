@@ -47,7 +47,7 @@ Abbiamo impostato il titolo e la lingua del documento PDF taggato.
 Ora prendiamo l'elemento strutturale radice del documento PDF.
 
 ```csharp
-//Ottieni l'elemento della struttura radice
+// Ottieni l'elemento della struttura radice
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

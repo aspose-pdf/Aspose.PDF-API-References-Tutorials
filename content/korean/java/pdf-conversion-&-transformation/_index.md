@@ -36,7 +36,7 @@ Aspose.PDF for Java로 PDF를 EPUB 전자책으로 손쉽게 변환하세요. �
 ### [PDF를 Excel 통합 문서로 내보내기](./export-pdfs-to-excel-workbooks/)
 Aspose.PDF for Java를 사용하여 PDF를 Excel 워크북으로 손쉽게 내보내는 방법을 알아보세요. 원활한 데이터 추출을 위한 단계별 가이드.
 ### [PDF에서 MobiXML 생성](./generate-mobixml-from-pdfs/)
-Aspose.PDF for Java를 사용하여 PDF에서 MobiXML을 생성하는 방법을 알아보세요. 코드 예제가 포함된 단계별 가이드. PDF를 MobiXML 형식으로 매끄럽게 변환합니다.
+Aspose.PDF for Java를 사용하여 PDF에서 MobiXML을 생성하는 방법을 알아보세요. 코드 예제가 포함된 단계별 가이드. PDF를 MobiXML 형식으로 원활하게 변환합니다.
 ### [PDF/A 호환 파일 만들기](./create-pdfa-compliant-files/)
 Aspose.PDF for Java를 사용하여 PDF/A 호환 파일을 만드는 방법을 알아보세요. 업계 표준 PDF에 대한 코드 예제가 포함된 단계별 가이드.
 ### [PDF를 PPTX 형식으로 변환](./convert-pdfs-to-pptx-format/)

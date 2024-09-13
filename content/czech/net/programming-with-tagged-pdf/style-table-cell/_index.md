@@ -35,7 +35,7 @@ Vytvořili jsme nový dokument a nastavili jsme název dokumentu a jazyk.
 V tomto kroku získáme element kořenové struktury pro náš dokument.
 
 ```csharp
-//Získejte prvek kořenové struktury
+// Získejte prvek kořenové struktury
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
@@ -279,7 +279,7 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ## Závěr
 
-tomto tutoriálu jsme se naučili stylovat buňky tabulky pomocí Aspose.PDF pro .NET. Viděli jsme, jak vytvořit dokument, přidat tabulku se záhlavími, řádky těla a zápatím a přizpůsobit styly buněk. Nakonec jsme uložili označený dokument PDF a ověřili jeho shodu s PDF/UA. Nyní můžete použít Aspose.PDF pro .NET k vytváření a stylování tabulek v aplikacích .NET.
+V tomto tutoriálu jsme se naučili stylovat buňky tabulky pomocí Aspose.PDF pro .NET. Viděli jsme, jak vytvořit dokument, přidat tabulku se záhlavími, řádky těla a zápatím a přizpůsobit styly buněk. Nakonec jsme uložili označený dokument PDF a ověřili jeho shodu s PDF/UA. Nyní můžete použít Aspose.PDF pro .NET k vytváření a stylování tabulek v aplikacích .NET.
 
 ### FAQ
 
@@ -293,7 +293,7 @@ Odpověď: Než začnete, ujistěte se, že jste nainstalovali Aspose.PDF pro .N
 
 #### Otázka: Jak vytvořím nový dokument PDF pomocí Aspose.PDF for .NET?
 
-A: Chcete-li vytvořit nový dokument PDF, musíte vytvořit instanci a`Document` objekt z knihovny Aspose.PDF. Poskytnutý zdrojový kód C# ukazuje, jak vytvořit dokument a nastavit jeho název a jazyk.
+ A: Chcete-li vytvořit nový dokument PDF, musíte vytvořit instanci a`Document` objekt z knihovny Aspose.PDF. Poskytnutý zdrojový kód C# ukazuje, jak vytvořit dokument a nastavit jeho název a jazyk.
 
 #### Otázka: Jaký je význam elementu kořenové struktury v dokumentu PDF?
 

@@ -88,7 +88,7 @@ dataDir = dataDir + "DeleteAllAttachments_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-Ce code enregistre le PDF modifié sous un nouveau nom, garantissant ainsi que votre fichier d'origine reste intact. Il est toujours judicieux de conserver une sauvegarde !
+Ce code enregistre le PDF modifié sous un nouveau nom, garantissant ainsi que votre fichier d'origine reste intact. Il est toujours judicieux de conserver une sauvegarde !
 
 ## Étape 5 : Confirmer la suppression
 

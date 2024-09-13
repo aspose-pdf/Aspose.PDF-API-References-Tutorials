@@ -39,7 +39,7 @@ Document _pdfdocument = new Document();
 ```
 
 ## 5단계: 문서에 페이지 추가
- 문서에 새 페이지를 추가하려면 다음을 사용합니다.`Add` 의 방법`Pages`컬렉션. 제공된 코드에서 새 페이지는 변수에 할당됩니다.`page`.
+ 문서에 새 페이지를 추가하려면 다음을 사용합니다.`Add` 의 방법`Pages` 컬렉션. 제공된 코드에서 새 페이지는 변수에 할당됩니다.`page`.
 
 ```csharp
 Page page = _pdfdocument.Pages.Add();

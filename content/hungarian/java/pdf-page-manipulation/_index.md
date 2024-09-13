@@ -26,7 +26,7 @@ Fedezze fel, hogyan lehet letölteni PDF hiperhivatkozási célokat Java haszná
 ### [Távolítsa el a dokumentummegnyitási műveletet a PDF-fájlból Java használatával](./remove-document-open-action-from-pdf-file-using-java/)
 Ismerje meg, hogyan távolíthatja el a dokumentummegnyitási műveletet PDF-fájlokból Java és Aspose.PDF for Java használatával. Növelje a biztonságot és a testreszabást.
 ### [A PDF-dokumentum színterének módosítása Java használatával](./change-color-space-of-pdf-document-using-java/)
-Ismerje meg, hogyan módosíthatja a PDF-dokumentumok színterét Java használatával. Lépésről lépésre útmutató kódpéldákkal. Optimalizálja PDF-fájljait nyomtatáshoz és megjelenítéshez.
+Ismerje meg, hogyan módosíthatja a PDF-dokumentumok színterét Java használatával. Útmutató lépésről lépésre kódpéldákkal. Optimalizálja PDF-fájljait nyomtatáshoz és megjelenítéshez.
 ### [Szerezze be a PDF termék- és összeállítási adatait Java nyelven](./get-product-and-build-information-of-pdf-in-java/)
 Ismerje meg, hogyan nyerhet ki termék- és összeállítási információkat a PDF-fájlokból Java nyelven az Aspose.PDF for Java segítségével. Lépésről-lépésre útmutató kódpéldákkal a hatékony PDF-adatok kinyeréséhez.
 ### [Hogyan adjunk hozzá rajzot átlátszó színekkel PDF-ben Java segítségével](./how-to-add-drawing-with-transparent-color-in-pdf-using-java/)

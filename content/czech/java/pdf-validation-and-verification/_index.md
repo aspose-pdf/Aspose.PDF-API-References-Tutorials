@@ -22,6 +22,6 @@ Ve druhé části našich tutoriálů se zaměřujeme na kritický aspekt ověř
 
 Poslední část našich výukových programů se zabývá integritou dokumentů a dodržováním předpisů. Provedeme vás technikami, jak zachovat strukturální a obsahovou integritu vašich PDF. Dozvíte se také, jak přidat ověřovací informace, časová razítka a bezpečnostní opatření pro zvýšení zabezpečení dokumentů. Na konci těchto výukových programů budete dobře vybaveni, abyste mohli s jistotou ověřovat a ověřovat soubory PDF a zajistit jejich důvěryhodnost a dodržování standardů. Přidejte se k nám na této cestě, abyste se stali expertem na ověřování a ověřování PDF pomocí Aspose.PDF pro Javu.
 
-## Návody k ověření a ověření PDF
+## Návody na ověřování a ověřování PDF
 ### [Ověřte PDF v Javě](./validate-pdf-in-java/)
 Naučte se, jak ověřovat dokumenty PDF v Javě pomocí Aspose.PDF a zajistit integritu a shodu vašich souborů PDF.

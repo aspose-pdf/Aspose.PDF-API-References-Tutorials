@@ -1,6 +1,6 @@
 ---
-title: Egyéni címkenév
-linktitle: Egyéni címkenév
+title: Egyéni címke neve
+linktitle: Egyéni címke neve
 second_title: Aspose.PDF for .NET API Reference
 description: Útmutató lépésről lépésre egyéni címkenév használatához az Aspose.PDF for .NET-hez. Egyéni címkékkel javíthatja PDF-fájljai szerkezetét.
 type: docs
@@ -47,7 +47,7 @@ ITaggedContent taggedContent = document.TaggedContent;
 
 ## 4. lépés: Állítsa be a dokumentum címét és nyelvét
 
-Most már beállíthatjuk a dokumentum címét és nyelvét.
+Most beállíthatjuk a dokumentum címét és nyelvét.
 
 ```csharp
 // Határozza meg a dokumentum címét és nyelvét

@@ -11,16 +11,16 @@ Výuková stránka "Programování s odkazy a akcemi" na Aspose.PDF pro .NET nab
 ## Tutoriály
 | Titul | Popis |
 | --- | --- | 
-| [Přidat hypertextový odkaz do souboru PDF](./add-hyperlink/) | snadno přidávejte interaktivní hypertextové odkazy do souboru PDF pomocí Aspose.PDF pro .NET. |  
-| [Vytvořit odkaz na aplikaci v souboru PDF](./create-application-link/) | Pomocí Aspose.PDF for .NET můžete snadno vytvářet odkazy na aplikace v souboru PDF. |  
-| [Vytvořit odkaz na dokument](./create-document-link/) | Pomocí Aspose.PDF for .NET můžete snadno vytvářet odkazy na další dokumenty PDF. |  
-| [Vytvořte místní hypertextový odkaz v souboru PDF](./create-local-hyperlink/) | Snadno vytvářejte místní hypertextové odkazy v souboru PDF pomocí Aspose.PDF for .NET. |  
-| [Extrahujte odkazy do souboru PDF](./extract-links/) | Snadno extrahujte odkazy v souboru PDF pomocí Aspose.PDF pro .NET. |  
-| [Získejte cíle hypertextového odkazu v souboru PDF](./get-hyperlink-destinations/) | Naučte se extrahovat cíle hypertextových odkazů do souboru PDF pomocí Aspose.PDF for .NET. |  
-| [Získejte text hypertextového odkazu v souboru PDF](./get-hyperlink-text/) | Naučte se extrahovat text hypertextového odkazu do souboru PDF pomocí Aspose.PDF for .NET. |  
-| [Odebrat otevřenou akci](./remove-open-action/) | Naučte se, jak odstranit akci otevření z PDF pomocí Aspose.PDF for .NET. |  
-| [Nastavit odkaz na cíl v souboru PDF](./set-destination-link/) | Naučte se, jak nastavit cílový odkaz v souboru PDF pomocí Aspose.PDF pro .NET. |  
-| [Nastavit cílový odkaz v souboru PDF](./set-target-link/) | Naučte se, jak nastavit cílový odkaz v souboru PDF pomocí Aspose.PDF pro .NET. |  
-| [Při prohlížení specifikujte stránku](./specify-page-when-viewing/) | Naučte se, jak určit stránku při prohlížení PDF pomocí Aspose.PDF for .NET. |  
-| [Aktualizace odkazů v souboru PDF](./update-links/) | Naučte se, jak aktualizovat odkazy v souboru PDF pomocí Aspose.PDF pro .NET. |  
-| [Aktualizujte barvu textu odkazu v souboru PDF](./update-link-text-color/) | Naučte se, jak aktualizovat barvu textu odkazů v souboru PDF pomocí Aspose.PDF pro .NET. |  
+| [Přidat hypertextový odkaz do souboru PDF](./add-hyperlink/) | Naučte se, jak snadno přidávat hypertextové odkazy do vašich PDF pomocí Aspose.PDF for .NET. Zvyšte interaktivitu a zapojení uživatelů do vašich dokumentů. |  
+| [Vytvořit odkaz na aplikaci v souboru PDF](./create-application-link/) | Naučte se vytvářet odkazy na aplikace v souborech PDF pomocí Aspose.PDF for .NET. Podrobný průvodce pro zvýšení interaktivity ve vašich souborech PDF. |  
+| [Vytvořit odkaz na dokument](./create-document-link/) | Objevte, jak vytvořit odkazy na dokumenty v PDF pomocí Aspose.PDF pro .NET. Vylepšete navigaci a interaktivitu ve svých dokumentech PDF. |  
+| [Vytvořte místní hypertextový odkaz v souboru PDF](./create-local-hyperlink/) | Naučte se, jak vytvořit místní hypertextové odkazy v souborech PDF pomocí Aspose.PDF for .NET bez námahy s naším průvodcem krok za krokem. |  
+| [Extrahujte odkazy do souboru PDF](./extract-links/) | V tomto podrobném návodu se dozvíte, jak snadno extrahovat odkazy ze souborů PDF pomocí Aspose.PDF for .NET. |  
+| [Získejte cíle hypertextového odkazu v souboru PDF](./get-hyperlink-destinations/) | Naučte se, jak snadno extrahovat cíle hypertextových odkazů ze souborů PDF pomocí Aspose.PDF for .NET. Postupujte podle tohoto jednoduchého návodu krok za krokem. |  
+| [Získejte text hypertextového odkazu v souboru PDF](./get-hyperlink-text/) | Naučte se, jak bez námahy extrahovat text hypertextového odkazu ze souboru PDF pomocí Aspose.PDF for .NET. Včetně průvodce a kódu krok za krokem. |  
+| [Odebrat otevřenou akci](./remove-open-action/) | Snadno odstraňte otevřené akce z PDF pomocí Aspose.PDF pro .NET! Jednoduchý návod s podrobnými pokyny pro efektivní správu PDF. |  
+| [Nastavit odkaz na cíl v souboru PDF](./set-destination-link/) | Naučte se, jak nastavit cílové odkazy v souborech PDF pomocí Aspose.PDF pro .NET. Podrobný průvodce pro zvýšení interaktivity PDF. |  
+| [Nastavit cílový odkaz v souboru PDF](./set-target-link/) | Naučte se, jak efektivně nastavit cílové odkazy v souborech PDF pomocí Aspose.PDF for .NET s naším podrobným průvodcem. Ideální pro vylepšení navigace v dokumentech. |  
+| [Při prohlížení specifikujte stránku](./specify-page-when-viewing/) | Naučte se, jak určit stránku pro zobrazení v PDF pomocí Aspose.PDF for .NET. Vylepšete uživatelskou navigaci pomocí tohoto jednoduchého průvodce. |  
+| [Aktualizace odkazů v souboru PDF](./update-links/) | Přečtěte si, jak aktualizovat barvu textu odkazu v souboru PDF pomocí Aspose.PDF for .NET. Tento podrobný průvodce vás provede každým detailem pomocí snadno pochopitelných příkladů. |  
+| [Aktualizujte barvu textu odkazu v souboru PDF](./update-link-text-color/) | Bez námahy aktualizujte odkazy ve svých souborech PDF pomocí Aspose.PDF for .NET s tímto komplexním průvodcem krok za krokem. Zjednodušte si úpravy PDF. |  

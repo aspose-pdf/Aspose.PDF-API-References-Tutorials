@@ -7,7 +7,7 @@ type: docs
 weight: 10
 url: /cs/net/programming-with-tables/add-image-in-a-table-cell/
 ---
-tomto tutoriálu vás provedeme procesem přidání obrázku do buňky tabulky pomocí Aspose.PDF pro .NET. Poskytnutý zdrojový kód C# ukazuje, jak této funkce dosáhnout. Podle níže uvedených kroků budete schopni efektivně začlenit obrázky do buněk tabulky.
+V tomto tutoriálu vás provedeme procesem přidání obrázku do buňky tabulky pomocí Aspose.PDF pro .NET. Poskytnutý zdrojový kód C# ukazuje, jak této funkce dosáhnout. Podle níže uvedených kroků budete schopni efektivně začlenit obrázky do buněk tabulky.
 
 Než se ponoříme do kódu, ujistěte se, že máte nainstalovanou knihovnu Aspose.PDF for .NET a odkazovanou ve vašem projektu.
 
@@ -43,7 +43,7 @@ Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
 ## Krok 4: Nastavení výchozího ohraničení buňky
 
- Abychom zajistili konzistenci, můžeme nastavit výchozí ohraničení buňky pomocí`DefaultCellBorder`vlastnost stolu`BorderInfo` objekt.
+ Abychom zajistili konzistenci, můžeme nastavit výchozí ohraničení buňky pomocí`DefaultCellBorder` vlastnost stolu`BorderInfo` objekt.
 
 ```csharp
 // Nastavte výchozí ohraničení buňky pomocí objektu BorderInfo
@@ -93,7 +93,7 @@ Aspose.Pdf.Cell cell2 = row1.Cells.Add();
 Nakonec můžeme obrázek přidat do buňky tabulky tak, že jej přidáme jako odstavec do buňky.
 
 ```csharp
-// Přidejte obrázek do buňky tabulky
+//Přidejte obrázek do buňky tabulky
 cell2.Paragraphs.Add(img);
 ```
 
@@ -102,7 +102,7 @@ cell2.Paragraphs.Add(img);
 Po přidání buňky obrázku můžeme v případě potřeby přidat další buňky do řádku.
 
 ```csharp
-//Přidejte do řádku další buňku
+// Přidejte do řádku další buňku
 row1.Cells.Add("Previous cell with image");
 
 // Upravte svislé zarovnání třetí buňky
@@ -114,7 +114,7 @@ row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
  Nakonec můžeme upravený dokument uložit na určené místo pomocí`Save` metoda.
 
 ```csharp
-// Uložte dokument
+//Uložte dokument
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
@@ -140,22 +140,22 @@ tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.
 tab1.ColumnWidths = "100 100 120";
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose.jpg";
-// Vytvořte řádky v tabulce a poté buňky v řádcích
+//Vytvořte řádky v tabulce a poté buňky v řádcích
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Sample text in cell");
 // Přidejte buňku, která obsahuje obrázek
 Aspose.Pdf.Cell cell2 = row1.Cells.Add();
-// Přidejte obrázek do buňky tabulky
+//Přidejte obrázek do buňky tabulky
 cell2.Paragraphs.Add(img);
 row1.Cells.Add("Previous cell with image");
 row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
-// Uložte dokument
+//Uložte dokument
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
 ## Závěr
 
-tomto tutoriálu jsme probrali podrobný návod, jak přidat obrázek do buňky tabulky pomocí Aspose.PDF pro .NET. Začali jsme nastavením dokumentu, vytvořením stránky a přidáním tabulky. Poté nastavíme výchozí ohraničení buňky a šířku sloupců. Ukázali jsme, jak přidat obrázek do buňky tabulky a upravit vertikální zarovnání buňky. Nakonec jsme upravený dokument uložili. Pomocí těchto kroků můžete efektivně vylepšit své dokumenty PDF pomocí obrázků v buňkách tabulky.
+V tomto tutoriálu jsme probrali podrobný návod, jak přidat obrázek do buňky tabulky pomocí Aspose.PDF pro .NET. Začali jsme nastavením dokumentu, vytvořením stránky a přidáním tabulky. Poté nastavíme výchozí ohraničení buňky a šířku sloupců. Ukázali jsme, jak přidat obrázek do buňky tabulky a upravit vertikální zarovnání buňky. Nakonec jsme upravený dokument uložili. Pomocí těchto kroků můžete efektivně vylepšit své dokumenty PDF pomocí obrázků v buňkách tabulky.
 
 ### FAQ
 
@@ -165,7 +165,7 @@ Odpověď: Ano, pomocí Aspose.PDF for .NET můžete přidat více obrázků do 
 
 #### Otázka: Mohu upravit velikost a umístění obrázku v buňce tabulky?
 
- Odpověď: Ano, můžete upravit velikost a umístění obrázku v buňce tabulky úpravou vlastností`Image`objekt. Můžete nastavit šířku a výšku obrázku a také zarovnání v rámci buňky.
+ Odpověď: Ano, můžete upravit velikost a umístění obrázku v buňce tabulky úpravou vlastností`Image` objekt. Můžete nastavit šířku a výšku obrázku a také zarovnání v rámci buňky.
 
 #### Otázka: Mohu přidat obrázky do tabulky s dynamickým počtem řádků a sloupců?
 

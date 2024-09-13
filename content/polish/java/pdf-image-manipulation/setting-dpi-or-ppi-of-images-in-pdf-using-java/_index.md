@@ -10,7 +10,7 @@ url: /pl/java/pdf-image-manipulation/setting-dpi-or-ppi-of-images-in-pdf-using-j
 
 ## Wprowadzenie do ustawiania DPI lub PPI obrazów w PDF za pomocą Java
 
-erze cyfrowej, w której dokumenty są często udostępniane elektronicznie, jakość obrazów w plikach PDF odgrywa kluczową rolę. Podczas pracy z plikami PDF w Javie, istotne jest zrozumienie, jak ustawić DPI (punkty na cal) lub PPI (piksele na cal) obrazów w tych plikach PDF. W tym kompleksowym przewodniku przyjrzymy się procesowi ustawiania DPI lub PPI dla obrazów w plikach PDF przy użyciu Javy, ze szczególnym uwzględnieniem wykorzystania biblioteki Aspose.PDF for Java.
+erze cyfrowej, w której dokumenty są często udostępniane elektronicznie, jakość obrazów w plikach PDF odgrywa kluczową rolę. Podczas pracy z plikami PDF w Javie, istotne jest zrozumienie, jak ustawić DPI (Dots Per Inch) lub PPI (Pixels Per Inch) obrazów w tych plikach PDF. W tym kompleksowym przewodniku przyjrzymy się procesowi ustawiania DPI lub PPI dla obrazów w plikach PDF przy użyciu Javy, ze szczególnym uwzględnieniem wykorzystania biblioteki Aspose.PDF for Java.
 
 ## Pierwsze kroki z Aspose.PDF dla Java
 
@@ -82,4 +82,4 @@ Oczywiście! W naszym przewodniku zamieściliśmy przykłady kodu Java, aby poka
 
 ### Jakie są zalecane wartości DPI/PPI dla obrazów PDF?
 
-Zalecane wartości DPI/PPI zależą od zamierzonego wykorzystania pliku PDF. Do wyświetlania w sieci często wystarcza 72 DPI. Do druku wysokiej jakości zaleca się 300 DPI lub więcej.
+Zalecane wartości DPI/PPI zależą od zamierzonego zastosowania pliku PDF. Do wyświetlania w sieci często wystarcza 72 DPI. Do druku wysokiej jakości zaleca się 300 DPI lub więcej.

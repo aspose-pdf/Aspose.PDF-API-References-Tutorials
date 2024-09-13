@@ -120,7 +120,7 @@ R: O tutorial orienta você no processo passo a passo:
 
 R: Sim, você pode modificar o código para substituir fontes não utilizadas por uma fonte de sua escolha. No código de exemplo fornecido, a fonte "Arial, Bold" é usada como substituição.
 
-####  P: Como é que o`TextFragmentAbsorber` work to remove unused fonts?
+#### P: Como é que o`TextFragmentAbsorber` work to remove unused fonts?
 
  A: O`TextFragmentAbsorber` está configurado com o`TextEditOptions.FontReplace.RemoveUnusedFonts` parâmetro, que identifica fontes não utilizadas dentro dos fragmentos de texto do PDF. Após a absorção, você pode iterar através do`TextFragments` e definir suas fontes para fontes de substituição desejadas.
 

@@ -2,106 +2,121 @@
 title: Szöveg kivonat a bélyegző megjegyzéséből
 linktitle: Szöveg kivonat a bélyegző megjegyzéséből
 second_title: Aspose.PDF for .NET API Reference
-description: Tanulja meg, hogyan vonhat ki egyszerűen szöveget a PDF-dokumentumokban lévő bélyegző megjegyzéseiből az Aspose.PDF for .NET segítségével.
+description: Ebből a lépésről lépésre bemutatott, részletes kódpéldával kiegészített oktatóanyagból megtudhatja, hogyan bonthat ki szöveget egy PDF-formátumú bélyegjegyzetből az Aspose.PDF for .NET használatával.
 type: docs
 weight: 80
 url: /hu/net/programming-with-stamps-and-watermarks/extract-text-from-stamp-annotation/
 ---
-Ebben az oktatóanyagban lépésről lépésre bemutatjuk, hogyan lehet szöveget kivonni egy PDF-dokumentum bélyegzőjegyzetéből az Aspose.PDF for .NET használatával. Megmutatjuk, hogyan használhatja a megadott C# forráskódot a szöveg kinyerésére egy adott bélyegző megjegyzéséből a PDF dokumentum adott oldalán.
+## Bevezetés
 
-## 1. lépés: A környezet beállítása
+Ha PDF fájlokkal dolgozik, nagyon hasznos lehet bizonyos adatok, például szöveg kinyerése a megjegyzésekből. Ebben az oktatóanyagban lépésről lépésre bemutatjuk, hogyan bonthat ki szöveget egy PDF-dokumentum bélyegző megjegyzéseiből az Aspose.PDF for .NET használatával. Ez a nagy teljesítményű könyvtár lehetővé teszi a fejlesztők számára a PDF-fájlok kezelését, lehetővé téve olyan feladatokat, mint a szövegkivonat, a kommentárkezelés és még sok más. Merüljünk el a részletekben, és bontsuk szét az egészet!
 
-Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel:
+## Előfeltételek
 
-- Telepített .NET fejlesztői környezet.
-- A projektben letöltött és hivatkozott Aspose.PDF könyvtár a .NET-hez.
+Mielőtt belevágnánk az oktatóanyagba, van néhány dolog, amire szüksége lesz:
 
-## 2. lépés: A PDF dokumentum betöltése
+-  Aspose.PDF for .NET: telepítenie kell az Aspose.PDF for .NET fájlt. Tudod[töltse le a legújabb verziót innen](https://releases.aspose.com/pdf/net/).
+- Visual Studio: Ez az útmutató feltételezi, hogy a Visual Studiot használja integrált fejlesztői környezetként (IDE).
+- Alapvető C# ismerete: Alapvető ismeretekkel kell rendelkeznie a C# programozásról.
 
-Az első lépés a meglévő PDF dokumentum betöltése a projektbe. Íme, hogyan:
+Győződjön meg arról, hogy beállította ezeket az eszközöket, hogy követhesse az oktatóanyagot.
+
+## Csomagok importálása
+
+Minden .NET-projekt első lépése a szükséges névterek importálása. Az Aspose.PDF használatával csak néhány kulcsfontosságú importálásra lesz szüksége a kezdéshez:
 
 ```csharp
-// A dokumentumok könyvtárának elérési útja.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// Töltse be a dokumentumot
-Document doc = new Document(dataDir + "test.pdf");
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Text;
 ```
 
-Feltétlenül cserélje ki a „DOKUMENTUMKÖNYVTÁR” elemet a PDF-dokumentum könyvtárának tényleges elérési útjára.
+Ezek az importálások a PDF-dokumentumokkal, a megjegyzésekkel és a szövegkivonattal való munkához szükséges funkciókat biztosítják.
 
-## 3. lépés: Szöveg kibontása a bélyegző megjegyzéséből
+Nézzük végig a bélyegfeliratból szöveg kinyerésének folyamatát. Ez magában foglalja a PDF dokumentum betöltését, a bélyegző megjegyzés azonosítását és a szöveges tartalom kibontását.
 
-Most, hogy betöltötte a PDF dokumentumot, kivonhatja a szöveget az adott bélyegző megjegyzéséből. Íme, hogyan:
+## 1. lépés: Töltse be a PDF-dokumentumot
+
+Az első dolog, amit meg kell tennie, hogy betöltse a PDF-fájlt, ahol a bélyegző megjegyzés található. Ebben a példában egy minta PDF-fájlt töltünk be a helyi könyvtárból.
 
 ```csharp
-// Puffer annotáció lekérése
-StampAnnotation annot = doc.Pages[1].Annotations[3] as StampAnnotation;
-
-// Hozzon létre egy szövegelnyelőt
-TextAbsorber ta = new TextAbsorber();
-
-// Tekintse meg a kommentár megjelenését
-XForm ap = annot. Appearance["N"];
-ta.Visit(ap);
-
-// Jelenítse meg a kivont szöveget
-Console.WriteLine(ta.Text);
-```
-
-fenti kód lekéri a bélyegző megjegyzést a PDF-dokumentum megadott oldaláról, majd egy szövegelnyelő segítségével kiemeli a szöveget a megjegyzés megjelenéséből. A kivont szöveg ezután megjelenik a kimenetben.
-
-### Minta forráskód a bélyegjegyzet szövegének kivonásához az Aspose.PDF for .NET használatával 
-```csharp
-
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "test.pdf");
-StampAnnotation annot = doc.Pages[1].Annotations[3] as StampAnnotation;
-TextAbsorber ta = new TextAbsorber();
-XForm ap = annot.Appearance["N"];
-ta.Visit(ap);
-Console.WriteLine(ta.Text);
-
 ```
+
+ Itt a`Document` Az Aspose.PDF által biztosított osztály a PDF-fájl megnyitásához és interakciójához. A`dataDir` változó a fájl elérési útját jelöli. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a PDF tárolási útvonalával.
+
+## 2. lépés: Azonosítsa a bélyegző megjegyzést
+
+PDF-annotációkat típusuk és a dokumentumon belüli elhelyezkedésük alapján azonosítjuk. Esetünkben egy bélyegző megjegyzést szeretnénk találni egy adott oldalon. Íme, hogyan kell csinálni:
+
+```csharp
+StampAnnotation annot = doc.Pages[1].Annotations[3] as StampAnnotation;
+```
+
+Ebben a kódsorban:
+- `doc.Pages[1]`: A dokumentum első oldalának megnyitása.
+- `Annotations[3]`: Az oldal negyedik megjegyzésére vonatkozik (mivel az indexelés 0-tól kezdődik).
+- `as StampAnnotation` : A kommentárt a`StampAnnotation` objektum, amely az annotáció konkrét típusa, amellyel foglalkozunk.
+
+## 3. lépés: Hozzon létre egy szövegelnyelőt
+
+Ahhoz, hogy szöveget kinyerhessünk a bélyegző megjegyzéséből, szövegelnyelőt kell használnunk. Ez az eszköz segít abban, hogy elnyeljük vagy rögzítsük a szöveget a PDF egy adott területéről, ebben az esetben a megjegyzésről.
+
+```csharp
+TextAbsorber ta = new TextAbsorber();
+```
+
+ A`TextAbsorber` osztály célja a szöveg kinyerésére a dokumentum bármely részéből, és ezzel fogjuk megcélozni a kommentár megjelenését.
+
+## 4. lépés: Bontsa ki a bélyegző megjegyzés megjelenését
+
+PDF-fájlokban található bélyegjegyzeteknek van egy hozzárendelt megjelenése, általában XForm formájában tárolva. Ezt a megjelenést kell lekérnünk, hogy hozzáférhessünk a bélyegzőn belüli tényleges szöveghez.
+
+```csharp
+XForm ap = annot.Appearance["N"];
+```
+
+Itt:
+- `annot.Appearance["N"]`: Lekéri az "N" nevű megjelenési adatfolyamot (amely a megjegyzés normál megjelenését jelenti).
+
+## 5. lépés: Bontsa ki a szöveges tartalmat
+
+ Most, hogy megvan a megjelenés, használhatjuk a`TextAbsorber` hogy látogassa meg a megjelenést és rögzítse a szöveget.
+
+```csharp
+ta.Visit(ap);
+```
+
+ A`Visit` módszer lehetővé teszi a`TextAbsorber` hogy elemezze a megjelenést és kivonja az abba beágyazott szöveges tartalmat.
+
+## 6. lépés: Jelenítse meg a kivont szöveget
+
+Végül a szöveg kibontása után kiírhatjuk a konzolra, vagy tárolhatjuk további felhasználás céljából.
+
+```csharp
+Console.WriteLine(ta.Text);
+```
+
+Ez az egyszerű kódsor megjeleníti a kivont szöveget a konzol ablakában. Igényei szerint fájlba is mentheti, vagy tovább manipulálhatja.
 
 ## Következtetés
 
-Gratulálok ! Megtanulta, hogyan lehet szöveget kivonni egy PDF-dokumentum bélyegző megjegyzéséből az Aspose.PDF for .NET használatával. Most már használhatja ezt a módszert a PDF-dokumentumok más megjegyzéseiből való szöveg kivonására.
+PDF-dokumentumokban található megjegyzésekkel, különösen a bélyegzőkkel való munkavégzés jelentős funkciókkal bővítheti alkalmazásait. Az Aspose.PDF for .NET segítségével robusztus eszközkészlettel rendelkezik, amelyek megkönnyítik az adatok kinyerését, a megjegyzések kezelését és a PDF-ekkel való értelmes interakciót. Ebben az oktatóanyagban megmutattuk, hogyan lehet szöveget kinyerni a bélyegző megjegyzéseiből néhány egyszerű lépésben. Most Önön a sor, hogy kísérletezzen ezekkel a funkciókkal projektjei során!
 
-### GYIK a bélyegjegyzet szövegének kivonásához
+## GYIK
 
-#### K: Mi az a bélyegző megjegyzés egy PDF-dokumentumban, és miért kell szöveget kivonnom belőle?
+### Kivonhatok szöveget más típusú megjegyzésekből az Aspose.PDF használatával?  
+Igen, az Aspose.PDF lehetővé teszi a szöveg kinyerését különféle típusú megjegyzésekből, például szöveges megjegyzésekből, szabad szöveges megjegyzésekből és egyebekből, nem csak bélyegző megjegyzésekből.
 
-V: A PDF-dokumentumban található bélyegző megjegyzés olyan grafikus elem, amely további információk, például vízjel vagy gumibélyegző biztosítására használható. Szöveg kinyerése egy bélyegjegyzetből akkor hasznos, ha szövegalapú tartalmat szeretne lekérni ezekből a megjegyzésekből, amelyek tartalmazhatnak megjegyzéseket, címkéket vagy egyéb szöveges információkat.
+### Az Aspose.PDF támogatja az egyéni megjegyzések hozzáadását?  
+Teljesen! Az Aspose.PDF támogatja az egyéni megjegyzések létrehozását és hozzáadását PDF-dokumentumokhoz, így rugalmasságot biztosít az adatok kezelésében és bemutatásában.
 
-#### K: Hogyan bontja ki a megadott C#-forráskód a szöveget a bélyegző megjegyzéséből?
+### Kivonhatok képeket a bélyegjegyzetekből?  
+Igen, hasonló módszerekkel kinyerhet képeket a bélyegjegyzetekből, ha hozzáfér a megjelenéshez és lekéri a képadatokat.
 
- V: A mellékelt forráskód bemutatja, hogyan lehet szöveget kivonni egy adott bélyegző megjegyzésből a PDF-dokumentum adott oldalán. Az Aspose.PDF könyvtárat használja a bélyegző megjegyzésének lekéréséhez, a megjelenés meglátogatásához egy`TextAbsorber`, majd megjeleníti a kivont szöveget a kimenetben.
+### Milyen egyéb funkciókat kínál az Aspose.PDF for .NET?  
+Az Aspose.PDF for .NET funkciók széles skáláját kínálja, beleértve a szövegkezelést, az űrlapmezők kezelését, a dokumentumkonverziót és még sok mást.
 
-#### K: Kivonhatok-e szöveget különböző típusú megjegyzésekből hasonló megközelítéssel?
-
-V: Igen, hasonló megközelítést használhat más típusú megjegyzésekből, például szöveges megjegyzésekből vagy felugró megjegyzésekből szöveg kinyerésére. Módosítania kell a kódot, hogy megcélozza azt a konkrét típusú megjegyzést, amelyből szöveget szeretne kivonni.
-
-####  K: Mi a célja a`TextAbsorber` class in the code?
-
- V: A`TextAbsorber` osztály a PDF-dokumentum különböző részeinek szövegének kinyerésére szolgál, beleértve a bélyegző megjegyzéseket is. "Elnyeli" vagy rögzíti a PDF meghatározott területén vagy elemében található szöveges tartalmat.
-
-#### K: Hogyan azonosíthatom be azt a bélyegző megjegyzést, amelyből szöveget szeretnék kivonni?
-
- V: A megadott kódban a bélyegző annotáció azonosítása a`Annotations` egy adott oldal gyűjteménye, és az index segítségével lekérheti a kívánt megjegyzést. Módosíthatja az indexet, vagy más kritériumok segítségével azonosíthatja a célfeljegyzést.
-
-#### K: Kivonhatok szöveget több bélyegző megjegyzésből ugyanazon az oldalon?
-
- V: Igen, módosíthatja a kódot, hogy végigfusson a`Annotations`egy oldal gyűjteménye, szűrje ki a bélyegző megjegyzéseket, és mindegyikből kinyerje ki a szöveget.
-
-#### K: Mi a teendő, ha a bélyegző megjegyzésének nincs szöveges tartalma? Működni fog még a kód?
-
-V: A kód továbbra is működik, de kibontja és üres karakterláncot jelenít meg, ha a bélyegző megjegyzés megjelenése nem tartalmaz szöveges tartalmat.
-
-#### K: Hogyan menthetem el a kicsomagolt szöveget fájlba ahelyett, hogy a kimenetben jelenítené meg?
-
- V: Módosíthatja a kódot, hogy a kibontott szöveget fájlba mentse, ahelyett, hogy a konzolon jelenítené meg. Egyszerűen cserélje ki a`Console.WriteLine` utasítás kóddal a szöveg fájlba írásához.
-
-#### K: Hogyan használhatom a kivont szöveget további feldolgozáshoz vagy elemzéshez?
-
-V: Miután a megadott módszerrel kibontotta a szöveget, eltárolhatja azt egy változóban, módosíthatja, elemezheti, vagy szükség szerint integrálhatja az alkalmazás más részeibe.
+### Ingyenes az Aspose.PDF for .NET?  
+ Az Aspose.PDF for .NET ingyenes próbaverziót kínál, de a szolgáltatások teljes készletének eléréséhez licencet kell vásárolnia. Jelentkezni is lehet a[ideiglenes engedély](https://purchase.aspose.com/temporary-license/).

@@ -63,7 +63,7 @@ tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
 Ahora, agreguemos filas y celdas a la tabla. Crearemos una nueva fila y le agregaremos celdas:
 
 ```csharp
-// Crea filas en la tabla y luego celdas en las filas.
+//Crea filas en la tabla y luego celdas en las filas.
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -117,7 +117,7 @@ margin.Right = 5f;
 margin.Bottom = 5f;
 // Establezca el relleno de celda predeterminado en el objeto MarginInfo
 tab1.DefaultCellPadding = margin;
-// Crea filas en la tabla y luego celdas en las filas.
+//Crea filas en la tabla y luego celdas en las filas.
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -145,7 +145,7 @@ Console.WriteLine("\nCell and table border width setup successfully.\nFile saved
 
 #### P: ¿Puedo establecer diferentes márgenes o rellenos para celdas individuales en una tabla?
 
-R: Sí, puede configurar distintos márgenes o rellenos para celdas individuales en una tabla utilizando Aspose.PDF para .NET. En el ejemplo proporcionado, configuramos el relleno de celda predeterminado para toda la tabla utilizando el`DefaultCellPadding` propiedad. Para establecer un relleno diferente para celdas específicas, puede acceder a la`MarginInfo` de cada celda individualmente y modificar sus márgenes.
+ R: Sí, puede configurar distintos márgenes o rellenos para celdas individuales en una tabla utilizando Aspose.PDF para .NET. En el ejemplo proporcionado, configuramos el relleno de celda predeterminado para toda la tabla utilizando el`DefaultCellPadding` propiedad. Para establecer un relleno diferente para celdas específicas, puede acceder a la`MarginInfo` de cada celda individualmente y modificar sus márgenes.
 
 #### P: ¿Cómo puedo cambiar el color o el estilo del borde de la tabla?
 
@@ -161,4 +161,4 @@ R: Sí, puede agregar encabezados o pies de página a la tabla mediante Aspose.P
 
 #### P: ¿Puedo agregar imágenes a las celdas de la tabla en lugar de texto?
 
- R: Sí, puede agregar imágenes a las celdas de la tabla usando Aspose.PDF para .NET. En lugar de crear una`TextFragment` objeto, puedes crear un`Image` objeto, cargue el archivo de imagen y agréguelo a la celda deseada usando el`cell.Paragraphs.Add(image);` Método. Esto le permite insertar imágenes en la tabla junto con el contenido del texto.
+ R: Sí, puede agregar imágenes a las celdas de la tabla usando Aspose.PDF para .NET. En lugar de crear una`TextFragment` objeto, puedes crear un`Image` objeto, cargue el archivo de imagen y agréguelo a la celda deseada usando el`cell.Paragraphs.Add(image);`Método. Esto le permite insertar imágenes en la tabla junto con el contenido del texto.

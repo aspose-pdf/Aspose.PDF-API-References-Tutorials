@@ -1,13 +1,13 @@
 ---
 title: Skapa PDF med taggad text
 linktitle: Skapa PDF med taggad text
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Steg för steg guide för att skapa en PDF med taggad text med Aspose.PDF för .NET.
 type: docs
 weight: 50
 url: /sv/net/programming-with-tagged-pdf/create-pdf-with-tagged-text/
 ---
-den här handledningen kommer vi att ge dig en steg-för-steg-guide om hur du skapar ett PDF-dokument med taggad text med Aspose.PDF för .NET. Aspose.PDF är ett kraftfullt bibliotek som låter dig skapa, manipulera och konvertera PDF-dokument programmatiskt. Med hjälp av de taggade innehållsstrukturfunktionerna i Aspose.PDF kan du lägga till taggad text till ditt PDF-dokument.
+I den här handledningen kommer vi att ge dig en steg-för-steg-guide om hur du skapar ett PDF-dokument med taggad text med Aspose.PDF för .NET. Aspose.PDF är ett kraftfullt bibliotek som låter dig skapa, manipulera och konvertera PDF-dokument programmatiskt. Med hjälp av de taggade innehållsstrukturfunktionerna i Aspose.PDF kan du lägga till taggad text till ditt PDF-dokument.
 
 ## Förutsättningar
 
@@ -22,7 +22,7 @@ För att komma igång, skapa ett nytt projekt i Visual Studio och lägg till en 
 
 ## Steg 2: Importera de nödvändiga namnrymden
 
-I din C#-kodfil, importera de namnutrymmen som krävs för att komma åt klasserna och metoderna som tillhandahålls av Aspose.PDF:
+din C#-kodfil, importera de namnutrymmen som krävs för att komma åt klasserna och metoderna som tillhandahålls av Aspose.PDF:
 
 ```csharp
 using System;
@@ -91,7 +91,7 @@ document.Save( dataDir + "PDFwithTaggedText.pdf");
 
 ## Slutsats
 
-den här handledningen lärde du dig hur du skapar ett PDF-dokument med taggad text med Aspose.PDF för .NET. Aspose.PDFs markerade innehållsstrukturfunktioner låter dig strukturera och organisera din text för bättre tillgänglighet och semantik.
+I den här handledningen lärde du dig hur du skapar ett PDF-dokument med taggad text med Aspose.PDF för .NET. Aspose.PDFs markerade innehållsstrukturfunktioner låter dig strukturera och organisera din text för bättre tillgänglighet och semantik.
 
 ### FAQ's
 
@@ -113,13 +113,13 @@ S: Kodexemplet visar hur man skapar ett PDF-dokument, definierar olika taggade t
 
 #### F: Hur kan jag anpassa de taggade textelementen, som rubriker och stycken?
 
- S: Du kan anpassa de taggade textelementen genom att använda lämpliga metoder, som t.ex`CreateHeaderElement` och`CreateParagraphElement` , och ställa in egenskaper som`ActualText` för att ge meningsfull text och semantik.
+ S: Du kan anpassa de taggade textelementen genom att använda lämpliga metoder, som t.ex`CreateHeaderElement` och`CreateParagraphElement` , och ställa in egenskaper som`ActualText` att ge meningsfull text och semantik.
 
 #### F: Kan jag lägga till andra taggade textelement, som listor eller länkar, med liknande tekniker?
 
 S: Ja, du kan lägga till andra taggade textelement som listor, länkar eller andra anpassade strukturer med liknande tekniker. Aspose.PDF tillhandahåller olika metoder för att skapa olika typer av taggat innehåll, så att du kan förbättra dokument semantik.
 
-####  F: Hur fungerar`SetTitle` method contribute to the PDF document's tagged text?
+#### F: Hur fungerar`SetTitle` method contribute to the PDF document's tagged text?
 
  A: Den`SetTitle` metoden anger titeln på PDF-dokumentets taggade innehåll och ger en kort beskrivning av dokumentets syfte eller ämne. Denna information hjälper användare att förstå sammanhanget för den taggade texten.
 
@@ -127,9 +127,9 @@ S: Ja, du kan lägga till andra taggade textelement som listor, länkar eller an
 
 S: Taggad text ger dokumentet en semantisk betydelse, vilket gör det mer tillgängligt för användare med funktionshinder eller de som använder hjälpmedel. Skärmläsare och andra hjälpmedel kan tolka och presentera taggad text för förbättrad användarupplevelse.
 
-####  F: Hur fungerar`SetLanguage` method enhance the tagged text in a PDF document?
+#### F: Hur fungerar`SetLanguage` method enhance the tagged text in a PDF document?
 
- A: Den`SetLanguage`metod ställer in språkattributet för PDF-dokumentets taggade innehåll. Detta hjälper till att indikera språket som den taggade texten är skriven på, förbättrar tillgängligheten och möjliggör korrekt språkspecifik rendering.
+ A: Den`SetLanguage` metod ställer in språkattributet för PDF-dokumentets taggade innehåll. Detta hjälper till att indikera språket som den taggade texten är skriven på, förbättrar tillgängligheten och möjliggör korrekt språkspecifik rendering.
 
 #### F: Är det möjligt att lägga till andra element, som bilder eller multimedia, tillsammans med taggad text med liknande tekniker?
 

@@ -126,7 +126,7 @@ margin.Bottom = 5f;
 // MarginInfo 개체에 기본 셀 패딩을 설정합니다.
 tab1.DefaultCellPadding = margin;
 
-// 표에 행을 만든 다음 행에 셀을 만듭니다.
+//표에 행을 만든 다음 행에 셀을 만듭니다.
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

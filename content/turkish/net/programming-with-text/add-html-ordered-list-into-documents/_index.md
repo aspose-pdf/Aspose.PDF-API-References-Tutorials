@@ -47,7 +47,7 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 ```
 
 ## Adım 6: Belgeye bir sayfa ekleyin
- Belgeye yeni bir sayfa eklemek için şunu kullanın:`Add` yöntemi`Pages`koleksiyon. Sağlanan kodda, yeni sayfa değişkene atanır`page`.
+ Belgeye yeni bir sayfa eklemek için şunu kullanın:`Add` yöntemi`Pages` koleksiyon. Sağlanan kodda, yeni sayfa değişkene atanır`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -81,7 +81,7 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 Page page = doc.Pages.Add();
 // Sayfanın içine HtmlFragment ekleyin
 page.Paragraphs.Add(t);
-// Sonuç PDF dosyasını kaydedin
+//Sonuç PDF dosyasını kaydedin
 doc.Save(outFile);
 ```
 
@@ -115,7 +115,7 @@ using Aspose.Pdf.Text;
 
 #### S: Belgedeki bir sayfaya HTML sıralı listesini nasıl eklerim?
 
- A: 7. Adımda şunları ekleyeceksiniz:`HtmlFragment` nesne (`t` ) kullanarak sayfaya`Add` yöntemi`Paragraphs`koleksiyon. Bu, HTML sıralı listesini belgeye sorunsuz bir şekilde entegre edecektir.
+ A: 7. Adımda şunları ekleyeceksiniz:`HtmlFragment` nesne (`t` ) kullanarak sayfaya`Add` yöntemi`Paragraphs` koleksiyon. Bu, HTML sıralı listesini belgeye sorunsuz bir şekilde entegre edecektir.
 
 #### S: Ortaya çıkan PDF belgesini nasıl kaydedebilirim?
 

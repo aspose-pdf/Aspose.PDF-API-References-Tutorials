@@ -7,41 +7,79 @@ type: docs
 weight: 190
 url: /ko/net/programming-with-document/getwarningsforfontsubstitution/
 ---
-.NET용 Aspose.PDF는 개발자가 .NET 애플리케이션에서 PDF 파일을 만들고, 편집하고, 변환할 수 있도록 하는 인기 있는 PDF 조작 라이브러리입니다. 이 라이브러리에서 제공하는 기능 중 하나는 PDF 문서를 열 때 글꼴 대체 경고를 감지하는 기능입니다. 이 튜토리얼에서는 다음을 사용하는 단계를 안내합니다.`GetWarningsForFontSubstitution` PDF 문서를 열 때 글꼴 대체 경고를 감지하는 Aspose.PDF for .NET의 기능입니다.
+## 소개
 
-## 1단계: .NET용 Aspose.PDF 설치
+문서 처리의 세계에서 PDF가 의도한 대로 정확하게 보이도록 하는 것은 매우 중요합니다. PDF를 열었는데 글꼴이 모두 틀렸다는 것을 발견한 적이 있습니까? 이는 문서에 사용된 원래 글꼴을 PDF를 보고 있는 시스템에서 사용할 수 없을 때 발생할 수 있습니다. 다행히도 Aspose.PDF for .NET은 글꼴 대체 경고를 감지하는 강력한 솔루션을 제공하여 문서의 무결성을 유지할 수 있도록 합니다. 이 가이드에서는 Aspose.PDF for .NET을 사용하여 PDF 문서에서 글꼴 대체 감지를 설정하는 단계를 살펴보겠습니다.
 
- .NET 애플리케이션에서 Aspose.PDF for .NET을 사용하려면 먼저 라이브러리를 설치해야 합니다. 라이브러리의 최신 버전은 다음에서 다운로드할 수 있습니다.[.NET용 Aspose.PDF 다운로드 페이지](https://relases.aspose.com/pdf/net).
+## 필수 조건
 
-라이브러리를 다운로드한 후 ZIP 파일의 내용을 컴퓨터의 폴더로 추출합니다. 그런 다음 .NET 프로젝트에서 Aspose.PDF for .NET DLL에 대한 참조를 추가해야 합니다.
+코드를 살펴보기 전에 꼭 준비해야 할 몇 가지 사항이 있습니다.
 
-## 2단계: PDF 문서 로드
+1. Visual Studio: 컴퓨터에 Visual Studio가 설치되어 있는지 확인하세요. 여기서 .NET 코드를 작성하고 실행합니다.
+2.  .NET용 Aspose.PDF: Aspose.PDF 라이브러리가 필요합니다. 다음에서 다운로드할 수 있습니다.[대지](https://releases.aspose.com/pdf/net/).
+3. C#에 대한 기본 지식: C# 프로그래밍에 익숙하면 코드 조각을 더 잘 이해하는 데 도움이 됩니다.
+4. PDF 문서: 글꼴 대체 감지를 테스트하는 데 사용할 수 있는 샘플 PDF 문서를 준비하세요.
 
- .NET용 Aspose.PDF를 설치하고 .NET 프로젝트의 DLL에 대한 참조를 추가하면 다음을 사용할 수 있습니다.`GetWarningsForFontSubstitution` PDF 문서를 열 때 글꼴 대체 경고를 감지하는 기능.
+## 패키지 가져오기
 
-이 기능을 사용하는 첫 번째 단계는 글꼴 대체 경고를 감지하려는 PDF 문서를 로드하는 것입니다. 이를 위해 다음 코드를 사용할 수 있습니다.
+시작하려면 C# 프로젝트에서 필요한 패키지를 가져와야 합니다. 방법은 다음과 같습니다.
+
+### 새 프로젝트 만들기
+
+Visual Studio를 열고 새 C# 프로젝트를 만듭니다. 단순성을 위해 콘솔 애플리케이션을 선택할 수 있습니다.
+
+### Aspose.PDF 참조 추가
+
+1. 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 버튼으로 클릭합니다.
+2. "NuGet 패키지 관리"를 선택하세요.
+3. "Aspose.PDF"를 검색하여 최신 버전을 설치하세요.
+
+### 네임스페이스 가져오기
+
+C# 파일 맨 위에 Aspose.PDF 네임스페이스를 가져옵니다.
 
 ```csharp
-// PDF 문서로 가는 경로
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
 
-// PDF 문서를 엽니다
+이제 모든 것이 설정되었으니, 글꼴 대체 경고를 감지하는 과정을 관리 가능한 단계로 나누어 보겠습니다.
+
+## 1단계: 문서 경로 정의
+
+먼저 PDF 문서 경로를 지정해야 합니다. Aspose.PDF가 파일을 찾을 곳입니다.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ 바꾸다`"YOUR DOCUMENT DIRECTORY"` PDF 파일이 위치한 실제 경로를 포함합니다.
+
+## 2단계: PDF 문서 열기
+
+ 다음으로, 다음을 사용하여 PDF 문서를 엽니다.`Document` Aspose.PDF에서 제공하는 클래스입니다.
+
+```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
- 위 코드에서 다음을 바꾸세요.`"YOUR DOCUMENT DIRECTORY"` PDF 문서가 있는 디렉토리 경로와 함께. 이 코드는 PDF 문서를 로드합니다.`Document` 개체를 사용하여 글꼴 대체 경고를 감지할 수 있습니다.
+ 이 코드 줄은 새로운 것을 초기화합니다.`Document` PDF 파일에 객체를 추가합니다.
 
-## 3단계: 글꼴 대체 경고 감지
+## 3단계: 글꼴 대체 감지 설정
 
-PDF 문서를 열 때 글꼴 대체 경고를 감지하려면 다음 코드를 사용할 수 있습니다.
+ 이제 글꼴 대체 경고를 감지하는 이벤트 핸들러를 설정할 시간입니다. 다음을 구독해야 합니다.`FontSubstitution` 의 이벤트`Document` 수업.
 
 ```csharp
 doc.FontSubstitution += new Document.FontSubstitutionHandler(OnFontSubstitution);
 ```
 
- 위의 코드에서,`OnFontSubstitution`글꼴 대체 경고가 감지될 때마다 호출되는 메서드입니다. 이 메서드를 사용자 지정하여 원하는 대로 글꼴 대체 경고를 처리할 수 있습니다.
+이 줄은 이벤트를 다음에 정의할 사용자 정의 메서드에 연결합니다.
 
- 다음은 구현 예입니다.`OnFontSubstitution` 방법:
+## 4단계: 글꼴 대체 경고 처리
+
+글꼴 대체 경고를 처리할 메서드를 만들어야 합니다. 이 메서드는 글꼴 대체가 발생할 때마다 호출됩니다.
 
 ```csharp
 private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArgs e)
@@ -50,47 +88,29 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 }
 ```
 
- 위의 코드에서,`OnFontSubstitution` 이 방법은 글꼴 대체 경고가 감지될 때마다 원래 글꼴 이름과 대체된 글꼴 이름을 콘솔에 출력합니다. 이 방법을 사용자 지정하여 원하는 대로 글꼴 대체 경고를 처리할 수 있습니다.
+이 방법에서는 원래 글꼴 이름과 대체된 글꼴 이름을 콘솔에 기록할 수 있습니다. 이렇게 하면 어떤 변경이 이루어졌는지 정확히 알 수 있습니다.
 
-### PDF용 Aspose.NET을 사용하여 글꼴 대체에 대한 경고를 얻기 위한 예제 소스 코드
+## 5단계: 코드 실행
 
- PDF 문서를 열 때 글꼴 대체 경고를 감지하기 위한 전체 소스 코드는 다음과 같습니다.`GetWarningsForFontSubstitution` .NET용 Aspose.PDF의 기능:
-
-```csharp
-// PDF 문서로 가는 경로
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// PDF 문서를 엽니다
-Document doc = new Document(dataDir + "input.pdf");
-
-// 글꼴 대체 경고 감지
-doc.FontSubstitution += new Document.FontSubstitutionHandler(OnFontSubstitution);
-
-// 글꼴 대체 경고 처리
-private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArgs e)
-{
-    Console.WriteLine("Font substitution: {0} => {1}", e.OriginalFontName, e.SubstitutedFontName);
-}
-```
+마지막으로, 애플리케이션을 실행할 수 있습니다. PDF 문서에 글꼴 대체가 있는 경우 콘솔에 경고가 인쇄됩니다.
 
 ## 결론
 
- 이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 PDF 문서를 열 때 글꼴 대체 경고를 감지하는 방법을 설명했습니다.`FontSubstitution`이벤트에서 개발자는 글꼴 대체 상황을 감지하고 애플리케이션의 필요에 따라 처리할 수 있습니다. Aspose.PDF for .NET은 글꼴 대체 경고를 감지하고 처리하는 간단한 API를 제공하여 개발자가 다양한 시스템에서 PDF 문서의 시각적 충실성과 일관성을 보장할 수 있도록 돕습니다.
+PDF 문서에서 글꼴 대체 경고를 감지하는 것은 파일의 시각적 무결성을 유지하는 데 필수적입니다. Aspose.PDF for .NET을 사용하면 이 프로세스가 간단하고 효율적입니다. 이 가이드에 설명된 단계를 따르면 글꼴 대체 감지를 쉽게 설정하고 PDF가 의도한 대로 표시되도록 할 수 있습니다.
 
-### 자주 묻는 질문
+## 자주 묻는 질문
 
-#### 질문: PDF 문서의 글꼴 대체란 무엇인가요?
+### 글꼴 대체란 무엇인가요?
+글꼴 대체는 문서에 사용된 원래 글꼴을 사용할 수 없고 대신 다른 글꼴을 사용하는 경우 발생합니다.
 
-A: PDF 문서의 글꼴 대체는 문서에 사용된 글꼴이 사용 가능하지 않거나 파일에 내장되어 있지 않을 때 발생합니다. 이러한 경우 뷰어 또는 프린터는 누락된 글꼴을 시스템에서 사용할 수 있는 유사한 글꼴로 대체합니다. 글꼴 대체는 문서의 모양과 레이아웃에 영향을 미칠 수 있습니다.
+### 글꼴 대체를 방지하려면 어떻게 해야 하나요?
+글꼴 대체를 방지하려면 PDF에 사용된 모든 글꼴이 문서 내에 포함되어 있는지 확인하세요.
 
-#### 질문: 글꼴 대체를 감지하는 것이 중요한 이유는 무엇입니까?
+### Aspose.PDF를 무료로 사용할 수 있나요?
+네, Aspose.PDF에서는 기능을 테스트해 볼 수 있는 무료 평가판을 제공합니다.
 
-A: 글꼴 대체는 PDF 문서의 시각적 충실도와 레이아웃에 영향을 미칠 수 있으므로 감지하는 것이 중요합니다. 글꼴 대체 경고를 감지하면 개발자는 글꼴이 대체되는 상황을 식별하고 적절한 조치를 취하여 다양한 시스템에서 문서의 시각적 모양이 일관되도록 할 수 있습니다.
+### 더 많은 문서는 어디에서 찾을 수 있나요?
+ .NET에 대한 Aspose.PDF에서 자세한 문서를 찾을 수 있습니다.[여기](https://reference.aspose.com/pdf/net/).
 
-#### 질문: 글꼴 대체 경고를 어떻게 처리할 수 있나요?
-
- A: 글꼴 대체 경고를 처리하려면 구독을 신청하세요.`FontSubstitution` 의 이벤트`Document` 클래스와 이벤트를 처리하기 위한 사용자 정의 메서드 제공. 이 사용자 정의 메서드에서 글꼴 대체 경고를 기록하고, 사용자에게 알리거나, 애플리케이션의 요구 사항에 따라 다른 작업을 수행할 수 있습니다.
-
-#### 질문: 글꼴 대체 경고 처리를 사용자 정의할 수 있나요?
-
- A: 예, 글꼴 대체 경고 처리를 사용자 정의할 수 있습니다. 이를 처리하기 위한 사용자 정의 메서드를 제공합니다.`FontSubstitution`이벤트. 이 사용자 지정 방법에서는 글꼴 대체 경고를 기록하고, 사용자에게 알리거나, 애플리케이션 요구 사항에 따라 다른 적절한 조치를 취할 수 있습니다.
+### Aspose.PDF에 대한 지원은 어떻게 받을 수 있나요?
+ 방문하면 지원을 받을 수 있습니다.[Aspose 지원 포럼](https://forum.aspose.com/c/pdf/10).

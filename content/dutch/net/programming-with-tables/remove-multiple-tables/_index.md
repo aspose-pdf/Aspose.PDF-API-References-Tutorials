@@ -40,7 +40,7 @@ absorb.Visit(pdfDocument.Pages[1]);
 Om de tabellen te kunnen verwijderen, moeten we een kopie van de tabellenverzameling hebben:
 
 ```csharp
-//Ontvang een exemplaar van de tafelcollectie
+// Ontvang een exemplaar van de tafelcollectie
 AbsorbedTable[] tables = new AbsorbedTable[absorb.TableList.Count];
 absorb.TableList.CopyTo(tables, 0);
 ```
@@ -96,7 +96,7 @@ Gefeliciteerd! U hebt nu geleerd hoe u meerdere tabellen in een PDF-document ver
 
 #### V: Kan ik specifieke tabellen verwijderen in plaats van alle tabellen uit een PDF-document?
 
-A: Ja, u kunt specifieke tabellen verwijderen in plaats van alle tabellen in een PDF-document met Aspose.PDF voor .NET. In het gegeven voorbeeld worden alle tabellen op de tweede pagina verwijderd. U kunt de code echter aanpassen om specifieke tabellen te targeten en te verwijderen op basis van uw vereisten. Om dit te doen, moet u de tabellen identificeren die u wilt verwijderen en vervolgens de`absorber.Remove(table)` methode voor elke specifieke tabel die u wilt verwijderen.
+ A: Ja, u kunt specifieke tabellen verwijderen in plaats van alle tabellen in een PDF-document met Aspose.PDF voor .NET. In het gegeven voorbeeld worden alle tabellen op de tweede pagina verwijderd. U kunt de code echter aanpassen om specifieke tabellen te targeten en te verwijderen op basis van uw vereisten. Om dit te doen, moet u de tabellen identificeren die u wilt verwijderen en vervolgens de`absorber.Remove(table)` methode voor elke specifieke tabel die u wilt verwijderen.
 
 #### V: Hoe kan ik tabellen van meerdere pagina's in een PDF-document verwijderen?
 
@@ -104,7 +104,7 @@ A: Ja, u kunt specifieke tabellen verwijderen in plaats van alle tabellen in een
 
 #### V: Wat gebeurt er als ik een tabel probeer te verwijderen die niet op de opgegeven pagina bestaat?
 
-A: Als u probeert een tabel te verwijderen die niet bestaat op de opgegeven pagina, zal dit niet resulteren in een fout.`absorber.Remove(table)` Met deze methode wordt het verzoek tot verwijdering gewoon genegeerd en blijft het PDF-document ongewijzigd.
+ A: Als u probeert een tabel te verwijderen die niet bestaat op de opgegeven pagina, zal dit niet resulteren in een fout.`absorber.Remove(table)` Met deze methode wordt het verzoek tot verwijdering gewoon genegeerd en blijft het PDF-document ongewijzigd.
 
 #### V: Kan ik het verwijderen van tabellen ongedaan maken nadat ik het document heb opgeslagen?
 

@@ -2,58 +2,107 @@
 title: Znaczki Numeru Strony W Pliku PDF
 linktitle: Znaczki Numeru Strony W Pliku PDF
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak dodać znaczniki numeracji stron do pliku PDF za pomocą Aspose.PDF dla platformy .NET.
+description: Dowiedz się, jak dodawać numery stron do plików PDF za pomocą Aspose.PDF dla platformy .NET, korzystając z naszego prostego przewodnika z przykładem kodu.
 type: docs
 weight: 160
 url: /pl/net/programming-with-stamps-and-watermarks/page-number-stamps/
 ---
-W tym samouczku pokażemy Ci krok po kroku, jak dodać stemple z numerami stron w pliku PDF za pomocą Aspose.PDF dla .NET. Użyjemy dostarczonego kodu źródłowego C#, aby otworzyć istniejący dokument PDF, utworzyć stempel z numerem strony, ustawić jego właściwości i dodać go do określonej strony w pliku PDF.
+## Wstęp
 
-## Krok 1: Konfigurowanie środowiska
+Czy kiedykolwiek zmagałeś się z dokumentem PDF, życząc sobie, aby miał numery stron dla łatwiejszej nawigacji? Niezależnie od tego, czy jesteś studentem dzielącym się notatkami, profesjonalistą prezentującym raporty, czy osobą zarządzającą dokumentami wielostronicowymi, dodawanie numerów stron może naprawdę poprawić przejrzystość plików PDF. Na szczęście dzięki potężnej bibliotece Aspose.PDF dla .NET możesz z łatwością dodawać stemple z numerami stron do dokumentów PDF. W tym przewodniku przeprowadzimy Cię przez cały proces krok po kroku, zapewniając, że posiadasz całą potrzebną wiedzę. Zanurzmy się!
 
-Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
+## Wymagania wstępne
 
-- Zainstalowane środowisko programistyczne .NET.
-- Biblioteka Aspose.PDF dla platformy .NET pobrana i wykorzystana w projekcie.
+Zanim zaczniesz dodawać numery stron do dokumentów PDF, upewnij się, że spełnione są następujące wymagania wstępne:
 
-## Krok 2: Ładowanie istniejącego dokumentu PDF
+1. Visual Studio: Upewnij się, że masz zainstalowany Visual Studio w swoim systemie. Tutaj będziesz pisać i wykonywać swój kod.
+2. .NET Framework: Znajomość programowania w języku C# oraz środowiska .NET Framework jest niezbędna, ponieważ Aspose.PDF jest przeznaczony dla aplikacji .NET.
+3.  Biblioteka Aspose.PDF: Bibliotekę Aspose.PDF można pobrać ze strony[Wydania PDF Aspose](https://releases.aspose.com/pdf/net/). 
+4. Podstawowa wiedza na temat plików PDF: Nie musisz być ekspertem, ale podstawowa wiedza na temat działania plików PDF pomoże Ci lepiej zrozumieć ten samouczek.
 
-Pierwszym krokiem jest załadowanie istniejącego dokumentu PDF do projektu. Oto jak to zrobić:
+Gdy już spełnisz te wymagania wstępne, będziesz gotowy, aby zacząć numerować strony!
+
+## Importuj pakiety
+
+Zanim zagłębisz się w kodowanie, musisz upewnić się, że niezbędne pakiety Aspose.PDF są zaimportowane do Twojego projektu. Jest to kluczowe dla płynnego wykorzystania funkcji biblioteki. Oto, jak to zrobić:
+
+### Utwórz nowy projekt
+
+1. Otwórz program Visual Studio.
+2.  Kliknij na`File` >`New` >`Project`.
+3.  Wybierz szablon odpowiedni dla języka C# (np. Aplikacja konsolowa), nadaj mu nazwę i kliknij`Create`.
+
+### Dodaj odniesienie Aspose.PDF
+
+1. Kliknij prawym przyciskiem myszy nazwę projektu w Eksploratorze rozwiązań.
+2.  Kliknij na`Manage NuGet Packages`.
+3.  Szukaj`Aspose.PDF` i zainstaluj najnowszą wersję.
 
 ```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+```
 
-// Otwórz istniejący dokument PDF
+Mając bibliotekę gotową do użycia, możemy zająć się kodowaniem!
+
+Teraz, gdy nasze środowisko jest skonfigurowane, czas dodać stemple numerów stron do pliku PDF. Podzielimy ten proces na jasne kroki, aby ułatwić zrozumienie.
+
+## Krok 1: Określ katalog dokumentów
+
+Na początek musisz określić katalog, w którym znajduje się Twój plik PDF. To jest punkt początkowy Twojego projektu.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Zaktualizuj tę ścieżkę
+```
+
+ Wyjaśnienie: Zamień`"YOUR DOCUMENT DIRECTORY"` ze ścieżką prowadzącą do katalogu zawierającego plik PDF. Jest to krytyczne, ponieważ informuje kod, gdzie znaleźć plik, którym chcesz manipulować.
+
+## Krok 2: Otwórz dokument
+
+Następnie otworzymy istniejący dokument PDF, do którego chcemy dodać stemple z numerami stron.
+
+```csharp
 Document pdfDocument = new Document(dataDir + "PageNumberStamp.pdf");
 ```
 
-Pamiętaj, aby zastąpić frazę „KATALOG DOKUMENTÓW” rzeczywistą ścieżką do katalogu, w którym znajduje się Twój dokument PDF.
+ Wyjaśnienie: Tutaj używamy`Document` klasa dostarczona przez Aspose.PDF do otwierania naszego konkretnego pliku PDF. Upewnij się, że nazwa pliku odpowiada faktycznemu plikowi, który masz w swoim katalogu.
 
-## Krok 3: Tworzenie i konfigurowanie stempla numeracji stron
+## Krok 3: Utwórz stempel z numerem strony
 
-Teraz, gdy dokument PDF jest załadowany, możemy utworzyć bufor numeracji stron i skonfigurować go zgodnie z naszymi potrzebami. Oto jak to zrobić:
+Teraz nadchodzi zabawna część! Stwórzmy stempel z numerem strony, aby dodać go do naszego pliku PDF.
 
 ```csharp
-// Utwórz bufor numerów stron
 PageNumberStamp pageNumberStamp = new PageNumberStamp();
+```
 
-// Określ, czy bufor znajduje się w tle, czy nie
+ Wyjaśnienie:`PageNumberStamp`Klasa ta umożliwi nam utworzenie stempla, który będzie wyświetlał aktualny numer strony w odniesieniu do całkowitej liczby stron w dokumencie.
+
+## Krok 4: Skonfiguruj znaczek
+
+Teraz musisz skonfigurować ustawienia znaczka. Tutaj projektujesz wygląd i zachowanie znaczka.
+
+```csharp
 pageNumberStamp.Background = false;
-
-// Format bufora numeracji stron
 pageNumberStamp.Format = "Page # of " + pdfDocument.Pages.Count;
-
-// Dolny margines bufora numeracji stron
 pageNumberStamp.BottomMargin = 10;
-
-// Poziome wyrównanie bufora numeracji stron
 pageNumberStamp.HorizontalAlignment = HorizontalAlignment.Center;
-
-// Numer początkowy numeracji stron
 pageNumberStamp.StartingNumber = 1;
+```
 
-// Ustaw właściwości tekstu bufora numeru strony
+Wyjaśnienie:
+- `Background = false`:Oznacza to, że znaczek będzie widoczny na pierwszym planie.
+- `Format`: Tutaj ustawiasz format tak, aby wyświetlał „Strona X z Y”, gdzie dynamicznie pobierasz całkowitą liczbę stron w dokumencie.
+- `BottomMargin`: Dostosowuje odległość od dołu strony.
+- `HorizontalAlignment`: Centruje znaczek w poziomie.
+- `StartingNumber`: Ustawia numer strony początkowej, zwykle od 1.
+
+## Krok 5: Ustaw właściwości tekstu
+
+Następnie możesz dostosować wygląd tekstu na znaczku.
+
+```csharp
 pageNumberStamp.TextState.Font = FontRepository.FindFont("Arial");
 pageNumberStamp.TextState.FontSize = 14.0F;
 pageNumberStamp.TextState.FontStyle = FontStyles.Bold;
@@ -61,108 +110,47 @@ pageNumberStamp.TextState.FontStyle = FontStyles.Italic;
 pageNumberStamp.TextState.ForegroundColor = Color.Aqua;
 ```
 
-Powyższy kod tworzy stempel numeru strony z właściwościami takimi jak format numeru strony, dolny margines, wyrównanie poziome, numer początkowy i właściwości tekstu.
+Wyjaśnienie: Te atrybuty konfigurują rodzaj czcionki, jej rozmiar, styl (pogrubiony i kursywę) oraz kolor tekstu w znaczku, aby uczynić go atrakcyjnym wizualnie.
 
-## Krok 4: Dodawanie stempla z numerem strony do konkretnej strony
+## Krok 6: Dodaj znaczek do konkretnej strony
 
-Po skonfigurowaniu stempla numeru strony możemy dodać go do konkretnej strony dokumentu PDF. Oto jak to zrobić:
+Po skonfigurowaniu stempla czas dodać go do określonej strony w dokumencie.
 
 ```csharp
-// Dodaj bufor numeru strony do określonej strony
 pdfDocument.Pages[1].AddStamp(pageNumberStamp);
 ```
 
-Powyższy kod dodaje stempel numeru strony do pierwszej strony dokumentu PDF. Możesz zmienić numer strony w razie potrzeby.
+ Wyjaśnienie: Ten wiersz dodaje znaczek do pierwszej strony pliku PDF. Możesz dostosować`Pages[1]` w razie potrzeby indeksuj inne strony.
 
-## Krok 5: Zapisywanie zmodyfikowanego dokumentu PDF
+## Krok 7: Zapisz dokument wyjściowy
 
-Po dodaniu stempla z numerem strony do dokumentu PDF możemy zapisać zmodyfikowany dokument PDF. Oto jak to zrobić:
+Na koniec zapisz zmodyfikowany dokument PDF, aby zmiany były trwałe.
 
 ```csharp
-// Zapisz zmodyfikowany dokument PDF
-pdfDocument.Save(dataDir + "PageNumberStamp_out.pdf");
-```
-
-Pamiętaj, aby zastąpić frazę „KATALOG DOKUMENTÓW” rzeczywistą ścieżką do katalogu, w którym chcesz zapisać edytowany dokument PDF.
-
-### Przykładowy kod źródłowy dla pieczątek numeracji stron przy użyciu Aspose.PDF dla .NET 
-```csharp
-
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Otwórz dokument
-Document pdfDocument = new Document(dataDir+ "PageNumberStamp.pdf");
-
-// Utwórz stempel z numerem strony
-PageNumberStamp pageNumberStamp = new PageNumberStamp();
-
-// Czy znaczek jest tłem
-pageNumberStamp.Background = false;
-pageNumberStamp.Format = "Page # of " + pdfDocument.Pages.Count;
-pageNumberStamp.BottomMargin = 10;
-pageNumberStamp.HorizontalAlignment = HorizontalAlignment.Center;
-pageNumberStamp.StartingNumber = 1;
-
-// Ustaw właściwości tekstu
-pageNumberStamp.TextState.Font = FontRepository.FindFont("Arial");
-pageNumberStamp.TextState.FontSize = 14.0F;
-pageNumberStamp.TextState.FontStyle = FontStyles.Bold;
-pageNumberStamp.TextState.FontStyle = FontStyles.Italic;
-pageNumberStamp.TextState.ForegroundColor = Color.Aqua;
-
-// Dodaj znaczek do konkretnej strony
-pdfDocument.Pages[1].AddStamp(pageNumberStamp);
 dataDir = dataDir + "PageNumberStamp_out.pdf";
-
-// Zapisz dokument wyjściowy
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nPage number stamp added successfully.\nFile saved at " + dataDir);
-
 ```
+
+Wyjaśnienie: Definiujesz ścieżkę pliku wyjściowego i zapisujesz dokument. Konsola poinformuje Cię, że stempel został pomyślnie dodany i gdzie plik został zapisany.
 
 ## Wniosek
 
-Gratulacje! Nauczyłeś się, jak dodawać stemple numeracji stron do dokumentu PDF za pomocą Aspose.PDF dla .NET. Teraz możesz personalizować swoje dokumenty PDF, dodając wyraźne i informacyjne numery stron.
+Dodawanie stempli z numerami stron do plików PDF za pomocą Aspose.PDF dla .NET jest nie tylko proste, ale również wysoce konfigurowalne. Przeszliśmy przez proces tworzenia stempla z numerami stron krok po kroku, zapewniając jasne wskazówki na każdym etapie. Posiadasz teraz wiedzę, aby ulepszyć swoje dokumenty PDF, czyniąc je bardziej przyjaznymi dla użytkownika i profesjonalnymi. 
 
-### FAQ dotyczące stempli z numerami stron w plikach PDF
+## Najczęściej zadawane pytania
 
-#### P: Czym jest stempel z numerami stron i jak za jego pomocą można dodawać numery stron do pliku PDF?
+### Czy mogę dostosować wygląd numerów stron?  
+Tak! Możesz zmienić czcionkę, rozmiar, kolor i formatowanie numerów stron, jak pokazano w przewodniku.
 
-A: Znacznik numeru strony to funkcja w Aspose.PDF, która umożliwia dodawanie dynamicznych numerów stron do określonych stron dokumentu PDF. W tym samouczku jest to osiągane poprzez utworzenie obiektu PageNumberStamp, skonfigurowanie jego właściwości i dodanie go do wyznaczonej strony.
+### Czy korzystanie z Aspose.PDF jest bezpłatne?  
+ Aspose.PDF oferuje bezpłatną wersję próbną, ale do szerokiego wykorzystania potrzebna będzie licencja. Sprawdź[kup stronę](https://purchase.aspose.com/buy) Więcej informacji znajdziesz tutaj.
 
-#### P: W jaki sposób udostępniony kod źródłowy C# umożliwia dodanie znaczników numeracji stron do pliku PDF?
+### Co zrobić, jeśli napotkam problemy w trakcie wdrażania?  
+ Możesz odwiedzić[Forum wsparcia Aspose](https://forum.aspose.com/c/pdf/10) po pomoc.
 
-A: Kod pokazuje, jak załadować istniejący dokument PDF, utworzyć PageNumberStamp, ustawić różne właściwości (takie jak format, czcionka, wyrównanie itp.), a następnie dodać stempel do określonej strony. Stempel automatycznie oblicza całkowitą liczbę stron i wstawia prawidłowe numery stron.
+### W jaki sposób mogę automatycznie generować numery stron dla wielu stron?  
+Kod przewodnika automatycznie oblicza całkowitą liczbę stron, co ułatwia dostosowywanie go do potrzeb wielu stron.
 
-#### P: Czy mogę dostosować wygląd numeru strony, np. styl czcionki, kolor i rozmiar?
-
-O: Oczywiście, możesz dostosować wygląd stempla z numerem strony, zmieniając właściwości, takie jak czcionka, jej rozmiar, styl (pogrubienie, kursywa itp.) i kolor tekstu.
-
-#### P: Czy można dodawać numery stron do wielu stron dokumentu PDF?
-
-O: Tak, możesz dodać stemple z numerami stron do wielu stron, tworząc wiele obiektów PageNumberStamp i dodając każdy z nich do wybranych stron.
-
-#### P: Czy mogę wybrać, czy numer strony ma być widoczny jako część zawartości strony czy jako element tła?
-
- O: Tak, możesz kontrolować, czy numeracja stron ma być wyświetlana jako część zawartości strony, czy jako element tła, ustawiając`Background` Właściwość PageNumberStamp.
-
-#### P: Jak mogę określić format numeru strony, uwzględniając całkowitą liczbę stron?
-
- A: Kod wykorzystuje`Format`właściwość PageNumberStamp do określania formatu numeru strony. Makro „# of” jest używane do reprezentowania całkowitej liczby stron.
-
-#### P: Co się stanie, jeśli dodam ten sam numer strony do wielu stron?
-
-A: Dodanie tej samej instancji PageNumberStamp do wielu stron spowoduje wyświetlenie prawidłowych numerów stron dla każdej strony. Znacznik automatycznie dostosowuje numer strony i całkowitą liczbę stron.
-
-#### P: Czy mogę dodać numery stron do sekcji nagłówka lub stopki dokumentu PDF?
-
-A: Chociaż elementy PageNumberStamps są zazwyczaj dodawane bezpośrednio do zawartości strony, można użyć FloatingBox lub innych technik, aby umieścić je w sekcjach nagłówka lub stopki.
-
-#### P: Jak określić położenie stempla z numerem strony na stronie?
-
- A: Ten`BottomMargin` I`HorizontalAlignment` Właściwości PageNumberStamp pozwalają kontrolować położenie stempla na stronie.
-
-#### P: Co zrobić, jeśli chcę rozpocząć numerację stron od innego numeru niż 1?
-
- A: Możesz ustawić`StartingNumber`Właściwość PageNumberStamp określająca numer strony początkowej.
+### Czy mogę używać Aspose.PDF w innych językach programowania?  
+Chociaż niniejszy przewodnik skupia się na platformie .NET, Aspose oferuje biblioteki dla języków Java, Python i innych.

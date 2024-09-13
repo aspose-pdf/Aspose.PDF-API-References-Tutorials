@@ -2,7 +2,7 @@
 title: PDF do TeX
 linktitle: PDF do TeX
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak konwertować PDF do TeX za pomocą Aspose.PDF dla .NET dzięki temu przewodnikowi krok po kroku. Idealne dla programistów, którzy chcą poprawić swoje umiejętności przetwarzania dokumentów.
+description: Dowiedz się, jak przekonwertować PDF na TeX za pomocą Aspose.PDF dla .NET dzięki temu przewodnikowi krok po kroku. Idealne dla programistów, którzy chcą poprawić swoje umiejętności przetwarzania dokumentów.
 type: docs
 weight: 190
 url: /pl/net/document-conversion/pdf-to-tex/

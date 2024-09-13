@@ -32,4 +32,4 @@ Java için Aspose.PDF kullanarak PDF'lerden belirli açıklamaların nasıl çı
 ### [Hassas İçeriklere Redaksiyon Uygulayın](./apply-redaction-sensitive-content/)
 Aspose.PDF for Java ile PDF'lerdeki hassas içerikleri sansürlemenin gücünü keşfedin.
 ### [Açıklamaları Kullanarak Metnin Üzerini Çizin](./strike-through-text-using-annotations/)
-Java için Aspose.PDF kullanarak PDF belgelerine üstü çizili metin açıklamaları eklemeyi öğrenin. Hassas belge düzenlemesi için adım adım kılavuzumuzu izleyin.
+Java için Aspose.PDF'yi kullanarak PDF belgelerine üstü çizili metin açıklamaları eklemeyi öğrenin. Hassas belge düzenlemesi için adım adım kılavuzumuzu izleyin.

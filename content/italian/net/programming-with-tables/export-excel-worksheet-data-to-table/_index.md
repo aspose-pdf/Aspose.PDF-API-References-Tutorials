@@ -222,7 +222,7 @@ A: L'esportazione dei dati del foglio di lavoro Excel in una tabella PDF consent
 
 #### D: Posso personalizzare l'aspetto della tabella PDF?
 
-R: Sì, puoi personalizzare l'aspetto della tabella PDF utilizzando varie proprietà fornite da Aspose.PDF per .NET. Nel codice sorgente C# fornito, puoi modificare le larghezze delle colonne, i bordi delle celle, l'allineamento del testo, lo stile del carattere e altro ancora per adattarli ai tuoi requisiti specifici.
+R: Sì, puoi personalizzare l'aspetto della tabella PDF utilizzando varie proprietà fornite da Aspose.PDF per .NET. Nel codice sorgente C# fornito, puoi modificare le larghezze delle colonne, i bordi delle celle, l'allineamento del testo, lo stile del carattere e altro ancora per adattarlo alle tue esigenze specifiche.
 
 #### D: Come faccio a gestire i file Excel con più fogli di lavoro?
 

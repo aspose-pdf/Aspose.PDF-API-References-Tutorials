@@ -96,7 +96,7 @@ Parabéns! Agora você aprendeu como remover uma tabela em um documento PDF usan
 
 #### P: O que acontece se a página especificada não contiver nenhuma tabela?
 
- R: Se a página especificada não contiver nenhuma tabela, o código lançará um`IndexOutOfRangeException` ao tentar acessar`absorb.TableList[0]` . Para evitar esse problema, você deve verificar se`absorb.TableList`contém quaisquer elementos antes de acessar a tabela.
+ R: Se a página especificada não contiver nenhuma tabela, o código lançará um`IndexOutOfRangeException` ao tentar acessar`absorb.TableList[0]` . Para evitar esse problema, você deve verificar se`absorb.TableList` contém quaisquer elementos antes de acessar a tabela.
 
 #### P: Posso remover tabelas de páginas diferentes da primeira página?
 

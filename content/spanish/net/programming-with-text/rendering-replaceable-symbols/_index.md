@@ -121,7 +121,7 @@ A: El tutorial "Representación de símbolos reemplazables en un archivo PDF" de
 
 #### P: ¿Por qué querría representar símbolos reemplazables en un documento PDF?
 
-R: La representación de símbolos reemplazables es útil cuando se necesita generar dinámicamente contenido PDF que incluye información variable o específica del usuario. Estos símbolos actúan como marcadores de posición que se pueden reemplazar con datos reales durante el tiempo de ejecución, como valores de campos de formulario o detalles personalizados.
+R: La representación de símbolos reemplazables resulta útil cuando se necesita generar dinámicamente contenido PDF que incluye información variable o específica del usuario. Estos símbolos actúan como marcadores de posición que se pueden reemplazar con datos reales durante el tiempo de ejecución, como valores de campos de formulario o detalles personalizados.
 
 #### P: ¿Cómo configuro el directorio de documentos?
 

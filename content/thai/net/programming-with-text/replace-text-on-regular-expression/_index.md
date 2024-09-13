@@ -74,7 +74,7 @@ Console.WriteLine("\nText replaced successfully based on a regular expression.\n
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // เปิดเอกสาร
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionPage.pdf");
-// สร้างวัตถุ TextAbsorber เพื่อค้นหาวลีทั้งหมดที่ตรงกับนิพจน์ทั่วไป
+//สร้างวัตถุ TextAbsorber เพื่อค้นหาวลีทั้งหมดที่ตรงกับนิพจน์ทั่วไป
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // ประมาณปี 1999-2000
 // ตั้งค่าตัวเลือกการค้นหาข้อความเพื่อระบุการใช้งานนิพจน์ปกติ
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);

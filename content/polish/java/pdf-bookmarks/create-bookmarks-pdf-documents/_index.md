@@ -10,7 +10,7 @@ url: /pl/java/pdf-bookmarks/create-bookmarks-pdf-documents/
 
 ## Wstęp
 
-erze cyfrowej zarządzanie i nawigowanie po dużych dokumentach PDF może być zniechęcającym zadaniem. Wyobraź sobie, że masz stustronicowy dokument i próbujesz szybko znaleźć określone sekcje. W tym miejscu z pomocą przychodzą zakładki. Zakładki umożliwiają utworzenie klikalnego spisu treści w dokumencie PDF, ułatwiając czytelnikom przechodzenie do określonych sekcji. W tym samouczku pokażemy, jak tworzyć zakładki w dokumentach PDF przy użyciu Aspose.PDF for Java, potężnego interfejsu API, który upraszcza pracę z plikami PDF w aplikacjach Java.
+erze cyfrowej zarządzanie i nawigowanie po dużych dokumentach PDF może być zniechęcającym zadaniem. Wyobraź sobie, że masz stustronicowy dokument i próbujesz szybko znaleźć określone sekcje. W tym miejscu z pomocą przychodzą zakładki. Zakładki umożliwiają utworzenie klikalnego spisu treści w dokumencie PDF, dzięki czemu czytelnicy mogą łatwo przechodzić do określonych sekcji. W tym samouczku pokażemy, jak tworzyć zakładki w dokumentach PDF przy użyciu Aspose.PDF for Java, potężnego interfejsu API, który upraszcza pracę z plikami PDF w aplikacjach Java.
 
 ## Wymagania wstępne
 

@@ -42,7 +42,7 @@ Document doc = new Document();
 ```
 
 ## Adım 5: Belgeye bir sayfa ekleyin
- Belgeye yeni bir sayfa eklemek için şunu kullanın:`Add` yöntemi`Pages`koleksiyon. Sağlanan kodda, yeni sayfa değişkene atanır`page`.
+ Belgeye yeni bir sayfa eklemek için şunu kullanın:`Add` yöntemi`Pages` koleksiyon. Sağlanan kodda, yeni sayfa değişkene atanır`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -159,7 +159,7 @@ HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Tab
 
 #### S: HTML içeriğinin stillerini nasıl geçersiz kılabilirim?
 
- A: 7. Adımda, HTML içeriğinin stillerini değiştirerek üzerine yazacaksınız.`TextState` özellikleri`HtmlFragment` nesne. Örneğin, yazı tipi ailesini "Arial" olarak değiştirebilir ve yazı tipi boyutunu 20 olarak ayarlayabilirsiniz:
+ A: 7. Adımda, HTML içeriğinin stillerini değiştirerek üzerine yazacaksınız.`TextState` özellikleri`HtmlFragment`nesne. Örneğin, yazı tipi ailesini "Arial" olarak değiştirebilir ve yazı tipi boyutunu 20 olarak ayarlayabilirsiniz:
 
 ```csharp
 title.TextState = new TextState("Arial");

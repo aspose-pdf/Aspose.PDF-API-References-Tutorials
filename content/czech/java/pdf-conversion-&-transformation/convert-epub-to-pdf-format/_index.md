@@ -18,7 +18,7 @@ Než se ponoříme do procesu převodu, budete muset nastavit vývojové prostř
 
 1. Stáhnout Aspose.PDF pro Java: Navštivte stránku pro stažení Aspose.PDF pro Java na adrese[zde](https://releases.aspose.com/pdf/java/) a stáhněte si nejnovější verzi.
 
-2. Nainstalujte Aspose.PDF for Java: Postupujte podle pokynů k instalaci dodaných se staženým souborem a nastavte Aspose.PDF for Java ve svém vývojovém prostředí.
+2. Instalace Aspose.PDF for Java: Postupujte podle pokynů k instalaci dodaných se staženým souborem a nastavte Aspose.PDF for Java ve svém vývojovém prostředí.
 
 3. Vytvoření projektu Java: Spusťte nový projekt Java ve vašem preferovaném IDE nebo textovém editoru.
 

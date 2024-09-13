@@ -88,7 +88,7 @@ page.Accept(textFragmentAbsorber);
 
 ## Krok 9: Načtěte extrahované fragmenty textu
 
-Získejte extrahované fragmenty textu pomocí`TextFragments` majetek z`TextFragmentAbsorber` objekt:
+ Získejte extrahované fragmenty textu pomocí`TextFragments` vlastnictví`TextFragmentAbsorber` objekt:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

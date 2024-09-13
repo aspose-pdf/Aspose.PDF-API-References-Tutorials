@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Etapa 5: Adicionar uma página ao documento
- Adicione uma nova página ao documento usando o`Add` método do`Pages`coleção. No código fornecido, a nova página é atribuída à variável`page`.
+ Adicione uma nova página ao documento usando o`Add` método do`Pages` coleção. No código fornecido, a nova página é atribuída à variável`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -118,7 +118,7 @@ R: Na Etapa 6, você criará um loop para adicionar vários fragmentos de texto 
 
 #### P: Como faço para salvar o documento PDF e extrair informações de quebra de linha?
 
- R: Na Etapa 7, você salvará o documento PDF usando o`Save` método do`Document` objeto. Em seguida, você extrairá as informações de quebra de linha usando o`GetNotifications`método da página desejada e salve-o em um arquivo de texto.
+ R: Na Etapa 7, você salvará o documento PDF usando o`Save` método do`Document` objeto. Em seguida, você extrairá as informações de quebra de linha usando o`GetNotifications` método da página desejada e salve-o em um arquivo de texto.
 
 #### P: Qual é a finalidade das informações de quebra de linha extraídas?
 

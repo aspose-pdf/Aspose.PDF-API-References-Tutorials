@@ -2,156 +2,159 @@
 title: Zgrupowane pola wyboru w dokumencie PDF
 linktitle: Zgrupowane pola wyboru w dokumencie PDF
 second_title: Aspose.PDF dla .NET API Reference
-description: Łatwe tworzenie zgrupowanych pól wyboru w dokumentach PDF za pomocą Aspose.PDF dla platformy .NET.
+description: Dowiedz się, jak utworzyć zgrupowane pola wyboru (przyciski radiowe) w dokumencie PDF za pomocą Aspose.PDF dla .NET, korzystając z tego samouczka krok po kroku.
 type: docs
 weight: 170
 url: /pl/net/programming-with-forms/grouped-check-boxes/
 ---
-W tym samouczku pokażemy Ci, jak tworzyć zgrupowane pola wyboru w dokumencie PDF za pomocą Aspose.PDF dla .NET. Wyjaśnimy kod źródłowy C# krok po kroku, aby przeprowadzić Cię przez ten proces.
+## Wstęp
 
-## Krok 1: Przygotowanie
+Tworzenie interaktywnych plików PDF nie jest tak trudne, jak mogłoby się wydawać, zwłaszcza gdy dysponujesz potężnymi narzędziami, takimi jak Aspose.PDF dla .NET. Jednym z interaktywnych elementów, które możesz potrzebować dodać do swoich dokumentów PDF, są zgrupowane pola wyboru, a dokładniej przyciski opcji, które pozwalają użytkownikom wybrać jedną opcję z zestawu. Ten samouczek przeprowadzi Cię przez proces dodawania zgrupowanych pól wyboru (przycisków opcji) do dokumentu PDF przy użyciu Aspose.PDF dla .NET. Niezależnie od tego, czy jesteś początkującym, czy doświadczonym programistą, ten przewodnik będzie dla Ciebie angażujący, szczegółowy i łatwy do naśladowania.
 
-Upewnij się, że zaimportowałeś niezbędne biblioteki i ustawiłeś ścieżkę do katalogu dokumentów:
+## Wymagania wstępne
+
+Zanim przejdziemy do szczegółowego przewodnika, omówmy kilka podstawowych warunków wstępnych:
+
+1.  Aspose.PDF dla .NET: Upewnij się, że masz zainstalowaną bibliotekę Aspose.PDF. Jeśli nie, możesz[pobierz tutaj](https://releases.aspose.com/pdf/net/).
+2. IDE: Musisz mieć przygotowane środowisko programistyczne, np. Visual Studio.
+3. .NET Framework: Projekt powinien być ukierunkowany na wersję .NET Framework zgodną z Aspose.PDF.
+4. Podstawowa znajomość języka C#: Aby płynnie uczestniczyć w zajęciach, wymagana jest znajomość języka C# i obsługi plików PDF.
+5.  Licencja: Aspose.PDF wymaga licencji dla pełnej funkcjonalności. Możesz[uzyskać tymczasową licencję](https://purchase.aspose.com/temporary-license/) jeśli to konieczne.
+
+## Importuj pakiety
+
+Przed rozpoczęciem upewnij się, że zaimportowałeś do projektu niezbędne przestrzenie nazw:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Forms;
 ```
 
-## Krok 2: Utwórz obiekt dokumentu
+Pakiety te zapewniają dostęp do wszystkich klas i metod wymaganych do manipulowania dokumentami PDF, w tym do tworzenia przycisków radiowych i definiowania ich właściwości.
 
-Utwórz obiekt Document:
+W tej sekcji przedstawimy proces tworzenia pogrupowanych pól wyboru (przycisków radiowych) w przejrzystych i łatwych do wykonania krokach.
+
+## Krok 1: Utwórz nowy dokument PDF
+
+ Pierwszym krokiem jest utworzenie instancji`Document` obiekt, który będzie reprezentował Twój plik PDF. Następnie dodaj pustą stronę do dokumentu, na której będziesz umieszczać zgrupowane pola wyboru.
 
 ```csharp
+// Utwórz obiekt dokumentu
 Document pdfDocument = new Document();
-```
 
-## Krok 3: Dodaj stronę do dokumentu PDF
-
-Dodaj stronę do dokumentu PDF:
-
-```csharp
+// Dodaj stronę do pliku PDF
 Page page = pdfDocument.Pages.Add();
 ```
 
-## Krok 4: Utwórz obiekt RadioButtonField
+Tworzy to podstawę do dodawania do pliku PDF elementów, np. przycisków radiowych.
 
-Utwórz obiekt RadioButtonField z numerem strony jako argumentem:
+## Krok 2: Zainicjuj pole przycisku radiowego
+
+Następnie musimy utworzyć`RadioButtonField` obiekt, który będzie zawierał zgrupowane pola wyboru (przyciski radiowe). To pole jest dodawane do konkretnej strony, na której pojawią się pola wyboru.
 
 ```csharp
+// Utwórz obiekt RadioButtonField i przypisz go do pierwszej strony
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## Krok 5: Dodaj opcje przycisków radiowych
+Można to sobie wyobrazić jako pojemnik, w którym będą grupowane poszczególne opcje przycisków radiowych.
 
-Dodaj opcje przycisków radiowych za pomocą obiektu RadioButtonOptionField i określ ich pozycję za pomocą obiektu Rectangle:
+## Krok 3: Dodaj opcje przycisków radiowych
+
+ Teraz dodajmy poszczególne opcje przycisków radiowych do pola. W tym przykładzie dodamy dwa przyciski radiowe i określimy ich pozycje za pomocą`Rectangle` obiekt.
 
 ```csharp
+// Dodaj pierwszą opcję przycisku radiowego i określ jej pozycję za pomocą prostokąta
 RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
 RadioButtonOptionField opt2 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(100, 0, 120, 20));
-opt1.OptionName = "Test1";
-opt2.OptionName = "Test2";
-radio.Add(opt1);
-radio.Add(opt2);
+
+// Ustaw nazwy opcji dla identyfikacji
+opt1.OptionName = "Option1";
+opt2.OptionName = "Option2";
 ```
 
-## Krok 6: Dostosuj opcje przycisków radiowych
+ Tutaj,`Rectangle` obiekt definiuje współrzędne i rozmiar każdego przycisku radiowego na stronie.
 
-Dostosuj opcje przycisków radiowych, ustawiając ich styl, obramowanie i wygląd:
+## Krok 4: Dostosuj styl przycisków radiowych
+
+ Możesz dostosować wygląd przycisków radiowych, ustawiając ich`Style` właściwość. Na przykład, możesz chcieć pola wyboru w kształcie kwadratu lub krzyża.
 
 ```csharp
+// Ustaw styl przycisków radiowych
 opt1.Style = BoxStyle.Square;
-opt2.Style = BoxStyle.Square;
+opt2.Style = BoxStyle.Cross;
+```
+
+Dzięki temu możesz kontrolować wygląd pól wyboru, czyniąc je bardziej przyjaznymi dla użytkownika i atrakcyjnymi wizualnie.
+
+## Krok 5: Skonfiguruj właściwości obramowania
+
+Obramowania odgrywają istotną rolę w ułatwianiu identyfikacji pól wyboru. Tutaj dodamy solidne obramowania wokół każdej opcji przycisku radiowego i zdefiniujemy ich szerokość i kolor.
+
+```csharp
+// Skonfiguruj obramowanie pierwszego przycisku radiowego
 opt1.Border = new Border(opt1);
 opt1.Border.Style = BorderStyle.Solid;
 opt1.Border.Width = 1;
+opt1.Characteristics.Border = Color.Black;
+
+// Skonfiguruj obramowanie drugiego przycisku radiowego
 opt2.Border = new Border(opt2);
-opt2.Border.Width = 1;
 opt2.Border.Style = BorderStyle.Solid;
+opt2.Border.Width = 1;
+opt2.Characteristics.Border = Color.Black;
 ```
 
-## Krok 7: Dodaj przyciski radiowe do formularza
+Ten krok zapewnia, że każdy przycisk opcji będzie miał wyraźnie określoną ramkę, co poprawi czytelność dokumentu.
 
-Dodaj przyciski radiowe do obiektu formularza dokumentu:
+## Krok 6: Dodaj opcje przycisków radiowych do formularza
+
+Teraz dodamy przyciski radiowe do formularza dokumentu. To ostatni krok grupowania pól wyboru w jednym polu.
 
 ```csharp
+// Dodaj pole przycisku radiowego do obiektu formularza dokumentu
 pdfDocument.Form.Add(radio);
 ```
 
-## Krok 8: Zapisz dokument
+Obiekt formularza pełni rolę kontenera dla wszystkich elementów interaktywnych, łącznie z naszymi zgrupowanymi polami wyboru.
 
-Zapisz dokument PDF:
+## Krok 7: Zapisz dokument PDF
+
+Na koniec, gdy wszystko jest już skonfigurowane, możesz zapisać dokument PDF w wybranej lokalizacji.
 
 ```csharp
-dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
+// Zdefiniuj ścieżkę do pliku wyjściowego
+string dataDir = "YOUR DOCUMENT DIRECTORY" + "GroupedCheckBoxes_out.pdf";
+
+// Zapisz dokument PDF
 pdfDocument.Save(dataDir);
+
+// Potwierdź pomyślne utworzenie
+Console.WriteLine("Grouped checkboxes added successfully. File saved at " + dataDir);
 ```
 
-### Przykładowy kod źródłowy dla grupowanych pól wyboru przy użyciu Aspose.PDF dla .NET 
-```csharp
-try
-{
-	// Ścieżka do katalogu dokumentów.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Utwórz obiekt dokumentu
-	Document pdfDocument = new Document();
-	// Dodaj stronę do pliku PDF
-	Page page = pdfDocument.Pages.Add();
-	// Utwórz obiekt RadioButtonField z numerem strony jako argumentem
-	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
-	// Dodaj pierwszą opcję przycisku radiowego i określ jej początek za pomocą obiektu Rectangle
-	RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
-	RadioButtonOptionField opt2 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(100, 0, 120, 20));
-	opt1.OptionName = "Test1";
-	opt2.OptionName = "Test2";
-	radio.Add(opt1);
-	radio.Add(opt2);
-	opt1.Style = BoxStyle.Square;
-	opt2.Style = BoxStyle.Square;
-	opt1.Style = BoxStyle.Cross;
-	opt2.Style = BoxStyle.Cross;
-	opt1.Border = new Border(opt1);
-	opt1.Border.Style = BorderStyle.Solid;
-	opt1.Border.Width = 1;
-	opt1.Characteristics.Border = System.Drawing.Color.Black;
-	opt2.Border = new Border(opt2);
-	opt2.Border.Width = 1;
-	opt2.Border.Style = BorderStyle.Solid;
-	opt2.Characteristics.Border = System.Drawing.Color.Black;
-	// Dodaj przycisk radiowy do obiektu formularza obiektu dokumentu
-	pdfDocument.Form.Add(radio);
-	dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
-	// Zapisz dokument PDF
-	pdfDocument.Save(dataDir);
-	Console.WriteLine("\nGrouped checkboxes added successfully.\nFile saved at " + dataDir);
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+I to wszystko! Udało Ci się utworzyć plik PDF z pogrupowanymi polami wyboru przy użyciu Aspose.PDF dla .NET.
 
 ## Wniosek
 
-W tym samouczku nauczyliśmy się, jak tworzyć zgrupowane pola wyboru w dokumencie PDF za pomocą Aspose.PDF dla .NET. Wykonując te kroki, możesz łatwo dodać niestandardowe opcje przycisków radiowych i połączyć je w dokumentach PDF za pomocą Aspose.PDF.
+Dodawanie interaktywnych elementów, takich jak zgrupowane pola wyboru, do dokumentów PDF może wydawać się trudne na początku, ale dzięki Aspose.PDF dla .NET staje się to dziecinnie proste. Postępując zgodnie z tym przewodnikiem krok po kroku, nauczyłeś się, jak skonfigurować podstawowy dokument PDF, dodawać zgrupowane przyciski radiowe, dostosowywać ich wygląd i zapisywać wynik końcowy. Niezależnie od tego, czy tworzysz formularze, ankiety czy jakikolwiek inny rodzaj interaktywnego pliku PDF, ten przewodnik zapewnia solidne podstawy, od których możesz zacząć.
 
-### Najczęściej zadawane pytania
+## Najczęściej zadawane pytania
 
-#### P: Czym są zgrupowane pola wyboru w dokumencie PDF?
+### Czy mogę dodać do grupy więcej niż dwa przyciski radiowe?
+ Oczywiście! Po prostu utwórz dodatkowe`RadioButtonOptionField` obiekty i dodaj je do`RadioButtonField` jak pokazano w samouczku.
 
-A: Zgrupowane pola wyboru w dokumencie PDF odnoszą się do zestawu opcji przycisków radiowych, które są zgrupowane razem. Przyciski radiowe pozwalają użytkownikom wybrać tylko jedną opcję z grupy wzajemnie wykluczających się wyborów. Gdy wybrany jest jeden przycisk radiowy, pozostałe w tej samej grupie są automatycznie odznaczane. To zachowanie grupowania jest przydatne, gdy chcesz przedstawić użytkownikom wiele opcji, ale ograniczyć ich wybór tylko do jednej.
+### Jak obsługiwać wiele grup pól wyboru w jednym dokumencie?
+Aby utworzyć wiele grup, utwórz osobne wystąpienia`RadioButtonField` obiekty dla każdej grupy.
 
-#### P: Czy mogę dostosować wygląd zgrupowanych pól wyboru w pliku Aspose.PDF dla platformy .NET?
+### Czy liczba pól wyboru, które mogę dodać, jest ograniczona?
+Nie, Aspose.PDF dla platformy .NET nie nakłada żadnych ograniczeń na liczbę pól wyboru, które można dodać do pliku PDF.
 
-A: Tak, możesz dostosować wygląd zgrupowanych pól wyboru w Aspose.PDF dla .NET. API udostępnia różne opcje ustawiania stylu, obramowania i wyglądu opcji przycisków radiowych. Możesz zdefiniować położenie każdej opcji, wybierać między różnymi stylami pól (np. kwadrat, okrąg, krzyż) i dostosowywać właściwości obramowania, aby uzyskać pożądaną reprezentację wizualną.
+### Czy mogę zmienić wygląd pól wyboru po ich dodaniu?
+Tak, możesz modyfikować właściwości, takie jak styl obramowania, szerokość i kolor po dodaniu pól wyboru.
 
-#### P: Jak dodać zgrupowane pola wyboru do określonej strony w dokumencie PDF?
-
-A: Aby dodać zgrupowane pola wyboru do określonej strony w dokumencie PDF, należy utworzyć wystąpienie`RadioButtonField` obiekt z żądanym numerem strony jako argumentem. Następnie utwórz`RadioButtonOptionField` obiekty reprezentujące każdą opcję przycisku radiowego i określ ich położenie za pomocą`Rectangle` obiekt. Na koniec dodaj te opcje do`RadioButtonField` i dostosuj ich wygląd według potrzeb przed dodaniem`RadioButtonField` do formularza dokumentu.
-
-#### P: Czy mogę dodać wiele grup pól wyboru do jednego dokumentu PDF?
-
- A: Tak, możesz dodać wiele grup pól wyboru do jednego dokumentu PDF. Każda grupa powinna mieć unikalny`RadioButtonField` obiekt i`RadioButtonOptionField` obiekty w każdej grupie powinny mieć tę samą stronę i unikalne nazwy dla swoich opcji. Zapewnia to, że przyciski radiowe w każdej grupie działają poprawnie, a wybory wykluczają się wzajemnie.
-
-#### P: Czy wszystkie przeglądarki i aplikacje PDF obsługują zgrupowane pola wyboru?
-
-A: Tak, zgrupowane pola wyboru są obsługiwane we wszystkich zgodnych ze standardem przeglądarkach PDF i aplikacjach. Specyfikacja PDF definiuje przyciski radiowe i ich zachowanie grupowania, dzięki czemu są one powszechnie rozpoznawane w formacie PDF. Jednak konieczne jest przetestowanie funkcjonalności w różnych przeglądarkach PDF, aby zapewnić spójne zachowanie na różnych platformach.
+### Czy można używać obrazków jako przycisków radiowych?
+ Tak, Aspose.PDF pozwala na używanie niestandardowych obrazów jako przycisków radiowych poprzez ustawienie`Appearance` właściwość każdej opcji przycisku radiowego.

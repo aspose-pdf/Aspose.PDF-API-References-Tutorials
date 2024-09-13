@@ -7,116 +7,172 @@ type: docs
 weight: 170
 url: /pt/net/programming-with-document/getdocumentwindow/
 ---
-Aspose.PDF para .NET é uma poderosa biblioteca de manipulação de PDF que permite aos desenvolvedores criar, editar e converter arquivos PDF em seus aplicativos .NET. Um dos recursos oferecidos por esta biblioteca é a capacidade de recuperar informações sobre as propriedades da janela de um documento. Este tutorial o guiará pelas etapas de uso do`GetDocumentWindow` recurso do Aspose.PDF para .NET para recuperar informações sobre as propriedades da janela de um documento PDF.
+# Introdução
 
-## Etapa 1: instalar o Aspose.PDF para .NET
+Você está trabalhando com PDFs e quer mais controle sobre como eles aparecem quando abertos? Seja ocultando a barra de menu ou redimensionando a janela para caber na primeira página, o Aspose.PDF para .NET fornece todas as ferramentas necessárias para personalizar como um PDF se comporta quando aberto em um visualizador. Neste tutorial, vamos detalhar como recuperar e manipular as configurações da janela do documento no Aspose.PDF para .NET.
 
- Para usar o Aspose.PDF para .NET em seus aplicativos .NET, você deve primeiro instalar a biblioteca. Você pode baixar a versão mais recente da biblioteca do[Página de download do Aspose.PDF para .NET](https://releases.aspose.com/pdf/net).
 
-Após baixar a biblioteca, extraia o conteúdo do arquivo ZIP para uma pasta no seu computador. Você precisará então adicionar uma referência ao Aspose.PDF for .NET DLL no seu projeto .NET.
+# Pré-requisitos
 
-## Etapa 2: Carregue o documento PDF
+Antes de mergulhar no tutorial, certifique-se de ter os seguintes pré-requisitos em vigor:
 
- Depois de instalar o Aspose.PDF para .NET e adicionar uma referência à DLL no seu projeto .NET, você pode começar a usar o`GetDocumentWindow`recurso para recuperar informações sobre as propriedades da janela de um documento PDF.
+- Aspose.PDF para .NET instalado no seu ambiente de desenvolvimento.
+  - [Baixe Aspose.PDF para .NET](https://releases.aspose.com/pdf/net/)
+-  Uma licença válida para Aspose.PDF, ou você pode obter uma[teste gratuito](https://releases.aspose.com/) ou[licença temporária](https://purchase.aspose.com/temporary-license/).
+- Conhecimento básico de .NET e C#.
+- Visual Studio ou outro IDE adequado.
 
-O primeiro passo para usar esse recurso é carregar o documento PDF sobre o qual você deseja recuperar informações. Para fazer isso, você pode usar o seguinte código:
+# Pacotes de importação
+
+Antes de começar a escrever qualquer código, você precisará importar os pacotes necessários. Abra seu projeto e, no topo do seu arquivo C#, adicione o seguinte namespace:
 
 ```csharp
-// O caminho para o documento PDF
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
+```
 
-// Abra o documento PDF
+Isso lhe dará acesso a todas as classes e métodos necessários para manipular documentos PDF usando o Aspose.PDF para .NET.
+
+ Agora vamos dividir o processo de recuperação de diferentes configurações de janela de documento. Para este exemplo, usaremos um arquivo PDF de amostra chamado`GetDocumentWindow.pdf`.
+
+## Etapa 1: Defina o caminho do diretório do documento
+
+Primeiramente, precisamos definir o caminho para nosso arquivo PDF. É crucial que você tenha o caminho correto do arquivo para evitar erros durante a execução.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Aqui, substitua`"YOUR DOCUMENT DIRECTORY"` com o diretório real onde seu arquivo PDF está localizado. Este é seu diretório de trabalho de onde você carregará o documento PDF.
+
+## Etapa 2: Abra o documento PDF
+
+Agora que o caminho do arquivo está definido, o próximo passo é abrir o documento PDF usando Aspose.PDF. Isso carregará o documento na memória, permitindo que você recupere suas propriedades.
+
+```csharp
 Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 ```
 
- No código acima, substitua`"YOUR DOCUMENT DIRECTORY"` com o caminho para o diretório onde seu documento PDF está localizado. Este código carregará o documento PDF em um`Document` objeto, que você pode usar para recuperar informações sobre as propriedades da janela do documento.
+Com esta simples linha de código, você carregou com sucesso seu arquivo PDF no`pdfDocument` objeto, que agora permitirá que você acesse todas as suas propriedades.
 
-## Etapa 3: recuperar as propriedades da janela do documento
+## Etapa 3: recuperar o status de centralização da janela
 
-Para recuperar informações sobre as propriedades da janela de um documento PDF, você pode usar o seguinte código:
-
-```csharp
-// Recuperar as propriedades da janela do documento
-Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
-```
-
-No código acima, cada linha recupera uma propriedade de janela diferente do documento PDF e a envia para o console. Você pode personalizar esse código para recuperar apenas as propriedades nas quais você está interessado.
-
-### Exemplo de código-fonte para obter janela de documento de arquivo PDF usando Aspose.PDF para .NET 
-
- Aqui está o código-fonte completo para recuperar as propriedades da janela de um documento PDF usando o`GetDocumentWindow` Recurso do Aspose.PDF para .NET:
+ Em seguida, vamos verificar se a janela do documento deve ser centralizada quando aberta. O valor padrão para isso é`false`.
 
 ```csharp
-// O caminho para o diretório de documentos.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Abrir documento
-Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
-
-// Obtenha diferentes propriedades do documento
-// Posição da janela do documento - Padrão: falso
 Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-
-// Ordem de leitura predominante; determina a posição da página
-// Quando exibido lado a lado - Padrão: L2R
-Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-
-// Se a barra de título da janela deve exibir o título do documento
-// Se falso, a barra de título exibe o nome do arquivo PDF - Padrão: falso
-Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-
-// Se deve redimensionar a janela do documento para ajustá-la ao tamanho de
-// Primeira página exibida - Padrão: falso
-Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-
-// Se deve ocultar a barra de menu do aplicativo visualizador - Padrão: falso
-Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-
-// Se deve ocultar a barra de ferramentas do aplicativo visualizador - Padrão: falso
-Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-
-// Se deve ocultar elementos da IU, como barras de rolagem
-// E deixando apenas o conteúdo da página exibido - Padrão: falso
-Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-
-//Modo de página do documento. Como exibir o documento ao sair do modo de tela cheia.
-Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-
-// O layout da página, ou seja, página única, uma coluna
-Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-
-// Como o documento deve ser exibido quando aberto
-// Ou seja, mostrar miniaturas, tela cheia, mostrar painel de anexos
-Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 ```
+
+ Se a saída for`true`, a janela do documento será aberta no centro da tela. Caso contrário, ela será aberta em sua posição padrão.
+
+## Etapa 4: Verifique a direção do texto
+
+Outro aspecto crucial da aparência de um PDF é a direção do texto, que determina se o texto é lido da esquerda para a direita (L2R) ou da direita para a esquerda (R2L). Você pode recuperar essas informações usando o seguinte código:
+
+```csharp
+Console.WriteLine("Direction : {0}", pdfDocument.Direction);
+```
+
+ A saída será`L2R` para texto da esquerda para a direita e`R2L` para texto da direita para a esquerda. Esta configuração é especialmente útil para documentos em idiomas como árabe ou hebraico.
+
+## Etapa 5: Exibir título do documento na janela
+
+ próxima propriedade permite que você controle se o título do documento ou o nome do arquivo deve ser exibido na barra de título da janela. Por padrão, isso é definido como`false`, o que significa que o nome do arquivo será exibido.
+
+```csharp
+Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
+```
+
+Se você quiser que o título do documento seja exibido em vez do nome do arquivo, esta configuração deve ser habilitada.
+
+## Etapa 6: redimensione a janela para caber na primeira página
+
+Às vezes, você pode querer que a janela do documento seja redimensionada automaticamente para caber na primeira página do PDF quando ele for aberto. Veja como verificar se esse recurso está habilitado:
+
+```csharp
+Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
+```
+
+ Por padrão, isso é definido como`false`, o que significa que o tamanho da janela permanecerá o mesmo, independentemente do tamanho da primeira página.
+
+## Etapa 7: Ocultar a barra de menu
+
+Para uma experiência de leitura mais focada, você pode querer ocultar a barra de menu do aplicativo visualizador. Você pode recuperar essa configuração usando a seguinte linha:
+
+```csharp
+Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
+```
+
+ Isso retornará`true` se a barra de menu estiver oculta e`false` de outra forma.
+
+## Etapa 8: Ocultar a barra de ferramentas
+
+Da mesma forma, você também pode querer ocultar a barra de ferramentas no visualizador de PDF para uma interface de usuário mais limpa. Essa configuração pode ser recuperada da seguinte forma:
+
+```csharp
+Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
+```
+
+Se esta configuração estiver ativada, a barra de ferramentas ficará oculta quando o PDF for aberto.
+
+## Etapa 9: Oculte as barras de rolagem e os elementos da interface do usuário
+
+Se você quiser exibir apenas o conteúdo da página, sem nenhum elemento adicional da interface do usuário, como barras de rolagem, esta configuração controla esse comportamento:
+
+```csharp
+Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
+```
+
+ Quando definido para`true`, o visualizador de PDF ocultará as barras de rolagem e outros elementos da interface do usuário, deixando apenas o conteúdo do documento.
+
+## Etapa 10: Defina o modo de página sem tela cheia
+
+ Você pode controlar como o documento aparece ao sair do modo de tela cheia usando o`NonFullScreenPageMode` propriedade. Esta configuração é útil para definir como o usuário deve interagir com o documento no modo não tela cheia.
+
+```csharp
+Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
+```
+
+A saída pode ser definida para diferentes modos, como miniaturas, contornos ou painel de anexos.
+
+## Etapa 11: Definir layout da página
+
+Esta configuração permite que você controle como as páginas do documento são dispostas. Por exemplo, você pode optar por uma visualização de página única ou uma visualização de coluna contínua:
+
+```csharp
+Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
+```
+
+Isso dá aos usuários flexibilidade na forma como leem ou visualizam o conteúdo do documento.
+
+## Etapa 12: Especificar o Modo de Página
+
+ Finalmente, o`PageMode` propriedade define como o documento deve ser exibido quando aberto. As opções incluem mostrar miniaturas, entrar no modo de tela cheia ou exibir o painel de anexos.
+
+```csharp
+Console.WriteLine("PageMode : {0}", pdfDocument.PageMode);
+```
+
+Dependendo das suas necessidades, você pode definir isso para qualquer modo que seja adequado à finalidade do seu PDF.
 
 ## Conclusão
 
-Neste tutorial, aprendemos como usar o Aspose.PDF para .NET para recuperar informações sobre as propriedades da janela de um documento PDF. Ao carregar um documento PDF e acessar suas propriedades de janela, você pode reunir informações sobre como o documento deve ser exibido quando aberto em um aplicativo visualizador. O Aspose.PDF para .NET fornece um poderoso conjunto de recursos para trabalhar com arquivos PDF programaticamente, tornando-o uma ferramenta valiosa para manipulação de PDF em aplicativos .NET.
+Como você pode ver, o Aspose.PDF para .NET fornece ferramentas abrangentes para manipular como seus documentos PDF são exibidos em vários visualizadores de PDF. Se você deseja ocultar a barra de ferramentas, centralizar a janela ou controlar a direção do texto, o Aspose.PDF oferece a flexibilidade para aprimorar a experiência de visualização do usuário.
 
-### Perguntas frequentes
+# Perguntas frequentes
 
-#### P: Qual é o propósito de recuperar as propriedades da janela de um documento PDF?
+### Posso personalizar o nível de zoom inicial do PDF?
+Sim, o Aspose.PDF permite que você defina o nível de zoom quando o documento é aberto.
 
-A: Recuperar as propriedades da janela de um documento PDF permite que você reúna informações sobre como o documento PDF deve ser exibido quando aberto em um aplicativo visualizador. Essas propriedades controlam vários aspectos, como posição da janela, modo de exibição e visibilidade dos elementos da IU.
+### Como posso bloquear o tamanho da janela de um PDF?
+ Você pode definir o`FitWindow` propriedade para evitar que a janela seja redimensionada.
 
-#### P: Como posso instalar o Aspose.PDF para .NET no meu projeto .NET?
+### O Aspose.PDF suporta diferentes modos de leitura?
+Sim, ele suporta diferentes modos, como tela cheia, miniaturas e anexos.
 
- R: Para instalar o Aspose.PDF para .NET, você precisa baixar a biblioteca do[Página de download do Aspose.PDF para .NET](https://releases.aspose.com/pdf/net). Após o download, extraia o conteúdo do arquivo ZIP e adicione uma referência à DLL Aspose.PDF for .NET no seu projeto .NET.
+### É possível ocultar barras de rolagem no visualizador de PDF?
+ Claro, você pode ocultar as barras de rolagem definindo o`HideWindowUI` propriedade para`true`.
 
-#### P: Posso personalizar o código para recuperar apenas propriedades específicas da janela?
-
-R: Sim, você pode personalizar o código para recuperar propriedades específicas da janela comentando as linhas que você não precisa. Cada linha no código corresponde a uma propriedade específica da janela, então você pode incluir ou excluir propriedades com base em seus requisitos.
-
-#### P: Que tipos de propriedades de janela posso recuperar usando o Aspose.PDF para .NET?
-
-R: Usando o Aspose.PDF para .NET, você pode recuperar várias propriedades de janela de um documento PDF, incluindo centralizar a janela, definir o layout da página, controlar a exibição de barras de ferramentas e barras de menu e muito mais.
+### Posso centralizar a janela do documento quando aberta?
+ Sim, você pode controlar isso configurando o`CenterWindow` propriedade.

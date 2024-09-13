@@ -2,123 +2,141 @@
 title: Keuzerondje
 linktitle: Keuzerondje
 second_title: Aspose.PDF voor .NET API-referentie
-description: Voeg eenvoudig keuzerondjes toe aan uw PDF-documenten met Aspose.PDF voor .NET.
+description: Leer hoe u interactieve keuzerondjes in PDF-documenten kunt maken met Aspose.PDF voor .NET met deze stapsgewijze zelfstudie.
 type: docs
 weight: 220
 url: /nl/net/programming-with-forms/radio-button/
 ---
-In deze tutorial laten we je zien hoe je een radioknop toevoegt aan een PDF-document met Aspose.PDF voor .NET. We leggen de C#-broncode stap voor stap uit om je door dit proces te leiden.
+## Invoering
 
-## Stap 1: Voorbereiding
+Het maken van interactieve PDF's kan de gebruikerservaring aanzienlijk verbeteren, vooral als het gaat om formulieren. Een van de meest voorkomende interactieve elementen is de keuzerondje, waarmee gebruikers één optie uit een set kunnen selecteren. In deze tutorial gaan we onderzoeken hoe u keuzerondjes in een PDF-document kunt maken met Aspose.PDF voor .NET. Of u nu een doorgewinterde ontwikkelaar bent of net begint, deze gids leidt u stap voor stap door het proces, zodat u elk onderdeel van de code en het doel ervan begrijpt.
 
-Zorg ervoor dat u de benodigde bibliotheken hebt geïmporteerd en het pad naar uw documentenmap hebt ingesteld:
+## Vereisten
+
+Voordat u aan de slag gaat met de code, moet u aan een aantal voorwaarden voldoen:
+
+1. Visual Studio: Zorg ervoor dat Visual Studio op uw machine is geïnstalleerd. Dit wordt uw ontwikkelomgeving.
+2.  Aspose.PDF voor .NET: U moet de Aspose.PDF-bibliotheek hebben. U kunt deze downloaden van de[plaats](https://releases.aspose.com/pdf/net/).
+3. Basiskennis van C#: Kennis van C#-programmering helpt u de codefragmenten beter te begrijpen.
+
+## Pakketten importeren
+
+Om te beginnen moet u de benodigde pakketten importeren in uw C#-project. Dit is hoe u dat kunt doen:
+
+### Een nieuw project maken
+
+Open Visual Studio en maak een nieuw C#-project. U kunt een Console Application kiezen voor de eenvoud.
+
+### Voeg Aspose.PDF-referentie toe
+
+1. Klik met de rechtermuisknop op uw project in de Solution Explorer.
+2. Selecteer 'NuGet-pakketten beheren'.
+3. Zoek naar "Aspose.PDF" en installeer de nieuwste versie.
+
+Nu u alles hebt ingesteld, gaan we dieper in op de code voor het maken van keuzerondjes in een PDF-bestand.
+
+## Stap 1: Stel uw documentenmap in
+
+Eerst moet u de directory opgeven waar uw PDF wordt opgeslagen. Dit is cruciaal voor het organiseren van uw bestanden.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Stap 2: Een documentobject instantiëren
+ Vervangen`"YOUR DOCUMENT DIRECTORY"` met het daadwerkelijke pad waar u uw PDF-bestand wilt opslaan.
 
-Instantieer een Document-object om een nieuw PDF-document te maken:
+## Stap 2: Instantieer het documentobject
+
+ Vervolgens moet u een exemplaar van de maken`Document` klasse. Deze klasse vertegenwoordigt uw PDF-document.
 
 ```csharp
 Document pdfDocument = new Document();
 ```
 
-## Stap 3: Een pagina toevoegen
+Met deze regel wordt een nieuw PDF-document geïnitialiseerd waarmee u gaat werken.
 
-Voeg een pagina toe aan het PDF-document:
+## Stap 3: Voeg een pagina toe aan de PDF
+
+Elk PDF-document bestaat uit pagina's. U moet minimaal één pagina aan uw document toevoegen.
 
 ```csharp
 pdfDocument.Pages.Add();
 ```
 
-## Stap 4: Instantieer een RadioButtonField-object
+Met deze regel wordt een nieuwe pagina aan uw PDF-document toegevoegd, waardoor het document gereed is voor inhoud.
 
-Instantieer een RadioButtonField-object door het paginanummer als argument op te geven:
+## Stap 4: Maak het keuzerondjeveld
+
+ Nu is het tijd om het radioknopveld te maken. U gaat een`RadioButtonField` object en geef het paginanummer op waar het geplaatst moet worden.
 
 ```csharp
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## Stap 5: Voeg keuzerondje-opties toe
+Hier voegen we de keuzerondje toe aan de eerste pagina van de PDF.
 
-Voeg keuzerondjes toe aan het RadioButtonField-object door de coördinaten van elke optie op te geven met een Rectangle-object:
+## Stap 5: Opties toevoegen aan de keuzerondje
+
+U kunt meerdere opties toevoegen aan uw radioknop. Elke optie is een selecteerbaar item.
 
 ```csharp
 radio.AddOption("Test", new Rectangle(0, 0, 20, 20));
 radio.AddOption("Test1", new Rectangle(20, 20, 40, 40));
 ```
 
-## Stap 6: Voeg de keuzerondje toe aan het formulier
+ In dit voorbeeld voegen we twee opties toe: "Test" en "Test1".`Rectangle` object specificeert de positie en grootte van elke optie.
 
-Voeg de keuzerondje toe aan het Form-object van het document:
+## Stap 6: Voeg de keuzerond toe aan het documentformulier
+
+Nadat u uw keuzerondje en de bijbehorende opties hebt gedefinieerd, moet u het aan het formulier van het document toevoegen.
 
 ```csharp
 pdfDocument.Form.Add(radio);
 ```
 
+Deze regel integreert de keuzerondje in het PDF-formulier, waardoor het interactief wordt.
+
 ## Stap 7: Sla het PDF-document op
 
-Sla het gemaakte PDF-document op:
+Tot slot moet u uw PDF-document opslaan in de opgegeven map.
 
 ```csharp
 dataDir = dataDir + "RadioButton_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-### Voorbeeldbroncode voor keuzerondje met behulp van Aspose.PDF voor .NET 
+Deze code slaat het document op met de naam "RadioButton_out.pdf" in de door u opgegeven map.
+
+## Stap 8: Uitzonderingen afhandelen
+
+Het is altijd verstandig om uitzonderingen af te handelen die kunnen optreden tijdens de uitvoering van uw code.
+
 ```csharp
-try
-{
-	// Het pad naar de documentenmap.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Instantieer Document object
-	Document pdfDocument = new Document();
-	// Een pagina toevoegen aan een PDF-bestand
-	pdfDocument.Pages.Add();
-	// RadioButtonField-object met paginanummer als argument instellen
-	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
-	// Voeg de eerste optie voor een keuzerondje toe en geef ook de oorsprong ervan op met behulp van het Rectangle-object
-	radio.AddOption("Test", new Rectangle(0, 0, 20, 20));
-	// Tweede keuzerondje toevoegen
-	radio.AddOption("Test1", new Rectangle(20, 20, 40, 40));
-	// Keuzerondje toevoegen aan formulierobject van Documentobject
-	pdfDocument.Form.Add(radio);
-	dataDir = dataDir + "RadioButton_out.pdf";
-	// Sla het PDF-bestand op
-	pdfDocument.Save(dataDir);
-	Console.WriteLine("\nRadio button field added successfully.\nFile saved at " + dataDir);
-}
 catch (Exception ex)
 {
-	Console.WriteLine(ex.Message);
+    Console.WriteLine(ex.Message);
 }
 ```
 
+Hiermee worden eventuele fouten opgemerkt en wordt een bericht weergegeven. Zo kunt u fouten opsporen als er iets misgaat.
+
 ## Conclusie
 
-In deze tutorial hebben we geleerd hoe je een keuzerondje toevoegt aan een PDF-document met Aspose.PDF voor .NET. Door deze stappen te volgen, kun je eenvoudig een keuzerondje maken en deze op een specifieke pagina in je PDF-document plaatsen.
+Het maken van keuzerondjes in een PDF met Aspose.PDF voor .NET is een eenvoudig proces dat de interactiviteit van uw documenten aanzienlijk kan verbeteren. Door de stappen in deze tutorial te volgen, kunt u eenvoudig keuzerondjes implementeren in uw PDF-formulieren, waardoor ze gebruiksvriendelijker en aantrekkelijker worden. Vergeet niet, oefening baart kunst, dus aarzel niet om te experimenteren met verschillende opties en configuraties!
 
+## Veelgestelde vragen
 
-### Veelgestelde vragen
+### Wat is Aspose.PDF voor .NET?
+Aspose.PDF voor .NET is een krachtige bibliotheek waarmee ontwikkelaars programmatisch PDF-documenten kunnen maken, bewerken en converteren.
 
-#### V: Kan ik het uiterlijk van de keuzerondje aanpassen, bijvoorbeeld de grootte en kleur?
+### Kan ik Aspose.PDF gratis gebruiken?
+ Ja, Aspose biedt een gratis proefversie die u kunt gebruiken om de functies van de bibliotheek te verkennen. U kunt deze downloaden[hier](https://releases.aspose.com/).
 
- A: Ja, u kunt het uiterlijk van de keuzerondje aanpassen met behulp van de`Rectangle` coördinaten van het object om de grootte en positie ervan te definiëren. Met Aspose.PDF voor .NET kunt u het uiterlijk van de radioknop aanpassen aan uw behoeften.
+### Hoe krijg ik ondersteuning voor Aspose.PDF?
+ U kunt ondersteuning krijgen door de[Aspose-forum](https://forum.aspose.com/c/pdf/10).
 
-#### V: Kan ik meerdere keuzerondjes met verschillende groepen op dezelfde pagina toevoegen?
+### Is het mogelijk om andere formuliervelden te maken met Aspose.PDF?
+Absoluut! Aspose.PDF ondersteunt verschillende formuliervelden, waaronder tekstvelden, selectievakjes en vervolgkeuzemenu's.
 
-A: Ja, u kunt meerdere radioknoppen met verschillende groepen op dezelfde pagina toevoegen. Elke groep radioknoppen kan een unieke naam hebben en er kan slechts één optie binnen elke groep tegelijk worden geselecteerd.
-
-#### V: Hoe kan ik een label of tekstbeschrijving toevoegen aan de keuzerondjes?
-
- A: Om een label of tekstbeschrijving toe te voegen aan de opties van de keuzerondjes, kunt u de`TextStamp`klasse van Aspose.PDF voor .NET om tekst op specifieke coördinaten over het PDF-document te leggen.
-
-#### V: Is Aspose.PDF voor .NET compatibel met alle versies van .NET Framework?
-
-A: Ja, Aspose.PDF voor .NET is compatibel met alle versies van .NET Framework, inclusief .NET Core en .NET Standard.
-
-#### V: Kan ik de selectie van een keuzerondje in het PDF-document programmatisch regelen?
-
- A: Ja, u kunt de selectie van een keuzerondje programmatisch regelen met behulp van de`IsSelected` eigendom van de`RadioButtonOption` klasse. Met deze eigenschap kunt u een specifieke optie als geselecteerd instellen.
+### Waar kan ik Aspose.PDF voor .NET kopen?
+ U kunt een licentie voor Aspose.PDF aanschaffen[hier](https://purchase.aspose.com/buy).

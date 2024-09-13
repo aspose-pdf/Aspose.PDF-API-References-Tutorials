@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Langkah 5: Tambahkan halaman ke dokumen
- Tambahkan halaman baru ke dokumen dengan menggunakan`Add` metode dari`Pages`koleksi. Dalam kode yang diberikan, halaman baru ditetapkan ke variabel`page`.
+ Tambahkan halaman baru ke dokumen dengan menggunakan`Add` metode dari`Pages` koleksi. Dalam kode yang diberikan, halaman baru ditetapkan ke variabel`page`.
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
@@ -109,7 +109,7 @@ Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 4
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
 // Tambahkan persegi panjang ke koleksi bentuk objek Grafik
 canvas.Shapes.Add(rect);
-//Tambahkan objek grafik ke kumpulan paragraf objek halaman
+// Tambahkan objek grafik ke kumpulan paragraf objek halaman
 page.Paragraphs.Add(canvas);
 // Tetapkan nilai untuk tidak mengubah posisi objek grafik
 canvas.IsChangePosition = false;
@@ -163,7 +163,7 @@ using Aspose.Pdf.Drawing;
 
 #### T: Bagaimana cara membuat persegi panjang dengan transparansi?
 
-A: Pada Langkah 7, Anda akan membuat persegi panjang dengan dimensi tertentu dan mengatur warna isiannya menjadi warna transparan menggunakan`Color.FromRgb` metode.
+ A: Pada Langkah 7, Anda akan membuat persegi panjang dengan dimensi tertentu dan mengatur warna isiannya menjadi warna transparan menggunakan`Color.FromRgb` metode.
 
 #### T: Bagaimana cara menambahkan objek Grafik ke halaman?
 
@@ -175,7 +175,7 @@ A: Pada Langkah 7, Anda akan membuat persegi panjang dengan dimensi tertentu dan
 
 #### T: Bagaimana cara membuat TextFragment dengan transparansi?
 
- A: Pada Langkah 10, Anda akan membuat`TextFragment` objek dan mengatur kontennya dan`ForegroundColor` properti untuk mendapatkan teks transparan.
+A: Pada Langkah 10, Anda akan membuat`TextFragment` objek dan mengatur kontennya dan`ForegroundColor` properti untuk mendapatkan teks transparan.
 
 #### T: Bagaimana cara menyimpan dokumen PDF?
 

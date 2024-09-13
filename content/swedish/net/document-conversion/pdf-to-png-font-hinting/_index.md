@@ -1,7 +1,7 @@
 ---
 title: Tips om teckensnitt från PDF till PNG
 linktitle: Tips om teckensnitt från PDF till PNG
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig att konvertera PDF till PNG med teckensnittstips med Aspose.PDF för .NET i en enkel steg-för-steg-guide.
 type: docs
 weight: 160

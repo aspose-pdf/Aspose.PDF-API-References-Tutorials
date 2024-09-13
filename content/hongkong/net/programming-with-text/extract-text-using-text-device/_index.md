@@ -60,8 +60,8 @@ builder. Append(extractedText);
 }
 ```
 
-## 第 6 步：保存提取的文本
-指定輸出檔案路徑並將提取的文字儲存到文字檔案中，使用`File.WriteAllText`方法。
+## 步驟6：保存提取的文本
+指定輸出文件路徑並使用以下命令將提取的文字儲存到文字文件`File.WriteAllText`方法。
 
 ```csharp
 dataDir = dataDir + "input_Text_Extracted_out.txt";

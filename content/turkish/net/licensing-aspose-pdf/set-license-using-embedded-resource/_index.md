@@ -63,7 +63,7 @@ Bu kod satırı lisans nesnesini başlatır ve lisansı ayarlayacağımız bir s
 
 ### Lisansın Uygulanması
 
-Şimdi heyecan verici kısım geliyor: Lisansı ayarlama! Aspose.PDF'e lisans dosyanızı kullanmasını söylediğiniz yer burasıdır. Lisans dosyanız gömülü bir kaynaksa, bunu şu şekilde ayarlayabilirsiniz:
+Şimdi heyecan verici kısım geliyor: lisansı ayarlama! Aspose.PDF'e lisans dosyanızı kullanmasını söylediğiniz yer burasıdır. Lisans dosyanız gömülü bir kaynaksa, bunu şu şekilde ayarlayabilirsiniz:
 
 ```csharp
 // Lisans ayarla

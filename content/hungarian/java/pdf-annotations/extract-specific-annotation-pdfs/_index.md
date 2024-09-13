@@ -1,6 +1,6 @@
 ---
-title: Különleges megjegyzések kibontása PDF-ekből
-linktitle: Különleges megjegyzések kibontása PDF-ekből
+title: Különleges megjegyzések kibontása PDF-fájlokból
+linktitle: Különleges megjegyzések kibontása PDF-fájlokból
 second_title: Aspose.PDF Java PDF feldolgozó API
 description: Ismerje meg, hogyan bonthat ki konkrét megjegyzéseket PDF-fájlokból az Aspose.PDF for Java segítségével. Ez a lépésenkénti útmutató kódpéldákat és GYIK-ket tartalmaz a hatékony PDF-annotációk kinyeréséhez.
 type: docs

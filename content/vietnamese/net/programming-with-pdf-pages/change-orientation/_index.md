@@ -7,105 +7,131 @@ type: docs
 weight: 10
 url: /vi/net/programming-with-pdf-pages/change-orientation/
 ---
-Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn từng bước để thay đổi hướng trang của tài liệu PDF bằng Aspose.PDF cho .NET. Chúng tôi sẽ giải thích mã nguồn C# được đóng gói và cung cấp cho bạn hướng dẫn toàn diện để giúp bạn hiểu và triển khai tính năng này trong các dự án của riêng bạn. Vào cuối hướng dẫn này, bạn sẽ biết cách thay đổi hướng trang của tài liệu PDF bằng Aspose.PDF cho .NET.
+## Giới thiệu
+
+Bạn đã bao giờ thấy mình vật lộn với một tệp PDF mà hướng trang chỉ... lệch? Có thể bạn đang xử lý một tài liệu được quét hoặc tạo không đúng cách và các trang cần phải xoay để có ý nghĩa. Thật may mắn cho chúng ta, Aspose.PDF cho .NET cung cấp một cách dễ dàng và mạnh mẽ để thao tác các tệp PDF theo hầu hết mọi cách có thể tưởng tượng được—bao gồm cả việc thay đổi hướng của các trang. Cho dù bạn muốn chuyển từ chế độ dọc sang chế độ ngang hoặc ngược lại, hướng dẫn này sẽ hướng dẫn bạn từng bước trong quy trình.
+
+Vì vậy, nếu bạn đã sẵn sàng để bắt đầu và xoay các trang PDF một cách dễ dàng, hãy bắt đầu thôi!
 
 ## Điều kiện tiên quyết
-Trước khi bắt đầu, hãy đảm bảo bạn có những điều sau:
 
-- Kiến thức cơ bản về ngôn ngữ lập trình C#
-- Aspose.PDF cho .NET được cài đặt trong môi trường phát triển của bạn
+Trước khi đi sâu vào chi tiết về cách thay đổi hướng trang trong tệp PDF, chúng ta hãy cùng xem nhanh những gì bạn cần chuẩn bị:
 
-## Bước 1: Xác định thư mục tài liệu
-Trước tiên, bạn cần thiết lập đường dẫn đến thư mục tài liệu của mình. Đây là vị trí tệp PDF đầu vào của bạn và là nơi bạn muốn lưu tệp PDF đầu ra đã sửa đổi của mình. Thay thế "THƯ MỤC TÀI LIỆU CỦA BẠN" bằng đường dẫn thích hợp.
+-  Aspose.PDF cho .NET: Đảm bảo bạn đã cài đặt thư viện Aspose.PDF cho .NET. Nếu chưa, bạn có thể[tải xuống ở đây](https://releases.aspose.com/pdf/net/).
+- Môi trường phát triển .NET: Bạn có thể sử dụng Visual Studio, JetBrains Rider hoặc bất kỳ IDE nào bạn thích để làm việc với .NET.
+- Kiến thức cơ bản về C#: Mặc dù hướng dẫn này khá đơn giản, nhưng một số hiểu biết cơ bản về C# sẽ giúp bạn dễ hiểu hơn.
+- Tệp PDF: Ví dụ bên dưới giả định bạn có tệp PDF có nhiều trang. Nếu bạn không có tệp nào tiện dụng, hãy tạo hoặc tải xuống tệp PDF mẫu để làm việc.
+
+ Ngoài ra, nếu bạn mới bắt đầu, bạn có thể thử Aspose.PDF với[giấy phép tạm thời miễn phí](https://purchase.aspose.com/temporary-license/) trước khi quyết định[mua phiên bản đầy đủ](https://purchase.aspose.com/buy).
+
+## Nhập không gian tên
+
+Trước khi bạn có thể thao tác hướng của các trang trong PDF, bạn sẽ cần nhập các không gian tên cần thiết vào dự án C# của mình. Đảm bảo bạn có các mục sau:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
 ```
 
-## Bước 2: Tải tài liệu PDF
- Sau đó, bạn có thể tải tài liệu PDF từ tệp đầu vào bằng cách sử dụng`Document` lớp Aspose.PDF. Hãy chắc chắn chỉ định đúng đường dẫn đến tệp PDF.
+Sau khi nhập xong, chúng ta hãy cùng đi vào phần chính của hướng dẫn.
+
+## Bước 1: Tải Tài liệu PDF
+
+ Điều đầu tiên chúng ta cần làm là tải tệp PDF mà bạn muốn sửa đổi. Bạn có thể sử dụng`Document` lớp từ không gian tên Aspose.PDF để mở tệp PDF của bạn.
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## Bước 3: Thay đổi hướng trang
-Bây giờ chúng ta sẽ duyệt qua từng trang của tài liệu và thay đổi hướng của nó. Đối với mỗi trang, chúng ta sẽ sửa đổi kích thước của hộp phương tiện (`MediaBox`) bằng cách hoán đổi chiều rộng và chiều cao, sau đó chúng ta điều chỉnh tọa độ của hộp phương tiện để duy trì vị trí của trang. Cuối cùng, chúng ta đặt xoay trang thành 90 độ.
+ Dòng này tải PDF từ thư mục bạn chỉ định. Hãy đảm bảo thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế đến tệp của bạn.`"input.pdf"` là tệp PDF bạn muốn thay đổi hướng.
+
+## Bước 2: Lặp qua từng trang
+
+ Bây giờ chúng ta đã tải xong tài liệu, hãy lặp qua từng trang trong PDF. Chúng ta sẽ sử dụng`foreach` vòng lặp để duyệt qua mọi trang, cho phép chúng ta áp dụng thay đổi hướng cho tất cả các trang.
 
 ```csharp
-foreach(Page page in doc.Pages)
+foreach (Page page in doc.Pages)
 {
+    // Thao tác từng trang
+}
+```
+
+Vòng lặp này sẽ lặp lại tất cả các trang trong tài liệu.
+
+## Bước 3: Lấy MediaBox của Trang
+
+ Mỗi trang trong PDF có một`MediaBox` xác định ranh giới của trang. Chúng ta cần truy cập vào đây để xác định hướng hiện tại và sửa đổi nó.
+
+```csharp
 Aspose.Pdf.Rectangle r = page.MediaBox;
+```
+
+ Các`MediaBox` cung cấp cho chúng ta kích thước của trang, chẳng hạn như chiều rộng, chiều cao và vị trí của trang.
+
+## Bước 4: Hoán đổi chiều rộng và chiều cao
+
+Để thay đổi hướng trang từ dọc sang ngang hoặc từ ngang sang dọc, chúng ta chỉ cần hoán đổi giá trị chiều rộng và chiều cao. Bước này sẽ điều chỉnh kích thước của trang.
+
+```csharp
 double newHeight = r.Width;
 double newWidth = r.Height;
 double newLLX = r.LLX;
 double newLLY = r.LLY + (r.Height - newHeight);
+```
+
+Mã này hoán đổi chiều cao và chiều rộng và định vị lại góc dưới bên trái (`LLY`) để nội dung vừa khít sau khi xoay.
+
+## Bước 5: Cập nhật MediaBox và CropBox
+
+Bây giờ chúng ta đã có chiều cao và chiều rộng mới, hãy áp dụng các thay đổi vào trang.`MediaBox` Và`CropBox` . Các`CropBox` là điều cần thiết nếu tài liệu gốc có một bộ, đảm bảo toàn bộ trang hiển thị chính xác.
+
+```csharp
 page.MediaBox = new Aspose.Pdf.Rectangle(newLLX, newLLY, newLLX + newWidth, newLLY + newHeight);
 page.CropBox = new Aspose.Pdf.Rectangle(newLLX, newLLY, newLLX + newWidth, newLLY + newHeight);
-page. Rotate = Rotate. on90;
-}
 ```
 
-## Bước 4: Lưu tài liệu PDF đã sửa đổi
- Cuối cùng, bạn có thể lưu tài liệu PDF đã sửa đổi vào tệp đầu ra bằng cách sử dụng`Save()` phương pháp của`Document`lớp. Hãy chắc chắn chỉ định đúng đường dẫn và tên tệp.
+Bước này sẽ thay đổi kích thước trang dựa trên kích thước mới mà chúng ta vừa tính toán.
+
+## Bước 6: Xoay trang
+
+Cuối cùng, chúng ta thiết lập góc xoay của trang. Aspose.PDF giúp việc này cực kỳ đơn giản. Chúng ta có thể xoay trang 90 độ để chuyển từ chế độ dọc sang chế độ ngang hoặc ngược lại.
+
+```csharp
+page.Rotate = Rotation.on90;
+```
+
+Mã này xoay trang 90 độ, lật trang theo hướng mong muốn.
+
+## Bước 7: Lưu PDF đầu ra
+
+Sau khi áp dụng thay đổi hướng cho tất cả các trang, chúng ta lưu tài liệu đã sửa đổi vào một tệp mới. 
 
 ```csharp
 dataDir = dataDir + "ChangeOrientation_out.pdf";
-doc.Save(dataDir);
-```
-
-### Mã nguồn mẫu cho Thay đổi hướng sử dụng Aspose.PDF cho .NET 
-
-```csharp
-
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document doc = new Document(dataDir + "input.pdf");
-foreach (Page page in doc.Pages)
-{
-	Aspose.Pdf.Rectangle r = page.MediaBox;
-	double newHeight = r.Width;
-	double newWidth = r.Height;
-	double newLLX = r.LLX;
-	// Chúng ta phải di chuyển trang lên trên để bù đắp cho việc thay đổi kích thước trang
-	// (cạnh dưới của trang là 0,0 và thông tin thường được đặt từ
-	// Đầu trang. Đó là lý do tại sao chúng tôi di chuyển cạnh người yêu lên trên sự khác biệt giữa
-	// Chiều cao cũ và mới.
-	double newLLY = r.LLY + (r.Height - newHeight);
-	page.MediaBox = new Aspose.Pdf.Rectangle(newLLX, newLLY, newLLX + newWidth, newLLY + newHeight);
-	// Đôi khi chúng ta cũng cần thiết lập CropBox (nếu nó đã được thiết lập trong file gốc)
-	page.CropBox = new Aspose.Pdf.Rectangle(newLLX, newLLY, newLLX + newWidth, newLLY + newHeight);
-	// Thiết lập góc xoay của trang
-	page.Rotate = Rotation.on90;
-}
-dataDir = dataDir + "ChangeOrientation_out.pdf";
-// Lưu tập tin đầu ra
 doc.Save(dataDir);
 System.Console.WriteLine("\nPage orientation changed successfully.\nFile saved at " + dataDir);
-
 ```
 
-## Phần kết luận
-Trong hướng dẫn này, chúng ta đã học cách thay đổi hướng trang của tài liệu PDF bằng Aspose.PDF cho .NET. Bằng cách làm theo các bước nêu trên, bạn có thể dễ dàng triển khai chức năng này trong các dự án của riêng mình. Hãy thoải mái khám phá thêm tài liệu Aspose.PDF để khám phá các tính năng hữu ích khác khi làm việc với tệp PDF.
+ Hãy đảm bảo bạn cung cấp tên tệp mới (trong trường hợp này,`ChangeOrientation_out.pdf`) để lưu đầu ra. Bằng cách này, bạn không ghi đè lên tệp gốc.
 
-### Câu hỏi thường gặp
+### Phần kết luận
 
-#### H: Mục đích của việc thay đổi hướng trang trong tài liệu PDF là gì?
+Và bạn đã có nó! Thay đổi hướng trang của tệp PDF bằng Aspose.PDF cho .NET đơn giản như tải tài liệu, lặp qua các trang, điều chỉnh MediaBox và lưu tệp đã cập nhật. Cho dù bạn đang xử lý tài liệu được quét kém hay cần xoay các trang để phù hợp với nhu cầu định dạng của mình, hướng dẫn từng bước này sẽ giúp bạn.
 
-A: Thay đổi hướng trang trong tài liệu PDF cho phép bạn xoay nội dung của trang 90 độ. Điều này có thể hữu ích trong các trường hợp cần hiển thị hoặc in nội dung gốc theo hướng khác, chẳng hạn như chuyển từ chế độ dọc sang chế độ ngang hoặc ngược lại.
+## Câu hỏi thường gặp
 
-#### H: Tôi có thể thay đổi hướng của các trang cụ thể trong tài liệu PDF không?
+### Tôi có thể xoay các trang cụ thể thay vì tất cả các trang trong tệp PDF không?  
+Có, bạn có thể sửa đổi vòng lặp để nhắm mục tiêu vào các trang cụ thể bằng cách sử dụng chỉ mục của chúng thay vì lặp qua tất cả các trang.
 
- A: Có, bạn có thể thay đổi hướng của các trang cụ thể trong tài liệu PDF. Trong mã nguồn C# được cung cấp,`foreach` vòng lặp được sử dụng để duyệt qua từng trang của tài liệu và thay đổi hướng của trang đó. Nếu bạn chỉ muốn thay đổi hướng của các trang cụ thể, bạn có thể sửa đổi vòng lặp để nhắm mục tiêu đến các trang đó dựa trên số trang hoặc các tiêu chí khác.
+###  Cái gì là`MediaBox`?  
+ Các`MediaBox` xác định kích thước và hình dạng của trang trong tệp PDF. Đây là nơi đặt nội dung của trang.
 
-#### H: Việc thay đổi hướng trang có ảnh hưởng đến bố cục nội dung trên trang không?
+### Aspose.PDF cho .NET có hoạt động với các định dạng tệp khác không?  
+Có, Aspose.PDF có thể xử lý nhiều định dạng tệp khác nhau như HTML, XML, XPS, v.v.
 
-A: Có, việc thay đổi hướng trang sẽ ảnh hưởng đến bố cục của nội dung trên trang. Nội dung sẽ được xoay 90 độ, chiều rộng và chiều cao của trang sẽ được hoán đổi. Do đó, vị trí và căn chỉnh của nội dung trên trang có thể thay đổi.
+### Có phiên bản miễn phí của Aspose.PDF dành cho .NET không?  
+ Vâng, bạn có thể bắt đầu với một[dùng thử miễn phí](https://releases.aspose.com/) hoặc yêu cầu một[giấy phép tạm thời](https://purchase.aspose.com/temporary-license/).
 
-#### H: Tôi có thể xoay trang theo góc khác ngoài 90 độ không?
-
- A: Trong mã nguồn C# được cung cấp, xoay trang được thiết lập thành 90 độ bằng cách sử dụng`page.Rotate = Rotate.on90;` . Tuy nhiên, bạn có thể thay đổi góc quay thành các giá trị khác nếu cần. Ví dụ, bạn có thể sử dụng`Rotate.on180` để xoay trang 180 độ hoặc`Rotate.on270` để xoay nó 270 độ.
-
-#### H: Tôi phải xử lý thế nào khi nội dung trang tràn ra sau khi thay đổi hướng?
-
-A: Khi thay đổi hướng trang, kích thước của trang có thể thay đổi, có thể dẫn đến tràn nội dung. Để xử lý vấn đề này, bạn có thể cần điều chỉnh bố cục và định dạng nội dung trên trang. Bạn có thể sử dụng các tính năng do Aspose.PDF cung cấp cho .NET, chẳng hạn như thay đổi kích thước các thành phần, điều chỉnh lề hoặc sắp xếp lại nội dung, để đảm bảo nội dung trang vừa vặn sau khi thay đổi hướng.
+### Tôi có thể hoàn tác những thay đổi sau khi đã lưu không?  
+Sau khi bạn lưu tài liệu, các thay đổi sẽ có hiệu lực vĩnh viễn. Hãy đảm bảo làm việc trên một bản sao hoặc giữ bản sao lưu của tệp gốc.

@@ -38,7 +38,7 @@ Nyní, když máte vše nastaveno, pojďme si projít proces načtení licence z
 ### 1.1 Vytvořte nový projekt
 Začněte vytvořením nového projektu C# ve svém vývojovém prostředí (např. Visual Studio). Jako typ projektu vyberte aplikaci konzoly. To poskytne jednoduché prostředí pro spuštění kódu a zobrazení výstupu.
 
-### 1.2 Přidat odkaz Aspose.PDF
+### 1.2 Přidat referenci Aspose.PDF
 Chcete-li ve svém projektu použít Aspose.PDF, musíte přidat odkaz na knihovnu Aspose.PDF for .NET. Můžete to udělat tak, že v Průzkumníku řešení kliknete pravým tlačítkem na svůj projekt, vyberete "Spravovat balíčky NuGet" a vyhledáte "Aspose.PDF." Nainstalujte balíček do svého projektu.
 
 ## Krok 2: Inicializujte objekt licence

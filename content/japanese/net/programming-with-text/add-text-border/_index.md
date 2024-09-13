@@ -182,7 +182,7 @@ tb.AppendText(textFragment);
 
 #### Q: 生成された PDF ドキュメントをどのように保存しますか?
 
- A: 枠線付きのテキストを追加した後、`Save`方法の`Document` PDF ドキュメントを保存するオブジェクト:
+A: 枠線付きのテキストを追加した後、`Save`方法の`Document` PDF ドキュメントを保存するオブジェクト:
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");

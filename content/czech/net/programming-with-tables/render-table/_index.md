@@ -154,7 +154,7 @@ gratuluji! Nyní jste se naučili, jak zobrazit tabulku v dokumentu PDF pomocí 
 
 #### Otázka: Jak mohu upravit vzhled tabulky, například změnit barvy buněk nebo přidat ohraničení?
 
-A: Chcete-li upravit vzhled tabulky, můžete nastavit různé vlastnosti tabulky`Aspose.Pdf.Table` a její buňky. Můžete například nastavit`BackgroundColor` vlastnost buněk změnit barvu pozadí. Můžete také nastavit`Border` vlastnost tabulky nebo jednotlivých buněk pro přidání ohraničení. Navíc můžete upravit písmo, barvu textu a zarovnání obsahu tabulky úpravou`TextState` z`TextFragment` objekty přidané do buněk.
+ A: Chcete-li upravit vzhled tabulky, můžete nastavit různé vlastnosti tabulky`Aspose.Pdf.Table` a její buňky. Můžete například nastavit`BackgroundColor` vlastnost buněk změnit barvu pozadí. Můžete také nastavit`Border` vlastnost tabulky nebo jednotlivých buněk pro přidání ohraničení. Navíc můžete upravit písmo, barvu textu a zarovnání obsahu tabulky úpravou`TextState` z`TextFragment` objekty přidané do buněk.
 
 #### Otázka: Mohu do tabulky přidat záhlaví nebo zápatí?
 
@@ -162,7 +162,7 @@ Odpověď: Ano, do tabulky můžete přidat záhlaví nebo zápatí vytvořením
 
 #### Otázka: Jak mohu ovládat pozici tabulky na stránce?
 
- A: Chcete-li ovládat pozici tabulky na stránce, můžete upravit`MarginInfo` z`PageInfo` objekt. The`MarginInfo`umožňuje nastavit levý, pravý, horní a dolní okraj stránky, což ovlivňuje dostupné místo pro tabulku. Můžete také použít`PositioningType` majetek z`Aspose.Pdf.Table` k ovládání jejího vodorovného a svislého zarovnání v oblasti obsahu stránky.
+A: Chcete-li ovládat pozici tabulky na stránce, můžete upravit`MarginInfo` z`PageInfo` objekt. The`MarginInfo` umožňuje nastavit levý, pravý, horní a dolní okraj stránky, což ovlivňuje dostupné místo pro tabulku. Můžete také použít`PositioningType` vlastnictví`Aspose.Pdf.Table` k ovládání jejího vodorovného a svislého zarovnání v oblasti obsahu stránky.
 
 #### Otázka: Mohu exportovat tabulku do různých formátů souborů, jako je Excel nebo CSV?
 

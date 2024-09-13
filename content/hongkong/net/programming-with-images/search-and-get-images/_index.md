@@ -2,132 +2,120 @@
 title: 搜尋並取得 PDF 文件中的圖像
 linktitle: 搜尋並取得 PDF 文件中的圖像
 second_title: Aspose.PDF for .NET API 參考
-description: 使用 Aspose.PDF for .NET 搜尋並取得 PDF 檔案中的影像的逐步指南。
+description: 了解如何使用 Aspose.PDF for .NET 輕鬆從 PDF 檔案中擷取影像。請按照此逐步指南來增強您的 PDF 處理技能。
 type: docs
 weight: 260
 url: /zh-hant/net/programming-with-images/search-and-get-images/
 ---
-在本教學中，我們將引導您了解如何使用 Aspose.PDF for .NET 搜尋並取得 PDF 檔案中的影像。請按照以下步驟輕鬆執行此操作。
+## 介紹
+
+您是否正在尋找使用 Aspose.PDF for .NET 從 PDF 文件中提取圖像的簡單方法？您來對地方了！在本文中，我們將深入探討如何有效搜尋和檢索 PDF 文件中嵌入的圖像的細節。無論您是經驗豐富的開發人員還是剛剛涉足 PDF 操作領域，本指南都將引導您逐步完成整個過程。
 
 ## 先決條件
 
-在開始之前，請確保您具備以下條件：
+在我們深入了解程式碼的細節之前，您需要檢查一下清單中的一些先決條件。 
 
-- 安裝並設定 Visual Studio 或任何其他開發環境。
-- C# 程式語言的基礎知識。
-- 安裝了適用於.NET 的 Aspose.PDF 庫。您可以從Aspose官方網站下載。
+### .NET框架
 
-## 第 1 步：載入 PDF 文檔
+確保您的電腦上安裝了 .NET Framework。 Aspose.PDF for .NET 與各種版本相容，但最好使用最新的穩定版本以享受所有最新功能和改進。
 
-首先，使用以下程式碼載入 PDF 文件：
+### Aspose.PDF庫
+
+您需要存取 Aspose.PDF 庫。如果還沒有，您可以透過以下連結下載：[下載 .NET 版 Aspose.PDF](https://releases.aspose.com/pdf/net/) 。此外，您還可以探索他們的[一個月免費試用](https://releases.aspose.com/)無需任何成本即可啟動您的專案。
+
+### 開發環境
+
+應設定合適的開發環境（例如 Visual Studio 或您喜歡的任何 IDE）來無縫編寫和執行程式碼。
+
+## 導入包
+
+若要使用 Aspose.PDF for .NET，您首先需要將適當的命名空間匯入到您的專案中。您需要執行以下操作：
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-//開啟文件
+using System.IO;
+using Aspose.Pdf;
+using System;
+```
+
+在操作 PDF 文件時，每個套件都有特定的用途。這`Aspose.Pdf`命名空間是操作的基石，而其他兩個有助於處理 PDF 中的圖像和文字。
+
+## 第 1 步：設定文檔路徑
+
+首先，您需要定義 PDF 檔案所在的路徑。這段程式碼對此進行了設定：
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+將「您的文件目錄」替換為包含 PDF 檔案的目錄的實際路徑，例如，`C:\Documents\`.
+
+## 第 2 步：開啟 PDF 文檔
+
+接下來，您需要將 PDF 文件載入到您的應用程式中。這是透過創建一個新的`Document`具有您剛剛指定的檔案路徑的實例：
+
+```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "SearchAndGetImages.pdf");
 ```
 
-請務必提供 PDF 文件的正確路徑。
+## 第 3 步：建立 ImagePlacementAbsorber
 
-## 第 2 步：搜尋圖像位置
-
-若要搜尋 PDF 文件中影像的位置，請使用下列程式碼：
+要在 PDF 中搜尋圖像，您需要`ImagePlacementAbsorber`目的。此類有助於在提取過程中從 PDF 中吸收圖像：
 
 ```csharp
-//建立 ImagePlacementAbsorber 物件來搜尋影像位置
 ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
+```
 
-//接受文件所有頁面的吸收器
+## 第 4 步：接受所有頁面的吸收器
+
+這一步至關重要，因為它告訴`Document`將圖像吸收器套用到所有頁面。它確保放置在文件中任何位置的任何圖像都將被識別：
+
+```csharp
 doc.Pages.Accept(abs);
 ```
 
-這將收集吸收體中影像的位置。
+## 第 5 步：循環遍歷影像位置
 
-## 步驟 3：瀏覽圖像位置並取得圖像及其屬性
-
-接下來，我們將瀏覽收集的圖像位置並取得圖像及其屬性。使用以下程式碼：
+現在您已經吸收了這些圖像，是時候深入研究它們了。您將循環瀏覽從 PDF 中提取的每個圖像位置：
 
 ```csharp
-foreach(ImagePlacement imagePlacement in abs.ImagePlacements)
-{
-     //使用 ImagePlacement 物件取得影像
-     XImage image = imagePlacement.Image;
-
-     //顯示影像位置屬性
-     Console.Out.WriteLine("Image Width: " + imagePlacement.Rectangle.Width);
-     Console.Out.WriteLine("Image Height: " + imagePlacement.Rectangle.Height);
-     Console.Out.WriteLine("LLX of image: " + imagePlacement.Rectangle.LLX);
-     Console.Out.WriteLine("LLY of image: " + imagePlacement.Rectangle.LLY);
-     Console.Out.WriteLine("Horizontal image resolution: " + imagePlacement.Resolution.X);
-     Console.Out.WriteLine("Vertical image resolution: " + imagePlacement.Resolution.Y);
-}
-```
-
-這將瀏覽所有圖像位置，以獲取匹配的圖像並顯示其屬性。
-
-### 使用 Aspose.PDF for .NET 搜尋並取得影像的範例原始碼 
-```csharp
-//文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-//開啟文件
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "SearchAndGetImages.pdf");
-//建立 ImagePlacementAbsorber 物件來執行影像放置搜尋
-ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
-//接受所有頁面的吸收器
-doc.Pages.Accept(abs);
-//循環遍歷所有ImagePlacements，取得影像和ImagePlacement屬性
 foreach (ImagePlacement imagePlacement in abs.ImagePlacements)
 {
-	//使用 ImagePlacement 物件取得影像
-	XImage image = imagePlacement.Image;
-	//顯示所有展示位置的圖片展示位置屬性
-	Console.Out.WriteLine("image width:" + imagePlacement.Rectangle.Width);
-	Console.Out.WriteLine("image height:" + imagePlacement.Rectangle.Height);
-	Console.Out.WriteLine("image LLX:" + imagePlacement.Rectangle.LLX);
-	Console.Out.WriteLine("image LLY:" + imagePlacement.Rectangle.LLY);
-	Console.Out.WriteLine("image horizontal resolution:" + imagePlacement.Resolution.X);
-	Console.Out.WriteLine("image vertical resolution:" + imagePlacement.Resolution.Y);
+    //取得影像屬性的進一步步驟
 }
+```
+
+## 第 6 步：提取圖像屬性
+
+在循環內，您可以開始檢索每個影像的有價值的屬性。使用`imagePlacement`對象，您可以存取尺寸和解析度：
+
+```csharp
+XImage image = imagePlacement.Image; //取得影像
+
+Console.Out.WriteLine("image width:" + imagePlacement.Rectangle.Width);
+Console.Out.WriteLine("image height:" + imagePlacement.Rectangle.Height);
+Console.Out.WriteLine("image LLX:" + imagePlacement.Rectangle.LLX);
+Console.Out.WriteLine("image LLY:" + imagePlacement.Rectangle.LLY);
+Console.Out.WriteLine("image horizontal resolution:" + imagePlacement.Resolution.X);
+Console.Out.WriteLine("image vertical resolution:" + imagePlacement.Resolution.Y);
 ```
 
 ## 結論
 
-恭喜！您已使用 Aspose.PDF for .NET 成功搜尋並取得了 PDF 文件中的影像。現在您可以將此方法應用到您自己的專案中，以從 PDF 文件中提取圖像並獲取其屬性。
+現在你就得到它了！透過執行這些步驟，您可以使用 Aspose.PDF for .NET 有效率地搜尋和檢索 PDF 檔案中的影像。只需幾行程式碼，您就可以提取有價值的圖像及其屬性，為應用程式中的許多可能性打開大門。
 
-### 搜尋和獲取 PDF 文件中的圖像的常見問題解答
+## 常見問題解答
 
-#### Q：使用 Aspose.PDF for .NET 搜尋和取得 PDF 文件中的影像的目的為何？
+### Aspose.PDF 庫可以免費使用嗎？  
+Aspose.PDF for .NET 是一個付費函式庫，但您可以下載一個月的免費試用版。
 
-答：搜尋和取得 PDF 文件中的影像可讓您在 PDF 檔案中定位和擷取影像。這可用於各種目的，例如分析內容、驗證影像屬性或進一步處理影像。
+### 我可以從受密碼保護的 PDF 檔案中提取圖像嗎？  
+可以，但開啟文件時需要提供密碼。
 
-#### Q：在 PDF 文件中搜尋影像的過程是如何進行的？
+### 可以從 PDF 中提取哪些類型的圖像？  
+可以提取所有嵌入的圖像，無論其格式如何（JPEG、PNG 等）。
 
-答：該過程涉及使用`ImagePlacementAbsorber`物件在 PDF 文件的所有頁面上執行影像位置搜尋。吸收器收集有關文件中每個影像的位置、大小和解析度的資訊。
+### 我可以提取的圖像數量有限制嗎？  
+沒有硬性限制；這取決於 PDF 文件本身。
 
-####  Q：這樣做的目的是什麼`ImagePlacement` object in the code?
-
-答： 的`ImagePlacement`物件表示 PDF 文件中影像的位置。它提供的屬性允許您存取圖像的尺寸、座標和解析度等詳細資訊。
-
-#### Q：我可以根據特定條件過濾搜尋到的圖像嗎？
-
-答：所提供的程式碼收集有關 PDF 文件中所有影像的資訊。如果您想根據特定條件（例如影像類型、尺寸、解析度）過濾影像，您可能需要修改程式碼以包含適當的篩選條件。
-
-#### Q：取得圖片的投放資訊後，如何取得實際的圖片內容？
-
-答： 的`XImage`從獲得的對象`ImagePlacement`物件代表實際的圖像內容。您可以進一步處理這個`XImage`對象，例如將其保存到文件或在應用程式中顯示它。
-
-#### Q：獲得的圖像屬性可以用來做什麼？
-
-答：所獲得的影像屬性，例如寬度、高度、座標和分辨率，可以用於多種用途。您可以分析屬性，將它們顯示給用戶，或將它們用作進一步處理的輸入。
-
-#### Q：我可以使用此方法修改或編輯 PDF 文件中的圖像嗎？
-
-A：提供的代碼主要是搜尋並取得圖片投放資訊。若要修改或編輯影像，您可能需要使用 Aspose.PDF 庫整合其他功能，例如影像處理。
-
-#### Q：如何將此方法整合到我自己的專案中？
-
-答：要將此方法整合到您的專案中，請按照概述的步驟操作並根據需要修改程式碼。您可以根據應用程式的要求使用所獲取的圖像放置資訊和屬性。
-
-#### Q：Aspose.PDF for .NET 是否提供與 PDF 文件中的影像操作相關的其他功能？
-
-答：是的，Aspose.PDF for .NET 提供了一系列用於處理 PDF 文件中的影像的功能，包括影像插入、調整大小、旋轉、提取等。您可以瀏覽該庫的文檔和範例以發現其全部功能。
+### 我可以將提取的映像儲存到磁碟嗎？  
+是的，您可以使用以下命令將映像儲存到磁碟`XImage`程式碼中的物件。

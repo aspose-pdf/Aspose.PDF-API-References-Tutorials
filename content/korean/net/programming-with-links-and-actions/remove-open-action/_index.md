@@ -2,106 +2,125 @@
 title: 열린 작업 제거
 linktitle: 열린 작업 제거
 second_title: .NET API 참조를 위한 Aspose.PDF
-description: Aspose.PDF for .NET을 사용하여 PDF에서 열린 동작을 제거하는 방법을 알아보세요.
+description: Aspose.PDF for .NET을 사용하여 PDF에서 열린 작업을 쉽게 제거하세요! 효과적인 PDF 관리를 위한 단계별 가이드가 담긴 간단한 튜토리얼입니다.
 type: docs
 weight: 80
 url: /ko/net/programming-with-links-and-actions/remove-open-action/
 ---
-이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF 파일에서 열린 동작을 제거하는 방법을 알아보세요.
+## 소개
 
-## 1단계: 환경 설정
+이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 PDF 문서에서 열린 작업을 제거하는 데 필요한 간단한 단계를 살펴보겠습니다. 얼마나 간단한지 놀라실 겁니다. 그리고 끝날 즈음에는 PDF 전문가가 된 기분이 들 것입니다! 바로 전제 조건으로 들어가 보겠습니다.
 
-C# 프로젝트와 적절한 Aspose.PDF 참조로 개발 환경을 설정했는지 확인하세요.
+## 필수 조건
 
-## 2단계: PDF 파일 로딩
+시작하기 전에 몇 가지가 필요합니다.
 
-다음 코드를 사용하여 문서의 디렉토리 경로를 설정하고 PDF 파일을 업로드하세요.
+1. C#에 대한 기본적인 이해: C# 프로그래밍 언어에 익숙하면 코드 조각을 쉽게 탐색할 수 있습니다.
+2. Visual Studio: Visual Studio가 설치되어 있는지 확인하세요. .NET 개발을 위한 가장 일반적인 IDE입니다.
+3.  .NET용 Aspose.PDF: 이 라이브러리를 준비해 두어야 합니다. 다운로드할 수 있습니다.[여기](https://releases.aspose.com/pdf/net/). 
+4. .NET Framework: .NET Framework를 사용하도록 프로젝트를 설정했는지 확인하세요(버전 4.0 이상을 권장).
+5. 오픈 액션이 있는 PDF 파일: 이것은 우리가 작업할 문서입니다. 하나를 만들거나 연습을 위해 샘플을 다운로드할 수 있습니다.
+
+이러한 기본 사항을 다루었다면 바로 시작할 준비가 되었습니다! 이제 코딩을 시작하기 위해 필요한 패키지를 임포트해 보겠습니다.
+
+## 패키지 가져오기
+
+코딩을 시작하려면 프로젝트에 몇 가지 필수 패키지를 포함해야 합니다. 이렇게 하면 PDF 파일에서 수행할 작업의 기초를 마련할 수 있습니다. 해야 할 일은 다음과 같습니다.
+
+### 프로젝트 열기
+
+작업을 수행할 Visual Studio에서 .NET 프로젝트를 엽니다.
+
+### Aspose.PDF 라이브러리 추가
+
+프로젝트에 Aspose.PDF 라이브러리를 추가해야 합니다. NuGet Package Manager를 통해 쉽게 할 수 있습니다. Aspose.PDF를 검색하여 최신 안정 버전을 설치하기만 하면 됩니다.
+
+### 필요한 네임스페이스 포함
+
+C# 파일의 맨 위에 Aspose.PDF 네임스페이스를 가져와야 합니다. 이렇게 하면 Aspose에서 제공하는 PDF 기능을 사용할 것이라는 것을 코드에 알릴 수 있습니다. 추가해야 할 내용은 다음과 같습니다.
 
 ```csharp
-// 문서 디렉토리의 경로입니다.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// 문서를 엽니다
+using System.IO;
+using Aspose.Pdf;
+using System;
+```
+
+이제 모든 설정이 완료되었으니, PDF 문서에서 열린 작업을 제거하는 구체적인 방법을 알아보겠습니다.
+
+## 1단계: 문서 디렉토리 정의
+
+무엇보다도 PDF 파일의 위치를 지정해야 합니다. 이것을 작업 공간 설정이라고 생각하세요. 방법은 다음과 같습니다.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ 교체를 꼭 해주세요`"YOUR DOCUMENT DIRECTORY"` PDF가 저장된 실제 경로와 함께. 예:
+
+```csharp
+string dataDir = "C:\\Documents\\";
+```
+
+이로써 다음 몇 단계의 토대가 마련되었습니다. 
+
+## 2단계: PDF 문서 열기
+
+다음으로, PDF 문서를 애플리케이션에 로드해 보겠습니다. 여기서 마법이 시작되는 것입니다! 다음 코드를 사용하세요.
+
+```csharp
 Document document = new Document(dataDir + "RemoveOpenAction.pdf");
 ```
 
-## 3단계: 열려 있는 작업 삭제
+ 이 단계에서는 애플리케이션에 새 것을 생성하도록 지시합니다.`Document` "RemoveOpenAction.pdf"라는 PDF 파일을 나타내는 개체입니다. 이 파일이 지정된 디렉토리에 있는지 확인하세요!
 
- 문서에서 열기 작업을 제거하려면 다음을 설정합니다.`OpenAction` 속성을 null로 변경:
+## 3단계: Open Action 제거
+
+이제 흥미로운 부분이 나옵니다. 문서에서 열기 작업을 제거하는 것입니다. 한 줄의 코드로 이 작업을 수행할 수 있습니다. 방법은 다음과 같습니다.
 
 ```csharp
-document. OpenAction = null;
+document.OpenAction = null;
 ```
+
+이 줄은 기본적으로 문서에 더 이상 열려 있는 작업 세트가 없다는 것을 알려줍니다. PDF를 저장하기 직전에 새로운 시작을 하는 것과 같습니다!
 
 ## 4단계: 업데이트된 문서 저장
 
- 업데이트된 문서를 저장하려면 다음을 사용합니다.`Save` 방법:
+열기 작업을 제거한 후에는 변경 사항을 저장해야 합니다. 업데이트된 문서를 디렉토리에 다시 저장하는 방법은 다음과 같습니다.
 
 ```csharp
 dataDir = dataDir + "RemoveOpenAction_out.pdf";
-document. Save(dataDir);
-```
-
-## 5단계: 결과 표시
-
-열기 작업이 성공적으로 제거되었음을 나타내는 메시지를 표시하고 저장된 파일의 위치를 지정합니다.
-
-```csharp
-Console.WriteLine("\nOpen action deleted successfully.\nFile saved to location: " + dataDir);
-```
-
-### .NET용 Aspose.PDF를 사용하여 Remove Open Action을 위한 샘플 소스 코드 
-```csharp
-// 문서 디렉토리의 경로입니다.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// 문서 열기
-Document document = new Document(dataDir + "RemoveOpenAction.pdf");
-// 문서 열기 작업 제거
-document.OpenAction = null;
-dataDir = dataDir + "RemoveOpenAction_out.pdf";
-// 업데이트된 문서 저장
 document.Save(dataDir);
-Console.WriteLine("\nOpen action removed successfully.\nFile saved at " + dataDir); 
 ```
+
+이 코드는 수정된 문서를 같은 디렉토리에 "RemoveOpenAction_out.pdf"로 저장합니다. 기본적으로 원치 않는 동작이 없는 PDF의 새 버전을 만들었습니다!
+
+## 5단계: 성공 확인
+
+모든 사람에게 작업이 성공했음을 알리기 위해 콘솔에 확인 메시지를 인쇄할 수 있습니다. 다음 줄을 추가하여 깔끔하게 마무리하세요.
+
+```csharp
+Console.WriteLine("\nOpen action removed successfully.\nFile saved at " + dataDir);
+```
+
+이 단계는 꼭 필요한 것은 아니지만 작업을 실행한 후 마무리를 하는 것이 좋습니다. 해냈어요! PDF 문서에서 열기 작업을 성공적으로 제거했습니다.
 
 ## 결론
 
-축하합니다! 이제 Aspose.PDF for .NET을 사용하여 PDF에서 열기 작업을 제거하는 방법을 알게 되었습니다. 이 지식을 사용하여 프로젝트에서 PDF 파일의 속성과 동작을 사용자 지정하세요.
+그리고 이제 끝났습니다! C# 코드 몇 줄과 .NET용 Aspose.PDF의 힘으로 열린 작업을 제거하여 PDF를 간소화했습니다. 문서 관리가 보이는 것만큼 복잡할 필요는 없습니다. Aspose와 같은 도구를 마스터하면 PDF 파일을 관리하고 더 열심히 일하게 할 수 있습니다. 그 반대가 아닙니다.
 
-이제 이 가이드를 완료했으니, 이러한 개념을 여러분의 프로젝트에 적용하고 .NET용 Aspose.PDF가 제공하는 기능을 더욱 자세히 탐색해 볼 수 있습니다.
+## 자주 묻는 질문
 
-### 자주 묻는 질문 
+### PDF 파일에서 열기 동작이란 무엇입니까?
+열기 동작은 PDF를 열 때 실행되는 명령으로, 소리를 재생하거나 웹 페이지로 이동하는 것과 같습니다.
 
-#### 질문: PDF 파일의 "열기 동작"은 무엇입니까?
+### .NET용 Aspose.PDF를 사용하려면 비용을 지불해야 합니까?
+ Aspose는 무료 체험판을 제공합니다. 다운로드할 수 있습니다.[여기](https://releases.aspose.com/).
 
-A: PDF 파일의 "열기 동작"은 PDF가 열릴 때 어떤 일이 일어나야 하는지 지정하는 지침입니다. 여기에는 문서 내의 특정 페이지나 위치로 이동, 외부 애플리케이션 시작 또는 특정 뷰 표시와 같은 동작이 포함될 수 있습니다.
+### PDF에서 여러 개의 열려 있는 작업을 제거할 수 있나요?
+ 네, 설정할 수 있습니다`OpenAction` 재산에`null` 열려 있는 모든 작업을 제거합니다.
 
-#### 질문: PDF 파일에서 열기 작업을 제거해야 하는 이유는 무엇인가요?
+### 오픈 액션 제거가 제대로 작동하는지 어떻게 테스트하나요?
+저장된 PDF 파일을 열고 이전에 설정한 동작이 발생하는지 확인하세요. 발생하지 않으면 성공입니다!
 
-A: 열기 동작을 제거하면 보안, 사용자 경험 및 PDF가 열릴 때 표시되는 방식에 대한 제어가 향상될 수 있습니다. 예를 들어, 자동 탐색을 방지하거나 문서를 열 때 특정 동작을 비활성화할 수 있습니다.
-
-#### 질문: Aspose.PDF for .NET은 열기 동작을 제거하는 데 어떻게 도움이 되나요?
-
-A: Aspose.PDF for .NET은 PDF 파일의 다양한 측면을 조작하는 API를 제공합니다. 이 튜토리얼은 C# 코드를 사용하여 열기 동작을 제거하는 방법을 보여줍니다.
-
-#### 질문: 오픈 액션을 제거할 때 잠재적인 위험이나 고려 사항은 있나요?
-
-A: 열기 작업을 제거하면 PDF의 기본 동작이 변경될 수 있으므로 의도한 사용자 경험과 일치하는지 확인하세요. 수정된 PDF를 철저히 테스트하여 제거가 다른 기능에 영향을 미치지 않는지 확인하세요.
-
-#### 질문: 다른 작업을 수행하도록 열기 작업을 사용자 정의할 수 있나요?
-
-답변: 네, Aspose.PDF for .NET을 사용하면 특정 페이지로 이동하거나 JavaScript를 실행하는 등 다양한 유형의 동작으로 설정하여 열기 동작을 사용자 정의할 수 있습니다.
-
-#### 질문: 암호로 보호된 PDF에서 열린 작업을 제거할 수 있나요?
-대답: 네, 문서에 액세스하고 수정할 수 있는 적절한 자격 증명을 제공하는 한 암호로 보호된 PDF에서 열린 작업을 제거할 수 있습니다.
-
-#### 질문: 오픈 액션 제거는 되돌릴 수 있나요?
-
-답변: 아니요. 열기 작업을 제거하고 PDF를 저장하면 수정된 PDF에서 원래 열기 작업을 복원할 수 없습니다.
-
-#### 질문: 오픈 액션이 성공적으로 제거되었는지 어떻게 확인할 수 있나요?
-
-답변: 제공된 코드를 사용하여 열기 동작을 제거한 후, 수정된 PDF를 열고 열 때 특정 동작이 발생하지 않는지 확인하세요.
-
-#### 질문: 여러 PDF 파일에서 열린 작업을 동시에 제거할 수 있나요?
-
-대답: 네, 일괄 처리 시나리오에서 여러 PDF 파일에서 열려 있는 작업을 제거하는 데에도 동일한 방법을 사용할 수 있습니다.
+### 문제가 발생하면 어디에서 지원을 받을 수 있나요?
+ PDF 관련 문제에 대한 지원을 받으려면 Aspose 포럼을 방문하세요.[여기](https://forum.aspose.com/c/pdf/10).

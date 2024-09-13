@@ -103,7 +103,7 @@ NoteElement note3 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note3);
 note3.SetText("Note with ID = 'note_003'. ");
 note3.SetId("note_003");
-// Phải ném ngoại lệ - Aspose.Pdf.Tagged.TaggedException: Phần tử cấu trúc có ID='note_002' đã tồn tại
+//Phải ném ngoại lệ - Aspose.Pdf.Tagged.TaggedException: Phần tử cấu trúc có ID='note_002' đã tồn tại
 //note3.SetId("note_002");
 // Tài liệu kết quả không tuân thủ PDF/UA Nếu ClearId() được sử dụng cho Phần tử Cấu trúc Ghi chú
 //lưu ý3.ClearId();
@@ -148,7 +148,7 @@ A: Có, bạn có thể tùy chỉnh nội dung và thuộc tính của các th�
 
 #### H: Tôi có thể chỉ định ID duy nhất cho các thành phần cấu trúc ghi chú không?
 
-A: Có, bạn có thể chỉ định ID duy nhất cho các thành phần cấu trúc ghi chú bằng cách sử dụng`SetId` phương pháp. Mã này trình bày cách đặt ID của các phần tử ghi chú thành các giá trị duy nhất.
+ A: Có, bạn có thể chỉ định ID duy nhất cho các thành phần cấu trúc ghi chú bằng cách sử dụng`SetId` phương pháp. Mã này trình bày cách đặt ID của các phần tử ghi chú thành các giá trị duy nhất.
 
 #### H: Điều gì xảy ra nếu tôi cố gắng gán một ID trùng lặp cho một phần tử cấu trúc ghi chú?
 
@@ -156,7 +156,7 @@ A: Cố gắng gán ID trùng lặp cho phần tử cấu trúc ghi chú sẽ d�
 
 #### H: Làm thế nào tôi có thể đảm bảo tuân thủ PDF/UA khi tạo các thành phần cấu trúc ghi chú?
 
- A: Mã được cung cấp trong hướng dẫn này trình bày cách xác thực sự tuân thủ PDF/UA bằng cách sử dụng`Validate` phương pháp. Bằng cách xác thực tài liệu theo tiêu chuẩn PDF/UA, bạn có thể đảm bảo rằng các thành phần cấu trúc ghi chú được thêm vào tuân thủ các nguyên tắc về khả năng truy cập.
+A: Mã được cung cấp trong hướng dẫn này trình bày cách xác thực sự tuân thủ PDF/UA bằng cách sử dụng`Validate` phương pháp. Bằng cách xác thực tài liệu theo tiêu chuẩn PDF/UA, bạn có thể đảm bảo rằng các thành phần cấu trúc ghi chú được thêm vào tuân thủ các nguyên tắc về khả năng truy cập.
 
 #### H: Tôi có thể sử dụng cách này để thêm các thành phần cấu trúc ghi chú vào tài liệu PDF hiện có không?
 

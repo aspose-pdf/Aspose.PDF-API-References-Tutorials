@@ -35,7 +35,7 @@ taggedContent.SetLanguage("fr-FR");
 이 단계에서는 문서의 루트 구조 요소를 가져옵니다.
 
 ```csharp
-//루트 구조 요소를 얻습니다
+// 루트 구조 요소를 얻습니다
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
@@ -293,7 +293,7 @@ A: 시작하기 전에 Aspose.PDF for .NET을 설치하고 개발 환경을 설�
 
 #### 질문: Aspose.PDF for .NET을 사용하여 새 PDF 문서를 만들려면 어떻게 해야 하나요?
 
-A: 새 PDF 문서를 만들려면 다음을 인스턴스화해야 합니다.`Document` Aspose.PDF 라이브러리의 개체입니다. 제공된 C# 소스 코드는 문서를 만들고 제목과 언어를 설정하는 방법을 보여줍니다.
+ A: 새 PDF 문서를 만들려면 다음을 인스턴스화해야 합니다.`Document` Aspose.PDF 라이브러리의 개체입니다. 제공된 C# 소스 코드는 문서를 만들고 제목과 언어를 설정하는 방법을 보여줍니다.
 
 #### 질문: PDF 문서에서 루트 구조 요소의 중요성은 무엇인가요?
 

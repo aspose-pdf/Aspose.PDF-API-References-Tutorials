@@ -152,7 +152,7 @@ document.Save(dataDir + "StructureElementsTree.pdf");
 
 Α: Το παράδειγμα κώδικα δείχνει πώς να δημιουργήσετε μια ιεραρχική δομή λογικών στοιχείων χρησιμοποιώντας το`SectElement`, `DivElement` , και`ArtElement` μαθήματα που παρέχονται από το Aspose.PDF. Αυτά τα στοιχεία οργανώνονται ως γονικοί και θυγατρικοί κόμβοι, σχηματίζοντας μια δομή που μοιάζει με δέντρο μέσα στο έγγραφο.
 
-####  Ε: Πώς κάνει το`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
+#### Ε: Πώς κάνει το`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
 
  Α: Το`TaggedContent` Η ιδιότητα παρέχει πρόσβαση στις δυνατότητες περιεχομένου με ετικέτα του εγγράφου PDF. Αυτό σας επιτρέπει να δημιουργείτε και να χειρίζεστε δομημένα στοιχεία, να ορίζετε τις σχέσεις τους και να τα οργανώνετε ιεραρχικά, βελτιώνοντας τη δομή και την προσβασιμότητα του εγγράφου.
 
@@ -168,7 +168,7 @@ document.Save(dataDir + "StructureElementsTree.pdf");
 
 Α: Η οργάνωση στοιχείων βελτιώνει ιεραρχικά την οργάνωση, την πλοήγηση και τη σημασιολογία των εγγράφων. Επιτρέπει στους χρήστες και τις υποστηρικτικές τεχνολογίες να κατανοήσουν τη δομή και τις σχέσεις του περιεχομένου, βελτιώνοντας τη συνολική εμπειρία χρήστη.
 
-####  Ε: Πώς κάνει το`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
+#### Ε: Πώς κάνει το`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
 
  Α: Το`Save` μέθοδος αποθηκεύει το έγγραφο PDF μαζί με την ιεραρχική δομή που δημιουργήθηκε χρησιμοποιώντας το`AppendChild` μέθοδος. Αυτό διασφαλίζει ότι η δομή παραμένει άθικτη, καθιστώντας το έγγραφο προσβάσιμο και καλά οργανωμένο.
 

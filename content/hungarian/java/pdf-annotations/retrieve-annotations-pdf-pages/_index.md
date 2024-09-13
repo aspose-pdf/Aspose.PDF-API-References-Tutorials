@@ -81,4 +81,4 @@ Igen, az Aspose.PDF for Java személyes és vállalati használatra egyaránt al
 
 ### Automatizálhatom a megjegyzések lekérési folyamatát az Aspose.PDF for Java használatával?
 
-Igen, automatizálhatja a megjegyzések lekérési folyamatát az Aspose.PDF for Java segítségével. Létrehozhat olyan szkripteket vagy alkalmazásokat, amelyek programozottan lekérik a megjegyzéseket PDF-dokumentumokból, így értékes eszköze a dokumentumfeldolgozási munkafolyamatok számára.
+Igen, automatizálhatja a megjegyzések lekérési folyamatát az Aspose.PDF for Java segítségével. Létrehozhat olyan szkripteket vagy alkalmazásokat, amelyek programozottan lekérik a megjegyzéseket PDF-dokumentumokból, így értékes eszköze lehet a dokumentumfeldolgozási munkafolyamatok számára.

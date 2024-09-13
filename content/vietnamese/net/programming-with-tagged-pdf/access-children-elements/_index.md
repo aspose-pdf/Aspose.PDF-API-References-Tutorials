@@ -105,7 +105,7 @@ foreach (Element element in elementList)
 		string alternativeText = structureElement.AlternativeText;
 	}
 }
-// Truy cập vào các phần tử con của phần tử đầu tiên trong phần tử gốc
+//Truy cập vào các phần tử con của phần tử đầu tiên trong phần tử gốc
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
 foreach (Element element in elementList)
 {

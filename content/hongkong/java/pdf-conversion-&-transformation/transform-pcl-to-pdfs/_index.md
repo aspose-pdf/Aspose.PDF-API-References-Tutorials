@@ -114,7 +114,7 @@ pdfDocument.save("output.pdf");
 
 ### Aspose.PDF for Java適合用來大量處理PCL檔案嗎？
 
-是的，Aspose.PDF for Java 非常適合 PCL 檔案的批次，使其成為將大量 PCL 文件轉換為 PDF 格式的多功能解決方案。
+是的，Aspose.PDF for Java 非常適合 PCL 檔案的批次，使其成為將大量 PCL 文件轉換為 PDF 格式的通用解決方案。
 
 ### 如何獲得 Aspose.PDF for Java 的技術支援？
 

@@ -26,7 +26,7 @@ url: /zh-hant/net/document-conversion/pdf-to-epub/
 
 1. 在 Visual Studio 中開啟您的專案。
 2. 在解決方案資源管理器中以滑鼠右鍵按一下您的項目，然後選擇「管理 NuGet 套件」。
-3. 搜尋“Aspose.PDF”並安裝該套件。
+3. 搜尋“Aspose.PDF”並安裝該軟體包。
 
 ```csharp
 using System;
@@ -93,7 +93,7 @@ pdfDocument.Save(dataDir + "PDFToEPUB_out.epub", options);
 
 ## 結論
 
-現在你就擁有了！您已使用 Aspose.PDF for .NET 成功將 PDF 文件轉換為 EPUB 格式。此過程不僅可以增強內容的可訪問性，還可以讓您接觸到更廣泛的喜歡在電子閱讀器或行動裝置上閱讀的受眾。如果您有任何疑問或需要進一步協助，請隨時查看[支援論壇](https://forum.aspose.com/c/pdf/10)或探索[Aspose 文檔](https://reference.aspose.com/pdf/net/).
+現在你就得到它了！您已使用 Aspose.PDF for .NET 成功將 PDF 文件轉換為 EPUB 格式。此過程不僅可以增強內容的可訪問性，還可以讓您接觸到更廣泛的喜歡在電子閱讀器或行動裝置上閱讀的受眾。如果您有任何疑問或需要進一步協助，請隨時查看[支援論壇](https://forum.aspose.com/c/pdf/10)或探索[Aspose 文檔](https://reference.aspose.com/pdf/net/).
 
 ## 常見問題解答
 

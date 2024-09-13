@@ -217,7 +217,7 @@ V: A dokumentumkönyvtár beállításához:
 
 #### K: Hogyan tölthetem be a PDF dokumentumot és alakíthatom át képpé?
 
- V: Az oktatóanyagban a`Aspose.Pdf.Document` osztályt használják a bemeneti PDF dokumentum betöltésére. Aztán a`PdfConverter` osztályt használják a PDF-dokumentum képpé konvertálására. A kép felbontása be van állítva, és a kép a`Bitmap` objektum.
+ V: Az oktatóanyagban a`Aspose.Pdf.Document` osztályt használják a bemeneti PDF dokumentum betöltésére. Aztán a`PdfConverter` osztályt használják a PDF dokumentum képpé konvertálására. A kép felbontása be van állítva, és a kép a`Bitmap` objektum.
 
 #### K: Hogyan jelölhetek ki karaktereket a PDF dokumentum képében?
 

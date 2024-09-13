@@ -2,62 +2,88 @@
 title: Formularfeld in Tabulatorreihenfolge abrufen
 linktitle: Formularfeld in Tabulatorreihenfolge abrufen
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Formularfelder in der Tabulatorreihenfolge abrufen.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Formularfelder in der Tabulatorreihenfolge abrufen und ändern. Schritt-für-Schritt-Anleitung mit Codebeispielen zur Optimierung der PDF-Formularnavigation.
 type: docs
 weight: 240
 url: /de/net/programming-with-forms/retrieve-form-field-in-tab-order/
 ---
-Wenn Sie mit PDF-Dokumenten in C# unter Verwendung von Aspose.PDF für .NET arbeiten, stoßen Sie möglicherweise auf ein Szenario, in dem Sie Formularfelder in einer bestimmten Tabulatorreihenfolge abrufen müssen. Dies kann nützlich sein, wenn Sie Vorgänge an Formularfeldern basierend auf ihrer Tabulatorreihenfolge durchführen möchten. In diesem Tutorial führen wir Sie Schritt für Schritt durch das Abrufen von Formularfeldern in der Tabulatorreihenfolge unter Verwendung von Aspose.PDF für .NET.
+## Einführung
 
-## Anforderungen
+Das Verwalten von PDF-Dokumenten und das Sicherstellen, dass sie wie erwartet funktionieren, insbesondere bei interaktiven Feldern, kann manchmal wie das Hüten von Katzen erscheinen. Aber keine Sorge, mit den richtigen Tools können Sie die Kontrolle übernehmen und dafür sorgen, dass Ihre PDFs genau so funktionieren, wie Sie es möchten. In diesem Handbuch erfahren Sie, wie Sie Formularfelder in der Tabulatorreihenfolge mit Aspose.PDF für .NET abrufen. Dies ist ein wichtiger Trick, um die Benutzererfahrung zu optimieren und sicherzustellen, dass die Formularnavigation nahtlos ist. 
 
-Bevor wir beginnen, stellen Sie sicher, dass Sie die folgenden Voraussetzungen erfüllen:
+## Voraussetzungen
 
-- Visual Studio auf Ihrem System installiert
-- Aspose.PDF für .NET-Bibliothek installiert
+Bevor Sie sich in den Code vertiefen, stellen wir sicher, dass Sie alle wichtigen Dinge eingerichtet haben:
 
-Sehen wir uns nun die Schritte zum Abrufen von Formularfeldern in der Tabulatorreihenfolge an.
+- Aspose.PDF für .NET: Sie müssen die Aspose.PDF-Bibliothek in Ihrem Projekt installiert haben. Wenn Sie sie noch nicht haben, laden Sie sie herunter[Hier](https://releases.aspose.com/pdf/net/).
+- Entwicklungsumgebung: Richten Sie eine C#-Entwicklungsumgebung wie Visual Studio ein.
+- .NET Framework: Stellen Sie sicher, dass .NET auf Ihrem System installiert ist.
+- PDF-Dokument: Halten Sie ein PDF-Dokument mit Formularfeldern zum Testen bereit.
+  
+Sobald diese Grundlagen vorhanden sind, können Sie Formularfelder wie ein Profi in der Tabulatorreihenfolge abrufen und bearbeiten.
 
-## Schritt 1: Festlegen des Dokumentverzeichnisses
+## Pakete importieren
 
- Zunächst müssen Sie das Dokumentverzeichnis festlegen, in dem sich Ihr PDF-Dokument befindet. Sie können dies tun, indem Sie den Pfad zum Verzeichnis im`dataDir` Variable.
+Um mit Aspose.PDF arbeiten zu können, müssen Sie zunächst die erforderlichen Namespaces in Ihr Projekt importieren. Diese Namespaces geben Ihnen Zugriff auf alle Funktionen zur Bearbeitung von PDFs.
 
 ```csharp
-// Der Pfad zum Dokumentverzeichnis.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using Aspose.Pdf.Forms;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
- Ersetzen`"YOUR DOCUMENT DIRECTORY"` durch den tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
+Dies sind die Kernimporte, die für die Arbeit mit dem PDF und seinen Formularfeldern erforderlich sind.
 
-## Schritt 2: Laden des PDF-Dokuments
+## Schritt 1: Laden Sie das PDF-Dokument
 
- In diesem Schritt laden wir das PDF-Dokument mit Aspose.PDF für .NET. Das`Document` Klasse bietet die Möglichkeit, PDF-Dokumente zu laden und zu bearbeiten.
+Bevor wir etwas mit Formularfeldern machen können, müssen wir das PDF-Dokument laden. Dies ist der Ausgangspunkt für alle Interaktionen mit Ihrem PDF.
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "Test2.pdf");
 ```
 
- Hier,`"Test2.pdf"`ist der Name des PDF-Dokuments, das Sie laden möchten. Stellen Sie sicher, dass das Dokument im angegebenen Dokumentverzeichnis vorhanden ist.
+ Hier initialisieren wir die`Document`Objekt, indem Sie den Pfad zur PDF-Datei übergeben, mit der wir arbeiten möchten. Stellen Sie sicher, dass der Pfad auf den Speicherort Ihres Dokuments verweist.
 
-## Schritt 3: Abrufen von Formularfeldern in der Tabulatorreihenfolge
+## Schritt 2: Zugriff auf die erste Seite
 
- Um Formularfelder in der Tabulatorreihenfolge abzurufen, müssen wir auf die`FieldsInTabOrder` Eigentum der`Page` Klasse. Diese Eigenschaft gibt eine Liste von Formularfeldern zurück, sortiert nach ihrer Tabulatorreihenfolge.
+Als Nächstes müssen wir auf die Seite zugreifen, die die Formularfelder enthält. Der Einfachheit halber konzentrieren wir uns auf die erste Seite, aber Sie können dies für jede Seite in Ihrem Dokument ändern.
 
 ```csharp
 Page page = doc.Pages[1];
+```
+
+Diese Zeile holt die erste Seite des PDFs. Wenn Ihre Formularfelder über mehrere Seiten verteilt sind, können Sie den Seitenindex entsprechend anpassen.
+
+## Schritt 3: Felder in Tabulatorreihenfolge abrufen
+
+ Jetzt kommt der interessante Teil: das Abrufen der Formularfelder basierend auf ihrer Tab-Reihenfolge. Die`FieldsInTabOrder` -Eigenschaft hilft beim Abrufen der Felder in der Reihenfolge, in der sie angezeigt werden sollen, wenn der Benutzer mit der Tabulatortaste durch das Formular navigiert.
+
+```csharp
 IList<Field> fields = page.FieldsInTabOrder;
+```
+
+Dieser Code gibt uns eine Liste von Feldern, sortiert nach ihrer Tabulatorreihenfolge.
+
+## Schritt 4: Feldnamen anzeigen
+
+Sobald wir die Felder haben, geben wir ihre Namen aus, um zu sehen, welche Felder Teil des Formulars sind und in welcher Reihenfolge sie stehen.
+
+```csharp
 string s = "";
 foreach (Field field in fields)
 {
-     s += field. PartialName;
+    s += field.PartialName + ", ";
 }
 ```
 
-Im obigen Codeausschnitt rufen wir die Formularfelder von der zweiten Seite ab (`doc.Pages[1]` ) und durchlaufen Sie jedes Feld, um die Teilnamen zu verketten.`s` Variable. Sie können diesen Codeausschnitt Ihren spezifischen Anforderungen entsprechend ändern.
+Hier durchlaufen wir jedes Feld in der Liste und verketten die`PartialName` jedes Feldes. Die`PartialName` stellt den Namen des Formularfelds im PDF-Dokument dar. Dieser Schritt ist besonders nützlich zum Debuggen oder Überprüfen der Feldnamen.
 
-## Schritt 4: Ändern der Tabulatorreihenfolge
+## Schritt 5: Tabulatorreihenfolge ändern
 
- Wenn Sie die Tabulatorreihenfolge von Formularfeldern ändern möchten, können Sie dies tun, indem Sie auf`TabOrder` -Eigenschaft jedes Felds und Zuweisen eines neuen Tabulatorreihenfolgewerts. Hier ist ein Beispiel:
+Manchmal möchten Sie möglicherweise die Tabulatorreihenfolge der Formularfelder ändern, um die Benutzerfreundlichkeit zu verbessern. Beispielsweise kann das Formular erfordern, dass das erste Feld das dritte und das dritte das erste Feld ist. So können Sie die Tabulatorreihenfolge anpassen:
 
 ```csharp
 (doc.Form[3] as Field).TabOrder = 1;
@@ -65,70 +91,52 @@ Im obigen Codeausschnitt rufen wir die Formularfelder von der zweiten Seite ab (
 (doc.Form[2] as Field).TabOrder = 3;
 ```
 
-Im obigen Codeausschnitt weisen wir drei Formularfeldern neue Tab-Reihenfolgewerte zu (`doc.Form[3]`, `doc.Form[1]` , Und`doc.Form[2]`). Passen Sie die Feldindizes und Tabulatorreihenfolgewerte Ihren spezifischen Anforderungen an.
+ In diesem Beispiel ändern wir die Tabulatorreihenfolge von drei Feldern im Formular. Sie können die`TabOrder` -Eigenschaft, um sie der gewünschten Sequenz anzupassen.
 
-## Schritt 5: Speichern des geänderten Dokuments
+## Schritt 6: Speichern Sie die geänderte PDF-Datei
 
- Nachdem Sie die Tabulatorreihenfolge von Formularfeldern geändert haben, müssen Sie das geänderte Dokument speichern. Dies können Sie mit dem`Save` Methode der`Document` Klasse.
+Nachdem Sie die Tabulatorreihenfolge aktualisiert haben, sollten Sie die PDF-Datei mit den Änderungen speichern. Dies ist ein wichtiger Schritt, um sicherzustellen, dass Ihre Änderungen im Dokument widergespiegelt werden.
 
 ```csharp
 doc.Save(dataDir + "39522_out.pdf");
 ```
 
- Hier,`"39522_out.pdf"` ist der Name der Ausgabedatei, in der das geänderte Dokument gespeichert wird. Geben Sie den gewünschten Namen und Speicherort für die Ausgabedatei an.
+Dadurch wird die aktualisierte PDF-Datei in einer neuen Datei gespeichert. Speichern Sie sie immer als neue Datei, um ein Überschreiben Ihres Originaldokuments zu vermeiden.
 
-### Beispielquellcode zum Abrufen von Formularfeldern in der Tabulatorreihenfolge mit Aspose.PDF für .NET 
+## Schritt 7: Überprüfen der Änderungen
+
+Nach dem Speichern der PDF-Datei empfiehlt es sich, das Dokument erneut zu öffnen und zu überprüfen, ob die Änderungen korrekt angewendet wurden. So können Sie die Tabulatorreihenfolge nach der Änderung überprüfen:
+
 ```csharp
-// Der Pfad zum Dokumentverzeichnis.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document doc = new Document(dataDir + "Test2.pdf");
-Page page = doc.Pages[1];
-IList<Field> fields = page.FieldsInTabOrder;
-string s = "";
-foreach (Field field in fields)
-{
-	s += field.PartialName;
-}
-(doc.Form[3] as Field).TabOrder = 1;
-(doc.Form[1] as Field).TabOrder = 2;
-(doc.Form[2] as Field).TabOrder = 3;
-doc.Save(dataDir + "39522_out.pdf");
 Document doc1 = new Document(dataDir + "39522_out.pdf");
-s = "";
-foreach (Field field in doc1.Pages[1].FieldsInTabOrder)
-{
-	s += field.PartialName;
-}
 string index = "";
 foreach (Field field in doc1.Form)
 {
-	index += field.TabOrder;
+    index += field.TabOrder + ", ";
 }
 ```
 
+Dieser Code lädt das aktualisierte Dokument und gibt die neue Tabulatorreihenfolge für alle Felder aus. Er stellt sicher, dass Ihre Änderungen erfolgreich waren.
+
+---
+
 ## Abschluss
 
-In diesem Tutorial haben wir gelernt, wie man Formularfelder in Tabulatorreihenfolge mit Aspose.PDF für .NET abruft. Wir haben die Schritte zum Laden eines PDF-Dokuments, zum Abrufen von Formularfeldern in Tabulatorreihenfolge, zum Ändern der Tabulatorreihenfolge und zum Speichern des geänderten Dokuments behandelt. Wenn Sie diese Schritte befolgen, können Sie effizient mit Formularfeldern arbeiten und deren Tabulatorreihenfolge nach Ihren Anforderungen anpassen.
+Und da haben Sie es! Das Abrufen und Ändern der Tabulatorreihenfolge von Formularfeldern in PDF-Dokumenten ist nicht nur handhabbar, sondern auch für die Schaffung einer nahtlosen Benutzererfahrung unerlässlich. Mit Aspose.PDF für .NET können Sie problemlos steuern, wie Benutzer durch Ihre PDF-Formulare navigieren, und sicherstellen, dass alles wie erwartet funktioniert.
 
+## Häufig gestellte Fragen
 
-### Häufig gestellte Fragen
+### Kann ich diese Methode auf mehrseitige PDF-Formulare anwenden?  
+Ja, das können Sie. Rufen Sie dazu einfach die Seite mit den Formularfeldern auf und wenden Sie dieselbe Methode an.
 
-#### F: Wie kann ich die abgerufenen Formularfelder in meinem C#-Code zur weiteren Verarbeitung verwenden?
+### Wie installiere ich Aspose.PDF für .NET in meinem Projekt?  
+Sie können die Bibliothek herunterladen von[Hier](https://releases.aspose.com/pdf/net/) und integrieren Sie es mithilfe von NuGet in Visual Studio.
 
- A: Sie können die abgerufenen Formularfelder in Ihrem C#-Code verwenden, indem Sie auf deren Eigenschaften zugreifen, wie z. B.`Value`, `Name`, `Rect`usw. Diese Eigenschaften ermöglichen Ihnen, die Formularfelddaten nach Bedarf zu lesen und zu ändern.
+### Kann ich die Felder auf derselben Seite neu anordnen?  
+ Auf jeden Fall! Nutzen Sie einfach die`TabOrder`Eigenschaft, um die Reihenfolge der Felder auf jeder Seite anzupassen.
 
-#### F: Kann ich Formularfelder von allen Seiten des PDF-Dokuments in der Tabulatorreihenfolge abrufen?
+### Was passiert, wenn ich die Tabulatorreihenfolge nicht angebe?  
+Wenn Sie die Tabulatorreihenfolge nicht explizit festlegen, folgen die Felder der Standardreihenfolge, basierend darauf, wie sie zur PDF-Datei hinzugefügt wurden.
 
- A: Ja, Sie können Formularfelder von allen Seiten des PDF-Dokuments abrufen, indem Sie jede Seite durchlaufen und auf die`FieldsInTabOrder` Eigenschaft, wie im Tutorial gezeigt. Dadurch erhalten Sie Formularfelder, die auf allen Seiten nach ihrer Tabulatorreihenfolge sortiert sind.
-
-#### F: Ist es möglich, nur bestimmte Typen von Formularfeldern, wie etwa Textfelder oder Kontrollkästchen, in der Tabulatorreihenfolge abzurufen?
-
-A: Ja, Sie können Formularfelder nach ihrem Typ filtern, z. B. nach Textfeldern oder Kontrollkästchen, nachdem Sie sie in der Tabulatorreihenfolge abgerufen haben. Sie können bedingte Anweisungen verwenden, um den Typ jedes Formularfelds zu überprüfen und sie entsprechend zu verarbeiten.
-
-#### F: Kann ich Formularfelder anhand ihres Namens statt anhand der Tabulatorreihenfolge abrufen?
-
- A: Ja, Sie können Formularfelder anhand ihres Namens abrufen, indem Sie das`doc.Form` Sammlung und Angabe des Feldnamens als Index. Beispiel:`doc.Form["fieldName"]`ruft das Formularfeld mit dem angegebenen Namen ab.
-
-#### F: Unterstützt Aspose.PDF für .NET die Arbeit mit verschlüsselten PDF-Dokumenten?
-
-A: Ja, Aspose.PDF für .NET unterstützt die Arbeit mit verschlüsselten PDF-Dokumenten. Sie können verschlüsselte PDF-Dateien mit entsprechenden Kennwortparametern laden und bearbeiten.
+### Ist es möglich, programmgesteuert neue Formularfelder hinzuzufügen?  
+Ja, mit Aspose.PDF können Sie programmgesteuert neue Formularfelder erstellen und hinzufügen.

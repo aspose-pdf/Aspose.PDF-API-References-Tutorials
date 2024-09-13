@@ -307,7 +307,7 @@ A: Evet, satır içi yapı öğelerinin görünümünü ve biçimlendirmesini ö
 
 #### S: Aspose.PDF for .NET'te satır içi yapı öğelerini kullanarak bir PDF belgesine farklı düzeylerde başlıklar nasıl oluşturabilir ve ekleyebilirim?
 
- A: Farklı düzeylerde başlıklar oluşturmak için şunları kullanabilirsiniz:`CreateHeaderElement` yöntemini kullanın ve ardından bunları kök yapı öğesine ekleyin. Daha sonra, her başlık öğesine içerik ekleyebilirsiniz.`CreateSpanElement` metin aralıkları oluşturma yöntemi.
+ A: Farklı düzeylerde başlıklar oluşturmak için şunları kullanabilirsiniz:`CreateHeaderElement`yöntemini kullanın ve ardından bunları kök yapı öğesine ekleyin. Daha sonra, her başlık öğesine içerik ekleyebilirsiniz.`CreateSpanElement` metin aralıkları oluşturma yöntemi.
 
 #### S: PDF belgesinde listeler, madde işaretleri veya diğer içerik düzenleme türlerini oluşturmak için satır içi yapı öğelerini kullanabilir miyim?
 

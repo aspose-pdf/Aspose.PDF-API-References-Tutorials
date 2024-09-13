@@ -38,14 +38,14 @@ Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
 ## ขั้นตอนที่ 5: เพิ่มหน้าลงในเอกสาร
- เพิ่มหน้าใหม่ลงในเอกสารโดยใช้`Add` วิธีการของ`Pages`คอลเลกชัน ในโค้ดที่ให้มา หน้าใหม่จะถูกกำหนดให้กับตัวแปร`page`.
+ เพิ่มหน้าใหม่ลงในเอกสารโดยใช้`Add` วิธีการของ`Pages` คอลเลกชัน ในโค้ดที่ให้มา หน้าใหม่จะถูกกำหนดให้กับตัวแปร`page`.
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
 ## ขั้นตอนที่ 6: สร้าง TextFragment พร้อมย่อบรรทัดถัดไป
- สร้างตัวอย่าง`TextFragment` วัตถุและระบุข้อความที่ต้องการ ในโค้ดที่ให้มา ข้อความจะถูกกำหนดให้กับตัวแปร`text` . จากนั้นทำการเริ่มระบบ`TextFormattingOptions` สำหรับ`TextFragment`และระบุ`SubsequentLinesIndent` ค่า.
+ สร้างตัวอย่าง`TextFragment` วัตถุและระบุข้อความที่ต้องการ ในโค้ดที่ให้มา ข้อความจะถูกกำหนดให้กับตัวแปร`text` . จากนั้นทำการเริ่มระบบ`TextFormattingOptions` สำหรับ`TextFragment` และระบุ`SubsequentLinesIndent` ค่า.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
@@ -91,7 +91,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = document.Pages.Add();
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-// เริ่มต้น TextFormattingOptions สำหรับส่วนข้อความและระบุค่า SubsequentLinesIndent
+//เริ่มต้น TextFormattingOptions สำหรับส่วนข้อความและระบุค่า SubsequentLinesIndent
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
 	SubsequentLinesIndent = 20
@@ -148,7 +148,7 @@ Aspose.Pdf.Page page = document.Pages.Add();
 
 #### ถาม: ฉันจะเพิ่มบรรทัดถัดไปในการเยื้องข้อความได้อย่างไร
 
- A: ในขั้นตอนที่ 6 คุณจะสร้าง`TextFragment` วัตถุและกำหนดข้อความที่ต้องการให้กับวัตถุนั้น จากนั้นคุณจะเริ่มต้น`TextFormattingOptions` สำหรับ`TextFragment`และระบุ`SubsequentLinesIndent` ค่า:
+ A: ในขั้นตอนที่ 6 คุณจะสร้าง`TextFragment` วัตถุและกำหนดข้อความที่ต้องการให้กับวัตถุนั้น จากนั้นคุณจะเริ่มต้น`TextFormattingOptions` สำหรับ`TextFragment` และระบุ`SubsequentLinesIndent` ค่า:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
@@ -168,7 +168,7 @@ page.Paragraphs.Add(text);
 
 #### ถาม: ฉันสามารถทำซ้ำขั้นตอนกับบรรทัดเพิ่มเติมได้ไหม
 
- A: ใช่ ในขั้นตอนที่ 8 คุณสามารถทำซ้ำขั้นตอนสำหรับบรรทัดเพิ่มเติมที่มีการเยื้องเท่ากันโดยสร้างบรรทัดใหม่`TextFragment` วัตถุและเพิ่มเข้าในคอลเล็กชั่นย่อหน้าของหน้า
+A: ใช่ ในขั้นตอนที่ 8 คุณสามารถทำซ้ำขั้นตอนสำหรับบรรทัดเพิ่มเติมที่มีการเยื้องเท่ากันโดยสร้างบรรทัดใหม่`TextFragment` วัตถุและเพิ่มเข้าในคอลเล็กชั่นย่อหน้าของหน้า
 
 #### ถาม: ฉันจะบันทึกเอกสาร PDF ผลลัพธ์ได้อย่างไร
 

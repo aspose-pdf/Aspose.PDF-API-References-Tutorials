@@ -7,116 +7,172 @@ type: docs
 weight: 170
 url: /net/programming-with-document/getdocumentwindow/
 ---
-Aspose.PDF for .NET is a powerful PDF manipulation library that allows developers to create, edit, and convert PDF files in their .NET applications. One of the features offered by this library is the ability to retrieve information about a document's window properties. This tutorial will guide you through the steps of using the `GetDocumentWindow` feature of Aspose.PDF for .NET to retrieve information about a PDF document's window properties.
+# Introduction
 
-## Step 1: Install Aspose.PDF for .NET
+Are you working with PDFs and want more control over how they appear when opened? Whether it’s hiding the menu bar or resizing the window to fit the first page, Aspose.PDF for .NET gives you all the tools you need to customize how a PDF behaves when opened in a viewer. In this tutorial, we’re going to break down how to retrieve and manipulate document window settings in Aspose.PDF for .NET.
 
-To use Aspose.PDF for .NET in your .NET applications, you must first install the library. You can download the latest version of the library from the [Aspose.PDF for .NET download page](https://releases.aspose.com/pdf/net).
 
-Once you have downloaded the library, extract the contents of the ZIP file to a folder on your computer. You will then need to add a reference to the Aspose.PDF for .NET DLL in your .NET project.
+# Prerequisites
 
-## Step 2: Load the PDF Document
+Before diving into the tutorial, ensure that you have the following prerequisites in place:
 
-Once you have installed Aspose.PDF for .NET and added a reference to the DLL in your .NET project, you can begin using the `GetDocumentWindow` feature to retrieve information about a PDF document's window properties.
+- Aspose.PDF for .NET installed on your development environment.
+  - [Download Aspose.PDF for .NET](https://releases.aspose.com/pdf/net/)
+- A valid license for Aspose.PDF, or you can get a [free trial](https://releases.aspose.com/) or [temporary license](https://purchase.aspose.com/temporary-license/).
+- Basic understanding of .NET and C#.
+- Visual Studio or another suitable IDE.
 
-The first step in using this feature is to load the PDF document that you want to retrieve information about. To do this, you can use the following code:
+# Import Packages
+
+Before you start writing any code, you’ll need to import the necessary packages. Open your project, and at the top of your C# file, add the following namespace:
 
 ```csharp
-// The path to the PDF document
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
+```
 
-// Open the PDF document
+This will give you access to all the classes and methods needed for manipulating PDF documents using Aspose.PDF for .NET.
+
+Now let’s break down the process of retrieving different document window settings. For this example, we’ll use a sample PDF file named `GetDocumentWindow.pdf`.
+
+## Step 1: Set the Document Directory Path
+
+First things first, we need to define the path to our PDF file. It’s crucial that you have the correct file path to avoid any errors during execution.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+Here, replace `"YOUR DOCUMENT DIRECTORY"` with the actual directory where your PDF file is located. This is your working directory from where you will load the PDF document.
+
+## Step 2: Open the PDF Document
+
+Now that the file path is set, the next step is to open the PDF document using Aspose.PDF. This will load the document into memory, allowing you to retrieve its properties.
+
+```csharp
 Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 ```
 
-In the above code, replace `"YOUR DOCUMENT DIRECTORY"` with the path to the directory where your PDF document is located. This code will load the PDF document into a `Document` object, which you can then use to retrieve information about the document's window properties.
+With this simple line of code, you’ve successfully loaded your PDF file into the `pdfDocument` object, which will now allow you to access all its properties.
 
-## Step 3: Retrieve the Document's Window Properties
+## Step 3: Retrieve Window Centering Status
 
-To retrieve information about a PDF document's window properties, you can use the following code:
-
-```csharp
-// Retrieve the document's window properties
-Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
-```
-
-In the above code, each line retrieves a different window property of the PDF document and outputs it to the console. You can customize this code to retrieve only the properties that you are interested in.
-
-### Example source code for get document window of PDF file using Aspose.PDF for .NET 
-
-Here is the full source code for retrieving a PDF document's window properties using the `GetDocumentWindow` feature of Aspose.PDF for .NET:
+Next, let’s check whether the document window should be centered when opened. The default value for this is `false`.
 
 ```csharp
-// The path to the documents directory.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Open document
-Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
-
-// Get different document properties
-// Position of document's window - Default: false
 Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-
-// Predominant reading order; determins the position of page
-// When displayed side by side - Default: L2R
-Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-
-// Whether window's title bar should display document title
-// If false, title bar displays PDF file name - Default: false
-Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-
-// Whether to resize the document's window to fit the size of
-// First displayed page - Default: false
-Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-
-// Whether to hide menu bar of the viewer application - Default: false
-Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-
-// Whether to hide tool bar of the viewer application - Default: false
-Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-
-// Whether to hide UI elements like scroll bars
-// And leaving only the page contents displayed - Default: false
-Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-
-// Document's page mode. How to display document on exiting full-screen mode.
-Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-
-// The page layout i.e. single page, one column
-Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-
-// How the document should display when opened
-// I.e. show thumbnails, full-screen, show attachment panel
-Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 ```
+
+If the output is `true`, the document’s window will open at the center of the screen. Otherwise, it will open at its default position.
+
+## Step 4: Check Text Direction
+
+Another crucial aspect of a PDF’s appearance is the text direction, which determines whether the text is read from left to right (L2R) or right to left (R2L). You can retrieve this information using the following code:
+
+```csharp
+Console.WriteLine("Direction : {0}", pdfDocument.Direction);
+```
+
+The output will be `L2R` for left-to-right text and `R2L` for right-to-left text. This setting is especially useful for documents in languages like Arabic or Hebrew.
+
+## Step 5: Display Document Title in Window
+
+The next property allows you to control whether the document title or the file name should be displayed on the window’s title bar. By default, this is set to `false`, meaning the file name will be shown.
+
+```csharp
+Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
+```
+
+If you want the document’s title to be displayed instead of the file name, this setting must be enabled.
+
+## Step 6: Resize Window to Fit the First Page
+
+Sometimes, you may want the document window to automatically resize itself to fit the first page of the PDF when it’s opened. Here’s how to check if that feature is enabled:
+
+```csharp
+Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
+```
+
+By default, this is set to `false`, meaning the window size will remain as-is regardless of the first page’s size.
+
+## Step 7: Hide the Menu Bar
+
+For a more focused reading experience, you might want to hide the menu bar of the viewer application. You can retrieve this setting using the following line:
+
+```csharp
+Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
+```
+
+This will return `true` if the menu bar is hidden, and `false` otherwise.
+
+## Step 8: Hide the Tool Bar
+
+Similarly, you might also want to hide the toolbar in the PDF viewer for a cleaner user interface. This setting can be retrieved as follows:
+
+```csharp
+Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
+```
+
+If this setting is enabled, the toolbar will be hidden when the PDF is opened.
+
+## Step 9: Hide the Scroll Bars and UI Elements
+
+If you want to display only the page content without any additional UI elements like scroll bars, this setting controls that behavior:
+
+```csharp
+Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
+```
+
+When set to `true`, the PDF viewer will hide scroll bars and other user interface elements, leaving only the document content.
+
+## Step 10: Set Non-Full Screen Page Mode
+
+You can control how the document appears when exiting full-screen mode using the `NonFullScreenPageMode` property. This setting is helpful for defining how the user should interact with the document in non-full screen mode.
+
+```csharp
+Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
+```
+
+The output can be set to different modes like thumbnails, outlines, or attachments panel.
+
+## Step 11: Define Page Layout
+
+This setting allows you to control how the document pages are laid out. For instance, you can opt for a single page view or a continuous column view:
+
+```csharp
+Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
+```
+
+This gives users flexibility in how they read or view the document content.
+
+## Step 12: Specify Page Mode
+
+Finally, the `PageMode` property defines how the document should be displayed when opened. Options include showing thumbnails, entering full-screen mode, or displaying the attachments panel.
+
+```csharp
+Console.WriteLine("PageMode : {0}", pdfDocument.PageMode);
+```
+
+Depending on your needs, you can set this to any mode that suits your PDF’s purpose.
 
 ## Conclusion
 
-In this tutorial, we have learned how to use Aspose.PDF for .NET to retrieve information about a PDF document's window properties. By loading a PDF document and accessing its window properties, you can gather information about how the document should be displayed when opened in a viewer application. Aspose.PDF for .NET provides a powerful set of features for working with PDF files programmatically, making it a valuable tool for PDF manipulation in .NET applications.
+As you can see, Aspose.PDF for .NET provides comprehensive tools to manipulate how your PDF documents are displayed in various PDF viewers. Whether you want to hide the toolbar, center the window, or control text direction, Aspose.PDF offers the flexibility to enhance the user’s viewing experience.
 
-### FAQ's
+# FAQs
 
-#### Q: What is the purpose of retrieving a PDF document's window properties?
+### Can I customize the initial zoom level of the PDF?
+Yes, Aspose.PDF allows you to set the zoom level when the document is opened.
 
-A: Retrieving a PDF document's window properties allows you to gather information about how the PDF document should be displayed when opened in a viewer application. These properties control various aspects such as window position, display mode, and visibility of UI elements.
+### How can I lock the window size of a PDF?
+You can set the `FitWindow` property to prevent the window from resizing.
 
-#### Q: How can I install Aspose.PDF for .NET in my .NET project?
+### Does Aspose.PDF support different reading modes?
+Yes, it supports different modes like full-screen, thumbnails, and attachments.
 
-A: To install Aspose.PDF for .NET, you need to download the library from the [Aspose.PDF for .NET download page](https://releases.aspose.com/pdf/net). After downloading, extract the contents of the ZIP file and add a reference to the Aspose.PDF for .NET DLL in your .NET project.
+### Is it possible to hide scroll bars in the PDF viewer?
+Absolutely, you can hide scroll bars by setting the `HideWindowUI` property to `true`.
 
-#### Q: Can I customize the code to retrieve specific window properties only?
-
-A: Yes, you can customize the code to retrieve specific window properties by commenting out the lines that you don't need. Each line in the code corresponds to a specific window property, so you can include or exclude properties based on your requirements.
-
-#### Q: What types of window properties can I retrieve using Aspose.PDF for .NET?
-
-A: Using Aspose.PDF for .NET, you can retrieve various window properties of a PDF document, including centering the window, setting the page layout, controlling the display of toolbars and menu bars, and more.
+### Can I center the document window when opened?
+Yes, you can control this by setting the `CenterWindow` property.

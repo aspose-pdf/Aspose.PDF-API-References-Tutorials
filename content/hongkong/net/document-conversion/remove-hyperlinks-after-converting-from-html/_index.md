@@ -9,7 +9,7 @@ url: /zh-hant/net/document-conversion/remove-hyperlinks-after-converting-from-ht
 ---
 ## 介紹
 
-在數位時代，將 HTML 文件轉換為 PDF 是一項常見任務。但是，有時您可能出於各種原因想要從轉換後的 PDF 中刪除超鏈接，例如增強可讀性或防止不必要的導航。在本教學中，我們將探索如何使用 Aspose.PDF for .NET 來實現這一目標。 
+在數位時代，將 HTML 文件轉換為 PDF 是一項常見任務。但是，有時您可能出於各種原因想要從轉換後的 PDF 中刪除超鏈接，例如增強可讀性或防止不需要的導航。在本教學中，我們將探索如何使用 Aspose.PDF for .NET 來實現這一目標。 
 
 ## 先決條件
 
@@ -145,7 +145,7 @@ doc.Save(dataDir + "RemoveHyperlinksFromText_out.pdf");
 
 ## 結論
 
-現在你就擁有了！使用 Aspose.PDF for .NET 將 HTML 文件轉換為 PDF 後，您已成功刪除了其中的超連結。此過程不僅可以增強 PDF 的可讀性，還可以讓您控制所呈現的內容。 
+現在你就得到它了！使用 Aspose.PDF for .NET 將 HTML 文件轉換為 PDF 後，您已成功刪除了其中的超連結。此過程不僅可以增強 PDF 的可讀性，還可以讓您控制所呈現的內容。 
 
 ## 常見問題解答
 

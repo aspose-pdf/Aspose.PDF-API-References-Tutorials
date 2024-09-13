@@ -11,8 +11,8 @@ Az Aspose.PDF "Programozás szöveggel" oktatóanyagai a .NET-hez átfogó utas�
 ## Oktatóanyagok
 | Cím | Leírás |
 | --- | --- | 
-| [Rejtett szöveg hozzáadása és keresése PDF-fájlban](./add-and-search-hidden-text/) | Útmutató lépésről lépésre rejtett szöveg hozzáadásához és kereséséhez PDF-fájlban az Aspose.PDF for .NET használatával. |  
-| [HTML rendezett lista hozzáadása a dokumentumokhoz](./add-html-ordered-list-into-documents/) | Ismerje meg, hogyan adhat hozzá rendezett HTML-listát egy dokumentumhoz az Aspose.PDF for .NET használatával. |  
+| [Rejtett szöveg hozzáadása és keresése PDF fájlban](./add-and-search-hidden-text/) | Útmutató lépésről lépésre rejtett szöveg hozzáadásához és kereséséhez PDF-fájlban az Aspose.PDF for .NET használatával. |  
+| [Adjon hozzá HTML rendezett listát a dokumentumokhoz](./add-html-ordered-list-into-documents/) | Ismerje meg, hogyan adhat hozzá rendezett HTML-listát egy dokumentumhoz az Aspose.PDF for .NET használatával. |  
 | [HTML hozzáadása DOM segítségével](./add-html-using-dom/) | Ismerje meg, hogyan adhat hozzá HTML-tartalmat DOM használatával az Aspose.PDF for .NET fájlban. |  
 | [HTML hozzáadása DOM és PDF felülírás segítségével](./add-html-using-dom-and-overwrite/) | Ismerje meg, hogyan adhat hozzá HTML-tartalmat DOM-mal és PDF-felülírással az Aspose.PDF for .NET fájlban. |  
 | [Következő sorok behúzása hozzáadása a PDF-fájlhoz](./add-subsequent-lines-indent/) | Ismerje meg, hogyan adhat hozzá sorok behúzását a PDF-fájl szövegéhez az Aspose.PDF for .NET segítségével. |  
@@ -35,7 +35,7 @@ Az Aspose.PDF "Programozás szöveggel" oktatóanyagai a .NET-hez átfogó utas�
 | [Jelölje ki a karaktert a PDF-fájlban](./highlight-character-in-pdf/) | Ismerje meg, hogyan jelölhet ki karaktereket PDF-fájlban az Aspose.PDF for .NET használatával. |  
 | [Többoszlopos bekezdések PDF fájlban](./multicolumn-paragraphs/) | Ismerje meg, hogyan dolgozhat többoszlopos bekezdésekkel PDF-fájlban az Aspose.PDF for .NET segítségével. |  
 | [Szöveg elhelyezése a kép körül a PDF-fájlban](./placing-text-around-image/) | Ismerje meg, hogyan helyezhet el szöveget egy kép körül PDF-fájlban az Aspose.PDF for .NET segítségével. |  
-| [A tartalom átrendezése szövegcsere használatával](./rearrange-contents-using-text-replacement/) | Ismerje meg, hogyan rendezheti át a PDF-dokumentumok tartalmát az Aspose.PDF for .NET-hez történő szövegcserével. |  
+| [Tartalom átrendezése szövegcsere használatával](./rearrange-contents-using-text-replacement/) | Ismerje meg, hogyan rendezheti át a PDF-dokumentumok tartalmát az Aspose.PDF for .NET-hez történő szövegcserével. |  
 | [Távolítsa el az összes szöveget a PDF-fájlból](./remove-all-text/) | Ismerje meg, hogyan távolíthat el minden szöveget PDF-fájlból az Aspose.PDF for .NET segítségével. |  
 | [Távolítsa el az összes szöveget a PDF-ből](./remove-all-text-from-pdf/) | Ismerje meg, hogyan távolíthat el minden szöveget egy PDF-dokumentumból az Aspose.PDF for .NET segítségével. |  
 | [Távolítsa el a nem használt betűtípusokat a PDF-fájlból](./remove-unused-fonts/) | Ismerje meg, hogyan távolíthat el nem használt betűtípusokat PDF-fájlból az Aspose.PDF for .NET segítségével. |  

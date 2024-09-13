@@ -12,7 +12,7 @@ Im Bereich der Dokumentenverarbeitung hat die Gewährleistung der Integrität un
 
 ## Einführung
 
-Bevor wir uns mit dem Code befassen, sollten wir uns kurz damit befassen, warum die PDF-Validierung so wichtig ist. PDF-Dateien können während ihrer Erstellung, Übertragung oder Speicherung manchmal beschädigt werden. Ungültige PDFs können zu verschiedenen Problemen führen, von Darstellungsproblemen bis hin zu Datenverlust. Durch die Validierung von PDFs können Sie Probleme identifizieren und beheben, bevor sie sich zu ernsthaften Problemen entwickeln.
+Bevor wir uns mit dem Code befassen, sollten wir uns kurz ansehen, warum die PDF-Validierung so wichtig ist. PDF-Dateien können während ihrer Erstellung, Übertragung oder Speicherung manchmal beschädigt werden. Ungültige PDFs können zu verschiedenen Problemen führen, von Darstellungsproblemen bis hin zu Datenverlust. Durch die Validierung von PDFs können Sie Probleme identifizieren und beheben, bevor sie sich zu ernsthaften Problemen entwickeln.
 
 ## Voraussetzungen
 

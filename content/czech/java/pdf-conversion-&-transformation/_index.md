@@ -54,7 +54,7 @@ V tomto podrobném průvodci se dozvíte, jak bez námahy převést SVG do PDF p
 ### [Změnit text na soubory PDF](./change-text-to-pdf-files/)
 Naučte se, jak snadno převádět text na soubory PDF pomocí Aspose.PDF for Java. Průvodce krok za krokem se zdrojovým kódem.
 ### [Export XML do PDF dokumentů](./export-xml-to-pdf-documents/)
-Snadno převádějte XML do PDF pomocí Aspose.PDF pro Javu. Zjednodušte reprezentaci a sdílení dat. Jak na to, se dozvíte v tomto komplexním průvodci.
+Snadno převádějte XML do PDF pomocí Aspose.PDF pro Javu. Zjednodušte reprezentaci a sdílení dat. Jak na to se dozvíte v tomto komplexním průvodci.
 ### [Převod souborů XPS na soubory PDF](./convert-xps-to-pdf-files/)
 Naučte se, jak bez námahy převádět soubory XPS na soubory PDF pomocí Aspose.PDF for Java. Náš průvodce krok za krokem tento proces zjednodušuje.
 ### [Transformujte XSL-FO do formátu PDF](./transform-xsl-fo-to-pdf-format/)

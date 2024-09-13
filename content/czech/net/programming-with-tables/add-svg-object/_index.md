@@ -7,7 +7,7 @@ type: docs
 weight: 30
 url: /cs/net/programming-with-tables/add-svg-object/
 ---
-V tomto tutoriálu se naučíme, jak přidat objekt SVG do souboru PDF pomocí knihovny Aspose.PDF for .NET. SVG (Scalable Vector Graphics) je oblíbený formát pro vektorovou grafiku, který lze snadno škálovat bez ztráty kvality. Pomocí Aspose.PDF můžete do dokumentů PDF přidávat objekty SVG programově.
+tomto tutoriálu se naučíme, jak přidat objekt SVG do souboru PDF pomocí knihovny Aspose.PDF for .NET. SVG (Scalable Vector Graphics) je oblíbený formát pro vektorovou grafiku, který lze snadno škálovat bez ztráty kvality. Pomocí Aspose.PDF můžete do dokumentů PDF přidávat objekty SVG programově.
 
 ## Požadavky
 
@@ -175,7 +175,7 @@ V tomto tutoriálu jsme se naučili, jak přidat objekt SVG do souboru PDF pomoc
 
 #### Otázka: Mohu k obrázku SVG přidat hypertextové odkazy?
 
- Odpověď: Ano, k obrázku SVG můžete přidat hypertextové odkazy pomocí`Hyperlink` majetek z`Aspose.Pdf.Image` instance. Nastavte URL hypertextového odkazu nebo akci, aby bylo možné na obrázek kliknout.
+ Odpověď: Ano, k obrázku SVG můžete přidat hypertextové odkazy pomocí`Hyperlink` vlastnictví`Aspose.Pdf.Image` instance. Nastavte URL hypertextového odkazu nebo akci, aby bylo možné na obrázek kliknout.
 
 #### Otázka: Je Aspose.PDF for .NET kompatibilní s .NET Core 3.1 nebo novějšími verzemi?
 

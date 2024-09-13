@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Langkah 5: Tambahkan halaman ke dokumen
- Tambahkan halaman baru ke dokumen menggunakan`Add` metode dari`Pages`koleksi. Dalam kode yang diberikan, halaman baru ditetapkan ke variabel`page`.
+ Tambahkan halaman baru ke dokumen menggunakan`Add` metode dari`Pages` koleksi. Dalam kode yang diberikan, halaman baru ditetapkan ke variabel`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -118,7 +118,7 @@ A: Pada Langkah 6, Anda akan membuat putaran untuk menambahkan beberapa fragmen 
 
 #### T: Bagaimana cara menyimpan dokumen PDF dan mengekstrak informasi jeda baris?
 
- A: Pada Langkah 7, Anda akan menyimpan dokumen PDF menggunakan`Save` metode dari`Document` objek. Kemudian, Anda akan mengekstrak informasi jeda baris menggunakan`GetNotifications`metode halaman yang diinginkan dan menyimpannya ke berkas teks.
+ A: Pada Langkah 7, Anda akan menyimpan dokumen PDF menggunakan`Save` metode dari`Document` objek. Kemudian, Anda akan mengekstrak informasi jeda baris menggunakan`GetNotifications` metode halaman yang diinginkan dan menyimpannya ke berkas teks.
 
 #### T: Apa tujuan dari informasi jeda baris yang diekstraksi?
 

@@ -30,7 +30,7 @@ using Aspose.Pdf;
  Suchen Sie im Code nach der Zeile, die besagt:`string dataDir = "YOUR DOCUMENT DIRECTORY";` und ersetzen`"YOUR DOCUMENT DIRECTORY"` durch den Pfad zum Verzeichnis, in dem Ihre Dokumente gespeichert sind.
 
 ## Schritt 4: Laden Sie das vorhandene PDF-Dokument
- Laden Sie ein vorhandenes PDF-Dokument mit dem`Document` Konstruktor und Übergabe des Pfads zur Eingabe-PDF-Datei.
+ Laden Sie ein vorhandenes PDF-Dokument mit dem`Document`Konstruktor und Übergabe des Pfads zur Eingabe-PDF-Datei.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
@@ -129,7 +129,7 @@ using Aspose.Pdf;
 
 #### F: Wie speichere ich das aktualisierte PDF-Dokument?
 
- A: In Schritt 7 verwenden Sie die`Save` Methode der`Document`Objekt zum Speichern des aktualisierten PDF-Dokuments unter Angabe des Ausgabedateipfads.
+ A: In Schritt 7 verwenden Sie die`Save` Methode der`Document` Objekt zum Speichern des aktualisierten PDF-Dokuments unter Angabe des Ausgabedateipfads.
 
 #### F: Welche Bedeutung hat das Einbetten von Schriftarten in ein PDF-Dokument?
 

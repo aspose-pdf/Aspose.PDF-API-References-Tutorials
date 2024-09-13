@@ -2,144 +2,159 @@
 title: Lokalen Hyperlink in PDF-Datei erstellen
 linktitle: Lokalen Hyperlink in PDF-Datei erstellen
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erstellen Sie mit Aspose.PDF für .NET ganz einfach lokale Hyperlinks in PDF-Dateien.
+description: Erfahren Sie mit unserer Schritt-für-Schritt-Anleitung, wie Sie mit Aspose.PDF für .NET mühelos lokale Hyperlinks in PDF-Dateien erstellen.
 type: docs
 weight: 40
 url: /de/net/programming-with-links-and-actions/create-local-hyperlink/
 ---
-Durch das Erstellen lokaler Hyperlinks in PDF-Dateien können Sie anklickbare Links erstellen, die Benutzer zu anderen Seiten im selben PDF-Dokument führen. Mit Aspose.PDF für .NET können Sie solche Links ganz einfach erstellen, indem Sie dem folgenden Quellcode folgen:
+## Einführung
 
-## Schritt 1: Erforderliche Bibliotheken importieren
+In dieser Anleitung führen wir Sie durch den Prozess der Erstellung lokaler Hyperlinks in einer PDF-Datei mit Aspose.PDF für .NET. Wir werden jeden Schritt klar aufschlüsseln, damit Sie ihn auch dann mühelos befolgen können, wenn Sie neu in der Welt der PDF-Bearbeitung sind.
 
-Bevor Sie beginnen, müssen Sie die erforderlichen Bibliotheken für Ihr C#-Projekt importieren. Hier ist die erforderliche Importanweisung:
+## Voraussetzungen
+
+Bevor wir uns kopfüber in den Code stürzen, stellen wir sicher, dass Sie alles haben, was Sie brauchen:
+
+1.  Visual Studio: Sie benötigen es für die Entwicklung Ihrer .NET-Anwendungen. Laden Sie es herunter von[Webseite](https://visualstudio.microsoft.com/).
+2.  Aspose.PDF für .NET: Sie können diese Bibliothek herunterladen über das[Download-Link hier](https://releases.aspose.com/pdf/net/)Es verfügt über zahlreiche Funktionen zur PDF-Bearbeitung.
+3. Grundkenntnisse in C#: Ein wenig Vertrautheit mit der C#-Programmierung ist hilfreich, aber keine Sorge, wir gehen den Code Zeile für Zeile durch.
+4.  .NET Framework: Stellen Sie sicher, dass das .NET Framework auf Ihrem Computer installiert ist. Sie können die Anforderungen auf Aspose.PDF überprüfen.[Dokumentation](https://reference.aspose.com/pdf/net/).
+
+Wenn diese Voraussetzungen erfüllt sind, können Sie lernen, wie Sie lokale Hyperlinks in Ihren PDF-Dokumenten erstellen!
+
+## Pakete importieren
+
+Jetzt, da Sie alles vorbereitet haben, ist es an der Zeit, die erforderlichen Pakete in Ihr C#-Projekt zu importieren. Die Aspose.PDF-Bibliothek enthält alle Klassen, die wir brauchen. So geht's:
+
+### Öffnen Sie Ihr Projekt
+
+Öffnen Sie Ihr vorhandenes .NET-Projekt oder erstellen Sie ein neues in Visual Studio. Wenn Sie neu beginnen, wählen Sie auf dem Startbildschirm „Neues Projekt erstellen“ aus.
+
+### Verweis auf Aspose.PDF hinzufügen
+
+ Klicken Sie mit der rechten Maustaste auf "Abhängigkeiten" in Ihrem Projektordner im Solution Explorer. Wählen Sie "NuGet-Pakete verwalten" und suchen Sie dann nach`Aspose.PDF`. Installieren Sie die neueste verfügbare Version. Damit erhalten Sie alle Tools, die Sie zum Erstellen und Bearbeiten von PDFs benötigen.
+
+### Namespaces importieren
+
+Fügen Sie oben in Ihrer CS-Datei Using-Direktiven für die Aspose.PDF-Bibliothek wie folgt hinzu:
 
 ```csharp
+using System;
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Schritt 2: Pfad zum Dokumentenordner festlegen
+Auf diese Weise können Sie auf die Funktionen der Bibliothek zugreifen.
 
- In diesem Schritt müssen Sie den Pfad zu dem Ordner angeben, in dem Sie die resultierende PDF-Datei speichern möchten. Ersetzen Sie`"YOUR DOCUMENT DIRECTORY"` ersetzen Sie den folgenden Code durch den tatsächlichen Pfad zu Ihrem Dokumentordner:
+Lassen Sie uns den Prozess der Erstellung lokaler Hyperlinks in einfache Schritte unterteilen. Jeder Schritt wird ausführlich erklärt, damit Sie die Logik dahinter verstehen.
+
+## Schritt 1: Dokumentinstanz einrichten
+
+In diesem Schritt erstellen Sie eine neue Instanz der Document-Klasse, die die PDF-Datei darstellt, mit der Sie arbeiten werden.
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Legen Sie Ihr Dokumentverzeichnis fest
+Document doc = new Document(); // Dokumentinstanz erstellen
 ```
+ Der`dataDir` Variable ist der Ort, an dem Ihr neu erstelltes PDF gespeichert wird. Sie müssen ersetzen`"YOUR DOCUMENT DIRECTORY"` mit dem tatsächlichen Pfad auf Ihrem System. Die`Document` Klasse erstellt ein neues PDF-Dokument, in das wir Seiten und Links einfügen können.
 
-## Schritt 3: Erstellen Sie eine Instanz von Document
+## Schritt 2: Dem Dokument eine Seite hinzufügen
 
- Wir erstellen eine Instanz des`Document` Klasse zur Darstellung unseres PDF-Dokuments. Hier ist der entsprechende Code:
+Als Nächstes fügen Sie Ihrem PDF-Dokument eine Seite hinzu. 
 
 ```csharp
-Document doc = new Document();
+Page page = doc.Pages.Add(); // Seite zur Seitensammlung hinzufügen
 ```
+ Der`Pages.Add()` Methode fügt dem Dokument eine neue Seite hinzu. Hier wird Ihr gesamter Inhalt gespeichert.
 
-## Schritt 4: Seite und Text mit Hyperlinks hinzufügen
+## Schritt 3: Erstellen Sie ein Textfragment
 
-In diesem Schritt fügen wir unserem PDF-Dokument eine Seite hinzu und fügen einen Text mit lokalen Hyperlinks hinzu. Wir definieren die Zielseiten für jeden Link. Hier ist der entsprechende Code:
-
-```csharp
-Page page = doc.Pages.Add();
-
-TextFragment text = new TextFragment("Link to page 7");
-LocalHyperlink link = new LocalHyperlink();
-link.TargetPageNumber = 7;
-text. Hyperlink = link;
-page.Paragraphs.Add(text);
-
-text = new TextFragment("Link to page 1");
-text. IsInNewPage = true;
-link = new LocalHyperlink();
-link.TargetPageNumber = 1;
-text. Hyperlink = link;
-page.Paragraphs.Add(text);
-```
-
-## Schritt 5: Speichern Sie das aktualisierte Dokument
-
-Speichern wir nun die aktualisierte PDF-Datei mit dem`Save` Methode der`doc` Objekt. Hier ist der entsprechende Code:
+Lassen Sie uns nun einen Textabschnitt erstellen, der als anklickbarer Link fungiert.
 
 ```csharp
-dataDir = dataDir + "CreateLocalHyperlink_out.pdf";
-doc.Save(dataDir);
-```
-
-### Beispielquellcode zum Erstellen eines lokalen Hyperlinks mit Aspose.PDF für .NET 
-```csharp
-// Der Pfad zum Dokumentverzeichnis.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Dokumentinstanz erstellen
-Document doc = new Document();
-// Seite zur Seitensammlung der PDF-Datei hinzufügen
-Page page = doc.Pages.Add();
-// Textfragmentinstanz erstellen
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("link page number test to page 7");
-// Lokale Hyperlink-Instanz erstellen
-Aspose.Pdf.LocalHyperlink link = new Aspose.Pdf.LocalHyperlink();
-// Zielseite für Linkinstanz festlegen
-link.TargetPageNumber = 7;
-// TextFragment-Hyperlink festlegen
-text.Hyperlink = link;
-// Text zur Absatzsammlung der Seite hinzufügen
-page.Paragraphs.Add(text);
-// Neue TextFragment-Instanz erstellen
-text = new TextFragment("link page number test to page 1");
-// TextFragment sollte über der neuen Seite hinzugefügt werden
-text.IsInNewPage = true;
-// Erstellen einer weiteren lokalen Hyperlinkinstanz
-link = new LocalHyperlink();
-// Zielseite für zweiten Hyperlink festlegen
-link.TargetPageNumber = 1;
-// Link für zweites TextFragment festlegen
-text.Hyperlink = link;
-// Text zur Absatzsammlung des Seitenobjekts hinzufügen
-page.Paragraphs.Add(text);    
-dataDir = dataDir + "CreateLocalHyperlink_out.pdf";
-// Aktualisiertes Dokument speichern
-doc.Save(dataDir);
-Console.WriteLine("\nLocal hyperlink created successfully.\nFile saved at " + dataDir);            
 ```
+ Der`TextFragment` stellt einen Textabschnitt im PDF dar. Hier erstellen wir einen Link, der den Benutzern mitteilt, dass sie zu Seite 7 gelangen.
+
+## Schritt 4: Lokalen Hyperlink erstellen
+
+Und hier geschieht die Magie! Sie müssen einen lokalen Hyperlink erstellen, der dem Textfragment sagt, wohin es zeigen soll.
+
+```csharp
+Aspose.Pdf.LocalHyperlink link = new Aspose.Pdf.LocalHyperlink(); // Lokalen Hyperlink erstellen
+link.TargetPageNumber = 7; //Zielseite für Linkinstanz festlegen
+text.Hyperlink = link; // TextFragment-Hyperlink festlegen
+```
+ Der`LocalHyperlink` Klasse ermöglicht es uns, auf andere Seiten im selben Dokument zu verweisen. Durch Setzen`TargetPageNumber` bis 7: Sie weisen den Hyperlink an, beim Anklicken zu dieser bestimmten Seite zu springen.
+
+## Schritt 5: Fügen Sie das Textfragment zur Seite hinzu
+
+Nachdem wir den Hyperlink eingerichtet haben, ist es an der Zeit, unser Textfragment zu der von uns erstellten Seite hinzuzufügen.
+
+```csharp
+page.Paragraphs.Add(text); // Text zur Absatzsammlung der Seite hinzufügen
+```
+Diese Zeile fügt Ihren anklickbaren Text zur Absatzsammlung der Seite hinzu.
+
+## Schritt 6: Ein weiteres Textfragment erstellen (optional)
+
+Fügen wir einen weiteren Hyperlink hinzu, um zurück zu Seite 1 zu navigieren.
+
+```csharp
+text = new TextFragment("link page number test to page 1"); // Neues TextFragment erstellen
+text.IsInNewPage = true; // Fügen Sie es einer neuen Seite hinzu
+```
+ Erstellen eines neuen`TextFragment` für den zweiten Link setzen wir`IsInNewPage` auf „True“, um anzuzeigen, dass dieser Text auf einer neuen Seite erscheint.
+
+## Schritt 7: Einrichten des zweiten lokalen Hyperlinks
+
+Genau wie zuvor erstellen Sie einen weiteren lokalen Hyperlink für Seite 1.
+
+```csharp
+link = new LocalHyperlink(); // Erstellen einer weiteren lokalen Hyperlinkinstanz
+link.TargetPageNumber = 1; //Zielseite für zweiten Hyperlink festlegen
+text.Hyperlink = link; // Link für zweites TextFragment festlegen
+```
+Dieser Hyperlink zielt auf Seite 1 und ermöglicht es Benutzern, zurückzuspringen, wenn sie die zweite Seite erreichen.
+
+## Schritt 8: Fügen Sie das zweite Textfragment zur neuen Seite hinzu
+
+Fügen wir diesen Text nun der Seite hinzu.
+
+```csharp
+page.Paragraphs.Add(text); // Text zur Absatzsammlung des Seitenobjekts hinzufügen
+```
+Ähnlich wie Schritt 5 fügt diese Zeile den neuen Hyperlinktext zur neu erstellten Seite hinzu.
+
+## Schritt 9: Speichern Sie das Dokument
+
+Endlich ist es Zeit, Ihre harte Arbeit zu speichern! 
+
+```csharp
+dataDir = dataDir + "CreateLocalHyperlink_out.pdf"; // Geben Sie den Namen der Ausgabedatei an
+doc.Save(dataDir); // Aktualisiertes Dokument speichern
+Console.WriteLine("\nLocal hyperlink created successfully.\nFile saved at " + dataDir);
+```
+ Dies kombiniert Ihren Verzeichnispfad mit dem Dateinamen.`Save()` Mit dieser Methode wird Ihr Dokument gespeichert und Sie erhalten eine Bestätigungsmeldung, dass alles reibungslos verlaufen ist.
 
 ## Abschluss
 
-Herzlichen Glückwunsch! Jetzt haben Sie eine Schritt-für-Schritt-Anleitung zum Erstellen lokaler Hyperlinks in einer PDF-Datei mit Aspose.PDF für .NET. Mit diesem Code können Sie anklickbare Links erstellen, die Benutzer zu anderen Seiten im selben Dokument führen.
+Das Erstellen lokaler Hyperlinks in PDF-Dateien mit Aspose.PDF für .NET ist nicht nur ein cooler Trick, sondern eine praktische Funktion, die die Navigation und das Benutzererlebnis verbessert. Sie verfügen nun über das Wissen, um Ihre Leser direkt auf die benötigten Informationen zu verweisen. Denken Sie einfach an unsere anfängliche Analogie zurück – keine verlorenen Seelen mehr, die durch endlose Seiten wandern.
 
-Weitere Informationen zu erweiterten Hyperlink-Funktionen finden Sie in der offiziellen Aspose.PDF-Dokumentation.
+## Häufig gestellte Fragen
 
-### FAQs zum Erstellen eines lokalen Hyperlinks in einer PDF-Datei
+### Was ist Aspose.PDF für .NET?
+Aspose.PDF für .NET ist eine Bibliothek, die es Entwicklern ermöglicht, PDF-Dokumente programmgesteuert mithilfe des .NET-Frameworks zu erstellen, zu bearbeiten und zu konvertieren.
 
-#### F: Was sind lokale Hyperlinks in einer PDF-Datei?
+### Kann ich Hyperlinks zu externen Webseiten erstellen?
+Ja, Aspose.PDF unterstützt neben lokalen Hyperlinks innerhalb des PDF auch das Erstellen von Hyperlinks zu externen URLs.
 
-A: Lokale Hyperlinks in einer PDF-Datei sind anklickbare Links, die Benutzer zu verschiedenen Seiten innerhalb desselben Dokuments führen. Diese Links verbessern die Navigation und ermöglichen Lesern den schnellen Zugriff auf relevante Abschnitte.
+### Gibt es eine kostenlose Testversion für Aspose.PDF?
+ Auf jeden Fall! Sie können die kostenlose Testversion über den[Website](https://releases.aspose.com/).
 
-#### F: Welche Vorteile bieten lokale Hyperlinks für mein PDF-Dokument?
+### Welche Programmiersprachen unterstützt Aspose?
+Aspose bietet Bibliotheken für verschiedene Programmiersprachen, darunter Java, C++, und Python, unter anderem.
 
-A: Lokale Hyperlinks bieten eine effiziente Möglichkeit, verwandte Inhalte innerhalb desselben PDF-Dokuments zu verknüpfen. Sie verbessern die Benutzererfahrung, indem sie es den Lesern ermöglichen, schnell zu bestimmten Abschnitten zu springen, ohne durch das gesamte Dokument scrollen zu müssen.
-
-#### F: Wie unterstützt Aspose.PDF für .NET die Erstellung lokaler Hyperlinks?
-A: Aspose.PDF für .NET bietet umfassende Unterstützung zum Erstellen lokaler Hyperlinks. Das in diesem Handbuch enthaltene Schritt-für-Schritt-Tutorial zeigt, wie Sie mit C# lokale Hyperlinks zu Ihrem PDF-Dokument hinzufügen.
-
-#### F: Kann ich das Erscheinungsbild lokaler Hyperlinks anpassen?
-
-A: Ja, Sie können das Erscheinungsbild lokaler Hyperlinks, einschließlich Textfarbe und -stil, anpassen, um sicherzustellen, dass sie zum Design Ihres Dokuments passen und ein einheitliches visuelles Erlebnis bieten.
-
-#### F: Ist es möglich, mehrere lokale Hyperlinks innerhalb einer einzelnen PDF-Seite zu erstellen?
-
-A: Absolut! Sie können mehrere lokale Hyperlinks innerhalb einer einzelnen PDF-Seite erstellen, sodass Leser je nach Bedarf zu verschiedenen Abschnitten oder Seiten springen können. Jeder lokale Hyperlink kann auf sein jeweiliges Ziel zugeschnitten werden.
-
-#### F: Kann ich mit lokalen Hyperlinks auf bestimmte Abschnitte einer Seite verlinken?
-
-A: Während lokale Hyperlinks normalerweise zu ganzen Seiten navigieren, können Sie in Ihrem PDF-Dokument Anker oder Lesezeichen erstellen, um eine gezielte Verlinkung zu erreichen. Aspose.PDF für .NET unterstützt verschiedene Hyperlink-Optionen.
-
-#### F: Wie kann ich überprüfen, ob meine lokalen Hyperlinks ordnungsgemäß funktionieren?
-
-A: Wenn Sie dem bereitgestellten Tutorial und Beispielcode folgen, können Sie problemlos funktionsfähige lokale Hyperlinks erstellen. Sie können die Links testen, indem Sie das generierte PDF-Dokument öffnen und auf den Hyperlink-Text klicken.
-
-#### F: Gibt es Einschränkungen bei der Verwendung lokaler Hyperlinks?
-
-A: Lokale Hyperlinks sind eine effektive Möglichkeit, die Dokumentnavigation zu verbessern. Dabei muss jedoch sichergestellt werden, dass die Struktur des Dokuments klar und intuitiv bleibt. Richtig beschriftete Hyperlinks und Anker tragen zu einer positiven Benutzererfahrung bei.
-
-#### F: Kann ich lokale Hyperlinks innerhalb von Tabellen oder Bildern erstellen?
-
-A: Ja, Sie können lokale Hyperlinks innerhalb verschiedener Elemente Ihres PDF-Dokuments erstellen, einschließlich Tabellen, Bildern und Text. Aspose.PDF für .NET bietet Flexibilität beim Hinzufügen von Hyperlinks zu verschiedenen Inhaltstypen.
+### Wie erhalte ich Support für Aspose-Produkte?
+ Unterstützung erhalten Sie über das[Aspose Forum](https://forum.aspose.com/c/pdf/10).

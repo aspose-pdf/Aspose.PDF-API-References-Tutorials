@@ -2,181 +2,170 @@
 title: PDF-Datei digital anmelden
 linktitle: PDF-Datei digital anmelden
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET PDF-Dateien digital signieren.
+description: Erfahren Sie, wie Sie PDF-Dateien mit Aspose.PDF für .NET digital signieren. Schritt-für-Schritt-Anleitung, um sicherzustellen, dass Ihre Dokumente sicher und authentisch sind.
 type: docs
 weight: 40
 url: /de/net/programming-with-security-and-signatures/digitally-sign/
 ---
-In diesem Tutorial führen wir Sie durch den Prozess der digitalen Signatur einer PDF-Datei mit Aspose.PDF für .NET. Die digitale Signatur garantiert die Authentizität und Integrität des Dokuments durch Hinzufügen eines einzigartigen elektronischen Fingerabdrucks.
+## Einführung
 
-## Schritt 1: Voraussetzungen
+In unserer digitalen Welt kann die Bedeutung der Dokumentensicherung nicht genug betont werden. Egal, ob Sie als Freiberufler Verträge versenden, als Kleinunternehmer Rechnungen verwalten oder Teil eines großen Konzerns sind, es ist entscheidend, dass Ihre Dokumente authentisch und manipulationssicher bleiben. Eine effektive Möglichkeit, diese Sicherheit zu erreichen, sind digitale Signaturen. In diesem Artikel erfahren Sie, wie Sie eine PDF-Datei mithilfe der Aspose.PDF-Bibliothek für .NET digital signieren. Wir führen Sie Schritt für Schritt durch alles.
 
-Stellen Sie zunächst sicher, dass die folgenden Voraussetzungen erfüllt sind:
+## Voraussetzungen
 
-- Grundkenntnisse der Programmiersprache C#
-- Installieren von Visual Studio auf Ihrem Computer
-- Aspose.PDF-Bibliothek für .NET installiert
+Bevor wir uns ins Detail stürzen, stellen wir sicher, dass Sie alles haben, was Sie brauchen, um mit dem digitalen Signieren von PDF-Dateien zu beginnen. Hier ist eine Liste der Voraussetzungen:
 
-## Schritt 2: Umgebung einrichten
+1. .NET Framework: Stellen Sie sicher, dass .NET Framework auf Ihrem Computer installiert ist. Aspose.PDF für .NET unterstützt mehrere Versionen des Frameworks.
+2.  Aspose.PDF-Bibliothek: Sie müssen die Aspose.PDF-Bibliothek herunterladen und installieren. Sie finden sie im[Link zur Veröffentlichung](https://releases.aspose.com/pdf/net/).
+3.  Digitales Zertifikat: Zum Signieren von PDFs benötigen Sie ein digitales Zertifikat — ein`.pfx` Datei normalerweise.
+4. Entwicklungsumgebung: Verwenden Sie Visual Studio oder eine IDE Ihrer Wahl, die C# unterstützt.
 
-Führen Sie zunächst die folgenden Schritte aus, um Ihre Entwicklungsumgebung einzurichten:
+Sobald diese Voraussetzungen erfüllt sind, können Sie mit der Signierung Ihrer PDF-Dokumente beginnen!
 
-1. Öffnen Sie Visual Studio und erstellen Sie ein neues C#-Projekt.
-2. Importieren Sie die erforderlichen Namespaces in Ihre Codedatei:
+## Pakete importieren
+
+Nachdem Sie nun alles eingerichtet haben, importieren wir die erforderlichen Pakete, um unser Projekt zum Laufen zu bringen. Fügen Sie oben in Ihrer C#-Klasse die relevanten Namespaces ein:
 
 ```csharp
+using System.IO;
+using System;
 using Aspose.Pdf;
+using Aspose.Pdf.Facades;
+using System.Collections;
 using Aspose.Pdf.Forms;
 using System.Collections.Generic;
 ```
 
-## Schritt 3: Digitale Signatur
+Diese Namespaces stellen die wesentlichen Klassen und Methoden bereit, die Sie zum Bearbeiten von PDF-Dateien mit Aspose.PDF verwenden.
 
-Der erste Schritt besteht darin, die PDF-Datei digital zu signieren. Der bereitgestellte Code zeigt, wie Sie mit Aspose.PDF für .NET eine digitale Signatur erstellen.
+## Schritt 1: Richten Sie Ihre Dokumentpfade ein
+
+Der erste Schritt besteht darin, die Pfade für Ihre Eingabe- und Ausgabe-PDF-Dateien und Ihr digitales Zertifikat festzulegen. Ersetzen Sie`YOUR DOCUMENTS DIRECTORY` durch den tatsächlichen Pfad auf Ihrem System, in dem sich Ihre Dateien befinden.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-string pbxFile = "";
+string pbxFile = ""; // Pfad zu Ihrem digitalen Zertifikat (.pfx)
 string inFile = dataDir + @"DigitallySign.pdf";
 string outFile = dataDir + @"DigitallySign_out.pdf";
+```
+ In diesem Snippet`inFile` ist Ihr Original-PDF, das Sie unterzeichnen möchten, und`outFile` ist der Ort, an dem die signierte PDF-Datei gespeichert wird.
+
+## Schritt 2: Laden Sie das PDF-Dokument
+
+ Als nächstes müssen wir das PDF-Dokument laden, das wir unterzeichnen möchten.`Document` Klasse in Aspose.PDF wird hier verwendet:
+
+```csharp
 using (Document document = new Document(inFile))
 {
-     using (PdfFileSignature signature = new PdfFileSignature(document))
-     {
-         PKCS7 pkcs = new PKCS7(pbxFile, "WebSales");
-         DocMDPSignature docMdpSignature = new DocMDPSignature(pkcs, DocMDPAccessPermissions.FillingInForms);
-         System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-         signature.SignatureAppearance = dataDir + @"aspose-logo.jpg";
-         signature.Certify(1, "Reason for signing", "Contact", "Location", true, rect, docMdpSignature);
-         signature.Save(outFile);
-     }
+    // Fahren Sie hier mit der Signaturlogik fort ...
 }
 ```
 
-Dieser Code lädt eine PDF-Datei, erstellt eine digitale Signatur mit einem bestimmten Erscheinungsbild und speichert dann die PDF-Datei mit der hinzugefügten Signatur.
+Dieser Code öffnet Ihre PDF-Datei und bereitet sie für weitere Vorgänge vor.
 
-## Schritt 4: Signaturüberprüfung
+## Schritt 3: Initialisieren Sie die PdfFileSignature-Klasse
 
-Nach dem Hinzufügen der digitalen Signatur können Sie überprüfen, ob die PDF-Datei eine gültige Signatur enthält.
+ Sobald das Dokument geladen ist, erstellen wir eine Instanz des`PdfFileSignature` Klasse, die es uns ermöglicht, mit digitalen Signaturen in unserem geladenen PDF-Dokument zu arbeiten.
 
 ```csharp
-using(Document document = new Document(outFile))
+using (PdfFileSignature signature = new PdfFileSignature(document))
 {
-     using (PdfFileSignature signature = new PdfFileSignature(document))
-     {
-         IList<string> sigNames = signature. GetSignNames();
-         if (sigNames.Count > 0)
-         {
-             if (signature.VerifySigned(sigNames[0] as string))
-             {
-                 if (signature.IsCertified)
-                 {
-                     if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms)
-                     {
-                         // Tu etwas
-                     }
-                 }
-             }
-         }
-     }
+    // Bereiten Sie den Signaturprozess vor
 }
 ```
 
-Dieser Code überprüft die erste Signatur der PDF-Datei und führt zusätzliche Aktionen aus, wenn die Signatur zertifiziert ist und über bestimmte Berechtigungen verfügt.
+Dieser Kurs ist Ihre Anlaufstelle für alles, was mit PDF-Signaturen zu tun hat!
 
-### Beispielquellcode für die digitale Signatur mit Aspose.PDF für .NET 
+## Schritt 4: Erstellen einer digitalen Zertifikatsinstanz
+
+Hier richten Sie Ihr Zertifikat ein, das zum Signieren des PDFs verwendet wird. Sie müssen den Pfad Ihres`.pfx` Datei zusammen mit dem dazugehörigen Passwort.
+
 ```csharp
-try
+PKCS7 pkcs = new PKCS7(pbxFile, "WebSales");
+```
+
+ Ersetzen Sie unbedingt`"WebSales"` durch Ihr aktuelles Zertifikatspasswort.
+
+## Schritt 5: Konfigurieren Sie das Erscheinungsbild der Signatur
+
+Als nächstes definieren wir, wie die Signatur im PDF angezeigt wird. Sie können die Position und das Erscheinungsbild der Signatur mithilfe eines Rechtecks anpassen. 
+
+```csharp
+System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
+signature.SignatureAppearance = dataDir + @"aspose-logo.jpg";
+```
+
+Hier positionieren wir die Signatur bei den Koordinaten (100, 100) mit einer Breite von 200 und einer Höhe von 100.
+
+## Schritt 6: Erstellen und Speichern der Signatur
+
+Jetzt ist es an der Zeit, die eigentliche Signatur zu erstellen und unser signiertes PDF zu speichern. Sie können den Grund für die Signatur, Ihre Kontaktdaten und Ihren Standort beschreiben. Dies kann später den Überprüfungsprozess erleichtern.
+
+```csharp
+DocMDPSignature docMdpSignature = new DocMDPSignature(pkcs, DocMDPAccessPermissions.FillingInForms);
+signature.Certify(1, "Signature Reason", "Contact", "Location", true, rect, docMdpSignature);
+signature.Save(outFile);
+```
+
+## Schritt 7: Überprüfen der Signatur
+
+Nach dem Speichern der signierten PDF-Datei ist es immer eine gute Idee, zu überprüfen, ob die Signatur korrekt hinzugefügt wurde. Wir können die Signaturnamen abrufen und prüfen, ob sie gültig sind. 
+
+```csharp
+using (Document document = new Document(outFile))
 {
-	// Der Pfad zum Dokumentverzeichnis.
-	string dataDir = "YOUR DOCUMENTS DIRECTORY";
-	string pbxFile = "";
-	string inFile = dataDir + @"DigitallySign.pdf";
-	string outFile = dataDir + @"DigitallySign_out.pdf";
-	using (Document document = new Document(inFile))
-	{
-		using (PdfFileSignature signature = new PdfFileSignature(document))
-		{
-			PKCS7 pkcs = new PKCS7(pbxFile, "WebSales"); // Verwenden Sie PKCS7/PKCS7Detached-Objekte
-			DocMDPSignature docMdpSignature = new DocMDPSignature(pkcs, DocMDPAccessPermissions.FillingInForms);
-			System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-			// Festlegen des Erscheinungsbilds der Signatur
-			signature.SignatureAppearance = dataDir + @"aspose-logo.jpg";
-			// Erstellen Sie einen der drei Signaturtypen
-			signature.Certify(1, "Signature Reason", "Contact", "Location", true, rect, docMdpSignature);
-			// Ausgabe-PDF-Datei speichern
-			signature.Save(outFile);
-		}
-	}
-	using (Document document = new Document(outFile))
-	{
-		using (PdfFileSignature signature = new PdfFileSignature(document))
-		{
-			IList<string> sigNames = signature.GetSignNames();
-			if (sigNames.Count > 0) // Irgendwelche Unterschriften?
-			{
-				if (signature.VerifySigned(sigNames[0] as string)) // Überprüfen Sie zuerst
-				{
-					if (signature.IsCertified) // Zertifiziert?
-					{
-						if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms) // Zugriffsberechtigung einholen
-						{
-							// Tu etwas
-						}
-					}
-				}
-			}
-		}
-	}
+    using (PdfFileSignature signature = new PdfFileSignature(document))
+    {
+        IList<string> sigNames = signature.GetSignNames();
+        if (sigNames.Count > 0) 
+        {
+            if (signature.VerifySigned(sigNames[0] as string)) 
+            {
+                if (signature.IsCertified) 
+                {
+                    if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms) 
+                    {
+                        //Die Unterschrift ist gültig und beglaubigt
+                    }
+                }
+            }
+        }
+    }
 }
+```
+
+Dieser Teil stellt sicher, dass Ihre Arbeit validiert wird. Schließlich möchten Sie kein nicht unterschriebenes Dokument versenden!
+
+## Schritt 8: Ausnahmen behandeln
+
+Es ist immer ratsam, Ihren Code in einen Try-Catch-Block einzuschließen, um alle Ausnahmen ordnungsgemäß zu behandeln. 
+
+```csharp
 catch (Exception ex)
 {
-	Console.WriteLine(ex.Message);
+    Console.WriteLine(ex.Message);
 }
 ```
+
+Auf diese Weise wissen Sie bei unerwarteten Ereignissen genau, was schiefgelaufen ist, ohne dass Ihre Anwendung abstürzt.
 
 ## Abschluss
 
-Herzlichen Glückwunsch! Sie haben mit Aspose.PDF für .NET erfolgreich eine digitale Signatur auf einer PDF-Datei erstellt. Dieses Tutorial behandelte den schrittweisen Prozess vom Hinzufügen der digitalen Signatur bis zur Überprüfung ihrer Gültigkeit. Sie können diese Funktion jetzt verwenden, um Ihre PDF-Dateien mit digitalen Signaturen zu sichern.
+Digitale Signaturen bieten einen wesentlichen Schutz für Dokumente und beweisen Authentizität und Integrität. Mit Aspose.PDF für .NET ist das Signieren einer PDF-Datei ein unkomplizierter Vorgang, der Ihren Dokumentenverwaltungs-Workflow erheblich verbessern kann. Nachdem Sie nun gelernt haben, wie Sie Ihre Signaturen digitalisieren, können Sie Kunden und Partnern Ihre Professionalität und sichere Dokumentenhandhabung versichern.
 
-### Häufig gestellte Fragen
+## Häufig gestellte Fragen
 
-#### F: Was ist der Zweck dieses Tutorials?
+### Was ist eine digitale Signatur?
+Eine digitale Signatur ist das kryptografische Äquivalent einer handschriftlichen Unterschrift. Sie stellt die Authentizität und Integrität der Daten sicher.
 
-A: Dieses Tutorial führt Sie durch den Prozess der digitalen Signierung einer PDF-Datei mit Aspose.PDF für .NET. Digitale Signaturen fügen einen elektronischen Fingerabdruck hinzu, um die Authentizität und Integrität des Dokuments sicherzustellen.
+### Kann ich Aspose.PDF zum Signieren von PDF-Dateien in jeder .NET-Anwendung verwenden?
+Ja! Aspose.PDF für .NET ist mit verschiedenen .NET-Anwendungen kompatibel, einschließlich Desktop, Web und Diensten.
 
-#### F: Welche Voraussetzungen müssen vor dem Start erfüllt sein?
+### Welche Arten von digitalen Zertifikaten kann ich verwenden?
+ Sie können jedes PKCS#12-Zertifikat verwenden, das normalerweise in einem`.pfx` oder`.p12` Datei.
 
-A: Bevor Sie beginnen, stellen Sie sicher, dass Sie über grundlegende Kenntnisse der Programmiersprache C# verfügen, Visual Studio installiert haben und die Aspose.PDF-Bibliothek für .NET installiert haben.
+### Gibt es eine Testversion von Aspose.PDF?
+ Ja! Sie können eine kostenlose Testversion herunterladen von der[Aspose-Veröffentlichungsseite](https://releases.aspose.com/).
 
-#### F: Wie richte ich die Entwicklungsumgebung ein?
-
-A: Befolgen Sie die angegebenen Schritte, um Ihre Entwicklungsumgebung einzurichten, einschließlich der Erstellung eines neuen C#-Projekts in Visual Studio und des Importierens der erforderlichen Namespaces.
-
-#### F: Wie füge ich einer PDF-Datei eine digitale Signatur hinzu?
-
- A: Der bereitgestellte Beispielcode zeigt, wie Sie eine PDF-Datei laden, eine digitale Signatur erstellen, das Erscheinungsbild festlegen und die signierte PDF-Datei speichern. Die digitale Signatur wird mithilfe des`Certify` Methode der`PdfFileSignature` Objekt.
-
-#### F: Wie überprüfe ich die Gültigkeit einer digitalen Signatur?
-
-A: Nachdem Sie die digitale Signatur hinzugefügt haben, können Sie den Beispielcode verwenden, um die Gültigkeit der Signatur zu überprüfen. Dabei wird geprüft, ob die Signatur zertifiziert ist und über bestimmte Zugriffsberechtigungen verfügt.
-
-####  F: Was bedeutet das`PKCS7` object represent?
-
- A: Die`PKCS7` -Objekt wird verwendet, um die kryptografische Funktionalität für digitale Signaturen bereitzustellen. Es wird verwendet, um die digitale Signatur im bereitgestellten Beispielcode zu erstellen.
-
-#### F: Kann ich das Erscheinungsbild der digitalen Signatur anpassen?
-
- A: Ja, Sie können das Erscheinungsbild der digitalen Signatur anpassen, indem Sie den Pfad zu einem Bild im`SignatureAppearance` Eigentum der`PdfFileSignature` Objekt.
-
-#### F: Was passiert, wenn die Signatur ungültig ist?
-
-A: Wenn die Signatur nicht gültig ist, schlägt der Verifizierungsprozess fehl und die entsprechenden Aktionen innerhalb des Verifizierungscodeblocks werden nicht ausgeführt.
-
-#### F: Wie kann ich die Sicherheit meiner digitalen Signaturen gewährleisten?
-
-A: Digitale Signaturen sind von Natur aus sicher und verwenden kryptografische Techniken, um Authentizität und Integrität sicherzustellen. Stellen Sie sicher, dass Sie Ihren privaten Schlüssel sicher aufbewahren und befolgen Sie die Best Practices für den Umgang mit digitalen Signaturen.
-
-#### F: Kann ich einer PDF mehrere digitale Signaturen hinzufügen?
-
- A: Ja, Sie können einer PDF-Datei mehrere digitale Signaturen hinzufügen, indem Sie`PdfFileSignature` Objekt`Sign` oder`Certify` Methoden. Jede Signatur hat ihr eigenes Erscheinungsbild und ihre eigene Konfiguration.
+### Wie kann ich Unterstützung erhalten, wenn ich auf Probleme stoße?
+ Für Unterstützung besuchen Sie bitte die[Aspose PDF Forum](https://forum.aspose.com/c/pdf/10).

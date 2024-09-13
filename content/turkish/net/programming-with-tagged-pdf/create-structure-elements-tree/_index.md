@@ -19,7 +19,7 @@ Bu adım adım kılavuzda, .NET için Aspose.PDF kullanarak ağaç öğelerinin 
 // Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 
-// PDF belgesi oluşturun
+// PDF belgesi oluştur
 Document document = new Document();
 ```
 
@@ -152,7 +152,7 @@ A: Aspose.PDF for .NET kullanarak bir PDF belgesinde ağaç öğelerinin bir yap
 
 A: Kod örneği, mantıksal öğelerin hiyerarşik bir yapısının nasıl oluşturulacağını göstermektedir.`SectElement`, `DivElement` , Ve`ArtElement` Aspose.PDF tarafından sağlanan sınıflar. Bu öğeler, belge içinde ağaç benzeri bir yapı oluşturan ebeveyn ve çocuk düğümleri olarak düzenlenir.
 
-####  S: Nasıl?`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
+#### S: Nasıl?`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
 
  A:`TaggedContent` özellik, PDF belgesinin etiketli içerik özelliklerine erişim sağlar. Bu, yapılandırılmış öğeler oluşturmanıza ve bunları düzenlemenize, ilişkilerini tanımlamanıza ve bunları hiyerarşik olarak düzenlemenize olanak tanır, böylece belgenin yapısını ve erişilebilirliğini geliştirir.
 
@@ -168,7 +168,7 @@ A: Kod örneği, mantıksal öğelerin hiyerarşik bir yapısının nasıl oluş
 
 A: Öğeleri hiyerarşik olarak düzenlemek belge organizasyonunu, gezinmeyi ve semantiği iyileştirir. Kullanıcıların ve yardımcı teknolojilerin içeriğin yapısını ve ilişkilerini anlamasını sağlayarak genel kullanıcı deneyimini iyileştirir.
 
-####  S: Nasıl?`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
+#### S: Nasıl?`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
 
  A:`Save` yöntem, PDF belgesini, kullanılarak oluşturulan hiyerarşik yapı ile birlikte kaydeder`AppendChild` yöntem. Bu, yapının bozulmadan kalmasını, belgenin erişilebilir ve iyi düzenlenmiş olmasını sağlar.
 

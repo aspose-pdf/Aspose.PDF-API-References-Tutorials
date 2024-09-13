@@ -60,7 +60,7 @@ headerRow.Cells.Add("header 1");
 headerRow.Cells.Add("header 2");
 headerRow.Cells.Add("header 3");
 // ...
-// Adjon hozzá további fejléceket
+//Adjon hozzá további fejléceket
 
 for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
 {
@@ -101,7 +101,7 @@ Aspose.Pdf.Table outerTable = new Aspose.Pdf.Table();
 outerTable.ColumnWidths = "100%";
 outerTable.HorizontalAlignment = HorizontalAlignment.Left;
 
-//Példányosítson egy táblaobjektumot, amely a külső táblázatba lesz beágyazva, és amely ugyanazon az oldalon belül megszakad
+// Példányosítson egy táblaobjektumot, amely a külső táblázatba lesz beágyazva, és amely ugyanazon az oldalon belül megszakad
 Aspose.Pdf.Table mytable = new Aspose.Pdf.Table();
 mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;

@@ -2,227 +2,160 @@
 title: Informace o obrázku v souboru PDF
 linktitle: Informace o obrázku v souboru PDF
 second_title: Aspose.PDF pro .NET API Reference
-description: Extrahujte informace o obrázku do souboru PDF pomocí Aspose.PDF pro .NET.
+description: Naučte se extrahovat obrazové informace z PDF pomocí Aspose.PDF for .NET s naším komplexním průvodcem krok za krokem.
 type: docs
 weight: 160
 url: /cs/net/programming-with-images/image-information/
 ---
-Tato příručka vás krok za krokem provede extrahováním informací o obrázcích v souboru PDF pomocí Aspose.PDF pro .NET. Ujistěte se, že jste již nastavili své prostředí a postupujte podle následujících kroků:
+## Zavedení
 
-## Krok 1: Definujte adresář dokumentů
+Soubory PDF jsou v dnešní době všude – prakticky každý profesionální a osobní dokument si v určitém okamžiku najde cestu do tohoto formátu. Ať už se jedná o zprávu, brožuru nebo e-knihu, pochopení toho, jak s těmito soubory programově pracovat, nabízí nespočet možností. Jedním z běžných požadavků je extrahovat obrazové informace ze souborů PDF. V této příručce se ponoříme do toho, jak používat knihovnu Aspose.PDF pro .NET k extrahování důležitých podrobností o obrázcích vložených do dokumentu PDF.
 
- Ujistěte se, že jste nastavili správný adresář dokumentů. Nahradit`"YOUR DOCUMENT DIRECTORY"` v kódu s cestou k adresáři, kde se nachází váš dokument PDF.
+## Předpoklady
+
+Než se pustíme do hrubky kódování, musíte mít splněno několik předpokladů:
+
+1. Vývojové prostředí: Budete potřebovat nastavit vývojové prostředí .NET. Může to být Visual Studio nebo jakékoli jiné IDE kompatibilní s .NET.
+2.  Knihovna Aspose.PDF: Ujistěte se, že máte přístup ke knihovně Aspose.PDF. Můžete si jej stáhnout z[Aspose webové stránky](https://releases.aspose.com/pdf/net/). 
+3. Základní znalost C#: Znalost jazyka C# a objektově orientovaného programování vám pomůže bez námahy sledovat výukový program.
+4. Dokument PDF: Mějte po ruce vzorový dokument PDF, který obsahuje obrázky pro testování kódu. 
+
+## Import balíčků
+
+Abyste mohli začít používat knihovnu Aspose.PDF, budete muset do souboru C# importovat potřebné jmenné prostory. Zde je rychlý přehled:
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using System;
 ```
 
-## Krok 2: Načtěte zdrojový soubor PDF
+Tyto jmenné prostory vám poskytnou přístup k požadovaným třídám a metodám pro manipulaci se soubory PDF a extrahování obrazových dat.
 
- V tomto kroku načteme zdrojový soubor PDF pomocí`Document` třída Aspose.PDF. Použijte`Document` konstruktoru a předejte cestu k dokumentu PDF.
+Nyní, když máte vše nastaveno, je čas to rozdělit do zvládnutelných kroků. Napíšeme C# program, který načte PDF dokument, projde každou stránku a extrahuje rozměry a rozlišení každého obrázku v dokumentu.
+
+## Krok 1: Inicializujte dokument
+
+ V tomto kroku inicializujeme dokument PDF pomocí cesty k vašemu souboru PDF. Měli byste vyměnit`"YOUR DOCUMENT DIRECTORY"` se skutečnou cestou, kde se nachází váš soubor PDF.
 
 ```csharp
+// Cesta k adresáři dokumentů.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Načtěte zdrojový soubor PDF
 Document doc = new Document(dataDir + "ImageInformation.pdf");
 ```
+ Vytváříme a`Document` objekt, který načte PDF ze zadaného adresáře. To nám umožní pracovat s obsahem souboru.
 
-## Krok 3: Nastavte výchozí rozlišení
+## Krok 2: Nastavte výchozí rozlišení a inicializujte datové struktury
 
-V tomto kroku nastavíme výchozí rozlišení obrázků. V příkladu je výchozí rozlišení nastaveno na 72.
+Dále nastavíme výchozí rozlišení obrázků, což je užitečné pro výpočty. Připravíme také pole pro názvy obrázků a zásobník pro správu grafických stavů.
 
 ```csharp
+// Definujte výchozí rozlišení obrázku
 int defaultResolution = 72;
-```
-
-## Krok 4: Inicializujte objekty a čítače
-
-V tomto kroku inicializujeme objekty a čítače potřebné k načtení obrazových informací.
-
-```csharp
 System.Collections.Stack graphicsState = new System.Collections.Stack();
+// Definujte objekt seznamu polí, který bude obsahovat názvy obrázků
 System.Collections.ArrayList imageNames = new System.Collections.ArrayList(doc.Pages[1].Resources.Images.Names);
 ```
+ The`defaultResolution` proměnná nám pomáhá správně vypočítat rozlišení obrázků. The`graphicsState`zásobník slouží jako prostředek k uložení aktuálního grafického stavu dokumentu, když narazíme na transformační operátory.
 
-## Krok 5: Procházejte operátory na první stránce dokumentu
+## Krok 3: Zpracujte každého operátora na stránce
 
-V tomto kroku projdeme operátory na první stránce dokumentu, abychom identifikovali operace související s obrázky.
+Nyní projdeme všechny operátory na první stránce dokumentu. Zde dochází k těžkému zvedání. 
 
 ```csharp
-foreach(Operator op in doc.Pages[1].Contents)
+foreach (Operator op in doc.Pages[1].Contents)
 {
+    // Operátoři procesu...
+}
 ```
+Každý operátor v souboru PDF je příkaz, který říká rendereru, jak spravovat grafické prvky, včetně obrázků.
 
-## Krok 6: Správa operátorů a extrahování informací o obrázku
+## Krok 4: Obsluha operátorů GSave/GRestore
 
-V tomto kroku budeme spravovat různé typy operátorů a extrahovat informace o obrázcích.
+Uvnitř smyčky budeme zpracovávat příkazy pro ukládání a obnovu grafiky, abychom mohli sledovat změny provedené v grafickém stavu.
 
 ```csharp
-Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
-Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-Aspose.Pdf.Operators.Do opDo = op as Aspose.Pdf.Operators.Do;
+if (opSaveState != null) 
+{
+    // Uložit předchozí stav
+    graphicsState.Push(((Matrix)graphicsState.Peek()).Clone());
+} 
+else if (opRestoreState != null) 
+{
+    // Obnovit předchozí stav
+    graphicsState.Pop();
+}
+```
+`GSave` uloží aktuální grafický stav, zatímco`GRestore` obnovuje poslední uložený stav, což nám umožňuje vrátit jakékoli transformace při zpracování obrázků.
 
-//Zvládněte operace GSave a GRestore pro transformace
-if (opSaveState != null)
+## Krok 5: Správa transformačních matic
+
+Dále se zabýváme zřetězením transformačních matic při aplikaci transformací na obrázky.
+
+```csharp
+else if (opCtm != null) 
 {
-     graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-}
-else if (opRestoreState != null)
-{
-     graphicsState. Pop();
-}
-// Pro transformace zpracujte operaci ConcatenateMatrix
-else if (opCtm != null)
-{
-     // Použijte transformační matici
-     System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
+    Matrix cm = new Matrix(
         (float)opCtm.Matrix.A,
         (float)opCtm.Matrix.B,
         (float)opCtm.Matrix.C,
         (float)opCtm.Matrix.D,
         (float)opCtm.Matrix.E,
         (float)opCtm.Matrix.F);
-
-
-     ((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-     keep on going;
-}
-// Proveďte operaci Do pro obrázky
-else if (opDo != null)
-{
-     if (imageNames.Contains(opDo.Name))
-     {
-         // Načtěte obrázek
-         XImage image = doc.Pages[1].Resources.Images[opDo.Name];
-         // Načtěte rozměry obrázku
-         double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
-         double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
-         // Vypočítejte rozlišení na základě výše uvedených informací
-         double resHorizontal = originalWidth * defaultResolution / scaledWidth;
-         double resVertical = originalHeight * defaultResolution / scaledHeight;
-         // Zobrazení informací o obrázku
-         Console.Out.WriteLine(
-                 string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
-								 opDo.Name, scaledWidth, scaledHeight, resHorizontal,
-								 resVertical));
-     }
+    
+    ((Matrix)graphicsState.Peek()).Multiply(cm);
+    continue;
 }
 ```
+Když je použita transformační matice, vynásobíme ji aktuální maticí uloženou v grafickém stavu, abychom mohli sledovat jakékoli změny měřítka nebo translace aplikované na obrázek.
 
-### Ukázkový zdrojový kód pro Image Information pomocí Aspose.PDF pro .NET 
+## Krok 6: Extrahujte informace o obrázku
+
+Nakonec zpracujeme operátora výkresu pro obrázky a extrahujeme potřebné informace, jako jsou rozměry a rozlišení.
+
 ```csharp
-// Cesta k adresáři dokumentů.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Načtěte zdrojový soubor PDF
-Document doc = new Document(dataDir+ "ImageInformation.pdf");
-// Definujte výchozí rozlišení obrázku
-int defaultResolution = 72;
-System.Collections.Stack graphicsState = new System.Collections.Stack();
-// Definujte objekt seznamu polí, který bude obsahovat názvy obrázků
-System.Collections.ArrayList imageNames = new System.Collections.ArrayList(doc.Pages[1].Resources.Images.Names);
-// Vložte objekt, který chcete naskládat
-graphicsState.Push(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, 0, 0));
-// Získejte všechny operátory na první stránce dokumentu
-foreach (Operator op in doc.Pages[1].Contents)
+else if (opDo != null) 
 {
-	// Pomocí operátorů GSave/GRestore vrátíte transformace zpět na dříve nastavené
-	Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
-	Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-	// Vytvořte instanci objektu ConcatenateMatrix, protože definuje aktuální transformační matici.
-	Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-	// Operátor Create Do, který čerpá objekty ze zdrojů. Kreslí objekty Form a Image objekty
-	Aspose.Pdf.Operators.Do opDo = op as Aspose.Pdf.Operators.Do;
-	if (opSaveState != null)
-	{
-		//Uložte předchozí stav a přesuňte aktuální stav na vrchol zásobníku
-		graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-	}
-	else if (opRestoreState != null)
-	{
-		// Zahodit současný stav a obnovit předchozí
-		graphicsState.Pop();
-	}
-	else if (opCtm != null)
-	{
-		System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
-		   (float)opCtm.Matrix.A,
-		   (float)opCtm.Matrix.B,
-		   (float)opCtm.Matrix.C,
-		   (float)opCtm.Matrix.D,
-		   (float)opCtm.Matrix.E,
-		   (float)opCtm.Matrix.F);
-		// Vynásobte aktuální matici stavovou maticí
-		((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-		continue;
-	}
-	else if (opDo != null)
-	{
-		// V případě, že se jedná o operátor kreslení obrázků
-		if (imageNames.Contains(opDo.Name))
-		{
-			System.Drawing.Drawing2D.Matrix lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-			// Vytvořte objekt XImage pro uložení obrázků první stránky PDF
-			XImage image = doc.Pages[1].Resources.Images[opDo.Name];
-			// Získejte rozměry obrázku
-			double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
-			double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
-			// Získejte informace o výšce a šířce obrázku
-			double originalWidth = image.Width;
-			double originalHeight = image.Height;
-			// Vypočítejte rozlišení na základě výše uvedených informací
-			double resHorizontal = originalWidth * defaultResolution / scaledWidth;
-			double resVertical = originalHeight * defaultResolution / scaledHeight;
-			// Zobrazení informací o rozměrech a rozlišení každého obrázku
-			Console.Out.WriteLine(
-					string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
-								 opDo.Name, scaledWidth, scaledHeight, resHorizontal,
-								 resVertical));
-		}
-	}
+    // Operátor Handle Do, který kreslí objekty
+    if (imageNames.Contains(opDo.Name)) 
+    {
+        Matrix lastCTM = (Matrix)graphicsState.Peek();
+        XImage image = doc.Pages[1].Resources.Images[opDo.Name];
+        double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
+        double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
+        double originalWidth = image.Width;
+        double originalHeight = image.Height;
+        
+        double resHorizontal = originalWidth * defaultResolution / scaledWidth;
+        double resVertical = originalHeight * defaultResolution / scaledHeight;
+        
+        // Vypište informace
+        Console.Out.WriteLine(string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
+                         opDo.Name, scaledWidth, scaledHeight, resHorizontal, resVertical));
+    }
 }
 ```
+Zde zkontrolujeme, zda je za kreslení obrázku odpovědný operátor. Pokud ano, získáme odpovídající objekt XImage, vypočítáme jeho zmenšené rozměry a rozlišení a vytiskneme potřebné informace.
 
 ## Závěr
 
-gratuluji! Nyní jste se naučili, jak extrahovat informace o obrázku do souboru PDF pomocí Aspose.PDF pro .NET. Tyto informace můžete použít pro různé úlohy zpracování obrazu ve vašich aplikacích.
+Gratuluji! Právě jste vytvořili funkční příklad, jak extrahovat informace o obrázku ze souboru PDF pomocí Aspose.PDF for .NET. Tato schopnost může být neuvěřitelně užitečná pro vývojáře, kteří potřebují analyzovat nebo manipulovat s dokumenty PDF pro různé aplikace, jako je vytváření sestav, extrakce dat nebo dokonce vlastní prohlížeče PDF. 
 
-### Časté dotazy pro informace o obrázku v souboru PDF
 
-#### Otázka: Jaký je účel extrahování obrazových informací z dokumentu PDF pomocí Aspose.PDF pro .NET?
+## FAQ
 
-Odpověď: Extrahování obrazových informací z dokumentu PDF poskytuje náhled na rozměry, rozlišení a další atributy obrazů v dokumentu. Tyto informace lze použít pro zpracování obrazu, analýzu nebo optimalizační úlohy.
+### Co je to knihovna Aspose.PDF?
+Knihovna Aspose.PDF je výkonný nástroj pro vytváření, manipulaci a konverzi souborů PDF v aplikacích .NET.
 
-#### Otázka: Jak Aspose.PDF for .NET pomáhá při extrahování obrazových informací z dokumentu PDF?
+### Mohu používat knihovnu zdarma?
+ Ano, Aspose nabízí bezplatnou zkušební verzi. Můžete si jej stáhnout[zde](https://releases.aspose.com/).
 
-Odpověď: Aspose.PDF for .NET poskytuje nástroje pro přístup a analýzu obsahu dokumentu PDF, včetně jeho obrázků. Poskytnutý kód ukazuje, jak extrahovat a zobrazovat informace o obrázku pomocí různých operátorů.
+### Jaké typy obrazových formátů lze extrahovat?
+Knihovna podporuje různé formáty obrázků, včetně JPEG, PNG a TIFF, pokud jsou vložené do PDF.
 
-#### Otázka: Jaký druh obrazových informací lze pomocí této metody extrahovat?
+### Používá se Aspose pro komerční účely?
+ Ano, produkty Aspose můžete používat komerčně. Pro licencování navštivte[nákupní stránku](https://purchase.aspose.com/buy).
 
-Odpověď: Tato metoda umožňuje extrahovat a zobrazovat informace, jako jsou zmenšené rozměry, rozlišení a názvy obrázků pro obrázky v dokumentu PDF.
-
-#### Otázka: Jak kód identifikuje a zpracovává operátory související s obrázky v dokumentu PDF?
-
-Odpověď: Kód iteruje operátory na zadané stránce dokumentu PDF. Identifikuje a zpracovává operátory související s operacemi s obrázky, transformacemi a vykreslováním.
-
-#### Otázka: Jaký je význam výchozího rozlišení a jak se používá v kódu?
-
-A: Výchozí rozlišení se používá jako referenční bod pro výpočet skutečného rozlišení obrázků. Kód vypočítá rozlišení každého obrázku na základě jeho rozměrů a výchozího nastavení rozlišení.
-
-#### Otázka: Jak lze extrahované obrazové informace využít ve scénářích reálného světa?
-
-Odpověď: Extrahované obrazové informace lze použít pro úkoly, jako je hodnocení kvality obrazu, optimalizace obrazu, generování miniatur obrazu a usnadnění rozhodovacích procesů souvisejících s obrazem.
-
-#### Otázka: Mohu upravit kód a extrahovat další atributy související s obrázkem?
-
-Odpověď: Ano, kód můžete přizpůsobit tak, aby extrahoval další atributy obrázků, jako je barevný prostor, hloubka pixelů nebo typ obrázku.
-
-#### Otázka: Je proces extrakce obrazových informací náročný na zdroje nebo časově?
-
-Odpověď: Proces extrakce obrazových informací je efektivní a optimalizovaný pro výkon a zajišťuje minimální dopad na využití zdrojů a dobu zpracování.
-
-#### Otázka: Jak mohou vývojáři těžit z identifikace a extrahování obrazových informací z dokumentů PDF?
-
-Odpověď: Vývojáři mohou získat přehled o vlastnostech obrázků v dokumentech PDF, což jim umožní činit informovaná rozhodnutí týkající se manipulace s obrázky, zpracování a optimalizace.
-
-#### Otázka: Lze tuto metodu použít pro dávkové zpracování dokumentů PDF obsahujících obrázky?
-
-Odpověď: Ano, tuto metodu lze rozšířit pro dávkové zpracování iterací přes více stránek nebo dokumentů, extrahováním obrazových informací a prováděním úloh souvisejících s obrazem.
+### Jak získám podporu pro Aspose?
+ Můžete vstoupit do fóra podpory[zde](https://forum.aspose.com/c/pdf/10).

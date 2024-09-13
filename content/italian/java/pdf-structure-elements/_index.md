@@ -29,7 +29,7 @@ Scopri come migliorare la struttura PDF in Java usando Aspose.PDF per Java. Ques
 ### [Crea un elemento di struttura della nota in PDF usando Java](./create-note-structure-element-in-pdf-using-java/)
 Scopri come creare elementi di struttura delle note interattivi nei PDF usando Java con Aspose.PDF per Java. Arricchisci i tuoi documenti con note informative.
 ### [Crea PDF con immagine taggata in Java](./create-pdf-with-tagged-image-in-java/)
-Scopri come creare PDF di immagini taggate accessibili in Java usando Aspose.PDF per Java. Segui la nostra guida passo dopo passo per una generazione di PDF senza problemi.
+Scopri come creare PDF di immagini taggate accessibili in Java usando Aspose.PDF per Java. Segui la nostra guida passo passo per una generazione di PDF senza problemi.
 ### [Crea PDF con testo taggato in Java](./create-pdf-with-tagged-text-in-java/)
 Scopri come creare PDF taggati in Java con Aspose.PDF per Java. La nostra guida passo passo garantisce accessibilità e conformità.
 ### [Elementi della struttura del blocco di testo in PDF utilizzando Java](./text-block-structure-elements-in-pdf-using-java/)

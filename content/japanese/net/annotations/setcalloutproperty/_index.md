@@ -80,7 +80,7 @@ FreeTextAnnotation fta = new FreeTextAnnotation(page, new Rectangle(422.25, 645.
 fta.Intent = FreeTextIntent.FreeTextCallout;
 fta.EndingStyle = LineEnding.OpenArrow;
 ```
-私たちは`FreeTextAnnotation`オブジェクトを特定の座標に関連付け、ページ上の位置を定義します。`Intent`に設定されています`FreeTextCallout`は、これが吹き出し注釈であることを示します。`EndingStyle`に設定されています`OpenArrow`つまり、吹き出し線は開いた矢印で終わります。
+私たちは`FreeTextAnnotation`オブジェクトを特定の座標で表し、ページ上の位置を定義します。`Intent`に設定されています`FreeTextCallout`は、これが吹き出し注釈であることを示します。`EndingStyle`に設定されています`OpenArrow`つまり、吹き出し線は開いた矢印で終わります。
 
 ## ステップ5: 吹き出し線のポイントを定義する
 

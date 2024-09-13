@@ -1,7 +1,7 @@
 ---
 title: Ställ in licens med inbäddad resurs
 linktitle: Ställ in licens med inbäddad resurs
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lås upp kraften i Aspose.PDF för .NET med denna omfattande guide. Lär dig att ställa in licenser, manipulera PDF-filer och mer.
 type: docs
 weight: 50
@@ -17,7 +17,7 @@ Innan vi går in i koden finns det några saker du måste ha på plats:
 
 1. Visual Studio: Se till att du har Visual Studio installerat på din dator. Det är IDE vi kommer att använda för denna handledning.
 2. .NET Framework: Se till att du har .NET Framework installerat. Aspose.PDF stöder olika versioner, så kontrollera dokumentationen för kompatibilitet.
-3.  Aspose.PDF Library: Du kan ladda ner biblioteket från[Aspose PDF för .NET versioner sida](https://releases.aspose.com/pdf/net/). Du kan också välja en gratis provperiod om du vill testa den först.
+3.  Aspose.PDF Library: Du kan ladda ner biblioteket från[Aspose PDF för .NET-versioner sida](https://releases.aspose.com/pdf/net/). Du kan också välja en gratis provperiod om du vill testa den först.
 4. Grundläggande C#-kunskaper: Bekantskap med C#-programmering hjälper dig att förstå exemplen bättre.
 
 ## Importera paket

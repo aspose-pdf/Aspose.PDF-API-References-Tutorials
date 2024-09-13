@@ -91,7 +91,7 @@ Jakmile je razítko stránky aplikováno na všechny stránky, uložte upravený
 pdfDocument.save("output.pdf");
 ```
 
-## Spuštění Java aplikace
+## Spuštění aplikace Java
 
 Nyní můžete spustit aplikaci Java. Přidá razítko stránky k určenému dokumentu PDF.
 
@@ -101,7 +101,7 @@ V tomto tutoriálu jsme se naučili, jak přidat razítko stránky PDF do soubor
 
 ## FAQ
 
-### Jak mohu přidat obrázkové razítko místo textu?
+### Jak mohu místo textu přidat obrázkové razítko?
 
  Můžete vytvořit`ImageStamp` místo a`TextStamp` a nakonfigurujte jej pomocí souboru obrázku.
 

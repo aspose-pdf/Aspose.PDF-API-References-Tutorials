@@ -22,7 +22,7 @@ Az alapokon túl oktatóanyagaink a táblagenerálás és a Java használatával
 ### [Táblázat hozzáadása a meglévő PDF-dokumentumhoz Java használatával](./add-table-in-existing-pdf-document-using-java/)
 Ismerje meg, hogyan adhat hozzá táblázatokat meglévő PDF-dokumentumokhoz Java és Aspose.PDF for Java használatával. Lépésről lépésre útmutató kódpéldákkal.
 ### [Kényszerített táblázat-megjelenítés új oldalon PDF-ben Java használatával](./force-table-rendering-on-new-page-in-pdf-using-java/)
-Ismerje meg, hogyan kényszeríthet táblázat-megjelenítést egy új PDF-oldalon Java használatával az Aspose.PDF fájlban. Ez a lépésenkénti útmutató forráskódot és szakértői tippeket tartalmaz a PDF-dokumentum precíz formázásához.
+Ismerje meg, hogyan kényszeríthet táblázat-megjelenítést egy új PDF-oldalon Java használatával az Aspose.PDF fájlban. Ez a lépésenkénti útmutató forráskódot és szakértői tippeket tartalmaz a PDF-dokumentumok pontos formázásához.
 ### [Feszített cellaszegély elrejtése PDF-ben Java használatával](./hide-spanned-cell-border-in-pdf-using-java/)
 Az Aspose.PDF for Java oktatóanyagával lépésről lépésre megtudhatja, hogyan rejtheti el a feszített cellaszegélyeket PDF-ben Java használatával.
 ### [Táblázatok kezelése meglévő PDF-ben Java segítségével](./manipulate-tables-in-existing-pdf-using-java/)

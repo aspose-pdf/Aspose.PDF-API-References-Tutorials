@@ -55,7 +55,7 @@ page.getParagraphs().add(paragraph);
  För att ställa in anpassade taggnamn måste du använda`Tagged` funktion tillhandahållen av Aspose.PDF. Så här kan du definiera anpassade taggnamn för elementen vi har lagt till:
 
 ```java
-// Aktivera Tagged-funktionen
+// Aktivera funktionen Tagged
 pdfDocument.setTagged(true);
 
 // Skapa ett strukturelement för rubriken

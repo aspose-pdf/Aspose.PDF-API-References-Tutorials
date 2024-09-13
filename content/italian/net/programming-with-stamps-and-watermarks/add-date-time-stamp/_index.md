@@ -2,178 +2,185 @@
 title: Aggiungi data e ora nel file PDF
 linktitle: Aggiungi data e ora nel file PDF
 second_title: Riferimento API Aspose.PDF per .NET
-description: Scopri come aggiungere facilmente data e ora in un file PDF con Aspose.PDF per .NET.
+description: Scopri come aggiungere un timbro data e ora ai tuoi file PDF usando Aspose.PDF per .NET con questa guida passo-passo. Perfetto per migliorare l'autenticità dei documenti.
 type: docs
 weight: 10
 url: /it/net/programming-with-stamps-and-watermarks/add-date-time-stamp/
 ---
-In questo articolo, ti guideremo passo dopo passo su come aggiungere un timbro di data e ora in un file PDF usando Aspose.PDF per .NET. Ti mostreremo come usare il codice sorgente C# fornito per aggiungere un timbro di data e ora a un file PDF esistente.
+## Introduzione
 
-## Requisiti
+Quando si tratta di gestire documenti, in particolare PDF, aggiungere un timbro data e ora può cambiare le carte in tavola. Che tu stia lavorando su documenti legali, report di progetto o fatture, un timbro data e ora non solo aggiunge autenticità, ma fornisce anche una chiara registrazione di quando il documento è stato creato o modificato. In questa guida, ti guideremo attraverso il processo di aggiunta di un timbro data e ora a un file PDF utilizzando la libreria Aspose.PDF per .NET. 
 
-Prima di iniziare, assicurati di avere quanto segue:
+Questo articolo è stato progettato per essere semplice e facile da seguire, quindi anche se sei alle prime armi con la programmazione o la libreria Aspose.PDF, sarai in grado di implementare questa funzionalità con sicurezza. Immergiamoci!
 
-- Un ambiente di sviluppo .NET installato.
-- La libreria Aspose.PDF per .NET è stata scaricata e a cui si fa riferimento nel progetto.
+## Prerequisiti
 
-## Fase 1: Impostazione dell'ambiente
+Prima di iniziare, ecco alcuni prerequisiti che devi soddisfare:
 
-Prima di poter aggiungere un timbro data e ora a un documento PDF, devi impostare il tuo ambiente di sviluppo. Ecco i passaggi da seguire:
+1. Visual Studio: assicurati di avere Visual Studio installato sul tuo computer. Qui è dove scriverai ed eseguirai il tuo codice.
+2. Aspose.PDF per .NET: devi scaricare e installare la libreria Aspose.PDF. Puoi trovare l'ultima versione[Qui](https://releases.aspose.com/pdf/net/).
+3. Conoscenza di base di C#: la familiarità con la programmazione C# ti aiuterà a comprendere meglio gli esempi, ma non preoccuparti se sei alle prime armi: ti spiegheremo tutto passo dopo passo.
+4.  Un file PDF: tieni pronto un file PDF di esempio. Per il nostro esempio, useremo un file denominato`AddTextStamp.pdf`.
 
-1. Apri il tuo IDE (Integrated Development Environment) preferito.
-2. Crea un nuovo progetto C#.
-3. Assicurati di aver aggiunto un riferimento alla libreria Aspose.PDF per .NET.
+Una volta soddisfatti questi prerequisiti, sarai pronto per iniziare ad aggiungere data e ora ai tuoi file PDF!
 
-## Passaggio 2: aggiunta della libreria Aspose.PDF
+## Importa pacchetti
 
-Per lavorare con i documenti PDF nel tuo progetto è necessaria la libreria Aspose.PDF per .NET.
+Per iniziare, devi importare i namespace necessari nel tuo progetto C#. Ecco come fare:
 
-## Passaggio 3: caricamento del documento PDF
+### Crea un nuovo progetto
 
-Il primo passo per aggiungere un timbro data e ora è caricare il documento PDF esistente nel tuo progetto. Ecco come:
+1. Apri Visual Studio: avvia l'applicazione Visual Studio.
+2. Crea un nuovo progetto: seleziona "Crea un nuovo progetto" dalla schermata iniziale.
+3. Scegli App console: seleziona “App console (.NET Framework)” dall’elenco dei modelli di progetto.
+4.  Assegna un nome al tuo progetto: dai un nome al tuo progetto, ad esempio,`PDFDateTimeStamp`.
+
+### Aggiungi riferimento Aspose.PDF
+
+1. Fare clic con il pulsante destro del mouse su Riferimenti: in Esplora soluzioni, fare clic con il pulsante destro del mouse sulla cartella "Riferimenti" del progetto.
+2. Seleziona “Aggiungi riferimento”: scegli “Aggiungi riferimento” dal menu contestuale.
+3. Browse for Aspose.PDF: Vai alla posizione in cui hai scaricato Aspose.PDF e selezionalo. Fai clic su "OK" per aggiungerlo al tuo progetto.
+
+### Importa gli spazi dei nomi richiesti
+
+ In cima al tuo`Program.cs` file, è necessario importare i seguenti namespace:
+
+```csharp
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System;
+using Aspose.Pdf.Annotations;
+```
+
+Ora che abbiamo impostato tutto, scomponiamo il processo di aggiunta di data e ora a un file PDF in passaggi chiari e gestibili.
+
+## Passaggio 1: impostare la directory dei documenti
+
+Per prima cosa, devi specificare la directory in cui si trova il tuo file PDF. Questo è fondamentale perché il codice cercherà il PDF in questa directory.
 
 ```csharp
 // Percorso verso la directory dei documenti.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Sostituisci con il tuo percorso effettivo
+```
 
-// Apri il documento
+ Assicurati di sostituire`YOUR DOCUMENT DIRECTORY` con il percorso effettivo del file PDF.
+
+## Passaggio 2: aprire il documento PDF
+
+Successivamente, apri il documento PDF in cui desideri aggiungere la marca temporale. 
+
+```csharp
+// Apri documento
 Document pdfDocument = new Document(dataDir + "AddTextStamp.pdf");
 ```
 
-Assicurati di sostituire "DIRECTORY DEI TUOI DOCUMENTI" con il percorso effettivo della directory in cui si trova il tuo documento PDF.
+ Questa riga di codice inizializza il`Document` classe e carica il tuo file PDF nel`pdfDocument` oggetto.
 
-## Fase 4: Creazione del timbro data e ora
+## Passaggio 3: creare il timestamp di data e ora
 
-Ora che hai caricato il documento
-
-  PDF, puoi creare il timbro data e ora da aggiungere. Ecco come fare:
+Ora è il momento di generare la data e l'ora. La formatterai per visualizzarla in un modo specifico. 
 
 ```csharp
-string annotationText = string.Empty;
-annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt");
-
-// Crea un buffer di testo
-TextStamp textStamp = new TextStamp(annotationText);
+string annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt ");
 ```
 
-Il codice sopra crea un nuovo buffer di testo contenente la data e l'ora correnti.
+ Qui,`DateTime.Now` ottiene la data e l'ora correnti e`ToString` formattalo nel formato desiderato.
 
-## Passaggio 5: Configurazione delle proprietà del timbro
+## Passaggio 4: creare un timbro di testo
 
-Prima di aggiungere il timbro al documento PDF, è possibile configurare varie proprietà del timbro, come margine, allineamento orizzontale e verticale, ecc. Ecco come fare:
-
-```csharp
-// Imposta le proprietà del buffer
-textStamp.BottomMargin = 10;
-textStamp. RightMargin = 20;
-textStamp.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
-textStamp.VerticalAlignment = VerticalAlignment.Bottom;
-```
-
-È possibile adattare queste proprietà in base alle proprie esigenze.
-
-## Passaggio 6: Aggiungi timbro al PDF
-
-Ora che la data e l'ora sono pronte, puoi aggiungerle a una pagina specifica del documento PDF. Ecco come:
+Una volta pronta la stringa di data e ora, puoi creare un timbro di testo che verrà aggiunto al tuo PDF.
 
 ```csharp
-// Aggiungi il timbro alla collezione di timbri della pagina
-pdfDocument.Pages[1].AddStamp(textStamp);
-```
-
-Il codice sopra aggiunge il timbro alla prima pagina del documento PDF. Puoi specificare un'altra pagina se necessario.
-
-## Passaggio 7: Salvare il documento di output
-
-Una volta aggiunti la data e l'ora, puoi salvare il documento PDF modificato. Ecco come:
-
-```csharp
-// Salvare il documento di output
-pdfDocument.Save(dataDir);
-```
-
-Il codice soprastante salva il documento PDF modificato nella directory specificata.
-
-### Esempio di codice sorgente per aggiungere data e ora utilizzando Aspose.PDF per .NET 
-```csharp
-
-// Percorso verso la directory dei documenti.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Apri documento
-Document pdfDocument = new Document(dataDir+ "AddTextStamp.pdf");
-string annotationText = string.Empty;
-annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt ");
-
 // Crea timbro di testo
 TextStamp textStamp = new TextStamp(annotationText);
+```
 
+ Questa riga crea una nuova istanza di`TextStamp` utilizzando la stringa di data e ora formattata.
+
+## Passaggio 5: impostare le proprietà del timbro
+
+Puoi personalizzare l'aspetto e la posizione del timbro. Ecco come impostarne le proprietà:
+
+```csharp
 // Imposta le proprietà del timbro
 textStamp.BottomMargin = 10;
 textStamp.RightMargin = 20;
 textStamp.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
 textStamp.VerticalAlignment = VerticalAlignment.Bottom;
+```
 
+In questa fase, impostiamo i margini e allineiamo il timbro all'angolo inferiore destro della pagina PDF.
+
+## Passaggio 6: aggiungere il timbro al PDF
+
+Adesso è il momento di aggiungere il timbro di testo al documento PDF. 
+
+```csharp
 // Aggiungere un francobollo alla collezione di francobolli
 pdfDocument.Pages[1].AddStamp(textStamp);
+```
+
+Questa riga aggiunge il timbro alla prima pagina del PDF. Puoi cambiare il numero di pagina se vuoi posizionarlo su una pagina diversa.
+
+## Passaggio 7: creare un'annotazione di testo libero (facoltativo)
+
+Se vuoi aggiungere un'annotazione al timbro, puoi creare un`FreeTextAnnotation` come segue:
+
+```csharp
 DefaultAppearance default_appearance = new DefaultAppearance("Arial", 6, System.Drawing.Color.Black);
 FreeTextAnnotation textAnnotation = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(0, 0, 0, 0), default_appearance);
 textAnnotation.Name = "Stamp";
 textAnnotation.Accept(new AnnotationSelector(textAnnotation));
 textAnnotation.Contents = textStamp.Value;
+```
 
+Questo passaggio facoltativo crea un'annotazione di testo libero che può fornire contesto o informazioni aggiuntive sul francobollo.
+
+## Passaggio 8: configurare il bordo dell'annotazione
+
+Se vuoi personalizzare il bordo della tua annotazione, puoi farlo anche tu:
+
+```csharp
 Border border = new Border(textAnnotation);
 border.Width = 0;
 border.Dash = new Dash(1, 1);
 textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(0, 0, 0, 0);
 pdfDocument.Pages[1].Annotations.Add(textAnnotation);
-dataDir = dataDir + "AddDateTimeStamp_out.pdf";
-
-// Salva il documento di output
-pdfDocument.Save(dataDir);
-Console.WriteLine("\nDate time stamp added successfully.\nFile saved at " + dataDir);  
-          
 ```
+
+Questo frammento di codice imposta la larghezza del bordo su 0, rendendolo invisibile, e aggiunge l'annotazione al PDF.
+
+## Passaggio 9: Salvare il documento PDF
+
+Infine, è necessario salvare il documento PDF modificato. 
+
+```csharp
+dataDir = dataDir + "AddDateTimeStamp_out.pdf"; // Specificare il nome del file di output
+pdfDocument.Save(dataDir);
+Console.WriteLine("\nDate time stamp added successfully.\nFile saved at " + dataDir);
+```
+
+Questa riga salva il PDF con il timestamp aggiunto in un nuovo file. Puoi controllare la directory specificata per vedere l'output.
 
 ## Conclusione
 
-Congratulazioni! Hai imparato come aggiungere un timbro di data e ora usando Aspose.PDF per .NET. Ora puoi applicare questa conoscenza ai tuoi progetti per aggiungere timbri di data e ora ai documenti PDF.
+Congratulazioni! Hai aggiunto con successo un timbro data e ora a un file PDF usando Aspose.PDF per .NET. Questa semplice ma efficace funzionalità può migliorare i tuoi documenti, rendendoli più professionali e fornendo una chiara registrazione di quando sono stati creati o modificati. 
 
-### Domande frequenti per aggiungere data e ora nel file PDF
+## Domande frequenti
 
-#### D: Qual è lo scopo di aggiungere un timbro di data e ora a un documento PDF utilizzando Aspose.PDF per .NET?
+### Posso personalizzare il formato della data nel timestamp?
+ Sì, puoi modificare il`ToString`metodo per modificare il formato della data in base alle proprie preferenze.
 
-R: Aggiungere un timbro data e ora a un documento PDF ne aumenta il valore informativo indicando quando il documento è stato modificato o creato. Questa funzionalità è utile per tenere traccia delle modifiche al documento e fornire un punto di riferimento per la cronologia del documento.
+### Aspose.PDF è gratuito?
+ Aspose.PDF offre una prova gratuita, ma per le funzionalità complete, è necessario acquistare una licenza. È possibile ottenere una licenza temporanea[Qui](https://purchase.aspose.com/temporary-license/).
 
-#### D: Posso personalizzare il formato della data e dell'ora per soddisfare esigenze specifiche?
+### Posso aggiungere più timestamp a un PDF?
+ Assolutamente! Puoi creare più`TextStamp` istanze e aggiungerle a pagine o posizioni diverse nel PDF.
 
- A: Sì, puoi personalizzare il formato della data e dell'ora in base alle tue preferenze. Il codice sorgente C# fornito utilizza il`DateTime.Now.ToString()` metodo per generare il timestamp in un formato specifico. Puoi modificare questo codice per formattare il timestamp come necessario.
+### Cosa succede se non ho Visual Studio?
+È possibile utilizzare qualsiasi IDE C# o editor di testo, ma per l'esecuzione e il debug del progetto è consigliabile Visual Studio.
 
-#### D: È possibile aggiungere la data e l'ora in una posizione specifica su una pagina PDF?
-
- A: Assolutamente, puoi modificare la posizione della data e dell'ora sulla pagina PDF modificando le proprietà del`TextStamp` oggetto. Il codice fornito nel tutorial dimostra come impostare proprietà quali margine, allineamento e posizionamento verticale.
-
-#### D: Posso aggiungere più timbri di data e ora a pagine diverse dello stesso documento PDF?
-
- R: Sì, puoi aggiungere più timbri data e ora a pagine diverse dello stesso documento PDF. Ripeti semplicemente il processo di creazione di un`TextStamp` oggetto e configurandone le proprietà per ogni pagina desiderata.
-
-#### D: Come posso modificare il carattere, la dimensione o il colore del testo della data e dell'ora?
-
- A: Per modificare il carattere, la dimensione o il colore del testo del timbro data e ora, è possibile personalizzare le proprietà del`DefaultAppearance` oggetto utilizzato per creare il`TextStamp`Regola il nome del font, la dimensione e i valori del colore per ottenere l'aspetto desiderato.
-
-#### D: È possibile aggiungere altri tipi di annotazioni o timbri a un documento PDF utilizzando Aspose.PDF per .NET?
-
-R: Sì, Aspose.PDF per .NET fornisce un'ampia gamma di tipi di annotazione che puoi aggiungere ai documenti PDF, tra cui annotazioni di testo, timbri, linee, forme e altro. Puoi esplorare la documentazione di Aspose.PDF per ulteriori dettagli su come lavorare con le annotazioni.
-
-#### D: Ci sono limitazioni o considerazioni da fare quando si aggiunge un timbro di data e ora a un documento PDF?
-
-R: Sebbene aggiungere un timbro data e ora sia semplice, considera fattori come il layout del documento e il contenuto esistente. Assicurati che il posizionamento del timbro non nasconda informazioni importanti o non influisca sulla leggibilità del documento.
-
-#### D: Come posso integrare questo metodo nei miei progetti per aggiungere data e ora ai documenti PDF?
-
-R: Per integrare questo metodo, segui i passaggi forniti e adatta il codice per adattarlo alla struttura del tuo progetto. Puoi aggiungere data e ora ai documenti PDF esistenti per migliorarne l'utilità e fornire una cronologia chiara delle modifiche.
-
-#### D: Posso automatizzare il processo di aggiunta di data e ora a più documenti PDF?
-
-R: Sì, è possibile automatizzare il processo di aggiunta di data e ora a più documenti PDF creando uno script o un programma che scorre un elenco di documenti e applica lo stesso processo di timbratura a ciascuno di essi.
+### Dove posso trovare altri esempi di utilizzo di Aspose.PDF?
+ Puoi esplorare altri esempi e tutorial in[Documentazione Aspose.PDF](https://reference.aspose.com/pdf/net/).

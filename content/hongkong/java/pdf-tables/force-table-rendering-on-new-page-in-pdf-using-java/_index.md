@@ -71,7 +71,7 @@ Cell cell2 = row.getCells().add("Column 2 Data");
 若要強製表格在新頁面上呈現，您可以使用以下命令控制分頁符號：`IsInNewPage`財產。
 
 ```java
-//強製表格從新頁開始
+//強製表格從新頁面開始
 table.setIsInNewPage(true);
 ```
 

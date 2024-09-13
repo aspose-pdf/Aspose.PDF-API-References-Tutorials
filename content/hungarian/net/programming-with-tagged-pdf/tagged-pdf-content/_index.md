@@ -117,10 +117,10 @@ V: Az oktatóanyag C# forráskód példákat tartalmaz, amelyek bemutatják, hog
 
 V: A mintaforráskód gyakorlati referenciaként szolgál a címkézett tartalomkezelés megvalósításához az Aspose.PDF for .NET használatával. Ezt a kódot használhatja kiindulási pontként, és saját igényei szerint módosíthatja.
 
-#### K: Alkalmazhatok-e hasonló technikákat a PDF-dokumentum más típusú elemeire is, nem csak szöveg- és nyelvi beállításokra?
+#### K: Alkalmazhatok-e hasonló technikákat egy PDF-dokumentum más típusú elemeire is, nem csak szöveg- és nyelvi beállításokra?
 
 V: Igen, az ebben az oktatóanyagban bemutatott technikák adaptálhatók a PDF-dokumentum különféle elemeinek kezelésére. Hasonló elveket használhat szövegek, képek, táblázatok és egyebek manipulálására, miközben címkéket használhat szerepük és attribútumuk meghatározására.
 
 #### K: Hogyan használhatom az Aspose.PDF for .NET fájlt a PDF-dokumentumok továbbfejlesztésére és testreszabására a címkézett tartalom mellett?
 
-V: Az Aspose.PDF for .NET funkciók széles skáláját kínálja a PDF-dokumentumok kezeléséhez, beleértve a szöveg, képek, táblázatok, hivatkozások, megjegyzések, űrlapmezők, vízjelek, digitális aláírások és egyebek hozzáadását. Fedezze fel a hivatalos dokumentációt és forrásokat a könyvtár képességeinek átfogó megértéséhez.
+V: Az Aspose.PDF for .NET funkciók széles skáláját kínálja a PDF-dokumentumok kezeléséhez, beleértve a szövegek, képek, táblázatok, hivatkozások, megjegyzések, űrlapmezők, vízjelek, digitális aláírások és egyebek hozzáadását. Fedezze fel a hivatalos dokumentációt és forrásokat a könyvtár képességeinek átfogó megértéséhez.

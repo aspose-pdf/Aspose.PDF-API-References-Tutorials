@@ -14,7 +14,7 @@ A mai digitális korban a PDF-dokumentumok programozott kezelése és kezelése 
 
 ## Előfeltételek
 
-Mielőtt belemerülnénk a megvalósítás részleteibe, győződjünk meg arról, hogy mindennel rendelkezünk, amire szüksége van:
+Mielőtt belemerülnénk a megvalósítás részleteibe, győződjünk meg arról, hogy mindennel rendelkezik, amire szüksége van:
 
 - Java programozási alapismeretek.
 -  Aspose.PDF a Java könyvtárhoz. Letöltheti innen[itt](https://releases.aspose.com/pdf/java/).

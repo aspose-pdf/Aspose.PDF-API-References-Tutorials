@@ -40,7 +40,7 @@ Než se ponoříte do kódu, ujistěte se, že je vaše vývojové prostředí n
 - Otevřete Visual Studio: Spusťte Visual Studio a vytvořte nový projekt C#. Pokud již máte projekt, kde byste chtěli nakonfigurovat měřenou licenci, otevřete jej.
 - Přidat odkaz na Aspose.PDF: Klikněte pravým tlačítkem na svůj projekt v Průzkumníku řešení, přejděte na "Spravovat balíčky NuGet" a vyhledejte "Aspose.PDF for .NET." Nainstalujte balíček, abyste jej zahrnuli do svého projektu.
 
-## Krok 2: Inicializujte třídu Metered
+## Krok 2: Inicializujte měřenou třídu
 
  Nyní, když je vaše prostředí připraveno, je čas inicializovat`Metered` třídy poskytuje Aspose.PDF.
 

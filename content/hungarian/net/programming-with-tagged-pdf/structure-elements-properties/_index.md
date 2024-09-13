@@ -55,7 +55,7 @@ StructureElement rootElement = taggedContent.RootElement;
 SectElement sect = taggedContent.CreateSectElement();
 rootElement.AppendChild(sect);
 
-// Hozzon létre egy fejléc elemet
+// Hozzon létre egy fejlécet
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 sect.AppendChild(h1);
 h1.SetText("Header");
@@ -125,7 +125,7 @@ V: Az Aspose.PDF for .NET API-kat biztosít különböző tulajdonságokkal rend
 
 ####  K: Mi a szerepe a`SetTitle` and `SetLanguage` methods in working with structural element properties?
 
- V: A`SetTitle` és`SetLanguage` módszerei a`ITaggedContent`Az objektum lehetővé teszi a dokumentum címének és nyelvének beállítását, amelyek befolyásolják a szerkezeti elemek tulajdonságait. A cím és a nyelv beállítása biztosítja a dokumentum egységességét és értelmes metaadatait.
+ V: A`SetTitle` és`SetLanguage` módszerei a`ITaggedContent` Az objektum lehetővé teszi a dokumentum címének és nyelvének beállítását, amelyek befolyásolják a szerkezeti elemek tulajdonságait. A cím és a nyelv beállítása biztosítja a dokumentum egységességét és értelmes metaadatait.
 
 #### K: Hogyan hozhatok létre és kezelhetek szerkezeti elemeket egy PDF-dokumentumban az Aspose.PDF for .NET használatával?
 

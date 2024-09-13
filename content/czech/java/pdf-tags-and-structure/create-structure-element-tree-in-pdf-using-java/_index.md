@@ -82,7 +82,7 @@ Dodržováním těchto kroků a začleněním prvků struktury do dokumentů PDF
 
 Strom prvků struktury představuje logickou strukturu obsahu v dokumentu PDF a umožňuje přístupnost a efektivní komunikaci obsahu uživatelům, zejména těm se zrakovým postižením.
 
-### Jak mohu přidat obrázky do tagovaného dokumentu PDF?
+### Jak mohu přidat obrázky do označeného dokumentu PDF?
 
  Můžete použít`com.aspose.pdf.Image` třídy pro přidání obrázků do tagovaného dokumentu PDF. Zajistěte, abyste k obrázkům přiřadili vhodné prvky struktury pro usnadnění.
 

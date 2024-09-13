@@ -154,7 +154,7 @@ Console.WriteLine("\nTable render successfully on a page.\nFile saved at " + dat
 
 #### Q：如何修改表格的外觀，例如更改儲存格顏色或新增邊框？
 
-A：要修改表格的外觀，可以設定表格的各種屬性`Aspose.Pdf.Table`及其細胞。例如，您可以設定`BackgroundColor`單元格的屬性來變更其背景顏色。您也可以設定`Border`表格或單一儲存格的屬性來新增邊框。此外，您還可以透過修改表格內容來自訂字體、文字顏色和對齊方式。`TextState`的`TextFragment`新增到單元格的物件。
+ A：要修改表格的外觀，可以設定表格的各種屬性`Aspose.Pdf.Table`及其細胞。例如，您可以設定`BackgroundColor`單元格的屬性來變更其背景顏色。您也可以設定`Border`表格或單一儲存格的屬性來新增邊框。此外，您還可以透過修改表格內容來自訂字體、文字顏色和對齊方式。`TextState`的`TextFragment`新增到單元格的物件。
 
 #### Q：我可以在表格中新增頁首或頁尾嗎？
 
@@ -162,7 +162,7 @@ A：要修改表格的外觀，可以設定表格的各種屬性`Aspose.Pdf.Tabl
 
 #### Q：如何控製表格在頁面上的位置？
 
- A：要控製表格在頁面上的位置，您可以調整`MarginInfo`的`PageInfo`目的。這`MarginInfo`允許您設定頁面的左、右、上、下邊距，這會影響表格的可用空間。您也可以使用`PositioningType`的財產`Aspose.Pdf.Table`控制其在頁面內容區域內的水平和垂直對齊。
+A：要控製表格在頁面上的位置，您可以調整`MarginInfo`的`PageInfo`目的。這`MarginInfo`允許您設定頁面的左、右、上、下邊距，這會影響表格的可用空間。您也可以使用`PositioningType`的財產`Aspose.Pdf.Table`控制其在頁面內容區域內的水平和垂直對齊。
 
 #### Q：我可以將表格匯出為不同的文件格式，例如 Excel 或 CSV 嗎？
 

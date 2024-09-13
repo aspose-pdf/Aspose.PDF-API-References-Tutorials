@@ -16,7 +16,7 @@ PDF-dokumentumokat széles körben használják információk megosztására és
 
 Mielőtt belemerülnénk a kódolásba, be kell állítania az Aspose.PDF-et Java számára. Kövesse az alábbi lépéseket:
 
-1.  Az Aspose.PDF for Java letöltése: A könyvtár elérése innen[itt](https://releases.aspose.com/pdf/java/) és töltse le a projektjének megfelelő verziót.
+1.  Az Aspose.PDF letöltése Java-hoz: A könyvtár elérése innen[itt](https://releases.aspose.com/pdf/java/) és töltse le a projektjének megfelelő verziót.
 
 2. Java-projekt létrehozása: Ha még nincs Java-projektje, állítson be egy újat a kívánt IDE használatával.
 
@@ -70,7 +70,7 @@ public class AddPageNumberStamp {
 
 Ebben a kódban betöltünk egy PDF-dokumentumot, létrehozunk egy oldalszámbélyeget, testre szabjuk annak megjelenését és formátumát, majd a dokumentum összes oldalára alkalmazzuk.
 
-## Az oldalszám bélyegző alkalmazása
+## Az oldalszámbélyegző alkalmazása
 
 Az oldalszámbélyegző felhelyezéséhez kövesse az alábbi lépéseket:
 

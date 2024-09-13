@@ -8,7 +8,7 @@ weight: 14
 url: /pl/java/pdf-document-operations/adding-text-in-header-or-footer-of-pdf-file-using-java/
 ---
 
-## Wprowadzenie do dodawania tekstu w nagłówku lub stopce pliku PDF za pomocą języka Java
+## Wprowadzenie do dodawania tekstu w nagłówku lub stopce pliku PDF za pomocą Java
 
 W tym kompleksowym przewodniku przyjrzymy się sposobowi dodawania tekstu do nagłówka lub stopki pliku PDF za pomocą języka Java. Aspose.PDF dla języka Java zapewnia solidne API do pracy z dokumentami PDF, ułatwiając dostosowywanie nagłówków i stopek do konkretnych wymagań.
 

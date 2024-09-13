@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Etapa 5: Adicionar uma página ao documento
- Adicione uma nova página ao documento usando o`Add` método do`Pages`coleção. No código fornecido, a nova página é atribuída à variável`page`.
+ Adicione uma nova página ao documento usando o`Add` método do`Pages` coleção. No código fornecido, a nova página é atribuída à variável`page`.
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
@@ -109,7 +109,7 @@ Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 4
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
 // Adicionar retângulo à coleção de formas do objeto Graph
 canvas.Shapes.Add(rect);
-//Adicionar objeto gráfico à coleção de parágrafos do objeto de página
+// Adicionar objeto gráfico à coleção de parágrafos do objeto de página
 page.Paragraphs.Add(canvas);
 // Defina o valor para não alterar a posição do objeto gráfico
 canvas.IsChangePosition = false;
@@ -163,7 +163,7 @@ using Aspose.Pdf.Drawing;
 
 #### P: Como crio um retângulo com transparência?
 
-R: Na Etapa 7, você criará um retângulo com dimensões específicas e definirá sua cor de preenchimento como uma cor transparente usando o`Color.FromRgb` método.
+ R: Na Etapa 7, você criará um retângulo com dimensões específicas e definirá sua cor de preenchimento como uma cor transparente usando o`Color.FromRgb` método.
 
 #### P: Como adiciono o objeto Graph à página?
 
@@ -175,7 +175,7 @@ R: Na Etapa 7, você criará um retângulo com dimensões específicas e definir
 
 #### P: Como crio um TextFragment com transparência?
 
- A: Na Etapa 10, você criará um`TextFragment` objeto e definir seu conteúdo e`ForegroundColor` propriedade para obter texto transparente.
+A: Na Etapa 10, você criará um`TextFragment` objeto e definir seu conteúdo e`ForegroundColor` propriedade para obter texto transparente.
 
 #### P: Como faço para salvar o documento PDF?
 

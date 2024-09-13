@@ -95,11 +95,11 @@ saveOptions.CompressOutputToZipArchive = false;
 doc.Save(dataDir + "PDFToSVG_out.svg", saveOptions);
 ```
 
-在這一行中，我們將輸出檔案名稱指定為`"PDFToSVG_out.svg"`。您可以將其更改為您喜歡的任何內容。
+在這一行中，我們將輸出檔名指定為`"PDFToSVG_out.svg"`。您可以將其更改為您喜歡的任何內容。
 
 ## 結論
 
-現在你就擁有了！您已使用 Aspose.PDF for .NET 成功將 PDF 檔案轉換為 SVG 格式。這個過程不僅簡單，而且非常高效，讓您輕鬆處理文件轉換。無論您正在處理需要高品質圖形的專案還是僅需要轉換檔案供個人使用，Aspose.PDF 都是一款功能強大的工具，可以幫助您實現目標。
+現在你就得到它了！您已使用 Aspose.PDF for .NET 成功將 PDF 檔案轉換為 SVG 格式。這個過程不僅簡單，而且非常高效，讓您輕鬆處理文件轉換。無論您正在處理需要高品質圖形的專案還是僅需要轉換檔案供個人使用，Aspose.PDF 都是一款功能強大的工具，可以幫助您實現目標。
 
 ## 常見問題解答
 

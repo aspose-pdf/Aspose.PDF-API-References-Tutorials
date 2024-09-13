@@ -2,177 +2,158 @@
 title: Obraz i numer strony w sekcji nagłówka i stopki
 linktitle: Obraz i numer strony w sekcji nagłówka i stopki
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak dodać obraz i numer strony do nagłówka i stopki dokumentu PDF za pomocą Aspose.
+description: tym samouczku krok po kroku dowiesz się, jak dodać obraz i numery stron do nagłówka i stopki pliku PDF za pomocą Aspose.PDF dla platformy .NET.
 type: docs
 weight: 110
 url: /pl/net/programming-with-stamps-and-watermarks/image-and-page-number-in-header-footer-section/
 ---
-tym samouczku pokażemy Ci krok po kroku, jak dodać obraz i numer strony w sekcji nagłówka i stopki dokumentu PDF przy użyciu Aspose.PDF dla .NET. Pokażemy Ci, jak użyć dostarczonego kodu źródłowego C#, aby utworzyć stronę, ustawić nagłówek i stopkę, dodać obraz do nagłówka i tekst z numerem strony do stopki dokumentu PDF.
+## Wstęp
 
-## Krok 1: Konfigurowanie środowiska
+Jeśli chodzi o tworzenie profesjonalnych dokumentów PDF, kontrola nad drobnymi szczegółami, takimi jak nagłówki i stopki, jest niezbędna. Chcesz, aby Twoje dokumenty wyglądały na dopracowane i dobrze zorganizowane, prawda? Cóż, dzięki Aspose.PDF dla .NET możesz bezproblemowo dodawać obrazy i numery stron do sekcji nagłówka i stopki dokumentu. W tym samouczku przeprowadzimy Cię przez każdy krok, ułatwiając Ci śledzenie.
 
-Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
+## Wymagania wstępne
 
-- Zainstalowane środowisko programistyczne .NET.
-- Biblioteka Aspose.PDF dla platformy .NET pobrana i wykorzystana w projekcie.
+Zanim przejdziesz do szczegółów tego samouczka, upewnij się, że masz następujące kwestie:
 
-## Krok 2: Tworzenie dokumentu PDF i strony
+1. .NET Framework: Musisz mieć zainstalowaną na swoim komputerze dowolną wersję .NET Framework. Jeśli jej nie masz, możesz ją łatwo pobrać ze strony internetowej Microsoft.
+2.  Aspose.PDF dla .NET: Ponieważ będziemy używać Aspose.PDF, upewnij się, że masz go zainstalowanego w swoim projekcie. Możesz pobrać wersję próbną[Tutaj](https://releases.aspose.com/pdf/net/).
+3. Podstawowa znajomość języka C#: Znajomość podstaw programowania w języku C# z pewnością pomoże Ci zrozumieć kod bez większych problemów.
+4. Plik obrazu: Będziesz potrzebować obrazu, który chcesz umieścić w nagłówku dokumentu PDF, takiego jak logo. Zapisz go w dostępnym katalogu. 
+5. IDE: Użyj wybranego zintegrowanego środowiska programistycznego (IDE), np. Visual Studio, do pracy nad projektem .NET.
 
-Pierwszym krokiem jest utworzenie nowego obiektu Document i strony w dokumencie PDF. Oto jak to zrobić:
+Gdy już będziesz mieć wszystko, co potrzebne, będziesz gotowy do stworzenia fantastycznego pliku PDF!
+
+## Importuj pakiety
+
+Aby zacząć używać Aspose.PDF dla .NET, musisz zaimportować niezbędne przestrzenie nazw. Na górze pliku C# należy dodać:
 
 ```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// Utwórz nowy obiekt Dokument
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-
-// Utwórz stronę w dokumencie
-Aspose.Pdf.Page page = doc.Pages.Add();
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using Aspose.Pdf.Image;
 ```
 
-Powyższy kod tworzy nowy obiekt Document i pustą stronę w dokumencie PDF.
+Te przestrzenie nazw zapewnią Ci dostęp do klas potrzebnych do manipulowania plikami PDF.
 
-## Krok 3: Dodawanie nagłówka z obrazem
+A teraz przejdźmy do konkretów! Wykonaj poniższe kroki, aby utworzyć dokument PDF, dodając obraz w nagłówku i numery stron w stopce.
 
-Teraz, gdy strona jest już utworzona, możemy dodać sekcję nagłówka z obrazem. Oto jak to zrobić:
+## Krok 1: Ustaw katalog dokumentów
 
-```csharp
-// Utwórz sekcję nagłówka
-Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
-
-// Ustaw nagłówek strony
-page. Header = header;
-
-// Utwórz obiekt obrazu
-Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
-
-// Ustaw ścieżkę obrazu
-image1.File = dataDir + "aspose-logo.jpg";
-
-// Dodaj obraz do nagłówka strony dokumentu PDF
-header.Paragraphs.Add(image1);
-```
-
-Powyższy kod tworzy sekcję nagłówka, ustawia nagłówek strony za pomocą tej sekcji i dodaje obraz do nagłówka.
-
-## Krok 4: Dodawanie stopki z numerem strony
-
-Teraz, gdy nagłówek jest już dodany, możemy dodać sekcję stopki z numerem strony. Oto jak to zrobić:
+Każdy dobry projekt zaczyna się od organizacji. Zdefiniuj katalog dokumentów, w którym będziesz zapisywać pliki i gdzie znajduje się obraz. Oto jak to zrobić:
 
 ```csharp
-// Utwórz sekcję stopki
-Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
-
-// Zdefiniuj stopkę dokumentu PDF
-page. Footer = footer;
-
-// Utwórz obiekt TextFragment
-Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P)");
-
-// Dodaj tekst z numerem strony do stopki dokumentu PDF
-footer.Paragraphs.Add(txt);
-```
-
-Powyższy kod tworzy sekcję stopki, ustawia stopkę strony za pomocą tej sekcji i dodaje fragment tekstu zawierający tekst „Strona: ($p z $P )”
-
-  który wyświetla numer strony.
-
-## Krok 5: Zapisywanie zmodyfikowanego dokumentu PDF
-
-Po dodaniu nagłówka i stopki możemy zapisać zmodyfikowany dokument PDF. Oto jak to zrobić:
-
-```csharp
-// Zapisz zmodyfikowany dokument PDF
-doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
-```
-
-Powyższy kod zapisuje edytowany dokument PDF w określonym katalogu.
-
-### Przykładowy kod źródłowy dla Obrazu i Numeru strony w sekcji Nagłówek/Stopka przy użyciu Aspose.PDF dla .NET 
-```csharp
-
-// Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-
-// Utwórz stronę w obiekcie dokumentu
-Aspose.Pdf.Page page = doc.Pages.Add();
-
-// Utwórz sekcję nagłówka dokumentu
-Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
-
-// Ustaw nagłówek dla pliku PDF
-page.Header = header;
-
-// Utwórz obiekt obrazu na stronie
-Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
-
-// Ustaw ścieżkę do pliku obrazu
-image1.File = dataDir + "aspose-logo.jpg";
-
-// Dodaj obraz do strony nagłówka pliku PDF
-header.Paragraphs.Add(image1);
-
-//Utwórz sekcję stopki dokumentu
-Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
-
-// Ustaw stopkę pliku PDF
-page.Footer = footer;
-
-// Utwórz obiekt tekstowy
-Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P ) ");
-
-// Dodaj tekst do sekcji Nagłówek pliku PDF
-footer.Paragraphs.Add(txt);
-
-// Zapisz plik PDF
-doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
-
 ```
+
+ Pamiętaj o wymianie`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką, pod którą chcesz zapisać plik PDF i gdzie znajduje się Twój obraz.
+
+## Krok 2: Utwórz nowy dokument PDF
+
+Następnie utworzymy nowy dokument PDF, w którym będzie się działy wszystkie cuda:
+
+```csharp
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
+```
+
+W tym momencie utworzyłeś pusty dokument PDF. Ekscytujące, prawda?
+
+## Krok 3: Dodaj stronę do dokumentu
+
+PDF to przede wszystkim strony. Dodajmy nową stronę do naszego dokumentu, używając:
+
+```csharp
+Aspose.Pdf.Page page = doc.Pages.Add();
+```
+
+Teraz masz płótno, na którym możesz zacząć projektować!
+
+## Krok 4: Utwórz sekcję nagłówka
+
+Twój nagłówek będzie zawierał obraz (jak logo), który chcesz wyświetlić. Utwórz sekcję nagłówka za pomocą następującego kodu:
+
+```csharp
+Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
+page.Header = header;
+```
+
+Teraz masz nagłówek, który możesz dostosować!
+
+## Krok 5: Dodaj obraz do nagłówka
+
+Teraz przechodzimy do zabawy! Musisz dodać obraz do swojego nagłówka. Najpierw utwórz obiekt obrazu:
+
+```csharp
+Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
+```
+
+Ustaw ścieżkę pliku swojego obrazu:
+
+```csharp
+image1.File = dataDir + "aspose-logo.jpg";
+```
+
+Na koniec dodaj obrazek do nagłówka:
+
+```csharp
+header.Paragraphs.Add(image1);
+```
+
+Gratulacje! Właśnie dodałeś obraz do nagłówka PDF.
+
+## Krok 6: Utwórz sekcję stopki
+
+Teraz popracujmy nad stopką. Podobnie jak w przypadku nagłówka, utwórz obiekt stopki:
+
+```csharp
+Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
+page.Footer = footer;
+```
+
+Tutaj należy umieścić numer strony. 
+
+## Krok 7: Dodaj tekst do stopki
+
+Utwórz fragment tekstu, który będzie zawierał numer strony:
+
+```csharp
+Aspose.Pdf.Text.TextFragment txt = new Aspose.Pdf.Text.TextFragment("Page: ($p of $P ) ");
+```
+
+Następnie dodaj ten fragment tekstu do stopki:
+
+```csharp
+footer.Paragraphs.Add(txt);
+```
+
+Widzisz, jakie to było proste? Ustawiłeś numer swojej strony dynamicznie!
+
+## Krok 8: Zapisz dokument PDF
+
+Ostatnim krokiem w naszej przygodzie jest zapisanie dokumentu. Użyj tego polecenia, aby zapisać nowo utworzony plik PDF:
+
+```csharp
+doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
+```
+
+I tak oto Twój plik PDF jest gotowy, zawiera obraz nagłówka i numery stron w stopce!
 
 ## Wniosek
 
-Gratulacje! Nauczyłeś się, jak dodać obraz i numer strony w sekcji nagłówka i stopki dokumentu PDF za pomocą Aspose.PDF dla .NET. Teraz możesz użyć tej metody, aby dostosować nagłówek i stopkę w swoich dokumentach PDF.
+masz! Właśnie utworzyłeś plik PDF z obrazem w nagłówku i dynamicznymi numerami stron w stopce, używając Aspose.PDF dla .NET. To niesamowite, jak kilka linijek kodu może dać tak dopracowany wynik. Niezależnie od tego, czy chodzi o raport korporacyjny, czy spersonalizowany dokument, dodanie tych elementów zmienia ton i profesjonalizm Twojego pliku PDF.
 
-### Najczęściej zadawane pytania
+## Najczęściej zadawane pytania
 
-#### P: Jaki jest cel dodawania obrazu i numeru strony w nagłówku i stopce dokumentu PDF?
+### Czy mogę używać Aspose.PDF na dowolnej platformie .NET?
+Tak, Aspose.PDF dla .NET obsługuje wiele platform .NET, w tym .NET Framework, .NET Core i inne.
 
-A: Dodanie obrazu i numeru strony w sekcji nagłówka i stopki dokumentu PDF może poprawić jego atrakcyjność wizualną, markę i elementy nawigacyjne. Obraz może reprezentować logo, znak wodny lub dowolny element graficzny, podczas gdy numer strony pomaga użytkownikom śledzić postępy i lokalizować określone strony.
+### Czy jest dostępna bezpłatna wersja próbna Aspose.PDF?
+ Oczywiście! Możesz pobrać bezpłatną wersję próbną[Tutaj](https://releases.aspose.com/).
 
-#### P: W jaki sposób udostępniony kod źródłowy C# pomaga w dodawaniu obrazu i numeru strony do nagłówka i stopki dokumentu PDF?
+### Jakie formaty obrazów są obsługiwane w nagłówkach?
+Aspose.PDF obsługuje najpopularniejsze formaty obrazów, takie jak JPG, PNG i BMP w przypadku nagłówków i stopek.
 
-A: Dostarczony kod pokazuje, jak utworzyć dokument PDF, dodać stronę, a następnie dostosować sekcje nagłówka i stopki. Pokazuje, jak dodać obraz do nagłówka i fragment tekstu z numeracją stron do stopki.
+### Czy mogę dostosować format numerowania stron?
+Tak, możesz łatwo dostosować tekst i format stopki według swoich potrzeb.
 
-#### P: Czy mogę użyć dowolnego formatu obrazu w nagłówku i jak określić jego ścieżkę?
-
- A: Tak, możesz użyć różnych formatów obrazu (takich jak JPEG, PNG, GIF itp.) dla obrazu nagłówkowego. Ścieżka obrazu jest określona za pomocą`File` własność`Aspose.Pdf.Image` obiekt.
-
-#### P: Jak mogę dostosować wygląd i położenie obrazu w sekcji nagłówka?
-
- A: Możesz dostosować wygląd i położenie obrazu, dostosowując właściwości`Aspose.Pdf.Image` obiekt przed dodaniem go do sekcji nagłówka. Na przykład możesz ustawić wymiary obrazu, wyrównanie, obrót, krycie itp.
-
-####  P: Jaki jest cel`TextFragment` object used for the footer?
-
- A: Ten`TextFragment` obiekt jest używany do tworzenia i formatowania tekstu, który będzie wyświetlany w sekcji stopki. W podanym kodzie jest używany do wyświetlania numeru strony i całkowitej liczby stron.
-
-#### P: Czy mogę zmodyfikować tekst stopki, aby uwzględnić dodatkowe informacje lub zastosować formatowanie?
-
- A: Tak, możesz modyfikować tekst stopki, modyfikując zawartość`TextFragment` obiekt. Możesz dodać dodatkowy tekst, zmienić czcionki, kolory i formatowanie zgodnie ze swoimi wymaganiami.
-
-#### P: Czy mogę zastosować różną zawartość nagłówka i stopki na różnych stronach dokumentu PDF?
-
- O: Tak, możesz zastosować różną zawartość nagłówka i stopki do różnych stron, tworząc oddzielne`HeaderFooter` obiektów i przypisywanie ich do określonych stron za pomocą`Header` I`Footer` właściwości`Aspose.Pdf.Page` obiekt.
-
-#### P: W jaki sposób mogę dodatkowo dostosować nagłówek i stopkę, np. zmieniając styl czcionki lub dodając dodatkowe elementy?
-
-A: Możesz dostosować nagłówek i stopkę, używając różnych klas i właściwości dostarczonych przez Aspose.PDF dla .NET. Na przykład możesz użyć różnych opcji formatowania tekstu, dodać więcej akapitów, obrazów, a nawet tabel do sekcji nagłówka i stopki.
-
-#### P: Czy mogę usunąć lub wyczyścić sekcje nagłówka i stopki, jeśli zajdzie taka potrzeba?
-
-A: Tak, możesz usunąć lub wyczyścić sekcje nagłówka i stopki, ustawiając`Header` I`Footer` właściwości`Aspose.Pdf.Page` oponować`null`.
-
-#### P: Jak mogę mieć pewność, że dodany obraz i numer strony pozostaną spójne na różnych urządzeniach i przeglądarkach?
-
-A: Aspose.PDF dla platformy .NET oferuje funkcjonalność umożliwiającą tworzenie standardowych i spójnych dokumentów PDF, gwarantując, że dodany obraz i numer strony będą wyświetlane spójnie na różnych urządzeniach i w różnych przeglądarkach PDF.
+### Czy jest dostępne wsparcie techniczne?
+ Tak, Aspose zapewnia dedykowane wsparcie poprzez swoje forum. Możesz zwrócić się o pomoc[Tutaj](https://forum.aspose.com/c/pdf/10).

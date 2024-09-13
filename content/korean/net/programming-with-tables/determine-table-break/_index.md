@@ -117,7 +117,7 @@ table1.DefaultCellPadding = margin;
 // 이 페이지에서 더 이상 수용할 수 없기 때문에
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
-	// 표에 행을 만든 다음 행에 셀을 만듭니다.
+	//표에 행을 만든 다음 행에 셀을 만듭니다.
 	Aspose.Pdf.Row row1 = table1.Rows.Add();
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");

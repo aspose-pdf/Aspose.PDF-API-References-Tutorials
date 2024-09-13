@@ -2,133 +2,159 @@
 title: Ustaw rozmiar obrazu w pliku PDF
 linktitle: Ustaw rozmiar obrazu w pliku PDF
 second_title: Aspose.PDF dla .NET API Reference
-description: Instrukcja krok po kroku, jak ustawić rozmiar obrazu w pliku PDF za pomocą Aspose.PDF dla platformy .NET.
+description: Dowiedz się, jak ustawić rozmiar obrazu w pliku PDF za pomocą Aspose.PDF dla .NET. Ten przewodnik krok po kroku pomoże Ci zmienić rozmiar obrazów, dostosować właściwości strony i zapisać pliki PDF.
 type: docs
 weight: 270
 url: /pl/net/programming-with-images/set-image-size/
 ---
-W tym samouczku pokażemy Ci, jak ustawić rozmiar obrazu w pliku PDF za pomocą Aspose.PDF dla .NET. Wykonaj poniższe kroki, aby łatwo wykonać tę operację.
+## Wstęp
+
+Praca z plikami PDF jest powszechnym wymogiem dla wielu aplikacji, a możliwość manipulowania elementami w pliku PDF może być kluczowa. Niezależnie od tego, czy tworzysz generator raportów, czy dodajesz dynamiczną zawartość do pliku PDF, kontrolowanie rozmiaru obrazów w dokumencie jest niezbędną funkcją. W tym samouczku przeprowadzimy Cię przez proces ustawiania rozmiaru obrazu w pliku PDF przy użyciu Aspose.PDF dla .NET. Ta potężna biblioteka oferuje rozległą kontrolę nad zawartością PDF i rozłożymy ją na czynniki pierwsze krok po kroku, aby pokazać, jak to może być łatwe. Pod koniec będziesz pewnie zmieniać rozmiary obrazów i zrozumiesz, w jaki sposób ta funkcjonalność może usprawnić Twoje przepływy pracy PDF.
+
 
 ## Wymagania wstępne
 
-Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
+Zanim zagłębimy się w kod, jest kilka rzeczy, które musisz wiedzieć, aby móc korzystać z tego samouczka.
 
-- Zainstalowany i skonfigurowany program Visual Studio lub inne środowisko programistyczne.
-- Podstawowa znajomość języka programowania C#.
-- Biblioteka Aspose.PDF dla .NET zainstalowana. Możesz ją pobrać z oficjalnej strony Aspose.
+1.  Aspose.PDF dla .NET: Upewnij się, że masz zainstalowaną najnowszą wersję biblioteki Aspose.PDF. Możesz[pobierz tutaj](https://releases.aspose.com/pdf/net/).
+2. .NET Framework lub .NET Core: Upewnij się, że posiadasz środowisko robocze z zainstalowanym .NET Framework lub .NET Core.
+3. Podstawowa znajomość języka C#: W naszym programie będziemy używać języka C#, dlatego jego znajomość jest niezbędna.
+4. Przykładowy obraz: Będziesz potrzebować przykładowego obrazu do osadzenia w pliku PDF. Możesz użyć dowolnego obrazu, ale upewnij się, że jest on dostępny w katalogu projektu.
 
-## Krok 1: Tworzenie dokumentu PDF
+## Importuj pakiety
 
-Aby rozpocząć, użyj następującego kodu w celu utworzenia nowego dokumentu PDF:
+Aby użyć Aspose.PDF dla .NET, musisz najpierw zaimportować niezbędne przestrzenie nazw. Oto prosta konfiguracja:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Teraz, gdy omówiliśmy już podstawy, możemy przejść do tworzenia i modyfikowania dokumentu PDF.
+
+## Krok 1: Zainicjuj swój dokument PDF
+
+ Pierwszą rzeczą, którą musimy zrobić, jest utworzenie nowego dokumentu PDF. Użyjemy`Document` Aby to osiągnąć, należy użyć klasy z Aspose.PDF.
+
+```csharp
+// Ścieżka do katalogu dokumentów.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Utwórz obiekt dokumentu
 Document doc = new Document();
+```
+ 
+ Tutaj tworzymy instancję`Document` obiekt, który będzie reprezentował nasz plik PDF. Określamy również katalog, w którym znajdują się nasze pliki, używając`dataDir` zmienna. To jest punkt wyjścia do tworzenia dowolnego pliku PDF za pomocą Aspose.PDF.
 
+## Krok 2: Dodaj nową stronę do pliku PDF
+
+Gdy już mamy gotowy dokument, musimy dodać do niego stronę. Każdy plik PDF musi mieć co najmniej jedną stronę, więc dodajmy jedną.
+
+```csharp
 // Dodaj stronę do zbioru stron pliku PDF
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
+ 
+ Dodajemy nową stronę do dokumentu za pomocą`Pages.Add()` metoda. Ta strona będzie działać jak płótno, na którym umieścimy nasz obraz. Każda strona w pliku PDF jest zasadniczo pustą tablicą, na której można dodawać tekst, obrazy lub inną treść.
 
-## Krok 2: Dodano zdjęcie
+## Krok 3: Utwórz instancję obrazu
 
-Następnie dodamy obraz do strony dokumentu PDF. Użyj następującego kodu:
+ Teraz czas przygotować obraz, który chcemy wstawić do pliku PDF. Aspose.PDF zapewnia`Image` Klasa do obsługi obrazów.
 
 ```csharp
 // Utwórz instancję obrazu
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
+```
+ 
+ Tworzymy nową instancję`Image` Klasa. Ten obiekt będzie zawierał właściwości obrazu, który chcemy dodać do pliku PDF. W kolejnych krokach skonfigurujemy rozmiar i typ obrazu.
 
+## Krok 4: Ustaw rozmiar obrazu (szerokość i wysokość)
+
+Tutaj dochodzimy do sedna naszego samouczka: ustawianie rozmiaru obrazu. Aspose.PDF pozwala określić szerokość i wysokość obrazu w punktach.
+
+```csharp
 // Ustaw szerokość i wysokość obrazu w punktach
-img. FixWidth = 100;
-img. FixHeight = 100;
+img.FixWidth = 100;
+img.FixHeight = 100;
+```
+ 
+ Ten`FixWidth` I`FixHeight`właściwości pozwalają ustawić dokładne wymiary obrazu w punktach. W tym przykładzie zmieniamy rozmiar obrazu na 100x100 punktów. Możesz dostosować te wartości do swoich potrzeb.
 
-//Ustaw typ obrazu na nieznany (Nieznany)
+## Krok 5: Określ typ obrazu
+
+W zależności od formatu obrazu, z którym pracujesz, może być konieczne ustawienie typu obrazu. Aspose.PDF obsługuje różne formaty obrazu, a tutaj definiujemy typ pliku.
+
+```csharp
+// Ustaw typ obrazu jako SVG
 img.FileType = Aspose.Pdf.ImageFileType.Unknown;
+```
+ 
+ W tym przypadku pozostawiamy typ pliku jako`Unknown` , co pozwala bibliotece na automatyczne wykrywanie typu obrazu. Jeśli znasz konkretny typ pliku, możesz go ustawić (np.`ImageFileType.Jpeg` dla obrazów JPEG). Ten krok zapewnia, że Aspose wie, jak prawidłowo obsługiwać obraz.
 
-// Ścieżka do pliku źródłowego obrazu
+## Krok 6: Ustaw ścieżkę do pliku obrazu
+
+Teraz musimy powiedzieć Aspose, gdzie znaleźć plik obrazu. Upewnij się, że obraz jest dostępny w określonym katalogu.
+
+```csharp
+// Ścieżka do pliku źródłowego
 img.File = dataDir + "aspose-logo.jpg";
+```
+ 
+ Tutaj ustawiamy ścieżkę pliku do obrazu. Obraz w tym przypadku znajduje się w`dataDir` folder i jest nazwany`aspose-logo.jpg`Upewnij się, że zastąpiłeś to rzeczywistą nazwą i lokalizacją pliku obrazu.
 
-// Dodaj obraz do kolekcji akapitów strony
+## Krok 7: Dodaj obraz do strony
+
+Po skonfigurowaniu obrazu i ustawieniu ścieżki do pliku możemy dodać obraz do naszej strony.
+
+```csharp
+// Dodaj obraz do kolekcji akapitów
 page.Paragraphs.Add(img);
 ```
+ 
+ Ten`Paragraphs.Add()` Metoda ta pozwala nam dodać obraz do strony. Pomyśl o`Paragraphs` kolekcja jako lista elementów, które zostaną wyrenderowane na stronie PDF. Do tej kolekcji możemy dodać wiele elementów, takich jak obrazy, tekst i kształty.
 
-Pamiętaj o podaniu prawidłowej ścieżki do pliku źródłowego obrazu.
+## Krok 8: Dostosuj właściwości strony
 
-## Krok 3: Ustawianie właściwości strony
-
-Na koniec ustawimy właściwości strony, w tym jej szerokość i wysokość. Użyj następującego kodu:
+Aby upewnić się, że nasz obraz dobrze pasuje, dostosujemy rozmiar strony. Dzięki temu wymiary strony będą pasować do dodawanej treści.
 
 ```csharp
 // Ustaw właściwości strony
 page.PageInfo.Width = 800;
 page.PageInfo.Height = 800;
 ```
+ 
+Tutaj ustawiamy szerokość i wysokość strony na 800 punktów. Ten krok jest opcjonalny, ale zapewnia, że strona pomieści zmieniony rozmiar obrazu. Możesz dostosować te wartości w oparciu o swoje konkretne wymagania.
 
-### Przykładowy kod źródłowy dla Ustaw rozmiar obrazu za pomocą Aspose.PDF dla .NET 
+## Krok 9: Zapisz plik PDF
+
+Na koniec, po skonfigurowaniu właściwości obrazu i strony, możemy zapisać plik PDF.
+
 ```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Utwórz obiekt dokumentu
-Document doc = new Document();
-// dodaj stronę do zbioru stron pliku PDF
-Aspose.Pdf.Page page = doc.Pages.Add();
-// Utwórz instancję obrazu
-Aspose.Pdf.Image img = new Aspose.Pdf.Image();
-// Ustaw szerokość i wysokość obrazu w punktach
-img.FixWidth = 100;
-img.FixHeight = 100;
-// Ustaw typ obrazu jako SVG
-img.FileType = Aspose.Pdf.ImageFileType.Unknown;
-// Ścieżka do pliku źródłowego
-img.File = dataDir + "aspose-logo.jpg";
-page.Paragraphs.Add(img);
-//Ustaw właściwości strony
-page.PageInfo.Width = 800;
-page.PageInfo.Height = 800;
+//Zapisz wynikowy plik PDF
 dataDir = dataDir + "SetImageSize_out.pdf";
-// zapisz wynikowy plik PDF
 doc.Save(dataDir);
-Console.WriteLine("\nImage size added successfully.\nFile saved at " + dataDir);
 ```
+ 
+ Zmodyfikowany dokument zapisujemy jako`SetImageSize_out.pdf` w tym samym katalogu. Ten plik będzie teraz zawierał zmieniony rozmiar obrazu, który dodałeś.
 
 ## Wniosek
 
-Gratulacje! Udało Ci się ustawić rozmiar obrazu w dokumencie PDF za pomocą Aspose.PDF dla .NET. Teraz możesz zastosować tę metodę do własnych projektów, aby dostosować rozmiar obrazów w plikach PDF.
+W tym samouczku omówiliśmy, jak ustawić rozmiar obrazu w pliku PDF za pomocą Aspose.PDF dla .NET. Przeszliśmy przez tworzenie dokumentu, dodawanie strony, konfigurowanie obrazu i zapisywanie wyniku. Ten przewodnik krok po kroku to dopiero początek tego, co możesz zrobić za pomocą Aspose.PDF dla .NET. Teraz, gdy nauczyłeś się, jak zmieniać rozmiar obrazów, możesz swobodnie odkrywać inne funkcje, takie jak formatowanie tekstu, tworzenie tabeli, a nawet dodawanie adnotacji do pliku PDF.
 
-### FAQ dotyczące ustawiania rozmiaru obrazu w pliku PDF
+## Najczęściej zadawane pytania
 
-#### P: Jaki jest cel ustawiania rozmiaru obrazu w dokumencie PDF za pomocą Aspose.PDF dla platformy .NET?
+### Czy mogę używać różnych formatów obrazów w Aspose.PDF dla platformy .NET?  
+Tak, Aspose.PDF obsługuje różne formaty obrazów, takie jak JPEG, PNG, BMP i SVG.
 
-A: Celem ustawienia rozmiaru obrazu w dokumencie PDF jest kontrolowanie wymiarów obrazu podczas dodawania go do pliku PDF. Pozwala to dostosować wygląd i układ obrazów w plikach PDF.
+### Jak zachować proporcje obrazu?  
+ Możesz zachować proporcje obrazu, ustawiając`FixWidth` Lub`FixHeight` pozostawiając drugi wymiar nieustawiony.
 
-#### P: Jak działa proces ustawiania rozmiaru obrazu w dokumencie PDF?
+### Czy mogę dodać wiele obrazów do jednej strony PDF?  
+Oczywiście! Po prostu powtórz proces dodawania instancji obrazu i dodaj każdą z nich do`Paragraphs` kolekcja.
 
- A: Proces ten obejmuje tworzenie`Aspose.Pdf.Image` wystąpienie, określając jego szerokość i wysokość za pomocą`FixWidth` I`FixHeight` właściwości, a następnie dodanie obrazu do dokumentu PDF. Dodatkowo możesz ustawić wymiary samej strony, aby pomieścić obraz.
+### Czy można ustawić rozmiar obrazu w innych jednostkach niż punkty?  
+Aspose.PDF obsługuje głównie punkty, ale można przekonwertować na punkty także inne jednostki, np. cale lub milimetry (1 cal = 72 punkty).
 
-#### P: Czy mogę ustawić rozmiar obrazu jako określony procent wymiarów strony?
-
-A: Dostarczony kod ustawia absolutną szerokość i wysokość obrazu w punktach. Jeśli chcesz ustawić rozmiar obrazu na podstawie procentu wymiarów strony, musisz odpowiednio obliczyć wymiary i odpowiednio dostosować kod.
-
-####  P: Jakie jest znaczenie`FileType` property when adding an image to the PDF document?
-
- A: Ten`FileType`właściwość określa typ obrazu dodawanego do dokumentu PDF. W podanym kodzie wartość`Unknown` oznacza, że typ obrazu jest nieznany i Aspose.PDF spróbuje ustalić typ obrazu na podstawie rozszerzenia pliku.
-
-#### P: Czy mogę dodać wiele obrazów do jednej strony, używając tej metody?
-
- O: Tak, możesz dodać wiele obrazów do jednej strony, tworząc wiele`Aspose.Pdf.Image` wystąpienia i dodawanie ich do kolekcji akapitów strony. Upewnij się, że dostosowujesz pozycjonowanie i układ obrazów w razie potrzeby.
-
-#### P: W jaki sposób mogę kontrolować rozmieszczenie i wyrównanie dodawanego obrazu na stronie?
-
- A: Umiejscowienie i wyrównanie dodanego obrazu można kontrolować, dostosowując współrzędne i układ obrazu za pomocą właściwości, takich jak:`img.Left`, `img.Top`i właściwości formatowania akapitu.
-
-####  P: Jaki jest cel ustawiania właściwości strony za pomocą`page.PageInfo.Width` and `page.PageInfo.Height`?
-
-A: Ustawienie właściwości strony pozwala zdefiniować wymiary samej strony. Zapewnia to, że wymiary strony mieszczą dodany obraz i wszelkie inne treści, które możesz mieć na stronie.
-
-#### P: Czy mogę ustawić różne rozmiary dla różnych obrazów w tym samym dokumencie PDF?
-
- O: Tak, możesz ustawić różne rozmiary dla różnych obrazów, tworząc oddzielne`Aspose.Pdf.Image` wystąpienia i dostosowywanie`FixWidth`, `FixHeight`i właściwości rozmieszczenia dla każdego obrazu.
-
-#### P: W jaki sposób mogę zintegrować tę metodę z własnymi projektami dotyczącymi ustawiania rozmiarów obrazów w plikach PDF?
-
-A: Aby zintegrować tę metodę ze swoimi projektami, wykonaj opisane kroki i zmodyfikuj kod w razie potrzeby. Możesz użyć tej metody, aby dodać obrazy o określonych rozmiarach do dokumentów PDF w oparciu o wymagania aplikacji.
+### Jak umieścić obraz w określonym miejscu na stronie?  
+ Możesz ustawić`Image.LowerLeftX` I`Image.LowerLeftY` Właściwości umożliwiające umiejscowienie obrazu na stronie.

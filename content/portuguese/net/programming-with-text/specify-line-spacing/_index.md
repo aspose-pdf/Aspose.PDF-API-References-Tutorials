@@ -124,12 +124,12 @@ formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 TextFragment textFragment = new TextFragment("Hello world");
 if (fontFile != "")
 {
-	// Carregue a fonte TrueType no objeto de fluxo
+	//Carregue a fonte TrueType no objeto de fluxo
 	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
 	{
 		// Defina o nome da fonte para a sequência de texto
 		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		//Especifique a posição para o Fragmento de Texto
+		// Especifique a posição para o Fragmento de Texto
 		textFragment.Position = new Position(100, 600);
 		//Defina TextFormattingOptions do fragmento atual como predefinido (que aponta para LineSpacingMode.FullSize)
 		textFragment.TextState.FormattingOptions = formattingOptions;

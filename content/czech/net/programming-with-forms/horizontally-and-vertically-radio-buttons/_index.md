@@ -2,126 +2,134 @@
 title: Vodorovně a svisle Přepínače
 linktitle: Vodorovně a svisle Přepínače
 second_title: Aspose.PDF pro .NET API Reference
-description: Snadno vytvářejte horizontální a vertikální přepínače v dokumentech PDF pomocí Aspose.PDF pro .NET.
+description: Naučte se vytvářet vodorovně a svisle zarovnaná přepínací tlačítka v PDF pomocí Aspose.PDF for .NET pomocí tohoto podrobného návodu.
 type: docs
 weight: 180
 url: /cs/net/programming-with-forms/horizontally-and-vertically-radio-buttons/
 ---
-V tomto tutoriálu vám ukážeme, jak vytvořit vodorovně a svisle uspořádaná přepínací tlačítka v dokumentu PDF pomocí Aspose.PDF pro .NET. Vysvětlíme vám zdrojový kód C# krok za krokem, který vás provede tímto procesem.
+## Zavedení
 
-## Krok 1: Příprava
+Vytváření interaktivních formulářů PDF může výrazně zlepšit uživatelskou zkušenost, zejména pokud jde o shromažďování informací. Jedním z nejběžnějších prvků formuláře je přepínač, který uživatelům umožňuje vybrat jednu možnost ze sady. V tomto tutoriálu prozkoumáme, jak vytvořit vodorovně a svisle zarovnaná přepínací tlačítka pomocí Aspose.PDF pro .NET. Ať už jste zkušený vývojář nebo teprve začínáte, tento průvodce vás provede procesem krok za krokem a zajistí vám jasné pochopení každé části.
 
-Ujistěte se, že jste importovali potřebné knihovny a nastavili cestu k adresáři vašich dokumentů:
+## Předpoklady
+
+Než se ponoříte do kódu, musíte mít splněno několik předpokladů:
+
+1.  Aspose.PDF for .NET: Ujistěte se, že máte nainstalovanou knihovnu Aspose.PDF. Můžete si jej stáhnout z[místo](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: Vývojové prostředí, kde můžete psát a testovat svůj kód.
+3. Základní znalost C#: Znalost programování v C# vám pomůže lépe porozumět úryvkům kódu.
+
+## Importujte balíčky
+
+Chcete-li začít, musíte do svého projektu C# importovat potřebné balíčky. Můžete to udělat takto:
+
+### Vytvořit nový projekt
+
+Otevřete Visual Studio a vytvořte nový projekt C#. Pro jednoduchost si můžete vybrat konzolovou aplikaci.
+
+### Přidejte odkaz Aspose.PDF
+
+1. Klepněte pravým tlačítkem myši na svůj projekt v Průzkumníku řešení.
+2. Vyberte „Spravovat balíčky NuGet“.
+3. Vyhledejte „Aspose.PDF“ a nainstalujte nejnovější verzi.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using System.IO;
+using Aspose.Pdf.Facades;
+using Aspose.Pdf;
+using Aspose.Pdf.Forms;
 ```
 
-## Krok 2: Vložte dokument
+Nyní, když máte vše nastaveno, pojďme rozdělit kód a vytvořit vodorovně a svisle zarovnaná přepínací tlačítka.
 
-Načíst existující dokument PDF:
+## Krok 1: Nastavte adresář dokumentů
+
+V tomto kroku definujeme cestu k adresáři, kde budou uloženy vaše PDF dokumenty.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Nahradit`"YOUR DOCUMENT DIRECTORY"` se skutečnou cestou, kam chcete soubor PDF uložit. To je zásadní, protože říká programu, kde má hledat vstupní soubory a kam uložit výstup.
+
+## Krok 2: Načtěte existující dokument PDF
+
+ Dále musíme načíst PDF dokument, se kterým budeme pracovat. To se provádí pomocí`FormEditor` třída.
 
 ```csharp
 FormEditor formEditor = new FormEditor();
 formEditor.BindPdf(dataDir + "input.pdf");
 ```
 
-## Krok 3: Přizpůsobte možnosti přepínače
+Zde vytvoříme instanci`FormEditor` a svázat jej s existujícím souborem PDF s názvem`input.pdf`. Ujistěte se, že tento soubor existuje ve vašem zadaném adresáři.
 
-Přizpůsobte možnosti přepínače nastavením následujících vlastností:
+## Krok 3: Konfigurace vlastností přepínacího tlačítka
+
+Nyní nastavíme některé vlastnosti pro naše přepínače. To zahrnuje mezeru mezi tlačítky, jejich orientaci a velikost.
 
 ```csharp
-formEditor. RadioGap = 4; // Vzdálenost mezi dvěma možnostmi přepínače
-formEditor. RadioHoriz = true; //Horizontální rozložení přepínačů
-formEditor.RadioButtonItemSize = 20; // Velikost přepínacích tlačítek
-formEditor.Facade.BorderWidth = 1; // Šířka okraje přepínače
-formEditor.Facade.BorderColor = System.Drawing.Color.Black; // Barva ohraničení přepínače
+formEditor.RadioGap = 4; // Vzdálenost mezi možnostmi přepínače
+formEditor.RadioHoriz = true; // Nastavte na hodnotu true pro horizontální zarovnání
+formEditor.RadioButtonItemSize = 20; // Velikost přepínače
+formEditor.Facade.BorderWidth = 1; // Šířka okraje
+formEditor.Facade.BorderColor = System.Drawing.Color.Black; // Barva ohraničení
 ```
+
+ Tyto vlastnosti pomohou definovat, jak se přepínací tlačítka zobrazí v PDF. The`RadioGap` vlastnost ovládá mezeru mezi tlačítky, zatímco`RadioHoriz` určuje jejich rozložení.
 
 ## Krok 4: Přidejte horizontální přepínače
 
-Přidejte přepínače uspořádané vodorovně zadáním možností a polohy pole:
+Nyní do PDF přidáme horizontální přepínače.
 
 ```csharp
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
 ```
 
+ V tomto kódu definujeme položky pro přepínače a přidáme je do PDF. The`AddField`metoda přebírá několik parametrů, včetně typu pole, názvu pole a souřadnic pro umístění.
+
 ## Krok 5: Přidejte vertikální přepínače
 
-Přidejte přepínače uspořádané svisle zadáním možností a polohy pole:
+Dále přidáme vertikální přepínače. K tomu musíme změnit orientaci zpět na vertikální.
 
 ```csharp
-formEditor. RadioHoriz = false; // Vertikální rozložení přepínačů
+formEditor.RadioHoriz = false; // Pro vertikální zarovnání nastavte na false
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
 ```
 
-## Krok 6: Uložte dokument
+Stejně jako předtím definujeme položky a přidáme je do PDF, ale tentokrát budou zarovnány svisle.
 
-Uložte upravený dokument PDF:
+## Krok 6: Uložte dokument PDF
+
+Nakonec musíme upravený PDF dokument uložit.
 
 ```csharp
 dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
 formEditor.Save(dataDir);
+Console.WriteLine("\nHorizontally and vertically laid out radio buttons successfully.\nFile saved at " + dataDir);
 ```
 
-### Ukázkový zdrojový kód pro vodorovně a svisle přepínače pomocí Aspose.PDF pro .NET 
-```csharp
-try
-{
-	// Cesta k adresáři dokumentů.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Vložte dříve uložený dokument
-	FormEditor formEditor = new FormEditor();
-	formEditor.BindPdf(dataDir + "input.pdf");
-	// RadioGap je vzdálenost mezi dvěma možnostmi přepínače.
-	formEditor.RadioGap = 4;
-	// Přidat horizontální přepínač
-	formEditor.RadioHoriz = true;
-	// RadioButtonItemSize pokud velikost položky přepínače.
-	formEditor.RadioButtonItemSize = 20;
-	formEditor.Facade.BorderWidth = 1;
-	formEditor.Facade.BorderColor = System.Drawing.Color.Black;
-	formEditor.Items = new string[] { "First", "Second", "Third" };
-	formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
-	// Přidat další přepínač umístěný svisle
-	formEditor.RadioHoriz = false;
-	formEditor.Items = new string[] { "First", "Second", "Third" };
-	formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
-	dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
-	// Uložte dokument PDF
-	formEditor.Save(dataDir);
-	Console.WriteLine("\nHorizontally and vertically laid out radio buttons successfully.\nFile saved at " + dataDir);
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+Tento kód uloží PDF s nově přidanými přepínači. Nezapomeňte zkontrolovat zadaný adresář pro výstupní soubor.
 
 ## Závěr
 
-tomto tutoriálu jsme se naučili, jak vytvořit vodorovně a svisle uspořádaná přepínací tlačítka v dokumentu PDF pomocí Aspose.PDF pro .NET. Pomocí těchto kroků můžete snadno přizpůsobit rozvržení přepínačů a přidat je do dokumentů PDF pomocí Aspose.PDF.
+Vytváření přepínačů v PDF pomocí Aspose.PDF pro .NET je jednoduchý proces. Podle kroků uvedených v tomto kurzu můžete do formulářů PDF snadno přidat vodorovně i svisle zarovnané přepínače. To nejen zlepšuje interaktivitu vašich dokumentů, ale také zlepšuje celkovou uživatelskou zkušenost. Takže do toho a vyzkoušejte to!
 
-### FAQ
+## FAQ
 
-#### Otázka: Co jsou vodorovně a svisle uspořádané přepínače v dokumentu PDF?
+### Co je Aspose.PDF pro .NET?
+Aspose.PDF for .NET je výkonná knihovna, která umožňuje vývojářům vytvářet, manipulovat a převádět dokumenty PDF programově.
 
-Odpověď: Vodorovně a svisle uspořádané přepínače v dokumentu PDF odkazují na orientaci rozvržení voleb přepínačů. Horizontální rozložení umístí možnosti přepínače vedle sebe, což uživatelům umožňuje provádět výběr zleva doprava. Vertikální rozvržení na druhé straně naskládá možnosti přepínačů na sebe, což uživatelům umožňuje provádět výběr shora dolů.
+### Mohu používat Aspose.PDF zdarma?
+ Ano, Aspose nabízí bezplatnou zkušební verzi, kterou můžete použít k hodnocení knihovny. Můžete si jej stáhnout[zde](https://releases.aspose.com/).
 
-#### Otázka: Jak přizpůsobím vzhled možností přepínače v Aspose.PDF pro .NET?
+### Jak získám podporu pro Aspose.PDF?
+ Podporu můžete získat návštěvou stránky[Aspose fórum](https://forum.aspose.com/c/pdf/10).
 
-Odpověď: Vzhled možností přepínače v Aspose.PDF pro .NET můžete upravit úpravou několika vlastností. Rozhraní API poskytuje možnosti pro nastavení vzdálenosti mezi dvěma možnostmi přepínače (`RadioGap`), orientaci rozvržení (`RadioHoriz`), velikost položek přepínače (`RadioButtonItemSize`), šířku a barvu ohraničení přepínačů a další.
+### Je možné pomocí Aspose.PDF vytvořit další prvky formuláře?
+Absolutně! Aspose.PDF podporuje různé prvky formuláře, včetně textových polí, zaškrtávacích políček a rozevíracích seznamů.
 
-#### Otázka: Mohu přidat horizontální i vertikální přepínače do stejného dokumentu PDF?
-
-Odpověď: Ano, do stejného dokumentu PDF můžete přidat horizontální i vertikální přepínače pomocí Aspose.PDF pro .NET. Ukázkový zdrojový kód poskytnutý ve výukovém programu ukazuje, jak nejprve přidat přepínače uspořádané vodorovně a poté přidat další sadu přepínačů uspořádaných svisle do stejného dokumentu PDF.
-
-#### Otázka: Mohu nastavit různé možnosti přepínačů pro každou skupinu přepínačů?
-
- Odpověď: Ano, pro každou skupinu přepínačů můžete nastavit různé možnosti přepínačů. Každá skupina by měla mít něco jedinečného`RadioButtonField` objekt a`RadioButtonOptionField` objekty v každé skupině by měly sdílet stejnou stránku a jedinečné názvy svých možností. Tím je zajištěno, že přepínače v každé skupině fungují správně a výběry se vzájemně vylučují.
-
-#### Otázka: Jsou nastavení rozvržení a vzhledu přepínačů podporována ve všech prohlížečích a aplikacích PDF?
-
-Odpověď: Ano, nastavení rozvržení a vzhledu přepínačů je podporováno ve všech prohlížečích a aplikacích PDF vyhovujících standardu. Specifikace PDF definuje přepínače a jejich různé atributy, díky čemuž jsou ve formátu PDF všeobecně uznávané. Je však nezbytné otestovat vzhled a chování přepínačů v různých prohlížečích PDF, abyste zajistili konzistentní vykreslování na různých platformách.
+### Kde si mohu zakoupit Aspose.PDF pro .NET?
+ Můžete si koupit Aspose.PDF pro .NET z[nákupní stránku](https://purchase.aspose.com/buy).

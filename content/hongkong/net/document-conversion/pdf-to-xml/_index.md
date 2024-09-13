@@ -28,7 +28,7 @@ url: /zh-hant/net/document-conversion/pdf-to-xml/
 2. 新增 Aspose.PDF NuGet 套件：
 - 在解決方案資源管理器中以滑鼠右鍵按一下您的專案。
 - 選擇“管理 NuGet 套件”。
-- 搜尋“Aspose.PDF”並安裝該套件。
+- 搜尋“Aspose.PDF”並安裝該軟體包。
 
 安裝軟體包後，您就可以開始編寫將 PDF 轉換為 XML 的程式碼。
 

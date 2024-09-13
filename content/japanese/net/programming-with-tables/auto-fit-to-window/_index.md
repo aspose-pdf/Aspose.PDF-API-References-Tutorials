@@ -111,7 +111,7 @@ sec1.Paragraphs.Add(tab1);
 tab1.ColumnWidths = "50 50 50";
 tab1.ColumnAdjustment = ColumnAdjustment.AutoFitToWindow;
 
-//BorderInfo オブジェクトを使用してデフォルトのセル境界線を設定する
+// BorderInfo オブジェクトを使用してデフォルトのセル境界線を設定する
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 
 //別のカスタマイズされたBorderInfoオブジェクトを使用して表の境界線を設定する
@@ -143,7 +143,7 @@ doc.Save(dataDir);
 
 ## 結論
 
-このチュートリアルでは、Aspose.PDF for .NET を使用して、ウィンドウに自動調整機能を備えた PDF ファイルを生成する方法を学習しました。この機能は、PDF ドキュメントを表示ウィンドウのサイズに自動的に調整する場合に非常に便利です。Aspose.PDF for .NET には、PDF ファイルの生成と操作のための強力な機能が他にも多数用意されています。このライブラリをさらに詳しく調べて、その機能をすべて確認することをお勧めします。
+このチュートリアルでは、Aspose.PDF for .NET を使用して、ウィンドウに自動調整機能付きの PDF ファイルを生成する方法を学習しました。この機能は、PDF ドキュメントを表示ウィンドウのサイズに自動的に調整する場合に非常に便利です。Aspose.PDF for .NET には、PDF ファイルの生成と操作のための強力な機能が他にも多数用意されています。このライブラリをさらに詳しく調べて、そのすべての機能を確認することをお勧めします。
 
 ### よくある質問
 

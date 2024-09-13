@@ -94,7 +94,7 @@ doc.Pages[1].Annotations.Add(sa);
 doc.Save(dataDir + "GetResourceOfAnnotation_Out.pdf");
 ```
 
-この手順により、注釈が含まれた更新された PDF が確実に保存されます。
+この手順により、注釈が付いた更新された PDF が確実に保存されます。
 
 ## ステップ6: 保存したドキュメントを開く
 

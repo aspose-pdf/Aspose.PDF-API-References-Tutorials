@@ -13,11 +13,11 @@ Hướng dẫn lập trình với đồ họa từ Aspose.PDF cho .NET được 
 ## Hướng dẫn
 | Tiêu đề | Sự miêu tả |
 | --- | --- | 
-| [Thêm Bản Vẽ Vào Tệp PDF](./add-drawing/) | Tìm hiểu cách thêm bản vẽ vào tệp PDF bằng Aspose.PDF cho .NET. Thực hiện theo hướng dẫn từng bước này để tạo tài liệu PDF hấp dẫn với các tính năng bản vẽ. |  
-| [Thêm Bản Vẽ Với Gradient Fill](./add-drawing-with-gradient-fill/) | Tìm hiểu cách thêm bản vẽ có tô màu chuyển sắc bằng Aspose.PDF cho .NET. Hướng dẫn từng bước để tạo tài liệu PDF hấp dẫn. |  
-| [Thêm đối tượng đường thẳng vào tệp PDF](./add-line-object/) | Tìm hiểu cách thêm đối tượng đường tùy chỉnh vào tệp PDF bằng Aspose.PDF cho .NET. |  
-| [Kiểm soát hình chữ nhật thứ tự Z](./control-rectangle-z-order/) | Tìm hiểu cách kiểm soát thứ tự Z của các hình chữ nhật trong tệp PDF bằng Aspose.PDF cho .NET.  |  
-| [Tạo hình chữ nhật đã tô](./create-filled-rectangle/) | Tìm hiểu cách tạo hình chữ nhật tô màu bằng Aspose.PDF cho .NET. Hướng dẫn từng bước để tùy chỉnh màu tô. |  
-| [Tạo hình chữ nhật với màu Alpha](./create-rectangle-with-alpha-color/) | Tìm hiểu cách tạo hình chữ nhật có màu trong suốt bằng Aspose.PDF cho .NET. Hướng dẫn từng bước để tùy chỉnh độ trong suốt. |  
-| [Chiều dài dấu gạch ngang](./dash-length/) | Tìm hiểu cách thiết lập độ dài của dấu gạch ngang bằng Aspose.PDF cho .NET. Hướng dẫn từng bước để tùy chỉnh mẫu dấu gạch ngang. |  
-| [Đường vẽ](./drawing-line/) | Tìm hiểu cách vẽ một đường thẳng trên một trang bằng Aspose.PDF cho .NET. Hướng dẫn từng bước để tạo các đường thẳng tùy chỉnh. |  
+| [Thêm Bản Vẽ Vào Tệp PDF](./add-drawing/) | Tìm hiểu cách thêm bản vẽ vào tệp PDF bằng Aspose.PDF cho .NET. Hướng dẫn từng bước này bao gồm cài đặt màu sắc, thêm hình dạng và lưu tệp PDF của bạn. |  
+| [Thêm Bản Vẽ Với Gradient Fill](./add-drawing-with-gradient-fill/) | Tìm hiểu cách thêm các bản vẽ chuyển màu tuyệt đẹp vào tệp PDF bằng Aspose.PDF cho .NET với hướng dẫn từng bước này, hoàn hảo để nâng cao hình ảnh tài liệu. |  
+| [Thêm đối tượng đường thẳng vào tệp PDF](./add-line-object/) | Tìm hiểu cách thêm đối tượng đường thẳng vào tệp PDF bằng Aspose.PDF cho .NET trong hướng dẫn từng bước này. Hoàn hảo cho người mới bắt đầu. |  
+| [Kiểm soát hình chữ nhật thứ tự Z](./control-rectangle-z-order/) | Tìm hiểu cách kiểm soát thứ tự Z hình chữ nhật trong PDF bằng Aspose.PDF cho .NET trong hướng dẫn từng bước chi tiết này. Lý tưởng cho các nhà phát triển muốn cải thiện tài liệu PDF. |  
+| [Tạo hình chữ nhật đã tô](./create-filled-rectangle/) | Tìm hiểu cách tạo hình chữ nhật tô màu trong PDF bằng Aspose.PDF cho .NET với hướng dẫn từng bước này. Hoàn hảo cho các nhà phát triển ở mọi cấp độ. |  
+| [Tạo hình chữ nhật với màu Alpha](./create-rectangle-with-alpha-color/) | Tìm hiểu cách tạo hình chữ nhật trong suốt trong PDF bằng Aspose.PDF cho .NET với hướng dẫn từng bước này. Tăng cường PDF của bạn bằng màu alpha một cách dễ dàng. |  
+| [Chiều dài dấu gạch ngang](./dash-length/) | Tìm hiểu cách tùy chỉnh các mẫu gạch ngang trong PDF bằng Aspose.PDF cho .NET với hướng dẫn từng bước của chúng tôi. Hoàn hảo để thêm kiểu cho tài liệu của bạn. |  
+| [Đường vẽ](./drawing-line/) | Tìm hiểu cách vẽ các đường trong tài liệu PDF bằng Aspose.PDF cho .NET. Hướng dẫn từng bước này bao gồm thiết lập tài liệu, thêm đường và lưu tệp. |  

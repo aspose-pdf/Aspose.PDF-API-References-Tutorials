@@ -121,7 +121,7 @@ A: Sì, puoi manipolare le tabelle nei documenti PDF multipagina usando Aspose.P
 
 #### D: È possibile rimuovere una tabella da un documento PDF?
 
- R: Sì, puoi rimuovere una tabella da un documento PDF usando Aspose.PDF per .NET. Per ottenere questo risultato, puoi rimuovere lo specifico`Table` oggetto dal`Page.Paragraphs` raccolta. Puoi identificare la tabella da rimuovere utilizzando proprietà come`Table.NumberOfColumns`, `Table.NumberOfRows`e altri identificatori univoci.
+ R: Sì, puoi rimuovere una tabella da un documento PDF utilizzando Aspose.PDF per .NET. Per ottenere questo risultato, puoi rimuovere lo specifico`Table` oggetto dal`Page.Paragraphs` raccolta. Puoi identificare la tabella da rimuovere utilizzando proprietà come`Table.NumberOfColumns`, `Table.NumberOfRows`altri identificatori univoci.
 
 #### D: Posso modificare la formattazione (carattere, colore, allineamento) del testo della tabella?
 

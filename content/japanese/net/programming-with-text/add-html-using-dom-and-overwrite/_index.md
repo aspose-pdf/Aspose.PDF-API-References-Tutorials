@@ -105,9 +105,9 @@ title.Margin.Bottom = 10;
 title.Margin.Top = 400;
 //ページの段落コレクションに HTML フラグメントを追加する
 page.Paragraphs.Add(title);
-//PDFファイルを保存
+// PDFファイルを保存
 dataDir = dataDir + "AddHTMLUsingDOMAndOverwrite_out.pdf";
-//PDFファイルを保存
+// PDFファイルを保存
 doc.Save(dataDir);
 ```
 

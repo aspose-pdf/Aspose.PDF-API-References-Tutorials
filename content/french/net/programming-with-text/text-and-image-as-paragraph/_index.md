@@ -162,7 +162,7 @@ R : Oui, vous pouvez utiliser les exemples de code fournis pour ajouter plusieu
 
 #### Q : Puis-je ajuster la mise en page des paragraphes en ligne ?
 
- R : Oui, vous pouvez ajuster la mise en page des paragraphes en ligne en contrôlant leur positionnement, leurs dimensions et leur ordre dans la page. Le didacticiel montre comment définir des attributs en ligne, tels que`IsInLineParagraph`, pour contrôler la disposition des paragraphes de texte et d'image.
+ R : Oui, vous pouvez ajuster la mise en page des paragraphes en ligne en contrôlant leur positionnement, leurs dimensions et leur ordre dans la page. Le didacticiel montre comment définir des attributs en ligne, tels que`IsInLineParagraph`, pour contrôler la mise en page des paragraphes de texte et d'image.
 
 #### Q : Comment enregistrer le document PDF modifié ?
 

@@ -1,13 +1,13 @@
 ---
 title: Lägg till strukturelement i element
 linktitle: Lägg till strukturelement i element
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Steg-för-steg-guide för att lägga till strukturelement till element i PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 20
 url: /sv/net/programming-with-tagged-pdf/add-structure-element-into-element/
 ---
-I den här handledningen kommer vi att ge dig en steg-för-steg-guide om hur du lägger till ett strukturelement till ett element i ett PDF-dokument med Aspose.PDF för .NET. Aspose.PDF är ett kraftfullt bibliotek som låter dig skapa, manipulera och konvertera PDF-dokument programmatiskt. Med hjälp av de markerade innehållsstrukturfunktionerna i Aspose.PDF kan du skapa en hierarkisk struktur i ditt PDF-dokument.
+den här handledningen kommer vi att ge dig en steg-för-steg-guide om hur du lägger till ett strukturelement till ett element i ett PDF-dokument med Aspose.PDF för .NET. Aspose.PDF är ett kraftfullt bibliotek som låter dig skapa, manipulera och konvertera PDF-dokument programmatiskt. Med hjälp av de markerade innehållsstrukturfunktionerna i Aspose.PDF kan du skapa en hierarkisk struktur i ditt PDF-dokument.
 
 ## Förutsättningar
 
@@ -22,7 +22,7 @@ För att komma igång, skapa ett nytt projekt i Visual Studio och lägg till en 
 
 ## Steg 2: Importera de nödvändiga namnrymden
 
-I din C#-kodfil, importera de namnutrymmen som krävs för att komma åt klasserna och metoderna som tillhandahålls av Aspose.PDF:
+din C#-kodfil, importera de namnutrymmen som krävs för att komma åt klasserna och metoderna som tillhandahålls av Aspose.PDF:
 
 ```csharp
 using System;
@@ -114,7 +114,7 @@ Denna kod sparar PDF-dokumentet med de strukturerade elementen till en specifice
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
 string logFile = dataDir + "46144_log.xml";
-// Skapa dokument och få taggat pdf-innehåll
+//Skapa dokument och få taggat pdf-innehåll
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 // Ställa in titel och naturspråk för dokument
@@ -209,7 +209,7 @@ S: Att skapa en hierarkisk struktur i ett PDF-dokument förbättrar dess tillgä
 
 #### F: Hur kan jag validera PDF/UA-kompatibilitet efter att ha lagt till strukturelement?
 
- S: Koden som tillhandahålls i handledningen visar hur man validerar PDF/UA-efterlevnad med hjälp av`Validate` metod. Genom att validera dokumentet mot PDF/UA-standarden kan du säkerställa att de tillagda strukturelementen överensstämmer med riktlinjerna för tillgänglighet.
+S: Koden som tillhandahålls i handledningen visar hur man validerar PDF/UA-efterlevnad med hjälp av`Validate` metod. Genom att validera dokumentet mot PDF/UA-standarden kan du säkerställa att de tillagda strukturelementen överensstämmer med riktlinjerna för tillgänglighet.
 
 #### F: Kan jag använda detta tillvägagångssätt för att lägga till strukturelement till ett befintligt PDF-dokument?
 

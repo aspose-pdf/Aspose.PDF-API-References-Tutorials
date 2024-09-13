@@ -18,7 +18,7 @@ Než začnete, ujistěte se, že máte následující:
 
 ## Krok 1: Nastavte adresář dokumentů
 
- Nejprve je potřeba nastavit cestu k adresáři, kde máte vstupní PDF soubor. Nahradit`"YOUR DOCUMENT DIRECTORY"` v`dataDir` proměnnou s cestou k vašemu PDF souboru.
+ Nejprve je potřeba nastavit cestu k adresáři, kde máte vstupní PDF soubor. Nahradit`"YOUR DOCUMENT DIRECTORY"` v`dataDir` proměnná s cestou k vašemu PDF souboru.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -34,7 +34,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## Krok 3: Vyhledejte a nahraďte písma
 
- Vytváříme a`TextFragmentAbsorber`objekt a nastavte možnost úpravy pro odstranění nepoužívaných písem. Poté přijmeme absorbér pro všechny stránky dokumentu PDF, abychom vyhledávali textové fragmenty.
+ Vytváříme a`TextFragmentAbsorber` objekt a nastavte možnost úpravy pro odstranění nepoužívaných písem. Poté přijmeme absorbér pro všechny stránky dokumentu PDF, abychom vyhledávali textové fragmenty.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));

@@ -112,7 +112,7 @@ A: Ja, Sie können für das markierte Bild verschiedene Bildformate verwenden, z
 
  A: Alternativtext bietet eine Textbeschreibung des Bildes, die von Bildschirmleseprogrammen für sehbehinderte Benutzer vorgelesen wird. Im bereitgestellten Code wird der Alternativtext mithilfe des`AlternativeText` Eigentum der`IllustrationElement` stellt das markierte Bild dar.
 
-####  F: Wie funktioniert das`SetTitle` method contribute to the PDF document's tagged image?
+#### F: Wie funktioniert das`SetTitle` method contribute to the PDF document's tagged image?
 
  A: Die`SetTitle` Die Methode legt den Titel des getaggten Inhalts des PDF-Dokuments fest und bietet zusätzlichen Kontext für das getaggte Bild. Dieser Titel kann dabei helfen, den Zweck oder das Thema des getaggten Inhalts zu identifizieren.
 
@@ -126,4 +126,4 @@ A: Indem Sie die getaggten Inhaltsstrukturfunktionen von Aspose.PDF verwenden un
 
 #### F: Ist es möglich, mit ähnlichen Techniken mehrere markierte Bilder zum selben PDF-Dokument hinzuzufügen?
 
- A: Ja, Sie können mehrere getaggte Bilder mit ähnlichen Techniken zum selben PDF-Dokument hinzufügen. Sie erstellen zusätzliche`IllustrationElement` Instanzen für jedes markierte Bild und passen Sie deren Eigenschaften nach Bedarf an.
+A: Ja, Sie können mehrere getaggte Bilder mit ähnlichen Techniken zum selben PDF-Dokument hinzufügen. Sie erstellen zusätzliche`IllustrationElement` Instanzen für jedes markierte Bild und passen Sie deren Eigenschaften nach Bedarf an.

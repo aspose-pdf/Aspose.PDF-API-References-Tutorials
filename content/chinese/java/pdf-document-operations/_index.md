@@ -32,6 +32,6 @@ Aspose.PDF for Java 开启了创建动态 PDF 的大门。您将学习如何从�
 ### [使用 Java 在 PDF 文件中添加图像印章](./adding-image-stamp-in-pdf-file-using-java/)
 通过本全面的 Aspose.PDF for Java 教程学习如何使用 Java 向 PDF 文件添加图像印章。
 ### [使用 Java 在 PDF 文件中添加 PDF 页面戳](./adding-pdf-page-stamp-in-pdf-file-using-java/)
-了解如何使用 Aspose.PDF 在 Java 中添加 PDF 页面图章。本分步指南向您展示如何轻松自定义 PDF 文档的图章。
+了解如何使用 Aspose.PDF 在 Java 中添加 PDF 页面图章。本分步指南将向您展示如何轻松自定义 PDF 文档的图章。
 ### [使用 Java 在 PDF 文件的页眉或页脚中添加文本](./adding-text-in-header-or-footer-of-pdf-file-using-java/)
 了解如何使用 Java 向页眉或页脚添加文本来增强 PDF 文档。探索 Aspose.PDF for Java 的分步说明。

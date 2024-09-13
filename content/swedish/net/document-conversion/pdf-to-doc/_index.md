@@ -1,7 +1,7 @@
 ---
 title: PDF till DOC
 linktitle: PDF till DOC
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du konverterar PDF till DOC med Aspose.PDF för .NET i den här omfattande guiden. Steg-för-steg instruktioner och tips ingår.
 type: docs
 weight: 110

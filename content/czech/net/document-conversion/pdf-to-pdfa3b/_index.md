@@ -98,7 +98,7 @@ tady to máte! Přímý průvodce převodem souboru PDF do formátu PDF/A-3B pom
 PDF/A-3B je ISO standardizovaná verze PDF určená pro dlouhodobé uchovávání elektronických dokumentů. Zachovává vzhled dokumentu na různých platformách.
 
 ### Může Aspose.PDF převést jakýkoli PDF?
-Ano, pokud soubor PDF není poškozen nebo chráněn heslem, Aspose.PDF jej může úspěšně převést do různých formátů včetně PDF/A-3B.
+Ano, pokud soubor PDF není poškozen nebo chráněn heslem, může jej Aspose.PDF úspěšně převést do různých formátů včetně PDF/A-3B.
 
 ### Je Aspose.PDF zdarma?
 Aspose.PDF nabízí bezplatnou zkušební verzi, ale má také placené licence pro plný přístup. Jeho schopnosti můžete vyhodnotit ve zkušební fázi!

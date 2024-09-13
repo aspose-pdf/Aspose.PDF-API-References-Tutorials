@@ -35,7 +35,7 @@ Page page = doc.Pages.Add();
 
 ## चरण 3: मार्जिन सेट करें
 
-हम पृष्ठ के लिए मार्जिन सेट करते हैं`MarginInfo` वर्ग। अपनी आवश्यकताओं के अनुसार मार्जिन मान समायोजित करें।
+ हम पृष्ठ के लिए मार्जिन सेट करते हैं`MarginInfo` वर्ग। अपनी आवश्यकताओं के अनुसार मार्जिन मान समायोजित करें।
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -110,7 +110,7 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-// sec1.PageInfo की मार्जिन प्रॉपर्टी को marginInfo इंस्टेंस असाइन करें
+//sec1.PageInfo की मार्जिन प्रॉपर्टी को marginInfo इंस्टेंस असाइन करें
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
@@ -148,7 +148,7 @@ Table tab2 = new Table();
 hfFoot.Paragraphs.Add(tab2);
 // तालिका की स्तंभ चौड़ाई के साथ सेट करें
 tab2.ColumnWidths = "165 172 165";
-// तालिका में पंक्तियाँ बनाएँ और फिर पंक्तियों में कक्ष बनाएँ
+//तालिका में पंक्तियाँ बनाएँ और फिर पंक्तियों में कक्ष बनाएँ
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
@@ -173,7 +173,7 @@ table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
 // किसी अन्य अनुकूलित BorderInfo ऑब्जेक्ट का उपयोग करके तालिका बॉर्डर सेट करें
 table.Border = new BorderInfo(BorderSide.All, 1f);
 table.RepeatingRowsCount = 1;
-// तालिका में पंक्तियाँ बनाएँ और फिर पंक्तियों में कक्ष बनाएँ
+//तालिका में पंक्तियाँ बनाएँ और फिर पंक्तियों में कक्ष बनाएँ
 Row row1 = table.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

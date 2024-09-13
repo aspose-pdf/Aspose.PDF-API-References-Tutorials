@@ -307,7 +307,7 @@ R: Sim, você pode personalizar a aparência e a formatação dos elementos de e
 
 #### P: Como posso criar e adicionar títulos de diferentes níveis a um documento PDF usando elementos de estrutura em linha no Aspose.PDF para .NET?
 
- R: Você pode criar títulos de diferentes níveis usando o`CreateHeaderElement` método e, em seguida, anexá-los ao elemento de estrutura raiz. Posteriormente, você pode adicionar conteúdo a cada elemento de título usando o`CreateSpanElement` método para criar extensões de texto.
+ R: Você pode criar títulos de diferentes níveis usando o`CreateHeaderElement`método e, em seguida, anexá-los ao elemento de estrutura raiz. Posteriormente, você pode adicionar conteúdo a cada elemento de título usando o`CreateSpanElement` método para criar extensões de texto.
 
 #### P: Posso usar elementos de estrutura em linha para criar listas, marcadores ou outros tipos de organização de conteúdo em um documento PDF?
 

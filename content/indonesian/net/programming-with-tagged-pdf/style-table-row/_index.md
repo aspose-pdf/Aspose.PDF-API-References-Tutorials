@@ -35,7 +35,7 @@ Kami telah membuat dokumen baru dan menetapkan judul dan bahasa dokumen.
 Pada langkah ini kita akan mendapatkan elemen struktur akar untuk dokumen kita.
 
 ```csharp
-//Dapatkan elemen struktur akar
+// Dapatkan elemen struktur akar
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

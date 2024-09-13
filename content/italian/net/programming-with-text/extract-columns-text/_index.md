@@ -32,7 +32,7 @@ using System.IO;
  Nel codice, individua la riga che dice`string dataDir = "YOUR DOCUMENT DIRECTORY";` e sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso della directory in cui sono archiviati i tuoi documenti.
 
 ## Passaggio 4: aprire il documento PDF
- Aprire un documento PDF esistente utilizzando`Document` costruttore e passando il percorso al file PDF di input.
+ Aprire un documento PDF esistente utilizzando`Document`costruttore e passando il percorso al file PDF di input.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
@@ -106,7 +106,7 @@ Hai estratto con successo il testo delle colonne da un documento PDF utilizzando
 
 #### D: Qual è lo scopo di questo tutorial?
 
-A: Questo tutorial offre una guida passo passo sull'estrazione di colonne di testo da un file PDF utilizzando Aspose.PDF per .NET. Il codice sorgente C# allegato fornisce una dimostrazione pratica delle procedure richieste.
+A: Questo tutorial offre una guida passo-passo per estrarre colonne di testo da un file PDF usando Aspose.PDF per .NET. Il codice sorgente C# allegato fornisce una dimostrazione pratica delle procedure richieste.
 
 #### D: Quali namespace dovrei importare?
 

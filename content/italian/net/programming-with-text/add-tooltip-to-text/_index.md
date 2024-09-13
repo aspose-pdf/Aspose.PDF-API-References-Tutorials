@@ -32,7 +32,7 @@ using Aspose.Pdf.Text;
  Nel codice, individua la riga che dice`string dataDir = "YOUR DOCUMENT DIRECTORY";` e sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso della directory in cui sono archiviati i tuoi documenti.
 
 ## Passaggio 4: creare un documento di esempio con testo
- Crea un nuovo`Document` oggetto e aggiungi pagine con frammenti di testo. Nel codice fornito, due frammenti di testo vengono aggiunti al documento con il rispettivo testo di suggerimento.
+ Crea un nuovo`Document`oggetto e aggiungi pagine con frammenti di testo. Nel codice fornito, due frammenti di testo vengono aggiunti al documento con il rispettivo testo di suggerimento.
 
 ```csharp
 Document doc = new Document();
@@ -98,7 +98,7 @@ doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to disp
 doc.Save(outputFile);
 // Apri documento con testo
 Document document = new Document(outputFile);
-// Crea un oggetto TextAbsorber per trovare tutte le frasi che corrispondono all'espressione regolare
+//Crea un oggetto TextAbsorber per trovare tutte le frasi che corrispondono all'espressione regolare
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
 // Accetta l'assorbitore per le pagine del documento
 document.Pages.Accept(absorber);
@@ -169,7 +169,7 @@ using Aspose.Pdf.Text;
 
 #### D: Come posso aggiungere suggerimenti ai frammenti di testo?
 
- A: Nel passaggio 6, scorrerai i frammenti di testo estratti e creerai pulsanti invisibili nelle loro posizioni. Il testo del tooltip è assegnato a`AlternateName` proprietà del`ButtonField`che viene aggiunto al modulo del documento.
+ A: Nel passaggio 6, scorrerai i frammenti di testo estratti e creerai pulsanti invisibili nelle loro posizioni. Il testo del tooltip è assegnato a`AlternateName` proprietà del`ButtonField`, che viene aggiunto al modulo del documento.
 
 #### D: Come posso ripetere il procedimento per ulteriori frammenti di testo con tooltip lunghi?
 

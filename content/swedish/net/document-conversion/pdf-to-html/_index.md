@@ -1,7 +1,7 @@
 ---
 title: PDF till HTML
 linktitle: PDF till HTML
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du konverterar PDF till HTML med Aspose.PDF för .NET med denna steg-för-steg-guide. Perfekt för utvecklare och innehållsskapare.
 type: docs
 weight: 130

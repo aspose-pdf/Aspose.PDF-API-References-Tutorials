@@ -155,7 +155,7 @@ A: Mengonfigurasi bahasa dan judul dokumen PDF penting untuk aksesibilitas dan m
 
 J: Konten multibahasa meningkatkan aksesibilitas dan jangkauan global dokumen PDF. Aspose.PDF untuk .NET memungkinkan Anda menambahkan konten multibahasa dengan membuat elemen paragraf untuk setiap bahasa, mengatur teks dan properti bahasa yang sesuai.
 
-####  T: Bagaimana caranya`SetTitle` method contribute to improving document accessibility and organization?
+#### T: Bagaimana caranya`SetTitle` method contribute to improving document accessibility and organization?
 
  Sebuah:`SetTitle` metode menetapkan judul dokumen PDF, yang digunakan untuk identifikasi dokumen, hasil pencarian, dan pengaturan. Memberikan judul yang jelas dan bermakna akan meningkatkan aksesibilitas dokumen dan meningkatkan pengalaman pengguna.
 
@@ -177,4 +177,4 @@ J: Saat mengonfigurasi bahasa dan judul, pertimbangkan audiens yang dituju, kont
 
 #### T: Dapatkah saya mengubah bahasa dan judul dokumen PDF yang ada menggunakan Aspose.PDF untuk .NET?
 
- A: Ya, Anda dapat mengubah bahasa dan judul dokumen PDF yang ada menggunakan Aspose.PDF untuk .NET. Dengan memuat dokumen, mengakses konten yang diberi tag, dan menggunakan`SetTitle` Dan`SetLanguage`metode, Anda dapat memperbarui atribut ini sesuai kebutuhan.
+ A: Ya, Anda dapat mengubah bahasa dan judul dokumen PDF yang ada menggunakan Aspose.PDF untuk .NET. Dengan memuat dokumen, mengakses konten yang diberi tag, dan menggunakan`SetTitle` Dan`SetLanguage` metode, Anda dapat memperbarui atribut ini sesuai kebutuhan.

@@ -108,7 +108,7 @@ Congratulazioni! Hai imparato con successo come usare lo script LaTeX per aggiun
 
 ### Domande frequenti
 
-#### D: Qual è lo scopo del tutorial "Utilizzare lo script Latex nei file PDF"?
+#### D: Qual è lo scopo del tutorial "Utilizzare script Latex in file PDF"?
 
 R: Il tutorial "Usa script LaTeX in file PDF" mira a guidare gli utenti su come incorporare script LaTeX per aggiungere espressioni matematiche o formule all'interno di un documento PDF utilizzando Aspose.PDF per .NET. Il tutorial fornisce istruzioni dettagliate ed esempi di codice C# per creare un documento, inserire una tabella con una cella contenente script LaTeX e salvare il documento.
 

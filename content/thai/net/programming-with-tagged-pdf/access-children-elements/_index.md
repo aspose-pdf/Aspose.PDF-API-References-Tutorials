@@ -105,7 +105,7 @@ foreach (Element element in elementList)
 		string alternativeText = structureElement.AlternativeText;
 	}
 }
-// การเข้าถึงองค์ประกอบย่อยขององค์ประกอบแรกในองค์ประกอบราก
+//การเข้าถึงองค์ประกอบย่อยขององค์ประกอบแรกในองค์ประกอบราก
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
 foreach (Element element in elementList)
 {

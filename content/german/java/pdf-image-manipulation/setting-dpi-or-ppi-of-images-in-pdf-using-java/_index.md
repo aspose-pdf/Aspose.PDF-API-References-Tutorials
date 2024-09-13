@@ -10,7 +10,7 @@ url: /de/java/pdf-image-manipulation/setting-dpi-or-ppi-of-images-in-pdf-using-j
 
 ## Einführung in das Festlegen von DPI oder PPI von Bildern in PDF mit Java
 
-Im digitalen Zeitalter, in dem Dokumente häufig elektronisch geteilt werden, spielt die Qualität der Bilder in PDF-Dateien eine entscheidende Rolle. Wenn Sie mit PDFs in Java arbeiten, ist es wichtig zu verstehen, wie Sie die DPI (Dots Per Inch) oder PPI (Pixels Per Inch) von Bildern in diesen PDFs festlegen. In diesem umfassenden Leitfaden untersuchen wir den Prozess zum Festlegen von DPI oder PPI für Bilder in PDF-Dateien mit Java, wobei wir uns auf die Nutzung der Aspose.PDF-Bibliothek für Java konzentrieren.
+Im digitalen Zeitalter, in dem Dokumente häufig elektronisch geteilt werden, spielt die Qualität der Bilder in PDF-Dateien eine entscheidende Rolle. Wenn Sie mit PDFs in Java arbeiten, ist es wichtig zu wissen, wie Sie die DPI (Dots Per Inch) oder PPI (Pixels Per Inch) von Bildern in diesen PDFs festlegen. In diesem umfassenden Leitfaden untersuchen wir den Prozess zum Festlegen von DPI oder PPI für Bilder in PDF-Dateien mit Java, wobei wir uns auf die Nutzung der Aspose.PDF-Bibliothek für Java konzentrieren.
 
 ## Erste Schritte mit Aspose.PDF für Java
 

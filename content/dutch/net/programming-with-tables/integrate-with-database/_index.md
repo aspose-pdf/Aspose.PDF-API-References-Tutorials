@@ -80,7 +80,7 @@ DataTable dt = new DataTable("Employee");
 dt.Columns.Add("Employee_ID", typeof(Int32));
 dt.Columns.Add("Employee_Name", typeof(string));
 dt.Columns.Add("Gender", typeof(string));
-// Voeg programmatisch 2 rijen toe aan het DataTable-object
+//Voeg programmatisch 2 rijen toe aan het DataTable-object
 DataRow dr = dt.NewRow();
 dr[0] = 1;
 dr[1] = "John Smith";
@@ -132,7 +132,7 @@ A: Ja, u kunt hyperlinks of andere interactieve elementen toevoegen aan de gegev
 
 #### V: Kan ik de tabel pagineren als deze een bepaald aantal rijen overschrijdt?
 
- A: Ja, u kunt de tabel pagineren als deze een bepaald aantal rijen overschrijdt. Om dit te bereiken, kunt u de`IsInNewPage`eigenschap van het Row-object om aan te geven dat een nieuwe pagina na een specifieke rij moet beginnen. U kunt het aantal rijen berekenen dat per pagina moet worden weergegeven en de`IsInNewPage` eigendom dienovereenkomstig.
+A: Ja, u kunt de tabel pagineren als deze een bepaald aantal rijen overschrijdt. Om dit te bereiken, kunt u de`IsInNewPage` eigenschap van het Row-object om aan te geven dat een nieuwe pagina na een specifieke rij moet beginnen. U kunt het aantal rijen berekenen dat per pagina moet worden weergegeven en de`IsInNewPage` eigendom dienovereenkomstig.
 
 #### V: Hoe kan ik een PDF-document met ingesloten databasegegevens exporteren naar verschillende bestandsformaten, zoals DOCX of XLSX?
 

@@ -1,7 +1,7 @@
 ---
 title: PDF till PDFA
 linktitle: PDF till PDFA
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du konverterar PDF-filer till PDF/A-format med Aspose.PDF för .NET med denna steg-för-steg handledning.
 type: docs
 weight: 140
@@ -66,7 +66,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Steg 2: Öppna PDF-dokumentet
 
-Nästa upp kommer vi att använda Aspose.PDF-biblioteket för att ladda vårt dokument. Det här är enkelt:
+Nästa upp kommer vi att använda Aspose.PDF-biblioteket för att ladda vårt dokument. Detta är enkelt:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "PDFToPDFA.pdf");

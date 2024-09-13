@@ -97,7 +97,7 @@ titel.Margin.Top = 200;
 //ページの段落コレクションに HTML フラグメントを追加する
 page.Paragraphs.Add(titel);
 dataDir = dataDir + "AddHTMLUsingDOM_out.pdf";
-//PDFファイルを保存
+// PDFファイルを保存
 doc.Save(dataDir);
 Console.WriteLine("\nHTML using DOM added successfully.\nFile saved at " + dataDir);
 ```

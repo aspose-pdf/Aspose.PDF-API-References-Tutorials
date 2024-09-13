@@ -1,7 +1,7 @@
 ---
 title: Skapa PDF A1 med Aspose Pdf
 linktitle: Skapa PDF A1 med Aspose Pdf
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du skapar PDF/A-1-filer med Aspose.PDF för .NET i denna detaljerade handledning. Steg-för-steg guide med kodexempel och förklaringar.
 type: docs
 weight: 90

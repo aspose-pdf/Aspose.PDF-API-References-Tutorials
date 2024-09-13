@@ -31,7 +31,7 @@ För att komma igång, skapa ett nytt Java-projekt och importera Aspose.PDF-bibl
 com.aspose.pdf.Document pdfDocument = new com.aspose.pdf.Document();
 ```
 
-## Lägger till beställd HTML-lista till PDF-filen
+## Lägger till beställda HTML-lista till PDF-filen
 
  Därefter måste du analysera HTML-listan och lägga till den i PDF-dokumentet. Aspose.PDF för Java ger ett bekvämt sätt att göra detta med hjälp av`HtmlFragment` klass.
 
@@ -39,7 +39,7 @@ com.aspose.pdf.Document pdfDocument = new com.aspose.pdf.Document();
 // Skapa ett HTML-fragment
 com.aspose.pdf.HtmlFragment htmlFragment = new com.aspose.pdf.HtmlFragment("<ol><li>Item 1</li><li>Item 2</li><li>Item 3</li></ol>");
 
-// Lägg till HTML-fragmentet i PDF-dokumentet
+// Lägg till HTML-fragmentet till PDF-dokumentet
 pdfDocument.getPages().get_Item(1).getParagraphs().add(htmlFragment);
 ```
 

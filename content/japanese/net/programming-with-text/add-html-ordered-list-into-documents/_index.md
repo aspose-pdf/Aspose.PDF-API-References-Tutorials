@@ -7,7 +7,7 @@ type: docs
 weight: 30
 url: /ja/net/programming-with-text/add-html-ordered-list-into-documents/
 ---
-このチュートリアルでは、Aspose.PDF for .NET ライブラリを使用して、ドキュメントに HTML の順序付きリストを追加する方法を学習します。提供されているコードは、このタスクを実行するために必要な手順を示しています。
+このチュートリアルでは、Aspose.PDF for .NET ライブラリを使用して、HTML の順序付きリストをドキュメントに追加する方法を学びます。提供されているコードは、このタスクを実行するために必要な手順を示しています。
 
 ## 要件
 始める前に、次のものがあることを確認してください。

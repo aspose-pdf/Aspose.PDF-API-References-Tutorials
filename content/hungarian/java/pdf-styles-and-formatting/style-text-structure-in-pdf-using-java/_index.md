@@ -43,7 +43,7 @@ pdfDocument.getPages().add();
 // Hozzon létre egy TextFragment objektumot
 com.aspose.pdf.TextFragment textFragment = new com.aspose.pdf.TextFragment("Hello, PDF!");
 
-// Adja hozzá a szövegtöredéket az oldalhoz
+// Adja hozzá a TextFragmentet az oldalhoz
 pdfDocument.getPages().get_Item(1).getParagraphs().add(textFragment);
 
 // Mentse el a dokumentumot

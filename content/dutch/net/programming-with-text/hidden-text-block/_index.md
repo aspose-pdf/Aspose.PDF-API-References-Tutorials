@@ -110,7 +110,7 @@ doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to d
 doc.Save(outputFile);
 // Open document met tekst
 Document document = new Document(outputFile);
-// Maak een TextAbsorber-object om alle zinnen te vinden die overeenkomen met de reguliere expressie
+//Maak een TextAbsorber-object om alle zinnen te vinden die overeenkomen met de reguliere expressie
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
 // Accepteer de absorber voor de documentpagina's
 document.Pages.Accept(absorber);

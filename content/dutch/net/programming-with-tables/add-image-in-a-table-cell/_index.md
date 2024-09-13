@@ -43,7 +43,7 @@ Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
 ## Stap 4: Standaard celrand instellen
 
- Om consistentie te garanderen, kunnen we een standaard celrand instellen met behulp van de`DefaultCellBorder`eigenschap van de tabel`BorderInfo` voorwerp.
+ Om consistentie te garanderen, kunnen we een standaard celrand instellen met behulp van de`DefaultCellBorder` eigenschap van de tabel`BorderInfo` voorwerp.
 
 ```csharp
 // Standaard celrand instellen met behulp van het BorderInfo-object
@@ -93,7 +93,7 @@ Aspose.Pdf.Cell cell2 = row1.Cells.Add();
 Ten slotte kunnen we de afbeelding aan de tabelcel toevoegen door deze als een alinea in de cel te plaatsen.
 
 ```csharp
-// Voeg de afbeelding toe aan de tabelcel
+//Voeg de afbeelding toe aan de tabelcel
 cell2.Paragraphs.Add(img);
 ```
 
@@ -102,7 +102,7 @@ cell2.Paragraphs.Add(img);
 Nadat u de afbeeldingscel hebt toegevoegd, kunt u indien nodig meer cellen aan de rij toevoegen.
 
 ```csharp
-//Voeg een andere cel toe aan de rij
+// Voeg een andere cel toe aan de rij
 row1.Cells.Add("Previous cell with image");
 
 // Pas de verticale uitlijning van de derde cel aan
@@ -114,7 +114,7 @@ row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
  Ten slotte kunnen we het gewijzigde document opslaan op een opgegeven locatie met behulp van de`Save` methode.
 
 ```csharp
-// Document opslaan
+//Document opslaan
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
@@ -140,16 +140,16 @@ tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.
 tab1.ColumnWidths = "100 100 120";
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose.jpg";
-// Maak rijen in de tabel en vervolgens cellen in de rijen
+//Maak rijen in de tabel en vervolgens cellen in de rijen
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Sample text in cell");
 // Voeg de cel toe die de afbeelding bevat
 Aspose.Pdf.Cell cell2 = row1.Cells.Add();
-// Voeg de afbeelding toe aan de tabelcel
+//Voeg de afbeelding toe aan de tabelcel
 cell2.Paragraphs.Add(img);
 row1.Cells.Add("Previous cell with image");
 row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
-// Document opslaan
+//Document opslaan
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
@@ -165,7 +165,7 @@ A: Ja, u kunt meerdere afbeeldingen toevoegen aan verschillende cellen binnen de
 
 #### V: Kan ik de afbeeldingsgrootte en -positie binnen de tabelcel aanpassen?
 
- A: Ja, u kunt de afbeeldingsgrootte en -positie binnen de tabelcel aanpassen door de eigenschappen van de afbeelding aan te passen.`Image`object. U kunt de breedte en hoogte van de afbeelding instellen, evenals de uitlijning binnen de cel.
+ A: Ja, u kunt de afbeeldingsgrootte en -positie binnen de tabelcel aanpassen door de eigenschappen van de afbeelding aan te passen.`Image` object. U kunt de breedte en hoogte van de afbeelding instellen, evenals de uitlijning binnen de cel.
 
 #### V: Kan ik afbeeldingen toevoegen aan een tabel met een dynamisch aantal rijen en kolommen?
 

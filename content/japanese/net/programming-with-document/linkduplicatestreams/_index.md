@@ -2,96 +2,122 @@
 title: 重複ストリームをリンクする
 linktitle: 重複ストリームをリンクする
 second_title: Aspose.PDF for .NET API リファレンス
-description: このステップバイステップ ガイドでは、Aspose.PDF for .NET の Link Duplicate Streams 機能を使用して PDF ドキュメントを最適化する方法を学習します。
+description: Aspose.PDF for .NET を使用して PDF ドキュメント内の重複ストリームをリンクする方法を学びます。PDF を最適化してパフォーマンスを向上させ、ファイル サイズを縮小します。
 type: docs
 weight: 230
 url: /ja/net/programming-with-document/linkduplicatestreams/
 ---
-Aspose.PDF for .NET は、PDF ファイルを操作するさまざまな機能を提供する包括的で強力なライブラリです。その主な機能の 1 つは、PDF ファイルを最適化する機能です。この記事では、Aspose.PDF for .NET の Link Duplicate Streams 機能を使用して PDF ファイルを最適化する方法について説明します。開発者が簡単に理解できるように、ステップ バイ ステップの手順と完全なソース コード例を提供します。
+## 導入
 
-## ステップ1: PDFドキュメントを開く
+デジタル ドキュメントの世界では、効率が重要です。開発者、ビジネス オーナー、または PDF を頻繁に扱う人など、ドキュメントを最適化することで時間とリソースを節約できます。Aspose.PDF for .NET の強力な機能の 1 つは、PDF ファイル内の重複ストリームをリンクできることです。これにより、ファイル サイズが削減されるだけでなく、アプリケーションのパフォーマンスも向上します。このチュートリアルでは、PDF ドキュメント内の重複ストリームをリンクするプロセスを段階的に説明します。では、コーディングの帽子をかぶって、さっそく始めましょう。
 
-Aspose.PDF for .NET を使用して PDF ドキュメントを開くには、次の手順に従います。
+## 前提条件
+
+始める前に、いくつか準備しておくべきことがあります。
+
+1.  Aspose.PDF for .NET: Aspose.PDFライブラリがインストールされていることを確認してください。[サイト](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: コードを記述してテストできる開発環境。
+3. C# の基礎知識: C# プログラミングに精通していると、例をよりよく理解するのに役立ちます。
+4. サンプル PDF ドキュメント: このチュートリアルでは、作業に使用する PDF ドキュメントが必要です。簡単なものを作成することも、インターネットからサンプルをダウンロードすることもできます。
+
+## パッケージのインポート
+
+まず、C# プロジェクトに必要なパッケージをインポートする必要があります。手順は次のとおりです。
+
+### 新しいプロジェクトを作成する
+
+Visual Studio を開き、新しい C# プロジェクトを作成します。簡単にするために、コンソール アプリケーションを選択できます。
+
+### Aspose.PDF 参照の追加
+
+1. ソリューション エクスプローラーでプロジェクトを右クリックします。
+2. 「NuGet パッケージの管理」を選択します。
+3. 「Aspose.PDF」を検索し、最新バージョンをインストールしてください。
+
+### 名前空間をインポートする
+
+C# ファイルの先頭で、Aspose.PDF 名前空間をインポートします。
 
 ```csharp
-//ドキュメント ディレクトリへのパス。
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+すべての設定が完了したので、実際のコーディング部分に移りましょう。
+
+## ステップ1: ドキュメントパスを定義する
+
+まず、PDF ドキュメントへのパスを指定する必要があります。ここで、最適化するファイルの場所をプログラムに指示します。
+
+```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-//ドキュメントを開く
+```
+
+交換する`"YOUR DOCUMENT DIRECTORY"` PDF ファイルが保存されている実際のパスを入力します。
+
+## ステップ2: PDFドキュメントを開く
+
+次に、PDF文書を`Document` Aspose.PDF によって提供されるクラス。
+
+```csharp
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-上記のコードで、「YOUR DOCUMENT DIRECTORY」をプロジェクト ディレクトリへのパスに置き換えます。
+このコード行は、`Document`クラスを作成し、PDF ファイルをそこに読み込みます。
 
-## ステップ 2: LinkDuplicateStreams オプションの設定
+## ステップ3: 最適化オプションを設定する
 
-LinkDuplicateStreams オプションを設定するには、次の手順に従います。
+さて、最適化オプションを設定します。`OptimizationOptions`そして、`LinkDuplcateStreams`財産に`true`.
 
 ```csharp
-// LinkDuplicateStreamsオプションを設定する
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
     LinkDuplcateStreams = true
 };
 ```
 
-上記のコードでは、OptimizationOptions の新しいインスタンスを作成し、LinkDuplicateStreams オプションを true に設定しました。
+これにより、Aspose.PDF はドキュメント内の重複ストリームを検索してリンクし、ファイル サイズを削減できるようになります。
 
-## ステップ3: PDFドキュメントの最適化
+## ステップ4: PDFドキュメントを最適化する
 
-PDF ドキュメントを最適化するには、次の手順に従います。
+最適化オプションを設定すると、PDF ドキュメントのリソースを最適化できるようになります。
 
 ```csharp
-// OptimizationOptionsを使用してPDFドキュメントを最適化する
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-上記のコードでは、pdfDocument オブジェクトの OptimizeResources メソッドを使用して、先ほど作成した OptimizationOptions で PDF ドキュメントを最適化しました。
+この行は、PDF ドキュメントに最適化設定を適用します。
 
-## ステップ4: 更新されたドキュメントを保存する
+## ステップ5: 更新したドキュメントを保存する
 
-更新されたドキュメントを保存するには、次の手順に従います。
+最後に、最適化された PDF ドキュメントを保存する必要があります。新しいファイル名を指定するか、既存のファイル名を上書きすることができます。
 
 ```csharp
 dataDir = dataDir + "OptimizeDocument_out.pdf";
-//更新されたドキュメントを保存する
 pdfDocument.Save(dataDir);
 ```
 
-上記のコードでは、pdfDocument オブジェクトの Save メソッドを使用して、更新されたドキュメントをプロジェクト ディレクトリ内の「OptimizeDocument_out.pdf」という名前の新しいファイルに保存しています。
-
-### Aspose.PDF for .NET を使用して重複ストリームをリンクするためのサンプル ソース コード
-
-```csharp
-//ドキュメント ディレクトリへのパス。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-//ドキュメントを開く
-Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// LinkDuplicateStreamsオプションを設定する
-var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-{
-	LinkDuplcateStreams = true
-};
-// OptimizationOptionsを使用してPDFドキュメントを最適化する
-pdfDocument.OptimizeResources(optimizeOptions);
-dataDir = dataDir + "OptimizeDocument_out.pdf";
-//更新されたドキュメントを保存する
-pdfDocument.Save(dataDir);
-```
+これにより、最適化されたドキュメントが指定されたディレクトリに保存されます。
 
 ## 結論
 
-Aspose.PDF for .NET の重複ストリームのリンク機能は、PDF ファイルのサイズを縮小して最適化する効果的な方法を提供します。重複ストリームを識別してリンクすることにより、ライブラリはデータの整合性や見た目の品質を犠牲にすることなく、より効率的な PDF ドキュメントを作成するのに役立ちます。開発者は、提供されている手順とソース コードの例を使用してこの機能を簡単に実装し、PDF ファイルのパフォーマンスとストレージ効率を向上させることができます。
+これで完了です。Aspose.PDF for .NET を使用して、PDF ドキュメント内の重複ストリームを正常にリンクできました。このシンプルでありながら強力な機能により、PDF ファイルの効率が大幅に向上し、管理と共有が容易になります。ドキュメントを最適化すると、スペースが節約されるだけでなく、パフォーマンスも向上するため、関係者全員にとってメリットがあることを覚えておいてください。
 
-### よくある質問
+## よくある質問
 
-#### Q: Aspose.PDF for .NET の重複ストリームのリンク機能の目的は何ですか?
+### Aspose.PDF for .NET とは何ですか?
+Aspose.PDF for .NET は、開発者がプログラムによって PDF ドキュメントを作成、操作、最適化できるようにする強力なライブラリです。
 
-A: Aspose.PDF for .NET の重複ストリームのリンク機能は、ドキュメント内の重複ストリームを識別してリンクすることで PDF ファイルを最適化するために使用されます。PDF ファイルには、不要なスペースを消費する重複ストリーム (画像やフォントなど) が存在する場合があります。これらの重複ストリームをリンクすることで、ファイル サイズを縮小でき、より効率的でサイズの小さい PDF ドキュメントを作成できます。
+### Aspose.PDF をインストールするにはどうすればよいですか?
+Aspose.PDFはVisual StudioのNuGetパッケージマネージャーからインストールするか、[サイト](https://releases.aspose.com/pdf/net/).
 
-#### Q: 重複ストリームのリンク機能はどのように機能しますか?
+### 複数の PDF ファイルを一度に最適化できますか?
+はい、PDF ファイルのリストをループし、各ファイルに同じ最適化プロセスを適用できます。
 
-A: 重複ストリームのリンク機能は、PDF ドキュメントのコンテンツ ストリームを分析し、同じコンテンツを持つ重複ストリームを識別することによって機能します。この機能は、これらの重複ストリームを個別に保存するのではなく、それらの間のリンクを作成し、同じコンテンツを効果的に共有します。この最適化手法により、PDF ドキュメントの外観や機能に影響を与えることなく、全体のサイズが縮小されます。
+### PDF 内の重複ストリームとは何ですか?
+重複ストリームは、PDF ファイル内の同一のデータ ストリームです。重複ストリームをリンクすると、ファイル サイズが縮小され、パフォーマンスが向上します。
 
-#### Q: 「重複ストリームのリンク」機能により、PDF ドキュメントのデータや品質が失われることはありますか?
-
-A: いいえ、重複ストリームのリンク機能によって PDF ドキュメントのデータや品質が損なわれることはありません。重複ストリームをリンクすることでファイル サイズを最適化するだけで、ドキュメントの内容や外観は変更されません。この機能は、PDF ドキュメントがそのままの状態で元の品質を維持するように設計されています。
+### さらに詳しいドキュメントはどこで見つかりますか?
+ Aspose.PDF for .NETに関する包括的なドキュメントが見つかります[ここ](https://reference.aspose.com/pdf/net/).

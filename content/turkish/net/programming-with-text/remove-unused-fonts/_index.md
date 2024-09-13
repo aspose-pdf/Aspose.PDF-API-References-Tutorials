@@ -120,7 +120,7 @@ A: Eğitim, sizi adım adım süreçte yönlendirir:
 
 A: Evet, kullanılmayan yazı tiplerini istediğiniz bir yazı tipiyle değiştirmek için kodu değiştirebilirsiniz. Sağlanan örnek kodda, "Arial, Bold" yazı tipi bir değiştirme olarak kullanılmıştır.
 
-####  S: Nasıl?`TextFragmentAbsorber` work to remove unused fonts?
+#### S: Nasıl?`TextFragmentAbsorber` work to remove unused fonts?
 
  A:`TextFragmentAbsorber` ile yapılandırılmıştır`TextEditOptions.FontReplace.RemoveUnusedFonts` PDF'nin metin parçalarındaki kullanılmayan yazı tiplerini tanımlayan parametre. Emilimden sonra, yineleme yapabilirsiniz`TextFragments` ve yazı tiplerini istedikleri yedek yazı tipleriyle değiştirebilirler.
 

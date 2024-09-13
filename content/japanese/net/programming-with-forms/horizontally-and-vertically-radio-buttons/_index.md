@@ -2,126 +2,134 @@
 title: 水平方向と垂直方向のラジオボタン
 linktitle: 水平方向と垂直方向のラジオボタン
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用すると、PDF ドキュメントに水平および垂直のラジオ ボタンを簡単に作成できます。
+description: このステップバイステップのチュートリアルでは、Aspose.PDF for .NET を使用して PDF に水平および垂直に揃えられたラジオ ボタンを作成する方法を学習します。
 type: docs
 weight: 180
 url: /ja/net/programming-with-forms/horizontally-and-vertically-radio-buttons/
 ---
-このチュートリアルでは、Aspose.PDF for .NET を使用して、PDF ドキュメントに水平および垂直に配置されたラジオ ボタンを作成する方法を説明します。このプロセスをガイドするために、C# ソース コードを段階的に説明します。
+## 導入
 
-## ステップ1: 準備
+インタラクティブな PDF フォームを作成すると、特に情報収集の場合には、ユーザー エクスペリエンスを大幅に向上できます。最も一般的なフォーム要素の 1 つはラジオ ボタンで、ユーザーはこれを使用して、セットから 1 つのオプションを選択できます。このチュートリアルでは、Aspose.PDF for .NET を使用して、水平および垂直に整列したラジオ ボタンを作成する方法について説明します。熟練した開発者でも、初心者でも、このガイドでは、各部分を明確に理解できるように、プロセスを段階的に説明します。
 
-必要なライブラリがインポートされ、ドキュメント ディレクトリへのパスが設定されていることを確認してください。
+## 前提条件
+
+コードに進む前に、いくつかの前提条件を満たす必要があります。
+
+1.  Aspose.PDF for .NET: Aspose.PDFライブラリがインストールされていることを確認してください。[サイト](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: コードを記述してテストできる開発環境。
+3. C# の基礎知識: C# プログラミングに精通していると、コード スニペットをよりよく理解できるようになります。
+
+## パッケージのインポート
+
+まず、C# プロジェクトに必要なパッケージをインポートする必要があります。手順は次のとおりです。
+
+### 新しいプロジェクトを作成する
+
+Visual Studio を開き、新しい C# プロジェクトを作成します。簡単にするために、コンソール アプリケーションを選択できます。
+
+### Aspose.PDF 参照の追加
+
+1. ソリューション エクスプローラーでプロジェクトを右クリックします。
+2. 「NuGet パッケージの管理」を選択します。
+3. 「Aspose.PDF」を検索し、最新バージョンをインストールしてください。
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using System.IO;
+using Aspose.Pdf.Facades;
+using Aspose.Pdf;
+using Aspose.Pdf.Forms;
 ```
 
-## ステップ2: ドキュメントを読み込む
+これですべての設定が完了したので、コードを分解して水平および垂直に揃えられたラジオ ボタンを作成しましょう。
 
-既存の PDF ドキュメントを読み込みます:
+## ステップ1: ドキュメントディレクトリを設定する
+
+このステップでは、PDF ドキュメントを保存するディレクトリへのパスを定義します。
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+交換する`"YOUR DOCUMENT DIRECTORY"` PDF ファイルを保存する実際のパスを入力します。これは、プログラムに入力ファイルの検索場所と出力の保存場所を指示するため、非常に重要です。
+
+## ステップ2: 既存のPDF文書を読み込む
+
+次に、作業するPDF文書を読み込む必要があります。これは、`FormEditor`クラス。
 
 ```csharp
 FormEditor formEditor = new FormEditor();
 formEditor.BindPdf(dataDir + "input.pdf");
 ```
 
-## ステップ3: ラジオボタンのオプションをカスタマイズする
+ここでは、`FormEditor`それを既存のPDFファイルにバインドします。`input.pdf`指定したディレクトリにこのファイルが存在することを確認してください。
 
-次のプロパティを設定してラジオ ボタンのオプションをカスタマイズします。
+## ステップ3: ラジオボタンのプロパティを構成する
+
+ここで、ラジオ ボタンのプロパティをいくつか設定しましょう。これには、ボタン間の間隔、ボタンの向き、サイズなどが含まれます。
 
 ```csharp
-formEditor. RadioGap = 4; // 2つのラジオボタンオプション間の距離
-formEditor. RadioHoriz = true; //ラジオボタンの水平レイアウト
+formEditor.RadioGap = 4; //ラジオボタンオプション間の距離
+formEditor.RadioHoriz = true; //水平方向の配置の場合はtrueに設定
 formEditor.RadioButtonItemSize = 20; //ラジオボタンのサイズ
-formEditor.Facade.BorderWidth = 1; //ラジオボタンの境界線の幅
-formEditor.Facade.BorderColor = System.Drawing.Color.Black; //ラジオボタンの境界線の色
+formEditor.Facade.BorderWidth = 1; //境界線の幅
+formEditor.Facade.BorderColor = System.Drawing.Color.Black; //境界線の色
 ```
+
+これらのプロパティは、ラジオボタンがPDFでどのように表示されるかを定義するのに役立ちます。`RadioGap`プロパティはボタン間のスペースを制御し、`RadioHoriz`レイアウトを決定します。
 
 ## ステップ4: 水平ラジオボタンを追加する
 
-オプションとフィールドの位置を指定して、水平に配置されたラジオ ボタンを追加します。
+次に、PDF に水平ラジオ ボタンを追加しましょう。
 
 ```csharp
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
 ```
 
+このコードでは、ラジオボタンの項目を定義してPDFに追加します。`AddField`メソッドは、フィールド タイプ、フィールド名、配置の座標など、いくつかのパラメータを取ります。
+
 ## ステップ5: 垂直ラジオボタンを追加する
 
-オプションとフィールドの位置を指定して、垂直に配置されたラジオ ボタンを追加します。
+次に、垂直ラジオ ボタンを追加します。これを行うには、方向を垂直に戻す必要があります。
 
 ```csharp
-formEditor. RadioHoriz = false; //ラジオボタンの垂直レイアウト
+formEditor.RadioHoriz = false; //垂直方向の配置の場合は false に設定
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
 ```
 
-## ステップ6: ドキュメントを保存する
+前と同じように項目を定義して PDF に追加しますが、今回は垂直に揃えます。
 
-変更した PDF ドキュメントを保存します。
+## ステップ6: PDFドキュメントを保存する
+
+最後に、変更した PDF ドキュメントを保存する必要があります。
 
 ```csharp
 dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
 formEditor.Save(dataDir);
+Console.WriteLine("\nHorizontally and vertically laid out radio buttons successfully.\nFile saved at " + dataDir);
 ```
 
-### Aspose.PDF for .NET を使用した水平および垂直ラジオ ボタンのサンプル ソース コード 
-```csharp
-try
-{
-	//ドキュメント ディレクトリへのパス。
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	//以前に保存したドキュメントを読み込む
-	FormEditor formEditor = new FormEditor();
-	formEditor.BindPdf(dataDir + "input.pdf");
-	//RadioGap は、2 つのラジオ ボタン オプション間の距離です。
-	formEditor.RadioGap = 4;
-	//水平ラジオボタンを追加
-	formEditor.RadioHoriz = true;
-	//ラジオ ボタン項目のサイズの場合は RadioButtonItemSize。
-	formEditor.RadioButtonItemSize = 20;
-	formEditor.Facade.BorderWidth = 1;
-	formEditor.Facade.BorderColor = System.Drawing.Color.Black;
-	formEditor.Items = new string[] { "First", "Second", "Third" };
-	formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
-	//縦に並んだ他のラジオボタンを追加する
-	formEditor.RadioHoriz = false;
-	formEditor.Items = new string[] { "First", "Second", "Third" };
-	formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
-	dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
-	// PDF文書を保存する
-	formEditor.Save(dataDir);
-	Console.WriteLine("\nHorizontally and vertically laid out radio buttons successfully.\nFile saved at " + dataDir);
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+このコードは、新しく追加されたラジオ ボタンを含む PDF を保存します。出力ファイルの指定されたディレクトリを必ず確認してください。
 
 ## 結論
 
-このチュートリアルでは、Aspose.PDF for .NET を使用して、PDF ドキュメントに水平および垂直に配置されたラジオ ボタンを作成する方法を学習しました。これらの手順に従うことで、ラジオ ボタンのレイアウトを簡単にカスタマイズし、Aspose.PDF を使用して PDF ドキュメントに追加できます。
+Aspose.PDF for .NET を使用して PDF にラジオ ボタンを作成するのは簡単なプロセスです。このチュートリアルで説明されている手順に従うと、水平方向と垂直方向に並んだラジオ ボタンを PDF フォームに簡単に追加できます。これにより、ドキュメントのインタラクティブ性が向上するだけでなく、全体的なユーザー エクスペリエンスも向上します。ぜひお試しください。
 
-### よくある質問
+## よくある質問
 
-#### Q: PDF ドキュメント内の水平方向と垂直方向に配置されたラジオ ボタンとは何ですか?
+### Aspose.PDF for .NET とは何ですか?
+Aspose.PDF for .NET は、開発者がプログラムによって PDF ドキュメントを作成、操作、変換できるようにする強力なライブラリです。
 
-A: PDF ドキュメント内の水平および垂直に配置されたラジオ ボタンは、ラジオ ボタン オプションのレイアウト方向を示します。水平レイアウトでは、ラジオ ボタン オプションが横に並んで配置されるため、ユーザーは左から右に選択できます。一方、垂直レイアウトでは、ラジオ ボタン オプションが上下に積み重ねられるため、ユーザーは上から下に選択できます。
+### Aspose.PDF を無料で使用できますか?
+はい、Asposeはライブラリを評価するために使用できる無料試用版を提供しています。ダウンロードできます。[ここ](https://releases.aspose.com/).
 
-#### Q: Aspose.PDF for .NET でラジオ ボタン オプションの外観をカスタマイズするにはどうすればよいですか?
+### Aspose.PDF のサポートを受けるにはどうすればよいですか?
+サポートを受けるには、[Aspose フォーラム](https://forum.aspose.com/c/pdf/10).
 
-A: Aspose.PDF for .NET では、いくつかのプロパティを調整することでラジオ ボタン オプションの外観をカスタマイズできます。API には、2 つのラジオ ボタン オプション間の距離を設定するオプションが用意されています (`RadioGap`）、レイアウトの向き（`RadioHoriz`）、ラジオボタン項目のサイズ（`RadioButtonItemSize`）、ラジオボタンの境界線の幅や色などを設定できます。
+### Aspose.PDF で他のフォーム要素を作成することは可能ですか?
+もちろんです! Aspose.PDF は、テキスト フィールド、チェック ボックス、ドロップダウンなど、さまざまなフォーム要素をサポートしています。
 
-#### Q: 同じ PDF ドキュメントに水平ラジオ ボタンと垂直ラジオ ボタンの両方を追加できますか?
-
-A: はい、Aspose.PDF for .NET を使用して、同じ PDF ドキュメントに水平ラジオ ボタンと垂直ラジオ ボタンの両方を追加できます。チュートリアルで提供されるサンプル ソース コードは、最初に水平に配置されたラジオ ボタンを追加し、次に同じ PDF ドキュメントに垂直に配置された別のラジオ ボタンのセットを追加する方法を示しています。
-
-#### Q: ラジオ ボタンのグループごとに異なるラジオ ボタン オプションを設定できますか?
-
- A: はい、ラジオボタンのグループごとに異なるラジオボタンオプションを設定できます。各グループには固有の`RadioButtonField`オブジェクト、および`RadioButtonOptionField`各グループ内のオブジェクトは同じページを共有し、オプションに一意の名前を使用する必要があります。これにより、各グループ内のラジオ ボタンが正しく機能し、選択が相互に排他的になります。
-
-#### Q: ラジオ ボタンのレイアウトと外観の設定は、すべての PDF ビューアとアプリケーションでサポートされていますか?
-
-A: はい、ラジオ ボタンのレイアウトと外観設定は、標準に準拠したすべての PDF ビューアとアプリケーションでサポートされています。PDF 仕様ではラジオ ボタンとそのさまざまな属性が定義されており、PDF 形式では普遍的に認識されます。ただし、さまざまなプラットフォーム間で一貫したレンダリングを保証するには、さまざまな PDF ビューアでラジオ ボタンの外観と動作をテストすることが重要です。
+### Aspose.PDF for .NET はどこで購入できますか?
+ Aspose.PDF for .NETは以下から購入できます。[購入ページ](https://purchase.aspose.com/buy).

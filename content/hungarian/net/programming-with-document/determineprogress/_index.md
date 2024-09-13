@@ -17,7 +17,7 @@ Mielőtt az Aspose.PDF segítségével elindulnánk a PDF-manipuláció világá
 
 1. Visual Studio: A Microsoft Visual Studio programot telepíteni kell a számítógépére. Ez integrált fejlesztői környezetet (IDE) biztosít a .NET-alkalmazások írásához és hibakereséséhez.
 2. .NET-keretrendszer: Győződjön meg arról, hogy a .NET-keretrendszer telepítve van. Az Aspose.PDF támogatja a .NET-keretrendszer különféle verzióit, ezért válassza ki az igényeinek megfelelőt.
-3.  Aspose.PDF könyvtár: Szerezze be az Aspose.PDF könyvtárat. Megteheti[töltse le itt](https://releases.aspose.com/pdf/net/) kezdeni. Értékelő verzió is elérhető[itt](https://releases.aspose.com/).
+3.  Aspose.PDF könyvtár: Szerezze be az Aspose.PDF könyvtárat. Tudod[töltse le itt](https://releases.aspose.com/pdf/net/) kezdeni. Értékelő verzió is elérhető[itt](https://releases.aspose.com/).
 4. A C# alapismeretei: A C# programozás ismerete segít megérteni a megadott kódrészleteket és példákat.
 5. Minta PDF-dokumentum: Készítsen egy minta PDF-dokumentumot tesztelésre. Ez lehet bármilyen PDF-fájl, amelyet kezelni szeretne.
 

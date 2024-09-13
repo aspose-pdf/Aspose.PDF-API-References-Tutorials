@@ -2,7 +2,7 @@
 title: Extraire le texte d'une annotation de tampon dans un PDF à l'aide de Java
 linktitle: Extraire le texte d'une annotation de tampon dans un PDF à l'aide de Java
 second_title: API de traitement PDF Java Aspose.PDF
-description: Découvrez comment extraire du texte des annotations de tampon dans un PDF à l'aide de Java grâce à ce guide complet. Utilisez Aspose.PDF pour Java pour un traitement efficace des documents PDF.
+description: Découvrez comment extraire du texte des annotations de tampon dans un PDF à l'aide de Java avec ce guide complet. Utilisez Aspose.PDF pour Java pour un traitement efficace des documents PDF.
 type: docs
 weight: 14
 url: /fr/java/pdf-form-fields/extract-text-from-stamp-annotation-in-pdf-using-java/

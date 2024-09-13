@@ -117,7 +117,7 @@ page.Paragraphs.Add(ImageFloatingBox);
 
 ## 步骤 6：保存 PDF 文档
 
-最后，我们将新创建的多层PDF保存到指定的目录。
+最后，我们将新创建的多层PDF保存到指定的目录中。
 
 ```csharp
 doc.Save(dataDir + @"Multilayer-2ndApproach_out.pdf");

@@ -121,7 +121,7 @@ A: Ya, Anda dapat memanipulasi tabel dalam dokumen PDF multi-halaman menggunakan
 
 #### T: Apakah mungkin untuk menghapus tabel dari dokumen PDF?
 
- A: Ya, Anda dapat menghapus tabel dari dokumen PDF menggunakan Aspose.PDF untuk .NET. Untuk mencapai hal ini, Anda dapat menghapus tabel tertentu`Table` objek dari`Page.Paragraphs` koleksi. Anda dapat mengidentifikasi tabel yang akan dihapus dengan menggunakan properti seperti`Table.NumberOfColumns`, `Table.NumberOfRows`, dan pengenal unik lainnya.
+ A: Ya, Anda dapat menghapus tabel dari dokumen PDF menggunakan Aspose.PDF untuk .NET. Untuk mencapai hal ini, Anda dapat menghapus tabel tertentu`Table` objek dari`Page.Paragraphs` koleksi. Anda dapat mengidentifikasi tabel yang akan dihapus dengan menggunakan properti seperti`Table.NumberOfColumns`, `Table.NumberOfRows`dan pengenal unik lainnya.
 
 #### T: Dapatkah saya mengubah format (font, warna, perataan) teks tabel?
 

@@ -47,7 +47,7 @@ Nastavili jsme název a jazyk tagovaného dokumentu PDF.
 Nyní pojďme získat prvek kořenové struktury dokumentu PDF.
 
 ```csharp
-//Získejte prvek kořenové struktury
+// Získejte prvek kořenové struktury
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

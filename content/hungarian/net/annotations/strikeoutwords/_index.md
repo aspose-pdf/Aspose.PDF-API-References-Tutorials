@@ -2,7 +2,7 @@
 title: Szavak kihúzása
 linktitle: Szavak kihúzása
 second_title: Aspose.PDF for .NET API Reference
-description: Ebből az átfogó, lépésenkénti útmutatóból megtudhatja, hogyan lehet szavakat kihúzni egy PDF-ből az Aspose.PDF for .NET használatával. Növelje dokumentumszerkesztési készségeit.
+description: Ebből az átfogó, lépésenkénti útmutatóból megtudhatja, hogyan lehet szavakat kihúzni egy PDF-ből az Aspose.PDF for .NET használatával. Fejlessze dokumentumszerkesztési készségeit.
 type: docs
 weight: 150
 url: /hu/net/annotations/strikeoutwords/
@@ -15,7 +15,7 @@ Előfordult már, hogy egy PDF-fájlban egy adott szöveget ki kell hangsúlyozn
 
 Mielőtt belevágnánk a kódba, van néhány előfeltétel, amelyeket teljesítenie kell, hogy kövesse ezt az oktatóanyagot:
 
-1.  Aspose.PDF for .NET Library: Győződjön meg arról, hogy az Aspose.PDF for .NET könyvtár telepítve van. Megteheti[töltse le itt](https://releases.aspose.com/pdf/net/).
+1.  Aspose.PDF for .NET Library: Győződjön meg arról, hogy az Aspose.PDF for .NET könyvtár telepítve van. Tudod[töltse le itt](https://releases.aspose.com/pdf/net/).
 
 2. .NET-keretrendszer: Győződjön meg arról, hogy a .NET-keretrendszer telepítve van a számítógépen. Ez az oktatóanyag .NET-alkalmazásokhoz készült.
 

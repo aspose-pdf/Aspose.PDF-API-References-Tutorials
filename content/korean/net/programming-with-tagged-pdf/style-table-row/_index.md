@@ -35,7 +35,7 @@ taggedContent.SetLanguage("fr-FR");
 이 단계에서는 문서의 루트 구조 요소를 가져옵니다.
 
 ```csharp
-//루트 구조 요소를 얻습니다
+// 루트 구조 요소를 얻습니다
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

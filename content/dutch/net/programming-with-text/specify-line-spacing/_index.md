@@ -124,12 +124,12 @@ formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 TextFragment textFragment = new TextFragment("Hello world");
 if (fontFile != "")
 {
-	// Laad het TrueType-lettertype in het streamobject
+	//Laad het TrueType-lettertype in het streamobject
 	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
 	{
 		// Stel de lettertypenaam voor de tekstreeks in
 		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		//Geef de positie voor het tekstfragment op
+		// Geef de positie voor het tekstfragment op
 		textFragment.Position = new Position(100, 600);
 		//Stel TextFormattingOptions van het huidige fragment in op predefined (wat verwijst naar LineSpacingMode.FullSize)
 		textFragment.TextState.FormattingOptions = formattingOptions;
@@ -150,7 +150,7 @@ Gefeliciteerd! U hebt succesvol geleerd hoe u de regelafstand in een PDF-documen
 
 ### Veelgestelde vragen
 
-#### V: Wat is het doel van de tutorial 'Regelafstand opgeven in PDF-bestand'?
+#### V: Wat is het doel van de tutorial "Regelafstand opgeven in PDF-bestand"?
 
 A: De tutorial "Specify Line Spacing In PDF File" is bedoeld om gebruikers te begeleiden bij het gebruik van de Aspose.PDF-bibliotheek voor .NET om de regelafstand van tekst in een PDF-document aan te passen. De tutorial biedt stapsgewijze instructies en C#-codevoorbeelden om het proces te demonstreren.
 

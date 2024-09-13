@@ -124,12 +124,12 @@ formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 TextFragment textFragment = new TextFragment("Hello world");
 if (fontFile != "")
 {
-	// TrueType 글꼴을 스트림 객체에 로드합니다.
+	//TrueType 글꼴을 스트림 객체에 로드합니다.
 	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
 	{
 		// 텍스트 문자열에 대한 글꼴 이름을 설정합니다.
 		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		//텍스트 조각의 위치를 지정하세요
+		// 텍스트 조각의 위치를 지정하세요
 		textFragment.Position = new Position(100, 600);
 		//현재 조각의 TextFormattingOptions를 미리 정의된 것(LineSpacingMode.FullSize를 가리킴)으로 설정합니다.
 		textFragment.TextState.FormattingOptions = formattingOptions;

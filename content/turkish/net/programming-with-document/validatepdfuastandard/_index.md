@@ -2,84 +2,113 @@
 title: PDF UA Standardını doğrulayın
 linktitle: PDF UA Standardını doğrulayın
 second_title: Aspose.PDF for .NET API Referansı
-description: C# kodunu kullanarak PDF/UA standardını doğrulamak için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrenin. Adım adım kılavuz.
+description: Aspose.PDF for .NET'i kullanarak adım adım kılavuzumuz ve detaylı açıklamalarımızla PDF/UA erişilebilirlik standardı için bir PDF'nin nasıl doğrulanacağını öğrenin.
 type: docs
 weight: 400
 url: /tr/net/programming-with-document/validatepdfuastandard/
 ---
-Aspose.PDF for .NET, PDF belgeleriyle çalışmak için çeşitli özellikler sağlayan güçlü bir kütüphanedir. Özelliklerinden biri de PDF belgelerini PDF/UA standart uyumluluğu için doğrulama yeteneğidir. Bu makalede, C# kodunu kullanarak PDF/UA standart uyumluluğunu elde etmek ve doğrulamak için Aspose.PDF for .NET'in nasıl kullanılacağına dair adım adım rehberlik sağlayacağız.
+## giriiş
 
-## Adım 1: Belge Dizin Yolunu Tanımlama
+Günümüzün dijital dünyasında, belgelerin erişilebilirlik standartlarını karşıladığından emin olmak belge yönetiminin kritik bir yönüdür. Bu standartlardan biri de PDF'lerin engelli kişiler için erişilebilir olmasını sağlayan PDF/UA'dır (Evrensel Erişilebilirlik). Bir geliştirici olarak, .NET için Aspose.PDF kullanarak PDF'leri PDF/UA standardı için doğrulama sürecini otomatikleştirebilirsiniz.
 
-Sonra, PDF belgemizin bulunduğu dizine giden yolu tanımlamamız gerekiyor. Bunu aşağıdaki kod parçacığını ekleyerek yapabilirsiniz:
+### Ön koşullar
 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-```
+Koda dalmadan önce, başlamak için ihtiyacınız olan her şeye sahip olduğunuzdan emin olalım.
 
-"BELGE DİZİNİNİZ" ifadesini PDF belge dizininizin gerçek yoluyla değiştirin.
+1.  .NET için Aspose.PDF: Öncelikle, şunu indirmeniz ve yüklemeniz gerekir:[.NET için Aspose.PDF](https://releases.aspose.com/pdf/net/) kütüphane. Bu kütüphane, PDF dosyalarıyla çalışmak için güçlü bir API'dir ve çeşitli şekillerde PDF'ler oluşturmanıza, değiştirmenize ve doğrulamanıza olanak tanır.
+2. Geliştirme Ortamı: .NET geliştirme ortamınızın kurulu olduğundan emin olun. Kodunuzu yazmak ve çalıştırmak için Visual Studio gibi araçları kullanabilirsiniz.
+3. C# Temel Bilgisi: Kod örnekleri C# ile yazıldığı için bu dildeki temel programlama kavramlarına aşina olmanız gerekir.
+4.  PDF Belgesi: Doğrulamak istediğiniz hazır bir örnek PDF belgeniz olsun. Bu eğitimde, şu adlı bir dosyayı kullanacağız:`ValidatePDFUAStandard.pdf`.
+5.  Geçici Lisans: Aspose.PDF'nin deneme sürümünü kullanıyorsanız, bir[geçici lisans](https://purchase.aspose.com/temporary-license/) API'nin tüm yeteneklerinin kilidini açmak için.
 
-## Adım 2: PDF Belgesini Açma
+## Paketleri İçe Aktar
 
-Belge dizin yolunu tanımladıktan sonra aşağıdaki kodu kullanarak PDF belgemizi açabiliriz:
-
-```csharp
-Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
-```
-
- Bu kod yeni bir kod oluşturur`Document` Belirtilen dizinde bulunan PDF dosyamızdaki nesne.
-
-## Adım 3: PDF/UA için PDF'yi doğrulama
-
-Artık PDF belgesini açtığımıza göre, belgeyi PDF/UA uyumluluğu açısından doğrulamak için Aspose.PDF for .NET'i kullanabiliriz. Aşağıdaki kod parçası işi görecektir:
+Kod yazmaya başlamadan önce, gerekli paketleri içe aktardığınızdan emin olun. İçe aktarmanız gereken ad alanlarına ilişkin kısa bir genel bakış:
 
 ```csharp
-bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1);
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
- Bu kod PDF belgesini PDF/UA standart uyumluluğu açısından doğrular ve belirtilen XML dosyasında bir doğrulama raporu oluşturur. Doğrulama sonucu şurada saklanır:`isValidPdfUa` Boolean veri tipinde olan değişken.
+Bu ad alanları, Aspose.PDF for .NET kullanarak PDF'lerle çalışmak ve doğrulama işlemlerini gerçekleştirmek için gereklidir.
 
-### .NET için Aspose.PDF kullanarak Get Validate PDFUAstandard için örnek kaynak kodu
+Bir PDF'yi PDF/UA standardına göre doğrulama sürecini basit ve uygulanması kolay adımlara bölelim.
+
+## Adım 1: Dosya Yollarını Ayarlayın
+
+Yapmamız gereken ilk şey PDF dosyalarımızın saklandığı dizine giden yolu tanımlamaktır. Bu, doğrulanacak PDF'nin bulunacağı ve doğrulama sonuçlarının kaydedileceği konumdur.
+ Bu adımda,`dataDir` PDF dosyasını içeren klasörü işaret eden değişken. İşte kod:
 
 ```csharp
 // Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+ Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` PDF dosyanızın saklandığı klasörün gerçek yolunu belirtin.
+
+## Adım 2: PDF Belgesini Yükleyin
+
+ Dosya yolunu ayarladıktan sonraki adım, doğrulamak istediğiniz PDF belgesini açmaktır. Aspose.PDF, belgeyi yüklemeyi kolaylaştırır`Document` sınıf.
+
+Belgeyi şu şekilde yükleyeceksiniz:
+
+```csharp
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
-
-// PDF/UA için PDF'yi doğrula
-bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1); 
 ```
+
+ Bu örnekte, adlı bir PDF dosyasını açıyoruz`ValidatePDFUAStandard.pdf` . Bu dosyanın belirtilen dizinde olduğundan emin olun. Dosyanızın farklı bir adı varsa, şunu değiştirin`"ValidatePDFUAStandard.pdf"` doğru dosya adı ile.
+
+## Adım 3: PDF'yi PDF/UA Standardı için doğrulayın
+
+ Şimdi önemli kısım geliyor - PDF'nin PDF/UA standardına uygun olup olmadığını kontrol etmek için doğrulama. Bu, şu şekilde çağrılarak gerçekleştirilir:`Validate`yöntemi ve doğrulama sonuçları için çıktı dosyasının belirtilmesi.
+
+PDF belgesini doğrulamak için kod şu şekilde:
+
+```csharp
+// PDF/UA için PDF'yi doğrula
+bool isValidPdfUa = pdfDocument.Validate(dataDir + "validation-result-UA.xml", PdfFormat.PDF_UA_1);
+```
+
+ Bu kodda,`Validate` yöntem, belgeyi PDF/UA standardına göre kontrol eder (`PdfFormat.PDF_UA_1` ). Doğrulamanın sonuçları, adlı bir XML dosyasına kaydedilecektir.`validation-result-UA.xml`.
+
+### Adım 4.1: Doğrulama Durumunu Görüntüle
+
+Doğrulamanın sonucunu şu şekilde çıktı olarak alabilirsiniz:
+
+```csharp
+if (isValidPdfUa)
+{
+    Console.WriteLine("The PDF document complies with PDF/UA standard.");
+}
+else
+{
+    Console.WriteLine("The PDF document does not comply with PDF/UA standard.");
+}
+```
+
+Bu, PDF'nin standarda uygun olup olmadığını bildiren bir mesajı konsola yazdıracaktır.
 
 ## Çözüm
 
-Engelliler de dahil olmak üzere tüm kullanıcıların PDF belgelerine erişebilmesini sağlamak, kapsayıcı ve kullanıcı dostu içerik oluşturmak için hayati önem taşır. Aspose.PDF for .NET, PDF belgelerini PDF/UA standardına göre doğrulama sürecini basitleştirerek geliştiricilerin daha erişilebilir PDF'ler oluşturmasına yardımcı olur.
+PDF'leri erişilebilirlik açısından doğrulamak, günümüzün dijital öncelikli ortamında hayati önem taşır. PDF'lerinizin PDF/UA standardını karşıladığından emin olarak, içeriğinizi engelli bireyler de dahil olmak üzere herkes için erişilebilir hale getirirsiniz. .NET için Aspose.PDF'yi kullanarak, süreç basit ve verimlidir ve belgelerinizi hızla doğrulamanıza olanak tanır.
 
-### SSS
 
-#### S: PDF/UA standardı nedir ve PDF belgelerini buna göre doğrulamak neden önemlidir?
+## SSS
 
-A: "Evrensel Erişilebilirlik" olarak da bilinen PDF/UA standardı, PDF belgelerinin görme engelliler gibi engelli kişiler tarafından erişilebilir olmasını sağlar. PDF belgelerinin PDF/UA standardına uygunluğunun doğrulanması, daha geniş bir kitleye kapsayıcı ve erişilebilir belgeler oluşturulmasına yardımcı olur.
+### PDF/UA nedir ve neden önemlidir?  
+PDF/UA, Evrensel Erişilebilirlik anlamına gelir ve PDF belgelerinin engelli kullanıcılar için erişilebilir olmasını sağlayan bir standarttır. Yasal gerekliliklere uyum sağlamak ve içeriği herkes için erişilebilir kılmak için önemlidir.
 
-#### S: C# kodunda belge dizin yolunu nasıl tanımlarım?
+### Aspose.PDF for .NET'i kullanmak için lisansa ihtiyacım var mı?  
+ Evet, Aspose.PDF'nin tam işlevselliği için bir lisansa ihtiyacı vardır. Ancak, bir lisans talep edebilirsiniz[geçici lisans](https://purchase.aspose.com/temporary-license/) veya test amaçlı ücretsiz denemeyi kullanın.
 
-A: PDF belgenizin bulunduğu dizine giden yolu tanımlamak için aşağıdaki kod parçacığını kullanın:
+### Aspose.PDF for .NET ile diğer PDF standartlarını doğrulayabilir miyim?  
+Kesinlikle! Aspose.PDF, PDF/A ve PDF/X dahil olmak üzere çeşitli standartlar için doğrulamayı destekler.
 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-```
+### Aspose.PDF for .NET için dokümanları nerede bulabilirim?  
+ Şuna başvurabilirsiniz:[belgeleme](https://reference.aspose.com/pdf/net/) Detaylı bilgi ve örnekler için.
 
-"BELGE DİZİNİNİZ" ifadesini PDF belgenizin bulunduğu dizinin gerçek yoluyla değiştirin.
-
-#### S: Aspose.PDF for .NET'i kullanarak PDF belgelerini diğer PDF standartlarına göre doğrulayabilir miyim?
-
- A: Evet, Aspose.PDF for .NET, PDF/A ve PDF/X standartları dahil olmak üzere çeşitli PDF standartlarına göre PDF belgelerinin doğrulanması için destek sağlar. Kullanırken istediğiniz standardı belirtebilirsiniz.`Validate` Yöntem.
-
-#### S: Bir PDF belgesinin PDF/UA doğrulamasından geçip geçmediğini nasıl kontrol edebilirim?
-
- A: Aradıktan sonra`Validate` yöntem, boolean değişkeni`isValidPdfUa` doğrulama sonucunu saklayacaktır. Eğer değeri`isValidPdfUa` dır`true`, PDF belgesi PDF/UA standardına uygundur; aksi takdirde uyumlu değildir.
-
-#### S: PDF/UA uyumluluğu için herhangi bir özel erişilebilirlik gereksinimi var mı?
-
-C: Evet, PDF/UA uyumluluğu belgelerin belirli erişilebilirlik ölçütlerini karşılamasını gerektirir; örneğin, görseller için alternatif metin, mantıksal okuma sırası, uygun belge yapısı ve metin olmayan içerik için metin eşdeğerleri sağlanması gibi.
+### Doğrulama sonuçlarının çıktı biçimi nedir?  
+Doğrulama sonuçları, PDF/UA standardıyla ilgili herhangi bir uyumluluk sorunu hakkında ayrıntılı bilgi sağlayan bir XML dosyasına kaydedilir.

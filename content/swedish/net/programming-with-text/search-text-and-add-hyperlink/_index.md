@@ -1,7 +1,7 @@
 ---
 title: Sök text och lägg till hyperlänk
 linktitle: Sök text och lägg till hyperlänk
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du söker efter text i en PDF, lägger till hyperlänkar till den hittade texten och sparar det modifierade dokumentet med Aspose.PDF för .NET.
 type: docs
 weight: 450
@@ -97,7 +97,7 @@ foreach (TextFragment textFragment in absorber.TextFragments)
 }
 ```
 
- Ersätta`"http://www.aspose.com"` med önskad hyperlänks-URL.
+ Ersätta`"http://www.aspose.com"` med önskad hyperlänk-URL.
 
 ## Steg 9: Spara och stäng det ändrade dokumentet
 

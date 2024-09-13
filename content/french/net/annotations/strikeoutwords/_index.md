@@ -9,7 +9,7 @@ url: /fr/net/annotations/strikeoutwords/
 ---
 ## Introduction
 
-Avez-vous déjà eu besoin de mettre en valeur un texte spécifique dans un PDF en le barrant ? Que vous révisiez des documents, marquiez du texte ou ayez simplement besoin de surligner certaines sections, barrer des mots peut être un outil précieux. Dans ce didacticiel, nous verrons comment procéder à l'aide d'Aspose.PDF pour .NET. Ce guide complet vous guidera à travers chaque étape, en vous assurant de disposer de toutes les informations nécessaires pour implémenter efficacement cette fonctionnalité dans vos applications .NET. 
+Avez-vous déjà eu besoin de mettre en valeur un texte spécifique dans un PDF en le barrant ? Que vous révisiez des documents, annotiez du texte ou que vous ayez simplement besoin de surligner certaines sections, barrer des mots peut être un outil précieux. Dans ce didacticiel, nous verrons comment procéder à l'aide d'Aspose.PDF pour .NET. Ce guide complet vous guidera à travers chaque étape, en vous assurant de disposer de toutes les informations nécessaires pour implémenter efficacement cette fonctionnalité dans vos applications .NET. 
 
 ## Prérequis
 

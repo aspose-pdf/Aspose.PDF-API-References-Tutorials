@@ -47,7 +47,7 @@ taggedContent.SetLanguage("fr-FR");
 Τώρα ας πάρουμε το στοιχείο δομής ρίζας του εγγράφου PDF.
 
 ```csharp
-//Αποκτήστε το στοιχείο δομής ρίζας
+// Αποκτήστε το στοιχείο δομής ρίζας
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

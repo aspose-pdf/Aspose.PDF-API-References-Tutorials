@@ -152,7 +152,7 @@ A: La creación de una estructura de elementos de árbol en un documento PDF med
 
 A: El ejemplo de código demuestra cómo crear una estructura jerárquica de elementos lógicos utilizando el`SectElement`, `DivElement` , y`ArtElement` Clases proporcionadas por Aspose.PDF. Estos elementos están organizados como nodos padre e hijo, formando una estructura similar a un árbol dentro del documento.
 
-####  P: ¿Cómo funciona el`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
+#### P: ¿Cómo funciona el`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
 
  A: El`TaggedContent` La propiedad proporciona acceso a las características de contenido etiquetado del documento PDF. Esto le permite crear y manipular elementos estructurados, definir sus relaciones y organizarlos jerárquicamente, mejorando la estructura y la accesibilidad del documento.
 
@@ -168,7 +168,7 @@ A: El ejemplo de código demuestra cómo crear una estructura jerárquica de ele
 
 A: La organización jerárquica de los elementos mejora la organización, la navegación y la semántica de los documentos. Permite que los usuarios y las tecnologías de asistencia comprendan la estructura y las relaciones del contenido, lo que mejora la experiencia general del usuario.
 
-####  P: ¿Cómo funciona el`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
+#### P: ¿Cómo funciona el`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
 
  A: El`Save` El método guarda el documento PDF junto con la estructura jerárquica creada mediante el`AppendChild` método. Esto garantiza que la estructura permanezca intacta, haciendo que el documento sea accesible y esté bien organizado.
 

@@ -2,145 +2,138 @@
 title: PDF 파일에서 올바른 비밀번호 확인
 linktitle: PDF 파일에서 올바른 비밀번호 확인
 second_title: .NET API 참조를 위한 Aspose.PDF
-description: Aspose.PDF for .NET을 사용하여 PDF 파일에서 올바른 비밀번호를 확인하는 방법을 알아보세요.
+description: Aspose.PDF for .NET을 사용하여 올바른 비밀번호로 PDF 파일의 잠금을 해제하세요. 올바른 비밀번호를 쉽게 식별하는 방법을 알아보세요.
 type: docs
 weight: 30
 url: /ko/net/programming-with-security-and-signatures/determine-correct-password/
 ---
-이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 PDF 파일에서 올바른 비밀번호를 결정하는 과정을 안내해 드리겠습니다. 이 기능을 사용하면 PDF 파일이 비밀번호로 보호되어 있는지 확인하고 미리 정의된 목록에서 올바른 비밀번호를 찾을 수 있습니다.
+## 소개
 
-## 1단계: 필수 조건
+PDF 파일을 다룰 때, 문서를 열려고 하다가 암호 장벽에 부딪히는 짜증나는 순간을 모두 겪어보았을 것입니다. 이는 생산적인 문서 관리로 이어질 수도 있고, 좌절스러운 대치로 이어질 수도 있는 일반적인 문제입니다. 다행히도 강력한 .NET용 Aspose.PDF 라이브러리를 사용하면 제어권을 되찾고 PDF 파일이 암호로 보호되어 있는지, 그렇다면 어떤 암호로 잠금을 해제해야 하는지 확인할 수 있습니다. 이 가이드에서는 Aspose.PDF를 사용하여 보호된 PDF에 대한 올바른 암호를 식별하는 과정을 안내하며, 쉽게 따를 수 있는 단계도 함께 제공합니다.
 
-시작하기 전에 다음 전제 조건이 충족되었는지 확인하세요.
+## 필수 조건
 
-- C# 프로그래밍 언어에 대한 기본 지식
-- 컴퓨터에 Visual Studio 설치하기
-- .NET용 Aspose.PDF 라이브러리 설치됨
+튜토리얼을 살펴보기에 앞서, 시작하는 데 필요한 모든 것이 있는지 확인해 보겠습니다. 
 
-## 2단계: 환경 설정
+### 소프트웨어 및 도구
 
-시작하려면 다음 단계에 따라 개발 환경을 설정하세요.
+1. .NET Framework 또는 .NET Core: 개발 환경에 .NET Framework 또는 .NET Core가 설치되어 있는지 확인하세요.
+2.  .NET용 Aspose.PDF: 프로젝트에서 Aspose.PDF 라이브러리를 사용할 수 있어야 합니다. 다운로드할 수 있습니다.[여기](https://releases.aspose.com/pdf/net/).
+   
+### 개발 환경
 
-1. Visual Studio를 열고 새로운 C# 프로젝트를 만듭니다.
-2. 필요한 네임스페이스를 코드 파일에 가져옵니다.
+1. Visual Studio: 통합 개발 환경(IDE)으로 사용되므로 Visual Studio가 설치되어 있는지 확인하세요.
+2. C#에 대한 기본 지식: C# 프로그래밍에 익숙하면 코드 조각을 이해하고 Aspose.PDF 라이브러리와 상호 작용하는 방식을 이해하는 데 도움이 됩니다.
+
+### API 및 라이센스
+
+-  Aspose.PDF의 모든 기능을 사용하려면 다음을 고려하세요.[임시 면허](https://purchase.aspose.com/temporary-license/) 또는[영구 라이센스](https://purchase.aspose.com/buy).
+  
+모든 것이 설정되면, 암호로 보호된 PDF의 비밀을 풀 준비가 되었습니다!
+
+## 패키지 가져오기
+
+Aspose.PDF를 시작하려면 필요한 패키지를 가져와야 합니다. 효과적으로 수행하는 방법은 다음과 같습니다.
+
+### 사용 지침 추가
+
+C# 프로젝트 파일에서 코드 파일 맨 위에 필요한 네임스페이스를 포함했는지 확인하세요.
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
+using Aspose.Pdf.Facades;
+using System;
 ```
 
-## 3단계: 소스 PDF 파일 로딩
+### Aspose.PDF 패키지 설치
 
-첫 번째 단계는 검증하려는 원본 PDF 파일을 업로드하는 것입니다. 이 예에서, 우리는 지정된 디렉토리에 "IsPasswordProtected.pdf"라는 PDF 파일이 있다고 가정합니다.
+아직 설치하지 않았다면 NuGet 패키지 관리자를 통해 Aspose.PDF 라이브러리를 설치할 수 있습니다. 패키지 관리자 콘솔을 열고 다음을 실행하기만 하면 됩니다.
+
+```bash
+Install-Package Aspose.PDF
+```
+
+이 명령은 Aspose.PDF를 프로젝트에 가져와 설치하여 성공을 준비합니다.
+
+이제 PDF 파일의 올바른 비밀번호를 식별하는 데 관련된 주요 단계를 분석해 보겠습니다. 명확성을 위해 샘플 구현을 단계별로 살펴보겠습니다.
+
+## 1단계: 파일 경로 설정
+
+ 무엇보다도 먼저 작업 중인 PDF 파일의 경로를 지정해야 합니다. 다음을 반드시 바꾸십시오.`"YOUR DOCUMENTS DIRECTORY"` PDF 파일이 있는 실제 경로를 사용합니다.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
+```
+
+## 2단계: 소스 PDF 파일 로드
+
+ 다음으로 활용하세요`PdfFileInfo` 소스 PDF 파일을 로드하려면:
+
+```csharp
 PdfFileInfo info = new PdfFileInfo();
 info.BindPdf(dataDir + "IsPasswordProtected.pdf");
 ```
 
-자리 표시자를 PDF 파일의 실제 위치로 바꿔야 합니다.
+ 이 단계에서는 PDF 파일을 다음에 바인딩합니다.`info` 객체를 통해 해당 객체의 속성에 접근할 수 있습니다.
 
-## 4단계: 소스 PDF 암호화 결정
+## 3단계: PDF가 암호화되었는지 확인
 
- 원본 PDF 파일을 업로드한 후에는 다음을 사용하여 암호화되었는지 확인할 수 있습니다.`IsEncrypted` 의 방법`PdfFileInfo` 물체.
-
-```csharp
-Console.WriteLine("The file is password protected: " + info.IsEncrypted);
-```
-
-이 문장은 PDF 파일이 암호로 보호되어 있는지 여부를 표시합니다.
-
-## 5단계: 올바른 비밀번호 찾기
-
-다음으로, 미리 정의된 비밀번호 목록을 사용하여 올바른 비밀번호를 검색합니다. 목록에 있는 각 비밀번호를 살펴보고 해당 비밀번호로 PDF 문서를 로드하려고 합니다.
+이제 PDF 문서가 실제로 암호로 보호되어 있는지 확인할 시간입니다.
 
 ```csharp
-String[] passwords = new String[5] { "test", "test1", "test2", "test3", "sample" };
-for (int passwordcount = 0; passwordcount < passwords.Length; passwordcount++)
-{
-try
-{
-Document doc = new Document(dataDir + "IsPasswordProtected.pdf", passwords[passwordcount]);
-if (doc.Pages.Count > 0)
-Console.WriteLine("The document contains " + doc.Pages.Count + " pages.");
-}
-catch (InvalidPasswordException)
-{
-Console.WriteLine("The password " + passwords[passwordcount] + " is not correct.");
-}
-}
-```
-
-이 루프는 목록에서 각 pass 단어를 테스트합니다. 암호가 맞으면 문서의 페이지 수가 표시됩니다. 그렇지 않으면 암호가 맞지 않다는 메시지가 표시됩니다.
-
-
-### .NET용 Aspose.PDF를 사용하여 올바른 비밀번호를 확인하기 위한 샘플 소스 코드 
-```csharp
-// 문서 디렉토리의 경로입니다.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";            
-// 소스 PDF 파일 로드
-PdfFileInfo info = new PdfFileInfo();
-info.BindPdf(dataDir + "IsPasswordProtected.pdf");
-//소스 PDF가 암호화되었는지 확인
 Console.WriteLine("File is password protected " + info.IsEncrypted);
+```
+
+ 확인하여`IsEncrypted` 속성, 문서의 잠금 상태를 확인할 수 있습니다.`true`, 그러면 코드를 해독해야 합니다!
+
+## 4단계: 가능한 비밀번호 목록 준비
+
+비밀번호 찾기를 진행하려면 테스트하려는 잠재적인 비밀번호가 포함된 문자열 배열을 준비하세요.
+
+```csharp
 String[] passwords = new String[5] { "test", "test1", "test2", "test3", "sample" };
+```
+
+사용자의 필요나 가장 가능성이 높은 비밀번호에 따라 이 배열을 수정할 수 있습니다.
+
+## 5단계: 각 비밀번호로 PDF 열기 시도
+
+이제 각 비밀번호를 반복해서 입력해서 PDF 파일을 열어보겠습니다. 
+
+```csharp
 for (int passwordcount = 0; passwordcount < passwords.Length; passwordcount++)
 {
-	try
-	{
-		Document doc = new Document(dataDir + "IsPasswordProtected.pdf", passwords[passwordcount]);
-		if (doc.Pages.Count > 0)
-			Console.WriteLine("Number of Page in document are = " + doc.Pages.Count);
-	}
-	catch (InvalidPasswordException)
-	{
-		Console.WriteLine("Password = " + passwords[passwordcount] + "  is not correct");
-	}
+    try
+    {
+        Document doc = new Document(dataDir + "IsPasswordProtected.pdf", passwords[passwordcount]);
+        if (doc.Pages.Count > 0)
+            Console.WriteLine("Number of Page in document are = " + doc.Pages.Count);
+    }
+    catch (InvalidPasswordException)
+    {
+        Console.WriteLine("Password = " + passwords[passwordcount] + "  is not correct");
+    }
 }
 ```
 
 ## 결론
 
-축하합니다! Aspose.PDF for .NET을 사용하여 PDF 파일의 올바른 비밀번호를 성공적으로 확인했습니다. 이 튜토리얼에서는 파일 암호화 확인부터 미리 정의된 목록에서 올바른 비밀번호를 찾는 것까지 단계별 프로세스를 다루었습니다. 이제 이 기능을 사용하여 PDF 파일의 올바른 비밀번호를 확인하고 찾을 수 있습니다.
+이제 Aspose.PDF for .NET을 사용하여 암호로 보호된 PDF 파일에 대한 올바른 암호를 결정하는 방법을 배웠습니다. 이러한 종류의 기능은 잠긴 PDF 문서를 자주 다루는 사람들에게 생명의 은인입니다. Aspose.PDF에서 제공하는 강력한 API 덕분에 프로세스가 간단합니다. 전문적인 용도이든 개인 프로젝트이든 이 기술을 마스터하면 시간과 좌절을 줄일 수 있습니다.
 
-### PDF 파일에서 올바른 비밀번호를 확인하기 위한 FAQ
+## 자주 묻는 질문
 
-#### 질문: 이 튜토리얼의 목적은 무엇인가요?
+### .NET용 Aspose.PDF란 무엇인가요?
+.NET용 Aspose.PDF는 개발자가 프로그래밍 방식으로 PDF 문서를 만들고, 조작하고, 관리할 수 있는 라이브러리입니다.
 
-A: 이 튜토리얼은 Aspose.PDF for .NET을 사용하여 PDF 파일의 올바른 비밀번호를 결정하는 과정을 안내합니다. 이 기능을 사용하면 PDF 파일이 비밀번호로 보호되어 있는지 확인하고 미리 정의된 목록에서 올바른 비밀번호를 찾을 수 있습니다.
+### Aspose.PDF를 무료로 사용해 볼 수 있나요?
+ 네, Aspose.PDF의 무료 평가판을 다운로드할 수 있습니다.[여기](https://releases.aspose.com).
 
-#### 질문: 시작하기 전에 어떤 전제 조건이 필요한가요?
+### PDF 비밀번호를 잊어버린 경우 어떻게 해야 하나요?
+잠재적인 비밀번호가 여러 개 있는 경우 위에 설명된 방법을 사용하여 잠금 해제를 시도할 수 있습니다. 그러나 법적 지침을 준수해야 합니다.
 
-A: 시작하기 전에 C# 프로그래밍 언어에 대한 기본적인 이해가 있는지, 컴퓨터에 Visual Studio가 설치되어 있는지, 그리고 .NET용 Aspose.PDF 라이브러리가 설치되어 있는지 확인하세요.
+### 보호된 PDF의 잠금을 해제하는 것은 합법입니까?
+PDF 잠금 해제는 콘텐츠에 액세스할 권한이 있는 경우에만 합법적입니다. 보안을 우회하려고 하기 전에 항상 권한이 있는지 확인하세요.
 
-#### 질문: 개발 환경을 어떻게 설정하나요?
-
-대답: Visual Studio에서 새 C# 프로젝트를 만들고 필요한 네임스페이스를 가져오는 것을 포함하여 개발 환경을 설정하려면 제공된 단계를 따르세요.
-
-#### 질문: PDF 파일이 암호화되었는지 어떻게 알 수 있나요?
-
- A: 사용하세요`PdfFileInfo` 클래스를 사용하여 소스 PDF 파일을 바인딩합니다. 그런 다음 다음을 사용합니다.`IsEncrypted`PDF 파일이 암호로 보호되어 있는지 확인하는 속성입니다.
-
-#### 질문: PDF 파일의 올바른 비밀번호를 어떻게 찾을 수 있나요?
-
-A: PDF 파일이 암호화되었는지 확인한 후, 미리 정의된 비밀번호 목록을 사용하여 올바른 비밀번호를 찾을 수 있습니다. 제공된 샘플 코드는 목록을 반복하고 각 비밀번호를 시도하고 비밀번호가 올바른지 확인하는 방법을 보여줍니다.
-
-#### 질문: 올바른 비밀번호가 발견되면 어떻게 되나요?
-
-답변: 올바른 비밀번호가 발견되면 샘플 코드는 PDF 문서의 페이지 번호를 표시합니다.
-
-#### 질문: 비밀번호가 정확하지 않으면 어떻게 하나요?
-
- A: 비밀번호가 올바르지 않으면 샘플 코드는 다음을 포착합니다.`InvalidPasswordException` 비밀번호가 올바르지 않다는 메시지가 표시됩니다.
-
-#### 질문: 다른 비밀번호 목록을 사용할 수 있나요?
-
- A: 네, 수정할 수 있습니다.`passwords` 테스트하려는 비밀번호를 포함하려면 샘플 코드에 배열을 추가하세요.
-
-#### 질문: 비밀번호가 성공적으로 확인되었는지 어떻게 알 수 있나요?
-
-답변: 샘플 코드가 암호가 포함된 PDF 문서를 성공적으로 로드하고 페이지 번호를 표시하면 올바른 암호가 확인된 것입니다.
-
-#### 질문: 테스트하는 동안 비밀번호의 보안을 어떻게 보장할 수 있나요?
-
-A: 미리 정의된 비밀번호 목록을 사용할 때는 주의하고, 테스트 목적으로 민감하거나 기밀인 비밀번호를 사용하지 마세요. 또한, 애플리케이션을 배포하기 전에 테스트 코드를 제거하거나 수정하세요.
+### Aspose.PDF에 대한 지원은 어디서 받을 수 있나요?
+문의사항 및 지원은 다음을 방문하세요.[Aspose 지원 포럼](https://forum.aspose.com/c/pdf/10).

@@ -87,7 +87,7 @@ DivElement div31 = taggedContent.CreateDivElement();
 sect3.AppendChild(div31);
 ```
 
-## Étape 6 : enregistrement du document PDF balisé
+## Étape 6 : Enregistrer le document PDF balisé
  Une fois que nous avons créé la structure de l'élément, nous pouvons enregistrer le document PDF. Utilisez le`Save` méthode de la`document` objet pour spécifier le chemin et le nom du fichier PDF à enregistrer. Voici le code de cette étape :
 
 ```csharp
@@ -152,7 +152,7 @@ A : La création d'une structure d'éléments arborescents dans un document PD
 
 A : L'exemple de code montre comment créer une structure hiérarchique d'éléments logiques à l'aide de`SectElement`, `DivElement` , et`ArtElement` classes fournies par Aspose.PDF. Ces éléments sont organisés en nœuds parents et enfants, formant une structure arborescente au sein du document.
 
-####  Q : Comment fonctionne le`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
+####  : Comment fonctionne le`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
 
  A : Le`TaggedContent` La propriété permet d'accéder aux fonctionnalités de contenu balisé du document PDF. Cela vous permet de créer et de manipuler des éléments structurés, de définir leurs relations et de les organiser hiérarchiquement, améliorant ainsi la structure et l'accessibilité du document.
 
@@ -168,7 +168,7 @@ A : L'exemple de code montre comment créer une structure hiérarchique d'élé
 
 A : L'organisation hiérarchique des éléments améliore l'organisation, la navigation et la sémantique des documents. Elle permet aux utilisateurs et aux technologies d'assistance de comprendre la structure et les relations du contenu, améliorant ainsi l'expérience globale de l'utilisateur.
 
-####  Q : Comment fonctionne le`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
+####  : Comment fonctionne le`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
 
  A : Le`Save` La méthode enregistre le document PDF avec la structure hiérarchique créée à l'aide de la`AppendChild` méthode. Cela garantit que la structure reste intacte, rendant le document accessible et bien organisé.
 

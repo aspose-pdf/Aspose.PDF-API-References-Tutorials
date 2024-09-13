@@ -35,7 +35,7 @@ using Aspose.Pdf;
 - Εγκατάσταση Aspose.PDF για .NET: Χρησιμοποιήστε το NuGet Package Manager για να εγκαταστήσετε την πιο πρόσφατη έκδοση της βιβλιοθήκης Aspose.PDF για .NET. Αυτή η βιβλιοθήκη παρέχει όλες τις λειτουργίες που χρειάζεστε για χειρισμό PDF.
 
 1. Ανοίξτε το Visual Studio.
-2.  Μεταβείτε στο`Tools` ->`NuGet Package Manager` ->`Manage NuGet Packages for Solution`.
+2.  Πηγαίνετε στο`Tools` ->`NuGet Package Manager` ->`Manage NuGet Packages for Solution`.
 3. Αναζητήστε το Aspose.PDF για .NET και εγκαταστήστε το.
 
 ## Βήμα 2: Φορτώστε το έγγραφο PDF

@@ -13,7 +13,7 @@ url: /zh/net/programming-with-text/extract-text-page/
 开始之前，请确保您已准备好以下物品：
 
 - 您的机器上安装的 Visual Studio 或任何其他 C# 编译器。
-- Aspose.PDF for .NET 库。您可以从 Aspose 官方网站下载它，或者使用 NuGet 等包管理器来安装它。
+- Aspose.PDF for .NET 库。您可以从 Aspose 官方网站下载它，也可以使用 NuGet 等包管理器来安装它。
 
 ## 步骤 1：设置项目
 1. 在您首选的开发环境中创建一个新的 C# 项目。
@@ -124,4 +124,4 @@ using System.IO;
 
 #### 问：本教程的重点是什么？
 
-答：通过本教程，您学会了如何使用 Aspose.PDF for .NET 从 PDF 文档的特定页面中提取文本。提取的文本已保存到指定的输出文件中，使您能够定位和分析特定页面的文本内容。
+答：通过本教程，您学会了如何使用 Aspose.PDF for .NET 从 PDF 文档的特定页面中提取文本。提取的文本已保存到指定的输出文件中，使您能够定位和分析特定页面中的文本内容。

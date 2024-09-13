@@ -77,7 +77,7 @@ Aspose.Pdf.Cell cell = row.Cells.Add();
 
 ## Bước 6: Thêm văn bản và hình ảnh vào ô
 
-Tiếp theo, chúng ta hãy thêm văn bản và hình ảnh SVG vào các ô của bảng. Chúng ta sẽ thêm văn bản "First cell" vào ô đầu tiên và hình ảnh SVG vào ô thứ hai. Thêm mã sau:
+Tiếp theo, hãy thêm văn bản và hình ảnh SVG vào các ô của bảng. Chúng ta sẽ thêm văn bản "First cell" vào ô đầu tiên và hình ảnh SVG vào ô thứ hai. Thêm mã sau:
 
 ```csharp
 // Thêm đoạn văn bản vào bộ sưu tập đoạn văn của đối tượng ô

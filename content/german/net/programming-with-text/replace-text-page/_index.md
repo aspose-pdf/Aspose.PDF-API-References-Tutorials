@@ -62,7 +62,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## Schritt 6: Extrahierte Textfragmente abrufen
 
-Holen Sie sich die extrahierten Textfragmente mit dem`TextFragments` Eigentum der`TextFragmentAbsorber` Objekt:
+ Holen Sie sich die extrahierten Textfragmente mit dem`TextFragments` Eigentum der`TextFragmentAbsorber` Objekt:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -165,7 +165,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 #### F: Was passiert, wenn der Suchbegriff auf der angegebenen Seite nicht gefunden wird?
 
- A: Wenn der Suchbegriff auf der angegebenen Seite nicht gefunden wird,`TextFragmentCollection` ist leer und es werden keine Ersetzungen vorgenommen. Stellen Sie sicher, dass die Suchphrase auf der Zielseite vorhanden ist.
+A: Wenn der Suchbegriff auf der angegebenen Seite nicht gefunden wird,`TextFragmentCollection` ist leer und es werden keine Ersetzungen vorgenommen. Stellen Sie sicher, dass die Suchphrase auf der Zielseite vorhanden ist.
 
 #### F: Wie kann ich den Ersetzungstext für jedes Textfragment anpassen?
 

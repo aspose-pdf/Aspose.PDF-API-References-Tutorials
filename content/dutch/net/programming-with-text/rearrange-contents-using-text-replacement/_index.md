@@ -34,7 +34,7 @@ Document doc = new Document(dataDir + "ExtractTextPage.pdf");
 
 ## Stap 3: Tekstfragmenten zoeken en vervangen
 
- Wij creëren een`TextFragmentAbsorber` object met een reguliere expressie om te zoeken naar specifieke tekstfragmenten. Vervolgens itereren we door de tekstfragmenten, passen we hun lettertype, grootte, kleur aan en vervangen we de tekst.
+ Wij creëren een`TextFragmentAbsorber` object met een reguliere expressie om te zoeken naar specifieke tekstfragmenten. Vervolgens itereren we door de tekstfragmenten, passen hun lettertype, grootte, kleur aan en vervangen de tekst.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("[TextFragmentAbsorber,companyname,Textbox,50]");

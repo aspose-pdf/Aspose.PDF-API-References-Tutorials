@@ -149,7 +149,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 
 		if (opSaveState != null)
 		{
-			//Vorherigen Status speichern und aktuellen Status an den Anfang des Stapels verschieben
+			// Vorherigen Status speichern und aktuellen Status an den Anfang des Stapels verschieben
 			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
@@ -243,7 +243,7 @@ A: Das Extrahieren des Rahmens aus einer PDF-Datei kann für verschiedene Zwecke
 
 #### F: Kann ich den Rahmen aus bestimmten Seiten oder Bereichen im PDF-Dokument extrahieren?
 
-A: Ja, Sie können den bereitgestellten C#-Quellcode ändern, um den Rahmen aus bestimmten Seiten oder Bereichen innerhalb des PDF-Dokuments zu extrahieren. Durch die Manipulation des`doc.Pages` Mithilfe der Sammlung und der Angabe benutzerdefinierter Kriterien können Sie den Rahmen aus bestimmten Seiten oder Interessensbereichen extrahieren.
+ A: Ja, Sie können den bereitgestellten C#-Quellcode ändern, um den Rahmen aus bestimmten Seiten oder Bereichen innerhalb des PDF-Dokuments zu extrahieren. Durch die Manipulation des`doc.Pages` Mithilfe der Sammlung und der Angabe benutzerdefinierter Kriterien können Sie den Rahmen aus bestimmten Seiten oder Interessensbereichen extrahieren.
 
 #### F: Wie kann ich das Ausgabebildformat und die Qualität anpassen?
 

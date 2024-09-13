@@ -1,7 +1,7 @@
 ---
 title: Inline strukturelement
 linktitle: Inline strukturelement
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Steg-för-steg-guide för att använda online-strukturelement med Aspose.PDF för .NET. Organisera dina PDF-filer med rubriker och stycken.
 type: docs
 weight: 110
@@ -307,7 +307,7 @@ S: Ja, du kan anpassa utseendet och formateringen av inline-strukturelement. Du 
 
 #### F: Hur skapar och lägger jag till rubriker på olika nivåer i ett PDF-dokument med inline-strukturelement i Aspose.PDF för .NET?
 
- S: Du kan skapa rubriker på olika nivåer med hjälp av`CreateHeaderElement` metod och sedan lägga till dem till rotstrukturelementet. Därefter kan du lägga till innehåll till varje rubrikelement med hjälp av`CreateSpanElement` metod för att skapa spann av text.
+ S: Du kan skapa rubriker på olika nivåer med hjälp av`CreateHeaderElement`metod och sedan lägga till dem till rotstrukturelementet. Därefter kan du lägga till innehåll till varje rubrikelement med hjälp av`CreateSpanElement` metod för att skapa spann av text.
 
 #### F: Kan jag använda inline-strukturelement för att skapa listor, punktpunkter eller andra typer av innehållsorganisation i ett PDF-dokument?
 

@@ -55,7 +55,7 @@ using System.Text;
 
 Questo è essenziale perché lavoreremo con le funzionalità PDF fornite da Aspose.PDF per .NET. Ora passiamo alla parte divertente: scrivere il codice!
 
-Ora che abbiamo coperto le basi, è il momento di immergerci nel codice. In questa guida passo dopo passo, analizzerò ogni parte del processo in modo che tu possa seguire senza perdere un colpo.
+Ora che abbiamo coperto le basi, è il momento di immergerci nel codice. In questa guida passo passo, analizzerò ogni parte del processo in modo che tu possa seguire senza perdere un colpo.
 
 ## Passaggio 1: inizializzare l'oggetto licenza
 

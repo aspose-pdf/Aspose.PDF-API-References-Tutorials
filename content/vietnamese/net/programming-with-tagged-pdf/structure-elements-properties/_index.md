@@ -125,7 +125,7 @@ A: Aspose.PDF cho .NET cung cấp API để tạo và thao tác các thành ph�
 
 ####  Q: Vai trò của là gì?`SetTitle` and `SetLanguage` methods in working with structural element properties?
 
- A: Cái`SetTitle` Và`SetLanguage` phương pháp của`ITaggedContent`đối tượng cho phép bạn đặt tiêu đề và ngôn ngữ của tài liệu, ảnh hưởng đến các thuộc tính của phần tử cấu trúc. Việc đặt tiêu đề và ngôn ngữ đảm bảo tính nhất quán và siêu dữ liệu có ý nghĩa cho tài liệu.
+ A: Cái`SetTitle` Và`SetLanguage` phương pháp của`ITaggedContent` đối tượng cho phép bạn đặt tiêu đề và ngôn ngữ của tài liệu, ảnh hưởng đến các thuộc tính của phần tử cấu trúc. Việc đặt tiêu đề và ngôn ngữ đảm bảo tính nhất quán và siêu dữ liệu có ý nghĩa cho tài liệu.
 
 #### H: Làm thế nào tôi có thể tạo và thao tác các thành phần cấu trúc trong tài liệu PDF bằng Aspose.PDF cho .NET?
 

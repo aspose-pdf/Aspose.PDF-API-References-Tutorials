@@ -42,7 +42,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 ```
 
 ## Krok 5: Najděte text, který chcete upravit
- Použití`TextFragmentAbsorber` najít požadovaný text v dokumentu. V poskytnutém kódu hledá text „Lorem ipsum“.
+Použití`TextFragmentAbsorber` najít požadovaný text v dokumentu. V poskytnutém kódu hledá text „Lorem ipsum“.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -51,7 +51,7 @@ TextFragment textFragment = absorb.TextFragments[1];
 ```
 
 ## Krok 6: Nastavte barvu stínování textu
- Vytvořte nový`Color` objekt s barevným prostorem vzorku a určete přechodové barvy stínování. Přiřaďte tuto barvu k`ForegroundColor` majetek z`TextState` z`TextFragment` objekt.
+ Vytvořte nový`Color` objekt s barevným prostorem vzorku a určete přechodové barvy stínování. Přiřaďte tuto barvu k`ForegroundColor` vlastnictví`TextState` z`TextFragment` objekt.
 
 ```csharp
 textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
@@ -129,7 +129,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 
 #### Otázka: Jak najdu a upravím konkrétní text v dokumentu PDF?
 
- Odpověď: V kroku 5 použijete`TextFragmentAbsorber`najít požadovaný text v dokumentu. Poté můžete upravit jeho vlastnosti:
+ Odpověď: V kroku 5 použijete`TextFragmentAbsorber` najít požadovaný text v dokumentu. Poté můžete upravit jeho vlastnosti:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -139,7 +139,7 @@ TextFragment textFragment = absorber.TextFragments[1];
 
 #### Otázka: Jak mohu nastavit barvy stínování pro text?
 
- Odpověď: V kroku 6 vytvoříte nový`Color` objekt s barevným prostorem vzorku a určete přechodové barvy stínování. Přiřaďte tuto barvu k`ForegroundColor` majetek z`TextState` z`TextFragment` objekt:
+ Odpověď: V kroku 6 vytvoříte nový`Color` objekt s barevným prostorem vzorku a určete přechodové barvy stínování. Přiřaďte tuto barvu k`ForegroundColor` vlastnictví`TextState` z`TextFragment` objekt:
 
 ```csharp
 textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
@@ -150,7 +150,7 @@ textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 
 #### Otázka: Mohu na upravený text použít další formátování textu?
 
- Odpověď: Ano, v kroku 7 můžete použít další formátování textu, jako je podtržení, úpravou vlastností`TextState` objekt:
+Odpověď: Ano, v kroku 7 můžete použít další formátování textu, jako je podtržení, úpravou vlastností`TextState` objekt:
 
 ```csharp
 textFragment.TextState.Underline = true;

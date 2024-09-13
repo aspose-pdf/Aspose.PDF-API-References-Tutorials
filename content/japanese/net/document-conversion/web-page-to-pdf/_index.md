@@ -103,7 +103,7 @@ HTML コンテンツが読み込まれたら、そこから PDF ドキュメン�
 Document pdfDocument = new Document(stream, options);
 ```
 
-このコード行は新しい`Document`作成する PDF を表すオブジェクトです。
+このコード行は新しい`Document`オブジェクトは、作成する PDF を表します。
 
 ## ステップ6: ページの向きを設定する
 
@@ -152,7 +152,7 @@ catch (Exception ex)
 Aspose.PDF for .NET は、開発者がプログラムによって PDF ドキュメントを作成、操作、変換できるようにするライブラリです。
 
 ### 任意の Web ページを PDF に変換できますか?
-はい、Web ページが一般に公開されている限り、Aspose.PDF を使用して PDF に変換できます。
+はい、Web ページがパブリックにアクセス可能である限り、Aspose.PDF を使用して PDF に変換できます。
 
 ### 無料トライアルはありますか？
 はい、Aspose.PDF for .NETの無料トライアルをこちらからダウンロードできます。[ここ](https://releases.aspose.com/).

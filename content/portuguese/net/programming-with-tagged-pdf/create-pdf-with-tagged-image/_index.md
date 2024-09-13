@@ -112,7 +112,7 @@ R: Sim, você pode usar diferentes formatos de imagem para a imagem marcada, com
 
  A: O texto alternativo fornece uma descrição textual da imagem, que é lida em voz alta por leitores de tela para usuários com deficiência visual. No código fornecido, o texto alternativo é definido usando o`AlternativeText` propriedade do`IllustrationElement` representando a imagem marcada.
 
-####  P: Como é que o`SetTitle` method contribute to the PDF document's tagged image?
+#### P: Como é que o`SetTitle` method contribute to the PDF document's tagged image?
 
  A: O`SetTitle` O método define o título do conteúdo marcado do documento PDF, fornecendo contexto adicional para a imagem marcada. Este título pode ajudar a identificar o propósito ou assunto do conteúdo marcado.
 
@@ -126,4 +126,4 @@ R: Ao usar os recursos de estrutura de conteúdo marcado do Aspose.PDF e fornece
 
 #### P: É possível adicionar várias imagens marcadas ao mesmo documento PDF usando técnicas semelhantes?
 
- R: Sim, você pode adicionar várias imagens marcadas ao mesmo documento PDF usando técnicas semelhantes. Você criaria imagens adicionais`IllustrationElement` instâncias para cada imagem marcada e personalizar suas propriedades conforme necessário.
+R: Sim, você pode adicionar várias imagens marcadas ao mesmo documento PDF usando técnicas semelhantes. Você criaria imagens adicionais`IllustrationElement` instâncias para cada imagem marcada e personalizar suas propriedades conforme necessário.

@@ -2,156 +2,159 @@
 title: PDF 문서의 그룹화된 체크 박스
 linktitle: PDF 문서의 그룹화된 체크 박스
 second_title: .NET API 참조를 위한 Aspose.PDF
-description: Aspose.PDF for .NET을 이용하면 PDF 문서에서 그룹화된 체크박스를 쉽게 만들 수 있습니다.
+description: 이 단계별 튜토리얼을 통해 Aspose.PDF for .NET을 사용하여 PDF 문서에서 그룹화된 체크박스(라디오 버튼)를 만드는 방법을 알아보세요.
 type: docs
 weight: 170
 url: /ko/net/programming-with-forms/grouped-check-boxes/
 ---
-이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 PDF 문서에서 그룹화된 체크박스를 만드는 방법을 보여드리겠습니다. 이 과정을 안내하기 위해 C# 소스 코드를 단계별로 설명하겠습니다.
+## 소개
 
-## 1단계: 준비
+대화형 PDF를 만드는 것은 생각보다 어렵지 않습니다. 특히 Aspose.PDF for .NET과 같은 강력한 도구를 사용할 수 있다면 더욱 그렇습니다. PDF 문서에 추가해야 할 대화형 요소 중 하나는 그룹화된 체크박스 또는 더 구체적으로는 사용자가 세트에서 하나의 옵션을 선택할 수 있는 라디오 버튼입니다. 이 튜토리얼은 Aspose.PDF for .NET을 사용하여 PDF 문서에 그룹화된 체크박스(라디오 버튼)를 추가하는 과정을 안내합니다. 초보자이든 노련한 개발자이든 이 가이드는 매력적이고 자세하며 따라하기 쉽다는 것을 알게 될 것입니다.
 
-필요한 라이브러리를 가져왔는지 확인하고 문서 디렉토리 경로를 설정하세요.
+## 필수 조건
+
+단계별 가이드를 살펴보기에 앞서, 몇 가지 필수적인 전제 조건을 살펴보겠습니다.
+
+1.  .NET용 Aspose.PDF: Aspose.PDF 라이브러리가 설치되어 있는지 확인하세요. 그렇지 않은 경우 다음을 수행할 수 있습니다.[여기서 다운로드하세요](https://releases.aspose.com/pdf/net/).
+2. IDE: Visual Studio와 같은 개발 환경을 설정해야 합니다.
+3. .NET Framework: 프로젝트는 Aspose.PDF와 호환되는 .NET Framework 버전을 타겟으로 해야 합니다.
+4. 기본 C# 지식: 원활하게 따라가려면 C# 및 PDF 조작에 대한 지식이 필요합니다.
+5.  라이센스: Aspose.PDF는 전체 기능을 사용하려면 라이센스가 필요합니다.[임시 면허를 취득하다](https://purchase.aspose.com/temporary-license/) 필요한 경우.
+
+## 패키지 가져오기
+
+시작하기 전에 프로젝트에 필요한 네임스페이스를 가져왔는지 확인하세요.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Forms;
 ```
 
-## 2단계: 문서 개체 인스턴스화
+이러한 패키지를 사용하면 라디오 버튼 생성 및 속성 정의를 포함하여 PDF 문서를 조작하는 데 필요한 모든 클래스와 메서드에 액세스할 수 있습니다.
 
-Document 객체를 인스턴스화합니다.
+이 섹션에서는 그룹화된 체크박스(라디오 버튼)를 만드는 과정을 명확하고 따라하기 쉬운 단계로 나누어 살펴보겠습니다.
+
+## 1단계: 새 PDF 문서 만들기
+
+ 첫 번째 단계는 인스턴스를 만드는 것입니다.`Document` 개체는 PDF 파일을 나타냅니다. 그런 다음 그룹화된 체크박스를 배치할 문서에 빈 페이지를 추가합니다.
 
 ```csharp
+// Document 객체 인스턴스화
 Document pdfDocument = new Document();
-```
 
-## 3단계: PDF 문서에 페이지 추가
-
-PDF 문서에 페이지 추가:
-
-```csharp
+// PDF 파일에 페이지 추가
 Page page = pdfDocument.Pages.Add();
 ```
 
-## 4단계: RadioButtonField 객체 인스턴스화
+이렇게 하면 라디오 버튼 등의 요소를 PDF에 추가할 수 있는 기반이 마련됩니다.
 
-페이지 번호를 인수로 사용하여 RadioButtonField 객체를 인스턴스화합니다.
+## 2단계: 라디오 버튼 필드 초기화
+
+다음으로, 우리는 다음을 생성해야 합니다.`RadioButtonField` 그룹화된 체크박스(라디오 버튼)를 보관할 객체입니다. 이 필드는 체크박스가 나타날 특정 페이지에 추가됩니다.
 
 ```csharp
+// RadioButtonField 객체를 인스턴스화하고 첫 번째 페이지에 할당합니다.
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## 5단계: 라디오 버튼 옵션 추가
+이것을 개별 라디오 버튼 옵션을 함께 그룹화하는 컨테이너라고 생각해 보세요.
 
-RadioButtonOptionField 객체를 사용하여 라디오 버튼 옵션을 추가하고 Rectangle 객체를 사용하여 해당 위치를 지정합니다.
+## 3단계: 라디오 버튼 옵션 추가
+
+ 이제 필드에 개별 라디오 버튼 옵션을 추가해 보겠습니다. 이 예에서는 두 개의 라디오 버튼을 추가하고 다음을 사용하여 해당 위치를 지정합니다.`Rectangle` 물체.
 
 ```csharp
+// 첫 번째 라디오 버튼 옵션을 추가하고 사각형을 사용하여 위치를 지정합니다.
 RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
 RadioButtonOptionField opt2 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(100, 0, 120, 20));
-opt1.OptionName = "Test1";
-opt2.OptionName = "Test2";
-radio.Add(opt1);
-radio.Add(opt2);
+
+// 식별을 위한 옵션 이름 설정
+opt1.OptionName = "Option1";
+opt2.OptionName = "Option2";
 ```
 
-## 6단계: 라디오 버튼 옵션 사용자 정의
+ 여기서,`Rectangle` 객체는 페이지의 각 라디오 버튼의 좌표와 크기를 정의합니다.
 
-라디오 버튼 옵션의 스타일, 테두리, 모양을 설정하여 사용자 정의:
+## 4단계: 라디오 버튼 스타일 사용자 정의
+
+ 라디오 버튼의 모양을 사용자 정의하려면 다음을 설정하세요.`Style` 속성. 예를 들어, 정사각형 모양의 체크박스나 십자가 모양의 체크박스를 원할 수 있습니다.
 
 ```csharp
+// 라디오 버튼의 스타일을 설정하세요
 opt1.Style = BoxStyle.Square;
-opt2.Style = BoxStyle.Square;
+opt2.Style = BoxStyle.Cross;
+```
+
+이렇게 하면 체크박스의 모양과 느낌을 제어할 수 있어 사용자 친화적이고 시각적으로 매력적으로 만들 수 있습니다.
+
+## 5단계: 테두리 속성 구성
+
+테두리는 체크박스를 쉽게 식별할 수 있게 하는 데 중요한 역할을 합니다. 여기서는 각 라디오 버튼 옵션 주위에 단색 테두리를 추가하고 너비와 색상을 정의합니다.
+
+```csharp
+// 첫 번째 라디오 버튼의 테두리를 구성합니다.
 opt1.Border = new Border(opt1);
 opt1.Border.Style = BorderStyle.Solid;
 opt1.Border.Width = 1;
+opt1.Characteristics.Border = Color.Black;
+
+// 두 번째 라디오 버튼의 테두리를 구성합니다.
 opt2.Border = new Border(opt2);
-opt2.Border.Width = 1;
 opt2.Border.Style = BorderStyle.Solid;
+opt2.Border.Width = 1;
+opt2.Characteristics.Border = Color.Black;
 ```
 
-## 7단계: 양식에 라디오 버튼 추가
+이 단계에서는 각 라디오 버튼에 명확하게 정의된 테두리가 있는지 확인하여 문서의 가독성을 향상합니다.
 
-문서 양식 개체에 라디오 버튼을 추가합니다.
+## 6단계: 양식에 라디오 버튼 옵션 추가
+
+이제 문서의 양식에 라디오 버튼을 추가합니다. 이것은 단일 필드 아래에 체크박스를 그룹화하는 마지막 단계입니다.
 
 ```csharp
+// 문서의 폼 객체에 라디오 버튼 필드를 추가합니다.
 pdfDocument.Form.Add(radio);
 ```
 
-## 8단계: 문서 저장
+양식 객체는 그룹화된 체크박스를 포함한 모든 대화형 요소의 컨테이너 역할을 합니다.
 
-PDF 문서를 저장합니다.
+## 7단계: PDF 문서 저장
+
+마지막으로 모든 것이 설정되면 원하는 위치에 PDF 문서를 저장할 수 있습니다.
 
 ```csharp
-dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
+// 출력 파일 경로를 정의하세요
+string dataDir = "YOUR DOCUMENT DIRECTORY" + "GroupedCheckBoxes_out.pdf";
+
+// PDF 문서 저장
 pdfDocument.Save(dataDir);
+
+// 성공적인 생성 확인
+Console.WriteLine("Grouped checkboxes added successfully. File saved at " + dataDir);
 ```
 
-### .NET용 Aspose.PDF를 사용하여 그룹화된 체크 상자를 위한 샘플 소스 코드 
-```csharp
-try
-{
-	// 문서 디렉토리의 경로입니다.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Document 객체 인스턴스화
-	Document pdfDocument = new Document();
-	// PDF 파일에 페이지 추가
-	Page page = pdfDocument.Pages.Add();
-	// 페이지 번호를 인수로 사용하여 RadioButtonField 객체를 인스턴스화합니다.
-	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
-	// 첫 번째 라디오 버튼 옵션을 추가하고 Rectangle 객체를 사용하여 원점을 지정합니다.
-	RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
-	RadioButtonOptionField opt2 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(100, 0, 120, 20));
-	opt1.OptionName = "Test1";
-	opt2.OptionName = "Test2";
-	radio.Add(opt1);
-	radio.Add(opt2);
-	opt1.Style = BoxStyle.Square;
-	opt2.Style = BoxStyle.Square;
-	opt1.Style = BoxStyle.Cross;
-	opt2.Style = BoxStyle.Cross;
-	opt1.Border = new Border(opt1);
-	opt1.Border.Style = BorderStyle.Solid;
-	opt1.Border.Width = 1;
-	opt1.Characteristics.Border = System.Drawing.Color.Black;
-	opt2.Border = new Border(opt2);
-	opt2.Border.Width = 1;
-	opt2.Border.Style = BorderStyle.Solid;
-	opt2.Characteristics.Border = System.Drawing.Color.Black;
-	// Document 객체의 폼 객체에 라디오 버튼 추가
-	pdfDocument.Form.Add(radio);
-	dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
-	// PDF 문서 저장
-	pdfDocument.Save(dataDir);
-	Console.WriteLine("\nGrouped checkboxes added successfully.\nFile saved at " + dataDir);
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+그리고 그게 전부입니다! Aspose.PDF for .NET을 사용하여 그룹화된 체크박스가 있는 PDF를 성공적으로 만들었습니다.
 
 ## 결론
 
-이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 PDF 문서에서 그룹화된 체크박스를 만드는 방법을 배웠습니다. 이러한 단계를 따르면 Aspose.PDF를 사용하여 사용자 지정 라디오 버튼 옵션을 쉽게 추가하고 PDF 문서에 번들로 묶을 수 있습니다.
+PDF 문서에 그룹화된 체크박스와 같은 대화형 요소를 추가하는 것은 처음에는 까다로울 수 있지만 Aspose.PDF for .NET을 사용하면 아주 쉬워집니다. 이 단계별 가이드를 따르면 기본 PDF 문서를 설정하고, 그룹화된 라디오 버튼을 추가하고, 모양을 사용자 지정하고, 최종 결과를 저장하는 방법을 배웠습니다. 양식, 설문 조사 또는 다른 유형의 대화형 PDF를 작성하든 이 가이드는 시작하기 위한 견고한 기초를 제공합니다.
 
-### 자주 묻는 질문
+## 자주 묻는 질문
 
-#### 질문: PDF 문서의 그룹화된 체크박스는 무엇인가요?
+### 그룹에 두 개 이상의 라디오 버튼을 추가할 수 있나요?
+ 물론입니다! 간단히 추가 인스턴스를 생성하세요.`RadioButtonOptionField` 객체를 추가하고`RadioButtonField` 튜토리얼에서 보여준 대로.
 
-A: PDF 문서의 그룹화된 체크박스는 함께 그룹화된 라디오 버튼 옵션 세트를 말합니다. 라디오 버튼을 사용하면 사용자는 상호 배타적인 선택 사항 그룹에서 하나의 옵션만 선택할 수 있습니다. 라디오 버튼 하나를 선택하면 같은 그룹의 다른 라디오 버튼은 자동으로 선택 해제됩니다. 이 그룹화 동작은 사용자에게 여러 옵션을 제공하지만 선택을 하나의 선택 사항으로 제한하려는 경우에 유용합니다.
+### 하나의 문서에서 여러 체크박스 그룹을 어떻게 처리합니까?
+여러 그룹을 생성하려면 별도로 인스턴스화하세요.`RadioButtonField` 각 그룹의 객체.
 
-#### 질문: Aspose.PDF for .NET에서 그룹화된 체크박스의 모양을 사용자 정의할 수 있나요?
+### 추가할 수 있는 체크박스 수에 제한이 있나요?
+아니요, .NET용 Aspose.PDF에서는 PDF에 추가할 수 있는 체크박스 수에 제한을 두지 않습니다.
 
-A: 네, Aspose.PDF for .NET에서 그룹화된 체크박스의 모양을 사용자 정의할 수 있습니다. API는 라디오 버튼 옵션의 스타일, 테두리, 모양을 설정하는 다양한 옵션을 제공합니다. 각 옵션의 위치를 정의하고, 다양한 상자 스타일(예: 사각형, 원, 십자가) 중에서 선택하고, 테두리 속성을 조정하여 원하는 시각적 표현을 얻을 수 있습니다.
+### 체크박스를 추가한 후에 모양을 변경할 수 있나요?
+네, 체크박스를 추가한 후에 테두리 스타일, 너비, 색상 등의 속성을 수정할 수 있습니다.
 
-#### 질문: PDF 문서의 특정 페이지에 그룹화된 확인란을 추가하려면 어떻게 해야 하나요?
-
-A: PDF 문서의 특정 페이지에 그룹화된 확인란을 추가하려면 다음을 인스턴스화해야 합니다.`RadioButtonField` 원하는 페이지 번호를 인수로 사용하여 객체를 만듭니다. 그런 다음,`RadioButtonOptionField` 각 라디오 버튼 옵션을 나타내는 객체를 지정하고 다음을 사용하여 해당 위치를 지정합니다.`Rectangle` 객체. 마지막으로 이러한 옵션을 추가합니다.`RadioButtonField` 필요에 따라 모양을 사용자 정의한 후 추가하세요.`RadioButtonField` 문서 양식에.
-
-#### 질문: 하나의 PDF 문서에 여러 개의 체크박스 그룹을 추가할 수 있나요?
-
- A: 네, 단일 PDF 문서에 여러 개의 체크박스 그룹을 추가할 수 있습니다. 각 그룹에는 고유한 그룹이 있어야 합니다.`RadioButtonField` 객체 및`RadioButtonOptionField` 각 그룹 내의 객체는 동일한 페이지와 옵션에 대한 고유한 이름을 공유해야 합니다. 이렇게 하면 각 그룹 내의 라디오 버튼이 올바르게 작동하고 선택 사항이 상호 배타적이 됩니다.
-
-#### 질문: 모든 PDF 뷰어와 애플리케이션에서 그룹화된 체크박스가 지원되나요?
-
-A: 네, 그룹화된 체크박스는 모든 표준 호환 PDF 뷰어와 애플리케이션에서 지원됩니다. PDF 사양은 라디오 버튼과 그룹화 동작을 정의하여 PDF 형식에서 보편적으로 인식되도록 합니다. 그러나 다양한 플랫폼에서 일관된 동작을 보장하기 위해 다양한 PDF 뷰어에서 기능을 테스트하는 것이 필수적입니다.
+### 이미지를 라디오 버튼으로 사용할 수 있나요?
+ 예, Aspose.PDF를 사용하면 사용자 정의 이미지를 라디오 버튼으로 사용할 수 있습니다.`Appearance` 각 라디오 버튼 옵션의 속성.

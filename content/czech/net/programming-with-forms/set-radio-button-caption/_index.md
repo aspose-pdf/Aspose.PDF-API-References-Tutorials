@@ -2,139 +2,149 @@
 title: Nastavte titulek přepínače
 linktitle: Nastavte titulek přepínače
 second_title: Aspose.PDF pro .NET API Reference
-description: Naučte se používat Aspose.PDF pro .NET k nastavení titulku pro přepínač ve formátu PDF.
+description: Naučte se, jak nastavit popisky přepínačů v PDF pomocí Aspose.PDF pro .NET. Tento podrobný průvodce vás provede načítáním, úpravou a ukládáním formulářů PDF.
 type: docs
 weight: 280
 url: /cs/net/programming-with-forms/set-radio-button-caption/
 ---
-této příručce si krok za krokem vysvětlíme, jak používat knihovnu Aspose.PDF pro .NET k definování titulku přepínače ve formátu PDF. Ukážeme vám, jak získat přístup k poli přepínače, vytvořit novou možnost přepínače a upravit popis tlačítka.
+## Zavedení
 
-## Krok 1: Konfigurace adresáře dokumentů
+Pokud se ponoříte do manipulace s PDF pomocí Aspose.PDF pro .NET, máte na co těšit! Dnes se zaměřujeme na praktickou funkci: nastavení popisků přepínačů ve formulářích PDF. Přepínací tlačítka jsou nezbytná pro uživatelské formuláře, kde potřebujete výběr ze sady možností. Představte si je jako otázky s více možnostmi, kde je povolena pouze jedna odpověď. Tento výukový program vás provede procesem aktualizace popisků přepínačů ve formátu PDF, takže vaše dokumenty budou interaktivní a uživatelsky přívětivé. 
 
- Prvním krokem je konfigurace adresáře dokumentu, kde se nachází formulář PDF, se kterým chcete pracovat. Můžete použít`dataDir` proměnnou k určení cesty k adresáři.
+## Předpoklady
+
+Než se ponoříte do kódu, musíte se ujistit, že máte několik věcí:
+
+1. Aspose.PDF pro .NET: Ujistěte se, že máte nainstalovanou knihovnu Aspose.PDF. Tato knihovna vám pomůže programově manipulovat se soubory PDF.
+2. Vývojové prostředí: Měli byste mít nastavené vývojové prostředí .NET, jako je Visual Studio.
+3. Ukázkový formulář PDF: Pro tento výukový program budete potřebovat vzorový formulář PDF s přepínači. Můžete použít jakýkoli existující formulář PDF nebo vytvořit nový pomocí přepínačů.
+4. Základní znalost C#: Tato příručka předpokládá, že máte základní znalosti o programování C# a .NET.
+
+ Pokud jste ještě nenainstalovali Aspose.PDF pro .NET nebo potřebujete dočasnou licenci, můžete[stáhněte si jej zde](https://releases.aspose.com/pdf/net/) nebo[získat dočasnou licenci](https://purchase.aspose.com/temporary-license/).
+
+## Importujte balíčky
+
+Chcete-li začít, musíte do svého projektu C# importovat potřebné balíčky. Zde je návod, jak zahrnout knihovnu Aspose.PDF:
 
 ```csharp
-// Cesta k adresáři dokumentů.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using Aspose.Pdf.Forms;
+using System.Collections.Generic;
+using Aspose.Pdf.Text;
 ```
 
- Nezapomeňte vyměnit`"YOUR DOCUMENTS DIRECTORY"` se skutečnou cestou k adresáři vašich dokumentů.
+Ujistěte se, že jste tyto balíčky přidali do svého projektu prostřednictvím NuGet nebo vaší preferované metody.
 
-## Krok 2: Načtení zdrojového formuláře PDF
+## Krok 1: Načtěte formulář PDF
 
- V tomto kroku načteme zdrojový PDF formulář pomocí`Aspose.Pdf.Facades.Form` třída Aspose.PDF.
-
-```csharp
-Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
-```
-
-Ujistěte se, že soubor PDF obsahující formulář je přítomen v zadaném adresáři dokumentů.
-
-## Krok 3: Úprava titulku přepínače
-
-Projdeme názvy polí formuláře a vyhledáme pole s přepínači. Pokud je nalezeno odpovídající pole, vytvoříme nový přepínač s vlastním popiskem a přidáme jej do stávajícího pole.
+ Nejprve musíte načíst formulář PDF, který obsahuje přepínače. The`Aspose.Pdf.Facades.Form` tomuto účelu slouží třída. Postup je následující:
 
 ```csharp
-foreach(var item in form1.FieldNames)
-{
-if (item.Contains("radio1"))
-{
-Aspose.Pdf.Forms.RadioButtonField field0 = PDF_Template_PDF_HTML.Form[item] as Aspose.Pdf.Forms.RadioButtonField;
-Aspose.Pdf.Forms.RadioButtonOptionField fieldoption = new Aspose.Pdf.Forms.RadioButtonOptionField();
-fieldoption.OptionName = "Yes";
-fieldoption.PartialName = "Yesname";
-var updatedFragment = new Aspose.Pdf.Text.TextFragment("test123");
-updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
-updatedFragment.TextState.FontSize = 10;
-updatedFragment.TextState.LineSpacing = 6.32f;
-// Vytvořte objekt TextParagraph
-TextParagraph par = new TextParagraph();
-// Nastavit pozici odstavce
-par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
-// Určete režim zalamování slov
-by.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
-// Přidejte nový TextFragment do odstavce
-par.AppendLine(updatedFragment);
-// Přidejte TextParagraph pomocí TextBuilder
-TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
-textBuilder.AppendParagraph(par);
-field0.DeleteOption("item1");
-}
-}
-```
-
-Podle potřeby upravte přepínač titulků a další nastavení.
-
-## Krok 4: Uložení výsledného PDF
-
- Nyní, když jsme dokončili úpravu popisku přepínače, můžeme uložit výsledné PDF pomocí`Save` metoda`Document` třída.
-
-```csharp
-PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
-```
-
-Nezapomeňte zadat úplnou cestu a název souboru pro výsledný soubor PDF.
-
-### Ukázkový zdrojový kód pro Set Radio Button Caption pomocí Aspose.PDF pro .NET 
-```csharp
-// Cesta k adresáři dokumentů.
+// Definujte cestu k adresáři dokumentů
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Načíst zdrojový formulář PDF
+
+// Načtěte zdrojový formulář PDF
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
 Document PDF_Template_PDF_HTML = new Document(dataDir + "RadioButtonField.pdf");
+```
+
+V tomto fragmentu kódu:
+- `dataDir` určuje cestu, kde se nachází vaše PDF.
+- `Form` třída se používá k interakci s poli formuláře v PDF.
+- `Document` class poskytuje přístup ke stránkám dokumentu PDF.
+
+## Krok 2: Iterujte přes pole přepínacích tlačítek
+
+Dále budete muset iterovat pole ve formuláři, abyste identifikovali a manipulovali s poli přepínacích tlačítek:
+
+```csharp
 foreach (var item in form1.FieldNames)
 {
-	Console.WriteLine(item.ToString());
-	Dictionary<string, string> radioOptions = form1.GetButtonOptionValues(item);
-	if (item.Contains("radio1"))
-	{
-		Aspose.Pdf.Forms.RadioButtonField field0 = PDF_Template_PDF_HTML.Form[item] as Aspose.Pdf.Forms.RadioButtonField;
-		Aspose.Pdf.Forms.RadioButtonOptionField fieldoption = new Aspose.Pdf.Forms.RadioButtonOptionField();
-		fieldoption.OptionName = "Yes";
-		fieldoption.PartialName = "Yesname";
-		var updatedFragment = new Aspose.Pdf.Text.TextFragment("test123");
-		updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
-		updatedFragment.TextState.FontSize = 10;
-		updatedFragment.TextState.LineSpacing = 6.32f;
-		// Vytvořte objekt TextParagraph
-		TextParagraph par = new TextParagraph();
-		// Nastavit pozici odstavce
-		par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
-		// Určete režim zalamování slov
-		par.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
-		// Přidejte nový TextFragment do odstavce
-		par.AppendLine(updatedFragment);
-		// Přidejte TextParagraph pomocí TextBuilder
-		TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
-		textBuilder.AppendParagraph(par);
-		field0.DeleteOption("item1");
-	}
+    Console.WriteLine(item.ToString());
+    Dictionary<string, string> radioOptions = form1.GetButtonOptionValues(item);
+```
+
+V této smyčce:
+- `FieldNames` poskytuje seznam všech názvů polí v PDF.
+- `GetButtonOptionValues(item)` načte možnosti dostupné pro každý přepínač.
+
+## Krok 3: Upravte možnosti přepínače
+
+ Jakmile určíte pole přepínačů, můžete upravit jejich možnosti. K tomu musíte pole přenést na`RadioButtonField` a aktualizovat jeho možnosti:
+
+```csharp
+    if (item.Contains("radio1"))
+    {
+        Aspose.Pdf.Forms.RadioButtonField field0 = PDF_Template_PDF_HTML.Form[item] as Aspose.Pdf.Forms.RadioButtonField;
+        Aspose.Pdf.Forms.RadioButtonOptionField fieldoption = new Aspose.Pdf.Forms.RadioButtonOptionField();
+        fieldoption.OptionName = "Yes";
+        fieldoption.PartialName = "Yesname";
+```
+
+Zde:
+- Zkontrolujeme, zda název pole obsahuje „radio1“, abychom identifikovali konkrétní pole přepínače, které chceme upravit.
+- `RadioButtonField`se přelije z polí formuláře za účelem provedení konkrétních úprav.
+
+## Krok 4: Nastavte titulek pro přepínač
+
+ Chcete-li nastavit nebo aktualizovat titulek pro přepínač, budete muset vytvořit a`TextFragment` a používat`TextBuilder` pro umístění na požadované místo:
+
+```csharp
+        var updatedFragment = new Aspose.Pdf.Text.TextFragment("test123");
+        updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
+        updatedFragment.TextState.FontSize = 10;
+        updatedFragment.TextState.LineSpacing = 6.32f;
+
+        // Vytvořte objekt TextParagraph
+        TextParagraph par = new TextParagraph();
+        // Nastavit pozici odstavce
+        par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
+        // Určete režim zalamování slov
+        par.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
+        // Přidejte nový TextFragment do odstavce
+        par.AppendLine(updatedFragment);
+        // Přidejte TextParagraph pomocí TextBuilder
+        TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
+        textBuilder.AppendParagraph(par);
+```
+
+V této části:
+- `TextFragment` se používá k definování textu a jeho vzhledu.
+- `TextParagraph` pomáhá umístit a formátovat text.
+- `TextBuilder` přidá text na zadanou stránku PDF.
+
+## Krok 5: Uložte aktualizované PDF
+
+Nakonec uložte aktualizované PDF do nového souboru:
+
+```csharp
+        field0.DeleteOption("item1");
+    }
 }
 PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 ```
+
+To zajistí, že:
+- Změny se použijí na PDF.
+- Původní možnost přepínače je odstraněna, jak je uvedeno.
 
 ## Závěr
 
-V této příručce jsme se naučili, jak používat knihovnu Aspose.PDF pro .NET k nastavení titulku pro přepínač ve formátu PDF. Podle popsaných kroků můžete přizpůsobit možnosti přepínače a změnit titulek podle potřeby. Neváhejte dále prozkoumat funkce Aspose.PDF pro .NET, abyste rozšířili možnosti manipulace se soubory PDF.
+Úprava titulků přepínačů ve formátu PDF pomocí Aspose.PDF for .NET může výrazně zlepšit interaktivitu a použitelnost vašich dokumentů. Pomocí kroků uvedených v tomto kurzu můžete snadno načíst soubor PDF, aktualizovat možnosti přepínače a uložit změny. Tento přístup je užitečný pro správu formulářů a zajišťuje, že vaše soubory PDF splňují přesné potřeby vašich uživatelů. Ponořte se do Aspose.PDF a prozkoumejte jeho možnosti pro další manipulace s PDF!
 
-### FAQ
+## FAQ
 
-#### Otázka: Mohu použít Aspose.PDF pro .NET k nastavení titulků pro přepínače ve formátu PDF?
+### Mohu aktualizovat více polí přepínačů najednou?
+Ano, můžete procházet všechna pole přepínačů a podle potřeby aplikovat změny.
 
-Odpověď: Ano, můžete použít Aspose.PDF pro .NET k nastavení titulků pro přepínače ve formě PDF. Poskytnutý ukázkový zdrojový kód ukazuje, jak získat přístup k poli přepínacího tlačítka, vytvořit novou možnost přepínacího tlačítka s vlastním titulkem a aktualizovat stávající pole.
+### Potřebuji licenci k používání Aspose.PDF?
+ Můžete začít s bezplatnou zkušební verzí, ale pro rozšířené použití je vyžadována licence.[Získejte licenci zde](https://purchase.aspose.com/buy).
 
-#### Otázka: Jak mohu přizpůsobit vzhled titulku přepínače, jako je velikost a barva písma?
+### Jak mohu otestovat změny před uložením PDF?
+PDF si můžete prohlédnout ve svém vývojovém prostředí nebo použít prohlížeč PDF ke kontrole úprav.
 
- Odpověď: Vzhled titulku přepínače si můžete přizpůsobit úpravou vlastností`TextFragment` použito pro titulek. Můžete například nastavit písmo, velikost písma, barvu, řádkování a další možnosti formátování textu.
+### Je Aspose.PDF kompatibilní se všemi verzemi .NET?
+Aspose.PDF podporuje různé verze .NET. Ujistěte se, že jste zkontrolovali kompatibilitu s vaší konkrétní verzí .NET.
 
-#### Otázka: Je možné přidat více možností přepínačů s různými titulky do jedné skupiny přepínačů?
-
-Odpověď: Ano, do jedné skupiny přepínačů můžete přidat více možností přepínačů s různými titulky. Každá možnost bude představovat jinou možnost a uživatelé mohou vybrat pouze jednu možnost ze skupiny.
-
-#### Otázka: Mohu použít Aspose.PDF pro .NET k úpravě jiných polí formuláře v dokumentu PDF?
-
-Odpověď: Ano, Aspose.PDF for .NET poskytuje komplexní sadu funkcí pro manipulaci s různými poli formuláře v dokumentu PDF, jako jsou textová pole, zaškrtávací políčka, rozevírací seznamy a další. Knihovnu můžete použít k nastavení hodnot, úpravě vzhledů a přidání interaktivity do polí formuláře.
-
-#### Otázka: Podporuje Aspose.PDF for .NET práci s PDF generovanými z jiných zdrojů, jako jsou naskenované dokumenty?
-
-Odpověď: Ano, Aspose.PDF for .NET podporuje práci s PDF generovanými z různých zdrojů, včetně naskenovaných dokumentů. Knihovna poskytuje funkce OCR (Optical Character Recognition) pro extrahování textu z naskenovaných PDF a programovou manipulaci s obsahem.
+### Mohu podobně manipulovat s jinými poli formuláře?
+Ano, podobné techniky lze použít i na jiné typy polí formuláře v dokumentech PDF.

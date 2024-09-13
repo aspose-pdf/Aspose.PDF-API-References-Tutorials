@@ -180,7 +180,7 @@ In deze gids hebben we onderzocht hoe u tekststructuren in PDF's kunt stylen met
 
 ## Veelgestelde vragen
 
-### Hoe wijzig ik het lettertype van de tekst in een PDF?
+### Hoe wijzig ik het lettertype van tekst in een PDF?
 
  Om het lettertype van tekst in een PDF te wijzigen, gebruikt u de`setTextState()` methode en specificeer het gewenste lettertype met behulp van`setFont()`. Bijvoorbeeld:
 

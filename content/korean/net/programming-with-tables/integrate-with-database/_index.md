@@ -80,7 +80,7 @@ DataTable dt = new DataTable("Employee");
 dt.Columns.Add("Employee_ID", typeof(Int32));
 dt.Columns.Add("Employee_Name", typeof(string));
 dt.Columns.Add("Gender", typeof(string));
-// DataTable 개체에 프로그래밍 방식으로 2개의 행 추가
+//DataTable 개체에 프로그래밍 방식으로 2개의 행 추가
 DataRow dr = dt.NewRow();
 dr[0] = 1;
 dr[1] = "John Smith";
@@ -132,7 +132,7 @@ A: 네, 데이터베이스에서 가져온 데이터에 하이퍼링크나 다�
 
 #### 질문: 행의 개수가 일정 개수를 초과하면 표를 페이지별로 나눌 수 있나요?
 
- A: 네, 특정 행 수를 초과하는 경우 테이블을 페이지별로 나눌 수 있습니다. 이를 위해 다음을 사용할 수 있습니다.`IsInNewPage`Row 객체의 속성을 사용하여 특정 행 다음에 새 페이지가 시작되어야 함을 나타냅니다. 페이지당 표시할 행 수를 계산하고 설정할 수 있습니다.`IsInNewPage` 이에 따라 재산을 소유합니다.
+A: 네, 특정 행 수를 초과하는 경우 테이블을 페이지별로 나눌 수 있습니다. 이를 위해 다음을 사용할 수 있습니다.`IsInNewPage` Row 객체의 속성을 사용하여 특정 행 다음에 새 페이지가 시작되어야 함을 나타냅니다. 페이지당 표시할 행 수를 계산하고 설정할 수 있습니다.`IsInNewPage` 이에 따라 재산을 소유합니다.
 
 #### 질문: 내장된 데이터베이스 데이터가 있는 PDF 문서를 DOCX나 XLSX와 같은 다른 파일 형식으로 내보내려면 어떻게 해야 합니까?
 

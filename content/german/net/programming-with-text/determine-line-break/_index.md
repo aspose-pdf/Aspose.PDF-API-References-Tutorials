@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Schritt 5: Dem Dokument eine Seite hinzufügen
- Fügen Sie dem Dokument eine neue Seite hinzu, indem Sie das`Add` Methode der`Pages`Sammlung. Im bereitgestellten Code wird die neue Seite der Variablen zugewiesen`page`.
+ Fügen Sie dem Dokument eine neue Seite hinzu, indem Sie das`Add` Methode der`Pages` Sammlung. Im bereitgestellten Code wird die neue Seite der Variablen zugewiesen`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -118,7 +118,7 @@ A: In Schritt 6 erstellen Sie eine Schleife, um der Seite mehrere Textfragmente 
 
 #### F: Wie speichere ich das PDF-Dokument und extrahiere Zeilenumbruchinformationen?
 
- A: In Schritt 7 speichern Sie das PDF-Dokument mit dem`Save` Methode der`Document` Objekt. Anschließend extrahieren Sie die Zeilenumbruchinformationen mithilfe des`GetNotifications`Methode der gewünschten Seite und speichern Sie sie in einer Textdatei.
+ A: In Schritt 7 speichern Sie das PDF-Dokument mit dem`Save` Methode der`Document` Objekt. Anschließend extrahieren Sie die Zeilenumbruchinformationen mithilfe des`GetNotifications` Methode der gewünschten Seite und speichern Sie sie in einer Textdatei.
 
 #### F: Was ist der Zweck der extrahierten Zeilenumbruchinformationen?
 

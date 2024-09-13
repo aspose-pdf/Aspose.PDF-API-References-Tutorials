@@ -1,7 +1,7 @@
 ---
 title: Skapa strukturelement
 linktitle: Skapa strukturelement
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: I den här handledningen kommer du att lära dig hur du använder Aspose.PDF för .NET för att skapa strukturella element i ett taggat PDF-dokument.
 type: docs
 weight: 60

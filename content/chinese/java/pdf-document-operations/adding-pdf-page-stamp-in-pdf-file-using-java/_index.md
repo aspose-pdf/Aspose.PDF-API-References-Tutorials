@@ -2,7 +2,7 @@
 title: 使用 Java 在 PDF 文件中添加 PDF 页面戳
 linktitle: 使用 Java 在 PDF 文件中添加 PDF 页面戳
 second_title: Aspose.PDF Java PDF 处理 API
-description: 了解如何使用 Aspose.PDF 在 Java 中添加 PDF 页面图章。本分步指南向您展示如何轻松自定义 PDF 文档的图章。
+description: 了解如何使用 Aspose.PDF 在 Java 中添加 PDF 页面图章。本分步指南将向您展示如何轻松自定义 PDF 文档的图章。
 type: docs
 weight: 13
 url: /zh/java/pdf-document-operations/adding-pdf-page-stamp-in-pdf-file-using-java/

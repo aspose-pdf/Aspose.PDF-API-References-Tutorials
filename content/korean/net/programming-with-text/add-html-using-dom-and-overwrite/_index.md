@@ -42,7 +42,7 @@ Document doc = new Document();
 ```
 
 ## 5단계: 문서에 페이지 추가
- 문서에 새 페이지를 추가하려면 다음을 사용하세요.`Add` 의 방법`Pages`컬렉션. 제공된 코드에서 새 페이지는 변수에 할당됩니다.`page`.
+ 문서에 새 페이지를 추가하려면 다음을 사용하세요.`Add` 의 방법`Pages` 컬렉션. 제공된 코드에서 새 페이지는 변수에 할당됩니다.`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -159,7 +159,7 @@ HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Tab
 
 #### 질문: HTML 콘텐츠의 스타일을 어떻게 덮어쓸 수 있나요?
 
- A: 7단계에서는 HTML 콘텐츠의 스타일을 수정하여 덮어씁니다.`TextState` 의 속성`HtmlFragment` 객체. 예를 들어, 글꼴 패밀리를 "Arial"로 변경하고 글꼴 크기를 20으로 설정할 수 있습니다.
+ A: 7단계에서는 HTML 콘텐츠의 스타일을 수정하여 덮어씁니다.`TextState` 의 속성`HtmlFragment`객체. 예를 들어, 글꼴 패밀리를 "Arial"로 변경하고 글꼴 크기를 20으로 설정할 수 있습니다.
 
 ```csharp
 title.TextState = new TextState("Arial");

@@ -307,7 +307,7 @@ R: Sí, puedes personalizar la apariencia y el formato de los elementos de la es
 
 #### P: ¿Cómo puedo crear y agregar encabezados de diferentes niveles a un documento PDF utilizando elementos de estructura en línea en Aspose.PDF para .NET?
 
- A: Puedes crear encabezados de diferentes niveles usando el`CreateHeaderElement` y luego añádalos al elemento de estructura raíz. Posteriormente, puede agregar contenido a cada elemento de encabezado utilizando el método`CreateSpanElement` Método para crear tramos de texto.
+ A: Puedes crear encabezados de diferentes niveles usando el`CreateHeaderElement` luego añádalos al elemento de estructura raíz. Posteriormente, puede agregar contenido a cada elemento de encabezado utilizando el método`CreateSpanElement` Método para crear tramos de texto.
 
 #### P: ¿Puedo utilizar elementos de estructura en línea para crear listas, viñetas u otros tipos de organización de contenido en un documento PDF?
 

@@ -100,7 +100,7 @@ table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .
 // 10개의 행을 추가하기 위해 루프를 생성하세요
 for (int row_count = 0; row_count < 10; row_count++)
 {
-	// 테이블에 행을 추가하다
+	// 테이블에 행 추가
 	Aspose.Pdf.Row row = table.Rows.Add();
 	row.VerticalAlignment = VerticalAlignment.Center;
 

@@ -12,6 +12,6 @@ Az Aspose.PDF for .NET "Programozás operátorokkal" című oktatóanyaga végig
 ## Oktatóanyagok
 | Cím | Leírás |
 | --- | --- | 
-| [Rajzolj XForm-ot az oldalra](./draw-xform-on-page/) | Útmutató lépésről lépésre XForm űrlap PDF-oldalra történő rajzolásához az Aspose.PDF for .NET használatával. Adja hozzá és helyezze el az űrlapot az oldalon. |  
-| [PDF operátorok](./pdf-operators/) | Lépésről lépésre a PDF-operátorok használatához az Aspose.PDF for .NET-hez. Adjon hozzá egy képet egy PDF-oldalhoz, és adja meg a pozícióját. |  
-| [Távolítsa el a grafikus objektumokat a PDF-fájlból](./remove-graphics-objects/) | Útmutató lépésről lépésre a grafikus objektumok PDF-fájlból való eltávolításához az Aspose.PDF for .NET használatával. A PDF-fájlok testreszabása és tisztítása. |  
+| [Rajzolj XForm-ot az oldalra](./draw-xform-on-page/) | Ezzel az átfogó, lépésenkénti útmutatóval megtudhatja, hogyan rajzolhat XFormokat PDF-ben az Aspose.PDF for .NET használatával. |  
+| [PDF-kezelők](./pdf-operators/) | Lépésről lépésre a PDF-operátorok használatához az Aspose.PDF for .NET-hez. Adjon hozzá egy képet egy PDF-oldalhoz, és adja meg a pozícióját. |  
+| [Távolítsa el a grafikus objektumokat a PDF-fájlból](./remove-graphics-objects/) | Ebből a lépésenkénti útmutatóból megtudhatja, hogyan távolíthat el grafikus objektumokat PDF-fájlból az Aspose.PDF for .NET használatával. Egyszerűsítse PDF-kezelési feladatait. |  

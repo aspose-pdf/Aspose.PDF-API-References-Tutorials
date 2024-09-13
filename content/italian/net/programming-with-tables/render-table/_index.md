@@ -154,7 +154,7 @@ Congratulazioni! Ora hai imparato come visualizzare una tabella in un documento 
 
 #### D: Come posso modificare l'aspetto della tabella, ad esempio cambiando i colori delle celle o aggiungendo bordi?
 
-A: Per modificare l'aspetto della tabella, è possibile impostare varie proprietà della`Aspose.Pdf.Table` e le sue celle. Ad esempio, puoi impostare`BackgroundColor` proprietà delle celle per cambiare il loro colore di sfondo. Puoi anche impostare la`Border` proprietà della tabella o delle singole celle per aggiungere bordi. Inoltre, puoi personalizzare il font, il colore del testo e l'allineamento del contenuto della tabella modificando il`TextState` del`TextFragment` oggetti aggiunti alle celle.
+ A: Per modificare l'aspetto della tabella, è possibile impostare varie proprietà della`Aspose.Pdf.Table` e le sue celle. Ad esempio, puoi impostare`BackgroundColor` proprietà delle celle per cambiare il loro colore di sfondo. Puoi anche impostare la`Border` proprietà della tabella o delle singole celle per aggiungere bordi. Inoltre, puoi personalizzare il font, il colore del testo e l'allineamento del contenuto della tabella modificando il`TextState` del`TextFragment` oggetti aggiunti alle celle.
 
 #### D: Posso aggiungere intestazioni o piè di pagina alla tabella?
 
@@ -162,7 +162,7 @@ R: Sì, puoi aggiungere intestazioni o piè di pagina alla tabella creando righe
 
 #### D: Come posso controllare la posizione della tabella sulla pagina?
 
- A: Per controllare la posizione della tabella sulla pagina, puoi regolare il`MarginInfo` del`PageInfo` oggetto. Il`MarginInfo`consente di impostare i margini sinistro, destro, superiore e inferiore della pagina, il che influisce sullo spazio disponibile per la tabella. È inoltre possibile utilizzare`PositioningType` proprietà del`Aspose.Pdf.Table` per controllare l'allineamento orizzontale e verticale all'interno dell'area del contenuto della pagina.
+A: Per controllare la posizione della tabella sulla pagina, puoi regolare il`MarginInfo` del`PageInfo` oggetto. Il`MarginInfo` consente di impostare i margini sinistro, destro, superiore e inferiore della pagina, il che influisce sullo spazio disponibile per la tabella. È inoltre possibile utilizzare`PositioningType` proprietà del`Aspose.Pdf.Table` per controllare l'allineamento orizzontale e verticale all'interno dell'area del contenuto della pagina.
 
 #### D: Posso esportare la tabella in formati di file diversi, come Excel o CSV?
 

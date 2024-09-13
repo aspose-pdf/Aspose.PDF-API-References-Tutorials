@@ -151,7 +151,7 @@ document.Save(dataDir + "TextBlockStructureElements.pdf");
 
 ## 結論
 
-在本教學中，我們學習如何使用 Aspose.PDF for .NET 將文字區塊結構元素（例如標題和標記段落）新增至 PDF 文件中。現在您可以使用這些功能來改善 PDF 文件的結構和可訪問性。
+在本教學中，我們學習如何使用 Aspose.PDF for .NET 將文字區塊結構元素（例如標題和標記段落）新增至 PDF 文件。現在您可以使用這些功能來改善 PDF 文件的結構和可訪問性。
 
 ### 常見問題解答
 

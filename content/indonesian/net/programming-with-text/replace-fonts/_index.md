@@ -34,7 +34,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## Langkah 3: Cari dan Ganti Font
 
- Kami menciptakan sebuah`TextFragmentAbsorber`objek dan atur opsi edit untuk menghapus font yang tidak digunakan. Kemudian, kami menerima penyerap untuk semua halaman dokumen PDF guna mencari fragmen teks.
+ Kami menciptakan sebuah`TextFragmentAbsorber` objek dan atur opsi edit untuk menghapus font yang tidak digunakan. Kemudian, kami menerima penyerap untuk semua halaman dokumen PDF guna mencari fragmen teks.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));

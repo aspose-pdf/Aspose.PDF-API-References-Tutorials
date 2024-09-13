@@ -73,7 +73,7 @@ Nous allons définir la bordure de la cellule (double bordure) :
 cell. Border = border;
 ```
 
-## Étape 10 : Ajout du tableau à la page
+## Étape 10 : Ajout du tableau à la page
 Ajoutons maintenant le tableau à la page du document :
 
 ```csharp

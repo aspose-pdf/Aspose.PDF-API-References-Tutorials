@@ -13,11 +13,11 @@ Az Aspose.PDF for .NET grafikájával ellátott programozási oktatóanyagok min
 ## Oktatóanyagok
 | Cím | Leírás |
 | --- | --- | 
-| [Rajz hozzáadása PDF fájlhoz](./add-drawing/) | Ismerje meg, hogyan adhat hozzá rajzot PDF-fájlhoz az Aspose.PDF for .NET használatával. Kövesse ezt a lépésről lépésre szóló útmutatót vonzó PDF-dokumentumok létrehozásához rajzfunkciókkal. |  
-| [Rajz hozzáadása színátmenetes kitöltéssel](./add-drawing-with-gradient-fill/) | Ismerje meg, hogyan adhat hozzá rajzot színátmenetes kitöltéssel az Aspose.PDF for .NET segítségével. Lépésről lépésre bemutató útmutató vonzó PDF dokumentumok létrehozásához. |  
-| [Vonalobjektum hozzáadása PDF-fájlhoz](./add-line-object/) | Ismerje meg, hogyan adhat hozzá egyéni vonalobjektumot PDF-fájlhoz az Aspose.PDF for .NET használatával. |  
-| [Vezérlő téglalap Z sorrend](./control-rectangle-z-order/) | Ismerje meg, hogyan szabályozhatja a téglalapok Z-rendjét egy PDF-fájlban az Aspose.PDF for .NET segítségével.  |  
-| [Hozzon létre kitöltött téglalapot](./create-filled-rectangle/) | Ismerje meg, hogyan hozhat létre kitöltött téglalapot az Aspose.PDF for .NET segítségével. Lépésről lépésre útmutató a kitöltési szín testreszabásához. |  
-| [Hozzon létre téglalapot alfa színnel](./create-rectangle-with-alpha-color/) | Ismerje meg, hogyan hozhat létre átlátszó színű téglalapot az Aspose.PDF for .NET használatával. Lépésről lépésre szóló útmutató az átláthatóság testreszabásához. |  
-| [Dash Length](./dash-length/) | Ismerje meg, hogyan állíthatja be a gondolatjelek hosszát az Aspose.PDF for .NET segítségével. Útmutató lépésről lépésre a vonalminták testreszabásához. |  
-| [Rajz Vonal](./drawing-line/) | Ismerje meg, hogyan húzhat vonalat egy oldalon az Aspose.PDF for .NET használatával. Útmutató lépésről lépésre egyéni vonalak létrehozásához. |  
+| [Rajz hozzáadása PDF fájlhoz](./add-drawing/) | Ismerje meg, hogyan adhat hozzá rajzokat PDF-fájlokhoz az Aspose.PDF for .NET használatával. Ez a lépésenkénti útmutató a színbeállításokat, az alakzatok hozzáadását és a PDF mentését ismerteti. |  
+| [Rajz hozzáadása színátmenetes kitöltéssel](./add-drawing-with-gradient-fill/) | Ebből a lépésről lépésre szóló útmutatóból megtudhatja, hogyan adhat lenyűgöző színátmenetes rajzokat PDF-fájlokhoz az Aspose.PDF for .NET használatával. |  
+| [Vonalobjektum hozzáadása PDF-fájlhoz](./add-line-object/) | Ebben a lépésenkénti oktatóanyagban megtudhatja, hogyan adhat hozzá vonalobjektumot PDF-fájlhoz az Aspose.PDF for .NET használatával. Tökéletes kezdőknek. |  
+| [Vezérlő téglalap Z sorrend](./control-rectangle-z-order/) | Ebből a részletes, lépésenkénti oktatóanyagból megtudhatja, hogyan vezérelheti a téglalap Z-sorrendjét PDF-ben az Aspose.PDF for .NET használatával. Ideális azoknak a fejlesztőknek, akik szeretnék továbbfejleszteni a PDF dokumentumokat. |  
+| [Hozzon létre kitöltött téglalapot](./create-filled-rectangle/) | Ebből a lépésről lépésre mutató oktatóanyagból megtudhatja, hogyan hozhat létre kitöltött téglalapot PDF-fájlban az Aspose.PDF for .NET használatával. Tökéletes minden szintű fejlesztő számára. |  
+| [Hozzon létre téglalapot alfa színnel](./create-rectangle-with-alpha-color/) | Ebből a lépésről lépésre mutató oktatóanyagból megtudhatja, hogyan hozhat létre átlátszó téglalapokat PDF-ben az Aspose.PDF for .NET használatával. Fokozza PDF-fájljait az alfa színekkel könnyedén. |  
+| [Dash Length](./dash-length/) | Lépésről lépésre szóló útmutatónk segítségével megtudhatja, hogyan szabhatja testre a vonalak szaggatott mintáit PDF-fájlokban az Aspose.PDF for .NET használatával. Tökéletes, hogy stílust adjon dokumentumaihoz. |  
+| [Rajz Vonal](./drawing-line/) | Ismerje meg, hogyan rajzolhat vonalakat PDF-dokumentumban az Aspose.PDF for .NET használatával. Ez a lépésenkénti útmutató a dokumentum beállítását, sorok hozzáadását és a fájl mentését ismerteti. |  

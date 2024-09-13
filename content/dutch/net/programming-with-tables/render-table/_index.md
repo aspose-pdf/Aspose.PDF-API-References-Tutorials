@@ -154,7 +154,7 @@ Gefeliciteerd! U hebt nu geleerd hoe u een tabel in een PDF-document kunt weerge
 
 #### V: Hoe kan ik het uiterlijk van de tabel aanpassen, bijvoorbeeld door celkleuren te wijzigen of randen toe te voegen?
 
-A: Om het uiterlijk van de tabel te wijzigen, kunt u verschillende eigenschappen van de tabel instellen.`Aspose.Pdf.Table` en de cellen ervan. U kunt bijvoorbeeld de`BackgroundColor` eigenschap van cellen om hun achtergrondkleur te veranderen. U kunt ook de`Border` eigenschap van de tabel of afzonderlijke cellen om randen toe te voegen. Daarnaast kunt u het lettertype, de tekstkleur en de uitlijning van de tabelinhoud aanpassen door de`TextState` van de`TextFragment` objecten die aan de cellen zijn toegevoegd.
+ A: Om het uiterlijk van de tabel te wijzigen, kunt u verschillende eigenschappen van de tabel instellen.`Aspose.Pdf.Table` en de cellen ervan. U kunt bijvoorbeeld de`BackgroundColor` eigenschap van cellen om hun achtergrondkleur te veranderen. U kunt ook de`Border` eigenschap van de tabel of afzonderlijke cellen om randen toe te voegen. Daarnaast kunt u het lettertype, de tekstkleur en de uitlijning van de tabelinhoud aanpassen door de`TextState` van de`TextFragment` objecten die aan de cellen zijn toegevoegd.
 
 #### V: Kan ik kop- of voetteksten aan de tabel toevoegen?
 
@@ -162,7 +162,7 @@ A: Ja, u kunt kop- of voetteksten toevoegen aan de tabel door extra rijen aan he
 
 #### V: Hoe kan ik de positie van de tabel op de pagina bepalen?
 
- A: Om de positie van de tabel op de pagina te bepalen, kunt u de`MarginInfo` van de`PageInfo` voorwerp. Het`MarginInfo`kunt u de linker-, rechter-, boven- en ondermarges van de pagina instellen, wat invloed heeft op de beschikbare ruimte voor de tabel. U kunt ook de`PositioningType` eigendom van de`Aspose.Pdf.Table` om de horizontale en verticale uitlijning binnen het inhoudsgebied van de pagina te regelen.
+A: Om de positie van de tabel op de pagina te bepalen, kunt u de`MarginInfo` van de`PageInfo` voorwerp. Het`MarginInfo` kunt u de linker-, rechter-, boven- en ondermarges van de pagina instellen, wat invloed heeft op de beschikbare ruimte voor de tabel. U kunt ook de`PositioningType` eigendom van de`Aspose.Pdf.Table` om de horizontale en verticale uitlijning binnen het inhoudsgebied van de pagina te regelen.
 
 #### V: Kan ik de tabel exporteren naar verschillende bestandsformaten, zoals Excel of CSV?
 

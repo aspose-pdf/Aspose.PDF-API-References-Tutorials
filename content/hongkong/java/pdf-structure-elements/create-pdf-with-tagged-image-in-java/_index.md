@@ -82,7 +82,7 @@ pdfDocument.save("tagged_image.pdf");
 
 ### 我可以免費使用 Aspose.PDF for Java 嗎？
 
-Aspose.PDF for Java 是一個商業庫，它附有試用版。然而，為了全面使用，您需要從 Aspose 購買許可證。
+Aspose.PDF for Java 是一個商業庫，它附有試用版。但是，為了全面使用，您需要從 Aspose 購買許可證。
 
 ### 是否可以為 PDF 中的標記圖像添加替代文字？
 

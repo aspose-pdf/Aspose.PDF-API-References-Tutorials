@@ -35,7 +35,7 @@ Nous avons créé un nouveau document et défini le titre et la langue du docume
 Dans cette étape, nous obtiendrons l’élément de structure racine de notre document.
 
 ```csharp
-//Obtenir l'élément de structure racinaire
+// Obtenir l'élément de structure racinaire
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

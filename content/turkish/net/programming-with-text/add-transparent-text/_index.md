@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Adım 5: Belgeye bir sayfa ekleyin
- Belgeye yeni bir sayfa eklemek için şunu kullanın:`Add` yöntemi`Pages`koleksiyon. Sağlanan kodda, yeni sayfa değişkene atanır`page`.
+ Belgeye yeni bir sayfa eklemek için şunu kullanın:`Add` yöntemi`Pages` koleksiyon. Sağlanan kodda, yeni sayfa değişkene atanır`page`.
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
@@ -109,7 +109,7 @@ Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 4
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
 // Dikdörtgeni Grafik nesnesinin şekiller koleksiyonuna ekle
 canvas.Shapes.Add(rect);
-//Sayfa nesnesinin paragraf koleksiyonuna grafik nesnesi ekle
+// Sayfa nesnesinin paragraf koleksiyonuna grafik nesnesi ekle
 page.Paragraphs.Add(canvas);
 // Grafik nesnesi için konumu değiştirmeyecek şekilde değer ayarlayın
 canvas.IsChangePosition = false;
@@ -163,7 +163,7 @@ using Aspose.Pdf.Drawing;
 
 #### S: Şeffaflık içeren bir dikdörtgen nasıl oluştururum?
 
-A: 7. Adımda, belirli boyutlara sahip bir dikdörtgen oluşturacaksınız ve dolgu rengini,`Color.FromRgb` Yöntem.
+ A: 7. Adımda, belirli boyutlara sahip bir dikdörtgen oluşturacaksınız ve dolgu rengini,`Color.FromRgb` Yöntem.
 
 #### S: Graph nesnesini sayfaya nasıl eklerim?
 
@@ -175,7 +175,7 @@ A: 7. Adımda, belirli boyutlara sahip bir dikdörtgen oluşturacaksınız ve do
 
 #### S: Şeffaflık içeren bir TextFragment nasıl oluştururum?
 
- A: 10. Adımda bir tane oluşturacaksınız`TextFragment` nesneyi ve içeriğini ayarlayın ve`ForegroundColor` şeffaf metin elde etme özelliği.
+A: 10. Adımda bir tane oluşturacaksınız`TextFragment` nesneyi ve içeriğini ayarlayın ve`ForegroundColor` şeffaf metin elde etme özelliği.
 
 #### S: PDF belgesini nasıl kaydedebilirim?
 

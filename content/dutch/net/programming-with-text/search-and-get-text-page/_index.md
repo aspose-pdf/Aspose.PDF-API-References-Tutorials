@@ -60,7 +60,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## Stap 6: geëxtraheerde tekstfragmenten verkrijgen
 
-Haal de geëxtraheerde tekstfragmenten op met behulp van de`TextFragments` eigendom van de`TextFragmentAbsorber` voorwerp:
+ Haal de geëxtraheerde tekstfragmenten op met behulp van de`TextFragments` eigendom van de`TextFragmentAbsorber` voorwerp:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -124,7 +124,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 
 ## Conclusie
 
-Gefeliciteerd! U hebt succesvol geleerd hoe u tekst kunt zoeken en ophalen van een specifieke pagina van een PDF-document met Aspose.PDF voor .NET. Deze tutorial bood een stapsgewijze handleiding, van het laden van het document tot het openen van de geëxtraheerde tekstsegmenten. U kunt nu
+Gefeliciteerd! U hebt succesvol geleerd hoe u tekst van een specifieke pagina van een PDF-document kunt zoeken en ophalen met Aspose.PDF voor .NET. Deze tutorial bood een stapsgewijze handleiding, van het laden van het document tot het openen van de geëxtraheerde tekstsegmenten. U kunt nu
 
 ### Veelgestelde vragen
 

@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## 5. lépés: Adjon hozzá egy oldalt a dokumentumhoz
- Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
+ Adjon hozzá egy új oldalt a dokumentumhoz a`Add` módszere a`Pages` gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -91,7 +91,7 @@ Sikeresen meghatározta a sortöréseket egy PDF-dokumentumban az Aspose.PDF for
 
 V: Ez az oktatóanyag arra összpontosít, hogy végigvezeti Önt a sortörések meghatározásán egy PDF-fájlban az Aspose.PDF for .NET könyvtár használatával. A mellékelt C# forráskód bemutatja az ehhez szükséges lépéseket.
 
-#### K: Milyen névtereket importáljak ehhez az oktatóanyaghoz?
+#### K: Mely névtereket kell importálnom ehhez az oktatóanyaghoz?
 
 V: Abban a kódfájlban, amelyben sortörést szeretne meghatározni, importálja a következő névtereket a fájl elejére:
 
@@ -118,7 +118,7 @@ V: A 6. lépésben létrehoz egy hurkot, amellyel több szövegrészletet ad hoz
 
 #### K: Hogyan menthetem el a PDF-dokumentumot és bonthatom ki a sortörési információkat?
 
- V: A 7. lépésben a PDF-dokumentumot a`Save` módszere a`Document` objektum. Ezután a sortörés információit a`GetNotifications`módszerét, és mentse el egy szöveges fájlba.
+ V: A 7. lépésben a PDF-dokumentumot a`Save` módszere a`Document` objektum. Ezután a sortörés információit a`GetNotifications` módszerét, és mentse el egy szöveges fájlba.
 
 #### K: Mi a kinyert sortörési információ célja?
 

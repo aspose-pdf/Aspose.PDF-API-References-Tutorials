@@ -69,7 +69,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## الخطوة 7: استرداد أجزاء النص المستخرجة
 
-احصل على أجزاء النص المستخرجة باستخدام`TextFragments` ممتلكات`TextFragmentAbsorber` هدف:
+ احصل على أجزاء النص المستخرجة باستخدام`TextFragments` ممتلكات`TextFragmentAbsorber` هدف:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -103,7 +103,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // فتح المستند
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionAll.pdf");
-// إنشاء كائن TextAbsorber للعثور على جميع العبارات المطابقة للتعبير العادي
+//إنشاء كائن TextAbsorber للعثور على جميع العبارات المطابقة للتعبير العادي
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // مثل 1999-2000
 // تعيين خيار البحث النصي لتحديد استخدام التعبيرات العادية
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);

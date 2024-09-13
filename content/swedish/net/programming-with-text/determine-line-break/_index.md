@@ -1,7 +1,7 @@
 ---
 title: Bestäm radbrytning i PDF-fil
 linktitle: Bestäm radbrytning i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du bestämmer radbrytningar i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 130
@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Steg 5: Lägg till en sida i dokumentet
- Lägg till en ny sida i dokumentet med hjälp av`Add` metod för`Pages`samling. I den angivna koden är den nya sidan tilldelad variabeln`page`.
+ Lägg till en ny sida i dokumentet med hjälp av`Add` metod för`Pages` samling. I den angivna koden är den nya sidan tilldelad variabeln`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -118,7 +118,7 @@ S: I steg 6 skapar du en loop för att lägga till flera textfragment på sidan,
 
 #### F: Hur sparar jag PDF-dokumentet och extraherar radbrytningsinformation?
 
- S: I steg 7 sparar du PDF-dokumentet med hjälp av`Save` metod för`Document` objekt. Sedan extraherar du radbrytningsinformationen med hjälp av`GetNotifications`metod för den önskade sidan och spara den i en textfil.
+ S: I steg 7 sparar du PDF-dokumentet med hjälp av`Save` metod för`Document` objekt. Sedan extraherar du radbrytningsinformationen med hjälp av`GetNotifications` metod för den önskade sidan och spara den i en textfil.
 
 #### F: Vad är syftet med den extraherade radbrytningsinformationen?
 

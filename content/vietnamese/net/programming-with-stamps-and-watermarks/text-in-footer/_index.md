@@ -2,134 +2,136 @@
 title: Văn bản ở chân trang của tệp PDF
 linktitle: Văn bản ở chân trang của tệp PDF
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Học cách thêm văn bản vào chân trang của tệp PDF bằng Aspose.PDF cho .NET.
+description: Tìm hiểu cách dễ dàng thêm văn bản vào chân trang của tệp PDF bằng Aspose.PDF cho .NET. Hướng dẫn từng bước được bao gồm để tích hợp liền mạch.
 type: docs
 weight: 180
 url: /vi/net/programming-with-stamps-and-watermarks/text-in-footer/
 ---
-Trong hướng dẫn này, chúng ta sẽ tìm hiểu cách thêm văn bản vào chân trang của tệp PDF bằng Aspose.PDF cho .NET. Thực hiện theo các bước dưới đây:
+## Giới thiệu
 
-## Bước 1: Chuẩn bị dự án
+Bạn có muốn thêm văn bản tùy chỉnh vào chân trang của tệp PDF bằng Aspose.PDF cho .NET không? Bạn đã đến đúng nơi rồi! Cho dù bạn muốn đưa số trang, ngày tháng hay bất kỳ văn bản tùy chỉnh nào khác, hướng dẫn này sẽ hướng dẫn bạn thực hiện toàn bộ quy trình. Với Aspose.PDF, một thư viện thao tác PDF mạnh mẽ, việc thêm chân trang trở nên vô cùng dễ dàng. Trong bài viết này, chúng ta sẽ khám phá quy trình từng bước để thêm văn bản vào chân trang của mọi trang trong tệp PDF của bạn. Quy trình này nhanh chóng, đơn giản và hoàn hảo cho những ai muốn tự động tùy chỉnh PDF trong các ứng dụng .NET của họ.
 
-Hãy đảm bảo rằng bạn đã cài đặt Aspose.PDF cho .NET và tạo một dự án C#.
 
-## Bước 2: Nhập không gian tên
+## Điều kiện tiên quyết
 
-Thêm các không gian tên sau vào tệp nguồn C# của bạn:
+Trước khi bắt đầu viết mã, hãy đảm bảo bạn đã chuẩn bị mọi thứ:
+
+-  Aspose.PDF cho .NET: Đảm bảo bạn đã cài đặt Aspose.PDF cho .NET. Nếu chưa, bạn có thể[tải xuống ở đây](https://releases.aspose.com/pdf/net/).
+- IDE: Bạn sẽ cần một môi trường phát triển như Visual Studio.
+- Kiến thức cơ bản về C#: Cần có hiểu biết cơ bản về C# và .NET.
+-  Giấy phép: Mặc dù bạn có thể sử dụng Aspose.PDF ở chế độ đánh giá, nhưng để có đầy đủ chức năng, hãy cân nhắc việc nhận[dùng thử miễn phí](https://releases.aspose.com/) hoặc nộp đơn xin[giấy phép tạm thời](https://purchase.aspose.com/temporary-license/).
+
+## Nhập gói
+
+Trước khi bắt đầu phần mã hóa, hãy đảm bảo nhập các không gian tên cần thiết. Điều này sẽ đảm bảo các lớp và phương thức từ thư viện Aspose.PDF có sẵn trong dự án của bạn.
 
 ```csharp
+using System.IO;
+using System;
 using Aspose.Pdf;
-using Aspose.Pdf.Text;
 ```
 
-## Bước 3: Mở tài liệu
+Bây giờ bạn đã thiết lập xong, chúng ta hãy chia nhỏ quy trình thêm văn bản vào chân trang của tệp PDF thành các bước dễ thực hiện.
 
-Mở tài liệu PDF hiện có bằng đường dẫn được cung cấp:
+## Bước 1: Khởi tạo dự án của bạn và thiết lập thư mục tài liệu
+
+Trước khi bạn có thể làm việc với các tệp PDF, bạn cần chỉ định đường dẫn đến thư mục tài liệu của mình. Đây là nơi tệp PDF của bạn nằm và nơi tệp đã sửa đổi sẽ được lưu.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+// Đường dẫn đến thư mục tài liệu.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Ở đây, thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế đến thư mục của bạn. Thư mục này sẽ chứa tệp PDF gốc và cũng sẽ đóng vai trò là vị trí đầu ra cho tệp đã sửa đổi.
+
+## Bước 2: Tải Tài liệu PDF
+
+ Bước tiếp theo là tải tệp PDF vào dự án của bạn.`Document` lớp từ Aspose.PDF cho phép bạn mở và thao tác với các tài liệu PDF hiện có.
+
+```csharp
+// Mở tài liệu
 Document pdfDocument = new Document(dataDir + "TextinFooter.pdf");
 ```
 
-Hãy nhớ thay thế "THƯ MỤC TÀI LIỆU CỦA BẠN" bằng đường dẫn thực tế đến thư mục tài liệu của bạn.
+ Đây,`TextinFooter.pdf` là tệp chúng ta đang làm việc. Bạn có thể thay thế bằng tên tệp của riêng bạn.
 
-## Bước 4: Tạo văn bản chân trang
+## Bước 3: Tạo văn bản chân trang
 
-Tạo một dấu văn bản mới với nội dung bạn muốn thêm vào chân trang:
-
-```csharp
-TextStamp textStamp = new TextStamp("footer text");
-```
-
-Bạn có thể tùy chỉnh văn bản bằng cách thay đổi các thuộc tính của văn bản như lề dưới, căn chỉnh theo chiều ngang và căn chỉnh theo chiều dọc.
-
-## Bước 5: Thêm văn bản chân trang vào tất cả các trang
-
-Duyệt qua tất cả các trang của tài liệu PDF và thêm dấu văn bản vào chân trang:
+Bây giờ, hãy tạo văn bản chân trang sẽ được đóng dấu trên mỗi trang. Điều này được thực hiện bằng cách sử dụng`TextStamp` lớp. Văn bản bạn xác định sẽ được sử dụng làm chân trang cho tất cả các trang.
 
 ```csharp
-foreach(Page page in pdfDocument.Pages)
-{
-     page.AddStamp(textStamp);
-}
-```
-
-## Bước 6: Lưu tài liệu PDF
-
-Sau khi thêm văn bản chân trang vào tất cả các trang, hãy lưu tài liệu PDF đã cập nhật:
-
-```csharp
-dataDir = dataDir + "TextinFooter_out.pdf";
-pdfDocument.Save(dataDir);
-Console.WriteLine("\nText in footer added successfully.\nFile saved at: " + dataDir);
-```
-
-Hãy nhớ thay thế "YOUR DOCUMENTS DIRECTORY" bằng đường dẫn thực tế đến thư mục mà bạn muốn lưu tài liệu PDF.
-
-### Mã nguồn mẫu cho Textin Footer sử dụng Aspose.PDF cho .NET 
-```csharp
-
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Mở tài liệu
-Document pdfDocument = new Document(dataDir+ "TextinFooter.pdf");
-
 // Tạo chân trang
 TextStamp textStamp = new TextStamp("Footer Text");
+```
 
+Trong trường hợp này, chúng tôi đã tạo một văn bản chân trang đơn giản có nội dung "Văn bản chân trang". Bạn có thể tùy chỉnh văn bản này bằng thông điệp của riêng bạn. Có thể là một cái gì đó như "Bí mật" hoặc số trang nếu bạn muốn.
+
+## Bước 4: Thiết lập Thuộc tính Chân trang
+
+ Để định vị chân trang đúng cách, chúng ta cần điều chỉnh một số thuộc tính như lề, căn chỉnh và định vị.`TextStamp` Lớp này cho phép bạn toàn quyền kiểm soát vị trí và cách hiển thị văn bản chân trang.
+
+```csharp
 // Thiết lập thuộc tính của tem
 textStamp.BottomMargin = 10;
 textStamp.HorizontalAlignment = HorizontalAlignment.Center;
 textStamp.VerticalAlignment = VerticalAlignment.Bottom;
+```
 
+Ở đây, chúng tôi đã đặt lề dưới là 10 đơn vị, căn chỉnh văn bản vào giữa theo chiều ngang và đặt nó ở cuối trang theo chiều dọc. Bạn có thể điều chỉnh các giá trị này tùy thuộc vào nhu cầu bố cục cụ thể của mình.
+
+## Bước 5: Áp dụng Chân trang cho Tất cả các Trang
+
+Bây giờ đến phần thú vị—áp dụng chân trang cho mọi trang trong PDF. Bằng cách lặp lại tất cả các trang trong tài liệu, chúng ta có thể thêm văn bản chân trang vào từng trang.
+
+```csharp
 // Thêm chân trang vào tất cả các trang
 foreach (Page page in pdfDocument.Pages)
 {
-	page.AddStamp(textStamp);
+    page.AddStamp(textStamp);
 }
-dataDir = dataDir + "TextinFooter_out.pdf";
+```
 
+Vòng lặp này đảm bảo rằng chân trang được đóng dấu trên tất cả các trang của tài liệu, bất kể tệp PDF có bao nhiêu trang.
+
+## Bước 6: Lưu tệp PDF đã cập nhật
+
+Sau khi thêm chân trang vào tất cả các trang, bước cuối cùng là lưu tệp PDF đã sửa đổi vào thư mục đã chỉ định.
+
+```csharp
+dataDir = dataDir + "TextinFooter_out.pdf";
 // Lưu tệp PDF đã cập nhật
 pdfDocument.Save(dataDir);
-Console.WriteLine("\nText in footer added successfully.\nFile saved at " + dataDir);
-
 ```
+
+ Chúng tôi đang lưu tệp với tên mới,`TextinFooter_out.pdf`, trong cùng một thư mục. Bạn có thể đổi tên tùy ý.
+
+## Bước 7: Xác nhận thành công
+
+Cuối cùng, bạn có thể in thông báo thành công tới bảng điều khiển để cho người dùng biết rằng tệp PDF đã được cập nhật thành công.
+
+```csharp
+Console.WriteLine("\nText in footer added successfully.\nFile saved at " + dataDir);
+```
+
+Và thế là xong! Bạn đã thêm thành công văn bản vào chân trang của mọi trang trong tệp PDF.
 
 ## Phần kết luận
 
-Xin chúc mừng! Bạn đã học được cách thêm văn bản vào chân trang của tài liệu PDF bằng Aspose.PDF cho .NET. Bây giờ bạn có thể tùy chỉnh chân trang của mình bằng cách thêm văn bản bổ sung vào tài liệu PDF.
+Thêm chân trang vào tài liệu PDF bằng Aspose.PDF cho .NET là cách đơn giản và mạnh mẽ để tùy chỉnh tệp PDF của bạn. Chỉ với một vài dòng mã, bạn có thể thêm văn bản được cá nhân hóa, chẳng hạn như ngày tháng, tiêu đề hoặc số trang, vào mọi trang trong tài liệu. Bằng cách làm theo hướng dẫn này, giờ đây bạn đã có kiến thức để triển khai chức năng này trong các ứng dụng .NET của mình.
 
-### Câu hỏi thường gặp về văn bản ở chân trang của tệp PDF
+## Câu hỏi thường gặp
 
-#### H: Mục đích của việc thêm văn bản vào chân trang của tài liệu PDF là gì?
+### Tôi có thể thêm các chân trang khác nhau vào mỗi trang trong tệp PDF không?  
+ Có, bạn có thể thêm chân trang duy nhất vào mỗi trang bằng cách chỉ định các chân trang khác nhau`TextStamp` đối tượng cho mỗi trang.
 
-A: Thêm văn bản vào chân trang của tài liệu PDF cho phép bạn đưa vào những thông tin quan trọng như thông báo bản quyền, số trang, phiên bản tài liệu hoặc bất kỳ văn bản nào khác mà bạn muốn xuất hiện nhất quán ở cuối mỗi trang.
+### Làm thế nào để thay đổi kiểu phông chữ của văn bản chân trang?  
+ Bạn có thể tùy chỉnh văn bản bằng cách sử dụng`TextStamp.TextState` Thuộc tính để thiết lập phông chữ, kích thước và màu sắc.
 
-#### H: Mã nguồn C# được cung cấp thực hiện chức năng thêm văn bản vào phần chân trang của tài liệu PDF như thế nào?
+### Tôi có thể thêm hình ảnh vào chân trang thay vì văn bản không?  
+ Có, bạn có thể sử dụng`ImageStamp` để thêm hình ảnh vào chân trang của tệp PDF.
 
-A: Mã này minh họa quy trình mở một tài liệu PDF hiện có, tạo dấu văn bản với văn bản chân trang mong muốn, tùy chỉnh thuộc tính văn bản, thêm dấu văn bản vào tất cả các trang và cuối cùng là lưu tài liệu PDF đã cập nhật với văn bản chân trang đã thêm vào.
+### Có thể thêm chân trang chỉ vào những trang cụ thể không?  
+ Chắc chắn rồi! Bạn có thể chỉ định số trang mà bạn muốn đặt chân trang bằng cách nhắm mục tiêu cụ thể`Page` đồ vật.
 
-#### H: Tôi có thể thay đổi giao diện của văn bản chân trang như phông chữ, kích thước, màu sắc và căn chỉnh không?
-
- A: Có, bạn có thể tùy chỉnh giao diện của văn bản chân trang bằng cách sửa đổi các thuộc tính của`TextStamp` đối tượng. Ví dụ mã bao gồm các thuộc tính thiết lập như lề dưới, căn chỉnh ngang và căn chỉnh dọc. Bạn cũng có thể điều chỉnh phông chữ, kích thước, màu sắc và các thuộc tính liên quan đến văn bản khác.
-
-#### H: Có thể thêm văn bản khác nhau vào chân trang của mỗi trang không?
-
- A: Có, bạn có thể thêm văn bản khác nhau vào chân trang của mỗi trang bằng cách tạo riêng biệt`TextStamp` các đối tượng có nội dung văn bản hoặc thuộc tính khác nhau, sau đó thêm chúng vào các trang cụ thể khi cần.
-
-#### H: Làm thế nào để đảm bảo văn bản chân trang xuất hiện nhất quán trên mọi trang của tài liệu PDF?
-
-A: Bằng cách sử dụng vòng lặp lặp qua tất cả các trang của tài liệu PDF và thêm cùng một dấu văn bản vào mỗi trang, bạn đảm bảo rằng văn bản chân trang xuất hiện nhất quán trên mọi trang.
-
-#### H: Tôi có thể thêm nhiều dòng văn bản hoặc định dạng văn bản chân trang bằng ngắt dòng không?
-
- A: Có, bạn có thể thêm nhiều dòng văn bản vào chân trang bằng cách bao gồm ngắt dòng trong chuỗi văn bản. Ví dụ, bạn có thể sử dụng chuỗi thoát`\n` để chỉ ra một dòng ngắt trong văn bản.
-
-#### H: Điều gì xảy ra nếu tôi muốn thêm nội dung khác nhau vào phần đầu trang và phần chân trang của cùng một tài liệu PDF?
-
-A: Để thêm nội dung khác nhau vào phần đầu trang và phần chân trang, bạn sẽ làm theo các bước tương tự cho cả hai phần. Mã này minh họa cách thêm văn bản vào phần chân trang; bạn có thể sử dụng cách tiếp cận tương tự để thêm văn bản vào phần đầu trang.
-
-#### H: Có thể thêm hình ảnh hoặc các thành phần khác bên cạnh văn bản chân trang bằng cách sử dụng phương pháp này không?
-
-A: Mặc dù mã được cung cấp minh họa cụ thể cách thêm văn bản vào chân trang, nhưng bạn có thể mở rộng cách tiếp cận để thêm các thành phần khác như hình ảnh, đường kẻ, hình dạng hoặc bất kỳ nội dung nào khác vào phần chân trang bằng thư viện Aspose.PDF.
+### Làm thế nào để xóa chân trang hiện có khỏi tệp PDF?  
+ Bạn có thể xóa các tem hiện có bằng cách sử dụng`Page.DeleteStampById` phương pháp hoặc bằng cách sử dụng`RemoveStamp` để xóa hết tem.

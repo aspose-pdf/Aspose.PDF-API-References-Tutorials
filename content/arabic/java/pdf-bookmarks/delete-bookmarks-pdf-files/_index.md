@@ -124,7 +124,7 @@ public class DeleteBookmarks {
 
 ## الأسئلة الشائعة
 
-### كيف أقوم بتثبيت Aspose.PDF لـJava؟
+### كيف أقوم بتثبيت Aspose.PDF لـ Java؟
 
 لتثبيت Aspose.PDF لـ Java، اتبع الخطوات التالية:
 1. قم بتنزيل المكتبة من موقع Aspose.

@@ -2,150 +2,154 @@
 title: Pobierz miejsca docelowe hiperłączy w pliku PDF
 linktitle: Pobierz miejsca docelowe hiperłączy w pliku PDF
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak wyodrębnić miejsca docelowe hiperłączy w pliku PDF za pomocą Aspose.PDF dla platformy .NET.
+description: Dowiedz się, jak łatwo wyodrębnić miejsca docelowe hiperłączy z plików PDF za pomocą Aspose.PDF dla .NET. Postępuj zgodnie z tym prostym samouczkiem krok po kroku.
 type: docs
 weight: 60
 url: /pl/net/programming-with-links-and-actions/get-hyperlink-destinations/
 ---
-Aspose.PDF dla .NET to potężna biblioteka do manipulowania i wyodrębniania informacji w pliku PDF przy użyciu języka programowania C#. W tym samouczku skupimy się na wyodrębnianiu miejsc docelowych hiperłączy z pliku PDF przy użyciu Aspose.PDF dla .NET.
+## Wstęp
+
+Jeśli chodzi o zarządzanie plikami PDF, wyodrębnianie miejsc docelowych hiperłączy może być zaskakująco trudnym zadaniem. Niezależnie od tego, czy pracujesz nad raportem biznesowym, pracą badawczą czy jakimkolwiek dokumentem wypełnionym linkami, możesz potrzebować szybkiego dostępu do tych hiperłączy. Co jeśli powiem ci, że istnieje prosty sposób, aby to zrobić, używając Aspose.PDF dla .NET? Zostań z nami, a odkryjemy, jak wyodrębniać miejsca docelowe hiperłączy ze stylem — nie tracąc głowy w złożoności kodu!
 
 ## Wymagania wstępne
 
-Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
+Zanim zagłębisz się w ten artykuł, upewnijmy się, że masz wszystko pod ręką.
 
-- Zintegrowane środowisko programistyczne (IDE), takie jak Visual Studio.
-- Biblioteka Aspose.PDF dla platformy .NET zainstalowana na Twoim komputerze.
+### Środowisko .NET 
+Upewnij się, że masz skonfigurowane środowisko programistyczne .NET. Możesz użyć Visual Studio lub dowolnego innego wybranego przez siebie środowiska IDE C#. 
 
-## Krok 1: Konfigurowanie środowiska programistycznego
+### Aspose.PDF dla biblioteki .NET 
+ Będziesz potrzebować biblioteki Aspose.PDF. Jeśli jej jeszcze nie masz, możesz ją pobrać z[ten link](https://releases.aspose.com/pdf/net/) . Chcesz przetestować przed podjęciem decyzji? Wypróbuj[bezpłatny okres próbny](https://releases.aspose.com/) Pierwszy!
 
-Zanim zaczniesz pisać kod, musisz skonfigurować środowisko programistyczne, tworząc nowy projekt C# w swoim ulubionym środowisku IDE.
+### Podstawowa wiedza programistyczna 
+Znajomość języka C# i programowania obiektowego jest koniecznością. Jeśli kodowałeś wcześniej, jesteś w dobrej sytuacji!
 
-## Krok 2: Importuj odniesienia Aspose.PDF
+### Plik wejściowy PDF 
+Pobierz plik PDF zawierający hiperłącza — będzie on Twoim królikiem doświadczalnym w procesie ekstrakcji!
 
-Aby użyć Aspose.PDF dla .NET, musisz dodać odpowiednie odniesienia do swojego projektu. Wykonaj poniższe kroki, aby zaimportować niezbędne odniesienia:
+Teraz, gdy wszystko masz już gotowe, możemy przejść do najlepszej części!
 
-1. W swoim projekcie kliknij prawym przyciskiem myszy „Odniesienia” i wybierz „Dodaj odniesienie”.
-2. W oknie „Dodaj odwołanie” zlokalizuj i wybierz pliki DLL Aspose.PDF dla platformy .NET.
-3. Kliknij „OK”, aby zaimportować odniesienia do projektu.
+## Importuj pakiety
 
-## Krok 3: Ładowanie pliku PDF
-
-Zanim będziesz mógł wyodrębnić miejsca docelowe hiperłączy, musisz załadować plik PDF do swojej aplikacji. Użyj następującego kodu, aby załadować plik PDF:
+Aby rozpocząć pracę z kodem C#, musisz upewnić się, że importujesz niezbędne przestrzenie nazw Aspose. Oto jak to wygląda:
 
 ```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Załaduj plik PDF
+using System;
+using System.IO;
+using Aspose.Pdf;
+using System.Collections;
+using Aspose.Pdf.Annotations;
+using System.Collections.Generic;
+```
+
+Te wiersze w zasadzie informują nasz program, których bibliotek chcemy użyć, dzięki czemu może on rozpoznać klasy i metody, z którymi będziemy pracować. 
+
+## Krok 1: Skonfiguruj swój projekt
+
+Zacznij od utworzenia nowego projektu C#. Oto jak to zrobić:
+
+1. Otwórz program Visual Studio lub preferowany przez siebie program IDE.
+2. Utwórz nowy projekt i wybierz aplikację konsolową.
+3. Nadaj swojemu projektowi nazwę, np. „PDFHyperlinkExtractor”.
+
+Teraz upewnijmy się, że Twój projekt jest skonfigurowany do obsługi środowiska .NET Core lub innego preferowanego środowiska.
+
+## Krok 2: Dodawanie biblioteki Aspose.PDF
+
+Aby w pełni wykorzystać zaawansowane funkcje udostępniane przez Aspose.PDF, należy dodać bibliotekę do projektu.
+
+1. Użyj Menedżera pakietów NuGet:
+   - Kliknij prawym przyciskiem myszy swój projekt w Eksploratorze rozwiązań.
+   - Kliknij „Zarządzaj pakietami NuGet”.
+   -  Szukaj`Aspose.PDF` i zainstaluj.
+
+Spowoduje to dodanie wymaganych plików assembly, dzięki czemu będzie można rozpocząć kodowanie.
+
+## Krok 3: Załaduj swój dokument PDF
+
+Teraz załadujmy plik PDF, z którym chcesz pracować. Będziesz potrzebować ścieżki do swojego pliku PDF ustawionej poprawnie.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-Pamiętaj o podaniu prawidłowej ścieżki do katalogu dokumentów i pliku PDF, który chcesz przetworzyć.
+ Wyjaśnienie: Zamień`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką, w której znajduje się Twój plik PDF. Ten fragment kodu inicjuje`Document` kurs udostępniony przez Aspose, który dosłownie otwiera Twój plik PDF do użytku biznesowego!
 
-## Krok 4: Poruszanie się po stronach dokumentu
+## Krok 4: Przejdź przez strony pliku PDF
 
-Teraz, gdy plik PDF jest załadowany, musisz przejrzeć wszystkie strony dokumentu. Pozwoli ci to uzyskać
-
-ir adnotacje hiperłączy obecne na każdej stronie. Użyj następującego kodu, aby przejść przez strony dokumentu:
+Następnie przejdziemy przez każdą stronę dokumentu PDF. To jak przewracanie stron książki.
 
 ```csharp
-foreach(Aspose.Pdf.Page page in document.Pages)
+foreach (Aspose.Pdf.Page page in document.Pages)
 {
-     // Pobierz adnotacje linków do konkretnej strony
-     AnnotationSelector selector = new AnnotationSelector(new Aspose.Pdf.Annotations.LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
-     page. Accept(selector);
-     // Utwórz listę, aby zapisać wszystkie linki
-     IList<Annotation> list = selector. Selected;
-     // Przejdź przez każdy element na liście
-     foreach(LinkAnnotation a in list)
-     {
-         // Wydrukuj adres URL docelowy
-         Console.WriteLine("\nDestination: " + (a.Action as Aspose.Pdf.Annotations.GoToURIAction).URI + "\n");
-     }
+    //... kod do wyodrębniania linków znajduje się tutaj
 }
 ```
 
-Ten kod przechodzi przez każdą stronę dokumentu i wybiera adnotacje hiperłączy obecne na każdej stronie. Następnie przechowuje te adnotacje na liście i drukuje adres URL docelowy dla każdego łącza.
+Dlaczego Loop?: Każda strona może mieć różne linki, a my chcemy sprawdzić każdy z nich. W ten sposób nie przegapisz żadnych złotych samorodków ukrytych w środku.
 
-## Krok 5: Uzyskiwanie miejsc docelowych hiperłączy
+## Krok 5: Pobierz adnotacje linków
 
-Ostatnim krokiem jest wyodrębnienie miejsc docelowych hiperłączy z adnotacji hiperłączy. Poniższy kod pokazuje, jak to zrobić:
+ Gdy już jesteśmy na stronie, poszukajmy adnotacji linków. Skorzystamy z`AnnotationSelector`.
 
 ```csharp
-foreach(Aspose.Pdf.Page page in document.Pages)
+AnnotationSelector selector = new AnnotationSelector(new LinkAnnotation(page, Rectangle.Trivial));
+page.Accept(selector);
+```
+
+ Zrozumienie`AnnotationSelector` :Ta klasa pomaga identyfikować linki na stronie poprzez wybieranie adnotacji, które są typu`LinkAnnotation`. 
+
+## Krok 6: Przechowuj i powtarzaj adnotacje linków
+
+Teraz zbierzemy linki na liście i przejrzymy je, aby wyświetlić ich miejsca docelowe.
+
+```csharp
+IList<Annotation> list = selector.Selected;
+foreach (LinkAnnotation a in list)
 {
-     AnnotationSelector selector = new AnnotationSelector(new Aspose.Pdf.Annotations.LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
-     page. Accept(selector);
-     IList<Annotation> list = selector. Selected;
-     foreach(LinkAnnotation a in list)
-     {
-         string destination = (a.Action as Aspose.Pdf.Annotations.GoToURIAction).URI;
-         // Użyj miejsca docelowego tak, jak chcesz
-     }
+    Console.WriteLine("\nDestination: " + (a.Action as GoToURIAction).URI + "\n");
 }
 ```
 
-W tym kodzie pobieramy każde miejsce docelowe hiperłącza z adnotacji łącza i przechowujemy miejsce docelowe w zmiennej. Następnie możesz użyć tego miejsca docelowego w swojej aplikacji, jak chcesz.
+Szczegółowe zestawienie:
+- `IList<Annotation> list`:Przechowuje wszystkie wybrane adnotacje linków.
+- Przeglądanie listy: dla każdego łącza pobieramy jego docelowy adres URI i go wyświetlamy. 
 
-### Przykładowy kod źródłowy dla funkcji Pobierz miejsca docelowe hiperłącza przy użyciu Aspose.PDF dla .NET 
+## Krok 7: Obsługa wyjątków
+
+Upewnij się, że opakowujesz swoją pracę w blok try-catch. Pomaga to wyłapać wszelkie problemy, które mogą się pojawić, takie jak dostęp do pliku, który nie istnieje lub wadliwe adnotacje linków.
+
 ```csharp
-try
-{
-	// Ścieżka do katalogu dokumentów.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Załaduj plik PDF
-	Document document = new Document(dataDir + "input.pdf");
-	// Przeglądaj wszystkie strony pliku PDF
-	foreach (Aspose.Pdf.Page page in document.Pages)
-	{
-		// Pobierz adnotacje linków z konkretnej strony
-		AnnotationSelector selector = new AnnotationSelector(new Aspose.Pdf.Annotations.LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
-		page.Accept(selector);
-		// Utwórz listę zawierającą wszystkie linki
-		IList<Annotation> list = selector.Selected;
-		// Iteruj po poszczególnych elementach na liście
-		foreach (LinkAnnotation a in list)
-		{
-			// Wydrukuj adres URL docelowy
-			Console.WriteLine("\nDestination: " + (a.Action as Aspose.Pdf.Annotations.GoToURIAction).URI + "\n");
-		}
-	}
-}
 catch (Exception ex)
 {
-	Console.WriteLine(ex.Message);
+    Console.WriteLine(ex.Message);
 }
 ```
 
-### Często zadawane pytania dotyczące pobierania miejsc docelowych hiperłączy w pliku PDF
+Dlaczego to jest ważne?: Nikt nie lubi nieoczekiwanych awarii, prawda? Dzięki temu Twój program jest solidny i przyjazny dla użytkownika.
 
-#### P: Czym jest miejsce docelowe hiperłącza w pliku PDF?
+## Krok 8: Kompilacja i uruchomienie
 
-A: Miejsce docelowe hiperłącza w pliku PDF to określona lokalizacja lub cel, do którego hiperłącze wskazuje. Może to być adres URL, strona w tym samym dokumencie lub dokument zewnętrzny.
+W końcu nadszedł czas na moment prawdy! Naciśnij przycisk Uruchom i sprawdź, czy program zachowuje się zgodnie z oczekiwaniami. Powinieneś zobaczyć wyodrębnione miejsca docelowe hiperłączy wydrukowane w konsoli.
 
-#### P: W jaki sposób wyodrębnianie miejsc docelowych hiperłączy może pomóc w analizie mojego dokumentu PDF?
+## Wniosek
 
-A: Wyodrębnianie miejsc docelowych hiperłączy pozwala na identyfikację i katalogowanie wszystkich miejsc docelowych, do których hiperłącza wskazują w dokumencie PDF. Informacje te mogą być przydatne do walidacji treści, weryfikacji linków i analizy danych.
+Wyodrębnianie miejsc docelowych hiperłączy z pliku PDF przy użyciu Aspose.PDF dla .NET jest dość proste, prawda? Za pomocą zaledwie kilku linijek kodu możesz bez wysiłku zebrać swoje linki, oszczędzając czas i kłopoty. Obiektowa struktura biblioteki sprawia, że praca z nią jest intuicyjna, a rezultatem jest czysty wynik konsoli odzwierciedlający całą Twoją ciężką pracę. Gotowy do zautomatyzowania większej liczby zadań w zarządzaniu plikami PDF? Niebo jest granicą!
 
-#### P: W jaki sposób Aspose.PDF dla .NET pomaga w wyodrębnianiu miejsc docelowych hiperłączy?
+## Najczęściej zadawane pytania
 
-A: Aspose.PDF dla .NET zapewnia potężne API do łatwego wyodrębniania miejsc docelowych hiperłączy. Ten samouczek pokazuje krok po kroku, jak wyodrębnić miejsca docelowe hiperłączy za pomocą języka C#.
+### Czym jest Aspose.PDF dla .NET?
+Aspose.PDF dla platformy .NET to rozbudowana biblioteka udostępniająca metody umożliwiające programowe manipulowanie plikami PDF i ich tworzenie.
 
-#### P: Czy mogę selektywnie wyodrębnić miejsca docelowe hiperłączy w oparciu o określone kryteria?
+### Czy mogę używać Aspose.PDF bezpłatnie?
+ Tak! Możesz wypróbować używając[bezpłatny okres próbny](https://releases.aspose.com/).
 
-O: Tak, możesz selektywnie wyodrębnić miejsca docelowe hiperłączy, przeglądając strony dokumentu PDF i filtrując żądane adnotacje hiperłączy na podstawie swoich kryteriów.
+### Jakie języki programowania obsługuje Aspose?
+Oprócz .NET, Aspose oferuje również biblioteki dla języków Java, Python i innych.
 
-#### P: Czy można wyodrębnić hiperłącza z dokumentów PDF chronionych hasłem?
+### Czy muszę mieć wcześniejsze doświadczenie w programowaniu?
+Podstawowe umiejętności programowania w języku C# lub innym języku .NET pomogą Ci lepiej poruszać się w przykładach.
 
-A: Aspose.PDF dla platformy .NET może wyodrębnić docelowe hiperłącza z dokumentów PDF chronionych hasłem, pod warunkiem że podczas otwierania dokumentu podasz wymagane dane uwierzytelniające.
-
-#### P: W jaki sposób mogę wykorzystać wyodrębnione miejsca docelowe hiperłączy w mojej aplikacji?
-
-A: Po wyodrębnieniu miejsc docelowych hiperłączy możesz ich użyć do wykonania różnych czynności, np. sprawdzenia poprawności adresów URL łączy, utworzenia raportów lub wdrożenia niestandardowej nawigacji.
-
-#### P: Czy istnieją jakieś ograniczenia przy wyodrębnianiu miejsc docelowych hiperłączy?
-
-A: Podczas gdy ekstrakcja miejsca docelowego hiperłącza jest wydajna, ważne jest, aby wziąć pod uwagę strukturę dokumentu PDF. Hiperłącza osadzone w złożonych grafikach lub treściach multimedialnych mogą wymagać dodatkowej obsługi.
-
-#### P: Czy mogę wyodrębnić inne atrybuty hiperłączy, np. typy łączy lub współrzędne?
-
-A: Samouczek koncentruje się na wyodrębnianiu miejsc docelowych hiperłączy. Możesz jednak zapoznać się z oficjalną dokumentacją Aspose.PDF, aby poznać zaawansowane funkcje, w tym wyodrębnianie typów łączy i współrzędnych.
+### Gdzie mogę znaleźć dodatkową pomoc i dokumentację?
+ Możesz przeglądać[dokumentacja](https://reference.aspose.com/pdf/net/) lub[forum wsparcia](https://forum.aspose.com/c/pdf/10) po pomoc.

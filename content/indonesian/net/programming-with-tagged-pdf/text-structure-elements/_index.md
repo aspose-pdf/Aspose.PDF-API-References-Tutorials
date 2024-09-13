@@ -47,7 +47,7 @@ Kami telah menetapkan judul dan bahasa dokumen PDF yang diberi tag.
 Sekarang mari kita dapatkan elemen struktur akar dari dokumen PDF.
 
 ```csharp
-//Dapatkan elemen struktur akar
+// Dapatkan elemen struktur akar
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

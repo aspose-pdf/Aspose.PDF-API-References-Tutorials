@@ -105,7 +105,7 @@ Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 page.Paragraphs.Add(tab1);
 //テーブルの列幅を設定する
 tab1.ColumnWidths = "50 50 50";
-//BorderInfo オブジェクトを使用してデフォルトのセル境界線を設定する
+// BorderInfo オブジェクトを使用してデフォルトのセル境界線を設定する
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 //別のカスタマイズされたBorderInfoオブジェクトを使用して表の境界線を設定する
 tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
@@ -132,7 +132,7 @@ row2.Cells.Add("item1");
 row2.Cells.Add("item2");
 row2.Cells.Add("item3");
 dataDir = dataDir + "MarginsOrPadding_out.pdf";
-//PDFを保存する
+// PDFを保存する
 doc.Save(dataDir);
 
 Console.WriteLine("\nCell and table border width setup successfully.\nFile saved at " + dataDir); 
@@ -145,7 +145,7 @@ Console.WriteLine("\nCell and table border width setup successfully.\nFile saved
 
 #### Q: 表内の個々のセルに異なる余白やパディングを設定できますか?
 
-A: はい、Aspose.PDF for .NETを使用して、表内の個々のセルに異なる余白やパディングを設定できます。提供されている例では、`DefaultCellPadding`プロパティ。特定のセルに異なるパディングを設定するには、`MarginInfo`各セルを個別に選択し、余白を変更します。
+ A: はい、Aspose.PDF for .NETを使用して、表内の個々のセルに異なる余白やパディングを設定できます。提供されている例では、`DefaultCellPadding`プロパティ。特定のセルに異なるパディングを設定するには、`MarginInfo`各セルを個別に選択し、余白を変更します。
 
 #### Q: テーブルの境界線の色やスタイルを変更するにはどうすればよいですか?
 

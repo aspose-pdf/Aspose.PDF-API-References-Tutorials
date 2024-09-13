@@ -88,7 +88,7 @@ page.Accept(textFragmentAbsorber);
 
 ## Adım 9: Çıkarılan metin parçalarını alın
 
-Çıkarılan metin parçalarını kullanarak alın`TextFragments` mülkiyeti`TextFragmentAbsorber` nesne:
+ Çıkarılan metin parçalarını kullanarak alın`TextFragments` mülkiyeti`TextFragmentAbsorber` nesne:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

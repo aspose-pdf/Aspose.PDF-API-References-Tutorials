@@ -101,7 +101,7 @@ Sì, puoi aggiungere più immagini allo stesso documento PDF ripetendo per ogni 
 
 ### Aspose.PDF per Java è una libreria gratuita?
 
-Aspose.PDF per Java è una libreria commerciale, ma offre una versione di prova gratuita che puoi utilizzare per valutarne le funzionalità.
+Aspose.PDF per Java è una libreria commerciale, ma offre una versione di prova gratuita che puoi utilizzare per valutarne le capacità.
 
 ### Ci sono limitazioni sui formati immagine supportati?
 

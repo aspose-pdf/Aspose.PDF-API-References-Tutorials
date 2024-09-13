@@ -2,97 +2,83 @@
 title: 在 PDF 檔案中新增文字印記
 linktitle: 在 PDF 檔案中新增文字印記
 second_title: Aspose.PDF for .NET API 參考
-description: 了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中輕鬆新增文字印章。
+description: 透過我們的逐步指南，了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中新增文字圖章，並提升您的文件簡報效果。
 type: docs
 weight: 50
 url: /zh-hant/net/programming-with-stamps-and-watermarks/add-text-stamp/
 ---
-在本教學中，我們將逐步指導您如何使用 Aspose.PDF for .NET 在 PDF 檔案中新增文字圖章。我們將向您展示如何使用提供的 C# 原始程式碼將自訂文字圖章新增至 PDF 檔案的特定頁面。
+## 介紹
 
-## 第一步：建構環境
+在當今的數位時代，PDF 是共享和交付文件的常見格式。無論您是開發人員、內容創建者，還是只是希望增強 PDF 文件的人，了解如何以程式設計方式操作 PDF 都可以改變遊戲規則。您可能想要利用的實用功能是在 PDF 檔案中新增文字圖章。添加文字印記可以為您的文件增添專業氣息或傳達重要訊息，例如「樣本」、「機密」甚至浮水印。
 
-在開始之前，請確保您具備以下條件：
+## 先決條件
 
-- 已安裝的 .NET 開發環境。
-- 下載 .NET 的 Aspose.PDF 庫並在您的專案中引用。
+在我們開始編寫程式碼之前，有一些先決條件可以確保您已正確設定所有內容。這是您需要的：
 
-## 第 2 步：載入 PDF 文檔
+1.  Aspose.PDF for .NET：請確定您的專案中已安裝了 Aspose.PDF 庫。如果您還沒有這樣做，您可以從[阿斯普斯網站](https://releases.aspose.com/pdf/net/).
+2. Visual Studio 或相容 IDE：您將需要一個開發環境來編寫和執行 .NET 程式碼。 Visual Studio 是開發人員最常見的選擇。
+3. C#基礎知識：熟悉C#和物件導向程式設計原理將有助於您更好地理解範例。
+4. 範例 PDF 檔案：您應該有一個可供使用的 PDF 檔案。您可以建立基本 PDF 或使用任何現有 PDF 來測試功能。
 
-第一步是將現有的 PDF 文件載入到您的專案中。方法如下：
+一旦解決了這些先決條件，我們就可以繼續編碼了！
+
+## 導入包
+
+現在，讓我們導入必要的套件。此步驟至關重要，因為它使 Aspose 庫中的類別和方法在您的專案中可用。
+
+### 匯入 Aspose.PDF 程式集
+
+首先，您需要匯入 Aspose.PDF 命名空間。在 C# 檔案的頂部，加入以下 using 指令：
+
+```csharp
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System;
+```
+
+這將使您能夠存取建立和操作 PDF 文件所必需的類別。
+
+現在，讓我們進入本教學的重點。我們將把這個過程分解為清晰簡潔的步驟。每個步驟將指導您完成程式碼以將文字圖章新增至 PDF 檔案。
+
+## 第 1 步：設定文檔目錄
+
+首先，您需要建立 PDF 文件的儲存目錄。這意味著您的程式碼需要知道在哪裡可以找到您要編輯的 PDF 檔案。
 
 ```csharp
 //文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+說明： 替換`"YOUR DOCUMENT DIRECTORY"`與您的 PDF 檔案的實際路徑（`AddTextStamp.pdf`) 被儲存。該路徑稍後用於開啟和儲存修改後的 PDF。
+
+## 第 2 步：開啟 PDF 文檔
+
+接下來，我們將使用以下命令開啟 PDF 文檔`Document`來自 Aspose.PDF 命名空間的類別。
+
+```csharp
 //開啟文件
 Document pdfDocument = new Document(dataDir + "AddTextStamp.pdf");
 ```
 
-請務必將「您的文件目錄」替換為 PDF 文件所在目錄的實際路徑。
+說明：在這裡，我們正在建立一個實例`Document`類別並傳遞我們的 PDF 文件的路徑。這將加載 PDF，以便我們可以對其進行操作。
 
-## 第 3 步：建立文字緩衝區
+## 第 3 步：建立文字圖章
 
-現在您已經上傳了 PDF 文檔，您可以建立要新增的文字印章。操作方法如下：
-
-```csharp
-//建立文字緩衝區
-TextStamp textStamp = new TextStamp("Example Stamp");
-```
-
-上面的程式碼建立一個包含指定文字的新文字緩衝區。
-
-## 步驟 4：配置文字圖章屬性
-
-在將文字圖章新增至 PDF 文件之前，您可以設定圖章的各種屬性，例如背景、位置、旋轉、字型、大小等。
+現在，我們將建立一個文字圖章，稍後將其套用到 PDF 文件。
 
 ```csharp
-//配置文字緩衝區屬性
-textStamp. Background = true;
-textStamp. XIndent = 100;
-textStamp. YIndent = 100;
-textStamp.Rotate = Rotate.on90;
-textStamp.TextState.Font = FontRepository.FindFont("Arial");
-textStamp.TextState.FontSize = 14.0F;
-textStamp.TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
-textStamp.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Aqua);
-```
-
-您可以根據需要調整這些屬性。
-
-## 第 5 步：將文字圖章新增至 PDF
-
-現在文字圖章已準備就緒，您可以將其新增至 PDF 文件的特定頁面。方法如下：
-
-```csharp
-//將文字緩衝區新增至特定頁面
-pdfDocument.Pages[1].AddStamp(textStamp);
-```
-
-上面的程式碼將文字圖章新增到 PDF 文件的第一頁。如果需要，您可以指定另一個頁面。
-
-## 步驟 6：儲存輸出文檔
-
-新增文字圖章後，您可以儲存編輯後的 PDF 文件。方法如下：
-
-```csharp
-//儲存輸出文檔
-pdfDocument.Save(dataDir);
-```
-
-上面的程式碼將修改後的PDF文件儲存在指定目錄中。
-
-### 使用 Aspose.PDF for .NET 新增文字圖章的範例原始程式碼 
-```csharp
-
-//文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-//開啟文件
-Document pdfDocument = new Document(dataDir+ "AddTextStamp.pdf");
-
 //建立文字印章
 TextStamp textStamp = new TextStamp("Sample Stamp");
+```
 
+解釋：`TextStamp`物件是用您要顯示的文字建立的。在本例中，我們使用「樣本圖章」作為圖章的文字。
+
+## 步驟 4：設定圖章屬性
+
+要自訂您的印章，我們可以設定各種屬性，例如背景顏色、位置和旋轉。讓我們現在就這樣做：
+
+```csharp
 //設定圖章是否為背景
 textStamp.Background = true;
 
@@ -102,62 +88,72 @@ textStamp.YIndent = 100;
 
 //旋轉圖章
 textStamp.Rotate = Rotation.on90;
+```
 
+解釋：
+- 背景：將其設定為`true`表示圖章將出現在 PDF 內容的後面。
+- XIndent 和 YIndent：這些屬性決定圖章在頁面上的位置。在此範例中，圖章將放置在距離頁面左邊緣和上緣 100 個單位的位置。
+- 旋轉：將圖章旋轉 90 度。您可以根據您的設計要求選擇不同的旋轉選項。
+
+## 第 5 步：自訂文字屬性
+
+接下來，讓我們透過自訂圖章中文字的外觀來發揮創意：
+
+```csharp
 //設定文字屬性
 textStamp.TextState.Font = FontRepository.FindFont("Arial");
 textStamp.TextState.FontSize = 14.0F;
-textStamp.TextState.FontStyle = FontStyles.Bold;
-textStamp.TextState.FontStyle = FontStyles.Italic;
-textStamp.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Aqua);
+textStamp.TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
+textStamp.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(Color.Aqua);
+```
 
+解釋：
+- 字體：我們使用 Arial 字體並將其設定為粗體和斜體。
+- FontSize：設定為14磅。
+- ForegroundColor：使用 RGB 將文字顏色設定為 Aqua。請隨意更改顏色以滿足您的品牌或設計需求！
+
+## 第 6 步：將圖章新增至 PDF 頁面
+
+現在是時候將圖章新增至 PDF 文件的特定頁面了。
+
+```csharp
 //新增圖章到特定頁面
 pdfDocument.Pages[1].AddStamp(textStamp);
+```
+
+說明： 在此範例中，圖章被加入到 PDF 的第一頁（頁為 1 索引）。根據文檔的需要調整頁碼。
+
+## 第7步：儲存修改後的PDF
+
+最後，讓我們儲存帶有新新增的文字圖章的文件。
+
+```csharp
 dataDir = dataDir + "AddTextStamp_out.pdf";
 
 //儲存輸出文檔
 pdfDocument.Save(dataDir);
-Console.WriteLine("\nText stamp added successfully.\nFile saved at " + dataDir);            
-
+Console.WriteLine("\nText stamp added successfully.\nFile saved at " + dataDir);
 ```
+
+說明：我們為輸出檔案定義一個新路徑，然後儲存修改後的文件。儲存後，路徑印到控制台，確認操作成功。
 
 ## 結論
 
-恭喜！您已經了解如何使用 Aspose.PDF for .NET 新增文字印章。現在您可以將這些知識應用到您自己的專案中，以將自訂文字圖章新增至 PDF 文件中。
+恭喜！您已使用 Aspose.PDF for .NET 成功將文字圖章新增至 PDF 檔案。這種方法可以讓您有效地對文件進行註釋，從而提高其專業性和可用性。無論您是添加浮水印、簽名還是簡單的註釋，Aspose 庫都提供了強大的工具來輕鬆操作您的 PDF。
 
-### 在 PDF 文件中添加文字印記的常見問題解答
+## 常見問題解答
 
-#### Q：使用 Aspose.PDF for .NET 在 PDF 檔案中新增文字印章的目的是什麼？
+### 什麼是 PDF 中的文字印記？
+文字圖章是包含可放置在 PDF 文件上的文字的圖形疊加層，通常用於註釋或浮水印。
 
-答：新增文字圖章可讓您將自訂文字放置在 PDF 文件的特定頁面上。此功能對於新增標籤、註釋、浮水印或任何其他文字資訊以增強文件內容並提供附加上下文非常有用。
+### 我可以用圖像訂製印章嗎？
+是的，Aspose.PDF 也支援新增圖像圖章，提供更多的設計彈性。
 
-#### Q：我可以自訂文字印章的外觀，例如字體、大小、顏色和旋轉嗎？
+### 我可以在 Aspose.PDF 中使用哪些程式語言？
+Aspose.PDF 主要專注於 .NET，但也有適用於其他語言（例如 Java 和 Python）的版本。
 
-答：是的，您可以完全自訂文字印章的外觀。提供的C#原始碼示範如何設定各種屬性`TextStamp`對象，包括字體、字體大小、字體樣式、文字顏色、背景顏色和旋轉。
+### 如何取得 Aspose.PDF 的臨時授權？
+您可以造訪以下網站申請臨時許可證[購買連結](https://purchase.aspose.com/temporary-license/)在他們的網站上。
 
-#### Q：是否可以在同一 PDF 文件的不同頁面上新增多個文字印記？
-
-答：當然，您可以將多個文字圖章新增至同一 PDF 文件的不同頁面。本教學提供的程式碼可讓您指定新增文字圖章的目標頁面，使其適用於文件中的不同頁面。
-
-#### Q：如何指定 PDF 文件中文字印記的位置？
-
- A：您可以透過修改`XIndent`和`YIndent`的屬性`TextStamp`目的。這些屬性定義圖章左上角相對於頁面原點的座標。
-
-#### Q：我可以將此方法套用到現有 PDF 文件來新增文字圖章嗎？
-
-答：是的，您可以將此方法套用到現有的 PDF 文件來新增文字圖章。本教學提供的程式碼示範如何載入現有 PDF 文件並將文字圖章新增至特定頁面。
-
-#### Q：我可以為文字圖章添加背景色和前景色嗎？
-
-答：是的，您可以為文字印章添加背景色和前景色。透過設定`Background`財產給`true`，您可以為文字圖章提供彩色背景。此外，您還可以設定`TextState.ForegroundColor`屬性來指定文字本身的顏色。
-
-#### Q：如何確保文字印記不會遮蓋 PDF 文件的底層內容？
-
-答：在新增文字印記時，請注意其位置，以確保它不會遮蔽關鍵資訊或對文件的可讀性產生負面影響。您可以調整`XIndent`和`YIndent`屬性來適當定位文本圖章。
-
-#### Q：我可以使用此方法添加文字以外的圖章，例如圖像或標誌嗎？
-
-答：本教學重點在於新增文字印章，但您也可以使用 Aspose.PDF for .NET 以類似方式新增其他類型的印章，例如圖像或標誌。該過程涉及創建適當的圖章物件並配置其屬性。
-
-#### Q：如何自動執行在多個 PDF 文件中新增文字圖章的過程？
-
-答：您可以透過建立腳本或程式來自動執行向多個 PDF 文件新增文字印記的過程，該腳本或程式會迭代文件清單並對每個文件套用相同的文字印記過程。
+### 在哪裡可以找到對 Aspose.PDF 的支援？
+對 Aspose.PDF 的支援可在其網站上找到[支援論壇](https://forum.aspose.com/c/pdf/10).

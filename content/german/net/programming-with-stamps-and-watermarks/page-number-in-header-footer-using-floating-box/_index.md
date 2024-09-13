@@ -2,140 +2,146 @@
 title: Seitenzahl in Kopf- und Fußzeile mithilfe einer schwebenden Box
 linktitle: Seitenzahl in Kopf- und Fußzeile mithilfe einer schwebenden Box
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET die Seitenzahl in die Kopf- und Fußzeile eines PDF-Dokuments einfügen.
+description: Fügen Sie in diesem Schritt-für-Schritt-Tutorial mithilfe einer Floating Box mit Aspose.PDF für .NET ganz einfach Seitenzahlen in Ihre PDF-Kopf- und Fußzeile ein.
 type: docs
 weight: 150
 url: /de/net/programming-with-stamps-and-watermarks/page-number-in-header-footer-using-floating-box/
 ---
-In diesem Tutorial zeigen wir Ihnen Schritt für Schritt, wie Sie mithilfe von FloatingBox mit Aspose.PDF für .NET Seitenzahlen in Kopf- und Fußzeile eines PDF-Dokuments hinzufügen. Wir verwenden den bereitgestellten C#-Quellcode, um ein PDF-Dokument zu erstellen, eine Seite hinzuzufügen, eine FloatingBox zu erstellen, ihre Position festzulegen und die Seitenzahl hinzuzufügen. Anschließend speichern wir das geänderte PDF-Dokument.
+## Einführung
 
-## Schritt 1: Einrichten der Umgebung
+Wenn es um die programmgesteuerte Verwaltung von PDF-Dokumenten geht, ist Aspose.PDF für .NET ein herausragendes Tool. Es vereinfacht die Art und Weise, wie wir PDF-Dateien in .NET-Anwendungen erstellen, bearbeiten und manipulieren. Egal, ob Sie Rechnungen, Berichte oder andere Dokumenttypen erstellen, das elegante Hinzufügen von Seitenzahlen kann die Professionalität und Organisation Ihrer PDFs verbessern. In diesem Tutorial erfahren Sie, wie Sie mithilfe einer schwebenden Box Seitenzahlen in die Kopf- und Fußzeile Ihres PDFs einfügen. Bereit, loszulegen? Los geht‘s!
 
-Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
+## Voraussetzungen
 
-- Eine installierte .NET-Entwicklungsumgebung.
-- Die Aspose.PDF-Bibliothek für .NET wurde heruntergeladen und in Ihrem Projekt referenziert.
+Bevor wir diese spannende Reise in das Reich der PDF-Bearbeitung beginnen, benötigen Sie einige Dinge:
 
-## Schritt 2: PDF-Dokument erstellen und Seite hinzufügen
+### Einrichten der .NET-Umgebung
+Stellen Sie sicher, dass Sie über eine .NET-Entwicklungsumgebung verfügen. Sie können Visual Studio verwenden, das unter Entwicklern für .NET-Anwendungen eine beliebte Wahl ist.
 
-Der erste Schritt besteht darin, eine Instanz des PDF-Dokuments zu erstellen und ihr eine Seite hinzuzufügen. So geht's:
+### Aspose.PDF-Bibliothek
+Installieren Sie die Aspose.PDF-Bibliothek. Sie können sie ganz einfach von der Website herunterladen:
+
+- [Laden Sie Aspose.PDF für .NET herunter](https://releases.aspose.com/pdf/net/)
+
+### Grundkenntnisse der C#-Programmierung
+Grundlegende Kenntnisse in C# helfen Ihnen dabei, die in diesem Tutorial vorgestellten Konzepte und Codeausschnitte zu verstehen.
+
+### Zugriff auf die Dokumentation
+ Es ist immer von Vorteil, die[Aspose.PDF Dokumentation](https://reference.aspose.com/pdf/net/) praktisch zum Nachschlagen und für die eingehendere Erkundung zusätzlicher Funktionen.
+
+## Pakete importieren
+
+Zu Beginn müssen Sie die erforderlichen Pakete in Ihr Projekt importieren. Dadurch wird sichergestellt, dass die Aspose.PDF-Assembly für die Verwendung in Ihrem Code zugänglich ist. So geht's:
 
 ```csharp
-// Der Pfad zum Dokumentverzeichnis.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// Instanziieren des PDF-Dokuments
-Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
-
-// Dem PDF-Dokument eine Seite hinzufügen
-Aspose.Pdf.Page page = pdf.Pages.Add();
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-Ersetzen Sie „IHR DOKUMENTVERZEICHNIS“ unbedingt durch den tatsächlichen Pfad zu dem Verzeichnis, in dem Sie das PDF-Dokument speichern möchten.
+Lassen Sie uns nun den Vorgang des Hinzufügens von Seitenzahlen mithilfe einer Floating Box in überschaubare Schritte aufteilen. Folgen Sie uns, während wir durch die Schritte gehen.
 
-## Schritt 3: FloatingBox erstellen und Seitenzahl hinzufügen
+## Schritt 1: Richten Sie Ihre Dokumentumgebung ein
 
-Nachdem die Seite nun dem PDF-Dokument hinzugefügt wurde, können wir eine FloatingBox erstellen, ihre Position festlegen und ihr die Seitenzahl hinzufügen. So geht's:
-
-```csharp
-// Erstellen Sie eine FloatingBox mit einer Breite von 140 und einer Höhe von 80
-Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
-
-// Legen Sie die linke Position des Absatzes fest
-box1. Left = 2;
-
-// Legen Sie die obere Position des Absatzes fest
-box1. Top = 10;
-
-// Seitenzahl zur FloatingBox hinzufügen
-box1.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Page: ($p/ $P )"));
-
-// Fügen Sie die FloatingBox zur Seite hinzu
-page.Paragraphs.Add(box1);
-```
-
-Der obige Code erstellt eine FloatingBox mit einer Breite von 140 und einer Höhe von 80. Als Nächstes legen wir ihre Position fest, indem wir die Werte für „left“ und „top“ angeben. Schließlich fügen wir der FloatingBox die Seitenzahl hinzu, indem wir ein TextFragment mit der Syntax „($p/ $P )“ verwenden, das durch die aktuelle Seitenzahl und die Gesamtzahl der Seiten ersetzt wird.
-
-## Schritt 4: Speichern des geänderten PDF-Dokuments
-
-Nachdem die Seitenzahl mithilfe der FloatingBox in die Kopf- oder Fußzeile eingefügt wurde, können wir das geänderte PDF-Dokument speichern. So geht's:
+Beginnen wir mit der Angabe des Verzeichnisses, in dem Ihr PDF-Dokument gespeichert wird. Dies ist wichtig, da es bestimmt, wo Ihre Ausgabedatei gespeichert wird.
 
 ```csharp
-// Speichern Sie das geänderte PDF-Dokument
-pdf.Save(dataDir + "PageNumberinHeaderFooterUsingFloatingBox_out.pdf");
-```
-
-Der obige Code speichert das bearbeitete PDF-Dokument im angegebenen Verzeichnis.
-
-### Beispielquellcode für Seitennummerierung in Kopf- und Fußzeile mithilfe einer Floating Box unter Verwendung von Aspose.PDF für .NET 
-```csharp
-
 // Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+ Ersetzen`YOUR DOCUMENT DIRECTORY` durch den Pfad Ihrer Wahl, in dem Sie die Ausgabe-PDF-Datei speichern möchten.
+
+## Schritt 2: Instanziieren des Dokuments
+
+ Im nächsten Schritt wird ein neues PDF-Dokument erstellt. Hierzu wird der`Document` Klasse aus der Aspose.PDF-Bibliothek.
+
+```csharp
 // Dokumentinstanz instantiieren
 Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
+```
+ Hier erstellen wir eine neue Instanz des`Document` Klasse, die uns als Leinwand für die Manipulation dient.
 
+## Schritt 3: Eine neue Seite hinzufügen
+
+Fügen wir nun unserem PDF-Dokument eine Seite hinzu. Jedes PDF benötigt mindestens eine Seite, oder?
+
+```csharp
 // Fügen Sie dem PDF-Dokument eine Seite hinzu
 Aspose.Pdf.Page page = pdf.Pages.Add();
+```
+Dieser Codeausschnitt fügt unserem Dokument eine neue Seite hinzu und bereitet es für den Empfang von Inhalten vor, einschließlich unserer schwebenden Box mit Seitenzahlen.
 
+## Schritt 4: Erstellen Sie eine schwebende Box
+
+ Als nächstes ist es an der Zeit, unsere Floating Box zu erstellen, die die Seitenzahl enthalten wird. Die`FloatingBox`Klasse ermöglicht es uns, Inhalte frei auf der Seite zu positionieren.
+
+```csharp
 // Initialisiert eine neue Instanz der FloatingBox-Klasse
 Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
+```
+ Hier die Parameter`(140, 80)` Geben Sie die Breite und Höhe der Floating Box an. Sie können diese Werte je nach Ihren Layoutvorlieben anpassen.
 
+## Schritt 5: Positionierung der Floating Box
+
+ Die Positionierung ist entscheidend! Sie möchten bestimmen, wo auf der Seite die Seitenzahl erscheinen soll. Sie arbeiten mit dem`Left` Und`Top` Eigenschaften, um die Position anzugeben.
+
+```csharp
 // Float-Wert, der die linke Position des Absatzes angibt
 box1.Left = 2;
-
 // Float-Wert, der die obere Position des Absatzes angibt
 box1.Top = 10;
+```
+Diese Werte bestimmen die Platzierung der Floating Box auf der Seite. Experimentieren Sie ruhig damit, um herauszufinden, was für Ihr Dokument am besten aussieht.
 
+## Schritt 6: Text mit dem Seitenzahlen-Makro hinzufügen
+
+Jetzt fügen wir eine Zeichenfolge hinzu, die die Seitenzahl dynamisch anzeigt. Hier geschieht die Magie!
+
+```csharp
 // Fügen Sie die Makros zur Absatzsammlung der FloatingBox hinzu
 box1.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Page: ($p/ $P )"));
+```
+ In diesem Fall,`($p/ $P)`ist ein Makro, das die aktuelle Seitenzahl anzeigt (`$p`) und die Gesamtseitenzahl (`$P`). Als Ergebnis wird der Text so formatiert, dass er etwa „Seite: 1/5“ lautet.
 
+## Schritt 7: Fügen Sie der Seite die schwebende Box hinzu
+
+Es ist Zeit, die Floating Box zusammen mit dem Seitenzahlentext zu unserer neu erstellten Seite hinzuzufügen.
+
+```csharp
 // Fügen Sie der Seite eine FloatingBox hinzu
 page.Paragraphs.Add(box1);
+```
+Diese Zeile bettet Ihre Floating Box im Wesentlichen in die Seite ein und macht sie zu einem Teil des Dokumentlayouts. 
 
+## Schritt 8: Speichern Sie Ihr Dokument
+
+Vergessen Sie nicht, Ihre Arbeit zu speichern! Der letzte Schritt besteht darin, Ihr PDF-Dokument unter einem geeigneten Dateinamen zu speichern.
+
+```csharp
 // Speichern des Dokuments
 pdf.Save(dataDir + "PageNumberinHeaderFooterUsingFloatingBox_out.pdf");
-
 ```
+Stellen Sie sicher, dass der angegebene Pfad den gewünschten Dateinamen enthält. Jetzt wird Ihr beeindruckendes PDF mit Seitenzahlen erstellt! 
 
 ## Abschluss
 
-Herzlichen Glückwunsch! Sie haben gelernt, wie Sie mithilfe von FloatingBox mit Aspose.PDF für .NET Seitenzahlen in Kopf- und Fußzeilen von PDF-Dokumenten einfügen. Sie können jetzt Ihre Kopf- und Fußzeilen anpassen, indem Sie dynamische Informationen wie Seitenzahlen hinzufügen.
+Und da haben Sie es, Leute! So einfach ist es, mit Aspose.PDF für .NET Seitenzahlen zur Kopf- und Fußzeile Ihres PDFs hinzuzufügen. Mit nur wenigen Codezeilen haben Sie sich auf die Reise begeben, die Dokumentverarbeitung in Ihren Anwendungen zu meistern. Scheuen Sie sich nicht, mit verschiedenen Layouts und Formatierungen zu experimentieren – schließlich kennt die Kreativität keine Grenzen! Sind Sie bereit, dieses professionelle Dokument zu erstellen? Schnappen Sie sich Ihren Programmierhut und fangen Sie an zu experimentieren.
 
-### Häufig gestellte Fragen
+## Häufig gestellte Fragen
 
-#### F: Was ist eine FloatingBox und wie wird sie verwendet, um Seitenzahlen in die Kopf- oder Fußzeile eines PDF-Dokuments einzufügen?
+### Kann ich das Erscheinungsbild des Seitenzahlentextes anpassen?  
+ Ja, Sie können Texteigenschaften wie Schriftgröße, Farbe und Stil anpassen, indem Sie die`TextFragment` Eigenschaften.
 
-A: Eine FloatingBox ist ein vielseitiges Layoutelement in Aspose.PDF, das verschiedene Inhalte, darunter Text und Bilder, enthalten kann. In diesem Tutorial wird es verwendet, um einen Container für die Seitenzahl zu erstellen, sodass Sie die aktuelle Seitenzahl und die Gesamtseitenzahl dynamisch in die Kopf- oder Fußzeile einfügen können.
+### Ist die Nutzung von Aspose.PDF kostenlos?  
+ Während Aspose.PDF eine kostenlose Testversion anbietet, ist es ein kostenpflichtiges Produkt für den Produktionseinsatz. Sie können[Kaufen Sie es hier](https://purchase.aspose.com/buy).
 
-#### F: Wie erreicht der bereitgestellte C#-Quellcode das Hinzufügen von Seitenzahlen mithilfe einer FloatingBox?
+### Wo finde ich ausführlichere Dokumentation?  
+ Eine ausführliche Dokumentation finden Sie auf der[Aspose.PDF-Dokumentationsseite](https://reference.aspose.com/pdf/net/).
 
-A: Der Codeausschnitt zeigt, wie man ein PDF-Dokument erstellt, eine Seite hinzufügt, eine FloatingBox erstellt, ihre Position innerhalb der Seite festlegt und die Seitenzahl mithilfe eines TextFragments einfügt. Die Syntax "($p/ $P )" im TextFragment wird durch die aktuelle Seitenzahl und die Gesamtseitenzahl ersetzt.
+### Wie wende ich Kopf- und Fußzeilen auf mehreren Seiten an?  
+Sie können alle Seiten in Ihrem Dokument durchlaufen und die Floating Box auf die gleiche Weise auf jede Seite anwenden.
 
-#### F: Kann ich das Aussehen und die Formatierung der mit der FloatingBox hinzugefügten Seitenzahl anpassen?
-
-A: Ja, Sie können das Erscheinungsbild der Seitenzahl anpassen, indem Sie die Eigenschaften des TextFragments innerhalb der FloatingBox ändern. Sie können Schriftgröße, Farbe, Stil, Ausrichtung und andere Formatierungsoptionen ändern.
-
-#### F: Ist es möglich, mit einem ähnlichen Ansatz verschiedene dynamische Elemente wie Datum und Uhrzeit zur Kopf- oder Fußzeile hinzuzufügen?
-
-A: Absolut, Sie können verschiedene dynamische Elemente wie Datum, Uhrzeit, Dokumentmetadaten oder benutzerdefinierten Text hinzufügen, indem Sie den TextFragment-Inhalt innerhalb der FloatingBox ändern. Sie können Makros wie „($p/ $P )“ für Seitenzahlen oder „($date)“ für das aktuelle Datum verwenden.
-
-#### F: Wie lege ich die Position der FloatingBox im Header- oder Footerbereich fest?
- A: Der bereitgestellte Code setzt die Position der FloatingBox mithilfe der`Left` Und`Top` Eigenschaften. Sie können diese Werte anpassen, um die FloatingBox wie gewünscht im Kopf- oder Fußzeilenbereich zu positionieren.
-
-#### F: Kann ich für die Seitenzahl in der Kopf- oder Fußzeile eine andere Schriftart oder einen anderen Stil verwenden?
-
-A: Ja, Sie können die Schriftart, den Stil und andere Formatierungseigenschaften des Seitenzahlentextes anpassen, indem Sie die TextFragment-Eigenschaften innerhalb der FloatingBox ändern.
-
-#### F: Was passiert, wenn der Inhalt der FloatingBox deren Abmessungen überschreitet?
-
-A: Wenn der Inhalt innerhalb der FloatingBox die Abmessungen überschreitet, kann er abgeschnitten werden oder es können Layoutprobleme auftreten. Stellen Sie sicher, dass die Abmessungen der FloatingBox für die Aufnahme des Inhalts geeignet sind, und passen Sie das Seitenlayout bei Bedarf an.
-
-#### F: Ist es möglich, der Kopf- oder Fußzeile derselben Seite mehrere FloatingBoxen mit unterschiedlichem Inhalt hinzuzufügen?
-
-A: Ja, Sie können der Kopf- oder Fußzeile derselben Seite mehrere FloatingBoxes mit unterschiedlichem Inhalt hinzufügen, indem Sie separate FloatingBox-Instanzen erstellen und diese der Paragraphs-Sammlung der Seite hinzufügen.
-
-#### F: Kann ich den FloatingBox-Ansatz verwenden, um Inhalt zu anderen Abschnitten des PDF-Dokuments hinzuzufügen, beispielsweise zum Textkörper oder zu den Rändern?
-
-A: FloatingBoxes werden zwar häufig für Kopf- und Fußzeilen verwendet, Sie können sie jedoch auch nutzen, um anderen Abschnitten des PDF-Dokuments, wie etwa dem Textkörper oder den Rändern, Inhalt hinzuzufügen, indem Sie sie entsprechend innerhalb der Seite positionieren.
+### Was ist, wenn ich Unterstützung für zusätzliche Funktionen benötige?  
+Für weitere Fragen oder Unterstützung besuchen Sie bitte die[Aspose Forum](https://forum.aspose.com/c/pdf/10).

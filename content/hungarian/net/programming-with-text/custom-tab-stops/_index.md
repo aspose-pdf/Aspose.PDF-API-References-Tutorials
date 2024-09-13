@@ -39,7 +39,7 @@ Document _pdfdocument = new Document();
 ```
 
 ## 5. lépés: Adjon hozzá egy oldalt a dokumentumhoz
- Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
+ Adjon hozzá egy új oldalt a dokumentumhoz a`Add` módszere a`Pages` gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
 
 ```csharp
 Page page = _pdfdocument.Pages.Add();
@@ -132,7 +132,7 @@ Sikeresen létrehozott egy PDF-dokumentumot egyéni tabulátorokkal az Aspose.PD
 
 V: Ez az oktatóanyag az Aspose.PDF for .NET könyvtár használatával történő egyéni tabulátorok létrehozásának folyamatán segíti Önt. A mellékelt C# forráskód bemutatja az ehhez szükséges lépéseket.
 
-#### K: Milyen névtereket importáljak ehhez az oktatóanyaghoz?
+#### K: Mely névtereket kell importálnom ehhez az oktatóanyaghoz?
 
 V: Abban a kódfájlban, amelyben egyéni tabulátorokat szeretne létrehozni, importálja a következő névtereket a fájl elejére:
 

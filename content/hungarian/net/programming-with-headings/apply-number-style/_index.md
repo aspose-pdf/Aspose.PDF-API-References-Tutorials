@@ -2,104 +2,47 @@
 title: Számstílus alkalmazása PDF-fájlban
 linktitle: Számstílus alkalmazása PDF-fájlban
 second_title: Aspose.PDF for .NET API Reference
-description: Ismerje meg, hogyan alkalmazhat számozási stílust a PDF-fájlok címsoraira az Aspose.PDF for .NET segítségével. Lépésről lépésre útmutató.
+description: Ebből a lépésről lépésre szóló útmutatóból megtudhatja, hogyan alkalmazhat különböző számstílusokat (római számok, ábécé) a PDF-fájlok címsoraira az Aspose.PDF for .NET használatával.
 type: docs
 weight: 10
 url: /hu/net/programming-with-headings/apply-number-style/
 ---
-Ebben az oktatóanyagban lépésről lépésre végigvezetjük a következő C#-forráskódon a számozási stílus alkalmazásához PDF-fájlban az Aspose.PDF for .NET segítségével.
+## Bevezetés
 
-Mielőtt elkezdené, győződjön meg arról, hogy telepítette az Aspose.PDF könyvtárat, és beállította a fejlesztői környezetet. C# programozási alapismeretekkel is rendelkezel.
+Volt már olyan, hogy gyönyörűen számozott listákat kell hozzáadnia PDF-dokumentumaihoz? Akár jogi dokumentumokat, jelentéseket vagy prezentációkat formáz, a megfelelő számozási stílusok elengedhetetlenek az információk rendszerezéséhez. Az Aspose.PDF for .NET segítségével különféle számozási stílusokat alkalmazhat PDF-fájljai fejlécére, így jól strukturált és professzionális dokumentumokat hozhat létre. 
 
-### 1. lépés: Dokumentumkönyvtár beállítása
+## Előfeltételek
 
-megadott forráskódban meg kell adnia azt a könyvtárat, ahová a generált PDF fájlt menteni szeretné. Módosítsa a "dataDir" változót a kívánt könyvtárra.
+Mielőtt belevágna a kódolásba, nézzük meg, mire lesz szüksége:
+
+1. Aspose.PDF for .NET: Töltse le az Aspose.PDF legújabb verzióját innen[itt](https://releases.aspose.com/pdf/net/).
+2. Fejlesztési környezet: Győződjön meg arról, hogy rendelkezik Visual Studio vagy bármely más .NET-kompatibilis IDE-vel.
+3. .NET-keretrendszer: Győződjön meg arról, hogy telepítve van a .NET-keretrendszer 4.0-s vagy újabb verziója.
+4.  Licenc: Ideiglenes licencet használhat[itt](https://purchase.aspose.com/temporary-license/) vagy fedezze fel a[ingyenes próbaverzió](https://releases.aspose.com/) opciók.
+
+## Csomagok importálása
+
+A kezdéshez győződjön meg arról, hogy a következő névtereket importálta a projektbe:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-### 2. lépés: A PDF-dokumentum létrehozása
+## 1. lépés: A dokumentum beállítása
 
-Létrehozunk egy új PDF dokumentumot meghatározott méretekkel és margókkal.
+Kezdjük egy új PDF dokumentum létrehozásával és az oldalbeállítások konfigurálásával. Beállítjuk az oldalméretet és a margókat, hogy szabályozzuk a tartalom elrendezését.
 
-```csharp
-Document pdfDoc = new Document();
-pdfDoc.PageInfo.Width = 612.0;
-pdfDoc.PageInfo.Height = 792.0;
-pdfDoc.PageInfo.Margin = new Aspose.Pdf.MarginInfo();
-pdfDoc.PageInfo.Margin.Left = 72;
-pdfDoc.PageInfo.Margin.Right = 72;
-pdfDoc.PageInfo.Margin.Top = 72;
-pdfDoc.PageInfo.Margin.Bottom = 72;
-```
-
-### 3. lépés: Oldal és lebegő tároló létrehozása
-
-Hozzáadunk egy oldalt a dokumentumhoz, és létrehozunk egy lebegő tárolót a tartalom rendszerezéséhez.
+Magyarázat: Ebben a lépésben a PDF alapstruktúráját állítjuk be, amely magában foglalja az oldalméret, a magasság és a margók meghatározását a következetes formázás érdekében.
 
 ```csharp
-Aspose.Pdf.Page pdfPage = pdfDoc.Pages.Add();
-pdfPage.PageInfo.Width = 612.0;
-pdfPage.PageInfo.Height = 792.0;
-pdfPage.PageInfo.Margin = new Aspose.Pdf.MarginInfo();
-pdfPage.PageInfo.Margin.Left = 72;
-pdfPage.PageInfo.Margin.Right = 72;
-pdfPage.PageInfo.Margin.Top = 72;
-pdfPage.PageInfo.Margin.Bottom = 72;
-Aspose.Pdf.FloatingBox floatBox = new Aspose.Pdf.FloatingBox();
-floatBox.Margin = pdfPage.PageInfo.Margin;
-pdfPage.Paragraphs.Add(floatBox);
-```
-
-### 4. lépés: Adjon hozzá címsorokat számozással
-
-Adott számozású fejléceket készítünk, és hozzáadjuk a lebegő tárolóhoz.
-
-```csharp
-Aspose.Pdf.Heading heading = new Aspose.Pdf.Heading(1);
-heading. IsInList = true;
-heading. StartNumber = 1;
-heading.Text = "List 1";
-heading.Style = NumberingStyle.NumeralsRomanLowercase;
-heading. IsAutoSequence = true;
-floatBox.Paragraphs.Add(heading);
-
-Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
-heading2.IsInList = true;
-heading2.StartNumber = 13;
-heading2.Text = "Listing 2";
-heading2.Style = NumberingStyle.NumeralsRomanLowercase;
-heading2.IsAutoSequence = true;
-floatBox.Paragraphs.Add(heading2);
-
-Aspose.Pdf.Heading heading3 = new Aspose.Pdf.Heading(2);
-heading3.IsInList = true;
-heading3.StartNumber = 1;
-heading3.Text = "The value, at the effective date of the plan, of the assets to be distributed under the plan
-
-";
-heading3.Style = NumberingStyle.LettersLowercase;
-heading3.IsAutoSequence = true;
-floatBox.Paragraphs.Add(heading3);
-```
-
-### 5. lépés: Mentse el a PDF-dokumentumot
-
-A létrehozott PDF dokumentumot a megadott könyvtárba mentjük.
-
-```csharp
-dataDir = dataDir + "ApplyNumberStyle_out.pdf";
-pdfDoc.Save(dataDir);
-Console.WriteLine("\nNumbering style successfully applied to headers.\nFile saved as: " + dataDir);
-```
-
-### Minta forráskód az Apply Number Style programhoz az Aspose.PDF for .NET használatával 
-```csharp
-
 // A dokumentumok könyvtárának elérési útja.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDoc = new Document();
+
+// Állítsa be az oldalméreteket és a margókat
 pdfDoc.PageInfo.Width = 612.0;
 pdfDoc.PageInfo.Height = 792.0;
 pdfDoc.PageInfo.Margin = new Aspose.Pdf.MarginInfo();
@@ -107,6 +50,18 @@ pdfDoc.PageInfo.Margin.Left = 72;
 pdfDoc.PageInfo.Margin.Right = 72;
 pdfDoc.PageInfo.Margin.Top = 72;
 pdfDoc.PageInfo.Margin.Bottom = 72;
+```
+
+Ezzel a dokumentum szabványos oldalmérettel rendelkezik, amely egy 8,5 x 11 hüvelykes oldalnak felel meg, és minden oldalán 72 pontos (1 hüvelyk) margó lesz.
+
+## 2. lépés: Oldal hozzáadása a PDF-hez
+
+Ezután hozzáadunk egy új oldalt a PDF dokumentumhoz, ahol később alkalmazzuk a számozási stílusokat.
+
+Magyarázat: Minden PDF-hez oldalakra van szükség! Ez a lépés egy üres oldalt ad a PDF-hez, és beállítja a margókat a dokumentumszintű beállításoknak megfelelően.
+
+```csharp
+// Új oldal hozzáadása a PDF-dokumentumhoz
 Aspose.Pdf.Page pdfPage = pdfDoc.Pages.Add();
 pdfPage.PageInfo.Width = 612.0;
 pdfPage.PageInfo.Height = 792.0;
@@ -115,11 +70,29 @@ pdfPage.PageInfo.Margin.Left = 72;
 pdfPage.PageInfo.Margin.Right = 72;
 pdfPage.PageInfo.Margin.Top = 72;
 pdfPage.PageInfo.Margin.Bottom = 72;
+```
+
+## 3. lépés: Hozzon létre egy úszó dobozt
+
+A FloatingBox lehetővé teszi, hogy tartalmat (például szöveget vagy címsorokat) helyezzen el egy olyan dobozban, amely az oldal áramlásától függetlenül működik. Ez akkor hasznos, ha teljes irányítást szeretne a tartalom elrendezése felett.
+
+Magyarázat: Itt egy FloatingBox-ot állítunk be, amely tartalmazza azokat a címsorokat, amelyekre számstílusok vonatkoznak.
+
+```csharp
+// Hozzon létre egy FloatingBoxot a strukturált tartalomhoz
 Aspose.Pdf.FloatingBox floatBox = new Aspose.Pdf.FloatingBox();
 floatBox.Margin = pdfPage.PageInfo.Margin;
 pdfPage.Paragraphs.Add(floatBox);
-TextFragment textFragment = new TextFragment();
-TextSegment segment = new TextSegment();
+```
+
+## 4. lépés: Adja hozzá az első címsort római számokkal
+
+Most jön az izgalmas rész! Adjuk hozzá az első címsort kisbetűs római számozással.
+
+Magyarázat: A NumberingStyle.NumeralsRomanLowercase stílust alkalmazzuk a címsorra, amely a számozást római számokkal (i, ii, iii stb.) jeleníti meg.
+
+```csharp
+// Hozza létre az első címsort római számokkal
 Aspose.Pdf.Heading heading = new Aspose.Pdf.Heading(1);
 heading.IsInList = true;
 heading.StartNumber = 1;
@@ -127,6 +100,16 @@ heading.Text = "List 1";
 heading.Style = NumberingStyle.NumeralsRomanLowercase;
 heading.IsAutoSequence = true;
 floatBox.Paragraphs.Add(heading);
+```
+
+## 5. lépés: Adjon hozzá egy második római számfejlécet
+
+Szemléltetés céljából adjunk hozzá egy második római számfejlécet, de ezúttal 13-tól kezdjük.
+
+Magyarázat: A StartNumber tulajdonság lehetővé teszi, hogy egyéni számról kezdje el a számozást – ebben az esetben 13-tól indulunk.
+
+```csharp
+// Hozzon létre egy második címsort, amely a 13-as római számmal kezdődik
 Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
 heading2.IsInList = true;
 heading2.StartNumber = 13;
@@ -134,95 +117,55 @@ heading2.Text = "List 2";
 heading2.Style = NumberingStyle.NumeralsRomanLowercase;
 heading2.IsAutoSequence = true;
 floatBox.Paragraphs.Add(heading2);
+```
+
+## 6. lépés: Adjon hozzá egy címsort alfabetikus számozással
+
+A változatosság kedvéért adjunk hozzá egy harmadik címsort is, de ezúttal az alfabetikus számozást használjuk kisbetűkkel (a, b, c stb.).
+
+Magyarázat: Ha a NumberingStyle-t LettersLowercase-re változtatjuk, akkor a címsorainkon alfabetikus számozást alkalmazhatunk.
+
+```csharp
+// Hozzon létre egy címsort alfabetikus számozással
 Aspose.Pdf.Heading heading3 = new Aspose.Pdf.Heading(2);
 heading3.IsInList = true;
 heading3.StartNumber = 1;
-heading3.Text = "the value, as of the effective date of the plan, of property to be distributed under the plan onaccount of each allowed";
+heading3.Text = "the value, as of the effective date of the plan, of property to be distributed under the plan on account of each allowed";
 heading3.Style = NumberingStyle.LettersLowercase;
 heading3.IsAutoSequence = true;
 floatBox.Paragraphs.Add(heading3);
+```
+
+## 7. lépés: A PDF mentése
+
+Végül az összes címsor és számstílus alkalmazása után mentsük el a PDF fájlt a kívánt könyvtárba.
+
+Magyarázat: Ez a lépés elmenti az összes formázott fejlécet tartalmazó PDF-fájlt az alkalmazott számozási stílusokkal.
+
+```csharp
+// Mentse el a PDF dokumentumot
 dataDir = dataDir + "ApplyNumberStyle_out.pdf";
 pdfDoc.Save(dataDir);
-Console.WriteLine("\nNumber style applied successfully in headings.\nFile saved at " + dataDir);  
-          
+Console.WriteLine("\nNumber style applied successfully in headings.\nFile saved at " + dataDir);
 ```
 
 ## Következtetés
 
-Ebben az oktatóanyagban elmagyaráztuk, hogyan lehet számozási stílust alkalmazni egy PDF-dokumentum címsoraira az Aspose.PDF for .NET használatával. Mostantól ezt a tudást felhasználhatja PDF-dokumentumok létrehozására egyéni címsorszámozással.
+És megvan! Sikeresen alkalmazta a számozási stílusokat – római számokat és ábécé sorrendet – a PDF-fájlok címsoraiban az Aspose.PDF for .NET használatával. Az Aspose.PDF által biztosított rugalmasság az oldalelrendezés, a számozási stílusok és a tartalompozícionálás szabályozásához hatékony eszközkészletet biztosít a jól szervezett, professzionális PDF-dokumentumok létrehozásához.
 
-### GYIK a számstílus alkalmazásához PDF-fájlban
+## GYIK
 
-#### K: Mi az a számozási stílus egy PDF-dokumentumban?
+### Alkalmazhatok különböző számstílusokat ugyanarra a PDF dokumentumra?  
+Igen, az Aspose.PDF for .NET lehetővé teszi különböző számozási stílusok, például római számok, arab számok és alfabetikus számozás keverését ugyanazon a dokumentumon belül.
 
-V: A számozási stílus arra a formátumra utal, amelyben a fejlécek vagy szakaszok számozásra kerülnek a PDF-dokumentumban. Tartalmazhat számokat, betűket vagy más karaktereket, amelyek hierarchikus szerkezetet biztosítanak.
+### Hogyan szabhatom testre a címsorok kezdőszámát?  
+ Bármely címsor kezdőszámát beállíthatja a gombbal`StartNumber` ingatlan.
 
-#### K: Miért kell számozási stílust alkalmaznom a PDF-dokumentumok címsoraira?
+### Van mód a számozási sorrend visszaállítására?  
+Igen, visszaállíthatja a számozást a`StartNumber` tulajdonság minden címsorhoz.
 
-V: A címsorok számozási stílusának alkalmazása javítja a PDF-dokumentum olvashatóságát és rendszerezését. Segít az olvasóknak könnyen eligazodni és megérteni a tartalom hierarchikus szerkezetét.
+### Alkalmazhatok félkövér vagy dőlt stílust a címsorokon a számozáson kívül?  
+ Teljesen! Testreszabhatja a címsorstílusokat a tulajdonságok, például a betűtípus, a méret, a félkövér és a dőlt betűk használatával történő módosításával`TextState` objektum.
 
-#### K: Mi az Aspose.PDF for .NET?
-
-V: Az Aspose.PDF for .NET egy olyan könyvtár, amely lehetővé teszi a fejlesztők számára, hogy programozottan dolgozzanak PDF-fájlokkal .NET-alkalmazásokban. Funkciók széles skáláját kínálja PDF dokumentumok létrehozásához, szerkesztéséhez, konvertálásához és kezeléséhez.
-
-#### K: Hogyan importálhatom a szükséges könyvtárakat a C# projektemhez?
-
-V: A C#-projekthez szükséges könyvtárak importálásához adja meg a következő importálási direktívákat:
-
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.InteractiveFeatures;
-```
-
-Ezek az utasítások lehetővé teszik a PDF-dokumentumok kezeléséhez és a számozási stílusok alkalmazásához szükséges osztályok és módszerek elérését.
-
-#### K: Hogyan adhatom meg a létrehozott PDF fájl mentési könyvtárát?
-
-V: A megadott forráskódban módosítsa a "dataDir" változót, és adja meg azt a könyvtárat, ahová menteni szeretné a létrehozott PDF-fájlt.
-
-```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-```
-
- Cserélje ki`"YOUR DOCUMENTS DIRECTORY"` a tényleges könyvtár elérési útjával.
-
-#### K: Hogyan hozhatok létre PDF-dokumentumot meghatározott méretekkel és margókkal?
-
-V: Adott méretekkel és margókkal rendelkező PDF-dokumentum létrehozásához használja a következő kódot:
-
-```csharp
-Document pdfDoc = new Document();
-pdfDoc.PageInfo.Width = 612.0;
-pdfDoc.PageInfo.Height = 792.0;
-pdfDoc.PageInfo.Margin = new Aspose.Pdf.MarginInfo();
-pdfDoc.PageInfo.Margin.Left = 72;
-pdfDoc.PageInfo.Margin.Right = 72;
-pdfDoc.PageInfo.Margin.Top = 72;
-pdfDoc.PageInfo.Margin.Bottom = 72;
-```
-
-#### K: Hogyan adhatok hozzá számozási stílusú címsorokat a PDF-dokumentumhoz?
-
-V: Ha számozási stílusú címsorokat szeretne hozzáadni a PDF-dokumentumhoz, használja a mellékelt kódmintákat a címsorok létrehozásához és a számozási stílusok testreszabásához. Szükség szerint állítsa be a tulajdonságokat, például a szöveget, a számozási stílust, a kezdőszámot és az automatikus sorrendet.
-
-#### K: Hogyan menthetem el a létrehozott PDF dokumentumot?
-
- V: A létrehozott PDF dokumentum mentéséhez használja a`Save` módszere a`pdfDoc` objektum:
-
-```csharp
-dataDir = dataDir + "ApplyNumberStyle_out.pdf";
-pdfDoc.Save(dataDir);
-Console.WriteLine("\nNumbering style applied to headers.\nFile saved as: " + dataDir);
-```
-
-#### K: Hogyan erősíthetem meg, hogy a számozási stílust alkalmazták?
-
-V: Nyissa meg a létrehozott PDF-fájlt, és ellenőrizze, hogy a megadott számozási stílust alkalmazta-e a címsorokhoz.
-
-#### K: Tovább szabhatom a számozási stílust?
-
- V: Igen, tovább szabhatja a számozási stílust a tulajdonságok beállításával`Heading` objektumok, például számozási stílus típusa, kezdőszám és automatikus sorozat.
-
-#### K: Alkalmazhatok különböző számozási stílusokat a dokumentum különböző szakaszaira?
-
- V: Igen, többféle számozási stílust is alkalmazhat a dokumentum különböző szakaszaira, ha több példányt hoz létre`Heading` különböző stílusú és sorozatú objektumok.
+### Hogyan szerezhetek ideiglenes licencet az Aspose.PDF fájlhoz?  
+ Ideiglenes jogosítványt szerezhet be[itt](https://purchase.aspose.com/temporary-license/) az Aspose.PDF korlátozások nélküli teszteléséhez.

@@ -2,227 +2,160 @@
 title: PDF文件中的图像信息
 linktitle: PDF文件中的图像信息
 second_title: Aspose.PDF for .NET API 参考
-description: 使用 Aspose.PDF for .NET 提取 PDF 文件中的图像信息。
+description: 通过我们全面的分步指南学习使用 Aspose.PDF for .NET 从 PDF 中提取图像信息。
 type: docs
 weight: 160
 url: /zh/net/programming-with-images/image-information/
 ---
-本指南将逐步指导您如何使用 Aspose.PDF for .NET 提取 PDF 文件中图像的信息。确保您已设置环境并按照以下步骤操作：
+## 介绍
 
-## 步骤1：定义文档目录
+如今，PDF 文件无处不在——几乎每个专业和个人文档在某个时候都会采用这种格式。无论是报告、小册子还是电子书，了解如何以编程方式与这些文件交互都可以提供无数的可能性。一个常见的要求是从 PDF 文件中提取图像信息。在本指南中，我们将深入研究如何使用 .NET 的 Aspose.PDF 库来提取有关 PDF 文档中嵌入的图像的关键细节。
 
-确保设置正确的文档目录。替换`"YOUR DOCUMENT DIRECTORY"`在代码中添加 PDF 文档所在目录的路径。
+## 先决条件
+
+在我们深入讨论编码细节之前，您需要满足一些先决条件：
+
+1. 开发环境：您需要设置 .NET 开发环境。可以是 Visual Studio 或任何其他兼容 .NET 的 IDE。
+2.  Aspose.PDF 库：确保您有权访问 Aspose.PDF 库。您可以从[Aspose 网站](https://releases.aspose.com/pdf/net/). 
+3. 基本 C# 知识：熟悉 C# 和面向对象编程概念将帮助您轻松完成本教程。
+4. PDF 文档：准备一个包含图像的示例 PDF 文档来测试您的代码。 
+
+## 导入包
+
+要开始使用 Aspose.PDF 库，您需要将必要的命名空间导入到 C# 文件中。以下是简要概述：
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using System;
 ```
 
-## 第 2 步：加载源 PDF 文件
+这些命名空间将为您提供访问操作 PDF 文件和提取图像数据所需的类和方法的权限。
 
-在此步骤中，我们将使用`Document` Aspose.PDF 类。使用`Document`构造函数并将路径传递给 PDF 文档。
+现在您已完成所有设置，是时候将其分解为可管理的步骤了。我们将编写一个 C# 程序来加载 PDF 文档、浏览每一页并提取文档中每张图片的尺寸和分辨率。
+
+## 步骤 1：初始化文档
+
+在此步骤中，我们将使用 PDF 文件的路径初始化 PDF 文档。您应该替换`"YOUR DOCUMENT DIRECTORY"`与您的 PDF 文件所在的实际路径。
 
 ```csharp
+//文档目录的路径。
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+//加载源 PDF 文件
 Document doc = new Document(dataDir + "ImageInformation.pdf");
 ```
+我们创建`Document`从指定目录加载 PDF 的对象。这将允许我们处理文件的内容。
 
-## 步骤 3：设置默认分辨率
+## 第 2 步：设置默认分辨率并初始化数据结构
 
-在此步骤中，我们将设置图像的默认分辨率。在示例中，默认分辨率设置为 72。
+接下来，我们为图像设置默认分辨率，这对计算很有用。我们还将准备一个数组来保存图像名称和一个堆栈来管理图形状态。
 
 ```csharp
+//定义图像的默认分辨率
 int defaultResolution = 72;
-```
-
-## 步骤 4：初始化对象和计数器
-
-在此步骤中，我们将初始化检索图像信息所需的对象和计数器。
-
-```csharp
 System.Collections.Stack graphicsState = new System.Collections.Stack();
+//定义保存图像名称的数组列表对象
 System.Collections.ArrayList imageNames = new System.Collections.ArrayList(doc.Pages[1].Resources.Images.Names);
 ```
+这`defaultResolution`变量帮助我们正确计算图像的分辨率。`graphicsState`当我们遇到转换运算符时，堆栈可以作为存储文档当前图形状态的一种手段。
 
-## 步骤 5：循环浏览文档第一页上的运算符
+## 步骤3：处理页面上的每个操作符
 
-在此步骤中，我们将遍历文档第一页上的操作符来识别与图像相关的操作。
+现在，我们循环遍历文档第一页上的所有运算符。这是最繁重的工作发生的地方。 
 
 ```csharp
-foreach(Operator op in doc.Pages[1].Contents)
+foreach (Operator op in doc.Pages[1].Contents)
 {
+    //过程操作员...
+}
 ```
+PDF 文件中的每个操作符都是一个命令，它告诉渲染器如何管理图形元素，包括图像。
 
-## 步骤6：管理操作员并提取图像信息
+## 步骤 4：处理 GSave/GRestore 操作符
 
-在这一步中，我们将管理不同类型的操作员并提取有关图像的信息。
+在循环内部，我们将处理图形保存和恢复命令，以跟踪对图形状态所做的更改。
 
 ```csharp
-Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
-Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-Aspose.Pdf.Operators.Do opDo = op as Aspose.Pdf.Operators.Do;
+if (opSaveState != null) 
+{
+    //保存先前的状态
+    graphicsState.Push(((Matrix)graphicsState.Peek()).Clone());
+} 
+else if (opRestoreState != null) 
+{
+    //恢复之前的状态
+    graphicsState.Pop();
+}
+```
+`GSave`保存当前图形状态，同时`GRestore`恢复最后保存的状态，允许我们在处理图像时恢复任何转换。
 
-//处理转换的 GSave 和 GRestore 操作
-if (opSaveState != null)
+## 步骤 5：管理转换矩阵
+
+接下来，我们在对图像应用变换时处理变换矩阵的连接。
+
+```csharp
+else if (opCtm != null) 
 {
-     graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-}
-else if (opRestoreState != null)
-{
-     graphicsState. Pop();
-}
-//处理转换的 ConcatenateMatrix 操作
-else if (opCtm != null)
-{
-     //应用变换矩阵
-     System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
+    Matrix cm = new Matrix(
         (float)opCtm.Matrix.A,
         (float)opCtm.Matrix.B,
         (float)opCtm.Matrix.C,
         (float)opCtm.Matrix.D,
         (float)opCtm.Matrix.E,
         (float)opCtm.Matrix.F);
-
-
-     ((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-     keep on going;
-}
-//处理图像的 Do 操作
-else if (opDo != null)
-{
-     if (imageNames.Contains(opDo.Name))
-     {
-         //检索图像
-         XImage image = doc.Pages[1].Resources.Images[opDo.Name];
-         //检索图像的尺寸
-         double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
-         double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
-         //根据以上信息计算分辨率
-         double resHorizontal = originalWidth * defaultResolution / scaledWidth;
-         double resVertical = originalHeight * defaultResolution / scaledHeight;
-         //显示图像信息
-         Console.Out.WriteLine(
-                 string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
-								 opDo.Name, scaledWidth, scaledHeight, resHorizontal,
-								 resVertical));
-     }
+    
+    ((Matrix)graphicsState.Peek()).Multiply(cm);
+    continue;
 }
 ```
+当应用变换矩阵时，我们将它与存储在图形状态中的当前矩阵相乘，以便我们可以跟踪应用于图像的任何缩放或平移。
 
-### 使用 Aspose.PDF for .NET 的图像信息示例源代码 
+## 步骤6：提取图像信息
+
+最后，我们处理图像的绘图运算符并提取必要的信息，如尺寸和分辨率。
+
 ```csharp
-//文档目录的路径。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-//加载源 PDF 文件
-Document doc = new Document(dataDir+ "ImageInformation.pdf");
-//定义图像的默认分辨率
-int defaultResolution = 72;
-System.Collections.Stack graphicsState = new System.Collections.Stack();
-//定义保存图像名称的数组列表对象
-System.Collections.ArrayList imageNames = new System.Collections.ArrayList(doc.Pages[1].Resources.Images.Names);
-//将对象插入堆栈
-graphicsState.Push(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, 0, 0));
-//获取文档第一页上的所有操作符
-foreach (Operator op in doc.Pages[1].Contents)
+else if (opDo != null) 
 {
-	//使用 GSave/GRestore 操作符将转换恢复到之前设置的状态
-	Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
-	Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-	//实例化 ConcatenateMatrix 对象，因为它定义当前转换矩阵。
-	Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-	//创建从资源中绘制对象的 Do 操作符。它绘制 Form 对象和 Image 对象
-	Aspose.Pdf.Operators.Do opDo = op as Aspose.Pdf.Operators.Do;
-	if (opSaveState != null)
-	{
-		//保存先前的状态并将当前状态推送到堆栈顶部
-		graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-	}
-	else if (opRestoreState != null)
-	{
-		//丢弃当前状态并恢复先前状态
-		graphicsState.Pop();
-	}
-	else if (opCtm != null)
-	{
-		System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
-		   (float)opCtm.Matrix.A,
-		   (float)opCtm.Matrix.B,
-		   (float)opCtm.Matrix.C,
-		   (float)opCtm.Matrix.D,
-		   (float)opCtm.Matrix.E,
-		   (float)opCtm.Matrix.F);
-		//将电流矩阵与状态矩阵相乘
-		((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-		continue;
-	}
-	else if (opDo != null)
-	{
-		//如果这是图像绘制运算符
-		if (imageNames.Contains(opDo.Name))
-		{
-			System.Drawing.Drawing2D.Matrix lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-			//创建 XImage 对象来保存第一个 pdf 页的图像
-			XImage image = doc.Pages[1].Resources.Images[opDo.Name];
-			//获取图像尺寸
-			double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
-			double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
-			//获取图像的高度和宽度信息
-			double originalWidth = image.Width;
-			double originalHeight = image.Height;
-			//根据以上信息计算分辨率
-			double resHorizontal = originalWidth * defaultResolution / scaledWidth;
-			double resVertical = originalHeight * defaultResolution / scaledHeight;
-			//显示每幅图像的尺寸和分辨率信息
-			Console.Out.WriteLine(
-					string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
-								 opDo.Name, scaledWidth, scaledHeight, resHorizontal,
-								 resVertical));
-		}
-	}
+    //处理绘制对象的 Do 运算符
+    if (imageNames.Contains(opDo.Name)) 
+    {
+        Matrix lastCTM = (Matrix)graphicsState.Peek();
+        XImage image = doc.Pages[1].Resources.Images[opDo.Name];
+        double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
+        double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
+        double originalWidth = image.Width;
+        double originalHeight = image.Height;
+        
+        double resHorizontal = originalWidth * defaultResolution / scaledWidth;
+        double resVertical = originalHeight * defaultResolution / scaledHeight;
+        
+        //输出信息
+        Console.Out.WriteLine(string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
+                         opDo.Name, scaledWidth, scaledHeight, resHorizontal, resVertical));
+    }
 }
 ```
+在这里，我们检查操作符是否负责绘制图像。如果是，我们将获取相应的 XImage 对象，计算其缩放尺寸和分辨率，并打印必要的信息。
 
 ## 结论
 
-恭喜！您现在已经学会了如何使用 Aspose.PDF for .NET 提取 PDF 文件中的图像信息。您可以在应用程序中使用此信息执行各种图像处理任务。
+恭喜！您刚刚创建了一个使用 Aspose.PDF for .NET 从 PDF 文件中提取图像信息的工作示例。此功能对于需要分析或操作 PDF 文档以用于各种应用程序（例如报告、数据提取甚至自定义 PDF 查看器）的开发人员非常有用。 
 
-### PDF 文件中图像信息的常见问题解答
 
-#### 问：使用 Aspose.PDF for .NET 从 PDF 文档中提取图像信息的目的是什么？
+## 常见问题解答
 
-答：从 PDF 文档中提取图像信息可以深入了解文档中图像的尺寸、分辨率和其他属性。这些信息可用于图像处理、分析或优化任务。
+### 什么是 Aspose.PDF 库？
+Aspose.PDF 库是一个用于在 .NET 应用程序中创建、操作和转换 PDF 文件的强大工具。
 
-#### 问：Aspose.PDF for .NET 如何帮助从 PDF 文档中提取图像信息？
+### 我可以免费使用图书馆吗？
+是的，Aspose 提供免费试用。您可以下载它[这里](https://releases.aspose.com/).
 
-答：Aspose.PDF for .NET 提供了访问和分析 PDF 文档内容（包括其图像）的工具。提供的代码演示了如何使用各种运算符提取和显示图像信息。
+### 可以提取哪些类型的图像格式？
+该库支持各种图像格式，包括 JPEG、PNG 和 TIFF，只要它们嵌入在 PDF 中。
 
-#### 问：用这种方法可以提取什么样的图像信息？
+### Aspose 可以用于商业用途吗？
+是的，您可以将 Aspose 产品用于商业用途。如需许可，请访问[购买页面](https://purchase.aspose.com/buy).
 
-答：此方法允许您提取和显示 PDF 文档中图像的缩放尺寸、分辨率和图像名称等信息。
-
-#### 问：代码如何识别和处理PDF文档中与图像相关的操作符？
-
-答：代码会遍历 PDF 文档中指定页面上的运算符。它会识别并处理与图像操作、转换和渲染相关的运算符。
-
-#### Q：默认解析有什么意义，在代码中如何使用？
-
-答：默认分辨率是作为计算图像实际分辨率的参考点。代码根据图像尺寸和默认分辨率设置计算每幅图像的分辨率。
-
-#### 问：提取的图像信息如何运用到实际场景中？
-
-答：提取的图像信息可用于图像质量评估、图像优化、生成图像缩略图以及促进与图像相关的决策过程等任务。
-
-#### 问：我可以修改代码来提取额外的图像相关属性吗？
-
-答：是的，您可以自定义代码来提取图像的其他属性，例如颜色空间、像素深度或图像类型。
-
-#### 问：图像信息提取的过程是否耗费大量资源或时间？
-
-答：图像信息提取过程高效且针对性能进行了优化，确保对资源使用和处理时间的影响最小。
-
-#### 问：识别和提取 PDF 文档中的图像信息对开发人员有什么好处？
-
-答：开发人员可以深入了解 PDF 文档中图像的特点，从而让他们能够就图像处理、处理和优化做出明智的决策。
-
-#### 问：此方法可以用于批量处理包含图像的PDF文档吗？
-
-答：是的，该方法可以扩展用于批处理，通过遍历多个页面或文档，提取图像信息并执行与图像相关的任务。
+### 如何获得 Aspose 的支持？
+您可以访问支持论坛[这里](https://forum.aspose.com/c/pdf/10).

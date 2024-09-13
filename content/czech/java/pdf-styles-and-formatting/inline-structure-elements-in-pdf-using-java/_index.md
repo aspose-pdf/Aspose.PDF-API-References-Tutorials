@@ -132,7 +132,7 @@ Hypertextové odkazy jsou nezbytné pro vytváření interaktivních PDF. Podív
 
 ### Přidání hypertextových odkazů do vloženého textu
 
-Přidání hypertextového odkazu do textu:
+Chcete-li k textu přidat hypertextový odkaz:
 
 ```java
 // Vytvořte anotaci odkazu

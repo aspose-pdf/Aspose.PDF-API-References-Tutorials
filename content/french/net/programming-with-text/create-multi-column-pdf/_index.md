@@ -46,7 +46,7 @@ doc.PageInfo.Margin.Right = 40;
 ```
 
 ## Étape 6 : Ajouter une page au document
- Ajoutez une nouvelle page au document à l'aide de la`Add` méthode de la`Pages`collection. Dans le code fourni, la nouvelle page est attribuée à la variable`page`.
+ Ajoutez une nouvelle page au document à l'aide de la`Add` méthode de la`Pages` collection. Dans le code fourni, la nouvelle page est attribuée à la variable`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -112,7 +112,7 @@ doc.Save(dataDir);
 // Le chemin vers le répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
-//Spécifiez les informations de marge gauche pour le fichier PDF
+// Spécifiez les informations de marge gauche pour le fichier PDF
 doc.PageInfo.Margin.Left = 40;
 // Spécifiez les informations de marge droite pour le fichier PDF
 doc.PageInfo.Margin.Right = 40;
@@ -143,13 +143,13 @@ text1.TextState.LineSpacing = 2;
 box.Paragraphs.Add(text1);
 text1.TextState.FontSize = 10;
 text1.TextState.FontStyle = FontStyles.Italic;
-// Créer un objet graphique pour dessiner une ligne
+// Créer un objet graphique pour tracer une ligne
 Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50, 10);
 // Spécifiez les coordonnées de la ligne
 float[] posArr2 = new float[] { 1, 10, 100, 10 };
 Aspose.Pdf.Drawing.Line l2 = new Aspose.Pdf.Drawing.Line(posArr2);
 graph2.Shapes.Add(l2);
-// Ajoutez la ligne à la collection de paragraphes de l'objet section
+//Ajoutez la ligne à la collection de paragraphes de l'objet section
 box.Paragraphs.Add(graph2);
 TextFragment text2 = new TextFragment(@"Sed augue tortor, sodales id, luctus et, pulvinar ut, eros. Suspendisse vel dolor. Sed quam. Curabitur ut massa vitae eros euismod aliquam. Pellentesque sit amet elit. Vestibulum interdum pellentesque augue. Cras mollis arcu sit amet purus. Donec augue. Nam mollis tortor a elit. Nulla viverra nisl vel mauris. Vivamus sapien. nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et,nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.");
 box.Paragraphs.Add(text2);
@@ -167,7 +167,7 @@ Vous avez créé avec succès un fichier PDF multicolonne à l'aide d'Aspose.PDF
 
 #### Q : Quel est l’objectif de ce tutoriel ?
 
-Ce didacticiel a pour objectif de vous guider tout au long du processus de création d'un PDF multicolonne à l'aide de la bibliothèque Aspose.PDF pour .NET. Le code source C# fourni illustre les étapes nécessaires pour y parvenir.
+Ce didacticiel a pour objectif de vous guider dans le processus de création d'un PDF multicolonne à l'aide de la bibliothèque Aspose.PDF pour .NET. Le code source C# fourni illustre les étapes nécessaires pour y parvenir.
 
 #### Q : Quels espaces de noms dois-je importer pour ce tutoriel ?
 
@@ -200,7 +200,7 @@ using Aspose.Pdf.Drawing;
 
 #### Q : Comment ajouter un texte d’en-tête avec un formatage HTML ?
 
- A : À l'étape 8, vous allez créer un`HtmlFragment` objet et définissez son contenu sur le texte HTML souhaité, puis ajoutez le fragment à l'`Paragraphs` collection de la page.
+ : À l'étape 8, vous allez créer un`HtmlFragment` objet et définissez son contenu sur le texte HTML souhaité, puis ajoutez le fragment à l'`Paragraphs` collection de la page.
 
 #### Q : Comment créer une FloatingBox avec plusieurs colonnes ?
 

@@ -1,7 +1,7 @@
 ---
 title: Få tabellbredd i PDF-fil
 linktitle: Få tabellbredd i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du får bredden på en tabell i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 90

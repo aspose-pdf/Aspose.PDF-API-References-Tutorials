@@ -149,7 +149,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 
 		if (opSaveState != null)
 		{
-			//Önceki durumu kaydet ve geçerli durumu yığının en üstüne it
+			// Önceki durumu kaydet ve geçerli durumu yığının en üstüne it
 			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
@@ -243,7 +243,7 @@ A: Bir PDF dosyasından kenarlığı çıkarmak çeşitli amaçlar için yararl�
 
 #### S: PDF belgesindeki belirli sayfalardan veya alanlardan kenarlıkları çıkarabilir miyim?
 
-A: Evet, PDF belgesindeki belirli sayfalardan veya bölgelerden kenarlığı çıkarmak için sağlanan C# kaynak kodunu değiştirebilirsiniz.`doc.Pages` Özel ölçütleri belirleyerek ve toplayarak, belirli sayfalardan veya ilgi alanlarından kenarlığı çıkarmayı seçebilirsiniz.
+ A: Evet, PDF belgesindeki belirli sayfalardan veya bölgelerden kenarlığı çıkarmak için sağlanan C# kaynak kodunu değiştirebilirsiniz.`doc.Pages` Özel ölçütleri belirleyerek ve toplayarak, belirli sayfalardan veya ilgi alanlarından kenarlığı çıkarmayı seçebilirsiniz.
 
 #### S: Çıktı görüntü formatını ve kalitesini nasıl özelleştirebilirim?
 

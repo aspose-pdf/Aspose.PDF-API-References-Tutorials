@@ -2,227 +2,160 @@
 title: PDF Dosyasında Resim Bilgileri
 linktitle: PDF Dosyasında Resim Bilgileri
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET kullanarak PDF dosyasındaki resim bilgilerini çıkarın.
+description: Kapsamlı adım adım kılavuzumuzla Aspose.PDF for .NET'i kullanarak PDF'lerden görüntü bilgilerini çıkarmayı öğrenin.
 type: docs
 weight: 160
 url: /tr/net/programming-with-images/image-information/
 ---
-Bu kılavuz, Aspose.PDF for .NET kullanarak PDF dosyasındaki resimler hakkında bilgi çıkarmayı adım adım gösterecektir. Ortamınızı önceden ayarladığınızdan ve aşağıdaki adımları izlediğinizden emin olun:
+## giriiş
 
-## Adım 1: Belge dizinini tanımlayın
+PDF dosyaları günümüzde her yerdedir; neredeyse her profesyonel ve kişisel belge bir noktada bu biçime girer. İster bir rapor, ister bir broşür veya bir e-kitap olsun, bu dosyalarla programatik olarak nasıl etkileşim kurulacağını anlamak sayısız olasılık sunar. Yaygın bir gereksinim, PDF dosyalarından görüntü bilgilerini çıkarmaktır. Bu kılavuzda, bir PDF belgesine gömülü görüntüler hakkında önemli ayrıntıları çıkarmak için .NET için Aspose.PDF kitaplığının nasıl kullanılacağına derinlemesine bakacağız.
 
- Doğru belge dizinini ayarladığınızdan emin olun. Değiştir`"YOUR DOCUMENT DIRECTORY"` PDF belgenizin bulunduğu dizinin yolunu içeren kodda.
+## Ön koşullar
+
+Kodlamanın inceliklerine dalmadan önce, yerine getirmeniz gereken birkaç ön koşul vardır:
+
+1. Geliştirme Ortamı: Bir .NET geliştirme ortamı kurulumuna ihtiyacınız olacak. Bu, Visual Studio veya herhangi bir .NET uyumlu IDE olabilir.
+2.  Aspose.PDF Kütüphanesi: Aspose.PDF kütüphanesine erişiminiz olduğundan emin olun. Bunu şuradan indirebilirsiniz:[Aspose web sitesi](https://releases.aspose.com/pdf/net/). 
+3. Temel C# Bilgisi: C# ve nesne yönelimli programlama kavramlarına aşinalık, eğitimi zahmetsizce takip etmenize yardımcı olacaktır.
+4. PDF Belgesi: Kodunuzu test etmek için görseller içeren bir örnek PDF belgesini elinizin altında bulundurun. 
+
+## Paketleri İçe Aktarma
+
+Aspose.PDF kütüphanesini kullanmaya başlamak için, gerekli ad alanlarını C# dosyanıza aktarmanız gerekir. İşte kısa bir özet:
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using System;
 ```
 
-## Adım 2: Kaynak PDF dosyasını yükleyin
+Bu ad alanları, PDF dosyalarını düzenlemek ve görüntü verilerini çıkarmak için gereken sınıflara ve yöntemlere erişmenizi sağlayacaktır.
 
- Bu adımda, kaynak PDF dosyasını kullanarak yükleyeceğiz`Document` Aspose.PDF sınıfı. Kullanın`Document` oluşturucuyu kullanın ve PDF belgesinin yolunu geçirin.
+Artık her şeyi ayarladığınıza göre, bunu yönetilebilir adımlara bölmenin zamanı geldi. Bir PDF belgesi yükleyen, her sayfayı inceleyen ve belgedeki her görüntünün boyutlarını ve çözünürlüğünü çıkaran bir C# programı yazacağız.
+
+## Adım 1: Belgeyi Başlatın
+
+ Bu adımda, PDF dosyanızın yolunu kullanarak PDF belgesini başlatacağız. Şunu değiştirmelisiniz:`"YOUR DOCUMENT DIRECTORY"` PDF dosyanızın bulunduğu gerçek yol ile.
 
 ```csharp
+// Belgeler dizinine giden yol.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Kaynak PDF dosyasını yükleyin
 Document doc = new Document(dataDir + "ImageInformation.pdf");
 ```
+ Biz bir tane yaratıyoruz`Document` PDF'yi belirtilen dizinden yükleyen nesne. Bu, dosyanın içeriğiyle çalışmamıza olanak tanır.
 
-## Adım 3: Varsayılan çözünürlüğü ayarlayın
+## Adım 2: Varsayılan Çözünürlüğü Ayarlayın ve Veri Yapılarını Başlatın
 
-Bu adımda, resimler için varsayılan çözünürlüğü ayarlayacağız. Örnekte, varsayılan çözünürlük 72 olarak ayarlanmıştır.
+Sonra, hesaplamalar için yararlı olan görüntüler için varsayılan bir çözünürlük ayarlayacağız. Ayrıca, görüntü adlarını tutacak bir dizi ve grafiksel durumları yönetecek bir yığın hazırlayacağız.
 
 ```csharp
+// Görüntü için varsayılan çözünürlüğü tanımlayın
 int defaultResolution = 72;
-```
-
-## Adım 4: Nesneleri ve sayaçları başlatın
-
-Bu adımda, görüntü bilgilerini almak için gerekli nesneleri ve sayaçları başlatacağız.
-
-```csharp
 System.Collections.Stack graphicsState = new System.Collections.Stack();
+// Resim adlarını tutacak dizi listesi nesnesini tanımlayın
 System.Collections.ArrayList imageNames = new System.Collections.ArrayList(doc.Pages[1].Resources.Images.Names);
 ```
+ The`defaultResolution` değişkeni, görüntülerin çözünürlüğünü doğru bir şekilde hesaplamamıza yardımcı olur.`graphicsState`Yığın, dönüşüm operatörleriyle karşılaştığımızda belgenin geçerli grafiksel durumunu depolamak için bir araç görevi görür.
 
-## Adım 5: Belgenin ilk sayfasındaki operatörler arasında geçiş yapın
+## Adım 3: Sayfadaki Her Operatörü İşle
 
-Bu adımda, görüntüyle ilgili işlemleri belirlemek için belgenin ilk sayfasındaki operatörleri inceleyeceğiz.
+Şimdi belgenin ilk sayfasındaki tüm operatörleri dolaşıyoruz. Ağır kaldırmanın gerçekleştiği yer burasıdır. 
 
 ```csharp
-foreach(Operator op in doc.Pages[1].Contents)
+foreach (Operator op in doc.Pages[1].Contents)
 {
+    // İşlem operatörleri...
+}
 ```
+PDF dosyasındaki her operatör, görüntüleyiciye görseller de dahil olmak üzere grafik öğelerinin nasıl yönetileceğini söyleyen bir komuttur.
 
-## Adım 6: Operatörleri yönetin ve görüntü bilgilerini çıkarın
+## Adım 4: GSave/GRestore Operatörlerini Yönetin
 
-Bu adımda farklı operatör tiplerini yöneteceğiz ve görüntüler hakkında bilgi çıkaracağız.
+Döngü içerisinde grafiksel durumda yapılan değişiklikleri takip etmek için grafik kaydetme ve geri yükleme komutlarını işleyeceğiz.
 
 ```csharp
-Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
-Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-Aspose.Pdf.Operators.Do opDo = op as Aspose.Pdf.Operators.Do;
+if (opSaveState != null) 
+{
+    // Önceki durumu kaydet
+    graphicsState.Push(((Matrix)graphicsState.Peek()).Clone());
+} 
+else if (opRestoreState != null) 
+{
+    // Önceki durumu geri yükle
+    graphicsState.Pop();
+}
+```
+`GSave` mevcut grafik durumunu kaydederken`GRestore` son kaydedilen durumu geri yükler ve görüntüleri işlerken herhangi bir dönüşümü geri almamızı sağlar.
 
-//Dönüşümler için GSave ve GRestore işlemlerini yönetin
-if (opSaveState != null)
+## Adım 5: Dönüşüm Matrislerini Yönetin
+
+Daha sonra, görüntülere dönüşümler uygularken dönüşüm matrislerinin birleştirilmesini ele alacağız.
+
+```csharp
+else if (opCtm != null) 
 {
-     graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-}
-else if (opRestoreState != null)
-{
-     graphicsState. Pop();
-}
-// Dönüşümler için ConcatenateMatrix işlemini yönetin
-else if (opCtm != null)
-{
-     // Dönüşüm matrisini uygulayın
-     System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
+    Matrix cm = new Matrix(
         (float)opCtm.Matrix.A,
         (float)opCtm.Matrix.B,
         (float)opCtm.Matrix.C,
         (float)opCtm.Matrix.D,
         (float)opCtm.Matrix.E,
         (float)opCtm.Matrix.F);
-
-
-     ((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-     keep on going;
-}
-// Görüntüler için Do işlemini yönetin
-else if (opDo != null)
-{
-     if (imageNames.Contains(opDo.Name))
-     {
-         // Resmi al
-         XImage image = doc.Pages[1].Resources.Images[opDo.Name];
-         // Resmin boyutlarını al
-         double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
-         double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
-         // Yukarıdaki bilgilere dayanarak çözünürlüğü hesaplayın
-         double resHorizontal = originalWidth * defaultResolution / scaledWidth;
-         double resVertical = originalHeight * defaultResolution / scaledHeight;
-         // Görüntü bilgilerini görüntüle
-         Console.Out.WriteLine(
-                 string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
-								 opDo.Name, scaledWidth, scaledHeight, resHorizontal,
-								 resVertical));
-     }
+    
+    ((Matrix)graphicsState.Peek()).Multiply(cm);
+    continue;
 }
 ```
+Bir dönüşüm matrisi uygulandığında, görüntüye uygulanan herhangi bir ölçekleme veya ötelemeyi takip edebilmemiz için bunu grafik durumunda saklanan geçerli matrisle çarparız.
 
-### .NET için Aspose.PDF kullanılarak Görüntü Bilgileri için örnek kaynak kodu 
+## Adım 6: Görüntü Bilgilerini Çıkarın
+
+Son olarak, resimler için çizim operatörünü işleyip boyutlar, çözünürlükler gibi gerekli bilgileri çıkarıyoruz.
+
 ```csharp
-// Belgeler dizinine giden yol.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Kaynak PDF dosyasını yükleyin
-Document doc = new Document(dataDir+ "ImageInformation.pdf");
-// Görüntü için varsayılan çözünürlüğü tanımlayın
-int defaultResolution = 72;
-System.Collections.Stack graphicsState = new System.Collections.Stack();
-// Resim adlarını tutacak dizi listesi nesnesini tanımlayın
-System.Collections.ArrayList imageNames = new System.Collections.ArrayList(doc.Pages[1].Resources.Images.Names);
-// Yığına bir nesne ekle
-graphicsState.Push(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, 0, 0));
-// Belgenin ilk sayfasındaki tüm operatörleri alın
-foreach (Operator op in doc.Pages[1].Contents)
+else if (opDo != null) 
 {
-	// Dönüşümleri daha önce ayarlananlara geri döndürmek için GSave/GRestore operatörlerini kullanın
-	Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
-	Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-	// Geçerli dönüşüm matrisini tanımladığı şekilde ConcatenateMatrix nesnesini örneklendirin.
-	Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-	// Kaynaklardan nesneleri çizen Do operatörünü oluşturun. Form nesnelerini ve Görüntü nesnelerini çizer
-	Aspose.Pdf.Operators.Do opDo = op as Aspose.Pdf.Operators.Do;
-	if (opSaveState != null)
-	{
-		//Önceki durumu kaydet ve geçerli durumu yığının en üstüne it
-		graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-	}
-	else if (opRestoreState != null)
-	{
-		// Mevcut durumu at ve öncekini geri yükle
-		graphicsState.Pop();
-	}
-	else if (opCtm != null)
-	{
-		System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
-		   (float)opCtm.Matrix.A,
-		   (float)opCtm.Matrix.B,
-		   (float)opCtm.Matrix.C,
-		   (float)opCtm.Matrix.D,
-		   (float)opCtm.Matrix.E,
-		   (float)opCtm.Matrix.F);
-		// Mevcut matrisi durum matrisiyle çarpın
-		((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-		continue;
-	}
-	else if (opDo != null)
-	{
-		// Eğer bu bir resim çizim operatörü ise
-		if (imageNames.Contains(opDo.Name))
-		{
-			System.Drawing.Drawing2D.Matrix lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-			// İlk pdf sayfasının resimlerini tutmak için XImage nesnesi oluşturun
-			XImage image = doc.Pages[1].Resources.Images[opDo.Name];
-			// Görüntü boyutlarını al
-			double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
-			double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
-			// Resmin Yükseklik ve Genişlik bilgilerini alın
-			double originalWidth = image.Width;
-			double originalHeight = image.Height;
-			// Yukarıdaki bilgilere dayanarak çözünürlüğü hesaplayın
-			double resHorizontal = originalWidth * defaultResolution / scaledWidth;
-			double resVertical = originalHeight * defaultResolution / scaledHeight;
-			// Her bir görüntünün Boyut ve Çözünürlük bilgilerini görüntüleyin
-			Console.Out.WriteLine(
-					string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
-								 opDo.Name, scaledWidth, scaledHeight, resHorizontal,
-								 resVertical));
-		}
-	}
+    // Nesneleri çizen Do operatörünü kullanın
+    if (imageNames.Contains(opDo.Name)) 
+    {
+        Matrix lastCTM = (Matrix)graphicsState.Peek();
+        XImage image = doc.Pages[1].Resources.Images[opDo.Name];
+        double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
+        double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
+        double originalWidth = image.Width;
+        double originalHeight = image.Height;
+        
+        double resHorizontal = originalWidth * defaultResolution / scaledWidth;
+        double resVertical = originalHeight * defaultResolution / scaledHeight;
+        
+        // Bilgileri çıktı olarak al
+        Console.Out.WriteLine(string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
+                         opDo.Name, scaledWidth, scaledHeight, resHorizontal, resVertical));
+    }
 }
 ```
+Burada, operatörün bir görüntü çizmekten sorumlu olup olmadığını kontrol ediyoruz. Eğer öyleyse, karşılık gelen XImage nesnesini alırız, ölçeklenmiş boyutlarını ve çözünürlüğünü hesaplarız ve gerekli bilgileri yazdırırız.
 
 ## Çözüm
 
-Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF dosyasındaki görüntü bilgilerini nasıl çıkaracağınızı öğrendiniz. Bu bilgileri uygulamalarınızda çeşitli görüntü işleme görevlerinde kullanabilirsiniz.
+Tebrikler! Aspose.PDF for .NET kullanarak bir PDF dosyasından görüntü bilgilerinin nasıl çıkarılacağına dair çalışan bir örnek oluşturdunuz. Bu yetenek, raporlama, veri çıkarma veya hatta özel PDF görüntüleyicileri gibi çeşitli uygulamalar için PDF belgelerini analiz etmesi veya düzenlemesi gereken geliştiriciler için inanılmaz derecede yararlı olabilir. 
 
-### PDF dosyasındaki resim bilgilerine ilişkin SSS
 
-#### S: Aspose.PDF for .NET kullanarak bir PDF belgesinden görüntü bilgilerini çıkarmanın amacı nedir?
+## SSS
 
-A: Bir PDF belgesinden görüntü bilgilerinin çıkarılması, belgedeki görüntülerin boyutları, çözünürlüğü ve diğer nitelikleri hakkında fikir verir. Bu bilgiler, görüntü işleme, analiz veya optimizasyon görevleri için kullanılabilir.
+### Aspose.PDF kütüphanesi nedir?
+Aspose.PDF kütüphanesi, .NET uygulamalarında PDF dosyaları oluşturmak, düzenlemek ve dönüştürmek için güçlü bir araçtır.
 
-#### S: Aspose.PDF for .NET, bir PDF belgesinden görüntü bilgilerinin çıkarılmasına nasıl yardımcı olur?
+### Kütüphaneyi ücretsiz kullanabilir miyim?
+ Evet, Aspose ücretsiz deneme sunuyor. İndirebilirsiniz[Burada](https://releases.aspose.com/).
 
-A: Aspose.PDF for .NET, görüntüleri de dahil olmak üzere bir PDF belgesinin içeriğine erişmek ve onu analiz etmek için araçlar sağlar. Sağlanan kod, çeşitli operatörler kullanılarak görüntü bilgilerinin nasıl çıkarılacağını ve görüntüleneceğini gösterir.
+### Hangi tür görüntü formatları çıkarılabilir?
+Kütüphane, PDF'ye gömüldükleri sürece JPEG, PNG ve TIFF gibi çeşitli resim formatlarını destekler.
 
-#### S: Bu yöntemle ne tür görüntü bilgileri çıkarılabilir?
+### Aspose ticari amaçlı mı kullanılıyor?
+ Evet, Aspose ürünlerini ticari olarak kullanabilirsiniz. Lisanslama için şu adresi ziyaret edin:[satın alma sayfası](https://purchase.aspose.com/buy).
 
-A: Bu yöntem, bir PDF belgesindeki resimlerin ölçeklendirilmiş boyutları, çözünürlükleri ve resim adları gibi bilgileri çıkarmanıza ve görüntülemenize olanak tanır.
-
-#### S: Kod, bir PDF belgesindeki görüntüyle ilgili operatörleri nasıl tanımlıyor ve işliyor?
-
-A: Kod, PDF belgesinin belirtilen bir sayfasındaki operatörler arasında yineleme yapar. Görüntü işlemleri, dönüşümler ve işlemeyle ilgili operatörleri tanımlar ve işler.
-
-#### S: Varsayılan çözünürlüğün önemi nedir ve kodda nasıl kullanılır?
-
-A: Varsayılan çözünürlük, görüntülerin gerçek çözünürlüğünü hesaplamak için bir referans noktası olarak kullanılır. Kod, her görüntünün çözünürlüğünü boyutlarına ve varsayılan çözünürlük ayarına göre hesaplar.
-
-#### S: Çıkarılan görüntü bilgileri gerçek dünya senaryolarında nasıl kullanılabilir?
-
-A: Çıkarılan görüntü bilgileri, görüntü kalitesinin değerlendirilmesi, görüntü optimizasyonu, görüntü küçük resimlerinin oluşturulması ve görüntüyle ilgili karar alma süreçlerinin kolaylaştırılması gibi görevlerde kullanılabilir.
-
-#### S: Ek görüntüyle ilgili nitelikleri çıkarmak için kodu değiştirebilir miyim?
-
-C: Evet, renk alanı, piksel derinliği veya görüntü türü gibi görüntülerin ek niteliklerini çıkarmak için kodu özelleştirebilirsiniz.
-
-#### S: Görüntü bilgisi çıkarma işlemi kaynak yoğun veya zaman alıcı mıdır?
-
-A: Görüntü bilgisi çıkarma işlemi verimlidir ve performans açısından optimize edilmiştir; kaynak kullanımı ve işlem süresi üzerinde minimum etki sağlar.
-
-#### S: Geliştiriciler PDF belgelerinden görüntü bilgilerini belirleyip çıkarmaktan nasıl faydalanabilir?
-
-A: Geliştiriciler, PDF belgelerindeki görüntülerin özelliklerine ilişkin bilgi edinebilir ve bu sayede görüntü işleme, düzenleme ve optimizasyon konusunda bilinçli kararlar alabilirler.
-
-#### S: Bu yöntem, resim içeren PDF belgelerinin toplu işlenmesinde kullanılabilir mi?
-
-C: Evet, bu yöntem birden fazla sayfa veya belgede gezinerek, görüntü bilgilerini çıkararak ve görüntüyle ilgili görevleri gerçekleştirerek toplu işleme için genişletilebilir.
+### Aspose için nasıl destek alabilirim?
+ Destek forumuna erişebilirsiniz[Burada](https://forum.aspose.com/c/pdf/10).

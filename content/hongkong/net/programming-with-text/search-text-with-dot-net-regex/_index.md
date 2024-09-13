@@ -138,7 +138,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 
 #### Q：「使用 Dot Net Regex 搜尋文字」教學的目的為何？
 
-答：「使用 Dot Net Regex 搜尋文字」教學課程旨在指導使用者使用 Aspose.PDF .NET 函式庫，使用 .NET 正規表示式在 PDF 文件中搜尋文字。本教程提供逐步說明和 C# 程式碼範例來演示該過程。
+答：「使用 Dot Net Regex 搜尋文字」教學課程旨在指導使用者使用 .NET 的 Aspose.PDF 庫，使用 .NET 正規表示式在 PDF 文件中搜尋文字。本教程提供逐步說明和 C# 程式碼範例來演示該過程。
 
 #### Q：本教學如何幫助您在 PDF 中使用 .NET 正規表示式搜尋文字？
 

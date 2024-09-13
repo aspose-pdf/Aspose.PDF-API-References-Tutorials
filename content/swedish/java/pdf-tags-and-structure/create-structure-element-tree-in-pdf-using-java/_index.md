@@ -84,7 +84,7 @@ Ett strukturelementträd representerar den logiska strukturen av innehåll i ett
 
 ### Hur kan jag lägga till bilder i ett taggat PDF-dokument?
 
- Du kan använda`com.aspose.pdf.Image` klass för att lägga till bilder till ett taggat PDF-dokument. Se till att du associerar lämpliga strukturelement med bilderna för tillgänglighet.
+ Du kan använda`com.aspose.pdf.Image` klass för att lägga till bilder i ett taggat PDF-dokument. Se till att du associerar lämpliga strukturelement med bilderna för tillgänglighet.
 
 ### Är taggade PDF-dokument ett krav för tillgänglighetsefterlevnad?
 

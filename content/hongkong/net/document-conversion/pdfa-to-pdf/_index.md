@@ -80,7 +80,7 @@ doc.Save(dataDir + "PDFAToPDF_out.pdf");
 
 ## 結論
 
-現在你就擁有了！您已使用 Aspose.PDF for .NET 成功將 PDF/A 文件轉換為標準 PDF。這個功能強大的庫使操作 PDF 文件變得容易，只需幾行程式碼，您就可以獲得出色的結果。請記住，熟能生巧，所以不要猶豫嘗試 Aspose.PDF 的其他功能！
+現在你就得到它了！您已使用 Aspose.PDF for .NET 成功將 PDF/A 文件轉換為標準 PDF。這個功能強大的庫使操作 PDF 文件變得容易，只需幾行程式碼，您就可以獲得出色的結果。請記住，熟能生巧，所以不要猶豫嘗試 Aspose.PDF 的其他功能！
 
 ## 常見問題解答
 

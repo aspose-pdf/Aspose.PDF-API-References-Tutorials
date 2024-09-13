@@ -47,7 +47,7 @@ taggedContent.SetLanguage("fr-FR");
 ต่อไปเรามาดูองค์ประกอบโครงสร้างรากของเอกสาร PDF กัน
 
 ```csharp
-//รับองค์ประกอบโครงสร้างราก
+// รับองค์ประกอบโครงสร้างราก
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

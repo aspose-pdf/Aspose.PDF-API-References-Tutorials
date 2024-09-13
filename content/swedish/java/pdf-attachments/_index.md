@@ -2,7 +2,7 @@
 title: PDF-bilagor
 linktitle: PDF-bilagor
 second_title: Aspose.PDF Java PDF Processing API
-description: Lär dig att hantera PDF-bilagor i Java med Aspose.PDF. Bifoga filer, bilder och mer till dina PDF-filer utan ansträngning.
+description: Lär dig hantera PDF-bilagor i Java med Aspose.PDF. Bifoga filer, bilder och mer till dina PDF-filer utan ansträngning.
 type: docs
 weight: 11
 url: /sv/java/pdf-attachments/

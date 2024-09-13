@@ -96,14 +96,14 @@ textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
 textFragmentAbsorber = new TextFragmentAbsorber(@"(?i)the ((.)*)");
 // K vyhledání textu následujícího po shodě regulárního výrazu použijte následující regulární výraz.
 textFragmentAbsorber = new TextFragmentAbsorber(@"(?<=word).*");
-// Chcete-li hledat hypertextové odkazy/URL v dokumentu PDF, zkuste použít následující regulární výraz.
+// Chcete-li hledat hypertextové odkazy/URL uvnitř dokumentu PDF, zkuste použít následující regulární výraz.
 textFragmentAbsorber = new TextFragmentAbsorber(@"(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?");
 ```
 
 
 ## Závěr
 
-Gratuluji! Úspěšně jste se naučili, jak vyhledávat konkrétní textové segmenty v dokumentu PDF pomocí Aspose.PDF for .NET. Tento výukový program poskytuje příklady různých scénářů vyhledávání pomocí regulárních výrazů. Nyní můžete tento kód začlenit do svých vlastních projektů C# pro vyhledávání a zpracování textových segmentů v souborech PDF.
+Gratuluji! Úspěšně jste se naučili, jak vyhledávat konkrétní textové segmenty v dokumentu PDF pomocí Aspose.PDF pro .NET. Tento výukový program poskytuje příklady různých scénářů vyhledávání pomocí regulárních výrazů. Nyní můžete tento kód začlenit do svých vlastních projektů C# pro vyhledávání a zpracování textových segmentů v souborech PDF.
 
 ### FAQ
 

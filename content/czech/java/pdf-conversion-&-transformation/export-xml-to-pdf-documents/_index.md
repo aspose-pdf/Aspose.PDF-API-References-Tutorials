@@ -2,7 +2,7 @@
 title: Export XML do PDF dokumentů
 linktitle: Export XML do PDF dokumentů
 second_title: Aspose.PDF Java PDF Processing API
-description: Snadno převádějte XML do PDF pomocí Aspose.PDF pro Javu. Zjednodušte reprezentaci a sdílení dat. Jak na to se dozvíte v tomto komplexním průvodci.
+description: Snadno převádějte XML do PDF pomocí Aspose.PDF pro Javu. Zjednodušte reprezentaci a sdílení dat. Jak na to, se dozvíte v tomto komplexním průvodci.
 type: docs
 weight: 26
 url: /cs/java/pdf-conversion-transformation/export-xml-to-pdf-documents/
@@ -25,7 +25,7 @@ Začněme nastavením nového projektu Java. Můžete použít své oblíbené i
 
 ## Přidání Aspose.PDF do vašeho projektu
 
-Chcete-li začít používat Aspose.PDF pro Java, musíte do svého projektu přidat knihovnu Aspose.PDF. Knihovnu si můžete stáhnout z webových stránek a přidat ji jako závislost ve svém projektu.
+Chcete-li začít používat Aspose.PDF pro Java, musíte do svého projektu přidat knihovnu Aspose.PDF. Knihovnu si můžete stáhnout z webu a přidat ji jako závislost ve svém projektu.
 
 ```java
 // Přidejte Aspose.PDF jako závislost

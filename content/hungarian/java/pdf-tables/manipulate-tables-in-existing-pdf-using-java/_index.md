@@ -58,7 +58,7 @@ Tegyük fel, hogy egy adott táblázatcella tartalmát szeretnénk frissíteni. 
 Table table = tables.get_Item(0); // Cserélje ki a kívánt táblázat indexével
 
 //Hozzáférés egy adott cellához a táblázatban
-Cell cell = table.getRows().get_Item(0).getCells().get_Item(0); // Cserélje sor és oszlop indexekkel
+Cell cell = table.getRows().get_Item(0).getCells().get_Item(0); // Csere sor- és oszlopindexekre
 
 // Frissítse a cella szövegét
 cell.getParagraphs().get_Item(0).setText("New Data");

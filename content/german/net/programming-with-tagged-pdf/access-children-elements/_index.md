@@ -105,7 +105,7 @@ foreach (Element element in elementList)
 		string alternativeText = structureElement.AlternativeText;
 	}
 }
-// Zugriff auf untergeordnete Elemente des ersten Elements im Stammelement
+//Zugriff auf untergeordnete Elemente des ersten Elements im Stammelement
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
 foreach (Element element in elementList)
 {

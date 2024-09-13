@@ -35,7 +35,7 @@ taggedContent.SetLanguage("fr-FR");
 في هذه الخطوة سوف نحصل على عنصر البنية الجذرية لمستندنا.
 
 ```csharp
-//الحصول على عنصر البنية الجذرية
+// الحصول على عنصر البنية الجذرية
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
@@ -293,7 +293,7 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 #### س: كيف أقوم بإنشاء مستند PDF جديد باستخدام Aspose.PDF لـ .NET؟
 
-أ: لإنشاء مستند PDF جديد، تحتاج إلى إنشاء مثيل لـ`Document` كائن من مكتبة Aspose.PDF. يوضح كود المصدر C# المقدم كيفية إنشاء مستند وتعيين عنوانه ولغته.
+ أ: لإنشاء مستند PDF جديد، تحتاج إلى إنشاء مثيل لـ`Document` كائن من مكتبة Aspose.PDF. يوضح كود المصدر C# المقدم كيفية إنشاء مستند وتعيين عنوانه ولغته.
 
 #### س: ما أهمية عنصر البنية الجذرية في مستند PDF؟
 

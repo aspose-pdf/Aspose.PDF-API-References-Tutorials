@@ -31,7 +31,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("Arial");
 ```
 
-Mã ở trên tìm phông chữ Arial bằng cách sử dụng`FindFont` phương pháp từ`FontRepository` lớp. Nếu bạn muốn sử dụng một phông chữ khác, hãy thay thế`"Arial"` với tên phông chữ mong muốn.
+ Mã ở trên tìm phông chữ Arial bằng cách sử dụng`FindFont`phương pháp từ`FontRepository` lớp. Nếu bạn muốn sử dụng một phông chữ khác, hãy thay thế`"Arial"` với tên phông chữ mong muốn.
 
 ## Bước 3: Thiết lập trạng thái văn bản
 

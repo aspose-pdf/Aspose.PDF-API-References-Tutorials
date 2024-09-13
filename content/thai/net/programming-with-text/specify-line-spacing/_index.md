@@ -124,12 +124,12 @@ formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 TextFragment textFragment = new TextFragment("Hello world");
 if (fontFile != "")
 {
-	// โหลดแบบอักษร TrueType ลงในวัตถุสตรีม
+	//โหลดแบบอักษร TrueType ลงในวัตถุสตรีม
 	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
 	{
 		// ตั้งชื่อแบบอักษรสำหรับสตริงข้อความ
 		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		//ระบุตำแหน่งสำหรับ Text Fragment
+		// ระบุตำแหน่งสำหรับ Text Fragment
 		textFragment.Position = new Position(100, 600);
 		//ตั้งค่า TextFormattingOptions ของส่วนปัจจุบันให้กำหนดไว้ล่วงหน้า (ซึ่งชี้ไปที่ LineSpacingMode.FullSize)
 		textFragment.TextState.FormattingOptions = formattingOptions;

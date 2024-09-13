@@ -31,7 +31,7 @@ Aspose.PDF for .NET の「タグ付き PDF を使用したプログラミング�
 | [スタイルテーブル要素](./style-table-element/) | Aspose.PDF for .NET を使用してテーブル要素をフォーマットする方法を学びます。スタイルとプロパティをカスタマイズするためのステップバイステップ ガイド。 |  
 | [スタイルテーブル行](./style-table-row/) | Aspose.PDF for .NET を使用してテーブル行をカスタマイズする方法を、行のスタイル設定と書式設定のステップ バイ ステップ ガイドで学習します。 |  
 | [PDF ファイル内のテキスト構造のスタイル設定](./style-text-structure/) | Aspose.PDF for .NET を使用して PDF ファイル内のテキスト構造をフォーマットする方法を学びます。テキストのスタイルを設定するためのステップバイステップ ガイド。 |  
-| [タグ付き PDF コンテンツ](./tagged-pdf-content/) | Aspose.PDF for .NET を使用して PDF ドキュメント内のタグ付きコンテンツを操作する方法を学習します。タグの使用に関するステップ バイ ステップ ガイドです。 |  
+| [タグ付き PDF コンテンツ](./tagged-pdf-content/) | Aspose.PDF for .NET を使用して PDF ドキュメント内のタグ付けされたコンテンツを操作する方法を学習します。タグの使用に関するステップ バイ ステップ ガイドです。 |  
 | [既存の PDF 内の画像にタグを付ける](./tag-image-in-existing-pdf/) | Aspose.PDF for .NET を使用して既存の PDF 内の画像をマークアップする方法を学びます。画像にタグを追加するためのステップバイステップ ガイド。 |  
 | [テキストブロック構造要素](./text-block-structure-elements/) | Aspose.PDF for .NET を使用して、見出しやタグ付き段落などのテキスト ブロック構造要素を既存の PDF ドキュメントに追加する方法を学びます。 |  
 | [PDF ファイル内のテキスト構造要素](./text-structure-elements/) | Aspose.PDF for .NET を使用して PDF ファイルにテキスト構造要素を追加する方法を学習します。PDF の構造とアクセシビリティを向上させます。 |  

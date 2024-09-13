@@ -2,178 +2,185 @@
 title: Agregar sello de fecha y hora en archivo PDF
 linktitle: Agregar sello de fecha y hora en archivo PDF
 second_title: Referencia de API de Aspose.PDF para .NET
-description: Aprenda cómo agregar fácilmente una marca de fecha y hora en un archivo PDF con Aspose.PDF para .NET.
+description: Aprenda a agregar una marca de fecha y hora a sus archivos PDF con Aspose.PDF para .NET con esta guía paso a paso. Perfecta para mejorar la autenticidad de los documentos.
 type: docs
 weight: 10
 url: /es/net/programming-with-stamps-and-watermarks/add-date-time-stamp/
 ---
-En este artículo, le mostraremos paso a paso cómo agregar una marca de fecha y hora en un archivo PDF con Aspose.PDF para .NET. Le mostraremos cómo usar el código fuente de C# proporcionado para agregar una marca de fecha y hora a un archivo PDF existente.
+## Introducción
 
-## Requisitos
+Cuando se trata de gestionar documentos, especialmente archivos PDF, añadir una marca de fecha y hora puede ser un cambio radical. Ya sea que trabajes con documentos legales, informes de proyectos o facturas, una marca de tiempo no solo añade autenticidad, sino que también proporciona un registro claro de cuándo se creó o modificó el documento. En esta guía, te guiaremos a través del proceso de añadir una marca de fecha y hora a un archivo PDF utilizando la biblioteca Aspose.PDF para .NET. 
 
-Antes de comenzar, asegúrese de tener lo siguiente:
+Este artículo está diseñado para ser sencillo y fácil de seguir, por lo que incluso si eres nuevo en programación o en la biblioteca Aspose.PDF, podrás implementar esta función con confianza. ¡Vamos a profundizar!
 
-- Un entorno de desarrollo .NET instalado.
-- La biblioteca Aspose.PDF para .NET descargada y referenciada en su proyecto.
+## Prerrequisitos
 
-## Paso 1: Configuración del entorno
+Antes de comenzar, hay algunos requisitos previos que debes tener en cuenta:
 
-Antes de poder agregar una marca de fecha y hora a un documento PDF, debe configurar su entorno de desarrollo. Estos son los pasos a seguir:
+1. Visual Studio: asegúrate de tener Visual Studio instalado en tu equipo. Aquí es donde escribirás y ejecutarás tu código.
+2. Aspose.PDF para .NET: Debe descargar e instalar la biblioteca Aspose.PDF. Puede encontrar la última versión[aquí](https://releases.aspose.com/pdf/net/).
+3. Conocimientos básicos de C#: La familiaridad con la programación en C# te ayudará a comprender mejor los ejemplos, pero no te preocupes si recién estás empezando; te explicaremos todo paso a paso.
+4.  Un archivo PDF: tenga listo un archivo PDF de muestra. Para nuestro ejemplo, usaremos un archivo llamado`AddTextStamp.pdf`.
 
-1. Abra su IDE (entorno de desarrollo integrado) favorito.
-2. Crear un nuevo proyecto C#.
-3. Asegúrese de haber agregado una referencia a la biblioteca Aspose.PDF para .NET.
+Una vez que tenga estos requisitos previos, ¡estará listo para comenzar a agregar marcas de fecha y hora a sus archivos PDF!
 
-## Paso 2: Agregar la biblioteca Aspose.PDF
+## Importar paquetes
 
-La biblioteca Aspose.PDF para .NET es necesaria para trabajar con documentos PDF en su proyecto.
+Para comenzar, debe importar los espacios de nombres necesarios en su proyecto de C#. A continuación, le indicamos cómo hacerlo:
 
-## Paso 3: Cargar el documento PDF
+### Crear un nuevo proyecto
 
-El primer paso para agregar una marca de fecha y hora es cargar el documento PDF existente en el proyecto. A continuación, le indicamos cómo hacerlo:
+1. Abrir Visual Studio: inicie su aplicación de Visual Studio.
+2. Crear un nuevo proyecto: seleccione “Crear un nuevo proyecto” en la pantalla de inicio.
+3. Elegir aplicación de consola: seleccione “Aplicación de consola (.NET Framework)” de la lista de plantillas de proyecto.
+4.  Nombre su proyecto: Déle un nombre a su proyecto, por ejemplo,`PDFDateTimeStamp`.
+
+### Añadir referencia de Aspose.PDF
+
+1. Haga clic derecho en Referencias: en el Explorador de soluciones, haga clic derecho en la carpeta “Referencias” de su proyecto.
+2. Seleccionar “Agregar referencia”: Elija “Agregar referencia” en el menú contextual.
+3. Busque Aspose.PDF: navegue hasta la ubicación donde descargó Aspose.PDF y selecciónelo. Haga clic en “Aceptar” para agregarlo a su proyecto.
+
+### Importar espacios de nombres requeridos
+
+ En la parte superior de tu`Program.cs` archivo, debe importar los siguientes espacios de nombres:
+
+```csharp
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System;
+using Aspose.Pdf.Annotations;
+```
+
+Ahora que tenemos todo configurado, desglosemos el proceso de agregar una marca de fecha y hora a un archivo PDF en pasos claros y manejables.
+
+## Paso 1: Establezca el directorio del documento
+
+En primer lugar, debe especificar el directorio en el que se encuentra el archivo PDF. Esto es fundamental porque el código buscará el PDF en este directorio.
 
 ```csharp
 // La ruta al directorio de documentos.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Reemplazar con su ruta actual
+```
 
-// Abrir el documento
+ Asegúrese de reemplazar`YOUR DOCUMENT DIRECTORY` con la ruta real a su archivo PDF.
+
+## Paso 2: Abra el documento PDF
+
+A continuación, abrirá el documento PDF donde desea agregar la marca de tiempo. 
+
+```csharp
+// Abrir documento
 Document pdfDocument = new Document(dataDir + "AddTextStamp.pdf");
 ```
 
-Asegúrese de reemplazar "SU DIRECTORIO DE DOCUMENTOS" con la ruta real al directorio donde se encuentra su documento PDF.
+ Esta línea de código inicializa el`Document` clase y carga su archivo PDF en el`pdfDocument` objeto.
 
-## Paso 4: Creación de la marca de fecha y hora
+## Paso 3: Crear la marca de fecha y hora
 
-Ahora que has cargado el documento
-
-  PDF, puedes crear la marca de fecha y hora para agregarla. Aquí te explicamos cómo hacerlo:
+Ahora es el momento de generar la marca de fecha y hora. La formatearás para que se muestre de una manera específica. 
 
 ```csharp
-string annotationText = string.Empty;
-annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt");
-
-// Crear un buffer de texto
-TextStamp textStamp = new TextStamp(annotationText);
+string annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt ");
 ```
 
-El código anterior crea un nuevo búfer de texto que contiene la fecha y hora actuales.
+ Aquí,`DateTime.Now` obtiene la fecha y hora actuales, y`ToString` formatéelo al formato que desee.
 
-## Paso 5: Configuración de las propiedades del sello
+## Paso 4: Crea un sello de texto
 
-Antes de agregar el sello al documento PDF, puede configurar varias propiedades del sello, como el margen, la alineación horizontal y vertical, etc. A continuación, le indicamos cómo hacerlo:
-
-```csharp
-// Establecer propiedades del buffer
-textStamp.BottomMargin = 10;
-textStamp. RightMargin = 20;
-textStamp.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
-textStamp.VerticalAlignment = VerticalAlignment.Bottom;
-```
-
-Puede ajustar estas propiedades según sus necesidades.
-
-## Paso 6: Agregar sello al PDF
-
-Ahora que la marca de fecha y hora está lista, puede agregarla a una página específica del documento PDF. A continuación, le indicamos cómo hacerlo:
+Con la cadena de fecha y hora lista, ahora puedes crear un sello de texto que se agregará a tu PDF.
 
 ```csharp
-// Añade el sello a la colección de sellos de la página
-pdfDocument.Pages[1].AddStamp(textStamp);
-```
-
-El código anterior agrega el sello a la primera página del documento PDF. Puede especificar otra página si es necesario.
-
-## Paso 7: Guarde el documento de salida
-
-Una vez que hayas añadido la fecha y la hora, puedes guardar el documento PDF modificado. A continuación te indicamos cómo hacerlo:
-
-```csharp
-// Guardar el documento de salida
-pdfDocument.Save(dataDir);
-```
-
-El código anterior guarda el documento PDF editado en el directorio especificado.
-
-### Código fuente de muestra para agregar una marca de fecha y hora mediante Aspose.PDF para .NET 
-```csharp
-
-// La ruta al directorio de documentos.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Abrir documento
-Document pdfDocument = new Document(dataDir+ "AddTextStamp.pdf");
-string annotationText = string.Empty;
-annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt ");
-
 // Crear sello de texto
 TextStamp textStamp = new TextStamp(annotationText);
+```
 
+ Esta línea crea una nueva instancia de`TextStamp` utilizando la cadena de fecha y hora formateada.
+
+## Paso 5: Establecer las propiedades del sello
+
+Puedes personalizar la apariencia y la posición del sello. Aquí te mostramos cómo configurar sus propiedades:
+
+```csharp
 // Establecer propiedades del sello
 textStamp.BottomMargin = 10;
 textStamp.RightMargin = 20;
 textStamp.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
 textStamp.VerticalAlignment = VerticalAlignment.Bottom;
+```
 
+En este paso, establecemos los márgenes y alineamos el sello con la esquina inferior derecha de la página PDF.
+
+## Paso 6: Añade el sello al PDF
+
+Ahora es el momento de agregar el sello de texto a su documento PDF. 
+
+```csharp
 // Añadir sello a la colección de sellos
 pdfDocument.Pages[1].AddStamp(textStamp);
+```
+
+Esta línea agrega el sello a la primera página del PDF. Puede cambiar el número de página si desea colocarlo en una página diferente.
+
+## Paso 7: Crear una anotación de texto libre (opcional)
+
+Si desea agregar una anotación al sello, puede crear una`FreeTextAnnotation` como sigue:
+
+```csharp
 DefaultAppearance default_appearance = new DefaultAppearance("Arial", 6, System.Drawing.Color.Black);
 FreeTextAnnotation textAnnotation = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(0, 0, 0, 0), default_appearance);
 textAnnotation.Name = "Stamp";
 textAnnotation.Accept(new AnnotationSelector(textAnnotation));
 textAnnotation.Contents = textStamp.Value;
+```
 
+Este paso opcional crea una anotación de texto libre que puede proporcionar contexto o información adicional sobre el sello.
+
+## Paso 8: Configurar el borde de anotación
+
+Si deseas personalizar el borde de tu anotación, también puedes hacerlo:
+
+```csharp
 Border border = new Border(textAnnotation);
 border.Width = 0;
 border.Dash = new Dash(1, 1);
 textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(0, 0, 0, 0);
 pdfDocument.Pages[1].Annotations.Add(textAnnotation);
-dataDir = dataDir + "AddDateTimeStamp_out.pdf";
-
-// Guardar documento de salida
-pdfDocument.Save(dataDir);
-Console.WriteLine("\nDate time stamp added successfully.\nFile saved at " + dataDir);  
-          
 ```
+
+Este fragmento de código establece el ancho del borde en 0, haciéndolo invisible, y agrega la anotación al PDF.
+
+## Paso 9: Guarde el documento PDF
+
+Por último, debes guardar el documento PDF modificado. 
+
+```csharp
+dataDir = dataDir + "AddDateTimeStamp_out.pdf"; // Especifique el nombre del archivo de salida
+pdfDocument.Save(dataDir);
+Console.WriteLine("\nDate time stamp added successfully.\nFile saved at " + dataDir);
+```
+
+Esta línea guarda el PDF con la marca de tiempo agregada en un nuevo archivo. Puede consultar el directorio especificado para ver el resultado.
 
 ## Conclusión
 
-¡Felicitaciones! Aprendió a agregar una marca de fecha y hora con Aspose.PDF para .NET. Ahora puede aplicar este conocimiento a sus propios proyectos para agregar marcas de fecha y hora a documentos PDF.
+¡Felicitaciones! Ha agregado con éxito una marca de fecha y hora a un archivo PDF con Aspose.PDF para .NET. Esta función simple pero efectiva puede mejorar sus documentos, haciéndolos más profesionales y brindando un registro claro de cuándo fueron creados o modificados. 
 
-### Preguntas frecuentes sobre cómo agregar una marca de fecha y hora en un archivo PDF
+## Preguntas frecuentes
 
-#### P: ¿Cuál es el propósito de agregar una marca de fecha y hora a un documento PDF usando Aspose.PDF para .NET?
+### ¿Puedo personalizar el formato de fecha en la marca de tiempo?
+ Sí, puedes modificar el`ToString`Método para cambiar el formato de fecha según su preferencia.
 
-A: Agregar una marca de fecha y hora a un documento PDF mejora su valor informativo al indicar cuándo se modificó o creó el documento. Esta función es útil para realizar un seguimiento de los cambios en el documento y proporcionar un punto de referencia para el historial del documento.
+### ¿Aspose.PDF es de uso gratuito?
+ Aspose.PDF ofrece una versión de prueba gratuita, pero para obtener todas las funciones, es necesario adquirir una licencia. Puede obtener una licencia temporal[aquí](https://purchase.aspose.com/temporary-license/).
 
-#### P: ¿Puedo personalizar el formato de la marca de fecha y hora para que coincida con requisitos específicos?
+### ¿Puedo agregar varias marcas de tiempo a un PDF?
+ ¡Por supuesto! Puedes crear varios`TextStamp` instancias y agregarlas a diferentes páginas o posiciones en el PDF.
 
- R: Sí, puede personalizar el formato de la marca de fecha y hora según sus preferencias. El código fuente C# proporcionado utiliza el`DateTime.Now.ToString()` Método para generar la marca de tiempo en un formato específico. Puede modificar este código para formatear la marca de tiempo según sea necesario.
+### ¿Qué pasa si no tengo Visual Studio?
+Puede utilizar cualquier IDE o editor de texto de C#, pero para ejecutar y depurar su proyecto, se recomienda Visual Studio.
 
-#### P: ¿Es posible agregar la fecha y la hora en una ubicación específica en una página PDF?
-
- R: Por supuesto, puede ajustar la ubicación de la marca de fecha y hora en la página PDF modificando las propiedades del`TextStamp` objeto. El código proporcionado en el tutorial demuestra cómo establecer propiedades como margen, alineación y posicionamiento vertical.
-
-#### P: ¿Puedo agregar múltiples sellos de fecha y hora a diferentes páginas del mismo documento PDF?
-
- R: Sí, puede agregar varias marcas de fecha y hora a distintas páginas del mismo documento PDF. Simplemente repita el proceso de creación de una`TextStamp` objeto y configurar sus propiedades para cada página deseada.
-
-#### P: ¿Cómo puedo cambiar la fuente, el tamaño o el color del texto del sello de fecha y hora?
-
- A: Para modificar la fuente, el tamaño o el color del texto del sello de fecha y hora, puede personalizar las propiedades del`DefaultAppearance` objeto utilizado para crear el`TextStamp`. Ajuste el nombre de la fuente, el tamaño y los valores de color para lograr la apariencia deseada.
-
-#### P: ¿Es posible agregar otros tipos de anotaciones o sellos a un documento PDF usando Aspose.PDF para .NET?
-
-R: Sí, Aspose.PDF para .NET ofrece una amplia variedad de tipos de anotaciones que puede agregar a documentos PDF, incluidas anotaciones de texto, sellos, líneas, formas y más. Puede explorar la documentación de Aspose.PDF para obtener más detalles sobre cómo trabajar con anotaciones.
-
-#### P: ¿Existen limitaciones o consideraciones al agregar una marca de fecha y hora a un documento PDF?
-
-R: Si bien agregar una marca de fecha y hora es sencillo, tenga en cuenta factores como el diseño del documento y el contenido existente. Asegúrese de que la ubicación de la marca no oculte información importante ni afecte la legibilidad del documento.
-
-#### P: ¿Cómo puedo integrar este método en mis propios proyectos para agregar marcas de fecha y hora a los documentos PDF?
-
-R: Para integrar este método, siga los pasos indicados y ajuste el código para que se adapte a la estructura de su proyecto. Puede agregar marcas de fecha y hora a los documentos PDF existentes para mejorar su utilidad y proporcionar una cronología clara de los cambios.
-
-#### P: ¿Puedo automatizar el proceso de agregar marcas de fecha y hora a varios documentos PDF?
-
-R: Sí, puede automatizar el proceso de agregar sellos de fecha y hora a varios documentos PDF creando un script o programa que recorra una lista de documentos y aplique el mismo proceso de sello a cada uno.
+### ¿Dónde puedo encontrar más ejemplos del uso de Aspose.PDF?
+ Puede explorar más ejemplos y tutoriales en el[Documentación Aspose.PDF](https://reference.aspose.com/pdf/net/).

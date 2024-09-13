@@ -105,4 +105,4 @@ Console.WriteLine("\nAll bookmarks deleted successfully.\nFile saved at " + data
  Απολύτως! Μπορείτε να προσθέσετε νέους σελιδοδείκτες χρησιμοποιώντας το`Outlines` ιδιοκτησία μετά τη διαγραφή των παλαιών.
 
 ### Πού μπορώ να βρω περισσότερη τεκμηρίωση στο Aspose.PDF;
- Μπορείτε να βρείτε ολοκληρωμένη τεκμηρίωση για το[Aspose website](https://reference.aspose.com/pdf/net/).
+ Μπορείτε να βρείτε ολοκληρωμένη τεκμηρίωση για το[Aspose ιστότοπο](https://reference.aspose.com/pdf/net/).

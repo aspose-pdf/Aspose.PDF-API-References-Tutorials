@@ -156,7 +156,7 @@ string outFile = dataDir + "LinkStructureElements_Output.pdf";
 string logFile = dataDir + "46035_log.xml";
 string imgFile = dataDir + "google-icon-512.png";
 
-// การสร้างเอกสารและการรับเนื้อหา PDF ที่ถูกแท็ก
+//การสร้างเอกสารและการรับเนื้อหา PDF ที่ถูกแท็ก
 Document document = new Document(); 
 ITaggedContent taggedContent = document.TaggedContent;
 

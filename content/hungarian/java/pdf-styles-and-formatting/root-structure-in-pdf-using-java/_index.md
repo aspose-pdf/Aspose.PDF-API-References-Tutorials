@@ -2,7 +2,7 @@
 title: Gyökérstruktúra PDF-ben Java használatával
 linktitle: Gyökérstruktúra PDF-ben Java használatával
 second_title: Aspose.PDF Java PDF feldolgozó API
-description: Tanulja meg a gyökérstruktúra kezelését az Aspose.PDF használatával. PDF-fájlok létrehozása, módosítása és javítása.
+description: Ismerje meg a gyökérstruktúra kezelését az Aspose.PDF használatával. PDF-fájlok létrehozása, módosítása és javítása.
 type: docs
 weight: 11
 url: /hu/java/pdf-styles-and-formatting/root-structure-in-pdf-using-java/

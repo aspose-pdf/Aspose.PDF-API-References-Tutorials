@@ -7,41 +7,79 @@ type: docs
 weight: 190
 url: /fr/net/programming-with-document/getwarningsforfontsubstitution/
 ---
-Aspose.PDF for .NET est une bibliothèque de manipulation PDF populaire qui permet aux développeurs de créer, de modifier et de convertir des fichiers PDF dans leurs applications .NET. L'une des fonctionnalités offertes par cette bibliothèque est la possibilité de détecter les avertissements de substitution de polices lors de l'ouverture d'un document PDF. Ce didacticiel vous guidera à travers les étapes d'utilisation de l'Aspose.PDF for .NET`GetWarningsForFontSubstitution` fonctionnalité d'Aspose.PDF pour .NET pour détecter les avertissements de substitution de police lors de l'ouverture d'un document PDF.
+## Introduction
 
-## Étape 1 : Installer Aspose.PDF pour .NET
+Dans le monde du traitement de documents, il est essentiel de s'assurer que vos PDF s'affichent exactement comme prévu. Avez-vous déjà ouvert un PDF et découvert que les polices étaient toutes incorrectes ? Cela peut se produire lorsque les polices d'origine utilisées dans le document ne sont pas disponibles sur le système sur lequel le PDF est affiché. Heureusement, Aspose.PDF pour .NET fournit une solution robuste pour détecter les avertissements de substitution de polices, vous permettant de maintenir l'intégrité de vos documents. Dans ce guide, nous allons parcourir les étapes à suivre pour configurer la détection de substitution de polices dans vos documents PDF à l'aide d'Aspose.PDF pour .NET.
 
- Pour utiliser Aspose.PDF for .NET dans vos applications .NET, vous devez d'abord installer la bibliothèque. Vous pouvez télécharger la dernière version de la bibliothèque à partir du[Page de téléchargement d'Aspose.PDF pour .NET](https://relases.aspose.com/pdf/net).
+## Prérequis
 
-Une fois la bibliothèque téléchargée, extrayez le contenu du fichier ZIP dans un dossier de votre ordinateur. Vous devrez ensuite ajouter une référence à la DLL Aspose.PDF pour .NET dans votre projet .NET.
+Avant de plonger dans le code, vous devez mettre en place quelques éléments :
 
-## Étape 2 : Charger le document PDF
+1. Visual Studio : assurez-vous que Visual Studio est installé sur votre ordinateur. C'est ici que vous écrirez et exécuterez votre code .NET.
+2.  Aspose.PDF pour .NET : vous devez disposer de la bibliothèque Aspose.PDF. Vous pouvez la télécharger à partir du[site](https://releases.aspose.com/pdf/net/).
+3. Connaissances de base de C# : la familiarité avec la programmation C# vous aidera à mieux comprendre les extraits de code.
+4. Un document PDF : préparez un exemple de document PDF que vous pouvez utiliser pour tester la détection de substitution de police.
 
- Une fois que vous avez installé Aspose.PDF pour .NET et ajouté une référence à la DLL dans votre projet .NET, vous pouvez commencer à utiliser le`GetWarningsForFontSubstitution` fonctionnalité permettant de détecter les avertissements de substitution de police lors de l'ouverture d'un document PDF.
+## Paquets d'importation
 
-La première étape de l'utilisation de cette fonctionnalité consiste à charger le document PDF pour lequel vous souhaitez détecter les avertissements de substitution de police. Pour ce faire, vous pouvez utiliser le code suivant :
+Pour commencer, vous devez importer les packages nécessaires dans votre projet C#. Voici comment procéder :
+
+### Créer un nouveau projet
+
+Ouvrez Visual Studio et créez un nouveau projet C#. Vous pouvez choisir une application console pour plus de simplicité.
+
+### Ajouter une référence Aspose.PDF
+
+1. Faites un clic droit sur votre projet dans l’Explorateur de solutions.
+2. Sélectionnez « Gérer les packages NuGet ».
+3. Recherchez « Aspose.PDF » et installez la dernière version.
+
+### Importer l'espace de noms
+
+En haut de votre fichier C#, importez l'espace de noms Aspose.PDF :
 
 ```csharp
-// Le chemin vers le document PDF
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
 
-// Ouvrir le document PDF
+Maintenant que vous avez tout configuré, décomposons le processus de détection des avertissements de substitution de police en étapes gérables.
+
+## Étape 1 : Définir le chemin du document
+
+Tout d'abord, vous devez spécifier le chemin d'accès à votre document PDF. C'est là qu'Aspose.PDF recherchera le fichier.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin réel où se trouve votre fichier PDF.
+
+## Étape 2 : Ouvrir le document PDF
+
+ Ensuite, vous ouvrirez le document PDF à l'aide de la`Document` cours fourni par Aspose.PDF.
+
+```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
- Dans le code ci-dessus, remplacez`"YOUR DOCUMENT DIRECTORY"` avec le chemin d'accès au répertoire où se trouve votre document PDF. Ce code chargera le document PDF dans un`Document` objet, que vous pouvez ensuite utiliser pour détecter les avertissements de substitution de police.
+ Cette ligne de code initialise une nouvelle`Document` objet avec votre fichier PDF.
 
-## Étape 3 : Détecter les avertissements de substitution de police
+## Étape 3 : Configurer la détection de substitution de police
 
-Pour détecter les avertissements de substitution de police lors de l'ouverture d'un document PDF, vous pouvez utiliser le code suivant :
+ Il est maintenant temps de configurer le gestionnaire d'événements qui détectera les avertissements de substitution de police. Vous devrez vous abonner à`FontSubstitution` événement de la`Document` classe.
 
 ```csharp
 doc.FontSubstitution += new Document.FontSubstitutionHandler(OnFontSubstitution);
 ```
 
- Dans le code ci-dessus,`OnFontSubstitution`est une méthode qui sera appelée chaque fois qu'un avertissement de substitution de police est détecté. Vous pouvez personnaliser cette méthode pour gérer l'avertissement de substitution de police comme vous le souhaitez.
+Cette ligne connecte l'événement à votre méthode personnalisée, que nous définirons ensuite.
 
- Voici un exemple d'implémentation de la`OnFontSubstitution` méthode:
+## Étape 4 : gérer les avertissements de substitution de police
+
+Vous devez créer une méthode qui gérera les avertissements de substitution de police. Cette méthode sera appelée à chaque fois qu'une substitution de police se produit.
 
 ```csharp
 private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArgs e)
@@ -50,47 +88,29 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 }
 ```
 
- Dans le code ci-dessus, le`OnFontSubstitution` La méthode renvoie simplement le nom de la police d'origine et le nom de la police substituée à la console chaque fois qu'un avertissement de substitution de police est détecté. Vous pouvez personnaliser cette méthode pour gérer l'avertissement de substitution de police comme vous le souhaitez.
+Avec cette méthode, vous pouvez enregistrer le nom de la police d'origine et le nom de la police de remplacement dans la console. De cette façon, vous saurez exactement quelles modifications ont été apportées.
 
-### Exemple de code source pour obtenir des avertissements pour la substitution de polices à l'aide d'Aspose.NET pour PDF
+## Étape 5 : Exécuter le code
 
- Voici le code source complet pour détecter les avertissements de substitution de police lors de l'ouverture d'un document PDF à l'aide de l'`GetWarningsForFontSubstitution` fonctionnalité d'Aspose.PDF pour .NET :
-
-```csharp
-// Le chemin vers le document PDF
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Ouvrir le document PDF
-Document doc = new Document(dataDir + "input.pdf");
-
-// Détecter les avertissements de substitution de police
-doc.FontSubstitution += new Document.FontSubstitutionHandler(OnFontSubstitution);
-
-// Gérer l'avertissement de substitution de police
-private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArgs e)
-{
-    Console.WriteLine("Font substitution: {0} => {1}", e.OriginalFontName, e.SubstitutedFontName);
-}
-```
+Enfin, vous pouvez exécuter votre application. S'il y a des substitutions de polices dans votre document PDF, vous verrez les avertissements imprimés dans la console.
 
 ## Conclusion
 
- Dans ce tutoriel, nous avons expliqué comment utiliser Aspose.PDF pour .NET pour détecter les avertissements de substitution de police lors de l'ouverture d'un document PDF. En vous abonnant à la`FontSubstitution`Grâce à cet événement, les développeurs peuvent détecter les situations de substitution de polices et les gérer en fonction des besoins de leur application. Aspose.PDF pour .NET fournit une API simple pour détecter et gérer les avertissements de substitution de polices, aidant ainsi les développeurs à garantir la fidélité visuelle et la cohérence des documents PDF sur différents systèmes.
+La détection des avertissements de substitution de police dans les documents PDF est essentielle pour maintenir l'intégrité visuelle de vos fichiers. Avec Aspose.PDF pour .NET, ce processus est simple et efficace. En suivant les étapes décrites dans ce guide, vous pouvez facilement configurer la détection de substitution de police et vous assurer que vos PDF s'affichent exactement comme vous le souhaitez.
 
-### FAQ
+## FAQ
 
-#### Q : Qu'est-ce que la substitution de police dans un document PDF ?
+### Qu'est-ce que la substitution de police ?
+La substitution de police se produit lorsque la police d'origine utilisée dans un document n'est pas disponible et qu'une police différente est utilisée à la place.
 
-R : La substitution de police dans un document PDF se produit lorsqu'une police utilisée dans le document n'est pas disponible ou intégrée dans le fichier. Dans ce cas, le visualiseur ou l'imprimante remplace la police manquante par une police similaire disponible sur le système. La substitution de police peut affecter l'apparence et la mise en page du document.
+### Comment puis-je empêcher la substitution de police ?
+Pour éviter la substitution de polices, assurez-vous que toutes les polices utilisées dans votre PDF sont intégrées au document.
 
-#### Q : Pourquoi est-il important de détecter la substitution de police ?
+### Puis-je utiliser Aspose.PDF gratuitement ?
+Oui, Aspose.PDF propose un essai gratuit que vous pouvez utiliser pour tester ses fonctionnalités.
 
-R : Il est important de détecter la substitution de polices, car elle peut avoir un impact sur la fidélité visuelle et la mise en page du document PDF. La détection des avertissements de substitution de polices permet aux développeurs d'identifier les situations dans lesquelles les polices sont remplacées et de prendre les mesures appropriées pour garantir que l'apparence visuelle du document est cohérente sur différents systèmes.
+### Où puis-je trouver plus de documentation ?
+ Vous pouvez trouver une documentation détaillée sur Aspose.PDF pour .NET[ici](https://reference.aspose.com/pdf/net/).
 
-#### Q : Comment puis-je gérer les avertissements de substitution de police ?
-
- R : Vous pouvez gérer les avertissements de substitution de police en vous abonnant à l'`FontSubstitution` événement de la`Document` classe et en fournissant une méthode personnalisée pour gérer l'événement. Dans cette méthode personnalisée, vous pouvez enregistrer les avertissements de substitution de police, avertir les utilisateurs ou effectuer d'autres actions en fonction des exigences de votre application.
-
-#### Q : Puis-je personnaliser la gestion des avertissements de substitution de police ?
-
- R : Oui, vous pouvez personnaliser la gestion des avertissements de substitution de police en fournissant une méthode personnalisée pour gérer le`FontSubstitution`événement. Dans cette méthode personnalisée, vous pouvez enregistrer les avertissements de substitution de police, avertir les utilisateurs ou prendre toute autre mesure appropriée en fonction des exigences de votre application.
+### Comment puis-je obtenir de l'aide pour Aspose.PDF ?
+ Vous pouvez obtenir de l'aide en visitant le[Forum d'assistance Aspose](https://forum.aspose.com/c/pdf/10).

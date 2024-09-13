@@ -98,7 +98,7 @@ Verbeter uw PDF-documenten door eenvoudig gedraaide tekst toe te voegen, dankzij
 
 ---
 
-## FAQ's (Veelgestelde vragen)
+## Veelgestelde vragen (FAQ)
 
 ### 1. Kan ik tekst in dezelfde PDF in verschillende hoeken roteren?
    Ja, u kunt meerdere exemplaren van gedraaide tekst met verschillende hoeken toevoegen aan hetzelfde PDF-document. Herhaal gewoon het proces dat in deze tutorial wordt beschreven voor elk stuk gedraaide tekst.

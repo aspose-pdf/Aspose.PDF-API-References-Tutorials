@@ -145,7 +145,7 @@ row1.Cells.Add();
 row1.Cells[1].Paragraphs.Add(TitleText);
 // Atur perataan vertikal konten baris sebagai Atas
 row1.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-// Buat baris dalam tabel dan kemudian sel dalam baris
+//Buat baris dalam tabel dan kemudian sel dalam baris
 Aspose.Pdf.Row SecondRow = table1.Rows.Add();
 SecondRow.Cells.Add();
 // Tetapkan nilai rentang baris untuk Baris kedua sebagai 2

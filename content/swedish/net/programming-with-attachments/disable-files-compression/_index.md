@@ -1,7 +1,7 @@
 ---
 title: Inaktivera filkomprimering i PDF-fil
 linktitle: Inaktivera filkomprimering i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du inaktiverar filkomprimering i PDF-filer med Aspose.PDF för .NET med denna steg-för-steg-guide. Förbättra dina PDF-hanteringsfärdigheter.
 type: docs
 weight: 30

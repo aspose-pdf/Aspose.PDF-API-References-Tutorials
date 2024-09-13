@@ -82,7 +82,7 @@ Speichern Sie das generierte SVG-Bild in einer Datei.
 
 ## Ausnahmen behandeln
 
-Die Ausnahmebehandlung ist von entscheidender Bedeutung, um sicherzustellen, dass Ihr Code unerwartete Situationen reibungslos bewältigt.
+Die Ausnahmebehandlung ist von entscheidender Bedeutung, um sicherzustellen, dass Ihr Code unerwartete Situationen ordnungsgemäß bewältigt.
 
 ## Hinzufügen einer Fehlerbehandlung
 
@@ -116,7 +116,7 @@ Aspose.PDF für Java ist eine kommerzielle Bibliothek mit einer verfügbaren Tes
 
 ### Wie kann ich die SVG-Ausgabe anpassen?
 
- Sie können die SVG-Ausgabe anpassen, indem Sie Folgendes konfigurieren:`SvgSaveOptions`Eine Liste der verfügbaren Optionen finden Sie in der Dokumentation.
+ Sie können die SVG-Ausgabe anpassen, indem Sie die`SvgSaveOptions`Eine Liste der verfügbaren Optionen finden Sie in der Dokumentation.
 
 ### Ist Aspose.PDF für Java für die Stapelverarbeitung von PDFs geeignet?
 

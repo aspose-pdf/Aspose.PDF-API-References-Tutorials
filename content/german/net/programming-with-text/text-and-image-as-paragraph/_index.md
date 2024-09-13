@@ -60,7 +60,7 @@ page.Paragraphs.Add(text);
 
 ## Schritt 6: Ein Bild als Inline-Absatz hinzufügen
 
- Erstellen Sie ein`Aspose.Pdf.Image` Objekt und legen Sie es als Inline-Absatz fest, sodass es direkt nach dem vorherigen Absatz erscheint:
+ Erstellen Sie ein`Aspose.Pdf.Image` Objekt und legen Sie es als Inline-Absatz fest, sodass es direkt nach dem vorherigen Absatz angezeigt wird:
 
 ```csharp
 Aspose.Pdf.Image image = new Aspose.Pdf.Image();

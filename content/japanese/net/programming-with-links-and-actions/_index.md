@@ -11,16 +11,16 @@ Aspose.PDF for .NET の「リンクとアクションを使用したプログラ
 ## チュートリアル
 | タイトル | 説明 |
 | --- | --- | 
-| [PDF ファイルにハイパーリンクを追加する](./add-hyperlink/) | Aspose.PDF for .NET を使用すると、PDF ファイルにインタラクティブなハイパーリンクを簡単に追加できます。 |  
-| [PDF ファイルにアプリケーション リンクを作成する](./create-application-link/) | Aspose.PDF for .NET を使用すると、PDF ファイルにアプリケーション リンクを簡単に作成できます。 |  
-| [ドキュメントリンクを作成](./create-document-link/) | Aspose.PDF for .NET を使用すると、他の PDF ドキュメントへのリンクを簡単に作成できます。 |  
-| [PDF ファイルにローカル ハイパーリンクを作成する](./create-local-hyperlink/) | Aspose.PDF for .NET を使用して、PDF ファイルにローカル ハイパーリンクを簡単に作成します。 |  
-| [PDF ファイル内のリンクを抽出する](./extract-links/) | Aspose.PDF for .NET を使用して PDF ファイル内のリンクを簡単に抽出します。 |  
-| [PDF ファイル内のハイパーリンク先を取得する](./get-hyperlink-destinations/) | Aspose.PDF for .NET を使用して PDF ファイル内のハイパーリンク先を抽出する方法を学習します。 |  
-| [PDF ファイル内のハイパーリンク テキストを取得する](./get-hyperlink-text/) | Aspose.PDF for .NET を使用して PDF ファイル内のハイパーリンク テキストを抽出する方法を学習します。 |  
-| [開いているアクションを削除する](./remove-open-action/) | Aspose.PDF for .NET を使用して PDF から開くアクションを削除する方法を学習します。 |  
-| [PDF ファイルにリンク先を設定する](./set-destination-link/) | Aspose.PDF for .NET を使用して PDF ファイルに宛先リンクを設定する方法を学習します。 |  
-| [PDF ファイルにターゲット リンクを設定する](./set-target-link/) | Aspose.PDF for .NET を使用して PDF ファイルにターゲット リンクを設定する方法を学習します。 |  
-| [閲覧時にページを指定する](./specify-page-when-viewing/) | Aspose.PDF for .NET を使用して PDF を表示するときにページを指定する方法を学習します。 |  
-| [PDF ファイル内のリンクを更新する](./update-links/) | Aspose.PDF for .NET を使用して PDF ファイル内のリンクを更新する方法を学習します。 |  
-| [PDF ファイル内のリンク テキストの色を更新する](./update-link-text-color/) | Aspose.PDF for .NET を使用して PDF ファイル内のリンクのテキストの色を更新する方法を学習します。 |  
+| [PDF ファイルにハイパーリンクを追加する](./add-hyperlink/) | Aspose.PDF for .NET を使用して PDF にハイパーリンクを簡単に追加する方法を学びます。ドキュメントのインタラクティブ性とユーザー エンゲージメントを高めます。 |  
+| [PDF ファイルにアプリケーション リンクを作成する](./create-application-link/) | Aspose.PDF for .NET を使用して PDF ファイルにアプリケーション リンクを作成する方法を学習します。PDF のインタラクティブ性を高めるためのステップ バイ ステップ ガイドです。 |  
+| [ドキュメントリンクを作成](./create-document-link/) | Aspose.PDF for .NET を使用して PDF にドキュメント リンクを作成する方法を学びます。PDF ドキュメントのナビゲーションとインタラクティブ性を強化します。 |  
+| [PDF ファイルにローカル ハイパーリンクを作成する](./create-local-hyperlink/) | Aspose.PDF for .NET を使用して PDF ファイルにローカル ハイパーリンクを簡単に作成する方法を、ステップ バイ ステップ ガイドで学習します。 |  
+| [PDF ファイル内のリンクを抽出する](./extract-links/) | このステップバイステップのチュートリアルでは、Aspose.PDF for .NET を使用して PDF ファイルからリンクを簡単に抽出する方法を学びます。 |  
+| [PDF ファイル内のハイパーリンク先を取得する](./get-hyperlink-destinations/) | Aspose.PDF for .NET を使用して PDF ファイルからハイパーリンク先を簡単に抽出する方法を学びます。この簡単なステップバイステップのチュートリアルに従ってください。 |  
+| [PDF ファイル内のハイパーリンク テキストを取得する](./get-hyperlink-text/) | Aspose.PDF for .NET を使用して PDF ファイルからハイパーリンク テキストを簡単に抽出する方法を学びます。ステップ バイ ステップ ガイドとコードが含まれています。 |  
+| [開いているアクションを削除する](./remove-open-action/) | Aspose.PDF for .NET を使用すると、PDF から開いているアクションを簡単に削除できます。効果的な PDF 管理のためのステップバイステップのガイドを含む簡単なチュートリアルです。 |  
+| [PDF ファイルにリンク先を設定する](./set-destination-link/) | Aspose.PDF for .NET を使用して PDF ファイルにリンク先を設定する方法を学びます。PDF のインタラクティブ性を高めるためのステップバイステップ ガイドです。 |  
+| [PDF ファイルにターゲット リンクを設定する](./set-target-link/) | Aspose.PDF for .NET を使用して PDF ファイルにターゲット リンクを効率的に設定する方法を、ステップ バイ ステップ ガイドで学習します。ドキュメント ナビゲーションの強化に最適です。 |  
+| [閲覧時にページを指定する](./specify-page-when-viewing/) | Aspose.PDF for .NET を使用して PDF で表示するページを指定する方法を学びます。この簡単なガイドを使用して、ユーザー ナビゲーションを強化します。 |  
+| [PDF ファイル内のリンクを更新する](./update-links/) | Aspose.PDF for .NET を使用して PDF ファイル内のリンク テキストの色を更新する方法を学びます。このステップ バイ ステップ ガイドでは、わかりやすい例を使用して詳細を詳しく説明します。 |  
+| [PDF ファイル内のリンク テキストの色を更新する](./update-link-text-color/) | この包括的なステップバイステップ ガイドに従って、Aspose.PDF for .NET を使用して PDF ファイル内のリンクを簡単に更新します。PDF 編集を簡素化します。 |  

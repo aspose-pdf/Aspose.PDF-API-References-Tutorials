@@ -7,116 +7,172 @@ type: docs
 weight: 170
 url: /cs/net/programming-with-document/getdocumentwindow/
 ---
-Aspose.PDF for .NET je výkonná knihovna pro manipulaci s PDF, která umožňuje vývojářům vytvářet, upravovat a převádět soubory PDF v jejich aplikacích .NET. Jednou z funkcí, které tato knihovna nabízí, je možnost získat informace o vlastnostech okna dokumentu. Tento tutoriál vás provede kroky použití`GetDocumentWindow` funkce Aspose.PDF for .NET k načtení informací o vlastnostech okna dokumentu PDF.
+# Zavedení
 
-## Krok 1: Nainstalujte Aspose.PDF pro .NET
+Pracujete s PDF a chcete mít větší kontrolu nad tím, jak se zobrazí po otevření? Ať už se jedná o skrytí panelu nabídek nebo změnu velikosti okna tak, aby se vešlo na první stránku, Aspose.PDF for .NET vám poskytuje všechny nástroje, které potřebujete k přizpůsobení chování PDF při otevření v prohlížeči. V tomto tutoriálu rozebereme, jak načíst a manipulovat s nastavením okna dokumentu v Aspose.PDF pro .NET.
 
- Chcete-li používat Aspose.PDF pro .NET ve svých aplikacích .NET, musíte nejprve nainstalovat knihovnu. Nejnovější verzi knihovny si můžete stáhnout z[Stránka ke stažení Aspose.PDF pro .NET](https://releases.aspose.com/pdf/net).
 
-Po stažení knihovny rozbalte obsah souboru ZIP do složky v počítači. Poté budete muset přidat odkaz na Aspose.PDF for .NET DLL ve vašem projektu .NET.
+# Předpoklady
 
-## Krok 2: Načtěte dokument PDF
+Než se ponoříte do výukového programu, ujistěte se, že máte splněny následující předpoklady:
 
- Jakmile nainstalujete Aspose.PDF pro .NET a přidáte odkaz na knihovnu DLL ve svém projektu .NET, můžete začít používat`GetDocumentWindow`funkce pro načtení informací o vlastnostech okna dokumentu PDF.
+- Aspose.PDF for .NET nainstalovaný ve vašem vývojovém prostředí.
+  - [Stáhněte si Aspose.PDF pro .NET](https://releases.aspose.com/pdf/net/)
+-  Platná licence pro Aspose.PDF, nebo můžete získat a[zkušební verze zdarma](https://releases.aspose.com/) nebo[dočasná licence](https://purchase.aspose.com/temporary-license/).
+- Základní znalost .NET a C#.
+- Visual Studio nebo jiné vhodné IDE.
 
-Prvním krokem při použití této funkce je načtení dokumentu PDF, o kterém chcete získat informace. Chcete-li to provést, můžete použít následující kód:
+# Importujte balíčky
+
+Než začnete psát jakýkoli kód, budete muset naimportovat potřebné balíčky. Otevřete svůj projekt a do horní části souboru C# přidejte následující jmenný prostor:
 
 ```csharp
-// Cesta k dokumentu PDF
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
+```
 
-// Otevřete dokument PDF
+To vám umožní přístup ke všem třídám a metodám potřebným pro manipulaci s dokumenty PDF pomocí Aspose.PDF pro .NET.
+
+ Nyní si rozeberme proces načítání různých nastavení okna dokumentu. Pro tento příklad použijeme ukázkový soubor PDF s názvem`GetDocumentWindow.pdf`.
+
+## Krok 1: Nastavte cestu k adresáři dokumentu
+
+Nejprve musíme definovat cestu k našemu souboru PDF. Je důležité, abyste měli správnou cestu k souboru, abyste se vyhnuli chybám během provádění.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Tady, vyměňte`"YOUR DOCUMENT DIRECTORY"` se skutečným adresářem, kde se nachází váš soubor PDF. Toto je váš pracovní adresář, odkud načtete dokument PDF.
+
+## Krok 2: Otevřete dokument PDF
+
+Nyní, když je cesta k souboru nastavena, je dalším krokem otevření dokumentu PDF pomocí Aspose.PDF. Tím se dokument načte do paměti, což vám umožní získat jeho vlastnosti.
+
+```csharp
 Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 ```
 
- Ve výše uvedeném kódu nahraďte`"YOUR DOCUMENT DIRECTORY"` s cestou k adresáři, kde se nachází váš dokument PDF. Tento kód načte dokument PDF do a`Document` objekt, který pak můžete použít k načtení informací o vlastnostech okna dokumentu.
+Pomocí tohoto jednoduchého řádku kódu jste úspěšně načetli soubor PDF do`pdfDocument` objekt, který vám nyní umožní přístup ke všem jeho vlastnostem.
 
-## Krok 3: Načtěte vlastnosti okna dokumentu
+## Krok 3: Načtěte stav centrování okna
 
-Chcete-li získat informace o vlastnostech okna dokumentu PDF, můžete použít následující kód:
-
-```csharp
-// Načtěte vlastnosti okna dokumentu
-Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
-```
-
-Ve výše uvedeném kódu každý řádek načte jinou vlastnost okna dokumentu PDF a odešle ji do konzoly. Tento kód můžete přizpůsobit tak, aby získal pouze vlastnosti, které vás zajímají.
-
-### Příklad zdrojového kódu pro okno získat dokument PDF souboru pomocí Aspose.PDF pro .NET 
-
- Zde je úplný zdrojový kód pro načtení vlastností okna dokumentu PDF pomocí`GetDocumentWindow` funkce Aspose.PDF pro .NET:
+ Dále zkontrolujeme, zda má být okno dokumentu při otevření vystředěno. Výchozí hodnota pro toto je`false`.
 
 ```csharp
-// Cesta k adresáři dokumentů.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Otevřete dokument
-Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
-
-// Získejte různé vlastnosti dokumentu
-// Poloha okna dokumentu - Výchozí: false
 Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-
-// Převažující pořadí čtení; určuje pozici stránky
-// Při zobrazení vedle sebe - Výchozí: L2R
-Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-
-// Zda má záhlaví okna zobrazovat název dokumentu
-// Pokud je nastavena hodnota false, v záhlaví se zobrazí název souboru PDF – výchozí: false
-Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-
-// Zda se má změnit velikost okna dokumentu tak, aby odpovídalo velikosti
-// První zobrazená stránka – Výchozí: false
-Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-
-// Zda se má skrýt panel nabídek aplikace prohlížeče - Výchozí: false
-Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-
-// Zda skrýt panel nástrojů aplikace prohlížeče - Výchozí: false
-Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-
-// Zda se mají skrýt prvky uživatelského rozhraní, jako jsou posuvníky
-// A ponechání zobrazený pouze obsah stránky - Výchozí: false
-Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-
-//Režim stránky dokumentu. Jak zobrazit dokument při ukončení režimu celé obrazovky.
-Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-
-// Vzhled stránky, tj. jedna stránka, jeden sloupec
-Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-
-// Jak se má dokument zobrazit při otevření
-// Tj. zobrazit miniatury, celou obrazovku, zobrazit panel příloh
-Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 ```
+
+ Pokud je výstup`true`, okno dokumentu se otevře uprostřed obrazovky. V opačném případě se otevře ve výchozí poloze.
+
+## Krok 4: Zkontrolujte směr textu
+
+Dalším zásadním aspektem vzhledu PDF je směr textu, který určuje, zda se text čte zleva doprava (L2R) nebo zprava doleva (R2L). Tyto informace můžete získat pomocí následujícího kódu:
+
+```csharp
+Console.WriteLine("Direction : {0}", pdfDocument.Direction);
+```
+
+ Výstup bude`L2R` pro text zleva doprava a`R2L` pro text psaný zprava doleva. Toto nastavení je užitečné zejména pro dokumenty v jazycích, jako je arabština nebo hebrejština.
+
+## Krok 5: Zobrazení názvu dokumentu v okně
+
+Další vlastnost umožňuje řídit, zda se má v záhlaví okna zobrazovat název dokumentu nebo název souboru. Ve výchozím nastavení je toto nastaveno`false`, což znamená, že se zobrazí název souboru.
+
+```csharp
+Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
+```
+
+Pokud chcete, aby se místo názvu souboru zobrazoval název dokumentu, musí být toto nastavení povoleno.
+
+## Krok 6: Změňte velikost okna tak, aby se vešlo na první stránku
+
+Někdy můžete chtít, aby se okno dokumentu po otevření automaticky změnilo tak, aby se vešlo na první stránku PDF. Zde je návod, jak zkontrolovat, zda je tato funkce povolena:
+
+```csharp
+Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
+```
+
+ Ve výchozím nastavení je toto nastaveno`false`, což znamená, že velikost okna zůstane bez ohledu na velikost první stránky.
+
+## Krok 7: Skryjte panel nabídek
+
+Chcete-li dosáhnout cílenějšího čtení, možná budete chtít skrýt lištu nabídky v aplikaci prohlížeče. Toto nastavení můžete získat pomocí následujícího řádku:
+
+```csharp
+Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
+```
+
+ To se vrátí`true` pokud je panel nabídek skrytý a`false` jinak.
+
+## Krok 8: Skryjte panel nástrojů
+
+Podobně můžete také chtít skrýt panel nástrojů v prohlížeči PDF pro čistší uživatelské rozhraní. Toto nastavení lze získat následovně:
+
+```csharp
+Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
+```
+
+Pokud je toto nastavení povoleno, panel nástrojů se při otevření PDF skryje.
+
+## Krok 9: Skryjte posuvníky a prvky uživatelského rozhraní
+
+Pokud chcete zobrazit pouze obsah stránky bez dalších prvků uživatelského rozhraní, jako jsou posuvníky, toto nastavení řídí toto chování:
+
+```csharp
+Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
+```
+
+ Při nastavení na`true`, prohlížeč PDF skryje posuvníky a další prvky uživatelského rozhraní a ponechá pouze obsah dokumentu.
+
+## Krok 10: Nastavte režim stránky mimo celou obrazovku
+
+ Způsob zobrazení dokumentu při ukončení režimu celé obrazovky můžete ovládat pomocí tlačítka`NonFullScreenPageMode` vlastnictví. Toto nastavení je užitečné pro definování způsobu interakce uživatele s dokumentem v režimu jiné než celé obrazovky.
+
+```csharp
+Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
+```
+
+Výstup lze nastavit na různé režimy, jako jsou miniatury, obrysy nebo panel příloh.
+
+## Krok 11: Definujte rozvržení stránky
+
+Toto nastavení umožňuje řídit způsob rozvržení stránek dokumentu. Můžete se například rozhodnout pro zobrazení jedné stránky nebo souvislé zobrazení sloupců:
+
+```csharp
+Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
+```
+
+To dává uživatelům flexibilitu při čtení nebo prohlížení obsahu dokumentu.
+
+## Krok 12: Určete režim stránky
+
+ Konečně,`PageMode` vlastnost definuje, jak se má dokument zobrazit při otevření. Možnosti zahrnují zobrazení miniatur, vstup do režimu celé obrazovky nebo zobrazení panelu příloh.
+
+```csharp
+Console.WriteLine("PageMode : {0}", pdfDocument.PageMode);
+```
+
+V závislosti na vašich potřebách to můžete nastavit na jakýkoli režim, který vyhovuje účelu vašeho PDF.
 
 ## Závěr
 
-V tomto tutoriálu jsme se naučili, jak používat Aspose.PDF pro .NET k načtení informací o vlastnostech okna dokumentu PDF. Načtením dokumentu PDF a přístupem k jeho vlastnostem okna můžete získat informace o tom, jak by se měl dokument zobrazit při otevření v aplikaci prohlížeče. Aspose.PDF for .NET poskytuje výkonnou sadu funkcí pro programovou práci se soubory PDF, což z něj činí cenný nástroj pro manipulaci s PDF v aplikacích .NET.
+Jak můžete vidět, Aspose.PDF for .NET poskytuje komplexní nástroje pro manipulaci s tím, jak se vaše dokumenty PDF zobrazují v různých prohlížečích PDF. Ať už chcete skrýt panel nástrojů, vycentrovat okno nebo ovládat směr textu, Aspose.PDF nabízí flexibilitu pro vylepšení uživatelského zážitku ze sledování.
 
-### FAQ
+# Nejčastější dotazy
 
-#### Otázka: Jaký je účel načítání vlastností okna dokumentu PDF?
+### Mohu přizpůsobit počáteční úroveň přiblížení PDF?
+Ano, Aspose.PDF umožňuje nastavit úroveň přiblížení při otevření dokumentu.
 
-Odpověď: Načtení vlastností okna dokumentu PDF vám umožní získat informace o tom, jak by se měl dokument PDF zobrazit při otevření v aplikaci prohlížeče. Tyto vlastnosti řídí různé aspekty, jako je poloha okna, režim zobrazení a viditelnost prvků uživatelského rozhraní.
+### Jak mohu uzamknout velikost okna PDF?
+ Můžete nastavit`FitWindow` vlastnost, která zabrání změně velikosti okna.
 
-#### Otázka: Jak mohu nainstalovat Aspose.PDF for .NET do svého projektu .NET?
+### Podporuje Aspose.PDF různé režimy čtení?
+Ano, podporuje různé režimy, jako je celá obrazovka, miniatury a přílohy.
 
- A: Chcete-li nainstalovat Aspose.PDF pro .NET, musíte si stáhnout knihovnu z[Stránka ke stažení Aspose.PDF pro .NET](https://releases.aspose.com/pdf/net). Po stažení rozbalte obsah souboru ZIP a přidejte odkaz na Aspose.PDF for .NET DLL ve vašem projektu .NET.
+### Je možné skrýt posuvníky v prohlížeči PDF?
+ Rozhodně můžete skrýt posuvníky nastavením`HideWindowUI` majetek do`true`.
 
-#### Otázka: Mohu upravit kód tak, aby získal pouze specifické vlastnosti okna?
-
-Odpověď: Ano, kód můžete upravit tak, aby získal specifické vlastnosti okna zakomentováním řádků, které nepotřebujete. Každý řádek v kódu odpovídá určité vlastnosti okna, takže můžete vlastnosti zahrnout nebo vyloučit na základě vašich požadavků.
-
-#### Otázka: Jaké typy vlastností okna mohu získat pomocí Aspose.PDF pro .NET?
-
-Odpověď: Pomocí Aspose.PDF for .NET můžete získat různé vlastnosti okna dokumentu PDF, včetně vystředění okna, nastavení rozvržení stránky, ovládání zobrazení panelů nástrojů a pruhů nabídek a další.
+### Mohu při otevření vycentrovat okno dokumentu?
+ Ano, můžete to ovládat nastavením`CenterWindow` vlastnictví.

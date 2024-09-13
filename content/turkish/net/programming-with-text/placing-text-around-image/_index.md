@@ -145,7 +145,7 @@ row1.Cells.Add();
 row1.Cells[1].Paragraphs.Add(TitleText);
 // Satır içeriklerinin dikey hizalamasını Üst olarak ayarlayın
 row1.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-// Tabloda satırlar ve ardından satırlarda hücreler oluşturun
+//Tabloda satırlar ve ardından satırlarda hücreler oluşturun
 Aspose.Pdf.Row SecondRow = table1.Rows.Add();
 SecondRow.Cells.Add();
 // İkinci satır için satır aralığı değerini 2 olarak ayarlayın

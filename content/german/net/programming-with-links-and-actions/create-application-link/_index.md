@@ -2,117 +2,152 @@
 title: Anwendungslink in PDF-Datei erstellen
 linktitle: Anwendungslink in PDF-Datei erstellen
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erstellen Sie mit Aspose.PDF für .NET ganz einfach Anwendungslinks in PDF-Dateien.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Anwendungslinks in PDF-Dateien erstellen. Schritt-für-Schritt-Anleitung zur Verbesserung der Interaktivität Ihrer PDFs.
 type: docs
 weight: 20
 url: /de/net/programming-with-links-and-actions/create-application-link/
 ---
-Durch das Erstellen eines Anwendungslinks in einer PDF-Datei können Sie Links zu externen Anwendungen erstellen, z. B. ausführbare Dateien oder URLs. Mit Aspose.PDF für .NET können Sie ganz einfach App-Links erstellen, indem Sie dem folgenden Quellcode folgen:
+## Einführung
 
-## Schritt 1: Erforderliche Bibliotheken importieren
+Das Erstellen interaktiver Elemente in PDFs kann die Benutzereinbindung erheblich verbessern und für ein besseres Erlebnis sorgen. Eine der nützlichsten Funktionen in PDF-Dokumenten ist ein Anwendungslink, der Benutzer schnell zu einer bestimmten Anwendung oder Datei weiterleiten kann. In dieser Anleitung führen wir Sie durch den Prozess zum Erstellen eines Anwendungslinks in einer PDF-Datei mit Aspose.PDF für .NET.
 
-Bevor Sie beginnen, müssen Sie die erforderlichen Bibliotheken für Ihr C#-Projekt importieren. Hier ist die erforderliche Importanweisung:
+## Voraussetzungen
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Annotations;
-using Aspose.Pdf.InteractiveFeatures;
+Bevor wir mit der Erstellung von Anwendungslinks beginnen, müssen Sie einige Dinge vorbereitet haben. 
+
+### Anforderungen:
+1. .NET Framework: Stellen Sie sicher, dass das .NET Framework auf Ihrem System installiert ist. Aspose.PDF für .NET ist mit verschiedenen Versionen kompatibel. Stellen Sie daher sicher, mit welcher Sie arbeiten.
+2. Aspose.PDF-Bibliothek: Dieses Tutorial setzt voraus, dass Sie die Aspose.PDF-Bibliothek installiert haben. Falls nicht, können Sie sie über den Link im Abschnitt „Ressourcen“ herunterladen. 
+3. Grundlegende Kenntnisse in C#: Kenntnisse in der Programmiersprache C# sind nützlich, da wir C#-Code schreiben werden.
+
+Nachdem wir nun die grundlegenden Anforderungen abgedeckt haben, können wir loslegen!
+
+## Pakete importieren
+
+Denken Sie vor dem Codieren daran, die erforderlichen Aspose.PDF-Namespaces in Ihr C#-Projekt zu importieren, um auf die Klassen und Methoden zur PDF-Bearbeitung zuzugreifen.
+
+### Starten Sie ein neues C#-Projekt
+Erstellen Sie eine neue Konsolenanwendung in Ihrer bevorzugten IDE (z. B. Visual Studio).
+
+### Verweis auf Aspose.PDF hinzufügen
+- Gehen Sie im Projektmappen-Explorer zu Ihrem Projekt.
+- Klicken Sie mit der rechten Maustaste auf „Referenzen“ und wählen Sie „Referenz hinzufügen“.
+- Suchen Sie nach der Aspose.PDF-DLL oder verwenden Sie den NuGet-Paketmanager, um sie hinzuzufügen. Sie können sie über die Befehlszeile installieren:
+```bash
+Install-Package Aspose.PDF
 ```
 
-## Schritt 2: Pfad zum Dokumentenordner festlegen
+### Importieren Sie die erforderlichen Namespaces
+Fügen Sie oben in Ihrer Codedatei die folgenden Namespaces ein:
+```csharp
+using System.IO;
+using System;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf;
+```
 
-In diesem Schritt müssen Sie den Pfad zum Ordner angeben, der die PDF-Datei enthält, zu der Sie einen App-Link hinzufügen möchten. Ersetzen Sie`"YOUR DOCUMENT DIRECTORY"` ersetzen Sie den folgenden Code durch den tatsächlichen Pfad zu Ihrem Dokumentordner:
+Nachdem die Voraussetzungen erfüllt sind, können wir mit dem eigentlichen Codierungsprozess zum Erstellen eines Anwendungslinks in einer PDF-Datei beginnen.
+
+## Schritt 1: Dokumentpfad festlegen
+
+Als erstes müssen wir das Verzeichnis angeben, in dem unsere PDF-Dokumente gespeichert sind. So geht's:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Schritt 3: Öffnen Sie das PDF-Dokument
+ Ersetzen`"YOUR DOCUMENT DIRECTORY"` durch den tatsächlichen Pfad zum Ordner, der Ihre PDF-Dokumente enthält. Diese Variable dient als Basispfad für unsere PDF-Manipulation.
 
-Nun öffnen wir mit dem folgenden Code das PDF-Dokument, dem wir einen Anwendungslink hinzufügen möchten:
+## Schritt 2: Öffnen Sie das PDF-Dokument
+
+Als nächstes müssen wir die PDF-Datei öffnen, in der wir den Bewerbungslink erstellen möchten.
 
 ```csharp
 Document document = new Document(dataDir + "CreateApplicationLink.pdf");
 ```
 
-## Schritt 4: Erstellen Sie den Anwendungslink
+ Wir verwenden die`Document` Klasse von Aspose.PDF, um unsere PDF-Datei zu laden. Mit dieser Instanz können wir das PDF bearbeiten und manipulieren.
 
- In diesem Schritt erstellen wir den Anwendungslink mit dem`LinkAnnotation` Annotation. Wir werden die Koordinaten und den Bereich des Links sowie die Aktion zum Starten der Anwendung angeben. Hier ist der entsprechende Code:
+## Schritt 3: Erstellen Sie die Linkanmerkung
+
+Sobald das Dokument geöffnet ist, besteht der nächste Schritt darin, eine Linkanmerkung zu erstellen. Diese Anmerkung ist der eigentliche Link, auf den Benutzer klicken.
 
 ```csharp
 Page page = document.Pages[1];
 LinkAnnotation link = new LinkAnnotation(page, new Aspose.Pdf.Rectangle(100, 100, 300, 300));
-link.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
-link. Action = new LaunchAction(document, dataDir + "CreateApplicationLink.pdf");
-page.Annotations.Add(link);
 ```
 
-## Schritt 5: Speichern Sie die aktualisierte Datei
+-  Hier,`page` gibt an, auf welcher Seite Sie den Link anwenden (in diesem Fall die erste Seite).
+-  Der`LinkAnnotation`Die Klasse erstellt einen neuen Link auf der angegebenen Seite, der durch einen rechteckigen Bereich definiert ist, der bei (100,100) beginnt und bei (300,300) endet. Dieses Rechteck bestimmt den anklickbaren Bereich des Links im PDF.
 
-Speichern wir nun die aktualisierte PDF-Datei mit dem`Save` Methode der`document` Objekt. Hier ist der entsprechende Code:
+## Schritt 4: Linkfarbe festlegen
+
+Nachdem Sie den Link erstellt haben, können Sie sein Erscheinungsbild anpassen.
 
 ```csharp
-dataDir = dataDir + "CreateApplicationLink_out.pdf";
-document. Save(dataDir);
+link.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
 ```
 
-### Beispielquellcode zum Erstellen eines Anwendungslinks mit Aspose.PDF für .NET 
+Sie können die Farbe der Linkanmerkung ändern. In diesem Fall setzen wir sie auf Grün, was oft verwendet wird, um anklickbare Links zu kennzeichnen.
+
+## Schritt 5: Definieren Sie die Link-Aktion
+
+Jetzt ist es an der Zeit, die Annotation funktionsfähig zu machen, indem Sie ihre Aktion festlegen. Diese Aktion bestimmt, was passiert, wenn ein Benutzer auf den Link klickt.
+
 ```csharp
-// Der Pfad zum Dokumentverzeichnis.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Dokument öffnen
-Document document = new Document( dataDir + "CreateApplicationLink.pdf");
-// Verknüpfung erstellen
-Page page = document.Pages[1];
-LinkAnnotation link = new LinkAnnotation(page, new Aspose.Pdf.Rectangle(100, 100, 300, 300));
-link.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
 link.Action = new LaunchAction(document, dataDir + "CreateApplicationLink.pdf");
+```
+
+ Mit`LaunchAction`geben wir an, was der Link macht, wenn er angeklickt wird. Hier haben wir definiert, dass er dieselbe PDF-Datei öffnet. Sie können dies ganz einfach ändern, um bei Bedarf auf eine Anwendung oder ein anderes Dokument zu verlinken.
+
+## Schritt 6: Hinzufügen der Anmerkung zur Seite
+
+Wenn der Link eingerichtet ist, ist es wichtig, diese Link-Anmerkung zu den Seitenanmerkungen hinzuzufügen.
+
+```csharp
 page.Annotations.Add(link);
+```
+
+Diese Zeile fügt den Link zur Annotationssammlung der angegebenen Seite hinzu. Ohne diesen Schritt würde Ihr Link nicht im Dokument erscheinen.
+
+## Schritt 7: Speichern Sie das Dokument
+
+Abschließend möchten Sie die vorgenommenen Änderungen in der PDF-Datei speichern.
+
+```csharp
 dataDir = dataDir + "CreateApplicationLink_out.pdf";
-// Aktualisiertes Dokument speichern
 document.Save(dataDir);
+```
+
+Hier geben wir einen neuen Ausgabedateinamen an, um die aktualisierte PDF-Datei mit dem neu erstellten Link zu speichern. Sie können sie auch am selben Speicherort unter einem anderen Namen speichern, um Ihre Originaldatei beizubehalten.
+
+## Schritt 8: Bestätigen Sie den Vorgang
+
+Um sicherzustellen, dass alles gut gelaufen ist, fügen wir eine Bestätigungsnachricht hinzu.
+
+```csharp
 Console.WriteLine("\nApplication link created successfully.\nFile saved at " + dataDir);
 ```
 
+Dadurch wird einfach eine Erfolgsmeldung auf der Konsole ausgegeben, die angibt, wo die Datei gespeichert ist. Feedback ist immer willkommen!
+
 ## Abschluss
 
-Herzlichen Glückwunsch! Sie haben jetzt eine Schritt-für-Schritt-Anleitung zum Erstellen von App-Links mit Aspose.PDF für .NET. Mit diesem Code können Sie Ihren PDF-Dokumenten Links zu externen Anwendungen hinzufügen.
+In nur wenigen einfachen Schritten haben Sie gelernt, wie Sie mit Aspose.PDF für .NET einen Anwendungslink in einer PDF-Datei erstellen. Mit diesem leistungsstarken Tool können Sie PDF-Dokumente verbessern und sie für Ihre Benutzer interaktiver und ansprechender gestalten. Mit Links können Sie Ihr Publikum effektiv zu wertvollen Informationen oder Anwendungen führen und so ein integrierteres Erlebnis gewährleisten.
 
-Weitere Informationen zu den erweiterten Funktionen interaktiver Links finden Sie in der offiziellen Aspose.PDF-Dokumentation.
+## Häufig gestellte Fragen
 
-### FAQs zum Erstellen eines Bewerbungslinks in einer PDF-Datei
+### Was ist Aspose.PDF für .NET?  
+Aspose.PDF für .NET ist eine leistungsstarke Bibliothek zum Erstellen und Bearbeiten von PDF-Dateien in Anwendungen, die mit dem .NET-Framework entwickelt wurden.
 
-#### F: Was sind Anwendungslinks in PDF-Dateien?
+### Wie kann ich Aspose.PDF herunterladen?  
+ Sie können Aspose.PDF für .NET herunterladen unter[dieser Link](https://releases.aspose.com/pdf/net/).
 
-A: Mit Anwendungslinks in PDF-Dateien können Sie Links erstellen, die beim Anklicken externe Anwendungen wie ausführbare Dateien oder URLs öffnen. Diese Funktion verbessert die Interaktivität und bietet eine bequeme Möglichkeit, Benutzer mit externen Ressourcen zu verbinden.
+### Gibt es eine Option für eine kostenlose Testversion von Aspose?  
+ Ja, Sie können auf eine kostenlose Testversion von Aspose.PDF zugreifen[Hier](https://releases.aspose.com/).
 
-#### F: Wie erleichtert Aspose.PDF für .NET die Erstellung von Anwendungslinks?
+### Kann ich Unterstützung bei der Verwendung von Aspose.PDF erhalten?  
+ Auf jeden Fall! Bei Fragen zum Support besuchen Sie bitte die[Aspose PDF Support Forum](https://forum.aspose.com/c/pdf/10).
 
-A: Aspose.PDF für .NET vereinfacht das Erstellen von Anwendungslinks, indem es einen umfassenden Satz an Tools und APIs bereitstellt. Das in diesem Handbuch enthaltene Schritt-für-Schritt-Tutorial zeigt, wie Sie Ihren PDF-Dokumenten Anwendungslinks hinzufügen.
-
-#### F: Kann ich das Erscheinungsbild von Anwendungslinks anpassen?
-
-A: Absolut! Mit Aspose.PDF für .NET haben Sie Kontrolle über das Erscheinungsbild von Anwendungslinks. Sie können Attribute wie Farbe, Stil und Hover-Effekte angeben, um ein optisch ansprechendes Benutzererlebnis zu gewährleisten.
-
-#### F: Gibt es Einschränkungen hinsichtlich der Arten externer Anwendungen, auf die ich verlinken kann?
-
-A: Aspose.PDF für .NET ermöglicht Ihnen die Verknüpfung mit einer Vielzahl externer Anwendungen, einschließlich ausführbarer Dateien, URLs und Dokumente. Beim Verknüpfen mit ausführbaren Dateien ist jedoch die Benutzersicherheit und Kompatibilität zu berücksichtigen.
-
-#### F: Wie kann ich überprüfen, ob meine Anwendungslinks ordnungsgemäß funktionieren?
-
-A: Wenn Sie den Anweisungen des Tutorials folgen und den bereitgestellten Beispielcode verwenden, können Sie problemlos funktionsfähige Anwendungslinks erstellen. Anschließend können Sie die Links testen, indem Sie das generierte PDF-Dokument öffnen und auf die Anwendungslinks klicken.
-
-#### F: Kann ich mehrere Anwendungslinks innerhalb eines einzelnen PDF-Dokuments erstellen?
-
- A: Ja, Sie können mehrere Anwendungslinks innerhalb eines einzigen PDF-Dokuments erstellen, indem Sie`LinkAnnotation` Anmerkung. Auf diese Weise können Sie Benutzern von verschiedenen Abschnitten des Dokuments aus Zugriff auf verschiedene externe Anwendungen gewähren.
-
-#### F: Gibt es Sicherheitsaspekte bei der Verwendung von Anwendungslinks?
-A: Beim Verknüpfen mit ausführbaren Dateien ist es wichtig, sicherzustellen, dass die verknüpften Anwendungen sicher und vertrauenswürdig sind. Berücksichtigen Sie außerdem die Benutzerberechtigungen und informieren Sie Benutzer über den möglichen Start externer Anwendungen.
-
-#### F: Wie füge ich Anwendungslinks zu URLs oder Webseiten hinzu?
-
-A: Während sich dieses Tutorial auf das Erstellen von Links zu externen Anwendungen konzentriert, unterstützt Aspose.PDF für .NET auch das Erstellen von Hyperlinks zu URLs oder Webseiten. Sie können den bereitgestellten Code anpassen, um Weblinks in Ihren PDF-Dokumenten zu erstellen.
-
-#### F: Kann ich Aspose.PDF für .NET verwenden, um Informationen aus verknüpften externen Anwendungen zu extrahieren?
-
-A: Ja, Aspose.PDF für .NET bietet Funktionen zum Extrahieren und Bearbeiten von Informationen aus verknüpften externen Anwendungen. Sie können die umfangreichen Funktionen der Bibliothek erkunden, um verschiedene Aufgaben im Zusammenhang mit verknüpften Inhalten auszuführen.
+### Wie erhalte ich eine temporäre Lizenz für Aspose?  
+ Eine vorläufige Lizenz erhalten Sie bei[diese Seite](https://purchase.aspose.com/temporary-license/).

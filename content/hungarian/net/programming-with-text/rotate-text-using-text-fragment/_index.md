@@ -160,7 +160,7 @@ V: A projekt beállításához:
 
 #### K: Hogyan hozhatok létre új PDF-dokumentumot?
 
- V: Új PDF-dokumentum létrehozásához inicializálja a`Document`objektum az Aspose.PDF könyvtárból. Ezzel az objektummal oldalakat és tartalmat adhat hozzá a PDF-hez.
+ V: Új PDF-dokumentum létrehozásához inicializálja a`Document`objektumot az Aspose.PDF könyvtárból. Ezzel az objektummal oldalakat és tartalmat adhat hozzá a PDF-hez.
 
 #### K: Hogyan forgathatom el a szövegrészleteket szövegtöredékekkel?
 

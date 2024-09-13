@@ -96,7 +96,7 @@ Félicitations ! Vous savez maintenant comment supprimer un tableau dans un docu
 
 #### Q : Que se passe-t-il si la page spécifiée ne contient aucun tableau ?
 
- A : Si la page spécifiée ne contient aucun tableau, le code renverra une erreur`IndexOutOfRangeException` lors d'une tentative d'accès`absorb.TableList[0]` Pour éviter ce problème, vous devez vérifier si`absorb.TableList`contient tous les éléments avant d'accéder à la table.
+ A : Si la page spécifiée ne contient aucun tableau, le code renverra une erreur`IndexOutOfRangeException` lors d'une tentative d'accès`absorb.TableList[0]` Pour éviter ce problème, vous devez vérifier si`absorb.TableList` contient tous les éléments avant d'accéder à la table.
 
 #### Q : Puis-je supprimer des tableaux d’autres pages que la première page ?
 
@@ -108,4 +108,4 @@ R : Oui, la suppression d'un tableau aura un impact sur la mise en page et le fo
 
 #### Q : Puis-je annuler la suppression d’un tableau après avoir enregistré le document ?
 
-: Non, une fois que vous avez enregistré le document PDF modifié après avoir supprimé un tableau, les modifications sont permanentes et vous ne pouvez pas annuler la suppression du tableau. Par conséquent, il est essentiel de faire des sauvegardes de vos documents d'origine avant d'effectuer des modifications pour garantir l'intégrité des données.
+R : Non, une fois que vous avez enregistré le document PDF modifié après avoir supprimé un tableau, les modifications sont permanentes et vous ne pouvez pas annuler la suppression du tableau. Par conséquent, il est essentiel de faire des sauvegardes de vos documents d'origine avant d'effectuer des modifications pour garantir l'intégrité des données.

@@ -2,210 +2,141 @@
 title: Extrahujte informace o podpisu
 linktitle: Extrahujte informace o podpisu
 second_title: Aspose.PDF pro .NET API Reference
-description: Extrahování informací o podpisu pomocí Aspose.PDF pro .NET.
+description: Naučte se extrahovat digitální podpisy a informace o certifikátech z dokumentů PDF pomocí Aspose.PDF for .NET. Kompletní průvodce krok za krokem pro vývojáře C#.
 type: docs
 weight: 80
 url: /cs/net/programming-with-security-and-signatures/extract-signature-info/
 ---
-Proces extrahování informací o podpisu z dokumentu PDF může být docela užitečný v různých situacích. Ať už potřebujete ověřit pravost podepsaného dokumentu nebo analyzovat certifikát použitý pro podpis, knihovna Aspose.PDF for .NET poskytuje pohodlné řešení. V tomto tutoriálu vás provedeme procesem extrahování informací o podpisu krok za krokem pomocí dodaného zdrojového kódu C#.
+## Zavedení
 
-## Požadavky
+dnešním digitálním světě je zásadní zajistit bezpečnost a integritu dokumentů. Jednou z běžných metod používaných k zabezpečení souborů PDF je přidání digitálního podpisu. Získání a ověření podrobností podpisu však může být někdy problém, zvláště když máte co do činění s různými certifikáty. V této příručce vás provedeme procesem extrahování informací o podpisu z dokumentů PDF pomocí Aspose.PDF pro .NET, díky čemuž bude tento úkol hračkou. Dozvíte se, jak získat přístup k podpisovým polím, extrahovat informace o certifikátu a uložit je do souboru.
 
-Než začneme, ujistěte se, že máte splněny následující předpoklady:
+## Předpoklady
 
-1. Základní znalost programovacího jazyka C#.
-2. Knihovna Aspose.PDF for .NET nainstalovaná ve vašem systému.
-3. Platný dokument PDF s jedním nebo více podpisovými poli.
+Než začneme, ujistěte se, že máte vše připraveno, abyste mohli začít.
 
-Nyní se pojďme ponořit do detailů implementace.
+-  Aspose.PDF for .NET Library: Pokud ji ještě nemáte, můžete si ji stáhnout z[Stránka pro stahování Aspose.PDF pro .NET](https://releases.aspose.com/pdf/net/). 
+- Vývojové prostředí .NET: Budete potřebovat IDE jako Visual Studio.
+- Základní znalost C#: Znalost C# je užitečná pro pochopení úryvků kódu v tomto tutoriálu.
+- Dokument PDF s digitálním podpisem: Pro účely testování se ujistěte, že máte soubor PDF, který obsahuje alespoň jeden digitální podpis.
 
-## Krok 1: Import požadovaných knihoven
+## Import požadovaných jmenných prostorů
 
- Chcete-li začít, musíte do svého projektu C# importovat potřebné knihovny. V tomto případě musíme importovat`Aspose.Pdf` a`System.IO` jmenné prostory. To lze provést přidáním následujícího kódu na začátek souboru C#:
+Než skočíte do kódu, je důležité importovat potřebné jmenné prostory. Tyto jmenné prostory vám umožní přístup k funkci Aspose.PDF a práci s dokumenty PDF.
 
 ```csharp
-using Aspose.Pdf;
 using System.IO;
+using Aspose.Pdf.Forms;
+using Aspose.Pdf;
+using System;
 ```
 
-## Krok 2: Nastavení cesty dokumentu
+Nyní, když jste nastavili základy, přejděme ke skutečnému procesu extrahování informací o podpisu z PDF.
 
-Dále musíte nastavit cestu k dokumentu PDF, ze kterého chcete extrahovat informace o podpisu. Nahradit`"YOUR DOCUMENTS DIRECTORY"` v následujícím fragmentu kódu se skutečnou cestou k vašemu dokumentu:
+## Krok 1: Nastavení adresáře dokumentů
+
+ Než začnete pracovat na dokumentu PDF, musíte určit umístění souboru, který budete používat. Můžete vyměnit`"YOUR DOCUMENT DIRECTORY"` se skutečnou cestou k adresáři, kde jsou uloženy vaše PDF.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+// Cesta k adresáři dokumentů.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 string input = dataDir + "ExtractSignatureInfo.pdf";
 ```
 
-## Krok 3: Extrahování informací o podpisu
+Zde uvedeme adresář obsahující soubor PDF a samotný název souboru. Ujistěte se, že soubor v tomto adresáři existuje!
 
-Nyní přejdeme k hlavní části kódu, kde extrahujeme informace o podpisu z dokumentu PDF. Iterujeme každé pole ve formuláři dokumentu a zkontrolujeme, zda se jedná o pole podpisu. Pokud je pole podpisu nalezeno, pokračujeme v extrahování certifikátu. Přidejte následující fragment kódu:
+## Krok 2: Načtení dokumentu PDF
+
+ Nyní, když jste nastavili svůj adresář, je dalším krokem načtení dokumentu PDF pomocí`Document` třídy z Aspose.PDF.
 
 ```csharp
 using (Document pdfDocument = new Document(input))
 {
-     foreach(Field field in pdfDocument.Form)
-     {
-         SignatureField sf = field as SignatureField;
-         if (sf != null)
-         {
-             // Rozbalte certifikát
-             Stream cerStream = sf.ExtractCertificate();
-             if (cerStream != null)
-             {
-                 using (cerStream)
-                 {
-                     byte[] bytes = new byte[cerStream.Length];
-                     using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
-                     {
-                         cerStream.Read(bytes, 0, bytes.Length);
-                         fs.Write(bytes, 0, bytes.Length);
-                     }
-                 }
-             }
-         }
-     }
+    // Zpracujte PDF zde.
 }
 ```
 
-## Krok 4: Extrahování certifikátu
+ Tento řádek kódu inicializuje a`Document`objekt, který představuje soubor PDF. The`using` příkaz zajišťuje, že prostředky jsou po zpracování dokumentu vyčištěny.
 
-V tomto kroku vyjmeme certifikát z pole podpisu a uložíme jej jako soubor. Extrahovaný certifikát lze dále analyzovat nebo použít pro účely ověření. Níže uvedený fragment kódu ukazuje proces extrakce a ukládání:
+## Krok 3: Přístup k polím formuláře
+
+V tomto kroku projdeme všechna pole formuláře v dokumentu PDF. Protože podpisy jsou obvykle uloženy jako pole formuláře, tento krok nám pomůže identifikovat pole podpisu.
+
+```csharp
+foreach (Field field in pdfDocument.Form)
+{
+    // Zde identifikujte pole podpisu.
+}
+```
+
+ Iterací přes`Form` vlastnictví`Document` objekt, můžeme prozkoumat každé pole formuláře a zkontrolovat, zda se jedná o pole podpisu.
+
+## Krok 4: Identifikace polí podpisu
+
+ Jakmile vstoupíte do polí formuláře, dalším krokem je určit, která z nich jsou pole podpisu. Můžeme to udělat přetypováním každého pole na a`SignatureField` objekt.
+
+```csharp
+SignatureField sf = field as SignatureField;
+if (sf != null)
+{
+    // Extrahujte informace o podpisu.
+}
+```
+
+ Zde používáme`as` klíčové slovo pro pokus o přetypování každého pole formuláře na a`SignatureField`. Pokud je obsazení úspěšné, víme, že pole je podpis.
+
+## Krok 5: Vyjmutí certifikátu
+
+Nyní, když jste identifikovali pole podpisu, je dalším úkolem extrahovat certifikát z podpisu. Certifikáty obsahují zásadní informace o podepisovateli a platnosti podpisu.
 
 ```csharp
 Stream cerStream = sf.ExtractCertificate();
+```
+
+ The`ExtractCertificate` metoda vrací a`Stream` objekt obsahující data certifikátu. Tento proud lze použít k uložení certifikátu pro další analýzu nebo uložení.
+
+## Krok 6: Uložení certifikátu do souboru
+
+ Po rozbalení certifikátu je posledním krokem jeho uložení do souboru. V tomto případě certifikát uložíme jako a`.cer` soubor.
+
+```csharp
 if (cerStream != null)
 {
-     using (cerStream)
-     {
-         byte[] bytes = new byte[cerStream.Length];
-         using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
-         {
-             cerStream.Read(bytes, 0, bytes.Length);
-             fs.Write(bytes, 0, bytes.Length);
-         }
-     }
+    using (cerStream)
+    {
+        byte[] bytes = new byte[cerStream.Length];
+        using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
+        {
+            cerStream.Read(bytes, 0, bytes.Length);
+            fs.Write(bytes, 0, bytes.Length);
+        }
+    }
 }
 ```
 
-## Krok 5
+V tomto bloku kódu:
 
-: Uložení certifikátu
-
-Nakonec rozbalený certifikát uložíme jako soubor. V tomto příkladu je certifikát uložen pod názvem "input.cer" v určeném adresáři. Kód můžete upravit tak, aby vyhovoval vašim požadavkům. Zde je fragment kódu pro uložení certifikátu:
-
-```csharp
-using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
-{
-     fs.Write(bytes, 0, bytes.Length);
-}
-```
-
-To je vše! Úspěšně jste extrahovali informace o podpisu pomocí Aspose.PDF pro .NET. Neváhejte a integrujte tento kód do svých vlastních aplikací nebo jej upravte podle svých potřeb.
-
-### Ukázkový zdrojový kód pro extrahování informací o podpisu pomocí Aspose.PDF pro .NET 
-```csharp
-try
-{
-	// Cesta k adresáři dokumentů.
-	string dataDir = "YOUR DOCUMENTS DIRECTORY";
-	string input = dataDir + "ExtractSignatureInfo.pdf";
-	using (Document pdfDocument = new Document(input))
-	{
-		foreach (Field field in pdfDocument.Form)
-		{
-			SignatureField sf = field as SignatureField;
-			if (sf != null)
-			{
-				Stream cerStream = sf.ExtractCertificate();
-				if (cerStream != null)
-				{
-					using (cerStream)
-					{
-						byte[] bytes = new byte[cerStream.Length];
-						using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
-						{
-							cerStream.Read(bytes, 0, bytes.Length);
-							fs.Write(bytes, 0, bytes.Length);
-						}
-					}
-				}
-			}
-		}
-	}
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+1. Zkontrolujte, zda stream certifikátů není null.
+2. Načtěte data certifikátu do bajtového pole.
+3.  Zapište bajtové pole do a`.cer` soubor v adresáři dokumentů.
 
 ## Závěr
 
-V tomto tutoriálu jsme prošli podrobným průvodcem, jak extrahovat informace o podpisu z dokumentu PDF pomocí knihovny Aspose.PDF for .NET. Probrali jsme proces importu požadovaných knihoven, nastavení cesty k dokumentu, extrahování informací o podpisu, extrahování certifikátu a jeho uložení do souboru. Pomocí těchto kroků můžete snadno získat podrobnosti podpisu a pracovat s nimi podle potřeby.
+Extrahování digitálních podpisů a souvisejících informací o certifikátech z dokumentů PDF pomocí Aspose.PDF pro .NET je poměrně jednoduché, když je rozděleno do jednoduchých kroků. Ať už kontrolujete dokumenty, ověřujete podpisy nebo jen uchováváte certifikáty pro úschovu, tento tutoriál vás vybaví znalostmi, jak to udělat efektivně. Pamatujte, že zabezpečení a ověřování dokumentů je v dnešním digitálním světě zásadní a používání nástrojů jako Aspose.PDF pro .NET usnadňuje manipulaci.
 
-### FAQ
+## FAQ
 
-#### Otázka: Proč bych potřeboval extrahovat informace o podpisu z dokumentu PDF?
+### Mohu extrahovat více podpisů z PDF pomocí Aspose.PDF pro .NET?
+Ano, kód prochází všechna pole formuláře v dokumentu, což vám umožňuje extrahovat více podpisů, pokud existují.
 
-Odpověď: Extrahování informací o podpisu z dokumentu PDF je užitečné pro ověření pravosti podepsaného dokumentu a analýzu certifikátu použitého pro podpis. Tento proces pomáhá zajistit integritu podepsaného obsahu a může být nezbytný pro právní a bezpečnostní účely.
+### Co se stane, když v PDF není nalezen žádný podpis?
+Pokud nejsou přítomna žádná pole podpisu, kód je jednoduše přeskočí, aniž by vyvolal chybu.
 
-#### Otázka: Co je Aspose.PDF pro .NET?
+### Mohu tento přístup použít k ověření platnosti podpisu?
+když certifikát můžete extrahovat, ověření platnosti podpisu vyžaduje další kroky, jako je kontrola řetězce důvěryhodnosti certifikátu.
 
-A: Aspose.PDF for .NET je knihovna, která umožňuje vývojářům pracovat s dokumenty PDF v aplikacích .NET. Poskytuje širokou škálu funkcí pro vytváření, úpravy a interakci se soubory PDF programově.
+### Je možné extrahovat další data pole formuláře pomocí Aspose.PDF pro .NET?
+Ano, Aspose.PDF vám umožňuje přistupovat a manipulovat s různými typy polí formulářů v PDF, nejen s poli podpisů.
 
-#### Otázka: Jaké jsou předpoklady pro extrahování informací o podpisu pomocí Aspose.PDF pro .NET?
-
-Odpověď: K extrahování informací o podpisu potřebujete základní znalost programovacího jazyka C#, knihovny Aspose.PDF for .NET nainstalované ve vašem systému a platný dokument PDF obsahující jedno nebo více podpisových polí.
-
-#### Otázka: Jak naimportuji požadované knihovny pro proces extrakce?
-
-Odpověď: Potřebné knihovny můžete importovat přidáním souboru`using` směrnice pro`Aspose.Pdf` a`System.IO` na začátku vašeho souboru C#. Tyto direktivy vám umožňují používat třídy a metody požadované pro extrakci informací o podpisu.
-
-#### Otázka: Jak specifikuji dokument PDF pro extrahování informací o podpisu?
-
- Odpověď: Cestu k dokumentu PDF můžete nastavit nahrazením`"YOUR DOCUMENTS DIRECTORY"` se skutečnou cestou k vašemu dokumentu v poskytnutém fragmentu kódu. Tato cesta se používá k načtení dokumentu PDF, ze kterého chcete extrahovat informace o podpisu.
-
-#### Otázka: Jaký je proces extrahování informací o podpisu z dokumentu PDF?
-
-Odpověď: Proces extrakce zahrnuje opakování polí formuláře dokumentu PDF, kontrolu, zda je každé pole polem podpisu, a pokud ano, extrahování přidruženého certifikátu. Extrahovaný certifikát lze uložit jako soubor pro další analýzu nebo ověření.
-
-#### Otázka: Jak je certifikát extrahován z pole podpisu?
-
-A: Certifikát je extrahován z pole podpisu pomocí`ExtractCertificate()` metoda poskytovaná společností`SignatureField` třídy v Aspose.PDF pro .NET. Tato metoda vrací proud obsahující data certifikátu.
-
-#### Otázka: Jak uložím extrahovaný certifikát jako soubor?
-
- Odpověď: Extrahovaný certifikát můžete uložit jako soubor přečtením toku certifikátů a zapsáním jeho obsahu do souboru pomocí`FileStream` třída. Kód uvedený v tutoriálu tento proces demonstruje.
-
-#### Otázka: Mohu použít tento extrahovaný certifikát pro ověření podpisu?
-
-Odpověď: Ano, extrahovaný certifikát lze použít k ověření podpisu. Můžete analyzovat podrobnosti certifikátu a ověřit jeho pravost, abyste zajistili integritu podepsaného dokumentu.
-
-#### Otázka: Jak mohu tento kód integrovat do svých vlastních aplikací?
-
-Odpověď: Poskytnutý kód můžete integrovat do svých vlastních aplikací C# podle podrobného průvodce. Podle potřeby upravte cesty a názvy souborů a začleňte kód do svých stávajících projektů.
-
-#### Otázka: Existují další funkce v Aspose.PDF pro .NET související se správou podpisů?
-
-Odpověď: Ano, Aspose.PDF pro .NET poskytuje řadu funkcí pro práci s digitálními podpisy, včetně podepisování dokumentů, ověřování podpisů a přidávání informací o časovém razítku. Další podrobnosti o těchto funkcích naleznete v oficiální dokumentaci.
-
-#### Otázka: Kde najdu další zdroje pro použití Aspose.PDF pro .NET?
-
- Odpověď: Další informace, návody a zdroje o používání Aspose.PDF pro .NET[Aspose.PDF pro .NET](https://reference.aspose.com/pdf/net/).
-
-#### Otázka: Je možné extrahovat podpisy ze zašifrovaných dokumentů PDF?
-
-Odpověď: Schopnost extrahovat podpisy ze zašifrovaných dokumentů PDF může záviset na nastavení šifrování a oprávněních dokumentu. Možná se budete muset ujistit, že máte potřebná oprávnění pro přístup a extrahování informací o podpisu.
-
-#### Otázka: Mohu extrahovat více podpisů z jednoho dokumentu PDF?
-
-Odpověď: Ano, poskytnutý kód můžete upravit tak, aby procházel všemi poli podpisu v dokumentu PDF a extrahoval informace o podpisu z každého z nich. To vám umožní extrahovat informace o více podpisech přítomných v dokumentu.
-
-#### Otázka: Jaké jsou praktické případy použití pro extrakci informací o podpisu?
-
-Odpověď: Některé praktické případy použití pro extrakci informací o podpisu zahrnují ověřování pravosti digitálně podepsaných dokumentů, analýzu podrobností certifikátu pro účely shody a udržování záznamů podpisů a signatářů pro účely auditu.
-
-#### Otázka: Existují nějaké právní aspekty při extrahování informací o podpisu?
-
-Odpověď: Získávání informací o podpisu může mít právní důsledky, zejména při manipulaci s právně závaznými dokumenty. Ujistěte se, že dodržujete příslušné předpisy a zákony týkající se elektronických podpisů a pravosti dokumentů ve vaší jurisdikci.
+### Jak mohu zobrazit podrobnosti o extrahovaném certifikátu?
+ Jakmile je certifikát uložen jako a`.cer` soubor, můžete jej otevřít pomocí libovolného prohlížeče certifikátů nebo jej importovat do systémového úložiště certifikátů pro další kontrolu.

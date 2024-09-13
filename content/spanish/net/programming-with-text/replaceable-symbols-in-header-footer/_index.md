@@ -35,7 +35,7 @@ Page page = doc.Pages.Add();
 
 ## Paso 3: Establecer márgenes
 
-Establecemos los márgenes de la página utilizando el`MarginInfo` Clase. Ajuste los valores de margen según sus requisitos.
+ Establecemos los márgenes de la página utilizando el`MarginInfo` Clase. Ajuste los valores de margen según sus requisitos.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -110,7 +110,7 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-// Asignar la instancia marginInfo a la propiedad Margin de sec1.PageInfo
+//Asignar la instancia marginInfo a la propiedad Margin de sec1.PageInfo
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
@@ -148,7 +148,7 @@ Table tab2 = new Table();
 hfFoot.Paragraphs.Add(tab2);
 // Conjunto con anchos de columnas de la tabla
 tab2.ColumnWidths = "165 172 165";
-// Crea filas en la tabla y luego celdas en las filas.
+//Crea filas en la tabla y luego celdas en las filas.
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
@@ -173,7 +173,7 @@ table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
 // Establecer el borde de la tabla utilizando otro objeto BorderInfo personalizado
 table.Border = new BorderInfo(BorderSide.All, 1f);
 table.RepeatingRowsCount = 1;
-// Crea filas en la tabla y luego celdas en las filas.
+//Crea filas en la tabla y luego celdas en las filas.
 Row row1 = table.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

@@ -74,7 +74,7 @@ Nastavení DPI/PPI zajišťuje, že se obrázky při tisku nebo digitálním pro
 
 ### Jak nastavím DPI/PPI pomocí Aspose.PDF pro Javu?
 
- Aspose.PDF pro Java nabízí metody jako`setImageResolution` a`setResolution` pro nastavení DPI/PPI pro obrázky v PDF. Podrobné příklady kódu najdete v naší příručce.
+ Aspose.PDF pro Java nabízí metody jako`setImageResolution` a`setResolution` pro nastavení DPI/PPI pro obrázky v PDF. Podrobné příklady kódu naleznete v naší příručce.
 
 ### Můžete uvést příklad nastavení DPI/PPI pomocí kódu?
 

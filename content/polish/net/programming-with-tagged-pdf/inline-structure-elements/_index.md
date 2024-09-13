@@ -283,7 +283,7 @@ Gratulacje! Nauczyłeś się, jak używać elementów struktury inline w Aspose.
 
 #### P: Czym są elementy struktury inline w dokumencie PDF i w jaki sposób przyczyniają się one do tworzenia struktury hierarchicznej?
 
-A: Elementy struktury inline w dokumencie PDF, takie jak nagłówki różnych poziomów i akapity, służą do tworzenia struktury hierarchicznej, która organizuje i prezentuje treść w sposób ustrukturyzowany. Elementy te umożliwiają ustalenie jasnej hierarchii i przepływu informacji w dokumencie.
+A: Elementy struktury inline w dokumencie PDF, takie jak nagłówki różnych poziomów i akapity, służą do tworzenia hierarchicznej struktury, która organizuje i prezentuje treść w sposób ustrukturyzowany. Elementy te umożliwiają ustalenie jasnej hierarchii i przepływu informacji w dokumencie.
 
 #### P: W jaki sposób elementy struktury inline mogą poprawić czytelność i organizację dokumentu PDF?
 
@@ -307,7 +307,7 @@ A: Tak, możesz dostosować wygląd i formatowanie elementów struktury inline. 
 
 #### P: W jaki sposób mogę tworzyć i dodawać nagłówki różnych poziomów do dokumentu PDF za pomocą elementów struktury inline w Aspose.PDF dla platformy .NET?
 
- A: Możesz tworzyć nagłówki różnych poziomów za pomocą`CreateHeaderElement` a następnie dołącz je do elementu struktury głównej. Następnie możesz dodać treść do każdego elementu nagłówka, używając`CreateSpanElement` metoda tworzenia przedziałów tekstu.
+ A: Możesz tworzyć nagłówki różnych poziomów za pomocą`CreateHeaderElement` następnie dołącz je do elementu struktury głównej. Następnie możesz dodać treść do każdego elementu nagłówka, używając`CreateSpanElement` metoda tworzenia przedziałów tekstu.
 
 #### P: Czy mogę używać elementów struktury inline do tworzenia list, punktów wypunktowanych lub innych sposobów organizacji treści w dokumencie PDF?
 

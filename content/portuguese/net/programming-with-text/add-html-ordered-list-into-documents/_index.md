@@ -47,7 +47,7 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 ```
 
 ## Etapa 6: Adicionar uma página ao documento
- Adicione uma nova página ao documento usando o`Add` método do`Pages`coleção. No código fornecido, a nova página é atribuída à variável`page`.
+ Adicione uma nova página ao documento usando o`Add` método do`Pages` coleção. No código fornecido, a nova página é atribuída à variável`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -81,7 +81,7 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 Page page = doc.Pages.Add();
 // Adicionar HtmlFragment dentro da página
 page.Paragraphs.Add(t);
-// Salvar arquivo PDF resultante
+//Salvar arquivo PDF resultante
 doc.Save(outFile);
 ```
 
@@ -115,7 +115,7 @@ using Aspose.Pdf.Text;
 
 #### P: Como adiciono a lista ordenada HTML a uma página no documento?
 
- A: Na Etapa 7, você adicionará o`HtmlFragment` objeto (`t` ) para a página usando o`Add` método do`Paragraphs`coleção. Isso integrará perfeitamente a lista ordenada HTML no documento.
+ A: Na Etapa 7, você adicionará o`HtmlFragment` objeto (`t` ) para a página usando o`Add` método do`Paragraphs` coleção. Isso integrará perfeitamente a lista ordenada HTML no documento.
 
 #### P: Como faço para salvar o documento PDF resultante?
 

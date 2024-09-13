@@ -1,7 +1,7 @@
 ---
 title: Strukturelementegenskaper i PDF-fil
 linktitle: Strukturelementegenskaper i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Steg-för-steg-guide för att arbeta med strukturella elementegenskaper i PDF-fil med Aspose.PDF för .NET. Skapa informationsrika strukturella element.
 type: docs
 weight: 150
@@ -125,7 +125,7 @@ S: Aspose.PDF för .NET tillhandahåller API:er för att skapa och manipulera st
 
 ####  F: Vilken roll har den`SetTitle` and `SetLanguage` methods in working with structural element properties?
 
- A: Den`SetTitle` och`SetLanguage` metoder för`ITaggedContent`objekt låter dig ställa in dokumentets titel och språk, vilket påverkar strukturella elementegenskaper. Att ställa in titel och språk säkerställer konsekvens och meningsfull metadata för dokumentet.
+ A: Den`SetTitle` och`SetLanguage` metoder för`ITaggedContent` objekt låter dig ställa in dokumentets titel och språk, vilket påverkar strukturella elementegenskaper. Att ställa in titel och språk säkerställer konsekvens och meningsfull metadata för dokumentet.
 
 #### F: Hur kan jag skapa och manipulera strukturella element i ett PDF-dokument med Aspose.PDF för .NET?
 

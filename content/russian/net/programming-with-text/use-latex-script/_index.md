@@ -77,7 +77,7 @@ page.Paragraphs.Add(table);
 doc.Save(dataDir + "LatextScriptInPdf_out.pdf");
 ```
 
-### Пример исходного кода для использования скрипта Latex с помощью Aspose.PDF для .NET 
+### Пример исходного кода для использования скрипта Latex с использованием Aspose.PDF для .NET 
 ```csharp
 // Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";

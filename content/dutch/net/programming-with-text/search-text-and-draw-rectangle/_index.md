@@ -110,7 +110,7 @@ document.Save(dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Document openen
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-// Maak een TextAbsorber-object om alle zinnen te vinden die overeenkomen met de reguliere expressie
+//Maak een TextAbsorber-object om alle zinnen te vinden die overeenkomen met de reguliere expressie
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;

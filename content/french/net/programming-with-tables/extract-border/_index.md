@@ -149,7 +149,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 
 		if (opSaveState != null)
 		{
-			//Enregistrer l'état précédent et placer l'état actuel en haut de la pile
+			// Enregistrer l'état précédent et placer l'état actuel en haut de la pile
 			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
@@ -243,7 +243,7 @@ R : L'extraction de la bordure d'un fichier PDF peut être utile à diverses fin
 
 #### Q : Puis-je extraire la bordure de pages ou de zones spécifiques du document PDF ?
 
- : Oui, vous pouvez modifier le code source C# fourni pour extraire la bordure de pages ou de régions spécifiques dans le document PDF. En manipulant le`doc.Pages` en collectant et en spécifiant des critères personnalisés, vous pouvez choisir d'extraire la bordure de pages ou de zones d'intérêt particulières.
+ R : Oui, vous pouvez modifier le code source C# fourni pour extraire la bordure de pages ou de régions spécifiques dans le document PDF. En manipulant le`doc.Pages` en collectant et en spécifiant des critères personnalisés, vous pouvez choisir d'extraire la bordure de pages ou de zones d'intérêt particulières.
 
 #### Q : Comment puis-je personnaliser le format et la qualité de l’image de sortie ?
 

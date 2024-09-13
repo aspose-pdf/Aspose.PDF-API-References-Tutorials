@@ -42,7 +42,7 @@ tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.
 ```
 
 ## 4. lépés: A táblázat szegélyének és a cellák kitöltésének beállítása
-A táblázatszegély és a cella kitöltésének beállításához hozzon létre egy MarginInfo objektumot, és állítsa be a tulajdonságait:
+táblázatszegély és a cella kitöltésének beállításához hozzon létre egy MarginInfo objektumot, és állítsa be a tulajdonságait:
 
 ```csharp
 // Hozzon létre egy MarginInfo objektumot, és állítsa be a bal, alsó, jobb és felső margókat
@@ -63,7 +63,7 @@ tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
 Most adjunk hozzá sorokat és cellákat a táblázathoz. Létrehozunk egy új sort, és cellákat adunk hozzá:
 
 ```csharp
-// Hozzon létre sorokat a táblázatban, majd cellákat a sorokban
+//Hozzon létre sorokat a táblázatban, majd cellákat a sorokban
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -117,7 +117,7 @@ margin.Right = 5f;
 margin.Bottom = 5f;
 // Állítsa be az alapértelmezett cellakitöltést a MarginInfo objektumra
 tab1.DefaultCellPadding = margin;
-// Hozzon létre sorokat a táblázatban, majd cellákat a sorokban
+//Hozzon létre sorokat a táblázatban, majd cellákat a sorokban
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -145,7 +145,7 @@ Gratulálok! Sikeresen megtanulta, hogyan állíthat be margókat vagy kitölté
 
 #### K: Beállíthatok különböző margókat vagy kitöltéseket a táblázat egyes celláihoz?
 
-V: Igen, az Aspose.PDF for .NET használatával különböző margókat vagy kitöltést állíthat be egy táblázat egyes celláihoz. A megadott példában beállítjuk az alapértelmezett cellakitöltést a teljes táblázathoz a`DefaultCellPadding` ingatlan. Az egyes cellákhoz különböző kitöltés beállításához elérheti a`MarginInfo` minden cellát külön-külön, és módosítsa margóikat.
+ V: Igen, az Aspose.PDF for .NET használatával különböző margókat vagy kitöltést állíthat be egy táblázat egyes celláihoz. A megadott példában beállítjuk az alapértelmezett cellakitöltést a teljes táblázathoz a`DefaultCellPadding` ingatlan. Az egyes cellákhoz különböző kitöltés beállításához elérheti a`MarginInfo` minden cellát külön-külön, és módosítsa margóikat.
 
 #### K: Hogyan változtathatom meg a táblázat keretének színét vagy stílusát?
 
@@ -161,4 +161,4 @@ V: Igen, az Aspose.PDF for .NET használatával fejlécet vagy láblécet adhat 
 
 #### K: Hozzáadhatok képeket a táblázat celláihoz szöveg helyett?
 
- V: Igen, képeket adhat hozzá a táblázat celláihoz az Aspose.PDF for .NET használatával. Létrehozása helyett a`TextFragment` objektumot, létrehozhat egy`Image` objektumot, töltse be a képfájlt, és adja hozzá a kívánt cellához a segítségével`cell.Paragraphs.Add(image);` módszer. Ez lehetővé teszi képek beszúrását a táblázatba szöveges tartalom mellett.
+ V: Igen, képeket adhat hozzá a táblázat celláihoz az Aspose.PDF for .NET használatával. Létrehozása helyett a`TextFragment` objektumot, létrehozhat egy`Image` objektumot, töltse be a képfájlt, és adja hozzá a kívánt cellához a segítségével`cell.Paragraphs.Add(image);`módszer. Ez lehetővé teszi képek beszúrását a táblázatba a szöveges tartalom mellé.

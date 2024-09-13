@@ -2,12 +2,12 @@
 title: Erstellen eines Strukturelementbaums in PDF mit Java
 linktitle: Erstellen eines Strukturelementbaums in PDF mit Java
 second_title: Aspose.PDF Java PDF-Verarbeitungs-API
-description: Erfahren Sie, wie Sie mit Aspose.PDF eine barrierefreie PDF-Datei mit einem Strukturelementbaum in Java erstellen und so die Inklusivität für alle Benutzer gewährleisten.
+description: Erfahren Sie, wie Sie mit Aspose.PDF ein barrierefreies PDF mit einem Strukturelementbaum in Java erstellen und so die Inklusivität für alle Benutzer gewährleisten.
 type: docs
 weight: 11
 url: /de/java/pdf-tags-and-structure/create-structure-element-tree-in-pdf-using-java/
 ---
-In diesem Tutorial führen wir Sie durch den Prozess der Erstellung eines Strukturelementbaums in einem PDF-Dokument mit Aspose.PDF für Java. Strukturelementbäume sind wichtig, um PDF-Dokumente zugänglich und gut strukturiert zu machen, insbesondere für sehbehinderte Benutzer, die auf Bildschirmleseprogramme angewiesen sind. Wir stellen Ihnen dazu Schritt-für-Schritt-Anleitungen und Java-Quellcode zur Verfügung.
+In diesem Tutorial führen wir Sie durch den Prozess der Erstellung eines Strukturelementbaums in einem PDF-Dokument mit Aspose.PDF für Java. Strukturelementbäume sind unerlässlich, um PDF-Dokumente zugänglich und gut strukturiert zu gestalten, insbesondere für sehbehinderte Benutzer, die auf Bildschirmleseprogramme angewiesen sind. Wir stellen Ihnen dazu Schritt-für-Schritt-Anleitungen und Java-Quellcode zur Verfügung.
 
 ## Einführung
 

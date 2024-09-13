@@ -35,7 +35,7 @@ Page page = doc.Pages.Add();
 
 ## Adım 3: Kenar Boşluklarını Ayarlayın
 
-Sayfanın kenar boşluklarını şunu kullanarak ayarlıyoruz:`MarginInfo` sınıf. Marj değerlerini ihtiyaçlarınıza göre ayarlayın.
+ Sayfanın kenar boşluklarını şunu kullanarak ayarlıyoruz:`MarginInfo` sınıf. Marj değerlerini ihtiyaçlarınıza göre ayarlayın.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -110,7 +110,7 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-// marginInfo örneğini sec1.PageInfo'nun Margin özelliğine atayın
+//marginInfo örneğini sec1.PageInfo'nun Margin özelliğine atayın
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
@@ -148,7 +148,7 @@ Table tab2 = new Table();
 hfFoot.Paragraphs.Add(tab2);
 // Tablonun sütun genişlikleriyle ayarlayın
 tab2.ColumnWidths = "165 172 165";
-// Tabloda satırlar ve ardından satırlarda hücreler oluşturun
+//Tabloda satırlar ve ardından satırlarda hücreler oluşturun
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
@@ -173,7 +173,7 @@ table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
 // Başka bir özelleştirilmiş BorderInfo nesnesini kullanarak tablo kenarlığını ayarlayın
 table.Border = new BorderInfo(BorderSide.All, 1f);
 table.RepeatingRowsCount = 1;
-// Tabloda satırlar ve ardından satırlarda hücreler oluşturun
+//Tabloda satırlar ve ardından satırlarda hücreler oluşturun
 Row row1 = table.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

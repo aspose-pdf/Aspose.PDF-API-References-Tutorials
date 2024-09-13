@@ -113,7 +113,7 @@ Console.WriteLine("\nBookmarks updated successfully.\nFile saved at " + dataDir)
 
 ## 結論
 
-現在你就擁有了！您已使用 Aspose.PDF for .NET 成功繼承了 PDF 檔案中的縮放等級。這個簡單而強大的功能可以大大增強使用者體驗，使您的文件更易於存取和導航。因此，下次創建 PDF 時，請記住設定縮放等級！
+現在你就得到它了！您已使用 Aspose.PDF for .NET 成功繼承了 PDF 檔案中的縮放等級。這個簡單而強大的功能可以大大增強使用者體驗，使您的文件更易於存取和導航。因此，下次創建 PDF 時，請記住設定縮放等級！
 
 ## 常見問題解答
 

@@ -105,7 +105,7 @@ foreach (Element element in elementList)
 		string alternativeText = structureElement.AlternativeText;
 	}
 }
-// Kök öğedeki ilk öğenin alt öğelerine erişim
+//Kök öğedeki ilk öğenin alt öğelerine erişim
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
 foreach (Element element in elementList)
 {

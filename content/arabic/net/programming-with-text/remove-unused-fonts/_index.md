@@ -120,7 +120,7 @@ catch (Exception ex)
 
 ج: نعم، يمكنك تعديل الكود لاستبدال الخطوط غير المستخدمة بخط من اختيارك. في الكود النموذجي المقدم، تم استخدام الخط "Arial, Bold" كبديل.
 
-####  س: كيف يتم ذلك؟`TextFragmentAbsorber` work to remove unused fonts?
+#### س: كيف يتم ذلك؟`TextFragmentAbsorber` work to remove unused fonts?
 
  أ: ال`TextFragmentAbsorber` تم تكوينه باستخدام`TextEditOptions.FontReplace.RemoveUnusedFonts` المعلمة التي تحدد الخطوط غير المستخدمة داخل أجزاء النص في ملف PDF. بعد الامتصاص، يمكنك التكرار خلال`TextFragments` وتعيين الخطوط الخاصة بهم إلى الخطوط البديلة المطلوبة.
 

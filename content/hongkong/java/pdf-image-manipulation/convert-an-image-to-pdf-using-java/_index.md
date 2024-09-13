@@ -68,7 +68,7 @@ pdfDocument.save("output.pdf");
 
 ## 結論
 
-恭喜！您已使用 Java 和 Aspose.PDF for Java 程式庫成功將影像轉換為 PDF 文件。這在各種場景中都非常有用，例如產生報告、建立 PDF 組合，或只是以更易於管理的格式存檔影像資料。請隨意探索 Aspose.PDF 庫的更多功能，以增強您的 PDF 生成能力。
+恭喜！您已使用 Java 和 Aspose.PDF for Java 程式庫成功將影像轉換為 PDF 文件。這在各種場景中都非常有用，例如生成報告、建立 PDF 組合或簡單地以更易於管理的格式存檔影像資料。請隨意探索 Aspose.PDF 庫的更多功能，以增強您的 PDF 生成能力。
 
 ## 常見問題解答
 

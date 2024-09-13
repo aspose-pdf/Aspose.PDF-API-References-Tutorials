@@ -10,7 +10,7 @@ url: /id/java/pdf-structure-elements/text-block-structure-elements-in-pdf-using-
 
 ## Pengenalan Elemen Struktur Blok Teks dalam PDF menggunakan Java
 
-Di dunia digital saat ini, dokumen PDF telah menjadi bagian integral dari berbagi dan menyajikan informasi. Pengembang Java sering kali bekerja dengan PDF untuk memanipulasi dan mengekstrak data. Salah satu aspek penting dari PDF adalah memahami elemen strukturnya, khususnya blok teks. Dalam artikel ini, kami akan membahas Elemen Struktur Blok Teks dalam PDF menggunakan Java, memberikan Anda panduan lengkap untuk bekerja dengan elemen tersebut secara efektif.
+Di dunia digital saat ini, dokumen PDF telah menjadi bagian integral dari berbagi dan menyajikan informasi. Pengembang Java sering kali bekerja dengan PDF untuk memanipulasi dan mengekstrak data. Salah satu aspek penting dari PDF adalah memahami elemen strukturnya, khususnya blok teks. Dalam artikel ini, kami akan membahas Elemen Struktur Blok Teks dalam PDF menggunakan Java, memberi Anda panduan lengkap untuk bekerja dengan elemen tersebut secara efektif.
 
 ## Memahami Elemen Struktur PDF
 

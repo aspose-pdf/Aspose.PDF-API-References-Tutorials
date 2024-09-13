@@ -7,41 +7,79 @@ type: docs
 weight: 190
 url: /id/net/programming-with-document/getwarningsforfontsubstitution/
 ---
-Aspose.PDF untuk .NET adalah pustaka manipulasi PDF populer yang memungkinkan pengembang untuk membuat, mengedit, dan mengonversi file PDF dalam aplikasi .NET mereka. Salah satu fitur yang ditawarkan oleh pustaka ini adalah kemampuan untuk mendeteksi peringatan penggantian font saat dokumen PDF dibuka. Tutorial ini akan memandu Anda melalui langkah-langkah penggunaan`GetWarningsForFontSubstitution` fitur Aspose.PDF untuk .NET untuk mendeteksi peringatan penggantian font saat membuka dokumen PDF.
+## Perkenalan
 
-## Langkah 1: Instal Aspose.PDF untuk .NET
+Dalam dunia pemrosesan dokumen, memastikan bahwa PDF Anda terlihat persis seperti yang diinginkan sangatlah penting. Pernahkah Anda membuka PDF dan mendapati bahwa semua fonnya salah? Hal ini dapat terjadi jika fon asli yang digunakan dalam dokumen tidak tersedia di sistem tempat PDF tersebut dilihat. Untungnya, Aspose.PDF for .NET menyediakan solusi yang kuat untuk mendeteksi peringatan penggantian fon, yang memungkinkan Anda menjaga integritas dokumen Anda. Dalam panduan ini, kami akan memandu Anda melalui langkah-langkah untuk menyiapkan deteksi penggantian fon dalam dokumen PDF Anda menggunakan Aspose.PDF for .NET.
 
- Untuk menggunakan Aspose.PDF for .NET di aplikasi .NET Anda, Anda harus menginstal pustaka terlebih dahulu. Anda dapat mengunduh versi terbaru pustaka dari[Halaman unduhan Aspose.PDF untuk .NET](https://relases.aspose.com/pdf/net).
+## Prasyarat
 
-Setelah Anda mengunduh pustaka, ekstrak isi berkas ZIP ke folder di komputer Anda. Anda kemudian perlu menambahkan referensi ke Aspose.PDF untuk .NET DLL di proyek .NET Anda.
+Sebelum menyelami kode, ada beberapa hal yang perlu Anda siapkan:
 
-## Langkah 2: Muat Dokumen PDF
+1. Visual Studio: Pastikan Anda telah menginstal Visual Studio di komputer Anda. Di sinilah Anda akan menulis dan menjalankan kode .NET.
+2.  Aspose.PDF untuk .NET: Anda perlu memiliki pustaka Aspose.PDF. Anda dapat mengunduhnya dari[lokasi](https://releases.aspose.com/pdf/net/).
+3. Pengetahuan Dasar C#: Keakraban dengan pemrograman C# akan membantu Anda memahami potongan kode dengan lebih baik.
+4. Dokumen PDF: Siapkan contoh dokumen PDF yang dapat Anda gunakan untuk menguji deteksi substitusi font.
 
- Setelah Anda menginstal Aspose.PDF untuk .NET dan menambahkan referensi ke DLL di proyek .NET Anda, Anda dapat mulai menggunakan`GetWarningsForFontSubstitution` fitur untuk mendeteksi peringatan penggantian font saat membuka dokumen PDF.
+## Paket Impor
 
-Langkah pertama dalam menggunakan fitur ini adalah memuat dokumen PDF yang ingin Anda deteksi peringatan penggantian font-nya. Untuk melakukannya, Anda dapat menggunakan kode berikut:
+Untuk memulai, Anda perlu mengimpor paket yang diperlukan ke dalam proyek C# Anda. Berikut cara melakukannya:
+
+### Buat Proyek Baru
+
+Buka Visual Studio dan buat proyek C# baru. Anda dapat memilih Aplikasi Konsol untuk mempermudah.
+
+### Tambahkan Referensi Aspose.PDF
+
+1. Klik kanan pada proyek Anda di Solution Explorer.
+2. Pilih "Kelola Paket NuGet."
+3. Cari "Aspose.PDF" dan instal versi terbaru.
+
+### Impor Namespace
+
+Di bagian atas file C# Anda, impor namespace Aspose.PDF:
 
 ```csharp
-// Jalur menuju dokumen PDF
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
 
-// Buka dokumen PDF
+Sekarang setelah Anda menyiapkan semuanya, mari kita uraikan proses mendeteksi peringatan penggantian font ke dalam langkah-langkah yang lebih mudah dikelola.
+
+## Langkah 1: Tentukan Jalur Dokumen
+
+Pertama, Anda perlu menentukan jalur ke dokumen PDF Anda. Di sinilah Aspose.PDF akan mencari berkas tersebut.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya tempat berkas PDF Anda berada.
+
+## Langkah 2: Buka Dokumen PDF
+
+ Selanjutnya, Anda akan membuka dokumen PDF menggunakan`Document` kelas disediakan oleh Aspose.PDF.
+
+```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
- Pada kode di atas, ganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur ke direktori tempat dokumen PDF Anda berada. Kode ini akan memuat dokumen PDF ke dalam`Document` objek, yang kemudian dapat Anda gunakan untuk mendeteksi peringatan penggantian font.
+ Baris kode ini menginisialisasi yang baru`Document` objek dengan berkas PDF Anda.
 
-## Langkah 3: Mendeteksi Peringatan Penggantian Font
+## Langkah 3: Siapkan Deteksi Penggantian Font
 
-Untuk mendeteksi peringatan penggantian font saat membuka dokumen PDF, Anda dapat menggunakan kode berikut:
+ Sekarang, saatnya untuk mengatur event handler yang akan mendeteksi peringatan penggantian font. Anda harus berlangganan`FontSubstitution` acara dari`Document` kelas.
 
 ```csharp
 doc.FontSubstitution += new Document.FontSubstitutionHandler(OnFontSubstitution);
 ```
 
- Pada kode di atas,`OnFontSubstitution`adalah metode yang akan dipanggil setiap kali peringatan penggantian font terdeteksi. Anda dapat menyesuaikan metode ini untuk menangani peringatan penggantian font dengan cara apa pun yang Anda suka.
+Baris ini menghubungkan kejadian ke metode khusus Anda, yang akan kita definisikan selanjutnya.
 
- Berikut adalah contoh implementasi dari`OnFontSubstitution` metode:
+## Langkah 4: Menangani Peringatan Penggantian Font
+
+Anda perlu membuat metode yang akan menangani peringatan penggantian font. Metode ini akan dipanggil setiap kali penggantian font terjadi.
 
 ```csharp
 private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArgs e)
@@ -50,47 +88,29 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 }
 ```
 
- Pada kode di atas,`OnFontSubstitution` Metode ini hanya akan menampilkan nama fon asli dan nama fon yang diganti ke konsol setiap kali peringatan penggantian fon terdeteksi. Anda dapat menyesuaikan metode ini untuk menangani peringatan penggantian fon dengan cara apa pun yang Anda suka.
+Dengan metode ini, Anda dapat mencatat nama fon asli dan nama fon pengganti ke konsol. Dengan cara ini, Anda akan tahu persis perubahan apa yang telah dilakukan.
 
-### Contoh kode sumber untuk Mendapatkan Peringatan untuk Penggantian Font menggunakan Aspose.NET untuk PDF
+## Langkah 5: Jalankan Kode
 
- Berikut adalah kode sumber lengkap untuk mendeteksi peringatan substitusi font saat membuka dokumen PDF menggunakan`GetWarningsForFontSubstitution` fitur Aspose.PDF untuk .NET:
-
-```csharp
-// Jalur menuju dokumen PDF
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Buka dokumen PDF
-Document doc = new Document(dataDir + "input.pdf");
-
-// Mendeteksi peringatan penggantian font
-doc.FontSubstitution += new Document.FontSubstitutionHandler(OnFontSubstitution);
-
-// Tangani peringatan penggantian font
-private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArgs e)
-{
-    Console.WriteLine("Font substitution: {0} => {1}", e.OriginalFontName, e.SubstitutedFontName);
-}
-```
+Terakhir, Anda dapat menjalankan aplikasi Anda. Jika ada penggantian font dalam dokumen PDF Anda, Anda akan melihat peringatan yang dicetak di konsol.
 
 ## Kesimpulan
 
- Dalam tutorial ini, kami telah membahas cara menggunakan Aspose.PDF untuk .NET guna mendeteksi peringatan penggantian font saat membuka dokumen PDF. Dengan berlangganan`FontSubstitution`Dalam acara tersebut, pengembang dapat mendeteksi situasi penggantian font dan menanganinya sesuai dengan kebutuhan aplikasi mereka. Aspose.PDF untuk .NET menyediakan API yang mudah digunakan untuk mendeteksi dan menangani peringatan penggantian font, membantu pengembang memastikan ketepatan visual dan konsistensi dokumen PDF di berbagai sistem.
+Mendeteksi peringatan substitusi font dalam dokumen PDF sangat penting untuk menjaga integritas visual berkas Anda. Dengan Aspose.PDF untuk .NET, proses ini mudah dan efisien. Dengan mengikuti langkah-langkah yang diuraikan dalam panduan ini, Anda dapat dengan mudah menyiapkan deteksi substitusi font dan memastikan bahwa PDF Anda terlihat seperti yang Anda inginkan.
 
-### Pertanyaan yang Sering Diajukan
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa itu substitusi font dalam dokumen PDF?
+### Apa itu substitusi font?
+Substitusi font terjadi ketika font asli yang digunakan dalam suatu dokumen tidak tersedia, dan font lain digunakan sebagai gantinya.
 
-A: Penggantian font dalam dokumen PDF terjadi saat font yang digunakan dalam dokumen tidak tersedia atau tertanam dalam berkas. Dalam kasus seperti itu, penampil atau pencetak mengganti font yang hilang dengan font serupa yang tersedia di sistem. Penggantian font dapat memengaruhi tampilan dan tata letak dokumen.
+### Bagaimana cara mencegah pergantian font?
+Untuk mencegah penggantian font, pastikan semua font yang digunakan dalam PDF Anda tertanam dalam dokumen.
 
-#### T: Mengapa substitusi font penting untuk dideteksi?
+### Dapatkah saya menggunakan Aspose.PDF secara gratis?
+Ya, Aspose.PDF menawarkan uji coba gratis yang dapat Anda gunakan untuk menguji fitur-fiturnya.
 
-J: Penggantian font penting untuk dideteksi karena dapat memengaruhi ketepatan visual dan tata letak dokumen PDF. Mendeteksi peringatan penggantian font memungkinkan pengembang mengidentifikasi situasi saat font diganti dan mengambil tindakan yang tepat untuk memastikan tampilan visual dokumen konsisten di berbagai sistem.
+### Di mana saya dapat menemukan dokumentasi lebih lanjut?
+ Anda dapat menemukan dokumentasi terperinci di Aspose.PDF untuk .NET[Di Sini](https://reference.aspose.com/pdf/net/).
 
-#### T: Bagaimana cara menangani peringatan penggantian font?
-
- A: Anda dapat menangani peringatan penggantian font dengan berlangganan`FontSubstitution` acara dari`Document` kelas dan menyediakan metode khusus untuk menangani peristiwa tersebut. Dalam metode khusus ini, Anda dapat mencatat peringatan penggantian font, memberi tahu pengguna, atau mengambil tindakan lain berdasarkan persyaratan aplikasi Anda.
-
-#### T: Dapatkah saya menyesuaikan penanganan peringatan penggantian font?
-
- A: Ya, Anda dapat menyesuaikan penanganan peringatan penggantian font dengan menyediakan metode khusus untuk menanganinya`FontSubstitution`event. Dalam metode kustom ini, Anda dapat mencatat peringatan penggantian font, memberi tahu pengguna, atau mengambil tindakan lain yang sesuai berdasarkan persyaratan aplikasi Anda.
+### Bagaimana cara mendapatkan dukungan untuk Aspose.PDF?
+ Anda bisa mendapatkan dukungan dengan mengunjungi[Forum dukungan Aspose](https://forum.aspose.com/c/pdf/10).

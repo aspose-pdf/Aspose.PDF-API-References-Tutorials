@@ -2,7 +2,7 @@
 title: Frissítse a gyermekkönyvjelzőket PDF-fájlban
 linktitle: Frissítse a gyermekkönyvjelzőket PDF-fájlban
 second_title: Aspose.PDF for .NET API Reference
-description: Ebből a lépésenkénti útmutatóból megtudhatja, hogyan frissítheti a gyermekkönyvjelzőket PDF-fájlokban az Aspose.PDF for .NET használatával. Javítsa a PDF navigációt.
+description: Ebből a lépésről lépésre szóló útmutatóból megtudhatja, hogyan frissítheti a gyermekkönyvjelzőket PDF-fájlokban az Aspose.PDF for .NET használatával. Javítsa a PDF navigációt.
 type: docs
 weight: 110
 url: /hu/net/programming-with-bookmarks/update-child-bookmarks/

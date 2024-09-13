@@ -2,7 +2,7 @@
 title: Ajouter une image au PDF à l'aide de Java
 linktitle: Ajouter une image au PDF à l'aide de Java
 second_title: API de traitement PDF Java Aspose.PDF
-description: Découvrez comment ajouter des images à des fichiers PDF à l'aide de Java grâce à notre guide étape par étape. Améliorez vos documents PDF avec des éléments visuels sans effort.
+description: Découvrez comment ajouter des images à des PDF à l'aide de Java grâce à notre guide étape par étape. Améliorez vos documents PDF avec des éléments visuels sans effort.
 type: docs
 weight: 10
 url: /fr/java/pdf-image-manipulation/add-image-to-pdf-using-java/

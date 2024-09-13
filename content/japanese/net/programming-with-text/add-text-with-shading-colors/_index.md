@@ -150,7 +150,7 @@ textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 
 #### Q: 変更したテキストに追加のテキスト書式を適用できますか?
 
- A: はい、ステップ7では、テキストのプロパティを変更することで、下線などの追加のテキスト書式を適用できます。`TextState`物体：
+A: はい、ステップ7では、テキストのプロパティを変更することで、下線などの追加のテキスト書式を適用できます。`TextState`物体：
 
 ```csharp
 textFragment.TextState.Underline = true;

@@ -38,14 +38,14 @@ Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
 ## चरण 5: दस्तावेज़ में एक पृष्ठ जोड़ें
- दस्तावेज़ में एक नया पृष्ठ जोड़ने के लिए निम्न का उपयोग करें:`Add` की विधि`Pages`संग्रह। प्रदान किए गए कोड में, नया पृष्ठ चर को सौंपा गया है`page`.
+ दस्तावेज़ में एक नया पृष्ठ जोड़ने के लिए निम्न का उपयोग करें:`Add` की विधि`Pages` संग्रह। प्रदान किए गए कोड में, नया पृष्ठ चर को सौंपा गया है`page`.
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
 ## चरण 6: बाद की पंक्तियों के इंडेंट के साथ एक टेक्स्टफ़्रेगमेंट बनाएँ
- एक उदाहरण बनाना`TextFragment` ऑब्जेक्ट और वांछित पाठ प्रदान करें। प्रदान किए गए कोड में, पाठ को चर को सौंपा गया है`text` . फिर, आरंभ करें`TextFormattingOptions` के लिए`TextFragment`और निर्दिष्ट करें`SubsequentLinesIndent` कीमत।
+ एक उदाहरण बनाना`TextFragment` ऑब्जेक्ट और वांछित पाठ प्रदान करें। प्रदान किए गए कोड में, पाठ को चर को सौंपा गया है`text` . फिर, आरंभ करें`TextFormattingOptions` के लिए`TextFragment` और निर्दिष्ट करें`SubsequentLinesIndent` कीमत।
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
@@ -91,7 +91,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = document.Pages.Add();
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-// पाठ खंड के लिए TextFormattingOptions आरंभ करें और SubsequentLinesIndent मान निर्दिष्ट करें
+//पाठ खंड के लिए TextFormattingOptions आरंभ करें और SubsequentLinesIndent मान निर्दिष्ट करें
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
 	SubsequentLinesIndent = 20
@@ -148,7 +148,7 @@ Aspose.Pdf.Page page = document.Pages.Add();
 
 #### प्रश्न: मैं पाठ में अगली पंक्तियों का इंडेंट कैसे जोड़ सकता हूँ?
 
- उत्तर: चरण 6 में, आप एक बनाएंगे`TextFragment` ऑब्जेक्ट चुनें और उसे मनचाहा टेक्स्ट असाइन करें। फिर, आप आरंभ करेंगे`TextFormattingOptions` के लिए`TextFragment`और निर्दिष्ट करें`SubsequentLinesIndent` कीमत:
+ उत्तर: चरण 6 में, आप एक बनाएंगे`TextFragment` ऑब्जेक्ट चुनें और उसे मनचाहा टेक्स्ट असाइन करें। फिर, आप आरंभ करेंगे`TextFormattingOptions` के लिए`TextFragment` और निर्दिष्ट करें`SubsequentLinesIndent` कीमत:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
@@ -168,7 +168,7 @@ page.Paragraphs.Add(text);
 
 #### प्रश्न: क्या मैं अतिरिक्त लाइनों के लिए प्रक्रिया दोहरा सकता हूँ?
 
- उत्तर: हां, चरण 8 में, आप नई इंडेंट बनाकर समान इंडेंट वाली अतिरिक्त पंक्तियों के लिए प्रक्रिया को दोहरा सकते हैं।`TextFragment` ऑब्जेक्ट्स को चुनना और उन्हें पृष्ठ के पैराग्राफ संग्रह में जोड़ना।
+उत्तर: हां, चरण 8 में, आप नई इंडेंट बनाकर समान इंडेंट वाली अतिरिक्त पंक्तियों के लिए प्रक्रिया को दोहरा सकते हैं।`TextFragment` ऑब्जेक्ट्स को चुनना और उन्हें पृष्ठ के पैराग्राफ संग्रह में जोड़ना।
 
 #### प्रश्न: मैं परिणामी पीडीएफ दस्तावेज़ को कैसे सहेजूँ?
 

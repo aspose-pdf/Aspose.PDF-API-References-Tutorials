@@ -2,139 +2,149 @@
 title: Ορισμός λεζάντας κουμπιού ραδιοφώνου
 linktitle: Ορισμός λεζάντας κουμπιού ραδιοφώνου
 second_title: Aspose.PDF για Αναφορά API .NET
-description: Μάθετε πώς να χρησιμοποιείτε το Aspose.PDF για .NET για να ορίσετε τη λεζάντα για ένα κουμπί επιλογής σε μορφή PDF.
+description: Μάθετε πώς να ορίζετε λεζάντες κουμπιών επιλογής σε αρχεία PDF χρησιμοποιώντας το Aspose.PDF για .NET. Αυτός ο οδηγός βήμα προς βήμα σάς καθοδηγεί στη φόρτωση, την τροποποίηση και την αποθήκευση των φορμών PDF σας.
 type: docs
 weight: 280
 url: /el/net/programming-with-forms/set-radio-button-caption/
 ---
-Σε αυτόν τον οδηγό, θα εξηγήσουμε βήμα προς βήμα πώς να χρησιμοποιήσετε τη βιβλιοθήκη Aspose.PDF για .NET για να ορίσετε τη λεζάντα ενός κουμπιού επιλογής σε μορφή PDF. Θα σας δείξουμε πώς να αποκτήσετε πρόσβαση στο πεδίο του κουμπιού επιλογής, να δημιουργήσετε μια νέα επιλογή κουμπιού επιλογής και να προσαρμόσετε τη λεζάντα του κουμπιού.
+## Εισαγωγή
 
-## Βήμα 1: Διαμόρφωση του καταλόγου εγγράφων
+Αν ασχολείστε με τη χειραγώγηση PDF με το Aspose.PDF για .NET, είστε έτοιμοι! Σήμερα, εστιάζουμε σε ένα πρακτικό χαρακτηριστικό: να ορίσετε λεζάντες κουμπιών επιλογής στις φόρμες PDF σας. Τα κουμπιά επιλογής είναι απαραίτητα για φόρμες χρηστών όπου χρειάζεστε μια επιλογή από ένα σύνολο επιλογών. Φανταστείτε τις ως ερωτήσεις πολλαπλής επιλογής όπου επιτρέπεται μόνο μία απάντηση. Αυτό το σεμινάριο θα σας καθοδηγήσει στη διαδικασία ενημέρωσης λεζάντας κουμπιών επιλογής σε μορφή PDF, ώστε τα έγγραφά σας να είναι τόσο διαδραστικά όσο και φιλικά προς το χρήστη. 
 
- Το πρώτο βήμα είναι να διαμορφώσετε τον κατάλογο εγγράφων όπου βρίσκεται η φόρμα PDF στην οποία θέλετε να εργαστείτε. Μπορείτε να χρησιμοποιήσετε το`dataDir` μεταβλητή για να καθορίσετε τη διαδρομή καταλόγου.
+## Προαπαιτούμενα
+
+Πριν βουτήξετε στον κώδικα, υπάρχουν μερικά πράγματα που θα χρειαστείτε για να βεβαιωθείτε ότι έχετε:
+
+1. Aspose.PDF για .NET: Βεβαιωθείτε ότι έχετε εγκαταστήσει τη βιβλιοθήκη Aspose.PDF. Αυτή η βιβλιοθήκη θα σας βοηθήσει να χειριστείτε αρχεία PDF μέσω προγραμματισμού.
+2. Περιβάλλον ανάπτυξης: Θα πρέπει να έχετε ρυθμίσει ένα περιβάλλον ανάπτυξης .NET, όπως το Visual Studio.
+3. Δείγμα φόρμας PDF: Για αυτό το σεμινάριο, θα χρειαστείτε ένα δείγμα φόρμας PDF με κουμπιά επιλογής. Μπορείτε να χρησιμοποιήσετε οποιαδήποτε υπάρχουσα φόρμα PDF ή να δημιουργήσετε μια νέα με κουμπιά επιλογής.
+4. Βασικές γνώσεις C#: Αυτός ο οδηγός προϋποθέτει ότι έχετε βασική κατανόηση των εννοιών προγραμματισμού C# και .NET.
+
+ Εάν δεν έχετε εγκαταστήσει ακόμα το Aspose.PDF για .NET ή χρειάζεστε μια προσωρινή άδεια χρήσης, μπορείτε[κατεβάστε το εδώ](https://releases.aspose.com/pdf/net/) ή[να πάρει προσωρινή άδεια](https://purchase.aspose.com/temporary-license/).
+
+## Εισαγωγή πακέτων
+
+Για να ξεκινήσετε, πρέπει να εισαγάγετε τα απαραίτητα πακέτα στο έργο σας C#. Δείτε πώς μπορείτε να συμπεριλάβετε τη βιβλιοθήκη Aspose.PDF:
 
 ```csharp
-// Η διαδρομή προς τον κατάλογο εγγράφων.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using Aspose.Pdf.Forms;
+using System.Collections.Generic;
+using Aspose.Pdf.Text;
 ```
 
- Φροντίστε να αντικαταστήσετε`"YOUR DOCUMENTS DIRECTORY"` με την πραγματική διαδρομή προς τον κατάλογο των εγγράφων σας.
+Βεβαιωθείτε ότι έχετε προσθέσει αυτά τα πακέτα στο έργο σας μέσω του NuGet ή της μεθόδου που προτιμάτε.
 
-## Βήμα 2: Φόρτωση της φόρμας πηγής PDF
+## Βήμα 1: Φορτώστε τη φόρμα PDF
 
- Σε αυτό το βήμα, θα φορτώσουμε τη φόρμα πηγής PDF χρησιμοποιώντας το`Aspose.Pdf.Facades.Form` κλάση του Aspose.PDF.
-
-```csharp
-Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
-```
-
-Βεβαιωθείτε ότι το αρχείο PDF που περιέχει τη φόρμα υπάρχει στον καθορισμένο κατάλογο εγγράφων.
-
-## Βήμα 3: Επεξεργασία της λεζάντας του κουμπιού επιλογής
-
-Θα κάνουμε κύκλο στα ονόματα των πεδίων της φόρμας και θα αναζητήσουμε πεδία κουμπιών επιλογής. Εάν βρεθεί ένα αντίστοιχο πεδίο, θα δημιουργήσουμε μια νέα επιλογή κουμπιού επιλογής με προσαρμοσμένη λεζάντα και θα την προσθέσουμε στο υπάρχον πεδίο.
+ Πρώτα, πρέπει να φορτώσετε τη φόρμα PDF που περιέχει τα κουμπιά επιλογής. Ο`Aspose.Pdf.Facades.Form`κλάση χρησιμοποιείται για το σκοπό αυτό. Δείτε πώς το κάνετε:
 
 ```csharp
-foreach(var item in form1.FieldNames)
-{
-if (item.Contains("radio1"))
-{
-Aspose.Pdf.Forms.RadioButtonField field0 = PDF_Template_PDF_HTML.Form[item] as Aspose.Pdf.Forms.RadioButtonField;
-Aspose.Pdf.Forms.RadioButtonOptionField fieldoption = new Aspose.Pdf.Forms.RadioButtonOptionField();
-fieldoption.OptionName = "Yes";
-fieldoption.PartialName = "Yesname";
-var updatedFragment = new Aspose.Pdf.Text.TextFragment("test123");
-updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
-updatedFragment.TextState.FontSize = 10;
-updatedFragment.TextState.LineSpacing = 6.32f;
-// Δημιουργήστε ένα αντικείμενο TextParagraph
-TextParagraph par = new TextParagraph();
-// Ορισμός θέσης παραγράφου
-par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
-// Καθορίστε τη λειτουργία αναδίπλωσης λέξης
-by.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
-// Προσθέστε το νέο TextFragment στην παράγραφο
-par.AppendLine(updatedFragment);
-// Προσθέστε το TextParagraph χρησιμοποιώντας το TextBuilder
-TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
-textBuilder.AppendParagraph(par);
-field0.DeleteOption("item1");
-}
-}
-```
-
-Προσαρμόστε το κουμπί επιλογής υπότιτλων και άλλες ρυθμίσεις όπως απαιτείται.
-
-## Βήμα 4: Αποθήκευση του PDF που προκύπτει
-
- Τώρα που τελειώσαμε με την τροποποίηση της λεζάντας του κουμπιού επιλογής, μπορούμε να αποθηκεύσουμε το PDF που προκύπτει χρησιμοποιώντας το`Save` μέθοδος του`Document` τάξη.
-
-```csharp
-PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
-```
-
-Βεβαιωθείτε ότι έχετε καθορίσει την πλήρη διαδρομή και το όνομα αρχείου για το PDF που προκύπτει.
-
-### Δείγμα πηγαίου κώδικα για Ορισμός λεζάντας κουμπιού ραδιοφώνου χρησιμοποιώντας το Aspose.PDF για .NET 
-```csharp
-// Η διαδρομή προς τον κατάλογο εγγράφων.
+// Καθορίστε τη διαδρομή προς τον κατάλογο εγγράφων σας
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Φόρτωση φόρμας πηγής PDF
+
+// Φορτώστε τη φόρμα πηγής PDF
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
 Document PDF_Template_PDF_HTML = new Document(dataDir + "RadioButtonField.pdf");
+```
+
+Σε αυτό το απόσπασμα κώδικα:
+- `dataDir` καθορίζει τη διαδρομή όπου βρίσκεται το PDF σας.
+- `Form` Η κλάση χρησιμοποιείται για την αλληλεπίδραση με τα πεδία φόρμας μέσα στο PDF.
+- `Document` class παρέχει πρόσβαση στις σελίδες του εγγράφου PDF.
+
+## Βήμα 2: Επανάληψη μέσω των πεδίων κουμπιού ραδιοφώνου
+
+Στη συνέχεια, θα χρειαστεί να επαναλάβετε τα πεδία στη φόρμα σας για να αναγνωρίσετε και να χειριστείτε τα πεδία του κουμπιού επιλογής:
+
+```csharp
 foreach (var item in form1.FieldNames)
 {
-	Console.WriteLine(item.ToString());
-	Dictionary<string, string> radioOptions = form1.GetButtonOptionValues(item);
-	if (item.Contains("radio1"))
-	{
-		Aspose.Pdf.Forms.RadioButtonField field0 = PDF_Template_PDF_HTML.Form[item] as Aspose.Pdf.Forms.RadioButtonField;
-		Aspose.Pdf.Forms.RadioButtonOptionField fieldoption = new Aspose.Pdf.Forms.RadioButtonOptionField();
-		fieldoption.OptionName = "Yes";
-		fieldoption.PartialName = "Yesname";
-		var updatedFragment = new Aspose.Pdf.Text.TextFragment("test123");
-		updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
-		updatedFragment.TextState.FontSize = 10;
-		updatedFragment.TextState.LineSpacing = 6.32f;
-		// Δημιουργία αντικειμένου TextParagraph
-		TextParagraph par = new TextParagraph();
-		// Ορισμός θέσης παραγράφου
-		par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
-		// Καθορίστε τη λειτουργία αναδίπλωσης λέξης
-		par.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
-		// Προσθήκη νέου TextFragment στην παράγραφο
-		par.AppendLine(updatedFragment);
-		// Προσθέστε το TextParagraph χρησιμοποιώντας το TextBuilder
-		TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
-		textBuilder.AppendParagraph(par);
-		field0.DeleteOption("item1");
-	}
+    Console.WriteLine(item.ToString());
+    Dictionary<string, string> radioOptions = form1.GetButtonOptionValues(item);
+```
+
+Σε αυτόν τον βρόχο:
+- `FieldNames` παρέχει μια λίστα με όλα τα ονόματα πεδίων στο PDF.
+- `GetButtonOptionValues(item)` ανακτά τις διαθέσιμες επιλογές για κάθε κουμπί επιλογής.
+
+## Βήμα 3: Τροποποίηση επιλογών κουμπιού ραδιοφώνου
+
+ Αφού προσδιορίσετε τα πεδία των κουμπιών επιλογής, μπορείτε να τροποποιήσετε τις επιλογές τους. Για αυτό, πρέπει να πετάξετε το πεδίο σε`RadioButtonField` και ενημερώστε τις επιλογές του:
+
+```csharp
+    if (item.Contains("radio1"))
+    {
+        Aspose.Pdf.Forms.RadioButtonField field0 = PDF_Template_PDF_HTML.Form[item] as Aspose.Pdf.Forms.RadioButtonField;
+        Aspose.Pdf.Forms.RadioButtonOptionField fieldoption = new Aspose.Pdf.Forms.RadioButtonOptionField();
+        fieldoption.OptionName = "Yes";
+        fieldoption.PartialName = "Yesname";
+```
+
+Εδώ:
+- Ελέγχουμε αν το όνομα του πεδίου περιέχει "radio1" για να προσδιορίσουμε το συγκεκριμένο πεδίο κουμπιού επιλογής που θέλουμε να τροποποιήσουμε.
+- `RadioButtonField`μεταδίδεται από τα πεδία φόρμας για να γίνουν συγκεκριμένες τροποποιήσεις.
+
+## Βήμα 4: Ορίστε τη λεζάντα για το κουμπί ραδιοφώνου
+
+ Για να ορίσετε ή να ενημερώσετε τη λεζάντα για το κουμπί επιλογής, θα χρειαστεί να δημιουργήσετε ένα`TextFragment` και χρήση`TextBuilder` για να το τοποθετήσετε στην επιθυμητή θέση:
+
+```csharp
+        var updatedFragment = new Aspose.Pdf.Text.TextFragment("test123");
+        updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
+        updatedFragment.TextState.FontSize = 10;
+        updatedFragment.TextState.LineSpacing = 6.32f;
+
+        // Δημιουργία αντικειμένου TextParagraph
+        TextParagraph par = new TextParagraph();
+        // Ορισμός θέσης παραγράφου
+        par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
+        // Καθορίστε τη λειτουργία αναδίπλωσης λέξης
+        par.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
+        // Προσθήκη νέου TextFragment στην παράγραφο
+        par.AppendLine(updatedFragment);
+        // Προσθέστε το TextParagraph χρησιμοποιώντας το TextBuilder
+        TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
+        textBuilder.AppendParagraph(par);
+```
+
+Σε αυτό το μέρος:
+- `TextFragment` χρησιμοποιείται για τον ορισμό του κειμένου και της εμφάνισής του.
+- `TextParagraph` βοηθά στη θέση και τη μορφοποίηση του κειμένου.
+- `TextBuilder` προσθέτει το κείμενο στην καθορισμένη σελίδα του PDF.
+
+## Βήμα 5: Αποθηκεύστε το ενημερωμένο PDF
+
+Τέλος, αποθηκεύστε το ενημερωμένο PDF σε ένα νέο αρχείο:
+
+```csharp
+        field0.DeleteOption("item1");
+    }
 }
 PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 ```
+
+Αυτό θα εξασφαλίσει ότι:
+- Οι αλλαγές εφαρμόζονται στο PDF.
+- Η αρχική επιλογή κουμπιού επιλογής καταργείται όπως έχει καθοριστεί.
 
 ## Σύναψη
 
-Σε αυτόν τον οδηγό, μάθαμε πώς να χρησιμοποιούμε τη βιβλιοθήκη Aspose.PDF για .NET για να ορίσουμε τη λεζάντα για ένα κουμπί επιλογής σε μορφή PDF. Ακολουθώντας τα βήματα που περιγράφονται, μπορείτε να προσαρμόσετε τις επιλογές του κουμπιού επιλογής και να αλλάξετε τη λεζάντα όπως απαιτείται. Μη διστάσετε να εξερευνήσετε περαιτέρω τις δυνατότητες του Aspose.PDF για .NET για να επεκτείνετε τις δυνατότητες χειρισμού αρχείων PDF.
+Η τροποποίηση υπότιτλων κουμπιών επιλογής σε μορφή PDF χρησιμοποιώντας το Aspose.PDF για .NET μπορεί να βελτιώσει σημαντικά τη διαδραστικότητα και τη χρηστικότητα των εγγράφων σας. Με τα βήματα που περιγράφονται σε αυτό το σεμινάριο, μπορείτε εύκολα να φορτώσετε ένα PDF, να ενημερώσετε τις επιλογές του κουμπιού επιλογής και να αποθηκεύσετε τις αλλαγές σας. Αυτή η προσέγγιση είναι εύχρηστη για τη διαχείριση φόρμας και διασφαλίζει ότι τα PDF σας ανταποκρίνονται ακριβώς στις ανάγκες των χρηστών σας. Βουτήξτε στο Aspose.PDF και εξερευνήστε τις δυνατότητές του για άλλους χειρισμούς PDF!
 
-### Συχνές ερωτήσεις
+## Συχνές ερωτήσεις
 
-#### Ε: Μπορώ να χρησιμοποιήσω το Aspose.PDF για .NET για να ορίσω λεζάντες για κουμπιά επιλογής σε μορφή PDF;
+### Μπορώ να ενημερώσω πολλά πεδία κουμπιών επιλογής ταυτόχρονα;
+Ναι, μπορείτε να επαναλάβετε όλα τα πεδία των κουμπιών επιλογής και να εφαρμόσετε αλλαγές όπως απαιτείται.
 
-Α: Ναι, μπορείτε να χρησιμοποιήσετε το Aspose.PDF για .NET για να ορίσετε λεζάντες για κουμπιά επιλογής σε μορφή PDF. Το παρεχόμενο δείγμα πηγαίου κώδικα δείχνει πώς μπορείτε να αποκτήσετε πρόσβαση στο πεδίο κουμπιού επιλογής, να δημιουργήσετε μια νέα επιλογή κουμπιού επιλογής με προσαρμοσμένη λεζάντα και να ενημερώσετε το υπάρχον πεδίο.
+### Χρειάζομαι άδεια χρήσης για να χρησιμοποιήσω το Aspose.PDF;
+ Μπορείτε να ξεκινήσετε με μια δωρεάν δοκιμή, αλλά απαιτείται άδεια για εκτεταμένη χρήση.[Πάρτε άδεια εδώ](https://purchase.aspose.com/buy).
 
-#### Ε: Πώς μπορώ να προσαρμόσω την εμφάνιση της λεζάντας του κουμπιού επιλογής, όπως το μέγεθος και το χρώμα της γραμματοσειράς;
+### Πώς μπορώ να δοκιμάσω τις αλλαγές πριν αποθηκεύσω το PDF;
+Μπορείτε να κάνετε προεπισκόπηση του PDF στο περιβάλλον ανάπτυξης ή να χρησιμοποιήσετε ένα πρόγραμμα προβολής PDF για να ελέγξετε τις τροποποιήσεις.
 
- Α: Μπορείτε να προσαρμόσετε την εμφάνιση της λεζάντας του κουμπιού επιλογής προσαρμόζοντας τις ιδιότητες του`TextFragment` χρησιμοποιείται για τη λεζάντα. Για παράδειγμα, μπορείτε να ορίσετε τη γραμματοσειρά, το μέγεθος της γραμματοσειράς, το χρώμα, το διάστιχο και άλλες επιλογές μορφοποίησης κειμένου.
+### Είναι το Aspose.PDF συμβατό με όλες τις εκδόσεις του .NET;
+Το Aspose.PDF υποστηρίζει διάφορες εκδόσεις του .NET. Βεβαιωθείτε ότι έχετε ελέγξει τη συμβατότητα με τη συγκεκριμένη έκδοση .NET.
 
-#### Ε: Είναι δυνατή η προσθήκη πολλαπλών επιλογών κουμπιών επιλογής με διαφορετικούς υπότιτλους σε μία ομάδα κουμπιών επιλογής;
-
-Α: Ναι, μπορείτε να προσθέσετε πολλές επιλογές κουμπιών επιλογής με διαφορετικούς υπότιτλους σε μία ομάδα κουμπιών επιλογής. Κάθε επιλογή θα αντιπροσωπεύει μια διαφορετική επιλογή και οι χρήστες μπορούν να επιλέξουν μόνο μία επιλογή από την ομάδα.
-
-#### Ε: Μπορώ να χρησιμοποιήσω το Aspose.PDF για .NET για να τροποποιήσω άλλα πεδία φόρμας σε ένα έγγραφο PDF;
-
-Α: Ναι, το Aspose.PDF για .NET παρέχει ένα ολοκληρωμένο σύνολο δυνατοτήτων για τον χειρισμό διαφόρων πεδίων φόρμας σε ένα έγγραφο PDF, όπως πεδία κειμένου, πλαίσια ελέγχου, αναπτυσσόμενες λίστες και άλλα. Μπορείτε να χρησιμοποιήσετε τη βιβλιοθήκη για να ορίσετε τιμές, να τροποποιήσετε εμφανίσεις και να προσθέσετε διαδραστικότητα σε πεδία σχηματισμού.
-
-#### Ε: Υποστηρίζει το Aspose.PDF για .NET την εργασία με αρχεία PDF που δημιουργούνται από άλλες πηγές, όπως σαρωμένα έγγραφα;
-
-Α: Ναι, το Aspose.PDF για .NET υποστηρίζει την εργασία με αρχεία PDF που δημιουργούνται από διάφορες πηγές, συμπεριλαμβανομένων των σαρωμένων εγγράφων. Η βιβλιοθήκη παρέχει δυνατότητες OCR (Optical Character Recognition) για εξαγωγή κειμένου από σαρωμένα PDF και χειρισμό του περιεχομένου μέσω προγραμματισμού.
+### Μπορώ να χειριστώ παρόμοια πεδία φόρμας;
+Ναι, παρόμοιες τεχνικές μπορούν να εφαρμοστούν σε άλλους τύπους πεδίων φόρμας σε έγγραφα PDF.

@@ -7,7 +7,7 @@ type: docs
 weight: 210
 url: /zh-hant/net/programming-with-tagged-pdf/tag-image-in-existing-pdf/
 ---
-在這個詳細的教學中，我們將引導您逐步完成所提供的 C# 原始程式碼，以使用 Aspose.PDF for .NET 在現有 PDF 中標記圖像。請按照以下說明了解如何在 PDF 中的圖像中新增標籤。
+在本詳細教學中，我們將引導您逐步完成所提供的 C# 原始程式碼，以使用 Aspose.PDF for .NET 在現有 PDF 中標記圖像。請按照以下說明了解如何在 PDF 中的圖像中新增標籤。
 
 ## 第一步：建構環境
 
@@ -159,7 +159,7 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 #### Q：本教學關於使用 Aspose.PDF for .NET 在現有 PDF 中標記影像的主要目標是什麼？
 
-答：本教學的主要目標是引導您完成使用 Aspose.PDF for .NET 在現有 PDF 文件中標記圖像的過程。本教學提供逐步說明和 C# 原始程式碼範例，幫助您了解如何在圖像中分配替代文字和邊框、移動文件中的元素以及向圖像添加標籤。
+答：本教學的主要目標是引導您完成使用 Aspose.PDF for .NET 在現有 PDF 文件中標記圖像的過程。本教學提供逐步說明和 C# 原始程式碼範例，幫助您了解如何在圖像中分配替代文字和邊框、移動文件中的元素以及在圖像上新增標籤。
 
 #### Q：學習本教學使用 Aspose.PDF for .NET 在 PDF 中標記影像有哪些先決條件？
 

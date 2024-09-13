@@ -9,7 +9,7 @@ url: /de/net/document-conversion/pdf-to-xps/
 ---
 ## Einführung
 
-In der heutigen digitalen Welt ist die Notwendigkeit, Dokumente von einem Format in ein anderes zu konvertieren, üblicher denn je. Egal, ob Sie Entwickler sind und die Dokumentenverarbeitung in Ihre Anwendung integrieren möchten, oder Geschäftsleute, die Dateien in einem allgemein akzeptierten Format teilen müssen, das Wissen, wie man PDF-Dateien in XPS (XML Paper Specification) konvertiert, kann unglaublich nützlich sein. In diesem Tutorial tauchen wir in den Prozess der Konvertierung von PDF in XPS mithilfe der leistungsstarken Aspose.PDF-Bibliothek für .NET ein.
+In der heutigen digitalen Welt ist die Notwendigkeit, Dokumente von einem Format in ein anderes zu konvertieren, üblicher denn je. Egal, ob Sie ein Entwickler sind, der die Dokumentenverarbeitung in seine Anwendung integrieren möchte, oder ein Geschäftsmann, der Dateien in einem allgemein akzeptierten Format teilen muss, das Wissen, wie man PDF-Dateien in XPS (XML Paper Specification) konvertiert, kann unglaublich nützlich sein. In diesem Tutorial tauchen wir in den Prozess der Konvertierung von PDF in XPS mithilfe der leistungsstarken Aspose.PDF-Bibliothek für .NET ein.
 
 ## Voraussetzungen
 

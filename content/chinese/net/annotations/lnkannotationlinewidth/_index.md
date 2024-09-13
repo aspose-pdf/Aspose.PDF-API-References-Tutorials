@@ -113,7 +113,7 @@ border.Style = BorderStyle.Solid;
 doc.Pages[1].Annotations.Add(a1);
 ```
 
-在这里，我们创建一个`Border`注释的对象，设置其宽度、效果、虚线图案和样式。此步骤可确保注释在 PDF 页面上的视觉效果突出。
+在这里，我们创建一个`Border`注释对象，设置其宽度、效果、虚线图案和样式。此步骤可确保注释在 PDF 页面上的视觉效果突出。
 
 ## 步骤 6：保存 PDF 文档
 

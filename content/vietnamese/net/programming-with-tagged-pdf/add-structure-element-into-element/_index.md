@@ -114,7 +114,7 @@ Mã này lưu tài liệu PDF có các thành phần có cấu trúc vào một 
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
 string logFile = dataDir + "46144_log.xml";
-// Tạo tài liệu và nhận nội dung PDF được gắn thẻ
+//Tạo tài liệu và nhận nội dung PDF được gắn thẻ
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 // Thiết lập Tiêu đề và Ngôn ngữ Bản chất cho tài liệu
@@ -209,7 +209,7 @@ A: Việc tạo cấu trúc phân cấp trong tài liệu PDF giúp tăng khả 
 
 #### H: Làm thế nào tôi có thể xác thực tính tuân thủ PDF/UA sau khi thêm các thành phần cấu trúc?
 
- A: Mã được cung cấp trong hướng dẫn này trình bày cách xác thực sự tuân thủ PDF/UA bằng cách sử dụng`Validate` phương pháp. Bằng cách xác thực tài liệu theo tiêu chuẩn PDF/UA, bạn có thể đảm bảo rằng các thành phần cấu trúc được thêm vào tuân thủ các nguyên tắc về khả năng truy cập.
+A: Mã được cung cấp trong hướng dẫn này trình bày cách xác thực sự tuân thủ PDF/UA bằng cách sử dụng`Validate` phương pháp. Bằng cách xác thực tài liệu theo tiêu chuẩn PDF/UA, bạn có thể đảm bảo rằng các thành phần cấu trúc được thêm vào tuân thủ các nguyên tắc về khả năng truy cập.
 
 #### H: Tôi có thể sử dụng cách tiếp cận này để thêm các thành phần cấu trúc vào tài liệu PDF hiện có không?
 

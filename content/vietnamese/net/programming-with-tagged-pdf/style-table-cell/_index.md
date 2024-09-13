@@ -35,7 +35,7 @@ Chúng tôi đã tạo một tài liệu mới và đặt tiêu đề và ngôn 
 Ở bước này, chúng ta sẽ lấy phần tử cấu trúc gốc cho tài liệu của mình.
 
 ```csharp
-//Lấy phần tử cấu trúc gốc
+// Lấy phần tử cấu trúc gốc
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
@@ -293,7 +293,7 @@ A: Trước khi bắt đầu, hãy đảm bảo rằng bạn đã cài đặt As
 
 #### H: Làm thế nào để tạo một tài liệu PDF mới bằng Aspose.PDF cho .NET?
 
-A: Để tạo một tài liệu PDF mới, bạn cần phải khởi tạo một`Document` đối tượng từ thư viện Aspose.PDF. Mã nguồn C# được cung cấp sẽ trình bày cách tạo tài liệu và thiết lập tiêu đề cũng như ngôn ngữ của tài liệu đó.
+ A: Để tạo một tài liệu PDF mới, bạn cần phải khởi tạo một`Document` đối tượng từ thư viện Aspose.PDF. Mã nguồn C# được cung cấp sẽ trình bày cách tạo tài liệu và thiết lập tiêu đề cũng như ngôn ngữ của tài liệu đó.
 
 #### H: Tầm quan trọng của phần tử cấu trúc gốc trong tài liệu PDF là gì?
 

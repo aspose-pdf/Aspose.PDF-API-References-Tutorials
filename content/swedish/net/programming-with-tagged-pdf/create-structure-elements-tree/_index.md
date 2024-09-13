@@ -1,7 +1,7 @@
 ---
 title: Skapa strukturelementträd
 linktitle: Skapa strukturelementträd
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Skapa en struktur av trädelement med Aspose.PDF för .NET. Steg för steg guide för att skapa ett strukturerat PDF-dokument.
 type: docs
 weight: 70
@@ -152,7 +152,7 @@ S: Genom att skapa en struktur av trädelement i ett PDF-dokument med Aspose.PDF
 
 S: Kodexemplet visar hur man skapar en hierarkisk struktur av logiska element med hjälp av`SectElement`, `DivElement` , och`ArtElement` klasser tillhandahållna av Aspose.PDF. Dessa element är organiserade som överordnade och underordnade noder och bildar en trädliknande struktur i dokumentet.
 
-####  F: Hur fungerar`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
+#### F: Hur fungerar`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
 
  A: Den`TaggedContent` egenskapen ger tillgång till de taggade innehållsfunktionerna i PDF-dokumentet. Detta låter dig skapa och manipulera strukturerade element, definiera deras relationer och organisera dem hierarkiskt, vilket förbättrar dokumentets struktur och tillgänglighet.
 
@@ -168,7 +168,7 @@ S: Kodexemplet visar hur man skapar en hierarkisk struktur av logiska element me
 
 S: Att organisera element hierarkiskt förbättrar dokumentorganisation, navigering och semantik. Det låter användare och hjälpmedelstekniker förstå innehållets struktur och relationer, vilket förbättrar den övergripande användarupplevelsen.
 
-####  F: Hur fungerar`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
+#### F: Hur fungerar`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
 
  A: Den`Save` metoden sparar PDF-dokumentet tillsammans med den hierarkiska strukturen som skapats med hjälp av`AppendChild` metod. Detta säkerställer att strukturen förblir intakt, vilket gör dokumentet tillgängligt och välorganiserat.
 

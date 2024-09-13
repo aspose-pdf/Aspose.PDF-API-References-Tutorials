@@ -139,7 +139,7 @@ NoteElement noteElement = taggedContent.CreateNoteElement();
 // Δημιουργία Στοιχείων Δομής Εικονογράφησης
 FigureElement figureElement = taggedContent.CreateFigureElement();
 FormulaElement formulaElement = taggedContent.CreateFormulaElement();
-// Οι μέθοδοι είναι υπό ανάπτυξη
+// Οι μέθοδοι βρίσκονται υπό ανάπτυξη
 ListElement listElement = taggedContent.CreateListElement();
 TableElement tableElement = taggedContent.CreateTableElement();
 ReferenceElement referenceElement = taggedContent.CreateReferenceElement();

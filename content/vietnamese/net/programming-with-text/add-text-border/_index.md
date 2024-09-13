@@ -38,14 +38,14 @@ Document pdfDocument = new Document();
 ```
 
 ## Bước 5: Thêm một trang vào tài liệu
- Thêm một trang mới vào tài liệu bằng cách sử dụng`Add` phương pháp của`Pages`bộ sưu tập. Trong mã được cung cấp, trang mới được gán cho biến`pdfPage`.
+ Thêm một trang mới vào tài liệu bằng cách sử dụng`Add` phương pháp của`Pages` bộ sưu tập. Trong mã được cung cấp, trang mới được gán cho biến`pdfPage`.
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
 ## Bước 6: Tạo một TextFragment
- Tạo một`TextFragment` đối tượng và cung cấp văn bản mong muốn. Đặt vị trí của đoạn văn bản bằng cách sử dụng`Position` thuộc tính. Trong mã được cung cấp, văn bản được đặt thành "văn bản chính" và được định vị tại (100, 600) trên trang.
+ Tạo một`TextFragment`đối tượng và cung cấp văn bản mong muốn. Đặt vị trí của đoạn văn bản bằng cách sử dụng`Position` thuộc tính. Trong mã được cung cấp, văn bản được đặt thành "văn bản chính" và được định vị tại (100, 600) trên trang.
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -64,7 +64,7 @@ textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 ```
 
 ## Bước 8: Kích hoạt đường viền văn bản
- Để bật đường viền văn bản, hãy đặt`DrawTextRectangleBorder`thuộc tính của đoạn văn bản`TextState` ĐẾN`true`.
+ Để bật đường viền văn bản, hãy đặt`DrawTextRectangleBorder` thuộc tính của đoạn văn bản`TextState` ĐẾN`true`.
 
 ```csharp
 textFragment.TextState.DrawTextRectangleBorder = true;
@@ -151,7 +151,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 
 #### H: Làm thế nào để tạo TextFragment và thiết lập vị trí của nó?
 
- A: Ở Bước 6, bạn sẽ tạo một`TextFragment`đối tượng và thiết lập vị trí của nó trên trang bằng cách sử dụng`Position` tài sản:
+ A: Ở Bước 6, bạn sẽ tạo một`TextFragment` đối tượng và thiết lập vị trí của nó trên trang bằng cách sử dụng`Position` tài sản:
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -182,7 +182,7 @@ tb.AppendText(textFragment);
 
 #### H: Làm thế nào để lưu tài liệu PDF kết quả?
 
- A: Sau khi thêm văn bản có đường viền, hãy sử dụng`Save` phương pháp của`Document` đối tượng để lưu tài liệu PDF:
+A: Sau khi thêm văn bản có đường viền, hãy sử dụng`Save` phương pháp của`Document` đối tượng để lưu tài liệu PDF:
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");

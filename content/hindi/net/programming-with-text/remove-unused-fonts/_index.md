@@ -120,7 +120,7 @@ catch (Exception ex)
 
 उत्तर: हां, आप अप्रयुक्त फ़ॉन्ट को अपनी पसंद के फ़ॉन्ट से बदलने के लिए कोड को संशोधित कर सकते हैं। दिए गए नमूना कोड में, फ़ॉन्ट "Arial, Bold" को प्रतिस्थापन के रूप में उपयोग किया जाता है।
 
-####  प्रश्न:`TextFragmentAbsorber` work to remove unused fonts?
+#### प्रश्न:`TextFragmentAbsorber` work to remove unused fonts?
 
  उत्तर:`TextFragmentAbsorber` के साथ कॉन्फ़िगर किया गया है`TextEditOptions.FontReplace.RemoveUnusedFonts` पैरामीटर, जो पीडीएफ के टेक्स्ट अंशों में अप्रयुक्त फ़ॉन्ट की पहचान करता है। अवशोषण के बाद, आप इसके माध्यम से पुनरावृति कर सकते हैं`TextFragments` और अपने फ़ॉन्ट को वांछित प्रतिस्थापन फ़ॉन्ट पर सेट करें।
 

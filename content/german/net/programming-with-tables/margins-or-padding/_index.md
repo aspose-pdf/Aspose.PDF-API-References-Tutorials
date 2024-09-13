@@ -63,7 +63,7 @@ tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
 Fügen wir nun der Tabelle Zeilen und Zellen hinzu. Wir erstellen eine neue Zeile und fügen ihr Zellen hinzu:
 
 ```csharp
-// Erstellen Sie Zeilen in der Tabelle und dann Zellen in den Zeilen
+//Erstellen Sie Zeilen in der Tabelle und dann Zellen in den Zeilen
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -117,7 +117,7 @@ margin.Right = 5f;
 margin.Bottom = 5f;
 // Festlegen der Standardzellenpolsterung auf das MarginInfo-Objekt
 tab1.DefaultCellPadding = margin;
-// Erstellen Sie Zeilen in der Tabelle und dann Zellen in den Zeilen
+//Erstellen Sie Zeilen in der Tabelle und dann Zellen in den Zeilen
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -145,7 +145,7 @@ Herzlichen Glückwunsch! Sie haben erfolgreich gelernt, wie Sie mit Aspose.PDF f
 
 #### F: Kann ich für einzelne Zellen einer Tabelle unterschiedliche Ränder oder Abstände festlegen?
 
-A: Ja, Sie können mit Aspose.PDF für .NET unterschiedliche Ränder oder Abstände für einzelne Zellen in einer Tabelle festlegen. Im angegebenen Beispiel legen wir den Standard-Zellenabstand für die gesamte Tabelle fest, indem wir`DefaultCellPadding` Eigenschaft. Um unterschiedliche Auffüllungen für bestimmte Zellen festzulegen, können Sie auf die`MarginInfo` jeder Zelle einzeln und ändern Sie deren Ränder.
+ A: Ja, Sie können mit Aspose.PDF für .NET unterschiedliche Ränder oder Abstände für einzelne Zellen in einer Tabelle festlegen. Im angegebenen Beispiel legen wir den Standard-Zellenabstand für die gesamte Tabelle fest, indem wir`DefaultCellPadding` Eigenschaft. Um unterschiedliche Auffüllungen für bestimmte Zellen festzulegen, können Sie auf die`MarginInfo` jeder Zelle einzeln und ändern Sie deren Ränder.
 
 #### F: Wie kann ich die Rahmenfarbe oder den Stil der Tabelle ändern?
 
@@ -161,4 +161,4 @@ A: Ja, Sie können der Tabelle mit Aspose.PDF für .NET Kopf- oder Fußzeilen hi
 
 #### F: Kann ich den Tabellenzellen statt Text Bilder hinzufügen?
 
- A: Ja, Sie können mit Aspose.PDF für .NET Bilder zu den Tabellenzellen hinzufügen. Anstatt ein`TextFragment` Objekt können Sie ein`Image` Objekt, laden Sie die Bilddatei und fügen Sie sie mit dem`cell.Paragraphs.Add(image);` -Methode. Dadurch können Sie neben Textinhalten auch Bilder in die Tabelle einfügen.
+ A: Ja, Sie können mit Aspose.PDF für .NET Bilder zu den Tabellenzellen hinzufügen. Anstatt ein`TextFragment` Objekt können Sie ein`Image` Objekt, laden Sie die Bilddatei und fügen Sie sie mit dem`cell.Paragraphs.Add(image);`-Methode. Dadurch können Sie neben Textinhalten auch Bilder in die Tabelle einfügen.

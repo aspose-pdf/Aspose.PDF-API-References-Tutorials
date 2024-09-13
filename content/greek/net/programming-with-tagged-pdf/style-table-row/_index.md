@@ -35,7 +35,7 @@ taggedContent.SetLanguage("fr-FR");
 Σε αυτό το βήμα θα λάβουμε το στοιχείο δομής ρίζας για το έγγραφό μας.
 
 ```csharp
-//Αποκτήστε το στοιχείο δομής ρίζας
+// Αποκτήστε το στοιχείο δομής ρίζας
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

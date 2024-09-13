@@ -121,7 +121,7 @@ A: Tak, możesz manipulować tabelami w wielostronicowych dokumentach PDF za pom
 
 #### P: Czy można usunąć tabelę z dokumentu PDF?
 
- A: Tak, możesz usunąć tabelę z dokumentu PDF za pomocą Aspose.PDF dla .NET. Aby to osiągnąć, możesz usunąć konkretną tabelę`Table` obiekt z`Page.Paragraphs` kolekcja. Możesz zidentyfikować tabelę do usunięcia, używając właściwości takich jak`Table.NumberOfColumns`, `Table.NumberOfRows`i inne unikalne identyfikatory.
+ A: Tak, możesz usunąć tabelę z dokumentu PDF za pomocą Aspose.PDF dla .NET. Aby to osiągnąć, możesz usunąć konkretną tabelę`Table` obiekt z`Page.Paragraphs` kolekcja. Możesz zidentyfikować tabelę do usunięcia, używając właściwości takich jak`Table.NumberOfColumns`, `Table.NumberOfRows`inne unikalne identyfikatory.
 
 #### P: Czy mogę zmienić formatowanie (czcionkę, kolor, wyrównanie) tekstu tabeli?
 

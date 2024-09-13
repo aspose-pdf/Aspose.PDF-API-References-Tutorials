@@ -98,7 +98,7 @@ pdfDocument.save("customized_table.pdf");
 
 ## Çözüm
 
-Java ve Java için Aspose.PDF kullanarak PDF belgelerinde tabloların nasıl oluşturulacağını ve özelleştirileceğini başarıyla öğrendiniz. Bu eğitim, PDF tablolarınız üzerinde kesin kontrol elde etmenize yardımcı olmak için kaynak kod örnekleriyle birlikte kapsamlı bir kılavuz sağladı.
+Java ve Java için Aspose.PDF kullanarak PDF belgelerinde tablolar oluşturmayı ve özelleştirmeyi başarıyla öğrendiniz. Bu eğitim, PDF tablolarınız üzerinde kesin kontrol elde etmenize yardımcı olmak için kaynak kod örnekleriyle birlikte kapsamlı bir kılavuz sağladı.
 
 Bu adımları izleyerek, özel gereksinimlerinize ve stil tercihlerinize uygun tablolar oluşturabilirsiniz. Tablolar, PDF belgelerinde verileri etkili bir şekilde sunmak için olmazsa olmazdır ve artık bunu sorunsuz bir şekilde yapmak için gereken bilgi ve araçlara sahipsiniz.
 

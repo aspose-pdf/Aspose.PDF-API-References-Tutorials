@@ -67,13 +67,13 @@ Ta linijka kodu dodaje nową stronę do dokumentu, umożliwiając rozpoczęcie d
 
 ## Krok 4: Utwórz fragment tekstu
 
- Aby dodać tekst do pliku PDF, musisz utworzyć`TextFragment`Ten obiekt będzie zawierał tekst, który chcesz wyświetlić.
+ Aby dodać tekst do pliku PDF, musisz utworzyć`TextFragment`. Ten obiekt będzie zawierał tekst, który chcesz wyświetlić.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment fragment = new Aspose.Pdf.Text.TextFragment("");
 ```
 
- Tutaj inicjujemy nowy`TextFragment`Można to sobie wyobrazić jako pojemnik na tekst.
+ Tutaj inicjujemy nowy`TextFragment`Można to traktować jako pojemnik na tekst.
 
 ## Krok 5: Dodaj segmenty tekstu
 

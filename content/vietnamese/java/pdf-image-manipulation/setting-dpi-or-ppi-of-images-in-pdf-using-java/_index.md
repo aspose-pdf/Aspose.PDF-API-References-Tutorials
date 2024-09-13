@@ -43,7 +43,7 @@ imagePlacement.setImageResolution(new Resolution(300, 300));
 // Ví dụ mã Java
 ImagePlacement imagePlacement = new ImagePlacement();
 imagePlacement.setImageFile("image.jpg");
-imagePlacement.setResolution(150); // ĐẦU TƯ VÀ PHÂN BỐ
+imagePlacement.setResolution(150); // ĐẦU TƯ PHIẾU
 ```
 
 ### Ví dụ mã cho từng phương pháp

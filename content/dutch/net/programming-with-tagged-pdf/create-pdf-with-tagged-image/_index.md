@@ -112,7 +112,7 @@ A: Ja, u kunt verschillende afbeeldingsformaten gebruiken voor de getagde afbeel
 
  A: Alt-tekst biedt een tekstuele beschrijving van de afbeelding, die hardop wordt voorgelezen door schermlezers voor slechtziende gebruikers. In de meegeleverde code wordt de alt-tekst ingesteld met behulp van de`AlternativeText` eigendom van de`IllustrationElement` die de getagde afbeelding vertegenwoordigt.
 
-####  V: Hoe werkt de`SetTitle` method contribute to the PDF document's tagged image?
+#### V: Hoe werkt de`SetTitle` method contribute to the PDF document's tagged image?
 
  A: De`SetTitle` methode stelt de titel van de getagde inhoud van het PDF-document in, wat extra context biedt voor de getagde afbeelding. Deze titel kan helpen het doel of onderwerp van de getagde inhoud te identificeren.
 
@@ -126,4 +126,4 @@ A: Door de functies voor de structuur van getagde inhoud van Aspose.PDF te gebru
 
 #### V: Is het mogelijk om meerdere getagde afbeeldingen aan hetzelfde PDF-document toe te voegen met behulp van vergelijkbare technieken?
 
- A: Ja, u kunt meerdere getagde afbeeldingen toevoegen aan hetzelfde PDF-document met behulp van vergelijkbare technieken. U zou extra`IllustrationElement` instanties voor elke getagde afbeelding en pas hun eigenschappen indien nodig aan.
+A: Ja, u kunt meerdere getagde afbeeldingen toevoegen aan hetzelfde PDF-document met behulp van vergelijkbare technieken. U zou extra`IllustrationElement` instanties voor elke getagde afbeelding en pas hun eigenschappen indien nodig aan.

@@ -2,126 +2,142 @@
 title: Firma digitale con marca temporale nel file PDF
 linktitle: Firma digitale con marca temporale nel file PDF
 second_title: Riferimento API Aspose.PDF per .NET
-description: Scopri come applicare una firma digitale con marca temporale in un file PDF utilizzando Aspose.PDF per .NET.
+description: Scopri come firmare digitalmente un PDF con un timestamp usando Aspose.PDF per .NET. Questa guida passo passo copre i prerequisiti, la configurazione del certificato, il timestamping e altro ancora.
 type: docs
 weight: 50
 url: /it/net/programming-with-security-and-signatures/digitally-sign-with-time-stamp/
 ---
-In questo tutorial, ti guideremo attraverso il processo di firma digitale in un file PDF con timestamp usando Aspose.PDF per .NET. La firma digitale con timestamp garantisce l'autenticità e l'integrità del documento, aggiungendo un'impronta digitale elettronica con timestamp.
+## Introduzione
 
-## Fase 1: Prerequisiti
+Hai mai avuto bisogno di firmare digitalmente un PDF e includere una marca temporale per una maggiore sicurezza? Che tu stia lavorando su documenti legali, contratti o qualsiasi cosa che richieda un'autenticazione sicura, una firma digitale con una marca temporale aggiunge un ulteriore livello di credibilità. In questo tutorial, spiegheremo in dettaglio come puoi usare Aspose.PDF per .NET per aggiungere una firma digitale insieme a una marca temporale ai tuoi documenti PDF. Non preoccuparti, lo faremo passo dopo passo!
 
-Prima di iniziare, assicurati di disporre dei seguenti prerequisiti:
+## Prerequisiti
 
-- Conoscenza di base del linguaggio di programmazione C#
-- Installazione di Visual Studio sul tuo computer
-- Libreria Aspose.PDF per .NET installata
+Prima di immergerci nel codice, ci sono alcune cose che dovrai impostare per seguire. Ecco una rapida checklist dei prerequisiti per iniziare:
 
-## Passaggio 2: configurazione dell'ambiente
+-  Libreria Aspose.PDF per .NET: avrai bisogno della libreria Aspose.PDF per .NET installata nel tuo progetto. Puoi[scarica l'ultima versione qui](https://releases.aspose.com/pdf/net/) oppure aggiungilo al tuo progetto tramite NuGet.
+- Un documento PDF: avrai bisogno di un file PDF di esempio con cui lavorare. Assicurati di avere un file nella directory del tuo progetto che vuoi firmare.
+-  Certificato digitale (file PFX): assicurati di avere un certificato digitale (un`.pfx` file) per firmare digitalmente il documento.
+- URL di marcatura temporale: si tratta di un servizio di marcatura temporale online che verrà utilizzato per allegare una marca temporale alla firma digitale. 
+- Conoscenza di base di C#: non è necessario essere un esperto, ma conoscere le basi di C# ti aiuterà a comprendere e personalizzare il codice.
 
-Per iniziare, segui questi passaggi per configurare il tuo ambiente di sviluppo:
+Una volta spuntate tutte queste caselle, sei pronto per iniziare a programmare!
 
-1. Aprire Visual Studio e creare un nuovo progetto C#.
-2. Importa gli spazi dei nomi richiesti nel tuo file di codice:
+## Importa pacchetti
+
+Per iniziare, dovrai importare i seguenti namespace nel tuo progetto C#. Questo ti assicura di avere accesso alle classi e alle funzioni Aspose.PDF pertinenti.
 
 ```csharp
+using System.IO;
+using System;
 using Aspose.Pdf;
+using Aspose.Pdf.Facades;
 using Aspose.Pdf.Forms;
+using System.Collections;
 ```
 
-## Fase 3: Firma digitale con marca temporale
+## Passaggio 1: caricare il documento PDF
 
-Il primo passo è eseguire la firma digitale con timestamp sul file PDF. Il codice fornito mostra come ottenere questa firma con Aspose.PDF per .NET.
+La prima cosa che dobbiamo fare è caricare il documento PDF che vogliamo firmare. Ecco come fare:
 
 ```csharp
+// Definisci il percorso verso la directory dei tuoi documenti
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-string pfxFile = "";
-using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
-{
-     using (PdfFileSignature signature = new PdfFileSignature(document))
-     {
-         PKCS7 pkcs = new PKCS7(pfxFile, "pfx_password");
-         TimestampSettings timestampSettings = new TimestampSettings("https:\\your_timestamp_settings", "user:password");
-         pkcs. TimestampSettings = timestampSettings;
-         System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-         signature.Sign(1, "Reason for signing", "Contact", "Location", true, rect, pkcs);
-         signature.Save(dataDir + "DigitallySignWithTimeStamp_out.pdf");
-     }
-}
+
+// Carica il documento PDF
+Document document = new Document(dataDir + @"DigitallySign.pdf");
 ```
 
-Questo codice carica un file PDF, crea una firma digitale con timestamp utilizzando un file PFX (chiave privata) e i parametri timestamp specificati. La firma viene quindi aggiunta al file PDF e salvata con il suffisso "_fuori".
+ Questo passaggio è piuttosto semplice. Stiamo semplicemente definendo il percorso verso il documento che vogliamo firmare. Il`Document` La classe di Aspose.PDF gestisce il caricamento del file.
 
-### Esempio di codice sorgente per firmare digitalmente con timestamp utilizzando Aspose.PDF per .NET 
+## Passaggio 2: impostare la firma digitale
+
+Successivamente, creeremo la firma digitale utilizzando la classe PKCS7 e caricheremo il file PFX. Questo file PFX contiene il tuo certificato e la tua chiave privata, necessari per firmare il documento.
+
 ```csharp
-// Percorso verso la directory dei documenti.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-string pfxFile = "";
-using (Document document = new Document(dataDir + @"DigitallySign.pdf"))
-{
-	using (PdfFileSignature signature = new PdfFileSignature(document))
-	{
-		PKCS7 pkcs = new PKCS7(pfxFile, "pfx_password");
-		TimestampSettings timestampSettings = new TimestampSettings("https:\\your_timestamp_settings", "user:password"); // È possibile omettere l'utente/password
-		pkcs.TimestampSettings = timestampSettings;
-		System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-		// Crea uno qualsiasi dei tre tipi di firma
-		signature.Sign(1, "Signature Reason", "Contact", "Location", true, rect, pkcs);
-		// Salva il file PDF di output
-		signature.Save(dataDir + "DigitallySignWithTimeStamp_out.pdf");
-	}
-}
+// Percorso al tuo file .pfx
+string pfxFile = "YOUR DOCUMENTS DIRECTORY\\certificate.pfx";
+
+// Inizializzare l'oggetto firma
+PdfFileSignature signature = new PdfFileSignature(document);
+
+// Carica il file PFX con una password
+PKCS7 pkcs = new PKCS7(pfxFile, "pfx_password");
 ```
+
+ A questo punto, stai dicendo ad Aspose di usare il tuo certificato digitale per firmare il documento.`PKCS7`object gestisce tutto il lavoro crittografico per te, così non devi preoccuparti dei dettagli minuziosi.
+
+## Passaggio 3: aggiungere le impostazioni del timestamp
+
+Uno dei componenti chiave di una firma digitale robusta è il timestamp. Questo assicura che la firma del documento possa essere verificata anche dopo la scadenza del certificato. Impostiamo il timestamp utilizzando un'autorità di timestamping online.
+
+```csharp
+// Definisci le impostazioni del timestamp
+TimestampSettings timestampSettings = new TimestampSettings("https://il_tuo_timestamp_url", "utente:password");
+
+// Aggiungere impostazioni di timestamp all'oggetto PKCS7
+pkcs.TimestampSettings = timestampSettings;
+```
+
+Qui, stai specificando l'URL per il servizio di marcatura temporale, che fornirà automaticamente un orario e una data alla tua firma. Questo può essere fatto con o senza autenticazione.
+
+## Passaggio 4: definire la posizione e l'aspetto della firma
+
+Ora, definiremo dove apparirà la firma nel PDF e le sue dimensioni. Puoi personalizzare la posizione della casella della firma sulla pagina, così come le dimensioni.
+
+```csharp
+//Definire l'aspetto e la posizione della firma (pagina 1, con rettangolo specificato)
+System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
+```
+
+Qui, stiamo definendo un rettangolo che posiziona la firma alle coordinate (100, 100) sulla prima pagina del PDF, con una larghezza di 200 e un'altezza di 100. Puoi modificare questi valori per adattarli al tuo design.
+
+## Passaggio 5: firmare il documento PDF
+
+Una volta impostato tutto, è il momento di applicare effettivamente la firma digitale al PDF. Questo passaggio combina il certificato, la marca temporale e il posizionamento in un semplice comando.
+
+```csharp
+// Firmare il documento sulla prima pagina
+signature.Sign(1, "Signature Reason", "Contact", "Location", true, rect, pkcs);
+```
+
+Ecco cosa sta succedendo:
+- 1: Indica che la firma deve essere apposta sulla prima pagina.
+- "Motivo della firma": qui puoi specificare il motivo per cui stai firmando il documento.
+- "Contatto": Inserisci le informazioni di contatto del firmatario.
+- "Posizione": specificare la posizione del firmatario.
+- true: questo valore booleano indica se la firma è visibile nel documento.
+- rect: Il rettangolo definito in precedenza specifica la dimensione e la posizione della firma.
+- pkcs: l'oggetto PKCS7 contiene le impostazioni del certificato digitale e della marca temporale.
+
+## Passaggio 6: Salva il PDF firmato
+
+Una volta firmato il documento, non resta che salvarlo. Puoi scegliere un nuovo nome file per conservare sia la versione originale che quella firmata.
+
+```csharp
+// Salvare il documento PDF firmato
+signature.Save(dataDir + "DigitallySignWithTimeStamp_out.pdf");
+```
+
+Il tuo PDF appena firmato e con marca temporale è ora salvato nella directory specificata!
 
 ## Conclusione
 
-Congratulazioni! Hai eseguito con successo una firma digitale con timestamp su un file PDF utilizzando Aspose.PDF per .NET. Questo tutorial ha coperto il processo passo dopo passo dalla creazione della firma al salvataggio del file PDF aggiornato. Ora puoi usare questa funzionalità per aggiungere firme digitali con timestamp ai tuoi file PDF.
+Ed ecco fatto! Hai firmato digitalmente con successo un PDF con un timestamp usando Aspose.PDF per .NET. Questo processo assicura l'autenticità e l'integrità dei tuoi documenti, dando tranquillità sia a te che al destinatario. Le firme digitali stanno diventando sempre più essenziali nel mondo digitale odierno, quindi padroneggiare questo processo è sicuramente un'abilità che vale la pena avere.
 
-### Domande frequenti sulla firma digitale con marca temporale in un file PDF
+## Domande frequenti
 
-#### D: Qual è lo scopo della firma digitale con marca temporale?
+### Posso utilizzare un formato di file diverso per il certificato?  
+Sì, ma il tutorial si concentra sull'utilizzo di un file PFX, che è il formato più comune per i certificati digitali.
 
-R: La firma digitale con marca temporale aggiunge un'impronta digitale elettronica con marca temporale a un file PDF, garantendo l'autenticità e l'integrità del documento in un momento specifico.
+### Ho bisogno di una connessione Internet per applicare la marca temporale?  
+Sì, poiché la marca temporale viene recuperata da un'autorità di marcatura temporale online, avrai bisogno di un accesso a Internet.
 
-#### D: Quali prerequisiti sono necessari per iniziare questo tutorial?
+### Posso firmare più pagine di un PDF?  
+ Assolutamente! Puoi modificare il`signature.Sign()` Metodo per selezionare più pagine o per scorrere tutte le pagine.
 
-R: Prima di iniziare, assicurati di avere una conoscenza di base del linguaggio di programmazione C#, di avere installato Visual Studio e di avere installato la libreria Aspose.PDF per .NET.
+### Cosa succede se la password del file PFX è errata?  
+Se la password è errata, riceverai un'eccezione, quindi assicurati di averla inserita correttamente.
 
-#### D: Come posso configurare il mio ambiente di sviluppo?
-
-R: Seguire i passaggi indicati per configurare l'ambiente di sviluppo, inclusa la creazione di un nuovo progetto C# in Visual Studio e l'importazione degli spazi dei nomi necessari.
-
-#### D: Come posso aggiungere una firma digitale con marca temporale a un PDF?
-
-R: Il codice di esempio fornito mostra come caricare un file PDF, creare una firma digitale con marca temporale utilizzando un file PFX (chiave privata) e le impostazioni di marca temporale specificate, aggiungere la firma al file PDF e salvare il file aggiornato.
-
-#### D: Cos'è un file PFX e perché viene utilizzato nell'esempio?
-
-A: Un file PFX (Personal Exchange Format) contiene una chiave privata e un certificato. Viene utilizzato qui per fornire funzionalità crittografiche per le firme digitali. Assicurati di sostituire il segnaposto con il tuo file PFX e la tua password.
-
-#### D: Cosa sono i TimestampSettings?
-
-A: TimestampSettings definisce le impostazioni per il server timestamp utilizzato per aggiungere il timestamp elettronico alla firma. Include l'URL del server timestamp e le credenziali utente facoltative.
-
-#### D: Posso utilizzare un server di marcatura temporale diverso da quello nell'esempio?
- A: Sì, puoi usare qualsiasi server di marca temporale compatibile. Sostituisci l'URL e, se necessario, fornisci le credenziali utente appropriate nel`TimestampSettings` oggetto.
-
-#### D: Qual è lo scopo di specificare il rettangolo della firma?
-
-A: Il rettangolo della firma definisce la posizione e le dimensioni dell'aspetto della firma digitale sulla pagina PDF. Regola questi valori per posizionare la firma come desideri.
-
-#### D: Cosa succede se il server di marcatura temporale non è disponibile durante la firma?
-
-A: Se il server di marcatura temporale non è disponibile durante la firma, il processo potrebbe non riuscire o richiedere più tempo. Assicurati che il tuo server di marcatura temporale sia affidabile e accessibile.
-
-#### D: Come posso verificare la presenza di una marca temporale nel PDF firmato?
-
- A: Puoi esaminare il PDF firmato utilizzando il codice di esempio fornito.`TimestampSettings` utilizzato durante la firma dovrebbe essere disponibile nei dettagli della firma.
-
-#### D: Le firme digitali con marca temporale sono giuridicamente vincolanti?
-
-R: Le firme digitali con timestamp hanno valore legale in molte giurisdizioni e sono spesso considerate più affidabili delle semplici firme digitali. Consulta gli esperti legali della tua giurisdizione per le normative specifiche.
-
-#### D: Posso aggiungere più firme digitali con marca temporale a un PDF?
-
-R: Sì, puoi aggiungere più firme digitali con timestamp a un file PDF richiamando più volte il processo di creazione della firma. Ogni firma avrà il suo timestamp.
+### Posso rendere invisibile la firma?  
+ Sì, puoi passare`false` al`Sign` parametro visibility del metodo per rendere invisibile la firma.

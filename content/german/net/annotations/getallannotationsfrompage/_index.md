@@ -44,14 +44,14 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Schritt 2: Öffnen Sie das PDF-Dokument
 
- Nachdem wir nun unser Dokumentverzeichnis eingerichtet haben, ist es an der Zeit, die PDF-Datei zu öffnen. Wir verwenden dazu den`Document` Klasse aus der Aspose.PDF-Bibliothek, um dies zu tun.
+ Nachdem wir nun unser Dokumentverzeichnis eingerichtet haben, ist es an der Zeit, die PDF-Datei zu öffnen. Wir verwenden das`Document` Klasse aus der Aspose.PDF-Bibliothek, um dies zu tun.
 
 ```csharp
 // Dokument öffnen
 Document pdfDocument = new Document(dataDir + "GetAllAnnotationsFromPage.pdf");
 ```
 
- In dieser Zeile erstellen wir eine neue Instanz des`Document` Klasse und übergeben Sie den Pfad unserer PDF-Datei. Dies ermöglicht uns, mit dem Inhalt der PDF-Datei zu interagieren.
+ In dieser Zeile erstellen wir eine neue Instanz des`Document` Klasse und übergeben Sie den Pfad unserer PDF-Datei. Dies ermöglicht uns, mit dem Inhalt des PDF zu interagieren.
 
 ## Schritt 3: Durchlaufen der Anmerkungen
 

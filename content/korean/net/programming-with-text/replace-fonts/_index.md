@@ -34,7 +34,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## 3단계: 글꼴 검색 및 바꾸기
 
- 우리는 만듭니다`TextFragmentAbsorber`객체를 선택하고 편집 옵션을 설정하여 사용하지 않는 글꼴을 제거합니다. 그런 다음 PDF 문서의 모든 페이지에 대한 흡수체를 수락하여 텍스트 조각을 검색합니다.
+ 우리는 만듭니다`TextFragmentAbsorber` 객체를 선택하고 편집 옵션을 설정하여 사용하지 않는 글꼴을 제거합니다. 그런 다음 PDF 문서의 모든 페이지에 대한 흡수체를 수락하여 텍스트 조각을 검색합니다.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));

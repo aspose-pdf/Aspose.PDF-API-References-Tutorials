@@ -43,7 +43,7 @@ Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
 ## 4. lépés: Az alapértelmezett cellaszegély beállítása
 
- A következetesség érdekében beállíthatunk egy alapértelmezett cellaszegélyt a`DefaultCellBorder`az asztal tulajdonsága`BorderInfo` objektum.
+ A következetesség érdekében beállíthatunk egy alapértelmezett cellaszegélyt a`DefaultCellBorder` az asztal tulajdonsága`BorderInfo` objektum.
 
 ```csharp
 // Állítsa be az alapértelmezett cellaszegélyt a BorderInfo objektum segítségével
@@ -93,7 +93,7 @@ Aspose.Pdf.Cell cell2 = row1.Cells.Add();
 Végül hozzáadhatjuk a képet a táblázat cellájához úgy, hogy a cellán belül bekezdésként adjuk hozzá.
 
 ```csharp
-// Adja hozzá a képet a táblázat cellájához
+//Adja hozzá a képet a táblázat cellájához
 cell2.Paragraphs.Add(img);
 ```
 
@@ -102,7 +102,7 @@ cell2.Paragraphs.Add(img);
 A képcella hozzáadása után szükség esetén további cellákat is hozzáadhatunk a sorhoz.
 
 ```csharp
-//Adjon hozzá egy másik cellát a sorhoz
+// Adjon hozzá egy másik cellát a sorhoz
 row1.Cells.Add("Previous cell with image");
 
 // Állítsa be a harmadik cella függőleges igazítását
@@ -114,7 +114,7 @@ row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
  Végül a módosított dokumentumot a megadott helyre menthetjük a`Save` módszer.
 
 ```csharp
-// Mentse el a dokumentumot
+//Mentse el a dokumentumot
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
@@ -140,16 +140,16 @@ tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.
 tab1.ColumnWidths = "100 100 120";
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose.jpg";
-// Hozzon létre sorokat a táblázatban, majd cellákat a sorokban
+//Hozzon létre sorokat a táblázatban, majd cellákat a sorokban
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Sample text in cell");
 // Adja hozzá a képet tartalmazó cellát
 Aspose.Pdf.Cell cell2 = row1.Cells.Add();
-// Adja hozzá a képet a táblázat cellájához
+//Adja hozzá a képet a táblázat cellájához
 cell2.Paragraphs.Add(img);
 row1.Cells.Add("Previous cell with image");
 row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
-// Mentse el a dokumentumot
+//Mentse el a dokumentumot
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
@@ -165,7 +165,7 @@ V: Igen, az Aspose.PDF for .NET használatával több képet is hozzáadhat ugya
 
 #### K: Testreszabhatom a kép méretét és pozícióját a táblázatcellán belül?
 
- V: Igen, testreszabhatja a kép méretét és pozícióját a táblázatcellán belül a tulajdonságok beállításával`Image`objektum. Beállíthatja a kép szélességét és magasságát, valamint a cellán belüli igazítást.
+ V: Igen, testreszabhatja a kép méretét és pozícióját a táblázatcellán belül a tulajdonságok beállításával`Image` objektum. Beállíthatja a kép szélességét és magasságát, valamint a cellán belüli igazítást.
 
 #### K: Hozzáadhatok képeket egy dinamikus számú sorral és oszloppal rendelkező táblázathoz?
 

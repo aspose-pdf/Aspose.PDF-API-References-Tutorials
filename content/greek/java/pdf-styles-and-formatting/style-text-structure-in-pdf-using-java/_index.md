@@ -16,7 +16,7 @@ url: /el/java/pdf-styles-and-formatting/style-text-structure-in-pdf-using-java/
 
 Πριν ξεκινήσουμε, βεβαιωθείτε ότι έχετε τις ακόλουθες προϋποθέσεις:
 
-- Εγκαταστάθηκε το Java Development Kit (JDK).
+- Εγκατεστημένο Java Development Kit (JDK).
 - Λήψη και ρύθμιση της βιβλιοθήκης Aspose.PDF για Java.
 
 ## Ρύθμιση του περιβάλλοντος

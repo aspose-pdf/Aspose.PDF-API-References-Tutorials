@@ -152,7 +152,7 @@ A: Aspose.PDF for .NET을 사용하여 PDF 문서에서 트리 요소의 구조�
 
 A: 이 코드 예제는 다음을 사용하여 논리 요소의 계층 구조를 만드는 방법을 보여줍니다.`SectElement`, `DivElement` , 그리고`ArtElement` Aspose.PDF에서 제공하는 클래스입니다. 이러한 요소는 부모 및 자식 노드로 구성되어 문서 내에서 트리와 같은 구조를 형성합니다.
 
-####  Q: 어떻게`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
+#### Q: 어떻게`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
 
  A: 그`TaggedContent` 속성은 PDF 문서의 태그가 지정된 콘텐츠 기능에 대한 액세스를 제공합니다. 이를 통해 구조화된 요소를 만들고 조작하고, 관계를 정의하고, 계층적으로 구성하여 문서의 구조와 접근성을 향상시킬 수 있습니다.
 
@@ -168,7 +168,7 @@ A: 이 코드 예제는 다음을 사용하여 논리 요소의 계층 구조를
 
 A: 요소를 계층적으로 구성하면 문서 구성, 탐색 및 의미론이 개선됩니다. 사용자와 보조 기술이 콘텐츠의 구조와 관계를 이해하여 전반적인 사용자 경험을 향상할 수 있습니다.
 
-####  Q: 어떻게`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
+#### Q: 어떻게`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
 
  A: 그`Save` 이 방법은 계층 구조와 함께 PDF 문서를 저장합니다.`AppendChild` 방법. 이렇게 하면 구조가 그대로 유지되어 문서가 접근 가능하고 잘 정리됩니다.
 

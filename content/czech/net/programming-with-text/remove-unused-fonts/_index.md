@@ -120,7 +120,7 @@ Odpověď: Výukový program vás provede procesem krok za krokem:
 
 Odpověď: Ano, kód můžete upravit tak, aby se nepoužívané fonty nahradily fontem dle vašeho výběru. V poskytnutém ukázkovém kódu je jako náhrada použito písmo "Arial, Bold".
 
-####  Otázka: Jak to`TextFragmentAbsorber` work to remove unused fonts?
+#### Otázka: Jak to`TextFragmentAbsorber` work to remove unused fonts?
 
  A:`TextFragmentAbsorber` je nakonfigurován s`TextEditOptions.FontReplace.RemoveUnusedFonts` parametr, který identifikuje nepoužívaná písma v textových fragmentech PDF. Po absorpci můžete iterovat přes`TextFragments` a nastavte jejich písma na požadovaná náhradní písma.
 

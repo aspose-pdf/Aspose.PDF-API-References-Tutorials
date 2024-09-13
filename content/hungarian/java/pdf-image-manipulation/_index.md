@@ -38,6 +38,6 @@ Ismerje meg, hogyan konvertálhat PDF-oldalakat BMP-képekké Java használatáv
 ### [Határozza meg, hogy az Image Inside PDF Java nyelven színes vagy fekete-fehér](./identify-if-image-inside-pdf-is-colored-or-black-and-white-in-java/)
 Ismerje meg, hogyan azonosíthatja a színes vagy fekete-fehér képeket PDF-ben az Aspose.PDF for Java segítségével. Lépésről lépésre bemutatott útmutatónk leegyszerűsíti a folyamatot.
 ### [Cserélje le a képet a meglévő PDF-fájlban Java használatával](./replace-image-in-existing-pdf-file-using-java/)
-Ismerje meg, hogyan cserélheti le a képeket a PDF-fájlokban Java nyelvre az Aspose.PDF for Java segítségével. Lépésről lépésre útmutató kódpéldákkal a zökkenőmentes képcseréhez.
+Ismerje meg, hogyan cserélheti le a PDF-fájlok képeit Java nyelvre az Aspose.PDF for Java segítségével. Lépésről lépésre útmutató kódpéldákkal a zökkenőmentes képcseréhez.
 ### [A képek DPI vagy PPI beállítása a PDF-ben Java használatával](./setting-dpi-or-ppi-of-images-in-pdf-using-java/)
 Optimalizálja a PDF képminőségét a DPI/PPI Java használatával történő PDF-beállításáról szóló, lépésről lépésre bemutatott útmutatónkkal. Ismerje meg, hogyan javíthatja dokumentumait nyomtatott és digitális megjelenítés céljából.

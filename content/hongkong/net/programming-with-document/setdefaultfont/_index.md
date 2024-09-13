@@ -2,84 +2,128 @@
 title: 在 PDF 檔案中設定預設字體
 linktitle: 在 PDF 檔案中設定預設字體
 second_title: Aspose.PDF for .NET API 參考
-description: 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中設定預設字體。
+description: 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中設定預設字體。非常適合希望增強 PDF 文件的開發人員。
 type: docs
 weight: 280
 url: /zh-hant/net/programming-with-document/setdefaultfont/
 ---
-如果您在 .NET 中處理 PDF 文檔，則可能會遇到以下問題：PDF 中使用的字體在檢視或列印 PDF 的系統上不可用。這可能會導致文字顯示不正確或根本不顯示。 Aspose.PDF for .NET 可讓您為文件設定預設字體，從而提供了此問題的解決方案。在此範例中，如何使用 Aspose.PDF for .NET 設定預設字體。
+## 介紹
 
-## 第一步：設定文檔目錄路徑
+您是否曾經開啟 PDF 文件卻發現字型遺失或無法正確顯示？這可能會令人沮喪，對吧？好吧，不要害怕！在本教學中，我們將深入研究如何使用 Aspose.PDF for .NET 在 PDF 檔案中設定預設字型。這個強大的庫允許您輕鬆操作 PDF 文檔，設定預設字體只是它提供的眾多功能之一。所以，拿起你的編碼帽子，讓我們開始吧！
 
-我們需要設定PDF文件所在目錄的路徑。我們將該路徑儲存在名為「dataDir」的變數中。
+## 先決條件
+
+在我們開始編寫程式碼之前，您需要做好以下幾件事：
+
+1. Visual Studio：確保您的電腦上安裝了 Visual Studio。它是 .NET 開發的最佳 IDE。
+2.  Aspose.PDF for .NET：您需要下載並安裝 Aspose.PDF 庫。你可以找到它[這裡](https://releases.aspose.com/pdf/net/).
+3. C# 基礎知識：稍微熟悉一下 C# 程式設計將對理解我們將要介紹的範例大有幫助。
+
+## 導入包
+
+首先，您需要在 C# 專案中匯入必要的套件。您可以這樣做：
+
+1. 開啟您的 Visual Studio 專案。
+2. 在解決方案資源管理器中以滑鼠右鍵按一下您的項目，然後選擇「管理 NuGet 套件」。
+3. 搜尋`Aspose.PDF`並安裝最新版本。
+
+安裝軟體包後，您就可以開始編碼了！
+
+## 第 1 步：設定您的項目
+
+### 建立一個新項目
+
+首先，讓我們在 Visual Studio 中建立一個新的 C# 專案：
+
+- 開啟 Visual Studio 並選擇「建立新專案」。
+- 選擇“控制台應用程式（.NET Core）”，然後按一下“下一步”。
+- 為您的專案命名（例如，`AsposePdfExample`）並點擊“創建”。
+
+### 新增使用指令
+
+現在，讓我們在您的頂部添加必要的 using 指令`Program.cs`文件：
 
 ```csharp
-//文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System.IO;
 ```
+
+這些指令將允許您存取 Aspose.PDF 類別和方法。
 
 ## 第 2 步：載入 PDF 文檔
 
-我們首先載入缺少字體的現有 PDF 文件。在此範例中，我們假設 PDF 文件位於由`dataDir`多變的。
+### 指定文檔路徑
+
+接下來，您需要指定要使用的 PDF 文件的路徑。操作方法如下：
 
 ```csharp
-string documentName = dataDir + "input.pdf";
-using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
-using (Document document = new Document(fs))
+string dataDir = "YOUR DOCUMENT DIRECTORY"; //替換為你的實際目錄
+string documentName = Path.Combine(dataDir, "input.pdf");
+```
+
+確保更換`"YOUR DOCUMENT DIRECTORY"`與您的 PDF 檔案所在的實際路徑。
+
+### 載入文檔
+
+現在，讓我們載入現有的 PDF 文件：
+
+```csharp
+using (FileStream fs = new FileStream(documentName, FileMode.Open))
 {
-    //代碼放在這裡
+    Document document = new Document(fs);
 }
 ```
 
-## 第三步：設定預設字體
+此程式碼片段打開 PDF 檔案並建立一個`Document`您可以操縱的對象。
 
-接下來，我們將使用以下命令設定 PDF 文件的預設字體`PdfSaveOptions`班級。在此範例中，我們將預設字體設定為“Arial”。
+## 步驟 3：設定預設字體
+
+### 建立 PdfSaveOptions
+
+現在到了令人興奮的部分！您需要建立一個實例`PdfSaveOptions`指定預設字體：
 
 ```csharp
 PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
+```
+
+### 指定預設字體名稱
+
+接下來，您將設定預設字體名稱。在本例中，我們將使用“Arial”：
+
+```csharp
 pdfSaveOptions.DefaultFontName = "Arial";
 ```
 
-## 步驟 4：儲存更新後的文檔
+此行告訴 Aspose.PDF 使用 Arial 作為任何沒有指定字體的文字的預設字體。
 
-最後，我們將更新的文檔儲存到新文件中。在此範例中，我們將更新的文件儲存到與輸入檔案位於同一目錄中的名為「output_out.pdf」的檔案中。
+## 步驟 4：儲存文檔
 
-```csharp
-document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
-```
-
-### 使用 Aspose.PDF for .NET 設定預設字體的範例原始碼
+最後，是時候使用新的預設字體儲存修改後的 PDF 文件了：
 
 ```csharp
-//文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-//載入缺少字體的現有 PDF 文檔
-string documentName = dataDir + "input.pdf";
-string newName = "Arial";
-using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
-using (Document document = new Document(fs))
-{
-	PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
-	//指定預設字體名稱
-	pdfSaveOptions.DefaultFontName = newName;
-	document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
-}
+document.Save(Path.Combine(dataDir, "output_out.pdf"), pdfSaveOptions);
 ```
+
+該行將文件另存為`output_out.pdf`在指定目錄中。
 
 ## 結論
 
-使用 Aspose.PDF for .NET 在 PDF 文件中設定預設字體是一種簡單且有效的方法，可確保文字正確顯示，即使原始字體不可用。透過遵循逐步指南並使用提供的 C# 原始程式碼，開發人員可以輕鬆設定預設字體並建立 PDF，從而在不同環境中提供一致且可靠的檢視體驗。當在可能安裝了不同字體集的各種系統上檢視或列印 PDF 時，此功能特別有用。
+現在你就得到它了！您已使用 Aspose.PDF for .NET 在 PDF 檔案中成功設定預設字體。這個簡單而強大的功能可以幫助確保您的文件看起來完全符合您的要求，即使缺少字體也是如此。因此，下次當您遇到有字體問題的 PDF 時，您就會知道該怎麼做！
 
-### PDF 檔案中設定預設字體的常見問題解答
+## 常見問題解答
 
-#### Q：為什麼在 PDF 文件中設定預設字體很重要？
+### 什麼是 Aspose.PDF for .NET？
+Aspose.PDF for .NET 是一個函式庫，可讓開發人員以程式設計方式建立、操作和轉換 PDF 文件。
 
-答：在 PDF 文件中設定預設字體非常重要，因為即使在檢視或列印 PDF 的系統上沒有原始字體，它也能確保文字正確顯示。它有助於防止文字遺失或亂碼等問題，確保一致且可靠的觀看體驗。
+### 除了 Arial 之外，我還可以使用其他字體嗎？
+是的，您可以將系統上安裝的任何字型指定為預設字型。
 
-#### Q：我可以使用 Aspose.PDF for .NET 選擇任何字體作為預設字體嗎？
+### Aspose.PDF 可以免費使用嗎？
+Aspose.PDF 提供免費試用版，但要獲得完整功能，您需要購買授權。
 
-答：是的，您可以使用 Aspose.PDF for .NET 選擇系統上可用的任何字體作為預設字體。只需在中指定字型名稱即可`DefaultFontName`的財產`PdfSaveOptions`班級。
+### 在哪裡可以找到更多文件？
+您可以找到全面的文檔[這裡](https://reference.aspose.com/pdf/net/).
 
-#### Q：如果系統上沒有指定的預設字體，會發生什麼情況？
-
-答：如果系統上沒有指定的預設字體，PDF 檢視器將使用後備字體來顯示文字。建議選擇常用字體，如 Arial 或 Times New Roman，以確保不同系統之間的相容性。
+### 如何獲得 Aspose.PDF 支援？
+您可以透過 Aspose 論壇獲得支持[這裡](https://forum.aspose.com/c/pdf/10).

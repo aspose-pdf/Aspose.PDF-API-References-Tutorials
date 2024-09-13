@@ -117,7 +117,7 @@ table1.DefaultCellPadding = margin;
 // Επειδή δεν μπορεί πλέον να τοποθετηθεί σε αυτήν τη σελίδα
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
-	// Δημιουργήστε σειρές στον πίνακα και μετά κελιά στις σειρές
+	//Δημιουργήστε σειρές στον πίνακα και μετά κελιά στις σειρές
 	Aspose.Pdf.Row row1 = table1.Rows.Add();
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");

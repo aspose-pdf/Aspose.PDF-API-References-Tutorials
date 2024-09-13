@@ -7,7 +7,7 @@ type: docs
 weight: 140
 url: /pl/net/programming-with-tables/margins-or-padding/
 ---
-W tym samouczku przeprowadzimy Cię przez proces krok po kroku korzystania z Aspose.PDF dla .NET do ustawiania marginesów lub wypełnienia w tabeli. Podamy wyjaśnienia i fragmenty kodu, aby pomóc Ci zrozumieć i zaimplementować tę funkcjonalność w kodzie źródłowym C#.
+tym samouczku przeprowadzimy Cię przez proces krok po kroku korzystania z Aspose.PDF dla .NET do ustawiania marginesów lub wypełnienia w tabeli. Podamy wyjaśnienia i fragmenty kodu, aby pomóc Ci zrozumieć i zaimplementować tę funkcjonalność w kodzie źródłowym C#.
 
 ## Krok 1: Konfigurowanie dokumentu i strony
 Na początek musisz skonfigurować dokument i stronę, korzystając z następującego kodu:
@@ -63,7 +63,7 @@ tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
 Teraz dodajmy wiersze i komórki do tabeli. Utworzymy nowy wiersz i dodamy do niego komórki:
 
 ```csharp
-// Utwórz wiersze w tabeli, a następnie komórki w wierszach
+//Utwórz wiersze w tabeli, a następnie komórki w wierszach
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -117,7 +117,7 @@ margin.Right = 5f;
 margin.Bottom = 5f;
 // Ustaw domyślne wypełnienie komórki na obiekt MarginInfo
 tab1.DefaultCellPadding = margin;
-// Utwórz wiersze w tabeli, a następnie komórki w wierszach
+//Utwórz wiersze w tabeli, a następnie komórki w wierszach
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -145,7 +145,7 @@ Gratulacje! Udało Ci się nauczyć, jak ustawić marginesy lub odstępy w tabel
 
 #### P: Czy mogę ustawić różne marginesy lub wypełnienia dla poszczególnych komórek w tabeli?
 
-A: Tak, możesz ustawić różne marginesy lub wypełnienia dla poszczególnych komórek w tabeli za pomocą Aspose.PDF dla .NET. W podanym przykładzie ustawiliśmy domyślne wypełnienie komórek dla całej tabeli za pomocą`DefaultCellPadding` Właściwość. Aby ustawić różne wypełnienia dla określonych komórek, możesz uzyskać dostęp do`MarginInfo` każdej komórki z osobna i modyfikować ich marginesy.
+ A: Tak, możesz ustawić różne marginesy lub wypełnienia dla poszczególnych komórek w tabeli za pomocą Aspose.PDF dla .NET. W podanym przykładzie ustawiliśmy domyślne wypełnienie komórek dla całej tabeli za pomocą`DefaultCellPadding` Właściwość. Aby ustawić różne wypełnienia dla określonych komórek, możesz uzyskać dostęp do`MarginInfo` każdej komórki z osobna i modyfikować ich marginesy.
 
 #### P: Jak mogę zmienić kolor lub styl obramowania tabeli?
 
@@ -161,4 +161,4 @@ A: Tak, możesz dodać nagłówki lub stopki do tabeli za pomocą Aspose.PDF dla
 
 #### P: Czy mogę dodać obrazy do komórek tabeli zamiast tekstu?
 
- A: Tak, możesz dodawać obrazy do komórek tabeli za pomocą Aspose.PDF dla .NET. Zamiast tworzyć`TextFragment` obiekt, możesz utworzyć`Image` obiekt, załaduj plik obrazu i dodaj go do żądanej komórki za pomocą`cell.Paragraphs.Add(image);` Metoda ta pozwala na wstawianie obrazów do tabeli obok treści tekstowej.
+ A: Tak, możesz dodawać obrazy do komórek tabeli za pomocą Aspose.PDF dla .NET. Zamiast tworzyć`TextFragment` obiekt, możesz utworzyć`Image` obiekt, załaduj plik obrazu i dodaj go do żądanej komórki za pomocą`cell.Paragraphs.Add(image);`Metoda ta pozwala na wstawianie obrazów do tabeli obok treści tekstowej.

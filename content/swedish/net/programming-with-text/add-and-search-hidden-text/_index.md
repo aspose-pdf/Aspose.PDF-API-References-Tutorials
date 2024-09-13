@@ -1,7 +1,7 @@
 ---
 title: Lägg till och sök dold text i PDF-fil
 linktitle: Lägg till och sök dold text i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Steg-för-steg-guide för att lägga till och söka i dold text i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 20
@@ -48,7 +48,7 @@ TextFragmentAbsorber absorb = new TextFragmentAbsorber();
 absorb.Visit(doc.Pages[1]);
 foreach(TextFragment fragment in absorber.TextFragments)
 {
-//Gör något med fragmenten
+// Gör något med fragmenten
 Console.WriteLine("Text '{0}' at position {1}, invisibility: {2} ",
 fragment.Text, fragment.Position.ToString(), fragment.TextState.Invisible);
 }

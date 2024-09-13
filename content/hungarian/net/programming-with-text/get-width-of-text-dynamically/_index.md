@@ -31,7 +31,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("Arial");
 ```
 
- fenti kód megkeresi az Arial betűtípust a`FindFont` módszer a`FontRepository` osztály. Ha másik betűtípust szeretne használni, cserélje ki`"Arial"` a kívánt betűtípus nevével.
+ A fenti kód megkeresi az Arial betűtípust a`FindFont`módszer a`FontRepository` osztály. Ha másik betűtípust szeretne használni, cserélje ki`"Arial"` a kívánt betűtípus nevével.
 
 ## 3. lépés: Állítsa be a szöveg állapotát
 

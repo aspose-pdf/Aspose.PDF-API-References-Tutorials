@@ -35,7 +35,7 @@ Wir haben ein neues Dokument erstellt und den Dokumenttitel und die Sprache fest
 In diesem Schritt erhalten wir das Stammstrukturelement für unser Dokument.
 
 ```csharp
-//Erhalten Sie das Stammstrukturelement
+// Erhalten Sie das Stammstrukturelement
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

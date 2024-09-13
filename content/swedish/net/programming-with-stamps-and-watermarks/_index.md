@@ -12,22 +12,22 @@ Aspose.PDF:s "Programmering med stämplar och vattenstämplar" tutorials för .N
 ## Handledningar
 | Titel | Beskrivning |
 | --- | --- | 
-| [Lägg till datum Tidstämpel i PDF-fil](./add-date-time-stamp/) | Lär dig hur du enkelt lägger till en datum- och tidsstämpel i PDF-fil med Aspose.PDF för .NET. |  
-| [Lägg till bildstämpel i PDF-fil](./add-image-stamp/) | Lär dig hur du enkelt lägger till en bildstämpel i PDF-fil med Aspose.PDF för .NET. |  
-| [Lägga till olika rubriker i PDF-fil](./adding-different-headers/) | Lär dig hur du enkelt lägger till olika rubriker till varje sida i PDF-fil med Aspose.PDF för .NET. |  
-| [Lägg till PDF-sidastämpel i PDF-fil](./add-pdf-page-stamp/) | Lär dig hur du enkelt lägger till en PDF-sidastämpel i PDF-fil med Aspose.PDF för .NET. |  
-| [Lägg till textstämpel i PDF-fil](./add-text-stamp/) | Lär dig hur du enkelt lägger till en textstämpel i PDF-fil med Aspose.PDF för .NET. |  
-| [Räkna artefakter i PDF-fil](./counting-artifacts/) | Lär dig hur du enkelt räknar vattenstämplar i PDF-fil med Aspose.PDF för .NET. |  
-| [Definiera justering i PDF-fil](./define-alignment/) | Lär dig hur du enkelt ställer in textjustering i PDF-fil med Aspose.PDF för .NET. |  
-| [Extrahera text från stämpelkommentar](./extract-text-from-stamp-annotation/) | Lär dig hur du enkelt extraherar text från en stämpelkommentar i dina PDF-dokument med Aspose.PDF för .NET. |  
-| [Fyll strecktext i PDF-fil](./fill-stroke-text/) | Lär dig hur du enkelt fyller och beskriver text i PDF-fil med Aspose.PDF för .NET. |  
-| [Hämta vattenstämpel från PDF-fil](./get-watermark/) | Lär dig hur du extraherar vattenstämplar från PDF-fil med Aspose.PDF för .NET. |  
-| [Bild och sidnummer i sidhuvudsavsnittet](./image-and-page-number-in-header-footer-section/) | Ta reda på hur du lägger till en bild och ett sidnummer i sidhuvudet och sidfoten i ett PDF-dokument med Aspose. |  
-| [Bild och sidnummer i sidfotsavsnittet Inline](./image-and-page-number-in-header-footer-section-inline/) | Lär dig hur du lägger till bild och sidnummer i sidhuvud och sidfot med hjälp av inline-stycken med Aspose.PDF för .NET. |  
-| [Bild i sidfot](./image-in-footer/) | Lär dig hur du lägger till en bild i sidfoten i ett PDF-dokument med Aspose.PDF för .NET. |  
-| [Bild I Header](./image-in-header/) | Lär dig hur du lägger till en bild i rubriken i ett PDF-dokument med Aspose.PDF för .NET. |  
-| [Sidnummer i sidhuvudet med hjälp av flytande låda](./page-number-in-header-footer-using-floating-box/) | Lär dig hur du lägger till sidnumret i sidhuvudet och sidfoten i ett PDF-dokument med Aspose.PDF för .NET. |  
-| [Sidnummerstämplar i PDF-fil](./page-number-stamps/) | Lär dig hur du lägger till sidnummerstämplar i PDF-fil med Aspose.PDF för .NET. |  
-| [Tabell i sidhuvud](./table-in-header-footer-section/) | Lär dig hur du lägger till en tabell i sidhuvudet/sidfoten i ett PDF-dokument med Aspose.PDF för .NET. |  
+| [Lägg till datum Tidstämpel i PDF-fil](./add-date-time-stamp/) | Lär dig hur du lägger till en datum- och tidsstämpel till dina PDF-filer med Aspose.PDF för .NET med denna steg-för-steg-guide. Perfekt för att förbättra dokumentets äkthet. |  
+| [Lägg till bildstämpel i PDF-fil](./add-image-stamp/) | Lär dig hur du lägger till en bildstämpel till PDF-filer med Aspose.PDF för .NET med steg-för-steg-vägledning och exempelkod. |  
+| [Lägga till olika rubriker i PDF-fil](./adding-different-headers/) | Lär dig hur du lägger till olika rubriker till PDF-filer med Aspose.PDF för .NET. Steg-för-steg-guide för att anpassa dina PDF-filer. |  
+| [Lägg till PDF-sidastämpel i PDF-fil](./add-pdf-page-stamp/) | Lär dig hur du lägger till en PDF-sidastämpel med Aspose.PDF för .NET med den här detaljerade guiden. Öka effekten av dina PDF-dokument. |  
+| [Lägg till textstämpel i PDF-fil](./add-text-stamp/) | Lär dig hur du lägger till en textstämpel i en PDF-fil med Aspose.PDF för .NET med vår steg-för-steg-guide och lyft dina dokumentpresentationer. |  
+| [Räkna artefakter i PDF-fil](./counting-artifacts/) | Lär dig hur du räknar vattenstämplar i en PDF med Aspose.PDF för .NET. Steg-för-steg-guide för nybörjare utan tidigare erfarenhet. |  
+| [Definiera justering i PDF-fil](./define-alignment/) | Den här guiden täcker hur man definierar textjustering i PDF-filer med Aspose.PDF för .NET, komplett med en steg-för-steg handledning. |  
+| [Extrahera text från stämpelkommentar](./extract-text-from-stamp-annotation/) | Lär dig hur du extraherar text från en stämpelkommentar i PDF med Aspose.PDF för .NET med denna steg-för-steg handledning, komplett med ett detaljerat kodexempel. |  
+| [Fyll strecktext i PDF-fil](./fill-stroke-text/) | Lär dig hur du fyller strecktext i PDF-filer utan ansträngning med Aspose.PDF för .NET med denna steg-för-steg-guide fullpackad med praktiska exempel. |  
+| [Hämta vattenstämpel från PDF-fil](./get-watermark/) | Lär dig hur du extraherar vattenstämplar från PDF-filer med Aspose.PDF för .NET med en steg-för-steg-guide. Detaljerad handledning för extraktion av vattenstämplar. |  
+| [Bild och sidnummer i sidhuvudsavsnittet](./image-and-page-number-in-header-footer-section/) | Lär dig hur du lägger till en bild och sidnummer i sidhuvudet och sidfoten i din PDF-fil med Aspose.PDF för .NET i denna steg-för-steg handledning. |  
+| [Bild och sidnummer i sidfotsavsnittet Inline](./image-and-page-number-in-header-footer-section-inline/) | Lär dig hur du lägger till en bild och sidnummer inline i rubriken i en PDF-fil med Aspose.PDF för .NET med denna steg-för-steg-guide. |  
+| [Bild i sidfot](./image-in-footer/) | Lär dig hur du lägger till en bild i sidfoten i en PDF med Aspose.PDF för .NET med denna detaljerade steg-för-steg-handledning. Perfekt för att förbättra dina dokument. |  
+| [Bild I Header](./image-in-header/) | Lär dig hur du lägger till en bild i rubriken på en PDF-fil med Aspose.PDF för .NET i denna steg-för-steg-handledning. |  
+| [Sidnummer i sidhuvudet med hjälp av flytande låda](./page-number-in-header-footer-using-floating-box/) | Lägg enkelt till sidnummer i din PDF-sidhuvud och sidfot med hjälp av en flytande låda med Aspose.PDF för .NET i denna steg-för-steg handledning. |  
+| [Sidnummerstämplar i PDF-fil](./page-number-stamps/) | Lär dig hur du lägger till sidnummerstämplar i PDF-filer med Aspose.PDF för .NET genom vår lättanvända guide, komplett med kodexempel. |  
+| [Tabell i sidhuvud](./table-in-header-footer-section/) | Lär dig hur du enkelt lägger till text i sidfoten i en PDF-fil med Aspose.PDF för .NET. Steg-för-steg-guide ingår för sömlös integration. |  
 | [Text i sidfot av PDF-fil](./text-in-footer/) | Lär dig hur du lägger till text i sidfoten i PDF-filen med Aspose.PDF för .NET. |  
-| [Text i rubriken på PDF-filen](./text-in-header/) | Lär dig hur du lägger till text i rubriken på PDF-filen med Aspose.PDF för .NET. |  
+| [Text i rubriken på PDF-filen](./text-in-header/) | Lär dig att lägga till textrubriker till PDF-filer med Aspose.PDF för .NET med denna steg-för-steg-handledning. Förbättra dina dokument effektivt och effektivt. |  

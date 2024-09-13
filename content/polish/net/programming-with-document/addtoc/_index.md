@@ -135,7 +135,7 @@ Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at "
 
 ## Wniosek
 
-masz to! Dzięki Aspose.PDF dla .NET dodawanie spisu treści do pliku PDF jest nie tylko łatwe, ale również konfigurowalne. Niezależnie od tego, czy potrzebujesz utworzyć proste linki nawigacyjne, czy złożone struktury, to narzędzie Ci pomoże. Więc następnym razem, gdy będziesz pracować nad długim plikiem PDF, nie zapomnij dodać spisu treści, aby nadać mu profesjonalny charakter!
+masz! Dzięki Aspose.PDF dla .NET dodawanie spisu treści do pliku PDF jest nie tylko łatwe, ale również konfigurowalne. Niezależnie od tego, czy potrzebujesz utworzyć proste linki nawigacyjne, czy złożone struktury, to narzędzie Ci pomoże. Więc następnym razem, gdy będziesz pracować nad długim plikiem PDF, nie zapomnij dodać spisu treści, aby nadać mu profesjonalny charakter!
 
 ## Najczęściej zadawane pytania
 

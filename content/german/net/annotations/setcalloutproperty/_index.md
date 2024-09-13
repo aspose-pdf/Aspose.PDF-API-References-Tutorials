@@ -99,7 +99,7 @@ fta.Callout = new Point[]
 
 ## Schritt 6: Hinzufügen der Anmerkung zur Seite
 
-Nachdem wir unsere Anmerkung erstellt und konfiguriert haben, besteht der nächste Schritt darin, sie der Seite hinzuzufügen.
+Nachdem wir unsere Annotation erstellt und konfiguriert haben, besteht der nächste Schritt darin, sie der Seite hinzuzufügen.
 
 ```csharp
 // Fügen Sie der Seite die Anmerkung hinzu

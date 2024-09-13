@@ -2,227 +2,160 @@
 title: PDF 檔案中的影像訊息
 linktitle: PDF 檔案中的影像訊息
 second_title: Aspose.PDF for .NET API 參考
-description: 使用 Aspose.PDF for .NET 擷取 PDF 檔案中的影像資訊。
+description: 透過我們全面的逐步指南，學習使用 Aspose.PDF for .NET 從 PDF 中提取影像資訊。
 type: docs
 weight: 160
 url: /zh-hant/net/programming-with-images/image-information/
 ---
-本指南將逐步指導您如何使用 Aspose.PDF for .NET 提取 PDF 文件中的圖像資訊。確保您已設定環境並按照以下步驟操作：
+## 介紹
 
-## 步驟1：定義文檔目錄
+如今，PDF 文件無所不在，幾乎所有專業和個人文件都會在某個時候採用這種格式。無論是報告、手冊或電子書，了解如何以程式設計方式與這些文件進行互動都提供了無數的可能性。一個常見的需求是從 PDF 文件中提取圖像資訊。在本指南中，我們將深入探討如何使用 .NET 的 Aspose.PDF 庫來提取 PDF 文件中嵌入的圖像的關鍵細節。
 
-確保設定正確的文件目錄。代替`"YOUR DOCUMENT DIRECTORY"`在程式碼中新增 PDF 文件所在目錄的路徑。
+## 先決條件
+
+在我們開始討論編碼的細節之前，您需要滿足一些先決條件：
+
+1. 開發環境：您需要設定一個.NET 開發環境。這可以是 Visual Studio 或任何其他 .NET 相容的 IDE。
+2.  Aspose.PDF 庫：確保您有權存取 Aspose.PDF 庫。您可以從[阿斯普斯網站](https://releases.aspose.com/pdf/net/). 
+3. 基本 C# 知識：熟悉 C# 和物件導向的程式設計概念將幫助您輕鬆學習本教學。
+4. PDF 文件：準備一個範例 PDF 文檔，其中包含用於測試程式碼的圖像。 
+
+## 導入包
+
+要開始使用 Aspose.PDF 庫，您需要將必要的命名空間匯入 C# 檔案中。這是一個快速概述：
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using System;
 ```
 
-## 第 2 步：載入來源 PDF 文件
+這些命名空間將使您能夠存取操作 PDF 文件和提取影像資料所需的類別和方法。
 
-在此步驟中，我們將使用以下命令載入來源 PDF 文件`Document` Aspose.PDF 類別。使用`Document`建構函數並傳遞 PDF 文件的路徑。
+現在您已完成所有設置，是時候將其分解為可管理的步驟了。我們將編寫一個 C# 程式來載入 PDF 文檔，遍歷每個頁面，並提取文檔中每個圖像的尺寸和解析度。
+
+## 步驟1：初始化文檔
+
+在此步驟中，我們將使用 PDF 文件的路徑初始化 PDF 文件。你應該更換`"YOUR DOCUMENT DIRECTORY"`與您的 PDF 檔案所在的實際路徑。
 
 ```csharp
+//文檔目錄的路徑。
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+//載入來源 PDF 文件
 Document doc = new Document(dataDir + "ImageInformation.pdf");
 ```
+我們創建一個`Document`從指定目錄載入 PDF 的物件。這將使我們能夠處理文件的內容。
 
-## 步驟 3：設定預設分辨率
+## 步驟2：設定預設解析度並初始化資料結構
 
-在此步驟中，我們將設定影像的預設解析度。在範例中，預設解析度設定為 72。
+接下來，我們為圖像設定預設分辨率，這對於計算很有用。我們還將準備一個陣列來保存圖像名稱和一個堆疊來管理圖形狀態。
 
 ```csharp
+//定義影像的預設分辨率
 int defaultResolution = 72;
-```
-
-## 第 4 步：初始化物件和計數器
-
-在此步驟中，我們將初始化檢索影像資訊所需的物件和計數器。
-
-```csharp
 System.Collections.Stack graphicsState = new System.Collections.Stack();
+//定義將保存影像名稱的陣列清單對象
 System.Collections.ArrayList imageNames = new System.Collections.ArrayList(doc.Pages[1].Resources.Images.Names);
 ```
+這`defaultResolution`變數幫助我們正確計算影像的解析度。這`graphicsState`當我們遇到轉換運算子時，堆疊充當儲存文件當前圖形狀態的手段。
 
-## 步驟 5：循環瀏覽文件首頁上的運算符
+## 第三步：處理頁面上的每個算子
 
-在此步驟中，我們將遍歷文件第一頁上的運算子來識別與影像相關的操作。
+現在我們循環遍歷文檔第一頁上的所有運算符。這就是繁重的工作發生的地方。 
 
 ```csharp
-foreach(Operator op in doc.Pages[1].Contents)
+foreach (Operator op in doc.Pages[1].Contents)
 {
+    //流程操作員...
+}
 ```
+PDF 檔案中的每個運算子都是一個命令，告訴渲染器如何管理圖形元素（包括圖像）。
 
-## 步驟6：管理算子並提取影像資訊
+## 步驟 4：處理 GSave/GRestore 運算子
 
-在這一步驟中，我們將管理不同類型的運算子並提取有關圖像的資訊。
+在循環內，我們將處理圖形保存和恢復命令以追蹤對圖形狀態所做的更改。
 
 ```csharp
-Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
-Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-Aspose.Pdf.Operators.Do opDo = op as Aspose.Pdf.Operators.Do;
+if (opSaveState != null) 
+{
+    //儲存之前的狀態
+    graphicsState.Push(((Matrix)graphicsState.Peek()).Clone());
+} 
+else if (opRestoreState != null) 
+{
+    //恢復之前的狀態
+    graphicsState.Pop();
+}
+```
+`GSave`儲存目前圖形狀態，同時`GRestore`恢復上次儲存的狀態，讓我們在處理影像時恢復任何轉換。
 
-//處理轉換的 GSave 和 GRestore 操作
-if (opSaveState != null)
+## 第 5 步：管理轉換矩陣
+
+接下來，我們在對影像應用變換時處理變換矩陣的串聯。
+
+```csharp
+else if (opCtm != null) 
 {
-     graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-}
-else if (opRestoreState != null)
-{
-     graphicsState. Pop();
-}
-//處理 ConcatenateMatrix 轉換操作
-else if (opCtm != null)
-{
-     //應用變換矩陣
-     System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
+    Matrix cm = new Matrix(
         (float)opCtm.Matrix.A,
         (float)opCtm.Matrix.B,
         (float)opCtm.Matrix.C,
         (float)opCtm.Matrix.D,
         (float)opCtm.Matrix.E,
         (float)opCtm.Matrix.F);
-
-
-     ((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-     keep on going;
-}
-//處理影像的Do操作
-else if (opDo != null)
-{
-     if (imageNames.Contains(opDo.Name))
-     {
-         //檢索影像
-         XImage image = doc.Pages[1].Resources.Images[opDo.Name];
-         //檢索影像的尺寸
-         double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
-         double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
-         //根據以上資訊計算分辨率
-         double resHorizontal = originalWidth * defaultResolution / scaledWidth;
-         double resVertical = originalHeight * defaultResolution / scaledHeight;
-         //顯示影像訊息
-         Console.Out.WriteLine(
-                 string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
-								 opDo.Name, scaledWidth, scaledHeight, resHorizontal,
-								 resVertical));
-     }
+    
+    ((Matrix)graphicsState.Peek()).Multiply(cm);
+    continue;
 }
 ```
+當應用變換矩陣時，我們將其與儲存在圖形狀態中的當前矩陣相乘，以便我們可以追蹤應用於影像的任何縮放或平移。
 
-### 使用 Aspose.PDF for .NET 的圖像資訊範例原始程式碼 
+## 第6步：提取影像訊息
+
+最後，我們處理圖像的繪圖運算符並提取必要的信息，例如尺寸和解析度。
+
 ```csharp
-//文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-//載入來源 PDF 文件
-Document doc = new Document(dataDir+ "ImageInformation.pdf");
-//定義影像的預設分辨率
-int defaultResolution = 72;
-System.Collections.Stack graphicsState = new System.Collections.Stack();
-//定義將保存影像名稱的陣列清單對象
-System.Collections.ArrayList imageNames = new System.Collections.ArrayList(doc.Pages[1].Resources.Images.Names);
-//將物件插入堆疊
-graphicsState.Push(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, 0, 0));
-//取得文件第一頁上的所有運算符
-foreach (Operator op in doc.Pages[1].Contents)
+else if (opDo != null) 
 {
-	//使用 GSave/GRestore 運算子將轉換還原到先前設定
-	Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
-	Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-	//實例化 ConcatenateMatrix 對象，因為它定義目前變換矩陣。
-	Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-	//建立從資源中提取物件的 Do 運算子。它繪製 Form 物件和 Image 對象
-	Aspose.Pdf.Operators.Do opDo = op as Aspose.Pdf.Operators.Do;
-	if (opSaveState != null)
-	{
-		//儲存之前的狀態並將當前狀態推入堆疊頂部
-		graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-	}
-	else if (opRestoreState != null)
-	{
-		//丟棄目前狀態並恢復前一個狀態
-		graphicsState.Pop();
-	}
-	else if (opCtm != null)
-	{
-		System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
-		   (float)opCtm.Matrix.A,
-		   (float)opCtm.Matrix.B,
-		   (float)opCtm.Matrix.C,
-		   (float)opCtm.Matrix.D,
-		   (float)opCtm.Matrix.E,
-		   (float)opCtm.Matrix.F);
-		//將目前矩陣與狀態矩陣相乘
-		((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-		continue;
-	}
-	else if (opDo != null)
-	{
-		//如果這是一個影像繪製操作員
-		if (imageNames.Contains(opDo.Name))
-		{
-			System.Drawing.Drawing2D.Matrix lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-			//建立 XImage 物件來保存第一個 pdf 頁的圖像
-			XImage image = doc.Pages[1].Resources.Images[opDo.Name];
-			//取得影像尺寸
-			double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
-			double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
-			//獲取圖像的高度和寬度信息
-			double originalWidth = image.Width;
-			double originalHeight = image.Height;
-			//根據以上資訊計算分辨率
-			double resHorizontal = originalWidth * defaultResolution / scaledWidth;
-			double resVertical = originalHeight * defaultResolution / scaledHeight;
-			//顯示每張影像的尺寸和解析度訊息
-			Console.Out.WriteLine(
-					string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
-								 opDo.Name, scaledWidth, scaledHeight, resHorizontal,
-								 resVertical));
-		}
-	}
+    //繪製物件的 Handle Do 運算符
+    if (imageNames.Contains(opDo.Name)) 
+    {
+        Matrix lastCTM = (Matrix)graphicsState.Peek();
+        XImage image = doc.Pages[1].Resources.Images[opDo.Name];
+        double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
+        double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
+        double originalWidth = image.Width;
+        double originalHeight = image.Height;
+        
+        double resHorizontal = originalWidth * defaultResolution / scaledWidth;
+        double resVertical = originalHeight * defaultResolution / scaledHeight;
+        
+        //輸出訊息
+        Console.Out.WriteLine(string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
+                         opDo.Name, scaledWidth, scaledHeight, resHorizontal, resVertical));
+    }
 }
 ```
+在這裡，我們檢查操作員是否負責繪製影像。如果是，我們取得相應的 XImage 對象，計算其縮放尺寸和分辨率，並列印必要的資訊。
 
 ## 結論
 
-恭喜！現在您已經了解如何使用 Aspose.PDF for .NET 來擷取 PDF 檔案中的影像資訊。您可以將此資訊用於應用程式中的各種影像處理任務。
+恭喜！您剛剛建立了一個如何使用 Aspose.PDF for .NET 從 PDF 文件中提取影像資訊的工作範例。對於需要分析或操作各種應用程式（例如報告、資料提取甚至自訂 PDF 檢視器）的 PDF 文件的開發人員來說，此功能非常有用。 
 
-### PDF 檔案中影像資訊的常見問題解答
 
-#### Q：使用 Aspose.PDF for .NET 從 PDF 文件中擷取影像資訊的目的為何？
+## 常見問題解答
 
-答：從 PDF 文件中提取影像資訊可以深入了解文件中影像的尺寸、解析度和其他屬性。此資訊可用於影像處理、分析或優化任務。
+### 什麼是 Aspose.PDF 函式庫？
+Aspose.PDF 庫是一個強大的工具，用於在 .NET 應用程式中建立、操作和轉換 PDF 檔案。
 
-#### Q：Aspose.PDF for .NET 如何協助從 PDF 文件中擷取影像資訊？
+### 我可以免費使用圖書館嗎？
+是的，Aspose 提供免費試用。你可以下載它[這裡](https://releases.aspose.com/).
 
-答：Aspose.PDF for .NET 提供了存取和分析 PDF 文件內容（包括影像）的工具。提供的程式碼示範如何使用各種運算符來提取和顯示圖像資訊。
+### 可以提取哪些類型的圖像格式？
+該庫支援各種圖像格式，包括 JPEG、PNG 和 TIFF，只要它們嵌入在 PDF 中即可。
 
-#### 問：該方法可以提取哪些影像資訊？
+### Aspose 是否用於商業目的？
+是的，您可以將 Aspose 產品用於商業用途。如需許可，請訪問[購買頁面](https://purchase.aspose.com/buy).
 
-答：此方法可讓您提取並顯示 PDF 文件中圖像的信息，例如縮放尺寸、解析度和圖像名稱。
-
-#### Q：程式碼如何識別和處理 PDF 文件中與影像相關的運算符？
-
-答：程式碼會迭代 PDF 文件指定頁面上的運算子。它識別並處理與圖像操作、轉換和渲染相關的運算符。
-
-#### Q：預設解析的意義是什麼，在程式碼中是如何使用的？
-
-A：以預設解析度為參考點來計算影像的實際解析度。程式碼根據每個影像的尺寸和預設解析度設定計算其解析度。
-
-#### Q：提取的影像資訊如何應用於現實場景？
-
-答：擷取的影像資訊可用於影像品質評估、影像優化、產生影像縮圖以及促進影像相關決策過程等任務。
-
-#### Q：我可以修改程式碼來提取其他與圖像相關的屬性嗎？
-
-答：是的，您可以自訂程式碼來提取影像的其他屬性，例如色彩空間、像素深度或影像類型。
-
-#### Q：影像資訊擷取過程是否佔用資源或耗時？
-
-答：影像資訊擷取過程高效且針對效能進行了最佳化，確保對資源使用和處理時間的影響最小。
-
-#### Q：開發人員如何從 PDF 文件中識別和提取影像資訊中受益？
-
-答：開發人員可以深入了解 PDF 文件中影像的特徵，使他們能夠就影像操作、處理和優化做出明智的決策。
-
-#### Q：該方法可以用於批次處理包含影像的PDF文件嗎？
-
-答：是的，該方法可以透過迭代多個頁面或文件、提取影像資訊以及執行與影像相關的任務來擴展批次處理。
+### 我如何獲得 Aspose 的支援？
+您可以造訪支援論壇[這裡](https://forum.aspose.com/c/pdf/10).

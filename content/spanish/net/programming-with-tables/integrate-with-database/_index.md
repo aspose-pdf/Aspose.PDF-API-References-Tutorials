@@ -80,7 +80,7 @@ DataTable dt = new DataTable("Employee");
 dt.Columns.Add("Employee_ID", typeof(Int32));
 dt.Columns.Add("Employee_Name", typeof(string));
 dt.Columns.Add("Gender", typeof(string));
-// Agregue 2 filas al objeto DataTable mediante programación
+//Agregue 2 filas al objeto DataTable mediante programación
 DataRow dr = dt.NewRow();
 dr[0] = 1;
 dr[1] = "John Smith";
@@ -132,7 +132,7 @@ R: Sí, puede agregar hipervínculos u otros elementos interactivos a los datos 
 
 #### P: ¿Puedo paginar la tabla si excede un cierto número de filas?
 
- R: Sí, puede paginar la tabla si supera una determinada cantidad de filas. Para lograrlo, puede utilizar el comando`IsInNewPage`propiedad del objeto Row para indicar que una nueva página debe comenzar después de una fila específica. Puede calcular la cantidad de filas que se mostrarán por página y establecer la`IsInNewPage` propiedad en consecuencia.
+R: Sí, puede paginar la tabla si supera una determinada cantidad de filas. Para lograrlo, puede utilizar el comando`IsInNewPage` propiedad del objeto Row para indicar que una nueva página debe comenzar después de una fila específica. Puede calcular la cantidad de filas que se mostrarán por página y establecer la`IsInNewPage` propiedad en consecuencia.
 
 #### P: ¿Cómo puedo exportar el documento PDF con datos de base de datos incorporados a diferentes formatos de archivo como DOCX o XLSX?
 

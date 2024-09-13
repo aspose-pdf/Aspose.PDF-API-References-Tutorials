@@ -50,7 +50,7 @@ De tutorials "Programming with Text" van Aspose.PDF voor .NET bieden een uitgebr
 | [Tekst roteren met behulp van een tekstfragment in een PDF-bestand](./rotate-text-using-text-fragment/) | Leer hoe u tekst kunt roteren met behulp van tekstfragmenten in een PDF-bestand met Aspose.PDF voor .NET. |  
 | [Tekst roteren met behulp van tekstfragment en alinea](./rotate-text-using-text-fragment-and-paragraph/) | Leer hoe u tekst kunt roteren met behulp van tekstfragmenten en alinea's in een PDF-document met Aspose.PDF voor .NET. |  
 | [Tekst roteren met behulp van tekstparagraaf en builder in PDF-bestand](./rotate-text-using-text-paragraph-and-builder/) | Leer hoe u tekst kunt roteren met behulp van de tekstalinea- en tekstbuilderfunctie in een PDF-bestand met Aspose.PDF voor .NET. |  
-| [Zoeken en tekst ophalen Alles](./search-and-get-text-all/) | Leer hoe u tekst op alle pagina's van een PDF-document kunt zoeken en ophalen met Aspose.PDF voor .NET. |  
+| [Zoeken en tekst ophalen Alles](./search-and-get-text-all/) | Leer hoe u met Aspose.PDF voor .NET tekst op alle pagina's van een PDF-document kunt zoeken en ophalen. |  
 | [Zoeken en tekstpagina ophalen in PDF-bestand](./search-and-get-text-page/) | Leer hoe u tekst van een specifieke pagina in een PDF-bestand kunt zoeken en ophalen met Aspose.PDF voor .NET. |  
 | [Zoek reguliere expressie in PDF-bestand](./search-regular-expression/) | Leer hoe u met behulp van reguliere expressies tekst in een PDF-bestand kunt zoeken en ophalen met Aspose.PDF voor .NET. |  
 | [Zoek tekst en voeg hyperlink toe](./search-text-and-add-hyperlink/) | Leer hoe u naar tekst in een PDF zoekt, hyperlinks aan de gevonden tekst toevoegt en het gewijzigde document opslaat met Aspose.PDF voor .NET. |  

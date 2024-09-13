@@ -2,141 +2,152 @@
 title: PDF 파일에 하이퍼링크 추가
 linktitle: PDF 파일에 하이퍼링크 추가
 second_title: .NET API 참조를 위한 Aspose.PDF
-description: Aspose.PDF for .NET을 이용하면 PDF 파일에 대화형 하이퍼링크를 쉽게 추가할 수 있습니다.
+description: Aspose.PDF for .NET을 사용하여 PDF에 하이퍼링크를 쉽게 추가하는 방법을 알아보세요. 문서에서 상호 작용성과 사용자 참여를 강화하세요.
 type: docs
 weight: 10
 url: /ko/net/programming-with-links-and-actions/add-hyperlink/
 ---
-PDF 파일에 하이퍼링크를 추가하면 문서의 다른 페이지, 웹사이트 또는 목적지에 대한 대화형 하이퍼링크를 만들 수 있습니다. Aspose.PDF for .NET을 사용하면 다음 소스 코드를 따라 하이퍼링크를 쉽게 추가할 수 있습니다.
+## 소개
 
-## 1단계: 필요한 라이브러리 가져오기
+PDF 파일에 하이퍼링크를 추가하면 문서의 상호 작용성과 탐색성이 크게 향상될 수 있습니다. 결제 포털에 연결되는 송장을 만들든 독자를 관련 온라인 리소스로 안내하는 보고서를 만들든, 하이퍼링크는 PDF를 더욱 사용자 친화적으로 만드는 기능 계층을 추가할 수 있습니다. 이 가이드에서는 Aspose.PDF for .NET을 사용하여 PDF 파일에 하이퍼링크를 원활하게 추가하는 방법을 보여드리겠습니다. 그러니 소매를 걷어붙이세요. 모든 것을 하나하나, 단계별로 배우게 될 겁니다!
 
-시작하기 전에 C# 프로젝트에 필요한 라이브러리를 가져와야 합니다. 필요한 가져오기 지시문은 다음과 같습니다.
+## 필수 조건
+
+하이퍼링크 추가의 세부적인 내용을 살펴보기 전에 반드시 확인해야 할 몇 가지 전제 조건이 있습니다.
+
+1. .NET Framework 설치: 컴퓨터에 호환되는 .NET Framework가 설치되어 있는지 확인하세요. Aspose.PDF는 다양한 버전과 호환되므로 사용 중인 버전과의 호환성을 확인하세요.
+2.  .NET 라이브러리용 Aspose.PDF: Aspose.PDF 라이브러리가 필요합니다. 다음에서 다운로드할 수 있습니다.[다운로드 페이지](https://releases.aspose.com/pdf/net/) 아직 하지 않았다면.
+3. 기본 C# 지식: C# 프로그래밍에 익숙하다면 이 튜토리얼을 더 매끄럽고 이해하기 쉽게 이해할 수 있습니다.
+4. 개발 환경: Visual Studio와 같은 IDE를 설정하여 코드를 작성하고 실행하세요.
+
+이러한 전제 조건을 충족하면 계속 진행할 준비가 된 것입니다!
+
+## 패키지 가져오기
+
+Aspose.PDF로 작업하려면 관련 네임스페이스를 C# 프로젝트로 가져와야 합니다. 프로젝트를 열고 C# 파일의 맨 위에 다음 using 지시문을 추가합니다.
 
 ```csharp
+using System;
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Annotations;
-using Aspose.Pdf.Text;
 ```
 
-## 2단계: 문서 폴더 경로 설정
+이제 PDF에 하이퍼링크를 추가하는 단계별 과정을 살펴보겠습니다.
 
- 이 단계에서는 하이퍼링크를 추가하려는 PDF 파일이 들어 있는 폴더의 경로를 지정해야 합니다. 바꾸기`"YOUR DOCUMENT DIRECTORY"` 다음 코드에서는 문서 폴더의 실제 경로를 사용합니다.
+## 1단계: 문서 디렉토리 설정
+
+가장 먼저 해야 할 일은 PDF 파일이 상주할 작업 디렉토리를 설정하는 것입니다. 방법은 다음과 같습니다.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## 3단계: PDF 문서 열기
+ 바꾸다`YOUR DOCUMENT DIRECTORY` PDF를 저장하려는 실제 경로와 함께. 이 경로는 PDF를 읽고 쓸 때 파일을 탐색하는 데 도움이 됩니다.
 
-이제 다음 코드를 사용하여 하이퍼링크를 추가하려는 PDF 문서를 엽니다.
+## 2단계: 기존 PDF 문서 열기
+
+ 다음으로, 하이퍼링크를 추가하려는 PDF 파일을 열어 보겠습니다. 기존 PDF는 다음을 사용하여 열 수 있습니다.`Document` Aspose.PDF 라이브러리의 클래스입니다.
 
 ```csharp
 Document document = new Document(dataDir + "AddHyperlink.pdf");
 ```
 
-## 4단계: 링크 생성
+ 이 스니펫은 PDF 파일을 읽고 수정을 위해 준비합니다.`"AddHyperlink.pdf"` 지정한 디렉토리에 존재하거나 파일 이름을 적절히 조정하세요.
 
- 이 단계에서는 다음을 사용하여 하이퍼링크를 만듭니다.`LinkAnnotation` 주석. 링크의 연락처 세부 정보와 지역, 링크 유형 및 링크 내용을 지정합니다. 해당 코드는 다음과 같습니다.
+## 3단계: PDF 페이지에 액세스
+
+이제 하이퍼링크가 나타날 문서 내의 페이지를 선택해야 합니다. 예를 들어, 첫 번째 페이지에 링크를 추가하는 경우:
 
 ```csharp
 Page page = document.Pages[1];
+```
+
+Aspose의 페이지 인덱스는 0이 아니라 1부터 시작한다는 걸 기억하세요. 그러므로 첫 번째 페이지는 페이지 1입니다.
+
+## 4단계: 링크 주석 개체 만들기
+
+다음으로, 하이퍼링크를 클릭할 수 있는 사각형 영역을 정의해야 합니다. 필요에 따라 이 영역을 사용자 정의할 수 있습니다.
+
+```csharp
 LinkAnnotation link = new LinkAnnotation(page, new Aspose.Pdf.Rectangle(100, 100, 300, 300));
+```
+
+ 여기서 우리는 시작점에서 시작하는 사각형을 만들고 있습니다.`(100, 100)` 그리고 뻗어있다`(300, 300)`. 이 숫자를 조정하여 링크의 크기와 위치를 수정하세요.
+
+## 5단계: 링크 테두리 구성
+
+이제 링크 영역이 설정되었으므로 시각적 스타일을 지정해야 합니다. 테두리를 만들 수 있지만 이 경우에는 보이지 않게 설정하겠습니다.
+
+```csharp
 Border border = new Border(link);
-border. Width = 0;
-link. Border = border;
-link. Action = new GoToURIAction("www.aspose.com");
-page.Annotations.Add(link);
-```
-
-## 5단계: 추가 텍스트 추가
-
- 하이퍼링크 외에도 다음을 사용하여 추가 텍스트를 추가할 수도 있습니다.`FreeTextAnnotation` 주석. 좌표, 텍스트 모양 및 텍스트 내용을 지정합니다. 해당 코드는 다음과 같습니다.
-
-```csharp
-FreeTextAnnotation textAnnotation = new FreeTextAnnotation(document.Pages[1], new Aspose.Pdf.Rectangle(100, 100, 300, 300), new DefaultAppearance(Aspose.Pdf.Text.FontRepository.FindFont("TimesNewRoman"), 10, System .Drawing.Color.Blue));
-textAnnotation.Contents = "Link to Aspose website";
-textAnnotation. Border = border;
-document.Pages[1].Annotations.Add(textAnnotation);
-```
-
-## 6단계: 업데이트된 파일 저장
-
-이제 업데이트된 PDF 파일을 다음을 사용하여 저장해 보겠습니다.`Save` 의 방법`document` 객체입니다. 해당 코드는 다음과 같습니다.
-
-```csharp
-dataDir = dataDir + "AddHyperlink_out.pdf";
-document. Save(dataDir);
-```
-
-### .NET용 Aspose.PDF를 사용하여 하이퍼링크 추가를 위한 샘플 소스 코드 
-```csharp
-// 문서 디렉토리의 경로입니다.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// 문서 열기
-Document document = new Document(dataDir + "AddHyperlink.pdf");
-// 링크 생성
-Page page = document.Pages[1];
-// 링크 주석 객체 생성
-LinkAnnotation link = new LinkAnnotation(page, new Aspose.Pdf.Rectangle(100, 100, 300, 300));
-// LinkAnnotation에 대한 테두리 객체를 생성합니다.
-Border border = new Border(link);
-// 테두리 너비 값을 0으로 설정합니다.
 border.Width = 0;
-// LinkAnnotation의 테두리를 설정합니다.
 link.Border = border;
-// 링크 유형을 원격 URI로 지정하세요
-link.Action = new GoToURIAction("www.aspose.com");
-// PDF 파일의 첫 번째 페이지에 있는 주석 컬렉션에 링크 주석 추가
-page.Annotations.Add(link);
-// 자유 텍스트 주석 만들기
-FreeTextAnnotation textAnnotation = new FreeTextAnnotation(document.Pages[1], new Aspose.Pdf.Rectangle(100, 100, 300, 300), new DefaultAppearance(Aspose.Pdf.Text.FontRepository.FindFont("TimesNewRoman"), 10, System.Drawing.Color.Blue));
-// 자유 텍스트로 추가할 문자열
-textAnnotation.Contents = "Link to Aspose website";
-// 자유 텍스트 주석에 대한 테두리 설정
-textAnnotation.Border = border;
-// 문서 첫 페이지의 주석 컬렉션에 FreeText 주석 추가
-document.Pages[1].Annotations.Add(textAnnotation);
-dataDir = dataDir + "AddHyperlink_out.pdf";
-// 업데이트된 문서 저장
-document.Save(dataDir);
-Console.WriteLine("\nHyperlink added successfully.\nFile saved at " + dataDir);            
 ```
+
+이렇게 하면 PDF 디자인과 깔끔하게 어울리는 보이지 않는 링크 테두리가 생성됩니다.
+
+## 6단계: 하이퍼링크 동작 지정
+
+사용자가 이 링크를 클릭하면 어떤 일이 일어나는지 지정해야 합니다. 예를 들어, 사용자를 Aspose 웹사이트로 안내하겠습니다.
+
+```csharp
+link.Action = new GoToURIAction("http://www.aspose.com");
+```
+
+ 꼭 사용해보세요`"http://"` 웹 주소의 시작 부분에 넣어서는 안 됩니다. 그렇지 않으면 제대로 작동하지 않을 수 있습니다.
+
+## 7단계: 페이지에 링크 주석 추가
+
+이 시점에서 특정 페이지의 주석 컬렉션에 하이퍼링크를 추가하여 우리가 만든 모든 것을 실행해 보겠습니다.
+
+```csharp
+page.Annotations.Add(link);
+```
+
+이 줄을 통해 하이퍼링크가 준비되고 사용자 상호 작용을 기다리게 됩니다!
+
+## 8단계: 자유 텍스트 주석 만들기
+
+하이퍼링크에 텍스트 컨텍스트를 추가하는 것이 좋습니다. 이렇게 하면 사용자가 무엇을 클릭하는지 이해하는 데 도움이 됩니다. FreeText 주석을 추가해 보겠습니다.
+
+```csharp
+FreeTextAnnotation textAnnotation = new FreeTextAnnotation(document.Pages[1], new Aspose.Pdf.Rectangle(100, 100, 300, 300), new DefaultAppearance(FontRepository.FindFont("TimesNewRoman"), 10, Color.Blue));
+textAnnotation.Contents = "Link to Aspose website";
+textAnnotation.Border = border;
+document.Pages[1].Annotations.Add(textAnnotation);
+```
+
+여기서 텍스트의 글꼴, 크기, 색상을 정의합니다. 디자인 요구 사항에 따라 이러한 속성을 조정할 수 있습니다.
+
+## 9단계: 문서 저장
+
+하이퍼링크부터 텍스트 주석까지 모든 것을 추가한 후에는 모든 변경 사항이 반영되도록 문서를 저장해야 합니다.
+
+```csharp
+dataDir = dataDir + "AddHyperlink_out.pdf";
+document.Save(dataDir);
+```
+
+ 이렇게 하면 업데이트된 PDF가 새 파일로 저장됩니다.`"AddHyperlink_out.pdf"` 귀하가 지정한 디렉토리에 있습니다.
 
 ## 결론
 
-축하합니다! 이제 Aspose.PDF for .NET으로 하이퍼링크를 추가하는 단계별 가이드가 있습니다. 이 코드를 사용하여 PDF 문서에 대화형 링크를 만들 수 있습니다.
+Aspose.PDF for .NET을 사용하여 PDF 문서에 하이퍼링크를 추가하면 PDF의 전문성이 높아질 뿐만 아니라 사용자 참여도 향상됩니다. 쉽게 할 수 있으며 정적 문서에서는 따라올 수 없는 완전히 새로운 수준의 상호 작용성을 제공합니다. 이 가이드에 설명된 단계를 사용하면 만들거나 수정하는 모든 PDF에 자신 있게 하이퍼링크를 추가할 수 있습니다. 
 
-### PDF 파일에 하이퍼링크 추가에 대한 FAQ
+## 자주 묻는 질문
 
-#### 질문: PDF 파일에 하이퍼링크를 추가하는 것이 왜 필요한가요?
+### 하이퍼링크의 스타일을 다르게 지정할 수 있나요?  
+네, 다양한 글꼴, 색상, 테두리 스타일을 사용하여 하이퍼링크와 텍스트의 모양을 변경할 수 있습니다.
 
-A: PDF 파일에 하이퍼링크를 추가하면 독자가 문서 내의 다른 페이지, 웹사이트 또는 목적지로 쉽게 이동할 수 있어 사용자 경험이 향상됩니다. 추가 리소스나 관련 정보에 원활하게 액세스할 수 있는 방법을 제공합니다.
+### 내부 페이지에 링크를 걸려면 어떻게 해야 하나요?  
+ 사용할 수 있습니다`GoToAction` 대신에`GoToURIAction` PDF 내의 다른 페이지에 링크합니다.
 
-#### 질문: Aspose.PDF for .NET은 초보자에게 적합합니까?
+### Aspose.PDF는 다른 파일 형식을 지원합니까?  
+네, Aspose.PDF는 PDF 조작 및 변환을 위한 다양한 파일 형식과 기능을 지원합니다.
 
-A: 네, Aspose.PDF for .NET은 초보자에게 친화적입니다. 이 가이드에 제공된 단계별 튜토리얼은 PDF 파일에 하이퍼링크를 추가하는 과정을 간소화하여 다양한 기술 수준의 개발자가 접근할 수 있도록 합니다.
+### 개발을 위한 임시 라이선스는 어떻게 받을 수 있나요?  
+ 임시 면허증은 다음 사이트를 방문하여 취득할 수 있습니다.[이 링크](https://purchase.aspose.com/temporary-license/).
 
-#### 질문: 하이퍼링크의 모양을 사용자 지정할 수 있나요?
-
-A: 물론입니다! Aspose.PDF for .NET은 텍스트 색상, 스타일, 서식을 포함하여 하이퍼링크 모양에 대한 사용자 지정 옵션을 제공합니다. 이를 통해 하이퍼링크를 문서의 전체 디자인에 맞출 수 있습니다.
-
-#### 질문: 모든 유형의 PDF 문서에서 하이퍼링크가 지원되나요?
-
-A: 네, 하이퍼링크는 텍스트 기반 문서, 이미지, 멀티미디어가 풍부한 파일을 포함한 다양한 유형의 PDF 문서에 추가할 수 있습니다. Aspose.PDF for .NET은 하이퍼링크가 다양한 PDF 형식에서 기능하도록 보장합니다.
-
-#### 질문: Aspose.PDF for .NET은 어떤 다른 기능을 제공하나요?
-
-A: Aspose.PDF for .NET은 PDF 생성, 조작, 변환 및 추출을 포함한 광범위한 기능을 제공하는 강력한 라이브러리입니다. 텍스트, 이미지, 주석 등을 사용하여 작업할 수 있으므로 PDF 관련 작업에 다재다능한 도구입니다.
-
-#### 질문: 문서 내 특정 섹션에 하이퍼링크를 추가할 수 있나요?
-
- A: 네, 사용 중입니다.`LinkAnnotation` 주석을 사용하면 PDF 문서 내의 특정 섹션으로 사용자를 안내하는 하이퍼링크를 만들 수 있습니다. 이 기능은 대화형 목차나 참조 링크를 만드는 데 특히 유용합니다.
-
-#### 질문: PDF 파일에 하이퍼링크를 추가하는 데 제한이 있나요?
-
-A: Aspose.PDF for .NET은 포괄적인 하이퍼링크 기능을 제공하지만, 링크된 콘텐츠가 액세스 가능하고 최신 상태를 유지하는 것이 중요합니다. 외부 웹사이트로의 하이퍼링크는 끊어진 링크가 발생하지 않도록 정기적으로 확인해야 합니다.
-
-#### 질문: Aspose.PDF for .NET을 사용하여 외부 파일에 대한 하이퍼링크를 만들 수 있나요?
-
-A: 네, 웹 URL 외에도 다른 PDF 문서, 이미지 또는 멀티미디어 파일과 같은 외부 파일로 연결되는 하이퍼링크를 만들 수 있습니다. Aspose.PDF for .NET은 다양한 유형의 리소스에 링크할 수 있는 유연성을 제공합니다.
+### Aspose.PDF에 대한 더 많은 튜토리얼은 어디에서 찾을 수 있나요?  
+더 많은 튜토리얼은 다음에서 찾을 수 있습니다.[선적 서류 비치](https://reference.aspose.com/pdf/net/).

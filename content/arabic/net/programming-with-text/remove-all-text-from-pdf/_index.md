@@ -96,7 +96,7 @@ pdfDocument.Save(dataDir + "RemoveAllText_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 
 ج: يركز البرنامج التعليمي على إزالة كل النص من مستند PDF بالكامل. إذا كنت تريد إزالة نص بشكل انتقائي من مناطق معينة، فستحتاج إلى تعديل النهج واستخدام منطق أكثر تعقيدًا لتحديد أجزاء نصية معينة وإزالتها.
 
-####  س: كيف يتم ذلك؟`TextFragmentAbsorber` work to remove text?
+#### س: كيف يتم ذلك؟`TextFragmentAbsorber` work to remove text?
 
  أ: ال`TextFragmentAbsorber`هي فئة تقدمها مكتبة Aspose.PDF والتي يمكنها استيعاب أجزاء نصية من مستند PDF. باستخدام`RemoveAllText` طريقة`TextFragmentAbsorber` الصف، يمكنك إزالة جميع أجزاء النص الممتصة من المستند.
 

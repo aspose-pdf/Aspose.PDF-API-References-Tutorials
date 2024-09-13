@@ -1,7 +1,7 @@
 ---
 title: Sök text med Dot Net Regex
 linktitle: Sök text med Dot Net Regex
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du söker efter text med reguljära .NET-uttryck i ett PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 480
@@ -88,7 +88,7 @@ page.Accept(textFragmentAbsorber);
 
 ## Steg 9: Hämta de extraherade textfragmenten
 
-Hämta de extraherade textfragmenten med hjälp av`TextFragments` egendom av`TextFragmentAbsorber` objekt:
+ Hämta de extraherade textfragmenten med hjälp av`TextFragments` egendom av`TextFragmentAbsorber` objekt:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

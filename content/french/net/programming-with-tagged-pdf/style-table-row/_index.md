@@ -35,7 +35,7 @@ Nous avons créé un nouveau document et défini le titre et la langue du docume
 Dans cette étape, nous obtiendrons l’élément de structure racine de notre document.
 
 ```csharp
-//Obtenir l'élément de structure racinaire
+// Obtenir l'élément de structure racinaire
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
@@ -116,7 +116,7 @@ for (colIndex = 0; colIndex < colCount; colIndex++)
 
 Nous avons personnalisé divers aspects de la ligne du tableau, tels que la couleur d'arrière-plan, les bordures, la hauteur de ligne, la pagination, le style de cellule par défaut, etc.
 
-## Étape 6 : enregistrement du document PDF balisé
+## Étape 6 : Enregistrer le document PDF balisé
 
 Maintenant que nous avons créé notre document avec la ligne de tableau stylisée, nous allons l'enregistrer en tant que document PDF balisé.
 ```csharp

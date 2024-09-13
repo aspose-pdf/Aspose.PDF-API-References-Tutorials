@@ -38,14 +38,14 @@ Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
 ## Etapa 5: Adicionar uma página ao documento
- Adicione uma nova página ao documento usando o`Add` método do`Pages`coleção. No código fornecido, a nova página é atribuída à variável`page`.
+ Adicione uma nova página ao documento usando o`Add` método do`Pages` coleção. No código fornecido, a nova página é atribuída à variável`page`.
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
 ## Etapa 6: Crie um TextFragment com recuo nas linhas subsequentes
- Instanciar um`TextFragment` objeto e fornecer o texto desejado. No código fornecido, o texto é atribuído à variável`text` . Então, inicialize`TextFormattingOptions` para o`TextFragment` especificar o`SubsequentLinesIndent` valor.
+ Instanciar um`TextFragment` objeto e fornecer o texto desejado. No código fornecido, o texto é atribuído à variável`text` . Então, inicialize`TextFormattingOptions` para o`TextFragment` e especificar o`SubsequentLinesIndent` valor.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
@@ -91,7 +91,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = document.Pages.Add();
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-// Inicie TextFormattingOptions para o fragmento de texto e especifique o valor SubsequentLinesIndent
+//Inicie TextFormattingOptions para o fragmento de texto e especifique o valor SubsequentLinesIndent
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
 	SubsequentLinesIndent = 20
@@ -148,7 +148,7 @@ Aspose.Pdf.Page page = document.Pages.Add();
 
 #### P: Como posso adicionar recuo de linhas subsequentes ao texto?
 
- A: Na Etapa 6, você criará um`TextFragment` objeto e atribuir o texto desejado a ele. Então, você inicializará`TextFormattingOptions` para o`TextFragment` especificar o`SubsequentLinesIndent` valor:
+ A: Na Etapa 6, você criará um`TextFragment` objeto e atribuir o texto desejado a ele. Então, você inicializará`TextFormattingOptions` para o`TextFragment` e especificar o`SubsequentLinesIndent` valor:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
@@ -168,7 +168,7 @@ page.Paragraphs.Add(text);
 
 #### P: Posso repetir o processo para linhas adicionais?
 
- R: Sim, na Etapa 8, você pode repetir o processo para linhas adicionais com o mesmo recuo, criando novas`TextFragment` objetos e adicioná-los à coleção de parágrafos da página.
+R: Sim, na Etapa 8, você pode repetir o processo para linhas adicionais com o mesmo recuo, criando novas`TextFragment` objetos e adicioná-los à coleção de parágrafos da página.
 
 #### P: Como faço para salvar o documento PDF resultante?
 

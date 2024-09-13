@@ -145,4 +145,4 @@ Aspose.PDF for Java to biblioteka komercyjna i może wymagać licencji na okreś
 
 ### Gdzie mogę znaleźć więcej dokumentacji i zasobów Aspose.PDF dla języka Java?
 
- Pełną dokumentację i zasoby dotyczące pliku Aspose.PDF dla języka Java można znaleźć pod adresem: link do dokumentacji Aspose:[Aspose.PDF dla dokumentacji Java](https://reference.aspose.com/pdf/java/).
+ Pełną dokumentację i zasoby dotyczące pliku Aspose.PDF dla języka Java można znaleźć pod następującym linkiem do dokumentacji Aspose:[Aspose.PDF dla dokumentacji Java](https://reference.aspose.com/pdf/java/).

@@ -1,7 +1,7 @@
 ---
 title: Få bifogad information
 linktitle: Få bifogad information
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du hämtar bifogad information från PDF-filer med Aspose.PDF för .NET i denna omfattande handledning.
 type: docs
 weight: 50

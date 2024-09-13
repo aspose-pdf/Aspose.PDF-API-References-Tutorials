@@ -62,7 +62,7 @@ doc.save("output.pdf");
 
 ### 如何安装 Aspose.PDF for Java？
 
-要安装 Aspose.PDF for Java，请访问网站[这里](https://releases.aspose.com/pdf/java/)并下载该库。按照文档中提供的安装说明进行操作。
+要安装 Aspose.PDF for Java，请访问网站[这里](https://releases.aspose.com/pdf/java/)并下载库。按照文档中提供的安装说明进行操作。
 
 ### 我可以自定义 PDF 文档的外观吗？
 

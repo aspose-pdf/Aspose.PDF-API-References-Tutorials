@@ -48,7 +48,7 @@ sec1.Paragraphs.Add(tab1);
 
 ##  Stap 4: Het uiterlijk van de tabel aanpassen
 
-U kunt het uiterlijk van de tabel aanpassen door eigenschappen zoals celranden en marges in te stellen.
+kunt het uiterlijk van de tabel aanpassen door eigenschappen zoals celranden en marges in te stellen.
 
 ```csharp
 tab1. ColumnWidths = "50 50 50";
@@ -126,7 +126,7 @@ margin.Bottom = 5f;
 // Stel de standaard celopvulling in op het MarginInfo-object
 tab1.DefaultCellPadding = margin;
 
-// Maak rijen in de tabel en vervolgens cellen in de rijen
+//Maak rijen in de tabel en vervolgens cellen in de rijen
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

@@ -181,4 +181,4 @@ A: Oczywiście. Przykładowy kod samouczka zapewnia pętlę do iterowania pobran
 
 #### P: Jak zapisać zmodyfikowany dokument PDF po wyodrębnieniu segmentów tekstu?
 
-A: Ten samouczek koncentruje się głównie na wyszukiwaniu segmentów tekstu i pobieraniu ich właściwości. Jeśli zamierzasz dokonać modyfikacji w pliku PDF, możesz zapoznać się z inną dokumentacją Aspose.PDF, aby dowiedzieć się, jak manipulować dokumentem i zapisywać go zgodnie ze swoimi konkretnymi potrzebami.
+A: Ten samouczek koncentruje się głównie na wyszukiwaniu segmentów tekstu i pobieraniu ich właściwości. Jeśli zamierzasz wprowadzać modyfikacje do pliku PDF, możesz zapoznać się z inną dokumentacją Aspose.PDF, aby dowiedzieć się, jak manipulować dokumentem i zapisywać go zgodnie ze swoimi konkretnymi potrzebami.

@@ -110,7 +110,7 @@ doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to d
 doc.Save(outputFile);
 // Otevřete dokument s textem
 Document document = new Document(outputFile);
-// Vytvořte objekt TextAbsorber a najděte všechny fráze odpovídající regulárnímu výrazu
+//Vytvořte objekt TextAbsorber a najděte všechny fráze odpovídající regulárnímu výrazu
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
 // Přijměte absorbér pro stránky dokumentu
 document.Pages.Accept(absorber);

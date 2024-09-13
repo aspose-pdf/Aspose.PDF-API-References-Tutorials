@@ -80,7 +80,7 @@ DataTable dt = new DataTable("Employee");
 dt.Columns.Add("Employee_ID", typeof(Int32));
 dt.Columns.Add("Employee_Name", typeof(string));
 dt.Columns.Add("Gender", typeof(string));
-// Fügen Sie dem DataTable-Objekt programmgesteuert zwei Zeilen hinzu
+//Fügen Sie dem DataTable-Objekt programmgesteuert zwei Zeilen hinzu
 DataRow dr = dt.NewRow();
 dr[0] = 1;
 dr[1] = "John Smith";
@@ -132,7 +132,7 @@ A: Ja, Sie können den aus der Datenbank importierten Daten Hyperlinks oder ande
 
 #### F: Kann ich die Tabelle paginieren, wenn sie eine bestimmte Zeilenanzahl überschreitet?
 
- A: Ja, Sie können die Tabelle paginieren, wenn sie eine bestimmte Anzahl von Zeilen überschreitet. Dazu können Sie die`IsInNewPage`Eigenschaft des Row-Objekts, um anzugeben, dass eine neue Seite nach einer bestimmten Zeile beginnen soll. Sie können die Anzahl der pro Seite anzuzeigenden Zeilen berechnen und die`IsInNewPage` Eigentum entsprechend.
+A: Ja, Sie können die Tabelle paginieren, wenn sie eine bestimmte Anzahl von Zeilen überschreitet. Dazu können Sie die`IsInNewPage` Eigenschaft des Row-Objekts, um anzugeben, dass eine neue Seite nach einer bestimmten Zeile beginnen soll. Sie können die Anzahl der pro Seite anzuzeigenden Zeilen berechnen und die`IsInNewPage` Eigentum entsprechend.
 
 #### F: Wie kann ich das PDF-Dokument mit eingebetteten Datenbankdaten in andere Dateiformate wie DOCX oder XLSX exportieren?
 

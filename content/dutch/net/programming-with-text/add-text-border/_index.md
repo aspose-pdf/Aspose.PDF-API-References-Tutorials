@@ -38,14 +38,14 @@ Document pdfDocument = new Document();
 ```
 
 ## Stap 5: Voeg een pagina toe aan het document
- Voeg een nieuwe pagina toe aan het document met behulp van de`Add` methode van de`Pages`verzameling. In de meegeleverde code wordt de nieuwe pagina toegewezen aan de variabele`pdfPage`.
+ Voeg een nieuwe pagina toe aan het document met behulp van de`Add` methode van de`Pages` verzameling. In de meegeleverde code wordt de nieuwe pagina toegewezen aan de variabele`pdfPage`.
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
 ## Stap 6: Maak een tekstfragment
- Maak een`TextFragment` object en geef de gewenste tekst op. Stel de positie van het tekstfragment in met behulp van de`Position` eigenschap. In de meegeleverde code is de tekst ingesteld op "hoofdtekst" en gepositioneerd op (100, 600) op de pagina.
+ Maak een`TextFragment`object en geef de gewenste tekst op. Stel de positie van het tekstfragment in met behulp van de`Position` eigenschap. In de meegeleverde code is de tekst ingesteld op "hoofdtekst" en gepositioneerd op (100, 600) op de pagina.
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -64,7 +64,7 @@ textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 ```
 
 ## Stap 8: Tekstrand inschakelen
- Om de tekstrand in te schakelen, stelt u de`DrawTextRectangleBorder`eigenschap van het tekstfragment`TextState` naar`true`.
+ Om de tekstrand in te schakelen, stelt u de`DrawTextRectangleBorder` eigenschap van het tekstfragment`TextState` naar`true`.
 
 ```csharp
 textFragment.TextState.DrawTextRectangleBorder = true;
@@ -112,7 +112,7 @@ pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
 ## Conclusie
-U hebt met succes een tekstrand toegevoegd aan uw PDF-document met Aspose.PDF voor .NET. Het resulterende PDF-bestand is nu te vinden op het opgegeven pad naar het uitvoerbestand.
+hebt met succes een tekstrand toegevoegd aan uw PDF-document met Aspose.PDF voor .NET. Het resulterende PDF-bestand is nu te vinden op het opgegeven pad naar het uitvoerbestand.
 
 ### Veelgestelde vragen
 
@@ -151,7 +151,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 
 #### V: Hoe maak ik een TextFragment en stel ik de positie ervan in?
 
- A: In stap 6 maak je een`TextFragment`object en stel de positie ervan op de pagina in met behulp van de`Position` eigendom:
+ A: In stap 6 maak je een`TextFragment` object en stel de positie ervan op de pagina in met behulp van de`Position` eigendom:
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -182,7 +182,7 @@ tb.AppendText(textFragment);
 
 #### V: Hoe kan ik het resulterende PDF-document opslaan?
 
- A: Nadat u de tekst met een rand hebt toegevoegd, gebruikt u de`Save` methode van de`Document` object om het PDF-document op te slaan:
+A: Nadat u de tekst met een rand hebt toegevoegd, gebruikt u de`Save` methode van de`Document` object om het PDF-document op te slaan:
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");

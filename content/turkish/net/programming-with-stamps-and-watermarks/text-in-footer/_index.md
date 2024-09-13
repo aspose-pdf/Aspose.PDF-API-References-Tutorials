@@ -2,134 +2,136 @@
 title: PDF Dosyasının Altbilgisindeki Metin
 linktitle: PDF Dosyasının Altbilgisindeki Metin
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET ile PDF dosyasının altbilgisine metin eklemeyi öğrenin.
+description: Aspose.PDF for .NET kullanarak bir PDF dosyasının altbilgisine nasıl kolayca metin ekleyeceğinizi öğrenin. Sorunsuz entegrasyon için adım adım kılavuz dahildir.
 type: docs
 weight: 180
 url: /tr/net/programming-with-stamps-and-watermarks/text-in-footer/
 ---
-Bu eğitimde, .NET için Aspose.PDF kullanarak PDF dosyasının altbilgisine nasıl metin ekleneceğini öğreneceğiz. Aşağıdaki adımları izleyin:
+## giriiş
 
-## Adım 1: Proje hazırlığı
+.NET için Aspose.PDF kullanarak bir PDF dosyasının alt bilgisine özel metin eklemek mi istiyorsunuz? Doğru yerdesiniz! Sayfa numaraları, tarihler veya başka herhangi bir özel metin eklemek isteyip istemediğinize bakılmaksızın, bu eğitim sizi tüm süreçte yönlendirecektir. Sağlam bir PDF düzenleme kütüphanesi olan Aspose.PDF ile alt bilgi eklemek inanılmaz derecede kolaydır. Bu makalede, PDF dosyanızdaki her sayfanın alt bilgisine metin eklemek için adım adım süreci inceleyeceğiz. Hızlı, basit ve .NET uygulamalarında PDF özelleştirmelerini otomatikleştirmek isteyenler için mükemmeldir.
 
-Aspose.PDF for .NET'i yüklediğinizden ve bir C# projesi oluşturduğunuzdan emin olun.
 
-## Adım 2: Ad alanlarını içe aktarma
+## Ön koşullar
 
-Aşağıdaki ad alanlarını C# kaynak dosyanıza ekleyin:
+Kodlamaya başlamadan önce her şeyin hazır olduğundan emin olalım:
+
+-  Aspose.PDF for .NET: Aspose.PDF for .NET'in yüklü olduğundan emin olun. Değilse,[buradan indirin](https://releases.aspose.com/pdf/net/).
+- IDE: Visual Studio gibi bir geliştirme ortamına ihtiyacınız olacak.
+- Temel C# Bilgisi: C# ve .NET hakkında temel bir anlayışa sahip olmak gerekir.
+-  Lisans: Aspose.PDF'yi değerlendirme modunda kullanabilmenize rağmen, tam işlevsellik için bir tane edinmeyi düşünün[ücretsiz deneme](https://releases.aspose.com/) veya başvuruda bulunmak[geçici lisans](https://purchase.aspose.com/temporary-license/).
+
+## Paketleri İçe Aktar
+
+Kodlama kısmına başlamadan önce, gerekli ad alanlarını içe aktardığınızdan emin olun. Bu, Aspose.PDF kütüphanesindeki sınıfların ve yöntemlerin projenizde kullanılabilir olmasını sağlayacaktır.
 
 ```csharp
+using System.IO;
+using System;
 using Aspose.Pdf;
-using Aspose.Pdf.Text;
 ```
 
-## Adım 3: Belgeyi açma
+Artık hazır olduğunuza göre, bir PDF dosyasının altbilgisine metin ekleme sürecini kolay takip edilebilir adımlara bölelim.
 
-Mevcut PDF belgesini verilen yolu kullanarak açın:
+## Adım 1: Projenizi Başlatın ve Belge Dizinini Ayarlayın
+
+PDF dosyalarınızla çalışabilmeniz için, belgelerinizin dizinine giden yolu belirtmeniz gerekir. PDF dosyanızın bulunduğu ve değiştirilen dosyanın kaydedileceği yer burasıdır.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+// Belgeler dizinine giden yol.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Burada, değiştirin`"YOUR DOCUMENT DIRECTORY"` klasörünüzün gerçek yolu ile. Bu klasör orijinal PDF dosyasını içerecek ve aynı zamanda değiştirilmiş dosya için çıktı konumu olarak hizmet edecektir.
+
+## Adım 2: PDF Belgesini Yükleyin
+
+ Bir sonraki adım PDF dosyasını projenize yüklemektir.`Document` Aspose.PDF'den gelen sınıf, mevcut PDF belgelerini açmanıza ve düzenlemenize olanak tanır.
+
+```csharp
+// Belgeyi aç
 Document pdfDocument = new Document(dataDir + "TextinFooter.pdf");
 ```
 
-"BELGELERİNİZ DİZİNİ" ifadesini belgeler dizininizin gerçek yoluyla değiştirdiğinizden emin olun.
+ Burada,`TextinFooter.pdf` üzerinde çalıştığımız dosyadır. Bunu kendi dosya adınızla değiştirebilirsiniz.
 
-## Adım 4: Altbilgi metni oluşturun
+## Adım 3: Altbilgi Metnini Oluşturun
 
-Alt bilgiye eklemek istediğiniz metinle yeni bir metin damgası oluşturun:
-
-```csharp
-TextStamp textStamp = new TextStamp("footer text");
-```
-
-Metnin alt kenar boşluğu, yatay hizalama, dikey hizalama gibi özelliklerini değiştirerek metni özelleştirebilirsiniz.
-
-## Adım 5: Tüm sayfalara altbilgi metni ekleyin
-
-PDF belgesinin tüm sayfalarını inceleyin ve alt bilgiye metin damgasını ekleyin:
+Şimdi, her sayfaya damgalanacak olan altbilgi metnini oluşturalım. Bu, şunu kullanarak yapılır:`TextStamp` sınıf. Tanımladığınız metin tüm sayfaların alt bilgisi olarak kullanılacaktır.
 
 ```csharp
-foreach(Page page in pdfDocument.Pages)
-{
-     page.AddStamp(textStamp);
-}
-```
-
-## Adım 6: PDF Belgesini Kaydetme
-
-Altbilgi metni tüm sayfalara eklendikten sonra güncellenmiş PDF belgesini kaydedin:
-
-```csharp
-dataDir = dataDir + "TextinFooter_out.pdf";
-pdfDocument.Save(dataDir);
-Console.WriteLine("\nText in footer added successfully.\nFile saved at: " + dataDir);
-```
-
-"BELGELERİNİZ DİZİNİ" ifadesini PDF belgenizi kaydetmek istediğiniz dizinin gerçek yoluyla değiştirdiğinizden emin olun.
-
-### .NET için Aspose.PDF kullanılarak Textin Footer için örnek kaynak kodu 
-```csharp
-
-// Belgeler dizinine giden yol.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Belgeyi aç
-Document pdfDocument = new Document(dataDir+ "TextinFooter.pdf");
-
 // Altbilgi oluştur
 TextStamp textStamp = new TextStamp("Footer Text");
+```
 
+Bu durumda, "Footer Text" diyen basit bir footer metni oluşturduk. Bunu kendi mesajınızla özelleştirmekten çekinmeyin. İsterseniz "Confidential" veya bir sayfa numarası gibi bir şey olabilir.
+
+## Adım 4: Altbilgi Özelliklerini Ayarlayın
+
+ Altbilgiyi doğru şekilde konumlandırmak için kenar boşlukları, hizalama ve konumlandırma gibi bazı özellikleri ayarlamamız gerekir.`TextStamp` sınıfı, altbilgi metninin nerede ve nasıl görüntüleneceği üzerinde tam kontrol sağlar.
+
+```csharp
 // Damganın özelliklerini ayarla
 textStamp.BottomMargin = 10;
 textStamp.HorizontalAlignment = HorizontalAlignment.Center;
 textStamp.VerticalAlignment = VerticalAlignment.Bottom;
+```
 
+Burada, alt kenar boşluğunu 10 birime ayarladık, metni yatay olarak ortaya hizaladık ve dikey olarak sayfanın altına yerleştirdik. Bu değerleri, belirli düzen ihtiyaçlarınıza göre ayarlayabilirsiniz.
+
+## Adım 5: Tüm Sayfalara Alt Bilgi Uygula
+
+Şimdi eğlenceli kısma geliyoruz: PDF'deki her sayfaya altbilgiyi uygulamak. Belgedeki tüm sayfalarda yineleme yaparak, her birine altbilgi metni ekleyebiliriz.
+
+```csharp
 // Tüm sayfalara altbilgi ekle
 foreach (Page page in pdfDocument.Pages)
 {
-	page.AddStamp(textStamp);
+    page.AddStamp(textStamp);
 }
-dataDir = dataDir + "TextinFooter_out.pdf";
+```
 
+Bu döngü, PDF'in kaç sayfası olursa olsun, altbilginin belgenin tüm sayfalarına damgalanmasını sağlar.
+
+## Adım 6: Güncellenen PDF Dosyasını Kaydedin
+
+Altbilgi tüm sayfalara eklendikten sonra, son adım değiştirilen PDF dosyasını belirtilen dizine kaydetmektir.
+
+```csharp
+dataDir = dataDir + "TextinFooter_out.pdf";
 // Güncellenen PDF dosyasını kaydet
 pdfDocument.Save(dataDir);
-Console.WriteLine("\nText in footer added successfully.\nFile saved at " + dataDir);
-
 ```
+
+ Dosyayı yeni bir adla kaydediyoruz.`TextinFooter_out.pdf`, aynı dizinde. Gerektiğinde adını değiştirmekten çekinmeyin.
+
+## Adım 7: Başarıyı Onaylayın
+
+Son olarak, konsola bir başarı mesajı yazdırabilir ve kullanıcıya PDF'nin başarıyla güncellendiğini bildirebilirsiniz.
+
+```csharp
+Console.WriteLine("\nText in footer added successfully.\nFile saved at " + dataDir);
+```
+
+Ve işte bu kadar! PDF'inizdeki her sayfanın alt bilgisine başarıyla metin eklediniz.
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesinin alt bilgisine metin eklemeyi öğrendiniz. Artık PDF belgelerinize ek metin ekleyerek alt bilgilerinizi özelleştirebilirsiniz.
+Aspose.PDF for .NET kullanarak bir PDF belgesine alt bilgi eklemek, PDF dosyalarınızı özelleştirmenin basit ve güçlü bir yoludur. Sadece birkaç satır kodla, belgedeki her sayfaya tarihler, başlıklar veya sayfa numaraları gibi kişiselleştirilmiş metinler ekleyebilirsiniz. Bu kılavuzu izleyerek, artık bu işlevselliği .NET uygulamalarınızda uygulamak için gereken bilgiye sahipsiniz.
 
-### PDF dosyasının altbilgisindeki metin için SSS
+## SSS
 
-#### S: PDF belgesinin alt bilgisine metin eklemenin amacı nedir?
+### PDF'deki her sayfaya farklı altbilgiler ekleyebilir miyim?  
+ Evet, farklı altbilgiler belirterek her sayfaya benzersiz altbilgiler ekleyebilirsiniz.`TextStamp` her sayfa için nesneler.
 
-A: Bir PDF belgesinin alt bilgisine metin eklemek, telif hakkı bildirimleri, sayfa numaraları, belge sürümü veya her sayfanın altında tutarlı bir şekilde görünmesini istediğiniz diğer metinler gibi önemli bilgileri eklemenize olanak tanır.
+### Altbilgi metninin yazı tipini nasıl değiştirebilirim?  
+ Metni, kullanarak özelleştirebilirsiniz.`TextStamp.TextState` yazı tipini, boyutunu ve rengini ayarlama özelliği.
 
-#### S: Sağlanan C# kaynak kodu, bir PDF belgesinin altbilgisine metin eklemeyi nasıl başarıyor?
+### Alt bilgiye metin yerine resim ekleyebilir miyim?  
+ Evet, kullanabilirsiniz`ImageStamp` PDF dosyasının altbilgisine resim eklemek için.
 
-A: Kod, mevcut bir PDF belgesini açma, istenen alt bilgi metniyle bir metin damgası oluşturma, metin özelliklerini özelleştirme, metin damgasını tüm sayfalara ekleme ve son olarak güncellenen PDF belgesini eklenen alt bilgi metniyle kaydetme sürecini göstermektedir.
+### Sadece belirli sayfalara altbilgi eklemek mümkün müdür?  
+ Kesinlikle! Altbilginin olmasını istediğiniz sayfa numaralarını belirli bir hedefi hedefleyerek belirtebilirsiniz.`Page` nesneler.
 
-#### S: Altbilgi metninin görünümünü, yazı tipini, boyutunu, rengini ve hizalamasını değiştirebilir miyim?
-
- A: Evet, altbilgi metninin görünümünü, altbilginin özelliklerini değiştirerek özelleştirebilirsiniz.`TextStamp` nesne. Kod örneği, alt kenar boşluğu, yatay hizalama ve dikey hizalama gibi özellikleri ayarlamayı içerir. Ayrıca yazı tipini, boyutunu, rengini ve diğer metinle ilgili özellikleri de ayarlayabilirsiniz.
-
-#### S: Her sayfanın alt bilgisine farklı metin eklemek mümkün mü?
-
- A: Evet, ayrı bir metin oluşturarak her sayfanın alt bilgisine farklı metin ekleyebilirsiniz.`TextStamp` Farklı metin içeriğine veya özelliklere sahip nesneler ve daha sonra ihtiyaç duyulduğunda belirli sayfalara ekleme.
-
-#### S: PDF belgesinin her sayfasında alt bilgi metninin tutarlı bir şekilde görünmesini nasıl sağlayabilirim?
-
-A: PDF belgesinin tüm sayfalarını dolaşan bir döngü kullanarak ve her sayfaya aynı metin damgasını ekleyerek, alt bilgi metninin her sayfada tutarlı bir şekilde görünmesini sağlarsınız.
-
-#### S: Birden fazla metin satırı ekleyebilir miyim veya altbilgi metnini satır sonlarıyla biçimlendirebilir miyim?
-
- A: Evet, metin dizesine satır sonları ekleyerek alt bilgiye birden fazla metin satırı ekleyebilirsiniz. Örneğin, kaçış dizisini kullanabilirsiniz`\n` Metinde satır sonunu belirtmek için.
-
-#### S: Aynı PDF belgesinin üst bilgi ve alt bilgisine farklı içerik eklemek istersem ne olur?
-
-A: Başlık ve altbilgi bölümlerine farklı içerik eklemek için her iki bölüm için de benzer adımları izlersiniz. Kod, altbilgiye metin eklemeyi gösterir; başlığa metin eklemek için benzer bir yaklaşım kullanabilirsiniz.
-
-#### S: Bu yaklaşımı kullanarak altbilgi metninin yanına resim veya başka öğeler eklemek mümkün müdür?
-
-A: Sağlanan kod özellikle alt bilgiye metin eklemeyi gösterse de, Aspose.PDF kütüphanesini kullanarak alt bilgi bölümüne resim, çizgi, şekil veya başka içerikler gibi diğer öğeleri eklemek için yaklaşımı genişletebilirsiniz.
+### Mevcut bir alt bilgiyi PDF'den nasıl kaldırabilirim?  
+ Mevcut damgaları kullanarak temizleyebilirsiniz.`Page.DeleteStampById` yöntem veya kullanarak`RemoveStamp` tüm pulları kaldırmak.

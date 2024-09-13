@@ -199,4 +199,4 @@ A: Elementy struktury zwiększają dostępność, zapewniając dokumentowi znacz
 
 #### P: W jaki sposób mogę dodatkowo dostosować i łączyć różne typy elementów strukturalnych w moich dokumentach PDF?
 
-A: Możesz łączyć i dostosowywać elementy struktury, używając odpowiednich metod tworzenia udostępnianych przez Aspose.PDF. Eksperymentuj z różnymi elementami i ich właściwościami, aby utworzyć dobrze ustrukturyzowany i zorganizowany dokument PDF.
+A: Możesz łączyć i dostosowywać elementy struktury, używając odpowiednich metod tworzenia dostarczonych przez Aspose.PDF. Eksperymentuj z różnymi elementami i ich właściwościami, aby utworzyć dobrze ustrukturyzowany i zorganizowany dokument PDF.

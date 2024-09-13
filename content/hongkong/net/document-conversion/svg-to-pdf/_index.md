@@ -79,7 +79,7 @@ doc.Save(dataDir + "SVGToPDF_out.pdf");
 
 ## 結論
 
-現在你就擁有了！您已使用 Aspose.PDF for .NET 成功將 SVG 檔案轉換為 PDF。這個過程不僅簡單而且非常高效，讓您可以輕鬆處理 SVG 檔案。無論您正在處理需要頻繁轉換的項目還是只需要轉換單一文件，Aspose.PDF 都能滿足您的需求。
+現在你就得到它了！您已使用 Aspose.PDF for .NET 成功將 SVG 檔案轉換為 PDF。這個過程不僅簡單而且非常高效，讓您可以輕鬆處理 SVG 檔案。無論您正在處理需要頻繁轉換的項目還是只需要轉換單一文件，Aspose.PDF 都能滿足您的需求。
 
 ## 常見問題解答
 

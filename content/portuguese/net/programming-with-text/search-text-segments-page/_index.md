@@ -147,7 +147,7 @@ Parabéns! Você aprendeu com sucesso como pesquisar segmentos de texto específ
 
 ### Perguntas frequentes
 
-#### P: Qual é o objetivo do tutorial "Página Pesquisar segmentos de texto em arquivo PDF"?
+#### P: Qual é o objetivo do tutorial "Pesquisar segmentos de texto na página em arquivo PDF"?
 
 R: O tutorial "Search Text Segments Page In PDF File" fornece um guia abrangente sobre como utilizar a biblioteca Aspose.PDF para .NET para pesquisar segmentos de texto específicos em uma página específica de um documento PDF. Ele abrange o processo de configuração de um projeto, carregamento de um documento PDF, pesquisa de segmentos de texto e recuperação de suas propriedades usando código C#.
 

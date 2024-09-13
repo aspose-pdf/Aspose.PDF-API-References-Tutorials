@@ -47,7 +47,7 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 ```
 
 ## 6단계: 문서에 페이지 추가
- 문서에 새 페이지를 추가하려면 다음을 사용하세요.`Add` 의 방법`Pages`컬렉션. 제공된 코드에서 새 페이지는 변수에 할당됩니다.`page`.
+ 문서에 새 페이지를 추가하려면 다음을 사용하세요.`Add` 의 방법`Pages` 컬렉션. 제공된 코드에서 새 페이지는 변수에 할당됩니다.`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -81,7 +81,7 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 Page page = doc.Pages.Add();
 // 페이지 내부에 HtmlFragment 추가
 page.Paragraphs.Add(t);
-// 결과 PDF 파일을 저장합니다
+//결과 PDF 파일을 저장합니다
 doc.Save(outFile);
 ```
 
@@ -115,7 +115,7 @@ using Aspose.Pdf.Text;
 
 #### 질문: 문서의 페이지에 HTML 순서 있는 목록을 추가하려면 어떻게 해야 하나요?
 
- A: 7단계에서는 다음을 추가합니다.`HtmlFragment` 물체 (`t` )를 사용하여 페이지로 이동`Add` 의 방법`Paragraphs`컬렉션. 이렇게 하면 HTML 순서 목록을 문서에 원활하게 통합할 수 있습니다.
+ A: 7단계에서는 다음을 추가합니다.`HtmlFragment` 물체 (`t` )를 사용하여 페이지로 이동`Add` 의 방법`Paragraphs` 컬렉션. 이렇게 하면 HTML 순서 목록을 문서에 원활하게 통합할 수 있습니다.
 
 #### 질문: 생성된 PDF 문서를 어떻게 저장하나요?
 

@@ -1,6 +1,6 @@
 ---
-title: Поля формы PDF
-linktitle: Поля формы PDF
+title: Поля PDF-формы
+linktitle: Поля PDF-формы
 second_title: API обработки Java PDF Aspose.PDF
 description: Научитесь создавать интерактивные формы PDF с помощью Aspose.PDF для Java. Подробные руководства по эффективной работе с полями форм.
 type: docs

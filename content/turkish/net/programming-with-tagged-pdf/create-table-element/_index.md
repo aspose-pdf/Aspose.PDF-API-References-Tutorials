@@ -248,7 +248,7 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 #### S: PDF belgesinde dizi öğesi nedir ve .NET için Aspose.PDF kullanarak neden bir tane oluşturmam gerekir?
 
-A: PDF belgesindeki bir dizi öğesi, genellikle tablolar veya ızgaralar oluşturmak için kullanılan yapılandırılmış bir veri koleksiyonunu temsil eder. Tablo bilgileri veya ızgaralar gibi yapılandırılmış veri sunumu gerektiren dinamik PDF'ler oluştururken .NET için Aspose.PDF kullanarak bir dizi öğesi oluşturmanız gerekebilir.
+A: Bir PDF belgesindeki dizi öğesi, genellikle tablolar veya ızgaralar oluşturmak için kullanılan yapılandırılmış bir veri koleksiyonunu temsil eder. Tablo bilgileri veya ızgaralar gibi yapılandırılmış veri sunumu gerektiren dinamik PDF'ler oluştururken .NET için Aspose.PDF kullanarak bir dizi öğesi oluşturmanız gerekebilir.
 
 #### S: Aspose.PDF for .NET bir dizi öğesi oluşturma sürecini nasıl basitleştirir?
 

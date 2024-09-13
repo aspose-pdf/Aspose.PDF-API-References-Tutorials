@@ -88,7 +88,7 @@ We delen een aantal best practices en tips om uw PDF-verwerkingscode te optimali
 
 ## Conclusie
 
-In deze handleiding hebben we onderzocht hoe u met structuurelementeneigenschappen in PDF-documenten kunt werken met behulp van Java en Aspose.PDF. U hebt geleerd hoe u structuurelementen kunt maken, wijzigen en verwijderen, zodat uw PDF's toegankelijk en goed gestructureerd zijn.
+In deze gids hebben we onderzocht hoe u met structuurelementeigenschappen in PDF-documenten kunt werken met behulp van Java en Aspose.PDF. U hebt geleerd hoe u structuurelementen kunt maken, wijzigen en verwijderen, zodat uw PDF's toegankelijk en goed gestructureerd zijn.
 
 ## Veelgestelde vragen
 

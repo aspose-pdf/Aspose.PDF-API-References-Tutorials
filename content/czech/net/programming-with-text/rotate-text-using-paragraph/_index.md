@@ -176,7 +176,7 @@ Odpověď: Otáčení textu v dokumentu PDF může být užitečné pro různé 
 
 #### Otázka: Jak mohu otočit text pomocí odstavců?
 
-A: Otáčení textu pomocí odstavců:
+A: Jak otočit text pomocí odstavců:
 
 1.  Vytvořte a`TextParagraph` objekt.
 2.  Vytvořit`TextFragment` objekty s požadovaným textem a úhly natočení.

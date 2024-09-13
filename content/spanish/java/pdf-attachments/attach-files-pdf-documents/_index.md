@@ -43,7 +43,7 @@ Document pdfDocument = new Document();
 
 ## Adjuntar archivos al PDF
 
-Ahora, vamos a adjuntar archivos al documento PDF. Puedes adjuntar varios tipos de archivos, como imágenes, documentos o incluso otros PDF. A continuación, se muestra un ejemplo de cómo adjuntar un archivo:
+Ahora, vamos a adjuntar archivos al documento PDF. Puedes adjuntar varios tipos de archivos, como imágenes, documentos o incluso otros archivos PDF. A continuación, se muestra un ejemplo de cómo adjuntar un archivo:
 
 ```java
 // Especifique el archivo que se adjuntará

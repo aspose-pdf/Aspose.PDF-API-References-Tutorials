@@ -1,6 +1,6 @@
 ---
-title: Použít úpravu na citlivý obsah
-linktitle: Použít úpravu na citlivý obsah
+title: Použijte úpravu na citlivý obsah
+linktitle: Použijte úpravu na citlivý obsah
 second_title: Aspose.PDF Java PDF Processing API
 description: Objevte sílu redigování citlivého obsahu v PDF s Aspose.PDF pro Java.
 type: docs

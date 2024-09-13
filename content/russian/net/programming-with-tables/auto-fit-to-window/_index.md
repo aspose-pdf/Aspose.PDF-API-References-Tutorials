@@ -126,7 +126,7 @@ margin.Bottom = 5f;
 // Установите отступ ячейки по умолчанию для объекта MarginInfo
 tab1.DefaultCellPadding = margin;
 
-// Создайте строки в таблице, а затем ячейки в строках.
+//Создайте строки в таблице, а затем ячейки в строках.
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

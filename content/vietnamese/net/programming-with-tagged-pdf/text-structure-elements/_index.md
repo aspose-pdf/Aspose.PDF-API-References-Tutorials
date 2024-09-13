@@ -47,7 +47,7 @@ Chúng tôi đã thiết lập tiêu đề và ngôn ngữ cho tài liệu PDF �
 Bây giờ chúng ta hãy lấy phần tử cấu trúc gốc của tài liệu PDF.
 
 ```csharp
-//Lấy phần tử cấu trúc gốc
+// Lấy phần tử cấu trúc gốc
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

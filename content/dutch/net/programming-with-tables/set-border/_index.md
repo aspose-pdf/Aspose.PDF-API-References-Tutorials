@@ -7,7 +7,7 @@ type: docs
 weight: 200
 url: /nl/net/programming-with-tables/set-border/
 ---
-In deze tutorial begeleiden we u stap voor stap bij het instellen van een rand in een tabel van een PDF-document met behulp van Aspose.PDF voor .NET. We leggen de meegeleverde C#-broncode uit en laten u zien hoe u deze implementeert.
+In deze tutorial begeleiden we u stap voor stap bij het instellen van een rand in een tabel van een PDF-document met behulp van Aspose.PDF voor .NET. We leggen de meegeleverde C#-broncode uit en laten zien hoe u deze implementeert.
 
 ## Stap 1: Het Document-object instantiëren
 Eerst maken we een Document-object:
@@ -96,7 +96,7 @@ Console.WriteLine("\nBorder setup successfully.\nFile saved at " + dataDir);
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Instantieer Document object
+// Instantieer Document-object
 Document doc = new Document();
 // Pagina toevoegen aan PDF-document
 Page page = doc.Pages.Add();

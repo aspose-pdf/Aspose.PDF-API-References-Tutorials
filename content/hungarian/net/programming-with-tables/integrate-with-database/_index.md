@@ -1,6 +1,6 @@
 ---
-title: Integrálás az adatbázisba PDF-fájlba
-linktitle: Integrálás az adatbázisba PDF-fájlba
+title: Integrálás az adatbázisba PDF fájlba
+linktitle: Integrálás az adatbázisba PDF fájlba
 second_title: Aspose.PDF for .NET API Reference
 description: Adatbázisból származó adatok beágyazása PDF-fájlba az Aspose.PDF for .NET használatával.
 type: docs
@@ -80,7 +80,7 @@ DataTable dt = new DataTable("Employee");
 dt.Columns.Add("Employee_ID", typeof(Int32));
 dt.Columns.Add("Employee_Name", typeof(string));
 dt.Columns.Add("Gender", typeof(string));
-// Adjon hozzá 2 sort a DataTable objektumhoz programozottan
+//Adjon hozzá 2 sort a DataTable objektumhoz programozottan
 DataRow dr = dt.NewRow();
 dr[0] = 1;
 dr[1] = "John Smith";
@@ -132,7 +132,7 @@ V: Igen, hozzáadhat hiperhivatkozásokat vagy egyéb interaktív elemeket az ad
 
 #### K: Lapozhatom a táblázatot, ha túllép egy bizonyos számú sort?
 
- V: Igen, lapozhatja a táblázatot, ha túllép egy bizonyos számú sort. Ennek eléréséhez használhatja a`IsInNewPage` Row objektum tulajdonsága, amely jelzi, hogy egy új oldalnak egy adott sor után kell kezdődnie. Kiszámolhatja az oldalanként megjelenítendő sorok számát, és beállíthatja a`IsInNewPage` ingatlan ennek megfelelően.
+V: Igen, lapozhatja a táblázatot, ha túllép egy bizonyos számú sort. Ennek eléréséhez használhatja a`IsInNewPage` a Row objektum tulajdonsága, amely jelzi, hogy egy új oldalnak egy adott sor után kell kezdődnie. Kiszámolhatja az oldalanként megjelenítendő sorok számát, és beállíthatja a`IsInNewPage` ingatlan ennek megfelelően.
 
 #### K: Hogyan exportálhatom a beágyazott adatbázis-adatokat tartalmazó PDF-dokumentumot különböző fájlformátumokba, mint például DOCX vagy XLSX?
 

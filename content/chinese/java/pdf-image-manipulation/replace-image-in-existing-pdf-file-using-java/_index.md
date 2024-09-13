@@ -87,7 +87,7 @@ pdfDocument.save("path/to/your/output/modified.pdf");
 
 ## 常见问题解答
 
-### 我如何获取 Java 版 Aspose.PDF 库？
+### 如何获取 Java 版 Aspose.PDF 库？
 
 您可以从以下位置下载 Aspose.PDF for Java 库[这里](https://releases.aspose.com/pdf/java/).
 

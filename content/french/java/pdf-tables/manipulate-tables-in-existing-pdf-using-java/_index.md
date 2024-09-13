@@ -18,7 +18,7 @@ Aspose.PDF pour Java est une bibliothèque robuste qui permet aux développeurs 
 
 ## Configuration de l'environnement de développement
 
- Avant de nous plonger dans le code, assurons-nous que notre environnement de développement est correctement configuré. Vous devez avoir Java installé sur votre système et vous pouvez télécharger la bibliothèque Aspose.PDF pour Java à partir du site Web[ici](https://releases.aspose.com/pdf/java/)Une fois que vous avez téléchargé et ajouté la bibliothèque à votre projet, vous êtes prêt à commencer.
+ Avant de nous plonger dans le code, assurons-nous que notre environnement de développement est correctement configuré. Vous devez avoir installé Java sur votre système et vous pouvez télécharger la bibliothèque Aspose.PDF pour Java à partir du site Web[ici](https://releases.aspose.com/pdf/java/)Une fois que vous avez téléchargé et ajouté la bibliothèque à votre projet, vous êtes prêt à commencer.
 
 ## Chargement d'un PDF existant
 

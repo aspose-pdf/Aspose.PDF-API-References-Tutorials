@@ -81,7 +81,7 @@ image.File = inFile;
 Zde je to, co se děje:
 
 -  Načíst objekt obrázku: The`GetObjectById` metoda načte objekt obrázku z dokumentu pomocí jeho ID (v tomto případě`"testImg"`).
--  Přiřadit cestu obrázku: The`File` majetek z`Image` objekt je nastaven na cestu k souboru obrázku (`inFile`).
+-  Přiřadit cestu obrázku: The`File` vlastnictví`Image` objekt je nastaven na cestu k souboru obrázku (`inFile`).
 
 Tento krok je zásadní, pokud chcete do svého PDF zahrnout loga, grafy nebo jakékoli jiné obrázky. Přidá do vašeho dokumentu vizuální vrstvu, takže je poutavější.
 

@@ -19,7 +19,7 @@ Mielőtt belemerülnénk a kódolási varázslóba, győződjünk meg arról, ho
 2.  Aspose.PDF Library: Le kell töltenie a .NET Aspose.PDF könyvtárát, és hivatkoznia kell rá a projektben. Ha még nem tette meg, a legújabb verziót letöltheti a[letöltési link](https://releases.aspose.com/pdf/net/).
 3. Kódszerkesztő: Bármilyen kódszerkesztőt használhat, de a Visual Studio kifejezetten ajánlott a .NET-alkalmazásokkal való egyszerű használat miatt.
 4. A C# alapvető ismerete: A C# gyakorlati ismerete segít zökkenőmentesen eligazodni a kódolási példák között.
-5. Fejlesztői környezet beállítása: Győződjön meg arról, hogy az IDE be van állítva a .NET-projektek kezelésére, és megfelelően hivatkozott az Aspose.PDF könyvtárra a projektben. 
+5. Fejlesztői környezet beállítása: Győződjön meg arról, hogy az IDE be van állítva .NET-projektek kezelésére, és megfelelően hivatkozott az Aspose.PDF könyvtárra a projektben. 
 
 Ha ezeket az előfeltételeket betartja, készen áll arra, hogy tintajelöléseket adjon PDF-fájljaihoz!
 

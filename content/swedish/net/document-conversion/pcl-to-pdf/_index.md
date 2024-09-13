@@ -1,7 +1,7 @@
 ---
 title: PCL till PDF
 linktitle: PCL till PDF
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du konverterar PCL-filer till PDF med Aspose.PDF för .NET med denna steg-för-steg-guide. Perfekt för både utvecklare och företag.
 type: docs
 weight: 90

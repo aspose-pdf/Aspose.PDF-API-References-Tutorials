@@ -47,7 +47,7 @@ Etiketli PDF belgesinin başlığını ve dilini belirledik.
 Şimdi PDF belgesinin kök yapı elemanını alalım.
 
 ```csharp
-//Kök yapı elemanını elde edin
+// Kök yapı elemanını elde edin
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

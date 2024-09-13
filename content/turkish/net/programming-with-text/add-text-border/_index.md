@@ -38,14 +38,14 @@ Document pdfDocument = new Document();
 ```
 
 ## Adım 5: Belgeye bir sayfa ekleyin
- Belgeye yeni bir sayfa eklemek için şunu kullanın:`Add` yöntemi`Pages`koleksiyon. Sağlanan kodda, yeni sayfa değişkene atanır`pdfPage`.
+ Belgeye yeni bir sayfa eklemek için şunu kullanın:`Add` yöntemi`Pages` koleksiyon. Sağlanan kodda, yeni sayfa değişkene atanır`pdfPage`.
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
 ## Adım 6: Bir TextFragment Oluşturun
- Bir tane oluştur`TextFragment` nesneyi seçin ve istediğiniz metni sağlayın. Metin parçasının konumunu kullanarak ayarlayın`Position` özellik. Sağlanan kodda, metin "ana metin" olarak ayarlanmıştır ve sayfada (100, 600) konumunda konumlandırılmıştır.
+ Bir tane oluştur`TextFragment`nesneyi seçin ve istediğiniz metni sağlayın. Metin parçasının konumunu kullanarak ayarlayın`Position` özellik. Sağlanan kodda, metin "ana metin" olarak ayarlanmıştır ve sayfada (100, 600) konumunda konumlandırılmıştır.
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -64,7 +64,7 @@ textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 ```
 
 ## Adım 8: Metin kenarlığını etkinleştirin
- Metin kenarlığını etkinleştirmek için,`DrawTextRectangleBorder`metin parçasının özelliği`TextState` ile`true`.
+ Metin kenarlığını etkinleştirmek için,`DrawTextRectangleBorder` metin parçasının özelliği`TextState` ile`true`.
 
 ```csharp
 textFragment.TextState.DrawTextRectangleBorder = true;
@@ -151,7 +151,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 
 #### S: Bir TextFragment nasıl oluştururum ve konumunu nasıl ayarlarım?
 
- A: 6. Adımda bir tane oluşturacaksınız`TextFragment`nesneyi seçin ve sayfadaki konumunu ayarlayın`Position` mülk:
+ A: 6. Adımda bir tane oluşturacaksınız`TextFragment` nesneyi seçin ve sayfadaki konumunu ayarlayın`Position` mülk:
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -182,7 +182,7 @@ tb.AppendText(textFragment);
 
 #### S: Ortaya çıkan PDF belgesini nasıl kaydedebilirim?
 
- A: Kenarlıklı metni ekledikten sonra,`Save` yöntemi`Document` PDF belgesini kaydetmek için nesne:
+A: Kenarlıklı metni ekledikten sonra,`Save` yöntemi`Document` PDF belgesini kaydetmek için nesne:
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");

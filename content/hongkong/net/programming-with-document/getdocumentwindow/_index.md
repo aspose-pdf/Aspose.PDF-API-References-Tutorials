@@ -7,116 +7,172 @@ type: docs
 weight: 170
 url: /zh-hant/net/programming-with-document/getdocumentwindow/
 ---
-Aspose.PDF for .NET 是一個功能強大的 PDF 操作庫，可讓開發人員在其 .NET 應用程式中建立、編輯和轉換 PDF 檔案。該庫提供的功能之一是能夠檢索有關文件視窗屬性的資訊。本教學將引導您完成使用`GetDocumentWindow`Aspose.PDF for .NET 的功能可擷取 PDF 文件視窗屬性的資訊。
+# 介紹
 
-## 第 1 步：安裝 Aspose.PDF for .NET
+您正在使用 PDF 並希望更好地控制它們打開時的顯示方式嗎？無論是隱藏功能表列或調整視窗大小以適合第一頁，Aspose.PDF for .NET 都為您提供了自訂 PDF 在檢視器中開啟時的行為所需的所有工具。在本教學中，我們將詳細介紹如何擷取和操作 Aspose.PDF for .NET 中的文件視窗設定。
 
-要在 .NET 應用程式中使用 Aspose.PDF for .NET，您必須先安裝程式庫。您可以從以下位置下載該庫的最新版本[Aspose.PDF for .NET 下載頁面](https://releases.aspose.com/pdf/net).
 
-下載該庫後，將 ZIP 檔案的內容解壓縮到電腦上的資料夾中。然後，您需要在 .NET 專案中新增對 Aspose.PDF for .NET DLL 的參考。
+# 先決條件
 
-## 第 2 步：載入 PDF 文檔
+在深入學習本教程之前，請確保您具備以下先決條件：
 
-安裝 Aspose.PDF for .NET 並在 .NET 專案中新增對 DLL 的參考後，您就可以開始使用`GetDocumentWindow`檢索有關 PDF 文件視窗屬性的資訊的功能。
+- Aspose.PDF for .NET 安裝在您的開發環境中。
+  - [下載 .NET 版 Aspose.PDF](https://releases.aspose.com/pdf/net/)
+-  Aspose.PDF 的有效許可證，或您可以獲得[免費試用](https://releases.aspose.com/)或者[臨時執照](https://purchase.aspose.com/temporary-license/).
+- 對 .NET 和 C# 有基本了解。
+- Visual Studio 或其他適合的 IDE。
 
-使用此功能的第一步是載入您想要檢索其資訊的 PDF 文件。為此，您可以使用以下程式碼：
+# 導入包
+
+在開始編寫任何程式碼之前，您需要匯入必要的套件。開啟項目，然後在 C# 檔案的頂部新增以下命名空間：
 
 ```csharp
-// PDF文件的路徑
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
+```
 
-//開啟 PDF 文檔
+這將使您能夠存取使用 Aspose.PDF for .NET 操作 PDF 文件所需的所有類別和方法。
+
+現在讓我們分解一下檢索不同文件視窗設定的過程。在此範例中，我們將使用名為的範例 PDF 文件`GetDocumentWindow.pdf`.
+
+## 步驟1：設定文檔目錄路徑
+
+首先，我們需要定義 PDF 檔案的路徑。擁有正確的文件路徑對於避免執行過程中出現任何錯誤至關重要。
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+在這裡，替換`"YOUR DOCUMENT DIRECTORY"`與您的 PDF 檔案所在的實際目錄。這是您載入 PDF 文件的工作目錄。
+
+## 第 2 步：開啟 PDF 文檔
+
+現在檔案路徑已設置，下一步是使用 Aspose.PDF 開啟 PDF 文件。這會將文件載入到記憶體中，以便您檢索其屬性。
+
+```csharp
 Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 ```
 
-在上面的程式碼中，替換`"YOUR DOCUMENT DIRECTORY"`以及 PDF 文件所在目錄的路徑。此程式碼會將 PDF 文件載入到`Document`對象，然後您可以使用該對象檢索有關文檔視窗屬性的資訊。
+透過這行簡單的程式碼，您已成功將 PDF 檔案載入到`pdfDocument`對象，現在允許您存取它的所有屬性。
 
-## 步驟 3：檢索文件的視窗屬性
+## 步驟 3：檢索視窗居中狀態
 
-要檢索有關 PDF 文件視窗屬性的信息，您可以使用以下程式碼：
-
-```csharp
-//檢索文檔的視窗屬性
-Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
-```
-
-在上面的程式碼中，每一行會檢索 PDF 文件的不同視窗屬性並將其輸出到控制台。您可以自訂此程式碼以僅檢索您感興趣的屬性。
-
-### 使用 Aspose.PDF for .NET 取得 PDF 文件的文件視窗的範例原始碼 
-
-以下是使用以下命令檢索 PDF 文件視窗屬性的完整原始碼：`GetDocumentWindow` Aspose.PDF for .NET 的功能：
+接下來，讓我們檢查一下文檔視窗開啟時是否應該居中。預設值為`false`.
 
 ```csharp
-//文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-//開啟文件
-Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
-
-//取得不同的文件屬性
-//文檔視窗的位置 - 預設值： false
 Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-
-//主要閱讀順序；確定頁面的位置
-//並排顯示時 - 預設：L2R
-Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-
-//視窗標題列是否顯示文件標題
-//如果為 false，標題列將顯示 PDF 檔案名稱 - 預設值：false
-Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-
-//是否調整文檔視窗的大小以適合
-//第一個顯示的頁面 - 預設值： false
-Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-
-//是否隱藏檢視器應用程式的選單列 - 預設： false
-Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-
-//是否隱藏檢視器應用程式的工具列 - 預設： false
-Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-
-//是否隱藏捲軸等UI元素
-//並且只保留顯示的頁面內容 - 預設值： false
-Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-
-//文檔的頁面模式。如何在退出全螢幕模式時顯示文件。
-Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-
-//頁面版面即單頁、一欄
-Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-
-//文件開啟時應如何顯示
-//即顯示縮圖、全螢幕、顯示附件面板
-Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 ```
+
+如果輸出是`true`，文檔的視窗將在螢幕中央開啟。否則，它將在預設位置打開。
+
+## 第 4 步：檢查文字方向
+
+PDF 外觀的另一個重要方面是文字方向，它決定文字是從左到右 (L2R) 還是從右到左 (R2L) 閱讀。您可以使用以下程式碼檢索此資訊：
+
+```csharp
+Console.WriteLine("Direction : {0}", pdfDocument.Direction);
+```
+
+輸出將是`L2R`對於從左到右的文字和`R2L`對於從右到左的文字。此設定對於阿拉伯語或希伯來語等語言的文檔特別有用。
+
+## 步驟5：在視窗中顯示文件標題
+
+下一個屬性可讓您控制是否應在視窗的標題列上顯示文件標題或檔案名稱。預設情況下，此設定為`false`，表示將顯示檔案名稱。
+
+```csharp
+Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
+```
+
+如果您希望顯示文件的標題而不是文件名，則必須啟用此設定。
+
+## 步驟 6：調整視窗大小以適合第一頁
+
+有時，您可能希望文件視窗在開啟時自動調整自身大小以適合 PDF 的第一頁。以下是檢查該功能是否已啟用的方法：
+
+```csharp
+Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
+```
+
+預設情況下，此設定為`false`，這意味著無論第一頁的大小如何，視窗大小都將保持不變。
+
+## 步驟7：隱藏選單欄
+
+為了獲得更集中的閱讀體驗，您可能需要隱藏檢視器應用程式的功能表列。您可以使用以下行檢索此設定：
+
+```csharp
+Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
+```
+
+這將返回`true`如果功能表列被隱藏，並且`false`否則。
+
+## 第8步：隱藏工具列
+
+同樣，您可能還想隱藏 PDF 檢視器中的工具欄，以獲得更清晰的使用者介面。可以如下擷取此設定：
+
+```csharp
+Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
+```
+
+如果啟用此設置，打開 PDF 時工具列將隱藏。
+
+## 第 9 步：隱藏捲軸和 UI 元素
+
+如果您只想顯示頁面內容而不顯示任何其他 UI 元素（例如捲軸），則此設定控制該行為：
+
+```csharp
+Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
+```
+
+當設定為`true`，PDF檢視器將隱藏捲軸和其他使用者介面元素，只留下文件內容。
+
+## 步驟10：設定非全螢幕頁面模式
+
+您可以使用以下命令控制退出全螢幕模式時文件的顯示方式`NonFullScreenPageMode`財產。此設定有助於定義使用者應如何在非全螢幕模式下與文件互動。
+
+```csharp
+Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
+```
+
+輸出可以設定為不同的模式，如縮圖、輪廓或附件面板。
+
+## 第11步：定義頁面佈局
+
+此設定可讓您控製文件頁面的佈局方式。例如，您可以選擇單一頁面視圖或連續列視圖：
+
+```csharp
+Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
+```
+
+這使用戶可以靈活地閱讀或查看文件內容。
+
+## 第12步：指定頁面模式
+
+最後，`PageMode`屬性定義文件在開啟時應如何顯示。選項包括顯示縮圖、進入全螢幕模式或顯示附件面板。
+
+```csharp
+Console.WriteLine("PageMode : {0}", pdfDocument.PageMode);
+```
+
+根據您的需要，您可以將其設定為適合 PDF 用途的任何模式。
 
 ## 結論
 
-在本教學中，我們學習如何使用 Aspose.PDF for .NET 擷取 PDF 文件視窗屬性的資訊。透過載入 PDF 文件並存取其視窗屬性，您可以收集有關文件在檢視器應用程式中開啟時應如何顯示的資訊。 Aspose.PDF for .NET 提供了一組強大的功能，以程式設計方式處理 PDF 文件，使其成為 .NET 應用程式中 PDF 操作的寶貴工具。
+如您所看到的，Aspose.PDF for .NET 提供了一個全面的工具來控制 PDF 文件在各種 PDF 檢視器中的顯示方式。無論您想要隱藏工具列、居中視窗或控製文字方向，Aspose.PDF 都可以靈活地增強使用者的檢視體驗。
 
-### 常見問題解答
+# 常見問題解答
 
-#### Q：檢索 PDF 文件的視窗屬性的目的是什麼？
+### 我可以自訂 PDF 的初始縮放等級嗎？
+是的，Aspose.PDF 允許您在開啟文件時設定縮放等級。
 
-答：透過檢索 PDF 文件的視窗屬性，您可以收集有關在檢視器應用程式中開啟 PDF 文件時應如何顯示的資訊。這些屬性控制各個方面，例如視窗位置、顯示模式和 UI 元素的可見性。
+### 如何鎖定 PDF 的視窗大小？
+您可以設定`FitWindow`屬性以防止視窗調整大小。
 
-#### Q：如何在我的 .NET 專案中安裝 Aspose.PDF for .NET？
+### Aspose.PDF支援不同的閱讀模式嗎？
+是的，它支援不同的模式，如全螢幕、縮圖和配件。
 
-答：要安裝 Aspose.PDF for .NET，您需要從以下位置下載該程式庫：[Aspose.PDF for .NET 下載頁面](https://releases.aspose.com/pdf/net)。下載後，解壓縮 ZIP 檔案的內容並在 .NET 專案中新增對 Aspose.PDF for .NET DLL 的參考。
+### 是否可以在 PDF 檢視器中隱藏捲軸？
+當然，您可以透過設定來隱藏捲軸`HideWindowUI`財產給`true`.
 
-#### Q：我可以自訂程式碼以僅檢索特定視窗屬性嗎？
-
-答：是的，您可以透過註解掉不需要的行來自訂程式碼以擷取特定的視窗屬性。程式碼中的每一行都對應一個特定的視窗屬性，因此您可以根據需要包含或排除屬性。
-
-#### Q：我可以使用 Aspose.PDF for .NET 檢索哪些類型的視窗屬性？
-
-答：使用Aspose.PDF for .NET，您可以擷取PDF文件的各種視窗屬性，包括視窗置中、設定頁面佈局、控制工具列和功能表列的顯示等。
+### 開啟文件視窗時可以將其置中嗎？
+是的，您可以透過設定來控制`CenterWindow`財產。

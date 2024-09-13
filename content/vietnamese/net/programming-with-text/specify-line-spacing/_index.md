@@ -124,12 +124,12 @@ formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 TextFragment textFragment = new TextFragment("Hello world");
 if (fontFile != "")
 {
-	// Tải phông chữ TrueType vào đối tượng luồng
+	//Tải phông chữ TrueType vào đối tượng luồng
 	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
 	{
 		// Đặt tên phông chữ cho chuỗi văn bản
 		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		//Chỉ định vị trí cho Đoạn văn bản
+		// Chỉ định vị trí cho Đoạn văn bản
 		textFragment.Position = new Position(100, 600);
 		//Đặt TextFormattingOptions của đoạn hiện tại thành predefined (trỏ đến LineSpacingMode.FullSize)
 		textFragment.TextState.FormattingOptions = formattingOptions;

@@ -1,7 +1,7 @@
 ---
 title: Uppdatera underordnade bokmärken i PDF-fil
 linktitle: Uppdatera underordnade bokmärken i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du uppdaterar underordnade bokmärken i PDF-filer med Aspose.PDF för .NET med denna steg-för-steg-guide. Förbättra din PDF-navigering.
 type: docs
 weight: 110

@@ -93,7 +93,7 @@ Gratulacje! Udało Ci się nauczyć, jak zastąpić obraz w istniejącym pliku P
 
 ### Czy korzystanie z biblioteki Aspose.PDF jest bezpłatne?
 
-Aspose.PDF for Java to komercyjna biblioteka i może być konieczne zakupienie licencji na pełne wykorzystanie. Oferuje jednak bezpłatną wersję próbną, której można użyć do oceny.
+Aspose.PDF for Java to biblioteka komercyjna i może być konieczne zakupienie licencji w celu pełnego wykorzystania. Oferuje jednak bezpłatną wersję próbną, której można użyć do oceny.
 
 ### Czy mogę zastąpić wiele obrazów w jednym dokumencie PDF?
 

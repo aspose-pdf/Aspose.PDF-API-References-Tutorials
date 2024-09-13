@@ -43,7 +43,7 @@ Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
 ## 4단계: 기본 셀 테두리 설정
 
- 일관성을 유지하기 위해 다음을 사용하여 기본 셀 테두리를 설정할 수 있습니다.`DefaultCellBorder`테이블의 속성`BorderInfo` 물체.
+ 일관성을 유지하기 위해 다음을 사용하여 기본 셀 테두리를 설정할 수 있습니다.`DefaultCellBorder` 테이블의 속성`BorderInfo` 물체.
 
 ```csharp
 // BorderInfo 객체를 사용하여 기본 셀 테두리 설정
@@ -93,7 +93,7 @@ Aspose.Pdf.Cell cell2 = row1.Cells.Add();
 마지막으로, 셀 안에 이미지를 문단으로 추가하여 표 셀에 이미지를 추가할 수 있습니다.
 
 ```csharp
-// 테이블 셀에 이미지 추가
+//테이블 셀에 이미지 추가
 cell2.Paragraphs.Add(img);
 ```
 
@@ -102,7 +102,7 @@ cell2.Paragraphs.Add(img);
 이미지 셀을 추가한 후, 필요에 따라 행에 셀을 더 추가할 수 있습니다.
 
 ```csharp
-//행에 다른 셀을 추가합니다
+// 행에 다른 셀을 추가합니다
 row1.Cells.Add("Previous cell with image");
 
 // 세 번째 셀의 수직 정렬을 조정합니다.
@@ -114,7 +114,7 @@ row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
  마지막으로, 다음을 사용하여 수정된 문서를 지정된 위치에 저장할 수 있습니다.`Save` 방법.
 
 ```csharp
-// 문서 저장
+//문서 저장
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
@@ -140,16 +140,16 @@ tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.
 tab1.ColumnWidths = "100 100 120";
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose.jpg";
-// 표에 행을 만든 다음 행에 셀을 만듭니다.
+//표에 행을 만든 다음 행에 셀을 만듭니다.
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Sample text in cell");
 // 이미지가 들어있는 셀을 추가합니다
 Aspose.Pdf.Cell cell2 = row1.Cells.Add();
-// 테이블 셀에 이미지 추가
+//테이블 셀에 이미지 추가
 cell2.Paragraphs.Add(img);
 row1.Cells.Add("Previous cell with image");
 row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
-// 문서 저장
+//문서 저장
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
@@ -165,7 +165,7 @@ A: 네, Aspose.PDF for .NET을 사용하여 동일한 테이블 내의 다른 �
 
 #### 질문: 표 셀 내에서 이미지 크기와 위치를 사용자 지정할 수 있나요?
 
- A: 예, 테이블 셀의 속성을 조정하여 테이블 셀 내에서 이미지 크기와 위치를 사용자 정의할 수 있습니다.`Image`객체. 셀 내에서 이미지 너비와 높이, 정렬을 설정할 수 있습니다.
+ A: 예, 테이블 셀의 속성을 조정하여 테이블 셀 내에서 이미지 크기와 위치를 사용자 정의할 수 있습니다.`Image` 객체. 셀 내에서 이미지 너비와 높이, 정렬을 설정할 수 있습니다.
 
 #### 질문: 행과 열의 개수가 동적으로 변하는 표에 이미지를 추가할 수 있나요?
 

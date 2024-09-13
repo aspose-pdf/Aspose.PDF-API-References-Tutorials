@@ -1,7 +1,7 @@
 ---
 title: Lägg till transparent text i PDF-fil
 linktitle: Lägg till transparent text i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du lägger till transparent text i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 100
@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Steg 5: Lägg till en sida i dokumentet
- Lägg till en ny sida i dokumentet med hjälp av`Add` metod för`Pages`samling. I den angivna koden är den nya sidan tilldelad variabeln`page`.
+ Lägg till en ny sida i dokumentet med hjälp av`Add` metod för`Pages` samling. I den angivna koden är den nya sidan tilldelad variabeln`page`.
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
@@ -109,7 +109,7 @@ Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 4
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
 // Lägg till rektangulär formsamling av Graph-objekt
 canvas.Shapes.Add(rect);
-//Lägg till grafobjekt till styckesamling av sidobjekt
+// Lägg till grafobjekt till styckesamling av sidobjekt
 page.Paragraphs.Add(canvas);
 // Ställ in värde för att inte ändra position för grafobjekt
 canvas.IsChangePosition = false;
@@ -163,7 +163,7 @@ using Aspose.Pdf.Drawing;
 
 #### F: Hur skapar jag en rektangel med transparens?
 
-S: I steg 7 skapar du en rektangel med specifika mått och ställer in dess fyllningsfärg till en transparent färg med hjälp av`Color.FromRgb` metod.
+ S: I steg 7 skapar du en rektangel med specifika mått och ställer in dess fyllningsfärg till en transparent färg med hjälp av`Color.FromRgb` metod.
 
 #### F: Hur lägger jag till Graph-objektet på sidan?
 
@@ -175,7 +175,7 @@ S: I steg 7 skapar du en rektangel med specifika mått och ställer in dess fyll
 
 #### F: Hur skapar jag ett TextFragment med transparens?
 
- S: I steg 10 skapar du en`TextFragment` objekt och ställ in dess innehåll och`ForegroundColor` egenskap för att uppnå transparent text.
+S: I steg 10 skapar du en`TextFragment` objekt och ställ in dess innehåll och`ForegroundColor` egenskap för att uppnå transparent text.
 
 #### F: Hur sparar jag PDF-dokumentet?
 

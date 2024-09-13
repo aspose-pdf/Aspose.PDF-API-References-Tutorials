@@ -96,7 +96,7 @@ Xin chúc mừng! Bây giờ bạn đã học được cách xóa bảng trong t
 
 #### H: Điều gì xảy ra nếu trang được chỉ định không chứa bất kỳ bảng nào?
 
- A: Nếu trang được chỉ định không chứa bất kỳ bảng nào, mã sẽ đưa ra một`IndexOutOfRangeException` khi cố gắng truy cập`absorb.TableList[0]` . Để tránh vấn đề này, bạn nên kiểm tra xem`absorb.TableList`chứa bất kỳ phần tử nào trước khi truy cập vào bảng.
+ A: Nếu trang được chỉ định không chứa bất kỳ bảng nào, mã sẽ đưa ra một`IndexOutOfRangeException` khi cố gắng truy cập`absorb.TableList[0]` . Để tránh vấn đề này, bạn nên kiểm tra xem`absorb.TableList` chứa bất kỳ phần tử nào trước khi truy cập vào bảng.
 
 #### H: Tôi có thể xóa bảng khỏi các trang khác ngoài trang đầu tiên không?
 

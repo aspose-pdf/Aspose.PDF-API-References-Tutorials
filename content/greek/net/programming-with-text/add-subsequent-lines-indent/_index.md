@@ -38,14 +38,14 @@ Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
 ## Βήμα 5: Προσθέστε μια σελίδα στο έγγραφο
- Προσθέστε μια νέα σελίδα στο έγγραφο χρησιμοποιώντας το`Add` μέθοδος του`Pages`συλλογή. Στον παρεχόμενο κωδικό, η νέα σελίδα εκχωρείται στη μεταβλητή`page`.
+ Προσθέστε μια νέα σελίδα στο έγγραφο χρησιμοποιώντας το`Add` μέθοδος του`Pages` συλλογή. Στον παρεχόμενο κωδικό, η νέα σελίδα εκχωρείται στη μεταβλητή`page`.
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
 ## Βήμα 6: Δημιουργήστε ένα TextFragment με εσοχή στις επόμενες γραμμές
- Στιγμιότυπο α`TextFragment` αντικείμενο και παρέχετε το επιθυμητό κείμενο. Στον παρεχόμενο κωδικό, το κείμενο εκχωρείται στη μεταβλητή`text` . Στη συνέχεια, αρχικοποιήστε`TextFormattingOptions` για το`TextFragment`και προσδιορίστε το`SubsequentLinesIndent` αξία.
+ Στιγμιότυπο α`TextFragment` αντικείμενο και παρέχετε το επιθυμητό κείμενο. Στον παρεχόμενο κωδικό, το κείμενο εκχωρείται στη μεταβλητή`text` . Στη συνέχεια, αρχικοποιήστε`TextFormattingOptions` για το`TextFragment` και προσδιορίστε το`SubsequentLinesIndent` αξία.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
@@ -91,7 +91,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = document.Pages.Add();
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-// Εκκινήστε το TextFormattingOptions για το τμήμα κειμένου και καθορίστε την τιμή SubsequentLinesIndent
+//Εκκινήστε το TextFormattingOptions για το τμήμα κειμένου και καθορίστε την τιμή SubsequentLinesIndent
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
 	SubsequentLinesIndent = 20
@@ -148,7 +148,7 @@ Aspose.Pdf.Page page = document.Pages.Add();
 
 #### Ε: Πώς μπορώ να προσθέσω επόμενες γραμμές εσοχή στο κείμενο;
 
- Α: Στο Βήμα 6, θα δημιουργήσετε ένα`TextFragment` αντικείμενο και αντιστοιχίστε σε αυτό το επιθυμητό κείμενο. Στη συνέχεια, θα αρχικοποιήσετε`TextFormattingOptions` για το`TextFragment`και προσδιορίστε το`SubsequentLinesIndent` αξία:
+ Α: Στο Βήμα 6, θα δημιουργήσετε ένα`TextFragment` αντικείμενο και αντιστοιχίστε σε αυτό το επιθυμητό κείμενο. Στη συνέχεια, θα αρχικοποιήσετε`TextFormattingOptions` για το`TextFragment` και προσδιορίστε το`SubsequentLinesIndent` αξία:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
@@ -168,7 +168,7 @@ page.Paragraphs.Add(text);
 
 #### Ε: Μπορώ να επαναλάβω τη διαδικασία για επιπλέον γραμμές;
 
- Α: Ναι, στο Βήμα 8, μπορείτε να επαναλάβετε τη διαδικασία για πρόσθετες γραμμές με την ίδια εσοχή δημιουργώντας νέα`TextFragment` αντικείμενα και προσθέτοντάς τα στη συλλογή παραγράφων της σελίδας.
+Α: Ναι, στο Βήμα 8, μπορείτε να επαναλάβετε τη διαδικασία για πρόσθετες γραμμές με την ίδια εσοχή δημιουργώντας νέα`TextFragment` αντικείμενα και προσθέτοντάς τα στη συλλογή παραγράφων της σελίδας.
 
 #### Ε: Πώς μπορώ να αποθηκεύσω το έγγραφο PDF που προκύπτει;
 

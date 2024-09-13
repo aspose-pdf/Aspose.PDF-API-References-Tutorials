@@ -22,7 +22,7 @@ description: Aspose.PDF for .NET을 사용한 문서 변환 튜토리얼을 확�
 | [MHT에서 PDF로](./mht-to-pdf/) | 이 단계별 튜토리얼에서 Aspose.PDF for .NET을 사용하여 MHT 파일을 PDF로 변환하는 방법을 알아보세요. 쉽고 효율적인 문서 변환. |  
 | [이미지 크기에 따른 페이지 방향](./page-orientation-according-image-dimensions/) | 이 단계별 가이드에서 .NET용 Aspose.PDF를 사용하여 PDF를 만드는 방법과 이미지 크기에 따라 페이지 방향을 설정하는 방법을 알아보세요. |  
 | [PCL에서 PDF로](./pcl-to-pdf/) | 이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PCL 파일을 PDF로 변환하는 방법을 알아보세요. 개발자와 기업 모두에게 완벽합니다. |  
-| [PDFA에서 PDF로](./pdfa-to-pdf/) | 이 포괄적인 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF/A를 PDF로 변환하는 방법을 알아보세요. |  
+| [PDFA에서 PDF로](./pdfa-to-pdf/) | 이 포괄적인 단계별 가이드를 통해 .NET용 Aspose.PDF를 사용하여 PDF/A를 PDF로 변환하는 방법을 알아보세요. |  
 | [PDF에서 DOC로](./pdf-to-doc/) | 이 포괄적인 가이드에서 Aspose.PDF for .NET을 사용하여 PDF를 DOC로 변환하는 방법을 알아보세요. 단계별 지침과 팁이 포함되어 있습니다.  |  
 | [PDF에서 EPUB로](./pdf-to-epub/) | 이 단계별 튜토리얼에서 Aspose.PDF for .NET을 사용하여 PDF를 EPUB로 변환하는 방법을 알아보세요. 개발자와 콘텐츠 제작자에게 완벽합니다. |  
 | [PDF에서 HTML로](./pdf-to-html/) | 이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF를 HTML로 변환하는 방법을 알아보세요. 개발자와 콘텐츠 제작자에게 완벽합니다. |  

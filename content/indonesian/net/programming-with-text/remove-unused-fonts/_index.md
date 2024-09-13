@@ -120,7 +120,7 @@ A: Tutorial ini memandu Anda melalui proses langkah demi langkah:
 
 A: Ya, Anda dapat mengubah kode untuk mengganti font yang tidak digunakan dengan font pilihan Anda. Dalam contoh kode yang diberikan, font "Arial, Bold" digunakan sebagai pengganti.
 
-####  T: Bagaimana caranya`TextFragmentAbsorber` work to remove unused fonts?
+#### T: Bagaimana caranya`TextFragmentAbsorber` work to remove unused fonts?
 
  Sebuah:`TextFragmentAbsorber` dikonfigurasi dengan`TextEditOptions.FontReplace.RemoveUnusedFonts` parameter, yang mengidentifikasi font yang tidak digunakan dalam fragmen teks PDF. Setelah penyerapan, Anda dapat mengulanginya`TextFragments` dan mengatur fontanya ke font pengganti yang diinginkan.
 

@@ -126,7 +126,7 @@ margin.Bottom = 5f;
 // Définir le remplissage de cellule par défaut sur l'objet MarginInfo
 tab1.DefaultCellPadding = margin;
 
-// Créez des lignes dans le tableau, puis des cellules dans les lignes
+//Créez des lignes dans le tableau, puis des cellules dans les lignes
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

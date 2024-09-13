@@ -13,4 +13,4 @@ Aspose.PDF for .NET 教學課程將帶您逐步掌握 PDF 文件中標題的程�
 ## 教學
 | 標題 | 描述 |
 | --- | --- | 
-| [在 PDF 檔案中套用數字樣式](./apply-number-style/) | 了解如何使用 Aspose.PDF for .NET 將編號樣式套用至 PDF 檔案中的標題。一步步指導。 |   
+| [在 PDF 檔案中套用數字樣式](./apply-number-style/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 將不同的數字樣式（羅馬數字、字母順序）套用至 PDF 中的標題。 |   

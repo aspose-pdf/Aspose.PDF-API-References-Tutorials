@@ -142,7 +142,7 @@ using Aspose.Pdf.Text;
 
 #### F: Kann ich das im Tutorial verwendete LaTeX-Skript anpassen?
 
- A: Absolut. Die bereitgestellten Codebeispiele zeigen, wie man ein LaTeX-Skript für einen mathematischen Ausdruck einfügt. Sie können das`latexText1` Sie können die Variable so konfigurieren, dass sie jede mathematische Formel oder jeden Ausdruck enthält, den Sie im PDF-Dokument anzeigen möchten.
+ A: Absolut. Die bereitgestellten Codebeispiele zeigen, wie man ein LaTeX-Skript für einen mathematischen Ausdruck einfügt. Sie können das`latexText1` Variable, die jede mathematische Formel oder jeden Ausdruck enthält, den Sie im PDF-Dokument anzeigen möchten.
 
 #### F: Wie speichere ich das PDF-Dokument, nachdem ich LaTeX-basierte Inhalte hinzugefügt habe?
 

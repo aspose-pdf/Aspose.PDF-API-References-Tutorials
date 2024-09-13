@@ -83,7 +83,7 @@ try
 
 	// Načíst existující soubor PDF
 	Document pdfDocument = new Document(dataDir + "input.pdf");
-	// Vytvořte objekt TableAbsorber pro nalezení tabulek
+	// Vytvořte objekt TableAbsorber a vyhledejte tabulky
 	TableAbsorber absorber = new TableAbsorber();
 
 	// Navštivte první stránku s absorbérem
@@ -121,11 +121,11 @@ Odpověď: Ano, pomocí Aspose.PDF pro .NET můžete manipulovat s tabulkami ve 
 
 #### Otázka: Je možné odstranit tabulku z dokumentu PDF?
 
- Odpověď: Ano, tabulku můžete z dokumentu PDF odstranit pomocí Aspose.PDF for .NET. Chcete-li toho dosáhnout, můžete odstranit konkrétní`Table` objekt z`Page.Paragraphs` sbírka. Tabulku, kterou chcete odstranit, můžete identifikovat pomocí vlastností jako`Table.NumberOfColumns`, `Table.NumberOfRows`a další jedinečné identifikátory.
+ Odpověď: Ano, tabulku můžete z dokumentu PDF odstranit pomocí Aspose.PDF for .NET. Chcete-li toho dosáhnout, můžete odstranit konkrétní`Table` objekt z`Page.Paragraphs` sbírka. Tabulku, kterou chcete odstranit, můžete identifikovat pomocí vlastností jako`Table.NumberOfColumns`, `Table.NumberOfRows`další jedinečné identifikátory.
 
 #### Otázka: Mohu změnit formátování (font, barvu, zarovnání) textu tabulky?
 
- Odpověď: Ano, můžete změnit formátování textu tabulky pomocí Aspose.PDF pro .NET. Můžete přistupovat k`TextState` majetek z`TextFragment` objekt pro úpravu písma, velikosti písma, barvy a zarovnání textu.
+ Odpověď: Ano, můžete změnit formátování textu tabulky pomocí Aspose.PDF pro .NET. Můžete přistupovat k`TextState` vlastnictví`TextFragment` objekt pro úpravu písma, velikosti písma, barvy a zarovnání textu.
 
 #### Otázka: Podporuje Aspose.PDF for .NET práci s tabulkami ve formulářích PDF (AcroForms)?
 

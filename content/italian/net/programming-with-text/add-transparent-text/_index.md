@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Passaggio 5: aggiungere una pagina al documento
- Aggiungere una nuova pagina al documento utilizzando il`Add` metodo del`Pages`raccolta. Nel codice fornito, la nuova pagina è assegnata alla variabile`page`.
+ Aggiungere una nuova pagina al documento utilizzando il`Add` metodo del`Pages` raccolta. Nel codice fornito, la nuova pagina è assegnata alla variabile`page`.
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
@@ -109,7 +109,7 @@ Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 4
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
 // Aggiungi rettangolo alla raccolta di forme dell'oggetto Graph
 canvas.Shapes.Add(rect);
-//Aggiungere un oggetto grafico alla raccolta di paragrafi dell'oggetto pagina
+// Aggiungere un oggetto grafico alla raccolta di paragrafi dell'oggetto pagina
 page.Paragraphs.Add(canvas);
 // Imposta il valore per non modificare la posizione dell'oggetto grafico
 canvas.IsChangePosition = false;
@@ -163,7 +163,7 @@ using Aspose.Pdf.Drawing;
 
 #### D: Come posso creare un rettangolo con trasparenza?
 
-A: Nel passaggio 7, creerai un rettangolo con dimensioni specifiche e imposterai il suo colore di riempimento su un colore trasparente utilizzando`Color.FromRgb` metodo.
+ A: Nel passaggio 7, creerai un rettangolo con dimensioni specifiche e imposterai il suo colore di riempimento su un colore trasparente utilizzando`Color.FromRgb` metodo.
 
 #### D: Come posso aggiungere l'oggetto Grafico alla pagina?
 
@@ -175,7 +175,7 @@ A: Nel passaggio 7, creerai un rettangolo con dimensioni specifiche e imposterai
 
 #### D: Come posso creare un TextFragment con trasparenza?
 
- A: Nel passaggio 10, creerai un`TextFragment` oggetto e impostarne il contenuto e`ForegroundColor` proprietà per ottenere testo trasparente.
+A: Nel passaggio 10, creerai un`TextFragment` oggetto e impostarne il contenuto e`ForegroundColor` proprietà per ottenere testo trasparente.
 
 #### D: Come posso salvare il documento PDF?
 

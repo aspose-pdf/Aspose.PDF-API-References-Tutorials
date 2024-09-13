@@ -47,7 +47,7 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 ```
 
 ## Schritt 6: Dem Dokument eine Seite hinzufügen
- Fügen Sie dem Dokument eine neue Seite hinzu, indem Sie das`Add` Methode der`Pages`Sammlung. Im bereitgestellten Code wird die neue Seite der Variablen zugewiesen`page`.
+ Fügen Sie dem Dokument eine neue Seite hinzu, indem Sie das`Add` Methode der`Pages` Sammlung. Im bereitgestellten Code wird die neue Seite der Variablen zugewiesen`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -81,7 +81,7 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 Page page = doc.Pages.Add();
 // HtmlFragment innerhalb der Seite hinzufügen
 page.Paragraphs.Add(t);
-// Speichern Sie die resultierende PDF-Datei
+//Speichern Sie die resultierende PDF-Datei
 doc.Save(outFile);
 ```
 
@@ -115,7 +115,7 @@ using Aspose.Pdf.Text;
 
 #### F: Wie füge ich die sortierte HTML-Liste zu einer Seite im Dokument hinzu?
 
- A: In Schritt 7 fügen Sie die`HtmlFragment` Objekt (`t` ) zur Seite mit dem`Add` Methode der`Paragraphs`Sammlung. Dadurch wird die HTML-geordnete Liste nahtlos in das Dokument integriert.
+ A: In Schritt 7 fügen Sie die`HtmlFragment` Objekt (`t` ) zur Seite mit dem`Add` Methode der`Paragraphs` Sammlung. Dadurch wird die HTML-geordnete Liste nahtlos in das Dokument integriert.
 
 #### F: Wie speichere ich das resultierende PDF-Dokument?
 

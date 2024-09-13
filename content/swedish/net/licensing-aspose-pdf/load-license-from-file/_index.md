@@ -1,7 +1,7 @@
 ---
 title: Ladda licens från fil
 linktitle: Ladda licens från fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du laddar en licens från en fil i Aspose.PDF för .NET med den här omfattande guiden. Säkerställ full funktionalitet genom att ställa in din licens korrekt.
 type: docs
 weight: 20

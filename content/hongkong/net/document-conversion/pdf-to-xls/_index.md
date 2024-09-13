@@ -42,7 +42,7 @@ using Aspose.Pdf;
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-代替`"YOUR DOCUMENT DIRECTORY"`與您機器上的實際路徑。這就像為你的表演搭建舞台；一切都需要在對的地方！
+代替`"YOUR DOCUMENT DIRECTORY"`與您機器上的實際路徑。這就像為你的表演搭建舞台；一切都需要在正確的地方！
 
 ## 第 2 步：載入 PDF 文檔
 
@@ -79,7 +79,7 @@ pdfDocument.Save("PDFToXLS_out.xls", excelsave);
 
 ## 結論
 
-現在你就擁有了！您已使用 Aspose.PDF for .NET 成功將 PDF 文件轉換為 XLS 文件。這個功能強大的庫可以輕鬆操作 PDF 文件並提取數據以進行進一步分析。無論您是希望簡化工作流程的開發人員還是需要分析資料的業務專業人士，Aspose.PDF 都能滿足您的需求。那麼，你還在等什麼？潛入 PDF 轉換的世界並釋放資料的潛力！
+現在你就得到它了！您已使用 Aspose.PDF for .NET 成功將 PDF 文件轉換為 XLS 文件。這個功能強大的庫可以輕鬆操作 PDF 文件並提取數據以進行進一步分析。無論您是希望簡化工作流程的開發人員還是需要分析資料的業務專業人士，Aspose.PDF 都能滿足您的需求。那麼，你還在等什麼？潛入 PDF 轉換的世界並釋放資料的潛力！
 
 ## 常見問題解答
 

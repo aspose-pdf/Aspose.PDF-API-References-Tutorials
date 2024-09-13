@@ -2,154 +2,167 @@
 title: Podpisz za pomocą karty inteligentnej, używając podpisu pliku PDF
 linktitle: Podpisz za pomocą karty inteligentnej, używając podpisu pliku PDF
 second_title: Aspose.PDF dla .NET API Reference
-description: Bezpiecznie podpisuj pliki PDF za pomocą karty inteligentnej, korzystając z Aspose.PDF dla .NET.
+description: Dowiedz się, jak podpisywać pliki PDF za pomocą karty inteligentnej za pomocą Aspose.PDF dla .NET. Postępuj zgodnie z tym przewodnikiem krok po kroku, aby uzyskać bezpieczne podpisy cyfrowe.
 type: docs
 weight: 110
 url: /pl/net/programming-with-security-and-signatures/sign-with-smart-card-using-pdf-file-signature/
 ---
-Cyfrowe podpisywanie za pomocą karty inteligentnej to bezpieczny sposób podpisywania plików PDF. Dzięki Aspose.PDF dla .NET możesz łatwo podpisać plik PDF za pomocą karty inteligentnej, postępując zgodnie z następującym kodem źródłowym:
+## Wstęp
 
-## Krok 1: Importuj wymagane biblioteki
+erze cyfrowej zabezpieczanie dokumentów jest ważniejsze niż kiedykolwiek. Niezależnie od tego, czy jest to kontrakt, umowa czy jakiekolwiek poufne informacje, najważniejsze jest zapewnienie, że dokument jest autentyczny i nie został zmodyfikowany. Wprowadź podpisy cyfrowe! Dzisiaj zagłębimy się w to, jak podpisać plik PDF za pomocą karty inteligentnej z Aspose.PDF dla .NET. Ta potężna biblioteka umożliwia programistom wydajne manipulowanie i tworzenie dokumentów PDF, w tym dodawanie bezpiecznych podpisów cyfrowych. Więc weź swoją kartę inteligentną i zaczynajmy!
 
-Zanim zaczniesz, musisz zaimportować niezbędne biblioteki dla swojego projektu C#. Oto niezbędne dyrektywy importu:
+## Wymagania wstępne
+
+Zanim przejdziemy do szczegółów podpisywania pliku PDF, upewnijmy się, że masz wszystko, czego potrzebujesz. Oto lista kontrolna, która pomoże Ci się przygotować:
+
+1.  Aspose.PDF dla .NET: Upewnij się, że masz zainstalowaną bibliotekę Aspose.PDF. Możesz ją pobrać ze strony[strona](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: środowisko programistyczne, w którym można pisać i uruchamiać kod .NET.
+3. Karta inteligentna: Będziesz potrzebować karty inteligentnej z zainstalowanym ważnym certyfikatem cyfrowym.
+4. Podstawowa znajomość języka C#: Znajomość programowania w języku C# będzie pomocna, ponieważ będziemy pisać fragmenty kodu w tym języku.
+5. Dokument PDF: przykładowy plik PDF (np.`blank.pdf`) aby przetestować nasz proces podpisywania.
+
+Mając te wymagania wstępne za sobą, możesz zagłębić się w kod!
+
+## Importuj pakiety
+
+Najpierw zaimportujmy niezbędne pakiety. Musisz dodać odwołania do biblioteki Aspose.PDF w swoim projekcie. Oto, jak możesz to zrobić:
+
+1. Otwórz program Visual Studio.
+2. Utwórz nowy projekt lub otwórz istniejący.
+3.  Kliknij prawym przyciskiem myszy swój projekt w Eksploratorze rozwiązań i wybierz`Manage NuGet Packages`.
+4.  Szukaj`Aspose.PDF` i zainstaluj najnowszą wersję.
 
 ```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Facades;
-using Aspose.Pdf.Forms;
-using System.Security.Cryptography.X509Certificates;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Krok 2: Ustaw ścieżkę do folderu dokumentów
+Teraz, gdy zaimportowaliśmy już niezbędne pakiety, możemy przeanalizować kod krok po kroku.
 
- W tym kroku musisz określić ścieżkę do folderu zawierającego plik PDF, który chcesz podpisać. Zastąp`"YOUR DOCUMENTS DIRECTORY"` w poniższym kodzie podaj rzeczywistą ścieżkę do folderu z dokumentami:
+## Krok 1: Skonfiguruj swój dokument
+
+Pierwszym krokiem w naszym procesie jest skonfigurowanie dokumentu PDF, który chcemy podpisać. Oto, jak możesz to zrobić:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-```
-
-## Krok 3: Załaduj dokument PDF
-
-Teraz załadujemy dokument PDF do podpisania, korzystając z następującego kodu:
-
-```csharp
 Document doc = new Document(dataDir + "blank.pdf");
 ```
+ W tym fragmencie kodu definiujemy ścieżkę do naszego katalogu dokumentów i tworzymy wystąpienie`Document` klasa korzystająca z przykładowego pliku PDF o nazwie`blank.pdf` . Upewnij się, że wymienisz`"YOUR DOCUMENTS DIRECTORY"` z rzeczywistą ścieżką, gdzie znajduje się Twój plik PDF.
 
-## Krok 4: Wykonaj podpis za pomocą karty inteligentnej
+## Krok 2: Zainicjuj PdfFileSignature
 
- W tym kroku wykonamy podpis za pomocą karty inteligentnej, używając`PdfFileSignature` klasa z`Facades`library. Wybieramy certyfikat karty inteligentnej z magazynu certyfikatów Windows i określamy niezbędne informacje o podpisie. Oto odpowiedni kod:
-
-```csharp
-using (PdfFileSignature pdfSign = new PdfFileSignature())
-{
-     pdfSign.BindPdf(doc);
-
-     // Wybierz certyfikat w sklepie
-     X509Store store = new X509Store(StoreLocation.CurrentUser);
-     store.Open(OpenFlags.ReadOnly);
-     X509Certificate2Collection sel = X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, X509SelectionFlag.SingleSelection);
-     ExternalSignature externalSignature = new ExternalSignature(sel[0]);
-
-     pdfSign.SignatureAppearance = dataDir + "demo.png";
-     pdfSign.Sign(1, "Reason", "Contact", "Location", true, new System.Drawing.Rectangle(100, 100, 200, 200), externalSignature);
-     pdfSign.Save(dataDir + "externalSignature2.pdf");
-}
-```
-
-## Krok 5: Zweryfikuj podpis
-
- Na koniec weryfikujemy podpis podpisanego pliku PDF za pomocą`PdfFileSignature` klasa. Pobieramy nazwy podpisów i sprawdzamy je po kolei. Jeśli podpis nie przejdzie weryfikacji, zgłaszany jest wyjątek. Oto odpowiedni kod:
+ Następnie zainicjujemy`PdfFileSignature` Klasa, która odpowiada za obsługę procesu podpisywania.
 
 ```csharp
-using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "externalSignature2.pdf")))
-{
-     IList<string> sigNames = pdfSign. GetSignNames();
-     for (int index = 0; index <= sigNames.Count - 1; index++)
-     {
-         if (!pdfSign.VerifySigned(sigNames[index]) || !pdfSign.VerifySignature(sigNames[index]))
-         {
-             throw new ApplicationException("Unverified");
-         }
-     }
-}
-```
-
-### Przykładowy kod źródłowy dla podpisu za pomocą karty inteligentnej przy użyciu pliku PDF z wykorzystaniem Aspose.PDF dla .NET 
-```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-Document doc = new Document(dataDir + "blank.pdf");
 using (Facades.PdfFileSignature pdfSign = new Facades.PdfFileSignature())
 {
-	pdfSign.BindPdf(doc);
-	// Podpisz za pomocą wybranego certyfikatu w magazynie certyfikatów systemu Windows
-	System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
-	store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
-	// Ręcznie wybrano certyfikat w sklepie
-	System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel = System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
-	Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0]);
-	pdfSign.SignatureAppearance = dataDir + "demo.png";
-	pdfSign.Sign(1, "Reason", "Contact", "Location", true, new System.Drawing.Rectangle(100, 100, 200, 200), externalSignature);
-	pdfSign.Save(dataDir + "externalSignature2.pdf");
-}
+    pdfSign.BindPdf(doc);
+```
+Tutaj tworzymy instancję`PdfFileSignature` powiąż go z naszym dokumentem PDF. To przygotowuje dokument do podpisania.
+
+## Krok 3: Uzyskaj dostęp do certyfikatu karty inteligentnej
+
+Teraz nadchodzi kluczowa część — dostęp do cyfrowego certyfikatu zapisanego na karcie inteligentnej. Oto jak możemy to zrobić:
+
+### Otwórz magazyn certyfikatów
+
+```csharp
+System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
+store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
+```
+Otwieramy magazyn certyfikatów znajdujący się w profilu bieżącego użytkownika. Umożliwia nam to dostęp do certyfikatów zainstalowanych na Twoim komputerze, w tym tych na Twojej karcie inteligentnej.
+
+### Wybierz certyfikat
+
+```csharp
+System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel =
+    System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(
+        store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
+```
+Ten kod prosi użytkownika o wybranie certyfikatu z kolekcji. Interfejs użytkownika wyświetli wszystkie dostępne certyfikaty, umożliwiając wybór certyfikatu powiązanego z kartą inteligentną.
+
+## Krok 4: Utwórz podpis zewnętrzny
+
+Po wybraniu certyfikatu następnym krokiem jest utworzenie podpisu zewnętrznego przy użyciu wybranego certyfikatu.
+
+```csharp
+Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0]);
+```
+Tutaj tworzymy instancję`ExternalSignature` używając wybranego certyfikatu. Ten obiekt będzie używany do podpisania dokumentu PDF.
+
+## Krok 5: Ustaw wygląd podpisu
+
+Teraz ustawmy wygląd naszego podpisu. Tutaj możesz dostosować wygląd swojego podpisu w dokumencie.
+
+```csharp
+pdfSign.SignatureAppearance = dataDir + "demo.png";
+```
+ W tym fragmencie kodu określamy wygląd podpisu, podając ścieżkę do pliku obrazu (np. logo lub grafikę podpisu). Pamiętaj o zastąpieniu`"demo.png"` z rzeczywistym obrazem, którego chcesz użyć.
+
+## Krok 6: Podpisz plik PDF
+
+Gdy wszystko jest już skonfigurowane, czas podpisać dokument PDF!
+
+```csharp
+pdfSign.Sign(1, "Reason", "Contact", "Location", true, new System.Drawing.Rectangle(100, 100, 200, 200), externalSignature);
+pdfSign.Save(dataDir + "externalSignature2.pdf");
+```
+ tym kroku wywołujemy`Sign` metoda na naszej`pdfSign` obiekt. Oto co oznacza każdy parametr:
+- `1`:Numer strony, na której pojawi się podpis.
+- `"Reason"`:Powód podpisania dokumentu.
+- `"Contact"`: Dane kontaktowe osoby podpisującej.
+- `"Location"`:Lokalizacja osoby podpisującej.
+- `true`: Wskazuje, czy utworzyć widoczny podpis.
+- `new System.Drawing.Rectangle(100, 100, 200, 200)`:Pozycja i rozmiar podpisu w pliku PDF.
+- `externalSignature`:Obiekt podpisu, który utworzyliśmy wcześniej.
+
+ Na koniec zapisujemy podpisany dokument jako`externalSignature2.pdf`.
+
+## Krok 7: Zweryfikuj podpis
+
+Po podpisaniu dokumentu, konieczne jest sprawdzenie, czy podpis jest ważny. Oto jak to zrobić:
+
+### Zainicjuj proces weryfikacji
+
+```csharp
 using (Facades.PdfFileSignature pdfSign = new Facades.PdfFileSignature(new Document(dataDir + "externalSignature2.pdf")))
 {
-	IList<string> sigNames = pdfSign.GetSignNames();
-	for (int index = 0; index <= sigNames.Count - 1; index++)
-	{
-		if (!pdfSign.VerifySigned(sigNames[index]) || !pdfSign.VerifySignature(sigNames[index]))
-		{
-			throw new ApplicationException("Not verified");
-		}
-	}
+    IList<string> sigNames = pdfSign.GetSignNames();
+```
+ Tworzymy nową instancję`PdfFileSignature` dla podpisanego dokumentu. Następnie pobieramy nazwiska wszystkich podpisów obecnych w dokumencie.
+
+### Sprawdź ważność podpisu
+
+```csharp
+for (int index = 0; index <= sigNames.Count - 1; index++)
+{
+    if (!pdfSign.VerifySigned(sigNames[index]) || !pdfSign.VerifySignature(sigNames[index]))
+    {
+        throw new ApplicationException("Not verified");
+    }
 }
 ```
+Przechodzimy przez każdą nazwę podpisu i weryfikujemy jego ważność. Jeśli jakikolwiek podpis nie przejdzie weryfikacji, zgłaszany jest wyjątek, wskazujący, że podpis nie jest prawidłowy.
 
 ## Wniosek
 
-Gratulacje! Masz teraz przewodnik krok po kroku, jak podpisać plik PDF kartą inteligentną za pomocą Aspose.PDF dla .NET. Możesz użyć tego kodu, aby dodać bezpieczne podpisy cyfrowe do swoich dokumentów PDF.
+I masz to! Udało Ci się podpisać dokument PDF za pomocą karty inteligentnej za pomocą Aspose.PDF dla .NET. Ten proces nie tylko zabezpiecza Twój dokument, ale także dodaje warstwę autentyczności, która jest kluczowa w dzisiejszym cyfrowym świecie. Niezależnie od tego, czy masz do czynienia z umowami, dokumentami prawnymi czy jakimikolwiek poufnymi informacjami, wiedza, jak wdrożyć podpisy cyfrowe, jest cenną umiejętnością. 
 
-Zapoznaj się z oficjalną dokumentacją Aspose.PDF, aby uzyskać więcej informacji na temat zaawansowanych funkcji podpisu cyfrowego i zarządzania certyfikatami.
+## Najczęściej zadawane pytania
 
-### Najczęściej zadawane pytania
+### Czym jest Aspose.PDF dla .NET?
+Aspose.PDF dla platformy .NET to zaawansowana biblioteka umożliwiająca programistom tworzenie, edytowanie i konwertowanie dokumentów PDF w aplikacjach .NET.
 
-#### P: Dlaczego warto rozważyć podpisywanie plików PDF za pomocą karty inteligentnej?
+### Czy do podpisywania plików PDF potrzebuję karty inteligentnej?
+Choć korzystanie z karty inteligentnej nie jest obowiązkowe, jest ona zdecydowanie zalecana w przypadku bezpiecznych podpisów cyfrowych, gdyż zapewnia dodatkową warstwę bezpieczeństwa.
 
-A: Podpisywanie plików PDF za pomocą karty inteligentnej zwiększa bezpieczeństwo, zapewniając autentyczność i integralność dokumentu. Podpisy oparte na karcie inteligentnej zapewniają wyższy poziom zaufania i zgodności.
+### Czy mogę podpisać się przy użyciu dowolnego pliku PDF?
+Tak, możesz użyć dowolnego pliku PDF, ale upewnij się, że nie jest on chroniony hasłem. Jeśli jest, musisz go najpierw odblokować.
 
-#### P: Jak działa podpis cyfrowy oparty na karcie inteligentnej?
+### A co jeśli nie mam certyfikatu cyfrowego?
+Możesz uzyskać certyfikat cyfrowy od zaufanego urzędu certyfikacji (CA) lub użyć certyfikatu podpisanego samodzielnie w celach testowych.
 
-A: Podpis cyfrowy oparty na karcie inteligentnej polega na użyciu klucza kryptograficznego zapisanego na karcie inteligentnej w celu utworzenia unikalnego podpisu cyfrowego. Ten podpis jest dołączany do pliku PDF, umożliwiając odbiorcom weryfikację pochodzenia i integralności dokumentu.
-
-#### P: Jaką rolę pełni Aspose.PDF dla platformy .NET w podpisach opartych na kartach inteligentnych?
-
-A: Aspose.PDF dla .NET zapewnia kompleksowy zestaw narzędzi i bibliotek, które ułatwiają cyfrowe podpisywanie plików PDF za pomocą kart inteligentnych. Upraszcza proces i zapewnia bezpieczne podpisywanie dokumentów.
-
-#### P: Czy mogę wybrać konkretny certyfikat karty inteligentnej do podpisania?
-
-A: Tak, możesz wybrać konkretny certyfikat karty inteligentnej z magazynu certyfikatów Windows do podpisania. Aspose.PDF dla .NET umożliwia bezproblemową integrację wyboru certyfikatu z aplikacją.
-
-#### P: W jaki sposób udostępniony kod źródłowy obsługuje podpisywanie za pomocą kart inteligentnych?
-
-A: Kod źródłowy pokazuje, jak powiązać dokument PDF, wybrać certyfikat karty inteligentnej, określić informacje o podpisie i utworzyć podpis cyfrowy. Pokazuje również, jak zweryfikować ważność podpisu.
-
-#### P: Czy mogę złożyć wiele podpisów za pomocą kart inteligentnych w jednym pliku PDF?
-
-A: Oczywiście, możesz zastosować wiele podpisów opartych na kartach inteligentnych do jednego pliku PDF. Każdy podpis jest unikalny i przyczynia się do ogólnego bezpieczeństwa dokumentu.
-
-#### P: Co się stanie, jeśli podpis nie przejdzie weryfikacji na etapie weryfikacji?
-
-A: Jeśli podpis nie przejdzie weryfikacji, zgłaszany jest wyjątek, wskazujący, że podpis nie jest prawidłowy. Zapewnia to, że akceptowane są tylko prawidłowe i zaufane podpisy.
-
-#### P: Czy podpisywanie przy użyciu karty inteligentnej jest kompatybilne ze wszystkimi typami dokumentów PDF?
-
-A: Tak, podpisywanie oparte na karcie inteligentnej jest zgodne ze wszystkimi typami dokumentów PDF. Możesz stosować podpisy cyfrowe do różnych typów plików PDF, w tym formularzy, raportów i innych.
-
-#### P: Gdzie mogę dowiedzieć się więcej o zaawansowanym zarządzaniu podpisami cyfrowymi i certyfikatami?
-
-A: Zapoznaj się z oficjalną dokumentacją Aspose.PDF, aby uzyskać szczegółowe informacje na temat zaawansowanych funkcji podpisu cyfrowego, zarządzania certyfikatami i najlepszych praktyk zapewniających bezpieczeństwo dokumentów.
-
-#### P: Gdzie mogę znaleźć dalszą pomoc lub wsparcie w zakresie wdrażania podpisów opartych na kartach inteligentnych?
-
-A: Aby uzyskać dodatkowe wskazówki i pomoc, skontaktuj się z forami społeczności Aspose.PDF lub zapoznaj się z dokumentacją, w której znajdują się kompleksowe informacje na temat podpisów opartych na kartach inteligentnych.
+### Czy jest dostępna wersja próbna Aspose.PDF?
+ Tak, możesz pobrać bezpłatną wersję próbną ze strony[Strona internetowa Aspose](https://releases.aspose.com/).

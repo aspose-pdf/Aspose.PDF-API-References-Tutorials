@@ -2,7 +2,7 @@
 title: Állítsa be a licencet a beágyazott erőforrás használatával
 linktitle: Állítsa be a licencet a beágyazott erőforrás használatával
 second_title: Aspose.PDF for .NET API Reference
-description: Ezzel az átfogó útmutatóval felszabadíthatja az Aspose.PDF for .NET erejét. Tanuljon meg licenceket beállítani, PDF-eket kezelni és sok mást.
+description: Ezzel az átfogó útmutatóval felszabadíthatja az Aspose.PDF for .NET erejét. Ismerje meg a licencek beállítását, a PDF-ek kezelését és sok mást.
 type: docs
 weight: 50
 url: /hu/net/licensing-aspose-pdf/set-license-using-embedded-resource/
@@ -37,7 +37,7 @@ using System.Text;
 
 Most, hogy készen áll a könyvtár, bontsuk le a licenc beállításának lépéseit egy beágyazott erőforrás használatával.
 
-## 1. lépés: Készítse elő a dokumentumtárat
+## 1. lépés: Készítse elő a dokumentumkönyvtárat
 
 A licenc beállítása előtt meg kell adnia a dokumentumkönyvtár elérési útját. Itt tárolódnak a PDF-fájlok. 
 

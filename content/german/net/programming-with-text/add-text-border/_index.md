@@ -38,14 +38,14 @@ Document pdfDocument = new Document();
 ```
 
 ## Schritt 5: Dem Dokument eine Seite hinzufügen
- Fügen Sie dem Dokument eine neue Seite hinzu, indem Sie das`Add` Methode der`Pages`Sammlung. Im bereitgestellten Code wird die neue Seite der Variablen zugewiesen`pdfPage`.
+ Fügen Sie dem Dokument eine neue Seite hinzu, indem Sie das`Add` Methode der`Pages` Sammlung. Im bereitgestellten Code wird die neue Seite der Variablen zugewiesen`pdfPage`.
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
 ## Schritt 6: Erstellen Sie ein TextFragment
- Erstellen Sie ein`TextFragment` Objekt und geben Sie den gewünschten Text ein. Legen Sie die Position des Textfragments mit dem`Position` Eigenschaft. Im bereitgestellten Code wird der Text auf „Haupttext“ gesetzt und an (100, 600) auf der Seite positioniert.
+ Erstellen Sie ein`TextFragment`Objekt und geben Sie den gewünschten Text ein. Legen Sie die Position des Textfragments mit dem`Position` Eigenschaft. Im bereitgestellten Code wird der Text auf „Haupttext“ gesetzt und an (100, 600) auf der Seite positioniert.
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -64,7 +64,7 @@ textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 ```
 
 ## Schritt 8: Textrahmen aktivieren
- Um den Textrahmen zu aktivieren, setzen Sie die`DrawTextRectangleBorder`Eigenschaft des Textfragments`TextState` Zu`true`.
+ Um den Textrahmen zu aktivieren, setzen Sie die`DrawTextRectangleBorder` Eigenschaft des Textfragments`TextState` Zu`true`.
 
 ```csharp
 textFragment.TextState.DrawTextRectangleBorder = true;
@@ -151,7 +151,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 
 #### F: Wie erstelle ich ein TextFragment und lege seine Position fest?
 
- A: In Schritt 6 erstellen Sie eine`TextFragment`Objekt und legen Sie seine Position auf der Seite mit dem`Position` Eigentum:
+ A: In Schritt 6 erstellen Sie eine`TextFragment` Objekt und legen Sie seine Position auf der Seite mit dem`Position` Eigentum:
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -182,7 +182,7 @@ tb.AppendText(textFragment);
 
 #### F: Wie speichere ich das resultierende PDF-Dokument?
 
- A: Nachdem Sie den Text mit einem Rahmen hinzugefügt haben, verwenden Sie die`Save` Methode der`Document` Objekt zum Speichern des PDF-Dokuments:
+A: Nachdem Sie den Text mit einem Rahmen hinzugefügt haben, verwenden Sie die`Save` Methode der`Document` Objekt zum Speichern des PDF-Dokuments:
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");

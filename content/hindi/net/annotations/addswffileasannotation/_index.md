@@ -67,7 +67,7 @@ Page page = doc.Pages[1];
 
 ## चरण 4: स्क्रीन एनोटेशन बनाएं
 
- यहाँ जादू घटित होता है! हम एक ऐसा जादू बनाएंगे जो आपके लिए बहुत उपयोगी होगा।`ScreenAnnotation` ऑब्जेक्ट बनाएं और उसे पृष्ठ संदर्भ, एनोटेशन आयत के आयाम, और अपनी SWF फ़ाइल का पथ दें।
+ यहाँ जादू घटित होता है! हम एक ऐसा जादू बनाएंगे जो आपके लिए बहुत उपयोगी होगा।`ScreenAnnotation` ऑब्जेक्ट बनाएं और उसे पृष्ठ संदर्भ, एनोटेशन आयत के आयाम और अपनी SWF फ़ाइल का पथ दें।
 
 ```csharp
 ScreenAnnotation annotation = new ScreenAnnotation(page, new Aspose.Pdf.Rectangle(0, 400, 600, 700), dataDir + "input.swf");

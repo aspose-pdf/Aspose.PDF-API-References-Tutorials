@@ -13,15 +13,15 @@ Ce tutoriel vous donne un aperçu détaillé des méthodes et techniques permett
 ## Tutoriels
 | Titre | Description |
 | --- | --- | 
-| [Changer le mot de passe dans le fichier PDF](./change-password/) | Découvrez comment modifier le mot de passe dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. |  
-| [Décrypter le fichier PDF](./decrypt/) | Découvrez comment décrypter un fichier PDF à l'aide d'Aspose.PDF pour .NET. |  
-| [Déterminer le mot de passe correct dans le fichier PDF](./determine-correct-password/) | Découvrez comment déterminer le mot de passe correct dans un fichier PDF avec Aspose.PDF pour .NET. |  
-| [Connexion numérique au fichier PDF](./digitally-sign/) | Découvrez comment signer numériquement un fichier PDF avec Aspose.PDF pour .NET. |  
-| [Signer numériquement avec horodatage dans un fichier PDF](./digitally-sign-with-time-stamp/) | Découvrez comment effectuer une signature numérique avec horodatage dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. |  
-| [Crypter le fichier PDF](./encrypt/) | Chiffrez en toute sécurité vos fichiers PDF avec Aspose.PDF pour .NET. |  
-| [Extraction d'image](./extracting-image/) | Extrayez facilement des images de documents PDF avec Aspose.PDF pour .NET. |  
-| [Extraire les informations de signature](./extract-signature-info/) | Extraction des informations de signature à l'aide d'Aspose.PDF pour .NET. |  
-| [Est-ce que le mot de passe est protégé](./is-password-protected/) | Vérifiez facilement si un document PDF est protégé par mot de passe avec Aspose.PDF pour .NET. |  
-| [Définir les privilèges dans le fichier PDF](./set-privileges/) | Définissez facilement les privilèges d'accès dans un fichier PDF avec Aspose.PDF pour .NET. |  
-| [Signer avec une carte à puce en utilisant la signature d'un fichier PDF](./sign-with-smart-card-using-pdf-file-signature/) | Signez vos fichiers PDF en toute sécurité avec une carte à puce en utilisant Aspose.PDF pour .NET. |  
-| [Signer avec une carte à puce en utilisant le champ de signature](./sign-with-smart-card-using-signature-field/) | Signez vos fichiers PDF en toute sécurité avec une carte à puce en utilisant Aspose.PDF pour .NET. |  
+| [Changer le mot de passe dans le fichier PDF](./change-password/) | Apprenez à modifier facilement les mots de passe de vos PDF à l'aide d'Aspose.PDF pour .NET. Notre guide étape par étape vous guide tout au long du processus en toute sécurité. |  
+| [Décrypter le fichier PDF](./decrypt/) | Découvrez comment décrypter des fichiers PDF en toute sécurité à l'aide d'Aspose.PDF pour .NET. Bénéficiez de conseils étape par étape pour améliorer vos compétences en gestion de documents. |  
+| [Déterminer le mot de passe correct dans le fichier PDF](./determine-correct-password/) | Déverrouillez les fichiers PDF avec le bon mot de passe à l'aide d'Aspose.PDF pour .NET. Apprenez à identifier facilement le bon mot de passe. |  
+| [Connexion numérique au fichier PDF](./digitally-sign/) | Découvrez comment signer numériquement des fichiers PDF avec Aspose.PDF pour .NET. Guide étape par étape pour garantir la sécurité et l'authenticité de vos documents. |  
+| [Signer numériquement avec horodatage dans un fichier PDF](./digitally-sign-with-time-stamp/) | Découvrez comment signer numériquement un PDF avec un horodatage à l'aide d'Aspose.PDF pour .NET. Ce guide étape par étape couvre les prérequis, la configuration du certificat, l'horodatage et bien plus encore. |  
+| [Crypter le fichier PDF](./encrypt/) | Découvrez comment crypter vos fichiers PDF sans effort avec Aspose.PDF pour .NET. Sécurisez les informations sensibles avec notre guide étape par étape simple. |  
+| [Extraction d'image](./extracting-image/) | Apprenez facilement à extraire des images de fichiers PDF à l'aide d'Aspose.PDF pour .NET. Suivez notre guide étape par étape pour une extraction d'images fluide. |  
+| [Extraire les informations de signature](./extract-signature-info/) | Découvrez comment extraire des signatures numériques et des informations de certificat à partir de documents PDF à l'aide d'Aspose.PDF pour .NET. Un guide complet étape par étape pour les développeurs C#. |  
+| [Est-ce que le mot de passe est protégé](./is-password-protected/) | Découvrez comment vérifier si un PDF est protégé par mot de passe à l'aide d'Aspose.PDF pour .NET dans ce guide complet étape par étape. |  
+| [Définir les privilèges dans le fichier PDF](./set-privileges/) | Découvrez comment définir des privilèges PDF à l'aide d'Aspose.PDF pour .NET grâce à ce guide étape par étape. Sécurisez efficacement vos documents. |  
+| [Signer avec une carte à puce en utilisant la signature d'un fichier PDF](./sign-with-smart-card-using-pdf-file-signature/) | Découvrez comment signer des fichiers PDF à l'aide d'une carte à puce avec Aspose.PDF pour .NET. Suivez ce guide étape par étape pour des signatures numériques sécurisées. |  
+| [Signer avec une carte à puce en utilisant le champ de signature](./sign-with-smart-card-using-signature-field/) | Découvrez comment signer des PDF en toute sécurité à l'aide d'une carte à puce avec Aspose.PDF pour .NET. Suivez notre guide étape par étape pour une mise en œuvre facile. |  

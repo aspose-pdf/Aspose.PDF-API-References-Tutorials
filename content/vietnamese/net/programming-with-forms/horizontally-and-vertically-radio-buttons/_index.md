@@ -2,126 +2,134 @@
 title: Nút radio theo chiều ngang và chiều dọc
 linktitle: Nút radio theo chiều ngang và chiều dọc
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Dễ dàng tạo các nút tùy chọn ngang và dọc trong tài liệu PDF của bạn bằng Aspose.PDF cho .NET.
+description: Tìm hiểu cách tạo các nút radio căn chỉnh theo chiều ngang và chiều dọc trong PDF bằng Aspose.PDF cho .NET với hướng dẫn từng bước này.
 type: docs
 weight: 180
 url: /vi/net/programming-with-forms/horizontally-and-vertically-radio-buttons/
 ---
-Trong hướng dẫn này, chúng tôi sẽ chỉ cho bạn cách tạo các nút radio được sắp xếp theo chiều ngang và chiều dọc trong tài liệu PDF bằng Aspose.PDF cho .NET. Chúng tôi sẽ giải thích mã nguồn C# từng bước để hướng dẫn bạn thực hiện quy trình này.
+## Giới thiệu
 
-## Bước 1: Chuẩn bị
+Tạo biểu mẫu PDF tương tác có thể cải thiện đáng kể trải nghiệm của người dùng, đặc biệt là khi thu thập thông tin. Một trong những thành phần biểu mẫu phổ biến nhất là nút radio, cho phép người dùng chọn một tùy chọn từ một tập hợp. Trong hướng dẫn này, chúng ta sẽ khám phá cách tạo nút radio căn chỉnh theo chiều ngang và chiều dọc bằng Aspose.PDF cho .NET. Cho dù bạn là nhà phát triển dày dạn kinh nghiệm hay mới bắt đầu, hướng dẫn này sẽ hướng dẫn bạn từng bước trong quy trình, đảm bảo bạn hiểu rõ từng phần.
 
-Hãy đảm bảo bạn đã nhập các thư viện cần thiết và đặt đường dẫn đến thư mục tài liệu của bạn:
+## Điều kiện tiên quyết
+
+Trước khi bắt đầu viết mã, bạn cần có một số điều kiện tiên quyết sau:
+
+1.  Aspose.PDF cho .NET: Đảm bảo bạn đã cài đặt thư viện Aspose.PDF. Bạn có thể tải xuống từ[địa điểm](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: Môi trường phát triển nơi bạn có thể viết và kiểm tra mã của mình.
+3. Kiến thức cơ bản về C#: Sự quen thuộc với lập trình C# sẽ giúp bạn hiểu các đoạn mã tốt hơn.
+
+## Nhập gói
+
+Để bắt đầu, bạn cần nhập các gói cần thiết vào dự án C# của mình. Sau đây là cách bạn có thể thực hiện:
+
+### Tạo một dự án mới
+
+Mở Visual Studio và tạo một dự án C# mới. Bạn có thể chọn Ứng dụng Console để đơn giản hơn.
+
+### Thêm tham chiếu Aspose.PDF
+
+1. Nhấp chuột phải vào dự án của bạn trong Solution Explorer.
+2. Chọn "Quản lý gói NuGet".
+3. Tìm kiếm "Aspose.PDF" và cài đặt phiên bản mới nhất.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using System.IO;
+using Aspose.Pdf.Facades;
+using Aspose.Pdf;
+using Aspose.Pdf.Forms;
 ```
 
-## Bước 2: Tải tài liệu
+Bây giờ bạn đã thiết lập mọi thứ, hãy phân tích mã để tạo các nút radio căn chỉnh theo chiều ngang và chiều dọc.
 
-Tải tài liệu PDF hiện có:
+## Bước 1: Thiết lập thư mục tài liệu
+
+Ở bước này, chúng tôi sẽ xác định đường dẫn đến thư mục lưu trữ tài liệu PDF của bạn.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế mà bạn muốn lưu tệp PDF của mình. Điều này rất quan trọng vì nó cho chương trình biết nơi tìm tệp đầu vào và nơi lưu tệp đầu ra.
+
+## Bước 2: Tải tài liệu PDF hiện có
+
+ Tiếp theo, chúng ta cần tải tài liệu PDF mà chúng ta sẽ làm việc. Điều này được thực hiện bằng cách sử dụng`FormEditor` lớp học.
 
 ```csharp
 FormEditor formEditor = new FormEditor();
 formEditor.BindPdf(dataDir + "input.pdf");
 ```
 
-## Bước 3: Tùy chỉnh tùy chọn nút radio
+Ở đây, chúng ta tạo một thể hiện của`FormEditor` và liên kết nó với một tệp PDF hiện có có tên`input.pdf`. Đảm bảo rằng tập tin này tồn tại trong thư mục bạn chỉ định.
 
-Tùy chỉnh các tùy chọn nút radio bằng cách thiết lập các thuộc tính sau:
+## Bước 3: Cấu hình Thuộc tính Nút Radio
+
+Bây giờ, hãy thiết lập một số thuộc tính cho các nút radio của chúng ta. Bao gồm khoảng cách giữa các nút, hướng của chúng và kích thước của chúng.
 
 ```csharp
-formEditor. RadioGap = 4; // Khoảng cách giữa hai tùy chọn nút radio
-formEditor. RadioHoriz = true; //Bố trí theo chiều ngang của các nút radio
-formEditor.RadioButtonItemSize = 20; // Kích thước của các nút radio
-formEditor.Facade.BorderWidth = 1; // Chiều rộng của đường viền nút radio
-formEditor.Facade.BorderColor = System.Drawing.Color.Black; // Màu viền nút radio
+formEditor.RadioGap = 4; // Khoảng cách giữa các tùy chọn nút radio
+formEditor.RadioHoriz = true; // Đặt thành true để căn chỉnh theo chiều ngang
+formEditor.RadioButtonItemSize = 20; // Kích thước của nút radio
+formEditor.Facade.BorderWidth = 1; // Chiều rộng đường viền
+formEditor.Facade.BorderColor = System.Drawing.Color.Black; // Màu viền
 ```
+
+ Các thuộc tính này sẽ giúp xác định cách các nút radio sẽ xuất hiện trong PDF.`RadioGap` thuộc tính kiểm soát khoảng cách giữa các nút, trong khi`RadioHoriz` xác định cách bố trí của chúng.
 
 ## Bước 4: Thêm nút radio ngang
 
-Thêm các nút radio được sắp xếp theo chiều ngang bằng cách chỉ định các tùy chọn và vị trí của trường:
+Bây giờ, chúng ta hãy thêm các nút tùy chọn nằm ngang vào PDF.
 
 ```csharp
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
 ```
 
-## Bước 5: Thêm các nút radio dọc
+ Trong mã này, chúng tôi xác định các mục cho các nút radio và thêm chúng vào PDF.`AddField`phương pháp này sử dụng một số tham số, bao gồm loại trường, tên trường và tọa độ để đặt.
 
-Thêm các nút radio được sắp xếp theo chiều dọc bằng cách chỉ định các tùy chọn và vị trí của trường:
+## Bước 5: Thêm nút radio dọc
+
+Tiếp theo, chúng ta sẽ thêm các nút radio dọc. Để làm điều này, chúng ta cần thay đổi hướng trở lại theo chiều dọc.
 
 ```csharp
-formEditor. RadioHoriz = false; // Bố trí theo chiều dọc của các nút radio
+formEditor.RadioHoriz = false; // Đặt thành false để căn chỉnh theo chiều dọc
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
 ```
 
-## Bước 6: Lưu tài liệu
+Giống như trước, chúng ta xác định các mục và thêm chúng vào PDF, nhưng lần này chúng sẽ được căn chỉnh theo chiều dọc.
 
-Lưu tài liệu PDF đã sửa đổi:
+## Bước 6: Lưu tài liệu PDF
+
+Cuối cùng, chúng ta cần lưu tài liệu PDF đã chỉnh sửa.
 
 ```csharp
 dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
 formEditor.Save(dataDir);
+Console.WriteLine("\nHorizontally and vertically laid out radio buttons successfully.\nFile saved at " + dataDir);
 ```
 
-### Mã nguồn mẫu cho các nút radio theo chiều ngang và chiều dọc sử dụng Aspose.PDF cho .NET 
-```csharp
-try
-{
-	// Đường dẫn đến thư mục tài liệu.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Tải tài liệu đã lưu trước đó
-	FormEditor formEditor = new FormEditor();
-	formEditor.BindPdf(dataDir + "input.pdf");
-	// RadioGap là khoảng cách giữa hai tùy chọn nút radio.
-	formEditor.RadioGap = 4;
-	// Thêm nút radio ngang
-	formEditor.RadioHoriz = true;
-	// RadioButtonItemSize là kích thước của mục nút radio.
-	formEditor.RadioButtonItemSize = 20;
-	formEditor.Facade.BorderWidth = 1;
-	formEditor.Facade.BorderColor = System.Drawing.Color.Black;
-	formEditor.Items = new string[] { "First", "Second", "Third" };
-	formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
-	// Thêm nút radio khác nằm theo chiều dọc
-	formEditor.RadioHoriz = false;
-	formEditor.Items = new string[] { "First", "Second", "Third" };
-	formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
-	dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
-	// Lưu tài liệu PDF
-	formEditor.Save(dataDir);
-	Console.WriteLine("\nHorizontally and vertically laid out radio buttons successfully.\nFile saved at " + dataDir);
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+Mã này lưu PDF với các nút radio mới được thêm vào. Hãy đảm bảo kiểm tra thư mục đã chỉ định cho tệp đầu ra.
 
 ## Phần kết luận
 
-Trong hướng dẫn này, chúng ta đã học cách tạo các nút radio được sắp xếp theo chiều ngang và chiều dọc trong tài liệu PDF bằng Aspose.PDF cho .NET. Bằng cách làm theo các bước này, bạn có thể dễ dàng tùy chỉnh bố cục của các nút radio và thêm chúng vào tài liệu PDF của mình bằng Aspose.PDF.
+Tạo các nút radio trong PDF bằng Aspose.PDF cho .NET là một quá trình đơn giản. Bằng cách làm theo các bước được nêu trong hướng dẫn này, bạn có thể dễ dàng thêm cả các nút radio được căn chỉnh theo chiều ngang và chiều dọc vào biểu mẫu PDF của mình. Điều này không chỉ tăng cường tính tương tác của tài liệu mà còn cải thiện trải nghiệm người dùng nói chung. Vì vậy, hãy thử xem!
 
-### Câu hỏi thường gặp
+## Câu hỏi thường gặp
 
-#### H: Các nút radio được sắp xếp theo chiều ngang và chiều dọc trong tài liệu PDF là gì?
+### Aspose.PDF dành cho .NET là gì?
+Aspose.PDF for .NET là một thư viện mạnh mẽ cho phép các nhà phát triển tạo, chỉnh sửa và chuyển đổi tài liệu PDF theo chương trình.
 
-A: Các nút radio được sắp xếp theo chiều ngang và chiều dọc trong tài liệu PDF đề cập đến hướng bố trí của các tùy chọn nút radio. Bố cục theo chiều ngang đặt các tùy chọn nút radio cạnh nhau, cho phép người dùng lựa chọn từ trái sang phải. Mặt khác, bố cục theo chiều dọc xếp chồng các tùy chọn nút radio lên nhau, cho phép người dùng lựa chọn từ trên xuống dưới.
+### Tôi có thể sử dụng Aspose.PDF miễn phí không?
+ Có, Aspose cung cấp phiên bản dùng thử miễn phí mà bạn có thể sử dụng để đánh giá thư viện. Bạn có thể tải xuống[đây](https://releases.aspose.com/).
 
-#### H: Làm thế nào để tùy chỉnh giao diện của các tùy chọn nút radio trong Aspose.PDF cho .NET?
+### Làm thế nào để tôi nhận được hỗ trợ cho Aspose.PDF?
+ Bạn có thể nhận được hỗ trợ bằng cách truy cập[Diễn đàn Aspose](https://forum.aspose.com/c/pdf/10).
 
-A: Bạn có thể tùy chỉnh giao diện của các tùy chọn nút radio trong Aspose.PDF cho .NET bằng cách điều chỉnh một số thuộc tính. API cung cấp các tùy chọn để thiết lập khoảng cách giữa hai tùy chọn nút radio (`RadioGap`), hướng bố trí (`RadioHoriz`), kích thước của các mục nút radio (`RadioButtonItemSize`), độ rộng đường viền và màu sắc của các nút radio, v.v.
+### Có thể tạo các thành phần biểu mẫu khác bằng Aspose.PDF không?
+Chắc chắn rồi! Aspose.PDF hỗ trợ nhiều thành phần biểu mẫu khác nhau, bao gồm trường văn bản, hộp kiểm và danh sách thả xuống.
 
-#### H: Tôi có thể thêm cả nút radio ngang và dọc vào cùng một tài liệu PDF không?
-
-A: Có, bạn có thể thêm cả nút radio ngang và dọc vào cùng một tài liệu PDF bằng Aspose.PDF cho .NET. Mã nguồn mẫu được cung cấp trong hướng dẫn này trình bày cách thêm nút radio được sắp xếp theo chiều ngang trước rồi thêm một bộ nút radio khác được sắp xếp theo chiều dọc vào cùng một tài liệu PDF.
-
-#### H: Tôi có thể thiết lập các tùy chọn nút radio khác nhau cho mỗi nhóm nút radio không?
-
- A: Có, bạn có thể thiết lập các tùy chọn nút radio khác nhau cho mỗi nhóm nút radio. Mỗi nhóm phải có một`RadioButtonField` đối tượng, và`RadioButtonOptionField` các đối tượng trong mỗi nhóm phải chia sẻ cùng một trang và tên duy nhất cho các tùy chọn của chúng. Điều này đảm bảo rằng các nút radio trong mỗi nhóm hoạt động chính xác và các lựa chọn loại trừ lẫn nhau.
-
-#### H: Cài đặt bố cục và giao diện của các nút radio có được hỗ trợ trong tất cả các ứng dụng và trình xem PDF không?
-
-A: Có, các thiết lập về bố cục và giao diện của các nút radio được hỗ trợ trong tất cả các trình xem PDF và ứng dụng tuân thủ chuẩn. Đặc tả PDF định nghĩa các nút radio và các thuộc tính khác nhau của chúng, giúp chúng được nhận dạng phổ biến trong định dạng PDF. Tuy nhiên, điều cần thiết là phải kiểm tra giao diện và hành vi của các nút radio trong các trình xem PDF khác nhau để đảm bảo hiển thị nhất quán trên nhiều nền tảng khác nhau.
+### Tôi có thể mua Aspose.PDF cho .NET ở đâu?
+ Bạn có thể mua Aspose.PDF cho .NET từ[trang mua hàng](https://purchase.aspose.com/buy).

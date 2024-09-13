@@ -53,7 +53,7 @@ Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 
 ## ステップ3: 画像ファイルを取得する
 
-それでは、指定されたディレクトリからすべてのJPGファイルを取得してみましょう。これは、`Directory.GetFiles`方法。
+さて、指定されたディレクトリからすべてのJPGファイルを取得してみましょう。これは、`Directory.GetFiles`方法。
 
 ```csharp
 string[] fileEntries = Directory.GetFiles(dataDir, "*.JPG");

@@ -125,7 +125,7 @@ A: O Aspose.PDF para .NET fornece APIs para criar e manipular elementos estrutur
 
 ####  P: Qual é o papel do`SetTitle` and `SetLanguage` methods in working with structural element properties?
 
- A: O`SetTitle` e`SetLanguage` métodos do`ITaggedContent`object permite que você defina o título e o idioma do documento, que influenciam as propriedades do elemento estrutural. Definir o título e o idioma garante consistência e metadados significativos para o documento.
+ A: O`SetTitle` e`SetLanguage` métodos do`ITaggedContent` object permite que você defina o título e o idioma do documento, que influenciam as propriedades do elemento estrutural. Definir o título e o idioma garante consistência e metadados significativos para o documento.
 
 #### P: Como posso criar e manipular elementos estruturais em um documento PDF usando o Aspose.PDF para .NET?
 

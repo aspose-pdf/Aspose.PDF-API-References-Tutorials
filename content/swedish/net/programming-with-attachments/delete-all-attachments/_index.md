@@ -1,7 +1,7 @@
 ---
 title: Ta bort alla bilagor i PDF-fil
 linktitle: Ta bort alla bilagor i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du tar bort alla bilagor i en PDF-fil med Aspose.PDF för .NET med denna steg-för-steg-guide. Förenkla din PDF-hantering.
 type: docs
 weight: 20

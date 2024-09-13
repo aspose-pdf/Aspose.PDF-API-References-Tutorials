@@ -21,7 +21,7 @@ Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
 2. Dodaj odwołanie do biblioteki Aspose.PDF dla platformy .NET.
 
 ## Krok 2: Importuj wymagane przestrzenie nazw
-W pliku kodu, w którym chcesz utworzyć niestandardowe tabulatory, dodaj na początku pliku następujące dyrektywy using:
+pliku kodu, w którym chcesz utworzyć niestandardowe tabulatory, dodaj na początku pliku następujące dyrektywy using:
 
 ```csharp
 using Aspose.Pdf;
@@ -39,7 +39,7 @@ Document _pdfdocument = new Document();
 ```
 
 ## Krok 5: Dodaj stronę do dokumentu
- Dodaj nową stronę do dokumentu za pomocą`Add` metoda`Pages`kolekcja. W podanym kodzie nowa strona jest przypisana do zmiennej`page`.
+ Dodaj nową stronę do dokumentu za pomocą`Add` metoda`Pages` kolekcja. W podanym kodzie nowa strona jest przypisana do zmiennej`page`.
 
 ```csharp
 Page page = _pdfdocument.Pages.Add();

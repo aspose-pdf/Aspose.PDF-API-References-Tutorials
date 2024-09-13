@@ -2,154 +2,167 @@
 title: Podepište se pomocí čipové karty pomocí podpisu souboru PDF
 linktitle: Podepište se pomocí čipové karty pomocí podpisu souboru PDF
 second_title: Aspose.PDF pro .NET API Reference
-description: Podepište své soubory PDF bezpečně pomocí čipové karty pomocí Aspose.PDF for .NET.
+description: Naučte se podepisovat soubory PDF pomocí čipové karty pomocí Aspose.PDF for .NET. Postupujte podle tohoto podrobného průvodce pro bezpečné digitální podpisy.
 type: docs
 weight: 110
 url: /cs/net/programming-with-security-and-signatures/sign-with-smart-card-using-pdf-file-signature/
 ---
-Digitální podepisování pomocí čipové karty je bezpečný způsob podepisování souborů PDF. S Aspose.PDF for .NET můžete snadno podepsat soubor PDF pomocí čipové karty podle následujícího zdrojového kódu:
+## Zavedení
 
-## Krok 1: Importujte požadované knihovny
+digitálním věku je zabezpečení dokumentů důležitější než kdy jindy. Ať už se jedná o smlouvu, dohodu nebo jakékoli citlivé informace, je prvořadé zajistit, aby dokument byl autentický a nebyl s ním manipulován. Zadejte digitální podpisy! Dnes se ponoříme do toho, jak podepsat soubor PDF pomocí čipové karty s Aspose.PDF pro .NET. Tato výkonná knihovna umožňuje vývojářům efektivně manipulovat a vytvářet dokumenty PDF, včetně přidávání bezpečných digitálních podpisů. Takže popadněte svou čipovou kartu a můžeme začít!
 
-Než začnete, musíte importovat potřebné knihovny pro váš projekt C#. Zde jsou nezbytné importní směrnice:
+## Předpoklady
+
+Než se pustíme do hrubky podepisování souboru PDF, ujistěte se, že máte vše, co potřebujete. Zde je kontrolní seznam, který vám pomůže připravit:
+
+1.  Aspose.PDF for .NET: Ujistěte se, že máte nainstalovanou knihovnu Aspose.PDF. Můžete si jej stáhnout z[místo](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: Vývojové prostředí, kde můžete psát a spouštět svůj kód .NET.
+3. Smart Card: Budete potřebovat čipovou kartu s nainstalovaným platným digitálním certifikátem.
+4. Základní porozumění C#: Znalost programování v C# bude prospěšná, protože budeme psát úryvky kódu v tomto jazyce.
+5. Dokument PDF: Ukázkový soubor PDF (např`blank.pdf`), abychom otestovali náš proces podepisování.
+
+S těmito předpoklady jste připraveni se ponořit do kódu!
+
+## Importujte balíčky
+
+Nejprve naimportujme potřebné balíčky. Ve svém projektu budete muset přidat odkazy na knihovnu Aspose.PDF. Můžete to udělat takto:
+
+1. Otevřete Visual Studio.
+2. Vytvořte nový projekt nebo otevřete existující.
+3.  Klepněte pravým tlačítkem myši na svůj projekt v Průzkumníku řešení a vyberte`Manage NuGet Packages`.
+4.  Hledat`Aspose.PDF` a nainstalujte nejnovější verzi.
 
 ```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Facades;
-using Aspose.Pdf.Forms;
-using System.Security.Cryptography.X509Certificates;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Krok 2: Nastavte cestu ke složce dokumentů
+Nyní, když máme naimportovány potřebné balíčky, pojďme si kód rozebrat krok za krokem.
 
- V tomto kroku musíte zadat cestu ke složce obsahující soubor PDF, který chcete podepsat. Nahradit`"YOUR DOCUMENTS DIRECTORY"` v následujícím kódu se skutečnou cestou ke složce dokumentů:
+## Krok 1: Nastavte svůj dokument
+
+Prvním krokem v našem procesu je nastavení dokumentu PDF, který chceme podepsat. Můžete to udělat takto:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-```
-
-## Krok 3: Načtěte dokument PDF
-
-Nyní načteme dokument PDF k podpisu pomocí následujícího kódu:
-
-```csharp
 Document doc = new Document(dataDir + "blank.pdf");
 ```
+ V tomto úryvku definujeme cestu k našemu adresáři dokumentů a vytvoříme instanci souboru`Document` třídy pomocí ukázkového souboru PDF s názvem`blank.pdf` . Nezapomeňte vyměnit`"YOUR DOCUMENTS DIRECTORY"` se skutečnou cestou, kde se vaše PDF nachází.
 
-## Krok 4: Proveďte podpis pomocí čipové karty
+## Krok 2: Inicializujte PdfFileSignature
 
- V tomto kroku provedeme podpis pomocí čipové karty pomocí`PdfFileSignature` třídy z`Facades`knihovna. Vybereme certifikát čipové karty z úložiště certifikátů Windows a zadáme potřebné informace k podpisu. Zde je odpovídající kód:
-
-```csharp
-using (PdfFileSignature pdfSign = new PdfFileSignature())
-{
-     pdfSign.BindPdf(doc);
-
-     // Vyberte certifikát v obchodě
-     X509Store store = new X509Store(StoreLocation.CurrentUser);
-     store.Open(OpenFlags.ReadOnly);
-     X509Certificate2Collection sel = X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, X509SelectionFlag.SingleSelection);
-     ExternalSignature externalSignature = new ExternalSignature(sel[0]);
-
-     pdfSign.SignatureAppearance = dataDir + "demo.png";
-     pdfSign.Sign(1, "Reason", "Contact", "Location", true, new System.Drawing.Rectangle(100, 100, 200, 200), externalSignature);
-     pdfSign.Save(dataDir + "externalSignature2.pdf");
-}
-```
-
-## Krok 5: Ověřte podpis
-
- Nakonec ověříme podpis podepsaného souboru PDF pomocí`PdfFileSignature` třída. Získáme jména podpisů a zkontrolujeme je jeden po druhém. Pokud se podpis nepodaří ověřit, je vyvolána výjimka. Zde je odpovídající kód:
+ Dále inicializujeme`PdfFileSignature` třídy, která je zodpovědná za zpracování procesu podepisování.
 
 ```csharp
-using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "externalSignature2.pdf")))
-{
-     IList<string> sigNames = pdfSign. GetSignNames();
-     for (int index = 0; index <= sigNames.Count - 1; index++)
-     {
-         if (!pdfSign.VerifySigned(sigNames[index]) || !pdfSign.VerifySignature(sigNames[index]))
-         {
-             throw new ApplicationException("Unverified");
-         }
-     }
-}
-```
-
-### Ukázka zdrojového kódu pro podepisování pomocí čipové karty pomocí podpisu souboru PDF pomocí Aspose.PDF pro .NET 
-```csharp
-// Cesta k adresáři dokumentů.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-Document doc = new Document(dataDir + "blank.pdf");
 using (Facades.PdfFileSignature pdfSign = new Facades.PdfFileSignature())
 {
-	pdfSign.BindPdf(doc);
-	// Podepište se výběrem certifikátu v úložišti certifikátů systému Windows
-	System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
-	store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
-	// Manuálně vyberte certifikát v obchodě
-	System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel = System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
-	Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0]);
-	pdfSign.SignatureAppearance = dataDir + "demo.png";
-	pdfSign.Sign(1, "Reason", "Contact", "Location", true, new System.Drawing.Rectangle(100, 100, 200, 200), externalSignature);
-	pdfSign.Save(dataDir + "externalSignature2.pdf");
-}
+    pdfSign.BindPdf(doc);
+```
+Zde vytvoříme instanci`PdfFileSignature` svázat jej s naším dokumentem PDF. Tím je dokument připraven k podpisu.
+
+## Krok 3: Přístup k certifikátu Smart Card
+
+Nyní přichází klíčová část – přístup k digitálnímu certifikátu uloženému na vaší čipové kartě. Takto to můžeme udělat:
+
+### Otevřete úložiště certifikátů
+
+```csharp
+System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
+store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
+```
+Otevřeme úložiště certifikátů umístěné v profilu aktuálního uživatele. To nám umožňuje přístup k certifikátům nainstalovaným na vašem počítači, včetně certifikátů na vaší čipové kartě.
+
+### Vyberte Certifikát
+
+```csharp
+System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel =
+    System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(
+        store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
+```
+Tento kód vyzve uživatele k výběru certifikátu z kolekce. Uživatelské rozhraní zobrazí všechny dostupné certifikáty, takže si můžete vybrat ten, který je spojen s vaší čipovou kartou.
+
+## Krok 4: Vytvořte externí podpis
+
+Po výběru certifikátu je dalším krokem vytvoření externího podpisu pomocí vybraného certifikátu.
+
+```csharp
+Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0]);
+```
+Zde vytvoříme instanci`ExternalSignature` pomocí vybraného certifikátu. Tento objekt bude použit k podepsání dokumentu PDF.
+
+## Krok 5: Nastavte vzhled podpisu
+
+Nyní nastavíme vzhled našeho podpisu. Zde si můžete přizpůsobit vzhled vašeho podpisu na dokumentu.
+
+```csharp
+pdfSign.SignatureAppearance = dataDir + "demo.png";
+```
+ V tomto úryvku specifikujeme vzhled podpisu poskytnutím cesty k souboru obrázku (jako je logo nebo grafika podpisu). Nezapomeňte vyměnit`"demo.png"` se skutečným obrázkem, který chcete použít.
+
+## Krok 6: Podepište PDF
+
+Když je vše nastaveno, je čas podepsat dokument PDF!
+
+```csharp
+pdfSign.Sign(1, "Reason", "Contact", "Location", true, new System.Drawing.Rectangle(100, 100, 200, 200), externalSignature);
+pdfSign.Save(dataDir + "externalSignature2.pdf");
+```
+ tomto kroku zavoláme`Sign` metoda na našem`pdfSign` objekt. Každý parametr znamená:
+- `1`: Číslo stránky, kde se objeví podpis.
+- `"Reason"`: Důvod podpisu dokumentu.
+- `"Contact"`: Kontaktní informace podepisujícího.
+- `"Location"`: Umístění signatáře.
+- `true`: Označuje, zda se má vytvořit viditelný podpis.
+- `new System.Drawing.Rectangle(100, 100, 200, 200)`: Pozice a velikost podpisu v PDF.
+- `externalSignature`: Objekt podpisu, který jsme vytvořili dříve.
+
+ Nakonec podepsaný dokument uložíme jako`externalSignature2.pdf`.
+
+## Krok 7: Ověřte podpis
+
+Po podepsání dokumentu je nezbytné ověřit, zda je podpis platný. Postup:
+
+### Inicializovat proces ověření
+
+```csharp
 using (Facades.PdfFileSignature pdfSign = new Facades.PdfFileSignature(new Document(dataDir + "externalSignature2.pdf")))
 {
-	IList<string> sigNames = pdfSign.GetSignNames();
-	for (int index = 0; index <= sigNames.Count - 1; index++)
-	{
-		if (!pdfSign.VerifySigned(sigNames[index]) || !pdfSign.VerifySignature(sigNames[index]))
-		{
-			throw new ApplicationException("Not verified");
-		}
-	}
+    IList<string> sigNames = pdfSign.GetSignNames();
+```
+ Vytvoříme novou instanci`PdfFileSignature` za podepsaný dokument. Poté získáme jména všech podpisů přítomných v dokumentu.
+
+### Zkontrolujte platnost podpisu
+
+```csharp
+for (int index = 0; index <= sigNames.Count - 1; index++)
+{
+    if (!pdfSign.VerifySigned(sigNames[index]) || !pdfSign.VerifySignature(sigNames[index]))
+    {
+        throw new ApplicationException("Not verified");
+    }
 }
 ```
+Procházíme každý název podpisu a ověřujeme jeho platnost. Pokud se některý podpis nepodaří ověřit, je vyvolána výjimka označující, že podpis není platný.
 
 ## Závěr
 
-gratuluji! Nyní máte k dispozici podrobného průvodce podepsáním souboru PDF pomocí čipové karty pomocí Aspose.PDF pro .NET. Tento kód můžete použít k přidání bezpečných digitálních podpisů do dokumentů PDF.
+A tady to máte! Úspěšně jste podepsali dokument PDF pomocí čipové karty s Aspose.PDF pro .NET. Tento proces nejen zabezpečí váš dokument, ale také přidá vrstvu autenticity, která je v dnešním digitálním světě klíčová. Ať už se zabýváte smlouvami, právními dokumenty nebo jakýmikoli citlivými informacemi, znalost implementace digitálních podpisů je cenná dovednost. 
 
-Nezapomeňte se podívat na oficiální dokumentaci Aspose.PDF, kde najdete další informace o pokročilém digitálním podpisu a funkcích správy certifikátů.
+## FAQ
 
-### FAQ
+### Co je Aspose.PDF pro .NET?
+Aspose.PDF for .NET je výkonná knihovna, která umožňuje vývojářům vytvářet, manipulovat a převádět dokumenty PDF v rámci aplikací .NET.
 
-#### Otázka: Proč bych měl uvažovat o podepisování souborů PDF pomocí čipové karty?
+### Potřebuji k podepisování souborů PDF čipovou kartu?
+když čipová karta není povinná, důrazně se doporučuje pro bezpečné digitální podpisy, protože poskytuje další vrstvu zabezpečení.
 
-Odpověď: Podepisování souborů PDF pomocí čipové karty zvyšuje zabezpečení zajištěním pravosti a integrity dokumentu. Podpisy založené na čipových kartách poskytují vyšší úroveň důvěry a souladu.
+### Mohu k podpisu použít jakýkoli soubor PDF?
+Ano, můžete použít jakýkoli soubor PDF, ale ujistěte se, že není chráněn heslem. Pokud ano, musíte jej nejprve odemknout.
 
-#### Otázka: Jak funguje digitální podepisování založené na čipových kartách?
+### Co když nemám digitální certifikát?
+Můžete získat digitální certifikát od důvěryhodné certifikační autority (CA) nebo použít certifikát podepsaný svým držitelem pro účely testování.
 
-Odpověď: Digitální podepisování založené na čipové kartě zahrnuje použití kryptografického klíče uloženého na čipové kartě k vytvoření jedinečného digitálního podpisu. Tento podpis je připojen k souboru PDF a umožňuje příjemcům ověřit původ a integritu dokumentu.
-
-#### Otázka: Jaká je role Aspose.PDF pro .NET v podepisování založeném na čipových kartách?
-
-Odpověď: Aspose.PDF for .NET poskytuje komplexní sadu nástrojů a knihoven pro usnadnění digitálního podepisování souborů PDF pomocí čipových karet. Zjednodušuje proces a zajišťuje bezpečné podepisování dokumentů.
-
-#### Otázka: Mohu si pro podpis vybrat konkrétní certifikát čipové karty?
-
-Odpověď: Ano, k podpisu můžete vybrat konkrétní certifikát čipové karty z úložiště certifikátů Windows. Aspose.PDF for .NET vám umožňuje bezproblémově integrovat výběr certifikátů do vaší aplikace.
-
-#### Otázka: Jak poskytnutý zdrojový kód zpracovává podepisování založené na čipové kartě?
-
-Odpověď: Zdrojový kód ukazuje, jak svázat dokument PDF, vybrat certifikát čipové karty, zadat informace pro podpis a vytvořit digitální podpis. Ukazuje také, jak ověřit platnost podpisu.
-
-#### Otázka: Mohu použít více podpisů pomocí čipových karet v jednom souboru PDF?
-
-Odpověď: Na jeden soubor PDF můžete samozřejmě použít více podpisů založených na čipových kartách. Každý podpis je jedinečný a přispívá k celkové bezpečnosti dokumentu.
-
-#### Otázka: Co když podpis během kroku ověření selže?
-
-Odpověď: Pokud se ověření podpisu nezdaří, je vyvolána výjimka označující, že podpis není platný. To zajišťuje, že jsou přijímány pouze platné a důvěryhodné podpisy.
-
-#### Otázka: Je podepisování pomocí čipových karet kompatibilní se všemi typy dokumentů PDF?
-
-Odpověď: Ano, podepisování pomocí čipových karet je kompatibilní se všemi typy dokumentů PDF. Digitální podpisy můžete použít na různé typy souborů PDF, včetně formulářů, sestav a dalších.
-
-#### Otázka: Jak se mohu dozvědět více o pokročilém digitálním podpisu a správě certifikátů?
-
-Odpověď: Prozkoumejte oficiální dokumentaci Aspose.PDF, kde najdete podrobné informace o pokročilých funkcích digitálního podpisu, správě certifikátů a osvědčených postupech pro zajištění bezpečnosti dokumentů.
-
-#### Otázka: Kde najdu další pomoc nebo podporu pro implementaci podepisování pomocí čipových karet?
-
-Odpověď: Další pokyny a podporu získáte na fórech komunity Aspose.PDF nebo v dokumentaci, kde najdete komplexní informace o podepisování pomocí čipových karet.
+### Je k dispozici zkušební verze Aspose.PDF?
+ Ano, můžete si stáhnout bezplatnou zkušební verzi z[Aspose webové stránky](https://releases.aspose.com/).

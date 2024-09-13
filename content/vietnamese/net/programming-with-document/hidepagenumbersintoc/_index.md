@@ -2,109 +2,40 @@
 title: Ẩn số trang trong mục lục
 linktitle: Ẩn số trang trong mục lục
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Tìm hiểu cách ẩn số trang trong mục lục bằng Aspose.PDF cho .NET với hướng dẫn từng bước này.
+description: Tìm hiểu cách ẩn số trang trong Mục lục bằng Aspose.PDF cho .NET. Thực hiện theo hướng dẫn chi tiết này với các ví dụ mã để tạo PDF chuyên nghiệp.
 type: docs
 weight: 220
 url: /vi/net/programming-with-document/hidepagenumbersintoc/
 ---
-Trong bài viết này, chúng ta sẽ thảo luận về việc triển khai tính năng Ẩn số trang trong mục lục của Aspose.PDF cho .NET bằng C#. Chúng ta sẽ bắt đầu bằng phần giới thiệu ngắn gọn về Aspose.PDF cho .NET và sau đó đi sâu vào hướng dẫn từng bước để triển khai tính năng này. 
+## Giới thiệu
 
-## Giới thiệu về Aspose.PDF cho .NET
-
-Aspose.PDF for .NET là một thành phần thao tác PDF mạnh mẽ cho phép các nhà phát triển tạo, chỉnh sửa và thao tác các tệp PDF theo chương trình. Nó cung cấp nhiều tính năng và chức năng giúp dễ dàng làm việc với các tài liệu PDF. Aspose.PDF for .NET hỗ trợ cả hệ điều hành 32 bit và 64 bit và có thể sử dụng với các nền tảng .NET Framework, .NET Core và Xamarin. 
-
-## Tính năng Ẩn số trang trong mục lục là gì?
-
-Mục lục (TOC) là một phần thiết yếu của tài liệu PDF cung cấp cho người dùng cái nhìn tổng quan nhanh về nội dung. Đôi khi, người dùng có thể muốn ẩn số trang trong TOC để làm cho nó thân thiện hơn với người dùng. Aspose.PDF cho .NET cung cấp một tính năng tích hợp để ẩn số trang trong TOC. Tính năng này có thể được sử dụng để tạo các tài liệu PDF thân thiện hơn với người dùng. 
+Khi làm việc với PDF, đôi khi bạn có thể muốn tạo Mục lục (TOC) nhưng vẫn giữ mọi thứ gọn gàng bằng cách ẩn số trang. Có thể tài liệu sẽ trôi chảy hơn khi không có chúng hoặc có thể đó là lựa chọn thẩm mỹ. Dù lý do của bạn là gì, nếu bạn đang làm việc với Aspose.PDF cho .NET, hướng dẫn này sẽ chỉ cho bạn chính xác cách ẩn số trang trong TOC của bạn.
 
 ## Điều kiện tiên quyết
 
-Để làm theo hướng dẫn này, bạn sẽ cần những thứ sau:
+Trước khi bắt đầu, có một số điều bạn cần chuẩn bị. Sau đây là danh sách kiểm tra nhanh:
 
-- Visual Studio 2010 trở lên
-- Aspose.PDF cho .NET được cài đặt trên hệ thống của bạn
-- Kiến thức cơ bản về ngôn ngữ lập trình C#
+- Đã cài đặt Visual Studio: Bạn sẽ cần phiên bản Visual Studio đang hoạt động để viết mã.
+- Thư viện Aspose.PDF cho .NET: Đảm bảo bạn đã cài đặt thư viện Aspose.PDF cho .NET.
+  -  Liên kết tải xuống:[Aspose.PDF cho .NET](https://releases.aspose.com/pdf/net/)
+- Giấy phép tạm thời: Nếu bạn đang thử nghiệm các tính năng, việc có giấy phép tạm thời sẽ rất hữu ích.
+  -  Giấy phép tạm thời:[Nhận nó ở đây](https://purchase.aspose.com/temporary-license/)
 
-## Hướng dẫn từng bước để triển khai tính năng Ẩn số trang trong mục lục
+## Nhập gói
 
-Thực hiện theo các bước dưới đây để triển khai tính năng Ẩn số trang trong mục lục bằng Aspose.PDF cho .NET:
-
-## Bước 1: Tạo ứng dụng bảng điều khiển C# mới trong Visual Studio
-
-Mở Visual Studio và tạo một ứng dụng bảng điều khiển C# mới.
-
-## Bước 2: Thêm tham chiếu đến Aspose.PDF cho .NET
-
-Nhấp chuột phải vào thư mục References trong dự án của bạn và chọn Add Reference. Duyệt đến vị trí cài đặt Aspose.PDF for .NET trên hệ thống của bạn và thêm tham chiếu vào đó.
-
-## Bước 1: Tạo một tài liệu PDF mới
-
-Tạo một tài liệu PDF mới bằng cách sử dụng mã sau:
+Trước khi bắt đầu code, hãy đảm bảo bạn nhập các namespace sau vào dự án C# của mình. Chúng sẽ cung cấp các lớp và phương thức cần thiết để làm việc với tài liệu PDF và tạo Mục lục (TOC) của bạn.
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outFile = dataDir + "HiddenPageNumbers_out.pdf";
-Document doc = new Document();
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-## Bước 2: Tạo trang TOC
+Bây giờ môi trường của bạn đã sẵn sàng và các gói đã được nhập, hãy cùng phân tích từng bước của quy trình. Chúng tôi sẽ đề cập đến mọi phần của mã để đảm bảo tính rõ ràng, để bạn có thể dễ dàng theo dõi.
 
-Tạo một trang mới cho mục lục và thêm vào tài liệu PDF bằng mã sau:
+## Bước 1: Khởi tạo tài liệu PDF của bạn
 
-```csharp
-Page tocPage = doc.Pages.Add();
-TocInfo tocInfo = new TocInfo();
-TextFragment title = new TextFragment("Table Of Contents");
-title.TextState.FontSize = 20;
-title.TextState.FontStyle = FontStyles.Bold;
-tocInfo.Title = title;
-```
+Điều đầu tiên chúng ta cần làm là tạo một tài liệu PDF mới và thêm một trang cho Mục lục (TOC).
 
-## Bước 3: Thêm phần danh sách vào bộ sưu tập phần của tài liệu PDF
-
-Thêm phần danh sách vào bộ sưu tập phần của tài liệu PDF bằng cách sử dụng mã sau:
-
-```csharp
-tocPage.TocInfo = tocInfo;
-```
-
-## Bước 4: Xác định định dạng của danh sách bốn cấp độ
-
-Xác định định dạng của danh sách bốn cấp độ bằng cách thiết lập lề trái và định dạng văn bản cho mỗi cấp độ bằng cách sử dụng mã sau:
-
-```csharp
-tocInfo.IsShowPageNumbers = false;
-tocInfo.FormatArrayLength = 4;
-tocInfo.FormatArray[0].Margin.Right = 0;
-tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
-tocInfo.FormatArray[1].Margin.Left = 30;
-tocInfo.FormatArray[1].TextState.Underline = true;
-tocInfo.FormatArray[1].TextState.FontSize = 10;
-tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
-tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
-Page page = doc.Pages.Add();
-```
-
-## Bước 5: Thêm bốn tiêu đề vào phần
-
-```csharp
-
-for (int Level = 1; Level != 5; Level++)
-{ 
-	Heading heading2 = new Heading(Level); 
-	TextSegment segment2 = new TextSegment(); 
-	heading2.TocPage = tocPage; 
-	heading2.Segments.Add(segment2); 
-	heading2.IsAutoSequence = true; 
-	segment2.Text = "this is heading of level " + Level; 
-	heading2.IsInList = true; 
-	page.Paragraphs.Add(heading2); 
-}
-doc.Save(outFile);
-
-```
-
-### Mã nguồn ví dụ để ẩn số trang trong mục lục bằng Aspose.PDF cho .NET
 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
@@ -112,18 +43,47 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "HiddenPageNumbers_out.pdf";
 Document doc = new Document();
 Page tocPage = doc.Pages.Add();
+```
+
+- dataDir: Đây là thư mục nơi tập tin đầu ra của bạn sẽ được lưu.
+- Document(): Khởi tạo một tài liệu PDF mới.
+- Pages.Add(): Thêm một trang trống mới vào tài liệu, sau đó sẽ lưu mục lục của bạn.
+
+## Bước 2: Thiết lập thông tin mục lục và tiêu đề
+
+Tiếp theo, chúng ta sẽ xác định thông tin Mục lục, bao gồm việc thiết lập tiêu đề sẽ xuất hiện ở đầu Mục lục.
+
+```csharp
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
 tocInfo.Title = title;
-//Thêm phần danh sách vào bộ sưu tập phần của tài liệu Pdf
 tocPage.TocInfo = tocInfo;
-//Xác định định dạng của danh sách bốn cấp độ bằng cách thiết lập lề trái và
-//thiết lập định dạng văn bản của từng cấp độ
+```
 
+- TocInfo: Đối tượng này lưu trữ tất cả thông tin về TOC.
+- TextFragment: Biểu thị văn bản của tiêu đề mục lục, ở đây chúng tôi đặt nó là "Mục lục".
+- FontStyle: Chúng tôi định dạng tiêu đề mục lục bằng cách đặt kích thước của nó thành 20 và in đậm.
+- tocPage.TocInfo: Chúng tôi gán thông tin mục lục cho trang sẽ hiển thị mục lục.
+
+## Bước 3: Ẩn số trang trong mục lục
+
+Bây giờ đến phần thú vị! Đây là nơi chúng ta cấu hình TOC để ẩn số trang.
+
+```csharp
 tocInfo.IsShowPageNumbers = false;
 tocInfo.FormatArrayLength = 4;
+```
+
+-  IsShowPageNumbers: Đây là công tắc ma thuật ẩn số trang. Đặt thành`false`và số trang sẽ không xuất hiện trong Mục lục.
+- FormatArrayLength: Chúng tôi đặt thành 4, cho biết chúng tôi muốn xác định định dạng cho bốn cấp tiêu đề mục lục.
+
+## Bước 4: Tùy chỉnh định dạng mục lục
+
+Để thêm phong cách cho mục lục, chúng ta sẽ xác định định dạng cho các cấp tiêu đề khác nhau.
+
+```csharp
 tocInfo.FormatArray[0].Margin.Right = 0;
 tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
 tocInfo.FormatArray[1].Margin.Left = 30;
@@ -131,36 +91,61 @@ tocInfo.FormatArray[1].TextState.Underline = true;
 tocInfo.FormatArray[1].TextState.FontSize = 10;
 tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
 tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
+```
+
+- FormatArray: Mảng này kiểm soát định dạng của mục lục. Mỗi chỉ mục biểu thị một cấp độ tiêu đề khác nhau.
+- Lề và Kiểu văn bản: Chúng tôi thiết lập lề và áp dụng các kiểu phông chữ như in đậm, in nghiêng và gạch chân cho từng cấp tiêu đề.
+
+## Bước 5: Thêm Tiêu đề vào Tài liệu
+
+Cuối cùng, chúng ta hãy thêm các tiêu đề thực tế sẽ là một phần của Mục lục.
+
+```csharp
 Page page = doc.Pages.Add();
-//Thêm bốn tiêu đề vào phần
 for (int Level = 1; Level != 5; Level++)
-	{ 
-		Heading heading2 = new Heading(Level); 
-		TextSegment segment2 = new TextSegment(); 
-		heading2.TocPage = tocPage; 
-		heading2.Segments.Add(segment2); 
-		heading2.IsAutoSequence = true; 
-		segment2.Text = "this is heading of level " + Level; 
-		heading2.IsInList = true; 
-		page.Paragraphs.Add(heading2); 
-	}
+{ 
+    Heading heading2 = new Heading(Level); 
+    TextSegment segment2 = new TextSegment(); 
+    heading2.TocPage = tocPage; 
+    heading2.Segments.Add(segment2); 
+    heading2.IsAutoSequence = true; 
+    segment2.Text = "this is heading of level " + Level; 
+    heading2.IsInList = true; 
+    page.Paragraphs.Add(heading2); 
+}
+```
+
+- Tiêu đề và TextSegment: Đây là các tiêu đề sẽ xuất hiện trong mục lục của bạn. Mỗi cấp độ có tiêu đề riêng.
+- IsAutoSequence: Tự động đánh số các tiêu đề.
+- IsInList: Đảm bảo mỗi tiêu đề xuất hiện trong mục lục.
+
+## Bước 6: Lưu tài liệu
+
+Khi mọi thứ đã hoàn tất, hãy lưu tài liệu PDF vào tệp đầu ra đã chỉ định.
+
+```csharp
 doc.Save(outFile);
 ```
 
+Và thế là xong! Bạn đã tạo thành công tệp PDF có Mục lục và số trang đã được ẩn!
+
 ## Phần kết luận
 
-Trong hướng dẫn này, chúng tôi đã khám phá cách làm việc với siêu dữ liệu XMP trong tài liệu PDF bằng Aspose.PDF cho .NET. Siêu dữ liệu XMP cung cấp thông tin có giá trị về tài liệu PDF, bao gồm tiêu đề, tác giả, ngày tạo và nhiều thông tin khác. Aspose.PDF cho .NET cho phép các nhà phát triển truy cập và thao tác siêu dữ liệu này, cung cấp API linh hoạt và mạnh mẽ để làm việc với tài liệu PDF.
+Tạo Mục lục trong PDF và ẩn số trang có vẻ phức tạp, nhưng với Aspose.PDF cho .NET, việc này trở nên dễ dàng. Bằng cách làm theo hướng dẫn từng bước này, bạn đã biết cách tùy chỉnh định dạng Mục lục, ẩn số trang và áp dụng các kiểu khác nhau cho tiêu đề của mình. Bây giờ bạn có thể tạo PDF chuyên nghiệp phù hợp với nhu cầu chính xác của mình.
 
-### Câu hỏi thường gặp
+## Câu hỏi thường gặp
 
-#### H: Siêu dữ liệu XMP trong tài liệu PDF là gì?
+### Tôi có thể hiển thị số trang cho các tiêu đề cụ thể trong Mục lục không?
+Không, Aspose.PDF ẩn hoặc hiển thị số trang cho toàn bộ mục lục. Bạn không thể ẩn chúng một cách có chọn lọc đối với các mục cụ thể.
 
-A: Siêu dữ liệu XMP (Nền tảng siêu dữ liệu mở rộng) trong tài liệu PDF là định dạng chuẩn để lưu trữ thông tin siêu dữ liệu về tài liệu. Nó bao gồm các chi tiết như tiêu đề tài liệu, tác giả, ngày tạo, từ khóa, v.v. Siêu dữ liệu XMP cung cấp một cách có cấu trúc và chuẩn hóa để lưu trữ và chia sẻ thông tin về tài liệu PDF.
+### Có thể thêm nhiều cấp độ hơn vào mục lục không?
+ Vâng, bạn có thể tăng`FormatArrayLength` để xác định nhiều cấp độ tiêu đề mục lục hơn.
 
-#### H: Tôi có thể sửa đổi siêu dữ liệu XMP của tài liệu PDF bằng Aspose.PDF cho .NET không?
+### Làm thế nào tôi có thể thay đổi phông chữ cho tất cả các mục lục?
+ Bạn có thể thay đổi phông chữ bằng cách sửa đổi`TextState.Font` tài sản cho mỗi cấp độ trong`FormatArray`.
 
- A: Có, bạn có thể sửa đổi siêu dữ liệu XMP của tài liệu PDF theo chương trình bằng cách sử dụng Aspose.PDF cho .NET. Bạn có thể truy cập`Info` tài sản của`Document` đối tượng, cho phép bạn truy cập vào các thuộc tính siêu dữ liệu XMP. Sau đó, bạn có thể cập nhật các giá trị của các thuộc tính này để sửa đổi siêu dữ liệu XMP của tài liệu PDF.
+### Tôi có thể chèn siêu liên kết vào mục lục không?
+ Có, bạn có thể liên kết từng mục lục với một phần cụ thể trong tài liệu bằng cách sử dụng`Heading.TocPage` tài sản.
 
-#### H: Tôi có thể trích xuất các thuộc tính siêu dữ liệu XMP tùy chỉnh từ tài liệu PDF bằng Aspose.PDF cho .NET không?
-
- A: Có, bạn có thể trích xuất các thuộc tính siêu dữ liệu XMP tùy chỉnh từ tài liệu PDF bằng Aspose.PDF cho .NET. Bạn có thể sử dụng`Metadata` tài sản của`Document`đối tượng, cung cấp quyền truy cập vào tất cả các thuộc tính siêu dữ liệu XMP của tài liệu PDF. Sau đó, bạn có thể trích xuất các thuộc tính tùy chỉnh và sử dụng các giá trị của chúng khi cần.
+### Tôi có cần giấy phép sử dụng Aspose.PDF không?
+Có, cần có giấy phép hợp lệ để sử dụng sản xuất. Bạn có thể xin giấy phép tạm thời[đây](https://purchase.aspose.com/temporary-license/) để kiểm tra các tính năng.

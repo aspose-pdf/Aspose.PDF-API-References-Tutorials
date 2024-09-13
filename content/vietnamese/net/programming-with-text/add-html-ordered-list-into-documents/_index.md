@@ -47,7 +47,7 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 ```
 
 ## Bước 6: Thêm một trang vào tài liệu
- Thêm một trang mới vào tài liệu bằng cách sử dụng`Add` phương pháp của`Pages`bộ sưu tập. Trong mã được cung cấp, trang mới được gán cho biến`page`.
+ Thêm một trang mới vào tài liệu bằng cách sử dụng`Add` phương pháp của`Pages` bộ sưu tập. Trong mã được cung cấp, trang mới được gán cho biến`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -81,7 +81,7 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 Page page = doc.Pages.Add();
 // Thêm HtmlFragment vào bên trong trang
 page.Paragraphs.Add(t);
-// Lưu tệp PDF kết quả
+//Lưu tệp PDF kết quả
 doc.Save(outFile);
 ```
 
@@ -115,7 +115,7 @@ using Aspose.Pdf.Text;
 
 #### H: Làm thế nào để thêm danh sách có thứ tự HTML vào một trang trong tài liệu?
 
- A: Ở Bước 7, bạn sẽ thêm`HtmlFragment` sự vật (`t` ) vào trang bằng cách sử dụng`Add` phương pháp của`Paragraphs`bộ sưu tập. Điều này sẽ tích hợp danh sách có thứ tự HTML vào tài liệu một cách liền mạch.
+ A: Ở Bước 7, bạn sẽ thêm`HtmlFragment` sự vật (`t` ) vào trang bằng cách sử dụng`Add` phương pháp của`Paragraphs` bộ sưu tập. Điều này sẽ tích hợp danh sách có thứ tự HTML vào tài liệu một cách liền mạch.
 
 #### H: Làm thế nào để lưu tài liệu PDF kết quả?
 

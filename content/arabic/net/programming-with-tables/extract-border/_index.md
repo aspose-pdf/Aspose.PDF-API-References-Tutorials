@@ -149,7 +149,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 
 		if (opSaveState != null)
 		{
-			//احفظ الحالة السابقة وادفع الحالة الحالية إلى أعلى المكدس
+			// احفظ الحالة السابقة وادفع الحالة الحالية إلى أعلى المكدس
 			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
@@ -243,7 +243,7 @@ Console.WriteLine("\nBorder extracted successfully as image.\nFile saved at " + 
 
 #### س: هل يمكنني استخراج الحدود من صفحات أو مناطق محددة داخل مستند PDF؟
 
-ج: نعم، يمكنك تعديل كود المصدر C# المقدم لاستخراج الحدود من صفحات أو مناطق معينة داخل مستند PDF. من خلال التلاعب بـ`doc.Pages` من خلال جمع وتحديد معايير مخصصة، يمكنك اختيار استخراج الحدود من صفحات أو مناطق اهتمام معينة.
+ ج: نعم، يمكنك تعديل كود المصدر C# المقدم لاستخراج الحدود من صفحات أو مناطق معينة داخل مستند PDF. من خلال التلاعب بـ`doc.Pages` من خلال جمع وتحديد معايير مخصصة، يمكنك اختيار استخراج الحدود من صفحات أو مناطق اهتمام معينة.
 
 #### س: كيف يمكنني تخصيص تنسيق الصورة الناتجة والجودة؟
 

@@ -173,7 +173,7 @@ Odpověď: Příklad kódu ukazuje, jak vytvořit různé typy prvků struktury,
 
  A: Nastavení názvu a jazyka dokumentu pomocí`SetTitle` a`SetLanguage`metody zlepšují dostupnost a sémantiku dokumentů. Název poskytuje stručný popis účelu dokumentu, zatímco atribut language zlepšuje vykreslování a dostupnost specifické pro daný jazyk.
 
-####  Otázka: Jak funguje seskupování prvků, jako např`PartElement` and `SectElement`, contribute to the structure of the PDF document?
+####  Otázka: Jak seskupování prvků, jako např`PartElement` and `SectElement`, contribute to the structure of the PDF document?
 
 Odpověď: Seskupování prvků vytváří v dokumentu PDF hierarchickou strukturu, která vám umožňuje logicky organizovat a seskupovat související obsah. To zlepšuje navigaci a poskytuje uživatelům jasnou strukturu.
 

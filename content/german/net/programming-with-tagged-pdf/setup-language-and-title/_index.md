@@ -155,7 +155,7 @@ A: Die Konfiguration der Sprache und des Titels eines PDF-Dokuments ist wichtig 
 
 A: Mehrsprachiger Inhalt verbessert die Zugänglichkeit und globale Reichweite von PDF-Dokumenten. Mit Aspose.PDF für .NET können Sie mehrsprachigen Inhalt hinzufügen, indem Sie Absatzelemente für jede Sprache erstellen und die Text- und Spracheigenschaften entsprechend festlegen.
 
-####  F: Wie funktioniert das`SetTitle` method contribute to improving document accessibility and organization?
+#### F: Wie funktioniert das`SetTitle` method contribute to improving document accessibility and organization?
 
  A: Die`SetTitle` Die Methode legt den Titel eines PDF-Dokuments fest, der zur Dokumentidentifizierung, für Suchergebnisse und zur Organisation verwendet wird. Die Angabe eines klaren und aussagekräftigen Titels verbessert die Dokumentzugänglichkeit und das Benutzererlebnis.
 
@@ -177,4 +177,4 @@ A: Berücksichtigen Sie beim Konfigurieren der Sprache und des Titels die Zielgr
 
 #### F: Kann ich die Sprache und den Titel eines vorhandenen PDF-Dokuments mit Aspose.PDF für .NET ändern?
 
- A: Ja, Sie können die Sprache und den Titel eines vorhandenen PDF-Dokuments mit Aspose.PDF für .NET ändern. Indem Sie das Dokument laden, auf seinen getaggten Inhalt zugreifen und die`SetTitle` Und`SetLanguage`Methoden können Sie diese Attribute nach Bedarf aktualisieren.
+ A: Ja, Sie können die Sprache und den Titel eines vorhandenen PDF-Dokuments mit Aspose.PDF für .NET ändern. Indem Sie das Dokument laden, auf seinen getaggten Inhalt zugreifen und die`SetTitle` Und`SetLanguage` Methoden können Sie diese Attribute nach Bedarf aktualisieren.

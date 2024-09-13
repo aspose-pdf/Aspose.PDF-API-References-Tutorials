@@ -42,7 +42,7 @@ Document doc = new Document();
 ```
 
 ## Étape 5 : Ajouter une page au document
- Ajoutez une nouvelle page au document en utilisant le`Add` méthode de la`Pages`collection. Dans le code fourni, la nouvelle page est attribuée à la variable`page`.
+ Ajoutez une nouvelle page au document en utilisant le`Add` méthode de la`Pages` collection. Dans le code fourni, la nouvelle page est attribuée à la variable`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -159,7 +159,7 @@ HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Tab
 
 #### Q : Comment puis-je écraser les styles du contenu HTML ?
 
- A : À l'étape 7, vous écraserez les styles du contenu HTML en modifiant le`TextState` propriétés de la`HtmlFragment` objet. Par exemple, vous pouvez modifier la famille de polices en « Arial » et définir la taille de police sur 20 :
+ A : À l'étape 7, vous écraserez les styles du contenu HTML en modifiant le`TextState` propriétés de la`HtmlFragment`objet. Par exemple, vous pouvez modifier la famille de polices en « Arial » et définir la taille de police sur 20 :
 
 ```csharp
 title.TextState = new TextState("Arial");

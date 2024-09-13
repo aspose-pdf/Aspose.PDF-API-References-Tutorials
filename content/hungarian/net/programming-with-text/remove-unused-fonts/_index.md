@@ -120,7 +120,7 @@ V: Az oktatóanyag lépésről lépésre végigvezeti a folyamaton:
 
 V: Igen, módosíthatja a kódot, hogy a fel nem használt betűtípusokat tetszőleges betűtípusra cserélje. A megadott mintakódban az „Arial, Bold” betűtípust használjuk helyettesítőként.
 
-####  K: Hogyan működik a`TextFragmentAbsorber` work to remove unused fonts?
+#### K: Hogyan működik a`TextFragmentAbsorber` work to remove unused fonts?
 
  V: A`TextFragmentAbsorber` -vel van konfigurálva`TextEditOptions.FontReplace.RemoveUnusedFonts` paraméter, amely azonosítja a nem használt betűtípusokat a PDF szövegrészein belül. Felszívódás után ismételheti a`TextFragments` és állítsa be a betűtípusaikat a kívánt helyettesítő betűtípusokra.
 

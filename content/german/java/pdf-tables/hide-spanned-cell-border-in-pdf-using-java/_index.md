@@ -10,7 +10,7 @@ url: /de/java/pdf-tables/hide-spanned-cell-border-in-pdf-using-java/
 
 ## Einführung in das Ausblenden von übergreifenden Zellrändern in PDF mit Java
 
-Im heutigen digitalen Zeitalter ist die dynamische Generierung von PDF-Dokumenten eine gängige Aufgabe für Unternehmen und Entwickler. Beim Arbeiten mit PDFs können Sie auf Situationen stoßen, in denen Sie überspannte Zellränder innerhalb einer Tabelle ausblenden müssen. Dieser Artikel führt Sie durch den Prozess, dies mit Java und der Aspose.PDF-Bibliothek für Java zu erreichen.
+Im heutigen digitalen Zeitalter ist die dynamische Generierung von PDF-Dokumenten eine gängige Aufgabe für Unternehmen und Entwickler. Beim Arbeiten mit PDFs können Sie auf Situationen stoßen, in denen Sie überspannte Zellränder innerhalb einer Tabelle ausblenden müssen. Dieser Artikel führt Sie durch den Prozess, dies mit Java und der Aspose.PDF für Java-Bibliothek zu erreichen.
 
 ## Grundlegendes zu überspannten Zellrändern in PDF
 

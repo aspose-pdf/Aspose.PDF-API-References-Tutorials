@@ -145,7 +145,7 @@ row1.Cells.Add();
 row1.Cells[1].Paragraphs.Add(TitleText);
 // Đặt căn chỉnh theo chiều dọc của nội dung hàng thành Top
 row1.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-// Tạo các hàng trong bảng và sau đó tạo các ô trong các hàng
+//Tạo các hàng trong bảng và sau đó tạo các ô trong các hàng
 Aspose.Pdf.Row SecondRow = table1.Rows.Add();
 SecondRow.Cells.Add();
 // Đặt giá trị khoảng cách hàng cho Hàng thứ hai là 2

@@ -60,7 +60,7 @@ Zde se pokusíme najít písmo. Pokud není nalezen, zachytíme výjimku a nahra
 
 ## Krok 3: Načtěte dokument PDF
 
-Nyní načteme dokument PDF, který chcete zpracovat. Budete muset zadat cestu vstupního souboru.
+Nyní načteme dokument PDF, který chcete zpracovat. Budete muset zadat cestu ke vstupnímu souboru.
 
 ```csharp
 var fileNew = new FileInfo(dataDir + "newfile_out.pdf");

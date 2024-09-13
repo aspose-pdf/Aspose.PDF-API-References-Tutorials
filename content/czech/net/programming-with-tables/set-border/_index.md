@@ -106,7 +106,7 @@ Aspose.Pdf.BorderInfo border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.A
 border.Top.IsDoubled = true;
 // Určete, že spodní okraj bude dvojitý
 border.Bottom.IsDoubled = true;
-// Okamžitá tabulka objektu
+// Objekt Instantiate Table
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
 // Zadejte informace o šířce sloupců
 table.ColumnWidths = "100";

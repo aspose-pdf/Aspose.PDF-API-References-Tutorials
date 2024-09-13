@@ -89,7 +89,7 @@ W tym przewodniku sprawdziliśmy, jak stosować redagowanie do poufnej zawartoś
 
 ### Jak mogę zredagować wiele typów poufnych informacji w jednym dokumencie?
 
-Możesz utworzyć wiele obiektów TextFragmentAbsorber, każdy z własnym wzorcem do identyfikacji różnych typów wrażliwej zawartości. Następnie przejrzyj je, aby zastosować odpowiednie redakcje.
+Możesz utworzyć wiele obiektów TextFragmentAbsorber, każdy z własnym wzorcem do identyfikacji różnych typów poufnej zawartości. Następnie przejrzyj je, aby zastosować odpowiednie redakcje.
 
 ### Czy redagowanie jest odwracalne?
 

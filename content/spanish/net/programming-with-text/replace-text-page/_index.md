@@ -62,7 +62,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## Paso 6: Recuperar fragmentos de texto extraídos
 
-Obtenga los fragmentos de texto extraídos utilizando el`TextFragments` propiedad de la`TextFragmentAbsorber` objeto:
+ Obtenga los fragmentos de texto extraídos utilizando el`TextFragments` propiedad de la`TextFragmentAbsorber` objeto:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -165,7 +165,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 #### P: ¿Qué sucede si la frase de búsqueda no se encuentra en la página especificada?
 
- A: Si la frase de búsqueda no se encuentra en la página especificada, el`TextFragmentCollection` Estará vacío y no se realizarán reemplazos. Asegúrese de que la frase de búsqueda exista en la página a la que apunta.
+A: Si la frase de búsqueda no se encuentra en la página especificada, el`TextFragmentCollection` Estará vacío y no se realizarán reemplazos. Asegúrese de que la frase de búsqueda exista en la página a la que apunta.
 
 #### P: ¿Cómo puedo personalizar el texto de reemplazo para cada fragmento de texto?
 

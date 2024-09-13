@@ -88,7 +88,7 @@ page.Accept(textFragmentAbsorber);
 
 ## Étape 9 : Récupérer les fragments de texte extraits
 
-Obtenez les fragments de texte extraits à l'aide de la`TextFragments` propriété de la`TextFragmentAbsorber` objet:
+ Obtenez les fragments de texte extraits à l'aide de la`TextFragments` propriété de la`TextFragmentAbsorber` objet:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

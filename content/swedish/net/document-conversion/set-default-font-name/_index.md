@@ -1,7 +1,7 @@
 ---
 title: Ställ in standardteckensnittsnamn
 linktitle: Ställ in standardteckensnittsnamn
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du ställer in ett standardteckensnittsnamn när du renderar PDF-filer till bilder med Aspose.PDF för .NET. Den här guiden täcker förutsättningar, steg-för-steg-instruktioner och vanliga frågor.
 type: docs
 weight: 270

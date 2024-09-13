@@ -1,7 +1,7 @@
 ---
 title: Webbsida till PDF
 linktitle: Webbsida till PDF
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du konverterar webbsidor till PDF med Aspose.PDF för .NET i denna detaljerade, steg-för-steg handledning.
 type: docs
 weight: 320

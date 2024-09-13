@@ -13,4 +13,4 @@ Aspose.PDF for .NET 教程将逐步指导您掌握 PDF 文档标题编程。了�
 ## 教程
 | 标题 | 描述 |
 | --- | --- | 
-| [在 PDF 文件中应用数字样式](./apply-number-style/) | 了解如何使用 Aspose.PDF for .NET 将编号样式应用于 PDF 文件中的标题。分步指南。 |   
+| [在 PDF 文件中应用数字样式](./apply-number-style/) | 通过本分步指南了解如何使用 Aspose.PDF for .NET 将不同的数字样式（罗马数字、字母）应用于 PDF 中的标题。 |   

@@ -25,28 +25,28 @@ description: 此資源提供了文件程式設計的 Aspose.PDF for .NET 函式�
 | [在 PDF 檔案中嵌入字體](./embedfont/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中嵌入字體。確保您的文件在任何裝置上都能正確顯示。 |  
 | [使用子集策略在 PDF 檔案中嵌入字體](./embedfontsusingsubsetstrategy/) | 了解如何使用 Aspose.PDF for .NET 透過子集策略在 PDF 檔案中嵌入字型。透過僅嵌入必要的字元來優化 PDF 大小。 |  
 | [建立 PDF 文件時嵌入字體](./embedfontwhiledoccreation/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 在 PDF 文件中嵌入字型。增強 PDF 的外觀。 |  
-| [拼合 PDF 檔案中的註釋](./flattenannotation/) | 了解如何使用 Aspose.PDF for .NET 拼合 PDF 檔案中的註解。保留註釋並防止意外更改。 |  
-| [取得PDF檔案中的所有字體](./getallfonts/) | 透過此逐步指南和範例程式碼，了解如何使用 Aspose.PDF for .NET 以程式設計方式取得 PDF 檔案中使用的所有字體。 |  
+| [拼合 PDF 檔案中的註釋](./flattenannotation/) | 在本指南中了解如何使用 Aspose.PDF for .NET 拼合 PDF 檔案中的註解。透過我們詳細的教學簡化您的 PDF 管理流程。 |  
+| [取得PDF檔案中的所有字體](./getallfonts/) | 在此逐步教學中，了解如何使用 Aspose.PDF for .NET 從 PDF 檔案中提取所有字體。非常適合開發人員和 PDF 愛好者。 |  
 | [取得文檔視窗](./getdocumentwindow/) | 了解如何使用 Aspose.PDF for .NET 的 GetDocumentWindow 功能來擷取 PDF 文件視窗屬性的資訊。 |  
 | [取得 PDF 文件中的文件信息](./getfileinfo/) | 了解如何使用 Aspose.PDF for .NET 的 PDF 檔案中的 GetFileInfo 功能來檢索 PDF 文件的元資料資訊。 |  
 | [取得字體替換警告](./getwarningsforfontsubstitution/) | 了解如何使用 Aspose.PDF for .NET 的 GetWarningsForFontSubstitution 功能在開啟 PDF 文件時檢測字體替換警告。 |  
-| [取得 XMP 元數據](./getxmpmetadata/) | 了解如何使用 Aspose.PDF for .NET 的 GetXmpMetadata 功能，使用 C# 原始碼從 PDF 文件中提取 XMP 元資料。 |  
+| [取得 XMP 元數據](./getxmpmetadata/) | 在此逐步指南中了解如何使用 Aspose.PDF for .NET 從 PDF 中提取 XMP 元資料。輕鬆從 PDF 文件中獲取有價值的見解。 |  
 | [取得字體替換警告](./getwarningsforfontsubstitution/) | 了解如何使用 Aspose.PDF for .NET 的 GetWarningsForFontSubstitution 功能在開啟 PDF 文件時檢測字體替換警告。 |  
 | [取得 PDF 檔案中的縮放係數](./getzoomfactor/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 取得 PDF 檔案中的縮放係數。 |  
-| [隱藏目錄中的頁碼](./hidepagenumbersintoc/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 在目錄中隱藏頁碼。 |  
-| [連結重複的串流](./linkduplicatestreams/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 連結重複的串流 功能來最佳化您的 PDF 文件。 |  
-| [優化 PDF 文件](./optimizedocument/) | 優化 Web PDF 文件對於使用者體驗至關重要。透過此逐步指南了解如何使用 Aspose.PDF for .NET 進行此操作。 |  
-| [優化 PDF 檔案的檔案大小](./optimizefilesize/) | 使用此逐步指南了解如何使用 Aspose.PDF for .NET 最佳化 PDF 檔案的檔案大小。 |  
-| [刪除 PDF 檔案中未使用的對象](./removeunusedobjects/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 刪除 PDF 檔案中未使用的對象 |  
-| [刪除未使用的串流](./removeunusedstreams/) | 了解如何使用 Aspose.PDF for .NET 從 PDF 檔案中刪除未使用的串流。我們的逐步指南。 |  
-| [設定預設字體](./setdefaultfont/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 設定 PDF 文件的預設字型。 |  
-| [設定到期日期](./setexpirydate/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 在 PDF 文件中設定到期日。 |  
-| [在 PDF 文件中設定文件訊息](./setfileinfo/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 在 PDF 文件中設定文件資訊。 |  
-| [設定列印對話框的屬性](./setpropertiesforprintdialog/) | 了解如何使用逐步指南在 Aspose.PDF for .NET 中設定列印對話方塊的屬性。 |  
-| [在 PDF 檔案中設定 XMP 元數據](./setxmpmetadata/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中設定 XMPMetadata。請遵循此逐步指南。 |  
-| [在 PDF 檔案中設定縮放係數](./setzoomfactor/) | 透過我們的逐步指南，了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中設定縮放係數。 |  
-| [縮小 PDF 文檔](./shrinkdocuments/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 縮小 PDF 文件。  |  
-| [取消嵌入字體並優化 PDF 文件](./unembedfonts/) | 了解如何使用 Aspose.PDF for .NET 取得非嵌入字體並優化 PDF 檔案。逐步指南。 |  
-| [驗證 PDF AB 標準](./validatepdfabstandard/) | 透過我們的逐步指南和程式碼範例，了解如何使用 Aspose.PDF for .NET 根據 PDFABStandard 驗證 PDF 文件。 |  
-| [驗證 PDF 文件的標準](./validatepdfastandard/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 驗證 PDFAStandard 的 PDF 檔案。 |  
-| [驗證 PDF UA 標準](./validatepdfuastandard/) | 了解如何使用 Aspose.PDF for .NET 透過 C# 程式碼驗證 PDFUAstandard。逐步指南。 |  
+| [隱藏目錄中的頁碼](./hidepagenumbersintoc/) | 了解如何使用 Aspose.PDF for .NET 在目錄中隱藏頁碼。請按照包含程式碼範例的詳細指南來建立專業的 PDF。 |  
+| [連結重複的串流](./linkduplicatestreams/) | 了解如何使用 Aspose.PDF for .NET 連結 PDF 文件中的重複流。優化您的 PDF 以獲得更好的效能並減少檔案大小。 |  
+| [優化 PDF 文件](./optimizedocument/) | 透過我們的逐步指南，了解如何使用 Aspose.PDF for .NET 最佳化 PDF 文件。透過減少檔案大小和複雜性來增強 Web 效能。 |  
+| [優化 PDF 檔案的檔案大小](./optimizefilesize/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 最佳化 PDF 檔案大小。減小檔案大小而不損失品質。 |  
+| [刪除 PDF 檔案中未使用的對象](./removeunusedobjects/) | 了解如何使用 Aspose.PDF for .NET 刪除未使用的物件來最佳化 PDF 檔案。減小檔案大小和提高效能的逐步指南。 |  
+| [刪除未使用的串流](./removeunusedstreams/) | 了解如何使用 Aspose.PDF for .NET 刪除 PDF 檔案中未使用的串流，以最佳化檔案大小和效能。 |  
+| [設定預設字體](./setdefaultfont/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中設定預設字體。非常適合希望增強 PDF 文件的開發人員。 |  
+| [設定到期日期](./setexpirydate/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中設定到期日。透過此逐步指南增強文件安全性。 |  
+| [在 PDF 文件中設定文件訊息](./setfileinfo/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 在 PDF 文件中設定文件資訊。使用元資料輕鬆增強您的 PDF。 |  
+| [設定列印對話框的屬性](./setpropertiesforprintdialog/) | 使用 Aspose.PDF for .NET 釋放 PDF 建立的潛力。本指南可協助您輕鬆設定列印屬性。 |  
+| [在 PDF 檔案中設定 XMP 元數據](./setxmpmetadata/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中設定 XMP 元資料。本逐步指南將引導您完成從設定到儲存文件的整個過程。 |  
+| [在 PDF 檔案中設定縮放係數](./setzoomfactor/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中設定縮放係數。透過此逐步指南增強使用者體驗。 |  
+| [縮小 PDF 文檔](./shrinkdocuments/) | 在此逐步指南中了解如何使用 Aspose.PDF for .NET 縮小 PDF 文件。優化 PDF 資源並減小文件大小，而不影響品質。  |  
+| [取消嵌入字體並優化 PDF 文件](./unembedfonts/) | 在此逐步教學中，了解如何使用 Aspose.PDF for .NET 取消嵌入字體並優化 PDF 檔案。 |  
+| [驗證 PDF AB 標準](./validatepdfabstandard/) | 在此逐步教學中，了解如何使用 Aspose.PDF for .NET 驗證 PDF 是否符合 PDF/A-1b 標準。確保長期歸檔的合規性。 |  
+| [驗證 PDF 文件的標準](./validatepdfastandard/) | 在此全面的逐步教學中，了解如何使用 Aspose.PDF for .NET 根據 PDF/A-1a 標準驗證 PDF 檔案。 |  
+| [驗證 PDF UA 標準](./validatepdfuastandard/) | 透過我們的逐步指南和詳細說明，了解如何使用 Aspose.PDF for .NET 驗證 PDF 是否符合 PDF/UA 輔助功能標準。 |  

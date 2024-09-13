@@ -2,145 +2,138 @@
 title: 確定 PDF 檔案中的正確密碼
 linktitle: 確定 PDF 檔案中的正確密碼
 second_title: Aspose.PDF for .NET API 參考
-description: 了解如何使用 Aspose.PDF for .NET 確定 PDF 檔案中的正確密碼。
+description: 使用 Aspose.PDF for .NET 使用正確的密碼解鎖 PDF 檔案。了解如何輕鬆識別正確的密碼。
 type: docs
 weight: 30
 url: /zh-hant/net/programming-with-security-and-signatures/determine-correct-password/
 ---
-在本教學中，我們將引導您完成使用 Aspose.PDF for .NET 確定 PDF 檔案中正確密碼的過程。此功能可讓您檢查 PDF 檔案是否受密碼保護，並從預定義清單中找到正確的密碼。
+## 介紹
 
-## 第 1 步：先決條件
+當談到處理 PDF 文件時，我們都遇到過這樣令人惱火的時刻：當您嘗試開啟文件時，卻遇到了密碼障礙。這是一個常見問題，既可能導致高效率的文件管理，也可能導致令人沮喪的僵局。值得慶幸的是，借助適用於 .NET 的強大 Aspose.PDF 庫，您可以收回控制權並確定 PDF 文件是否受密碼保護，如果是，則哪個密碼可以解鎖它。在本指南中，我們將引導您完成使用 Aspose.PDF 識別受保護 PDF 的正確密碼的流程，並提供簡單的步驟。
 
-在開始之前，請確保您具備以下先決條件：
+## 先決條件
 
-- C# 程式語言的基礎知識
-- 在您的電腦上安裝 Visual Studio
-- 已安裝適用於 .NET 的 Aspose.PDF 庫
+在深入學習我們的教程之前，讓我們確保您已具備開始使用所需的一切。 
 
-## 第2步：環境設定
+### 軟體和工具
 
-首先，請按照以下步驟設定您的開發環境：
+1. .NET Framework 或 .NET Core：請確定您的開發環境中安裝了 .NET Framework 或 .NET Core。
+2.  Aspose.PDF for .NET：您的專案中需要有 Aspose.PDF 函式庫。你可以下載它[這裡](https://releases.aspose.com/pdf/net/).
+   
+### 開發環境
 
-1. 開啟 Visual Studio 並建立一個新的 C# 專案。
-2. 將所需的命名空間匯入到您的程式碼檔案中：
+1. Visual Studio：確保安裝了 Visual Studio，因為它將作為您的整合開發環境 (IDE)。
+2. C# 基礎：熟悉 C# 程式設計將幫助您理解程式碼片段以及它們如何與 Aspose.PDF 庫互動。
+
+### API 和許可證
+
+- 如果您打算使用 Aspose.PDF 的全部功能，請考慮獲取[臨時執照](https://purchase.aspose.com/temporary-license/)或一個[永久許可證](https://purchase.aspose.com/buy).
+  
+一切設定完畢後，您就可以揭開受密碼保護的 PDF 的秘密了！
+
+## 導入包
+
+要開始使用 Aspose.PDF，您需要匯入必要的套件。以下是如何有效地做到這一點。
+
+### 新增使用指令
+
+在 C# 專案檔案中，請確保在程式碼檔案頂部包含所需的命名空間：
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
+using Aspose.Pdf.Facades;
+using System;
 ```
 
-## 第 3 步：載入來源 PDF 文件
+### 安裝Aspose.PDF包
 
-第一步是上傳您要驗證的來源 PDF 檔案。在此範例中，我們假設您在指定目錄中有一個名為「IsPasswordProtected.pdf」的 PDF 檔案。
+如果尚未安裝，您可以透過 NuGet Package Manager 安裝 Aspose.PDF 庫。只需打開包管理器控制台並運行：
+
+```bash
+Install-Package Aspose.PDF
+```
+
+此命令會取得 Aspose.PDF 並將其安裝到您的專案中，為您的成功做好準備。
+
+現在，讓我們分解一下識別 PDF 檔案正確密碼所涉及的主要步驟。為了清楚起見，我們將逐步完成範例實作。
+
+## 第1步：設定檔案路徑
+
+首先，您需要指定正在使用的 PDF 檔案的路徑。一定要更換`"YOUR DOCUMENTS DIRECTORY"`與 PDF 檔案所在的實際路徑。
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
+```
+
+## 第 2 步：載入來源 PDF 文件
+
+接下來，利用`PdfFileInfo`載入來源 PDF 檔案：
+
+```csharp
 PdfFileInfo info = new PdfFileInfo();
 info.BindPdf(dataDir + "IsPasswordProtected.pdf");
 ```
 
-請務必將佔位符替換為 PDF 檔案的實際位置。
+此步驟將 PDF 檔案綁定到`info`對象，允許我們存取它的屬性。
 
-## 步驟 4：確定來源 PDF 加密
+## 步驟 3：檢查 PDF 是否已加密
 
-上傳來源 PDF 檔案後，您可以使用以下命令確定它是否已加密`IsEncrypted`的方法`PdfFileInfo`目的。
-
-```csharp
-Console.WriteLine("The file is password protected: " + info.IsEncrypted);
-```
-
-此語句顯示 PDF 檔案是否受密碼保護。
-
-## 第五步：找到正確的密碼
-
-接下來，我們將使用預先定義的密碼清單搜尋正確的密碼。我們檢查清單中的每個密碼，並嘗試使用該密碼載入 PDF 文件。
+現在，是時候確定 PDF 文件是否確實受密碼保護了：
 
 ```csharp
-String[] passwords = new String[5] { "test", "test1", "test2", "test3", "sample" };
-for (int passwordcount = 0; passwordcount < passwords.Length; passwordcount++)
-{
-try
-{
-Document doc = new Document(dataDir + "IsPasswordProtected.pdf", passwords[passwordcount]);
-if (doc.Pages.Count > 0)
-Console.WriteLine("The document contains " + doc.Pages.Count + " pages.");
-}
-catch (InvalidPasswordException)
-{
-Console.WriteLine("The password " + passwords[passwordcount] + " is not correct.");
-}
-}
-```
-
-此循環測試列表中傳遞的每個單字。如果密碼正確，則會顯示文件的頁數。否則，會提示密碼不正確。
-
-
-### 使用 Aspose.PDF for .NET 確定正確密碼的範例原始碼 
-```csharp
-//文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENTS DIRECTORY";            
-//載入來源 PDF 文件
-PdfFileInfo info = new PdfFileInfo();
-info.BindPdf(dataDir + "IsPasswordProtected.pdf");
-//確定來源 PDF 是否已加密
 Console.WriteLine("File is password protected " + info.IsEncrypted);
+```
+
+透過檢查`IsEncrypted`屬性，您可以確定文件的鎖定狀態。如果是`true`，那你需要破解密碼！
+
+## 步驟 4： 準備可能的密碼列表
+
+要進行密碼搜索，請準備一個包含您要測試的潛在密碼的字串陣列：
+
+```csharp
 String[] passwords = new String[5] { "test", "test1", "test2", "test3", "sample" };
+```
+
+您可以根據您的需求或最可能的密碼修改此陣列。
+
+## 第 5 步：嘗試使用每個密碼開啟 PDF
+
+現在，我們將循環遍歷每個密碼，嘗試開啟 PDF 檔案。 
+
+```csharp
 for (int passwordcount = 0; passwordcount < passwords.Length; passwordcount++)
 {
-	try
-	{
-		Document doc = new Document(dataDir + "IsPasswordProtected.pdf", passwords[passwordcount]);
-		if (doc.Pages.Count > 0)
-			Console.WriteLine("Number of Page in document are = " + doc.Pages.Count);
-	}
-	catch (InvalidPasswordException)
-	{
-		Console.WriteLine("Password = " + passwords[passwordcount] + "  is not correct");
-	}
+    try
+    {
+        Document doc = new Document(dataDir + "IsPasswordProtected.pdf", passwords[passwordcount]);
+        if (doc.Pages.Count > 0)
+            Console.WriteLine("Number of Page in document are = " + doc.Pages.Count);
+    }
+    catch (InvalidPasswordException)
+    {
+        Console.WriteLine("Password = " + passwords[passwordcount] + "  is not correct");
+    }
 }
 ```
 
 ## 結論
 
-恭喜！您已使用 Aspose.PDF for .NET 成功地確定了 PDF 檔案的正確密碼。本教學介紹了從驗證檔案加密到從預定義清單中尋找正確密碼的逐步過程。現在您可以使用此功能來檢查並尋找 PDF 檔案的正確密碼。
+現在你就得到它了！現在您已經了解如何使用 Aspose.PDF for .NET 確定受密碼保護的 PDF 檔案的正確密碼。對於那些經常處理鎖定 PDF 文件的人來說，這種功能簡直就是救星。由於 Aspose.PDF 提供了強大的 API，因此流程非常簡單。無論是專業用途還是個人項目，掌握這項技能都將為您節省時間並減少挫折感。
 
-### 確定 PDF 檔案中正確密碼的常見問題解答
+## 常見問題解答
 
-#### Q：本教學的目的是什麼？
+### 什麼是 Aspose.PDF for .NET？
+Aspose.PDF for .NET 是一個函式庫，可讓開發人員以程式設計方式建立、操作和管理 PDF 文件。
 
-答：本教學課程旨在引導您完成使用 Aspose.PDF for .NET 確定 PDF 檔案的正確密碼的過程。此功能可讓您檢查 PDF 檔案是否受密碼保護，並嘗試從預定義清單中尋找正確的密碼。
+### 我可以免費試用 Aspose.PDF 嗎？
+是的，您可以下載 Aspose.PDF 的免費試用版[這裡](https://releases.aspose.com).
 
-#### Q：開始之前需要什麼先決條件？
+### 如果我忘記了 PDF 密碼，該怎麼辦？
+如果您有多個潛在密碼，您可以使用上述方法嘗試解鎖。但是，請確保您遵守法律準則。
 
-答：在開始之前，請確保您對 C# 程式語言有基本的了解，並在您的電腦上安裝了 Visual Studio，並且安裝了適用於 .NET 的 Aspose.PDF 程式庫。
+### 解鎖受保護的 PDF 是否合法？
+只有當您有權存取 PDF 內容時，解鎖 PDF 才是合法的。在嘗試繞過任何安全措施之前，請務必確保您擁有許可。
 
-#### Q：如何建構開發環境？
-
-答：請依照提供的步驟設定開發環境，包括在 Visual Studio 中建立新的 C# 項目，並匯入所需的命名空間。
-
-#### Q：如何判斷PDF檔案是否加密？
-
-答：使用`PdfFileInfo`類別來綁定來源 PDF 檔案。然後，使用`IsEncrypted`屬性來決定 PDF 檔案是否受密碼保護。
-
-#### Q：如何找到 PDF 檔案的正確密碼？
-
-答：確定 PDF 檔案已加密後，您可以嘗試使用預先定義的密碼清單來尋找正確的密碼。提供的範例程式碼示範如何循環遍歷清單、嘗試每個密碼並確定密碼是否正確。
-
-#### Q：如果找到正確的密碼會怎樣？
-
-A：如果找到正確的密碼，範例程式碼將顯示PDF文件的頁數。
-
-#### Q：如果密碼不正確怎麼辦？
-
- A：如果密碼不正確，範例程式碼將捕獲`InvalidPasswordException`並顯示密碼不正確的資訊。
-
-#### Q：我可以使用不同的密碼清單嗎？
-
-答：是的，您可以修改`passwords`範例程式碼中的陣列以包含您要測試的密碼。
-
-#### Q：如何知道密碼已成功確定？
-
-A：如果範例程式碼成功載入帶有密碼的PDF文件並顯示頁數，則表示已確定正確的密碼。
-
-#### Q：測試時如何確保密碼安全？
-
-答：使用預先定義的密碼清單時要小心，並避免使用敏感或機密密碼進行測試。此外，在部署應用程式之前刪除或修改測試程式碼。
+### 我可以在哪裡獲得 Aspose.PDF 支援？
+如需查詢和支持，您可以訪問[Aspose 支援論壇](https://forum.aspose.com/c/pdf/10).

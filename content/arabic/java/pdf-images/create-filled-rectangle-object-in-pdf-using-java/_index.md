@@ -90,7 +90,7 @@ pdfDocument.save("FilledRectangle.pdf");
 
 Aspose.PDF for Java هي مكتبة Java تتيح للمطورين العمل مع ملفات PDF في تطبيقات Java. وهي توفر مجموعة واسعة من الميزات لإنشاء مستندات PDF ومعالجتها وإدارتها.
 
-### كيف أقوم بتثبيت Aspose.PDF لـJava؟
+### كيف أقوم بتثبيت Aspose.PDF لـ Java؟
 
 يمكنك تثبيت Aspose.PDF لـ Java عن طريق تنزيل المكتبة من موقع Aspose الإلكتروني واتباع تعليمات التثبيت المقدمة في الوثائق.
 

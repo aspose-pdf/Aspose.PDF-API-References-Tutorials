@@ -34,7 +34,7 @@ url: /el/java/pdf-bookmarks/add-child-bookmarks-pdfs/
 // Αρχικοποιήστε ένα έγγραφο PDF
 Document pdfDocument = new Document();
 
-// Προσθήκη σελίδων στο PDF
+// Προσθέστε σελίδες στο PDF
 pdfDocument.getPages().add();
 pdfDocument.getPages().add();
 ```
@@ -125,7 +125,7 @@ pdfDocument.save("output.pdf");
 // Αρχικοποιήστε ένα έγγραφο PDF
 Document pdfDocument = new Document();
 
-// Προσθήκη σελίδων στο PDF
+// Προσθέστε σελίδες στο PDF
 pdfDocument.getPages().add();
 pdfDocument.getPages().add();
 

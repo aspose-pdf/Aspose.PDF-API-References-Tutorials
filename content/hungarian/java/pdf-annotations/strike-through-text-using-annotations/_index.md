@@ -51,7 +51,7 @@ page.getParagraphs().add(textFragment);
 Most jön az izgalmas rész – egy áthúzható kommentár hozzáadása a szöveghez.
 
 ```java
-// Hozzon létre áthúzható kommentárt
+// Hozzon létre egy áthúzott kommentárt
 com.aspose.pdf.StrikeOutAnnotation strikeOutAnnotation = new com.aspose.pdf.StrikeOutAnnotation(page, textFragment.getRectangle());
 strikeOutAnnotation.setColor(com.aspose.pdf.Color.getRed());
 

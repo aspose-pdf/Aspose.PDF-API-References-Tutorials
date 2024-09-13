@@ -2,183 +2,159 @@
 title: Obraz i numer strony w sekcji nagłówka i stopki w tekście
 linktitle: Obraz i numer strony w sekcji nagłówka i stopki w tekście
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak dodać obraz i numer strony w nagłówku i stopce za pomocą akapitów w tekście za pomocą Aspose.PDF dla platformy .NET.
+description: Dowiedz się, jak dodać obraz i numer strony w sekcji nagłówka pliku PDF za pomocą Aspose.PDF dla platformy .NET, korzystając z tego przewodnika krok po kroku.
 type: docs
 weight: 120
 url: /pl/net/programming-with-stamps-and-watermarks/image-and-page-number-in-header-footer-section-inline/
 ---
-W tym samouczku pokażemy Ci krok po kroku, jak dodać obraz i numer strony w sekcji nagłówka i stopki dokumentu PDF za pomocą Aspose.PDF dla .NET. Użyjemy dostarczonego kodu źródłowego C#, aby utworzyć stronę, ustawić nagłówek i stopkę, dodać obraz i tekst za pomocą akapitów w nagłówku dokumentu PDF.
+## Wstęp
 
-## Krok 1: Konfigurowanie środowiska
+Aspose.PDF dla .NET to potężne narzędzie, które zapewnia szerokie możliwości manipulowania plikami PDF i generowania ich. Niezależnie od tego, czy chcesz dodać obrazy, dostosować nagłówki i stopki, czy zarządzać tekstem, Aspose.PDF ma wszystko, czego potrzebujesz. W tym samouczku pokażemy, jak dodać obraz i numer strony w nagłówku lub stopce dokumentu PDF. Przyjrzyjmy się temu od razu i omówmy ten proces krok po kroku.
 
-Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
+## Wymagania wstępne
 
-- Zainstalowane środowisko programistyczne .NET.
-- Biblioteka Aspose.PDF dla platformy .NET pobrana i wykorzystana w projekcie.
+Zanim przejdziemy do kodu, upewnijmy się, że masz wszystko, czego potrzebujesz:
 
-## Krok 2: Tworzenie dokumentu PDF i strony
+-  Aspose.PDF dla .NET: Pobierz najnowszą wersję ze strony[Strona pobierania pliku PDF Aspose](https://releases.aspose.com/pdf/net/).
+- Środowisko programistyczne: Będziesz potrzebować środowiska IDE języka C#, np. Visual Studio.
+-  Licencja: Jeśli nie masz jeszcze licencji, możesz ją uzyskać[tymczasowa licencja tutaj](https://purchase.aspose.com/temporary-license/) lub kup pełną wersję[Sklep Aspose](https://purchase.aspose.com/buy).
 
-Pierwszym krokiem jest utworzenie nowego obiektu Document i strony w dokumencie PDF. Oto jak to zrobić:
+Teraz, gdy masz już wszystkie niezbędne informacje, możemy zaczynać.
+
+## Importuj pakiety
+
+Zanim zaczniesz kodować, upewnij się, że zaimportowałeś niezbędne przestrzenie nazw:
 
 ```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// Utwórz nowy obiekt Dokument
-Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
-
-// Utwórz stronę w dokumencie
-Aspose.Pdf.Page page = pdf1.Pages.Add();
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-Powyższy kod tworzy nowy obiekt Document i pustą stronę w dokumencie PDF.
+Pakiety te umożliwiają pracę z plikami PDF i edycję tekstu.
 
-## Krok 3: Dodawanie nagłówka z obrazem i tekstem w tekście
+## Krok 1: Skonfiguruj katalog dokumentów
 
-Teraz, gdy strona jest już utworzona, możemy dodać sekcję nagłówka z obrazem i tekstem, używając akapitów w tekście. Oto jak to zrobić:
-
-```csharp
-// Utwórz sekcję nagłówka
-Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
-
-// Ustaw nagłówek strony
-page. Header = header;
-
-// Utwórz obiekt TextFragment dla pierwszego tekstu inline
-Aspose.Pdf.Text.TextFragment txt1 = new Aspose.Pdf.Text.TextFragment("Aspose.Pdf is a robust component developed by");
-
-// Określ kolor tekstu
-txt1.TextState.ForegroundColor = Color.Blue;
-txt1.IsInLineParagraph = true;
-
-// Utwórz obiekt obrazu dla obrazu
-Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
-
-// Ustaw ścieżkę obrazu
-image1.File = dataDir + "aspose-logo.jpg";
-
-// Określ wymiary obrazu
-image1.FixWidth = 50;
-image1.FixHeight = 20;
-
-// Wskaż, że pierwszy tekst w tekście jest obrazem
-image1.IsInLineParagraph = true;
-
-// Utwórz drugi tekst w tekście
-Aspose.Pdf.Text.TextFragment txt2 = new Aspose.Pdf.Text.TextFragment(" Pty Ltd.");
-txt2.IsInLineParagraph = true;
-txt2.TextState.ForegroundColor = Color.Maroon;
-
-// Dodaj elementy do nagłówka
-header.Paragraphs.Add(txt1);
-header.Paragraphs.Add(image1);
-header.Paragraphs.Add(txt2);
-```
-
-Powyższy kod tworzy sekcję nagłówka, ustawia nagłówek strony za pomocą tej sekcji, dodaje TextFragment z tekstem osadzonym oraz osadzony obiekt Image.
-
-## Krok 4: Zapisywanie zmodyfikowanego dokumentu PDF
-
-Po dodaniu nagłówka z obrazem i tekstem inline możemy zapisać zmodyfikowany dokument PDF. Oto jak to zrobić:
+Pierwszą rzeczą, którą musimy zrobić, jest zdefiniowanie ścieżki do katalogu, w którym zostanie zapisany nasz plik PDF. Ścieżkę tę można dostosować do folderu projektu lub dowolnej lokalizacji na komputerze.
 
 ```csharp
-// Zapisz zmodyfikowany dokument PDF
-pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.pdf");
-```
-
-Powyższy kod zapisuje edytowany dokument PDF w określonym katalogu.
-
-### Przykładowy kod źródłowy dla Obrazu i Numeru strony w sekcji Nagłówek/Stopka Inline przy użyciu Aspose.PDF dla .NET 
-```csharp
-
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+ Ta zmienna przechowuje lokalizację, w której będzie przechowywany Twój dokument. Zastąp`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką.
+
+## Krok 2: Utwórz dokument PDF
+
+ W tym kroku tworzymy nową instancję`Aspose.Pdf.Document` obiekt. Ten obiekt będzie stanowić podstawę Twojego pliku PDF.
+
+```csharp
 // Utwórz obiekt Document, wywołując jego pusty konstruktor
 Aspose.Pdf.Document pdf1 = new Aspose.Pdf.Document();
+```
 
+Tutaj tworzymy pusty plik PDF, który później możemy wypełnić treścią.
+
+## Krok 3: Dodaj stronę do pliku PDF
+
+Twój plik PDF potrzebuje co najmniej jednej strony, na której możesz dodać nagłówki, stopki i treść. Dodajmy pustą stronę do naszego dokumentu.
+
+```csharp
 // Utwórz stronę w obiekcie PDF
 Aspose.Pdf.Page page = pdf1.Pages.Add();
+```
 
+ Dzwoniąc`pdf1.Pages.Add()`do dokumentu dodawana jest nowa strona, gotowa do dostosowania nagłówka i stopki.
+
+## Krok 4: Utwórz i ustaw nagłówek
+
+Teraz czas na utworzenie nagłówka dokumentu. Tutaj dodamy tekst, obraz i numer strony.
+
+```csharp
 // Utwórz sekcję nagłówka dokumentu
 Aspose.Pdf.HeaderFooter header = new Aspose.Pdf.HeaderFooter();
-
 // Ustaw nagłówek dla pliku PDF
 page.Header = header;
+```
 
+ Tworzymy`HeaderFooter` obiekt i przypisz go do`Header` właściwość strony, zapewniająca, że wszystko, co dodamy do nagłówka, pojawi się na górze strony.
+
+## Krok 5: Dodaj tekst w tekście do nagłówka
+
+ Dodawanie tekstu jest tak proste, jak tworzenie`TextFragment` i określając jego właściwości. Dodajmy trochę kolorowego tekstu do naszego nagłówka.
+
+```csharp
 // Utwórz obiekt tekstowy
 Aspose.Pdf.Text.TextFragment txt1 = new Aspose.Pdf.Text.TextFragment("Aspose.Pdf is a Robust component by");
-
 // Określ kolor
 txt1.TextState.ForegroundColor = Color.Blue;
 txt1.IsInLineParagraph = true;
+```
 
+ W tym kroku tworzymy`TextFragment` z treścią „Aspose.Pdf jest solidnym komponentem” i ustaw jego kolor na niebieski.`IsInLineParagraph` Właściwość ta zapewnia, że tekst jest umieszczony w wierszu, co oznacza, że pojawi się w tym samym wierszu co inne elementy (np. obraz i dodatkowy tekst).
+
+## Krok 6: Wstaw obraz w nagłówku
+
+Aby Twój nagłówek był wizualnie atrakcyjny, możesz dodać obraz w tekście. Może to być logo Twojej firmy lub dowolna inna grafika.
+
+```csharp
 // Utwórz obiekt obrazu w sekcji
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
-
 // Ustaw ścieżkę do pliku obrazu
 image1.File = dataDir + "aspose-logo.jpg";
-
-//Ustaw szerokość obrazu Informacje
+// Ustaw szerokość obrazu Informacje
 image1.FixWidth = 50;
 image1.FixHeight = 20;
-
 // Wskaż, że InlineParagraph obiektu seg1 jest obrazem.
 image1.IsInLineParagraph = true;
+```
+
+ Tutaj dodajemy obraz do nagłówka, tworząc`Image` obiekt, ustawiając jego ścieżkę i dostosowując szerokość i wysokość.`IsInLineParagraph` zapewnia wyrównanie obrazu względem tekstu.
+
+## Krok 7: Dodaj dodatkowy tekst w tekście, aby uzupełnić nagłówek
+
+Dodajmy trochę więcej tekstu, aby ukończyć nagłówek inline.
+
+```csharp
 Aspose.Pdf.Text.TextFragment txt2 = new Aspose.Pdf.Text.TextFragment(" Pty Ltd.");
 txt2.IsInLineParagraph = true;
 txt2.TextState.ForegroundColor = Color.Maroon;
 header.Paragraphs.Add(txt1);
 header.Paragraphs.Add(image1);
 header.Paragraphs.Add(txt2);
+```
 
+ W tej części tworzymy kolejny`TextFragment` z zawartością „Pty Ltd.” i ustaw jego kolor na bordowy. Zarówno fragmenty tekstu, jak i obraz są dodawane do nagłówka.
+
+## Krok 8: Zapisz plik PDF
+
+Po skonfigurowaniu nagłówka czas zapisać plik PDF.
+
+```csharp
 // Zapisz plik PDF
 pdf1.Save(dataDir + "ImageAndPageNumberInHeaderFooter_UsingInlineParagraph_out.pdf");
-
 ```
+
+ Ten`Save` Metoda zapisuje końcowy plik PDF w określonej lokalizacji.
 
 ## Wniosek
 
-Gratulacje! Nauczyłeś się, jak dodać obraz i numer strony w sekcji nagłówka i stopki dokumentu PDF, używając akapitów w tekście z Aspose.PDF dla .NET. Teraz możesz elastycznie dostosowywać nagłówek i stopkę swoich dokumentów PDF.
+Gratulacje! Udało Ci się dodać obraz i tekst do nagłówka dokumentu PDF za pomocą Aspose.PDF dla .NET. Ten samouczek przeprowadził Cię przez podstawowe kroki, w tym tworzenie dokumentu, dodawanie stron, wstawianie nagłówków i umieszczanie treści w tekście, takich jak tekst i obrazy. Aspose.PDF zapewnia niesamowitą elastyczność w zarządzaniu plikami PDF, niezależnie od tego, czy chodzi o manipulowanie nagłówkami, stopkami czy złożoną treścią. 
 
-### Najczęściej zadawane pytania
+## Najczęściej zadawane pytania
 
-#### P: Jaka jest zaleta stosowania akapitów wbudowanych w celu dodania obrazu i tekstu do nagłówka dokumentu PDF?
+### Czy mogę dodać również numer strony do nagłówka?
+ Tak! Możesz łatwo dodać numer strony, używając`TextFragment` class i formatując ją według potrzeb. Po prostu wstaw ją do sekcji nagłówka jako treść wbudowaną.
 
-A: Korzystanie z akapitów inline pozwala na bezproblemową integrację obrazów i tekstu w obrębie tego samego akapitu, zapewniając precyzyjną kontrolę nad ich rozmieszczeniem i formatowaniem. Ta metoda jest szczególnie przydatna do tworzenia niestandardowych nagłówków z elementami wizualnymi.
+### Jak ustawić obraz tła w nagłówku?
+ Możesz użyć`BackgroundImage` własność`HeaderFooter` klasa do ustawienia obrazu tła. Nie jest to jednak zawartość inline i obejmie cały obszar nagłówka.
 
-#### P: W jaki sposób dostarczony kod źródłowy C# umożliwia tworzenie akapitów w nagłówku dokumentu PDF?
+### Czy można używać innych formatów obrazów oprócz JPEG?
+Oczywiście! Aspose.PDF obsługuje różne formaty obrazów, takie jak PNG, BMP i GIF.
 
-A: Dostarczony kod pokazuje, jak utworzyć dokument PDF, dodać stronę i dostosować nagłówek za pomocą akapitów inline. Dodaje TextFragment z tekstem inline, obraz inline i kolejny TextFragment inline.
+### Czy mogę dostosować czcionkę tekstu w nagłówku?
+ Tak, możesz użyć`TextState`obiekt umożliwiający zmianę czcionki, rozmiaru i stylu tekstu.
 
-#### P: Jak określić kolor tekstu w nagłówku?
-
- A: Kolor tekstu w tekście określa się za pomocą`ForegroundColor` własność`TextState` z`TextFragment` obiekt.
-
-#### P: Czy mogę zmienić wymiary obrazu osadzonego w nagłówku?
-
- A: Tak, możesz dostosować wymiary obrazu osadzonego za pomocą`FixWidth` I`FixHeight` właściwości`Image` obiekt. Pozwala to kontrolować szerokość i wysokość obrazu w nagłówku.
-
-#### P: Czy w nagłówku mogę umieścić dodatkowe elementy inline, takie jak hiperłącza lub różne style czcionek?
-
- O: Tak, możesz dodać dodatkowe elementy inline w nagłówku, tworząc więcej`TextFragment` Lub`Image` obiekty o pożądanych właściwościach. Pozwala to na dalsze dostosowywanie nagłówka, w tym hiperłączy, różnych stylów czcionek lub innych elementów wizualnych.
-
-#### P: Jak mogę mieć pewność, że obraz i tekst w tekście będą odpowiednio wyrównane i sformatowane na różnych urządzeniach i przeglądarkach?
-
-A: Aspose.PDF dla platformy .NET gwarantuje, że obrazy i tekst osadzone w tekście będą prawidłowo wyrównane i sformatowane, dzięki czemu będą wyglądać spójnie na różnych urządzeniach i w różnych przeglądarkach PDF.
-
-#### P: Czy mogę zastosować akapity w tekście również w stopce?
-
- O: Tak, możesz zastosować tę samą technikę używania akapitów w tekście do sekcji stopki, tworząc`Footer` obiektu i dodawanie do niego elementów inline, takich jak tekst i obrazy.
-
-#### P: Czy można łączyć akapity w tekście z innymi metodami dostosowywania nagłówków i stopek?
-
-O: Tak, możesz łączyć akapity w tekście z innymi metodami dostosowywania nagłówków i stopek udostępnianymi przez Aspose.PDF dla platformy .NET, aby tworzyć bardziej złożone i dostosowane projekty nagłówków i stopek.
-
-#### P: Czy mogę usunąć lub wyczyścić elementy inline z nagłówka, jeśli zajdzie taka potrzeba?
-
- O: Tak, możesz usunąć lub wyczyścić elementy inline, modyfikując ich zawartość.`HeaderFooter`obiekt i usunięcie odpowiednich akapitów w tekście.
-
-#### P: W jaki sposób mogę stosować akapity w tekście do określonych stron dokumentu PDF?
-
- A: Aby zastosować akapity w tekście do określonych stron, możesz utworzyć osobne`HeaderFooter` obiekty dla każdej strony i przypisz je za pomocą`Header` własność odpowiedniego`Aspose.Pdf.Page` obiekty.
+### Czy potrzebuję licencji, aby używać Aspose.PDF na platformie .NET?
+ Tak, Aspose.PDF wymaga licencji do użytku produkcyjnego, ale możesz zacząć od[bezpłatna wersja próbna tutaj](https://releases.aspose.com/).

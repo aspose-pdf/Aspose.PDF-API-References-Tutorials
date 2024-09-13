@@ -2,104 +2,47 @@
 title: تطبيق نمط الأرقام في ملف PDF
 linktitle: تطبيق نمط الأرقام في ملف PDF
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: تعرف على كيفية تطبيق نمط الترقيم على العناوين في ملف PDF باستخدام Aspose.PDF for .NET. دليل خطوة بخطوة.
+description: تعرف على كيفية تطبيق أنماط الأرقام المختلفة (الأرقام الرومانية والأبجدية) على العناوين في ملف PDF باستخدام Aspose.PDF لـ .NET من خلال هذا الدليل خطوة بخطوة.
 type: docs
 weight: 10
 url: /ar/net/programming-with-headings/apply-number-style/
 ---
-في هذا البرنامج التعليمي، سوف نرشدك خلال التعليمات البرمجية المصدرية C# خطوة بخطوة لتطبيق نمط الترقيم في ملف PDF باستخدام Aspose.PDF لـ .NET.
+## مقدمة
 
-تأكد من تثبيت مكتبة Aspose.PDF وإعداد بيئة التطوير الخاصة بك قبل البدء. كما يجب أن يكون لديك معرفة أساسية ببرمجة C#.
+هل سبق لك أن وجدت نفسك في حاجة إلى إضافة قوائم مرقمة بشكل جميل إلى مستندات PDF الخاصة بك؟ سواء كنت تقوم بتنسيق مستندات قانونية أو تقارير أو عروض تقديمية، فإن أنماط الترقيم المناسبة ضرورية لتنظيم المعلومات. باستخدام Aspose.PDF for .NET، يمكنك تطبيق أنماط ترقيم مختلفة على عناوين ملفات PDF الخاصة بك، مما يؤدي إلى إنشاء مستندات منظمة بشكل جيد واحترافية. 
 
-### الخطوة 1: إعداد دليل المستندات
+## المتطلبات الأساسية
 
-في الكود المصدر المقدم، تحتاج إلى تحديد الدليل الذي تريد حفظ ملف PDF الناتج فيه. قم بتغيير المتغير "dataDir" إلى الدليل المطلوب.
+قبل التعمق في البرمجة، دعنا نستعرض ما ستحتاج إليه:
+
+1. Aspose.PDF لـ .NET: قم بتنزيل أحدث إصدار من Aspose.PDF من[هنا](https://releases.aspose.com/pdf/net/).
+2. بيئة التطوير: تأكد من أن لديك Visual Studio أو أي بيئة تطوير متكاملة أخرى متوافقة مع .NET.
+3. .NET Framework: تأكد من تثبيت .NET Framework 4.0 أو أعلى.
+4.  الترخيص: يمكنك استخدام ترخيص مؤقت من[هنا](https://purchase.aspose.com/temporary-license/) أو استكشاف[نسخة تجريبية مجانية](https://releases.aspose.com/) خيارات.
+
+## استيراد الحزم
+
+للبدء، تأكد من استيراد المساحات الأسماء التالية في مشروعك:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-### الخطوة 2: إنشاء مستند PDF
+## الخطوة 1: إعداد المستند
 
-نقوم بإنشاء مستند PDF جديد بأبعاد وهوامش محددة.
+لنبدأ بإنشاء مستند PDF جديد وتكوين إعدادات الصفحة الخاصة به. سنحدد حجم الصفحة والهوامش للتحكم في تخطيط المحتوى الخاص بنا.
 
-```csharp
-Document pdfDoc = new Document();
-pdfDoc.PageInfo.Width = 612.0;
-pdfDoc.PageInfo.Height = 792.0;
-pdfDoc.PageInfo.Margin = new Aspose.Pdf.MarginInfo();
-pdfDoc.PageInfo.Margin.Left = 72;
-pdfDoc.PageInfo.Margin.Right = 72;
-pdfDoc.PageInfo.Margin.Top = 72;
-pdfDoc.PageInfo.Margin.Bottom = 72;
-```
-
-### الخطوة 3: إنشاء صفحة وحاوية عائمة
-
-نضيف صفحة إلى المستند وننشئ حاوية عائمة لتنظيم المحتوى.
+التوضيح: في هذه الخطوة، نقوم بإعداد البنية الأساسية لملف PDF، والتي تتضمن تحديد حجم الصفحة والارتفاع والهوامش لتحقيق التنسيق المتسق.
 
 ```csharp
-Aspose.Pdf.Page pdfPage = pdfDoc.Pages.Add();
-pdfPage.PageInfo.Width = 612.0;
-pdfPage.PageInfo.Height = 792.0;
-pdfPage.PageInfo.Margin = new Aspose.Pdf.MarginInfo();
-pdfPage.PageInfo.Margin.Left = 72;
-pdfPage.PageInfo.Margin.Right = 72;
-pdfPage.PageInfo.Margin.Top = 72;
-pdfPage.PageInfo.Margin.Bottom = 72;
-Aspose.Pdf.FloatingBox floatBox = new Aspose.Pdf.FloatingBox();
-floatBox.Margin = pdfPage.PageInfo.Margin;
-pdfPage.Paragraphs.Add(floatBox);
-```
-
-### الخطوة 4: إضافة عناوين مع ترقيم
-
-نقوم بإنشاء رؤوس ذات أرقام محددة ونضيفها إلى الحاوية العائمة.
-
-```csharp
-Aspose.Pdf.Heading heading = new Aspose.Pdf.Heading(1);
-heading. IsInList = true;
-heading. StartNumber = 1;
-heading.Text = "List 1";
-heading.Style = NumberingStyle.NumeralsRomanLowercase;
-heading. IsAutoSequence = true;
-floatBox.Paragraphs.Add(heading);
-
-Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
-heading2.IsInList = true;
-heading2.StartNumber = 13;
-heading2.Text = "Listing 2";
-heading2.Style = NumberingStyle.NumeralsRomanLowercase;
-heading2.IsAutoSequence = true;
-floatBox.Paragraphs.Add(heading2);
-
-Aspose.Pdf.Heading heading3 = new Aspose.Pdf.Heading(2);
-heading3.IsInList = true;
-heading3.StartNumber = 1;
-heading3.Text = "The value, at the effective date of the plan, of the assets to be distributed under the plan
-
-";
-heading3.Style = NumberingStyle.LettersLowercase;
-heading3.IsAutoSequence = true;
-floatBox.Paragraphs.Add(heading3);
-```
-
-### الخطوة 5: حفظ مستند PDF
-
-نقوم بحفظ مستند PDF الناتج في الدليل المحدد.
-
-```csharp
-dataDir = dataDir + "ApplyNumberStyle_out.pdf";
-pdfDoc.Save(dataDir);
-Console.WriteLine("\nNumbering style successfully applied to headers.\nFile saved as: " + dataDir);
-```
-
-### عينة من كود المصدر لتطبيق نمط الأرقام باستخدام Aspose.PDF لـ .NET 
-```csharp
-
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDoc = new Document();
+
+// تعيين أبعاد الصفحة والهوامش
 pdfDoc.PageInfo.Width = 612.0;
 pdfDoc.PageInfo.Height = 792.0;
 pdfDoc.PageInfo.Margin = new Aspose.Pdf.MarginInfo();
@@ -107,6 +50,18 @@ pdfDoc.PageInfo.Margin.Left = 72;
 pdfDoc.PageInfo.Margin.Right = 72;
 pdfDoc.PageInfo.Margin.Top = 72;
 pdfDoc.PageInfo.Margin.Bottom = 72;
+```
+
+من خلال القيام بذلك، سيكون مستندك له حجم صفحة قياسي، يعادل صفحة مقاس 8.5 × 11 بوصة، وهامش 72 نقطة (أو 1 بوصة) على جميع الجوانب.
+
+## الخطوة 2: إضافة صفحة إلى ملف PDF
+
+بعد ذلك، سنضيف صفحة جديدة إلى مستند PDF حيث سنطبق أنماط الترقيم لاحقًا.
+
+الشرح: يتطلب كل ملف PDF صفحات! تضيف هذه الخطوة صفحة فارغة إلى ملف PDF وتضبط هوامشها لتتوافق مع إعدادات مستوى المستند.
+
+```csharp
+// إضافة صفحة جديدة إلى مستند PDF
 Aspose.Pdf.Page pdfPage = pdfDoc.Pages.Add();
 pdfPage.PageInfo.Width = 612.0;
 pdfPage.PageInfo.Height = 792.0;
@@ -115,11 +70,29 @@ pdfPage.PageInfo.Margin.Left = 72;
 pdfPage.PageInfo.Margin.Right = 72;
 pdfPage.PageInfo.Margin.Top = 72;
 pdfPage.PageInfo.Margin.Bottom = 72;
+```
+
+## الخطوة 3: إنشاء صندوق عائم
+
+يتيح لك FloatingBox وضع المحتوى (مثل النص أو العناوين) داخل مربع يتصرف بشكل مستقل عن تدفق الصفحة. وهذا مفيد عندما تريد التحكم الكامل في تخطيط المحتوى الخاص بك.
+
+التوضيح: هنا، نقوم بإعداد FloatingBox ليحتوي على العناوين التي سيتم تطبيق أنماط الأرقام عليها.
+
+```csharp
+// إنشاء FloatingBox للمحتوى المنظم
 Aspose.Pdf.FloatingBox floatBox = new Aspose.Pdf.FloatingBox();
 floatBox.Margin = pdfPage.PageInfo.Margin;
 pdfPage.Paragraphs.Add(floatBox);
-TextFragment textFragment = new TextFragment();
-TextSegment segment = new TextSegment();
+```
+
+## الخطوة 4: أضف العنوان الأول بالأرقام الرومانية
+
+الآن يأتي الجزء المثير للاهتمام! فلنقم بإضافة العنوان الأول مع ترقيمه بالأحرف الرومانية الصغيرة.
+
+التوضيح: نقوم بتطبيق نمط NumberingStyle.NumeralsRomanLowercase على العنوان، والذي سيعرض الترقيم بالأرقام الرومانية (i، ii، iii، وما إلى ذلك).
+
+```csharp
+// إنشاء العنوان الأول بالأرقام الرومانية
 Aspose.Pdf.Heading heading = new Aspose.Pdf.Heading(1);
 heading.IsInList = true;
 heading.StartNumber = 1;
@@ -127,6 +100,16 @@ heading.Text = "List 1";
 heading.Style = NumberingStyle.NumeralsRomanLowercase;
 heading.IsAutoSequence = true;
 floatBox.Paragraphs.Add(heading);
+```
+
+## الخطوة 5: أضف عنوانًا ثانيًا بالأرقام الرومانية
+
+ولأغراض العرض، دعونا نضيف عنوانًا ثانيًا للأرقام الرومانية، ولكن هذه المرة سنبدأ من الرقم 13.
+
+التوضيح: تسمح لك خاصية StartNumber ببدء الترقيم من رقم مخصص - في هذه الحالة، نبدأ من 13.
+
+```csharp
+// إنشاء عنوان ثاني يبدأ بالرقم الروماني 13
 Aspose.Pdf.Heading heading2 = new Aspose.Pdf.Heading(1);
 heading2.IsInList = true;
 heading2.StartNumber = 13;
@@ -134,95 +117,55 @@ heading2.Text = "List 2";
 heading2.Style = NumberingStyle.NumeralsRomanLowercase;
 heading2.IsAutoSequence = true;
 floatBox.Paragraphs.Add(heading2);
+```
+
+## الخطوة 6: إضافة عنوان بترقيم أبجدي
+
+من أجل التنوع، دعونا نضيف عنوانًا ثالثًا، ولكن هذه المرة سنستخدم الترقيم الأبجدي بأحرف صغيرة (a، b، c، إلخ).
+
+التوضيح: تغيير نمط الترقيم إلى LettersLowercase يسمح لنا بتطبيق الترقيم الأبجدي على عناويننا.
+
+```csharp
+// إنشاء عنوان بترقيم أبجدي
 Aspose.Pdf.Heading heading3 = new Aspose.Pdf.Heading(2);
 heading3.IsInList = true;
 heading3.StartNumber = 1;
-heading3.Text = "the value, as of the effective date of the plan, of property to be distributed under the plan onaccount of each allowed";
+heading3.Text = "the value, as of the effective date of the plan, of property to be distributed under the plan on account of each allowed";
 heading3.Style = NumberingStyle.LettersLowercase;
 heading3.IsAutoSequence = true;
 floatBox.Paragraphs.Add(heading3);
+```
+
+## الخطوة 7: حفظ ملف PDF
+
+وأخيرًا، بعد تطبيق كافة العناوين وأنماط الأرقام، دعنا نحفظ ملف PDF في الدليل المطلوب.
+
+التوضيح: هذه الخطوة تحفظ ملف PDF الذي يحتوي على كافة العناوين المنسقة مع أنماط الترقيم المطبقة.
+
+```csharp
+// حفظ مستند PDF
 dataDir = dataDir + "ApplyNumberStyle_out.pdf";
 pdfDoc.Save(dataDir);
-Console.WriteLine("\nNumber style applied successfully in headings.\nFile saved at " + dataDir);  
-          
+Console.WriteLine("\nNumber style applied successfully in headings.\nFile saved at " + dataDir);
 ```
 
 ## خاتمة
 
-في هذا البرنامج التعليمي، شرحنا كيفية تطبيق نمط ترقيم على العناوين في مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك الآن استخدام هذه المعرفة لإنشاء مستندات PDF بترقيم مخصص للعناوين.
+والآن، لقد نجحت في تطبيق أنماط الترقيم — الأرقام الرومانية والأبجدية — على العناوين في ملف PDF باستخدام Aspose.PDF for .NET. تمنحك المرونة التي يوفرها Aspose.PDF للتحكم في تخطيط الصفحة وأنماط الترقيم وموضع المحتوى مجموعة أدوات قوية لإنشاء مستندات PDF منظمة واحترافية.
 
-### الأسئلة الشائعة حول تطبيق نمط الأرقام في ملف PDF
+## الأسئلة الشائعة
 
-#### س: ما هو نمط الترقيم في مستند PDF؟
+### هل يمكنني تطبيق أنماط أرقام مختلفة على نفس مستند PDF؟  
+نعم، يسمح لك Aspose.PDF لـ .NET بخلط أنماط الترقيم المختلفة مثل الأرقام الرومانية والأرقام العربية والترقيم الأبجدي داخل نفس المستند.
 
-أ: يشير أسلوب الترقيم إلى التنسيق الذي يتم به ترقيم العناوين أو الأقسام في مستند PDF. ويمكن أن يتضمن أرقامًا أو أحرفًا أو أحرفًا أخرى لتوفير هيكل هرمي.
+### كيف يمكنني تخصيص الرقم الأولي للعناوين؟  
+ يمكنك تعيين رقم البداية لأي عنوان باستخدام`StartNumber` ملكية.
 
-#### س: لماذا أحتاج إلى تطبيق نمط الترقيم على العناوين في مستند PDF؟
+### هل هناك طريقة لإعادة تعيين تسلسل الترقيم؟  
+نعم، يمكنك إعادة تعيين الترقيم عن طريق ضبط`StartNumber` الخاصية لكل عنوان.
 
-أ: يؤدي تطبيق نمط الترقيم على العناوين إلى تحسين قابلية قراءة مستند PDF وتنظيمه. ويساعد القراء على التنقل بسهولة وفهم الهيكل الهرمي للمحتوى.
+### هل يمكنني تطبيق نمط الخط العريض أو المائل على العناوين بالإضافة إلى الترقيم؟  
+ بالتأكيد! يمكنك تخصيص أنماط العناوين عن طريق تعديل خصائص مثل الخط والحجم والخط العريض والمائل باستخدام`TextState` هدف.
 
-#### س: ما هو Aspose.PDF لـ .NET؟
-
-ج: Aspose.PDF for .NET هي مكتبة تتيح للمطورين العمل مع ملفات PDF برمجيًا في تطبيقات .NET. وهي توفر مجموعة واسعة من الميزات لإنشاء مستندات PDF وتحريرها وتحويلها ومعالجتها.
-
-#### س: كيف يمكنني استيراد المكتبات المطلوبة لمشروع C# الخاص بي؟
-
-أ: لاستيراد المكتبات اللازمة لمشروع C# الخاص بك، قم بتضمين توجيهات الاستيراد التالية:
-
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.InteractiveFeatures;
-```
-
-تتيح لك هذه التوجيهات الوصول إلى الفئات والطرق اللازمة للعمل مع مستندات PDF وتطبيق أنماط الترقيم.
-
-#### س: كيف أحدد الدليل لحفظ ملف PDF الناتج؟
-
-أ: في الكود المصدر المقدم، قم بتعديل المتغير "dataDir" لتحديد الدليل الذي تريد حفظ ملف PDF الناتج فيه.
-
-```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-```
-
- يستبدل`"YOUR DOCUMENTS DIRECTORY"` مع مسار الدليل الفعلي.
-
-#### س: كيف أقوم بإنشاء مستند PDF بأبعاد وهوامش محددة؟
-
-أ: لإنشاء مستند PDF بأبعاد وهوامش محددة، استخدم الكود التالي:
-
-```csharp
-Document pdfDoc = new Document();
-pdfDoc.PageInfo.Width = 612.0;
-pdfDoc.PageInfo.Height = 792.0;
-pdfDoc.PageInfo.Margin = new Aspose.Pdf.MarginInfo();
-pdfDoc.PageInfo.Margin.Left = 72;
-pdfDoc.PageInfo.Margin.Right = 72;
-pdfDoc.PageInfo.Margin.Top = 72;
-pdfDoc.PageInfo.Margin.Bottom = 72;
-```
-
-#### س: كيف أضيف عناوين ذات نمط ترقيم إلى مستند PDF؟
-
-أ: لإضافة عناوين ذات نمط ترقيم إلى مستند PDF، استخدم عينات التعليمات البرمجية المقدمة لإنشاء عناوين وتخصيص أنماط ترقيمها. اضبط الخصائص مثل النص ونمط الترقيم ورقم البداية والتسلسل التلقائي حسب الحاجة.
-
-#### س: كيف يمكنني حفظ مستند PDF الناتج؟
-
- أ: لحفظ مستند PDF الناتج، استخدم`Save` طريقة`pdfDoc` هدف:
-
-```csharp
-dataDir = dataDir + "ApplyNumberStyle_out.pdf";
-pdfDoc.Save(dataDir);
-Console.WriteLine("\nNumbering style applied to headers.\nFile saved as: " + dataDir);
-```
-
-#### س: كيف يمكنني التأكد من أن نمط الترقيم قد تم تطبيقه؟
-
-أ: افتح ملف PDF الناتج للتأكد من تطبيق نمط الترقيم المحدد على العناوين.
-
-#### س: هل يمكنني تخصيص نمط الترقيم بشكل أكبر؟
-
- ج: نعم، يمكنك تخصيص نمط الترقيم بشكل أكبر عن طريق ضبط خصائص`Heading` الكائنات، مثل نوع نمط الترقيم، ورقم البداية، والتسلسل التلقائي.
-
-#### س: هل يمكنني تطبيق أنماط ترقيم مختلفة على أقسام مختلفة من المستند؟
-
- ج: نعم، يمكنك تطبيق أنماط ترقيم مختلفة على أقسام مختلفة من المستند عن طريق إنشاء عدة`Heading` الأشياء ذات الأنماط والتسلسلات المختلفة.
+### كيف يمكنني الحصول على ترخيص مؤقت لـ Aspose.PDF؟  
+ يمكنك الحصول على ترخيص مؤقت من[هنا](https://purchase.aspose.com/temporary-license/) لاختبار Aspose.PDF دون قيود.

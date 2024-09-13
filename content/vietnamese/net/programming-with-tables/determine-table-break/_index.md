@@ -117,7 +117,7 @@ table1.DefaultCellPadding = margin;
 // Bởi vì nó không thể được chứa thêm trên trang này nữa
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
-	// Tạo các hàng trong bảng và sau đó tạo các ô trong các hàng
+	//Tạo các hàng trong bảng và sau đó tạo các ô trong các hàng
 	Aspose.Pdf.Row row1 = table1.Rows.Add();
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");

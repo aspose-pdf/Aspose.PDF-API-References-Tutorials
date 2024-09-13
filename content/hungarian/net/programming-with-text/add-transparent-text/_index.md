@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## 5. lépés: Adjon hozzá egy oldalt a dokumentumhoz
- Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
+ Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages` gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
@@ -109,7 +109,7 @@ Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 4
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
 // Adjon téglalapot a Graph objektum alakzatgyűjteményéhez
 canvas.Shapes.Add(rect);
-//Grafikon objektum hozzáadása az oldalobjektum bekezdésgyűjteményéhez
+// Grafikon objektum hozzáadása az oldalobjektum bekezdésgyűjteményéhez
 page.Paragraphs.Add(canvas);
 // Állítsa be az értéket, hogy ne változtassa meg a grafikonobjektum pozícióját
 canvas.IsChangePosition = false;
@@ -163,7 +163,7 @@ using Aspose.Pdf.Drawing;
 
 #### K: Hogyan hozhatok létre átlátszó téglalapot?
 
-V: A 7. lépésben egy meghatározott méretű téglalapot hoz létre, és a kitöltési színét átlátszó színre állítja a`Color.FromRgb` módszer.
+ V: A 7. lépésben egy meghatározott méretű téglalapot hoz létre, és a kitöltési színét átlátszó színre állítja a`Color.FromRgb` módszer.
 
 #### K: Hogyan adhatom hozzá a Graph objektumot az oldalhoz?
 
@@ -175,7 +175,7 @@ V: A 7. lépésben egy meghatározott méretű téglalapot hoz létre, és a kit
 
 #### K: Hogyan hozhatok létre átlátszóságú TextFragmentet?
 
- V: A 10. lépésben létrehoz egy`TextFragment` objektumot és állítsa be a tartalmát és`ForegroundColor` tulajdonság az átlátható szöveg eléréséhez.
+V: A 10. lépésben létrehoz egy`TextFragment` objektumot és állítsa be a tartalmát és`ForegroundColor` tulajdonság az átlátható szöveg eléréséhez.
 
 #### K: Hogyan menthetem el a PDF dokumentumot?
 

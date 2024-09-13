@@ -1,7 +1,7 @@
 ---
 title: Dolt textblock i pdf-fil
 linktitle: Dolt textblock i pdf-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du skapar dolda textblock i PDF-filer med Aspose.PDF för .NET.
 type: docs
 weight: 230
@@ -110,7 +110,7 @@ doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to d
 doc.Save(outputFile);
 // Öppna dokument med text
 Document document = new Document(outputFile);
-// Skapa TextAbsorber-objekt för att hitta alla fraser som matchar det reguljära uttrycket
+//Skapa TextAbsorber-objekt för att hitta alla fraser som matchar det reguljära uttrycket
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
 // Acceptera absorbenten för dokumentsidorna
 document.Pages.Accept(absorber);

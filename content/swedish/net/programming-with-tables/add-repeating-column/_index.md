@@ -1,7 +1,7 @@
 ---
 title: Lägg till upprepande kolumn i PDF-dokument
 linktitle: Lägg till upprepande kolumn i PDF-dokument
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du lägger till en upprepad kolumn i PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 20
@@ -60,7 +60,7 @@ headerRow.Cells.Add("header 1");
 headerRow.Cells.Add("header 2");
 headerRow.Cells.Add("header 3");
 // ...
-// Lägg till andra rubriker här
+//Lägg till andra rubriker här
 
 for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
 {
@@ -101,7 +101,7 @@ Aspose.Pdf.Table outerTable = new Aspose.Pdf.Table();
 outerTable.ColumnWidths = "100%";
 outerTable.HorizontalAlignment = HorizontalAlignment.Left;
 
-//Instantiera ett tabellobjekt som kommer att kapslas inuti outerTable som kommer att bryta inuti samma sida
+// Instantiera ett tabellobjekt som kommer att kapslas inuti outerTable som kommer att bryta inuti samma sida
 Aspose.Pdf.Table mytable = new Aspose.Pdf.Table();
 mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
@@ -156,7 +156,7 @@ doc.Save(outFile);
 ```
 
 ## Slutsats
-I den här handledningen lärde vi oss hur man lägger till en upprepad kolumn i ett PDF-dokument med Aspose.PDF för .NET. Du kan använda den här steg-för-steg-guiden för att skapa tabeller med upprepade kolumner i dina egna C#-projekt.
+den här handledningen lärde vi oss hur man lägger till en upprepad kolumn i ett PDF-dokument med Aspose.PDF för .NET. Du kan använda den här steg-för-steg-guiden för att skapa tabeller med upprepade kolumner i dina egna C#-projekt.
 
 ### Vanliga frågor för att lägga till upprepad kolumn i PDF-dokument
 

@@ -126,7 +126,7 @@ margin.Bottom = 5f;
 // Állítsa be az alapértelmezett cellakitöltést a MarginInfo objektumra
 tab1.DefaultCellPadding = margin;
 
-// Hozzon létre sorokat a táblázatban, majd cellákat a sorokban
+//Hozzon létre sorokat a táblázatban, majd cellákat a sorokban
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

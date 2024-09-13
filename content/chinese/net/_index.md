@@ -17,7 +17,7 @@ Aspose.PDF for .NET 教程是有关使用 Aspose.PDF for .NET 的全面而详细
 | [使用注解进行编程](./annotations/) | 使用注释编程包括 API 教程和 Aspose.PDF for .NET 的代码片段，其中包括添加注释、删除注释、获取注释信息等。 |  
 | [文档转换](./document-conversion/) | 查看使用 Aspose.PDF for .NET 的文档转换教程。轻松将文件转换为不同的格式。 |
 | [使用表单编程](./programming-with-forms/) | 查看 Aspose.PDF Forms for .NET 的编程教程，以在您的 PDF 文件中创建和管理交互式表单。 |
-| [使用表格进行编程](./programming-with-tables/) | 通过分步教程学习如何在 Aspose.PDF for .NET 中使用表格进行编程。 | 
+| [使用表格进行编程](./programming-with-tables/) | 通过分步教程学习如何使用 Aspose.PDF for .NET 中的表格进行编程。 | 
 | [使用 PDF 页面进行编程](./programming-with-pdf-pages/) | 查看使用 Aspose.PDF for .NET 的 PDF 页面编程教程。了解如何操作和自定义 PDF 文件的页面。 |
 | [使用图形进行编程](./programming-with-graphs/) | 在 Aspose.PDF for .NET 中查找有关使用图形进行编程的教程。了解如何在 PDF 文档中创建和自定义图形。 |
 | [使用安全和签名进行编程](./programming-with-security-and-signatures/) | 使用安全和签名进行编程教程教您如何保护和签署您的 PDF 文档，以确保机密性和真实性。 |

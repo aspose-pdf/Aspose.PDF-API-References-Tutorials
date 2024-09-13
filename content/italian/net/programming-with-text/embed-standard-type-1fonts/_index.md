@@ -30,7 +30,7 @@ using Aspose.Pdf;
  Nel codice, individua la riga che dice`string dataDir = "YOUR DOCUMENT DIRECTORY";` e sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso della directory in cui sono archiviati i tuoi documenti.
 
 ## Passaggio 4: caricare il documento PDF esistente
- Carica un documento PDF esistente utilizzando`Document` costruttore e passando il percorso al file PDF di input.
+ Carica un documento PDF esistente utilizzando`Document`costruttore e passando il percorso al file PDF di input.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
@@ -129,7 +129,7 @@ using Aspose.Pdf;
 
 #### D: Come posso salvare il documento PDF aggiornato?
 
- A: Nel passaggio 7, utilizzerai il`Save` metodo del`Document`oggetto per salvare il documento PDF aggiornato, specificando il percorso del file di output.
+ A: Nel passaggio 7, utilizzerai il`Save` metodo del`Document` oggetto per salvare il documento PDF aggiornato, specificando il percorso del file di output.
 
 #### D: Qual è l'importanza di incorporare i font in un documento PDF?
 

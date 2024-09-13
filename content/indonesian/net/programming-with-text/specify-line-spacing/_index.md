@@ -124,12 +124,12 @@ formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 TextFragment textFragment = new TextFragment("Hello world");
 if (fontFile != "")
 {
-	// Muat font TrueType ke objek aliran
+	//Muat font TrueType ke objek aliran
 	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
 	{
 		// Mengatur nama font untuk string teks
 		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		//Tentukan posisi untuk Fragmen Teks
+		// Tentukan posisi untuk Fragmen Teks
 		textFragment.Position = new Position(100, 600);
 		//Tetapkan TextFormattingOptions dari fragmen saat ini ke yang telah ditetapkan sebelumnya (yang menunjuk ke LineSpacingMode.FullSize)
 		textFragment.TextState.FormattingOptions = formattingOptions;

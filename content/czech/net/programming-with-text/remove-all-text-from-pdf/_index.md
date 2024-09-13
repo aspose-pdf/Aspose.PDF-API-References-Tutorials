@@ -96,7 +96,7 @@ Odpověď: Výukový program vás provede procesem krok za krokem:
 
 Odpověď: Výukový program se zaměřuje na odstranění veškerého textu z celého dokumentu PDF. Pokud chcete selektivně odstranit text z konkrétních oblastí, budete muset upravit přístup a použít složitější logiku k identifikaci a odstranění konkrétních fragmentů textu.
 
-####  Otázka: Jak to`TextFragmentAbsorber` work to remove text?
+#### Otázka: Jak to`TextFragmentAbsorber` work to remove text?
 
  A:`TextFragmentAbsorber`je třída poskytovaná knihovnou Aspose.PDF, která dokáže absorbovat textové fragmenty z dokumentu PDF. Pomocí`RemoveAllText` metoda`TextFragmentAbsorber` třídy, můžete z dokumentu odstranit všechny absorbované fragmenty textu.
 
@@ -110,4 +110,4 @@ Odpověď: Ano, můžete kód upravit, abyste toho dosáhli. Pro selektivní ods
 
 #### Otázka: Je pro tento výukový program vyžadována platná licence Aspose?
 
-Odpověď: Ano, pro úspěšné spuštění kódu v tomto tutoriálu je nutná platná licence Aspose. Na webu Aspose můžete získat plnou licenci nebo 30denní dočasnou licenci.
+Odpověď: Ano, pro úspěšné spuštění kódu v tomto tutoriálu je nutná platná licence Aspose. Plnou licenci nebo 30denní dočasnou licenci můžete získat z webu Aspose.

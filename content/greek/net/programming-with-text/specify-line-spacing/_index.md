@@ -124,12 +124,12 @@ formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 TextFragment textFragment = new TextFragment("Hello world");
 if (fontFile != "")
 {
-	// Φορτώστε τη γραμματοσειρά TrueType στο αντικείμενο ροής
+	//Φορτώστε τη γραμματοσειρά TrueType στο αντικείμενο ροής
 	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
 	{
 		// Ορίστε το όνομα της γραμματοσειράς για τη συμβολοσειρά κειμένου
 		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		//Καθορίστε τη θέση για το τμήμα κειμένου
+		// Καθορίστε τη θέση για το τμήμα κειμένου
 		textFragment.Position = new Position(100, 600);
 		//Ορίστε τις Επιλογές TextFormatting του τρέχοντος τμήματος σε προκαθορισμένες (που δείχνει σε LineSpacingMode.FullSize)
 		textFragment.TextState.FormattingOptions = formattingOptions;

@@ -80,7 +80,7 @@ DataTable dt = new DataTable("Employee");
 dt.Columns.Add("Employee_ID", typeof(Int32));
 dt.Columns.Add("Employee_Name", typeof(string));
 dt.Columns.Add("Gender", typeof(string));
-// Tambahkan 2 baris ke objek DataTable secara terprogram
+//Tambahkan 2 baris ke objek DataTable secara terprogram
 DataRow dr = dt.NewRow();
 dr[0] = 1;
 dr[1] = "John Smith";
@@ -132,7 +132,7 @@ J: Ya, Anda dapat menambahkan hyperlink atau elemen interaktif lainnya ke data y
 
 #### T: Dapatkah saya membuat halaman pada tabel jika jumlah barisnya melebihi jumlah tertentu?
 
- A: Ya, Anda dapat membagi tabel menjadi beberapa halaman jika jumlahnya melebihi jumlah baris tertentu. Untuk mencapainya, Anda dapat menggunakan`IsInNewPage`properti objek Baris untuk menunjukkan bahwa halaman baru harus dimulai setelah baris tertentu. Anda dapat menghitung jumlah baris yang akan ditampilkan per halaman dan mengatur`IsInNewPage` properti sebagaimana mestinya.
+A: Ya, Anda dapat membagi tabel menjadi beberapa halaman jika jumlahnya melebihi jumlah baris tertentu. Untuk mencapainya, Anda dapat menggunakan`IsInNewPage` properti objek Baris untuk menunjukkan bahwa halaman baru harus dimulai setelah baris tertentu. Anda dapat menghitung jumlah baris yang akan ditampilkan per halaman dan mengatur`IsInNewPage` properti sebagaimana mestinya.
 
 #### T: Bagaimana cara mengekspor dokumen PDF dengan data basis data tertanam ke format file lain seperti DOCX atau XLSX?
 

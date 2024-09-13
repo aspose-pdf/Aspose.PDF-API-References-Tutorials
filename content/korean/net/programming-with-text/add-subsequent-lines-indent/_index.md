@@ -38,14 +38,14 @@ Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
 ## 5단계: 문서에 페이지 추가
- 문서에 새 페이지를 추가하려면 다음을 사용하세요.`Add` 의 방법`Pages`컬렉션. 제공된 코드에서 새 페이지는 변수에 할당됩니다.`page`.
+ 문서에 새 페이지를 추가하려면 다음을 사용하세요.`Add` 의 방법`Pages` 컬렉션. 제공된 코드에서 새 페이지는 변수에 할당됩니다.`page`.
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
 ## 6단계: 후속 줄 들여쓰기가 있는 TextFragment 만들기
- 인스턴스화`TextFragment` 객체를 만들고 원하는 텍스트를 제공합니다. 제공된 코드에서 텍스트는 변수에 할당됩니다.`text` . 그런 다음 초기화합니다.`TextFormattingOptions` 를 위해`TextFragment`그리고 지정하세요`SubsequentLinesIndent` 값.
+ 인스턴스화`TextFragment` 객체를 만들고 원하는 텍스트를 제공합니다. 제공된 코드에서 텍스트는 변수에 할당됩니다.`text` . 그런 다음 초기화합니다.`TextFormattingOptions` 를 위해`TextFragment` 그리고 지정하세요`SubsequentLinesIndent` 값.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
@@ -91,7 +91,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = document.Pages.Add();
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-// 텍스트 조각에 대한 TextFormattingOptions를 초기화하고 subsequentlyLinesIndent 값을 지정합니다.
+//텍스트 조각에 대한 TextFormattingOptions를 초기화하고 subsequentlyLinesIndent 값을 지정합니다.
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
 	SubsequentLinesIndent = 20
@@ -148,7 +148,7 @@ Aspose.Pdf.Page page = document.Pages.Add();
 
 #### 질문: 텍스트에 다음 줄 들여쓰기를 추가하려면 어떻게 해야 하나요?
 
- A: 6단계에서는 다음을 생성합니다.`TextFragment` 객체를 만들고 원하는 텍스트를 할당합니다. 그런 다음 초기화합니다.`TextFormattingOptions` 를 위해`TextFragment`그리고 지정하세요`SubsequentLinesIndent` 값:
+ A: 6단계에서는 다음을 생성합니다.`TextFragment` 객체를 만들고 원하는 텍스트를 할당합니다. 그런 다음 초기화합니다.`TextFormattingOptions` 를 위해`TextFragment` 그리고 지정하세요`SubsequentLinesIndent` 값:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
@@ -168,7 +168,7 @@ page.Paragraphs.Add(text);
 
 #### 질문: 추가 회선에 대해서도 이 과정을 반복할 수 있나요?
 
- A: 예, 8단계에서 새 줄을 만들어 같은 들여쓰기를 가진 추가 줄에 대해 프로세스를 반복할 수 있습니다.`TextFragment` 객체를 추가하여 페이지의 문단 컬렉션에 추가합니다.
+A: 예, 8단계에서 새 줄을 만들어 같은 들여쓰기를 가진 추가 줄에 대해 프로세스를 반복할 수 있습니다.`TextFragment` 객체를 추가하여 페이지의 문단 컬렉션에 추가합니다.
 
 #### 질문: 생성된 PDF 문서를 어떻게 저장하나요?
 

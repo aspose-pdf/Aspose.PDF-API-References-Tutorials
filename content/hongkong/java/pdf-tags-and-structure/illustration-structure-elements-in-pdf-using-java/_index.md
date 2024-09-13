@@ -101,7 +101,7 @@ pdfDocument.save("Illustration.pdf");
 ## 常見問題解答
 
 ### 什麼是 Java 版 Aspose.PDF？
-   Aspose.PDF for Java 是一個強大的程式庫，用於在 Java 應用程式中以程式設計方式處理 PDF 文件。
+   Aspose.PDF for Java 是一個強大的函式庫，用於在 Java 應用程式中以程式設計方式處理 PDF 文件。
 
 ### 我可以將多個插圖新增到單一 PDF 文件中嗎？
    絕對地！您可以根據需要向 PDF 文件添加任意數量的插圖。

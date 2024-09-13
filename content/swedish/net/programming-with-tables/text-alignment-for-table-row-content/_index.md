@@ -1,7 +1,7 @@
 ---
 title: Textjustering för tabellradinnehåll
 linktitle: Textjustering för tabellradinnehåll
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du justerar radinnehåll i en PDF-tabell med Aspose.PDF för .NET.
 type: docs
 weight: 210
@@ -122,7 +122,7 @@ Grattis! Du har nu lärt dig hur du justerar innehållet i en rad i en tabell i 
 
 #### F: Hur kan jag justera innehållet i tabellcellerna horisontellt?
 
- S: Du kan justera innehållet i tabellcellerna horisontellt genom att ställa in`HorizontalAlign` egenskap hos cellen`TextState` objekt. Använd till exempel för att centrera texten`cell.TextState.HorizontalAlignment = HorizontalAlignment.Center` . Du kan också ställa in den på`HorizontalAlignment.Left` eller`HorizontalAlignment.Right` för vänster- respektive högerjustering.
+ S: Du kan justera innehållet i tabellcellerna horisontellt genom att ställa in`HorizontalAlign` egenskap hos cellens`TextState` objekt. Använd till exempel för att centrera texten`cell.TextState.HorizontalAlignment = HorizontalAlignment.Center` . Du kan också ställa in den på`HorizontalAlignment.Left` eller`HorizontalAlignment.Right` för vänster- respektive högerjustering.
 
 #### F: Kan jag använda olika kantstilar och färger på enskilda celler i tabellen?
 

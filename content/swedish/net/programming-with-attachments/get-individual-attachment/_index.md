@@ -1,7 +1,7 @@
 ---
 title: Få individuell bilaga i PDF-fil
 linktitle: Få individuell bilaga i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du extraherar enskilda bilagor från PDF-filer med Aspose.PDF för .NET i denna steg-för-steg handledning.
 type: docs
 weight: 60
@@ -103,7 +103,7 @@ if (fileSpecification.Params != null)
 Nu kommer den spännande delen – att ta ut bilagan! Vi läser innehållet i den inbäddade filen och sparar den i vår lokala katalog.
 
 ```csharp
-// Hämta bilagan och skriv till fil eller stream
+// Skaffa bilagan och skriv till fil eller stream
 byte[] fileContent = new byte[fileSpecification.Contents.Length];
 fileSpecification.Contents.Read(fileContent, 0, fileContent.Length);
 FileStream fileStream = new FileStream(dataDir + "test_out" + ".txt", FileMode.Create);

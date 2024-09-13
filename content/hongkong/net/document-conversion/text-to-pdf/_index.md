@@ -24,7 +24,7 @@ url: /zh-hant/net/document-conversion/text-to-pdf/
 
 1. 開啟您的 Visual Studio 專案。
 2. 在解決方案資源管理器中以滑鼠右鍵按一下您的項目，然後選擇「管理 NuGet 套件」。
-3. 搜尋`Aspose.PDF`並安裝該軟體包。
+3. 搜尋`Aspose.PDF`並安裝該套件。
 
 ```csharp
 using System.IO;
@@ -45,7 +45,7 @@ using Aspose.Pdf.Text;
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-代替`YOUR DOCUMENT DIRECTORY`與你的實際路徑`log.txt`文件已儲存。
+代替`YOUR DOCUMENT DIRECTORY`與您的實際路徑`log.txt`文件已儲存。
 
 ## 第三步：讀取來源文字文件
 現在我們已經設定了文檔目錄，讓我們讀取文字檔案的內容。我們將使用一個`StreamReader`來實現這一點。

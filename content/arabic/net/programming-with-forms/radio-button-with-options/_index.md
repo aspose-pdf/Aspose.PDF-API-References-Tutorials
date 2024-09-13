@@ -2,54 +2,105 @@
 title: زر الراديو مع الخيارات
 linktitle: زر الراديو مع الخيارات
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: يمكنك بسهولة إضافة زر اختياري يحتوي على خيارات إلى مستند PDF باستخدام Aspose.PDF لـ .NET.
+description: أطلق العنان لإمكانات ملفات PDF التفاعلية من خلال إضافة أزرار الاختيار باستخدام Aspose.PDF لـ .NET. أنشئ نماذج جذابة بسهولة وحسّن تجربة المستخدم.
 type: docs
 weight: 230
 url: /ar/net/programming-with-forms/radio-button-with-options/
 ---
+## مقدمة
 
-في هذا البرنامج التعليمي، سنوضح لك كيفية إضافة زر اختياري يحتوي على خيارات إلى مستند PDF باستخدام Aspose.PDF for .NET. وسنشرح لك التعليمات البرمجية المصدرية بلغة C# خطوة بخطوة لإرشادك خلال هذه العملية.
+إن إنشاء مستندات PDF تفاعلية يمكن أن يعزز بشكل كبير من مشاركة المستخدم ويبسط عملية جمع البيانات. ومن بين العناصر المتنوعة التي يمكنك دمجها، تبرز أزرار الاختيار كطريقة سهلة الاستخدام لعرض خيارات الاختيار المتعددة. باستخدام Aspose.PDF لـ .NET، يمكنك بسهولة إضافة أزرار الاختيار إلى نماذج PDF الخاصة بك، مما يسهل على المستخدمين تحديد تفضيلاتهم. سواء كنت تعمل على استطلاعات الرأي أو نماذج التعليقات أو التطبيقات، سيساعدك هذا الدليل على الاستفادة من قوة Aspose.PDF لتنفيذ أزرار الاختيار بشكل فعال.
 
-## الخطوة 1: التحضير
+## المتطلبات الأساسية
 
-تأكد من أنك قمت باستيراد المكتبات الضرورية وقمت بتعيين المسار إلى دليل المستندات الخاص بك:
+قبل أن نبدأ، هناك بعض الأشياء التي ستحتاج إلى إعدادها لضمان رحلة سلسة أثناء إنشاء ملف PDF الخاص بنا باستخدام أزرار الاختيار:
+
+1.  Aspose.PDF لـ .NET: تأكد من تثبيت مكتبة Aspose.PDF في مشروعك. إذا لم تكن لديك المكتبة بعد، فيمكنك تنزيلها بسهولة من[صفحة الإصدار](https://releases.aspose.com/pdf/net/).
+2. .NET Framework: إن الفهم الأساسي لإطار عمل .NET سيساعدك على التغلب على أي مشكلات قد تواجهها على طول الطريق.
+3. بيئة التطوير: ستحتاج إلى بيئة تطوير متكاملة مناسبة لـ .NET (مثل Visual Studio) حيث يمكنك كتابة واختبار الكود الخاص بك.
+4. المعرفة بلغة C#: على الرغم من أنك لست بحاجة إلى أن تكون محترفًا، فإن فهم برمجة C# سيجعل هذه العملية أسهل وأكثر متعة بالتأكيد.
+5. المعرفة الأساسية حول بنية ملفات PDF: إن فهم كيفية هيكلة ملفات PDF يمكن أن يساعدك عند استكشاف الأخطاء وإصلاحها أو تخصيص نماذجك بشكل أكبر.
+
+بمجرد قيامك بترتيب كل هذا، ستكون مستعدًا لإطلاق العنان لإبداعك في عالم ملفات PDF!
+
+## استيراد الحزم
+
+للبدء في استخدام أزرار الاختيار في Aspose.PDF، ستحتاج أولاً إلى استيراد الحزم الأساسية إلى مشروع C# الخاص بك. وإليك كيفية القيام بذلك:
+
+### افتح محرر الكود الخاص بك
+
+افتح بيئة التطوير الخاصة بك (مثل Visual Studio) وقم بإنشاء مشروع C# جديد إذا لم تقم بذلك بالفعل. 
+
+### أضف مرجع Aspose.PDF
+
+انقر بزر الماوس الأيمن على مشروعك في مستكشف الحلول، وحدد إضافة > مرجع، وفي قسم التجميعات، ابحث عن Aspose.PDF. إذا قمت بتثبيت المكتبة بشكل صحيح، فيجب أن تظهر في القائمة. ما عليك سوى تحديدها والنقر فوق موافق.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using System.IO;
+using Aspose.Pdf.Forms;
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Text;
 ```
 
-## الخطوة 2: إنشاء كائن مستند
+الآن، أصبح مشروعك جاهزًا للاستفادة من قوة Aspose!
 
-إنشاء كائن مستند لإنشاء مستند PDF جديد:
+بعد إعداد كل شيء، دعنا نقوم بإنشاء مستند PDF مملوء بأزرار الاختيار خطوة بخطوة!
+
+## الخطوة 1: إعداد المستند
+
+أولاً، دعنا ننشئ مستند PDF جديدًا ونضيف إليه صفحة. ستكون هذه هي اللوحة التي سنرسم عليها خيارات أزرار الاختيار.
 
 ```csharp
+// المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document();
+Page page = doc.Pages.Add();
 ```
 
-## الخطوة 3: إضافة الصفحة والجدول
+ في هذه القطعة، نقوم بإنشاء جديد`Document` الكائن وإضافة`Page` لإضافتها إلى محتوانا. تأكد من استبدال`YOUR DOCUMENT DIRECTORY` مع المسار الذي تريد حفظ ملف PDF الخاص بك فيه.
 
-أضف صفحة إلى المستند وقم بإنشاء جدول لاحتواء خيارات أزرار الاختيار:
+## الخطوة 2: إنشاء جدول للتخطيط
+
+بعد ذلك، نحتاج إلى تخطيط لأزرار الاختيار. إن استخدام جدول يجعل من السهل تحديد موضعها بشكل جيد.
 
 ```csharp
-Page page = doc.Pages.Add();
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-table. ColumnWidths = "120 120 120";
+table.ColumnWidths = "120 120 120"; // تحديد عرض الأعمدة
 page.Paragraphs.Add(table);
 ```
 
-## الخطوة 4: إنشاء كائن RadioButtonField
+ هنا، قمنا بإنشاء`Table`الكائن وحددنا عرض الأعمدة الثلاثة. يؤدي هذا إلى إنشاء تخطيط منظم لخياراتنا.
 
-إنشاء كائن RadioButtonField لتمثيل زر الاختيار:
+## الخطوة 3: إضافة صفوف إلى الجدول
+
+سنقوم الآن بإضافة صف إلى جدولنا وخلايا تحتوي على أزرار الاختيار.
+
+```csharp
+Row r1 = table.Rows.Add();
+Cell c1 = r1.Cells.Add();
+Cell c2 = r1.Cells.Add();
+Cell c3 = r1.Cells.Add();
+```
+
+نقوم بإنشاء صف جديد وثلاث خلايا في الصف. ستحتوي كل خلية على خيار زر الاختيار.
+
+## الخطوة 4: إضافة حقل زر الاختيار
+
+وهنا تبدأ المتعة – فلنقم بإضافة حقل زر الاختيار إلى ملف PDF الخاص بنا!
 
 ```csharp
 RadioButtonField rf = new RadioButtonField(page);
-rf. PartialName = "radio";
+rf.PartialName = "radio";
 doc.Form.Add(rf, 1);
 ```
 
-## الخطوة 5: إضافة خيارات أزرار الاختيار
+ نحن ننشئ مثالا`RadioButtonField`، قم بتعيين اسمه، ثم قم بإضافته إلى نموذج المستند. سيتيح هذا الحقل للمستخدمين إجراء اختياراتهم.
 
-أضف خيارات زر الاختيار إلى كائن RadioButtonField:
+## الخطوة 5: تكوين خيارات أزرار الاختيار
+
+حان الوقت لإنشاء خيارات لأزرار الاختيار! سنضيف ثلاثة خيارات يمكن للمستخدمين الاختيار من بينها.
 
 ```csharp
 RadioButtonOptionField opt1 = new RadioButtonOptionField();
@@ -58,20 +109,40 @@ RadioButtonOptionField opt3 = new RadioButtonOptionField();
 opt1.OptionName = "Item1";
 opt2.OptionName = "Item2";
 opt3.OptionName = "Item3";
+```
+
+ هنا، نقوم بإنشاء ثلاثة`RadioButtonOptionField` أمثلة لكل خيار من خياراتنا وتعيين أسماء لها. إن الإبداع في اختيار هذه الأسماء يمكن أن يساعد المستخدمين على اختيار ما يريدونه بشكل أفضل.
+
+## الخطوة 6: تعيين أبعاد الخيارات
+
+بعد ذلك، دعنا نحدد حجم خيارات أزرار الاختيار لجعلها جذابة بصريًا.
+
+```csharp
 opt1.Width = 15;
-opt1. Height = 15;
+opt1.Height = 15;
 opt2.Width = 15;
-opt2. Height = 15;
+opt2.Height = 15;
 opt3.Width = 15;
-opt3. Height = 15;
+opt3.Height = 15;
+```
+
+باستخدام هذا الكود، نقوم بتحديد أبعاد كل زر اختيار. يمكنك تعديل هذه القيم إذا كنت تريد خيارات أكبر أو أصغر.
+
+## الخطوة 7: إضافة خيارات إلى حقل زر الاختيار
+
+الآن بعد إنشاء الخيارات، نحتاج إلى إضافتها إلى حقل زر الاختيار.
+
+```csharp
 rf.Add(opt1);
 rf.Add(opt2);
 rf.Add(opt3);
 ```
 
-## الخطوة 6: تخصيص خيارات أزرار الاختيار
+لا يقوم هذا الكود بإضافة الخيارات فحسب، بل يربطها أيضًا بحقل زر الاختيار الخاص بنا، مما يتيح للمستخدمين القدرة على تحديد أحد الخيارات.
 
-قم بتخصيص خيارات أزرار الاختيار عن طريق تعيين سمات مثل الحدود ولون النص ونص التسمية التوضيحية:
+## الخطوة 8: تصميم الخيارات
+
+لكي نجعل خياراتنا مميزة، دعنا نصممها. يمكننا إضافة حدود وتعيين الألوان.
 
 ```csharp
 opt1.Border = new Border(opt1);
@@ -80,99 +151,52 @@ opt1.Border.Style = BorderStyle.Solid;
 opt1.Characteristics.Border = System.Drawing.Color.Black;
 opt1.DefaultAppearance.TextColor = System.Drawing.Color.Red;
 opt1.Caption = new TextFragment("Item1");
-
-// كرر نفس الخطوات لخياري opt2 وopt3
-
 ```
 
-## الخطوة 7: أضف خيارات أزرار الاختيار إلى الجدول
+ كرر هذا التصميم لـ`opt2` و`opt3`، وضبط التسميات التوضيحية وفقًا لذلك. وهذا يضمن أن كل خيار يبدو احترافيًا وجذابًا.
 
-أضف خيارات أزرار الاختيار إلى الجدول لعرضها:
+## الخطوة 9: إضافة خيارات إلى الخلايا
+
+بعد ذلك، نحتاج إلى وضع أزرار الاختيار هذه في الخلايا المقابلة في جدولنا.
 
 ```csharp
-Cell c1 = table.Rows.Add().Cells.Add();
-Cell c2 = table.Rows[table.Rows.Count].Cells.Add();
-Cell c3 = table.Rows[table.Rows.Count].Cells.Add();
-
 c1.Paragraphs.Add(opt1);
 c2.Paragraphs.Add(opt2);
 c3.Paragraphs.Add(opt3);
 ```
 
-## الخطوة 8: احفظ مستند PDF
+يضيف هذا السطر الخيارات المصممة إلى الخلايا التي أنشأناها سابقًا، وينظمها بشكل أنيق في جدولنا.
 
-احفظ مستند PDF الذي تم إنشاؤه:
+## الخطوة 10: احفظ مستند PDF
+
+أخيرًا، حان الوقت لحفظ عملك! هذه الخطوة تحفظ كل ما قمنا به في ملف PDF.
 
 ```csharp
 dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
+// حفظ ملف PDF
 doc.Save(dataDir);
+Console.WriteLine("\nRadio button field with three options added successfully.\nFile saved at " + dataDir);
 ```
 
-### عينة من كود المصدر لزر الراديو مع الخيارات باستخدام Aspose.PDF لـ .NET 
-```csharp
-try
-{
-	// المسار إلى دليل المستندات.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	Document doc = new Document();
-	Page page = doc.Pages.Add();
-	Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-	table.ColumnWidths = "120 120 120";
-	page.Paragraphs.Add(table);
-	Row r1 = table.Rows.Add();
-	Cell c1 = r1.Cells.Add();
-	Cell c2 = r1.Cells.Add();
-	Cell c3 = r1.Cells.Add();
-	RadioButtonField rf = new RadioButtonField(page);
-	rf.PartialName = "radio";
-	doc.Form.Add(rf, 1);
-	RadioButtonOptionField opt1 = new RadioButtonOptionField();
-	RadioButtonOptionField opt2 = new RadioButtonOptionField();
-	RadioButtonOptionField opt3 = new RadioButtonOptionField();
-	opt1.OptionName = "Item1";
-	opt2.OptionName = "Item2";
-	opt3.OptionName = "Item3";
-	opt1.Width = 15;
-	opt1.Height = 15;
-	opt2.Width = 15;
-	opt2.Height = 15;
-	opt3.Width = 15;
-	opt3.Height = 15;
-	rf.Add(opt1);
-	rf.Add(opt2);
-	rf.Add(opt3);
-	opt1.Border = new Border(opt1);
-	opt1.Border.Width = 1;
-	opt1.Border.Style = BorderStyle.Solid;
-	opt1.Characteristics.Border = System.Drawing.Color.Black;
-	opt1.DefaultAppearance.TextColor = System.Drawing.Color.Red;
-	opt1.Caption = new TextFragment("Item1");
-	opt2.Border = new Border(opt1);
-	opt2.Border.Width = 1;
-	opt2.Border.Style = BorderStyle.Solid;
-	opt2.Characteristics.Border = System.Drawing.Color.Black;
-	opt2.DefaultAppearance.TextColor = System.Drawing.Color.Red;
-	opt2.Caption = new TextFragment("Item2");
-	opt3.Border = new Border(opt1);
-	opt3.Border.Width = 1;
-	opt3.Border.Style = BorderStyle.Solid;
-	opt3.Characteristics.Border = System.Drawing.Color.Black;
-	opt3.DefaultAppearance.TextColor = System.Drawing.Color.Red;
-	opt3.Caption = new TextFragment("Item3");
-	c1.Paragraphs.Add(opt1);
-	c2.Paragraphs.Add(opt2);
-	c3.Paragraphs.Add(opt3);
-	dataDir = dataDir + "RadioButtonWithOptions_out.pdf";
-	// حفظ ملف PDF
-	doc.Save(dataDir);
-	Console.WriteLine("\nRadio button field with three options added successfully.\nFile saved at " + dataDir);
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+باستخدام هذا الرمز، سيتم حفظ مستندك في الدليل المحدد. يمكنك الآن فتح ملف PDF هذا لمشاهدة أزرار الاختيار الخاصة بك أثناء العمل. تهانينا على تنفيذ أول ملف PDF تفاعلي لديك!
 
 ## خاتمة
 
-تهانينا! لقد نجحت في إضافة زر اختياري يحتوي على خيارات إلى مستند PDF باستخدام Aspose.PDF for .NET. يمكنك الآن استخدام هذه الطريقة لإنشاء نماذج تفاعلية في مستندات PDF الخاصة بك.
+إن إتقان كيفية إنشاء عناصر تفاعلية مثل أزرار الاختيار باستخدام Aspose.PDF for .NET يفتح لك آفاقًا جديدة تمامًا من الاحتمالات لمستندات PDF الخاصة بك. باتباع هذا الدليل، يجب أن تكون الآن مجهزًا لدمج أزرار الاختيار في مشاريعك دون عناء، مما يعزز تجربة المستخدم وعمليات جمع البيانات. سواء كان الأمر يتعلق باستطلاع بسيط أو نموذج معقد، فإن القدرة على إنشاء ملفات PDF تفاعلية مخصصة في متناول يدك.
+
+## الأسئلة الشائعة
+
+### ما هو Aspose.PDF لـ .NET؟
+Aspose.PDF for .NET هي مكتبة تتيح للمطورين إنشاء مستندات PDF ومعالجتها برمجيًا.
+
+### كيف أقوم بتثبيت Aspose.PDF لـ .NET؟
+ يمكنك تنزيل المكتبة من[صفحة إصدار Aspose](https://releases.aspose.com/pdf/net/) وأضفها إلى مشروعك.
+
+### هل يمكنني إنشاء أزرار الاختيار في ملفات PDF باستخدام لغات برمجة أخرى؟
+نعم، Aspose.PDF متاح أيضًا للغة Java ولغات أخرى لوظائف مماثلة.
+
+### هل هناك نسخة تجريبية مجانية لـ Aspose.PDF؟
+ نعم، يمكنك استكشاف وظائف Aspose.PDF عن طريق تنزيل[نسخة تجريبية مجانية](https://releases.aspose.com/).
+
+### أين يمكنني الحصول على الدعم لـ Aspose.PDF؟
+ للحصول على الدعم، يمكنك زيارة[منتدى دعم Aspose](https://forum.aspose.com/c/pdf/10) للحصول على المساعدة من الخبراء وأعضاء المجتمع.

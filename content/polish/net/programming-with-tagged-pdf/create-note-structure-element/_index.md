@@ -7,7 +7,7 @@ type: docs
 weight: 30
 url: /pl/net/programming-with-tagged-pdf/create-note-structure-element/
 ---
-W tym samouczku przedstawimy Ci przewodnik krok po kroku, jak utworzyć element struktury notatki w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Aspose.PDF to potężna biblioteka, która umożliwia programowe tworzenie, manipulowanie i konwertowanie dokumentów PDF. Korzystając z funkcji struktury oznaczonej zawartości Aspose.PDF, możesz dodawać ustrukturyzowane notatki do swojego dokumentu PDF.
+tym samouczku przedstawimy Ci przewodnik krok po kroku, jak utworzyć element struktury notatki w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Aspose.PDF to potężna biblioteka, która umożliwia programowe tworzenie, manipulowanie i konwertowanie dokumentów PDF. Korzystając z funkcji struktury oznaczonej zawartości Aspose.PDF, możesz dodawać ustrukturyzowane notatki do swojego dokumentu PDF.
 
 ## Wymagania wstępne
 
@@ -22,7 +22,7 @@ Aby rozpocząć, utwórz nowy projekt w Visual Studio i dodaj odwołanie do bibl
 
 ## Krok 2: Zaimportuj niezbędne przestrzenie nazw
 
-W pliku kodu C# zaimportuj przestrzenie nazw wymagane do uzyskania dostępu do klas i metod udostępnianych przez Aspose.PDF:
+pliku kodu C# zaimportuj przestrzenie nazw wymagane do uzyskania dostępu do klas i metod udostępnianych przez Aspose.PDF:
 
 ```csharp
 using System;
@@ -103,7 +103,7 @@ NoteElement note3 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note3);
 note3.SetText("Note with ID = 'note_003'. ");
 note3.SetId("note_003");
-// Musi zostać zgłoszony wyjątek - Aspose.Pdf.Tagged.TaggedException: Element struktury o ID='note_002' już istnieje
+//Musi zostać zgłoszony wyjątek - Aspose.Pdf.Tagged.TaggedException: Element struktury o ID='note_002' już istnieje
 //uwaga3.SetId("uwaga_002");
 // Wynikowy dokument nie jest zgodny ze standardem PDF/UA, jeśli dla elementu struktury notatki użyto ClearId()
 //uwaga 3.ClearId();
@@ -148,7 +148,7 @@ A: Tak, możesz dostosować zawartość i właściwości elementów struktury no
 
 #### P: Czy mogę przypisać unikalne identyfikatory do elementów struktury notatek?
 
-O: Tak, możesz przypisać unikalne identyfikatory do elementów struktury notatek, korzystając z`SetId` metoda. Kod pokazuje, jak ustawić identyfikatory elementów notatki na unikalne wartości.
+ O: Tak, możesz przypisać unikalne identyfikatory do elementów struktury notatek, korzystając z`SetId` metoda. Kod pokazuje, jak ustawić identyfikatory elementów notatki na unikalne wartości.
 
 #### P: Co się stanie, jeśli spróbuję przypisać duplikat identyfikatora do elementu struktury notatki?
 
@@ -156,7 +156,7 @@ A: Próba przypisania duplikatu ID do elementu struktury notatki spowoduje wyją
 
 #### P: Jak mogę zagwarantować zgodność ze standardem PDF/UA podczas tworzenia elementów struktury notatek?
 
- A: Kod podany w samouczku pokazuje, jak sprawdzić zgodność PDF/UA za pomocą`Validate` metoda. Walidując dokument pod kątem standardu PDF/UA, możesz upewnić się, że dodane elementy struktury notatek są zgodne z wytycznymi dostępności.
+A: Kod podany w samouczku pokazuje, jak sprawdzić zgodność PDF/UA za pomocą`Validate` metoda. Walidując dokument pod kątem standardu PDF/UA, możesz upewnić się, że dodane elementy struktury notatek są zgodne z wytycznymi dostępności.
 
 #### P: Czy mogę użyć tego podejścia, aby dodać elementy struktury notatek do istniejącego dokumentu PDF?
 

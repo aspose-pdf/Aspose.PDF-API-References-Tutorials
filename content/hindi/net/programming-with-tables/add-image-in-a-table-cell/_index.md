@@ -43,7 +43,7 @@ Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
 ## चरण 4: डिफ़ॉल्ट सेल बॉर्डर सेट करना
 
- एकरूपता सुनिश्चित करने के लिए, हम इसका उपयोग करके एक डिफ़ॉल्ट सेल बॉर्डर सेट कर सकते हैं`DefaultCellBorder`तालिका की संपत्ति`BorderInfo` वस्तु।
+ एकरूपता सुनिश्चित करने के लिए, हम इसका उपयोग करके एक डिफ़ॉल्ट सेल बॉर्डर सेट कर सकते हैं`DefaultCellBorder` तालिका की संपत्ति`BorderInfo` वस्तु।
 
 ```csharp
 // BorderInfo ऑब्जेक्ट का उपयोग करके डिफ़ॉल्ट सेल बॉर्डर सेट करें
@@ -93,7 +93,7 @@ Aspose.Pdf.Cell cell2 = row1.Cells.Add();
 अंत में, हम छवि को सेल के भीतर पैराग्राफ के रूप में जोड़कर तालिका सेल में जोड़ सकते हैं।
 
 ```csharp
-// तालिका सेल में छवि जोड़ें
+//तालिका सेल में छवि जोड़ें
 cell2.Paragraphs.Add(img);
 ```
 
@@ -102,7 +102,7 @@ cell2.Paragraphs.Add(img);
 छवि सेल जोड़ने के बाद, यदि आवश्यक हो तो हम पंक्ति में और अधिक सेल जोड़ सकते हैं।
 
 ```csharp
-//पंक्ति में एक और सेल जोड़ें
+// पंक्ति में एक और सेल जोड़ें
 row1.Cells.Add("Previous cell with image");
 
 // तीसरे सेल के ऊर्ध्वाधर संरेखण को समायोजित करें
@@ -114,7 +114,7 @@ row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
  अंत में, हम संशोधित दस्तावेज़ को निर्दिष्ट स्थान पर सहेज सकते हैं`Save` तरीका।
 
 ```csharp
-// दस्तावेज़ सहेजें
+//दस्तावेज़ सहेजें
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
@@ -140,16 +140,16 @@ tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.
 tab1.ColumnWidths = "100 100 120";
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose.jpg";
-// तालिका में पंक्तियाँ बनाएँ और फिर पंक्तियों में कक्ष बनाएँ
+//तालिका में पंक्तियाँ बनाएँ और फिर पंक्तियों में कक्ष बनाएँ
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Sample text in cell");
 // वह सेल जोड़ें जिसमें छवि है
 Aspose.Pdf.Cell cell2 = row1.Cells.Add();
-// तालिका सेल में छवि जोड़ें
+//तालिका सेल में छवि जोड़ें
 cell2.Paragraphs.Add(img);
 row1.Cells.Add("Previous cell with image");
 row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
-// दस्तावेज़ सहेजें
+//दस्तावेज़ सहेजें
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
@@ -165,7 +165,7 @@ pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 
 #### प्रश्न: क्या मैं तालिका सेल के भीतर छवि का आकार और स्थिति अनुकूलित कर सकता हूँ?
 
- उत्तर: हां, आप तालिका सेल के भीतर छवि के आकार और स्थिति को गुणों को समायोजित करके अनुकूलित कर सकते हैं।`Image`ऑब्जेक्ट। आप छवि की चौड़ाई और ऊंचाई, साथ ही सेल के भीतर संरेखण सेट कर सकते हैं।
+ उत्तर: हां, आप तालिका सेल के भीतर छवि के आकार और स्थिति को गुणों को समायोजित करके अनुकूलित कर सकते हैं।`Image` ऑब्जेक्ट। आप छवि की चौड़ाई और ऊंचाई, साथ ही सेल के भीतर संरेखण सेट कर सकते हैं।
 
 #### प्रश्न: क्या मैं पंक्तियों और स्तंभों की गतिशील संख्या वाली तालिका में छवियाँ जोड़ सकता हूँ?
 

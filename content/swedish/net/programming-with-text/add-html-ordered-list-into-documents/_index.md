@@ -1,7 +1,7 @@
 ---
 title: Lägg till ordnad HTML-lista i dokument
 linktitle: Lägg till HTMLOrdered List i dokument
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du lägger till en HTML-ordnad lista till ett dokument med Aspose.PDF för .NET.
 type: docs
 weight: 30
@@ -47,7 +47,7 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 ```
 
 ## Steg 6: Lägg till en sida i dokumentet
- Lägg till en ny sida i dokumentet med hjälp av`Add` metod för`Pages`samling. I den angivna koden är den nya sidan tilldelad variabeln`page`.
+ Lägg till en ny sida i dokumentet med hjälp av`Add` metod för`Pages` samling. I den angivna koden är den nya sidan tilldelad variabeln`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -81,7 +81,7 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 Page page = doc.Pages.Add();
 // Lägg till HtmlFragment på sidan
 page.Paragraphs.Add(t);
-// Spara den resulterande PDF-filen
+//Spara den resulterande PDF-filen
 doc.Save(outFile);
 ```
 
@@ -115,7 +115,7 @@ using Aspose.Pdf.Text;
 
 #### F: Hur lägger jag till den beställda HTML-listan på en sida i dokumentet?
 
- S: I steg 7 lägger du till`HtmlFragment` objekt (`t` ) till sidan med hjälp av`Add` metod för`Paragraphs`samling. Detta kommer sömlöst att integrera HTML-listan i dokumentet.
+ S: I steg 7 lägger du till`HtmlFragment` objekt (`t` ) till sidan med hjälp av`Add` metod för`Paragraphs` samling. Detta kommer sömlöst att integrera HTML-listan i dokumentet.
 
 #### F: Hur sparar jag det resulterande PDF-dokumentet?
 

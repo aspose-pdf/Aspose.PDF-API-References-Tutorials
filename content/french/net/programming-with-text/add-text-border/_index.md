@@ -38,14 +38,14 @@ Document pdfDocument = new Document();
 ```
 
 ## Étape 5 : Ajouter une page au document
- Ajoutez une nouvelle page au document en utilisant le`Add` méthode de la`Pages`collection. Dans le code fourni, la nouvelle page est attribuée à la variable`pdfPage`.
+ Ajoutez une nouvelle page au document en utilisant le`Add` méthode de la`Pages` collection. Dans le code fourni, la nouvelle page est attribuée à la variable`pdfPage`.
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
 ## Étape 6 : Créer un fragment de texte
- Créer un`TextFragment` objet et fournissez le texte souhaité. Définissez la position du fragment de texte à l'aide de la`Position` propriété. Dans le code fourni, le texte est défini sur « texte principal » et positionné à (100, 600) sur la page.
+ Créer un`TextFragment`objet et fournissez le texte souhaité. Définissez la position du fragment de texte à l'aide de la`Position` propriété. Dans le code fourni, le texte est défini sur « texte principal » et positionné à (100, 600) sur la page.
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -64,7 +64,7 @@ textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 ```
 
 ## Étape 8 : Activer la bordure du texte
- Pour activer la bordure de texte, définissez le`DrawTextRectangleBorder`propriété du fragment de texte`TextState` à`true`.
+ Pour activer la bordure de texte, définissez le`DrawTextRectangleBorder` propriété du fragment de texte`TextState` à`true`.
 
 ```csharp
 textFragment.TextState.DrawTextRectangleBorder = true;
@@ -151,7 +151,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 
 #### Q : Comment créer un TextFragment et définir sa position ?
 
- A : À l'étape 6, vous allez créer un`TextFragment`objet et définir sa position sur la page à l'aide de la`Position` propriété:
+ A : À l'étape 6, vous allez créer un`TextFragment` objet et définir sa position sur la page à l'aide de la`Position` propriété:
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -182,7 +182,7 @@ tb.AppendText(textFragment);
 
 #### Q : Comment puis-je enregistrer le document PDF obtenu ?
 
- A : Après avoir ajouté le texte avec une bordure, utilisez le`Save` méthode de la`Document` objet pour enregistrer le document PDF :
+ : Après avoir ajouté le texte avec une bordure, utilisez le`Save` méthode de la`Document` objet pour enregistrer le document PDF :
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");

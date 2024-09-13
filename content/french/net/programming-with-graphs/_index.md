@@ -13,11 +13,11 @@ Les tutoriels de programmation avec graphiques d'Aspose.PDF pour .NET sont conç
 ## Tutoriels
 | Titre | Description |
 | --- | --- | 
-| [Ajouter un dessin dans un fichier PDF](./add-drawing/) | Découvrez comment ajouter des dessins dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. Suivez ce guide étape par étape pour créer des documents PDF attrayants avec des fonctionnalités de dessin. |  
-| [Ajouter un dessin avec un remplissage en dégradé](./add-drawing-with-gradient-fill/) | Apprenez à ajouter un dessin avec un remplissage en dégradé avec Aspose.PDF pour .NET. Tutoriel étape par étape pour créer des documents PDF attrayants. |  
-| [Ajouter un objet de ligne dans un fichier PDF](./add-line-object/) | Découvrez comment ajouter un objet de ligne personnalisé dans un fichier PDF à l’aide d’Aspose.PDF pour .NET. |  
-| [Rectangle de contrôle Ordre Z](./control-rectangle-z-order/) | Découvrez comment contrôler l'ordre Z des rectangles dans un fichier PDF à l'aide d'Aspose.PDF pour .NET.  |  
-| [Créer un rectangle rempli](./create-filled-rectangle/) | Découvrez comment créer un rectangle rempli avec Aspose.PDF pour .NET. Guide étape par étape pour personnaliser la couleur de remplissage. |  
-| [Créer un rectangle avec la couleur alpha](./create-rectangle-with-alpha-color/) | Découvrez comment créer un rectangle avec une couleur transparente à l'aide d'Aspose.PDF pour .NET. Guide étape par étape pour personnaliser la transparence. |  
-| [Longueur du tiret](./dash-length/) | Découvrez comment définir la longueur des tirets avec Aspose.PDF pour .NET. Guide étape par étape pour personnaliser les modèles de tirets. |  
-| [Ligne de dessin](./drawing-line/) | Apprenez à tracer une ligne sur une page à l'aide d'Aspose.PDF pour .NET. Guide étape par étape pour créer des lignes personnalisées. |  
+| [Ajouter un dessin dans un fichier PDF](./add-drawing/) | Découvrez comment ajouter des dessins aux fichiers PDF à l'aide d'Aspose.PDF pour .NET. Ce guide étape par étape couvre les paramètres de couleur, l'ajout de formes et l'enregistrement de votre PDF. |  
+| [Ajouter un dessin avec un remplissage en dégradé](./add-drawing-with-gradient-fill/) | Apprenez à ajouter de superbes dessins en dégradé dans les fichiers PDF à l'aide d'Aspose.PDF pour .NET avec ce guide étape par étape, parfait pour améliorer les visuels des documents. |  
+| [Ajouter un objet de ligne dans un fichier PDF](./add-line-object/) | Découvrez comment ajouter un objet de ligne à un fichier PDF à l'aide d'Aspose.PDF pour .NET dans ce didacticiel étape par étape. Parfait pour les débutants. |  
+| [Rectangle de contrôle Ordre Z](./control-rectangle-z-order/) | Découvrez comment contrôler l'ordre Z des rectangles dans un PDF à l'aide d'Aspose.PDF pour .NET dans ce didacticiel détaillé étape par étape. Idéal pour les développeurs souhaitant améliorer leurs documents PDF. |  
+| [Créer un rectangle rempli](./create-filled-rectangle/) | Découvrez comment créer un rectangle rempli dans un PDF à l'aide d'Aspose.PDF pour .NET grâce à ce didacticiel étape par étape. Idéal pour les développeurs de tous niveaux. |  
+| [Créer un rectangle avec la couleur alpha](./create-rectangle-with-alpha-color/) | Découvrez comment créer des rectangles transparents dans un PDF à l'aide d'Aspose.PDF pour .NET grâce à ce didacticiel étape par étape. Améliorez vos PDF avec des couleurs alpha sans effort. |  
+| [Longueur du tiret](./dash-length/) | Découvrez comment personnaliser les motifs de tirets dans les fichiers PDF à l'aide d'Aspose.PDF pour .NET grâce à notre guide étape par étape. Idéal pour ajouter du style à vos documents. |  
+| [Ligne de dessin](./drawing-line/) | Découvrez comment dessiner des lignes dans un document PDF à l'aide d'Aspose.PDF pour .NET. Ce guide étape par étape décrit la configuration de votre document, l'ajout de lignes et l'enregistrement du fichier. |  

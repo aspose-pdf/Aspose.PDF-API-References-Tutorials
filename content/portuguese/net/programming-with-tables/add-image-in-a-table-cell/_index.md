@@ -43,7 +43,7 @@ Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
 ## Etapa 4: Definindo a borda padrão da célula
 
- Para garantir a consistência, podemos definir uma borda de célula padrão usando o`DefaultCellBorder`propriedade da tabela`BorderInfo` objeto.
+ Para garantir a consistência, podemos definir uma borda de célula padrão usando o`DefaultCellBorder` propriedade da tabela`BorderInfo` objeto.
 
 ```csharp
 // Definir borda de célula padrão usando objeto BorderInfo
@@ -93,7 +93,7 @@ Aspose.Pdf.Cell cell2 = row1.Cells.Add();
 Por fim, podemos adicionar a imagem à célula da tabela adicionando-a como um parágrafo dentro da célula.
 
 ```csharp
-// Adicione a imagem à célula da tabela
+//Adicione a imagem à célula da tabela
 cell2.Paragraphs.Add(img);
 ```
 
@@ -102,7 +102,7 @@ cell2.Paragraphs.Add(img);
 Depois de adicionar a célula da imagem, podemos adicionar mais células à linha, se necessário.
 
 ```csharp
-//Adicionar outra célula à linha
+// Adicionar outra célula à linha
 row1.Cells.Add("Previous cell with image");
 
 // Ajuste o alinhamento vertical da terceira célula
@@ -114,7 +114,7 @@ row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
  Por fim, podemos salvar o documento modificado em um local especificado usando o`Save` método.
 
 ```csharp
-// Salvar o documento
+//Salvar o documento
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
@@ -140,16 +140,16 @@ tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.
 tab1.ColumnWidths = "100 100 120";
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose.jpg";
-// Crie linhas na tabela e depois células nas linhas
+//Crie linhas na tabela e depois células nas linhas
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Sample text in cell");
 // Adicione a célula que contém a imagem
 Aspose.Pdf.Cell cell2 = row1.Cells.Add();
-// Adicione a imagem à célula da tabela
+//Adicione a imagem à célula da tabela
 cell2.Paragraphs.Add(img);
 row1.Cells.Add("Previous cell with image");
 row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
-// Salvar o documento
+//Salvar o documento
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
@@ -165,7 +165,7 @@ R: Sim, você pode adicionar várias imagens a diferentes células dentro da mes
 
 #### P: Posso personalizar o tamanho e a posição da imagem dentro da célula da tabela?
 
- R: Sim, você pode personalizar o tamanho e a posição da imagem dentro da célula da tabela ajustando as propriedades da`Image`objeto. Você pode definir a largura e a altura da imagem, bem como o alinhamento dentro da célula.
+ R: Sim, você pode personalizar o tamanho e a posição da imagem dentro da célula da tabela ajustando as propriedades da`Image` objeto. Você pode definir a largura e a altura da imagem, bem como o alinhamento dentro da célula.
 
 #### P: Posso adicionar imagens a uma tabela com um número dinâmico de linhas e colunas?
 

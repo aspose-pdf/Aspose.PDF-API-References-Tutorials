@@ -2,123 +2,172 @@
 title: 建立填滿矩形
 linktitle: 建立填滿矩形
 second_title: Aspose.PDF for .NET API 參考
-description: 了解如何使用 Aspose.PDF for .NET 建立填滿矩形。自訂填滿顏色的分步指南。
+description: 透過此逐步教學，了解如何使用 Aspose.PDF for .NET 在 PDF 中建立填滿矩形。非常適合各個層級的開發人員。
 type: docs
 weight: 50
 url: /zh-hant/net/programming-with-graphs/create-filled-rectangle/
 ---
-在本教學中，我們將引導您逐步完成以下 C# 原始程式碼，以使用 Aspose.PDF for .NET 建立填滿矩形。
+## 介紹
 
-在開始之前，請確保您已經安裝了 Aspose.PDF 庫並設定了開發環境。也具備 C# 程式設計的基礎知識。
+您是否曾經想過以程式設計方式建立具有視覺吸引力的 PDF？如果是這樣，那麼您來對地方了！在本教學中，我們將深入了解 Aspose.PDF for .NET 的世界，這是一個功能強大的程式庫，可讓您輕鬆操作 PDF 文件。今天，我們將重點放在在 PDF 文件中建立填充矩形。無論您是經驗豐富的開發人員還是新手，本指南都將以友好且引人入勝的方式引導您完成每個步驟。所以，拿起你的編碼帽子，讓我們開始吧！
 
-## 第 1 步：文檔目錄設置
+## 先決條件
 
-在提供的原始程式碼中，您需要指定要儲存產生的 PDF 檔案的目錄。將“dataDir”變數變更為所需的目錄。
+在我們開始編寫程式碼之前，您需要做好以下幾件事：
+
+1. Visual Studio：確保您的電腦上安裝了 Visual Studio。它是用於 .NET 開發的出色 IDE。
+2.  Aspose.PDF for .NET：您需要下載並安裝 Aspose.PDF 庫。你可以找到它[這裡](https://releases.aspose.com/pdf/net/).
+3. C# 基礎知識：稍微熟悉一下 C# 程式設計將有助於您更好地理解程式碼片段。
+
+## 導入包
+
+首先，您需要在 C# 專案中匯入必要的套件。您可以這樣做：
+
+### 建立一個新項目
+
+開啟 Visual Studio 並建立一個新的 C# 專案。為了簡單起見，您可以選擇控制台應用程式。
+
+### 新增 Aspose.PDF 參考
+
+1. 在解決方案資源管理器中以滑鼠右鍵按一下您的專案。
+2. 選擇“管理 NuGet 套件”。
+3. 搜尋“Aspose.PDF”並安裝最新版本。
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-## 步驟2：建立文檔實例並新增頁面
+現在我們已經完成了所有設置，讓我們深入研究程式碼！
 
-我們建立 Document 類別的一個實例並為該文件新增一個頁面。
+## 第 1 步：設定您的文件目錄
 
-```csharp
-Document doc = new Document();
-Page page = doc.Pages.Add();
-```
-
-## 第 3 步：建立圖形物件並將其新增至頁面
-
-我們建立一個具有指定尺寸的 Graph 物件並將其新增至頁面的段落集合中。
+首先，您需要指定 PDF 的儲存路徑。這很重要，因為它告訴程式在哪裡建立文件。
 
 ```csharp
-Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100, 400);
-page.Paragraphs.Add(graph);
-```
-
-## 第四步：建立矩形物件並新增到圖表中
-
-我們建立一個具有指定尺寸的 Rectangle 對象，並將其新增至圖表的形狀集合中。
-
-```csharp
-Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 120);
-graph.Shapes.Add(rect);
-```
-
-## 第五步：設定填滿顏色
-
-我們可以使用 GraphInfo 物件的 FillColor 屬性來指定矩形的填滿顏色。
-
-```csharp
-rect.GraphInfo.FillColor = Aspose.Pdf.Color.Red;
-```
-
-## 第 6 步：儲存生成的 PDF 文件
-
-最後，我們將產生的 PDF 檔案以名稱「CreateFilledRectangle_out.pdf」儲存在指定目錄中。
-
-```csharp
-doc.Save(dataDir + "CreateFilledRectangle_out.pdf");
-```
-
-### 使用 Aspose.PDF for .NET 建立填滿矩形的範例原始碼 
-
-```csharp
-
 //文檔目錄的路徑。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+代替`"YOUR DOCUMENT DIRECTORY"`與您電腦上要儲存 PDF 的實際路徑。
+
+## 步驟2：建立文檔實例
+
+接下來，我們將建立一個實例`Document`班級。此類代表您將使用的 PDF 文件。
+
+```csharp
 //建立文件實例
 Document doc = new Document();
+```
+
+此行初始化一個我們可以操作的新 PDF 文件。
+
+## 步驟 3：新增頁面
+
+現在，讓我們為文件新增一個頁面。每個 PDF 至少需要一頁，對吧？
+
+```csharp
 //將頁面新增至 PDF 檔案的頁面集合
 Page page = doc.Pages.Add();
+```
+
+此程式碼會為文件新增一個頁面，允許我們在其上繪製形狀。
+
+## 第 4 步：建立圖形實例
+
+要繪製形狀，我們需要建立一個`Graph`實例。將圖表視為畫布，您可以在其中繪製各種形狀。
+
+```csharp
 //建立圖實例
-Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100, 400);
+Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100.0, 400.0);
+```
+
+在這裡，我們建立一個寬度為 100、高度為 400 的圖表。
+
+## 第 5 步：將圖表新增至頁面
+
+現在我們有了圖表，讓我們將其添加到我們之前創建的頁面中。
+
+```csharp
 //將圖形物件加入到頁面實例的段落集合中
 page.Paragraphs.Add(graph);
+```
+
+這條線將圖形附加到頁面上，準備好繪製。
+
+## 第6步：建立一個矩形實例
+
+接下來，我們將建立一個要填滿顏色的矩形。
+
+```csharp
 //建立矩形實例
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 120);
+```
+
+在此程式碼中，我們定義矩形的位置和大小。這些參數表示 x 和 y 座標、寬度和高度。
+
+## 第7步：指定填滿顏色
+
+現在，讓我們為矩形選擇一種顏色。在本例中，我們將其填充為紅色。
+
+```csharp
 //指定 Graph 物件的填滿顏色
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.Red;
+```
+
+該行將矩形的填滿顏色設定為紅色。你可以選擇任何你喜歡的顏色！
+
+## 第 8 步：將矩形加入圖表中
+
+矩形準備好後，就可以將其新增至圖表了。
+
+```csharp
 //將矩形物件新增至圖形物件的形狀集合中
 graph.Shapes.Add(rect);
+```
+
+此程式碼將矩形新增到圖形中，使其成為我們繪圖的一部分。
+
+## 第9步：儲存PDF文檔
+
+最後，我們需要將文檔儲存到指定的目錄中。
+
+```csharp
 dataDir = dataDir + "CreateFilledRectangle_out.pdf";
 //儲存 PDF 文件
 doc.Save(dataDir);
-Console.WriteLine("\nFilled rectangle object created successfully.\nFile saved at " + dataDir);            
-
 ```
+
+此程式碼保存 PDF 文件，名稱為`CreateFilledRectangle_out.pdf`在您之前指定的目錄中。
+
+## 第10步：確認訊息
+
+為了讓我們知道一切順利，我們可以列印一條確認訊息。
+
+```csharp
+Console.WriteLine("\nFilled rectangle object created successfully.\nFile saved at " + dataDir);
+```
+
+此行將在控制台中輸出一條訊息，確認填充矩形已成功建立。
 
 ## 結論
 
-在本教學中，我們說明如何使用 Aspose.PDF for .NET 建立填滿矩形。現在，您可以利用這些知識在 PDF 檔案中建立具有自訂填滿色彩的幾何形狀。
+現在你就得到它了！您已使用 Aspose.PDF for .NET 在 PDF 文件中成功建立了填滿矩形。這個強大的函式庫為 PDF 操作開闢了一個可能性的世界，讓您以程式設計方式建立令人驚嘆的文件。無論您是產生報表、發票或任何其他類型的 PDF，Aspose.PDF 都能滿足您的需求。
 
 ## 常見問題解答
 
-#### Q：本教學的目的是什麼？
+### 什麼是 Aspose.PDF for .NET？
+Aspose.PDF for .NET 是一個函式庫，可讓開發人員以程式設計方式建立、操作和轉換 PDF 文件。
 
-答：本教學的目的是引導您完成使用 Aspose.PDF for .NET 建立填滿矩形的過程，使您能夠在 PDF 檔案中新增具有填滿顏色的自訂幾何形狀。
+### 我可以免費使用 Aspose.PDF 嗎？
+是的，Aspose 提供免費試用版，您可以使用它來探索該程式庫的功能。你可以下載它[這裡](https://releases.aspose.com/).
 
-#### Q：開始之前需要什麼先決條件？
+### 有沒有辦法獲得 Aspose.PDF 支援？
+絕對地！您可以透過 Aspose 論壇獲得支持[這裡](https://forum.aspose.com/c/pdf/10).
 
-答：開始之前，請確保您已安裝 Aspose.PDF 庫並設定開發環境。此外，建議對 C# 程式設計有基本的了解。
+### 如何購買 Aspose.PDF？
+您可以造訪購買頁面購買Aspose.PDF[這裡](https://purchase.aspose.com/buy).
 
-#### Q：如何指定PDF檔案的保存目錄？
-
-答：在提供的原始程式碼中，您可以修改「dataDir」變數以指示要儲存產生的 PDF 檔案的目錄。
-
-#### Q：Graph 物件的用途是什麼？
-
-答：Graph 物件充當繪圖元素的容器。它是使用指定的尺寸創建的，並添加到頁面的段落集合中。
-
-#### Q：如何在 PDF 文件中新增填充矩形？
-
-答：若要新增填滿矩形，請建立具有指定尺寸和填滿顏色的 Rectangle 類別的實例，並將其新增至圖形的形狀集合中。
-
-#### Q：我可以自訂矩形的尺寸和填滿顏色嗎？
-
- A：是的，您可以透過修改傳入的參數來自訂矩形的尺寸和填滿顏色`Aspose.Pdf.Drawing.Rectangle`建構函數並設定 FillColor 屬性。
-
-#### Q：建立填滿矩形後如何儲存產生的 PDF 檔案？
-
-答：建立填滿矩形後，您可以使用以下命令儲存產生的 PDF 檔案：`doc.Save(dataDir + "CreateFilledRectangle_out.pdf");`提供的源代碼中的行。
+### 我可以使用 Aspose.PDF 建立哪些類型的形狀？
+您可以使用 Aspose.PDF 庫建立各種形狀，包括矩形、圓形、直線等。

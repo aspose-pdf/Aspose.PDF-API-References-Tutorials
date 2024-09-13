@@ -2,145 +2,121 @@
 title: وضع الصور
 linktitle: وضع الصور
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: تعرف على كيفية استخدام Aspose.PDF لـ .NET لوضع الصور في مستند PDF.
+description: تعرف على كيفية استخراج مواضع الصور في مستندات PDF ومعالجتها باستخدام Aspose.PDF for .NET. دليل خطوة بخطوة مع أمثلة ومقاطع تعليمات برمجية.
 type: docs
 weight: 170
 url: /ar/net/programming-with-images/image-placements/
 ---
-في هذا البرنامج التعليمي، سنستخدم مكتبة Aspose.PDF لـ .NET للعمل مع مستندات PDF وإجراء عمليات على الصور. سنقوم بتحميل مستند PDF واستخراج معلومات وضع الصورة واسترداد الصور بأبعادها المرئية.
+## مقدمة
 
-## الخطوة 1: إعداد البيئة
-قبل أن تبدأ، تأكد من إعداد بيئة التطوير الخاصة بك بما يلي:
-- تم تثبيت Aspose.PDF لـ .NET على جهازك.
-- مشروع AC# جاهز للاستخدام.
+قد يكون العمل مع الصور في ملفات PDF أمرًا صعبًا، ولكن باستخدام Aspose.PDF for .NET، يمكنك بسهولة معالجة واستخراج خصائص الصورة دون بذل أي جهد. سواء كنت تبحث عن الحصول على أبعاد الصورة أو استخراجها أو استرداد خصائص أخرى مثل الدقة، فإن Aspose.PDF لديه الأدوات التي تحتاجها. سيرشدك هذا البرنامج التعليمي خطوة بخطوة إلى كيفية استخراج مواضع الصور في مستند PDF باستخدام Aspose.PDF for .NET. سنغطي كل شيء من استيراد الحزم إلى استرداد خصائص الصورة مثل العرض والارتفاع والدقة.
 
-## الخطوة 2: تحميل مستند PDF
-للبدء، نحتاج إلى تحميل مستند PDF الذي نريد معالجته. تأكد من أن لديك المسار الصحيح للدليل الذي يحتوي على مستند PDF.
+## المتطلبات الأساسية
+
+قبل أن ننتقل إلى البرنامج التعليمي، هناك بعض الأشياء التي ستحتاج إلى وضعها في مكانها. إليك قائمة مرجعية سريعة:
+
+1.  Aspose.PDF for .NET: تأكد من تثبيت مكتبة Aspose.PDF for .NET. يمكنك تنزيلها[هنا](https://releases.aspose.com/pdf/net/).
+2. بيئة التطوير: ستحتاج إلى تثبيت Visual Studio أو أي بيئة تطوير متكاملة أخرى تدعم .NET على جهازك.
+3. مستند PDF: قم بإعداد مستند PDF نموذجي يحتوي على صور. في هذا المثال، سنستخدم ملفًا باسم`ImagePlacement.pdf`.
+4. المعرفة الأساسية بلغة C#: على الرغم من أن هذا الدليل مناسب للمبتدئين، إلا أن المعرفة الأساسية بلغة C# ستساعدك على فهم مقتطفات التعليمات البرمجية بشكل أفضل.
+
+## استيراد الحزم
+
+قبل أن ندخل في تفاصيل الكود، أول شيء عليك القيام به هو استيراد المساحات الأساسية اللازمة. هذه الحزم ضرورية للعمل مع مستندات PDF ومعالجة الصور في Aspose.PDF لـ .NET.
 
 ```csharp
-// المسار إلى دليل المستندات.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// تحميل مستند PDF المصدر
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "PlacementImage.pdf");
+using System.IO;
+using Aspose.Pdf;
+using System;
+using System.Drawing;
 ```
 
- تأكد من الاستبدال`"YOUR DOCUMENTS DIRECTORY"` مع المسار الفعلي إلى دليل المستندات الذي يحتوي على ملف PDF.
+تتيح لك هذه الحزم العمل مع ملفات PDF (`Aspose.Pdf`), التلاعب بمواضع الصور (`Aspose.Pdf.ImagePlacement`)، والتعامل مع تدفقات الصور والرسومات (`System.Drawing` و`System.IO`).
 
-## الخطوة 3: استخراج معلومات الموضع من الصور
- الآن بعد أن قمنا بتحميل مستند PDF، يمكننا استخراج معلومات الموضع من الصور. سنستخدم`ImagePlacementAbsorber`لاستيعاب مواقع الصور من الصفحة الأولى للمستند.
+الآن بعد أن أصبح لدينا المتطلبات الأساسية والحزم اللازمة، دعنا نقوم بتقسيم كل جزء من البرنامج التعليمي إلى دليل بسيط وسهل المتابعة.
+
+## الخطوة 1: تحميل مستند PDF
+
+الخطوة الأولى هي تحميل مستند PDF إلى مشروعك. سيكون هذا هو الأساس للعمل مع الصور داخل ملف PDF.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY"; 
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "ImagePlacement.pdf");
+```
+
+ في هذه الخطوة، نقوم بتحديد مسار ملف مستند PDF باستخدام`dataDir`ثم قم بإنشاء مثيل جديد من`Aspose.Pdf.Document` يسمح لنا هذا بتحميل ملف PDF إلى برنامجنا. الأمر بسيط، أليس كذلك؟ تمامًا مثل فتح كتاب لبدء القراءة، فنحن الآن مستعدون لاستكشاف المحتوى الموجود بداخله.
+
+## الخطوة 2: تهيئة ممتص وضع الصورة
+
+لاستخراج الصور، نحتاج إلى شيء يسمى "ممتص وضع الصور". فكر فيه كأداة تمتص كل معلومات الصورة الموجودة على صفحة معينة.
 
 ```csharp
 ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
-// تحميل محتوى الصفحة الأولى
+```
+
+ هنا، نقوم بإنشاء مثيل لـ`ImagePlacementAbsorber`سيقوم هذا الكائن بجمع وتخزين المعلومات حول جميع مواضع الصور على صفحة PDF معينة. تخيل الأمر كما لو كنت تقوم بمسح صفحة باستخدام عدسة مكبرة وتحديد جميع الصور الموجودة عليها!
+
+## الخطوة 3: قبول الامتصاص في الصفحة الأولى
+
+بعد ذلك، نحتاج إلى إخبار الممتص بالصفحة التي يجب مسحها ضوئيًا من ملف PDF. في هذا المثال، سنركز على الصفحة الأولى.
+
+```csharp
 doc.Pages[1].Accept(abs);
 ```
 
-لقد قمنا الآن باستخراج معلومات وضع الصورة من الصفحة الأولى للمستند.
+ ال`Accept` تقوم الطريقة بمسح الصفحة الأولى من مستند PDF بحثًا عن أي صور وتخزين النتائج داخل`ImagePlacementAbsorber`إنه مثل إخبار العدسة المكبرة بمكان البحث عن الصور.
 
-## الخطوة 4: استرداد الصور ذات الأبعاد المرئية
-سنقوم الآن باسترجاع الصور مع أبعادها المرئية من معلومات الموضع التي استخرجناها سابقًا.
+## الخطوة 4: تكرار كل موضع للصورة
+
+الآن بعد أن قمنا بمسح الصفحة، نحتاج إلى المرور على كل صورة موجودة على الصفحة واسترجاع خصائصها.
 
 ```csharp
-foreach(ImagePlacement imagePlacement in abs.ImagePlacements)
-{
-     // الحصول على خصائص الصورة
-     Console.Out.WriteLine("Image Width: " + imagePlacement.Rectangle.Width);
-     Console.Out.WriteLine("Image Height: " + imagePlacement.Rectangle.Height);
-     Console.Out.WriteLine("LLX of image: " + imagePlacement.Rectangle.LLX);
-     Console.Out.WriteLine("LLY of image: " + imagePlacement.Rectangle.LLY);
-     Console.Out.WriteLine("Horizontal resolution of the image
-
-  : " + imagePlacement.Resolution.X);
-     Console.Out.WriteLine("Vertical image resolution: " + imagePlacement.Resolution.Y);
-
-     // استرداد الصورة ذات الأبعاد المرئية
-     Bitmap scaledImage;
-     using (MemoryStream imageStream = new MemoryStream())
-     {
-         // احصل على الصورة من المصادر
-         imagePlacement.Image.Save(imageStream, System.Drawing.Imaging.ImageFormat.Png);
-         Bitmap resourceImage = (Bitmap)Bitmap.FromStream(imageStream);
-
-         // إنشاء صورة بأبعاد فعلية
-         scaledImage = new Bitmap(resourceImage, (int)imagePlacement.Rectangle.Width, (int)imagePlacement.Rectangle.Height);
-     }
-}
-```
-
-في هذه الحلقة، نسترد خصائص كل صورة، مثل العرض والارتفاع وإحداثيات X وY للزاوية اليسرى السفلية والدقة الأفقية والرأسية. ثم نسترد كل صورة بأبعادها المرئية باستخدام معلومات الموضع.
-
-### عينة من كود المصدر لوضع الصور باستخدام Aspose.PDF لـ .NET 
-```csharp
-// المسار إلى دليل المستندات.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// تحميل مستند PDF المصدر
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "ImagePlacement.pdf");
-ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
-// تحميل محتويات الصفحة الأولى
-doc.Pages[1].Accept(abs);
 foreach (ImagePlacement imagePlacement in abs.ImagePlacements)
 {
-	// الحصول على خصائص الصورة
-	Console.Out.WriteLine("image width:" + imagePlacement.Rectangle.Width);
-	Console.Out.WriteLine("image height:" + imagePlacement.Rectangle.Height);
-	Console.Out.WriteLine("image LLX:" + imagePlacement.Rectangle.LLX);
-	Console.Out.WriteLine("image LLY:" + imagePlacement.Rectangle.LLY);
-	Console.Out.WriteLine("image horizontal resolution:" + imagePlacement.Resolution.X);
-	Console.Out.WriteLine("image vertical resolution:" + imagePlacement.Resolution.Y);
-	// استرداد الصورة ذات الأبعاد المرئية
-	Bitmap scaledImage;
-	using (MemoryStream imageStream = new MemoryStream())
-	{
-		// استرجاع الصورة من المصادر
-		imagePlacement.Image.Save(imageStream, System.Drawing.Imaging.ImageFormat.Png);
-		Bitmap resourceImage = (Bitmap)Bitmap.FromStream(imageStream);
-		//إنشاء خريطة نقطية بأبعاد فعلية
-		scaledImage = new Bitmap(resourceImage, (int)imagePlacement.Rectangle.Width, (int)imagePlacement.Rectangle.Height);
-	}
+    Console.Out.WriteLine("image width:" + imagePlacement.Rectangle.Width);
+    Console.Out.WriteLine("image height:" + imagePlacement.Rectangle.Height);
+    Console.Out.WriteLine("image LLX:" + imagePlacement.Rectangle.LLX);
+    Console.Out.WriteLine("image LLY:" + imagePlacement.Rectangle.LLY);
+    Console.Out.WriteLine("image horizontal resolution:" + imagePlacement.Resolution.X);
+    Console.Out.WriteLine("image vertical resolution:" + imagePlacement.Resolution.Y);
 }
 ```
 
+تمر هذه الحلقة عبر كل صورة موجودة على الصفحة. نقوم بطباعة العرض والارتفاع ومحور x السفلي الأيسر (LLX) ومحور y السفلي الأيسر (LLY) ودقة الصورة (أفقيًا ورأسيًا). تساعدك هذه التفاصيل على فهم حجم كل صورة وموقعها داخل ملف PDF.
+
+## الخطوة 5: استخراج الصورة ذات الأبعاد المرئية
+
+بعد جمع المعلومات حول الصور، قد ترغب في استخراج الصورة الفعلية مع أبعادها. وإليك كيفية القيام بذلك.
+
+```csharp
+Bitmap scaledImage;
+using (MemoryStream imageStream = new MemoryStream())
+{
+    imagePlacement.Image.Save(imageStream, System.Drawing.Imaging.ImageFormat.Png);
+    Bitmap resourceImage = (Bitmap)Bitmap.FromStream(imageStream);
+    scaledImage = new Bitmap(resourceImage, (int)imagePlacement.Rectangle.Width, (int)imagePlacement.Rectangle.Height);
+}
+```
+
+ يقوم مقتطف التعليمات البرمجية هذا باسترجاع الصورة من ملف PDF وقياسها إلى أبعادها الفعلية كما هو محدد في`ImagePlacement` من خلال حفظ الصورة في مجرى ذاكرة وتغيير حجمها، يمكنك التأكد من أن الصورة التي تستخرجها تحافظ على الحجم الدقيق الذي تم عرضها به في ملف PDF.
+
 ## خاتمة
-تهانينا! لقد تعلمت الآن كيفية استخدام Aspose.PDF لـ .NET لإجراء عمليات وضع الصور في مستند PDF. لقد شرحنا الكود المصدري C# المقدم، والذي يسمح لك بتحميل مستند PDF، واستخراج معلومات الوضع من الصور، واسترداد الصور بأبعادها المرئية. لا تتردد في تجربة المزيد مع Aspose.PDF لاستكشاف العديد من ميزاته الأخرى.
 
-### الأسئلة الشائعة
+إن استخراج مواضع الصور من مستند PDF باستخدام Aspose.PDF لـ .NET أمر بسيط للغاية بمجرد تقسيمه خطوة بخطوة. لقد قمنا بتغطية كل شيء من تحميل ملف PDF إلى استرداد خصائص الصورة واستخراج الصور بأبعادها الفعلية. يجعل Aspose.PDF العمل مع ملفات PDF ومعالجة المحتوى أمرًا بسيطًا للغاية، مما يسمح لك بالعمل بكفاءة مع الصور والنصوص وغير ذلك الكثير.
 
-#### س: ما هو الغرض من استخراج معلومات وضع الصورة من مستند PDF باستخدام Aspose.PDF لـ .NET؟
+## الأسئلة الشائعة
 
-أ: يتيح لك استخراج معلومات وضع الصورة استرجاع موضع الصور وأبعادها ودقتها داخل مستند PDF. تعد هذه المعلومات ضرورية لمعالجة الصور وتحليلها بدقة.
+### هل يمكنني استخراج الصور من صفحة معينة من ملف PDF؟  
+ نعم، عن طريق تحديد رقم الصفحة عند استخدام`Accept` بهذه الطريقة، يمكنك التركيز على أي صفحة معينة.
 
-#### س: كيف يسهل Aspose.PDF for .NET استخراج معلومات وضع الصورة من مستند PDF؟
+### ما هي صيغ الصور المدعومة للاستخراج؟  
+يدعم Aspose.PDF تنسيقات مختلفة، بما في ذلك PNG، وJPEG، وBMP، والمزيد.
 
- أ: يوفر Aspose.PDF لـ .NET`ImagePlacementAbsorber`فئة يمكن استخدامها لاستيعاب تفاصيل وضع الصورة من مستند PDF. يوضح الكود المقدم كيفية استخدام هذه الفئة لاسترجاع معلومات وضع الصورة.
+### هل من الممكن التلاعب بالصورة المستخرجة؟  
+ بالتأكيد! بمجرد استخراجه، يمكنك استخدام`System.Drawing` مساحة اسمية للتعامل مع الصورة.
 
-#### س: ما هي المعلومات التي يمكن استخدامها لتحديد موضع الصورة في السيناريوهات الواقعية؟
+### هل يمكنني استخراج الصور من ملفات PDF المحمية بكلمة مرور؟  
+نعم، يمكنك القيام بذلك، ولكنك ستحتاج إلى إلغاء قفل ملف PDF باستخدام بيانات الاعتماد المناسبة قبل استخراج الصور.
 
-أ: تُعد معلومات وضع الصورة مفيدة للمهام مثل ضمان محاذاة الصورة بدقة، وحساب أبعاد الصورة، والتحقق من جودة الصورة، وإنشاء تقارير حول استخدام الصورة داخل مستند PDF.
-
-#### س: كيف تضمن عينة التعليمات البرمجية استخراجًا دقيقًا لمعلومات وضع الصورة؟
-
- أ: تستخدم عينة التعليمات البرمجية`ImagePlacementAbsorber` فئة لاجتياز محتويات صفحة محددة، وتحديد مواضع الصور، واسترجاع سماتها، مثل العرض والارتفاع والإحداثيات والدقة.
-
-#### س: هل يمكن توسيع الكود لمعالجة الصور عبر صفحات أو مستندات متعددة؟
-
-ج: نعم، يمكن توسيع الكود عن طريق التكرار عبر صفحات أو مستندات متعددة لاستخراج معلومات وضع الصورة وأداء المهام المتعلقة بالصورة.
-
-#### س: كيف يقوم الكود باسترجاع الصور مع أبعادها المرئية بناءً على معلومات الموضع؟
-
-أ: تقوم عينة التعليمات البرمجية باستخراج بيانات الصورة من الموارد، وإنشاء صورة نقطية بالأبعاد الفعلية، وتوفير خصائص مثل العرض والارتفاع والإحداثيات والدقة.
-
-#### س: هل هذا النهج فعال لمستندات PDF الكبيرة التي تحتوي على عدد كبير من الصور؟
-
-ج: نعم، تم تحسين Aspose.PDF for .NET لتحسين الأداء واستخدام الموارد. فهو يستخرج معلومات وضع الصور بكفاءة حتى من مستندات PDF كبيرة الحجم.
-
-#### س: كيف يمكن للمطورين الاستفادة من فهم معلومات وضع الصور والاستفادة منها؟
-
-أ: يمكن للمطورين ضمان معالجة الصور ومحاذاتها وتحليلها بدقة داخل مستندات PDF. تمكنهم هذه المعلومات من إنشاء تطبيقات لمعالجة الصور وإعداد التقارير وضمان الجودة.
-
-#### س: هل يمكن تخصيص الكود لاستخراج سمات أو بيانات وصفية إضافية متعلقة بالصورة؟
-
-ج: بالتأكيد، يمكن تحسين الكود لاستخراج سمات إضافية، مثل نوع الصورة، ومساحة اللون، والضغط، والمزيد، من خلال الاستفادة من الفئات والطرق المناسبة التي يوفرها Aspose.PDF لـ .NET.
-
-#### س: ما أهمية الاستنتاج المقدم في هذا البرنامج التعليمي؟
-
-أ: يلخص الاستنتاج محتوى البرنامج التعليمي ويشجع على المزيد من الاستكشاف لـ Aspose.PDF لـ .NET للاستفادة من قدراته التي تتعدى وضع الصور، مما يفتح الأبواب أمام العديد من المهام المتعلقة بـ PDF.
+### هل يعمل Aspose.PDF for .NET على جميع أطر عمل .NET؟  
+نعم، فهو يدعم .NET Framework، و.NET Core، و.NET 5 وما فوق.

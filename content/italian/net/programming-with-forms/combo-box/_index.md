@@ -2,125 +2,124 @@
 title: Casella combinata
 linktitle: Casella combinata
 second_title: Riferimento API Aspose.PDF per .NET
-description: Crea facilmente elenchi di caselle combinate nei tuoi documenti PDF utilizzando Aspose.PDF per .NET.
+description: Scopri come aggiungere una Combo Box a un PDF usando Aspose.PDF per .NET. Segui la nostra guida passo passo per creare facilmente moduli PDF interattivi.
 type: docs
 weight: 30
 url: /it/net/programming-with-forms/combo-box/
 ---
-In questo tutorial, ti mostreremo come creare un elenco di caselle combinate usando Aspose.PDF per .NET. Spiegheremo il codice sorgente C# passo dopo passo per guidarti attraverso questo processo.
+## Introduzione
 
-## Fase 1: Preparazione
+Ti sei mai chiesto come creare moduli interattivi nei tuoi PDF usando .NET? Uno degli elementi chiave che puoi aggiungere è una Combo Box, che consente agli utenti di selezionare da un elenco di opzioni. Questo è utile quando sviluppi moduli per sondaggi, applicazioni o questionari. Fortunatamente, Aspose.PDF per .NET rende questo processo estremamente semplice. Oggi, ti mostreremo come aggiungere una Combo Box a un PDF usando Aspose.PDF per .NET. Alla fine di questa guida, non solo saprai come implementarla, ma ti sentirai anche sicuro della tua capacità di personalizzare i moduli in un PDF.
 
-Per prima cosa, assicurati di aver importato le librerie necessarie e di aver impostato il percorso alla directory dei documenti:
+## Prerequisiti
+
+Prima di immergerci nel codice, assicuriamoci di avere tutto il necessario per iniziare:
+
+- Aspose.PDF per la libreria .NET: scaricala e installala da[Pagina di download di Aspose.PDF per .NET](https://releases.aspose.com/pdf/net/).
+- Un ambiente di sviluppo .NET, come Visual Studio.
+- Conoscenza di base della programmazione C# e di come lavorare con le applicazioni .NET.
+-  Una licenza Aspose.PDF valida (è possibile ottenere una[licenza temporanea](https://purchase.aspose.com/temporary-license/) oppure utilizzarlo in modalità di prova).
+
+Una volta soddisfatti questi prerequisiti, sei pronto per tuffarti nel divertimento della programmazione!
+
+## Importazione degli spazi dei nomi
+
+Prima di scrivere qualsiasi codice, devi importare i namespace necessari nel tuo progetto. Questo è essenziale per accedere alle classi e ai metodi che ti consentiranno di manipolare i PDF.
+
+Ecco una rapida occhiata agli spazi dei nomi di cui avrai bisogno:
 
 ```csharp
+using System;
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Forms;
+```
+
+ Queste tre linee assicurano l'accesso alle classi richieste, come`Document`, `ComboBoxField`e altre utilità fornite da Aspose.PDF per .NET.
+
+In questa guida, suddivideremo il processo in semplici passaggi per renderlo facile da seguire. Cominciamo!
+
+## Passaggio 1: impostare il documento
+
+La prima cosa di cui hai bisogno è un documento PDF con cui lavorare. Creiamo un nuovo PDF da zero e aggiungiamoci una pagina.
+
+```csharp
+// Percorso verso la directory dei documenti.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-```
-
-## Passaggio 2: creare un oggetto documento
-
-Crea un oggetto Documento per contenere il modulo PDF:
-
-```csharp
+// Crea oggetto Documento
 Document doc = new Document();
-```
-
-## Passaggio 3: aggiungere una pagina
-
-Aggiungere una pagina al documento:
-
-```csharp
+// Aggiungi pagina all'oggetto documento
 doc.Pages.Add();
 ```
 
-## Passaggio 4: creare un'istanza di un oggetto ComboBoxField
+ Qui, iniziamo un`Document` oggetto e aggiungi una nuova pagina vuota. Puoi pensare a`Document` oggetto come una tela bianca. Senza una pagina, è come cercare di disegnare sul nulla: hai bisogno di quella base!
 
-Creare un oggetto ComboBoxField con le dimensioni desiderate:
+## Passaggio 2: creare un'istanza del campo casella combinata
+
+Ora che abbiamo impostato il nostro documento, è il momento di creare la Combo Box. Immagina una Combo Box come un menu a discesa che apparirà sul PDF affinché gli utenti possano selezionare un'opzione.
 
 ```csharp
+// Crea un'istanza dell'oggetto Campo ComboBox
 ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 600, 150, 616));
 ```
 
-## Passaggio 5: aggiungere opzioni all'elenco a discesa
+ In questo passaggio creiamo un`ComboBoxField` oggetto. I parametri nel costruttore definiscono dove nella pagina apparirà la Combo Box. Utilizziamo le coordinate (100, 600, 150, 616) per specificare la posizione e la dimensione della Combo Box sulla pagina PDF.
 
-Aggiungere le opzioni desiderate all'elenco a discesa:
+## Passaggio 3: aggiungere opzioni alla casella combinata
+
+La Combo Box non sarebbe molto utile senza opzioni! Aggiungiamo alcuni colori come opzioni tra cui gli utenti possono scegliere.
 
 ```csharp
+//Aggiungi opzioni a ComboBox
 combo.AddOption("Red");
 combo.AddOption("Yellow");
 combo.AddOption("Green");
 combo.AddOption("Blue");
 ```
 
-## Passaggio 6: aggiungere l'elenco delle caselle combinate al modulo
+Qui abbiamo aggiunto quattro opzioni di colore: Rosso, Giallo, Verde e Blu. Ognuna di queste opzioni sarà disponibile per gli utenti da selezionare nel menu a discesa.
 
-Aggiungere l'oggetto ComboBoxField alla raccolta Campi modulo documento:
+## Passaggio 4: aggiungere la casella combinata alla raccolta dei campi del modulo
+
+Ora che abbiamo creato la casella combinata e aggiunto le opzioni, dobbiamo posizionarla nei campi modulo del documento PDF.
 
 ```csharp
+// Aggiungere un oggetto casella combinata alla raccolta di campi del modulo dell'oggetto documento
 doc.Form.Add(combo);
 ```
 
-## Passaggio 7: Salvare il documento
+Questa riga di codice aggiunge essenzialmente il campo Combo Box ai campi del modulo del PDF. Immagina di incorporare il menu a discesa nel documento stesso in modo che possa essere effettivamente utilizzato.
 
-Salva il documento PDF:
+## Passaggio 5: Salvare il documento
+
+Una volta impostato tutto, non ti resta che salvare il documento per vedere la tua Combo Box in azione.
 
 ```csharp
 dataDir = dataDir + "ComboBox_out.pdf";
+// Salva il documento PDF
 doc.Save(dataDir);
+Console.WriteLine("\nCombobox field added successfully.\nFile saved at " + dataDir);
 ```
 
-### Esempio di codice sorgente per Combo Box utilizzando Aspose.PDF per .NET 
-```csharp
-try
-{
-	// Percorso verso la directory dei documenti.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Crea oggetto Documento
-	Document doc = new Document();
-	// Aggiungi pagina all'oggetto documento
-	doc.Pages.Add();
-	// Crea un'istanza dell'oggetto Campo ComboBox
-	ComboBoxField combo = new ComboBoxField(doc.Pages[1], new Aspose.Pdf.Rectangle(100, 600, 150, 616));
-	// Aggiungi opzione a ComboBox
-	combo.AddOption("Red");
-	combo.AddOption("Yellow");
-	combo.AddOption("Green");
-	combo.AddOption("Blue");
-	// Aggiungere un oggetto casella combinata alla raccolta di campi del modulo dell'oggetto documento
-	doc.Form.Add(combo);
-	dataDir = dataDir + "ComboBox_out.pdf";
-	// Salva il documento PDF
-	doc.Save(dataDir);
-	Console.WriteLine("\nCombobox field added successfully.\nFile saved at " + dataDir);
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+ Salviamo il documento in un file denominato`ComboBox_out.pdf`. L'output della console ti fa sapere che il file è stato salvato correttamente. Ora, vai a controllare la tua directory di output e troverai il PDF con la tua Combo Box pronta per l'azione!
 
 ## Conclusione
 
-In questo tutorial, abbiamo imparato come creare un elenco di caselle combinate usando Aspose.PDF per .NET. Seguendo questi passaggi, puoi facilmente aggiungere un elenco di caselle combinate ai tuoi documenti PDF usando Aspose.PDF.
+Ed ecco fatto! In soli cinque semplici passaggi, hai aggiunto con successo una Combo Box a un PDF usando Aspose.PDF per .NET. Questa potente funzionalità è solo una delle tante che Aspose.PDF fornisce per personalizzare e manipolare i documenti PDF. Che tu stia creando moduli complessi o semplici menu a discesa, Aspose.PDF per .NET ha tutto ciò che ti serve. Ora che hai visto quanto è facile, perché non esplori altri campi modulo come caselle di controllo, campi di testo o pulsanti di scelta?
 
-### Domande frequenti
+## Domande frequenti
 
-#### D: Posso personalizzare l'aspetto dell'elenco delle caselle combinate utilizzando Aspose.PDF per .NET?
+### Posso aggiungere altre opzioni alla casella combinata dopo averla creata?
+ Sì! Puoi sempre modificare il`ComboBoxField` oggetto per aggiungere altre opzioni prima di salvare il documento.
 
-R: Sì, puoi personalizzare l'aspetto dell'elenco delle caselle combinate utilizzando Aspose.PDF per .NET. Puoi impostare proprietà come dimensione del carattere, colore, colore di sfondo, stile del bordo e altro ancora per adattarlo all'aspetto desiderato.
+### È possibile modificare le dimensioni della casella combinata?
+ Assolutamente. Puoi regolare le dimensioni del rettangolo in`ComboBoxField` costruttore per ridimensionare la casella combinata.
 
-#### D: Posso impostare le opzioni selezionate predefinite nell'elenco della casella combinata?
+### Aspose.PDF per .NET supporta altri campi modulo?
+Sì, Aspose.PDF supporta una varietà di campi modulo, tra cui caselle di testo, pulsanti di scelta e caselle di controllo.
 
- A: Sì, puoi impostare le opzioni selezionate predefinite nell'elenco della casella combinata utilizzando Aspose.PDF per .NET. Puoi utilizzare`Selected` proprietà del`ComboBoxField` oggetto per contrassegnare una o più opzioni come selezionate per impostazione predefinita.
+### Posso usare questo codice con un documento PDF esistente?
+Sì, invece di creare un nuovo documento, puoi caricare un PDF esistente e aggiungervi la casella combinata.
 
-#### D: Come posso recuperare il valore selezionato dall'elenco della casella combinata dopo che l'utente ha effettuato una selezione?
-
- A: Puoi recuperare il valore selezionato dall'elenco della casella combinata utilizzando Aspose.PDF per .NET. Dopo che l'utente ha effettuato una selezione, puoi accedere a`Value` proprietà del`ComboBoxField`oggetto per ottenere il valore selezionato.
-
-#### D: È possibile aggiungere gestori di eventi o azioni all'elenco della casella combinata?
-
- R: Sì, Aspose.PDF per .NET consente di aggiungere gestori di eventi o azioni all'elenco delle caselle combinate. È possibile associare azioni JavaScript, come`OnValueChanged`, all'elenco della casella combinata per eseguire azioni specifiche quando l'utente seleziona un'opzione.
-
-#### D: Posso aggiungere descrizioni o suggerimenti alle opzioni nell'elenco della casella combinata?
-
- A: Sì, puoi aggiungere suggerimenti o descrizioni alle opzioni nell'elenco della casella combinata utilizzando Aspose.PDF per .NET. Puoi impostare`AlternateName` proprietà di ciascuna opzione per fornire un suggerimento o una descrizione che verrà visualizzata quando l'utente passa il mouse sull'opzione.
+### Ho bisogno di una licenza per utilizzare Aspose.PDF per .NET?
+ Mentre Aspose.PDF per .NET offre una prova gratuita, avrai bisogno di una licenza valida per la piena funzionalità. Puoi ottenere una[licenza temporanea](https://purchase.aspose.com/temporary-license/) per testare tutte le funzionalità.

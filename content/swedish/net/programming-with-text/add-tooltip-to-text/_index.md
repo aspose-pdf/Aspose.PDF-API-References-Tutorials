@@ -1,7 +1,7 @@
 ---
 title: Lägg till verktygstips till text i PDF-fil
 linktitle: Lägg till verktygstips till text i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du lägger till verktygstips till text i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 90
@@ -32,7 +32,7 @@ using Aspose.Pdf.Text;
  I koden, lokalisera raden som säger`string dataDir = "YOUR DOCUMENT DIRECTORY";` och byt ut`"YOUR DOCUMENT DIRECTORY"` med sökvägen till katalogen där dina dokument är lagrade.
 
 ## Steg 4: Skapa ett exempeldokument med text
- Skapa en ny`Document` objekt och lägg till sidor med textfragment. I den medföljande koden läggs två textfragment till dokumentet med respektive verktygstipstext.
+ Skapa en ny`Document`objekt och lägg till sidor med textfragment. I den medföljande koden läggs två textfragment till dokumentet med respektive verktygstipstext.
 
 ```csharp
 Document doc = new Document();
@@ -98,7 +98,7 @@ doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to disp
 doc.Save(outputFile);
 // Öppna dokument med text
 Document document = new Document(outputFile);
-// Skapa TextAbsorber-objekt för att hitta alla fraser som matchar det reguljära uttrycket
+//Skapa TextAbsorber-objekt för att hitta alla fraser som matchar det reguljära uttrycket
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
 // Acceptera absorbenten för dokumentsidorna
 document.Pages.Accept(absorber);
@@ -169,7 +169,7 @@ using Aspose.Pdf.Text;
 
 #### F: Hur lägger jag till verktygstips i textfragmenten?
 
- S: I steg 6 går du igenom de extraherade textfragmenten och skapar osynliga knappar vid deras positioner. Verktygstipstexten är tilldelad till`AlternateName` egendom av`ButtonField`som läggs till i dokumentets formulär.
+ S: I steg 6 går du igenom de extraherade textfragmenten och skapar osynliga knappar vid deras positioner. Verktygstipstexten är tilldelad till`AlternateName` egendom av`ButtonField`, som läggs till i dokumentets formulär.
 
 #### F: Hur upprepar jag processen för ytterligare textfragment med långa verktygstips?
 

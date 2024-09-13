@@ -2,140 +2,146 @@
 title: Nomor Halaman Di Header Footer Menggunakan Floating Box
 linktitle: Nomor Halaman Di Header Footer Menggunakan Floating Box
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Pelajari cara menambahkan nomor halaman di header dan footer dokumen PDF dengan Aspose.PDF untuk .NET.
+description: Tambahkan nomor halaman dengan mudah di header dan footer PDF Anda menggunakan Kotak Mengambang dengan Aspose.PDF untuk .NET dalam tutorial langkah demi langkah ini.
 type: docs
 weight: 150
 url: /id/net/programming-with-stamps-and-watermarks/page-number-in-header-footer-using-floating-box/
 ---
-Dalam tutorial ini, kami akan memandu Anda langkah demi langkah tentang cara menambahkan nomor halaman di header dan footer dokumen PDF menggunakan FloatingBox dengan Aspose.PDF untuk .NET. Kami akan menggunakan kode sumber C# yang disediakan untuk membuat dokumen PDF, menambahkan halaman, membuat FloatingBox, mengatur posisinya dan menambahkan nomor halaman ke dalamnya, lalu menyimpan dokumen PDF yang dimodifikasi.
+## Perkenalan
 
-## Langkah 1: Menyiapkan lingkungan
+Jika berbicara tentang pengelolaan dokumen PDF secara terprogram, Aspose.PDF untuk .NET menonjol sebagai alat yang luar biasa. Alat ini menyederhanakan cara kita membuat, mengedit, dan memanipulasi file PDF dalam aplikasi .NET. Baik Anda membuat faktur, laporan, atau jenis dokumen apa pun, menambahkan nomor halaman secara elegan dapat meningkatkan profesionalisme dan pengaturan PDF Anda. Dalam tutorial ini, kita akan membahas cara menambahkan nomor halaman di header dan footer PDF Anda menggunakan Floating Box. Siap untuk memulai? Ayo!
 
-Sebelum memulai, pastikan Anda memiliki hal berikut:
+## Prasyarat
 
-- Lingkungan pengembangan .NET yang terinstal.
-- Pustaka Aspose.PDF untuk .NET diunduh dan dirujuk dalam proyek Anda.
+Sebelum kita memulai perjalanan menarik ini ke dalam dunia manipulasi PDF, ada beberapa hal yang perlu Anda miliki:
 
-## Langkah 2: Membuat dokumen PDF dan menambahkan halaman
+### Pengaturan Lingkungan .NET
+Pastikan Anda memiliki lingkungan pengembangan .NET. Anda dapat menggunakan Visual Studio, yang merupakan pilihan populer di kalangan pengembang untuk aplikasi .NET.
 
-Langkah pertama adalah membuat contoh dokumen PDF dan menambahkan halaman ke dalamnya. Berikut caranya:
+### Pustaka Aspose.PDF
+Instal pustaka Aspose.PDF. Anda dapat mengunduhnya dengan mudah dari situs web:
+
+- [Unduh Aspose.PDF untuk .NET](https://releases.aspose.com/pdf/net/)
+
+### Pengetahuan Dasar Pemrograman C#
+Pemahaman dasar tentang C# akan membantu Anda memahami konsep dan potongan kode yang disajikan dalam tutorial ini.
+
+### Akses ke Dokumentasi
+ Selalu bermanfaat untuk memiliki[Dokumentasi Aspose.PDF](https://reference.aspose.com/pdf/net/) berguna untuk referensi dan eksplorasi lebih dalam terhadap fungsi tambahan apa pun.
+
+## Paket Impor
+
+Untuk memulai, Anda perlu mengimpor paket yang diperlukan ke dalam proyek Anda. Ini memastikan bahwa assembly Aspose.PDF dapat diakses untuk digunakan dalam kode Anda. Berikut cara melakukannya:
 
 ```csharp
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// Membuat instance dokumen PDF
-Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
-
-// Tambahkan halaman ke dokumen PDF
-Aspose.Pdf.Page page = pdf.Pages.Add();
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-Pastikan untuk mengganti "DIREKTORI DOKUMEN ANDA" dengan jalur sebenarnya ke direktori tempat Anda ingin menyimpan dokumen PDF.
+Sekarang, mari kita uraikan proses penambahan nomor halaman menggunakan Floating Box menjadi beberapa langkah yang mudah dikelola. Ikuti langkah-langkahnya.
 
-## Langkah 3: Membuat FloatingBox dan menambahkan nomor halaman
+## Langkah 1: Siapkan Lingkungan Dokumen Anda
 
-Sekarang halaman tersebut telah ditambahkan ke dokumen PDF, kita dapat membuat FloatingBox, mengatur posisinya, dan menambahkan nomor halaman ke dalamnya. Berikut caranya:
-
-```csharp
-// Buat FloatingBox dengan lebar 140 dan tinggi 80
-Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
-
-// Mengatur posisi kiri paragraf
-box1. Left = 2;
-
-// Mengatur posisi atas paragraf
-box1. Top = 10;
-
-// Tambahkan nomor halaman ke FloatingBox
-box1.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Page: ($p/ $P )"));
-
-// Tambahkan FloatingBox ke halaman
-page.Paragraphs.Add(box1);
-```
-
-Kode di atas membuat FloatingBox dengan lebar 140 dan tinggi 80. Selanjutnya, kita atur posisinya dengan menentukan nilai kiri dan atas. Terakhir, kita tambahkan nomor halaman ke FloatingBox menggunakan TextFragment yang berisi sintaks "($p/ $P )" yang akan diganti dengan nomor halaman saat ini dan jumlah total halaman.
-
-## Langkah 4: Menyimpan dokumen PDF yang dimodifikasi
-
-Setelah nomor halaman ditambahkan ke header atau footer menggunakan FloatingBox, kita dapat menyimpan dokumen PDF yang dimodifikasi. Berikut caranya:
+Mari kita mulai dengan menentukan direktori tempat dokumen PDF Anda akan disimpan. Ini penting karena menentukan di mana file output Anda akan disimpan.
 
 ```csharp
-// Simpan dokumen PDF yang dimodifikasi
-pdf.Save(dataDir + "PageNumberinHeaderFooterUsingFloatingBox_out.pdf");
-```
-
-Kode di atas menyimpan dokumen PDF yang telah diedit ke direktori yang ditentukan.
-
-### Contoh kode sumber untuk Nomor Halaman di Header dan Footer Menggunakan Kotak Mengambang menggunakan Aspose.PDF untuk .NET 
-```csharp
-
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+ Mengganti`YOUR DOCUMENT DIRECTORY` dengan jalur pilihan Anda di mana Anda ingin menyimpan berkas PDF keluaran.
+
+## Langkah 2: Buat Instansiasi Dokumen
+
+ Membuat dokumen PDF baru adalah langkah selanjutnya. Ini melibatkan penggunaan`Document` kelas dari pustaka Aspose.PDF.
+
+```csharp
 // Membuat contoh dokumen
 Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
+```
+ Di sini, kita membuat contoh baru dari`Document` kelas, yang berfungsi sebagai kanvas untuk manipulasi.
 
-// Tambahkan Halaman ke dalam dokumen pdf
+## Langkah 3: Tambahkan Halaman Baru
+
+Sekarang, mari tambahkan satu halaman ke dokumen PDF kita. Setiap PDF memerlukan setidaknya satu halaman, bukan?
+
+```csharp
+// Tambahkan Halaman ke dalam dokumen PDF
 Aspose.Pdf.Page page = pdf.Pages.Add();
+```
+Potongan kode ini menambahkan halaman baru ke dokumen kita, membuatnya siap menerima konten, termasuk kotak mengambang dengan nomor halaman.
 
+## Langkah 4: Buat Kotak Mengambang
+
+ Selanjutnya, saatnya membuat Kotak Mengambang yang akan menampung nomor halaman.`FloatingBox`kelas memungkinkan kita untuk memposisikan konten secara bebas di halaman.
+
+```csharp
 // Menginisialisasi instance baru dari kelas FloatingBox
 Aspose.Pdf.FloatingBox box1 = new Aspose.Pdf.FloatingBox(140, 80);
+```
+ Di sini, parameternya`(140, 80)` Tentukan lebar dan tinggi Kotak Terapung. Anda dapat menyesuaikan nilai ini berdasarkan preferensi tata letak Anda.
 
+## Langkah 5: Memposisikan Kotak Mengambang
+
+ Penempatan adalah kuncinya! Anda ingin menentukan di mana nomor halaman akan muncul di halaman. Anda akan bekerja dengan`Left` Dan`Top` properti untuk menentukan posisi.
+
+```csharp
 // Nilai float yang menunjukkan posisi kiri paragraf
 box1.Left = 2;
-
 // Nilai float yang menunjukkan posisi teratas paragraf
 box1.Top = 10;
+```
+Nilai-nilai ini menentukan penempatan Floating Box pada halaman. Jangan ragu untuk bereksperimen dengan nilai-nilai ini untuk melihat apa yang paling cocok untuk dokumen Anda.
 
+## Langkah 6: Tambahkan Teks dengan Makro Nomor Halaman
+
+Sekarang, kita akan menambahkan string yang secara dinamis menampilkan nomor halaman. Di sinilah keajaiban terjadi!
+
+```csharp
 // Tambahkan makro ke koleksi paragraf FloatingBox
 box1.Paragraphs.Add(new Aspose.Pdf.Text.TextFragment("Page: ($p/ $P )"));
+```
+ Dalam kasus ini,`($p/ $P)`adalah makro yang akan menampilkan nomor halaman saat ini (`$p`) dan jumlah halaman total (`$P`). Akibatnya, teks diformat menjadi seperti "Halaman: 1/5".
 
+## Langkah 7: Tambahkan Kotak Mengambang ke Halaman
+
+Sekarang saatnya menambahkan Kotak Mengambang, beserta teks nomor halaman, ke halaman yang baru kita buat.
+
+```csharp
 // Tambahkan floatingBox ke halaman
 page.Paragraphs.Add(box1);
+```
+Baris ini pada dasarnya menanamkan Kotak Mengambang Anda ke dalam halaman, menjadikannya bagian dari tata letak dokumen. 
 
+## Langkah 8: Simpan Dokumen Anda
+
+Terakhir, jangan lupa untuk menyimpan pekerjaan Anda! Langkah terakhir adalah menyimpan dokumen PDF Anda dengan nama file yang tepat.
+
+```csharp
 // Simpan dokumen
 pdf.Save(dataDir + "PageNumberinHeaderFooterUsingFloatingBox_out.pdf");
-
 ```
+Pastikan jalur yang ditentukan menyertakan nama berkas yang Anda inginkan. Sekarang, PDF Anda yang menakjubkan dengan nomor halaman telah dibuat! 
 
 ## Kesimpulan
 
-Selamat! Anda telah mempelajari cara menambahkan nomor halaman di header dan footer dokumen PDF menggunakan FloatingBox dengan Aspose.PDF untuk .NET. Kini Anda dapat menyesuaikan header dan footer dengan menambahkan informasi dinamis seperti nomor halaman.
+Nah, itu dia! Menambahkan nomor halaman ke header dan footer PDF Anda menggunakan Aspose.PDF for .NET semudah itu. Hanya dengan beberapa baris kode, Anda telah memulai perjalanan untuk menguasai pemrosesan dokumen dalam aplikasi Anda. Jangan ragu untuk bereksperimen dengan tata letak dan format yang berbeda—bagaimanapun juga, kreativitas tidak mengenal batas! Siap untuk membuat dokumen profesional? Ambil topi coding Anda dan mulailah bereksperimen.
 
-### Pertanyaan yang Sering Diajukan
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa itu FloatingBox, dan bagaimana cara menggunakannya untuk menambahkan nomor halaman di header atau footer dokumen PDF?
+### Bisakah saya menyesuaikan tampilan teks nomor halaman?  
+ Ya, Anda dapat menyesuaikan properti teks, seperti ukuran font, warna, dan gaya dengan menyesuaikan`TextFragment` properti.
 
-A: FloatingBox adalah elemen tata letak serbaguna di Aspose.PDF yang dapat menampung berbagai konten, termasuk teks dan gambar. Dalam tutorial ini, elemen ini digunakan untuk membuat wadah bagi nomor halaman, yang memungkinkan Anda memasukkan nomor halaman saat ini dan jumlah halaman total secara dinamis ke dalam header atau footer.
+### Apakah Aspose.PDF gratis untuk digunakan?  
+ Meskipun Aspose.PDF menawarkan uji coba gratis, ini adalah produk berbayar untuk penggunaan produksi. Anda dapat[beli disini](https://purchase.aspose.com/buy).
 
-#### T: Bagaimana kode sumber C# yang disediakan mencapai penambahan nomor halaman menggunakan FloatingBox?
+### Di mana saya dapat menemukan dokumentasi yang lebih rinci?  
+ Anda dapat menemukan dokumentasi lengkap di[Situs Dokumentasi Aspose.PDF](https://reference.aspose.com/pdf/net/).
 
-A: Potongan kode menunjukkan cara membuat dokumen PDF, menambahkan halaman, membuat FloatingBox, mengatur posisinya di dalam halaman, dan memasukkan nomor halaman menggunakan TextFragment. Sintaks "($p/ $P )" di TextFragment diganti dengan nomor halaman saat ini dan jumlah halaman total.
+### Bagaimana cara menerapkan header dan footer ke beberapa halaman?  
+Anda dapat mengulang semua halaman di dokumen Anda dan menerapkan Kotak Mengambang ke setiap halaman dengan cara yang sama.
 
-#### T: Dapatkah saya menyesuaikan tampilan dan format nomor halaman yang ditambahkan menggunakan FloatingBox?
-
-A: Ya, Anda dapat menyesuaikan tampilan nomor halaman dengan mengubah properti TextFragment di dalam FloatingBox. Anda dapat mengubah ukuran font, warna, gaya, perataan, dan opsi pemformatan lainnya.
-
-#### T: Apakah mungkin untuk menambahkan elemen dinamis yang berbeda, seperti tanggal dan waktu, ke header atau footer menggunakan pendekatan yang serupa?
-
-J: Tentu saja, Anda dapat menambahkan berbagai elemen dinamis seperti tanggal, waktu, metadata dokumen, atau teks kustom dengan memodifikasi konten TextFragment di dalam FloatingBox. Anda dapat menggunakan makro seperti "($p/ $P )" untuk nomor halaman atau "($date)" untuk tanggal saat ini.
-
-#### T: Bagaimana cara menentukan posisi FloatingBox dalam bagian header atau footer?
- A: Kode yang diberikan mengatur posisi FloatingBox menggunakan`Left` Dan`Top` properti. Anda dapat menyesuaikan nilai-nilai ini untuk memposisikan FloatingBox sesuai keinginan di bagian header atau footer.
-
-#### T: Dapatkah saya menggunakan font atau gaya yang berbeda untuk nomor halaman di header atau footer?
-
-A: Ya, Anda dapat menyesuaikan font, gaya, dan properti pemformatan lainnya dari teks nomor halaman dengan memodifikasi properti TextFragment dalam FloatingBox.
-
-#### T: Apa yang terjadi jika konten dalam FloatingBox melebihi dimensinya?
-
-J: Jika konten dalam FloatingBox melebihi dimensinya, konten tersebut dapat terpotong atau timbul masalah tata letak. Pastikan dimensi FloatingBox sesuai untuk menampung konten, dan pertimbangkan untuk menyesuaikan tata letak halaman jika diperlukan.
-
-#### T: Apakah mungkin untuk menambahkan beberapa FloatingBox dengan konten berbeda pada header atau footer di halaman yang sama?
-
-A: Ya, Anda dapat menambahkan beberapa FloatingBox dengan konten berbeda ke header atau footer halaman yang sama dengan membuat contoh FloatingBox terpisah dan menambahkannya ke koleksi Paragraf halaman.
-
-#### T: Dapatkah saya menggunakan pendekatan FloatingBox untuk menambahkan konten ke bagian lain dokumen PDF, seperti badan atau margin?
-
-A: Meskipun FloatingBox umumnya digunakan untuk header dan footer, Anda juga dapat menggunakannya untuk menambahkan konten ke bagian lain dokumen PDF, seperti badan atau margin, dengan memposisikannya sesuai kebutuhan di dalam halaman.
+### Bagaimana jika saya memerlukan dukungan untuk fitur tambahan?  
+Untuk pertanyaan atau dukungan tambahan, Anda dapat mengunjungi[Forum Aspose](https://forum.aspose.com/c/pdf/10).

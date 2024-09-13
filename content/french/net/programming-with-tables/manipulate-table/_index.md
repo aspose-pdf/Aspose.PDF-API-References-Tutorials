@@ -121,7 +121,7 @@ R : Oui, vous pouvez manipuler des tableaux dans des documents PDF multipages à
 
 #### Q : Est-il possible de supprimer un tableau d’un document PDF ?
 
- R : Oui, vous pouvez supprimer un tableau d'un document PDF à l'aide d'Aspose.PDF pour .NET. Pour ce faire, vous pouvez supprimer le tableau spécifique`Table` objet de la`Page.Paragraphs` collection. Vous pouvez identifier la table à supprimer en utilisant des propriétés telles que`Table.NumberOfColumns`, `Table.NumberOfRows`, et d’autres identifiants uniques.
+ R : Oui, vous pouvez supprimer un tableau d'un document PDF à l'aide d'Aspose.PDF pour .NET. Pour ce faire, vous pouvez supprimer le tableau spécifique`Table` objet de la`Page.Paragraphs` collection. Vous pouvez identifier la table à supprimer en utilisant des propriétés telles que`Table.NumberOfColumns`, `Table.NumberOfRows`et d’autres identifiants uniques.
 
 #### Q : Puis-je modifier la mise en forme (police, couleur, alignement) du texte du tableau ?
 

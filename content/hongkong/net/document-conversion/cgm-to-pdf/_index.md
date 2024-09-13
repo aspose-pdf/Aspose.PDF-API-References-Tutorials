@@ -16,7 +16,7 @@ url: /zh-hant/net/document-conversion/cgm-to-pdf/
 在深入轉換過程之前，您需要滿足一些先決條件：
 
 1.  Aspose.PDF for .NET：請確定您已安裝 Aspose.PDF 庫。您可以從[網站](https://releases.aspose.com/pdf/net/).
-2. Visual Studio：一個開發環境，您可以在其中編寫和測試 .NET 程式碼。
+2. Visual Studio：您可以在其中編寫和測試 .NET 程式碼的開發環境。
 3. C# 基礎知識：熟悉 C# 程式設計將有助於您更好地理解程式碼片段。
 4. CGM 檔案：準備好用於轉換的 CGM 檔案。您可以建立一個或從 Internet 下載範例。
 
@@ -83,7 +83,7 @@ doc.Save(dataDir + "TECHDRAW_out.pdf");
 
 ## 結論
 
-現在你就擁有了！使用 Aspose.PDF for .NET 將 CGM 檔案轉換為 PDF 是一個簡單的過程，只需幾個步驟即可完成。借助這個強大的庫，您可以輕鬆處理各種文件格式，使您的工作流程更加有效率。無論您正在處理小型專案還是大型應用程序，Aspose.PDF 都是滿足您所有 PDF 需求的可靠選擇。
+現在你就得到它了！使用 Aspose.PDF for .NET 將 CGM 檔案轉換為 PDF 是一個簡單的過程，只需幾個步驟即可完成。借助這個強大的庫，您可以輕鬆處理各種文件格式，使您的工作流程更加有效率。無論您正在處理小型專案還是大型應用程序，Aspose.PDF 都是滿足您所有 PDF 需求的可靠選擇。
 
 ## 常見問題解答
 

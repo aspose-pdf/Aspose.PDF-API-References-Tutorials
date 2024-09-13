@@ -7,7 +7,7 @@ type: docs
 weight: 30
 url: /cs/net/programming-with-tagged-pdf/create-note-structure-element/
 ---
-V tomto tutoriálu vám poskytneme podrobný návod, jak vytvořit prvek struktury poznámky v dokumentu PDF pomocí Aspose.PDF pro .NET. Aspose.PDF je výkonná knihovna, která vám umožňuje programově vytvářet, manipulovat a převádět dokumenty PDF. Pomocí funkcí struktury označeného obsahu Aspose.PDF můžete do svého dokumentu PDF přidat strukturované poznámky.
+tomto tutoriálu vám poskytneme podrobný návod, jak vytvořit prvek struktury poznámky v dokumentu PDF pomocí Aspose.PDF pro .NET. Aspose.PDF je výkonná knihovna, která vám umožňuje programově vytvářet, manipulovat a převádět dokumenty PDF. Pomocí funkcí struktury označeného obsahu Aspose.PDF můžete do svého dokumentu PDF přidat strukturované poznámky.
 
 ## Předpoklady
 
@@ -103,7 +103,7 @@ NoteElement note3 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note3);
 note3.SetText("Note with ID = 'note_003'. ");
 note3.SetId("note_003");
-// Musí vyvolat výjimku – Aspose.Pdf.Tagged.TaggedException : Prvek struktury s ID='note_002' již existuje
+//Musí vyvolat výjimku – Aspose.Pdf.Tagged.TaggedException : Prvek struktury s ID='note_002' již existuje
 //note3.SetId("note_002");
 // Výsledný dokument není v souladu s PDF/UA, pokud ClearId() použitý pro prvek struktury poznámky
 //note3.ClearId();
@@ -148,7 +148,7 @@ Odpověď: Ano, můžete přizpůsobit obsah a vlastnosti prvků struktury pozn�
 
 #### Otázka: Mohu přiřadit jedinečná ID prvkům struktury poznámky?
 
-Odpověď: Ano, můžete přiřadit jedinečná ID prvkům struktury poznámky pomocí`SetId` metoda. Kód ukazuje, jak nastavit ID prvků poznámky na jedinečné hodnoty.
+ Odpověď: Ano, můžete přiřadit jedinečná ID prvkům struktury poznámky pomocí`SetId` metoda. Kód ukazuje, jak nastavit ID prvků poznámky na jedinečné hodnoty.
 
 #### Otázka: Co se stane, když se pokusím přiřadit duplicitní ID prvku struktury poznámky?
 
@@ -156,7 +156,7 @@ Odpověď: Pokus o přiřazení duplicitního ID prvku struktury poznámky bude 
 
 #### Otázka: Jak mohu zajistit shodu s PDF/UA při vytváření prvků struktury poznámky?
 
- Odpověď: Kód poskytnutý v tutoriálu ukazuje, jak ověřit shodu s PDF/UA pomocí`Validate` metoda. Ověřením dokumentu podle standardu PDF/UA můžete zajistit, aby přidané prvky struktury poznámky odpovídaly pokynům pro usnadnění.
+Odpověď: Kód poskytnutý v tutoriálu ukazuje, jak ověřit shodu s PDF/UA pomocí`Validate` metoda. Ověřením dokumentu podle standardu PDF/UA můžete zajistit, aby přidané prvky struktury poznámky odpovídaly pokynům pro usnadnění.
 
 #### Otázka: Mohu tento přístup použít k přidání prvků struktury poznámky do existujícího dokumentu PDF?
 

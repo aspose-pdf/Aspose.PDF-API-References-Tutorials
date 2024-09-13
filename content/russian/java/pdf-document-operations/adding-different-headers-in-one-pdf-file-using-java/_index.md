@@ -61,7 +61,7 @@ Page page3 = pdfDocument.getPages().add();
 HeaderFooter header1 = new HeaderFooter();
 header1.getParagraphs().add(new TextFragment("Header for Page 1"));
 
-// Заголовок для страницы 2
+// Заголовок страницы 2
 HeaderFooter header2 = new HeaderFooter();
 header2.getParagraphs().add(new TextFragment("Header for Page 2"));
 

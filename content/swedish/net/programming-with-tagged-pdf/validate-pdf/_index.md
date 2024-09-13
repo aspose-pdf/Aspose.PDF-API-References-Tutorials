@@ -1,7 +1,7 @@
 ---
 title: Validera PDF-fil
 linktitle: Validera PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du validerar en PDF-fil med Aspose.PDF för .NET. Kontrollera dess överensstämmelse med standarder och generera en valideringsrapport.
 type: docs
 weight: 240

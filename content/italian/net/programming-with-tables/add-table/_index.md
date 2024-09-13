@@ -117,7 +117,7 @@ Console.WriteLine("\nText added successfully to an existing pdf file.\nFile save
 
 ## Conclusione
 
-In questo tutorial, abbiamo spiegato il processo passo dopo passo per aggiungere una tabella a un documento PDF usando Aspose.PDF per .NET. Abbiamo trattato il caricamento del documento PDF di origine, l'inizializzazione di una nuova istanza della classe Table, l'impostazione del colore del bordo della tabella e dei bordi delle celle, l'aggiunta di righe e celle alla tabella e l'aggiunta dell'oggetto tabella al documento. Seguendo questa guida, puoi facilmente incorporare tabelle nei tuoi documenti PDF a livello di programmazione e personalizzarle in base alle tue esigenze specifiche.
+In questo tutorial, abbiamo spiegato il processo passo dopo passo per aggiungere una tabella a un documento PDF usando Aspose.PDF per .NET. Abbiamo trattato il caricamento del documento PDF di origine, l'inizializzazione di una nuova istanza della classe Table, l'impostazione del colore del bordo della tabella e dei bordi delle celle, l'aggiunta di righe e celle alla tabella e l'aggiunta dell'oggetto tabella al documento. Seguendo questa guida, puoi facilmente incorporare le tabelle nei tuoi documenti PDF a livello di programmazione e personalizzarle in base alle tue esigenze specifiche.
 
 ### FAQ per aggiungere una tabella in un file PDF
 

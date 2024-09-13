@@ -2,109 +2,40 @@
 title: Ocultar números de página no TOC
 linktitle: Ocultar números de página no TOC
 second_title: Referência da API do Aspose.PDF para .NET
-description: Aprenda como ocultar números de página em um índice usando o Aspose.PDF para .NET com este guia passo a passo.
+description: Aprenda como ocultar números de página no Índice usando Aspose.PDF para .NET. Siga este guia detalhado com exemplos de código para criar PDFs profissionais.
 type: docs
 weight: 220
 url: /pt/net/programming-with-document/hidepagenumbersintoc/
 ---
-Neste artigo, discutiremos a implementação do recurso Hide Page Numbers In TOC do Aspose.PDF para .NET usando C#. Começaremos com uma breve introdução ao Aspose.PDF para .NET e, em seguida, mergulharemos no guia passo a passo para implementar esse recurso. 
+## Introdução
 
-## Introdução ao Aspose.PDF para .NET
-
-Aspose.PDF para .NET é um poderoso componente de manipulação de PDF que permite aos desenvolvedores criar, editar e manipular arquivos PDF programaticamente. Ele fornece uma ampla gama de recursos e funcionalidades que facilitam o trabalho com documentos PDF. O Aspose.PDF para .NET suporta sistemas operacionais de 32 bits e 64 bits e pode ser usado com plataformas .NET Framework, .NET Core e Xamarin. 
-
-## O que é o recurso Ocultar números de página no índice?
-
-O Índice (TOC) é uma parte essencial de um documento PDF que fornece aos usuários uma visão geral rápida do conteúdo. Às vezes, os usuários podem querer ocultar números de página no TOC para torná-lo mais amigável. O Aspose.PDF para .NET fornece um recurso integrado para ocultar números de página no TOC. Esse recurso pode ser usado para criar documentos PDF mais amigáveis. 
+Ao trabalhar com PDFs, às vezes você pode querer gerar um Índice (TOC), mas manter as coisas elegantes ocultando os números de página. Talvez o documento flua melhor sem eles, ou talvez seja uma escolha estética. Seja qual for o motivo, se você estiver trabalhando com o Aspose.PDF para .NET, este tutorial mostrará exatamente como ocultar números de página no seu TOC.
 
 ## Pré-requisitos
 
-Para seguir este tutorial, você precisará do seguinte:
+Antes de começarmos, há algumas coisas que você precisa ter em mãos. Aqui vai uma lista de verificação rápida:
 
-- Visual Studio 2010 ou posterior
-- Aspose.PDF para .NET instalado em seu sistema
-- Conhecimento básico da linguagem de programação C#
+- Visual Studio instalado: você precisará de uma versão funcional do Visual Studio para codificar.
+- Biblioteca Aspose.PDF para .NET: certifique-se de ter instalado a biblioteca Aspose.PDF para .NET.
+  -  Link para download:[Aspose.PDF para .NET](https://releases.aspose.com/pdf/net/)
+- Licença temporária: se você estiver testando os recursos, é útil ter uma licença temporária.
+  -  Licença temporária:[Pegue aqui](https://purchase.aspose.com/temporary-license/)
 
-## Guia passo a passo para implementar o recurso Ocultar números de página no TOC
+## Pacotes de importação
 
-Siga as etapas abaixo para implementar o recurso Ocultar números de página no índice usando o Aspose.PDF para .NET:
-
-## Etapa 1: Crie um novo aplicativo de console C# no Visual Studio
-
-Abra o Visual Studio e crie um novo aplicativo de console C#.
-
-## Etapa 2: Adicionar referência ao Aspose.PDF para .NET
-
-Clique com o botão direito do mouse na pasta References no seu projeto e selecione Add Reference. Navegue até o local onde o Aspose.PDF for .NET está instalado no seu sistema e adicione uma referência a ele.
-
-## Etapa 1: Crie um novo documento PDF
-
-Crie um novo documento PDF usando o seguinte código:
+Antes de pular para o código, certifique-se de importar os seguintes namespaces no seu projeto C#. Eles fornecerão as classes e métodos necessários para trabalhar com documentos PDF e criar seu Índice (TOC).
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outFile = dataDir + "HiddenPageNumbers_out.pdf";
-Document doc = new Document();
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-## Etapa 2: Crie uma página de índice
+Agora que seu ambiente está pronto e os pacotes foram importados, vamos dividir cada etapa do processo. Cobriremos cada parte do código para garantir clareza, para que você possa acompanhar facilmente.
 
-Crie uma nova página para o TOC e adicione-a ao documento PDF usando o seguinte código:
+## Etapa 1: inicialize seu documento PDF
 
-```csharp
-Page tocPage = doc.Pages.Add();
-TocInfo tocInfo = new TocInfo();
-TextFragment title = new TextFragment("Table Of Contents");
-title.TextState.FontSize = 20;
-title.TextState.FontStyle = FontStyles.Bold;
-tocInfo.Title = title;
-```
+A primeira coisa que precisamos fazer é criar um novo documento PDF e adicionar uma página para o Índice (TOC).
 
-## Etapa 3: Adicionar seção de lista à coleção de seções do documento PDF
-
-Adicione a seção de lista à coleção de seções do documento PDF usando o seguinte código:
-
-```csharp
-tocPage.TocInfo = tocInfo;
-```
-
-## Etapa 4: Defina o formato da lista de quatro níveis
-
-Defina o formato da lista de quatro níveis definindo as margens esquerdas e as configurações de formato de texto de cada nível usando o seguinte código:
-
-```csharp
-tocInfo.IsShowPageNumbers = false;
-tocInfo.FormatArrayLength = 4;
-tocInfo.FormatArray[0].Margin.Right = 0;
-tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
-tocInfo.FormatArray[1].Margin.Left = 30;
-tocInfo.FormatArray[1].TextState.Underline = true;
-tocInfo.FormatArray[1].TextState.FontSize = 10;
-tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
-tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
-Page page = doc.Pages.Add();
-```
-
-## Etapa 5: adicione quatro títulos na seção
-
-```csharp
-
-for (int Level = 1; Level != 5; Level++)
-{ 
-	Heading heading2 = new Heading(Level); 
-	TextSegment segment2 = new TextSegment(); 
-	heading2.TocPage = tocPage; 
-	heading2.Segments.Add(segment2); 
-	heading2.IsAutoSequence = true; 
-	segment2.Text = "this is heading of level " + Level; 
-	heading2.IsInList = true; 
-	page.Paragraphs.Add(heading2); 
-}
-doc.Save(outFile);
-
-```
-
-### Exemplo de código-fonte para ocultar números de página no TOC usando Aspose.PDF para .NET
 
 ```csharp
 // O caminho para o diretório de documentos.
@@ -112,18 +43,47 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "HiddenPageNumbers_out.pdf";
 Document doc = new Document();
 Page tocPage = doc.Pages.Add();
+```
+
+- dataDir: Este é o diretório onde seu arquivo de saída será salvo.
+- Document(): Inicializa um novo documento PDF.
+- Pages.Add(): Adiciona uma nova página em branco ao documento, que mais tarde conterá seu TOC.
+
+## Etapa 2: Configurar informações e título do TOC
+
+Em seguida, definiremos as informações do TOC, incluindo a definição do título que aparecerá na parte superior do TOC.
+
+```csharp
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
 tocInfo.Title = title;
-//Adicione a seção de lista à coleção de seções do documento PDF
 tocPage.TocInfo = tocInfo;
-//Defina o formato da lista de quatro níveis definindo as margens esquerdas e
-//configurações de formato de texto de cada nível
+```
 
+- TocInfo: Este objeto contém todas as informações sobre o TOC.
+- TextFragment: representa o texto do título do TOC, aqui o definimos como "Índice".
+- FontStyle: estilizamos o título do TOC definindo seu tamanho como 20 e deixando-o em negrito.
+- tocPage.TocInfo: Atribuímos as informações do TOC à página que exibirá o TOC.
+
+## Etapa 3: Ocultar números de página no TOC
+
+Agora a parte divertida! É aqui que configuramos o TOC para ocultar os números de página.
+
+```csharp
 tocInfo.IsShowPageNumbers = false;
 tocInfo.FormatArrayLength = 4;
+```
+
+-  IsShowPageNumbers: Este é o interruptor mágico que oculta os números das páginas. Defina-o como`false`, e os números das páginas não aparecerão no TOC.
+- FormatArrayLength: definimos como 4, indicando que queremos definir a formatação para quatro níveis de títulos do TOC.
+
+## Etapa 4: personalizar a formatação do TOC
+
+Para adicionar mais estilo ao seu índice, agora definiremos a formatação para diferentes níveis de títulos.
+
+```csharp
 tocInfo.FormatArray[0].Margin.Right = 0;
 tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
 tocInfo.FormatArray[1].Margin.Left = 30;
@@ -131,36 +91,61 @@ tocInfo.FormatArray[1].TextState.Underline = true;
 tocInfo.FormatArray[1].TextState.FontSize = 10;
 tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
 tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
+```
+
+- FormatArray: Este array controla a formatação das entradas do TOC. Cada índice representa um nível de título diferente.
+- Margem e estilo do texto: definimos margens e aplicamos estilos de fonte, como negrito, itálico e sublinhado, para cada nível de título.
+
+## Etapa 5: Adicionar títulos ao documento
+
+Por fim, vamos adicionar os títulos reais que farão parte do índice.
+
+```csharp
 Page page = doc.Pages.Add();
-//Adicione quatro títulos na seção
 for (int Level = 1; Level != 5; Level++)
-	{ 
-		Heading heading2 = new Heading(Level); 
-		TextSegment segment2 = new TextSegment(); 
-		heading2.TocPage = tocPage; 
-		heading2.Segments.Add(segment2); 
-		heading2.IsAutoSequence = true; 
-		segment2.Text = "this is heading of level " + Level; 
-		heading2.IsInList = true; 
-		page.Paragraphs.Add(heading2); 
-	}
+{ 
+    Heading heading2 = new Heading(Level); 
+    TextSegment segment2 = new TextSegment(); 
+    heading2.TocPage = tocPage; 
+    heading2.Segments.Add(segment2); 
+    heading2.IsAutoSequence = true; 
+    segment2.Text = "this is heading of level " + Level; 
+    heading2.IsInList = true; 
+    page.Paragraphs.Add(heading2); 
+}
+```
+
+- Heading e TextSegment: Representam os títulos que aparecerão no seu TOC. Cada nível tem seu próprio título.
+- IsAutoSequence: numera automaticamente os títulos.
+- IsInList: garante que cada título apareça no TOC.
+
+## Etapa 6: Salve o documento
+
+Depois que tudo estiver definido, salve o documento PDF no arquivo de saída especificado.
+
+```csharp
 doc.Save(outFile);
 ```
 
+E é isso! Você criou com sucesso um PDF com um Índice, e os números das páginas estão ocultos!
+
 ## Conclusão
 
-Neste tutorial, exploramos como trabalhar com metadados XMP em um documento PDF usando Aspose.PDF para .NET. Os metadados XMP fornecem informações valiosas sobre o documento PDF, incluindo seu título, autor, data de criação e muito mais. O Aspose.PDF para .NET permite que os desenvolvedores acessem e manipulem esses metadados, fornecendo uma API flexível e poderosa para trabalhar com documentos PDF.
+Criar um Índice em um PDF e ocultar números de página pode parecer complicado, mas com o Aspose.PDF para .NET, é moleza. Seguindo este guia passo a passo, você aprendeu a personalizar o formato do TOC, ocultar números de página e aplicar estilos diferentes aos seus títulos. Agora você pode criar PDFs profissionais adaptados às suas necessidades exatas.
 
-### Perguntas frequentes
+## Perguntas frequentes
 
-#### P: O que são metadados XMP em um documento PDF?
+### Posso mostrar números de página para títulos específicos no índice?
+Não, o Aspose.PDF oculta ou mostra números de página para todo o TOC. Você não pode ocultá-los seletivamente para entradas específicas.
 
-A: Os metadados XMP (Extensible Metadata Platform) em um documento PDF são um formato padrão para armazenar informações de metadados sobre o documento. Eles incluem detalhes como título do documento, autor, data de criação, palavras-chave e muito mais. Os metadados XMP fornecem uma maneira estruturada e padronizada de armazenar e compartilhar informações sobre o documento PDF.
+### É possível adicionar mais níveis ao TOC?
+ Sim, você pode aumentar o`FormatArrayLength` para definir mais níveis de títulos do TOC.
 
-#### P: Posso modificar os metadados XMP de um documento PDF usando o Aspose.PDF para .NET?
+### Como posso alterar a fonte de todas as entradas do sumário?
+ Você pode alterar a fonte modificando o`TextState.Font` propriedade para cada nível no`FormatArray`.
 
- R: Sim, você pode modificar os metadados XMP de um documento PDF programaticamente usando Aspose.PDF para .NET. Você pode acessar o`Info` propriedade do`Document` objeto, que dá a você acesso às propriedades de metadados XMP. Você pode então atualizar os valores dessas propriedades para modificar os metadados XMP do documento PDF.
+### Posso inserir hiperlinks no TOC?
+ Sim, você pode vincular cada entrada do TOC a uma seção específica do documento usando o`Heading.TocPage` propriedade.
 
-#### P: Posso extrair propriedades de metadados XMP personalizadas de um documento PDF usando o Aspose.PDF para .NET?
-
- R: Sim, você pode extrair propriedades de metadados XMP personalizadas de um documento PDF usando Aspose.PDF para .NET. Você pode usar o`Metadata` propriedade do`Document`objeto, que fornece acesso a todas as propriedades de metadados XMP do documento PDF. Você pode então extrair propriedades personalizadas e usar seus valores conforme necessário.
+### Preciso de uma licença para o Aspose.PDF?
+Sim, uma licença válida é necessária para uso em produção. Você pode obter uma licença temporária[aqui](https://purchase.aspose.com/temporary-license/) para testar os recursos.

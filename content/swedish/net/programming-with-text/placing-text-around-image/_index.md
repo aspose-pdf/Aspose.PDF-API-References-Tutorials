@@ -1,7 +1,7 @@
 ---
 title: Placera text runt bilden i PDF-fil
 linktitle: Placera text runt bilden i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du placerar text runt en bild i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 260
@@ -145,7 +145,7 @@ row1.Cells.Add();
 row1.Cells[1].Paragraphs.Add(TitleText);
 // Ställ in den vertikala justeringen av radinnehållet som Top
 row1.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-// Skapa rader i tabellen och sedan celler i raderna
+//Skapa rader i tabellen och sedan celler i raderna
 Aspose.Pdf.Row SecondRow = table1.Rows.Add();
 SecondRow.Cells.Add();
 // Ställ in radintervallvärdet för andra raden som 2

@@ -35,7 +35,7 @@ Nous avons créé un nouveau document et défini le titre et la langue du docume
 Dans cette étape, nous obtiendrons l’élément de structure racine de notre document.
 
 ```csharp
-//Obtenir l'élément de structure racinaire
+// Obtenir l'élément de structure racinaire
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
@@ -293,11 +293,11 @@ R : Avant de commencer, assurez-vous d'avoir installé Aspose.PDF pour .NET et d
 
 #### Q : Comment créer un nouveau document PDF à l’aide d’Aspose.PDF pour .NET ?
 
- : Pour créer un nouveau document PDF, vous devez instancier un`Document` objet de la bibliothèque Aspose.PDF. Le code source C# fourni montre comment créer un document et définir son titre et sa langue.
+ R : Pour créer un nouveau document PDF, vous devez instancier un`Document` objet de la bibliothèque Aspose.PDF. Le code source C# fourni montre comment créer un document et définir son titre et sa langue.
 
 #### Q : Quelle est la signification de l’élément de structure racine dans un document PDF ?
 
-R : L'élément de structure racine sert de conteneur pour d'autres éléments de structure, aidant à organiser et à catégoriser le contenu du document PDF. Il joue un rôle crucial dans l'établissement de la structure logique du document.
+: L'élément de structure racine sert de conteneur pour d'autres éléments de structure, aidant à organiser et à catégoriser le contenu du document PDF. Il joue un rôle crucial dans l'établissement de la structure logique du document.
 
 #### Q : Comment puis-je créer un élément de structure de tableau et personnaliser son apparence à l'aide d'Aspose.PDF pour .NET ?
 

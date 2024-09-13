@@ -32,7 +32,7 @@ using System.IO;
  A kódban keresse meg azt a sort, amely ezt mondja`string dataDir = "YOUR DOCUMENT DIRECTORY";` és cserélje ki`"YOUR DOCUMENT DIRECTORY"` annak a könyvtárnak az elérési útjával, ahol a dokumentumokat tárolják.
 
 ## 4. lépés: Nyissa meg a PDF dokumentumot
- Nyisson meg egy meglévő PDF dokumentumot a`Document` konstruktort, és átadja a bemeneti PDF-fájl elérési útját.
+ Nyisson meg egy meglévő PDF dokumentumot a`Document`konstruktort, és átadja a bemeneti PDF-fájl elérési útját.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
@@ -52,7 +52,7 @@ foreach(TextFragment tf in tfc)
 ```
 
 ## 6. lépés: Szöveg kibontása az oszlopokból
- Mentse el a módosított PDF dokumentumot egy memóriafolyamba, és töltse be újra új dokumentumként. Ezután használja a`TextAbsorber` osztályt, hogy szöveget vonhasson ki az oszlopokból.
+ Mentse el a módosított PDF dokumentumot egy memóriafolyamba, és töltse be újra új dokumentumként. Ezután használja a`TextAbsorber` osztályt, hogy kivonja a szöveget az oszlopokból.
 
 ```csharp
 Stream st = new MemoryStream();
@@ -120,7 +120,7 @@ using System.IO;
 
 #### K: Hogyan adhatom meg a dokumentumkönyvtárat?
 
- V: Keresse meg a vonalat`string dataDir = "YOUR DOCUMENT DIRECTORY";` a kódban, és cserélje ki`"YOUR DOCUMENT DIRECTORY"` a dokumentumkönyvtár tényleges elérési útjával.
+ V: Keresse meg a vonalat`string dataDir = "YOUR DOCUMENT DIRECTORY";` a kódban és cserélje ki`"YOUR DOCUMENT DIRECTORY"` a dokumentumkönyvtár tényleges elérési útjával.
 
 #### K: Hogyan nyithatok meg egy meglévő PDF-dokumentumot?
 
@@ -132,7 +132,7 @@ V: Az 5. lépésben a szövegrészletek betűméretét 0,7-szeresére csökkentj
 
 #### K: Hogyan vonhatok ki szöveget az oszlopokból?
 
- V: A 6. lépésben a módosított PDF-dokumentumot elmenti egy memóriafolyamba, új dokumentumként betölti, majd a`TextAbsorber` osztályt, hogy szöveget vonhasson ki az oszlopokból.
+ V: A 6. lépésben a módosított PDF-dokumentumot elmenti egy memóriafolyamba, új dokumentumként betölti, majd a`TextAbsorber` osztályt, hogy kivonja a szöveget az oszlopokból.
 
 #### K: Mi a célja a kivont szöveg mentésének?
 

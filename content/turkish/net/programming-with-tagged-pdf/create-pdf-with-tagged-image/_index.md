@@ -112,7 +112,7 @@ C: Evet, etiketli resim için JPEG, PNG, GIF vb. gibi farklı resim formatların
 
  A: Alt text, görme engelli kullanıcılar için ekran okuyucular tarafından yüksek sesle okunan görüntünün metinsel bir açıklamasını sağlar. Sağlanan kodda, alt text,`AlternativeText` mülkiyeti`IllustrationElement` Etiketli görseli temsil ediyor.
 
-####  S: Nasıl?`SetTitle` method contribute to the PDF document's tagged image?
+#### S: Nasıl?`SetTitle` method contribute to the PDF document's tagged image?
 
  A:`SetTitle` method, PDF belgesinin etiketli içeriğinin başlığını ayarlar ve etiketli görüntü için ek bağlam sağlar. Bu başlık, etiketli içeriğin amacını veya konusunu tanımlamaya yardımcı olabilir.
 
@@ -126,4 +126,4 @@ A: Aspose.PDF'nin etiketli içerik yapısı özelliklerini kullanarak ve alt met
 
 #### S: Benzer teknikleri kullanarak aynı PDF belgesine birden fazla etiketli resim eklemek mümkün müdür?
 
- A: Evet, benzer teknikleri kullanarak aynı PDF belgesine birden fazla etiketli resim ekleyebilirsiniz. Ek olarak`IllustrationElement` Her etiketli görüntü için örnekler oluşturun ve bunların özelliklerini gerektiği gibi özelleştirin.
+A: Evet, benzer teknikleri kullanarak aynı PDF belgesine birden fazla etiketli resim ekleyebilirsiniz. Ek olarak`IllustrationElement` Her etiketli görüntü için örnekler oluşturun ve bunların özelliklerini gerektiği gibi özelleştirin.

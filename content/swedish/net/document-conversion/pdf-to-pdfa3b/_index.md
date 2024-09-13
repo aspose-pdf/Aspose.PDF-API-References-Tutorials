@@ -1,7 +1,7 @@
 ---
 title: PDF till PDFA3b
 linktitle: PDF till PDFA3b
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig att konvertera PDF-filer till PDF/A-3B-format utan ansträngning med Aspose.PDF för .NET i denna steg-för-steg-guide.
 type: docs
 weight: 150

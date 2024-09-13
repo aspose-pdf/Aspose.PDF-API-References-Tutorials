@@ -8,7 +8,7 @@ weight: 13
 url: /hu/java/pdf-tags-and-structure/custom-tag-name-for-pdf-using-java/
 ---
 
-Ebben a lépésenkénti útmutatóban végigvezetjük az egyéni címkenevek beállításának folyamatán a PDF-dokumentumokhoz Java és Aspose.PDF for Java használatával. Az egyéni címkenevek javítják a PDF-dokumentumok hozzáférhetőségét, és felhasználóbarátabbá teszik azokat a fogyatékkal élők számára.
+Ebben a részletes útmutatóban végigvezetjük az egyéni címkenevek beállításának folyamatán a PDF-dokumentumokhoz Java és Aspose.PDF for Java használatával. Az egyéni címkenevek javítják a PDF-dokumentumok hozzáférhetőségét, és felhasználóbarátabbá teszik azokat a fogyatékkal élők számára.
 
 ## Bevezetés
 

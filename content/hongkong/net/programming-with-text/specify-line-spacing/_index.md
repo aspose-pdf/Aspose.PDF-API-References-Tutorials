@@ -50,7 +50,7 @@ Document doc = new Document();
 
 ## 第 5 步：建立 TextFormattingOptions
 
-創建一個`TextFormattingOptions`物件並將行距模式設定為`FullSize`：
+創建一個`TextFormattingOptions`物件並將行距模式設定為`FullSize`:
 
 ```csharp
 TextFormattingOptions formattingOptions = new TextFormattingOptions();
@@ -81,7 +81,7 @@ using (FileStream fontStream = File.OpenRead(fontFile))
 
 ## 步驟8：指定文字位置和行間距
 
-設定文字片段的位置並分配`TextFormattingOptions`到`TextState.FormattingOptions`財產：
+設定文字片段的位置並指定`TextFormattingOptions`到`TextState.FormattingOptions`財產：
 
 ```csharp
 textFragment.Position = new Position(100, 600);
@@ -154,7 +154,7 @@ if (fontFile != "")
 
 答：「在 PDF 檔案中指定行距」教學課程旨在指導使用者如何使用 .NET 的 Aspose.PDF 庫自訂 PDF 文件中文字的行距。本教程提供逐步說明和 C# 程式碼範例來演示該過程。
 
-#### Q：本教學如何幫助指定 PDF 文件中的行間距？
+#### Q：本教學如何幫助指定 PDF 文件中的行距？
 
 答：本教學幫助使用者了解如何利用 Aspose.PDF for .NET 的功能來指定 PDF 文件中文字的行距。透過遵循提供的步驟和程式碼範例，使用者可以根據自己的喜好調整行間距。
 
@@ -166,7 +166,7 @@ if (fontFile != "")
 
 答：首先，在您首選的整合開發環境 (IDE) 中建立一個新的 C# 項目，並新增對 Aspose.PDF for .NET 程式庫的參考。這使您能夠利用該程式庫的功能來處理 PDF 文件和自訂行距。
 
-#### Q：我可以使用本教學指定任何類型文字的行間距嗎？
+#### Q：我可以使用本教學指定任何類型文字的行距嗎？
 
 答：是的，本教學提供如何使用 Aspose.PDF for .NET 為 PDF 文件中的任何文字內容指定行距的說明。您可以使用提供的程式碼範例根據您的需求調整文字的行距。
 

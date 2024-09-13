@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Passaggio 5: aggiungere una pagina al documento
- Aggiungere una nuova pagina al documento utilizzando`Add` metodo del`Pages`raccolta. Nel codice fornito, la nuova pagina è assegnata alla variabile`page`.
+ Aggiungere una nuova pagina al documento utilizzando`Add` metodo del`Pages` raccolta. Nel codice fornito, la nuova pagina è assegnata alla variabile`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -118,7 +118,7 @@ R: Nel passaggio 6, creerai un ciclo per aggiungere più frammenti di testo alla
 
 #### D: Come faccio a salvare il documento PDF ed estrarre le informazioni sulle interruzioni di riga?
 
- A: Nel passaggio 7, salverai il documento PDF utilizzando`Save` metodo del`Document` oggetto. Quindi, estrarrai le informazioni di interruzione di riga utilizzando il`GetNotifications`metodo della pagina desiderata e salvarla in un file di testo.
+ A: Nel passaggio 7, salverai il documento PDF utilizzando`Save` metodo del`Document` oggetto. Quindi, estrarrai le informazioni di interruzione di riga utilizzando il`GetNotifications` metodo della pagina desiderata e salvarla in un file di testo.
 
 #### D: Qual è lo scopo delle informazioni sulle interruzioni di riga estratte?
 

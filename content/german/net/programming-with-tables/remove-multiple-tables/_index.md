@@ -40,7 +40,7 @@ absorb.Visit(pdfDocument.Pages[1]);
 Um die Tabellen löschen zu können, müssen wir eine Kopie der Tabellensammlung erhalten:
 
 ```csharp
-//Holen Sie sich eine Kopie der Tabellensammlung
+// Holen Sie sich eine Kopie der Tabellensammlung
 AbsorbedTable[] tables = new AbsorbedTable[absorb.TableList.Count];
 absorb.TableList.CopyTo(tables, 0);
 ```
@@ -96,7 +96,7 @@ Herzlichen Glückwunsch! Sie haben jetzt gelernt, wie Sie mit Aspose.PDF für .N
 
 #### F: Kann ich in einem PDF-Dokument bestimmte Tabellen statt aller Tabellen entfernen?
 
-A: Ja, Sie können mit Aspose.PDF für .NET bestimmte Tabellen statt aller Tabellen in einem PDF-Dokument entfernen. Im angegebenen Beispiel werden alle Tabellen auf der zweiten Seite entfernt. Sie können den Code jedoch ändern, um bestimmte Tabellen entsprechend Ihren Anforderungen gezielt anzusprechen und zu entfernen. Dazu müssen Sie die Tabellen identifizieren, die Sie entfernen möchten, und dann den`absorber.Remove(table)` Methode für jede spezifische Tabelle, die Sie löschen möchten.
+ A: Ja, Sie können mit Aspose.PDF für .NET bestimmte Tabellen statt aller Tabellen in einem PDF-Dokument entfernen. Im angegebenen Beispiel werden alle Tabellen auf der zweiten Seite entfernt. Sie können den Code jedoch ändern, um bestimmte Tabellen entsprechend Ihren Anforderungen gezielt anzusprechen und zu entfernen. Dazu müssen Sie die Tabellen identifizieren, die Sie entfernen möchten, und dann den`absorber.Remove(table)` Methode für jede spezifische Tabelle, die Sie löschen möchten.
 
 #### F: Wie kann ich Tabellen aus mehreren Seiten im PDF-Dokument entfernen?
 
@@ -104,7 +104,7 @@ A: Ja, Sie können mit Aspose.PDF für .NET bestimmte Tabellen statt aller Tabel
 
 #### F: Was passiert, wenn ich versuche, eine Tabelle zu entfernen, die auf der angegebenen Seite nicht vorhanden ist?
 
-A: Wenn Sie versuchen, eine Tabelle zu entfernen, die auf der angegebenen Seite nicht vorhanden ist, wird kein Fehler ausgegeben.`absorber.Remove(table)` Die Methode ignoriert die Entfernungsanforderung einfach und das PDF-Dokument bleibt unverändert.
+ A: Wenn Sie versuchen, eine Tabelle zu entfernen, die auf der angegebenen Seite nicht vorhanden ist, wird kein Fehler ausgegeben.`absorber.Remove(table)` Die Methode ignoriert die Entfernungsanforderung einfach und das PDF-Dokument bleibt unverändert.
 
 #### F: Kann ich das Entfernen von Tabellen nach dem Speichern des Dokuments rückgängig machen?
 

@@ -13,4 +13,4 @@ Poznaj funkcje Aspose.PDF dla .NET dzięki dedykowanym samouczkom. Dowiedz się,
 ## Samouczki
 | Tytuł | Opis |
 | --- | --- | 
-| [Zastosuj styl numeracji w pliku PDF](./apply-number-style/) | Dowiedz się, jak zastosować styl numeracji do nagłówków w pliku PDF za pomocą Aspose.PDF dla .NET. Przewodnik krok po kroku. |   
+| [Zastosuj styl numeracji w pliku PDF](./apply-number-style/) | Dowiedz się, jak stosować różne style numeracji (cyfry rzymskie, alfabetyczne) w nagłówkach w pliku PDF za pomocą Aspose.PDF dla platformy .NET, korzystając z tego przewodnika krok po kroku. |   

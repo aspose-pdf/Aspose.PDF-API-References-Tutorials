@@ -63,7 +63,7 @@ tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
 Ora, aggiungiamo righe e celle alla tabella. Creeremo una nuova riga e vi aggiungeremo celle:
 
 ```csharp
-// Crea righe nella tabella e poi celle nelle righe
+//Crea righe nella tabella e poi celle nelle righe
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -117,7 +117,7 @@ margin.Right = 5f;
 margin.Bottom = 5f;
 // Imposta la spaziatura predefinita delle celle sull'oggetto MarginInfo
 tab1.DefaultCellPadding = margin;
-// Crea righe nella tabella e poi celle nelle righe
+//Crea righe nella tabella e poi celle nelle righe
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -145,7 +145,7 @@ Congratulazioni! Hai imparato con successo come impostare margini o padding in u
 
 #### D: Posso impostare margini o spaziature diverse per le singole celle di una tabella?
 
-R: Sì, puoi impostare margini o padding diversi per singole celle in una tabella usando Aspose.PDF per .NET. Nell'esempio fornito, abbiamo impostato il padding predefinito per l'intera tabella usando`DefaultCellPadding` proprietà. Per impostare un padding diverso per celle specifiche, puoi accedere a`MarginInfo` di ogni cella individualmente e modificarne i margini.
+ R: Sì, puoi impostare margini o padding diversi per singole celle in una tabella usando Aspose.PDF per .NET. Nell'esempio fornito, abbiamo impostato il padding predefinito per l'intera tabella usando`DefaultCellPadding` proprietà. Per impostare un padding diverso per celle specifiche, puoi accedere a`MarginInfo` di ogni cella individualmente e modificarne i margini.
 
 #### D: Come posso cambiare il colore del bordo o lo stile della tabella?
 
@@ -161,4 +161,4 @@ R: Sì, puoi aggiungere intestazioni o piè di pagina alla tabella usando Aspose
 
 #### D: Posso aggiungere immagini alle celle della tabella al posto del testo?
 
- A: Sì, puoi aggiungere immagini alle celle della tabella usando Aspose.PDF per .NET. Invece di creare un`TextFragment` oggetto, puoi creare un`Image` oggetto, caricare il file immagine e aggiungerlo alla cella desiderata utilizzando`cell.Paragraphs.Add(image);` metodo. Ciò consente di inserire immagini nella tabella insieme al contenuto di testo.
+ A: Sì, puoi aggiungere immagini alle celle della tabella usando Aspose.PDF per .NET. Invece di creare un`TextFragment` oggetto, puoi creare un`Image` oggetto, caricare il file immagine e aggiungerlo alla cella desiderata utilizzando`cell.Paragraphs.Add(image);`metodo. Ciò consente di inserire immagini nella tabella insieme al contenuto di testo.

@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Étape 5 : Ajouter une page au document
- Ajoutez une nouvelle page au document en utilisant le`Add` méthode de la`Pages`collection. Dans le code fourni, la nouvelle page est attribuée à la variable`page`.
+ Ajoutez une nouvelle page au document en utilisant le`Add` méthode de la`Pages` collection. Dans le code fourni, la nouvelle page est attribuée à la variable`page`.
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
@@ -109,7 +109,7 @@ Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 4
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
 // Ajouter un rectangle à la collection de formes de l'objet Graph
 canvas.Shapes.Add(rect);
-//Ajouter un objet graphique à la collection de paragraphes de l'objet de page
+// Ajouter un objet graphique à la collection de paragraphes de l'objet de page
 page.Paragraphs.Add(canvas);
 // Définir la valeur pour ne pas modifier la position de l'objet graphique
 canvas.IsChangePosition = false;
@@ -163,7 +163,7 @@ using Aspose.Pdf.Drawing;
 
 #### Q : Comment créer un rectangle avec transparence ?
 
-A : À l'étape 7, vous allez créer un rectangle avec des dimensions spécifiques et définir sa couleur de remplissage sur une couleur transparente à l'aide de la`Color.FromRgb` méthode.
+ A : À l'étape 7, vous allez créer un rectangle avec des dimensions spécifiques et définir sa couleur de remplissage sur une couleur transparente à l'aide de la`Color.FromRgb` méthode.
 
 #### Q : Comment ajouter l’objet Graph à la page ?
 
@@ -175,7 +175,7 @@ A : À l'étape 7, vous allez créer un rectangle avec des dimensions spécifi
 
 #### Q : Comment créer un TextFragment avec transparence ?
 
- A : À l'étape 10, vous allez créer un`TextFragment` objet et définir son contenu et`ForegroundColor` propriété permettant d'obtenir un texte transparent.
+ : À l'étape 10, vous allez créer un`TextFragment` objet et définir son contenu et`ForegroundColor` propriété permettant d'obtenir un texte transparent.
 
 #### Q : Comment enregistrer le document PDF ?
 

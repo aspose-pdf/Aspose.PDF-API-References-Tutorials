@@ -2,7 +2,7 @@
 title: 使用 Java 在 PDF 标题中应用编号样式
 linktitle: 使用 Java 在 PDF 标题中应用编号样式
 second_title: Aspose.PDF Java PDF 处理 API
-description: 了解如何使用 Aspose.PDF for Java 将编号样式应用于 PDF 标题。我们的分步指南提供了源代码示例，可为您的文档增添专业感。
+description: 了解如何使用 Aspose.PDF for Java 将编号样式应用于 PDF 标题。我们的分步指南提供了源代码示例，让您的文档更具专业感。
 type: docs
 weight: 14
 url: /zh/java/pdf-images/apply-numbering-style-in-heading-of-pdf-using-java/

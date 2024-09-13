@@ -15,7 +15,7 @@ Előfordult már, hogy XML-adatokat kell átalakítania csiszolt PDF-dokumentumm
 
 Mielőtt belemerülnénk a lépésről lépésre szóló útmutatóba, néhány dolgot meg kell határoznia:
 
--  Aspose.PDF for .NET: Győződjön meg arról, hogy az Aspose.PDF for .NET legújabb verziójával rendelkezik. Megteheti[töltse le itt](https://releases.aspose.com/pdf/net/).
+-  Aspose.PDF for .NET: Győződjön meg arról, hogy az Aspose.PDF for .NET legújabb verziójával rendelkezik. Tudod[töltse le itt](https://releases.aspose.com/pdf/net/).
 - Fejlesztési környezet: Egy IDE-re, például a Visual Studiora be kell állítania és használatra készen kell lennie.
 - .NET-keretrendszer: Győződjön meg arról, hogy telepítve van a .NET-keretrendszer.
 - Alapvető C# ismerete: Ez az útmutató feltételezi, hogy rendelkezik a C# és a .NET alapvető ismereteivel.
@@ -102,7 +102,7 @@ Egyetlen oktatóanyag sem teljes a hibakezelés lefedése nélkül. Elengedhetet
 ```csharp
 try
 {
-    // Kód az XML-ből PDF-be konvertálásához
+    // Az XML-ből PDF-be konvertáló kód
 }
 catch (Exception ex)
 {

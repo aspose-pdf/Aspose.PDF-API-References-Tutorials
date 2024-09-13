@@ -47,7 +47,7 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 ```
 
 ## Krok 6: Přidejte do dokumentu stránku
- Přidejte do dokumentu novou stránku pomocí`Add` metoda`Pages`sbírka. V poskytnutém kódu je nová stránka přiřazena k proměnné`page`.
+ Přidejte do dokumentu novou stránku pomocí`Add` metoda`Pages` sbírka. V poskytnutém kódu je nová stránka přiřazena k proměnné`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -81,7 +81,7 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 Page page = doc.Pages.Add();
 // Přidejte HtmlFragment na stránku
 page.Paragraphs.Add(t);
-// Uložte výsledný soubor PDF
+//Uložte výsledný soubor PDF
 doc.Save(outFile);
 ```
 
@@ -115,7 +115,7 @@ using Aspose.Pdf.Text;
 
 #### Otázka: Jak přidám uspořádaný seznam HTML na stránku v dokumentu?
 
- Odpověď: V kroku 7 přidáte`HtmlFragment` objekt (`t` ) na stránku pomocí`Add` metoda`Paragraphs`sbírka. To hladce integruje uspořádaný seznam HTML do dokumentu.
+ Odpověď: V kroku 7 přidáte`HtmlFragment` objekt (`t` ) na stránku pomocí`Add` metoda`Paragraphs` sbírka. To hladce integruje uspořádaný seznam HTML do dokumentu.
 
 #### Otázka: Jak uložím výsledný dokument PDF?
 

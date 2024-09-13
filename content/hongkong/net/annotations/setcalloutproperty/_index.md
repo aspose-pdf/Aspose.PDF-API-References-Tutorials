@@ -15,7 +15,7 @@ url: /zh-hant/net/annotations/setcalloutproperty/
 
 在深入研究程式碼之前，讓我們先介紹一下入門所需的基礎知識。
 
-1.  Aspose.PDF for .NET：請確定您已安裝了 Aspose.PDF for .NET 程式庫。您可以從以下位置下載：[這裡](https://releases.aspose.com/pdf/net/).
+1.  Aspose.PDF for .NET：請確定您已安裝 Aspose.PDF for .NET 程式庫。您可以從以下位置下載：[這裡](https://releases.aspose.com/pdf/net/).
 2. IDE：開發環境，例如 Visual Studio。
 3. .NET Framework：確保您的電腦上安裝了 .NET。
 4. 臨時許可證：如果您想不受限制地嘗試 Aspose.PDF 的全部功能，請取得[臨時執照](https://purchase.aspose.com/temporary-license/).
@@ -50,7 +50,7 @@ Document doc = new Document();
 
 ## 步驟 2：為文件新增頁面
 
-PDF 文件可以有多個頁面，在這一步驟中，我們將在文件中新增一個新頁面。此頁面將是放置標註註釋的位置。
+PDF 文件可以有多個頁面，在這一步驟中，我們將在文件中新增一個新頁面。此頁面將放置我們的標註註釋。
 
 ```csharp
 //新增頁面
@@ -129,7 +129,7 @@ doc.Save(dataDir + "SetCalloutProperty.pdf");
 
 ## 結論
 
-現在你就擁有了！您剛剛使用 Aspose.PDF for .NET 建立了一個帶有標註註釋的 PDF 文件。此註釋對於突出顯示或解釋文件的特定部分非常有用。 Aspose.PDF 提供了強大的 API，讓 PDF 操作變得簡單又靈活。無論您是新增註解、轉換文件還是處理複雜的 PDF 任務，Aspose.PDF 都能滿足您的需求。
+現在你就得到它了！您剛剛使用 Aspose.PDF for .NET 建立了一個帶有標註註釋的 PDF 文件。此註釋對於突出顯示或解釋文件的特定部分非常有用。 Aspose.PDF 提供了強大的 API，讓 PDF 操作變得簡單又靈活。無論您是新增註解、轉換文件還是處理複雜的 PDF 任務，Aspose.PDF 都能滿足您的需求。
 
 ## 常見問題解答
 

@@ -125,7 +125,7 @@ A: Aspose.PDF for .NET은 다양한 속성을 가진 구조적 요소를 만들�
 
 ####  Q: 역할은 무엇입니까?`SetTitle` and `SetLanguage` methods in working with structural element properties?
 
- A: 그`SetTitle` 그리고`SetLanguage` 의 방법`ITaggedContent`객체를 사용하면 구조적 요소 속성에 영향을 미치는 문서 제목과 언어를 설정할 수 있습니다. 제목과 언어를 설정하면 문서의 일관성과 의미 있는 메타데이터가 보장됩니다.
+ A: 그`SetTitle` 그리고`SetLanguage` 의 방법`ITaggedContent` 객체를 사용하면 구조적 요소 속성에 영향을 미치는 문서 제목과 언어를 설정할 수 있습니다. 제목과 언어를 설정하면 문서의 일관성과 의미 있는 메타데이터가 보장됩니다.
 
 #### 질문: Aspose.PDF for .NET을 사용하여 PDF 문서에서 구조적 요소를 만들고 조작하려면 어떻게 해야 합니까?
 

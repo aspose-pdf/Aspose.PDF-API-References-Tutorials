@@ -18,7 +18,7 @@ Než začnete, ujistěte se, že máte následující:
 
 ## Krok 1: Nastavte adresář dokumentů
 
- Nejprve je potřeba nastavit cestu k adresáři, kde máte vstupní PDF soubor. Nahradit`"YOUR DOCUMENT DIRECTORY"` v`dataDir` proměnnou s cestou k vašemu PDF souboru.
+ Nejprve je potřeba nastavit cestu k adresáři, kde máte vstupní PDF soubor. Nahradit`"YOUR DOCUMENT DIRECTORY"` v`dataDir` proměnná s cestou k vašemu PDF souboru.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";

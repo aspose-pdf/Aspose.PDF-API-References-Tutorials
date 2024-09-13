@@ -1,7 +1,7 @@
 ---
 title: Autopassa till fönster
 linktitle: Autopassa till fönster
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Steg-för-steg guide för att använda Aspose.PDF för .NET och uppnå autopassning till fönster i PDF-generering.
 type: docs
 weight: 50
@@ -126,7 +126,7 @@ margin.Bottom = 5f;
 // Ställ in standardcellutfyllnad till MarginInfo-objektet
 tab1.DefaultCellPadding = margin;
 
-// Skapa rader i tabellen och sedan celler i raderna
+//Skapa rader i tabellen och sedan celler i raderna
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

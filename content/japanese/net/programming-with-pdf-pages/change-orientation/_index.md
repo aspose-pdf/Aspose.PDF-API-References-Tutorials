@@ -7,105 +7,131 @@ type: docs
 weight: 10
 url: /ja/net/programming-with-pdf-pages/change-orientation/
 ---
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメントのページの向きを変更する手順を順を追って説明します。バンドルされている C# ソース コードについて説明し、この機能を理解して独自のプロジェクトに実装するのに役立つ包括的なガイドを提供します。このチュートリアルの最後には、Aspose.PDF for .NET を使用して PDF ドキュメントのページの向きを変更する方法がわかります。
+## 導入
+
+ページの向きがまったくずれている PDF ファイルで苦労したことはありませんか? おそらく、スキャンまたは作成が不適切だったドキュメントを扱っていて、ページを回転しないと意味が通じないのでしょう。幸いなことに、Aspose.PDF for .NET は、ページの向きの変更を含め、考えられるほぼあらゆる方法で PDF ファイルを操作する簡単で強力な方法を提供します。縦向きから横向きに、またはその逆に切り替えたい場合、このガイドでは手順を追って手順を説明します。
+
+では、PDF ページを簡単に回転させる準備ができたら、始めましょう。
 
 ## 前提条件
-始める前に、次のものがあることを確認してください。
 
-- C#プログラミング言語の基礎知識
-- 開発環境に Aspose.PDF for .NET がインストールされている
+PDF のページの向きを変更する詳細に入る前に、必要な準備について簡単に説明しましょう。
 
-## ステップ1: ドキュメントディレクトリを定義する
-まず、ドキュメント ディレクトリへのパスを設定する必要があります。これは、入力 PDF ファイルがある場所であり、変更した出力 PDF ファイルを保存する場所です。「YOUR DOCUMENTS DIRECTORY」を適切なパスに置き換えます。
+-  Aspose.PDF for .NET: Aspose.PDFライブラリが.NET用にインストールされていることを確認してください。まだインストールされていない場合は、[ここからダウンロード](https://releases.aspose.com/pdf/net/).
+- .NET 開発環境: .NET での作業には、Visual Studio、JetBrains Rider、または任意の IDE を使用できます。
+- C# の基本知識: このガイドはわかりやすいですが、C# の基本を理解しておくと、さらに理解しやすくなります。
+- PDF ファイル: 以下の例では、複数ページの PDF ファイルがあることを前提としています。手元に PDF ファイルがない場合は、サンプル PDF を作成またはダウンロードして作業してください。
+
+また、まだ始めたばかりの場合は、Aspose.PDFを[無料の一時ライセンス](https://purchase.aspose.com/temporary-license/)決める前に[フルバージョンを購入する](https://purchase.aspose.com/buy).
+
+## 名前空間のインポート
+
+PDF のページの向きを操作する前に、C# プロジェクトに必要な名前空間をインポートする必要があります。次のものがあることを確認してください。
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
 ```
 
-## ステップ2: PDF文書を読み込む
-次に、入力ファイルからPDF文書を読み込むには、`Document` Aspose.PDF のクラス。PDF ファイルへの正しいパスを必ず指定してください。
+これをインポートしたら、チュートリアルのメイン部分に進みましょう。
+
+## ステップ1: PDFドキュメントを読み込む
+
+まず最初に、変更したいPDFファイルを読み込みます。`Document` PDF を開くには、Aspose.PDF 名前空間のクラスを使用します。
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-## ステップ3: ページの向きを変更する
-次に、ドキュメントの各ページを調べて、その向きを変更します。各ページで、メディアボックスのサイズを変更します（`MediaBox`) の幅と高さを入れ替えて、メディア ボックスの座標を調整し、ページの位置を維持します。最後に、ページの回転を 90 度に設定します。
+この行は、指定したディレクトリからPDFを読み込みます。`"YOUR DOCUMENT DIRECTORY"`ファイルの実際のパスを入力します。`"input.pdf"`向きを変更する PDF です。
+
+## ステップ2: 各ページをループする
+
+ドキュメントが読み込まれたので、PDFの各ページをループしてみましょう。`foreach`ループしてすべてのページを巡回し、すべてのページに向きの変更を適用できるようにします。
 
 ```csharp
-foreach(Page page in doc.Pages)
+foreach (Page page in doc.Pages)
 {
+    //各ページを操作する
+}
+```
+
+このループはドキュメント内のすべてのページを反復処理します。
+
+## ステップ3: ページのMediaBoxを取得する
+
+PDFの各ページには`MediaBox`ページの境界を定義します。現在の方向を決定し、変更するには、これにアクセスする必要があります。
+
+```csharp
 Aspose.Pdf.Rectangle r = page.MediaBox;
+```
+
+の`MediaBox`ページの幅、高さ、位置などの寸法がわかります。
+
+## ステップ4: 幅と高さを入れ替える
+
+ページの向きを縦向きから横向きへ、または横向きから縦向きへ変更するには、幅と高さの値を入れ替えるだけです。この手順でページのサイズが調整されます。
+
+```csharp
 double newHeight = r.Width;
 double newWidth = r.Height;
 double newLLX = r.LLX;
 double newLLY = r.LLY + (r.Height - newHeight);
+```
+
+このコードは高さと幅を入れ替え、左下隅の位置を変更します（`LLY`）を使用すると、回転後にコンテンツがきれいに収まるようになります。
+
+## ステップ5: MediaBoxとCropBoxを更新する
+
+新しい高さと幅ができたので、ページに変更を適用してみましょう。`MediaBox`そして`CropBox` 。`CropBox`元のドキュメントに 1 セットある場合は、ページ全体が正しく表示されるようにするために不可欠です。
+
+```csharp
 page.MediaBox = new Aspose.Pdf.Rectangle(newLLX, newLLY, newLLX + newWidth, newLLY + newHeight);
 page.CropBox = new Aspose.Pdf.Rectangle(newLLX, newLLY, newLLX + newWidth, newLLY + newHeight);
-page. Rotate = Rotate. on90;
-}
 ```
 
-## ステップ4: 変更したPDF文書を保存する
-最後に、変更したPDF文書を出力ファイルに保存するには、`Save()`方法の`Document`クラス。正しいパスとファイル名を必ず指定してください。
+この手順では、計算した新しい寸法に基づいてページのサイズを変更します。
+
+## ステップ6: ページを回転する
+
+最後に、ページの回転角度を設定します。Aspose.PDF を使用すると、これが非常に簡単になります。ページを 90 度回転して、縦向きから横向きに、またはその逆に変更できます。
+
+```csharp
+page.Rotate = Rotation.on90;
+```
+
+このコードはページを 90 度回転し、目的の方向に反転します。
+
+## ステップ7: 出力PDFを保存する
+
+すべてのページに向きの変更を適用した後、変更されたドキュメントを新しいファイルに保存します。 
 
 ```csharp
 dataDir = dataDir + "ChangeOrientation_out.pdf";
-doc.Save(dataDir);
-```
-
-### Aspose.PDF for .NET を使用した方向変更のサンプル ソース コード 
-
-```csharp
-
-//ドキュメント ディレクトリへのパス。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document doc = new Document(dataDir + "input.pdf");
-foreach (Page page in doc.Pages)
-{
-	Aspose.Pdf.Rectangle r = page.MediaBox;
-	double newHeight = r.Width;
-	double newWidth = r.Height;
-	double newLLX = r.LLX;
-	//ページサイズの変更を補正するためにページを上に移動する必要があります
-	//（ページの下端は0,0で、情報は通常、
-	//ページの上部。それが、恋人のエッジを上に移動します。
-	//古くて新しい高さ。
-	double newLLY = r.LLY + (r.Height - newHeight);
-	page.MediaBox = new Aspose.Pdf.Rectangle(newLLX, newLLY, newLLX + newWidth, newLLY + newHeight);
-	//場合によっては、CropBox も設定する必要があります (元のファイルで設定されている場合)
-	page.CropBox = new Aspose.Pdf.Rectangle(newLLX, newLLY, newLLX + newWidth, newLLY + newHeight);
-	//ページの回転角度の設定
-	page.Rotate = Rotation.on90;
-}
-dataDir = dataDir + "ChangeOrientation_out.pdf";
-//出力ファイルを保存する
 doc.Save(dataDir);
 System.Console.WriteLine("\nPage orientation changed successfully.\nFile saved at " + dataDir);
-
 ```
 
-## 結論
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメントのページの向きを変更する方法を学習しました。上記の手順に従うことで、この機能を自分のプロジェクトに簡単に実装できます。Aspose.PDF のドキュメントをさらに詳しく調べて、PDF ファイルの操作に役立つその他の機能を見つけてください。
+新しいファイル名を必ず指定してください（この場合は、`ChangeOrientation_out.pdf`) をクリックして出力を保存します。この方法では、元のファイルが上書きされることはありません。
 
-### よくある質問
+### 結論
 
-#### Q: PDF ドキュメントのページの向きを変更する目的は何ですか?
+これで完了です。Aspose.PDF for .NET を使用して PDF ファイルのページの向きを変更するのは、ドキュメントを読み込み、ページをループし、MediaBox を調整し、更新されたファイルを保存するだけです。スキャンが不十分なドキュメントを扱う場合でも、書式設定のニーズに合わせてページを回転する必要がある場合でも、このステップ バイ ステップ ガイドが役立ちます。
 
-A: PDF ドキュメントのページの向きを変更すると、ページのコンテンツを 90 度回転できます。これは、縦向きから横向きに、またはその逆に切り替えるなど、元のコンテンツを別の向きで表示または印刷する必要がある場合に役立ちます。
+## よくある質問
 
-#### Q: PDF ドキュメント内の特定のページの向きを変更できますか?
+### PDF 内のすべてのページではなく、特定のページを回転できますか?  
+はい、すべてのページをループするのではなく、インデックスを使用して特定のページをターゲットにするようにループを変更できます。
 
- A: はい、PDF文書内の特定のページの向きを変更することができます。提供されているC#ソースコードでは、`foreach`ループは、ドキュメントの各ページを調べて向きを変更するために使用されます。特定のページの向きのみを変更したい場合は、ページ番号やその他の基準に基づいてそれらのページをターゲットにするようにループを変更できます。
+### 何ですか`MediaBox`?  
+の`MediaBox`PDF ファイルのページのサイズと形状を定義します。ページのコンテンツが配置される場所です。
 
-#### Q: ページの向きを変更すると、ページ上のコンテンツのレイアウトに影響しますか?
+### Aspose.PDF for .NET は他のファイル形式でも動作しますか?  
+はい、Aspose.PDF は HTML、XML、XPS などのさまざまなファイル形式を処理できます。
 
-A: はい、ページの向きを変更すると、ページ上のコンテンツのレイアウトに影響します。コンテンツは 90 度回転し、ページの幅と高さが入れ替わります。その結果、ページ上のコンテンツの配置と配置が変わる場合があります。
+### Aspose.PDF for .NET の無料バージョンはありますか?  
+はい、まずは[無料トライアル](https://releases.aspose.com/)またはリクエスト[一時ライセンス](https://purchase.aspose.com/temporary-license/).
 
-#### Q: ページを 90 度以外の角度で回転できますか?
-
- A: 提供されているC#ソースコードでは、ページの回転は90度に設定されています。`page.Rotate = Rotate.on90;`ただし、必要に応じて回転角度を他の値に変更することもできます。たとえば、`Rotate.on180`ページを180度回転させるには`Rotate.on270`270 度回転します。
-
-#### Q: 向きを変更した後にオーバーフローするページ コンテンツを処理するにはどうすればよいですか?
-
-A: ページの向きを変更すると、ページのサイズが変わる場合があり、コンテンツがオーバーフローする可能性があります。これに対処するには、ページ上のコンテンツのレイアウトと書式設定を調整する必要があります。Aspose.PDF for .NET が提供する機能 (要素のサイズ変更、余白の調整、コンテンツの再編成など) を使用すると、向きの変更後にページ コンテンツが適切に収まるようにすることができます。
+### 一度保存した変更を元に戻すことはできますか?  
+ドキュメントを保存すると、変更は永続的になります。必ずコピーで作業するか、元のファイルのバックアップを保存してください。

@@ -108,7 +108,7 @@ Console.WriteLine("Contents : {0} ", textAnnotation.Contents);
 はい、Aspose.PDFは次のようなさまざまな注釈タイプをサポートしています。`HighlightAnnotation`, `StampAnnotation`など。アノテーションを適切な型にキャストするだけです。
 
 ### 注釈のインデックスがわからない場合はどうすればいいですか?  
-すべての注釈をループするには、`foreach`ループしてプロパティをチェックし、探しているものを見つけます。
+すべての注釈をループするには、`foreach`ループしてプロパティを確認し、探しているものを見つけます。
 
 ### Aspose.PDF for .NET は無料ですか?  
  Aspose.PDF for .NETは無料トライアルを提供しており、ダウンロードすることができます。[ここ](https://releases.aspose.com/)完全なライセンスについては、[価格設定](https://purchase.aspose.com/buy).

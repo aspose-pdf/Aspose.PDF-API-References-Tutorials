@@ -32,7 +32,7 @@ using Aspose.Pdf.Text;
  Zoek in de code de regel met de tekst`string dataDir = "YOUR DOCUMENT DIRECTORY";` en vervangen`"YOUR DOCUMENT DIRECTORY"` met het pad naar de map waar uw documenten zijn opgeslagen.
 
 ## Stap 4: Maak een voorbeelddocument met tekst
- Maak een nieuwe`Document` object en voeg pagina's met tekstfragmenten toe. In de meegeleverde code worden twee tekstfragmenten aan het document toegevoegd met de bijbehorende tooltiptekst.
+ Maak een nieuwe`Document`object en voeg pagina's met tekstfragmenten toe. In de meegeleverde code worden twee tekstfragmenten aan het document toegevoegd met de bijbehorende tooltiptekst.
 
 ```csharp
 Document doc = new Document();
@@ -98,7 +98,7 @@ doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to disp
 doc.Save(outputFile);
 // Open document met tekst
 Document document = new Document(outputFile);
-// Maak een TextAbsorber-object om alle zinnen te vinden die overeenkomen met de reguliere expressie
+//Maak een TextAbsorber-object om alle zinnen te vinden die overeenkomen met de reguliere expressie
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
 // Accepteer de absorber voor de documentpagina's
 document.Pages.Accept(absorber);
@@ -169,7 +169,7 @@ using Aspose.Pdf.Text;
 
 #### V: Hoe voeg ik tooltips toe aan de tekstfragmenten?
 
- A: In stap 6 loop je door de geëxtraheerde tekstfragmenten en maak je onzichtbare knoppen op hun posities. De tooltiptekst wordt toegewezen aan de`AlternateName` eigendom van de`ButtonField`die aan het documentformulier wordt toegevoegd.
+ A: In stap 6 loop je door de geëxtraheerde tekstfragmenten en maak je onzichtbare knoppen op hun posities. De tooltiptekst wordt toegewezen aan de`AlternateName` eigendom van de`ButtonField`, die aan het documentformulier wordt toegevoegd.
 
 #### V: Hoe herhaal ik dit proces voor extra tekstfragmenten met lange tooltips?
 

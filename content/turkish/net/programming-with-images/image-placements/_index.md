@@ -2,145 +2,121 @@
 title: Resim Yerleşimleri
 linktitle: Resim Yerleşimleri
 second_title: Aspose.PDF for .NET API Referansı
-description: PDF belgesine resim yerleştirmek için Aspose.PDF for .NET'in nasıl kullanılacağını öğrenin.
+description: Aspose.PDF for .NET kullanarak PDF belgelerindeki görüntü yerleşimlerini nasıl çıkaracağınızı ve düzenleyeceğinizi öğrenin. Örnekler ve kod parçacıkları içeren adım adım kılavuz.
 type: docs
 weight: 170
 url: /tr/net/programming-with-images/image-placements/
 ---
-Bu eğitimde, PDF belgeleriyle çalışmak ve resimler üzerinde işlemler gerçekleştirmek için .NET için Aspose.PDF kütüphanesini kullanacağız. Bir PDF belgesi yükleyeceğiz, resim yerleştirme bilgilerini çıkaracağız ve resimleri boyutları görünür halde alacağız.
+## giriiş
 
-## Adım 1: Ortamı kurma
-Başlamadan önce, geliştirme ortamınızı aşağıdakilerle ayarladığınızdan emin olun:
-- Bilgisayarınızda Aspose.PDF for .NET yüklü olmalıdır.
-- AC# projesi kullanıma hazır.
+PDF dosyalarındaki resimlerle çalışmak zor olabilir, ancak Aspose.PDF for .NET ile ter dökmeden resim özelliklerini kolayca düzenleyebilir ve çıkarabilirsiniz. Resim boyutlarını almak, çıkarmak veya çözünürlük gibi diğer özellikleri almak istiyorsanız, Aspose.PDF ihtiyacınız olan araçlara sahiptir. Bu eğitim, Aspose.PDF for .NET kullanarak bir PDF belgesindeki resim yerleşimlerini nasıl çıkaracağınıza dair adım adım bir kılavuzda size yol gösterecektir. Paketleri içe aktarmaktan genişlik, yükseklik ve çözünürlük gibi resim özelliklerini almaya kadar her şeyi ele alacağız.
 
-## Adım 2: PDF belgesini yükleme
-Başlamak için, işlemek istediğimiz PDF belgesini yüklememiz gerekiyor. PDF belgesini içeren dizine doğru yola sahip olduğunuzdan emin olun.
+## Ön koşullar
+
+Eğitime başlamadan önce, yerinde olması gereken birkaç şey var. İşte hızlı bir kontrol listesi:
+
+1.  Aspose.PDF for .NET: Aspose.PDF for .NET kütüphanesini yüklediğinizden emin olun. İndirebilirsiniz[Burada](https://releases.aspose.com/pdf/net/).
+2. Geliştirme Ortamı: Bilgisayarınızda Visual Studio veya .NET destekli herhangi bir IDE'nin yüklü olması gerekir.
+3. Bir PDF Belgesi: Görüntüler içeren bir örnek PDF belgesi hazırlayın. Bu örnek için, adlı bir dosya kullanacağız`ImagePlacement.pdf`.
+4. Temel C# Bilgisi: Bu rehber başlangıç seviyesindekilere uygun olsa da, temel C# bilgisi kod parçacıklarını daha iyi anlamanıza yardımcı olacaktır.
+
+## Paketleri İçe Aktar
+
+Kodun ince ayrıntılarına girmeden önce yapmanız gereken ilk şey gerekli ad alanlarını içe aktarmaktır. Bu paketler, .NET için Aspose.PDF'de PDF belgeleri ve görüntü düzenlemeyle çalışmak için çok önemlidir.
 
 ```csharp
-// Belgeler dizinine giden yol.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Kaynak PDF belgesini yükleyin
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "PlacementImage.pdf");
+using System.IO;
+using Aspose.Pdf;
+using System;
+using System.Drawing;
 ```
 
- Değiştirdiğinizden emin olun`"YOUR DOCUMENTS DIRECTORY"` PDF dosyasını içeren belgeler dizininize giden gerçek yol ile.
+Bu paketler PDF'lerle çalışmanıza olanak tanır (`Aspose.Pdf`), görüntü yerleşimlerini manipüle edin (`Aspose.Pdf.ImagePlacement`), ve görüntü akışlarını ve grafikleri yönetin (`System.Drawing` Ve`System.IO`).
 
-## Adım 3: Görüntülerden yerleşim bilgilerini çıkarın
- Artık PDF belgesini yüklediğimize göre, yerleştirme bilgilerini resimlerden çıkarabiliriz. Kullanacağız`ImagePlacementAbsorber`Belgenin ilk sayfasından görüntü konumlarını özümsemek için.
+Artık ön koşullar ve paketler hazır olduğuna göre, eğitimin her bir bölümünü basit ve anlaşılması kolay bir kılavuzda ele alalım.
+
+## Adım 1: PDF Belgesini Yükleyin
+
+İlk adım PDF belgesini projenize yüklemektir. Bu, PDF dosyası içindeki görsellerle çalışmanın temeli olacaktır.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY"; 
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "ImagePlacement.pdf");
+```
+
+ Bu adımda, PDF belgesinin dosya yolunu kullanarak tanımlıyoruz`dataDir`ve sonra yeni bir örnek oluşturma`Aspose.Pdf.Document` sınıf. Bu, PDF dosyasını programımıza yüklememizi sağlar. Basit, değil mi? Tıpkı okumaya başlamak için bir kitabı açmak gibi, artık içindeki içeriği keşfetmeye hazırız.
+
+## Adım 2: Görüntü Yerleştirme Emicisini Başlatın
+
+Görüntüleri çıkarmak için "Görüntü Yerleşimi Emicisi" adı verilen bir şeye ihtiyacımız var. Bunu, belirli bir sayfadaki tüm görüntü bilgilerini emen bir araç olarak düşünün.
 
 ```csharp
 ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
-// İlk sayfanın içeriğini yükle
+```
+
+ Burada, bir örnek oluşturuyoruz`ImagePlacementAbsorber`. Bu nesne, belirli bir PDF sayfasındaki tüm resim yerleşimleri hakkında bilgi toplayacak ve depolayacaktır. Bunu, bir sayfayı büyüteçle tarayıp üzerindeki tüm resimleri tanımlamak gibi düşünün!
+
+## Adım 3: İlk Sayfadaki Absorber'ı Kabul Edin
+
+Sonra, emiciye PDF'in hangi sayfasının taranacağını söylememiz gerekir. Bu örnekte, ilk sayfaya odaklanacağız.
+
+```csharp
 doc.Pages[1].Accept(abs);
 ```
 
-Artık belgenin ilk sayfasından resim yerleşim bilgilerini çıkarmış olduk.
+ The`Accept` yöntem, PDF belgesinin ilk sayfasını herhangi bir görüntü açısından tarar ve sonuçları belgenin içinde depolar.`ImagePlacementAbsorber`Bu, büyütece resimlerin nerede aranacağını söylemek gibi bir şey.
 
-## Adım 4: Görünür boyutlara sahip görselleri alma
-Şimdi daha önce çıkardığımız yerleşim bilgilerinden görselleri görünür boyutlarıyla birlikte alacağız.
+## Adım 4: Her Görüntü Yerleşiminde Döngü Yapın
+
+Sayfayı taradığımıza göre, sayfada bulunan her bir resmi tarayıp özelliklerini almamız gerekiyor.
 
 ```csharp
-foreach(ImagePlacement imagePlacement in abs.ImagePlacements)
-{
-     // Görüntü özelliklerini al
-     Console.Out.WriteLine("Image Width: " + imagePlacement.Rectangle.Width);
-     Console.Out.WriteLine("Image Height: " + imagePlacement.Rectangle.Height);
-     Console.Out.WriteLine("LLX of image: " + imagePlacement.Rectangle.LLX);
-     Console.Out.WriteLine("LLY of image: " + imagePlacement.Rectangle.LLY);
-     Console.Out.WriteLine("Horizontal resolution of the image
-
-  : " + imagePlacement.Resolution.X);
-     Console.Out.WriteLine("Vertical image resolution: " + imagePlacement.Resolution.Y);
-
-     // Görüntüyü görünür boyutlarla al
-     Bitmap scaledImage;
-     using (MemoryStream imageStream = new MemoryStream())
-     {
-         // Görseli kaynaklardan alın
-         imagePlacement.Image.Save(imageStream, System.Drawing.Imaging.ImageFormat.Png);
-         Bitmap resourceImage = (Bitmap)Bitmap.FromStream(imageStream);
-
-         // Gerçek boyutlarda bir görüntü oluşturun
-         scaledImage = new Bitmap(resourceImage, (int)imagePlacement.Rectangle.Width, (int)imagePlacement.Rectangle.Height);
-     }
-}
-```
-
-Bu döngüde, her görüntünün genişlik, yükseklik, sol alt köşenin X ve Y koordinatları ve yatay ve dikey çözünürlük gibi özelliklerini alırız. Daha sonra, yerleşim bilgilerini kullanarak her görüntüyü görünür boyutlarıyla alırız.
-
-### .NET için Aspose.PDF kullanılarak Görüntü Yerleşimleri için örnek kaynak kodu 
-```csharp
-// Belgeler dizinine giden yol.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Kaynak PDF belgesini yükleyin
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "ImagePlacement.pdf");
-ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
-// İlk sayfanın içeriğini yükle
-doc.Pages[1].Accept(abs);
 foreach (ImagePlacement imagePlacement in abs.ImagePlacements)
 {
-	// Görüntü özelliklerini al
-	Console.Out.WriteLine("image width:" + imagePlacement.Rectangle.Width);
-	Console.Out.WriteLine("image height:" + imagePlacement.Rectangle.Height);
-	Console.Out.WriteLine("image LLX:" + imagePlacement.Rectangle.LLX);
-	Console.Out.WriteLine("image LLY:" + imagePlacement.Rectangle.LLY);
-	Console.Out.WriteLine("image horizontal resolution:" + imagePlacement.Resolution.X);
-	Console.Out.WriteLine("image vertical resolution:" + imagePlacement.Resolution.Y);
-	// Görünür boyutlara sahip görüntüyü al
-	Bitmap scaledImage;
-	using (MemoryStream imageStream = new MemoryStream())
-	{
-		// Kaynaklardan görseli al
-		imagePlacement.Image.Save(imageStream, System.Drawing.Imaging.ImageFormat.Png);
-		Bitmap resourceImage = (Bitmap)Bitmap.FromStream(imageStream);
-		//Gerçek boyutlara sahip bitmap oluşturun
-		scaledImage = new Bitmap(resourceImage, (int)imagePlacement.Rectangle.Width, (int)imagePlacement.Rectangle.Height);
-	}
+    Console.Out.WriteLine("image width:" + imagePlacement.Rectangle.Width);
+    Console.Out.WriteLine("image height:" + imagePlacement.Rectangle.Height);
+    Console.Out.WriteLine("image LLX:" + imagePlacement.Rectangle.LLX);
+    Console.Out.WriteLine("image LLY:" + imagePlacement.Rectangle.LLY);
+    Console.Out.WriteLine("image horizontal resolution:" + imagePlacement.Resolution.X);
+    Console.Out.WriteLine("image vertical resolution:" + imagePlacement.Resolution.Y);
 }
 ```
 
+Bu döngü sayfada bulunan her bir resmin içinden geçer. Genişliği, yüksekliği, sol alt x'i (LLX), sol alt y'yi (LLY) ve resmin çözünürlüğünü (hem yatay hem de dikey) yazdırıyoruz. Bu ayrıntılar, PDF içindeki her bir resmin boyutunu ve konumunu anlamanıza yardımcı olur.
+
+## Adım 5: Görünür Boyutlara Sahip Görüntüyü Çıkarın
+
+Görüntüler hakkında bilgi topladıktan sonra, gerçek görüntüyü boyutlarıyla birlikte çıkarmak isteyebilirsiniz. Bunu nasıl yapabileceğiniz aşağıda açıklanmıştır.
+
+```csharp
+Bitmap scaledImage;
+using (MemoryStream imageStream = new MemoryStream())
+{
+    imagePlacement.Image.Save(imageStream, System.Drawing.Imaging.ImageFormat.Png);
+    Bitmap resourceImage = (Bitmap)Bitmap.FromStream(imageStream);
+    scaledImage = new Bitmap(resourceImage, (int)imagePlacement.Rectangle.Width, (int)imagePlacement.Rectangle.Height);
+}
+```
+
+ Bu kod parçacığı, görüntüyü PDF'den alır ve onu, tanımlandığı gibi gerçek boyutlarına ölçekler.`ImagePlacement` nesne. Görüntüyü bir bellek akışına kaydederek ve ölçekleyerek, çıkardığınız görüntünün PDF'de görüntülendiği tam boyutu korumasını sağlarsınız.
+
 ## Çözüm
-Tebrikler! Artık bir PDF belgesinde resim yerleştirmeleri yapmak için Aspose.PDF for .NET'i nasıl kullanacağınızı öğrendiniz. Bir PDF belgesini yüklemenize, resimlerden yerleştirme bilgilerini çıkarmanıza ve resimleri boyutları görünür şekilde almanıza olanak tanıyan sağlanan C# kaynak kodunu açıkladık. Diğer birçok özelliğini keşfetmek için Aspose.PDF ile daha fazla deneme yapmaktan çekinmeyin.
 
-### SSS
+Aspose.PDF for .NET kullanarak bir PDF belgesinden görüntü yerleşimlerini çıkarmak, adım adım açıkladığınızda oldukça basittir. Bir PDF'yi yüklemekten görüntü özelliklerini almaya ve görüntüleri gerçek boyutlarıyla çıkarmaya kadar her şeyi ele aldık. Aspose.PDF, PDF'lerle çalışmayı ve içerikleri düzenlemeyi inanılmaz derecede basit hale getirerek, görüntüler, metin ve çok daha fazlasıyla verimli bir şekilde çalışmanıza olanak tanır.
 
-#### S: Aspose.PDF for .NET kullanarak bir PDF belgesinden görüntü yerleştirme bilgilerini çıkarmanın amacı nedir?
+## SSS
 
-A: Görüntü yerleştirme bilgilerini çıkarmak, bir PDF belgesindeki görüntülerin konumunu, boyutlarını ve çözünürlüğünü almanıza olanak tanır. Bu bilgi, hassas görüntü işleme ve analizi için önemlidir.
+### PDF'in belirli bir sayfasından görsel çıkarabilir miyim?  
+ Evet, kullanırken sayfa numarasını belirterek`Accept` Bu yöntemle istediğiniz belirli sayfaya odaklanabilirsiniz.
 
-#### S: Aspose.PDF for .NET, bir PDF belgesinden resim yerleştirme bilgilerinin çıkarılmasını nasıl kolaylaştırır?
+### Çıkarım için hangi görüntü formatları destekleniyor?  
+Aspose.PDF PNG, JPEG, BMP ve daha fazlası dahil olmak üzere çeşitli formatları destekler.
 
- A: .NET için Aspose.PDF şunları sağlar:`ImagePlacementAbsorber`PDF belgesinden görüntü yerleştirme ayrıntılarını emmek için kullanılabilen sınıf. Sağlanan kod, bu sınıfın görüntü yerleştirme bilgilerini almak için nasıl kullanılacağını gösterir.
+### Çıkarılan görselde değişiklik yapmak mümkün müdür?  
+ Kesinlikle! Çıkardıktan sonra, şunu kullanabilirsiniz:`System.Drawing` Görüntüyü düzenlemek için namespace.
 
-#### S: Görüntü yerleştirme bilgileri gerçek dünya senaryolarında ne için kullanılabilir?
+### Şifreyle korunan PDF'lerden resim çıkarabilir miyim?  
+Evet yapabilirsiniz, ancak görüntüleri çıkarmadan önce uygun kimlik bilgilerini kullanarak PDF'in kilidini açmanız gerekir.
 
-A: Görüntü yerleştirme bilgileri, doğru görüntü hizalamasını sağlama, görüntü boyutlarını hesaplama, görüntü kalitesini doğrulama ve PDF belgesi içinde görüntü kullanımına ilişkin raporlar oluşturma gibi görevler için değerlidir.
-
-#### S: Kod örneği, görüntü yerleştirme bilgilerinin doğru şekilde çıkarılmasını nasıl sağlar?
-
- A: Kod örneği şunları kullanır:`ImagePlacementAbsorber` Belirtilen bir sayfanın içeriklerini dolaşmak, resim yerleşimlerini belirlemek ve genişlik, yükseklik, koordinatlar ve çözünürlük gibi niteliklerini almak için kullanılan sınıf.
-
-#### S: Kod, birden fazla sayfadaki veya belgedeki görüntüleri işleyecek şekilde genişletilebilir mi?
-
-C: Evet, kod, görüntü yerleştirme bilgilerini çıkarmak ve görüntüyle ilgili görevleri gerçekleştirmek için birden fazla sayfa veya belgede yineleme yaparak genişletilebilir.
-
-#### S: Kod, yerleşim bilgilerine dayanarak görselleri görünür boyutlarıyla birlikte nasıl alıyor?
-
-A: Kod örneği kaynaklardan görüntü verilerini çıkarır, gerçek boyutlara sahip bir bitmap görüntüsü oluşturur ve genişlik, yükseklik, koordinatlar ve çözünürlük gibi özellikler sağlar.
-
-#### S: Bu yaklaşım, çok sayıda resim içeren büyük PDF belgeleri için etkili midir?
-
-A: Evet, Aspose.PDF for .NET performans ve kaynak kullanımı için optimize edilmiştir. Büyük PDF belgelerinden bile görüntü yerleştirme bilgilerini verimli bir şekilde çıkarır.
-
-#### S: Geliştiriciler, görüntü yerleştirme bilgilerini anlayıp kullanarak nasıl fayda sağlayabilirler?
-
-A: Geliştiriciler PDF belgelerinde hassas görüntü işleme, hizalama ve analiz sağlayabilir. Bu bilgi, görüntü işleme, raporlama ve kalite güvencesi için uygulamalar oluşturmalarına olanak tanır.
-
-#### S: Kod, görüntüyle ilgili ek nitelikleri veya meta verileri çıkaracak şekilde özelleştirilebilir mi?
-
-C: Kesinlikle, Aspose.PDF for .NET tarafından sağlanan uygun sınıflar ve yöntemler kullanılarak görüntü türü, renk alanı, sıkıştırma ve daha fazlası gibi ek nitelikleri çıkarmak için kod geliştirilebilir.
-
-#### S: Bu eğitimde verilen sonucun önemi nedir?
-
-A: Sonuç, eğitimin içeriğini özetliyor ve Aspose.PDF for .NET'in, görüntü yerleştirmenin ötesindeki yeteneklerinden yararlanarak, çeşitli PDF ile ilgili görevlere kapı açmak için daha fazla araştırılmasını teşvik ediyor.
+### Aspose.PDF for .NET tüm .NET framework'lerinde çalışır mı?  
+Evet, .NET Framework, .NET Core ve .NET 5 ve üzeri sürümleri destekler.

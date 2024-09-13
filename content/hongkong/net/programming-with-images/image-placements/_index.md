@@ -2,145 +2,121 @@
 title: 圖片展示位置
 linktitle: 圖片展示位置
 second_title: Aspose.PDF for .NET API 參考
-description: 了解如何使用 Aspose.PDF for .NET 將影像放入 PDF 文件中。
+description: 了解如何使用 Aspose.PDF for .NET 擷取和操作 PDF 文件中的影像位置。包含範例和程式碼片段的逐步指南。
 type: docs
 weight: 170
 url: /zh-hant/net/programming-with-images/image-placements/
 ---
-在本教學中，我們將使用 .NET 的 Aspose.PDF 庫來處理 PDF 文件並對影像執行操作。我們將加載 PDF 文檔，提取圖像位置信息，並檢索尺寸可見的圖像。
+## 介紹
 
-## 第一步：建構環境
-在開始之前，請確保您已使用以下內容設定開發環境：
-- Aspose.PDF for .NET 安裝在您的電腦上。
-- AC# 項目可供使用。
+處理 PDF 文件中的圖像可能很棘手，但使用 Aspose.PDF for .NET，您可以輕鬆操作和提取圖像屬性，而無需費力。無論您是想取得影像尺寸、擷取影像，還是檢索解析度等其他屬性，Aspose.PDF 都能提供您所需的工具。本教學將逐步指導您如何使用 Aspose.PDF for .NET 擷取 PDF 文件中的影像位置。我們將涵蓋從導入包到檢索影像屬性（如寬度、高度和解析度）的所有內容。
 
-## 第 2 步：載入 PDF 文檔
-首先，我們需要載入要處理的 PDF 文件。確保您擁有包含 PDF 文件的目錄的正確路徑。
+## 先決條件
+
+在我們開始學習本教程之前，您需要先做好一些準備。這是一個快速清單：
+
+1.  Aspose.PDF for .NET：請確定您已安裝 Aspose.PDF for .NET 程式庫。你可以下載它[這裡](https://releases.aspose.com/pdf/net/).
+2. 開發環境：您需要在電腦上安裝 Visual Studio 或任何其他支援 .NET 的 IDE。
+3. PDF 文件：準備好包含影像的範例 PDF 文件。對於本例，我們將使用一個名為`ImagePlacement.pdf`.
+4. 基本 C# 知識：雖然本指南適合初學者，但 C# 基本知識將幫助您更好地理解程式碼片段。
+
+## 導入包
+
+在我們深入了解程式碼的實質之前，您需要做的第一件事是匯入必要的名稱空間。這些套件對於在 Aspose.PDF for .NET 中處理 PDF 文件和影像操作至關重要。
 
 ```csharp
-//文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-//載入來源PDF文檔
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "PlacementImage.pdf");
+using System.IO;
+using Aspose.Pdf;
+using System;
+using System.Drawing;
 ```
 
-一定要更換`"YOUR DOCUMENTS DIRECTORY"`包含 PDF 檔案的文檔目錄的實際路徑。
+這些包可讓您處理 PDF（`Aspose.Pdf`），操縱影像位置（`Aspose.Pdf.ImagePlacement`），並處理影像流和圖形（`System.Drawing`和`System.IO`）。
 
-## 步驟 3：從影像中擷取位置資訊
-現在我們已經加載了 PDF 文檔，我們可以從圖像中提取位置資訊。我們將使用`ImagePlacementAbsorber`從文件的第一頁吸收影像位置。
+現在我們已經具備了先決條件和軟體包，讓我們以簡單易懂的指南來分解本教程的每個部分。
+
+## 第 1 步：載入 PDF 文檔
+
+第一步是將 PDF 文件載入到您的專案中。這將成為處理 PDF 文件內的圖像的基礎。
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY"; 
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "ImagePlacement.pdf");
+```
+
+在此步驟中，我們使用以下命令定義 PDF 文件的檔案路徑`dataDir`然後建立一個新實例`Aspose.Pdf.Document`班級。這允許我們將 PDF 文件載入到我們的程式中。很簡單，對吧？就像打開一本書開始閱讀一樣，我們現在準備探索裡面的內容。
+
+## 第 2 步：初始化影像放置吸收器
+
+為了提取影像，我們需要一種稱為「影像放置吸收器」的東西。把它想像成一個吸收特定頁面上所有圖像資訊的工具。
 
 ```csharp
 ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
-//載入第一頁的內容
+```
+
+在這裡，我們建立一個實例`ImagePlacementAbsorber`。該物件將收集並儲存有關特定 PDF 頁面上所有影像位置的資訊。想像一下，這就像用放大鏡掃描頁面並識別上面的所有圖像！
+
+## 步驟 3： 接受第一頁的吸收器
+
+接下來，我們要告訴吸收器要掃描 PDF 的哪一頁。對於此範例，我們將重點關注第一頁。
+
+```csharp
 doc.Pages[1].Accept(abs);
 ```
 
-我們現在已經從文件的第一頁中提取了圖像放置資訊。
+這`Accept`方法掃描 PDF 文件第一頁中的任何影像並將結果儲存在`ImagePlacementAbsorber`。這就像告訴放大鏡去哪裡尋找影像。
 
-## 步驟 4：檢索具有可見尺寸的影像
-現在，我們將從先前提取的放置資訊中檢索影像及其可見尺寸。
+## 第 4 步：循環遍歷每個影像位置
+
+現在我們已經掃描了頁面，我們需要循環瀏覽頁面上找到的每個圖像並檢索其屬性。
 
 ```csharp
-foreach(ImagePlacement imagePlacement in abs.ImagePlacements)
-{
-     //取得影像屬性
-     Console.Out.WriteLine("Image Width: " + imagePlacement.Rectangle.Width);
-     Console.Out.WriteLine("Image Height: " + imagePlacement.Rectangle.Height);
-     Console.Out.WriteLine("LLX of image: " + imagePlacement.Rectangle.LLX);
-     Console.Out.WriteLine("LLY of image: " + imagePlacement.Rectangle.LLY);
-     Console.Out.WriteLine("Horizontal resolution of the image
-
-  : " + imagePlacement.Resolution.X);
-     Console.Out.WriteLine("Vertical image resolution: " + imagePlacement.Resolution.Y);
-
-     //檢索具有可見尺寸的影像
-     Bitmap scaledImage;
-     using (MemoryStream imageStream = new MemoryStream())
-     {
-         //從資源中取得圖片
-         imagePlacement.Image.Save(imageStream, System.Drawing.Imaging.ImageFormat.Png);
-         Bitmap resourceImage = (Bitmap)Bitmap.FromStream(imageStream);
-
-         //建立具有實際尺寸的影像
-         scaledImage = new Bitmap(resourceImage, (int)imagePlacement.Rectangle.Width, (int)imagePlacement.Rectangle.Height);
-     }
-}
-```
-
-在此循環中，我們檢索每個影像的屬性，例如寬度、高度、左下角的 X 和 Y 座標以及水平和垂直解析度。然後，我們使用放置資訊來檢索每個影像及其可見尺寸。
-
-### 使用 Aspose.PDF for .NET 進行影像放置的範例原始碼 
-```csharp
-//文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-//載入來源PDF文檔
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "ImagePlacement.pdf");
-ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
-//載入第一頁的內容
-doc.Pages[1].Accept(abs);
 foreach (ImagePlacement imagePlacement in abs.ImagePlacements)
 {
-	//取得影像屬性
-	Console.Out.WriteLine("image width:" + imagePlacement.Rectangle.Width);
-	Console.Out.WriteLine("image height:" + imagePlacement.Rectangle.Height);
-	Console.Out.WriteLine("image LLX:" + imagePlacement.Rectangle.LLX);
-	Console.Out.WriteLine("image LLY:" + imagePlacement.Rectangle.LLY);
-	Console.Out.WriteLine("image horizontal resolution:" + imagePlacement.Resolution.X);
-	Console.Out.WriteLine("image vertical resolution:" + imagePlacement.Resolution.Y);
-	//檢索具有可見尺寸的影像
-	Bitmap scaledImage;
-	using (MemoryStream imageStream = new MemoryStream())
-	{
-		//從資源中檢索影像
-		imagePlacement.Image.Save(imageStream, System.Drawing.Imaging.ImageFormat.Png);
-		Bitmap resourceImage = (Bitmap)Bitmap.FromStream(imageStream);
-		//建立具有實際尺寸的點陣圖
-		scaledImage = new Bitmap(resourceImage, (int)imagePlacement.Rectangle.Width, (int)imagePlacement.Rectangle.Height);
-	}
+    Console.Out.WriteLine("image width:" + imagePlacement.Rectangle.Width);
+    Console.Out.WriteLine("image height:" + imagePlacement.Rectangle.Height);
+    Console.Out.WriteLine("image LLX:" + imagePlacement.Rectangle.LLX);
+    Console.Out.WriteLine("image LLY:" + imagePlacement.Rectangle.LLY);
+    Console.Out.WriteLine("image horizontal resolution:" + imagePlacement.Resolution.X);
+    Console.Out.WriteLine("image vertical resolution:" + imagePlacement.Resolution.Y);
 }
 ```
 
+該循環遍歷頁面上找到的每個圖像。我們列印出影像的寬度、高度、左下 x (LLX)、左下 y (LLY) 和解析度（水平和垂直）。這些詳細資訊可協助您了解 PDF 中每個影像的大小和位置。
+
+## 步驟5：提取具有可見尺寸的影像
+
+收集有關圖像的資訊後，您可能想要提取實際圖像及其尺寸。以下是您可以如何做到這一點。
+
+```csharp
+Bitmap scaledImage;
+using (MemoryStream imageStream = new MemoryStream())
+{
+    imagePlacement.Image.Save(imageStream, System.Drawing.Imaging.ImageFormat.Png);
+    Bitmap resourceImage = (Bitmap)Bitmap.FromStream(imageStream);
+    scaledImage = new Bitmap(resourceImage, (int)imagePlacement.Rectangle.Width, (int)imagePlacement.Rectangle.Height);
+}
+```
+
+此程式碼片段從 PDF 中檢索影像，並將其縮放至實際尺寸（如`ImagePlacement`目的。透過將圖像保存在記憶體流中並對其進行縮放，您可以確保提取的圖像保持其在 PDF 中顯示的精確大小。
+
 ## 結論
-恭喜！現在您已經了解如何使用 Aspose.PDF for .NET 在 PDF 文件中執行影像放置。我們解釋了提供的 C# 原始程式碼，它允許您載入 PDF 文件、從圖像中提取位置資訊以及檢索尺寸可見的圖像。請隨意嘗試更多 Aspose.PDF 以探索它的許多其他功能。
 
-### 常見問題解答
+一旦您一步步分解，使用 Aspose.PDF for .NET 從 PDF 文件中提取影像位置就非常簡單了。我們涵蓋了從加載 PDF 到檢索圖像屬性以及提取圖像及其實際尺寸的所有內容。 Aspose.PDF 讓處理 PDF 和操作內容變得異常簡單，讓您能夠有效率地處理影像、文字等。
 
-#### Q：使用 Aspose.PDF for .NET 從 PDF 文件中擷取影像位置資訊的目的為何？
+## 常見問題解答
 
-答：擷取影像位置資訊可讓您檢索 PDF 文件中影像的位置、尺寸和解析度。這些資訊對於精確的影像處理和分析至關重要。
+### 我可以從 PDF 的特定頁面中提取圖像嗎？  
+是的，透過在使用時指定頁碼`Accept`方法，您可以專注於任何特定頁面。
 
-#### Q：Aspose.PDF for .NET 如何促進從 PDF 文件中提取影像放置資訊？
+### 支援提取哪些圖像格式？  
+Aspose.PDF支援多種格式，包括PNG、JPEG、BMP等。
 
-答：Aspose.PDF for .NET 提供了`ImagePlacementAbsorber`類，可用於從 PDF 文件中吸收影像放置細節。提供的程式碼示範如何利用此類來檢索影像放置資訊。
+### 是否可以操作提取的影像？  
+絕對地！提取後，您可以使用`System.Drawing`命名空間來操作影像。
 
-#### Q：影像放置資訊在現實場景中可以用來做什麼？
+### 我可以從受密碼保護的 PDF 中提取圖像嗎？  
+是的，您可以，但您需要在提取圖像之前使用適當的憑證解鎖 PDF。
 
-答：影像放置資訊對於確保準確的影像對齊、計算影像尺寸、驗證影像品質以及生成 PDF 文件中影像使用情況的報告等任務非常有價值。
-
-#### Q：程式碼範例如何保證圖片投放資訊的準確擷取？
-
-答：程式碼範例採用了`ImagePlacementAbsorber`類別來遍歷指定頁面的內容、識別圖像位置並檢索其屬性，例如寬度、高度、座標和解析度。
-
-#### Q：程式碼可以擴展以處理跨多個頁面或文件的圖像嗎？
-
-答：是的，可以透過迭代多個頁面或文件來擴展程式碼，以提取圖像放置資訊並執行與圖像相關的任務。
-
-#### Q：程式碼如何根據放置資訊檢索影像及其可見尺寸？
-
-答：程式碼範例從資源中提取圖像數據，建立具有實際尺寸的點陣圖圖像，並提供寬度、高度、座標和解析度等屬性。
-
-#### Q：這種方法對於包含大量影像的大型 PDF 文件有效嗎？
-
-答：是的，Aspose.PDF for .NET 針對效能和資源使用進行了最佳化。它甚至可以從大型 PDF 文件中有效地提取影像位置資訊。
-
-#### Q：開發人員如何從理解和利用影像放置資訊中受益？
-
-答：開發人員可以確保 PDF 文件中精確的影像操作、對齊和分析。這些資訊使他們能夠創建用於影像處理、報告和品質保證的應用程式。
-
-#### Q：是否可以自訂程式碼以提取其他與圖像相關的屬性或元資料？
-
-答：當然，可以利用 Aspose.PDF for .NET 提供的適當類別和方法來增強程式碼以提取其他屬性，例如影像類型、色彩空間、壓縮等。
-
-#### Q：本教程中提供的結論有何意義？
-
-答：結論總結了教程的內容，並鼓勵進一步探索 Aspose.PDF for .NET，以利用其圖像放置之外的功能，為各種 PDF 相關任務打開大門。
+### Aspose.PDF for .NET 是否適用於所有 .NET 框架？  
+是的，它支援 .NET Framework、.NET Core 和 .NET 5 及更高版本。

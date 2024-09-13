@@ -54,7 +54,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 WebRequest request = WebRequest.Create("http://My.signchart.com/Report/PrintBook.asp?ProjectGuid=6FB9DBB0-");
 ```
 
-在這裡，我們建立一個對包含我們要轉換的 HTML 的 URL 的請求。確保將 URL 替換為您想要使用的 URL。
+在這裡，我們建立一個對包含我們要轉換的 HTML 的 URL 的請求。確保將 URL 替換為您要使用的 URL。
 
 ## 第 3 步：設定憑證（如果需要）
 
@@ -117,7 +117,7 @@ pdfDocument.Save(dataDir + "ProvideCredentialsDuringHTMLToPDF_out.pdf");
 
 ## 結論
 
-現在你就擁有了！您已使用 Aspose.PDF for .NET 成功將 HTML 轉換為 PDF，同時提供了安全存取憑證。這個強大的庫可以輕鬆處理 PDF 文檔，只需幾行程式碼，您就可以從 HTML 內容生成具有專業外觀的 PDF。 
+現在你就得到它了！您已使用 Aspose.PDF for .NET 成功將 HTML 轉換為 PDF，同時提供了安全存取憑證。這個強大的庫可以輕鬆處理 PDF 文檔，只需幾行程式碼，您就可以從 HTML 內容生成具有專業外觀的 PDF。 
 
 ## 常見問題解答
 

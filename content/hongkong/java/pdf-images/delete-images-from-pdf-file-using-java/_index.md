@@ -45,7 +45,7 @@ public class PdfImageDeletion {
 }
 ```
 
-確保您更換`"sample.pdf"`以及您的 PDF 文件的路徑。
+確保更換`"sample.pdf"`以及您的 PDF 文件的路徑。
 
 ## 辨識 PDF 中的影像
 
@@ -119,7 +119,7 @@ public class PdfImageDeletion {
 pdfDocument.save("modified.pdf");
 ```
 
-確保您更換`"modified.pdf"`與您想要的輸出檔案路徑。
+確保更換`"modified.pdf"`與您想要的輸出檔案路徑。
 
 ## 測試結果
 
@@ -131,7 +131,7 @@ pdfDocument.save("modified.pdf");
 
 ## 結論
 
-在本逐步指南中，我們學習如何在 Aspose.PDF for Java 的幫助下使用 Java 從 PDF 檔案中刪除影像。這個功能強大的庫簡化了流程並允許有效率地操作 PDF 內容。無論您需要編輯敏感資訊還是優化 PDF 文件，Aspose.PDF for Java 都是您工具包中的有價值的工具。
+在本逐步指南中，我們學習如何在 Aspose.PDF for Java 的幫助下使用 Java 從 PDF 檔案中刪除影像。這個功能強大的庫簡化了流程並允許有效率地操作 PDF 內容。無論您需要編輯敏感資訊還是優化 PDF 文件，Aspose.PDF for Java 都是您工具箱中的一個有價值的工具。
 
 ## 常見問題解答
 

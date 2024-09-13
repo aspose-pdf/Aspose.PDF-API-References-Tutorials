@@ -1,7 +1,7 @@
 ---
 title: Rotera text med hjälp av textstycke och Builder i PDF-fil
 linktitle: Rotera text med hjälp av textstycke och Builder i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du roterar text med hjälp av textstycke och builder i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 410

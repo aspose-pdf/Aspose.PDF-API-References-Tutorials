@@ -101,7 +101,7 @@ Esta mensagem informará que o anexo foi adicionado com sucesso e onde o novo ar
 
 ## Conclusão
 
-Adicionar anexos a arquivos PDF usando o Aspose.PDF para .NET é um processo simples que pode melhorar significativamente a funcionalidade dos seus documentos. Seguindo as etapas descritas neste tutorial, você pode facilmente anexar arquivos aos seus PDFs, tornando-os mais informativos e úteis para o seu público. Esteja você trabalhando em relatórios, apresentações ou qualquer outro tipo de documento, esse recurso pode mudar o jogo.
+Adicionar anexos a arquivos PDF usando o Aspose.PDF para .NET é um processo simples que pode melhorar significativamente a funcionalidade dos seus documentos. Seguindo as etapas descritas neste tutorial, você pode facilmente anexar arquivos aos seus PDFs, tornando-os mais informativos e úteis para o seu público. Esteja você trabalhando em relatórios, apresentações ou qualquer outro tipo de documento, esse recurso pode ser um divisor de águas.
 
 ## Perguntas frequentes
 

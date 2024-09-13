@@ -2,150 +2,154 @@
 title: Získejte cíle hypertextového odkazu v souboru PDF
 linktitle: Získejte cíle hypertextového odkazu v souboru PDF
 second_title: Aspose.PDF pro .NET API Reference
-description: Naučte se extrahovat cíle hypertextových odkazů do souboru PDF pomocí Aspose.PDF for .NET.
+description: Naučte se, jak snadno extrahovat cíle hypertextových odkazů ze souborů PDF pomocí Aspose.PDF for .NET. Postupujte podle tohoto jednoduchého návodu krok za krokem.
 type: docs
 weight: 60
 url: /cs/net/programming-with-links-and-actions/get-hyperlink-destinations/
 ---
-Aspose.PDF for .NET je výkonná knihovna pro manipulaci a extrahování informací v souboru PDF pomocí programovacího jazyka C#. V tomto tutoriálu se zaměříme na extrahování cílů hypertextových odkazů ze souboru PDF pomocí Aspose.PDF for .NET.
+## Zavedení
+
+Pokud jde o správu souborů PDF, může být extrahování cílů hypertextových odkazů překvapivě složitým úkolem. Ať už pracujete na obchodní zprávě, výzkumném dokumentu nebo jakémkoli dokumentu plném odkazů, možná zjistíte, že potřebujete rychlý přístup k těmto hypertextovým odkazům. Co kdybych vám řekl, že existuje jednoduchý způsob, jak to udělat pomocí Aspose.PDF pro .NET? Zůstaňte kolem, když odhalujeme, jak stylově extrahovat cíle hypertextových odkazů – aniž bychom ztratili hlavu ve složitosti kódu!
 
 ## Předpoklady
 
-Než začnete, ujistěte se, že máte následující:
+Než se ponoříte do tohoto článku, ujistěte se, že máte vše po ruce.
 
-- Integrované vývojové prostředí (IDE), jako je Visual Studio.
-- Knihovna Aspose.PDF pro .NET nainstalovaná na vašem počítači.
+### .NET prostředí 
+Ujistěte se, že máte nastavené vývojové prostředí .NET. Můžete použít Visual Studio nebo jakékoli jiné C# IDE dle vašeho výběru. 
 
-## Krok 1: Nastavení vývojového prostředí
+### Aspose.PDF pro knihovnu .NET 
+ Budete potřebovat knihovnu Aspose.PDF. Pokud ji ještě nemáte, můžete si ji stáhnout z[tento odkaz](https://releases.aspose.com/pdf/net/) . Chcete to otestovat, než se do toho pustíte? Vyzkoušejte[zkušební verze zdarma](https://releases.aspose.com/) první!
 
-Než začnete psát kód, musíte nastavit vývojové prostředí vytvořením nového projektu C# ve vašem oblíbeném IDE.
+### Základní znalosti programování 
+Nezbytností je znalost C# a objektově orientovaného programování. Pokud jste již kódovali, jste na dobrém místě!
 
-## Krok 2: Importujte reference Aspose.PDF
+### Vstupní soubor PDF 
+Vezměte si soubor PDF, který obsahuje hypertextové odkazy – toto bude vaše laboratorní krysa pro proces extrakce!
 
-Chcete-li použít Aspose.PDF pro .NET, musíte do svého projektu přidat příslušné odkazy. Chcete-li importovat potřebné reference, postupujte podle následujících kroků:
+Nyní, když máte vše připraveno, pojďme se vrhnout na zábavnější část!
 
-1. Ve svém projektu klikněte pravým tlačítkem na "Reference" a vyberte "Přidat referenci".
-2. V okně "Add Reference" vyhledejte a vyberte soubory DLL Aspose.PDF for .NET.
-3. Kliknutím na "OK" importujte reference do svého projektu.
+## Importujte balíčky
 
-## Krok 3: Načtení souboru PDF
-
-Než budete moci extrahovat cíle hypertextových odkazů, musíte načíst soubor PDF do aplikace. K načtení souboru PDF použijte následující kód:
+Abyste mohli začít s kódem C#, musíte se ujistit, že importujete potřebné jmenné prostory Aspose. Vypadá to takto:
 
 ```csharp
-// Cesta k adresáři dokumentů.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Načtěte soubor PDF
+using System;
+using System.IO;
+using Aspose.Pdf;
+using System.Collections;
+using Aspose.Pdf.Annotations;
+using System.Collections.Generic;
+```
+
+Tyto řádky našemu programu v podstatě sdělují, které knihovny chceme používat, takže dokáže rozpoznat třídy a metody, se kterými plánujeme pracovat. 
+
+## Krok 1: Nastavte svůj projekt
+
+Začněte vytvořením nového projektu C#. Postupujte takto:
+
+1. Otevřete Visual Studio nebo preferované IDE.
+2. Vytvořte nový projekt a vyberte aplikaci konzoly.
+3. Pojmenujte svůj projekt něco jako "PDFHyperlinkExtractor".
+
+Nyní se ujistěte, že je váš projekt nastaven na spuštění .NET Core nebo libovolného rámce, který preferujete.
+
+## Krok 2: Přidání knihovny Aspose.PDF
+
+Chcete-li využít výkonné funkce, které Aspose.PDF poskytuje, budete muset knihovnu přidat do svého projektu.
+
+1. Použijte Správce balíčků NuGet:
+   - Klepněte pravým tlačítkem myši na svůj projekt v Průzkumníku řešení.
+   - Klikněte na „Spravovat balíčky NuGet“.
+   -  Hledat`Aspose.PDF` a nainstalujte jej.
+
+Tím se přidají požadované soubory sestavení, takže můžete začít kódovat.
+
+## Krok 3: Načtěte dokument PDF
+
+Nyní načteme soubor PDF, se kterým chcete pracovat. Budete potřebovat správnou cestu k vaší sadě PDF.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document document = new Document(dataDir + "input.pdf");
 ```
 
-Ujistěte se, že jste zadali správnou cestu k adresáři vašeho dokumentu a souboru PDF, který chcete zpracovat.
+ Vysvětlení: Vyměnit`"YOUR DOCUMENT DIRECTORY"` se skutečnou cestou, kde se vaše PDF nachází. Tento kus kódu inicializuje`Document` třídy poskytované Aspose, která doslova otevírá vaše PDF pro podnikání!
 
-## Krok 4: Procházení stránek dokumentu
+## Krok 4: Procházejte stránky PDF
 
-Nyní, když je soubor PDF načten, musíte projít všechny stránky dokumentu. To vám umožní získat
-
-ir anotace hypertextového odkazu na každé stránce. K iteraci stránek dokumentu použijte následující kód:
+Dále projdeme každou stránku v dokumentu PDF. Je to jako listovat stránkami knihy.
 
 ```csharp
-foreach(Aspose.Pdf.Page page in document.Pages)
+foreach (Aspose.Pdf.Page page in document.Pages)
 {
-     // Získejte anotace odkazů na konkrétní stránku
-     AnnotationSelector selector = new AnnotationSelector(new Aspose.Pdf.Annotations.LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
-     page. Accept(selector);
-     // Vytvořte seznam pro uložení všech odkazů
-     IList<Annotation> list = selector. Selected;
-     // Procházejte každou položku v seznamu
-     foreach(LinkAnnotation a in list)
-     {
-         // Vytisknout cílovou adresu URL
-         Console.WriteLine("\nDestination: " + (a.Action as Aspose.Pdf.Annotations.GoToURIAction).URI + "\n");
-     }
+    //... kód pro extrakci odkazů jde sem
 }
 ```
 
-Tento kód prochází každou stránku dokumentu a vybírá anotace hypertextového odkazu na každé stránce. Poté tyto anotace uloží do seznamu a pro každý odkaz vytiskne cílovou adresu URL.
+Proč opakovat?: Každá stránka může mít různé odkazy a my chceme každý z nich zkontrolovat. Tímto způsobem vám neuniknou žádné zlaté nugety ukryté uvnitř.
 
-## Krok 5: Získání cílů hypertextového odkazu
+## Krok 5: Načtěte anotace odkazů
 
-Posledním krokem je extrahování cílů hypertextového odkazu z anotací hypertextového odkazu. Následující kód ukazuje, jak to udělat:
+ Jakmile jsme na stránce, pojďme lovit anotace odkazů. Využijeme`AnnotationSelector`.
 
 ```csharp
-foreach(Aspose.Pdf.Page page in document.Pages)
+AnnotationSelector selector = new AnnotationSelector(new LinkAnnotation(page, Rectangle.Trivial));
+page.Accept(selector);
+```
+
+ Pochopení`AnnotationSelector` : Tato třída pomáhá identifikovat odkazy na stránce výběrem anotací, které jsou daného typu`LinkAnnotation`. 
+
+## Krok 6: Ukládejte a iterujte prostřednictvím anotací odkazů
+
+Nyní shromáždíme odkazy v seznamu a iterujeme je, abychom zobrazili jejich cíle.
+
+```csharp
+IList<Annotation> list = selector.Selected;
+foreach (LinkAnnotation a in list)
 {
-     AnnotationSelector selector = new AnnotationSelector(new Aspose.Pdf.Annotations.LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
-     page. Accept(selector);
-     IList<Annotation> list = selector. Selected;
-     foreach(LinkAnnotation a in list)
-     {
-         string destination = (a.Action as Aspose.Pdf.Annotations.GoToURIAction).URI;
-         // Použijte cíl, jak chcete
-     }
+    Console.WriteLine("\nDestination: " + (a.Action as GoToURIAction).URI + "\n");
 }
 ```
 
-V tomto kódu získáme každý cíl hypertextového odkazu z anotací odkazu a uložíme cíl do proměnné. Tuto destinaci pak můžete ve své aplikaci použít libovolně.
+Detailní rozpis:
+- `IList<Annotation> list`: Uloží všechny vybrané anotace odkazů.
+- Iterace v seznamu: U každého odkazu získáváme jeho cílové URI a vytiskneme jej. 
 
-### Ukázkový zdrojový kód pro Get Hyperlink Destinations pomocí Aspose.PDF for .NET 
+## Krok 7: Řešení výjimek
+
+Ujistěte se, že svou práci zabalíte do bloku pokusu. To pomáhá zachytit všechny problémy, které se mohou objevit, jako je přístup k neexistujícímu souboru nebo chybné anotace odkazů.
+
 ```csharp
-try
-{
-	// Cesta k adresáři dokumentů.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Načtěte soubor PDF
-	Document document = new Document(dataDir + "input.pdf");
-	// Procházejte celou stránku PDF
-	foreach (Aspose.Pdf.Page page in document.Pages)
-	{
-		// Získejte anotace odkazu z konkrétní stránky
-		AnnotationSelector selector = new AnnotationSelector(new Aspose.Pdf.Annotations.LinkAnnotation(page, Aspose.Pdf.Rectangle.Trivial));
-		page.Accept(selector);
-		// Vytvořte seznam obsahující všechny odkazy
-		IList<Annotation> list = selector.Selected;
-		// Iterujte skrz invidiaul položku uvnitř seznamu
-		foreach (LinkAnnotation a in list)
-		{
-			// Vytiskněte cílovou adresu URL
-			Console.WriteLine("\nDestination: " + (a.Action as Aspose.Pdf.Annotations.GoToURIAction).URI + "\n");
-		}
-	}
-}
 catch (Exception ex)
 {
-	Console.WriteLine(ex.Message);
+    Console.WriteLine(ex.Message);
 }
 ```
 
-### Časté dotazy pro získání cílů hypertextového odkazu v souboru PDF
+Proč je to důležité?: Nikdo nemá rád neočekávané pády, že? Díky tomu bude váš program robustní a uživatelsky přívětivý.
 
-#### Otázka: Co je cíl hypertextového odkazu v souboru PDF?
+## Krok 8: Kompilace a spuštění
 
-Odpověď: Cíl hypertextového odkazu v souboru PDF je konkrétní umístění nebo cíl, na který odkazuje hypertextový odkaz. Může to být adresa URL, stránka ve stejném dokumentu nebo externí dokument.
+Konečně je čas na okamžik pravdy! Stiskněte tlačítko Spustit a zjistěte, zda se váš program chová podle očekávání. Na konzole byste měli vidět vytištěné cíle extrahovaných hypertextových odkazů.
 
-#### Otázka: Jak může extrahování cílů hypertextových odkazů prospět mé analýze dokumentů PDF?
+## Závěr
 
-Odpověď: Extrahování cílů hypertextových odkazů vám umožňuje identifikovat a katalogizovat všechny cíle, na které odkazují hypertextové odkazy v dokumentu PDF. Tyto informace mohou být užitečné pro ověřování obsahu, ověřování odkazů a analýzu dat.
+Extrahování cílů hypertextových odkazů ze souboru PDF pomocí Aspose.PDF pro .NET je docela jednoduché, že? Pomocí několika řádků kódu můžete snadno shromáždit své odkazy, což vám ušetří čas i námahu. Objektově orientovaná struktura knihovny umožňuje intuitivní práci a výsledkem je čistý výstup konzoly odrážející veškerou vaši tvrdou práci. Jste připraveni automatizovat další úkoly ve vaší správě PDF? Obloha je limit!
 
-#### Otázka: Jak Aspose.PDF for .NET pomáhá při extrahování cílů hypertextových odkazů?
+## FAQ
 
-Odpověď: Aspose.PDF pro .NET poskytuje výkonná rozhraní API pro snadné extrahování cílů hypertextových odkazů. Tento kurz ukazuje krok za krokem, jak extrahovat cíle hypertextových odkazů pomocí C#.
+### Co je Aspose.PDF pro .NET?
+Aspose.PDF for .NET je výkonná knihovna, která poskytuje metody pro manipulaci a tvorbu PDF programově.
 
-#### Otázka: Mohu selektivně extrahovat cíle hypertextových odkazů na základě určitých kritérií?
+### Mohu používat Aspose.PDF zdarma?
+ Ano! Můžete to vyzkoušet pomocí[zkušební verze zdarma](https://releases.aspose.com/).
 
-Odpověď: Ano, cíle hypertextových odkazů můžete selektivně extrahovat procházením stránek dokumentu PDF a filtrováním požadovaných anotací hypertextových odkazů na základě vašich kritérií.
+### Jaké programovací jazyky Aspose podporuje?
+Kromě .NET nabízí Aspose také knihovny pro Javu, Python a další jazyky.
 
-#### Otázka: Je možné extrahovat cíle hypertextových odkazů z dokumentů PDF chráněných heslem?
+### Potřebuji předchozí zkušenosti s programováním?
+Základní znalosti programování v C# nebo jiném jazyce .NET vám pomohou lépe se v příkladech orientovat.
 
-Odpověď: Aspose.PDF for .NET může extrahovat cíle hypertextových odkazů z dokumentů PDF chráněných heslem, pokud při otevírání dokumentu poskytnete potřebné ověřovací údaje.
-
-#### Otázka: Jak mohu využít extrahované cíle hypertextových odkazů ve své aplikaci?
-
-Odpověď: Jakmile extrahujete cíle hypertextových odkazů, můžete je použít k provádění různých akcí, jako je ověřování adres URL odkazů, vytváření sestav nebo implementace vlastní navigace.
-
-#### Otázka: Existují nějaká omezení při extrahování cílů hypertextových odkazů?
-
-Odpověď: I když je extrakce cíle hypertextového odkazu výkonná, je nezbytné vzít v úvahu strukturu dokumentu PDF. Hypertextové odkazy vložené do složité grafiky nebo multimediálního obsahu mohou vyžadovat další manipulaci.
-
-#### Otázka: Mohu extrahovat další atributy hypertextových odkazů, jako jsou typy odkazů nebo souřadnice?
-
-Odpověď: Výukový program se zaměřuje na extrahování cílů hypertextových odkazů. Můžete se však podívat na oficiální dokumentaci Aspose.PDF a prozkoumat pokročilé funkce, včetně extrahování typů odkazů a souřadnic.
+### Kde najdu další podporu a dokumentaci?
+ Můžete procházet[dokumentace](https://reference.aspose.com/pdf/net/) nebo[fórum podpory](https://forum.aspose.com/c/pdf/10) o pomoc.

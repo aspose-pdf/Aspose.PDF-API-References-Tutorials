@@ -2,125 +2,142 @@
 title: PDF 속성 가져오기
 linktitle: PDF 속성 가져오기
 second_title: .NET API 참조를 위한 Aspose.PDF
-description: .NET용 Aspose.PDF를 사용하여 상자 크기 및 회전과 같은 PDF 속성을 가져오는 단계별 가이드입니다.
+description: Aspose.PDF for .NET을 사용하여 PDF 속성을 효율적으로 추출하는 방법을 알아보세요. 코드 예제와 모범 사례가 포함된 단계별 가이드입니다.
 type: docs
 weight: 100
 url: /ko/net/programming-with-pdf-pages/get-properties/
 ---
-이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 PDF의 속성을 가져오는 단계별 프로세스를 안내합니다. 번들된 C# 소스 코드를 설명하고 이 기능을 이해하고 자신의 프로젝트에서 구현하는 데 도움이 되는 포괄적인 가이드를 제공합니다. 이 튜토리얼을 마치면 Aspose.PDF for .NET을 사용하여 아트 상자, 자르기 상자, 자르기 상자 등과 같은 PDF 페이지의 다양한 속성에 액세스하는 방법을 알게 됩니다.
+## 소개
+
+PDF를 프로그래밍 방식으로 조작하는 경우 Aspose.PDF for .NET은 돋보이는 신뢰할 수 있는 도구 중 하나입니다. 정보를 추출하거나, 문서를 수정하거나, 단순히 PDF 속성을 읽든, 이 라이브러리는 작업을 더 쉽게 만들어주는 기능을 제공합니다. 이 가이드에서는 PDF 속성을 가져오는 방법을 자세히 살펴보겠습니다. 처음에는 어려워 보일 수 있지만 적절한 도구를 사용하면 아주 쉬운 작업입니다. 그러니 안전띠를 매세요! PDF 파일 작업과 함께 제공되는 기술적 사항이나 가능성을 살펴보겠습니다.
 
 ## 필수 조건
-시작하기 전에 다음 사항이 있는지 확인하세요.
 
-- C# 프로그래밍 언어에 대한 기본 지식
-- 개발 환경에 설치된 .NET용 Aspose.PDF
+코드로 뛰어들기 전에 모든 필수 구성 요소가 제자리에 있는지 확인하는 것이 중요합니다. 이 섹션은 Aspose.PDF 라이브러리 작업을 시작하기 위한 설정을 하는 데 도움이 됩니다.
 
-## 1단계: 문서 디렉토리 설정
-먼저, 문서 디렉토리 경로를 설정해야 합니다. 이는 속성을 가져오려는 PDF 파일의 위치입니다. "YOUR DOCUMENTS DIRECTORY"를 적절한 경로로 바꾸세요.
+1. .NET 환경: 작동하는 .NET 환경이 있는지 확인하세요. Visual Studio나 다른 적합한 IDE를 사용할 수 있습니다.
+   
+2.  .NET용 Aspose.PDF: Aspose.PDF가 설치되어 있어야 합니다. 라이브러리는 다음에서 다운로드할 수 있습니다.[Aspose PDF 릴리스](https://releases.aspose.com/pdf/net/) 페이지.
+
+3. C#에 대한 기본적인 이해: C# 프로그래밍에 대한 지식이 있으면 도움이 됩니다. C#로 코드를 작성하게 되기 때문입니다.
+
+4. PDF 파일: 작업할 샘플 PDF 파일이 필요합니다. 이 예에서는 "GetProperties.pdf"를 참조합니다.
+
+### 프로젝트 설정하기
+
+도구와 PDF 파일이 준비되면 다음과 같이 프로젝트를 설정할 수 있습니다.
+
+1. 새 프로젝트 만들기: IDE를 열고 새 C# 프로젝트를 만듭니다.
+
+2. 참조 추가: Aspose.PDF 어셈블리를 포함합니다. NuGet 패키지 관리자를 통해 또는 DLL에 직접 참조를 추가하여 이를 수행할 수 있습니다.
+
+3.  PDF 파일 준비: 코드가 쉽게 액세스할 수 있는 디렉토리(예: "GetProperties.pdf")에 샘플 "GetProperties.pdf"를 넣으세요.`"YOUR DOCUMENT DIRECTORY"`.
+
+## 패키지 가져오기
+
+프로젝트 설정이 완료되면 가장 먼저 해야 할 일은 필요한 네임스페이스를 가져오는 것입니다. Aspose.PDF 라이브러리는 PDF 문서와 상호 작용할 수 있는 다양한 클래스를 제공합니다.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-## 2단계: PDF 문서 열기
- 다음으로, 다음을 사용하여 PDF 문서를 열어야 합니다.`Document` Aspose.PDF 클래스. PDF 파일에 대한 올바른 경로를 지정해야 합니다.
+이 간단한 단계를 통해 PDF 파일에서 정보를 효율적으로 조작하고 추출하는 데 필요한 클래스에 액세스할 수 있습니다.
+
+이제 PDF 속성을 가져오는 작업을 실행 가능한 단계로 나누어 보겠습니다. 이 섹션에서는 각 단계를 안내하여 쉽게 따라갈 수 있고 프로세스가 어떻게 작동하는지 이해할 수 있도록 합니다.
+
+## 1단계: 문서 디렉토리 정의
+
+여정의 첫 번째 단계는 PDF 문서가 있는 위치를 정의하는 것입니다. "GetProperties.pdf"의 위치를 가리키고 싶습니다.
 
 ```csharp
-Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
-```
-
-## 3단계: 페이지 컬렉션에 액세스
- 이제 다음을 사용하여 문서의 페이지 컬렉션에 액세스할 수 있습니다.`Pages` 의 속성`pdfDocument` 물체.
-
-```csharp
-PageCollection pageCollection = pdfDocument.Pages;
-```
-
-## 4단계: 특정 페이지로 이동
-그런 다음 컬렉션의 페이지 인덱스를 사용하여 특정 페이지로 이동할 수 있습니다. 아래 예에서 두 번째 페이지(인덱스 1)에 액세스합니다.
-
-```csharp
-Page pdfPage = pageCollection[1];
-```
-
-## 5단계: 페이지 속성 가져오기
- 이제 해당 속성을 사용하여 아트 상자, 자르기 상자, 자르기 상자 등과 같은 PDF 페이지의 다양한 속성을 가져올 수 있습니다.`pdfPage` 물체.
-
-```csharp
-Console.WriteLine("ArtBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
-Console.WriteLine("BleedBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.BleedBox.Height, pdf
-
-Page.BleedBox.Width, pdfPage.BleedBox.LLX, pdfPage.BleedBox.LLY, pdfPage.BleedBox.URX, pdfPage.BleedBox.URY);
-Console.WriteLine("CropBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.CropBox.Height, pdfPage.CropBox.Width, pdfPage.CropBox.LLX, pdfPage.CropBox.LLY, pdfPage.CropBox.URX, pdfPage.CropBox.URY);
-Console.WriteLine("MediaBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.MediaBox.Height, pdfPage.MediaBox.Width, pdfPage.MediaBox.LLX, pdfPage.MediaBox.LLY, pdfPage.MediaBox.URX, pdfPage.MediaBox.URY);
-Console.WriteLine("TrimBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.TrimBox.Height, pdfPage.TrimBox.Width, pdfPage.TrimBox.LLX, pdfPage.TrimBox.LLY, pdfPage.TrimBox.URX, pdfPage.TrimBox.URY);
-Console.WriteLine("Rect: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.Rect.Height, pdfPage.Rect.Width, pdfPage.Rect.LLX, pdfPage.Rect.LLY, pdfPage.Rect.URX, pdfPage.Rect.URY);
-Console.WriteLine("Page number: {0}", pdfPage.Number);
-Console.WriteLine("Rotate: {0}", pdfPage.Rotate);
-```
-
-### .NET용 Aspose.PDF를 사용하여 속성 가져오기 샘플 소스 코드 
-
-```csharp
-
 // 문서 디렉토리의 경로입니다.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// 문서 열기
-Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
-// 페이지 컬렉션 가져오기
-PageCollection pageCollection = pdfDocument.Pages;
-// 특정 페이지 가져오기
-Page pdfPage = pageCollection[1];
-// 페이지 속성 가져오기
-System.Console.WriteLine("ArtBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
-System.Console.WriteLine("BleedBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.BleedBox.Height, pdfPage.BleedBox.Width, pdfPage.BleedBox.LLX, pdfPage.BleedBox.LLY, pdfPage.BleedBox.URX, pdfPage.BleedBox.URY);
-System.Console.WriteLine("CropBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.CropBox.Height, pdfPage.CropBox.Width, pdfPage.CropBox.LLX, pdfPage.CropBox.LLY, pdfPage.CropBox.URX, pdfPage.CropBox.URY);
-System.Console.WriteLine("MediaBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.MediaBox.Height, pdfPage.MediaBox.Width, pdfPage.MediaBox.LLX, pdfPage.MediaBox.LLY, pdfPage.MediaBox.URX, pdfPage.MediaBox.URY);
-System.Console.WriteLine("TrimBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.TrimBox.Height, pdfPage.TrimBox.Width, pdfPage.TrimBox.LLX, pdfPage.TrimBox.LLY, pdfPage.TrimBox.URX, pdfPage.TrimBox.URY);
-System.Console.WriteLine("Rect : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.Rect.Height, pdfPage.Rect.Width, pdfPage.Rect.LLX, pdfPage.Rect.LLY, pdfPage.Rect.URX, pdfPage.Rect.URY);
-System.Console.WriteLine("Page Number : {0}", pdfPage.Number);
-System.Console.WriteLine("Rotate : {0}", pdfPage.Rotate);
-
 ```
 
+이 코드 줄은 Aspose가 작업하려는 PDF 파일을 어디에서 찾을 수 있는지 지정하도록 합니다.
+
+## 2단계: PDF 문서 열기
+
+ 다음으로, 다음을 사용하여 PDF 문서를 엽니다.`Document` Aspose.PDF 라이브러리의 클래스입니다. 이것은 PDF를 메모리에 로드하기 때문에 중요한 단계입니다.
+
+```csharp
+// 문서 열기
+Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
+```
+
+ 이 줄을 실행하면 인스턴스가 생성됩니다.`Document` PDF 파일을 나타내는 클래스로, 모든 속성에 액세스할 수 있습니다.
+
+## 3단계: 페이지 컬렉션에 액세스
+
+문서를 연 후, 해당 문서 내의 페이지에 액세스해야 합니다. 각 PDF는 여러 페이지를 가질 수 있으므로 모든 페이지를 보관하는 컬렉션으로 작업합니다.
+
+```csharp
+// 페이지 컬렉션 가져오기
+PageCollection pageCollection = pdfDocument.Pages;
+```
+
+ 생각해 보세요`PageCollection` PDF 문서의 페이지를 탐색하는 데 도움이 되는 인덱스입니다.
+
+## 4단계: 특정 페이지 가져오기
+
+이제 페이지에 접근할 수 있게 되었으니 더 깊이 파고들 시간입니다. 컬렉션에서 특정 페이지를 검색합니다. 이 경우 첫 번째 페이지를 가져옵니다.
+
+```csharp
+// 특정 페이지 가져오기
+Page pdfPage = pageCollection[1];
+```
+
+ 이것은 0 기반 인덱싱임을 기억하세요. 따라서 첫 번째 페이지에 액세스하려면 다음과 같이 인덱싱해야 합니다.`1`.
+
+## 5단계: 페이지 속성 검색 및 표시
+
+이제 흥미로운 부분인 페이지 속성 추출에 대해 알아보겠습니다! 각 페이지에는 크기와 위치를 설명하는 ArtBox, BleedBox, CropBox, MediaBox, TrimBox와 같은 여러 속성이 있습니다. 이러한 속성에 액세스하여 표시해 보겠습니다.
+
+```csharp
+// 페이지 속성 가져오기
+System.Console.WriteLine("ArtBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, 
+    pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
+System.Console.WriteLine("BleedBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.BleedBox.Height, pdfPage.BleedBox.Width, pdfPage.BleedBox.LLX, pdfPage.BleedBox.LLY, 
+    pdfPage.BleedBox.URX, pdfPage.BleedBox.URY);
+System.Console.WriteLine("CropBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.CropBox.Height, pdfPage.CropBox.Width, pdfPage.CropBox.LLX, pdfPage.CropBox.LLY, 
+    pdfPage.CropBox.URX, pdfPage.CropBox.URY);
+System.Console.WriteLine("MediaBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.MediaBox.Height, pdfPage.MediaBox.Width, pdfPage.MediaBox.LLX, pdfPage.MediaBox.LLY, 
+    pdfPage.MediaBox.URX, pdfPage.MediaBox.URY);
+System.Console.WriteLine("TrimBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.TrimBox.Height, pdfPage.TrimBox.Width, pdfPage.TrimBox.LLX, pdfPage.TrimBox.LLY, 
+    pdfPage.TrimBox.URX, pdfPage.TrimBox.URY);
+System.Console.WriteLine("Rect : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.Rect.Height, pdfPage.Rect.Width, pdfPage.Rect.LLX, pdfPage.Rect.LLY, 
+    pdfPage.Rect.URX, pdfPage.Rect.URY);
+System.Console.WriteLine("Page Number : {0}", pdfPage.Number);
+System.Console.WriteLine("Rotate : {0}", pdfPage.Rotate);
+```
+
+이 코드 덩어리는 몇 가지 강력한 일을 합니다. 페이지의 치수 및 방향과 관련된 각 속성에 액세스한 다음 콘솔에 정보를 인쇄합니다. 얻는 것은 추가 수정 또는 분석에 도움이 될 수 있는 페이지 속성의 개요입니다.
+
 ## 결론
-축하합니다! Aspose.PDF for .NET을 사용하여 PDF의 속성을 성공적으로 얻었습니다. PDF 문서를 열고, 특정 페이지로 이동하고, 치수 상자 및 회전과 같은 다양한 페이지 속성을 가져오는 방법을 배웠습니다. 이제 이 정보를 사용하여 속성에 따라 PDF 파일 처리를 사용자 정의할 수 있습니다.
 
-고급 기능과 사용자 정의 가능성에 대한 자세한 내용은 .NET용 공식 Aspose.PDF 문서를 확인하세요.
+그리고 이제 Aspose.PDF for .NET을 사용하여 PDF 속성을 가져오는 방법에 대한 완전한 연습 과정을 마쳤습니다! 이제 PDF 문서에서 중요한 정보를 손쉽게 추출하는 방법을 알게 되었습니다. PDF에서 데이터를 분석, 보고 또는 기록하려는 경우 이 강력한 라이브러리는 신뢰할 수 있는 동맹입니다. 이러한 단계를 마스터하면 PDF 조작 마법사가 되는 길에 들어선 것입니다! Aspose.PDF가 제공하는 더 많은 기능과 기능을 탐색하는 것을 주저하지 마십시오.
 
-### 자주 묻는 질문
+## 자주 묻는 질문
 
-#### 질문: Aspose.PDF for .NET을 사용하여 PDF의 속성을 가져오려면 어떻게 해야 합니까?
+### .NET용 Aspose.PDF를 어떻게 설치할 수 있나요?  
+Visual Studio의 NuGet 패키지 관리자를 통해 설치하거나 Aspose 웹사이트에서 직접 다운로드할 수 있습니다.
 
-답변: Aspose.PDF for .NET을 사용하여 PDF의 속성을 가져오려면 다음 단계를 따르세요.
+### Aspose.PDF를 무료로 사용할 수 있나요?  
+ 예, Aspose에서는 무료 체험판을 제공합니다.[여기](https://releases.aspose.com/).
 
-1. 속성을 검색하려는 PDF 파일의 경로를 지정하여 문서 디렉토리를 설정합니다.
-2.  PDF 문서를 열려면 다음을 사용하세요.`Document` Aspose.PDF 클래스는 PDF 파일에 대한 올바른 경로를 제공합니다.
-3.  다음을 사용하여 문서의 페이지 컬렉션에 액세스하세요.`Pages` 의 속성`pdfDocument` 물체.
-4. 컬렉션의 페이지 인덱스를 사용하여 특정 페이지로 이동합니다(인덱싱은 1부터 시작합니다).
-5.  ArtBox, BleedBox, CropBox, MediaBox, TrimBox, Rect, Page Number, Rotation 등 PDF 페이지의 다양한 속성을 해당 속성을 사용하여 가져옵니다.`pdfPage` 물체.
+### Aspose.PDF에 대한 문서는 어디에서 찾을 수 있나요?  
+ 설명서는 다음에서 참조할 수 있습니다.[Aspose.pdf 문서](https://reference.aspose.com/pdf/net/).
 
-#### 질문: Aspose.PDF for .NET을 사용하여 검색할 수 있는 PDF 페이지의 다양한 속성은 무엇입니까?
+### 문제가 발생하면 어떻게 지원을 받을 수 있나요?  
+ 문제에 대한 질문을 할 수 있는 Aspose 포럼을 방문하여 지원을 받으세요.[여기](https://forum.aspose.com/c/pdf/10).
 
-A: Aspose.PDF for .NET을 사용하면 다음과 같은 PDF 페이지의 다양한 속성을 검색할 수 있습니다.
-
-- ArtBox: 페이지 아트워크의 크기를 나타냅니다.
-- BleedBox: 페이지의 여백 크기를 나타냅니다.
-- CropBox: 잘라낸 후 페이지에 표시되는 콘텐츠의 크기를 나타냅니다.
-- 미디어 상자: 페이지의 물리적 미디어의 크기를 나타냅니다.
-- TrimBox: 페이지에서 잘린 콘텐츠의 크기를 나타냅니다.
-- 사각형: 페이지 경계 상자의 크기를 나타냅니다.
-- 페이지 번호: 문서의 페이지 번호를 나타냅니다.
-- 회전: 페이지의 회전 각도를 나타냅니다.
-
-#### 질문: PDF 문서의 특정 페이지에 접근하여 속성을 검색하려면 어떻게 해야 합니까?
-
- A: PDF 문서의 특정 페이지에 액세스하고 해당 속성을 검색하려면 다음을 사용할 수 있습니다.`Pages` 의 속성`pdfDocument` 문서의 페이지 컬렉션에 액세스하기 위한 객체입니다. 그런 다음 컬렉션의 페이지 인덱스를 사용하여 원하는 페이지로 이동할 수 있습니다. 예를 들어 두 번째 페이지에 액세스하려면 다음을 사용할 수 있습니다.`pdfDocument.Pages[1]` (인덱싱은 1부터 시작합니다).
-
-#### 질문: 검색된 속성에 대해 페이지 상자를 수정하거나 크기를 조정하는 등 작업을 수행할 수 있나요?
-
-A: 네, Aspose.PDF for .NET을 사용하여 PDF 페이지의 속성을 검색하면 해당 페이지에서 다양한 작업을 수행할 수 있습니다. 예를 들어, 페이지 상자의 크기를 수정하거나, 페이지를 회전하거나, 검색된 정보를 사용하여 PDF 문서의 사용자 정의 처리 및 조작을 수행할 수 있습니다.
-
-#### 질문: .NET용 Aspose.PDF는 암호화되거나 암호로 보호된 PDF 파일에서 속성을 추출하는 것을 지원합니까?
-
-A: 네, Aspose.PDF for .NET은 암호화되거나 암호로 보호된 PDF 파일에서 속성을 추출하는 것을 지원합니다. PDF 문서를 열기 위한 올바른 암호를 제공하는 한, 튜토리얼에서 설명한 것과 동일한 접근 방식을 사용하여 해당 속성에 액세스하고 검색할 수 있습니다.
+### 임시 면허증이 있나요?  
+예, 평가를 위해 임시 라이센스를 요청하려면 여기를 방문하세요.[이 링크](https://purchase.aspose.com/temporary-license/).

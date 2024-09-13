@@ -60,7 +60,7 @@ headerRow.Cells.Add("header 1");
 headerRow.Cells.Add("header 2");
 headerRow.Cells.Add("header 3");
 // ...
-// Diğer başlıkları buraya ekleyin
+//Diğer başlıkları buraya ekleyin
 
 for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
 {
@@ -101,7 +101,7 @@ Aspose.Pdf.Table outerTable = new Aspose.Pdf.Table();
 outerTable.ColumnWidths = "100%";
 outerTable.HorizontalAlignment = HorizontalAlignment.Left;
 
-//Aynı sayfanın içinde bölünecek olan outerTable'ın içine yerleştirilecek bir tablo nesnesi örneği oluşturun
+// Aynı sayfanın içinde bölünecek olan outerTable'ın içine yerleştirilecek bir tablo nesnesi örneği oluşturun
 Aspose.Pdf.Table mytable = new Aspose.Pdf.Table();
 mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;

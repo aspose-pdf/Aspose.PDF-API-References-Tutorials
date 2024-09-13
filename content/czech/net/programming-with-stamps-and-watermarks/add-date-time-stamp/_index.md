@@ -2,178 +2,185 @@
 title: Přidat datum a čas do souboru PDF
 linktitle: Přidat datum a čas do souboru PDF
 second_title: Aspose.PDF pro .NET API Reference
-description: Naučte se, jak snadno přidat datum a časové razítko do souboru PDF pomocí Aspose.PDF pro .NET.
+description: Naučte se, jak přidat datum a časové razítko do souborů PDF pomocí Aspose.PDF for .NET, pomocí tohoto podrobného průvodce. Ideální pro zvýšení pravosti dokumentů.
 type: docs
 weight: 10
 url: /cs/net/programming-with-stamps-and-watermarks/add-date-time-stamp/
 ---
-tomto článku vás krok za krokem provedeme, jak přidat datum a časové razítko do souboru PDF pomocí Aspose.PDF pro .NET. Ukážeme vám, jak použít dodaný zdrojový kód C# k přidání data a času do existujícího souboru PDF.
+## Zavedení
 
-## Požadavky
+Pokud jde o správu dokumentů, zejména souborů PDF, přidání datumového a časového razítka může změnit hru. Ať už pracujete na právních dokumentech, zprávách o projektech nebo fakturách, časové razítko nejen dodává autentičnost, ale také poskytuje jasný záznam o tom, kdy byl dokument vytvořen nebo upraven. V této příručce vás provedeme procesem přidávání data a času do souboru PDF pomocí knihovny Aspose.PDF pro .NET. 
 
-Než začnete, ujistěte se, že máte následující:
+Tento článek je navržen tak, aby byl přímočarý a snadno se řídil, takže i když jste nováčci v programování nebo v knihovně Aspose.PDF, budete moci tuto funkci s jistotou implementovat. Pojďme se ponořit!
 
-- Nainstalované vývojové prostředí .NET.
-- Knihovna Aspose.PDF pro .NET stažená a odkazovaná ve vašem projektu.
+## Předpoklady
 
-## Krok 1: Nastavení prostředí
+Než začneme, je třeba splnit několik předpokladů:
 
-Než budete moci do dokumentu PDF přidat datum a časové razítko, musíte nastavit vývojové prostředí. Zde jsou následující kroky:
+1. Visual Studio: Ujistěte se, že máte na svém počítači nainstalované Visual Studio. Zde napíšete a spustíte svůj kód.
+2. Aspose.PDF pro .NET: Musíte si stáhnout a nainstalovat knihovnu Aspose.PDF. Můžete najít nejnovější verzi[zde](https://releases.aspose.com/pdf/net/).
+3. Základní znalost C#: Znalost programování v C# vám pomůže lépe porozumět příkladům, ale nebojte se, pokud právě začínáte; vše vysvětlíme krok za krokem.
+4.  Soubor PDF: Připravte si vzorový soubor PDF. Pro náš příklad použijeme soubor s názvem`AddTextStamp.pdf`.
 
-1. Otevřete své oblíbené IDE (Integrated Development Environment).
-2. Vytvořte nový projekt C#.
-3. Ujistěte se, že jste přidali odkaz na knihovnu Aspose.PDF pro .NET.
+Jakmile budete mít tyto předpoklady, jste připraveni začít přidávat datum a čas do souborů PDF!
 
-## Krok 2: Přidání knihovny Aspose.PDF
+## Importujte balíčky
 
-Knihovna Aspose.PDF pro .NET je nutná pro práci s dokumenty PDF ve vašem projektu.
+Chcete-li začít, musíte do svého projektu C# importovat potřebné jmenné prostory. Jak na to:
 
-## Krok 3: Načtení dokumentu PDF
+### Vytvořit nový projekt
 
-Prvním krokem k přidání datumového a časového razítka je načtení existujícího dokumentu PDF do vašeho projektu. Zde je postup:
+1. Otevřete Visual Studio: Spusťte aplikaci Visual Studio.
+2. Vytvořit nový projekt: Na úvodní obrazovce vyberte „Vytvořit nový projekt“.
+3. Zvolte Console App: Vyberte "Console App (.NET Framework)" ze seznamu šablon projektu.
+4.  Pojmenujte svůj projekt: Pojmenujte svůj projekt, např.`PDFDateTimeStamp`.
+
+### Přidejte odkaz Aspose.PDF
+
+1. Klikněte pravým tlačítkem na Reference: V Průzkumníku řešení klikněte pravým tlačítkem na složku „Reference“ vašeho projektu.
+2. Vyberte „Přidat referenci“: Z kontextové nabídky vyberte „Přidat referenci“.
+3. Procházet Aspose.PDF: Přejděte do umístění, kam jste stáhli Aspose.PDF, a vyberte jej. Kliknutím na „OK“ jej přidáte do svého projektu.
+
+### Importujte požadované jmenné prostory
+
+ V horní části vašeho`Program.cs` musíte importovat následující jmenné prostory:
+
+```csharp
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System;
+using Aspose.Pdf.Annotations;
+```
+
+Nyní, když máme vše nastaveno, pojďme si rozdělit proces přidávání datumového a časového razítka do souboru PDF do jasných, zvládnutelných kroků.
+
+## Krok 1: Nastavte adresář dokumentů
+
+Nejprve musíte určit adresář, kde se nachází váš soubor PDF. To je zásadní, protože kód bude hledat PDF v tomto adresáři.
 
 ```csharp
 // Cesta k adresáři dokumentů.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Nahraďte svou skutečnou cestou
+```
 
+ Nezapomeňte vyměnit`YOUR DOCUMENT DIRECTORY` se skutečnou cestou k vašemu souboru PDF.
+
+## Krok 2: Otevřete dokument PDF
+
+Dále otevřete dokument PDF, kam chcete přidat časové razítko. 
+
+```csharp
 // Otevřete dokument
 Document pdfDocument = new Document(dataDir + "AddTextStamp.pdf");
 ```
 
-Nezapomeňte nahradit "VAŠE ADRESÁŘ DOKUMENTŮ" skutečnou cestou k adresáři, kde se nachází váš dokument PDF.
+ Tento řádek kódu inicializuje`Document` třídy a načte váš soubor PDF do`pdfDocument` objekt.
 
-## Krok 4: Vytvoření razítka data a času
+## Krok 3: Vytvořte datum a čas
 
-Nyní, když jste nahráli dokument
-
-  PDF, můžete vytvořit datum a časové razítko, které chcete přidat. Jak na to:
+Nyní je čas vygenerovat datum a čas. Naformátujete jej tak, aby se zobrazoval specifickým způsobem. 
 
 ```csharp
-string annotationText = string.Empty;
-annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt");
-
-// Vytvořte textovou vyrovnávací paměť
-TextStamp textStamp = new TextStamp(annotationText);
+string annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt ");
 ```
 
-Výše uvedený kód vytvoří nový textový buffer obsahující aktuální datum a čas.
+ Zde,`DateTime.Now` získá aktuální datum a čas a`ToString` naformátuje jej do požadovaného formátu.
 
-## Krok 5: Konfigurace vlastností razítka
+## Krok 4: Vytvořte textové razítko
 
-Před přidáním razítka do dokumentu PDF můžete nakonfigurovat různé vlastnosti razítka, jako je okraj, vodorovné a svislé zarovnání atd. Zde je návod:
-
-```csharp
-// Nastavte vlastnosti vyrovnávací paměti
-textStamp.BottomMargin = 10;
-textStamp. RightMargin = 20;
-textStamp.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
-textStamp.VerticalAlignment = VerticalAlignment.Bottom;
-```
-
-Tyto vlastnosti si můžete upravit podle svých potřeb.
-
-## Krok 6: Přidejte razítko do PDF
-
-Nyní, když je datum a čas připraveno, můžete je přidat na konkrétní stránku dokumentu PDF. Zde je postup:
+S připraveným řetězcem data a času můžete nyní vytvořit textové razítko, které bude přidáno do vašeho PDF.
 
 ```csharp
-// Přidejte razítko do sbírky razítek stránky
-pdfDocument.Pages[1].AddStamp(textStamp);
-```
-
-Výše uvedený kód přidá razítko na první stránku dokumentu PDF. V případě potřeby můžete zadat jinou stránku.
-
-## Krok 7: Uložte výstupní dokument
-
-Jakmile přidáte datum a časové razítko, můžete upravený dokument PDF uložit. Zde je postup:
-
-```csharp
-// Uložte výstupní dokument
-pdfDocument.Save(dataDir);
-```
-
-Výše uvedený kód uloží upravený dokument PDF do určeného adresáře.
-
-### Ukázkový zdrojový kód pro Přidat datum a čas pomocí Aspose.PDF pro .NET 
-```csharp
-
-// Cesta k adresáři dokumentů.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Otevřete dokument
-Document pdfDocument = new Document(dataDir+ "AddTextStamp.pdf");
-string annotationText = string.Empty;
-annotationText = DateTime.Now.ToString("MM/dd/yy hh:mm:ss tt ");
-
 // Vytvořte textové razítko
 TextStamp textStamp = new TextStamp(annotationText);
+```
 
+ Tento řádek vytvoří novou instanci`TextStamp` pomocí formátovaného řetězce data a času.
+
+## Krok 5: Nastavte vlastnosti razítka
+
+Vzhled a polohu razítka si můžete přizpůsobit. Zde je návod, jak nastavit jeho vlastnosti:
+
+```csharp
 // Nastavte vlastnosti razítka
 textStamp.BottomMargin = 10;
 textStamp.RightMargin = 20;
 textStamp.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Right;
 textStamp.VerticalAlignment = VerticalAlignment.Bottom;
+```
 
+V tomto kroku nastavíme okraje a zarovnáme razítko k pravému dolnímu rohu stránky PDF.
+
+## Krok 6: Přidejte razítko do PDF
+
+Nyní je čas přidat do dokumentu PDF textové razítko. 
+
+```csharp
 // Přidání razítka do sbírky známek
 pdfDocument.Pages[1].AddStamp(textStamp);
+```
+
+Tento řádek přidá razítko na první stránku PDF. Číslo stránky můžete změnit, pokud ji chcete umístit na jinou stránku.
+
+## Krok 7: Vytvořte anotaci volného textu (volitelné)
+
+Pokud chcete k razítku přidat anotaci, můžete vytvořit a`FreeTextAnnotation` následovně:
+
+```csharp
 DefaultAppearance default_appearance = new DefaultAppearance("Arial", 6, System.Drawing.Color.Black);
 FreeTextAnnotation textAnnotation = new FreeTextAnnotation(pdfDocument.Pages[1], new Aspose.Pdf.Rectangle(0, 0, 0, 0), default_appearance);
 textAnnotation.Name = "Stamp";
 textAnnotation.Accept(new AnnotationSelector(textAnnotation));
 textAnnotation.Contents = textStamp.Value;
+```
 
+Tento volitelný krok vytvoří anotaci volného textu, která může poskytnout další kontext nebo informace o razítku.
+
+## Krok 8: Nakonfigurujte ohraničení anotace
+
+Chcete-li upravit ohraničení své anotace, můžete to udělat také:
+
+```csharp
 Border border = new Border(textAnnotation);
 border.Width = 0;
 border.Dash = new Dash(1, 1);
 textAnnotation.Border = border;
 textAnnotation.Rect = new Aspose.Pdf.Rectangle(0, 0, 0, 0);
 pdfDocument.Pages[1].Annotations.Add(textAnnotation);
-dataDir = dataDir + "AddDateTimeStamp_out.pdf";
-
-// Uložit výstupní dokument
-pdfDocument.Save(dataDir);
-Console.WriteLine("\nDate time stamp added successfully.\nFile saved at " + dataDir);  
-          
 ```
+
+Tento úryvek kódu nastaví šířku ohraničení na 0, čímž se stane neviditelným, a přidá do PDF anotaci.
+
+## Krok 9: Uložte dokument PDF
+
+Nakonec je potřeba upravený PDF dokument uložit. 
+
+```csharp
+dataDir = dataDir + "AddDateTimeStamp_out.pdf"; // Zadejte název výstupního souboru
+pdfDocument.Save(dataDir);
+Console.WriteLine("\nDate time stamp added successfully.\nFile saved at " + dataDir);
+```
+
+Tento řádek uloží PDF s přidaným časovým razítkem do nového souboru. Můžete zkontrolovat zadaný adresář a zobrazit výstup.
 
 ## Závěr
 
-gratuluji! Naučili jste se, jak přidat datum a čas pomocí Aspose.PDF pro .NET. Nyní můžete tyto znalosti použít na své vlastní projekty a přidat do dokumentů PDF datum a čas.
+Gratuluji! Úspěšně jste přidali datum a časové razítko do souboru PDF pomocí Aspose.PDF pro .NET. Tato jednoduchá, ale účinná funkce může vylepšit vaše dokumenty, učinit je profesionálnějšími a poskytnout jasný záznam o tom, kdy byly vytvořeny nebo upraveny. 
 
-### Časté dotazy pro přidání datumu a času do souboru PDF
+## FAQ
 
-#### Otázka: Jaký je účel přidání datumového a časového razítka do dokumentu PDF pomocí Aspose.PDF pro .NET?
+### Mohu přizpůsobit formát data v časovém razítku?
+ Ano, můžete upravit`ToString`způsob změny formátu data podle vašich preferencí.
 
-Odpověď: Přidání datumového a časového razítka do dokumentu PDF zvyšuje jeho informační hodnotu tím, že uvádí, kdy byl dokument upraven nebo vytvořen. Tato funkce je užitečná pro sledování změn dokumentů a poskytování referenčního bodu pro historii dokumentu.
+### Je Aspose.PDF zdarma k použití?
+ Aspose.PDF nabízí bezplatnou zkušební verzi, ale pro plné funkce si musíte zakoupit licenci. Můžete získat dočasnou licenci[zde](https://purchase.aspose.com/temporary-license/).
 
-#### Otázka: Mohu přizpůsobit formát data a času tak, aby odpovídal konkrétním požadavkům?
+### Mohu do PDF přidat více časových razítek?
+ Absolutně! Můžete vytvořit více`TextStamp` instance a přidat je na různé stránky nebo pozice v PDF.
 
- Odpověď: Ano, formát data a času si můžete přizpůsobit podle svých preferencí. Poskytnutý zdrojový kód C# používá`DateTime.Now.ToString()` způsob generování časového razítka ve specifickém formátu. Tento kód můžete upravit tak, aby formátoval časové razítko podle potřeby.
+### Co když nemám Visual Studio?
+Můžete použít jakýkoli C# IDE nebo textový editor, ale pro spuštění a ladění projektu se doporučuje Visual Studio.
 
-#### Otázka: Je možné přidat datum a čas na konkrétní místo na stránce PDF?
-
- Odpověď: Rozhodně můžete upravit umístění razítka data a času na stránce PDF úpravou vlastností souboru`TextStamp` objekt. Kód poskytnutý v tutoriálu ukazuje, jak nastavit vlastnosti, jako je okraj, zarovnání a vertikální umístění.
-
-#### Otázka: Mohu přidat více razítek data a času na různé stránky stejného dokumentu PDF?
-
- Odpověď: Ano, na různé stránky stejného dokumentu PDF můžete přidat více razítek data a času. Jednoduše opakujte proces vytváření a`TextStamp` objektu a konfiguraci jeho vlastností pro každou požadovanou stránku.
-
-#### Otázka: Jak mohu změnit písmo, velikost nebo barvu textu datumového a časového razítka?
-
- Odpověď: Chcete-li upravit písmo, velikost nebo barvu textu datumového a časového razítka, můžete upravit vlastnosti souboru`DefaultAppearance` objekt použitý k vytvoření`TextStamp`. Upravte název písma, velikost a hodnoty barev, abyste dosáhli požadovaného vzhledu.
-
-#### Otázka: Je možné pomocí Aspose.PDF pro .NET přidat do dokumentu PDF jiné typy anotací nebo razítek?
-
-Odpověď: Ano, Aspose.PDF for .NET poskytuje širokou škálu typů anotací, které můžete přidat do dokumentů PDF, včetně textových anotací, razítek, čar, tvarů a dalších. Další podrobnosti o práci s anotacemi naleznete v dokumentaci Aspose.PDF.
-
-#### Otázka: Existují nějaká omezení nebo úvahy při přidávání razítka data a času do dokumentu PDF?
-
-Odpověď: I když je přidání datumového a časového razítka jednoduché, zvažte faktory, jako je rozvržení dokumentu a stávající obsah. Ujistěte se, že umístění razítka nezakrývá důležité informace nebo neovlivňuje čitelnost dokumentu.
-
-#### Otázka: Jak mohu integrovat tuto metodu do svých vlastních projektů a přidat do dokumentů PDF datum a čas?
-
-Odpověď: Chcete-li tuto metodu integrovat, postupujte podle uvedených kroků a upravte kód tak, aby odpovídal struktuře vašeho projektu. Ke stávajícím dokumentům PDF můžete přidat datum a čas, abyste zvýšili jejich užitečnost a poskytli jasnou časovou osu změn.
-
-#### Otázka: Mohu automatizovat proces přidávání razítek data a času do více dokumentů PDF?
-
-Odpověď: Ano, proces přidávání razítek data a času do více dokumentů PDF můžete automatizovat vytvořením skriptu nebo programu, který prochází seznam dokumentů a na každý z nich aplikuje stejný proces razítkování.
+### Kde najdu další příklady použití Aspose.PDF?
+ Další příklady a návody můžete prozkoumat v[Dokumentace Aspose.PDF](https://reference.aspose.com/pdf/net/).

@@ -22,7 +22,7 @@ Aby rozpocząć, utwórz nowy projekt w Visual Studio i dodaj odwołanie do bibl
 
 ## Krok 2: Zaimportuj niezbędne przestrzenie nazw
 
-W pliku kodu C# zaimportuj przestrzenie nazw wymagane do uzyskania dostępu do klas i metod udostępnianych przez Aspose.PDF:
+pliku kodu C# zaimportuj przestrzenie nazw wymagane do uzyskania dostępu do klas i metod udostępnianych przez Aspose.PDF:
 
 ```csharp
 using System;
@@ -105,7 +105,7 @@ foreach (Element element in elementList)
 		string alternativeText = structureElement.AlternativeText;
 	}
 }
-// Dostęp do elementów podrzędnych pierwszego elementu w elemencie głównym
+//Dostęp do elementów podrzędnych pierwszego elementu w elemencie głównym
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
 foreach (Element element in elementList)
 {
@@ -136,7 +136,7 @@ A: Dostęp do elementów podrzędnych w dokumencie PDF za pomocą Aspose.PDF dla
 
 #### P: Jaką rolę w tym procesie odgrywa biblioteka Aspose.PDF?
 
-A: Aspose.PDF dla .NET to potężna biblioteka, która oferuje różne funkcje do tworzenia, manipulowania i konwertowania dokumentów PDF programowo. W tym samouczku biblioteka jest używana do ładowania dokumentu PDF, uzyskiwania dostępu do oznaczonej zawartości i ustrukturyzowanych elementów oraz modyfikowania ich właściwości.
+A: Aspose.PDF dla .NET to potężna biblioteka, która zapewnia różne funkcje do tworzenia, manipulowania i konwertowania dokumentów PDF programowo. W tym samouczku biblioteka jest używana do ładowania dokumentu PDF, uzyskiwania dostępu do oznaczonej zawartości i ustrukturyzowanych elementów oraz modyfikowania ich właściwości.
 
 #### P: Jakie są wymagania wstępne do pracy z elementami podrzędnymi w dokumencie PDF za pomocą Aspose.PDF dla platformy .NET?
 

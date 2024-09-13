@@ -1,7 +1,7 @@
 ---
 title: Lägg till bokmärke i PDF-fil
 linktitle: Lägg till bokmärke i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du lägger till bokmärken till PDF-filer med Aspose.PDF för .NET i denna steg-för-steg-handledning. Förbättra din PDF-navigering.
 type: docs
 weight: 10

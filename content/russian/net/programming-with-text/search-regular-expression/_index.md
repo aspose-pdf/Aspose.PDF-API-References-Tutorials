@@ -69,7 +69,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## Шаг 7: Извлечение извлеченных фрагментов текста.
 
-Получите извлеченные фрагменты текста с помощью`TextFragments` собственность`TextFragmentAbsorber` объект:
+ Получите извлеченные фрагменты текста с помощью`TextFragments` собственность`TextFragmentAbsorber` объект:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -103,7 +103,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Открыть документ
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionAll.pdf");
-// Создайте объект TextAbsorber для поиска всех фраз, соответствующих регулярному выражению.
+//Создайте объект TextAbsorber для поиска всех фраз, соответствующих регулярному выражению.
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Как 1999-2000
 // Установите параметр текстового поиска, чтобы указать использование регулярных выражений
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);

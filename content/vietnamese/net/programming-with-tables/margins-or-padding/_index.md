@@ -63,7 +63,7 @@ tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
 Bây giờ, hãy thêm hàng và ô vào bảng. Chúng ta sẽ tạo một hàng mới và thêm ô vào đó:
 
 ```csharp
-// Tạo các hàng trong bảng và sau đó tạo các ô trong các hàng
+//Tạo các hàng trong bảng và sau đó tạo các ô trong các hàng
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -117,7 +117,7 @@ margin.Right = 5f;
 margin.Bottom = 5f;
 // Đặt khoảng đệm ô mặc định thành đối tượng MarginInfo
 tab1.DefaultCellPadding = margin;
-// Tạo các hàng trong bảng và sau đó tạo các ô trong các hàng
+//Tạo các hàng trong bảng và sau đó tạo các ô trong các hàng
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -145,7 +145,7 @@ Xin chúc mừng! Bạn đã học thành công cách thiết lập lề hoặc 
 
 #### H: Tôi có thể thiết lập lề hoặc khoảng đệm khác nhau cho từng ô trong bảng không?
 
-A: Có, bạn có thể thiết lập các lề hoặc khoảng đệm khác nhau cho từng ô trong bảng bằng Aspose.PDF cho .NET. Trong ví dụ được cung cấp, chúng tôi thiết lập khoảng đệm ô mặc định cho toàn bộ bảng bằng cách sử dụng`DefaultCellPadding` thuộc tính. Để thiết lập phần đệm khác nhau cho các ô cụ thể, bạn có thể truy cập`MarginInfo` của từng tế bào riêng lẻ và sửa đổi biên của chúng.
+ A: Có, bạn có thể thiết lập các lề hoặc khoảng đệm khác nhau cho từng ô trong bảng bằng Aspose.PDF cho .NET. Trong ví dụ được cung cấp, chúng tôi thiết lập khoảng đệm ô mặc định cho toàn bộ bảng bằng cách sử dụng`DefaultCellPadding` thuộc tính. Để thiết lập phần đệm khác nhau cho các ô cụ thể, bạn có thể truy cập`MarginInfo` của từng tế bào riêng lẻ và sửa đổi biên của chúng.
 
 #### H: Làm thế nào để thay đổi màu viền hoặc kiểu dáng của bảng?
 
@@ -161,4 +161,4 @@ A: Có, bạn có thể thêm tiêu đề hoặc chân trang vào bảng bằng 
 
 #### H: Tôi có thể thêm hình ảnh vào ô bảng thay vì văn bản không?
 
- A: Có, bạn có thể thêm hình ảnh vào các ô bảng bằng Aspose.PDF cho .NET. Thay vì tạo`TextFragment` đối tượng, bạn có thể tạo ra một`Image` đối tượng, tải tệp hình ảnh và thêm nó vào ô mong muốn bằng cách sử dụng`cell.Paragraphs.Add(image);` Phương pháp này cho phép bạn chèn hình ảnh vào bảng cùng với nội dung văn bản.
+ A: Có, bạn có thể thêm hình ảnh vào các ô bảng bằng Aspose.PDF cho .NET. Thay vì tạo`TextFragment` đối tượng, bạn có thể tạo ra một`Image` đối tượng, tải tệp hình ảnh và thêm nó vào ô mong muốn bằng cách sử dụng`cell.Paragraphs.Add(image);`Phương pháp này cho phép bạn chèn hình ảnh vào bảng cùng với nội dung văn bản.

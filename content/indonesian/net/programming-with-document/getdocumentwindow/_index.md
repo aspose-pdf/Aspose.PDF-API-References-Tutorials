@@ -7,116 +7,172 @@ type: docs
 weight: 170
 url: /id/net/programming-with-document/getdocumentwindow/
 ---
-Aspose.PDF untuk .NET adalah pustaka manipulasi PDF yang canggih yang memungkinkan pengembang untuk membuat, mengedit, dan mengonversi file PDF dalam aplikasi .NET mereka. Salah satu fitur yang ditawarkan oleh pustaka ini adalah kemampuan untuk mengambil informasi tentang properti jendela dokumen. Tutorial ini akan memandu Anda melalui langkah-langkah penggunaan`GetDocumentWindow` fitur Aspose.PDF untuk .NET untuk mengambil informasi tentang properti jendela dokumen PDF.
+# Perkenalan
 
-## Langkah 1: Instal Aspose.PDF untuk .NET
+Apakah Anda bekerja dengan PDF dan ingin kontrol lebih terhadap tampilannya saat dibuka? Baik itu menyembunyikan bilah menu atau mengubah ukuran jendela agar sesuai dengan halaman pertama, Aspose.PDF for .NET memberi Anda semua alat yang Anda butuhkan untuk menyesuaikan perilaku PDF saat dibuka di penampil. Dalam tutorial ini, kami akan menguraikan cara mengambil dan memanipulasi pengaturan jendela dokumen di Aspose.PDF for .NET.
 
- Untuk menggunakan Aspose.PDF for .NET di aplikasi .NET Anda, Anda harus menginstal pustaka terlebih dahulu. Anda dapat mengunduh versi terbaru pustaka dari[Halaman unduhan Aspose.PDF untuk .NET](https://releases.aspose.com/pdf/net).
 
-Setelah Anda mengunduh pustaka, ekstrak isi berkas ZIP ke folder di komputer Anda. Anda kemudian perlu menambahkan referensi ke Aspose.PDF untuk .NET DLL di proyek .NET Anda.
+# Prasyarat
 
-## Langkah 2: Muat Dokumen PDF
+Sebelum memulai tutorial, pastikan Anda memiliki prasyarat berikut:
 
- Setelah Anda menginstal Aspose.PDF untuk .NET dan menambahkan referensi ke DLL di proyek .NET Anda, Anda dapat mulai menggunakan`GetDocumentWindow`fitur untuk mengambil informasi tentang properti jendela dokumen PDF.
+- Aspose.PDF untuk .NET terinstal di lingkungan pengembangan Anda.
+  - [Unduh Aspose.PDF untuk .NET](https://releases.aspose.com/pdf/net/)
+-  Lisensi yang valid untuk Aspose.PDF, atau Anda bisa mendapatkannya[uji coba gratis](https://releases.aspose.com/) atau[lisensi sementara](https://purchase.aspose.com/temporary-license/).
+- Pemahaman dasar tentang .NET dan C#.
+- Visual Studio atau IDE lain yang sesuai.
 
-Langkah pertama dalam menggunakan fitur ini adalah memuat dokumen PDF yang ingin Anda ambil informasinya. Untuk melakukannya, Anda dapat menggunakan kode berikut:
+# Paket Impor
+
+Sebelum Anda mulai menulis kode apa pun, Anda perlu mengimpor paket yang diperlukan. Buka proyek Anda, dan di bagian atas berkas C#, tambahkan namespace berikut:
 
 ```csharp
-// Jalur menuju dokumen PDF
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
+```
 
-// Buka dokumen PDF
+Ini akan memberi Anda akses ke semua kelas dan metode yang diperlukan untuk memanipulasi dokumen PDF menggunakan Aspose.PDF untuk .NET.
+
+ Sekarang mari kita uraikan proses pengambilan pengaturan jendela dokumen yang berbeda. Untuk contoh ini, kita akan menggunakan contoh file PDF bernama`GetDocumentWindow.pdf`.
+
+## Langkah 1: Tetapkan Jalur Direktori Dokumen
+
+Pertama-tama, kita perlu menentukan jalur ke berkas PDF kita. Sangat penting untuk memiliki jalur berkas yang benar guna menghindari kesalahan selama eksekusi.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Di sini, ganti`"YOUR DOCUMENT DIRECTORY"` dengan direktori sebenarnya tempat berkas PDF Anda berada. Ini adalah direktori kerja tempat Anda akan memuat dokumen PDF.
+
+## Langkah 2: Buka Dokumen PDF
+
+Setelah jalur berkas ditetapkan, langkah selanjutnya adalah membuka dokumen PDF menggunakan Aspose.PDF. Ini akan memuat dokumen ke dalam memori, sehingga Anda dapat mengambil propertinya.
+
+```csharp
 Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 ```
 
- Pada kode di atas, ganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur ke direktori tempat dokumen PDF Anda berada. Kode ini akan memuat dokumen PDF ke dalam`Document` objek, yang kemudian dapat Anda gunakan untuk mengambil informasi tentang properti jendela dokumen.
+Dengan baris kode sederhana ini, Anda telah berhasil memuat file PDF Anda ke dalam`pdfDocument` objek, yang sekarang akan memungkinkan Anda mengakses semua propertinya.
 
-## Langkah 3: Ambil Properti Jendela Dokumen
+## Langkah 3: Ambil Status Pemusatan Jendela
 
-Untuk mengambil informasi tentang properti jendela dokumen PDF, Anda dapat menggunakan kode berikut:
-
-```csharp
-// Ambil properti jendela dokumen
-Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
-```
-
-Pada kode di atas, setiap baris mengambil properti jendela yang berbeda dari dokumen PDF dan menampilkannya ke konsol. Anda dapat menyesuaikan kode ini untuk mengambil hanya properti yang Anda minati.
-
-### Contoh kode sumber untuk mendapatkan jendela dokumen file PDF menggunakan Aspose.PDF untuk .NET 
-
- Berikut adalah kode sumber lengkap untuk mengambil properti jendela dokumen PDF menggunakan`GetDocumentWindow` fitur Aspose.PDF untuk .NET:
+ Selanjutnya, mari kita periksa apakah jendela dokumen harus dipusatkan saat dibuka. Nilai default untuk ini adalah`false`.
 
 ```csharp
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Buka dokumen
-Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
-
-// Dapatkan properti dokumen yang berbeda
-// Posisi jendela dokumen - Default: false
 Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-
-// Urutan bacaan yang dominan; menentukan posisi halaman
-// Saat ditampilkan berdampingan - Default: L2R
-Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-
-// Apakah bilah judul jendela harus menampilkan judul dokumen
-// Jika salah, bilah judul menampilkan nama file PDF - Default: salah
-Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-
-// Apakah akan mengubah ukuran jendela dokumen agar sesuai dengan ukuran
-// Halaman yang ditampilkan pertama - Default: false
-Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-
-// Apakah akan menyembunyikan bilah menu aplikasi penampil - Default: false
-Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-
-// Apakah akan menyembunyikan bilah alat aplikasi penampil - Default: false
-Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-
-// Apakah akan menyembunyikan elemen UI seperti bilah gulir
-// Dan hanya meninggalkan konten halaman yang ditampilkan - Default: false
-Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-
-//Mode halaman dokumen. Cara menampilkan dokumen saat keluar dari mode layar penuh.
-Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-
-// Tata letak halaman yaitu satu halaman, satu kolom
-Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-
-// Bagaimana dokumen harus ditampilkan saat dibuka
-// Yaitu menampilkan gambar mini, layar penuh, menampilkan panel lampiran
-Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 ```
+
+ Jika outputnya adalah`true`, jendela dokumen akan terbuka di bagian tengah layar. Jika tidak, jendela akan terbuka pada posisi default-nya.
+
+## Langkah 4: Periksa Arah Teks
+
+Aspek penting lain dari tampilan PDF adalah arah teks, yang menentukan apakah teks dibaca dari kiri ke kanan (L2R) atau kanan ke kiri (R2L). Anda dapat memperoleh informasi ini menggunakan kode berikut:
+
+```csharp
+Console.WriteLine("Direction : {0}", pdfDocument.Direction);
+```
+
+ Outputnya akan berupa`L2R` untuk teks kiri ke kanan dan`R2L` untuk teks dari kanan ke kiri. Pengaturan ini khususnya berguna untuk dokumen dalam bahasa seperti Arab atau Ibrani.
+
+## Langkah 5: Menampilkan Judul Dokumen di Jendela
+
+Properti berikut memungkinkan Anda untuk mengontrol apakah judul dokumen atau nama file akan ditampilkan pada bilah judul jendela. Secara default, ini diatur ke`false`, yang berarti nama berkas akan ditampilkan.
+
+```csharp
+Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
+```
+
+Jika Anda ingin judul dokumen yang ditampilkan dan bukan nama file, pengaturan ini harus diaktifkan.
+
+## Langkah 6: Ubah Ukuran Jendela agar Sesuai dengan Halaman Pertama
+
+Terkadang, Anda mungkin ingin jendela dokumen secara otomatis mengubah ukurannya sendiri agar sesuai dengan halaman pertama PDF saat dibuka. Berikut cara memeriksa apakah fitur tersebut diaktifkan:
+
+```csharp
+Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
+```
+
+ Secara default, ini diatur ke`false`, artinya ukuran jendela akan tetap apa adanya terlepas dari ukuran halaman pertama.
+
+## Langkah 7: Sembunyikan Bilah Menu
+
+Untuk pengalaman membaca yang lebih terfokus, Anda mungkin ingin menyembunyikan bilah menu aplikasi penampil. Anda dapat mengambil pengaturan ini menggunakan baris berikut:
+
+```csharp
+Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
+```
+
+ Ini akan kembali`true` jika bilah menu disembunyikan, dan`false` jika tidak.
+
+## Langkah 8: Sembunyikan Bilah Alat
+
+Demikian pula, Anda mungkin juga ingin menyembunyikan bilah alat di penampil PDF agar antarmuka pengguna lebih bersih. Pengaturan ini dapat diambil sebagai berikut:
+
+```csharp
+Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
+```
+
+Jika pengaturan ini diaktifkan, bilah alat akan disembunyikan saat PDF dibuka.
+
+## Langkah 9: Sembunyikan Bilah Gulir dan Elemen UI
+
+Jika Anda hanya ingin menampilkan konten halaman tanpa elemen UI tambahan seperti bilah gulir, pengaturan ini mengontrol perilaku tersebut:
+
+```csharp
+Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
+```
+
+ Ketika diatur ke`true`, penampil PDF akan menyembunyikan bilah gulir dan elemen antarmuka pengguna lainnya, hanya menyisakan konten dokumen.
+
+## Langkah 10: Atur Mode Halaman Non-Layar Penuh
+
+ Anda dapat mengontrol bagaimana dokumen muncul saat keluar dari mode layar penuh menggunakan`NonFullScreenPageMode` properti. Pengaturan ini berguna untuk menentukan bagaimana pengguna harus berinteraksi dengan dokumen dalam mode layar nonpenuh.
+
+```csharp
+Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
+```
+
+Output dapat diatur ke berbagai mode seperti gambar mini, garis besar, atau panel lampiran.
+
+## Langkah 11: Tentukan Tata Letak Halaman
+
+Pengaturan ini memungkinkan Anda untuk mengontrol tata letak halaman dokumen. Misalnya, Anda dapat memilih tampilan satu halaman atau tampilan kolom berkelanjutan:
+
+```csharp
+Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
+```
+
+Hal ini memberi pengguna fleksibilitas dalam cara mereka membaca atau melihat konten dokumen.
+
+## Langkah 12: Tentukan Mode Halaman
+
+ Akhirnya,`PageMode` properti menentukan bagaimana dokumen akan ditampilkan saat dibuka. Pilihannya termasuk menampilkan gambar mini, memasuki mode layar penuh, atau menampilkan panel lampiran.
+
+```csharp
+Console.WriteLine("PageMode : {0}", pdfDocument.PageMode);
+```
+
+Bergantung pada kebutuhan Anda, Anda dapat mengaturnya ke mode apa pun yang sesuai dengan tujuan PDF Anda.
 
 ## Kesimpulan
 
-Dalam tutorial ini, kita telah mempelajari cara menggunakan Aspose.PDF untuk .NET guna mengambil informasi tentang properti jendela dokumen PDF. Dengan memuat dokumen PDF dan mengakses properti jendelanya, Anda dapat mengumpulkan informasi tentang bagaimana dokumen tersebut akan ditampilkan saat dibuka dalam aplikasi penampil. Aspose.PDF untuk .NET menyediakan serangkaian fitur canggih untuk bekerja dengan file PDF secara terprogram, menjadikannya alat yang berharga untuk manipulasi PDF dalam aplikasi .NET.
+Seperti yang dapat Anda lihat, Aspose.PDF untuk .NET menyediakan berbagai alat yang komprehensif untuk memanipulasi tampilan dokumen PDF Anda di berbagai penampil PDF. Apakah Anda ingin menyembunyikan bilah alat, memusatkan jendela, atau mengontrol arah teks, Aspose.PDF menawarkan fleksibilitas untuk meningkatkan pengalaman menonton pengguna.
 
-### Pertanyaan yang Sering Diajukan
+# Tanya Jawab Umum
 
-#### T: Apa tujuan mengambil properti jendela dokumen PDF?
+### Bisakah saya menyesuaikan tingkat zoom awal PDF?
+Ya, Aspose.PDF memungkinkan Anda mengatur tingkat zoom saat dokumen dibuka.
 
-A: Mengambil properti jendela dokumen PDF memungkinkan Anda mengumpulkan informasi tentang bagaimana dokumen PDF akan ditampilkan saat dibuka di aplikasi penampil. Properti ini mengontrol berbagai aspek seperti posisi jendela, mode tampilan, dan visibilitas elemen UI.
+### Bagaimana cara mengunci ukuran jendela PDF?
+ Anda dapat mengatur`FitWindow` properti untuk mencegah jendela berubah ukuran.
 
-#### T: Bagaimana cara menginstal Aspose.PDF untuk .NET di proyek .NET saya?
+### Apakah Aspose.PDF mendukung berbagai mode baca?
+Ya, ini mendukung berbagai mode seperti layar penuh, gambar mini, dan lampiran.
 
- A: Untuk menginstal Aspose.PDF untuk .NET, Anda perlu mengunduh pustaka dari[Halaman unduhan Aspose.PDF untuk .NET](https://releases.aspose.com/pdf/net)Setelah mengunduh, ekstrak isi file ZIP dan tambahkan referensi ke Aspose.PDF for .NET DLL di proyek .NET Anda.
+### Apakah mungkin untuk menyembunyikan bilah gulir di penampil PDF?
+ Tentu saja, Anda dapat menyembunyikan bilah gulir dengan mengatur`HideWindowUI` properti untuk`true`.
 
-#### T: Dapatkah saya menyesuaikan kode untuk mengambil properti jendela tertentu saja?
-
-A: Ya, Anda dapat menyesuaikan kode untuk mengambil properti jendela tertentu dengan memberi komentar pada baris yang tidak Anda perlukan. Setiap baris dalam kode sesuai dengan properti jendela tertentu, sehingga Anda dapat menyertakan atau mengecualikan properti berdasarkan kebutuhan Anda.
-
-#### T: Jenis properti jendela apa yang dapat saya ambil menggunakan Aspose.PDF untuk .NET?
-
-A: Dengan menggunakan Aspose.PDF untuk .NET, Anda dapat mengambil berbagai properti jendela dokumen PDF, termasuk memusatkan jendela, mengatur tata letak halaman, mengendalikan tampilan bilah alat dan bilah menu, dan banyak lagi.
+### Bisakah saya memusatkan jendela dokumen saat dibuka?
+ Ya, Anda dapat mengontrolnya dengan mengatur`CenterWindow` milik.

@@ -2,109 +2,40 @@
 title: 隐藏目录中的页码
 linktitle: 隐藏目录中的页码
 second_title: Aspose.PDF for .NET API 参考
-description: 通过本分步指南了解如何使用 Aspose.Pdf for .NET 隐藏目录中的页码。
+description: 了解如何使用 Aspose.Pdf for .NET 隐藏目录中的页码。按照包含代码示例的详细指南创建专业的 PDF。
 type: docs
 weight: 220
 url: /zh/net/programming-with-document/hidepagenumbersintoc/
 ---
-在本文中，我们将讨论使用 C# 实现 Aspose.PDF for .NET 的隐藏目录中的页码功能。我们将首先简要介绍 Aspose.PDF for .NET，然后深入了解实现此功能的分步指南。 
+## 介绍
 
-## Aspose.PDF for .NET 简介
-
-Aspose.PDF for .NET 是一款功能强大的 PDF 操作组件，允许开发人员以编程方式创建、编辑和操作 PDF 文件。它提供了广泛的特性和功能，使处理 PDF 文档变得容易。Aspose.PDF for .NET 支持 32 位和 64 位操作系统，可与 .NET Framework、.NET Core 和 Xamarin 平台一起使用。 
-
-## 隐藏目录中的页码功能是什么？
-
-目录 (TOC) 是 PDF 文档的重要组成部分，它为用户提供了内容的快速概览。有时，用户可能希望隐藏目录中的页码以使其更加用户友好。Aspose.PDF for .NET 提供了内置功能来隐藏目录中的页码。此功能可用于创建更加用户友好的 PDF 文档。 
+当您处理 PDF 时，有时您可能想要生成目录 (TOC)，但隐藏页码以保持内容的简洁。也许没有页码文档会更流畅，或者也许这是一种审美选择。无论您出于什么原因，如果您使用 Aspose.PDF for .NET，本教程将向您展示如何在目录中隐藏页码。
 
 ## 先决条件
 
-要遵循本教程，您需要满足以下条件：
+在我们开始之前，您需要准备好几件事情。以下是一份快速检查清单：
 
-- Visual Studio 2010 或更高版本
-- 您的系统上安装了 Aspose.PDF for .NET
-- 具备 C# 编程语言的基础知识
+- 已安装 Visual Studio：您需要一个可运行的 Visual Studio 版本来进行编码。
+- Aspose.PDF for .NET 库：确保您已经安装了 Aspose.PDF for .NET 库。
+  - 下载链接：[适用于 .NET 的 Aspose.PDF](https://releases.aspose.com/pdf/net/)
+- 临时许可证：如果您正在测试这些功能，那么拥有临时许可证会很有帮助。
+  - 临时执照：[在这里获取](https://purchase.aspose.com/temporary-license/)
 
-## 实现“隐藏目录中的页码”功能的分步指南
+## 导入包
 
-按照以下步骤使用 Aspose.PDF for .NET 实现在目录中隐藏页码功能：
-
-## 步骤 1：在 Visual Studio 中创建一个新的 C# 控制台应用程序
-
-打开 Visual Studio 并创建一个新的 C# 控制台应用程序。
-
-## 第 2 步：添加对 Aspose.PDF for .NET 的引用
-
-右键单击项目中的“引用”文件夹，然后选择“添加引用”。浏览到系统中安装 Aspose.PDF for .NET 的位置并添加对其的引用。
-
-## 步骤 1：创建一个新的 PDF 文档
-
-使用以下代码创建一个新的 PDF 文档：
+在开始编写代码之前，请确保在 C# 项目中导入以下命名空间。这些命名空间将提供处理 PDF 文档和创建目录 (TOC) 所需的类和方法。
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outFile = dataDir + "HiddenPageNumbers_out.pdf";
-Document doc = new Document();
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-## 第 2 步：创建目录页
+现在您的环境已准备就绪，并且已导入软件包，让我们分解该过程的每个步骤。我们将介绍代码的每个部分以确保清晰度，以便您可以轻松地跟进。
 
-为目录创建一个新页面，并使用以下代码将其添加到 PDF 文档中：
+## 步骤 1：初始化您的 PDF 文档
 
-```csharp
-Page tocPage = doc.Pages.Add();
-TocInfo tocInfo = new TocInfo();
-TextFragment title = new TextFragment("Table Of Contents");
-title.TextState.FontSize = 20;
-title.TextState.FontStyle = FontStyles.Bold;
-tocInfo.Title = title;
-```
+我们需要做的第一件事是创建一个新的 PDF 文档并添加一个目录 (TOC) 页面。
 
-## 步骤 3：将列表部分添加到 PDF 文档的部分集合中
-
-使用以下代码将列表部分添加到 PDF 文档的部分集合中：
-
-```csharp
-tocPage.TocInfo = tocInfo;
-```
-
-## 步骤 4：定义四级列表的格式
-
-通过使用以下代码设置每个级别的左边距和文本格式设置来定义四个级别列表的格式：
-
-```csharp
-tocInfo.IsShowPageNumbers = false;
-tocInfo.FormatArrayLength = 4;
-tocInfo.FormatArray[0].Margin.Right = 0;
-tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
-tocInfo.FormatArray[1].Margin.Left = 30;
-tocInfo.FormatArray[1].TextState.Underline = true;
-tocInfo.FormatArray[1].TextState.FontSize = 10;
-tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
-tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
-Page page = doc.Pages.Add();
-```
-
-## 步骤 5：在该部分中添加四个标题
-
-```csharp
-
-for (int Level = 1; Level != 5; Level++)
-{ 
-	Heading heading2 = new Heading(Level); 
-	TextSegment segment2 = new TextSegment(); 
-	heading2.TocPage = tocPage; 
-	heading2.Segments.Add(segment2); 
-	heading2.IsAutoSequence = true; 
-	segment2.Text = "this is heading of level " + Level; 
-	heading2.IsInList = true; 
-	page.Paragraphs.Add(heading2); 
-}
-doc.Save(outFile);
-
-```
-
-### 使用 Aspose.PDF for .NET 在目录中隐藏页码的示例源代码
 
 ```csharp
 //文档目录的路径。
@@ -112,18 +43,47 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "HiddenPageNumbers_out.pdf";
 Document doc = new Document();
 Page tocPage = doc.Pages.Add();
+```
+
+- dataDir：这是保存输出文件的目录。
+- Document()：初始化一个新的PDF文档。
+- Pages.Add()：向文档添加一个新的空白页，该页稍后将保存您的目录。
+
+## 第 2 步：设置目录信息和标题
+
+接下来，我们将定义目录信息，包括设置将显示在目录顶部的标题。
+
+```csharp
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
 tocInfo.Title = title;
-//将列表部分添加到 Pdf 文档的部分集合中
 tocPage.TocInfo = tocInfo;
-//通过设置左边距和
-//各层级文本格式设置
+```
 
+- TocInfo：此对象保存有关TOC的所有信息。
+- TextFragment：代表TOC标题的文本，这里我们将其设置为“Table Of Contents”。
+- FontStyle：我们将目录标题的大小设置为 20 并将其设为粗体，以此来设置其样式。
+- tocPage.TocInfo：我们将目录信息分配给将显示目录的页面。
+
+## 步骤 3：隐藏目录中的页码
+
+现在到了最有趣的部分！在这里我们配置目录以隐藏页码。
+
+```csharp
 tocInfo.IsShowPageNumbers = false;
 tocInfo.FormatArrayLength = 4;
+```
+
+-  IsShowPageNumbers：这是隐藏页码的神奇开关。将其设置为`false`，并且页码不会出现在目录中。
+- FormatArrayLength：我们将其设置为 4，表示我们要为四级 TOC 标题定义格式。
+
+## 步骤 4：自定义目录格式
+
+为了给您的目录添加更多样式，我们现在将定义不同级别标题的格式。
+
+```csharp
 tocInfo.FormatArray[0].Margin.Right = 0;
 tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
 tocInfo.FormatArray[1].Margin.Left = 30;
@@ -131,36 +91,61 @@ tocInfo.FormatArray[1].TextState.Underline = true;
 tocInfo.FormatArray[1].TextState.FontSize = 10;
 tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
 tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
+```
+
+- FormatArray：此数组控制目录条目的格式。每个索引代表不同的标题级别。
+- 边距和文本样式：我们为每个标题级别设置边距并应用粗体、斜体和下划线等字体样式。
+
+## 步骤 5：向文档添加标题
+
+最后，让我们添加将成为目录一部分的实际标题。
+
+```csharp
 Page page = doc.Pages.Add();
-//在该部分中添加四个标题
 for (int Level = 1; Level != 5; Level++)
-	{ 
-		Heading heading2 = new Heading(Level); 
-		TextSegment segment2 = new TextSegment(); 
-		heading2.TocPage = tocPage; 
-		heading2.Segments.Add(segment2); 
-		heading2.IsAutoSequence = true; 
-		segment2.Text = "this is heading of level " + Level; 
-		heading2.IsInList = true; 
-		page.Paragraphs.Add(heading2); 
-	}
+{ 
+    Heading heading2 = new Heading(Level); 
+    TextSegment segment2 = new TextSegment(); 
+    heading2.TocPage = tocPage; 
+    heading2.Segments.Add(segment2); 
+    heading2.IsAutoSequence = true; 
+    segment2.Text = "this is heading of level " + Level; 
+    heading2.IsInList = true; 
+    page.Paragraphs.Add(heading2); 
+}
+```
+
+- 标题和文本段：这些代表将出现在目录中的标题。每个级别都有自己的标题。
+- IsAutoSequence：自动对标题进行编号。
+- IsInList：确保每个标题都出现在目录中。
+
+## 步骤 6：保存文档
+
+一切设置完成后，将 PDF 文档保存到指定的输出文件。
+
+```csharp
 doc.Save(outFile);
 ```
 
+就这样！您已成功创建带有目录的 PDF，并且页码已隐藏！
+
 ## 结论
 
-在本教程中，我们探讨了如何使用 Aspose.PDF for .NET 处理 PDF 文档中的 XMP 元数据。XMP 元数据提供了有关 PDF 文档的宝贵信息，包括其标题、作者、创建日期等。Aspose.PDF for .NET 允许开发人员访问和操作这些元数据，从而提供灵活而强大的 API 来处理 PDF 文档。
+在 PDF 中创建目录并隐藏页码似乎很棘手，但使用 Aspose.PDF for .NET，这很容易。通过遵循本分步指南，您已经学会了如何自定义目录格式、隐藏页码以及将不同的样式应用于标题。现在，您可以创建根据您的确切需求量身定制的专业 PDF。
 
-### 常见问题解答
+## 常见问题解答
 
-#### 问：PDF 文档中的 XMP 元数据是什么？
+### 我可以显示目录中特定标题的页码吗？
+不可以，Aspose.PDF 会隐藏或显示整个目录的页码。您无法选择性地隐藏特定条目的页码。
 
-答：PDF 文档中的 XMP（可扩展元数据平台）元数据是用于存储文档元数据信息的标准格式。它包括文档标题、作者、创建日期、关键字等详细信息。XMP 元数据提供了一种结构化且标准化的方式来存储和共享有关 PDF 文档的信息。
+### 是否可以向 TOC 添加更多级别？
+是的，你可以增加`FormatArrayLength`定义更多级别的目录标题。
 
-#### 问：我可以使用 Aspose.PDF for .NET 修改 PDF 文档的 XMP 元数据吗？
+### 如何更改所有目录条目的字体？
+您可以通过修改`TextState.Font`每个级别的属性`FormatArray`.
 
-答：是的，您可以使用 Aspose.PDF for .NET 以编程方式修改 PDF 文档的 XMP 元数据。您可以访问`Info`的财产`Document`对象，它允许您访问 XMP 元数据属性。然后，您可以更新这些属性的值以修改 PDF 文档的 XMP 元数据。
+### 我可以在目录中插入超链接吗？
+是的，您可以使用`Heading.TocPage`财产。
 
-#### 问：我可以使用 Aspose.PDF for .NET 从 PDF 文档中提取自定义 XMP 元数据属性吗？
-
-答：是的，您可以使用 Aspose.PDF for .NET 从 PDF 文档中提取自定义 XMP 元数据属性。您可以使用`Metadata`的财产`Document`对象，它提供对 PDF 文档的所有 XMP 元数据属性的访问。然后，您可以提取自定义属性并根据需要使用它们的值。
+### 我需要 Aspose.PDF 的许可证吗？
+是的，生产使用需要有效的许可证。您可以获取临时许可证[这里](https://purchase.aspose.com/temporary-license/)测试功能。

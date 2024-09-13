@@ -60,7 +60,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## Krok 6: Získejte extrahované fragmenty textu
 
-Získejte extrahované fragmenty textu pomocí`TextFragments` majetek z`TextFragmentAbsorber` objekt:
+ Získejte extrahované fragmenty textu pomocí`TextFragments` vlastnictví`TextFragmentAbsorber` objekt:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -150,7 +150,7 @@ Odpověď: Ano, tento tutoriál ukazuje, jak hledat text na konkrétní stránce
 
 #### Otázka: Jak získám přístup k extrahovaným textovým segmentům z konkrétní stránky?
 
- Odpověď: Po vyhledání textu na určené stránce můžete získat přístup k extrahovaným textovým segmentům pomocí`TextSegments` majetek z`TextFragment` objekt. Tato vlastnost poskytuje přístup ke sbírce`TextSegment` objekty, které obsahují extrahovaný text a související informace.
+ Odpověď: Po vyhledání textu na určené stránce můžete získat přístup k extrahovaným textovým segmentům pomocí`TextSegments` vlastnictví`TextFragment` objekt. Tato vlastnost poskytuje přístup ke sbírce`TextSegment` objekty, které obsahují extrahovaný text a související informace.
 
 #### Otázka: Jaké informace mohu získat z extrahovaných textových segmentů?
 

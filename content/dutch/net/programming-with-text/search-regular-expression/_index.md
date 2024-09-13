@@ -69,7 +69,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## Stap 7: Geëxtraheerde tekstfragmenten ophalen
 
-Haal de geëxtraheerde tekstfragmenten op met behulp van de`TextFragments` eigendom van de`TextFragmentAbsorber` voorwerp:
+ Haal de geëxtraheerde tekstfragmenten op met behulp van de`TextFragments` eigendom van de`TextFragmentAbsorber` voorwerp:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -103,7 +103,7 @@ U kunt de code binnen de lus aanpassen om verdere acties uit te voeren op elk te
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Document openen
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionAll.pdf");
-// Maak een TextAbsorber-object om alle zinnen te vinden die overeenkomen met de reguliere expressie
+//Maak een TextAbsorber-object om alle zinnen te vinden die overeenkomen met de reguliere expressie
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Zoals 1999-2000
 // Stel de optie voor tekst zoeken in om het gebruik van reguliere expressies te specificeren
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);

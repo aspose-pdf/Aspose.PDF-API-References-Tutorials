@@ -70,7 +70,7 @@ Ebben az oktatóanyagban megtanultuk, hogyan törölhet konkrét megjegyzéseket
 
 ## GYIK
 
-### Hogyan törölhetem a kommentárokat típus szerint?
+### Hogyan törölhetem a megjegyzéseket típus szerint?
 
  A megjegyzések típus szerinti törléséhez módosíthatja a kódot a 2. lépésben. A szerző ellenőrzése helyett ellenőrizze a megjegyzés típusát. Például az összes szöveges megjegyzés törléséhez használhatja`annotation instanceof TextAnnotation`.
 

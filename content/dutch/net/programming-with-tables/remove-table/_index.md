@@ -96,7 +96,7 @@ Gefeliciteerd! U hebt nu geleerd hoe u een tabel in een PDF-document verwijdert 
 
 #### V: Wat gebeurt er als de opgegeven pagina geen tabellen bevat?
 
- A: Als de opgegeven pagina geen tabellen bevat, zal de code een foutmelding geven`IndexOutOfRangeException` bij het proberen toegang te krijgen`absorb.TableList[0]` Om dit probleem te voorkomen, moet u controleren of`absorb.TableList`bevat elementen voordat de tabel wordt geopend.
+ A: Als de opgegeven pagina geen tabellen bevat, zal de code een foutmelding geven`IndexOutOfRangeException` bij het proberen toegang te krijgen`absorb.TableList[0]` Om dit probleem te voorkomen, moet u controleren of`absorb.TableList` bevat elementen voordat de tabel wordt geopend.
 
 #### V: Kan ik tabellen van andere pagina's dan de eerste pagina verwijderen?
 

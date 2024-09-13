@@ -1,7 +1,7 @@
 ---
 title: PDF till XLS
 linktitle: PDF till XLS
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Konvertera enkelt PDF-filer till XLS-format med Aspose.PDF för .NET. Följ vår steg-för-steg-guide för sömlös dataextraktion.
 type: docs
 weight: 200

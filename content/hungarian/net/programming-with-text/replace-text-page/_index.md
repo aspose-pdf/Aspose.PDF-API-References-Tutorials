@@ -62,7 +62,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## 6. lépés: A kibontott szövegrészletek lekérése
 
-Szerezze be a kivont szövegrészleteket a`TextFragments` tulajdona a`TextFragmentAbsorber` objektum:
+ Szerezze be a kivont szövegrészleteket a`TextFragments` tulajdona a`TextFragmentAbsorber` objektum:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -165,7 +165,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 #### K: Mi történik, ha a keresett kifejezés nem található a megadott oldalon?
 
- V: Ha a keresési kifejezés nem található a megadott oldalon, a`TextFragmentCollection` üres lesz, és nem történik csere. Győződjön meg arról, hogy a keresett kifejezés megtalálható a megcélzott oldalon.
+V: Ha a keresési kifejezés nem található a megadott oldalon, a`TextFragmentCollection` üres lesz, és nem történik csere. Győződjön meg arról, hogy a keresett kifejezés megtalálható a megcélzott oldalon.
 
 #### K: Hogyan szabhatom testre a helyettesítő szöveget az egyes szövegrészletekhez?
 

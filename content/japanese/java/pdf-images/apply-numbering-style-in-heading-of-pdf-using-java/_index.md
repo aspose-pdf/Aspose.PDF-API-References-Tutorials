@@ -59,7 +59,7 @@ com.aspose.pdf.NumberingStyle numberingStyle = new com.aspose.pdf.NumberingStyle
 numberingStyle.setFormat("(1)");
 numberingStyle.setFirstIndex(1);
 
-//見出しに番号スタイルを適用する
+//見出しに番号付けスタイルを適用する
 heading.setNumberingStyle(numberingStyle);
 ```
 

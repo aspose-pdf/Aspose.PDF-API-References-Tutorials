@@ -26,8 +26,8 @@ Sorozatunk utolsó részében elmélyülünk a fejlett PDF-stílustechnikákban,
 ### [Beépített szerkezeti elemek PDF-ben Java használatával](./inline-structure-elements-in-pdf-using-java/)
 Ismerje meg, hogyan implementálhat beágyazott szerkezeti elemeket PDF dokumentumokban Java használatával az Aspose.PDF for Java segítségével. Hozzáférhető és jól strukturált PDF-fájlokat hozhat létre.
 ### [Gyökérstruktúra PDF-ben Java használatával](./root-structure-in-pdf-using-java/)
-Tanulja meg a gyökérstruktúra kezelését az Aspose.PDF használatával. PDF-fájlok létrehozása, módosítása és javítása.
-### [Struktúraelemek tulajdonságai PDF-ben Java használatával](./structure-elements-properties-in-pdf-using-java/)
+Ismerje meg a gyökérstruktúra kezelését az Aspose.PDF használatával. PDF-fájlok létrehozása, módosítása és javítása.
+### [Struktúraelemek tulajdonságai a PDF-ben Java használatával](./structure-elements-properties-in-pdf-using-java/)
 Fedezze fel a PDF szerkezeti elemek erejét a Java nyelven az Aspose.PDF segítségével. Ismerje meg a PDF-fájlok létrehozását, módosítását és optimalizálását a kisegítő lehetőségek érdekében.
 ### [Stílus táblázatcella PDF-ben Java használatával](./style-table-cell-in-pdf-using-java/)
 Ismerje meg, hogyan formázhat táblázatcellákat PDF-dokumentumokban az Aspose.PDF for Java segítségével. Bővítse Java-alkalmazásait ezzel a PDF-testreszabási útmutatóval, lépésről lépésre.

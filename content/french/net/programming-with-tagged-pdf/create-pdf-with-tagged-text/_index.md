@@ -117,19 +117,19 @@ R : L'exemple de code montre comment créer un document PDF, définir divers é
 
 #### Q : Puis-je ajouter d’autres éléments de texte balisés, tels que des listes ou des liens, en utilisant des techniques similaires ?
 
-: Oui, vous pouvez ajouter d'autres éléments de texte balisés tels que des listes, des liens ou d'autres structures personnalisées à l'aide de techniques similaires. Aspose.PDF propose diverses méthodes pour créer différents types de contenu balisé, vous permettant ainsi d'améliorer la sémantique du document.
+R : Oui, vous pouvez ajouter d'autres éléments de texte balisés tels que des listes, des liens ou d'autres structures personnalisées à l'aide de techniques similaires. Aspose.PDF propose diverses méthodes pour créer différents types de contenu balisé, vous permettant ainsi d'améliorer la sémantique du document.
 
-####  Q : Comment fonctionne le`SetTitle` method contribute to the PDF document's tagged text?
+####  : Comment fonctionne le`SetTitle` method contribute to the PDF document's tagged text?
 
  A : Le`SetTitle` La méthode définit le titre du contenu balisé du document PDF, en fournissant une brève description de l'objectif ou du sujet du document. Ces informations aident les utilisateurs à comprendre le contexte du texte balisé.
 
 #### Q : Comment l’utilisation de texte balisé améliore-t-elle l’accessibilité dans les documents PDF ?
 
-R : Le texte balisé ajoute une signification sémantique au document, le rendant ainsi plus accessible aux utilisateurs handicapés ou à ceux qui utilisent des technologies d'assistance. Les lecteurs d'écran et autres dispositifs d'assistance peuvent interpréter et présenter le texte balisé pour une expérience utilisateur améliorée.
+: Le texte balisé ajoute une signification sémantique au document, le rendant ainsi plus accessible aux utilisateurs handicapés ou à ceux qui utilisent des technologies d'assistance. Les lecteurs d'écran et autres dispositifs d'assistance peuvent interpréter et présenter le texte balisé pour une expérience utilisateur améliorée.
 
-####  Q : Comment fonctionne le`SetLanguage` method enhance the tagged text in a PDF document?
+####  : Comment fonctionne le`SetLanguage` method enhance the tagged text in a PDF document?
 
- A : Le`SetLanguage`La méthode définit l'attribut de langue du contenu balisé du document PDF. Cela permet d'indiquer la langue dans laquelle le texte balisé est écrit, améliorant ainsi l'accessibilité et permettant un rendu approprié en fonction de la langue.
+ A : Le`SetLanguage` La méthode définit l'attribut de langue du contenu balisé du document PDF. Cela permet d'indiquer la langue dans laquelle le texte balisé est écrit, améliorant ainsi l'accessibilité et permettant un rendu approprié en fonction de la langue.
 
 #### Q : Est-il possible d’ajouter d’autres éléments, tels que des images ou du contenu multimédia, à côté du texte balisé en utilisant des techniques similaires ?
 

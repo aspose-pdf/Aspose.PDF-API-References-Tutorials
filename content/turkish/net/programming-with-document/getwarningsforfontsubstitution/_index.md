@@ -7,41 +7,79 @@ type: docs
 weight: 190
 url: /tr/net/programming-with-document/getwarningsforfontsubstitution/
 ---
-Aspose.PDF for .NET, geliştiricilerin .NET uygulamalarında PDF dosyaları oluşturmasını, düzenlemesini ve dönüştürmesini sağlayan popüler bir PDF düzenleme kütüphanesidir. Bu kütüphanenin sunduğu özelliklerden biri, bir PDF belgesi açıldığında yazı tipi değiştirme uyarılarını algılama yeteneğidir. Bu eğitim, sizi kullanma adımlarında yönlendirecektir`GetWarningsForFontSubstitution` Aspose.PDF for .NET'in bir PDF belgesi açıldığında yazı tipi değiştirme uyarılarını algılama özelliği.
+## giriiş
 
-## Adım 1: .NET için Aspose.PDF'yi yükleyin
+Belge işleme dünyasında, PDF'lerinizin tam olarak amaçlandığı gibi görünmesini sağlamak hayati önem taşır. Hiç bir PDF'i açıp yazı tiplerinin hepsinin yanlış olduğunu gördünüz mü? Bu, belgede kullanılan orijinal yazı tiplerinin PDF'in görüntülendiği sistemde mevcut olmaması durumunda olabilir. Neyse ki, Aspose.PDF for .NET, yazı tipi değiştirme uyarılarını algılamak için sağlam bir çözüm sunarak belgelerinizin bütünlüğünü korumanıza olanak tanır. Bu kılavuzda, Aspose.PDF for .NET kullanarak PDF belgelerinizde yazı tipi değiştirme algılamayı ayarlama adımlarını ele alacağız.
 
- .NET uygulamalarınızda Aspose.PDF for .NET'i kullanmak için önce kütüphaneyi yüklemeniz gerekir. Kütüphanenin en son sürümünü şu adresten indirebilirsiniz:[Aspose.PDF for .NET indirme sayfası](https://relases.aspose.com/pdf/net).
+## Ön koşullar
 
-Kütüphaneyi indirdikten sonra, ZIP dosyasının içeriğini bilgisayarınızdaki bir klasöre çıkarın. Daha sonra .NET projenizde Aspose.PDF for .NET DLL'sine bir referans eklemeniz gerekecektir.
+Koda dalmadan önce, yerinde olması gereken birkaç şey var:
 
-## Adım 2: PDF Belgesini Yükleyin
+1. Visual Studio: Makinenizde Visual Studio'nun yüklü olduğundan emin olun. .NET kodunuzu burada yazıp çalıştıracaksınız.
+2.  .NET için Aspose.PDF: Aspose.PDF kütüphanesine sahip olmanız gerekir. Bunu şuradan indirebilirsiniz:[alan](https://releases.aspose.com/pdf/net/).
+3. Temel C# Bilgisi: C# programlamaya aşina olmak, kod parçacıklarını daha iyi anlamanıza yardımcı olacaktır.
+4. PDF Belgesi: Yazı tipi değiştirme tespitini test etmek için kullanabileceğiniz bir örnek PDF belgesi hazır bulundurun.
 
- Aspose.PDF for .NET'i yükledikten ve .NET projenize DLL'ye bir başvuru ekledikten sonra, kullanmaya başlayabilirsiniz.`GetWarningsForFontSubstitution` PDF belgesi açılırken yazı tipi değiştirme uyarılarını algılama özelliği.
+## Paketleri İçe Aktar
 
-Bu özelliği kullanmanın ilk adımı, yazı tipi değiştirme uyarılarını algılamak istediğiniz PDF belgesini yüklemektir. Bunu yapmak için aşağıdaki kodu kullanabilirsiniz:
+Başlamak için, C# projenize gerekli paketleri içe aktarmanız gerekir. Bunu nasıl yapabileceğiniz aşağıda açıklanmıştır:
+
+### Yeni Bir Proje Oluştur
+
+Visual Studio'yu açın ve yeni bir C# projesi oluşturun. Basitlik için bir Konsol Uygulaması seçebilirsiniz.
+
+### Aspose.PDF Referansını Ekle
+
+1. Çözüm Gezgini’nde projenizin üzerine sağ tıklayın.
+2. "NuGet Paketlerini Yönet" seçeneğini seçin.
+3. "Aspose.PDF" dosyasını arayın ve en son sürümü yükleyin.
+
+### Ad Alanını İçe Aktar
+
+C# dosyanızın en üstüne Aspose.PDF ad alanını içe aktarın:
 
 ```csharp
-// PDF belgesine giden yol
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
 
-// PDF belgesini açın
+Artık her şeyi ayarladığınıza göre, yazı tipi değiştirme uyarılarını tespit etme sürecini yönetilebilir adımlara bölelim.
+
+## Adım 1: Belge Yolunu Tanımlayın
+
+Öncelikle PDF belgenizin yolunu belirtmeniz gerekir. Aspose.PDF dosyayı burada arayacaktır.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` PDF dosyanızın bulunduğu gerçek yol ile.
+
+## Adım 2: PDF Belgesini açın
+
+ Daha sonra, PDF belgesini kullanarak açacaksınız`Document` Sınıf Aspose.PDF tarafından sağlanmıştır.
+
+```csharp
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
- Yukarıdaki kodda şunu değiştirin:`"YOUR DOCUMENT DIRECTORY"` PDF belgenizin bulunduğu dizinin yolunu içeren kod. Bu kod PDF belgesini bir`Document` Daha sonra yazı tipi değiştirme uyarılarını tespit etmek için kullanabileceğiniz nesne.
+ Bu kod satırı yeni bir başlatır`Document` nesneyi PDF dosyanızla birlikte gönderin.
 
-## Adım 3: Yazı Tipi Değiştirme Uyarılarını Algıla
+## Adım 3: Yazı Tipi Değiştirme Algılama Ayarı
 
-Bir PDF belgesini açarken yazı tipi değiştirme uyarılarını algılamak için aşağıdaki kodu kullanabilirsiniz:
+ Şimdi, yazı tipi değiştirme uyarılarını algılayacak olay işleyicisini ayarlamanın zamanı geldi. Abone olmanız gerekecek`FontSubstitution` olayın`Document` sınıf.
 
 ```csharp
 doc.FontSubstitution += new Document.FontSubstitutionHandler(OnFontSubstitution);
 ```
 
- Yukarıdaki kodda,`OnFontSubstitution`bir font değiştirme uyarısı algılandığında çağrılacak bir yöntemdir. Bu yöntemi font değiştirme uyarısını istediğiniz şekilde ele alacak şekilde özelleştirebilirsiniz.
+Bu satır olayı, daha sonra tanımlayacağımız özel yönteminize bağlar.
 
- İşte bunun bir örnek uygulaması:`OnFontSubstitution` yöntem:
+## Adım 4: Yazı Tipi Değiştirme Uyarılarını Yönetin
+
+Yazı tipi değiştirme uyarılarını işleyecek bir yöntem oluşturmanız gerekir. Bu yöntem, bir yazı tipi değiştirme gerçekleştiğinde çağrılacaktır.
 
 ```csharp
 private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArgs e)
@@ -50,47 +88,29 @@ private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArg
 }
 ```
 
- Yukarıdaki kodda,`OnFontSubstitution` yöntem, bir font değiştirme uyarısı algılandığında konsola yalnızca orijinal font adını ve değiştirilen font adını çıktı olarak verir. Bu yöntemi, font değiştirme uyarısını istediğiniz şekilde işlemek üzere özelleştirebilirsiniz.
+Bu yöntemde, orijinal font adını ve değiştirilen font adını konsola kaydedebilirsiniz. Bu şekilde, hangi değişikliklerin yapıldığını tam olarak bileceksiniz.
 
-### PDF için Aspose.NET kullanarak Yazı Tipi Değişimi İçin Uyarılar Almak için örnek kaynak kodu
+## Adım 5: Kodu Çalıştırın
 
- PDF belgesini açarken font değiştirme uyarılarını algılamak için tam kaynak kodu aşağıdadır:`GetWarningsForFontSubstitution` Aspose.PDF for .NET'in özelliği:
-
-```csharp
-// PDF belgesine giden yol
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// PDF belgesini açın
-Document doc = new Document(dataDir + "input.pdf");
-
-// Yazı tipi değiştirme uyarılarını algıla
-doc.FontSubstitution += new Document.FontSubstitutionHandler(OnFontSubstitution);
-
-// Yazı tipi değiştirme uyarısını işle
-private void OnFontSubstitution(object sender, Document.FontSubstitutionEventArgs e)
-{
-    Console.WriteLine("Font substitution: {0} => {1}", e.OriginalFontName, e.SubstitutedFontName);
-}
-```
+Son olarak uygulamanızı çalıştırabilirsiniz. PDF belgenizde herhangi bir font değişikliği varsa, konsolda yazdırılan uyarıları göreceksiniz.
 
 ## Çözüm
 
- Bu eğitimde, bir PDF belgesini açarken font değiştirme uyarılarını algılamak için Aspose.PDF for .NET'in nasıl kullanılacağını ele aldık. Abone olarak`FontSubstitution`olay, geliştiriciler font değiştirme durumlarını tespit edebilir ve bunları uygulamalarının ihtiyaçlarına göre işleyebilir. Aspose.PDF for .NET, font değiştirme uyarılarını tespit etmek ve işlemek için basit bir API sunarak geliştiricilerin farklı sistemlerde PDF belgelerinin görsel doğruluğunu ve tutarlılığını sağlamalarına yardımcı olur.
+PDF belgelerinde font değiştirme uyarılarını algılamak, dosyalarınızın görsel bütünlüğünü korumak için önemlidir. Aspose.PDF for .NET ile bu işlem basit ve etkilidir. Bu kılavuzda özetlenen adımları izleyerek font değiştirme algılamayı kolayca ayarlayabilir ve PDF'lerinizin tam olarak istediğiniz gibi görünmesini sağlayabilirsiniz.
 
-### SSS
+## SSS
 
-#### S: PDF belgesinde font değiştirme nedir?
+### Font değişimi nedir?
+Yazı tipi değişimi, bir belgede kullanılan orijinal yazı tipinin mevcut olmadığı ve bunun yerine farklı bir yazı tipinin kullanıldığı durumlarda meydana gelir.
 
-A: PDF belgesinde font değiştirme, belgede kullanılan bir fontun dosyada mevcut olmaması veya gömülü olmaması durumunda gerçekleşir. Bu gibi durumlarda, görüntüleyici veya yazıcı eksik fontu sistemde mevcut olan benzer bir fontla değiştirir. Font değiştirme, belgenin görünümünü ve düzenini etkileyebilir.
+### Font değişikliğini nasıl önleyebilirim?
+Yazı tipi değişikliğini önlemek için PDF'nizde kullanılan tüm yazı tiplerinin belgeye yerleştirildiğinden emin olun.
 
-#### S: Font değişimini tespit etmek neden önemlidir?
+### Aspose.PDF'yi ücretsiz kullanabilir miyim?
+Evet, Aspose.PDF'nin özelliklerini test edebilmeniz için ücretsiz deneme sürümü mevcuttur.
 
-A: Yazı tipi değiştirmenin algılanması önemlidir çünkü PDF belgesinin görsel doğruluğunu ve düzenini etkileyebilir. Yazı tipi değiştirme uyarılarının algılanması, geliştiricilerin yazı tiplerinin değiştirildiği durumları belirlemelerine ve belgenin görsel görünümünün farklı sistemlerde tutarlı olmasını sağlamak için uygun eylemleri gerçekleştirmelerine olanak tanır.
+### Daha fazla dokümanı nerede bulabilirim?
+ Ayrıntılı belgeleri .NET için Aspose.PDF'de bulabilirsiniz[Burada](https://reference.aspose.com/pdf/net/).
 
-#### S: Yazı tipi değiştirme uyarılarını nasıl yönetebilirim?
-
- A: Abone olarak yazı tipi değiştirme uyarılarını yönetebilirsiniz.`FontSubstitution` olayın`Document` sınıf ve olayı işlemek için özel bir yöntem sağlama. Bu özel yöntemde, yazı tipi değiştirme uyarılarını günlüğe kaydedebilir, kullanıcıları bilgilendirebilir veya uygulamanızın gereksinimlerine göre başka eylemler gerçekleştirebilirsiniz.
-
-#### S: Yazı tipi değiştirme uyarılarının işlenmesini özelleştirebilir miyim?
-
- A: Evet, yazı tipi değiştirme uyarılarının işlenmesini, bu uyarıları işlemek için özel bir yöntem sağlayarak özelleştirebilirsiniz.`FontSubstitution`olay. Bu özel yöntemde, yazı tipi değiştirme uyarılarını günlüğe kaydedebilir, kullanıcıları bilgilendirebilir veya uygulamanızın gereksinimlerine göre uygun diğer eylemleri gerçekleştirebilirsiniz.
+### Aspose.PDF için nasıl destek alabilirim?
+ Destek almak için şu adresi ziyaret edebilirsiniz:[Aspose destek forumu](https://forum.aspose.com/c/pdf/10).

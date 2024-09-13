@@ -30,7 +30,7 @@ using Aspose.Pdf;
  Trong mã, hãy xác định vị trí dòng ghi`string dataDir = "YOUR DOCUMENT DIRECTORY";` và thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn đến thư mục lưu trữ tài liệu của bạn.
 
 ## Bước 4: Tải tài liệu PDF hiện có
- Tải một tài liệu PDF hiện có bằng cách sử dụng`Document` hàm tạo và truyền đường dẫn đến tệp PDF đầu vào.
+ Tải một tài liệu PDF hiện có bằng cách sử dụng`Document`hàm tạo và truyền đường dẫn đến tệp PDF đầu vào.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
@@ -129,7 +129,7 @@ using Aspose.Pdf;
 
 #### H: Làm thế nào để lưu tài liệu PDF đã cập nhật?
 
- A: Ở Bước 7, bạn sẽ sử dụng`Save` phương pháp của`Document`đối tượng để lưu tài liệu PDF đã cập nhật, chỉ định đường dẫn tệp đầu ra.
+ A: Ở Bước 7, bạn sẽ sử dụng`Save` phương pháp của`Document` đối tượng để lưu tài liệu PDF đã cập nhật, chỉ định đường dẫn tệp đầu ra.
 
 #### H: Việc nhúng phông chữ vào tài liệu PDF có ý nghĩa gì?
 

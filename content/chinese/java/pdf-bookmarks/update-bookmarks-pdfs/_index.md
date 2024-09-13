@@ -14,7 +14,7 @@ url: /zh/java/pdf-bookmarks/update-bookmarks-pdfs/
 
 ## 了解 Aspose.PDF for Java
 
-Aspose.PDF for Java 是一个功能丰富的 PDF 操作库，允许开发人员在 Java 应用程序中创建、编辑和操作 PDF 文档。它提供广泛的功能，包括使用书签的能力，书签是提供 PDF 文件目录的交互式链接或大纲。
+Aspose.PDF for Java 是一个功能丰富的 PDF 操作库，允许开发人员在 Java 应用程序中创建、编辑和操作 PDF 文档。它提供了广泛的功能，包括使用书签的能力，书签是提供 PDF 文件目录的交互式链接或大纲。
 
 ## 先决条件
 

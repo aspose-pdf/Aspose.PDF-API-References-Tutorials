@@ -13,11 +13,11 @@ Tutorial pemrograman dengan grafik dari Aspose.PDF untuk .NET dirancang untuk pe
 ## Tutorial
 | Judul | Keterangan |
 | --- | --- | 
-| [Tambahkan Gambar Dalam File PDF](./add-drawing/) | Pelajari cara menambahkan gambar dalam berkas PDF menggunakan Aspose.PDF untuk .NET. Ikuti panduan langkah demi langkah ini untuk membuat dokumen PDF yang menarik dengan fitur menggambar. |  
-| [Tambahkan Gambar Dengan Isian Gradien](./add-drawing-with-gradient-fill/) | Pelajari cara menambahkan gambar dengan isian gradien dengan Aspose.PDF untuk .NET. Tutorial langkah demi langkah untuk membuat dokumen PDF yang menarik. |  
-| [Tambahkan Objek Garis Dalam File PDF](./add-line-object/) | Pelajari cara menambahkan objek garis kustom dalam berkas PDF menggunakan Aspose.PDF untuk .NET. |  
-| [Persegi Panjang Kontrol Urutan Z](./control-rectangle-z-order/) | Pelajari cara mengontrol urutan Z persegi panjang dalam berkas PDF menggunakan Aspose.PDF untuk .NET.  |  
-| [Buat Persegi Panjang Terisi](./create-filled-rectangle/) | Pelajari cara membuat persegi panjang yang terisi dengan Aspose.PDF untuk .NET. Panduan langkah demi langkah untuk menyesuaikan warna isian. |  
-| [Membuat Persegi Panjang Dengan Warna Alfa](./create-rectangle-with-alpha-color/) | Pelajari cara membuat persegi panjang dengan warna transparan menggunakan Aspose.PDF untuk .NET. Panduan langkah demi langkah untuk menyesuaikan transparansi. |  
-| [Panjang Garis](./dash-length/) | Pelajari cara mengatur panjang tanda hubung dengan Aspose.PDF untuk .NET. Panduan langkah demi langkah untuk menyesuaikan pola tanda hubung. |  
-| [Menggambar Garis](./drawing-line/) | Pelajari cara menggambar garis di halaman menggunakan Aspose.PDF untuk .NET. Panduan langkah demi langkah untuk membuat garis khusus. |  
+| [Tambahkan Gambar Dalam File PDF](./add-drawing/) | Pelajari cara menambahkan gambar ke berkas PDF menggunakan Aspose.PDF untuk .NET. Panduan langkah demi langkah ini mencakup pengaturan warna, menambahkan bentuk, dan menyimpan PDF Anda. |  
+| [Tambahkan Gambar Dengan Isian Gradien](./add-drawing-with-gradient-fill/) | Pelajari cara menambahkan gambar gradien yang menakjubkan dalam PDF menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah ini, sempurna untuk menyempurnakan visual dokumen. |  
+| [Tambahkan Objek Garis Dalam File PDF](./add-line-object/) | Pelajari cara menambahkan objek garis ke berkas PDF menggunakan Aspose.PDF for .NET dalam tutorial langkah demi langkah ini. Sempurna untuk pemula. |  
+| [Persegi Panjang Kontrol Urutan Z](./control-rectangle-z-order/) | Pelajari cara mengontrol urutan Z persegi panjang dalam PDF menggunakan Aspose.PDF untuk .NET dalam tutorial langkah demi langkah yang terperinci ini. Ideal bagi pengembang yang ingin menyempurnakan dokumen PDF. |  
+| [Buat Persegi Panjang Terisi](./create-filled-rectangle/) | Pelajari cara membuat persegi panjang yang terisi dalam PDF menggunakan Aspose.PDF for .NET dengan tutorial langkah demi langkah ini. Sempurna untuk pengembang dari semua tingkatan. |  
+| [Membuat Persegi Panjang Dengan Warna Alfa](./create-rectangle-with-alpha-color/) | Pelajari cara membuat persegi panjang transparan dalam PDF menggunakan Aspose.PDF for .NET dengan tutorial langkah demi langkah ini. Sempurnakan PDF Anda dengan warna alfa dengan mudah. |  
+| [Panjang Garis](./dash-length/) | Pelajari cara menyesuaikan pola garis putus-putus dalam PDF menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah kami. Sempurna untuk menambahkan gaya ke dokumen Anda. |  
+| [Menggambar Garis](./drawing-line/) | Pelajari cara menggambar garis dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Panduan langkah demi langkah ini mencakup penyiapan dokumen, penambahan garis, dan penyimpanan file. |  

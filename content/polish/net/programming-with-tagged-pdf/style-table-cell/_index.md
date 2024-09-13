@@ -35,7 +35,7 @@ Utworzyliśmy nowy dokument i ustawiliśmy jego tytuł oraz język.
 W tym kroku otrzymamy element struktury głównej naszego dokumentu.
 
 ```csharp
-//Uzyskaj element struktury korzenia
+// Uzyskaj element struktury korzenia
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
@@ -279,7 +279,7 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ## Wniosek
 
-tym samouczku nauczyliśmy się, jak stylizować komórki tabeli za pomocą Aspose.PDF dla .NET. Zobaczyliśmy, jak utworzyć dokument, dodać tabelę z nagłówkami, wierszami treści i stopką oraz dostosować style komórek. Na koniec zapisaliśmy oznaczony dokument PDF i sprawdziliśmy jego zgodność z PDF/UA. Teraz możesz używać Aspose.PDF dla .NET do tworzenia i stylizowania tabel w aplikacjach .NET.
+W tym samouczku nauczyliśmy się, jak stylizować komórki tabeli za pomocą Aspose.PDF dla .NET. Zobaczyliśmy, jak utworzyć dokument, dodać tabelę z nagłówkami, wierszami treści i stopką oraz dostosować style komórek. Na koniec zapisaliśmy oznaczony dokument PDF i sprawdziliśmy jego zgodność z PDF/UA. Teraz możesz używać Aspose.PDF dla .NET do tworzenia i stylizowania tabel w aplikacjach .NET.
 
 ### Najczęściej zadawane pytania
 
@@ -293,7 +293,7 @@ A: Zanim zaczniesz, upewnij się, że zainstalowałeś Aspose.PDF dla .NET i sko
 
 #### P: Jak utworzyć nowy dokument PDF za pomocą Aspose.PDF dla platformy .NET?
 
-A: Aby utworzyć nowy dokument PDF, należy utworzyć instancję`Document` obiekt z biblioteki Aspose.PDF. Dostarczony kod źródłowy C# pokazuje, jak utworzyć dokument i ustawić jego tytuł i język.
+ A: Aby utworzyć nowy dokument PDF, należy utworzyć instancję`Document` obiekt z biblioteki Aspose.PDF. Dostarczony kod źródłowy C# pokazuje, jak utworzyć dokument i ustawić jego tytuł i język.
 
 #### P: Jakie znaczenie ma element struktury głównej w dokumencie PDF?
 

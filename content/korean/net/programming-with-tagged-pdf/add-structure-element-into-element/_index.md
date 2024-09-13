@@ -114,7 +114,7 @@ document. Save(outFile);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
 string logFile = dataDir + "46144_log.xml";
-// 문서 생성 및 태그가 지정된 PDF 콘텐츠 가져오기
+//문서 생성 및 태그가 지정된 PDF 콘텐츠 가져오기
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 // 문서의 제목 및 자연어 설정
@@ -209,7 +209,7 @@ A: PDF 문서에 계층 구조를 만들면 접근성, 탐색 및 구성이 향�
 
 #### 질문: 구조 요소를 추가한 후 PDF/UA 준수 여부를 어떻게 검증할 수 있나요?
 
- A: 튜토리얼에 제공된 코드는 다음을 사용하여 PDF/UA 준수 여부를 확인하는 방법을 보여줍니다.`Validate` 방법. PDF/UA 표준에 대해 문서를 검증하면 추가된 구조 요소가 접근성 지침을 준수하는지 확인할 수 있습니다.
+A: 튜토리얼에 제공된 코드는 다음을 사용하여 PDF/UA 준수 여부를 확인하는 방법을 보여줍니다.`Validate` 방법. PDF/UA 표준에 대해 문서를 검증하면 추가된 구조 요소가 접근성 지침을 준수하는지 확인할 수 있습니다.
 
 #### 질문: 이 방법을 사용하면 기존 PDF 문서에 구조 요소를 추가할 수 있나요?
 

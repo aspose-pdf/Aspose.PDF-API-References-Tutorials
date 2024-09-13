@@ -20,7 +20,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Schritt 2: Erstellen eines PDF-Dokuments
 
- Um zu beginnen, müssen Sie ein`Document` -Objekt, indem Sie seinen Standardkonstruktor aufrufen.
+ Um zu beginnen, müssen Sie eine`Document` -Objekt, indem Sie seinen Standardkonstruktor aufrufen.
 
 ```csharp
 Document doc = new Document();
@@ -126,7 +126,7 @@ margin.Bottom = 5f;
 // Festlegen der Standardzellenpolsterung auf das MarginInfo-Objekt
 tab1.DefaultCellPadding = margin;
 
-// Erstellen Sie Zeilen in der Tabelle und dann Zellen in den Zeilen
+//Erstellen Sie Zeilen in der Tabelle und dann Zellen in den Zeilen
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

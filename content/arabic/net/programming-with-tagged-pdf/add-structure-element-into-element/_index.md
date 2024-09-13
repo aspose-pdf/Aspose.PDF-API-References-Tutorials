@@ -114,7 +114,7 @@ document. Save(outFile);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
 string logFile = dataDir + "46144_log.xml";
-// إنشاء مستند والحصول على محتوى Pdf المميز
+//إنشاء مستند والحصول على محتوى Pdf المميز
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 // تعيين لغة العنوان والطبيعة للمستند
@@ -209,7 +209,7 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 #### س: كيف يمكنني التحقق من توافق PDF/UA بعد إضافة عناصر الهيكل؟
 
- أ: يوضح الكود المقدم في البرنامج التعليمي كيفية التحقق من توافق PDF/UA باستخدام`Validate` الطريقة. من خلال التحقق من صحة المستند وفقًا لمعيار PDF/UA، يمكنك التأكد من أن عناصر البنية المضافة تتوافق مع إرشادات إمكانية الوصول.
+أ: يوضح الكود المقدم في البرنامج التعليمي كيفية التحقق من توافق PDF/UA باستخدام`Validate` الطريقة. من خلال التحقق من صحة المستند وفقًا لمعيار PDF/UA، يمكنك التأكد من أن عناصر البنية المضافة تتوافق مع إرشادات إمكانية الوصول.
 
 #### س: هل يمكنني استخدام هذا النهج لإضافة عناصر هيكلية إلى مستند PDF موجود؟
 

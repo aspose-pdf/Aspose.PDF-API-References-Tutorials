@@ -53,7 +53,7 @@ paragraphElement1.ActualText = "test1";
 document.Save(dataDir + "PDFwithTagText.pdf");
 ```
 
-此程式碼建立一個空 PDF 文檔，並使用 Aspose.PDF 提供的方法新增標記文字。您可以使用適當的方法來添加其他標記的文字元素，例如標題和段落。
+此程式碼建立一個空 PDF 文檔，並使用 Aspose.PDF 提供的方法新增標記文字。您可以使用適當的方法來新增其他標記的文字元素，例如標題和段落。
 
 ### 使用 Aspose.PDF for .NET 建立帶有標記文字的 PDF 的範例原始程式碼 
 ```csharp

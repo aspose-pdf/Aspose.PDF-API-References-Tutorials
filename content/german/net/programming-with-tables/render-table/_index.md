@@ -67,7 +67,7 @@ Aspose.Pdf.Paragraphs paragraphs = curPage.Paragraphs;
 paragraphs. Add(table);
 ```
 
-## Schritt 6: Tabelle auf neuer Seite anzeigen
+## Schritt 6: Tabelle auf einer neuen Seite anzeigen
 Als nächstes erstellen wir eine neue Tabelle und setzen die Eigenschaft „IsInNewPage“ auf „true“, um die Tabelle auf einer neuen Seite anzuzeigen:
 
 ```csharp
@@ -154,7 +154,7 @@ Herzlichen Glückwunsch! Sie haben nun gelernt, wie Sie mit Aspose.PDF für .NET
 
 #### F: Wie kann ich das Erscheinungsbild der Tabelle ändern, beispielsweise die Zellenfarben ändern oder Rahmen hinzufügen?
 
-A: Um das Aussehen der Tabelle zu ändern, können Sie verschiedene Eigenschaften der`Aspose.Pdf.Table` und seine Zellen. Sie können beispielsweise die`BackgroundColor` Eigenschaft von Zellen, um deren Hintergrundfarbe zu ändern. Sie können auch die`Border` Eigenschaft der Tabelle oder einzelner Zellen, um Rahmen hinzuzufügen. Darüber hinaus können Sie die Schriftart, Textfarbe und Ausrichtung des Tabelleninhalts anpassen, indem Sie die`TextState` der`TextFragment` Objekte, die den Zellen hinzugefügt werden.
+ A: Um das Aussehen der Tabelle zu ändern, können Sie verschiedene Eigenschaften der`Aspose.Pdf.Table` und seine Zellen. Sie können beispielsweise die`BackgroundColor` Eigenschaft von Zellen, um deren Hintergrundfarbe zu ändern. Sie können auch die`Border` Eigenschaft der Tabelle oder einzelner Zellen, um Rahmen hinzuzufügen. Darüber hinaus können Sie die Schriftart, Textfarbe und Ausrichtung des Tabelleninhalts anpassen, indem Sie die`TextState` der`TextFragment` Objekte, die den Zellen hinzugefügt werden.
 
 #### F: Kann ich der Tabelle Kopf- oder Fußzeilen hinzufügen?
 
@@ -162,7 +162,7 @@ A: Ja, Sie können der Tabelle Kopf- oder Fußzeilen hinzufügen, indem Sie am A
 
 #### F: Wie kann ich die Position der Tabelle auf der Seite steuern?
 
- A: Um die Position der Tabelle auf der Seite zu steuern, können Sie die`MarginInfo` der`PageInfo` Objekt. Das`MarginInfo`können Sie die linken, rechten, oberen und unteren Ränder der Seite festlegen, was sich auf den verfügbaren Platz für die Tabelle auswirkt. Sie können auch die`PositioningType` Eigentum der`Aspose.Pdf.Table` um die horizontale und vertikale Ausrichtung innerhalb des Inhaltsbereichs der Seite zu steuern.
+A: Um die Position der Tabelle auf der Seite zu steuern, können Sie die`MarginInfo` der`PageInfo` Objekt. Das`MarginInfo` können Sie die linken, rechten, oberen und unteren Ränder der Seite festlegen, was sich auf den verfügbaren Platz für die Tabelle auswirkt. Sie können auch die`PositioningType` Eigentum der`Aspose.Pdf.Table` um die horizontale und vertikale Ausrichtung innerhalb des Inhaltsbereichs der Seite zu steuern.
 
 #### F: Kann ich die Tabelle in andere Dateiformate wie Excel oder CSV exportieren?
 

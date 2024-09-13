@@ -105,7 +105,7 @@ foreach (Element element in elementList)
 		string alternativeText = structureElement.AlternativeText;
 	}
 }
-// الوصول إلى عناصر الأطفال للعنصر الأول في العنصر الجذر
+//الوصول إلى عناصر الأطفال للعنصر الأول في العنصر الجذر
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
 foreach (Element element in elementList)
 {

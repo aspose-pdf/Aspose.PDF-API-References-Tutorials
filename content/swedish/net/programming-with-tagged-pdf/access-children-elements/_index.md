@@ -1,7 +1,7 @@
 ---
 title: Få tillgång till barnelement
 linktitle: Få tillgång till barnelement
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Steg-för-steg-guide för att komma åt och redigera underordnade delar av ett PDF-dokument med Aspose.PDF för .NET. Anpassa ditt PDF-innehåll.
 type: docs
 weight: 10
@@ -22,7 +22,7 @@ För att komma igång, skapa ett nytt projekt i Visual Studio och lägg till en 
 
 ## Steg 2: Importera de nödvändiga namnrymden
 
-I din C#-kodfil, importera de namnutrymmen som krävs för att komma åt klasserna och metoderna som tillhandahålls av Aspose.PDF:
+din C#-kodfil, importera de namnutrymmen som krävs för att komma åt klasserna och metoderna som tillhandahålls av Aspose.PDF:
 
 ```csharp
 using System;
@@ -105,7 +105,7 @@ foreach (Element element in elementList)
 		string alternativeText = structureElement.AlternativeText;
 	}
 }
-// Tillgång till underordnade element av det första elementet i rotelementet
+//Tillgång till underordnade element av det första elementet i rotelementet
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
 foreach (Element element in elementList)
 {

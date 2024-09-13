@@ -51,7 +51,7 @@ Quando si lavora con qualsiasi API, è essenziale gestire errori ed eccezioni co
 
 ## Conclusione
 
-In questa guida, abbiamo esplorato come convertire file XPS in PDF usando Aspose.PDF per Java. Abbiamo iniziato introducendo Aspose.PDF per Java e impostando il nostro ambiente di sviluppo. Poi, abbiamo trattato il processo di conversione, le opzioni di personalizzazione e l'importanza della gestione degli errori. Con queste conoscenze, puoi convertire in modo efficiente i file XPS in PDF e migliorare le tue capacità di gestione dei documenti.
+In questa guida, abbiamo esplorato come convertire file XPS in PDF usando Aspose.PDF per Java. Abbiamo iniziato introducendo Aspose.PDF per Java e impostando il nostro ambiente di sviluppo. Poi, abbiamo trattato il processo di conversione, le opzioni di personalizzazione e l'importanza della gestione degli errori. Con questa conoscenza, puoi convertire in modo efficiente i file XPS in PDF e migliorare le tue capacità di gestione dei documenti.
 
 ## Domande frequenti
 

@@ -2,48 +2,80 @@
 title: Ablaufdatum in PDF-Datei festlegen
 linktitle: Ablaufdatum in PDF-Datei festlegen
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie in dieser Schritt-für-Schritt-Anleitung, wie Sie mit Aspose.PDF für .NET ein Ablaufdatum in einer PDF-Datei festlegen.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET ein Ablaufdatum in PDF-Dateien festlegen. Verbessern Sie die Dokumentensicherheit mit dieser Schritt-für-Schritt-Anleitung.
 type: docs
 weight: 300
 url: /de/net/programming-with-document/setexpirydate/
 ---
-Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, die verschiedene Funktionen für die Arbeit mit PDF-Dateien bietet. Eine dieser Funktionen ist die Möglichkeit, ein Ablaufdatum für ein PDF-Dokument festzulegen. In diesem Tutorial führen wir Sie durch den Prozess zum Festlegen eines Ablaufdatums für ein PDF-Dokument mit Aspose.PDF für .NET. 
+## Einführung
 
-## Schritt 1: Pfad zum Dokumentverzeichnis festlegen
+Im heutigen digitalen Zeitalter ist die Verwaltung und Sicherung von Dokumenten wichtiger denn je. Stellen Sie sich vor, Sie versenden eine PDF-Datei, auf die nach einem bestimmten Datum automatisch nicht mehr zugegriffen werden kann. Klingt wie Zauberei, oder? Mit Aspose.PDF für .NET können Sie ganz einfach ein Ablaufdatum für Ihre PDF-Dateien festlegen. Diese Funktion ist besonders nützlich für vertrauliche Dokumente, deren Zugriff nach einem bestimmten Zeitraum eingeschränkt werden muss. In diesem Tutorial führen wir Sie Schritt für Schritt durch den Vorgang zum Festlegen eines Ablaufdatums in einer PDF-Datei. Also, schnappen Sie sich Ihren Programmierhut und legen Sie los!
 
-Bevor wir beginnen, müssen wir den Pfad zum Verzeichnis festlegen, in dem sich unser PDF-Dokument befindet. Wir speichern diesen Pfad in einer Variablen namens „dataDir“.
+## Voraussetzungen
+
+Bevor wir beginnen, müssen Sie einige Dinge vorbereitet haben:
+
+1. Entwicklungsumgebung: Stellen Sie sicher, dass Sie eine .NET-Entwicklungsumgebung eingerichtet haben. Dies kann Visual Studio oder eine andere IDE sein, die .NET unterstützt.
+2.  Aspose.PDF für .NET: Sie müssen die Aspose.PDF-Bibliothek installiert haben. Wenn Sie dies noch nicht getan haben, können Sie es hier herunterladen:[Hier](https://releases.aspose.com/pdf/net/).
+3. Grundkenntnisse in C#: Dieses Tutorial setzt voraus, dass Sie über Grundkenntnisse in der C#-Programmierung verfügen. Wenn Sie neu bei C# sind, machen Sie sich keine Sorgen! Wir halten es einfach und unkompliziert.
+
+## Pakete importieren
+
+Um mit Aspose.PDF zu beginnen, müssen Sie die erforderlichen Namespaces in Ihr C#-Projekt importieren. So können Sie es tun:
+
+```csharp
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Text;
+```
+
+Diese Namespaces bieten Ihnen Zugriff auf die Kernfunktionen, die für die Arbeit mit PDF-Dokumenten in Aspose.PDF erforderlich sind.
+
+## Schritt 1: Richten Sie Ihr Dokumentverzeichnis ein
+
+Als Erstes müssen Sie den Pfad zu Ihrem Dokumentverzeichnis angeben. Hier wird Ihr Ausgabe-PDF gespeichert. 
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Schritt 2: Neues PDF-Dokument erstellen
+ Ersetzen`"YOUR DOCUMENT DIRECTORY"` durch den tatsächlichen Pfad, in dem Sie Ihre PDF-Datei speichern möchten. Das ist, als würden Sie Ihrem Programm sagen: „Hey, hier bewahre ich meine Dateien auf!“
 
- Um ein neues PDF-Dokument zu erstellen, müssen wir eine neue`Aspose.Pdf.Document` Objekt. Dies können wir mit dem folgenden Code tun:
+## Schritt 2: Instanziieren des Dokumentobjekts
+
+ Als nächstes müssen Sie eine neue Instanz des`Document` Klasse. Dies ist Ihre Leinwand, auf der Sie Ihr PDF erstellen.
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## Schritt 3: Dem PDF-Dokument eine neue Seite hinzufügen
+ Denken Sie an die`Document` Objekt als leeres Blatt Papier. Sie können es beliebig mit Inhalt füllen!
 
-Nachdem wir das PDF-Dokument erstellt haben, können wir ihm eine neue Seite hinzufügen. Dies können wir mit dem folgenden Code tun:
+## Schritt 3: Eine Seite zum PDF hinzufügen
+
+Nachdem Sie Ihr Dokument eingerichtet haben, ist es an der Zeit, eine Seite hinzuzufügen. Hier wird Ihr Inhalt platziert.
 
 ```csharp
 doc.Pages.Add();
 ```
 
-## Schritt 4: Text zum PDF-Dokument hinzufügen
+Sie haben gerade eine neue Seite in Ihrem PDF erstellt. Das ist, als würden Sie Ihrem Notizbuch eine neue Seite hinzufügen, auf der Sie Ihre Gedanken notieren können.
 
- Nachdem wir eine Seite zum PDF-Dokument hinzugefügt haben, können wir Text hinzufügen, indem wir`Paragraphs` Sammlung. Dies können wir mit dem folgenden Code tun:
+## Schritt 4: Text zur Seite hinzufügen
+
+Lassen Sie uns diese Seite etwas interessanter gestalten, indem wir etwas Text hinzufügen. Wir werden eine einfache „Hallo Welt“-Nachricht hinzufügen.
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
 ```
 
-## Schritt 5: Festlegen des PDF-Ablaufdatums mit JavaScript
+Diese Codezeile fügt der ersten Seite Ihrer PDF-Datei ein Textfragment hinzu. Das ist, als würden Sie oben auf Ihrer Seite einen Titel schreiben!
 
-Um das Ablaufdatum der PDF-Datei festzulegen, müssen wir ein JavaScript-Objekt erstellen. Dies können wir mit dem folgenden Code tun:
+## Schritt 5: JavaScript für Ablaufdatum erstellen
+
+Jetzt kommt der spaßige Teil! Sie erstellen eine JavaScript-Aktion, die das Ablaufdatum der PDF-Datei überprüft. Wenn das aktuelle Datum das Ablaufdatum überschreitet, wird der Benutzer durch eine Meldung darauf hingewiesen.
 
 ```csharp
 JavascriptAction javaScript = new JavascriptAction(
@@ -53,67 +85,52 @@ JavascriptAction javaScript = new JavascriptAction(
 + "expiry = new Date(year, month);"
 + "if (today.getTime() > expiry.getTime())"
 + "app.alert('The file is expired. You need a new one.');");
+```
 
-// JavaScript als PDF-Öffnen-Aktion festlegen
+Folgendes ist passiert:
+- Das Ablaufjahr und den Ablaufmonat legen Sie selbst fest.
+- Sie erhalten das heutige Datum.
+- Sie vergleichen das heutige Datum mit dem Verfallsdatum.
+- Wenn das heutige Datum das Ablaufdatum überschritten hat, erscheint eine Meldung!
+
+## Schritt 6: JavaScript als PDF-Öffnen-Aktion festlegen
+
+Nun müssen Sie die JavaScript-Aktion als Öffnungsaktion für Ihr PDF-Dokument festlegen. Das bedeutet, dass das JavaScript ausgeführt wird, sobald das PDF geöffnet wird.
+
+```csharp
 doc.OpenAction = javaScript;
 ```
 
-In diesem Code legen wir das Ablaufdatum auf Mai 2017 fest.
+Diese Zeile weist das PDF an, JavaScript auszuführen, wenn es jemand öffnet. Das ist, als ob Sie eine Erinnerung einrichten, die ausgelöst wird, sobald Sie Ihren Kalender öffnen!
 
-## Schritt 6: Speichern Sie die PDF-Datei
+## Schritt 7: Speichern Sie das PDF-Dokument
 
- Nachdem Sie das Ablaufdatum festgelegt haben, müssen Sie die PDF-Datei speichern. Dazu können Sie das`Save` Methode der`Document` Objekt und geben Sie den Pfad ein, unter dem Sie die aktualisierte PDF-Datei speichern möchten.
+Schließlich ist es an der Zeit, Ihr PDF-Dokument mit der Ablaufdatumsfunktion zu speichern. 
 
 ```csharp
 dataDir = dataDir + "SetExpiryDate_out.pdf";
-// PDF-Dokument speichern
 doc.Save(dataDir);
 ```
 
-### Beispielquellcode zum Festlegen des Ablaufdatums mit Aspose.PDF für .NET
-
-Hier ist der vollständige Beispielquellcode zum Festlegen des Ablaufdatums mit Aspose.PDF für .NET:
-
-```csharp
-// Der Pfad zum Dokumentverzeichnis.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Document-Objekt instanziieren
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-// Seite zur Seitensammlung der PDF-Datei hinzufügen
-doc.Pages.Add();
-// Textfragment zur Absatzsammlung des Seitenobjekts hinzufügen
-doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
-// Erstellen Sie ein JavaScript-Objekt, um das PDF-Ablaufdatum festzulegen
-JavascriptAction javaScript = new JavascriptAction(
-"var year=2017;"
-+ "var month=5;"
-+ "today = new Date(); today = new Date(today.getFullYear(), today.getMonth());"
-+ "expiry = new Date(year, month);"
-+ "if (today.getTime() > expiry.getTime())"
-+ "app.alert('The file is expired. You need a new one.');");
-// JavaScript als PDF-Öffnen-Aktion festlegen
-doc.OpenAction = javaScript;
-
-dataDir = dataDir + "SetExpiryDate_out.pdf";
-// PDF-Dokument speichern
-doc.Save(dataDir);
-```
+Diese Zeile speichert Ihr PDF im angegebenen Verzeichnis unter dem Namen „SetExpiryDate_out.pdf“. Es ist, als ob Sie Ihr fertiges Kunstwerk in einen Rahmen stecken würden!
 
 ## Abschluss
 
-Das Festlegen eines Ablaufdatums für ein PDF-Dokument mit Aspose.PDF für .NET ist eine nützliche Funktion, um sicherzustellen, dass das Dokument nur für einen bestimmten Zeitraum gültig ist. Indem sie der Schritt-für-Schritt-Anleitung folgen und den bereitgestellten C#-Quellcode verwenden, können Entwickler das Ablaufdatum problemlos festlegen und PDFs mit zeitlich begrenzter Gültigkeit erstellen. Diese Funktion kann insbesondere für Dokumente hilfreich sein, auf die für eine begrenzte Dauer zugegriffen oder die verteilt werden müssen.
+Und da haben Sie es! Sie haben erfolgreich eine PDF-Datei mit Ablaufdatum mit Aspose.PDF für .NET erstellt. Diese Funktion erhöht nicht nur die Sicherheit, sondern sorgt auch dafür, dass vertrauliche Informationen unter Kontrolle bleiben. Egal, ob Sie Verträge, Berichte oder andere wichtige Dokumente versenden, das Festlegen eines Ablaufdatums kann entscheidend sein.
 
-### FAQs zum Festlegen des Ablaufdatums in einer PDF-Datei
+## Häufig gestellte Fragen
 
-#### F: Kann ich für das PDF-Dokument ein anderes Ablaufdatum festlegen?
+### Was ist Aspose.PDF für .NET?
+Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, mit der Entwickler PDF-Dokumente in .NET-Anwendungen erstellen, bearbeiten und konvertieren können.
 
- A: Ja, Sie können ein anderes Ablaufdatum für das PDF-Dokument festlegen, indem Sie den JavaScript-Code in Schritt 5 ändern. Im angegebenen Beispiel ist das Ablaufdatum auf Mai 2017 eingestellt. Um ein anderes Ablaufdatum festzulegen, müssen Sie den`year` Und`month` Variablen im JavaScript-Code auf das gewünschte Jahr und den gewünschten Monat.
+### Kann ich Aspose.PDF kostenlos nutzen?
+ Ja, Sie können eine kostenlose Testversion von Aspose.PDF verwenden. Sie können es herunterladen[Hier](https://releases.aspose.com/).
 
-#### F: Was passiert, wenn das PDF-Dokument abgelaufen ist?
+### Wie kaufe ich Aspose.PDF?
+Sie können Aspose.PDF kaufen, indem Sie die[Kaufseite](https://purchase.aspose.com/buy).
 
-A: Wenn das PDF-Dokument abgelaufen ist, wie im JavaScript-Code angegeben, zeigt der Viewer eine Warnmeldung an, die besagt, dass die Datei abgelaufen ist und der Benutzer eine neue benötigt. Diese Warnmeldung wird angezeigt, wenn das PDF geöffnet wird.
+### Was ist, wenn ich Unterstützung brauche?
+Wenn Sie Fragen haben oder Hilfe benötigen, besuchen Sie bitte die[Aspose-Supportforum](https://forum.aspose.com/c/pdf/10).
 
-#### F: Kann ich als Ablaufdatum eine konkrete Uhrzeit statt nur das Datum verwenden?
-
- A: Ja, Sie können im JavaScript-Code eine bestimmte Zeit für das Ablaufdatum festlegen. Durch Ändern des`expiry` Mit der Variable im JavaScript-Code, die die gewünschte Zeit enthält, können Sie einen bestimmten Zeitpunkt für das Ablaufdatum festlegen.
+### Kann ich eine temporäre Lizenz für Aspose.PDF erhalten?
+ Ja, Sie können eine temporäre Lizenz anfordern[Hier](https://purchase.aspose.com/temporary-license/).

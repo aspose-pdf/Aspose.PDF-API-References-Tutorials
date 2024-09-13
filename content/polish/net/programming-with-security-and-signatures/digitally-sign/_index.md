@@ -2,181 +2,170 @@
 title: Cyfrowo podpisz plik PDF
 linktitle: Cyfrowo podpisz plik PDF
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak cyfrowo podpisać plik PDF za pomocą Aspose.PDF dla platformy .NET.
+description: Dowiedz się, jak cyfrowo podpisywać pliki PDF za pomocą Aspose.PDF dla .NET. Przewodnik krok po kroku, który zapewni bezpieczeństwo i autentyczność dokumentów.
 type: docs
 weight: 40
 url: /pl/net/programming-with-security-and-signatures/digitally-sign/
 ---
-W tym samouczku przeprowadzimy Cię przez proces cyfrowego podpisywania pliku PDF za pomocą Aspose.PDF dla .NET. Podpis cyfrowy gwarantuje autentyczność i integralność dokumentu, dodając unikalny elektroniczny odcisk palca.
+## Wstęp
 
-## Krok 1: Wymagania wstępne
+W naszym cyfrowym świecie nie można przecenić znaczenia zabezpieczania dokumentów. Niezależnie od tego, czy jesteś freelancerem wysyłającym kontrakty, właścicielem małej firmy zarządzającym fakturami, czy częścią dużej korporacji, zapewnienie autentyczności i odporności dokumentów na manipulacje jest kluczowe. Jednym ze skutecznych sposobów osiągnięcia tego bezpieczeństwa są podpisy cyfrowe. W tym artykule przyjrzymy się, jak cyfrowo podpisać plik PDF za pomocą biblioteki Aspose.PDF dla .NET. Przeprowadzimy Cię przez wszystko krok po kroku.
 
-Zanim zaczniesz, upewnij się, że spełniasz następujące wymagania wstępne:
+## Wymagania wstępne
 
-- Podstawowa znajomość języka programowania C#
-- Instalowanie programu Visual Studio na komputerze
-- Zainstalowano bibliotekę Aspose.PDF dla .NET
+Zanim przejdziemy do szczegółów, upewnijmy się, że masz wszystko, czego potrzebujesz, aby rozpocząć cyfrowe podpisywanie plików PDF. Oto lista wymagań wstępnych:
 
-## Krok 2: Konfiguracja środowiska
+1. .NET Framework: Upewnij się, że masz zainstalowany .NET Framework na swoim komputerze. Aspose.PDF dla .NET obsługuje kilka wersji frameworka.
+2.  Biblioteka Aspose.PDF: Musisz pobrać i zainstalować bibliotekę Aspose.PDF. Możesz ją pobrać z[link do wydania](https://releases.aspose.com/pdf/net/).
+3.  Certyfikat cyfrowy: Do podpisywania plików PDF potrzebny będzie certyfikat cyfrowy —`.pfx` plik zazwyczaj.
+4. Środowisko programistyczne: Użyj programu Visual Studio lub dowolnego wybranego środowiska IDE obsługującego język C#.
 
-Aby rozpocząć, wykonaj poniższe kroki, aby skonfigurować środowisko programistyczne:
+Gdy już spełnisz te wymagania wstępne, będziesz gotowy rozpocząć podpisywanie dokumentów PDF!
 
-1. Otwórz program Visual Studio i utwórz nowy projekt C#.
-2. Zaimportuj wymagane przestrzenie nazw do pliku kodu:
+## Importuj pakiety
+
+Teraz, gdy wszystko jest już skonfigurowane, zaimportujmy niezbędne pakiety, aby uruchomić nasz projekt. Na górze klasy C# uwzględnij odpowiednie przestrzenie nazw:
 
 ```csharp
+using System.IO;
+using System;
 using Aspose.Pdf;
+using Aspose.Pdf.Facades;
+using System.Collections;
 using Aspose.Pdf.Forms;
 using System.Collections.Generic;
 ```
 
-## Krok 3: Podpis cyfrowy
+Te przestrzenie nazw zawierają podstawowe klasy i metody, których będziesz używać do manipulowania plikami PDF za pomocą Aspose.PDF.
 
-Pierwszym krokiem jest cyfrowe podpisanie pliku PDF. Dostarczony kod pokazuje, jak utworzyć podpis cyfrowy za pomocą Aspose.PDF dla .NET.
+## Krok 1: Skonfiguruj ścieżki dokumentów
+
+Pierwszym krokiem jest ustawienie ścieżek dla plików PDF wejściowych i wyjściowych oraz certyfikatu cyfrowego. Zastąp`YOUR DOCUMENTS DIRECTORY` z rzeczywistą ścieżką w systemie, gdzie znajdują się Twoje pliki.
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-string pbxFile = "";
+string pbxFile = ""; // Ścieżka do Twojego certyfikatu cyfrowego (.pfx)
 string inFile = dataDir + @"DigitallySign.pdf";
 string outFile = dataDir + @"DigitallySign_out.pdf";
+```
+ W tym fragmencie,`inFile` to jest Twój oryginalny plik PDF, który chcesz podpisać, i`outFile` tutaj zostanie zapisany podpisany plik PDF.
+
+## Krok 2: Załaduj dokument PDF
+
+ Następnie musimy załadować dokument PDF, który chcemy podpisać.`Document` klasa z Aspose.PDF jest tutaj użyta:
+
+```csharp
 using (Document document = new Document(inFile))
 {
-     using (PdfFileSignature signature = new PdfFileSignature(document))
-     {
-         PKCS7 pkcs = new PKCS7(pbxFile, "WebSales");
-         DocMDPSignature docMdpSignature = new DocMDPSignature(pkcs, DocMDPAccessPermissions.FillingInForms);
-         System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-         signature.SignatureAppearance = dataDir + @"aspose-logo.jpg";
-         signature.Certify(1, "Reason for signing", "Contact", "Location", true, rect, docMdpSignature);
-         signature.Save(outFile);
-     }
+    // Kontynuuj tutaj logikę podpisu...
 }
 ```
 
-Ten kod ładuje plik PDF, tworzy podpis cyfrowy o określonym wyglądzie, a następnie zapisuje plik PDF z dodanym podpisem.
+Ten kod otwiera plik PDF i przygotowuje go do dalszych operacji.
 
-## Krok 4: Weryfikacja podpisu
+## Krok 3: Zainicjuj klasę PdfFileSignature
 
-Po dodaniu podpisu cyfrowego możesz sprawdzić, czy plik PDF zawiera prawidłowy podpis.
+ Po załadowaniu dokumentu tworzymy jego wystąpienie`PdfFileSignature` klasa, która umożliwi nam pracę z podpisami cyfrowymi w naszym załadowanym dokumencie PDF.
 
 ```csharp
-using(Document document = new Document(outFile))
+using (PdfFileSignature signature = new PdfFileSignature(document))
 {
-     using (PdfFileSignature signature = new PdfFileSignature(document))
-     {
-         IList<string> sigNames = signature. GetSignNames();
-         if (sigNames.Count > 0)
-         {
-             if (signature.VerifySigned(sigNames[0] as string))
-             {
-                 if (signature.IsCertified)
-                 {
-                     if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms)
-                     {
-                         // Zrób coś
-                     }
-                 }
-             }
-         }
-     }
+    // Przygotuj proces podpisywania
 }
 ```
 
-Ten kod weryfikuje pierwszy podpis pliku PDF i wykonuje dodatkowe czynności, jeśli podpis jest certyfikowany i posiada określone uprawnienia.
+Te zajęcia to Twoja wiedza na temat podpisów PDF!
 
-### Przykładowy kod źródłowy dla funkcji Digitally Sign using Aspose.PDF for .NET 
+## Krok 4: Utwórz instancję certyfikatu cyfrowego
+
+Tutaj ustawiasz swój certyfikat, który będzie używany do podpisywania pliku PDF. Musisz podać ścieżkę swojego`.pfx` plik wraz z powiązanym z nim hasłem.
+
 ```csharp
-try
+PKCS7 pkcs = new PKCS7(pbxFile, "WebSales");
+```
+
+ Pamiętaj o wymianie`"WebSales"` z aktualnym hasłem certyfikatu.
+
+## Krok 5: Skonfiguruj wygląd podpisu
+
+Następnie definiujemy, jak podpis będzie wyglądał w pliku PDF. Możesz dostosować lokalizację i wygląd podpisu za pomocą prostokąta. 
+
+```csharp
+System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
+signature.SignatureAppearance = dataDir + @"aspose-logo.jpg";
+```
+
+Tutaj umieszczamy podpis na współrzędnych (100, 100) o szerokości 200 i wysokości 100.
+
+## Krok 6: Utwórz i zapisz podpis
+
+Teraz czas na faktyczne utworzenie podpisu i zapisanie podpisanego pliku PDF. Możesz opisać powód podpisania, swoje dane kontaktowe i lokalizację. Może to pomóc w późniejszym procesie weryfikacji.
+
+```csharp
+DocMDPSignature docMdpSignature = new DocMDPSignature(pkcs, DocMDPAccessPermissions.FillingInForms);
+signature.Certify(1, "Signature Reason", "Contact", "Location", true, rect, docMdpSignature);
+signature.Save(outFile);
+```
+
+## Krok 7: Zweryfikuj podpis
+
+Po zapisaniu podpisanego pliku PDF zawsze warto sprawdzić, czy podpis został dodany poprawnie. Możemy pobrać nazwy podpisów i sprawdzić, czy są prawidłowe. 
+
+```csharp
+using (Document document = new Document(outFile))
 {
-	// Ścieżka do katalogu dokumentów.
-	string dataDir = "YOUR DOCUMENTS DIRECTORY";
-	string pbxFile = "";
-	string inFile = dataDir + @"DigitallySign.pdf";
-	string outFile = dataDir + @"DigitallySign_out.pdf";
-	using (Document document = new Document(inFile))
-	{
-		using (PdfFileSignature signature = new PdfFileSignature(document))
-		{
-			PKCS7 pkcs = new PKCS7(pbxFile, "WebSales"); // Użyj obiektów PKCS7/PKCS7Detached
-			DocMDPSignature docMdpSignature = new DocMDPSignature(pkcs, DocMDPAccessPermissions.FillingInForms);
-			System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-			// Ustaw wygląd podpisu
-			signature.SignatureAppearance = dataDir + @"aspose-logo.jpg";
-			// Utwórz dowolny z trzech typów podpisu
-			signature.Certify(1, "Signature Reason", "Contact", "Location", true, rect, docMdpSignature);
-			// Zapisz plik wyjściowy PDF
-			signature.Save(outFile);
-		}
-	}
-	using (Document document = new Document(outFile))
-	{
-		using (PdfFileSignature signature = new PdfFileSignature(document))
-		{
-			IList<string> sigNames = signature.GetSignNames();
-			if (sigNames.Count > 0) // Jakieś podpisy?
-			{
-				if (signature.VerifySigned(sigNames[0] as string)) // Zweryfikuj pierwszy
-				{
-					if (signature.IsCertified) // Atestowany?
-					{
-						if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms) // Uzyskaj uprawnienia dostępu
-						{
-							// Zrób coś
-						}
-					}
-				}
-			}
-		}
-	}
+    using (PdfFileSignature signature = new PdfFileSignature(document))
+    {
+        IList<string> sigNames = signature.GetSignNames();
+        if (sigNames.Count > 0) 
+        {
+            if (signature.VerifySigned(sigNames[0] as string)) 
+            {
+                if (signature.IsCertified) 
+                {
+                    if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms) 
+                    {
+                        //Podpis jest ważny i poświadczony
+                    }
+                }
+            }
+        }
+    }
 }
+```
+
+Ta część zapewnia, że Twoja praca zostanie zatwierdzona; w końcu nie chciałbyś wysyłać niepodpisanego dokumentu!
+
+## Krok 8: Obsługa wyjątków
+
+Zawsze warto umieścić kod w bloku try-catch, aby sprawnie obsłużyć wszelkie wyjątki. 
+
+```csharp
 catch (Exception ex)
 {
-	Console.WriteLine(ex.Message);
+    Console.WriteLine(ex.Message);
 }
 ```
+
+W ten sposób, jeśli wydarzy się coś nieoczekiwanego, będziesz dokładnie wiedział, co poszło nie tak, nie powodując przy tym awarii aplikacji.
 
 ## Wniosek
 
-Gratulacje! Udało Ci się pomyślnie wykonać podpis cyfrowy na pliku PDF przy użyciu Aspose.PDF dla .NET. Ten samouczek obejmuje proces krok po kroku, od dodania podpisu cyfrowego do weryfikacji jego ważności. Teraz możesz użyć tej funkcji, aby zabezpieczyć pliki PDF za pomocą podpisów cyfrowych.
+Podpisy cyfrowe zapewniają niezbędną ochronę dokumentów, udowadniając autentyczność i integralność. Dzięki Aspose.PDF dla .NET podpisywanie pliku PDF to prosty proces, który może znacznie usprawnić przepływ pracy w zarządzaniu dokumentami. Teraz, gdy nauczyłeś się digitalizować swoje podpisy, możesz zapewnić klientów i partnerów o swoim profesjonalizmie i bezpiecznym przetwarzaniu dokumentów.
 
-### Najczęściej zadawane pytania
+## Najczęściej zadawane pytania
 
-#### P: Jaki jest cel tego poradnika?
+### Czym jest podpis cyfrowy?
+Podpis cyfrowy jest kryptograficznym odpowiednikiem podpisu odręcznego. Zapewnia autentyczność i integralność danych.
 
-A: Ten samouczek przeprowadzi Cię przez proces cyfrowego podpisywania pliku PDF za pomocą Aspose.PDF dla .NET. Podpisy cyfrowe dodają elektroniczny odcisk palca, aby zapewnić autentyczność i integralność dokumentu.
+### Czy mogę używać Aspose.PDF do podpisywania plików PDF w dowolnej aplikacji .NET?
+Tak! Aspose.PDF dla .NET jest kompatybilny z różnymi aplikacjami .NET, w tym desktopowymi, internetowymi i usługami.
 
-#### P: Jakie warunki wstępne należy spełnić przed rozpoczęciem?
+### Jakie rodzaje certyfikatów cyfrowych mogę stosować?
+ Możesz użyć dowolnego certyfikatu PKCS#12, zazwyczaj zapisanego w`.pfx` Lub`.p12` plik.
 
-O: Zanim zaczniesz, upewnij się, że posiadasz podstawową wiedzę na temat języka programowania C#, masz zainstalowany program Visual Studio i bibliotekę Aspose.PDF dla platformy .NET.
+### Czy jest dostępna wersja próbna Aspose.PDF?
+ Tak! Możesz pobrać bezpłatną wersję próbną z[Strona wydań Aspose](https://releases.aspose.com/).
 
-#### P: Jak skonfigurować środowisko programistyczne?
-
-A: Wykonaj podane kroki, aby skonfigurować środowisko programistyczne, m.in. utwórz nowy projekt C# w programie Visual Studio i zaimportuj wymagane przestrzenie nazw.
-
-#### P: Jak dodać podpis cyfrowy do pliku PDF?
-
- A: Dostarczony przykładowy kod pokazuje, jak załadować plik PDF, utworzyć podpis cyfrowy, określić wygląd i zapisać podpisany plik PDF. Podpis cyfrowy jest dodawany za pomocą`Certify` metoda`PdfFileSignature` obiekt.
-
-#### P: Jak mogę sprawdzić ważność podpisu cyfrowego?
-
-A: Po dodaniu podpisu cyfrowego możesz użyć przykładowego kodu, aby zweryfikować ważność podpisu. Sprawdza on, czy podpis jest certyfikowany i ma określone uprawnienia dostępu.
-
-####  P: Co to jest`PKCS7` object represent?
-
- A: Ten`PKCS7` obiekt jest używany do zapewnienia kryptograficznej funkcjonalności dla podpisów cyfrowych. Jest używany do tworzenia podpisu cyfrowego w podanym przykładowym kodzie.
-
-#### P: Czy mogę dostosować wygląd podpisu cyfrowego?
-
- O: Tak, możesz dostosować wygląd podpisu cyfrowego, określając ścieżkę do obrazu w`SignatureAppearance` własność`PdfFileSignature` obiekt.
-
-#### P: Co się stanie, jeśli podpis będzie nieprawidłowy?
-
-O: Jeśli podpis jest nieprawidłowy, proces weryfikacji zakończy się niepowodzeniem, a odpowiednie działania w bloku kodu weryfikacyjnego nie zostaną wykonane.
-
-#### P: W jaki sposób mogę zagwarantować bezpieczeństwo moich podpisów cyfrowych?
-
-A: Podpisy cyfrowe są bezpieczne z założenia i wykorzystują techniki kryptograficzne, aby zapewnić autentyczność i integralność. Upewnij się, że Twój klucz prywatny jest bezpieczny i postępuj zgodnie z najlepszymi praktykami obsługi podpisów cyfrowych.
-
-#### P: Czy mogę dodać wiele podpisów cyfrowych do pliku PDF?
-
- O: Tak, możesz dodać wiele podpisów cyfrowych do pliku PDF za pomocą`PdfFileSignature` obiekt`Sign` Lub`Certify` metody. Każdy podpis będzie miał swój własny wygląd i konfigurację.
+### Jak mogę uzyskać pomoc, jeśli napotkam problemy?
+ Aby uzyskać pomoc, możesz odwiedzić stronę[Forum PDF Aspose](https://forum.aspose.com/c/pdf/10).

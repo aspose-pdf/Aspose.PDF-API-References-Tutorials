@@ -42,7 +42,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 ```
 
 ## ขั้นตอนที่ 5: ค้นหาข้อความที่ต้องการแก้ไข
- ใช้`TextFragmentAbsorber` เพื่อค้นหาข้อความที่ต้องการภายในเอกสาร ในโค้ดที่ให้มา จะค้นหาข้อความ "Lorem ipsum"
+ใช้`TextFragmentAbsorber` เพื่อค้นหาข้อความที่ต้องการภายในเอกสาร ในโค้ดที่ให้มา จะค้นหาข้อความ "Lorem ipsum"
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -129,7 +129,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 
 #### ถาม: ฉันจะค้นหาและแก้ไขข้อความเฉพาะภายในเอกสาร PDF ได้อย่างไร
 
- A: ในขั้นตอนที่ 5 คุณจะใช้`TextFragmentAbsorber`เพื่อค้นหาข้อความที่ต้องการภายในเอกสาร จากนั้นคุณสามารถปรับเปลี่ยนคุณสมบัติของข้อความได้ดังนี้:
+ A: ในขั้นตอนที่ 5 คุณจะใช้`TextFragmentAbsorber` เพื่อค้นหาข้อความที่ต้องการภายในเอกสาร จากนั้นคุณสามารถปรับเปลี่ยนคุณสมบัติของข้อความได้ดังนี้:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -150,7 +150,7 @@ textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 
 #### ถาม: ฉันสามารถใช้การจัดรูปแบบข้อความเพิ่มเติมกับข้อความที่แก้ไขแล้วได้หรือไม่
 
- A: ใช่ ในขั้นตอนที่ 7 คุณสามารถใช้การจัดรูปแบบข้อความเพิ่มเติม เช่น การขีดเส้นใต้ โดยการแก้ไขคุณสมบัติของ`TextState` วัตถุ:
+A: ใช่ ในขั้นตอนที่ 7 คุณสามารถใช้การจัดรูปแบบข้อความเพิ่มเติม เช่น การขีดเส้นใต้ โดยการแก้ไขคุณสมบัติของ`TextState` วัตถุ:
 
 ```csharp
 textFragment.TextState.Underline = true;

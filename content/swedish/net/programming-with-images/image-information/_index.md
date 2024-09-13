@@ -1,228 +1,161 @@
 ---
 title: Bildinformation i PDF-fil
 linktitle: Bildinformation i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
-description: Extrahera bildinformation i PDF-fil med Aspose.PDF för .NET.
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig att extrahera bildinformation från PDF-filer med Aspose.PDF för .NET med vår omfattande steg-för-steg-guide.
 type: docs
 weight: 160
 url: /sv/net/programming-with-images/image-information/
 ---
-Den här guiden tar dig steg för steg hur du extraherar information om bilder i PDF-fil med Aspose.PDF för .NET. Se till att du redan har konfigurerat din miljö och följ stegen nedan:
+## Introduktion
 
-## Steg 1: Definiera dokumentkatalogen
+PDF-filer finns överallt nuförtiden – praktiskt taget alla professionella och personliga dokument hittar någon gång till det här formatet. Oavsett om det är en rapport, en broschyr eller en e-bok, att förstå hur man interagerar med dessa filer programmatiskt erbjuder en myriad av möjligheter. Ett vanligt krav är att extrahera bildinformation från PDF-filer. I den här guiden kommer vi att dyka ner i hur du använder Aspose.PDF-biblioteket för .NET för att extrahera viktiga detaljer om bilder inbäddade i ett PDF-dokument.
 
- Se till att ställa in rätt dokumentkatalog. Ersätta`"YOUR DOCUMENT DIRECTORY"` i koden med sökvägen till katalogen där ditt PDF-dokument finns.
+## Förutsättningar
+
+Innan vi går in i det snåriga med kodning finns det några förutsättningar som du måste ha på plats:
+
+1. Utvecklingsmiljö: Du behöver en .NET-utvecklingsmiljö. Detta kan vara Visual Studio eller någon annan .NET-kompatibel IDE.
+2.  Aspose.PDF-bibliotek: Se till att du har tillgång till Aspose.PDF-biblioteket. Du kan ladda ner den från[Aspose hemsida](https://releases.aspose.com/pdf/net/). 
+3. Grundläggande C#-kunskaper: Bekantskap med C# och objektorienterade programmeringskoncept hjälper dig att följa handledningen utan ansträngning.
+4. PDF-dokument: Ha ett exempel på PDF-dokument till hands som innehåller bilder för att testa din kod. 
+
+## Importera paket
+
+För att komma igång med att använda Aspose.PDF-biblioteket måste du importera de nödvändiga namnområdena till din C#-fil. Här är en snabb sammanfattning:
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using System;
 ```
 
-## Steg 2: Ladda käll-PDF-filen
+Dessa namnområden ger dig tillgång till de klasser och metoder som krävs för att manipulera PDF-filer och extrahera bilddata.
 
- I det här steget kommer vi att ladda käll-PDF-filen med hjälp av`Document` klass av Aspose.PDF. Använd`Document` konstruktor och skicka sökvägen till PDF-dokumentet.
+Nu när du har ställt in allt är det dags att dela upp detta i hanterbara steg. Vi kommer att skriva ett C#-program som laddar ett PDF-dokument, går igenom varje sida och extraherar måtten och upplösningen för varje bild i dokumentet.
+
+## Steg 1: Initiera dokumentet
+
+ I det här steget kommer vi att initiera PDF-dokumentet med hjälp av sökvägen till din PDF-fil. Du bör byta ut`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen där din PDF-fil finns.
 
 ```csharp
+// Sökvägen till dokumentkatalogen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Ladda käll-PDF-filen
 Document doc = new Document(dataDir + "ImageInformation.pdf");
 ```
+ Vi skapar en`Document` objekt som laddar PDF-filen från den angivna katalogen. Detta gör att vi kan arbeta med innehållet i filen.
 
-## Steg 3: Ställ in standardupplösning
+## Steg 2: Ställ in standardupplösning och initiera datastrukturer
 
-I det här steget kommer vi att ställa in standardupplösningen för bilder. I exemplet är standardupplösningen inställd på 72.
+Därefter ställer vi in en standardupplösning för bilderna, vilket är användbart för beräkningar. Vi kommer också att förbereda en array för bildnamn och en stack för att hantera grafiska tillstånd.
 
 ```csharp
+// Definiera standardupplösningen för bilden
 int defaultResolution = 72;
-```
-
-## Steg 4: Initiera objekt och räknare
-
-I det här steget kommer vi att initiera de objekt och räknare som behövs för att hämta bildinformationen.
-
-```csharp
 System.Collections.Stack graphicsState = new System.Collections.Stack();
+// Definiera arraylistobjekt som kommer att innehålla bildnamn
 System.Collections.ArrayList imageNames = new System.Collections.ArrayList(doc.Pages[1].Resources.Images.Names);
 ```
+ De`defaultResolution` variabel hjälper oss att beräkna upplösningen på bilder korrekt. De`graphicsState`stack fungerar som ett sätt att lagra det aktuella grafiska tillståndet för dokumentet när vi stöter på transformationsoperatorer.
 
-## Steg 5: Bläddra genom operatorerna på dokumentets första sida
+## Steg 3: Bearbeta varje operatör på sidan
 
-I det här steget går vi igenom operatörerna på dokumentets första sida för att identifiera bildrelaterade operationer.
+Vi går nu igenom alla operatorer på dokumentets första sida. Det är här de tunga lyften sker. 
 
 ```csharp
-foreach(Operator op in doc.Pages[1].Contents)
+foreach (Operator op in doc.Pages[1].Contents)
 {
+    // Processoperatörer...
+}
 ```
+Varje operatör i en PDF-fil är ett kommando som talar om för renderaren hur man hanterar grafiska element, inklusive bilder.
 
-## Steg 6: Hantera operatörer och extrahera bildinformation
+## Steg 4: Hantera GSave/GRestore-operatörer
 
-I det här steget kommer vi att hantera de olika typerna av operatörer och extrahera informationen om bilderna.
+Inne i slingan kommer vi att hantera grafik spara och återställa kommandon för att hålla reda på ändringar som gjorts i det grafiska tillståndet.
 
 ```csharp
-Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
-Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-Aspose.Pdf.Operators.Do opDo = op as Aspose.Pdf.Operators.Do;
+if (opSaveState != null) 
+{
+    // Spara tidigare tillstånd
+    graphicsState.Push(((Matrix)graphicsState.Peek()).Clone());
+} 
+else if (opRestoreState != null) 
+{
+    // Återställ tidigare tillstånd
+    graphicsState.Pop();
+}
+```
+`GSave` sparar det aktuella grafiska tillståndet, medan`GRestore` återställer det senast sparade tillståndet, vilket gör att vi kan återställa alla transformationer vid bearbetning av bilder.
 
-//Hantera GSave- och GRRestore-operationer för transformationer
-if (opSaveState != null)
+## Steg 5: Hantera transformationsmatriser
+
+Därefter hanterar vi sammankopplingen av transformationsmatriser när vi tillämpar transformationer på bilder.
+
+```csharp
+else if (opCtm != null) 
 {
-     graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-}
-else if (opRestoreState != null)
-{
-     graphicsState. Pop();
-}
-// Hantera ConcatenateMatrix-operationen för transformationer
-else if (opCtm != null)
-{
-     // Tillämpa transformationsmatrisen
-     System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
+    Matrix cm = new Matrix(
         (float)opCtm.Matrix.A,
         (float)opCtm.Matrix.B,
         (float)opCtm.Matrix.C,
         (float)opCtm.Matrix.D,
         (float)opCtm.Matrix.E,
         (float)opCtm.Matrix.F);
-
-
-     ((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-     keep on going;
-}
-// Hantera Gör-operationen för bilder
-else if (opDo != null)
-{
-     if (imageNames.Contains(opDo.Name))
-     {
-         // Hämta bilden
-         XImage image = doc.Pages[1].Resources.Images[opDo.Name];
-         // Hämta bildens mått
-         double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
-         double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
-         // Beräkna upplösningen baserat på informationen ovan
-         double resHorizontal = originalWidth * defaultResolution / scaledWidth;
-         double resVertical = originalHeight * defaultResolution / scaledHeight;
-         // Visa bildinformation
-         Console.Out.WriteLine(
-                 string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
-								 opDo.Name, scaledWidth, scaledHeight, resHorizontal,
-								 resVertical));
-     }
+    
+    ((Matrix)graphicsState.Peek()).Multiply(cm);
+    continue;
 }
 ```
+När en transformationsmatris tillämpas multiplicerar vi den med den aktuella matrisen som är lagrad i det grafiska tillståndet så att vi kan hålla reda på eventuell skalning eller översättning som tillämpas på bilden.
 
-### Exempel på källkod för bildinformation med Aspose.PDF för .NET 
+## Steg 6: Extrahera bildinformation
+
+Slutligen bearbetar vi ritoperatören för bilder och extraherar nödvändig information, som mått och upplösningar.
+
 ```csharp
-// Sökvägen till dokumentkatalogen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Ladda käll-PDF-filen
-Document doc = new Document(dataDir+ "ImageInformation.pdf");
-// Definiera standardupplösningen för bilden
-int defaultResolution = 72;
-System.Collections.Stack graphicsState = new System.Collections.Stack();
-// Definiera arraylistobjekt som kommer att innehålla bildnamn
-System.Collections.ArrayList imageNames = new System.Collections.ArrayList(doc.Pages[1].Resources.Images.Names);
-// Infoga ett objekt att stapla
-graphicsState.Push(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, 0, 0));
-// Få alla operatörer på första sidan av dokumentet
-foreach (Operator op in doc.Pages[1].Contents)
+else if (opDo != null) 
 {
-	// Använd GSave/GRestore-operatorer för att återställa transformationerna till tidigare inställda
-	Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
-	Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-	// Instantiera ConcatenateMatrix-objekt som det definierar aktuell transformationsmatris.
-	Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-	// Skapa Gör-operator som drar objekt från resurser. Den ritar formulärobjekt och bildobjekt
-	Aspose.Pdf.Operators.Do opDo = op as Aspose.Pdf.Operators.Do;
-	if (opSaveState != null)
-	{
-		//Spara föregående tillstånd och tryck aktuellt tillstånd till toppen av stacken
-		graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-	}
-	else if (opRestoreState != null)
-	{
-		// Kasta bort nuvarande tillstånd och återställ föregående
-		graphicsState.Pop();
-	}
-	else if (opCtm != null)
-	{
-		System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
-		   (float)opCtm.Matrix.A,
-		   (float)opCtm.Matrix.B,
-		   (float)opCtm.Matrix.C,
-		   (float)opCtm.Matrix.D,
-		   (float)opCtm.Matrix.E,
-		   (float)opCtm.Matrix.F);
-		// Multiplicera nuvarande matris med tillståndsmatrisen
-		((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-		continue;
-	}
-	else if (opDo != null)
-	{
-		// Om detta är en bildritningsoperator
-		if (imageNames.Contains(opDo.Name))
-		{
-			System.Drawing.Drawing2D.Matrix lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-			// Skapa XImage-objekt för att hålla bilder av första pdf-sidan
-			XImage image = doc.Pages[1].Resources.Images[opDo.Name];
-			// Få bildmått
-			double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
-			double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
-			// Få information om höjd och bredd på bilden
-			double originalWidth = image.Width;
-			double originalHeight = image.Height;
-			// Beräkna upplösning baserad på ovanstående information
-			double resHorizontal = originalWidth * defaultResolution / scaledWidth;
-			double resVertical = originalHeight * defaultResolution / scaledHeight;
-			// Visa information om dimension och upplösning för varje bild
-			Console.Out.WriteLine(
-					string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
-								 opDo.Name, scaledWidth, scaledHeight, resHorizontal,
-								 resVertical));
-		}
-	}
+    // Handle Do-operatör som ritar objekt
+    if (imageNames.Contains(opDo.Name)) 
+    {
+        Matrix lastCTM = (Matrix)graphicsState.Peek();
+        XImage image = doc.Pages[1].Resources.Images[opDo.Name];
+        double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
+        double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
+        double originalWidth = image.Width;
+        double originalHeight = image.Height;
+        
+        double resHorizontal = originalWidth * defaultResolution / scaledWidth;
+        double resVertical = originalHeight * defaultResolution / scaledHeight;
+        
+        // Mata ut informationen
+        Console.Out.WriteLine(string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
+                         opDo.Name, scaledWidth, scaledHeight, resHorizontal, resVertical));
+    }
 }
 ```
+Här kontrollerar vi om operatören är ansvarig för att rita en bild. Om det är det, får vi motsvarande XImage-objekt, beräknar dess skalade dimensioner och upplösning och skriver ut nödvändig information.
 
 ## Slutsats
 
-Grattis! Du har nu lärt dig hur du extraherar bildinformation i en PDF-fil med Aspose.PDF för .NET. Du kan använda denna information för olika bildbehandlingsuppgifter i dina applikationer.
+Grattis! Du har precis skapat ett fungerande exempel på hur man extraherar bildinformation från en PDF-fil med Aspose.PDF för .NET. Denna funktion kan vara otroligt användbar för utvecklare som behöver analysera eller manipulera PDF-dokument för olika applikationer, såsom rapportering, dataextraktion eller till och med anpassade PDF-visare. 
 
-### Vanliga frågor för bildinformation i PDF-fil
 
-#### F: Vad är syftet med att extrahera bildinformation från ett PDF-dokument med Aspose.PDF för .NET?
+## FAQ's
 
-S: Att extrahera bildinformation från ett PDF-dokument ger insikter om dimensioner, upplösning och andra attribut för bilder i dokumentet. Denna information kan användas för bildbehandling, analys eller optimeringsuppgifter.
+### Vad är Aspose.PDF-biblioteket?
+Aspose.PDF-biblioteket är ett kraftfullt verktyg för att skapa, manipulera och konvertera PDF-filer i .NET-applikationer.
 
-#### F: Hur hjälper Aspose.PDF för .NET att extrahera bildinformation från ett PDF-dokument?
+### Kan jag använda biblioteket gratis?
+ Ja, Aspose erbjuder en gratis provperiod. Du kan ladda ner den[här](https://releases.aspose.com/).
 
-S: Aspose.PDF för .NET tillhandahåller verktyg för att komma åt och analysera innehållet i ett PDF-dokument, inklusive dess bilder. Den medföljande koden visar hur man extraherar och visar bildinformation med olika operatörer.
+### Vilka typer av bildformat kan extraheras?
+Biblioteket stöder olika bildformat, inklusive JPEG, PNG och TIFF, så länge de är inbäddade i PDF:en.
 
-#### F: Vilken typ av bildinformation kan extraheras med den här metoden?
+### Används Aspose för kommersiella ändamål?
+ Ja, du kan använda Aspose-produkter kommersiellt. För licensiering, besök[köpsidan](https://purchase.aspose.com/buy).
 
-S: Med den här metoden kan du extrahera och visa information som skalade mått, upplösning och bildnamn för bilder i ett PDF-dokument.
-
-#### F: Hur identifierar och bearbetar koden bildrelaterade operatörer i ett PDF-dokument?
-
-S: Koden itererar genom operatorerna på en angiven sida i PDF-dokumentet. Den identifierar och bearbetar operatörer relaterade till bildoperationer, transformationer och rendering.
-
-#### F: Vad är betydelsen av standardupplösning och hur används den i koden?
-
-S: Standardupplösningen används som referenspunkt för att beräkna den faktiska upplösningen för bilder. Koden beräknar upplösningen för varje bild baserat på dess mått och standardupplösningsinställningen.
-
-#### F: Hur kan den extraherade bildinformationen användas i verkliga scenarier?
-
-S: Den extraherade bildinformationen kan användas för uppgifter som bildkvalitetsbedömning, bildoptimering, generering av bildminiatyrer och underlättande av bildrelaterade beslutsprocesser.
-
-#### F: Kan jag ändra koden för att extrahera ytterligare bildrelaterade attribut?
-
-S: Ja, du kan anpassa koden för att extrahera ytterligare attribut för bilder, såsom färgrymd, pixeldjup eller bildtyp.
-
-#### F: Är processen för utvinning av bildinformation resurskrävande eller tidskrävande?
-
-S: Processen för att extrahera bildinformation är effektiv och optimerad för prestanda, vilket säkerställer minimal påverkan på resursanvändning och bearbetningstid.
-
-#### F: Hur kan utvecklare dra nytta av att identifiera och extrahera bildinformation från PDF-dokument?
-
-S: Utvecklare kan få insikter om egenskaperna hos bilder i PDF-dokument, vilket gör det möjligt för dem att fatta välgrundade beslut angående bildmanipulation, bearbetning och optimering.
-
-#### F: Kan den här metoden användas för batchbearbetning av PDF-dokument som innehåller bilder?
-
-S: Ja, den här metoden kan utökas för batchbearbetning genom att iterera genom flera sidor eller dokument, extrahera bildinformation och utföra bildrelaterade uppgifter.
+### Hur får jag support för Aspose?
+ Du kan komma åt supportforumet[här](https://forum.aspose.com/c/pdf/10).

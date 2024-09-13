@@ -39,7 +39,7 @@ Document _pdfdocument = new Document();
 ```
 
 ## Langkah 5: Tambahkan halaman ke dokumen
- Tambahkan halaman baru ke dokumen menggunakan`Add` metode dari`Pages`koleksi. Dalam kode yang diberikan, halaman baru ditetapkan ke variabel`page`.
+ Tambahkan halaman baru ke dokumen menggunakan`Add` metode dari`Pages` koleksi. Dalam kode yang diberikan, halaman baru ditetapkan ke variabel`page`.
 
 ```csharp
 Page page = _pdfdocument.Pages.Add();

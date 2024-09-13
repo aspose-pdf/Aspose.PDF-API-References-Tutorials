@@ -2,48 +2,80 @@
 title: Állítsa be a lejárati dátumot a PDF-fájlban
 linktitle: Állítsa be a lejárati dátumot a PDF-fájlban
 second_title: Aspose.PDF for .NET API Reference
-description: Ebből a lépésről lépésre szóló útmutatóból megtudhatja, hogyan állíthat be lejárati dátumot PDF-fájlban az Aspose.PDF for .NET használatával.
+description: Ismerje meg, hogyan állíthat be lejárati dátumot a PDF-fájlokban az Aspose.PDF for .NET használatával. Növelje a dokumentumok biztonságát ezzel a lépésenkénti útmutatóval.
 type: docs
 weight: 300
 url: /hu/net/programming-with-document/setexpirydate/
 ---
-Az Aspose.PDF for .NET egy hatékony könyvtár, amely különféle funkciókat biztosít a PDF-fájlok kezeléséhez. Az egyik ilyen funkció a PDF-dokumentum lejárati dátumának beállítása. Ebben az oktatóanyagban végigvezetjük a PDF-dokumentumok lejárati dátumának beállításán az Aspose.PDF for .NET használatával. 
+## Bevezetés
 
-## 1. lépés: Állítsa be a dokumentumkönyvtár elérési útját
+mai digitális korban a dokumentumok kezelése és védelme fontosabb, mint valaha. Képzelje el, hogy kiküld egy PDF-fájlt, amely egy bizonyos dátum után automatikusan elérhetetlenné válik. Varázslatnak hangzik, igaz? Nos, az Aspose.PDF for .NET segítségével egyszerűen beállíthat egy lejárati dátumot a PDF-fájlokhoz. Ez a funkció különösen hasznos olyan bizalmas dokumentumok esetében, amelyeket bizonyos idő elteltével korlátozni kell. Ebben az oktatóanyagban lépésről lépésre végigvezetjük a lejárati dátum PDF-fájlban történő beállításának folyamatán. Szóval, fogd a kódoló kalapot, és merüljünk bele!
 
-Mielőtt elkezdenénk, be kell állítanunk annak a könyvtárnak az elérési útját, ahol a PDF dokumentumunk található. Ezt az elérési utat egy "dataDir" nevű változóban tároljuk.
+## Előfeltételek
+
+Mielőtt elkezdenénk, néhány dolgot meg kell tennie:
+
+1. Fejlesztői környezet: Győződjön meg arról, hogy be van állítva egy .NET fejlesztői környezet. Ez lehet a Visual Studio vagy bármely más IDE, amely támogatja a .NET-et.
+2.  Aspose.PDF for .NET: telepítenie kell az Aspose.PDF könyvtárat. Ha még nem tette meg, letöltheti innen[itt](https://releases.aspose.com/pdf/net/).
+3. Alapvető C# ismeretek: Ez az oktatóanyag feltételezi, hogy rendelkezik alapvető ismeretekkel a C# programozásról. Ha még nem ismeri a C#-t, ne aggódjon! Legyen egyszerű és egyértelmű.
+
+## Csomagok importálása
+
+Az Aspose.PDF használatának megkezdéséhez importálnia kell a szükséges névtereket a C# projektbe. Így teheti meg:
+
+```csharp
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Text;
+```
+
+Ezek a névterek hozzáférést biztosítanak az Aspose.PDF PDF-dokumentumainak kezeléséhez szükséges alapvető funkciókhoz.
+
+## 1. lépés: Állítsa be a dokumentumkönyvtárat
+
+Először is meg kell adnia a dokumentumkönyvtár elérési útját. Ez az a hely, ahol a kimeneti PDF mentésre kerül. 
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## 2. lépés: Új PDF dokumentum létrehozása
+ Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a tényleges elérési úttal, ahová a PDF-fájlt menteni szeretné. Ez olyan, mintha azt mondaná a programnak: "Hé, itt tartom a fájljaimat!"
 
- Új PDF dokumentum létrehozásához létre kell hoznunk egy újat`Aspose.Pdf.Document` objektum. Ezt a következő kóddal tehetjük meg:
+## 2. lépés: Példányosítsa a dokumentumobjektumot
+
+ Ezután létre kell hoznia egy új példányt a`Document` osztály. Ez a vászon, ahol elkészítheti PDF-jét.
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## 3. lépés: Új oldal hozzáadása a PDF dokumentumhoz
+ Gondolj a`Document` tárgyat üres papírlapként. Tetszés szerint hozzáadhat tartalmat!
 
-Miután elkészítettük a PDF dokumentumot, új oldalt adhatunk hozzá. Ezt a következő kóddal tehetjük meg:
+## 3. lépés: Adjon hozzá egy oldalt a PDF-hez
+
+Most, hogy beállította a dokumentumot, ideje hozzáadni egy oldalt. Ide kerül a tartalom.
 
 ```csharp
 doc.Pages.Add();
 ```
 
-## 4. lépés: Szöveg hozzáadása a PDF-dokumentumhoz
+Most hozott létre egy új oldalt a PDF-ben. Ez olyan, mintha új oldalt adna a jegyzetfüzetéhez, ahol feljegyezheti gondolatait.
 
- Miután hozzáadtunk egy oldalt a PDF dokumentumhoz, a segítségével szöveget adhatunk hozzá`Paragraphs` gyűjtemény. Ezt a következő kóddal tehetjük meg:
+## 4. lépés: Szöveg hozzáadása az oldalhoz
+
+Tegyük érdekesebbé ezt az oldalt egy kis szöveg hozzáadásával. Hozzáadunk egy egyszerű „Hello World” üzenetet.
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
 ```
 
-## 5. lépés: A PDF lejárati dátumának beállítása JavaScript használatával
+Ez a kódsor egy szövegrészletet ad a PDF-fájl első oldalához. Mintha címet írnál az oldalad tetejére!
 
-A PDF lejárati dátumának beállításához létre kell hoznunk egy JavaScript objektumot. Ezt a következő kóddal tehetjük meg:
+## 5. lépés: Hozzon létre JavaScriptet a lejárati dátumhoz
+
+Most jön a szórakoztató rész! Létrehoz egy JavaScript-műveletet, amely ellenőrzi a PDF lejárati dátumát. Ha az aktuális dátum meghaladja a lejárati dátumot, egy üzenet figyelmezteti a felhasználót.
 
 ```csharp
 JavascriptAction javaScript = new JavascriptAction(
@@ -53,67 +85,52 @@ JavascriptAction javaScript = new JavascriptAction(
 + "expiry = new Date(year, month);"
 + "if (today.getTime() > expiry.getTime())"
 + "app.alert('The file is expired. You need a new one.');");
+```
 
-// Állítsa be a JavaScriptet PDF megnyitási műveletként
+Íme, mi történik:
+- Ön határozza meg a lejárati évet és hónapot.
+- Megkapod a mai dátumot.
+- Összehasonlítja a mai dátumot a lejárati dátummal.
+- Ha a mai dátum lejárt a lejárati dátumon, megjelenik egy üzenet!
+
+## 6. lépés: Állítsa be a JavaScriptet PDF megnyitási műveletként
+
+Most be kell állítania a JavaScript-műveletet a PDF-dokumentum megnyitási műveleteként. Ez azt jelenti, hogy a JavaScript a PDF megnyitásakor azonnal lefut.
+
+```csharp
 doc.OpenAction = javaScript;
 ```
 
-Ebben a kódban 2017 májusára állítjuk be a lejárati dátumot.
+Ez a sor arra utasítja a PDF-fájlt, hogy hajtsa végre a JavaScriptet, amikor valaki megnyitja. Ez olyan, mintha egy emlékeztetőt állítana be, amely azonnal felkapcsol, amint kinyitja a naptárát!
 
-## 6. lépés: Mentse el a PDF-fájlt
+## 7. lépés: Mentse el a PDF-dokumentumot
 
- A lejárati dátum beállítása után el kell mentenie a PDF-fájlt. Ehhez használhatja a`Save` módszere a`Document` objektumot, és adja meg azt az elérési utat, ahová a frissített PDF-fájlt menteni szeretné.
+Végül itt az ideje, hogy elmentse PDF-dokumentumát a lejárati dátum funkcióval. 
 
 ```csharp
 dataDir = dataDir + "SetExpiryDate_out.pdf";
-// PDF dokumentum mentése
 doc.Save(dataDir);
 ```
 
-### Példa forráskódra a Lejárati dátum beállítása a .NET Aspose.PDF használatával
-
-Íme a teljes példaforráskód a lejárati dátum beállításához az Aspose.PDF for .NET használatával:
-
-```csharp
-// A dokumentumok könyvtárának elérési útja.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Dokumentum objektum példányosítása
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-// Oldal hozzáadása a PDF-fájl oldalgyűjteményéhez
-doc.Pages.Add();
-// Szövegrészlet hozzáadása az oldalobjektum bekezdésgyűjteményéhez
-doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
-// Hozzon létre JavaScript objektumot a PDF lejárati dátumának beállításához
-JavascriptAction javaScript = new JavascriptAction(
-"var year=2017;"
-+ "var month=5;"
-+ "today = new Date(); today = new Date(today.getFullYear(), today.getMonth());"
-+ "expiry = new Date(year, month);"
-+ "if (today.getTime() > expiry.getTime())"
-+ "app.alert('The file is expired. You need a new one.');");
-// Állítsa be a JavaScriptet PDF megnyitási műveletként
-doc.OpenAction = javaScript;
-
-dataDir = dataDir + "SetExpiryDate_out.pdf";
-// PDF dokumentum mentése
-doc.Save(dataDir);
-```
+Ez a sor menti a PDF-fájlt a megadott könyvtárba "SetExpiryDate_out.pdf" néven. Ez olyan, mintha az elkészült alkotásodat keretbe helyeznéd!
 
 ## Következtetés
 
-PDF-dokumentumok lejárati dátumának beállítása az Aspose.PDF for .NET használatával hasznos funkció annak biztosítására, hogy a dokumentum csak meghatározott ideig legyen érvényes. A lépésenkénti útmutató követésével és a mellékelt C# forráskód használatával a fejlesztők egyszerűen beállíthatják a lejárati dátumot, és korlátozott érvényességű PDF-eket hozhatnak létre. Ez a funkció különösen hasznos lehet olyan dokumentumok esetében, amelyeket korlátozott ideig kell elérni vagy terjeszteni.
+És megvan! Sikeresen létrehozott egy lejárati dátumú PDF-fájlt az Aspose.PDF for .NET használatával. Ez a funkció nemcsak a biztonságot növeli, hanem azt is biztosítja, hogy az érzékeny információk ellenőrzés alatt maradjanak. Akár szerződéseket, jelentéseket vagy egyéb fontos dokumentumokat küld ki, a lejárati dátum beállítása megváltoztathatja a játékot.
 
-### GYIK a beállított lejárati dátumhoz PDF fájlban
+## GYIK
 
-#### K: Beállíthatok más lejárati dátumot a PDF-dokumentumhoz?
+### Mi az Aspose.PDF for .NET?
+Az Aspose.PDF for .NET egy hatékony könyvtár, amely lehetővé teszi a fejlesztők számára PDF-dokumentumok létrehozását, kezelését és konvertálását .NET-alkalmazásokban.
 
- V: Igen, beállíthat egy másik lejárati dátumot a PDF-dokumentumhoz a JavaScript kód módosításával az 5. lépésben. A bemutatott példában a lejárati dátum 2017 májusa. Más lejárati dátum beállításához módosítania kell a`year` és`month` változókat a JavaScript kódban a kívánt évre és hónapra.
+### Használhatom ingyenesen az Aspose.PDF-et?
+ Igen, használhatja az Aspose.PDF ingyenes próbaverzióját. Letöltheti[itt](https://releases.aspose.com/).
 
-#### K: Mi történik, ha a PDF-dokumentum lejárt?
+### Hogyan vásárolhatom meg az Aspose.PDF-et?
+Megvásárolhatja az Aspose.PDF-et a weboldalon[vásárlási oldal](https://purchase.aspose.com/buy).
 
-V: Amikor a PDF-dokumentum lejárt a JavaScript-kódban meghatározottak szerint, a megtekintő figyelmeztető üzenetet jelenít meg, amely jelzi, hogy a fájl lejárt, és a felhasználónak újra van szüksége. Ez a figyelmeztető üzenet a PDF megnyitásakor jelenik meg.
+### Mi van, ha támogatásra van szükségem?
+Ha bármilyen kérdése van, vagy segítségre van szüksége, keresse fel a[Aspose támogatási fórum](https://forum.aspose.com/c/pdf/10).
 
-#### K: Használhatok-e konkrét időpontot a lejárati dátum helyett a dátum helyett?
-
- V: Igen, beállíthat egy konkrét időpontot a lejárati dátumhoz a JavaScript-kódban. Módosítva a`expiry` változót a JavaScript kódban, hogy tartalmazza a kívánt időt, akkor beállíthat egy adott időpontot a lejárati dátumhoz.
+### Kaphatok ideiglenes licencet az Aspose.PDF fájlhoz?
+ Igen, kérhet ideiglenes engedélyt[itt](https://purchase.aspose.com/temporary-license/).

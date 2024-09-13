@@ -190,4 +190,4 @@ Oprócz akcji „GoTo” możesz dodać akcje „URI” otwierające łącza int
 
 ### Czy Aspose.PDF dla Java nadaje się do projektów komercyjnych?
 
-Tak, Aspose.PDF for Java nadaje się zarówno do projektów prywatnych, jak i komercyjnych, oferując szeroki zakres funkcji do generowania i modyfikowania plików PDF.
+Tak, Aspose.PDF for Java nadaje się zarówno do projektów prywatnych, jak i komercyjnych, oferując szeroką gamę funkcji do generowania i modyfikowania plików PDF.

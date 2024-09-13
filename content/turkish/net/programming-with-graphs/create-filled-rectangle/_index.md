@@ -2,123 +2,172 @@
 title: Dolu Dikdörtgen Oluştur
 linktitle: Dolu Dikdörtgen Oluştur
 second_title: Aspose.PDF for .NET API Referansı
-description: .NET için Aspose.PDF ile dolu bir dikdörtgenin nasıl oluşturulacağını öğrenin. Dolgu rengini özelleştirmek için adım adım kılavuz.
+description: Bu adım adım eğitimle .NET için Aspose.PDF kullanarak PDF'de dolu bir dikdörtgenin nasıl oluşturulacağını öğrenin. Her seviyedeki geliştirici için mükemmel.
 type: docs
 weight: 50
 url: /tr/net/programming-with-graphs/create-filled-rectangle/
 ---
-Bu eğitimde, .NET için Aspose.PDF kullanarak dolu bir dikdörtgen oluşturmak için aşağıdaki C# kaynak kodunu adım adım inceleyeceğiz.
+## giriiş
 
-Başlamadan önce Aspose.PDF kütüphanesini yüklediğinizden ve geliştirme ortamınızı ayarladığınızdan emin olun. Ayrıca C# programlamanın temel bilgisine sahip olun.
+Görsel olarak çekici PDF'leri programatik olarak oluşturmak istediniz mi hiç? Eğer öyleyse, doğru yerdesiniz! Bu eğitimde, PDF belgelerini kolaylıkla düzenlemenize olanak tanıyan güçlü bir kütüphane olan Aspose.PDF for .NET dünyasına dalacağız. Bugün, bir PDF dosyası içinde dolu bir dikdörtgen oluşturmaya odaklanacağız. İster deneyimli bir geliştirici olun ister yeni başlıyor olun, bu kılavuz sizi her adımda dostça ve ilgi çekici bir şekilde yönlendirecektir. O halde, kodlama şapkanızı alın ve başlayalım!
 
-## Adım 1: Belge Dizini Kurulumu
+## Ön koşullar
 
-Sağlanan kaynak kodunda, ortaya çıkan PDF dosyasını kaydetmek istediğiniz dizini belirtmeniz gerekir. "dataDir" değişkenini istediğiniz dizine değiştirin.
+Koda geçmeden önce, yerinde olması gereken birkaç şey var:
+
+1. Visual Studio: Makinenizde Visual Studio'nun yüklü olduğundan emin olun. .NET geliştirme için harika bir IDE'dir.
+2.  .NET için Aspose.PDF: Aspose.PDF kütüphanesini indirip yüklemeniz gerekecek. Bunu bulabilirsiniz[Burada](https://releases.aspose.com/pdf/net/).
+3. Temel C# Bilgisi: C# programlamaya dair biraz bilgi sahibi olmak, kod parçacıklarını daha iyi anlamanıza yardımcı olacaktır.
+
+## Paketleri İçe Aktar
+
+Başlamak için, C# projenize gerekli paketleri içe aktarmanız gerekir. Bunu nasıl yapabileceğiniz aşağıda açıklanmıştır:
+
+### Yeni Bir Proje Oluştur
+
+Visual Studio'yu açın ve yeni bir C# projesi oluşturun. Basitlik için bir Konsol Uygulaması seçebilirsiniz.
+
+### Aspose.PDF Referansını Ekle
+
+1. Çözüm Gezgini’nde projenizin üzerine sağ tıklayın.
+2. "NuGet Paketlerini Yönet" seçeneğini seçin.
+3. "Aspose.PDF" dosyasını arayın ve en son sürümü yükleyin.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-## Adım 2: Bir Belge Örneği Oluşturma ve Bir Sayfa Ekleme
+Artık her şeyi ayarladığımıza göre koda geçelim!
 
-Document sınıfının bir örneğini oluşturuyoruz ve bu belgeye bir sayfa ekliyoruz.
+## Adım 1: Belge Dizininizi Ayarlayın
 
-```csharp
-Document doc = new Document();
-Page page = doc.Pages.Add();
-```
-
-## Adım 3: Bir Grafik Nesnesi Oluşturma ve Sayfaya Ekleme
-
-Belirtilen boyutlarda bir Graph nesnesi oluşturup sayfanın paragraf koleksiyonuna ekliyoruz.
+İlk önce, PDF'nizin kaydedileceği yolu belirtmeniz gerekir. Bu önemlidir çünkü programa dosyayı nerede oluşturacağını söyler.
 
 ```csharp
-Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100, 400);
-page.Paragraphs.Add(graph);
-```
-
-## Adım 4: Dikdörtgen Nesnesi Oluşturun ve Grafiğe Ekleyin
-
-Belirtilen ölçülerde bir Dikdörtgen nesnesi oluşturup grafiğin şekil koleksiyonuna ekliyoruz.
-
-```csharp
-Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 120);
-graph.Shapes.Add(rect);
-```
-
-## Adım 5: Dolgu rengini ayarlama
-
-Dikdörtgenin dolgu rengini GraphInfo nesnesinin FillColor özelliğini kullanarak belirleyebiliriz.
-
-```csharp
-rect.GraphInfo.FillColor = Aspose.Pdf.Color.Red;
-```
-
-## Adım 6: Ortaya Çıkan PDF Dosyasını Kaydetme
-
-Son olarak ortaya çıkan PDF dosyasını "CreateFilledRectangle_out.pdf" ismiyle belirtilen dizine kaydediyoruz.
-
-```csharp
-doc.Save(dataDir + "CreateFilledRectangle_out.pdf");
-```
-
-### .NET için Aspose.PDF kullanarak Dolu Dikdörtgen Oluşturma için örnek kaynak kodu 
-
-```csharp
-
 // Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` PDF'yi kaydetmek istediğiniz makinenizdeki gerçek yol ile.
+
+## Adım 2: Bir Belge Örneği Oluşturun
+
+ Daha sonra, bir örnek oluşturacağız`Document`sınıf. Bu sınıf, üzerinde çalışacağınız PDF belgesini temsil eder.
+
+```csharp
 // Belge örneği oluştur
 Document doc = new Document();
+```
+
+Bu satır, üzerinde değişiklik yapabileceğimiz yeni bir PDF belgesi başlatır.
+
+## Adım 3: Belgeye Bir Sayfa Ekleyin
+
+Şimdi, belgemize bir sayfa ekleyelim. Her PDF'in en az bir sayfaya ihtiyacı vardır, değil mi?
+
+```csharp
 // PDF dosyasının sayfa sayfa koleksiyonunu ekle
 Page page = doc.Pages.Add();
+```
+
+Bu kod, belgeye yeni bir sayfa ekleyerek üzerine şekiller çizmemize olanak tanır.
+
+## Adım 4: Bir Grafik Örneği Oluşturun
+
+ Şekilleri çizmek için bir tane oluşturmamız gerekiyor`Graph` Örneğin. Bir grafiği çeşitli şekiller çizebileceğiniz bir tuval olarak düşünün.
+
+```csharp
 // Grafik örneği oluştur
-Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100, 400);
+Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100.0, 400.0);
+```
+
+Burada genişliği 100, yüksekliği 400 olan bir grafik oluşturuyoruz.
+
+## Adım 5: Grafiği Sayfaya Ekleyin
+
+Artık grafiğimiz hazır, şimdi bunu daha önce oluşturduğumuz sayfaya ekleyelim.
+
+```csharp
 // Sayfa örneğinin paragraf koleksiyonuna grafik nesnesi ekle
 page.Paragraphs.Add(graph);
+```
+
+Bu çizgi grafiği sayfaya iliştirerek çizime hazır hale getirir.
+
+## Adım 6: Dikdörtgen Örneği Oluşturun
+
+Daha sonra renkle doldurmak istediğimiz bir dikdörtgen oluşturacağız.
+
+```csharp
 // Dikdörtgen örneği oluştur
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 120);
+```
+
+Bu kodda dikdörtgenin konumunu ve boyutunu tanımlıyoruz. Parametreler x ve y koordinatlarını, genişliği ve yüksekliği temsil eder.
+
+## Adım 7: Dolgu Rengini Belirleyin
+
+Şimdi dikdörtgenimiz için bir renk seçelim. Bu örnekte onu kırmızıyla dolduracağız.
+
+```csharp
 // Grafik nesnesi için dolgu rengini belirtin
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.Red;
+```
+
+Bu satır dikdörtgenin dolgu rengini kırmızıya ayarlar. İstediğiniz rengi seçebilirsiniz!
+
+## Adım 8: Grafiğe Dikdörtgeni Ekleyin
+
+Dikdörtgenimiz hazır olduğuna göre, onu grafiğe eklemenin zamanı geldi.
+
+```csharp
 // Grafik nesnesinin şekiller koleksiyonuna dikdörtgen nesnesi ekle
 graph.Shapes.Add(rect);
+```
+
+Bu kod dikdörtgeni grafiğe ekleyerek onu çizimimizin bir parçası haline getirir.
+
+## Adım 9: PDF Belgesini Kaydedin
+
+Son olarak belgemizi belirtilen dizine kaydetmemiz gerekiyor.
+
+```csharp
 dataDir = dataDir + "CreateFilledRectangle_out.pdf";
 // PDF dosyasını kaydet
 doc.Save(dataDir);
-Console.WriteLine("\nFilled rectangle object created successfully.\nFile saved at " + dataDir);            
-
 ```
+
+ Bu kod PDF dosyasını şu adla kaydeder:`CreateFilledRectangle_out.pdf` daha önce belirttiğiniz dizinde.
+
+## Adım 10: Onay Mesajı
+
+Her şeyin yolunda gittiğini bize bildirmek için bir onay mesajı yazdırabiliriz.
+
+```csharp
+Console.WriteLine("\nFilled rectangle object created successfully.\nFile saved at " + dataDir);
+```
+
+Bu satır, konsolda doldurulmuş dikdörtgenin başarıyla oluşturulduğunu doğrulayan bir mesaj çıktısı verecektir.
 
 ## Çözüm
 
-Bu eğitimde, .NET için Aspose.PDF kullanarak dolu bir dikdörtgenin nasıl oluşturulacağını açıkladık. Artık bu bilgiyi kullanarak PDF dosyalarınızda özel dolgu renklerine sahip geometrik şekiller oluşturabilirsiniz.
+Ve işte karşınızda! .NET için Aspose.PDF kullanarak bir PDF belgesinde doldurulmuş bir dikdörtgeni başarıyla oluşturdunuz. Bu güçlü kütüphane, PDF düzenleme için bir olasılıklar dünyası açarak, çarpıcı belgeleri programatik olarak oluşturmanıza olanak tanır. İster raporlar, ister faturalar veya başka bir PDF türü oluşturun, Aspose.PDF sizin için her şeyi yapar.
 
 ## SSS
 
-#### S: Bu eğitimin amacı nedir?
+### Aspose.PDF for .NET nedir?
+Aspose.PDF for .NET, geliştiricilerin PDF belgelerini programlı bir şekilde oluşturmalarına, düzenlemelerine ve dönüştürmelerine olanak tanıyan bir kütüphanedir.
 
-C: Bu eğitimin amacı, Aspose.PDF for .NET kullanarak dolu bir dikdörtgen oluşturma sürecinde size rehberlik ederek, PDF dosyalarınıza dolgu renkleriyle özel geometrik şekiller eklemenizi sağlamaktır.
+### Aspose.PDF'yi ücretsiz kullanabilir miyim?
+ Evet, Aspose kütüphanenin özelliklerini keşfetmeniz için kullanabileceğiniz ücretsiz bir deneme sürümü sunuyor. İndirebilirsiniz[Burada](https://releases.aspose.com/).
 
-#### S: Başlamadan önce hangi ön koşullar gereklidir?
+### Aspose.PDF desteği almanın bir yolu var mı?
+ Kesinlikle! Aspose forumundan destek alabilirsiniz[Burada](https://forum.aspose.com/c/pdf/10).
 
-A: Başlamadan önce, Aspose.PDF kütüphanesini yüklediğinizden ve geliştirme ortamınızı ayarladığınızdan emin olun. Ek olarak, C# programlama konusunda temel bir anlayışa sahip olmanız önerilir.
+### Aspose.PDF'i nasıl satın alabilirim?
+ Aspose.PDF'yi satın alma sayfasını ziyaret ederek satın alabilirsiniz[Burada](https://purchase.aspose.com/buy).
 
-#### S: PDF dosyasını kaydedeceğim dizini nasıl belirlerim?
-
-A: Sağlanan kaynak kodunda, sonuçta elde edilen PDF dosyasını kaydetmek istediğiniz dizini belirtmek için "dataDir" değişkenini değiştirebilirsiniz.
-
-#### S: Graph nesnesinin amacı nedir?
-
-A: Graph nesnesi çizim öğeleri için bir kapsayıcı görevi görür. Belirtilen boyutlarla oluşturulur ve sayfanın paragraf koleksiyonuna eklenir.
-
-#### S: PDF belgesine nasıl dolu dikdörtgen ekleyebilirim?
-
-A: Dolu bir dikdörtgen eklemek için, belirtilen boyutlar ve dolgu rengiyle Rectangle sınıfının bir örneğini oluşturun ve bunu grafiğin şekil koleksiyonuna ekleyin.
-
-#### S: Dikdörtgenin boyutlarını ve dolgu rengini özelleştirebilir miyim?
-
- A: Evet, dikdörtgenin boyutlarını ve dolgu rengini, geçirilen parametreleri değiştirerek özelleştirebilirsiniz.`Aspose.Pdf.Drawing.Rectangle` yapıcı ve FillColor özelliğini ayarlama.
-
-#### S: Dolu dikdörtgeni oluşturduktan sonra ortaya çıkan PDF dosyasını nasıl kaydederim?
-
- A: Dolu dikdörtgeni oluşturduktan sonra, ortaya çıkan PDF dosyasını kullanarak kaydedebilirsiniz.`doc.Save(dataDir + "CreateFilledRectangle_out.pdf");` Sağlanan kaynak kodundaki satır.
+### Aspose.PDF ile hangi tür şekiller oluşturabilirim?
+Aspose.PDF kütüphanesini kullanarak dikdörtgenler, daireler, çizgiler ve daha fazlası dahil olmak üzere çeşitli şekiller oluşturabilirsiniz.

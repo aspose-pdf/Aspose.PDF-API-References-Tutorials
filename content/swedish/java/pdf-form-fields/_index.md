@@ -26,7 +26,7 @@ Användarupplevelsen är av största vikt i PDF-formulär. Våra handledningar k
 ### [Lägg till formulärfält i PDF-dokument med Java](./add-form-field-in-pdf-document-using-java/)
 Lär dig hur du lägger till interaktiva formulärfält till dina PDF-dokument med Java och Aspose.PDF för Java. Skapa användarvänliga PDF-formulär med lätthet.
 ### [Lägg till verktygstips till PDF-formulärfält med Java](./add-tooltip-to-pdf-form-field-with-java/)
-Lär dig hur du lägger till verktygstips i PDF-formulärfält med Java. Steg-för-steg-guide med Aspose.PDF för Java API.
+Lär dig hur du lägger till verktygstips till PDF-formulärfält med Java. Steg-för-steg-guide med Aspose.PDF för Java API.
 ### [Konvertera Dynamic XFA Form till Standard AcroForm i PDF](./convert-dynamic-xfa-form-to-standard-acroform-in-pdf/)
 Lär dig hur du enkelt konverterar dynamiska XFA-formulär till standard AcroForms i PDF med Aspose.PDF för Java. Säkerställ kompatibilitet och tillgänglighet.
 ### [Ta bort visst formulärfält från PDF-dokument i Java](./delete-particular-form-field-from-pdf-document-in-java/)

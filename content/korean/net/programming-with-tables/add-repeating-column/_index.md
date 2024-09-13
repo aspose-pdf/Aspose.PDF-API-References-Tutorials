@@ -60,7 +60,7 @@ headerRow.Cells.Add("header 1");
 headerRow.Cells.Add("header 2");
 headerRow.Cells.Add("header 3");
 // ...
-// 여기에 다른 헤더를 추가하세요
+//여기에 다른 헤더를 추가하세요
 
 for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
 {
@@ -101,7 +101,7 @@ Aspose.Pdf.Table outerTable = new Aspose.Pdf.Table();
 outerTable.ColumnWidths = "100%";
 outerTable.HorizontalAlignment = HorizontalAlignment.Left;
 
-//같은 페이지 내부에서 끊어질 outerTable 내부에 중첩될 테이블 객체를 인스턴스화합니다.
+// 같은 페이지 내부에서 끊어질 outerTable 내부에 중첩될 테이블 객체를 인스턴스화합니다.
 Aspose.Pdf.Table mytable = new Aspose.Pdf.Table();
 mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;

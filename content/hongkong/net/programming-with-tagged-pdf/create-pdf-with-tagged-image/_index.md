@@ -84,7 +84,7 @@ document.Save(dataDir + "PDFwithTaggedImage.pdf");
 
 ## 結論
 
-在本教學中，您學習如何使用 Aspose.PDF for .NET 建立帶有標記影像的 PDF 文件。帶有標籤的圖像會為您的 PDF 文件添加附加的結構化資訊。
+在本教學中，您學習如何使用 Aspose.PDF for .NET 建立帶有標記影像的 PDF 文件。標籤的圖像會為您的 PDF 文件添加附加的結構化資訊。
 
 ### 常見問題解答
 

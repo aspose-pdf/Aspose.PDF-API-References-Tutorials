@@ -145,7 +145,7 @@ row1.Cells.Add();
 row1.Cells[1].Paragraphs.Add(TitleText);
 // ตั้งค่าการจัดแนวแนวตั้งของเนื้อหาแถวเป็นด้านบน
 row1.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-// สร้างแถวในตารางแล้วสร้างเซลล์ในแถว
+//สร้างแถวในตารางแล้วสร้างเซลล์ในแถว
 Aspose.Pdf.Row SecondRow = table1.Rows.Add();
 SecondRow.Cells.Add();
 // ตั้งค่าช่วงแถวสำหรับแถวที่ 2 เป็น 2

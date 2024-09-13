@@ -31,7 +31,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("Arial");
 ```
 
-Yukarıdaki kod, Arial yazı tipini şu şekilde bulur:`FindFont` yöntemden`FontRepository` sınıf. Farklı bir yazı tipi kullanmak istiyorsanız, şunu değiştirin`"Arial"` İstediğiniz yazı tipi adıyla.
+ Yukarıdaki kod, Arial yazı tipini şu şekilde bulur:`FindFont`yöntemden`FontRepository` sınıf. Farklı bir yazı tipi kullanmak istiyorsanız, şunu değiştirin`"Arial"` İstediğiniz yazı tipi adıyla.
 
 ## Adım 3: Metin Durumunu Ayarlayın
 

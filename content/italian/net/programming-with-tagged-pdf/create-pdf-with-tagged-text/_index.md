@@ -119,7 +119,7 @@ R: L'esempio di codice dimostra come creare un documento PDF, definire vari elem
 
 R: Sì, puoi aggiungere altri elementi di testo taggati come elenchi, link o altre strutture personalizzate utilizzando tecniche simili. Aspose.PDF fornisce vari metodi per creare diversi tipi di contenuto taggato, consentendoti di migliorare la semantica del documento.
 
-####  D: Come funziona il`SetTitle` method contribute to the PDF document's tagged text?
+#### D: Come funziona il`SetTitle` method contribute to the PDF document's tagged text?
 
  A: Il`SetTitle` imposta il titolo del contenuto taggato del documento PDF, fornendo una breve descrizione dello scopo o dell'argomento del documento. Queste informazioni aiutano gli utenti a comprendere il contesto del testo taggato.
 
@@ -127,9 +127,9 @@ R: Sì, puoi aggiungere altri elementi di testo taggati come elenchi, link o alt
 
 A: Il testo taggato aggiunge un significato semantico al documento, rendendolo più accessibile agli utenti con disabilità o a coloro che utilizzano tecnologie assistive. I lettori di schermo e altri dispositivi assistivi possono interpretare e presentare il testo taggato per una migliore esperienza utente.
 
-####  D: Come funziona il`SetLanguage` method enhance the tagged text in a PDF document?
+#### D: Come funziona il`SetLanguage` method enhance the tagged text in a PDF document?
 
- A: Il`SetLanguage`imposta l'attributo lingua del contenuto taggato del documento PDF. Ciò aiuta a indicare la lingua in cui è scritto il testo taggato, migliorando l'accessibilità e consentendo un rendering appropriato specifico per la lingua.
+ A: Il`SetLanguage` imposta l'attributo lingua del contenuto taggato del documento PDF. Ciò aiuta a indicare la lingua in cui è scritto il testo taggato, migliorando l'accessibilità e consentendo un rendering appropriato specifico per la lingua.
 
 #### D: È possibile aggiungere altri elementi, come immagini o contenuti multimediali, insieme al testo taggato utilizzando tecniche simili?
 

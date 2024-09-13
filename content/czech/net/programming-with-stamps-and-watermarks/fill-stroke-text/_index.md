@@ -2,164 +2,191 @@
 title: Vyplnit text tahu v souboru PDF
 linktitle: Vyplnit text tahu v souboru PDF
 second_title: Aspose.PDF pro .NET API Reference
-description: Naučte se, jak snadno vyplňovat a obrysovat text v souboru PDF pomocí Aspose.PDF pro .NET.
+description: Naučte se, jak bez námahy vyplnit text tahu v souborech PDF pomocí Aspose.PDF for .NET, pomocí tohoto podrobného průvodce plného praktických příkladů.
 type: docs
 weight: 90
 url: /cs/net/programming-with-stamps-and-watermarks/fill-stroke-text/
 ---
-tomto tutoriálu vás krok za krokem provedeme, jak vyplnit a načrtnout text v souboru PDF pomocí Aspose.PDF pro .NET. Ukážeme vám, jak pomocí poskytnutého zdrojového kódu C# použít barvy výplně a obrysu na text v souboru PDF.
+## Zavedení
 
-## Krok 1: Nastavení prostředí
+Chtěli jste někdy upravit soubor PDF, aby vynikl? Možná budete muset přidat výrazný vodoznak nebo výrazné razítko, díky kterému bude důležitý dokument nezaměnitelně váš. S Aspose.PDF for .NET můžete snadno vyplnit text tahu v souboru PDF a přidat umělecký vkus, který upoutá pozornost. V dnešním tutoriálu si projdeme proces, jak toho dosáhnout – vyplňování textu tahu do PDF pomocí C#. Na konci budete mít solidní přehled o tom, jak manipulovat se soubory PDF jako profesionál.
 
-Než začnete, ujistěte se, že máte následující:
+## Předpoklady
 
-- Nainstalované vývojové prostředí .NET.
-- Knihovna Aspose.PDF pro .NET stažená a odkazovaná ve vašem projektu.
+Než se ponoříme do kódování, je potřeba mít připraveno několik věcí, aby byl tento tutoriál hračkou:
 
-## Krok 2: Vytvoření objektu TextState
+1. Visual Studio: Ujistěte se, že máte na svém počítači nainstalované Visual Studio, protože budeme psát kód C#.
+2.  Knihovna Aspose.PDF: Ujistěte se, že jste si stáhli knihovnu Aspose.PDF pro .NET. Můžeš to chytit[zde](https://releases.aspose.com/pdf/net/).
+3. Základní znalost C#: Znalost programování v C# vám pomůže snáze pochopit tutoriál.
+4. Ukázkový soubor PDF: Budete potřebovat ukázkový soubor PDF (`input.pdf`pro testovací účely. Můžete vytvořit jednoduchý soubor nebo použít jakýkoli existující soubor PDF, který máte.
 
-Prvním krokem je vytvoření objektu TextState, který předá pokročilé vlastnosti. Zde je postup:
+Nyní, když máme vše na svém místě, pojďme se pustit do hrubšího vyplňování textu tahu ve vašem souboru PDF.
+
+## Importujte balíčky
+
+Chcete-li začít, budeme muset importovat potřebné balíčky. Zde je stručný přehled základních importů pro náš projekt:
 
 ```csharp
-// Vytvořte objekt TextState pro přenos pokročilých vlastností
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Tyto balíčky nám umožní využívat robustní funkce knihovny Aspose.PDF.
+
+Rozdělme si hlavní úkol do jasných kroků. Pomocí těchto kroků můžete snadno vyplnit text tahu do souborů PDF. 
+
+## Krok 1: Nastavte své prostředí
+
+Nejprve se ujistěte, že máte vše správně nastaveno v projektu sady Visual Studio. Vytvořte nový projekt nebo vyberte existující. Pokud potřebujete pomoc, postupujte takto:
+
+1. Otevřete Visual Studio.
+2. Vytvořte nový projekt C# (např. Console Application).
+3. Klikněte pravým tlačítkem na projekt v Průzkumníku řešení a vyberte „Spravovat balíčky NuGet“.
+4.  Hledat`Aspose.PDF` a nainstalujte jej.
+
+## Krok 2: Definujte svůj adresář dokumentů
+
+Každá cesta potřebuje výchozí bod a v našem případě je to adresář dokumentů, kde budou umístěny vstupní a výstupní soubory. 
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Nahradit`"YOUR DOCUMENT DIRECTORY"` se skutečnou cestou, kde se nachází váš vstupní soubor PDF. 
+
+## Krok 3: Vytvořte objekt TextState
+
+V tomto kroku začnete definovat vlastnosti textu, který chcete přidat. 
+
+```csharp
 TextState ts = new TextState();
+```
 
-// Nastavit barvu obrysu
+ The`TextState` objekt bude obsahovat možnosti stylů pro váš text tahu.
+
+## Krok 4: Nastavte barvu pro tah
+
+Dále budete chtít definovat barvu tahu pro váš text. 
+
+```csharp
 ts.StrokingColor = Color.Gray;
+```
 
-// Definujte režim vykreslování textu
+V tomto kódu používáme pro tah šedou barvu. Neváhejte změnit barvu podle svých potřeb!
+
+## Krok 5: Nakonfigurujte režim vykreslování
+
+Chcete-li zajistit, aby se text zobrazoval podle očekávání, nastavte režim vykreslování:
+
+```csharp
 ts.RenderingMode = TextRenderingMode.StrokeText;
 ```
 
-Výše uvedený kód vytvoří nový objekt TextState a nastaví barvu obrysu a také způsob vykreslení textu.
+To dává knihovně Aspose pokyn, že pracujeme s textem tahu.
 
-## Krok 3: Načtení dokumentu PDF
+## Krok 6: Načtěte svůj vstupní dokument PDF
 
-Nyní, když je objekt TextState připraven, můžeme načíst dokument PDF, kde chceme použít textovou výplň a obrys. Zde je postup:
+Nyní je čas načíst soubor PDF, který se chystáte upravit. 
 
 ```csharp
-// Načtěte dokument PDF jako vstup
 Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
 ```
 
-Výše uvedený kód načte existující dokument PDF pomocí třídy PdfFileStamp z knihovny Aspose.PDF.Facades.
+Ujistěte se, že jste zadali PDF (`input.pdf`se nachází v adresáři dokumentů definovaném v předchozích krocích.
 
-## Krok 4: Přidejte k textu výplň a tah
+## Krok 7: Vytvořte objekt razítka
 
-Nyní, když je dokument PDF načten, můžeme k textu přidat výplň a obrys. Zde je postup:
+Dále vytvořte razítko, které bude držet text vašeho tahu. 
 
 ```csharp
-// Vytvořte razítko (Stamp) s definovaným textem a vlastnostmi
 Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
+```
+
+Toto razítko bude použito k překrytí vašeho textu na PDF.
+
+## Krok 8: Definujte text k razítku
+
+Budete muset určit, jaký text chcete do PDF přidat:
+
+```csharp
 stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
+```
 
-// Svažte objekt TextState
+Zde je text „ZAPLACENO V PLNÉM ROZSAHU“ doplněný spolu s jeho atributy stylu. Přizpůsobte si jej podle svých požadavků!
+
+## Krok 9: Svažte stav textu
+
+ Nyní svažte`TextState` jste definovali dříve k razítku. 
+
+```csharp
 stamp.BindTextState(ts);
+```
 
-// Nastavte počátek X, Y
+Tento krok aplikuje na váš text všechny styly, jako je barva a režim vykreslování.
+
+## Krok 10: Nastavte pozici razítka
+
+Určete, kde se vaše razítko v PDF objeví:
+
+```csharp
 stamp.SetOrigin(100, 100);
-stamp. Opacity = 5;
+```
+
+ Argumenty`(100, 100)` označte souřadnice X a Y (v bodech) pro počátek textu. Upravte tyto hodnoty tak, aby byl váš text dokonale umístěn!
+
+## Krok 11: Nakonfigurujte neprůhlednost a rotaci
+
+Zde si můžete pohrát se vzhledem svého textu:
+
+```csharp
+stamp.Opacity = 5;
 stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
 stamp.Rotation = 45.0F;
-stamp. IsBackground = false;
+```
 
-// Přidejte razítko do dokumentu
+V tomto případě hodnota krytí a úhel otočení 45 stupňů dodají vašemu textu jedinečný šmrnc. Neváhejte a upravte tato nastavení pro různé efekty.
+
+## Krok 12: Přidejte razítko do PDF
+
+Toto je zásadní krok, kdy konečně přidáme naše razítko, které obsahuje text tahu do PDF:
+
+```csharp
 fileStamp.AddStamp(stamp);
 ```
 
-Výše uvedený kód vytvoří Razítko se zadaným textem a definovanými vlastnostmi Výplň a Tah.
+A stejně tak je váš text připraven k vyjádření!
 
-## Krok 5: Uložte výstupní dokument
+## Krok 13: Uložte a zavřete dokument
 
-Po přidání textového razítka můžeme upravený PDF dokument uložit. Zde je postup:
+Nakonec uložte změny a ujistěte se, že je vše správně vyčištěno. 
 
 ```csharp
-// Uložte upravený dokument
 fileStamp.Save(dataDir + "output_out.pdf");
 fileStamp.Close();
 ```
 
-Výše uvedený kód uloží upravený dokument PDF do určeného adresáře.
-
-### Ukázkový zdrojový kód pro text Fill Stroke Text pomocí Aspose.PDF pro .NET 
-```csharp
-
-// Cesta k adresáři dokumentů.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Vytvořte objekt TextState pro přenos pokročilých vlastností
-TextState ts = new TextState();
-
-// Nastavte barvu tahu
-ts.StrokingColor = Color.Gray;
-
-// Nastavte režim vykreslování textu
-ts.RenderingMode = TextRenderingMode.StrokeText;
-
-// Načtěte vstupní dokument PDF
-Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
-Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
-stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
-
-// Svázat TextState
-stamp.BindTextState(ts);
-
-// Nastavte počátek X,Y
-stamp.SetOrigin(100, 100);
-stamp.Opacity = 5;
-stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
-stamp.Rotation = 45.0F;
-stamp.IsBackground = false;
-
-// Přidat razítko
-fileStamp.AddStamp(stamp);
-fileStamp.Save(dataDir + "ouput_out.pdf");
-fileStamp.Close();
-
-```
+ Váš nově upravený soubor PDF obsahující text tahu bude uložen jako`output_out.pdf` ve vašem adresáři dokumentů. 
 
 ## Závěr
 
-gratuluji! Naučili jste se, jak vyplnit a ohraničit text v dokumentu PDF pomocí Aspose.PDF pro .NET. Nyní můžete tyto znalosti použít k přizpůsobení barev výplně a obrysů v dokumentech PDF.
+A tady to máte! Pomocí těchto jednoduchých kroků můžete snadno vyplnit text tahu v souboru PDF pomocí Aspose.PDF pro .NET. Ať už se jedná o obchodní dokumenty nebo osobní projekty, tato technika vám umožní dodat vašim PDF jedinečný nádech, díky čemuž vyniknou na jakémkoli stohu papírů.
 
-### Nejčastější dotazy k vyplnění textu tahu v souboru PDF
+## FAQ
 
-#### Otázka: Co to znamená vyplnit a ohraničit text v dokumentu PDF a kdy to možná budu muset udělat?
+### Co je Aspose.PDF pro .NET?
+Aspose.PDF for .NET je knihovna, která umožňuje vývojářům vytvářet, manipulovat a převádět soubory PDF programově.
 
-Odpověď: Vyplňování a obrysování textu v dokumentu PDF zahrnuje použití barev na vnitřek textových znaků (výplň) a na okraje kolem textu (obrys). To lze použít k vylepšení vizuálního vzhledu textu, vytvoření zvýraznění nebo zvýraznění konkrétního obsahu v PDF.
+### Mohu používat Aspose.PDF zdarma?
+Ano, Aspose nabízí bezplatnou zkušební verzi. Můžete to získat[zde](https://releases.aspose.com/).
 
-#### Otázka: Jak poskytnutý zdrojový kód C# zajišťuje vyplnění a nastínění textu v souboru PDF?
+### Musím za licenci platit?
+ Zatímco knihovna má bezplatnou zkušební verzi, dočasnou licenci lze také zakoupit na[tento odkaz](https://purchase.aspose.com/temporary-license/).
 
- Odpověď: Poskytnutý zdrojový kód ukazuje, jak vytvořit a`TextState` objekt k definování pokročilých vlastností textu, jako je barva obrysu a režim vykreslování. Poté pomocí Aspose.PDF.Facades načte existující dokument PDF, vytvoří razítko obsahující text se zadanými vlastnostmi výplně a tahu a přidá razítko do dokumentu.
+### Kde najdu dokumentaci?
+ Máte přístup ke kompletní dokumentaci[zde](https://reference.aspose.com/pdf/net/).
 
-####  Otázka: Jaký je účel`TextState` object in the code?
-
- A:`TextState`objekt se používá k definování pokročilých vlastností textu, včetně barvy obrysu textu (tahu) a režimu vykreslování. Umožňuje vám přizpůsobit, jak se text zobrazí z hlediska tahu a výplně.
-
-#### Otázka: Mohu použít různé barvy výplně a obrysu na různé části stejného textu?
-
- Odpověď: Ano, kód můžete upravit a vytvořit jiný`TextState` objekty s odlišnou barvou výplně a obrysu a aplikujte je na konkrétní části textu pomocí oddělených`Stamp` objektů.
-
-#### Otázka: Mohu použít barvy výplně a obrysu na text, který je již obsažen v dokumentu PDF?
-
- Odpověď: Ano, podobné principy můžete použít k aplikaci barev výplně a obrysu na existující text v dokumentu PDF výběrem vhodných textových objektů a jejich přidáním jako razítka s požadovaným`TextState` vlastnosti.
-
-#### Otázka: Jak mohu upravit neprůhlednost a prolnutí vyplněného a obrysového textu?
-
- Odpověď: Poskytnutý kód vám umožňuje nastavit vlastnosti krytí a prolnutí razítka pomocí`Opacity` a`BlendingSpace`vlastnosti, resp. Tyto hodnoty můžete upravit, abyste dosáhli požadovaného vizuálního efektu.
-
-#### Otázka: Jak mohu použít různé barvy výplně a obrysu na více razítek ve stejném dokumentu PDF?
-
- A: Můžete vytvořit více`TextState` objekty s různými barvami výplně a obrysu a poté vytvořte samostatné`Stamp` objekty pro každou sadu textu s odlišnými barvami. Přidejte tato razítka do stejného dokumentu PDF pomocí`PdfFileStamp` třída.
-
-#### Otázka: Mohu pro obrysový a vyplněný text použít jiná písma než Arial?
-
- Odpověď: Ano, písmo můžete změnit úpravou parametru názvu písma v souboru`FormattedText` konstruktoru při vytváření razítka. Můžete použít jakékoli písmo dostupné ve vašem systému.
-
-#### Otázka: Jak mohu upravit úhel otočení obrysového a vyplněného textu?
-
- A: Poskytnutý kód vám umožňuje nastavit úhel otočení razítka pomocí`Rotation` vlastnictví. Tuto vlastnost můžete upravit a určit požadovaný úhel otočení textu.
-
-#### Otázka: Jak mohu ovládat polohu a velikost obrysového a vyplněného textu na stránce?
-
- A: Můžete použít`SetOrigin` metoda`Stamp` objekt pro nastavení souřadnic X a Y polohy razítka na stránce. Kromě toho můžete upravit velikost písma v`FormattedText` konstruktor pro ovládání velikosti textu.
+### Je k dispozici podpora, pokud narazím na problémy?
+ Absolutně! Podporu můžete získat na fóru Aspose[zde](https://forum.aspose.com/c/pdf/10).

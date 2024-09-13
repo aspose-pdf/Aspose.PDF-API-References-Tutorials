@@ -2,7 +2,7 @@
 title: PDF ファイルで LaTeX スクリプトを使用する
 linktitle: PDF ファイルで LaTeX スクリプトを使用する
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して、Latex スクリプトを使用して PDF ドキュメントに数式や式を追加する方法を学習します。
+description: Aspose.PDF for .NET を使用して、Latex スクリプトを使用して PDF ドキュメントに数式や数式を追加する方法を学習します。
 type: docs
 weight: 550
 url: /ja/net/programming-with-text/use-latex-script/
@@ -114,7 +114,7 @@ A: 「PDF ファイルで LaTeX スクリプトを使用する」チュートリ
 
 #### Q: このチュートリアルは、PDF ドキュメント内の数式に LaTeX スクリプトを使用するのにどのように役立ちますか?
 
-A: このチュートリアルは、Aspose.PDF for .NET を利用して、LaTeX スクリプトで記述された数式や公式を PDF ドキュメント内に含める方法をユーザーが理解するのに役立ちます。提供されているコード例に従うことで、ユーザーは複雑な数学コンテンツを含むドキュメントをシームレスに作成できます。
+A: このチュートリアルは、Aspose.PDF for .NET を利用して、LaTeX スクリプトで記述された数式や公式を PDF ドキュメント内に含める方法をユーザーが理解するのに役立ちます。提供されているコード例に従うことで、ユーザーは複雑な数学的コンテンツを含むドキュメントをシームレスに作成できます。
 
 #### Q: このチュートリアルを実行するために必要な前提条件は何ですか?
 

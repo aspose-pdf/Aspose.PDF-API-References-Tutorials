@@ -85,7 +85,7 @@ pdfDocument.save("updated_example.pdf");
 
 ## 結論
 
-在本教學中，我們學習如何使用 Aspose.PDF for Java 更新 PDF 中的書籤。這個強大的程式庫簡化了 PDF 文件的處理過程，並允許您增強 PDF 文件的導航和可用性。
+在本教學中，我們學習如何使用 Aspose.PDF for Java 更新 PDF 中的書籤。這個強大的程式庫簡化了處理 PDF 文件的過程，並允許您增強 PDF 文件的導航和可用性。
 
 ## 常見問題解答
 

@@ -1,7 +1,7 @@
 ---
 title: Textstrukturelement i PDF-fil
 linktitle: Textstrukturelement i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du lägger till textstrukturelement i PDF-fil med Aspose.PDF för .NET. Förbättra strukturen och tillgängligheten för dina PDF-filer.
 type: docs
 weight: 230
@@ -47,7 +47,7 @@ Vi har angett titeln och språket för det taggade PDF-dokumentet.
 Låt oss nu skaffa rotstrukturelementet i PDF-dokumentet.
 
 ```csharp
-//Skaffa rotstrukturelementet
+// Skaffa rotstrukturelementet
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

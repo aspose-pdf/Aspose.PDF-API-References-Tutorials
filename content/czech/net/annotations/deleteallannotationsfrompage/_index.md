@@ -92,7 +92,7 @@ A je to! Úspěšně jste odstranili všechny anotace ze stránky v dokumentu PD
 ## FAQ
 
 ### Mohu odstranit anotace ze všech stránek v PDF najednou?
- Ano, můžete procházet všechny stránky v dokumentu a použít`Annotations.Delete()` metoda ke každému.
+ Ano, můžete procházet všechny stránky v dokumentu a použít`Annotations.Delete()` metodu každému.
 
 ### Jaké typy anotací lze pomocí této metody odstranit?
 Tato metoda odstraní všechny anotace, včetně textu, zvýraznění, razítek a komentářů.

@@ -2,125 +2,142 @@
 title: الحصول على خصائص PDF
 linktitle: الحصول على خصائص PDF
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: دليل خطوة بخطوة للحصول على خصائص PDF مثل أبعاد المربع والدوران باستخدام Aspose.PDF لـ .NET.
+description: تعرف على كيفية استخراج خصائص PDF بكفاءة باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة مع أمثلة التعليمات البرمجية وأفضل الممارسات.
 type: docs
 weight: 100
 url: /ar/net/programming-with-pdf-pages/get-properties/
 ---
-في هذا البرنامج التعليمي، سنوضح لك عملية الحصول على خصائص ملف PDF خطوة بخطوة باستخدام Aspose.PDF لـ .NET. وسنشرح لك الكود المصدري المضمن بلغة C# وسنقدم لك دليلاً شاملاً لمساعدتك على فهم هذه الميزة وتنفيذها في مشاريعك الخاصة. وفي نهاية هذا البرنامج التعليمي، ستعرف كيفية الوصول إلى خصائص مختلفة لصفحة PDF مثل مربع الرسم ومربع القص ومربع القص وما إلى ذلك، باستخدام Aspose.PDF لـ .NET.
+## مقدمة
+
+عندما يتعلق الأمر بمعالجة ملفات PDF برمجيًا، فإن Aspose.PDF for .NET هي واحدة من تلك الأدوات الموثوقة التي تبرز. سواء كنت تبحث عن استخراج المعلومات أو تعديل المستندات أو مجرد قراءة خصائص PDF، توفر هذه المكتبة مجموعة من الوظائف لتسهيل مهمتك. في هذا الدليل، سنخوض بعمق في كيفية الحصول على خصائص PDF، وهي مهمة قد تبدو شاقة في البداية ولكنها تصبح سهلة باستخدام الأدوات المناسبة. لذا، استعد! سنستكشف إما التفاصيل الفنية أو الاحتمالات التي تأتي مع العمل مع ملفات PDF.
 
 ## المتطلبات الأساسية
-قبل أن تبدأ، تأكد من أن لديك ما يلي:
 
-- المعرفة الأساسية بلغة البرمجة C#
-- تم تثبيت Aspose.PDF لـ .NET في بيئة التطوير الخاصة بك
+قبل البدء في استخدام الكود، من الضروري التأكد من توفر كافة المكونات الضرورية في مكانها. سيساعدك هذا القسم على الاستعداد لبدء العمل باستخدام مكتبة Aspose.PDF.
 
-## الخطوة 1: تعيين دليل المستندات
-أولاً، عليك تحديد المسار إلى دليل المستندات الخاص بك. هذا هو موقع ملف PDF الذي تريد الحصول على خصائصه. استبدل "دليل المستندات الخاص بك" بالمسار المناسب.
+1. بيئة .NET: تأكد من أن لديك بيئة .NET صالحة للعمل. يمكنك استخدام Visual Studio أو أي بيئة تطوير متكاملة أخرى مناسبة.
+   
+2.  Aspose.PDF لـ .NET: يجب أن يكون لديك Aspose.PDF مثبتًا. يمكنك تنزيل المكتبة من[إصدارات Aspose PDF](https://releases.aspose.com/pdf/net/) صفحة.
+
+3. الفهم الأساسي للغة C#: سيكون من المفيد التعرف على برمجة C# لأننا سنكتب الكود بلغة C#.
+
+4. ملف PDF: تحتاج إلى ملف PDF نموذجي للعمل عليه. في هذا المثال، سنشير إلى "GetProperties.pdf".
+
+### إعداد مشروعك
+
+بمجرد إعداد أدواتك وملف PDF، إليك كيفية إعداد مشروعك:
+
+1. إنشاء مشروع جديد: افتح IDE الخاص بك وقم بإنشاء مشروع C# جديد.
+
+2. إضافة المراجع: قم بتضمين مجموعة Aspose.PDF. يمكنك القيام بذلك عبر NuGet Package Manager أو عن طريق إضافة مرجع إلى DLL مباشرةً.
+
+3.  قم بإعداد ملف PDF الخاص بك: ضع العينة "GetProperties.pdf" في دليل يمكن للكود الخاص بك الوصول إليه بسهولة، على سبيل المثال`"YOUR DOCUMENT DIRECTORY"`.
+
+## استيراد الحزم
+
+بمجرد اكتمال إعداد مشروعك، فإن أول شيء عليك القيام به هو استيراد المساحات الأساسية اللازمة. توفر مكتبة Aspose.PDF فئات مختلفة تسمح لك بالتفاعل مع مستندات PDF.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-## الخطوة 2: افتح مستند PDF
- بعد ذلك، تحتاج إلى فتح مستند PDF باستخدام`Document` فئة Aspose.PDF. تأكد من تحديد المسار الصحيح لملف PDF.
+تضمن لك هذه الخطوة البسيطة إمكانية الوصول إلى الفئات اللازمة لمعالجة المعلومات واستخراجها من ملف PDF بكفاءة.
+
+الآن، دعنا نقسم مهمة جلب خصائص PDF إلى خطوات قابلة للتنفيذ. سيرشدك هذا القسم خلال كل خطوة حتى تتمكن من متابعة العملية وفهم كيفية عملها بسهولة.
+
+## الخطوة 1: تحديد دليل المستندات
+
+الخطوة الأولى في رحلتنا هي تحديد مكان وجود مستند PDF الخاص بنا. نريد الإشارة إلى موقع "GetProperties.pdf".
 
 ```csharp
-Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
-```
-
-## الخطوة 3: الوصول إلى مجموعة الصفحات
- الآن يمكنك الوصول إلى مجموعة صفحات المستند باستخدام`Pages` ممتلكات`pdfDocument` هدف.
-
-```csharp
-PageCollection pageCollection = pdfDocument.Pages;
-```
-
-## الخطوة 4: انتقل إلى صفحة معينة
-يمكنك بعد ذلك الانتقال إلى صفحة معينة باستخدام فهرس الصفحة في المجموعة. في المثال أدناه، نصل إلى الصفحة الثانية (الفهرس 1).
-
-```csharp
-Page pdfPage = pageCollection[1];
-```
-
-## الخطوة 5: الحصول على خصائص الصفحة
- الآن يمكنك الحصول على الخصائص المختلفة لصفحة PDF، مثل مربع الفن، ومربع الاقتصاص، ومربع الاقتصاص، وما إلى ذلك، باستخدام الخصائص المقابلة لـ`pdfPage` هدف.
-
-```csharp
-Console.WriteLine("ArtBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
-Console.WriteLine("BleedBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.BleedBox.Height, pdf
-
-Page.BleedBox.Width, pdfPage.BleedBox.LLX, pdfPage.BleedBox.LLY, pdfPage.BleedBox.URX, pdfPage.BleedBox.URY);
-Console.WriteLine("CropBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.CropBox.Height, pdfPage.CropBox.Width, pdfPage.CropBox.LLX, pdfPage.CropBox.LLY, pdfPage.CropBox.URX, pdfPage.CropBox.URY);
-Console.WriteLine("MediaBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.MediaBox.Height, pdfPage.MediaBox.Width, pdfPage.MediaBox.LLX, pdfPage.MediaBox.LLY, pdfPage.MediaBox.URX, pdfPage.MediaBox.URY);
-Console.WriteLine("TrimBox: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.TrimBox.Height, pdfPage.TrimBox.Width, pdfPage.TrimBox.LLX, pdfPage.TrimBox.LLY, pdfPage.TrimBox.URX, pdfPage.TrimBox.URY);
-Console.WriteLine("Rect: Height={0}, Width={1}, LLX={2}, LLY={3}, URX={4}, URY={5}", pdfPage.Rect.Height, pdfPage.Rect.Width, pdfPage.Rect.LLX, pdfPage.Rect.LLY, pdfPage.Rect.URX, pdfPage.Rect.URY);
-Console.WriteLine("Page number: {0}", pdfPage.Number);
-Console.WriteLine("Rotate: {0}", pdfPage.Rotate);
-```
-
-### عينة من كود المصدر للحصول على الخصائص باستخدام Aspose.PDF لـ .NET 
-
-```csharp
-
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// فتح المستند
-Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
-// الحصول على مجموعة الصفحات
-PageCollection pageCollection = pdfDocument.Pages;
-// الحصول على صفحة معينة
-Page pdfPage = pageCollection[1];
-// الحصول على خصائص الصفحة
-System.Console.WriteLine("ArtBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
-System.Console.WriteLine("BleedBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.BleedBox.Height, pdfPage.BleedBox.Width, pdfPage.BleedBox.LLX, pdfPage.BleedBox.LLY, pdfPage.BleedBox.URX, pdfPage.BleedBox.URY);
-System.Console.WriteLine("CropBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.CropBox.Height, pdfPage.CropBox.Width, pdfPage.CropBox.LLX, pdfPage.CropBox.LLY, pdfPage.CropBox.URX, pdfPage.CropBox.URY);
-System.Console.WriteLine("MediaBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.MediaBox.Height, pdfPage.MediaBox.Width, pdfPage.MediaBox.LLX, pdfPage.MediaBox.LLY, pdfPage.MediaBox.URX, pdfPage.MediaBox.URY);
-System.Console.WriteLine("TrimBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.TrimBox.Height, pdfPage.TrimBox.Width, pdfPage.TrimBox.LLX, pdfPage.TrimBox.LLY, pdfPage.TrimBox.URX, pdfPage.TrimBox.URY);
-System.Console.WriteLine("Rect : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", pdfPage.Rect.Height, pdfPage.Rect.Width, pdfPage.Rect.LLX, pdfPage.Rect.LLY, pdfPage.Rect.URX, pdfPage.Rect.URY);
-System.Console.WriteLine("Page Number : {0}", pdfPage.Number);
-System.Console.WriteLine("Rotate : {0}", pdfPage.Rotate);
-
 ```
 
+يضمن هذا السطر من التعليمات البرمجية تحديد المكان الذي يمكن لـ Aspose العثور فيه على ملف PDF الذي نريد العمل معه.
+
+## الخطوة 2: افتح مستند PDF
+
+ بعد ذلك، سنفتح مستند PDF باستخدام`Document` من مكتبة Aspose.PDF. هذه خطوة بالغة الأهمية لأنها تقوم بتحميل ملف PDF إلى الذاكرة.
+
+```csharp
+// فتح المستند
+Document pdfDocument = new Document(dataDir + "GetProperties.pdf");
+```
+
+ من خلال تنفيذ هذا السطر، نقوم بإنشاء مثيل لـ`Document` الفئة التي تمثل ملف PDF الخاص بنا، مما يجعل جميع خصائصه قابلة للوصول.
+
+## الخطوة 3: الوصول إلى مجموعة الصفحات
+
+بعد فتح المستند، نحتاج إلى الوصول إلى الصفحات الموجودة داخل هذا المستند. يمكن أن يحتوي كل ملف PDF على عدة صفحات، لذا سنعمل مع مجموعة تحتوي على كل الصفحات.
+
+```csharp
+// الحصول على مجموعة الصفحات
+PageCollection pageCollection = pdfDocument.Pages;
+```
+
+ فكر في`PageCollection` كمؤشر يساعدنا على التنقل عبر الصفحات الموجودة في مستند PDF الخاص بنا.
+
+## الخطوة 4: الحصول على صفحة محددة
+
+الآن بعد أن أصبح لدينا إمكانية الوصول إلى صفحاتنا، حان الوقت للبحث بشكل أعمق. سنسترد صفحة معينة من المجموعة؛ في هذه الحالة، سنحصل على الصفحة الأولى.
+
+```csharp
+// الحصول على صفحة معينة
+Page pdfPage = pageCollection[1];
+```
+
+ تذكر أن هذا الفهرسة تعتمد على الصفر. لذا، إذا كنت تريد الوصول إلى الصفحة الأولى، فأنت بحاجة إلى فهرستها كـ`1`.
+
+## الخطوة 5: استرداد وعرض خصائص الصفحة
+
+الآن نأتي إلى الجزء المثير للاهتمام - استخراج خصائص الصفحة! تحتوي كل صفحة على العديد من الخصائص مثل ArtBox وBleedBox وCropBox وMediaBox وTrimBox التي تصف أبعادها وموقعها. دعنا نصل إلى هذه الخصائص ونعرضها.
+
+```csharp
+// الحصول على خصائص الصفحة
+System.Console.WriteLine("ArtBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.ArtBox.Height, pdfPage.ArtBox.Width, pdfPage.ArtBox.LLX, pdfPage.ArtBox.LLY, 
+    pdfPage.ArtBox.URX, pdfPage.ArtBox.URY);
+System.Console.WriteLine("BleedBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.BleedBox.Height, pdfPage.BleedBox.Width, pdfPage.BleedBox.LLX, pdfPage.BleedBox.LLY, 
+    pdfPage.BleedBox.URX, pdfPage.BleedBox.URY);
+System.Console.WriteLine("CropBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.CropBox.Height, pdfPage.CropBox.Width, pdfPage.CropBox.LLX, pdfPage.CropBox.LLY, 
+    pdfPage.CropBox.URX, pdfPage.CropBox.URY);
+System.Console.WriteLine("MediaBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.MediaBox.Height, pdfPage.MediaBox.Width, pdfPage.MediaBox.LLX, pdfPage.MediaBox.LLY, 
+    pdfPage.MediaBox.URX, pdfPage.MediaBox.URY);
+System.Console.WriteLine("TrimBox : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.TrimBox.Height, pdfPage.TrimBox.Width, pdfPage.TrimBox.LLX, pdfPage.TrimBox.LLY, 
+    pdfPage.TrimBox.URX, pdfPage.TrimBox.URY);
+System.Console.WriteLine("Rect : Height={0},Width={1},LLX={2},LLY={3},URX={4},URY={5}", 
+    pdfPage.Rect.Height, pdfPage.Rect.Width, pdfPage.Rect.LLX, pdfPage.Rect.LLY, 
+    pdfPage.Rect.URX, pdfPage.Rect.URY);
+System.Console.WriteLine("Page Number : {0}", pdfPage.Number);
+System.Console.WriteLine("Rotate : {0}", pdfPage.Rotate);
+```
+
+يؤدي هذا الجزء من التعليمات البرمجية عدة مهام عظيمة. فهو يصل إلى كل خاصية مرتبطة بأبعاد الصفحة واتجاهها ثم يطبع المعلومات على وحدة التحكم. وما تحصل عليه هو نظرة عامة على خصائص الصفحة التي يمكن أن تساعد في إجراء المزيد من التعديلات أو التحليلات.
+
 ## خاتمة
-تهانينا! لقد نجحت في الحصول على خصائص ملف PDF باستخدام Aspose.PDF لـ .NET. لقد تعلمت كيفية فتح مستند PDF، والانتقال إلى صفحة معينة، والحصول على خصائص مختلفة للصفحة، مثل مربعات الأبعاد والتدوير. يمكنك الآن استخدام هذه المعلومات لتخصيص التعامل مع ملفات PDF الخاصة بك بناءً على خصائصها.
 
-تأكد من مراجعة وثائق Aspose.PDF الرسمية لـ .NET للحصول على مزيد من المعلومات حول الميزات المتقدمة وإمكانيات التخصيص.
+والآن لديك دليل كامل حول كيفية الحصول على خصائص PDF باستخدام Aspose.PDF لـ .NET! لديك الآن المعرفة اللازمة لاستخراج المعلومات الحيوية من مستندات PDF دون عناء. سواء كنت تبحث عن تحليل أو إعداد تقارير أو مجرد تسجيل البيانات من ملفات PDF الخاصة بك، فإن هذه المكتبة القوية هي حليف موثوق به. من خلال إتقان هذه الخطوات، فأنت في طريقك إلى أن تصبح معالجًا محترفًا في التعامل مع ملفات PDF! لا تتردد في استكشاف المزيد من الميزات والوظائف التي يقدمها Aspose.PDF.
 
-### الأسئلة الشائعة
+## الأسئلة الشائعة
 
-#### س: كيف يمكنني الحصول على خصائص ملف PDF باستخدام Aspose.PDF لـ .NET؟
+### كيف يمكنني تثبيت Aspose.PDF لـ .NET؟  
+يمكنك تثبيته عبر NuGet Package Manager في Visual Studio أو تنزيله مباشرة من موقع Aspose.
 
-ج: للحصول على خصائص ملف PDF باستخدام Aspose.PDF لـ .NET، يمكنك اتباع الخطوات التالية:
+### هل يمكنني استخدام Aspose.PDF مجانًا؟  
+ نعم، تقدم Aspose نسخة تجريبية مجانية يمكنك الحصول عليها[هنا](https://releases.aspose.com/).
 
-1. قم بتعيين دليل المستند عن طريق تحديد المسار إلى ملف PDF الذي تريد استرداد خصائصه.
-2.  افتح مستند PDF باستخدام`Document` فئة Aspose.PDF، التي توفر المسار الصحيح لملف PDF.
-3.  الوصول إلى مجموعة صفحات المستند باستخدام`Pages` ممتلكات`pdfDocument` هدف.
-4. انتقل إلى صفحة محددة باستخدام فهرس الصفحة في المجموعة (تبدأ الفهرسة من 1).
-5.  احصل على الخصائص المختلفة لصفحة PDF، مثل ArtBox وBleedBox وCropBox وMediaBox وTrimBox وRect وPage Number وRotation، باستخدام الخصائص المقابلة لـ`pdfPage` هدف.
+### أين يمكنني العثور على وثائق Aspose.PDF؟  
+ يمكنك الرجوع إلى الوثائق على[توثيق Aspose.pdf](https://reference.aspose.com/pdf/net/).
 
-#### س: ما هي الخصائص المختلفة لصفحة PDF التي يمكنني استردادها باستخدام Aspose.PDF لـ .NET؟
+### كيف يمكنني الحصول على الدعم إذا واجهت مشاكل؟  
+ يمكنك زيارة منتدى Aspose للحصول على الدعم حيث يمكنك طرح الأسئلة حول مشكلاتك[هنا](https://forum.aspose.com/c/pdf/10).
 
-ج: يمكنك استرداد خصائص مختلفة لصفحة PDF باستخدام Aspose.PDF لـ .NET، مثل:
-
-- ArtBox: يمثل أبعاد العمل الفني للصفحة.
-- BleedBox: يمثل أبعاد نزيف الصفحة.
-- CropBox: يمثل أبعاد المحتوى المرئي للصفحة بعد القص.
-- MediaBox: يمثل أبعاد الوسائط المادية للصفحة.
-- TrimBox: يمثل أبعاد المحتوى المقصوص على الصفحة.
-- مستطيل: يمثل أبعاد المربع المحيط بالصفحة.
-- رقم الصفحة: يمثل رقم الصفحة في المستند.
-- تدوير: يمثل زاوية دوران الصفحة.
-
-#### س: كيف يمكنني الوصول إلى صفحة معينة في مستند PDF لاسترجاع خصائصها؟
-
- أ: للوصول إلى صفحة معينة في مستند PDF واسترجاع خصائصها، يمكنك استخدام`Pages` ممتلكات`pdfDocument` كائن للوصول إلى مجموعة صفحات المستند. بعد ذلك، يمكنك استخدام فهرس الصفحة في المجموعة للانتقال إلى الصفحة المطلوبة. على سبيل المثال، للوصول إلى الصفحة الثانية، يمكنك استخدام`pdfDocument.Pages[1]` (يبدأ الفهرس من 1).
-
-#### س: هل يمكنني إجراء عمليات على الخصائص المسترجعة، مثل تعديل أو تغيير حجم مربعات الصفحة؟
-
-ج: نعم، بمجرد استرداد خصائص صفحة PDF باستخدام Aspose.PDF for .NET، يمكنك إجراء عمليات مختلفة عليها. على سبيل المثال، يمكنك تعديل أبعاد مربعات الصفحة، أو تدوير الصفحة، أو استخدام المعلومات المستردة للمعالجة والتلاعب المخصصين بمستند PDF.
-
-#### س: هل يدعم Aspose.PDF لـ .NET استخراج الخصائص من ملفات PDF المشفرة أو المحمية بكلمة مرور؟
-
-ج: نعم، يدعم برنامج Aspose.PDF for .NET استخراج الخصائص من ملفات PDF المشفرة أو المحمية بكلمة مرور. طالما أنك توفر كلمة المرور الصحيحة لفتح مستند PDF، فيمكنك الوصول إلى خصائصه واسترجاعها باستخدام نفس النهج الموضح في البرنامج التعليمي.
+### هل هناك ترخيص مؤقت متاح؟  
+نعم يمكنك طلب ترخيص مؤقت للتقييم من خلال زيارة[هذا الرابط](https://purchase.aspose.com/temporary-license/).

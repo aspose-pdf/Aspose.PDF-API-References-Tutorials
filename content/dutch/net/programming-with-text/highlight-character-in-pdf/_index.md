@@ -225,7 +225,7 @@ A: De tutorial begeleidt u door het proces van het doorlopen van elke pagina van
 
 #### V: Kan ik het uiterlijk van de gemarkeerde karakters en segmenten aanpassen?
 
-A: Ja, u kunt het uiterlijk van de gemarkeerde tekens en segmenten aanpassen door de kleuren en stijlen te wijzigen die in de tekenbewerkingen worden gebruikt.
+A: Ja, u kunt het uiterlijk van de gemarkeerde tekens en segmenten aanpassen door de kleuren en stijlen te wijzigen die worden gebruikt bij de tekenbewerkingen.
 
 #### V: Hoe kan ik de aangepaste afbeelding met de gemarkeerde tekens opslaan?
 

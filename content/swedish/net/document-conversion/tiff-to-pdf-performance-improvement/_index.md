@@ -1,7 +1,7 @@
 ---
 title: Prestandaförbättring av TIFF till PDF
 linktitle: Prestandaförbättring av TIFF till PDF
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Konvertera effektivt TIFF-bilder till en PDF med Aspose.PDF för .NET. Lär dig steg-för-steg med prestandaoptimeringstips för att hantera stora bildfiler smidigt.
 type: docs
 weight: 310

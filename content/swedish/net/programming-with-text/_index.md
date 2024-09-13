@@ -54,7 +54,7 @@ Aspose.PDF:s "Programmering med text" tutorials för .NET erbjuder ett omfattand
 | [Sök och hämta textsida i PDF-fil](./search-and-get-text-page/) | Lär dig hur du söker och hämtar text från en specifik sida i PDF-fil med Aspose.PDF för .NET. |  
 | [Sök efter reguljära uttryck i PDF-fil](./search-regular-expression/) | Lär dig hur du söker och hämtar text med reguljära uttryck i PDF-fil med Aspose.PDF för .NET. |  
 | [Sök text och lägg till hyperlänk](./search-text-and-add-hyperlink/) | Lär dig hur du söker efter text i en PDF, lägger till hyperlänkar till den hittade texten och sparar det modifierade dokumentet med Aspose.PDF för .NET. |  
-| [Sök efter text och rita rektangel](./search-text-and-draw-rectangle/) | Lär dig hur du söker efter text i en PDF, ritar rektanglar runt den hittade texten och sparar det modifierade dokumentet med Aspose.PDF för .NET. |  
+| [Sök text och rita rektangel](./search-text-and-draw-rectangle/) | Lär dig hur du söker efter text i en PDF, ritar rektanglar runt den hittade texten och sparar det modifierade dokumentet med Aspose.PDF för .NET. |  
 | [Sök textsegmentsida i PDF-fil](./search-text-segments-page/) | Lär dig hur du söker efter textsegment på en sida i PDF-fil och hämtar deras egenskaper med Aspose.PDF för .NET. |  
 | [Sök text med Dot Net Regex](./search-text-with-dot-net-regex/) | Lär dig hur du söker efter text med reguljära .NET-uttryck i ett PDF-dokument med Aspose.PDF för .NET. |   
 | [Ange radavstånd i PDF-fil](./specify-line-spacing/) | Lär dig hur du anger radavstånd i PDF-filen med Aspose.PDF för .NET. |  

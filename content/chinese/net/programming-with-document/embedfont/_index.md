@@ -142,7 +142,7 @@ Aspose.PDF for .NET 是一个功能强大的库，可以简化 PDF 操作，包�
 是的，您可以使用 Aspose.PDF 库将字体嵌入现有 PDF 文件中，如本教程所示。
 
 ### Aspose.PDF 有免费试用版吗？
-是的，您可以从以下位置下载 Aspose.PDF 的免费试用版[网站](https://releases.aspose.com/).
+是的，您可以从以下网址下载 Aspose.PDF 的免费试用版[网站](https://releases.aspose.com/).
 
 ### 在哪里可以找到对 Aspose.PDF 的支持？
 您可以在以下位置寻求支持并提出问题[Aspose 论坛](https://forum.aspose.com/c/pdf/10).

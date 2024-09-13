@@ -145,7 +145,7 @@ row1.Cells.Add();
 row1.Cells[1].Paragraphs.Add(TitleText);
 // تعيين المحاذاة الرأسية لمحتويات الصف على أعلى
 row1.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-// إنشاء صفوف في الجدول ثم خلايا في الصفوف
+//إنشاء صفوف في الجدول ثم خلايا في الصفوف
 Aspose.Pdf.Row SecondRow = table1.Rows.Add();
 SecondRow.Cells.Add();
 // تعيين قيمة امتداد الصف للصف الثاني على 2

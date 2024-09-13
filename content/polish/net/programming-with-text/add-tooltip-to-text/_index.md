@@ -32,7 +32,7 @@ using Aspose.Pdf.Text;
  W kodzie znajdź linię, która mówi`string dataDir = "YOUR DOCUMENT DIRECTORY";` i zastąpić`"YOUR DOCUMENT DIRECTORY"` ze ścieżką do katalogu, w którym przechowywane są Twoje dokumenty.
 
 ## Krok 4: Utwórz przykładowy dokument z tekstem
- Utwórz nowy`Document` obiekt i dodaj strony z fragmentami tekstu. W podanym kodzie do dokumentu dodawane są dwa fragmenty tekstu z odpowiednim tekstem podpowiedzi.
+ Utwórz nowy`Document`obiekt i dodaj strony z fragmentami tekstu. W podanym kodzie do dokumentu dodawane są dwa fragmenty tekstu z odpowiednim tekstem podpowiedzi.
 
 ```csharp
 Document doc = new Document();
@@ -98,7 +98,7 @@ doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to disp
 doc.Save(outputFile);
 // Otwórz dokument z tekstem
 Document document = new Document(outputFile);
-// Utwórz obiekt TextAbsorber, aby znaleźć wszystkie frazy pasujące do wyrażenia regularnego
+//Utwórz obiekt TextAbsorber, aby znaleźć wszystkie frazy pasujące do wyrażenia regularnego
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
 // Zaakceptuj absorber dla stron dokumentu
 document.Pages.Accept(absorber);
@@ -169,7 +169,7 @@ using Aspose.Pdf.Text;
 
 #### P: Jak dodać podpowiedzi do fragmentów tekstu?
 
- A: W kroku 6 przejdziesz przez wyodrębnione fragmenty tekstu i utworzysz niewidoczne przyciski w ich pozycjach. Tekst podpowiedzi jest przypisany do`AlternateName` własność`ButtonField`który zostanie dodany do formularza dokumentu.
+ A: W kroku 6 przejdziesz przez wyodrębnione fragmenty tekstu i utworzysz niewidoczne przyciski w ich pozycjach. Tekst podpowiedzi jest przypisany do`AlternateName` własność`ButtonField`, który zostanie dodany do formularza dokumentu.
 
 #### P: Jak powtórzyć proces dla dodatkowych fragmentów tekstu z długimi etykietami?
 

@@ -102,7 +102,7 @@ Bitmap b = new Bitmap(mystream);
 
 ## ステップ7: PDF文書に新しいページを追加する
 
-TIFF ファイルごとに、PDF ドキュメントに新しいページを追加します。このページには、対応する画像が格納されます。
+各 TIFF ファイルごとに、PDF ドキュメントに新しいページを追加します。このページには、対応する画像が格納されます。
 
 ```csharp
 Aspose.Pdf.Page currpage = doc.Pages.Add();

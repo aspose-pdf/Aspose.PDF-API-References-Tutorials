@@ -102,7 +102,7 @@ document. Save(outFile);
 
 Nous avons enregistré le document PDF modifié dans le répertoire spécifié.
 
-### Exemple de code source pour Tag Image In Existing PDF avec Aspose.PDF pour .NET 
+### Exemple de code source pour l'image de balise dans un PDF existant à l'aide d'Aspose.PDF pour .NET 
 
 ```csharp
 

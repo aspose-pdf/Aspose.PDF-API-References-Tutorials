@@ -96,7 +96,7 @@ A: チュートリアルでは、プロセスを段階的に説明します。
 
 A: このチュートリアルでは、PDF ドキュメント全体からすべてのテキストを削除することに重点を置いています。特定の領域からテキストを選択的に削除する場合は、アプローチを変更し、より複雑なロジックを使用して特定のテキスト フラグメントを識別して削除する必要があります。
 
-####  Q:`TextFragmentAbsorber` work to remove text?
+#### Q:`TextFragmentAbsorber` work to remove text?
 
  A:`TextFragmentAbsorber`Aspose.PDFライブラリが提供するクラスで、PDF文書からテキストの断片を吸収することができます。`RemoveAllText`方法の`TextFragmentAbsorber`クラスを使用すると、吸収されたテキストフラグメントをすべてドキュメントから削除できます。
 

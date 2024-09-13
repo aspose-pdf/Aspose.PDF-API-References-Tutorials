@@ -1,7 +1,7 @@
 ---
 title: Bädda in teckensnitt i PDF-fil med delmängdsstrategi
 linktitle: Bädda in teckensnitt med delmängdsstrategi
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du bäddar in teckensnitt i en PDF-fil med Subset Strategy med Aspose.PDF för .NET. Optimera din PDF-storlek genom att bädda in endast nödvändiga tecken.
 type: docs
 weight: 130
@@ -74,7 +74,7 @@ doc.FontUtilities.SubsetFonts(FontSubsetStrategy.SubsetAllFonts);
 
  Genom att använda`SubsetAllFonts`, ser vi till att alla teckensnitt som används i dokumentet är inbäddade, men endast de tecken som faktiskt används kommer att inkluderas.
 
-## Steg 4: Endast deluppsättning inbäddade teckensnitt
+## Steg 4: Endast underuppsättning inbäddade teckensnitt
 
 I vissa fall kanske du bara vill bädda in de typsnitt som redan är inbäddade i dokumentet. Detta är användbart om du vill behålla det ursprungliga utseendet utan att lägga till nya teckensnitt.
 

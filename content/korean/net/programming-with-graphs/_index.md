@@ -13,11 +13,11 @@ Aspose.PDF for .NET의 그래픽이 포함된 프로그래밍 튜토리얼은 �
 ## 튜토리얼
 | 제목 | 설명 |
 | --- | --- | 
-| [PDF 파일에 도면 추가](./add-drawing/) | Aspose.PDF for .NET을 사용하여 PDF 파일에 그림을 추가하는 방법을 알아보세요. 이 단계별 가이드를 따라 그림 기능이 있는 매력적인 PDF 문서를 만드세요. |  
-| [그라디언트 채우기로 그림 추가](./add-drawing-with-gradient-fill/) | Aspose.PDF for .NET으로 그라데이션 채우기가 있는 그림을 추가하는 방법을 알아보세요. 매력적인 PDF 문서를 만드는 단계별 튜토리얼. |  
-| [PDF 파일에 라인 객체 추가](./add-line-object/) | Aspose.PDF for .NET을 사용하여 PDF 파일에 사용자 정의 선 객체를 추가하는 방법을 알아보세요. |  
-| [제어 사각형 Z 순서](./control-rectangle-z-order/) | Aspose.PDF for .NET을 사용하여 PDF 파일에서 사각형의 Z 순서를 제어하는 방법을 알아보세요.  |  
-| [채워진 사각형 만들기](./create-filled-rectangle/) | Aspose.PDF for .NET으로 채워진 사각형을 만드는 방법을 알아보세요. 채우기 색상을 사용자 정의하는 단계별 가이드. |  
-| [알파 색상으로 사각형 만들기](./create-rectangle-with-alpha-color/) | Aspose.PDF for .NET을 사용하여 투명한 색상으로 사각형을 만드는 방법을 알아보세요. 투명도를 사용자 정의하는 단계별 가이드. |  
-| [대시 길이](./dash-length/) | Aspose.PDF for .NET으로 대시 길이를 설정하는 방법을 알아보세요. 대시 패턴을 사용자 정의하는 단계별 가이드. |  
-| [선 그리기](./drawing-line/) | Aspose.PDF for .NET을 사용하여 페이지에 선을 그리는 방법을 알아보세요. 사용자 지정 선을 만드는 단계별 가이드. |  
+| [PDF 파일에 도면 추가](./add-drawing/) | Aspose.PDF for .NET을 사용하여 PDF 파일에 도면을 추가하는 방법을 알아보세요. 이 단계별 가이드는 색상 설정, 모양 추가, PDF 저장을 다룹니다. |  
+| [그라디언트 채우기로 그림 추가](./add-drawing-with-gradient-fill/) | 이 단계별 가이드를 통해 .NET용 Aspose.PDF를 사용하여 PDF에 멋진 그라데이션 그림을 추가하는 방법을 알아보세요. 문서의 시각적 효과를 향상시키는 데 적합합니다. |  
+| [PDF 파일에 라인 객체 추가](./add-line-object/) | 이 단계별 튜토리얼에서 Aspose.PDF for .NET을 사용하여 PDF 파일에 라인 객체를 추가하는 방법을 알아보세요. 초보자에게 완벽합니다. |  
+| [제어 사각형 Z 순서](./control-rectangle-z-order/) | 이 자세한 단계별 튜토리얼에서 Aspose.PDF for .NET을 사용하여 PDF에서 사각형 Z-순서를 제어하는 방법을 알아보세요. PDF 문서를 향상시키고자 하는 개발자에게 이상적입니다. |  
+| [채워진 사각형 만들기](./create-filled-rectangle/) | 이 단계별 튜토리얼을 통해 Aspose.PDF for .NET을 사용하여 PDF에서 채워진 사각형을 만드는 방법을 알아보세요. 모든 레벨의 개발자에게 완벽합니다. |  
+| [알파 색상으로 사각형 만들기](./create-rectangle-with-alpha-color/) | 이 단계별 튜토리얼을 통해 Aspose.PDF for .NET을 사용하여 PDF에서 투명한 사각형을 만드는 방법을 알아보세요. 알파 색상으로 PDF를 손쉽게 강화하세요. |  
+| [대시 길이](./dash-length/) | Aspose.PDF for .NET을 사용하여 PDF에서 라인 대시 패턴을 사용자 지정하는 방법을 단계별 가이드로 알아보세요. 문서에 스타일을 추가하는 데 완벽합니다. |  
+| [선 그리기](./drawing-line/) | Aspose.PDF for .NET을 사용하여 PDF 문서에 선을 그리는 방법을 알아보세요. 이 단계별 가이드는 문서 설정, 선 추가, 파일 저장을 다룹니다. |  

@@ -25,28 +25,28 @@ description: 이 리소스는 문서 프로그래밍을 위한 Aspose.PDF for .N
 | [PDF 파일에 글꼴 삽입](./embedfont/) | 이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF 파일에 글꼴을 임베드하는 방법을 알아보세요. 모든 기기에서 문서가 올바르게 표시되는지 확인하세요. |  
 | [Subset 전략을 사용하여 PDF 파일에 글꼴 포함](./embedfontsusingsubsetstrategy/) | Aspose.PDF for .NET을 사용하여 Subset Strategy로 PDF 파일에 글꼴을 임베드하는 방법을 알아보세요. 필요한 문자만 임베드하여 PDF 크기를 최적화하세요. |  
 | [PDF 문서 생성 중 글꼴 포함](./embedfontwhiledoccreation/) | 이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF 문서에 글꼴을 임베드하는 방법을 알아보세요. PDF의 모양을 향상시키세요. |  
-| [PDF 파일에서 주석을 평평하게 만들기](./flattenannotation/) | Aspose.PDF for .NET을 사용하여 PDF 파일의 주석을 평면화하는 방법을 알아보세요. 주석을 보존하고 실수로 변경하는 것을 방지하세요. |  
-| [PDF 파일에 모든 글꼴 가져오기](./getallfonts/) | 이 단계별 가이드와 예제 코드를 통해 Aspose.PDF for .NET을 사용하여 PDF 파일에서 사용된 모든 글꼴을 프로그래밍 방식으로 가져오는 방법을 알아보세요. |  
+| [PDF 파일에서 주석을 평평하게 만들기](./flattenannotation/) | 이 가이드에서 Aspose.PDF for .NET을 사용하여 PDF 파일의 주석을 평면화하는 방법을 알아보세요. 자세한 튜토리얼로 PDF 관리 프로세스를 간소화하세요. |  
+| [PDF 파일에 모든 글꼴 가져오기](./getallfonts/) | 이 단계별 튜토리얼에서 Aspose.PDF for .NET을 사용하여 PDF 파일에서 모든 글꼴을 추출하는 방법을 알아보세요. 개발자와 PDF 애호가에게 완벽합니다. |  
 | [문서 가져오기 창](./getdocumentwindow/) | .NET용 Aspose.PDF의 GetDocumentWindow 기능을 사용하여 PDF 문서의 창 속성에 대한 정보를 검색하는 방법을 알아보세요. |  
 | [PDF 파일에서 파일 정보 가져오기](./getfileinfo/) | Aspose.PDF for .NET의 PDF 파일 기능에서 GetFileInfo를 사용하여 PDF 문서에 대한 메타데이터 정보를 검색하는 방법을 알아보세요. |  
 | [글꼴 대체에 대한 경고 받기](./getwarningsforfontsubstitution/) | Aspose.PDF for .NET의 GetWarningsForFontSubstitution 기능을 사용하여 PDF 문서를 열 때 글꼴 대체 경고를 감지하는 방법을 알아보세요. |  
-| [XMP 메타데이터 가져오기](./getxmpmetadata/) | C# 소스 코드를 사용하여 .NET용 Aspose.PDF의 GetXmpMetadata 기능을 사용하여 PDF 문서에서 XMP 메타데이터를 추출하는 방법을 알아보세요. |  
+| [XMP 메타데이터 가져오기](./getxmpmetadata/) | 이 단계별 가이드에서 Aspose.PDF for .NET을 사용하여 PDF에서 XMP 메타데이터를 추출하는 방법을 알아보세요. PDF 문서에서 귀중한 통찰력을 쉽게 얻으세요. |  
 | [글꼴 대체에 대한 경고 받기](./getwarningsforfontsubstitution/) | Aspose.PDF for .NET의 GetWarningsForFontSubstitution 기능을 사용하여 PDF 문서를 열 때 글꼴 대체 경고를 감지하는 방법을 알아보세요. |  
 | [PDF 파일에서 확대/축소 계수 가져오기](./getzoomfactor/) | 이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF 파일의 확대/축소 비율을 구하는 방법을 알아보세요. |  
-| [TOC에서 페이지 번호 숨기기](./hidepagenumbersintoc/) | 이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 목차에서 페이지 번호를 숨기는 방법을 알아보세요. |  
-| [중복 스트림 링크](./linkduplicatestreams/) | 이 단계별 가이드를 통해 Aspose.PDF for .NET 중복 스트림 링크 기능을 사용하여 PDF 문서를 최적화하는 방법을 알아보세요. |  
-| [PDF 문서 최적화](./optimizedocument/) | 웹용 PDF 문서 최적화는 사용자 경험에 필수적입니다. 이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 이를 수행하는 방법을 알아보세요. |  
-| [PDF 파일에서 파일 크기 최적화](./optimizefilesize/) | 이 단계별 가이드를 통해 Aspose.PDF for .NET으로 PDF 파일의 파일 크기를 최적화하는 방법을 알아보세요. |  
-| [PDF 파일에서 사용하지 않는 객체 제거](./removeunusedobjects/) | 이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF 파일에서 사용되지 않는 객체를 제거하는 방법을 알아보세요. |  
-| [사용하지 않는 스트림 제거](./removeunusedstreams/) | Aspose.PDF for .NET을 사용하여 PDF 파일에서 사용하지 않는 스트림을 제거하는 방법을 알아보세요. 단계별 가이드입니다. |  
-| [기본 글꼴 설정](./setdefaultfont/) | 이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF 문서의 기본 글꼴을 설정하는 방법을 알아보세요. |  
-| [만료일 설정](./setexpirydate/) | 이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF 문서에 만료 날짜를 설정하는 방법을 알아보세요. |  
-| [PDF 파일에 파일 정보 설정](./setfileinfo/) | 이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF 파일에 파일 정보를 설정하는 방법을 알아보세요. |  
-| [인쇄 대화 상자의 속성 설정](./setpropertiesforprintdialog/) | 단계별 가이드를 사용하여 .NET용 Aspose.PDF의 인쇄 대화 상자에 대한 속성을 설정하는 방법을 알아보세요. |  
-| [PDF 파일에 XMP 메타데이터 설정](./setxmpmetadata/) | Aspose.PDF for .NET을 사용하여 PDF 파일에 XMPMetadata를 설정하는 방법을 알아보세요. 이 단계별 가이드를 따르세요. |  
-| [PDF 파일에서 확대/축소 요소 설정](./setzoomfactor/) | Aspose.PDF for .NET을 사용하여 PDF 파일의 확대/축소 비율을 설정하는 방법을 단계별 가이드를 통해 알아보세요. |  
-| [PDF 문서 축소](./shrinkdocuments/) | 이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF 문서를 축소하는 방법을 알아보세요.  |  
-| [글꼴 임베드 해제 및 PDF 파일 최적화](./unembedfonts/) | Aspose.PDF for .NET을 사용하여 Unembed Fonts를 얻고 PDF 파일을 최적화하는 방법을 알아보세요. 단계별 가이드. |  
-| [PDF AB 표준 검증](./validatepdfabstandard/) | 단계별 가이드와 코드 예제를 통해 Aspose.PDF for .NET을 사용하여 PDFABStandard에 따라 PDF 문서의 유효성을 검사하는 방법을 알아보세요. |  
-| [PDF 파일 검증 표준](./validatepdfastandard/) | 이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF 파일의 PDFAStandard 유효성을 검사하는 방법을 알아보세요. |  
-| [PDF UA 표준 검증](./validatepdfuastandard/) | C# 코드를 사용하여 PDFUAstandard를 검증하기 위해 .NET용 Aspose.PDF를 사용하는 방법을 알아보세요. 단계별 가이드. |  
+| [TOC에서 페이지 번호 숨기기](./hidepagenumbersintoc/) | Aspose.PDF for .NET을 사용하여 목차에서 페이지 번호를 숨기는 방법을 알아보세요. 코드 예제가 있는 이 자세한 가이드를 따라 전문적인 PDF를 만드세요. |  
+| [중복 스트림 링크](./linkduplicatestreams/) | Aspose.PDF for .NET을 사용하여 PDF 문서에서 중복 스트림을 연결하는 방법을 알아보세요. 더 나은 성능과 파일 크기를 위해 PDF를 최적화하세요. |  
+| [PDF 문서 최적화](./optimizedocument/) | 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF 문서를 최적화하는 방법을 알아보세요. 파일 크기와 복잡성을 줄여 웹 성능을 향상하세요. |  
+| [PDF 파일에서 파일 크기 최적화](./optimizefilesize/) | 이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF 파일 크기를 최적화하는 방법을 알아보세요. 품질을 잃지 않고 파일 크기를 줄이세요. |  
+| [PDF 파일에서 사용하지 않는 객체 제거](./removeunusedobjects/) | Aspose.PDF for .NET을 사용하여 사용되지 않는 객체를 제거하여 PDF 파일을 최적화하는 방법을 알아보세요. 파일 크기를 줄이고 성능을 개선하는 단계별 가이드입니다. |  
+| [사용하지 않는 스트림 제거](./removeunusedstreams/) | Aspose.PDF for .NET을 사용하여 PDF 파일에서 사용되지 않는 스트림을 제거하고 파일 크기와 성능을 최적화하는 방법을 알아보세요. |  
+| [기본 글꼴 설정](./setdefaultfont/) | 이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF 파일에 기본 글꼴을 설정하는 방법을 알아보세요. PDF 문서를 향상시키고자 하는 개발자에게 완벽합니다. |  
+| [만료일 설정](./setexpirydate/) | Aspose.PDF for .NET을 사용하여 PDF 파일에 만료일을 설정하는 방법을 알아보세요. 이 단계별 가이드로 문서 보안을 강화하세요. |  
+| [PDF 파일에 파일 정보 설정](./setfileinfo/) | 이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF 문서에서 파일 정보를 설정하는 방법을 알아보세요. 메타데이터로 PDF를 쉽게 강화하세요. |  
+| [인쇄 대화 상자의 속성 설정](./setpropertiesforprintdialog/) | Aspose.PDF for .NET으로 PDF 생성의 잠재력을 잠금 해제하세요. 이 가이드는 인쇄 속성을 손쉽게 설정하는 데 도움이 됩니다. |  
+| [PDF 파일에 XMP 메타데이터 설정](./setxmpmetadata/) | Aspose.PDF for .NET을 사용하여 PDF 파일에 XMP 메타데이터를 설정하는 방법을 알아보세요. 이 단계별 가이드는 문서 설정부터 저장까지 전체 프로세스를 안내합니다. |  
+| [PDF 파일에서 확대/축소 요소 설정](./setzoomfactor/) | Aspose.PDF for .NET을 사용하여 PDF 파일에서 확대/축소 비율을 설정하는 방법을 알아보세요. 이 단계별 가이드로 사용자 경험을 향상하세요. |  
+| [PDF 문서 축소](./shrinkdocuments/) | 이 단계별 가이드에서 Aspose.PDF for .NET을 사용하여 PDF 문서를 축소하는 방법을 알아보세요. PDF 리소스를 최적화하고 품질을 떨어뜨리지 않고 파일 크기를 줄이세요.  |  
+| [글꼴 임베드 해제 및 PDF 파일 최적화](./unembedfonts/) | 이 단계별 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 글꼴을 포함하고 있는 항목을 해제하고 PDF 파일을 최적화하는 방법을 알아봅니다. |  
+| [PDF AB 표준 검증](./validatepdfabstandard/) | 이 단계별 튜토리얼에서 Aspose.PDF for .NET을 사용하여 PDF/A-1b 표준에 대한 PDF의 유효성을 검사하는 방법을 알아보세요. 장기 보관을 위한 규정 준수를 보장하세요. |  
+| [PDF 파일 검증 표준](./validatepdfastandard/) | 이 포괄적인 단계별 튜토리얼을 통해 Aspose.PDF for .NET을 사용하여 PDF 파일을 PDF/A-1a 표준에 따라 검증하는 방법을 알아보세요. |  
+| [PDF UA 표준 검증](./validatepdfuastandard/) | 단계별 가이드와 자세한 설명을 통해 Aspose.PDF for .NET을 사용하여 PDF/UA 접근성 표준에 대한 PDF의 유효성을 검사하는 방법을 알아보세요. |  

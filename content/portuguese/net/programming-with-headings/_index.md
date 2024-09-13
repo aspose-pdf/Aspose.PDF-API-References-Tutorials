@@ -13,4 +13,4 @@ Explore os recursos do Aspose.PDF para .NET com tutoriais dedicados. Aprenda a t
 ## Tutoriais
 | Título | Descrição |
 | --- | --- | 
-| [Aplicar estilo numérico em arquivo PDF](./apply-number-style/) | Aprenda como aplicar um estilo de numeração a títulos em arquivo PDF usando Aspose.PDF para .NET. Guia passo a passo. |   
+| [Aplicar estilo numérico em arquivo PDF](./apply-number-style/) | Aprenda a aplicar diferentes estilos numéricos (numerais romanos, alfabéticos) a títulos em um PDF usando o Aspose.PDF para .NET com este guia passo a passo. |   

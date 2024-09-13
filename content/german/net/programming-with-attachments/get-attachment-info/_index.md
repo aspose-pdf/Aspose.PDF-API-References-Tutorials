@@ -56,7 +56,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "GetAttachmentInfo.pdf");
 ```
 
- Hier erstellen wir eine neue Instanz des`Document` Klasse und übergeben Sie den Pfad unserer PDF-Datei. Dies ermöglicht uns, mit dem Inhalt der PDF-Datei zu interagieren.
+ Hier erstellen wir eine neue Instanz des`Document` Klasse und übergeben Sie den Pfad unserer PDF-Datei. Dies ermöglicht uns, mit dem Inhalt des PDF zu interagieren.
 
 ## Schritt 3: Auf eingebettete Dateien zugreifen
 

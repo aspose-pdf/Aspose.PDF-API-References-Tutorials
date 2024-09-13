@@ -30,7 +30,7 @@ using Aspose.Pdf;
  Kodda şu satırı bulun:`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` Belgelerinizin saklandığı dizinin yolunu içeren.
 
 ## Adım 4: Mevcut PDF belgesini yükleyin
- Mevcut bir PDF belgesini kullanarak yükleyin`Document` yapıcı ve giriş PDF dosyasına giden yolu geçirme.
+ Mevcut bir PDF belgesini kullanarak yükleyin`Document`yapıcı ve giriş PDF dosyasına giden yolu geçirme.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
@@ -129,7 +129,7 @@ using Aspose.Pdf;
 
 #### S: Güncellenen PDF belgesini nasıl kaydederim?
 
- A: 7. Adımda şunu kullanacaksınız:`Save` yöntemi`Document`Güncellenen PDF belgesini kaydetmek için çıktı dosya yolunu belirten nesne.
+ A: 7. Adımda şunu kullanacaksınız:`Save` yöntemi`Document` Güncellenen PDF belgesini kaydetmek için çıktı dosya yolunu belirten nesne.
 
 #### S: PDF belgesine yazı tiplerini yerleştirmenin önemi nedir?
 

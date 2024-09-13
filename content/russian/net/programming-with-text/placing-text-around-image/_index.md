@@ -145,7 +145,7 @@ row1.Cells.Add();
 row1.Cells[1].Paragraphs.Add(TitleText);
 // Установить вертикальное выравнивание содержимого строки по верхнему краю
 row1.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-// Создайте строки в таблице, а затем ячейки в строках.
+//Создайте строки в таблице, а затем ячейки в строках.
 Aspose.Pdf.Row SecondRow = table1.Rows.Add();
 SecondRow.Cells.Add();
 // Установите значение диапазона строк для второй строки как 2

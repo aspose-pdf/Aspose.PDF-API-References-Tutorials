@@ -2,24 +2,64 @@
 title: Fájlinformációk beszerzése PDF fájlban
 linktitle: Fájlinformációk beszerzése PDF fájlban
 second_title: Aspose.PDF for .NET API Reference
-description: Ismerje meg az Aspose.PDF for .NET GetFileInfo PDF fájlban funkciójának használatát a PDF-dokumentum metaadatainak lekéréséhez.
+description: Ismerje meg, hogyan használhatja az Aspose.PDF for.NET-hez készült GetFileInfo PDF fájlban funkcióját a PDF-dokumentum metaadatainak lekéréséhez.
 type: docs
 weight: 180
 url: /hu/net/programming-with-document/getfileinfo/
 ---
- Az Aspose.PDF for .NET egy népszerű PDF-manipulációs könyvtár, amely lehetővé teszi a fejlesztők számára, hogy PDF-fájlokat hozzanak létre, szerkesszenek és konvertáljanak .NET-alkalmazásaikban. A könyvtár által kínált szolgáltatások egyike a PDF-dokumentumok metaadataival kapcsolatos információk lekérése. Ez az oktatóanyag végigvezeti Önt a használatának lépésein`GetFileInfo` Az Aspose.PDF for .NET szolgáltatása a PDF-dokumentum metaadataival kapcsolatos információk lekéréséhez.
+## Bevezetés
 
-## 1. lépés: Telepítse az Aspose.PDF for .NET fájlt
+Gondolkozott már azon, milyen titkok rejlenek egy PDF-fájlban? Legyen szó a szerzőről, a létrehozás dátumáról vagy akár a kulcsszavakról, a PDF-dokumentumok gyakran tartalmaznak értékes metaadatokat, amelyek kulcsfontosságúak lehetnek a különböző alkalmazások számára. Ebben az oktatóanyagban megvizsgáljuk, hogyan lehet fájlinformációkat kinyerni PDF-ből az Aspose.PDF for .NET használatával. Ez a nagy teljesítményű könyvtár lehetővé teszi a fejlesztők számára, hogy könnyedén kezeljék a PDF fájlokat, így sokak számára ideális választás. Tehát, ragadja meg kódoló kalapját, és merüljön el a PDF-metaadat-kinyerés világában!
 
- Az Aspose.PDF for .NET használatához .NET-alkalmazásaiban először telepítenie kell a könyvtárat. A könyvtár legújabb verzióját letöltheti a[Aspose.PDF .NET letöltési oldalhoz](https://releases.aspose.com/pdf/net).
+## Előfeltételek
 
-Miután letöltötte a könyvtárat, bontsa ki a ZIP-fájl tartalmát egy mappába a számítógépén. Ezután hozzá kell adnia egy hivatkozást az Aspose.PDF for .NET DLL-hez a .NET projektben.
+Mielőtt belevágnánk a kódba, néhány dolgot meg kell határoznia:
 
-## 2. lépés: Töltse be a PDF-dokumentumot
+1. Visual Studio: Győződjön meg arról, hogy a Visual Studio telepítve van a gépen. Ez lesz a fejlesztési környezetünk.
+2.  Aspose.PDF for .NET: Le kell töltenie és telepítenie kell az Aspose.PDF könyvtárat. Beszerezheti a[letöltési link](https://releases.aspose.com/pdf/net/).
+3. Alapvető C# ismerete: A C# programozás ismerete segít jobban megérteni a kódrészleteket.
 
- Miután telepítette az Aspose.PDF for .NET fájlt, és hozzáadott egy hivatkozást a DLL-re a .NET projektben, elkezdheti használni a`GetFileInfo` funkció a PDF-dokumentum metaadataival kapcsolatos információk lekéréséhez.
+## Csomagok importálása
 
-A funkció használatának első lépése annak a PDF-dokumentumnak a betöltése, amelyről információkat szeretne lekérni. Ehhez a következő kódot használhatja:
+A kezdéshez importálnunk kell a szükséges csomagokat. Nyissa meg C#-projektjét a Visual Studióban, és adjon hozzá hivatkozást az Aspose.PDF könyvtárhoz. Ezt a NuGet Package Manager használatával teheti meg:
+
+1. Kattintson a jobb gombbal a projektre a Solution Explorerben.
+2. Válassza a "NuGet-csomagok kezelése" lehetőséget.
+3. Keresse meg az "Aspose.PDF" kifejezést, és telepítse.
+
+Miután telepítette a könyvtárat, elkezdheti írni a kódot.
+
+## 1. lépés: Állítsa be projektjét
+
+### Hozzon létre egy új projektet
+
+Először is hozzunk létre egy új C# projektet a Visual Studióban:
+
+1. Nyissa meg a Visual Studio-t, és válassza az "Új projekt létrehozása" lehetőséget.
+2. Válassza a „Konzolalkalmazás (.NET-keretrendszer)” lehetőséget, majd kattintson a „Tovább” gombra.
+3.  Nevezze el projektjét (pl.`PDFFileInfoExtractor`), majd kattintson a "Létrehozás" gombra.
+
+### Adja hozzá az Aspose.PDF hivatkozást
+
+Most, hogy a projekt be van állítva, hozzá kell adnia az Aspose.PDF hivatkozást:
+
+1. Kattintson a jobb gombbal a projektre a Solution Explorerben.
+2. Válassza a "Hozzáadás" > "Referencia" lehetőséget.
+3. A Referenciakezelőben keresse meg és jelölje be az Aspose.PDF fájlt, majd kattintson az "OK" gombra.
+
+## 2. lépés: Írja be a kódot
+
+### Inicializálja a dokumentumot
+
+ Most írjuk meg a kódot a PDF-dokumentum megnyitásához és az információinak kibontásához. Kezdje azzal, hogy hozzáadja a következő direktívát az oldal tetején`Program.cs` fájl:
+
+```csharp
+using System.IO;
+using Aspose.Pdf;
+using System;
+```
+
+Ezután inicializáljuk a dokumentumot:
 
 ```csharp
 // A PDF dokumentum elérési útja
@@ -29,41 +69,20 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
 ```
 
- A fenti kódban cserélje ki`"YOUR DOCUMENT DIRECTORY"` annak a könyvtárnak az elérési útjával, ahol a PDF-dokumentum található. Ez a kód betölti a PDF dokumentumot a`Document` objektum, amelyet aztán a dokumentum metaadataival kapcsolatos információk lekérésére használhat.
+### Kivonat a dokumentum információiból
 
-## 3. lépés: A dokumentum metaadatainak lekérése
-
-A PDF-dokumentum metaadataival kapcsolatos információk lekéréséhez a következő kódot használhatja:
+Most, hogy a PDF-dokumentum nyitva van, bontsuk ki a metaadatait:
 
 ```csharp
 // Dokumentuminformációk beszerzése
 DocumentInfo docInfo = pdfDocument.Info;
-
-// Dokumentuminformációk megjelenítése
-Console.WriteLine("Author: {0}", docInfo.Author);
-Console.WriteLine("Creation Date: {0}", docInfo.CreationDate);
-Console.WriteLine("Keywords: {0}", docInfo.Keywords);
-Console.WriteLine("Modify Date: {0}", docInfo.ModDate);
-Console.WriteLine("Subject: {0}", docInfo.Subject);
-Console.WriteLine("Title: {0}", docInfo.Title);
 ```
 
-A fenti kódban minden sor lekéri a PDF-dokumentum eltérő metaadat-tulajdonságát, és kiadja azt a konzolnak. Ezt a kódot testreszabhatja úgy, hogy csak az Önt érdeklő tulajdonságokat kérje le.
+### Jelenítse meg az Információt
 
-### Példa a forráskódhoz PDF fájl információinak lekérése az Aspose.PDF for .NET használatával
-
- Itt található a teljes forráskód a PDF-dokumentum metaadatainak lekéréséhez a`GetFileInfo` Az Aspose.PDF .NET-hez funkciója:
+Végül jelenítsük meg a kinyert információkat a konzolban:
 
 ```csharp
-// A PDF dokumentum elérési útja
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Nyissa meg a PDF dokumentumot
-Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
-
-// Dokumentuminformációk beszerzése
-DocumentInfo docInfo = pdfDocument.Info;
-
 // Dokumentuminformációk megjelenítése
 Console.WriteLine("Author: {0}", docInfo.Author);
 Console.WriteLine("Creation Date: {0}", docInfo.CreationDate);
@@ -75,22 +94,21 @@ Console.WriteLine("Title: {0}", docInfo.Title);
 
 ## Következtetés
 
-Ebben az oktatóanyagban megvitattuk, hogyan használható az Aspose.PDF for .NET a PDF-dokumentumok metaadataival kapcsolatos információk lekérésére. Egy PDF-dokumentum betöltésével és metaadat-tulajdonságaihoz való hozzáféréssel információkat gyűjthet a dokumentum jellemzőiről és tulajdonságairól. Az Aspose.PDF for .NET egy egyszerű és könnyen használható API-t biztosít a PDF-dokumentumokkal való munkavégzéshez, beleértve a metaadat-információk lekérését, így értékes eszköz a PDF-kezeléshez .NET-alkalmazásokban.
+Gratulálok! Sikeresen kinyerte a fájlinformációkat a PDF-ből az Aspose.PDF for .NET használatával. Ez a nagy teljesítményű könyvtár nemcsak metaadatok olvasását teszi lehetővé, hanem számos funkciót biztosít a PDF-fájlok kezeléséhez. Függetlenül attól, hogy dokumentumkezelő rendszert fejleszt, vagy egyszerűen csak információkat kell kinyernie a jelentéskészítéshez, az Aspose.PDF mindenre kiterjed. 
 
-### GYIK
+## GYIK
 
-#### K: Mit jelent a metaadat egy PDF-dokumentumban?
+### Mi az Aspose.PDF for .NET?
+Az Aspose.PDF for .NET egy olyan könyvtár, amely lehetővé teszi a fejlesztők számára PDF-dokumentumok létrehozását, kezelését és konvertálását .NET-alkalmazásokban.
 
-V: A PDF-dokumentum metaadatai a dokumentum tulajdonságait és jellemzőit leíró információkra utalnak. Ezek az információk általában magukban foglalják a dokumentum címét, szerzőjét, tárgyát, kulcsszavait, létrehozásának dátumát, módosításának dátumát stb.
+### Hogyan telepíthetem az Aspose.PDF-et?
+ Az Aspose.PDF-et a NuGet Package Manager segítségével telepítheti a Visual Studio alkalmazásban, vagy letöltheti a webhelyről[letöltési link](https://releases.aspose.com/pdf/net/).
 
-#### K: Hogyan telepíthetem az Aspose.PDF for .NET fájlt a .NET projektembe?
+### Kivonhatok képeket PDF-ből az Aspose.PDF használatával?
+Igen, az Aspose.PDF módszereket biztosít a képek PDF-dokumentumokból való kinyerésére.
 
- V: Az Aspose.PDF for .NET telepítéséhez le kell töltenie a könyvtárat a[Aspose.PDF .NET letöltési oldalhoz](https://releases.aspose.com/pdf/net). A letöltés után bontsa ki a ZIP-fájl tartalmát, és adjon hozzá hivatkozást az Aspose.PDF for .NET DLL-hez a .NET-projektben.
+### Elérhető az Aspose.PDF ingyenes próbaverziója?
+ Igen, ingyenes próbaverziót kaphat a[Aspose honlapja](https://releases.aspose.com/).
 
-#### K: Testreszabhatom a kódot úgy, hogy csak meghatározott metaadat-tulajdonságokat kérjen le?
-
-V: Igen, testreszabhatja a kódot bizonyos metaadat-tulajdonságok lekéréséhez úgy, hogy kommentálja azokat a sorokat, amelyekre nincs szüksége. A kód minden sora egy adott metaadat-tulajdonságnak felel meg, így igénye szerint felvehet vagy kizárhat tulajdonságokat.
-
-#### K: Milyen típusú metaadat-tulajdonságokat kérhetek le az Aspose.PDF for .NET használatával?
-
-V: Az Aspose.PDF for .NET használatával lekérheti a PDF-dokumentumok különböző metaadat-tulajdonságait, beleértve a szerzőt, a címet, a tárgyat, a kulcsszavakat, a létrehozás dátumát és a módosítás dátumát.
+### Hol találok támogatást az Aspose.PDF számára?
+ Támogatást találhat és kérdéseket tehet fel a[Aspose fórum](https://forum.aspose.com/c/pdf/10).

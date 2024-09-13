@@ -96,7 +96,7 @@ Gratulacje! Teraz nauczyłeś się, jak usunąć tabelę z dokumentu PDF za pomo
 
 #### P: Co się stanie, jeśli określona strona nie będzie zawierała żadnych tabel?
 
- A: Jeśli określona strona nie zawiera żadnych tabel, kod wyrzuci błąd`IndexOutOfRangeException` podczas próby dostępu`absorb.TableList[0]` Aby uniknąć tego problemu, należy sprawdzić, czy`absorb.TableList`zawiera wszelkie elementy przed dostępem do tabeli.
+ A: Jeśli określona strona nie zawiera żadnych tabel, kod wyrzuci błąd`IndexOutOfRangeException` podczas próby dostępu`absorb.TableList[0]` Aby uniknąć tego problemu, należy sprawdzić, czy`absorb.TableList` zawiera wszelkie elementy przed dostępem do tabeli.
 
 #### P: Czy mogę usunąć tabele ze stron innych niż pierwsza?
 

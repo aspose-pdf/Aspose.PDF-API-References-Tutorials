@@ -7,116 +7,172 @@ type: docs
 weight: 170
 url: /pl/net/programming-with-document/getdocumentwindow/
 ---
-Aspose.PDF dla .NET to potężna biblioteka do manipulacji PDF, która umożliwia programistom tworzenie, edytowanie i konwertowanie plików PDF w aplikacjach .NET. Jedną z funkcji oferowanych przez tę bibliotekę jest możliwość pobierania informacji o właściwościach okna dokumentu. Ten samouczek przeprowadzi Cię przez kroki korzystania z`GetDocumentWindow` Funkcja Aspose.PDF dla platformy .NET umożliwiająca pobieranie informacji o właściwościach okna dokumentu PDF.
+# Wstęp
 
-## Krok 1: Zainstaluj Aspose.PDF dla .NET
+Czy pracujesz z plikami PDF i chcesz mieć większą kontrolę nad tym, jak wyglądają po otwarciu? Niezależnie od tego, czy chodzi o ukrycie paska menu, czy zmianę rozmiaru okna, aby dopasować je do pierwszej strony, Aspose.PDF dla .NET zapewnia wszystkie narzędzia potrzebne do dostosowania zachowania pliku PDF po otwarciu w przeglądarce. W tym samouczku pokażemy, jak pobierać i manipulować ustawieniami okna dokumentu w Aspose.PDF dla .NET.
 
- Aby użyć Aspose.PDF dla .NET w aplikacjach .NET, musisz najpierw zainstalować bibliotekę. Najnowszą wersję biblioteki możesz pobrać ze strony[Strona pobierania Aspose.PDF dla .NET](https://releases.aspose.com/pdf/net).
 
-Po pobraniu biblioteki wypakuj zawartość pliku ZIP do folderu na swoim komputerze. Następnie musisz dodać odwołanie do Aspose.PDF dla .NET DLL w swoim projekcie .NET.
+# Wymagania wstępne
 
-## Krok 2: Załaduj dokument PDF
+Zanim przejdziesz do samouczka, upewnij się, że spełnione są następujące wymagania wstępne:
 
- Po zainstalowaniu Aspose.PDF dla .NET i dodaniu odwołania do biblioteki DLL w projekcie .NET możesz rozpocząć korzystanie z`GetDocumentWindow`funkcja umożliwiająca pobieranie informacji o właściwościach okna dokumentu PDF.
+- Aspose.PDF dla .NET zainstalowany w środowisku programistycznym.
+  - [Pobierz Aspose.PDF dla .NET](https://releases.aspose.com/pdf/net/)
+-  Ważna licencja na Aspose.PDF lub możesz uzyskać[bezpłatny okres próbny](https://releases.aspose.com/) Lub[licencja tymczasowa](https://purchase.aspose.com/temporary-license/).
+- Podstawowa znajomość .NET i C#.
+- Visual Studio lub inne odpowiednie środowisko IDE.
 
-Pierwszym krokiem w korzystaniu z tej funkcji jest załadowanie dokumentu PDF, o którym chcesz uzyskać informacje. Aby to zrobić, możesz użyć następującego kodu:
+# Importuj pakiety
+
+Zanim zaczniesz pisać kod, musisz zaimportować niezbędne pakiety. Otwórz swój projekt i na górze pliku C# dodaj następującą przestrzeń nazw:
 
 ```csharp
-// Ścieżka do dokumentu PDF
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
+```
 
-// Otwórz dokument PDF
+Dzięki temu uzyskasz dostęp do wszystkich klas i metod niezbędnych do manipulowania dokumentami PDF za pomocą Aspose.PDF dla .NET.
+
+ Teraz rozłóżmy proces pobierania różnych ustawień okna dokumentu. W tym przykładzie użyjemy przykładowego pliku PDF o nazwie`GetDocumentWindow.pdf`.
+
+## Krok 1: Ustaw ścieżkę katalogu dokumentu
+
+Po pierwsze, musimy zdefiniować ścieżkę do naszego pliku PDF. Ważne jest, aby mieć poprawną ścieżkę do pliku, aby uniknąć błędów podczas wykonywania.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Tutaj zamień`"YOUR DOCUMENT DIRECTORY"` z rzeczywistym katalogiem, w którym znajduje się Twój plik PDF. To jest Twój katalog roboczy, z którego będziesz ładować dokument PDF.
+
+## Krok 2: Otwórz dokument PDF
+
+Teraz, gdy ścieżka pliku jest ustawiona, następnym krokiem jest otwarcie dokumentu PDF za pomocą Aspose.PDF. Spowoduje to załadowanie dokumentu do pamięci, umożliwiając pobranie jego właściwości.
+
+```csharp
 Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 ```
 
- W powyższym kodzie zamień`"YOUR DOCUMENT DIRECTORY"` ze ścieżką do katalogu, w którym znajduje się Twój dokument PDF. Ten kod załaduje dokument PDF do`Document` obiekt, którego można następnie użyć do pobrania informacji o właściwościach okna dokumentu.
+Dzięki tej prostej linijce kodu udało Ci się pomyślnie załadować plik PDF do`pdfDocument` obiekt, co umożliwi Ci dostęp do wszystkich jego właściwości.
 
-## Krok 3: Pobierz właściwości okna dokumentu
+## Krok 3: Pobierz stan centrowania okna
 
-Aby pobrać informacje o właściwościach okna dokumentu PDF, możesz użyć następującego kodu:
-
-```csharp
-// Pobierz właściwości okna dokumentu
-Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
-```
-
-W powyższym kodzie każdy wiersz pobiera inną właściwość okna dokumentu PDF i wyprowadza ją do konsoli. Możesz dostosować ten kod, aby pobrać tylko właściwości, które Cię interesują.
-
-### Przykładowy kod źródłowy do pobrania okna dokumentu pliku PDF przy użyciu Aspose.PDF dla .NET 
-
- Oto pełny kod źródłowy umożliwiający pobranie właściwości okna dokumentu PDF za pomocą`GetDocumentWindow` funkcja Aspose.PDF dla .NET:
+ Następnie sprawdźmy, czy okno dokumentu powinno być wyśrodkowane po otwarciu. Domyślna wartość to`false`.
 
 ```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Otwórz dokument
-Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
-
-// Pobierz różne właściwości dokumentu
-// Pozycja okna dokumentu - Domyślnie: fałsz
 Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-
-// Dominująca kolejność czytania; określa położenie strony
-// Gdy wyświetlane obok siebie - Domyślnie: L2R
-Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-
-// Czy pasek tytułu okna powinien wyświetlać tytuł dokumentu
-// Jeśli fałsz, pasek tytułu wyświetla nazwę pliku PDF - Domyślnie: fałsz
-Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-
-// Czy zmienić rozmiar okna dokumentu, aby dopasować je do rozmiaru
-// Pierwsza wyświetlona strona - Domyślnie: fałsz
-Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-
-// Czy ukryć pasek menu aplikacji przeglądarki - Domyślnie: fałsz
-Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-
-// Czy ukryć pasek narzędzi aplikacji przeglądarki - Domyślnie: fałsz
-Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-
-// Czy ukryć elementy interfejsu użytkownika, takie jak paski przewijania
-// I pozostawiając wyświetlaną tylko zawartość strony - Domyślnie: fałsz
-Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-
-//Tryb strony dokumentu. Jak wyświetlić dokument po wyjściu z trybu pełnoekranowego.
-Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-
-// Układ strony, tzn. pojedyncza strona, jedna kolumna
-Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-
-// Jak powinien wyglądać dokument po otwarciu
-// Pokaż miniatury, pełny ekran, pokaż panel załączników
-Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 ```
+
+ Jeśli wyjście jest`true`, okno dokumentu otworzy się na środku ekranu. W przeciwnym wypadku otworzy się w domyślnej pozycji.
+
+## Krok 4: Sprawdź kierunek tekstu
+
+Innym istotnym aspektem wyglądu pliku PDF jest kierunek tekstu, który określa, czy tekst jest czytany od lewej do prawej (L2R) czy od prawej do lewej (R2L). Możesz pobrać te informacje, używając następującego kodu:
+
+```csharp
+Console.WriteLine("Direction : {0}", pdfDocument.Direction);
+```
+
+ Wynik będzie następujący`L2R` dla tekstu pisanego od lewej do prawej i`R2L` dla tekstu od prawej do lewej. To ustawienie jest szczególnie przydatne w przypadku dokumentów w językach takich jak arabski lub hebrajski.
+
+## Krok 5: Wyświetl tytuł dokumentu w oknie
+
+Następna właściwość pozwala kontrolować, czy tytuł dokumentu czy nazwa pliku ma być wyświetlana na pasku tytułu okna. Domyślnie jest to ustawione na`false`, co oznacza, że zostanie wyświetlona nazwa pliku.
+
+```csharp
+Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
+```
+
+Jeśli chcesz, aby zamiast nazwy pliku był wyświetlany tytuł dokumentu, to ustawienie musi być włączone.
+
+## Krok 6: Zmień rozmiar okna, aby dopasować je do pierwszej strony
+
+Czasami możesz chcieć, aby okno dokumentu automatycznie zmieniało rozmiar, aby dopasować się do pierwszej strony pliku PDF po jego otwarciu. Oto jak sprawdzić, czy ta funkcja jest włączona:
+
+```csharp
+Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
+```
+
+ Domyślnie jest to ustawione na`false`, co oznacza, że rozmiar okna pozostanie taki sam, niezależnie od rozmiaru pierwszej strony.
+
+## Krok 7: Ukryj pasek menu
+
+Aby uzyskać bardziej skoncentrowane wrażenia z czytania, możesz ukryć pasek menu aplikacji przeglądarki. Możesz odzyskać to ustawienie, używając następującego wiersza:
+
+```csharp
+Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
+```
+
+ To wróci`true` jeśli pasek menu jest ukryty i`false` W przeciwnym razie.
+
+## Krok 8: Ukryj pasek narzędzi
+
+Podobnie, możesz również chcieć ukryć pasek narzędzi w przeglądarce PDF, aby uzyskać czystszy interfejs użytkownika. To ustawienie można pobrać w następujący sposób:
+
+```csharp
+Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
+```
+
+Jeśli to ustawienie jest włączone, pasek narzędzi będzie ukryty po otwarciu pliku PDF.
+
+## Krok 9: Ukryj paski przewijania i elementy interfejsu użytkownika
+
+Jeśli chcesz wyświetlić tylko zawartość strony, bez żadnych dodatkowych elementów interfejsu użytkownika, takich jak paski przewijania, to ustawienie kontroluje to zachowanie:
+
+```csharp
+Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
+```
+
+ Gdy ustawione na`true`przeglądarka PDF ukryje paski przewijania oraz inne elementy interfejsu użytkownika, pozostawiając tylko treść dokumentu.
+
+## Krok 10: Ustaw tryb strony inny niż pełny ekran
+
+ Możesz kontrolować sposób wyświetlania dokumentu po wyjściu z trybu pełnoekranowego za pomocą`NonFullScreenPageMode` właściwość. To ustawienie jest pomocne w definiowaniu sposobu interakcji użytkownika z dokumentem w trybie innym niż pełny ekran.
+
+```csharp
+Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
+```
+
+Wyjście można ustawić w różnych trybach, takich jak miniatury, kontury lub panel załączników.
+
+## Krok 11: Zdefiniuj układ strony
+
+To ustawienie pozwala kontrolować układ stron dokumentu. Na przykład możesz wybrać widok pojedynczej strony lub widok ciągłej kolumny:
+
+```csharp
+Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
+```
+
+Dzięki temu użytkownicy mają większą swobodę w sposobie czytania i przeglądania treści dokumentu.
+
+## Krok 12: Określ tryb strony
+
+ Na koniec,`PageMode` właściwość definiuje sposób wyświetlania dokumentu po jego otwarciu. Opcje obejmują wyświetlanie miniatur, wchodzenie w tryb pełnoekranowy lub wyświetlanie panelu załączników.
+
+```csharp
+Console.WriteLine("PageMode : {0}", pdfDocument.PageMode);
+```
+
+Możesz ustawić dowolny tryb, zależnie od potrzeb, odpowiadający celowi Twojego pliku PDF.
 
 ## Wniosek
 
-W tym samouczku nauczyliśmy się, jak używać Aspose.PDF dla .NET do pobierania informacji o właściwościach okna dokumentu PDF. Ładując dokument PDF i uzyskując dostęp do jego właściwości okna, możesz zebrać informacje o tym, jak dokument powinien być wyświetlany po otwarciu w aplikacji przeglądarki. Aspose.PDF dla .NET zapewnia potężny zestaw funkcji do pracy z plikami PDF programowo, co czyni go cennym narzędziem do manipulacji PDF w aplikacjach .NET.
+Jak widać, Aspose.PDF dla .NET zapewnia kompleksowe narzędzia do manipulowania sposobem wyświetlania dokumentów PDF w różnych przeglądarkach PDF. Niezależnie od tego, czy chcesz ukryć pasek narzędzi, wyśrodkować okno, czy kontrolować kierunek tekstu, Aspose.PDF oferuje elastyczność, aby ulepszyć wrażenia użytkownika podczas oglądania.
 
-### Najczęściej zadawane pytania
+# Często zadawane pytania
 
-#### P: Jaki jest cel pobierania właściwości okna dokumentu PDF?
+### Czy mogę dostosować początkowy poziom powiększenia pliku PDF?
+Tak, Aspose.PDF pozwala na ustawienie poziomu powiększenia podczas otwierania dokumentu.
 
-A: Pobieranie właściwości okna dokumentu PDF umożliwia zebranie informacji o tym, jak dokument PDF powinien być wyświetlany po otwarciu w aplikacji przeglądarki. Właściwości te kontrolują różne aspekty, takie jak położenie okna, tryb wyświetlania i widoczność elementów interfejsu użytkownika.
+### Jak mogę zablokować rozmiar okna pliku PDF?
+ Możesz ustawić`FitWindow` właściwość zapobiegająca zmianie rozmiaru okna.
 
-#### P: Jak mogę zainstalować Aspose.PDF dla .NET w moim projekcie .NET?
+### Czy Aspose.PDF obsługuje różne tryby czytania?
+Tak, obsługuje różne tryby, takie jak pełny ekran, miniatury i załączniki.
 
- A: Aby zainstalować Aspose.PDF dla .NET, należy pobrać bibliotekę ze strony[Strona pobierania Aspose.PDF dla .NET](https://releases.aspose.com/pdf/net). Po pobraniu wyodrębnij zawartość pliku ZIP i dodaj odwołanie do pliku Aspose.PDF dla biblioteki DLL .NET w swoim projekcie .NET.
+### Czy można ukryć paski przewijania w przeglądarce PDF?
+ Oczywiście, możesz ukryć paski przewijania, ustawiając`HideWindowUI` nieruchomość do`true`.
 
-#### P: Czy mogę dostosować kod tak, aby pobierał tylko określone właściwości okna?
-
-A: Tak, możesz dostosować kod, aby pobrać określone właściwości okna, komentując wiersze, których nie potrzebujesz. Każdy wiersz w kodzie odpowiada określonej właściwości okna, więc możesz uwzględnić lub wykluczyć właściwości w zależności od swoich wymagań.
-
-#### P: Jakie typy właściwości okna mogę pobrać za pomocą Aspose.PDF dla .NET?
-
-A: Używając Aspose.PDF dla platformy .NET, można pobrać różne właściwości okna dokumentu PDF, w tym centrować okno, ustawiać układ strony, sterować wyświetlaniem pasków narzędzi i pasków menu i wiele innych.
+### Czy mogę wyśrodkować okno otwartego dokumentu?
+ Tak, możesz to kontrolować, ustawiając`CenterWindow` nieruchomość.

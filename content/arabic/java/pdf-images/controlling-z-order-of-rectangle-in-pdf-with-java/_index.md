@@ -84,7 +84,7 @@ pdfDocument.save("output.pdf");
 
 ## الأسئلة الشائعة
 
-### كيف أقوم بتثبيت Aspose.PDF لـJava؟
+### كيف أقوم بتثبيت Aspose.PDF لـ Java؟
 
 لتثبيت Aspose.PDF لـ Java، يمكنك تنزيل المكتبة من[هنا](https://releases.aspose.com/pdf/java/) وقم بإدراج ملف JAR في تبعيات مشروع Java الخاص بك.
 

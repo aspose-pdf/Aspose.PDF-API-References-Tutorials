@@ -171,7 +171,7 @@ A: Zacznij od utworzenia nowego projektu C# w preferowanym zintegrowanym środow
 
 #### P: Czy mogę dodać hiperłącza do określonego tekstu, korzystając z tego samouczka?
 
-A: Tak, ten samouczek koncentruje się konkretnie na dodawaniu hiperłączy do określonego tekstu w dokumencie PDF. Pokazuje, jak znaleźć i wyodrębnić żądany tekst za pomocą wyrażeń regularnych, tworzyć hiperłącza powiązane z fragmentami tekstu i zapisywać zmodyfikowany plik PDF.
+A: Tak, ten samouczek koncentruje się konkretnie na dodawaniu hiperłączy do określonego tekstu w dokumencie PDF. Pokazuje, jak znaleźć i wyodrębnić żądany tekst za pomocą wyrażeń regularnych, utworzyć hiperłącza powiązane z fragmentami tekstu i zapisać zmodyfikowany plik PDF.
 
 #### P: Jak mogę zdefiniować tekst, w którym chcę wyszukiwać i dodać do niego hiperłącze?
 

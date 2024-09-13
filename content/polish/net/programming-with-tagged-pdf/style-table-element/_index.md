@@ -35,7 +35,7 @@ Utworzyliśmy nowy dokument i ustawiliśmy jego tytuł oraz język.
 W tym kroku otrzymamy element struktury głównej naszego dokumentu.
 
 ```csharp
-//Uzyskaj element struktury korzenia
+// Uzyskaj element struktury korzenia
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

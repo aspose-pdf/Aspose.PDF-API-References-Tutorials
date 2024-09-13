@@ -26,7 +26,7 @@ Než začneme, ujistěte se, že máte splněny následující předpoklady:
 ## Nastavení Aspose.PDF pro Javu
 
 Chcete-li začít, musíte ve svém projektu nastavit Aspose.PDF pro Javu. Postupujte takto:
-1.  Stáhněte si Aspose.PDF pro Java z[zde](https://releases.aspose.com/pdf/java/).
+1.  Stáhněte si Aspose.PDF pro Javu z[zde](https://releases.aspose.com/pdf/java/).
 2. Přidejte knihovnu Aspose.PDF do svého projektu Java.
 
 ## Načítání dokumentu PDF
@@ -53,7 +53,7 @@ LinkAnnotationCollection linkAnnotations = page.getAnnotations().getLinkAnnotati
 Nyní, když máme anotace odkazů, můžeme extrahovat cíle hypertextových odkazů:
 
 ```java
-// Extrahujte a vytiskněte cíle hypertextových odkazů
+// Extrahujte a tiskněte cíle hypertextových odkazů
 for (LinkAnnotation link : linkAnnotations) {
     String destination = link.getAction().getDestination();
     System.out.println("Hyperlink Destination: " + destination);

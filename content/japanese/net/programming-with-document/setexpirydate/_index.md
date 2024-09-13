@@ -2,48 +2,80 @@
 title: PDF ファイルに有効期限を設定する
 linktitle: PDF ファイルに有効期限を設定する
 second_title: Aspose.PDF for .NET API リファレンス
-description: このステップバイステップ ガイドでは、Aspose.PDF for .NET を使用して PDF ファイルに有効期限を設定する方法を学習します。
+description: Aspose.PDF for .NET を使用して PDF ファイルに有効期限を設定する方法を学びます。このステップバイステップ ガイドを使用してドキュメントのセキュリティを強化します。
 type: docs
 weight: 300
 url: /ja/net/programming-with-document/setexpirydate/
 ---
-Aspose.PDF for .NET は、PDF ファイルの操作にさまざまな機能を提供する強力なライブラリです。そのような機能の 1 つは、PDF ドキュメントの有効期限を設定する機能です。このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメントの有効期限を設定する手順について説明します。 
+## 導入
 
-## ステップ1: ドキュメントディレクトリへのパスを設定する
+今日のデジタル時代では、ドキュメントの管理とセキュリティ保護がこれまで以上に重要になっています。特定の日付以降に自動的にアクセスできなくなる PDF を送信することを想像してみてください。まるで魔法のようですね。Aspose.PDF for .NET を使用すると、PDF ファイルの有効期限を簡単に設定できます。この機能は、特定の期間後に制限する必要がある機密文書に特に役立ちます。このチュートリアルでは、PDF ファイルに有効期限を設定するプロセスを段階的に説明します。では、コーディングの帽子をかぶって、早速始めましょう。
 
-始める前に、PDF ドキュメントが保存されているディレクトリへのパスを設定する必要があります。このパスは、「dataDir」という変数に保存します。
+## 前提条件
+
+始める前に、いくつか準備しておくべきことがあります。
+
+1. 開発環境: .NET 開発環境が設定されていることを確認します。Visual Studio または .NET をサポートするその他の IDE を使用できます。
+2.  Aspose.PDF for .NET: Aspose.PDFライブラリをインストールする必要があります。まだインストールしていない場合は、以下からダウンロードできます。[ここ](https://releases.aspose.com/pdf/net/).
+3. C# の基礎知識: このチュートリアルでは、C# プログラミングの基礎知識があることを前提としています。C# を初めて使用する場合でも心配はいりません。シンプルでわかりやすい内容にしていきます。
+
+## パッケージのインポート
+
+Aspose.PDF を使い始めるには、C# プロジェクトに必要な名前空間をインポートする必要があります。手順は次のとおりです。
+
+```csharp
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Text;
+```
+
+これらの名前空間により、Aspose.PDF で PDF ドキュメントを操作するために必要なコア機能にアクセスできるようになります。
+
+## ステップ1: ドキュメントディレクトリを設定する
+
+まず最初に、ドキュメント ディレクトリへのパスを指定する必要があります。これは、出力 PDF が保存される場所です。 
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## ステップ2: 新しいPDFドキュメントを作成する
+交換する`"YOUR DOCUMENT DIRECTORY"` PDF ファイルを保存する実際のパスを入力します。これは、プログラムに「ここがファイルの保存場所です」と指示するようなものです。
 
-新しいPDF文書を作成するには、新しい`Aspose.Pdf.Document`オブジェクト。次のコードを使用してこれを実行できます。
+## ステップ2: ドキュメントオブジェクトのインスタンスを作成する
+
+次に、新しいインスタンスを作成する必要があります。`Document`クラス。これは PDF を作成するキャンバスです。
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## ステップ3: PDF文書に新しいページを追加する
+考えてみてください`Document`オブジェクトを白紙として表示します。好きなようにコンテンツを追加できます。
 
-PDF ドキュメントを作成したら、新しいページを追加できます。これは次のコードを使用して実行できます。
+## ステップ3: PDFにページを追加する
+
+ドキュメントの設定が完了したら、次はページを追加します。ここにコンテンツを配置します。
 
 ```csharp
 doc.Pages.Add();
 ```
 
-## ステップ4: PDF文書にテキストを追加する
+PDF に新しいページが作成されました。これは、考えを書き留めることができるノートブックに新しいページを追加するようなものです。
 
-PDF文書にページを追加した後、`Paragraphs`コレクション。次のコードを使用してこれを実行できます。
+## ステップ4: ページにテキストを追加する
+
+テキストを追加して、このページをもう少し面白くしてみましょう。シンプルな「Hello World」メッセージを追加します。
 
 ```csharp
 doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
 ```
 
-## ステップ5: JavaScriptを使用してPDFの有効期限を設定する
+このコード行は、PDF の最初のページにテキスト フラグメントを追加します。ページの先頭にタイトルを書くようなものです。
 
-PDF の有効期限を設定するには、JavaScript オブジェクトを作成する必要があります。これは次のコードを使用して実行できます。
+## ステップ5: 有効期限のJavaScriptを作成する
+
+次は楽しい部分です。PDF の有効期限をチェックする JavaScript アクションを作成します。現在の日付が有効期限を超過している場合は、ユーザーに警告メッセージが表示されます。
 
 ```csharp
 JavascriptAction javaScript = new JavascriptAction(
@@ -53,67 +85,52 @@ JavascriptAction javaScript = new JavascriptAction(
 + "expiry = new Date(year, month);"
 + "if (today.getTime() > expiry.getTime())"
 + "app.alert('The file is expired. You need a new one.');");
+```
 
-// PDFを開くアクションとしてJavaScriptを設定する
+何が起こっているか見てみましょう:
+- 有効期限の年と月を定義します。
+- 今日の日付を取得します。
+- 今日の日付と有効期限を比較します。
+- 今日の日付が有効期限を過ぎている場合は、メッセージがポップアップ表示されます。
+
+## ステップ6: JavaScriptをPDFオープンアクションとして設定する
+
+ここで、JavaScript アクションを PDF ドキュメントのオープンアクションとして設定する必要があります。これは、PDF が開かれるとすぐに JavaScript が実行されることを意味します。
+
+```csharp
 doc.OpenAction = javaScript;
 ```
 
-このコードでは、有効期限を 2017 年 5 月に設定しています。
+この行は、誰かが PDF を開いたときに JavaScript を実行するように指示します。カレンダーを開いたらすぐに鳴るリマインダーを設定するようなものです。
 
-## ステップ6: PDFファイルを保存する
+## ステップ7: PDFドキュメントを保存する
 
-有効期限を設定したら、PDFファイルを保存する必要があります。これを行うには、`Save`方法の`Document`オブジェクトを追加し、更新された PDF ファイルを保存する場所へのパスを渡します。
+最後に、有効期限機能を使用して PDF ドキュメントを保存します。 
 
 ```csharp
 dataDir = dataDir + "SetExpiryDate_out.pdf";
-// PDF文書を保存
 doc.Save(dataDir);
 ```
 
-### Aspose.PDF for .NET を使用して有効期限を設定するためのサンプル ソース コード
-
-Aspose.PDF for .NET を使用して有効期限を設定する完全なサンプル ソース コードは次のとおりです。
-
-```csharp
-//ドキュメント ディレクトリへのパス。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Documentオブジェクトをインスタンス化する
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-// PDFファイルのページコレクションにページを追加する
-doc.Pages.Add();
-//ページオブジェクトの段落コレクションにテキストフラグメントを追加する
-doc.Pages[1].Paragraphs.Add(new TextFragment("Hello World..."));
-//PDFの有効期限を設定するJavaScriptオブジェクトを作成する
-JavascriptAction javaScript = new JavascriptAction(
-"var year=2017;"
-+ "var month=5;"
-+ "today = new Date(); today = new Date(today.getFullYear(), today.getMonth());"
-+ "expiry = new Date(year, month);"
-+ "if (today.getTime() > expiry.getTime())"
-+ "app.alert('The file is expired. You need a new one.');");
-// PDFを開くアクションとしてJavaScriptを設定する
-doc.OpenAction = javaScript;
-
-dataDir = dataDir + "SetExpiryDate_out.pdf";
-// PDF文書を保存
-doc.Save(dataDir);
-```
+この行は、PDF を「SetExpiryDate_out.pdf」という名前で指定されたディレクトリに保存します。完成したアートワークを額縁に入れるようなものです。
 
 ## 結論
 
-Aspose.PDF for .NET を使用して PDF ドキュメントの有効期限を設定することは、ドキュメントが指定された期間のみ有効であることを保証する便利な機能です。開発者は、ステップバイステップのガイドに従い、提供されている C# ソース コードを使用することで、有効期限を簡単に設定し、有効期限が制限された PDF を作成できます。この機能は、限られた期間にアクセスまたは配布する必要があるドキュメントに特に役立ちます。
+これで完了です。Aspose.PDF for .NET を使用して有効期限付きの PDF ファイルを作成できました。この機能はセキュリティを強化するだけでなく、機密情報を管理下に置くことも保証します。契約書、レポート、その他の重要な文書を送信する場合、有効期限を設定すると状況が一変します。
 
-### PDF ファイルで有効期限を設定するための FAQ
+## よくある質問
 
-#### Q: PDF ドキュメントに別の有効期限を設定できますか?
+### Aspose.PDF for .NET とは何ですか?
+Aspose.PDF for .NET は、開発者が .NET アプリケーションで PDF ドキュメントを作成、操作、変換できるようにする強力なライブラリです。
 
- A: はい、ステップ5のJavaScriptコードを変更することで、PDF文書の有効期限を変更できます。提供された例では、有効期限は2017年5月に設定されています。別の有効期限を設定するには、`year`そして`month` JavaScript コード内の変数を希望の年と月に設定します。
+### Aspose.PDF を無料で使用できますか?
+はい、Aspose.PDFの無料試用版をご利用いただけます。ダウンロードできます。[ここ](https://releases.aspose.com/).
 
-#### Q: PDF ドキュメントの有効期限が切れるとどうなりますか?
+### Aspose.PDF を購入するにはどうすればよいですか?
+Aspose.PDFは、[購入ページ](https://purchase.aspose.com/buy).
 
-A: PDF ドキュメントの有効期限が JavaScript コードで指定されているとおりに切れると、ビューアには、ファイルが期限切れであり、新しいファイルが必要であることを示す警告メッセージが表示されます。この警告メッセージは、PDF を開いたときに表示されます。
+### サポートが必要な場合はどうすればいいですか?
+ご質問やサポートが必要な場合は、[Aspose サポート フォーラム](https://forum.aspose.com/c/pdf/10).
 
-#### Q: 有効期限として日付だけでなく特定の時間を指定できますか?
-
- A: はい、JavaScriptコードで有効期限の特定の時間を設定できます。`expiry` JavaScript コード内の変数に希望の時間を含めることで、有効期限の特定の時間を設定できます。
+### Aspose.PDF の一時ライセンスを取得できますか?
+はい、一時ライセンスを申請できます[ここ](https://purchase.aspose.com/temporary-license/).

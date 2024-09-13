@@ -124,12 +124,12 @@ formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 TextFragment textFragment = new TextFragment("Hello world");
 if (fontFile != "")
 {
-	// TrueType yazı tipini akış nesnesine yükleyin
+	//TrueType yazı tipini akış nesnesine yükleyin
 	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
 	{
 		// Metin dizesi için yazı tipi adını ayarlayın
 		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		//Metin Parçası için konumu belirtin
+		// Metin Parçası için konumu belirtin
 		textFragment.Position = new Position(100, 600);
 		//Geçerli parçanın TextFormattingOptions'ını önceden tanımlanmış olarak ayarlayın (LineSpacingMode.FullSize'ı işaret eder)
 		textFragment.TextState.FormattingOptions = formattingOptions;

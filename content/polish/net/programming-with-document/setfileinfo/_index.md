@@ -2,105 +2,128 @@
 title: Ustaw informacje o pliku w pliku PDF
 linktitle: Ustaw informacje o pliku w pliku PDF
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak używać Aspose.PDF dla platformy .NET do ustawiania informacji o pliku w pliku PDF, korzystając z tego przewodnika krok po kroku.
+description: Dowiedz się, jak ustawić informacje o pliku w dokumentach PDF za pomocą Aspose.PDF dla .NET dzięki temu przewodnikowi krok po kroku. Łatwo ulepsz swoje pliki PDF za pomocą metadanych.
 type: docs
 weight: 310
 url: /pl/net/programming-with-document/setfileinfo/
 ---
-Jeśli pracujesz nad projektem, który wymaga zarządzania plikami PDF przy użyciu Aspose.PDF dla .NET, jedną z funkcji, z których możesz chcieć skorzystać, jest możliwość ustawienia informacji o pliku dla dokumentu PDF. Informacje o pliku obejmują różne szczegóły, takie jak autor, data utworzenia, słowa kluczowe, data modyfikacji, temat i tytuł. Ten przewodnik przeprowadzi Cię przez proces ustawiania informacji o pliku dla dokumentu PDF przy użyciu kodu źródłowego C# z Aspose.PDF dla .NET.
+## Wstęp
 
-## Instrukcja krok po kroku dotycząca ustawiania informacji o pliku za pomocą Aspose.PDF dla .NET
+Jeśli chodzi o zarządzanie plikami PDF, kluczowa jest kontrola nad metadanymi dokumentu. Niezależnie od tego, czy chcesz dodać informacje o autorze, słowa kluczowe, czy nawet wiersz tematu, Aspose.PDF dla .NET zapewnia bezproblemowy sposób ustawiania informacji o pliku w dokumentach PDF. Ten samouczek przeprowadzi Cię przez proces krok po kroku, zapewniając, że rozumiesz każdą część kodu w miarę postępów. Więc chwyć swój kapelusz kodera i zanurzmy się w świecie manipulacji PDF!
 
-1. Utwórz nowy projekt C# w środowisku IDE programu Visual Studio.
-2. Dodaj odwołanie do biblioteki Aspose.PDF dla .NET w swoim projekcie.
-3. Utwórz nowy obiekt dokumentu PDF, podając ścieżkę do pliku PDF, w którym chcesz zmodyfikować informacje o pliku.
+## Wymagania wstępne
 
-## Krok 1: Ustaw ścieżkę do katalogu dokumentów.
+Zanim zaczniemy, jest kilka rzeczy, które musisz mieć na miejscu:
 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-```
+1. Visual Studio: Upewnij się, że masz zainstalowany Visual Studio na swoim komputerze. To tutaj będziesz pisać i wykonywać swój kod .NET.
+   
+2.  Aspose.PDF dla .NET: Musisz pobrać i zainstalować bibliotekę Aspose.PDF. Możesz ją pobrać ze strony[Strona pobierania Aspose](https://releases.aspose.com/pdf/net/).
 
-## Krok 2: Otwórz dokument PDF
+3. Podstawowa wiedza o języku C#: Znajomość programowania w języku C# pomoże Ci zrozumieć fragmenty kodu, z których będziemy korzystać.
 
-```csharp
-// Otwórz dokument
-Document pdfDocument = new Document(dataDir + "SetFileInfo.pdf");
-```
+4.  Plik PDF: Przygotuj przykładowy plik PDF, który chcesz zmodyfikować. W tym samouczku będziemy się do niego odwoływać jako`SetFileInfo.pdf`.
 
-## Krok 3: Użyj obiektu DocumentInfo, aby uzyskać dostęp do informacji o pliku dokumentu PDF.
+Gdy już wszystko skonfigurujemy, możemy przejść do kodowania!
 
-```csharp
-DocumentInfo docInfo = new DocumentInfo(pdfDocument);
-```
+## Importuj pakiety
 
-## Krok 4: Ustaw żądane wartości informacji o pliku, korzystając z właściwości obiektu DocumentInfo.
+Aby zacząć, musisz zaimportować niezbędne pakiety, które pozwolą Ci pracować z plikami PDF. W swoim projekcie C# dodaj następujące dyrektywy using na górze pliku kodu:
 
 ```csharp
-docInfo.Author = "Aspose";
-docInfo.CreationDate = DateTime.Now;
-docInfo.Keywords = "Aspose.Pdf, DOM, API";
-docInfo.ModDate = DateTime.Now;
-docInfo.Subject = "PDF Information";
-docInfo.Title = "Setting PDF Document Information";
+using System;
+using System.IO;
+using Aspose.Pdf;
 ```
 
-## Krok 5: Zapisz zaktualizowany dokument PDF w określonej lokalizacji.
+Te przestrzenie nazw zapewniają dostęp do klas i metod potrzebnych do efektywnego manipulowania dokumentami PDF.
 
-```csharp
-dataDir = dataDir + "SetFileInfo_out.pdf";
-pdfDocument.Save(dataDir);
-```
+## Krok 1: Zdefiniuj katalog dokumentów
 
-## Krok 6: Sprawdź, czy informacje o pliku zostały pomyślnie zaktualizowane.
-
-```csharp
-Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + dataDir);
-```
-
-Pomyślnie ustawiono informacje o pliku dla dokumentu PDF przy użyciu Aspose.PDF dla .NET.
-
-### Przykładowy kod źródłowy dla Ustaw informacje o pliku przy użyciu Aspose.PDF dla .NET
-
+Po pierwsze, musisz określić katalog, w którym znajduje się Twój plik PDF. Jest to kluczowe, ponieważ będziesz otwierać plik z tej ścieżki.
 
 ```csharp
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+ Wyjaśnienie: Zamień`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do folderu zawierającego Twój`SetFileInfo.pdf`. Informuje program, gdzie szukać pliku PDF.
+
+## Krok 2: Otwórz dokument PDF
+
+ Następnie otwórzmy dokument PDF, który chcesz zmodyfikować. Można to zrobić za pomocą`Document` klasa z biblioteki Aspose.PDF.
+
+```csharp
 // Otwórz dokument
 Document pdfDocument = new Document(dataDir + "SetFileInfo.pdf");
+```
 
+ Wyjaśnienie: Tutaj tworzymy nową instancję`Document`class i przekaż ścieżkę do pliku PDF. To załaduje dokument do pamięci, gotowy do edycji.
+
+## Krok 3: Utwórz obiekt informacji o dokumencie
+
+Teraz, gdy mamy już otwarty dokument, musimy utworzyć obiekt, który będzie przechowywał informacje o dokumencie.
+
+```csharp
 // Określ informacje o dokumencie
 DocumentInfo docInfo = new DocumentInfo(pdfDocument);
+```
 
+ Wyjaśnienie:`DocumentInfo` Klasa pozwala nam ustawić różne właściwości metadanych dla pliku PDF. Ten obiekt będzie używany do przechowywania informacji, takich jak autor, data utworzenia i inne.
+
+## Krok 4: Ustaw metadane dokumentu
+
+ Z`DocumentInfo` obiekt jest gotowy, czas wypełnić go odpowiednimi metadanymi. Tutaj możesz określić autora, datę utworzenia, słowa kluczowe, datę modyfikacji, temat i tytuł dokumentu.
+
+```csharp
 docInfo.Author = "Aspose";
 docInfo.CreationDate = DateTime.Now;
 docInfo.Keywords = "Aspose.Pdf, DOM, API";
 docInfo.ModDate = DateTime.Now;
 docInfo.Subject = "PDF Information";
 docInfo.Title = "Setting PDF Document Information";
+```
 
+ Wyjaśnienie: Każdy wiersz ustawia określoną właściwość dokumentu. Na przykład,`docInfo.Author` ustawia imię i nazwisko autora, podczas gdy`docInfo.CreationDate` ustawia datę utworzenia dokumentu. Możesz dostosować te wartości według potrzeb.
+
+## Krok 5: Zapisz dokument
+
+Po ustawieniu żądanych metadanych, następnym krokiem jest zapisanie zmodyfikowanego pliku PDF. Musisz określić nową ścieżkę dla pliku wyjściowego.
+
+```csharp
 dataDir = dataDir + "SetFileInfo_out.pdf";
 // Zapisz dokument wyjściowy
 pdfDocument.Save(dataDir);
+```
 
+ Wyjaśnienie: Tutaj dodajemy`_out.pdf` do oryginalnej nazwy pliku, aby utworzyć nowy plik dla zmodyfikowanego dokumentu.`Save` Metoda ta zapisuje następnie zmiany w tym nowym pliku.
+
+## Krok 6: Potwierdź zmiany
+
+Na koniec, zawsze dobrym pomysłem jest potwierdzenie, że informacje zostały ustawione poprawnie. Możesz to zrobić, drukując komunikat o powodzeniu na konsoli.
+
+```csharp
 Console.WriteLine("\nFile informations setup successfully.\nFile saved at " + dataDir);
 ```
 
+Wyjaśnienie: Ten wiersz wyświetla komunikat wskazujący, że plik został pomyślnie zapisany, wraz ze ścieżką do nowego pliku. To prosty sposób, aby upewnić się, że wszystko poszło zgodnie z planem.
+
 ## Wniosek
 
-Podsumowując, Aspose.PDF dla .NET zapewnia prosty i skuteczny sposób ustawiania informacji o pliku dla dokumentów PDF. Postępując zgodnie z powyższymi krokami, możesz łatwo ustawić żądane wartości informacji o pliku dla swoich dokumentów PDF, używając kodu źródłowego C#.
+Ustawianie informacji o pliku w dokumentach PDF za pomocą Aspose.PDF dla .NET to prosty proces, który może znacznie zwiększyć użyteczność Twoich plików PDF. Wykonując te kroki, możesz łatwo dodać metadane, takie jak autor, data utworzenia i inne, dzięki czemu Twoje dokumenty będą bardziej informacyjne i profesjonalne. Niezależnie od tego, czy tworzysz aplikacje generujące pliki PDF, czy po prostu musisz lepiej zarządzać swoimi dokumentami, Aspose.PDF zapewnia narzędzia, których potrzebujesz, aby wykonać zadanie wydajnie.
 
-### Często zadawane pytania dotyczące informacji o pliku zestawu w pliku PDF
+## Najczęściej zadawane pytania
 
-#### P: Czy mogę ustawić dodatkowe właściwości informacji o pliku, które nie zostały wymienione w przykładzie?
+### Czym jest Aspose.PDF dla .NET?
+Aspose.PDF dla platformy .NET to zaawansowana biblioteka umożliwiająca programistom programowe tworzenie, edytowanie i konwertowanie dokumentów PDF.
 
- O: Tak, możesz ustawić dodatkowe właściwości informacji o pliku za pomocą`DocumentInfo` obiekt w Aspose.PDF dla .NET.`DocumentInfo`Klasa udostępnia różne właściwości pozwalające na ustawienie dodatkowych informacji, takich jak producent, wersja i właściwości niestandardowe.
+### Czy mogę używać Aspose.PDF bezpłatnie?
+ Tak, Aspose oferuje bezpłatną wersję próbną, której możesz użyć do oceny biblioteki. Odwiedź[Bezpłatna strona próbna](https://releases.aspose.com/) Aby uzyskać więcej informacji.
 
-#### P: Czy można odzyskać informacje o pliku z istniejącego dokumentu PDF?
+### Gdzie mogę znaleźć dokumentację?
+ Pełną dokumentację Aspose.PDF można znaleźć[Tutaj](https://reference.aspose.com/pdf/net/).
 
- A: Tak, możesz pobrać informacje o pliku z istniejącego dokumentu PDF za pomocą Aspose.PDF dla .NET. Aby to zrobić, możesz użyć`DocumentInfo` obiekt umożliwiający dostęp do właściwości informacji o pliku i odczytanie informacji zapisanych w dokumencie PDF.
+### Jak mogę zakupić Aspose.PDF?
+ Licencję na Aspose.PDF można kupić za pośrednictwem[strona zakupu](https://purchase.aspose.com/buy).
 
-#### P: Czy zmiana informacji o pliku powoduje modyfikację oryginalnego dokumentu PDF?
-
-A: Nie, ustawienie informacji o pliku za pomocą Aspose.PDF dla .NET nie modyfikuje oryginalnego dokumentu PDF. Zamiast tego tworzy nowy dokument PDF z zaktualizowanymi informacjami o pliku. Oryginalny dokument PDF pozostaje niezmieniony.
+### A co jeśli będę potrzebować wsparcia?
+Jeśli masz jakieś pytania lub potrzebujesz pomocy, możesz odwiedzić stronę[Forum wsparcia Aspose](https://forum.aspose.com/c/pdf/10).

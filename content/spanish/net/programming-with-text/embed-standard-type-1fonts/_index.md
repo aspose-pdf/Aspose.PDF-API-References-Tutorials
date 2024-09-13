@@ -30,7 +30,7 @@ using Aspose.Pdf;
  En el código, localiza la línea que dice`string dataDir = "YOUR DOCUMENT DIRECTORY";` y reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta al directorio donde se almacenan sus documentos.
 
 ## Paso 4: Cargue el documento PDF existente
- Cargue un documento PDF existente utilizando el`Document` constructor y pasando la ruta al archivo PDF de entrada.
+ Cargue un documento PDF existente utilizando el`Document`constructor y pasando la ruta al archivo PDF de entrada.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
@@ -129,7 +129,7 @@ using Aspose.Pdf;
 
 #### P: ¿Cómo guardo el documento PDF actualizado?
 
- A: En el paso 7, utilizarás el`Save` método de la`Document`objeto para guardar el documento PDF actualizado, especificando la ruta del archivo de salida.
+ A: En el paso 7, utilizarás el`Save` método de la`Document` objeto para guardar el documento PDF actualizado, especificando la ruta del archivo de salida.
 
 #### P: ¿Cuál es la importancia de incrustar fuentes en un documento PDF?
 

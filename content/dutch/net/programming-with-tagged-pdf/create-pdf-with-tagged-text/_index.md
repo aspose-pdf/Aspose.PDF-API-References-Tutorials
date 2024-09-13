@@ -119,7 +119,7 @@ A: Het codevoorbeeld laat zien hoe u een PDF-document maakt, verschillende getag
 
 A: Ja, u kunt andere getagde tekstelementen toevoegen, zoals lijsten, links of andere aangepaste structuren met behulp van vergelijkbare technieken. Aspose.PDF biedt verschillende methoden om verschillende typen getagde inhoud te maken, zodat u de documentsemantiek kunt verbeteren.
 
-####  V: Hoe werkt de`SetTitle` method contribute to the PDF document's tagged text?
+#### V: Hoe werkt de`SetTitle` method contribute to the PDF document's tagged text?
 
  A: De`SetTitle` methode stelt de titel van de getagde inhoud van het PDF-document in en geeft een korte beschrijving van het doel of onderwerp van het document. Deze informatie helpt gebruikers de context van de getagde tekst te begrijpen.
 
@@ -127,9 +127,9 @@ A: Ja, u kunt andere getagde tekstelementen toevoegen, zoals lijsten, links of a
 
 A: Gelabelde tekst voegt semantische betekenis toe aan het document, waardoor het toegankelijker wordt voor gebruikers met een beperking of die gebruikmaken van ondersteunende technologieën. Schermlezers en andere ondersteunende apparaten kunnen gelabelde tekst interpreteren en presenteren voor een verbeterde gebruikerservaring.
 
-####  V: Hoe werkt de`SetLanguage` method enhance the tagged text in a PDF document?
+#### V: Hoe werkt de`SetLanguage` method enhance the tagged text in a PDF document?
 
- A: De`SetLanguage`methode stelt het taalkenmerk van de getagde inhoud van het PDF-document in. Dit helpt de taal aan te geven waarin de getagde tekst is geschreven, wat de toegankelijkheid verbetert en een correcte taalspecifieke weergave mogelijk maakt.
+ A: De`SetLanguage` methode stelt het taalkenmerk van de getagde inhoud van het PDF-document in. Dit helpt de taal aan te geven waarin de getagde tekst is geschreven, wat de toegankelijkheid verbetert en een correcte taalspecifieke weergave mogelijk maakt.
 
 #### V: Is het mogelijk om naast de getagde tekst ook andere elementen, zoals afbeeldingen of multimedia, toe te voegen met behulp van vergelijkbare technieken?
 

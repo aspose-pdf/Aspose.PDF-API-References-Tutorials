@@ -82,7 +82,7 @@ TableElement tableElement = new TableElement();
 // Zde přidejte řádky a buňky tabulky
 ```
 
-### Uložení a zavření PDF
+### Uložení a uzavření PDF
 
 Nakonec uložte a zavřete dokument PDF:
 

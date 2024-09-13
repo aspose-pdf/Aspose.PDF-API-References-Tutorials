@@ -2,109 +2,40 @@
 title: Ukryj numery stron w spisie treści
 linktitle: Ukryj numery stron w spisie treści
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak ukryć numery stron w spisie treści przy użyciu Aspose.PDF dla platformy .NET, korzystając z tego przewodnika krok po kroku.
+description: Dowiedz się, jak ukryć numery stron w spisie treści za pomocą Aspose.PDF dla .NET. Postępuj zgodnie z tym szczegółowym przewodnikiem z przykładami kodu, aby tworzyć profesjonalne pliki PDF.
 type: docs
 weight: 220
 url: /pl/net/programming-with-document/hidepagenumbersintoc/
 ---
-W tym artykule omówimy implementację funkcji Hide Page Numbers In TOC w Aspose.PDF dla .NET przy użyciu języka C#. Zaczniemy od krótkiego wprowadzenia do Aspose.PDF dla .NET, a następnie przejdziemy do przewodnika krok po kroku, aby zaimplementować tę funkcję. 
+## Wstęp
 
-## Wprowadzenie do Aspose.PDF dla .NET
-
-Aspose.PDF dla .NET to potężny komponent do manipulowania plikami PDF, który umożliwia programistom programowe tworzenie, edytowanie i manipulowanie plikami PDF. Oferuje szeroki zakres funkcji i funkcjonalności, które ułatwiają pracę z dokumentami PDF. Aspose.PDF dla .NET obsługuje zarówno 32-bitowe, jak i 64-bitowe systemy operacyjne i może być używany z platformami .NET Framework, .NET Core i Xamarin. 
-
-## Czym jest funkcja Ukryj numery stron w spisie treści?
-
-Spis treści (TOC) jest istotną częścią dokumentu PDF, która zapewnia użytkownikom szybki przegląd zawartości. Czasami użytkownicy mogą chcieć ukryć numery stron w spisie treści, aby uczynić go bardziej przyjaznym dla użytkownika. Aspose.PDF dla .NET zapewnia wbudowaną funkcję ukrywania numerów stron w spisie treści. Ta funkcja może być używana do tworzenia bardziej przyjaznych dla użytkownika dokumentów PDF. 
+Podczas pracy z plikami PDF czasami możesz chcieć wygenerować spis treści (TOC), ale zachować elegancję, ukrywając numery stron. Być może dokument lepiej się bez nich czyta, a może to kwestia estetyki. Niezależnie od powodu, jeśli pracujesz z Aspose.PDF dla .NET, ten samouczek pokaże Ci dokładnie, jak ukryć numery stron w spisie treści.
 
 ## Wymagania wstępne
 
-Aby skorzystać z tego samouczka, będziesz potrzebować następujących rzeczy:
+Zanim zaczniemy, jest kilka rzeczy, które musisz mieć na miejscu. Oto krótka lista kontrolna:
 
-- Visual Studio 2010 lub nowszy
-- Aspose.PDF dla .NET zainstalowany w Twoim systemie
-- Podstawowa znajomość języka programowania C#
+- Zainstalowany program Visual Studio: Aby kodować, potrzebna będzie działająca wersja programu Visual Studio.
+- Biblioteka Aspose.PDF dla platformy .NET: Upewnij się, że zainstalowałeś bibliotekę Aspose.PDF dla platformy .NET.
+  -  Link do pobrania:[Aspose.PDF dla .NET](https://releases.aspose.com/pdf/net/)
+- Licencja tymczasowa: Jeśli testujesz funkcje, przydatne może okazać się posiadanie licencji tymczasowej.
+  -  Licencja tymczasowa:[Zdobądź to tutaj](https://purchase.aspose.com/temporary-license/)
 
-## Przewodnik krok po kroku dotyczący implementacji funkcji Ukryj numery stron w spisie treści
+## Importuj pakiety
 
-Aby wdrożyć funkcję Ukryj numery stron w spisie treści przy użyciu Aspose.PDF dla platformy .NET, wykonaj poniższe kroki:
-
-## Krok 1: Utwórz nową aplikację konsolową C# w programie Visual Studio
-
-Otwórz program Visual Studio i utwórz nową aplikację konsolową w języku C#.
-
-## Krok 2: Dodaj odniesienie do Aspose.PDF dla .NET
-
-Kliknij prawym przyciskiem myszy folder References w swoim projekcie i wybierz Add Reference. Przejdź do lokalizacji, w której Aspose.PDF for .NET jest zainstalowany w Twoim systemie i dodaj do niego odniesienie.
-
-## Krok 1: Utwórz nowy dokument PDF
-
-Utwórz nowy dokument PDF używając następującego kodu:
+Zanim przejdziesz do kodu, upewnij się, że importujesz następujące przestrzenie nazw do swojego projektu C#. Zapewnią one niezbędne klasy i metody do pracy z dokumentami PDF i tworzenia spisu treści (TOC).
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outFile = dataDir + "HiddenPageNumbers_out.pdf";
-Document doc = new Document();
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-## Krok 2: Utwórz stronę spisu treści
+Teraz, gdy Twoje środowisko jest gotowe, a pakiety zaimportowane, omówmy każdy krok procesu. Omówimy każdą część kodu, aby zapewnić przejrzystość, dzięki czemu będziesz mógł łatwo śledzić.
 
-Utwórz nową stronę spisu treści i dodaj ją do dokumentu PDF, korzystając z następującego kodu:
+## Krok 1: Zainicjuj swój dokument PDF
 
-```csharp
-Page tocPage = doc.Pages.Add();
-TocInfo tocInfo = new TocInfo();
-TextFragment title = new TextFragment("Table Of Contents");
-title.TextState.FontSize = 20;
-title.TextState.FontStyle = FontStyles.Bold;
-tocInfo.Title = title;
-```
+Pierwszą rzeczą, którą musimy zrobić, jest utworzenie nowego dokumentu PDF i dodanie strony ze spisem treści.
 
-## Krok 3: Dodaj sekcję listy do kolekcji sekcji dokumentu PDF
-
-Dodaj sekcję listy do kolekcji sekcji dokumentu PDF, używając następującego kodu:
-
-```csharp
-tocPage.TocInfo = tocInfo;
-```
-
-## Krok 4: Zdefiniuj format listy czterech poziomów
-
-Zdefiniuj format listy czterech poziomów, ustawiając lewe marginesy i ustawienia formatu tekstu każdego poziomu za pomocą następującego kodu:
-
-```csharp
-tocInfo.IsShowPageNumbers = false;
-tocInfo.FormatArrayLength = 4;
-tocInfo.FormatArray[0].Margin.Right = 0;
-tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
-tocInfo.FormatArray[1].Margin.Left = 30;
-tocInfo.FormatArray[1].TextState.Underline = true;
-tocInfo.FormatArray[1].TextState.FontSize = 10;
-tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
-tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
-Page page = doc.Pages.Add();
-```
-
-## Krok 5: Dodaj cztery nagłówki w sekcji
-
-```csharp
-
-for (int Level = 1; Level != 5; Level++)
-{ 
-	Heading heading2 = new Heading(Level); 
-	TextSegment segment2 = new TextSegment(); 
-	heading2.TocPage = tocPage; 
-	heading2.Segments.Add(segment2); 
-	heading2.IsAutoSequence = true; 
-	segment2.Text = "this is heading of level " + Level; 
-	heading2.IsInList = true; 
-	page.Paragraphs.Add(heading2); 
-}
-doc.Save(outFile);
-
-```
-
-### Przykładowy kod źródłowy dla funkcji Ukryj numery stron w spisie treści przy użyciu Aspose.PDF dla .NET
 
 ```csharp
 // Ścieżka do katalogu dokumentów.
@@ -112,18 +43,47 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "HiddenPageNumbers_out.pdf";
 Document doc = new Document();
 Page tocPage = doc.Pages.Add();
+```
+
+- dataDir: To jest katalog, w którym zostanie zapisany plik wyjściowy.
+- Document(): Inicjuje nowy dokument PDF.
+- Pages.Add(): Dodaje nową, pustą stronę do dokumentu, która później będzie zawierać spis treści.
+
+## Krok 2: Ustaw informacje i tytuł spisu treści
+
+Następnie zdefiniujemy informacje dotyczące spisu treści, w tym ustawimy tytuł, który będzie wyświetlany na górze spisu treści.
+
+```csharp
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
 tocInfo.Title = title;
-//Dodaj sekcję listy do kolekcji sekcji dokumentu PDF
 tocPage.TocInfo = tocInfo;
-//Zdefiniuj format listy czterech poziomów, ustawiając lewe marginesy i
-//ustawienia formatu tekstu dla każdego poziomu
+```
 
+- TocInfo: Ten obiekt przechowuje wszystkie informacje o spisie treści.
+- TextFragment: reprezentuje tekst tytułu spisu treści, tutaj ustawiliśmy go jako „Spis treści”.
+- Styl czcionki: Stylizujemy tytuł spisu treści, ustawiając jego rozmiar na 20 i pogrubiając go.
+- tocPage.TocInfo: Przypisujemy informacje o spisie treści do strony, która będzie go wyświetlać.
+
+## Krok 3: Ukryj numery stron w spisie treści
+
+Teraz czas na zabawę! Tutaj konfigurujemy spis treści, aby ukryć numery stron.
+
+```csharp
 tocInfo.IsShowPageNumbers = false;
 tocInfo.FormatArrayLength = 4;
+```
+
+-  IsShowPageNumbers: To magiczny przełącznik, który ukrywa numery stron. Ustaw go na`false`, a numery stron nie pojawią się w spisie treści.
+- FormatArrayLength: Ustawiamy tę wartość na 4, wskazując, że chcemy zdefiniować formatowanie dla czterech poziomów nagłówków spisu treści.
+
+## Krok 4: Dostosuj formatowanie spisu treści
+
+Aby nadać spisowi treści więcej stylu, zdefiniujemy teraz formatowanie dla różnych poziomów nagłówków.
+
+```csharp
 tocInfo.FormatArray[0].Margin.Right = 0;
 tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
 tocInfo.FormatArray[1].Margin.Left = 30;
@@ -131,36 +91,61 @@ tocInfo.FormatArray[1].TextState.Underline = true;
 tocInfo.FormatArray[1].TextState.FontSize = 10;
 tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
 tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
+```
+
+- FormatArray: Ta tablica kontroluje formatowanie wpisów TOC. Każdy indeks reprezentuje inny poziom nagłówka.
+- Marginesy i styl tekstu: Ustawiamy marginesy i stosujemy style czcionki, takie jak pogrubienie, kursywa i podkreślenie dla każdego poziomu nagłówka.
+
+## Krok 5: Dodaj nagłówki do dokumentu
+
+Na koniec dodajmy właściwe nagłówki, które staną się częścią spisu treści.
+
+```csharp
 Page page = doc.Pages.Add();
-//Dodaj cztery nagłówki w sekcji
 for (int Level = 1; Level != 5; Level++)
-	{ 
-		Heading heading2 = new Heading(Level); 
-		TextSegment segment2 = new TextSegment(); 
-		heading2.TocPage = tocPage; 
-		heading2.Segments.Add(segment2); 
-		heading2.IsAutoSequence = true; 
-		segment2.Text = "this is heading of level " + Level; 
-		heading2.IsInList = true; 
-		page.Paragraphs.Add(heading2); 
-	}
+{ 
+    Heading heading2 = new Heading(Level); 
+    TextSegment segment2 = new TextSegment(); 
+    heading2.TocPage = tocPage; 
+    heading2.Segments.Add(segment2); 
+    heading2.IsAutoSequence = true; 
+    segment2.Text = "this is heading of level " + Level; 
+    heading2.IsInList = true; 
+    page.Paragraphs.Add(heading2); 
+}
+```
+
+- Nagłówek i TextSegment: Reprezentują one nagłówki, które pojawią się w spisie treści. Każdy poziom ma swój własny nagłówek.
+- IsAutoSequence: Automatycznie numeruje nagłówki.
+- IsInList: zapewnia, że każdy nagłówek pojawi się w spisie treści.
+
+## Krok 6: Zapisz dokument
+
+Gdy wszystko będzie gotowe, zapisz dokument PDF do wskazanego pliku wyjściowego.
+
+```csharp
 doc.Save(outFile);
 ```
 
+I to wszystko! Udało Ci się utworzyć plik PDF ze spisem treści, a numery stron są ukryte!
+
 ## Wniosek
 
-W tym samouczku przyjrzeliśmy się, jak pracować z metadanymi XMP w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Metadane XMP dostarczają cennych informacji o dokumencie PDF, w tym jego tytuł, autora, datę utworzenia i inne. Aspose.PDF dla .NET umożliwia deweloperom dostęp do tych metadanych i manipulowanie nimi, zapewniając elastyczne i wydajne API do pracy z dokumentami PDF.
+Tworzenie spisu treści w pliku PDF i ukrywanie numerów stron może wydawać się trudne, ale dzięki Aspose.PDF dla .NET jest to bułka z masłem. Postępując zgodnie z tym przewodnikiem krok po kroku, nauczyłeś się, jak dostosować format spisu treści, ukryć numery stron i zastosować różne style do nagłówków. Teraz możesz tworzyć profesjonalne pliki PDF dostosowane do Twoich dokładnych potrzeb.
 
-### Najczęściej zadawane pytania
+## Najczęściej zadawane pytania
 
-#### P: Czym są metadane XMP w dokumencie PDF?
+### Czy mogę wyświetlić numery stron dla konkretnych nagłówków w spisie treści?
+Nie, Aspose.PDF ukrywa lub pokazuje numery stron dla całego spisu treści. Nie można ich selektywnie ukrywać dla konkretnych wpisów.
 
-A: Metadane XMP (Extensible Metadata Platform) w dokumencie PDF to standardowy format przechowywania informacji metadanych o dokumencie. Obejmuje on szczegóły, takie jak tytuł dokumentu, autor, data utworzenia, słowa kluczowe i inne. Metadane XMP zapewniają ustrukturyzowany i znormalizowany sposób przechowywania i udostępniania informacji o dokumencie PDF.
+### Czy można dodać więcej poziomów do spisu treści?
+ Tak, możesz zwiększyć`FormatArrayLength` aby zdefiniować więcej poziomów nagłówków spisu treści.
 
-#### P: Czy mogę modyfikować metadane XMP dokumentu PDF za pomocą Aspose.PDF dla platformy .NET?
+### Jak mogę zmienić czcionkę dla wszystkich wpisów w spisie treści?
+ Możesz zmienić czcionkę, modyfikując`TextState.Font` nieruchomość dla każdego poziomu w`FormatArray`.
 
- A: Tak, możesz programowo modyfikować metadane XMP dokumentu PDF, używając Aspose.PDF dla .NET. Możesz uzyskać dostęp do`Info` własność`Document` obiekt, który daje dostęp do właściwości metadanych XMP. Następnie możesz zaktualizować wartości tych właściwości, aby zmodyfikować metadane XMP dokumentu PDF.
+### Czy mogę wstawiać hiperłącza do spisu treści?
+ Tak, możesz połączyć każdy wpis spisu treści z konkretną sekcją w dokumencie, używając`Heading.TocPage` nieruchomość.
 
-#### P: Czy mogę wyodrębnić niestandardowe właściwości metadanych XMP z dokumentu PDF przy użyciu Aspose.PDF dla .NET?
-
- A: Tak, możesz wyodrębnić niestandardowe właściwości metadanych XMP z dokumentu PDF za pomocą Aspose.PDF dla .NET. Możesz użyć`Metadata` własność`Document`obiekt, który zapewnia dostęp do wszystkich właściwości metadanych XMP dokumentu PDF. Następnie możesz wyodrębnić właściwości niestandardowe i użyć ich wartości według potrzeb.
+### Czy potrzebuję licencji na Aspose.PDF?
+Tak, do użytku produkcyjnego wymagana jest ważna licencja. Możesz uzyskać tymczasową licencję[Tutaj](https://purchase.aspose.com/temporary-license/) aby przetestować funkcje.

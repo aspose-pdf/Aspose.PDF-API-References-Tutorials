@@ -40,7 +40,7 @@ absorb.Visit(pdfDocument.Pages[1]);
 Abychom mohli zrušit tabulky, musíme získat kopii kolekce tabulek:
 
 ```csharp
-//Získejte kopii sbírky stolů
+// Získejte kopii sbírky stolů
 AbsorbedTable[] tables = new AbsorbedTable[absorb.TableList.Count];
 absorb.TableList.CopyTo(tables, 0);
 ```
@@ -71,7 +71,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Načíst existující dokument PDF
 Document pdfDocument = new Document(dataDir + "Table_input2.pdf");
 
-// Vytvořte objekt TableAbsorber pro nalezení tabulek
+// Vytvořte objekt TableAbsorber a vyhledejte tabulky
 TableAbsorber absorber = new TableAbsorber();
 
 // Navštivte druhou stránku s absorbérem
@@ -96,7 +96,7 @@ gratuluji! Nyní jste se naučili, jak odstranit více tabulek v dokumentu PDF p
 
 #### Otázka: Mohu odstranit konkrétní tabulky místo všech tabulek v dokumentu PDF?
 
-Odpověď: Ano, můžete odstranit konkrétní tabulky místo všech tabulek v dokumentu PDF pomocí Aspose.PDF for .NET. V uvedeném příkladu jsou odstraněny všechny tabulky na druhé stránce. Můžete však upravit kód tak, aby cílil a odebrat konkrétní tabulky na základě vašich požadavků. Chcete-li to provést, musíte identifikovat tabulky, které chcete odstranit, a poté zavolat`absorber.Remove(table)` metodu pro každou konkrétní tabulku, kterou chcete odstranit.
+ Odpověď: Ano, můžete odstranit konkrétní tabulky místo všech tabulek v dokumentu PDF pomocí Aspose.PDF for .NET. V uvedeném příkladu jsou odstraněny všechny tabulky na druhé stránce. Můžete však upravit kód tak, aby cílil a odebrat konkrétní tabulky na základě vašich požadavků. Chcete-li to provést, musíte identifikovat tabulky, které chcete odstranit, a poté zavolat`absorber.Remove(table)` metodu pro každou konkrétní tabulku, kterou chcete odstranit.
 
 #### Otázka: Jak mohu odstranit tabulky z více stránek v dokumentu PDF?
 
@@ -104,7 +104,7 @@ Odpověď: Ano, můžete odstranit konkrétní tabulky místo všech tabulek v d
 
 #### Otázka: Co se stane, když se pokusím odstranit tabulku, která na zadané stránce neexistuje?
 
-Odpověď: Pokud se pokusíte odstranit tabulku, která na zadané stránce neexistuje, nedojde k chybě. The`absorber.Remove(table)` metoda jednoduše ignoruje požadavek na odstranění a dokument PDF zůstane nezměněn.
+ Odpověď: Pokud se pokusíte odstranit tabulku, která na zadané stránce neexistuje, nedojde k chybě. The`absorber.Remove(table)` metoda jednoduše ignoruje požadavek na odstranění a dokument PDF zůstane nezměněn.
 
 #### Otázka: Mohu po uložení dokumentu vrátit zpět odstranění tabulek?
 

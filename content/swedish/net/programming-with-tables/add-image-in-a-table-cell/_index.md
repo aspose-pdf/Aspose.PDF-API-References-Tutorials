@@ -1,13 +1,13 @@
 ---
 title: Lägg till bild i en tabellcell
 linktitle: Lägg till bild i en tabellcell
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lägg till en bild i en tabellcell med Aspose.PDF för .NET, en steg-för-steg-guide för exakt manipulering av bilder i PDF-dokument.
 type: docs
 weight: 10
 url: /sv/net/programming-with-tables/add-image-in-a-table-cell/
 ---
-den här handledningen guidar vi dig genom processen att lägga till en bild i en tabellcell med Aspose.PDF för .NET. Den medföljande C#-källkoden visar hur man uppnår denna funktionalitet. Genom att följa stegen som beskrivs nedan kommer du att kunna införliva bilder i dina tabellceller effektivt.
+I den här handledningen guidar vi dig genom processen att lägga till en bild i en tabellcell med Aspose.PDF för .NET. Den medföljande C#-källkoden visar hur man uppnår denna funktionalitet. Genom att följa stegen som beskrivs nedan kommer du att kunna införliva bilder i dina tabellceller effektivt.
 
 Innan vi dyker in i koden, se till att du har Aspose.PDF för .NET-biblioteket installerat och refererat till i ditt projekt.
 
@@ -41,9 +41,9 @@ Page sec1 = pdfDocument.Pages.Add();
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 ```
 
-## Steg 4: Ställ in standardcellkant
+## Steg 4: Ställ in standardcellgräns
 
- För att säkerställa konsekvens kan vi ställa in en standardcellkant med hjälp av`DefaultCellBorder`tabellens egendom`BorderInfo` objekt.
+ För att säkerställa konsekvens kan vi ställa in en standardcellkant med hjälp av`DefaultCellBorder` tabellens egendom`BorderInfo` objekt.
 
 ```csharp
 // Ställ in standardcellkant med BorderInfo-objekt
@@ -93,7 +93,7 @@ Aspose.Pdf.Cell cell2 = row1.Cells.Add();
 Slutligen kan vi lägga till bilden i tabellcellen genom att lägga till den som ett stycke i cellen.
 
 ```csharp
-// Lägg till bilden i tabellcellen
+//Lägg till bilden i tabellcellen
 cell2.Paragraphs.Add(img);
 ```
 
@@ -102,7 +102,7 @@ cell2.Paragraphs.Add(img);
 Efter att ha lagt till bildcellen kan vi lägga till fler celler i raden om det behövs.
 
 ```csharp
-//Lägg till ytterligare en cell i raden
+// Lägg till ytterligare en cell i raden
 row1.Cells.Add("Previous cell with image");
 
 // Justera den vertikala justeringen av den tredje cellen
@@ -114,7 +114,7 @@ row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
  Slutligen kan vi spara det ändrade dokumentet till en angiven plats med hjälp av`Save` metod.
 
 ```csharp
-// Spara dokumentet
+//Spara dokumentet
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
@@ -140,22 +140,22 @@ tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.
 tab1.ColumnWidths = "100 100 120";
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose.jpg";
-// Skapa rader i tabellen och sedan celler i raderna
+//Skapa rader i tabellen och sedan celler i raderna
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Sample text in cell");
 // Lägg till cellen som innehåller bilden
 Aspose.Pdf.Cell cell2 = row1.Cells.Add();
-// Lägg till bilden i tabellcellen
+//Lägg till bilden i tabellcellen
 cell2.Paragraphs.Add(img);
 row1.Cells.Add("Previous cell with image");
 row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
-// Spara dokumentet
+//Spara dokumentet
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
 ## Slutsats
 
-den här handledningen täckte vi en steg-för-steg-guide om hur man lägger till en bild i en tabellcell med Aspose.PDF för .NET. Vi började med att sätta upp dokumentet, skapa en sida och lägga till en tabell. Sedan ställer vi in standardcellkanten och kolumnbredden. Vi visade hur man lägger till en bild i en tabellcell och justerar cellens vertikala justering. Slutligen sparade vi det ändrade dokumentet. Genom att följa dessa steg kan du förbättra dina PDF-dokument med bilder i tabellceller effektivt.
+I den här handledningen täckte vi en steg-för-steg-guide om hur man lägger till en bild i en tabellcell med Aspose.PDF för .NET. Vi började med att sätta upp dokumentet, skapa en sida och lägga till en tabell. Sedan ställer vi in standardcellkanten och kolumnbredden. Vi visade hur man lägger till en bild i en tabellcell och justerar cellens vertikala justering. Slutligen sparade vi det ändrade dokumentet. Genom att följa dessa steg kan du förbättra dina PDF-dokument med bilder i tabellceller effektivt.
 
 ### FAQ's
 
@@ -165,7 +165,7 @@ S: Ja, du kan lägga till flera bilder i olika celler i samma tabell med Aspose.
 
 #### F: Kan jag anpassa bildstorleken och positionen i tabellcellen?
 
- S: Ja, du kan anpassa bildstorleken och positionen i tabellcellen genom att justera egenskaperna för`Image`objekt. Du kan ställa in bildens bredd och höjd, såväl som justeringen inom cellen.
+ S: Ja, du kan anpassa bildstorleken och positionen i tabellcellen genom att justera egenskaperna för`Image` objekt. Du kan ställa in bildens bredd och höjd, såväl som justeringen inom cellen.
 
 #### F: Kan jag lägga till bilder i en tabell med ett dynamiskt antal rader och kolumner?
 

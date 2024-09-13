@@ -42,18 +42,18 @@ taggedContent.SetLanguage("fr-FR");
 
 Nous avons défini le titre et la langue du document PDF balisé.
 
-## Étape 4 : Obtention de l'élément de structure racinaire
+## Étape 4 : Obtention de l'élément de structure racine
 
 Obtenons maintenant l’élément de structure racine du document PDF.
 
 ```csharp
-//Obtenir l'élément de structure racinaire
+// Obtenir l'élément de structure racinaire
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
 Nous avons obtenu l'élément de structure racine du document PDF.
 
-## Étape 5 : ajouter des titres et des paragraphes
+## Étape 5 : Ajouter des titres et des paragraphes
 
 Nous allons maintenant ajouter des titres de différents niveaux et des paragraphes étiquetés à notre document PDF.
 

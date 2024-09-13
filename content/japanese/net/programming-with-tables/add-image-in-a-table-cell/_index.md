@@ -28,7 +28,7 @@ Document pdfDocument = new Document();
 次に、PDF ドキュメントにページを追加する必要があります。ページは、表やその他の要素のコンテナーとして機能します。
 
 ```csharp
-//PDF文書にページを作成する
+// PDF文書にページを作成する
 Page sec1 = pdfDocument.Pages.Add();
 ```
 
@@ -46,7 +46,7 @@ Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 一貫性を保つために、デフォルトのセル境界線を次のように設定することができます。`DefaultCellBorder`テーブルのプロパティ`BorderInfo`物体。
 
 ```csharp
-//BorderInfo オブジェクトを使用してデフォルトのセル境界線を設定する
+// BorderInfo オブジェクトを使用してデフォルトのセル境界線を設定する
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 ```
 
@@ -128,13 +128,13 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 // Documentオブジェクトをインスタンス化する
 Document pdfDocument = new Document();
-//PDF文書にページを作成する
+// PDF文書にページを作成する
 Page sec1 = pdfDocument.Pages.Add();
 //テーブルオブジェクトをインスタンス化する
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 //目的のページの段落コレクションに表を追加します
 sec1.Paragraphs.Add(tab1);
-//BorderInfo オブジェクトを使用してデフォルトのセル境界線を設定する
+// BorderInfo オブジェクトを使用してデフォルトのセル境界線を設定する
 tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 //テーブルの列幅を設定する
 tab1.ColumnWidths = "100 100 120";
@@ -173,7 +173,7 @@ A: はい、行数と列数が動的に変化する表に画像を追加でき�
 
 #### Q: Aspose.PDF for .NET では、表のセルに画像を追加するためにどのような画像形式がサポートされていますか?
 
-A: Aspose.PDF for .NET は、JPEG、PNG、GIF、BMP、TIFF など、さまざまな画像形式をサポートしています。これらの形式の画像を使用して、表のセルに追加できます。
+A: Aspose.PDF for .NET は、JPEG、PNG、GIF、BMP、TIFF など、さまざまな画像形式をサポートしています。これらの形式の画像を使用して、テーブル セルに追加できます。
 
 #### Q: 既存の PDF ドキュメント内の表に画像を追加できますか?
 

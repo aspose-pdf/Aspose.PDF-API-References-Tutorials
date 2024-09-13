@@ -1,7 +1,7 @@
 ---
 title: Lägg till SWF-fil som PDF-anteckning
 linktitle: Lägg till SWF-fil som anteckning
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du lägger till SWF-filer som PDF-kommentarer med Aspose.PDF för .NET. Förbättra dina PDF-filer med interaktivt multimediainnehåll genom denna detaljerade handledning.
 type: docs
 weight: 30
@@ -9,7 +9,7 @@ url: /sv/net/annotations/addswffileasannotation/
 ---
 ## Introduktion
 
-Har du någonsin velat lägga till interaktivt multimediainnehåll som SWF-filer (Shockwave Flash) till dina PDF-dokument? Kanske vill du skapa en engagerande presentation eller en interaktiv e-bok, och du vill bädda in animationer eller andra interaktiva element direkt i PDF:en. Tja, du är på rätt plats! Den här handledningen går igenom processen att lägga till en SWF-fil som en kommentar till en PDF med Aspose.PDF för .NET. Aspose.PDF är ett kraftfullt bibliotek som tillåter utvecklare att manipulera och hantera PDF-filer på olika sätt. I slutet av den här guiden kommer du att sömlöst kunna integrera SWF-filer i dina PDF-filer, vilket gör dem mer dynamiska och interaktiva.
+Har du någonsin velat lägga till interaktivt multimediainnehåll som SWF-filer (Shockwave Flash) till dina PDF-dokument? Kanske vill du skapa en engagerande presentation eller en interaktiv e-bok, och du vill bädda in animationer eller andra interaktiva element direkt i PDF:en. Nåväl, du är på rätt plats! Den här handledningen går igenom processen att lägga till en SWF-fil som en kommentar till en PDF med Aspose.PDF för .NET. Aspose.PDF är ett kraftfullt bibliotek som tillåter utvecklare att manipulera och hantera PDF-filer på olika sätt. I slutet av den här guiden kommer du att sömlöst kunna integrera SWF-filer i dina PDF-filer, vilket gör dem mer dynamiska och interaktiva.
 
 ## Förutsättningar
 

@@ -49,7 +49,7 @@ Aspose.PDF 的 .NET「文字程式設計」教學提供了處理 PDF 文件中�
 | [使用 PDF 檔案中的段落旋轉文字](./rotate-text-using-paragraph/) | 了解如何使用 Aspose.PDF for .NET 使用 PDF 檔案中的段落旋轉文字。 |  
 | [使用 PDF 檔案中的文字片段旋轉文字](./rotate-text-using-text-fragment/) | 了解如何使用 Aspose.PDF for .NET 使用 PDF 檔案中的文字片段旋轉文字。 |  
 | [使用文字片段和段落旋轉文本](./rotate-text-using-text-fragment-and-paragraph/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中使用文字片段和段落來旋轉文字。 |  
-| [在 PDF 檔案中使用文字段落和生成器旋轉文字](./rotate-text-using-text-paragraph-and-builder/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中使用文字段落和生成器旋轉文字。 |  
+| [在 PDF 檔案中使用文字段落和生成器旋轉文字](./rotate-text-using-text-paragraph-and-builder/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中使用文字段落和產生器來旋轉文字。 |  
 | [搜尋並獲取全部文本](./search-and-get-text-all/) | 了解如何使用 Aspose.PDF for .NET 從 PDF 文件的所有頁面搜尋和取得文字。 |  
 | [搜尋並取得 PDF 文件中的文字頁面](./search-and-get-text-page/) | 了解如何使用 Aspose.PDF for .NET 從 PDF 檔案中的特定頁面搜尋和取得文字。 |  
 | [在 PDF 檔案中搜尋正規表示式](./search-regular-expression/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中使用正規表示式搜尋和檢索文字。 |  

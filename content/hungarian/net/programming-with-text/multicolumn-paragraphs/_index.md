@@ -44,7 +44,7 @@ PageMarkup markup = absorb.PageMarkups[0];
 
 ## 4. lépés: Dolgozzon többoszlopos bekezdésekkel
 
-A többoszlopos struktúrán belül elérjük az egyes szakaszokat és bekezdéseket, és kinyomtatjuk a szövegüket.
+A többoszlopos struktúrán belül elérjük az adott szakaszokat és bekezdéseket, és kinyomtatjuk a szövegüket.
 
 ```csharp
 Console.WriteLine("IsMulticolumnParagraphsAllowed == false\r\n");

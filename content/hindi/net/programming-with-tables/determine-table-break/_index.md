@@ -117,7 +117,7 @@ table1.DefaultCellPadding = margin;
 // क्योंकि अब इसे इस पृष्ठ पर समायोजित नहीं किया जा सकता
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
-	// तालिका में पंक्तियाँ बनाएँ और फिर पंक्तियों में कक्ष बनाएँ
+	//तालिका में पंक्तियाँ बनाएँ और फिर पंक्तियों में कक्ष बनाएँ
 	Aspose.Pdf.Row row1 = table1.Rows.Add();
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");

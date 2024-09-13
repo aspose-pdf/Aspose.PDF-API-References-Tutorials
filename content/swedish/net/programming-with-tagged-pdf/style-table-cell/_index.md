@@ -1,7 +1,7 @@
 ---
 title: Stiltabellcell
 linktitle: Stiltabellcell
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du formaterar tabellceller med Aspose.PDF för .NET. Steg-för-steg-guide för att skapa och anpassa tabeller.
 type: docs
 weight: 160
@@ -35,7 +35,7 @@ Vi har skapat ett nytt dokument och ställt in dokumentets titel och språk.
 I detta steg kommer vi att få rotstrukturelementet för vårt dokument.
 
 ```csharp
-//Skaffa rotstrukturelementet
+// Skaffa rotstrukturelementet
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
@@ -88,7 +88,7 @@ Vi skapade en rubrikrad för vår tabell och lade till rubrikceller med formater
 
 ## Steg 6: Lägga till raderna i tabellens brödtext
 
-Låt oss nu lägga till raderna i tabellkroppen till vår tabell.
+Låt oss nu lägga till tabellraderna i vår tabell.
 ```csharp
 for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
 {
@@ -279,7 +279,7 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 ## Slutsats
 
-den här handledningen lärde vi oss hur man formaterar tabellceller med Aspose.PDF för .NET. Vi har sett hur man skapar ett dokument, lägger till en tabell med sidhuvuden, brödtextrader och en sidfot och anpassar cellstilar. Slutligen sparade vi det taggade PDF-dokumentet och validerade dess PDF/UA-efterlevnad. Du kan nu använda Aspose.PDF för .NET för att skapa och utforma tabeller i dina .NET-applikationer.
+I den här handledningen lärde vi oss hur man formaterar tabellceller med Aspose.PDF för .NET. Vi har sett hur man skapar ett dokument, lägger till en tabell med sidhuvuden, brödtextrader och en sidfot och anpassar cellstilar. Slutligen sparade vi det taggade PDF-dokumentet och validerade dess PDF/UA-efterlevnad. Du kan nu använda Aspose.PDF för .NET för att skapa och utforma tabeller i dina .NET-applikationer.
 
 ### FAQ's
 
@@ -293,7 +293,7 @@ S: Innan du börjar, se till att du har installerat Aspose.PDF för .NET och har
 
 #### F: Hur skapar jag ett nytt PDF-dokument med Aspose.PDF för .NET?
 
-S: För att skapa ett nytt PDF-dokument måste du instansiera en`Document` objekt från Aspose.PDF-biblioteket. Den medföljande C#-källkoden visar hur man skapar ett dokument och ställer in dess titel och språk.
+ S: För att skapa ett nytt PDF-dokument måste du instansiera en`Document` objekt från Aspose.PDF-biblioteket. Den medföljande C#-källkoden visar hur man skapar ett dokument och ställer in dess titel och språk.
 
 #### F: Vilken betydelse har rotstrukturelementet i ett PDF-dokument?
 

@@ -118,7 +118,7 @@ Diese Zeile speichert die geänderte PDF-Datei mit dem Inhaltsverzeichnis. Sie k
 
 ## Abschluss
 
-Und da haben Sie es! Sie haben erfolgreich Seitenzahlen angepasst, während Sie mit Aspose.PDF für .NET ein Inhaltsverzeichnis zu Ihrem PDF-Dokument hinzugefügt haben. Diese leistungsstarke Bibliothek erleichtert die Bearbeitung von PDF-Dateien und mit nur wenigen Codezeilen können Sie Ihre Dokumente erheblich verbessern. Egal, ob Sie Berichte, eBooks oder andere PDF-Dateien erstellen, ein Inhaltsverzeichnis kann die Navigation für Ihre Leser erheblich verbessern. Also, worauf warten Sie noch? Tauchen Sie ein in Aspose.PDF und beginnen Sie noch heute mit der Erstellung fantastischer PDFs!
+Und da haben Sie es! Sie haben erfolgreich Seitenzahlen angepasst, während Sie Ihrem PDF-Dokument mit Aspose.PDF für .NET ein Inhaltsverzeichnis hinzugefügt haben. Diese leistungsstarke Bibliothek erleichtert die Bearbeitung von PDF-Dateien und mit nur wenigen Codezeilen können Sie Ihre Dokumente erheblich verbessern. Egal, ob Sie Berichte, eBooks oder andere PDF-Dateien erstellen, ein Inhaltsverzeichnis kann die Navigation für Ihre Leser erheblich verbessern. Also, worauf warten Sie noch? Tauchen Sie ein in Aspose.PDF und beginnen Sie noch heute mit der Erstellung fantastischer PDFs!
 
 ## Häufig gestellte Fragen
 

@@ -34,7 +34,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## Krok 3: Wyszukaj i zamień czcionki
 
- Tworzymy`TextFragmentAbsorber`obiekt i ustaw opcję edycji, aby usunąć nieużywane czcionki. Następnie akceptujemy absorber dla wszystkich stron dokumentu PDF, aby wyszukać fragmenty tekstu.
+ Tworzymy`TextFragmentAbsorber` obiekt i ustaw opcję edycji, aby usunąć nieużywane czcionki. Następnie akceptujemy absorber dla wszystkich stron dokumentu PDF, aby wyszukać fragmenty tekstu.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));

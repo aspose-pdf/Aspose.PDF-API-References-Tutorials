@@ -10,7 +10,7 @@ url: /cs/java/pdf-form-fields/add-page-number-stamp-in-pdf-using-java/
 
 ## Úvod k přidání razítka čísla stránky v PDF pomocí Java
 
-Dokumenty PDF se široce používají pro sdílení a prezentaci informací, ale někdy je možná budete muset vylepšit přidáním čísel stránek. Ať už pracujete na zprávách, příručkách nebo akademických pracích, čísla stránek pomáhají čtenářům efektivně se orientovat ve vašem obsahu. V tomto tutoriálu vás provedeme procesem přidávání razítek s čísly stránek do souborů PDF pomocí Java. Budeme používat Aspose.PDF for Java, výkonnou knihovnu, která zjednodušuje manipulaci s PDF.
+Dokumenty PDF se široce používají pro sdílení a prezentaci informací, ale někdy je možná budete muset vylepšit přidáním čísel stránek. Ať už pracujete na zprávách, příručkách nebo akademických pracích, čísla stránek pomáhají čtenářům efektivně se orientovat ve vašem obsahu. V tomto tutoriálu vás provedeme procesem přidávání razítek s čísly stránek do souborů PDF pomocí Javy. Budeme používat Aspose.PDF for Java, výkonnou knihovnu, která zjednodušuje manipulaci s PDF.
 
 ## Nastavení Aspose.PDF pro Javu
 

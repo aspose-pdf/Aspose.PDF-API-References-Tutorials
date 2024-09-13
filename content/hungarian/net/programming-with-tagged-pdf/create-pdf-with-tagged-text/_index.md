@@ -13,7 +13,7 @@ Ebben az oktatóanyagban lépésről lépésre bemutatjuk, hogyan hozhat létre 
 
 Mielőtt elkezdené, győződjön meg arról, hogy a következő előfeltételeket teljesítette:
 
-1. Visual Studio .NET keretrendszerrel telepítve.
+1. A Visual Studio .NET keretrendszerrel telepítve.
 2. Az Aspose.PDF könyvtár a .NET-hez.
 
 ## 1. lépés: A projekt beállítása
@@ -22,7 +22,7 @@ A kezdéshez hozzon létre egy új projektet a Visual Studióban, és adjon hozz
 
 ## 2. lépés: Importálja a szükséges névtereket
 
-A C# kódfájlba importálja az Aspose.PDF által biztosított osztályok és metódusok eléréséhez szükséges névtereket:
+C# kódfájlba importálja az Aspose.PDF által biztosított osztályok és metódusok eléréséhez szükséges névtereket:
 
 ```csharp
 using System;
@@ -119,7 +119,7 @@ V: A kódpélda bemutatja, hogyan hozhat létre PDF-dokumentumot, hogyan határo
 
 V: Igen, hozzáadhat más címkézett szövegelemeket, például listákat, hivatkozásokat vagy más egyéni struktúrákat hasonló technikák segítségével. Az Aspose.PDF különféle módszereket kínál különböző típusú címkézett tartalmak létrehozására, lehetővé téve a dokumentumszemantika javítását.
 
-####  K: Hogyan működik a`SetTitle` method contribute to the PDF document's tagged text?
+#### K: Hogyan működik a`SetTitle` method contribute to the PDF document's tagged text?
 
  V: A`SetTitle` metódus beállítja a PDF-dokumentum címkézett tartalmának címét, röviden leírva a dokumentum célját vagy tárgyát. Ez az információ segít a felhasználóknak megérteni a címkézett szöveg kontextusát.
 
@@ -127,9 +127,9 @@ V: Igen, hozzáadhat más címkézett szövegelemeket, például listákat, hiva
 
 V: A címkézett szöveg szemantikai jelentést ad a dokumentumnak, így könnyebben hozzáférhetővé válik a fogyatékkal élő vagy a kisegítő technológiát használók számára. A képernyőolvasók és más kisegítő eszközök képesek értelmezni és megjeleníteni a címkézett szöveget a jobb felhasználói élmény érdekében.
 
-####  K: Hogyan működik a`SetLanguage` method enhance the tagged text in a PDF document?
+#### K: Hogyan működik a`SetLanguage` method enhance the tagged text in a PDF document?
 
- V: A`SetLanguage`metódus beállítja a PDF-dokumentum címkézett tartalmának nyelvi attribútumait. Ez segít jelezni a nyelvet, amelyen a címkézett szöveg íródott, javítva a hozzáférhetőséget és lehetővé téve a megfelelő nyelvspecifikus megjelenítést.
+ V: A`SetLanguage` metódus beállítja a PDF-dokumentum címkézett tartalmának nyelvi attribútumait. Ez segít jelezni a nyelvet, amelyen a címkézett szöveg íródott, javítva a hozzáférhetőséget és lehetővé téve a megfelelő nyelvspecifikus megjelenítést.
 
 #### K: Lehetséges-e más elemeket, például képeket vagy multimédiát hozzáadni a címkézett szöveghez hasonló technikákkal?
 

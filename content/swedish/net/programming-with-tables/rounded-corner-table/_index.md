@@ -1,7 +1,7 @@
 ---
 title: Rundat hörnbord i PDF-dokument
 linktitle: Rundat hörnbord i PDF-dokument
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du skapar en rundad hörntabell i PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 190

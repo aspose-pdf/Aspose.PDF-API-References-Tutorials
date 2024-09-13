@@ -31,7 +31,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Text.Font font = FontRepository.FindFont("Arial");
 ```
 
-يجد الكود أعلاه الخط Arial باستخدام`FindFont` الطريقة من`FontRepository` الصف. إذا كنت تريد استخدام خط مختلف، فاستبدله`"Arial"` مع اسم الخط المطلوب.
+ يجد الكود أعلاه الخط Arial باستخدام`FindFont`الطريقة من`FontRepository` الصف. إذا كنت تريد استخدام خط مختلف، فاستبدله`"Arial"` مع اسم الخط المطلوب.
 
 ## الخطوة 3: تعيين حالة النص
 

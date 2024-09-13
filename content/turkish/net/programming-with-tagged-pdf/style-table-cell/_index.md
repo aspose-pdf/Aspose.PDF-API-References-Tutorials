@@ -35,7 +35,7 @@ Yeni bir belge oluşturduk ve belge başlığını ve dilini ayarladık.
 Bu adımda belgemiz için kök yapı elemanını elde edeceğiz.
 
 ```csharp
-//Kök yapı elemanını elde edin
+// Kök yapı elemanını elde edin
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
@@ -293,7 +293,7 @@ A: Başlamadan önce, .NET için Aspose.PDF'yi yüklediğinizden ve geliştirme 
 
 #### S: Aspose.PDF for .NET kullanarak yeni bir PDF belgesi nasıl oluşturabilirim?
 
-A: Yeni bir PDF belgesi oluşturmak için bir örnek oluşturmanız gerekir`Document` Aspose.PDF kütüphanesinden nesne. Sağlanan C# kaynak kodu bir belgenin nasıl oluşturulacağını ve başlığının ve dilinin nasıl ayarlanacağını gösterir.
+ A: Yeni bir PDF belgesi oluşturmak için bir örnek oluşturmanız gerekir`Document` Aspose.PDF kütüphanesinden nesne. Sağlanan C# kaynak kodu bir belgenin nasıl oluşturulacağını ve başlığının ve dilinin nasıl ayarlanacağını gösterir.
 
 #### S: Bir PDF belgesinde kök yapı öğesinin önemi nedir?
 

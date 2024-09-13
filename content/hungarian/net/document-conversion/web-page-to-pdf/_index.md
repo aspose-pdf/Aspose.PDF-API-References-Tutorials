@@ -82,7 +82,7 @@ dataStream.Close();
 response.Close();
 ```
 
-Itt beolvassuk a szerver által visszaadott teljes tartalmat egy karakterlánc-változóba. Ezt a tartalmat konvertáljuk PDF-be.
+Itt a szerver által visszaadott teljes tartalmat egy karakterlánc-változóba olvassuk be. Ezt a tartalmat konvertáljuk PDF-be.
 
 ## 4. lépés: Töltsön be HTML tartalmat a memóriába
 

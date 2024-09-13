@@ -7,116 +7,172 @@ type: docs
 weight: 170
 url: /hu/net/programming-with-document/getdocumentwindow/
 ---
-Az Aspose.PDF for .NET egy hatékony PDF-manipulációs könyvtár, amely lehetővé teszi a fejlesztők számára PDF-fájlok létrehozását, szerkesztését és konvertálását .NET-alkalmazásaikban. A könyvtár által kínált szolgáltatások egyike a dokumentum ablaktulajdonságaival kapcsolatos információk lekérése. Ez az oktatóanyag végigvezeti Önt a használatának lépésein`GetDocumentWindow` Az Aspose.PDF for .NET szolgáltatása a PDF-dokumentum ablaktulajdonságaival kapcsolatos információk lekéréséhez.
+# Bevezetés
 
-## 1. lépés: Telepítse az Aspose.PDF for .NET fájlt
+PDF-ekkel dolgozik, és jobban szeretné szabályozni, hogyan jelenjenek meg megnyitáskor? Legyen szó a menüsor elrejtéséről vagy az ablak átméretezéséről, hogy illeszkedjen az első oldalhoz, az Aspose.PDF for .NET minden olyan eszközt kínál, amelyre szüksége van a PDF megjelenítőben való megnyitásakor történő testreszabásához. Ebben az oktatóanyagban bemutatjuk, hogyan lehet lekérni és módosítani a dokumentumablak beállításait az Aspose.PDF for .NET-ben.
 
- Az Aspose.PDF for .NET használatához .NET-alkalmazásaiban először telepítenie kell a könyvtárat. A könyvtár legújabb verzióját letöltheti a[Aspose.PDF .NET letöltési oldalhoz](https://releases.aspose.com/pdf/net).
 
-Miután letöltötte a könyvtárat, bontsa ki a ZIP-fájl tartalmát egy mappába a számítógépén. Ezután hozzá kell adnia egy hivatkozást az Aspose.PDF for .NET DLL-hez a .NET projektben.
+# Előfeltételek
 
-## 2. lépés: Töltse be a PDF-dokumentumot
+Mielőtt belevágna az oktatóanyagba, győződjön meg arról, hogy a következő előfeltételek teljesülnek:
 
- Miután telepítette az Aspose.PDF for .NET fájlt, és hozzáadott egy hivatkozást a DLL-re a .NET projektben, elkezdheti használni a`GetDocumentWindow`funkció a PDF-dokumentum ablaktulajdonságaival kapcsolatos információk lekéréséhez.
+- Aspose.PDF for .NET telepítve a fejlesztői környezetre.
+  - [Töltse le az Aspose.PDF-et .NET-hez](https://releases.aspose.com/pdf/net/)
+-  Érvényes licenc az Aspose.PDF fájlhoz, vagy beszerezheti a[ingyenes próbaverzió](https://releases.aspose.com/) vagy[ideiglenes engedély](https://purchase.aspose.com/temporary-license/).
+- A .NET és a C# alapvető ismerete.
+- Visual Studio vagy más megfelelő IDE.
 
-A funkció használatának első lépése annak a PDF-dokumentumnak a betöltése, amelyről információkat szeretne lekérni. Ehhez a következő kódot használhatja:
+# Csomagok importálása
+
+Mielőtt bármilyen kódot írni kezdene, importálnia kell a szükséges csomagokat. Nyissa meg a projektet, és adja hozzá a következő névteret a C# fájl tetejéhez:
 
 ```csharp
-// A PDF dokumentum elérési útja
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
+```
 
-// Nyissa meg a PDF dokumentumot
+Ez hozzáférést biztosít az összes osztályhoz és módszerhez, amely a PDF-dokumentumok Aspose.PDF for .NET használatával történő kezeléséhez szükséges.
+
+ Most bontsuk le a különböző dokumentumablak-beállítások lekérésének folyamatát. Ebben a példában egy minta PDF-fájlt fogunk használni, melynek neve`GetDocumentWindow.pdf`.
+
+## 1. lépés: Állítsa be a dokumentumkönyvtár elérési útját
+
+Először is meg kell határoznunk a PDF-fájlunk elérési útját. Rendkívül fontos, hogy a megfelelő fájl elérési úttal rendelkezzen, hogy elkerülje a hibákat a végrehajtás során.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Tessék, cserélje ki`"YOUR DOCUMENT DIRECTORY"` azzal a könyvtárral, ahol a PDF-fájl található. Ez az Ön munkakönyvtára, ahonnan betöltheti a PDF dokumentumot.
+
+## 2. lépés: Nyissa meg a PDF-dokumentumot
+
+Most, hogy a fájl elérési útja be van állítva, a következő lépés a PDF-dokumentum megnyitása az Aspose.PDF használatával. Ez betölti a dokumentumot a memóriába, lehetővé téve a tulajdonságainak lekérését.
+
+```csharp
 Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 ```
 
- A fenti kódban cserélje ki`"YOUR DOCUMENT DIRECTORY"` annak a könyvtárnak az elérési útjával, ahol a PDF-dokumentum található. Ez a kód betölti a PDF dokumentumot a`Document` objektumot, amelyet aztán a dokumentum ablaktulajdonságaival kapcsolatos információk lekérésére használhat.
+Ezzel az egyszerű kódsorral sikeresen betöltötte a PDF-fájlt a`pdfDocument` objektum, amely most lehetővé teszi az összes tulajdonság elérését.
 
-## 3. lépés: Nyerje le a dokumentum ablak tulajdonságait
+## 3. lépés: Az ablak központosítási állapotának lekérése
 
-A PDF-dokumentum ablaktulajdonságaival kapcsolatos információk lekéréséhez a következő kódot használhatja:
-
-```csharp
-// A dokumentum ablak tulajdonságainak lekérése
-Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
-```
-
-A fenti kódban minden sor lekéri a PDF dokumentum különböző ablaktulajdonságait, és kiadja azt a konzolnak. Ezt a kódot testreszabhatja úgy, hogy csak az Önt érdeklő tulajdonságokat kérje le.
-
-### Példa forráskódra a PDF-fájl dokumentumablakának lekéréséhez az Aspose.PDF for .NET használatával 
-
- Itt található a teljes forráskód a PDF-dokumentum ablak tulajdonságainak lekéréséhez a`GetDocumentWindow` Az Aspose.PDF .NET-hez funkciója:
+ Ezután nézzük meg, hogy a dokumentumablakot középre kell-e helyezni megnyitáskor. Ennek alapértelmezett értéke`false`.
 
 ```csharp
-// A dokumentumok könyvtárának elérési útja.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Nyissa meg a dokumentumot
-Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
-
-// Szerezzen be különböző dokumentumtulajdonságokat
-// A dokumentum ablakának helyzete - Alapértelmezés: false
 Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-
-// Túlnyomó olvasási rend; meghatározza az oldal pozícióját
-// Ha egymás mellett jelenik meg - Alapértelmezés: L2R
-Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-
-// Meghatározza, hogy az ablak címsorában megjelenjen-e a dokumentum címe
-// Ha hamis, a címsorban megjelenik a PDF fájl neve – Alapértelmezés: false
-Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-
-// Meghatározza, hogy át kell-e méretezni a dokumentum ablakát, hogy illeszkedjen a méretéhez
-// Elsőként megjelenített oldal - Alapértelmezés: false
-Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-
-// A megjelenítő alkalmazás menüsorának elrejtése - Alapértelmezés: false
-Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-
-// A megjelenítő alkalmazás eszköztárának elrejtése - Alapértelmezés: false
-Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-
-// El kell-e rejteni a felhasználói felület elemeit, például a görgetősávokat
-// És csak az oldal tartalma marad meg – Alapértelmezés: false
-Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-
-// dokumentum oldalmódja. A dokumentum megjelenítése a teljes képernyős módból való kilépéskor.
-Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-
-// Az oldalelrendezés, azaz egyetlen oldal, egy oszlop
-Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-
-// Hogyan jelenjen meg a dokumentum megnyitáskor
-// Azaz miniatűrök megjelenítése teljes képernyőn, mellékletpanel megjelenítése
-Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 ```
+
+ Ha a kimenet az`true`, a dokumentum ablaka megnyílik a képernyő közepén. Ellenkező esetben az alapértelmezett pozíciójában nyílik meg.
+
+## 4. lépés: Ellenőrizze a szöveg irányát
+
+A PDF megjelenésének másik döntő szempontja a szöveg iránya, amely meghatározza, hogy a szöveg balról jobbra (L2R) vagy jobbról balra (R2L) kerül-e beolvasásra. Ezeket az információkat a következő kóddal kérheti le:
+
+```csharp
+Console.WriteLine("Direction : {0}", pdfDocument.Direction);
+```
+
+ A kimenet az lesz`L2R` balról jobbra haladó szöveghez és`R2L` jobbról balra haladó szöveghez. Ez a beállítás különösen hasznos olyan nyelvű dokumentumok esetén, mint az arab vagy a héber.
+
+## 5. lépés: Jelenítse meg a dokumentum címét az ablakban
+
+ következő tulajdonság lehetővé teszi annak szabályozását, hogy a dokumentum címe vagy a fájl neve jelenjen-e meg az ablak címsorában. Alapértelmezés szerint ez be van állítva`false`, ami azt jelenti, hogy megjelenik a fájl neve.
+
+```csharp
+Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
+```
+
+Ha azt szeretné, hogy a fájl neve helyett a dokumentum címe jelenjen meg, ezt a beállítást engedélyezni kell.
+
+## 6. lépés: Méretezze át az ablakot az első oldalhoz
+
+Néha előfordulhat, hogy a dokumentumablak automatikusan átméretezi magát, hogy a megnyitáskor illeszkedjen a PDF első oldalához. A következőképpen ellenőrizheti, hogy a funkció engedélyezve van-e:
+
+```csharp
+Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
+```
+
+ Alapértelmezés szerint ez be van állítva`false`, ami azt jelenti, hogy az ablak mérete változatlan marad, függetlenül az első oldal méretétől.
+
+## 7. lépés: A menüsor elrejtése
+
+A fókuszáltabb olvasási élmény érdekében érdemes lehet elrejteni a megjelenítő alkalmazás menüsorát. Ezt a beállítást a következő sor segítségével kérheti le:
+
+```csharp
+Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
+```
+
+ Ez vissza fog térni`true` ha a menüsor rejtett, és`false` egyébként.
+
+## 8. lépés: Az Eszköztár elrejtése
+
+Hasonlóképpen, érdemes lehet elrejteni az eszköztárat a PDF-megtekintőben a tisztább felhasználói felület érdekében. Ezt a beállítást a következőképpen lehet visszakeresni:
+
+```csharp
+Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
+```
+
+Ha ez a beállítás engedélyezve van, az eszköztár el lesz rejtve a PDF megnyitásakor.
+
+## 9. lépés: A görgetősávok és a felhasználói felület elemeinek elrejtése
+
+Ha csak az oldal tartalmát szeretné megjeleníteni további UI-elemek, például görgetősávok nélkül, ez a beállítás szabályozza ezt a viselkedést:
+
+```csharp
+Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
+```
+
+ Amikor be van állítva`true`, a PDF-megjelenítő elrejti a görgetősávokat és a felhasználói felület egyéb elemeit, így csak a dokumentum tartalma marad meg.
+
+## 10. lépés: Állítsa be a nem teljes képernyős oldal módot
+
+ A teljes képernyős módból való kilépéskor a dokumentum megjelenítését a gombbal szabályozhatja`NonFullScreenPageMode` ingatlan. Ez a beállítás hasznos annak meghatározásában, hogy a felhasználó hogyan kezelje a dokumentumot nem teljes képernyős módban.
+
+```csharp
+Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
+```
+
+A kimenet különböző módokba állítható, például miniatűrökre, körvonalakra vagy mellékletek panelre.
+
+## 11. lépés: Határozza meg az oldalelrendezést
+
+Ezzel a beállítással szabályozhatja a dokumentum oldalainak elrendezését. Választhat például egyoldalas vagy folyamatos oszlopnézetet:
+
+```csharp
+Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
+```
+
+Ez rugalmasságot biztosít a felhasználóknak a dokumentum tartalmának olvasásában vagy megtekintésében.
+
+## 12. lépés: Adja meg az oldalmódot
+
+ Végül a`PageMode` tulajdonság határozza meg, hogy a dokumentum hogyan jelenjen meg megnyitáskor. A lehetőségek közé tartozik a bélyegképek megjelenítése, a teljes képernyős módba való belépés vagy a mellékletek panel megjelenítése.
+
+```csharp
+Console.WriteLine("PageMode : {0}", pdfDocument.PageMode);
+```
+
+Igényeitől függően bármilyen módot beállíthat, amely megfelel a PDF-fájl céljának.
 
 ## Következtetés
 
-Ebben az oktatóanyagban megtanultuk, hogyan használhatja az Aspose.PDF for .NET fájlt a PDF-dokumentum ablaktulajdonságaival kapcsolatos információk lekérésére. A PDF-dokumentum betöltésével és az ablak tulajdonságainak elérésével információkat gyűjthet arról, hogy a dokumentum hogyan jelenjen meg a megjelenítő alkalmazásban való megnyitásakor. Az Aspose.PDF for .NET hatékony funkciókat kínál a PDF-fájlok programozott kezeléséhez, így értékes eszköz a .NET-alkalmazások PDF-kezeléséhez.
+Amint láthatja, az Aspose.PDF for .NET átfogó eszközöket biztosít a PDF-dokumentumok különböző PDF-megjelenítőkben való megjelenítésének kezeléséhez. Függetlenül attól, hogy el szeretné rejteni az eszköztárat, középre akarja helyezni az ablakot, vagy szabályozni szeretné a szöveg irányát, az Aspose.PDF rugalmasságot kínál a felhasználó megtekintési élményének javításához.
 
-### GYIK
+# GYIK
 
-#### K: Mi a célja a PDF-dokumentum ablak tulajdonságainak lekérésének?
+### Testreszabhatom a PDF kezdeti nagyítási szintjét?
+Igen, az Aspose.PDF lehetővé teszi a nagyítási szint beállítását a dokumentum megnyitásakor.
 
-V: A PDF-dokumentum ablaktulajdonságainak lekérése lehetővé teszi, hogy információkat gyűjtsön arról, hogyan kell megjeleníteni a PDF-dokumentumot, ha egy megjelenítő alkalmazásban megnyitja. Ezek a tulajdonságok különféle szempontokat szabályoznak, például az ablak helyzetét, a megjelenítési módot és a felhasználói felület elemeinek láthatóságát.
+### Hogyan zárolhatom a PDF ablak méretét?
+ Beállíthatja a`FitWindow` tulajdonság, hogy megakadályozza az ablak átméretezését.
 
-#### K: Hogyan telepíthetem az Aspose.PDF for .NET fájlt a .NET projektembe?
+### Az Aspose.PDF támogatja a különböző olvasási módokat?
+Igen, támogatja a különböző módokat, például a teljes képernyőt, az indexképeket és a mellékleteket.
 
- V: Az Aspose.PDF for .NET telepítéséhez le kell töltenie a könyvtárat a[Aspose.PDF .NET letöltési oldalhoz](https://releases.aspose.com/pdf/net). A letöltés után bontsa ki a ZIP-fájl tartalmát, és adjon hozzá hivatkozást az Aspose.PDF for .NET DLL-hez a .NET-projektben.
+### Lehetséges a görgetősávok elrejtése a PDF-nézőben?
+ Egyáltalán elrejtheti a görgetősávokat a`HideWindowUI` tulajdonát`true`.
 
-#### K: Testreszabhatom a kódot úgy, hogy csak bizonyos ablaktulajdonságokat kérjen le?
-
-V: Igen, testreszabhatja a kódot, hogy lekérjen bizonyos ablaktulajdonságokat, ha kommentálja azokat a sorokat, amelyekre nincs szüksége. A kód minden sora egy adott ablaktulajdonságnak felel meg, így igénye szerint felvehet vagy kizárhat tulajdonságokat.
-
-#### K: Milyen típusú ablaktulajdonságokat kérhetek le az Aspose.PDF for .NET használatával?
-
-V: Az Aspose.PDF for .NET használatával lekérheti a PDF-dokumentumok különféle ablaktulajdonságait, beleértve az ablak középre állítását, az oldalelrendezés beállítását, az eszköztárak és menüsorok megjelenítésének vezérlését stb.
+### Középre tudom helyezni a dokumentumablakot megnyitáskor?
+ Igen, ezt a beállításával szabályozhatja`CenterWindow` ingatlan.

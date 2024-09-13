@@ -38,14 +38,14 @@ Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
 ## 5. lépés: Adjon hozzá egy oldalt a dokumentumhoz
- Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
+ Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages` gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
 ## 6. lépés: Hozzon létre egy szövegtöredéket következő sorok behúzásával
- Példányosítás a`TextFragment` objektumot, és adja meg a kívánt szöveget. A megadott kódban a szöveg hozzá van rendelve a változóhoz`text` . Ezután inicializálja`TextFormattingOptions` a`TextFragment`és adja meg a`SubsequentLinesIndent` érték.
+ Példányosítás a`TextFragment` objektumot, és adja meg a kívánt szöveget. A megadott kódban a szöveg hozzá van rendelve a változóhoz`text` . Ezután inicializálja`TextFormattingOptions` a`TextFragment` és adja meg a`SubsequentLinesIndent` érték.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
@@ -91,7 +91,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = document.Pages.Add();
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-// Inicializálja a TextFormattingOptions parancsot a szövegrészlethez, és adja meg a SubsequentLinesIndent értéket
+//Inicializálja a TextFormattingOptions parancsot a szövegrészlethez, és adja meg a SubsequentLinesIndent értéket
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
 	SubsequentLinesIndent = 20
@@ -148,7 +148,7 @@ Aspose.Pdf.Page page = document.Pages.Add();
 
 #### K: Hogyan adhatok hozzá következő sorok behúzását a szöveghez?
 
- V: A 6. lépésben létrehoz egy`TextFragment` objektumot, és rendelje hozzá a kívánt szöveget. Ezután inicializálja`TextFormattingOptions` a`TextFragment`és adja meg a`SubsequentLinesIndent` érték:
+ V: A 6. lépésben létrehoz egy`TextFragment` objektumot, és rendelje hozzá a kívánt szöveget. Ezután inicializálja`TextFormattingOptions` a`TextFragment` és adja meg a`SubsequentLinesIndent` érték:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
@@ -168,7 +168,7 @@ page.Paragraphs.Add(text);
 
 #### K: Megismételhetem a folyamatot további soroknál?
 
- V: Igen, a 8. lépésben megismételheti a folyamatot további sorok esetében is, ugyanazzal a behúzással új létrehozásával`TextFragment` objektumokat, és hozzáadjuk őket az oldal bekezdésgyűjteményéhez.
+V: Igen, a 8. lépésben megismételheti a folyamatot további sorok esetében is, ugyanazzal a behúzással új létrehozásával`TextFragment` objektumokat, és hozzáadjuk őket az oldal bekezdésgyűjteményéhez.
 
 #### K: Hogyan menthetem el az eredményül kapott PDF-dokumentumot?
 

@@ -47,7 +47,7 @@ ITaggedContent taggedContent = document.TaggedContent;
 
 ## 4. lépés: Állítsa be a dokumentum címét és nyelvét
 
-Most már beállíthatjuk a dokumentum címét és nyelvét.
+Most beállíthatjuk a dokumentum címét és nyelvét.
 
 ```csharp
 // Határozza meg a dokumentum címét és nyelvét
@@ -307,11 +307,11 @@ V: Igen, testreszabhatja a soron belüli szerkezeti elemek megjelenését és fo
 
 #### K: Hogyan hozhatok létre és adhatok hozzá különböző szintű fejléceket egy PDF-dokumentumhoz az Aspose.PDF for .NET-hez soron belüli szerkezeti elemeivel?
 
- V: Különböző szintű címsorokat hozhat létre a`CreateHeaderElement` módszert, majd hozzáfűzi őket a gyökérstruktúra elemhez. Ezt követően az egyes címsorelemekhez tartalmat adhat hozzá a`CreateSpanElement` szövegszakasz létrehozásának módszere.
+ V: Különböző szintű címsorokat hozhat létre a`CreateHeaderElement`módszert, majd hozzáfűzi őket a gyökérstruktúra elemhez. Ezt követően az egyes címsorelemekhez tartalmat adhat hozzá a`CreateSpanElement` szövegszakasz létrehozásának módszere.
 
 #### K: Használhatok soron belüli szerkezeti elemeket listák, felsoroláspontok vagy más típusú tartalomszervezés létrehozására egy PDF-dokumentumban?
 
-V: Míg magukat a beágyazott szerkezeti elemeket elsősorban címsorokhoz és bekezdésekhez használják, használhatja őket az Aspose.PDF for .NET által kínált egyéb funkciókkal kombinálva listák, felsoroláspontok, táblázatok és egyéb tartalomszervezési típusok létrehozásához az átfogó tartalomszervezés érdekében. dokumentum szerkezet.
+V: Míg magukat a beágyazott szerkezeti elemeket elsősorban címsorokhoz és bekezdésekhez használják, használhatja őket az Aspose.PDF for .NET által kínált egyéb funkciókkal kombinálva listák, felsoroláspontok, táblázatok és egyéb tartalomszervezési típusok létrehozásához az átfogó tartalomszervezés érdekében. dokumentum szerkezete.
 
 #### K: Hogyan járulnak hozzá a beépített szerkezeti elemek a dokumentumok hozzáférhetőségéhez?
 

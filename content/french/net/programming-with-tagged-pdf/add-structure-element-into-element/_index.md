@@ -114,7 +114,7 @@ Ce code enregistre le document PDF avec les éléments structurés dans un fichi
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
 string logFile = dataDir + "46144_log.xml";
-// Création de document et obtention de contenu PDF balisé
+//Création de document et obtention de contenu PDF balisé
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 // Définition du titre et de la langue naturelle du document
@@ -209,8 +209,8 @@ R : La création d'une structure hiérarchique dans un document PDF améliore so
 
 #### Q : Comment puis-je valider la conformité PDF/UA après avoir ajouté des éléments de structure ?
 
- R : Le code fourni dans le didacticiel montre comment valider la conformité PDF/UA à l'aide de`Validate` méthode. En validant le document par rapport à la norme PDF/UA, vous pouvez vous assurer que les éléments de structure ajoutés sont conformes aux directives d'accessibilité.
+R : Le code fourni dans le didacticiel montre comment valider la conformité PDF/UA à l'aide de`Validate` méthode. En validant le document par rapport à la norme PDF/UA, vous pouvez vous assurer que les éléments de structure ajoutés sont conformes aux directives d'accessibilité.
 
 #### Q : Puis-je utiliser cette approche pour ajouter des éléments de structure à un document PDF existant ?
 
-: Oui, vous pouvez modifier l'approche fournie pour ajouter des éléments de structure à un document PDF existant. Au lieu de créer un nouveau document, vous devez charger le document existant à l'aide d'Aspose.PDF, puis suivre des étapes similaires pour ajouter des éléments de structure.
+R : Oui, vous pouvez modifier l'approche fournie pour ajouter des éléments de structure à un document PDF existant. Au lieu de créer un nouveau document, vous devez charger le document existant à l'aide d'Aspose.PDF, puis suivre des étapes similaires pour ajouter des éléments de structure.

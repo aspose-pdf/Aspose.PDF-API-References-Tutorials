@@ -85,7 +85,7 @@ Dieser Code speichert die geänderte PDF-Datei unter einem neuen Namen (`DeleteA
 
 ## Abschluss
 
-Und das war’s! Sie haben mit Aspose.PDF für .NET erfolgreich alle Anmerkungen von einer Seite in Ihrem PDF-Dokument entfernt. Diese einfache, aber leistungsstarke Methode kann beim Umgang mit kommentierten PDFs eine echte Zeitersparnis sein. Egal, ob Sie Dokumente für den professionellen Einsatz vorbereiten oder einfach nur Ihre Dateien entrümpeln, dieses Tutorial hat Ihnen die Werkzeuge an die Hand gegeben, um Anmerkungen effizient zu handhaben.
+Und das war’s! Sie haben mit Aspose.PDF für .NET erfolgreich alle Anmerkungen von einer Seite in Ihrem PDF-Dokument entfernt. Diese einfache, aber leistungsstarke Methode kann beim Umgang mit kommentierten PDFs eine echte Zeitersparnis sein. Egal, ob Sie Dokumente für den professionellen Einsatz vorbereiten oder einfach nur Ihre Dateien entrümpeln, dieses Tutorial hat Ihnen die Werkzeuge für den effizienten Umgang mit Anmerkungen an die Hand gegeben.
 
  Aspose.PDF für .NET ist eine vielseitige Bibliothek, die viele weitere Funktionen bietet, die über die Verwaltung von Anmerkungen hinausgehen. Ich ermutige Sie, ihr volles Potenzial zu erkunden, indem Sie sich die[Dokumentation](https://reference.aspose.com/pdf/net/).
 

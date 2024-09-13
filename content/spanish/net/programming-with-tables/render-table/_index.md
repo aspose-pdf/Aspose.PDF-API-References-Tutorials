@@ -44,7 +44,7 @@ table. ColumnWidths = "50 100";
 ```
 
 ## Paso 4: Agregar filas y celdas a la tabla
-continuación, agregaremos filas y celdas a la tabla mediante un bucle:
+A continuación, agregaremos filas y celdas a la tabla mediante un bucle:
 
 ```csharp
 for (int i = 1; i <= 120; i++)
@@ -154,7 +154,7 @@ Console.WriteLine("\nTable render successfully on a page.\nFile saved at " + dat
 
 #### P: ¿Cómo puedo modificar la apariencia de la tabla, como cambiar los colores de las celdas o agregar bordes?
 
-A: Para modificar la apariencia de la tabla, puede configurar varias propiedades de la`Aspose.Pdf.Table` y sus celdas. Por ejemplo, puede configurar el`BackgroundColor` propiedad de las celdas para cambiar su color de fondo. También puede configurar la`Border` propiedad de la tabla o de celdas individuales para agregar bordes. Además, puede personalizar la fuente, el color del texto y la alineación del contenido de la tabla modificando la propiedad`TextState` del`TextFragment` objetos añadidos a las celdas.
+ A: Para modificar la apariencia de la tabla, puede configurar varias propiedades de la`Aspose.Pdf.Table` y sus celdas. Por ejemplo, puede configurar el`BackgroundColor` propiedad de las celdas para cambiar su color de fondo. También puede configurar la`Border` propiedad de la tabla o de celdas individuales para agregar bordes. Además, puede personalizar la fuente, el color del texto y la alineación del contenido de la tabla modificando la propiedad`TextState` del`TextFragment` objetos añadidos a las celdas.
 
 #### P: ¿Puedo agregar encabezados o pies de página a la tabla?
 
@@ -162,7 +162,7 @@ R: Sí, puede agregar encabezados o pies de página a la tabla creando filas adi
 
 #### P: ¿Cómo puedo controlar la posición de la tabla en la página?
 
- A: Para controlar la posición de la tabla en la página, puede ajustar el`MarginInfo` del`PageInfo` objeto. El`MarginInfo`permite configurar los márgenes izquierdo, derecho, superior e inferior de la página, lo que afecta el espacio disponible para la tabla. También puede utilizar el`PositioningType` propiedad de la`Aspose.Pdf.Table` para controlar su alineación horizontal y vertical dentro del área de contenido de la página.
+A: Para controlar la posición de la tabla en la página, puede ajustar el`MarginInfo` del`PageInfo` objeto. El`MarginInfo` permite configurar los márgenes izquierdo, derecho, superior e inferior de la página, lo que afecta el espacio disponible para la tabla. También puede utilizar el`PositioningType` propiedad de la`Aspose.Pdf.Table` para controlar su alineación horizontal y vertical dentro del área de contenido de la página.
 
 #### P: ¿Puedo exportar la tabla a diferentes formatos de archivo, como Excel o CSV?
 

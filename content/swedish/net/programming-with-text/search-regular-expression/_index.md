@@ -1,7 +1,7 @@
 ---
 title: Sök efter reguljära uttryck i PDF-fil
 linktitle: Sök efter reguljära uttryck i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du söker och hämtar text med reguljära uttryck i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 440
@@ -69,7 +69,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## Steg 7: Hämta extraherade textfragment
 
-Hämta de extraherade textfragmenten med hjälp av`TextFragments` egendom av`TextFragmentAbsorber` objekt:
+ Hämta de extraherade textfragmenten med hjälp av`TextFragments` egendom av`TextFragmentAbsorber` objekt:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -103,7 +103,7 @@ Du kan ändra koden i slingan för att utföra ytterligare åtgärder på varje 
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Öppna dokumentet
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionAll.pdf");
-// Skapa TextAbsorber-objekt för att hitta alla fraser som matchar det reguljära uttrycket
+//Skapa TextAbsorber-objekt för att hitta alla fraser som matchar det reguljära uttrycket
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Som 1999-2000
 // Ställ in textsökningsalternativ för att ange användning av reguljära uttryck
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);

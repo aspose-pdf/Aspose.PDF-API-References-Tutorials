@@ -1,7 +1,7 @@
 ---
 title: Använd Latex Script i PDF-fil
 linktitle: Använd Latex Script i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du använder Latex-skript för att lägga till matematiska uttryck eller formler i ett PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 550
@@ -134,7 +134,7 @@ using Aspose.Pdf.Tables;
 using Aspose.Pdf.Text;
 ```
 
-Dessa namnrymder ger dig tillgång till de klasser och funktioner som behövs för att arbeta med PDF-dokument och LaTeX-skript.
+Dessa namnutrymmen ger dig tillgång till de klasser och funktioner som behövs för att arbeta med PDF-dokument och LaTeX-skript.
 
 #### F: Hur kan jag använda LaTeX-skript för att lägga till matematiska uttryck eller formler i ett PDF-dokument?
 

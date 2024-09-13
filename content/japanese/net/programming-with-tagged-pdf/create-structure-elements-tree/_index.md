@@ -140,7 +140,7 @@ document.Save(dataDir + "StructureElementsTree.pdf");
 ```
 
 ## 結論
-Aspose.PDF for .NET を使用してツリー要素の構造を作成する方法を学習しました。このガイドでは、PDF ドキュメントの設定、論理構造要素の作成、最終ドキュメントの保存に必要な手順について説明しました。Aspose.PDF を使用すると、PDF 要素を簡単に操作し、構造化されたドキュメントを作成できます。
+Aspose.PDF for .NET を使用してツリー要素の構造を作成する方法を学習しました。このガイドでは、PDF ドキュメントの設定、論理構造要素の作成、および最終ドキュメントの保存に必要な手順について説明しました。Aspose.PDF を使用すると、PDF 要素を簡単に操作し、構造化されたドキュメントを作成できます。
 
 ### よくある質問
 
@@ -152,7 +152,7 @@ A: Aspose.PDF for .NET を使用して PDF ドキュメントにツリー要素�
 
 A: コード例では、`SectElement`, `DivElement` 、 そして`ArtElement` Aspose.PDF によって提供されるクラス。これらの要素は親ノードと子ノードとして編成され、ドキュメント内にツリーのような構造を形成します。
 
-####  Q:`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
+#### Q:`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
 
  A:`TaggedContent`プロパティは、PDF ドキュメントのタグ付けされたコンテンツ機能へのアクセスを提供します。これにより、構造化された要素を作成および操作し、それらの関係を定義し、それらを階層的に整理して、ドキュメントの構造とアクセシビリティを強化できます。
 
@@ -168,7 +168,7 @@ A: これらのクラスは、異なるタイプの構造要素を表します�
 
 A: 要素を階層的に整理すると、ドキュメントの構成、ナビゲーション、セマンティクスが向上します。これにより、ユーザーと支援技術はコンテンツの構造と関係を理解できるようになり、全体的なユーザー エクスペリエンスが向上します。
 
-####  Q:`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
+#### Q:`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
 
  A:`Save`この方法は、PDF文書を、`AppendChild`方法。これにより、構造がそのまま維持され、ドキュメントがアクセスしやすく整理されたものになります。
 

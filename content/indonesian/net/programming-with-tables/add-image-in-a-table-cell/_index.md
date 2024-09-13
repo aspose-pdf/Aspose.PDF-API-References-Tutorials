@@ -43,7 +43,7 @@ Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 
 ## Langkah 4: Mengatur Batas Sel Default
 
- Untuk memastikan konsistensi, kita dapat mengatur batas sel default menggunakan`DefaultCellBorder`properti tabel`BorderInfo` obyek.
+ Untuk memastikan konsistensi, kita dapat mengatur batas sel default menggunakan`DefaultCellBorder` properti tabel`BorderInfo` obyek.
 
 ```csharp
 // Mengatur batas sel default menggunakan objek BorderInfo
@@ -93,7 +93,7 @@ Aspose.Pdf.Cell cell2 = row1.Cells.Add();
 Terakhir, kita dapat menambahkan gambar ke sel tabel dengan menambahkannya sebagai paragraf di dalam sel.
 
 ```csharp
-// Tambahkan gambar ke sel tabel
+//Tambahkan gambar ke sel tabel
 cell2.Paragraphs.Add(img);
 ```
 
@@ -102,7 +102,7 @@ cell2.Paragraphs.Add(img);
 Setelah menambahkan sel gambar, kita dapat menambahkan lebih banyak sel ke baris jika diperlukan.
 
 ```csharp
-//Tambahkan sel lain ke baris
+// Tambahkan sel lain ke baris
 row1.Cells.Add("Previous cell with image");
 
 // Sesuaikan perataan vertikal sel ketiga
@@ -114,7 +114,7 @@ row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
  Terakhir, kita dapat menyimpan dokumen yang dimodifikasi ke lokasi tertentu menggunakan`Save` metode.
 
 ```csharp
-// Simpan Dokumen
+//Simpan Dokumen
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
@@ -140,16 +140,16 @@ tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.
 tab1.ColumnWidths = "100 100 120";
 Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose.jpg";
-// Buat baris dalam tabel dan kemudian sel dalam baris
+//Buat baris dalam tabel dan kemudian sel dalam baris
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("Sample text in cell");
 // Tambahkan sel yang berisi gambar
 Aspose.Pdf.Cell cell2 = row1.Cells.Add();
-// Tambahkan gambar ke sel tabel
+//Tambahkan gambar ke sel tabel
 cell2.Paragraphs.Add(img);
 row1.Cells.Add("Previous cell with image");
 row1.Cells[2].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Center;
-// Simpan Dokumen
+//Simpan Dokumen
 pdfDocument.Save(dataDir + "AddImageInTableCell_out.pdf");
 ```
 
@@ -165,7 +165,7 @@ A: Ya, Anda dapat menambahkan beberapa gambar ke sel yang berbeda dalam tabel ya
 
 #### T: Dapatkah saya menyesuaikan ukuran dan posisi gambar dalam sel tabel?
 
- A: Ya, Anda dapat menyesuaikan ukuran dan posisi gambar di dalam sel tabel dengan menyesuaikan properti`Image`objek. Anda dapat mengatur lebar dan tinggi gambar, serta perataan dalam sel.
+ A: Ya, Anda dapat menyesuaikan ukuran dan posisi gambar di dalam sel tabel dengan menyesuaikan properti`Image` objek. Anda dapat mengatur lebar dan tinggi gambar, serta perataan dalam sel.
 
 #### T: Dapatkah saya menambahkan gambar ke tabel dengan jumlah baris dan kolom yang dinamis?
 

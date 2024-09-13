@@ -7,19 +7,59 @@ type: docs
 weight: 180
 url: /zh/net/programming-with-document/getfileinfo/
 ---
- Aspose.PDF for .NET 是一个流行的 PDF 操作库，它使开发人员能够在其 .NET 应用程序中创建、编辑和转换 PDF 文件。该库提供的功能之一是能够检索有关 PDF 文档元数据的信息。本教程将指导您完成使用`GetFileInfo`Aspose.PDF for .NET 的功能用于检索有关 PDF 文档元数据的信息。
+## 介绍
 
-## 步骤 1：安装 Aspose.PDF for .NET
+您是否想知道 PDF 文件中隐藏着什么秘密？无论是作者、创建日期，甚至是关键字，PDF 文档通常都包含对各种应用程序至关重要的宝贵元数据。在本教程中，我们将探讨如何使用 Aspose.PDF for .NET 从 PDF 中提取文件信息。这个功能强大的库允许开发人员轻松操作 PDF 文件，使其成为许多人的首选。所以，拿起你的编码帽，让我们深入研究 PDF 元数据提取的世界吧！
 
-要在 .NET 应用程序中使用 Aspose.PDF for .NET，您必须首先安装该库。您可以从[Aspose.PDF for .NET 下载页面](https://releases.aspose.com/pdf/net).
+## 先决条件
 
-下载库后，将 ZIP 文件的内容解压到计算机上的文件夹中。然后，您需要在 .NET 项目中添加对 Aspose.PDF for .NET DLL 的引用。
+在我们进入代码之前，你需要做好以下几件事：
 
-## 第 2 步：加载 PDF 文档
+1. Visual Studio：确保您的机器上安装了 Visual Studio。这将是我们的开发环境。
+2.  Aspose.PDF for .NET：您需要下载并安装 Aspose.PDF 库。您可以从[下载链接](https://releases.aspose.com/pdf/net/).
+3. C# 基础知识：熟悉 C# 编程将帮助您更好地理解代码片段。
 
-一旦安装了 Aspose.PDF for .NET 并在 .NET 项目中添加了对 DLL 的引用，您就可以开始使用`GetFileInfo`用于检索有关 PDF 文档元数据的信息的功能。
+## 导入包
 
-使用此功能的第一步是加载要检索信息的 PDF 文档。为此，您可以使用以下代码：
+首先，我们需要导入必要的包。在 Visual Studio 中打开您的 C# 项目并添加对 Aspose.PDF 库的引用。您可以使用 NuGet 包管理器执行此操作：
+
+1. 在解决方案资源管理器中右键单击您的项目。
+2. 选择“管理 NuGet 包”。
+3. 搜索“Aspose.PDF”并安装。
+
+一旦安装了库，就可以开始编写代码。
+
+## 步骤 1：设置你的项目
+
+### 创建新项目
+
+首先，让我们在 Visual Studio 中创建一个新的 C# 项目：
+
+1. 打开 Visual Studio 并选择“创建新项目”。
+2. 选择“控制台应用程序（.NET Framework）”并单击“下一步”。
+3. 为您的项目命名（例如，`PDFFileInfoExtractor`），然后点击“创建”。
+
+### 添加 Aspose.PDF 参考
+
+现在您的项目已经设置好了，您需要添加 Aspose.PDF 引用：
+
+1. 在解决方案资源管理器中右键单击您的项目。
+2. 选择“添加”>“参考”。
+3. 在参考管理器中，找到并检查 Aspose.PDF，然后单击“确定”。
+
+## 第 2 步：编写代码
+
+### 初始化文档
+
+现在，让我们编写代码来打开 PDF 文档并提取其信息。首先在顶部添加以下 using 指令`Program.cs`文件：
+
+```csharp
+using System.IO;
+using Aspose.Pdf;
+using System;
+```
+
+接下来，我们将初始化文档：
 
 ```csharp
 // PDF 文档的路径
@@ -29,41 +69,20 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
 ```
 
-在上面的代码中，替换`"YOUR DOCUMENT DIRECTORY"`以及 PDF 文档所在目录的路径。此代码会将 PDF 文档加载到`Document`对象，然后您可以使用它来检索有关文档元数据的信息。
+### 提取文档信息
 
-## 步骤 3：检索文档的元数据
-
-要检索有关 PDF 文档元数据的信息，您可以使用以下代码：
+现在我们已经打开了 PDF 文档，让我们提取它的元数据：
 
 ```csharp
 //获取文档信息
 DocumentInfo docInfo = pdfDocument.Info;
-
-//显示文档信息
-Console.WriteLine("Author: {0}", docInfo.Author);
-Console.WriteLine("Creation Date: {0}", docInfo.CreationDate);
-Console.WriteLine("Keywords: {0}", docInfo.Keywords);
-Console.WriteLine("Modify Date: {0}", docInfo.ModDate);
-Console.WriteLine("Subject: {0}", docInfo.Subject);
-Console.WriteLine("Title: {0}", docInfo.Title);
 ```
 
-在上面的代码中，每一行都会检索 PDF 文档的不同元数据属性并将其输出到控制台。您可以自定义此代码以仅检索您感兴趣的属性。
+### 显示信息
 
-### 示例源代码使用 Aspose.PDF for .NET 获取 PDF 文件信息
-
-以下是使用以下方法检索 PDF 文档元数据的完整源代码`GetFileInfo` Aspose.PDF for .NET的功能：
+最后让我们将提取的信息显示在控制台中：
 
 ```csharp
-// PDF 文档的路径
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-//打开 PDF 文档
-Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
-
-//获取文档信息
-DocumentInfo docInfo = pdfDocument.Info;
-
 //显示文档信息
 Console.WriteLine("Author: {0}", docInfo.Author);
 Console.WriteLine("Creation Date: {0}", docInfo.CreationDate);
@@ -75,22 +94,21 @@ Console.WriteLine("Title: {0}", docInfo.Title);
 
 ## 结论
 
-在本教程中，我们讨论了如何使用 Aspose.PDF for .NET 检索有关 PDF 文档元数据的信息。通过加载 PDF 文档并访问其元数据属性，您可以收集有关文档特征和属性的信息。Aspose.PDF for .NET 提供了一个简单易用的 API 来处理 PDF 文档，包括检索元数据信息，使其成为 .NET 应用程序中 PDF 操作的宝贵工具。
+恭喜！您已成功使用 Aspose.PDF for .NET 从 PDF 中提取文件信息。这个功能强大的库不仅允许您读取元数据，还提供了大量用于操作 PDF 文件的功能。无论您是开发文档管理系统还是只需要提取报告信息，Aspose.PDF 都能满足您的需求。 
 
-### 常见问题解答
+## 常见问题解答
 
-#### 问：PDF 文档中的元数据是什么？
+### 什么是 Aspose.PDF for .NET？
+Aspose.PDF for .NET 是一个库，允许开发人员在 .NET 应用程序中创建、操作和转换 PDF 文档。
 
-答：PDF 文档中的元数据是指描述文档属性和特征的信息。此类信息通常包括文档的标题、作者、主题、关键字、创建日期、修改日期等。
+### 如何安装 Aspose.PDF？
+您可以通过 Visual Studio 中的 NuGet 包管理器安装 Aspose.PDF，或者从[下载链接](https://releases.aspose.com/pdf/net/).
 
-#### 问：如何在我的.NET 项目中安装 Aspose.PDF for .NET？
+### 我可以使用 Aspose.PDF 从 PDF 中提取图像吗？
+是的，Aspose.PDF提供了从PDF文档中提取图像的方法。
 
-答：要安装 Aspose.PDF for .NET，您需要从[Aspose.PDF for .NET 下载页面](https://releases.aspose.com/pdf/net)。下载后，解压ZIP文件的内容并在您的.NET项目中添加对Aspose.PDF for .NET DLL的引用。
+### Aspose.PDF 有免费试用版吗？
+是的，你可以从[Aspose 网站](https://releases.aspose.com/).
 
-#### 问：我可以自定义代码以仅检索特定的元数据属性吗？
-
-答：是的，您可以通过注释掉不需要的行来自定义代码以检索特定的元数据属性。代码中的每一行都对应一个特定的元数据属性，因此您可以根据需要包含或排除属性。
-
-#### 问：使用 Aspose.PDF for .NET 可以检索哪些类型的元数据属性？
-
-答：使用 Aspose.PDF for .NET，您可以检索 PDF 文档的各种元数据属性，包括作者、标题、主题、关键字、创建日期和修改日期。
+### 在哪里可以找到对 Aspose.PDF 的支持？
+您可以在以下位置寻求支持并提出问题[Aspose 论坛](https://forum.aspose.com/c/pdf/10).

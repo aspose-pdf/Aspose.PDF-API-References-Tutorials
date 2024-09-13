@@ -2,153 +2,154 @@
 title: 브래들리 알고리즘
 linktitle: 브래들리 알고리즘
 second_title: .NET API 참조를 위한 Aspose.PDF
-description: Aspose.PDF for .NET과 Bradley 알고리즘을 사용하여 PDF 문서를 변환합니다.
+description: Aspose.PDF for .NET에서 Bradley 알고리즘을 사용하여 PDF를 TIFF로 변환하는 방법을 알아보세요. 원활한 변환을 위한 단계별 가이드, 필수 조건 및 FAQ.
 type: docs
 weight: 30
 url: /ko/net/programming-with-images/bradley-algorithm/
 ---
-이 단계별 가이드에서는 Aspose.PDF for .NET에서 Bradley 알고리즘을 사용하는 방법을 설명합니다. 이미 환경을 설정했는지 확인하고 아래 단계를 따르세요.
+## 소개
 
-## 1단계: 문서 디렉토리 정의
+PDF 파일을 다루는 것은 단순히 읽거나 편집하는 것 이상을 요구할 수 있습니다. 이미지로 변환해야 할 수도 있습니다. PDF를 TIFF 이미지로 변환하는 강력한 방법 중 하나는 Aspose.PDF for .NET 라이브러리를 통해 Bradley 알고리즘을 사용하는 것입니다. 이 방법은 문서 보관 및 기타 특수 사용 사례에 적합한 고품질 바이너리 이미지를 보장합니다.
 
-시작하기 전에 문서에 대한 올바른 디렉토리를 설정했는지 확인하세요. 바꾸기`"YOUR DOCUMENT DIRECTORY"` 코드에 PDF 문서가 있는 디렉토리 경로를 추가합니다.
+이 튜토리얼은 Bradley Binarization Algorithm을 사용하여 PDF 페이지를 TIFF 이미지로 변환하는 자세하고 따라하기 쉬운 프로세스를 안내합니다. Aspose.PDF for .NET은 이 작업을 간소화하여 문서 워크플로를 자동화하고 간소화할 수 있는 기능을 제공합니다.
+
+## 필수 조건
+
+코드를 살펴보기 전에 먼저 따라야 할 모든 것이 있는지 확인해 보겠습니다.
+
+-  .NET용 Aspose.PDF: 라이브러리가 필요합니다. 여기에서 다운로드하세요.[여기](https://releases.aspose.com/pdf/net/).
+- Visual Studio(또는 C# IDE).
+- C#에 대한 기본 지식.
+-  유효한 면허증 또는[임시 면허](https://purchase.aspose.com/temporary-license/) Aspose에서.
+
+## 패키지 가져오기
+
+먼저, 프로젝트에 필요한 네임스페이스를 가져오세요. 이러한 라이브러리는 PDF 문서를 조작하고, TIFF 형식으로 변환하고, Bradley 이진화 알고리즘을 적용하는 도구를 제공합니다.
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-## 2단계: 문서 열기
+순조롭게 따라갈 수 있도록 프로세스를 간단한 단계로 나누어 보겠습니다. 이 가이드를 마치면 Bradley 알고리즘을 사용하여 PDF 페이지를 바이너리 TIFF 이미지로 성공적으로 변환할 수 있습니다.
 
- 이 단계에서는 다음을 사용하여 PDF 문서를 엽니다.`Document` Aspose.PDF 클래스. 사용하세요`Document` 생성자를 사용하여 PDF 문서의 경로를 전달합니다.
+## 1단계: 문서 디렉토리 설정
+
+첫 번째 단계는 PDF 문서가 있는 디렉토리 경로를 지정하는 것입니다. 또한 생성될 TIFF 이미지의 출력 경로도 정의합니다.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // PDF 파일에 대한 경로
+```
+
+여기서는 원본 PDF와 변환된 TIFF 파일을 모두 저장합니다. 코드가 오류 없이 파일을 읽고 쓸 수 있도록 디렉토리가 제대로 설정되었는지 확인하세요.
+
+## 2단계: PDF 문서 열기
+
+이제 경로가 설정되었으므로 변환하려는 PDF 문서를 열 차례입니다. Aspose.PDF for .NET은 추가 처리를 위해 문서를 로드하는 것을 간단하게 만듭니다.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "PageToTIFF.pdf");
 ```
 
-## 3단계: 출력 파일 정의
+ 여기,`PageToTIFF.pdf` 샘플 파일입니다. 원하는 PDF 파일로 바꿀 수 있습니다. 이제 문서 객체는 추가 조작을 위해 PDF를 보관합니다.
 
- 결과 이미지와 바이너리 이미지에 대한 출력 파일 이름을 정의합니다. 바꾸기`"resultant_out.tif"` 그리고`"37116-bin_out.tif"` 원하는 출력 파일 이름을 지정합니다.
+## 3단계: 이미지에 대한 출력 경로 정의
+
+다음으로, 표준 TIFF와 이진화된 버전을 모두 포함하여 생성된 TIFF 파일에 대한 출력 경로를 지정합니다.
 
 ```csharp
 string outputImageFile = dataDir + "resultant_out.tif";
 string outputBinImageFile = dataDir + "37116-bin_out.tif";
 ```
+
+이러한 경로를 분리하면 표준 TIFF 변환을 위한 파일 하나와 Bradley 알고리즘을 적용한 이진화된 이미지용 파일 하나가 생깁니다.
 
 ## 4단계: 해결 객체 생성
 
- 생성하다`Resolution` TIFF 이미지의 해상도를 설정하는 객체입니다. 이 예에서는 300 dpi의 해상도를 사용합니다.
+PDF를 TIFF로 변환할 때 해상도는 이미지 품질을 결정하는 데 중요한 역할을 합니다. 우리의 목적상, 고품질 출력을 보장하기 위해 해상도를 300 DPI로 설정하겠습니다.
 
 ```csharp
 Resolution resolution = new Resolution(300);
 ```
 
-## 5단계: TiffSettings 개체 만들기
+DPI가 높을수록 이미지 선명도가 높아지며, 특히 인쇄하거나 보관할 문서를 다룰 때 더욱 그렇습니다.
 
- 생성하다`TiffSettings` 출력 TIFF 파일에 대한 설정을 지정하는 개체입니다. 이 예에서 우리는 LZW 압축과 픽셀당 1비트의 색상 깊이(1bpp 형식)를 사용합니다.
+## 5단계: TIFF 설정 구성
+
+다음으로, TIFF 이미지에 대한 설정을 구성해야 합니다. 여기서는 LZW 압축을 사용하고 색상 깊이를 1bpp(픽셀당 1비트)로 설정하여 이진 이미지를 얻습니다.
 
 ```csharp
 TiffSettings tiffSettings = new TiffSettings();
 tiffSettings.Compression = CompressionType.LZW;
 tiffSettings.Depth = Aspose.Pdf.Devices.ColorDepth.Format1bpp;
 ```
+
+깊이를 1bpp로 설정하여 이진 출력을 위한 이미지를 준비합니다. LZW 압축은 품질을 잃지 않고 파일 크기를 줄이는 효율성 때문에 선택되었습니다.
 
 ## 6단계: TIFF 장치 생성
 
- TIFF 장치를 생성하려면 다음을 사용하세요.`TiffDevice` 해상도와 TIFF 설정을 지정하는 개체입니다.
+이제 변환을 처리할 TIFF 장치를 만들어야 합니다. 이 장치는 이전에 정의된 해상도와 TIFF 설정을 사용합니다.
 
 ```csharp
 TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
 ```
 
-## 7단계: 특정 페이지를 변환하고 이미지 저장
+TIFF 장치는 이 작업의 핵심입니다. PDF 문서를 가져와서 사전 정의된 설정에 따라 각 페이지를 TIFF 이미지로 변환합니다.
 
- 사용하세요`Process` TIFF 장치의 특정 페이지를 PDF 문서로 변환하고 이미지를 TIFF 파일로 저장하는 방법입니다. 파일 출력 경로를 지정합니다.
+## 7단계: PDF 페이지를 TIFF로 변환
+
+ PDF를 처리하고 첫 번째 페이지를 TIFF 이미지로 변환할 시간입니다.`Process` 이 방법을 사용하면 특정 페이지나 전체 문서를 변환할 수 있습니다. 이 예에서는 첫 번째 페이지를 변환합니다.
 
 ```csharp
 tiffDevice.Process(pdfDocument, outputImageFile);
 ```
 
-## 8단계: Bradley 알고리즘을 사용하여 이미지 이진화
+이 방법이 완료되면 앞서 정의한 위치에 TIFF 이미지가 저장됩니다.
 
- 사용하세요`BinarizeBradley`Bradley 알고리즘을 사용하여 이미지를 이진화하는 TIFF 장치의 방법입니다. 이 방법은 원본 이미지의 입력 스트림과 이진 이미지의 출력 스트림을 사용합니다. 이진화 임계값(이 예에서는 0.1)을 지정합니다.
+## 8단계: Bradley 이진화 알고리즘 적용
+
+이제 마법이 등장합니다. Bradley 알고리즘입니다! 이 알고리즘은 회색조 TIFF 이미지를 이진 이미지로 변환하여 문서 인식 시스템에 최적화합니다.
 
 ```csharp
-using (FileStream
-
-  inStream = new FileStream(outputImageFile, FileMode.Open))
-{
-using (FileStream outStream = new FileStream(outputBinImageFile, FileMode.Create))
-{
-tiffDevice. Binarize Bradley(inStream, outStream, 0.1);
-}
-}
-```
-
-### .NET용 Aspose.PDF를 사용한 Bradley 알고리즘의 샘플 소스 코드 
-```csharp
-// 문서 디렉토리의 경로입니다.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// 문서 열기
-Document pdfDocument = new Document(dataDir+ "PageToTIFF.pdf");
-string outputImageFile = dataDir + "resultant_out.tif";
-string outputBinImageFile = dataDir + "37116-bin_out.tif";
-// Resolution 객체 생성
-Resolution resolution = new Resolution(300);
-// TiffSettings 객체 생성
-TiffSettings tiffSettings = new TiffSettings();
-tiffSettings.Compression = CompressionType.LZW;
-tiffSettings.Depth = Aspose.Pdf.Devices.ColorDepth.Format1bpp;
-// TIFF 장치 생성
-TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
-// 특정 페이지를 변환하고 이미지를 스트리밍으로 저장합니다.
-tiffDevice.Process(pdfDocument, outputImageFile);
 using (FileStream inStream = new FileStream(outputImageFile, FileMode.Open))
 {
-	using (FileStream outStream = new FileStream(outputBinImageFile, FileMode.Create))
-	{
-		tiffDevice.BinarizeBradley(inStream, outStream, 0.1);
-	}
+    using (FileStream outStream = new FileStream(outputBinImageFile, FileMode.Create))
+    {
+        tiffDevice.BinarizeBradley(inStream, outStream, 0.1);
+    }
 }
-System.Console.WriteLine("Conversion using bradley algorithm performed successfully!");
 ```
+
+ BinarizeBradley 메서드는 두 개의 파일 스트림(입력 및 출력)과 임계값(여기서는)을 사용합니다.`0.1`) 이진화 수준을 결정합니다. 실행 후 완벽하게 이진화된 이미지를 사용할 준비가 됩니다.
+
+## 9단계: 성공적인 전환 확인
+
+마지막으로, 사용자에게 프로세스가 성공했음을 알리는 것이 좋습니다. 간단한 콘솔 출력으로 이를 수행할 수 있습니다.
+
+```csharp
+System.Console.WriteLine("Conversion using Bradley algorithm performed successfully!");
+```
+
+이것이 인쇄되면, PDF 페이지가 이진 TIFF 이미지로 성공적으로 변환되었다는 것을 알 수 있습니다!
 
 ## 결론
 
-축하합니다! Aspose.PDF for .NET을 사용하여 Bradley 알고리즘을 사용하여 변환을 성공적으로 완료했습니다. 이제 프로젝트나 애플리케이션에서 결과 이미지를 사용할 수 있습니다.
+이제 PDF 페이지를 TIFF 이미지로 변환하고 Aspose.PDF for .NET을 사용하여 Bradley 이진화 알고리즘을 적용하는 방법을 배웠습니다. 이 프로세스는 문서 보관, 광학 문자 인식(OCR) 및 기타 전문 응용 프로그램에 필수적입니다. 고품질 해상도와 효율적인 압축을 통해 문서 이미지가 선명하고 크기가 관리하기 쉬운지 확인할 수 있습니다.
 
-### 자주 묻는 질문
+## 자주 묻는 질문
 
-#### 질문: Bradley 알고리즘은 무엇이며 .NET용 Aspose.PDF와 어떤 관련이 있나요?
+### 브래들리 알고리즘이란?
+브래들리 알고리즘은 주변 환경에 따라 각 픽셀에 대한 적응적 임계값을 결정하여 회색조 이미지를 이진(흑백) 이미지로 변환하는 이진화 기술입니다.
 
-A: Bradley 알고리즘은 이미지 품질과 선명도를 향상시키는 데 사용되는 이미지 처리 기술입니다. Aspose.PDF for .NET은 Bradley 알고리즘을 PDF 문서에 적용하여 이미지를 개선하는 편리한 방법을 제공합니다.
+### 이 방법을 사용하여 여러 개의 PDF 페이지를 TIFF로 변환할 수 있나요?
+ 네, 수정할 수 있습니다.`Process` 문서의 페이지를 순환하여 모든 페이지를 변환하는 방법입니다.
 
-#### 질문: Aspose.PDF for .NET에서 Bradley 알고리즘을 사용하기 위해 환경을 어떻게 설정해야 합니까?
+### PDF를 TIFF로 변환할 때 최적의 해상도는 무엇입니까?
+고품질 이미지의 경우 일반적으로 300 DPI가 권장됩니다. 그러나 필요에 따라 이 값을 조정할 수 있습니다.
 
-답변: 시작하기 전에 Aspose.PDF for .NET이 제대로 설치되었고 개발 환경이 구성되어 있는지 확인하세요.
+### 색상 심도에서 1bpp는 무엇을 의미합니까?
+1bpp(픽셀당 1비트)는 이미지가 흑백임을 의미하며, 각 픽셀은 완전히 검은색이거나 완전히 흰색입니다.
 
-#### 질문: Bradley 알고리즘 프로세스에서 문서 디렉토리를 정의하는 것은 어떤 의미가 있나요?
-
-답변: 올바른 문서 디렉토리를 지정하는 것은 PDF 문서가 처리를 위해 올바른 경로에 있는지 확인하는 데 중요합니다.
-
-#### 질문: Bradley 알고리즘에서 .NET용 Aspose.PDF를 사용하여 PDF 문서를 열려면 어떻게 해야 합니까?
-
- A: 사용하세요`Document` PDF 문서를 여는 클래스로, Bradley 알고리즘 프로세스의 입력으로 사용됩니다.
-
-#### 질문: Bradley 알고리즘 프로세스에서 이미지와 바이너리 이미지의 출력 파일 이름을 정의하는 목적은 무엇입니까?
-
-답변: 출력 파일 이름을 정의하면 Bradley 알고리즘을 적용한 후 결과 이미지와 바이너리 이미지가 저장될 위치를 지정할 수 있습니다.
-
-#### 질문: Bradley 알고리즘 프로세스에서 해상도 설정은 TIFF 이미지 품질에 어떤 영향을 미칩니까?
-
-답변: 해상도 설정은 Bradley 알고리즘을 적용한 후 생성되는 TIFF 이미지의 세부 묘사와 선명도 수준을 결정합니다.
-
-#### 질문: Bradley 알고리즘 프로세스에서 출력 TIFF 이미지에 대해 어떤 설정을 사용자 지정할 수 있나요?
-답변: TIFF 이미지에 대한 원하는 출력을 얻기 위해 압축 유형 및 색상 깊이와 같은 설정을 사용자 정의할 수 있습니다.
-
-#### 질문: TIFF 장치는 Bradley 알고리즘 프로세스에 어떻게 기여하나요?
-
-A: TIFF 장치는 이미지를 처리하고 Bradley 알고리즘을 적용하는 도구 역할을 하여 이미지 품질을 향상시킵니다.
-
-#### 질문: Bradley 알고리즘 프로세스를 사용하여 PDF 문서의 특정 페이지를 TIFF 이미지로 변환하려면 어떻게 해야 합니까?
-
- A: 활용하다`Process` TIFF 장치의 방법을 사용하여 PDF 문서의 특정 페이지를 TIFF 이미지로 변환한 후 Bradley 알고리즘을 사용하여 추가 처리할 수 있습니다.
+### Bradley 알고리즘은 OCR에 적합합니까?
+네, 브래들리 알고리즘은 스캔한 문서의 텍스트 대비를 향상시키기 때문에 OCR 사전 처리에 자주 사용됩니다.

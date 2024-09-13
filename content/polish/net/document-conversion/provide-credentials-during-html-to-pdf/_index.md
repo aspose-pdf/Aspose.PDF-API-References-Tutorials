@@ -117,7 +117,7 @@ pdfDocument.Save(dataDir + "ProvideCredentialsDuringHTMLToPDF_out.pdf");
 
 ## Wniosek
 
-I masz! Udało Ci się przekonwertować HTML na PDF za pomocą Aspose.PDF dla .NET, podając jednocześnie poświadczenia dla bezpiecznego dostępu. Ta potężna biblioteka ułatwia obsługę dokumentów PDF, a za pomocą zaledwie kilku linijek kodu możesz generować profesjonalnie wyglądające pliki PDF z treści HTML. 
+I masz! Udało Ci się przekonwertować HTML na PDF za pomocą Aspose.PDF dla .NET, podając jednocześnie poświadczenia dla bezpiecznego dostępu. Ta potężna biblioteka ułatwia obsługę dokumentów PDF, a za pomocą zaledwie kilku linijek kodu możesz generować profesjonalnie wyglądające pliki PDF z zawartości HTML. 
 
 ## Najczęściej zadawane pytania
 

@@ -126,7 +126,7 @@ margin.Bottom = 5f;
 // Nastavte výchozí odsazení buněk na objekt MarginInfo
 tab1.DefaultCellPadding = margin;
 
-// Vytvořte řádky v tabulce a poté buňky v řádcích
+//Vytvořte řádky v tabulce a poté buňky v řádcích
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

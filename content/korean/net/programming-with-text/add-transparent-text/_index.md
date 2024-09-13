@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## 5단계: 문서에 페이지 추가
- 문서에 새 페이지를 추가하려면 다음을 사용하세요.`Add` 의 방법`Pages`컬렉션. 제공된 코드에서 새 페이지는 변수에 할당됩니다.`page`.
+ 문서에 새 페이지를 추가하려면 다음을 사용하세요.`Add` 의 방법`Pages` 컬렉션. 제공된 코드에서 새 페이지는 변수에 할당됩니다.`page`.
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
@@ -109,7 +109,7 @@ Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 4
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
 // Graph 객체의 모양 컬렉션에 사각형 추가
 canvas.Shapes.Add(rect);
-//페이지 객체의 문단 컬렉션에 그래프 객체 추가
+// 페이지 객체의 문단 컬렉션에 그래프 객체 추가
 page.Paragraphs.Add(canvas);
 // 그래프 객체의 위치를 변경하지 않도록 값을 설정합니다.
 canvas.IsChangePosition = false;
@@ -163,7 +163,7 @@ using Aspose.Pdf.Drawing;
 
 #### 질문: 투명한 사각형을 어떻게 만들까요?
 
-A: 7단계에서는 특정 치수의 사각형을 만들고 채우기 색상을 투명한 색상으로 설정합니다.`Color.FromRgb` 방법.
+ A: 7단계에서는 특정 치수의 사각형을 만들고 채우기 색상을 투명한 색상으로 설정합니다.`Color.FromRgb` 방법.
 
 #### 질문: 그래프 객체를 페이지에 추가하려면 어떻게 해야 하나요?
 
@@ -175,7 +175,7 @@ A: 7단계에서는 특정 치수의 사각형을 만들고 채우기 색상을 
 
 #### 질문: 투명도가 있는 TextFragment를 어떻게 만들 수 있나요?
 
- A: 10단계에서는 다음을 생성합니다.`TextFragment` 객체를 생성하고 그 내용을 설정합니다.`ForegroundColor` 투명한 텍스트를 구현하는 속성입니다.
+A: 10단계에서는 다음을 생성합니다.`TextFragment` 객체를 생성하고 그 내용을 설정합니다.`ForegroundColor` 투명한 텍스트를 구현하는 속성입니다.
 
 #### 질문: PDF 문서를 어떻게 저장하나요?
 

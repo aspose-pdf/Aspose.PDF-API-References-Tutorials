@@ -13,4 +13,4 @@ Explore las características de Aspose.PDF para .NET con tutoriales dedicados. A
 ## Tutoriales
 | Título | Descripción |
 | --- | --- | 
-| [Aplicar estilo de número en archivo PDF](./apply-number-style/) | Aprenda a aplicar un estilo de numeración a los encabezados de un archivo PDF con Aspose.PDF para .NET. Guía paso a paso. |   
+| [Aplicar estilo de número en archivo PDF](./apply-number-style/) | Aprenda a aplicar diferentes estilos de números (números romanos, alfabéticos) a los encabezados de un PDF usando Aspose.PDF para .NET con esta guía paso a paso. |   

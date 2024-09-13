@@ -2,58 +2,107 @@
 title: PDF Dosyasında Sayfa Numarası Damgaları
 linktitle: PDF Dosyasında Sayfa Numarası Damgaları
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET ile PDF dosyasına sayfa numarası damgalarının nasıl ekleneceğini öğrenin.
+description: Kolay takip edilebilen, kod örnekleri de içeren kılavuzumuzla, Aspose.PDF for .NET'i kullanarak PDF dosyalarına sayfa numarası damgalarının nasıl ekleneceğini öğrenin.
 type: docs
 weight: 160
 url: /tr/net/programming-with-stamps-and-watermarks/page-number-stamps/
 ---
-Bu eğitimde, .NET için Aspose.PDF kullanarak PDF dosyasına sayfa numarası damgalarının nasıl ekleneceğini adım adım göstereceğiz. Mevcut bir PDF belgesini açmak, bir sayfa numarası damgası oluşturmak, özelliklerini ayarlamak ve bunu PDF dosyasındaki belirli bir sayfaya eklemek için sağlanan C# kaynak kodunu kullanacağız.
+## giriiş
 
-## Adım 1: Ortamı kurma
+Hiç kendinizi bir PDF belgesiyle boğuşurken buldunuz mu, daha kolay gezinme için sayfa numaraları olmasını istediniz mi? İster not paylaşan bir öğrenci, ister rapor sunan bir profesyonel veya çok sayfalı belgeleri yöneten biri olun, sayfa numaraları eklemek PDF dosyalarınızın netliğini gerçekten artırabilir. Neyse ki, güçlü Aspose.PDF for .NET kitaplığıyla PDF belgelerinize sayfa numarası damgalarını kolaylıkla ekleyebilirsiniz. Bu kılavuzda, tüm süreci adım adım anlatarak ihtiyacınız olan tüm bilgilere sahip olmanızı sağlayacağız. Hadi başlayalım!
 
-Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
+## Ön koşullar
 
-- Kurulu bir .NET geliştirme ortamı.
-- .NET için Aspose.PDF kütüphanesi indirildi ve projenizde referans olarak kullanıldı.
+PDF belgelerinize sayfa numarası damgası eklemeye başlamadan önce, aşağıdaki ön koşulların mevcut olduğundan emin olun:
 
-## Adım 2: Mevcut PDF belgesini yükleme
+1. Visual Studio: Sisteminizde Visual Studio'nun yüklü olduğundan emin olun. Kodunuzu burada yazıp çalıştıracaksınız.
+2. .NET Framework: Aspose.PDF .NET uygulamaları için tasarlandığından, C# programlama ve .NET framework'e aşinalık şarttır.
+3.  Aspose.PDF Kütüphanesi: Aspose.PDF kütüphanesini şu adresten indirebilirsiniz:[Aspose PDF Sürümleri](https://releases.aspose.com/pdf/net/). 
+4. PDF'ler hakkında temel bilgi: Uzman olmanıza gerek yok ancak PDF dosyalarının nasıl çalıştığına dair temel bir anlayışa sahip olmak, eğitimi daha iyi anlamanıza yardımcı olacaktır.
 
-İlk adım, mevcut PDF belgesini projenize yüklemektir. İşte nasıl:
+Bu ön koşulları sağladığınızda, sayfa numaralarını damgalamaya başlayabilirsiniz!
+
+## Paketleri İçe Aktar
+
+Kodlamaya dalmadan önce, gerekli Aspose.PDF paketlerinin projenize aktarıldığından emin olmanız gerekir. Bu, kütüphane fonksiyonlarından sorunsuz bir şekilde yararlanmak için çok önemlidir. İşte nasıl yapılacağı:
+
+### Yeni Bir Proje Oluştur
+
+1. Visual Studio’yu açın.
+2.  Tıkla`File` >`New` >`Project`.
+3.  C# için uygun bir şablon seçin (örneğin Konsol Uygulaması), adını verin ve tıklayın`Create`.
+
+### Aspose.PDF Referansını Ekle
+
+1. Çözüm Gezgini’nde proje adına sağ tıklayın.
+2.  Tıkla`Manage NuGet Packages`.
+3.  Arama`Aspose.PDF` ve en son sürümü yükleyin.
 
 ```csharp
-// Belgeler dizinine giden yol.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+```
 
-// Mevcut PDF belgesini açın
+Kütüphanemiz kullanıma hazır olduğuna göre, kodlamaya geçebiliriz!
+
+Artık ortamımız kurulduğuna göre, bir PDF dosyasına sayfa numarası damgaları ekleme zamanı geldi. Daha iyi anlaşılması için bu süreci net adımlara böleceğiz.
+
+## Adım 1: Belge Dizinini Belirleyin
+
+Başlamak için PDF dosyanızın bulunduğu dizini belirtmeniz gerekir. Bu, projenizin başlangıç noktasıdır.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Bu yolu güncelle
+```
+
+ Açıklama: Değiştir`"YOUR DOCUMENT DIRECTORY"` PDF dosyanızı içeren dizine giden yol ile. Bu kritiktir çünkü kodunuza, düzenlemek istediğiniz dosyayı nerede bulacağını söyler.
+
+## Adım 2: Belgeyi açın
+
+Daha sonra sayfa numarası damgalarını eklemek istediğimiz mevcut PDF belgesini açacağız.
+
+```csharp
 Document pdfDocument = new Document(dataDir + "PageNumberStamp.pdf");
 ```
 
-"BELGELERİNİZ DİZİNİ" ifadesini PDF belgenizin bulunduğu dizinin gerçek yoluyla değiştirdiğinizden emin olun.
+ Açıklama: Burada, şunu kullanıyoruz:`Document` Aspose.PDF tarafından sağlanan sınıf, belirli PDF dosyamızı açmak için kullanılır. Dosya adının dizininizde bulunan gerçek dosyayla eşleştiğinden emin olun.
 
-## Adım 3: Sayfa Numaralandırma Damgasını Oluşturma ve Yapılandırma
+## Adım 3: Sayfa Numarası Damgası Oluşturun
 
-Artık PDF belgesi yüklendiğine göre, bir sayfa numaralandırma tamponu oluşturabilir ve ihtiyaçlarımıza göre yapılandırabiliriz. İşte nasıl:
+Şimdi eğlenceli kısma geldik! PDF'imize eklemek için bir sayfa numarası damgası oluşturalım.
 
 ```csharp
-// Bir sayfa numarası arabelleği oluşturun
 PageNumberStamp pageNumberStamp = new PageNumberStamp();
+```
 
-// Tamponun arka planda olup olmadığını tanımlayın
+ Açıklama:`PageNumberStamp`sınıf, belgedeki toplam sayfa sayısına göre geçerli sayfa numarasını gösterecek bir damga oluşturmamıza olanak tanır.
+
+## Adım 4: Damgayı Yapılandırın
+
+Şimdi, damga ayarlarınızı yapılandırmanız gerekecek. Damganın nasıl görüneceğini ve davranacağını burada tasarlarsınız.
+
+```csharp
 pageNumberStamp.Background = false;
-
-// Sayfa numaralandırma arabelleğinin biçimi
 pageNumberStamp.Format = "Page # of " + pdfDocument.Pages.Count;
-
-// Sayfa numaralandırma arabelleğinin alt kenar boşluğu
 pageNumberStamp.BottomMargin = 10;
-
-// Sayfa numaralandırma arabelleğinin yatay hizalaması
 pageNumberStamp.HorizontalAlignment = HorizontalAlignment.Center;
-
-// Sayfa numaralandırmasının başlangıç numarası
 pageNumberStamp.StartingNumber = 1;
+```
 
-// Sayfa numarası arabelleği metin özelliklerini ayarla
+Açıklama:
+- `Background = false`: Bu, pulun ön planda görüneceği anlamına gelir.
+- `Format`: Burada, belgedeki toplam sayfa sayısını dinamik olarak aldığınız "Sayfa X/Y"yi gösterecek biçimde biçimi ayarlıyorsunuz.
+- `BottomMargin`: Sayfanın altından itibaren mesafeyi ayarlar.
+- `HorizontalAlignment`: Pulun yatay olarak ortalanmasını sağlar.
+- `StartingNumber`: Başlangıç sayfa numarasının ne olacağını ayarlar, genellikle 1'den başlar.
+
+## Adım 5: Metin Özelliklerini Ayarlayın
+
+Daha sonra puldaki metnin nasıl görüneceğini özelleştirebilirsiniz.
+
+```csharp
 pageNumberStamp.TextState.Font = FontRepository.FindFont("Arial");
 pageNumberStamp.TextState.FontSize = 14.0F;
 pageNumberStamp.TextState.FontStyle = FontStyles.Bold;
@@ -61,108 +110,47 @@ pageNumberStamp.TextState.FontStyle = FontStyles.Italic;
 pageNumberStamp.TextState.ForegroundColor = Color.Aqua;
 ```
 
-Yukarıdaki kod, sayfa numarası biçimi, alt kenar boşluğu, yatay hizalama, başlangıç numarası ve metin özellikleri gibi özelliklere sahip bir sayfa numarası damgası oluşturur.
+Açıklama: Bu nitelikler, damganın görsel olarak çekici olması için yazı tipini, yazı boyutunu, stilini (hem kalın hem de italik) ve metnin rengini yapılandırır.
 
-## Adım 4: Belirli bir sayfaya sayfa numarası damgası ekleme
+## Adım 6: Damgayı Belirli Bir Sayfaya Ekleyin
 
-Sayfa numarası damgası yapılandırıldıktan sonra, bunu PDF belgesinin belirli bir sayfasına ekleyebiliriz. İşte nasıl:
+Damganızı yapılandırdıktan sonra, onu belgenizdeki belirli bir sayfaya eklemenin zamanı geldi.
 
 ```csharp
-// Sayfa numarası tamponunu belirli bir sayfaya ekleyin
 pdfDocument.Pages[1].AddStamp(pageNumberStamp);
 ```
 
-Yukarıdaki kod, PDF belgesinin ilk sayfasına sayfa numarası damgası ekler. Sayfa numarasını gerektiği gibi değiştirebilirsiniz.
+ Açıklama: Bu satır, damgayı PDF'nin ilk sayfasına ekler. Bunu ayarlayabilirsiniz`Pages[1]` Gerektiğinde diğer sayfalar için dizin.
 
-## Adım 5: Değiştirilen PDF belgesinin kaydedilmesi
+## Adım 7: Çıktı Belgesini Kaydedin
 
-Sayfa numarası damgası PDF belgesine eklendiğinde, değiştirilmiş PDF belgesini kaydedebiliriz. İşte nasıl:
+Son olarak, yaptığınız değişikliklerin kalıcı olması için değiştirdiğiniz PDF belgesini kaydedin.
 
 ```csharp
-// Değiştirilen PDF belgesini kaydedin
-pdfDocument.Save(dataDir + "PageNumberStamp_out.pdf");
-```
-
-"BELGELERİNİZ DİZİNİ" ifadesini, düzenlenen PDF belgesini kaydetmek istediğiniz dizinin gerçek yoluyla değiştirdiğinizden emin olun.
-
-### .NET için Aspose.PDF kullanılarak Sayfa Numarası Damgaları için örnek kaynak kodu 
-```csharp
-
-// Belgeler dizinine giden yol.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Belgeyi aç
-Document pdfDocument = new Document(dataDir+ "PageNumberStamp.pdf");
-
-// Sayfa numarası damgası oluştur
-PageNumberStamp pageNumberStamp = new PageNumberStamp();
-
-// Pulun arka plan olup olmadığı
-pageNumberStamp.Background = false;
-pageNumberStamp.Format = "Page # of " + pdfDocument.Pages.Count;
-pageNumberStamp.BottomMargin = 10;
-pageNumberStamp.HorizontalAlignment = HorizontalAlignment.Center;
-pageNumberStamp.StartingNumber = 1;
-
-// Metin özelliklerini ayarla
-pageNumberStamp.TextState.Font = FontRepository.FindFont("Arial");
-pageNumberStamp.TextState.FontSize = 14.0F;
-pageNumberStamp.TextState.FontStyle = FontStyles.Bold;
-pageNumberStamp.TextState.FontStyle = FontStyles.Italic;
-pageNumberStamp.TextState.ForegroundColor = Color.Aqua;
-
-// Belirli bir sayfaya damga ekle
-pdfDocument.Pages[1].AddStamp(pageNumberStamp);
 dataDir = dataDir + "PageNumberStamp_out.pdf";
-
-// Çıktı belgesini kaydet
 pdfDocument.Save(dataDir);
 Console.WriteLine("\nPage number stamp added successfully.\nFile saved at " + dataDir);
-
 ```
+
+Açıklama: Çıktı dosya yolunu tanımlıyor ve belgeyi kaydediyorsunuz. Konsol, damganın başarıyla eklendiğini ve dosyanın nereye kaydedildiğini size bildirecektir.
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesine sayfa numarası damgalarının nasıl ekleneceğini öğrendiniz. Artık PDF belgelerinizi net ve bilgilendirici sayfa numaraları ekleyerek kişiselleştirebilirsiniz.
+Aspose.PDF for .NET kullanarak PDF dosyalarınıza sayfa numarası damgaları eklemek yalnızca basit değil, aynı zamanda oldukça özelleştirilebilirdir. Sayfa numarası damgası oluşturma sürecini adım adım ele aldık ve bu süreçte size net bir rehberlik sağladık. Artık PDF belgelerinizi geliştirmek, onları daha kullanıcı dostu ve profesyonel hale getirmek için gereken bilgiye sahipsiniz. 
 
-### PDF dosyasındaki sayfa numarası damgaları için SSS
+## SSS
 
-#### S: Sayfa Numarası Damgası nedir ve bir PDF dosyasına sayfa numaraları eklemek için nasıl kullanılır?
+### Sayfa numaralarının görünümünü özelleştirebilir miyim?  
+Evet! Sayfa numaralarının yazı tipini, boyutunu, rengini ve biçimlendirmesini kılavuzda gösterildiği gibi değiştirebilirsiniz.
 
-A: Sayfa Numarası Damgası, Aspose.PDF'de bir PDF belgesinin belirli sayfalarına dinamik sayfa numaraları eklemenize olanak tanıyan bir özelliktir. Bu eğitimde, bir PageNumberStamp nesnesi oluşturularak, özelliklerini yapılandırarak ve belirlenmiş bir sayfaya ekleyerek elde edilir.
+### Aspose.PDF'i kullanmak ücretsiz mi?  
+ Aspose.PDF ücretsiz deneme sunuyor ancak kapsamlı kullanım için bir lisansa ihtiyacınız olacak. Şuraya göz atın:[satın alma sayfası](https://purchase.aspose.com/buy) Daha fazla bilgi için.
 
-#### S: Sağlanan C# kaynak kodu bir PDF dosyasına sayfa numarası damgası eklemeyi nasıl başarıyor?
+### Uygulama sırasında sorunla karşılaşırsam ne olur?  
+ Ziyaret edebilirsiniz[Aspose Destek Forumu](https://forum.aspose.com/c/pdf/10) yardım için.
 
-A: Kod, mevcut bir PDF belgesinin nasıl yükleneceğini, bir PageNumberStamp'ın nasıl oluşturulacağını, çeşitli özelliklerin (biçim, yazı tipi, hizalama vb. gibi) nasıl ayarlanacağını ve ardından damganın belirli bir sayfaya nasıl ekleneceğini gösterir. Damga, toplam sayfa sayısını otomatik olarak hesaplar ve doğru sayfa numaralarını ekler.
+### Birden fazla sayfa için sayfa numaralarını otomatik olarak nasıl oluşturabilirim?  
+Rehberin kodu otomatik olarak toplam sayfa sayısını hesaplar, böylece birden fazla sayfa için özelleştirme yapmak kolaylaşır.
 
-#### S: Sayfa numarasının görünümünü (yazı tipi, rengi ve boyutu gibi) özelleştirebilir miyim?
-
-C: Kesinlikle, yazı tipi, yazı tipi boyutu, yazı tipi stili (kalın, italik vb.) ve metin rengi gibi özellikleri ayarlayarak sayfa numarası damgasının görünümünü özelleştirebilirsiniz.
-
-#### S: Bir PDF belgesinin birden fazla sayfasına sayfa numarası damgası eklemek mümkün müdür?
-
-C: Evet, birden fazla PageNumberStamp nesnesi oluşturarak ve her birini istediğiniz sayfaya ekleyerek birden fazla sayfaya sayfa numarası damgası ekleyebilirsiniz.
-
-#### S: Sayfa numarası damgasının sayfa içeriğinin bir parçası olarak mı yoksa arka plan öğesi olarak mı görüneceğini seçebilir miyim?
-
- A: Evet, sayfa numarası damgasının sayfanın içeriğinin bir parçası olarak mı yoksa arka plan öğesi olarak mı görüneceğini,`Background` PageNumberStamp'ın özelliği.
-
-#### S: Toplam sayfa sayısı dahil olmak üzere sayfa numarasının biçimini nasıl belirleyebilirim?
-
- A: Kod şunu kullanır:`Format`Sayfa numarasının biçimini belirtmek için PageNumberStamp özelliği. "# of" makrosu toplam sayfa sayısını temsil etmek için kullanılır.
-
-#### S: Aynı sayfa numarası damgasını birden fazla sayfaya eklersem ne olur?
-
-A: Aynı PageNumberStamp örneğini birden fazla sayfaya eklemek, her sayfa için doğru sayfa numaralarını görüntüler. Damga, sayfa numarasını ve toplam sayfa sayısını otomatik olarak ayarlar.
-
-#### S: PDF belgesinin üst bilgi veya alt bilgi bölümlerine sayfa numarası damgası ekleyebilir miyim?
-
-A: PageNumberStamps genellikle doğrudan sayfanın içeriğine eklenir, ancak bunları başlık veya alt bilgi bölümlerine yerleştirmek için FloatingBox veya diğer teknikleri kullanabilirsiniz.
-
-#### S: Sayfa numarası damgasının sayfadaki konumunu nasıl belirlerim?
-
- A:`BottomMargin` Ve`HorizontalAlignment` PageNumberStamp'ın özellikleri, damganın sayfadaki konumunu kontrol etmenizi sağlar.
-
-#### S: Sayfa numaralandırmasını 1'den farklı bir rakamla başlatmak istersem ne olur?
-
- A: Ayarlayabilirsiniz`StartingNumber`Başlangıç sayfa numarasını belirtmek için PageNumberStamp'ın özelliği.
+### Aspose.PDF'yi diğer programlama dillerinde kullanabilir miyim?  
+Bu kılavuz .NET'e odaklansa da Aspose'un Java, Python ve daha fazlası için kütüphaneleri vardır.

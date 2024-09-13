@@ -116,7 +116,7 @@ doc.Save(dataDir + "43620_ByWords_out.pdf");
 ```
 
 ## Wniosek
-Gratulacje! Teraz nauczyłeś się, jak wyrównać zawartość wiersza w tabeli w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Ten przewodnik krok po kroku pokazał Ci, jak utworzyć dokument, zainicjować tabelę, skonfigurować obramowanie i wyrównanie, dodać zawartość i zapisać dokument PDF. Teraz możesz zastosować tę wiedzę w swoich projektach.
+Gratulacje! Nauczyłeś się, jak wyrównać zawartość wiersza w tabeli w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Ten przewodnik krok po kroku pokazał Ci, jak utworzyć dokument, zainicjować tabelę, skonfigurować obramowanie i wyrównanie, dodać zawartość i zapisać dokument PDF. Teraz możesz zastosować tę wiedzę w swoich projektach.
 
 ### Najczęściej zadawane pytania
 

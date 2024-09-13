@@ -69,7 +69,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## 7. lépés: Töltse le a kivont szövegrészleteket
 
-Szerezze be a kivont szövegrészleteket a`TextFragments` tulajdona a`TextFragmentAbsorber` objektum:
+ Szerezze be a kivont szövegrészleteket a`TextFragments` tulajdona a`TextFragmentAbsorber` objektum:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -103,7 +103,7 @@ Módosíthatja a kódot a cikluson belül, hogy további műveleteket hajtson v�
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Nyissa meg a dokumentumot
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionAll.pdf");
-// Hozzon létre TextAbsorber objektumot a reguláris kifejezésnek megfelelő kifejezések megtalálásához
+//Hozzon létre TextAbsorber objektumot a reguláris kifejezésnek megfelelő kifejezések megtalálásához
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Mint 1999-2000
 // Állítsa be a szöveges keresési beállítást a reguláris kifejezés használatának megadásához
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);

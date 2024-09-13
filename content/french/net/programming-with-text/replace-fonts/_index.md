@@ -34,7 +34,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## Étape 3 : Rechercher et remplacer les polices
 
- Nous créons un`TextFragmentAbsorber`objet et définissez l'option d'édition pour supprimer les polices inutilisées. Ensuite, nous acceptons l'absorbeur pour toutes les pages du document PDF pour rechercher des fragments de texte.
+ Nous créons un`TextFragmentAbsorber` objet et définissez l'option d'édition pour supprimer les polices inutilisées. Ensuite, nous acceptons l'absorbeur pour toutes les pages du document PDF pour rechercher des fragments de texte.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));

@@ -62,7 +62,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## الخطوة 6: استرداد أجزاء النص المستخرجة
 
-احصل على أجزاء النص المستخرجة باستخدام`TextFragments` ممتلكات`TextFragmentAbsorber` هدف:
+ احصل على أجزاء النص المستخرجة باستخدام`TextFragments` ممتلكات`TextFragmentAbsorber` هدف:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -165,7 +165,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 #### س: ماذا يحدث إذا لم يتم العثور على عبارة البحث في الصفحة المحددة؟
 
- أ: إذا لم يتم العثور على عبارة البحث في الصفحة المحددة،`TextFragmentCollection` ستكون فارغة ولن يتم إجراء أي عمليات استبدال. تأكد من وجود عبارة البحث في الصفحة التي تستهدفها.
+أ: إذا لم يتم العثور على عبارة البحث في الصفحة المحددة،`TextFragmentCollection` ستكون فارغة ولن يتم إجراء أي عمليات استبدال. تأكد من وجود عبارة البحث في الصفحة التي تستهدفها.
 
 #### س: كيف يمكنني تخصيص النص البديل لكل جزء من النص؟
 

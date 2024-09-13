@@ -47,7 +47,7 @@ We hebben de titel en de taal van het getagde PDF-document ingesteld.
 Laten we nu het rootstructuurelement van het PDF-document bekijken.
 
 ```csharp
-//Verkrijg het wortelstructuurelement
+// Verkrijg het wortelstructuurelement
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

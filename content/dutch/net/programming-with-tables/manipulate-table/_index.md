@@ -7,7 +7,7 @@ type: docs
 weight: 130
 url: /nl/net/programming-with-tables/manipulate-table/
 ---
-In deze tutorial leiden we u stapsgewijs door het proces van het manipuleren van tabellen in PDF-bestanden met Aspose.PDF voor .NET. Tabellen zijn een veelvoorkomend element in PDF-documenten en het kan zeer nuttig zijn om hun inhoud programmatisch te kunnen wijzigen in verschillende scenario's. We gebruiken de meegeleverde C#-broncode om het proces te demonstreren.
+In deze tutorial leiden we u stap voor stap door het proces van het manipuleren van tabellen in PDF-bestanden met Aspose.PDF voor .NET. Tabellen zijn een veelvoorkomend element in PDF-documenten en het kan zeer nuttig zijn om hun inhoud programmatisch te kunnen wijzigen in verschillende scenario's. We gebruiken de meegeleverde C#-broncode om het proces te demonstreren.
 
 ## Vereisten
 
@@ -48,7 +48,7 @@ Zodra we de tabellen hebben, kunnen we hun cellen en tekstfragmenten benaderen v
 TextFragment fragment = absorb.TableList[0].RowList[0].CellList[0].TextFragments[1];
 ```
 
-U kunt de code aanpassen om verschillende tabellen, cellen of tekstfragmenten te targeten op basis van uw specifieke behoeften.
+U kunt de code aanpassen om verschillende tabellen, cellen of tekstfragmenten te targeten, afhankelijk van uw specifieke behoeften.
 
 ## Stap 4: Tabeltekst manipuleren
 

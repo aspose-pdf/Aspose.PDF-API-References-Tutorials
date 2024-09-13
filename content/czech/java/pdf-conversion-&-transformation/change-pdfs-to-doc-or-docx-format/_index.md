@@ -10,7 +10,7 @@ url: /cs/java/pdf-conversion-transformation/change-pdfs-to-doc-or-docx-format/
 
 ## 1. Úvod
 
-Aspose.PDF for Java je výkonné API, které vám umožňuje pracovat s dokumenty PDF v aplikacích Java. Jednou z jeho užitečných funkcí je schopnost převádět soubory PDF do jiných formátů, jako jsou DOC a DOCX. To může být užitečné, když potřebujete extrahovat text nebo manipulovat s obsahem dokumentu PDF ve formátu textového editoru.
+Aspose.PDF for Java je výkonné API, které vám umožňuje pracovat s dokumenty PDF v aplikacích Java. Jednou z jeho užitečných funkcí je schopnost převádět soubory PDF do jiných formátů, jako jsou DOC a DOCX. To se může hodit, když potřebujete extrahovat text nebo manipulovat s obsahem dokumentu PDF ve formátu textového editoru.
 
 ## 2. Co je Aspose.PDF pro Javu?
 

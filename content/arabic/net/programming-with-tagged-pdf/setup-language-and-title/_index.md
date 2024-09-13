@@ -155,7 +155,7 @@ document.Save(dataDir + "SetupLanguageAndTitle.pdf");
 
 ج: يعزز المحتوى متعدد اللغات إمكانية الوصول إلى مستندات PDF والوصول إليها على مستوى العالم. يتيح لك Aspose.PDF for .NET إضافة محتوى متعدد اللغات من خلال إنشاء عناصر فقرة لكل لغة وتعيين خصائص النص واللغة وفقًا لذلك.
 
-####  س: كيف يتم ذلك؟`SetTitle` method contribute to improving document accessibility and organization?
+#### س: كيف يتم ذلك؟`SetTitle` method contribute to improving document accessibility and organization?
 
  أ: ال`SetTitle` تحدد الطريقة عنوان مستند PDF، والذي يُستخدم لتحديد هوية المستند ونتائج البحث والتنظيم. يؤدي توفير عنوان واضح وذو معنى إلى تحسين إمكانية الوصول إلى المستند وتحسين تجربة المستخدم.
 
@@ -177,4 +177,4 @@ document.Save(dataDir + "SetupLanguageAndTitle.pdf");
 
 #### س: هل يمكنني تعديل اللغة وعنوان مستند PDF موجود باستخدام Aspose.PDF لـ .NET؟
 
- ج: نعم، يمكنك تعديل لغة وعنوان مستند PDF موجود باستخدام Aspose.PDF لـ .NET. من خلال تحميل المستند والوصول إلى محتواه المُوسوم واستخدام`SetTitle` و`SetLanguage`الأساليب، يمكنك تحديث هذه السمات حسب الحاجة.
+ ج: نعم، يمكنك تعديل لغة وعنوان مستند PDF موجود باستخدام Aspose.PDF لـ .NET. من خلال تحميل المستند والوصول إلى محتواه المُوسوم واستخدام`SetTitle` و`SetLanguage` الأساليب، يمكنك تحديث هذه السمات حسب الحاجة.

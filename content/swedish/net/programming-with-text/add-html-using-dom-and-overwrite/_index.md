@@ -1,7 +1,7 @@
 ---
 title: Lägg till HTML med DOM och PDF-överskrivning
 linktitle: Lägg till HTML med DOM och skriv över
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du lägger till HTML-innehåll med DOM och PDF-överskrivning i Aspose.PDF för .NET.
 type: docs
 weight: 50
@@ -42,7 +42,7 @@ Document doc = new Document();
 ```
 
 ## Steg 5: Lägg till en sida i dokumentet
- Lägg till en ny sida i dokumentet med hjälp av`Add` metod för`Pages`samling. I den angivna koden är den nya sidan tilldelad variabeln`page`.
+ Lägg till en ny sida i dokumentet med hjälp av`Add` metod för`Pages` samling. I den angivna koden är den nya sidan tilldelad variabeln`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -159,7 +159,7 @@ HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Tab
 
 #### F: Hur kan jag skriva över formaten för HTML-innehållet?
 
- S: I steg 7 kommer du att skriva över formaten för HTML-innehållet genom att ändra`TextState` egenskaper hos`HtmlFragment` objekt. Du kan till exempel ändra teckensnittsfamiljen till "Arial" och ställa in teckenstorleken till 20:
+ S: I steg 7 kommer du att skriva över formaten för HTML-innehållet genom att ändra`TextState` egenskaper hos`HtmlFragment`objekt. Du kan till exempel ändra teckensnittsfamiljen till "Arial" och ställa in teckenstorleken till 20:
 
 ```csharp
 title.TextState = new TextState("Arial");

@@ -117,7 +117,7 @@ table1.DefaultCellPadding = margin;
 // Ponieważ nie można już tego więcej pomieścić na tej stronie
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
-	// Utwórz wiersze w tabeli, a następnie komórki w wierszach
+	//Utwórz wiersze w tabeli, a następnie komórki w wierszach
 	Aspose.Pdf.Row row1 = table1.Rows.Add();
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");

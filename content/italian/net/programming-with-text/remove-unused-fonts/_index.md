@@ -120,7 +120,7 @@ A: Il tutorial ti guida passo dopo passo attraverso il processo:
 
 R: Sì, puoi modificare il codice per sostituire i font inutilizzati con un font di tua scelta. Nel codice di esempio fornito, il font "Arial, Bold" è utilizzato come sostituzione.
 
-####  D: Come funziona il`TextFragmentAbsorber` work to remove unused fonts?
+#### D: Come funziona il`TextFragmentAbsorber` work to remove unused fonts?
 
  A: Il`TextFragmentAbsorber` è configurato con il`TextEditOptions.FontReplace.RemoveUnusedFonts` parametro, che identifica i font inutilizzati all'interno dei frammenti di testo del PDF. Dopo l'assorbimento, puoi scorrere il`TextFragments` e impostare i font sui font sostitutivi desiderati.
 

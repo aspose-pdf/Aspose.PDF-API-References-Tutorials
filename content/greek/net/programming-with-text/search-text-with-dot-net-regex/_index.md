@@ -88,7 +88,7 @@ page.Accept(textFragmentAbsorber);
 
 ## Βήμα 9: Ανακτήστε τα εξαγόμενα τμήματα κειμένου
 
-Λάβετε τα εξαγόμενα τμήματα κειμένου χρησιμοποιώντας το`TextFragments` ιδιοκτησία του`TextFragmentAbsorber` αντικείμενο:
+ Λάβετε τα εξαγόμενα τμήματα κειμένου χρησιμοποιώντας το`TextFragments` ιδιοκτησία του`TextFragmentAbsorber` αντικείμενο:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

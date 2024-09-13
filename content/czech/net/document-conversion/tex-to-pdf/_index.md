@@ -17,7 +17,7 @@ Než se ponoříme do kódu, ujistěte se, že máte vše nastaveno pro úspěš
 
 1. Vývojové prostředí: Ujistěte se, že máte ve svém systému nainstalované vývojové prostředí, jako je Visual Studio.
 2. .NET Framework: Aspose.PDF pro .NET podporuje různé verze .NET Framework. Ujistěte se, že máte nainstalovanou příslušnou verzi (obvykle .NET Framework 4.0 nebo novější).
-3.  Knihovna Aspose.PDF pro .NET: Budete potřebovat knihovnu Aspose.PDF pro .NET. Můžete si jej stáhnout z[Aspose webové stránky](https://releases.aspose.com/pdf/net/) . Pokud jste tak ještě neučinili, zvažte pořízení[dočasná licence](https://purchase.aspose.com/temporary-license/) pro plný přístup k funkcím knihovny.
+3.  Knihovna Aspose.PDF pro .NET: Budete potřebovat knihovnu Aspose.PDF pro .NET. Můžete si jej stáhnout z[Aspose webové stránky](https://releases.aspose.com/pdf/net/) . Pokud jste to ještě neudělali, zvažte pořízení[dočasná licence](https://purchase.aspose.com/temporary-license/) pro plný přístup k funkcím knihovny.
 4.  Soubor LaTeX: Mít a`.tex` soubor připraven, který chcete převést. Tento soubor by měl být správně naformátován a bez chyb.
 
 ## Importujte balíčky

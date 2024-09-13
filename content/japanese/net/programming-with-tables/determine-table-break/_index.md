@@ -101,7 +101,7 @@ table1.Margin.Top = 300;
 page.Paragraphs.Add(table1);
 //テーブルの列幅を設定する
 table1.ColumnWidths = "100 100 100";
-//BorderInfo オブジェクトを使用してデフォルトのセル境界線を設定する
+// BorderInfo オブジェクトを使用してデフォルトのセル境界線を設定する
 table1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
 //別のカスタマイズされたBorderInfoオブジェクトを使用して表の境界線を設定する
 table1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);

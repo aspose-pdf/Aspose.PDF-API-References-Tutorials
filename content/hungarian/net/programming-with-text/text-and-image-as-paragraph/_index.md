@@ -154,7 +154,7 @@ V: Kezdésként hozzon létre egy új C# projektet a kívánt integrált fejlesz
 
 #### K: Használhatom ezt az oktatóanyagot több szöveges és képi bekezdés hozzáadására egy PDF-fájlhoz?
 
-V: Igen, a mellékelt kódminták segítségével több szöveges és képi bekezdést is hozzáadhat ugyanabban a PDF-dokumentumban. Ez az oktatóanyag bemutatja, hogyan hozható létre sorközi bekezdések, amelyek megkönnyítik a szövegek és képek különböző kombinációinak beillesztését.
+V: Igen, a megadott kódminták segítségével több szöveges és képi bekezdést is hozzáadhat ugyanabban a PDF-dokumentumban. Ez az oktatóanyag bemutatja, hogyan hozható létre sorközi bekezdések, amelyek megkönnyítik a szövegek és képek különböző kombinációinak beillesztését.
 
 #### K: Hogyan határozhatom meg a szöveges bekezdések és képek tartalmát és megjelenését?
 
@@ -166,4 +166,4 @@ V: Igen, a mellékelt kódminták segítségével több szöveges és képi beke
 
 #### K: Hogyan menthetem el a módosított PDF dokumentumot?
 
- V: A módosított PDF dokumentum mentéséhez használhatja a`Save` módszere a`Document` objektum. Az oktatóanyag kódmintákat tartalmaz, amelyek bemutatják, hogyan kell elmenteni az eredményül kapott PDF-dokumentumot.
+ V: A módosított PDF dokumentum mentéséhez használhatja a`Save` módszere a`Document` objektum. Az oktatóanyag kódmintákat tartalmaz, amelyek bemutatják, hogyan kell menteni az eredményül kapott PDF-dokumentumot.

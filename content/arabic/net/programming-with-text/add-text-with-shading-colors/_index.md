@@ -42,7 +42,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 ```
 
 ## الخطوة 5: ابحث عن النص الذي تريد تعديله
- يستخدم`TextFragmentAbsorber` للعثور على النص المطلوب داخل المستند، في الكود المقدم، يبحث عن النص "Lorem ipsum".
+يستخدم`TextFragmentAbsorber` للعثور على النص المطلوب داخل المستند، في الكود المقدم، يبحث عن النص "Lorem ipsum".
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -129,7 +129,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 
 #### س: كيف يمكنني العثور على نص معين وتعديله داخل مستند PDF؟
 
- أ: في الخطوة 5، سوف تستخدم`TextFragmentAbsorber`للعثور على النص المطلوب داخل المستند، ثم يمكنك تعديل خصائصه:
+ أ: في الخطوة 5، سوف تستخدم`TextFragmentAbsorber` للعثور على النص المطلوب داخل المستند، ثم يمكنك تعديل خصائصه:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -150,7 +150,7 @@ textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 
 #### س: هل يمكنني تطبيق تنسيق نص إضافي على النص المعدل؟
 
- ج: نعم، في الخطوة 7، يمكنك تطبيق تنسيق نص إضافي مثل التسطير عن طريق تعديل خصائص`TextState` هدف:
+ج: نعم، في الخطوة 7، يمكنك تطبيق تنسيق نص إضافي مثل التسطير عن طريق تعديل خصائص`TextState` هدف:
 
 ```csharp
 textFragment.TextState.Underline = true;

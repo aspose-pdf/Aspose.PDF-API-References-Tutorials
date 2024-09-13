@@ -2,77 +2,101 @@
 title: Dapatkan Nilai Dari Semua Bidang Dalam Dokumen PDF
 linktitle: Dapatkan Nilai Dari Semua Bidang Dalam Dokumen PDF
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Dapatkan nilai semua bidang formulir dalam dokumen PDF dengan mudah dengan Aspose.PDF untuk .NET.
+description: Pelajari cara mengekstrak nilai dari semua bidang dalam dokumen PDF menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah ini.
 type: docs
 weight: 150
 url: /id/net/programming-with-forms/get-values-from-all-fields/
 ---
-Dalam tutorial ini, kami akan menunjukkan cara mendapatkan nilai semua kolom formulir dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Kami akan menjelaskan kode sumber C# langkah demi langkah untuk memandu Anda melalui proses ini.
+## Perkenalan
 
-## Langkah 1: Persiapan
+Pernahkah Anda merasa perlu mengekstrak data dari formulir PDF? Baik untuk analisis data, penyimpanan catatan, atau sekadar untuk mempermudah hidup Anda, mengekstrak nilai dari kolom PDF bisa menjadi tugas yang berat. Namun, jangan khawatir! Dengan Aspose.PDF untuk .NET, proses ini menjadi mudah. Dalam tutorial ini, kami akan memandu Anda melalui langkah-langkah untuk mendapatkan nilai dari semua kolom dalam dokumen PDF.
 
-Pastikan Anda telah mengimpor pustaka yang diperlukan dan mengatur jalur ke direktori dokumen Anda:
+## Prasyarat
+
+Sebelum kita masuk ke kode, mari pastikan Anda memiliki semua yang dibutuhkan untuk memulai:
+
+1. .NET Framework: Pastikan Anda telah menginstal .NET Framework di komputer Anda. Aspose.PDF bekerja dengan lancar dengan aplikasi .NET.
+2.  Aspose.PDF untuk .NET: Anda perlu mengunduh dan menginstal pustaka Aspose.PDF. Anda dapat menemukannya[Di Sini](https://releases.aspose.com/pdf/net/).
+3. Visual Studio: IDE yang bagus akan membuat pengalaman coding Anda lebih lancar. Visual Studio merupakan pilihan populer untuk pengembangan .NET.
+4. Pengetahuan Dasar C#: Keakraban dengan pemrograman C# akan membantu Anda memahami contoh-contohnya dengan lebih baik.
+
+## Paket Impor
+
+Untuk memulai, Anda perlu mengimpor paket yang diperlukan ke dalam proyek C# Anda. Berikut cara melakukannya:
+
+### Buat Proyek Baru
+
+Buka Visual Studio dan buat proyek C# baru. Pilih Aplikasi Konsol untuk mempermudah.
+
+### Tambahkan Referensi Aspose.PDF
+
+1. Klik kanan pada proyek Anda di Solution Explorer.
+2. Pilih "Kelola Paket NuGet."
+3. Cari "Aspose.PDF" dan instal versi terbaru.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Forms;
+using System;
 ```
 
-## Langkah 2: Buka dokumen
+Sekarang Anda sudah menyiapkan semuanya, mari beralih ke kode!
 
-Buka dokumen PDF:
+## Langkah 1: Siapkan Direktori Dokumen Anda
 
-```csharp
-Document pdfDocument = new Document(dataDir + "GetValuesFromAllFields.pdf");
-```
+Pertama-tama, Anda perlu menentukan jalur ke dokumen PDF Anda. Di sinilah Aspose.PDF akan mencari berkas yang ingin Anda gunakan.
 
-## Langkah 3: Dapatkan nilai untuk semua bidang
-
-Ulangi semua bidang formulir dalam dokumen dan dapatkan nama dan nilainya:
-
-```csharp
-foreach(Field formField in pdfDocument.Form)
-{
-Console.WriteLine("Field name: {0} ", formField.PartialName);
-Console.WriteLine("Value: {0}", formField.Value);
-}
-```
-
-### Contoh kode sumber untuk Mendapatkan Nilai Dari Semua Bidang menggunakan Aspose.PDF untuk .NET 
 ```csharp
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya tempat file PDF Anda berada. Hal ini penting karena jika jalurnya salah, program tidak akan dapat menemukan PDF Anda.
+
+## Langkah 2: Buka Dokumen PDF
+
+Setelah jalurnya diatur, saatnya membuka dokumen PDF. Di sinilah keajaiban dimulai!
+
+```csharp
 // Buka dokumen
 Document pdfDocument = new Document(dataDir + "GetValuesFromAllFields.pdf");
-// Dapatkan nilai dari semua bidang
+```
+
+ Di sini, kita membuat contoh baru dari`Document` class dan berikan path file PDF kita. Baris kode ini memuat PDF ke dalam memori, membuatnya siap untuk dimanipulasi.
+
+## Langkah 3: Akses Bidang Formulir
+
+Setelah dokumen terbuka, kita sekarang dapat mengakses kolom formulir. Aspose.PDF memungkinkan kita untuk menelusuri semua kolom dalam formulir PDF dengan mudah.
+
+```csharp
+//Dapatkan nilai dari semua bidang
 foreach (Field formField in pdfDocument.Form)
 {
-	Console.WriteLine("Field Name : {0} ", formField.PartialName);
-	Console.WriteLine("Value : {0} ", formField.Value);
+    Console.WriteLine("Field Name : {0} ", formField.PartialName);
+    Console.WriteLine("Value : {0} ", formField.Value);
 }
 ```
 
+ Dalam loop ini, kita menelusuri setiap bidang dalam formulir PDF.`PartialName` properti memberi kita nama bidang, sementara`Value` properti menyediakan data yang dimasukkan di bidang tersebut. Di sinilah Anda akan melihat hasil kerja keras Anda!
+
 ## Kesimpulan
 
-Dalam tutorial ini, kita mempelajari cara mendapatkan nilai semua kolom formulir dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Dengan mengikuti langkah-langkah ini, Anda dapat dengan mudah mengekstrak nilai semua kolom formulir dari dokumen PDF Anda menggunakan Aspose.PDF.
+Selamat! Anda baru saja mempelajari cara mengekstrak nilai dari semua kolom dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Pustaka canggih ini menyederhanakan proses pengerjaan formulir PDF, sehingga memudahkan Anda mengelola dan menganalisis data. Baik Anda seorang pengembang yang ingin menyempurnakan aplikasi atau hanya seseorang yang perlu menangani PDF dengan lebih efisien, Aspose.PDF adalah alat yang fantastis untuk dimiliki di gudang senjata Anda.
 
-### Pertanyaan yang Sering Diajukan
+## Pertanyaan yang Sering Diajukan
 
-#### T: Dapatkah saya mengubah nilai kolom formulir saat mengambilnya menggunakan Aspose.PDF untuk .NET?
+### Apa itu Aspose.PDF untuk .NET?
+Aspose.PDF untuk .NET adalah pustaka yang memungkinkan pengembang untuk membuat, memanipulasi, dan mengonversi dokumen PDF dalam aplikasi .NET.
 
- A: Ya, Anda dapat mengubah nilai kolom formulir saat mengambilnya menggunakan Aspose.PDF untuk .NET. Setelah Anda memiliki`Field` objek yang mewakili bidang formulir, Anda dapat memperbaruinya`Value`properti dengan nilai yang diinginkan. Setelah melakukan perubahan yang diperlukan, Anda dapat menyimpan dokumen PDF yang diperbarui untuk mencerminkan perubahan tersebut.
+### Dapatkah saya menggunakan Aspose.PDF secara gratis?
+ Ya, Aspose menawarkan versi uji coba gratis yang dapat Anda gunakan untuk menjelajahi fitur-fitur pustaka. Anda dapat mengunduhnya[Di Sini](https://releases.aspose.com/).
 
-#### T: Bagaimana cara memfilter dan mengambil kolom formulir tertentu berdasarkan jenisnya (misalnya, kolom teks, kotak centang)?
+### Di mana saya dapat menemukan dokumentasinya?
+ Dokumentasi untuk Aspose.PDF untuk .NET dapat ditemukan[Di Sini](https://reference.aspose.com/pdf/net/).
 
- A: Untuk mengambil kolom formulir tertentu berdasarkan jenisnya, Anda dapat menggunakan pernyataan kondisional atau kueri LINQ untuk memfilter kolom yang diinginkan. Anda dapat memeriksa jenis setiap kolom formulir menggunakan bidang`FieldType` properti, lalu mengambil nilai yang sesuai.
+### Bagaimana cara membeli lisensi?
+ Anda dapat membeli lisensi untuk Aspose.PDF dengan mengunjungi halaman pembelian[Di Sini](https://purchase.aspose.com/buy).
 
-#### T: Apa yang terjadi jika dokumen PDF tidak memiliki kolom formulir?
-
- A: Jika dokumen PDF tidak berisi kolom formulir apa pun,`pdfDocument.Form` properti akan mengembalikan koleksi kosong. Dalam kasus seperti itu, loop untuk mengambil nilai tidak akan dijalankan, dan tidak ada nilai yang akan ditampilkan.
-
-#### T: Dapatkah saya mengekstrak nilai kolom formulir dalam urutan tertentu atau mengurutkannya berdasarkan abjad?
-
-J: Urutan pengambilan kolom formulir bergantung pada struktur dasar dokumen PDF. Aspose.PDF untuk .NET mengembalikan kolom formulir sesuai urutan penambahannya ke dokumen. Jika Anda ingin menampilkan atau memproses kolom formulir dalam urutan tertentu, Anda dapat menerapkan logika penyortiran khusus berdasarkan kebutuhan Anda.
-
-#### T: Bagaimana saya dapat menangani dokumen PDF terenkripsi dengan kolom formulir yang dilindungi kata sandi?
-
- A: Aspose.PDF untuk .NET menyediakan fitur untuk bekerja dengan dokumen PDF terenkripsi dan kolom formulir yang dilindungi kata sandi. Sebelum memuat dokumen, Anda dapat mengatur kata sandi menggunakan`pdfDocument.Password` properti untuk mengakses dokumen PDF yang diamankan dan bidang formulirnya.
+### Bagaimana jika saya butuh dukungan?
+ Jika Anda memiliki pertanyaan atau memerlukan bantuan, Anda dapat mengunjungi forum dukungan Aspose[Di Sini](https://forum.aspose.com/c/pdf/10).

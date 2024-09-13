@@ -2,126 +2,134 @@
 title: Botones de opción horizontales y verticales
 linktitle: Botones de opción horizontales y verticales
 second_title: Referencia de API de Aspose.PDF para .NET
-description: Cree fácilmente botones de opción horizontales y verticales en sus documentos PDF con Aspose.PDF para .NET.
+description: Aprenda a crear botones de opción alineados horizontal y verticalmente en PDF usando Aspose.PDF para .NET con este tutorial paso a paso.
 type: docs
 weight: 180
 url: /es/net/programming-with-forms/horizontally-and-vertically-radio-buttons/
 ---
-En este tutorial, le mostraremos cómo crear botones de opción dispuestos de forma horizontal y vertical en un documento PDF con Aspose.PDF para .NET. Le explicaremos el código fuente de C# paso a paso para guiarlo en este proceso.
+## Introducción
 
-## Paso 1: Preparación
+La creación de formularios PDF interactivos puede mejorar significativamente la experiencia del usuario, especialmente cuando se trata de recopilar información. Uno de los elementos de formulario más comunes es el botón de opción, que permite a los usuarios seleccionar una opción de un conjunto. En este tutorial, exploraremos cómo crear botones de opción alineados horizontal y verticalmente con Aspose.PDF para .NET. Ya sea que sea un desarrollador experimentado o recién esté comenzando, esta guía lo guiará a través del proceso paso a paso, lo que le permitirá comprender claramente cada parte.
 
-Asegúrese de haber importado las bibliotecas necesarias y de haber configurado la ruta al directorio de sus documentos:
+## Prerrequisitos
+
+Antes de sumergirse en el código, hay algunos requisitos previos que debe tener en cuenta:
+
+1.  Aspose.PDF para .NET: Asegúrese de tener instalada la biblioteca Aspose.PDF. Puede descargarla desde el sitio web[sitio](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: un entorno de desarrollo donde puedes escribir y probar tu código.
+3. Conocimientos básicos de C#: la familiaridad con la programación en C# le ayudará a comprender mejor los fragmentos de código.
+
+## Importar paquetes
+
+Para comenzar, debe importar los paquetes necesarios en su proyecto de C#. A continuación, le indicamos cómo hacerlo:
+
+### Crear un nuevo proyecto
+
+Abra Visual Studio y cree un nuevo proyecto de C#. Puede elegir una aplicación de consola para simplificar el proceso.
+
+### Añadir referencia de Aspose.PDF
+
+1. Haga clic derecho en su proyecto en el Explorador de soluciones.
+2. Seleccione "Administrar paquetes NuGet".
+3. Busque "Aspose.PDF" e instale la última versión.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using System.IO;
+using Aspose.Pdf.Facades;
+using Aspose.Pdf;
+using Aspose.Pdf.Forms;
 ```
 
-## Paso 2: Cargar el documento
+Ahora que tienes todo configurado, vamos a desglosar el código para crear botones de opción alineados horizontal y verticalmente.
 
-Cargar el documento PDF existente:
+## Paso 1: Configurar el directorio de documentos
+
+En este paso definiremos la ruta al directorio donde se almacenarán sus documentos PDF.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta real donde desea guardar el archivo PDF. Esto es crucial, ya que le indica al programa dónde buscar los archivos de entrada y dónde guardar el de salida.
+
+## Paso 2: Cargue el documento PDF existente
+
+ A continuación, debemos cargar el documento PDF con el que trabajaremos. Esto se hace mediante el comando`FormEditor` clase.
 
 ```csharp
 FormEditor formEditor = new FormEditor();
 formEditor.BindPdf(dataDir + "input.pdf");
 ```
 
-## Paso 3: Personaliza las opciones del botón de opción
+Aquí, creamos una instancia de`FormEditor` y vincularlo a un archivo PDF existente llamado`input.pdf`Asegúrese de que este archivo exista en el directorio especificado.
 
-Personalice las opciones del botón de opción configurando las siguientes propiedades:
+## Paso 3: Configurar las propiedades del botón de opción
+
+Ahora, vamos a configurar algunas propiedades para nuestros botones de opción. Esto incluye el espacio entre los botones, su orientación y su tamaño.
 
 ```csharp
-formEditor. RadioGap = 4; // Distancia entre dos opciones de botón de opción
-formEditor. RadioHoriz = true; //Disposición horizontal de los botones de opción
-formEditor.RadioButtonItemSize = 20; // Tamaño de los botones de opción
-formEditor.Facade.BorderWidth = 1; // Ancho del borde del botón de opción
-formEditor.Facade.BorderColor = System.Drawing.Color.Black; // Color del borde del botón de opción
+formEditor.RadioGap = 4; // Distancia entre las opciones de los botones de opción
+formEditor.RadioHoriz = true; // Establecer como verdadero para la alineación horizontal
+formEditor.RadioButtonItemSize = 20; // Tamaño del botón de opción
+formEditor.Facade.BorderWidth = 1; // Ancho del borde
+formEditor.Facade.BorderColor = System.Drawing.Color.Black; // Color del borde
 ```
+
+ Estas propiedades ayudarán a definir cómo aparecerán los botones de opción en el PDF.`RadioGap` La propiedad controla el espacio entre los botones, mientras que`RadioHoriz` determina su diseño.
 
 ## Paso 4: Agregar botones de opción horizontales
 
-Agregue botones de opción dispuestos horizontalmente especificando las opciones y la posición del campo:
+Ahora, agreguemos los botones de opción horizontales al PDF.
 
 ```csharp
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
 ```
 
+ En este código, definimos los elementos para los botones de opción y los agregamos al PDF.`AddField`El método toma varios parámetros, incluido el tipo de campo, el nombre del campo y las coordenadas para la ubicación.
+
 ## Paso 5: Agregar botones de opción verticales
 
-Agregue botones de opción dispuestos verticalmente especificando las opciones y la posición del campo:
+A continuación, agregaremos los botones de opción verticales. Para ello, debemos volver a cambiar la orientación a vertical.
 
 ```csharp
-formEditor. RadioHoriz = false; // Disposición vertical de los botones de opción
+formEditor.RadioHoriz = false; // Establecer como falso para la alineación vertical
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
 ```
 
-## Paso 6: Guardar el documento
+Al igual que antes, definimos los elementos y los agregamos al PDF, pero esta vez estarán alineados verticalmente.
 
-Guarde el documento PDF modificado:
+## Paso 6: Guarde el documento PDF
+
+Por último, necesitamos guardar el documento PDF modificado.
 
 ```csharp
 dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
 formEditor.Save(dataDir);
+Console.WriteLine("\nHorizontally and vertically laid out radio buttons successfully.\nFile saved at " + dataDir);
 ```
 
-### Código fuente de muestra para botones de opción horizontales y verticales usando Aspose.PDF para .NET 
-```csharp
-try
-{
-	// La ruta al directorio de documentos.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Cargar el documento previamente guardado
-	FormEditor formEditor = new FormEditor();
-	formEditor.BindPdf(dataDir + "input.pdf");
-	// RadioGap es la distancia entre dos opciones de botón de radio.
-	formEditor.RadioGap = 4;
-	// Agregar botón de opción horizontal
-	formEditor.RadioHoriz = true;
-	// RadioButtonItemSize si es el tamaño del elemento del botón de opción.
-	formEditor.RadioButtonItemSize = 20;
-	formEditor.Facade.BorderWidth = 1;
-	formEditor.Facade.BorderColor = System.Drawing.Color.Black;
-	formEditor.Items = new string[] { "First", "Second", "Third" };
-	formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
-	// Añadir otro botón de opción situado verticalmente
-	formEditor.RadioHoriz = false;
-	formEditor.Items = new string[] { "First", "Second", "Third" };
-	formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
-	dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
-	// Guardar el documento PDF
-	formEditor.Save(dataDir);
-	Console.WriteLine("\nHorizontally and vertically laid out radio buttons successfully.\nFile saved at " + dataDir);
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+Este código guarda el PDF con los botones de opción recién agregados. Asegúrese de verificar el directorio especificado para el archivo de salida.
 
 ## Conclusión
 
-En este tutorial, aprendimos a crear botones de opción dispuestos de forma horizontal y vertical en un documento PDF con Aspose.PDF para .NET. Si sigue estos pasos, podrá personalizar fácilmente el diseño de los botones de opción y agregarlos a sus documentos PDF con Aspose.PDF.
+Crear botones de opción en un PDF con Aspose.PDF para .NET es un proceso sencillo. Si sigue los pasos que se describen en este tutorial, podrá agregar fácilmente botones de opción alineados tanto horizontal como verticalmente a sus formularios PDF. Esto no solo mejora la interactividad de sus documentos, sino que también mejora la experiencia general del usuario. ¡Así que, adelante y pruébelo!
 
-### Preguntas frecuentes
+## Preguntas frecuentes
 
-#### P: ¿Qué son los botones de opción dispuestos horizontal y verticalmente en un documento PDF?
+### ¿Qué es Aspose.PDF para .NET?
+Aspose.PDF para .NET es una potente biblioteca que permite a los desarrolladores crear, manipular y convertir documentos PDF mediante programación.
 
-A: Los botones de opción dispuestos horizontal y verticalmente en un documento PDF hacen referencia a la orientación del diseño de las opciones de los botones de opción. El diseño horizontal coloca las opciones de los botones de opción una al lado de la otra, lo que permite a los usuarios hacer una selección de izquierda a derecha. El diseño vertical, por otro lado, apila las opciones de los botones de opción una sobre otra, lo que permite a los usuarios hacer una selección de arriba a abajo.
+### ¿Puedo utilizar Aspose.PDF gratis?
+ Sí, Aspose ofrece una versión de prueba gratuita que puedes usar para evaluar la biblioteca. Puedes descargarla[aquí](https://releases.aspose.com/).
 
-#### P: ¿Cómo personalizo la apariencia de las opciones del botón de opción en Aspose.PDF para .NET?
+### ¿Cómo puedo obtener soporte para Aspose.PDF?
+ Puede obtener ayuda visitando el sitio[Foro de Aspose](https://forum.aspose.com/c/pdf/10).
 
-A: Puede personalizar la apariencia de las opciones de los botones de opción en Aspose.PDF para .NET ajustando varias propiedades. La API proporciona opciones para establecer la distancia entre dos opciones de botones de opción (`RadioGap`), la orientación del diseño (`RadioHoriz`), el tamaño de los elementos del botón de opción (`RadioButtonItemSize`), el ancho del borde y el color de los botones de opción, y más.
+### ¿Es posible crear otros elementos de formulario con Aspose.PDF?
+¡Por supuesto! Aspose.PDF admite varios elementos de formulario, incluidos campos de texto, casillas de verificación y menús desplegables.
 
-#### P: ¿Puedo agregar botones de opción horizontales y verticales al mismo documento PDF?
-
-R: Sí, puede agregar botones de opción horizontales y verticales al mismo documento PDF mediante Aspose.PDF para .NET. El código fuente de muestra que se proporciona en el tutorial demuestra cómo agregar primero botones de opción dispuestos horizontalmente y luego agregar otro conjunto de botones de opción dispuestos verticalmente al mismo documento PDF.
-
-#### P: ¿Puedo configurar diferentes opciones de botones de opción para cada grupo de botones de opción?
-
- R: Sí, puede configurar diferentes opciones de botón de opción para cada grupo de botones de opción. Cada grupo debe tener una opción única`RadioButtonField` objeto, y el`RadioButtonOptionField` Los objetos de cada grupo deben compartir la misma página y nombres únicos para sus opciones. Esto garantiza que los botones de opción de cada grupo funcionen correctamente y que las selecciones sean mutuamente excluyentes.
-
-#### P: ¿Las configuraciones de diseño y apariencia de los botones de opción son compatibles con todos los visores y aplicaciones de PDF?
-
-R: Sí, la configuración de diseño y apariencia de los botones de opción son compatibles con todos los visores y aplicaciones de PDF que cumplen con los estándares. La especificación PDF define los botones de opción y sus diversos atributos, lo que hace que sean universalmente reconocidos en el formato PDF. Sin embargo, es esencial probar la apariencia y el comportamiento de los botones de opción en diferentes visores de PDF para garantizar una representación uniforme en varias plataformas.
+### ¿Dónde puedo comprar Aspose.PDF para .NET?
+ Puede comprar Aspose.PDF para .NET desde[Página de compra](https://purchase.aspose.com/buy).

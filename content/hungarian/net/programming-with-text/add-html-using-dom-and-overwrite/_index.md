@@ -42,7 +42,7 @@ Document doc = new Document();
 ```
 
 ## 5. lépés: Adjon hozzá egy oldalt a dokumentumhoz
- Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
+ Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages` gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -159,7 +159,7 @@ HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Tab
 
 #### K: Hogyan írhatom felül a HTML-tartalom stílusait?
 
- V: A 7. lépésben felülírja a HTML-tartalom stílusát a`TextState` tulajdonságai a`HtmlFragment` objektum. Például módosíthatja a betűcsaládot "Arial"-ra, és beállíthatja a betűméretet 20-ra:
+ V: A 7. lépésben felülírja a HTML-tartalom stílusát a`TextState` tulajdonságai a`HtmlFragment`objektum. Például módosíthatja a betűcsaládot "Arial"-ra, és beállíthatja a betűméretet 20-ra:
 
 ```csharp
 title.TextState = new TextState("Arial");

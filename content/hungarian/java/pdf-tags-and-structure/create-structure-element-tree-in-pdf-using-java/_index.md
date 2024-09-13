@@ -80,7 +80,7 @@ Ha követi ezeket a lépéseket, és szerkezeti elemeket épít be PDF-dokumentu
 
 ### Mi a célja a struktúraelem-fának egy PDF-dokumentumban?
 
-A Struktúraelem fa a tartalom logikai szerkezetét képviseli egy PDF-dokumentumban, lehetővé téve a tartalom hozzáférhetőségét és hatékony kommunikálását a felhasználókkal, különösen a látássérültekkel.
+A struktúraelem fa a tartalom logikai szerkezetét képviseli a PDF-dokumentumban, lehetővé téve a tartalom hozzáférhetőségét és hatékony kommunikálását a felhasználókkal, különösen a látássérültekkel.
 
 ### Hogyan tudok képeket hozzáadni egy címkézett PDF dokumentumhoz?
 
@@ -88,7 +88,7 @@ A Struktúraelem fa a tartalom logikai szerkezetét képviseli egy PDF-dokumentu
 
 ### A címkézett PDF-dokumentumok követelményei a kisegítő lehetőségek megfelelőségének?
 
-Igen, a címkézett PDF-dokumentumok kulcsfontosságúak a kisegítő lehetőségeknek való megfelelés szempontjából, mivel strukturált megjelenítést biztosítanak a tartalomról, amely kisegítő technológiákkal értelmezhető.
+Igen, a címkézett PDF-dokumentumok kulcsfontosságúak az akadálymentesítési előírásoknak való megfelelés szempontjából, mivel a tartalom strukturált megjelenítését biztosítják, amely kisegítő technológiákkal értelmezhető.
 
 ### Automatizálhatom a meglévő PDF-dokumentumok címkézési folyamatát?
 

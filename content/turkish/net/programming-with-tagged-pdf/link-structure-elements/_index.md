@@ -156,7 +156,7 @@ string outFile = dataDir + "LinkStructureElements_Output.pdf";
 string logFile = dataDir + "46035_log.xml";
 string imgFile = dataDir + "google-icon-512.png";
 
-// Belge oluşturma ve Etiketli Pdf İçeriği alma
+//Belge oluşturma ve Etiketli Pdf İçeriği alma
 Document document = new Document(); 
 ITaggedContent taggedContent = document.TaggedContent;
 

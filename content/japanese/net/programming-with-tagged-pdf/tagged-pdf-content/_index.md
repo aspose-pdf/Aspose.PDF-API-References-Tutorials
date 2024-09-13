@@ -2,7 +2,7 @@
 title: タグ付き PDF コンテンツ
 linktitle: タグ付き PDF コンテンツ
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して PDF ドキュメント内のタグ付きコンテンツを操作する方法を学習します。タグの使用に関するステップ バイ ステップ ガイドです。
+description: Aspose.PDF for .NET を使用して PDF ドキュメント内のタグ付けされたコンテンツを操作する方法を学習します。タグの使用に関するステップ バイ ステップ ガイドです。
 type: docs
 weight: 200
 url: /ja/net/programming-with-tagged-pdf/tagged-pdf-content/
@@ -95,7 +95,7 @@ A: このチュートリアルは、Aspose.PDF for .NET を使用して PDF ド�
 
 #### Q: Aspose.PDF for .NET を使用したタグ付き PDF コンテンツの操作に関するこのチュートリアルを実行するための前提条件は何ですか?
 
-A: 始める前に、Aspose.PDF for .NET を使用するために開発環境が設定されていることを確認してください。これには、Aspose.PDF ライブラリをインストールし、それを参照するようにプロジェクトを構成することが含まれます。
+A: 始める前に、Aspose.PDF for .NET を使用するように開発環境が設定されていることを確認してください。これには、Aspose.PDF ライブラリをインストールし、それを参照するようにプロジェクトを構成することが含まれます。
 
 #### Q: Aspose.PDF for .NET を使用して新しい PDF ドキュメントを作成し、そのタグ付けされたコンテンツを操作するにはどうすればよいですか?
 

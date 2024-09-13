@@ -63,7 +63,7 @@ tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
 Sekarang, mari tambahkan baris dan sel ke tabel. Kita akan membuat baris baru dan menambahkan sel ke dalamnya:
 
 ```csharp
-// Buat baris dalam tabel dan kemudian sel dalam baris
+//Buat baris dalam tabel dan kemudian sel dalam baris
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -117,7 +117,7 @@ margin.Right = 5f;
 margin.Bottom = 5f;
 // Tetapkan bantalan sel default ke objek MarginInfo
 tab1.DefaultCellPadding = margin;
-// Buat baris dalam tabel dan kemudian sel dalam baris
+//Buat baris dalam tabel dan kemudian sel dalam baris
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -145,7 +145,7 @@ Selamat! Anda telah berhasil mempelajari cara mengatur margin atau padding dalam
 
 #### T: Dapatkah saya mengatur margin atau padding yang berbeda untuk sel individual dalam sebuah tabel?
 
-A: Ya, Anda dapat mengatur margin atau padding yang berbeda untuk sel-sel individual dalam tabel menggunakan Aspose.PDF untuk .NET. Dalam contoh yang diberikan, kami mengatur padding sel default untuk seluruh tabel menggunakan`DefaultCellPadding` properti. Untuk mengatur bantalan yang berbeda untuk sel tertentu, Anda dapat mengakses`MarginInfo` setiap sel secara individual dan memodifikasi marginnya.
+ A: Ya, Anda dapat mengatur margin atau padding yang berbeda untuk sel-sel individual dalam tabel menggunakan Aspose.PDF untuk .NET. Dalam contoh yang diberikan, kami mengatur padding sel default untuk seluruh tabel menggunakan`DefaultCellPadding` properti. Untuk mengatur bantalan yang berbeda untuk sel tertentu, Anda dapat mengakses`MarginInfo` setiap sel secara individual dan memodifikasi marginnya.
 
 #### T: Bagaimana cara mengubah warna atau gaya batas tabel?
 
@@ -161,4 +161,4 @@ J: Ya, Anda dapat menambahkan header atau footer ke tabel menggunakan Aspose.PDF
 
 #### T: Bisakah saya menambahkan gambar ke sel tabel, bukan teks?
 
- A: Ya, Anda dapat menambahkan gambar ke sel tabel menggunakan Aspose.PDF untuk .NET. Daripada membuat`TextFragment` objek, Anda dapat membuat`Image` objek, memuat file gambar, dan menambahkannya ke sel yang diinginkan menggunakan`cell.Paragraphs.Add(image);` metode ini. Ini memungkinkan Anda untuk memasukkan gambar ke dalam tabel di samping konten teks.
+ A: Ya, Anda dapat menambahkan gambar ke sel tabel menggunakan Aspose.PDF untuk .NET. Daripada membuat`TextFragment` objek, Anda dapat membuat`Image` objek, memuat file gambar, dan menambahkannya ke sel yang diinginkan menggunakan`cell.Paragraphs.Add(image);`metode ini. Ini memungkinkan Anda untuk memasukkan gambar ke dalam tabel di samping konten teks.

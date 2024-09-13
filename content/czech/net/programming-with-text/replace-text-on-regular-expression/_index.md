@@ -18,7 +18,7 @@ Než začnete, ujistěte se, že máte následující:
 
 ## Krok 1: Nastavte adresář dokumentů
 
- Nastavte cestu k adresáři, kde máte vstupní PDF soubor. Nahradit`"YOUR DOCUMENT DIRECTORY"` v`dataDir` proměnnou s cestou k vašemu PDF souboru.
+ Nastavte cestu k adresáři, kde máte vstupní PDF soubor. Nahradit`"YOUR DOCUMENT DIRECTORY"` v`dataDir` proměnná s cestou k vašemu PDF souboru.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
@@ -74,7 +74,7 @@ Console.WriteLine("\nText replaced successfully based on a regular expression.\n
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Otevřete dokument
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionPage.pdf");
-// Vytvořte objekt TextAbsorber a najděte všechny fráze odpovídající regulárnímu výrazu
+//Vytvořte objekt TextAbsorber a najděte všechny fráze odpovídající regulárnímu výrazu
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Jako 1999-2000
 // Nastavte možnost textového vyhledávání pro určení použití regulárního výrazu
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);

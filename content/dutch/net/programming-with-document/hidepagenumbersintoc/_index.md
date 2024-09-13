@@ -2,109 +2,40 @@
 title: Verberg paginanummers in inhoudsopgave
 linktitle: Verberg paginanummers in inhoudsopgave
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u paginanummers in een inhoudsopgave kunt verbergen met Aspose.PDF voor .NET met deze stapsgewijze handleiding.
+description: Leer hoe u paginanummers in de inhoudsopgave verbergt met Aspose.PDF voor .NET. Volg deze gedetailleerde handleiding met codevoorbeelden om professionele PDF's te maken.
 type: docs
 weight: 220
 url: /nl/net/programming-with-document/hidepagenumbersintoc/
 ---
-In dit artikel bespreken we de implementatie van de Hide Page Numbers In TOC-functie van Aspose.PDF voor .NET met behulp van C#. We beginnen met een korte introductie tot Aspose.PDF voor .NET en duiken vervolgens in de stapsgewijze handleiding om deze functie te implementeren. 
+## Invoering
 
-## Inleiding tot Aspose.PDF voor .NET
-
-Aspose.PDF voor .NET is een krachtig PDF-manipulatiecomponent waarmee ontwikkelaars programmatisch PDF-bestanden kunnen maken, bewerken en manipuleren. Het biedt een breed scala aan functies en functionaliteiten die het gemakkelijk maken om met PDF-documenten te werken. Aspose.PDF voor .NET ondersteunt zowel 32-bits als 64-bits besturingssystemen en kan worden gebruikt met .NET Framework-, .NET Core- en Xamarin-platforms. 
-
-## Wat is de functie Paginanummers verbergen in inhoudsopgave?
-
-Inhoudsopgave (TOC) is een essentieel onderdeel van een PDF-document dat gebruikers een snel overzicht van de inhoud biedt. Soms willen gebruikers paginanummers in de TOC verbergen om deze gebruiksvriendelijker te maken. Aspose.PDF voor .NET biedt een ingebouwde functie om paginanummers in de TOC te verbergen. Deze functie kan worden gebruikt om gebruiksvriendelijkere PDF-documenten te maken. 
+Wanneer u met PDF's werkt, wilt u soms een inhoudsopgave (TOC) genereren, maar de zaken overzichtelijk houden door de paginanummers te verbergen. Misschien leest het document beter zonder, of misschien is het een esthetische keuze. Wat uw reden ook is, als u met Aspose.PDF voor .NET werkt, laat deze tutorial u precies zien hoe u paginanummers in uw TOC kunt verbergen.
 
 ## Vereisten
 
-Om deze tutorial te volgen, hebt u het volgende nodig:
+Voordat we beginnen, zijn er een paar dingen die je op orde moet hebben. Hier is een snelle checklist:
 
-- Visual Studio 2010 of hoger
-- Aspose.PDF voor .NET geïnstalleerd op uw systeem
-- Basiskennis van de programmeertaal C#
+- Visual Studio geïnstalleerd: U hebt een werkende versie van Visual Studio nodig om te kunnen coderen.
+- Aspose.PDF voor .NET-bibliotheek: Zorg ervoor dat u de Aspose.PDF voor .NET-bibliotheek hebt geïnstalleerd.
+  -  Downloadlink:[Aspose.PDF voor .NET](https://releases.aspose.com/pdf/net/)
+- Tijdelijke licentie: Als u de functies uitprobeert, is het handig om een tijdelijke licentie te hebben.
+  -  Tijdelijke licentie:[Hier verkrijgbaar](https://purchase.aspose.com/temporary-license/)
 
-## Stapsgewijze handleiding voor het implementeren van de functie Paginanummers verbergen in inhoudsopgave
+## Pakketten importeren
 
-Volg de onderstaande stappen om de functie Paginanummers verbergen in inhoudsopgave te implementeren met Aspose.PDF voor .NET:
-
-## Stap 1: Maak een nieuwe C#-consoletoepassing in Visual Studio
-
-Open Visual Studio en maak een nieuwe C#-consoletoepassing.
-
-## Stap 2: Voeg een referentie toe aan Aspose.PDF voor .NET
-
-Klik met de rechtermuisknop op de map Verwijzingen in uw project en selecteer Verwijzing toevoegen. Blader naar de locatie waar Aspose.PDF voor .NET op uw systeem is geïnstalleerd en voeg er een verwijzing aan toe.
-
-## Stap 1: Maak een nieuw PDF-document
-
-Maak een nieuw PDF-document met behulp van de volgende code:
+Voordat u in de code duikt, moet u ervoor zorgen dat u de volgende naamruimten in uw C#-project importeert. Deze bieden de benodigde klassen en methoden voor het werken met PDF-documenten en het maken van uw inhoudsopgave (TOC).
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outFile = dataDir + "HiddenPageNumbers_out.pdf";
-Document doc = new Document();
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-## Stap 2: Maak een inhoudsopgavepagina
+Nu uw omgeving gereed is en de pakketten zijn geïmporteerd, gaan we elke stap van het proces uitsplitsen. We behandelen elk onderdeel van de code om duidelijkheid te garanderen, zodat u het gemakkelijk kunt volgen.
 
-Maak een nieuwe pagina voor de inhoudsopgave en voeg deze toe aan het PDF-document met behulp van de volgende code:
+## Stap 1: Initialiseer uw PDF-document
 
-```csharp
-Page tocPage = doc.Pages.Add();
-TocInfo tocInfo = new TocInfo();
-TextFragment title = new TextFragment("Table Of Contents");
-title.TextState.FontSize = 20;
-title.TextState.FontStyle = FontStyles.Bold;
-tocInfo.Title = title;
-```
+Het eerste wat we moeten doen is een nieuw PDF-document maken en een pagina voor de inhoudsopgave (TOC) toevoegen.
 
-## Stap 3: Voeg een sectielijst toe aan de sectieverzameling van het PDF-document
-
-Voeg de sectielijst toe aan de sectieverzameling van het PDF-document met behulp van de volgende code:
-
-```csharp
-tocPage.TocInfo = tocInfo;
-```
-
-## Stap 4: Definieer de opmaak van de lijst met vier niveaus
-
-Definieer de opmaak van de lijst met vier niveaus door de linkermarges en de tekstopmaakinstellingen van elk niveau in te stellen met behulp van de volgende code:
-
-```csharp
-tocInfo.IsShowPageNumbers = false;
-tocInfo.FormatArrayLength = 4;
-tocInfo.FormatArray[0].Margin.Right = 0;
-tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
-tocInfo.FormatArray[1].Margin.Left = 30;
-tocInfo.FormatArray[1].TextState.Underline = true;
-tocInfo.FormatArray[1].TextState.FontSize = 10;
-tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
-tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
-Page page = doc.Pages.Add();
-```
-
-## Stap 5: Voeg vier koppen toe aan de sectie
-
-```csharp
-
-for (int Level = 1; Level != 5; Level++)
-{ 
-	Heading heading2 = new Heading(Level); 
-	TextSegment segment2 = new TextSegment(); 
-	heading2.TocPage = tocPage; 
-	heading2.Segments.Add(segment2); 
-	heading2.IsAutoSequence = true; 
-	segment2.Text = "this is heading of level " + Level; 
-	heading2.IsInList = true; 
-	page.Paragraphs.Add(heading2); 
-}
-doc.Save(outFile);
-
-```
-
-### Voorbeeldbroncode voor het verbergen van paginanummers in de inhoudsopgave met behulp van Aspose.PDF voor .NET
 
 ```csharp
 // Het pad naar de documentenmap.
@@ -112,18 +43,47 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "HiddenPageNumbers_out.pdf";
 Document doc = new Document();
 Page tocPage = doc.Pages.Add();
+```
+
+- dataDir: Dit is de map waar uw uitvoerbestand wordt opgeslagen.
+- Document(): Initialiseert een nieuw PDF-document.
+- Pages.Add(): Voegt een nieuwe, lege pagina toe aan het document, die later uw inhoudsopgave zal bevatten.
+
+## Stap 2: Inhoudsopgave-info en titel instellen
+
+Vervolgens definiëren we de inhoudsopgave-informatie, inclusief de titel die bovenaan de inhoudsopgave wordt weergegeven.
+
+```csharp
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
 tocInfo.Title = title;
-//Voeg de lijstsectie toe aan de sectieverzameling van het PDF-document
 tocPage.TocInfo = tocInfo;
-//Definieer de opmaak van de lijst met vier niveaus door de linkermarges in te stellen en
-//tekstopmaakinstellingen van elk niveau
+```
 
+- TocInfo: Dit object bevat alle informatie over de inhoudsopgave.
+- TextFragment: Geeft de tekst van de TOC-titel weer. Hier hebben we deze ingesteld als 'Inhoudsopgave'.
+- FontStyle: We stylen de inhoudsopgavetitel door de grootte in te stellen op 20 en deze vet te maken.
+- tocPage.TocInfo: We wijzen de inhoudsopgave-info toe aan de pagina waarop de inhoudsopgave wordt weergegeven.
+
+## Stap 3: Verberg paginanummers in de inhoudsopgave
+
+Nu het leuke gedeelte! Hier configureren we de TOC om de paginanummers te verbergen.
+
+```csharp
 tocInfo.IsShowPageNumbers = false;
 tocInfo.FormatArrayLength = 4;
+```
+
+-  IsShowPageNumbers: Dit is de magische schakelaar die de paginanummers verbergt. Stel deze in op`false`, en de paginanummers verschijnen niet in de inhoudsopgave.
+- FormatArrayLength: We stellen dit in op 4, wat aangeeft dat we de opmaak willen definiëren voor vier niveaus van inhoudsopgavekoppen.
+
+## Stap 4: Pas de opmaak van de inhoudsopgave aan
+
+Om uw inhoudsopgave meer stijl te geven, definiëren we nu de opmaak voor verschillende niveaus van koppen.
+
+```csharp
 tocInfo.FormatArray[0].Margin.Right = 0;
 tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
 tocInfo.FormatArray[1].Margin.Left = 30;
@@ -131,36 +91,61 @@ tocInfo.FormatArray[1].TextState.Underline = true;
 tocInfo.FormatArray[1].TextState.FontSize = 10;
 tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
 tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
+```
+
+- FormatArray: Deze array regelt de opmaak van TOC-items. Elke index vertegenwoordigt een ander kopniveau.
+- Marges en tekststijl: We stellen marges in en passen lettertypen toe, zoals vet, cursief en onderstrepen, voor elk kopniveau.
+
+## Stap 5: Koppen toevoegen aan het document
+
+Tot slot voegen we de koppen toe die deel uitmaken van de inhoudsopgave.
+
+```csharp
 Page page = doc.Pages.Add();
-//Voeg vier koppen toe aan de sectie
 for (int Level = 1; Level != 5; Level++)
-	{ 
-		Heading heading2 = new Heading(Level); 
-		TextSegment segment2 = new TextSegment(); 
-		heading2.TocPage = tocPage; 
-		heading2.Segments.Add(segment2); 
-		heading2.IsAutoSequence = true; 
-		segment2.Text = "this is heading of level " + Level; 
-		heading2.IsInList = true; 
-		page.Paragraphs.Add(heading2); 
-	}
+{ 
+    Heading heading2 = new Heading(Level); 
+    TextSegment segment2 = new TextSegment(); 
+    heading2.TocPage = tocPage; 
+    heading2.Segments.Add(segment2); 
+    heading2.IsAutoSequence = true; 
+    segment2.Text = "this is heading of level " + Level; 
+    heading2.IsInList = true; 
+    page.Paragraphs.Add(heading2); 
+}
+```
+
+- Heading en TextSegment: Deze vertegenwoordigen de koppen die in uw TOC verschijnen. Elk niveau krijgt zijn eigen kop.
+- IsAutoSequence: Nummert de koppen automatisch.
+- IsInList: zorgt ervoor dat elke kop in de inhoudsopgave wordt weergegeven.
+
+## Stap 6: Sla het document op
+
+Zodra alles is ingesteld, slaat u het PDF-document op in het door u opgegeven uitvoerbestand.
+
+```csharp
 doc.Save(outFile);
 ```
 
+En dat is alles! U hebt succesvol een PDF met een inhoudsopgave gemaakt, en de paginanummers zijn verborgen!
+
 ## Conclusie
 
-In deze tutorial hebben we onderzocht hoe u met XMP-metadata in een PDF-document kunt werken met Aspose.PDF voor .NET. XMP-metadata biedt waardevolle informatie over het PDF-document, waaronder de titel, auteur, aanmaakdatum en meer. Aspose.PDF voor .NET stelt ontwikkelaars in staat om deze metadata te openen en te bewerken, en biedt een flexibele en krachtige API voor het werken met PDF-documenten.
+Het maken van een inhoudsopgave in een PDF en het verbergen van paginanummers lijkt misschien lastig, maar met Aspose.PDF voor .NET is het een fluitje van een cent. Door deze stapsgewijze handleiding te volgen, hebt u geleerd hoe u de TOC-indeling kunt aanpassen, paginanummers kunt verbergen en verschillende stijlen op uw koppen kunt toepassen. Nu kunt u professionele PDF's maken die zijn afgestemd op uw exacte behoeften.
 
-### Veelgestelde vragen
+## Veelgestelde vragen
 
-#### V: Wat zijn XMP-metagegevens in een PDF-document?
+### Kan ik paginanummers weergeven voor specifieke koppen in de inhoudsopgave?
+Nee, Aspose.PDF verbergt of toont paginanummers voor de gehele TOC. U kunt ze niet selectief verbergen voor specifieke items.
 
-A: XMP (Extensible Metadata Platform) metadata in een PDF-document is een standaardformaat voor het opslaan van metadata-informatie over het document. Het bevat details zoals documenttitel, auteur, aanmaakdatum, trefwoorden en meer. XMP metadata biedt een gestructureerde en gestandaardiseerde manier om informatie over het PDF-document op te slaan en te delen.
+### Is het mogelijk om meer niveaus aan de inhoudsopgave toe te voegen?
+ Ja, u kunt de`FormatArrayLength` om meer niveaus van inhoudsopgavekoppen te definiëren.
 
-#### V: Kan ik de XMP-metagegevens van een PDF-document wijzigen met Aspose.PDF voor .NET?
+### Hoe kan ik het lettertype voor alle inhoudsopgave-items wijzigen?
+ U kunt het lettertype wijzigen door de`TextState.Font` eigenschap voor elk niveau in de`FormatArray`.
 
- A: Ja, u kunt de XMP-metagegevens van een PDF-document programmatisch wijzigen met Aspose.PDF voor .NET. U kunt toegang krijgen tot de`Info` eigendom van de`Document` object, waarmee u toegang krijgt tot de XMP-metadata-eigenschappen. U kunt vervolgens de waarden van deze eigenschappen bijwerken om de XMP-metadata van het PDF-document te wijzigen.
+### Kan ik hyperlinks in de inhoudsopgave invoegen?
+ Ja, u kunt elk TOC-item koppelen aan een specifieke sectie in het document met behulp van de`Heading.TocPage` eigendom.
 
-#### V: Kan ik aangepaste XMP-metagegevenseigenschappen uit een PDF-document halen met Aspose.PDF voor .NET?
-
- A: Ja, u kunt aangepaste XMP-metadata-eigenschappen uit een PDF-document halen met Aspose.PDF voor .NET. U kunt de`Metadata` eigendom van de`Document`object, dat toegang biedt tot alle XMP-metadata-eigenschappen van het PDF-document. U kunt vervolgens aangepaste eigenschappen extraheren en hun waarden gebruiken zoals nodig.
+### Heb ik een licentie nodig voor Aspose.PDF?
+Ja, een geldige licentie is vereist voor productiegebruik. U kunt een tijdelijke licentie krijgen[hier](https://purchase.aspose.com/temporary-license/) om de functies te testen.

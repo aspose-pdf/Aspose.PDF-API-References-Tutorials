@@ -2,117 +2,152 @@
 title: Buat Tautan Aplikasi Dalam File PDF
 linktitle: Buat Tautan Aplikasi Dalam File PDF
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Buat tautan aplikasi dengan mudah dalam berkas PDF dengan Aspose.PDF untuk .NET.
+description: Pelajari cara membuat tautan aplikasi dalam file PDF menggunakan Aspose.PDF for .NET. Panduan langkah demi langkah untuk meningkatkan interaktivitas dalam PDF Anda.
 type: docs
 weight: 20
 url: /id/net/programming-with-links-and-actions/create-application-link/
 ---
-Membuat tautan aplikasi dalam file PDF memungkinkan Anda membuat tautan ke aplikasi eksternal, seperti file yang dapat dieksekusi atau URL. Dengan Aspose.PDF untuk .NET, Anda dapat dengan mudah membuat tautan aplikasi dengan mengikuti kode sumber berikut:
+## Perkenalan
 
-## Langkah 1: Impor pustaka yang diperlukan
+Membuat elemen interaktif dalam PDF dapat meningkatkan keterlibatan pengguna secara signifikan dan memberikan pengalaman yang lebih baik. Salah satu fitur paling berguna yang disertakan dalam dokumen PDF adalah tautan aplikasi yang dapat dengan cepat mengarahkan pengguna ke aplikasi atau file tertentu. Dalam panduan ini, kami akan memandu Anda melalui proses pembuatan tautan aplikasi dalam file PDF menggunakan Aspose.PDF for .NET.
 
-Sebelum memulai, Anda perlu mengimpor pustaka yang diperlukan untuk proyek C# Anda. Berikut ini adalah perintah impor yang diperlukan:
+## Prasyarat
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Annotations;
-using Aspose.Pdf.InteractiveFeatures;
+Sebelum kita mulai membuat tautan aplikasi, ada beberapa hal yang perlu Anda siapkan. 
+
+### Persyaratan:
+1. .NET Framework: Pastikan Anda telah menginstal .NET Framework di sistem Anda. Aspose.PDF untuk .NET kompatibel dengan berbagai versi, jadi pastikan versi yang Anda gunakan.
+2. Pustaka Aspose.PDF: Tutorial ini mengasumsikan Anda telah memasang pustaka Aspose.PDF. Jika belum, Anda dapat mengunduhnya menggunakan tautan yang disediakan di bagian sumber daya. 
+3. Pemahaman Dasar tentang C#: Keakraban dengan bahasa pemrograman C# berguna, karena kita akan menulis kode C#.
+
+Sekarang setelah kita membahas persyaratan dasar, mari kita mulai!
+
+## Paket Impor
+
+Sebelum Anda mulai membuat kode, ingatlah untuk mengimpor namespace Aspose.PDF yang diperlukan dalam proyek C# Anda untuk mengakses kelas dan metode untuk manipulasi PDF.
+
+### Mulai Proyek C# Baru
+Buat aplikasi konsol baru di IDE pilihan Anda (seperti Visual Studio).
+
+### Tambahkan Referensi ke Aspose.PDF
+- Buka proyek Anda di Solution Explorer.
+- Klik kanan pada "Referensi" dan pilih "Tambahkan Referensi."
+- Telusuri untuk menemukan Aspose.PDF DLL atau gunakan NuGet Package Manager untuk menambahkannya. Anda dapat menginstalnya dengan baris perintah menggunakan:
+```bash
+Install-Package Aspose.PDF
 ```
 
-## Langkah 2: Tetapkan jalur ke folder dokumen
+### Impor namespace yang diperlukan
+Di bagian atas berkas kode Anda, sertakan namespace berikut:
+```csharp
+using System.IO;
+using System;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf;
+```
 
-Pada langkah ini, Anda perlu menentukan jalur ke folder yang berisi file PDF yang ingin Anda tambahkan tautan aplikasinya. Ganti`"YOUR DOCUMENT DIRECTORY"` dalam kode berikut dengan jalur sebenarnya ke folder dokumen Anda:
+Sekarang setelah prasyarat terpenuhi, mari masuk ke proses pengkodean sebenarnya untuk membuat tautan aplikasi dalam PDF.
+
+## Langkah 1: Tentukan Jalur Dokumen
+
+Pertama-tama, kita perlu menentukan direktori tempat dokumen PDF kita disimpan. Berikut cara melakukannya:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## Langkah 3: Buka dokumen PDF
+ Mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya ke folder yang berisi dokumen PDF Anda. Variabel ini akan bertindak sebagai jalur dasar untuk manipulasi PDF kita.
 
-Sekarang kita akan membuka dokumen PDF yang ingin kita tambahkan tautan aplikasi menggunakan kode berikut:
+## Langkah 2: Buka Dokumen PDF
+
+Berikutnya, kita perlu membuka berkas PDF di mana kita ingin membuat tautan aplikasi.
 
 ```csharp
 Document document = new Document(dataDir + "CreateApplicationLink.pdf");
 ```
 
-## Langkah 4: Buat Tautan Aplikasi
+ Kami menggunakan`Document` kelas dari Aspose.PDF untuk memuat berkas PDF kita. Contoh ini akan memungkinkan kita untuk mengedit dan memanipulasi PDF.
 
- Pada langkah ini kita akan membuat link aplikasi dengan menggunakan`LinkAnnotation` anotasi. Kami akan menentukan koordinat dan area tautan, serta tindakan peluncuran aplikasi. Berikut kode yang sesuai:
+## Langkah 3: Buat Anotasi Tautan
+
+Setelah dokumen dibuka, langkah selanjutnya adalah membuat anotasi tautan. Anotasi ini akan menjadi tautan sebenarnya yang akan diklik pengguna.
 
 ```csharp
 Page page = document.Pages[1];
 LinkAnnotation link = new LinkAnnotation(page, new Aspose.Pdf.Rectangle(100, 100, 300, 300));
-link.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
-link. Action = new LaunchAction(document, dataDir + "CreateApplicationLink.pdf");
-page.Annotations.Add(link);
 ```
 
-## Langkah 5: Simpan file yang diperbarui
+-  Di Sini,`page` menunjukkan halaman mana Anda akan menerapkan tautan (dalam kasus ini, halaman pertama).
+-  Itu`LinkAnnotation`kelas membuat tautan baru pada halaman yang ditentukan, yang didefinisikan oleh area persegi panjang yang dimulai pada (100,100) dan berakhir pada (300,300). Persegi panjang ini menentukan area yang dapat diklik dari tautan dalam PDF.
 
-Sekarang mari simpan file PDF yang diperbarui menggunakan`Save` metode dari`document` objek. Berikut kode terkait:
+## Langkah 4: Mengatur Warna Tautan
+
+Setelah membuat tautan, waktunya menyesuaikan tampilannya.
 
 ```csharp
-dataDir = dataDir + "CreateApplicationLink_out.pdf";
-document. Save(dataDir);
+link.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
 ```
 
-### Contoh kode sumber untuk Membuat Tautan Aplikasi menggunakan Aspose.PDF untuk .NET 
+Anda dapat mengubah warna anotasi tautan. Dalam kasus ini, kami akan menyetelnya ke warna hijau yang sering digunakan untuk menandakan tautan yang dapat diklik.
+
+## Langkah 5: Tentukan Tindakan Tautan
+
+Sekarang saatnya membuat anotasi berfungsi dengan mengatur tindakannya. Tindakan ini akan menentukan apa yang terjadi saat pengguna mengklik tautan.
+
 ```csharp
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Buka dokumen
-Document document = new Document( dataDir + "CreateApplicationLink.pdf");
-// Buat tautan
-Page page = document.Pages[1];
-LinkAnnotation link = new LinkAnnotation(page, new Aspose.Pdf.Rectangle(100, 100, 300, 300));
-link.Color = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
 link.Action = new LaunchAction(document, dataDir + "CreateApplicationLink.pdf");
+```
+
+ Dengan`LaunchAction`, kami tentukan apa yang dilakukan tautan saat diklik. Di sini, kami telah menetapkannya untuk membuka berkas PDF yang sama. Anda dapat dengan mudah mengubahnya untuk menautkan ke aplikasi atau dokumen lain sesuai kebutuhan.
+
+## Langkah 6: Tambahkan Anotasi ke Halaman
+
+Setelah tautan disiapkan, penting untuk menambahkan anotasi tautan ini ke anotasi halaman.
+
+```csharp
 page.Annotations.Add(link);
+```
+
+Baris ini menambahkan tautan ke koleksi anotasi halaman yang ditentukan. Tanpa langkah ini, tautan Anda tidak akan muncul dalam dokumen.
+
+## Langkah 7: Simpan Dokumen
+
+Terakhir, Anda ingin menyimpan perubahan yang Anda buat ke dalam berkas PDF.
+
+```csharp
 dataDir = dataDir + "CreateApplicationLink_out.pdf";
-// Simpan dokumen yang diperbarui
 document.Save(dataDir);
+```
+
+Di sini, kami menentukan nama berkas keluaran baru untuk menyimpan PDF yang diperbarui dengan tautan yang baru dibuat. Anda juga dapat menyimpannya di lokasi yang sama dengan nama yang berbeda untuk mempertahankan berkas asli Anda.
+
+## Langkah 8: Konfirmasikan Operasi
+
+Untuk memastikan semuanya berjalan lancar, mari tambahkan pesan konfirmasi.
+
+```csharp
 Console.WriteLine("\nApplication link created successfully.\nFile saved at " + dataDir);
 ```
 
+Ini hanya akan mencetak pesan sukses ke konsol, yang menunjukkan tempat penyimpanan file. Senang sekali mendapat masukan!
+
 ## Kesimpulan
 
-Selamat! Kini Anda memiliki panduan langkah demi langkah untuk membuat tautan aplikasi dengan Aspose.PDF untuk .NET. Anda dapat menggunakan kode ini untuk menambahkan tautan ke aplikasi eksternal dalam dokumen PDF Anda.
+Hanya dalam beberapa langkah sederhana, Anda telah mempelajari cara membuat tautan aplikasi dalam file PDF menggunakan Aspose.PDF for .NET. Alat canggih ini memungkinkan Anda untuk menyempurnakan dokumen PDF, membuatnya lebih interaktif dan menarik bagi pengguna Anda. Dengan tautan, Anda dapat secara efektif memandu audiens Anda ke informasi atau aplikasi yang berharga, memastikan pengalaman yang lebih terintegrasi.
 
-Pastikan untuk memeriksa dokumentasi resmi Aspose.PDF untuk informasi lebih lanjut tentang fitur lanjutan tautan interaktif.
+## Pertanyaan yang Sering Diajukan
 
-### FAQ untuk membuat tautan aplikasi dalam file PDF
+### Apa itu Aspose.PDF untuk .NET?  
+Aspose.PDF untuk .NET adalah pustaka yang hebat untuk membuat dan memanipulasi file PDF dalam aplikasi yang dikembangkan dengan kerangka kerja .NET.
 
-#### T: Apa itu tautan aplikasi dalam berkas PDF?
+### Bagaimana cara mengunduh Aspose.PDF?  
+ Anda dapat mengunduh Aspose.PDF untuk .NET dengan mengunjungi[tautan ini](https://releases.aspose.com/pdf/net/).
 
-A: Tautan aplikasi dalam file PDF memungkinkan Anda membuat tautan yang membuka aplikasi eksternal, seperti file yang dapat dieksekusi atau URL, saat diklik. Fitur ini meningkatkan interaktivitas dan menyediakan cara yang mudah untuk menghubungkan pengguna ke sumber daya eksternal.
+### Apakah ada pilihan untuk uji coba Aspose gratis?  
+ Ya, Anda dapat mengakses uji coba gratis Aspose.PDF[Di Sini](https://releases.aspose.com/).
 
-#### T: Bagaimana Aspose.PDF untuk .NET memfasilitasi pembuatan tautan aplikasi?
+### Bisakah saya mendapatkan dukungan untuk menggunakan Aspose.PDF?  
+ Tentu saja! Untuk pertanyaan terkait dukungan, kunjungi[Forum Dukungan Aspose PDF](https://forum.aspose.com/c/pdf/10).
 
-J: Aspose.PDF untuk .NET menyederhanakan proses pembuatan tautan aplikasi dengan menyediakan serangkaian alat dan API yang lengkap. Tutorial langkah demi langkah yang disediakan dalam panduan ini menunjukkan cara menambahkan tautan aplikasi ke dokumen PDF Anda.
-
-#### T: Dapatkah saya menyesuaikan tampilan tautan aplikasi?
-
-A: Tentu saja! Dengan Aspose.PDF untuk .NET, Anda memiliki kendali atas tampilan tautan aplikasi. Anda dapat menentukan atribut seperti warna, gaya, dan efek hover untuk memastikan pengalaman pengguna yang menarik secara visual.
-
-#### T: Apakah ada batasan pada jenis aplikasi eksternal yang dapat saya tautkan?
-
-J: Aspose.PDF untuk .NET memungkinkan Anda menautkan ke berbagai aplikasi eksternal, termasuk file yang dapat dieksekusi, URL, dan dokumen. Namun, penting untuk mempertimbangkan keamanan dan kompatibilitas pengguna saat menautkan ke file yang dapat dieksekusi.
-
-#### T: Bagaimana saya dapat memverifikasi bahwa tautan aplikasi saya berfungsi dengan benar?
-
-A: Dengan mengikuti petunjuk tutorial dan menggunakan kode contoh yang diberikan, Anda dapat membuat tautan aplikasi yang berfungsi dengan yakin. Anda kemudian dapat menguji tautan tersebut dengan membuka dokumen PDF yang dihasilkan dan mengeklik tautan aplikasi.
-
-#### T: Dapatkah saya membuat beberapa tautan aplikasi dalam satu dokumen PDF?
-
- A: Ya, Anda dapat membuat beberapa tautan aplikasi dalam satu dokumen PDF menggunakan`LinkAnnotation` anotasi. Hal ini memungkinkan Anda memberi pengguna akses ke berbagai aplikasi eksternal dari berbagai bagian dokumen.
-
-#### T: Apakah ada pertimbangan keamanan saat menggunakan tautan aplikasi?
-J: Saat menautkan ke file yang dapat dieksekusi, penting untuk memastikan bahwa aplikasi yang ditautkan aman dan tepercaya. Selain itu, pertimbangkan izin pengguna dan beri tahu pengguna tentang kemungkinan peluncuran aplikasi eksternal.
-
-#### T: Bagaimana cara menambahkan tautan aplikasi ke URL atau halaman web?
-
-J: Meskipun tutorial ini berfokus pada pembuatan tautan ke aplikasi eksternal, Aspose.PDF untuk .NET juga mendukung pembuatan hyperlink ke URL atau halaman web. Anda dapat mengadaptasi kode yang diberikan untuk membuat tautan web dalam dokumen PDF Anda.
-
-#### T: Dapatkah saya menggunakan Aspose.PDF untuk .NET untuk mengekstrak informasi dari aplikasi eksternal yang tertaut?
-
-A: Ya, Aspose.PDF untuk .NET menyediakan kemampuan untuk mengekstrak dan memanipulasi informasi dari aplikasi eksternal yang terhubung. Anda dapat menjelajahi fitur-fitur pustaka yang lengkap untuk melakukan berbagai tugas yang terkait dengan konten yang terhubung.
+### Bagaimana cara mendapatkan lisensi sementara untuk Aspose?  
+ Anda dapat memperoleh lisensi sementara dari[halaman ini](https://purchase.aspose.com/temporary-license/).

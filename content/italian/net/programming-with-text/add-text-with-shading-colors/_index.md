@@ -42,7 +42,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 ```
 
 ## Passaggio 5: trova il testo da modificare
- Utilizzo`TextFragmentAbsorber` per trovare il testo desiderato all'interno del documento. Nel codice fornito, cerca il testo "Lorem ipsum".
+Utilizzo`TextFragmentAbsorber` per trovare il testo desiderato all'interno del documento. Nel codice fornito, cerca il testo "Lorem ipsum".
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -129,7 +129,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 
 #### D: Come faccio a trovare e modificare un testo specifico all'interno del documento PDF?
 
- A: Nel passaggio 5, utilizzerai il`TextFragmentAbsorber`per trovare il testo desiderato all'interno del documento. Quindi, puoi modificarne le proprietà:
+ A: Nel passaggio 5, utilizzerai il`TextFragmentAbsorber` per trovare il testo desiderato all'interno del documento. Quindi, puoi modificarne le proprietà:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -150,7 +150,7 @@ textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 
 #### D: Posso applicare una formattazione aggiuntiva al testo modificato?
 
- A: Sì, nel passaggio 7, puoi applicare una formattazione di testo aggiuntiva, come la sottolineatura, modificando le proprietà del`TextState` oggetto:
+A: Sì, nel passaggio 7, puoi applicare una formattazione di testo aggiuntiva, come la sottolineatura, modificando le proprietà del`TextState` oggetto:
 
 ```csharp
 textFragment.TextState.Underline = true;

@@ -120,7 +120,7 @@ A: Hướng dẫn sẽ hướng dẫn bạn từng bước trong quy trình này
 
 A: Có, bạn có thể sửa đổi mã để thay thế phông chữ không sử dụng bằng phông chữ bạn chọn. Trong mã mẫu được cung cấp, phông chữ "Arial, Bold" được sử dụng để thay thế.
 
-####  Q: Làm thế nào để`TextFragmentAbsorber` work to remove unused fonts?
+#### Q: Làm thế nào để`TextFragmentAbsorber` work to remove unused fonts?
 
  A: Cái`TextFragmentAbsorber` được cấu hình với`TextEditOptions.FontReplace.RemoveUnusedFonts` tham số, xác định các phông chữ chưa sử dụng trong các đoạn văn bản của PDF. Sau khi hấp thụ, bạn có thể lặp lại qua`TextFragments` và thiết lập phông chữ thay thế mong muốn.
 

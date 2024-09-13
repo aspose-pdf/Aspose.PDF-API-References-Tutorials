@@ -35,7 +35,7 @@ Page page = doc.Pages.Add();
 
 ## Bước 3: Thiết lập lề
 
-Chúng tôi thiết lập lề cho trang bằng cách sử dụng`MarginInfo` lớp. Điều chỉnh giá trị lề theo yêu cầu của bạn.
+ Chúng tôi thiết lập lề cho trang bằng cách sử dụng`MarginInfo` lớp. Điều chỉnh giá trị lề theo yêu cầu của bạn.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -110,7 +110,7 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-// Gán thể hiện marginInfo cho thuộc tính Margin của sec1.PageInfo
+//Gán thể hiện marginInfo cho thuộc tính Margin của sec1.PageInfo
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
@@ -148,7 +148,7 @@ Table tab2 = new Table();
 hfFoot.Paragraphs.Add(tab2);
 // Thiết lập với chiều rộng cột của bảng
 tab2.ColumnWidths = "165 172 165";
-// Tạo các hàng trong bảng và sau đó tạo các ô trong các hàng
+//Tạo các hàng trong bảng và sau đó tạo các ô trong các hàng
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
@@ -173,7 +173,7 @@ table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
 // Đặt đường viền bảng bằng cách sử dụng đối tượng BorderInfo tùy chỉnh khác
 table.Border = new BorderInfo(BorderSide.All, 1f);
 table.RepeatingRowsCount = 1;
-// Tạo các hàng trong bảng và sau đó tạo các ô trong các hàng
+//Tạo các hàng trong bảng và sau đó tạo các ô trong các hàng
 Row row1 = table.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

@@ -38,14 +38,14 @@ Document pdfDocument = new Document();
 ```
 
 ## Krok 5: Dodaj stronę do dokumentu
- Dodaj nową stronę do dokumentu za pomocą`Add` metoda`Pages`kolekcja. W podanym kodzie nowa strona jest przypisana do zmiennej`pdfPage`.
+ Dodaj nową stronę do dokumentu za pomocą`Add` metoda`Pages` kolekcja. W podanym kodzie nowa strona jest przypisana do zmiennej`pdfPage`.
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
 ## Krok 6: Utwórz fragment tekstu
- Utwórz`TextFragment` obiekt i podaj żądany tekst. Ustaw pozycję fragmentu tekstu za pomocą`Position` Własność. W podanym kodzie tekst jest ustawiony na „main text” i umieszczony na stronie w punkcie (100, 600).
+ Utwórz`TextFragment`obiekt i podaj żądany tekst. Ustaw pozycję fragmentu tekstu za pomocą`Position` Własność. W podanym kodzie tekst jest ustawiony na „main text” i umieszczony na stronie w punkcie (100, 600).
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -64,7 +64,7 @@ textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 ```
 
 ## Krok 8: Włącz obramowanie tekstu
- Aby włączyć obramowanie tekstu, ustaw`DrawTextRectangleBorder`właściwość fragmentu tekstu`TextState` Do`true`.
+ Aby włączyć obramowanie tekstu, ustaw`DrawTextRectangleBorder` właściwość fragmentu tekstu`TextState` Do`true`.
 
 ```csharp
 textFragment.TextState.DrawTextRectangleBorder = true;
@@ -151,7 +151,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 
 #### P: Jak utworzyć fragment tekstu i ustawić jego pozycję?
 
- A: W kroku 6 utworzysz`TextFragment`obiekt i ustaw jego pozycję na stronie za pomocą`Position` nieruchomość:
+ A: W kroku 6 utworzysz`TextFragment` obiekt i ustaw jego pozycję na stronie za pomocą`Position` nieruchomość:
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -182,7 +182,7 @@ tb.AppendText(textFragment);
 
 #### P: Jak zapisać powstały dokument PDF?
 
- A: Po dodaniu tekstu z obramowaniem użyj`Save` metoda`Document` obiekt, aby zapisać dokument PDF:
+A: Po dodaniu tekstu z obramowaniem użyj`Save` metoda`Document` obiekt, aby zapisać dokument PDF:
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");

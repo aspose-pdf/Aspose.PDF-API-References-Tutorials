@@ -103,4 +103,4 @@ Console.WriteLine("License set successfully.");
  문서를 찾을 수 있습니다[여기](https://reference.aspose.com/pdf/net/).
 
 ### 문제가 발생하면 어떻게 해야 하나요?
- 문제가 발생하면 다음에서 도움을 요청할 수 있습니다.[Aspose 지원 포럼](https://forum.aspose.com/c/pdf/10).
+ 문제가 발생하면 다음에서 도움을 받을 수 있습니다.[Aspose 지원 포럼](https://forum.aspose.com/c/pdf/10).

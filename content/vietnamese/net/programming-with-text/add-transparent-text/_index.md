@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Bước 5: Thêm một trang vào tài liệu
- Thêm một trang mới vào tài liệu bằng cách sử dụng`Add` phương pháp của`Pages`bộ sưu tập. Trong mã được cung cấp, trang mới được gán cho biến`page`.
+ Thêm một trang mới vào tài liệu bằng cách sử dụng`Add` phương pháp của`Pages` bộ sưu tập. Trong mã được cung cấp, trang mới được gán cho biến`page`.
 
 ```csharp
 Aspose.Pdf.Page page = doc.Pages.Add();
@@ -109,7 +109,7 @@ Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 4
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.FromArgb(128, System.Drawing.Color.FromArgb(12957183)));
 // Thêm hình chữ nhật vào bộ sưu tập hình dạng của đối tượng Graph
 canvas.Shapes.Add(rect);
-//Thêm đối tượng đồ thị vào tập hợp đoạn văn của đối tượng trang
+// Thêm đối tượng đồ thị vào tập hợp đoạn văn của đối tượng trang
 page.Paragraphs.Add(canvas);
 // Đặt giá trị không thay đổi vị trí cho đối tượng đồ thị
 canvas.IsChangePosition = false;
@@ -163,7 +163,7 @@ using Aspose.Pdf.Drawing;
 
 #### H: Làm thế nào để tạo hình chữ nhật có độ trong suốt?
 
-A: Ở Bước 7, bạn sẽ tạo một hình chữ nhật có kích thước cụ thể và đặt màu tô của nó thành màu trong suốt bằng cách sử dụng`Color.FromRgb` phương pháp.
+ A: Ở Bước 7, bạn sẽ tạo một hình chữ nhật có kích thước cụ thể và đặt màu tô của nó thành màu trong suốt bằng cách sử dụng`Color.FromRgb` phương pháp.
 
 #### H: Làm thế nào để thêm đối tượng Graph vào trang?
 
@@ -175,7 +175,7 @@ A: Ở Bước 7, bạn sẽ tạo một hình chữ nhật có kích thước c
 
 #### H: Làm thế nào để tạo một TextFragment có tính trong suốt?
 
- A: Ở Bước 10, bạn sẽ tạo một`TextFragment` đối tượng và thiết lập nội dung của nó và`ForegroundColor` thuộc tính để đạt được văn bản trong suốt.
+A: Ở Bước 10, bạn sẽ tạo một`TextFragment` đối tượng và thiết lập nội dung của nó và`ForegroundColor` thuộc tính để đạt được văn bản trong suốt.
 
 #### H: Làm thế nào để lưu tài liệu PDF?
 

@@ -2,144 +2,167 @@
 title: Seite beim Anzeigen angeben
 linktitle: Seite beim Anzeigen angeben
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie beim Anzeigen einer PDF-Datei mit Aspose.PDF für .NET eine Seite angeben.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET eine Seite angeben, die in einer PDF-Datei angezeigt werden soll. Verbessern Sie die Benutzernavigation mit dieser einfachen Anleitung.
 type: docs
 weight: 110
 url: /de/net/programming-with-links-and-actions/specify-page-when-viewing/
 ---
-Erfahren Sie in dieser Schritt-für-Schritt-Anleitung, wie Sie beim Anzeigen einer PDF-Datei mit Aspose.PDF für .NET eine Seite angeben.
+## Einführung
 
-## Schritt 1: Einrichten der Umgebung
+Möchten Sie Ihre PDF-Anwendungen verbessern, indem Sie Benutzer beim Öffnen eines Dokuments auf bestimmte Seiten leiten? Dann sind Sie hier genau richtig! In diesem Handbuch werden wir uns eingehend mit der Verwendung von Aspose.PDF für .NET befassen, um die Seite anzugeben, die beim Öffnen einer PDF-Datei angezeigt werden soll. Diese Funktion kann das Benutzererlebnis erheblich verbessern, insbesondere wenn Sie die Aufmerksamkeit auf kritische Abschnitte Ihres Dokuments lenken müssen.
 
-Stellen Sie sicher, dass Sie Ihre Entwicklungsumgebung mit einem C#-Projekt und den entsprechenden Aspose.PDF-Referenzen eingerichtet haben.
+## Voraussetzungen
 
-## Schritt 2: Laden der PDF-Datei
+Bevor wir uns in die Programmierung stürzen, stellen wir sicher, dass Sie alles haben, was Sie zum Starten brauchen. Folgendes benötigen Sie:
 
-Legen Sie den Verzeichnispfad Ihrer Dokumente fest und laden Sie die PDF-Datei mit dem folgenden Code hoch:
+1. Grundkenntnisse in .NET: Kenntnisse des .NET-Frameworks sind unerlässlich. Wenn Sie mit C# vertraut sind und über Grundkenntnisse in objektorientierter Programmierung verfügen, sind Sie startklar!
+
+2.  Aspose.PDF für .NET: Sie müssen die Aspose.PDF-Bibliothek in Ihrem Projekt installiert haben. Wenn Sie sie noch nicht installiert haben, können Sie sie herunterladen[Hier](https://releases.aspose.com/pdf/net/).
+
+3. Visual Studio: Dieses Tutorial setzt voraus, dass Sie Visual Studio als IDE verwenden. Stellen Sie sicher, dass es auf Ihrem Computer installiert ist.
+
+4. Eine PDF-Datei: Sie benötigen eine vorhandene PDF-Datei, mit der Sie arbeiten. Wenn Sie keine haben, können Sie ein Beispieldokument erstellen oder eine beliebige PDF-Datei Ihrer Wahl verwenden.
+
+Sobald diese Voraussetzungen erfüllt sind, können wir die Ärmel hochkrempeln und mit dem Programmieren beginnen!
+
+## Pakete importieren
+
+Nachdem wir nun alles eingerichtet haben, importieren wir die erforderlichen Pakete in unser Projekt. Folgen Sie diesen Schritten:
+
+### Starten Sie Visual Studio
+
+Öffnen Sie Visual Studio und erstellen Sie entweder ein neues Projekt oder laden Sie ein vorhandenes, in dem Sie die Funktion zur PDF-Seitenanzeige implementieren möchten.
+
+### Referenz Aspose.PDF
+
+Um die Aspose.PDF-Bibliothek zu verwenden, müssen Sie einen Verweis darauf hinzufügen:
+
+1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf Ihr Projekt.
+2. Wählen Sie „NuGet-Pakete verwalten“ aus.
+3.  Suchen nach`Aspose.PDF` und installieren Sie das Paket.
+
+### Namespaces importieren
+
+Fügen Sie oben in Ihrer Codedatei die folgende Using-Direktive hinzu:
+
+```csharp
+using System;
+using System.IO;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf;
+```
+
+Jetzt können Sie mit dem Erstellen der Navigationslogik für Ihre PDF-Seite beginnen!
+
+Lassen Sie uns unsere Aufgabe in überschaubare Schritte unterteilen. Wir schreiben Code, der ein PDF-Dokument öffnet, eine bestimmte Seite angibt, die beim Anzeigen angezeigt werden soll, und das aktualisierte Dokument speichert. 
+
+## Schritt 1: Dokumentverzeichnis festlegen
+
+Zuerst müssen Sie den Pfad zu Ihren Dokumenten festlegen:
 
 ```csharp
 // Der Pfad zum Dokumentverzeichnis.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Ersetzen Sie es durch Ihr Verzeichnis
+```
+
+ Diese Zeile ist im Wesentlichen Ihre Roadmap. Sie sagen Ihrem Code, wo die PDF-Datei zu finden ist. Stellen Sie sicher, dass Sie ersetzen`YOUR DOCUMENT DIRECTORY` durch den tatsächlichen Pfad auf Ihrem Computer.
+
+## Schritt 2: Laden Sie die PDF-Datei
+
+Als nächstes laden Sie die PDF-Datei in Ihre Anwendung:
+
+```csharp
 // Laden Sie die PDF-Datei
 Document doc = new Document(dataDir + "SpecifyPageWhenViewing.pdf");
 ```
 
-## Schritt 3: Zielseite festlegen
+ Was hier passiert, ist, dass Sie eine neue Instanz eines`Document`Objekt, während Sie den Pfad zu Ihrer PDF-Datei angeben. Sie können es sich so vorstellen, als würden Sie das Buch öffnen, das Sie gerade auf den Tisch gelegt haben.
 
-Rufen Sie die Zielseiteninstanz mit dem folgenden Code ab:
+## Schritt 3: Rufen Sie die gewünschte Seite auf
 
-```csharp
-Page page2 = doc.Pages[2];
-```
-
- Sie können den Index anpassen`[2]` , um die gewünschte Seite auszuwählen.
-
-## Schritt 4: Zoom-Einstellung konfigurieren
-
-Erstellen Sie eine Variable, um den Zoomfaktor der Zielseite festzulegen:
+Greifen wir nun auf die Seite zu, die beim Öffnen des Dokuments angezeigt werden soll:
 
 ```csharp
-double zoom = 1;
+// Holen Sie sich die Instanz der zweiten Seite des Dokuments
+Page page2 = doc.Pages[2]; // Denken Sie daran, die Indizierung beginnt bei 1
 ```
 
-Sie können den Zoomwert Ihren Bedürfnissen entsprechend anpassen.
+Hier greifen wir auf die zweite Seite Ihres Dokuments zu. Beachten Sie, dass die Seitennummerierung in diesem Zusammenhang bei 1 beginnt. Wenn Sie also an Seite 2 denken, müssen Sie einen Index von 2 verwenden.
 
-## Schritt 5: Erstellen der Navigationsaktion
+## Schritt 4: Zoomfaktor einstellen
 
-Erstellen Sie eine Instanz der Navigationsaktion unter Verwendung der angegebenen Zielseite:
+Sie können die Zoomstufe der anzuzeigenden Seite anpassen:
 
 ```csharp
-GoToAction action = new GoToAction(doc.Pages[2]);
+// Erstellen Sie die Variable, um den Zoomfaktor der Zielseite festzulegen
+double zoom = 1; // 1 bedeutet 100 % Zoom
 ```
+
+Durch Festlegen eines Zoomfaktors können Sie bestimmen, wie viel von der Seite der Benutzer unmittelbar nach dem Öffnen sieht. Ein Wert von 1 bedeutet, dass die Seite mit 100 % Zoom angezeigt wird, was im Allgemeinen ein guter Standardwert ist.
+
+## Schritt 5: Erstellen der GoToAction-Instanz
+
+Lassen Sie uns die Navigationsfunktionen in Aktion erleben:
+
+```csharp
+// Erstellen einer GoToAction-Instanz
+GoToAction action = new GoToAction(doc.Pages[2]); 
+```
+
+ In diesem Schritt erstellen Sie eine Instanz von`GoToAction` Dies stellt im Wesentlichen die Aktion dar, zu einem bestimmten Punkt im PDF zu navigieren – in diesem Fall zur zweiten Seite.
 
 ## Schritt 6: Ziel festlegen
 
-Legen Sie das Ziel fest, um über Koordinaten und Zoom zur Zielseite zu gelangen:
+Nun müssen Sie definieren, wohin die Aktion führen soll:
 
 ```csharp
+// Gehe zu Seite 2
 action.Destination = new XYZExplicitDestination(page2, 0, page2.Rect.Height, zoom);
 ```
 
-## Schritt 7: Konfigurieren der Aktion „Dokument öffnen“
+Diese Zeile ist wie das Festlegen eines GPS-Ziels für die GoToAction. Sie sagen ihr, dass sie zur Seite 2 oben auf der Seite (Höhe) und mit der angegebenen Zoomstufe gehen soll.
 
-Legen Sie die Dokument-Öffnen-Aktion mit der erstellten Navigationsaktion fest:
+## Schritt 7: Festlegen der Öffnungsaktion
+
+Stellen wir sicher, dass diese Aktion beim Öffnen des Dokuments stattfindet:
 
 ```csharp
-doc. OpenAction = action;
+// Festlegen der Aktion zum Öffnen des Dokuments
+doc.OpenAction = action;
 ```
+
+Damit haben Sie festgelegt, dass beim Öffnen Ihrer PDF-Datei die soeben definierte Navigationsaktion aktiviert wird. Es ist, als hätten Sie die Fußmatte vor die Eingangstür Ihres Dokuments gelegt.
 
 ## Schritt 8: Speichern Sie das aktualisierte Dokument
 
- Speichern Sie das aktualisierte Dokument mit dem`Save` Verfahren:
+Abschließend speichern wir das Dokument mit den vorgenommenen Änderungen:
 
 ```csharp
-doc.Save(dataDir + "goto2page_out.pdf");
-```
-
-### Beispielquellcode für „Seite beim Anzeigen angeben“ mit Aspose.PDF für .NET 
-```csharp
-// Der Pfad zum Dokumentverzeichnis.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Laden Sie die PDF-Datei
-Document doc = new Document(dataDir + "SpecifyPageWhenViewing.pdf");
-// Holen Sie sich die Instanz der zweiten Seite des Dokuments
-Page page2 = doc.Pages[2];
-// Erstellen Sie die Variable, um den Zoomfaktor der Zielseite festzulegen
-double zoom = 1;
-// Erstellen einer GoToAction-Instanz
-GoToAction action = new GoToAction(doc.Pages[2]);
-// Gehe zu Seite 2
-action.Destination = new XYZExplicitDestination(page2, 0, page2.Rect.Height, zoom);
-// Festlegen der Aktion zum Öffnen des Dokuments
-doc.OpenAction = action;
 // Aktualisiertes Dokument speichern
 doc.Save(dataDir + "goto2page_out.pdf");
 ```
 
+Mit diesem Schritt schließen Sie Ihre Arbeit ab! Sie erhalten eine neue PDF-Datei mit dem Namen`goto2page_out.pdf` das direkt die von Ihnen angegebene Seite öffnet.
+
+Damit ist der Codierungsteil abgeschlossen! Sie haben Aspose.PDF erfolgreich so programmiert, dass beim Öffnen einer PDF-Datei eine bestimmte Seite angezeigt wird. 
+
 ## Abschluss
 
-Herzlichen Glückwunsch! Sie wissen jetzt, wie Sie beim Anzeigen einer PDF-Datei mit Aspose.PDF für .NET eine Seite angeben. Verwenden Sie dieses Wissen, um das Benutzererlebnis beim Anzeigen Ihrer PDF-Dokumente anzupassen.
+In diesem Handbuch haben wir Schritt für Schritt erklärt, wie Sie mit Aspose.PDF für .NET eine Seite in einer PDF-Datei angeben. Diese Funktion verbessert nicht nur die Navigation für Ihre Benutzer, sondern optimiert auch deren Interaktion mit wichtigen Inhalten in Ihren Dokumenten. Durch die Nutzung solcher Funktionen schaffen Sie eine benutzerfreundlichere Erfahrung, die Ihre PDF-Anwendungen von anderen abheben kann.
 
-Nachdem Sie dieses Handbuch abgeschlossen haben, können Sie diese Konzepte auf Ihre eigenen Projekte anwenden und die von Aspose.PDF für .NET angebotenen Funktionen weiter erkunden.
+## Häufig gestellte Fragen
 
-### Häufig gestellte Fragen 
+### Was ist Aspose.PDF für .NET?
+Aspose.PDF für .NET ist eine Bibliothek, die es Entwicklern ermöglicht, PDF-Dokumente innerhalb von .NET-Anwendungen zu erstellen, zu ändern und zu verwalten.
 
-#### F: Welchen Zweck hat die Angabe einer Zielseite beim Anzeigen einer PDF-Datei?
+### Kann ich mehrere anzuzeigende Seiten angeben?
+Nein, Sie können das Dokument nur so einstellen, dass es auf einer bestimmten Seite geöffnet wird. Sie können jedoch für verschiedene Anfangsseiten unterschiedliche Dokumente erstellen.
 
-A: Durch die Angabe einer Zielseite können Sie steuern, welche Seite eines PDF-Dokuments beim Öffnen der Datei angezeigt wird. Dies kann das Benutzererlebnis verbessern, indem der Benutzer auf eine bestimmte Seite von Interesse weitergeleitet wird.
+### Was ist, wenn ich eine Seite mit einer anderen Zoomstufe anzeigen möchte?
+ Sie können die Zoomstufe ändern, indem Sie den`zoom` Variable, bevor Sie das Dokument speichern.
 
-#### F: Warum ist die Angabe einer Zielseite in PDF-Dokumenten hilfreich?
+### Wo finde ich weitere Beispiele zur Verwendung von Aspose.PDF?
+ Sie können die[Dokumentation](https://reference.aspose.com/pdf/net/) für weitere Beispiele und Funktionen.
 
-A: Das Angeben einer Zielseite ist nützlich, wenn Sie Benutzer zu einem bestimmten Abschnitt oder Inhalt innerhalb eines PDF-Dokuments führen möchten, ohne dass sie manuell durch die Seiten navigieren müssen.
-
-#### F: Wie erleichtert Aspose.PDF für .NET die Angabe einer Zielseite zur Anzeige?
-
-A: Aspose.PDF für .NET bietet APIs, mit denen Sie die Anfangsansicht eines PDF-Dokuments festlegen können, einschließlich der Zielseite, der Zoomstufe und anderer Anzeigeeigenschaften.
-
-#### F: Kann ich jede beliebige Seite als Zielseite angeben?
-
-A: Ja, Sie können jede beliebige Seite innerhalb des PDF-Dokuments als Zielseite für die Anzeige angeben. Verwenden Sie dazu einfach den entsprechenden Index, um die gewünschte Seite auszuwählen.
-
-#### F: Welche Bedeutung hat der Zoomfaktor bei der Angabe einer Zielseite?
-
-A: Der Zoomfaktor bestimmt den Vergrößerungsgrad, der beim Öffnen des PDF-Dokuments auf die Zielseite angewendet wird. Er steuert, wie viel Inhalt im Ansichtsfenster angezeigt wird.
-
-#### F: Kann ich für unterschiedliche Zielseiten unterschiedliche Zoomfaktoren einstellen?
-
-A: Ja, Sie können verschiedene Zoomfaktoren für verschiedene Zielseiten festlegen, indem Sie separate`GoToAction` Instanzen und entsprechende Konfiguration ihrer Ziele.
-
-#### F: Gibt es Einschränkungen bei der Angabe einer Zielseite?
-
-A: Die Angabe einer Zielseite beschränkt sich auf die Steuerung der anfänglichen Ansicht beim Öffnen der PDF-Datei. Sobald die PDF-Datei angezeigt wird, hat sie keine Auswirkungen auf Benutzerinteraktionen oder die Navigation.
-
-#### F: Kann ich diese Funktion verwenden, um Präsentationen innerhalb eines PDF-Dokuments zu erstellen?
-
-A: Ja, Sie können diese Funktion verwenden, um präsentationsähnliche Erlebnisse innerhalb eines PDF-Dokuments zu erstellen und Benutzer durch verschiedene Abschnitte oder Themen zu führen.
-
-#### F: Kann ich andere Aspekte der Anfangsansicht anpassen, beispielsweise das Seitenlayout?
-
-A: Ja, Aspose.PDF für .NET bietet Eigenschaften zum Anpassen anderer Aspekte der Anfangsansicht, einschließlich Seitenlayout, Seitenmodus und mehr.
-
-#### F: Wie kann ich testen, ob die angegebene Zielseite und der Zoomfaktor wie gewünscht funktionieren?
-
-A: Nachdem Sie den bereitgestellten Code angewendet haben, um die Zielseite und den Zoomfaktor festzulegen, öffnen Sie die geänderte PDF-Datei und überprüfen Sie, ob sie mit der richtigen Seite und Zoomstufe geöffnet wird.
+### Gibt es eine kostenlose Testversion für Aspose.PDF für .NET?
+ Ja! Sie können eine kostenlose Testversion von Aspose.PDF herunterladen[Hier](https://releases.aspose.com/).

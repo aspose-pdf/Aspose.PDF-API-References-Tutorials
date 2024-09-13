@@ -2,123 +2,172 @@
 title: Utwórz wypełniony prostokąt
 linktitle: Utwórz wypełniony prostokąt
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak utworzyć wypełniony prostokąt za pomocą Aspose.PDF dla .NET. Przewodnik krok po kroku, jak dostosować kolor wypełnienia.
+description: Dowiedz się, jak utworzyć wypełniony prostokąt w pliku PDF za pomocą Aspose.PDF dla .NET dzięki temu samouczkowi krok po kroku. Idealne dla programistów na każdym poziomie.
 type: docs
 weight: 50
 url: /pl/net/programming-with-graphs/create-filled-rectangle/
 ---
-tym samouczku pokażemy Ci krok po kroku poniższy kod źródłowy w języku C#, który umożliwi Ci utworzenie wypełnionego prostokąta przy użyciu Aspose.PDF dla platformy .NET.
+## Wstęp
 
-Upewnij się, że zainstalowałeś bibliotekę Aspose.PDF i skonfigurowałeś środowisko programistyczne, zanim zaczniesz. Posiadaj również podstawową wiedzę na temat programowania w języku C#.
+Czy kiedykolwiek chciałeś programowo tworzyć atrakcyjne wizualnie pliki PDF? Jeśli tak, to jesteś we właściwym miejscu! W tym samouczku zanurzymy się w świat Aspose.PDF dla .NET, potężnej biblioteki, która pozwala na łatwą manipulację dokumentami PDF. Dzisiaj skupimy się na tworzeniu wypełnionego prostokąta w pliku PDF. Niezależnie od tego, czy jesteś doświadczonym programistą, czy dopiero zaczynasz, ten przewodnik przeprowadzi Cię przez każdy krok w przyjazny i angażujący sposób. Więc chwyć swój kapelusz kodera i zaczynajmy!
 
-## Krok 1: Konfiguracja katalogu dokumentów
+## Wymagania wstępne
 
-W podanym kodzie źródłowym musisz określić katalog, w którym chcesz zapisać wynikowy plik PDF. Zmień zmienną „dataDir” na żądany katalog.
+Zanim przejdziemy do kodu, jest kilka rzeczy, które musisz mieć na miejscu:
+
+1. Visual Studio: Upewnij się, że masz zainstalowany Visual Studio na swoim komputerze. To fantastyczne IDE do rozwoju .NET.
+2.  Aspose.PDF dla .NET: Musisz pobrać i zainstalować bibliotekę Aspose.PDF. Możesz ją znaleźć[Tutaj](https://releases.aspose.com/pdf/net/).
+3. Podstawowa wiedza o języku C#: Niewielka znajomość programowania w języku C# pomoże Ci lepiej zrozumieć fragmenty kodu.
+
+## Importuj pakiety
+
+Aby zacząć, musisz zaimportować niezbędne pakiety do swojego projektu C#. Oto, jak możesz to zrobić:
+
+### Utwórz nowy projekt
+
+Otwórz Visual Studio i utwórz nowy projekt C#. Możesz wybrać aplikację konsolową dla uproszczenia.
+
+### Dodaj odniesienie Aspose.PDF
+
+1. Kliknij prawym przyciskiem myszy swój projekt w Eksploratorze rozwiązań.
+2. Wybierz „Zarządzaj pakietami NuGet”.
+3. Wyszukaj „Aspose.PDF” i zainstaluj najnowszą wersję.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-## Krok 2: Tworzenie instancji dokumentu i dodawanie strony
+Teraz, gdy wszystko mamy już skonfigurowane, możemy zagłębić się w kod!
 
-Tworzymy instancję klasy Document i dodajemy stronę do tego dokumentu.
+## Krok 1: Skonfiguruj katalog dokumentów
 
-```csharp
-Document doc = new Document();
-Page page = doc.Pages.Add();
-```
-
-## Krok 3: Tworzenie obiektu wykresu i dodawanie go do strony
-
-Tworzymy obiekt Graph o określonych wymiarach i dodajemy go do kolekcji akapitów strony.
+Po pierwsze, musisz określić ścieżkę, w której zostanie zapisany Twój plik PDF. Jest to kluczowe, ponieważ informuje program, gdzie utworzyć plik.
 
 ```csharp
-Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100, 400);
-page.Paragraphs.Add(graph);
-```
-
-## Krok 4: Utwórz obiekt prostokąta i dodaj do wykresu
-
-Tworzymy obiekt Rectangle o określonych wymiarach i dodajemy go do kolekcji kształtów wykresu.
-
-```csharp
-Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 120);
-graph.Shapes.Add(rect);
-```
-
-## Krok 5: Ustawianie koloru wypełnienia
-
-Kolor wypełnienia prostokąta można określić za pomocą właściwości FillColor obiektu GraphInfo.
-
-```csharp
-rect.GraphInfo.FillColor = Aspose.Pdf.Color.Red;
-```
-
-## Krok 6: Zapisywanie wynikowego pliku PDF
-
-Na koniec zapisujemy powstały plik PDF pod nazwą „CreateFilledRectangle_out.pdf” w określonym katalogu.
-
-```csharp
-doc.Save(dataDir + "CreateFilledRectangle_out.pdf");
-```
-
-### Przykładowy kod źródłowy dla funkcji Create Filled Rectangle using Aspose.PDF for .NET 
-
-```csharp
-
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Zastępować`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką na Twoim komputerze, gdzie chcesz zapisać plik PDF.
+
+## Krok 2: Utwórz instancję dokumentu
+
+ Następnie utworzymy instancję`Document`klasa. Ta klasa reprezentuje dokument PDF, z którym będziesz pracować.
+
+```csharp
 // Utwórz instancję dokumentu
 Document doc = new Document();
+```
+
+Ten wiersz inicjuje nowy dokument PDF, którym możemy manipulować.
+
+## Krok 3: Dodaj stronę do dokumentu
+
+Teraz dodajmy stronę do naszego dokumentu. Każdy PDF potrzebuje co najmniej jednej strony, prawda?
+
+```csharp
 // Dodaj stronę do zbioru stron pliku PDF
 Page page = doc.Pages.Add();
+```
+
+Ten kod dodaje nową stronę do dokumentu, umożliwiając rysowanie na niej kształtów.
+
+## Krok 4: Utwórz instancję grafu
+
+ Aby narysować kształty, musimy utworzyć`Graph` przykład. Wyobraź sobie wykres jako płótno, na którym możesz rysować różne kształty.
+
+```csharp
 // Utwórz instancję Graph
-Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100, 400);
+Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(100.0, 400.0);
+```
+
+Tutaj tworzymy graf o szerokości 100 i wysokości 400.
+
+## Krok 5: Dodaj wykres do strony
+
+Teraz, gdy mamy już wykres, dodajmy go do strony, którą wcześniej utworzyliśmy.
+
+```csharp
 // Dodaj obiekt wykresu do kolekcji akapitów instancji strony
 page.Paragraphs.Add(graph);
+```
+
+Ta linia mocuje wykres do strony, przygotowując go do rysowania.
+
+## Krok 6: Utwórz instancję prostokąta
+
+Następnie utworzymy prostokąt, który chcemy wypełnić kolorem.
+
+```csharp
 // Utwórz instancję prostokąta
 Aspose.Pdf.Drawing.Rectangle rect = new Aspose.Pdf.Drawing.Rectangle(100, 100, 200, 120);
+```
+
+W tym kodzie definiujemy pozycję i rozmiar prostokąta. Parametry reprezentują współrzędne x i y, szerokość i wysokość.
+
+## Krok 7: Określ kolor wypełnienia
+
+Teraz wybierzmy kolor dla naszego prostokąta. Wypełnimy go kolorem czerwonym w tym przykładzie.
+
+```csharp
 // Określ kolor wypełnienia dla obiektu Graph
 rect.GraphInfo.FillColor = Aspose.Pdf.Color.Red;
+```
+
+Ta linia ustawia kolor wypełnienia prostokąta na czerwony. Możesz wybrać dowolny kolor!
+
+## Krok 8: Dodaj prostokąt do wykresu
+
+Mając gotowy prostokąt, czas dodać go do wykresu.
+
+```csharp
 // Dodaj obiekt prostokąta do kolekcji kształtów obiektu Graph
 graph.Shapes.Add(rect);
+```
+
+Ten kod dodaje prostokąt do wykresu, czyniąc go częścią naszego rysunku.
+
+## Krok 9: Zapisz dokument PDF
+
+Na koniec musimy zapisać nasz dokument w podanym katalogu.
+
+```csharp
 dataDir = dataDir + "CreateFilledRectangle_out.pdf";
 // Zapisz plik PDF
 doc.Save(dataDir);
-Console.WriteLine("\nFilled rectangle object created successfully.\nFile saved at " + dataDir);            
-
 ```
+
+ Ten kod zapisuje plik PDF pod nazwą`CreateFilledRectangle_out.pdf` w katalogu, który wcześniej określiłeś.
+
+## Krok 10: Wiadomość potwierdzająca
+
+Abyśmy wiedzieli, że wszystko przebiegło pomyślnie, możemy wydrukować komunikat potwierdzający.
+
+```csharp
+Console.WriteLine("\nFilled rectangle object created successfully.\nFile saved at " + dataDir);
+```
+
+Ten wiersz spowoduje wyświetlenie komunikatu na konsoli potwierdzającego, że wypełniony prostokąt został pomyślnie utworzony.
 
 ## Wniosek
 
-W tym samouczku wyjaśniliśmy, jak utworzyć wypełniony prostokąt za pomocą Aspose.PDF dla .NET. Teraz możesz wykorzystać tę wiedzę, aby tworzyć geometryczne kształty z niestandardowymi kolorami wypełnienia w plikach PDF.
+masz! Udało Ci się utworzyć wypełniony prostokąt w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Ta potężna biblioteka otwiera świat możliwości manipulacji PDF, umożliwiając programowe tworzenie oszałamiających dokumentów. Niezależnie od tego, czy generujesz raporty, faktury czy jakikolwiek inny typ pliku PDF, Aspose.PDF ma dla Ciebie rozwiązanie.
 
 ## Najczęściej zadawane pytania
 
-#### P: Jaki jest cel tego poradnika?
+### Czym jest Aspose.PDF dla .NET?
+Aspose.PDF dla platformy .NET to biblioteka umożliwiająca programistom programowe tworzenie, modyfikowanie i konwertowanie dokumentów PDF.
 
-A: Celem tego samouczka jest przeprowadzenie Cię przez proces tworzenia wypełnionego prostokąta za pomocą Aspose.PDF dla platformy .NET, co umożliwi Ci dodawanie niestandardowych kształtów geometrycznych z kolorami wypełnienia do plików PDF.
+### Czy mogę używać Aspose.PDF bezpłatnie?
+ Tak, Aspose oferuje bezpłatną wersję próbną, której możesz użyć do eksploracji funkcji biblioteki. Możesz ją pobrać[Tutaj](https://releases.aspose.com/).
 
-#### P: Jakie warunki wstępne należy spełnić przed rozpoczęciem?
+### Czy istnieje sposób na uzyskanie wsparcia dla Aspose.PDF?
+ Oczywiście! Możesz uzyskać wsparcie przez forum Aspose[Tutaj](https://forum.aspose.com/c/pdf/10).
 
-A: Zanim zaczniesz, upewnij się, że zainstalowałeś bibliotekę Aspose.PDF i skonfigurowałeś środowisko programistyczne. Ponadto zaleca się podstawową znajomość programowania w języku C#.
+### Jak mogę zakupić Aspose.PDF?
+ Możesz kupić Aspose.PDF odwiedzając stronę zakupu[Tutaj](https://purchase.aspose.com/buy).
 
-#### P: Jak określić katalog, w którym zapisany zostanie plik PDF?
-
-O: W udostępnionym kodzie źródłowym możesz zmodyfikować zmienną „dataDir”, aby wskazać katalog, w którym chcesz zapisać wynikowy plik PDF.
-
-#### P: Jaki jest cel obiektu Graph?
-
-A: Obiekt Graph działa jako kontener do rysowania elementów. Jest tworzony z określonymi wymiarami i dodawany do kolekcji akapitów strony.
-
-#### P: Jak mogę dodać wypełniony prostokąt do dokumentu PDF?
-
-A: Aby dodać wypełniony prostokąt, utwórz instancję klasy Rectangle o określonych wymiarach i kolorze wypełnienia, a następnie dodaj ją do zbioru kształtów grafu.
-
-#### P: Czy mogę dostosować wymiary i kolor wypełnienia prostokąta?
-
- O: Tak, możesz dostosować wymiary i kolor wypełnienia prostokąta, modyfikując parametry przekazane do`Aspose.Pdf.Drawing.Rectangle` konstruktora i ustawiania właściwości FillColor.
-
-#### P: Jak zapisać wynikowy plik PDF po utworzeniu wypełnionego prostokąta?
-
- A: Po utworzeniu wypełnionego prostokąta możesz zapisać wynikowy plik PDF za pomocą`doc.Save(dataDir + "CreateFilledRectangle_out.pdf");` wiersz w dostarczonym kodzie źródłowym.
+### Jakie typy kształtów mogę tworzyć za pomocą Aspose.PDF?
+Za pomocą biblioteki Aspose.PDF możesz tworzyć różne kształty, w tym prostokąty, okręgi, linie i inne.

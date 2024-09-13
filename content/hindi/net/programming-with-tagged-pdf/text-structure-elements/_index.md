@@ -47,7 +47,7 @@ taggedContent.SetLanguage("fr-FR");
 अब आइए पीडीएफ दस्तावेज़ का मूल संरचना तत्व प्राप्त करें।
 
 ```csharp
-//मूल संरचना तत्व प्राप्त करें
+// मूल संरचना तत्व प्राप्त करें
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

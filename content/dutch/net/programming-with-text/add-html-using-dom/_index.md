@@ -37,7 +37,7 @@ Document doc = new Document();
 ```
 
 ## Stap 5: Voeg een pagina toe aan het document
- Voeg een nieuwe pagina toe aan het document met behulp van de`Add` methode van de`Pages`verzameling. In de meegeleverde code wordt de nieuwe pagina toegewezen aan de variabele`page`.
+ Voeg een nieuwe pagina toe aan het document met behulp van de`Add` methode van de`Pages` verzameling. In de meegeleverde code wordt de nieuwe pagina toegewezen aan de variabele`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -84,7 +84,7 @@ Console.WriteLine("\nHTML using DOM added successfully.\nFile saved at " + dataD
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Instantieer Document object
+// Instantieer Document-object
 Document doc = new Document();
 // Voeg een pagina toe aan de paginaverzameling van een PDF-bestand
 Page page = doc.Pages.Add();

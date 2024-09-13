@@ -119,7 +119,7 @@ A: El ejemplo de código demuestra cómo crear un documento PDF, definir varios 
 
 R: Sí, puedes agregar otros elementos de texto etiquetados, como listas, enlaces u otras estructuras personalizadas, utilizando técnicas similares. Aspose.PDF ofrece varios métodos para crear distintos tipos de contenido etiquetado, lo que te permite mejorar la semántica del documento.
 
-####  P: ¿Cómo funciona el`SetTitle` method contribute to the PDF document's tagged text?
+#### P: ¿Cómo funciona el`SetTitle` method contribute to the PDF document's tagged text?
 
  A: El`SetTitle` El método establece el título del contenido etiquetado del documento PDF y proporciona una breve descripción del propósito o tema del documento. Esta información ayuda a los usuarios a comprender el contexto del texto etiquetado.
 
@@ -127,9 +127,9 @@ R: Sí, puedes agregar otros elementos de texto etiquetados, como listas, enlace
 
 A: El texto etiquetado agrega significado semántico al documento, lo que lo hace más accesible para usuarios con discapacidades o que utilizan tecnologías de asistencia. Los lectores de pantalla y otros dispositivos de asistencia pueden interpretar y presentar el texto etiquetado para mejorar la experiencia del usuario.
 
-####  P: ¿Cómo funciona el`SetLanguage` method enhance the tagged text in a PDF document?
+#### P: ¿Cómo funciona el`SetLanguage` method enhance the tagged text in a PDF document?
 
- A: El`SetLanguage`El método establece el atributo de idioma del contenido etiquetado del documento PDF. Esto ayuda a indicar el idioma en el que está escrito el texto etiquetado, lo que mejora la accesibilidad y permite una representación adecuada específica del idioma.
+ A: El`SetLanguage` El método establece el atributo de idioma del contenido etiquetado del documento PDF. Esto ayuda a indicar el idioma en el que está escrito el texto etiquetado, lo que mejora la accesibilidad y permite una representación adecuada específica del idioma.
 
 #### P: ¿Es posible agregar otros elementos, como imágenes o multimedia, junto con el texto etiquetado utilizando técnicas similares?
 

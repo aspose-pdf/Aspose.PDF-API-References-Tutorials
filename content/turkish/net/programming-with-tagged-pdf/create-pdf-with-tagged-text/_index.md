@@ -119,7 +119,7 @@ A: Kod örneği, bir PDF belgesinin nasıl oluşturulacağını, çeşitli etike
 
 A: Evet, benzer teknikleri kullanarak listeler, bağlantılar veya diğer özel yapılar gibi diğer etiketli metin öğelerini ekleyebilirsiniz. Aspose.PDF, farklı türde etiketli içerik oluşturmak için çeşitli yöntemler sunarak belge semantiğini geliştirmenize olanak tanır.
 
-####  S: Nasıl?`SetTitle` method contribute to the PDF document's tagged text?
+#### S: Nasıl?`SetTitle` method contribute to the PDF document's tagged text?
 
  A:`SetTitle` method, PDF belgesinin etiketli içeriğinin başlığını ayarlar ve belgenin amacı veya konusu hakkında kısa bir açıklama sağlar. Bu bilgi, kullanıcıların etiketli metnin bağlamını anlamalarına yardımcı olur.
 
@@ -127,9 +127,9 @@ A: Evet, benzer teknikleri kullanarak listeler, bağlantılar veya diğer özel 
 
 A: Etiketli metin, belgeye anlamsal anlam katarak engelli kullanıcılar veya yardımcı teknolojiler kullananlar için daha erişilebilir hale getirir. Ekran okuyucular ve diğer yardımcı cihazlar, iyileştirilmiş kullanıcı deneyimi için etiketli metni yorumlayabilir ve sunabilir.
 
-####  S: Nasıl?`SetLanguage` method enhance the tagged text in a PDF document?
+#### S: Nasıl?`SetLanguage` method enhance the tagged text in a PDF document?
 
- A:`SetLanguage`yöntem, PDF belgesinin etiketli içeriğinin dil niteliğini ayarlar. Bu, etiketli metnin yazıldığı dili belirtmeye yardımcı olur, erişilebilirliği iyileştirir ve uygun dil-özel işlemeyi etkinleştirir.
+ A:`SetLanguage` yöntem, PDF belgesinin etiketli içeriğinin dil niteliğini ayarlar. Bu, etiketli metnin yazıldığı dili belirtmeye yardımcı olur, erişilebilirliği iyileştirir ve uygun dil-özel işlemeyi etkinleştirir.
 
 #### S: Benzer teknikler kullanılarak etiketli metinlerin yanına resim veya multimedya gibi başka öğeler eklemek mümkün müdür?
 

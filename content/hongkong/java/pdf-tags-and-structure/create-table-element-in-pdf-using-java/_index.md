@@ -39,7 +39,7 @@ import com.aspose.pdf.*;
 Document pdfDocument = new Document();
 ```
 
-## 第 4 步：新增頁面
+## 第四步：新增頁面
 
 若要將頁面新增至 PDF 文檔，請使用下列程式碼：
 

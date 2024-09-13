@@ -62,7 +62,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## Шаг 6: Извлечение извлеченных фрагментов текста.
 
-Получите извлеченные фрагменты текста с помощью`TextFragments` собственность`TextFragmentAbsorber` объект:
+ Получите извлеченные фрагменты текста с помощью`TextFragments` собственность`TextFragmentAbsorber` объект:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -165,7 +165,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 #### В: Что произойдет, если поисковая фраза не будет найдена на указанной странице?
 
- A: Если искомая фраза не найдена на указанной странице,`TextFragmentCollection` будет пустым, и замены не будут сделаны. Убедитесь, что поисковая фраза существует на целевой странице.
+A: Если искомая фраза не найдена на указанной странице,`TextFragmentCollection` будет пустым, и замены не будут сделаны. Убедитесь, что поисковая фраза существует на целевой странице.
 
 #### В: Как настроить текст замены для каждого фрагмента текста?
 

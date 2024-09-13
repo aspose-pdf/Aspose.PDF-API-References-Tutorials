@@ -110,7 +110,7 @@ document.Save(dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Открыть документ
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-// Создайте объект TextAbsorber для поиска всех фраз, соответствующих регулярному выражению.
+//Создайте объект TextAbsorber для поиска всех фраз, соответствующих регулярному выражению.
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;

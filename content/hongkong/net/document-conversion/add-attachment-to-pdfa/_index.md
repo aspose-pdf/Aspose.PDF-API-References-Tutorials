@@ -13,7 +13,7 @@ url: /zh-hant/net/document-conversion/add-attachment-to-pdfa/
 
 ## 先決條件
 
-在我們捲起袖子深入研究程式碼之前，您需要做好一些準備。以下是您開始使用時需要做的事情：
+在我們捲起袖子深入研究程式碼之前，您需要做好一些準備。以下是您開始使用時所需要的：
 
 1.  Aspose.PDF for .NET：請確定您已安裝 Aspose.PDF for .NET。您可以從[下載連結](https://releases.aspose.com/pdf/net/)或透過 Visual Studio 中的 NuGet 使用它。
 2. 開發環境：您應該設定一個.NET 開發環境。 Visual Studio 是不錯的選擇。
@@ -105,7 +105,7 @@ Console.WriteLine("\nAttachment added successfully to PDF/A file.\nFile saved at
 
 ## 結論
 
-現在你就擁有了！透過執行這些步驟，您已成功使用 Aspose.PDF for .NET 將附件新增至 PDF/A 文件。您不僅將文件嵌入到 PDF 中，而且還確保最終文件符合 PDF/A-3a 標準。無論您正在處理報告、圖像還是任何其他類型的文件，此方法都將幫助您無縫整合附件。因此，下次您需要在 PDF 文件中新增附件時，您就會清楚知道該怎麼做！
+現在你就得到它了！透過執行這些步驟，您已成功使用 Aspose.PDF for .NET 將附件新增至 PDF/A 文件。您不僅將文件嵌入到 PDF 中，而且還確保最終文件符合 PDF/A-3a 標準。無論您正在處理報告、圖像還是任何其他類型的文件，此方法都將幫助您無縫整合附件。因此，下次您需要在 PDF 文件中新增附件時，您就會清楚知道該怎麼做！
 
 ## 常見問題解答
 

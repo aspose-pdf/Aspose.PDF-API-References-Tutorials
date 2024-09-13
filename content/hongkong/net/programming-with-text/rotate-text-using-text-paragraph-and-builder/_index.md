@@ -2,7 +2,7 @@
 title: 在 PDF 檔案中使用文字段落和生成器旋轉文字
 linktitle: 在 PDF 檔案中使用文字段落和生成器旋轉文字
 second_title: Aspose.PDF for .NET API 參考
-description: 了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中使用文字段落和生成器旋轉文字。
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 檔案中使用文字段落和產生器來旋轉文字。
 type: docs
 weight: 410
 url: /zh-hant/net/programming-with-text/rotate-text-using-text-paragraph-and-builder/

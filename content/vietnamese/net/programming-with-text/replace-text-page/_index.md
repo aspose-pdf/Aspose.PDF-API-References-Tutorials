@@ -62,7 +62,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## Bước 6: Lấy lại các đoạn văn bản đã trích xuất
 
-Lấy các đoạn văn bản được trích xuất bằng cách sử dụng`TextFragments` tài sản của`TextFragmentAbsorber` sự vật:
+ Lấy các đoạn văn bản được trích xuất bằng cách sử dụng`TextFragments` tài sản của`TextFragmentAbsorber` sự vật:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -165,7 +165,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 #### H: Điều gì xảy ra nếu cụm từ tìm kiếm không được tìm thấy trên trang đã chỉ định?
 
- A: Nếu cụm từ tìm kiếm không được tìm thấy trên trang đã chỉ định,`TextFragmentCollection` sẽ trống và không có nội dung thay thế nào được thực hiện. Đảm bảo cụm từ tìm kiếm tồn tại trên trang bạn đang nhắm mục tiêu.
+A: Nếu cụm từ tìm kiếm không được tìm thấy trên trang đã chỉ định,`TextFragmentCollection` sẽ trống và không có nội dung thay thế nào được thực hiện. Đảm bảo cụm từ tìm kiếm tồn tại trên trang bạn đang nhắm mục tiêu.
 
 #### H: Làm thế nào tôi có thể tùy chỉnh văn bản thay thế cho từng đoạn văn bản?
 

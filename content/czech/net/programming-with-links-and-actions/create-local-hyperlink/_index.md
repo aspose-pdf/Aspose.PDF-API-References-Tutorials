@@ -2,144 +2,159 @@
 title: Vytvořte místní hypertextový odkaz v souboru PDF
 linktitle: Vytvořte místní hypertextový odkaz v souboru PDF
 second_title: Aspose.PDF pro .NET API Reference
-description: Snadno vytvářejte místní hypertextové odkazy v souboru PDF pomocí Aspose.PDF for .NET.
+description: Naučte se, jak vytvořit místní hypertextové odkazy v souborech PDF pomocí Aspose.PDF for .NET bez námahy s naším průvodcem krok za krokem.
 type: docs
 weight: 40
 url: /cs/net/programming-with-links-and-actions/create-local-hyperlink/
 ---
-Vytváření lokálních hypervazeb v souboru PDF vám umožňuje vytvářet odkazy, na které lze kliknout a které uživatele zavedou na jiné stránky ve stejném dokumentu PDF. S Aspose.PDF pro .NET můžete snadno vytvořit takové odkazy podle následujícího zdrojového kódu:
+## Zavedení
 
-## Krok 1: Importujte požadované knihovny
+této příručce vás provedeme procesem vytváření místních hypertextových odkazů v souboru PDF pomocí Aspose.PDF for .NET. Každý krok jasně rozebereme a zajistíme, že i když jste ve světě manipulace s PDF nováčky, budete je moci bez námahy sledovat.
 
-Než začnete, musíte importovat potřebné knihovny pro váš projekt C#. Zde je nezbytná dovozní směrnice:
+## Předpoklady
+
+Než se ponoříte do kódu po hlavě, ujistěte se, že máte vše, co potřebujete:
+
+1.  Visual Studio: Toto budete potřebovat k vývoji aplikací .NET. Stáhněte si jej z[webové stránky](https://visualstudio.microsoft.com/).
+2.  Aspose.PDF pro .NET: Tuto knihovnu si můžete stáhnout prostřednictvím[odkaz ke stažení zde](https://releases.aspose.com/pdf/net/). Dodává se s bohatou sadou funkcí pro manipulaci s PDF.
+3. Základní znalost C#: Malá znalost programování C# pomůže, ale nebojte se; projdeme kód řádek po řádku.
+4.  .NET Framework: Ujistěte se, že máte na svém počítači nainstalovaný .NET Framework. Požadavky si můžete zkontrolovat na Aspose.PDF[dokumentace](https://reference.aspose.com/pdf/net/).
+
+S těmito předpoklady jste připraveni naučit se vytvářet místní hypertextové odkazy v dokumentech PDF!
+
+## Importujte balíčky
+
+Nyní, když jste vše připraveni, je čas naimportovat potřebné balíčky do vašeho projektu C#. Knihovna Aspose.PDF obsahuje všechny třídy, které potřebujeme. Jak na to:
+
+### Otevřete svůj projekt
+
+Otevřete svůj stávající projekt .NET nebo vytvořte nový v aplikaci Visual Studio. Pokud začínáte znovu, vyberte na úvodní obrazovce možnost „Vytvořit nový projekt“.
+
+### Přidejte odkaz do Aspose.PDF
+
+ Klikněte pravým tlačítkem myši na "Dependencies" ve složce projektu v Průzkumníku řešení. Vyberte „Spravovat balíčky NuGet“ a poté vyhledejte`Aspose.PDF`. Nainstalujte nejnovější dostupnou verzi. To přinese všechny nástroje, které potřebujete pro vytváření a manipulaci s PDF.
+
+### Importovat jmenné prostory
+
+V horní části souboru .cs přidejte pomocí direktiv pro knihovnu Aspose.PDF takto:
 
 ```csharp
+using System;
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using Aspose.Pdf.InteractiveFeatures;
 ```
 
-## Krok 2: Nastavte cestu ke složce dokumentů
+Tímto způsobem budete mít přístup k funkcím knihovny.
 
- V tomto kroku je potřeba zadat cestu ke složce, kam chcete výsledný soubor PDF uložit. Nahradit`"YOUR DOCUMENT DIRECTORY"` v následujícím kódu se skutečnou cestou ke složce dokumentů:
+Pojďme si proces vytváření lokálních hypertextových odkazů rozdělit do jednoduchých kroků. Každý krok bude podrobně vysvětlen, aby vám pomohl pochopit logiku za ním.
+
+## Krok 1: Nastavte instanci dokumentu
+
+tomto kroku vytvoříte novou instanci třídy Document, která představuje soubor PDF, se kterým budete pracovat.
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Nastavte adresář dokumentů
+Document doc = new Document(); // Vytvořit instanci dokumentu
 ```
+ The`dataDir` proměnná je místo, kde bude umístěn váš nově vytvořený soubor PDF. Budete muset vyměnit`"YOUR DOCUMENT DIRECTORY"` se skutečnou cestou ve vašem systému. The`Document` třída vytvoří nový dokument PDF, do kterého můžeme přidat stránky a odkazy.
 
-## Krok 3: Vytvořte instanci dokumentu
+## Krok 2: Přidejte stránku do dokumentu
 
- Vytvoříme instanci`Document` třídy reprezentovat náš dokument PDF. Zde je odpovídající kód:
+Dále přidáte stránku do dokumentu PDF. 
 
 ```csharp
-Document doc = new Document();
+Page page = doc.Pages.Add(); // Přidat stránku do kolekce stránek
 ```
+ The`Pages.Add()` metoda přidá do dokumentu novou stránku. Zde bude žít veškerý váš obsah.
 
-## Krok 4: Přidejte stránku a text pomocí hypertextových odkazů
+## Krok 3: Vytvořte textový fragment
 
-tomto kroku přidáme stránku do našeho dokumentu PDF a přidáme nějaký text obsahující místní hypertextové odkazy. Pro každý odkaz definujeme cílové stránky. Zde je odpovídající kód:
-
-```csharp
-Page page = doc.Pages.Add();
-
-TextFragment text = new TextFragment("Link to page 7");
-LocalHyperlink link = new LocalHyperlink();
-link.TargetPageNumber = 7;
-text. Hyperlink = link;
-page.Paragraphs.Add(text);
-
-text = new TextFragment("Link to page 1");
-text. IsInNewPage = true;
-link = new LocalHyperlink();
-link.TargetPageNumber = 1;
-text. Hyperlink = link;
-page.Paragraphs.Add(text);
-```
-
-## Krok 5: Uložte aktualizovaný dokument
-
-Nyní uložme aktualizovaný soubor PDF pomocí`Save` metoda`doc` objekt. Zde je odpovídající kód:
+Nyní vytvoříme text, který bude fungovat jako odkaz, na který lze kliknout.
 
 ```csharp
-dataDir = dataDir + "CreateLocalHyperlink_out.pdf";
-doc.Save(dataDir);
-```
-
-### Ukázkový zdrojový kód pro Create Local Hyperlink using Aspose.PDF for .NET 
-```csharp
-// Cesta k adresáři dokumentů.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Vytvořit instanci dokumentu
-Document doc = new Document();
-// Přidat stránku do kolekce stránek souboru PDF
-Page page = doc.Pages.Add();
-// Vytvořte instanci textového fragmentu
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("link page number test to page 7");
-// Vytvořte místní instanci hypertextového odkazu
-Aspose.Pdf.LocalHyperlink link = new Aspose.Pdf.LocalHyperlink();
-// Nastavit cílovou stránku pro instanci odkazu
-link.TargetPageNumber = 7;
-// Nastavit hypertextový odkaz TextFragment
-text.Hyperlink = link;
-// Přidejte text do kolekce odstavců stránky
-page.Paragraphs.Add(text);
-// Vytvořte novou instanci TextFragment
-text = new TextFragment("link page number test to page 1");
-// TextFragment by měl být přidán na novou stránku
-text.IsInNewPage = true;
-// Vytvořte další místní instanci hypertextového odkazu
-link = new LocalHyperlink();
-// Nastavte cílovou stránku pro druhý hypertextový odkaz
-link.TargetPageNumber = 1;
-// Nastavit odkaz pro druhý TextFragment
-text.Hyperlink = link;
-// Přidejte text do kolekce odstavců objektu stránky
-page.Paragraphs.Add(text);    
-dataDir = dataDir + "CreateLocalHyperlink_out.pdf";
-// Uložit aktualizovaný dokument
-doc.Save(dataDir);
-Console.WriteLine("\nLocal hyperlink created successfully.\nFile saved at " + dataDir);            
 ```
+ The`TextFragment` představuje část textu v PDF. Zde vytváříme odkaz, který uživatelům řekne, že je přesměruje na stránku 7.
+
+## Krok 4: Vytvořte místní hypertextový odkaz
+
+Tady se děje kouzlo! Musíte vytvořit místní hypertextový odkaz, který fragmentu textu řekne, kam má ukazovat.
+
+```csharp
+Aspose.Pdf.LocalHyperlink link = new Aspose.Pdf.LocalHyperlink(); // Vytvořte místní hypertextový odkaz
+link.TargetPageNumber = 7; //Nastavit cílovou stránku pro instanci odkazu
+text.Hyperlink = link; // Nastavit hypertextový odkaz TextFragment
+```
+ The`LocalHyperlink` class je to, co nám umožňuje ukázat na jiné stránky ve stejném dokumentu. Nastavením`TargetPageNumber` až 7, řeknete hypertextovému odkazu, aby po kliknutí přešel na tuto konkrétní stránku.
+
+## Krok 5: Přidejte textový fragment na stránku
+
+Po nastavení hypertextového odkazu je čas přidat náš textový fragment na stránku, kterou jsme vytvořili.
+
+```csharp
+page.Paragraphs.Add(text); // Přidejte text do kolekce odstavců stránky
+```
+Tento řádek přidá váš text, na který lze kliknout, do kolekce odstavců na stránce.
+
+## Krok 6: Vytvořte další textový fragment (volitelné)
+
+Pojďme přidat další hypertextový odkaz pro přechod zpět na stránku 1.
+
+```csharp
+text = new TextFragment("link page number test to page 1"); // Vytvořte nový TextFragment
+text.IsInNewPage = true; // Přidejte jej na novou stránku
+```
+ Vytvoření nového`TextFragment` pro druhý odkaz jsme nastavili`IsInNewPage` na true, což znamená, že se tento text přesune na novou stránku.
+
+## Krok 7: Nastavte druhý místní hypertextový odkaz
+
+Stejně jako předtím vytvoříte další místní hypertextový odkaz pro stránku 1.
+
+```csharp
+link = new LocalHyperlink(); // Vytvořte další místní instanci hypertextového odkazu
+link.TargetPageNumber = 1; //Nastavte cílovou stránku pro druhý hypertextový odkaz
+text.Hyperlink = link; // Nastavit odkaz pro druhý TextFragment
+```
+Tento hypertextový odkaz cílí na stránku 1 a umožňuje uživatelům přejít zpět, když se dostanou na druhou stránku.
+
+## Krok 8: Přidejte druhý textový fragment na novou stránku
+
+Nyní přidáme tento text na jeho stránku.
+
+```csharp
+page.Paragraphs.Add(text); // Přidejte text do kolekce odstavců objektu stránky
+```
+Podobně jako v kroku 5 tento řádek přidá nový text hypertextového odkazu na nově vytvořenou stránku.
+
+## Krok 9: Uložte dokument
+
+Konečně je čas ušetřit si tvrdou práci! 
+
+```csharp
+dataDir = dataDir + "CreateLocalHyperlink_out.pdf"; // Zadejte název výstupního souboru
+doc.Save(dataDir); // Uložit aktualizovaný dokument
+Console.WriteLine("\nLocal hyperlink created successfully.\nFile saved at " + dataDir);
+```
+ To kombinuje cestu k adresáři s názvem souboru. The`Save()` metoda uloží váš dokument a potvrzovací zpráva vám dá vědět, že vše proběhlo hladce!
 
 ## Závěr
 
-gratuluji! Nyní máte krok za krokem průvodce vytvořením místních hypertextových odkazů v PDF pomocí Aspose.PDF pro .NET. Tento kód můžete použít k vytvoření klikatelných odkazů, které uživatele přesměrují na jiné stránky ve stejném dokumentu.
+Vytváření lokálních hypertextových odkazů v souborech PDF pomocí Aspose.PDF for .NET není jen skvělý trik; je to praktická funkce, která zlepšuje navigaci a uživatelský zážitek. Nyní jste vybaveni znalostmi, abyste své čtenáře nasměrovali přímo na informace, které potřebují. Jen si vzpomeňte na naši původní analogii – už žádné ztracené duše putující nekonečnými stránkami.
 
-Nezapomeňte se podívat na oficiální dokumentaci Aspose.PDF, kde najdete další informace o pokročilých funkcích hypertextových odkazů.
+## FAQ
 
-### Časté dotazy pro vytvoření místního hypertextového odkazu v souboru PDF
+### Co je Aspose.PDF pro .NET?
+Aspose.PDF for .NET je knihovna, která umožňuje vývojářům vytvářet, manipulovat a převádět dokumenty PDF programově pomocí rozhraní .NET.
 
-#### Otázka: Co jsou místní hypertextové odkazy v souboru PDF?
+### Mohu vytvořit hypertextové odkazy na externí webové stránky?
+Ano, Aspose.PDF také podporuje vytváření hypertextových odkazů na externí URL kromě lokálních hypertextových odkazů v PDF.
 
-Odpověď: Místní hypertextové odkazy v souboru PDF jsou klikací odkazy, které uživatele navigují na různé stránky v rámci stejného dokumentu. Tyto odkazy zlepšují navigaci a umožňují čtenářům rychlý přístup k relevantním sekcím.
+### Existuje bezplatná zkušební verze pro Aspose.PDF?
+ Absolutně! K bezplatné zkušební verzi můžete přistupovat z[místo](https://releases.aspose.com/).
 
-#### Otázka: Jak mohou místní hypertextové odkazy prospět mému dokumentu PDF?
+### Jaké programovací jazyky Aspose podporuje?
+Aspose nabízí knihovny pro různé programovací jazyky, včetně Javy, C++, a Python, mimo jiné.
 
-Odpověď: Místní hypertextové odkazy poskytují účinný způsob, jak propojit související obsah v rámci stejného dokumentu PDF. Zlepšují uživatelskou zkušenost tím, že umožňují čtenářům rychle přejít na konkrétní sekce, aniž by museli procházet celým dokumentem.
-
-#### Otázka: Jak Aspose.PDF pro .NET podporuje vytváření místních hypertextových odkazů?
-Odpověď: Aspose.PDF pro .NET nabízí komplexní podporu pro vytváření místních hypertextových odkazů. Výukový program krok za krokem uvedený v této příručce ukazuje, jak přidat místní hypertextové odkazy do dokumentu PDF pomocí jazyka C#.
-
-#### Otázka: Mohu přizpůsobit vzhled místních hypertextových odkazů?
-
-Odpověď: Ano, můžete přizpůsobit vzhled místních hypertextových odkazů, včetně barvy a stylu textu, abyste zajistili, že budou odpovídat designu vašeho dokumentu a budou poskytovat konzistentní vizuální zážitek.
-
-#### Otázka: Je možné vytvořit více lokálních hypertextových odkazů v rámci jedné stránky PDF?
-
-A: Rozhodně! V rámci jedné stránky PDF můžete vytvořit více lokálních hypertextových odkazů, což čtenářům umožní podle potřeby přeskakovat na různé sekce nebo stránky. Každý místní hypertextový odkaz lze přizpůsobit příslušnému cíli.
-
-#### Otázka: Mohu odkazovat na konkrétní části stránky pomocí místních hypertextových odkazů?
-
-Odpověď: Zatímco místní hypertextové odkazy obvykle navigují na celé stránky, můžete v dokumentu PDF vytvořit kotvy nebo záložky, abyste dosáhli cíleného propojení. Aspose.PDF for .NET podporuje různé možnosti hypertextových odkazů.
-
-#### Otázka: Jak mohu ověřit, že moje místní hypertextové odkazy fungují správně?
-
-Odpověď: Podle poskytnutého kurzu a ukázkového kódu můžete s jistotou vytvářet funkční místní hypertextové odkazy. Odkazy můžete otestovat otevřením vygenerovaného dokumentu PDF a kliknutím na text s hypertextovým odkazem.
-
-#### Otázka: Existují nějaká omezení při používání místních hypertextových odkazů?
-
-Odpověď: Místní hypertextové odkazy jsou účinným způsobem, jak zlepšit navigaci v dokumentu, ale je důležité zajistit, aby struktura dokumentu zůstala jasná a intuitivní. Správně označené hypertextové odkazy a kotvy přispívají k pozitivní uživatelské zkušenosti.
-
-#### Otázka: Mohu vytvořit místní hypertextové odkazy v tabulkách nebo obrázcích?
-
-Odpověď: Ano, můžete vytvořit místní hypertextové odkazy v rámci různých prvků vašeho dokumentu PDF, včetně tabulek, obrázků a textu. Aspose.PDF for .NET nabízí flexibilitu při přidávání hypertextových odkazů na různé typy obsahu.
+### Jak získám podporu pro produkty Aspose?
+ Podporu můžete hledat prostřednictvím[Fórum Aspose](https://forum.aspose.com/c/pdf/10).

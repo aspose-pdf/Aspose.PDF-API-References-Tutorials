@@ -138,9 +138,9 @@ Herzlichen Glückwunsch! Sie haben nun gelernt, wie Sie mit Aspose.PDF für .NET
 
  A: Sie können die Farbe des Tabellenrahmens festlegen, indem Sie die`border.Color` Eigenschaft im C#-Quellcode. Geben Sie einfach die gewünschte Farbe an, beispielsweise`Aspose.Pdf.Color.Red` oder jede andere gültige Farbdarstellung, um die Rahmenfarbe anzupassen.
 
-#### F: Ist es möglich, einzelnen Zellen in der Tabelle Rahmen mit unterschiedlichen Einstellungen (z. B. unterschiedlichen Farben oder Rahmenstilen) zuzuweisen?
+#### F: Ist es möglich, einzelnen Zellen in der Tabelle Rahmen mit unterschiedlichen Einstellungen (z. B. unterschiedliche Farben oder Rahmenstile) zuzuweisen?
 
- A: Ja, Sie können einzelnen Zellen in der Tabelle mit unterschiedlichen Einstellungen Rahmen zuweisen, indem Sie die`cell.Border` -Eigenschaft für jede Zelle einzeln. So können Sie zellenspezifische Rahmenstile und Farben entsprechend Ihren Anforderungen festlegen.
+ A: Ja, Sie können einzelnen Zellen in der Tabelle mit unterschiedlichen Einstellungen Rahmen zuweisen, indem Sie die`cell.Border` Eigenschaft für jede Zelle einzeln. So können Sie zellenspezifische Rahmenstile und Farben entsprechend Ihren Anforderungen festlegen.
 
 #### F: Kann ich den Rahmen von bestimmten Seiten der Tabelle entfernen (z. B. den linken und rechten Rahmen)?
 

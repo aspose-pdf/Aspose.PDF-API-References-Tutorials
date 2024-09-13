@@ -2,156 +2,159 @@
 title: Seskupená zaškrtávací políčka v dokumentu PDF
 linktitle: Seskupená zaškrtávací políčka v dokumentu PDF
 second_title: Aspose.PDF pro .NET API Reference
-description: Pomocí Aspose.PDF for .NET můžete snadno vytvářet seskupená zaškrtávací políčka v dokumentu PDF.
+description: Naučte se vytvářet seskupená zaškrtávací políčka (přepínače) v dokumentu PDF pomocí Aspose.PDF for .NET pomocí tohoto podrobného návodu.
 type: docs
 weight: 170
 url: /cs/net/programming-with-forms/grouped-check-boxes/
 ---
-V tomto tutoriálu vám ukážeme, jak vytvořit seskupená zaškrtávací políčka v dokumentu PDF pomocí Aspose.PDF pro .NET. Vysvětlíme vám zdrojový kód C# krok za krokem, který vás provede tímto procesem.
+## Zavedení
 
-## Krok 1: Příprava
+Vytváření interaktivních PDF není tak obtížné, jak by se mohlo zdát, zvláště když máte k dispozici výkonné nástroje jako Aspose.PDF for .NET. Jedním z interaktivních prvků, které možná budete muset přidat do svých dokumentů PDF, jsou seskupená zaškrtávací políčka, nebo konkrétněji přepínače, které uživatelům umožňují vybrat jednu možnost ze sady. Tento tutoriál vás provede procesem přidávání seskupených zaškrtávacích políček (přepínačů) do dokumentu PDF pomocí Aspose.PDF pro .NET. Ať už jste začátečník nebo ostřílený vývojář, tento průvodce shledáte poutavým, podrobným a snadno sledovatelným.
 
-Ujistěte se, že jste importovali potřebné knihovny a nastavili cestu k adresáři vašich dokumentů:
+## Předpoklady
+
+Než se ponoříme do podrobného průvodce, pojďme si pokrýt některé základní předpoklady:
+
+1.  Aspose.PDF pro .NET: Ujistěte se, že máte nainstalovanou knihovnu Aspose.PDF. Pokud ne, můžete[stáhněte si jej zde](https://releases.aspose.com/pdf/net/).
+2. IDE: Měli byste mít nastavené vývojové prostředí, jako je Visual Studio.
+3. .NET Framework: Projekt by měl cílit na verzi rozhraní .NET Framework kompatibilní s Aspose.PDF.
+4. Základní znalost C#: Pro bezproblémové pokračování je nutná znalost C# a manipulace s PDF.
+5.  Licence: Aspose.PDF vyžaduje licenci pro plnou funkčnost. Můžete[získat dočasnou licenci](https://purchase.aspose.com/temporary-license/) v případě potřeby.
+
+## Importujte balíčky
+
+Než začnete, ujistěte se, že jste do projektu importovali potřebné jmenné prostory:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Forms;
 ```
 
-## Krok 2: Vytvořte instanci objektu dokumentu
+Tyto balíčky vám umožní přístup ke všem třídám a metodám potřebným pro manipulaci s dokumenty PDF, včetně vytváření přepínačů a definování jejich vlastností.
 
-Vytvořit instanci objektu dokumentu:
+V této části rozdělíme proces vytváření seskupených zaškrtávacích políček (přepínačů) do jasných a snadno pochopitelných kroků.
+
+## Krok 1: Vytvořte nový dokument PDF
+
+ Prvním krokem je vytvoření instance souboru`Document` objekt, který bude reprezentovat váš soubor PDF. Poté do dokumentu přidejte prázdnou stránku, kam umístíte seskupená zaškrtávací políčka.
 
 ```csharp
+// Objekt okamžitého dokumentu
 Document pdfDocument = new Document();
-```
 
-## Krok 3: Přidejte stránku do dokumentu PDF
-
-Přidejte stránku do dokumentu PDF:
-
-```csharp
+// Přidejte stránku do souboru PDF
 Page page = pdfDocument.Pages.Add();
 ```
 
-## Krok 4: Vytvořte instanci objektu RadioButtonField
+Tím se nastaví základ pro přidávání jakýchkoli prvků, jako jsou přepínače, do PDF.
 
-Vytvořte instanci objektu RadioButtonField s číslem stránky jako argumentem:
+## Krok 2: Inicializujte pole přepínače
+
+Dále musíme vytvořit a`RadioButtonField` objekt, který bude obsahovat seskupená zaškrtávací políčka (přepínače). Toto pole se přidá na konkrétní stránku, kde se objeví zaškrtávací políčka.
 
 ```csharp
+// Vytvořte instanci objektu RadioButtonField a přiřaďte jej na první stránku
 RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
 ```
 
-## Krok 5: Přidejte možnosti přepínače
+Představte si to jako kontejner, který bude seskupovat jednotlivé možnosti přepínače.
 
-Přidejte možnosti přepínače pomocí objektu RadioButtonOptionField a určete jejich polohu pomocí objektu Rectangle:
+## Krok 3: Přidejte možnosti přepínače
+
+ Nyní do pole přidáme jednotlivé možnosti přepínače. V tomto příkladu přidáme dva přepínače a určíme jejich pozice pomocí`Rectangle` objekt.
 
 ```csharp
+// Přidejte první možnost přepínače a určete jeho polohu pomocí Obdélník
 RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
 RadioButtonOptionField opt2 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(100, 0, 120, 20));
-opt1.OptionName = "Test1";
-opt2.OptionName = "Test2";
-radio.Add(opt1);
-radio.Add(opt2);
+
+// Nastavte názvy možností pro identifikaci
+opt1.OptionName = "Option1";
+opt2.OptionName = "Option2";
 ```
 
-## Krok 6: Přizpůsobte možnosti přepínače
+ Tady,`Rectangle` objekt definuje souřadnice a velikost každého přepínače na stránce.
 
-Přizpůsobte možnosti přepínačů nastavením jejich stylu, ohraničení a vzhledu:
+## Krok 4: Přizpůsobte styl přepínacích tlačítek
+
+ Vzhled přepínacích tlačítek můžete upravit jejich nastavením`Style` vlastnictví. Můžete například chtít zaškrtávací políčka ve tvaru čtverce nebo kříže.
 
 ```csharp
+// Nastavte styl přepínacích tlačítek
 opt1.Style = BoxStyle.Square;
-opt2.Style = BoxStyle.Square;
+opt2.Style = BoxStyle.Cross;
+```
+
+To vám umožňuje ovládat vzhled a chování zaškrtávacích políček, díky čemuž jsou uživatelsky přívětivější a vizuálně přitažlivější.
+
+## Krok 5: Konfigurace vlastností ohraničení
+
+Hranice hrají zásadní roli při snadné identifikaci zaškrtávacích políček. Zde přidáme pevné okraje kolem každé možnosti přepínače a definujeme jejich šířku a barvu.
+
+```csharp
+// Nakonfigurujte ohraničení prvního přepínače
 opt1.Border = new Border(opt1);
 opt1.Border.Style = BorderStyle.Solid;
 opt1.Border.Width = 1;
+opt1.Characteristics.Border = Color.Black;
+
+// Nakonfigurujte ohraničení druhého přepínače
 opt2.Border = new Border(opt2);
-opt2.Border.Width = 1;
 opt2.Border.Style = BorderStyle.Solid;
+opt2.Border.Width = 1;
+opt2.Characteristics.Border = Color.Black;
 ```
 
-## Krok 7: Přidejte přepínače do formuláře
+Tento krok zajistí, že každý přepínač bude mít dobře definovaný okraj, čímž se zlepší čitelnost dokumentu.
 
-Přidejte přepínače do objektu formuláře dokumentu:
+## Krok 6: Přidejte možnosti přepínacího tlačítka do formuláře
+
+Nyní přidáme přepínače do formuláře dokumentu. Toto je poslední krok při seskupování zaškrtávacích políček do jednoho pole.
 
 ```csharp
+// Přidejte pole přepínače do objektu formuláře dokumentu
 pdfDocument.Form.Add(radio);
 ```
 
-## Krok 8: Uložte dokument
+Objekt formuláře funguje jako kontejner pro všechny interaktivní prvky, včetně našich seskupených zaškrtávacích políček.
 
-Uložte dokument PDF:
+## Krok 7: Uložte dokument PDF
+
+Nakonec, jakmile je vše nastaveno, můžete uložit dokument PDF na požadované místo.
 
 ```csharp
-dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
+// Definujte cestu k výstupnímu souboru
+string dataDir = "YOUR DOCUMENT DIRECTORY" + "GroupedCheckBoxes_out.pdf";
+
+// Uložte dokument PDF
 pdfDocument.Save(dataDir);
+
+// Potvrďte úspěšné vytvoření
+Console.WriteLine("Grouped checkboxes added successfully. File saved at " + dataDir);
 ```
 
-### Ukázkový zdrojový kód pro seskupená zaškrtávací políčka pomocí Aspose.PDF pro .NET 
-```csharp
-try
-{
-	// Cesta k adresáři dokumentů.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Objekt okamžitého dokumentu
-	Document pdfDocument = new Document();
-	// Přidejte stránku do souboru PDF
-	Page page = pdfDocument.Pages.Add();
-	// Vytvořte objekt RadioButtonField s číslem stránky jako argumentem
-	RadioButtonField radio = new RadioButtonField(pdfDocument.Pages[1]);
-	// Přidejte první možnost přepínače a také určete jeho počátek pomocí objektu Rectangle
-	RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(0, 0, 20, 20));
-	RadioButtonOptionField opt2 = new RadioButtonOptionField(page, new Aspose.Pdf.Rectangle(100, 0, 120, 20));
-	opt1.OptionName = "Test1";
-	opt2.OptionName = "Test2";
-	radio.Add(opt1);
-	radio.Add(opt2);
-	opt1.Style = BoxStyle.Square;
-	opt2.Style = BoxStyle.Square;
-	opt1.Style = BoxStyle.Cross;
-	opt2.Style = BoxStyle.Cross;
-	opt1.Border = new Border(opt1);
-	opt1.Border.Style = BorderStyle.Solid;
-	opt1.Border.Width = 1;
-	opt1.Characteristics.Border = System.Drawing.Color.Black;
-	opt2.Border = new Border(opt2);
-	opt2.Border.Width = 1;
-	opt2.Border.Style = BorderStyle.Solid;
-	opt2.Characteristics.Border = System.Drawing.Color.Black;
-	// Přidat přepínač k vytvoření objektu objektu dokumentu
-	pdfDocument.Form.Add(radio);
-	dataDir = dataDir + "GroupedCheckBoxes_out.pdf";
-	// Uložte dokument PDF
-	pdfDocument.Save(dataDir);
-	Console.WriteLine("\nGrouped checkboxes added successfully.\nFile saved at " + dataDir);
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+A je to! Úspěšně jste vytvořili PDF se seskupenými zaškrtávacími políčky pomocí Aspose.PDF pro .NET.
 
 ## Závěr
 
-V tomto tutoriálu jsme se naučili, jak vytvořit seskupená zaškrtávací políčka v dokumentu PDF pomocí Aspose.PDF pro .NET. Podle těchto kroků můžete snadno přidat vlastní volby přepínačů a seskupit je do dokumentů PDF pomocí Aspose.PDF.
+Přidávání interaktivních prvků, jako jsou seskupená zaškrtávací políčka, do dokumentů PDF se může zpočátku zdát složité, ale s Aspose.PDF pro .NET se to stane hračkou. Podle tohoto podrobného průvodce jste se naučili, jak nastavit základní dokument PDF, přidat seskupená přepínače, upravit jejich vzhled a uložit konečný výsledek. Ať už vytváříte formuláře, průzkumy nebo jakýkoli jiný typ interaktivního PDF, tato příručka vám poskytne pevný základ, se kterým můžete začít.
 
-### FAQ
+## FAQ
 
-#### Otázka: Co jsou seskupená zaškrtávací políčka v dokumentu PDF?
+### Mohu do skupiny přidat více než dva přepínače?
+ Absolutně! Jednoduše vytvořte další instanci`RadioButtonOptionField` objekty a přidejte je do`RadioButtonField` jak je uvedeno v tutoriálu.
 
-Odpověď: Seskupená zaškrtávací políčka v dokumentu PDF odkazují na sadu voleb přepínačů, které jsou seskupeny. Přepínače umožňují uživatelům vybrat pouze jednu možnost ze skupiny vzájemně se vylučujících možností. Když je vybráno jedno přepínací tlačítko, ostatní ve stejné skupině se automaticky zruší. Toto seskupování je užitečné, když chcete uživatelům nabídnout více možností, ale omezit jejich výběr pouze na jednu možnost.
+### Jak zpracuji více skupin zaškrtávacích políček v jednom dokumentu?
+Chcete-li vytvořit více skupin, vytvořte samostatnou instanci`RadioButtonField` objekty pro každou skupinu.
 
-#### Otázka: Mohu upravit vzhled seskupených zaškrtávacích políček v Aspose.PDF pro .NET?
+### Existuje nějaký limit na počet zaškrtávacích políček, která mohu přidat?
+Ne, Aspose.PDF for .NET neukládá žádná omezení na počet zaškrtávacích políček, která můžete přidat do PDF.
 
-Odpověď: Ano, vzhled seskupených zaškrtávacích políček v Aspose.PDF pro .NET si můžete přizpůsobit. Rozhraní API poskytuje různé možnosti nastavení stylu, ohraničení a vzhledu možností přepínače. Můžete definovat polohu každé možnosti, vybrat si mezi různými styly rámečků (např. čtverec, kruh, kříž) a upravit vlastnosti ohraničení, abyste dosáhli požadované vizuální reprezentace.
+### Mohu změnit vzhled zaškrtávacích políček po jejich přidání?
+Ano, po přidání zaškrtávacích políček můžete upravit vlastnosti, jako je styl ohraničení, šířka a barva.
 
-#### Otázka: Jak přidám seskupená zaškrtávací políčka na konkrétní stránku v dokumentu PDF?
-
-A: Chcete-li přidat seskupená zaškrtávací políčka na konkrétní stránku v dokumentu PDF, musíte vytvořit instanci a`RadioButtonField` objekt s požadovaným číslem stránky jako argumentem. Poté vytvořte`RadioButtonOptionField` objekty představující každou možnost přepínače a určete jejich polohu pomocí`Rectangle` objekt. Nakonec přidejte tyto možnosti do`RadioButtonField` a před přidáním upravte jejich vzhled podle potřeby`RadioButtonField` do formuláře dokumentu.
-
-#### Otázka: Mohu přidat více skupin zaškrtávacích políček do jednoho dokumentu PDF?
-
- Odpověď: Ano, do jednoho dokumentu PDF můžete přidat více skupin zaškrtávacích políček. Každá skupina by měla mít něco jedinečného`RadioButtonField` objekt a`RadioButtonOptionField` objekty v každé skupině by měly sdílet stejnou stránku a jedinečné názvy svých možností. Tím je zajištěno, že přepínače v každé skupině fungují správně a výběry se vzájemně vylučují.
-
-#### Otázka: Jsou seskupená zaškrtávací políčka podporována ve všech prohlížečích a aplikacích PDF?
-
-Odpověď: Ano, seskupená zaškrtávací políčka jsou podporována ve všech prohlížečích a aplikacích PDF vyhovujících standardu. Specifikace PDF definuje přepínače a jejich chování při seskupování, díky čemuž jsou ve formátu PDF všeobecně uznávané. Je však nezbytné otestovat funkčnost v různých prohlížečích PDF, abyste zajistili konzistentní chování na různých platformách.
+### Je možné použít obrázky jako přepínače?
+ Ano, Aspose.PDF vám umožňuje používat vlastní obrázky jako přepínače nastavením`Appearance` vlastnost každé možnosti přepínače.

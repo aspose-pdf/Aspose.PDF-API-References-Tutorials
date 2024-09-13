@@ -1,7 +1,7 @@
 ---
 title: Ersätt textsida i PDF-fil
 linktitle: Ersätt textsida i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du ersätter text på en specifik sida i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 370
@@ -62,7 +62,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## Steg 6: Hämta extraherade textfragment
 
-Hämta de extraherade textfragmenten med hjälp av`TextFragments` egendom av`TextFragmentAbsorber` objekt:
+ Hämta de extraherade textfragmenten med hjälp av`TextFragments` egendom av`TextFragmentAbsorber` objekt:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -165,7 +165,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 #### F: Vad händer om sökfrasen inte hittas på den angivna sidan?
 
- S: Om sökfrasen inte hittas på den angivna sidan, visas`TextFragmentCollection` kommer att vara tom och inga ersättningar kommer att göras. Se till att sökfrasen finns på sidan du riktar in dig på.
+S: Om sökfrasen inte hittas på den angivna sidan, visas`TextFragmentCollection` kommer att vara tom och inga ersättningar kommer att göras. Se till att sökfrasen finns på sidan du riktar in dig på.
 
 #### F: Hur kan jag anpassa ersättningstexten för varje textfragment?
 

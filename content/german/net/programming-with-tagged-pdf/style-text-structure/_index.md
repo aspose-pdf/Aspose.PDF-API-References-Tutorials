@@ -137,7 +137,7 @@ A: Das Tutorial bietet C#-Quellcodebeispiele, um zu demonstrieren, wie Sie mit A
 
 #### F: Was ist der Zweck der „getaggten Struktur“ im Kontext von PDF-Dokumenten?
 
-A: Die „getaggte Struktur“ bezieht sich auf die logische Organisation von Inhalten in einem PDF-Dokument und ermöglicht Zugänglichkeit und Strukturinformationen für unterstützende Technologien. Sie ermöglicht eine ordnungsgemäße Textextraktion, Navigation und ein semantisches Verständnis des Dokumentinhalts.
+A: Die „getaggte Struktur“ bezieht sich auf die logische Organisation des Inhalts in einem PDF-Dokument und ermöglicht Zugänglichkeit und Strukturinformationen für unterstützende Technologien. Sie ermöglicht eine ordnungsgemäße Textextraktion, Navigation und ein semantisches Verständnis des Dokumentinhalts.
 
 #### F: Wie kann ich ein Absatzelement erstellen und es der getaggten Struktur eines PDF-Dokuments hinzufügen?
 

@@ -7,116 +7,172 @@ type: docs
 weight: 170
 url: /tr/net/programming-with-document/getdocumentwindow/
 ---
-Aspose.PDF for .NET, geliştiricilerin .NET uygulamalarında PDF dosyaları oluşturmasına, düzenlemesine ve dönüştürmesine olanak tanıyan güçlü bir PDF düzenleme kütüphanesidir. Bu kütüphanenin sunduğu özelliklerden biri, bir belgenin pencere özellikleri hakkında bilgi alma yeteneğidir. Bu eğitim, sizi kullanma adımlarında yönlendirecektir`GetDocumentWindow` Aspose.PDF for .NET'in bir PDF belgesinin pencere özellikleri hakkında bilgi alma özelliği.
+# giriiş
 
-## Adım 1: .NET için Aspose.PDF'yi yükleyin
+PDF'lerle mi çalışıyorsunuz ve açıldığında nasıl göründükleri üzerinde daha fazla kontrole mi ihtiyacınız var? İster menü çubuğunu gizlemek ister pencereyi ilk sayfaya uyacak şekilde yeniden boyutlandırmak olsun, Aspose.PDF for .NET, bir PDF'nin bir görüntüleyicide açıldığında nasıl davranacağını özelleştirmek için ihtiyacınız olan tüm araçları sunar. Bu eğitimde, Aspose.PDF for .NET'te belge penceresi ayarlarının nasıl alınacağını ve değiştirileceğini açıklayacağız.
 
- .NET uygulamalarınızda Aspose.PDF for .NET'i kullanmak için önce kütüphaneyi yüklemeniz gerekir. Kütüphanenin en son sürümünü şu adresten indirebilirsiniz:[Aspose.PDF for .NET indirme sayfası](https://releases.aspose.com/pdf/net).
 
-Kütüphaneyi indirdikten sonra, ZIP dosyasının içeriğini bilgisayarınızdaki bir klasöre çıkarın. Daha sonra .NET projenizde Aspose.PDF for .NET DLL'sine bir referans eklemeniz gerekecektir.
+# Ön koşullar
 
-## Adım 2: PDF Belgesini Yükleyin
+Eğitime başlamadan önce aşağıdaki ön koşulların mevcut olduğundan emin olun:
 
- Aspose.PDF for .NET'i yükledikten ve .NET projenize DLL'ye bir başvuru ekledikten sonra, kullanmaya başlayabilirsiniz.`GetDocumentWindow`Bir PDF belgesinin pencere özellikleri hakkında bilgi almaya yarayan özellik.
+- Geliştirme ortamınıza .NET için Aspose.PDF yüklendi.
+  - [.NET için Aspose.PDF'yi indirin](https://releases.aspose.com/pdf/net/)
+-  Aspose.PDF için geçerli bir lisans veya bir tane alabilirsiniz[ücretsiz deneme](https://releases.aspose.com/) veya[geçici lisans](https://purchase.aspose.com/temporary-license/).
+- .NET ve C# hakkında temel bilgi.
+- Visual Studio veya başka uygun bir IDE.
 
-Bu özelliği kullanmanın ilk adımı, hakkında bilgi almak istediğiniz PDF belgesini yüklemektir. Bunu yapmak için aşağıdaki kodu kullanabilirsiniz:
+# Paketleri İçe Aktar
+
+Herhangi bir kod yazmaya başlamadan önce, gerekli paketleri içe aktarmanız gerekir. Projenizi açın ve C# dosyanızın en üstüne aşağıdaki ad alanını ekleyin:
 
 ```csharp
-// PDF belgesine giden yol
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
+```
 
-// PDF belgesini açın
+Bu, Aspose.PDF for .NET kullanarak PDF belgelerini düzenlemek için gereken tüm sınıflara ve yöntemlere erişmenizi sağlayacaktır.
+
+ Şimdi farklı belge penceresi ayarlarını alma sürecini parçalara ayıralım. Bu örnek için, adlı bir örnek PDF dosyası kullanacağız.`GetDocumentWindow.pdf`.
+
+## Adım 1: Belge Dizin Yolunu Ayarlayın
+
+İlk önce, PDF dosyamızın yolunu tanımlamamız gerekiyor. Yürütme sırasında herhangi bir hatadan kaçınmak için doğru dosya yoluna sahip olmanız çok önemlidir.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Burada, değiştirin`"YOUR DOCUMENT DIRECTORY"` PDF dosyanızın bulunduğu gerçek dizinle. Bu, PDF belgenizi yükleyeceğiniz çalışma dizininizdir.
+
+## Adım 2: PDF Belgesini açın
+
+Artık dosya yolu ayarlandığına göre, bir sonraki adım PDF belgesini Aspose.PDF kullanarak açmaktır. Bu, belgeyi belleğe yükleyecek ve özelliklerini almanıza olanak tanıyacaktır.
+
+```csharp
 Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
 ```
 
- Yukarıdaki kodda şunu değiştirin:`"YOUR DOCUMENT DIRECTORY"` PDF belgenizin bulunduğu dizinin yolunu içeren kod. Bu kod PDF belgesini bir`Document` Daha sonra belgenin pencere özellikleri hakkında bilgi almak için kullanabileceğiniz nesne.
+Bu basit kod satırıyla PDF dosyanızı başarıyla yüklediniz.`pdfDocument` Artık tüm özelliklerine erişmenizi sağlayacak nesne.
 
-## Adım 3: Belgenin Pencere Özelliklerini Alın
+## Adım 3: Pencere Orta Durumunu Alın
 
-Bir PDF belgesinin pencere özellikleri hakkında bilgi almak için aşağıdaki kodu kullanabilirsiniz:
-
-```csharp
-// Belgenin pencere özelliklerini al
-Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
-```
-
-Yukarıdaki kodda, her satır PDF belgesinin farklı bir pencere özelliğini alır ve bunu konsola çıktı olarak verir. Bu kodu yalnızca ilgilendiğiniz özellikleri alacak şekilde özelleştirebilirsiniz.
-
-### .NET için Aspose.PDF kullanarak PDF dosyasının belge penceresini almak için örnek kaynak kodu 
-
- İşte PDF belgesinin pencere özelliklerini almak için tam kaynak kodu:`GetDocumentWindow` Aspose.PDF for .NET'in özelliği:
+ Sonra, belge penceresinin açıldığında ortalanıp ortalanmayacağını kontrol edelim. Bunun için varsayılan değer şudur:`false`.
 
 ```csharp
-// Belgeler dizinine giden yol.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Belgeyi aç
-Document pdfDocument = new Document(dataDir + "GetDocumentWindow.pdf");
-
-// Farklı belge özellikleri edinin
-// Belge penceresinin konumu - Varsayılan: false
 Console.WriteLine("CenterWindow : {0}", pdfDocument.CenterWindow);
-
-// Baskın okuma sırası; sayfanın konumunu belirler
-// Yan yana görüntülendiğinde - Varsayılan: L2R
-Console.WriteLine("Direction : {0}", pdfDocument.Direction);
-
-// Pencerenin başlık çubuğunun belge başlığını görüntüleyip görüntülemeyeceği
-// Yanlışsa, başlık çubuğu PDF dosya adını görüntüler - Varsayılan: yanlış
-Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
-
-// Belgenin penceresinin, belgenin boyutuna uyacak şekilde yeniden boyutlandırılması gerekip gerekmediği
-// İlk görüntülenen sayfa - Varsayılan: false
-Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
-
-// Görüntüleyici uygulamasının menü çubuğunu gizleyip gizlememe - Varsayılan: false
-Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
-
-// Görüntüleyici uygulamasının araç çubuğunu gizleyip gizlememe - Varsayılan: false
-Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
-
-// Kaydırma çubukları gibi kullanıcı arayüzü öğelerinin gizlenip gizlenmeyeceği
-// Ve sadece sayfa içeriklerinin görüntülenmesini sağlar - Varsayılan: false
-Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
-
-//Belgenin sayfa modu. Tam ekran modundan çıkıldığında belgenin nasıl görüntüleneceği.
-Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
-
-// Sayfa düzeni, yani tek sayfa, tek sütun
-Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
-
-// Belge açıldığında nasıl görüntülenmesi gerektiği
-// Küçük resimleri göster, tam ekran, ek panelini göster
-Console.WriteLine("pageMode : {0}", pdfDocument.PageMode);
 ```
+
+ Çıktı ise`true`, belgenin penceresi ekranın ortasında açılacaktır. Aksi takdirde, varsayılan konumunda açılacaktır.
+
+## Adım 4: Metin Yönünü Kontrol Edin
+
+Bir PDF'nin görünümünün bir diğer önemli yönü, metnin soldan sağa (L2R) mı yoksa sağdan sola (R2L) mı okunacağını belirleyen metin yönüdür. Bu bilgiyi aşağıdaki kodu kullanarak alabilirsiniz:
+
+```csharp
+Console.WriteLine("Direction : {0}", pdfDocument.Direction);
+```
+
+ Çıktı şu şekilde olacaktır:`L2R` soldan sağa metin için ve`R2L` sağdan sola metin için. Bu ayar özellikle Arapça veya İbranice gibi dillerdeki belgeler için kullanışlıdır.
+
+## Adım 5: Belge Başlığını Pencerede Görüntüle
+
+Sonraki özellik, belge başlığının mı yoksa dosya adının mı pencerenin başlık çubuğunda gösterileceğini kontrol etmenizi sağlar. Varsayılan olarak bu,`false`, dosya adının gösterileceği anlamına gelir.
+
+```csharp
+Console.WriteLine("DisplayDocTitle : {0}", pdfDocument.DisplayDocTitle);
+```
+
+Dosya adı yerine belgenin başlığının görüntülenmesini istiyorsanız bu ayarın etkinleştirilmesi gerekir.
+
+## Adım 6: Pencereyi İlk Sayfaya Sığacak Şekilde Yeniden Boyutlandırın
+
+Bazen, açıldığında belge penceresinin PDF'nin ilk sayfasına uyacak şekilde otomatik olarak yeniden boyutlandırılmasını isteyebilirsiniz. Bu özelliğin etkin olup olmadığını kontrol etmenin yolu:
+
+```csharp
+Console.WriteLine("FitWindow : {0}", pdfDocument.FitWindow);
+```
+
+ Varsayılan olarak bu şu şekilde ayarlanır:`false`Bu, ilk sayfanın boyutundan bağımsız olarak pencere boyutunun aynı kalacağı anlamına gelir.
+
+## Adım 7: Menü Çubuğunu Gizle
+
+Daha odaklı bir okuma deneyimi için, görüntüleyici uygulamasının menü çubuğunu gizlemek isteyebilirsiniz. Bu ayarı aşağıdaki satırı kullanarak alabilirsiniz:
+
+```csharp
+Console.WriteLine("HideMenuBar : {0}", pdfDocument.HideMenubar);
+```
+
+ Bu geri dönecek`true` menü çubuğu gizliyse ve`false` aksi takdirde.
+
+## Adım 8: Araç Çubuğunu Gizle
+
+Benzer şekilde, daha temiz bir kullanıcı arayüzü için PDF görüntüleyicisindeki araç çubuğunu gizlemek isteyebilirsiniz. Bu ayar aşağıdaki şekilde alınabilir:
+
+```csharp
+Console.WriteLine("HideToolBar : {0}", pdfDocument.HideToolBar);
+```
+
+Bu ayar etkinleştirildiğinde PDF açıldığında araç çubuğu gizlenecektir.
+
+## Adım 9: Kaydırma Çubuklarını ve Kullanıcı Arayüzü Öğelerini Gizle
+
+Kaydırma çubukları gibi ek kullanıcı arayüzü öğeleri olmadan yalnızca sayfa içeriğini görüntülemek istiyorsanız, bu ayar bu davranışı kontrol eder:
+
+```csharp
+Console.WriteLine("HideWindowUI : {0}", pdfDocument.HideWindowUI);
+```
+
+ Ayarlandığında`true`, PDF görüntüleyici kaydırma çubuklarını ve diğer kullanıcı arayüzü öğelerini gizleyecek ve yalnızca belge içeriğini bırakacaktır.
+
+## Adım 10: Tam Ekran Olmayan Sayfa Modunu Ayarlayın
+
+ Tam ekran modundan çıktığınızda belgenin nasıl görüneceğini kontrol etmek için`NonFullScreenPageMode` özellik. Bu ayar, kullanıcının tam ekran olmayan modda belgeyle nasıl etkileşime girmesi gerektiğini tanımlamak için yararlıdır.
+
+```csharp
+Console.WriteLine("NonFullScreenPageMode : {0}", pdfDocument.NonFullScreenPageMode);
+```
+
+Çıktı, küçük resimler, ana hatlar veya ekler paneli gibi farklı modlara ayarlanabilir.
+
+## Adım 11: Sayfa Düzenini Tanımlayın
+
+Bu ayar, belge sayfalarının nasıl düzenleneceğini kontrol etmenizi sağlar. Örneğin, tek sayfa görünümü veya sürekli sütun görünümü seçebilirsiniz:
+
+```csharp
+Console.WriteLine("PageLayout : {0}", pdfDocument.PageLayout);
+```
+
+Bu, kullanıcılara belge içeriğini nasıl okuyacakları veya görüntüleyecekleri konusunda esneklik sağlar.
+
+## Adım 12: Sayfa Modunu Belirleyin
+
+ Son olarak,`PageMode` özellik, belgenin açıldığında nasıl görüntüleneceğini tanımlar. Seçenekler arasında küçük resimlerin gösterilmesi, tam ekran moduna girilmesi veya ekler panelinin görüntülenmesi yer alır.
+
+```csharp
+Console.WriteLine("PageMode : {0}", pdfDocument.PageMode);
+```
+
+İhtiyaçlarınıza bağlı olarak bunu PDF'inizin amacına uygun herhangi bir moda ayarlayabilirsiniz.
 
 ## Çözüm
 
-Bu eğitimde, bir PDF belgesinin pencere özellikleri hakkında bilgi almak için Aspose.PDF for .NET'i nasıl kullanacağımızı öğrendik. Bir PDF belgesini yükleyerek ve pencere özelliklerine erişerek, belgenin bir görüntüleyici uygulamada açıldığında nasıl görüntülenmesi gerektiği hakkında bilgi toplayabilirsiniz. Aspose.PDF for .NET, PDF dosyalarıyla programatik olarak çalışmak için güçlü bir özellik seti sunar ve bu da onu .NET uygulamalarında PDF düzenleme için değerli bir araç haline getirir.
+Gördüğünüz gibi, Aspose.PDF for .NET, PDF belgelerinizin çeşitli PDF görüntüleyicilerinde nasıl görüntüleneceğini düzenlemek için kapsamlı araçlar sunar. Araç çubuğunu gizlemek, pencereyi ortalamak veya metin yönünü kontrol etmek istiyorsanız, Aspose.PDF kullanıcının görüntüleme deneyimini geliştirmek için esneklik sunar.
 
-### SSS
+# SSS
 
-#### S: Bir PDF belgesinin pencere özelliklerini almanın amacı nedir?
+### PDF'in başlangıçtaki yakınlaştırma seviyesini özelleştirebilir miyim?
+Evet, Aspose.PDF belge açıldığında yakınlaştırma seviyesini ayarlamanıza olanak tanır.
 
-A: Bir PDF belgesinin pencere özelliklerini almak, PDF belgesinin bir görüntüleyici uygulamasında açıldığında nasıl görüntülenmesi gerektiği hakkında bilgi toplamanıza olanak tanır. Bu özellikler, pencere konumu, görüntüleme modu ve kullanıcı arayüzü öğelerinin görünürlüğü gibi çeşitli yönleri kontrol eder.
+### PDF'in pencere boyutunu nasıl kilitleyebilirim?
+ Ayarlayabilirsiniz`FitWindow` Pencerenin yeniden boyutlandırılmasını engelleyen özellik.
 
-#### S: .NET projemde Aspose.PDF for .NET'i nasıl kurabilirim?
+### Aspose.PDF farklı okuma modlarını destekliyor mu?
+Evet, tam ekran, küçük resim ve ekler gibi farklı modları destekliyor.
 
- A: .NET için Aspose.PDF'yi yüklemek için, kütüphaneyi şu adresten indirmeniz gerekir:[Aspose.PDF for .NET indirme sayfası](https://releases.aspose.com/pdf/net). İndirdikten sonra, ZIP dosyasının içeriğini çıkarın ve .NET projenize Aspose.PDF for .NET DLL'sine bir referans ekleyin.
+### PDF görüntüleyicide kaydırma çubuklarını gizlemek mümkün mü?
+ Kesinlikle, kaydırma çubuklarını ayarlayarak gizleyebilirsiniz.`HideWindowUI` mülk`true`.
 
-#### S: Kodu yalnızca belirli pencere özelliklerini alacak şekilde özelleştirebilir miyim?
-
-A: Evet, ihtiyacınız olmayan satırları yorumlayarak belirli pencere özelliklerini almak için kodu özelleştirebilirsiniz. Koddaki her satır belirli bir pencere özelliğine karşılık gelir, böylece gereksinimlerinize göre özellikleri dahil edebilir veya hariç tutabilirsiniz.
-
-#### S: Aspose.PDF for .NET kullanarak hangi tür pencere özelliklerini alabilirim?
-
-A: Aspose.PDF for .NET'i kullanarak, pencereyi ortalamak, sayfa düzenini ayarlamak, araç çubuklarının ve menü çubuklarının görüntüsünü kontrol etmek ve daha fazlası dahil olmak üzere bir PDF belgesinin çeşitli pencere özelliklerini alabilirsiniz.
+### Belge penceresini açtığımda ortalayabilir miyim?
+ Evet, bunu şu şekilde ayarlayarak kontrol edebilirsiniz:`CenterWindow` mülk.

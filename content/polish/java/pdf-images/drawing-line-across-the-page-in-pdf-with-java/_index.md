@@ -2,7 +2,7 @@
 title: Rysowanie linii na stronie w formacie PDF za pomocą języka Java
 linktitle: Rysowanie linii na stronie w formacie PDF za pomocą języka Java
 second_title: Aspose.PDF Java PDF Processing API
-description: Dowiedz się, jak rysować linie w plikach PDF za pomocą języka Java, używając Aspose.PDF dla języka Java. Przewodnik krok po kroku z kodem źródłowym do rysowania linii w plikach PDF.
+description: Dowiedz się, jak rysować linie w plikach PDF za pomocą języka Java, korzystając z Aspose.PDF dla języka Java. Przewodnik krok po kroku z kodem źródłowym do rysowania linii w plikach PDF.
 type: docs
 weight: 13
 url: /pl/java/pdf-images/drawing-line-across-the-page-in-pdf-with-java/

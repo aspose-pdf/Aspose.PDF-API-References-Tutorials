@@ -22,7 +22,7 @@ Teraz przyjrzyjmy się bliżej krok po kroku procesowi dodawania różnych nagł
 
 ## Krok 1: Konfigurowanie projektu
 
-Na początek utwórz projekt Java w preferowanym środowisku IDE i dodaj bibliotekę Aspose.PDF dla Java do ścieżki klas projektu.
+Na początek utwórz projekt Java w preferowanym środowisku IDE i dodaj bibliotekę Aspose.PDF for Java do ścieżki klas projektu.
 
 ## Krok 2: Importuj niezbędne pakiety
 

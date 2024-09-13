@@ -109,7 +109,7 @@ Das Hinzufügen von Anhängen zu PDF-Dateien mit Aspose.PDF für .NET ist ein un
 Sie können verschiedene Dateitypen anhängen, darunter Textdateien, Bilder und Dokumente.
 
 ### Ist die Nutzung von Aspose.PDF für .NET kostenlos?
-Aspose.PDF bietet eine kostenlose Testversion, für die volle Funktionalität müssen Sie jedoch eine Lizenz erwerben.
+Aspose.PDF bietet eine kostenlose Testversion an, für die volle Funktionalität müssen Sie jedoch eine Lizenz erwerben.
 
 ### Kann ich einer einzelnen PDF-Datei mehrere Anhänge hinzufügen?
 Ja, Sie können der Anhangssammlung des PDF mehrere Dateien hinzufügen.

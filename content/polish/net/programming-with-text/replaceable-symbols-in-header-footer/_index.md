@@ -7,7 +7,7 @@ type: docs
 weight: 320
 url: /pl/net/programming-with-text/replaceable-symbols-in-header-footer/
 ---
-W tym samouczku wyjaśnimy, jak używać wymiennych symboli w nagłówku i stopce dokumentu PDF, korzystając z biblioteki Aspose.PDF dla .NET. Przejdziemy przez proces krok po kroku tworzenia pliku PDF, ustawiania marginesów, dodawania nagłówka i stopki z wymiennymi symbolami i zapisywania pliku PDF przy użyciu dostarczonego kodu źródłowego C#.
+tym samouczku wyjaśnimy, jak używać wymiennych symboli w nagłówku i stopce dokumentu PDF, korzystając z biblioteki Aspose.PDF dla .NET. Przejdziemy przez proces krok po kroku tworzenia pliku PDF, ustawiania marginesów, dodawania nagłówka i stopki z wymiennymi symbolami i zapisywania pliku PDF przy użyciu dostarczonego kodu źródłowego C#.
 
 ## Wymagania wstępne
 
@@ -35,7 +35,7 @@ Page page = doc.Pages.Add();
 
 ## Krok 3: Ustaw marginesy
 
-Ustawiamy marginesy strony za pomocą`MarginInfo` Klasa. Dostosuj wartości marginesów zgodnie ze swoimi wymaganiami.
+ Ustawiamy marginesy strony za pomocą`MarginInfo` Klasa. Dostosuj wartości marginesów zgodnie ze swoimi wymaganiami.
 
 ```csharp
 MarginInfo marginInfo = new MarginInfo();
@@ -110,7 +110,7 @@ marginInfo.Top = 90;
 marginInfo.Bottom = 50;
 marginInfo.Left = 50;
 marginInfo.Right = 50;
-// Przypisz instancję marginInfo do właściwości Margin sec1.PageInfo
+//Przypisz instancję marginInfo do właściwości Margin sec1.PageInfo
 page.PageInfo.Margin = marginInfo;
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
@@ -148,7 +148,7 @@ Table tab2 = new Table();
 hfFoot.Paragraphs.Add(tab2);
 // Ustaw szerokości kolumn tabeli
 tab2.ColumnWidths = "165 172 165";
-// Utwórz wiersze w tabeli, a następnie komórki w wierszach
+//Utwórz wiersze w tabeli, a następnie komórki w wierszach
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
@@ -173,7 +173,7 @@ table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
 // Ustaw obramowanie tabeli za pomocą innego dostosowanego obiektu BorderInfo
 table.Border = new BorderInfo(BorderSide.All, 1f);
 table.RepeatingRowsCount = 1;
-// Utwórz wiersze w tabeli, a następnie komórki w wierszach
+//Utwórz wiersze w tabeli, a następnie komórki w wierszach
 Row row1 = table.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

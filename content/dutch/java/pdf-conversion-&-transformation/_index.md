@@ -56,7 +56,7 @@ Leer hoe u eenvoudig tekst naar PDF-bestanden kunt converteren met Aspose.PDF vo
 ### [XML naar PDF-documenten exporteren](./export-xml-to-pdf-documents/)
 Converteer moeiteloos XML naar PDF met Aspose.PDF voor Java. Stroomlijn datarepresentatie en -deling. Leer hoe in deze uitgebreide gids.
 ### [XPS naar PDF-bestanden converteren](./convert-xps-to-pdf-files/)
-Leer hoe u moeiteloos XPS naar PDF-bestanden converteert met Aspose.PDF voor Java. Onze stapsgewijze handleiding vereenvoudigt het proces.
+Leer hoe u moeiteloos XPS-bestanden naar PDF-bestanden converteert met Aspose.PDF voor Java. Onze stapsgewijze handleiding vereenvoudigt het proces.
 ### [Transformeer XSL-FO naar PDF-formaat](./transform-xsl-fo-to-pdf-format/)
 Transformeer XSL-FO naar PDF met Aspose.PDF voor Java. Stapsgewijze handleiding, broncode en FAQ's voor efficiënte dataconversie.
 ### [Converteer PDF naar HTML met lettertypevervanging](./convert-pdf-to-html-with-font-substitution/)

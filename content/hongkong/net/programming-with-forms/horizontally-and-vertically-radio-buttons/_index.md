@@ -2,126 +2,134 @@
 title: 水平和垂直單選按鈕
 linktitle: 水平和垂直單選按鈕
 second_title: Aspose.PDF for .NET API 參考
-description: 使用 Aspose.PDF for .NET 在 PDF 文件中輕鬆建立水平和垂直單選按鈕。
+description: 透過此逐步教學，了解如何使用 Aspose.PDF for .NET 在 PDF 中建立水平和垂直對齊的單選按鈕。
 type: docs
 weight: 180
 url: /zh-hant/net/programming-with-forms/horizontally-and-vertically-radio-buttons/
 ---
-在本教學中，我們將向您展示如何使用 Aspose.PDF for .NET 在 PDF 文件中建立水平和垂直排列的單選按鈕。我們將逐步解釋 C# 原始程式碼，以引導您完成此過程。
+## 介紹
 
-## 第 1 步：準備
+建立互動式 PDF 表單可以顯著增強使用者體驗，尤其是在收集資訊時。最常見的表單元素之一是單選按鈕，它允許使用者從一組選項中選擇一個選項。在本教學中，我們將探索如何使用 Aspose.PDF for .NET 建立水平和垂直對齊的單選按鈕。無論您是經驗豐富的開發人員還是新手，本指南都將逐步引導您完成整個過程，確保您清楚地了解每個部分。
 
-確保您已匯入必要的庫並設定文件目錄的路徑：
+## 先決條件
+
+在深入研究程式碼之前，您應該滿足一些先決條件：
+
+1.  Aspose.PDF for .NET：請確定您已安裝 Aspose.PDF 庫。您可以從[地點](https://releases.aspose.com/pdf/net/).
+2. Visual Studio：一個可以編寫和測試程式碼的開發環境。
+3. C# 基礎知識：熟悉 C# 程式設計將有助於您更好地理解程式碼片段。
+
+## 導入包
+
+首先，您需要在 C# 專案中匯入必要的套件。您可以這樣做：
+
+### 建立一個新項目
+
+開啟 Visual Studio 並建立一個新的 C# 專案。為了簡單起見，您可以選擇控制台應用程式。
+
+### 新增 Aspose.PDF 參考
+
+1. 在解決方案資源管理器中以滑鼠右鍵按一下您的專案。
+2. 選擇“管理 NuGet 套件”。
+3. 搜尋“Aspose.PDF”並安裝最新版本。
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using System.IO;
+using Aspose.Pdf.Facades;
+using Aspose.Pdf;
+using Aspose.Pdf.Forms;
 ```
 
-## 第 2 步：載入文檔
+現在您已完成所有設置，讓我們分解程式碼以建立水平和垂直對齊的單選按鈕。
 
-載入現有的 PDF 文件：
+## 第 1 步：設定文檔目錄
+
+在此步驟中，我們將定義儲存 PDF 文件的目錄路徑。
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+代替`"YOUR DOCUMENT DIRECTORY"`與您要儲存 PDF 檔案的實際路徑。這很重要，因為它告訴程式在哪裡找到輸入檔案以及在哪裡保存輸出。
+
+## 步驟2：載入現有的PDF文檔
+
+接下來，我們需要載入我們將要使用的 PDF 文件。這是使用以下方法完成的`FormEditor`班級。
 
 ```csharp
 FormEditor formEditor = new FormEditor();
 formEditor.BindPdf(dataDir + "input.pdf");
 ```
 
-## 第 3 步：自訂單選按鈕選項
+在這裡，我們建立一個實例`FormEditor`並將其綁定到名為的現有 PDF 文件`input.pdf`。確保該檔案存在於您指定的目錄中。
 
-透過設定以下屬性來自訂單選按鈕選項：
+## 步驟 3：配置單選按鈕屬性
+
+現在，讓我們為單選按鈕設定一些屬性。這包括按鈕之間的間隙、它們的方向和它們的大小。
 
 ```csharp
-formEditor. RadioGap = 4; //兩個單選按鈕選項之間的距離
-formEditor. RadioHoriz = true; //單選按鈕的水平佈局
+formEditor.RadioGap = 4; //單選按鈕選項之間的距離
+formEditor.RadioHoriz = true; //設定為 true 以進行水平對齊
 formEditor.RadioButtonItemSize = 20; //單選按鈕的大小
-formEditor.Facade.BorderWidth = 1; //單選按鈕邊框的寬度
-formEditor.Facade.BorderColor = System.Drawing.Color.Black; //單選按鈕邊框顏色
+formEditor.Facade.BorderWidth = 1; //邊框寬度
+formEditor.Facade.BorderColor = System.Drawing.Color.Black; //邊框顏色
 ```
+
+這些屬性將有助於定義單選按鈕在 PDF 中的顯示方式。這`RadioGap`屬性控制按鈕之間的空間，而`RadioHoriz`決定了他們的佈局。
 
 ## 第 4 步：新增水平單選按鈕
 
-透過指定欄位的選項和位置來新增水平排列的單選按鈕：
+現在，讓我們將水平單選按鈕新增到 PDF 中。
 
 ```csharp
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
 ```
 
+在此程式碼中，我們定義單選按鈕的項目並將它們新增至 PDF。這`AddField`方法採用多個參數，包括欄位類型、欄位名稱和放置座標。
+
 ## 第 5 步：新增垂直單選按鈕
 
-透過指定欄位的選項和位置來新增垂直排列的單選按鈕：
+接下來，我們將新增垂直單選按鈕。為此，我們需要將方向更改回垂直。
 
 ```csharp
-formEditor. RadioHoriz = false; //單選按鈕的垂直佈局
+formEditor.RadioHoriz = false; //設定為 false 進行垂直對齊
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
 ```
 
-## 第 6 步：儲存文檔
+就像以前一樣，我們定義項目並將它們添加到 PDF，但這次它們將垂直對齊。
 
-儲存修改後的PDF文件：
+## 步驟 6：儲存 PDF 文檔
+
+最後，我們需要儲存修改後的PDF文件。
 
 ```csharp
 dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
 formEditor.Save(dataDir);
+Console.WriteLine("\nHorizontally and vertically laid out radio buttons successfully.\nFile saved at " + dataDir);
 ```
 
-### 使用 Aspose.PDF for .NET 的水平和垂直單選按鈕的範例原始碼 
-```csharp
-try
-{
-	//文檔目錄的路徑。
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	//載入先前儲存的文檔
-	FormEditor formEditor = new FormEditor();
-	formEditor.BindPdf(dataDir + "input.pdf");
-	//RadioGap 是兩個單選按鈕選項之間的距離。
-	formEditor.RadioGap = 4;
-	//新增水平單選按鈕
-	formEditor.RadioHoriz = true;
-	//RadioButtonItemSize 如果單選按鈕項目的大小。
-	formEditor.RadioButtonItemSize = 20;
-	formEditor.Facade.BorderWidth = 1;
-	formEditor.Facade.BorderColor = System.Drawing.Color.Black;
-	formEditor.Items = new string[] { "First", "Second", "Third" };
-	formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
-	//新增其他垂直放置的單選按鈕
-	formEditor.RadioHoriz = false;
-	formEditor.Items = new string[] { "First", "Second", "Third" };
-	formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
-	dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
-	//儲存 PDF 文件
-	formEditor.Save(dataDir);
-	Console.WriteLine("\nHorizontally and vertically laid out radio buttons successfully.\nFile saved at " + dataDir);
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+此程式碼使用新新增的單選按鈕儲存 PDF。確保檢查指定目錄中的輸出檔案。
 
 ## 結論
 
-在本教學中，我們學習如何使用 Aspose.PDF for .NET 在 PDF 文件中建立水平和垂直排列的單選按鈕。透過執行這些步驟，您可以輕鬆自訂單選按鈕的佈局，並使用 Aspose.PDF 將它們新增至 PDF 文件中。
+使用 Aspose.PDF for .NET 在 PDF 中建立單選按鈕是一個簡單的過程。透過遵循本教學中概述的步驟，您可以輕鬆地將水平和垂直對齊的單選按鈕新增至 PDF 表單中。這不僅增強了文件的互動性，也改善了整體使用者體驗。所以，繼續嘗試吧！
 
-### 常見問題解答
+## 常見問題解答
 
-#### Q：PDF 文件中水平和垂直排列的單選按鈕是什麼？
+### 什麼是 Aspose.PDF for .NET？
+Aspose.PDF for .NET 是一個功能強大的程式庫，可讓開發人員以程式設計方式建立、操作和轉換 PDF 文件。
 
-答：PDF文件中單選按鈕的水平和垂直排列是指單選按鈕選項的佈局方向。水平佈局將單選按鈕選項並排放置，讓使用者從左到右進行選擇。另一方面，垂直佈局將單選按鈕選項堆疊在一起，使用戶能夠從上到下進行選擇。
+### 我可以免費使用 Aspose.PDF 嗎？
+是的，Aspose 提供免費試用版，您可以使用它來評估該程式庫。你可以下載它[這裡](https://releases.aspose.com/).
 
-#### Q：如何自訂 Aspose.PDF for .NET 中單選按鈕選項的外觀？
+### 如何獲得 Aspose.PDF 支援？
+您可以透過訪問獲得支持[Aspose論壇](https://forum.aspose.com/c/pdf/10).
 
-答：您可以透過調整多個屬性來自訂 Aspose.PDF for .NET 中單選按鈕選項的外觀。 API 提供了設定兩個單選按鈕選項之間距離的選項（`RadioGap`），佈局方向（`RadioHoriz`)、單選按鈕項目的大小 (`RadioButtonItemSize`)、單選按鈕的邊框寬度和顏色等等。
+### 是否可以使用 Aspose.PDF 建立其他表單元素？
+絕對地！ Aspose.PDF支援各種表單元素，包括文字欄位、複選框和下拉式清單。
 
-#### Q：我可以在同一個 PDF 文件中新增水平和垂直單選按鈕嗎？
-
-答：是的，您可以使用 Aspose.PDF for .NET 將水平和垂直單選按鈕新增至相同 PDF 文件。本教學中提供的範例原始程式碼示範如何先新增水平排列的單選按鈕，然後在同一個 PDF 文件中新增另一組垂直排列的單選按鈕。
-
-#### Q：我可以為每組單選按鈕設定不同的單選按鈕選項嗎？
-
-答：是的，您可以為每組單選按鈕設定不同的單選按鈕選項。每個組別都應該有獨特的`RadioButtonField`對象，以及`RadioButtonOptionField`每個群組中的物件應共享相同的頁面和其選項的唯一名稱。這可確保每組中的單選按鈕正常運作，並且選擇是互斥的。
-
-#### Q：所有 PDF 檢視器和應用程式都支援單選按鈕的佈局和外觀設定嗎？
-
-答：是的，所有符合標準的 PDF 檢視器和應用程式都支援單選按鈕的佈局和外觀設定。 PDF 規格定義了單選按鈕及其各種屬性，使它們在 PDF 格式中得到普遍認可。但是，必須測試單選按鈕在不同 PDF 檢視器中的外觀和行為，以確保跨不同平台的渲染一致。
+### 哪裡可以購買 Aspose.PDF for .NET？
+您可以從以下位置購買 Aspose.PDF for .NET[購買頁面](https://purchase.aspose.com/buy).

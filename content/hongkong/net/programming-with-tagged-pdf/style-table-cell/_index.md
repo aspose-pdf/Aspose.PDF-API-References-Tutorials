@@ -293,7 +293,7 @@ Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
 
 #### Q：如何使用 Aspose.PDF for .NET 建立新的 PDF 文件？
 
-A：要建立一個新的PDF文檔，您需要實例化一個`Document`來自 Aspose.PDF 庫的物件。提供的 C# 原始程式碼示範如何建立文件並設定其標題和語言。
+ A：要建立一個新的PDF文檔，您需要實例化一個`Document`來自 Aspose.PDF 庫的物件。提供的 C# 原始程式碼示範如何建立文件並設定其標題和語言。
 
 #### Q：PDF 文件中的根結構元素有何意義？
 
@@ -309,7 +309,7 @@ A：要建立一個新的PDF文檔，您需要實例化一個`Document`來自 As
 
 #### Q：驗證 PDF/UA 合規性的目的是什麼？
 
-答：驗證 PDF/UA 合規性可確保 PDF 文件符合輔助功能標準，從而更方便殘障使用者使用。本教學課程展示如何使用以下方法驗證 PDF/UA 一致性`Validate()`方法並產生 XML 報告。
+答：驗證 PDF/UA 合規性可確保 PDF 文件符合輔助功能標準，從而使殘障使用者更容易存取。本教學課程展示如何使用以下方法驗證 PDF/UA 一致性`Validate()`方法並產生 XML 報告。
 
 #### Q：如何將這些概念應用到我自己的 .NET 應用程式中？
 

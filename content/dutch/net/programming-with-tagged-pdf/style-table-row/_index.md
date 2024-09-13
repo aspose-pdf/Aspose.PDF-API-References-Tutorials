@@ -35,7 +35,7 @@ We hebben een nieuw document gemaakt en de documenttitel en taal ingesteld.
 In deze stap verkrijgen we het rootstructuurelement voor ons document.
 
 ```csharp
-//Verkrijg het wortelstructuurelement
+// Verkrijg het wortelstructuurelement
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

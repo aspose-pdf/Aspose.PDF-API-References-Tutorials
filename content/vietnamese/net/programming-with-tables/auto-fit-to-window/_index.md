@@ -126,7 +126,7 @@ margin.Bottom = 5f;
 // Đặt khoảng đệm ô mặc định thành đối tượng MarginInfo
 tab1.DefaultCellPadding = margin;
 
-// Tạo các hàng trong bảng và sau đó tạo các ô trong các hàng
+//Tạo các hàng trong bảng và sau đó tạo các ô trong các hàng
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

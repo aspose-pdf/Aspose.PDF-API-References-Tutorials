@@ -7,7 +7,7 @@ type: docs
 weight: 20
 url: /cs/net/programming-with-tagged-pdf/add-structure-element-into-element/
 ---
-V tomto tutoriálu vám poskytneme podrobný návod, jak přidat prvek struktury do prvku v dokumentu PDF pomocí Aspose.PDF pro .NET. Aspose.PDF je výkonná knihovna, která vám umožňuje programově vytvářet, manipulovat a převádět dokumenty PDF. Pomocí funkcí struktury označeného obsahu Aspose.PDF můžete vytvořit hierarchickou strukturu v dokumentu PDF.
+tomto tutoriálu vám poskytneme podrobný návod, jak přidat prvek struktury do prvku v dokumentu PDF pomocí Aspose.PDF pro .NET. Aspose.PDF je výkonná knihovna, která vám umožňuje programově vytvářet, manipulovat a převádět dokumenty PDF. Pomocí funkcí struktury označeného obsahu Aspose.PDF můžete vytvořit hierarchickou strukturu v dokumentu PDF.
 
 ## Předpoklady
 
@@ -114,7 +114,7 @@ Tento kód uloží dokument PDF se strukturovanými prvky do určeného souboru.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
 string logFile = dataDir + "46144_log.xml";
-// Vytvoření dokumentu a získání tagovaného obsahu PDF
+//Vytvoření dokumentu a získání tagovaného obsahu PDF
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 // Nastavení názvu a přirozeného jazyka pro dokument
@@ -209,7 +209,7 @@ Odpověď: Vytvoření hierarchické struktury v dokumentu PDF zlepšuje jeho do
 
 #### Otázka: Jak mohu po přidání prvků struktury ověřit shodu s PDF/UA?
 
- Odpověď: Kód poskytnutý v tutoriálu ukazuje, jak ověřit shodu s PDF/UA pomocí`Validate` metoda. Ověřením dokumentu podle standardu PDF/UA můžete zajistit, že přidané prvky struktury odpovídají pokynům pro usnadnění.
+Odpověď: Kód poskytnutý v tutoriálu ukazuje, jak ověřit shodu s PDF/UA pomocí`Validate` metoda. Ověřením dokumentu podle standardu PDF/UA můžete zajistit, že přidané prvky struktury odpovídají pokynům pro usnadnění.
 
 #### Otázka: Mohu tento přístup použít k přidání prvků struktury do existujícího dokumentu PDF?
 

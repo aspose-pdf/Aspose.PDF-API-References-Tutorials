@@ -38,14 +38,14 @@ Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
 ## Langkah 5: Tambahkan halaman ke dokumen
- Tambahkan halaman baru ke dokumen dengan menggunakan`Add` metode dari`Pages`koleksi. Dalam kode yang diberikan, halaman baru ditetapkan ke variabel`page`.
+ Tambahkan halaman baru ke dokumen dengan menggunakan`Add` metode dari`Pages` koleksi. Dalam kode yang diberikan, halaman baru ditetapkan ke variabel`page`.
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
 ## Langkah 6: Buat TextFragment dengan baris berikutnya yang diindentasi
- Membuat contoh sebuah`TextFragment` objek dan memberikan teks yang diinginkan. Dalam kode yang diberikan, teks ditetapkan ke variabel`text` Kemudian, inisialisasi`TextFormattingOptions` Untuk`TextFragment`dan tentukan`SubsequentLinesIndent` nilai.
+ Membuat contoh sebuah`TextFragment` objek dan memberikan teks yang diinginkan. Dalam kode yang diberikan, teks ditetapkan ke variabel`text` Kemudian, inisialisasi`TextFormattingOptions` Untuk`TextFragment` dan tentukan`SubsequentLinesIndent` nilai.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
@@ -91,7 +91,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = document.Pages.Add();
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-// Inisialisasi TextFormattingOptions untuk fragmen teks dan tentukan nilai SubsequentLinesIndent
+//Inisialisasi TextFormattingOptions untuk fragmen teks dan tentukan nilai SubsequentLinesIndent
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
 	SubsequentLinesIndent = 20
@@ -148,7 +148,7 @@ Aspose.Pdf.Page page = document.Pages.Add();
 
 #### T: Bagaimana cara menambahkan indentasi baris berikutnya pada teks?
 
- A: Pada Langkah 6, Anda akan membuat`TextFragment` objek dan tetapkan teks yang diinginkan padanya. Kemudian, Anda akan menginisialisasi`TextFormattingOptions` Untuk`TextFragment`dan tentukan`SubsequentLinesIndent` nilai:
+ A: Pada Langkah 6, Anda akan membuat`TextFragment` objek dan tetapkan teks yang diinginkan padanya. Kemudian, Anda akan menginisialisasi`TextFormattingOptions` Untuk`TextFragment` dan tentukan`SubsequentLinesIndent` nilai:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
@@ -168,7 +168,7 @@ page.Paragraphs.Add(text);
 
 #### T: Dapatkah saya mengulang proses untuk baris tambahan?
 
- A: Ya, pada Langkah 8, Anda dapat mengulangi proses untuk baris tambahan dengan indentasi yang sama dengan membuat baris baru`TextFragment` objek dan menambahkannya ke koleksi paragraf halaman.
+A: Ya, pada Langkah 8, Anda dapat mengulangi proses untuk baris tambahan dengan indentasi yang sama dengan membuat baris baru`TextFragment` objek dan menambahkannya ke koleksi paragraf halaman.
 
 #### T: Bagaimana cara menyimpan dokumen PDF yang dihasilkan?
 

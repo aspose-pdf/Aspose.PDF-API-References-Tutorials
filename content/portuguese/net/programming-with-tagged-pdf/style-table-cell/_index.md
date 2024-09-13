@@ -35,7 +35,7 @@ Criamos um novo documento e definimos o título e o idioma do documento.
 Nesta etapa, obteremos o elemento de estrutura raiz do nosso documento.
 
 ```csharp
-//Obter o elemento de estrutura raiz
+// Obter o elemento de estrutura raiz
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
@@ -293,7 +293,7 @@ R: Antes de começar, certifique-se de ter instalado o Aspose.PDF para .NET e co
 
 #### P: Como posso criar um novo documento PDF usando o Aspose.PDF para .NET?
 
-R: Para criar um novo documento PDF, você precisa instanciar um`Document` objeto da biblioteca Aspose.PDF. O código-fonte C# fornecido demonstra como criar um documento e definir seu título e idioma.
+ R: Para criar um novo documento PDF, você precisa instanciar um`Document` objeto da biblioteca Aspose.PDF. O código-fonte C# fornecido demonstra como criar um documento e definir seu título e idioma.
 
 #### P: Qual é o significado do elemento de estrutura raiz em um documento PDF?
 

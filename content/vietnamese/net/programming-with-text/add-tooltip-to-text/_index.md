@@ -32,7 +32,7 @@ using Aspose.Pdf.Text;
  Trong mã, hãy xác định vị trí dòng ghi`string dataDir = "YOUR DOCUMENT DIRECTORY";` và thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn đến thư mục lưu trữ tài liệu của bạn.
 
 ## Bước 4: Tạo một tài liệu mẫu có văn bản
- Tạo một cái mới`Document` đối tượng và thêm các trang có đoạn văn bản. Trong mã được cung cấp, hai đoạn văn bản được thêm vào tài liệu với văn bản chú giải công cụ tương ứng.
+ Tạo một cái mới`Document`đối tượng và thêm các trang có đoạn văn bản. Trong mã được cung cấp, hai đoạn văn bản được thêm vào tài liệu với văn bản chú giải công cụ tương ứng.
 
 ```csharp
 Document doc = new Document();
@@ -98,7 +98,7 @@ doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to disp
 doc.Save(outputFile);
 // Mở tài liệu có văn bản
 Document document = new Document(outputFile);
-// Tạo đối tượng TextAbsorber để tìm tất cả các cụm từ khớp với biểu thức chính quy
+//Tạo đối tượng TextAbsorber để tìm tất cả các cụm từ khớp với biểu thức chính quy
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
 // Chấp nhận bộ hấp thụ cho các trang tài liệu
 document.Pages.Accept(absorber);
@@ -169,7 +169,7 @@ using Aspose.Pdf.Text;
 
 #### H: Làm thế nào để thêm chú giải công cụ vào đoạn văn bản?
 
- A: Ở Bước 6, bạn sẽ lặp qua các đoạn văn bản đã trích xuất và tạo các nút vô hình tại vị trí của chúng. Văn bản chú giải công cụ được gán cho`AlternateName` tài sản của`ButtonField`được thêm vào mẫu của tài liệu.
+ A: Ở Bước 6, bạn sẽ lặp qua các đoạn văn bản đã trích xuất và tạo các nút vô hình tại vị trí của chúng. Văn bản chú giải công cụ được gán cho`AlternateName` tài sản của`ButtonField`, được thêm vào mẫu của tài liệu.
 
 #### H: Làm thế nào để lặp lại quy trình này cho các đoạn văn bản bổ sung có chú giải công cụ dài?
 

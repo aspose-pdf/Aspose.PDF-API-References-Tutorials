@@ -7,7 +7,7 @@ type: docs
 weight: 550
 url: /nl/net/programming-with-text/use-latex-script/
 ---
-Deze tutorial legt uit hoe u Latex-script kunt gebruiken om wiskundige expressies of formules toe te voegen aan een PDF-document met Aspose.PDF voor .NET. De meegeleverde C#-broncode demonstreert de stappen om een document te maken, een tabel met een cel met LaTeX-script toe te voegen en het document op te slaan.
+Deze tutorial legt uit hoe u Latex-script kunt gebruiken om wiskundige expressies of formules toe te voegen aan een PDF-document met Aspose.PDF voor .NET. De meegeleverde C#-broncode demonstreert de stappen om een document te maken, een tabel toe te voegen met een cel met LaTeX-script en het document op te slaan.
 
 ## Vereisten
 
@@ -122,7 +122,7 @@ A: Om deze tutorial succesvol te kunnen volgen, moet u een basiskennis hebben va
 
 #### V: Hoe stel ik mijn project in om LaTeX-script in een PDF-document te gebruiken?
 
-A: Om te beginnen, maak een nieuw C# project in uw gekozen geïntegreerde ontwikkelomgeving (IDE) en voeg een referentie toe aan de Aspose.PDF voor .NET bibliotheek. Dit zal u de nodige tools geven om te werken met PDF documenten en LaTeX script.
+A: Om te beginnen, maak een nieuw C# project in uw gekozen geïntegreerde ontwikkelomgeving (IDE) en voeg een referentie toe aan de Aspose.PDF voor .NET bibliotheek. Dit zal u de nodige tools verschaffen om te werken met PDF documenten en LaTeX script.
 
 #### V: Welke naamruimten moet ik importeren om met Aspose.PDF voor .NET te werken?
 

@@ -30,7 +30,7 @@ using Aspose.Pdf;
  A kódban keresse meg azt a sort, amely ezt mondja`string dataDir = "YOUR DOCUMENT DIRECTORY";` és cserélje ki`"YOUR DOCUMENT DIRECTORY"` annak a könyvtárnak az elérési útjával, ahol a dokumentumokat tárolják.
 
 ## 4. lépés: Töltse be a meglévő PDF dokumentumot
- Töltsön be egy meglévő PDF dokumentumot a`Document` konstruktort, és átadja a bemeneti PDF-fájl elérési útját.
+ Töltsön be egy meglévő PDF dokumentumot a`Document`konstruktort, és átadja a bemeneti PDF-fájl elérési útját.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
@@ -113,7 +113,7 @@ using Aspose.Pdf;
 
 #### K: Hogyan adhatom meg a dokumentumkönyvtárat?
 
- V: Keresse meg a vonalat`string dataDir = "YOUR DOCUMENT DIRECTORY";` a kódban, és cserélje ki`"YOUR DOCUMENT DIRECTORY"` a dokumentumkönyvtár tényleges elérési útjával.
+ V: Keresse meg a vonalat`string dataDir = "YOUR DOCUMENT DIRECTORY";` a kódban és cserélje ki`"YOUR DOCUMENT DIRECTORY"` a dokumentumkönyvtár tényleges elérési útjával.
 
 #### K: Hogyan tölthetek be egy meglévő PDF dokumentumot?
 
@@ -129,7 +129,7 @@ using Aspose.Pdf;
 
 #### K: Hogyan menthetem el a frissített PDF dokumentumot?
 
- V: A 7. lépésben a`Save` módszere a`Document`objektumot a frissített PDF dokumentum mentéséhez, megadva a kimeneti fájl elérési útját.
+ V: A 7. lépésben a`Save` módszere a`Document` objektumot a frissített PDF dokumentum mentéséhez, megadva a kimeneti fájl elérési útját.
 
 #### K: Mi a jelentősége a betűtípusok beágyazásának egy PDF dokumentumba?
 

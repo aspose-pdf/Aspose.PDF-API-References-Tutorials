@@ -2,84 +2,128 @@
 title: Définir la police par défaut dans le fichier PDF
 linktitle: Définir la police par défaut dans le fichier PDF
 second_title: Référence de l'API Aspose.PDF pour .NET
-description: Découvrez comment définir la police par défaut dans un fichier PDF à l'aide d'Aspose.PDF pour .NET avec ce guide étape par étape.
+description: Découvrez comment définir une police par défaut dans les fichiers PDF à l'aide d'Aspose.PDF pour .NET grâce à ce guide étape par étape. Idéal pour les développeurs souhaitant améliorer leurs documents PDF.
 type: docs
 weight: 280
 url: /fr/net/programming-with-document/setdefaultfont/
 ---
-Si vous travaillez avec des documents PDF dans .NET, vous pouvez rencontrer des problèmes lorsque la police utilisée dans le PDF n'est pas disponible sur le système sur lequel il est affiché ou imprimé. Cela peut entraîner un affichage incorrect du texte ou son absence. Aspose.PDF pour .NET fournit une solution à ce problème en vous permettant de définir une police par défaut pour le document. Dans cet exemple, comment définir la police par défaut à l'aide d'Aspose.PDF pour .NET.
+## Introduction
 
-## Étape 1 : définir le chemin d’accès au répertoire du document
+Avez-vous déjà ouvert un document PDF et découvert que les polices manquaient ou ne s'affichaient pas correctement ? Cela peut être frustrant, n'est-ce pas ? Eh bien, n'ayez crainte ! Dans ce tutoriel, nous allons découvrir comment définir une police par défaut dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. Cette puissante bibliothèque vous permet de manipuler facilement des documents PDF, et la définition d'une police par défaut n'est qu'une des nombreuses fonctionnalités qu'elle offre. Alors, prenez votre chapeau de codeur et commençons !
 
-nous devons définir le chemin d'accès au répertoire où se trouve notre document PDF. Nous allons stocker ce chemin dans une variable appelée "dataDir".
+## Prérequis
+
+Avant de passer au code, vous devez mettre en place quelques éléments :
+
+1. Visual Studio : assurez-vous que Visual Studio est installé sur votre ordinateur. Il s'agit du meilleur IDE pour le développement .NET.
+2.  Aspose.PDF pour .NET : vous devez télécharger et installer la bibliothèque Aspose.PDF. Vous pouvez la trouver[ici](https://releases.aspose.com/pdf/net/).
+3. Connaissances de base de C# : une petite familiarité avec la programmation C# contribuera grandement à la compréhension des exemples que nous aborderons.
+
+## Paquets d'importation
+
+Pour commencer, vous devez importer les packages nécessaires dans votre projet C#. Voici comment procéder :
+
+1. Ouvrez votre projet Visual Studio.
+2. Cliquez avec le bouton droit sur votre projet dans l'Explorateur de solutions et sélectionnez « Gérer les packages NuGet ».
+3.  Rechercher`Aspose.PDF` et installez la dernière version.
+
+Une fois le package installé, vous êtes prêt à commencer à coder !
+
+## Étape 1 : Configurez votre projet
+
+### Créer un nouveau projet
+
+Tout d’abord, créons un nouveau projet C# dans Visual Studio :
+
+- Ouvrez Visual Studio et sélectionnez « Créer un nouveau projet ».
+- Choisissez « Application console (.NET Core) » et cliquez sur « Suivant ».
+-  Nommez votre projet (par exemple,`AsposePdfExample`) et cliquez sur « Créer ».
+
+### Ajouter des directives d'utilisation
+
+ Maintenant, ajoutons les directives d'utilisation nécessaires en haut de votre`Program.cs` déposer:
 
 ```csharp
-// Le chemin vers le répertoire des documents.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System.IO;
 ```
+
+Ces directives vous permettront d'accéder aux classes et méthodes Aspose.PDF.
 
 ## Étape 2 : Charger le document PDF
 
- Nous allons commencer par charger un document PDF existant dont les polices sont manquantes. Dans cet exemple, nous supposerons que le document PDF se trouve dans le répertoire spécifié par le`dataDir` variable.
+### Spécifier le chemin du document
+
+Ensuite, vous devrez spécifier le chemin d'accès au document PDF avec lequel vous souhaitez travailler. Voici comment procéder :
 
 ```csharp
-string documentName = dataDir + "input.pdf";
-using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
-using (Document document = new Document(fs))
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Remplacez par votre répertoire actuel
+string documentName = Path.Combine(dataDir, "input.pdf");
+```
+
+ Assurez-vous de remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin réel où se trouve votre fichier PDF.
+
+### Charger le document
+
+Maintenant, chargeons le document PDF existant :
+
+```csharp
+using (FileStream fs = new FileStream(documentName, FileMode.Open))
 {
-    // le code va ici
+    Document document = new Document(fs);
 }
 ```
+
+ Cet extrait de code ouvre le fichier PDF et crée un`Document` objet que vous pouvez manipuler.
 
 ## Étape 3 : définir la police par défaut
 
- Ensuite, nous allons définir la police par défaut pour le document PDF à l'aide de la`PdfSaveOptions`classe. Dans cet exemple, nous allons définir la police par défaut sur « Arial ».
+### Créer un PDFSaveOptions
+
+ Vient maintenant la partie passionnante ! Vous devrez créer une instance de`PdfSaveOptions` pour spécifier la police par défaut :
 
 ```csharp
 PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
+```
+
+### Spécifier le nom de la police par défaut
+
+Ensuite, vous allez définir le nom de la police par défaut. Pour cet exemple, nous utiliserons « Arial » :
+
+```csharp
 pdfSaveOptions.DefaultFontName = "Arial";
 ```
 
-## Étape 4 : Enregistrez le document mis à jour
+Cette ligne indique à Aspose.PDF d'utiliser Arial comme police par défaut pour tout texte qui n'a pas de police spécifiée.
 
-Enfin, nous allons enregistrer le document mis à jour dans un nouveau fichier. Dans cet exemple, nous allons enregistrer le document mis à jour dans un fichier nommé « output_out.pdf » dans le même répertoire que le fichier d'entrée.
+## Étape 4 : Enregistrer le document
 
-```csharp
-document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
-```
-
-### Exemple de code source pour définir la police par défaut à l'aide d'Aspose.PDF pour .NET
+Enfin, il est temps d’enregistrer le document PDF modifié avec la nouvelle police par défaut :
 
 ```csharp
-// Le chemin vers le répertoire des documents.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Charger un document PDF existant avec une police manquante
-string documentName = dataDir + "input.pdf";
-string newName = "Arial";
-using (System.IO.FileStream fs = new System.IO.FileStream(documentName, System.IO.FileMode.Open))
-using (Document document = new Document(fs))
-{
-	PdfSaveOptions pdfSaveOptions = new PdfSaveOptions();
-	// Spécifier le nom de la police par défaut
-	pdfSaveOptions.DefaultFontName = newName;
-	document.Save(dataDir + "output_out.pdf", pdfSaveOptions);
-}
+document.Save(Path.Combine(dataDir, "output_out.pdf"), pdfSaveOptions);
 ```
+
+ Cette ligne enregistre le document sous`output_out.pdf` dans le répertoire spécifié.
 
 ## Conclusion
 
-La définition d'une police par défaut dans les documents PDF à l'aide d'Aspose.PDF pour .NET est un moyen simple et efficace de garantir que le texte s'affiche correctement, même si les polices d'origine ne sont pas disponibles. En suivant le guide étape par étape et en utilisant le code source C# fourni, les développeurs peuvent facilement définir la police par défaut et créer des PDF qui offrent une expérience d'affichage cohérente et fiable dans différents environnements. Cette fonctionnalité est particulièrement utile dans les scénarios où les PDF seront visualisés ou imprimés sur différents systèmes sur lesquels différents jeux de polices peuvent être installés.
+Et voilà ! Vous avez réussi à définir une police par défaut dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. Cette fonctionnalité simple mais puissante peut vous aider à garantir que vos documents s'affichent exactement comme vous le souhaitez, même lorsque les polices sont manquantes. Ainsi, la prochaine fois que vous rencontrerez un PDF avec des problèmes de police, vous saurez exactement quoi faire !
 
-### FAQ sur la définition de la police par défaut dans un fichier PDF
+## FAQ
 
-#### Q : Pourquoi est-il important de définir une police par défaut dans les documents PDF ?
+### Qu'est-ce qu'Aspose.PDF pour .NET ?
+Aspose.PDF pour .NET est une bibliothèque qui permet aux développeurs de créer, manipuler et convertir des documents PDF par programmation.
 
-R : Il est important de définir une police par défaut dans les documents PDF, car cela garantit que le texte s'affichera correctement même si les polices d'origine ne sont pas disponibles sur le système sur lequel le PDF est visualisé ou imprimé. Cela permet d'éviter des problèmes tels que le texte manquant ou illisible, garantissant ainsi une expérience de visualisation cohérente et fiable.
+### Puis-je utiliser d’autres polices en plus d’Arial ?
+Oui, vous pouvez spécifier n’importe quelle police installée sur votre système comme police par défaut.
 
-#### Q : Puis-je choisir n’importe quelle police comme police par défaut en utilisant Aspose.PDF pour .NET ?
+### L'utilisation d'Aspose.PDF est-elle gratuite ?
+Aspose.PDF propose un essai gratuit, mais pour bénéficier de toutes les fonctionnalités, vous devrez acheter une licence.
 
- R : Oui, vous pouvez choisir n'importe quelle police disponible sur le système comme police par défaut à l'aide d'Aspose.PDF pour .NET. Spécifiez simplement le nom de la police dans le champ`DefaultFontName` propriété de la`PdfSaveOptions` classe.
+### Où puis-je trouver plus de documentation ?
+ Vous trouverez une documentation complète[ici](https://reference.aspose.com/pdf/net/).
 
-#### Q : Que se passe-t-il si la police par défaut spécifiée n’est pas disponible sur le système ?
-
-R : Si la police par défaut spécifiée n'est pas disponible sur le système, le visualiseur PDF utilisera une police de secours pour afficher le texte. Il est conseillé de choisir une police couramment utilisée, comme Arial ou Times New Roman, pour garantir la compatibilité entre les différents systèmes.
+### Comment puis-je obtenir de l'aide pour Aspose.PDF ?
+ Vous pouvez obtenir de l'aide via le forum Aspose[ici](https://forum.aspose.com/c/pdf/10).

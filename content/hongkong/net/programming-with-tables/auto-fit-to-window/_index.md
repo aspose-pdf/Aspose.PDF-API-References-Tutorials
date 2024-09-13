@@ -40,7 +40,7 @@ Page sec1 = doc.Pages.Add();
 Aspose.Pdf.Table tab1 = new Aspose.Pdf.Table();
 ```
 
-接下來，將該表新增到該部分的段落集合中。
+接下來，將表格新增到該部分的段落集合中。
 
 ```csharp
 sec1.Paragraphs.Add(tab1);

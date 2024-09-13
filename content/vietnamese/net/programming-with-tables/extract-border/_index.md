@@ -149,7 +149,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 
 		if (opSaveState != null)
 		{
-			//Lưu trạng thái trước đó và đẩy trạng thái hiện tại lên đầu ngăn xếp
+			// Lưu trạng thái trước đó và đẩy trạng thái hiện tại lên đầu ngăn xếp
 			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
@@ -243,7 +243,7 @@ A: Trích xuất đường viền từ tệp PDF có thể hữu ích cho nhiề
 
 #### H: Tôi có thể trích xuất đường viền từ các trang hoặc khu vực cụ thể trong tài liệu PDF không?
 
-A: Có, bạn có thể sửa đổi mã nguồn C# được cung cấp để trích xuất đường viền từ các trang hoặc vùng cụ thể trong tài liệu PDF. Bằng cách thao tác`doc.Pages` thu thập và chỉ định tiêu chí tùy chỉnh, bạn có thể chọn trích xuất đường viền từ các trang hoặc khu vực quan tâm cụ thể.
+ A: Có, bạn có thể sửa đổi mã nguồn C# được cung cấp để trích xuất đường viền từ các trang hoặc vùng cụ thể trong tài liệu PDF. Bằng cách thao tác`doc.Pages` thu thập và chỉ định tiêu chí tùy chỉnh, bạn có thể chọn trích xuất đường viền từ các trang hoặc khu vực quan tâm cụ thể.
 
 #### H: Làm thế nào để tùy chỉnh định dạng và chất lượng hình ảnh đầu ra?
 

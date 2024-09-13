@@ -53,7 +53,7 @@ V tomto článku jsme prozkoumali, jak generovat MobiXML z PDF pomocí knihovny 
 
 ## FAQ
 
-### Jak mohu získat Aspose.PDF pro Java?
+### Jak mohu získat Aspose.PDF pro Javu?
 
  Aspose.PDF pro Java si můžete stáhnout z odkazu na vydání:[Aspose.PDF pro stahování Java](https://releases.aspose.com/pdf/java/).
 

@@ -2,145 +2,121 @@
 title: 이미지 배치
 linktitle: 이미지 배치
 second_title: .NET API 참조를 위한 Aspose.PDF
-description: Aspose.PDF for .NET을 사용하여 PDF 문서에 이미지를 배치하는 방법을 알아보세요.
+description: Aspose.PDF for .NET을 사용하여 PDF 문서에서 이미지 배치를 추출하고 조작하는 방법을 알아보세요. 예제와 코드 조각이 있는 단계별 가이드.
 type: docs
 weight: 170
 url: /ko/net/programming-with-images/image-placements/
 ---
-이 튜토리얼에서는 .NET용 Aspose.PDF 라이브러리를 사용하여 PDF 문서로 작업하고 이미지에 대한 작업을 수행합니다. PDF 문서를 로드하고 이미지 배치 정보를 추출하고 치수가 표시된 이미지를 검색합니다.
+## 소개
 
-## 1단계: 환경 설정
-시작하기 전에 다음 사항으로 개발 환경을 설정했는지 확인하세요.
-- 컴퓨터에 .NET용 Aspose.PDF가 설치되어 있습니다.
-- AC# 프로젝트를 사용할 준비가 되었습니다.
+PDF 파일에서 이미지 작업은 까다로울 수 있지만 Aspose.PDF for .NET을 사용하면 땀 한 방울 흘리지 않고도 이미지 속성을 쉽게 조작하고 추출할 수 있습니다. 이미지 크기를 가져오거나, 추출하거나, 해상도와 같은 다른 속성을 검색하든 Aspose.PDF에는 필요한 도구가 있습니다. 이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 PDF 문서에서 이미지 배치를 추출하는 방법에 대한 단계별 가이드를 안내합니다. 패키지 가져오기부터 너비, 높이, 해상도와 같은 이미지 속성 검색까지 모든 것을 다룹니다.
 
-## 2단계: PDF 문서 로딩
-시작하려면 처리하려는 PDF 문서를 로드해야 합니다. PDF 문서가 들어 있는 디렉토리로 가는 올바른 경로가 있는지 확인하세요.
+## 필수 조건
+
+튜토리얼로 넘어가기 전에 몇 가지 준비해야 할 사항이 있습니다. 간단한 체크리스트는 다음과 같습니다.
+
+1.  .NET용 Aspose.PDF: .NET용 Aspose.PDF 라이브러리를 설치했는지 확인하세요. 다운로드할 수 있습니다.[여기](https://releases.aspose.com/pdf/net/).
+2. 개발 환경: 컴퓨터에 Visual Studio나 기타 .NET 지원 IDE가 설치되어 있어야 합니다.
+3. PDF 문서: 이미지가 포함된 샘플 PDF 문서를 준비하세요. 이 예에서는 다음 이름의 파일을 사용하겠습니다.`ImagePlacement.pdf`.
+4. 기본 C# 지식: 이 가이드는 초보자에게 친화적이기는 하지만, C#에 대한 기본 지식이 있다면 코드 조각을 더 잘 이해하는 데 도움이 될 것입니다.
+
+## 패키지 가져오기
+
+코드의 핵심을 살펴보기 전에 먼저 필요한 네임스페이스를 가져와야 합니다. 이러한 패키지는 Aspose.PDF for .NET에서 PDF 문서 작업과 이미지 조작에 필수적입니다.
 
 ```csharp
-// 문서 디렉토리의 경로입니다.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// 소스 PDF 문서를 로드합니다
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "PlacementImage.pdf");
+using System.IO;
+using Aspose.Pdf;
+using System;
+using System.Drawing;
 ```
 
- 반드시 교체하세요`"YOUR DOCUMENTS DIRECTORY"` PDF 파일이 들어 있는 문서 디렉토리의 실제 경로를 입력합니다.
+이 패키지를 사용하면 PDF 작업이 가능합니다.`Aspose.Pdf`), 이미지 배치를 조작합니다(`Aspose.Pdf.ImagePlacement`), 이미지 스트림과 그래픽을 처리합니다.`System.Drawing` 그리고`System.IO`).
 
-## 3단계: 이미지에서 배치 정보 추출
- 이제 PDF 문서를 로드했으므로 이미지에서 배치 정보를 추출할 수 있습니다. 다음을 사용합니다.`ImagePlacementAbsorber`문서의 첫 페이지에서 이미지 위치를 흡수합니다.
+이제 필수 구성 요소와 패키지가 준비되었으니 튜토리얼의 각 부분을 간단하고 따라하기 쉬운 가이드로 나누어 보겠습니다.
+
+## 1단계: PDF 문서 로드
+
+첫 번째 단계는 PDF 문서를 프로젝트에 로드하는 것입니다. 이는 PDF 파일 내의 이미지 작업을 위한 기초가 될 것입니다.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY"; 
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "ImagePlacement.pdf");
+```
+
+ 이 단계에서는 다음을 사용하여 PDF 문서의 파일 경로를 정의합니다.`dataDir`그리고 새로운 인스턴스를 생성합니다.`Aspose.Pdf.Document` 클래스. 이렇게 하면 PDF 파일을 프로그램에 로드할 수 있습니다. 간단하죠? 책을 열어서 읽기 시작하는 것처럼, 이제 안에 있는 내용을 탐색할 준비가 되었습니다.
+
+## 2단계: 이미지 배치 흡수기 초기화
+
+이미지를 추출하려면 "이미지 배치 흡수기"라는 것이 필요합니다. 특정 페이지의 모든 이미지 정보를 흡수하는 도구라고 생각하면 됩니다.
 
 ```csharp
 ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
-// 첫 번째 페이지의 내용을 로드합니다.
+```
+
+ 여기서 우리는 인스턴스를 생성하고 있습니다`ImagePlacementAbsorber`. 이 객체는 특정 PDF 페이지의 모든 이미지 배치에 대한 정보를 수집하고 저장합니다. 돋보기로 페이지를 스캔하고 그 안의 모든 이미지를 식별하는 것과 같다고 상상해보세요!
+
+## 3단계: 첫 번째 페이지에서 흡수체 수락
+
+다음으로, 우리는 흡수체에 PDF의 어느 페이지를 스캔할지 알려줘야 합니다. 이 예에서는 첫 번째 페이지에 집중하겠습니다.
+
+```csharp
 doc.Pages[1].Accept(abs);
 ```
 
-이제 문서의 첫 페이지에서 이미지 배치 정보를 추출했습니다.
+ 그만큼`Accept` 이 방법은 PDF 문서의 첫 번째 페이지를 스캔하여 이미지를 찾고 결과를 내부에 저장합니다.`ImagePlacementAbsorber`그것은 돋보기에게 이미지를 어디에서 찾아야 할지 알려주는 것과 같습니다.
 
-## 4단계: 눈에 보이는 크기의 이미지 검색
-이제 앞서 추출한 배치 정보에서 눈에 보이는 크기가 있는 이미지를 검색해 보겠습니다.
+## 4단계: 각 이미지 배치를 반복합니다.
+
+이제 페이지를 스캔했으므로 페이지에서 발견된 각 이미지를 반복하여 속성을 검색해야 합니다.
 
 ```csharp
-foreach(ImagePlacement imagePlacement in abs.ImagePlacements)
-{
-     // 이미지 속성 가져오기
-     Console.Out.WriteLine("Image Width: " + imagePlacement.Rectangle.Width);
-     Console.Out.WriteLine("Image Height: " + imagePlacement.Rectangle.Height);
-     Console.Out.WriteLine("LLX of image: " + imagePlacement.Rectangle.LLX);
-     Console.Out.WriteLine("LLY of image: " + imagePlacement.Rectangle.LLY);
-     Console.Out.WriteLine("Horizontal resolution of the image
-
-  : " + imagePlacement.Resolution.X);
-     Console.Out.WriteLine("Vertical image resolution: " + imagePlacement.Resolution.Y);
-
-     // 눈에 보이는 크기로 이미지를 검색합니다.
-     Bitmap scaledImage;
-     using (MemoryStream imageStream = new MemoryStream())
-     {
-         // 리소스에서 이미지를 가져옵니다
-         imagePlacement.Image.Save(imageStream, System.Drawing.Imaging.ImageFormat.Png);
-         Bitmap resourceImage = (Bitmap)Bitmap.FromStream(imageStream);
-
-         // 실제 치수로 이미지를 만듭니다.
-         scaledImage = new Bitmap(resourceImage, (int)imagePlacement.Rectangle.Width, (int)imagePlacement.Rectangle.Height);
-     }
-}
-```
-
-이 루프에서 우리는 각 이미지의 속성, 예를 들어 너비, 높이, 왼쪽 아래 모서리의 X 및 Y 좌표, 수평 및 수직 해상도를 검색합니다. 그런 다음 배치 정보를 사용하여 각 이미지의 보이는 치수를 검색합니다.
-
-### .NET용 Aspose.PDF를 사용한 이미지 배치를 위한 샘플 소스 코드 
-```csharp
-// 문서 디렉토리의 경로입니다.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// 소스 PDF 문서를 로드합니다
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "ImagePlacement.pdf");
-ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
-// 첫 번째 페이지의 내용을 로드합니다.
-doc.Pages[1].Accept(abs);
 foreach (ImagePlacement imagePlacement in abs.ImagePlacements)
 {
-	// 이미지 속성 가져오기
-	Console.Out.WriteLine("image width:" + imagePlacement.Rectangle.Width);
-	Console.Out.WriteLine("image height:" + imagePlacement.Rectangle.Height);
-	Console.Out.WriteLine("image LLX:" + imagePlacement.Rectangle.LLX);
-	Console.Out.WriteLine("image LLY:" + imagePlacement.Rectangle.LLY);
-	Console.Out.WriteLine("image horizontal resolution:" + imagePlacement.Resolution.X);
-	Console.Out.WriteLine("image vertical resolution:" + imagePlacement.Resolution.Y);
-	// 눈에 보이는 치수로 이미지 검색
-	Bitmap scaledImage;
-	using (MemoryStream imageStream = new MemoryStream())
-	{
-		// 리소스에서 이미지 검색
-		imagePlacement.Image.Save(imageStream, System.Drawing.Imaging.ImageFormat.Png);
-		Bitmap resourceImage = (Bitmap)Bitmap.FromStream(imageStream);
-		//실제 크기로 비트맵을 만듭니다.
-		scaledImage = new Bitmap(resourceImage, (int)imagePlacement.Rectangle.Width, (int)imagePlacement.Rectangle.Height);
-	}
+    Console.Out.WriteLine("image width:" + imagePlacement.Rectangle.Width);
+    Console.Out.WriteLine("image height:" + imagePlacement.Rectangle.Height);
+    Console.Out.WriteLine("image LLX:" + imagePlacement.Rectangle.LLX);
+    Console.Out.WriteLine("image LLY:" + imagePlacement.Rectangle.LLY);
+    Console.Out.WriteLine("image horizontal resolution:" + imagePlacement.Resolution.X);
+    Console.Out.WriteLine("image vertical resolution:" + imagePlacement.Resolution.Y);
 }
 ```
 
+이 루프는 페이지에서 찾은 각 이미지를 살펴봅니다. 우리는 이미지의 너비, 높이, 왼쪽 아래 x(LLX), 왼쪽 아래 y(LLY) 및 해상도(수평 및 수직 모두)를 인쇄합니다. 이러한 세부 정보는 PDF 내에서 각 이미지의 크기와 위치를 이해하는 데 도움이 됩니다.
+
+## 5단계: 보이는 치수로 이미지 추출
+
+이미지에 대한 정보를 수집한 후 실제 이미지와 크기를 추출하고 싶을 수 있습니다. 방법은 다음과 같습니다.
+
+```csharp
+Bitmap scaledImage;
+using (MemoryStream imageStream = new MemoryStream())
+{
+    imagePlacement.Image.Save(imageStream, System.Drawing.Imaging.ImageFormat.Png);
+    Bitmap resourceImage = (Bitmap)Bitmap.FromStream(imageStream);
+    scaledImage = new Bitmap(resourceImage, (int)imagePlacement.Rectangle.Width, (int)imagePlacement.Rectangle.Height);
+}
+```
+
+ 이 코드 조각은 PDF에서 이미지를 검색하여 정의된 실제 치수에 맞게 크기를 조정합니다.`ImagePlacement` 객체. 메모리 스트림에 이미지를 저장하고 크기를 조정하면 추출한 이미지가 PDF에 표시된 정확한 크기를 유지하도록 할 수 있습니다.
+
 ## 결론
-축하합니다! 이제 Aspose.PDF for .NET을 사용하여 PDF 문서에서 이미지 배치를 수행하는 방법을 배웠습니다. 제공된 C# 소스 코드를 설명했는데, 이를 통해 PDF 문서를 로드하고, 이미지에서 배치 정보를 추출하고, 치수가 표시된 이미지를 검색할 수 있습니다. Aspose.PDF를 더 많이 실험하여 다른 많은 기능을 살펴보세요.
 
-### 자주 묻는 질문
+Aspose.PDF for .NET을 사용하여 PDF 문서에서 이미지 배치를 추출하는 것은 단계별로 나누어 보면 매우 간단합니다. PDF를 로드하는 것부터 이미지 속성을 검색하고 실제 치수로 이미지를 추출하는 것까지 모든 것을 다루었습니다. Aspose.PDF는 PDF 작업과 콘텐츠 조작을 매우 간단하게 만들어 이미지, 텍스트 등을 효율적으로 작업할 수 있게 해줍니다.
 
-#### 질문: Aspose.PDF for .NET을 사용하여 PDF 문서에서 이미지 배치 정보를 추출하는 목적은 무엇입니까?
+## 자주 묻는 질문
 
-A: 이미지 배치 정보를 추출하면 PDF 문서 내 이미지의 위치, 크기 및 해상도를 검색할 수 있습니다. 이 정보는 정확한 이미지 조작 및 분석에 필수적입니다.
+### PDF의 특정 페이지에서 이미지를 추출할 수 있나요?  
+ 네, 사용 시 페이지 번호를 지정하여`Accept` 이 방법을 사용하면 특정 페이지에 집중할 수 있습니다.
 
-#### 질문: .NET용 Aspose.PDF는 어떻게 PDF 문서에서 이미지 배치 정보를 추출할 수 있게 하나요?
+### 추출에 지원되는 이미지 형식은 무엇입니까?  
+Aspose.PDF는 PNG, JPEG, BMP 등 다양한 형식을 지원합니다.
 
- A: Aspose.PDF for .NET은 다음을 제공합니다.`ImagePlacementAbsorber`PDF 문서에서 이미지 배치 세부 정보를 흡수하는 데 사용할 수 있는 클래스입니다. 제공된 코드는 이 클래스를 사용하여 이미지 배치 정보를 검색하는 방법을 보여줍니다.
+### 추출된 이미지를 조작하는 것이 가능할까?  
+ 물론입니다! 추출한 후에는 다음을 사용할 수 있습니다.`System.Drawing` 이미지를 조작하기 위한 네임스페이스.
 
-#### 질문: 실제 시나리오에서 이미지 배치 정보를 어떻게 사용할 수 있나요?
+### 암호로 보호된 PDF에서 이미지를 추출할 수 있나요?  
+네, 가능합니다. 하지만 이미지를 추출하기 전에 적절한 자격 증명을 사용하여 PDF의 잠금을 해제해야 합니다.
 
-답변: 이미지 배치 정보는 정확한 이미지 정렬 보장, 이미지 크기 계산, 이미지 품질 확인, PDF 문서 내 이미지 사용에 대한 보고서 생성 등의 작업에 유용합니다.
-
-#### 질문: 코드 샘플은 어떻게 이미지 배치 정보를 정확하게 추출합니까?
-
- A: 코드 샘플은 다음을 사용합니다.`ImagePlacementAbsorber` 지정된 페이지의 내용을 탐색하고, 이미지 배치를 식별하고, 너비, 높이, 좌표, 해상도와 같은 속성을 검색하는 클래스입니다.
-
-#### 질문: 여러 페이지나 문서에 있는 이미지를 처리하도록 코드를 확장할 수 있나요?
-
-대답: 네, 여러 페이지나 문서를 반복하여 이미지 배치 정보를 추출하고 이미지 관련 작업을 수행함으로써 코드를 확장할 수 있습니다.
-
-#### 질문: 코드는 배치 정보에 따라 보이는 크기로 이미지를 어떻게 검색합니까?
-
-답변: 코드 샘플은 리소스에서 이미지 데이터를 추출하고, 실제 크기로 비트맵 이미지를 생성하고, 너비, 높이, 좌표, 해상도와 같은 속성을 제공합니다.
-
-#### 질문: 이 접근 방식은 많은 이미지가 포함된 대용량 PDF 문서에 효율적인가요?
-
-A: 네, Aspose.PDF for .NET은 성능과 리소스 사용에 최적화되어 있습니다. 큰 PDF 문서에서도 이미지 배치 정보를 효율적으로 추출합니다.
-
-#### 질문: 개발자는 이미지 배치 정보를 이해하고 활용하는 것으로 어떤 이점을 얻을 수 있습니까?
-
-A: 개발자는 PDF 문서 내에서 정확한 이미지 조작, 정렬 및 분석을 보장할 수 있습니다. 이 정보를 통해 이미지 처리, 보고 및 품질 보증을 위한 애플리케이션을 만들 수 있습니다.
-
-#### 질문: 코드를 사용자 정의하여 추가적인 이미지 관련 속성이나 메타데이터를 추출할 수 있나요?
-
-물론입니다. Aspose.PDF for .NET에서 제공하는 적절한 클래스와 메서드를 활용하면 이미지 유형, 색상 공간, 압축 등의 추가 속성을 추출하도록 코드를 향상할 수 있습니다.
-
-#### 질문: 이 튜토리얼에서 제시된 결론의 중요성은 무엇입니까?
-
-A: 결론에서는 튜토리얼의 내용을 요약하고 Aspose.PDF for .NET을 더욱 탐색하여 이미지 배치를 넘어 다양한 PDF 관련 작업으로의 문을 여는 기능을 활용하도록 권장합니다.
+### .NET용 Aspose.PDF는 모든 .NET 프레임워크에서 작동합니까?  
+네, .NET Framework, .NET Core, .NET 5 이상을 지원합니다.

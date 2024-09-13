@@ -1,6 +1,6 @@
 ---
-title: Hozzon létre PDF A1-et az Aspose Pdf segítségével
-linktitle: Hozzon létre PDF A1-et az Aspose Pdf segítségével
+title: Hozzon létre PDF A1-et az Aspose PDF-el
+linktitle: Hozzon létre PDF A1-et az Aspose PDF-el
 second_title: Aspose.PDF for .NET API Reference
 description: Ebből a részletes oktatóanyagból megtudhatja, hogyan hozhat létre PDF/A-1 fájlokat az Aspose.PDF for .NET segítségével. Lépésről lépésre, kódpéldákkal és magyarázatokkal.
 type: docs

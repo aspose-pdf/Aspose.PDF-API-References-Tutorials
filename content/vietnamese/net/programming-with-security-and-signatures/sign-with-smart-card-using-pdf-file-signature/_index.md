@@ -2,154 +2,167 @@
 title: Ký bằng thẻ thông minh sử dụng chữ ký tệp PDF
 linktitle: Ký bằng thẻ thông minh sử dụng chữ ký tệp PDF
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Ký tệp PDF của bạn một cách an toàn bằng thẻ thông minh bằng Aspose.PDF cho .NET.
+description: Tìm hiểu cách ký tệp PDF bằng thẻ thông minh với Aspose.PDF cho .NET. Thực hiện theo hướng dẫn từng bước này để có chữ ký số an toàn.
 type: docs
 weight: 110
 url: /vi/net/programming-with-security-and-signatures/sign-with-smart-card-using-pdf-file-signature/
 ---
-Ký số bằng thẻ thông minh là cách an toàn để ký tệp PDF. Với Aspose.PDF cho .NET, bạn có thể dễ dàng ký tệp PDF bằng thẻ thông minh bằng cách làm theo mã nguồn sau:
+## Giới thiệu
 
-## Bước 1: Nhập thư viện cần thiết
+Trong thời đại kỹ thuật số, việc bảo mật tài liệu trở nên quan trọng hơn bao giờ hết. Cho dù đó là hợp đồng, thỏa thuận hay bất kỳ thông tin nhạy cảm nào, việc đảm bảo rằng tài liệu là xác thực và không bị giả mạo là điều tối quan trọng. Hãy nhập chữ ký số! Hôm nay, chúng ta sẽ đi sâu vào cách ký tệp PDF bằng thẻ thông minh với Aspose.PDF cho .NET. Thư viện mạnh mẽ này cho phép các nhà phát triển thao tác và tạo tài liệu PDF hiệu quả, bao gồm cả việc thêm chữ ký số an toàn. Vì vậy, hãy lấy thẻ thông minh của bạn và bắt đầu thôi!
 
-Trước khi bắt đầu, bạn cần nhập các thư viện cần thiết cho dự án C# của mình. Sau đây là các chỉ thị nhập cần thiết:
+## Điều kiện tiên quyết
+
+Trước khi đi sâu vào chi tiết về việc ký tệp PDF, hãy đảm bảo bạn có mọi thứ cần thiết. Sau đây là danh sách kiểm tra để giúp bạn chuẩn bị:
+
+1.  Aspose.PDF cho .NET: Đảm bảo bạn đã cài đặt thư viện Aspose.PDF. Bạn có thể tải xuống từ[địa điểm](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: Môi trường phát triển nơi bạn có thể viết và chạy mã .NET.
+3. Thẻ thông minh: Bạn sẽ cần một thẻ thông minh đã cài đặt chứng chỉ số hợp lệ.
+4. Hiểu biết cơ bản về C#: Sự quen thuộc với lập trình C# sẽ có lợi vì chúng ta sẽ viết các đoạn mã bằng ngôn ngữ này.
+5. Tài liệu PDF: Một tệp PDF mẫu (như`blank.pdf`) để kiểm tra quy trình ký của chúng tôi.
+
+Với những điều kiện tiên quyết này, bạn đã sẵn sàng để bắt tay vào viết mã!
+
+## Nhập gói
+
+Trước tiên, hãy nhập các gói cần thiết. Bạn sẽ cần thêm tham chiếu đến thư viện Aspose.PDF trong dự án của mình. Sau đây là cách bạn có thể thực hiện:
+
+1. Mở Visual Studio.
+2. Tạo một dự án mới hoặc mở một dự án hiện có.
+3.  Nhấp chuột phải vào dự án của bạn trong Solution Explorer và chọn`Manage NuGet Packages`.
+4.  Tìm kiếm`Aspose.PDF` và cài đặt phiên bản mới nhất.
 
 ```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Facades;
-using Aspose.Pdf.Forms;
-using System.Security.Cryptography.X509Certificates;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Bước 2: Đặt đường dẫn đến thư mục tài liệu
+Bây giờ chúng ta đã nhập các gói cần thiết, hãy cùng phân tích mã theo từng bước.
 
- Ở bước này, bạn cần chỉ định đường dẫn đến thư mục chứa tệp PDF mà bạn muốn ký. Thay thế`"YOUR DOCUMENTS DIRECTORY"` trong đoạn mã sau với đường dẫn thực tế đến thư mục tài liệu của bạn:
+## Bước 1: Thiết lập tài liệu của bạn
+
+Bước đầu tiên trong quy trình của chúng tôi là thiết lập tài liệu PDF mà chúng tôi muốn ký. Sau đây là cách bạn có thể thực hiện:
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-```
-
-## Bước 3: Tải tài liệu PDF
-
-Bây giờ chúng ta sẽ tải tài liệu PDF cần ký bằng mã sau:
-
-```csharp
 Document doc = new Document(dataDir + "blank.pdf");
 ```
+ Trong đoạn mã này, chúng tôi xác định đường dẫn đến thư mục tài liệu của mình và tạo một phiên bản của`Document` lớp sử dụng tệp PDF mẫu có tên`blank.pdf` . Hãy chắc chắn thay thế`"YOUR DOCUMENTS DIRECTORY"` với đường dẫn thực tế nơi tệp PDF của bạn được lưu trữ.
 
-## Bước 4: Thực hiện chữ ký bằng thẻ thông minh
+## Bước 2: Khởi tạo PdfFileSignature
 
- Trong bước này, chúng tôi sẽ thực hiện chữ ký bằng thẻ thông minh bằng cách sử dụng`PdfFileSignature` lớp từ`Facades`thư viện. Chúng tôi chọn chứng chỉ thẻ thông minh từ kho chứng chỉ Windows và chỉ định thông tin ký cần thiết. Sau đây là mã tương ứng:
-
-```csharp
-using (PdfFileSignature pdfSign = new PdfFileSignature())
-{
-     pdfSign.BindPdf(doc);
-
-     // Chọn chứng chỉ trong cửa hàng
-     X509Store store = new X509Store(StoreLocation.CurrentUser);
-     store.Open(OpenFlags.ReadOnly);
-     X509Certificate2Collection sel = X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, X509SelectionFlag.SingleSelection);
-     ExternalSignature externalSignature = new ExternalSignature(sel[0]);
-
-     pdfSign.SignatureAppearance = dataDir + "demo.png";
-     pdfSign.Sign(1, "Reason", "Contact", "Location", true, new System.Drawing.Rectangle(100, 100, 200, 200), externalSignature);
-     pdfSign.Save(dataDir + "externalSignature2.pdf");
-}
-```
-
-## Bước 5: Xác minh chữ ký
-
- Cuối cùng, chúng tôi xác minh chữ ký của tệp PDF đã ký bằng cách sử dụng`PdfFileSignature` lớp. Chúng tôi lấy tên chữ ký và kiểm tra từng cái một. Nếu chữ ký không xác minh được, một ngoại lệ sẽ được đưa ra. Sau đây là mã tương ứng:
+ Tiếp theo, chúng ta sẽ khởi tạo`PdfFileSignature` lớp có trách nhiệm xử lý quá trình ký.
 
 ```csharp
-using (PdfFileSignature pdfSign = new PdfFileSignature(new Document(dataDir + "externalSignature2.pdf")))
-{
-     IList<string> sigNames = pdfSign. GetSignNames();
-     for (int index = 0; index <= sigNames.Count - 1; index++)
-     {
-         if (!pdfSign.VerifySigned(sigNames[index]) || !pdfSign.VerifySignature(sigNames[index]))
-         {
-             throw new ApplicationException("Unverified");
-         }
-     }
-}
-```
-
-### Mã nguồn mẫu cho Ký bằng thẻ thông minh sử dụng tệp PDF Chữ ký sử dụng Aspose.PDF cho .NET 
-```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-Document doc = new Document(dataDir + "blank.pdf");
 using (Facades.PdfFileSignature pdfSign = new Facades.PdfFileSignature())
 {
-	pdfSign.BindPdf(doc);
-	// Ký bằng lựa chọn chứng chỉ trong kho chứng chỉ Windows
-	System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
-	store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
-	// Chọn thủ công chứng chỉ trong cửa hàng
-	System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel = System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
-	Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0]);
-	pdfSign.SignatureAppearance = dataDir + "demo.png";
-	pdfSign.Sign(1, "Reason", "Contact", "Location", true, new System.Drawing.Rectangle(100, 100, 200, 200), externalSignature);
-	pdfSign.Save(dataDir + "externalSignature2.pdf");
-}
+    pdfSign.BindPdf(doc);
+```
+Ở đây, chúng ta tạo một thể hiện của`PdfFileSignature`và liên kết nó với tài liệu PDF của chúng tôi. Thao tác này chuẩn bị tài liệu để ký.
+
+## Bước 3: Truy cập vào Chứng chỉ thẻ thông minh
+
+Bây giờ đến phần quan trọng—truy cập chứng chỉ số được lưu trữ trên thẻ thông minh của bạn. Đây là cách chúng ta có thể thực hiện:
+
+### Mở kho chứng chỉ
+
+```csharp
+System.Security.Cryptography.X509Certificates.X509Store store = new System.Security.Cryptography.X509Certificates.X509Store(System.Security.Cryptography.X509Certificates.StoreLocation.CurrentUser);
+store.Open(System.Security.Cryptography.X509Certificates.OpenFlags.ReadOnly);
+```
+Chúng tôi mở kho chứng chỉ nằm trong hồ sơ người dùng hiện tại. Điều này cho phép chúng tôi truy cập các chứng chỉ được cài đặt trên máy của bạn, bao gồm cả các chứng chỉ trên thẻ thông minh của bạn.
+
+### Chọn chứng chỉ
+
+```csharp
+System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel =
+    System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(
+        store.Certificates, null, null, System.Security.Cryptography.X509Certificates.X509SelectionFlag.SingleSelection);
+```
+Mã này nhắc người dùng chọn một chứng chỉ từ bộ sưu tập. Giao diện người dùng sẽ hiển thị tất cả các chứng chỉ có sẵn, cho phép bạn chọn chứng chỉ được liên kết với thẻ thông minh của mình.
+
+## Bước 4: Tạo chữ ký bên ngoài
+
+Sau khi chọn chứng chỉ, bước tiếp theo là tạo chữ ký bên ngoài bằng chứng chỉ đã chọn.
+
+```csharp
+Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0]);
+```
+Ở đây, chúng ta tạo một thể hiện của`ExternalSignature` sử dụng chứng chỉ đã chọn. Đối tượng này sẽ được sử dụng để ký tài liệu PDF.
+
+## Bước 5: Thiết lập giao diện chữ ký
+
+Bây giờ, hãy thiết lập giao diện chữ ký của chúng ta. Đây là nơi bạn có thể tùy chỉnh giao diện chữ ký của mình trên tài liệu.
+
+```csharp
+pdfSign.SignatureAppearance = dataDir + "demo.png";
+```
+ Trong đoạn mã này, chúng tôi chỉ định giao diện của chữ ký bằng cách cung cấp đường dẫn đến tệp hình ảnh (như logo hoặc đồ họa chữ ký). Đảm bảo thay thế`"demo.png"` với hình ảnh thực tế mà bạn muốn sử dụng.
+
+## Bước 6: Ký vào PDF
+
+Khi mọi thứ đã sẵn sàng, đã đến lúc ký tài liệu PDF!
+
+```csharp
+pdfSign.Sign(1, "Reason", "Contact", "Location", true, new System.Drawing.Rectangle(100, 100, 200, 200), externalSignature);
+pdfSign.Save(dataDir + "externalSignature2.pdf");
+```
+Trong bước này, chúng ta gọi`Sign` phương pháp của chúng tôi`pdfSign` đối tượng. Sau đây là ý nghĩa của từng tham số:
+- `1`: Số trang mà chữ ký sẽ xuất hiện.
+- `"Reason"`: Lý do ký văn bản.
+- `"Contact"`: Thông tin liên lạc của người ký.
+- `"Location"`: Vị trí của người ký.
+- `true`: Chỉ ra liệu có nên tạo chữ ký có thể nhìn thấy được hay không.
+- `new System.Drawing.Rectangle(100, 100, 200, 200)`: Vị trí và kích thước của chữ ký trên PDF.
+- `externalSignature`: Đối tượng chữ ký mà chúng ta đã tạo trước đó.
+
+ Cuối cùng, chúng tôi lưu tài liệu đã ký dưới dạng`externalSignature2.pdf`.
+
+## Bước 7: Xác minh chữ ký
+
+Sau khi ký tài liệu, điều quan trọng là phải xác minh chữ ký có hợp lệ hay không. Sau đây là cách thực hiện:
+
+### Khởi tạo quy trình xác minh
+
+```csharp
 using (Facades.PdfFileSignature pdfSign = new Facades.PdfFileSignature(new Document(dataDir + "externalSignature2.pdf")))
 {
-	IList<string> sigNames = pdfSign.GetSignNames();
-	for (int index = 0; index <= sigNames.Count - 1; index++)
-	{
-		if (!pdfSign.VerifySigned(sigNames[index]) || !pdfSign.VerifySignature(sigNames[index]))
-		{
-			throw new ApplicationException("Not verified");
-		}
-	}
+    IList<string> sigNames = pdfSign.GetSignNames();
+```
+ Chúng tôi tạo một trường hợp mới của`PdfFileSignature` cho tài liệu đã ký. Sau đó, chúng tôi lấy tên của tất cả chữ ký có trong tài liệu.
+
+### Kiểm tra tính hợp lệ của chữ ký
+
+```csharp
+for (int index = 0; index <= sigNames.Count - 1; index++)
+{
+    if (!pdfSign.VerifySigned(sigNames[index]) || !pdfSign.VerifySignature(sigNames[index]))
+    {
+        throw new ApplicationException("Not verified");
+    }
 }
 ```
+Chúng tôi lặp qua từng tên chữ ký và xác minh tính hợp lệ của nó. Nếu bất kỳ chữ ký nào không xác minh được, một ngoại lệ sẽ được đưa ra, cho biết chữ ký đó không hợp lệ.
 
 ## Phần kết luận
 
-Xin chúc mừng! Bây giờ bạn đã có hướng dẫn từng bước để ký tệp PDF bằng thẻ thông minh sử dụng Aspose.PDF cho .NET. Bạn có thể sử dụng mã này để thêm chữ ký số an toàn vào tài liệu PDF của mình.
+Và bạn đã có nó! Bạn đã ký thành công một tài liệu PDF bằng thẻ thông minh với Aspose.PDF cho .NET. Quy trình này không chỉ bảo mật tài liệu của bạn mà còn thêm một lớp xác thực rất quan trọng trong thế giới kỹ thuật số ngày nay. Cho dù bạn đang xử lý hợp đồng, tài liệu pháp lý hay bất kỳ thông tin nhạy cảm nào, thì việc biết cách triển khai chữ ký số là một kỹ năng có giá trị. 
 
-Hãy nhớ xem tài liệu chính thức của Aspose.PDF để biết thêm thông tin về các tính năng quản lý chứng chỉ và chữ ký số nâng cao.
+## Câu hỏi thường gặp
 
-### Câu hỏi thường gặp
+### Aspose.PDF dành cho .NET là gì?
+Aspose.PDF for .NET là một thư viện mạnh mẽ cho phép các nhà phát triển tạo, chỉnh sửa và chuyển đổi tài liệu PDF trong các ứng dụng .NET.
 
-#### H: Tại sao tôi nên cân nhắc việc ký tệp PDF bằng thẻ thông minh?
+### Tôi có cần thẻ thông minh để ký tệp PDF không?
+Mặc dù thẻ thông minh không phải là bắt buộc, nhưng nó được khuyến khích sử dụng cho chữ ký số an toàn vì nó cung cấp thêm một lớp bảo mật.
 
-A: Việc ký các tệp PDF bằng thẻ thông minh giúp tăng cường bảo mật bằng cách đảm bảo tính xác thực và toàn vẹn của tài liệu. Chữ ký dựa trên thẻ thông minh mang lại mức độ tin cậy và tuân thủ cao hơn.
+### Tôi có thể sử dụng bất kỳ tệp PDF nào để ký không?
+Có, bạn có thể sử dụng bất kỳ tệp PDF nào, nhưng hãy đảm bảo tệp đó không được bảo vệ bằng mật khẩu. Nếu có, trước tiên bạn cần mở khóa.
 
-#### H: Chữ ký số dựa trên thẻ thông minh hoạt động như thế nào?
+### Nếu tôi không có chứng chỉ số thì sao?
+Bạn có thể lấy chứng chỉ số từ một cơ quan cấp chứng chỉ (CA) đáng tin cậy hoặc sử dụng chứng chỉ tự ký cho mục đích thử nghiệm.
 
-A: Ký số dựa trên thẻ thông minh liên quan đến việc sử dụng khóa mật mã được lưu trữ trên thẻ thông minh để tạo chữ ký số duy nhất. Chữ ký này được đính kèm vào tệp PDF, cho phép người nhận xác minh nguồn gốc và tính toàn vẹn của tài liệu.
-
-#### H: Vai trò của Aspose.PDF dành cho .NET trong việc ký kết dựa trên thẻ thông minh là gì?
-
-A: Aspose.PDF for .NET cung cấp một bộ công cụ và thư viện toàn diện để tạo điều kiện cho việc ký số dựa trên thẻ thông minh của các tệp PDF. Nó đơn giản hóa quy trình và đảm bảo việc ký tài liệu an toàn.
-
-#### H: Tôi có thể chọn chứng chỉ thẻ thông minh cụ thể để ký không?
-
-A: Có, bạn có thể chọn chứng chỉ thẻ thông minh cụ thể từ kho chứng chỉ Windows để ký. Aspose.PDF cho .NET cho phép bạn tích hợp liền mạch việc lựa chọn chứng chỉ vào ứng dụng của mình.
-
-#### H: Mã nguồn được cung cấp xử lý việc ký dựa trên thẻ thông minh như thế nào?
-
-A: Mã nguồn trình bày cách liên kết tài liệu PDF, chọn chứng chỉ thẻ thông minh, chỉ định thông tin ký và tạo chữ ký số. Mã nguồn cũng cho biết cách xác minh tính hợp lệ của chữ ký.
-
-#### H: Tôi có thể áp dụng nhiều chữ ký bằng thẻ thông minh trong một tệp PDF không?
-
-A: Hoàn toàn có thể, bạn có thể áp dụng nhiều chữ ký dựa trên thẻ thông minh vào một tệp PDF. Mỗi chữ ký là duy nhất và góp phần vào tính bảo mật chung của tài liệu.
-
-#### H: Nếu chữ ký không vượt qua được bước xác minh thì sao?
-
-A: Nếu chữ ký không xác minh được, một ngoại lệ sẽ được đưa ra, cho biết chữ ký không hợp lệ. Điều này đảm bảo rằng chỉ những chữ ký hợp lệ và đáng tin cậy mới được chấp nhận.
-
-#### H: Việc ký bằng thẻ thông minh có tương thích với mọi loại tài liệu PDF không?
-
-A: Có, chữ ký dựa trên thẻ thông minh tương thích với mọi loại tài liệu PDF. Bạn có thể áp dụng chữ ký số cho nhiều loại tệp PDF, bao gồm biểu mẫu, báo cáo, v.v.
-
-#### H: Tôi có thể tìm hiểu thêm về chữ ký số và quản lý chứng chỉ nâng cao bằng cách nào?
-
-A: Khám phá tài liệu chính thức của Aspose.PDF để biết thông tin chi tiết về các tính năng chữ ký số nâng cao, quản lý chứng chỉ và các biện pháp tốt nhất để đảm bảo tính bảo mật của tài liệu.
-
-#### H: Tôi có thể tìm thêm sự hỗ trợ hoặc trợ giúp để triển khai chữ ký dựa trên thẻ thông minh ở đâu?
-
-A: Để được hướng dẫn và hỗ trợ thêm, hãy liên hệ với diễn đàn cộng đồng Aspose.PDF hoặc tham khảo tài liệu để biết thông tin toàn diện về chữ ký dựa trên thẻ thông minh.
+### Có phiên bản dùng thử của Aspose.PDF không?
+ Có, bạn có thể tải xuống phiên bản dùng thử miễn phí từ[Trang web Aspose](https://releases.aspose.com/).

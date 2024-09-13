@@ -96,7 +96,7 @@ Tebrikler! Artık Aspose.PDF for .NET kullanarak bir PDF belgesindeki tabloyu na
 
 #### S: Belirtilen sayfada herhangi bir tablo yoksa ne olur?
 
- A: Belirtilen sayfa herhangi bir tablo içermiyorsa, kod bir hata verecektir.`IndexOutOfRangeException` erişmeye çalışırken`absorb.TableList[0]` Bu sorunu önlemek için şunları kontrol etmelisiniz:`absorb.TableList`tabloya erişmeden önce herhangi bir öğeyi içerir.
+ A: Belirtilen sayfa herhangi bir tablo içermiyorsa, kod bir hata verecektir.`IndexOutOfRangeException` erişmeye çalışırken`absorb.TableList[0]` Bu sorunu önlemek için şunları kontrol etmelisiniz:`absorb.TableList` tabloya erişmeden önce herhangi bir öğeyi içerir.
 
 #### S: İlk sayfa dışındaki sayfalardan tabloları kaldırabilir miyim?
 

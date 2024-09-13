@@ -13,7 +13,7 @@ Ebben az oktatóanyagban lépésről lépésre nyújtunk útmutatót a PDF-dokum
 
 Mielőtt elkezdené, győződjön meg arról, hogy a következő előfeltételeket teljesítette:
 
-1. Visual Studio .NET keretrendszerrel telepítve.
+1. A Visual Studio .NET keretrendszerrel telepítve.
 2. Az Aspose.PDF könyvtár a .NET-hez.
 
 ## 1. lépés: A projekt beállítása
@@ -22,7 +22,7 @@ A kezdéshez hozzon létre egy új projektet a Visual Studióban, és adjon hozz
 
 ## 2. lépés: Importálja a szükséges névtereket
 
-A C# kódfájlba importálja az Aspose.PDF által biztosított osztályok és metódusok eléréséhez szükséges névtereket:
+C# kódfájlba importálja az Aspose.PDF által biztosított osztályok és metódusok eléréséhez szükséges névtereket:
 
 ```csharp
 using System;
@@ -105,7 +105,7 @@ foreach (Element element in elementList)
 		string alternativeText = structureElement.AlternativeText;
 	}
 }
-// Hozzáférés a gyökérelem első elemének gyermek elemeihez
+//Hozzáférés a gyökérelem első elemének gyermek elemeihez
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
 foreach (Element element in elementList)
 {

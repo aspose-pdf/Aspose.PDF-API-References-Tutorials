@@ -32,7 +32,7 @@ using System.Text;
  V kódu vyhledejte řádek, který říká`string dataDir = "YOUR DOCUMENT DIRECTORY";` a nahradit`"YOUR DOCUMENT DIRECTORY"` s cestou k adresáři, kde jsou uloženy vaše dokumenty.
 
 ## Krok 4: Otevřete dokument PDF
- Otevřete existující dokument PDF pomocí`Document` konstruktoru a předání cesty ke vstupnímu souboru PDF.
+ Otevřete existující dokument PDF pomocí`Document`konstruktoru a předání cesty ke vstupnímu souboru PDF.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");
@@ -142,7 +142,7 @@ using System.Text;
 
 #### Otázka: Jak extrahuji odstavce z dokumentu?
 
- Odpověď: Krok 5 zahrnuje vytvoření instance souboru`ParagraphAbsorber` třídy a její používání`Visit` metoda extrahování odstavců z dokumentu PDF.
+ Odpověď: Krok 5 zahrnuje vytvoření instance souboru`ParagraphAbsorber` třídy a její používání`Visit` metoda pro extrakci odstavců z dokumentu PDF.
 
 #### Otázka: Jak mohu iterovat extrahované odstavce?
 

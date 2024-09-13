@@ -2,126 +2,134 @@
 title: Pulsanti di scelta orizzontali e verticali
 linktitle: Pulsanti di scelta orizzontali e verticali
 second_title: Riferimento API Aspose.PDF per .NET
-description: Crea facilmente pulsanti di scelta orizzontali e verticali nei tuoi documenti PDF con Aspose.PDF per .NET.
+description: Scopri come creare pulsanti di scelta allineati orizzontalmente e verticalmente in un PDF utilizzando Aspose.PDF per .NET con questo tutorial passo dopo passo.
 type: docs
 weight: 180
 url: /it/net/programming-with-forms/horizontally-and-vertically-radio-buttons/
 ---
-In questo tutorial, ti mostreremo come creare pulsanti di scelta disposti orizzontalmente e verticalmente in un documento PDF usando Aspose.PDF per .NET. Spiegheremo il codice sorgente C# passo dopo passo per guidarti attraverso questo processo.
+## Introduzione
 
-## Fase 1: Preparazione
+La creazione di moduli PDF interattivi può migliorare notevolmente l'esperienza utente, soprattutto quando si tratta di raccogliere informazioni. Uno degli elementi più comuni dei moduli è il pulsante di scelta, che consente agli utenti di selezionare un'opzione da un set. In questo tutorial, esploreremo come creare pulsanti di scelta allineati orizzontalmente e verticalmente utilizzando Aspose.PDF per .NET. Che tu sia uno sviluppatore esperto o alle prime armi, questa guida ti guiderà passo dopo passo nel processo, assicurandoti di avere una chiara comprensione di ogni parte.
 
-Assicurati di aver importato le librerie necessarie e di aver impostato il percorso della directory dei documenti:
+## Prerequisiti
+
+Prima di immergerti nel codice, ecco alcuni prerequisiti che dovresti avere:
+
+1.  Aspose.PDF per .NET: assicurati di avere installata la libreria Aspose.PDF. Puoi scaricarla da[sito](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: un ambiente di sviluppo in cui puoi scrivere e testare il tuo codice.
+3. Conoscenza di base di C#: la familiarità con la programmazione C# ti aiuterà a comprendere meglio i frammenti di codice.
+
+## Importa pacchetti
+
+Per iniziare, devi importare i pacchetti necessari nel tuo progetto C#. Ecco come puoi farlo:
+
+### Crea un nuovo progetto
+
+Apri Visual Studio e crea un nuovo progetto C#. Puoi scegliere un'applicazione console per semplicità.
+
+### Aggiungi riferimento Aspose.PDF
+
+1. Fare clic con il pulsante destro del mouse sul progetto in Esplora soluzioni.
+2. Seleziona "Gestisci pacchetti NuGet".
+3. Cerca "Aspose.PDF" e installa la versione più recente.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using System.IO;
+using Aspose.Pdf.Facades;
+using Aspose.Pdf;
+using Aspose.Pdf.Forms;
 ```
 
-## Passaggio 2: caricare il documento
+Ora che hai impostato tutto, scomponiamo il codice per creare pulsanti di scelta allineati orizzontalmente e verticalmente.
 
-Carica il documento PDF esistente:
+## Passaggio 1: impostare la directory dei documenti
+
+In questo passaggio definiremo il percorso della directory in cui verranno archiviati i documenti PDF.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo in cui vuoi salvare il tuo file PDF. Questo è fondamentale perché indica al programma dove cercare i file di input e dove salvare l'output.
+
+## Passaggio 2: caricare il documento PDF esistente
+
+ Successivamente, dobbiamo caricare il documento PDF con cui lavoreremo. Questo viene fatto utilizzando`FormEditor` classe.
 
 ```csharp
 FormEditor formEditor = new FormEditor();
 formEditor.BindPdf(dataDir + "input.pdf");
 ```
 
-## Passaggio 3: personalizzare le opzioni del pulsante di scelta
+Qui creiamo un'istanza di`FormEditor` e associarlo a un file PDF esistente denominato`input.pdf`Assicurati che questo file esista nella directory specificata.
 
-Personalizza le opzioni del pulsante di scelta impostando le seguenti proprietà:
+## Passaggio 3: configurare le proprietà del pulsante di scelta
+
+Ora, impostiamo alcune proprietà per i nostri pulsanti radio. Questo include lo spazio tra i pulsanti, il loro orientamento e la loro dimensione.
 
 ```csharp
-formEditor. RadioGap = 4; // Distanza tra due opzioni del pulsante di scelta
-formEditor. RadioHoriz = true; //Disposizione orizzontale dei pulsanti di scelta
-formEditor.RadioButtonItemSize = 20; // Dimensioni dei pulsanti di scelta
-formEditor.Facade.BorderWidth = 1; // Larghezza del bordo del pulsante di scelta
-formEditor.Facade.BorderColor = System.Drawing.Color.Black; // Colore del bordo del pulsante di scelta
+formEditor.RadioGap = 4; // Distanza tra le opzioni del pulsante di scelta
+formEditor.RadioHoriz = true; // Impostare su vero per l'allineamento orizzontale
+formEditor.RadioButtonItemSize = 20; // Dimensione del pulsante di scelta
+formEditor.Facade.BorderWidth = 1; // Larghezza del bordo
+formEditor.Facade.BorderColor = System.Drawing.Color.Black; // Colore del bordo
 ```
+
+ Queste proprietà aiuteranno a definire come appariranno i pulsanti di scelta nel PDF.`RadioGap` la proprietà controlla lo spazio tra i pulsanti, mentre`RadioHoriz` determina la loro disposizione.
 
 ## Passaggio 4: aggiungere pulsanti di scelta orizzontali
 
-Aggiungere pulsanti di scelta disposti orizzontalmente specificando le opzioni e la posizione del campo:
+Aggiungiamo ora i pulsanti di scelta orizzontali al PDF.
 
 ```csharp
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
 ```
 
+ In questo codice, definiamo gli elementi per i pulsanti di scelta e li aggiungiamo al PDF.`AddField`Il metodo accetta diversi parametri, tra cui il tipo di campo, il nome del campo e le coordinate per il posizionamento.
+
 ## Passaggio 5: aggiungere pulsanti di scelta verticali
 
-Aggiungere pulsanti di scelta disposti verticalmente specificando le opzioni e la posizione del campo:
+Successivamente, aggiungeremo i pulsanti radio verticali. Per farlo, dobbiamo cambiare l'orientamento di nuovo in verticale.
 
 ```csharp
-formEditor. RadioHoriz = false; // Disposizione verticale dei pulsanti di scelta
+formEditor.RadioHoriz = false; // Impostare su falso per l'allineamento verticale
 formEditor.Items = new string[] { "First", "Second", "Third" };
 formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
 ```
 
-## Passaggio 6: Salvare il documento
+Proprio come in precedenza, definiamo gli elementi e li aggiungiamo al PDF, ma questa volta saranno allineati verticalmente.
 
-Salvare il documento PDF modificato:
+## Passaggio 6: Salvare il documento PDF
+
+Infine, dobbiamo salvare il documento PDF modificato.
 
 ```csharp
 dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
 formEditor.Save(dataDir);
+Console.WriteLine("\nHorizontally and vertically laid out radio buttons successfully.\nFile saved at " + dataDir);
 ```
 
-### Esempio di codice sorgente per pulsanti di scelta orizzontali e verticali utilizzando Aspose.PDF per .NET 
-```csharp
-try
-{
-	// Percorso verso la directory dei documenti.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	// Carica il documento salvato in precedenza
-	FormEditor formEditor = new FormEditor();
-	formEditor.BindPdf(dataDir + "input.pdf");
-	// RadioGap è la distanza tra due opzioni del pulsante di scelta.
-	formEditor.RadioGap = 4;
-	// Aggiungi pulsante di scelta orizzontale
-	formEditor.RadioHoriz = true;
-	// RadioButtonItemSize se è la dimensione dell'elemento del pulsante di scelta.
-	formEditor.RadioButtonItemSize = 20;
-	formEditor.Facade.BorderWidth = 1;
-	formEditor.Facade.BorderColor = System.Drawing.Color.Black;
-	formEditor.Items = new string[] { "First", "Second", "Third" };
-	formEditor.AddField(FieldType.Radio, "NewField1", 1, 40, 600, 120, 620);
-	// Aggiungere un altro pulsante di scelta situato verticalmente
-	formEditor.RadioHoriz = false;
-	formEditor.Items = new string[] { "First", "Second", "Third" };
-	formEditor.AddField(FieldType.Radio, "NewField2", 1, 40, 500, 60, 550);
-	dataDir = dataDir + "HorizontallyAndVerticallyRadioButtons_out.pdf";
-	// Salva il documento PDF
-	formEditor.Save(dataDir);
-	Console.WriteLine("\nHorizontally and vertically laid out radio buttons successfully.\nFile saved at " + dataDir);
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+Questo codice salva il PDF con i pulsanti di scelta appena aggiunti. Assicurati di controllare la directory specificata per il file di output.
 
 ## Conclusione
 
-In questo tutorial, abbiamo imparato come creare pulsanti di scelta disposti orizzontalmente e verticalmente in un documento PDF usando Aspose.PDF per .NET. Seguendo questi passaggi, puoi facilmente personalizzare il layout dei pulsanti di scelta e aggiungerli ai tuoi documenti PDF usando Aspose.PDF.
+Creare pulsanti di scelta in un PDF usando Aspose.PDF per .NET è un processo semplice. Seguendo i passaggi descritti in questo tutorial, puoi aggiungere facilmente pulsanti di scelta allineati orizzontalmente e verticalmente ai tuoi moduli PDF. Ciò non solo migliora l'interattività dei tuoi documenti, ma migliora anche l'esperienza utente complessiva. Quindi, vai avanti e provalo!
 
-### Domande frequenti
+## Domande frequenti
 
-#### D: Cosa sono i pulsanti di scelta disposti orizzontalmente e verticalmente in un documento PDF?
+### Che cos'è Aspose.PDF per .NET?
+Aspose.PDF per .NET è una potente libreria che consente agli sviluppatori di creare, manipolare e convertire documenti PDF a livello di programmazione.
 
-R: I pulsanti di scelta disposti orizzontalmente e verticalmente in un documento PDF si riferiscono all'orientamento del layout delle opzioni dei pulsanti di scelta. Il layout orizzontale posiziona le opzioni dei pulsanti di scelta una accanto all'altra, consentendo agli utenti di effettuare una selezione da sinistra a destra. Il layout verticale, d'altro canto, impila le opzioni dei pulsanti di scelta una sopra l'altra, consentendo agli utenti di effettuare una selezione dall'alto verso il basso.
+### Posso usare Aspose.PDF gratuitamente?
+ Sì, Aspose offre una versione di prova gratuita che puoi usare per valutare la libreria. Puoi scaricarla[Qui](https://releases.aspose.com/).
 
-#### D: Come posso personalizzare l'aspetto delle opzioni dei pulsanti di scelta in Aspose.PDF per .NET?
+### Come posso ottenere supporto per Aspose.PDF?
+ Puoi ottenere supporto visitando il[Forum di Aspose](https://forum.aspose.com/c/pdf/10).
 
-A: È possibile personalizzare l'aspetto delle opzioni dei pulsanti di scelta in Aspose.PDF per .NET regolando diverse proprietà. L'API fornisce opzioni per impostare la distanza tra due opzioni dei pulsanti di scelta (`RadioGap`), l'orientamento del layout (`RadioHoriz`), la dimensione degli elementi del pulsante di scelta (`RadioButtonItemSize`), la larghezza del bordo e il colore dei pulsanti di scelta e altro ancora.
+### È possibile creare altri elementi del modulo con Aspose.PDF?
+Assolutamente! Aspose.PDF supporta vari elementi del modulo, tra cui campi di testo, caselle di controllo e menu a discesa.
 
-#### D: Posso aggiungere pulsanti di scelta orizzontali e verticali allo stesso documento PDF?
-
-R: Sì, puoi aggiungere pulsanti di scelta orizzontali e verticali allo stesso documento PDF utilizzando Aspose.PDF per .NET. Il codice sorgente di esempio fornito nel tutorial mostra come aggiungere prima pulsanti di scelta disposti orizzontalmente e poi aggiungere un altro set di pulsanti di scelta disposti verticalmente allo stesso documento PDF.
-
-#### D: Posso impostare opzioni diverse per ogni gruppo di pulsanti di scelta?
-
- A: Sì, puoi impostare diverse opzioni di pulsanti di scelta per ogni gruppo di pulsanti di scelta. Ogni gruppo dovrebbe avere un'opzione univoca`RadioButtonField` oggetto e il`RadioButtonOptionField` gli oggetti all'interno di ogni gruppo dovrebbero condividere la stessa pagina e nomi univoci per le loro opzioni. Ciò assicura che i pulsanti di scelta all'interno di ogni gruppo funzionino correttamente e che le selezioni siano reciprocamente esclusive.
-
-#### D: Le impostazioni di layout e aspetto dei pulsanti di scelta sono supportate in tutti i visualizzatori e le applicazioni PDF?
-
-R: Sì, le impostazioni di layout e aspetto dei pulsanti di scelta sono supportate in tutti i visualizzatori e le applicazioni PDF conformi allo standard. La specifica PDF definisce i pulsanti di scelta e i loro vari attributi, rendendoli universalmente riconosciuti nel formato PDF. Tuttavia, è essenziale testare l'aspetto e il comportamento dei pulsanti di scelta in diversi visualizzatori PDF per garantire un rendering coerente su diverse piattaforme.
+### Dove posso acquistare Aspose.PDF per .NET?
+ Puoi acquistare Aspose.PDF per .NET da[pagina di acquisto](https://purchase.aspose.com/buy).

@@ -1,7 +1,7 @@
 ---
 title: Ange radavstånd i PDF-fil
 linktitle: Ange radavstånd i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du anger radavstånd i PDF-filen med Aspose.PDF för .NET.
 type: docs
 weight: 510
@@ -124,12 +124,12 @@ formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 TextFragment textFragment = new TextFragment("Hello world");
 if (fontFile != "")
 {
-	// Ladda TrueType-teckensnittet i strömobjektet
+	//Ladda TrueType-teckensnittet i strömobjektet
 	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
 	{
 		// Ställ in teckensnittsnamnet för textsträngen
 		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		//Ange positionen för textfragment
+		// Ange positionen för textfragment
 		textFragment.Position = new Position(100, 600);
 		//Ställ in TextFormattingOptions för aktuellt fragment till fördefinierat (vilket pekar på LineSpacingMode.FullSize)
 		textFragment.TextState.FormattingOptions = formattingOptions;

@@ -42,7 +42,7 @@ Document doc = new Document();
 ```
 
 ## Passaggio 5: aggiungere una pagina al documento
- Aggiungere una nuova pagina al documento utilizzando il`Add` metodo del`Pages`raccolta. Nel codice fornito, la nuova pagina è assegnata alla variabile`page`.
+ Aggiungere una nuova pagina al documento utilizzando il`Add` metodo del`Pages` raccolta. Nel codice fornito, la nuova pagina è assegnata alla variabile`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -159,7 +159,7 @@ HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Tab
 
 #### D: Come posso sovrascrivere gli stili del contenuto HTML?
 
- A: Nel passaggio 7, sovrascriverai gli stili del contenuto HTML modificando il`TextState` proprietà del`HtmlFragment` oggetto. Ad esempio, puoi cambiare la famiglia di font in "Arial" e impostare la dimensione del font su 20:
+ A: Nel passaggio 7, sovrascriverai gli stili del contenuto HTML modificando il`TextState` proprietà del`HtmlFragment`oggetto. Ad esempio, puoi cambiare la famiglia di font in "Arial" e impostare la dimensione del font su 20:
 
 ```csharp
 title.TextState = new TextState("Arial");

@@ -64,7 +64,7 @@ public class PdfToXlsxConverter {
 
 ## الأسئلة الشائعة
 
-### كيف أقوم بتثبيت Aspose.PDF لـJava؟
+### كيف أقوم بتثبيت Aspose.PDF لـ Java؟
 
  يمكنك تنزيل مكتبة Aspose.PDF لـ Java من الموقع الإلكتروني على[https://releases.aspose.com/pdf/Java/](https://releases.aspose.com/pdf/java/)اتبع تعليمات التثبيت المقدمة على موقعهم الإلكتروني.
 

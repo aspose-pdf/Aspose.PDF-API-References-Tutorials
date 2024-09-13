@@ -42,7 +42,7 @@ Document doc = new Document();
 ```
 
 ## Etapa 5: Adicionar uma página ao documento
- Adicione uma nova página ao documento usando o`Add` método do`Pages`coleção. No código fornecido, a nova página é atribuída à variável`page`.
+ Adicione uma nova página ao documento usando o`Add` método do`Pages` coleção. No código fornecido, a nova página é atribuída à variável`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -159,7 +159,7 @@ HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Tab
 
 #### P: Como posso substituir os estilos do conteúdo HTML?
 
- R: Na Etapa 7, você substituirá os estilos do conteúdo HTML modificando o`TextState` propriedades do`HtmlFragment` objeto. Por exemplo, você pode alterar a família da fonte para "Arial" e definir o tamanho da fonte para 20:
+ R: Na Etapa 7, você substituirá os estilos do conteúdo HTML modificando o`TextState` propriedades do`HtmlFragment`objeto. Por exemplo, você pode alterar a família da fonte para "Arial" e definir o tamanho da fonte para 20:
 
 ```csharp
 title.TextState = new TextState("Arial");

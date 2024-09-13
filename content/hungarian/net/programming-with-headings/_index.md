@@ -13,4 +13,4 @@ Fedezze fel az Aspose.PDF for .NET szolgáltatásait a dedikált oktatóanyagok 
 ## Oktatóanyagok
 | Cím | Leírás |
 | --- | --- | 
-| [Számstílus alkalmazása PDF-fájlban](./apply-number-style/) | Ismerje meg, hogyan alkalmazhat számozási stílust a PDF-fájlok címsoraira az Aspose.PDF for .NET segítségével. Lépésről lépésre útmutató. |   
+| [Számstílus alkalmazása PDF-fájlban](./apply-number-style/) | Ebből a lépésről lépésre szóló útmutatóból megtudhatja, hogyan alkalmazhat különböző számstílusokat (római számok, ábécé) a PDF-fájlok címsoraira az Aspose.PDF for .NET használatával. |   

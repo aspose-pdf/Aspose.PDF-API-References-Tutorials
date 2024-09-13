@@ -24,6 +24,6 @@ Scopri come allegare file ai documenti PDF usando Aspose.PDF per Java. La nostra
 ### [Rimuovere gli allegati dai PDF](./remove-attachments-from-pdfs/)
 Scopri come rimuovere gli allegati dai PDF in Java con Aspose.PDF. Guida passo passo e codice per la manipolazione dei PDF.
 ### [Recupera informazioni sull'allegato](./retrieve-attachment-information/)
-Scopri come recuperare gli allegati PDF in Java usando Aspose.PDF. Guida passo passo con esempi di codice per la gestione degli allegati dei documenti PDF.
+Scopri come recuperare allegati PDF in Java usando Aspose.PDF. Guida passo passo con esempi di codice per la gestione degli allegati di documenti PDF.
 ### [Elenca tutti gli allegati nei documenti PDF](./list-all-attachments-pdf-documents/)
 Scopri come elencare gli allegati nei PDF usando Aspose.PDF per Java. Guida passo passo per estrarre facilmente gli allegati PDF.

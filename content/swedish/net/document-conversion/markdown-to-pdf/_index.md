@@ -1,7 +1,7 @@
 ---
 title: Markdown till PDF
 linktitle: Markdown till PDF
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du konverterar Markdown till PDF med Aspose.PDF för .NET i denna steg-för-steg handledning. Perfekt för utvecklare som vill effektivisera dokumentkonvertering.
 type: docs
 weight: 60

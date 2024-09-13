@@ -145,7 +145,7 @@ row1.Cells.Add();
 row1.Cells[1].Paragraphs.Add(TitleText);
 // Stel de verticale uitlijning van de rij-inhoud in als Boven
 row1.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-// Maak rijen in de tabel en vervolgens cellen in de rijen
+//Maak rijen in de tabel en vervolgens cellen in de rijen
 Aspose.Pdf.Row SecondRow = table1.Rows.Add();
 SecondRow.Cells.Add();
 // Stel de rijspanwaarde voor de tweede rij in op 2

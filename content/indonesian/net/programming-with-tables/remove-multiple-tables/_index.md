@@ -40,7 +40,7 @@ absorb.Visit(pdfDocument.Pages[1]);
 Untuk dapat menghapus tabel, kita perlu mendapatkan salinan koleksi tabel:
 
 ```csharp
-//Dapatkan salinan koleksi tabel
+// Dapatkan salinan koleksi tabel
 AbsorbedTable[] tables = new AbsorbedTable[absorb.TableList.Count];
 absorb.TableList.CopyTo(tables, 0);
 ```
@@ -96,7 +96,7 @@ Selamat! Anda kini telah mempelajari cara menghapus beberapa tabel dalam dokumen
 
 #### T: Bisakah saya menghapus tabel tertentu, bukan semua tabel dalam dokumen PDF?
 
-A: Ya, Anda dapat menghapus tabel tertentu, bukan semua tabel dalam dokumen PDF menggunakan Aspose.PDF for .NET. Dalam contoh yang diberikan, semua tabel pada halaman kedua dihapus. Namun, Anda dapat mengubah kode untuk menargetkan dan menghapus tabel tertentu berdasarkan kebutuhan Anda. Untuk melakukannya, Anda perlu mengidentifikasi tabel yang ingin Anda hapus, lalu memanggil`absorber.Remove(table)` metode untuk setiap tabel spesifik yang ingin Anda hapus.
+ A: Ya, Anda dapat menghapus tabel tertentu, bukan semua tabel dalam dokumen PDF menggunakan Aspose.PDF for .NET. Dalam contoh yang diberikan, semua tabel pada halaman kedua dihapus. Namun, Anda dapat mengubah kode untuk menargetkan dan menghapus tabel tertentu berdasarkan kebutuhan Anda. Untuk melakukannya, Anda perlu mengidentifikasi tabel yang ingin Anda hapus, lalu memanggil`absorber.Remove(table)` metode untuk setiap tabel spesifik yang ingin Anda hapus.
 
 #### T: Bagaimana cara menghapus tabel dari beberapa halaman dalam dokumen PDF?
 
@@ -104,7 +104,7 @@ A: Ya, Anda dapat menghapus tabel tertentu, bukan semua tabel dalam dokumen PDF 
 
 #### T: Apa yang terjadi jika saya mencoba menghapus tabel yang tidak ada pada halaman yang ditentukan?
 
-A: Jika Anda mencoba menghapus tabel yang tidak ada pada halaman yang ditentukan, hal tersebut tidak akan mengakibatkan kesalahan.`absorber.Remove(table)` metode ini akan mengabaikan permintaan penghapusan dan dokumen PDF akan tetap tidak berubah.
+ A: Jika Anda mencoba menghapus tabel yang tidak ada pada halaman yang ditentukan, hal tersebut tidak akan mengakibatkan kesalahan.`absorber.Remove(table)` metode ini akan mengabaikan permintaan penghapusan dan dokumen PDF akan tetap tidak berubah.
 
 #### T: Bisakah saya membatalkan penghapusan tabel setelah menyimpan dokumen?
 

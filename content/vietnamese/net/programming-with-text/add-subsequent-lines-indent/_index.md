@@ -38,14 +38,14 @@ Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
 ## Bước 5: Thêm một trang vào tài liệu
- Thêm một trang mới vào tài liệu bằng cách sử dụng`Add` phương pháp của`Pages`bộ sưu tập. Trong mã được cung cấp, trang mới được gán cho biến`page`.
+ Thêm một trang mới vào tài liệu bằng cách sử dụng`Add` phương pháp của`Pages` bộ sưu tập. Trong mã được cung cấp, trang mới được gán cho biến`page`.
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
 ## Bước 6: Tạo một TextFragment với các dòng tiếp theo thụt lề
- Khởi tạo một`TextFragment` đối tượng và cung cấp văn bản mong muốn. Trong mã được cung cấp, văn bản được gán cho biến`text` . Sau đó, khởi tạo`TextFormattingOptions` cho`TextFragment`và chỉ định`SubsequentLinesIndent` giá trị.
+ Khởi tạo một`TextFragment` đối tượng và cung cấp văn bản mong muốn. Trong mã được cung cấp, văn bản được gán cho biến`text` . Sau đó, khởi tạo`TextFormattingOptions` cho`TextFragment` và chỉ định`SubsequentLinesIndent` giá trị.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
@@ -91,7 +91,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = document.Pages.Add();
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-// Khởi tạo TextFormattingOptions cho đoạn văn bản và chỉ định giá trị SubsequentLinesIndent
+//Khởi tạo TextFormattingOptions cho đoạn văn bản và chỉ định giá trị SubsequentLinesIndent
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
 	SubsequentLinesIndent = 20
@@ -148,7 +148,7 @@ Aspose.Pdf.Page page = document.Pages.Add();
 
 #### H: Làm thế nào để thêm thụt lề các dòng tiếp theo vào văn bản?
 
- A: Ở Bước 6, bạn sẽ tạo một`TextFragment` đối tượng và gán văn bản mong muốn cho nó. Sau đó, bạn sẽ khởi tạo`TextFormattingOptions` cho`TextFragment`và chỉ định`SubsequentLinesIndent` giá trị:
+ A: Ở Bước 6, bạn sẽ tạo một`TextFragment` đối tượng và gán văn bản mong muốn cho nó. Sau đó, bạn sẽ khởi tạo`TextFormattingOptions` cho`TextFragment` và chỉ định`SubsequentLinesIndent` giá trị:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
@@ -168,7 +168,7 @@ page.Paragraphs.Add(text);
 
 #### H: Tôi có thể lặp lại quy trình này cho các dòng bổ sung không?
 
- A: Có, ở Bước 8, bạn có thể lặp lại quy trình cho các dòng bổ sung có cùng thụt lề bằng cách tạo mới`TextFragment` các đối tượng và thêm chúng vào bộ sưu tập đoạn văn của trang.
+A: Có, ở Bước 8, bạn có thể lặp lại quy trình cho các dòng bổ sung có cùng thụt lề bằng cách tạo mới`TextFragment` các đối tượng và thêm chúng vào bộ sưu tập đoạn văn của trang.
 
 #### H: Làm thế nào để lưu tài liệu PDF kết quả?
 

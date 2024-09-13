@@ -53,7 +53,7 @@ com.aspose.pdf.Document pdfDocument = new com.aspose.pdf.Document("input.pdf");
 com.aspose.pdf.XslFoLoadOptions xmlOptions = new com.aspose.pdf.XslFoLoadOptions();
 ```
 
-### 步驟 3：將 PDF 轉換為 XML
+### 第 3 步：將 PDF 轉換為 XML
 
 ```java
 //將 PDF 轉換為 XML

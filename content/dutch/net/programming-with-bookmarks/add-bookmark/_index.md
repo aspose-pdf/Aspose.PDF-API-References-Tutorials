@@ -128,7 +128,7 @@ Aspose.PDF voor .NET is een bibliotheek waarmee ontwikkelaars programmatisch PDF
  Aspose.PDF biedt een gratis proefversie, maar voor volledige functionaliteit moet u een licentie aanschaffen. Bekijk de[koop link](https://purchase.aspose.com/buy).
 
 ### Waar kan ik meer documentatie vinden?
- U kunt uitgebreide documentatie vinden op Aspose.PDF voor .NET[hier](https://reference.aspose.com/pdf/net/).
+ Uitgebreide documentatie vindt u op Aspose.PDF voor .NET[hier](https://reference.aspose.com/pdf/net/).
 
 ### Hoe krijg ik ondersteuning voor Aspose.PDF?
  Voor ondersteuning kunt u terecht op de[Aspose ondersteuningsforum](https://forum.aspose.com/c/pdf/10).

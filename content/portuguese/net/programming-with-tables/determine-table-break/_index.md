@@ -117,7 +117,7 @@ table1.DefaultCellPadding = margin;
 // Porque não pode ser acomodado mais nesta página
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
-	// Crie linhas na tabela e depois células nas linhas
+	//Crie linhas na tabela e depois células nas linhas
 	Aspose.Pdf.Row row1 = table1.Rows.Add();
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
 	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");

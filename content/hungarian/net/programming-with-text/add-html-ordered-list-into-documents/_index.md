@@ -1,6 +1,6 @@
 ---
-title: HTML rendezett lista hozzáadása a dokumentumokhoz
-linktitle: Adjon hozzá HTMLRendezett listát a dokumentumokhoz
+title: Adjon hozzá HTML rendezett listát a dokumentumokhoz
+linktitle: Adja hozzá a HTMLRendezett listát a dokumentumokhoz
 second_title: Aspose.PDF for .NET API Reference
 description: Ismerje meg, hogyan adhat hozzá rendezett HTML-listát egy dokumentumhoz az Aspose.PDF for .NET használatával.
 type: docs
@@ -47,7 +47,7 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 ```
 
 ## 6. lépés: Adjon hozzá egy oldalt a dokumentumhoz
- Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages`gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
+ Új oldal hozzáadása a dokumentumhoz a gombbal`Add` módszere a`Pages` gyűjtemény. A megadott kódban az új oldal hozzá van rendelve a változóhoz`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -81,7 +81,7 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 Page page = doc.Pages.Add();
 // HtmlFragment hozzáadása az oldalhoz
 page.Paragraphs.Add(t);
-// Az eredményül kapott PDF fájl mentése
+//Az eredményül kapott PDF fájl mentése
 doc.Save(outFile);
 ```
 
@@ -115,7 +115,7 @@ using Aspose.Pdf.Text;
 
 #### K: Hogyan adhatom hozzá a HTML rendezett listát a dokumentum egy oldalához?
 
- V: A 7. lépésben hozzáadja a`HtmlFragment` tárgy (`t` ) az oldalra a`Add` módszere a`Paragraphs`gyűjtemény. Ez zökkenőmentesen integrálja a HTML rendezett listát a dokumentumba.
+ V: A 7. lépésben hozzáadja a`HtmlFragment` tárgy (`t` ) az oldalra a`Add` módszere a`Paragraphs` gyűjtemény. Ez zökkenőmentesen integrálja a HTML rendezett listát a dokumentumba.
 
 #### K: Hogyan menthetem el az eredményül kapott PDF-dokumentumot?
 

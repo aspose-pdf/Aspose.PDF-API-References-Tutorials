@@ -179,7 +179,7 @@ Odpověď: Ano, tento kurz se konkrétně zaměřuje na přidávání hypertexto
 
 #### Otázka: Jak mohu povolit vyhledávání textu pomocí regulárních výrazů?
 
- A: Hledání regulárních výrazů je povoleno vytvořením a`TextSearchOptions` objektu a nastavení jeho hodnoty na`true` . Přiřaďte tento objekt k`TextSearchOptions` majetek z`TextFragmentAbsorber` instance. Tím je zajištěno, že se při vyhledávání textu použije vzor regulárního výrazu.
+ A: Hledání regulárních výrazů je povoleno vytvořením a`TextSearchOptions` objektu a nastavení jeho hodnoty na`true` . Přiřaďte tento objekt k`TextSearchOptions` vlastnictví`TextFragmentAbsorber` instance. Tím je zajištěno, že se při vyhledávání textu použije vzor regulárního výrazu.
 
 #### Otázka: Jak přidám hypertextové odkazy k nalezenému textu?
 

@@ -93,7 +93,7 @@ response.Close();
 
 ## ステップ6: HTMLをPDFに変換する
 
-次は面白い部分です。Aspose.PDF を使用して HTML コンテンツを PDF ドキュメントに変換します。
+次は面白い部分です! Aspose.PDF を使用して HTML コンテンツを PDF ドキュメントに変換します。
 
 ```csharp
 MemoryStream stream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(responseFromServer));

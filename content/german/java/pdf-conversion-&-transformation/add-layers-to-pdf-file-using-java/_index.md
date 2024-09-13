@@ -94,7 +94,7 @@ Herzlichen Glückwunsch! Sie haben mit Aspose.PDF für Java erfolgreich Ebenen z
 ## FAQs
 
 ### Wie kann ich die Sichtbarkeit von Ebenen in einem PDF-Dokument steuern?
- Sie können die Sichtbarkeit von Ebenen mit Aspose.PDF für Java steuern, indem Sie die`Visible` Eigenschaft jeder Ebene. Stellen Sie es ein auf`true` eine Ebene sichtbar zu machen und`false` um es zu verbergen.
+ Sie können die Sichtbarkeit von Ebenen mit Aspose.PDF für Java steuern, indem Sie die`Visible` Eigenschaft jeder Ebene. Stellen Sie es ein auf`true` eine Ebene sichtbar zu machen und`false` um es zu verstecken.
 
 ### Kann ich Ebenen interaktive Elemente wie Schaltflächen oder Formularfelder hinzufügen?
 Ja, Sie können Ebenen in einem PDF-Dokument interaktive Elemente hinzufügen. Aspose.PDF für Java bietet umfassende Unterstützung für das Hinzufügen von Schaltflächen, Formularfeldern und anderen interaktiven Elementen zu Ebenen.

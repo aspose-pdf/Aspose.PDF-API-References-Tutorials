@@ -17,7 +17,7 @@ url: /el/java/pdf-tags-and-structure/create-table-element-in-pdf-using-java/
 
 1. Περιβάλλον ανάπτυξης Java: Βεβαιωθείτε ότι έχετε ένα λειτουργικό περιβάλλον ανάπτυξης Java στο σύστημά σας.
 
-2.  Aspose.PDF για Java: Κατεβάστε και εγκαταστήστε τη βιβλιοθήκη Aspose.PDF για Java από το[Aspose website](https://releases.aspose.com/pdf/java/). Θα χρειαστείτε αυτή τη βιβλιοθήκη για να χειριστείτε αρχεία PDF μέσω προγραμματισμού.
+2.  Aspose.PDF για Java: Κατεβάστε και εγκαταστήστε τη βιβλιοθήκη Aspose.PDF για Java από το[Aspose ιστότοπο](https://releases.aspose.com/pdf/java/). Θα χρειαστείτε αυτή τη βιβλιοθήκη για να χειριστείτε αρχεία PDF μέσω προγραμματισμού.
 
 ## Βήμα 1: Ρύθμιση του έργου Java σας
 

@@ -94,9 +94,9 @@ textFragment.TextState.FontSize = 12;
 textFragment.TextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("TimesNewRoman");
 textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-// TextParagraph objektum létrehozása
+// Hozzon létre TextParagraph objektumot
 TextParagraph par = new TextParagraph();
-// Új szövegrészlet hozzáadása a bekezdéshez
+// Új szövegtöredék hozzáadása a bekezdéshez
 par.AppendLine(textFragment);
 // Állítsa be a bekezdés pozícióját
 par.Position = new Aspose.Pdf.Text.Position(100, 600);

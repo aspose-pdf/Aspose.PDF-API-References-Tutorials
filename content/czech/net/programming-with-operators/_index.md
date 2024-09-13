@@ -12,6 +12,6 @@ Výukové programy Aspose.PDF for .NET "Programování s operátory" vás proved
 ## Tutoriály
 | Titul | Popis |
 | --- | --- | 
-| [Nakreslete XForm na stránku](./draw-xform-on-page/) | Podrobný průvodce kreslením formuláře XForm na stránku PDF pomocí Aspose.PDF pro .NET. Přidejte a umístěte formulář na stránku. |  
+| [Nakreslete XForm na stránku](./draw-xform-on-page/) | vydělávejte, jak kreslit XForms v PDF pomocí Aspose.PDF pro .NET s tímto komplexním průvodcem krok za krokem. |  
 | [Operátoři PDF](./pdf-operators/) | Podrobný průvodce používáním operátorů PDF s Aspose.PDF pro .NET. Přidejte obrázek na stránku PDF a určete jeho polohu. |  
-| [Odebrat grafické objekty v souboru PDF](./remove-graphics-objects/) | Podrobný průvodce odstraněním grafických objektů v souboru PDF pomocí Aspose.PDF pro .NET. Přizpůsobte a vyčistěte své soubory PDF. |  
+| [Odebrat grafické objekty v souboru PDF](./remove-graphics-objects/) | V tomto podrobném průvodci se dozvíte, jak odstranit grafické objekty ze souboru PDF pomocí Aspose.PDF for .NET. Zjednodušte své úlohy manipulace s PDF. |  

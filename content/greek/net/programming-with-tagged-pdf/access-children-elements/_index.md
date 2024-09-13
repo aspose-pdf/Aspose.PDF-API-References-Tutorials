@@ -105,7 +105,7 @@ foreach (Element element in elementList)
 		string alternativeText = structureElement.AlternativeText;
 	}
 }
-// Πρόσβαση σε παιδιά στοιχεία του πρώτου στοιχείου στο στοιχείο ρίζας
+//Πρόσβαση σε παιδιά στοιχεία του πρώτου στοιχείου στο στοιχείο ρίζας
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
 foreach (Element element in elementList)
 {

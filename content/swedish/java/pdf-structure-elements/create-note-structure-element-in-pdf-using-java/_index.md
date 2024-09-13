@@ -21,7 +21,7 @@ Innan vi dyker in i koden, låt oss se till att vi har allt konfigurerat:
 
 ## Steg-för-steg-guide
 
-### 1. Inledning
+### 1. Introduktion
 
 PDF-dokument är mångsidiga, men ibland måste du ge dina läsare ytterligare sammanhang eller kommentarer. Att lägga till anteckningar i en PDF kan hjälpa till att uppnå detta. I den här handledningen visar vi dig hur du skapar ett anteckningsstrukturelement i en PDF med Java och Aspose.PDF för Java.
 

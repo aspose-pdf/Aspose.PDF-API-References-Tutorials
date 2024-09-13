@@ -88,7 +88,7 @@ page.Accept(textFragmentAbsorber);
 
 ## Шаг 9: Извлеките извлеченные фрагменты текста.
 
-Получите извлеченные фрагменты текста с помощью`TextFragments` собственность`TextFragmentAbsorber` объект:
+ Получите извлеченные фрагменты текста с помощью`TextFragments` собственность`TextFragmentAbsorber` объект:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;

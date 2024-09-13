@@ -1,7 +1,7 @@
 ---
 title: Extrahera stycken i PDF-fil
 linktitle: Extrahera stycken i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du extraherar stycken i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 160
@@ -32,7 +32,7 @@ using System.Text;
  I koden, lokalisera raden som säger`string dataDir = "YOUR DOCUMENT DIRECTORY";` och byt ut`"YOUR DOCUMENT DIRECTORY"` med sökvägen till katalogen där dina dokument är lagrade.
 
 ## Steg 4: Öppna PDF-dokumentet
- Öppna ett befintligt PDF-dokument med hjälp av`Document` konstruktorn och skickar sökvägen till indata-PDF-filen.
+ Öppna ett befintligt PDF-dokument med hjälp av`Document`konstruktorn och skickar sökvägen till indata-PDF-filen.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");

@@ -92,11 +92,11 @@ R : Le tutoriel vous guide tout au long du processus étape par étape :
 3. Utilisez l'absorbeur pour supprimer tout le texte absorbé du document PDF.
 4. Enregistrez le document PDF modifié.
 
-#### Q : Puis-je supprimer de manière sélective du texte de zones spécifiques du document ?
+#### Q : Puis-je supprimer de manière sélective du texte dans des zones spécifiques du document ?
 
 R : Le didacticiel se concentre sur la suppression de tout le texte de l'ensemble du document PDF. Si vous souhaitez supprimer de manière sélective du texte de zones spécifiques, vous devrez modifier l'approche et utiliser une logique plus complexe pour identifier et supprimer des fragments de texte spécifiques.
 
-####  Q : Comment fonctionne le`TextFragmentAbsorber` work to remove text?
+####  : Comment fonctionne le`TextFragmentAbsorber` work to remove text?
 
  A : Le`TextFragmentAbsorber`est une classe fournie par la bibliothèque Aspose.PDF qui peut absorber des fragments de texte d'un document PDF. En utilisant la`RemoveAllText` méthode de la`TextFragmentAbsorber` classe, vous pouvez supprimer tous les fragments de texte absorbés du document.
 

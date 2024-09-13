@@ -42,7 +42,7 @@ Document doc = new Document();
 ```
 
 ## Langkah 5: Tambahkan halaman ke dokumen
- Tambahkan halaman baru ke dokumen dengan menggunakan`Add` metode dari`Pages`koleksi. Dalam kode yang diberikan, halaman baru ditetapkan ke variabel`page`.
+ Tambahkan halaman baru ke dokumen dengan menggunakan`Add` metode dari`Pages` koleksi. Dalam kode yang diberikan, halaman baru ditetapkan ke variabel`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -159,7 +159,7 @@ HtmlFragment title = new HtmlFragment("<p style='font-family: Verdana'><b><i>Tab
 
 #### T: Bagaimana cara menimpa gaya konten HTML?
 
- A: Pada Langkah 7, Anda akan menimpa gaya konten HTML dengan memodifikasi`TextState` properti dari`HtmlFragment` objek. Misalnya, Anda dapat mengubah jenis font menjadi "Arial" dan mengatur ukuran font menjadi 20:
+ A: Pada Langkah 7, Anda akan menimpa gaya konten HTML dengan memodifikasi`TextState` properti dari`HtmlFragment`objek. Misalnya, Anda dapat mengubah jenis font menjadi "Arial" dan mengatur ukuran font menjadi 20:
 
 ```csharp
 title.TextState = new TextState("Arial");

@@ -88,7 +88,7 @@ pdfDocument.Save(dataDir + "Table_out.pdf");
 ## Abschluss
 Herzlichen Glückwunsch! Sie haben jetzt gelernt, wie Sie mit Aspose.PDF für .NET eine Tabelle aus einem PDF-Dokument entfernen. Diese Schritt-für-Schritt-Anleitung hat Ihnen gezeigt, wie Sie das Dokument laden, die Tabelle finden und entfernen. Jetzt können Sie dieses Wissen in Ihren eigenen Projekten anwenden.
 
-### FAQs zum Entfernen von Tabellen aus PDF-Dokumenten
+### FAQs zum Entfernen von Tabellen im PDF-Dokument
 
 #### F: Kann ich mit dieser Methode mehrere Tabellen aus einem PDF-Dokument entfernen?
 
@@ -96,7 +96,7 @@ Herzlichen Glückwunsch! Sie haben jetzt gelernt, wie Sie mit Aspose.PDF für .N
 
 #### F: Was passiert, wenn die angegebene Seite keine Tabellen enthält?
 
- A: Wenn die angegebene Seite keine Tabellen enthält, wird der Code eine`IndexOutOfRangeException` beim Versuch, auf`absorb.TableList[0]` Um dieses Problem zu vermeiden, sollten Sie überprüfen, ob`absorb.TableList`enthält alle Elemente, bevor auf die Tabelle zugegriffen wird.
+ A: Wenn die angegebene Seite keine Tabellen enthält, wird der Code eine`IndexOutOfRangeException` beim Versuch, auf`absorb.TableList[0]` Um dieses Problem zu vermeiden, sollten Sie überprüfen, ob`absorb.TableList` enthält alle Elemente, bevor auf die Tabelle zugegriffen wird.
 
 #### F: Kann ich Tabellen von anderen Seiten als der ersten Seite entfernen?
 

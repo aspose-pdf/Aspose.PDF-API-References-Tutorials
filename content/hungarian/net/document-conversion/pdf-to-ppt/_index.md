@@ -2,7 +2,7 @@
 title: PDF-ből PPT-be
 linktitle: PDF-ből PPT-be
 second_title: Aspose.PDF for .NET API Reference
-description: Ebből a lépésenkénti útmutatóból megtudhatja, hogyan konvertálhat PDF-et PPT-vé az Aspose.PDF for .NET használatával. Könnyű, hatékony és prezentációkhoz tökéletes.
+description: Ebből a lépésről lépésre szóló útmutatóból megtudhatja, hogyan konvertálhat PDF-et PPT-vé az Aspose.PDF for .NET használatával. Könnyű, hatékony és prezentációkhoz tökéletes.
 type: docs
 weight: 170
 url: /hu/net/document-conversion/pdf-to-ppt/
@@ -99,7 +99,7 @@ Igen, egy könyvtárban több PDF-fájlt is átfuttathat, és mindegyiket PPT-re
 ### Ingyenes az Aspose.PDF for .NET?
  Az Aspose.PDF ingyenes próbaverziót kínál, de a teljes funkcionalitás érdekében licencet kell vásárolnia. További információkat találhat[itt](https://purchase.aspose.com/buy).
 
-### Mi van, ha a PDF-ben képek vannak?
+### Mi van, ha a PDF-emben képek vannak?
 Az Aspose.PDF jól kezeli a képeket, és bekerülnek a konvertált PPT fájlba.
 
 ### Testreszabhatom a PPT kimenetet?

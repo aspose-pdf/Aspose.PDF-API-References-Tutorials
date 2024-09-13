@@ -42,7 +42,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 ```
 
 ## Βήμα 5: Βρείτε το κείμενο που θέλετε να τροποποιήσετε
- Χρήση`TextFragmentAbsorber` για να βρείτε το επιθυμητό κείμενο μέσα στο έγγραφο. Στον παρεχόμενο κωδικό, αναζητά το κείμενο "Lorem ipsum".
+Χρήση`TextFragmentAbsorber` για να βρείτε το επιθυμητό κείμενο μέσα στο έγγραφο. Στον παρεχόμενο κωδικό, αναζητά το κείμενο "Lorem ipsum".
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -83,7 +83,7 @@ using (Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 	TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
 	pdfDocument.Pages.Accept(absorber);
 	TextFragment textFragment = absorber.TextFragments[1];
-	// Δημιουργήστε νέο χρώμα με χρωματικό χώρο μοτίβων
+	// Δημιουργήστε νέο χρώμα με το χρωματικό χώρο μοτίβων
 	textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 	{
 		PatternColorSpace = new Aspose.Pdf.Drawing.GradientAxialShading(Color.Red, Color.Blue)
@@ -129,7 +129,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 
 #### Ε: Πώς μπορώ να βρω και να τροποποιήσω συγκεκριμένο κείμενο μέσα στο έγγραφο PDF;
 
- Α: Στο Βήμα 5, θα χρησιμοποιήσετε το`TextFragmentAbsorber`για να βρείτε το επιθυμητό κείμενο μέσα στο έγγραφο. Στη συνέχεια, μπορείτε να τροποποιήσετε τις ιδιότητές του:
+ Α: Στο Βήμα 5, θα χρησιμοποιήσετε το`TextFragmentAbsorber` για να βρείτε το επιθυμητό κείμενο μέσα στο έγγραφο. Στη συνέχεια, μπορείτε να τροποποιήσετε τις ιδιότητές του:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -150,7 +150,7 @@ textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 
 #### Ε: Μπορώ να εφαρμόσω πρόσθετη μορφοποίηση κειμένου στο τροποποιημένο κείμενο;
 
- Α: Ναι, στο Βήμα 7, μπορείτε να εφαρμόσετε πρόσθετη μορφοποίηση κειμένου, όπως υπογράμμιση, τροποποιώντας τις ιδιότητες του`TextState` αντικείμενο:
+Α: Ναι, στο Βήμα 7, μπορείτε να εφαρμόσετε πρόσθετη μορφοποίηση κειμένου, όπως υπογράμμιση, τροποποιώντας τις ιδιότητες του`TextState` αντικείμενο:
 
 ```csharp
 textFragment.TextState.Underline = true;

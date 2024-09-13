@@ -2,139 +2,149 @@
 title: Beschriftung für Optionsfeld festlegen
 linktitle: Beschriftung für Optionsfeld festlegen
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET die Beschriftung für ein Optionsfeld in einem PDF-Formular festlegen.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Optionsfeldbeschriftungen in PDFs festlegen. Diese Schritt-für-Schritt-Anleitung führt Sie durch das Laden, Ändern und Speichern Ihrer PDF-Formulare.
 type: docs
 weight: 280
 url: /de/net/programming-with-forms/set-radio-button-caption/
 ---
-In dieser Anleitung erklären wir Schritt für Schritt, wie Sie mit der Aspose.PDF-Bibliothek für .NET die Beschriftung eines Optionsfelds in einem PDF-Formular definieren. Wir zeigen Ihnen, wie Sie auf das Optionsfeldfeld zugreifen, eine neue Optionsfeldoption erstellen und die Schaltflächenbeschriftung anpassen.
+## Einführung
 
-## Schritt 1: Konfigurieren des Dokumentverzeichnisses
+Wenn Sie sich mit der PDF-Bearbeitung mit Aspose.PDF für .NET beschäftigen, erwartet Sie ein Leckerbissen! Heute konzentrieren wir uns auf eine praktische Funktion: das Festlegen von Optionsfeldbeschriftungen in Ihren PDF-Formularen. Optionsfelder sind für Benutzerformulare unerlässlich, bei denen Sie aus einer Reihe von Optionen auswählen müssen. Stellen Sie sie sich als Multiple-Choice-Fragen vor, bei denen nur eine Antwort zulässig ist. Dieses Tutorial führt Sie durch den Prozess der Aktualisierung von Optionsfeldbeschriftungen in einem PDF-Formular, damit Ihre Dokumente sowohl interaktiv als auch benutzerfreundlich sind. 
 
- Der erste Schritt besteht darin, das Dokumentverzeichnis zu konfigurieren, in dem sich das zu bearbeitende PDF-Formular befindet. Sie können das`dataDir` Variable zum Angeben des Verzeichnispfads.
+## Voraussetzungen
+
+Bevor Sie sich in den Code vertiefen, müssen Sie Folgendes sicherstellen:
+
+1. Aspose.PDF für .NET: Stellen Sie sicher, dass Sie die Aspose.PDF-Bibliothek installiert haben. Mit dieser Bibliothek können Sie PDF-Dateien programmgesteuert bearbeiten.
+2. Entwicklungsumgebung: Sie sollten eine .NET-Entwicklungsumgebung wie Visual Studio eingerichtet haben.
+3. Beispiel-PDF-Formular: Für dieses Tutorial benötigen Sie ein Beispiel-PDF-Formular mit Optionsfeldern. Sie können ein vorhandenes PDF-Formular verwenden oder ein neues mit Optionsfeldern erstellen.
+4. Grundkenntnisse in C#: Dieses Handbuch setzt voraus, dass Sie über grundlegende Kenntnisse der Programmierkonzepte von C# und .NET verfügen.
+
+ Wenn Sie Aspose.PDF für .NET noch nicht installiert haben oder eine temporäre Lizenz benötigen, können Sie[Laden Sie es hier herunter](https://releases.aspose.com/pdf/net/) oder[eine temporäre Lizenz erhalten](https://purchase.aspose.com/temporary-license/).
+
+## Pakete importieren
+
+Um zu beginnen, müssen Sie die erforderlichen Pakete in Ihr C#-Projekt importieren. So binden Sie die Aspose.PDF-Bibliothek ein:
 
 ```csharp
-// Der Pfad zum Dokumentverzeichnis.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using Aspose.Pdf.Forms;
+using System.Collections.Generic;
+using Aspose.Pdf.Text;
 ```
 
- Ersetzen Sie unbedingt`"YOUR DOCUMENTS DIRECTORY"` durch den tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
+Stellen Sie sicher, dass Sie diese Pakete über NuGet oder Ihre bevorzugte Methode zu Ihrem Projekt hinzugefügt haben.
 
-## Schritt 2: Laden des PDF-Quellformulars
+## Schritt 1: Laden Sie das PDF-Formular
 
- In diesem Schritt laden wir das Quell-PDF-Formular mit dem`Aspose.Pdf.Facades.Form` Klasse von Aspose.PDF.
-
-```csharp
-Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
-```
-
-Stellen Sie sicher, dass die PDF-Datei mit dem Formular im angegebenen Dokumentenverzeichnis vorhanden ist.
-
-## Schritt 3: Bearbeiten der Optionsfeldbeschriftung
-
-Wir durchlaufen die Formularfeldnamen und suchen nach Optionsfeldfeldern. Wenn ein passendes Feld gefunden wird, erstellen wir eine neue Optionsfeldoption mit einer benutzerdefinierten Beschriftung und fügen sie dem vorhandenen Feld hinzu.
+ Zuerst müssen Sie das PDF-Formular laden, das die Optionsfelder enthält.`Aspose.Pdf.Facades.Form`Klasse wird für diesen Zweck verwendet. So geht's:
 
 ```csharp
-foreach(var item in form1.FieldNames)
-{
-if (item.Contains("radio1"))
-{
-Aspose.Pdf.Forms.RadioButtonField field0 = PDF_Template_PDF_HTML.Form[item] as Aspose.Pdf.Forms.RadioButtonField;
-Aspose.Pdf.Forms.RadioButtonOptionField fieldoption = new Aspose.Pdf.Forms.RadioButtonOptionField();
-fieldoption.OptionName = "Yes";
-fieldoption.PartialName = "Yesname";
-var updatedFragment = new Aspose.Pdf.Text.TextFragment("test123");
-updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
-updatedFragment.TextState.FontSize = 10;
-updatedFragment.TextState.LineSpacing = 6.32f;
-// Erstellen eines TextParagraph-Objekts
-TextParagraph par = new TextParagraph();
-// Absatzposition festlegen
-par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
-// Festlegen des Zeilenumbruchmodus
-by.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
-// Fügen Sie dem Absatz das neue TextFragment hinzu
-par.AppendLine(updatedFragment);
-// Fügen Sie den TextParagraph mit TextBuilder hinzu
-TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
-textBuilder.AppendParagraph(par);
-field0.DeleteOption("item1");
-}
-}
-```
-
-Passen Sie das Optionsfeld für die Beschriftung und andere Einstellungen nach Bedarf an.
-
-## Schritt 4: Speichern der resultierenden PDF-Datei
-
- Nachdem wir nun die Beschriftung des Optionsfelds geändert haben, können wir das resultierende PDF mit dem`Save` Methode der`Document` Klasse.
-
-```csharp
-PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
-```
-
-Geben Sie unbedingt den vollständigen Pfad und Dateinamen für die resultierende PDF-Datei an.
-
-### Beispielquellcode zum Festlegen der Radiobutton-Beschriftung mit Aspose.PDF für .NET 
-```csharp
-// Der Pfad zum Dokumentverzeichnis.
+// Definieren Sie den Pfad zu Ihrem Dokumentverzeichnis
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Quell-PDF-Formular laden
+
+// Laden Sie das Quell-PDF-Formular
 Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButtonField.pdf");
 Document PDF_Template_PDF_HTML = new Document(dataDir + "RadioButtonField.pdf");
+```
+
+In diesem Codeausschnitt:
+- `dataDir` gibt den Pfad an, in dem sich Ihr PDF befindet.
+- `Form` Klasse wird zur Interaktion mit den Formularfeldern im PDF verwendet.
+- `Document` Klasse bietet Zugriff auf die Seiten des PDF-Dokuments.
+
+## Schritt 2: Durch Radiobutton-Felder iterieren
+
+Als Nächstes müssen Sie die Felder in Ihrem Formular durchlaufen, um die Optionsfeldfelder zu identifizieren und zu bearbeiten:
+
+```csharp
 foreach (var item in form1.FieldNames)
 {
-	Console.WriteLine(item.ToString());
-	Dictionary<string, string> radioOptions = form1.GetButtonOptionValues(item);
-	if (item.Contains("radio1"))
-	{
-		Aspose.Pdf.Forms.RadioButtonField field0 = PDF_Template_PDF_HTML.Form[item] as Aspose.Pdf.Forms.RadioButtonField;
-		Aspose.Pdf.Forms.RadioButtonOptionField fieldoption = new Aspose.Pdf.Forms.RadioButtonOptionField();
-		fieldoption.OptionName = "Yes";
-		fieldoption.PartialName = "Yesname";
-		var updatedFragment = new Aspose.Pdf.Text.TextFragment("test123");
-		updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
-		updatedFragment.TextState.FontSize = 10;
-		updatedFragment.TextState.LineSpacing = 6.32f;
-		// TextParagraph-Objekt erstellen
-		TextParagraph par = new TextParagraph();
-		// Absatzposition festlegen
-		par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
-		// Festlegen des Zeilenumbruchmodus
-		par.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
-		// Neues TextFragment zum Absatz hinzufügen
-		par.AppendLine(updatedFragment);
-		// Fügen Sie den TextParagraph mit TextBuilder hinzu
-		TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
-		textBuilder.AppendParagraph(par);
-		field0.DeleteOption("item1");
-	}
+    Console.WriteLine(item.ToString());
+    Dictionary<string, string> radioOptions = form1.GetButtonOptionValues(item);
+```
+
+In dieser Schleife:
+- `FieldNames` bietet eine Liste aller Feldnamen im PDF.
+- `GetButtonOptionValues(item)` ruft die für jedes Optionsfeld verfügbaren Optionen ab.
+
+## Schritt 3: Optionsfeldoptionen ändern
+
+ Sobald Sie die Optionsfelder identifiziert haben, können Sie deren Optionen ändern. Dazu müssen Sie das Feld in`RadioButtonField` und aktualisieren Sie die Optionen:
+
+```csharp
+    if (item.Contains("radio1"))
+    {
+        Aspose.Pdf.Forms.RadioButtonField field0 = PDF_Template_PDF_HTML.Form[item] as Aspose.Pdf.Forms.RadioButtonField;
+        Aspose.Pdf.Forms.RadioButtonOptionField fieldoption = new Aspose.Pdf.Forms.RadioButtonOptionField();
+        fieldoption.OptionName = "Yes";
+        fieldoption.PartialName = "Yesname";
+```
+
+Hier:
+- Wir prüfen, ob der Feldname „radio1“ enthält, um das spezifische Optionsfeld zu identifizieren, das wir ändern möchten.
+- `RadioButtonField`wird aus den Formularfeldern gegossen, um bestimmte Änderungen vorzunehmen.
+
+## Schritt 4: Festlegen der Beschriftung für das Optionsfeld
+
+ Um die Beschriftung für das Optionsfeld festzulegen oder zu aktualisieren, müssen Sie eine`TextFragment` und Verwendung`TextBuilder` um es an der gewünschten Stelle zu platzieren:
+
+```csharp
+        var updatedFragment = new Aspose.Pdf.Text.TextFragment("test123");
+        updatedFragment.TextState.Font = FontRepository.FindFont("Arial");
+        updatedFragment.TextState.FontSize = 10;
+        updatedFragment.TextState.LineSpacing = 6.32f;
+
+        // TextParagraph-Objekt erstellen
+        TextParagraph par = new TextParagraph();
+        // Absatzposition festlegen
+        par.Position = new Position(field0.Rect.LLX, field0.Rect.LLY + updatedFragment.TextState.FontSize);
+        // Festlegen des Zeilenumbruchmodus
+        par.FormattingOptions.WrapMode = TextFormattingOptions.WordWrapMode.ByWords;
+        // Neues TextFragment zum Absatz hinzufügen
+        par.AppendLine(updatedFragment);
+        // Fügen Sie den TextParagraph mit TextBuilder hinzu
+        TextBuilder textBuilder = new TextBuilder(PDF_Template_PDF_HTML.Pages[1]);
+        textBuilder.AppendParagraph(par);
+```
+
+In diesem Teil:
+- `TextFragment` wird verwendet, um den Text und sein Erscheinungsbild zu definieren.
+- `TextParagraph` hilft beim Positionieren und Formatieren des Textes.
+- `TextBuilder` fügt den Text der angegebenen Seite des PDFs hinzu.
+
+## Schritt 5: Speichern Sie die aktualisierte PDF-Datei
+
+Speichern Sie abschließend die aktualisierte PDF-Datei in einer neuen Datei:
+
+```csharp
+        field0.DeleteOption("item1");
+    }
 }
 PDF_Template_PDF_HTML.Save(dataDir + "RadioButtonField_out.pdf");
 ```
+
+Dadurch wird Folgendes sichergestellt:
+- Die Änderungen werden in das PDF übernommen.
+- Die ursprüngliche Optionsfeldoption wird wie angegeben entfernt.
 
 ## Abschluss
 
-In dieser Anleitung haben wir gelernt, wie man mit der Aspose.PDF-Bibliothek für .NET die Beschriftung für ein Optionsfeld in einem PDF-Formular festlegt. Indem Sie die beschriebenen Schritte befolgen, können Sie die Optionsfeldoptionen anpassen und die Beschriftung nach Bedarf ändern. Erkunden Sie die Funktionen von Aspose.PDF für .NET weiter, um die Möglichkeiten zur Bearbeitung von PDF-Dateien zu erweitern.
+Das Ändern von Optionsfeldbeschriftungen in einem PDF-Formular mit Aspose.PDF für .NET kann die Interaktivität und Benutzerfreundlichkeit Ihrer Dokumente erheblich verbessern. Mit den in diesem Tutorial beschriebenen Schritten können Sie ganz einfach ein PDF laden, Optionsfeldoptionen aktualisieren und Ihre Änderungen speichern. Dieser Ansatz ist praktisch für die Formularverwaltung und stellt sicher, dass Ihre PDFs genau den Anforderungen Ihrer Benutzer entsprechen. Tauchen Sie ein in Aspose.PDF und erkunden Sie seine Möglichkeiten für andere PDF-Manipulationen!
 
-### Häufig gestellte Fragen
+## Häufig gestellte Fragen
 
-#### F: Kann ich Aspose.PDF für .NET verwenden, um Beschriftungen für Optionsfelder in einem PDF-Formular festzulegen?
+### Kann ich mehrere Optionsfeldfelder gleichzeitig aktualisieren?
+Ja, Sie können alle Optionsfeldfelder durchlaufen und nach Bedarf Änderungen vornehmen.
 
-A: Ja, Sie können Aspose.PDF für .NET verwenden, um Beschriftungen für Optionsfelder in einem PDF-Formular festzulegen. Der bereitgestellte Beispielquellcode zeigt, wie Sie auf das Optionsfeld zugreifen, eine neue Optionsfeldoption mit einer benutzerdefinierten Beschriftung erstellen und das vorhandene Feld aktualisieren.
+### Benötige ich eine Lizenz, um Aspose.PDF zu verwenden?
+ Sie können mit einer kostenlosen Testversion beginnen, für die erweiterte Nutzung ist jedoch eine Lizenz erforderlich.[Holen Sie sich hier eine Lizenz](https://purchase.aspose.com/buy).
 
-#### F: Wie kann ich das Erscheinungsbild der Optionsfeldbeschriftung, beispielsweise Schriftgröße und Farbe, anpassen?
+### Wie kann ich die Änderungen testen, bevor ich das PDF speichere?
+Sie können eine Vorschau der PDF-Datei in Ihrer Entwicklungsumgebung anzeigen oder einen PDF-Viewer verwenden, um die Änderungen zu überprüfen.
 
- A: Sie können das Erscheinungsbild der Optionsfeldbeschriftung anpassen, indem Sie die Eigenschaften des`TextFragment` für die Überschrift verwendet. Sie können beispielsweise Schriftart, Schriftgröße, Farbe, Zeilenabstand und andere Textformatierungsoptionen festlegen.
+### Ist Aspose.PDF mit allen Versionen von .NET kompatibel?
+Aspose.PDF unterstützt verschiedene Versionen von .NET. Stellen Sie sicher, dass Sie die Kompatibilität mit Ihrer spezifischen .NET-Version überprüfen.
 
-#### F: Ist es möglich, einer einzigen Optionsfeldgruppe mehrere Optionsfeldoptionen mit unterschiedlichen Beschriftungen hinzuzufügen?
-
-A: Ja, Sie können einer einzelnen Optionsfeldgruppe mehrere Optionsfeldoptionen mit unterschiedlichen Beschriftungen hinzufügen. Jede Option stellt eine andere Auswahl dar und Benutzer können nur eine Option aus der Gruppe auswählen.
-
-#### F: Kann ich Aspose.PDF für .NET verwenden, um andere Formularfelder in einem PDF-Dokument zu ändern?
-
-A: Ja, Aspose.PDF für .NET bietet einen umfassenden Satz von Funktionen zum Bearbeiten verschiedener Formularfelder in einem PDF-Dokument, z. B. Textfelder, Kontrollkästchen, Dropdown-Listen und mehr. Sie können die Bibliothek verwenden, um Werte festzulegen, das Erscheinungsbild zu ändern und Formularfeldern Interaktivität hinzuzufügen.
-
-#### F: Unterstützt Aspose.PDF für .NET die Arbeit mit PDFs, die aus anderen Quellen generiert wurden, wie z. B. gescannten Dokumenten?
-
-A: Ja, Aspose.PDF für .NET unterstützt die Arbeit mit PDFs, die aus verschiedenen Quellen generiert wurden, einschließlich gescannter Dokumente. Die Bibliothek bietet OCR-Funktionen (Optical Character Recognition), um Text aus gescannten PDFs zu extrahieren und den Inhalt programmgesteuert zu bearbeiten.
+### Kann ich andere Formularfelder auf ähnliche Weise bearbeiten?
+Ja, ähnliche Techniken können auf andere Arten von Formularfeldern in PDF-Dokumenten angewendet werden.

@@ -42,7 +42,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 ```
 
 ## Langkah 5: Temukan teks yang akan dimodifikasi
- Menggunakan`TextFragmentAbsorber` untuk menemukan teks yang diinginkan dalam dokumen. Dalam kode yang diberikan, teks "Lorem ipsum" dicari.
+Menggunakan`TextFragmentAbsorber` untuk menemukan teks yang diinginkan dalam dokumen. Dalam kode yang diberikan, teks "Lorem ipsum" dicari.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -129,7 +129,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 
 #### T: Bagaimana cara menemukan dan mengubah teks tertentu dalam dokumen PDF?
 
- A: Pada Langkah 5, Anda akan menggunakan`TextFragmentAbsorber`untuk menemukan teks yang diinginkan dalam dokumen. Kemudian, Anda dapat mengubah propertinya:
+ A: Pada Langkah 5, Anda akan menggunakan`TextFragmentAbsorber` untuk menemukan teks yang diinginkan dalam dokumen. Kemudian, Anda dapat mengubah propertinya:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -150,7 +150,7 @@ textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 
 #### T: Dapatkah saya menerapkan format teks tambahan pada teks yang dimodifikasi?
 
- A: Ya, pada Langkah 7, Anda dapat menerapkan pemformatan teks tambahan seperti garis bawah dengan memodifikasi properti`TextState` obyek:
+A: Ya, pada Langkah 7, Anda dapat menerapkan pemformatan teks tambahan seperti garis bawah dengan memodifikasi properti`TextState` obyek:
 
 ```csharp
 textFragment.TextState.Underline = true;

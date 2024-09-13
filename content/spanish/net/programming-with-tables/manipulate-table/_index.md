@@ -121,7 +121,7 @@ R: Sí, puedes manipular tablas en documentos PDF de varias páginas usando Aspo
 
 #### P: ¿Es posible eliminar una tabla de un documento PDF?
 
- R: Sí, puede eliminar una tabla de un documento PDF con Aspose.PDF para .NET. Para lograrlo, puede eliminar la tabla específica`Table` objeto de la`Page.Paragraphs` colección. Puede identificar la tabla que desea eliminar mediante propiedades como`Table.NumberOfColumns`, `Table.NumberOfRows`, y otros identificadores únicos.
+ R: Sí, puede eliminar una tabla de un documento PDF con Aspose.PDF para .NET. Para lograrlo, puede eliminar la tabla específica`Table` objeto de la`Page.Paragraphs` colección. Puede identificar la tabla que desea eliminar mediante propiedades como`Table.NumberOfColumns`, `Table.NumberOfRows`y otros identificadores únicos.
 
 #### P: ¿Puedo cambiar el formato (fuente, color, alineación) del texto de la tabla?
 

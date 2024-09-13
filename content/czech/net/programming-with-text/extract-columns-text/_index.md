@@ -32,7 +32,7 @@ using System.IO;
  V kódu vyhledejte řádek, který říká`string dataDir = "YOUR DOCUMENT DIRECTORY";` a nahradit`"YOUR DOCUMENT DIRECTORY"` s cestou k adresáři, kde jsou uloženy vaše dokumenty.
 
 ## Krok 4: Otevřete dokument PDF
- Otevřete existující dokument PDF pomocí`Document` konstruktoru a předání cesty ke vstupnímu souboru PDF.
+ Otevřete existující dokument PDF pomocí`Document`konstruktoru a předání cesty ke vstupnímu souboru PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
@@ -52,7 +52,7 @@ foreach(TextFragment tf in tfc)
 ```
 
 ## Krok 6: Extrahujte text ze sloupců
- Uložte upravený dokument PDF do paměťového proudu a znovu jej načtěte jako nový dokument. Poté použijte`TextAbsorber` třídy extrahovat text ze sloupců.
+ Uložte upravený dokument PDF do paměťového proudu a znovu jej načtěte jako nový dokument. Poté použijte`TextAbsorber` třídy pro extrahování textu ze sloupců.
 
 ```csharp
 Stream st = new MemoryStream();
@@ -132,7 +132,7 @@ Odpověď: Krok 5 zahrnuje zmenšení velikosti písma fragmentů textu faktorem
 
 #### Otázka: Jak extrahuji text ze sloupců?
 
- Odpověď: Krok 6 se skládá z uložení upraveného dokumentu PDF do paměťového toku, jeho opětovného načtení jako nového dokumentu a následného použití`TextAbsorber` třídy extrahovat text ze sloupců.
+ Odpověď: Krok 6 se skládá z uložení upraveného dokumentu PDF do paměťového toku, jeho opětovného načtení jako nového dokumentu a následného použití`TextAbsorber` třídy pro extrahování textu ze sloupců.
 
 #### Otázka: Jaký je účel uložení extrahovaného textu?
 

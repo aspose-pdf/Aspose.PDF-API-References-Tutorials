@@ -40,7 +40,7 @@ absorb.Visit(pdfDocument.Pages[1]);
 Để có thể xóa các bảng, chúng ta cần lấy một bản sao của bộ sưu tập bảng:
 
 ```csharp
-//Nhận một bản sao của bộ sưu tập bảng
+// Nhận một bản sao của bộ sưu tập bảng
 AbsorbedTable[] tables = new AbsorbedTable[absorb.TableList.Count];
 absorb.TableList.CopyTo(tables, 0);
 ```
@@ -96,7 +96,7 @@ Xin chúc mừng! Bây giờ bạn đã biết cách xóa nhiều bảng trong t
 
 #### H: Tôi có thể xóa một số bảng cụ thể thay vì xóa toàn bộ bảng trong tài liệu PDF không?
 
-A: Có, bạn có thể xóa các bảng cụ thể thay vì tất cả các bảng trong tài liệu PDF bằng Aspose.PDF cho .NET. Trong ví dụ được cung cấp, tất cả các bảng trên trang thứ hai đều bị xóa. Tuy nhiên, bạn có thể sửa đổi mã để nhắm mục tiêu và xóa các bảng cụ thể dựa trên yêu cầu của mình. Để thực hiện việc này, bạn cần xác định các bảng bạn muốn xóa và sau đó gọi`absorber.Remove(table)` phương pháp cho từng bảng cụ thể mà bạn muốn xóa.
+ A: Có, bạn có thể xóa các bảng cụ thể thay vì tất cả các bảng trong tài liệu PDF bằng Aspose.PDF cho .NET. Trong ví dụ được cung cấp, tất cả các bảng trên trang thứ hai đều bị xóa. Tuy nhiên, bạn có thể sửa đổi mã để nhắm mục tiêu và xóa các bảng cụ thể dựa trên yêu cầu của mình. Để thực hiện việc này, bạn cần xác định các bảng bạn muốn xóa và sau đó gọi`absorber.Remove(table)` phương pháp cho từng bảng cụ thể mà bạn muốn xóa.
 
 #### H: Làm thế nào để xóa bảng khỏi nhiều trang trong tài liệu PDF?
 
@@ -104,7 +104,7 @@ A: Có, bạn có thể xóa các bảng cụ thể thay vì tất cả các b�
 
 #### H: Điều gì xảy ra nếu tôi cố xóa một bảng không tồn tại trên trang đã chỉ định?
 
-A: Nếu bạn cố gắng xóa một bảng không tồn tại trên trang đã chỉ định, nó sẽ không dẫn đến lỗi.`absorber.Remove(table)` phương pháp này sẽ bỏ qua yêu cầu xóa và tài liệu PDF sẽ không thay đổi.
+ A: Nếu bạn cố gắng xóa một bảng không tồn tại trên trang đã chỉ định, nó sẽ không dẫn đến lỗi.`absorber.Remove(table)` phương pháp này sẽ bỏ qua yêu cầu xóa và tài liệu PDF sẽ không thay đổi.
 
 #### H: Tôi có thể hoàn tác thao tác xóa bảng sau khi lưu tài liệu không?
 

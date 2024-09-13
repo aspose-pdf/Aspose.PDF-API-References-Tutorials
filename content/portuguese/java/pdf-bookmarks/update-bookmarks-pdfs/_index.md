@@ -99,7 +99,7 @@ Sim, o Aspose.PDF para Java é capaz de manipular documentos PDF grandes de form
 
 ### Posso automatizar atualizações de favoritos no processamento em lote usando Aspose.PDF para Java?
 
-Sim, você pode automatizar atualizações de favoritos no processamento em lote usando Aspose.PDF para Java. Você pode criar um programa Java para iterar por uma coleção de arquivos PDF e atualizar favoritos conforme necessário.
+Sim, você pode automatizar atualizações de favoritos em processamento em lote usando Aspose.PDF para Java. Você pode criar um programa Java para iterar por uma coleção de arquivos PDF e atualizar favoritos conforme necessário.
 
 ### Há alguma limitação ou restrição ao usar o Aspose.PDF para Java para atualizações de favoritos?
 

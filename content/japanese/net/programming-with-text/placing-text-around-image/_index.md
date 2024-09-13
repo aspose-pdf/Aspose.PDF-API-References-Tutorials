@@ -156,7 +156,7 @@ string SecondRowString = "<font face=\"Arial\" size=2>Aspose.Pdf for .NET suppor
 Aspose.Pdf.HtmlFragment SecondRowText = new Aspose.Pdf.HtmlFragment(SecondRowString);
 //HTMLテキストを含むテキスト段落をテーブルセルに追加します
 SecondRow.Cells[0].Paragraphs.Add(SecondRowText);
-//PDFファイルを保存する
+// PDFファイルを保存する
 doc.Save(dataDir + "PlacingTextAroundImage_out.pdf");
 ```
 

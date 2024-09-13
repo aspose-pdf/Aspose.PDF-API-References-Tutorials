@@ -1,7 +1,7 @@
 ---
 title: Ta bort all text från PDF
 linktitle: Ta bort all text från PDF
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du tar bort all text från ett PDF-dokument med Aspose.PDF för .NET.
 type: docs
 weight: 290
@@ -96,7 +96,7 @@ S: Handledningen guidar dig genom processen steg för steg:
 
 S: Handledningen fokuserar på att ta bort all text från hela PDF-dokumentet. Om du selektivt vill ta bort text från specifika områden, måste du ändra tillvägagångssättet och använda mer komplex logik för att identifiera och ta bort specifika textfragment.
 
-####  F: Hur fungerar`TextFragmentAbsorber` work to remove text?
+#### F: Hur fungerar`TextFragmentAbsorber` work to remove text?
 
  A: Den`TextFragmentAbsorber`är en klass som tillhandahålls av Aspose.PDF-biblioteket som kan absorbera textfragment från ett PDF-dokument. Genom att använda`RemoveAllText` metod för`TextFragmentAbsorber` klass kan du ta bort alla absorberade textfragment från dokumentet.
 

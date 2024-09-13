@@ -47,7 +47,7 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 ```
 
 ## Stap 6: Voeg een pagina toe aan het document
- Voeg een nieuwe pagina toe aan het document met behulp van de`Add` methode van de`Pages`verzameling. In de meegeleverde code wordt de nieuwe pagina toegewezen aan de variabele`page`.
+ Voeg een nieuwe pagina toe aan het document met behulp van de`Add` methode van de`Pages` verzameling. In de meegeleverde code wordt de nieuwe pagina toegewezen aan de variabele`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -73,7 +73,7 @@ doc.Save(outFile);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Het pad naar het uitvoerdocument.
 string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";
-// Instantieer Document object
+// Instantieer Document-object
 Document doc = new Document();
 // Instantieer HtmlFragment-object met bijbehorend HTML-fragment
 HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li>Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>`");
@@ -81,7 +81,7 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 Page page = doc.Pages.Add();
 // Voeg HtmlFragment toe aan de pagina
 page.Paragraphs.Add(t);
-// Resulterend PDF-bestand opslaan
+//Resulterend PDF-bestand opslaan
 doc.Save(outFile);
 ```
 
@@ -115,7 +115,7 @@ using Aspose.Pdf.Text;
 
 #### V: Hoe voeg ik de geordende HTML-lijst toe aan een pagina in het document?
 
- A: In stap 7 voegt u de`HtmlFragment` voorwerp (`t` ) naar de pagina met behulp van de`Add` methode van de`Paragraphs`verzameling. Dit zal de HTML-geordende lijst naadloos integreren in het document.
+ A: In stap 7 voegt u de`HtmlFragment` voorwerp (`t` ) naar de pagina met behulp van de`Add` methode van de`Paragraphs` verzameling. Dit zal de HTML-geordende lijst naadloos integreren in het document.
 
 #### V: Hoe kan ik het resulterende PDF-document opslaan?
 

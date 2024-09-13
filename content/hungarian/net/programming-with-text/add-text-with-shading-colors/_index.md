@@ -42,7 +42,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 ```
 
 ## 5. lépés: Keresse meg a módosítani kívánt szöveget
- Használat`TextFragmentAbsorber` hogy megtalálja a kívánt szöveget a dokumentumban. A megadott kódban a „Lorem ipsum” szöveget keresi.
+Használat`TextFragmentAbsorber` hogy megtalálja a kívánt szöveget a dokumentumban. A megadott kódban a „Lorem ipsum” szöveget keresi.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -129,7 +129,7 @@ using(Document pdfDocument = new Document(dataDir + "text_sample4.pdf"))
 
 #### K: Hogyan találhatok meg és módosíthatok meghatározott szöveget a PDF-dokumentumban?
 
- V: Az 5. lépésben a`TextFragmentAbsorber`hogy megtalálja a kívánt szöveget a dokumentumban. Ezután módosíthatja a tulajdonságait:
+ V: Az 5. lépésben a`TextFragmentAbsorber` hogy megtalálja a kívánt szöveget a dokumentumban. Ezután módosíthatja a tulajdonságait:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Lorem ipsum");
@@ -150,7 +150,7 @@ textFragment.TextState.ForegroundColor = new Aspose.Pdf.Color()
 
 #### K: Alkalmazhatok-e további szövegformázást a módosított szövegre?
 
- V: Igen, a 7. lépésben további szövegformázást, például aláhúzást is alkalmazhat a`TextState` objektum:
+V: Igen, a 7. lépésben további szövegformázást, például aláhúzást is alkalmazhat a`TextState` objektum:
 
 ```csharp
 textFragment.TextState.Underline = true;

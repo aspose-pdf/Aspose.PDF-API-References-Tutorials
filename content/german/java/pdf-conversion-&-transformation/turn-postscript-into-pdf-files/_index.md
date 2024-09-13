@@ -79,7 +79,7 @@ Der Konvertierungsprozess hängt weitgehend von der Komplexität der ursprüngli
 
 ## Abschluss
 
-Mit Aspose.PDF für Java wird das Konvertieren von PostScript-Dateien in PDFs zum Kinderspiel. Indem Sie die in diesem Handbuch beschriebenen Schritte befolgen, können Sie Ihre PostScript-Dokumente mühelos in das weithin kompatible und portable PDF-Format umwandeln. Erkunden Sie die Anpassungsoptionen von Aspose.PDF, um Ihre PDFs entsprechend Ihren spezifischen Anforderungen zu optimieren.
+Das Konvertieren von PostScript-Dateien in PDFs wird mit Aspose.PDF für Java zum Kinderspiel. Indem Sie die in diesem Handbuch beschriebenen Schritte befolgen, können Sie Ihre PostScript-Dokumente mühelos in das weithin kompatible und portable PDF-Format umwandeln. Erkunden Sie die Anpassungsoptionen von Aspose.PDF, um Ihre PDFs entsprechend Ihren spezifischen Anforderungen zu optimieren.
 
 Nachdem Sie nun gelernt haben, wie Sie diese Konvertierung durchführen, können Sie Ihre Dokumentenverwaltungsprozesse optimieren und sicherstellen, dass Ihre Inhalte einem größeren Publikum zugänglich sind.
 

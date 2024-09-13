@@ -61,7 +61,7 @@ Document doc = new Document(dataDir + "input.pdf");
 
 ## Krok 3: Projděte všechny stránky
 
-Nyní, když máme načtený náš dokument, musíme iterovat všechny stránky v PDF. To nám umožňuje kontrolovat na každé stránce písma, která je třeba vložit.
+Nyní, když máme načtený náš dokument, musíme iterovat všechny stránky v PDF. To nám umožňuje na každé stránce zkontrolovat písma, která je třeba vložit.
 
 ```csharp
 // Projděte všechny stránky

@@ -80,7 +80,7 @@ DataTable dt = new DataTable("Employee");
 dt.Columns.Add("Employee_ID", typeof(Int32));
 dt.Columns.Add("Employee_Name", typeof(string));
 dt.Columns.Add("Gender", typeof(string));
-// Dodaj 2 wiersze do obiektu DataTable programowo
+//Dodaj 2 wiersze do obiektu DataTable programowo
 DataRow dr = dt.NewRow();
 dr[0] = 1;
 dr[1] = "John Smith";
@@ -114,7 +114,7 @@ Console.WriteLine("\nDatabase integrated successfully.\nFile saved at " + dataDi
 ```
 
 ## Wniosek
-tym samouczku nauczyliśmy się, jak osadzać dane z bazy danych w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Możesz użyć tego przewodnika krok po kroku, aby zaimportować dane z własnej bazy danych i wyświetlić je w dokumentach PDF. Zapoznaj się z dokumentacją Aspose.PDF, aby odkryć inne funkcje i możliwości oferowane przez tę potężną bibliotekę.
+W tym samouczku nauczyliśmy się, jak osadzać dane z bazy danych w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Możesz użyć tego przewodnika krok po kroku, aby zaimportować dane z własnej bazy danych i wyświetlić je w dokumentach PDF. Zapoznaj się z dokumentacją Aspose.PDF, aby odkryć inne funkcje i możliwości oferowane przez tę potężną bibliotekę.
 
 ### FAQ dotyczące integracji z bazą danych w pliku PDF
 
@@ -132,7 +132,7 @@ A: Tak, możesz dodać hiperłącza lub inne interaktywne elementy do danych imp
 
 #### P: Czy mogę podzielić tabelę na strony, jeśli przekracza ona pewną liczbę wierszy?
 
- A: Tak, możesz paginować tabelę, jeśli przekracza ona określoną liczbę wierszy. Aby to osiągnąć, możesz użyć`IsInNewPage`właściwość obiektu Row wskazująca, że nowa strona powinna rozpocząć się po określonym wierszu. Możesz obliczyć liczbę wierszy wyświetlanych na stronie i ustawić`IsInNewPage` odpowiednio nieruchomość.
+A: Tak, możesz paginować tabelę, jeśli przekracza ona określoną liczbę wierszy. Aby to osiągnąć, możesz użyć`IsInNewPage` właściwość obiektu Row wskazująca, że nowa strona powinna rozpocząć się po określonym wierszu. Możesz obliczyć liczbę wierszy wyświetlanych na stronie i ustawić`IsInNewPage` odpowiednio nieruchomość.
 
 #### P: W jaki sposób mogę wyeksportować dokument PDF z osadzonymi danymi bazy danych do innych formatów plików, takich jak DOCX lub XLSX?
 

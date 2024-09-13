@@ -144,7 +144,7 @@ Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();
 currpage.Paragraphs.Add(image1);
 ```
 
-Wanneer u de afbeelding toevoegt aan de alineaverzameling, wordt deze onderdeel van de pagina-inhoud en kan deze worden weergegeven in de definitieve PDF.
+Wanneer u de afbeelding aan de alineaverzameling toevoegt, wordt deze onderdeel van de pagina-inhoud en kan deze worden weergegeven in de definitieve PDF.
 
 ## Stap 11: Optimaliseer de afbeelding voor prestaties
 

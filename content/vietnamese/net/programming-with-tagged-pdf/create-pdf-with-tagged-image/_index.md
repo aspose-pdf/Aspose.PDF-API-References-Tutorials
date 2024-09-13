@@ -112,7 +112,7 @@ A: Có, bạn có thể sử dụng các định dạng hình ảnh khác nhau c
 
  A: Văn bản thay thế cung cấp mô tả bằng văn bản về hình ảnh, được đọc to bằng trình đọc màn hình dành cho người dùng khiếm thị. Trong mã được cung cấp, văn bản thay thế được đặt bằng cách sử dụng`AlternativeText` tài sản của`IllustrationElement` đại diện cho hình ảnh được gắn thẻ.
 
-####  Q: Làm thế nào để`SetTitle` method contribute to the PDF document's tagged image?
+#### Q: Làm thế nào để`SetTitle` method contribute to the PDF document's tagged image?
 
  A: Cái`SetTitle` phương pháp này đặt tiêu đề cho nội dung được gắn thẻ của tài liệu PDF, cung cấp ngữ cảnh bổ sung cho hình ảnh được gắn thẻ. Tiêu đề này có thể giúp xác định mục đích hoặc chủ đề của nội dung được gắn thẻ.
 
@@ -126,4 +126,4 @@ A: Bằng cách sử dụng các tính năng cấu trúc nội dung được g�
 
 #### H: Có thể thêm nhiều hình ảnh được gắn thẻ vào cùng một tài liệu PDF bằng các kỹ thuật tương tự không?
 
- A: Có, bạn có thể thêm nhiều hình ảnh được gắn thẻ vào cùng một tài liệu PDF bằng các kỹ thuật tương tự. Bạn sẽ tạo thêm`IllustrationElement` các trường hợp cho mỗi hình ảnh được gắn thẻ và tùy chỉnh các thuộc tính của chúng khi cần thiết.
+A: Có, bạn có thể thêm nhiều hình ảnh được gắn thẻ vào cùng một tài liệu PDF bằng các kỹ thuật tương tự. Bạn sẽ tạo thêm`IllustrationElement` các trường hợp cho mỗi hình ảnh được gắn thẻ và tùy chỉnh các thuộc tính của chúng khi cần thiết.

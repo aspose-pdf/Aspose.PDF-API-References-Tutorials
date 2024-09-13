@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Étape 5 : Ajouter une page au document
- Ajoutez une nouvelle page au document à l'aide de la`Add` méthode de la`Pages`collection. Dans le code fourni, la nouvelle page est attribuée à la variable`page`.
+ Ajoutez une nouvelle page au document à l'aide de la`Add` méthode de la`Pages` collection. Dans le code fourni, la nouvelle page est attribuée à la variable`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -118,7 +118,7 @@ R : À l’étape 6, vous allez créer une boucle pour ajouter plusieurs fragm
 
 #### Q : Comment enregistrer le document PDF et extraire les informations de saut de ligne ?
 
- A : À l'étape 7, vous enregistrerez le document PDF à l'aide de l'`Save` méthode de la`Document` objet. Ensuite, vous extrairez les informations de saut de ligne à l'aide de`GetNotifications`méthode de la page souhaitée et enregistrez-la dans un fichier texte.
+ A : À l'étape 7, vous enregistrerez le document PDF à l'aide de l'`Save` méthode de la`Document` objet. Ensuite, vous extrairez les informations de saut de ligne à l'aide de`GetNotifications` méthode de la page souhaitée et enregistrez-la dans un fichier texte.
 
 #### Q : Quel est le but des informations de saut de ligne extraites ?
 

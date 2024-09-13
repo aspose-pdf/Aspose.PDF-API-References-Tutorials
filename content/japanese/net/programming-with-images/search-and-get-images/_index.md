@@ -2,132 +2,120 @@
 title: PDF ファイル内の画像を検索して取得する
 linktitle: PDF ファイル内の画像を検索して取得する
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して PDF ファイル内の画像を検索および取得するためのステップ バイ ステップ ガイド。
+description: Aspose.PDF for .NET を使用して PDF ファイルから画像を簡単に抽出する方法を学びます。このステップ バイ ステップ ガイドに従って、PDF 処理スキルを向上させましょう。
 type: docs
 weight: 260
 url: /ja/net/programming-with-images/search-and-get-images/
 ---
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ファイル内の画像を検索および取得する方法について説明します。この操作を簡単に実行するには、次の手順に従ってください。
+## 導入
+
+Aspose.PDF for .NET を使用して PDF ファイルから画像を抽出する簡単な方法をお探しですか? まさにうってつけの場所です! この記事では、PDF ドキュメントに埋め込まれた画像を効果的に検索して取得する方法について詳しく説明します。熟練した開発者でも、PDF 操作の世界に足を踏み入れたばかりでも、このガイドではプロセス全体をステップごとに説明します。
 
 ## 前提条件
 
-始める前に、次のものがあることを確認してください。
+コードの細部に入る前に、リストにチェックを入れる必要のある前提条件がいくつかあります。 
 
-- Visual Studio またはその他の開発環境がインストールおよび構成されている。
-- C# プログラミング言語に関する基本的な知識。
-- .NET 用の Aspose.PDF ライブラリがインストールされています。Aspose の公式 Web サイトからダウンロードできます。
+### .NET フレームワーク
 
-## ステップ1: PDF文書の読み込み
+お使いのマシンに .NET Framework がインストールされていることを確認してください。Aspose.PDF for .NET はさまざまなバージョンと互換性がありますが、最新の機能と改善点をすべて活用するには、最新の安定リリースを使用することをお勧めします。
 
-まず、次のコードを使用して PDF ドキュメントを読み込みます。
+### Aspose.PDF ライブラリ
+
+Aspose.PDF ライブラリにアクセスする必要があります。まだアクセスしていない場合は、次のリンクからダウンロードできます。[Aspose.PDF for .NET をダウンロード](https://releases.aspose.com/pdf/net/)さらに、[1ヶ月無料トライアル](https://releases.aspose.com/)無料でプロジェクトを開始できます。
+
+### 開発環境
+
+コードをシームレスに記述して実行するには、Visual Studio や好みの IDE などの適切な開発環境を設定する必要があります。
+
+## パッケージのインポート
+
+Aspose.PDF for .NET を使用するには、まず適切な名前空間をプロジェクトにインポートする必要があります。必要な手順は次のとおりです。
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-//文書を開く
+using System.IO;
+using Aspose.Pdf;
+using System;
+```
+
+これらのパッケージはそれぞれ、PDF文書を操作する際に特定の目的を果たします。`Aspose.Pdf`名前空間は操作の基礎であり、他の 2 つは PDF 内の画像とテキストの処理に役立ちます。
+
+## ステップ1: ドキュメントパスを設定する
+
+まず最初に、PDF ファイルが保存されているパスを定義する必要があります。次のコードでそれを設定します。
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ 「YOUR DOCUMENT DIRECTORY」をPDFファイルを含むディレクトリへの実際のパスに置き換えます。例:`C:\Documents\`.
+
+## ステップ2: PDFドキュメントを開く
+
+次に、PDF文書をアプリケーションに読み込みます。これは、新しい`Document`指定したファイル パスを持つインスタンスを作成します。
+
+```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "SearchAndGetImages.pdf");
 ```
 
-PDF ドキュメントへの正しいパスを必ず指定してください。
+## ステップ3: ImagePlacementAbsorberを作成する
 
-## ステップ2: 画像の場所を検索する
-
-PDF ドキュメント内の画像の場所を検索するには、次のコードを使用します。
+PDF内の画像を検索するには、`ImagePlacementAbsorber`オブジェクト。このクラスは、抽出プロセス中に PDF から画像を吸収するのに役立ちます。
 
 ```csharp
-//画像の位置を検索するためのImagePlacementAbsorberオブジェクトを作成する
 ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
+```
 
-//文書の全ページの吸収剤を受け入れる
+## ステップ4: すべてのページでアブソーバーを受け入れる
+
+このステップは、`Document`すべてのページに画像吸収体を適用します。これにより、ドキュメント内のどこに配置した画像も確実に識別されます。
+
+```csharp
 doc.Pages.Accept(abs);
 ```
 
-これにより、吸収体内の画像の位置が収集されます。
+## ステップ5: 画像の配置をループする
 
-## ステップ3: 画像の場所を参照して画像とそのプロパティを取得する
-
-次に、収集された画像の場所を参照して、画像とそのプロパティを取得します。次のコードを使用します。
+画像を理解したら、次は画像を詳しく調べます。PDF から抽出した各画像の配置をループします。
 
 ```csharp
-foreach(ImagePlacement imagePlacement in abs.ImagePlacements)
-{
-     // ImagePlacementオブジェクトを使用して画像を取得する
-     XImage image = imagePlacement.Image;
-
-     //画像の場所のプロパティを表示する
-     Console.Out.WriteLine("Image Width: " + imagePlacement.Rectangle.Width);
-     Console.Out.WriteLine("Image Height: " + imagePlacement.Rectangle.Height);
-     Console.Out.WriteLine("LLX of image: " + imagePlacement.Rectangle.LLX);
-     Console.Out.WriteLine("LLY of image: " + imagePlacement.Rectangle.LLY);
-     Console.Out.WriteLine("Horizontal image resolution: " + imagePlacement.Resolution.X);
-     Console.Out.WriteLine("Vertical image resolution: " + imagePlacement.Resolution.Y);
-}
-```
-
-これにより、すべての画像の場所が参照され、一致する画像が取得され、そのプロパティが表示されます。
-
-### Aspose.PDF for .NET を使用して画像を検索および取得するためのサンプル ソース コード 
-```csharp
-//ドキュメント ディレクトリへのパス。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-//ドキュメントを開く
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "SearchAndGetImages.pdf");
-//画像配置検索を実行するためのImagePlacementAbsorberオブジェクトを作成する
-ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
-//すべてのページの吸収剤を受け入れる
-doc.Pages.Accept(abs);
-//すべての ImagePlacement をループし、画像と ImagePlacement プロパティを取得します。
 foreach (ImagePlacement imagePlacement in abs.ImagePlacements)
 {
-	// ImagePlacementオブジェクトを使用して画像を取得する
-	XImage image = imagePlacement.Image;
-	//すべての配置の画像配置プロパティを表示する
-	Console.Out.WriteLine("image width:" + imagePlacement.Rectangle.Width);
-	Console.Out.WriteLine("image height:" + imagePlacement.Rectangle.Height);
-	Console.Out.WriteLine("image LLX:" + imagePlacement.Rectangle.LLX);
-	Console.Out.WriteLine("image LLY:" + imagePlacement.Rectangle.LLY);
-	Console.Out.WriteLine("image horizontal resolution:" + imagePlacement.Resolution.X);
-	Console.Out.WriteLine("image vertical resolution:" + imagePlacement.Resolution.Y);
+    //画像のプロパティを取得するためのさらなる手順
 }
+```
+
+## ステップ6: 画像のプロパティを抽出する
+
+ループ内では、各画像に関する貴重なプロパティの取得を開始できます。`imagePlacement`オブジェクトでは、寸法と解像度にアクセスできます。
+
+```csharp
+XImage image = imagePlacement.Image; //画像を取得する
+
+Console.Out.WriteLine("image width:" + imagePlacement.Rectangle.Width);
+Console.Out.WriteLine("image height:" + imagePlacement.Rectangle.Height);
+Console.Out.WriteLine("image LLX:" + imagePlacement.Rectangle.LLX);
+Console.Out.WriteLine("image LLY:" + imagePlacement.Rectangle.LLY);
+Console.Out.WriteLine("image horizontal resolution:" + imagePlacement.Resolution.X);
+Console.Out.WriteLine("image vertical resolution:" + imagePlacement.Resolution.Y);
 ```
 
 ## 結論
 
-おめでとうございます！Aspose.PDF for .NET を使用して PDF ドキュメント内の画像を検索し、取得できました。これで、このメソッドを独自のプロジェクトに適用して、PDF ファイルから画像を抽出し、そのプロパティを取得できるようになりました。
+これで完了です。これらの手順に従うと、Aspose.PDF for .NET を使用して PDF ファイルから画像を効率的に検索して取得できます。わずか数行のコードで、貴重な画像とそのプロパティを抽出でき、アプリケーションに多くの可能性が開かれます。
 
-### PDF ファイル内の画像の検索と取得に関する FAQ
+## よくある質問
 
-#### Q: Aspose.PDF for .NET を使用して PDF ドキュメント内の画像を検索および取得する目的は何ですか?
+### Aspose.PDF ライブラリは無料で使用できますか?  
+Aspose.PDF for .NET は有料ライブラリですが、1 か月間の無料試用版をダウンロードできます。
 
-A: PDF ドキュメント内の画像を検索して取得すると、PDF ファイル内の画像を見つけて抽出することができます。これは、コンテンツの分析、画像のプロパティの検証、画像のさらなる処理など、さまざまな目的に役立ちます。
+### パスワードで保護された PDF ファイルから画像を抽出できますか?  
+はい、ただし、ドキュメントを開くときにパスワードを入力する必要があります。
 
-#### Q: PDF ドキュメント内の画像を検索するプロセスはどのように機能しますか?
+### PDF から抽出できる画像の種類は何ですか?  
+形式（JPEG、PNG など）に関係なく、埋め込まれたすべての画像を抽出できます。
 
- A: このプロセスでは、`ImagePlacementAbsorber`オブジェクトは、PDF ドキュメントのすべてのページで画像の配置を検索します。アブソーバーは、ドキュメント内の各画像の位置、サイズ、解像度に関する情報を収集します。
+### 抽出できる画像の数に制限はありますか?  
+厳密な制限はなく、PDF ファイル自体によって異なります。
 
-####  Q: の目的は何ですか？`ImagePlacement` object in the code?
-
- A:`ImagePlacement`オブジェクトは、PDF ドキュメント内の画像の配置を表します。画像の寸法、座標、解像度などの詳細にアクセスできるようにするプロパティを提供します。
-
-#### Q: 特定の条件に基づいて検索して取得した画像をフィルタリングできますか?
-
-A: 提供されたコードは、PDF ドキュメント内のすべての画像に関する情報を収集します。特定の基準 (画像の種類、サイズ、解像度など) に基づいて画像をフィルターする場合は、適切なフィルター条件を含めるようにコードを変更する必要がある場合があります。
-
-#### Q: 配置情報を取得した後、実際の画像コンテンツにアクセスするにはどうすればよいでしょうか?
-
- A:`XImage`から取得したオブジェクト`ImagePlacement`オブジェクトは実際の画像コンテンツを表します。これをさらに処理することができます`XImage`オブジェクトをファイルに保存したり、アプリケーションに表示したりすることができます。
-
-#### Q: 取得した画像のプロパティで何ができますか?
-
-A: 取得した画像の幅、高さ、座標、解像度などのプロパティは、さまざまな目的に使用できます。プロパティを分析してユーザーに表示したり、さらに処理するための入力として使用したりできます。
-
-#### Q: この方法を使用して PDF ドキュメント内の画像を変更または編集できますか?
-
-A: 提供されているコードは、画像配置情報の検索と取得に重点を置いています。画像を変更または編集するには、Aspose.PDF ライブラリを使用して、画像操作などの追加機能を統合する必要がある場合があります。
-
-#### Q: この方法を自分のプロジェクトに統合するにはどうすればいいでしょうか?
-
-A: このメソッドをプロジェクトに統合するには、概説した手順に従い、必要に応じてコードを変更します。取得した画像配置情報とプロパティは、アプリケーションの要件に応じて使用できます。
-
-#### Q: Aspose.PDF for .NET には、PDF ドキュメント内の画像操作に関連する他の機能はありますか?
-
-A: はい、Aspose.PDF for .NET には、画像の挿入、サイズ変更、回転、抽出など、PDF ドキュメント内の画像を操作するためのさまざまな機能が用意されています。ライブラリのドキュメントと例を調べて、その機能をすべて確認することができます。
+### 抽出した画像をディスクに保存できますか?  
+はい、画像をディスクに保存するには、`XImage`コード内のオブジェクト。

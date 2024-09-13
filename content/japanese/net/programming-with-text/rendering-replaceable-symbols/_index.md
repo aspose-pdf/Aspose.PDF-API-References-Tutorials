@@ -94,7 +94,7 @@ textFragment.TextState.FontSize = 12;
 textFragment.TextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("TimesNewRoman");
 textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-//TextParagraphオブジェクトを作成する
+// TextParagraphオブジェクトを作成する
 TextParagraph par = new TextParagraph();
 //段落に新しい TextFragment を追加する
 par.AppendLine(textFragment);

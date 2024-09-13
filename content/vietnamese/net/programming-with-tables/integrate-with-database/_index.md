@@ -80,7 +80,7 @@ DataTable dt = new DataTable("Employee");
 dt.Columns.Add("Employee_ID", typeof(Int32));
 dt.Columns.Add("Employee_Name", typeof(string));
 dt.Columns.Add("Gender", typeof(string));
-// Thêm 2 hàng vào đối tượng DataTable theo chương trình
+//Thêm 2 hàng vào đối tượng DataTable theo chương trình
 DataRow dr = dt.NewRow();
 dr[0] = 1;
 dr[1] = "John Smith";
@@ -132,7 +132,7 @@ A: Có, bạn có thể thêm siêu liên kết hoặc các thành phần tươn
 
 #### H: Tôi có thể phân trang bảng nếu số hàng vượt quá một số lượng nhất định không?
 
- A: Có, bạn có thể phân trang bảng nếu nó vượt quá một số hàng nhất định. Để thực hiện điều này, bạn có thể sử dụng`IsInNewPage`thuộc tính của đối tượng Row để chỉ ra rằng một trang mới sẽ bắt đầu sau một hàng cụ thể. Bạn có thể tính toán số hàng để hiển thị trên mỗi trang và đặt`IsInNewPage` tài sản theo đó.
+A: Có, bạn có thể phân trang bảng nếu nó vượt quá một số hàng nhất định. Để thực hiện điều này, bạn có thể sử dụng`IsInNewPage` thuộc tính của đối tượng Row để chỉ ra rằng một trang mới sẽ bắt đầu sau một hàng cụ thể. Bạn có thể tính toán số hàng để hiển thị trên mỗi trang và đặt`IsInNewPage` tài sản theo đó.
 
 #### H: Làm thế nào tôi có thể xuất tài liệu PDF có dữ liệu cơ sở dữ liệu nhúng sang các định dạng tệp khác nhau như DOCX hoặc XLSX?
 

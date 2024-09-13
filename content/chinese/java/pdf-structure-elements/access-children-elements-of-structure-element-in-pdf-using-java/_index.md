@@ -10,7 +10,7 @@ url: /zh/java/pdf-structure-elements/access-children-elements-of-structure-eleme
 
 ## 使用 Java 访问 PDF 中结构元素的子元素的简介
 
-PDF 文档是一种广泛使用的格式，用于呈现和共享信息。它们通常包含复杂的结构以有效地组织数据。在本文中，我们将探讨如何使用 Java 访问 PDF 文档中结构元素的子元素。我们将逐步进行，并提供代码示例。
+PDF 文档是一种广泛使用的呈现和共享信息的格式。它们通常包含复杂的结构以有效地组织数据。在本文中，我们将探讨如何使用 Java 访问 PDF 文档中结构元素的子元素。我们将逐步进行，并提供代码示例。
 
 ## 了解 PDF 中的结构元素
 
@@ -104,7 +104,7 @@ for (Element child : children) {
 
 ### 我可以使用 Aspose.PDF for Java 访问 PDF 中的非文本内容吗？
 
-是的，您可以使用 Aspose.PDF for Java 访问非文本内容，例如图像、表格等。该库提供了全面的功能，可用于处理 PDF 文档中的各种内容。
+是的，您可以使用 Aspose.PDF for Java 访问非文本内容，例如图像、表格等。该库提供了全面的功能，可用于处理 PDF 文档中的各种类型的内容。
 
 ### Aspose.PDF for Java 可以免费使用吗？
 

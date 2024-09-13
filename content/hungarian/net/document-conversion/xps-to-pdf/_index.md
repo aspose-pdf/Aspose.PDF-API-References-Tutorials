@@ -2,7 +2,7 @@
 title: XPS PDF-be
 linktitle: XPS PDF-be
 second_title: Aspose.PDF for .NET API Reference
-description: Ebből a lépésről lépésre mutató oktatóanyagból megtudhatja, hogyan konvertálhat XPS-fájlokat PDF-be az Aspose.PDF for .NET használatával. Tökéletes fejlesztők és dokumentumrajongók számára.
+description: Ebben a lépésenkénti oktatóanyagban megtudhatja, hogyan konvertálhat XPS-fájlokat PDF-be az Aspose.PDF for .NET használatával. Tökéletes fejlesztők és dokumentumrajongók számára.
 type: docs
 weight: 350
 url: /hu/net/document-conversion/xps-to-pdf/
@@ -68,7 +68,7 @@ Aspose.Pdf.Document document = new Aspose.Pdf.Document(dataDir + "XPSToPDF.xps",
 
 Az XPS fájl sikeres betöltése után az utolsó lépés a konvertált dokumentum PDF formátumban történő mentése.
 
- Használhatja a`Save` módszere a`Document` osztályt a fájl mentéséhez. Adja meg a kívánt kimeneti elérési utat és fájlnevet a PDF-dokumentumhoz.
+ Használhatja a`Save` módszere a`Document` osztályba a fájl mentéséhez. Adja meg a kívánt kimeneti elérési utat és fájlnevet a PDF-dokumentumhoz.
 
 ```csharp
 document.Save(dataDir + "XPSToPDF_out.pdf");

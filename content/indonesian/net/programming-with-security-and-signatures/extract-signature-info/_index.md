@@ -2,210 +2,141 @@
 title: Ekstrak Info Tanda Tangan
 linktitle: Ekstrak Info Tanda Tangan
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Mengekstrak informasi tanda tangan menggunakan Aspose.PDF untuk .NET.
+description: Pelajari cara mengekstrak tanda tangan digital dan informasi sertifikat dari dokumen PDF menggunakan Aspose.PDF untuk .NET. Panduan langkah demi langkah lengkap untuk pengembang C#.
 type: docs
 weight: 80
 url: /id/net/programming-with-security-and-signatures/extract-signature-info/
 ---
-Proses mengekstraksi informasi tanda tangan dari dokumen PDF dapat sangat berguna dalam berbagai skenario. Baik Anda perlu memvalidasi keaslian dokumen yang ditandatangani atau menganalisis sertifikat yang digunakan untuk tanda tangan, pustaka Aspose.PDF untuk .NET menyediakan solusi yang praktis. Dalam tutorial ini, kami akan memandu Anda melalui proses langkah demi langkah untuk mengekstraksi informasi tanda tangan menggunakan kode sumber C# yang disediakan.
+## Perkenalan
 
-## Persyaratan
+Di dunia digital saat ini, memastikan keamanan dan integritas dokumen sangatlah penting. Salah satu metode umum yang digunakan untuk mengamankan PDF adalah dengan menambahkan tanda tangan digital. Namun, mengambil dan memverifikasi detail tanda tangan terkadang bisa menjadi tantangan, terutama saat Anda berurusan dengan berbagai sertifikat. Dalam panduan ini, kami akan memandu Anda melalui proses mengekstrak informasi tanda tangan dari dokumen PDF menggunakan Aspose.PDF for .NET, sehingga memudahkan tugas tersebut. Anda akan mempelajari cara mengakses kolom tanda tangan, mengekstrak informasi sertifikat, dan menyimpannya ke dalam file.
 
-Sebelum kita memulai, pastikan Anda memiliki prasyarat berikut:
+## Prasyarat
 
-1. Pengetahuan dasar tentang bahasa pemrograman C#.
-2. Aspose.PDF untuk pustaka .NET yang terinstal di sistem Anda.
-3. Dokumen PDF yang valid dengan satu atau lebih bidang tanda tangan.
+Sebelum kita mulai, mari pastikan Anda telah menyiapkan segalanya untuk memulai.
 
-Sekarang, mari kita masuk ke detail implementasinya.
+-  Aspose.PDF untuk Pustaka .NET: Jika Anda belum memilikinya, Anda dapat mengunduhnya dari[Halaman unduhan Aspose.PDF untuk .NET](https://releases.aspose.com/pdf/net/). 
+- Lingkungan Pengembangan .NET: Anda memerlukan IDE seperti Visual Studio.
+- Pengetahuan Dasar C#: Keakraban dengan C# berguna untuk memahami potongan kode dalam tutorial ini.
+- Dokumen PDF dengan Tanda Tangan Digital: Untuk tujuan pengujian, pastikan Anda memiliki file PDF yang berisi setidaknya satu tanda tangan digital.
 
-## Langkah 1: Mengimpor Pustaka yang Diperlukan
+## Mengimpor Ruang Nama yang Diperlukan
 
- Untuk memulai, Anda perlu mengimpor pustaka yang diperlukan ke dalam proyek C# Anda. Dalam kasus ini, kita perlu mengimpor`Aspose.Pdf` Dan`System.IO` namespace. Hal ini dapat dilakukan dengan menambahkan kode berikut di awal berkas C# Anda:
+Sebelum masuk ke kode, penting untuk mengimpor namespace yang diperlukan. Namespace ini akan memungkinkan Anda mengakses fungsionalitas Aspose.PDF dan bekerja dengan dokumen PDF.
 
 ```csharp
-using Aspose.Pdf;
 using System.IO;
+using Aspose.Pdf.Forms;
+using Aspose.Pdf;
+using System;
 ```
 
-## Langkah 2: Mengatur Jalur Dokumen
+Sekarang setelah Anda menyiapkan hal-hal penting, mari beralih ke proses sebenarnya untuk mengekstrak info tanda tangan dari PDF.
 
-Selanjutnya, Anda perlu mengatur jalur ke dokumen PDF tempat Anda ingin mengekstrak informasi tanda tangan. Ganti`"YOUR DOCUMENTS DIRECTORY"` dalam potongan kode berikut dengan jalur sebenarnya ke dokumen Anda:
+## Langkah 1: Menyiapkan Direktori Dokumen
+
+ Sebelum mengerjakan dokumen PDF, Anda perlu menentukan lokasi file yang akan Anda gunakan. Anda dapat mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya dari direktori tempat PDF Anda disimpan.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+// Jalur ke direktori dokumen.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 string input = dataDir + "ExtractSignatureInfo.pdf";
 ```
 
-## Langkah 3: Mengekstrak Informasi Tanda Tangan
+Di sini, kami tentukan direktori yang berisi file PDF dan nama file itu sendiri. Pastikan file tersebut ada di direktori tersebut!
 
-Sekarang, mari kita lanjutkan ke bagian utama kode tempat kita mengekstrak informasi tanda tangan dari dokumen PDF. Kita ulangi setiap kolom dalam formulir dokumen dan periksa apakah itu kolom tanda tangan. Jika kolom tanda tangan ditemukan, kita lanjutkan dengan mengekstrak sertifikat. Tambahkan cuplikan kode berikut:
+## Langkah 2: Memuat Dokumen PDF
+
+ Sekarang setelah Anda menyiapkan direktori Anda, langkah selanjutnya adalah memuat dokumen PDF menggunakan`Document` kelas dari Aspose.PDF.
 
 ```csharp
 using (Document pdfDocument = new Document(input))
 {
-     foreach(Field field in pdfDocument.Form)
-     {
-         SignatureField sf = field as SignatureField;
-         if (sf != null)
-         {
-             // Ekstrak sertifikatnya
-             Stream cerStream = sf.ExtractCertificate();
-             if (cerStream != null)
-             {
-                 using (cerStream)
-                 {
-                     byte[] bytes = new byte[cerStream.Length];
-                     using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
-                     {
-                         cerStream.Read(bytes, 0, bytes.Length);
-                         fs.Write(bytes, 0, bytes.Length);
-                     }
-                 }
-             }
-         }
-     }
+    // Proses PDF di sini.
 }
 ```
 
-## Langkah 4: Mengekstrak Sertifikat
+ Baris kode ini menginisialisasi`Document`objek yang mewakili file PDF.`using` pernyataan memastikan bahwa sumber daya dibersihkan setelah dokumen diproses.
 
-Pada langkah ini, kami mengekstrak sertifikat dari kolom tanda tangan dan menyimpannya sebagai file. Sertifikat yang diekstrak dapat dianalisis lebih lanjut atau digunakan untuk tujuan validasi. Cuplikan kode di bawah ini menunjukkan proses ekstraksi dan penyimpanan:
+## Langkah 3: Mengakses Bidang Formulir
+
+Pada langkah ini, kita akan mengulang semua kolom formulir dalam dokumen PDF. Karena tanda tangan biasanya disimpan sebagai kolom formulir, langkah ini akan membantu kita mengidentifikasi kolom tanda tangan.
+
+```csharp
+foreach (Field field in pdfDocument.Form)
+{
+    // Identifikasi bidang tanda tangan di sini.
+}
+```
+
+ Dengan mengulangi melalui`Form` milik`Document` objek, kita dapat memeriksa setiap bidang formulir untuk memeriksa apakah itu bidang tanda tangan.
+
+## Langkah 4: Mengidentifikasi Bidang Tanda Tangan
+
+ Setelah Anda mengakses kolom formulir, langkah selanjutnya adalah mengidentifikasi kolom mana yang merupakan kolom tanda tangan. Kita dapat melakukannya dengan mentransmisikan setiap kolom ke`SignatureField` obyek.
+
+```csharp
+SignatureField sf = field as SignatureField;
+if (sf != null)
+{
+    // Ekstrak info tanda tangan.
+}
+```
+
+ Di sini, kami menggunakan`as` kata kunci untuk mencoba mentransmisikan setiap bidang formulir ke`SignatureField`Jika pengecoran berhasil, kita tahu bahwa bidang tersebut adalah tanda tangan.
+
+## Langkah 5: Mengekstrak Sertifikat
+
+Setelah Anda mengidentifikasi bidang tanda tangan, tugas selanjutnya adalah mengekstrak sertifikat dari tanda tangan tersebut. Sertifikat berisi informasi penting tentang penanda tangan dan validitas tanda tangan.
 
 ```csharp
 Stream cerStream = sf.ExtractCertificate();
+```
+
+ Itu`ExtractCertificate` metode mengembalikan`Stream` objek yang berisi data sertifikat. Aliran ini dapat digunakan untuk menyimpan sertifikat untuk analisis atau penyimpanan lebih lanjut.
+
+## Langkah 6: Menyimpan Sertifikat ke File
+
+ Setelah Anda mengekstrak sertifikat, langkah terakhir adalah menyimpannya ke dalam sebuah mengajukan. Dalam kasus ini, kami akan menyimpan sertifikat sebagai`.cer` file.
+
+```csharp
 if (cerStream != null)
 {
-     using (cerStream)
-     {
-         byte[] bytes = new byte[cerStream.Length];
-         using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
-         {
-             cerStream.Read(bytes, 0, bytes.Length);
-             fs.Write(bytes, 0, bytes.Length);
-         }
-     }
+    using (cerStream)
+    {
+        byte[] bytes = new byte[cerStream.Length];
+        using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
+        {
+            cerStream.Read(bytes, 0, bytes.Length);
+            fs.Write(bytes, 0, bytes.Length);
+        }
+    }
 }
 ```
 
-## Langkah 5
+Dalam blok kode ini, kita:
 
-: Menyimpan Sertifikat
-
-Terakhir, kami menyimpan sertifikat yang diekstrak sebagai file. Dalam contoh ini, sertifikat disimpan dengan nama "input.cer" di direktori yang ditentukan. Anda dapat mengubah kode sesuai kebutuhan Anda. Berikut cuplikan kode untuk menyimpan sertifikat:
-
-```csharp
-using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
-{
-     fs.Write(bytes, 0, bytes.Length);
-}
-```
-
-Selesai! Anda telah berhasil mengekstrak informasi tanda tangan menggunakan Aspose.PDF untuk .NET. Jangan ragu untuk mengintegrasikan kode ini ke dalam aplikasi Anda sendiri atau memodifikasinya sesuai kebutuhan Anda.
-
-### Contoh kode sumber untuk Ekstrak Info Tanda Tangan menggunakan Aspose.PDF untuk .NET 
-```csharp
-try
-{
-	// Jalur ke direktori dokumen.
-	string dataDir = "YOUR DOCUMENTS DIRECTORY";
-	string input = dataDir + "ExtractSignatureInfo.pdf";
-	using (Document pdfDocument = new Document(input))
-	{
-		foreach (Field field in pdfDocument.Form)
-		{
-			SignatureField sf = field as SignatureField;
-			if (sf != null)
-			{
-				Stream cerStream = sf.ExtractCertificate();
-				if (cerStream != null)
-				{
-					using (cerStream)
-					{
-						byte[] bytes = new byte[cerStream.Length];
-						using (FileStream fs = new FileStream(dataDir + @"input.cer", FileMode.CreateNew))
-						{
-							cerStream.Read(bytes, 0, bytes.Length);
-							fs.Write(bytes, 0, bytes.Length);
-						}
-					}
-				}
-			}
-		}
-	}
-}
-catch (Exception ex)
-{
-	Console.WriteLine(ex.Message);
-}
-```
+1. Periksa apakah aliran sertifikat tidak null.
+2. Membaca data sertifikat ke dalam array byte.
+3.  Tuliskan array byte ke`.cer` file dalam direktori dokumen.
 
 ## Kesimpulan
 
-Dalam tutorial ini, kami membahas panduan langkah demi langkah tentang cara mengekstrak informasi tanda tangan dari dokumen PDF menggunakan pustaka Aspose.PDF for .NET. Kami membahas proses mengimpor pustaka yang diperlukan, mengatur jalur dokumen, mengekstrak informasi tanda tangan, mengekstrak sertifikat, dan menyimpannya ke dalam file. Dengan mengikuti langkah-langkah ini, Anda dapat dengan mudah mengambil detail tanda tangan dan mengolahnya sesuai kebutuhan.
+Mengekstrak tanda tangan digital dan informasi sertifikat terkait dari dokumen PDF menggunakan Aspose.PDF untuk .NET cukup mudah jika dipecah menjadi beberapa langkah sederhana. Baik Anda mengaudit dokumen, memverifikasi tanda tangan, atau sekadar menyimpan sertifikat untuk diamankan, tutorial ini membekali Anda dengan pengetahuan untuk menyelesaikannya secara efisien. Ingat, mengamankan dan memverifikasi dokumen sangat penting di dunia digital saat ini, dan menggunakan alat seperti Aspose.PDF untuk .NET membuatnya jauh lebih mudah untuk ditangani.
 
-### Pertanyaan yang Sering Diajukan
+## Pertanyaan yang Sering Diajukan
 
-#### T: Mengapa saya perlu mengekstrak informasi tanda tangan dari dokumen PDF?
+### Bisakah saya mengekstrak beberapa tanda tangan dari PDF menggunakan Aspose.PDF untuk .NET?
+Ya, kode tersebut berulang melalui semua bidang formulir dalam dokumen, yang memungkinkan Anda mengekstrak beberapa tanda tangan jika ada.
 
-A: Mengekstrak informasi tanda tangan dari dokumen PDF berguna untuk memvalidasi keaslian dokumen yang ditandatangani dan menganalisis sertifikat yang digunakan untuk tanda tangan. Proses ini membantu memastikan integritas konten yang ditandatangani dan dapat menjadi penting untuk tujuan hukum dan keamanan.
+### Apa yang terjadi jika tidak ditemukan tanda tangan dalam PDF?
+Jika tidak ada kolom tanda tangan, kode akan melewatinya begitu saja tanpa menimbulkan kesalahan.
 
-#### T: Apa itu Aspose.PDF untuk .NET?
+### Dapatkah saya menggunakan pendekatan ini untuk memverifikasi keabsahan tanda tangan?
+Meskipun Anda dapat mengekstrak sertifikat, memverifikasi keabsahan tanda tangan memerlukan langkah-langkah tambahan, seperti memeriksa rantai kepercayaan sertifikat.
 
-J: Aspose.PDF untuk .NET adalah pustaka yang memungkinkan pengembang untuk bekerja dengan dokumen PDF dalam aplikasi .NET. Pustaka ini menyediakan berbagai fitur untuk membuat, memodifikasi, dan berinteraksi dengan file PDF secara terprogram.
+### Apakah mungkin untuk mengekstrak data bidang formulir lain menggunakan Aspose.PDF untuk .NET?
+Ya, Aspose.PDF memungkinkan Anda mengakses dan memanipulasi berbagai jenis bidang formulir dalam PDF, bukan hanya bidang tanda tangan.
 
-#### T: Apa saja prasyarat untuk mengekstrak informasi tanda tangan menggunakan Aspose.PDF untuk .NET?
-
-A: Untuk mengekstrak informasi tanda tangan, Anda memerlukan pengetahuan dasar tentang bahasa pemrograman C#, pustaka Aspose.PDF untuk .NET yang terinstal di sistem Anda, dan dokumen PDF valid yang berisi satu atau beberapa bidang tanda tangan.
-
-#### T: Bagaimana cara mengimpor pustaka yang diperlukan untuk proses ekstraksi?
-
-A: Anda dapat mengimpor pustaka yang diperlukan dengan menambahkan`using` petunjuk untuk`Aspose.Pdf` Dan`System.IO` di awal berkas C# Anda. Arahan ini memungkinkan Anda menggunakan kelas dan metode yang diperlukan untuk mengekstrak informasi tanda tangan.
-
-#### T: Bagaimana cara menentukan dokumen PDF untuk mengekstrak informasi tanda tangan?
-
- A: Anda dapat mengatur jalur ke dokumen PDF dengan mengganti`"YOUR DOCUMENTS DIRECTORY"` dengan jalur sebenarnya ke dokumen Anda dalam cuplikan kode yang diberikan. Jalur ini digunakan untuk memuat dokumen PDF yang ingin Anda ekstrak informasi tanda tangannya.
-
-#### T: Bagaimana proses mengekstrak informasi tanda tangan dari dokumen PDF?
-
-A: Proses ekstraksi melibatkan pengulangan melalui kolom formulir dokumen PDF, memeriksa apakah setiap kolom merupakan kolom tanda tangan, dan jika ya, mengekstrak sertifikat terkait. Sertifikat yang diekstraksi dapat disimpan sebagai file untuk analisis atau validasi lebih lanjut.
-
-#### T: Bagaimana sertifikat diekstrak dari bidang tanda tangan?
-
-A: Sertifikat diekstraksi dari bidang tanda tangan menggunakan`ExtractCertificate()` metode yang disediakan oleh`SignatureField` kelas di Aspose.PDF untuk .NET. Metode ini mengembalikan aliran yang berisi data sertifikat.
-
-#### T: Bagaimana cara menyimpan sertifikat yang diekstrak sebagai file?
-
- A: Anda dapat menyimpan sertifikat yang diekstrak sebagai file dengan membaca aliran sertifikat dan menulis isinya ke file menggunakan`FileStream` kelas. Kode yang diberikan dalam tutorial ini menunjukkan proses ini.
-
-#### T: Dapatkah saya menggunakan sertifikat yang diekstrak ini untuk validasi tanda tangan?
-
-A: Ya, sertifikat yang diekstrak dapat digunakan untuk validasi tanda tangan. Anda dapat menganalisis detail sertifikat dan memverifikasi keasliannya untuk memastikan integritas dokumen yang ditandatangani.
-
-#### T: Bagaimana saya dapat mengintegrasikan kode ini ke dalam aplikasi saya sendiri?
-
-J: Anda dapat mengintegrasikan kode yang diberikan ke dalam aplikasi C# Anda sendiri dengan mengikuti panduan langkah demi langkah. Ubah jalur dan nama file sesuai kebutuhan, dan masukkan kode ke dalam proyek Anda yang sudah ada.
-
-#### T: Apakah ada fitur lain di Aspose.PDF untuk .NET yang terkait dengan manajemen tanda tangan?
-
-A: Ya, Aspose.PDF untuk .NET menyediakan berbagai fitur untuk bekerja dengan tanda tangan digital, termasuk menandatangani dokumen, memverifikasi tanda tangan, dan menambahkan informasi stempel waktu. Anda dapat menjelajahi dokumentasi resmi untuk detail lebih lanjut tentang fitur-fitur ini.
-
-#### T: Di mana saya dapat menemukan sumber daya tambahan untuk menggunakan Aspose.PDF untuk .NET?
-
- A: Untuk informasi lebih lanjut, tutorial, dan sumber daya tentang penggunaan Aspose.PDF untuk .NET,[Aspose.PDF untuk .NET](https://reference.aspose.com/pdf/net/).
-
-#### T: Apakah mungkin untuk mengekstrak tanda tangan dari dokumen PDF yang terenkripsi?
-
-J: Kemampuan untuk mengekstrak tanda tangan dari dokumen PDF terenkripsi mungkin bergantung pada pengaturan enkripsi dan izin dokumen tersebut. Anda mungkin perlu memastikan bahwa Anda memiliki izin yang diperlukan untuk mengakses dan mengekstrak informasi tanda tangan.
-
-#### T: Dapatkah saya mengekstrak beberapa tanda tangan dari satu dokumen PDF?
-
-A: Ya, Anda dapat mengubah kode yang diberikan untuk mengulang semua kolom tanda tangan dalam dokumen PDF dan mengekstrak informasi tanda tangan dari masing-masing kolom. Ini memungkinkan Anda untuk mengekstrak informasi tentang beberapa tanda tangan yang ada dalam dokumen.
-
-#### T: Apa saja kasus penggunaan praktis untuk mengekstrak informasi tanda tangan?
-
-A: Beberapa kasus penggunaan praktis untuk mengekstrak informasi tanda tangan termasuk memvalidasi keaslian dokumen yang ditandatangani secara digital, menganalisis rincian sertifikat untuk tujuan kepatuhan, dan memelihara catatan tanda tangan dan penanda tangan untuk tujuan audit.
-
-#### T: Apakah ada pertimbangan hukum saat mengekstrak informasi tanda tangan?
-
-A: Mengekstrak informasi tanda tangan dapat memiliki implikasi hukum, terutama saat menangani dokumen yang mengikat secara hukum. Pastikan Anda mematuhi peraturan dan hukum yang relevan terkait tanda tangan elektronik dan keaslian dokumen di wilayah hukum Anda.
+### Bagaimana saya dapat melihat rincian sertifikat yang diekstrak?
+ Setelah sertifikat disimpan sebagai`.cer` file, Anda dapat membukanya menggunakan penampil sertifikat apa pun atau mengimpornya ke penyimpanan sertifikat sistem untuk pemeriksaan lebih lanjut.

@@ -2,181 +2,170 @@
 title: 數位登入 PDF 文件
 linktitle: 數位登入 PDF 文件
 second_title: Aspose.PDF for .NET API 參考
-description: 了解如何使用 Aspose.PDF for .NET 對 PDF 檔案進行數位簽章。
+description: 了解如何使用 Aspose.PDF for .NET 對 PDF 檔案進行數位簽章。逐步指南可確保您的文件安全且真實。
 type: docs
 weight: 40
 url: /zh-hant/net/programming-with-security-and-signatures/digitally-sign/
 ---
-在本教學中，我們將引導您完成使用 Aspose.PDF for .NET 對 PDF 檔案進行數位簽署的過程。數位簽章透過添加唯一的電子指紋來保證文件的真實性和完整性。
+## 介紹
 
-## 第 1 步：先決條件
+在我們的數位世界中，保護文件安全的重要性怎麼強調也不為過。無論您是發送合約的自由工作者、管理發票的小型企業主還是大公司的一部分，確保您的文件保持真實且防篡改至關重要。實現這種安全性的一種有效方法是透過數位簽章。在本文中，我們將探討如何使用 Aspose.PDF for .NET 程式庫對 PDF 檔案進行數位簽署。我們將引導您一步一步完成所有事情。
 
-在開始之前，請確保您具備以下先決條件：
+## 先決條件
 
-- C# 程式語言的基礎知識
-- 在您的電腦上安裝 Visual Studio
-- 已安裝適用於 .NET 的 Aspose.PDF 庫
+在深入討論細節之前，我們先確保您已具備開始對 PDF 文件進行數位簽章所需的一切。以下是先決條件清單：
 
-## 第2步：環境設定
+1. .NET Framework：請確定您的電腦上安裝了 .NET Framework。 Aspose.PDF for .NET 支援該框架的多個版本。
+2.  Aspose.PDF 庫：您需要下載並安裝 Aspose.PDF 庫。您可以從[發布連結](https://releases.aspose.com/pdf/net/).
+3. 數位憑證：要簽署 PDF，您將需要一個數位憑證 —`.pfx`通常文件。
+4. 開發環境：使用 Visual Studio 或您選擇的任何支援 C# 的 IDE。
 
-首先，請按照以下步驟設定您的開發環境：
+一旦滿足了這些先決條件，您就可以開始簽署 PDF 文件了！
 
-1. 開啟 Visual Studio 並建立一個新的 C# 專案。
-2. 將所需的命名空間匯入到您的程式碼檔案中：
+## 導入包
+
+現在您已完成所有設置，讓我們匯入必要的套件以使我們的專案運行。在 C# 類別的頂部，包含相關的命名空間：
 
 ```csharp
+using System.IO;
+using System;
 using Aspose.Pdf;
+using Aspose.Pdf.Facades;
+using System.Collections;
 using Aspose.Pdf.Forms;
 using System.Collections.Generic;
 ```
 
-## 第三步：數位簽名
+這些命名空間提供了您將用來透過 Aspose.PDF 操作 PDF 檔案的基本類別和方法。
 
-第一步是對 PDF 檔案進行數位簽章。提供的程式碼顯示如何使用 Aspose.PDF for .NET 進行數位簽章。
+## 第 1 步：設定文檔路徑
+
+第一步是設定輸入和輸出 PDF 檔案以及數位憑證的路徑。代替`YOUR DOCUMENTS DIRECTORY`與您的系統上文件所在的實際路徑。
 
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
-string pbxFile = "";
+string pbxFile = ""; //數位憑證 (.pfx) 的路徑
 string inFile = dataDir + @"DigitallySign.pdf";
 string outFile = dataDir + @"DigitallySign_out.pdf";
+```
+在這個片段中，`inFile`是您想要簽署的原始 PDF，並且`outFile`是儲存簽名 PDF 的位置。
+
+## 第 2 步：載入 PDF 文檔
+
+接下來，我們需要載入我們想要簽署的PDF文件。這`Document`這裡使用Aspose.PDF中的類別：
+
+```csharp
 using (Document document = new Document(inFile))
 {
-     using (PdfFileSignature signature = new PdfFileSignature(document))
-     {
-         PKCS7 pkcs = new PKCS7(pbxFile, "WebSales");
-         DocMDPSignature docMdpSignature = new DocMDPSignature(pkcs, DocMDPAccessPermissions.FillingInForms);
-         System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-         signature.SignatureAppearance = dataDir + @"aspose-logo.jpg";
-         signature.Certify(1, "Reason for signing", "Contact", "Location", true, rect, docMdpSignature);
-         signature.Save(outFile);
-     }
+    //在這裡繼續簽邏輯...
 }
 ```
 
-此程式碼會載入 PDF 文件，建立具有指定外觀的數位簽名，然後使用新增的簽名儲存 PDF 文件。
+此程式碼開啟您的 PDF 檔案並為進一步操作做好準備。
 
-## 第四步：簽名驗證
+## 步驟 3：初始化 PdfFileSignature 類
 
-新增數位簽名後，您可以檢查PDF檔案是否包含有效簽名。
+載入文檔後，我們建立一個實例`PdfFileSignature`類，它允許我們在加載的 PDF 文件上使用數位簽名。
 
 ```csharp
-using(Document document = new Document(outFile))
+using (PdfFileSignature signature = new PdfFileSignature(document))
 {
-     using (PdfFileSignature signature = new PdfFileSignature(document))
-     {
-         IList<string> sigNames = signature. GetSignNames();
-         if (sigNames.Count > 0)
-         {
-             if (signature.VerifySigned(sigNames[0] as string))
-             {
-                 if (signature.IsCertified)
-                 {
-                     if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms)
-                     {
-                         //做點什麼
-                     }
-                 }
-             }
-         }
-     }
+    //準備簽署流程
 }
 ```
 
-此程式碼驗證 PDF 檔案的第一個簽名，並在簽名經過認證且具有特定權限時執行其他操作。
+此類是您了解與 PDF 簽名相關的所有內容的首選！
 
-### 使用 Aspose.PDF for .NET 進行數位簽章的範例原始碼 
+## 步驟4：建立數位憑證實例
+
+您可以在此處設定用於簽署 PDF 的憑證。您需要提供您的路徑`.pfx`文件以及與其關聯的密碼。
+
 ```csharp
-try
+PKCS7 pkcs = new PKCS7(pbxFile, "WebSales");
+```
+
+確保更換`"WebSales"`使用您的實際證書密碼。
+
+## 步驟 5：設定簽名外觀
+
+接下來，我們定義簽名在 PDF 中的顯示方式。您可以使用矩形自訂簽名的位置和外觀。 
+
+```csharp
+System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
+signature.SignatureAppearance = dataDir + @"aspose-logo.jpg";
+```
+
+在這裡，我們將簽名放置在座標 (100, 100) 處，寬度為 200，高度為 100。
+
+## 第 6 步：建立並儲存簽名
+
+現在是時候實際建立簽名並保存簽署的 PDF 了。您可以描述簽名的原因、您的聯絡方式和地點。這可以幫助以後的驗證過程。
+
+```csharp
+DocMDPSignature docMdpSignature = new DocMDPSignature(pkcs, DocMDPAccessPermissions.FillingInForms);
+signature.Certify(1, "Signature Reason", "Contact", "Location", true, rect, docMdpSignature);
+signature.Save(outFile);
+```
+
+## 步驟7：驗證簽名
+
+儲存已簽署的 PDF 後，最好驗證簽名是否已正確新增。我們可以檢索簽名名稱並檢查其是否有效。 
+
+```csharp
+using (Document document = new Document(outFile))
 {
-	//文檔目錄的路徑。
-	string dataDir = "YOUR DOCUMENTS DIRECTORY";
-	string pbxFile = "";
-	string inFile = dataDir + @"DigitallySign.pdf";
-	string outFile = dataDir + @"DigitallySign_out.pdf";
-	using (Document document = new Document(inFile))
-	{
-		using (PdfFileSignature signature = new PdfFileSignature(document))
-		{
-			PKCS7 pkcs = new PKCS7(pbxFile, "WebSales"); //使用 PKCS7/PKCS7Detached 對象
-			DocMDPSignature docMdpSignature = new DocMDPSignature(pkcs, DocMDPAccessPermissions.FillingInForms);
-			System.Drawing.Rectangle rect = new System.Drawing.Rectangle(100, 100, 200, 100);
-			//設定簽名外觀
-			signature.SignatureAppearance = dataDir + @"aspose-logo.jpg";
-			//建立三種簽名類型中的任一種
-			signature.Certify(1, "Signature Reason", "Contact", "Location", true, rect, docMdpSignature);
-			//儲存輸出 PDF 文件
-			signature.Save(outFile);
-		}
-	}
-	using (Document document = new Document(outFile))
-	{
-		using (PdfFileSignature signature = new PdfFileSignature(document))
-		{
-			IList<string> sigNames = signature.GetSignNames();
-			if (sigNames.Count > 0) //有簽名嗎？
-			{
-				if (signature.VerifySigned(sigNames[0] as string)) //驗證第一個
-				{
-					if (signature.IsCertified) //已認證？
-					{
-						if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms) //取得存取權限
-						{
-							//做點什麼
-						}
-					}
-				}
-			}
-		}
-	}
+    using (PdfFileSignature signature = new PdfFileSignature(document))
+    {
+        IList<string> sigNames = signature.GetSignNames();
+        if (sigNames.Count > 0) 
+        {
+            if (signature.VerifySigned(sigNames[0] as string)) 
+            {
+                if (signature.IsCertified) 
+                {
+                    if (signature.GetAccessPermissions() == DocMDPAccessPermissions.FillingInForms) 
+                    {
+                        //簽名有效且經認證
+                    }
+                }
+            }
+        }
+    }
 }
+```
+
+這部分確保您的工作得到驗證；畢竟，您不想發送未簽名的文件！
+
+## 第 8 步：處理異常
+
+將程式碼包裝在 try-catch 區塊中以優雅地處理任何異常總是明智的。 
+
+```csharp
 catch (Exception ex)
 {
-	Console.WriteLine(ex.Message);
+    Console.WriteLine(ex.Message);
 }
 ```
+
+這樣，如果發生意外情況，您將確切地知道出了什麼問題，而不會導致應用程式崩潰。
 
 ## 結論
 
-恭喜！您已使用 Aspose.PDF for .NET 對 PDF 檔案成功執行了數位簽章。本教程介紹了從添加數位簽名到驗證其有效性的逐步過程。現在您可以使用此功能透過數位簽章來保護您的 PDF 檔案。
+數位簽名為文件提供了必要的保護，證明了真實性和完整性。使用 Aspose.PDF for .NET，簽署 PDF 檔案是一個簡單的過程，可以顯著增強您的文件管理工作流程。現在您已經了解如何將簽章數位化，您可以向客戶和合作夥伴保證您的專業和安全的文件處理。
 
-### 常見問題解答
+## 常見問題解答
 
-#### Q：本教學的目的是什麼？
+### 什麼是數位簽章？
+數位簽章是手寫簽章的加密等效形式。它確保資料的真實性和完整性。
 
-答：本教學將引導您完成使用 Aspose.PDF for .NET 對 PDF 檔案進行數位簽章的過程。數位簽章添加電子指紋以確保文件的真實性和完整性。
+### 我可以在任何 .NET 應用程式中使用 Aspose.PDF 對 PDF 檔案進行簽署嗎？
+是的！ Aspose.PDF for .NET 與各種 .NET 應用程式相容，包括桌面、Web 和服務。
 
-#### Q：開始之前需要什麼先決條件？
+### 我可以使用哪些類型的數位憑證？
+您可以使用任何 PKCS#12 證書，通常會保存在`.pfx`或者`.p12`文件。
 
-答：在開始之前，請確保您對 C# 程式語言有基本的了解，並已安裝 Visual Studio，並已安裝適用於 .NET 的 Aspose.PDF 程式庫。
+### 是否有 Aspose.PDF 的試用版？
+是的！您可以從以下位置下載免費試用版[Aspose 發佈頁面](https://releases.aspose.com/).
 
-#### Q：如何建構開發環境？
-
-答：請依照提供的步驟設定開發環境，包括在 Visual Studio 中建立新的 C# 項目，並匯入所需的命名空間。
-
-#### Q：如何在 PDF 檔案中新增數位簽章？
-
-答：提供的範例程式碼示範如何載入 PDF 檔案、建立數位簽章、指定外觀以及儲存簽署的 PDF 檔案。數位簽名是使用添加的`Certify`的方法`PdfFileSignature`目的。
-
-#### Q：如何驗證數位簽章的有效性？
-
-A：新增數位簽章後，您可以使用範例程式碼驗證簽章的有效性。它檢查簽名是否經過認證並具有特定的存取權限。
-
-####  Q：什麼是`PKCS7` object represent?
-
-答： 的`PKCS7`物件用於為數位簽章提供加密功能。它用於在提供的範例程式碼中建立數位簽名。
-
-#### Q：我可以自訂數位簽章的外觀嗎？
-
-答：是的，您可以透過在檔案中指定影像的路徑來自訂數位簽章的外觀。`SignatureAppearance`的財產`PdfFileSignature`目的。
-
-#### Q：如果簽名無效怎麼辦？
-
-A：如果簽章無效，則驗證程序將會失敗，驗證碼區塊內的對應操作將不會被執行。
-
-#### Q：如何確保我的數位簽章的安全？
-
-答：數位簽章在設計上是安全的，並使用加密技術來確保真實性和完整性。確保您的私鑰安全並遵循處理數位簽章的最佳實務。
-
-#### Q：我可以在 PDF 中新增多個數位簽章嗎？
-
-答：是的，您可以使用以下命令在 PDF 檔案中新增多個數位簽名`PdfFileSignature`對象的`Sign`或者`Certify`方法。每個簽名都有自己的外觀和配置。
+### 如果遇到問題，我該如何獲得支援？
+如需支持，您可以訪問[Aspose PDF 論壇](https://forum.aspose.com/c/pdf/10).

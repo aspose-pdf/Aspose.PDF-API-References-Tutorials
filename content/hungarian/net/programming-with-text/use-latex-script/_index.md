@@ -18,7 +18,7 @@ Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel
 
 ## 1. lépés: Állítsa be a projektet
 
-Hozzon létre egy új C#-projektet az előnyben részesített integrált fejlesztői környezetben (IDE), és adjon hozzá hivatkozást az Aspose.PDF for .NET könyvtárhoz.
+Hozzon létre egy új C#-projektet a kívánt integrált fejlesztői környezetben (IDE), és adjon hozzá hivatkozást az Aspose.PDF for .NET könyvtárhoz.
 
 ## 2. lépés: Importálja a szükséges névtereket
 
@@ -59,7 +59,7 @@ LatexFragment ltext1 = new LatexFragment(latexText1, true);
 cell.Paragraphs.Add(ltext1);
 ```
 
- Vegye figyelembe, hogy a`true` paraméter a`LatexFragment` A konstruktor kiküszöböli a Latex bekezdések behúzását.
+ Vegye figyelembe, hogy a`true` paraméter a`LatexFragment` A konstruktor kiküszöböli a Latex bekezdés behúzásait.
 
 ## 6. lépés: Adja hozzá a táblázatot az oldalhoz
 
@@ -126,7 +126,7 @@ V: Kezdésként hozzon létre egy új C# projektet a választott integrált fejl
 
 #### K: Milyen névtereket kell importálnom az Aspose.PDF for .NET használatához?
 
-V: A C# kódfájlba az elejére direktívák használatával adja meg a következőket a szükséges névterek importálásához:
+V: A C# kódfájlba az elejére írja be a következőket direktívák használatával a szükséges névterek importálásához:
 
 ```csharp
 using Aspose.Pdf;
@@ -156,4 +156,4 @@ doc.Save(dataDir + "LatextScriptInPdf_out.pdf");
 
 #### K: Tartalmazhatok több LaTeX-alapú kifejezést egyetlen PDF dokumentumban?
 
- V: Igen, ugyanabban a PDF-dokumentumban több LaTeX-alapú kifejezés is szerepelhet. Egyszerűen ismételje meg a cellák létrehozásának és hozzáadásának lépéseit`LatexFragment` szükség szerint objektumokat küld ezekre a cellákra.
+ V: Igen, ugyanabban a PDF-dokumentumban több LaTeX-alapú kifejezés is szerepelhet. Egyszerűen ismételje meg a cellák létrehozásának és hozzáadásának lépéseit`LatexFragment` szükség szerint objektumokat küld azokra a cellákra.

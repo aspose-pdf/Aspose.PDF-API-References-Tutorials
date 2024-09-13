@@ -34,7 +34,7 @@ url: /zh-hant/java/pdf-image-manipulation/convert-pdf-pages-to-bmp-image-using-j
 
 ### 第 1 步：載入 PDF 文檔
 
-第一步是載入您想要使用的 PDF 文件。您可以使用以下程式碼片段來實現此目的：
+第一步是載入您要使用的 PDF 文件。您可以使用以下程式碼片段來實現此目的：
 
 ```java
 //載入 PDF 文件
@@ -101,4 +101,4 @@ Aspose.PDF for Java 是一個功能強大的函式庫，但必須意識到潛在
 
 ### 我可以自訂 BMP 影像轉換設定嗎？
 
-是的，在使用 Aspose.PDF for Java 將 PDF 頁面轉換為 BMP 影像時，您可以自訂各種設置，例如影像解析度和品質。查看文件以取得更多詳細資訊。
+是的，使用 Aspose.PDF for Java 將 PDF 頁面轉換為 BMP 影像時，您可以自訂各種設置，例如影像解析度和品質。查看文件以取得更多詳細資訊。

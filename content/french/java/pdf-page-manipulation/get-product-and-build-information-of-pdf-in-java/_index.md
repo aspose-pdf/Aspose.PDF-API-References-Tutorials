@@ -8,7 +8,7 @@ weight: 13
 url: /fr/java/pdf-page-manipulation/get-product-and-build-information-of-pdf-in-java/
 ---
 
-## Introduction à l'obtention d'informations sur les produits et les builds PDF en Java
+## Introduction à l'obtention d'informations sur les produits et les builds de PDF en Java
 
 Aspose.PDF pour Java est une bibliothèque puissante qui permet aux développeurs de travailler avec des fichiers PDF dans des applications Java. Dans cet article, nous verrons comment extraire des informations sur les produits et les builds à partir de documents PDF à l'aide d'Aspose.PDF pour Java.
 

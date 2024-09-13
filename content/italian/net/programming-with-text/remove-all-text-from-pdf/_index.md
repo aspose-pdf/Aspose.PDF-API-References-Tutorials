@@ -96,7 +96,7 @@ A: Il tutorial ti guida passo dopo passo attraverso il processo:
 
 R: Il tutorial si concentra sulla rimozione di tutto il testo dall'intero documento PDF. Se vuoi rimuovere selettivamente il testo da aree specifiche, dovrai modificare l'approccio e usare una logica più complessa per identificare e rimuovere frammenti di testo specifici.
 
-####  D: Come funziona il`TextFragmentAbsorber` work to remove text?
+#### D: Come funziona il`TextFragmentAbsorber` work to remove text?
 
  A: Il`TextFragmentAbsorber`è una classe fornita dalla libreria Aspose.PDF che può assorbire frammenti di testo da un documento PDF. Utilizzando la`RemoveAllText` metodo del`TextFragmentAbsorber` classe, è possibile rimuovere tutti i frammenti di testo assorbiti dal documento.
 

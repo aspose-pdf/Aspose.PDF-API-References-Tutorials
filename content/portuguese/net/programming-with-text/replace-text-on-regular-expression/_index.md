@@ -74,7 +74,7 @@ Console.WriteLine("\nText replaced successfully based on a regular expression.\n
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Abrir documento
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionPage.pdf");
-// Crie um objeto TextAbsorber para encontrar todas as frases que correspondem à expressão regular
+//Crie um objeto TextAbsorber para encontrar todas as frases que correspondem à expressão regular
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Como 1999-2000
 // Defina a opção de pesquisa de texto para especificar o uso de expressão regular
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);

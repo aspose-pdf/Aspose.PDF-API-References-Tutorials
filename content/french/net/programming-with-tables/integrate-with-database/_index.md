@@ -80,7 +80,7 @@ DataTable dt = new DataTable("Employee");
 dt.Columns.Add("Employee_ID", typeof(Int32));
 dt.Columns.Add("Employee_Name", typeof(string));
 dt.Columns.Add("Gender", typeof(string));
-// Ajoutez 2 lignes dans l'objet DataTable par programmation
+//Ajoutez 2 lignes dans l'objet DataTable par programmation
 DataRow dr = dt.NewRow();
 dr[0] = 1;
 dr[1] = "John Smith";
@@ -132,7 +132,7 @@ R : Oui, vous pouvez ajouter des hyperliens ou d'autres éléments interactifs a
 
 #### Q : Puis-je paginer le tableau s'il dépasse un certain nombre de lignes ?
 
- R : Oui, vous pouvez paginer le tableau s'il dépasse un certain nombre de lignes. Pour ce faire, vous pouvez utiliser l'`IsInNewPage`propriété de l'objet Row pour indiquer qu'une nouvelle page doit commencer après une ligne spécifique. Vous pouvez calculer le nombre de lignes à afficher par page et définir la`IsInNewPage` propriété en conséquence.
+ : Oui, vous pouvez paginer le tableau s'il dépasse un certain nombre de lignes. Pour ce faire, vous pouvez utiliser l'`IsInNewPage` propriété de l'objet Row pour indiquer qu'une nouvelle page doit commencer après une ligne spécifique. Vous pouvez calculer le nombre de lignes à afficher par page et définir la`IsInNewPage` propriété en conséquence.
 
 #### Q : Comment puis-je exporter le document PDF avec des données de base de données intégrées vers différents formats de fichiers tels que DOCX ou XLSX ?
 

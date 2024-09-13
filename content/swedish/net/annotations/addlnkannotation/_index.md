@@ -1,7 +1,7 @@
 ---
 title: Lägg till lnk-anteckning
 linktitle: Lägg till lnk-anteckning
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig att lägga till bläckkommentarer till PDF-filer med Aspose.PDF för .NET i denna engagerande, steg-för-steg-guide.
 type: docs
 weight: 20

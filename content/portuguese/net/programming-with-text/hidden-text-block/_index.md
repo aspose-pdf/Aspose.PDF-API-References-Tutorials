@@ -110,7 +110,7 @@ doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to d
 doc.Save(outputFile);
 // Abrir documento com texto
 Document document = new Document(outputFile);
-// Crie um objeto TextAbsorber para encontrar todas as frases que correspondem à expressão regular
+//Crie um objeto TextAbsorber para encontrar todas as frases que correspondem à expressão regular
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
 // Aceite o absorvedor para as páginas do documento
 document.Pages.Accept(absorber);

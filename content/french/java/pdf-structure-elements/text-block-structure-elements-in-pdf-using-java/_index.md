@@ -10,7 +10,7 @@ url: /fr/java/pdf-structure-elements/text-block-structure-elements-in-pdf-using-
 
 ## Introduction aux éléments de structure de bloc de texte dans PDF à l'aide de Java
 
-Dans le monde numérique d'aujourd'hui, les documents PDF sont devenus partie intégrante du partage et de la présentation des informations. Les développeurs Java se retrouvent souvent à travailler avec des PDF pour manipuler et extraire des données. L'un des aspects cruciaux des PDF est la compréhension de leurs éléments de structure, en particulier les blocs de texte. Dans cet article, nous allons nous pencher sur les éléments de structure des blocs de texte dans PDF à l'aide de Java, en vous fournissant un guide complet pour travailler efficacement avec eux.
+Dans le monde numérique d'aujourd'hui, les documents PDF sont devenus partie intégrante du partage et de la présentation des informations. Les développeurs Java se retrouvent souvent à travailler avec des PDF pour manipuler et extraire des données. Un aspect crucial des PDF est la compréhension de leurs éléments de structure, en particulier les blocs de texte. Dans cet article, nous allons nous pencher sur les éléments de structure des blocs de texte dans PDF à l'aide de Java, en vous fournissant un guide complet pour travailler efficacement avec eux.
 
 ## Comprendre les éléments de structure PDF
 

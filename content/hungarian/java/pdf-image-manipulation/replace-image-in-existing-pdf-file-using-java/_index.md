@@ -2,7 +2,7 @@
 title: Cserélje le a képet a meglévő PDF-fájlban Java használatával
 linktitle: Cserélje le a képet a meglévő PDF-fájlban Java használatával
 second_title: Aspose.PDF Java PDF feldolgozó API
-description: Ismerje meg, hogyan cserélheti le a képeket a PDF-fájlokban Java nyelvre az Aspose.PDF for Java segítségével. Lépésről lépésre útmutató kódpéldákkal a zökkenőmentes képcseréhez.
+description: Ismerje meg, hogyan cserélheti le a PDF-fájlok képeit Java nyelvre az Aspose.PDF for Java segítségével. Lépésről lépésre útmutató kódpéldákkal a zökkenőmentes képcseréhez.
 type: docs
 weight: 11
 url: /hu/java/pdf-image-manipulation/replace-image-in-existing-pdf-file-using-java/

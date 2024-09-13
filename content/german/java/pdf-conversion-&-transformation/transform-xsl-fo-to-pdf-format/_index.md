@@ -22,7 +22,7 @@ Bevor wir uns in den Code vertiefen, stellen Sie sicher, dass Sie über Folgende
 ## Einrichten Ihres Projekts
 
 1. Erstellen Sie ein neues Java-Projekt in Ihrer IDE.
-2. Fügen Sie die Aspose.PDF-Bibliothek für Java zum Klassenpfad Ihres Projekts hinzu.
+2. Fügen Sie die Bibliothek Aspose.PDF für Java zum Klassenpfad Ihres Projekts hinzu.
 
 ## Konvertieren von XSL-FO in PDF
 

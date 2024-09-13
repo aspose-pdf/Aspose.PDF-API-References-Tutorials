@@ -38,14 +38,14 @@ Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 ```
 
 ## الخطوة 5: إضافة صفحة إلى المستند
- أضف صفحة جديدة إلى المستند باستخدام`Add` طريقة`Pages`المجموعة. في الكود المقدم، يتم تعيين الصفحة الجديدة للمتغير`page`.
+ أضف صفحة جديدة إلى المستند باستخدام`Add` طريقة`Pages` المجموعة. في الكود المقدم، يتم تعيين الصفحة الجديدة للمتغير`page`.
 
 ```csharp
 Aspose.Pdf.Page page = document.Pages.Add();
 ```
 
 ## الخطوة 6: إنشاء TextFragment مع وضع مسافة بادئة للأسطر اللاحقة
- إنشاء مثيل`TextFragment` الكائن وتوفير النص المطلوب. في الكود المقدم، يتم تعيين النص للمتغير`text` . ثم قم بالتهيئة`TextFormattingOptions` من اجل`TextFragment`وحدد`SubsequentLinesIndent` قيمة.
+ إنشاء مثيل`TextFragment` الكائن وتوفير النص المطلوب. في الكود المقدم، يتم تعيين النص للمتغير`text` . ثم قم بالتهيئة`TextFormattingOptions` من اجل`TextFragment` وحدد`SubsequentLinesIndent` قيمة.
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
@@ -91,7 +91,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = document.Pages.Add();
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
-// قم بتفعيل TextFormattingOptions لشظية النص وحدد قيمة SubsequentLinesIndent
+//قم بتفعيل TextFormattingOptions لشظية النص وحدد قيمة SubsequentLinesIndent
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
 	SubsequentLinesIndent = 20
@@ -148,7 +148,7 @@ Aspose.Pdf.Page page = document.Pages.Add();
 
 #### س: كيف يمكنني إضافة مسافة بادئة للأسطر اللاحقة في النص؟
 
- أ: في الخطوة 6، ستقوم بإنشاء`TextFragment` الكائن وتعيين النص المطلوب إليه. بعد ذلك، ستقوم بتهيئة`TextFormattingOptions` من اجل`TextFragment`وحدد`SubsequentLinesIndent` قيمة:
+ أ: في الخطوة 6، ستقوم بإنشاء`TextFragment` الكائن وتعيين النص المطلوب إليه. بعد ذلك، ستقوم بتهيئة`TextFormattingOptions` من اجل`TextFragment` وحدد`SubsequentLinesIndent` قيمة:
 
 ```csharp
 Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
@@ -168,7 +168,7 @@ page.Paragraphs.Add(text);
 
 #### س: هل يمكنني تكرار العملية للخطوط الإضافية؟
 
- ج: نعم، في الخطوة 8، يمكنك تكرار العملية للأسطر الإضافية بنفس المسافة البادئة عن طريق إنشاء أسطر جديدة`TextFragment` الكائنات وإضافتها إلى مجموعة الفقرات الخاصة بالصفحة.
+ج: نعم، في الخطوة 8، يمكنك تكرار العملية للأسطر الإضافية بنفس المسافة البادئة عن طريق إنشاء أسطر جديدة`TextFragment` الكائنات وإضافتها إلى مجموعة الفقرات الخاصة بالصفحة.
 
 #### س: كيف أحفظ مستند PDF الناتج؟
 

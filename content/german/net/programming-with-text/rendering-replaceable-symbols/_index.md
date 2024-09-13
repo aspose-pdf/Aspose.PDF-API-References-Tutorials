@@ -117,7 +117,7 @@ In diesem Tutorial haben Sie gelernt, wie Sie mithilfe der Aspose.PDF-Bibliothek
 
 #### F: Was ist der Zweck des Tutorials „Austauschbare Symbole in PDF-Dateien rendern“?
 
-A: Das Tutorial „Auswechselbare Symbole in PDF-Datei rendern“ zeigt, wie Sie mit der Aspose.PDF-Bibliothek für .NET ein PDF-Dokument mit austauschbaren Symbolen erstellen. Diese Symbole werden als Textfragmente mit Zeilenumbruchmarkierungen dargestellt, um mehrzeiligen Inhalt zu erstellen.
+A: Das Tutorial „Austauschbare Symbole in PDF-Datei rendern“ zeigt, wie Sie mit der Aspose.PDF-Bibliothek für .NET ein PDF-Dokument mit austauschbaren Symbolen erstellen. Diese Symbole werden als Textfragmente mit Zeilenumbruchmarkierungen dargestellt, um mehrzeiligen Inhalt zu erstellen.
 
 #### F: Warum sollte ich austauschbare Symbole in einem PDF-Dokument rendern wollen?
 

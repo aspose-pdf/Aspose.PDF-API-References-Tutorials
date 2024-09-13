@@ -30,7 +30,7 @@ using Aspose.Pdf;
  V kódu vyhledejte řádek, který říká`string dataDir = "YOUR DOCUMENT DIRECTORY";` a nahradit`"YOUR DOCUMENT DIRECTORY"` s cestou k adresáři, kde jsou uloženy vaše dokumenty.
 
 ## Krok 4: Načtěte existující dokument PDF
- Načtěte existující dokument PDF pomocí`Document` konstruktoru a předání cesty ke vstupnímu souboru PDF.
+ Načtěte existující dokument PDF pomocí`Document`konstruktoru a předání cesty ke vstupnímu souboru PDF.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "input.pdf");
@@ -129,7 +129,7 @@ using Aspose.Pdf;
 
 #### Otázka: Jak uložím aktualizovaný dokument PDF?
 
- Odpověď: V kroku 7 použijete`Save` metoda`Document`objekt pro uložení aktualizovaného dokumentu PDF s uvedením cesty k výstupnímu souboru.
+ Odpověď: V kroku 7 použijete`Save` metoda`Document` objekt pro uložení aktualizovaného dokumentu PDF s uvedením cesty k výstupnímu souboru.
 
 #### Otázka: Jaký význam má vkládání písem do dokumentu PDF?
 

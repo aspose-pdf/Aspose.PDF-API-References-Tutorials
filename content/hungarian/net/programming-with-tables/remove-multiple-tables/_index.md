@@ -40,7 +40,7 @@ absorb.Visit(pdfDocument.Pages[1]);
 Ahhoz, hogy eldobhassuk a táblázatokat, be kell szereznünk a táblázatgyűjtemény másolatát:
 
 ```csharp
-//Szerezzen másolatot a táblázatgyűjteményről
+// Szerezzen másolatot a táblázatgyűjteményről
 AbsorbedTable[] tables = new AbsorbedTable[absorb.TableList.Count];
 absorb.TableList.CopyTo(tables, 0);
 ```
@@ -96,7 +96,7 @@ Gratulálok ! Most megtanulta, hogyan távolíthat el több táblát egy PDF-dok
 
 #### K: Eltávolíthatok-e bizonyos táblázatokat a PDF-dokumentum összes táblázata helyett?
 
-V: Igen, az Aspose.PDF for .NET használatával eltávolíthat bizonyos táblázatokat a PDF-dokumentum összes táblája helyett. A bemutatott példában a második oldalon lévő összes táblázat eltávolításra kerül. A kódot azonban módosíthatja, hogy megcélozzon és eltávolítson bizonyos táblákat az Ön igényei szerint. Ehhez azonosítania kell az eltávolítani kívánt táblákat, majd hívnia kell a`absorber.Remove(table)` módszer minden egyes törölni kívánt táblához.
+ V: Igen, az Aspose.PDF for .NET használatával eltávolíthat bizonyos táblázatokat a PDF-dokumentum összes táblája helyett. A bemutatott példában a második oldalon lévő összes táblázat eltávolításra kerül. A kódot azonban módosíthatja, hogy megcélozzon és eltávolítson bizonyos táblákat az Ön igényei szerint. Ehhez azonosítania kell az eltávolítani kívánt táblákat, majd hívnia kell a`absorber.Remove(table)` módszer minden egyes törölni kívánt táblához.
 
 #### K: Hogyan távolíthatok el táblázatokat a PDF-dokumentum több oldaláról?
 
@@ -104,7 +104,7 @@ V: Igen, az Aspose.PDF for .NET használatával eltávolíthat bizonyos tábláz
 
 #### K: Mi történik, ha megpróbálok eltávolítani egy olyan táblát, amely nem létezik a megadott oldalon?
 
-V: Ha olyan táblát próbál meg eltávolítani, amely nem létezik a megadott oldalon, az nem fog hibát okozni. A`absorber.Remove(table)` módszer egyszerűen figyelmen kívül hagyja az eltávolítási kérelmet, és a PDF-dokumentum változatlan marad.
+ V: Ha olyan táblát próbál meg eltávolítani, amely nem létezik a megadott oldalon, az nem fog hibát okozni. A`absorber.Remove(table)` módszer egyszerűen figyelmen kívül hagyja az eltávolítási kérelmet, és a PDF-dokumentum változatlan marad.
 
 #### K: Visszavonhatom a táblák eltávolítását a dokumentum mentése után?
 

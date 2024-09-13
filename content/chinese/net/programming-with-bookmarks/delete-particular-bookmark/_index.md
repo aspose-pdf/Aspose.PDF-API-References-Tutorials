@@ -64,7 +64,7 @@ Document pdfDocument = new Document(dataDir + "DeleteParticularBookmark.pdf");
 
 ## 步骤 3：删除特定书签
 
-现在到了关键部分——删除书签。您将使用`Outlines.Delete`方法删除书签的标题。确保替换`"Child Outline"`替换为您要删除的书签的实际标题。
+现在到了关键部分——删除书签。您将使用`Outlines.Delete`方法删除书签的标题。确保替换`"Child Outline"`替换为要删除的书签的实际标题。
 
 ```csharp
 pdfDocument.Outlines.Delete("Child Outline");
@@ -81,7 +81,7 @@ pdfDocument.Save(dataDir);
 
 ## 步骤 5：确认删除
 
-最后，确认操作是否成功始终是一个好习惯。您可以将消息打印到控制台，以告知您书签已被删除。
+最后，确认操作是否成功始终是一个好习惯。您可以向控制台打印一条消息，以告知您书签已被删除。
 
 ```csharp
 Console.WriteLine("\nParticular bookmark deleted successfully.\nFile saved at " + dataDir);

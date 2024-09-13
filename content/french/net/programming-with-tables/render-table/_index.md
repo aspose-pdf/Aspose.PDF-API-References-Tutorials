@@ -154,7 +154,7 @@ Félicitations ! Vous savez maintenant comment afficher un tableau dans un docum
 
 #### Q : Comment puis-je modifier l’apparence du tableau, par exemple en changeant les couleurs des cellules ou en ajoutant des bordures ?
 
- : Pour modifier l'apparence du tableau, vous pouvez définir différentes propriétés du`Aspose.Pdf.Table` et ses cellules. Par exemple, vous pouvez définir le`BackgroundColor` propriété des cellules pour modifier leur couleur d'arrière-plan. Vous pouvez également définir la`Border` propriété du tableau ou des cellules individuelles pour ajouter des bordures. De plus, vous pouvez personnaliser la police, la couleur du texte et l'alignement du contenu du tableau en modifiant la`TextState` de la`TextFragment` objets ajoutés aux cellules.
+ A : Pour modifier l'apparence du tableau, vous pouvez définir différentes propriétés du`Aspose.Pdf.Table` et ses cellules. Par exemple, vous pouvez définir le`BackgroundColor` propriété des cellules pour modifier leur couleur d'arrière-plan. Vous pouvez également définir la`Border` propriété du tableau ou des cellules individuelles pour ajouter des bordures. De plus, vous pouvez personnaliser la police, la couleur du texte et l'alignement du contenu du tableau en modifiant la`TextState` de la`TextFragment` objets ajoutés aux cellules.
 
 #### Q : Puis-je ajouter des en-têtes ou des pieds de page au tableau ?
 
@@ -162,7 +162,7 @@ R : Oui, vous pouvez ajouter des en-têtes ou des pieds de page au tableau en cr
 
 #### Q : Comment puis-je contrôler la position du tableau sur la page ?
 
- A : Pour contrôler la position du tableau sur la page, vous pouvez ajuster le`MarginInfo` de la`PageInfo` objet. Le`MarginInfo`vous permet de définir les marges gauche, droite, supérieure et inférieure de la page, ce qui affecte l'espace disponible pour le tableau. Vous pouvez également utiliser l'`PositioningType` propriété de la`Aspose.Pdf.Table` pour contrôler son alignement horizontal et vertical dans la zone de contenu de la page.
+ : Pour contrôler la position du tableau sur la page, vous pouvez ajuster le`MarginInfo` de la`PageInfo` objet. Le`MarginInfo` vous permet de définir les marges gauche, droite, supérieure et inférieure de la page, ce qui affecte l'espace disponible pour le tableau. Vous pouvez également utiliser l'`PositioningType` propriété de la`Aspose.Pdf.Table` pour contrôler son alignement horizontal et vertical dans la zone de contenu de la page.
 
 #### Q : Puis-je exporter le tableau vers différents formats de fichiers, tels qu'Excel ou CSV ?
 

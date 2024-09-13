@@ -105,7 +105,7 @@ foreach (Element element in elementList)
 		string alternativeText = structureElement.AlternativeText;
 	}
 }
-// मूल तत्व में पहले तत्व के संतान तत्वों तक पहुंच
+//मूल तत्व में पहले तत्व के संतान तत्वों तक पहुंच
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
 foreach (Element element in elementList)
 {

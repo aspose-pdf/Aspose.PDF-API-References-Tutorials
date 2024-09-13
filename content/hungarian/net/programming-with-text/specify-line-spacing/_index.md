@@ -120,16 +120,16 @@ TextFormattingOptions formattingOptions = new TextFormattingOptions();
 formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 // Szövegkészítő objektum létrehozása a dokumentum első oldalához
 //TextBuilder textBuilder = new TextBuilder(doc.Pages[1]);
-// Szövegrészlet létrehozása minta karakterlánccal
+// Szövegrészlet létrehozása mintakarakterlánccal
 TextFragment textFragment = new TextFragment("Hello world");
 if (fontFile != "")
 {
-	// Töltse be a TrueType betűtípust az adatfolyam objektumba
+	//Töltse be a TrueType betűtípust az adatfolyam objektumba
 	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
 	{
 		// Állítsa be a betűtípus nevét a szöveges karakterlánchoz
 		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		//Adja meg a szövegtöredék pozícióját
+		// Adja meg a szövegtöredék pozícióját
 		textFragment.Position = new Position(100, 600);
 		//Állítsa be az aktuális töredék TextFormattingOptions beállítását előre meghatározott értékre (ami a LineSpacingMode.FullSize-re mutat)
 		textFragment.TextState.FormattingOptions = formattingOptions;

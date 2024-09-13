@@ -2,135 +2,129 @@
 title: フォントの埋め込みを解除して PDF ファイルを最適化する
 linktitle: フォントの埋め込みを解除して PDF ファイルを最適化する
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して埋め込みフォントを取得し、PDF ファイルを最適化する方法を学びます。ステップバイステップ ガイド。
+description: このステップバイステップのチュートリアルでは、Aspose.PDF for .NET を使用してフォントの埋め込みを解除し、PDF ファイルを最適化する方法を学習します。
 type: docs
 weight: 370
 url: /ja/net/programming-with-document/unembedfonts/
 ---
-Aspose.PDF for .NET は、PDF ドキュメントを操作するための幅広い機能を提供する強力なライブラリです。その機能の 1 つは、PDF ドキュメントから埋め込み解除されたフォントを取得することです。これは、PDF ドキュメントからフォントを抽出して他のアプリケーションで使用する必要がある場合に役立ちます。
+## 導入
 
-Aspose.PDF for .NET の埋め込みフォント取得機能の次の C# ソース コードを説明するステップ バイ ステップ ガイドを提供します。
+デジタル時代では、PDF はどこにでもあります。レポート、プレゼンテーション、電子書籍などを共有する場合、ドキュメントの整合性を保つには、Portable Document Format (PDF) が最適です。ただし、PDF を作成して共有する回数が増えると、ファイル サイズが大きくなり、送信や保存が面倒になります。ここで、PDF ファイルを最適化する強力なツールを提供する Aspose.PDF for .NET が役立ちます。このチュートリアルでは、Aspose.PDF for .NET を使用してフォントの埋め込みを解除し、PDF ファイルを最適化する方法について詳しく説明します。
 
-## ステップ1: ドキュメントディレクトリへのパスを設定する
+## 前提条件
 
-始める前に、PDF ドキュメントが保存されているディレクトリへのパスを設定する必要があります。このパスは、「dataDir」という変数に保存します。
+細かい点に入る前に、始めるのに必要なものがすべて揃っていることを確認しましょう。
+
+1. Visual Studio: マシンに Visual Studio がインストールされていることを確認してください。これは、.NET コードを記述して実行するために使用する IDE です。
+2.  Aspose.PDF for .NET: Aspose.PDFライブラリをダウンロードしてインストールする必要があります。[ダウンロードリンク](https://releases.aspose.com/pdf/net/).
+3. C# の基礎知識: C# プログラミングに精通していると、使用するコード スニペットを理解するのに役立ちます。
+4.  PDFファイル: 最適化したいPDFファイルを用意します。どんなPDFでも使えますが、ここでは例として「`OptimizeDocument.pdf`.
+
+## パッケージのインポート
+
+まず、C# プロジェクトに必要なパッケージをインポートする必要があります。手順は次のとおりです。
+
+1. Visual Studio でプロジェクトを開きます。
+2. Aspose.PDFへの参照を追加します。ソリューションエクスプローラーでプロジェクトを右クリックし、「NuGetパッケージの管理」を選択して、`Aspose.PDF`パッケージをインストールします。
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+すべての設定が完了したので、最適化プロセスを管理しやすいステップに分解してみましょう。
+
+## ステップ1: ドキュメントディレクトリを設定する
+
+まず最初に、ドキュメント ディレクトリへのパスを定義する必要があります。ここに PDF ファイルが保存されます。手順は次のとおりです。
 
 ```csharp
 //ドキュメント ディレクトリへのパス。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-「YOUR DOCUMENT DIRECTORY」を、PDF ドキュメントが保存されているディレクトリへの実際のパスに置き換えます。
+交換する`"YOUR DOCUMENT DIRECTORY"` PDF ファイルが保存されている実際のパスを入力します。最適化する PDF がどこにあるかをプログラムが知る必要があるため、これは非常に重要です。
 
 ## ステップ2: PDFドキュメントを開く
 
-最初のステップは、これを行うPDF文書を読み込むことです。`Document` Aspose.PDF for .NET のクラス。次のコード スニペットは、PDF ドキュメントを読み込む方法を示しています。
+ディレクトリの設定が完了したので、最適化する PDF ドキュメントを開きます。これを行うためのコードは次のとおりです。
 
 ```csharp
 //ドキュメントを開く
 Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
 ```
 
-## ステップ3: UnembedFontsオプションを設定する
+このコード行は新しい`Document`オブジェクトは PDF ファイルを表します。ファイル名がディレクトリにあるファイル名と一致していることを確認してください。
 
-PDF文書から埋め込みフォントを取得するには、`UnembedFonts`オプション`true`このオプションは、`OptimizationOptions`クラス。次のコードスニペットは、`UnembedFonts`オプション：
+## ステップ3: 最適化オプションを設定する
+
+次に、最適化オプションを指定する必要があります。この場合、フォントの埋め込みを解除します。設定方法は次のとおりです。
 
 ```csharp
 // UnembedFontsオプションを設定する
 var optimizeOptions = new Pdf.Optimization.OptimizationOptions
 {
-	UnembedFonts = true
+    UnembedFonts = true
 };
 ```
+
+設定により`UnembedFonts`に`true`では、フォントの埋め込みを解除して PDF を最適化するように Aspose.PDF に指示しています。これにより、特に PDF に多くの埋め込みフォントが含まれている場合に、ファイル サイズを大幅に削減できます。
 
 ## ステップ4: PDFドキュメントを最適化する
 
-設定後`UnembedFonts`オプションを使用すると、PDF文書を`OptimizeResources`方法の`Document`クラス。次のコード スニペットは、PDF ドキュメントを最適化する方法を示しています。
+オプションを設定したら、PDF ドキュメントを最適化します。これを行うコードは次のとおりです。
 
 ```csharp
-// OptimizationOptionsを使用してPDFドキュメントを最適化する
-pdfDocument.OptimizeResources(optimizeOptions);
-```
-
-## ステップ5: 更新したドキュメントを保存する
-
- PDF文書が最適化されたら、`Save`方法の`Document`クラス。次のコード スニペットは、更新されたドキュメントを保存する方法を示しています。
-
-```csharp
-//更新されたドキュメントを保存する
-pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
-```
-
-## ステップ6: 元のファイルサイズと縮小されたファイルサイズを取得する
-
-最後に、PDF文書の元のファイルサイズと縮小されたファイルサイズを取得するには、`FileInfo` System.IO のクラスです。次のコード スニペットは、元のファイル サイズと縮小されたファイル サイズを取得する方法を示しています。
-
-```csharp
-var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
-var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
-Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
-```
-
-### Aspose.PDF for .NET を使用して埋め込みフォントを取得するためのサンプル ソース コード
-
-以下は、Aspose.PDF for .NET を使用して PDF ドキュメントから埋め込みフォントを取得するための完全なサンプル ソース コードです。
-
-```csharp
-//ドキュメント ディレクトリへのパス。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-//ドキュメントを開く
-Document pdfDocument = new Document(dataDir + "OptimizeDocument.pdf");
-// UnembedFontsオプションを設定する
-var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-{
-	UnembedFonts = true
-};
 Console.WriteLine("Start");
 // OptimizationOptionsを使用してPDFドキュメントを最適化する
 pdfDocument.OptimizeResources(optimizeOptions);
+```
+
+このコードスニペットは、`OptimizeResources`方法`pdfDocument`オブジェクトに、先ほど定義した最適化オプションを適用します。コンソールに、最適化プロセスが開始されたことを示すメッセージが表示されます。
+
+## ステップ5: 更新したドキュメントを保存する
+
+PDF を最適化した後、更新されたドキュメントを保存する必要があります。手順は次のとおりです。
+
+```csharp
 //更新されたドキュメントを保存する
 pdfDocument.Save(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Finished");
+```
+
+このコードは最適化されたPDFを次のように保存します。`OptimizeDocument_out.pdf`同じディレクトリにあります。必要に応じて別の名前を選択することもできますが、似たような名前にしておくと、元のバージョンと最適化されたバージョンを識別しやすくなります。
+
+## ステップ6: ファイルサイズを比較する
+
+最後に、どれだけのスペースが節約できたかを確認することをお勧めします。元のファイル サイズと最適化されたファイル サイズを比較する方法は次のとおりです。
+
+```csharp
 var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
 var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
 Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
 ```
+
+このコードは、元の PDF と最適化された PDF の両方のファイル サイズを取得し、コンソールに出力します。ファイル サイズがどれだけ削減されたかを確認するのは満足感があります。
 
 ## 結論
 
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメントから埋め込み解除されたフォントを取得する方法を説明しました。ステップ バイ ステップ ガイドに従うことで、この機能を C# アプリケーションに簡単に実装できます。フォントの埋め込み解除は、抽出されたフォントを個別に操作する必要がある場合や、さまざまなプラットフォーム間で一貫したフォント使用を確保する必要がある場合に便利です。
+これで完了です。Aspose.PDF for .NET を使用して、埋め込みフォントを正常に解除し、PDF ファイルを最適化できました。このプロセスは、ファイル サイズを縮小するだけでなく、PDF ドキュメントのパフォーマンスも向上します。電子メールでファイルを共有する場合でも、クラウドに保存する場合でも、ファイル サイズが小さいと大きな違いが生じます。
 
 ## よくある質問
 
-#### Q: PDF ドキュメントからフォントの埋め込みを解除する目的は何ですか?
+### Aspose.PDF for .NET とは何ですか?
+Aspose.PDF for .NET は、開発者がプログラムによって PDF ドキュメントを作成、操作、最適化できるようにする強力なライブラリです。
 
-A: PDF ドキュメントからフォントの埋め込みを解除すると、埋め込まれたフォントを抽出して他のアプリケーションで使用できるようになります。これは、一貫したフォント レンダリングを保証し、ドキュメントの外観を維持するのに役立ちます。
+### Aspose.PDF を無料で使用できますか?
+はい、Asposeは無料試用版を提供しています。こちらからダウンロードできます。[ここ](https://releases.aspose.com/).
 
-#### Q: C# コードでドキュメント ディレクトリへのパスを指定するにはどうすればよいですか?
+### Aspose.PDF のサポートを受けるにはどうすればよいですか?
+サポートを受けるには[Aspose フォーラム](https://forum.aspose.com/c/pdf/10).
 
- A: ドキュメントディレクトリへのパスを指定するには、`"YOUR DOCUMENT DIRECTORY"`コード内に、PDF ドキュメントが配置されているディレクトリへの実際のパスを含めます。
+### PDF に対してどのような種類の最適化を実行できますか?
+フォントの埋め込み解除、画像の圧縮、未使用のオブジェクトの削除などを行って、PDF ファイルを最適化できます。
 
-####  Q:`UnembedFonts` option do, and where is it set?
-
- A:`UnembedFonts`オプションは、`OptimizationOptions`クラスは、PDF文書からフォントの埋め込み解除を有効または無効にします。このオプションを`true`次のコードを使用します。
-
-```csharp
-var optimizeOptions = new Pdf.Optimization.OptimizationOptions
-{
-	UnembedFonts = true
-};
-```
-
-#### Q: 最適化プロセス中に行った変更を元に戻すことはできますか?
-
-A: Aspose.PDF for .NET は、最適化中に元の PDF ドキュメントに永続的な変更を加えません。最適化プロセスはドキュメントのコピーに対して実行され、元のドキュメントはそのまま残ります。
-
-#### Q: 最適化後の元のファイルサイズと縮小されたファイルサイズを確認するにはどうすればよいですか?
-
- A:`FileInfo`クラスの`System.IO`元のファイル サイズと縮小されたファイル サイズを取得します。これを実現するためのサンプル コード スニペットを次に示します。
-
-```csharp
-var fi1 = new System.IO.FileInfo(dataDir + "OptimizeDocument.pdf");
-var fi2 = new System.IO.FileInfo(dataDir + "OptimizeDocument_out.pdf");
-Console.WriteLine("Original file size: {0}. Reduced file size: {1}", fi1.Length, fi2.Length);
-```
+### Aspose.PDF for .NET はどこで購入できますか?
+ライセンスは以下から購入できます。[Aspose 購入ページ](https://purchase.aspose.com/buy).

@@ -1,6 +1,6 @@
 ---
-title: PDF ファイルに透明テキストを追加する
-linktitle: PDF ファイルに透明テキストを追加する
+title: PDF ファイルに透明なテキストを追加する
+linktitle: PDF ファイルに透明なテキストを追加する
 second_title: Aspose.PDF for .NET API リファレンス
 description: Aspose.PDF for .NET を使用して PDF ファイルに透明なテキストを追加する方法を学習します。
 type: docs
@@ -163,7 +163,7 @@ using Aspose.Pdf.Drawing;
 
 #### Q: 透明な長方形を作成するにはどうすればよいですか?
 
-A: ステップ7では、特定の寸法の四角形を作成し、塗りつぶしの色を透明色に設定します。`Color.FromRgb`方法。
+ A: ステップ7では、特定の寸法の四角形を作成し、塗りつぶしの色を透明色に設定します。`Color.FromRgb`方法。
 
 #### Q: グラフ オブジェクトをページに追加するにはどうすればよいですか?
 
@@ -175,7 +175,7 @@ A: ステップ7では、特定の寸法の四角形を作成し、塗りつぶ�
 
 #### Q: 透明な TextFragment を作成するにはどうすればよいですか?
 
- A: ステップ10では、`TextFragment`オブジェクトとその内容を設定し、`ForegroundColor`透明なテキストを実現するためのプロパティ。
+A: ステップ10では、`TextFragment`オブジェクトとその内容を設定し、`ForegroundColor`透明なテキストを実現するためのプロパティ。
 
 #### Q: PDF ドキュメントを保存するにはどうすればよいですか?
 

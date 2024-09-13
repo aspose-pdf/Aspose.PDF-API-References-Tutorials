@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Krok 5: Přidejte do dokumentu stránku
- Přidejte do dokumentu novou stránku pomocí`Add` metoda`Pages`sbírka. V poskytnutém kódu je nová stránka přiřazena k proměnné`page`.
+ Přidejte do dokumentu novou stránku pomocí`Add` metoda`Pages` sbírka. V poskytnutém kódu je nová stránka přiřazena k proměnné`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -118,7 +118,7 @@ Odpověď: V kroku 6 vytvoříte smyčku pro přidání více fragmentů textu n
 
 #### Otázka: Jak uložím dokument PDF a extrahuji informace o zalomení řádku?
 
- Odpověď: V kroku 7 uložíte dokument PDF pomocí`Save` metoda`Document` objekt. Poté extrahujete informace o zalomení řádku pomocí`GetNotifications`metodu požadované stránky a uložte ji do textového souboru.
+ Odpověď: V kroku 7 uložíte dokument PDF pomocí`Save` metoda`Document` objekt. Poté extrahujete informace o zalomení řádku pomocí`GetNotifications` metodu požadované stránky a uložte ji do textového souboru.
 
 #### Otázka: Jaký je účel extrahovaných informací o zalomení řádku?
 

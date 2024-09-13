@@ -62,7 +62,7 @@ pdfDocument.Pages[2].Accept(textFragmentAbsorber);
 
 ## Krok 6: Načtěte extrahované fragmenty textu
 
-Získejte extrahované fragmenty textu pomocí`TextFragments` majetek z`TextFragmentAbsorber` objekt:
+ Získejte extrahované fragmenty textu pomocí`TextFragments` vlastnictví`TextFragmentAbsorber` objekt:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -83,7 +83,7 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
- Ve výše uvedeném úryvku kódu nahraďte`"New Phrase"` s náhradním textem, který chcete použít. Můžete také přizpůsobit další vlastnosti, jako je písmo, velikost písma, barva popředí a barva pozadí.
+ Ve výše uvedeném fragmentu kódu nahraďte`"New Phrase"` s náhradním textem, který chcete použít. Můžete také přizpůsobit další vlastnosti, jako je písmo, velikost písma, barva popředí a barva pozadí.
 
 ## Krok 8: Uložte upravený PDF
 
@@ -157,7 +157,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 #### Otázka: Mohu tímto přístupem nahradit text na více stránkách?
 
- Odpověď: Ano, můžete nahradit text na více stránkách opakováním procesu pro každou požadovanou stránku. Upravte index stránky (např.`pdfDocument.Pages[2]`) zadejte stránku, na které chcete pracovat.
+ Odpověď: Ano, můžete nahradit text na více stránkách opakováním procesu pro každou požadovanou stránku. Upravte index stránky (např.`pdfDocument.Pages[2]`) a zadejte stránku, na které chcete pracovat.
 
 #### Otázka: Co když chci nahradit text jiným formátováním?
 
@@ -165,7 +165,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 #### Otázka: Co se stane, když hledaná fráze nebude na zadané stránce nalezena?
 
- Odpověď: Pokud hledaná fráze není na zadané stránce nalezena,`TextFragmentCollection` bude prázdný a nebudou provedeny žádné náhrady. Ujistěte se, že hledaná fráze existuje na stránce, na kterou cílíte.
+Odpověď: Pokud hledaná fráze není na zadané stránce nalezena,`TextFragmentCollection` bude prázdný a nebudou provedeny žádné náhrady. Ujistěte se, že hledaná fráze existuje na stránce, na kterou cílíte.
 
 #### Otázka: Jak mohu přizpůsobit nahrazující text pro každý textový fragment?
 

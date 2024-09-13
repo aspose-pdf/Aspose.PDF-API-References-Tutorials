@@ -38,7 +38,7 @@ Document doc = new Document();
 ```
 
 ## Paso 5: Agregar una página al documento
- Agregue una nueva página al documento usando el`Add` método de la`Pages`colección. En el código proporcionado, la nueva página se asigna a la variable`page`.
+ Agregue una nueva página al documento usando el`Add` método de la`Pages` colección. En el código proporcionado, la nueva página se asigna a la variable`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -118,7 +118,7 @@ R: En el paso 6, creará un bucle para agregar múltiples fragmentos de texto a 
 
 #### P: ¿Cómo guardo el documento PDF y extraigo la información de salto de línea?
 
- A: En el paso 7, guardará el documento PDF utilizando el`Save` método de la`Document` objeto. Luego, extraerá la información de salto de línea utilizando el`GetNotifications`método de la página deseada y guardarlo en un archivo de texto.
+ A: En el paso 7, guardará el documento PDF utilizando el`Save` método de la`Document` objeto. Luego, extraerá la información de salto de línea utilizando el`GetNotifications` método de la página deseada y guardarlo en un archivo de texto.
 
 #### P: ¿Cuál es el propósito de la información de salto de línea extraída?
 

@@ -32,7 +32,7 @@ using System.IO;
  코드에서 다음 줄을 찾으세요.`string dataDir = "YOUR DOCUMENT DIRECTORY";` 그리고 교체하다`"YOUR DOCUMENT DIRECTORY"` 문서가 저장된 디렉토리 경로를 포함합니다.
 
 ## 4단계: PDF 문서 열기
- 기존 PDF 문서를 열려면 다음을 사용하세요.`Document` 생성자를 사용하고 입력 PDF 파일의 경로를 전달합니다.
+ 기존 PDF 문서를 열려면 다음을 사용하세요.`Document`생성자를 사용하고 입력 PDF 파일의 경로를 전달합니다.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");

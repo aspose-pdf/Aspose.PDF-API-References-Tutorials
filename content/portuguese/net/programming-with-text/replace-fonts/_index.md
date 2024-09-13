@@ -34,7 +34,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## Etapa 3: Pesquisar e substituir fontes
 
- Nós criamos um`TextFragmentAbsorber`objeto e definir a opção de edição para remover fontes não utilizadas. Então, aceitamos o absorber para todas as páginas do documento PDF para procurar por fragmentos de texto.
+ Nós criamos um`TextFragmentAbsorber` objeto e definir a opção de edição para remover fontes não utilizadas. Então, aceitamos o absorber para todas as páginas do documento PDF para procurar por fragmentos de texto.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));

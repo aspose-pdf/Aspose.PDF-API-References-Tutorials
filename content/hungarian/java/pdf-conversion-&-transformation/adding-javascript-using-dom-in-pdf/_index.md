@@ -89,7 +89,7 @@ String calculateTotalScript = "var quantity = this.getField('item_quantity').val
 pdfDocument.getJavaScript().add(calculateTotalScript);
 ```
 
-Ebben a példában két űrlapmezőt hoztunk létre a cikk mennyiségéhez és árához, és hozzáadtunk egy JavaScript függvényt a teljes ár kiszámításához a felhasználói bevitel alapján.
+Ebben a példában két űrlapmezőt hoztunk létre a cikk mennyiségéhez és árához, és hozzáadtunk egy JavaScript-függvényt a teljes ár kiszámításához a felhasználói bevitel alapján.
 
 ## Következtetés
 

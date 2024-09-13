@@ -61,7 +61,7 @@ page.getLayers().add(layer);
 // Szöveget, képeket vagy egyéb elemeket adhat hozzá a réteghez
 ```
 
-## 5. lépés: Rétegek rendezése és csoportosítása
+## 5. lépés: Rétegek szervezése és csoportosítása
 rétegeket csoportosítással rendezheti. Ez lehetővé teszi egyszerre több réteg láthatóságának szabályozását. A következőképpen hozhat létre és csoportosíthat rétegeket:
 
 ```java

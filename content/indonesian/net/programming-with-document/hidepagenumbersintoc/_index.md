@@ -2,109 +2,40 @@
 title: Sembunyikan Nomor Halaman Di Daftar Isi
 linktitle: Sembunyikan Nomor Halaman Di Daftar Isi
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Pelajari cara menyembunyikan nomor halaman dalam daftar isi menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah ini.
+description: Pelajari cara menyembunyikan nomor halaman di Daftar Isi menggunakan Aspose.PDF untuk .NET. Ikuti panduan terperinci ini dengan contoh kode untuk membuat PDF profesional.
 type: docs
 weight: 220
 url: /id/net/programming-with-document/hidepagenumbersintoc/
 ---
-Dalam artikel ini, kita akan membahas penerapan fitur Sembunyikan Nomor Halaman di Daftar Isi Aspose.PDF untuk .NET menggunakan C#. Kita akan mulai dengan pengenalan singkat tentang Aspose.PDF untuk .NET, lalu menyelami panduan langkah demi langkah untuk menerapkan fitur ini. 
+## Perkenalan
 
-## Pengantar Aspose.PDF untuk .NET
-
-Aspose.PDF untuk .NET adalah komponen manipulasi PDF yang canggih yang memungkinkan pengembang untuk membuat, mengedit, dan memanipulasi file PDF secara terprogram. Komponen ini menyediakan berbagai fitur dan fungsi yang memudahkan pengerjaan dokumen PDF. Aspose.PDF untuk .NET mendukung sistem operasi 32-bit dan 64-bit dan dapat digunakan dengan platform .NET Framework, .NET Core, dan Xamarin. 
-
-## Apa itu fitur Sembunyikan Nomor Halaman di Daftar Isi?
-
-Daftar Isi (TOC) merupakan bagian penting dari dokumen PDF yang memberikan gambaran singkat tentang konten kepada pengguna. Terkadang, pengguna mungkin ingin menyembunyikan nomor halaman di TOC agar lebih mudah digunakan. Aspose.PDF untuk .NET menyediakan fitur bawaan untuk menyembunyikan nomor halaman di TOC. Fitur ini dapat digunakan untuk membuat dokumen PDF yang lebih mudah digunakan. 
+Saat Anda bekerja dengan PDF, terkadang Anda mungkin ingin membuat Daftar Isi (TOC) tetapi tetap rapi dengan menyembunyikan nomor halaman. Mungkin dokumen akan lebih baik tanpa nomor halaman, atau mungkin itu adalah pilihan estetika. Apa pun alasan Anda, jika Anda bekerja dengan Aspose.PDF untuk .NET, tutorial ini akan menunjukkan kepada Anda cara menyembunyikan nomor halaman di TOC Anda.
 
 ## Prasyarat
 
-Untuk mengikuti tutorial ini, Anda memerlukan hal berikut:
+Sebelum kita mulai, ada beberapa hal yang perlu Anda persiapkan. Berikut daftar periksa singkatnya:
 
-- Visual Studio 2010 atau yang lebih baru
-- Aspose.PDF untuk .NET terinstal di sistem Anda
-- Pengetahuan dasar bahasa pemrograman C#
+- Visual Studio Terpasang: Anda memerlukan versi Visual Studio yang berfungsi untuk membuat kode.
+- Pustaka Aspose.PDF untuk .NET: Pastikan Anda telah menginstal pustaka Aspose.PDF untuk .NET.
+  -  Tautan unduhan:[Aspose.PDF untuk .NET](https://releases.aspose.com/pdf/net/)
+- Lisensi Sementara: Jika Anda menguji fitur-fiturnya, ada baiknya Anda memiliki lisensi sementara.
+  -  Lisensi sementara:[Dapatkan di sini](https://purchase.aspose.com/temporary-license/)
 
-## Panduan langkah demi langkah untuk menerapkan fitur Sembunyikan Nomor Halaman di Daftar Isi
+## Paket Impor
 
-Ikuti langkah-langkah di bawah ini untuk menerapkan fitur Sembunyikan Nomor Halaman di Daftar Isi menggunakan Aspose.PDF untuk .NET:
-
-## Langkah 1: Buat aplikasi konsol C# baru di Visual Studio
-
-Buka Visual Studio dan buat aplikasi konsol C# baru.
-
-## Langkah 2: Tambahkan referensi ke Aspose.PDF untuk .NET
-
-Klik kanan pada folder Referensi di proyek Anda dan pilih Tambahkan Referensi. Telusuri lokasi tempat Aspose.PDF for .NET diinstal di sistem Anda dan tambahkan referensi ke sana.
-
-## Langkah 1: Buat dokumen PDF baru
-
-Buat dokumen PDF baru menggunakan kode berikut:
+Sebelum memulai kode, pastikan Anda mengimpor namespace berikut ke dalam proyek C# Anda. Namespace ini akan menyediakan kelas dan metode yang diperlukan untuk bekerja dengan dokumen PDF dan membuat Daftar Isi (TOC).
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outFile = dataDir + "HiddenPageNumbers_out.pdf";
-Document doc = new Document();
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-## Langkah 2: Buat halaman TOC
+Sekarang lingkungan Anda sudah siap dan paket-paket telah diimpor, mari kita bahas setiap langkah dari proses tersebut. Kami akan membahas setiap bagian dari kode untuk memastikan kejelasan, sehingga Anda dapat mengikutinya dengan mudah.
 
-Buat halaman baru untuk TOC dan tambahkan ke dokumen PDF menggunakan kode berikut:
+## Langkah 1: Inisialisasi Dokumen PDF Anda
 
-```csharp
-Page tocPage = doc.Pages.Add();
-TocInfo tocInfo = new TocInfo();
-TextFragment title = new TextFragment("Table Of Contents");
-title.TextState.FontSize = 20;
-title.TextState.FontStyle = FontStyles.Bold;
-tocInfo.Title = title;
-```
+Hal pertama yang perlu kita lakukan adalah membuat dokumen PDF baru dan menambahkan halaman untuk Daftar Isi (TOC).
 
-## Langkah 3: Tambahkan bagian daftar ke koleksi bagian dokumen PDF
-
-Tambahkan bagian daftar ke koleksi bagian dokumen PDF menggunakan kode berikut:
-
-```csharp
-tocPage.TocInfo = tocInfo;
-```
-
-## Langkah 4: Tentukan format daftar empat level
-
-Tentukan format daftar empat level dengan mengatur margin kiri dan pengaturan format teks setiap level menggunakan kode berikut:
-
-```csharp
-tocInfo.IsShowPageNumbers = false;
-tocInfo.FormatArrayLength = 4;
-tocInfo.FormatArray[0].Margin.Right = 0;
-tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
-tocInfo.FormatArray[1].Margin.Left = 30;
-tocInfo.FormatArray[1].TextState.Underline = true;
-tocInfo.FormatArray[1].TextState.FontSize = 10;
-tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
-tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
-Page page = doc.Pages.Add();
-```
-
-## Langkah 5: Tambahkan empat judul di bagian tersebut
-
-```csharp
-
-for (int Level = 1; Level != 5; Level++)
-{ 
-	Heading heading2 = new Heading(Level); 
-	TextSegment segment2 = new TextSegment(); 
-	heading2.TocPage = tocPage; 
-	heading2.Segments.Add(segment2); 
-	heading2.IsAutoSequence = true; 
-	segment2.Text = "this is heading of level " + Level; 
-	heading2.IsInList = true; 
-	page.Paragraphs.Add(heading2); 
-}
-doc.Save(outFile);
-
-```
-
-### Contoh Kode Sumber untuk Menyembunyikan Nomor Halaman di Daftar Isi menggunakan Aspose.PDF untuk .NET
 
 ```csharp
 // Jalur ke direktori dokumen.
@@ -112,18 +43,47 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "HiddenPageNumbers_out.pdf";
 Document doc = new Document();
 Page tocPage = doc.Pages.Add();
+```
+
+- dataDir: Ini adalah direktori tempat file keluaran Anda akan disimpan.
+- Document(): Menginisialisasi dokumen PDF baru.
+- Pages.Add(): Menambahkan halaman kosong baru ke dokumen, yang nantinya akan memuat TOC Anda.
+
+## Langkah 2: Siapkan Info Daftar Isi dan Judul
+
+Berikutnya, kita akan menentukan informasi TOC, termasuk mengatur judul yang akan muncul di bagian atas TOC.
+
+```csharp
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
 tocInfo.Title = title;
-//Tambahkan bagian daftar ke koleksi bagian dokumen Pdf
 tocPage.TocInfo = tocInfo;
-//Tentukan format daftar empat level dengan mengatur margin kiri dan
-//pengaturan format teks setiap level
+```
 
+- TocInfo: Objek ini menyimpan semua informasi tentang TOC.
+- TextFragment: Mewakili teks judul TOC, di sini kita mengaturnya sebagai "Daftar Isi."
+- FontStyle: Kami memberi gaya pada judul TOC dengan mengatur ukurannya menjadi 20 dan membuatnya tebal.
+- tocPage.TocInfo: Kami menetapkan info TOC ke halaman yang akan menampilkan TOC.
+
+## Langkah 3: Sembunyikan Nomor Halaman di Daftar Isi
+
+Sekarang saatnya bagian yang menyenangkan! Di sinilah kita mengonfigurasi TOC untuk menyembunyikan nomor halaman.
+
+```csharp
 tocInfo.IsShowPageNumbers = false;
 tocInfo.FormatArrayLength = 4;
+```
+
+-  IsShowPageNumbers: Ini adalah tombol ajaib yang menyembunyikan nomor halaman. Atur ke`false`, dan nomor halaman tidak akan muncul di Daftar Isi.
+- FormatArrayLength: Kami menetapkan ini ke 4, yang menunjukkan bahwa kami ingin menentukan pemformatan untuk empat tingkat judul TOC.
+
+## Langkah 4: Sesuaikan Pemformatan Daftar Isi
+
+Untuk menambahkan lebih banyak gaya ke Daftar Isi Anda, sekarang kita akan menentukan pemformatan untuk berbagai tingkat judul.
+
+```csharp
 tocInfo.FormatArray[0].Margin.Right = 0;
 tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
 tocInfo.FormatArray[1].Margin.Left = 30;
@@ -131,36 +91,61 @@ tocInfo.FormatArray[1].TextState.Underline = true;
 tocInfo.FormatArray[1].TextState.FontSize = 10;
 tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
 tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
+```
+
+- FormatArray: Array ini mengontrol pemformatan entri TOC. Setiap indeks mewakili tingkat judul yang berbeda.
+- Margin dan TextStyle: Kami mengatur margin dan menerapkan gaya font seperti tebal, miring, dan garis bawah untuk setiap tingkat judul.
+
+## Langkah 5: Tambahkan Judul ke Dokumen
+
+Terakhir, mari tambahkan judul sebenarnya yang akan menjadi bagian Daftar Isi.
+
+```csharp
 Page page = doc.Pages.Add();
-//Tambahkan empat judul di bagian tersebut
 for (int Level = 1; Level != 5; Level++)
-	{ 
-		Heading heading2 = new Heading(Level); 
-		TextSegment segment2 = new TextSegment(); 
-		heading2.TocPage = tocPage; 
-		heading2.Segments.Add(segment2); 
-		heading2.IsAutoSequence = true; 
-		segment2.Text = "this is heading of level " + Level; 
-		heading2.IsInList = true; 
-		page.Paragraphs.Add(heading2); 
-	}
+{ 
+    Heading heading2 = new Heading(Level); 
+    TextSegment segment2 = new TextSegment(); 
+    heading2.TocPage = tocPage; 
+    heading2.Segments.Add(segment2); 
+    heading2.IsAutoSequence = true; 
+    segment2.Text = "this is heading of level " + Level; 
+    heading2.IsInList = true; 
+    page.Paragraphs.Add(heading2); 
+}
+```
+
+- Heading dan TextSegment: Ini merupakan judul yang akan muncul di TOC Anda. Setiap level memiliki judulnya sendiri.
+- IsAutoSequence: Secara otomatis memberi nomor pada judul.
+- IsInList: Memastikan bahwa setiap judul muncul di TOC.
+
+## Langkah 6: Simpan Dokumen
+
+Setelah semuanya diatur, simpan dokumen PDF ke berkas keluaran yang Anda tentukan.
+
+```csharp
 doc.Save(outFile);
 ```
 
+Selesai! Anda telah berhasil membuat PDF dengan Daftar Isi, dan nomor halamannya disembunyikan!
+
 ## Kesimpulan
 
-Dalam tutorial ini, kami mengeksplorasi cara bekerja dengan metadata XMP dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Metadata XMP menyediakan informasi berharga tentang dokumen PDF, termasuk judul, penulis, tanggal pembuatan, dan banyak lagi. Aspose.PDF untuk .NET memungkinkan pengembang untuk mengakses dan memanipulasi metadata ini, menyediakan API yang fleksibel dan canggih untuk bekerja dengan dokumen PDF.
+Membuat Daftar Isi dalam PDF dan menyembunyikan nomor halaman mungkin tampak rumit, tetapi dengan Aspose.PDF untuk .NET, semuanya menjadi mudah. Dengan mengikuti panduan langkah demi langkah ini, Anda telah mempelajari cara menyesuaikan format TOC, menyembunyikan nomor halaman, dan menerapkan berbagai gaya pada judul. Kini Anda dapat membuat PDF profesional yang disesuaikan dengan kebutuhan Anda.
 
-### Pertanyaan yang Sering Diajukan
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa itu metadata XMP dalam dokumen PDF?
+### Dapatkah saya menampilkan nomor halaman untuk judul tertentu di Daftar Isi?
+Tidak, Aspose.PDF menyembunyikan atau menampilkan nomor halaman untuk seluruh TOC. Anda tidak dapat menyembunyikannya secara selektif untuk entri tertentu.
 
-J: Metadata XMP (Extensible Metadata Platform) dalam dokumen PDF adalah format standar untuk menyimpan informasi metadata tentang dokumen tersebut. Metadata ini mencakup detail seperti judul dokumen, penulis, tanggal pembuatan, kata kunci, dan banyak lagi. Metadata XMP menyediakan cara terstruktur dan terstandarisasi untuk menyimpan dan berbagi informasi tentang dokumen PDF.
+### Apakah mungkin untuk menambahkan lebih banyak level ke Daftar Isi?
+ Ya, Anda dapat meningkatkannya`FormatArrayLength` untuk menentukan lebih banyak tingkatan judul TOC.
 
-#### T: Dapatkah saya mengubah metadata XMP dokumen PDF menggunakan Aspose.PDF untuk .NET?
+### Bagaimana cara mengubah font untuk semua entri TOC?
+ Anda dapat mengubah font dengan memodifikasi`TextState.Font` properti untuk setiap level di`FormatArray`.
 
- A: Ya, Anda dapat mengubah metadata XMP dari dokumen PDF secara terprogram menggunakan Aspose.PDF untuk .NET. Anda dapat mengakses`Info` milik`Document` objek, yang memberi Anda akses ke properti metadata XMP. Anda kemudian dapat memperbarui nilai properti ini untuk mengubah metadata XMP dari dokumen PDF.
+### Bisakah saya menyisipkan hyperlink di Daftar Isi?
+ Ya, Anda dapat menautkan setiap entri TOC ke bagian tertentu dalam dokumen menggunakan`Heading.TocPage` milik.
 
-#### T: Dapatkah saya mengekstrak properti metadata XMP kustom dari dokumen PDF menggunakan Aspose.PDF untuk .NET?
-
- A: Ya, Anda dapat mengekstrak properti metadata XMP khusus dari dokumen PDF menggunakan Aspose.PDF untuk .NET. Anda dapat menggunakan`Metadata` milik`Document`objek, yang menyediakan akses ke semua properti metadata XMP dari dokumen PDF. Anda kemudian dapat mengekstrak properti kustom dan menggunakan nilainya sesuai kebutuhan.
+### Apakah saya memerlukan lisensi untuk Aspose.PDF?
+Ya, lisensi yang valid diperlukan untuk penggunaan produksi. Anda bisa mendapatkan lisensi sementara[Di Sini](https://purchase.aspose.com/temporary-license/) untuk menguji fitur-fiturnya.

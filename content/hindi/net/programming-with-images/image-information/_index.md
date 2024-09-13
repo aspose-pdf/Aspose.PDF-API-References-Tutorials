@@ -2,227 +2,160 @@
 title: पीडीएफ फाइल में छवि जानकारी
 linktitle: पीडीएफ फाइल में छवि जानकारी
 second_title: .NET API संदर्भ के लिए Aspose.PDF
-description: .NET के लिए Aspose.PDF का उपयोग करके PDF फ़ाइल में छवि जानकारी निकालें।
+description: हमारे व्यापक चरण-दर-चरण मार्गदर्शिका के साथ .NET के लिए Aspose.PDF का उपयोग करके PDF से छवि जानकारी निकालना सीखें।
 type: docs
 weight: 160
 url: /hi/net/programming-with-images/image-information/
 ---
-यह गाइड आपको .NET के लिए Aspose.PDF का उपयोग करके PDF फ़ाइल में छवियों के बारे में जानकारी निकालने का चरण दर चरण तरीका बताएगा। सुनिश्चित करें कि आपने पहले से ही अपना वातावरण सेट कर लिया है और नीचे दिए गए चरणों का पालन करें:
+## परिचय
 
-## चरण 1: दस्तावेज़ निर्देशिका निर्धारित करें
+पीडीएफ फाइलें आजकल हर जगह हैं - लगभग हर पेशेवर और व्यक्तिगत दस्तावेज़ किसी न किसी समय इस प्रारूप में अपना रास्ता खोज लेता है। चाहे वह कोई रिपोर्ट हो, ब्रोशर हो या कोई ईबुक, इन फ़ाइलों के साथ प्रोग्रामेटिक रूप से इंटरैक्ट करने का तरीका समझना असंख्य संभावनाओं को प्रदान करता है। एक सामान्य आवश्यकता पीडीएफ फाइलों से छवि जानकारी निकालना है। इस गाइड में, हम .NET के लिए Aspose.PDF लाइब्रेरी का उपयोग करने के तरीके के बारे में जानेंगे ताकि PDF दस्तावेज़ में एम्बेड की गई छवियों के बारे में महत्वपूर्ण विवरण निकाला जा सके।
 
- सही दस्तावेज़ निर्देशिका सेट करना सुनिश्चित करें।`"YOUR DOCUMENT DIRECTORY"` कोड में उस निर्देशिका का पथ लिखें जहां आपका पीडीएफ दस्तावेज़ स्थित है।
+## आवश्यक शर्तें
+
+इससे पहले कि हम कोडिंग की बारीकियों में उतरें, कुछ पूर्व-आवश्यकताएं हैं जिनका आपको पालन करना होगा:
+
+1. विकास पर्यावरण: आपको .NET विकास पर्यावरण सेटअप की आवश्यकता होगी। यह Visual Studio या कोई अन्य .NET-संगत IDE हो सकता है।
+2.  Aspose.PDF लाइब्रेरी: सुनिश्चित करें कि आपके पास Aspose.PDF लाइब्रेरी तक पहुंच है। आप इसे यहाँ से डाउनलोड कर सकते हैं[Aspose वेबसाइट](https://releases.aspose.com/pdf/net/). 
+3. बुनियादी C# ज्ञान: C# और ऑब्जेक्ट-ओरिएंटेड प्रोग्रामिंग अवधारणाओं से परिचित होने से आपको ट्यूटोरियल को आसानी से समझने में मदद मिलेगी।
+4. पीडीएफ दस्तावेज़: अपने कोड का परीक्षण करने के लिए चित्र सहित एक नमूना पीडीएफ दस्तावेज़ तैयार रखें। 
+
+## पैकेज आयात करना
+
+Aspose.PDF लाइब्रेरी का उपयोग शुरू करने के लिए, आपको अपनी C# फ़ाइल में आवश्यक नेमस्पेस आयात करने होंगे। यहाँ एक संक्षिप्त विवरण दिया गया है:
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using System;
 ```
 
-## चरण 2: स्रोत PDF फ़ाइल लोड करें
+ये नामस्थान आपको पीडीएफ फाइलों में हेरफेर करने और छवि डेटा निकालने के लिए आवश्यक कक्षाओं और विधियों तक पहुंच प्रदान करेंगे।
 
- इस चरण में, हम स्रोत पीडीएफ फाइल को लोड करेंगे`Document` Aspose.PDF का वर्ग। का उपयोग करें`Document` कन्स्ट्रक्टर का चयन करें और पीडीएफ दस्तावेज़ का पथ पास करें।
+अब जब आपने सब कुछ सेट कर लिया है, तो इसे प्रबंधनीय चरणों में विभाजित करने का समय आ गया है। हम एक C# प्रोग्राम लिखेंगे जो एक PDF दस्तावेज़ लोड करता है, प्रत्येक पृष्ठ को देखता है, और दस्तावेज़ में प्रत्येक छवि के आयाम और रिज़ॉल्यूशन को निकालता है।
+
+## चरण 1: दस्तावेज़ को आरंभ करें
+
+ इस चरण में, हम आपकी PDF फ़ाइल के पथ का उपयोग करके PDF दस्तावेज़ को आरंभ करेंगे। आपको प्रतिस्थापित करना चाहिए`"YOUR DOCUMENT DIRECTORY"` वास्तविक पथ के साथ जहां आपकी पीडीएफ फाइल स्थित है।
 
 ```csharp
+// दस्तावेज़ निर्देशिका का पथ.
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// स्रोत PDF फ़ाइल लोड करें
 Document doc = new Document(dataDir + "ImageInformation.pdf");
 ```
+ हम एक बनाते हैं`Document` ऑब्जेक्ट जो निर्दिष्ट निर्देशिका से पीडीएफ लोड करता है। यह हमें फ़ाइल की सामग्री के साथ काम करने की अनुमति देगा।
 
-## चरण 3: डिफ़ॉल्ट रिज़ॉल्यूशन सेट करें
+## चरण 2: डिफ़ॉल्ट रिज़ॉल्यूशन सेट करें और डेटा संरचना आरंभ करें
 
-इस चरण में, हम छवियों के लिए डिफ़ॉल्ट रिज़ॉल्यूशन सेट करेंगे। उदाहरण में, डिफ़ॉल्ट रिज़ॉल्यूशन 72 पर सेट है।
+इसके बाद, हम छवियों के लिए एक डिफ़ॉल्ट रिज़ॉल्यूशन सेट करते हैं, जो गणनाओं के लिए उपयोगी है। हम छवि नामों को रखने के लिए एक सरणी और ग्राफ़िकल स्थितियों को प्रबंधित करने के लिए एक स्टैक भी तैयार करेंगे।
 
 ```csharp
+// छवि के लिए डिफ़ॉल्ट रिज़ॉल्यूशन परिभाषित करें
 int defaultResolution = 72;
-```
-
-## चरण 4: ऑब्जेक्ट और काउंटर प्रारंभ करें
-
-इस चरण में, हम छवि जानकारी प्राप्त करने के लिए आवश्यक ऑब्जेक्ट्स और काउंटर्स को आरंभीकृत करेंगे।
-
-```csharp
 System.Collections.Stack graphicsState = new System.Collections.Stack();
+// सरणी सूची ऑब्जेक्ट को परिभाषित करें जो छवि नाम रखेगा
 System.Collections.ArrayList imageNames = new System.Collections.ArrayList(doc.Pages[1].Resources.Images.Names);
 ```
+`defaultResolution` वेरिएबल हमें छवियों के रिज़ॉल्यूशन की सही गणना करने में मदद करता है।`graphicsState`जब हम रूपांतरण ऑपरेटरों का सामना करते हैं तो स्टैक दस्तावेज़ की वर्तमान ग्राफिकल स्थिति को संग्रहीत करने के साधन के रूप में कार्य करता है।
 
-## चरण 5: दस्तावेज़ के पहले पृष्ठ पर ऑपरेटरों के माध्यम से चक्र करें
+## चरण 3: पृष्ठ पर प्रत्येक ऑपरेटर को संसाधित करें
 
-इस चरण में, हम छवि-संबंधी परिचालनों की पहचान करने के लिए दस्तावेज़ के प्रथम पृष्ठ पर ऑपरेटरों के माध्यम से चलेंगे।
+अब हम दस्तावेज़ के पहले पृष्ठ पर सभी ऑपरेटरों को लूप करते हैं। यहीं पर भारी काम होता है। 
 
 ```csharp
-foreach(Operator op in doc.Pages[1].Contents)
+foreach (Operator op in doc.Pages[1].Contents)
 {
+    // प्रक्रिया संचालक...
+}
 ```
+पीडीएफ फाइल में प्रत्येक ऑपरेटर एक कमांड है जो रेंडरर को बताता है कि छवियों सहित ग्राफिकल तत्वों को कैसे प्रबंधित किया जाए।
 
-## चरण 6: ऑपरेटरों को प्रबंधित करें और छवि जानकारी निकालें
+## चरण 4: GSave/GRestore ऑपरेटरों को संभालें
 
-इस चरण में, हम विभिन्न प्रकार के ऑपरेटरों का प्रबंधन करेंगे और छवियों के बारे में जानकारी निकालेंगे।
+लूप के अंदर, हम ग्राफ़िकल स्थिति में किए गए परिवर्तनों पर नज़र रखने के लिए ग्राफ़िक्स सेव और रीस्टोर कमांड को संभालेंगे।
 
 ```csharp
-Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
-Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-Aspose.Pdf.Operators.Do opDo = op as Aspose.Pdf.Operators.Do;
+if (opSaveState != null) 
+{
+    // पिछली स्थिति सहेजें
+    graphicsState.Push(((Matrix)graphicsState.Peek()).Clone());
+} 
+else if (opRestoreState != null) 
+{
+    // पिछली स्थिति बहाल करें
+    graphicsState.Pop();
+}
+```
+`GSave` वर्तमान ग्राफ़िकल स्थिति को सहेजता है, जबकि`GRestore` अंतिम सहेजी गई स्थिति को पुनर्स्थापित करता है, जिससे हमें छवियों को संसाधित करते समय किसी भी परिवर्तन को पूर्ववत करने की अनुमति मिलती है।
 
-//रूपांतरणों के लिए GSave और GRestore संचालन को संभालें
-if (opSaveState != null)
+## चरण 5: परिवर्तन मैट्रिक्स प्रबंधित करें
+
+इसके बाद, हम छवियों पर परिवर्तन लागू करते समय परिवर्तन मैट्रिसेस के संयोजन को संभालते हैं।
+
+```csharp
+else if (opCtm != null) 
 {
-     graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-}
-else if (opRestoreState != null)
-{
-     graphicsState. Pop();
-}
-// रूपांतरणों के लिए ConcatenateMatrix ऑपरेशन को संभालें
-else if (opCtm != null)
-{
-     // परिवर्तन मैट्रिक्स लागू करें
-     System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
+    Matrix cm = new Matrix(
         (float)opCtm.Matrix.A,
         (float)opCtm.Matrix.B,
         (float)opCtm.Matrix.C,
         (float)opCtm.Matrix.D,
         (float)opCtm.Matrix.E,
         (float)opCtm.Matrix.F);
-
-
-     ((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-     keep on going;
-}
-// छवियों के लिए Do ऑपरेशन को संभालें
-else if (opDo != null)
-{
-     if (imageNames.Contains(opDo.Name))
-     {
-         // छवि पुनः प्राप्त करें
-         XImage image = doc.Pages[1].Resources.Images[opDo.Name];
-         // छवि के आयाम पुनः प्राप्त करें
-         double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
-         double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
-         // उपरोक्त जानकारी के आधार पर रिज़ॉल्यूशन की गणना करें
-         double resHorizontal = originalWidth * defaultResolution / scaledWidth;
-         double resVertical = originalHeight * defaultResolution / scaledHeight;
-         // छवि जानकारी प्रदर्शित करें
-         Console.Out.WriteLine(
-                 string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
-								 opDo.Name, scaledWidth, scaledHeight, resHorizontal,
-								 resVertical));
-     }
+    
+    ((Matrix)graphicsState.Peek()).Multiply(cm);
+    continue;
 }
 ```
+जब कोई रूपांतरण मैट्रिक्स लागू किया जाता है, तो हम उसे ग्राफिक्स स्थिति में संग्रहीत वर्तमान मैट्रिक्स से गुणा करते हैं, ताकि हम छवि पर लागू किसी भी स्केलिंग या अनुवाद पर नज़र रख सकें।
 
-### .NET के लिए Aspose.PDF का उपयोग करके छवि जानकारी के लिए नमूना स्रोत कोड 
+## चरण 6: छवि जानकारी निकालें
+
+अंत में, हम चित्रों के लिए ड्राइंग ऑपरेटर को संसाधित करते हैं और आवश्यक जानकारी, जैसे आयाम और रेज़ोल्यूशन, निकालते हैं।
+
 ```csharp
-// दस्तावेज़ निर्देशिका का पथ.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// स्रोत PDF फ़ाइल लोड करें
-Document doc = new Document(dataDir+ "ImageInformation.pdf");
-// छवि के लिए डिफ़ॉल्ट रिज़ॉल्यूशन परिभाषित करें
-int defaultResolution = 72;
-System.Collections.Stack graphicsState = new System.Collections.Stack();
-// सरणी सूची ऑब्जेक्ट को परिभाषित करें जो छवि नाम रखेगा
-System.Collections.ArrayList imageNames = new System.Collections.ArrayList(doc.Pages[1].Resources.Images.Names);
-// स्टैक में ऑब्जेक्ट डालें
-graphicsState.Push(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, 0, 0));
-// दस्तावेज़ के प्रथम पृष्ठ पर सभी ऑपरेटर प्राप्त करें
-foreach (Operator op in doc.Pages[1].Contents)
+else if (opDo != null) 
 {
-	// परिवर्तनों को पहले से सेट किए गए रूप में वापस लाने के लिए GSave/GRestore ऑपरेटरों का उपयोग करें
-	Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
-	Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-	// ConcatenateMatrix ऑब्जेक्ट को तत्कालित करें क्योंकि यह वर्तमान परिवर्तन मैट्रिक्स को परिभाषित करता है।
-	Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-	// Create Do ऑपरेटर जो संसाधनों से ऑब्जेक्ट्स खींचता है। यह फॉर्म ऑब्जेक्ट्स और इमेज ऑब्जेक्ट्स खींचता है
-	Aspose.Pdf.Operators.Do opDo = op as Aspose.Pdf.Operators.Do;
-	if (opSaveState != null)
-	{
-		//पिछली स्थिति को सहेजें और वर्तमान स्थिति को स्टैक के शीर्ष पर धकेलें
-		graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-	}
-	else if (opRestoreState != null)
-	{
-		// वर्तमान स्थिति को हटा दें और पिछली स्थिति को बहाल करें
-		graphicsState.Pop();
-	}
-	else if (opCtm != null)
-	{
-		System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
-		   (float)opCtm.Matrix.A,
-		   (float)opCtm.Matrix.B,
-		   (float)opCtm.Matrix.C,
-		   (float)opCtm.Matrix.D,
-		   (float)opCtm.Matrix.E,
-		   (float)opCtm.Matrix.F);
-		// वर्तमान मैट्रिक्स को राज्य मैट्रिक्स से गुणा करें
-		((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-		continue;
-	}
-	else if (opDo != null)
-	{
-		// यदि यह एक छवि आरेख ऑपरेटर है
-		if (imageNames.Contains(opDo.Name))
-		{
-			System.Drawing.Drawing2D.Matrix lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-			// पहले पीडीएफ पृष्ठ की छवियों को रखने के लिए XImage ऑब्जेक्ट बनाएं
-			XImage image = doc.Pages[1].Resources.Images[opDo.Name];
-			// छवि आयाम प्राप्त करें
-			double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
-			double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
-			// छवि की ऊंचाई और चौड़ाई की जानकारी प्राप्त करें
-			double originalWidth = image.Width;
-			double originalHeight = image.Height;
-			// उपरोक्त जानकारी के आधार पर रिज़ॉल्यूशन की गणना करें
-			double resHorizontal = originalWidth * defaultResolution / scaledWidth;
-			double resVertical = originalHeight * defaultResolution / scaledHeight;
-			// प्रत्येक छवि का आयाम और रिज़ॉल्यूशन जानकारी प्रदर्शित करें
-			Console.Out.WriteLine(
-					string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
-								 opDo.Name, scaledWidth, scaledHeight, resHorizontal,
-								 resVertical));
-		}
-	}
+    // Do ऑपरेटर को हैंडल करें जो ऑब्जेक्ट्स को ड्रॉ करता है
+    if (imageNames.Contains(opDo.Name)) 
+    {
+        Matrix lastCTM = (Matrix)graphicsState.Peek();
+        XImage image = doc.Pages[1].Resources.Images[opDo.Name];
+        double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
+        double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
+        double originalWidth = image.Width;
+        double originalHeight = image.Height;
+        
+        double resHorizontal = originalWidth * defaultResolution / scaledWidth;
+        double resVertical = originalHeight * defaultResolution / scaledHeight;
+        
+        // जानकारी आउटपुट करें
+        Console.Out.WriteLine(string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
+                         opDo.Name, scaledWidth, scaledHeight, resHorizontal, resVertical));
+    }
 }
 ```
+यहाँ, हम जाँचते हैं कि क्या ऑपरेटर छवि बनाने के लिए जिम्मेदार है। यदि ऐसा है, तो हम संबंधित XImage ऑब्जेक्ट प्राप्त करते हैं, इसके स्केल किए गए आयाम और रिज़ॉल्यूशन की गणना करते हैं, और आवश्यक जानकारी प्रिंट करते हैं।
 
 ## निष्कर्ष
 
-बधाई हो! अब आपने सीख लिया है कि .NET के लिए Aspose.PDF का उपयोग करके PDF फ़ाइल में छवि जानकारी कैसे निकालें। आप अपने अनुप्रयोगों में विभिन्न छवि प्रसंस्करण कार्यों के लिए इस जानकारी का उपयोग कर सकते हैं।
+बधाई हो! आपने अभी-अभी .NET के लिए Aspose.PDF का उपयोग करके PDF फ़ाइल से छवि जानकारी निकालने का एक कार्यशील उदाहरण बनाया है। यह क्षमता उन डेवलपर्स के लिए अविश्वसनीय रूप से उपयोगी हो सकती है जिन्हें रिपोर्टिंग, डेटा निष्कर्षण या यहां तक कि कस्टम PDF व्यूअर जैसे विभिन्न अनुप्रयोगों के लिए PDF दस्तावेज़ों का विश्लेषण या हेरफेर करने की आवश्यकता होती है। 
 
-### पीडीएफ फाइल में छवि जानकारी के लिए अक्सर पूछे जाने वाले प्रश्न
 
-#### प्रश्न: .NET के लिए Aspose.PDF का उपयोग करके PDF दस्तावेज़ से छवि जानकारी निकालने का उद्देश्य क्या है?
+## अक्सर पूछे जाने वाले प्रश्न
 
-उत्तर: PDF दस्तावेज़ से छवि जानकारी निकालने से दस्तावेज़ के भीतर छवियों के आयाम, रिज़ॉल्यूशन और अन्य विशेषताओं के बारे में जानकारी मिलती है। इस जानकारी का उपयोग छवि प्रसंस्करण, विश्लेषण या अनुकूलन कार्यों के लिए किया जा सकता है।
+### Aspose.PDF लाइब्रेरी क्या है?
+Aspose.PDF लाइब्रेरी .NET अनुप्रयोगों में PDF फ़ाइलों को बनाने, हेरफेर करने और परिवर्तित करने के लिए एक शक्तिशाली उपकरण है।
 
-#### प्रश्न: .NET के लिए Aspose.PDF किसी PDF दस्तावेज़ से छवि जानकारी निकालने में किस प्रकार सहायता करता है?
+### क्या मैं पुस्तकालय का निःशुल्क उपयोग कर सकता हूँ?
+ हां, Aspose एक निःशुल्क परीक्षण प्रदान करता है। आप इसे डाउनलोड कर सकते हैं[यहाँ](https://releases.aspose.com/).
 
-उत्तर: .NET के लिए Aspose.PDF PDF दस्तावेज़ की सामग्री तक पहुँचने और उसका विश्लेषण करने के लिए उपकरण प्रदान करता है, जिसमें इसकी छवियाँ भी शामिल हैं। प्रदान किया गया कोड दर्शाता है कि विभिन्न ऑपरेटरों का उपयोग करके छवि जानकारी कैसे निकाली और प्रदर्शित की जाती है।
+### किस प्रकार के छवि प्रारूप निकाले जा सकते हैं?
+यह लाइब्रेरी विभिन्न छवि प्रारूपों का समर्थन करती है, जिनमें JPEG, PNG और TIFF शामिल हैं, बशर्ते वे PDF में सन्निहित हों।
 
-#### प्रश्न: इस विधि का उपयोग करके किस प्रकार की छवि जानकारी निकाली जा सकती है?
+### क्या एस्पोज का उपयोग वाणिज्यिक प्रयोजनों के लिए किया जाता है?
+ हां, आप Aspose उत्पादों का व्यावसायिक उपयोग कर सकते हैं। लाइसेंस के लिए, यहाँ जाएँ[खरीद पृष्ठ](https://purchase.aspose.com/buy).
 
-उत्तर: यह विधि आपको PDF दस्तावेज़ में छवियों के लिए स्केल किए गए आयाम, रिज़ॉल्यूशन और छवि नाम जैसी जानकारी निकालने और प्रदर्शित करने की अनुमति देती है।
-
-#### प्रश्न: कोड पीडीएफ दस्तावेज़ में छवि-संबंधित ऑपरेटरों की पहचान और प्रक्रिया कैसे करता है?
-
-उत्तर: कोड पीडीएफ दस्तावेज़ के निर्दिष्ट पृष्ठ पर ऑपरेटरों के माध्यम से पुनरावृत्त होता है। यह छवि संचालन, परिवर्तन और रेंडरिंग से संबंधित ऑपरेटरों की पहचान करता है और उन्हें संसाधित करता है।
-
-#### प्रश्न: डिफ़ॉल्ट रिज़ॉल्यूशन का क्या महत्व है, और कोड में इसका उपयोग कैसे किया जाता है?
-
-उत्तर: डिफ़ॉल्ट रिज़ॉल्यूशन का उपयोग छवियों के वास्तविक रिज़ॉल्यूशन की गणना करने के लिए संदर्भ बिंदु के रूप में किया जाता है। कोड प्रत्येक छवि के आयामों और डिफ़ॉल्ट रिज़ॉल्यूशन सेटिंग के आधार पर उसके रिज़ॉल्यूशन की गणना करता है।
-
-#### प्रश्न: निकाली गई छवि जानकारी का वास्तविक दुनिया के परिदृश्यों में उपयोग कैसे किया जा सकता है?
-
-उत्तर: निकाली गई छवि जानकारी का उपयोग छवि गुणवत्ता मूल्यांकन, छवि अनुकूलन, छवि थंबनेल बनाने और छवि से संबंधित निर्णय लेने की प्रक्रियाओं को सुविधाजनक बनाने जैसे कार्यों के लिए किया जा सकता है।
-
-#### प्रश्न: क्या मैं अतिरिक्त छवि-संबंधी विशेषताओं को निकालने के लिए कोड को संशोधित कर सकता हूँ?
-
-उत्तर: हां, आप छवियों की अतिरिक्त विशेषताओं, जैसे रंग स्थान, पिक्सेल गहराई, या छवि प्रकार, को निकालने के लिए कोड को अनुकूलित कर सकते हैं।
-
-#### प्रश्न: क्या छवि जानकारी निष्कर्षण प्रक्रिया संसाधन-गहन या समय लेने वाली है?
-
-उत्तर: छवि सूचना निष्कर्षण प्रक्रिया कुशल और प्रदर्शन के लिए अनुकूलित है, जो संसाधन उपयोग और प्रसंस्करण समय पर न्यूनतम प्रभाव सुनिश्चित करती है।
-
-#### प्रश्न: डेवलपर्स को पीडीएफ दस्तावेजों से छवि जानकारी की पहचान करने और निकालने से कैसे लाभ हो सकता है?
-
-उत्तर: डेवलपर्स पीडीएफ दस्तावेजों में छवियों की विशेषताओं के बारे में जानकारी प्राप्त कर सकते हैं, जिससे वे छवि हेरफेर, प्रसंस्करण और अनुकूलन के संबंध में सूचित निर्णय लेने में सक्षम हो सकते हैं।
-
-#### प्रश्न: क्या इस विधि का उपयोग छवियों वाले पीडीएफ दस्तावेजों के बैच प्रसंस्करण के लिए किया जा सकता है?
-
-उत्तर: हां, इस विधि को कई पृष्ठों या दस्तावेजों के माध्यम से पुनरावृत्ति करके, छवि जानकारी निकालकर और छवि-संबंधी कार्य निष्पादित करके बैच प्रोसेसिंग के लिए बढ़ाया जा सकता है।
+### मैं Aspose के लिए समर्थन कैसे प्राप्त कर सकता हूँ?
+ आप सहायता फ़ोरम तक पहुँच सकते हैं[यहाँ](https://forum.aspose.com/c/pdf/10).

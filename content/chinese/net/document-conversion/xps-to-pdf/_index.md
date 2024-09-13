@@ -104,7 +104,7 @@ Aspose.PDF for .NET 是一个库，允许开发人员在 .NET 应用程序中创
 是的，Aspose.PDF 支持各种文件格式，包括 XPS、HTML 和图像，允许您将它们转换为 PDF。
 
 ### Aspose.PDF 有免费试用版吗？
-是的，您可以从以下位置下载 Aspose.PDF 的免费试用版[网站](https://releases.aspose.com/).
+是的，您可以从以下网址下载 Aspose.PDF 的免费试用版[网站](https://releases.aspose.com/).
 
 ### 在哪里可以找到对 Aspose.PDF 的支持？
 您可以在以下位置寻求支持并提出问题[Aspose 论坛](https://forum.aspose.com/c/pdf/10).

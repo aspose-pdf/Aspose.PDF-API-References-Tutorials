@@ -118,4 +118,4 @@ Ez az egyszerű üzenet jelenik meg a konzolon, megerősítve, hogy a könyvjelz
  Új könyvjelzők hozzáadásához új példányt hozhat létre a`OutlineItemCollection` és add hozzá a`Outlines` gyűjtemény.
 
 ### Szükségem van licencre az Aspose.PDF for .NET használatához?  
- Igen, a termelési felhasználáshoz licencre lesz szüksége. Azonban kaphat a[ideiglenes engedély](https://purchase.aspose.com/temporary-license/) fejlesztési célokra vagy használja a[ingyenes próbaverzió](https://releases.aspose.com/).
+ Igen, a gyártási felhasználáshoz licencre lesz szüksége. Azonban kaphat a[ideiglenes engedély](https://purchase.aspose.com/temporary-license/) fejlesztési célokra vagy használja a[ingyenes próbaverzió](https://releases.aspose.com/).

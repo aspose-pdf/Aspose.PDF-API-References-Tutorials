@@ -1,78 +1,102 @@
 ---
 title: Få värden från alla fält i PDF-dokument
 linktitle: Få värden från alla fält i PDF-dokument
-second_title: Aspose.PDF för .NET API-referens
-description: Få enkelt värdena för alla formulärfält i PDF-dokument med Aspose.PDF för .NET.
+second_title: Aspose.PDF för .NET API Referens
+description: Lär dig hur du extraherar värden från alla fält i ett PDF-dokument med Aspose.PDF för .NET med denna steg-för-steg-guide.
 type: docs
 weight: 150
 url: /sv/net/programming-with-forms/get-values-from-all-fields/
 ---
-den här handledningen kommer vi att visa dig hur du får värdena för alla formulärfält i ett PDF-dokument med Aspose.PDF för .NET. Vi kommer att förklara C#-källkoden steg för steg för att guida dig genom denna process.
+## Introduktion
 
-## Steg 1: Förberedelser
+Har du någonsin behövt extrahera data från ett PDF-formulär? Oavsett om det är för dataanalys, journalföring eller helt enkelt för att göra ditt liv enklare, kan det vara en skrämmande uppgift att extrahera värden från PDF-fält. Men frukta inte! Med Aspose.PDF för .NET blir denna process en bris. I den här handledningen går vi igenom stegen för att få värden från alla fält i ett PDF-dokument.
 
-Se till att du har importerat de nödvändiga biblioteken och ange sökvägen till din dokumentkatalog:
+## Förutsättningar
+
+Innan vi dyker in i koden, låt oss se till att du har allt du behöver för att komma igång:
+
+1. .NET Framework: Se till att du har .NET Framework installerat på din dator. Aspose.PDF fungerar sömlöst med .NET-applikationer.
+2.  Aspose.PDF för .NET: Du måste ladda ner och installera Aspose.PDF-biblioteket. Du kan hitta den[här](https://releases.aspose.com/pdf/net/).
+3. Visual Studio: En bra IDE kommer att göra din kodningsupplevelse smidigare. Visual Studio är ett populärt val för .NET-utveckling.
+4. Grundläggande kunskaper i C#: Bekantskap med C#-programmering hjälper dig att förstå exemplen bättre.
+
+## Importera paket
+
+För att komma igång måste du importera nödvändiga paket i ditt C#-projekt. Så här kan du göra det:
+
+### Skapa ett nytt projekt
+
+Öppna Visual Studio och skapa ett nytt C#-projekt. Välj en konsolapplikation för enkelhetens skull.
+
+### Lägg till Aspose.PDF-referens
+
+1. Högerklicka på ditt projekt i Solution Explorer.
+2. Välj "Hantera NuGet-paket."
+3. Sök efter "Aspose.PDF" och installera den senaste versionen.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Forms;
+using System;
 ```
 
-## Steg 2: Öppna dokumentet
+Nu när du har allt inställt, låt oss gå vidare till koden!
 
-Öppna PDF-dokumentet:
+## Steg 1: Konfigurera din dokumentkatalog
 
-```csharp
-Document pdfDocument = new Document(dataDir + "GetValuesFromAllFields.pdf");
-```
+Först och främst måste du ange sökvägen till ditt PDF-dokument. Det är här Aspose.PDF kommer att leta efter filen du vill arbeta med.
 
-## Steg 3: Hämta värden för alla fält
-
-Gå igenom alla formulärfält i dokumentet och få deras namn och värden:
-
-```csharp
-foreach(Field formField in pdfDocument.Form)
-{
-Console.WriteLine("Field name: {0} ", formField.PartialName);
-Console.WriteLine("Value: {0}", formField.Value);
-}
-```
-
-### Exempel på källkod för Hämta värden från alla fält med Aspose.PDF för .NET 
 ```csharp
 // Sökvägen till dokumentkatalogen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Ersätta`"YOUR DOCUMENT DIRECTORY"` med den faktiska sökvägen där din PDF-fil finns. Detta är avgörande eftersom om sökvägen är felaktig kommer programmet inte att kunna hitta din PDF.
+
+## Steg 2: Öppna PDF-dokumentet
+
+Nu när vi har ställt in sökvägen är det dags att öppna PDF-dokumentet. Det är här magin börjar!
+
+```csharp
 // Öppna dokumentet
 Document pdfDocument = new Document(dataDir + "GetValuesFromAllFields.pdf");
-// Få värden från alla fält
+```
+
+ Här skapar vi en ny instans av`Document` klass och skicka sökvägen till vår PDF-fil. Denna kodrad laddar PDF:en i minnet, vilket gör den redo för manipulering.
+
+## Steg 3: Öppna formulärfälten
+
+Med dokumentet öppet kan vi nu komma åt formulärfälten. Aspose.PDF låter oss iterera igenom alla fält i PDF-formuläret enkelt.
+
+```csharp
+//Få värden från alla fält
 foreach (Field formField in pdfDocument.Form)
 {
-	Console.WriteLine("Field Name : {0} ", formField.PartialName);
-	Console.WriteLine("Value : {0} ", formField.Value);
+    Console.WriteLine("Field Name : {0} ", formField.PartialName);
+    Console.WriteLine("Value : {0} ", formField.Value);
 }
 ```
 
+ I denna loop går vi igenom varje fält i PDF-formuläret. De`PartialName` egenskapen ger oss namnet på fältet, medan`Value` egenskapen tillhandahåller de uppgifter som anges i det fältet. Det är här du kommer att se resultatet av ditt hårda arbete!
+
 ## Slutsats
 
-I den här handledningen lärde vi oss hur man får värdena för alla formulärfält i ett PDF-dokument med Aspose.PDF för .NET. Genom att följa dessa steg kan du enkelt extrahera värdena för alla formulärfält från dina PDF-dokument med Aspose.PDF.
+Grattis! Du har precis lärt dig hur man extraherar värden från alla fält i ett PDF-dokument med Aspose.PDF för .NET. Detta kraftfulla bibliotek förenklar processen att arbeta med PDF-formulär, vilket gör det enklare för dig att hantera och analysera data. Oavsett om du är en utvecklare som vill förbättra dina applikationer eller bara någon som behöver hantera PDF-filer mer effektivt, är Aspose.PDF ett fantastiskt verktyg att ha i din arsenal.
 
-### FAQ's
+## FAQ's
 
-#### F: Kan jag ändra värdena för formulärfält samtidigt som jag hämtar dem med Aspose.PDF för .NET?
+### Vad är Aspose.PDF för .NET?
+Aspose.PDF för .NET är ett bibliotek som låter utvecklare skapa, manipulera och konvertera PDF-dokument i .NET-applikationer.
 
- S: Ja, du kan ändra värdena för formulärfält samtidigt som du hämtar dem med Aspose.PDF för .NET. När du väl har`Field` objekt som representerar ett formulärfält, kan du uppdatera dess`Value`fastighet med önskat värde. När du har gjort de nödvändiga ändringarna kan du spara det uppdaterade PDF-dokumentet för att återspegla ändringarna.
+### Kan jag använda Aspose.PDF gratis?
+ Ja, Aspose erbjuder en gratis testversion som du kan använda för att utforska funktionerna i biblioteket. Du kan ladda ner den[här](https://releases.aspose.com/).
 
-#### F: Hur kan jag filtrera och hämta specifika formulärfält baserat på deras typer (t.ex. textfält, kryssrutor)?
+### Var kan jag hitta dokumentationen?
+ Dokumentationen för Aspose.PDF för .NET finns[här](https://reference.aspose.com/pdf/net/).
 
- S: För att hämta specifika formulärfält baserat på deras typer, kan du använda villkorssatser eller LINQ-frågor för att filtrera de intressanta fälten. Du kan kontrollera typen av varje formulärfält med hjälp av fältets`FieldType` egendom och hämta sedan värdena därefter.
+### Hur köper jag en licens?
+ Du kan köpa en licens för Aspose.PDF genom att besöka köpsidan[här](https://purchase.aspose.com/buy).
 
-#### F: Vad händer om PDF-dokumentet inte har några formulärfält?
-
- S: Om PDF-dokumentet inte innehåller några formulärfält,`pdfDocument.Form` egendom kommer att returnera en tom samling. I sådana fall kommer slingan för att hämta värden inte att köras, och inga värden kommer att visas.
-
-#### F: Kan jag extrahera formulärfältsvärdena i en specifik ordning eller sortera dem alfabetiskt?
-
-S: Ordningen i vilken formulärfälten hämtas beror på PDF-dokumentets underliggande struktur. Aspose.PDF för .NET returnerar formulärfälten i den ordning de lades till dokumentet. Om du vill visa eller bearbeta formulärfälten i en specifik ordning kan du implementera anpassad sorteringslogik baserat på dina krav.
-
-#### F: Hur kan jag hantera krypterade PDF-dokument med lösenordsskyddade formulärfält?
-
- S: Aspose.PDF för .NET tillhandahåller funktioner för att arbeta med krypterade PDF-dokument och lösenordsskyddade formulärfält. Innan du laddar dokumentet kan du ställa in lösenordet med hjälp av`pdfDocument.Password` egendom för att komma åt det säkrade PDF-dokumentet och dess formulärfält.
+### Vad händer om jag behöver stöd?
+ Om du har några frågor eller behöver hjälp kan du besöka Asposes supportforum[här](https://forum.aspose.com/c/pdf/10).

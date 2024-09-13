@@ -152,7 +152,7 @@ A: Membuat struktur elemen pohon dalam dokumen PDF menggunakan Aspose.PDF for .N
 
 A: Contoh kode menunjukkan cara membuat struktur hierarki elemen logis menggunakan`SectElement`, `DivElement` , Dan`ArtElement` kelas yang disediakan oleh Aspose.PDF. Elemen-elemen ini disusun sebagai simpul induk dan anak, membentuk struktur seperti pohon dalam dokumen.
 
-####  T: Bagaimana caranya`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
+#### T: Bagaimana caranya`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
 
  Sebuah:`TaggedContent` Properti ini menyediakan akses ke fitur konten yang diberi tag pada dokumen PDF. Hal ini memungkinkan Anda untuk membuat dan memanipulasi elemen terstruktur, menentukan hubungan antarelemen, dan mengaturnya secara hierarkis, sehingga meningkatkan struktur dan aksesibilitas dokumen.
 
@@ -168,7 +168,7 @@ A: Contoh kode menunjukkan cara membuat struktur hierarki elemen logis menggunak
 
 A: Pengorganisasian elemen secara hierarkis meningkatkan pengorganisasian dokumen, navigasi, dan semantik. Hal ini memungkinkan pengguna dan teknologi bantu untuk memahami struktur dan hubungan konten, sehingga meningkatkan pengalaman pengguna secara keseluruhan.
 
-####  T: Bagaimana caranya`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
+#### T: Bagaimana caranya`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
 
  Sebuah:`Save` metode menyimpan dokumen PDF bersama dengan struktur hierarki yang dibuat menggunakan`AppendChild` metode. Hal ini memastikan bahwa strukturnya tetap utuh, sehingga dokumen dapat diakses dan terorganisasi dengan baik.
 

@@ -12,6 +12,6 @@ De tutorials "Programming with Operators" van Aspose.PDF voor .NET leiden u door
 ## Zelfstudies
 | Titel | Beschrijving |
 | --- | --- | 
-| [Teken XForm op pagina](./draw-xform-on-page/) | Stapsgewijze handleiding voor het tekenen van een XForm-formulier op een PDF-pagina met Aspose.PDF voor .NET. Voeg het formulier toe en positioneer het op de pagina. |  
+| [Teken XForm op pagina](./draw-xform-on-page/) | Leer hoe u XForms in PDF kunt tekenen met Aspose.PDF voor .NET met deze uitgebreide stapsgewijze handleiding. |  
 | [PDF-operatoren](./pdf-operators/) | Stapsgewijze handleiding voor het gebruik van PDF-operators met Aspose.PDF voor .NET. Voeg een afbeelding toe aan een PDF-pagina en geef de positie ervan op. |  
-| [Grafische objecten in PDF-bestand verwijderen](./remove-graphics-objects/) | Stapsgewijze handleiding voor het verwijderen van grafische objecten in een PDF-bestand met Aspose.PDF voor .NET. Pas uw PDF's aan en ruim ze op. |  
+| [Grafische objecten in PDF-bestand verwijderen](./remove-graphics-objects/) | Leer hoe u grafische objecten uit een PDF-bestand verwijdert met Aspose.PDF voor .NET in deze stapsgewijze handleiding. Vereenvoudig uw PDF-manipulatietaken. |  

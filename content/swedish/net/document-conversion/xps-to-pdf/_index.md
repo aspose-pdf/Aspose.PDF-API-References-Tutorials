@@ -1,7 +1,7 @@
 ---
 title: XPS till PDF
 linktitle: XPS till PDF
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du konverterar XPS-filer till PDF med Aspose.PDF för .NET med denna steg-för-steg handledning. Perfekt för utvecklare och dokumententusiaster.
 type: docs
 weight: 350

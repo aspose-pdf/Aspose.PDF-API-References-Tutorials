@@ -2,227 +2,160 @@
 title: ข้อมูลรูปภาพในไฟล์ PDF
 linktitle: ข้อมูลรูปภาพในไฟล์ PDF
 second_title: เอกสารอ้างอิง Aspose.PDF สำหรับ API ของ .NET
-description: แยกข้อมูลรูปภาพในไฟล์ PDF โดยใช้ Aspose.PDF สำหรับ .NET
+description: เรียนรู้การแยกข้อมูลภาพจาก PDF โดยใช้ Aspose.PDF สำหรับ .NET ด้วยคู่มือทีละขั้นตอนที่ครอบคลุมของเรา
 type: docs
 weight: 160
 url: /th/net/programming-with-images/image-information/
 ---
-คู่มือนี้จะแนะนำคุณทีละขั้นตอนเกี่ยวกับวิธีการดึงข้อมูลเกี่ยวกับรูปภาพในไฟล์ PDF โดยใช้ Aspose.PDF สำหรับ .NET ตรวจสอบให้แน่ใจว่าคุณได้ตั้งค่าสภาพแวดล้อมของคุณแล้ว และทำตามขั้นตอนด้านล่าง:
+## การแนะนำ
 
-## ขั้นตอนที่ 1: กำหนดไดเรกทอรีเอกสาร
+ทุกวันนี้ไฟล์ PDF มีอยู่ทุกที่ เอกสารส่วนตัวและงานอาชีพแทบทุกฉบับต้องอยู่ในรูปแบบนี้ในสักวันหนึ่ง ไม่ว่าจะเป็นรายงาน โบรชัวร์ หรืออีบุ๊ก การเรียนรู้วิธีโต้ตอบกับไฟล์เหล่านี้ด้วยโปรแกรมช่วยให้มีความเป็นไปได้มากมาย ข้อกำหนดทั่วไปอย่างหนึ่งคือการดึงข้อมูลรูปภาพจากไฟล์ PDF ในคู่มือนี้ เราจะเจาะลึกวิธีใช้ไลบรารี Aspose.PDF สำหรับ .NET เพื่อดึงข้อมูลรายละเอียดสำคัญเกี่ยวกับรูปภาพที่ฝังอยู่ในเอกสาร PDF
 
- ตรวจสอบให้แน่ใจว่าได้ตั้งค่าไดเรกทอรีเอกสารที่ถูกต้อง แทนที่`"YOUR DOCUMENT DIRECTORY"` ในโค้ดพร้อมเส้นทางไปยังไดเร็กทอรีที่เอกสาร PDF ของคุณอยู่
+## ข้อกำหนดเบื้องต้น
+
+ก่อนที่เราจะเข้าสู่รายละเอียดเล็กๆ น้อยๆ ของการเขียนโค้ด มีข้อกำหนดเบื้องต้นบางประการที่คุณจะต้องมี:
+
+1. สภาพแวดล้อมการพัฒนา: คุณจะต้องตั้งค่าสภาพแวดล้อมการพัฒนา .NET ซึ่งอาจเป็น Visual Studio หรือ IDE อื่นๆ ที่เข้ากันได้กับ .NET
+2.  ไลบรารี Aspose.PDF: ตรวจสอบให้แน่ใจว่าคุณสามารถเข้าถึงไลบรารี Aspose.PDF ได้ คุณสามารถดาวน์โหลดได้จาก[เว็บไซต์อาโพส](https://releases.aspose.com/pdf/net/). 
+3. ความรู้พื้นฐานเกี่ยวกับ C#: ความคุ้นเคยกับ C# และแนวคิดการเขียนโปรแกรมเชิงวัตถุจะช่วยให้คุณทำตามบทช่วยสอนได้อย่างราบรื่น
+4. เอกสาร PDF: เตรียมเอกสาร PDF ตัวอย่างที่มีรูปภาพไว้เพื่อทดสอบโค้ดของคุณ 
+
+## การนำเข้าแพ็คเกจ
+
+หากต้องการเริ่มต้นใช้งานไลบรารี Aspose.PDF คุณจะต้องนำเข้าเนมสเปซที่จำเป็นลงในไฟล์ C# ของคุณ ต่อไปนี้เป็นข้อมูลสรุปโดยย่อ:
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using System;
 ```
 
-## ขั้นตอนที่ 2: โหลดไฟล์ PDF ต้นฉบับ
+เนมสเปซเหล่านี้จะช่วยให้คุณเข้าถึงคลาสและวิธีการที่จำเป็นสำหรับการจัดการไฟล์ PDF และการแยกข้อมูลรูปภาพ
 
- ในขั้นตอนนี้เราจะโหลดไฟล์ PDF ต้นฉบับโดยใช้`Document` คลาสของ Aspose.PDF ใช้`Document` สร้างและส่งเส้นทางไปยังเอกสาร PDF
+ตอนนี้คุณได้ตั้งค่าทุกอย่างเรียบร้อยแล้ว ถึงเวลาแบ่งขั้นตอนต่างๆ ออกเป็นขั้นตอนที่จัดการได้ เราจะเขียนโปรแกรม C# ที่โหลดเอกสาร PDF ตรวจสอบแต่ละหน้า และแยกขนาดและความละเอียดของแต่ละภาพในเอกสาร
+
+## ขั้นตอนที่ 1: เริ่มต้นเอกสาร
+
+ ในขั้นตอนนี้ เราจะเริ่มต้นเอกสาร PDF โดยใช้เส้นทางไปยังไฟล์ PDF ของคุณ คุณควรแทนที่`"YOUR DOCUMENT DIRECTORY"` พร้อมเส้นทางจริงที่ไฟล์ PDF ของคุณตั้งอยู่
 
 ```csharp
+// เส้นทางไปยังไดเร็กทอรีเอกสาร
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+// โหลดไฟล์ PDF ต้นฉบับ
 Document doc = new Document(dataDir + "ImageInformation.pdf");
 ```
+ เราสร้าง`Document` วัตถุที่โหลด PDF จากไดเร็กทอรีที่ระบุ ซึ่งจะทำให้เราสามารถทำงานกับเนื้อหาของไฟล์ได้
 
-## ขั้นตอนที่ 3: ตั้งค่าความละเอียดเริ่มต้น
+## ขั้นตอนที่ 2: ตั้งค่าความละเอียดเริ่มต้นและเริ่มต้นโครงสร้างข้อมูล
 
-ในขั้นตอนนี้ เราจะตั้งค่าความละเอียดเริ่มต้นสำหรับรูปภาพ ในตัวอย่างนี้ ความละเอียดเริ่มต้นถูกตั้งไว้ที่ 72
+ขั้นต่อไป เราจะตั้งค่าความละเอียดเริ่มต้นสำหรับรูปภาพ ซึ่งมีประโยชน์สำหรับการคำนวณ นอกจากนี้ เราจะเตรียมอาร์เรย์เพื่อเก็บชื่อรูปภาพและสแต็กเพื่อจัดการสถานะกราฟิกด้วย
 
 ```csharp
+// กำหนดความละเอียดเริ่มต้นสำหรับภาพ
 int defaultResolution = 72;
-```
-
-## ขั้นตอนที่ 4: เริ่มต้นวัตถุและเคาน์เตอร์
-
-ในขั้นตอนนี้เราจะเริ่มต้นวัตถุและตัวนับที่จำเป็นในการดึงข้อมูลภาพ
-
-```csharp
 System.Collections.Stack graphicsState = new System.Collections.Stack();
+// กำหนดวัตถุรายการอาร์เรย์ที่จะเก็บชื่อภาพ
 System.Collections.ArrayList imageNames = new System.Collections.ArrayList(doc.Pages[1].Resources.Images.Names);
 ```
+ การ`defaultResolution` ตัวแปรช่วยให้เราคำนวณความละเอียดของภาพได้อย่างถูกต้อง`graphicsState`สแต็กทำหน้าที่เป็นวิธีการเก็บสถานะกราฟิกปัจจุบันของเอกสารเมื่อเราพบกับตัวดำเนินการการแปลง
 
-## ขั้นตอนที่ 5: หมุนเวียนผ่านตัวดำเนินการบนหน้าแรกของเอกสาร
+## ขั้นตอนที่ 3: ประมวลผลผู้ปฏิบัติงานแต่ละคนบนหน้า
 
-ในขั้นตอนนี้เราจะตรวจสอบตัวดำเนินการบนหน้าแรกของเอกสารเพื่อระบุการทำงานที่เกี่ยวข้องกับรูปภาพ
+ตอนนี้เราจะวนซ้ำตัวดำเนินการทั้งหมดในหน้าแรกของเอกสาร นี่คือจุดที่งานหนักจะเกิดขึ้น 
 
 ```csharp
-foreach(Operator op in doc.Pages[1].Contents)
+foreach (Operator op in doc.Pages[1].Contents)
 {
+    // ผู้ปฏิบัติงานกระบวนการ...
+}
 ```
+ตัวดำเนินการแต่ละตัวในไฟล์ PDF คือคำสั่งที่แจ้งให้โปรแกรมเรนเดอร์ทราบถึงวิธีการจัดการองค์ประกอบกราฟิก รวมถึงรูปภาพ
 
-## ขั้นตอนที่ 6: จัดการผู้ปฏิบัติงานและดึงข้อมูลภาพ
+## ขั้นตอนที่ 4: จัดการตัวดำเนินการ GSave/GRestore
 
-ในขั้นตอนนี้เราจะจัดการตัวดำเนินการประเภทต่างๆ และแยกข้อมูลเกี่ยวกับรูปภาพ
+ภายในลูป เราจะจัดการคำสั่งบันทึกและเรียกคืนกราฟิกเพื่อติดตามการเปลี่ยนแปลงที่เกิดขึ้นกับสถานะกราฟิก
 
 ```csharp
-Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
-Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-Aspose.Pdf.Operators.Do opDo = op as Aspose.Pdf.Operators.Do;
+if (opSaveState != null) 
+{
+    // บันทึกสถานะก่อนหน้า
+    graphicsState.Push(((Matrix)graphicsState.Peek()).Clone());
+} 
+else if (opRestoreState != null) 
+{
+    // คืนค่าสถานะก่อนหน้า
+    graphicsState.Pop();
+}
+```
+`GSave` บันทึกสถานะกราฟิกปัจจุบันในขณะที่`GRestore` คืนค่าสถานะที่บันทึกล่าสุด ช่วยให้เราสามารถย้อนกลับการเปลี่ยนแปลงใดๆ เมื่อประมวลผลรูปภาพได้
 
-//จัดการการดำเนินการ GSave และ GRestore สำหรับการแปลง
-if (opSaveState != null)
+## ขั้นตอนที่ 5: จัดการเมทริกซ์การแปลง
+
+ถัดไป เราจะจัดการการเชื่อมโยงเมทริกซ์การแปลงเมื่อใช้การแปลงกับรูปภาพ
+
+```csharp
+else if (opCtm != null) 
 {
-     graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-}
-else if (opRestoreState != null)
-{
-     graphicsState. Pop();
-}
-// จัดการการดำเนินการ ConcatenateMatrix สำหรับการแปลง
-else if (opCtm != null)
-{
-     // การประยุกต์ใช้เมทริกซ์การแปลง
-     System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
+    Matrix cm = new Matrix(
         (float)opCtm.Matrix.A,
         (float)opCtm.Matrix.B,
         (float)opCtm.Matrix.C,
         (float)opCtm.Matrix.D,
         (float)opCtm.Matrix.E,
         (float)opCtm.Matrix.F);
-
-
-     ((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-     keep on going;
-}
-// จัดการการดำเนินการสำหรับภาพ
-else if (opDo != null)
-{
-     if (imageNames.Contains(opDo.Name))
-     {
-         // ดึงภาพกลับมา
-         XImage image = doc.Pages[1].Resources.Images[opDo.Name];
-         // ดึงข้อมูลขนาดของภาพ
-         double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
-         double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
-         // คำนวณความละเอียดตามข้อมูลด้านบน
-         double resHorizontal = originalWidth * defaultResolution / scaledWidth;
-         double resVertical = originalHeight * defaultResolution / scaledHeight;
-         // แสดงข้อมูลภาพ
-         Console.Out.WriteLine(
-                 string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
-								 opDo.Name, scaledWidth, scaledHeight, resHorizontal,
-								 resVertical));
-     }
+    
+    ((Matrix)graphicsState.Peek()).Multiply(cm);
+    continue;
 }
 ```
+เมื่อมีการใช้เมทริกซ์การแปลง เราจะคูณเมทริกซ์นั้นด้วยเมทริกซ์ปัจจุบันที่จัดเก็บไว้ในสถานะกราฟิก เพื่อให้เราสามารถติดตามการปรับขนาดหรือการแปลใดๆ ที่ใช้กับรูปภาพได้
 
-### ตัวอย่างโค้ดที่มาสำหรับข้อมูลภาพโดยใช้ Aspose.PDF สำหรับ .NET 
+## ขั้นตอนที่ 6: ดึงข้อมูลภาพ
+
+ในที่สุด เราจะประมวลผลตัวดำเนินการวาดภาพและแยกข้อมูลที่จำเป็น เช่น ขนาดและความละเอียด
+
 ```csharp
-// เส้นทางไปยังไดเร็กทอรีเอกสาร
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// โหลดไฟล์ PDF ต้นฉบับ
-Document doc = new Document(dataDir+ "ImageInformation.pdf");
-// กำหนดความละเอียดเริ่มต้นสำหรับภาพ
-int defaultResolution = 72;
-System.Collections.Stack graphicsState = new System.Collections.Stack();
-// กำหนดวัตถุรายการอาร์เรย์ที่จะเก็บชื่อภาพ
-System.Collections.ArrayList imageNames = new System.Collections.ArrayList(doc.Pages[1].Resources.Images.Names);
-// แทรกวัตถุที่จะวางซ้อน
-graphicsState.Push(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, 0, 0));
-// รับผู้ประกอบการทั้งหมดบนหน้าแรกของเอกสาร
-foreach (Operator op in doc.Pages[1].Contents)
+else if (opDo != null) 
 {
-	// ใช้ตัวดำเนินการ GSave/GRestore เพื่อย้อนกลับการแปลงไปยังการตั้งค่าก่อนหน้านี้
-	Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
-	Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-	// สร้างอินสแตนซ์ของวัตถุ ConcatenateMatrix เนื่องจากกำหนดเมทริกซ์การแปลงปัจจุบัน
-	Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-	// ตัวดำเนินการ Create Do ซึ่งดึงวัตถุจากแหล่งข้อมูล ดึงวัตถุ Form และวัตถุ Image
-	Aspose.Pdf.Operators.Do opDo = op as Aspose.Pdf.Operators.Do;
-	if (opSaveState != null)
-	{
-		//บันทึกสถานะก่อนหน้าและผลักสถานะปัจจุบันไปที่ด้านบนสุดของสแต็ก
-		graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-	}
-	else if (opRestoreState != null)
-	{
-		// ทิ้งสถานะปัจจุบันและเรียกคืนสถานะก่อนหน้า
-		graphicsState.Pop();
-	}
-	else if (opCtm != null)
-	{
-		System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
-		   (float)opCtm.Matrix.A,
-		   (float)opCtm.Matrix.B,
-		   (float)opCtm.Matrix.C,
-		   (float)opCtm.Matrix.D,
-		   (float)opCtm.Matrix.E,
-		   (float)opCtm.Matrix.F);
-		// คูณเมทริกซ์ปัจจุบันด้วยเมทริกซ์สถานะ
-		((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-		continue;
-	}
-	else if (opDo != null)
-	{
-		// กรณีเป็นผู้ดำเนินการวาดภาพ
-		if (imageNames.Contains(opDo.Name))
-		{
-			System.Drawing.Drawing2D.Matrix lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-			// สร้างวัตถุ XImage เพื่อเก็บรูปภาพของหน้า pdf หน้าแรก
-			XImage image = doc.Pages[1].Resources.Images[opDo.Name];
-			// รับขนาดภาพ
-			double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
-			double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
-			// รับข้อมูลความสูงและความกว้างของภาพ
-			double originalWidth = image.Width;
-			double originalHeight = image.Height;
-			// คำนวณความละเอียดตามข้อมูลด้านบน
-			double resHorizontal = originalWidth * defaultResolution / scaledWidth;
-			double resVertical = originalHeight * defaultResolution / scaledHeight;
-			// แสดงข้อมูลขนาดและความละเอียดของภาพแต่ละภาพ
-			Console.Out.WriteLine(
-					string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
-								 opDo.Name, scaledWidth, scaledHeight, resHorizontal,
-								 resVertical));
-		}
-	}
+    // ตัวดำเนินการ Handle Do ซึ่งใช้ในการวาดวัตถุ
+    if (imageNames.Contains(opDo.Name)) 
+    {
+        Matrix lastCTM = (Matrix)graphicsState.Peek();
+        XImage image = doc.Pages[1].Resources.Images[opDo.Name];
+        double scaledWidth = Math.Sqrt(Math.Pow(lastCTM.Elements[0], 2) + Math.Pow(lastCTM.Elements[1], 2));
+        double scaledHeight = Math.Sqrt(Math.Pow(lastCTM.Elements[2], 2) + Math.Pow(lastCTM.Elements[3], 2));
+        double originalWidth = image.Width;
+        double originalHeight = image.Height;
+        
+        double resHorizontal = originalWidth * defaultResolution / scaledWidth;
+        double resVertical = originalHeight * defaultResolution / scaledHeight;
+        
+        // ออกข้อมูล
+        Console.Out.WriteLine(string.Format(dataDir + "image {0} ({1:.##}:{2:.##}): res {3:.##} x {4:.##}",
+                         opDo.Name, scaledWidth, scaledHeight, resHorizontal, resVertical));
+    }
 }
 ```
+ที่นี่ เราจะตรวจสอบว่าผู้ปฏิบัติงานเป็นผู้รับผิดชอบในการวาดภาพหรือไม่ หากเป็นเช่นนั้น เราจะได้วัตถุ XImage ที่เกี่ยวข้อง คำนวณขนาดและความละเอียดที่ปรับสเกลแล้ว และพิมพ์ข้อมูลที่จำเป็น
 
 ## บทสรุป
 
-ขอแสดงความยินดี! ตอนนี้คุณได้เรียนรู้วิธีการแยกข้อมูลภาพในไฟล์ PDF โดยใช้ Aspose.PDF สำหรับ .NET แล้ว คุณสามารถใช้ข้อมูลนี้สำหรับงานประมวลผลภาพต่างๆ ในแอปพลิเคชันของคุณได้
+ขอแสดงความยินดี! คุณเพิ่งสร้างตัวอย่างการใช้งานในการดึงข้อมูลภาพจากไฟล์ PDF โดยใช้ Aspose.PDF สำหรับ .NET ความสามารถนี้มีประโยชน์อย่างยิ่งสำหรับนักพัฒนาที่ต้องการวิเคราะห์หรือแก้ไขเอกสาร PDF สำหรับแอปพลิเคชันต่างๆ เช่น การรายงาน การดึงข้อมูล หรือแม้แต่โปรแกรมดู PDF แบบกำหนดเอง 
 
-### คำถามที่พบบ่อยเกี่ยวกับข้อมูลภาพในไฟล์ PDF
 
-#### ถาม: จุดประสงค์ในการดึงข้อมูลรูปภาพจากเอกสาร PDF โดยใช้ Aspose.PDF สำหรับ .NET คืออะไร
+## คำถามที่พบบ่อย
 
-A: การแยกข้อมูลภาพจากเอกสาร PDF จะทำให้ทราบถึงขนาด ความละเอียด และคุณลักษณะอื่นๆ ของภาพภายในเอกสาร ข้อมูลนี้ใช้สำหรับการประมวลผลภาพ การวิเคราะห์ หรือการปรับแต่งภาพได้
+### ไลบรารี Aspose.PDF คืออะไร
+ไลบรารี Aspose.PDF เป็นเครื่องมืออันทรงพลังสำหรับการสร้าง จัดการ และแปลงไฟล์ PDF ในแอปพลิเคชัน .NET
 
-#### ถาม: Aspose.PDF สำหรับ .NET ช่วยในการดึงข้อมูลรูปภาพจากเอกสาร PDF ได้อย่างไร
+### ฉันสามารถใช้ห้องสมุดได้ฟรีไหม?
+ ใช่ Aspose เสนอให้ทดลองใช้งานฟรี คุณสามารถดาวน์โหลดได้[ที่นี่](https://releases.aspose.com/).
 
-A: Aspose.PDF สำหรับ .NET มีเครื่องมือสำหรับเข้าถึงและวิเคราะห์เนื้อหาของเอกสาร PDF รวมถึงรูปภาพด้วย โค้ดที่ให้มาจะสาธิตวิธีการดึงและแสดงข้อมูลรูปภาพโดยใช้ตัวดำเนินการต่างๆ
+### สามารถแยกไฟล์ภาพประเภทใดออกมาได้บ้าง?
+ไลบรารีนี้รองรับรูปแบบภาพต่างๆ เช่น JPEG, PNG และ TIFF ตราบใดที่ภาพเหล่านั้นฝังอยู่ใน PDF
 
-#### ถาม: วิธีนี้สามารถดึงข้อมูลภาพประเภทใดออกมาได้บ้าง?
+### Aspose ถูกใช้เพื่อวัตถุประสงค์เชิงพาณิชย์หรือไม่?
+ ใช่ คุณสามารถใช้ผลิตภัณฑ์ Aspose ในเชิงพาณิชย์ได้ หากต้องการใบอนุญาต โปรดไปที่[หน้าการซื้อ](https://purchase.aspose.com/buy).
 
-A: วิธีการนี้ช่วยให้คุณสามารถแยกและแสดงข้อมูล เช่น ขนาดที่ปรับขนาด ความละเอียด และชื่อรูปภาพสำหรับรูปภาพภายในเอกสาร PDF ได้
-
-#### ถาม: โค้ดระบุและประมวลผลตัวดำเนินการที่เกี่ยวข้องกับรูปภาพภายในเอกสาร PDF ได้อย่างไร
-
-A: โค้ดจะวนซ้ำผ่านตัวดำเนินการในหน้าที่ระบุของเอกสาร PDF โดยจะระบุและประมวลผลตัวดำเนินการที่เกี่ยวข้องกับการดำเนินการกับภาพ การแปลง และการเรนเดอร์
-
-#### ถาม: ความสำคัญของการแก้ไขค่าเริ่มต้นคืออะไร และใช้ในโค้ดอย่างไร
-
-A: ความละเอียดเริ่มต้นจะใช้เป็นจุดอ้างอิงในการคำนวณความละเอียดจริงของภาพ โค้ดจะคำนวณความละเอียดของภาพแต่ละภาพโดยอิงตามขนาดและการตั้งค่าความละเอียดเริ่มต้น
-
-#### ถาม: ข้อมูลภาพที่แยกออกมาสามารถนำไปใช้ในสถานการณ์จริงได้อย่างไร
-
-A: ข้อมูลภาพที่แยกออกมาสามารถใช้สำหรับงานต่างๆ เช่น การประเมินคุณภาพของภาพ การปรับปรุงภาพ การสร้างภาพขนาดย่อ และการอำนวยความสะดวกในกระบวนการตัดสินใจที่เกี่ยวข้องกับภาพ
-
-#### ถาม: ฉันสามารถแก้ไขโค้ดเพื่อดึงคุณลักษณะที่เกี่ยวข้องกับรูปภาพเพิ่มเติมได้หรือไม่
-
-A: ใช่ คุณสามารถปรับแต่งโค้ดเพื่อแยกคุณลักษณะเพิ่มเติมของรูปภาพ เช่น พื้นที่สี ความลึกของพิกเซล หรือประเภทของรูปภาพ
-
-#### ถาม: กระบวนการดึงข้อมูลภาพใช้ทรัพยากรมากหรือใช้เวลานานหรือไม่
-
-A: กระบวนการดึงข้อมูลภาพมีประสิทธิภาพและได้รับการปรับให้เหมาะสมเพื่อการทำงาน โดยช่วยลดผลกระทบต่อการใช้ทรัพยากรและเวลาในการประมวลผลให้เหลือน้อยที่สุด
-
-#### ถาม: นักพัฒนาสามารถได้รับประโยชน์จากการระบุและแยกข้อมูลภาพจากเอกสาร PDF ได้อย่างไร
-
-A: นักพัฒนาสามารถรับข้อมูลเชิงลึกเกี่ยวกับคุณลักษณะของรูปภาพในเอกสาร PDF ช่วยให้พวกเขาสามารถตัดสินใจอย่างรอบรู้เกี่ยวกับการจัดการ การประมวลผล และการเพิ่มประสิทธิภาพรูปภาพ
-
-#### ถาม: วิธีนี้ใช้สำหรับการประมวลผลเอกสาร PDF ที่มีรูปภาพเป็นชุดได้หรือไม่
-
-A: ใช่ วิธีนี้สามารถขยายสำหรับการประมวลผลแบบแบตช์ได้ด้วยการวนซ้ำผ่านหลายหน้าหรือเอกสาร การแยกข้อมูลภาพ และการดำเนินการงานที่เกี่ยวข้องกับภาพ
+### ฉันจะได้รับการสนับสนุนสำหรับ Aspose ได้อย่างไร
+ คุณสามารถเข้าถึงฟอรั่มการสนับสนุนได้[ที่นี่](https://forum.aspose.com/c/pdf/10).

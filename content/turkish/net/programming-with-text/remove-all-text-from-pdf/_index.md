@@ -96,7 +96,7 @@ A: Eğitim, sizi adım adım süreçte yönlendirir:
 
 A: Eğitim, tüm PDF belgesinden tüm metni kaldırmaya odaklanır. Belirli alanlardan metni seçici olarak kaldırmak istiyorsanız, yaklaşımı değiştirmeniz ve belirli metin parçalarını tanımlamak ve kaldırmak için daha karmaşık bir mantık kullanmanız gerekir.
 
-####  S: Nasıl?`TextFragmentAbsorber` work to remove text?
+#### S: Nasıl?`TextFragmentAbsorber` work to remove text?
 
  A:`TextFragmentAbsorber`Aspose.PDF kütüphanesi tarafından sağlanan ve PDF belgesinden metin parçalarını emebilen bir sınıftır.`RemoveAllText` yöntemi`TextFragmentAbsorber` sınıfı kullanarak, emilen tüm metin parçalarını belgeden kaldırabilirsiniz.
 

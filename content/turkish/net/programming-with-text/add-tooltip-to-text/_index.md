@@ -32,7 +32,7 @@ using Aspose.Pdf.Text;
  Kodda şu satırı bulun:`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` Belgelerinizin saklandığı dizinin yolunu içeren.
 
 ## Adım 4: Metin içeren bir örnek belge oluşturun
- Yeni bir tane oluştur`Document` nesne ve metin parçalarıyla sayfalar ekleyin. Sağlanan kodda, iki metin parçası ilgili araç ipucu metniyle belgeye eklenir.
+ Yeni bir tane oluştur`Document`nesne ve metin parçalarıyla sayfalar ekleyin. Sağlanan kodda, iki metin parçası ilgili araç ipucu metniyle belgeye eklenir.
 
 ```csharp
 Document doc = new Document();
@@ -98,7 +98,7 @@ doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to disp
 doc.Save(outputFile);
 // Metin içeren belgeyi aç
 Document document = new Document(outputFile);
-// Düzenli ifadeyle eşleşen tüm ifadeleri bulmak için TextAbsorber nesnesi oluşturun
+//Düzenli ifadeyle eşleşen tüm ifadeleri bulmak için TextAbsorber nesnesi oluşturun
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
 // Belge sayfaları için emiciyi kabul edin
 document.Pages.Accept(absorber);

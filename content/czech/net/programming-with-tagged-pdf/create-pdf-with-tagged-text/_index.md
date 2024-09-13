@@ -7,7 +7,7 @@ type: docs
 weight: 50
 url: /cs/net/programming-with-tagged-pdf/create-pdf-with-tagged-text/
 ---
-tomto tutoriálu vám poskytneme podrobný návod, jak vytvořit dokument PDF s tagovaným textem pomocí Aspose.PDF for .NET. Aspose.PDF je výkonná knihovna, která vám umožňuje programově vytvářet, manipulovat a převádět dokumenty PDF. Pomocí funkcí struktury tagovaného obsahu Aspose.PDF můžete do dokumentu PDF přidat tagovaný text.
+V tomto tutoriálu vám poskytneme podrobný návod, jak vytvořit dokument PDF s tagovaným textem pomocí Aspose.PDF for .NET. Aspose.PDF je výkonná knihovna, která vám umožňuje programově vytvářet, manipulovat a převádět dokumenty PDF. Pomocí funkcí struktury tagovaného obsahu Aspose.PDF můžete do dokumentu PDF přidat tagovaný text.
 
 ## Předpoklady
 
@@ -91,7 +91,7 @@ document.Save( dataDir + "PDFwithTaggedText.pdf");
 
 ## Závěr
 
-tomto tutoriálu jste se naučili, jak vytvořit dokument PDF s tagovaným textem pomocí Aspose.PDF for .NET. Funkce označené struktury obsahu Aspose.PDF vám umožňují strukturovat a organizovat text pro lepší přístupnost a sémantiku.
+V tomto tutoriálu jste se naučili, jak vytvořit dokument PDF s tagovaným textem pomocí Aspose.PDF for .NET. Funkce označené struktury obsahu Aspose.PDF vám umožňují strukturovat a organizovat text pro lepší přístupnost a sémantiku.
 
 ### FAQ
 
@@ -113,13 +113,13 @@ Odpověď: Příklad kódu ukazuje, jak vytvořit dokument PDF, definovat různ�
 
 #### Otázka: Jak mohu přizpůsobit prvky označeného textu, jako jsou záhlaví a odstavce?
 
- Odpověď: Označené textové prvky můžete přizpůsobit pomocí vhodných metod, jako např`CreateHeaderElement` a`CreateParagraphElement` a nastavení vlastností jako`ActualText` poskytnout smysluplný text a sémantiku.
+ Odpověď: Označené textové prvky můžete přizpůsobit pomocí vhodných metod, jako např`CreateHeaderElement` a`CreateParagraphElement` a nastavení vlastností jako`ActualText` poskytovat smysluplný text a sémantiku.
 
 #### Otázka: Mohu přidat další tagované textové prvky, jako jsou seznamy nebo odkazy, pomocí podobných technik?
 
 Odpověď: Ano, pomocí podobných technik můžete přidat další tagované textové prvky, jako jsou seznamy, odkazy nebo jiné vlastní struktury. Aspose.PDF poskytuje různé metody pro vytváření různých typů tagovaného obsahu, což vám umožňuje vylepšit sémantiku dokumentu.
 
-####  Otázka: Jak to`SetTitle` method contribute to the PDF document's tagged text?
+#### Otázka: Jak to`SetTitle` method contribute to the PDF document's tagged text?
 
  A:`SetTitle` metoda nastavuje název tagovaného obsahu dokumentu PDF a poskytuje stručný popis účelu nebo předmětu dokumentu. Tyto informace pomáhají uživatelům porozumět kontextu označeného textu.
 
@@ -127,9 +127,9 @@ Odpověď: Ano, pomocí podobných technik můžete přidat další tagované te
 
 Odpověď: Označený text dodává dokumentu sémantický význam, takže je přístupnější pro uživatele se zdravotním postižením nebo pro ty, kteří používají pomocné technologie. Čtečky obrazovky a další pomocná zařízení mohou interpretovat a prezentovat označený text pro lepší uživatelský dojem.
 
-####  Otázka: Jak to`SetLanguage` method enhance the tagged text in a PDF document?
+#### Otázka: Jak to`SetLanguage` method enhance the tagged text in a PDF document?
 
- A:`SetLanguage`metoda nastavuje atribut jazyka tagovaného obsahu dokumentu PDF. To pomáhá určit jazyk, ve kterém je označený text napsán, zlepšuje dostupnost a umožňuje správné vykreslování specifické pro daný jazyk.
+ A:`SetLanguage` metoda nastavuje atribut jazyka tagovaného obsahu dokumentu PDF. To pomáhá určit jazyk, ve kterém je označený text napsán, zlepšuje dostupnost a umožňuje správné vykreslování specifické pro daný jazyk.
 
 #### Otázka: Je možné přidat další prvky, jako jsou obrázky nebo multimédia, vedle označeného textu pomocí podobných technik?
 

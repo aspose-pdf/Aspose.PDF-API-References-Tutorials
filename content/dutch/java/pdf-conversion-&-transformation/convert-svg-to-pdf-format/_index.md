@@ -10,7 +10,7 @@ url: /nl/java/pdf-conversion-transformation/convert-svg-to-pdf-format/
 
 ## Invoering
 
-Aspose.PDF voor Java is een krachtige en veelzijdige Java-bibliotheek waarmee u PDF-documenten programmatisch kunt maken, bewerken en converteren. Een van de belangrijkste functies is de mogelijkheid om SVG-bestanden naadloos naar PDF-formaat te converteren.
+Aspose.PDF voor Java is een krachtige en veelzijdige Java-bibliotheek waarmee u programmatisch PDF-documenten kunt maken, bewerken en converteren. Een van de belangrijkste functies is de mogelijkheid om SVG-bestanden naadloos naar PDF-formaat te converteren.
 
 ## Wat is Aspose.PDF voor Java?
 
@@ -57,7 +57,7 @@ SvgLoadOptions svgLoadOptions = new SvgLoadOptions();
 pdfDocument.getPages().add().addFromSvg("input.svg", svgLoadOptions);
 ```
 
-5. PDF-uitvoer aanpassen: U kunt de PDF-uitvoer aanpassen door verschillende opties in te stellen, zoals paginaformaat, marges en meer.
+5. PDF-uitvoer aanpassen: u kunt de PDF-uitvoer aanpassen door verschillende opties in te stellen, zoals paginaformaat, marges en meer.
 
 ```java
 pdfDocument.getPages().get_Item(1).getMediaBox().setWidth(500);

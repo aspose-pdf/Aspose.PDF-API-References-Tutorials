@@ -41,7 +41,7 @@ url: /zh/net/document-conversion/postscript-to-pdf/
 
 ### 添加使用指令
 
-现在，让我们在顶部添加必要的使用指令`Program.cs`文件：
+现在，让我们在顶部添加必要的 using 指令`Program.cs`文件：
 
 ```csharp
 using System;
@@ -54,7 +54,7 @@ using System.Text;
 
 ## 第 2 步：定义文档目录
 
-接下来，您需要定义文档目录的路径。这是输入 Postscript 文件的位置，也是输出 PDF 的保存位置。操作方法如下：
+接下来，您需要定义文档目录的路径。这是输入 Postscript 文件所在的位置，也是输出 PDF 的保存位置。操作方法如下：
 
 ```csharp
 //文档目录的路径。

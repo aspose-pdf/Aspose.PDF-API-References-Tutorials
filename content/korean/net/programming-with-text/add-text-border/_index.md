@@ -38,14 +38,14 @@ Document pdfDocument = new Document();
 ```
 
 ## 5단계: 문서에 페이지 추가
- 문서에 새 페이지를 추가하려면 다음을 사용하세요.`Add` 의 방법`Pages`컬렉션. 제공된 코드에서 새 페이지는 변수에 할당됩니다.`pdfPage`.
+ 문서에 새 페이지를 추가하려면 다음을 사용하세요.`Add` 의 방법`Pages` 컬렉션. 제공된 코드에서 새 페이지는 변수에 할당됩니다.`pdfPage`.
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
 ## 6단계: TextFragment 만들기
- 생성하다`TextFragment` 객체를 선택하고 원하는 텍스트를 제공합니다. 다음을 사용하여 텍스트 조각의 위치를 설정합니다.`Position` 속성. 제공된 코드에서 텍스트는 "main text"로 설정되고 페이지의 (100, 600)에 배치됩니다.
+ 생성하다`TextFragment`객체를 선택하고 원하는 텍스트를 제공합니다. 다음을 사용하여 텍스트 조각의 위치를 설정합니다.`Position` 속성. 제공된 코드에서 텍스트는 "main text"로 설정되고 페이지의 (100, 600)에 배치됩니다.
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -64,7 +64,7 @@ textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 ```
 
 ## 8단계: 텍스트 테두리 활성화
- 텍스트 테두리를 활성화하려면 다음을 설정하세요.`DrawTextRectangleBorder`텍스트 조각의 속성`TextState` 에게`true`.
+ 텍스트 테두리를 활성화하려면 다음을 설정하세요.`DrawTextRectangleBorder` 텍스트 조각의 속성`TextState` 에게`true`.
 
 ```csharp
 textFragment.TextState.DrawTextRectangleBorder = true;
@@ -151,7 +151,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 
 #### 질문: TextFragment를 어떻게 생성하고 위치를 설정하나요?
 
- A: 6단계에서는 다음을 생성합니다.`TextFragment`객체를 선택하고 페이지에서 위치를 설정합니다.`Position` 재산:
+ A: 6단계에서는 다음을 생성합니다.`TextFragment` 객체를 선택하고 페이지에서 위치를 설정합니다.`Position` 재산:
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -182,7 +182,7 @@ tb.AppendText(textFragment);
 
 #### 질문: 생성된 PDF 문서를 어떻게 저장하나요?
 
- A: 테두리가 있는 텍스트를 추가한 후 다음을 사용합니다.`Save` 의 방법`Document` PDF 문서를 저장할 객체:
+A: 테두리가 있는 텍스트를 추가한 후 다음을 사용합니다.`Save` 의 방법`Document` PDF 문서를 저장할 객체:
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");

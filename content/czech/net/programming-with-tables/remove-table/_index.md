@@ -69,7 +69,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Načíst existující dokument PDF
 Document pdfDocument = new Document(dataDir + "Table_input.pdf");
 
-// Vytvořte objekt TableAbsorber pro nalezení tabulek
+// Vytvořte objekt TableAbsorber a vyhledejte tabulky
 TableAbsorber absorber = new TableAbsorber();
 
 // Navštivte první stránku s absorbérem
@@ -96,7 +96,7 @@ gratuluji! Nyní jste se naučili, jak odstranit tabulku v dokumentu PDF pomocí
 
 #### Otázka: Co se stane, když zadaná stránka neobsahuje žádné tabulky?
 
- Odpověď: Pokud zadaná stránka neobsahuje žádné tabulky, kód vyvolá`IndexOutOfRangeException` při pokusu o přístup`absorb.TableList[0]` . Chcete-li se tomuto problému vyhnout, měli byste zkontrolovat, zda`absorb.TableList`obsahuje jakékoli prvky před přístupem k tabulce.
+ Odpověď: Pokud zadaná stránka neobsahuje žádné tabulky, kód vyvolá`IndexOutOfRangeException` při pokusu o přístup`absorb.TableList[0]` . Chcete-li se tomuto problému vyhnout, měli byste zkontrolovat, zda`absorb.TableList` obsahuje jakékoli prvky před přístupem k tabulce.
 
 #### Otázka: Mohu odstranit tabulky z jiných stránek než z první stránky?
 

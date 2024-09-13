@@ -47,7 +47,7 @@ taggedContent.SetLanguage("fr-FR");
 Теперь давайте получим корневой элемент структуры PDF-документа.
 
 ```csharp
-//Получить корневой структурный элемент
+// Получить корневой структурный элемент
 StructureElement rootElement = taggedContent.RootElement;
 ```
 

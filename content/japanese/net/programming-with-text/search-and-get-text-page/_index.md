@@ -31,7 +31,7 @@ using Aspose.Pdf.Text;
 
 ## ステップ3: PDF文書を読み込む
 
- PDFドキュメントディレクトリへのパスを設定し、`Document`クラス：
+PDFドキュメントディレクトリへのパスを設定し、`Document`クラス：
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";

@@ -16,7 +16,7 @@ A PDF dokumentumokat széles körben használják egységes formázásuk és kom
 
 Az Aspose.PDF for Java egy robusztus könyvtár, amely lehetővé teszi a fejlesztők számára PDF dokumentumok létrehozását, kezelését és konvertálását Java alkalmazásokban. A funkciók széles skáláját kínálja, így sokoldalú eszköz a PDF-fájlok kezeléséhez. Néhány kulcsfontosságú képessége a következőket tartalmazza:
 
-- PDF létrehozása a semmiből
+- PDF készítés a semmiből
 - PDF manipuláció (szerkesztés, összevonás, felosztás stb.)
 - PDF-ből XML-be konvertálás
 - Szövegkivonás
@@ -94,7 +94,7 @@ Az Aspose.PDF for Java telepítése egyszerű. Kövesse az alábbi lépéseket:
 1.  Töltse le a könyvtárat innen[itt](https://releases.aspose.com/pdf/java/).
 2. Telepítse Java projektjébe a mellékelt utasítások szerint.
 
-### Átalakíthatom a jelszóval védett PDF-eket XML-re?
+### Átalakíthatom a jelszóval védett PDF-eket XML-be?
 
 Igen, az Aspose.PDF for Java támogatja a jelszóval védett PDF-fájlok XML-formátumba konvertálását. Az átalakítási folyamat során meg kell adnia a jelszót.
 

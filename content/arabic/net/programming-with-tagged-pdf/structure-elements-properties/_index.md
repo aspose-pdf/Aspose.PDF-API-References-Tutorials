@@ -125,7 +125,7 @@ document.Save(dataDir + "StructureElementsProperties.pdf");
 
 ####  س: ما هو دور`SetTitle` and `SetLanguage` methods in working with structural element properties?
 
- أ: ال`SetTitle` و`SetLanguage` طرق`ITaggedContent`يتيح لك الكائن تعيين عنوان المستند واللغة، مما يؤثر على خصائص العناصر الهيكلية. يضمن تعيين العنوان واللغة الاتساق والبيانات الوصفية ذات المغزى للمستند.
+ أ: ال`SetTitle` و`SetLanguage` طرق`ITaggedContent` يتيح لك الكائن تعيين عنوان المستند واللغة، مما يؤثر على خصائص العناصر الهيكلية. يضمن تعيين العنوان واللغة الاتساق والبيانات الوصفية ذات المغزى للمستند.
 
 #### س: كيف يمكنني إنشاء العناصر الهيكلية ومعالجتها في مستند PDF باستخدام Aspose.PDF لـ .NET؟
 

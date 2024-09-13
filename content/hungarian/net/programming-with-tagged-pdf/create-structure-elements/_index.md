@@ -7,7 +7,7 @@ type: docs
 weight: 60
 url: /hu/net/programming-with-tagged-pdf/create-structure-elements/
 ---
-A következő C# forráskód az Aspose.PDF for .NET fájlt használja szerkezeti elemek létrehozásához. Kövesse az alábbi lépéseket a kód működésének megértéséhez.
+következő C# forráskód az Aspose.PDF for .NET fájlt használja szerkezeti elemek létrehozásához. Kövesse az alábbi lépéseket a kód működésének megértéséhez.
 
 ## 1. lépés: Importálja a szükséges könyvtárakat
 
@@ -76,7 +76,7 @@ HeaderElement h1Element = taggedContent.CreateHeaderElement(1);
 
 A bekezdésekhez, címsorokhoz blokkszintű szerkezeti elemeket készítünk. A fenti példa egy 1. szintű fejléc létrehozását mutatja be.
 
-## 8. lépés: Hozzon létre soron belüli szintű szerkezeti elemeket
+## 8. lépés: Hozzon létre belső szintű szerkezeti elemeket
 
 ```csharp
 SpanElement spanElement = taggedContent.CreateSpanElement();
@@ -93,7 +93,7 @@ FigureElement figureElement = taggedContent.CreateFigureElement();
 FormulaElement formulaElement = taggedContent.CreateFormulaElement();
 ```
 
-dokumentumban szereplő illusztrációkhoz és matematikai képletekhez szerkezeti elemeket készítünk.
+A dokumentumban szereplő illusztrációkhoz és matematikai képletekhez szerkezeti elemeket készítünk.
 
 ## 10. lépés: Mentse el a címkézett PDF-dokumentumot
 

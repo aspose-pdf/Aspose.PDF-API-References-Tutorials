@@ -21,10 +21,10 @@ Akár kezdő, akár tapasztalt fejlesztő, a Programozás táblázatokkal az Asp
 | [Határozza meg a táblázattörést a PDF-fájlban](./determine-table-break/) | Ismerje meg, hogyan határozhatja meg a táblázattöréseket PDF-fájlban az Aspose.PDF for .NET segítségével. |  
 | [Exportálja az Excel munkalap adatait táblázatba](./export-excel-worksheet-data-to-table/) | Exportáljon adatokat egy Excel-lapról PDF-táblázatba az Aspose.PDF for .NET használatával. |  
 | [Szegély kibontása PDF fájlból](./extract-border/) | Ismerje meg, hogyan bonthatja ki a szegélyt PDF-fájlból az Aspose.PDF for .NET segítségével. |  
-| [Töltse le a táblázat szélességét PDF-fájlban](./get-table-width/) | Ismerje meg, hogyan határozhatja meg a táblázat szélességét PDF-fájlban az Aspose.PDF for .NET segítségével. |  
+| [Táblázat szélességének lekérése PDF-fájlban](./get-table-width/) | Ismerje meg, hogyan határozhatja meg a táblázat szélességét PDF-fájlban az Aspose.PDF for .NET segítségével. |  
 | [HTML-címkék a táblázatban PDF-fájlban](./html-tags-inside-table/) | Tanulja meg, hogyan használhatja a HTML-címkéket egy táblázatban PDF-fájlban az Aspose.PDF for .NET segítségével. |  
 | [Oldaltörés beszúrása PDF fájlba](./insert-page-break/) | Ismerje meg, hogyan szúrhat be oldaltörést PDF-fájlba az Aspose.PDF for .NET segítségével. |  
-| [Integrálás az adatbázisba PDF-fájlba](./integrate-with-database/) | Adatbázisból származó adatok beágyazása PDF-fájlba az Aspose.PDF for .NET használatával. |  
+| [Integrálás az adatbázisba PDF fájlba](./integrate-with-database/) | Adatbázisból származó adatok beágyazása PDF-fájlba az Aspose.PDF for .NET használatával. |  
 | [Táblázat manipulálása PDF fájlban](./manipulate-table/) | Könnyen kezelheti a táblázatot PDF-fájlban az Aspose.PDF for .NET segítségével. |  
 | [Margók vagy Padding](./margins-or-padding/) | Ismerje meg, hogyan állíthat be margókat vagy kitöltést egy táblázatban az Aspose.PDF for .NET használatával. |  
 | [Több táblázat eltávolítása a PDF-dokumentumból](./remove-multiple-tables/) | Ismerje meg, hogyan távolíthat el több táblázatot PDF-dokumentumból az Aspose.PDF for .NET használatával. |  

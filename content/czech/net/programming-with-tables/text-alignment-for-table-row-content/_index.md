@@ -138,4 +138,4 @@ gratuluji! Nyní jste se naučili, jak zarovnat obsah řádku v tabulce v dokume
 
 #### Otázka: Jak mohu nastavit barvu pozadí pro konkrétní buňky nebo celou tabulku?
 
- A: Chcete-li nastavit barvu pozadí pro konkrétní buňky nebo celou tabulku, použijte`BackgroundColor` majetek z`Cell` nebo`Table` objekt. Chcete-li například nastavit barvu pozadí buňky, použijte`cell.BackgroundColor = Aspose.Pdf.Color.LightBlue`.
+ A: Chcete-li nastavit barvu pozadí pro konkrétní buňky nebo celou tabulku, použijte`BackgroundColor` vlastnictví`Cell` nebo`Table` objekt. Chcete-li například nastavit barvu pozadí buňky, použijte`cell.BackgroundColor = Aspose.Pdf.Color.LightBlue`.

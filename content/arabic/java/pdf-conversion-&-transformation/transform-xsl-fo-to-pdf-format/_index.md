@@ -59,7 +59,7 @@ public class XSLFOTutorial {
 
 ## الأسئلة الشائعة
 
-### كيف أقوم بتثبيت Aspose.PDF لـJava؟
+### كيف أقوم بتثبيت Aspose.PDF لـ Java؟
 يمكنك تنزيل المكتبة من[هنا](https://releases.aspose.com/pdf/java/) واتبع تعليمات التثبيت المقدمة.
 
 ### هل يمكنني تحويل XSL-FO إلى تنسيقات أخرى باستخدام Aspose.PDF لـ Java؟

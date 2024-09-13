@@ -1,7 +1,7 @@
 ---
 title: Skapa tabellelement
 linktitle: Skapa tabellelement
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Steg för steg guide för att skapa ett arrayelement med Aspose.PDF för .NET. Skapa dynamiska PDF-filer med tabeller enkelt.
 type: docs
 weight: 80

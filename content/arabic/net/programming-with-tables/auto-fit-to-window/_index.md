@@ -126,7 +126,7 @@ margin.Bottom = 5f;
 // تعيين الحشو الافتراضي للخلية إلى كائن MarginInfo
 tab1.DefaultCellPadding = margin;
 
-// إنشاء صفوف في الجدول ثم خلايا في الصفوف
+//إنشاء صفوف في الجدول ثم خلايا في الصفوف
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");

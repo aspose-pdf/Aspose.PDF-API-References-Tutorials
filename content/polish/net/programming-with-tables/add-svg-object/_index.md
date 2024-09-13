@@ -7,7 +7,7 @@ type: docs
 weight: 30
 url: /pl/net/programming-with-tables/add-svg-object/
 ---
-W tym samouczku nauczymy się, jak dodać obiekt SVG do pliku PDF za pomocą biblioteki Aspose.PDF dla .NET. SVG (Scalable Vector Graphics) to popularny format grafiki wektorowej, który można łatwo skalować bez utraty jakości. Dzięki Aspose.PDF możesz programowo dodawać obiekty SVG do dokumentów PDF.
+tym samouczku nauczymy się, jak dodać obiekt SVG do pliku PDF za pomocą biblioteki Aspose.PDF dla .NET. SVG (Scalable Vector Graphics) to popularny format grafiki wektorowej, który można łatwo skalować bez utraty jakości. Dzięki Aspose.PDF możesz programowo dodawać obiekty SVG do dokumentów PDF.
 
 ## Wymagania
 

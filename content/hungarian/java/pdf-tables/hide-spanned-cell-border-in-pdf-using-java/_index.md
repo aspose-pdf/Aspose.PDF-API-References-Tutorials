@@ -18,7 +18,7 @@ Mielőtt belemerülne a megoldásba, elengedhetetlen, hogy megértse a feszítet
 
 ## Az átívelő cellahatárok elrejtésének kihívása
 
-Míg a látható szegélyek a legtöbb esetben hasznosak, vannak olyan helyzetek, amikor esztétikai vagy funkcionális okokból érdemes elrejteni az átívelő cellák körüli szegélyeket. Ennek manuális megvalósítása nehézkes és hibás lehet, ezért az Aspose.PDF for Java segít.
+Míg a látható szegélyek a legtöbb esetben hasznosak, vannak olyan helyzetek, amikor esztétikai vagy funkcionális okokból érdemes elrejteni a szegélyeket az átívelő cellák körül. Ennek manuális megvalósítása nehézkes és hibás lehet, ezért az Aspose.PDF for Java segít.
 
 ## Az Aspose.PDF for Java használata
 

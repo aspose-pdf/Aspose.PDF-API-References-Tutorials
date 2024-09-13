@@ -1,7 +1,7 @@
 ---
 title: Ordna om innehållet med hjälp av textersättning
 linktitle: Ordna om innehållet med hjälp av textersättning
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du ordnar om innehållet i ett PDF-dokument med hjälp av textersättning med Aspose.PDF för .NET.
 type: docs
 weight: 270
@@ -70,10 +70,10 @@ try
 	// Skapa TextFragment Absorber-objekt med reguljärt uttryck
 	TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("[TextFragmentAbsorber,companyname,Textbox,50]");
 	doc.Pages.Accept(textFragmentAbsorber);
-	// Ersätt varje TextFragment
+	// Byt ut varje TextFragment
 	foreach (TextFragment textFragment in textFragmentAbsorber.TextFragments)
 	{
-		// Ange teckensnitt för textfragment som ersätts
+		// Ställ in teckensnitt för textfragment som ersätts
 		textFragment.TextState.Font = FontRepository.FindFont("Arial");
 		// Ställ in teckenstorlek
 		textFragment.TextState.FontSize = 12;

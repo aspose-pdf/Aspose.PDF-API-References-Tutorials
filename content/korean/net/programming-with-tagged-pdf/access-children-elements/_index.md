@@ -105,7 +105,7 @@ foreach (Element element in elementList)
 		string alternativeText = structureElement.AlternativeText;
 	}
 }
-// 루트 요소의 첫 번째 요소의 자식 요소에 대한 접근
+//루트 요소의 첫 번째 요소의 자식 요소에 대한 접근
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
 foreach (Element element in elementList)
 {

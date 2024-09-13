@@ -114,7 +114,7 @@ Deze code slaat het PDF-document met de gestructureerde elementen op in een opge
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
 string logFile = dataDir + "46144_log.xml";
-// Creatiedocument en getagde pdf-inhoud verkrijgen
+//Creatiedocument en getagde pdf-inhoud verkrijgen
 Document document = new Document();
 ITaggedContent taggedContent = document.TaggedContent;
 // Titel en aardtaal voor document instellen
@@ -209,7 +209,7 @@ A: Het creëren van een hiërarchische structuur in een PDF-document verbetert d
 
 #### V: Hoe kan ik de PDF/UA-conformiteit valideren nadat ik structuurelementen heb toegevoegd?
 
- A: De code in de tutorial laat zien hoe u PDF/UA-naleving kunt valideren met behulp van de`Validate` methode. Door het document te valideren tegen de PDF/UA-standaard, kunt u ervoor zorgen dat de toegevoegde structuurelementen voldoen aan de toegankelijkheidsrichtlijnen.
+A: De code in de tutorial laat zien hoe u PDF/UA-naleving kunt valideren met behulp van de`Validate` methode. Door het document te valideren tegen de PDF/UA-standaard, kunt u ervoor zorgen dat de toegevoegde structuurelementen voldoen aan de toegankelijkheidsrichtlijnen.
 
 #### V: Kan ik deze aanpak gebruiken om structuurelementen toe te voegen aan een bestaand PDF-document?
 

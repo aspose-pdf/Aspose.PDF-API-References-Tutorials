@@ -2,130 +2,140 @@
 title: Ustaw skrypt Java
 linktitle: Ustaw skrypt Java
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak używać Aspose.PDF dla .NET do ustawiania JavaScript w polach formularzy w plikach PDF.
+description: Odblokuj moc Aspose.PDF dla .NET. Dowiedz się, jak skonfigurować JavaScript w polach formularza dzięki naszemu przewodnikowi krok po kroku.
 type: docs
 weight: 270
 url: /pl/net/programming-with-forms/set-java-script/
 ---
-W tym przewodniku wyjaśnimy krok po kroku, jak używać biblioteki Aspose.PDF dla .NET do definiowania JavaScript w polu formularza dokumentu PDF. Pokażemy, jak skonfigurować akcje JavaScript, aby wykonywać określone operacje na polu tekstowym.
+## Wstęp
+
+Tworzenie dynamicznych i interaktywnych plików PDF może znacznie poprawić doświadczenia użytkownika, zwłaszcza podczas integrowania formularzy i pól w dokumencie. Jedną z potężnych bibliotek, która to umożliwia, jest Aspose.PDF dla .NET. W tym artykule zagłębimy się w konfigurowanie JavaScript dla pól formularzy za pomocą Aspose.PDF, zapewniając, że Twoje pliki PDF nie tylko dobrze wyglądają, ale także pięknie działają.
 
 ## Wymagania wstępne
 
-Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
+Zanim przejdziemy do kodowania, upewnijmy się, że masz wszystko, czego potrzebujesz, aby wszystko poszło gładko:
 
-- Środowisko programistyczne .NET zainstalowane w Twoim systemie.
-- Biblioteka Aspose.PDF dla .NET. Możesz ją pobrać z oficjalnej strony Aspose.
+- Visual Studio (lub dowolne środowisko IDE .NET): Upewnij się, że jest ono zainstalowane i poprawnie skonfigurowane.
+  
+-  Biblioteka Aspose.PDF: Będziesz potrzebować najnowszej wersji tej biblioteki. Możesz ją pobrać[Tutaj](https://releases.aspose.com/pdf/net/).
 
-## Krok 1: Konfigurowanie katalogu dokumentów
+- Podstawowa wiedza o języku C#: Znajomość programowania w języku C# pomoże Ci lepiej zrozumieć fragmenty kodu.
 
- Pierwszym krokiem jest skonfigurowanie katalogu dokumentów, w którym znajduje się plik PDF, nad którym chcesz pracować. Możesz użyć`dataDir` zmienna określająca ścieżkę katalogu.
+-  Pliki PDF: Powinieneś mieć gotowy plik PDF do testowania. W naszym przykładzie użyjemy pliku o nazwie`SetJavaScript.pdf`.
+
+- Twój katalog dokumentów: Dowiedz się, gdzie przechowywane są pliki dokumentów. Będziemy odwoływać się do tej ścieżki w naszym kodzie.
+
+Gdy już będziesz mieć te wymagania wstępne, z jakich narzędzi skorzystamy? Przyjrzyjmy się, co potrafi Aspose.PDF.
+
+## Importuj pakiety
+
+Aby rozpocząć, musisz uwzględnić niezbędne przestrzenie nazw w swoim projekcie C#. Otwórz swój główny plik C# i dodaj następujące polecenia importu:
 
 ```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System;
+using System.IO;
+using Aspose.Pdf.Forms;
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf;
 ```
 
- Pamiętaj o wymianie`"YOUR DOCUMENTS DIRECTORY"` z rzeczywistą ścieżką do katalogu dokumentów.
+Te przestrzenie nazw zapewniają dostęp do funkcji związanych z plikami PDF i formularzami w bibliotece Aspose.PDF.
 
-## Krok 2: Ładowanie pliku wejściowego PDF
+Gotowy, aby uczynić swój PDF interaktywnym? Weź czapkę kodera i rozłóżmy to na czynniki pierwsze!
 
- W tym kroku załadujemy plik wejściowy PDF za pomocą`Document` Klasa Aspose.PDF.
+## Krok 1: Zdefiniuj ścieżkę dokumentu
+
+Najpierw musimy określić lokalizację naszego pliku PDF. To przygotowuje grunt pod wszystko, co nastąpi. Oto, jak to zrobić:
 
 ```csharp
-// Załaduj plik wejściowy PDF
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ Zastępować`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką, gdzie znajduje się Twój plik PDF. Pomyśl o tym jak o ustawianiu współrzędnych mapy skarbów — musisz wiedzieć, gdzie „X” oznacza to miejsce!
+
+## Krok 2: Załaduj dokument PDF
+
+Po zdefiniowaniu katalogu załadujemy nasz plik PDF. 
+
+```csharp
 Document doc = new Document(dataDir + "SetJavaScript.pdf");
 ```
 
-Upewnij się, że plik wejściowy PDF znajduje się w określonym katalogu dokumentów.
+Ten wiersz otwiera określony plik PDF i przygotowuje go do edycji. 
 
-## Krok 3: Dostęp do pola TextBox
+## Krok 3: Uzyskaj dostęp do pola formularza
 
- Aby zastosować JavaScript do określonego pola tekstowego, najpierw musimy uzyskać dostęp do tego pola. W tym przykładzie zakładamy, że pole tekstowe nazywa się „textbox1”. Użyj`doc.Form["textbox1"]` metoda uzyskania odpowiedniego`TextBoxField` obiekt.
+Następnie chcemy uzyskać dostęp do pola formularza, w którym zastosujemy kod JavaScript. 
 
 ```csharp
 TextBoxField field = (TextBoxField)doc.Form["textbox1"];
 ```
 
-Upewnij się, że określone pole tekstowe istnieje w pliku wejściowym PDF.
+ Tutaj zakładamy, że w pliku PDF znajduje się pole tekstowe o nazwie`textbox1`. Jeśli nie posiadasz pola o takiej nazwie, możesz je zmienić lub odpowiednio dostosować kod. 
 
 ## Krok 4: Skonfiguruj akcje JavaScript
 
- Teraz, gdy uzyskaliśmy dostęp do pola tekstowego, możemy skonfigurować akcje JavaScript powiązane z tym polem. W tym przykładzie użyjemy dwóch akcji:`OnModifyCharacter` I`OnFormat` . Te działania zostaną zdefiniowane za pomocą`JavascriptAction` obiekty.
+Teraz dodajmy trochę funkcjonalności do naszego pola tekstowego! Skonfigurujemy akcje JavaScript, które będą uruchamiane przy określonych zdarzeniach. 
 
 ```csharp
 field.Actions.OnModifyCharacter = new JavascriptAction("AFNumber_Keystroke(2, 1, 1, 0, \"\", true)");
 field.Actions.OnFormat = new JavascriptAction("AFNumber_Format(2, 1, 1, 0, \"\", true)");
 ```
 
-Pamiętaj, aby dostosować działania JavaScript do swoich potrzeb.
+Oto co się dzieje:
+- OnModifyCharacter: Ta funkcja JavaScript określa, jak pole powinno się zachowywać, gdy znak jest modyfikowany. W tym przypadku zezwala na dwa miejsca po przecinku po liczbie bez separatora.
+- OnFormat: Dzięki temu masz pewność, że gdy użytkownik sformatuje liczbę, będzie ona formatowana według tej samej reguły.
 
-## Krok 5: Ustawienie początkowej wartości pola
+Konfigurując te akcje, w zasadzie nadajemy naszemu polu tekstowemu osobowość — tak jakbyśmy uczyli je jakiegoś ruchu tanecznego!
 
-Przed zapisaniem wynikowego pliku PDF możemy ustawić wartość początkową dla pola tekstowego. W tym przykładzie ustawimy wartość „123” dla pola.
+## Krok 5: Zainicjuj wartość pola
+
+Następnie ustalmy punkt początkowy dla naszego pola tekstowego, ustalając jego wartość początkową. 
 
 ```csharp
 field.Value = "123";
 ```
 
-Dostosuj tę wartość do swoich potrzeb.
+Ten wiersz ustawia „123” jako wstępnie wypełnioną wartość w polu tekstowym. To jak przygotowanie sceny do występu.
 
-## Krok 6: Zapisywanie wynikowego pliku PDF
+## Krok 6: Zapisz zmodyfikowany plik PDF
 
- Teraz, gdy zakończyliśmy konfigurację pola tekstowego i akcji JavaScript, możemy zapisać wynikowy plik PDF za pomocą`Save` metoda`Document` klasa.
+Na koniec musimy zapisać dokument po wprowadzeniu wszystkich zmian.
 
 ```csharp
 dataDir = dataDir + "Restricted_out.pdf";
-// Zapisz wynikowy plik PDF
 doc.Save(dataDir);
 ```
 
-Pamiętaj o podaniu pełnej ścieżki i nazwy pliku wynikowego PDF.
+ Spowoduje to zaktualizowanie oryginalnego pliku o wprowadzone zmiany i zapisanie go jako`Restricted_out.pdf`. Można to postrzegać jako przypieczętowanie losu naszego pliku PDF — po zapisaniu będzie on gotowy do udostępnienia światu!
 
+## Krok 7: Potwierdź powodzenie
 
-### Przykładowy kod źródłowy dla Set Java Script using Aspose.PDF dla .NET 
+Na koniec sprawdźmy czy wszystko poszło gładko. 
+
 ```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Załaduj plik wejściowy PDF
-Document doc = new Document(dataDir + "SetJavaScript.pdf");
-TextBoxField field = (TextBoxField)doc.Form["textbox1"];
-// 2 cyfry po kropce
-// Brak separatora
-// Styl negatywny = minus
-// Brak waluty
-field.Actions.OnModifyCharacter = new JavascriptAction("AFNumber_Keystroke(2, 1, 1, 0, \"\", true)");
-field.Actions.OnFormat = new JavascriptAction("AFNumber_Format(2, 1, 1, 0, \"\", true)");
-// Ustaw początkową wartość pola
-field.Value = "123";
-dataDir = dataDir + "Restricted_out.pdf";
-// Zapisz wynikowy plik PDF
-doc.Save(dataDir);
 Console.WriteLine("\nJavaScript on form field setup successfully.\nFile saved at " + dataDir);
 ```
 
+Wyświetlenie tej wiadomości da ci pewność, że operacja zakończyła się sukcesem – to tak, jakbyś dostał brawa od publiczności po wspaniałym występie.
+
 ## Wniosek
 
-tym przewodniku nauczyliśmy się, jak używać biblioteki Aspose.PDF dla .NET, aby ustawić JavaScript w polu formularza dokumentu PDF. Postępując zgodnie z opisanymi krokami, możesz dostosować akcje JavaScript, aby wykonywać różne operacje na polach tekstowych. Możesz swobodnie dalej eksplorować funkcje Aspose.PDF dla .NET, aby rozszerzyć możliwości manipulowania plikami PDF.
-
+Gratulacje! Udało Ci się skonfigurować JavaScript dla pól formularza w pliku PDF przy użyciu Aspose.PDF dla .NET. Ten samouczek nie tylko dał Ci narzędzia do ulepszenia interakcji z użytkownikiem, ale także umożliwił Ci personalizowanie dokumentów jak profesjonalista. Niezależnie od tego, czy pracujesz z formularzami na fakturach, ankietach czy innych interaktywnych plikach PDF, możliwości są naprawdę nieograniczone.
 
 ### Najczęściej zadawane pytania
 
-#### P: Czy mogę użyć Aspose.PDF dla .NET, aby dodać JavaScript do innych elementów formularza, takich jak pola wyboru i przyciski radiowe?
+### Czym jest Aspose.PDF dla .NET?  
+Aspose.PDF to biblioteka przeznaczona do tworzenia, edytowania i manipulowania plikami PDF w aplikacjach .NET, udostępniająca zaawansowane funkcje PDF.
 
- A: Tak, Aspose.PDF dla .NET pozwala na dodawanie JavaScript do różnych elementów formularza, w tym pól wyboru, przycisków radiowych i list rozwijanych. Możesz użyć`JavascriptAction` Klasa służąca do definiowania akcji JavaScript dla różnych elementów formularza.
+### Czy potrzebuję licencji, aby używać Aspose.PDF?  
+ Chociaż dostępna jest bezpłatna wersja próbna, do pełnego wykorzystania bez ograniczeń wymagana jest licencja. Możesz kupić licencję[Tutaj](https://purchase.aspose.com/buy).
 
-#### P: Czy możliwe jest sprawdzanie poprawności danych wprowadzanych przez użytkownika w polach formularza za pomocą JavaScript?
+### Czy mogę ustawić JavaScript w innych typach pól formularzy?  
+Oczywiście! Aspose.PDF pozwala na wykonywanie działań JavaScript na różnych polach formularza, takich jak pola wyboru, przyciski radiowe i listy rozwijane.
 
- A: Tak, możesz użyć JavaScript do walidacji danych wprowadzanych przez użytkownika w polach formularza. Definiując akcje JavaScript, takie jak`OnBlur` Lub`OnKeystroke` w przypadku pola formularza możesz sprawdzić poprawność wprowadzonych danych i w razie potrzeby wyświetlić komunikaty o błędach.
+### Gdzie mogę uzyskać pomoc w rozwiązaniu problemów z plikiem Aspose.PDF?  
+ Możesz uzyskać pomoc techniczną za pośrednictwem ich[forum](https://forum.aspose.com/c/pdf/10) w przypadku jakichkolwiek pytań lub problemów.
 
-#### P: Czy mogę wykonywać złożone funkcje JavaScript przy użyciu Aspose.PDF dla .NET?
-
- A: Tak, możesz wykonywać złożone funkcje JavaScript za pomocą Aspose.PDF dla .NET. Masz możliwość definiowania niestandardowych funkcji JavaScript i wywoływania ich w`JavascriptAction`.
-
-#### P: Czy Aspose.PDF dla platformy .NET obsługuje inne zdarzenia JavaScript niż te wymienione w tym samouczku?
-
- O: Tak, Aspose.PDF dla .NET obsługuje szeroki zakres zdarzeń JavaScript, w tym:`OnMouseEnter`, `OnMouseExit`, `OnMouseDown` , I`OnMouseUp`, między innymi. Możesz użyć tych zdarzeń, aby wywołać akcje JavaScript na podstawie interakcji użytkownika.
-
-#### P: Czy mogę użyć Aspose.PDF dla .NET do wyodrębnienia kodu JavaScript z istniejących dokumentów PDF?
-
- A: Aspose.PDF dla .NET umożliwia wyodrębnianie kodu JavaScript z istniejących dokumentów PDF. Możesz użyć`JavascriptAction` Klasa i inne istotne metody dostępu do akcji JavaScript i ich analizy w formacie PDF.
+### Czy istnieje możliwość przetestowania Aspose.PDF bez konieczności zakupu?  
+Tak! Aspose zapewnia[bezpłatny okres próbny](https://releases.aspose.com/) aby przetestować funkcje biblioteki przed podjęciem decyzji o zakupie.

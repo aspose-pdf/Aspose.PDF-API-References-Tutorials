@@ -10,7 +10,7 @@ url: /cs/java/pdf-bookmarks/view-expanded-bookmarks-pdfs/
 
 ## Zavedení
 
-digitálním věku jsou dokumenty PDF základem sdílení a uchovávání informací. Jednou ze základních funkcí souborů PDF jsou záložky, které poskytují pohodlný způsob procházení dlouhých dokumentů. Někdy však výchozí zobrazení záložek nemusí stačit k efektivnímu pochopení struktury dokumentu. Tento článek zkoumá, jak zobrazit rozšířené záložky v souborech PDF pomocí Aspose.PDF for Java.
+digitálním věku jsou dokumenty PDF základem sdílení a uchovávání informací. Jednou ze základních funkcí souborů PDF jsou záložky, které poskytují pohodlný způsob procházení dlouhých dokumentů. Někdy však výchozí zobrazení záložek nemusí stačit k efektivnímu pochopení struktury dokumentu. Tento článek se zabývá tím, jak zobrazit rozšířené záložky v souborech PDF pomocí Aspose.PDF for Java.
 
 ## Pochopení záložek v PDF
 

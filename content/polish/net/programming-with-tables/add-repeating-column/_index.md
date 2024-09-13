@@ -60,7 +60,7 @@ headerRow.Cells.Add("header 1");
 headerRow.Cells.Add("header 2");
 headerRow.Cells.Add("header 3");
 // ...
-// Dodaj tutaj inne nagłówki
+//Dodaj tutaj inne nagłówki
 
 for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
 {
@@ -101,7 +101,7 @@ Aspose.Pdf.Table outerTable = new Aspose.Pdf.Table();
 outerTable.ColumnWidths = "100%";
 outerTable.HorizontalAlignment = HorizontalAlignment.Left;
 
-//Utwórz obiekt tabeli, który zostanie zagnieżdżony wewnątrz obiektu outerTable i zostanie podzielony na tej samej stronie
+// Utwórz obiekt tabeli, który zostanie zagnieżdżony wewnątrz obiektu outerTable i zostanie podzielony na tej samej stronie
 Aspose.Pdf.Table mytable = new Aspose.Pdf.Table();
 mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
@@ -156,7 +156,7 @@ doc.Save(outFile);
 ```
 
 ## Wniosek
-W tym samouczku nauczyliśmy się, jak dodać powtarzającą się kolumnę w dokumencie PDF za pomocą Aspose.PDF dla .NET. Możesz użyć tego przewodnika krok po kroku, aby utworzyć tabele z powtarzającymi się kolumnami we własnych projektach C#.
+tym samouczku nauczyliśmy się, jak dodać powtarzającą się kolumnę w dokumencie PDF za pomocą Aspose.PDF dla .NET. Możesz użyć tego przewodnika krok po kroku, aby utworzyć tabele z powtarzającymi się kolumnami we własnych projektach C#.
 
 ### Często zadawane pytania dotyczące dodawania powtarzającej się kolumny w dokumencie PDF
 

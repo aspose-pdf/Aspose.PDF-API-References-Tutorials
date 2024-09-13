@@ -2,7 +2,7 @@
 title: TOC hozzáadása PDF fájlhoz
 linktitle: TOC hozzáadása PDF fájlhoz
 second_title: Aspose.PDF for .NET API Reference
-description: Ismerje meg, hogyan adhat hozzá tartalomjegyzéket PDF-fájlhoz az Aspose.PDF for .NET használatával. Ez a lépésenkénti útmutató leegyszerűsíti a folyamatot, és könnyű navigációt biztosít a dokumentumok között.
+description: Ismerje meg, hogyan adhat hozzá tartalomjegyzéket PDF-fájlhoz az Aspose.PDF for .NET használatával. Ez a lépésenkénti útmutató leegyszerűsíti a folyamatot, és biztosítja a könnyű navigációt a dokumentumok között.
 type: docs
 weight: 40
 url: /hu/net/programming-with-document/addtoc/
@@ -70,7 +70,7 @@ tocInfo.Title = title;
 tocPage.TocInfo = tocInfo;
 ```
 
-Itt a TOC címét "Tartalomjegyzék"-re állítottuk, megnöveltük a betűméretet, és félkövérré tettük a kiemelés érdekében.
+Itt a tartalomjegyzék címét "Tartalomjegyzék"-re adtuk, megnöveltük a betűméretet, és félkövérré tettük a kiemelés érdekében.
 
 ## 4. lépés: Határozza meg a TOC elemeket
 

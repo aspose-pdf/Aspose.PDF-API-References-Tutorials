@@ -20,7 +20,7 @@ url: /zh-hant/net/programming-with-document/createmultilayerpdffirstapproach/
 1.  Aspose.PDF for .NET 函式庫：您將需要 Aspose.PDF 函式庫。如果您還沒有，您可以從以下位置下載[Aspose.PDF for .NET 下載頁面](https://releases.aspose.com/pdf/net/).
 2. .NET Framework：本教學假設您使用的是 .NET。確保您擁有使用 Visual Studio 或類似 IDE 設定的工作環境。
 3. 臨時許可證：想不受限制地嘗試 Aspose.PDF？得到一個[臨時許可證在這裡](https://purchase.aspose.com/temporary-license/).
-4. 對 C# 的基本了解：對 C# 和 .NET 有所了解會有所幫助，但我們將邊做邊解釋每一步！
+4. 對 C# 的基本了解：對 C# 和 .NET 有一定的了解會有所幫助，但我們將邊做邊解釋每一步！
 
 ## 導入命名空間
 
@@ -54,7 +54,7 @@ Aspose.Pdf.Document pdf = new Aspose.Pdf.Document();
 Aspose.Pdf.Page sec1 = pdf.Pages.Add();
 ```
 
-使用這行程式碼，您將在文件中新增一個空白頁面，準備好填滿文字、圖像和其他元素。
+使用這行程式碼，您將向文件新增一個空白頁面，準備好填滿文字、圖像和其他元素。
 
 ## 步驟 3：將文字插入 PDF
 
@@ -134,7 +134,7 @@ pdf.Save(dataDir + "CreateMultiLayerPdf_out.pdf");
 
 ## 結論
 
-現在你就擁有了！您剛剛使用 Aspose.PDF for .NET 建立了一個多層 PDF。就像逐層製作蛋糕一樣，使用各種元素來建立 PDF 是一個創意且有益的過程。每一部分（文字、圖像和盒子）共同構成精美的最終產品。透過練習，您將能夠輕鬆建立複雜的 PDF 設計。
+現在你就得到它了！您剛剛使用 Aspose.PDF for .NET 建立了一個多層 PDF。就像逐層製作蛋糕一樣，使用各種元素來建立 PDF 是一個創意且有益的過程。每一部分（文字、圖像和盒子）共同構成精美的最終產品。透過練習，您將能夠輕鬆建立複雜的 PDF 設計。
 
 ## 常見問題解答
 

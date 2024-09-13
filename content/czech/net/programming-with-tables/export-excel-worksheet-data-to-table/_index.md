@@ -91,7 +91,7 @@ tab1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.
 V tomto příkladu nastavíme šířky sloupců na 40, 100 a 100 jednotek. Upravte hodnoty na základě vašich dat. Nastavili jsme také výchozí ohraničení buňky, abychom zobrazili ohraničení na všech stranách každé buňky.
 
 ## Krok 8: Import dat do tabulky
- Nyní naimportujeme data z`DataTable` objekt do tabulky pomocí`ImportDataTable` metoda.
+ Nyní importujeme data z`DataTable` objekt do tabulky pomocí`ImportDataTable` metoda.
 
 ```csharp
 // Importujte data do objektu Table z výše vytvořené DataTable

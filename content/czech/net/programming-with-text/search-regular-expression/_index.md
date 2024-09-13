@@ -52,7 +52,7 @@ TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d
 
 ## Krok 5: Nastavte možnosti textového vyhledávání
 
- Vytvořte a`TextSearchOptions` objekt a nastavte jej na`TextSearchOptions` majetek z`TextFragmentAbsorber` objekt umožňující použití regulárního výrazu:
+ Vytvořte a`TextSearchOptions` objekt a nastavte jej na`TextSearchOptions` vlastnictví`TextFragmentAbsorber` objekt umožňující použití regulárního výrazu:
 
 ```csharp
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
@@ -69,7 +69,7 @@ pdfDocument.Pages.Accept(textFragmentAbsorber);
 
 ## Krok 7: Načtěte extrahované fragmenty textu
 
-Získejte extrahované fragmenty textu pomocí`TextFragments` majetek z`TextFragmentAbsorber` objekt:
+ Získejte extrahované fragmenty textu pomocí`TextFragments` vlastnictví`TextFragmentAbsorber` objekt:
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
@@ -103,7 +103,7 @@ Kód ve smyčce můžete upravit a provést další akce s každým textovým fr
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Otevřete dokument
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionAll.pdf");
-// Vytvořte objekt TextAbsorber a najděte všechny fráze odpovídající regulárnímu výrazu
+//Vytvořte objekt TextAbsorber a najděte všechny fráze odpovídající regulárnímu výrazu
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // Jako 1999-2000
 // Nastavte možnost textového vyhledávání pro určení použití regulárního výrazu
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
@@ -160,11 +160,11 @@ Odpověď: Pro začátek vytvořte nový projekt C# ve vašem preferovaném inte
 
 #### Otázka: Jak mohu povolit použití regulárních výrazů pro textové vyhledávání?
 
- A: Použití regulárního výrazu je umožněno vytvořením a`TextSearchOptions` objektu a nastavení jeho hodnoty na`true` . Přiřaďte tento objekt k`TextSearchOptions` majetek z`TextFragmentAbsorber` instance. Tím je zajištěno, že se při vyhledávání textu použije vzor regulárního výrazu.
+ A: Použití regulárního výrazu je umožněno vytvořením a`TextSearchOptions` objektu a nastavení jeho hodnoty na`true` . Přiřaďte tento objekt k`TextSearchOptions` vlastnictví`TextFragmentAbsorber` instance. Tím je zajištěno, že se při vyhledávání textu použije vzor regulárního výrazu.
 
 #### Otázka: Mohu načíst fragmenty textu, které odpovídají vzoru regulárního výrazu?
 
- A: Rozhodně. Po použití hledání regulárních výrazů na dokument PDF můžete získat extrahované textové fragmenty pomocí`TextFragments` majetek z`TextFragmentAbsorber` objekt. Tyto textové fragmenty obsahují textové segmenty, které odpovídají zadanému vzoru regulárního výrazu.
+ A: Rozhodně. Po použití hledání regulárních výrazů na dokument PDF můžete získat extrahované textové fragmenty pomocí`TextFragments` vlastnictví`TextFragmentAbsorber` objekt. Tyto textové fragmenty obsahují textové segmenty, které odpovídají zadanému vzoru regulárního výrazu.
 
 #### Otázka: K čemu mám přístup z načtených fragmentů textu?
 

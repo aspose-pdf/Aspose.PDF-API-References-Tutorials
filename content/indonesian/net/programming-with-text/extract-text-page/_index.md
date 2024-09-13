@@ -31,7 +31,7 @@ using System.IO;
  Dalam kode, temukan baris yang bertuliskan`string dataDir = "YOUR DOCUMENT DIRECTORY";` dan mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur ke direktori tempat dokumen Anda disimpan.
 
 ## Langkah 4: Buka dokumen PDF
- Buka dokumen PDF yang ada menggunakan`Document` konstruktor dan meneruskan jalur ke berkas PDF masukan.
+ Buka dokumen PDF yang ada menggunakan`Document`konstruktor dan meneruskan jalur ke berkas PDF masukan.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");

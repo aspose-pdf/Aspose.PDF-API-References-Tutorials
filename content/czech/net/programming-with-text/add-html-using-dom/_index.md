@@ -37,7 +37,7 @@ Document doc = new Document();
 ```
 
 ## Krok 5: Přidejte do dokumentu stránku
- Přidejte do dokumentu novou stránku pomocí`Add` metoda`Pages`sbírka. V poskytnutém kódu je nová stránka přiřazena k proměnné`page`.
+ Přidejte do dokumentu novou stránku pomocí`Add` metoda`Pages` sbírka. V poskytnutém kódu je nová stránka přiřazena k proměnné`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -51,7 +51,7 @@ HtmlFragment titel = new HtmlFragment("<fontsize=10><b><i>Table</i></b></fontsiz
 ```
 
 ## Krok 7: Nastavte informace o okrajích
-V případě potřeby upravte spodní a horní okraj fragmentu HTML. V poskytnutém kódu je spodní okraj nastaven na 10 a horní okraj na 200.
+případě potřeby upravte spodní a horní okraj fragmentu HTML. V poskytnutém kódu je spodní okraj nastaven na 10 a horní okraj na 200.
 
 ```csharp
 title. Margin. Bottom = 10;

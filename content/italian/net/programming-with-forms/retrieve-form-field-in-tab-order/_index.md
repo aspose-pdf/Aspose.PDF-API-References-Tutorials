@@ -2,62 +2,88 @@
 title: Recupera il campo del modulo nell'ordine di tabulazione
 linktitle: Recupera il campo del modulo nell'ordine di tabulazione
 second_title: Riferimento API Aspose.PDF per .NET
-description: Scopri come recuperare i campi del modulo in ordine di tabulazione utilizzando Aspose.PDF per .NET.
+description: Scopri come recuperare e modificare i campi del modulo in ordine di tabulazione utilizzando Aspose.PDF per .NET. Guida dettagliata con esempi di codice per semplificare la navigazione nei moduli PDF.
 type: docs
 weight: 240
 url: /it/net/programming-with-forms/retrieve-form-field-in-tab-order/
 ---
-Quando si lavora con documenti PDF in C# usando Aspose.PDF per .NET, ci si può imbattere in uno scenario in cui è necessario recuperare i campi del modulo in un ordine di tabulazione specifico. Ciò può essere utile quando si desidera eseguire operazioni sui campi del modulo in base alla loro sequenza di tabulazione. In questo tutorial, ti guideremo passo dopo passo su come recuperare i campi del modulo in ordine di tabulazione usando Aspose.PDF per .NET.
+## Introduzione
 
-## Requisiti
+Gestire i documenti PDF e assicurarsi che funzionino come previsto, specialmente con i campi interattivi, a volte può sembrare come radunare gatti. Ma non preoccuparti, con gli strumenti giusti puoi prendere il controllo e far funzionare i tuoi PDF esattamente come desideri. In questa guida, ci immergiamo in come recuperare i campi del modulo in ordine di tabulazione usando Aspose.PDF per .NET. Questo è un trucco essenziale per semplificare l'esperienza utente, assicurandoti che la navigazione nel modulo sia fluida. 
 
-Prima di iniziare, assicurati di disporre dei seguenti prerequisiti:
+## Prerequisiti
 
-- Visual Studio installato sul tuo sistema
-- Aspose.PDF per la libreria .NET installata
+Prima di immergerti nel codice, assicuriamoci di aver impostato tutti gli elementi essenziali:
 
-Ora analizziamo i passaggi per recuperare i campi del modulo in ordine di tabulazione.
+- Aspose.PDF per .NET: hai bisogno della libreria Aspose.PDF installata nel tuo progetto. Se non ce l'hai ancora, scaricala[Qui](https://releases.aspose.com/pdf/net/).
+- Ambiente di sviluppo: configurare un ambiente di sviluppo C# come Visual Studio.
+- .NET Framework: assicurati che .NET sia installato sul tuo sistema.
+- Documento PDF: avere un documento PDF con campi modulo pronti per il test.
+  
+Una volta definite queste nozioni di base, sarai pronto a recuperare e manipolare i campi del modulo in ordine di tabulazione come un professionista.
 
-## Passaggio 1: impostazione della directory dei documenti
+## Importa pacchetti
 
- Per iniziare, devi impostare la directory del documento in cui si trova il tuo documento PDF. Puoi farlo specificando il percorso della directory nel`dataDir` variabile.
+Per lavorare con Aspose.PDF, dovrai prima importare i namespace necessari nel tuo progetto. Questi namespace ti danno accesso a tutte le funzionalità per manipolare i PDF.
 
 ```csharp
-// Percorso verso la directory dei documenti.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using Aspose.Pdf.Forms;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
- Sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo della directory del documento.
+Si tratta delle importazioni principali necessarie per lavorare con il PDF e i suoi campi modulo.
 
-## Passaggio 2: caricamento del documento PDF
+## Passaggio 1: caricare il documento PDF
 
- In questo passaggio, caricheremo il documento PDF utilizzando Aspose.PDF per .NET. Il`Document` La classe offre la possibilità di caricare e manipolare documenti PDF.
+Prima di poter fare qualsiasi cosa con i campi del modulo, dobbiamo caricare il documento PDF. Questo è il punto di partenza per tutte le interazioni con il tuo PDF.
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "Test2.pdf");
 ```
 
- Qui,`"Test2.pdf"`è il nome del documento PDF che vuoi caricare. Assicurati che il documento sia presente nella directory specificata.
+ Qui, inizializziamo il`Document`oggetto passando il percorso al PDF con cui vogliamo lavorare. Assicurati che il percorso punti alla posizione in cui è archiviato il tuo documento.
 
-## Passaggio 3: recupero dei campi del modulo in ordine di tabulazione
+## Passaggio 2: accedi alla prima pagina
 
- Per recuperare i campi del modulo in ordine di tabulazione, dobbiamo accedere a`FieldsInTabOrder` proprietà del`Page` classe. Questa proprietà restituisce un elenco di campi del modulo ordinati in base alla loro sequenza di tabulazione.
+Poi, dobbiamo accedere alla pagina che contiene i campi del modulo. Per semplicità, ci concentreremo sulla prima pagina, ma puoi modificarla per qualsiasi pagina del tuo documento.
 
 ```csharp
 Page page = doc.Pages[1];
+```
+
+Questa riga recupera la prima pagina del PDF. Se i campi del tuo modulo sono distribuiti su più pagine, puoi modificare di conseguenza l'indice di pagina.
+
+## Passaggio 3: recuperare i campi in ordine di tabulazione
+
+ Ora arriva la parte interessante: recuperare i campi del modulo in base al loro ordine di tabulazione.`FieldsInTabOrder` La proprietà aiuta a recuperare i campi nell'ordine in cui devono apparire quando l'utente naviga nel modulo utilizzando il tasto Tab.
+
+```csharp
 IList<Field> fields = page.FieldsInTabOrder;
+```
+
+Questo codice ci fornisce un elenco di campi, ordinati in base al loro ordine di tabulazione.
+
+## Passaggio 4: visualizzare i nomi dei campi
+
+Una volta ottenuti i campi, inseriamo i loro nomi per vedere quali campi fanno parte del modulo e la loro sequenza.
+
+```csharp
 string s = "";
 foreach (Field field in fields)
 {
-     s += field. PartialName;
+    s += field.PartialName + ", ";
 }
 ```
 
-Nel frammento di codice soprastante, recuperiamo i campi del modulo dalla seconda pagina (`doc.Pages[1]` ) e scorrere ogni campo per concatenare i loro nomi parziali nel`s` variabile. Puoi modificare questo frammento di codice in base alle tue esigenze specifiche.
+Qui, eseguiamo un ciclo su ogni campo nell'elenco e concateniamo i`PartialName` di ogni campo. Il`PartialName` rappresenta il nome del campo del modulo nel documento PDF. Questo passaggio è particolarmente utile per il debug o la verifica dei nomi dei campi.
 
-## Passaggio 4: modifica dell'ordine delle schede
+## Passaggio 5: modifica l'ordine delle schede
 
- Se si desidera modificare l'ordine di tabulazione dei campi del modulo, è possibile farlo accedendo al`TabOrder` proprietà di ogni campo e assegnando un nuovo valore di ordine di tabulazione. Ecco un esempio:
+A volte, potresti voler modificare l'ordine di tabulazione dei campi del modulo per migliorare l'esperienza utente. Ad esempio, il modulo potrebbe richiedere che il primo campo sia il terzo e il terzo il primo. Ecco come puoi modificare l'ordine di tabulazione:
 
 ```csharp
 (doc.Form[3] as Field).TabOrder = 1;
@@ -65,70 +91,52 @@ Nel frammento di codice soprastante, recuperiamo i campi del modulo dalla second
 (doc.Form[2] as Field).TabOrder = 3;
 ```
 
-Nel frammento di codice soprastante, assegniamo nuovi valori di ordine di tabulazione a tre campi del modulo (`doc.Form[3]`, `doc.Form[1]` , E`doc.Form[2]`). Adatta gli indici dei campi e i valori dell'ordine di tabulazione in base alle tue esigenze specifiche.
+ In questo esempio, stiamo modificando l'ordine di tabulazione di tre campi nel modulo. Puoi regolare il`TabOrder` proprietà in modo che corrisponda alla sequenza desiderata.
 
-## Passaggio 5: salvataggio del documento modificato
+## Passaggio 6: Salvare il PDF modificato
 
- Dopo aver modificato l'ordine di tabulazione dei campi del modulo, è necessario salvare il documento modificato. È possibile farlo utilizzando`Save` metodo del`Document` classe.
+Una volta aggiornato l'ordine di tabulazione, vorrai salvare il PDF con le modifiche. Questo è un passaggio fondamentale per garantire che le modifiche siano riflesse nel documento.
 
 ```csharp
 doc.Save(dataDir + "39522_out.pdf");
 ```
 
- Qui,`"39522_out.pdf"` è il nome del file di output in cui verrà salvato il documento modificato. Specificare il nome e la posizione desiderati per il file di output.
+Questo salva il PDF aggiornato in un nuovo file. Salvalo sempre come un nuovo file per evitare di sovrascrivere il documento originale.
 
-### Esempio di codice sorgente per recuperare il campo del modulo in ordine di tabulazione utilizzando Aspose.PDF per .NET 
+## Passaggio 7: verifica le modifiche
+
+Dopo aver salvato il PDF, è una buona idea riaprire il documento e verificare che le modifiche siano state applicate correttamente. Ecco come puoi controllare l'ordine di tabulazione dopo la modifica:
+
 ```csharp
-// Percorso verso la directory dei documenti.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document doc = new Document(dataDir + "Test2.pdf");
-Page page = doc.Pages[1];
-IList<Field> fields = page.FieldsInTabOrder;
-string s = "";
-foreach (Field field in fields)
-{
-	s += field.PartialName;
-}
-(doc.Form[3] as Field).TabOrder = 1;
-(doc.Form[1] as Field).TabOrder = 2;
-(doc.Form[2] as Field).TabOrder = 3;
-doc.Save(dataDir + "39522_out.pdf");
 Document doc1 = new Document(dataDir + "39522_out.pdf");
-s = "";
-foreach (Field field in doc1.Pages[1].FieldsInTabOrder)
-{
-	s += field.PartialName;
-}
 string index = "";
 foreach (Field field in doc1.Form)
 {
-	index += field.TabOrder;
+    index += field.TabOrder + ", ";
 }
 ```
 
+Questo codice carica il documento aggiornato e restituisce il nuovo ordine di tabulazione per tutti i campi. Garantisce che le modifiche siano state apportate correttamente.
+
+---
+
 ## Conclusione
 
-In questo tutorial, abbiamo imparato come recuperare i campi del modulo in ordine di tabulazione usando Aspose.PDF per .NET. Abbiamo trattato i passaggi necessari per caricare un documento PDF, recuperare i campi del modulo in ordine di tabulazione, modificare l'ordine di tabulazione e salvare il documento modificato. Seguendo questi passaggi, puoi lavorare in modo efficiente con i campi del modulo e personalizzare la loro sequenza di tabulazione in base alle tue esigenze.
+Ed ecco fatto! Recuperare e modificare l'ordine di tabulazione dei campi del modulo nei documenti PDF non è solo gestibile, ma anche essenziale per creare un'esperienza utente fluida. Utilizzando Aspose.PDF per .NET, puoi facilmente controllare il modo in cui gli utenti navigano nei tuoi moduli PDF, assicurandoti che tutto funzioni esattamente come ti aspetti.
 
+## Domande frequenti
 
-### Domande frequenti
+### Posso applicare questo metodo ai moduli PDF multipagina?  
+Sì, puoi. Accedi semplicemente alla pagina specifica in cui si trovano i campi del modulo e applica lo stesso metodo.
 
-#### D: Come posso utilizzare i campi del modulo recuperati nel mio codice C# per ulteriori elaborazioni?
+### Come faccio a installare Aspose.PDF per .NET nel mio progetto?  
+Puoi scaricare la libreria da[Qui](https://releases.aspose.com/pdf/net/) e integrarlo utilizzando NuGet in Visual Studio.
 
- A: Puoi utilizzare i campi del modulo recuperati nel tuo codice C# accedendo alle loro proprietà come`Value`, `Name`, `Rect`ecc. Queste proprietà consentono di leggere e modificare i dati dei campi del modulo in base alle proprie esigenze.
+### Posso riordinare i campi nella stessa pagina?  
+ Assolutamente! Usa semplicemente il`TabOrder`proprietà per personalizzare l'ordine dei campi in qualsiasi pagina.
 
-#### D: Posso recuperare i campi modulo da tutte le pagine del documento PDF in ordine di tabulazione?
+### Cosa succede se non specifico l'ordine di tabulazione?  
+Se non si imposta esplicitamente l'ordine di tabulazione, i campi seguiranno l'ordine predefinito in base al modo in cui sono stati aggiunti al PDF.
 
- A: Sì, puoi recuperare i campi del modulo da tutte le pagine del documento PDF scorrendo ogni pagina e accedendo al`FieldsInTabOrder` proprietà come mostrato nel tutorial. Questo ti darà campi del modulo ordinati in base alla loro sequenza di tabulazione in tutte le pagine.
-
-#### D: È possibile recuperare solo tipi specifici di campi modulo, come campi di testo o caselle di controllo, nell'ordine di tabulazione?
-
-R: Sì, puoi filtrare i campi del modulo in base al loro tipo, come campi di testo o caselle di controllo, dopo averli recuperati in ordine di tabulazione. Puoi usare istruzioni condizionali per controllare il tipo di ogni campo del modulo ed elaborarli di conseguenza.
-
-#### D: Posso recuperare i campi del modulo in base ai loro nomi anziché in base all'ordine di tabulazione?
-
- A: Sì, puoi recuperare i campi del modulo in base ai loro nomi utilizzando`doc.Form` raccolta e specificando il nome del campo come indice. Ad esempio,`doc.Form["fieldName"]`recupererà il campo del modulo con il nome specificato.
-
-#### D: Aspose.PDF per .NET supporta l'utilizzo di documenti PDF crittografati?
-
-R: Sì, Aspose.PDF per .NET fornisce supporto per lavorare con documenti PDF crittografati. Puoi caricare e manipolare file PDF crittografati utilizzando parametri di password appropriati.
+### È possibile aggiungere nuovi campi al modulo tramite programmazione?  
+Sì, Aspose.PDF consente di creare e aggiungere nuovi campi modulo a livello di programmazione.

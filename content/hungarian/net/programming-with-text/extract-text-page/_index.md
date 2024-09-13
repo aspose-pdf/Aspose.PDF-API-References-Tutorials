@@ -31,7 +31,7 @@ using System.IO;
  A kódban keresse meg azt a sort, amely ezt mondja`string dataDir = "YOUR DOCUMENT DIRECTORY";` és cserélje ki`"YOUR DOCUMENT DIRECTORY"` annak a könyvtárnak az elérési útjával, ahol a dokumentumokat tárolják.
 
 ## 4. lépés: Nyissa meg a PDF dokumentumot
- Nyisson meg egy meglévő PDF dokumentumot a`Document` konstruktort, és átadja a bemeneti PDF-fájl elérési útját.
+ Nyisson meg egy meglévő PDF dokumentumot a`Document`konstruktort, és átadja a bemeneti PDF-fájl elérési útját.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
@@ -112,7 +112,7 @@ using System.IO;
 
 #### K: Hogyan tudok szöveget kivonni egy adott oldalról?
 
- V: Az 5. lépés az a`TextAbsorber` objektum a szöveg kivonásához a PDF-dokumentumból. Ezután elfogadja a kívánt oldal elnyelőjét a következőn keresztül`Pages` gyűjteménye a`pdfDocument`.
+ V: Az 5. lépés az a`TextAbsorber` objektum a szöveg kinyeréséhez a PDF dokumentumból. Ezután elfogadja a kívánt oldal elnyelőjét a következőn keresztül`Pages` gyűjteménye a`pdfDocument`.
 
 #### K: Hogyan férhetek hozzá a kivonatolt szöveghez?
 

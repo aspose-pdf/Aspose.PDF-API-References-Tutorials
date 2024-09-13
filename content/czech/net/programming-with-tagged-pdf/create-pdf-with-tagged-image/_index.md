@@ -7,7 +7,7 @@ type: docs
 weight: 40
 url: /cs/net/programming-with-tagged-pdf/create-pdf-with-tagged-image/
 ---
-V tomto tutoriálu vám poskytneme podrobný návod, jak vytvořit dokument PDF s tagovaným obrázkem pomocí Aspose.PDF for .NET. Aspose.PDF je výkonná knihovna, která vám umožňuje programově vytvářet, manipulovat a převádět dokumenty PDF. Pomocí funkcí struktury tagovaného obsahu Aspose.PDF můžete do dokumentu PDF přidat tagované obrázky.
+tomto tutoriálu vám poskytneme podrobný návod, jak vytvořit dokument PDF s tagovaným obrázkem pomocí Aspose.PDF for .NET. Aspose.PDF je výkonná knihovna, která vám umožňuje programově vytvářet, manipulovat a převádět dokumenty PDF. Pomocí funkcí struktury tagovaného obsahu Aspose.PDF můžete do dokumentu PDF přidat tagované obrázky.
 
 ## Předpoklady
 
@@ -84,7 +84,7 @@ document.Save(dataDir + "PDFwithTaggedImage.pdf");
 
 ## Závěr
 
-V tomto tutoriálu jste se naučili, jak vytvořit dokument PDF s tagovaným obrázkem pomocí Aspose.PDF for .NET. Tagované obrázky přidávají do vašeho dokumentu PDF další, strukturované informace.
+tomto tutoriálu jste se naučili, jak vytvořit dokument PDF s tagovaným obrázkem pomocí Aspose.PDF for .NET. Tagované obrázky přidávají do vašeho dokumentu PDF další, strukturované informace.
 
 ### FAQ
 
@@ -110,9 +110,9 @@ Odpověď: Ano, pro označený obrázek můžete použít různé formáty obrá
 
 #### Otázka: Jak se v označených obrázcích používá alternativní text (alt text)?
 
- Odpověď: Alternativní text poskytuje textový popis obrázku, který je nahlas čten čtečkami obrazovky pro zrakově postižené uživatele. V poskytnutém kódu je alternativní text nastaven pomocí`AlternativeText` majetek z`IllustrationElement` představující označený obrázek.
+ Odpověď: Alternativní text poskytuje textový popis obrázku, který je nahlas čten čtečkami obrazovky pro zrakově postižené uživatele. V poskytnutém kódu je alternativní text nastaven pomocí`AlternativeText` vlastnictví`IllustrationElement` představující označený obrázek.
 
-####  Otázka: Jak to`SetTitle` method contribute to the PDF document's tagged image?
+#### Otázka: Jak to`SetTitle` method contribute to the PDF document's tagged image?
 
  A:`SetTitle` metoda nastavuje název tagovaného obsahu dokumentu PDF a poskytuje další kontext pro tagovaný obraz. Tento název může pomoci identifikovat účel nebo předmět označeného obsahu.
 
@@ -126,4 +126,4 @@ Odpověď: Používáním funkcí struktury tagovaného obsahu Aspose.PDF a posk
 
 #### Otázka: Je možné přidat více tagovaných obrázků do stejného dokumentu PDF pomocí podobných technik?
 
- Odpověď: Ano, pomocí podobných technik můžete do stejného dokumentu PDF přidat více tagovaných obrázků. Vytvořili byste další`IllustrationElement` instance pro každý tagovaný obrázek a upravte jejich vlastnosti podle potřeby.
+Odpověď: Ano, pomocí podobných technik můžete do stejného dokumentu PDF přidat více tagovaných obrázků. Vytvořili byste další`IllustrationElement` instance pro každý tagovaný obrázek a upravte jejich vlastnosti podle potřeby.

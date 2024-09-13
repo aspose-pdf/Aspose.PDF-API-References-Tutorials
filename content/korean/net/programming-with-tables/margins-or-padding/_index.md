@@ -63,7 +63,7 @@ tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
 이제 테이블에 행과 셀을 추가해 보겠습니다. 새 행을 만들고 셀을 추가합니다.
 
 ```csharp
-// 표에 행을 만든 다음 행에 셀을 만듭니다.
+//표에 행을 만든 다음 행에 셀을 만듭니다.
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -117,7 +117,7 @@ margin.Right = 5f;
 margin.Bottom = 5f;
 // MarginInfo 개체에 기본 셀 패딩을 설정합니다.
 tab1.DefaultCellPadding = margin;
-// 표에 행을 만든 다음 행에 셀을 만듭니다.
+//표에 행을 만든 다음 행에 셀을 만듭니다.
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -145,7 +145,7 @@ Console.WriteLine("\nCell and table border width setup successfully.\nFile saved
 
 #### 질문: 표의 각 셀에 대해 다른 여백이나 패딩을 설정할 수 있나요?
 
-A: 네, Aspose.PDF for .NET을 사용하여 테이블의 개별 셀에 대해 다른 여백이나 패딩을 설정할 수 있습니다. 제공된 예에서 전체 테이블에 대한 기본 셀 패딩을 다음을 사용하여 설정합니다.`DefaultCellPadding` 속성. 특정 셀에 대해 다른 패딩을 설정하려면 다음을 액세스할 수 있습니다.`MarginInfo` 각 셀을 개별적으로 선택하고 여백을 수정합니다.
+ A: 네, Aspose.PDF for .NET을 사용하여 테이블의 개별 셀에 대해 다른 여백이나 패딩을 설정할 수 있습니다. 제공된 예에서 전체 테이블에 대한 기본 셀 패딩을 다음을 사용하여 설정합니다.`DefaultCellPadding` 속성. 특정 셀에 대해 다른 패딩을 설정하려면 다음을 액세스할 수 있습니다.`MarginInfo` 각 셀을 개별적으로 선택하고 여백을 수정합니다.
 
 #### 질문: 표의 테두리 색상이나 스타일을 어떻게 변경할 수 있나요?
 
@@ -161,4 +161,4 @@ A: 네, Aspose.PDF for .NET을 사용하여 표에 머리글이나 바닥글을 
 
 #### 질문: 텍스트 대신 표 셀에 이미지를 추가할 수 있나요?
 
- A: 네, Aspose.PDF for .NET을 사용하여 표 셀에 이미지를 추가할 수 있습니다.`TextFragment` 객체를 만들 수 있습니다`Image` 객체를 선택하고 이미지 파일을 로드한 후 원하는 셀에 추가합니다.`cell.Paragraphs.Add(image);` 방법. 이를 통해 텍스트 콘텐츠와 함께 표에 이미지를 삽입할 수 있습니다.
+ A: 네, Aspose.PDF for .NET을 사용하여 표 셀에 이미지를 추가할 수 있습니다.`TextFragment` 객체를 만들 수 있습니다`Image` 객체를 선택하고 이미지 파일을 로드한 후 원하는 셀에 추가합니다.`cell.Paragraphs.Add(image);`방법. 이를 통해 텍스트 콘텐츠와 함께 표에 이미지를 삽입할 수 있습니다.

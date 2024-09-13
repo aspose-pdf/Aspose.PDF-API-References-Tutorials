@@ -64,7 +64,7 @@ Cell cell = table.getRows().get_Item(0).getCells().get_Item(0); // Ersätt med r
 cell.getParagraphs().get_Item(0).setText("New Data");
 ```
 
-### Lägga till nya tabeller i en PDF
+### Lägga till nya tabeller till en PDF
 
 Om du behöver lägga till nya tabeller till PDF:en kan du skapa dem programmatiskt och lägga till dem på en sida:
 

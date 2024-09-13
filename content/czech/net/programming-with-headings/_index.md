@@ -13,4 +13,4 @@ Prozkoumejte funkce Aspose.PDF pro .NET pomocí specializovaných výukových pr
 ## Tutoriály
 | Titul | Popis |
 | --- | --- | 
-| [Použít styl čísel v souboru PDF](./apply-number-style/) | Naučte se, jak použít styl číslování na nadpisy v souboru PDF pomocí Aspose.PDF pro .NET. Průvodce krok za krokem. |   
+| [Použít styl čísel v souboru PDF](./apply-number-style/) | Naučte se, jak používat různé styly čísel (římské číslice, abecední) na nadpisy v PDF pomocí Aspose.PDF for .NET pomocí tohoto podrobného průvodce. |   

@@ -112,7 +112,7 @@ R : Oui, vous pouvez utiliser différents formats d'image pour l'image balisée,
 
  A : Le texte alternatif fournit une description textuelle de l'image, qui est lue à haute voix par les lecteurs d'écran pour les utilisateurs malvoyants. Dans le code fourni, le texte alternatif est défini à l'aide de`AlternativeText` propriété de la`IllustrationElement` représentant l'image étiquetée.
 
-####  Q : Comment fonctionne le`SetTitle` method contribute to the PDF document's tagged image?
+####  : Comment fonctionne le`SetTitle` method contribute to the PDF document's tagged image?
 
  A : Le`SetTitle` La méthode définit le titre du contenu balisé du document PDF, fournissant ainsi un contexte supplémentaire pour l'image balisée. Ce titre peut aider à identifier le but ou le sujet du contenu balisé.
 
@@ -122,8 +122,8 @@ R : Oui, vous pouvez utiliser différents formats d'image pour l'image balisée,
 
 #### Q : Comment puis-je garantir que l’image balisée est accessible et conforme aux normes d’accessibilité ?
 
-: En utilisant les fonctionnalités de structure de contenu balisé d'Aspose.PDF et en fournissant du texte alternatif et d'autres informations pertinentes, vous contribuez à l'accessibilité de l'image balisée. La conformité aux normes d'accessibilité implique de suivre les meilleures pratiques en matière de texte alternatif et de structure du document.
+R : En utilisant les fonctionnalités de structure de contenu balisé d'Aspose.PDF et en fournissant du texte alternatif et d'autres informations pertinentes, vous contribuez à l'accessibilité de l'image balisée. La conformité aux normes d'accessibilité implique de suivre les meilleures pratiques en matière de texte alternatif et de structure du document.
 
 #### Q : Est-il possible d’ajouter plusieurs images balisées au même document PDF en utilisant des techniques similaires ?
 
- R : Oui, vous pouvez ajouter plusieurs images balisées au même document PDF en utilisant des techniques similaires. Vous créeriez des images supplémentaires`IllustrationElement` instances pour chaque image balisée et personnalisez leurs propriétés selon vos besoins.
+ : Oui, vous pouvez ajouter plusieurs images balisées au même document PDF en utilisant des techniques similaires. Vous créeriez des images supplémentaires`IllustrationElement` instances pour chaque image balisée et personnalisez leurs propriétés selon vos besoins.

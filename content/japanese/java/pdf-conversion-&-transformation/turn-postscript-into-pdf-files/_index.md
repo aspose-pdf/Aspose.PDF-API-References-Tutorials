@@ -69,7 +69,7 @@ pdfDocument.save("output.pdf");
 
 はい、Aspose.PDF の機能と API を使用して、変換された PDF のレイアウト、書式設定、その他の側面をカスタマイズできます。
 
-### Aspose.PDF for Java を使用して PostScript を PDF に変換する場合、制限はありますか?
+### Aspose.PDF for Java を使用して PostScript を PDF に変換する場合、何か制限はありますか?
 
 変換プロセスは、元の PostScript ファイルの複雑さに大きく依存します。PostScript の一部の高度な機能は、変換ではサポートされない場合があります。
 

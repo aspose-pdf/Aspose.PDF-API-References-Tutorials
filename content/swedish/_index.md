@@ -17,7 +17,7 @@ Det här är länkar till några användbara resurser:
 - [Programmering med dokument](./net/programming-with-document/)
 - [Programmering med anteckningar](./net/annotations/)  
 - [Dokumentkonvertering](./net/document-conversion/)
-- [Programmering med formulär](./net/programming-with-forms/)
+- [Programmering med Forms](./net/programming-with-forms/)
 - [Programmering med tabeller](./net/programming-with-tables/) 
 - [Programmering med PDF-sidor](./net/programming-with-pdf-pages/)
 - [Programmering med grafer](./net/programming-with-graphs/)

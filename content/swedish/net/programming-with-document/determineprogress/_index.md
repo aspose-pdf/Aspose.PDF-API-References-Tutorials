@@ -1,7 +1,7 @@
 ---
 title: Bestäm framsteg till PDF-fil
 linktitle: Bestäm framsteg till PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du avgör framstegen för PDF-konverteringar med Aspose.PDF för .NET i den här omfattande guiden.
 type: docs
 weight: 110

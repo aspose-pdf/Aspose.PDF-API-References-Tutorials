@@ -119,7 +119,7 @@ R: O exemplo de código demonstra como criar um documento PDF, definir vários e
 
 R: Sim, você pode adicionar outros elementos de texto marcados, como listas, links ou outras estruturas personalizadas usando técnicas semelhantes. O Aspose.PDF fornece vários métodos para criar diferentes tipos de conteúdo marcado, permitindo que você aprimore a semântica do documento.
 
-####  P: Como é que o`SetTitle` method contribute to the PDF document's tagged text?
+#### P: Como é que o`SetTitle` method contribute to the PDF document's tagged text?
 
  A: O`SetTitle` O método define o título do conteúdo marcado do documento PDF, fornecendo uma breve descrição do propósito ou assunto do documento. Essas informações ajudam os usuários a entender o contexto do texto marcado.
 
@@ -127,9 +127,9 @@ R: Sim, você pode adicionar outros elementos de texto marcados, como listas, li
 
 A: Texto marcado adiciona significado semântico ao documento, tornando-o mais acessível a usuários com deficiências ou aqueles que usam tecnologias assistivas. Leitores de tela e outros dispositivos assistivos podem interpretar e apresentar texto marcado para uma melhor experiência do usuário.
 
-####  P: Como é que o`SetLanguage` method enhance the tagged text in a PDF document?
+#### P: Como é que o`SetLanguage` method enhance the tagged text in a PDF document?
 
- A: O`SetLanguage`método define o atributo de idioma do conteúdo marcado do documento PDF. Isso ajuda a indicar o idioma no qual o texto marcado é escrito, melhorando a acessibilidade e permitindo a renderização adequada específica do idioma.
+ A: O`SetLanguage` método define o atributo de idioma do conteúdo marcado do documento PDF. Isso ajuda a indicar o idioma no qual o texto marcado é escrito, melhorando a acessibilidade e permitindo a renderização adequada específica do idioma.
 
 #### P: É possível adicionar outros elementos, como imagens ou multimídia, junto com o texto marcado usando técnicas semelhantes?
 

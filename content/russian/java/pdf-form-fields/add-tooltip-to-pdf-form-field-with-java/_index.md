@@ -60,7 +60,7 @@ textField.setTooltip("Enter your name here");
 После добавления полей формы и всплывающих подсказок не забудьте сохранить PDF-документ.
 
 ```java
-// Java-код для сохранения PDF-документа
+// Код Java для сохранения документа PDF
 pdfDocument.save("sample.pdf");
 ```
 

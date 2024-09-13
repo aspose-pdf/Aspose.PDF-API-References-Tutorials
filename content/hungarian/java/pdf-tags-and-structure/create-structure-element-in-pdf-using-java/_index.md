@@ -1,6 +1,6 @@
 ---
-title: Struktúraelem létrehozása PDF-ben Java használatával
-linktitle: Struktúraelem létrehozása PDF-ben Java használatával
+title: Struktúraelem létrehozása PDF-ben Java segítségével
+linktitle: Struktúraelem létrehozása PDF-ben Java segítségével
 second_title: Aspose.PDF Java PDF feldolgozó API
 description: Ismerje meg, hogyan hozhat létre PDF szerkezeti elemeket Java nyelven az Aspose.PDF segítségével. Javítsa a PDF hozzáférhetőségét és a logikai tartalomáramlást.
 type: docs
@@ -41,7 +41,7 @@ pdfDocument.getPages().add().getParagraphs().add("This is a sample text paragrap
 ```
 
 ## 3. lépés: Struktúraelemek létrehozása
- Most hozzunk létre szerkezeti elemeket a tartalom logikai szerkezetének meghatározásához. Használhatunk szerkezeti elemeket, mint pl`<H1>`, `<H2>`, `<P>`, és mások a címsorok és bekezdések megjelenítésére.
+ Most hozzunk létre szerkezeti elemeket a tartalom logikai szerkezetének meghatározásához. Használhatunk szerkezeti elemeket, mint pl`<H1>`, `<H2>`, `<P>`és mások a címsorok és bekezdések megjelenítésére.
 
 ```java
 // Hozzon létre egy szerkezeti elemet az első címsorhoz

@@ -2,164 +2,191 @@
 title: 在 PDF 文件中填充描边文本
 linktitle: 在 PDF 文件中填充描边文本
 second_title: Aspose.PDF for .NET API 参考
-description: 了解如何使用 Aspose.PDF for .NET 轻松填充和勾勒 PDF 文件中的文本。
+description: 通过本包含实际示例的分步指南，学习如何使用 Aspose.PDF for .NET 轻松地在 PDF 文件中填充描边文本。
 type: docs
 weight: 90
 url: /zh/net/programming-with-stamps-and-watermarks/fill-stroke-text/
 ---
-在本教程中，我们将逐步指导您如何使用 Aspose.PDF for .NET 在 PDF 文件中填充和勾勒文本轮廓。我们将向您展示如何使用提供的 C# 源代码将填充和勾勒颜色应用于 PDF 文件中的文本。
+## 介绍
 
-## 步骤 1：设置环境
+您是否曾想修改 PDF 文件以使其脱颖而出？也许您需要添加醒目的水印或粗体印章，使重要文档毫无疑问属于您。使用 Aspose.PDF for .NET，您可以轻松地在 PDF 文件中填充描边文本，增添引人注目的艺术气息。在今天的教程中，我们将逐步介绍使用 C# 在 PDF 中填充描边文本的过程。到最后，您将掌握如何像专业人士一样操作 PDF 文件。
 
-开始之前，请确保您已准备好以下物品：
+## 先决条件
 
-- 已安装的 .NET 开发环境。
-- 已下载并引用适用于 .NET 的 Aspose.PDF 库到您的项目中。
+在我们深入研究编码之前，您需要做好一些准备工作，以使本教程变得轻松：
 
-## 步骤 2：创建 TextState 对象
+1. Visual Studio：确保您的机器上安装了 Visual Studio，因为我们将编写 C# 代码。
+2.  Aspose.PDF 库：请确保您已下载 Aspose.PDF for .NET 库。您可以获取它[这里](https://releases.aspose.com/pdf/net/).
+3. C# 基础知识：熟悉 C# 编程将帮助您更轻松地理解本教程。
+4. 示例 PDF 文件：您需要一个示例 PDF 文件（`input.pdf`用于测试目的。您可以创建一个简单的 PDF 或使用任何现有的 PDF。
 
-第一步是创建一个 TextState 对象来传递高级属性。操作方法如下：
+现在我们已经准备好一切，让我们开始详细了解如何在 PDF 文件中填充描边文本。
+
+## 导入包
+
+首先，我们需要导入必要的软件包。以下是我们项目必需导入内容的简要概述：
 
 ```csharp
-//创建 TextState 对象来传输高级属性
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+这些包将允许我们使用 Aspose.PDF 库的强大功能。
+
+让我们将主要任务分解为清晰的步骤。按照这些步骤，您可以轻松地将描边文本填充到 PDF 文件中。 
+
+## 步骤 1：设置您的环境
+
+首先，确保您已在 Visual Studio 项目中正确设置了所有内容。创建一个新项目或选择一个现有项目。如果您需要帮助，请按以下步骤操作：
+
+1. 打开 Visual Studio。
+2. 创建一个新的 C# 项目（例如，控制台应用程序）。
+3. 在解决方案资源管理器中右键单击项目，选择“管理 NuGet 包”。
+4. 搜索`Aspose.PDF`并安装它。
+
+## 第 2 步：定义文档目录
+
+每个旅程都需要一个起点，在我们的例子中，它是输入和输出文件所在的文档目录。 
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+代替`"YOUR DOCUMENT DIRECTORY"`与您输入的 PDF 文件所在的实际路径。 
+
+## 步骤 3：创建 TextState 对象
+
+此步骤是您开始定义要添加的文本的属性的地方。 
+
+```csharp
 TextState ts = new TextState();
+```
 
-//设置轮廓颜色
+这`TextState`对象将保存描边文本的样式选项。
+
+## 步骤 4：设置描边颜色
+
+接下来，您需要定义文本描边的颜色。 
+
+```csharp
 ts.StrokingColor = Color.Gray;
+```
 
-//定义文本渲染模式
+在此代码中，我们使用灰色作为描边。您可以随意更改颜色以满足您的需要！
+
+## 步骤5：配置渲染模式
+
+为了确保您的文本按预期显示，请设置渲染模式：
+
+```csharp
 ts.RenderingMode = TextRenderingMode.StrokeText;
 ```
 
-上述代码创建了一个新的 TextState 对象并设置了轮廓颜色以及文本的呈现方式。
+这会指示 Aspose 库我们正在处理描边文本。
 
-## 步骤 3：加载 PDF 文档
+## 步骤 6：加载输入 PDF 文档
 
-现在 TextState 对象已准备就绪，我们可以将 PDF 文档加载到我们想要应用文本填充和轮廓的位置。操作方法如下：
+现在是时候加载您要修改的 PDF 文件了。 
 
 ```csharp
-//加载 PDF 文档作为输入
 Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
 ```
 
-上述代码使用 Aspose.PDF.Facades 库中的 PdfFileStamp 类加载现有的 PDF 文档。
+确保您输入的 PDF (`input.pdf`位于前面步骤中定义的文档目录中。
 
-## 步骤 4：为文本添加填充和描边
+## 步骤 7：创建印章对象
 
-现在 PDF 文档已加载，我们可以为文本添加填充和轮廓。操作方法如下：
+接下来，创建一个可以容纳您的笔划文字的图章。 
 
 ```csharp
-//创建具有定义文本和属性的印章（Stamp）
 Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
+```
+
+此印章将用于将您的文本覆盖在 PDF 上。
+
+## 步骤 8：定义要印章的文本
+
+您需要指定要添加到 PDF 的文本：
+
+```csharp
 stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
+```
 
-//绑定 TextState 对象
+这里，我们要添加的文字是“已全额付款”，以及其样式属性。根据您的要求进行自定义！
+
+## 步骤 9：绑定文本状态
+
+现在，绑定`TextState`您先前已定义该印章。 
+
+```csharp
 stamp.BindTextState(ts);
+```
 
-//设置原点 X, Y
+此步骤将所有样式（例如颜色和渲染模式）应用于您的文本。
+
+## 步骤 10：设置印章的位置
+
+确定您的印章在 PDF 中出现的位置：
+
+```csharp
 stamp.SetOrigin(100, 100);
-stamp. Opacity = 5;
+```
+
+论点`(100, 100)`表示文本原点的 X 和 Y 坐标（以点为单位）。调整这些值以完美定位您的文本！
+
+## 步骤 11：配置不透明度和旋转
+
+您可以在这里尝试改变文本的外观：
+
+```csharp
+stamp.Opacity = 5;
 stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
 stamp.Rotation = 45.0F;
-stamp. IsBackground = false;
+```
 
-//在文件上加盖印章
+在本例中，不透明度值和 45 度的旋转角度会为您的文本增添独特的魅力。您可以随意修改这些设置以获得不同的效果。
+
+## 步骤 12：将图章添加到 PDF
+
+这是至关重要的一步，我们最终将包含描边文本的印章添加到 PDF 中：
+
+```csharp
 fileStamp.AddStamp(stamp);
 ```
 
-上述代码使用指定的文本以及定义的填充和描边属性创建了一个印章。
+就这样，您的文本就可以发表声明了！
 
-## 步骤 5：保存输出文档
+## 步骤 13：保存并关闭文档
 
-添加文本标记后，我们可以保存修改后的 PDF 文档。操作方法如下：
+最后，保存您的更改并确保所有内容都已正确清理。 
 
 ```csharp
-//保存修改后的文档
 fileStamp.Save(dataDir + "output_out.pdf");
 fileStamp.Close();
 ```
 
-上述代码将编辑后的PDF文档保存到指定目录。
-
-### 使用 Aspose.Pdf for .NET 填充描边文本的示例源代码 
-```csharp
-
-//文档目录的路径。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-//创建 TextState 对象来传输高级属性
-TextState ts = new TextState();
-
-//设置描边颜色
-ts.StrokingColor = Color.Gray;
-
-//设置文本渲染模式
-ts.RenderingMode = TextRenderingMode.StrokeText;
-
-//加载输入 PDF 文档
-Facades.PdfFileStamp fileStamp = new Facades.PdfFileStamp(new Aspose.Pdf.Document(dataDir + "input.pdf"));
-Aspose.Pdf.Facades.Stamp stamp = new Aspose.Pdf.Facades.Stamp();
-stamp.BindLogo(new Facades.FormattedText("PAID IN FULL", System.Drawing.Color.Gray, "Arial", Facades.EncodingType.Winansi, true, 78));
-
-//绑定 TextState
-stamp.BindTextState(ts);
-
-//设置 X,Y 原点
-stamp.SetOrigin(100, 100);
-stamp.Opacity = 5;
-stamp.BlendingSpace = Facades.BlendingColorSpace.DeviceRGB;
-stamp.Rotation = 45.0F;
-stamp.IsBackground = false;
-
-//添加图章
-fileStamp.AddStamp(stamp);
-fileStamp.Save(dataDir + "ouput_out.pdf");
-fileStamp.Close();
-
-```
+您新修改的包含描边文本的 PDF 文件将保存为`output_out.pdf`在您的文档目录中。 
 
 ## 结论
 
-恭喜！您已经学会了如何使用 Aspose.PDF for .NET 在 PDF 文档中填充和勾勒文本轮廓。现在您可以运用这些知识自定义 PDF 文档中的填充和轮廓颜色。
+就这样！按照这些简单的步骤，您可以使用 Aspose.PDF for .NET 轻松地在 PDF 文件中填充描边文本。无论是商业文档还是个人项目，此技术都可以让您的 PDF 增添独特的风格，让它们在任何一叠纸张中脱颖而出。
 
-### PDF 文件中填充描边文本的常见问题解答
+## 常见问题解答
 
-#### 问：在 PDF 文档中填充和勾勒文本是什么意思？什么时候需要这样做？
+### 什么是 Aspose.PDF for .NET？
+Aspose.PDF for .NET 是一个库，允许开发人员以编程方式创建、操作和转换 PDF 文件。
 
-答：在 PDF 文档中填充和勾勒文本轮廓涉及将颜色应用于文本字符内部（填充）和文本周围的边框（勾勒）。这可用于增强文本的视觉效果、强调或突出显示 PDF 中的特定内容。
+### 我可以免费使用 Aspose.PDF 吗？
+是的，Aspose 提供免费试用。您可以获得它[这里](https://releases.aspose.com/).
 
-#### 问：提供的 C# 源代码如何实现 PDF 文件中文本的填充和描边？
+### 我需要支付许可证费用吗？
+虽然图书馆有免费试用版，但也可以在以下网址购买临时许可证：[此链接](https://purchase.aspose.com/temporary-license/).
 
-答：提供的源代码演示了如何创建`TextState`对象定义高级文本属性，例如轮廓颜色和渲染模式。然后使用 Aspose.PDF.Facades 加载现有 PDF 文档，创建包含具有指定填充和描边属性的文本的印章，并将印章添加到文档中。
+### 在哪里可以找到该文档？
+您可以访问完整文档[这里](https://reference.aspose.com/pdf/net/).
 
-#### 问：`TextState` object in the code?
-
-答：`TextState`对象用于定义高级文本属性，包括文本轮廓（描边）的颜色和渲染模式。它允许您自定义文本在描边和填充方面的显示方式。
-
-#### 问：我可以对同一文本的不同部分应用不同的填充和轮廓颜色吗？
-
-答：是的，你可以修改代码来创建不同的`TextState`具有不同填充和轮廓颜色的对象，并使用单独的`Stamp`对象。
-
-#### 问：我可以将填充和轮廓颜色应用于 PDF 文档中已有的文本吗？
-
-答：是的，您可以使用类似的原理将填充和轮廓颜色应用于 PDF 文档中的现有文本，方法是选择适当的文本对象并将其添加为具有所需颜色的图章`TextState`特性。
-
-#### 问：如何调整填充和轮廓文本的不透明度和混合？
-
-答：提供的代码允许您使用以下代码设置印章的不透明度和混合属性：`Opacity`和`BlendingSpace`属性。您可以调整这些值以实现所需的视觉效果。
-
-#### 问：如何对同一 PDF 文档中的多个印章应用不同的填充和轮廓颜色？
-
-答：您可以创建多个`TextState`具有不同填充和轮廓颜色的对象，然后创建单独的`Stamp`为每组文本添加不同的颜色对象。使用`PdfFileStamp`班级。
-
-#### 问：我可以使用 Arial 以外的字体来表示轮廓和填充的文本吗？
-
-答：是的，您可以通过修改字体名称参数来更改字体。`FormattedText`创建图章时，可以使用构造函数。您可以使用系统上可用的任何字体。
-
-#### 问：如何修改轮廓文字和填充文字的旋转角度？
-
-答：提供的代码允许您使用`Rotation`属性。您可以调整此属性来指定文本所需的旋转角度。
-
-#### 问：如何控制页面上轮廓文字和填充文字的位置和大小？
-
-答：您可以使用`SetOrigin`方法`Stamp`对象来设置印章在页面上的位置的 X 和 Y 坐标。此外，您还可以在`FormattedText`构造函数来控制文本的大小。
+### 如果我遇到问题，可以获得支持吗？
+当然！您可以在 Aspose 论坛上获得支持[这里](https://forum.aspose.com/c/pdf/10).

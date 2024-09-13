@@ -1,6 +1,6 @@
 ---
-title: การส่งออกข้อมูลเวิร์กชีต Excel ไปยังตาราง
-linktitle: การส่งออกข้อมูลเวิร์กชีต Excel ไปยังตาราง
+title: การส่งออกข้อมูลแผ่นงาน Excel ไปยังตาราง
+linktitle: การส่งออกข้อมูลแผ่นงาน Excel ไปยังตาราง
 second_title: เอกสารอ้างอิง Aspose.PDF สำหรับ API ของ .NET
 description: ส่งออกข้อมูลจากแผ่นงาน Excel ไปยังตาราง PDF โดยใช้ Aspose.PDF สำหรับ .NET
 type: docs

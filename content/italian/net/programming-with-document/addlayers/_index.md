@@ -17,7 +17,7 @@ Prima di intraprendere questo viaggio, ci sono alcuni prerequisiti che devi spun
 
 1. Nozioni di base di C#: poiché scriveremo in C#, una conoscenza di base del linguaggio ti aiuterà a comprendere il codice con cui lavorerai.
 2.  Aspose.PDF per la libreria .NET: dovrai avere la libreria Aspose.PDF installata nel tuo progetto .NET. Puoi scaricarla da[Sito web di Aspose](https://releases.aspose.com/pdf/net/).
-3. Visual Studio o qualsiasi IDE C#: per scrivere, compilare ed eseguire il tuo codice, avrai bisogno di un IDE configurato sulla tua macchina. Visual Studio è altamente consigliato per il suo supporto integrato per le applicazioni .NET.
+3. Visual Studio o qualsiasi IDE C#: per scrivere, compilare ed eseguire il tuo codice, avrai bisogno di un IDE configurato sul tuo computer. Visual Studio è altamente consigliato per il suo supporto integrato per le applicazioni .NET.
 4. Un esempio di documento PDF: sebbene questo tutorial si concentri sulla creazione di un nuovo PDF, può essere utile avere un esempio di PDF per testare i livelli.
 
 Hai tutto? Ottimo! Passiamo all'importazione dei pacchetti necessari.

@@ -1,7 +1,7 @@
 ---
 title: Lägg till textkant i PDF-fil
 linktitle: Lägg till textkant i PDF-fil
-second_title: Aspose.PDF för .NET API-referens
+second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du lägger till en textram i PDF-fil med Aspose.PDF för .NET.
 type: docs
 weight: 70
@@ -38,14 +38,14 @@ Document pdfDocument = new Document();
 ```
 
 ## Steg 5: Lägg till en sida i dokumentet
- Lägg till en ny sida i dokumentet med hjälp av`Add` metod för`Pages`samling. I den angivna koden är den nya sidan tilldelad variabeln`pdfPage`.
+ Lägg till en ny sida i dokumentet med hjälp av`Add` metod för`Pages` samling. I den angivna koden är den nya sidan tilldelad variabeln`pdfPage`.
 
 ```csharp
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
 ## Steg 6: Skapa ett TextFragment
- Skapa en`TextFragment` objekt och ge önskad text. Ställ in positionen för textfragmentet med hjälp av`Position` egendom. I den medföljande koden är texten inställd på "huvudtext" och placerad vid (100, 600) på sidan.
+ Skapa en`TextFragment`objekt och ge önskad text. Ställ in positionen för textfragmentet med hjälp av`Position` egendom. I den medföljande koden är texten inställd på "huvudtext" och placerad vid (100, 600) på sidan.
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -64,7 +64,7 @@ textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
 ```
 
 ## Steg 8: Aktivera textkant
- För att aktivera textramen, ställ in`DrawTextRectangleBorder`egenskapen hos textfragmentet`TextState` till`true`.
+ För att aktivera textramen, ställ in`DrawTextRectangleBorder` egenskapen hos textfragmentet`TextState` till`true`.
 
 ```csharp
 textFragment.TextState.DrawTextRectangleBorder = true;
@@ -151,7 +151,7 @@ Page pdfPage = (Page)pdfDocument.Pages.Add();
 
 #### F: Hur skapar jag ett TextFragment och ställer in dess position?
 
- S: I steg 6 skapar du en`TextFragment`objekt och ställ in dess position på sidan med hjälp av`Position` egendom:
+ S: I steg 6 skapar du en`TextFragment` objekt och ställ in dess position på sidan med hjälp av`Position` egendom:
 
 ```csharp
 TextFragment textFragment = new TextFragment("main text");
@@ -182,7 +182,7 @@ tb.AppendText(textFragment);
 
 #### F: Hur sparar jag det resulterande PDF-dokumentet?
 
- S: När du har lagt till texten med en ram, använd`Save` metod för`Document` objekt för att spara PDF-dokumentet:
+S: När du har lagt till texten med en ram, använd`Save` metod för`Document` objekt för att spara PDF-dokumentet:
 
 ```csharp
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");

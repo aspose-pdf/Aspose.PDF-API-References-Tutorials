@@ -106,4 +106,4 @@ Aspose.PDF kan goed overweg met afbeeldingen en deze worden opgenomen in het gec
  Ja, u kunt de`PptxSaveOptions` om verschillende instellingen voor het uitvoerbestand aan te passen.
 
 ### Waar kan ik meer documentatie vinden?
- U kunt uitgebreide documentatie vinden op Aspose.PDF voor .NET[hier](https://reference.aspose.com/pdf/net/).
+ Uitgebreide documentatie vindt u op Aspose.PDF voor .NET[hier](https://reference.aspose.com/pdf/net/).

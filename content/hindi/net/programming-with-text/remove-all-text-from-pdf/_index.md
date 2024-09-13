@@ -96,7 +96,7 @@ pdfDocument.Save(dataDir + "RemoveAllText_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 
 उत्तर: ट्यूटोरियल पूरे पीडीएफ दस्तावेज़ से सभी टेक्स्ट को हटाने पर केंद्रित है। यदि आप चुनिंदा क्षेत्रों से टेक्स्ट हटाना चाहते हैं, तो आपको दृष्टिकोण को संशोधित करने और विशिष्ट टेक्स्ट अंशों की पहचान करने और उन्हें हटाने के लिए अधिक जटिल तर्क का उपयोग करने की आवश्यकता होगी।
 
-####  प्रश्न:`TextFragmentAbsorber` work to remove text?
+#### प्रश्न:`TextFragmentAbsorber` work to remove text?
 
  उत्तर:`TextFragmentAbsorber`Aspose.PDF लाइब्रेरी द्वारा प्रदान किया गया एक वर्ग है जो PDF दस्तावेज़ से पाठ अंशों को अवशोषित कर सकता है।`RemoveAllText` की विधि`TextFragmentAbsorber` क्लास का उपयोग करके, आप दस्तावेज़ से सभी अवशोषित पाठ अंशों को हटा सकते हैं।
 

@@ -7,98 +7,115 @@ type: docs
 weight: 60
 url: /vi/net/programming-with-pdf-pages/get-dimensions/
 ---
-Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn từng bước để lấy kích thước trang trong tệp PDF bằng Aspose.PDF cho .NET. Chúng tôi sẽ giải thích mã nguồn C# được đóng gói và cung cấp cho bạn hướng dẫn toàn diện để giúp bạn hiểu và triển khai tính năng này trong các dự án của riêng bạn. Vào cuối hướng dẫn này, bạn sẽ biết cách lấy kích thước của một trang trong tệp PDF bằng Aspose.PDF cho .NET.
+## Giới thiệu
+
+Bạn đã bao giờ cần thao tác kích thước trang của một tài liệu PDF chưa? Có thể bạn muốn thay đổi kích thước trang hoặc xoay trang để phù hợp với nhu cầu của mình? Nếu vậy, bạn đã đến đúng nơi rồi! Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn cách lấy và sửa đổi kích thước trang PDF bằng Aspose.PDF cho .NET. Cho dù bạn là người mới bắt đầu hay là nhà phát triển dày dạn kinh nghiệm, bạn sẽ thấy hướng dẫn này đơn giản và dễ làm theo.
+
+Aspose.PDF for .NET là một thư viện mạnh mẽ cho phép bạn tạo, thao tác và chuyển đổi các tệp PDF một cách dễ dàng. Giống như có một con dao quân đội Thụy Sĩ cho PDF – bạn có thể điều chỉnh mọi chi tiết nhỏ để phù hợp với yêu cầu chính xác của mình. Vì vậy, hãy cùng tìm hiểu cách lấy và cập nhật kích thước trang PDF bằng công cụ tuyệt vời này!
 
 ## Điều kiện tiên quyết
-Trước khi bắt đầu, hãy đảm bảo bạn có những điều sau:
 
-- Kiến thức cơ bản về ngôn ngữ lập trình C#
-- Aspose.PDF cho .NET được cài đặt trong môi trường phát triển của bạn
+Trước khi bắt đầu, bạn cần chuẩn bị một số thứ để thực hiện hướng dẫn này một cách suôn sẻ:
 
-## Bước 1: Xác định thư mục tài liệu
-Đầu tiên, bạn cần thiết lập đường dẫn đến thư mục tài liệu của mình. Đây là vị trí lưu trữ tệp PDF của bạn. Thay thế "YOUR DOCUMENTS DIRECTORY" bằng đường dẫn phù hợp.
+1.  Aspose.PDF cho .NET: Bạn có thể[tải phiên bản mới nhất tại đây](https://releases.aspose.com/pdf/net/) . Nếu bạn không có giấy phép, đừng lo lắng! Bạn có thể yêu cầu[dùng thử miễn phí](https://releases.aspose.com/) , hoặc lựa chọn một[giấy phép tạm thời](https://purchase.aspose.com/temporary-license/).
+2. Visual Studio: Môi trường phát triển bạn sẽ sử dụng để viết và thực thi mã.
+3. Kiến thức cơ bản về C#: Mặc dù chúng tôi sẽ đơn giản hóa mọi thứ, nhưng một chút quen thuộc với C# sẽ giúp quá trình này trở nên dễ dàng hơn.
+4. Tệp PDF để làm việc: Lấy bất kỳ tệp PDF mẫu nào hoặc tạo một tệp PDF mới để kiểm tra.
+
+## Nhập gói
+
+Để làm việc với Aspose.PDF cho .NET, bạn cần nhập một số không gian tên thiết yếu. Điều này thiết lập giai đoạn tương tác với các tài liệu PDF. Sau đây là cách thực hiện:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-## Bước 2: Mở tài liệu PDF
- Sau đó, bạn có thể mở tệp PDF bằng cách sử dụng`Document` lớp Aspose.PDF. Hãy chắc chắn chỉ định đúng đường dẫn đến tệp PDF.
+Các lần nhập này đảm bảo rằng bạn có quyền truy cập vào các lớp cốt lõi cần thiết để thao tác với các tệp PDF, đặc biệt là để quản lý các trang và lấy kích thước của chúng.
+
+Bây giờ chúng ta đã có mọi thứ, hãy chia nhỏ quy trình thành các bước dễ thực hiện.
+
+## Bước 1: Xác định Đường dẫn Tệp và Tải Tài liệu
+
+Bước đầu tiên là chỉ định đường dẫn đến tài liệu PDF của bạn và tải nó bằng Aspose.PDF. Điều này sẽ cho phép bạn tương tác với các trang trong tệp PDF.
 
 ```csharp
-Document pdfDocument = new Document(dataDir + "UpdateDimensions.pdf");
-```
-
-## Bước 3: Thêm một trang trống (nếu cần)
- Nếu tài liệu PDF đã chứa các trang, bạn có thể chuyển đến một trang hiện có bằng cách sử dụng chỉ mục`1` (trang đầu tiên có chỉ mục là 1). Nếu không, bạn có thể thêm trang mới vào tài liệu.
-
-```csharp
-Page page = pdfDocument.Pages.Count > 0? pdfDocument.Pages[1] : pdfDocument.Pages.Add();
-```
-
-## Bước 4: Lấy kích thước trang
- Bây giờ bạn có thể lấy kích thước trang bằng cách sử dụng`GetPageRect()` phương pháp của`Page` đối tượng. Phương pháp này trả về một`Rectangle` đối tượng chứa các kích thước của trang. Bạn có thể truy cập chiều rộng và chiều cao bằng cách sử dụng`Width` Và`Height` của cải.
-
-```csharp
-Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRect(true).Height);
-```
-
-## Bước 5: Xoay trang
- Nếu bạn muốn xoay trang, bạn có thể sử dụng`Rotate` tài sản của`Page`đối tượng. Trong ví dụ này, trang được xoay 90 độ.
-
-```csharp
-page. Rotate = Rotate. on90;
-```
-
-## Bước 6: Lấy lại kích thước trang
- Sau khi xoay trang, bạn có thể lấy lại kích thước trang bằng cách sử dụng`GetPageRect()` phương pháp.
-
-```csharp
-Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRect(true).Height);
-```
-
-### Mã nguồn mẫu cho Get Dimensions sử dụng Aspose.PDF cho .NET 
-
-```csharp
-
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+
 // Mở tài liệu
 Document pdfDocument = new Document(dataDir + "UpdateDimensions.pdf");
-// Thêm một trang trống vào tài liệu pdf
-Page page = pdfDocument.Pages.Count > 0 ? pdfDocument.Pages[1] : pdfDocument.Pages.Add();
-// Nhận thông tin chiều cao và chiều rộng của trang
-Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRect(true).Height);
-// Xoay trang ở góc 90 độ
-page.Rotate = Rotation.on90;
-// Nhận thông tin chiều cao và chiều rộng của trang
-Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRect(true).Height);
-
 ```
 
+Ở bước này, về cơ bản bạn đang mở tệp PDF mà bạn muốn làm việc. Nếu bạn đã từng mở một cuốn sách đến một trang cụ thể, thì điều này khá giống nhau – nhưng thay vào đó, bạn đang mở một tài liệu PDF để truy cập các trang của nó.
+
+## Bước 2: Thêm một trang trống nếu không có trang nào tồn tại
+
+Nếu tài liệu của bạn không có trang thì sao? Đừng lo! Chúng tôi có thể thêm một trang trống vào tài liệu và làm việc với trang đó. Sau đây là cách kiểm tra xem một trang có tồn tại hay không và thêm một trang mới nếu cần:
+
+```csharp
+// Thêm một trang trống vào tài liệu pdf
+Page page = pdfDocument.Pages.Count > 0 ? pdfDocument.Pages[1] : pdfDocument.Pages.Add();
+```
+
+Dòng mã này kiểm tra xem đã có trang nào trong tài liệu chưa. Nếu có, nó sẽ chọn trang đầu tiên (`Pages[1]`). Nếu không, nó sẽ tạo một trang trống và thêm vào PDF.
+
+Hãy nghĩ đến việc mở một cuốn sổ tay trống và viết lên trang đầu tiên nếu không có gì ở đó – dễ phải không?
+
+## Bước 3: Lấy thông tin về chiều cao và chiều rộng của trang
+
+ Bây giờ chúng ta đã có một trang để làm việc, hãy lấy kích thước của trang. Chúng ta sẽ sử dụng`GetPageRect()` phương pháp để lấy chiều cao và chiều rộng.
+
+```csharp
+// Nhận thông tin chiều cao và chiều rộng của trang
+Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRect(true).Height.ToString());
+```
+
+ Đây,`GetPageRect(true)` trả về một hình chữ nhật bao gồm chiều cao và chiều rộng của trang. Giống như việc đo một tờ giấy bằng thước kẻ. Đầu ra sẽ được hiển thị trong bảng điều khiển, cung cấp cho bạn kích thước trang hiện tại.
+
+## Bước 4: Xoay trang 90 độ
+
+Bạn có muốn xoay trang không? Không vấn đề gì! Với một thuộc tính đơn giản, bạn có thể xoay trang 90 độ.
+
+```csharp
+// Xoay trang ở góc 90 độ
+page.Rotate = Rotation.on90;
+```
+
+Bước này xoay trang theo chiều kim đồng hồ 90 độ. Hãy tưởng tượng bạn đang xoay một tờ giấy đã in trên bàn làm việc của mình – giờ thì nó ở chế độ ngang!
+
+## Bước 5: Kiểm tra lại Kích thước trang sau khi xoay
+
+Sau khi xoay trang, bạn nên kiểm tra lại kích thước. Tại sao? Bởi vì việc xoay có thể ảnh hưởng đến cách bạn diễn giải chiều cao và chiều rộng.
+
+```csharp
+// Nhận thông tin chiều cao và chiều rộng của trang
+Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRect(true).Height.ToString());
+```
+
+Bây giờ, kích thước trang sẽ được cập nhật dựa trên hướng mới. Giống như xoay ảnh trên điện thoại của bạn – đột nhiên, chiều rộng trở thành chiều cao và ngược lại.
+
+
 ## Phần kết luận
-Trong hướng dẫn này, chúng ta đã học cách lấy kích thước của một trang trong tệp PDF bằng Aspose.PDF cho .NET. Bằng cách làm theo các bước được cung cấp, bạn có thể dễ dàng trích xuất kích thước trang và thực hiện các thao tác xử lý PDF khác. Aspose.PDF cho .NET cung cấp tính linh hoạt tuyệt vời để làm việc với các tệp PDF và cho phép bạn phát triển các giải pháp mạnh mẽ và tùy chỉnh.
 
-Bạn có thể thoải mái khám phá thêm tài liệu của Aspose.PDF để tìm hiểu tất cả các tính năng mà thư viện này cung cấp.
+Xin chúc mừng! Bạn đã học thành công cách lấy và sửa đổi kích thước của trang PDF bằng Aspose.PDF cho .NET. Bây giờ, bạn có thể tải PDF, kiểm tra kích thước trang và thậm chí xoay trang nếu cần.
 
-### Câu hỏi thường gặp để lấy kích thước trang PDF
+Việc xử lý PDF không nhất thiết phải phức tạp. Với Aspose.PDF, chỉ cần làm theo một vài bước và sử dụng các phương pháp trực quan là đủ. Vì vậy, lần tới khi bạn cần xử lý kích thước trang PDF, bạn sẽ biết chính xác phải làm gì!
 
-#### H: Làm thế nào để lấy được kích thước của một trang cụ thể trong tệp PDF?
+## Câu hỏi thường gặp
 
-A: Để có được kích thước của một trang cụ thể trong tệp PDF, bạn có thể sử dụng`GetPageRect()` phương pháp của`Page` đối tượng trong Aspose.PDF cho .NET. Phương pháp này trả về một`Rectangle` đối tượng chứa kích thước (chiều rộng và chiều cao) của trang.
+### Tôi có thể xoay trang theo góc khác ngoài góc 90 độ không?
+ Có, Aspose.PDF cho phép bạn xoay các trang theo góc 0, 90, 180 hoặc 270 độ bằng cách sử dụng`Rotation` tài sản.
 
-####  Q: Cái gì làm`GetPageRect(true)` method do in the provided C# source code?
+### Điều gì xảy ra nếu tệp PDF của tôi không có trang?
+ Nếu tệp PDF của bạn không có trang nào, bạn có thể thêm một trang trống bằng cách sử dụng`Pages.Add()` phương pháp như được trình bày trong hướng dẫn này.
 
- A: Cái`GetPageRect(true)` phương pháp trong mã nguồn C# được cung cấp trả về kích thước của trang sau khi áp dụng bất kỳ phép xoay nào. Nếu trang được xoay, phương pháp sẽ trả về kích thước của trang được xoay, có thể khác với kích thước ban đầu.
+### Tôi có thể thao tác nhiều trang cùng lúc không?
+Có, bạn có thể lặp qua nhiều trang và áp dụng các phép biến đổi, như thay đổi kích thước hoặc xoay, cho tất cả các trang đó.
 
-#### H: Tôi có thể lấy kích thước của tất cả các trang trong tài liệu PDF bằng Aspose.PDF cho .NET không?
+### Kích thước trang có ảnh hưởng tới nội dung bên trong tệp PDF không?
+Kích thước trang chỉ thay đổi kích thước của canvas, không phải nội dung. Tuy nhiên, việc thay đổi kích thước có thể thay đổi cách nội dung hiển thị trên trang.
 
- A: Có, bạn có thể lấy kích thước của tất cả các trang trong tài liệu PDF bằng cách lặp lại qua`Pages` bộ sưu tập của`Document` đối tượng và sử dụng`GetPageRect(true)` phương pháp cho từng trang.
-
-#### H: Làm thế nào tôi có thể xác định hướng của một trang (dọc hay ngang) dựa trên kích thước của nó?
-
-A: Để xác định hướng của một trang dựa trên kích thước của nó, bạn có thể so sánh chiều rộng và chiều cao của trang. Nếu chiều rộng lớn hơn chiều cao, trang sẽ ở hướng ngang, và nếu chiều cao lớn hơn chiều rộng, trang sẽ ở hướng dọc.
-
-#### H: Tôi có thể sửa đổi kích thước của trang bằng Aspose.PDF cho .NET không?
-
- A: Có, bạn có thể sửa đổi kích thước của một trang trong Aspose.PDF cho .NET. Sau khi nhận được`Rectangle` Đối tượng đại diện cho kích thước trang, bạn có thể điều chỉnh chiều rộng và chiều cao theo yêu cầu của mình và sau đó áp dụng các thay đổi vào trang.
+### Tôi có thể tìm thêm thông tin về Aspose.PDF cho .NET ở đâu?
+ Bạn có thể ghé thăm[tài liệu ở đây](https://reference.aspose.com/pdf/net/) để biết thông tin chi tiết hơn và các trường hợp sử dụng nâng cao.

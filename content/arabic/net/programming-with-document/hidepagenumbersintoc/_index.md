@@ -2,109 +2,40 @@
 title: إخفاء أرقام الصفحات في جدول المحتويات
 linktitle: إخفاء أرقام الصفحات في جدول المحتويات
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: تعرف على كيفية إخفاء أرقام الصفحات في جدول المحتويات باستخدام Aspose.PDF لـ .NET من خلال هذا الدليل خطوة بخطوة.
+description: تعرف على كيفية إخفاء أرقام الصفحات في جدول المحتويات باستخدام Aspose.PDF لـ .NET. اتبع هذا الدليل التفصيلي مع أمثلة التعليمات البرمجية لإنشاء ملفات PDF احترافية.
 type: docs
 weight: 220
 url: /ar/net/programming-with-document/hidepagenumbersintoc/
 ---
-في هذه المقالة، سنناقش تنفيذ ميزة إخفاء أرقام الصفحات في جدول المحتويات في Aspose.PDF لـ .NET باستخدام C#. سنبدأ بمقدمة موجزة عن Aspose.PDF لـ .NET ثم ننتقل إلى الدليل خطوة بخطوة لتنفيذ هذه الميزة. 
+## مقدمة
 
-## مقدمة إلى Aspose.PDF لـ .NET
-
-يعد Aspose.PDF for .NET مكونًا قويًا لمعالجة ملفات PDF يتيح للمطورين إنشاء ملفات PDF وتحريرها ومعالجتها برمجيًا. وهو يوفر مجموعة واسعة من الميزات والوظائف التي تسهل العمل مع مستندات PDF. يدعم Aspose.PDF for .NET أنظمة التشغيل 32 بت و64 بت ويمكن استخدامه مع منصات .NET Framework و.NET Core وXamarin. 
-
-## ما هي ميزة إخفاء أرقام الصفحات في جدول المحتويات؟
-
-يُعد جدول المحتويات (TOC) جزءًا أساسيًا من مستند PDF يوفر للمستخدمين نظرة عامة سريعة على المحتوى. في بعض الأحيان، قد يرغب المستخدمون في إخفاء أرقام الصفحات في جدول المحتويات لجعله أكثر سهولة في الاستخدام. يوفر Aspose.PDF for .NET ميزة مدمجة لإخفاء أرقام الصفحات في جدول المحتويات. يمكن استخدام هذه الميزة لإنشاء مستندات PDF أكثر سهولة في الاستخدام. 
+عند العمل مع ملفات PDF، قد ترغب أحيانًا في إنشاء جدول محتويات (TOC) ولكن مع الحفاظ على المظهر الأنيق عن طريق إخفاء أرقام الصفحات. ربما يتدفق المستند بشكل أفضل بدونها، أو ربما يكون ذلك خيارًا جماليًا. أيًا كان السبب، إذا كنت تعمل مع Aspose.PDF لـ .NET، فسيوضح لك هذا البرنامج التعليمي بالضبط كيفية إخفاء أرقام الصفحات في جدول المحتويات الخاص بك.
 
 ## المتطلبات الأساسية
 
-لمتابعة هذا البرنامج التعليمي، ستحتاج إلى ما يلي:
+قبل أن نبدأ، هناك بعض الأشياء التي ستحتاج إليها. إليك قائمة مرجعية سريعة:
 
-- فيجوال ستوديو 2010 أو أحدث
-- تم تثبيت Aspose.PDF لـ .NET على نظامك
-- المعرفة الأساسية بلغة البرمجة C#
+- تم تثبيت Visual Studio: ستحتاج إلى إصدار عمل من Visual Studio لكتابة التعليمات البرمجية.
+- مكتبة Aspose.PDF لـ .NET: تأكد من تثبيت مكتبة Aspose.PDF لـ .NET.
+  -  رابط التحميل:[Aspose.PDF لـ .NET](https://releases.aspose.com/pdf/net/)
+- الترخيص المؤقت: إذا كنت تقوم باختبار الميزات، فمن المفيد أن يكون لديك ترخيص مؤقت.
+  -  رخصة مؤقتة:[احصل عليه هنا](https://purchase.aspose.com/temporary-license/)
 
-## دليل خطوة بخطوة لتنفيذ ميزة إخفاء أرقام الصفحات في جدول المحتويات
+## استيراد الحزم
 
-اتبع الخطوات التالية لتنفيذ ميزة إخفاء أرقام الصفحات في جدول المحتويات باستخدام Aspose.PDF لـ .NET:
-
-## الخطوة 1: إنشاء تطبيق وحدة تحكم C# جديد في Visual Studio
-
-افتح Visual Studio وقم بإنشاء تطبيق وحدة تحكم C# جديد.
-
-## الخطوة 2: إضافة مرجع إلى Aspose.PDF لـ .NET
-
-انقر بزر الماوس الأيمن على مجلد المراجع في مشروعك وحدد إضافة مرجع. انتقل إلى الموقع الذي تم تثبيت Aspose.PDF for .NET فيه على نظامك وأضف مرجعًا إليه.
-
-## الخطوة 1: إنشاء مستند PDF جديد
-
-قم بإنشاء مستند PDF جديد باستخدام الكود التالي:
+قبل البدء في الكود، تأكد من استيراد المساحات التالية في مشروع C# الخاص بك. ستوفر لك هذه المساحات الفئات والطرق اللازمة للعمل مع مستندات PDF وإنشاء جدول المحتويات (TOC).
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outFile = dataDir + "HiddenPageNumbers_out.pdf";
-Document doc = new Document();
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-## الخطوة 2: إنشاء صفحة جدول المحتويات
+الآن بعد أن أصبحت بيئتك جاهزة وتم استيراد الحزم، فلنبدأ في تفصيل كل خطوة من خطوات العملية. سنغطي كل جزء من التعليمات البرمجية لضمان الوضوح، حتى تتمكن من المتابعة بسهولة.
 
-قم بإنشاء صفحة جديدة لجدول المحتويات وأضفها إلى مستند PDF باستخدام الكود التالي:
+## الخطوة 1: تهيئة مستند PDF الخاص بك
 
-```csharp
-Page tocPage = doc.Pages.Add();
-TocInfo tocInfo = new TocInfo();
-TextFragment title = new TextFragment("Table Of Contents");
-title.TextState.FontSize = 20;
-title.TextState.FontStyle = FontStyles.Bold;
-tocInfo.Title = title;
-```
+أول شيء يتعين علينا فعله هو إنشاء مستند PDF جديد وإضافة صفحة لجدول المحتويات (TOC).
 
-## الخطوة 3: إضافة قسم القائمة إلى مجموعة أقسام مستند PDF
-
-قم بإضافة قسم القائمة إلى مجموعة الأقسام في مستند PDF باستخدام الكود التالي:
-
-```csharp
-tocPage.TocInfo = tocInfo;
-```
-
-## الخطوة 4: تحديد تنسيق قائمة المستويات الأربعة
-
-قم بتحديد تنسيق قائمة المستويات الأربعة عن طريق ضبط الهوامش اليسرى وإعدادات تنسيق النص لكل مستوى باستخدام الكود التالي:
-
-```csharp
-tocInfo.IsShowPageNumbers = false;
-tocInfo.FormatArrayLength = 4;
-tocInfo.FormatArray[0].Margin.Right = 0;
-tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
-tocInfo.FormatArray[1].Margin.Left = 30;
-tocInfo.FormatArray[1].TextState.Underline = true;
-tocInfo.FormatArray[1].TextState.FontSize = 10;
-tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
-tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
-Page page = doc.Pages.Add();
-```
-
-## الخطوة 5: أضف أربعة عناوين في القسم
-
-```csharp
-
-for (int Level = 1; Level != 5; Level++)
-{ 
-	Heading heading2 = new Heading(Level); 
-	TextSegment segment2 = new TextSegment(); 
-	heading2.TocPage = tocPage; 
-	heading2.Segments.Add(segment2); 
-	heading2.IsAutoSequence = true; 
-	segment2.Text = "this is heading of level " + Level; 
-	heading2.IsInList = true; 
-	page.Paragraphs.Add(heading2); 
-}
-doc.Save(outFile);
-
-```
-
-### مثال على كود المصدر لإخفاء أرقام الصفحات في جدول المحتويات باستخدام Aspose.PDF لـ .NET
 
 ```csharp
 // المسار إلى دليل المستندات.
@@ -112,18 +43,47 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "HiddenPageNumbers_out.pdf";
 Document doc = new Document();
 Page tocPage = doc.Pages.Add();
+```
+
+- dataDir: هذا هو الدليل الذي سيتم حفظ ملف الإخراج الخاص بك فيه.
+- Document(): يقوم بتهيئة مستند PDF جديد.
+- Pages.Add(): تقوم بإضافة صفحة فارغة جديدة إلى المستند، والتي ستحتوي لاحقًا على جدول المحتويات الخاص بك.
+
+## الخطوة 2: إعداد معلومات جدول المحتويات والعنوان
+
+بعد ذلك، سنقوم بتحديد معلومات جدول المحتويات، بما في ذلك تعيين العنوان الذي سيظهر في الجزء العلوي من جدول المحتويات.
+
+```csharp
 TocInfo tocInfo = new TocInfo();
 TextFragment title = new TextFragment("Table Of Contents");
 title.TextState.FontSize = 20;
 title.TextState.FontStyle = FontStyles.Bold;
 tocInfo.Title = title;
-//أضف قسم القائمة إلى مجموعة أقسام مستند PDF
 tocPage.TocInfo = tocInfo;
-//قم بتحديد تنسيق قائمة المستويات الأربعة عن طريق ضبط الهوامش اليسرى و
-//إعدادات تنسيق النص لكل مستوى
+```
 
+- TocInfo: يحتوي هذا الكائن على كافة المعلومات حول TOC.
+- TextFragment: يمثل نص عنوان جدول المحتويات، وهنا نضعه كـ "جدول المحتويات".
+- نمط الخط: نقوم بتصميم عنوان جدول المحتويات عن طريق ضبط حجمه إلى 20 وجعله غامقًا.
+- tocPage.TocInfo: نقوم بتعيين معلومات جدول المحتويات إلى الصفحة التي ستعرض جدول المحتويات.
+
+## الخطوة 3: إخفاء أرقام الصفحات في جدول المحتويات
+
+الآن حان الوقت للجزء الممتع! هنا نقوم بإعداد جدول المحتويات لإخفاء أرقام الصفحات.
+
+```csharp
 tocInfo.IsShowPageNumbers = false;
 tocInfo.FormatArrayLength = 4;
+```
+
+-  IsShowPageNumbers: هذا هو المفتاح السحري الذي يخفي أرقام الصفحات. اضبطه على`false`، ولن تظهر أرقام الصفحات في جدول المحتويات.
+- FormatArrayLength: قمنا بتعيين هذا إلى 4، مما يشير إلى أننا نريد تحديد التنسيق لأربعة مستويات من عناوين جدول المحتويات.
+
+## الخطوة 4: تخصيص تنسيق جدول المحتويات
+
+لإضافة المزيد من الأناقة إلى جدول المحتويات الخاص بك، سنقوم الآن بتحديد التنسيق لمستويات مختلفة من العناوين.
+
+```csharp
 tocInfo.FormatArray[0].Margin.Right = 0;
 tocInfo.FormatArray[0].TextState.FontStyle = FontStyles.Bold | FontStyles.Italic;
 tocInfo.FormatArray[1].Margin.Left = 30;
@@ -131,36 +91,61 @@ tocInfo.FormatArray[1].TextState.Underline = true;
 tocInfo.FormatArray[1].TextState.FontSize = 10;
 tocInfo.FormatArray[2].TextState.FontStyle = FontStyles.Bold;
 tocInfo.FormatArray[3].TextState.FontStyle = FontStyles.Bold;
+```
+
+- FormatArray: تتحكم هذه المصفوفة في تنسيق إدخالات جدول المحتويات. يمثل كل مؤشر مستوى عنوان مختلفًا.
+- الهامش ونمط النص: نقوم بتعيين الهوامش وتطبيق أنماط الخطوط مثل الغامق والمائل والتسطير لكل مستوى عنوان.
+
+## الخطوة 5: إضافة عناوين إلى المستند
+
+وأخيرًا، دعونا نضيف العناوين الفعلية التي ستكون جزءًا من جدول المحتويات.
+
+```csharp
 Page page = doc.Pages.Add();
-//أضف أربعة عناوين في القسم
 for (int Level = 1; Level != 5; Level++)
-	{ 
-		Heading heading2 = new Heading(Level); 
-		TextSegment segment2 = new TextSegment(); 
-		heading2.TocPage = tocPage; 
-		heading2.Segments.Add(segment2); 
-		heading2.IsAutoSequence = true; 
-		segment2.Text = "this is heading of level " + Level; 
-		heading2.IsInList = true; 
-		page.Paragraphs.Add(heading2); 
-	}
+{ 
+    Heading heading2 = new Heading(Level); 
+    TextSegment segment2 = new TextSegment(); 
+    heading2.TocPage = tocPage; 
+    heading2.Segments.Add(segment2); 
+    heading2.IsAutoSequence = true; 
+    segment2.Text = "this is heading of level " + Level; 
+    heading2.IsInList = true; 
+    page.Paragraphs.Add(heading2); 
+}
+```
+
+- العناوين والأجزاء النصية: تمثل هذه العناوين التي ستظهر في جدول المحتويات الخاص بك. يحصل كل مستوى على عنوانه الخاص.
+- IsAutoSequence: ترقيم العناوين تلقائيًا.
+- IsInList: يضمن ظهور كل عنوان في جدول المحتويات.
+
+## الخطوة 6: احفظ المستند
+
+بمجرد تعيين كل شيء، قم بحفظ مستند PDF في ملف الإخراج المحدد.
+
+```csharp
 doc.Save(outFile);
 ```
 
+وهذا كل شيء! لقد نجحت في إنشاء ملف PDF يحتوي على جدول محتويات، وتم إخفاء أرقام الصفحات!
+
 ## خاتمة
 
-في هذا البرنامج التعليمي، استكشفنا كيفية العمل مع بيانات التعريف XMP في مستند PDF باستخدام Aspose.PDF for .NET. توفر بيانات التعريف XMP معلومات قيمة حول مستند PDF، بما في ذلك عنوانه ومؤلفه وتاريخ إنشائه والمزيد. يتيح Aspose.PDF for .NET للمطورين الوصول إلى هذه البيانات التعريفية ومعالجتها، مما يوفر واجهة برمجة تطبيقات مرنة وقوية للعمل مع مستندات PDF.
+قد يبدو إنشاء جدول محتويات في ملف PDF وإخفاء أرقام الصفحات أمرًا صعبًا، ولكن مع Aspose.PDF لـ .NET، يصبح الأمر سهلاً. باتباع هذا الدليل التفصيلي، ستتعلم كيفية تخصيص تنسيق جدول المحتويات وإخفاء أرقام الصفحات وتطبيق أنماط مختلفة على العناوين. يمكنك الآن إنشاء ملفات PDF احترافية مصممة خصيصًا لتلبية احتياجاتك.
 
-### الأسئلة الشائعة
+## الأسئلة الشائعة
 
-#### س: ما هي بيانات XMP الوصفية في مستند PDF؟
+### هل يمكنني إظهار أرقام الصفحات لعناوين محددة في جدول المحتويات؟
+لا، يقوم برنامج Aspose.PDF بإخفاء أو إظهار أرقام الصفحات لجدول المحتويات بالكامل. ولا يمكنك إخفاءها بشكل انتقائي لإدخالات محددة.
 
-ج: تُعد بيانات التعريف XMP (منصة البيانات التعريفية القابلة للتوسيع) في مستند PDF تنسيقًا قياسيًا لتخزين معلومات التعريف الخاصة بالمستند. وتتضمن تفاصيل مثل عنوان المستند والمؤلف وتاريخ الإنشاء والكلمات الرئيسية والمزيد. توفر بيانات التعريف XMP طريقة منظمة وموحدة لتخزين المعلومات الخاصة بمستند PDF ومشاركتها.
+### هل من الممكن إضافة مستويات أخرى إلى جدول المحتويات؟
+ نعم يمكنك زيادة`FormatArrayLength` لتحديد المزيد من مستويات عناوين جدول المحتويات.
 
-#### س: هل يمكنني تعديل بيانات XMP الخاصة بمستند PDF باستخدام Aspose.PDF لـ .NET؟
+### كيف يمكنني تغيير الخط لجميع إدخالات جدول المحتويات؟
+ يمكنك تغيير الخط عن طريق تعديل`TextState.Font` خاصية لكل مستوى في`FormatArray`.
 
- ج: نعم، يمكنك تعديل بيانات تعريف XMP لمستند PDF برمجيًا باستخدام Aspose.PDF لـ .NET. يمكنك الوصول إلى`Info` ممتلكات`Document` الكائن الذي يتيح لك الوصول إلى خصائص بيانات XMP التعريفية. يمكنك بعد ذلك تحديث قيم هذه الخصائص لتعديل بيانات XMP التعريفية لمستند PDF.
+### هل يمكنني إدراج ارتباطات تشعبية في جدول المحتويات؟
+ نعم، يمكنك ربط كل إدخال في جدول المحتويات بقسم معين في المستند باستخدام`Heading.TocPage` ملكية.
 
-#### س: هل يمكنني استخراج خصائص بيانات XMP المخصصة من مستند PDF باستخدام Aspose.PDF لـ .NET؟
-
- ج: نعم، يمكنك استخراج خصائص بيانات تعريف XMP المخصصة من مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك استخدام`Metadata` ممتلكات`Document`الكائن الذي يوفر إمكانية الوصول إلى جميع خصائص بيانات XMP الوصفية لمستند PDF. يمكنك بعد ذلك استخراج خصائص مخصصة واستخدام قيمها حسب الحاجة.
+### هل أحتاج إلى ترخيص لـ Aspose.PDF؟
+نعم، يلزم الحصول على ترخيص صالح للاستخدام الإنتاجي. يمكنك الحصول على ترخيص مؤقت[هنا](https://purchase.aspose.com/temporary-license/) لاختبار الميزات.

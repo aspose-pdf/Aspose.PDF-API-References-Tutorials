@@ -125,7 +125,7 @@ A: Aspose.PDF for .NET, çeşitli özelliklere sahip yapısal öğeler oluşturm
 
 ####  S: Rolü nedir?`SetTitle` and `SetLanguage` methods in working with structural element properties?
 
- A:`SetTitle` Ve`SetLanguage` yöntemleri`ITaggedContent`nesne, yapısal eleman özelliklerini etkileyen belge başlığını ve dilini ayarlamanıza olanak tanır. Başlığı ve dili ayarlamak, belge için tutarlılık ve anlamlı meta veri sağlar.
+ A:`SetTitle` Ve`SetLanguage` yöntemleri`ITaggedContent` nesne, yapısal eleman özelliklerini etkileyen belge başlığını ve dilini ayarlamanıza olanak tanır. Başlığı ve dili ayarlamak, belge için tutarlılık ve anlamlı meta veri sağlar.
 
 #### S: Aspose.PDF for .NET kullanarak bir PDF belgesinde yapısal öğeleri nasıl oluşturabilir ve düzenleyebilirim?
 

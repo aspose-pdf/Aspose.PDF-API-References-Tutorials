@@ -91,7 +91,7 @@ Console.WriteLine(doc.Pages.Count);
 
 ## Conclusione
 
-Congratulazioni! Hai configurato con successo le chiavi di licenza a consumo per i tuoi file PDF usando Aspose.PDF per .NET. Questa configurazione non solo sblocca il pieno potenziale della libreria Aspose.PDF, ma assicura anche che tu sia pronto a gestire con facilità attività di elaborazione PDF su larga scala.
+Congratulazioni! Hai configurato con successo le chiavi di licenza a consumo per i tuoi file PDF usando Aspose.PDF per .NET. Questa configurazione non solo sblocca il pieno potenziale della libreria Aspose.PDF, ma assicura anche che tu sia pronto a gestire facilmente attività di elaborazione PDF su larga scala.
 
 ## Domande frequenti
 

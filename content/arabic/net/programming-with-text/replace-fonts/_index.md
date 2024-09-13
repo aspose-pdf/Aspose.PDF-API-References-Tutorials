@@ -34,7 +34,7 @@ Document pdfDocument = new Document(dataDir + "ReplaceTextPage.pdf");
 
 ## الخطوة 3: البحث عن الخطوط واستبدالها
 
- نحن ننشئ`TextFragmentAbsorber`الكائن وضبط خيار التحرير لإزالة الخطوط غير المستخدمة. ثم نقبل الممتص لجميع صفحات مستند PDF للبحث عن أجزاء النص.
+ نحن ننشئ`TextFragmentAbsorber` الكائن وضبط خيار التحرير لإزالة الخطوط غير المستخدمة. ثم نقبل الممتص لجميع صفحات مستند PDF للبحث عن أجزاء النص.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber(new TextEditOptions(TextEditOptions.FontReplace.RemoveUnusedFonts));

@@ -73,7 +73,7 @@ annot.BorderColor = Aspose.Pdf.Color.Yellow;
 annot.Color = Aspose.Pdf.Color.Blue;
 ```
 
-In diesem Beispiel definieren wir die Füllfarbe, Rahmenfarbe und Textfarbe für die Anmerkung. Sie können gerne mit verschiedenen Farben experimentieren, um herauszufinden, was für Ihre Anforderungen am besten geeignet ist.
+In diesem Beispiel definieren wir die Füllfarbe, Rahmenfarbe und Textfarbe für die Anmerkung. Experimentieren Sie ruhig mit verschiedenen Farben, um herauszufinden, was für Ihre Anforderungen am besten geeignet ist.
 
 ## Schritt 5: Overlay-Text hinzufügen
 

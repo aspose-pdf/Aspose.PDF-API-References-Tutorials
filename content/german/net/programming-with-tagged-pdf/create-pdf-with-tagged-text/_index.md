@@ -119,7 +119,7 @@ A: Das Codebeispiel zeigt, wie Sie ein PDF-Dokument erstellen, verschiedene geta
 
 A: Ja, Sie können mit ähnlichen Techniken andere getaggte Textelemente wie Listen, Links oder andere benutzerdefinierte Strukturen hinzufügen. Aspose.PDF bietet verschiedene Methoden zum Erstellen unterschiedlicher Arten getaggter Inhalte, sodass Sie die Dokumentsemantik verbessern können.
 
-####  F: Wie funktioniert das`SetTitle` method contribute to the PDF document's tagged text?
+#### F: Wie funktioniert das`SetTitle` method contribute to the PDF document's tagged text?
 
  A: Die`SetTitle` Die Methode legt den Titel des getaggten Inhalts des PDF-Dokuments fest und bietet eine kurze Beschreibung des Zwecks oder Themas des Dokuments. Diese Informationen helfen Benutzern, den Kontext des getaggten Textes zu verstehen.
 
@@ -127,9 +127,9 @@ A: Ja, Sie können mit ähnlichen Techniken andere getaggte Textelemente wie Lis
 
 A: Markierter Text verleiht dem Dokument eine semantische Bedeutung und macht es für Benutzer mit Behinderungen oder Benutzer unterstützender Technologien leichter zugänglich. Bildschirmleseprogramme und andere unterstützende Geräte können markierten Text interpretieren und darstellen, um das Benutzererlebnis zu verbessern.
 
-####  F: Wie funktioniert das`SetLanguage` method enhance the tagged text in a PDF document?
+#### F: Wie funktioniert das`SetLanguage` method enhance the tagged text in a PDF document?
 
- A: Die`SetLanguage`Die Methode legt das Sprachattribut des getaggten Inhalts des PDF-Dokuments fest. Dies hilft dabei, die Sprache anzugeben, in der der getaggte Text geschrieben ist, was die Zugänglichkeit verbessert und eine korrekte sprachspezifische Darstellung ermöglicht.
+ A: Die`SetLanguage` Die Methode legt das Sprachattribut des getaggten Inhalts des PDF-Dokuments fest. Dies hilft dabei, die Sprache anzugeben, in der der getaggte Text geschrieben ist, was die Zugänglichkeit verbessert und eine korrekte sprachspezifische Darstellung ermöglicht.
 
 #### F: Ist es möglich, mithilfe ähnlicher Techniken neben getaggtem Text andere Elemente wie Bilder oder Multimedia-Inhalte hinzuzufügen?
 

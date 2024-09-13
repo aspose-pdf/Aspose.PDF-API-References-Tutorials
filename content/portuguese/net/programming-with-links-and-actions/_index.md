@@ -11,16 +11,16 @@ A página do tutorial "Programação com Links e Ações" no Aspose.PDF para .NE
 ## Tutoriais
 | Título | Descrição |
 | --- | --- | 
-| [Adicionar hiperlink em arquivo PDF](./add-hyperlink/) | Adicione facilmente hiperlinks interativos em arquivos PDF com Aspose.PDF para .NET. |  
-| [Criar link de aplicativo em arquivo PDF](./create-application-link/) | Crie facilmente links de aplicativos em arquivos PDF com Aspose.PDF para .NET. |  
-| [Criar link de documento](./create-document-link/) | Crie facilmente links para outros documentos PDF com Aspose.PDF para .NET. |  
-| [Criar hiperlink local em arquivo PDF](./create-local-hyperlink/) | Crie facilmente hiperlinks locais em arquivos PDF usando o Aspose.PDF para .NET. |  
-| [Extrair links em arquivo PDF](./extract-links/) | Extraia facilmente links em arquivos PDF usando Aspose.PDF para .NET. |  
-| [Obter destinos de hiperlink em arquivo PDF](./get-hyperlink-destinations/) | Aprenda como extrair destinos de hiperlinks em arquivos PDF usando Aspose.PDF para .NET. |  
-| [Obter texto de hiperlink em arquivo PDF](./get-hyperlink-text/) | Aprenda como extrair texto de hiperlink em arquivo PDF usando Aspose.PDF para .NET. |  
-| [Remover ação aberta](./remove-open-action/) | Aprenda como remover a ação aberta de um PDF usando o Aspose.PDF para .NET. |  
-| [Definir link de destino em arquivo PDF](./set-destination-link/) | Aprenda como definir um link de destino em um arquivo PDF usando o Aspose.PDF para .NET. |  
-| [Definir link de destino em arquivo PDF](./set-target-link/) | Aprenda como definir um link de destino em um arquivo PDF usando o Aspose.PDF para .NET. |  
-| [Especificar página ao visualizar](./specify-page-when-viewing/) | Aprenda como especificar uma página ao visualizar um PDF usando o Aspose.PDF para .NET. |  
-| [Atualizar links em arquivo PDF](./update-links/) | Aprenda como atualizar links em arquivos PDF com o Aspose.PDF para .NET. |  
-| [Atualizar cor do texto do link no arquivo PDF](./update-link-text-color/) | Aprenda como atualizar a cor do texto dos links em um arquivo PDF com o Aspose.PDF para .NET. |  
+| [Adicionar hiperlink em arquivo PDF](./add-hyperlink/) | Aprenda como adicionar facilmente hiperlinks aos seus PDFs usando o Aspose.PDF para .NET. Aumente a interatividade e o engajamento do usuário em seus documentos. |  
+| [Criar link de aplicativo em arquivo PDF](./create-application-link/) | Aprenda a criar links de aplicativos em arquivos PDF usando o Aspose.PDF para .NET. Guia passo a passo para melhorar a interatividade em seus PDFs. |  
+| [Criar link de documento](./create-document-link/) | Descubra como criar links de documentos em PDFs usando Aspose.PDF para .NET. Melhore a navegação e a interatividade em seus documentos PDF. |  
+| [Criar hiperlink local em arquivo PDF](./create-local-hyperlink/) | Aprenda a criar hiperlinks locais em arquivos PDF usando o Aspose.PDF para .NET sem esforço com nosso guia passo a passo. |  
+| [Extrair links em arquivo PDF](./extract-links/) | Aprenda como extrair links de arquivos PDF facilmente usando o Aspose.PDF para .NET neste tutorial passo a passo. |  
+| [Obter destinos de hiperlink em arquivo PDF](./get-hyperlink-destinations/) | Aprenda como extrair destinos de hyperlinks de arquivos PDF facilmente usando Aspose.PDF para .NET. Siga este tutorial passo a passo simples. |  
+| [Obter texto de hiperlink em arquivo PDF](./get-hyperlink-text/) | Aprenda como extrair facilmente texto de hiperlink de um arquivo PDF usando Aspose.PDF para .NET. Guia passo a passo e código incluídos. |  
+| [Remover ação aberta](./remove-open-action/) | Remova facilmente ações abertas de PDFs usando Aspose.PDF para .NET! Um tutorial simples com orientação passo a passo para gerenciamento eficaz de PDF. |  
+| [Definir link de destino em arquivo PDF](./set-destination-link/) | Aprenda como definir links de destino em arquivos PDF com Aspose.PDF para .NET. Um guia passo a passo para aumentar a interatividade do seu PDF. |  
+| [Definir link de destino em arquivo PDF](./set-target-link/) | Aprenda como definir links de destino de forma eficiente em arquivos PDF usando Aspose.PDF para .NET com nosso guia passo a passo. Perfeito para aprimorar a navegação em documentos. |  
+| [Especificar página ao visualizar](./specify-page-when-viewing/) | Aprenda como especificar uma página para visualizar em um PDF usando Aspose.PDF para .NET. Melhore a navegação do usuário com este guia simples. |  
+| [Atualizar links em arquivo PDF](./update-links/) | Aprenda como atualizar a cor do texto do link em um arquivo PDF usando Aspose.PDF para .NET. Este guia passo a passo o orienta em cada detalhe com exemplos fáceis de seguir. |  
+| [Atualizar cor do texto do link no arquivo PDF](./update-link-text-color/) | Atualize links sem esforço em seus arquivos PDF usando Aspose.PDF para .NET com este guia passo a passo abrangente. Simplifique sua edição de PDF. |  

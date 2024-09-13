@@ -82,7 +82,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Načíst existující dokument PDF
 Document pdfDocument = new Document(dataDir + @"Table_input.pdf");
 
-// Vytvořte objekt TableAbsorber pro nalezení tabulek
+// Vytvořte objekt TableAbsorber a vyhledejte tabulky
 TableAbsorber absorber = new TableAbsorber();
 
 // Navštivte první stránku s absorbérem

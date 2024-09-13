@@ -47,7 +47,7 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 ```
 
 ## الخطوة 6: إضافة صفحة إلى المستند
- أضف صفحة جديدة إلى المستند باستخدام`Add` طريقة`Pages`المجموعة. في الكود المقدم، يتم تعيين الصفحة الجديدة للمتغير`page`.
+ أضف صفحة جديدة إلى المستند باستخدام`Add` طريقة`Pages` المجموعة. في الكود المقدم، يتم تعيين الصفحة الجديدة للمتغير`page`.
 
 ```csharp
 Page page = doc.Pages.Add();
@@ -81,7 +81,7 @@ HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>Fi
 Page page = doc.Pages.Add();
 // إضافة HtmlFragment داخل الصفحة
 page.Paragraphs.Add(t);
-// حفظ ملف PDF الناتج
+//حفظ ملف PDF الناتج
 doc.Save(outFile);
 ```
 
@@ -115,7 +115,7 @@ using Aspose.Pdf.Text;
 
 #### س: كيف أضيف قائمة HTML المرتبة إلى صفحة في المستند؟
 
- أ: في الخطوة 7، ستضيف`HtmlFragment` هدف (`t` ) إلى الصفحة باستخدام`Add` طريقة`Paragraphs`المجموعة. سيؤدي هذا إلى دمج القائمة المرتبة بتنسيق HTML في المستند بسلاسة.
+ أ: في الخطوة 7، ستضيف`HtmlFragment` هدف (`t` ) إلى الصفحة باستخدام`Add` طريقة`Paragraphs` المجموعة. سيؤدي هذا إلى دمج القائمة المرتبة بتنسيق HTML في المستند بسلاسة.
 
 #### س: كيف أحفظ مستند PDF الناتج؟
 

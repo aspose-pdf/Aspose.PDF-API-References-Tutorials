@@ -67,7 +67,7 @@ else if (opRestoreState != null)
 }
 else if (opCtm != null)
 {
-     // Získejte aktuální transformační matici
+     // Načtěte aktuální transformační matici
      System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
          (float)opCtm.Matrix.A,
          (float)opCtm.Matrix.B,
@@ -149,7 +149,7 @@ using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 
 		if (opSaveState != null)
 		{
-			//Uložte předchozí stav a přesuňte aktuální stav na vrchol zásobníku
+			// Uložte předchozí stav a přesuňte aktuální stav na vrchol zásobníku
 			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
 			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
 		}
@@ -235,7 +235,7 @@ Console.WriteLine("\nBorder extracted successfully as image.\nFile saved at " + 
 ## Závěr
 V tomto tutoriálu jsme se naučili, jak extrahovat ohraničení z dokumentu PDF pomocí Aspose.PDF pro .NET. Pomocí tohoto podrobného průvodce můžete extrahovat ohraničení z jiných dokumentů PDF.
 
-### Nejčastější dotazy pro extrahování ohraničení v souboru PDF
+### Časté dotazy k extrahování ohraničení v souboru PDF
 
 #### Otázka: Jaký je účel extrahování ohraničení ze souboru PDF?
 
@@ -243,7 +243,7 @@ Odpověď: Extrahování ohraničení ze souboru PDF může být užitečné pro
 
 #### Otázka: Mohu extrahovat ohraničení z konkrétních stránek nebo oblastí v dokumentu PDF?
 
-Odpověď: Ano, můžete upravit poskytnutý zdrojový kód C# a extrahovat ohraničení z konkrétních stránek nebo oblastí v dokumentu PDF. Manipulací s`doc.Pages` shromažďování a specifikování vlastních kritérií, můžete si vybrat extrahování ohraničení z konkrétních stránek nebo oblastí zájmu.
+ Odpověď: Ano, můžete upravit poskytnutý zdrojový kód C# a extrahovat ohraničení z konkrétních stránek nebo oblastí v dokumentu PDF. Manipulací s`doc.Pages` shromažďování a specifikování vlastních kritérií, můžete si vybrat extrahování ohraničení z konkrétních stránek nebo oblastí zájmu.
 
 #### Otázka: Jak mohu přizpůsobit formát a kvalitu výstupního obrázku?
 

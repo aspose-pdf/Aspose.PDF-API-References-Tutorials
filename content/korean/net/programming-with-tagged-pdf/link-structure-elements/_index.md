@@ -156,7 +156,7 @@ string outFile = dataDir + "LinkStructureElements_Output.pdf";
 string logFile = dataDir + "46035_log.xml";
 string imgFile = dataDir + "google-icon-512.png";
 
-// 문서 생성 및 태그가 지정된 PDF 콘텐츠 가져오기
+//문서 생성 및 태그가 지정된 PDF 콘텐츠 가져오기
 Document document = new Document(); 
 ITaggedContent taggedContent = document.TaggedContent;
 

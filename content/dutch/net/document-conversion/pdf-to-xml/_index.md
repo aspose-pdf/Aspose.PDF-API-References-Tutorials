@@ -76,7 +76,7 @@ Aspose.PDF voor .NET is een bibliotheek waarmee ontwikkelaars programmatisch PDF
 Ja, Aspose.PDF ondersteunt ook het terug converteren van XML-bestanden naar PDF-formaat.
 
 ### Waar kan ik meer documentatie vinden?
- U kunt uitgebreide documentatie vinden op Aspose.PDF voor .NET[hier](https://reference.aspose.com/pdf/net/).
+ Uitgebreide documentatie vindt u op Aspose.PDF voor .NET[hier](https://reference.aspose.com/pdf/net/).
 
 ### Hoe kan ik ondersteuning krijgen voor Aspose.PDF?
  U kunt ondersteuning krijgen door het Aspose-forum te bezoeken[hier](https://forum.aspose.com/c/pdf/10).

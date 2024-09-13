@@ -7,19 +7,59 @@ type: docs
 weight: 180
 url: /ko/net/programming-with-document/getfileinfo/
 ---
- .NET용 Aspose.PDF는 개발자가 .NET 애플리케이션에서 PDF 파일을 만들고, 편집하고, 변환할 수 있도록 하는 인기 있는 PDF 조작 라이브러리입니다. 이 라이브러리가 제공하는 기능 중 하나는 PDF 문서의 메타데이터에 대한 정보를 검색하는 기능입니다. 이 튜토리얼은 다음을 사용하는 단계를 안내합니다.`GetFileInfo` .NET용 Aspose.PDF 기능을 사용하면 PDF 문서의 메타데이터에 대한 정보를 검색할 수 있습니다.
+## 소개
 
-## 1단계: .NET용 Aspose.PDF 설치
+PDF 파일에 어떤 비밀이 숨겨져 있는지 궁금한 적이 있나요? 작성자, 생성 날짜 또는 키워드일지라도 PDF 문서는 종종 다양한 애플리케이션에 중요할 수 있는 귀중한 메타데이터를 포함합니다. 이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 PDF에서 파일 정보를 추출하는 방법을 살펴보겠습니다. 이 강력한 라이브러리를 사용하면 개발자가 PDF 파일을 쉽게 조작할 수 있어 많은 사람에게 필수 선택이 됩니다. 그러니 코딩 모자를 쓰고 PDF 메타데이터 추출의 세계로 뛰어드세요!
 
- .NET 애플리케이션에서 Aspose.PDF for .NET을 사용하려면 먼저 라이브러리를 설치해야 합니다. 라이브러리의 최신 버전은 다음에서 다운로드할 수 있습니다.[.NET용 Aspose.PDF 다운로드 페이지](https://releases.aspose.com/pdf/net).
+## 필수 조건
 
-라이브러리를 다운로드한 후 ZIP 파일의 내용을 컴퓨터의 폴더로 추출합니다. 그런 다음 .NET 프로젝트에서 Aspose.PDF for .NET DLL에 대한 참조를 추가해야 합니다.
+코드로 들어가기 전에 꼭 준비해야 할 몇 가지 사항이 있습니다.
 
-## 2단계: PDF 문서 로드
+1. Visual Studio: 컴퓨터에 Visual Studio가 설치되어 있는지 확인하세요. 이것이 우리의 개발 환경이 될 것입니다.
+2.  .NET용 Aspose.PDF: Aspose.PDF 라이브러리를 다운로드하여 설치해야 합니다. 다음에서 얻을 수 있습니다.[다운로드 링크](https://releases.aspose.com/pdf/net/).
+3. C#에 대한 기본 지식: C# 프로그래밍에 익숙하면 코드 조각을 더 잘 이해하는 데 도움이 됩니다.
 
- .NET용 Aspose.PDF를 설치하고 .NET 프로젝트의 DLL에 대한 참조를 추가하면 다음을 사용할 수 있습니다.`GetFileInfo` PDF 문서의 메타데이터에 대한 정보를 검색하는 기능입니다.
+## 패키지 가져오기
 
-이 기능을 사용하는 첫 번째 단계는 정보를 검색하려는 PDF 문서를 로드하는 것입니다. 이를 위해 다음 코드를 사용할 수 있습니다.
+시작하려면 필요한 패키지를 가져와야 합니다. Visual Studio에서 C# 프로젝트를 열고 Aspose.PDF 라이브러리에 대한 참조를 추가합니다. NuGet 패키지 관리자를 사용하여 이를 수행할 수 있습니다.
+
+1. 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 버튼으로 클릭합니다.
+2. "NuGet 패키지 관리"를 선택하세요.
+3. "Aspose.PDF"를 검색하여 설치하세요.
+
+라이브러리를 설치하면 코드 작성을 시작할 수 있습니다.
+
+## 1단계: 프로젝트 설정
+
+### 새 프로젝트 만들기
+
+우선, Visual Studio에서 새로운 C# 프로젝트를 만들어 보겠습니다.
+
+1. Visual Studio를 열고 "새 프로젝트 만들기"를 선택합니다.
+2. "콘솔 앱(.NET Framework)"을 선택하고 "다음"을 클릭합니다.
+3.  프로젝트 이름을 지정하세요(예:`PDFFileInfoExtractor`)을 클릭하고 "만들기"를 클릭합니다.
+
+### Aspose.PDF 참조 추가
+
+이제 프로젝트가 설정되었으므로 Aspose.PDF 참조를 추가해야 합니다.
+
+1. 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 버튼으로 클릭합니다.
+2. "추가" > "참조"를 선택하세요.
+3. 참조 관리자에서 Aspose.PDF를 찾아 선택한 다음 "확인"을 클릭합니다.
+
+## 2단계: 코드 작성
+
+### 문서 초기화
+
+ 이제 PDF 문서를 열고 정보를 추출하는 코드를 작성해 보겠습니다. 먼저 다음 using 지시문을 맨 위에 추가합니다.`Program.cs` 파일:
+
+```csharp
+using System.IO;
+using Aspose.Pdf;
+using System;
+```
+
+다음으로, 문서를 초기화합니다.
 
 ```csharp
 // PDF 문서로 가는 경로
@@ -29,41 +69,20 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
 ```
 
- 위 코드에서 다음을 바꾸세요.`"YOUR DOCUMENT DIRECTORY"` PDF 문서가 있는 디렉토리 경로와 함께. 이 코드는 PDF 문서를 로드합니다.`Document` 이 객체를 사용하면 문서의 메타데이터에 대한 정보를 검색할 수 있습니다.
+### 문서 정보 추출
 
-## 3단계: 문서의 메타데이터 검색
-
-PDF 문서의 메타데이터에 대한 정보를 검색하려면 다음 코드를 사용할 수 있습니다.
+이제 PDF 문서를 열었으니 해당 문서의 메타데이터를 추출해 보겠습니다.
 
 ```csharp
 // 문서 정보 얻기
 DocumentInfo docInfo = pdfDocument.Info;
-
-// 문서 정보 표시
-Console.WriteLine("Author: {0}", docInfo.Author);
-Console.WriteLine("Creation Date: {0}", docInfo.CreationDate);
-Console.WriteLine("Keywords: {0}", docInfo.Keywords);
-Console.WriteLine("Modify Date: {0}", docInfo.ModDate);
-Console.WriteLine("Subject: {0}", docInfo.Subject);
-Console.WriteLine("Title: {0}", docInfo.Title);
 ```
 
-위의 코드에서 각 줄은 PDF 문서의 다른 메타데이터 속성을 검색하여 콘솔에 출력합니다. 이 코드를 사용자 지정하여 관심 있는 속성만 검색할 수 있습니다.
+### 정보 표시
 
-### .NET용 Aspose.PDF를 사용하여 PDF 파일 정보를 가져오는 예제 소스 코드
-
- 다음은 PDF 문서의 메타데이터를 검색하기 위한 전체 소스 코드입니다.`GetFileInfo` .NET용 Aspose.PDF의 기능:
+마지막으로, 추출된 정보를 콘솔에 표시해 보겠습니다.
 
 ```csharp
-// PDF 문서로 가는 경로
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// PDF 문서를 엽니다
-Document pdfDocument = new Document(dataDir + "GetFileInfo.pdf");
-
-// 문서 정보 얻기
-DocumentInfo docInfo = pdfDocument.Info;
-
 // 문서 정보 표시
 Console.WriteLine("Author: {0}", docInfo.Author);
 Console.WriteLine("Creation Date: {0}", docInfo.CreationDate);
@@ -75,22 +94,21 @@ Console.WriteLine("Title: {0}", docInfo.Title);
 
 ## 결론
 
-이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 PDF 문서의 메타데이터에 대한 정보를 검색하는 방법을 설명했습니다. PDF 문서를 로드하고 메타데이터 속성에 액세스하면 문서의 특성과 속성에 대한 정보를 수집할 수 있습니다. Aspose.PDF for .NET은 PDF 문서 작업을 위한 간단하고 사용하기 쉬운 API를 제공하며, 여기에는 메타데이터 정보를 검색하는 것도 포함되므로 .NET 애플리케이션에서 PDF를 조작하는 데 유용한 도구가 됩니다.
+축하합니다! Aspose.PDF for .NET을 사용하여 PDF에서 파일 정보를 성공적으로 추출했습니다. 이 강력한 라이브러리는 메타데이터를 읽을 수 있을 뿐만 아니라 PDF 파일을 조작하기 위한 다양한 기능을 제공합니다. 문서 관리 시스템을 개발하든 단순히 보고를 위해 정보를 추출해야 하든 Aspose.PDF가 해결해 드립니다. 
 
-### 자주 묻는 질문
+## 자주 묻는 질문
 
-#### 질문: PDF 문서의 메타데이터란 무엇인가요?
+### .NET용 Aspose.PDF란 무엇인가요?
+.NET용 Aspose.PDF는 개발자가 .NET 애플리케이션에서 PDF 문서를 만들고, 조작하고, 변환할 수 있는 라이브러리입니다.
 
-A: PDF 문서의 메타데이터는 문서의 속성과 특징을 설명하는 정보를 말합니다. 이 정보에는 일반적으로 문서의 제목, 저자, 주제, 키워드, 생성 날짜, 수정 날짜 등이 포함됩니다.
+### Aspose.PDF를 어떻게 설치하나요?
+ Visual Studio의 NuGet 패키지 관리자를 통해 Aspose.PDF를 설치하거나 다음에서 다운로드할 수 있습니다.[다운로드 링크](https://releases.aspose.com/pdf/net/).
 
-#### 질문: .NET 프로젝트에 Aspose.PDF for .NET을 어떻게 설치할 수 있나요?
+### Aspose.PDF를 사용하여 PDF에서 이미지를 추출할 수 있나요?
+네, Aspose.PDF는 PDF 문서에서 이미지를 추출하는 방법을 제공합니다.
 
- A: .NET용 Aspose.PDF를 설치하려면 라이브러리를 다운로드해야 합니다.[.NET용 Aspose.PDF 다운로드 페이지](https://releases.aspose.com/pdf/net)다운로드 후 ZIP 파일의 내용을 추출하고 .NET 프로젝트의 .NET DLL용 Aspose.PDF에 대한 참조를 추가합니다.
+### Aspose.PDF에 대한 무료 평가판이 있나요?
+ 네, 무료 체험판을 받으실 수 있습니다.[Aspose 웹사이트](https://releases.aspose.com/).
 
-#### 질문: 특정 메타데이터 속성만 검색하도록 코드를 사용자 정의할 수 있나요?
-
-A: 네, 필요 없는 줄을 주석 처리하여 특정 메타데이터 속성을 검색하도록 코드를 사용자 지정할 수 있습니다. 코드의 각 줄은 특정 메타데이터 속성에 해당하므로 요구 사항에 따라 속성을 포함하거나 제외할 수 있습니다.
-
-#### 질문: Aspose.PDF for .NET을 사용하여 어떤 유형의 메타데이터 속성을 검색할 수 있습니까?
-
-답변: .NET용 Aspose.PDF를 사용하면 작성자, 제목, 주제, 키워드, 생성 날짜, 수정 날짜를 포함하여 PDF 문서의 다양한 메타데이터 속성을 검색할 수 있습니다.
+### Aspose.PDF에 대한 지원은 어디에서 찾을 수 있나요?
+ 지원을 받고 질문할 수 있습니다.[Aspose 포럼](https://forum.aspose.com/c/pdf/10).

@@ -14,7 +14,7 @@ In diesem Tutorial erfahren Sie, wie Sie mithilfe von Aspose.PDF für Java PDF-H
 
 ## Grundlegendes zu PDF-Hyperlinks
 
-PDF-Hyperlinks sind interaktive Elemente, die es Benutzern ermöglichen, durch Klicken zu verschiedenen Stellen im PDF-Dokument oder zu externen Websites zu navigieren. Sie bestehen aus zwei Hauptkomponenten: der Linkanmerkung und dem Ziel. Das Ziel gibt an, wohin der Hyperlink den Benutzer führt.
+PDF-Hyperlinks sind interaktive Elemente, die es Benutzern ermöglichen, zu verschiedenen Stellen im PDF-Dokument oder zu externen Websites zu klicken und zu navigieren. Sie bestehen aus zwei Hauptkomponenten: der Linkanmerkung und dem Ziel. Das Ziel gibt an, wohin der Hyperlink den Benutzer führt.
 
 ## Voraussetzungen
 

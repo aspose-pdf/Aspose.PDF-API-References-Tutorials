@@ -80,7 +80,7 @@ Page page = pdfDocument.getPages().add();
 com.aspose.pdf.Image image = new com.aspose.pdf.Image();
 image.setFile("logo.png"); // Замените на путь к файлу вашего изображения.
 
-// Установить размеры и положение изображения
+// Установите размеры и положение изображения
 image.setFixWidth(200);
 image.setFixHeight(100);
 image.setPosition(new Rectangle(100, 600, 300, 700));

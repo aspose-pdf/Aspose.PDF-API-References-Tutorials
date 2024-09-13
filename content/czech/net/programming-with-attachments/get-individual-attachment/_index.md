@@ -9,7 +9,7 @@ url: /cs/net/programming-with-attachments/get-individual-attachment/
 ---
 ## Zavedení
 
-V digitálním věku se soubory PDF staly základem sdílení dokumentů. Ať už je to zpráva, prezentace nebo e-kniha, soubory PDF jsou všude. Věděli jste ale, že soubory PDF mohou obsahovat i přílohy? Přesně tak! Do PDF můžete vkládat soubory, což z něj činí univerzální formát pro sdílení nejen textu a obrázků, ale i dalších dokumentů. V tomto tutoriálu se ponoříme do toho, jak extrahovat jednotlivé přílohy ze souboru PDF pomocí Aspose.PDF pro .NET. Takže popadněte svůj kódovací klobouk a můžeme začít!
+V digitálním věku se soubory PDF staly základem sdílení dokumentů. Ať už je to zpráva, prezentace nebo e-kniha, soubory PDF jsou všude. Věděli jste ale, že soubory PDF mohou obsahovat i přílohy? To je pravda! Do PDF můžete vkládat soubory, což z něj činí univerzální formát pro sdílení nejen textu a obrázků, ale i dalších dokumentů. V tomto tutoriálu se ponoříme do toho, jak extrahovat jednotlivé přílohy ze souboru PDF pomocí Aspose.PDF pro .NET. Takže popadněte svůj kódovací klobouk a můžeme začít!
 
 ## Předpoklady
 

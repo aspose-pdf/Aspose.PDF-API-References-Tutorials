@@ -69,7 +69,7 @@ public class XSLFOTutorial {
 Aspose.PDF for Java 是一个商业库，提供试用版。您可以在其网站上探索其功能和许可选项。
 
 ### 我可以使用 Aspose.PDF 自定义 PDF 输出吗？
-当然！Aspose.PDF for Java 提供了广泛的自定义选项，允许您控制 PDF 文档的外观和内容。
+当然！Aspose.PDF for Java 提供广泛的自定义选项，允许您控制 PDF 文档的外观和内容。
 
 ### 在哪里可以找到更多资源和文档？
 如需全面的文档和 API 参考，请访问[Aspose.PDF for Java 文档](https://reference.aspose.com/pdf/java/).

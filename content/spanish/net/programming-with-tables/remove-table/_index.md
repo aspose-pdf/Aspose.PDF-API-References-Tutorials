@@ -96,7 +96,7 @@ pdfDocument.Save(dataDir + "Table_out.pdf");
 
 #### P: ¿Qué sucede si la página especificada no contiene ninguna tabla?
 
- A: Si la página especificada no contiene ninguna tabla, el código arrojará un error.`IndexOutOfRangeException` al intentar acceder`absorb.TableList[0]` Para evitar este problema, debe comprobar si`absorb.TableList`contiene cualquier elemento antes de acceder a la tabla.
+ A: Si la página especificada no contiene ninguna tabla, el código arrojará un error.`IndexOutOfRangeException` al intentar acceder`absorb.TableList[0]` Para evitar este problema, debe comprobar si`absorb.TableList` contiene cualquier elemento antes de acceder a la tabla.
 
 #### P: ¿Puedo eliminar tablas de páginas distintas de la primera?
 

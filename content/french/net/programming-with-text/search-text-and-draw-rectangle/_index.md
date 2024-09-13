@@ -78,7 +78,7 @@ Accepter l'absorbeur pour toutes les pages du document :
 document.Pages.Accept(textAbsorber);
 ```
 
-## Étape 8 : Dessinez un rectangle autour du texte trouvé
+## Étape 8 : Dessinez un rectangle autour du texte trouvé
 
  Créer un`PdfContentEditor` objet et parcourez les fragments de texte récupérés, en dessinant un rectangle autour de chaque segment de texte :
 
@@ -110,7 +110,7 @@ document.Save(dataDir);
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Ouvrir le document
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-// Créez un objet TextAbsorber pour trouver toutes les phrases correspondant à l'expression régulière
+//Créez un objet TextAbsorber pour trouver toutes les phrases correspondant à l'expression régulière
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;

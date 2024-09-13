@@ -7,7 +7,7 @@ type: docs
 weight: 140
 url: /cs/net/programming-with-tables/margins-or-padding/
 ---
-V tomto tutoriálu vás provedeme krok za krokem procesem použití Aspose.PDF for .NET k nastavení okrajů nebo odsazení v tabulce. Poskytneme vysvětlení a úryvky kódu, které vám pomohou pochopit a implementovat tuto funkci ve zdrojovém kódu C#.
+tomto tutoriálu vás provedeme krok za krokem procesem použití Aspose.PDF for .NET k nastavení okrajů nebo odsazení v tabulce. Poskytneme vysvětlení a úryvky kódu, které vám pomohou pochopit a implementovat tuto funkci ve zdrojovém kódu C#.
 
 ## Krok 1: Nastavení dokumentu a stránky
 Chcete-li začít, musíte nastavit dokument a stránku pomocí následujícího kódu:
@@ -63,7 +63,7 @@ tab1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
 Nyní do tabulky přidáme řádky a buňky. Vytvoříme nový řádek a přidáme do něj buňky:
 
 ```csharp
-// Vytvořte řádky v tabulce a poté buňky v řádcích
+//Vytvořte řádky v tabulce a poté buňky v řádcích
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -117,7 +117,7 @@ margin.Right = 5f;
 margin.Bottom = 5f;
 // Nastavte výchozí odsazení buněk na objekt MarginInfo
 tab1.DefaultCellPadding = margin;
-// Vytvořte řádky v tabulce a poté buňky v řádcích
+//Vytvořte řádky v tabulce a poté buňky v řádcích
 Aspose.Pdf.Row row1 = tab1.Rows.Add();
 row1.Cells.Add("col1");
 row1.Cells.Add("col2");
@@ -145,7 +145,7 @@ Gratuluji! Úspěšně jste se naučili, jak nastavit okraje nebo odsazení v ta
 
 #### Otázka: Mohu nastavit různé okraje nebo odsazení pro jednotlivé buňky v tabulce?
 
-Odpověď: Ano, pomocí Aspose.PDF for .NET můžete nastavit různé okraje nebo odsazení pro jednotlivé buňky v tabulce. V uvedeném příkladu nastavíme výchozí odsazení buněk pro celou tabulku pomocí`DefaultCellPadding` vlastnictví. Chcete-li nastavit různé odsazení pro konkrétní buňky, můžete získat přístup k`MarginInfo` každé buňky jednotlivě a upravit jejich okraje.
+ Odpověď: Ano, pomocí Aspose.PDF for .NET můžete nastavit různé okraje nebo odsazení pro jednotlivé buňky v tabulce. V uvedeném příkladu nastavíme výchozí odsazení buněk pro celou tabulku pomocí`DefaultCellPadding` vlastnictví. Chcete-li nastavit různé odsazení pro konkrétní buňky, můžete získat přístup k`MarginInfo` každé buňky jednotlivě a upravit jejich okraje.
 
 #### Otázka: Jak mohu změnit barvu nebo styl ohraničení tabulky?
 
@@ -161,4 +161,4 @@ Odpověď: Ano, můžete do tabulky přidat záhlaví nebo zápatí pomocí Aspo
 
 #### Otázka: Mohu do buněk tabulky místo textu přidat obrázky?
 
- Odpověď: Ano, můžete přidat obrázky do buněk tabulky pomocí Aspose.PDF pro .NET. Místo vytvoření a`TextFragment` objekt, můžete vytvořit`Image` objekt, načtěte soubor obrázku a přidejte jej do požadované buňky pomocí`cell.Paragraphs.Add(image);` metoda. To vám umožní vkládat obrázky do tabulky vedle textového obsahu.
+ Odpověď: Ano, můžete přidat obrázky do buněk tabulky pomocí Aspose.PDF pro .NET. Místo vytvoření a`TextFragment` objekt, můžete vytvořit`Image` objekt, načtěte soubor obrázku a přidejte jej do požadované buňky pomocí`cell.Paragraphs.Add(image);`metoda. To vám umožní vkládat obrázky do tabulky vedle textového obsahu.

@@ -2,291 +2,191 @@
 title: Style Table Element
 linktitle: Style Table Element
 second_title: Aspose.PDF for .NET API Reference
-description: Learn how to format table element with Aspose.PDF for .NET. Step-by-step guide to customize styles and properties.
+description: Learn how to create and style a table element in Aspose.PDF for .NET with step-by-step instructions, custom styling, and PDF/UA compliance.
 type: docs
 weight: 170
 url: /net/programming-with-tagged-pdf/style-table-element/
 ---
-In this detailed tutorial, we will walk you through the provided C# source code step by step to format the array element using Aspose.PDF for .NET. Follow the instructions below to understand how to customize the styles and properties of the array element.
+## Introduction
 
-## Step 1: Setting up the environment
+In this article, we will dive into how to create and style a table element using Aspose.PDF for .NET. You’ll learn how to structure a table, apply custom styles, and validate the PDF/UA compliance of your document. By the end of this tutorial, you'll be able to create professional-looking tables in your PDFs with ease!
 
-Before you begin, make sure you've configured your development environment to use Aspose.PDF for .NET. This includes installing the Aspose.PDF library and configuring your project to reference it.
+## Prerequisites
 
-## Step 2: Creating a document
+Before jumping into the tutorial, you’ll need to ensure you have the following:
 
-In this step, we will create a new document object Aspose.PDF.
+1. Visual Studio or a similar IDE installed on your machine.
+2. .NET Framework or .NET Core SDK for running the application.
+3. Aspose.PDF for .NET library downloaded and referenced in your project. You can grab the latest version from [here](https://releases.aspose.com/pdf/net/).
+4. A valid Aspose license or a [temporary license](https://purchase.aspose.com/temporary-license/) to unlock the full functionality of the library.
+
+## Import Packages
+
+To start, import the necessary namespaces into your project:
+
+```csharp
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+These namespaces cover core PDF operations, tagged content, tables, and text formatting.
+
+Now let's break down the process of creating and styling a table in Aspose.PDF. We'll go through each section in detail so you can follow along.
+
+## Step 1: Create a New PDF Document and Setup Tagged Content
+
+In this first step, we’ll create a blank PDF document and set up its tagged content.
 
 ```csharp
 // The path to the documents directory.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Document creation
+// Create a new PDF document
 Document document = new Document();
+
+// Setup tagged content
 ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example of table formatting");
-taggedContent.SetLanguage("fr-FR");
+taggedContent.SetTitle("Example table style");
+taggedContent.SetLanguage("en-US");
 ```
 
-We have created a new document and set the document title and language.
+We start by creating a new `Document` object, representing our PDF. The `TaggedContent` object is used to manage the document's structure, ensuring compliance with accessibility standards. We set the title and language of the document for proper tagging.
 
-## Step 3: Obtaining the root structure element
+## Step 2: Define the Root Element
 
-In this step we will get the root structure element for our document.
+Next, we’ll create the root structure element, which acts as the container for all the content in our PDF.
 
 ```csharp
-// Obtain the root structure element
+// Get the root structure element
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-We got the root structure element which will serve as a container for the array element.
+The `RootElement` serves as the base container for all structured elements, including our table. It helps maintain the document’s structural hierarchy, which is important for both organization and accessibility.
 
-## Step 4: Creating the array structure element
+## Step 3: Create and Style the Table Element
 
-Now let's create a new table structure element for our document.
+Now that the root element is set up, we’ll create a `TableElement` and apply styles like background color, borders, and alignment.
 
 ```csharp
-// Create the array structure element
+// Create table structure element
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
-```
 
-We have created a new array structure element and added it to the root structure element.
-
-## Step 5: Customizing Array Element Styles and Properties
-
-In this step, we will customize the styles and properties of the array element.
-
-```csharp
-// Customize the styles and properties of the array element
+// Style the table
 tableElement.BackgroundColor = Color.Beige;
 tableElement.Border = new BorderInfo(BorderSide.All, 0.80F, Color.Gray);
-tableElement. Alignment = HorizontalAlignment. Center;
+tableElement.Alignment = HorizontalAlignment.Center;
 tableElement.Broken = TableBroken.Vertical;
 tableElement.ColumnAdjustment = ColumnAdjustment.AutoFitToWindow;
-tableElement. ColumnWidths = "80 80 80 80 80";
+```
+
+We create a `TableElement`, which defines our table structure. The `BackgroundColor`, `Border`, and `Alignment` properties allow us to customize the appearance of the table. The `Broken` property ensures that if the table breaks across pages, it breaks vertically.
+
+## Step 4: Set Table Dimensions and Cell Styles
+
+In this step, we’ll define the number of columns, cell padding, and other important table properties.
+
+```csharp
+tableElement.ColumnWidths = "80 80 80 80 80";
 tableElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.DarkBlue);
-tableElement. DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
+tableElement.DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
 tableElement.DefaultCellTextState.ForegroundColor = Color.DarkCyan;
 tableElement.DefaultCellTextState.FontSize = 8F;
-tableElement. DefaultColumnWidth = "70";
-tableElement. IsBroken = false;
-tableElement.IsBordersIncluded = true;
-tableElement. Left = 0F;
-tableElement. Top = 40F;
-tableElement.RepeatingColumnsCount = 2;
-tableElement.RepeatingRowsCount = 3;
+```
 
-// Customize the style of repeated lines
+We specify the column widths to ensure each column in the table is uniformly spaced. The `DefaultCellBorder`, `DefaultCellPadding`, and `DefaultCellTextState` define the default styles for the cells, including borders, padding, text color, and font size.
+
+## Step 5: Add Repeating Rows and Custom Styles
+
+We can also define styles for repeating rows and other specific table elements like headers and footers.
+
+```csharp
+tableElement.RepeatingRowsCount = 3;
 TextState rowStyle = new TextState();
 rowStyle.BackgroundColor = Color.LightCoral;
 tableElement.RepeatingRowsStyle = rowStyle;
 ```
 
-We used various properties to customize the table element, such as background color, borders, alignment, default cell style, margins, column width, etc.
+The `RepeatingRowsCount` ensures that the first three rows repeat if the table spans multiple pages. We set the `RepeatingRowsStyle` to apply a custom background color to these rows.
 
-## Step 6: Add table headers, body and footer
+## Step 6: Add Table Head, Body, and Foot Elements
 
-Now let's add the table headers, body and footer to the table element.
+Now, let's create the table header, body, and footer sections and populate them with content.
+
 ```csharp
-// Add table headers
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
 
-// Number of rows and columns in the table
-int rowCount = 10;
-int colCount = 5;
-int rowIndex;
-int colIndex;
-
-// Create the table header row
+// Create header row
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
-headTrElement.AlternativeText = "Header Row";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
+headTrElement.AlternativeText = "Head Row";
+for (int colIndex = 0; colIndex < 5; colIndex++)
 {
-     TableTHElement theElement = headTrElement.CreateTH();
-     theElement.SetText(string.Format("Header {0}", colIndex));
+    TableTHElement thElement = headTrElement.CreateTH();
+    thElement.SetText($"Head {colIndex}");
 }
 
-// Add the rows of the table body
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
+// Populate the table body
+for (int rowIndex = 0; rowIndex < 10; rowIndex++)
 {
-     TableTRElement trElement = tableTBodyElement.CreateTR();
-     trElement.AlternativeText = string.Format("Row {0}", rowIndex);
-
-     for (colIndex = 0; colIndex < colCount; colIndex++)
-     {
-         TableTDElement tdelement = trElement.CreateTD();
-         tdElement.SetText(string.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-     }
-}
-
-// Add the footing line of the table
-TableTRElement footTrElement = tableTFootElement.CreateTR();
-footTrElement.AlternativeText = "Footline";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-     TableTDElement tdElement = footTrElement.CreateTD();
-     tdElement.SetText(string.Format("Foot {0}", colIndex));
+    TableTRElement trElement = tableTBodyElement.CreateTR();
+    for (int colIndex = 0; colIndex < 5; colIndex++)
+    {
+        TableTDElement tdElement = trElement.CreateTD();
+        tdElement.SetText($"Cell [{rowIndex}, {colIndex}]");
+    }
 }
 ```
 
-We added the headers, body rows, and footer row to the table using the corresponding elements.
+The table is divided into three parts: the head, body, and foot. We first create the header row using `TableTHElement` and add column headings. Then, we populate the body of the table with `TableTDElement`, filling each cell with a label that includes its position.
 
-## Step 7: Saving the tagged PDF document
+## Step 7: Save the Document
 
-Now that we've created our document with the styled table element, we'll save it as a tagged PDF document.
+Finally, we save the PDF document to the specified directory.
 
 ```csharp
 // Save the tagged PDF document
 document.Save(dataDir + "StyleTableElement.pdf");
 ```
 
-We saved the tagged PDF document in the specified directory.
+This step finalizes the document creation process by saving the PDF file with the styled table.
 
-## Step 8: PDF/UA compliance validation
+## Step 8: Validate PDF/UA Compliance
 
-Next, we will validate the PDF/UA conformity of our document.
-
-```csharp
-// PDF/UA compliance check
-document = new Document(dataDir + "StyleTableElement.pdf");
-bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
-```
-
-We uploaded the tagged PDF document and validated its PDF/UA compliance by generating an XML report.
-
-### Sample source code for Style Table Element using Aspose.PDF for .NET 
+After saving the document, it’s essential to ensure that it complies with PDF/UA (Universal Accessibility) standards.
 
 ```csharp
-
-// The path to the documents directory.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Create document
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example table style");
-taggedContent.SetLanguage("en-US");
-
-// Get root structure element
-StructureElement rootElement = taggedContent.RootElement;
-
-// Create table structure element
-TableElement tableElement = taggedContent.CreateTableElement();
-rootElement.AppendChild(tableElement);
-tableElement.BackgroundColor = Color.Beige;
-tableElement.Border = new BorderInfo(BorderSide.All, 0.80F, Color.Gray);
-tableElement.Alignment = HorizontalAlignment.Center;
-tableElement.Broken = TableBroken.Vertical;
-tableElement.ColumnAdjustment = ColumnAdjustment.AutoFitToWindow;
-tableElement.ColumnWidths = "80 80 80 80 80";
-tableElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.DarkBlue);
-tableElement.DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
-tableElement.DefaultCellTextState.ForegroundColor = Color.DarkCyan;
-tableElement.DefaultCellTextState.FontSize = 8F;
-tableElement.DefaultColumnWidth = "70";
-tableElement.IsBroken = false;
-tableElement.IsBordersIncluded = true;
-tableElement.Left = 0F;
-tableElement.Top = 40F;
-tableElement.RepeatingColumnsCount = 2;
-tableElement.RepeatingRowsCount = 3;
-TextState rowStyle = new TextState();
-rowStyle.BackgroundColor = Color.LightCoral;
-tableElement.RepeatingRowsStyle = rowStyle;
-TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
-TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
-TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-int rowCount = 10;
-int colCount = 5;
-int rowIndex;
-int colIndex;
-TableTRElement headTrElement = tableTHeadElement.CreateTR();
-headTrElement.AlternativeText = "Head Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-	TableTHElement thElement = headTrElement.CreateTH();
-	thElement.SetText(String.Format("Head {0}", colIndex));
-}
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
-{
-	TableTRElement trElement = tableTBodyElement.CreateTR();
-	trElement.AlternativeText = String.Format("Row {0}", rowIndex);
-	for (colIndex = 0; colIndex < colCount; colIndex++)
-	{
-		TableTDElement tdElement = trElement.CreateTD();
-		tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-	}
-}
-TableTRElement footTrElement = tableTFootElement.CreateTR();
-footTrElement.AlternativeText = "Foot Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-	TableTDElement tdElement = footTrElement.CreateTD();
-	tdElement.SetText(String.Format("Foot {0}", colIndex));
-}
-
-// Save Tagged Pdf Document
-document.Save(dataDir + "StyleTableElement.pdf");
-
-// Checking PDF/UA compliance
+// Check PDF/UA compliance
 document = new Document(dataDir + "StyleTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
+Console.WriteLine($"PDF/UA compliance: {isPdfUaCompliance}");
 ```
+
+Here, we reload the document and validate it against PDF/UA standards. Compliance ensures that your PDF meets accessibility requirements, making it suitable for a wide range of users.
 
 ## Conclusion
 
-In this tutorial, we learned how to format the array element with Aspose.PDF for .NET. We customized the styles and properties of the table element, added headers, body rows, and a footer, saved the tagged PDF document, and validated its PDF/UA compliance.
+With Aspose.PDF for .NET, creating and styling tables in your PDF documents is simple and intuitive. By following the steps outlined in this tutorial, you can build tables with customized styles and ensure your PDFs meet accessibility standards. Whether you're generating reports or creating structured documents, tables are a powerful tool for presenting data clearly.
 
-### FAQ's
+## FAQ's
 
-#### Q: What is the purpose of this tutorial on formatting the array element using Aspose.PDF for .NET?
+### Can I add images inside table cells?
+Yes, you can insert images into table cells using the `Image` element.
 
-A: The goal of this tutorial is to guide you through the process of formatting the array element in a PDF document using Aspose.PDF for .NET. It provides step-by-step instructions and C# source code examples to help you customize the styles and properties of the array element.
+### How do I adjust column widths dynamically?
+You can set the `ColumnAdjustment` property to `AutoFitToWindow` to adjust column widths automatically based on content.
 
-#### Q: What are the prerequisites for following this tutorial?
+### Is PDF/UA compliance mandatory for all documents?
+While not mandatory, it is recommended for documents that require high accessibility standards.
 
-A: Before you start, ensure that you have set up your development environment to use Aspose.PDF for .NET. This involves installing the Aspose.PDF library and configuring your project to reference it.
+### Can I apply different styles to specific rows?
+Yes, you can customize individual rows or cells by adjusting their `TextState` or `BackgroundColor`.
 
-#### Q: How can I create a new PDF document and set its title and language using Aspose.PDF for .NET?
-
-A: To create a new PDF document, you need to create a `Document` object from the Aspose.PDF library. The tutorial's provided C# source code demonstrates how to create a document and set its title and language properties.
-
-#### Q: What is the significance of the root structure element in a PDF document?
-
-A: The root structure element acts as a container for other structure elements, helping to organize and categorize the content of the PDF document. It plays a crucial role in establishing the logical structure of the document.
-
-#### Q: How do I create and customize an array structure element using Aspose.PDF for .NET?
-
-A: You can create an array structure element using the `CreateTableElement()` method. The tutorial's source code provides examples of customizing various properties of the table element, such as background color, borders, alignment, column width, and more.
-
-#### Q: Can I customize the styles and properties of table cells within the array element?
-
-A: Yes, the tutorial covers how to customize the styles and properties of the entire table element, including headers, body rows, and footer. However, it doesn't specifically address customizing individual table cells.
-
-#### Q: How can I add headers, body rows, and a footer to the table element?
-
-A: The tutorial explains how to create and add headers, body rows, and a footer to the table element using the appropriate methods provided by Aspose.PDF for .NET.
-
-#### Q: What is PDF/UA compliance, and how can I validate it for my tagged PDF document?
-
-A: PDF/UA compliance ensures that the PDF document conforms to accessibility standards, making it more accessible to users with disabilities. The tutorial demonstrates how to validate PDF/UA conformity using the `Validate()` method and generate an XML compliance report.
-
-#### Q: How can I incorporate these concepts into my own .NET applications?
-
-A: You can use the provided C# source code examples as a guide to implementing array element formatting in your own .NET applications. Modify and adapt the code to match your requirements and integrate it into your projects.
-
-#### Q: Are there any recommended best practices for formatting array elements in PDF documents?
-
-A: When formatting array elements (tables), consider the readability and accessibility of the content. Use clear and legible fonts, appropriate colors, and maintain a consistent layout. Validate PDF/UA compliance to ensure accessibility standards are met.
-
-#### Q: What other features of Aspose.PDF for .NET can I explore for PDF document customization?
-
-A: Aspose.PDF for .NET offers a range of features for PDF document customization, including text manipulation, image insertion, form field management, digital signatures, annotations, and more. Consult the official documentation and resources to explore additional functionalities.
+### What’s the benefit of using tagged content?
+Tagged content improves document accessibility and helps ensure compliance with standards like PDF/UA.

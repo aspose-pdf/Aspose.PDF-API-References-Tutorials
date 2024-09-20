@@ -43,22 +43,22 @@ Aspose.PDF's "Programming with Text" tutorials for .NET offer a comprehensive ra
 | [Replaceable Symbols In Header Footer](./replaceable-symbols-in-header-footer/) | Learn how to use replaceable symbols in the header and footer of a PDF document using Aspose.PDF for .NET. |  
 | [Replace First Occurrence](./replace-first-occurrence/) | Learn how to replace the first occurrence of text in PDF using Aspose.PDF for .NET with our step-by-step guide. Perfect for developers and document handlers. |  
 | [Replace Fonts In PDF File](./replace-fonts/) | Easily replace fonts in PDF files using Aspose.PDF for .NET. Step-by-step guide with code examples to replace fonts. |  
-| [Replace Text All In PDF File](./replace-text-all/) | Learn how to replace all text in PDF file using Aspose.PDF for .NET. |  
-| [Replace Text on Regular Expression In PDF File](./replace-text-on-regular-expression/) | Learn how to replace text based on a regular expression in PDF file using Aspose.PDF for .NET. |  
-| [Replace Text Page In PDF File](./replace-text-page/) | Learn how to replace text on a specific page in PDF file using Aspose.PDF for .NET. |  
-| [Rotate Text Using Paragraph In PDF File](./rotate-text-using-paragraph/) | Learn how to rotate text using paragraphs in PDF file using Aspose.PDF for .NET. |  
-| [Rotate Text Using Text Fragment In PDF File](./rotate-text-using-text-fragment/) | Learn how to rotate text using text fragments in PDF file using Aspose.PDF for .NET. |  
+| [Replace Text All In PDF File](./replace-text-all/) | Learn how to effortlessly replace text in a PDF file using Aspose.PDF for .NET. Complete guide with code snippets included. |  
+| [Replace Text on Regular Expression In PDF File](./replace-text-on-regular-expression/) | Learn how to replace text based on regular expressions in a PDF file using Aspose.PDF for .NET. Follow our step-by-step guide to automate text changes efficiently. |  
+| [Replace Text Page In PDF File](./replace-text-page/) | Learn how to replace text in a PDF file using Aspose.PDF for .NET with this step-by-step guide. Customize fonts, colors, and text properties effortlessly. |  
+| [Rotate Text Using Paragraph In PDF File](./rotate-text-using-paragraph/) | Learn how to rotate text in PDF using Aspose.PDF for .NET. Follow this step-by-step guide to make your documents. |  
+| [Rotate Text Using Text Fragment In PDF File](./rotate-text-using-text-fragment/) | Learn how to rotate text in PDF files using Aspose.PDF for .NET with a step-by-step guide. Discover text manipulation techniques, from positioning to rotating. |  
 | [Rotate Text Using Text Fragment And Paragraph](./rotate-text-using-text-fragment-and-paragraph/) | Learn how to rotate text using text fragment and paragraph in a PDF document using Aspose.PDF for .NET. |  
 | [Rotate Text Using Text Paragraph And Builder In PDF File](./rotate-text-using-text-paragraph-and-builder/) | Learn how to rotate text using text paragraph and builder in PDF file using Aspose.PDF for .NET. |  
 | [Search And Get Text All](./search-and-get-text-all/) | Learn how to search and get text from all pages of a PDF document using Aspose.PDF for .NET. |  
 | [Search And Get Text Page In PDF File](./search-and-get-text-page/) | Learn how to search and get text from a specific page in PDF file using Aspose.PDF for .NET. |  
-| [Search Regular Expression In PDF File](./search-regular-expression/) | Learn how to search and retrieve text using regular expressions in PDF file using Aspose.PDF for .NET. |  
-| [Search Text And Add Hyperlink](./search-text-and-add-hyperlink/) | Learn how to search for text in a PDF, add hyperlinks to the found text, and save the modified document using Aspose.PDF for .NET. |  
-| [Search Text And Draw Rectangle](./search-text-and-draw-rectangle/) | Learn how to search for text in a PDF, draw rectangles around the found text, and save the modified document using Aspose.PDF for .NET. |  
-| [Search Text Segments Page In PDF File](./search-text-segments-page/) | Learn how to search for text segments on a page in PDF file and retrieve their properties using Aspose.PDF for .NET. |  
-| [Search Text With Dot Net Regex](./search-text-with-dot-net-regex/) | Learn how to search for text using .NET regular expressions in a PDF document using Aspose.PDF for .NET. |   
-| [Specify Line Spacing In PDF File](./specify-line-spacing/) | Learn how to specify line spacing in PDF file using Aspose.PDF for .NET. |  
-| [Text Alignment For Floating Box Contents In PDF File](./text-alignment-for-floating-box-contents/) | Learn how to align text within floating boxes in PDF file using Aspose.PDF for .NET. |  
-| [Text And Image As Paragraph In PDF File](./text-and-image-as-paragraph/) | Learn how to add text and an image as inline paragraphs in PDF file using Aspose.PDF for .NET. |  
+| [Search Regular Expression In PDF File](./search-regular-expression/) | Learn how to search for regular expressions in PDF files using Aspose.PDF for .NET in this step-by-step tutorial. Boost your productivity with regex. |  
+| [Search Text And Add Hyperlink](./search-text-and-add-hyperlink/) | Learn how to search text and add hyperlinks in PDFs using Aspose.PDF for .NET with our step-by-step tutorial. |  
+| [Search Text And Draw Rectangle](./search-text-and-draw-rectangle/) | Learn to search text in PDFs and highlight it with rectangles using Aspose.PDF for .NET! Easy step-by-step tutorial for enhanced PDF manipulation skills. |  
+| [Search Text Segments Page In PDF File](./search-text-segments-page/) | Learn how to search text segments in PDF files using Aspose.PDF for .NET with this detailed step-by-step guide. Extract text, analyze segments, and more. |  
+| [Search Text With Dot Net Regex](./search-text-with-dot-net-regex/) | Learn how to search text in PDFs using .NET Regex with Aspose.PDF. Follow our step-by-step guide and simplify your PDF tasks. |   
+| [Specify Line Spacing In PDF File](./specify-line-spacing/) | Learn how to specify line spacing in a PDF using Aspose.PDF for .NET with this step-by-step guide. Perfect for developers seeking precise text formatting. |  
+| [Text Alignment For Floating Box Contents In PDF File](./text-alignment-for-floating-box-contents/) | Learn how to align floating box contents in PDF files using Aspose.PDF for .NET. Create stunning documents with professional layouts. |  
+| [Text And Image As Paragraph In PDF File](./text-and-image-as-paragraph/) | Create PDFs with text and images using Aspose.PDF for .NET. Learn how to add text and inline images step-by-step. |  
 | [Text Segments In PDF File](./text-segments/) | Learn how to search for specific text segments in PDF file using regular expressions in Aspose.PDF for .NET. |  
 | [Use Latex Script In PDF File](./use-latex-script/) | Learn how to use Latex script to add mathematical expressions or formulae in PDF file using Aspose.PDF for .NET. |  

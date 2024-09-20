@@ -79,7 +79,7 @@ pdfOutline.Italic = true;
 pdfOutline.Bold = true;
 ```
 
-在此代码片段中，我们创建一个新的`OutlineItemCollection`作为父书签。我们设置了它的标题和样式（斜体和粗体）以使其脱颖而出。这就像给你的章节起了一个引人注目的标题！
+在此代码片段中，我们创建一个新的`OutlineItemCollection`作为父书签。我们设置了它的标题和样式（斜体和粗体），使其脱颖而出。这就像给你的章节起了一个吸引人的标题！
 
 ## 步骤 4：创建子书签
 

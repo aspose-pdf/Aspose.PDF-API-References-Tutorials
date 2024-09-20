@@ -50,7 +50,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 4. lépés: Nyissa meg a PDF forrásdokumentumot
 
-A beállított könyvtár mellett ideje megnyitni a konvertálni kívánt PDF-dokumentumot. A PDF-fájl betöltéséhez használja a következő kódot:
+A beállított könyvtár mellett ideje megnyitni a konvertálni kívánt PDF-dokumentumot. Használja a következő kódot a PDF fájl betöltéséhez:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "PDFToDOC.pdf");

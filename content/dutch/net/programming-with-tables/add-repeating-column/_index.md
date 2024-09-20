@@ -2,120 +2,105 @@
 title: Herhalende kolom toevoegen in PDF-document
 linktitle: Herhalende kolom toevoegen in PDF-document
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u een herhalende kolom toevoegt aan een PDF-document met Aspose.PDF voor .NET.
+description: Leer hoe u herhalende kolommen toevoegt aan PDF-documenten met Aspose.PDF voor .NET. Stapsgewijze handleiding met voorbeelden en code. Perfect voor ontwikkelaars.
 type: docs
 weight: 20
 url: /nl/net/programming-with-tables/add-repeating-column/
 ---
-In deze tutorial gaan we leren hoe je een herhalende kolom toevoegt aan een PDF-document met Aspose.PDF voor .NET. We leggen de broncode in C# stap voor stap uit. Aan het einde van deze tutorial weet je hoe je een tabel met een herhalende kolom maakt in een PDF-document. Laten we beginnen!
+## Invoering
 
-## Stap 1: De omgeving instellen
-Zorg er eerst voor dat u uw C#-ontwikkelomgeving hebt ingesteld met Aspose.PDF voor .NET. Voeg de referentie toe aan de bibliotheek en importeer de benodigde naamruimten.
+Als u met PDF-documenten werkt en herhalende kolommen wilt toevoegen, bent u hier aan het juiste adres! Met Aspose.PDF voor .NET kunt u eenvoudig tabellen en inhoud in een PDF beheren. Of u nu dynamische rapporten, facturen of een ander gestructureerd document maakt, herhalende kolommen kunnen een game-changer zijn bij het organiseren van gegevens. Laten we eens kijken naar een stapsgewijze handleiding over het toevoegen van herhalende kolommen aan een PDF-document.
 
-## Stap 2: Het PDF-document maken
-In deze stap maken we een nieuw PDF-document.
+## Vereisten
+
+Voordat we met de code beginnen, controleren we of alles is ingesteld:
+
+- Aspose.PDF voor .NET: De Aspose.PDF voor .NET-bibliotheek moet in uw project zijn geïnstalleerd.
+- [Download Aspose.PDF voor .NET](https://releases.aspose.com/pdf/net/)
+- [Gratis proefperiode](https://releases.aspose.com/)
+- Ontwikkelomgeving: Zorg ervoor dat u een .NET-compatibele IDE zoals Visual Studio hebt geïnstalleerd.
+- Basiskennis van C#: Hoewel we alles zullen uitleggen, is een basiskennis van C# voldoende om de cursus soepel te kunnen volgen.
+  
+ Als u Aspose.PDF voor .NET nog niet hebt, kunt u een[tijdelijke licentie](https://purchase.aspose.com/temporary-license/) om de functies ervan te gaan verkennen.
+
+## Pakketten importeren
+
+Om te beginnen moet u de benodigde naamruimten importeren uit Aspose.PDF voor .NET. Dit is hoe u dat doet:
 
 ```csharp
-Document doc = new Document();
-Page page = doc.Pages.Add();
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-We hebben een leeg PDF-document gemaakt waar we inhoud aan kunnen toevoegen.
+Deze pakketten bieden de essentiële klassen en methoden die nodig zijn om met PDF-documenten te werken en tabellen te bewerken.
 
-## Stap 3: De tabellen aanmaken
-In deze stap maken we een hoofdtabel (`outerTable`) en een geneste tabel (`mytable`) die in de kolom herhaald wordt.
+Laten we het proces nu opsplitsen in meerdere stappen om herhalende kolommen toe te voegen aan een PDF-document. Volg mee!
 
-```csharp
-Table outerTable = new Table();
-outerTable.ColumnWidths = "100%";
-outerTable.HorizontalAlignment = HorizontalAlignment.Left;
+## Stap 1: Stel het pad naar uw documentenmap in
 
-Table mytable = new Table();
-mytable.Broken = TableBroken.VerticalInSamePage;
-mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
-```
-
-We hebben tabeleigenschappen gespecificeerd, zoals kolombreedte en geneste tabelonderbrekingsmodus.
-
-## Stap 4: De tabellen aan het document toevoegen
-Nu voegen we de gemaakte tabellen toe aan het PDF-document.
+Voordat we bestanden maken of bewerken, moeten we het pad definiëren waar de gegenereerde PDF wordt opgeslagen. Stel in uw C#-project het directorypad in waar uw bestanden worden opgeslagen:
 
 ```csharp
-page.Paragraphs.Add(outerTable);
-var bodyRow = outerTable.Rows.Add();
-var bodyCell = bodyRow.Cells.Add();
-bodyCell.Paragraphs.Add(mytable);
-mytable.RepeatingColumnsCount = 5;
-page.Paragraphs.Add(mytable);
-```
-
-We voegen eerst de hoofdtabel toe (`outerTable`) aan het PDF-document. Vervolgens voegen we de geneste tabel (`mytable` ) als een alinea in een cel in de hoofdtabel. We specificeren ook het aantal herhaalde kolommen voor`mytable` (in dit voorbeeld 5 kolommen).
-
-## Stap 5: Kopteksten en regels toevoegen
-Nu voegen we de kopteksten en rijen toe aan de tabel.
-
-```csharp
-Row headerRow = mytable.Rows.Add();
-headerRow.Cells.Add("header 1");
-headerRow.Cells.Add("header 2");
-headerRow.Cells.Add("header 3");
-// ...
-//Voeg hier andere headers toe
-
-for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
-{
-     Row row1 = mytable.Rows.Add();
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
-     // ...
-     // Voeg hier de andere kolommen toe
-}
-```
-
-We voegen eerst de headers toe aan de eerste rij van de tabel (`headerRow`). Vervolgens voegen we de rijen met gegevens uit een lus toe. In dit voorbeeld voegen we 6 rijen met gegevens toe.
-
-## Stap 6: Het PDF-document opslaan
-Ten slotte slaan we het PDF-document op in het opgegeven bestand.
-
-```csharp
-string outFile = dataDir + "AddRepeatingColumn_out.pdf";
-doc.Save(outFile);
-```
-
-Zorg ervoor dat u de juiste map en bestandsnaam opgeeft om het PDF-uitvoerbestand op te slaan.
-
-### Voorbeeldbroncode voor het toevoegen van een herhalende kolom met behulp van Aspose.PDF voor .NET
-
-```csharp
-// Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-
 string outFile = dataDir + "AddRepeatingColumn_out.pdf";
-// Een nieuw document maken
+```
+
+ Dit pad verwijst naar de map waar de uitvoer-PDF wordt opgeslagen. Vervangen`"YOUR DOCUMENT DIRECTORY"` met het werkelijke pad op uw machine.
+
+## Stap 2: Maak een nieuw PDF-document
+
+ Om te beginnen, instantiëren van een nieuwe`Document` object. Dit zal dienen als de container voor alle pagina's en inhoud in de PDF.
+
+```csharp
 Document doc = new Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
+```
 
-// Instantieer een buitenste tabel die de hele pagina beslaat
+ Hier hebben we een nieuw PDF-document gemaakt en er een lege pagina aan toegevoegd.`doc.Pages.Add()` methode voegt een nieuwe pagina in het document in.
+
+## Stap 3: Instantieer de buitenste tabel
+
+Vervolgens maken we een outer table. Deze tabel zal de gehele breedte van de pagina beslaan en dienen als een container voor andere tabellen, inclusief degene die de herhalende kolommen zal bevatten.
+
+```csharp
 Aspose.Pdf.Table outerTable = new Aspose.Pdf.Table();
 outerTable.ColumnWidths = "100%";
 outerTable.HorizontalAlignment = HorizontalAlignment.Left;
+```
 
-// Instantieer een tabelobject dat genest zal worden binnen outerTable dat zal breken binnen dezelfde pagina
+ We hebben de`ColumnWidths` eigenschap op "100%" zetten, wat betekent dat de tabel zich over de gehele paginabreedte uitstrekt.
+
+## Stap 4: Maak de binnenste tabel
+
+ Laten we nu de binnenste tabel maken, die herhalende kolommen zal hebben. De belangrijkste eigenschappen hier zijn`Broken` , waardoor de tabel op dezelfde pagina kan worden voortgezet, en`ColumnAdjustment`, die automatisch de kolombreedtes aanpast aan de inhoud.
+
+```csharp
 Aspose.Pdf.Table mytable = new Aspose.Pdf.Table();
 mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
+```
 
-// Voeg de outerTable toe aan de pagina-alinea's
-// Voeg mytable toe aan outerTable
+Deze binnenste tabel wordt genest in de buitenste tabel.
+
+## Stap 5: Tabellen toevoegen aan de pagina
+
+Nu we zowel de outer als inner tabellen gereed hebben, voegen we ze toe aan de pagina. Deze stap zorgt ervoor dat de tabellen worden opgenomen in de structuur van het document.
+
+```csharp
 page.Paragraphs.Add(outerTable);
 var bodyRow = outerTable.Rows.Add();
 var bodyCell = bodyRow.Cells.Add();
 bodyCell.Paragraphs.Add(mytable);
 mytable.RepeatingColumnsCount = 5;
-page.Paragraphs.Add(mytable);
+```
 
-// Koptekstrij toevoegen
+ Hier hebben we de`outerTable` naar de pagina, en vervolgens hebben we binnen de buitenste tabel de`mytable` . Bovendien stellen we`RepeatingColumnsCount`tot 5, om aan te geven hoeveel kolommen herhaald moeten worden wanneer er gegevens worden toegevoegd.
+
+## Stap 6: Koptekstrij toevoegen
+
+Nu is het tijd om de headers aan de tabel toe te voegen. De headerrij geeft context aan de data en helpt bij het structureren van de kolommen. 
+
+```csharp
 Aspose.Pdf.Row row = mytable.Rows.Add();
 row.Cells.Add("header 1");
 row.Cells.Add("header 2");
@@ -131,51 +116,64 @@ row.Cells.Add("header 14");
 row.Cells.Add("header 15");
 row.Cells.Add("header 16");
 row.Cells.Add("header 17");
+```
 
+Met dit codefragment wordt de eerste rij (die we als kopteksten gebruiken) toegevoegd en worden cellen gevuld met tekst zoals 'koptekst 1', 'koptekst 2', enzovoort.
+
+## Stap 7: Gegevensrijen toevoegen
+
+Ten slotte kunnen we wat data aan de tabel toevoegen. Deze lus creëert dynamisch rijen en vult de cellen met content:
+
+```csharp
 for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
-
 {
-	// Maak rijen in de tabel en vervolgens cellen in de rijen
-	Aspose.Pdf.Row row1 = mytable.Rows.Add();
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 4");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 5");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 6");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 7");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 11");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 12");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 13");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 14");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 15");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 16");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 17");
+    Aspose.Pdf.Row row1 = mytable.Rows.Add();
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 4");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 5");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 6");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 7");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 11");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 12");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 13");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 14");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 15");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 16");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 17");
 }
+```
+
+De lus wordt zes keer herhaald, waarbij rijen worden toegevoegd en elke cel wordt gevuld met bijbehorende kolomgegevens (bijvoorbeeld 'kolom 1, 1', 'kolom 2, 2', enz.).
+
+## Stap 8: Sla het document op
+
+Zodra alle rijen en kolommen zijn toegevoegd, is de laatste stap het opslaan van het document in het opgegeven bestandspad.
+
+```csharp
 doc.Save(outFile);
 ```
 
+Uw document is nu opgeslagen met herhalende kolommen!
+
 ## Conclusie
-In deze tutorial hebben we geleerd hoe je een herhalende kolom toevoegt aan een PDF-document met Aspose.PDF voor .NET. Je kunt deze stapsgewijze handleiding gebruiken om tabellen met herhalende kolommen te maken in je eigen C#-projecten.
 
-### FAQ's voor het toevoegen van een herhalende kolom in een PDF-document
+Daar heb je het! Met deze eenvoudige stappen kun je een PDF-document maken met herhalende kolommen met Aspose.PDF voor .NET. Door de flexibiliteit van geneste tabellen te benutten, kun je complexe lay-outs bereiken die je PDF's er professioneel en georganiseerd uit laten zien. Probeer dit uit voor je volgende project en ontdek het volledige potentieel van Aspose.PDF om je PDF-generatiebehoeften te verwerken.
 
-#### V: Kan ik het aantal herhaalde kolommen in de geneste tabel aanpassen?
+## Veelgestelde vragen
 
- A: Ja, u kunt het aantal herhaalde kolommen in de geneste tabel aanpassen. In het gegeven voorbeeld stellen we in`mytable.RepeatingColumnsCount = 5;`, wat betekent dat er 5 herhaalde kolommen zullen zijn. U kunt deze waarde wijzigen naar elk gewenst nummer.
+### Wat is Aspose.PDF voor .NET?
+Aspose.PDF voor .NET is een krachtige bibliotheek waarmee ontwikkelaars programmatisch PDF-documenten kunnen maken, bewerken en beheren.
 
-#### V: Is het mogelijk om dynamisch meer rijen aan de geneste tabel toe te voegen?
+### Kan ik het aantal herhalende kolommen dynamisch aanpassen?
+ Ja, u kunt het aantal herhalende kolommen wijzigen door de`RepeatingColumnsCount` eigendom.
 
-A: Ja, u kunt dynamisch meer rijen toevoegen aan de geneste tabel op dezelfde manier als getoond in de tutorial. U kunt lussen of andere logica gebruiken om rijen toe te voegen op basis van uw gegevens.
+### Hoe kan ik een licentie aanvragen voor Aspose.PDF voor .NET?
+ U kunt een licentie van een bestand of stream toepassen door de volgende stappen te volgen:[documentatie](https://reference.aspose.com/pdf/net/).
 
-#### V: Kan ik stijlen en opmaak toepassen op de tabel en de cellen daarin?
+### Is het mogelijk om afbeeldingen aan de tabelcellen toe te voegen?
+Ja, Aspose.PDF voor .NET ondersteunt het toevoegen van verschillende soorten inhoud, waaronder afbeeldingen, aan tabelcellen.
 
-A: Ja, u kunt stijlen en opmaak toepassen op de tabel en de cellen met Aspose.PDF voor .NET. De bibliotheek biedt verschillende eigenschappen en methoden om het uiterlijk van de tabel en de inhoud ervan aan te passen.
-
-#### V: Is Aspose.PDF voor .NET compatibel met .NET Core?
-
-A: Ja, Aspose.PDF voor .NET is compatibel met .NET Core. U kunt het gebruiken in zowel .NET Framework als .NET Core-applicaties.
-
-#### V: Kan ik deze aanpak gebruiken om herhalende kolommen toe te voegen aan een bestaand PDF-document?
-
-A: Ja, u kunt deze aanpak gebruiken om herhalende kolommen toe te voegen aan een bestaand PDF-document. Laad het bestaande document eenvoudigweg met Aspose.PDF voor .NET en volg dezelfde stappen om de herhalende kolom te maken en toe te voegen.
+### Kan ik de tabelindeling verder aanpassen?
+Absoluut! Aspose.PDF biedt uitgebreide functies voor het aanpassen van tabelstijlen, waaronder randen, opvulling, uitlijning en meer.

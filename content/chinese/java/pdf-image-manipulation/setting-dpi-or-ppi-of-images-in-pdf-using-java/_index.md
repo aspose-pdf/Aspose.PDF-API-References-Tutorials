@@ -20,7 +20,7 @@ url: /zh/java/pdf-image-manipulation/setting-dpi-or-ppi-of-images-in-pdf-using-j
 
 ### PDF 中图像的 DPI/PPI 是多少？
 
-DPI（每英寸点数）和 PPI（每英寸像素数）是决定 PDF 文档中图像分辨率或质量的测量单位。DPI/PPI 越高，图像质量越高，但也可能导致文件大小更大。
+DPI（每英寸点数）和 PPI（每英寸像素数）是决定 PDF 文档中图像分辨率或质量的测量单位。DPI/PPI 越高，图像质量越高，但文件大小也越大。
 
 ### 使用 Aspose.PDF for Java 设置 DPI/PPI 的方法
 

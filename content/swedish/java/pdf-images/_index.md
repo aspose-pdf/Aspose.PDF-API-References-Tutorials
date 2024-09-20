@@ -16,7 +16,7 @@ Våra handledningar leder dig genom processen att infoga, ändra storlek på och
 
 ## Enkel bildoptimering
 
-Att optimera bilder i PDF-filer är viktigt för att minska filstorleken utan att kompromissa med kvaliteten. Vi kommer att fördjupa oss i de invecklade teknikerna för bildoptimering, för att säkerställa att dina PDF-filer förblir effektiva och snabba att ladda. Aspose.PDF för Java tillhandahåller verktygen för att finjustera bildkomprimering och upplösningsinställningar, så att du kan hitta rätt balans för dina specifika behov. Följ med oss på denna bildcentrerade resa och lås upp potentialen hos Aspose.PDF för Java för att skapa fantastiska och effektiva PDF-dokument.
+Att optimera bilder i PDF-filer är viktigt för att minska filstorleken utan att kompromissa med kvaliteten. Vi kommer att fördjupa oss i krångligheterna med bildoptimeringstekniker, för att säkerställa att dina PDF-filer förblir effektiva och snabba att ladda. Aspose.PDF för Java tillhandahåller verktygen för att finjustera bildkomprimering och upplösningsinställningar, så att du kan hitta rätt balans för dina specifika behov. Följ med oss på denna bildcentrerade resa och frigör potentialen hos Aspose.PDF för Java för att skapa fantastiska och effektiva PDF-dokument.
 
 ## Handledning för PDF-bilder
 ### [Lägg till linjeobjekt till PDF med Java](./add-line-object-to-pdf-using-java/)

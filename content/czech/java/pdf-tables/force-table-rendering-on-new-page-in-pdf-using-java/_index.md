@@ -115,7 +115,7 @@ Ano, vzhled tabulky v PDF si můžete přizpůsobit použitím různých stylů,
 
 ### Co když při generování PDF narazím na chyby?
 
-Pokud se při generování PDF setkáte s chybami, ujistěte se, že jste do kódu Java implementovali správné zpracování chyb, abyste výjimky zvládli elegantně. Další informace o zpracování chyb naleznete v dokumentaci Aspose.PDF.
+Pokud při generování PDF narazíte na chyby, ujistěte se, že jste do kódu Java implementovali správné zpracování chyb, abyste výjimky zvládli elegantně. Další informace o zpracování chyb naleznete v dokumentaci Aspose.PDF.
 
 ### Je Aspose.PDF for Java vhodný pro generování PDF ve velkém měřítku?
 

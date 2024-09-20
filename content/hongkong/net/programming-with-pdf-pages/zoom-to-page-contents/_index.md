@@ -95,7 +95,7 @@ PdfPageEditor ppe = new PdfPageEditor();
 ppe.BindPdf(dataDir + "input.pdf");
 ```
 
-## 第6步：設定變焦係數
+## 第6步：設定縮放係數
 
 現在神奇的部分來了！我們將使用先前獲得的尺寸來設定 PDF 的縮放等級：
 

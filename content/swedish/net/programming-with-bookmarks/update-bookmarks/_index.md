@@ -15,7 +15,7 @@ Att arbeta med PDF-filer kräver ofta hantering av olika element som text, bilde
 
 Innan vi dyker in i koden, låt oss se till att du har allt redo att gå. Här är vad du behöver:
 
-1.  Aspose.PDF för .NET: Du kan ladda ner den[här](https://releases.aspose.com/pdf/net/).
+1.  Aspose.PDF för .NET: Du kan ladda ner det[här](https://releases.aspose.com/pdf/net/).
 2. .NET Framework: Se till att du har .NET installerat på ditt system.
 3. IDE: Helst Visual Studio eller någon annan IDE som stöder .NET.
 4. En PDF-fil med befintliga bokmärken: Detta kommer att vara din testfil för uppdatering av bokmärken.

@@ -2,235 +2,160 @@
 title: पीडीएफ फाइल में अक्षर हाइलाइट करें
 linktitle: पीडीएफ फाइल में अक्षर हाइलाइट करें
 second_title: .NET API संदर्भ के लिए Aspose.PDF
-description: .NET के लिए Aspose.PDF का उपयोग करके PDF फ़ाइल में वर्णों को हाइलाइट करना सीखें।
+description: इस व्यापक चरण-दर-चरण मार्गदर्शिका में .NET के लिए Aspose.PDF का उपयोग करके PDF में वर्णों को हाइलाइट करना सीखें।
 type: docs
 weight: 240
 url: /hi/net/programming-with-text/highlight-character-in-pdf/
 ---
-इस ट्यूटोरियल में, हम बताएंगे कि .NET के लिए Aspose.PDF लाइब्रेरी का उपयोग करके PDF फ़ाइल में अक्षरों को कैसे हाइलाइट किया जाए। हम दिए गए C# सोर्स कोड का उपयोग करके PDF में अक्षरों को हाइलाइट करने की चरण-दर-चरण प्रक्रिया से गुजरेंगे।
+## परिचय
 
-## आवश्यकताएं
+जब PDF के साथ काम करने की बात आती है, तो अक्सर टेक्स्ट या अक्षरों को हाइलाइट करने की ज़रूरत पड़ती है - चाहे अकादमिक उद्देश्यों के लिए, संपादन के लिए, या सिर्फ़ पठनीयता में सुधार के लिए। कल्पना करें कि आपके पास एक सुंदर दस्तावेज़ है, लेकिन आप कुछ हिस्सों पर ज़ोर देना चाहते हैं। यहीं पर हाइलाइटिंग की बात आती है! इस ट्यूटोरियल में, हम शक्तिशाली Aspose.PDF for .NET लाइब्रेरी का उपयोग करके PDF फ़ाइल में अक्षरों को हाइलाइट करने के तरीके के बारे में जानेंगे। 
 
-आरंभ करने से पहले, सुनिश्चित करें कि आपके पास निम्नलिखित हैं:
+## आवश्यक शर्तें
 
-- .NET के लिए Aspose.PDF लाइब्रेरी स्थापित की गई।
-- C# प्रोग्रामिंग की बुनियादी समझ.
+कोड में जाने से पहले, आइए सुनिश्चित करें कि हमारे पास वह सब कुछ है जिसकी हमें ज़रूरत है। आपको इसकी ज़रूरत होगी:
 
-## चरण 1: दस्तावेज़ निर्देशिका सेट करें
+1. विकास परिवेश: यह ट्यूटोरियल मानता है कि आप विजुअल स्टूडियो या किसी समान .NET IDE में काम कर रहे हैं।
+2.  .NET लाइब्रेरी के लिए Aspose.PDF: यदि आपने पहले से ऐसा नहीं किया है, तो आप कर सकते हैं[यहाँ पर डाउनलोड करो](https://releases.aspose.com/pdf/net/) और इसे अपने प्रोजेक्ट में जोड़ें. 
+3. C# का बुनियादी ज्ञान: C# प्रोग्रामिंग की प्रारंभिक जानकारी आपको कार्यान्वयन को आसानी से समझने में मदद करेगी।
+4. एक पीडीएफ दस्तावेज़: आपके पास काम करने के लिए एक नमूना पीडीएफ फ़ाइल तैयार होनी चाहिए। आप एक बना सकते हैं या किसी मौजूदा दस्तावेज़ का उपयोग कर सकते हैं।
 
- सबसे पहले, आपको उस डायरेक्टरी का पथ सेट करना होगा जहाँ आपकी इनपुट पीडीएफ फाइल स्थित है।`"YOUR DOCUMENT DIRECTORY"` में`dataDir` अपनी पीडीएफ फाइल के पथ के साथ चर।
+## पैकेज आयात करना
+
+आरंभ करने के लिए, हमें आवश्यक नामस्थानों को आयात करना होगा। ऐसा करने के लिए, आपको उन्हें अपनी C# फ़ाइल के शीर्ष पर शामिल करना होगा:
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Facades;
+using Aspose.Pdf.Devices;
+using Aspose.Pdf.Text;
+using System;
+using System.Drawing;
 ```
 
-## चरण 2: पीडीएफ दस्तावेज़ लोड करें
+ये पैकेज एस्पोज लाइब्रेरी का उपयोग करके पीडीएफ दस्तावेजों को बनाने, हेरफेर करने और प्रसंस्करण के लिए आवश्यक हैं।
 
- इसके बाद, हम इनपुट पीडीएफ दस्तावेज़ को लोड करते हैं`Aspose.Pdf.Document` कक्षा।
+अब, आइए आपकी पीडीएफ में अक्षरों को हाइलाइट करने के लिए प्रक्रिया को सरल चरणों में विभाजित करें। 
+
+## चरण 1: पीडीएफ दस्तावेज़ को आरंभ करें
+
+पहला कदम अपने PDF दस्तावेज़ को आरंभ करना है। इसमें उस PDF फ़ाइल को लोड करना शामिल है जिसके साथ आप काम करेंगे। इसे करने का तरीका यहां बताया गया है:
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // सही रास्ता तय करना सुनिश्चित करें.
 Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
 ```
+इस स्निपेट में, प्रतिस्थापित करें`YOUR DOCUMENT DIRECTORY` आपकी मशीन पर वास्तविक पथ के साथ जहाँ आपकी इनपुट पीडीएफ फाइल स्थित है।`Aspose.Pdf.Document` क्लास को आपके पीडीएफ को लोड करने के लिए इंस्टैंशिएट किया गया है।
 
-## चरण 3: पीडीएफ को छवि में बदलें
+## चरण 2: रेंडरिंग प्रक्रिया सेट करें
 
- अक्षरों को हाइलाइट करने के लिए, हम पीडीएफ दस्तावेज़ को छवि में परिवर्तित करते हैं`PdfConverter` वर्ग। हम रूपांतरण के लिए संकल्प निर्धारित करते हैं और छवि को एक के रूप में पुनः प्राप्त करते हैं`Bitmap` वस्तु।
+इसके बाद, हमें अपने दस्तावेज़ के लिए रेंडरिंग प्रक्रिया तैयार करनी होगी। यह पृष्ठ पर वर्णों को सटीक रूप से हाइलाइट करने के लिए आवश्यक है।
 
 ```csharp
-int resolution = 150;
+int resolution = 150; // छवि कैप्चरिंग के लिए रिज़ॉल्यूशन सेट करें.
 using (MemoryStream ms = new MemoryStream())
 {
-     PdfConverter conv = new PdfConverter(pdfDocument);
-     conv. Resolution = new Resolution(resolution, resolution);
-     conv. GetNextImage(ms, System.Drawing.Imaging.ImageFormat.Png);
-     Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
+    PdfConverter conv = new PdfConverter(pdfDocument);
+    conv.Resolution = new Resolution(resolution, resolution);
+    conv.GetNextImage(ms, System.Drawing.Imaging.ImageFormat.Png);
+    Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
 ```
+ हम स्पष्टता के लिए एक रिज़ॉल्यूशन परिभाषित करते हैं, जिससे पाठ को ठीक से प्रस्तुत किया जा सके।`PdfConverter`पीडीएफ पृष्ठों को चित्रों में बदल देता है ताकि हम उन पर चित्र बना सकें।
 
-## चरण 4: वर्ण हाइलाइट करें
+## चरण 3: ड्राइंग के लिए ग्राफ़िक्स ऑब्जेक्ट बनाएँ
 
- हम पीडीएफ दस्तावेज़ के प्रत्येक पृष्ठ को देखते हैं और एक का उपयोग करते हैं`TextFragmentAbsorber` पेज में सभी शब्दों को खोजने के लिए ऑब्जेक्ट का उपयोग करें। फिर हम आयतों का उपयोग करके उन्हें हाइलाइट करने के लिए टेक्स्ट के टुकड़ों, खंडों और वर्णों पर पुनरावृत्ति करते हैं।
+ड्राइंग प्रक्रिया को सेट करने के बाद, हमें एक ग्राफ़िक्स ऑब्जेक्ट बनाना होगा जिसमें हम हाइलाइटिंग करेंगे:
 
 ```csharp
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
 {
-     // स्केल सेट करें और रूपांतरित करें
-     float scale = resolution / 72f;
-     gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
+    float scale = resolution / 72f; // पैमाने का कारक।
+    gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
+```
+यहाँ, हम बिटमैप इमेज से ग्राफ़िक्स ऑब्जेक्ट बनाते हैं। रूपांतरण आवश्यक रिज़ॉल्यूशन से सही ढंग से मेल खाने के लिए रेंडरिंग को समायोजित करने में मदद करता है।
 
-     // पृष्ठों के माध्यम से लूप
-     for (int i = 0; i < pdfDocument.Pages.Count; i++)
-     {
-         Page page = pdfDocument.Pages[1];
+## चरण 4: प्रत्येक पृष्ठ पर जाएँ और टेक्स्ट हाइलाइट करें
 
-         //पेज में सभी शब्द खोजें
-         TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
-         textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
-         page. Accept(textFragmentAbsorber);
-         TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+अब, आइए पीडीएफ के प्रत्येक पृष्ठ पर जाएं और उन पाठ अंशों को ढूंढें जिन्हें हम हाइलाइट करना चाहते हैं:
 
-         // पाठ अंशों के माध्यम से लूप करें
-         foreach(TextFragment textFragment in textFragmentCollection)
-         {
-             if (i == 0)
-             {
-                 // वर्ण हाइलाइट करें
-                 gr.DrawRectangle(
-                     Think.Yellow,
-                     (float)textFragment.Position.XIndent,
-                     (float)textFragment.Position.YIndent,
-                     (float)textFragment.Rectangle.Width,
-                     (float)textFragment.Rectangle.Height);
+```csharp
+for (int i = 0; i < pdfDocument.Pages.Count; i++)
+{
+    Page page = pdfDocument.Pages[i + 1]; // Aspose में पृष्ठ 1-इंडेक्स किए गए हैं।
+    TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
+    textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
+    page.Accept(textFragmentAbsorber);
+```
+ हम प्रत्येक पृष्ठ पर पहुंचते हैं और सभी पाठों को खोजते हैं`TextFragmentAbsorber` . नियमित अभिव्यक्ति पैटर्न`@"[\S]+"` सभी गैर-रिक्त स्थान वर्णों को कैप्चर करता है.
 
-                 // खंडों के माध्यम से लूप
-                 foreach(TextSegment segment in textFragment.Segments)
-                 {
-                     // हाइलाइट खंड
-                     gr.DrawRectangle(
-                         Think Green,
-                         (float)segment.Rectangle.LLX,
-                         (float)segment.Rectangle.LLY,
-                         (float)segment.Rectangle.Width,
-                         (float)segment.Rectangle.Height);
+## चरण 5: टेक्स्ट के टुकड़े निकालें और हाइलाइट करें
 
-                     // वर्णों के माध्यम से लूप करें
-                     foreach(CharInfo characterInfo in segment.Characters)
-                     {
-                         // हाइलाइटचरित्र
-                         gr.DrawRectangle(
-                             Think.Black,
-                             (float)characterInfo.Rectangle.LLx,
-                             (float)characterInfo.Rectangle.LLY,
-                             (float)characterInfo.Rectangle.Width,
-                             (float)characterInfo.Rectangle.Height);
-                     }
-                 }
-             }
-         }
-     }
+अब समय है टेक्स्ट के टुकड़ों को निकालने और उन्हें हाइलाइट करने का। इस प्रक्रिया में उन अक्षरों के चारों ओर आयत बनाना शामिल है जिन्हें हम हाइलाइट करना चाहते हैं:
+
+```csharp
+TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+
+foreach (TextFragment textFragment in textFragmentCollection)
+{
+    // यहाँ तर्क पर प्रकाश डाला गया है
+    for (int segNum = 1; segNum <= textFragment.Segments.Count; segNum++)
+    {
+        TextSegment segment = textFragment.Segments[segNum];
+        for (int charNum = 1; charNum <= segment.Characters.Count; charNum++)
+        {
+            CharInfo characterInfo = segment.Characters[charNum];
+            gr.DrawRectangle(Pens.Black, 
+                (float)characterInfo.Rectangle.LLX, 
+                (float)characterInfo.Rectangle.LLY, 
+                (float)characterInfo.Rectangle.Width, 
+                (float)characterInfo.Rectangle.Height);
+        }
+    }
 }
 ```
+हम प्रत्येक पाठ खंड, उसके खंडों और व्यक्तिगत वर्णों के माध्यम से लूप बनाते हैं, तथा पहले से निर्मित ग्राफिक्स ऑब्जेक्ट का उपयोग करके उनके चारों ओर आयताकार आकृतियाँ बनाते हैं।
 
-## चरण 5: आउटपुट छवि सहेजें
+## चरण 6: संशोधित छवि सहेजें
 
-अंत में, हम संशोधित छवि को हाइलाइट किए गए अक्षरों के साथ निर्दिष्ट आउटपुट फ़ाइल में सहेजते हैं।
+हाइलाइट करने के बाद, आपको परिणामी छवि को एक नई PNG फ़ाइल के रूप में सहेजना होगा:
 
 ```csharp
 dataDir = dataDir + "HighlightCharacterInPDF_out.png";
 bmp.Save(dataDir, System.Drawing.Imaging.ImageFormat.Png);
 ```
+यह पंक्ति आपके संशोधित बिटमैप चित्र को निर्दिष्ट निर्देशिका में PNG फ़ाइल के रूप में सहेजती है। 
 
-### .NET के लिए Aspose.PDF का उपयोग करके PDF में वर्ण हाइलाइट करने के लिए नमूना स्रोत कोड 
+## चरण 7: अपवाद प्रबंधन के साथ समापन
+
+अंत में, अपने कोड को try-catch ब्लॉक में लपेटना अच्छा अभ्यास है, जिससे यह सुनिश्चित हो सके कि हम किसी भी अप्रत्याशित त्रुटि को सुचारू रूप से संभाल सकें:
+
 ```csharp
-try
-{
-	// दस्तावेज़ निर्देशिका का पथ.
-	string dataDir = "YOUR DOCUMENT DIRECTORY";
-	int resolution = 150;
-	Aspose.Pdf.Document pdfDocument = new Aspose.Pdf.Document(dataDir + "input.pdf");
-	using (MemoryStream ms = new MemoryStream())
-	{
-		PdfConverter conv = new PdfConverter(pdfDocument);
-		conv.Resolution = new Resolution(resolution, resolution);
-		conv.GetNextImage(ms, System.Drawing.Imaging.ImageFormat.Png);
-		Bitmap bmp = (Bitmap)Bitmap.FromStream(ms);
-		using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bmp))
-		{
-			float scale = resolution / 72f;
-			gr.Transform = new System.Drawing.Drawing2D.Matrix(scale, 0, 0, -scale, 0, bmp.Height);
-			for (int i = 0; i < pdfDocument.Pages.Count; i++)
-			{
-				Page page = pdfDocument.Pages[1];
-				// सभी शब्दों को खोजने के लिए TextAbsorber ऑब्जेक्ट बनाएं
-				TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
-				textFragmentAbsorber.TextSearchOptions.IsRegularExpressionUsed = true;
-				page.Accept(textFragmentAbsorber);
-				// निकाले गए पाठ अंश प्राप्त करें
-				TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-				// टुकड़ों के माध्यम से लूप
-				foreach (TextFragment textFragment in textFragmentCollection)
-				{
-					if (i == 0)
-					{
-						gr.DrawRectangle(
-						Pens.Yellow,
-						(float)textFragment.Position.XIndent,
-						(float)textFragment.Position.YIndent,
-						(float)textFragment.Rectangle.Width,
-						(float)textFragment.Rectangle.Height);
-						for (int segNum = 1; segNum <= textFragment.Segments.Count; segNum++)
-						{
-							TextSegment segment = textFragment.Segments[segNum];
-							for (int charNum = 1; charNum <= segment.Characters.Count; charNum++)
-							{
-								CharInfo characterInfo = segment.Characters[charNum];
-								Aspose.Pdf.Rectangle rect = page.GetPageRect(true);
-								Console.WriteLine("TextFragment = " + textFragment.Text + "    Page URY = " + rect.URY +
-												  "   TextFragment URY = " + textFragment.Rectangle.URY);
-								gr.DrawRectangle(
-								Pens.Black,
-								(float)characterInfo.Rectangle.LLX,
-								(float)characterInfo.Rectangle.LLY,
-								(float)characterInfo.Rectangle.Width,
-								(float)characterInfo.Rectangle.Height);
-							}
-							gr.DrawRectangle(
-							Pens.Green,
-							(float)segment.Rectangle.LLX,
-							(float)segment.Rectangle.LLY,
-							(float)segment.Rectangle.Width,
-							(float)segment.Rectangle.Height);
-						}
-					}
-				}
-			}
-		}
-		dataDir = dataDir + "HighlightCharacterInPDF_out.png";
-		bmp.Save(dataDir, System.Drawing.Imaging.ImageFormat.Png);
-	}
-	Console.WriteLine("\nCharacters highlighted successfully in pdf document.\nFile saved at " + dataDir);
-}
 catch (Exception ex)
 {
-	Console.WriteLine(ex.Message + "\nThis example will only work if you apply a valid Aspose License. You can purchase full license or get 30 day temporary license from http:// Www.aspose.com/purchase/default.aspx");
+    Console.WriteLine(ex.Message + "\nThis example will only work if you apply a valid Aspose License. You can purchase full license or get a 30-day temporary license from [here](https://buy.aspose.com/temporary-license/)");
 }
 ```
 
+यह ब्लॉक प्रक्रिया के दौरान होने वाले किसी भी अपवाद को पकड़ लेता है और उपयोगकर्ता को सूचनात्मक फीडबैक देता है।
+
 ## निष्कर्ष
 
-इस ट्यूटोरियल में, आपने सीखा है कि .NET के लिए Aspose.PDF लाइब्रेरी का उपयोग करके PDF दस्तावेज़ में वर्णों को कैसे हाइलाइट किया जाए। चरण-दर-चरण मार्गदर्शिका का पालन करके और दिए गए C# कोड को निष्पादित करके, आप PDF में वर्णों को हाइलाइट कर सकते हैं और आउटपुट को छवि के रूप में सहेज सकते हैं।
+और अब आप इसे प्राप्त कर चुके हैं! आपने .NET के लिए Aspose.PDF का उपयोग करके PDF फ़ाइल में सफलतापूर्वक वर्णों को हाइलाइट किया है। यह शक्तिशाली लाइब्रेरी PDF हेरफेर में अनंत संभावनाओं के द्वार खोलती है - चाहे आप एनोटेशन, फ़ॉर्म भरने या यहां तक कि दस्तावेज़ रूपांतरण के साथ काम कर रहे हों। Aspose के साथ अपनी यात्रा जारी रखते हुए, याद रखें कि अभ्यास महत्वपूर्ण है। विभिन्न सुविधाओं के साथ प्रयोग करते रहें, और आप जल्दी ही PDF प्रो बन जाएंगे!
 
-### अक्सर पूछे जाने वाले प्रश्न
+## अक्सर पूछे जाने वाले प्रश्न
 
-#### प्रश्न: "पीडीएफ फाइल में कैरेक्टर हाइलाइट करें" ट्यूटोरियल का उद्देश्य क्या है?
+### .NET के लिए Aspose.PDF क्या है?
+.NET के लिए Aspose.PDF एक लाइब्रेरी है जो .NET अनुप्रयोगों में प्रोग्रामेटिक रूप से PDF दस्तावेज़ों को बनाने, हेरफेर करने और परिवर्तित करने की अनुमति देता है।
 
-उत्तर: "PDF फ़ाइल में वर्ण हाइलाइट करें" ट्यूटोरियल बताता है कि PDF दस्तावेज़ में वर्ण हाइलाइट करने के लिए .NET के लिए Aspose.PDF लाइब्रेरी का उपयोग कैसे करें। ट्यूटोरियल इसे प्राप्त करने के लिए चरण-दर-चरण मार्गदर्शिका और C# स्रोत कोड प्रदान करता है।
+### क्या मैं एक साथ कई पाठ अंशों को हाइलाइट कर सकता हूँ?
+हां, प्रदान किए गए कोड को पीडीएफ के भीतर सभी पाठ के माध्यम से लूपिंग करके कई टुकड़ों को हाइलाइट करने के लिए अनुकूलित किया जा सकता है।
 
-#### प्रश्न: मैं PDF दस्तावेज़ में अक्षरों को हाइलाइट क्यों करना चाहूंगा?
+### क्या Aspose.PDF का कोई निःशुल्क संस्करण उपलब्ध है?
+हां, Aspose एक निःशुल्क परीक्षण प्रदान करता है, इसलिए आप खरीदने से पहले लाइब्रेरी का परीक्षण कर सकते हैं।
 
-उत्तर: पीडीएफ दस्तावेज़ में अक्षरों को हाइलाइट करना विभिन्न प्रयोजनों के लिए उपयोगी हो सकता है, जैसे कि विशिष्ट सामग्री पर जोर देना या कुछ पाठ को अधिक दृश्यमान और अलग-अलग बनाना।
+### क्या मुझे Aspose.PDF का उपयोग करने के लिए किसी लाइसेंस की आवश्यकता है?
+हां, व्यावसायिक उपयोग के लिए वैध लाइसेंस की आवश्यकता होती है, लेकिन आप परीक्षण के लिए 30-दिन का अस्थायी लाइसेंस प्राप्त कर सकते हैं।
 
-#### प्रश्न: मैं दस्तावेज़ निर्देशिका कैसे स्थापित करूँ?
-
-उत्तर: दस्तावेज़ निर्देशिका सेट अप करने के लिए:
-
-1.  प्रतिस्थापित करें`"YOUR DOCUMENT DIRECTORY"` में`dataDir` चर को उस निर्देशिका के पथ के साथ जोड़ें जहां आपकी इनपुट पीडीएफ फाइल स्थित है।
-
-#### प्रश्न: मैं पीडीएफ दस्तावेज़ को कैसे लोड करूं और उसे छवि में कैसे परिवर्तित करूं?
-
- उत्तर: ट्यूटोरियल में,`Aspose.Pdf.Document` क्लास का उपयोग इनपुट पीडीएफ दस्तावेज़ को लोड करने के लिए किया जाता है। फिर,`PdfConverter` पीडीएफ दस्तावेज़ को छवि में बदलने के लिए क्लास का उपयोग किया जाता है। छवि का रिज़ॉल्यूशन सेट किया जाता है, और छवि को एक छवि के रूप में पुनर्प्राप्त किया जाता है।`Bitmap` वस्तु।
-
-#### प्रश्न: मैं पीडीएफ दस्तावेज़ छवि में अक्षरों को कैसे हाइलाइट करूं?
-
-उत्तर: यह ट्यूटोरियल आपको पीडीएफ दस्तावेज़ के प्रत्येक पृष्ठ पर लूपिंग की प्रक्रिया के माध्यम से मार्गदर्शन करता है, तथा एक का उपयोग करके शब्द ढूंढता है।`TextFragmentAbsorber`, और पाठ के टुकड़ों, खंडों और वर्णों के माध्यम से पुनरावृत्ति करके उन्हें आयतों का उपयोग करके हाइलाइट करना।
-
-#### प्रश्न: क्या मैं हाइलाइट किए गए पात्रों और खंडों के स्वरूप को अनुकूलित कर सकता हूं?
-
-उत्तर: हां, आप ड्राइंग कार्यों में प्रयुक्त रंगों और शैलियों को संशोधित करके हाइलाइट किए गए वर्णों और खंडों के स्वरूप को अनुकूलित कर सकते हैं।
-
-#### प्रश्न: मैं संशोधित छवि को हाइलाइट किए गए अक्षरों के साथ कैसे सहेजूं?
-
- उत्तर: ट्यूटोरियल दर्शाता है कि हाइलाइट किए गए अक्षरों के साथ संशोधित छवि को निर्दिष्ट आउटपुट फ़ाइल में कैसे सहेजना है`Save` की विधि`Bitmap` कक्षा।
-
-#### प्रश्न: क्या इस ट्यूटोरियल के लिए वैध एस्पोज लाइसेंस आवश्यक है?
-
-उत्तर: हां, इस ट्यूटोरियल को सही तरीके से काम करने के लिए एक वैध Aspose लाइसेंस की आवश्यकता है। आप Aspose वेबसाइट से एक पूर्ण लाइसेंस खरीद सकते हैं या 30-दिन का अस्थायी लाइसेंस प्राप्त कर सकते हैं।
+### मुझे अधिक दस्तावेज कहां मिल सकते हैं?
+ आप इसका संदर्भ ले सकते हैं[Aspose.PDF दस्तावेज़ीकरण](https://reference.aspose.com/pdf/net/) कार्यान्वयन और सुविधाओं पर अधिक विस्तृत जानकारी के लिए.

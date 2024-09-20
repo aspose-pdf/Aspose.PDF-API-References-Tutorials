@@ -16,7 +16,7 @@ A PDF dokumentumokon belüli hivatkozások létrehozása jelentősen javíthatja
 Mielőtt belevetné magát a PDF-manipuláció világába az Aspose.PDF for .NET segítségével, bizonyosodjon meg róla, hogy a helyén van néhány alapvető dolog:
 
 - Visual Studio: Győződjön meg arról, hogy telepítve van a Visual Studio a .NET-alkalmazások létrehozásához és futtatásához.
-- Aspose.PDF for .NET: Rendelkezésre kell állnia az Aspose.PDF könyvtárnak. Tudod[töltse le itt](https://releases.aspose.com/pdf/net/).
+- Aspose.PDF for .NET: Rendelkezésre kell állnia az Aspose.PDF könyvtárnak. Megteheti[töltse le itt](https://releases.aspose.com/pdf/net/).
 - A C# alapvető ismerete: A C# programozás alapvető ismerete segít a kódrészletek közötti könnyed navigálásban.
 
 ### Az Aspose.PDF telepítése .NET-hez
@@ -82,7 +82,7 @@ Az Aspose-ban az oldalak nulla indexeléssel rendelkeznek, ami azt jelenti, hogy
 
 ## 4. lépés: Hozza létre a hivatkozási megjegyzést
 
- A linkre kattintásnak el kell vezetnie valahova! Hozzuk létre a`LinkAnnotation` amelyre a felhasználók kattintanak. Ez az a pillanat, amikor a link ténylegesen formát ölt.
+ A linkre kattintva valahova el kell vezetnie! Hozzuk létre a`LinkAnnotation` amelyre a felhasználók kattintanak. Ez az a pillanat, amikor a link ténylegesen formát ölt.
 
 ```csharp
 LinkAnnotation link = new LinkAnnotation(page, new Aspose.Pdf.Rectangle(100, 100, 300, 300));
@@ -145,7 +145,7 @@ Az Aspose.PDF for .NET egy olyan könyvtár, amely lehetővé teszi a fejlesztő
  Igen, külső webhelyekre mutató hivatkozásokat hozhat létre, ha a hivatkozási műveletet erre módosítja`GoToRemoteAction` az URL-lel.
 
 ### Van ingyenes próbaverzió?
- Teljesen! Tudod[töltse le az ingyenes próbaverziót innen](https://releases.aspose.com/).
+ Teljesen! Megteheti[töltse le az ingyenes próbaverziót innen](https://releases.aspose.com/).
 
 ### Hol kaphatok támogatást, ha problémákba ütközöm?
  Érdeklődni a[Aspose támogatási fórum](https://forum.aspose.com/c/pdf/10) segítségért.

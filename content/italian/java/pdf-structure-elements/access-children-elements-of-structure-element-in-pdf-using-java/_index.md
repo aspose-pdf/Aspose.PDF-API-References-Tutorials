@@ -112,7 +112,7 @@ Aspose.PDF per Java è una libreria commerciale e potrebbe richiedere una licenz
 
 ### Come posso automatizzare l'elaborazione dei documenti PDF con Java?
 
-È possibile automatizzare l'elaborazione dei documenti PDF in Java utilizzando librerie come Aspose.PDF. Definisci la tua logica di elaborazione, come l'estrazione di dati o la modifica del contenuto, e implementala nella tua applicazione Java. Aspose.PDF fornisce un'ampia gamma di funzionalità per l'automazione.
+Puoi automatizzare l'elaborazione dei documenti PDF in Java utilizzando librerie come Aspose.PDF. Definisci la tua logica di elaborazione, come l'estrazione di dati o la modifica del contenuto, e implementala nella tua applicazione Java. Aspose.PDF fornisce un'ampia gamma di funzionalità per l'automazione.
 
 ### Dove posso trovare altri esempi e risorse per lavorare con Aspose.PDF per Java?
 

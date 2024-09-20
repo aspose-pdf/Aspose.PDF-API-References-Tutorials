@@ -2,156 +2,75 @@
 title: 样式表行
 linktitle: 样式表行
 second_title: Aspose.PDF for .NET API 参考
-description: 了解如何使用 Aspose.PDF for .NET 自定义表格行，并逐步指导如何设置行的样式和格式。
+description: 通过分步指南学习如何使用 Aspose.PDF for .NET 设置 PDF 中表格行的样式，轻松增强文档格式。
 type: docs
 weight: 180
 url: /zh/net/programming-with-tagged-pdf/style-table-row/
 ---
-在本详细教程中，我们将逐步引导您完成提供的 C# 源代码，以使用 Aspose.PDF for .NET 格式化表格行。按照以下说明了解如何自定义表格行样式和属性。
+## 介绍
 
-## 步骤 1：设置环境
+在创建结构良好、格式优美的 PDF 文档时，Aspose.PDF for .NET 是一个不错的解决方案。无论您是自动生成报告、发票还是创建动态表格，使用各种样式格式化表格都是制作精美文档的关键。在本教程中，我们将深入研究如何使用 Aspose.PDF for .NET 来设置表格行的样式。别担心，我会一步一步指导您，就像喝咖啡时的愉快交谈一样！
 
-开始之前，请确保您已将开发环境配置为使用 Aspose.PDF for .NET。这包括安装 Aspose.PDF 库并配置您的项目以引用它。
+## 先决条件
 
-## 第 2 步：创建文档
+在开始讨论细节之前，让我们先确保你已经做好了一切准备。你需要：
 
-在这一步中，我们将创建一个新的文档对象 Aspose.PDF。
+1. Aspose.PDF for .NET 库  
+   如果你还没有，你可以从[这里](https://releases.aspose.com/pdf/net/)。您还可以获得[免费试用](https://releases.aspose.com/)开始吧。
+2. 开发环境  
+   设置 Visual Studio 或您选择的任何 C# IDE。您还需要安装 .NET，但我猜您已经很熟悉它了。
+3. C# 和 .NET 的基础知识  
+   充分理解 C# 将使本教程变得轻而易举。但别担心，我会详细解释每个步骤！
+
+## 导入包
+
+在开始使用 Aspose.PDF 之前，我们需要导入必要的命名空间。在您的 C# 项目中，请确保包含以下内容：
 
 ```csharp
-//文档目录的路径。
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-//文档创建
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example of Table Row Formatting");
-taggedContent.SetLanguage("fr-FR");
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-我们创建了一个新文档，并设置了文档标题和语言。
+这些对于创建和设计表格以及处理标记内容以达到合规性至关重要。
 
-## 步骤3：获取根结构元素
+现在让我们一步一步地分解任务，以便您可以像专业人士一样设置表格行的样式！
 
-在此步骤中，我们将获取文档的根结构元素。
+## 步骤 1：创建新的 PDF 文档
 
-```csharp
-//获取根结构元素
-StructureElement rootElement = taggedContent.RootElement;
-```
-
-我们得到了将作为数组元素容器的根结构元素。
-
-## 步骤 4：创建数组结构元素
-
-现在让我们为我们的文档创建一个新的表格结构元素。
+首先，让我们创建一个全新的 PDF 文档。此文档将保存所有样式化的表格行。
 
 ```csharp
-//创建数组结构元素
-TableElement tableElement = taggedContent.CreateTableElement();
-rootElement.AppendChild(tableElement);
-```
-
-我们创建了一个新的数组结构元素并将其添加到根结构元素。
-
-## 步骤 5：自定义表格行样式和属性
-
-在此步骤中，我们将自定义表格行样式和属性。
-
-```csharp
-//自定义表格行样式和属性
-TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
-TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
-TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-
-int rowCount = 7;
-int colCount = 3;
-int rowIndex;
-int colIndex;
-
-//创建表格标题行
-TableTRElement headTrElement = tableTHeadElement.CreateTR();
-headTrElement.AlternativeText = "Header Row";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-     TableTHElement theElement = headTrElement.CreateTH();
-     theElement.SetText(string.Format("Header {0}", colIndex));
-}
-
-//自定义表格主体的行
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
-{
-     TableTRElement trElement = tableTBodyElement.CreateTR();
-     trElement.AlternativeText = string.Format("Row {0}", rowIndex);
-     trElement.BackgroundColor = Color.LightGoldenrodYellow;
-     trElement.Border = new BorderInfo(BorderSide.All, 0.75F, Color.DarkGray);
-     trElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.Blue);
-     trElement.MinRowHeight = 100.0;
-     trElement.FixedRowHeight = 120.0;
-     trElement. IsInNewPage = (rowIndex % 3 == 1);
-     trElement.IsRowBroken = true;
-     TextState cellTextState = new TextState();
-     cellTextState.ForegroundColor = Color.Red;
-     trElement. DefaultCellTextState = cellTextState;
-     trElement. DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
-     trElement.VerticalAlignment = VerticalAlignment.Bottom;
-
-     for (colIndex = 0; colIndex < colCount; colIndex++)
-     {
-         TableTDElement tdelement = trElement.CreateTD();
-         tdElement.SetText(string.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-     }
-}
-
-//创建表格的页脚行
-TableTRElement footTrElement = tableTFootElement.CreateTR();
-footTrElement.AlternativeText = "Footline";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-     TableTDElement tdElement = footTrElement.CreateTD();
-     tdElement.SetText(string.Format("Foot {0}", colIndex));
-}
-```
-
-我们自定义了表格行的各个方面，例如背景颜色、边框、行高、分页、默认单元格样式等。
-
-## 步骤 6：保存标记的 PDF 文档
-
-现在我们已经创建了带有样式表格行的文档，我们将其保存为带标签的 PDF 文档。
-```csharp
-//保存标记的 PDF 文档
-document.Save(dataDir + "StyleTableRow.pdf");
-```
-
-我们将标记的 PDF 文档保存在指定的目录中。
-
-## 步骤 7：PDF/UA 合规性验证
-
-接下来，我们将验证文档的 PDF/UA 一致性。
-
-```csharp
-//PDF/UA 合规性检查
-document = new Document(dataDir + "StyleTableRow.pdf");
-bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableRow.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
-```
-
-我们上传了标记的 PDF 文档，并通过生成 XML 报告验证了其是否符合 PDF/UA 要求。
-
-
-### 使用 Aspose.PDF for .NET 的样式表行示例源代码 
-```csharp
-
 //文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 //创建文档
 Document document = new Document();
+```
+
+这里我们只是初始化一个新的`Document`代表 PDF 文件的对象。请确保设置保存输出文件的目录路径。
+
+## 第 2 步：处理标记内容
+
+为了构建您的 PDF 以实现可访问性，我们将使用标记内容。这有助于创建表格等结构化元素，确保它们符合 PDF/UA 等可访问性标准。
+
+```csharp
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table row style");
 taggedContent.SetLanguage("en-US");
+```
 
+在这里，我们为 PDF 的标记内容设置标题和语言。这就像给你的 PDF 起个名字，并告诉它应该使用什么语言！
+
+## 步骤 3：定义表结构
+
+接下来，让我们定义即将创建的表格的结构。每个表格都需要一个页眉、正文和页脚 - 就像组织良好的博客文章一样！
+
+```csharp
 //获取根结构元素
 StructureElement rootElement = taggedContent.RootElement;
 
@@ -161,103 +80,111 @@ rootElement.AppendChild(tableElement);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-int rowCount = 7;
-int colCount = 3;
-int rowIndex;
-int colIndex;
+```
+
+我们在这里做的是创建一个带有标题的表格（`THead`）， 身体 （`TBody`) 和页脚 (`TFoot`）。这些元素将保存我们的行。
+
+## 步骤 4：添加表头行
+
+没有标题的表格就像没有标题的书。让我们先创建标题行来提供数据上下文。
+
+```csharp
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Head Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
+for (int colIndex = 0; colIndex < 3; colIndex++)
 {
-	TableTHElement thElement = headTrElement.CreateTH();
-	thElement.SetText(String.Format("Head {0}", colIndex));
+    TableTHElement thElement = headTrElement.CreateTH();
+    thElement.SetText(String.Format("Head {0}", colIndex));
 }
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
+```
+
+在这里，我们循环并添加三个标题单元格 (`TableTHElement`)，为每个标签提供描述性文字。很简单，对吧？
+
+## 步骤 5：添加样式化的正文行
+
+现在到了最有趣的部分——设置行样式！让我们创建七行自定义样式。我们将设置背景颜色、边框、内边距和文本对齐方式。
+
+```csharp
+for (int rowIndex = 0; rowIndex < 7; rowIndex++)
 {
-	TableTRElement trElement = tableTBodyElement.CreateTR();
-	trElement.AlternativeText = String.Format("Row {0}", rowIndex);
-	trElement.BackgroundColor = Color.LightGoldenrodYellow;
-	trElement.Border = new BorderInfo(BorderSide.All, 0.75F, Color.DarkGray);
-	trElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.Blue);
-	trElement.MinRowHeight = 100.0;
-	trElement.FixedRowHeight = 120.0;
-	trElement.IsInNewPage = (rowIndex % 3 == 1);
-	trElement.IsRowBroken = true;
-	TextState cellTextState = new TextState();
-	cellTextState.ForegroundColor = Color.Red;
-	trElement.DefaultCellTextState = cellTextState;
-	trElement.DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
-	trElement.VerticalAlignment = VerticalAlignment.Bottom;
-	for (colIndex = 0; colIndex < colCount; colIndex++)
-	{
-		TableTDElement tdElement = trElement.CreateTD();
-		tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-	}
+    TableTRElement trElement = tableTBodyElement.CreateTR();
+    trElement.AlternativeText = String.Format("Row {0}", rowIndex);
+    trElement.BackgroundColor = Color.LightGoldenrodYellow;
+    trElement.Border = new BorderInfo(BorderSide.All, 0.75F, Color.DarkGray);
+    trElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.Blue);
+    trElement.MinRowHeight = 100.0;
+    trElement.FixedRowHeight = 120.0;
+    trElement.IsInNewPage = (rowIndex % 3 == 1);
+    trElement.IsRowBroken = true;
+
+    for (int colIndex = 0; colIndex < 3; colIndex++)
+    {
+        TableTDElement tdElement = trElement.CreateTD();
+        tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
+    }
 }
+```
+
+- 背景颜色：我们使用了浅金黄色，以营造专业而又温暖的感觉。
+- 边框：每行都有深灰色外边框和蓝色单元格边框，以获得清晰的外观。
+- 高度和填充：设置行高，并添加填充以获得整洁的外观。
+- 分页符：为了使表格更具可读性，每隔一行都从新的一页开始。
+
+## 步骤 6：添加页脚行
+
+与表头类似，表尾固定表格。让我们创建一个表尾。
+
+```csharp
 TableTRElement footTrElement = tableTFootElement.CreateTR();
 footTrElement.AlternativeText = "Foot Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
+for (int colIndex = 0; colIndex < 3; colIndex++)
 {
-	TableTDElement tdElement = footTrElement.CreateTD();
-	tdElement.SetText(String.Format("Foot {0}", colIndex));
+    TableTDElement tdElement = footTrElement.CreateTD();
+    tdElement.SetText(String.Format("Foot {0}", colIndex));
 }
+```
 
-//保存带标签的 PDF 文档
+我们只需循环遍历三个页脚单元格并添加一些文本即可。页脚的替代文本是“Foot Row”，以使其易于访问。
+
+## 步骤 7：保存 PDF 文档
+
+现在桌子已经全部设置好了，是时候保存你的杰作了！
+
+```csharp
 document.Save(dataDir + "StyleTableRow.pdf");
+```
 
-//检查 PDF/UA 合规性
+就这样，您的 PDF 就保存了，其中包含我们刚刚设置样式的所有漂亮的表格行。
+
+## 步骤 8：验证 PDF/UA 合规性
+
+为了确保我们的 PDF 符合可访问性标准，我们将验证其是否符合 PDF/UA 标准。
+
+```csharp
 document = new Document(dataDir + "StyleTableRow.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableRow.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
 ```
+
+这可确保您的 PDF 符合 PDF/UA 标准，让每个人都可以访问。可访问性才是关键！
 
 ## 结论
 
-在本教程中，我们学习了如何使用 Aspose.PDF for .NET 格式化表格行。我们自定义了表格行样式和属性，添加了页眉、正文行和页脚，保存了带标签的 PDF 文档，并验证了其 PDF/UA 合规性。
+就这样！只需几行代码，您就可以使用 Aspose.PDF for .NET 在 PDF 中创建完整样式的表格。从页眉到页脚，我们设计了每一行的样式，添加了可访问性元素，甚至验证了文档的合规性。无论您是在处理公司报告、演示文稿，还是只是玩 PDF，本指南都能满足您的需求。现在，继续像专业人士一样设计您的表格样式吧！
 
-### 常见问题解答
+## 常见问题解答
 
-#### 问：本教程使用 Aspose.PDF for .NET 格式化表格行的目的是什么？
+### 我也可以更改表格的字体样式吗？  
+是的！您可以使用`TextState`每个单元格的对象，允许完全自定义。
 
-答：本教程旨在指导您使用 Aspose.PDF for .NET 格式化 PDF 文档中的表格行。它提供了分步说明和 C# 源代码示例，以帮助您自定义表格行样式和属性。
+### 如何向表中添加更多列？  
+只需调整`colCount`变量并在页眉、正文和页脚的循环中添加更多单元格。
 
-#### 问：学习本教程的先决条件是什么？
+### 如果我不设置行高会发生什么？  
+如果不设置行高，表格将根据内容自动调整。
 
-答：开始之前，请确保您已设置开发环境以使用 Aspose.PDF for .NET。这涉及安装 Aspose.PDF 库并配置您的项目以引用它。
+### 我可以将其用于动态行数吗？  
+当然可以！您可以从数据库或任何其他来源获取数据，并动态调整行数和列数。
 
-#### 问：如何使用 Aspose.PDF for .NET 创建新的 PDF 文档并设置其标题和语言？
-
-答：要创建新的 PDF 文档，您需要创建一个`Document`来自 Aspose.PDF 库的对象。本教程提供的 C# 源代码演示了如何创建文档并设置其标题和语言属性。
-
-#### 问：PDF 文档中的根结构元素有什么意义？
-
-答：根结构元素作为其他结构元素的容器，有助于组织和分类 PDF 文档的内容。它在建立文档的逻辑结构方面起着至关重要的作用。
-
-#### 问：如何使用 Aspose.PDF for .NET 创建和自定义表格结构元素来格式化表格行？
-
-答：本教程介绍如何创建表格结构元素并自定义其属性以格式化表格行。它涵盖了背景颜色、边框、行高、分页、默认单元格样式等方面。
-
-#### 问：我可以自定义表格行中各个单元格的样式和属性吗？
-
-答：是的，您可以自定义表格行中各个单元格的样式和属性。本教程演示了如何设置格式化表格行中表格单元格的背景颜色、边框、文本颜色、填充等属性。
-
-#### 问：如何向格式化的表格行添加页眉、正文行和页脚？
-
-答：本教程提供了创建和添加表头、正文行和表尾到表结构元素的示例。可以使用本教程中描述的属性进一步自定义这些元素。
-
-#### 问：什么是 PDF/UA 合规性？我如何验证我的标记 PDF 文档是否合规？
-
-答：PDF/UA 合规性可确保 PDF 文档符合无障碍标准，让残障用户更方便地访问。本教程演示了如何使用`Validate()`方法并生成 XML 合规报告。
-
-#### 问：我如何将这些概念融入到我自己的 .NET 应用程序中？
-
-答：您可以使用提供的 C# 源代码示例作为指南，在您自己的 .NET 应用程序中实现表格行格式。修改和调整代码以满足您的要求，并将其集成到您的项目中。
-
-#### 问：有没有针对 PDF 文档中表格行格式推荐的最佳实践？
-
-答：格式化表格行时，请考虑内容的可读性和可访问性。确保颜色具有足够的对比度，使用清晰易读的字体，并保持一致的布局。验证 PDF/UA 合规性以确保满足可访问性标准。
-
-#### 问：我还可以探索 Aspose.PDF for .NET 的哪些其他功能来实现 PDF 文档定制？
-
-答：Aspose.PDF for .NET 提供了广泛的 PDF 文档定制功能，包括文本处理、图像插入、表单字段管理、数字签名、注释等。请查阅官方文档和资源以探索其他功能。
+### Aspose.PDF for .NET 可以免费使用吗？  
+ Aspose.PDF for .NET 是一款授权产品，但你可以尝试使用[免费试用](https://releases.aspose.com/)或者得到[临时执照](https://purchase.aspose.com/temporary-license/).

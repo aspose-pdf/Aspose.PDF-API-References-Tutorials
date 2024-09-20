@@ -127,7 +127,7 @@ Ja, du kan extrahera bilder från vilken PDF-fil som helst, förutsatt att PDF-f
 Du kan använda en gratis provperiod för att testa det, men en betald licens krävs för långvarig eller kommersiell användning.
 
 ### Är det möjligt att extrahera flera bilder samtidigt?  
-Ja, du kan ändra koden så att den går igenom flera fält och extraherar alla bilder.
+Ja, du kan ändra koden för att gå igenom flera fält och extrahera alla bilder.
 
 ### Vilka bildformat kan jag spara de extraherade bilderna i?  
 Du kan spara extraherade bilder i olika format, inklusive JPEG, PNG, BMP, etc., beroende på dina specifikationer.

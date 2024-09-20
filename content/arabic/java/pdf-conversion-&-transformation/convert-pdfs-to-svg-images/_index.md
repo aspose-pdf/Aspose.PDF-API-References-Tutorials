@@ -102,7 +102,7 @@ try {
 
 ## الأسئلة الشائعة
 
-### كيف أقوم بتثبيت Aspose.PDF لـ Java؟
+### كيف أقوم بتثبيت Aspose.PDF لـJava؟
 
  يمكنك تنزيل Aspose.PDF لـ Java من[هنا](https://releases.aspose.com/pdf/java/). اتبع تعليمات التثبيت الواردة في الوثائق.
 

@@ -168,7 +168,7 @@ pdfDocument.save("output.pdf");
 
 ## Abschluss
 
-Das Hinzufügen untergeordneter Lesezeichen zu PDFs mit Aspose.PDF für Java ist eine leistungsstarke Funktion, die die Navigation und Organisation Ihrer Dokumente verbessert. Indem Sie die in diesem Artikel beschriebenen Schritte befolgen, können Sie gut strukturierte PDFs mit übergeordneten und untergeordneten Lesezeichen erstellen, deren Erscheinungsbild anpassen und sogar Aktionen hinzufügen, um das Benutzererlebnis zu verbessern.
+Das Hinzufügen untergeordneter Lesezeichen zu PDFs mit Aspose.PDF für Java ist eine leistungsstarke Funktion, die die Navigation und Organisation Ihrer Dokumente verbessert. Indem Sie die in diesem Artikel beschriebenen Schritte befolgen, können Sie gut strukturierte PDFs mit übergeordneten und untergeordneten Lesezeichen erstellen, deren Erscheinungsbild anpassen und sogar Aktionen hinzufügen, um die Benutzererfahrung zu verbessern.
 
 ## Häufig gestellte Fragen
 

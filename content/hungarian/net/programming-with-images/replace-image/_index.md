@@ -68,7 +68,7 @@ Ezután be kell töltenünk a PDF fájlt az alkalmazásunkba. Ez egyértelmű az
 Document pdfDocument = new Document(dataDir + "ReplaceImage.pdf");
 ```
 
- Ez a parancs egy példányt hoz létre a`Document` osztály, amely a PDF-ünket képviseli.
+ Ez a parancs létrehozza a`Document` osztály, amely a PDF-ünket képviseli.
 
 ## 3. lépés: Cserélje ki a képet
 
@@ -133,7 +133,7 @@ Az új kép a régi helyére kerül beillesztésre, de a méretei eltérhetnek. 
 ### Ingyenesen használható az Aspose.PDF?
  Az Aspose ingyenes próbaverziót kínál, de a korlátlan használathoz licencet kell vásárolnia. Látogassa meg a[oldal vásárlása](https://purchase.aspose.com/buy) részletekért.
 
-### Mi a teendő, ha a PDF-em biztonsági korlátozásokkal rendelkezik?
+### Mi van, ha a PDF-em biztonsági korlátozásokkal rendelkezik?
 Gondoskodnia kell arról, hogy a PDF ne legyen jelszóval védett vagy titkosított. Ellenkező esetben a képcsere nem fog működni.
 
 ### Használhatom az Aspose.PDF-et más nyelvekkel?

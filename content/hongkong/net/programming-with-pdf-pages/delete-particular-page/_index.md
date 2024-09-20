@@ -93,7 +93,7 @@ System.Console.WriteLine("\nParticular page deleted successfully.\nFile saved at
 
 ## 結論
 
-現在你就得到它了！只需五個簡單的步驟，您就可以使用 Aspose.PDF for .NET 成功從 PDF 中刪除特定頁面。這種方法高效、靈活且可擴展，對於經常使用 PDF 文件的開發人員來說是一個很好的工具。
+現在你就擁有了！只需五個簡單的步驟，您就可以使用 Aspose.PDF for .NET 成功從 PDF 中刪除特定頁面。這種方法高效、靈活且可擴展，對於經常使用 PDF 文件的開發人員來說是一個很好的工具。
 
 從 PDF 中刪除頁面似乎是一項棘手的任務，但使用 Aspose.PDF，這就像餡餅一樣簡單。無論您是處理大型文件還是只需要刪除單一頁面，本逐步指南都能滿足您的需求。
 

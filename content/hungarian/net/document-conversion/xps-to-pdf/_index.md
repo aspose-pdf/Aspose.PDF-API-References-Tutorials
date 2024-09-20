@@ -2,7 +2,7 @@
 title: XPS PDF-be
 linktitle: XPS PDF-be
 second_title: Aspose.PDF for .NET API Reference
-description: Ebben a lépésenkénti oktatóanyagban megtudhatja, hogyan konvertálhat XPS-fájlokat PDF-be az Aspose.PDF for .NET használatával. Tökéletes fejlesztők és dokumentumrajongók számára.
+description: Ebből a lépésről lépésre mutató oktatóanyagból megtudhatja, hogyan konvertálhat XPS-fájlokat PDF-be az Aspose.PDF for .NET használatával. Tökéletes fejlesztők és dokumentumrajongók számára.
 type: docs
 weight: 350
 url: /hu/net/document-conversion/xps-to-pdf/

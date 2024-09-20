@@ -7,65 +7,79 @@ type: docs
 weight: 410
 url: /ko/net/programming-with-text/rotate-text-using-text-paragraph-and-builder/
 ---
-이 튜토리얼은 Aspose.PDF for .NET을 사용하여 PDF 파일에서 텍스트 단락과 빌더를 사용하여 텍스트를 회전하는 방법을 설명합니다. 제공된 C# 소스 코드는 프로세스를 단계별로 보여줍니다.
+## 소개
+
+ 동적 PDF 문서를 만드는 것은 데이터, 보고서 및 아이디어를 시각적으로 표현하는 흥미로운 방법이 될 수 있습니다. 이를 체계적인 방식으로 달성하는 데 도움이 되는 강력한 도구 중 하나는 .NET용 Aspose.PDF입니다. 이 가이드에서는 Aspose.PDF를 사용하여 PDF 파일 내에서 텍스트를 회전하는 방법을 살펴보겠습니다.`TextParagraph` 그리고`TextBuilder` 수업. 주석이 달린 보고서나 시각적으로 매력적인 문서를 만들고 싶든, PDF에서 텍스트 조작을 마스터하는 것은 필수적입니다. 텍스트를 문자 그대로 뒤집을 준비가 되셨나요? 시작해 볼까요!
 
 ## 필수 조건
 
-튜토리얼을 진행하기 전에 다음 사항이 있는지 확인하세요.
+텍스트 회전 모험을 시작하기 전에 꼭 준비해야 할 몇 가지 필수 사항이 있습니다.
 
-- C# 프로그래밍 언어에 대한 기본 지식.
-- .NET 라이브러리용 Aspose.PDF가 설치되었습니다. Aspose 웹사이트에서 얻을 수 있거나 NuGet을 사용하여 프로젝트에 설치할 수 있습니다.
+- C#에 대한 기본 지식: C# 프로그래밍에 익숙하면 코드를 더 쉽게 탐색할 수 있습니다.
+- Visual Studio 설정: 코드를 작성하고 실행하려면 컴퓨터에 Visual Studio가 설치되어 있는지 확인하세요.
+- Aspose.PDF 라이브러리: 프로젝트에서 Aspose.PDF 라이브러리를 참조해야 합니다. 아직 설치하지 않았다면 다음에서 다운로드할 수 있습니다.[여기](https://releases.aspose.com/pdf/net/).
+- .NET Framework: 사용자 환경이 .NET을 지원하는지 확인하세요. 필요에 따라 .NET Framework 또는 .NET Core를 사용할 수 있습니다.
 
-## 1단계: 프로젝트 설정
+이제 기초가 마련되었으니 PDF 작업을 시작하는 데 필요한 패키지를 가져와 보겠습니다.
 
-선호하는 통합 개발 환경(IDE)에서 새 C# 프로젝트를 만들고 .NET 라이브러리용 Aspose.PDF에 대한 참조를 추가합니다.
+## 패키지 가져오기
 
-## 2단계: 필요한 네임스페이스 가져오기
-
-필요한 네임스페이스를 가져오려면 C# 파일의 시작 부분에 다음 using 지시문을 추가합니다.
+.NET용 Aspose.PDF를 사용하려면 올바른 네임스페이스를 가져와야 합니다. C# 파일의 맨 위에 다음 using 지시문을 추가합니다.
 
 ```csharp
+using System;
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using Aspose.Pdf.Text.TextBuilder;
+using Aspose.Pdf.Facades;
 ```
 
-## 3단계: PDF 문서 만들기
+이러한 패키지는 텍스트와 기타 문서 측면을 효과적으로 조작하는 데 필요한 모든 클래스를 제공합니다.
 
- 초기화`Document` 새 PDF 문서를 만드는 객체:
+이제 설정이 끝났으니 PDF 문서 내에서 텍스트를 회전하는 데 관련된 실제 단계를 분석해 보겠습니다. 문서를 초기화하는 것부터 저장까지 시작하겠습니다. 안전띠 매세요!
+
+## 1단계: 문서 개체 초기화
+
+ 첫 번째 단계는 생성하고 초기화하는 것입니다.`Document` 객체. 이 객체는 텍스트를 추가할 캔버스 역할을 합니다.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+// 문서 객체 초기화
 Document pdfDocument = new Document();
 ```
 
- 교체를 꼭 해주세요`"YOUR DOCUMENT DIRECTORY"` 문서 디렉토리의 실제 경로를 포함합니다.
+ 그만큼`Document`클래스는 PDF의 중추입니다. PDF 내의 페이지와 내용을 관리하는 데 도움이 됩니다.
 
-## 4단계: 페이지 추가
+## 2단계: 페이지 추가
 
- 문서에서 특정 페이지를 가져오려면 다음을 사용합니다.`Pages.Add()` 방법:
+다음으로, 텍스트를 배치할 새 페이지를 문서에 추가해 보겠습니다.
 
 ```csharp
+// 특정 페이지 가져오기
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
-## 5단계: 텍스트 단락 만들기 및 회전
+여기서 PDF에 새 페이지를 추가합니다. 이 페이지는 텍스트 단락이 위치할 곳입니다.
 
- 생성하다`for` 다양한 회전을 사용하여 여러 텍스트 문단을 생성하는 루프:
+## 3단계: 텍스트 문단 만들기 및 구성
+
+ 이제 재미가 시작됩니다! 여러 개를 만들 것입니다.`TextParagraph` 객체를 구성하고 위치 및 회전 각도를 포함한 속성을 구성합니다.
 
 ```csharp
 for (int i = 0; i < 4; i++)
 {
-	TextParagraph paragraph = new TextParagraph();
-	paragraph.Position = new Position(200, 600);
-	paragraph.Rotation = i * 90 + 45;
+    TextParagraph paragraph = new TextParagraph();
+    paragraph.Position = new Position(200, 600);
+    // 회전 지정
+    paragraph.Rotation = i * 90 + 45;
+}
 ```
 
-요구 사항에 맞게 위치 및 회전 값을 조정하세요.
+이 루프에서 우리는 4개의 문단을 만들고, 각각은 추가로 90도 회전합니다. 각 문단은 처음에 좌표 (200, 600)에 위치합니다.
 
-## 6단계: 텍스트 조각 만들기 및 구성
+## 4단계: 텍스트 조각 만들기
 
- 여러개 생성`TextFragment` 객체, 텍스트 및 속성 설정:
+ 문단을 설정한 후 이제 텍스트를 추가할 시간입니다!`TextFragment` 표시하려는 실제 텍스트를 보관하는 객체입니다.
 
 ```csharp
 TextFragment textFragment1 = new TextFragment("Paragraph Text");
@@ -73,26 +87,22 @@ textFragment1.TextState.FontSize = 12;
 textFragment1.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 textFragment1.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment1.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-
-TextFragment textFragment2 = new TextFragment("Second line of text");
-textFragment2.TextState.FontSize = 12;
-textFragment2.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment2.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-textFragment2.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-
-TextFragment textFragment3 = new TextFragment("And some more text...");
-textFragment3.TextState.FontSize = 12;
-textFragment3.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment3.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-textFragment3.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-textFragment3.TextState.Underline = true;
 ```
 
-원하는 대로 텍스트와 다른 속성을 조정합니다.
+각 조각은 글꼴 크기, 글꼴 유형, 배경색, 전경색과 같은 속성을 사용자 지정할 수 있습니다. 여러 텍스트 조각에 대해 이 프로세스를 반복합니다.
 
-## 7단계: 문단에 텍스트 조각 추가
+```csharp
+TextFragment textFragment2 = new TextFragment("Second line of text");
+textFragment2.TextState = ConfigureText("Second line of text");
+TextFragment textFragment3 = new TextFragment("And some more text...");
+textFragment3.TextState = ConfigureText("And some more text...", true);
+```
 
- 생성된 텍스트 조각을 다음을 사용하여 문단에 추가합니다.`AppendLine` 방법:
+ 방법`ConfigureText`텍스트 스타일 속성을 캡슐화하여 코드 재사용성과 명확성을 향상시키기 위해 만드는 유틸리티 메서드가 될 수 있습니다.
+
+## 5단계: 문단에 텍스트 조각 추가
+
+다음으로, 우리는 문단에 텍스트 조각을 추가할 것입니다. 이것은 문단에서 구조화된 텍스트 흐름을 만듭니다.
 
 ```csharp
 paragraph.AppendLine(textFragment1);
@@ -100,107 +110,46 @@ paragraph.AppendLine(textFragment2);
 paragraph.AppendLine(textFragment3);
 ```
 
-## 8단계: TextBuilder를 생성하고 문단을 추가합니다.
+ 사용 중`AppendLine`, 문단 내에서 각 텍스트가 수직으로 별도의 줄로 추가되었는지 확인하세요.
 
- 생성하다`TextBuilder` 객체를 사용하여`pdfPage` 그리고 PDF 페이지에 텍스트 문단을 추가합니다.
+## 6단계: PDF 페이지에 문단 추가
+
+ 이제 문단이 텍스트로 가득 찼으므로 PDF 페이지에 배치해야 합니다.`TextBuilder` 물체.
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(pdfPage);
 textBuilder.AppendParagraph(paragraph);
-}
 ```
 
-## 9단계: PDF 문서 저장
+ 마법이 일어나는 곳은 바로 여기입니다! 준비된 문단을 가져와서 다음과 같이 말합니다.`TextBuilder` 앞서 만든 캔버스(PDF 페이지)에 놓습니다.
 
- 수정된 PDF 문서를 파일로 저장하려면 다음을 사용합니다.`Save` 방법:
+## 7단계: 문서 저장
+
+마지막으로, 우리의 노고를 저장할 시간입니다! 출력 PDF 파일의 디렉토리와 이름을 지정하세요.
 
 ```csharp
 pdfDocument.Save(dataDir + "TextFragmentTests_Rotated4_out.pdf");
 ```
 
- 교체를 꼭 해주세요`"TextFragmentTests_Rotated4_out.pdf"` 원하는 출력 파일 이름을 입력합니다.
-
-### .NET용 Aspose.PDF를 사용하여 텍스트 단락 및 빌더를 사용하여 텍스트 회전을 위한 샘플 소스 코드 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// 문서 객체 초기화
-Document pdfDocument = new Document();
-// 특정 페이지 가져오기
-Page pdfPage = (Page)pdfDocument.Pages.Add();
-for (int i = 0; i < 4; i++)
-{
-	TextParagraph paragraph = new TextParagraph();
-	paragraph.Position = new Position(200, 600);
-	// 회전 지정
-	paragraph.Rotation = i * 90 + 45;
-	// 텍스트 조각 만들기
-	TextFragment textFragment1 = new TextFragment("Paragraph Text");
-	// 텍스트 조각 만들기
-	textFragment1.TextState.FontSize = 12;
-	textFragment1.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-	textFragment1.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-	textFragment1.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-	// 텍스트 조각 만들기
-	TextFragment textFragment2 = new TextFragment("Second line of text");
-	// 텍스트 속성 설정
-	textFragment2.TextState.FontSize = 12;
-	textFragment2.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-	textFragment2.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-	textFragment2.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-	// 텍스트 조각 만들기
-	TextFragment textFragment3 = new TextFragment("And some more text...");
-	// 텍스트 속성 설정
-	textFragment3.TextState.FontSize = 12;
-	textFragment3.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-	textFragment3.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-	textFragment3.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-	textFragment3.TextState.Underline = true;
-	paragraph.AppendLine(textFragment1);
-	paragraph.AppendLine(textFragment2);
-	paragraph.AppendLine(textFragment3);
-	// TextBuilder 객체를 생성합니다
-	TextBuilder textBuilder = new TextBuilder(pdfPage);
-	// PDF 페이지에 텍스트 조각 추가
-	textBuilder.AppendParagraph(paragraph);
-}
-// 문서 저장
-pdfDocument.Save(dataDir + "TextFragmentTests_Rotated4_out.pdf");
-```
+ 이 줄에서 다음을 바꾸세요.`dataDir` 원하는 출력 디렉토리로의 경로와 함께. PDF는 "TextFragmentTests_Rotated4_out.pdf"라는 이름으로 저장됩니다.
 
 ## 결론
 
-축하합니다! Aspose.PDF for .NET을 사용하여 PDF 문서에서 텍스트 단락과 빌더를 사용하여 텍스트를 회전하는 방법을 성공적으로 배웠습니다. 이 튜토리얼은 문서 생성부터 수정된 버전 저장까지 단계별 가이드를 제공했습니다. 이제 이 코드를 자신의 C# 프로젝트에 통합하여 PDF 파일에서 텍스트 회전을 조작할 수 있습니다.
+이제 Aspose.PDF for .NET을 사용하여 PDF에서 텍스트를 회전하는 방법에 대한 전체 연습을 마쳤습니다! 모든 작업을 관리 가능한 단계로 나누는 것에 관한 것이며, 알아차리기도 전에 PDF를 스타일과 창의성을 보여주는 동적 문서로 변환합니다. 보고서를 생성하든, 초대장을 만들든, 텍스트 배열을 실험하든, Aspose.PDF는 필요에 맞는 유연한 도구를 제공합니다. 그러니 왜 기다리시나요? 실험을 시작하고 PDF 문서로 얼마나 창의적일 수 있는지 확인해 보세요!
 
-### 자주 묻는 질문
+## 자주 묻는 질문
 
-#### 질문: "텍스트 문단과 빌더를 사용하여 텍스트 회전" 튜토리얼의 목적은 무엇입니까?
+### 텍스트를 어떤 방향으로든 회전할 수 있나요?
+네, 다양한 방향을 구현하기 위해 회전 각도(90도의 배수)를 지정할 수 있습니다.
 
-A: "텍스트 단락 및 빌더를 사용하여 텍스트 회전" 튜토리얼은 .NET용 Aspose.PDF 라이브러리를 사용하여 PDF 문서 내에서 텍스트 단락 및 빌더를 사용하여 텍스트를 회전하는 방법에 대한 포괄적인 가이드를 제공합니다. 이 튜토리얼은 단계별 지침을 보여주고 단락 및 사용자 지정 서식을 사용하여 텍스트 회전을 달성하기 위한 샘플 C# 코드를 포함합니다.
+### 텍스트 대신 이미지를 추가하고 싶다면 어떻게 해야 하나요?
+ Aspose.PDF를 사용하면 이미지도 조작할 수 있습니다! 다음을 사용하여 이미지를 추가할 수 있습니다.`Image` 비슷한 방식으로 수업을 진행합니다.
 
-#### 질문: 이 튜토리얼은 이전 텍스트 회전 튜토리얼과 어떻게 다릅니까?
+### .NET용 Aspose.PDF는 무료인가요?
+ 무료 체험판을 제공하지만 계속 사용하려면 라이센스를 구매해야 합니다.[구입](https://purchase.aspose.com/buy) 자세한 내용은 페이지를 참조하세요!
 
-A: 이전 튜토리얼과 달리 이 튜토리얼은 텍스트 문단, 빌더, 회전 각도를 결합하여 더욱 진보된 텍스트 회전 효과를 구현합니다. 다양한 회전 각도로 여러 텍스트 문단을 생성하고 개별 텍스트 조각에 사용자 지정 서식을 적용하는 방법을 보여줍니다.
+### Aspose.PDF 사용에 대한 지원을 받을 수 있나요?
+네, 지원을 받고 질문을 게시할 수 있습니다.[애스포지 포럼](https://forum.aspose.com/c/pdf/10).
 
-#### 질문: 텍스트 회전을 위해 텍스트 문단과 빌더를 사용하는 것의 중요성은 무엇인가요?
-
-A: 텍스트 단락과 빌더를 사용하면 텍스트 회전 및 서식에 대한 제어가 향상됩니다. 텍스트 단락은 텍스트 조각을 구성하는 구조화된 방법을 제공하는 반면 빌더는 PDF 문서 내에서 텍스트 콘텐츠의 생성 및 조작을 용이하게 합니다.
-
-#### 질문: 각 텍스트 단락에 다른 회전 각도를 적용할 수 있나요?
-
- A: 예, 각 텍스트 단락에 다른 회전 각도를 적용할 수 있습니다.`Rotation` 의 속성`TextParagraph` 객체. 이를 통해 PDF 문서 내에서 다양하고 역동적인 텍스트 회전 효과를 만들 수 있습니다.
-
-#### 질문: 텍스트 문단 내 텍스트 조각의 서식을 사용자 지정하려면 어떻게 해야 합니까?
-
- A: 다양한 속성을 설정하여 텍스트 조각의 서식을 사용자 정의할 수 있습니다.`TextState` 각각 내에서`TextFragment` 객체. 글꼴 크기, 글꼴 유형, 전경색과 배경색, 밑줄과 같은 속성을 조정하여 원하는 시각적 효과를 얻을 수 있습니다.
-
-#### 질문: 이 방법을 사용해 더 복잡한 텍스트 회전 효과를 만들 수 있나요?
-
-A: 물론입니다. 다양한 회전 각도와 서식 옵션을 사용하여 여러 텍스트 단락을 반복적으로 생성하면 복잡하고 시각적으로 매력적인 텍스트 회전 효과를 얻을 수 있으며, 이를 통해 PDF 문서의 가독성과 미학을 향상시킬 수 있습니다.
-
-#### 질문: 텍스트 회전을 다른 텍스트 조작 기술과 결합하는 것이 가능할까요?
-
-A: 네, Aspose.PDF 라이브러리에서 제공하는 다른 텍스트 조작 기술과 텍스트 회전을 결합할 수 있습니다. 여기에는 풍부하고 유익한 PDF 문서를 만들기 위해 표, 이미지, 하이퍼링크 등을 추가하는 것이 포함됩니다.
-
-#### 질문: 프로젝트에서 Aspose.PDF 라이브러리를 사용하려면 특별 라이선스가 필요합니까?
-
-A: 네, 프로젝트에서 Aspose.PDF 라이브러리를 사용하려면 유효한 Aspose 라이선스가 필요합니다. Aspose 웹사이트에서 라이선스를 얻을 수 있으며, 이를 통해 라이브러리를 효과적으로 통합하고 사용하는 데 필요한 자격 증명을 얻을 수 있습니다.
+### Aspose.PDF에 대한 임시 라이선스를 받으려면 어떻게 해야 하나요?
+ 테스트 목적으로 임시 라이센스를 얻을 수 있습니다.[임시 라이센스 페이지](https://purchase.aspose.com/temporary-license/).

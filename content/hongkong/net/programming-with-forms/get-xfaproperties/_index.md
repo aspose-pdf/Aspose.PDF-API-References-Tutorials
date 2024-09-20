@@ -17,7 +17,7 @@ url: /zh-hant/net/programming-with-forms/get-xfaproperties/
 
 1. Visual Studio：確保您的電腦上安裝了 Visual Studio。它是 .NET 開發的最佳環境。
 2.  Aspose.PDF for .NET：您需要下載並安裝 Aspose.PDF 庫。您可以從[下載連結](https://releases.aspose.com/pdf/net/).
-3. C#基礎知識：熟悉C#程式設計將有助於您更好地理解範例。
+3. C# 基礎知識：熟悉 C# 程式設計將有助於您更好地理解範例。
 4. 包含 XFA 表單的 PDF：您需要一個包含 XFA 表單的範例 PDF 檔案來測試程式碼。您可以建立一個或從 Internet 下載範例。
 
 ## 導入包
@@ -107,7 +107,7 @@ Console.WriteLine("\nXFA fields properties retrieved successfully.\nFile saved a
 
 ## 結論
 
-現在你就得到它了！您已成功學習如何使用 Aspose.PDF for .NET 擷取和操作 XFA 屬性。這個強大的程式庫為處理 PDF 文件開闢了無限可能，使建立動態表單和自動化工作流程變得比以往更容易。那麼，你還在等什麼？立即深入您的專案並開始嘗試 Aspose.PDF！
+現在你就擁有了！您已成功學習如何使用 Aspose.PDF for .NET 擷取和操作 XFA 屬性。這個強大的程式庫為處理 PDF 文件開闢了無限可能，使建立動態表單和自動化工作流程變得比以往更加容易。那麼，你還在等什麼？立即深入您的專案並開始嘗試 Aspose.PDF！
 
 ## 常見問題解答
 

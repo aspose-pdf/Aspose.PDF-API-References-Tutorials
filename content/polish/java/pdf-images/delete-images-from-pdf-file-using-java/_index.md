@@ -131,7 +131,7 @@ Jeśli w trakcie tego procesu napotkasz jakiekolwiek problemy, zapoznaj się z d
 
 ## Wniosek
 
-W tym przewodniku krok po kroku nauczyliśmy się, jak usuwać obrazy z pliku PDF za pomocą Javy z pomocą Aspose.PDF dla Javy. Ta potężna biblioteka upraszcza proces i umożliwia wydajną manipulację zawartością PDF. Niezależnie od tego, czy musisz redagować poufne informacje, czy optymalizować pliki PDF, Aspose.PDF dla Javy jest cennym narzędziem w Twoim zestawie narzędzi.
+W tym przewodniku krok po kroku nauczyliśmy się, jak usuwać obrazy z pliku PDF za pomocą Javy z pomocą Aspose.PDF dla Javy. Ta potężna biblioteka upraszcza proces i umożliwia wydajną manipulację zawartością PDF. Niezależnie od tego, czy musisz zredagować poufne informacje, czy zoptymalizować pliki PDF, Aspose.PDF dla Javy jest cennym narzędziem w Twoim zestawie narzędzi.
 
 ## Często zadawane pytania
 

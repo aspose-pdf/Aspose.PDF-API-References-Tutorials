@@ -103,7 +103,7 @@ if (fileSpecification.Params != null)
 Nu kommer den spännande delen – att ta ut bilagan! Vi läser innehållet i den inbäddade filen och sparar den i vår lokala katalog.
 
 ```csharp
-// Skaffa bilagan och skriv till fil eller stream
+// Hämta bilagan och skriv till fil eller stream
 byte[] fileContent = new byte[fileSpecification.Contents.Length];
 fileSpecification.Contents.Read(fileContent, 0, fileContent.Length);
 FileStream fileStream = new FileStream(dataDir + "test_out" + ".txt", FileMode.Create);

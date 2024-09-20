@@ -78,7 +78,7 @@ Nu kommer den spännande delen! Du kan ändra åtgärden för länkkommentaren. 
 linkAnnot.Action = new GoToURIAction("www.aspose.com");
 ```
 
- Denna rad ställer in åtgärden för`linkAnnot`till en ny URI-åtgärd, vilket i praktiken ändrar vart länken leder användarna när de klickas på dem.
+ Den här raden anger åtgärden för`linkAnnot`till en ny URI-åtgärd, vilket i praktiken ändrar vart länken leder användarna när de klickas på dem.
 
 ## Steg 4: Spara dokumentet
 

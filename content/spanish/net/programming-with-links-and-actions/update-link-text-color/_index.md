@@ -51,7 +51,7 @@ En este fragmento, reemplace`"YOUR DOCUMENT DIRECTORY"` con la ruta a su archivo
 
 ## Paso 2: Acceda a las anotaciones en el PDF
 
-Una vez cargado el PDF, el siguiente paso es recorrer las anotaciones de una página específica. Las anotaciones en un PDF pueden representar varias cosas, como enlaces, comentarios o elementos destacados.
+Una vez cargado el PDF, el siguiente paso es recorrer las anotaciones de una página específica. Las anotaciones de un PDF pueden representar varias cosas, como enlaces, comentarios o elementos destacados.
 
 ```csharp
 foreach (Annotation annotation in doc.Pages[1].Annotations)

@@ -94,7 +94,7 @@ pngDevice.RenderingOptions = opts;
 
 ## ステップ6: ページをPNGに変換する
 
-さて、いよいよ面白い部分です！PDFの各ページを、設定された`PngDevice`すべてをまとめるコードは次のとおりです。
+さて、いよいよ面白い部分です！PDFの各ページを、設定された`PngDevice`すべてをまとめたコードは次のとおりです。
 
 ```csharp
 pngDevice.Process(pdfDocument.Pages[pageCount], imageStream);

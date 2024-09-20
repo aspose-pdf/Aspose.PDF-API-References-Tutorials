@@ -2,155 +2,134 @@
 title: Minh họa Cấu trúc Các yếu tố
 linktitle: Minh họa Cấu trúc Các yếu tố
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Hướng dẫn từng bước sử dụng tài sản minh họa với Aspose.PDF cho .NET. Nâng cao khả năng trình bày PDF của bạn bằng hình ảnh.
+description: Tạo tệp PDF có cấu trúc với các thành phần minh họa trong Aspose.PDF cho .NET bằng cách làm theo hướng dẫn từng bước của chúng tôi.
 type: docs
 weight: 100
 url: /vi/net/programming-with-tagged-pdf/illustration-structure-elements/
 ---
-Trong hướng dẫn từng bước này, chúng tôi sẽ chỉ cho bạn cách sử dụng các thành phần cấu trúc minh họa với Aspose.PDF cho .NET. Aspose.PDF là một thư viện mạnh mẽ cho phép bạn thao tác các tài liệu PDF theo chương trình. Các thành phần cấu trúc minh họa cho phép bạn thêm hình ảnh và hình vẽ vào tài liệu PDF của mình, cải thiện khả năng trình bày trực quan và khả năng hiểu của tài liệu.
+## Giới thiệu
 
-Hãy cùng tìm hiểu mã và cách sử dụng các thành phần cấu trúc minh họa với Aspose.PDF cho .NET.
+Bạn đã sẵn sàng tạo PDF có cấu trúc tuyệt đẹp trong ứng dụng .NET của mình chưa? Cho dù bạn đang làm việc trên một dự án đòi hỏi phải gắn thẻ nội dung hay chỉ muốn đưa PDF của mình lên một tầm cao mới, Aspose.PDF cho .NET có tất cả các công cụ bạn cần để làm việc với các thành phần cấu trúc minh họa. Trong hướng dẫn này, tôi sẽ hướng dẫn bạn từng bước trong quy trình, đảm bảo ngay cả những phần phức tạp nhất cũng rõ ràng như pha lê.
 
 ## Điều kiện tiên quyết
 
-Trước khi bắt đầu, hãy đảm bảo bạn có những điều sau:
+Trước khi đi sâu vào chi tiết, hãy đảm bảo rằng bạn có mọi thứ cần thiết để theo dõi một cách suôn sẻ.
 
-1. Thư viện Aspose.PDF cho .NET được cài đặt.
-2. Kiến thức cơ bản về ngôn ngữ lập trình C#.
+1.  Aspose.PDF cho .NET – Bạn sẽ cần cài đặt thư viện Aspose.PDF. Bạn chưa có? Bạn có thể[tải xuống ở đây](https://releases.aspose.com/pdf/net/) . Nếu bạn muốn thử nghiệm trước, bạn có thể lấy một[dùng thử miễn phí](https://releases.aspose.com/).
+2. Visual Studio – Chúng ta sẽ mã hóa bằng C#, vì vậy hãy đảm bảo Visual Studio hoặc bất kỳ IDE tương thích nào được cài đặt.
+3. .NET Framework – Đảm bảo bạn có phiên bản tương thích với Aspose.PDF cho .NET.
+4.  Giấy phép tạm thời – Aspose.PDF đi kèm một số hạn chế trong chế độ dùng thử, vì vậy hãy lấy[giấy phép tạm thời](https://purchase.aspose.com/temporary-license/) để mở khóa đầy đủ tính năng.
 
-## Bước 1: Thiết lập môi trường
+Vậy là xong! Bây giờ chúng ta hãy nhập các không gian tên cần thiết và tiến hành viết mã.
 
-Để bắt đầu, hãy mở môi trường phát triển C# của bạn và tạo một dự án mới. Đảm bảo bạn đã thêm tham chiếu đến thư viện Aspose.PDF cho .NET vào dự án của bạn.
+## Nhập không gian tên
 
 ```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Bước 2: Tạo tài liệu
+Đây là nền tảng—nếu không nhập các không gian tên này, chúng ta không thể tương tác với các tính năng Aspose.PDF hoặc xử lý nội dung PDF được gắn thẻ. Bây giờ chúng ta hãy phân tích chi tiết các bước.
 
- Bước đầu tiên là tạo một tài liệu PDF mới bằng cách sử dụng`Document` lớp học.
+## Bước 1: Thiết lập thư mục tài liệu của bạn
 
-```csharp
-// Tạo tài liệu PDF
-Document document = new Document();
-```
-
-## Bước 3: Làm việc với nội dung được gắn thẻ
-
-Sau đó, chúng ta sẽ lấy nội dung được gắn thẻ của tài liệu để làm việc.
+Trước khi bắt đầu tạo PDF, bạn cần chỉ định đường dẫn đến thư mục tài liệu nơi tệp sẽ được lưu. Đây là thư mục trên hệ thống nơi hình ảnh hoặc các tài sản khác của bạn được lưu trữ.
 
 ```csharp
-// Nhận nội dung được gắn thẻ của tài liệu
-ITaggedContent taggedContent = document.TaggedContent;
-```
-
-## Bước 4: Đặt tiêu đề và ngôn ngữ cho tài liệu
-
-Bây giờ chúng ta có thể đặt tiêu đề và ngôn ngữ cho tài liệu.
-
-```csharp
-// Xác định tiêu đề và ngôn ngữ của tài liệu
-taggedContent.SetTitle("Tagged PDF document");
-taggedContent.SetLanguage("fr-FR");
-```
-
-## Bước 5: Thêm tác phẩm nghệ thuật
-
-Bây giờ chúng ta hãy thêm các yếu tố minh họa, chẳng hạn như hình ảnh và số liệu, vào tài liệu của mình.
-
-```csharp
-// Sự kém phát triển
-IllustrationElement figure1 = taggedContent.CreateFigureElement();
-taggedContent.RootElement.AppendChild(figure1);
-figure1.AlternativeText = "Figure One";
-figure1.Title = "Picture 1";
-figure1.SetTag("Fig1");
-figure1.SetImage("image.png");
-```
-
-Ở đây chúng ta tạo một thành phần cấu trúc minh họa, cung cấp cho nó một văn bản thay thế, tiêu đề, thẻ tùy chỉnh và liên kết một hình ảnh với nó.
-
-## Bước 6: Lưu tài liệu PDF đã gắn thẻ
-
-Cuối cùng, chúng ta lưu tài liệu PDF đã gắn thẻ.
-
-```csharp
-// Lưu tài liệu PDF đã gắn thẻ
-document.Save(dataDir + "IllustrationStructureElements.pdf");
-```
-
-### Mã nguồn mẫu cho Illustration Structure Elements sử dụng Aspose.PDF cho .NET 
-```csharp
-
-// Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
-// Tạo Tài Liệu PDF
+ Bước này đơn giản nhưng cần thiết. Bạn đang cho chương trình biết nơi tìm và lưu trữ các tệp bạn sẽ làm việc. Giống như có một căn cứ cho các tệp PDF của bạn. Thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế trên máy của bạn.
+
+## Bước 2: Tạo một tài liệu PDF mới
+
+Bây giờ là lúc tạo tài liệu PDF. Trong bước này, chúng ta sẽ khởi tạo một tài liệu PDF trống, chúng ta sẽ chỉnh sửa và cải thiện trong các bước tiếp theo.
+ Tạo Tài liệu
+
+```csharp
 Document document = new Document();
+```
 
-// Nhận nội dung cho công việc với TaggedPdf
+Dòng này thực hiện mọi phép thuật. Nó tạo ra một tệp PDF mới hoàn toàn trống, chờ bạn thêm nội dung vào. Hãy nghĩ về nó như việc mở một bức tranh mới.
+
+## Bước 3: Truy cập Nội dung PDF được gắn thẻ
+
+Để làm việc với các thành phần cấu trúc minh họa, chúng ta cần khai thác Nội dung được gắn thẻ của tài liệu. Điều này cho phép chúng ta xác định các thẻ cụ thể, giúp PDF có cấu trúc và dễ truy cập hơn.
+
+```csharp
 ITaggedContent taggedContent = document.TaggedContent;
+```
 
-// Đặt Tiêu đề và Ngôn ngữ cho Documnet
+ Đây là nơi phép thuật xảy ra!`TaggedContent` đối tượng cho phép chúng ta xác định cách các thành phần trong PDF được diễn giải. Nếu bạn đang làm việc với khả năng truy cập hoặc cấu trúc, bước này rất quan trọng.
+
+## Bước 4: Thiết lập Tiêu đề và Ngôn ngữ của Tài liệu
+
+Chúng tôi đang tạo PDF có cấu trúc, vì vậy việc xác định tiêu đề và ngôn ngữ là rất cần thiết. Điều này không chỉ giúp tăng khả năng truy cập mà còn giúp tài liệu chuyên nghiệp hơn và dễ tìm kiếm hơn.
+
+```csharp
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
+```
 
-// Đang phát triển
+Bằng cách chỉ định tiêu đề và ngôn ngữ, về cơ bản bạn đang mang lại cho PDF của mình một số cá tính. Tiêu đề sẽ hiển thị trong thuộc tính tài liệu và việc thiết lập ngôn ngữ đảm bảo khả năng tương thích với trình đọc màn hình và các công cụ trợ năng khác.
+
+## Bước 5: Tạo phần tử minh họa (Hình)
+
+Bây giờ đến phần thú vị—thêm hình minh họa! Trong trường hợp này, chúng ta sẽ tạo một phần tử hình ảnh bao gồm hình ảnh, mô tả văn bản thay thế và tiêu đề.
+
+```csharp
 IllustrationElement figure1 = taggedContent.CreateFigureElement();
 taggedContent.RootElement.AppendChild(figure1);
+```
+
+Mã này tạo một phần tử hình mới và thêm nó vào phần tử gốc của tài liệu. Hãy nghĩ về điều này như việc thêm một chỗ giữ hình ảnh vào tài liệu của bạn.
+
+## Bước 6: Thêm Văn bản thay thế, Tiêu đề và Hình ảnh
+
+Để đảm bảo PDF của bạn có thể truy cập được, bạn sẽ muốn bao gồm văn bản thay thế và tiêu đề cho hình minh họa của mình. Chúng tôi cũng sẽ đính kèm một hình ảnh.
+
+```csharp
 figure1.AlternativeText = "Figure One";
 figure1.Title = "Image 1";
 figure1.SetTag("Fig1");
-figure1.SetImage("image.png");
-
-// Lưu tài liệu PDF có gắn thẻ
-document.Save(dataDir + "IllustrationStructureElements.pdf");
-
+figure1.SetImage(dataDir + "image.jpg");
 ```
+
+ Đây là bước hoàn thiện cuối cùng. Chúng tôi sẽ cung cấp cho hình ảnh của mình một văn bản thay thế mô tả (hữu ích cho trình đọc màn hình), một tiêu đề và thiết lập tệp hình ảnh thực tế.`SetTag`phương pháp gắn thẻ hình ảnh, giúp tham chiếu dễ dàng hơn sau này.
+
+ Lưu ý quan trọng: Đảm bảo rằng đường dẫn hình ảnh trong`SetImage` trỏ tới một tệp hình ảnh hợp lệ trên máy của bạn.
+
+## Bước 7: Lưu tài liệu PDF đã gắn thẻ
+
+Sau khi đã thêm và cấu trúc toàn bộ nội dung, đã đến lúc lưu PDF. Bước này hoàn thiện mọi thứ và tạo tệp thực tế.
+
+```csharp
+document.Save(dataDir + "IllustrationStructureElements.pdf");
+```
+
+Đơn giản phải không? Lệnh này sẽ thực hiện tất cả công việc bạn đã làm và tạo một tệp PDF mới trong thư mục bạn đã chỉ định trước đó. Bây giờ, hãy kiểm tra thư mục của bạn và voila—bạn đã có một tệp PDF có cấu trúc với các thành phần minh họa!
 
 ## Phần kết luận
 
-Xin chúc mừng! Bạn đã học cách sử dụng các thành phần cấu trúc minh họa với Aspose.PDF cho .NET. Bây giờ bạn có thể thêm hình ảnh và số liệu vào tài liệu PDF của mình để nâng cao khả năng trình bày trực quan. Khám phá thêm các tính năng của Aspose.PDF để khám phá hết tiềm năng của nó.
+Xin chúc mừng! Bạn vừa học được cách tạo PDF có gắn thẻ với các thành phần cấu trúc minh họa bằng Aspose.PDF cho .NET. Phương pháp này đảm bảo rằng PDF của bạn không chỉ hấp dẫn về mặt hình ảnh mà còn có cấu trúc và dễ truy cập. Bằng cách gắn thẻ nội dung và thêm văn bản thay thế, bạn đảm bảo rằng mọi người, bao gồm cả những người sử dụng công nghệ hỗ trợ, đều có thể thưởng thức tài liệu của bạn.
 
-### Câu hỏi thường gặp
+## Câu hỏi thường gặp
 
-#### H: Các thành phần cấu trúc minh họa trong tài liệu PDF là gì và chúng làm tăng cường khả năng trình bày trực quan như thế nào?
+### Nội dung PDF được gắn thẻ là gì?
+PDF có gắn thẻ là PDF bao gồm các thẻ hoặc nhãn để xác định các thành phần khác nhau, như tiêu đề, đoạn văn và hình ảnh, giúp tài liệu dễ truy cập hơn.
 
-A: Các thành phần cấu trúc minh họa trong tài liệu PDF cho phép bạn kết hợp nội dung trực quan như hình ảnh và số liệu. Bằng cách sử dụng các thành phần cấu trúc minh họa với Aspose.PDF cho .NET, bạn có thể nâng cao khả năng trình bày trực quan của tài liệu PDF, khiến chúng hấp dẫn và nhiều thông tin hơn.
+### Thiết lập văn bản thay thế có ích gì?
+Văn bản thay thế cung cấp mô tả cho hình ảnh, có thể được đọc bằng trình đọc màn hình, cải thiện khả năng truy cập cho người dùng khiếm thị.
 
-#### H: Aspose.PDF cho .NET hỗ trợ việc sử dụng các thành phần cấu trúc minh họa như thế nào?
+### Tôi có thể thêm nhiều hình ảnh vào tệp PDF có gắn thẻ không?
+ Có! Bạn có thể tạo nhiều`FigureElement` các đối tượng và thêm từng đối tượng vào tài liệu của bạn, giống như chúng ta đã làm với một hình ảnh duy nhất.
 
-A: Aspose.PDF for .NET cung cấp một tập hợp các lớp và phương thức cho phép bạn tạo, thao tác và thêm các thành phần cấu trúc minh họa vào tài liệu PDF của mình. Các thành phần này có thể bao gồm hình ảnh, hình vẽ và nội dung trực quan khác.
+### Tôi có cần giấy phép để sử dụng Aspose.PDF cho .NET không?
+ Có, Aspose.PDF là một thư viện trả phí, nhưng bạn có thể nhận được[giấy phép tạm thời](https://purchase.aspose.com/temporary-license/) hoặc bắt đầu với một[dùng thử miễn phí](https://releases.aspose.com/).
 
-####  Q: Vai trò của`taggedContent` object play in using illustration structure elements?
-
- A: Cái`taggedContent` đối tượng, thu được từ tài liệu`TaggedContent`thuộc tính, cho phép bạn làm việc với các thành phần có cấu trúc trong tài liệu PDF. Bạn có thể tạo, sắp xếp và thêm các thành phần cấu trúc minh họa để tăng cường khả năng hiển thị trực quan của tài liệu.
-
-#### H: Các thành phần cấu trúc minh họa giúp cải thiện khả năng hiểu nội dung tài liệu PDF như thế nào?
-
-A: Các thành phần cấu trúc minh họa cung cấp ngữ cảnh trực quan và hỗ trợ cho nội dung văn bản của tài liệu PDF. Chúng giúp truyền tải thông tin, dữ liệu hoặc khái niệm phức tạp thông qua hình ảnh và số liệu, giúp nội dung dễ hiểu và dễ nhớ hơn.
-
-#### H: Có thể thêm những loại nội dung trực quan nào bằng cách sử dụng các thành phần cấu trúc minh họa?
-
-A: Có thể sử dụng các thành phần cấu trúc minh họa để thêm nhiều nội dung trực quan, bao gồm hình ảnh, biểu đồ, đồ thị, sơ đồ và các loại tác phẩm nghệ thuật khác giúp tăng cường sức hấp dẫn trực quan và tính kể chuyện của tài liệu.
-
-#### H: Làm thế nào để tạo và thêm hình ảnh vào tài liệu PDF bằng các thành phần cấu trúc minh họa trong Aspose.PDF cho .NET?
-
-A: Bạn có thể tạo một phần tử cấu trúc minh họa bằng cách sử dụng`CreateFigureElement` phương pháp, gán văn bản thay thế, tiêu đề và thẻ tùy chỉnh cho nó và liên kết một tệp hình ảnh bằng cách sử dụng`SetImage` phương pháp. Ví dụ mã được cung cấp minh họa quá trình này.
-
-#### H: Tôi có thể tùy chỉnh giao diện và thuộc tính của các thành phần cấu trúc minh họa không?
-
-A: Có, bạn có thể tùy chỉnh giao diện và thuộc tính của các thành phần cấu trúc minh họa bằng cách thiết lập các thuộc tính như văn bản thay thế, tiêu đề, thẻ tùy chỉnh, nguồn hình ảnh, v.v. Điều này cho phép bạn tùy chỉnh hình ảnh đại diện theo nhu cầu của tài liệu.
-
-#### H: Làm sao tôi có thể đảm bảo rằng hình ảnh và hình vẽ tôi thêm vào bằng các thành phần cấu trúc minh họa có thể truy cập được?
-
-A: Để đảm bảo khả năng truy cập, hãy cung cấp văn bản thay thế có ý nghĩa mô tả chính xác nội dung của hình ảnh hoặc hình ảnh. Văn bản thay thế này được đọc bởi trình đọc màn hình và các công nghệ hỗ trợ khác, giúp nội dung trực quan có thể truy cập được đối với tất cả người dùng.
-
-#### H: Tôi có thể sử dụng các thành phần cấu trúc minh họa kết hợp với các tính năng thao tác PDF khác do Aspose.PDF cung cấp cho .NET không?
-
-A: Hoàn toàn có thể! Bạn có thể kết hợp các thành phần cấu trúc minh họa với các tính năng khác của Aspose.PDF cho .NET, chẳng hạn như thêm văn bản, tạo bảng, chèn siêu liên kết, v.v. Điều này cho phép bạn tạo các tài liệu PDF hấp dẫn về mặt hình ảnh và nhiều thông tin.
-
-#### H: Tôi có thể khám phá và sử dụng sâu hơn các yếu tố cấu trúc minh họa cho thiết kế tài liệu nâng cao và kể chuyện trực quan như thế nào?
-
-A: Để tìm hiểu sâu hơn, bạn có thể khám phá các tính năng nâng cao của Aspose.PDF cho .NET, chẳng hạn như tạo các thành phần tương tác, nhúng đa phương tiện, sử dụng các định dạng hình ảnh khác nhau và tối ưu hóa nội dung trực quan cho nhiều thiết bị khác nhau. Tài liệu và ví dụ của thư viện cung cấp hướng dẫn cho các tình huống nâng cao này.
+### Có thể sửa đổi phần tử hình sau khi tạo PDF không?
+Sau khi lưu PDF, bạn không thể chỉnh sửa trực tiếp nhưng có thể mở lại tài liệu, thực hiện thay đổi và lưu lại bằng Aspose.PDF.

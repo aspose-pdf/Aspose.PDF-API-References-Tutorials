@@ -49,7 +49,7 @@ using Aspose.Pdf;
 
 Nachdem wir nun alles eingerichtet haben, wollen wir den Prozess der Konvertierung einer Webseite in ein PDF-Dokument Schritt für Schritt durchgehen.
 
-## Schritt 1: Dokumentverzeichnis definieren
+## Schritt 1: Definieren Sie das Dokumentverzeichnis
 
 Zunächst müssen Sie festlegen, wo die Ausgabe-PDF-Datei gespeichert wird. Geben Sie dazu einen Pfad zu Ihrem Dokumentverzeichnis an.
 

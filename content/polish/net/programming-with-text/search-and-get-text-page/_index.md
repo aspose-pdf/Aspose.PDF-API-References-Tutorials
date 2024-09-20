@@ -7,103 +7,88 @@ type: docs
 weight: 430
 url: /pl/net/programming-with-text/search-and-get-text-page/
 ---
-Ten samouczek wyjaśnia, jak używać Aspose.PDF dla .NET do wyszukiwania i pobierania tekstu z określonej strony w pliku PDF. Dostarczony kod źródłowy C# demonstruje ten proces krok po kroku.
+## Wstęp
+
+Czy kiedykolwiek zdarzyło Ci się potrzebować wyszukać określony tekst w dokumencie PDF i wyodrębnić go do dalszego wykorzystania? Może tworzysz aplikację, która przetwarza dokumenty i wymaga precyzyjnej ekstrakcji danych, a może po prostu potrzebujesz wydajnego analizowania plików PDF. Niezależnie od tego, jaki jest Twój przypadek, jesteś we właściwym miejscu! W tym samouczku zagłębimy się w to, jak wyszukiwać i pobierać tekst ze strony w pliku PDF przy użyciu Aspose.PDF dla .NET. Niezależnie od tego, czy jesteś początkującym, czy doświadczonym programistą, ten przewodnik przeprowadzi Cię przez każdy krok w konwersacyjny i angażujący sposób. Gotowy do działania? Zaczynajmy!
 
 ## Wymagania wstępne
 
-Przed przystąpieniem do samouczka upewnij się, że posiadasz następujące elementy:
+Zanim przejdziemy do kodowania, upewnijmy się, że masz wszystko, czego potrzebujesz:
 
-- Podstawowa znajomość języka programowania C#.
-- Aspose.PDF dla biblioteki .NET jest zainstalowany. Możesz go pobrać ze strony internetowej Aspose lub użyć NuGet, aby zainstalować go w swoim projekcie.
+1.  Aspose.PDF dla biblioteki .NET: Można ją pobrać ze strony[Tutaj](https://releases.aspose.com/pdf/net/) lub pobierz bezpłatną wersję próbną z tego samego linku. Aby dokonać zakupu, przejdź do[Sklep Aspose](https://purchase.aspose.com/buy).
+2. .NET Framework: Będziesz potrzebować działającego środowiska programistycznego .NET, takiego jak Visual Studio.
+3. Plik PDF: Będziesz potrzebować przykładowego pliku PDF, w którym możemy wyszukać i wyodrębnić tekst. Na potrzeby tego samouczka załóżmy, że plik ma nazwę`SearchAndGetTextPage.pdf`.
 
-## Krok 1: Skonfiguruj projekt
+## Importuj pakiety
 
-Zacznij od utworzenia nowego projektu C# w preferowanym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla platformy .NET.
-
-## Krok 2: Importuj niezbędne przestrzenie nazw
-
-Dodaj następujące dyrektywy using na początku pliku C#, aby zaimportować wymagane przestrzenie nazw:
+Po pierwsze, musimy zaimportować niezbędne przestrzenie nazw, aby pracować z Aspose.PDF dla .NET. Upewnij się, że są one uwzględnione na górze kodu.
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
+using System
 ```
 
-## Krok 3: Załaduj dokument PDF
+Teraz, gdy omówiliśmy wymagania wstępne, rozłóżmy kod krok po kroku. Każdy krok został wyraźnie opisany, aby ułatwić śledzenie.
 
- Ustaw ścieżkę do katalogu dokumentu PDF i załaduj dokument za pomocą`Document` klasa:
+## Krok 1: Ustaw ścieżkę do katalogu dokumentów
+
+Przed interakcją z plikiem PDF musisz zdefiniować ścieżkę do miejsca, w którym przechowywany jest dokument PDF. Dzięki temu program będzie miał dostęp do pliku.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+-  dataDir: To jest ścieżka do folderu, w którym przechowywane są pliki PDF. Zastąp`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką, gdzie znajduje się plik PDF.
+
+## Krok 2: Załaduj dokument PDF
+
+Następnym krokiem jest załadowanie dokumentu PDF do pamięci, aby móc z nim pracować. Oto jak to zrobić:
+
+```csharp
 Document pdfDocument = new Document(dataDir + "SearchAndGetTextPage.pdf");
 ```
 
- Pamiętaj o wymianie`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do katalogu dokumentów.
+- Dokument: To jest klasa Aspose.PDF, która ładuje plik PDF.
+- pdfDocument: Zmienna, w której przechowywany jest plik PDF po załadowaniu.
 
-## Krok 4: Wyszukaj i wyodrębnij tekst ze strony
+## Krok 3: Utwórz obiekt pochłaniacza tekstu
 
- Utwórz`TextFragmentAbsorber`obiekt umożliwiający znalezienie wszystkich wystąpień wprowadzonej frazy wyszukiwania na określonej stronie:
+ Ten`TextFragmentAbsorber`Klasa pozwala na wyszukiwanie określonego tekstu w pliku PDF. Utwórzmy wystąpienie tej klasy, aby znaleźć wszystkie wystąpienia danej frazy wyszukiwania.
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("Figure");
 ```
 
- Zastępować`"Figure"` z rzeczywistym tekstem, którego szukasz.
+- TextFragmentAbsorber: Ta klasa odpowiada za wyszukiwanie i wyodrębnianie tekstu z pliku PDF.
+- „Rysunek”: Zastąp go dowolnym tekstem, którego chcesz poszukać w pliku PDF.
 
-## Krok 5: Wyszukaj na konkretnej stronie
+## Krok 4: Zastosuj Absorber Tekstu do całego pliku PDF
 
-Zaakceptuj absorber dla konkretnej strony dokumentu:
+Po skonfigurowaniu modułu pochłaniania tekstu należy polecić programowi przeszukanie wszystkich stron dokumentu PDF.
 
 ```csharp
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 ```
 
-## Krok 6: pobierz wyodrębnione fragmenty tekstu
+- Accept(): Ta metoda stosuje pochłaniacz tekstu do pliku PDF, skanując każdą stronę w poszukiwaniu określonego tekstu.
 
- Pobierz wyodrębnione fragmenty tekstu za pomocą`TextFragments` własność`TextFragmentAbsorber` obiekt:
+## Krok 5: Pobierz i przejrzyj wyodrębniony tekst
+
+Teraz, gdy zeskanowaliśmy plik PDF, czas pobrać wyniki i wyświetlić je. Przejdziemy przez wyodrębnione fragmenty tekstu.
 
 ```csharp
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
 ```
 
-## Krok 7: Przejrzyj fragmenty i segmenty tekstu
+- TextFragmentCollection: Ta kolekcja zawiera wszystkie wystąpienia fragmentów tekstu znalezionych przez moduł pochłaniający tekst.
 
-Przejdź przez otrzymane fragmenty tekstu i ich segmenty, a następnie uzyskaj dostęp do ich właściwości:
+## Krok 6: Przejdź przez każdy fragment i wyodrębnij dane
+
+Teraz przejdziemy przez pętlę`textFragmentCollection` i wyodrębnić różne właściwości każdego segmentu tekstu, takie jak jego położenie, szczegóły czcionki i kolor.
 
 ```csharp
-foreach (TextFragment textFragment in textFragmentCollection)
-{
-	foreach (TextSegment textSegment in textFragment.Segments)
-	{
-		Console.WriteLine("Text: {0} ", textSegment.Text);
-		Console.WriteLine("Position: {0} ", textSegment.Position);
-		Console.WriteLine("XIndent: {0} ", textSegment.Position.XIndent);
-		Console.WriteLine("YIndent: {0} ", textSegment.Position.YIndent);
-		Console.WriteLine("Font - Name: {0}", textSegment.TextState.Font.FontName);
-		Console.WriteLine("Font - IsAccessible: {0} ", textSegment.TextState.Font.IsAccessible);
-		Console.WriteLine("Font - IsEmbedded: {0} ", textSegment.TextState.Font.IsEmbedded);
-		Console.WriteLine("Font - IsSubset: {0} ", textSegment.TextState.Font.IsSubset);
-		Console.WriteLine("Font Size: {0} ", textSegment.TextState.FontSize);
-		Console.WriteLine("Foreground Color: {0} ", textSegment.TextState.ForegroundColor);
-	}
-}
-```
-
-Możesz zmodyfikować kod wewnątrz pętli, aby wykonać dalsze działania na każdym segmencie tekstu.
-
-### Przykładowy kod źródłowy dla strony Search And Get Text Page przy użyciu Aspose.PDF dla .NET 
-```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Otwórz dokument
-Document pdfDocument = new Document(dataDir + "SearchAndGetTextPage.pdf");
-// Utwórz obiekt TextAbsorber, aby znaleźć wszystkie wystąpienia frazy wyszukiwania wejściowego
-TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("Figure");
-// Zaakceptuj absorber dla wszystkich stron
-pdfDocument.Pages.Accept(textFragmentAbsorber);
-// Pobierz wyodrębnione fragmenty tekstu
-TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// Przejrzyj fragmenty
 foreach (TextFragment textFragment in textFragmentCollection)
 {
 	foreach (TextSegment textSegment in textFragment.Segments)
@@ -122,40 +107,29 @@ foreach (TextFragment textFragment in textFragmentCollection)
 }
 ```
 
+- Fragment tekstu: Każdy fragment zawiera fragmenty znalezionego tekstu.
+- Segment tekstu: Każdy fragment może mieć wiele segmentów, reprezentujących różne części tekstu.
+- TextState: zawiera szczegółowe informacje na temat czcionki, rozmiaru i koloru tekstu.
+
+W tej pętli drukujemy szczegóły, takie jak sam tekst, jego położenie (współrzędne X i Y), czcionkę, informację, czy czcionka jest osadzona w pliku PDF, a także kolor pierwszego planu tekstu.
+
 ## Wniosek
 
-Gratulacje! Udało Ci się nauczyć, jak wyszukiwać i pobierać tekst z określonej strony dokumentu PDF za pomocą Aspose.PDF dla .NET. Ten samouczek zawiera przewodnik krok po kroku, od ładowania dokumentu do uzyskiwania dostępu do wyodrębnionych segmentów tekstu. Teraz możesz włączyć
+I masz to! Udało Ci się wyszukać i wyodrębnić tekst z pliku PDF za pomocą Aspose.PDF dla .NET. Niesamowite, jak dużą elastyczność oferuje ta biblioteka. Niezależnie od tego, czy musisz wyszukać konkretny tekst w dużym dokumencie, wyodrębnić go lub przeanalizować jego właściwości, Aspose.PDF sprawia, że jest to bułka z masłem. Ponadto dzięki omówionemu przez nas kodowi jesteś dobrze wyposażony, aby dostosować go do swoich potrzeb. 
 
-### Najczęściej zadawane pytania
+## Najczęściej zadawane pytania
 
-#### P: Jaki jest cel poradnika „Wyszukaj i pobierz stronę tekstową”?
+### Czy mogę wyszukiwać wiele fraz jednocześnie?  
+ Tak, możesz zmodyfikować kod, aby wyszukiwać wiele fraz, tworząc wiele`TextFragmentAbsorber` obiekty.
 
-A: Samouczek „Search And Get Text Page” ma na celu zilustrowanie sposobu korzystania z biblioteki Aspose.PDF dla .NET w celu wyszukiwania i pobierania tekstu z określonej strony w pliku PDF. Samouczek zawiera szczegółowe instrukcje i przykładowy kod C#, aby zademonstrować ten proces.
+### Jak mogę wyodrębnić tekst z konkretnej strony?  
+ Możesz wybrać konkretną stronę, stosując`TextFragmentAbsorber` do pojedynczej strony zamiast całego dokumentu. Na przykład:`pdfDocument.Pages[1].Accept(textFragmentAbsorber);`.
 
-#### P: W jaki sposób ten samouczek pomaga wyodrębnić tekst z konkretnej strony dokumentu PDF?
+### Czy Aspose.PDF dla .NET jest darmowy?  
+ Aspose.PDF jest produktem komercyjnym, ale można go używać z[bezpłatny okres próbny](https://releases.aspose.com/).
 
-A: Ten samouczek przeprowadzi Cię przez proces wyodrębniania tekstu z określonej strony dokumentu PDF przy użyciu biblioteki Aspose.PDF. Opisuje niezbędne kroki i udostępnia kod C# do wyszukiwania określonej frazy tekstowej na wybranej stronie i pobierania powiązanych segmentów tekstu.
+### Czy mogę wyodrębnić obrazy z pliku PDF za pomocą Aspose.PDF?  
+ Tak, Aspose.PDF pozwala na wyodrębnianie obrazów oprócz tekstu. Sprawdź[dokumentacja](https://reference.aspose.com/pdf/net/) po więcej szczegółów.
 
-#### P: Jakie wymagania muszę spełnić, aby móc skorzystać z tego samouczka?
-
-A: Przed rozpoczęciem tego samouczka powinieneś mieć podstawową wiedzę na temat języka programowania C#. Ponadto musisz mieć zainstalowaną bibliotekę Aspose.PDF dla .NET. Możesz ją pobrać ze strony internetowej Aspose lub użyć NuGet, aby zintegrować ją ze swoim projektem.
-
-#### P: Jak skonfigurować projekt, aby móc skorzystać z tego samouczka?
-
-A: Aby rozpocząć, utwórz nowy projekt C# w preferowanym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla .NET. Umożliwi ci to wykorzystanie możliwości biblioteki w twoim projekcie.
-
-#### P: Czy mogę wyszukiwać tekst na konkretnej stronie dokumentu PDF?
-
-A: Tak, ten samouczek pokazuje, jak wyszukiwać tekst na określonej stronie dokumentu PDF. Polega to na użyciu`TextFragmentAbsorber` Klasa służąca do lokalizowania wystąpień konkretnej frazy tekstowej na wybranej stronie.
-
-#### P: Jak uzyskać dostęp do wyodrębnionych segmentów tekstu z konkretnej strony?
-
- A: Po wyszukaniu tekstu na wyznaczonej stronie możesz uzyskać dostęp do wyodrębnionych segmentów tekstu za pomocą`TextSegments` własność`TextFragment` obiekt. Ta właściwość zapewnia dostęp do kolekcji`TextSegment` obiekty zawierające wyodrębniony tekst i powiązane informacje.
-
-#### P: Jakie informacje mogę odzyskać z wyodrębnionych segmentów tekstu?
-
-A: Możesz pobrać różne szczegóły z wyodrębnionych segmentów tekstu, w tym zawartość tekstu, pozycję (współrzędne X i Y), informacje o czcionce (nazwa, rozmiar, kolor itp.) i więcej. Przykładowy kod samouczka pokazuje, jak uzyskać dostęp i wydrukować te szczegóły dla każdego segmentu tekstu.
-
-#### P: Czy mogę wykonywać niestandardowe działania na wyodrębnionych segmentach tekstu?
-
-A: Oczywiście. Po wyodrębnieniu segmentów tekstu możesz dostosować kod w pętli, aby wykonać dodatkowe czynności na każdym segmencie. Może to obejmować zapisanie wyodrębnionego tekstu, analizę wzorców tekstu lub zastosowanie zmian formatowania.
+### A co jeśli będę potrzebować dodatkowej pomocy lub wsparcia?  
+ Zawsze możesz uzyskać pomoc od[Forum wsparcia Aspose](https://forum.aspose.com/c/pdf/10).

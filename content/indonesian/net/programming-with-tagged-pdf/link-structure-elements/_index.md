@@ -2,271 +2,201 @@
 title: Elemen Struktur Tautan
 linktitle: Elemen Struktur Tautan
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Panduan langkah demi langkah untuk menggunakan elemen struktur tautan dengan Aspose.PDF untuk .NET. Buat hyperlink dalam dokumen PDF Anda.
+description: Pelajari cara membuat elemen struktur tautan dalam PDF menggunakan Aspose.PDF untuk .NET. Panduan langkah demi langkah untuk menambahkan tautan yang dapat diakses, gambar, dan validasi kepatuhan.
 type: docs
 weight: 120
 url: /id/net/programming-with-tagged-pdf/link-structure-elements/
 ---
-Dalam panduan langkah demi langkah ini, kami akan menunjukkan cara menggunakan elemen struktur tautan dengan Aspose.PDF untuk .NET. Aspose.PDF adalah pustaka canggih yang memungkinkan Anda membuat dan memanipulasi dokumen PDF secara terprogram. Elemen struktur tautan memungkinkan Anda menambahkan hyperlink ke dokumen PDF, sehingga pengguna dapat mengeklik tautan dan menavigasi ke sumber daya daring.
+## Perkenalan
 
-Mari selami kodenya dan pelajari cara menggunakan elemen struktur tautan dengan Aspose.PDF untuk .NET.
+Membuat dan mengelola elemen struktur tautan dalam PDF dapat menjadi hal yang penting untuk dokumen yang memerlukan aksesibilitas dan navigasi yang lancar. Dalam tutorial ini, kami akan memandu Anda untuk melakukannya menggunakan Aspose.PDF untuk .NET. Jika Anda baru mengenal Aspose.PDF atau manipulasi PDF secara umum, jangan khawatir. Saya akan menjelaskan setiap langkah secara terperinci sehingga Anda dapat mengikutinya dengan mudah!
 
-## Prasyarat
+## Prasyarat  
 
-Sebelum memulai, pastikan Anda memiliki hal berikut:
+Sebelum kita mulai membuat kode, mari kita bahas beberapa hal terlebih dahulu. Berikut ini adalah persyaratan dasar untuk memastikan pengalaman pengembangan yang lancar.
 
-1. Pustaka Aspose.PDF untuk .NET terpasang.
-2. Pengetahuan dasar tentang bahasa pemrograman C#.
+1.  Aspose.PDF untuk .NET: Anda dapat mengunduh versi terbaru[Di Sini](https://releases.aspose.com/pdf/net/).
+2. Lingkungan Pengembangan .NET: Baik itu Visual Studio atau IDE apa pun yang kompatibel dengan .NET, instal dan siapkan.
+3.  Lisensi Aspose: Anda dapat menggunakan versi uji coba gratis Aspose.PDF[Di Sini](https://releases.aspose.com/) atau memperoleh[lisensi sementara](https://purchase.aspose.com/temporary-license/).
+4. Pengetahuan Dasar C#: Kita akan bekerja dengan beberapa kode C#, jadi memahami dasar-dasarnya akan membuat segalanya lebih mudah.
 
-## Langkah 1: Menyiapkan lingkungan
+## Paket Impor
 
-Untuk memulai, buka lingkungan pengembangan C# Anda dan buat proyek baru. Pastikan Anda telah menambahkan referensi ke pustaka Aspose.PDF untuk .NET dalam proyek Anda.
+Anda perlu mengimpor beberapa paket sebelum menulis kode untuk elemen struktur tautan. Mulailah dengan merujuk pustaka Aspose.PDF yang diperlukan dalam proyek Anda:
 
 ```csharp
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-string outFile = dataDir + "LinkStructureElements_Output.pdf";
-string logFile = dataDir + "46035_log.xml";
-string imgFile = dataDir + "google-icon-512.png";
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Langkah 2: Membuat dokumen
+Impor ini memungkinkan kita bekerja dengan dokumen PDF, menambahkan tag, dan mengelola elemen struktur.
 
- Langkah pertama adalah membuat dokumen PDF baru menggunakan`Document` kelas.
+Sekarang kita akan membuat dokumen PDF dengan berbagai jenis struktur tautan, dan setiap langkah akan dipecah untuk membantu Anda memahami prosesnya secara menyeluruh.
 
-```csharp
-// Buat dokumen PDF
-Document document = new Document();
-```
+## Langkah 1: Inisialisasi Dokumen  
 
-## Langkah 3: Bekerja dengan konten yang diberi tag
-
-Lalu, kita dapatkan konten dokumen yang diberi tag untuk dikerjakan.
+Mari kita mulai dengan membuat dokumen PDF baru dan menyiapkan konten yang diberi tag untuk aksesibilitas.
 
 ```csharp
-// Dapatkan konten yang ditandai dari dokumen
-ITaggedContent taggedContent = document.TaggedContent;
-```
-
-## Langkah 4: Tetapkan judul dan bahasa dokumen
-
-Sekarang kita dapat mengatur judul dokumen dan bahasa.
-
-```csharp
-// Tentukan judul dan bahasa dokumen
-taggedContent.SetTitle("Example Link Items");
-taggedContent.SetLanguage("fr-FR");
-```
-
-## Langkah 5: Tambahkan elemen struktur tautan
-
-Sekarang mari tambahkan elemen struktur tautan ke dokumen kita. Kita akan membuat berbagai jenis tautan, termasuk tautan teks sederhana, tautan gambar, dan tautan multi-baris.
-```csharp
-// Dapatkan elemen struktur akar (elemen struktur dokumen)
-StructureElement rootElement = taggedContent.RootElement;
-
-// Tambahkan paragraf dengan hyperlink
-ParagraphElement p1 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p1);
-LinkElement link1 = taggedContent.CreateLinkElement();
-p1.AppendChild(link1);
-link1.Hyperlink = new WebHyperlink("http://google.com");
-link1.SetText("Google");
-link1.AlternateDescriptions = "Link to Google";
-
-// Tambahkan paragraf dengan hyperlink yang berisi teks kaya
-ParagraphElement p2 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p2);
-LinkElement link2 = taggedContent.CreateLinkElement();
-p2.AppendChild(link2);
-link2.Hyperlink = new WebHyperlink("http://google.com");
-SpanElement span2 = taggedContent.CreateSpanElement();
-span2.SetText("Google");
-link2.AppendChild(span2);
-link2.AlternateDescriptions = "Link to Google";
-
-// Tambahkan paragraf dengan hyperlink yang berisi teks yang diformat sebagian
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-LinkElement link3 = taggedContent.CreateLinkElement();
-p3.AppendChild(link3);
-link3.Hyperlink = new WebHyperlink("http://google.com");
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("G");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText("oogle");
-link3.AppendChild(span31);
-link3.SetText("-");
-link3.AppendChild(span32);
-link3.AlternateDescriptions = "Link to Google";
-
-// Tambahkan paragraf dengan hyperlink multiline
-ParagraphElement p4 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p4);
-LinkElement link4 = taggedContent.CreateLinkElement();
-p4.AppendChild(link4);
-link4.Hyperlink = new WebHyperlink("http://google.com");
-link4.SetText("The multiline link: Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google");
-link4.AlternateDescriptions = "Link to Google (multiline)";
-
-// Tambahkan paragraf dengan hyperlink yang berisi gambar
-ParagraphElement p5 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p5);
-LinkElement link5 = taggedContent.CreateLinkElement();
-p5.AppendChild(link5);
-link5.Hyperlink = new WebHyperlink("http://google.com");
-FigureElement figure5 = taggedContent.CreateFigureElement();
-figure5.SetImage(imgFile, 1200);
-figure5.AlternativeText = "Google icon";
-StructureAttributes linkLayoutAttributes = link5.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-StructureAttribute placementAttribute = new StructureAttribute(AttributeKey.Placement);
-placementAttribute.SetNameValue(AttributeName.Placement_Block);
-linkLayoutAttributes.SetAttribute(placementAttribute);
-link5.AppendChild(figure5);
-link5.AlternateDescriptions = "Link to Google";
-```
-
-## Langkah 6: Simpan dokumen PDF yang diberi tag
-
-Terakhir, kami menyimpan dokumen PDF yang diberi tag.
-
-```csharp
-// Simpan dokumen PDF yang diberi tag
-document. Save(outFile);
-```
-
-## Langkah 7: Periksa kepatuhan PDF/UA
-
- Kita juga dapat memeriksa dokumen untuk kepatuhan PDF/UA menggunakan`Validate` metode dari`Document` kelas.
-
-```csharp
-// Periksa kepatuhan PDF/UA
-document = new Document(outFile);
-bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
-```
-
-
-### Contoh kode sumber untuk Elemen Struktur Tautan menggunakan Aspose.PDF untuk .NET 
-```csharp
-
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "LinkStructureElements_Output.pdf";
 string logFile = dataDir + "46035_log.xml";
 string imgFile = dataDir + "google-icon-512.png";
 
-//Dokumen pembuatan dan mendapatkan Konten Pdf yang Ditandai
+// Buat dokumen PDF baru
 Document document = new Document(); 
-ITaggedContent taggedContent = document.TaggedContent;
 
-// Pengaturan Judul dan Bahasa Alam untuk dokumen
+// Ambil antarmuka TaggedContent
+ITaggedContent taggedContent = document.TaggedContent;
+```
+  
+ Di sini, kita menginisialisasi`Document` objek, yang mewakili file PDF kami. Kami juga mengambil`TaggedContent` antarmuka, yang memungkinkan kita menambahkan elemen struktur seperti paragraf, tautan, dan gambar.
+
+## Langkah 2: Tetapkan Judul dan Bahasa  
+
+Setiap PDF harus memiliki judul dan pengaturan bahasa, terutama jika Anda ingin mematuhi standar PDF/UA.
+
+```csharp
+// Mengatur judul dan bahasa dokumen
 taggedContent.SetTitle("Link Elements Example");
 taggedContent.SetLanguage("en-US");
+```
+  
+Langkah ini memastikan bahwa PDF Anda memiliki judul yang bermakna dan mengatur bahasa ke Bahasa Inggris (`en-US`). Ini penting untuk aksesibilitas dan memastikan pembaca layar atau teknologi bantuan lainnya dapat menafsirkan dokumen Anda dengan benar.
 
-// Mendapatkan elemen struktur Root (Elemen struktur dokumen)
+## Langkah 3: Membuat dan Menambahkan Paragraf  
+
+Pada langkah ini, kita akan menambahkan paragraf untuk menampung elemen tautan kita.
+
+```csharp
+// Buat elemen root
 StructureElement rootElement = taggedContent.RootElement;
+
+// Buat paragraf dan tambahkan ke elemen root
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p1);
+```
+  
+Kami membuat elemen struktur akar, yang pada dasarnya merupakan wadah tingkat atas untuk semua elemen lainnya. Kemudian kami membuat paragraf (`p1`) dan menambahkannya ke elemen akar.
+
+## Langkah 4: Tambahkan Tautan Sederhana  
+
+Sekarang mari tambahkan hyperlink dasar yang mengarah ke Google.
+
+```csharp
+// Buat elemen tautan dan tambahkan ke paragraf
 LinkElement link1 = taggedContent.CreateLinkElement();
 p1.AppendChild(link1);
+
+// Tetapkan hyperlink dan teks untuk tautan
 link1.Hyperlink = new WebHyperlink("http://google.com");
 link1.SetText("Google");
 link1.AlternateDescriptions = "Link to Google";
+```
+  
+Pada langkah ini, kami membuat elemen tautan, menetapkan hyperlink-nya ke "http://google.com," dan menyediakan teks ("Google") untuk tautan tersebut. Kami juga menambahkan deskripsi alternatif untuk memastikan aksesibilitas.
+
+## Langkah 5: Menambahkan Tautan dengan Span  
+
+Kita juga dapat membuat tautan dengan rentang teks yang berbeda.
+
+```csharp
+// Buat paragraf lain
 ParagraphElement p2 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p2);
+
+// Buat tautan dengan elemen span
 LinkElement link2 = taggedContent.CreateLinkElement();
 p2.AppendChild(link2);
 link2.Hyperlink = new WebHyperlink("http://google.com");
+
 SpanElement span2 = taggedContent.CreateSpanElement();
 span2.SetText("Google");
 link2.AppendChild(span2);
+
 link2.AlternateDescriptions = "Link to Google";
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-LinkElement link3 = taggedContent.CreateLinkElement();
-p3.AppendChild(link3);
-link3.Hyperlink = new WebHyperlink("http://google.com");
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("G");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText("oogle");
-link3.AppendChild(span31);
-link3.SetText("-");
-link3.AppendChild(span32);
-link3.AlternateDescriptions = "Link to Google";
+```
+  
+Di sini, kami menggunakan elemen span untuk melampirkan bagian teks di dalam tautan, yang memungkinkan kami menyesuaikan bagaimana bagian tertentu dari tautan muncul.
+
+## Langkah 6: Tautan Multiline  
+
+Bagaimana jika teks tautan Anda terlalu panjang? Jangan khawatir, Anda dapat membaginya menjadi beberapa baris.
+
+```csharp
 ParagraphElement p4 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p4);
+
 LinkElement link4 = taggedContent.CreateLinkElement();
 p4.AppendChild(link4);
 link4.Hyperlink = new WebHyperlink("http://google.com");
-link4.SetText("The multiline link: Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google");
+link4.SetText("The multiline link: Google Google Google Google Google...");
 link4.AlternateDescriptions = "Link to Google (multiline)";
+```
+  
+Dalam kasus ini, kami membuat tautan multibaris hanya dengan menetapkan nilai teks yang panjang, dan teks akan otomatis terbungkus dalam beberapa baris.
+
+## Langkah 7: Tambahkan Gambar ke Tautan  
+
+Terakhir, Anda juga dapat menambahkan gambar di dalam tautan.
+
+```csharp
+// Buat paragraf baru dan elemen tautan
 ParagraphElement p5 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p5);
+
 LinkElement link5 = taggedContent.CreateLinkElement();
 p5.AppendChild(link5);
 link5.Hyperlink = new WebHyperlink("http://google.com");
+
+// Tambahkan gambar ke tautan
 FigureElement figure5 = taggedContent.CreateFigureElement();
 figure5.SetImage(imgFile, 1200);
 figure5.AlternativeText = "Google icon";
-StructureAttributes linkLayoutAttributes = link5.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-StructureAttribute placementAttribute = new StructureAttribute(AttributeKey.Placement);
-placementAttribute.SetNameValue(AttributeName.Placement_Block);
-linkLayoutAttributes.SetAttribute(placementAttribute);
 link5.AppendChild(figure5);
-link5.AlternateDescriptions = "Link to Google";
 
-// Simpan Dokumen Pdf yang Ditandai
+link5.AlternateDescriptions = "Link to Google";
+```
+  
+Langkah ini menunjukkan cara memperindah tautan dengan gambar. Dalam kasus ini, kami menambahkan ikon Google di dalam tautan. Kami juga memastikan aksesibilitas dengan menetapkan teks alternatif untuk gambar.
+
+## Langkah 8: Validasi PDF untuk Kepatuhan  
+
+Jika Anda ingin mematuhi PDF/UA (standar aksesibilitas), praktik yang baik adalah memvalidasi dokumen Anda.
+
+```csharp
+// Simpan dokumen PDF
 document.Save(outFile);
 
-// Memeriksa kepatuhan PDF/UA
-document = new Document(outFile);
+// Validasi dokumen untuk kepatuhan PDF/UA
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
+Console.WriteLine($"PDF/UA compliance: {isPdfUaCompliance}");
 ```
-## Kesimpulan
+  
+Kami menyimpan dokumen dan memvalidasinya terhadap standar PDF/UA, yang memastikan PDF memenuhi persyaratan aksesibilitas.
 
-Selamat! Anda telah mempelajari cara menggunakan elemen struktur tautan dengan Aspose.PDF untuk .NET. Sekarang Anda dapat membuat hyperlink dalam dokumen PDF Anda, yang memungkinkan pengguna untuk menavigasi ke sumber daya daring. Bereksperimenlah dan jelajahi lebih banyak fitur Aspose.PDF untuk membuat dokumen PDF yang interaktif dan lengkap.
+## Kesimpulan  
 
-### Pertanyaan yang Sering Diajukan
+Dalam tutorial ini, kami membahas cara membuat dokumen PDF terstruktur menggunakan Aspose.PDF untuk .NET. Dari menambahkan hyperlink dasar hingga struktur yang lebih kompleks seperti span, tautan multiline, dan bahkan gambar, panduan ini menyediakan dasar yang kuat untuk memanipulasi elemen tautan dalam PDF Anda. Dengan manfaat tambahan dari kepatuhan PDF/UA, Anda sekarang siap untuk membuat PDF yang mudah diakses dan dinavigasi.
 
-#### T: Apa saja elemen struktur tautan dalam dokumen PDF, dan bagaimana elemen tersebut meningkatkan interaktivitas dokumen?
+## Pertanyaan yang Sering Diajukan
 
-A: Elemen struktur tautan dalam dokumen PDF digunakan untuk membuat hyperlink yang memungkinkan pengguna menavigasi ke sumber daya daring atau lokasi tertentu dalam dokumen. Elemen ini meningkatkan interaktivitas dengan menyediakan tautan yang dapat diklik yang memungkinkan pengguna mengakses konten terkait atau situs web eksternal.
+### Bisakah saya menambahkan struktur yang lebih kompleks seperti tabel di dalam tautan?  
+Tidak, tautan terutama untuk teks dan gambar, tetapi Anda dapat menyematkan elemen kompleks di dekatnya.
 
-#### T: Bagaimana elemen struktur tautan dapat bermanfaat dalam dokumen PDF?
+### Apakah validasi PDF/UA wajib?  
+Tidak selalu, tetapi sangat disarankan jika Anda khawatir dengan aksesibilitas.
 
-A: Elemen struktur tautan meningkatkan pengalaman pengguna dengan membuat dokumen PDF menjadi interaktif. Elemen ini menyediakan akses cepat ke informasi tambahan, konten terkait, situs web eksternal, atau bagian tertentu dalam dokumen, sehingga meningkatkan navigasi dan memudahkan pencarian informasi.
+### Apa yang terjadi jika jalur berkas gambar salah?  
+Dokumen tidak akan menampilkan gambar, dan mungkin menimbulkan kesalahan saat ditampilkan.
 
-#### T: Dapatkah saya membuat berbagai jenis hyperlink menggunakan elemen struktur tautan di Aspose.PDF untuk .NET?
+### Bisakah saya memberi gaya pada teks dalam tautan?  
+Ya, Anda dapat menerapkan gaya teks menggunakan elemen span.
 
-A: Ya, Anda dapat membuat berbagai jenis hyperlink menggunakan elemen struktur tautan. Aspose.PDF untuk .NET memungkinkan Anda membuat hyperlink dengan teks biasa, teks kaya, gambar, dan deskripsi multi-baris, yang menawarkan fleksibilitas dalam cara Anda menautkan ke konten eksternal atau lokasi dalam dokumen.
-
-#### T: Bagaimana cara menyiapkan dan menginisialisasi elemen struktur tautan dalam dokumen PDF menggunakan Aspose.PDF untuk .NET?
-
- A: Untuk menggunakan elemen struktur tautan, pertama-tama Anda perlu membuat dokumen PDF baru menggunakan`Document` kelas. Kemudian, dapatkan konten yang diberi tag menggunakan`TaggedContent`properti dokumen. Dari sana, Anda dapat membuat dan menyesuaikan elemen struktur tautan dan menambahkannya ke elemen struktur akar.
-
-#### T: Bagaimana cara membuat hyperlink teks sederhana menggunakan elemen struktur tautan?
- A: Anda dapat membuat hyperlink teks sederhana dengan membuat`LinkElement` dan pengaturannya`Hyperlink` properti ke suatu`WebHyperlink` dengan URL yang ingin Anda tautkan. Anda juga dapat mengatur teks tampilan tautan menggunakan`SetText` metode.
-
-#### T: Apakah mungkin membuat hyperlink dengan gambar menggunakan elemen struktur tautan?
-
- A: Ya, Anda dapat membuat hyperlink dengan gambar menggunakan elemen struktur tautan. Anda akan membuat`LinkElement` dan kemudian tambahkan`FigureElement` dengan gambar di dalamnya. Ini memungkinkan Anda membuat hyperlink berbasis gambar.
-
-#### T: Bagaimana saya dapat memastikan bahwa dokumen PDF saya dengan hyperlink mematuhi standar PDF/UA untuk aksesibilitas?
-
- A: Aspose.PDF untuk .NET menyediakan kemampuan untuk memvalidasi kepatuhan dokumen PDF Anda dengan standar PDF/UA menggunakan`Validate` metode dari`Document`kelas. Hal ini memastikan bahwa hyperlink dokumen dapat diakses oleh pengguna penyandang disabilitas.
-
-#### T: Apa saja deskripsi alternatif untuk elemen struktur tautan, dan mengapa itu penting?
-
-A: Deskripsi alternatif (teks alt) untuk elemen struktur tautan menyediakan deskripsi tekstual dari hyperlink. Deskripsi ini penting untuk aksesibilitas, yang memungkinkan pengguna dengan gangguan penglihatan untuk memahami tujuan tautan dan tujuannya.
-
-#### T: Dapatkah saya menyesuaikan tampilan dan perilaku hyperlink yang dibuat menggunakan elemen struktur tautan?
-
-J: Meskipun elemen struktur tautan terutama berfokus pada pembuatan hyperlink, Anda dapat menyesuaikan tampilan dan perilaku hyperlink lebih lanjut menggunakan fitur lain yang ditawarkan oleh Aspose.PDF untuk .NET. Ini termasuk menentukan warna, gaya, dan tindakan tautan.
-
-#### T: Bagaimana elemen struktur tautan berkontribusi dalam membuat dokumen PDF lebih interaktif dan ramah pengguna?
-
-A: Elemen struktur tautan mengubah dokumen PDF statis menjadi pengalaman interaktif dengan menambahkan hyperlink yang dapat diklik. Interaktivitas ini meningkatkan keterlibatan pengguna, memungkinkan navigasi yang lancar antara konten terkait, dan meningkatkan kegunaan dokumen secara keseluruhan.
+### Apakah mungkin untuk membuat tautan dokumen internal?  
+Tentu saja! Anda dapat menautkan ke bagian tertentu dalam dokumen yang sama.

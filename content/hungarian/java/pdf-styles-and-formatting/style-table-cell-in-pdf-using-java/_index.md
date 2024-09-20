@@ -93,7 +93,7 @@ Teljesen! Az Aspose.PDF for Java egy sokoldalú és robusztus megoldás, így ki
 
 ### Vannak-e licencelési szempontok az Aspose.PDF for Java használatához?
 
-Igen, az Aspose.PDF for Java kereskedelmi termék. Használatától függően előfordulhat, hogy licencet kell szereznie. Az engedélyezéssel kapcsolatos részletekért tekintse meg az Aspose webhelyét.
+Igen, az Aspose.PDF for Java kereskedelmi termék. Használatától függően előfordulhat, hogy licencet kell szereznie. A licenccel kapcsolatos részletekért tekintse meg az Aspose webhelyét.
 
 ### Hol találok további Aspose.PDF for Java oktatóanyagokat és forrásokat?
 

@@ -75,7 +75,7 @@ Dieser Codeausschnitt fügt unserem Dokument eine neue Seite hinzu und bereitet 
 
 ## Schritt 4: Erstellen Sie eine schwebende Box
 
- Als nächstes ist es an der Zeit, unsere Floating Box zu erstellen, die die Seitenzahl enthalten wird. Die`FloatingBox`Klasse ermöglicht es uns, Inhalte frei auf der Seite zu positionieren.
+ Als nächstes ist es an der Zeit, unsere Floating Box zu erstellen, die die Seitenzahl enthält.`FloatingBox`Klasse ermöglicht es uns, Inhalte frei auf der Seite zu positionieren.
 
 ```csharp
 // Initialisiert eine neue Instanz der FloatingBox-Klasse

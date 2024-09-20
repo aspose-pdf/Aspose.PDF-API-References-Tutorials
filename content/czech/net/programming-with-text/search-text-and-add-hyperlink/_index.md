@@ -2,189 +2,165 @@
 title: Vyhledejte text a přidejte hypertextový odkaz
 linktitle: Vyhledejte text a přidejte hypertextový odkaz
 second_title: Aspose.PDF pro .NET API Reference
-description: Naučte se hledat text v PDF, přidávat k nalezenému textu hypertextové odkazy a uložit upravený dokument pomocí Aspose.PDF for .NET.
+description: Naučte se, jak vyhledávat text a přidávat hypertextové odkazy do souborů PDF pomocí Aspose.PDF for .NET s naším podrobným výukovým programem.
 type: docs
 weight: 450
 url: /cs/net/programming-with-text/search-text-and-add-hyperlink/
 ---
-Tento tutoriál vysvětluje, jak používat Aspose.PDF for .NET k vyhledání určitého textu v dokumentu PDF, přidání hypertextového odkazu k nalezenému textu a uložení upraveného dokumentu. Poskytnutý zdrojový kód C# demonstruje proces krok za krokem.
+## Zavedení
+
+Hledáte způsob, jak s PDF nejen manipulovat, ale také je vylepšit vložením hypertextových odkazů? Tak to jste na správném místě! S výkonnou knihovnou Aspose.PDF for .NET můžete vyhledávat vzory textu v dokumentech PDF a bez problémů přidávat hypertextové odkazy. Představte si, že máte dokument, který nejen předává informace, ale také propojuje čtenáře s relevantními zdroji pouhým kliknutím na odkaz. Zní to dobře, že? V tomto tutoriálu vás krok za krokem provedeme vyhledáváním textu pomocí regulárních výrazů a přidáváním hypertextových odkazů do souborů PDF. Ať už jste zkušený vývojář nebo teprve začínáte, tento proces bude pro vás jednoduchý a přínosný.
 
 ## Předpoklady
 
-Než budete pokračovat ve výukovém programu, ujistěte se, že máte následující:
+Než se ponoříme do toho nejzákladnějšího, ujistíme se, že máte vše, co potřebujete k dodržení. Zde je praktický kontrolní seznam:
 
-- Základní znalost programovacího jazyka C#.
-- Nainstalovaná knihovna Aspose.PDF pro .NET. Můžete jej získat z webu Aspose nebo jej pomocí NuGet nainstalovat do svého projektu.
+- .NET Framework: Měli byste mít na svém počítači nainstalovaný .NET Framework (verze 4.0 nebo vyšší).
+- Aspose.PDF for .NET Library: Nezapomeňte si stáhnout a přidat odkaz na knihovnu Aspose.PDF ve vašem projektu. Můžete to najít[zde](https://releases.aspose.com/pdf/net/).
+- IDE: K psaní a spouštění kódu budete potřebovat integrované vývojové prostředí (IDE), jako je Visual Studio.
+- Ukázkový soubor PDF: Získejte ukázkový soubor PDF, na kterém můžete otestovat kód. Můžete vytvořit jednoduchý PDF nebo použít některý z vašich stávajících dokumentů.
 
-## Krok 1: Nastavte projekt
+Jakmile zaškrtnete vše v tomto seznamu, jsme připraveni začít!
 
-Začněte vytvořením nového projektu C# ve vašem preferovaném integrovaném vývojovém prostředí (IDE) a přidejte odkaz na knihovnu Aspose.PDF for .NET.
+## Importujte balíčky
 
-## Krok 2: Importujte potřebné jmenné prostory
+Prvním krokem na naší cestě je import potřebných balíčků. Zde říkáme našemu projektu, jaké nástroje budeme používat. Můžete to udělat takto:
 
-Chcete-li importovat požadované jmenné prostory, přidejte následující pomocí direktiv na začátek souboru C#:
+V souboru C# začněte tím, že v horní části zahrnete následující jmenné prostory:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
-using Aspose.Pdf.Content;
-using Aspose.Pdf.Facades;
 using Aspose.Pdf.Text;
+using Aspose.Pdf.Facades;
+using System;
 ```
 
-## Krok 3: Nastavte cestu k adresáři dokumentů
+Importováním těchto jmenných prostorů dáte svému programu přístup ke všem skvělým funkcím, které Aspose.PDF nabízí.
 
- Nastavte cestu k adresáři dokumentů pomocí`dataDir` proměnná:
+Nyní, když jsme všichni připraveni, je čas pustit se do akce. Projdeme to v řadě kroků, takže je pozorně sledujte!
+
+### Krok 1: Nastavte adresář dokumentů
+
+Nejprve musíte určit, kde jsou soubory PDF uloženy. Upravte`dataDir` proměnná, aby ukazovala na adresář vašeho dokumentu. Postup je následující:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Nahradit`"YOUR DOCUMENT DIRECTORY"` se skutečnou cestou k vašemu adresáři dokumentů.
+ Nezapomeňte vyměnit`"YOUR DOCUMENT DIRECTORY"` se skutečnou cestou k vašim dokumentům.
 
-## Krok 4: Vytvořte TextFragmentAbsorber
+### Krok 2: Vytvořte TextFragmentAbsorber
 
- Vytvořte a`TextFragmentAbsorber` objekt k nalezení všech výskytů vstupní vyhledávací fráze:
+ Dále potřebujeme nástroj pro nalezení textu, který chceme propojit. Zadejte`TextFragmentAbsorber`. Tento malý chlapík nám pomůže vyhledat konkrétní vzor textu v našem PDF.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("\\d{4}-\\d{4}");
 ```
 
- Nahradit`"\\d{4}-\\d{4}"` s požadovaným vzorem regulárního výrazu.
+Zde hledáme konkrétní vzor: čtyři číslice, pomlčku, po níž následují další čtyři číslice (například telefonní číslo nebo rok).
 
-## Krok 5: Povolte vyhledávání regulárních výrazů
+### Krok 3: Povolte vyhledávání regulárních výrazů
 
- Povolte vyhledávání regulárních výrazů nastavením`TextSearchOptions` vlastnost absorbéru:
+ K nalezení našeho textového vzoru již používáme regulární výraz, ale musíme se ujistit, že naše`absorber` ví, že je povoleno. To je pro správné vyhledávání klíčové.
 
 ```csharp
 absorber.TextSearchOptions = new TextSearchOptions(true);
 ```
 
-## Krok 6: Otevřete a svažte dokument PDF
+### Krok 4: Inicializujte PdfContentEditor
 
- Vytvořte a`PdfContentEditor` objekt a svázat jej se zdrojovým souborem PDF:
+ Nyní, když máme náš absorbér připravený, potřebujeme a`PdfContentEditor` pracovat s naším souborem PDF. Tato třída nám umožňuje navázat se na naše PDF a manipulovat s ním.
 
 ```csharp
 PdfContentEditor editor = new PdfContentEditor();
+```
+
+### Krok 5: Svažte zdrojový soubor PDF
+
+připraveným editorem obsahu je čas jej svázat se skutečným souborem PDF, na kterém chceme pracovat.
+
+```csharp
 editor.BindPdf(dataDir + "SearchRegularExpressionPage.pdf");
 ```
 
- Nahradit`"SearchRegularExpressionPage.pdf"` se skutečným názvem vašeho souboru PDF.
+ Nezapomeňte vyměnit`"SearchRegularExpressionPage.pdf"` s názvem vašeho PDF souboru.
 
-## Krok 7: Přijměte absorbér pro stránku
+### Krok 6: Přijměte absorbér pro stránku
 
-Přijměte absorbér pro požadovanou stránku dokumentu:
+Musíme dát našemu editorovi vědět, že chceme hledat na konkrétní stránce dokumentu. V tomto případě pojďme na stránku 1.
 
 ```csharp
 editor.Document.Pages[1].Accept(absorber);
 ```
 
- Nahradit`1` s požadovaným číslem stránky.
+### Krok 7: Připravte se na procházení textových fragmentů
 
-## Krok 8: Přidejte k nalezenému textu hypertextové odkazy
+Nyní jsme připraveni projít všechny fragmenty textu nalezené naším absorbérem. Upravíme jejich vzhled a nastavíme náš hypertextový odkaz.
 
-Procházejte načtené části textu a přidejte k nim hypertextové odkazy:
+```csharp
+int[] dashArray = { };
+String[] LEArray = { };
+Color blue = Color.Blue;
+```
+
+Zde nastavujeme některé parametry, jako je barva našeho hypertextového odkazu.
+
+### Krok 8: Projděte každý textový fragment
+
+Pro každý textový fragment, který odpovídá našemu hledání, změníme jeho barvu a vytvoříme hypertextový odkaz. Tady je to, jak to vypadá:
 
 ```csharp
 foreach (TextFragment textFragment in absorber.TextFragments)
 {
     textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-    // Vytvořte obdélník podle polohy fragmentu textu
-    System.Drawing.Rectangle rect = new System.Drawing.Rectangle((int)textFragment.Rectangle.LLX,
+    Rectangle rect = new Rectangle((int)textFragment.Rectangle.LLX,
         (int)Math.Round(textFragment.Rectangle.LLY), (int)Math.Round(textFragment.Rectangle.Width + 2),
         (int)Math.Round(textFragment.Rectangle.Height + 1));
-    //Přidejte do obdélníku webový odkaz
-    editor.CreateWebLink(rect, "http://www.aspose.com", 1, System.Drawing.Color.Blue);
+    Enum[] actionName = new Enum[2] { Aspose.Pdf.Annotations.PredefinedAction.Document_AttachFile, Aspose.Pdf.Annotations.PredefinedAction.Document_ExtractPages };
+    
+    editor.CreateWebLink(rect, "http://www.aspose.com", 1, modrá, název akce);
+    editor.CreateLine(rect, "", (float)textFragment.Rectangle.LLX + 1, (float)textFragment.Rectangle.LLY - 1,
+        (float)textFragment.Rectangle.URX, (float)textFragment.Rectangle.LLY - 1, 1, 1, blue, "S", dashArray, LEArray);
 }
 ```
 
- Nahradit`"http://www.aspose.com"` s požadovanou URL hypertextového odkazu.
+### Krok 9: Uložte upravený soubor PDF
 
-## Krok 9: Uložte a zavřete upravený dokument
-
-Uložte upravený dokument a zavřete editor:
+Už jsme skoro hotovi! Nyní je čas uložit naše změny do nového souboru PDF.
 
 ```csharp
 dataDir = dataDir + "SearchTextAndAddHyperlink_out.pdf";
 editor.Save(dataDir);
-editor.Close();
-Console.WriteLine("\nText replaced and hyperlink added successfully based on a regular expression.\nFile saved at " + dataDir);
 ```
 
- Nezapomeňte vyměnit`"SearchTextAndAddHyperlink_out.pdf"` s požadovaným názvem výstupního souboru.
+### Krok 10: Zavřete Editor
 
-### Ukázkový zdrojový kód pro hledání textu a přidání hypertextového odkazu pomocí Aspose.PDF pro .NET 
+Nakonec nezapomeňte dokument zavřít, abyste uvolnili zdroje!
+
 ```csharp
-// Cesta k adresáři dokumentů.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Vytvořte objekt absorbéru, abyste našli všechny výskyty vstupní hledané fráze
-TextFragmentAbsorber absorber = new TextFragmentAbsorber("\\d{4}-\\d{4}");
-// Povolit vyhledávání regulárních výrazů
-absorber.TextSearchOptions = new TextSearchOptions(true);
-// Otevřete dokument
-PdfContentEditor editor = new PdfContentEditor();
-// Svázat zdrojový soubor PDF
-editor.BindPdf(dataDir + "SearchRegularExpressionPage.pdf");
-// Přijměte absorbér pro stránku
-editor.Document.Pages[1].Accept(absorber);
-int[] dashArray = { };
-String[] LEArray = { };
-System.Drawing.Color blue = System.Drawing.Color.Blue;
-// Projděte fragmenty
-foreach (TextFragment textFragment in absorber.TextFragments)
-{
-	textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-	System.Drawing.Rectangle rect = new System.Drawing.Rectangle((int)textFragment.Rectangle.LLX,
-		(int)Math.Round(textFragment.Rectangle.LLY), (int)Math.Round(textFragment.Rectangle.Width + 2),
-		(int)Math.Round(textFragment.Rectangle.Height + 1));
-	Enum[] actionName = new Enum[2] { Aspose.Pdf.Annotations.PredefinedAction.Document_AttachFile, Aspose.Pdf.Annotations.PredefinedAction.Document_ExtractPages };
-	editor.CreateWebLink(rect, "http:// Www.aspose.com", 1, modrá, název akce);
-	editor.CreateLine(rect, "", (float)textFragment.Rectangle.LLX + 1, (float)textFragment.Rectangle.LLY - 1,
-		(float)textFragment.Rectangle.URX, (float)textFragment.Rectangle.LLY - 1, 1, 1, blue, "S", dashArray, LEArray);
-}
-dataDir = dataDir + "SearchTextAndAddHyperlink_out.pdf";
-editor.Save(dataDir);
 editor.Close();
 Console.WriteLine("\nText replaced and hyperlink added successfully based on a regular expression.\nFile saved at " + dataDir);
 ```
+
+Nyní jste právě vytvořili PDF s hypertextovým odkazem, který byl dynamicky vygenerován na základě výsledků vyhledávání. Jak skvělé to je?
 
 ## Závěr
 
-Gratuluji! Úspěšně jste se naučili, jak vyhledat konkrétní text v dokumentu PDF, přidat k nalezenému textu hypertextové odkazy a uložit upravený dokument pomocí Aspose.PDF for .NET. Tento výukový program poskytuje průvodce krok za krokem, od nastavení projektu až po provedení požadovaných akcí. Nyní můžete tento kód začlenit do svých vlastních projektů C# a manipulovat s textem a přidávat hypertextové odkazy do souborů PDF.
+A tady to máte! Pomocí těchto kroků jste se naučili prohledávat PDF a přidávat hypertextové odkazy pomocí knihovny Aspose.PDF for .NET. To může otevřít svět možností, zejména pokud pracujete s dokumenty, které vyžadují interaktivitu. Představte si, že přidáváte odkazy na související zdroje, referenční webové stránky nebo dokonce interní stránky – to vše pomocí několika řádků kódu!
+## FAQ
 
-### FAQ
+### Co je Aspose.PDF pro .NET?  
+Aspose.PDF for .NET je knihovna, která umožňuje vývojářům vytvářet, manipulovat a spravovat dokumenty PDF v aplikacích .NET.
 
-#### Otázka: Jaký je účel výukového programu „Vyhledat text a přidat hypertextový odkaz“?
+### Jak si mohu stáhnout Aspose.PDF pro .NET?  
+ Knihovnu si můžete stáhnout[zde](https://releases.aspose.com/pdf/net/).
 
-Odpověď: Výukový program "Vyhledat text a přidat hypertextový odkaz" si klade za cíl demonstrovat, jak používat knihovnu Aspose.PDF pro .NET k vyhledání konkrétního textu v dokumentu PDF, přidání hypertextových odkazů k nalezenému textu a následnému uložení upraveného dokumentu. Výukový program poskytuje komplexního průvodce a ukázky kódu C#, které ilustrují proces krok za krokem.
+### Mohu vyzkoušet Aspose.PDF zdarma?  
+ Absolutně! Můžete získat bezplatnou zkušební verzi[zde](https://releases.aspose.com/).
 
-#### Otázka: Jak tento kurz pomáhá při přidávání hypertextových odkazů na konkrétní text v dokumentu PDF?
+### Je k dispozici podpora pro produkty Aspose?  
+ Ano, můžete najít podporu a komunitní diskuse[zde](https://forum.aspose.com/c/pdf/10).
 
-Odpověď: Tento tutoriál vás provede procesem používání knihovny Aspose.PDF k vyhledání určitého textu v dokumentu PDF, použití hypertextového odkazu na identifikovaný text a uložení upraveného PDF. Zahrnuje základní kroky, jako je nastavení projektu, načtení dokumentu, umožnění vyhledávání regulárních výrazů a přidání hypertextových odkazů k nalezenému textu.
-
-#### Otázka: Jaké předpoklady jsou potřeba pro sledování tohoto kurzu?
-
-Odpověď: Než začnete, měli byste mít základní znalosti programovacího jazyka C#. Dále musíte mít nainstalovanou knihovnu Aspose.PDF for .NET, kterou lze získat z webu Aspose nebo nainstalovat pomocí NuGet ve vašem projektu.
-
-#### Otázka: Jak nastavím svůj projekt, aby následoval tento tutoriál?
-
-Odpověď: Začněte vytvořením nového projektu C# ve vašem preferovaném integrovaném vývojovém prostředí (IDE). Poté přidejte odkaz na knihovnu Aspose.PDF for .NET, která vám umožní využít možnosti knihovny ve vašem projektu.
-
-#### Otázka: Mohu pomocí tohoto kurzu přidat hypertextové odkazy na konkrétní text?
-
-Odpověď: Ano, tento kurz se konkrétně zaměřuje na přidávání hypertextových odkazů na konkrétní text v dokumentu PDF. Ukazuje, jak najít a extrahovat požadovaný text pomocí regulárních výrazů, vytvořit hypertextové odkazy spojené s fragmenty textu a uložit upravený PDF.
-
-#### Otázka: Jak mohu definovat text, který chci vyhledat, a přidat k němu hypertextový odkaz?
-
- A: Chcete-li zadat text, který chcete vyhledat a přidat hypertextový odkaz, vytvořte a`TextFragmentAbsorber` objekt a nastavte jeho vzor pomocí`Text` parametr. Nahradit výchozí vzor`"\\d{4}-\\d{4}"` v kódu výukového programu s požadovaným vzorem regulárního výrazu.
-
-#### Otázka: Jak mohu povolit vyhledávání textu pomocí regulárních výrazů?
-
- A: Hledání regulárních výrazů je povoleno vytvořením a`TextSearchOptions` objektu a nastavení jeho hodnoty na`true` . Přiřaďte tento objekt k`TextSearchOptions` vlastnictví`TextFragmentAbsorber` instance. Tím je zajištěno, že se při vyhledávání textu použije vzor regulárního výrazu.
-
-#### Otázka: Jak přidám hypertextové odkazy k nalezenému textu?
-
- A: Po identifikaci textových fragmentů pomocí`TextFragmentAbsorber` , výukový program poskytuje smyčku pro iteraci těmito fragmenty. Pro každý textový fragment výukový program ukazuje, jak nastavit barvu textu na modrou a vytvořit hypertextový odkaz pomocí`CreateWebLink` metoda.
-
-#### Otázka: Jaké jsou kroky k uložení upraveného PDF s hypertextovými odkazy?
-
- Odpověď: Po přidání hypertextových odkazů k požadovaným textovým fragmentům použijte`PdfContentEditor` třídy k uložení upraveného dokumentu. Ukázkový kód výukového programu ukazuje, jak uložit upravené PDF, zavřít editor a zobrazit zprávu o úspěchu.
+### Jak mohu získat dočasnou licenci pro Aspose.PDF?  
+ Můžete požádat o dočasnou licenci[zde](https://purchase.aspose.com/temporary-license/).

@@ -19,7 +19,7 @@ Mielőtt belevágnánk a kódba, néhány dolgot meg kell határoznia:
 2. Fejlesztői környezet: A kód írásához és futtatásához Visual Studio vagy bármely más .NET fejlesztői környezet szükséges.
 3. Alapvető C# ismerete: Ne aggódjon, mindent egyszerűnek tartunk, de a C# alapvető ismerete segít.
 
-A munkához PDF-dokumentumra is szüksége lesz. Ha nem rendelkezik ilyennel, létrehozhat egy PDF-mintát, vagy letölthet egyet az internetről.
+A munkához PDF dokumentumra is szüksége lesz. Ha nem rendelkezik ilyennel, létrehozhat egy PDF-mintát, vagy letölthet egyet az internetről.
 
 ## Csomagok importálása
 
@@ -69,7 +69,7 @@ pdfDocument.Metadata["xmp:Nickname"] = "Nickname";
 pdfDocument.Metadata["xmp:CustomProperty"] = "Custom Value";
 ```
 
-Bontsuk fel:
+Bontsuk szét:
 - CreateDate: Ez a tulajdonság a PDF létrehozásának dátumát tárolja. Az aktuális dátumra és időre állítjuk be.
 - Becenév: A személyes becenévhez hasonlóan becenevet is beállíthat a dokumentumhoz.
 - CustomProperty: Itt bármilyen egyéni információt hozzáadhat, amely releváns a dokumentuma számára.

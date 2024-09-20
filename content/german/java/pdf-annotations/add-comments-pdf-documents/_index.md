@@ -14,7 +14,7 @@ Aufgrund ihrer universellen Kompatibilität und einheitlichen Formatierung sind 
 
 ## Erste Schritte mit Aspose.PDF für Java
 
- Zu Beginn müssen Sie Ihre Entwicklungsumgebung einrichten. Stellen Sie sicher, dass Sie die Aspose.PDF für Java-Bibliothek installiert haben. Sie können sie hier herunterladen:[Hier](https://releases.aspose.com/pdf/java/).
+Zu Beginn müssen Sie Ihre Entwicklungsumgebung einrichten. Stellen Sie sicher, dass Sie die Aspose.PDF für Java-Bibliothek installiert haben. Sie können sie hier herunterladen:[Hier](https://releases.aspose.com/pdf/java/).
 
 ## Erstellen eines PDF-Dokuments
 

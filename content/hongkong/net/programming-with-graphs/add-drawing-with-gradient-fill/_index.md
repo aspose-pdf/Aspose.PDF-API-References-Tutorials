@@ -46,7 +46,7 @@ using System.Text;
 //文檔目錄的路徑。
 string dataDir = "YOUR DOCUMENT DIRECTORY"; //替換為您的目錄路徑
 ```
-這行程式碼建立了一個變數`dataDir`，它將保存保存輸出 PDF 的目錄路徑。確保更換`"YOUR DOCUMENT DIRECTORY"`與您的實際目錄路徑。
+這行程式碼建立了一個變數`dataDir`，它將保存輸出 PDF 的保存目錄路徑。確保更換`"YOUR DOCUMENT DIRECTORY"`與您的實際目錄路徑。
 
 ## 第 2 步：建立新的 PDF 文檔
 
@@ -113,7 +113,7 @@ doc.Save(dataDir + "AddDrawingWithGradientFill_out.pdf");
 
 ## 結論
 
-現在你就得到它了！您剛剛學習如何使用 Aspose.PDF for .NET 將帶有漸層填滿的繪圖新增至 PDF 文件中。幾行程式碼就能將簡單的 PDF 轉換為視覺上引人注目的內容，這不是令人驚奇嗎？無論您是建立報告、發票或任何其他文檔，使用圖形都可以顯著增強讀者的體驗。
+現在你就擁有了！您剛剛學習如何使用 Aspose.PDF for .NET 將帶有漸層填滿的繪圖新增至 PDF 文件中。幾行程式碼就能將簡單的 PDF 轉換為視覺上引人注目的內容，這不是令人驚奇嗎？無論您是建立報告、發票或任何其他文檔，使用圖形都可以顯著增強讀者的體驗。
 
 ## 常見問題解答
 

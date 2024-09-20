@@ -58,7 +58,7 @@ Document pdfDocument = new Document(dataDir + "ImageInFooter.pdf");
 
 ## Passaggio 3: creare il timbro immagine
 
-Successivamente, creerai un timbro immagine che rappresenti l'immagine che vuoi aggiungere al piè di pagina. Immaginalo come un post-it che vuoi incollare in fondo a ogni pagina.
+Successivamente, creerai un timbro immagine che rappresenti l'immagine che vuoi aggiungere al piè di pagina. Immaginalo come un post-it che vuoi attaccare in fondo a ogni pagina.
 
 ```csharp
 // Crea piè di pagina

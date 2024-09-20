@@ -54,7 +54,7 @@ Sonra, PDF belgesini programınızda açmanız gerekecek. Bu adım, PDF'yi belle
 Document pdfDocument = new Document(dataDir + "GetValueFromField.pdf");
 ```
 
- Burada şunu kullanıyoruz:`Document` Aspose.PDF kütüphanesinden "GetValueFromField.pdf" adlı bir PDF dosyasını açmak için sınıf. Elbette bunu almak istediğiniz form alanını içeren herhangi bir PDF ile değiştirebilirsiniz.
+ Burada şunu kullanıyoruz:`Document` "GetValueFromField.pdf" adlı bir PDF dosyasını açmak için Aspose.PDF kütüphanesinden sınıf. Elbette bunu almak istediğiniz form alanını içeren herhangi bir PDF ile değiştirebilirsiniz.
 
 ## Adım 3: İstenilen Form Alanına Erişim
 

@@ -95,7 +95,7 @@ pdfChildOutline.Bold = true;
 
 Podobnie jak zakładka nadrzędna, tworzymy zakładkę podrzędną z własnym tytułem i stylem. Ta zakładka podrzędna będzie zagnieżdżona pod zakładką nadrzędną, tworząc hierarchię.
 
-## Krok 5: Dodaj zakładkę „Dziecko” do „Rodzica”
+## Krok 5: Dodaj zakładkę dla dziecka do zakładki dla rodzica
 
 Po utworzeniu obu zakładek czas je ze sobą połączyć.
 

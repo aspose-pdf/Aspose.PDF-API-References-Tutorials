@@ -2,7 +2,7 @@
 title: Képinformációk PDF fájlban
 linktitle: Képinformációk PDF fájlban
 second_title: Aspose.PDF for .NET API Reference
-description: Ismerje meg, hogyan kinyerhet ki képinformációkat PDF-fájlokból az Aspose.PDF for .NET használatával az átfogó, lépésenkénti útmutatónkkal.
+description: Ismerje meg, hogyan kinyerhet ki képinformációkat PDF-fájlokból az Aspose.PDF for .NET segítségével az átfogó, lépésenkénti útmutatónkkal.
 type: docs
 weight: 160
 url: /hu/net/programming-with-images/image-information/

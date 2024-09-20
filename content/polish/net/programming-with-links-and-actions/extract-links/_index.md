@@ -2,7 +2,7 @@
 title: Wyodrębnij linki w pliku PDF
 linktitle: Wyodrębnij linki w pliku PDF
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak łatwo wyodrębniać linki z plików PDF za pomocą Aspose.PDF dla .NET, korzystając z tego samouczka krok po kroku.
+description: Dowiedz się, jak łatwo wyodrębnić linki z plików PDF za pomocą Aspose.PDF dla .NET, korzystając z tego samouczka krok po kroku.
 type: docs
 weight: 50
 url: /pl/net/programming-with-links-and-actions/extract-links/

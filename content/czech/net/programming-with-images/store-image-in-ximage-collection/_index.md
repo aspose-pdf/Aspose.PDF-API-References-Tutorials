@@ -83,7 +83,7 @@ page.Resources.Images.Add(imageStream, ImageFilterType.Flate);
 XImage ximage = page.Resources.Images[page.Resources.Images.Count];
 ```
 
- Tento kód dělá těžkou práci přidáním obrázku do PDF a jeho přiřazením k souboru`XImage` proměnná, na kterou se můžeme později odkazovat.
+ Tento kód dělá těžkou práci přidáním obrázku do PDF a jeho přiřazením k souboru`XImage` proměnnou, na kterou se můžeme později odkazovat.
 
 ## Krok 6: Připravte se na kreslení obrázku
 

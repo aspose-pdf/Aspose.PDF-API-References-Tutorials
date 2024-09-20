@@ -14,7 +14,7 @@ PDF-dokument har blivit en standard för att dela information digitalt på grund
 
 ## Komma igång med Aspose.PDF för Java
 
- För att börja måste du konfigurera din utvecklingsmiljö. Se till att du har Aspose.PDF för Java-biblioteket installerat. Du kan ladda ner den från[här](https://releases.aspose.com/pdf/java/).
+För att börja måste du konfigurera din utvecklingsmiljö. Se till att du har Aspose.PDF för Java-biblioteket installerat. Du kan ladda ner den från[här](https://releases.aspose.com/pdf/java/).
 
 ## Skapa ett PDF-dokument
 

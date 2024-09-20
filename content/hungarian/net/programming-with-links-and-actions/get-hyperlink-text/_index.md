@@ -136,4 +136,4 @@ A PDF-ben található bármely hiperhivatkozás kibontható, legyen az egy tipik
 Teljesen! Az Aspose.PDF nemcsak hiperhivatkozásokat, hanem képeket és szövegeket is kivonhat a PDF-ekből.
 
 ### Hol találok további Aspose.PDF forrásokat?
- Részletes dokumentációért látogasson el a címre[Aspose PDF dokumentáció](https://reference.aspose.com/pdf/net/).
+ Részletes dokumentációért látogasson el ide[Aspose PDF dokumentáció](https://reference.aspose.com/pdf/net/).

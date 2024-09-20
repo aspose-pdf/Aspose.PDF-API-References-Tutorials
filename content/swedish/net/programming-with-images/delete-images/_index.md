@@ -68,7 +68,7 @@ pdfDocument.Pages[1].Resources.Images.Delete(1);
 
 ## Steg 4: Spara den uppdaterade PDF-filen
 
- Efter att ha tagit bort bilden är det dags att spara den ändrade PDF-filen. Aspose.PDF gör det enkelt att spara ändringar med`Save` metod. I det här steget sparar vi den uppdaterade filen under ett nytt namn för att undvika att skriva över den ursprungliga PDF-filen.
+ Efter att du tagit bort bilden är det dags att spara den ändrade PDF-filen. Aspose.PDF gör det enkelt att spara ändringar med`Save` metod. I det här steget sparar vi den uppdaterade filen under ett nytt namn för att undvika att skriva över den ursprungliga PDF-filen.
 
 ```csharp
 dataDir = dataDir + "DeleteImages_out.pdf";

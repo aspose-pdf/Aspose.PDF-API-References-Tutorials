@@ -16,7 +16,7 @@ szövegbélyegzők sokoldalú eszközt jelentenek a megjegyzések fűzésére é
 
 Mielőtt belemerülnénk a szövegbélyegző-igazítás sajátosságaiba, kulcsfontosságú a fejlesztői környezet beállítása. Győződjön meg arról, hogy az Aspose.PDF for Java telepítve van és be van állítva a Java projektben. Itt érheti el a szükséges forrásokat:
 
--  Dokumentáció:[Aspose.PDF for Java API Reference](https://reference.aspose.com/pdf/java/)
+-  Dokumentáció:[Aspose.PDF a Java API-referenciához](https://reference.aspose.com/pdf/java/)
 -  Letöltés:[Aspose.PDF Java-hoz](https://releases.aspose.com/pdf/java/)
 
 Ha minden a helyére került, térjünk át a kódolási részre.

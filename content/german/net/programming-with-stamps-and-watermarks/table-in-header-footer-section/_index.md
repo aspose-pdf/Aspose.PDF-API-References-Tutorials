@@ -184,7 +184,7 @@ Aspose.Pdf.Image img = new Aspose.Pdf.Image();
 img.File = dataDir + "aspose-logo.jpg"; // Stellen Sie sicher, dass Sie das Bild in Ihrem Verzeichnis platzieren
 ```
 
- Vergessen Sie nicht, die`"aspose-logo.jpg"` mit dem tatsächlichen Namen Ihres Bildes!
+ Vergessen Sie nicht, den`"aspose-logo.jpg"` mit dem tatsächlichen Namen Ihres Bildes!
 
 ## Schritt 15: Bildbreite anpassen
 

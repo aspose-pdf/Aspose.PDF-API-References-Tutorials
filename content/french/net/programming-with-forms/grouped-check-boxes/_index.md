@@ -49,7 +49,7 @@ Document pdfDocument = new Document();
 Page page = pdfDocument.Pages.Add();
 ```
 
-Cela établit les bases pour l’ajout d’éléments, tels que des boutons radio, au PDF.
+Cela établit la base pour l’ajout d’éléments, tels que des boutons radio, au PDF.
 
 ## Étape 2 : Initialiser le champ du bouton radio
 

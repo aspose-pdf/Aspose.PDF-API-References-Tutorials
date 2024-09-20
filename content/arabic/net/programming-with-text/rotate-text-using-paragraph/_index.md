@@ -2,195 +2,173 @@
 title: تدوير النص باستخدام الفقرة في ملف PDF
 linktitle: تدوير النص باستخدام الفقرة في ملف PDF
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: تعرف على كيفية تدوير النص باستخدام الفقرات في ملف PDF باستخدام Aspose.PDF لـ .NET.
+description: تعرف على كيفية تدوير النص في ملف PDF باستخدام Aspose.PDF لـ .NET. اتبع هذا الدليل خطوة بخطوة لإنشاء مستنداتك.
 type: docs
 weight: 380
 url: /ar/net/programming-with-text/rotate-text-using-paragraph/
 ---
-يوضح هذا البرنامج التعليمي كيفية استخدام Aspose.PDF لـ .NET لتدوير النص باستخدام الفقرات. يوضح كود المصدر C# المقدم العملية خطوة بخطوة.
+## مقدمة
+
+إن إنشاء ملفات PDF بنص ديناميكي يمكن أن يكون وسيلة جذابة لنقل المعلومات. إذا كنت تبحث عن إضافة بعض الأناقة إلى مستنداتك، فإن تدوير النص يمكن أن يساعد في التأكيد على النقاط الرئيسية أو ببساطة توفير تصميم جذاب بصريًا. في هذا الدليل، سأشرح لك كيفية تدوير النص باستخدام Aspose.PDF لـ .NET، مما يجعل مستندات PDF الخاصة بك أكثر تفاعلية وإثارة للاهتمام!
 
 ## المتطلبات الأساسية
 
-قبل المتابعة بالبرنامج التعليمي، تأكد من توفر ما يلي:
+قبل أن نتعمق في عالم تدوير النص المثير في ملفات PDF، دعنا نتأكد من إعداد كل شيء بشكل صحيح. فيما يلي المتطلبات الأساسية التي ستحتاج إليها:
 
-- المعرفة الأساسية للغة البرمجة C#.
-- تم تثبيت مكتبة Aspose.PDF لـ .NET. يمكنك الحصول عليها من موقع Aspose على الويب أو استخدام NuGet لتثبيتها في مشروعك.
+1.  Aspose.PDF for .NET: تأكد من تثبيت Aspose.PDF for .NET في مشروعك. يمكنك تنزيله من[موقع إلكتروني](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: يفترض هذا البرنامج التعليمي أنك تستخدم Visual Studio لتطوير .NET.
+3. المعرفة الأساسية بلغة C#: ستساعدك المعرفة ببرمجة C# على فهم الأمثلة بشكل أفضل. إذا كنت جديدًا، فلا تقلق؛ سنشرح لك الأمر خطوة بخطوة!
+4. .NET Framework: تأكد من إعداد مشروعك باستخدام إصدار مناسب من .NET Framework. يدعم Aspose.PDF إصدارات مختلفة، لذا تحقق من الوثائق للتأكد من التوافق.
 
-## الخطوة 1: إعداد المشروع
+بمجرد توفر هذه المتطلبات الأساسية، سنكون مستعدين لبدء كتابة بعض التعليمات البرمجية!
 
-ابدأ بإنشاء مشروع C# جديد في بيئة التطوير المتكاملة (IDE) المفضلة لديك وأضف مرجعًا إلى مكتبة Aspose.PDF لـ .NET.
+## استيراد الحزم
 
-## الخطوة 2: استيراد المساحات الأساسية الضرورية
+لاستخدام Aspose.PDF بشكل فعال، ستحتاج إلى استيراد المساحات الأساسية اللازمة. إليك كيفية القيام بذلك:
 
-أضف التوجيهات التالية في بداية ملف C# الخاص بك لاستيراد المساحات المطلوبة:
+### افتح مشروعك
+
+قم بتشغيل Visual Studio وافتح المشروع الذي تريد تنفيذ تدوير النص فيه في PDF.
+
+### إضافة مرجع
+
+انقر بزر الماوس الأيمن على مشروعك في مستكشف الحلول، ثم حدد "إدارة حزم NuGet". 
+
+### البحث عن Aspose.PDF وتثبيته
+
+في مدير الحزم NuGet، ابحث عن "Aspose.PDF" وقم بتثبيته. سيمكنك هذا الإجراء من الوصول إلى جميع الفئات والوظائف المتاحة في مكتبة Aspose.PDF.
+
+### استيراد مساحة الاسم
+
+في الجزء العلوي من ملف C# الخاص بك، تحتاج إلى استيراد مساحة اسم Aspose.PDF:
 
 ```csharp
+using System;
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using Aspose.Pdf.Text.TextBuilder;
+using Aspose.Pdf.Facades;
 ```
 
-## الخطوة 3: إنشاء مستند PDF
+وبهذا، أنت جاهز لبدء البرمجة!
 
- تهيئة`Document` كائن لإنشاء مستند PDF جديد:
+حسنًا! الآن دعنا ننتقل إلى لب الموضوع - تدوير النص في ملف PDF. سنشرح التعليمات البرمجية خطوة بخطوة.
+
+## الخطوة 1: تهيئة المستند
+
+الخطوة الأولى هي إنشاء نسخة جديدة من مستند PDF. هذا هو المكان الذي ستحتفظ فيه بكل عملك الشاق.
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document pdfDocument = new Document();
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // حدد دليل المستند الخاص بك
+Document pdfDocument = new Document(); // تهيئة كائن المستند
 ```
+هنا، نقوم بتحديد دليل للمستند وتهيئة كائن مستند جديد. سيعمل هذا الكائن كحاوية لملف PDF الخاص بك.
 
- تأكد من الاستبدال`"YOUR DOCUMENT DIRECTORY"` مع المسار الفعلي إلى دليل المستند الخاص بك.
+## الخطوة 2: الحصول على صفحة معينة
 
-## الخطوة 4: إضافة صفحة
-
- احصل على صفحة معينة من المستند باستخدام`Pages.Add()` طريقة:
+الآن، دعنا نضيف صفحة حيث سنقوم بتدوير النص:
 
 ```csharp
-Page pdfPage = (Page)pdfDocument.Pages.Add();
+Page pdfPage = (Page)pdfDocument.Pages.Add(); // الحصول على صفحة معينة
 ```
+يضيف هذا السطر صفحة جديدة إلى ملف PDF ويسمح لنا بالبدء في إضافة المحتوى إليه.
 
-## الخطوة 5: إنشاء فقرة النص
+## الخطوة 3: إنشاء فقرة نصية
 
- إنشاء`TextParagraph` الكائن وتعيين موضعه على الصفحة:
+الآن، دعنا ننشئ فقرة حيث سنضيف أجزاء النص:
 
 ```csharp
 TextParagraph paragraph = new TextParagraph();
-paragraph.Position = new Position(200, 600);
+paragraph.Position = new Position(200, 600); // تعيين موضع الفقرة
 ```
+هنا، نقوم بتهيئة TextParagraph وتعيين موضعها على الصفحة. تحدد الإحداثيات (200، 600) مكان بدء الفقرة على الصفحة.
 
-قم بضبط قيم الموضع وفقًا لمتطلباتك.
+## الخطوة 4: إنشاء أجزاء نصية 
 
-## الخطوة 6: إنشاء وتكوين أجزاء النص
+الآن يأتي الجزء الممتع - إنشاء أجزاء النص! سننشئ ثلاثة أجزاء نصية، اثنان منها سيتم تدويرهما.
 
- إنشاء متعددة`TextFragment` الكائنات وتعيين نصها وخصائصها:
+### 4.1: إنشاء جزء نصي مُدار
 
 ```csharp
 TextFragment textFragment1 = new TextFragment("rotated text");
 textFragment1.TextState.FontSize = 12;
 textFragment1.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment1.TextState.Rotation = 45;
+textFragment1.TextState.Rotation = 45; // ضبط الدوران
+```
+هنا، نقوم بإنشاء أول جزء نصي يحمل اسم "نص مُدار". ونحدد حجم الخط ونوعه، ثم نطبق تدويرًا بمقدار 45 درجة.
 
+### 4.2: إنشاء جزء نصي رئيسي
+
+الآن، دعونا نضيف جزء النص الرئيسي.
+
+```csharp
 TextFragment textFragment2 = new TextFragment("main text");
 textFragment2.TextState.FontSize = 12;
 textFragment2.TextState.Font = FontRepository.FindFont("TimesNewRoman");
+```
+ستبقى هذه القطعة دون تعديل وستكون بمثابة النص الرئيسي في الفقرة.
 
+### 4.3: إنشاء جزء نصي مدور آخر
+
+وأخيرًا، سننشئ جزءًا آخر من النص المدور.
+
+```csharp
 TextFragment textFragment3 = new TextFragment("another rotated text");
 textFragment3.TextState.FontSize = 12;
 textFragment3.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment3.TextState.Rotation = -45;
+textFragment3.TextState.Rotation = -45; // ضبط الدوران
 ```
+مثل القطعة الأولى، تتميز هذه القطعة بدوران بمقدار -45 درجة، مما يضيف تباينًا بصريًا مثيرًا للاهتمام.
 
-قم بضبط النص والخصائص الأخرى حسب رغبتك.
+## الخطوة 5: إضافة أجزاء نصية إلى الفقرة
 
-## الخطوة 7: إضافة أجزاء نصية إلى الفقرة
-
- قم بإضافة أجزاء النص التي تم إنشاؤها إلى الفقرة باستخدام`AppendLine` طريقة:
+الآن، حان الوقت لإضافة كل أجزاء النص هذه إلى الفقرة التي أنشأناها سابقًا:
 
 ```csharp
 paragraph.AppendLine(textFragment1);
 paragraph.AppendLine(textFragment2);
 paragraph.AppendLine(textFragment3);
 ```
+ نحن ببساطة نضيف كل جزء من النص إلى فقرتنا.`AppendLine` تضمن الطريقة أن يتم تكديس كل جزء من النص عموديًا.
 
-## الخطوة 8: إنشاء TextBuilder وإضافة الفقرة
+## الخطوة 6: إنشاء كائن TextBuilder
 
- إنشاء`TextBuilder` كائن باستخدام`pdfPage` وأضف فقرة النص إلى صفحة PDF:
+بعد ذلك، سوف نستخدم TextBuilder لإضافة فقرتنا إلى صفحة PDF:
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(pdfPage);
-textBuilder.AppendParagraph(paragraph);
+textBuilder.AppendParagraph(paragraph); // قم بإضافة فقرة النص إلى صفحة PDF
 ```
+يعمل كائن TextBuilder كأداة لتطبيق الفقرة على صفحة PDF المحددة.
 
-## الخطوة 9: احفظ مستند PDF
+## الخطوة 7: احفظ المستند
 
- احفظ مستند PDF المعدّل في ملف باستخدام`Save` طريقة:
+بعد كل هذا العمل الشاق، حان الوقت لحفظ المستند ورؤية ما أنشأناه!
 
 ```csharp
 pdfDocument.Save(dataDir + "TextFragmentTests_Rotated2_out.pdf");
 ```
+يقوم هذا السطر بحفظ المستند في الدليل المحدد باسم "TextFragmentTests_Rotated2_out.pdf". 
 
- تأكد من الاستبدال`"TextFragmentTests_Rotated2_out.pdf"` مع اسم ملف الإخراج المطلوب.
-
-### عينة من كود المصدر لتدوير النص باستخدام الفقرة باستخدام Aspose.PDF لـ .NET 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// تهيئة كائن المستند
-Document pdfDocument = new Document();
-// الحصول على صفحة معينة
-Page pdfPage = (Page)pdfDocument.Pages.Add();
-TextParagraph paragraph = new TextParagraph();
-paragraph.Position = new Position(200, 600);
-// إنشاء جزء نصي
-TextFragment textFragment1 = new TextFragment("rotated text");
-// تعيين خصائص النص
-textFragment1.TextState.FontSize = 12;
-textFragment1.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-// ضبط الدوران
-textFragment1.TextState.Rotation = 45;
-// إنشاء جزء نصي
-TextFragment textFragment2 = new TextFragment("main text");
-// تعيين خصائص النص
-textFragment2.TextState.FontSize = 12;
-textFragment2.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-// إنشاء جزء نصي
-TextFragment textFragment3 = new TextFragment("another rotated text");
-// تعيين خصائص النص
-textFragment3.TextState.FontSize = 12;
-textFragment3.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-// ضبط الدوران
-textFragment3.TextState.Rotation = -45;
-// إضافة أجزاء النص إلى الفقرة
-paragraph.AppendLine(textFragment1);
-paragraph.AppendLine(textFragment2);
-paragraph.AppendLine(textFragment3);
-// إنشاء كائن TextBuilder
-TextBuilder textBuilder = new TextBuilder(pdfPage);
-// قم بإضافة فقرة النص إلى صفحة PDF
-textBuilder.AppendParagraph(paragraph);
-// حفظ المستند
-pdfDocument.Save(dataDir + "TextFragmentTests_Rotated2_out.pdf");
-```
-
+وفويلا! لديك الآن ملف PDF يحتوي على نص مُدار!
 
 ## خاتمة
 
-مبروك! لقد تعلمت بنجاح كيفية تدوير النص باستخدام الفقرات في مستند PDF باستخدام Aspose.PDF for .NET. قدم هذا البرنامج التعليمي دليلاً خطوة بخطوة، من إنشاء المستند إلى حفظ النسخة المعدلة. يمكنك الآن دمج هذا الكود في مشاريع C# الخاصة بك للتلاعب بتدوير النص في ملفات PDF.
+إن تدوير النص في ملف PDF يمكن أن يضيف قدرًا كبيرًا من الإبداع والتركيز إلى مستنداتك. باستخدام Aspose.PDF for .NET، من السهل تنفيذه وتخصيصه ليناسب احتياجات التصميم الخاصة بك. باتباع هذا الدليل خطوة بخطوة، تعلمت كيفية إنشاء نص مدور داخل ملف PDF، مما يوفر إمكانيات جديدة لتقديم المعلومات بطريقة جذابة. 
 
-### الأسئلة الشائعة
+## الأسئلة الشائعة
 
-#### س: ما هو الغرض من البرنامج التعليمي "تدوير النص باستخدام الفقرة"؟
+### ما هو Aspose.PDF لـ .NET؟
+Aspose.PDF for .NET هي مكتبة قوية تسمح للمطورين بإنشاء مستندات PDF ومعالجتها وتحويلها مباشرة داخل تطبيقات .NET.
 
-أ: يهدف البرنامج التعليمي "تدوير النص باستخدام فقرة" إلى إرشادك خلال عملية استخدام مكتبة Aspose.PDF لـ .NET لتدوير النص باستخدام فقرات نصية في مستند PDF. يوفر البرنامج التعليمي تعليمات خطوة بخطوة وعينة من التعليمات البرمجية لتحقيق هذه الوظيفة.
+### كيف أقوم بتثبيت Aspose.PDF في مشروعي؟
+ يمكنك تثبيت Aspose.PDF عبر NuGet Package Manager في Visual Studio أو عن طريق تنزيله من[صفحة تنزيلات Aspose](https://releases.aspose.com/pdf/net/).
 
-#### س: ماذا نقصد بـ "تدوير النص باستخدام الفقرات"؟
+### هل يمكنني استخدام Aspose.PDF مجانًا؟
+ نعم، يقدم Aspose.PDF نسخة تجريبية مجانية. يمكنك البدء باستخدام[نسخة تجريبية مجانية](https://releases.aspose.com/) واستكشاف ميزاته.
 
-أ: يشير تدوير النص باستخدام الفقرات إلى القدرة على تطبيق التدوير على النص داخل مستند PDF باستخدام فقرات نصية. تتيح لك هذه التقنية توجيه النص بزوايا أو مواضع مختلفة داخل محتوى PDF.
+### هل يتوفر الدعم لـ Aspose.PDF؟
+ بالتأكيد! يمكنك التواصل معنا[دعم Aspose](https://forum.aspose.com/c/pdf/10) للحصول على المساعدة بشأن أي مشكلات تواجهها.
 
-#### س: لماذا أرغب في تدوير النص في مستند PDF؟
-
-أ: يمكن أن يكون تدوير النص في مستند PDF مفيدًا لأغراض مختلفة، مثل التأكيد على محتوى معين، أو إنشاء تصميمات فنية، أو تحسين التخطيط والقدرة على القراءة.
-
-#### س: كيف يمكنني إنشاء مستند PDF جديد؟
-
- أ: لإنشاء مستند PDF جديد، قم بتهيئة`Document`كائن من مكتبة Aspose.PDF. يمكنك استخدام هذا الكائن لإضافة صفحات ومحتوى إلى ملف PDF.
-
-#### س: كيف أقوم بتدوير النص باستخدام الفقرات؟
-
-أ: لتدوير النص باستخدام الفقرات:
-
-1.  إنشاء`TextParagraph` هدف.
-2.  يخلق`TextFragment` الأشياء مع النص المطلوب وزوايا الدوران.
-3. إضافة أجزاء النص إلى فقرة النص.
-4.  إنشاء`TextBuilder` كائن وإضافة فقرة نصية إلى صفحة PDF محددة.
-
-#### س: هل يمكنني التحكم في زاوية دوران أجزاء النص الفردية؟
-
- ج: نعم، يمكنك التحكم في زاوية دوران الفرد`TextFragment` الأشياء عن طريق ضبط`TextState.Rotation` الخاصية. تشير القيم الإيجابية إلى الدوران في اتجاه عقارب الساعة، في حين تشير القيم السلبية إلى الدوران عكس اتجاه عقارب الساعة.
-
-#### س: هل يمكنني تطبيق زوايا دوران مختلفة على أجزاء نصية مختلفة ضمن نفس الفقرة؟
-
- ج: نعم، يمكنك تطبيق زوايا دوران مختلفة على`TextFragment` الكائنات الموجودة ضمن نفس الفقرة عن طريق ضبط`TextState.Rotation` خصائص كل جزء وفقا لذلك.
-
-#### س: كيف أحفظ مستند PDF المُدار؟
-
-أ: لحفظ مستند PDF المُدار، استخدم`Save` طريقة`Document` الكائن وتوفير مسار ملف الإخراج والاسم المطلوب.
+### كيف يمكنني الحصول على ترخيص مؤقت لـ Aspose.PDF؟
+ يمكنك شراء ترخيص مؤقت من[موقع Aspose](https://purchase.aspose.com/temporary-license/) لتجربة الميزات الكاملة للمكتبة.

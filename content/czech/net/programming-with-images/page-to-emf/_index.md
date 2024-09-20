@@ -139,7 +139,7 @@ Tady to máš! V několika krocích jste se naučili, jak převést stránku PDF
 Formát EMF (Enhanced Metafile) je formát grafického souboru používaný k ukládání obrazových dat ve vektorové podobě, díky čemuž je škálovatelný bez ztráty kvality.
 
 ### Mohu převést více stránek najednou?
- Ano! Můžete procházet stránkami dokumentu PDF a volat`Process` metodu pro každou, kterou chcete převést.
+ Ano! Můžete procházet stránkami dokumentu PDF a volat`Process` pro každý, který chcete převést.
 
 ### Potřebuji licenci pro Aspose.PDF?
  I když je k dispozici bezplatná zkušební verze, pro rozsáhlé nebo komerční použití je vyžadována licence. Zkontrolujte jejich[koupit stránku](https://purchase.aspose.com/buy) pro různé možnosti.

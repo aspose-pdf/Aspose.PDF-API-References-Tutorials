@@ -2,108 +2,107 @@
 title: 將工具提示新增至 PDF 檔案中的文本
 linktitle: 將工具提示新增至 PDF 檔案中的文本
 second_title: Aspose.PDF for .NET API 參考
-description: 了解如何使用 Aspose.PDF for .NET 將工具提示新增至 PDF 檔案中的文字。
+description: 了解如何使用 Aspose.PDF for .NET 將工具提示新增至 PDF 檔案中的文字。使用資訊豐富的懸停文字輕鬆增強您的 PDF。
 type: docs
 weight: 90
 url: /zh-hant/net/programming-with-text/add-tooltip-to-text/
 ---
-本教學將引導您完成使用 Aspose.PDF for .NET 將工具提示新增至 PDF 檔案中的文字的過程。提供的 C# 原始程式碼演示了必要的步驟。
+## 介紹
 
-## 要求
-在開始之前，請確保您具備以下條件：
+在創建引人入勝的互動式 PDF 時，工具提示的價值無可估量。您知道那些當您將滑鼠懸停在某物上時會提供額外資訊的小彈出框嗎？他們可以提供上下文、描述，甚至一些建議，而不會弄亂您的文件。在本教學中，我們將介紹如何使用 Aspose.PDF for .NET 函式庫為 PDF 檔案中的文字新增工具提示。無論您是經驗豐富的開發人員還是剛剛涉足 PDF 世界，您都來對地方了！那麼就讓我們深入了解吧！
 
-- Visual Studio 或電腦上安裝的任何其他 C# 編譯器。
-- Aspose.PDF for .NET 函式庫。您可以從 Aspose 官方網站下載它或使用 NuGet 等套件管理器來安裝它。
+## 先決條件
 
-## 第 1 步：設定項目
-1. 在您首選的開發環境中建立一個新的 C# 專案。
-2. 新增對 Aspose.PDF for .NET 函式庫的參考。
+在我們進入編碼部分之前，讓我們確保您擁有順利進行操作所需的一切。
 
-## 步驟2：導入所需的命名空間
-在要為文字新增工具提示的程式碼檔案中，在檔案頂部新增以下 using 指令：
+### 已安裝 Visual Studio
+在您的電腦上安裝 Visual Studio 非常重要，因為它將成為 .NET 應用程式的主要開發環境。
+
+### Aspose.PDF for .NET 函式庫
+您還需要可以使用 Aspose.PDF 庫。你可以[在這裡下載](https://releases.aspose.com/pdf/net/)。確保將其包含在您的項目參考中。
+
+### C#基礎知識
+C# 背景將對我們有很大幫助，因為我們將使用該語言進行編碼。但別擔心—我會引導您完成每一步！
+
+### 可供使用的 PDF 文檔
+您可以從空白 PDF 文件開始，就像我們在本範例中所做的那樣，或者如果您願意，也可以使用現有文件。
+
+現在，讓我們繼續編碼部分！
+
+## 導入包 
+
+我們編碼冒險的第一步是導入必要的套件。開啟 Visual Studio 項目，然後在 C# 檔案的頂部新增以下內容`using`指令：
 
 ```csharp
-using Aspose.Pdf;
 using Aspose.Pdf.Forms;
 using Aspose.Pdf.Text;
 ```
 
-## 第三步：設定文檔目錄
-在程式碼中，找到顯示以下內容的行`string dataDir = "YOUR DOCUMENT DIRECTORY";`並替換`"YOUR DOCUMENT DIRECTORY"`以及儲存文檔的目錄的路徑。
+這些套件可讓您存取建立和操作 PDF 文件所需的所有類別和功能。
 
-## 步驟 4：建立帶有文字的範例文檔
-創建一個新的`Document`物件並添加帶有文字片段的頁面。在提供的程式碼中，兩個文字片段與各自的工具提示文字一起添加到文件中。
+## 第 1 步：設定您的文件目錄
 
-```csharp
-Document doc = new Document();
-doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a tooltip"));
-doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a very long tooltip"));
-doc.Save(outputFile);
-```
+首先，我們需要設定保存文檔的路徑。將此視為在檔案系統中找到一個舒適的位置，您的所有創作都將駐留在其中。
 
-## 步驟5：開啟文件並找到文字片段
-使用以下命令載入建立的文檔`Document`建構函數並使用以下命令尋找需要工具提示的文字片段`TextFragmentAbsorber`.
-
-```csharp
-Document document = new Document(outputFile);
-TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
-document.Pages.Accept(absorb);
-TextFragmentCollection textFragments = absorb.TextFragments;
-```
-
-## 第 6 步：在文字片段中新增工具提示
-循環遍歷提取的文字片段並在其位置建立不可見的按鈕。將所需的工具提示文字指派給`AlternateName`的財產`ButtonField`。將按鈕欄位新增至文件的表單中。
-
-```csharp
-foreach(TextFragment fragment in textFragments)
-{
-     ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
-     field. AlternateName = "Tooltip for text.";
-     document.Form.Add(field);
-}
-```
-
-## 第 7 步：對帶有長工具提示的其他文字片段重複此操作
-對於長工具提示的文字片段，重複步驟 5 和 6。相應地修改搜尋條件和工具提示文字。
-
-```csharp
-absorb = new TextFragmentAbsorber("Move the mouse cursor here to display a very long tooltip");
-document.Pages.Accept(absorb);
-textFragments = absorb.TextFragments;
-
-foreach(TextFragment fragment in textFragments)
-{
-     ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
-     field. AlternateName = "Long tooltip text goes here...";
-     document.Form.Add(field);
-}
-```
-
-## 步驟8：儲存修改後的文檔
-使用以下命令儲存修改後的 PDF 文檔`Save`的方法`Document`目的。
-
-```csharp
-document. Save(outputFile);
-```
-
-### 使用 Aspose.PDF for .NET 將工具提示新增至文字的範例原始程式碼 
 ```csharp
 //文檔目錄的路徑。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outputFile = dataDir + "Tooltip_out.pdf";
+```
+
+確保更換`YOUR DOCUMENT DIRECTORY`與您機器上的實際路徑。
+
+## 第 2 步：建立範例 PDF 文檔
+
+接下來，是時候建立一個包含一些文字的簡單 PDF。這就是我們開始創作過程的地方！
+
+```csharp
 //建立帶有文字的範例文檔
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a tooltip"));
 doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a very long tooltip"));
 doc.Save(outputFile);
+```
+
+在此步驟中，我們建立一個文檔，新增兩個文字片段，並將其儲存到我們先前指定的路徑。
+
+## 步驟 3：開啟文件進行處理
+
+現在我們已經建立了文檔，讓我們打開它，以便我們可以處理這些工具提示！
+
+```csharp
 //開啟包含文字的文檔
 Document document = new Document(outputFile);
+```
+
+在這裡，我們只需載入我們剛剛建立的文件。
+
+## 步驟 4：建立文字吸收器來尋找文字片段
+
+我們需要找到要新增工具提示的文字片段。這就像使用放大鏡突出顯示大地圖的特定部分一樣！ 
+
+```csharp
 //建立 TextAbsorber 物件以尋找與正規表示式相符的所有短語
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
-//接受文件頁面的吸收器
 document.Pages.Accept(absorber);
+```
+
+## 步驟5：提取文字片段
+
+接下來，我們提取從上一個步驟中找到的文字片段。
+
+```csharp
 //取得擷取的文字片段
 TextFragmentCollection textFragments = absorber.TextFragments;
+```
+
+該片段使我們能夠保留我們感興趣的文本片段的引用。
+
+## 第 6 步：循環片段並新增工具提示
+
+現在來了有趣的部分！我們將循環遍歷每個文字片段並為每個文字片段添加一個工具提示。想像一下將小禮物（工具提示）包裹在特定項目（文字片段）周圍。
+
+```csharp
 //循環遍歷片段
 foreach (TextFragment fragment in textFragments)
 {
@@ -114,7 +113,16 @@ foreach (TextFragment fragment in textFragments)
 	//將按鈕欄位新增至文件中
 	document.Form.Add(field);
 }
-//接下來是很長的工具提示的樣本
+```
+
+在每次迭代中，我們建立一個與文字片段位置相對應的按鈕字段，並向其指派工具提示文字。
+
+## 步驟 7：重複長工具提示
+
+就像我們添加一個簡單的工具提示一樣，我們可以對較長的文字執行相同的操作。讓我們發揮我們的創造力吧！
+
+```csharp
+//接下來是很長的工具提示範例
 absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a very long tooltip");
 document.Pages.Accept(absorber);
 textFragments = absorber.TextFragments;
@@ -132,53 +140,40 @@ foreach (TextFragment fragment in textFragments)
 							" deserunt mollit anim id est laborum.";
 	document.Form.Add(field);
 }
+```
+
+在這裡，我們正在做與以前相同的工作，但使用了更擴展的工具提示。
+
+## 第 8 步：儲存您的文件
+
+最後一步是使用所有這些閃亮的新工具提示儲存文件。 
+
+```csharp
 //儲存文件
 document.Save(outputFile);
 ```
 
+就這樣，你就完成了！您已向 PDF 添加了工具提示，使其更加用戶友好和互動。
+
 ## 結論
-您已使用 Aspose.PDF for .NET 成功將工具提示新增至 PDF 文件中的文字。現在可以在指定的輸出檔案路徑中找到產生的 PDF 檔案。
+
+這是一個簡單易懂的指南，介紹如何使用 Aspose.PDF for .NET 將工具提示新增至 PDF 檔案中的文字。這項技術可以顯著增強使用者體驗，讓您的文件內容更豐富，而不會一次用太多文字讓讀者感到不知所措。 
+
+只需將滑鼠懸停在單字或短語上，讀者即可獲得相關信息，從而增加價值而不混亂。所以，捲起袖子來嘗試吧！在不知不覺中，您可能已經創建了各種引人入勝的引人注目的文檔。
 
 ## 常見問題解答
 
-#### Q：本教程的重點是什麼？
+### 什麼是 Aspose.PDF for .NET？
+Aspose.PDF for .NET 是一個函式庫，可讓開發人員在.NET 應用程式中建立、操作和轉換 PDF 文件。
 
-答：本教學重點在於使用 Aspose.PDF for .NET 函式庫為 PDF 檔案中的文字新增工具提示。提供的 C# 原始程式碼演示了實現此目的所需的步驟。
+### 我可以免費使用 Aspose.PDF 嗎？
+是的，Aspose 提供免費試用供您探索其功能！你可以找到它[這裡](https://releases.aspose.com/).
 
-#### Q：本教學需要導入哪些命名空間？
+### Aspose.PDF 有可用的授權選項嗎？
+是的，您可以購買許可證或取得臨時許可證。查看選項[這裡](https://purchase.aspose.com/).
 
-答：在要為文字新增工具提示的程式碼檔案中，在檔案開頭匯入以下命名空間：
+### 我可以使用 Aspose.PDF 添加工具提示以外的互動元素嗎？
+絕對地！ Aspose.PDF 允許新增各種互動元素，如超連結、按鈕和表單。
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Forms;
-using Aspose.Pdf.Text;
-```
-
-#### Q：如何指定文檔目錄？
-
- A：在程式碼中找到這一行`string dataDir = "YOUR DOCUMENT DIRECTORY";`並替換`"YOUR DOCUMENT DIRECTORY"`與文檔目錄的實際路徑。
-
-#### Q：如何建立帶有文字的範例文件？
-
-答：在步驟 4 中，您將建立一個新的`Document`物件並添加帶有文字片段的頁面。提供的程式碼添加了兩個文字片段以及各自的工具提示文字。
-
-#### Q：如何開啟文件並找到文字片段？
-
-答：在步驟 5 中，您將使用以下命令載入建立的文檔`Document`建構函數並使用以下命令尋找需要工具提示的文字片段`TextFragmentAbsorber`.
-
-#### Q：如何在文字片段中加入工具提示？
-
-答：在步驟 6 中，您將循環遍歷提取的文字片段並在其位置建立不可見的按鈕。工具提示文字被指派給`AlternateName`的財產`ButtonField`，它被添加到文檔的表單中。
-
-#### Q：如何對帶有長工具提示的其他文字片段重複該過程？
-
-答：對於具有長工具提示的文字片段，重複步驟 5 和 6。
-
-#### Q：如何儲存修改後的文件？
-
-答：在步驟 8 中，您將使用以下命令儲存修改後的 PDF 文件：`Save`的方法`Document`目的。
-
-#### Q：本教程的主要內容是什麼？
-
-答：透過學習本教學課程，您已經了解如何使用 Aspose.PDF for .NET 為文字新增工具提示來增強 PDF 文件。這可以在讀者與 PDF 內容互動時為他們提供有價值的附加資訊。
+### 在哪裡可以找到有關 Aspose.PDF 的更多文件？
+你可以查看文檔[這裡](https://reference.aspose.com/pdf/net/)以獲得更深入的指導。

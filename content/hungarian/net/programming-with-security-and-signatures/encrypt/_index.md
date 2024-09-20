@@ -43,7 +43,7 @@ A PDF titkosítása előtt meg kell adnia a PDF-fájl elérési útját. Ez dön
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
- Csak cseréld ki`YOUR DOCUMENTS DIRECTORY` a számítógépen lévő tényleges elérési úttal. Például úgy nézhet ki, mint`C:\\Documents\\`.
+ Csak cseréld ki`YOUR DOCUMENTS DIRECTORY` a számítógépen lévő tényleges elérési úttal. Például valahogy így nézhet ki`C:\\Documents\\`.
 
 ## 2. lépés: Nyissa meg a PDF-dokumentumot
 

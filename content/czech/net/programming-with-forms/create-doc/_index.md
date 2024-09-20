@@ -179,4 +179,4 @@ Pomocí bloků try-catch ve svém kódu můžete elegantně spravovat všechny c
  Navštivte[fórum podpory](https://forum.aspose.com/c/pdf/10) nebo[stáhnout](https://releases.aspose.com/pdf/net/) knihovna začít.
 
 ### Jak koupím Aspose.PDF?
- Knihovnu si můžete zakoupit přímo u[nákupní stránku](https://purchase.aspose.com/buy).
+ Knihovnu si můžete zakoupit přímo od[nákupní stránku](https://purchase.aspose.com/buy).

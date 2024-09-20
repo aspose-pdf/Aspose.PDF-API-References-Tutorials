@@ -9,7 +9,7 @@ url: /de/net/programming-with-pdf-pages/get-page-count/
 ---
 ## Einführung
 
-Das Arbeiten mit PDFs ist wie das Organisieren einer Bibliothek – Sie müssen wissen, wie viele „Bücher“ (oder in diesem Fall Seiten) Sie haben, bevor Sie in die Details eintauchen. Stellen Sie sich vor, Sie haben ein PDF und möchten herausfinden, wie viele Seiten es enthält. Vielleicht erstellen Sie ein Dokument mit Hunderten von Seiten und benötigen eine genaue Anzahl. Hier kommt Aspose.PDF für .NET ins Spiel und rettet Sie. In diesem Tutorial erfahren Sie, wie Sie mit Aspose.PDF für .NET die Seitenzahl eines PDF-Dokuments ermitteln. Wir zerlegen den Code in einfache Schritte und helfen Ihnen, den Vorgang klar zu verstehen.
+Das Arbeiten mit PDFs ist wie das Organisieren einer Bibliothek – Sie müssen wissen, wie viele „Bücher“ (oder in diesem Fall Seiten) Sie haben, bevor Sie in die Details eintauchen. Stellen Sie sich vor, Sie haben ein PDF und möchten herausfinden, wie viele Seiten es enthält. Vielleicht erstellen Sie ein Dokument mit Hunderten von Seiten und benötigen eine genaue Anzahl. Hier kommt Aspose.PDF für .NET ins Spiel und rettet Sie. In diesem Tutorial erfahren Sie, wie Sie mit Aspose.PDF für .NET die Seitenanzahl eines PDF-Dokuments ermitteln. Wir zerlegen den Code in einfache Schritte und helfen Ihnen, den Vorgang klar zu verstehen.
 
 ## Voraussetzungen
 

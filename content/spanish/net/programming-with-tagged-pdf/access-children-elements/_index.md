@@ -2,161 +2,171 @@
 title: Acceder a elementos secundarios
 linktitle: Acceder a elementos secundarios
 second_title: Referencia de API de Aspose.PDF para .NET
-description: Guía paso a paso para acceder y editar elementos secundarios de un documento PDF con Aspose.PDF para .NET. Personalice el contenido de su PDF.
+description: Aprenda a acceder y modificar elementos secundarios en PDF etiquetados con Aspose.PDF para .NET en este tutorial paso a paso.
 type: docs
 weight: 10
 url: /es/net/programming-with-tagged-pdf/access-children-elements/
 ---
-En este tutorial, le proporcionaremos una guía paso a paso sobre cómo acceder a los elementos secundarios de un documento PDF mediante Aspose.PDF para .NET. Aspose.PDF es una potente biblioteca que le permite crear, manipular y convertir documentos PDF mediante programación. Mediante las funciones de estructura de contenido marcadas de Aspose.PDF, puede acceder y modificar las propiedades de los elementos estructurados en un documento PDF.
+## Introducción
+
+Cuando se trata de manipular documentos PDF mediante programación, Aspose.PDF para .NET destaca por su API integral, que permite a los desarrolladores realizar diversas tareas con precisión. Una característica fundamental de trabajar con archivos PDF etiquetados es el acceso y la modificación de elementos secundarios dentro de la estructura del documento. En este artículo, analizaremos en profundidad cómo aprovechar esta funcionalidad para acceder y configurar propiedades de elementos secundarios en un PDF etiquetado.
 
 ## Prerrequisitos
 
-Antes de comenzar, asegúrese de tener los siguientes requisitos previos:
+Antes de pasar al código, hay algunas cosas que necesitarás para comenzar:
 
-1. Visual Studio instalado con .NET framework.
-2. La biblioteca Aspose.PDF para .NET.
+1. .NET Framework: asegúrese de tener una versión de .NET Framework instalada en su equipo. Aspose.PDF también es compatible con .NET Core.
+2.  Aspose.PDF para .NET: Necesitará tener instalada la biblioteca Aspose.PDF. Puede descargar la última versión desde[Página de descargas de Aspose](https://releases.aspose.com/pdf/net/).
+3. Entorno de desarrollo: configure un IDE como Visual Studio donde pueda escribir y ejecutar su código C#.
+4. Archivo PDF de muestra: necesitará un documento PDF de muestra etiquetado con el que trabajar. Para este tutorial, utilizaremos "StructureElementsTree.pdf", que debe colocar en el directorio de documentos de su proyecto.
 
-## Paso 1: Configuración del proyecto
+¡Una vez que tengas todo configurado, estarás listo para comenzar a codificar!
 
-Para comenzar, cree un nuevo proyecto en Visual Studio y agregue una referencia a la biblioteca Aspose.PDF para .NET. Puede descargar la biblioteca desde el sitio web oficial de Aspose e instalarla en su equipo.
+## Importación de paquetes necesarios
 
-## Paso 2: Importar los espacios de nombres necesarios
-
-En su archivo de código C#, importe los espacios de nombres necesarios para acceder a las clases y métodos proporcionados por Aspose.PDF:
+Antes de codificar, asegúrese de importar los espacios de nombres necesarios en su proyecto de C#. Esto le permitirá acceder a las clases y métodos de la biblioteca Aspose.PDF sin problemas.
 
 ```csharp
-using System;
-using Aspose.Pdf;
+using Aspose.Pdf.LogicalStructure;
 using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Paso 3: Cargar el documento PDF y acceder a los elementos secundarios
+Dividamos esta tarea en pasos manejables.
 
-Utilice el siguiente código para cargar el documento PDF y acceder a los elementos secundarios:
+## Paso 1: Configurar el directorio de documentos
 
-```csharp
-string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
-Document document = new Document(dataDir + "StructureElementsTree.pdf");
-ITaggedContent taggedContent = document.TaggedContent;
-ElementList elementList = taggedContent.StructTreeRootElement.ChildElements;
+Comencemos por definir el directorio donde almacenaremos nuestros documentos PDF. Este paso es crucial, ya que le indica al programa dónde buscar el archivo. 
 
-foreach(Element element in elementList)
-{
-if (element is StructureElement)
-{
-StructureElement structureElement = element as StructureElement;
-// Acceder a las propiedades del elemento
-string title = structureElement.Title;
-string language = structureElement.Language;
-string actualText = structureElement.ActualText;
-string expansionText = structureElement.ExpansionText;
-string alternativeText = structureElement.AlternativeText;
-}
-}
-```
-
-Este código le permite acceder a los elementos secundarios de la raíz de la estructura del documento PDF y obtener las propiedades de cada elemento.
-
-## Paso 4: Acceso a elementos secundarios del elemento raíz y cambio de propiedades
-
-Utilice el siguiente código para acceder a los hijos del elemento raíz y modificar las propiedades:
-
-```csharp
-elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
-
-foreach(Element element in elementList)
-{
-if (element is StructureElement)
-{
-StructureElement structureElement = element as StructureElement;
-// Modificar las propiedades del elemento
-structureElement.Title = "title";
-structureElement.Language = "fr-FR";
-structureElement.ActualText = "actual text";
-structureElement.ExpansionText = "exp";
-structureElement.AlternativeText = "alt";
-}
-}
-```
-
-Este código le permite acceder a los hijos del primer elemento del elemento raíz y modificar las propiedades de cada elemento.
-
-
-### Código fuente de muestra para acceder a elementos secundarios mediante Aspose.PDF para .NET 
 ```csharp
 // La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Abrir documento pdf
+```
+
+ Simplemente reemplace`"YOUR DOCUMENT DIRECTORY"` con la ruta actual en su máquina. 
+
+## Paso 2: Abra el documento PDF
+
+El siguiente paso consiste en cargar el documento PDF etiquetado en la aplicación. ¡Aquí es donde comienza la magia!
+
+```csharp
+// Abrir documento PDF
 Document document = new Document(dataDir + "StructureElementsTree.pdf");
+```
+
+Asegúrese de que la ruta que proporcione apunte al archivo PDF que desea manipular.
+
+## Paso 3: Consigue contenido etiquetado
+
+Ahora, accederemos al contenido etiquetado del documento que le permitirá interactuar con sus elementos de estructura fácilmente.
+
+```csharp
 // Obtenga contenido para trabajar con TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
+```
+
+Esta línea le permitirá sumergirse en la estructura del PDF.
+
+## Paso 4: Acceder a los elementos raíz
+
+Antes de acceder a los elementos secundarios, comencemos con los elementos raíz. Esto le ayudará a comprender mejor la jerarquía de la estructura.
+
+```csharp
 // Acceso a los elementos raíz
 ElementList elementList = taggedContent.StructTreeRootElement.ChildElements;
+```
+
+Aquí obtendrás una lista de elementos secundarios de la raíz.
+
+## Paso 5: Recuperar propiedades de elementos secundarios
+
+Ahora, recorreremos los elementos raíz para recuperar las propiedades de cada elemento de la estructura. Este paso ayuda a verificar qué contenido existe.
+
+```csharp
 foreach (Element element in elementList)
 {
-	if (element is StructureElement)
-	{
-		StructureElement structureElement = element as StructureElement;
-		// Obtener propiedades
-		string title = structureElement.Title;
-		string language = structureElement.Language;
-		string actualText = structureElement.ActualText;
-		string expansionText = structureElement.ExpansionText;
-		string alternativeText = structureElement.AlternativeText;
-	}
+    if (element is StructureElement)
+    {
+        StructureElement structureElement = element as StructureElement;
+        // Obtener propiedades
+        string title = structureElement.Title;
+        string language = structureElement.Language;
+        string actualText = structureElement.ActualText;
+        string expansionText = structureElement.ExpansionText;
+        string alternativeText = structureElement.AlternativeText;
+        
+        // Mostrar las propiedades recuperadas (esto es opcional)
+        Console.WriteLine($"Title: {title}, Language: {language}, ActualText: {actualText}");
+    }
 }
-//Acceso a elementos secundarios del primer elemento en el elemento raíz
+```
+
+Este bucle comprueba si el elemento actual es un elemento de estructura, recupera sus propiedades y las imprime. ¿Qué tan práctico es esto?
+
+## Paso 6: Acceder a los elementos secundarios del primer elemento raíz
+
+Ahora que hemos accedido a los elementos raíz, profundicemos en el primer elemento raíz para acceder a sus hijos.
+
+```csharp
+// Acceso a elementos secundarios del primer elemento en el elemento raíz
 elementList = taggedContent.RootElement.ChildElements[1].ChildElements;
+```
+
+ Al cambiar`ChildElements[1]` en otro índice, puedes explorar diferentes elementos raíz, si existen.
+
+## Paso 7: Modificar las propiedades de los elementos secundarios
+
+Una vez que acceda a los elementos secundarios, es posible que desee actualizar sus propiedades. ¡Es muy sencillo!
+
+```csharp
 foreach (Element element in elementList)
 {
-	if (element is StructureElement)
-	{
-		StructureElement structureElement = element as StructureElement;
-		// Establecer propiedades
-		structureElement.Title = "title";
-		structureElement.Language = "fr-FR";
-		structureElement.ActualText = "actual text";
-		structureElement.ExpansionText = "exp";
-		structureElement.AlternativeText = "alt";
-	}
+    if (element is StructureElement)
+    {
+        StructureElement structureElement = element as StructureElement;
+        // Establezca propiedades. ¡Personalice estos valores según sea necesario!
+        structureElement.Title = "New Title";
+        structureElement.Language = "fr-FR";
+        structureElement.ActualText = "Updated actual text";
+        structureElement.ExpansionText = "Updated exp";
+        structureElement.AlternativeText = "Updated alt";
+    }
 }
+```
+
+¡Es como darle un cambio de imagen a cada elemento estructural seleccionado!
+
+## Paso 8: Guarde el documento PDF etiquetado
+
+Finalmente, después de realizar los cambios, querrás guardar el PDF actualizado. 
+
+```csharp
 // Guardar documento PDF etiquetado
 document.Save(dataDir + "AccessChildrenElements.pdf");
 ```
 
+Dale un nombre único a tu documento modificado para que puedas identificarlo fácilmente más tarde.
+
 ## Conclusión
 
-En este tutorial, aprendió a acceder a los elementos secundarios de un documento PDF y a modificar las propiedades de los elementos mediante Aspose.PDF para .NET. Esto le permite personalizar y manipular los elementos estructurados de un documento PDF según sus necesidades.
+Acceder a los elementos secundarios de un documento PDF etiquetado con Aspose.PDF para .NET es muy sencillo y te permite manipular el contenido de forma eficaz. Si sigues esta guía paso a paso, podrás leer, modificar y guardar tus documentos PDF con facilidad. Tanto si actualizas metadatos como si modificas la estructura, la biblioteca Aspose.PDF proporciona las herramientas necesarias para realizar el trabajo de forma eficiente.
 
-### Preguntas frecuentes
+## Preguntas frecuentes
 
-#### P: ¿Cuál es el propósito de acceder a elementos secundarios en un documento PDF usando Aspose.PDF para .NET?
+### ¿Qué es un PDF etiquetado?
+Un PDF etiquetado es un documento que contiene metadatos, lo que permite una mejor accesibilidad y navegación.
 
-A: Acceder a elementos secundarios en un documento PDF mediante Aspose.PDF para .NET le permite manipular y personalizar mediante programación los elementos estructurados dentro del documento. Esto puede incluir la modificación de propiedades, como títulos, idiomas, texto real, texto de expansión y texto alternativo, para mejorar la accesibilidad y la presentación del documento.
+### ¿Puedo acceder a elementos no estructurales en Aspose.PDF?
+Sí, aunque este tutorial se centra en los elementos de estructura, también se puede acceder a otros tipos de elementos.
 
-#### P: ¿Cuál es el papel de la biblioteca Aspose.PDF en este proceso?
+### ¿Necesito comprar Aspose.PDF para usarlo?
+Puedes probarlo gratis inicialmente, pero es posible que sea necesario realizar una compra para obtener todas las funciones y soporte.
 
-A: Aspose.PDF para .NET es una potente biblioteca que ofrece varias funciones para crear, manipular y convertir documentos PDF mediante programación. En este tutorial, se utiliza la biblioteca para cargar un documento PDF, acceder a contenido etiquetado y elementos estructurados, y modificar sus propiedades.
+### ¿Aspose.PDF es compatible con .NET Core?
+Sí, Aspose.PDF es compatible con .NET Core junto con otras versiones de .NET Framework.
 
-#### P: ¿Cuáles son los requisitos previos para trabajar con elementos secundarios en un documento PDF utilizando Aspose.PDF para .NET?
-
-R: Antes de comenzar, asegúrese de tener instalado Visual Studio con el marco .NET y de tener la biblioteca Aspose.PDF para .NET referenciada en su proyecto.
-
-#### P: ¿Cómo permite el código C# proporcionado acceder y modificar elementos secundarios en un documento PDF?
-
-A: El código demuestra cómo cargar un documento PDF, acceder al contenido etiquetado y recorrer los elementos secundarios de la raíz y elementos específicos. Muestra cómo recuperar propiedades de elementos estructurados y cómo modificar esas propiedades para personalizar el documento.
-
-#### P: ¿Puedo acceder y modificar otras propiedades de los elementos secundarios más allá de las que se muestran en el código?
-
-R: Sí, puedes acceder y modificar otras propiedades de los elementos secundarios mediante técnicas similares. Las propiedades que se muestran en el código (título, idioma, texto real, etc.) son solo ejemplos, y puedes explorar la documentación de Aspose.PDF para descubrir más propiedades y métodos disponibles para la manipulación.
-
-#### P: ¿Cómo puedo identificar a qué elementos secundarios quiero acceder dentro del documento PDF?
-A: El código proporciona un ejemplo de cómo acceder a los elementos secundarios del elemento raíz y a un elemento específico dentro de él. Puede identificar los elementos a los que desea acceder en función de su jerarquía y estructura dentro del contenido etiquetado del documento PDF.
-
-#### P: ¿Es posible agregar nuevos elementos secundarios o eliminar los existentes utilizando este enfoque?
-
-R: Si bien el código proporcionado se centra en acceder y modificar elementos secundarios existentes, puede ampliar el enfoque para agregar nuevos elementos secundarios o eliminar los existentes utilizando los métodos apropiados proporcionados por la biblioteca Aspose.PDF.
-
-#### P: ¿Puedo utilizar este enfoque para trabajar con elementos secundarios anidados dentro del documento PDF?
-
-R: Sí, puede aplicar técnicas similares para acceder y modificar elementos secundarios anidados dentro de la estructura del documento PDF. Al recorrer la jerarquía de elementos, puede acceder y manipular elementos en varios niveles.
+### ¿Dónde puedo encontrar más documentación sobre Aspose.PDF?
+ Puede encontrar documentación adicional en el[Página de documentación de Aspose](https://reference.aspose.com/pdf/net/).

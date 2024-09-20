@@ -65,7 +65,7 @@ pdfDocument.getPages().get_Item(1).getAnnotations().add(fileAttachment);
 A fájlok csatolása után mentse el a módosított PDF dokumentumot a kívánt helyre:
 
 ```java
-// Mentse el a PDF-t mellékletekkel
+// Mentse el a PDF-t a mellékletekkel
 pdfDocument.save("output.pdf");
 ```
 

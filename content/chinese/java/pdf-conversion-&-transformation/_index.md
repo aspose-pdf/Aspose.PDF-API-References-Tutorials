@@ -33,7 +33,7 @@ Aspose.PDF for Java 的突出功能之一是它能够无缝地将 PDF 文档转�
 了解如何使用 Aspose.PDF for Java 轻松将 PDF 转换为 DOC 或 DOCX 格式。包含源代码和常见问题解答的分步指南，实现无缝文档转换。
 ### [将 PDF 转换为 EPUB 电子书](./convert-pdfs-to-epub-ebooks/)
 使用 Aspose.PDF for Java 轻松将 PDF 转换为 EPUB 电子书。逐步了解 PDF 到 EPUB 的转换和常见问题解答。
-### [将 PDF 导出到 Excel 工作簿](./export-pdfs-to-excel-workbooks/)
+### [将 PDF 导出至 Excel 工作簿](./export-pdfs-to-excel-workbooks/)
 了解如何使用 Aspose.PDF for Java 轻松将 PDF 导出到 Excel 工作簿。无缝数据提取的分步指南。
 ### [从 PDF 生成 MobiXML](./generate-mobixml-from-pdfs/)
 了解如何使用 Aspose.PDF for Java 从 PDF 生成 MobiXML。带有代码示例的分步指南。无缝将 PDF 转换为 MobiXML 格式。

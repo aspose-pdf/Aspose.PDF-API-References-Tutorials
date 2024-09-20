@@ -2,271 +2,201 @@
 title: Prvky struktury odkazů
 linktitle: Prvky struktury odkazů
 second_title: Aspose.PDF pro .NET API Reference
-description: Podrobný průvodce používáním prvků struktury odkazů s Aspose.PDF pro .NET. Vytvářejte hypertextové odkazy ve svých dokumentech PDF.
+description: Naučte se vytvářet prvky struktury odkazů v PDF pomocí Aspose.PDF pro .NET. Podrobný průvodce přidáváním přístupných odkazů, obrázků a ověřování souladu.
 type: docs
 weight: 120
 url: /cs/net/programming-with-tagged-pdf/link-structure-elements/
 ---
-V tomto podrobném průvodci vám ukážeme, jak používat prvky struktury odkazů s Aspose.PDF pro .NET. Aspose.PDF je výkonná knihovna, která vám umožní programově vytvářet a manipulovat s dokumenty PDF. Prvky struktury odkazů umožňují přidávat do dokumentu PDF hypertextové odkazy, které uživatelům umožňují klikat na odkazy a procházet online zdroje.
+## Zavedení
 
-Pojďme se ponořit do kódu a naučit se používat prvky struktury odkazů s Aspose.PDF pro .NET.
+Vytváření a správa prvků struktury odkazů v rámci PDF může být zásadní pro dokumenty vyžadující dostupnost a plynulou navigaci. V tomto tutoriálu vás provedeme tím, jak to provést pomocí Aspose.PDF pro .NET. Pokud jste v Aspose.PDF nebo obecně v práci s PDF nováčky, nemějte obavy. Každý krok vám podrobně vysvětlím, abyste je mohli snadno sledovat!
 
-## Předpoklady
+## Předpoklady  
 
-Než začnete, ujistěte se, že máte následující:
+Než se ponoříme do kódování, uveďme nejprve pár věcí z cesty. Toto jsou základní požadavky pro zajištění hladkého vývoje.
 
-1. Nainstalovaná knihovna Aspose.PDF pro .NET.
-2. Základní znalost programovacího jazyka C#.
+1.  Aspose.PDF pro .NET: Můžete si stáhnout nejnovější verzi[zde](https://releases.aspose.com/pdf/net/).
+2. Vývojové prostředí .NET: Ať už je to Visual Studio nebo jakékoli IDE kompatibilní s .NET, mějte je nainstalované a připravené.
+3.  Licence Aspose: Můžete použít bezplatnou zkušební verzi Aspose.PDF[zde](https://releases.aspose.com/) nebo získat a[dočasná licence](https://purchase.aspose.com/temporary-license/).
+4. Základní znalost C#: Budeme pracovat s nějakým kódem C#, takže pochopení základů věci mnohem usnadní.
 
-## Krok 1: Nastavení prostředí
+## Importujte balíčky
 
-Chcete-li začít, otevřete vývojové prostředí C# a vytvořte nový projekt. Ujistěte se, že jste do svého projektu přidali odkaz na knihovnu Aspose.PDF pro .NET.
+Před napsáním kódu pro prvky struktury odkazů budete muset naimportovat několik balíčků. Začněte odkazem na potřebné knihovny Aspose.PDF ve vašem projektu:
 
 ```csharp
-// Cesta k adresáři dokumentů.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-string outFile = dataDir + "LinkStructureElements_Output.pdf";
-string logFile = dataDir + "46035_log.xml";
-string imgFile = dataDir + "google-icon-512.png";
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Krok 2: Vytvoření dokumentu
+Tyto importy nám umožňují pracovat s dokumenty PDF, přidávat tagy a spravovat prvky struktury.
 
- Prvním krokem je vytvoření nového dokumentu PDF pomocí`Document` třída.
+Nyní vytvoříme dokument PDF s různými typy struktur odkazů a každý krok bude rozčleněn, aby vám pomohl proces důkladně porozumět.
 
-```csharp
-// Vytvořte dokument PDF
-Document document = new Document();
-```
+## Krok 1: Inicializujte dokument  
 
-## Krok 3: Práce s označeným obsahem
-
-Poté dostaneme označený obsah dokumentu, se kterým můžeme pracovat.
+Začněme vytvořením nového dokumentu PDF a nastavením tagovaného obsahu pro usnadnění.
 
 ```csharp
-// Získejte označený obsah dokumentu
-ITaggedContent taggedContent = document.TaggedContent;
-```
-
-## Krok 4: Nastavte název dokumentu a jazyk
-
-Nyní můžeme nastavit název dokumentu a jazyk.
-
-```csharp
-// Definujte název dokumentu a jazyk
-taggedContent.SetTitle("Example Link Items");
-taggedContent.SetLanguage("fr-FR");
-```
-
-## Krok 5: Přidejte prvky struktury odkazů
-
-Nyní do našeho dokumentu přidáme prvky struktury odkazů. Vytvoříme různé typy odkazů, včetně jednoduchých textových odkazů, obrázkových odkazů a víceřádkových odkazů.
-```csharp
-// Získejte prvek kořenové struktury (prvek struktury dokumentu)
-StructureElement rootElement = taggedContent.RootElement;
-
-// Přidejte odstavec s hypertextovým odkazem
-ParagraphElement p1 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p1);
-LinkElement link1 = taggedContent.CreateLinkElement();
-p1.AppendChild(link1);
-link1.Hyperlink = new WebHyperlink("http://google.com");
-link1.SetText("Google");
-link1.AlternateDescriptions = "Link to Google";
-
-// Přidejte odstavec s hypertextovým odkazem obsahujícím formátovaný text
-ParagraphElement p2 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p2);
-LinkElement link2 = taggedContent.CreateLinkElement();
-p2.AppendChild(link2);
-link2.Hyperlink = new WebHyperlink("http://google.com");
-SpanElement span2 = taggedContent.CreateSpanElement();
-span2.SetText("Google");
-link2.AppendChild(span2);
-link2.AlternateDescriptions = "Link to Google";
-
-// Přidejte odstavec s hypertextovým odkazem obsahujícím částečně formátovaný text
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-LinkElement link3 = taggedContent.CreateLinkElement();
-p3.AppendChild(link3);
-link3.Hyperlink = new WebHyperlink("http://google.com");
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("G");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText("oogle");
-link3.AppendChild(span31);
-link3.SetText("-");
-link3.AppendChild(span32);
-link3.AlternateDescriptions = "Link to Google";
-
-// Přidejte odstavec s víceřádkovým hypertextovým odkazem
-ParagraphElement p4 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p4);
-LinkElement link4 = taggedContent.CreateLinkElement();
-p4.AppendChild(link4);
-link4.Hyperlink = new WebHyperlink("http://google.com");
-link4.SetText("The multiline link: Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google");
-link4.AlternateDescriptions = "Link to Google (multiline)";
-
-// Přidejte odstavec s hypertextovým odkazem obsahujícím obrázek
-ParagraphElement p5 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p5);
-LinkElement link5 = taggedContent.CreateLinkElement();
-p5.AppendChild(link5);
-link5.Hyperlink = new WebHyperlink("http://google.com");
-FigureElement figure5 = taggedContent.CreateFigureElement();
-figure5.SetImage(imgFile, 1200);
-figure5.AlternativeText = "Google icon";
-StructureAttributes linkLayoutAttributes = link5.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-StructureAttribute placementAttribute = new StructureAttribute(AttributeKey.Placement);
-placementAttribute.SetNameValue(AttributeName.Placement_Block);
-linkLayoutAttributes.SetAttribute(placementAttribute);
-link5.AppendChild(figure5);
-link5.AlternateDescriptions = "Link to Google";
-```
-
-## Krok 6: Uložte označený dokument PDF
-
-Nakonec tagovaný dokument PDF uložíme.
-
-```csharp
-// Uložte označený dokument PDF
-document. Save(outFile);
-```
-
-## Krok 7: Zkontrolujte shodu s PDF/UA
-
- Můžeme také zkontrolovat, zda dokument vyhovuje PDF/UA pomocí`Validate` metoda`Document` třída.
-
-```csharp
-// Zkontrolujte shodu s PDF/UA
-document = new Document(outFile);
-bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
-```
-
-
-### Ukázkový zdrojový kód pro prvky Link Structure Elements pomocí Aspose.PDF pro .NET 
-```csharp
-
 // Cesta k adresáři dokumentů.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "LinkStructureElements_Output.pdf";
 string logFile = dataDir + "46035_log.xml";
 string imgFile = dataDir + "google-icon-512.png";
 
-//Vytvoření dokumentu a získání tagovaného obsahu PDF
+// Vytvořte nový dokument PDF
 Document document = new Document(); 
-ITaggedContent taggedContent = document.TaggedContent;
 
-// Nastavení názvu a přirozeného jazyka pro dokument
+// Načtěte rozhraní TaggedContent
+ITaggedContent taggedContent = document.TaggedContent;
+```
+  
+ Zde inicializujeme`Document` objekt, který představuje náš soubor PDF. Načítáme také`TaggedContent` rozhraní, které nám umožňuje přidávat prvky struktury, jako jsou odstavce, odkazy a obrázky.
+
+## Krok 2: Nastavte název a jazyk  
+
+Každý PDF by měl mít název a jazykové nastavení, zvláště pokud usilujete o shodu se standardy PDF/UA.
+
+```csharp
+// Nastavte název dokumentu a jazyk
 taggedContent.SetTitle("Link Elements Example");
 taggedContent.SetLanguage("en-US");
+```
+  
+Tento krok zajistí, že váš PDF bude mít smysluplný název a nastaví jazyk na angličtinu (`en-US`). To je důležité pro usnadnění přístupu a zajišťuje, že čtečky obrazovky nebo jiné pomocné technologie dokážou váš dokument správně interpretovat.
 
-// Získání prvku kořenové struktury (prvku struktury dokumentu)
+## Krok 3: Vytvořte a připojte odstavce  
+
+V tomto kroku přidáme odstavce, které budou obsahovat prvky odkazu.
+
+```csharp
+// Vytvořte kořenový prvek
 StructureElement rootElement = taggedContent.RootElement;
+
+// Vytvořte odstavec a přidejte jej do kořenového prvku
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p1);
+```
+  
+Vytvoříme element kořenové struktury, což je v podstatě kontejner nejvyšší úrovně pro všechny ostatní prvky. Poté vytvoříme odstavec (`p1`) a připojte jej ke kořenovému prvku.
+
+## Krok 4: Přidejte jednoduchý odkaz  
+
+Nyní přidáme základní hypertextový odkaz, který ukazuje na Google.
+
+```csharp
+// Vytvořte prvek odkazu a přidejte jej do odstavce
 LinkElement link1 = taggedContent.CreateLinkElement();
 p1.AppendChild(link1);
+
+// Nastavte hypertextový odkaz a text pro odkaz
 link1.Hyperlink = new WebHyperlink("http://google.com");
 link1.SetText("Google");
 link1.AlternateDescriptions = "Link to Google";
+```
+  
+tomto kroku jsme vytvořili prvek odkazu, nastavili jeho hypertextový odkaz na „http://google.com“ a poskytli text („Google“) pro odkaz. Také jsme přidali alternativní popis, abychom zajistili dostupnost.
+
+## Krok 5: Přidání odkazu s rozsahy  
+
+Můžeme také vytvářet odkazy s různými rozsahy textu.
+
+```csharp
+// Vytvořte další odstavec
 ParagraphElement p2 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p2);
+
+// Vytvořte odkaz s prvkem span
 LinkElement link2 = taggedContent.CreateLinkElement();
 p2.AppendChild(link2);
 link2.Hyperlink = new WebHyperlink("http://google.com");
+
 SpanElement span2 = taggedContent.CreateSpanElement();
 span2.SetText("Google");
 link2.AppendChild(span2);
+
 link2.AlternateDescriptions = "Link to Google";
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-LinkElement link3 = taggedContent.CreateLinkElement();
-p3.AppendChild(link3);
-link3.Hyperlink = new WebHyperlink("http://google.com");
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("G");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText("oogle");
-link3.AppendChild(span31);
-link3.SetText("-");
-link3.AppendChild(span32);
-link3.AlternateDescriptions = "Link to Google";
+```
+  
+Zde jsme použili prvek span k uzavření části textu v odkazu, což nám umožnilo přizpůsobit vzhled určitých částí odkazu.
+
+## Krok 6: Víceřádkové propojení  
+
+Co když je text vašeho odkazu příliš dlouhý? Žádný strach, můžete to rozdělit na více řádků.
+
+```csharp
 ParagraphElement p4 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p4);
+
 LinkElement link4 = taggedContent.CreateLinkElement();
 p4.AppendChild(link4);
 link4.Hyperlink = new WebHyperlink("http://google.com");
-link4.SetText("The multiline link: Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google");
+link4.SetText("The multiline link: Google Google Google Google Google...");
 link4.AlternateDescriptions = "Link to Google (multiline)";
+```
+  
+V tomto případě jsme vytvořili víceřádkový odkaz jednoduchým nastavením hodnoty dlouhého textu a text se automaticky zalomí přes více řádků.
+
+## Krok 7: Přidejte obrázek do odkazu  
+
+Nakonec můžete také přidat obrázky do odkazu.
+
+```csharp
+// Vytvořte nový odstavec a prvek odkazu
 ParagraphElement p5 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p5);
+
 LinkElement link5 = taggedContent.CreateLinkElement();
 p5.AppendChild(link5);
 link5.Hyperlink = new WebHyperlink("http://google.com");
+
+// Přidejte obrázek do odkazu
 FigureElement figure5 = taggedContent.CreateFigureElement();
 figure5.SetImage(imgFile, 1200);
 figure5.AlternativeText = "Google icon";
-StructureAttributes linkLayoutAttributes = link5.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-StructureAttribute placementAttribute = new StructureAttribute(AttributeKey.Placement);
-placementAttribute.SetNameValue(AttributeName.Placement_Block);
-linkLayoutAttributes.SetAttribute(placementAttribute);
 link5.AppendChild(figure5);
-link5.AlternateDescriptions = "Link to Google";
 
-// Uložit označený dokument PDF
+link5.AlternateDescriptions = "Link to Google";
+```
+  
+Tento krok ukazuje, jak můžete vylepšit své odkazy pomocí obrázku. V tomto případě jsme do odkazu přidali ikonu Google. Přístupnost jsme zajistili také nastavením alternativního textu obrázku.
+
+## Krok 8: Ověřte PDF z hlediska souladu  
+
+Pokud usilujete o shodu s PDF/UA (standard pro usnadnění), je dobré dokument ověřit.
+
+```csharp
+// Uložte dokument PDF
 document.Save(outFile);
 
-// Kontrola shody s PDF/UA
-document = new Document(outFile);
+// Ověřte, zda dokument vyhovuje PDF/UA
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
+Console.WriteLine($"PDF/UA compliance: {isPdfUaCompliance}");
 ```
-## Závěr
+  
+Dokument jsme uložili a ověřili podle standardu PDF/UA, který zajišťuje, že PDF splňuje požadavky na přístupnost.
 
-gratuluji! Naučili jste se používat prvky struktury odkazů s Aspose.PDF pro .NET. Nyní můžete ve svých dokumentech PDF vytvářet hypertextové odkazy, které uživatelům umožňují přejít na online zdroje. Experimentujte a prozkoumejte další funkce Aspose.PDF, abyste mohli vytvářet interaktivní a obohacené dokumenty PDF.
+## Závěr  
 
-### FAQ
+V tomto tutoriálu jsme probrali, jak vytvořit strukturované dokumenty PDF pomocí Aspose.PDF pro .NET. Od přidávání základních hypertextových odkazů až po složitější struktury, jako jsou rozpětí, víceřádkové odkazy a dokonce i obrázky, tato příručka poskytuje pevný základ pro manipulaci s prvky odkazů ve vašich PDF. S přidanou výhodou kompatibility s PDF/UA jste nyní vybaveni pro vytváření přístupných a procházení PDF.
 
-#### Otázka: Co jsou prvky struktury odkazů v dokumentu PDF a jak zlepšují interaktivitu dokumentu?
+## FAQ
 
-Odpověď: Prvky struktury odkazů v dokumentu PDF se používají k vytvoření hypertextových odkazů, které uživatelům umožňují přejít na online zdroje nebo konkrétní umístění v dokumentu. Tyto prvky zvyšují interaktivitu tím, že poskytují klikací odkazy, které uživatelům umožňují přístup k souvisejícímu obsahu nebo externím webovým stránkám.
+### Mohu do odkazů přidat složitější struktury, jako jsou tabulky?  
+Ne, odkazy jsou primárně určeny pro text a obrázky, ale v blízkosti můžete vložit složité prvky.
 
-#### Otázka: Jak mohou být prvky struktury odkazů užitečné v dokumentu PDF?
+### Je ověření PDF/UA povinné?  
+Ne vždy, ale důrazně se doporučuje, pokud vám jde o přístupnost.
 
-Odpověď: Prvky struktury odkazů vylepšují uživatelský zážitek tím, že dokument PDF je interaktivní. Poskytují rychlý přístup k dalším informacím, souvisejícímu obsahu, externím webovým stránkám nebo konkrétním sekcím v dokumentu, zlepšují navigaci a usnadňují vyhledávání informací.
+### Co se stane, když je cesta k souboru obrázku nesprávná?  
+Dokument nezobrazí obrázek a při vykreslování může dojít k chybě.
 
-#### Otázka: Mohu vytvořit různé typy hypertextových odkazů pomocí prvků struktury odkazů v Aspose.PDF pro .NET?
+### Mohu upravit styl textu v odkazu?  
+Ano, styly textu můžete použít pomocí prvků span.
 
-Odpověď: Ano, pomocí prvků struktury odkazů můžete vytvářet různé typy hypertextových odkazů. Aspose.PDF for .NET vám umožňuje vytvářet hypertextové odkazy s prostým textem, formátovaným textem, obrázky a víceřádkovými popisy, což nabízí všestrannost ve způsobu, jakým odkazujete na externí obsah nebo umístění v dokumentu.
-
-#### Otázka: Jak mohu nastavit a inicializovat prvky struktury odkazů v dokumentu PDF pomocí Aspose.PDF pro .NET?
-
- A: Chcete-li použít prvky struktury odkazů, musíte nejprve vytvořit nový dokument PDF pomocí`Document` třída. Poté získejte označený obsah pomocí`TaggedContent`vlastnost dokumentu. Odtud můžete vytvářet a přizpůsobovat prvky struktury odkazů a přidávat je do prvku kořenové struktury.
-
-#### Otázka: Jak mohu vytvořit jednoduchý textový hypertextový odkaz pomocí prvků struktury odkazu?
- Odpověď: Jednoduchý textový hypertextový odkaz můžete vytvořit vytvořením a`LinkElement` a jeho nastavení`Hyperlink` majetek do a`WebHyperlink` s adresou URL, na kterou chcete odkazovat. Můžete také nastavit zobrazovaný text odkazu pomocí`SetText` metoda.
-
-#### Otázka: Je možné vytvářet hypertextové odkazy s obrázky pomocí prvků struktury odkazů?
-
- Odpověď: Ano, pomocí prvků struktury odkazů můžete vytvářet hypertextové odkazy s obrázky. Vytvořili byste a`LinkElement` a poté připojte a`FigureElement` s obrázkem k tomu. To vám umožní vytvořit hypertextový odkaz založený na obrázku.
-
-#### Otázka: Jak mohu zajistit, aby můj dokument PDF s hypertextovými odkazy odpovídal standardu PDF/UA pro usnadnění?
-
- Odpověď: Aspose.PDF for .NET poskytuje možnost ověřit shodu vašeho dokumentu PDF se standardem PDF/UA pomocí`Validate` metoda`Document`třída. Tím je zajištěno, že hypertextové odkazy dokumentu jsou přístupné uživatelům se zdravotním postižením.
-
-#### Otázka: Co jsou alternativní popisy prvků struktury odkazů a proč jsou důležité?
-
-Odpověď: Alternativní popisy (alt text) pro prvky struktury odkazů poskytují textové popisy hypertextových odkazů. Tyto popisy jsou nezbytné pro přístupnost a umožňují uživatelům se zrakovým postižením pochopit účel odkazu a jeho cíl.
-
-#### Otázka: Mohu přizpůsobit vzhled a chování hypertextových odkazů vytvořených pomocí prvků struktury odkazů?
-
-Odpověď: Zatímco prvky struktury odkazů se primárně zaměřují na vytváření hypertextových odkazů, můžete si vzhled a chování hypertextových odkazů dále přizpůsobit pomocí dalších funkcí nabízených Aspose.PDF pro .NET. To zahrnuje specifikaci barev, stylů a akcí odkazu.
-
-#### Otázka: Jak přispívají prvky struktury odkazů k tomu, aby byly dokumenty PDF interaktivnější a uživatelsky přívětivější?
-
-Odpověď: Prvky struktury odkazů přeměňují statické dokumenty PDF na interaktivní prostředí přidáním hypertextových odkazů, na které lze kliknout. Tato interaktivita zlepšuje zapojení uživatelů, umožňuje bezproblémovou navigaci mezi souvisejícím obsahem a zlepšuje celkovou použitelnost dokumentu.
+### Je možné vytvořit interní odkazy na dokumenty?  
+Absolutně! Můžete odkazovat na konkrétní sekce ve stejném dokumentu.

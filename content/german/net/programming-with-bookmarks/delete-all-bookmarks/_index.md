@@ -45,7 +45,7 @@ using Aspose.Pdf;
 
 Nachdem wir nun alles eingerichtet haben, fahren wir mit dem eigentlichen Code zum Löschen von Lesezeichen fort.
 
-## Schritt 1: Dokumentverzeichnis definieren
+## Schritt 1: Definieren Sie das Dokumentverzeichnis
 
 Zunächst müssen Sie den Pfad zu Ihrer PDF-Datei angeben. Hier befindet sich Ihr Original-PDF und hier wird auch die aktualisierte Datei gespeichert.
 

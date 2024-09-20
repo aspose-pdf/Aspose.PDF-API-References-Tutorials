@@ -19,7 +19,7 @@ Mielőtt belemerülnénk a lépésről lépésre szóló útmutatóba, tekintsü
 2. IDE: Be kell állítania egy fejlesztői környezetet, például a Visual Studio-t.
 3. .NET-keretrendszer: A projektnek meg kell céloznia a .NET-keretrendszer Aspose.PDF-fel kompatibilis verzióját.
 4. Alapvető C# ismeretek: A zökkenőmentes követéshez a C# és a PDF-kezelés ismerete szükséges.
-5.  Licenc: Az Aspose.PDF teljes funkcióihoz licenc szükséges. Tudod[ideiglenes engedélyt szerezni](https://purchase.aspose.com/temporary-license/) ha szükséges.
+5.  Licenc: Az Aspose.PDF teljes funkcióihoz licenc szükséges. Megteheti[ideiglenes engedélyt szerezni](https://purchase.aspose.com/temporary-license/) ha szükséges.
 
 ## Csomagok importálása
 

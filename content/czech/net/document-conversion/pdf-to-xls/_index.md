@@ -9,7 +9,7 @@ url: /cs/net/document-conversion/pdf-to-xls/
 ---
 ## Zavedení
 
-V dnešním digitálním světě jsou data často uzamčena v souborech PDF, což ztěžuje manipulaci a analýzu. Ale co kdybych vám řekl, že tyto soubory PDF můžete snadno převést na tabulky aplikace Excel? To je pravda! S Aspose.PDF for .NET můžete bez námahy transformovat své dokumenty PDF do formátu XLS. Tento článek vás provede procesem krok za krokem a zajistí, že budete mít všechny nástroje a znalosti, které potřebujete, abyste mohli začít. Vezměte si svůj oblíbený nápoj a pojďme se ponořit do světa převodu PDF na XLS!
+V dnešním digitálním světě jsou data často uzamčena v souborech PDF, což ztěžuje manipulaci a analýzu. Ale co kdybych vám řekl, že tyto soubory PDF můžete snadno převést na tabulky aplikace Excel? Přesně tak! S Aspose.PDF for .NET můžete bez námahy transformovat své dokumenty PDF do formátu XLS. Tento článek vás provede procesem krok za krokem a zajistí, že budete mít všechny nástroje a znalosti, které potřebujete, abyste mohli začít. Vezměte si svůj oblíbený nápoj a pojďme se ponořit do světa převodu PDF na XLS!
 
 ## Předpoklady
 

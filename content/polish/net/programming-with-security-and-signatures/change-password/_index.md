@@ -60,7 +60,7 @@ Teraz wskażmy, gdzie znajduje się Twój plik PDF. Będziesz chciał określić
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
 
- Zastępować`"YOUR DOCUMENTS DIRECTORY"` z rzeczywistą ścieżką do twojego katalogu. Na przykład może to wyglądać tak:`"C:\\Documents\\"`.
+ Zastępować`"YOUR DOCUMENTS DIRECTORY"` z rzeczywistą ścieżką do Twojego katalogu. Na przykład, może wyglądać tak:`"C:\\Documents\\"`.
 
 ## Krok 4: Otwórz dokument PDF
 

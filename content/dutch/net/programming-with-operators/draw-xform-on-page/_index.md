@@ -63,7 +63,7 @@ using (Document doc = new Document(inFile))
 
  Met behulp van de`using` De instructie zorgt ervoor dat de bronnen automatisch worden opgeschoond zodra de bewerkingen zijn voltooid.
 
-## Stap 3: Ga naar de pagina-inhoud en begin met tekenen
+## Stap 3: Ga naar de inhoud van de pagina en begin met tekenen
 
 Instellen voor tekenbewerkingen
 

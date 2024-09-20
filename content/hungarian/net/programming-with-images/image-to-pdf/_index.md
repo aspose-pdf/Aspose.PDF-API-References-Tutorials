@@ -65,7 +65,7 @@ Ez a lépés egy oldal hozzáadása az újonnan létrehozott PDF-dokumentumhoz. 
 ## 4. lépés: Töltse be a képet
 
 ```csharp
-// Töltse be a forrásképfájlt a Stream objektumba
+// Töltse be a forrás képfájlt a Stream objektumba
 using (FileStream fs = new FileStream(dataDir + "aspose-logo.jpg", FileMode.Open, FileAccess.Read))
 {
     byte[] tmpBytes = new byte[fs.Length];
@@ -119,7 +119,7 @@ Ezen a ponton hozzáadja a képobjektumot a PDF-oldal bekezdésgyűjteményéhez
 ## 9. lépés: Állítsa be a képfolyamot
 
 ```csharp
-    // Állítsa be a képfájl adatfolyamot
+    // Állítsa be a képfájl adatfolyamát
     image1.ImageStream = mystream;
 ```
 

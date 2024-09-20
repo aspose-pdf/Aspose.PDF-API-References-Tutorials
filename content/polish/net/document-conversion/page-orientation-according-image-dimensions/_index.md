@@ -123,7 +123,7 @@ doc.Save(dataDir + "SetPageOrientation_out.pdf");
 
 ## Wniosek
 
-I masz to! Udało Ci się utworzyć dokument PDF przy użyciu Aspose.PDF dla .NET, ustawiając orientację strony na podstawie wymiarów obrazów. Ta potężna biblioteka otwiera świat możliwości pracy z plikami PDF w Twoich aplikacjach. Niezależnie od tego, czy generujesz raporty, faktury czy jakikolwiek inny typ dokumentu, Aspose.PDF ma dla Ciebie rozwiązanie.
+I masz! Udało Ci się utworzyć dokument PDF przy użyciu Aspose.PDF dla .NET, ustawiając orientację strony na podstawie wymiarów obrazów. Ta potężna biblioteka otwiera świat możliwości pracy z plikami PDF w Twoich aplikacjach. Niezależnie od tego, czy generujesz raporty, faktury czy jakikolwiek inny typ dokumentu, Aspose.PDF ma dla Ciebie rozwiązanie.
 
 ## Najczęściej zadawane pytania
 

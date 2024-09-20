@@ -17,7 +17,7 @@ Antes de profundizar en el código y los procesos, deberá asegurarse de tener a
 
 - Entorno .NET: Debe tener instalado .NET Framework en su equipo. Elija la versión adecuada según los requisitos de su proyecto.
 - Aspose.PDF para .NET: Asegúrese de tener la biblioteca Aspose.PDF. Puede descargarla desde[aquí](https://releases.aspose.com/pdf/net/) o empieza con una prueba gratuita[aquí](https://releases.aspose.com/).
-- Archivo de imagen: también necesitas un archivo de imagen (como JPG o PNG) que quieras guardar en el PDF. Para este ejemplo, usaremos un archivo llamado "aspose-logo.jpg".
+- Archivo de imagen: también necesitas un archivo de imagen (como JPG o PNG) que quieras almacenar en el PDF. Para este ejemplo, usaremos un archivo llamado "aspose-logo.jpg".
 - Comprensión básica de C#: estar familiarizado con la programación en C# le ayudará a seguir el proceso sin problemas.
 
 ## Importar paquetes

@@ -92,11 +92,11 @@ PdfProducer.Produce(inputFile, ImportFormat.Cgm, dataDir);
 Console.WriteLine("\nLarge CGM file converted to PDF successfully.\nFile saved at " + dataDir);
 ```
 
-現在你就得到它了！您已透過簡單的流程將龐大的 CGM 影像轉換為清晰的 PDF。慶祝您的編碼勝利！
+現在你就擁有了！您已透過簡單的流程將龐大的 CGM 影像轉換為清晰的 PDF。慶祝您的編碼勝利！
 
 ## 結論
 
-使用 Aspose.PDF for .NET 將大型 CGM 影像轉換為 PDF 可能會讓人望而生畏，但透過本逐步指南，您可以輕鬆掌握這些工具。無論是用於業務報告、技術繪圖或任何其他目的，您現在都可以輕鬆管理和共享圖形內容。那為什麼還要等呢？試試看並享受流暢的轉換過程！
+使用 Aspose.PDF for .NET 將大型 CGM 影像轉換為 PDF 可能會讓人感到畏懼，但透過本逐步指南，您可以輕鬆獲得這些工具。無論是用於業務報告、技術繪圖或任何其他目的，您現在都可以輕鬆管理和共享圖形內容。那為什麼還要等呢？試試看並享受流暢的轉換過程！
 
 ## 常見問題解答
 

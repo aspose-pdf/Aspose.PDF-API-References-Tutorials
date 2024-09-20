@@ -148,7 +148,7 @@ Gratuluji! Úspěšně jste přidali obrázek a text do záhlaví dokumentu PDF 
  Ano! Číslo stránky můžete snadno přidat pomocí`TextFragment` třídy a podle potřeby jej naformátujte. Stačí jej vložit do sekce záhlaví jako vložený obsah.
 
 ### Jak nastavím obrázek na pozadí v záhlaví?
- Můžete použít`BackgroundImage` vlastnictví`HeaderFooter` třídy pro nastavení obrázku na pozadí. Nejedná se však o vložený obsah a pokryje celou oblast záhlaví.
+ Můžete použít`BackgroundImage` vlastnictvím`HeaderFooter` třídy pro nastavení obrázku na pozadí. Nejedná se však o vložený obsah a pokryje celou oblast záhlaví.
 
 ### Je možné použít jiné obrazové formáty kromě JPEG?
 Absolutně! Aspose.PDF podporuje různé formáty obrázků, jako jsou PNG, BMP a GIF.

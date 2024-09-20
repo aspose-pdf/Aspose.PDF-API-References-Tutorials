@@ -2,7 +2,7 @@
 title: Získejte pole z oblasti v souboru PDF
 linktitle: Získejte pole z oblasti v souboru PDF
 second_title: Aspose.PDF pro .NET API Reference
-description: Naučte se, jak extrahovat pole ze zadané oblasti v souborech PDF bez námahy pomocí Aspose.PDF for .NET, v tomto komplexním průvodci.
+description: Naučte se, jak extrahovat pole ze zadané oblasti do souborů PDF bez námahy pomocí Aspose.PDF for .NET, v tomto komplexním průvodci.
 type: docs
 weight: 130
 url: /cs/net/programming-with-forms/get-fields-from-region/
@@ -100,7 +100,7 @@ Aspose.Pdf.Rectangle rectangle = new Aspose.Pdf.Rectangle(35, 30, 500, 500);
 
 ## Krok 5: Otevřete formulář PDF
 
- Nyní potřebujeme získat přístup k formuláři v našem dokumentu PDF. To se provádí prostřednictvím`Forms` vlastnictví`Document` objekt.
+ Nyní potřebujeme získat přístup k formuláři v našem dokumentu PDF. To se provádí prostřednictvím`Forms` vlastnictvím`Document` objekt.
 
 Pro přístup k formuláři použijte následující kód:
 

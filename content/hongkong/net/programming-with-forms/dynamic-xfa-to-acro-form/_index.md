@@ -89,7 +89,7 @@ Console.WriteLine("\nDynamic XFA form converted to standard AcroForm successfull
 
 ## 結論
 
-現在你就得到它了！您已使用 Aspose.PDF for .NET 成功將動態 XFA 表單轉換為標準 AcroForm。此過程不僅簡化了 PDF 表單，還增強了跨不同平台的兼容性。無論您是開發需要使用者輸入的應用程式還是僅需要更有效地管理 PDF 文檔，了解如何操作表單都是一項寶貴的技能。
+現在你就擁有了！您已使用 Aspose.PDF for .NET 成功將動態 XFA 表單轉換為標準 AcroForm。此過程不僅簡化了 PDF 表單，還增強了跨不同平台的兼容性。無論您是開發需要使用者輸入的應用程式還是僅需要更有效地管理 PDF 文檔，了解如何操作表單都是一項寶貴的技能。
 
 ## 常見問題解答
 

@@ -43,7 +43,7 @@ Om te beginnen met werken met Aspose.PDF voor .NET, moet u eerst de benodigde pa
 
 ### Voeg richtlijnen toe
 
- Bovenaan je`Program.cs` bestand, voeg de volgende using-richtlijn toe om de Aspose.PDF-naamruimte op te nemen:
+ Bovenaan je`Program.cs` bestand, voeg de volgende using -richtlijn toe om de Aspose.PDF-naamruimte op te nemen:
 
 ```csharp
 using System.IO;

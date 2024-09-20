@@ -54,7 +54,7 @@ Nachdem die richtige Einrichtung abgeschlossen ist, können wir uns nun mit dem 
 
 Möchten Sie die Funktionsweise Ihrer Links in PDF-Dokumenten ändern? Lassen Sie uns den Code Schritt für Schritt aufschlüsseln, damit Sie Ziellinks problemlos festlegen können.
 
-## Schritt 1: Dokumentverzeichnis definieren 
+## Schritt 1: Definieren Sie das Dokumentverzeichnis 
 
 Zunächst müssen Sie angeben, wo sich Ihre Dokumente befinden. Hier werden Ihre Eingabe- und Ausgabedateien gespeichert. 
 

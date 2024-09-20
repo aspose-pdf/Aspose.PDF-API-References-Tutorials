@@ -14,7 +14,7 @@ PDF-documenten zijn een standaard geworden voor het digitaal delen van informati
 
 ## Aan de slag met Aspose.PDF voor Java
 
- Om te beginnen moet u uw ontwikkelomgeving instellen. Zorg ervoor dat u de Aspose.PDF voor Java-bibliotheek hebt geïnstalleerd. U kunt deze downloaden van[hier](https://releases.aspose.com/pdf/java/).
+Om te beginnen moet u uw ontwikkelomgeving instellen. Zorg ervoor dat u de Aspose.PDF voor Java-bibliotheek hebt geïnstalleerd. U kunt deze downloaden van[hier](https://releases.aspose.com/pdf/java/).
 
 ## Een PDF-document maken
 

@@ -2,7 +2,7 @@
 title: Szövegdoboz
 linktitle: Szövegdoboz
 second_title: Aspose.PDF for .NET API Reference
-description: Fedezze fel, hogyan adhat könnyedén szövegdobozokat PDF-fájlokhoz az Aspose.PDF for .NET segítségével ezzel a lépésről lépésre szóló útmutatóval. Javítsa a felhasználói interakciót.
+description: Fedezze fel, hogyan adhat könnyedén szövegdobozokat PDF-fájlokhoz az Aspose.PDF for .NET segítségével ezzel a lépésenkénti útmutatóval. Javítsa a felhasználói interakciót.
 type: docs
 weight: 290
 url: /hu/net/programming-with-forms/text-box/

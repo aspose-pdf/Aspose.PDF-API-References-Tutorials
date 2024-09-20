@@ -2,26 +2,46 @@
 title: Tag Gambar Dalam PDF yang Ada
 linktitle: Tag Gambar Dalam PDF yang Ada
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Pelajari cara menandai gambar dalam PDF yang sudah ada dengan Aspose.PDF untuk .NET. Panduan Langkah demi Langkah untuk Menambahkan Tag ke Gambar.
+description: Pelajari cara memberi tag pada gambar dalam PDF yang ada menggunakan Aspose.PDF for .NET. Panduan langkah demi langkah untuk meningkatkan aksesibilitas dengan kepatuhan PDF/UA.
 type: docs
 weight: 210
 url: /id/net/programming-with-tagged-pdf/tag-image-in-existing-pdf/
 ---
-Dalam tutorial terperinci ini, kami akan memandu Anda melalui kode sumber C# yang disediakan langkah demi langkah untuk menandai gambar dalam PDF yang sudah ada menggunakan Aspose.PDF untuk .NET. Ikuti petunjuk di bawah ini untuk memahami cara menambahkan tag ke gambar dalam PDF.
+## Perkenalan
 
-## Langkah 1: Menyiapkan lingkungan
+Dalam tutorial ini, kami akan memandu Anda untuk memberi tag pada gambar dalam PDF yang sudah ada menggunakan Aspose.PDF for .NET. Di akhir panduan ini, Anda akan dapat mengatur teks alternatif untuk gambar, menyesuaikan atribut tata letak, dan memastikan PDF Anda mematuhi standar aksesibilitas.
 
-Sebelum memulai, pastikan Anda telah mengonfigurasi lingkungan pengembangan Anda untuk menggunakan Aspose.PDF untuk .NET. Ini termasuk menginstal pustaka Aspose.PDF dan mengonfigurasi proyek Anda untuk merujuknya.
+## Prasyarat
 
-## Langkah 2: Buka dokumen PDF yang ada
+Sebelum kita mulai, mari kita bahas apa saja yang Anda perlukan untuk memulai:
 
-Pada langkah ini, kita akan membuka dokumen PDF yang ada menggunakan Aspose.PDF.
+-  Aspose.PDF untuk .NET: Pastikan Anda telah mengunduh dan menginstal versi terbaru Aspose.PDF untuk .NET.[Unduh di sini](https://releases.aspose.com/pdf/net/).
+- .NET Framework: Pastikan Anda telah menyiapkan lingkungan pengembangan .NET seperti Visual Studio.
+- Pemahaman Dasar tentang Struktur PDF: Keakraban dengan elemen struktur PDF seperti paragraf, rentang, tabel, dan gambar.
+-  Lisensi yang Valid: Anda dapat membeli lisensi[Di Sini](https://purchase.aspose.com/buy) atau gunakan yang sementara[Di Sini](https://purchase.aspose.com/temporary-license/).
+
+## Paket Impor
+
+Untuk memulai pengodean, Anda perlu mengimpor namespace penting dari Aspose.PDF untuk .NET. Ini akan memberi Anda akses ke kelas dan metode yang diperlukan untuk memanipulasi dokumen PDF.
+
+```csharp
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Sekarang setelah kita menyiapkan tahapannya, mari kita uraikan proses penandaan gambar ke dalam beberapa langkah.
+
+## Langkah 1: Muat Dokumen PDF yang Ada
+
+Langkah pertama adalah memuat berkas PDF yang ingin Anda gunakan. Ini bisa berupa berkas PDF apa pun dengan gambar yang ingin Anda beri tag.
 
 ```csharp
 // Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// Jalur file input dan output
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "TH.pdf";
 string outFile = dataDir + "TH_out.pdf";
 string logFile = dataDir + "TH_out.xml";
@@ -30,11 +50,12 @@ string logFile = dataDir + "TH_out.xml";
 Document document = new Document(inFile);
 ```
 
-Kami membuka dokumen PDF yang ada menggunakan Aspose.PDF.
+-  Mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya ke berkas Anda.
+-  Itu`Document` kelas memungkinkan Anda memuat PDF yang sudah ada. Anda akan memodifikasi PDF ini untuk menandai gambar.
 
-## Langkah 3: Dapatkan Konten yang Ditandai dan Elemen Struktur Root
+## Langkah 2: Akses Konten yang Ditandai dan Elemen Struktur Root
 
-Sekarang kita akan mendapatkan konten yang ditandai dari dokumen PDF dan elemen struktur akar yang sesuai.
+Setelah Anda membuka PDF, langkah selanjutnya adalah mengakses konten yang diberi tag dan mengidentifikasi elemen struktur akar. Hal ini penting karena memungkinkan Anda menelusuri elemen-elemen dalam PDF dan melakukan modifikasi.
 
 ```csharp
 // Dapatkan konten yang ditandai dan elemen struktur root
@@ -42,161 +63,97 @@ ITaggedContent taggedContent = document.TaggedContent;
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-Kami mendapatkan konten yang ditandai dari dokumen PDF dan elemen struktur akar yang sesuai.
+- `TaggedContent` menyediakan akses ke elemen terstruktur dalam PDF.
+-  Itu`RootElement` adalah elemen struktur paling atas, dari mana Anda dapat menelusuri ke elemen lain seperti paragraf, tabel, dan gambar.
 
-## Langkah 4: Mengatur judul untuk dokumen PDF yang diberi tag
+## Langkah 3: Tetapkan Judul untuk Dokumen PDF yang Ditandai
 
-Sekarang mari kita tetapkan judul untuk dokumen PDF yang diberi tag.
+Menambahkan judul pada dokumen PDF yang diberi tag memastikan bahwa dokumen Anda diberi label dengan benar, yang berguna untuk aksesibilitas dan kepatuhan PDF/UA.
 
 ```csharp
-// Tentukan judul untuk dokumen PDF yang diberi tag
+// Tetapkan judul untuk dokumen PDF yang diberi tag
 taggedContent.SetTitle("Document with images");
 ```
 
-Kami telah menetapkan judul untuk dokumen PDF yang diberi tag.
+- Menetapkan judul untuk PDF yang diberi tag akan meningkatkan aksesibilitas dan menambah kejelasan dokumen untuk pembaca layar dan teknologi bantuan.
 
-## Langkah 5: Tetapkan teks alt dan kotak pembatas ke gambar
+## Langkah 4: Temukan dan Beri Tag pada Gambar
 
-Sekarang, untuk setiap elemen gambar, kita akan menetapkan teks alt dan kotak pembatas.
-
-```csharp
-foreach(FigureElement figureElement in rootElement.FindElements<FigureElement>(true))
-{
-     // Tetapkan teks alternatif ke gambar
-     figureElement.AlternativeText = "Alternative text for image (technique 2)";
-     // Membuat dan menetapkan kotak pembatas (bbox)
-     StructureAttribute bboxAttribute = new StructureAttribute(AttributeKey.BBox);
-     bboxAttribute.SetRectangleValue(new Rectangle(0.0, 0.0, 100.0, 100.0));
-     StructureAttributes figureLayoutAttributes = figureElement.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-     figureLayoutAttributes.SetAttribute(bboxAttribute);
-}
-```
-
-Kami telah menetapkan teks alt dan kotak pembatas untuk setiap elemen gambar dalam dokumen PDF.
-
-## Langkah 6: Memindahkan elemen Span ke dalam paragraf
-
-Sekarang mari pindahkan elemen Span ke dalam paragraf.
+ Sekarang, mari kita temukan elemen gambar (disebut sebagai`FigureElement` dalam Aspose.PDF), tetapkan teks alternatif untuknya, dan konfigurasikan atribut tata letaknya.
 
 ```csharp
-// Pindahkan elemen Span ke paragraf (temukan span dan paragraf yang salah di TD pertama)
-TableElement tableElement = rootElement.FindElements<TableElement>(true)[0];
-SpanElement spanElement = tableElement.FindElements<SpanElement>(true)[0];
-TableTDElement firstTdElement = tableElement.FindElements<TableTDElement>(true)[0];
-ParagraphElement paragraph = firstTdElement.FindElements<ParagraphElement>(true)[0];
-
-// Pindahkan elemen Span di paragraf
-spanElement.ChangeParentElement(paragraph);
-```
-
-Kami memindahkan elemen Span ke paragraf yang ditentukan.
-
-## Langkah 7: Menyimpan dokumen PDF yang dimodifikasi
-
-Sekarang setelah kita membuat perubahan yang diperlukan, kita akan menyimpan dokumen PDF yang telah dimodifikasi.
-
-```csharp
-// Simpan dokumen PDF
-document. Save(outFile);
-```
-
-Kami menyimpan dokumen PDF yang dimodifikasi di direktori yang ditentukan.
-
-### Contoh kode sumber untuk Tag Gambar dalam PDF yang Ada menggunakan Aspose.PDF untuk .NET 
-
-```csharp
-
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string inFile = dataDir + "TH.pdf";
-string outFile = dataDir + "TH_out.pdf";
-string logFile = dataDir + "TH_out.xml";
-
-// Buka dokumen
-Document document = new Document(inFile);
-
-// Mendapatkan konten yang ditandai dan elemen struktur akar
-ITaggedContent taggedContent = document.TaggedContent;
-StructureElement rootElement = taggedContent.RootElement;
-
-// Tetapkan judul untuk dokumen pdf yang diberi tag
-taggedContent.SetTitle("Document with images");
+// Ulangi semua elemen Gambar (gambar) dan atur teks alternatif serta atribut tata letak
 foreach (FigureElement figureElement in rootElement.FindElements<FigureElement>(true))
 {
-	// Tetapkan Teks Alternatif untuk Gambar
-	figureElement.AlternativeText = "Figure alternative text (technique 2)";
-	// Membuat dan Mengatur Atribut BBox
-	StructureAttribute bboxAttribute = new StructureAttribute(AttributeKey.BBox);
-	bboxAttribute.SetRectangleValue(new Rectangle(0.0, 0.0, 100.0, 100.0));
-	StructureAttributes figureLayoutAttributes = figureElement.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-	figureLayoutAttributes.SetAttribute(bboxAttribute);
+    // Tetapkan teks alternatif untuk gambar
+    figureElement.AlternativeText = "Figure alternative text (technique 2)";
+    
+    // Membuat dan mengatur atribut BBox (kotak pembatas)
+    StructureAttribute bboxAttribute = new StructureAttribute(AttributeKey.BBox);
+    bboxAttribute.SetRectangleValue(new Aspose.Pdf.Rectangle(0.0, 0.0, 100.0, 100.0));
+    
+    // Tetapkan atribut tata letak untuk gambar
+    StructureAttributes figureLayoutAttributes = figureElement.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
+    figureLayoutAttributes.SetAttribute(bboxAttribute);
 }
+```
 
-// Pindahkan Elemen Span ke Paragraf (temukan span dan paragraf yang salah di TD pertama)
+-  Kode ini mengulang semua`FigureElement` objek dalam struktur akar, yang merepresentasikan gambar.
+- Ini menetapkan teks alternatif untuk aksesibilitas (pembaca layar akan menggunakan ini untuk mendeskripsikan gambar).
+- Kotak pembatas (`BBox`menentukan koordinat untuk tata letak gambar, memastikannya ditampilkan dengan benar dalam dokumen.
+
+## Langkah 5: Ubah Elemen Span dalam Tabel
+
+ Dalam beberapa kasus, Anda mungkin perlu mengubah elemen span dalam tabel. Di sini, kami akan menunjukkan cara menemukan`SpanElement` dan memindahkannya ke dalam paragraf.
+
+```csharp
+// Temukan elemen tabel, rentang, dan paragraf
 TableElement tableElement = rootElement.FindElements<TableElement>(true)[0];
 SpanElement spanElement = tableElement.FindElements<SpanElement>(true)[0];
 TableTDElement firstTdElement = tableElement.FindElements<TableTDElement>(true)[0];
 ParagraphElement paragraph = firstTdElement.FindElements<ParagraphElement>(true)[0];
 
-// Pindahkan Elemen Span ke Paragraf
+// Pindahkan elemen span ke dalam paragraf
 spanElement.ChangeParentElement(paragraph);
+```
 
-// Simpan dokumen
+-  Di sini, kita menemukan`TableElement`, `SpanElement` , Dan`ParagraphElement` dalam PDF.
+-  Menggunakan`ChangeParentElement` metode, kami memindahkan rentang ke dalam paragraf untuk memastikan penandaan dan struktur yang tepat.
+
+## Langkah 6: Simpan Dokumen dan Validasi Kepatuhan PDF/UA
+
+Setelah semua perubahan dibuat, langkah terakhir adalah menyimpan PDF yang diperbarui dan memeriksa apakah sudah mematuhi standar PDF/UA.
+
+```csharp
+// Simpan dokumen PDF yang diperbarui
 document.Save(outFile);
 
-//Memeriksa Kepatuhan PDF/UA untuk dokumen kami
+// Validasi kepatuhan PDF/UA
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
 ```
+
+-  Itu`Validate` Metode ini memeriksa dokumen PDF terhadap standar PDF/UA dan mencatat hasilnya.
+- Memastikan kepatuhan membantu meningkatkan aksesibilitas dan memenuhi persyaratan peraturan untuk penerbitan dokumen.
 
 ## Kesimpulan
 
-Dalam tutorial ini, kita mempelajari cara menandai gambar dalam PDF yang sudah ada menggunakan Aspose.PDF untuk .NET. Kini Anda dapat menggunakan Aspose.PDF untuk menambahkan tag dan mengedit gambar dalam dokumen PDF Anda.
+Dalam tutorial ini, kami telah menunjukkan kepada Anda cara memberi tag pada gambar dalam PDF yang sudah ada menggunakan Aspose.PDF untuk .NET. Dengan menetapkan teks alternatif, menyesuaikan atribut tata letak, dan memvalidasi dokumen untuk kepatuhan PDF/UA, Anda dapat memastikan bahwa PDF Anda dapat diakses dan memenuhi standar modern. Aspose.PDF memudahkan Anda untuk bekerja dengan elemen terstruktur, memberi Anda kendali atas tata letak dan aksesibilitas dokumen Anda.
 
-### Pertanyaan yang Sering Diajukan
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa tujuan utama tutorial ini untuk menandai gambar dalam PDF yang ada menggunakan Aspose.PDF for .NET?
+### Untuk apa Aspose.PDF for .NET digunakan?
+Aspose.PDF untuk .NET adalah pustaka hebat yang digunakan untuk membuat, mengedit, dan memanipulasi dokumen PDF secara terprogram dalam lingkungan .NET.
 
-J: Tujuan utama tutorial ini adalah memandu Anda melalui proses penandaan gambar dalam dokumen PDF yang ada menggunakan Aspose.PDF for .NET. Tutorial ini menyediakan petunjuk langkah demi langkah dan contoh kode sumber C# untuk membantu Anda memahami cara menetapkan teks alternatif dan kotak pembatas pada gambar, memindahkan elemen dalam dokumen, dan menambahkan tag pada gambar.
+### Bagaimana cara memastikan kepatuhan PDF/UA?
+ Anda dapat menggunakan Aspose.PDF`Validate` metode untuk memeriksa kepatuhan PDF/UA setelah membuat modifikasi pada dokumen.
 
-#### T: Apa saja prasyarat untuk mengikuti tutorial penandaan gambar dalam PDF menggunakan Aspose.PDF for .NET?
+### Apa itu teks alternatif dalam PDF?
+Teks alternatif adalah deskripsi yang ditambahkan ke gambar dalam PDF untuk meningkatkan aksesibilitas, khususnya bagi pengguna yang mengandalkan pembaca layar.
 
-J: Sebelum memulai, pastikan Anda telah menyiapkan lingkungan pengembangan untuk menggunakan Aspose.PDF untuk .NET. Ini melibatkan pemasangan pustaka Aspose.PDF dan konfigurasi proyek Anda untuk merujuknya.
+### Bisakah saya memanipulasi tabel dan rentang dalam PDF dengan Aspose.PDF?
+Ya, Aspose.PDF memungkinkan Anda memanipulasi tabel, rentang, dan elemen terstruktur lainnya dalam dokumen PDF.
 
-#### T: Bagaimana cara membuka dokumen PDF yang ada dan mengakses konten yang diberi tag menggunakan Aspose.PDF untuk .NET?
-
-A: Tutorial ini menyediakan contoh kode sumber C# yang menunjukkan cara membuka dokumen PDF yang ada menggunakan Aspose.PDF for .NET dan mengakses konten yang diberi tag untuk manipulasi lebih lanjut.
-
-#### T: Apa tujuan menetapkan teks alternatif dan kotak pembatas pada gambar dalam dokumen PDF?
-
-A: Menetapkan teks alternatif dan kotak pembatas pada gambar meningkatkan aksesibilitas dengan menyediakan teks deskriptif untuk gambar dan menentukan tata letak serta posisinya dalam dokumen. Informasi ini penting untuk pembaca layar dan teknologi bantuan lainnya.
-
-#### T: Bagaimana cara menetapkan judul untuk dokumen PDF yang diberi tag menggunakan Aspose.PDF untuk .NET?
-
-A: Tutorial menyertakan contoh kode sumber C# yang mengilustrasikan cara menetapkan judul untuk dokumen PDF yang diberi tag menggunakan Aspose.PDF untuk .NET.
-
-#### T: Apa saja proses pemindahan elemen dalam dokumen PDF?
-
-A: Memindahkan elemen dalam dokumen PDF melibatkan perubahan elemen induk dari elemen tertentu. Dalam tutorial ini, Anda akan mempelajari cara memindahkan elemen Span ke elemen Paragraph tertentu dalam tabel.
-
-#### T: Bagaimana cara menyimpan dokumen PDF yang dimodifikasi setelah menambahkan tag dan mengedit gambar?
-
- A: Setelah Anda menambahkan tag, menetapkan teks alternatif, mengatur kotak pembatas, dan melakukan pengeditan pada dokumen PDF, Anda dapat menggunakan contoh kode sumber C# yang disediakan untuk menyimpan dokumen PDF yang dimodifikasi menggunakan`Save()` metode.
-
-#### T: Apa tujuan dari contoh kode sumber yang disediakan dalam tutorial?
-
-A: Contoh kode sumber berfungsi sebagai referensi praktis untuk menerapkan penandaan dan manipulasi gambar menggunakan Aspose.PDF untuk .NET. Anda dapat menggunakan kode ini sebagai titik awal dan memodifikasinya agar sesuai dengan kebutuhan spesifik Anda.
-
-#### T: Dapatkah saya menerapkan teknik ini ke jenis elemen lain dalam dokumen PDF, bukan hanya gambar?
-
-J: Ya, teknik yang ditunjukkan dalam tutorial ini dapat disesuaikan untuk bekerja dengan berbagai jenis elemen dalam dokumen PDF. Anda dapat menerapkan prinsip serupa untuk memberi tag dan memanipulasi elemen lain seperti teks, tabel, dan lainnya.
-
-#### T: Bagaimana saya dapat memvalidasi kepatuhan PDF/UA dari dokumen PDF yang dimodifikasi?
-
- A: Tutorial ini menyediakan contoh kode sumber C# yang menunjukkan cara memvalidasi kepatuhan PDF/UA dari dokumen PDF yang dimodifikasi dengan menggunakan`Validate()` metode dan menghasilkan laporan XML.
-
-#### T: Fitur lain apa yang ditawarkan Aspose.PDF for .NET untuk bekerja dengan dokumen PDF?
-
-J: Aspose.PDF untuk .NET menawarkan berbagai fitur untuk bekerja dengan dokumen PDF, termasuk manipulasi teks, penyisipan gambar, pembuatan tabel, manajemen bidang formulir, tanda tangan digital, anotasi, dan banyak lagi. Lihat dokumentasi dan sumber daya resmi untuk eksplorasi lebih lanjut.
+### Di mana saya dapat mengunduh Aspose.PDF untuk .NET?
+ Anda dapat mengunduh versi terbaru Aspose.PDF untuk .NET[Di Sini](https://releases.aspose.com/pdf/net/).

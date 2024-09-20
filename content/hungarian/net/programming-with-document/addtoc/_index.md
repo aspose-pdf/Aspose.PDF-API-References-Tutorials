@@ -70,7 +70,7 @@ tocInfo.Title = title;
 tocPage.TocInfo = tocInfo;
 ```
 
-Itt a tartalomjegyzék címét "Tartalomjegyzék"-re adtuk, megnöveltük a betűméretet, és félkövérré tettük a kiemelés érdekében.
+Itt a TOC címét "Tartalomjegyzék"-re állítottuk, megnöveltük a betűméretet, és félkövérré tettük a kiemelés érdekében.
 
 ## 4. lépés: Határozza meg a TOC elemeket
 

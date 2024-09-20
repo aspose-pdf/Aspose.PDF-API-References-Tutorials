@@ -90,7 +90,7 @@ Console.WriteLine("\nPDF file converted to PDF/A-3B format.\nFile saved at " + d
 
 ## 結論
 
-現在你就得到它了！使用 Aspose.PDF for .NET 將 PDF 檔案轉換為 PDF/A-3B 格式的簡單指南。如果您按照這些步驟操作，您應該已準備好轉換後的文件。該工具可以節省您的時間並確保您的 PDF 不會過時。
+現在你就擁有了！使用 Aspose.PDF for .NET 將 PDF 檔案轉換為 PDF/A-3B 格式的簡單指南。如果您按照這些步驟操作，您應該已準備好轉換後的文件。該工具可以節省您的時間並確保您的 PDF 不會過時。
 
 ## 常見問題解答
 

@@ -76,7 +76,7 @@ using (FileStream imageStream = new FileStream(dataDir + "aspose-logo.jpg", File
 
 ## 步驟5：將圖像加入到頁面資源中
 
-現在您已經準備好圖像了，是時候將其添加到頁面資源中了，本質上是告訴 PDF，“嘿，我有一張很酷的圖像，我希望您記住！”
+現在您已準備好圖像，是時候將其添加到頁面資源中了，本質上是告訴 PDF，“嘿，我有一張很酷的圖像，我希望您記住！”
 
 ```csharp
 page.Resources.Images.Add(imageStream, ImageFilterType.Flate);
@@ -143,7 +143,7 @@ document.Save(dataDir + "FlateDecodeCompression.pdf");
 
 ## 結論
 
-現在你就得到它了！您已經了解如何使用 Aspose.PDF for .NET 將影像逐點儲存在 XImage 集合中。看到您的程式碼成形並產生一些有用的東西不是很令人高興嗎？無論您是要建立應用程式還是只是希望自動化報告，本指南都是一個很好的基礎部分。請記住，Aspose.PDF 的強大功能可以幫助您完成除此之外的多種任務，所以請繼續探索！
+現在你就擁有了！您已經了解如何使用 Aspose.PDF for .NET 將影像逐點儲存在 XImage 集合中。看到您的程式碼成形並產生一些有用的東西不是很令人高興嗎？無論您是要建立應用程式還是只是希望自動化報告，本指南都是一個很好的基礎部分。請記住，Aspose.PDF 的強大功能可以幫助您完成除此之外的多種任務，所以請繼續探索！
 
 ## 常見問題解答
 

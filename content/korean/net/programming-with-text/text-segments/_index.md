@@ -7,138 +7,135 @@ type: docs
 weight: 540
 url: /ko/net/programming-with-text/text-segments/
 ---
-이 튜토리얼은 Aspose.PDF for .NET을 사용하여 PDF 파일에서 특정 텍스트 세그먼트를 검색하는 방법을 설명합니다. 제공된 C# 소스 코드는 정규 표현식을 사용하여 다양한 시나리오를 보여줍니다.
+## 소개
+
+PDF 문서는 오늘날 디지털 세계에서 널리 쓰이며, 공식 보고서에서 전자책에 이르기까지 모든 용도로 사용됩니다. 하지만 PDF 문서에서 텍스트를 추출하는 것은 때때로 건초더미에서 바늘을 찾는 것과 같습니다. 다행히도 Aspose.PDF for .NET과 같은 라이브러리의 도움으로 이 작업이 훨씬 간단해졌습니다! 이 가이드에서는 Aspose.PDF를 사용하여 PDF에서 특정 텍스트 세그먼트를 추출하는 방법을 살펴보고 이를 명확하고 실행 가능한 단계로 나누어 설명합니다. 
 
 ## 필수 조건
 
-튜토리얼을 진행하기 전에 다음 사항이 있는지 확인하세요.
+텍스트 추출의 세부적인 내용을 살펴보기 전에 몇 가지 필요한 사항이 있습니다.
 
-- C# 프로그래밍 언어에 대한 기본 지식.
-- .NET 라이브러리용 Aspose.PDF가 설치되었습니다. Aspose 웹사이트에서 얻을 수 있거나 NuGet을 사용하여 프로젝트에 설치할 수 있습니다.
+1. Visual Studio: 컴퓨터에 Visual Studio가 설치되어 있는지 확인하세요. 여기서 코드를 작성하게 됩니다.
+2. .NET Framework 또는 .NET Core 환경: 애플리케이션에 적합한 환경이 있는지 확인하세요. Aspose는 .NET Framework와 .NET Core를 모두 지원합니다.
+3.  Aspose.PDF 라이브러리: .NET용 Aspose.PDF 라이브러리가 필요합니다. 아직 설치하지 않았다면 다운로드할 수 있습니다.[여기](https://releases.aspose.com/pdf/net/).
+4. C#에 대한 기본 지식: C#에 익숙하면 도움이 되지만, 초보자라도 코드를 단계별로 안내해 드립니다.
+5. PDF 문서: 텍스트를 추출할 PDF 파일을 준비해 두세요. 재무 보고서에서 기사까지 무엇이든 될 수 있습니다.
 
-## 1단계: 프로젝트 설정
+## 패키지 가져오기
 
-선호하는 통합 개발 환경(IDE)에서 새 C# 프로젝트를 만들고 .NET 라이브러리용 Aspose.PDF에 대한 참조를 추가합니다.
+이제 모든 것을 설정했으니, 다음 단계는 C# 프로그램에서 필요한 패키지를 가져오는 것입니다. 이는 Aspose.PDF 라이브러리의 모든 강력한 기능에 액세스할 수 있기 때문에 중요합니다.
 
-## 2단계: 필요한 네임스페이스 가져오기
+### 새 프로젝트 만들기
 
-필요한 네임스페이스를 가져오려면 C# 파일의 시작 부분에 다음 using 지시문을 추가합니다.
+- Visual Studio를 열고 새 C# 프로젝트를 만듭니다. 단순성을 위해 콘솔 애플리케이션을 선택할 수 있습니다.
+
+### Aspose.PDF 참조 추가
+
+-  마우스 오른쪽 버튼을 클릭하세요`References` 솔루션 탐색기의 폴더.
+- "참조 추가"를 선택하고 Aspose.PDF.dll을 다운로드한 위치로 이동합니다.
+- 이 DLL을 프로젝트에 추가합니다. 이 단계는 프로젝트를 Aspose.PDF 라이브러리에 연결하여 기능을 잠금 해제합니다.
+
+### 네임스페이스 가져오기
+
+C# 파일의 맨 위에 Aspose.PDF 네임스페이스를 포함해야 합니다.
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
+using System;
 ```
+이렇게 하면 프로그램에서 Aspose.PDF 라이브러리의 클래스와 메서드를 사용하게 됩니다.
 
-## 3단계: 텍스트 검색을 위해 TextFragmentAbsorber 사용
+다양한 유형의 텍스트 세그먼트 추출을 실제 예를 들어 분석해 보겠습니다. 우리는 다음을 사용할 것입니다.`TextFragmentAbsorber` PDF 문서에서 텍스트를 찾아 추출하는 데 중요한 클래스입니다.
 
- 생성하다`TextFragmentAbsorber` 정규 표현식을 사용하여 특정 텍스트 세그먼트를 검색하는 객체:
+## 1단계: 문서 초기화
+
+PDF로 작업하려면 애플리케이션에 로드해야 합니다. 방법은 다음과 같습니다.
 
 ```csharp
-TextFragmentAbsorber textFragmentAbsorber;
+// PDF 문서를 로드합니다
+Document pdfDocument = new Document("Path/To/Your/PDFFile.pdf");
 ```
+ 바꾸다`"Path/To/Your/PDFFile.pdf"` PDF의 실제 경로와 동일합니다.
 
-## 4단계: 정규 표현식을 사용하여 텍스트 검색 수행
+## 2단계: TextFragmentAbsorber 만들기
 
-정규 표현식을 사용하여 다양한 시나리오에 따라 텍스트 검색을 수행합니다. 몇 가지 예는 다음과 같습니다.
+ 이제 다양한 사용 예를 살펴보겠습니다.`TextFragmentAbsorber` 텍스트를 검색합니다.
 
-- 정확한 단어 일치를 검색하려면: 
+### 예제 1: 정확한 단어 추출
+
+ 특정 단어에 대한 정확한 일치 항목을 찾으려면 다음을 초기화할 수 있습니다.`TextFragmentAbsorber` 이와 같이:
 
 ```csharp
-textFragmentAbsorber = new TextFragmentAbsorber(@"\bWord\b", new TextSearchOptions(true));
+// "단어"의 정확한 일치 항목을 검색하세요
+TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"\bWord\b", new TextSearchOptions(true));
 ```
+ 이 코드는 흡수체가 "Word"라는 단어를 정확하게 찾도록 설정하여 전체 단어로 취급합니다.`\b` 단어의 경계를 나타냅니다.
 
-- 대문자나 소문자로 문자열을 검색하려면: 
+### 예 2: 대소문자 구분 없이 검색
+
+대소문자에 관계없이 특정 문자열(예: "line")을 찾으려면 다음과 같이 하면 됩니다.
 
 ```csharp
-textFragmentAbsorber = new TextFragmentAbsorber("(?i)Line", new TextSearchOptions(true));
+// 대소문자를 구분하지 않고 문자열 "Line"을 검색합니다.
+TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("(?i)Line", new TextSearchOptions(true));
 ```
+ 그만큼`(?i)` 대소문자를 구분하지 않고 검색합니다. 
 
-- PDF 문서 내부의 모든 문자열을 검색하려면: 
+### 예제 3: PDF에서 모든 텍스트 추출
+
+PDF의 모든 텍스트를 파싱해야 했던 적이 있나요? 간단한 방법은 다음과 같습니다.
 
 ```csharp
-textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
+// PDF 문서 내부의 모든 문자열을 구문 분석합니다.
+TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
 ```
+ 정규식`[\S]+` 공백이 아닌 모든 문자를 캡처합니다. 
 
-- 특정 문자열 뒤에서 줄 바꿈까지 텍스트를 찾으려면: 
+## 3단계: 문서에서 흡수체 수락
+
+이제 PDF 문서에서 흡수체를 수락해야 합니다.
 
 ```csharp
-textFragmentAbsorber = new TextFragmentAbsorber(@"(?i)the ((.)*)");
+// 문서에서 흡수체를 수락합니다
+pdfDocument.Pages.Accept(textFragmentAbsorber);
 ```
+이 줄은 PDF 문서에 초기화한 흡수체를 처리하라고 알려줍니다.
 
-- 정규식 일치에 따른 텍스트를 찾으려면: 
+## 4단계: 결과 검색 및 표시
+
+마지막으로 추출된 텍스트를 검색하여 표시해 보겠습니다. 방법은 다음과 같습니다.
 
 ```csharp
-textFragmentAbsorber = new TextFragmentAbsorber(@"(?<=word).*");
+// 추출된 텍스트 조각을 가져옵니다
+TextFragmentCollection textFragments = textFragmentAbsorber.TextFragments;
+
+// 각 조각을 반복하여 출력합니다.
+foreach (TextFragment textFragment in textFragments)
+{
+    Console.WriteLine(textFragment.Text);
+}
 ```
-
-- PDF 문서 내에서 하이퍼링크/URL을 검색하려면: 
-
-```csharp
-textFragmentAbsorber = new TextFragmentAbsorber(@"(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?");
-```
-
-정규 표현식을 원하는 검색 패턴으로 바꾸세요.
-
-## 5단계: 검색을 수행하고 결과를 처리합니다.
-
- 생성된 것을 사용하여 검색을 수행합니다.`TextFragmentAbsorber` 귀하의 요구 사항에 따라 객체를 생성하고 결과를 처리합니다.
-
-### .NET용 Aspose.PDF를 사용한 텍스트 세그먼트의 샘플 소스 코드 
-```csharp
-TextFragmentAbsorber textFragmentAbsorber;
-// 단어와 정확하게 일치하는 항목을 검색하려면 정규 표현식을 사용해 보세요.
-textFragmentAbsorber = new TextFragmentAbsorber(@"\bWord\b", new TextSearchOptions(true));
-// 대문자나 소문자로 문자열을 검색하려면 정규 표현식을 사용하는 것을 고려할 수 있습니다.
-textFragmentAbsorber = new TextFragmentAbsorber("(?i)Line", new TextSearchOptions(true));
-//PDF 문서 내의 모든 문자열을 검색하려면(모든 문자열을 구문 분석하려면) 다음 정규 표현식을 사용해 보세요.
-textFragmentAbsorber = new TextFragmentAbsorber(@"[\S]+");
-// 검색 문자열과 일치하는 항목을 찾고 문자열 뒤에 있는 줄 바꿈까지 모든 내용을 가져옵니다.
-textFragmentAbsorber = new TextFragmentAbsorber(@"(?i)the ((.)*)");
-// 정규식 일치 항목 다음에 나오는 텍스트를 찾으려면 다음 정규 표현식을 사용하세요.
-textFragmentAbsorber = new TextFragmentAbsorber(@"(?<=word).*");
-// PDF 문서 내의 하이퍼링크/URL을 검색하려면 다음 정규 표현식을 사용해 보세요.
-textFragmentAbsorber = new TextFragmentAbsorber(@"(http|ftp|https):\/\/([\w\-_]+(?:(?:\.[\w\-_]+)+))([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?");
-```
-
+이 루프는 발견된 각 조각을 처리하여 콘솔에 출력합니다.
 
 ## 결론
 
-축하합니다! Aspose.PDF for .NET을 사용하여 PDF 문서 내에서 특정 텍스트 세그먼트를 검색하는 방법을 성공적으로 배웠습니다. 이 튜토리얼은 정규 표현식을 사용한 다양한 검색 시나리오의 예를 제공했습니다. 이제 이 코드를 자신의 C# 프로젝트에 통합하여 PDF 파일에서 텍스트 세그먼트를 검색하고 처리할 수 있습니다.
+ PDF 파일에서 텍스트를 추출하는 것은 어려운 작업이 될 필요가 없습니다. Aspose.PDF for .NET을 사용하면 필요한 정보를 효율적으로 찾아낼 수 있습니다. 단일 단어를 가져오거나 전체 문서를 구문 분석하려는 경우 정규 표현식의 유연성은`TextFragmentAbsorber`강력한 검색 기능을 제공합니다. 그럼 왜 기다리시나요? PDF 문서를 살펴보고 오늘 귀중한 통찰력을 추출해 보세요!
 
-### 자주 묻는 질문
+## 자주 묻는 질문
 
-#### 질문: "PDF 파일의 텍스트 세그먼트" 튜토리얼의 목적은 무엇인가요?
+### .NET용 Aspose.PDF란 무엇인가요?
+Aspose.PDF는 .NET 애플리케이션에서 PDF 파일을 만들고, 조작하고, 변환하기 위한 강력한 라이브러리입니다.
 
-A: "PDF 파일의 텍스트 세그먼트" 튜토리얼은 Aspose.PDF for .NET을 사용하여 PDF 파일 내에서 특정 텍스트 세그먼트를 검색하는 방법을 사용자에게 안내하는 것을 목표로 합니다. 이 튜토리얼은 정규 표현식을 사용하여 다양한 시나리오에 따라 텍스트 검색을 수행하기 위한 단계별 지침과 C# 코드 샘플을 제공합니다.
+### .NET Core 애플리케이션에서 Aspose.PDF를 사용할 수 있나요?
+네, Aspose.PDF for .NET은 .NET Framework와 .NET Core 애플리케이션을 모두 지원합니다.
 
-#### 질문: 이 튜토리얼은 PDF 문서에서 텍스트 세그먼트를 검색하는 데 어떻게 도움이 되나요?
+### 무료 체험판이 있나요?
+ 물론입니다! 무료 체험판을 다운로드할 수 있습니다.[여기](https://releases.aspose.com/).
 
-A: 이 튜토리얼은 사용자가 Aspose.PDF for .NET 라이브러리를 사용하여 PDF 문서 내의 특정 텍스트 세그먼트를 검색하는 방법을 이해하는 데 도움이 됩니다. 다양한 코드 예제와 정규 표현식을 제공함으로써 사용자는 텍스트 검색 쿼리를 사용자 지정하여 PDF 파일 내에서 원하는 콘텐츠를 찾을 수 있습니다.
+### Aspose.PDF에 대한 지원은 어디서 받을 수 있나요?
+ Aspose 지원 커뮤니티에 문의할 수 있습니다.[여기](https://forum.aspose.com/c/pdf/10).
 
-#### 질문: 이 튜토리얼을 따르려면 어떤 전제 조건이 필요합니까?
-
-A: 튜토리얼을 시작하기 전에 C# 프로그래밍 언어에 대한 기본적인 이해가 있어야 합니다. 또한 Aspose.PDF for .NET 라이브러리를 설치해야 합니다. Aspose 웹사이트에서 얻거나 NuGet을 사용하여 프로젝트에 설치할 수 있습니다.
-
-#### 질문: 이 튜토리얼을 따르려면 프로젝트를 어떻게 설정해야 하나요?
-
-A: 시작하려면 선호하는 통합 개발 환경(IDE)에서 새 C# 프로젝트를 만들고 Aspose.PDF for .NET 라이브러리에 대한 참조를 추가합니다. 이렇게 하면 PDF 문서 및 텍스트 조각 작업을 위한 라이브러리의 기능을 활용할 수 있습니다.
-
-#### 질문: PDF 파일 내에서 특정 텍스트 세그먼트를 검색하려면 어떻게 해야 하나요?
-
- A: 특정 텍스트 세그먼트를 검색하려면 다음을 만들어야 합니다.`TextFragmentAbsorber` 객체. 이 튜토리얼은 다양한 검색 시나리오를 보여주기 위해 정규 표현식을 사용하는 다양한 코드 예제를 제공합니다. 정규 표현식을 수정하여 원하는 검색 패턴을 정의할 수 있습니다.
-
-#### 질문: 튜토리얼에서는 어떤 유형의 검색 시나리오를 다루나요?
-
-A: 이 튜토리얼은 정확한 단어 일치, 대소문자 구분 없는 검색, 문서 내의 모든 문자열 검색, 특정 문자열 뒤의 텍스트 찾기, 하이퍼링크/URL 검색 등 정규 표현식을 사용한 다양한 검색 시나리오를 다룹니다. 제공된 코드 예제는 특정 검색 요구 사항에 맞게 사용자 정의할 수 있습니다.
-
-#### 질문: 텍스트 검색을 수행한 후 검색 결과를 어떻게 처리하나요?
-
- A: 생성 후`TextFragmentAbsorber`객체와 검색을 수행하면 요구 사항에 따라 검색 결과를 처리할 수 있습니다. 이 튜토리얼은 검색 프로세스 자체를 보여주는 데 중점을 두지만 검색 결과를 처리하고 활용하는 방법은 프로젝트의 요구 사항에 따라 달라집니다.
-
-#### 질문: 제공된 코드 예제를 내 프로젝트에서 사용할 수 있나요?
-
-A: 네, 제공된 코드 예제를 자신의 C# 프로젝트에서 참조로 사용할 수 있습니다. 예제는 검색을 설정하고, 정규 표현식을 정의하고, 텍스트 검색을 수행하는 방법을 보여줍니다. 이 코드를 응용 프로그램에 적용하고 통합하여 PDF 파일 내의 특정 텍스트 세그먼트를 검색할 수 있습니다.
-
-#### 질문: 샘플 코드와 함께 전체 튜토리얼을 어디에서 찾을 수 있나요?
-
- A: 다음 링크를 방문하면 전체 튜토리얼에 액세스하고 제공된 샘플 C# 코드를 볼 수 있습니다.[https://bit.ly/TextSegmentsTutorial](https://bit.ly/TextSegmentsTutorial)
+### Aspose.PDF 라이선스는 어떻게 구매하나요?
+ 라이센스를 구매할 수 있습니다[여기](https://purchase.aspose.com/buy).

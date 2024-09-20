@@ -30,7 +30,7 @@ Para usar Aspose.PDF para Java, você precisa adicionar a biblioteca ao classpat
 
 ## Criando um link para outro documento PDF
 
-Agora, vamos ao cerne do nosso tutorial. Criaremos um link dentro de um documento PDF que aponta para outro arquivo PDF. Isso pode ser feito usando a API do Aspose.PDF for Java.
+Agora, vamos ao cerne do nosso tutorial. Criaremos um link dentro de um documento PDF que aponta para outro arquivo PDF. Isso pode ser feito usando a API do Aspose.PDF para Java.
 
 ```java
 // Código Java para criar um link para outro documento PDF

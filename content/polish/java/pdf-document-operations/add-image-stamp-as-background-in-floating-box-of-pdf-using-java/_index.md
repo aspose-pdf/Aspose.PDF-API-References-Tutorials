@@ -69,7 +69,7 @@ Możesz skonfigurować różne właściwości stempla obrazu, takie jak jego po�
 Po dodaniu stempla graficznego możesz zapisać dokument PDF z dołączonym stemplem. Wybierz odpowiednią ścieżkę pliku i użyj następującego kodu:
 
 ```java
-// Kod Java do zapisania dokumentu PDF
+// Kod Java do zapisywania dokumentu PDF
 pdfDocument.save("output.pdf");
 ```
 

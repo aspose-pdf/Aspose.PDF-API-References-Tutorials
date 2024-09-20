@@ -33,7 +33,7 @@ För att komma igång måste du importera de nödvändiga paketen i ditt C#-proj
 2. Välj "Hantera NuGet-paket."
 3. Sök efter "Aspose.PDF" och installera den senaste versionen.
 
-### Använda Aspose.PDF-namnrymden
+### Använda Aspose.PDF-namnområdet
 
 Överst i din C#-fil måste du inkludera Aspose.PDF-namnområdet så att du enkelt kan komma åt dess klasser och metoder. Lägg till följande rad:
 
@@ -93,7 +93,7 @@ Med åtgärden skapad är det dags att ställa in den som öppen åtgärd för d
 doc.OpenAction = action;
 ```
 
- Den här raden länkar samman`GoToAction` du skapade på dokumentet och säkerställer att det kommer att tillämpas när PDF-filen öppnas.
+ Denna rad länkar samman`GoToAction` du skapade på dokumentet och säkerställer att det kommer att tillämpas när PDF-filen öppnas.
 
 ## Steg 5: Spara dokumentet
 

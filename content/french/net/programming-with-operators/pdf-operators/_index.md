@@ -83,7 +83,7 @@ Page page = pdfDocument.Pages[1];
 
 ## Étape 5 : Chargement de l'image
 
- Il est maintenant temps de charger l'image que nous voulons ajouter à notre PDF. Nous utiliserons un`FileStream` pour lire le fichier image de notre répertoire.
+ Il est maintenant temps de charger l'image que nous voulons ajouter à notre PDF. Nous allons utiliser un`FileStream` pour lire le fichier image de notre répertoire.
 
 ```csharp
 // Charger l'image dans le flux
@@ -92,7 +92,7 @@ FileStream imageStream = new FileStream(dataDir + "PDFOperators.jpg", FileMode.O
 
 Cette ligne ouvre le fichier image en tant que flux, ce qui nous permet de travailler avec lui par programmation.
 
-## Étape 6 : Ajout de l'image à la page
+## Étape 6 : Ajout de l’image à la page
 
 Une fois notre image chargée, nous pouvons maintenant l'ajouter aux ressources de la page. Cette étape est essentielle car elle prépare l'image à être dessinée sur le PDF.
 

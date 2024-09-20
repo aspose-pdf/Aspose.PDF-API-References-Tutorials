@@ -2,141 +2,137 @@
 title: Thêm Bảng Vào Tệp PDF
 linktitle: Thêm Bảng Vào Tệp PDF
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Dễ dàng thêm bảng vào tệp PDF bằng Aspose.PDF cho .NET.
+description: Tìm hiểu cách dễ dàng thêm bảng vào tệp PDF bằng Aspose.PDF cho .NET với hướng dẫn từng bước này. Hoàn hảo cho các nhà phát triển C#.
 type: docs
 weight: 40
 url: /vi/net/programming-with-tables/add-table/
 ---
-Aspose.PDF for .NET là một thư viện mạnh mẽ cho phép các nhà phát triển tạo, thao tác và chuyển đổi tài liệu PDF theo chương trình. Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn quy trình thêm bảng vào tệp PDF bằng Aspose.PDF for .NET. Chúng tôi sẽ giải thích từng bước của đoạn mã được cung cấp và cung cấp hướng dẫn toàn diện để giúp bạn hiểu và triển khai chức năng trong các dự án của riêng bạn.
-
 ## Giới thiệu
 
-Tài liệu PDF được sử dụng rộng rãi để chia sẻ và lưu trữ thông tin ở định dạng di động. Thêm bảng vào tài liệu PDF có thể cải thiện giao diện trực quan của chúng và làm cho việc trình bày dữ liệu có tổ chức và có cấu trúc hơn. Aspose.PDF for .NET cung cấp một cách thuận tiện để thêm bảng vào tài liệu PDF hiện có hoặc tạo bảng mới từ đầu.
+Bảng là thành phần thiết yếu để cấu trúc và sắp xếp dữ liệu, cho dù trong báo cáo, hóa đơn hay bất kỳ tài liệu nào yêu cầu trình bày thông tin rõ ràng. Aspose.PDF cho .NET giúp bạn dễ dàng thêm bảng vào tệp PDF theo chương trình. Nếu bạn muốn tự động tạo PDF, hướng dẫn này chính là thứ bạn cần. Chúng tôi sẽ hướng dẫn từng bước về cách thêm bảng vào tài liệu PDF, chia nhỏ theo cách chi tiết nhưng dễ làm theo.
 
-## Aspose.PDF dành cho .NET là gì?
+## Điều kiện tiên quyết
 
-Aspose.PDF for .NET là một thư viện mạnh mẽ và giàu tính năng cho phép các nhà phát triển .NET tạo, thao tác và chuyển đổi các tài liệu PDF theo chương trình. Nó cung cấp nhiều chức năng, bao gồm tạo tệp PDF từ đầu, sửa đổi các tài liệu PDF hiện có, hợp nhất hoặc chia tách các tệp PDF, thêm văn bản, hình ảnh và bảng, trích xuất dữ liệu từ PDF và nhiều hơn nữa. Với Aspose.PDF for .NET, các nhà phát triển có thể tự động hóa các tác vụ phức tạp liên quan đến PDF và cung cấp các giải pháp PDF chất lượng cao.
+Trước khi tìm hiểu về mã, hãy đảm bảo rằng bạn có mọi thứ cần thiết.
 
-## Thêm Bảng vào Tài liệu PDF
+-  Aspose.PDF cho .NET: Bạn sẽ cần cài đặt thư viện. Bạn có thể[tải xuống Aspose.PDF cho .NET tại đây](https://releases.aspose.com/pdf/net/).
+- .NET Framework: Đảm bảo rằng bạn đang làm việc trong môi trường .NET.
+- Visual Studio hoặc bất kỳ IDE C# nào khác: Sử dụng IDE ưa thích của bạn để viết và thực thi mã.
+- Hiểu biết cơ bản về C#: Hướng dẫn này giả định rằng bạn đã quen thuộc với lập trình C#.
 
-Để thêm bảng vào tài liệu PDF bằng Aspose.PDF cho .NET, hãy làm theo hướng dẫn từng bước dưới đây:
+ Nếu bạn không có giấy phép, đừng lo lắng! Bạn có thể sử dụng[dùng thử miễn phí](https://releases.aspose.com/) hoặc yêu cầu một[giấy phép tạm thời](https://purchase.aspose.com/temporary-license/)để dùng thử các tính năng.
 
-## Bước 1: Tải tài liệu PDF nguồn
+## Nhập gói
 
-```csharp
-string dataDir = RunExamples.GetDataDir_AsposePdf_Tables();
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "AddTable.pdf");
-```
-
-Đoạn mã trên sẽ tải tài liệu PDF nguồn mà bạn muốn thêm bảng vào. Đảm bảo cung cấp đúng đường dẫn đến tệp PDF của bạn.
-
-## Bước 2: Khởi tạo một phiên bản mới của Bảng
+Trước khi đi sâu vào hướng dẫn từng bước, hãy đảm bảo bạn đã nhập các không gian tên và thư viện cần thiết. Các lần nhập này đảm bảo mã của bạn có thể tương tác liền mạch với các tài liệu PDF.
 
 ```csharp
-Aspose.Pdf.Table table = new Aspose.Pdf.Table();
+using System.IO;
+using System;
+using Aspose.Pdf;
 ```
 
-Ở bước này, chúng ta tạo một phiên bản mới của lớp Table, biểu diễn một bảng trong tài liệu PDF.
+Khi đã có đầy đủ những thông tin này, bạn đã sẵn sàng để bắt đầu viết mã.
 
-## Bước 3: Thiết lập màu viền bảng
+## Bước 1: Tải Tài liệu PDF Nguồn
 
-```csharp
-table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-```
-
-Ở đây, chúng ta thiết lập màu đường viền cho bảng bằng lớp BorderInfo. Bạn có thể tùy chỉnh kiểu đường viền, độ rộng và màu sắc theo yêu cầu của mình.
-
-## Bước 4: Thiết lập đường viền cho các ô của bảng
-
-```csharp
-table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-```
-
-Chúng tôi cũng thiết lập đường viền cho các ô bảng bằng cách sử dụng thuộc tính DefaultCellBorder của đối tượng bảng. Điều này đảm bảo rằng mỗi ô trong bảng có kiểu đường viền, độ rộng và màu được chỉ định.
-
-## Bước 5: Thêm hàng và ô vào bảng
-
-```csharp
-for (int row_count = 1; row_count < 10; row_count++)
-{
-     Aspose.Pdf.Row row = table.Rows.Add();
-     row. Cells. Add("Column("+row_count+",1)");
-   
-
-  row. Cells. Add("Column("+row_count+",2)");
-     row. Cells. Add("Column("+row_count+",3)");
-}
-```
-
-Trong bước này, chúng ta tạo một vòng lặp để thêm 10 hàng vào bảng. Trong mỗi hàng, chúng ta thêm ba ô có dữ liệu mẫu. Bạn có thể sửa đổi mã để thêm hàng và ô theo yêu cầu cụ thể của mình.
-
-## Bước 6: Thêm đối tượng bảng vào tài liệu
-
-```csharp
-doc.Pages[1].Paragraphs.Add(table);
-dataDir = dataDir + "document_with_table_out.pdf";
-// Lưu tài liệu cập nhật có chứa đối tượng bảng
-doc.Save(dataDir);
-Console.WriteLine("\nText added successfully to an existing pdf file.\nFile saved at " + dataDir);       
-```
-
-Cuối cùng, chúng ta thêm đối tượng bảng vào trang đầu tiên của tài liệu PDF bằng cách sử dụng bộ sưu tập Đoạn văn của trang tương ứng.
-
-### Mã nguồn ví dụ để thêm bảng bằng Aspose.PDF cho .NET
+Trước tiên, chúng ta cần tải tài liệu PDF mà chúng ta muốn sửa đổi hoặc thêm bảng vào. Đây là bước cơ bản để đảm bảo bạn đang làm việc với đúng tệp.
 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//Tải tài liệu PDF nguồn
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir+ "AddTable.pdf");
-// Khởi tạo một phiên bản mới của Bảng
+// Tải tài liệu PDF nguồn
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "AddTable.pdf");
+```
+ 
+ Đây,`Aspose.Pdf.Document` được sử dụng để tải một tệp PDF hiện có từ thư mục bạn chỉ định. Đường dẫn tệp được thiết lập bởi`dataDir`. Tài liệu hiện đã được tải và sẵn sàng cho các thao tác tiếp theo.  
+Hãy tưởng tượng tệp PDF là trang giấy trắng của bạn và bảng sẽ là kiệt tác của bạn!
+
+## Bước 2: Khởi tạo một bảng mới
+
+Bây giờ bạn đã tải xong tài liệu PDF, bước tiếp theo là tạo đối tượng bảng. Bảng này sau đó sẽ được điền các hàng và ô.
+
+```csharp
+//Khởi tạo một phiên bản mới của Bảng
 Aspose.Pdf.Table table = new Aspose.Pdf.Table();
+```
+ 
+ Các`Table` lớp là một phần của thư viện Aspose.PDF. Bằng cách khởi tạo nó, về cơ bản bạn đang nói với chương trình, "Này, tôi đã sẵn sàng tạo cấu trúc bảng!" Giống như việc thiết lập bộ xương trước khi bạn thêm phần thịt (dữ liệu) vào đó.
+
+## Bước 3: Thiết lập đường viền bảng và đường viền ô
+
+Bảng cần có cấu trúc và đường viền giúp xác định giới hạn của mỗi ô. Trong bước này, bạn sẽ thiết lập giao diện của cả đường viền ngoài của bảng và đường viền của mỗi ô.
+
+```csharp
 // Đặt màu viền bảng là LightGray
 table.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
+
 // Đặt đường viền cho các ô của bảng
 table.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, .5f, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// Tạo một vòng lặp để thêm 10 hàng
+```
+ 
+ Chúng tôi đã thiết lập đường viền màu xám nhạt cho cả bảng và mỗi ô bằng cách sử dụng`BorderInfo`. Điều này mang lại cho cấu trúc bảng vẻ ngoài sạch sẽ, chuyên nghiệp. Giống như việc bạn đóng khung cho bàn, để nó không trông giống như một mớ hỗn độn.
+
+## Bước 4: Thêm Hàng và Ô vào Bảng
+
+Đây là nơi bạn điền dữ liệu vào bảng. Chúng ta sẽ tạo nhiều hàng, mỗi hàng chứa một vài ô có dữ liệu.
+
+```csharp
+//Tạo một vòng lặp để thêm 10 hàng
 for (int row_count = 1; row_count < 10; row_count++)
 {
-	// Thêm hàng vào bảng
-	Aspose.Pdf.Row row = table.Rows.Add();
-	// Thêm ô bảng
-	row.Cells.Add("Column (" + row_count + ", 1)");
-	row.Cells.Add("Column (" + row_count + ", 2)");
-	row.Cells.Add("Column (" + row_count + ", 3)");
+    // Thêm hàng vào bảng
+    Aspose.Pdf.Row row = table.Rows.Add();
+    // Thêm ô bảng
+    row.Cells.Add("Column (" + row_count + ", 1)");
+    row.Cells.Add("Column (" + row_count + ", 2)");
+    row.Cells.Add("Column (" + row_count + ", 3)");
 }
+```
+ 
+ Ở đây, chúng tôi đã tạo một vòng lặp chạy 10 lần, thêm 10 hàng vào bảng. Mỗi hàng chứa ba ô. Nội dung trong mỗi ô được tạo động bằng cách sử dụng`row_count` để tạo ra vẻ ngoài của một bảng được sắp xếp hợp lý. Hãy nghĩ về việc điền thông tin vào lưới!
+
+## Bước 5: Thêm Bảng vào Tài liệu PDF
+
+Sau khi bảng đã được điền đầy đủ thông tin, đã đến lúc chèn bảng vào tài liệu PDF của bạn.
+
+```csharp
 // Thêm đối tượng bảng vào trang đầu tiên của tài liệu đầu vào
 doc.Pages[1].Paragraphs.Add(table);
-dataDir = dataDir + "document_with_table_out.pdf";
-// Lưu tài liệu cập nhật có chứa đối tượng bảng
-doc.Save(dataDir);
-
-Console.WriteLine("\nText added successfully to an existing pdf file.\nFile saved at " + dataDir);       
 ```
+ 
+ Bây giờ bạn đang thêm bảng có cấu trúc đầy đủ vào trang đầu tiên của tài liệu PDF.`Pages[1]` đề cập đến trang đầu tiên và`Paragraphs.Add()` đảm bảo rằng bảng được thêm vào như một đoạn văn mới trên trang đó. Đây là thời điểm bảng của bạn được neo vào PDF.
+
+## Bước 6: Lưu tài liệu PDF đã cập nhật
+
+Cuối cùng, sau khi thêm bảng, hãy lưu tài liệu để giữ lại những thay đổi.
+
+```csharp
+// Lưu tài liệu cập nhật có chứa đối tượng bảng
+dataDir = dataDir + "document_with_table_out.pdf";
+doc.Save(dataDir);
+```
+ 
+Bây giờ bạn đang lưu tài liệu đã cập nhật trong thư mục đã chỉ định. Tệp gốc vẫn giữ nguyên và một tệp mới được tạo với bảng đã thêm.
 
 ## Phần kết luận
 
-Trong hướng dẫn này, chúng tôi đã giải thích quy trình từng bước để thêm bảng vào tài liệu PDF bằng Aspose.PDF cho .NET. Chúng tôi đã đề cập đến việc tải tài liệu PDF nguồn, khởi tạo một phiên bản mới của lớp Table, thiết lập màu viền bảng và viền ô, thêm hàng và ô vào bảng và thêm đối tượng bảng vào tài liệu. Bằng cách làm theo hướng dẫn này, bạn có thể dễ dàng kết hợp các bảng vào tài liệu PDF của mình theo chương trình và tùy chỉnh chúng theo nhu cầu cụ thể của bạn.
+Bằng cách làm theo các bước này, giờ đây bạn đã thêm thành công một bảng vào tệp PDF bằng Aspose.PDF cho .NET. Quy trình này được sắp xếp hợp lý và mạnh mẽ, giúp bạn có khả năng tự động tạo và chỉnh sửa tài liệu một cách dễ dàng. Bảng là thành phần cơ bản để trình bày thông tin có cấu trúc và giờ đây bạn có các công cụ để tích hợp chúng một cách liền mạch vào bất kỳ tệp PDF nào.
 
-### Câu hỏi thường gặp khi thêm bảng vào tệp PDF
+## Câu hỏi thường gặp
 
-#### H: Tôi có thể thêm nhiều cột vào bảng không?
+### Tôi có thể tùy chỉnh thêm bảng không?
+ Có! Bạn có thể điều chỉnh khoảng đệm ô, căn chỉnh văn bản và thậm chí thêm màu nền vào ô.`Aspose.PDF.Table` lớp này cung cấp nhiều tùy chọn tùy chỉnh.
 
-A: Có, bạn có thể thêm nhiều cột vào bảng bằng cách tăng số ô được thêm vào mỗi hàng. Trong ví dụ được cung cấp, mỗi hàng có ba ô đại diện cho ba cột. Bạn có thể thêm nhiều ô vào mỗi hàng để thêm các cột bổ sung.
+### Làm thế nào để thêm nhiều cột vào bảng?
+ Chỉ cần sửa đổi vòng lặp thêm ô vào mỗi hàng. Thay vì ba ô, hãy thêm bao nhiêu ô tùy theo nhu cầu của bạn bằng cách sử dụng`row.Cells.Add()`.
 
-#### H: Làm thế nào để thay đổi giao diện của bảng, chẳng hạn như kích thước phông chữ và kiểu chữ?
+### Aspose.PDF có hỗ trợ thêm hình ảnh vào bảng không?
+ Có, bạn có thể chèn hình ảnh vào các ô bảng bằng cách sử dụng`ImageFragment` lớp học.
 
- A: Bạn có thể tùy chỉnh giao diện của bảng, bao gồm kích thước và kiểu phông chữ, bằng cách thiết lập các thuộc tính trên`Aspose.Pdf.Table` Và`Aspose.Pdf.TextFragment` đối tượng. Ví dụ, bạn có thể thiết lập`DefaultCellTextState` thuộc tính để thay đổi thuộc tính phông chữ của văn bản trong các ô của bảng.
+### Có cách nào để hợp nhất các ô trong bảng không?
+ Có, Aspose.PDF cho phép hợp nhất các ô theo chiều ngang hoặc chiều dọc bằng cách sử dụng`ColSpan` Và`RowSpan` của cải.
 
-#### H: Có thể nhập các ô trong bảng không?
-
- A: Có, bạn có thể hợp nhất các ô trong bảng bằng cách sử dụng`MergeCells` phương pháp của`Aspose.Pdf.Row` lớp. Điều này cho phép bạn tạo các ô trải dài trên nhiều hàng và cột.
-
-#### H: Tôi có thể thêm hình ảnh hoặc nội dung khác vào ô trong bảng không?
-
-A: Có, bạn có thể thêm nhiều loại nội dung khác nhau vào các ô của bảng, bao gồm hình ảnh, văn bản, siêu liên kết, v.v. Bạn có thể sử dụng các lớp phù hợp từ Aspose.PDF cho .NET để thêm nhiều loại nội dung khác nhau vào các ô.
-
-#### H: Aspose.PDF cho .NET có tương thích với .NET 5.0 hoặc phiên bản mới hơn không?
-
-A: Có, Aspose.PDF cho .NET tương thích với .NET 5.0 và các phiên bản mới hơn. Nó hỗ trợ nhiều nền tảng .NET, bao gồm .NET Framework, .NET Core và .NET 5.0+.
+### Tôi có thể thêm bảng vào một trang cụ thể trong tệp PDF không?
+ Chắc chắn rồi! Thay vì`Pages[1]`, bạn có thể chỉ định bất kỳ số trang nào mà bạn muốn chèn bảng.

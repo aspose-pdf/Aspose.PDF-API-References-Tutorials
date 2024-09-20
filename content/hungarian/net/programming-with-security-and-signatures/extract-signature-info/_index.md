@@ -73,7 +73,7 @@ foreach (Field field in pdfDocument.Form)
 
 ## 4. lépés: Az aláírási mezők azonosítása
 
- Miután elérte az űrlapmezőket, a következő lépés az, hogy azonosítsa, melyek az aláírási mezők. Ezt úgy tehetjük meg, hogy minden mezőt a-ba öntünk`SignatureField` objektum.
+ Miután elérte az űrlapmezőket, a következő lépés az, hogy azonosítsa, melyek az aláírási mezők. Ezt úgy tehetjük meg, hogy az egyes mezőket a-ba öntjük`SignatureField` objektum.
 
 ```csharp
 SignatureField sf = field as SignatureField;

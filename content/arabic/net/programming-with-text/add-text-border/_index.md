@@ -2,192 +2,154 @@
 title: إضافة حدود نصية في ملف PDF
 linktitle: إضافة حدود نصية في ملف PDF
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: تعرف على كيفية إضافة حدود نصية في ملف PDF باستخدام Aspose.PDF لـ .NET.
+description: تعرف على كيفية إضافة حدود نصية في ملف PDF باستخدام Aspose.PDF for .NET من خلال هذا الدليل التفصيلي. قم بتحسين مستندات PDF الخاصة بك.
 type: docs
 weight: 70
 url: /ar/net/programming-with-text/add-text-border/
 ---
-سيرشدك هذا البرنامج التعليمي خلال عملية إضافة حدود نصية في ملف PDF باستخدام Aspose.PDF لـ .NET. يوضح كود المصدر C# المقدم الخطوات اللازمة.
+## مقدمة
 
-## متطلبات
-قبل أن تبدأ، تأكد من أن لديك ما يلي:
+لقد أصبح إنشاء مستندات PDF ومعالجتها مهارة أساسية في عالمنا الرقمي اليوم. سواء كنت تقوم بإنشاء تقارير أو فواتير أو أي نوع آخر من المستندات، فإن التحكم في كيفية ظهور النص الخاص بك يمكن أن يحدث فرقًا كبيرًا. أحد التحسينات التي قد ترغب في تنفيذها هو إضافة حدود حول النص الخاص بك في ملف PDF. في هذا الدليل، سنرشدك خلال الخطوات لإضافة حدود نصية في ملف PDF باستخدام مكتبة Aspose.PDF لـ .NET. لذا، دعنا نبدأ على الفور!
 
-- Visual Studio أو أي مُجمِّع C# آخر مُثبت على جهازك.
-- مكتبة Aspose.PDF لـ .NET. يمكنك تنزيلها من موقع Aspose الرسمي أو استخدام مدير حزم مثل NuGet لتثبيتها.
+## المتطلبات الأساسية
 
-## الخطوة 1: إعداد المشروع
-1. قم بإنشاء مشروع C# جديد في بيئة التطوير المفضلة لديك.
-2. أضف مرجعًا إلى مكتبة Aspose.PDF لـ .NET.
+قبل أن نبدأ، هناك بعض الأشياء التي يجب أن تكون جاهزة. لا تقلق، الأمر بسيط للغاية!
 
-## الخطوة 2: استيراد المساحات المطلوبة
-في ملف الكود الذي تريد إضافة حدود النص إليه، أضف التوجيه التالي باستخدام في الجزء العلوي من الملف:
+1. Visual Studio: تأكد من تثبيت Visual Studio على جهازك. ستكون هذه بيئة التطوير التي ستكتب فيها التعليمات البرمجية وتشغلها.
+2.  Aspose.PDF لـ .NET: ستحتاج إلى تنزيل مكتبة Aspose.PDF وتثبيتها. يمكنك الحصول عليها من[صفحة تنزيل Aspose PDF for .NET](https://releases.aspose.com/pdf/net/) إذا كنت تريد تجربته أولاً، يمكنك أيضًا الحصول على[تجربة مجانية هنا](https://releases.aspose.com/).
+3. المعرفة الأساسية للغة البرمجة C#: إن الفهم الأساسي للغة البرمجة C# سيساعدك على متابعة الأمثلة بسهولة.
+4. .NET Framework: تأكد من تثبيت .NET Framework وإعداده في مشروعك.
+
+بمجرد توفر هذه المتطلبات الأساسية لديك، ستكون جاهزًا لبدء الترميز!
+
+## استيراد الحزم
+
+الآن بعد أن قمنا بإعداد كل شيء، فلنبدأ في استيراد الحزم اللازمة لاستخدام Aspose.PDF في مشروعنا. يمكنك القيام بذلك عن طريق إضافة التعليمات التالية في أعلى ملف C# الخاص بك:
 
 ```csharp
-using Aspose.Pdf;
 using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
 ```
 
-## الخطوة 3: تعيين دليل المستند
- في الكود، حدد السطر الذي يقول`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدالها`"YOUR DOCUMENT DIRECTORY"` مع المسار إلى الدليل الذي يتم تخزين مستنداتك فيه.
+ستتيح لك هذه المساحات الاسمية العمل مع مستندات PDF وأجزاء النص بشكل فعال. 
 
-## الخطوة 4: إنشاء كائن مستند جديد
- إنشاء مثيل جديد`Document` الكائن عن طريق إضافة سطر التعليمات البرمجية التالي:
+الآن، دعنا نقسم عملية إضافة إطار نصي إلى خطوات تفصيلية. سنتناول كل خطوة حتى تتمكن من فهم ما يحدث بالضبط.
 
-```csharp
-Document pdfDocument = new Document();
-```
+## الخطوة 1: إعداد المستند
 
-## الخطوة 5: إضافة صفحة إلى المستند
- أضف صفحة جديدة إلى المستند باستخدام`Add` طريقة`Pages` المجموعة. في الكود المقدم، يتم تعيين الصفحة الجديدة للمتغير`pdfPage`.
+أولاً وقبل كل شيء، نحتاج إلى إنشاء مستند PDF جديد. هنا ستحدث كل أعمالنا السحرية.
 
-```csharp
-Page pdfPage = (Page)pdfDocument.Pages.Add();
-```
-
-## الخطوة 6: إنشاء جزء نصي
- إنشاء`TextFragment`الكائن وتوفير النص المطلوب. اضبط موضع جزء النص باستخدام`Position` في الكود المقدم، يتم تعيين النص على "النص الرئيسي" ووضعه عند (100، 600) على الصفحة.
-
-```csharp
-TextFragment textFragment = new TextFragment("main text");
-textFragment.Position = new Position(100, 600);
-```
-
-## الخطوة 7: تعيين خصائص النص
-تخصيص خصائص النص مثل حجم الخط ونوع الخط ولون الخلفية ولون المقدمة وما إلى ذلك. في الكود المقدم، يتم تعيين خصائص مثل حجم الخط والخط ولون الخلفية ولون المقدمة ولون التحديد لشظية النص.
-
-```csharp
-textFragment.TextState.FontSize = 12;
-textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
-```
-
-## الخطوة 8: تمكين حدود النص
- لتمكين حدود النص، اضبط`DrawTextRectangleBorder` خاصية جزء النص`TextState` ل`true`.
-
-```csharp
-textFragment.TextState.DrawTextRectangleBorder = true;
-```
-
-## الخطوة 9: إضافة TextFragment إلى الصفحة
- استخدم`TextBuilder` الصف لإضافة`TextFragment` الاعتراض على الصفحة.
-
-```csharp
-TextBuilder tb = new TextBuilder(pdfPage);
-tb.AppendText(textFragment);
-```
-
-## الخطوة 10: احفظ مستند PDF
- احفظ مستند PDF باستخدام`Save` طريقة`Document` حدد مسار ملف الإخراج الذي قمت بتعيينه في الخطوة 3.
-
-```csharp
-pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
-```
-
-### عينة من كود المصدر لإضافة حدود نصية باستخدام Aspose.PDF لـ .NET 
 ```csharp
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // إنشاء كائن مستند جديد
 Document pdfDocument = new Document();
+```
+
+ في هذه الخطوة، نحدد الدليل الذي نريد حفظ ملف PDF فيه. ثم نقوم بإنشاء مثيل جديد للملف`Document` الفئة التي تمثل مستند PDF الخاص بنا.
+
+## الخطوة 2: إضافة صفحة جديدة
+
+بعد ذلك، نحتاج إلى إضافة صفحة إلى مستندنا. فكر في هذا الأمر باعتباره إضافة لوحة قماشية فارغة لوضع النص فيها.
+
+```csharp
 // الحصول على صفحة معينة
 Page pdfPage = (Page)pdfDocument.Pages.Add();
+```
+
+ هنا، نسميها`Add()` الطريقة على`Pages` مجموعة من`pdfDocument` الكائن. يؤدي هذا إلى إضافة صفحة جديدة إلى المستند، ونقوم بتخزين مرجع لها في`pdfPage` عامل.
+
+## الخطوة 3: إنشاء جزء نصي
+
+الآن، لنبدأ في إنشاء النص الذي نريد عرضه في ملف PDF. هنا نحدد محتوى جزء النص.
+
+```csharp
 // إنشاء جزء نصي
 TextFragment textFragment = new TextFragment("main text");
 textFragment.Position = new Position(100, 600);
+```
+
+ في هذا الكود نقوم بإنشاء كود جديد`TextFragment` الكائن الذي يحتوي على النص "النص الرئيسي". كما قمنا أيضًا بتعيين موضعه على الصفحة باستخدام`Position` تحدد الإحداثيات (100، 600) المكان الذي سيتم وضع النص فيه على الصفحة.
+
+## الخطوة 4: تعيين خصائص النص
+
+بعد ذلك، سنقوم بتخصيص جزء النص الخاص بنا لجعله جذابًا بصريًا. ويتضمن ذلك ضبط حجم الخط ونوعه ولون الخلفية ولون المقدمة.
+
+```csharp
 // تعيين خصائص النص
 textFragment.TextState.FontSize = 12;
 textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
+```
+
+هنا، قمنا بتعيين حجم الخط إلى 12، واستخدمنا "Times New Roman" كخط، وقمنا بتطبيق لون خلفية رمادي فاتح مع نص أحمر. تساعد هذه الخصائص في تحسين وضوح النص.
+
+## الخطوة 5: تعيين لون الحدود
+
+الآن وصلنا إلى الجزء المثير للاهتمام، وهو إضافة حدود حول النص الخاص بنا!
+
+```csharp
 // تعيين خاصية StrokingColor لرسم الحدود (الرسم) حول مستطيل النص
 textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
+```
+
+في هذه الخطوة، نحدد لون الحدود التي نريد رسمها حول النص، وهنا اخترنا اللون الأحمر الداكن.
+
+## الخطوة 6: تمكين حدود المستطيل النصي
+
+ لرسم الحدود حول النص فعليًا، نحتاج إلى تمكين`DrawTextRectangleBorder` ملكية.
+
+```csharp
 // تعيين قيمة خاصية DrawTextRectangleBorder إلى true
 textFragment.TextState.DrawTextRectangleBorder = true;
+```
+
+ من خلال تعيين هذه الخاصية إلى`true`، نخبر Aspose.PDF برسم الحدود حول مستطيل النص استنادًا إلى لون التحديد المحدد.
+
+## الخطوة 7: إضافة جزء النص إلى الصفحة
+
+الآن بعد أن أصبح جزء النص جاهزًا مع تعيين جميع الخصائص، فقد حان الوقت لإضافته إلى الصفحة.
+
+```csharp
 TextBuilder tb = new TextBuilder(pdfPage);
 tb.AppendText(textFragment);
+```
+
+ هنا، نقوم بإنشاء`TextBuilder` الكائن المرتبط بنا`pdfPage` . ثم نستخدم`AppendText` طريقة إضافة`textFragment` الى الصفحة. 
+
+## الخطوة 8: حفظ المستند
+
+أخيرًا، نحتاج إلى حفظ مستند PDF الخاص بنا في الدليل المحدد. هذه هي لحظة الحقيقة!
+
+```csharp
 // حفظ المستند
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
+في هذه الخطوة، نسميها`Save` الطريقة على موقعنا`pdfDocument` الكائن، الذي يوفر المسار الذي نريد حفظ الملف فيه. بمجرد تشغيل التعليمات البرمجية، يجب أن تجد ملف PDF الذي تم إنشاؤه حديثًا مع حدود النص في الدليل المحدد!
+
 ## خاتمة
-لقد نجحت في إضافة حدود نصية إلى مستند PDF الخاص بك باستخدام Aspose.PDF لـ .NET. يمكنك الآن العثور على ملف PDF الناتج في مسار ملف الإخراج المحدد.
 
-### الأسئلة الشائعة
+والآن، لقد نجحت في إضافة حدود نصية إلى ملف PDF باستخدام Aspose.PDF لـ .NET. يمكن لهذه الميزة البسيطة والقوية أن تعزز بشكل كبير قابلية القراءة والجماليات في مستندات PDF الخاصة بك. سواء كنت تقوم بإنشاء تقارير أو كتيبات أو أي نوع آخر من الوثائق، فإن معرفة كيفية التعامل مع تنسيق النص يمكن أن يكون مفيدًا.
 
-#### س: ما هو التركيز الرئيسي لهذا البرنامج التعليمي؟
+## الأسئلة الشائعة
 
-ج: يرشدك هذا البرنامج التعليمي خلال عملية إضافة إطار نصي إلى ملف PDF باستخدام مكتبة Aspose.PDF for .NET. يوضح كود المصدر C# المقدم الخطوات اللازمة لتحقيق ذلك.
+### ما هو Aspose.PDF لـ .NET؟
+Aspose.PDF for .NET هي مكتبة قوية تسمح للمطورين بإنشاء مستندات PDF ومعالجتها ومعالجتها برمجيًا باستخدام إطار عمل .NET.
 
-#### س: ما هي المساحات الأسماء التي أحتاج إلى استيرادها لهذا البرنامج التعليمي؟
+### هل يمكنني تجربة Aspose.PDF مجانًا؟
+ نعم! تقدم Aspose[نسخة تجريبية مجانية](https://releases.aspose.com/) من مكتبة PDF الخاصة بهم، مما يسمح لك باختبار ميزاتها قبل إجراء عملية شراء.
 
-أ: في ملف الكود الذي تريد إضافة حدود النص إليه، قم باستيراد المساحات التالية في بداية الملف:
+### كيف يمكنني شراء Aspose.PDF لـ .NET؟
+ يمكنك شراء Aspose.PDF لـ .NET مباشرة من موقعهم[صفحة الشراء](https://purchase.aspose.com/buy).
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
+### هل يتوفر الدعم لـ Aspose.PDF؟
+ بالتأكيد! يمكنك الحصول على الدعم من خلال زيارة[منتدى دعم Aspose](https://forum.aspose.com/c/pdf/10).
 
-#### س: كيف أحدد دليل المستند؟
-
- أ: في الكود، حدد السطر`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدالها`"YOUR DOCUMENT DIRECTORY"` مع المسار الفعلي إلى دليل المستند الخاص بك.
-
-#### س: كيف أقوم بإنشاء كائن مستند؟
-
- أ: في الخطوة 4، ستقوم بإنشاء مثيل جديد`Document` الكائن باستخدام سطر التعليمات البرمجية التالي:
-
-```csharp
-Document pdfDocument = new Document();
-```
-
-#### س: كيف أضيف صفحة إلى المستند؟
-
- أ: في الخطوة 5، ستضيف صفحة جديدة إلى المستند باستخدام`Add` طريقة`Pages` مجموعة:
-
-```csharp
-Page pdfPage = (Page)pdfDocument.Pages.Add();
-```
-
-#### س: كيف أقوم بإنشاء TextFragment وتعيين موضعه؟
-
- أ: في الخطوة 6، ستقوم بإنشاء`TextFragment` الكائن وتعيين موضعه على الصفحة باستخدام`Position` ملكية:
-
-```csharp
-TextFragment textFragment = new TextFragment("main text");
-textFragment.Position = new Position(100, 600);
-```
-
-#### س: كيف يمكنني تخصيص خصائص النص، بما في ذلك حدود النص؟
-
-أ: في الخطوة 7، ستقوم بتخصيص خصائص نصية مختلفة مثل حجم الخط ونوع الخط ولون الخلفية ولون المقدمة وحدود النص:
-
-```csharp
-textFragment.TextState.FontSize = 12;
-textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
-textFragment.TextState.DrawTextRectangleBorder = true;
-```
-
-#### س: كيف أضيف TextFragment إلى مستند PDF؟
-
- أ: في الخطوة 9، سوف تستخدم`TextBuilder` الصف لإضافة`TextFragment` الاعتراض على الصفحة:
-
-```csharp
-TextBuilder tb = new TextBuilder(pdfPage);
-tb.AppendText(textFragment);
-```
-
-#### س: كيف أحفظ مستند PDF الناتج؟
-
-أ: بعد إضافة النص مع الحدود، استخدم`Save` طريقة`Document` كائن لحفظ مستند PDF:
-
-```csharp
-pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
-```
-
-#### س: ما هو الدرس الرئيسي المستفاد من هذا البرنامج التعليمي؟
-
-ج: باتباع هذا البرنامج التعليمي، ستتعلم بنجاح كيفية تحسين مستند PDF الخاص بك عن طريق إضافة حدود نصية باستخدام Aspose.PDF لـ .NET. يمكن أن يكون هذا مفيدًا بشكل خاص للتأكيد على محتوى نصي معين داخل ملفات PDF الخاصة بك.
+### ماذا لو كنت بحاجة إلى ترخيص مؤقت؟
+ يوفر Aspose[رخصة مؤقتة](https://purchase.aspose.com/temporary-license/) خيار للمطورين الذين يحتاجون إلى تقييم المكتبة لفترة محدودة.

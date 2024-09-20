@@ -119,7 +119,7 @@ for (int passwordcount = 0; passwordcount < passwords.Length; passwordcount++)
 
 ## 结论
 
-就这样！现在您已经学会了如何使用 Aspose.PDF for .NET 确定受密码保护的 PDF 文件的正确密码。这种功能对于经常处理锁定 PDF 文档的人来说是救星。得益于 Aspose.PDF 提供的强大 API，该过程非常简单。无论是专业用途还是个人项目，掌握这项技能都会为您节省时间和挫折感。
+就这样！现在您已经学会了如何使用 Aspose.PDF for .NET 确定受密码保护的 PDF 文件的正确密码。这种功能对于经常处理锁定的 PDF 文档的人来说是救星。得益于 Aspose.PDF 提供的强大 API，该过程非常简单。无论是用于专业用途还是个人项目，掌握这项技能都会为您节省时间和挫折感。
 
 ## 常见问题解答
 

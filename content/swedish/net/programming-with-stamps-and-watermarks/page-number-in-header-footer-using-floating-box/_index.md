@@ -9,7 +9,7 @@ url: /sv/net/programming-with-stamps-and-watermarks/page-number-in-header-footer
 ---
 ## Introduktion
 
-När det gäller att hantera PDF-dokument programmatiskt framstår Aspose.PDF för .NET som ett exceptionellt verktyg. Det förenklar sättet vi skapar, redigerar och manipulerar PDF-filer i .NET-program. Oavsett om du genererar fakturor, rapporter eller vilken typ av dokument som helst, kan en elegant lägga till sidnummer förbättra professionalismen och organisationen av dina PDF-filer. I den här handledningen fördjupar vi oss i hur du lägger till sidnummer i sidhuvudet och sidfoten i din PDF med hjälp av en flytande ruta. Redo att börja? Låt oss gå!
+När det gäller att hantera PDF-dokument programmatiskt framstår Aspose.PDF för .NET som ett exceptionellt verktyg. Det förenklar sättet vi skapar, redigerar och manipulerar PDF-filer i .NET-program. Oavsett om du genererar fakturor, rapporter eller vilken typ av dokument som helst, kan en elegant lägga till sidnummer förbättra professionalismen och organisationen av dina PDF-filer. I den här handledningen fördjupar vi oss i hur du lägger till sidnummer i sidhuvudet och sidfoten i din PDF med hjälp av en flytande ruta. Redo att komma igång? Låt oss gå!
 
 ## Förutsättningar
 

@@ -85,7 +85,7 @@ for (Annotation annotation : page.getAnnotations()) {
 
 ## Gestione di diversi tipi di annotazione
 
-Aspose.PDF per Java supporta vari tipi di annotazione, come annotazioni di testo, annotazioni di evidenziazione, timbri personalizzati e altro. Puoi adattare il codice di estrazione per adattarlo alle tue esigenze specifiche.
+Aspose.PDF per Java supporta vari tipi di annotazione, come annotazioni di testo, annotazioni di evidenziazione, timbri personalizzati e altro. Puoi adattare il codice di estrazione per soddisfare le tue esigenze specifiche.
 
 ## Conclusione
 

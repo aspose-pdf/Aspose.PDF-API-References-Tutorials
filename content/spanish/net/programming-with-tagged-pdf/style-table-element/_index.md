@@ -2,291 +2,191 @@
 title: Elemento de tabla de estilos
 linktitle: Elemento de tabla de estilos
 second_title: Referencia de API de Aspose.PDF para .NET
-description: Aprenda a dar formato a elementos de tabla con Aspose.PDF para .NET. Guía paso a paso para personalizar estilos y propiedades.
+description: Aprenda a crear y diseñar un elemento de tabla en Aspose.PDF para .NET con instrucciones paso a paso, estilos personalizados y compatibilidad con PDF/UA.
 type: docs
 weight: 170
 url: /es/net/programming-with-tagged-pdf/style-table-element/
 ---
-En este tutorial detallado, lo guiaremos paso a paso a través del código fuente de C# proporcionado para formatear el elemento de matriz utilizando Aspose.PDF para .NET. Siga las instrucciones a continuación para comprender cómo personalizar los estilos y las propiedades del elemento de matriz.
+## Introducción
 
-## Paso 1: Configuración del entorno
+En este artículo, profundizaremos en cómo crear y aplicar estilo a un elemento de tabla con Aspose.PDF para .NET. Aprenderá a estructurar una tabla, aplicar estilos personalizados y validar la compatibilidad de su documento con PDF/UA. Al finalizar este tutorial, podrá crear tablas de aspecto profesional en sus archivos PDF con facilidad.
 
-Antes de comenzar, asegúrese de haber configurado su entorno de desarrollo para utilizar Aspose.PDF para .NET. Esto incluye instalar la biblioteca Aspose.PDF y configurar su proyecto para hacer referencia a ella.
+## Prerrequisitos
 
-## Paso 2: Crear un documento
+Antes de comenzar el tutorial, deberá asegurarse de tener lo siguiente:
 
-En este paso, crearemos un nuevo objeto de documento Aspose.PDF.
+1. Visual Studio o un IDE similar instalado en su máquina.
+2. .NET Framework o .NET Core SDK para ejecutar la aplicación.
+3.  Biblioteca Aspose.PDF para .NET descargada y referenciada en su proyecto. Puede obtener la última versión en[aquí](https://releases.aspose.com/pdf/net/).
+4.  Una licencia Aspose válida o una[licencia temporal](https://purchase.aspose.com/temporary-license/) para desbloquear la funcionalidad completa de la biblioteca.
+
+## Importar paquetes
+
+Para comenzar, importe los espacios de nombres necesarios a su proyecto:
+
+```csharp
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Estos espacios de nombres cubren las principales operaciones de PDF, contenido etiquetado, tablas y formato de texto.
+
+Ahora, desglosaremos el proceso de creación y aplicación de estilos a una tabla en Aspose.PDF. Repasaremos cada sección en detalle para que puedas seguir el proceso.
+
+## Paso 1: Crear un nuevo documento PDF y configurar el contenido etiquetado
+
+En este primer paso, crearemos un documento PDF en blanco y configuraremos su contenido etiquetado.
 
 ```csharp
 // La ruta al directorio de documentos.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Creación de documentos
+// Crear un nuevo documento PDF
 Document document = new Document();
+
+// Configurar contenido etiquetado
 ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example of table formatting");
-taggedContent.SetLanguage("fr-FR");
+taggedContent.SetTitle("Example table style");
+taggedContent.SetLanguage("en-US");
 ```
 
-Hemos creado un nuevo documento y hemos establecido el título y el idioma del documento.
+ Comenzamos creando un nuevo`Document` objeto, que representa nuestro PDF.`TaggedContent`El objeto se utiliza para gestionar la estructura del documento, garantizando el cumplimiento de los estándares de accesibilidad. Establecemos el título y el idioma del documento para un etiquetado adecuado.
 
-## Paso 3: Obtención del elemento de estructura raíz
+## Paso 2: Definir el elemento raíz
 
-En este paso obtendremos el elemento de estructura raíz para nuestro documento.
+A continuación, crearemos el elemento de estructura raíz, que actúa como contenedor de todo el contenido de nuestro PDF.
 
 ```csharp
 // Obtener el elemento de estructura raíz
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-Obtuvimos el elemento de estructura raíz que servirá como contenedor para el elemento de la matriz.
+ El`RootElement` Sirve como contenedor base para todos los elementos estructurados, incluida nuestra tabla. Ayuda a mantener la jerarquía estructural del documento, lo cual es importante tanto para la organización como para la accesibilidad.
 
-## Paso 4: Creación del elemento de la estructura de la matriz
+## Paso 3: Crear y darle estilo al elemento de tabla
 
-Ahora vamos a crear un nuevo elemento de estructura de tabla para nuestro documento.
+ Ahora que el elemento raíz está configurado, crearemos un`TableElement` y aplicar estilos como color de fondo, bordes y alineación.
 
 ```csharp
-// Crear el elemento de estructura de la matriz
+// Crear elemento de estructura de tabla
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
-```
 
-Hemos creado un nuevo elemento de estructura de matriz y lo hemos agregado al elemento de estructura raíz.
-
-## Paso 5: Personalización de estilos y propiedades de elementos de matriz
-
-En este paso, personalizaremos los estilos y propiedades del elemento de la matriz.
-
-```csharp
-// Personalizar los estilos y propiedades del elemento de la matriz
+// Dale estilo a la mesa
 tableElement.BackgroundColor = Color.Beige;
 tableElement.Border = new BorderInfo(BorderSide.All, 0.80F, Color.Gray);
-tableElement. Alignment = HorizontalAlignment. Center;
+tableElement.Alignment = HorizontalAlignment.Center;
 tableElement.Broken = TableBroken.Vertical;
 tableElement.ColumnAdjustment = ColumnAdjustment.AutoFitToWindow;
-tableElement. ColumnWidths = "80 80 80 80 80";
+```
+
+ Creamos una`TableElement` , que define la estructura de nuestra tabla.`BackgroundColor`, `Border` , y`Alignment` Las propiedades nos permiten personalizar la apariencia de la tabla.`Broken` La propiedad garantiza que si la tabla se divide en páginas, se divide verticalmente.
+
+## Paso 4: Establecer las dimensiones de la tabla y los estilos de celda
+
+En este paso, definiremos el número de columnas, el relleno de celdas y otras propiedades importantes de la tabla.
+
+```csharp
+tableElement.ColumnWidths = "80 80 80 80 80";
 tableElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.DarkBlue);
-tableElement. DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
+tableElement.DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
 tableElement.DefaultCellTextState.ForegroundColor = Color.DarkCyan;
 tableElement.DefaultCellTextState.FontSize = 8F;
-tableElement. DefaultColumnWidth = "70";
-tableElement. IsBroken = false;
-tableElement.IsBordersIncluded = true;
-tableElement. Left = 0F;
-tableElement. Top = 40F;
-tableElement.RepeatingColumnsCount = 2;
-tableElement.RepeatingRowsCount = 3;
+```
 
-// Personaliza el estilo de las líneas repetidas
+ Especificamos el ancho de las columnas para garantizar que cada columna de la tabla esté espaciada de manera uniforme.`DefaultCellBorder`, `DefaultCellPadding` , y`DefaultCellTextState` definir los estilos predeterminados para las celdas, incluidos los bordes, el relleno, el color del texto y el tamaño de fuente.
+
+## Paso 5: Agregar filas repetidas y estilos personalizados
+
+También podemos definir estilos para filas repetidas y otros elementos específicos de la tabla, como encabezados y pies de página.
+
+```csharp
+tableElement.RepeatingRowsCount = 3;
 TextState rowStyle = new TextState();
 rowStyle.BackgroundColor = Color.LightCoral;
 tableElement.RepeatingRowsStyle = rowStyle;
 ```
 
-Utilizamos varias propiedades para personalizar el elemento de tabla, como el color de fondo, los bordes, la alineación, el estilo de celda predeterminado, los márgenes, el ancho de la columna, etc.
+ El`RepeatingRowsCount` garantiza que las tres primeras filas se repitan si la tabla abarca varias páginas. Establecemos el`RepeatingRowsStyle` para aplicar un color de fondo personalizado a estas filas.
 
-## Paso 6: Agregar encabezados, cuerpo y pie de página de la tabla
+## Paso 6: Agregar elementos de cabecera, cuerpo y pie de tabla
 
-Ahora agreguemos los encabezados, el cuerpo y el pie de página de la tabla al elemento de tabla.
+Ahora, vamos a crear las secciones de encabezado, cuerpo y pie de página de la tabla y completarlas con contenido.
+
 ```csharp
-// Agregar encabezados de tabla
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
 
-// Número de filas y columnas en la tabla
-int rowCount = 10;
-int colCount = 5;
-int rowIndex;
-int colIndex;
-
-// Crear la fila del encabezado de la tabla
+// Crear fila de encabezado
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
-headTrElement.AlternativeText = "Header Row";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
+headTrElement.AlternativeText = "Head Row";
+for (int colIndex = 0; colIndex < 5; colIndex++)
 {
-     TableTHElement theElement = headTrElement.CreateTH();
-     theElement.SetText(string.Format("Header {0}", colIndex));
+    TableTHElement thElement = headTrElement.CreateTH();
+    thElement.SetText($"Head {colIndex}");
 }
 
-//Agregar las filas del cuerpo de la tabla
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
+// Rellenar el cuerpo de la tabla
+for (int rowIndex = 0; rowIndex < 10; rowIndex++)
 {
-     TableTRElement trElement = tableTBodyElement.CreateTR();
-     trElement.AlternativeText = string.Format("Row {0}", rowIndex);
-
-     for (colIndex = 0; colIndex < colCount; colIndex++)
-     {
-         TableTDElement tdelement = trElement.CreateTD();
-         tdElement.SetText(string.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-     }
-}
-
-// Agregar la línea de pie de página de la tabla
-TableTRElement footTrElement = tableTFootElement.CreateTR();
-footTrElement.AlternativeText = "Footline";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-     TableTDElement tdElement = footTrElement.CreateTD();
-     tdElement.SetText(string.Format("Foot {0}", colIndex));
+    TableTRElement trElement = tableTBodyElement.CreateTR();
+    for (int colIndex = 0; colIndex < 5; colIndex++)
+    {
+        TableTDElement tdElement = trElement.CreateTD();
+        tdElement.SetText($"Cell [{rowIndex}, {colIndex}]");
+    }
 }
 ```
 
-Agregamos los encabezados, las filas del cuerpo y la fila de pie de página a la tabla utilizando los elementos correspondientes.
+ La tabla se divide en tres partes: encabezado, cuerpo y pie. Primero creamos la fila de encabezado usando`TableTHElement` agregamos encabezados de columnas. Luego, completamos el cuerpo de la tabla con`TableTDElement`, llenando cada celda con una etiqueta que incluye su posición.
 
-## Paso 7: Guardar el documento PDF etiquetado
+## Paso 7: Guardar el documento
 
-Ahora que hemos creado nuestro documento con el elemento de tabla con estilo, lo guardaremos como un documento PDF etiquetado.
+Finalmente, guardamos el documento PDF en el directorio especificado.
 
 ```csharp
 // Guardar el documento PDF etiquetado
 document.Save(dataDir + "StyleTableElement.pdf");
 ```
 
-Guardamos el documento PDF etiquetado en el directorio especificado.
+Este paso finaliza el proceso de creación del documento guardando el archivo PDF con la tabla con estilo.
 
-## Paso 8: Validación de la conformidad con PDF/UA
+## Paso 8: Validar la conformidad con PDF/UA
 
-A continuación, validaremos la conformidad PDF/UA de nuestro documento.
-
-```csharp
-// Comprobación de conformidad con PDF/UA
-document = new Document(dataDir + "StyleTableElement.pdf");
-bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
-```
-
-Cargamos el documento PDF etiquetado y validamos su conformidad con PDF/UA generando un informe XML.
-
-### Código fuente de muestra para el elemento de tabla de estilos utilizando Aspose.PDF para .NET 
+Después de guardar el documento, es esencial asegurarse de que cumpla con los estándares PDF/UA (Accesibilidad Universal).
 
 ```csharp
-
-// La ruta al directorio de documentos.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Crear documento
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example table style");
-taggedContent.SetLanguage("en-US");
-
-// Obtener el elemento de la estructura raíz
-StructureElement rootElement = taggedContent.RootElement;
-
-// Crear elemento de estructura de tabla
-TableElement tableElement = taggedContent.CreateTableElement();
-rootElement.AppendChild(tableElement);
-tableElement.BackgroundColor = Color.Beige;
-tableElement.Border = new BorderInfo(BorderSide.All, 0.80F, Color.Gray);
-tableElement.Alignment = HorizontalAlignment.Center;
-tableElement.Broken = TableBroken.Vertical;
-tableElement.ColumnAdjustment = ColumnAdjustment.AutoFitToWindow;
-tableElement.ColumnWidths = "80 80 80 80 80";
-tableElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.DarkBlue);
-tableElement.DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
-tableElement.DefaultCellTextState.ForegroundColor = Color.DarkCyan;
-tableElement.DefaultCellTextState.FontSize = 8F;
-tableElement.DefaultColumnWidth = "70";
-tableElement.IsBroken = false;
-tableElement.IsBordersIncluded = true;
-tableElement.Left = 0F;
-tableElement.Top = 40F;
-tableElement.RepeatingColumnsCount = 2;
-tableElement.RepeatingRowsCount = 3;
-TextState rowStyle = new TextState();
-rowStyle.BackgroundColor = Color.LightCoral;
-tableElement.RepeatingRowsStyle = rowStyle;
-TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
-TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
-TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-int rowCount = 10;
-int colCount = 5;
-int rowIndex;
-int colIndex;
-TableTRElement headTrElement = tableTHeadElement.CreateTR();
-headTrElement.AlternativeText = "Head Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-	TableTHElement thElement = headTrElement.CreateTH();
-	thElement.SetText(String.Format("Head {0}", colIndex));
-}
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
-{
-	TableTRElement trElement = tableTBodyElement.CreateTR();
-	trElement.AlternativeText = String.Format("Row {0}", rowIndex);
-	for (colIndex = 0; colIndex < colCount; colIndex++)
-	{
-		TableTDElement tdElement = trElement.CreateTD();
-		tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-	}
-}
-TableTRElement footTrElement = tableTFootElement.CreateTR();
-footTrElement.AlternativeText = "Foot Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-	TableTDElement tdElement = footTrElement.CreateTD();
-	tdElement.SetText(String.Format("Foot {0}", colIndex));
-}
-
-// Guardar documento PDF etiquetado
-document.Save(dataDir + "StyleTableElement.pdf");
-
-// Comprobación de la conformidad con PDF/UA
+// Verificar la conformidad con PDF/UA
 document = new Document(dataDir + "StyleTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
+Console.WriteLine($"PDF/UA compliance: {isPdfUaCompliance}");
 ```
+
+Aquí, recargamos el documento y lo validamos según los estándares PDF/UA. El cumplimiento garantiza que su PDF cumpla con los requisitos de accesibilidad, lo que lo hace adecuado para una amplia gama de usuarios.
 
 ## Conclusión
 
-En este tutorial, aprendimos a dar formato al elemento de matriz con Aspose.PDF para .NET. Personalizamos los estilos y las propiedades del elemento de tabla, agregamos encabezados, filas de cuerpo y un pie de página, guardamos el documento PDF etiquetado y validamos su compatibilidad con PDF/UA.
+Con Aspose.PDF para .NET, crear y aplicar estilos a las tablas de sus documentos PDF es sencillo e intuitivo. Si sigue los pasos que se describen en este tutorial, podrá crear tablas con estilos personalizados y asegurarse de que sus archivos PDF cumplan con los estándares de accesibilidad. Tanto si genera informes como si crea documentos estructurados, las tablas son una herramienta poderosa para presentar los datos de forma clara.
 
-### Preguntas frecuentes
+## Preguntas frecuentes
 
-#### P: ¿Cuál es el propósito de este tutorial sobre cómo formatear el elemento de la matriz usando Aspose.PDF para .NET?
+### ¿Puedo agregar imágenes dentro de las celdas de la tabla?
+ Sí, puedes insertar imágenes en celdas de tablas usando el`Image` elemento.
 
-R: El objetivo de este tutorial es guiarlo a través del proceso de formateo del elemento de matriz en un documento PDF mediante Aspose.PDF para .NET. Proporciona instrucciones paso a paso y ejemplos de código fuente de C# para ayudarlo a personalizar los estilos y las propiedades del elemento de matriz.
+### ¿Cómo puedo ajustar dinámicamente el ancho de las columnas?
+ Puedes configurar el`ColumnAdjustment` propiedad a`AutoFitToWindow` para ajustar el ancho de las columnas automáticamente según el contenido.
 
-#### P: ¿Cuáles son los requisitos previos para seguir este tutorial?
+### ¿Es obligatorio el cumplimiento de PDF/UA para todos los documentos?
+Si bien no es obligatorio, se recomienda para documentos que requieren altos estándares de accesibilidad.
 
-R: Antes de comenzar, asegúrese de haber configurado su entorno de desarrollo para utilizar Aspose.PDF para .NET. Esto implica instalar la biblioteca Aspose.PDF y configurar su proyecto para que haga referencia a ella.
+### ¿Puedo aplicar diferentes estilos a filas específicas?
+ Sí, puedes personalizar filas o celdas individuales ajustando sus`TextState` o`BackgroundColor`.
 
-#### P: ¿Cómo puedo crear un nuevo documento PDF y configurar su título e idioma usando Aspose.PDF para .NET?
-
- A: Para crear un nuevo documento PDF, debe crear un`Document` objeto de la biblioteca Aspose.PDF. El código fuente de C# proporcionado en el tutorial demuestra cómo crear un documento y configurar sus propiedades de título e idioma.
-
-#### P: ¿Cuál es el significado del elemento de estructura raíz en un documento PDF?
-
-A: El elemento de estructura raíz actúa como contenedor de otros elementos de estructura, lo que ayuda a organizar y categorizar el contenido del documento PDF. Desempeña un papel crucial en el establecimiento de la estructura lógica del documento.
-
-#### P: ¿Cómo puedo crear y personalizar un elemento de estructura de matriz utilizando Aspose.PDF para .NET?
-
- A: Puede crear un elemento de estructura de matriz utilizando el`CreateTableElement()` método. El código fuente del tutorial proporciona ejemplos de personalización de varias propiedades del elemento de tabla, como color de fondo, bordes, alineación, ancho de columna y más.
-
-#### P: ¿Puedo personalizar los estilos y propiedades de las celdas de la tabla dentro del elemento de la matriz?
-
-R: Sí, el tutorial explica cómo personalizar los estilos y las propiedades de todo el elemento de la tabla, incluidos los encabezados, las filas del cuerpo y el pie de página. Sin embargo, no aborda específicamente la personalización de celdas de tabla individuales.
-
-#### P: ¿Cómo puedo agregar encabezados, filas de cuerpo y un pie de página al elemento de tabla?
-
-R: El tutorial explica cómo crear y agregar encabezados, filas de cuerpo y pie de página al elemento de tabla utilizando los métodos apropiados proporcionados por Aspose.PDF para .NET.
-
-#### P: ¿Qué es la conformidad con PDF/UA y cómo puedo validarla para mi documento PDF etiquetado?
-
- A: La conformidad con PDF/UA garantiza que el documento PDF cumpla con los estándares de accesibilidad, lo que lo hace más accesible para los usuarios con discapacidades. El tutorial demuestra cómo validar la conformidad con PDF/UA utilizando`Validate()` método y generar un informe de cumplimiento XML.
-
-#### P: ¿Cómo puedo incorporar estos conceptos en mis propias aplicaciones .NET?
-
-R: Puede utilizar los ejemplos de código fuente de C# proporcionados como guía para implementar el formato de elementos de matriz en sus propias aplicaciones .NET. Modifique y adapte el código para que se ajuste a sus requisitos e intégrelo en sus proyectos.
-
-#### P: ¿Existen prácticas recomendadas para formatear elementos de matriz en documentos PDF?
-
-A: Al formatear elementos de matriz (tablas), tenga en cuenta la legibilidad y accesibilidad del contenido. Utilice fuentes claras y legibles, colores apropiados y mantenga un diseño uniforme. Valide la conformidad con PDF/UA para garantizar que se cumplan los estándares de accesibilidad.
-
-#### P: ¿Qué otras características de Aspose.PDF para .NET puedo explorar para personalizar documentos PDF?
-
-R: Aspose.PDF para .NET ofrece una variedad de funciones para la personalización de documentos PDF, que incluyen manipulación de texto, inserción de imágenes, administración de campos de formulario, firmas digitales, anotaciones y más. Consulte la documentación y los recursos oficiales para explorar funcionalidades adicionales.
+### ¿Cuál es el beneficio de utilizar contenido etiquetado?
+El contenido etiquetado mejora la accesibilidad de los documentos y ayuda a garantizar el cumplimiento de estándares como PDF/UA.

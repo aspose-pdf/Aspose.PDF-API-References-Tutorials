@@ -94,7 +94,7 @@ doc.Save(dataDir + "TECHDRAW_out.pdf");
 Ναι, το Aspose.PDF υποστηρίζει διάφορες μορφές, όπως HTML, XML και εικόνες.
 
 ### Υπάρχει δωρεάν δοκιμή διαθέσιμη;
- Ναι, μπορείτε να κάνετε λήψη μιας δωρεάν δοκιμής από το[Aspose ιστότοπο](https://releases.aspose.com/).
+ Ναι, μπορείτε να κάνετε λήψη μιας δωρεάν δοκιμής από το[Aspose website](https://releases.aspose.com/).
 
 ### Πού μπορώ να βρω υποστήριξη για το Aspose.PDF;
  Μπορείτε να επισκεφθείτε το[Aspose forum υποστήριξης](https://forum.aspose.com/c/pdf/10) για βοήθεια.

@@ -61,7 +61,7 @@ Dodaliśmy dwie zakładki nadrzędne: „Zakładka nadrzędna 1” i „Zakładk
 
 ## Dodawanie zakładek dla dzieci
 
-Teraz czas dodać zakładki podrzędne do zakładek nadrzędnych, które utworzyliśmy wcześniej. Zakładki podrzędne reprezentują konkretne tematy lub podsekcje w obrębie każdej zakładki nadrzędnej. Oto, jak możesz to zrobić:
+Teraz czas dodać zakładki podrzędne do zakładek nadrzędnych, które utworzyliśmy wcześniej. Zakładki podrzędne reprezentują określone tematy lub podsekcje w obrębie każdej zakładki nadrzędnej. Oto, jak możesz to zrobić:
 
 ```java
 // Dodaj zakładki dla dzieci do zakładki dla rodziców 1
@@ -190,4 +190,4 @@ Oprócz akcji „GoTo” możesz dodać akcje „URI” otwierające łącza int
 
 ### Czy Aspose.PDF dla Java nadaje się do projektów komercyjnych?
 
-Tak, Aspose.PDF for Java nadaje się zarówno do projektów prywatnych, jak i komercyjnych, oferując szeroką gamę funkcji do generowania i modyfikowania plików PDF.
+Tak, Aspose.PDF for Java nadaje się zarówno do projektów prywatnych, jak i komercyjnych, oferując szeroki zakres funkcji do generowania i modyfikowania plików PDF.

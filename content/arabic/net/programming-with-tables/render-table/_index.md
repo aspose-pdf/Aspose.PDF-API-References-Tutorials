@@ -2,105 +2,47 @@
 title: عرض الجدول في مستند PDF
 linktitle: عرض الجدول في مستند PDF
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: تعرف على كيفية عرض جدول في مستند PDF باستخدام Aspose.PDF لـ .NET.
+description: أنشئ ملفات PDF احترافية بسهولة عن طريق عرض الجداول باستخدام Aspose.PDF لـ .NET. اتبع دليلنا خطوة بخطوة لإتقان إنشاء المستندات.
 type: docs
 weight: 170
 url: /ar/net/programming-with-tables/render-table/
 ---
-في هذا البرنامج التعليمي، سنرشدك خطوة بخطوة لعرض جدول في مستند PDF باستخدام Aspose.PDF لـ .NET. سنشرح الكود المصدري C# المقدم ونوضح لك كيفية تنفيذه.
+## مقدمة
 
-## الخطوة 1: إنشاء المستند
-أولاً، سنقوم بإنشاء مستند PDF جديد:
+قد يبدو إنشاء ملفات PDF ذات مظهر احترافي برمجيًا مهمة شاقة، ولكن مع Aspose.PDF لـ .NET، يصبح الأمر سهلاً. سواء كنت تقوم بإنشاء تقارير أو فواتير أو أي نوع آخر من المستندات يتطلب بيانات جدولية، فإن Aspose.PDF يوفر لك الأدوات التي تحتاجها. في هذا البرنامج التعليمي، سنستكشف كيفية عرض الجداول في مستند PDF خطوة بخطوة. وبحلول النهاية، سيكون لديك فهم قوي لكيفية التعامل مع الجداول وإدارة خصائص الصفحة وحفظ ملفات PDF بسهولة.
+
+## المتطلبات الأساسية
+
+قبل أن نتعمق في الكود، إليك ما تحتاجه:
+
+-  Visual Studio: تأكد من تثبيت Visual Studio على جهازك. يمكنك تنزيله[هنا](https://visualstudio.microsoft.com/downloads/).
+-  Aspose.PDF لـ .NET: يمكنك بسهولة تنزيل مكتبة Aspose.PDF من[صفحة إصدار Aspose](https://releases.aspose.com/pdf/net/).
+- المعرفة الأساسية بلغة C#: إن فهم أساسيات لغة C# سوف يساعدك على المتابعة بشكل أفضل.
+- .NET Framework: من الناحية المثالية، تأكد من أنك تعمل في بيئة .NET متوافقة.
+
+بمجرد تعيين هذه المتطلبات الأساسية، ستكون جاهزًا لبدء إنشاء مستندات PDF الخاصة بك!
+
+## استيراد الحزم
+
+في بداية ملف C# الخاص بك، ستحتاج إلى استيراد مساحات الأسماء Aspose.PDF اللازمة. يتيح لك هذا الاستفادة من وظائف المكتبة في مشروعنا.
 
 ```csharp
-// المسار إلى دليل المستندات
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// إنشاء مستند جديد
-Document doc = new Document();
+using System;
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-## الخطوة 2: تكوين هوامش الصفحة والاتجاه
-بعد ذلك، سنقوم بتكوين هوامش الصفحة وتعيين الاتجاه إلى الوضع الأفقي:
+ تأكد من أنك قمت بإضافة المراجع اللازمة إلى مكتبة Aspose.PDF في مشروعك. إذا كنت تستخدم NuGet، فيمكنك إضافتها بسهولة عن طريق البحث عن`Aspose.PDF`.
+
+الآن بعد أن قمنا بإعداد كل شيء، فلنبدأ في تقسيم العملية إلى خطوات يمكن إدارتها لعرض جدول في مستند PDF. لا تقلق؛ سأقوم بإرشادك خلال كل خطوة بإرشادات واضحة!
+
+## الخطوة 1: إعداد معلومات المستند والصفحة
+
+أولاً وقبل كل شيء، نحتاج إلى إنشاء مستند جديد وتكوين إعدادات الصفحة الخاصة به. وإليك كيفية القيام بذلك:
 
 ```csharp
-PageInfo pageInfo = doc.PageInfo;
-Aspose.Pdf.MarginInfo marginInfo = pageInfo.Margin;
-
-marginInfo. Left = 37;
-marginInfo. Right = 37;
-marginInfo. Top = 37;
-marginInfo.Bottom = 37;
-
-pageInfo.IsLandscape = true;
-```
-
-## الخطوة 3: إنشاء الجدول والأعمدة
-الآن دعونا ننشئ جدولًا ونحدد عرض الأعمدة:
-
-```csharp
-Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-table. ColumnWidths = "50 100";
-```
-
-## الخطوة 4: إضافة صفوف وخلايا إلى الجدول
-بعد ذلك، سنضيف صفوفًا وخلايا إلى الجدول باستخدام حلقة:
-
-```csharp
-for (int i = 1; i <= 120; i++)
-{
-     Aspose.Pdf.Row row = table.Rows.Add();
-     row. FixedRowHeight = 15;
-     Aspose.Pdf.Cell cell1 = row.Cells.Add();
-     cell1.Paragraphs.Add(new TextFragment("Content 1"));
-     Aspose.Pdf.Cell cell2 = row.Cells.Add();
-     cell2.Paragraphs.Add(new TextFragment("HHHHH"));
-}
-```
-
-## الخطوة 5: إضافة الجدول إلى الصفحة
-الآن دعونا نضيف الجدول إلى صفحة المستند:
-
-```csharp
-Page curPage = doc.Pages.Add();
-Aspose.Pdf.Paragraphs paragraphs = curPage.Paragraphs;
-paragraphs. Add(table);
-```
-
-## الخطوة 6: عرض الجدول على صفحة جديدة
-بعد ذلك، سنقوم بإنشاء جدول جديد وتعيين الخاصية "IsInNewPage" إلى "true" لعرض الجدول على صفحة جديدة:
-
-```csharp
-Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-table. ColumnWidths = "100 100";
-for (int i = 1; i <= 10; i++)
-{
-     Aspose.Pdf.Row row = table1.Rows.Add();
-     Aspose.Pdf.Cell cell1 = row.Cells.Add();
-     cell1.Paragraphs.Add(new TextFragment("LAAAAAAA"));
-     Aspose.Pdf.Cell cell2 = row.Cells.Add();
-     cell2.Paragraphs.Add(new TextFragment("LAAGGGGGG"));
-}
-table1.IsInNewPage = true;
-paragraphs. Add(table1);
-```
-
-## الخطوة 7: حفظ ملف PDF
-وأخيرًا، نحفظ مستند PDF:
-
-```csharp
-dataDir = dataDir + "IsNewPageProperty_Test_out.pdf";
-doc.Save(dataDir);
-
-Console.WriteLine("\nTable displayed successfully on a page.\nFile saved at location: " + dataDir);
-```
-
-### مثال على كود المصدر لعرض الجدول باستخدام Aspose.PDF لـ .NET
-
-```csharp
-// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-
 Document doc = new Document();
 PageInfo pageInfo = doc.PageInfo;
 Aspose.Pdf.MarginInfo marginInfo = pageInfo.Margin;
@@ -111,63 +53,123 @@ marginInfo.Top = 37;
 marginInfo.Bottom = 37;
 
 pageInfo.IsLandscape = true;
-
-Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-table.ColumnWidths = "50 100";
-// تمت إضافة الصفحة.
-Page curPage = doc.Pages.Add();
-for (int i = 1; i <= 120; i++)
-{
-	Aspose.Pdf.Row row = table.Rows.Add();
-	row.FixedRowHeight = 15;
-	Aspose.Pdf.Cell cell1 = row.Cells.Add();
-	cell1.Paragraphs.Add(new TextFragment("Content 1"));
-	Aspose.Pdf.Cell cell2 = row.Cells.Add();
-	cell2.Paragraphs.Add(new TextFragment("HHHHH"));
-}
-Aspose.Pdf.Paragraphs paragraphs = curPage.Paragraphs;
-paragraphs.Add(table);
-/********************************************/
-Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-table.ColumnWidths = "100 100";
-for (int i = 1; i <= 10; i++)
-{
-	Aspose.Pdf.Row row = table1.Rows.Add();
-	Aspose.Pdf.Cell cell1 = row.Cells.Add();
-	cell1.Paragraphs.Add(new TextFragment("LAAAAAAA"));
-	Aspose.Pdf.Cell cell2 = row.Cells.Add();
-	cell2.Paragraphs.Add(new TextFragment("LAAGGGGGG"));
-}
-table1.IsInNewPage = true;
-// أريد الاحتفاظ بالجدول 1 إلى الصفحة التالية من فضلك...
-paragraphs.Add(table1);
-dataDir = dataDir + "IsNewPageProperty_Test_out.pdf";
-doc.Save(dataDir);
-
-Console.WriteLine("\nTable render successfully on a page.\nFile saved at " + dataDir);
 ```
 
+توضيح: 
+- نبدأ بتحديد المكان الذي سيتم حفظ مستندنا فيه (`dataDir`). 
+-  ثم نقوم بإنشاء مثيل جديد لـ`Document` فصل. 
+- نقوم بتهيئة هوامش الصفحة لإنشاء مساحة للتنفس حول طاولتنا.
+- وأخيرًا، قمنا بتعيين اتجاه المستند إلى الاتجاه الأفقي، مما يساعد عند عرض الجداول الأوسع.
+
+## الخطوة 2: إنشاء الجدول الأول
+
+بعد ذلك، دعنا نقوم بإنشاء جدولنا الأول ونملأه ببعض البيانات النموذجية:
+
+```csharp
+Aspose.Pdf.Table table = new Aspose.Pdf.Table();
+table.ColumnWidths = "50 100"; // تحديد عرض الأعمدة
+```
+
+ الشرح: هنا، نقوم بإنشاء مثيل لـ`Table` قم بتعيين عرض العمود. سيكون عرض العمود الأول 50 وحدة، وسيكون عرض العمود الثاني 100 وحدة.
+
+## الخطوة 3: ملء الجدول بالصفوف
+
+الآن، دعونا نضيف صفوفًا إلى جدولنا في حلقة:
+
+```csharp
+Page curPage = doc.Pages.Add(); // إضافة صفحة جديدة
+for (int i = 1; i <= 120; i++)
+{
+    Aspose.Pdf.Row row = table.Rows.Add();
+    row.FixedRowHeight = 15; // تعيين ارتفاع ثابت للصفوف
+    
+    Aspose.Pdf.Cell cell1 = row.Cells.Add();
+    cell1.Paragraphs.Add(new TextFragment("Content 1"));
+    
+    Aspose.Pdf.Cell cell2 = row.Cells.Add();
+    cell2.Paragraphs.Add(new TextFragment("HHHHH"));
+}
+```
+
+توضيح: 
+- هنا نقوم بإنشاء صفحة جديدة لإضافة جدولنا.
+-  نحن نستخدم`for` حلقة لإضافة 120 صفًا إلى جدولنا. كل صف له ارتفاع ثابت يبلغ 15 وحدة.
+- داخل كل صف، نضيف خليتين ونملأهما بالنص.
+
+## الخطوة 4: إضافة الجدول الأول إلى الصفحة
+
+بمجرد ملء الجدول، سنضيفه إلى الصفحة الحالية:
+
+```csharp
+Aspose.Pdf.Paragraphs paragraphs = curPage.Paragraphs;
+paragraphs.Add(table);
+```
+
+التوضيح: هذه الخطوة تقوم ببساطة بإضافة الجدول الذي أنشأناه إلى فقرات الصفحة الحالية، مما يجعل الجدول مرئيًا في مستند PDF.
+
+## الخطوة 5: إنشاء جدول ثانٍ
+
+الآن، دعونا ننشئ جدولًا ثانيًا بمحتوى مختلف ونضيفه إلى صفحة جديدة:
+
+```csharp
+Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
+table1.ColumnWidths = "100 100";
+for (int i = 1; i <= 10; i++)
+{
+    Aspose.Pdf.Row row = table1.Rows.Add();
+    Aspose.Pdf.Cell cell1 = row.Cells.Add();
+    cell1.Paragraphs.Add(new TextFragment("LAAAAAAA"));
+    
+    Aspose.Pdf.Cell cell2 = row.Cells.Add();
+    cell2.Paragraphs.Add(new TextFragment("LAAGGGGGG"));
+}
+table1.IsInNewPage = true; // إعداد الجدول الثاني ليظهر في صفحة جديدة
+paragraphs.Add(table1);
+```
+
+توضيح: 
+- يؤدي مقتطف التعليمات البرمجية هذا إلى إنشاء جدول جديد يحتوي على عمودين، يبلغ عرض كل منهما 100 وحدة.
+-  أ`for` تضيف الحلقة 10 صفوفًا بمحتوى العينة.
+-  عن طريق الإعداد`table1.IsInNewPage` إذا كان الأمر كذلك، فإننا نضمن ظهور هذا الجدول على صفحة جديدة، مما يبقي الأشياء منظمة وغير مزدحمة.
+
+## الخطوة 6: احفظ المستند
+
+الآن بعد أن أصبحت جداولنا جاهزة، فلنحفظ مستندنا:
+
+```csharp
+dataDir = dataDir + "IsNewPageProperty_Test_out.pdf";
+doc.Save(dataDir);
+```
+
+ الشرح: نحدد اسم الملف ونحفظ المستند في الدليل المحدد. عند تشغيل هذا الكود، يتم إنشاء ملف PDF بعنوان`IsNewPageProperty_Test_out.pdf` سيتم إنشاؤه في الموقع المحدد الخاص بك.
+
+## الخطوة 7: رسالة التأكيد
+
+أخيرًا، لإعلام المستخدم بأن كل شيء سار بسلاسة، يمكننا إضافة رسالة وحدة تحكم ودية:
+
+```csharp
+Console.WriteLine("\nTable rendered successfully on a page.\nFile saved at " + dataDir);
+```
+
+التوضيح: هذه طريقة بسيطة لتأكيد نجاح العملية ومكان العثور على ملف PDF الجديد للمستخدم.
+
 ## خاتمة
-تهانينا! لقد تعلمت الآن كيفية عرض جدول في مستند PDF باستخدام Aspose.PDF لـ .NET. يوضح لك هذا الدليل خطوة بخطوة كيفية إنشاء مستند وتكوين هوامش الصفحات والاتجاه وإضافة جدول وعرض جدول على صفحة جديدة. يمكنك الآن تطبيق هذه المعرفة على مشاريعك الخاصة.
 
-### الأسئلة الشائعة حول عرض الجدول في مستند PDF
+والآن، لقد نجحت في عرض الجداول في مستند PDF باستخدام Aspose.PDF لـ .NET. فباستخدام بضعة أسطر فقط من التعليمات البرمجية، يمكنك التعامل مع كميات كبيرة من البيانات وتقديمها بتنسيق منظم، مما يجعل مستنداتك مفيدة وجذابة بصريًا. سواء كنت تعمل على قوائم المخزون أو التقارير المالية أو المستندات التعليمية، فإن الجداول هي وسيلة ممتازة لنقل المعلومات المعقدة في لمحة.
 
-#### س: كيف يمكنني تعديل مظهر الجدول، مثل تغيير ألوان الخلايا أو إضافة حدود؟
+## الأسئلة الشائعة
 
- أ: لتعديل مظهر الجدول، يمكنك تعيين خصائص مختلفة للجدول.`Aspose.Pdf.Table` وخلاياها. على سبيل المثال، يمكنك ضبط`BackgroundColor` خاصية الخلايا لتغيير لون خلفيتها. يمكنك أيضًا ضبط`Border` خصائص الجدول أو الخلايا الفردية لإضافة حدود. بالإضافة إلى ذلك، يمكنك تخصيص الخط ولون النص ومحاذاة محتوى الجدول عن طريق تعديل`TextState` التابع`TextFragment` الكائنات المضافة إلى الخلايا.
+### هل يمكنني تخصيص مظهر الجداول في Aspose.PDF؟  
+بالتأكيد! يمكنك ضبط الألوان والحدود وأنماط الخطوط والخصائص الأخرى لتحسين مظهر الجداول الخاصة بك.
 
-#### س: هل يمكنني إضافة رؤوس أو تذييلات إلى الجدول؟
+### هل استخدام Aspose.PDF مجاني؟  
+ يقدم Aspose.PDF إصدارًا تجريبيًا مجانيًا، ولكن للاستخدام التجاري، يلزم الشراء. يمكنك التحقق من الأسعار[هنا](https://purchase.aspose.com/buy).
 
-ج: نعم، يمكنك إضافة رؤوس أو تذييلات إلى الجدول عن طريق إنشاء صفوف إضافية في بداية أو نهاية الجدول وتعيين المحتوى المناسب في الخلايا. يمكنك تخصيص الرؤوس أو التذييلات بشكل مستقل عن بقية محتوى الجدول عن طريق إضافة أنماط أو محتوى مختلف إلى هذه الصفوف المحددة.
+### كيف يمكنني الحصول على الدعم لمشاكل Aspose.PDF؟  
+ يمكنك طلب المساعدة من منتدى دعم Aspose[هنا](https://forum.aspose.com/c/pdf/10).
 
-#### س: كيف يمكنني التحكم في موضع الجدول في الصفحة؟
+### هل هناك أية قيود على النسخة التجريبية المجانية؟  
+ نعم، قد يكون للإصدار التجريبي بعض القيود، مثل وضع علامة مائية على المستندات المولدة. للحصول على الوظائف الكاملة، فكر في الحصول على ترخيص مؤقت[هنا](https://purchase.aspose.com/temporary-license/).
 
-أ: للتحكم في موضع الجدول على الصفحة، يمكنك ضبط`MarginInfo` التابع`PageInfo` الكائن.`MarginInfo` يتيح لك ضبط الهوامش اليسرى واليمنى والعلوية والسفلية للصفحة، مما يؤثر على المساحة المتوفرة للجدول. يمكنك أيضًا استخدام`PositioningType` ممتلكات`Aspose.Pdf.Table` للتحكم في محاذاتها الأفقية والرأسية ضمن منطقة محتوى الصفحة.
-
-#### س: هل يمكنني تصدير الجدول إلى تنسيقات ملفات مختلفة، مثل Excel أو CSV؟
-
-ج: تم تصميم Aspose.PDF for .NET في الأساس للعمل مع مستندات PDF. ورغم أنه يمكنه تصدير مستند PDF كصورة أو XPS، إلا أنه لا يدعم تصدير الجداول إلى تنسيقات مثل Excel أو CSV بشكل مباشر. لتصدير بيانات الجدول إلى تنسيقات ملفات مختلفة، قد تحتاج إلى استخدام مكتبات أو طرق إضافية لتحويل محتوى PDF إلى التنسيق المطلوب.
-
-#### س: كيف يمكنني إضافة ارتباطات تشعبية إلى خلايا الجدول؟
-
- أ: لإضافة ارتباطات تشعبية إلى خلايا الجدول، يمكنك استخدام`Aspose.Pdf.WebHyperlink` فئة لإنشاء ارتباط تشعبي ثم إضافته كمرساة إلى`TextFragment`داخل الخلية. يتيح لك هذا ربط عنوان URL أو هدف ارتباط بنص أو محتوى محدد داخل الخلية، مما يؤدي إلى إنشاء ارتباطات تشعبية قابلة للنقر.
+### أين يمكنني العثور على مزيد من المعلومات حول ميزات Aspose.PDF؟  
+ يمكنك استكشاف الوثائق الشاملة المتاحة[هنا](https://reference.aspose.com/pdf/net/).

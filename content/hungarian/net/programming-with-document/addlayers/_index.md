@@ -89,7 +89,7 @@ layer.Contents.Add(new Stroke());
 
 Ez olyan, mintha egy festőt irányítanál, hova helyezze az ecsetet a vásznon!
 
-## 4. lépés: Ismételje meg további rétegekhez
+## 4. lépés: Ismételje meg a további rétegekhez
 
 Tegyünk még két réteget. Kövesse ugyanazt a mintát:
 

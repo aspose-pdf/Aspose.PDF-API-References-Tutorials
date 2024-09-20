@@ -125,7 +125,7 @@ Console.WriteLine("\nLinks extracted successfully.\nFile saved at " + dataDir);
 
 ## 結論
 
-現在你就得到它了！只需幾個簡單的步驟，您現在就可以使用 Aspose.PDF for .NET 從任何 PDF 文件中提取連結。這個強大的函式庫為處理 PDF 開闢了一個可能性的世界，從簡單的連結提取到複雜的文件操作。如果您想更熟悉 Aspose，請考慮查看他們的[文件](https://reference.aspose.com/pdf/net/)或探索他們提供的更多功能。
+現在你就擁有了！只需幾個簡單的步驟，您現在就可以使用 Aspose.PDF for .NET 從任何 PDF 文件中提取連結。這個強大的函式庫為處理 PDF 開闢了一個可能性的世界，從簡單的連結提取到複雜的文件操作。如果您想更熟悉 Aspose，請考慮查看他們的[文件](https://reference.aspose.com/pdf/net/)或探索他們提供的更多功能。
 
 ## 常見問題解答
 

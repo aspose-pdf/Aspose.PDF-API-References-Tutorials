@@ -16,7 +16,7 @@ Soubory PDF (Portable Document Format) se široce používají pro sdílení dok
 
 Aspose.PDF for Java je výkonná Java knihovna, která umožňuje vývojářům vytvářet, manipulovat a převádět PDF dokumenty programově. Poskytuje rozsáhlé funkce pro práci se soubory PDF, díky čemuž je cenným nástrojem pro různé úkoly, včetně převodu PDF na SVG.
 
-## Proč převádět PDF na obrázky SVG?
+## Proč převádět soubory PDF na obrázky SVG?
 
 SVG je vektorový grafický formát, který lze snadno škálovat bez ztráty kvality. Převod souborů PDF na obrázky SVG je výhodný, když chcete:
 

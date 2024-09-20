@@ -7,126 +7,103 @@ type: docs
 weight: 90
 url: /zh/net/programming-with-tagged-pdf/custom-tag-name/
 ---
-在本分步指南中，我们将引导您了解如何使用 Aspose.PDF for .NET 自定义标签名称。Aspose.PDF 是一个功能强大的库，可让您以编程方式操作 PDF 文档。使用自定义标签，您可以向 PDF 文档添加特定的结构信息，使其更易于使用和访问。
+## 介绍
 
-让我们深入研究代码并学习如何使用 Aspose.PDF for .NET 的自定义标签名称。
+在当今的数字时代，PDF 无处不在。从报告到手册，它们在各个行业中发挥着多种用途。然而，确保这些文档可供所有人（包括残障人士）访问至关重要。这就是标记 PDF 发挥作用的地方。它们使屏幕阅读器和其他辅助技术更容易有效地解释文档内容。
 
 ## 先决条件
 
-开始之前，请确保您已准备好以下物品：
+在我们开始编码之前，必须确保一切准备就绪。以下是您需要的内容：
 
-1. 已安装用于.NET 的 Aspose.PDF 库。
-2. C# 编程语言的基本知识。
+1. Visual Studio — 任何最新版本都可以，但最好使用最新版本以获得最佳功能。
+2.  Aspose.PDF for .NET - 您可以从[下载链接](https://releases.aspose.com/pdf/net/).
+3. C# 基础知识 - 熟悉 C# 编程基础知识将对您实现代码有所帮助。
 
-## 步骤 1：设置环境
+## 导入包
 
-首先，打开 C# 开发环境并创建一个新项目。确保您已在项目中添加了对 .NET 的 Aspose.PDF 库的引用。
+设置好环境后，下一步是导入使用 Aspose.PDF 所需的软件包。您可以通过将 Aspose.PDF 库添加到您的项目中来实现这一点。
+
+### 通过 NuGet 安装 Aspose.PDF
+
+1. 打开您的 Visual Studio 项目：如果您尚未创建项目，请继续创建一个新项目。
+2. 访问 NuGet 包管理器：在解决方案资源管理器中右键单击您的项目并选择“管理 NuGet 包”。
+3. 搜索 Aspose.PDF：在搜索栏中输入“Aspose.PDF”。
+4. 安装软件包：单击“安装”将软件包添加到您的项目中。安装完成后，您就可以开始了！
+
+### 添加使用指令
+
+为了在代码中使用 Aspose 功能，您需要在文件顶部添加必要的 using 指令：
 
 ```csharp
-//文档目录的路径。
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## 第 2 步：创建文档
+完成这些步骤后，您就可以开始创建带标签的 PDF 了！
 
-第一步是使用`Document`班级。
+现在您已完成所有设置，让我们开始主要任务：创建带标签的 PDF 文档。以下是有关如何使用 Aspose.PDF for .NET 执行此操作的分步指南。
+
+## 步骤 1：定义文档目录
+
+首先，您需要指定 PDF 的保存路径。这是您定义数据目录的地方。
 
 ```csharp
-//创建 PDF 文档
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+说明：将“YOUR DOCUMENT DIRECTORY”替换为您想要保存 PDF 文件的实际路径。必须拥有此目录中的写入权限，以避免任何运行时异常。
+
+## 步骤 2：创建新的 PDF 文档
+
+接下来，我们将创建一个实例`Document`班级。
+
+```csharp
 Document document = new Document();
 ```
 
-## 步骤 3：处理标记内容
+解释：此行初始化一个新的 PDF 文档。可以将其视为创建一个空白画布，您可以在其中绘制 PDF 的内容。
 
-然后我们得到要处理的文档的标记内容。
+## 步骤 3：创建标记内容
+
+现在，是时候了解标记的核心了。我们将检索文档的标记内容。
 
 ```csharp
-//获取文档的标记内容
 ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-## 步骤 4：设置文档标题和语言
+解释：`TaggedContent`对象允许我们通过分层组织内容来操纵 PDF 的逻辑结构和可访问性。
 
-我们现在可以设置文档标题和语言。
+## 步骤 4：设置标题和语言
+
+接下来，您可以设置文档的标题和语言属性。这有助于屏幕阅读器正确处理文档。
 
 ```csharp
-//定义文档标题和语言
-taggedContent.SetTitle("Tagged PDF document");
-taggedContent.SetLanguage("fr-FR");
+taggedContent.SetTitle("Tagged Pdf Document");
+taggedContent.SetLanguage("en-US");
 ```
+
+说明：在这里，我们向阅读此 PDF 的任何人告知其标题和语言，这有助于理解，尤其是对于辅助功能工具而言。
 
 ## 步骤 5：创建逻辑结构元素
 
-现在让我们创建一些逻辑结构元素来组织我们的内容。
+现在是时候在 PDF 中创建结构化元素了。
 
 ```csharp
-//创建逻辑结构元素
 SectElement sect = taggedContent.CreateSectElement();
 taggedContent.RootElement.AppendChild(sect);
-ParagraphElement p1 = taggedContent.CreateParagraphElement();
-ParagraphElement p2 = taggedContent.CreateParagraphElement();
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-ParagraphElement p4 = taggedContent.CreateParagraphElement();
-p1.SetText("P1.");
-p2.SetText("P2.");
-p3.SetText("P3.");
-p4.SetText("P4.");
-p1.SetTag("P1");
-p2.SetTag("Para");
-p3.SetTag("Para");
-p4.SetTag("Paragraph");
-sect.AppendChild(p1);
-sect.AppendChild(p2);
-sect.AppendChild(p3);
-sect.AppendChild(p4);
-SpanElement span1 = taggedContent.CreateSpanElement();
-SpanElement span2 = taggedContent.CreateSpanElement();
-SpanElement span3 = taggedContent.CreateSpanElement();
-SpanElement span4 = taggedContent.CreateSpanElement();
-span1.SetText("Span 1.");
-span2.SetText("Span 2.");
-span3.SetText("Span 3.");
-span4.SetText("Span 4.");
-span1.SetTag("SPAN");
-span2.SetTag("Sp");
-span3.SetTag("Sp");
-span4.SetTag("TheSpan");
-p1.AppendChild(span1);
-p2.AppendChild(span2);
-p3.AppendChild(span3);
-p4.AppendChild(span4);
 ```
 
-在这里，我们为内容创建段落元素和跨度元素，并为它们分配自定义标签。
+说明：此步骤引入了一个部分元素，您可以在其中开始添加内容。`RootElement`是您的基地。
 
-## 步骤 6：保存标记的 PDF 文档
+## 步骤 6：创建段落元素
 
-最后，我们保存标记的PDF文档。
+现在我们创建各种段落元素并设置它们的文本内容。
 
 ```csharp
-//保存标记的 PDF 文档
-document.Save(dataDir + "CustomTag.pdf");
-```
-
-### 使用 Aspose.PDF for .NET 的自定义标签名称的示例源代码 
-```csharp
-
-//文档目录的路径。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-//创建 PDF 文档
-Document document = new Document();
-
-//获取使用 TaggedPdf 工作的内容
-ITaggedContent taggedContent = document.TaggedContent;
-
-//设置 Documnet 的标题和语言
-taggedContent.SetTitle("Tagged Pdf Document");
-taggedContent.SetLanguage("en-US");
-
-//创建逻辑结构元素
-SectElement sect = taggedContent.CreateSectElement();
-taggedContent.RootElement.AppendChild(sect);
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 ParagraphElement p2 = taggedContent.CreateParagraphElement();
 ParagraphElement p3 = taggedContent.CreateParagraphElement();
@@ -135,14 +112,41 @@ p1.SetText("P1. ");
 p2.SetText("P2. ");
 p3.SetText("P3. ");
 p4.SetText("P4. ");
+```
+
+说明：每个段落都类似于故事中的一个句子，为您的文档设置场景并提供含义。
+
+## 步骤 7：为段落分配标签
+
+对每个段落进行适当的标记对于 PDF 的可访问性至关重要。
+
+```csharp
 p1.SetTag("P1");
 p2.SetTag("Para");
 p3.SetTag("Para");
 p4.SetTag("Paragraph");
+```
+
+解释：通过标签标记，我们可以让辅助技术理解内容的结构——这就像给他们提供一张导航地图一样。
+
+## 步骤 8：将段落附加到章节
+
+我们现在将这些段落附加到之前创建的部分。
+
+```csharp
 sect.AppendChild(p1);
 sect.AppendChild(p2);
 sect.AppendChild(p3);
 sect.AppendChild(p4);
+```
+
+说明：此操作可组织部分内的段落，使流程合乎逻辑且易于理解。
+
+## 步骤 9：创建 Span 元素
+
+就像段落一样，跨度为我们的文本内容添加了详细信息。
+
+```csharp
 SpanElement span1 = taggedContent.CreateSpanElement();
 SpanElement span2 = taggedContent.CreateSpanElement();
 SpanElement span3 = taggedContent.CreateSpanElement();
@@ -151,62 +155,63 @@ span1.SetText("Span 1.");
 span2.SetText("Span 2.");
 span3.SetText("Span 3.");
 span4.SetText("Span 4.");
+```
+
+解释：跨度就像对细节进行微调；它们为您在每个段落中传达的内容添加了特殊性。
+
+## 步骤 10：为 Span 元素分配标签
+
+正如我们对段落所做的那样，我们应该标记跨度元素以帮助理解。
+
+```csharp
 span1.SetTag("SPAN");
 span2.SetTag("Sp");
 span3.SetTag("Sp");
 span4.SetTag("TheSpan");
+```
+
+解释：正确标记跨度可确保准确呈现所有细微差别，从而为遇到它的任何人创建丰富的文档。
+
+## 步骤 11：将 Span 附加到段落
+
+现在，让我们将 span 元素附加到各自的段落中。
+
+```csharp
 p1.AppendChild(span1);
 p2.AppendChild(span2);
 p3.AppendChild(span3);
 p4.AppendChild(span4);
-
-//保存带标签的 PDF 文档
-document.Save(dataDir + "CustomTag.pdf");
-
 ```
+
+解释：这种整合通过分层附加信息来增强您的段落，就像在书中添加脚注以便更深入地理解一样。
+
+## 步骤 12：保存带标签的 PDF 文档
+
+最后，是时候保存你的杰作了！
+
+```csharp
+document.Save(dataDir + "CustomTag.pdf");
+```
+
+说明：此行将标记的 PDF 保存到指定目录。这样，您就完成了标记 PDF 文档的创建！
 
 ## 结论
 
-恭喜！您已经学会了如何在 Aspose.PDF for .NET 中使用自定义标签名称。现在，您可以使用自定义标签向 PDF 文档添加特定的结构信息。探索 Aspose.PDF 的更多功能，以充分发挥其潜力。
+使用 Aspose.PDF for .NET 创建带标签的 PDF 文档不仅仅是添加内容，它还为所有用户打造可访问的体验。只需几个步骤，您就可以确保您的文档与所有人对话，消除障碍并增强理解。 
 
-### 常见问题解答
+## 常见问题解答
 
-#### 问：PDF 文档中的自定义标签名称是什么？为什么我要在 Aspose.PDF for .NET 中使用它？
+### 什么是带标签的 PDF？  
+带标签的 PDF 包含额外的元数据，描述文档内容的结构和可访问性，使辅助技术更容易解释。
 
-答：PDF 文档中的自定义标签名称是用户定义的标签，可为文档内容提供特定的结构信息。使用 Aspose.PDF for .NET 的自定义标签名称可以增强 PDF 文档的可访问性和组织性，使其更易于导航、理解和交互。
+### 为什么我需要 Aspose.PDF for .NET？  
+Aspose.PDF for .NET 是一个功能强大的库，允许开发人员使用广泛的功能以编程方式创建、修改和操作 PDF 文档。
 
-#### 问：Aspose.PDF for .NET 如何促进在 PDF 文档中使用自定义标签名称？
+### 如何获得 Aspose.PDF 的试用版？  
+您可以通过访问获取 Aspose.PDF 的免费试用版[此链接](https://releases.aspose.com/).
 
-答：Aspose.PDF for .NET 提供了一组类和方法，使您能够创建、操作和分配自定义标签名称到 PDF 文档中的不同结构元素。这有助于您为文档内容添加语义和上下文。
+### 我可以获得 Aspose.PDF 的支持吗？  
+是的，您可以通过以下方式寻求支持[Aspose 论坛](https://forum.aspose.com/c/pdf/10).
 
-#### 问：`taggedContent` object play in using custom tag names?
-
-答：`taggedContent`对象，从文档的`TaggedContent`属性，允许您使用 PDF 文档中的结构化元素。您可以创建、组织和分配自定义标签名称给这些元素，从而增强文档的语义结构。
-
-#### 问：自定义标签名称如何提高文档的可访问性和可用性？
-
-答：自定义标签名称为文档内容提供了额外的上下文和语义，从而提高了辅助技术的可访问性并增强了整体用户体验。屏幕阅读器和其他辅助设备可以使用自定义标签名称向用户传达有意义的信息。
-
-#### 问：我可以对 PDF 文档中的各种类型的结构元素使用自定义标签名称吗？
-
-答：是的，您可以为各种结构元素分配自定义标签名称，包括段落、跨度、节等。这样您就可以对文档内容的不同部分进行分类和标记，从而创建更有条理、更易于理解的布局。
-
-#### 问：如何使用 Aspose.PDF for .NET 定义并分配自定义标签名称给 PDF 文档中的元素？
-
-答：您可以通过创建逻辑结构元素（例如段落和跨度）来定义和分配自定义标签名称，然后使用`SetTag`方法将所需的自定义标签名称分配给这些元素。提供的代码示例演示了此过程。
-
-#### 问：如何确保我使用的自定义标签名称与可访问性标准和最佳实践兼容？
-
-答：选择自定义标签名称时，建议遵循无障碍指南，使用描述性强且有意义的标签，准确代表内容。查阅相关的无障碍标准和文档可以帮助您选择合适的自定义标签名称。
-
-#### 问：我可以将自定义标签名称与 Aspose.PDF for .NET 提供的其他 PDF 操作功能结合使用吗？
-
-答：当然可以！您可以将自定义标签名称与 Aspose.PDF for .NET 的其他功能（例如创建表格、添加图像、插入超链接等）结合使用。这样您就可以创建具有结构化内容的丰富且易于访问的 PDF 文档。
-
-#### 问：如何验证使用自定义标签名称对 PDF 文档的可访问性和可用性的有效性？
-
-答：您可以使用屏幕阅读器等辅助技术来导航和与 PDF 文档交互，以验证自定义标签名称的有效性。此外，您还可以使用工具和验证器测试文档是否符合可访问性标准和指南。
-
-#### 问：我如何扩展这些知识以创建更复杂的文档结构并在高级场景中使用自定义标签名称？
-
-答：您可以通过探索 Aspose.PDF for .NET 的其他功能来扩展这些知识，例如创建嵌套结构元素、使用自定义标签作为表单字段、合并多媒体元素等。该库的文档和示例为这些高级场景提供了指导。
+### 在哪里可以找到详细的 Aspose.PDF 文档？  
+完整文档可以在这里找到[这里](https://reference.aspose.com/pdf/net/).

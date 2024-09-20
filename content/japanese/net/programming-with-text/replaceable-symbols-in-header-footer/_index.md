@@ -7,37 +7,57 @@ type: docs
 weight: 320
 url: /ja/net/programming-with-text/replaceable-symbols-in-header-footer/
 ---
-このチュートリアルでは、.NET 用の Aspose.PDF ライブラリを使用して、PDF ドキュメントのヘッダーとフッターで置き換え可能なシンボルを使用する方法について説明します。提供されている C# ソース コードを使用して、PDF の作成、余白の設定、置き換え可能なシンボルを使用したヘッダーとフッターの追加、PDF の保存のプロセスを段階的に説明します。
+## 導入
+
+PDF ファイルで作業する場合、ページ番号、レポート名、生成日などの動的コンテンツを使用してヘッダーとフッターをカスタマイズする必要がある場合があります。幸いなことに、Aspose.PDF for .NET はこのプロセスを簡素化し、ページ番号やレポート生成の詳細などのヘッダーとフッターのシンボルを自動的に更新する PDF を作成できます。この記事では、Aspose.PDF for .NET を使用して、シンプルであるだけでなく非常に効率的な方法でヘッダーとフッターのシンボルを置き換える手順を順を追って説明します。
 
 ## 前提条件
 
-始める前に、次のものがあることを確認してください。
+ステップバイステップガイドに進む前に、次のものを用意してください。
 
-- Aspose.PDF for .NET ライブラリがインストールされました。
-- C# プログラミングの基本的な理解。
+-  Aspose.PDF for .NET ライブラリ –[ダウンロード](https://releases.aspose.com/pdf/net/)または[無料トライアル](https://releases.aspose.com/).
+- システムにインストールされている Visual Studio または任意の C# IDE。
+- C# および .NET 開発に関する基本的な知識。
+- 有効な[ライセンス](https://purchase.aspose.com/temporary-license/)Aspose.PDF の場合は、試用版を使用することもできます。
 
-## ステップ1: ドキュメントディレクトリを設定する
+## パッケージのインポート
 
-まず、生成されたPDFファイルを保存するディレクトリへのパスを設定する必要があります。`"YOUR DOCUMENT DIRECTORY"`の`dataDir`目的のディレクトリへのパスを含む変数。
+まず、Aspose.PDF for .NET の機能を有効にするために必要な名前空間をインポートする必要があります。必要なインポートは次のとおりです。
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System;
 ```
 
-## ステップ2: PDFドキュメントとページを作成する
+これらは、PDF の作成、テキストの操作、ヘッダー/フッターの管理を処理するために不可欠です。
 
-次に、新しいPDF文書を作成し、`Document`クラスと`Page` Aspose.PDF ライブラリのクラス。
+サンプルコードをわかりやすいステップに分解してみましょう。
+
+## ステップ1: ドキュメントとページを設定する
+
+まず、ドキュメントを初期化し、ページを追加する必要があります。これにより、ヘッダーとフッターを追加するための基礎が設定されます。
 
 ```csharp
+//ドキュメントディレクトリを設定する
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+//ドキュメントオブジェクトを初期化する
 Document doc = new Document();
+
+//ドキュメントにページを追加する
 Page page = doc.Pages.Add();
 ```
 
-## ステップ3: 余白を設定する
+ここでは、`Document`クラスとページの追加`doc.Pages.Add()`このページには、ヘッダー、フッター、その他のコンテンツが保持されます。
 
-ページの余白を設定するには、`MarginInfo`クラス。要件に応じてマージンの値を調整します。
+## ステップ2: ページ余白を設定する
+
+次に、コンテンツがページの端まで表示されないように、ページの余白を定義します。
 
 ```csharp
+//余白を設定する
 MarginInfo marginInfo = new MarginInfo();
 marginInfo.Top = 90;
 marginInfo.Bottom = 50;
@@ -46,209 +66,142 @@ marginInfo.Right = 50;
 page.PageInfo.Margin = marginInfo;
 ```
 
-## ステップ4: 置き換え可能なシンボルでヘッダーを追加する
+ここでは、上、下、左、右の余白を次のように定義しています。`MarginInfo`クラスを作成し、それをページに適用しました`page.PageInfo.Margin`.
 
-私たちは`HeaderFooter`ページのオブジェクトを追加し、`TextFragment`置き換え可能なシンボルを追加します。
+## ステップ3: ヘッダーを作成して構成する
+
+次に、ヘッダーを作成してページに追加します。ヘッダーにはレポートのタイトルと名前が含まれます。
 
 ```csharp
+//ヘッダーを作成
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
+
+//ヘッダー余白を設定する
 hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
 
-TextFragment t1 = new TextFragment("report title");
-//必要に応じてテキストプロパティを設定します
-t1.TextState.Font = FontRepository.FindFont("Arial");
-t1.TextState.FontSize = 16;
-t1.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
-t1.TextState.FontStyle = FontStyles.Bold;
-t1.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-t1.TextState.LineSpacing = 5f;
-
-hfFirst.Paragraphs.Add(t1);
-
-//必要に応じてTextFragmentsを追加したりカスタマイズしたりします
-```
-
-## ステップ5: 置き換え可能なシンボルでフッターを追加する
-
-同様に、`HeaderFooter`ページフッターのオブジェクトを追加して`TextFragment`置き換え可能なシンボルを持つオブジェクト。
-
-```csharp
-HeaderFooter hfFoot = new HeaderFooter();
-page.Footer = hfFoot;
-hfFoot.Margin.Left = 50;
-hfFoot.Margin.Right = 50;
-
-TextFragment t3 = new TextFragment("Generated on test date");
-TextFragment t4 = new TextFragment("report name ");
-TextFragment t5 = new TextFragment("Page $p of $P");
-
-//必要に応じてTextFragmentsを追加したりカスタマイズしたりします
-
-hfFoot.Paragraphs.Add(tab2);
-```
-
-## ステップ6: PDFドキュメントを保存する
-
-最後に、PDF ドキュメントを指定された出力ファイルに保存します。
-
-```csharp
-dataDir = dataDir + "ReplaceableSymbolsInHeaderFooter_out.pdf";
-doc.Save(dataDir);
-Console.WriteLine("\nReplaceable symbols replaced successfully in the header and footer.\nFile saved at " + dataDir);
-```
-
-### Aspose.PDF for .NET を使用したヘッダー フッター内の置換可能なシンボルのサンプル ソース コード 
-```csharp
-//ドキュメント ディレクトリへのパス。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document doc = new Document();
-Page page = doc.Pages.Add();
-MarginInfo marginInfo = new MarginInfo();
-marginInfo.Top = 90;
-marginInfo.Bottom = 50;
-marginInfo.Left = 50;
-marginInfo.Right = 50;
-//marginInfoインスタンスをsec1.PageInfoのMarginプロパティに割り当てます。
-page.PageInfo.Margin = marginInfo;
-HeaderFooter hfFirst = new HeaderFooter();
-page.Header = hfFirst;
-hfFirst.Margin.Left = 50;
-hfFirst.Margin.Right = 50;
-//ヘッダーとして表示するコンテンツを保存するテキスト段落をインスタンス化する
+//ヘッダーにタイトルを追加
 TextFragment t1 = new TextFragment("report title");
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
 t1.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
 t1.TextState.FontStyle = FontStyles.Bold;
 t1.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-t1.TextState.LineSpacing = 5f;
 hfFirst.Paragraphs.Add(t1);
+
+//ヘッダーにレポート名を追加する
 TextFragment t2 = new TextFragment("Report_Name");
 t2.TextState.Font = FontRepository.FindFont("Arial");
-t2.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
-t2.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-t2.TextState.LineSpacing = 5f;
 t2.TextState.FontSize = 12;
+t2.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 hfFirst.Paragraphs.Add(t2);
-//セクションのHeaderFooterオブジェクトを作成する
+```
+
+2つ追加しました`TextFragment`ヘッダーにオブジェクトを追加します。1つはレポートタイトル用、もう1つはレポート名用です。テキストは次のようにスタイル設定されています。`TextState`フォント、サイズ、配置などのプロパティ。
+
+## ステップ4: フッターを作成して構成する
+
+次に、ページ番号や生成日などの動的なコンテンツを保持するフッターを設定します。
+
+```csharp
+//フッターを作成
 HeaderFooter hfFoot = new HeaderFooter();
-//HeaderFooterオブジェクトを奇数フッターと偶数フッターに設定する
 page.Footer = hfFoot;
+
+//フッターの余白を設定する
 hfFoot.Margin.Left = 50;
 hfFoot.Margin.Right = 50;
-//現在のページ番号と総ページ数を含むテキスト段落を追加します
+
+//フッターコンテンツを追加する
 TextFragment t3 = new TextFragment("Generated on test date");
-TextFragment t4 = new TextFragment("report name ");
+TextFragment t4 = new TextFragment("Report Name");
 TextFragment t5 = new TextFragment("Page $p of $P");
-//テーブルオブジェクトをインスタンス化する
+```
+
+フッターには、生成日、レポート名、動的ページ番号のフラグメントが含まれています（`$p`そして`$P`それぞれ現在のページ番号と総ページ数を表します。
+
+## ステップ5: フッターにテーブルを作成する
+
+フッターにテーブルなどのより複雑な要素を追加して、データをより適切に整理することもできます。
+
+```csharp
+//フッター用のテーブルを作成する
 Table tab2 = new Table();
-//希望するセクションの段落コレクションに表を追加します
 hfFoot.Paragraphs.Add(tab2);
-//テーブルの列幅を設定する
 tab2.ColumnWidths = "165 172 165";
-//表に行を作成し、行にセルを作成します
+
+//表の行とセルを作成する
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
 row3.Cells.Add();
-//テキストの垂直方向の配置を中央揃えに設定します
+
+//各セルの配置を設定する
 row3.Cells[0].Alignment = Aspose.Pdf.HorizontalAlignment.Left;
 row3.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 row3.Cells[2].Alignment = Aspose.Pdf.HorizontalAlignment.Right;
+
+//表のセルにコンテンツを追加する
 row3.Cells[0].Paragraphs.Add(t3);
 row3.Cells[1].Paragraphs.Add(t4);
 row3.Cells[2].Paragraphs.Add(t5);
-//Sec1.Paragraphs.Add(New Text("Aspose.Total for Java は、Aspose が提供するすべての Java コンポーネントのコンパイルです。これは、各 Java コンポーネントの最新バージョンが含まれるように、毎日コンパイルされています。#$NL " + "Aspose.Total for Java を使用すると、開発者はさまざまなアプリケーションを作成できます。#$NL #$NL #$NP" + "Aspose.Total for Java は、Aspose が提供するすべての Java コンポーネントのコンパイルです。これは、各 Java コンポーネントの最新バージョンが含まれるように、毎日コンパイルされています。#$NL " + "Aspose.Total for Java を使用すると、開発者はさまざまなアプリケーションを作成できます。#$NL #$NL #$NP" + "Aspose.Total for Java は、Aspose が提供するすべての Java コンポーネントのコンパイルです。これは、各 Java コンポーネントの最新バージョンが含まれるように、毎日コンパイルされています。#$NL " + "Aspose.Total for Java を使用すると、開発者はさまざまなアプリケーションを作成できます。#$NL #$NL #$NP" + "Aspose.Total for Java は、Aspose が提供するすべての Java コンポーネントのコンパイルです。これは、各 Java コンポーネントの最新バージョンが含まれるように、毎日コンパイルされています。 Java コンポーネントの #$NL " + "Aspose.Total for Java を使用すると、開発者は幅広いアプリケーションを作成できます。 #$NL #$NL"))
+```
+
+このコード ブロックは、フッターに 3 列のテーブルを作成します。各列には、生成日、レポート名、ページ番号などのさまざまな情報が含まれます。
+
+## ステップ6: ページにコンテンツを追加する
+
+ヘッダーとフッターに加えて、PDF ページの本文にコンテンツを追加できます。ここでは、プレースホルダー テキストを含む表を追加します。
+
+```csharp
 Table table = new Table();
 table.ColumnWidths = "33% 33% 34%";
-table.DefaultCellPadding = new MarginInfo();
-table.DefaultCellPadding.Top = 10;
-table.DefaultCellPadding.Bottom = 10;
-//希望するセクションの段落コレクションに表を追加します
 page.Paragraphs.Add(table);
-// BorderInfo オブジェクトを使用してデフォルトのセル境界線を設定する
-table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
-//別のカスタマイズされたBorderInfoオブジェクトを使用して表の境界線を設定する
-table.Border = new BorderInfo(BorderSide.All, 1f);
-table.RepeatingRowsCount = 1;
-//表に行を作成し、行にセルを作成します
-Row row1 = table.Rows.Add();
-row1.Cells.Add("col1");
-row1.Cells.Add("col2");
-row1.Cells.Add("col3");
-const string CRLF = "\r\n";
+
+//表の内容を追加する
 for (int i = 0; i <= 10; i++)
 {
-	Row row = table.Rows.Add();
-	row.IsRowBroken = true;
-	for (int c = 0; c <= 2; c++)
-	{
-		Cell c1;
-		if (c == 2)
-			c1 = row.Cells.Add("Aspose.Total for Java is a compilation of every Java component offered by Aspose. It is compiled on a" + CRLF + "daily basis to ensure it contains the most up to date versions of each of our Java components. " + CRLF + "daily basis to ensure it contains the most up to date versions of each of our Java components. " + CRLF + "Using Aspose.Total for Java developers can create a wide range of applications.");
-		else
-			c1 = row.Cells.Add("item1" + c);
-		c1.Margin = new MarginInfo();
-		c1.Margin.Left = 30;
-		c1.Margin.Top = 10;
-		c1.Margin.Bottom = 10;
-	}
+    Row row = table.Rows.Add();
+    for (int c = 0; c <= 2; c++)
+    {
+        Cell cell = row.Cells.Add("Content " + c);
+        cell.Margin = new MarginInfo { Left = 30, Top = 10, Bottom = 10 };
+    }
 }
+```
+
+このコードは、3 つの列を持つ単純なテーブルをページに追加します。特定のニーズに合わせて変更できます。
+
+## ステップ7: PDFを保存する
+
+すべての設定が完了したら、最後のステップとして PDF ドキュメントを目的の場所に保存します。
+
+```csharp
 dataDir = dataDir + "ReplaceableSymbolsInHeaderFooter_out.pdf";
 doc.Save(dataDir);
-Console.WriteLine("\nSymbols replaced successfully in header and footer.\nFile saved at " + dataDir);
+Console.WriteLine("Symbols replaced successfully in header and footer. File saved at " + dataDir);
 ```
+
+ファイルパスを指定して、ドキュメントを保存します。`doc.Save()`これで完了です。カスタマイズされたヘッダーとフッターを含む PDF が正常に作成されました。
 
 ## 結論
 
-このチュートリアルでは、.NET 用の Aspose.PDF ライブラリを使用して、PDF ドキュメントのヘッダーとフッターで置き換え可能なシンボルを使用する方法を学習しました。ステップ バイ ステップ ガイドに従って、提供されている C# コードを実行すると、PDF を作成し、余白を設定し、置き換え可能なシンボルを使用してヘッダーとフッターを追加し、PDF を保存できます。
+Aspose.PDF for .NET を使用してヘッダーとフッターのシンボルを置き換えるのは、簡単なだけでなく、強力です。上記のステップバイステップのガイドに従うことで、ページ番号、レポート名、日付などの動的なコンテンツを使用して PDF を簡単にカスタマイズできます。この方法は非常に柔軟性が高く、テーブルを挿入したり、書式を調整したり、特定の要件に合わせてレイアウトを制御したりできます。
 
-### よくある質問
+## よくある質問
 
-#### Q: 「ヘッダー フッター内の置き換え可能なシンボル」チュートリアルの目的は何ですか?
+### ヘッダーとフッターのフォントをカスタマイズできますか?  
+はい、ヘッダーとフッターのテキストのフォント、サイズ、色、スタイルを完全にカスタマイズできます。
 
-A: 「ヘッダー フッターの置き換え可能なシンボル」チュートリアルは、.NET 用の Aspose.PDF ライブラリを使用して、PDF ドキュメントのヘッダーとフッターに置き換え可能なシンボルを追加するプロセスを説明することを目的としています。置き換え可能なシンボルを使用すると、PDF を生成するときに、特定のプレースホルダーを実際の値に動的に置き換えることができます。
+### ヘッダーとフッターに画像を追加するにはどうすればよいですか?  
+使用できます`ImageStamp`ヘッダーとフッターに画像を挿入します。
 
-#### Q: PDF ヘッダーとフッターのコンテキストで置き換え可能なシンボルとは何ですか?
+### ヘッダーやフッターにハイパーリンクを追加することは可能ですか?  
+はい、使えます`TextFragment`ハイパーリンクを設定することで`Hyperlink`財産。
 
-A: 置き換え可能なシンボルは、PDF ドキュメントのヘッダーとフッターに挿入できるプレースホルダーです。これらのシンボルは、ページ番号、日付、カスタム情報など、実行時に入力できる値の動的なプレースホルダーとして機能します。
+### 奇数ページと偶数ページで異なるヘッダーを使用できますか?  
+はい、Aspose.PDF では、奇数ページと偶数ページに異なるヘッダーとフッターを指定できます。
 
-#### Q: PDF のヘッダーとフッターで置換可能なシンボルを使用する必要があるのはなぜですか?
-
-A: ヘッダーとフッターの置き換え可能なシンボルは、ページ番号、日付、またはドキュメントの生成時に変更される可能性のあるその他の変数データなど、動的な情報を PDF ドキュメントに含める場合に便利です。
-
-#### Q: PDF ページの余白を設定するにはどうすればよいですか?
-
- A: PDFページの余白を設定するには、`MarginInfo`クラスに割り当てて`Margin`の財産`PageInfo`ページの余白の値を調整します。必要に応じて余白の値を調整します。
-
-#### Q: ヘッダーとフッターに置換可能なシンボルを追加するにはどうすればよいですか?
-
- A: 置き換え可能なシンボルを追加するには、`HeaderFooter`ページのヘッダーとフッターのオブジェクトを作成します。次に、`TextFragment`置き換え可能なシンボルを含む、必要なテキストを持つオブジェクトを`Paragraphs`コレクションの`HeaderFooter`物体。
-
-#### Q: 置き換え可能なシンボルの外観をカスタマイズできますか?
-
-A: はい、置き換え可能なシンボルの外観は、プロパティを変更することでカスタマイズできます。`TextFragment`シンボルを含むオブジェクト。フォント、フォント サイズ、色、配置、行間隔などのプロパティを設定できます。
-
-#### Q: どのような置き換え可能なシンボルを使用できますか?
-
-A: 次のようなさまざまな置き換え可能なシンボルを使用できます。
-
-- `$p`: 現在のページ番号。
-- `$P`: 総ページ数。
-- `$d`: 現在の日付。
-- `$t`: 現在の時刻。
-- 定義するカスタム プレースホルダー。
-
-#### Q: 置き換え可能なシンボルの周囲に他のテキストや書式設定を含めることができますか?
-
- A: はい、置換可能なシンボルの周囲に他のテキストや書式を含めることができます。`TextFragment`オブジェクト。これにより、動的コンテンツと静的コンテンツを組み込んだ、より複雑なヘッダーとフッターを作成できます。
-
-#### Q: 生成された PDF ドキュメントを保存するにはどうすればよいですか?
-
- A: 生成されたPDF文書を保存するには、`Save`方法の`Document`クラス。引数として、必要な出力ファイルのパスと名前を指定します。
-
-#### Q: このチュートリアルには有効な Aspose ライセンスが必要ですか?
-
-A: はい、このチュートリアルのコードを正常に実行するには、有効な Aspose ライセンスが必要です。Aspose Web サイトから、フル ライセンスまたは 30 日間の一時ライセンスを取得できます。
+### ヘッダーとフッターの位置を調整するにはどうすればよいですか?  
+余白と配置のプロパティを調整して、ヘッダーとフッターの位置を制御できます。

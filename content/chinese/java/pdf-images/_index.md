@@ -16,7 +16,7 @@ url: /zh/java/pdf-images/
 
 ## 轻松优化图像
 
-优化 PDF 中的图像对于在不影响质量的情况下减小文件大小至关重要。我们将深入研究图像优化技术的复杂性，确保您的 PDF 保持高效且加载速度快。Aspose.PDF for Java 提供工具来微调图像压缩和分辨率设置，让您能够根据特定需求找到合适的平衡点。加入我们以图像为中心的旅程，释放 Aspose.PDF for Java 在创建出色且高效的 PDF 文档方面的潜力。
+优化 PDF 中的图像对于在不影响质量的情况下减小文件大小至关重要。我们将深入研究图像优化技术的复杂性，确保您的 PDF 保持高效且加载速度快。Aspose.PDF for Java 提供工具来微调图像压缩和分辨率设置，让您能够根据特定需求实现适当的平衡。加入我们以图像为中心的旅程，释放 Aspose.PDF for Java 在创建出色且高效的 PDF 文档方面的潜力。
 
 ## PDF 图像教程
 ### [使用 Java 向 PDF 添加线对象](./add-line-object-to-pdf-using-java/)
@@ -28,7 +28,7 @@ url: /zh/java/pdf-images/
 ### [使用 Java 在 PDF 页面上绘制线条](./drawing-line-across-the-page-in-pdf-with-java/)
 了解如何使用 Aspose.PDF for Java 在 PDF 中绘制线条。带有 PDF 线条绘制源代码的分步指南。
 ### [使用 Java 在 PDF 标题中应用编号样式](./apply-numbering-style-in-heading-of-pdf-using-java/)
-了解如何使用 Aspose.PDF for Java 将编号样式应用于 PDF 标题。我们的分步指南提供了源代码示例，让您的文档更具专业感。
+了解如何使用 Aspose.PDF for Java 将编号样式应用于 PDF 标题。我们的分步指南提供了源代码示例，可为您的文档增添专业感。
 ### [使用 Java 从 PDF 资源中删除图像](./delete-image-from-pdf-resources-using-java/)
 了解如何使用 Aspose.PDF for Java 从 PDF 文档中删除图像。带有源代码的分步指南，可实现高效的 PDF 操作。
 ### [使用 Java 从 PDF 文件中删除图像](./delete-images-from-pdf-file-using-java/)

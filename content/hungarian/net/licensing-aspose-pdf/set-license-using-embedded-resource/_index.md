@@ -37,7 +37,7 @@ using System.Text;
 
 Most, hogy készen áll a könyvtár, bontsuk le a licenc beállításának lépéseit egy beágyazott erőforrás használatával.
 
-## 1. lépés: Készítse elő a dokumentumkönyvtárat
+## 1. lépés: Készítse elő a dokumentumtárat
 
 A licenc beállítása előtt meg kell adnia a dokumentumkönyvtár elérési útját. Itt tárolódnak a PDF-fájlok. 
 
@@ -50,7 +50,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 2. lépés: Inicializálja a licencobjektumot
 
- Ezután létre kell hoznia egy példányt a`License` osztályt az Aspose.PDF biztosítja. Ezt az objektumot fogja használni a licenc beállításához.
+ Ezután létre kell hoznia egy példányt a`License` osztály által biztosított Aspose.PDF. Ezt az objektumot fogja használni a licenc beállításához.
 
 ```csharp
 // Licenc objektum inicializálása

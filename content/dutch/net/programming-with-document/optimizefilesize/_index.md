@@ -88,7 +88,7 @@ optimizationOptions.ImageCompressionOptions.ImageQuality = 10;
 
 ## Stap 5: Optimaliseer de PDF-bronnen
 
-Nu onze optimalisatieopties geconfigureerd zijn, is het tijd om ze toe te passen op ons PDF-document. Dit is waar de magie gebeurt!
+Nu onze optimalisatieopties zijn geconfigureerd, is het tijd om ze toe te passen op ons PDF-document. Dit is waar de magie gebeurt!
 
 ```csharp
 // Optimaliseer de bestandsgrootte door ongebruikte objecten te verwijderen

@@ -88,7 +88,7 @@ Nachdem Sie Ihrem PDF nun den Seitenzahlenstempel hinzugefügt haben, ist es an 
 
 ## Abschluss
 
-In diesem Tutorial haben wir gezeigt, wie Sie mit Java und Aspose.PDF für Java Seitenzahlenstempel zu PDF-Dokumenten hinzufügen. Seitenzahlen verbessern die Benutzerfreundlichkeit Ihrer PDFs und erleichtern den Lesern die Navigation in Ihren Inhalten. Mit Aspose.PDF für Java wird diese Aufgabe selbst für Benutzer mit grundlegenden Programmierkenntnissen zum Kinderspiel. Beginnen Sie noch heute damit, Ihre PDF-Dokumente mit benutzerdefinierten Seitenzahlenstempeln zu verbessern.
+In diesem Tutorial haben wir gezeigt, wie Sie mit Java und Aspose.PDF für Java Seitenzahlenstempel zu PDF-Dokumenten hinzufügen. Seitenzahlen verbessern die Benutzerfreundlichkeit Ihrer PDFs und erleichtern den Lesern die Navigation in Ihren Inhalten. Mit Aspose.PDF für Java wird diese Aufgabe zum Kinderspiel, selbst für Benutzer mit grundlegenden Programmierkenntnissen. Beginnen Sie noch heute damit, Ihre PDF-Dokumente mit benutzerdefinierten Seitenzahlenstempeln zu verbessern.
 
 ## FAQs
 

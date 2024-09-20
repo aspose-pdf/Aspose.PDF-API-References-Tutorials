@@ -2,77 +2,113 @@
 title: 提取 PDF 文件中的全部文本
 linktitle: 提取 PDF 文件中的所有文本
 second_title: Aspose.PDF for .NET API 參考
-description: 了解如何使用 Aspose.PDF for .NET 提取 PDF 檔案中的所有文字。
+description: 透過此逐步教學，了解如何使用 Aspose.PDF for .NET 從 PDF 檔案中輕鬆提取文字。
 type: docs
 weight: 180
 url: /zh-hant/net/programming-with-text/extract-text-all/
 ---
-本教學將引導您完成使用 Aspose.PDF for .NET 擷取 PDF 檔案中所有文字的流程。提供的 C# 原始程式碼演示了必要的步驟。
+## 介紹
 
-## 要求
-在開始之前，請確保您具備以下條件：
+在這個數位時代，處理PDF文件已經成為一項常見的任務。無論您是想要建立文件處理應用程式的開發人員，還是需要提取重要資料的業務專業人員，了解如何有效地從 PDF 文件中提取文字都可以為您節省大量時間和精力。在本文中，我們將深入介紹 Aspose.PDF for .NET 程式庫的使用，這是一個功能強大的工具，可以幫助您快速輕鬆地從 PDF 文件中提取文字。
 
-- Visual Studio 或電腦上安裝的任何其他 C# 編譯器。
-- Aspose.PDF for .NET 函式庫。您可以從 Aspose 官方網站下載它或使用 NuGet 等套件管理器來安裝它。
+## 先決條件
 
-## 第 1 步：設定項目
-1. 在您首選的開發環境中建立一個新的 C# 專案。
-2. 新增對 Aspose.PDF for .NET 函式庫的參考。
+在我們深入了解從 PDF 文件中提取文字的細節之前，您需要滿足一些基本要求：
 
-## 步驟2：導入所需的命名空間
-在要擷取文字的程式碼檔案中，在檔案頂部加入以下 using 指令：
+1. .NET Framework：確保您的開發電腦上安裝了 .NET Framework。 Aspose.PDF 與 .NET 無縫協作，因此擁有最新版本是一個優勢。
+2. Aspose.PDF 函式庫：您需要 Aspose.PDF for .NET 函式庫來處理 PDF 作業。你可以[在這裡下載](https://releases.aspose.com/pdf/net/).
+3. 開發環境：強烈建議使用 Visual Studio 等 IDE。它提供了一個用戶友好的介面來編寫、構建和調試程式碼。
+4. C# 基礎知識：熟悉 C# 程式語言將幫助您更好地理解我們將要探索的程式碼片段。
+
+現在我們已經解決了先決條件，讓我們導入必要的套件！
+
+## 導入包
+
+要開始我們的提取過程，您首先需要在 C# 專案中匯入所需的命名空間。您可以這樣做：
 
 ```csharp
-using Aspose.Pdf;
 using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System;
 ```
 
-## 第三步：設定文檔目錄
-在程式碼中，找到顯示以下內容的行`string dataDir = "YOUR DOCUMENT DIRECTORY";`並替換`"YOUR DOCUMENT DIRECTORY"`以及儲存文檔的目錄的路徑。
+這些命名空間將提供對 PDF 操作所需的類別和方法的存取。 
 
-## 步驟 4：開啟 PDF 文檔
-使用以下命令開啟現有 PDF 文檔`Document`建構函數並將路徑傳遞給輸入 PDF 檔案。
+讓我們將提取過程分解為易於遵循的步驟。閱讀本指南後，您將能夠從任何 PDF 文件中無縫提取文字。
 
-```csharp
-Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
-```
+## 第 1 步：設定您的文件目錄
 
-## 第 5 步：提取所有文本
-創建一個`TextAbsorber`物件從文件中提取文字。然後，接受所有頁面的吸收器。
+您要做的第一件事是指定 PDF 檔案所在的目錄。這對於查找您要使用的文件至關重要。
 
-```csharp
-TextAbsorber textAbsorber = new TextAbsorber();
-pdfDocument.Pages.Accept(textAbsorber);
-```
+程式碼範例：
 
-## 步驟6：獲取提取的文本
-訪問提取的文本`TextAbsorber`目的。
-
-```csharp
-string extractedText = textAbsorber.Text;
-```
-
-## 步驟7：保存提取的文本
-創建一個`TextWriter`並開啟要儲存提取文字的檔案。將提取的文字寫入檔案並關閉串流。
-
-```csharp
-TextWriter tw = new StreamWriter(dataDir + "extracted-text.txt");
-tw.WriteLine(extractedText);
-tw. Close();
-```
-
-### 使用 Aspose.PDF for .NET 擷取全部文字的範例原始碼 
 ```csharp
 //文檔目錄的路徑。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+在此程式碼片段中，只需替換`"YOUR DOCUMENT DIRECTORY"`與 PDF 檔案所在的實際路徑。例如，如果您的檔案位於`C:\Documents`，你會設定`dataDir`到那條路。
+
+## 第 2 步：開啟 PDF 文檔
+
+設定目錄後，您需要開啟要從中提取文字的 PDF 文件。這是使用以下方法完成的`Document`來自 Aspose.PDF 命名空間的類別。
+
+程式碼範例：
+
+```csharp
 //開啟文件
 Document pdfDocument = new Document(dataDir + "ExtractTextAll.pdf");
+```
+
+這裡，確保檔案名稱`ExtractTextAll.pdf`是正確的。這是您將用來提取文字的文件。
+
+## 第 3 步：建立文字吸收器對象
+
+下一步是創建一個`TextAbsorber`目的。這是一個神奇的工具，可以幫助您吸收 PDF 中的所有文字。
+
+程式碼範例：
+
+```csharp
 //建立 TextAbsorber 物件來提取文本
 TextAbsorber textAbsorber = new TextAbsorber();
+```
+
+透過初始化`TextAbsorber`，您準備從 PDF 頁面中提取所有文字內容。
+
+## 第 4 步：接受所有頁面的吸收器
+
+現在您已準備好文字吸收器，您需要使其在 PDF 文件的所有頁面上運作。這可確保捕獲每個頁面的文字。
+
+程式碼範例：
+
+```csharp
 //接受所有頁面的吸收器
 pdfDocument.Pages.Accept(textAbsorber);
+```
+
+透過此步驟，您基本上是在說：“嘿，文字吸收器，繼續收集本文檔中每一頁的所有文字！”
+
+## 第 5 步：檢索提取的文本
+
+一旦文字被吸收，就該把它拉出來了。您可以使用簡單的屬性存取提取的文字。
+
+程式碼範例：
+
+```csharp
 //獲取提取的文本
 string extractedText = textAbsorber.Text;
+```
+
+現在，變數`extractedText`包含從 PDF 收集的所有文字。那有多酷？
+
+## 第 6 步：將提取的文字寫入文件
+
+最後，您可能希望將提取的文字儲存到新的文字檔案中，以便以後輕鬆存取。以下是如何做到這一點。
+
+程式碼範例：
+
+```csharp
 //建立編寫器並開啟文件
 TextWriter tw = new StreamWriter(dataDir + "extracted-text.txt");
 //將一行文字寫入文件
@@ -81,44 +117,25 @@ tw.WriteLine(extractedText);
 tw.Close();
 ```
 
+此程式碼開啟一個名為的新文件`extracted-text.txt`，將所有提取的內容寫入其中，然後關閉該文件。所以現在，每當您想查看提取的文字時，只需查看您的文件目錄即可！
+
 ## 結論
-您已使用 Aspose.PDF for .NET 成功地從 PDF 文件中提取了所有文字。提取的文字已儲存到指定的輸出檔案中。
 
-### 常見問題解答
+給你了！只需幾個簡單的步驟，您就可以使用 Aspose.PDF for .NET 從任何 PDF 檔案中提取文字。無論您是建立應用程式來分析文檔，還是只是需要從 PDF 中獲取一些註釋，Aspose.PDF 都提供了強大、易於使用的 API，讓您的生活更輕鬆。記得查看一下[文件](https://reference.aspose.com/pdf/net/)了解這個強大的函式庫提供的更多特性和功能。
 
-#### Q：本教學的目的是什麼？
+## 常見問題解答
 
-答：本教學作為指南，幫助您使用 Aspose.PDF for .NET 從 PDF 檔案中提取所有文字。隨附的 C# 原始程式碼提供了完成此任務的逐步說明。
+### 可以免費使用 Aspose.PDF for .NET 嗎？
+是的，Aspose 提供免費試用。你可以下載它[這裡](https://releases.aspose.com/).
 
-#### Q：我應該導入哪些命名空間？
+### 如果我的 PDF 包含圖像和圖形怎麼辦？
+Aspose.PDF專注於文字擷取。如果您的 PDF 包含圖像，您可能需要採用不同的方法來處理它們。
 
-答：在要擷取文字的程式碼檔案中，在檔案開頭包含以下 using 指令：
+### 有臨時許可證嗎？
+絕對地！您可以獲得臨時許可證[這裡](https://purchase.aspose.com/temporary-license/).
 
-```csharp
-using Aspose.Pdf;
-using System.IO;
-```
+### 我可以在哪裡獲得 Aspose.PDF 支援？
+您可以在以下位置找到支持和社區討論：[Aspose論壇](https://forum.aspose.com/c/pdf/10).
 
-#### Q：如何指定文檔目錄？
-
-答：找到該線`string dataDir = "YOUR DOCUMENT DIRECTORY";`在代碼中並替換`"YOUR DOCUMENT DIRECTORY"`與文檔目錄的實際路徑。
-
-#### Q：如何開啟現有的 PDF 文件？
-
-答：在步驟 4 中，您將使用以下命令開啟現有的 PDF 文件：`Document`建構函數並提供輸入 PDF 檔案的路徑。
-
-#### Q：如何從文件中提取所有文字？
-
-答：第 5 步涉及創建`TextAbsorber`物件從 PDF 文件中提取文字。然後，您將接受所有頁面的吸收器。
-
-#### Q：如何存取提取的文字？
-
-答：第 6 步將引導您訪問從`TextAbsorber`目的。
-
-#### 問：如何將提取的文字儲存到文件中？
-
-答：在步驟 7 中，您將建立一個`TextWriter`，開啟要儲存擷取的文字的文件，將擷取的文字寫入該文件，然後關閉串流。
-
-#### Q：本教程的主要內容是什麼？
-
-答：透過學習本教學課程，您已經了解如何使用 Aspose.PDF for .NET 從 PDF 文件中提取所有文字。提取的文字已儲存到指定的輸出檔案中，使您能夠分析和操作文件的文字內容。
+### 我可以將提取的文字儲存為什麼格式？
+您可以將文字儲存為各種格式，例如`.txt`, `.docx`，甚至直接存入資料庫。

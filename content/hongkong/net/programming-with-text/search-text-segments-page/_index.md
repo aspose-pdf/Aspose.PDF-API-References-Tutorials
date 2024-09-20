@@ -2,183 +2,154 @@
 title: 在 PDF 檔案中搜尋文字段頁面
 linktitle: 在 PDF 檔案中搜尋文字段頁面
 second_title: Aspose.PDF for .NET API 參考
-description: 了解如何使用 Aspose.PDF for .NET 在 PDF 檔案頁面上搜尋文字段並檢索其屬性。
+description: 透過這份詳細的逐步指南，了解如何使用 Aspose.PDF for .NET 搜尋 PDF 檔案中的文字段。提取文字、分析片段等等。
 type: docs
 weight: 470
 url: /zh-hant/net/programming-with-text/search-text-segments-page/
 ---
-本教學課程介紹如何使用 Aspose.PDF for .NET 搜尋 PDF 文件頁面上的特定文字段並檢索其屬性。提供的 C# 原始程式碼逐步演示了該過程。
+## 介紹
+
+有沒有想過如何使用 Aspose.PDF for .NET 在 PDF 文件中定位特定文字區段？嗯，你很幸運！在本指南中，我們將以簡單的逐步方式引導您完成整個過程。無論您是嘗試提取資訊、分析文本，還是只是瀏覽複雜的 PDF 操作，Aspose.PDF for .NET 都能滿足您的需求。讓我們深入了解吧！
 
 ## 先決條件
 
-在繼續學習本教學之前，請確保您具備以下條件：
+在開始之前，讓我們確保您已擁有所需的一切：
 
-- C# 程式語言的基礎知識。
-- 安裝了 Aspose.PDF for .NET 函式庫。您可以從 Aspose 網站取得它或使用 NuGet 將其安裝到您的專案中。
+-  Aspose.PDF for .NET：請確定您已安裝程式庫。你可以從[這裡](https://releases.aspose.com/pdf/net/).
+- .NET Framework：確保您的電腦上安裝了 .NET。
+- 開發環境：建議使用 Visual Studio 或任何支援 .NET 的 IDE。
+- PDF 文件：您將在其中搜尋文本段的 PDF 文件。
 
-## 第 1 步：設定項目
+如果您還沒有 Aspose.PDF for .NET，請別擔心！您可以從以下位置獲得免費試用[這裡](https://releases.aspose.com/)或購買它[這裡](https://purchase.aspose.com/buy).
 
-首先在您首選的整合開發環境 (IDE) 中建立一個新的 C# 項目，並新增對 Aspose.PDF for .NET 程式庫的參考。
+## 導入包
 
-## 步驟2：導入必要的命名空間
-
-在 C# 檔案的開頭新增以下 using 指令以匯入所需的命名空間：
+在我們開始編碼之前，將必要的套件匯入到您的專案中至關重要。這可以確保所有必需的類別和方法都可用於您的 PDF 操作任務。
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
+using System;
 ```
 
-## 第三步：設定文檔目錄路徑
+準備好要點後，讓我們直接進入逐步指南。
 
-使用以下命令設定文檔目錄的路徑`dataDir`多變的：
 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-```
+## 第 1 步：載入 PDF 文檔
 
-代替`"YOUR DOCUMENT DIRECTORY"`與文檔目錄的實際路徑。
+過程的第一步是將 PDF 檔案載入到程式中。如果沒有載入的文檔，就沒有什麼可搜尋的，對吧？操作方法如下。
 
-## 第 4 步：載入 PDF 文檔
-
-使用載入 PDF 文檔`Document`班級：
-
-```csharp
-Document pdfDocument = new Document(dataDir + "SearchTextSegmentsPage.pdf");
-```
-
-代替`"SearchTextSegmentsPage.pdf"`與您的 PDF 檔案的實際名稱。
-
-## 步驟5：建立一個TextFragmentAbsorber
-
-創建一個`TextFragmentAbsorber`物件尋找輸入搜尋短語的所有實例：
-
-```csharp
-TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
-```
-
-代替`"text"`與您想要的搜尋字詞。
-
-## 第 6 步：接受特定頁面的吸收器
-
-接受文件所需頁面的吸收器：
-
-```csharp
-pdfDocument.Pages[2].Accept(textFragmentAbsorber);
-```
-
-代替`2`與所需的頁碼（從 1 開始的索引）。
-
-## 步驟 7：檢索擷取的文字片段
-
-使用以下命令獲取提取的文字片段`TextFragments`的財產`TextFragmentAbsorber`目的：
-
-```csharp
-TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-```
-
-## 第 8 步：循環文本段
-
-循環檢索到的文字段並存取它們的屬性：
-
-```csharp
-foreach (TextFragment textFragment in textFragmentCollection)
-{
-	foreach (TextSegment textSegment in textFragment.Segments)
-	{
-		Console.WriteLine("Text: {0} ", textSegment.Text);
-		Console.WriteLine("Position: {0} ", textSegment.Position);
-		Console.WriteLine("XIndent: {0} ", textSegment.Position.XIndent);
-		Console.WriteLine("YIndent: {0} ", textSegment.Position.YIndent);
-		Console.WriteLine("Font - Name: {0}", textSegment.TextState.Font.FontName);
-		Console.WriteLine("Font - IsAccessible: {0} ", textSegment.TextState.Font.IsAccessible);
-		Console.WriteLine("Font - IsEmbedded: {0} ", textSegment.TextState.Font.IsEmbedded);
-		Console.WriteLine("Font - IsSubset: {0} ", textSegment.TextState.Font.IsSubset);
-		Console.WriteLine("Font Size: {0} ", textSegment.TextState.FontSize);
-		Console.WriteLine("Foreground Color: {0} ", textSegment.TextState.ForegroundColor);
-	}
-}
-```
-
-如果需要，修改循環內的程式碼以對每個文字段執行進一步的操作。
-
-### 使用 Aspose.PDF for .NET 搜尋文字段頁面的範例原始碼 
 ```csharp
 //文檔目錄的路徑。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 //開啟文件
 Document pdfDocument = new Document(dataDir + "SearchTextSegmentsPage.pdf");
+```
+
+- `dataDir` ：該變數保存 PDF 檔案的路徑。代替`"YOUR DOCUMENT DIRECTORY"`與儲存檔案的實際目錄。
+- `pdfDocument` ：使用`Document`類別中，我們將 PDF 載入到記憶體中。
+
+## 第 2 步：設定文字搜尋
+
+現在您的文件已加載，下一步是建立一個`TextFragmentAbsorber`對象，它允許我們搜尋文件中的特定文字。
+
+```csharp
 //建立 TextAbsorber 物件以尋找輸入搜尋短語的所有實例
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
+```
+
+- `TextFragmentAbsorber` ：該物件用於捕獲您正在搜尋的文字的所有出現位置。代替`"text"`與您要搜尋的實際文字。
+
+## 第 3 步：接受特定頁面的吸收器
+
+您可能不會總是想搜尋整個 PDF 文件。在此範例中，我們將其範圍縮小到特定頁面。
+
+```csharp
 //接受所有頁面的吸收器
 pdfDocument.Pages[2].Accept(textFragmentAbsorber);
+```
+
+- `pdfDocument.Pages[2]`：這表示我們只搜尋文件的第二頁。您可以修改索引以定位其他頁面。
+- `Accept()` ：該方法允許`TextFragmentAbsorber`處理指定頁面內的文字。
+
+## 第四步：擷取文字片段
+
+搜尋頁面後，我們將找到的文字片段提取到集合中。
+
+```csharp
 //取得擷取的文字片段
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+```
+
+- `TextFragmentCollection`：此集合保存在搜尋過程中找到的文字片段的所有實例。
+
+## 第 5 步：循環文字片段並提取數據
+
+現在，讓我們循環遍歷每個文字片段並提取其詳細信息，例如位置、字體和顏色。
+
+```csharp
 //循環遍歷片段
 foreach (TextFragment textFragment in textFragmentCollection)
 {
-	foreach (TextSegment textSegment in textFragment.Segments)
-	{
-		Console.WriteLine("Text : {0} ", textSegment.Text);
-		Console.WriteLine("Position : {0} ", textSegment.Position);
-		Console.WriteLine("XIndent : {0} ",
-		textSegment.Position.XIndent);
-		Console.WriteLine("YIndent : {0} ",
-		textSegment.Position.YIndent);
-		Console.WriteLine("Font - Name : {0}",
-		textSegment.TextState.Font.FontName);
-		Console.WriteLine("Font - IsAccessible : {0} ",
-		textSegment.TextState.Font.IsAccessible);
-		Console.WriteLine("Font - IsEmbedded : {0} ",
-		textSegment.TextState.Font.IsEmbedded);
-		Console.WriteLine("Font - IsSubset : {0} ",
-		textSegment.TextState.Font.IsSubset);
-		Console.WriteLine("Font Size : {0} ",
-		textSegment.TextState.FontSize);
-		Console.WriteLine("Foreground Color : {0} ",
-		textSegment.TextState.ForegroundColor);
-	}
+    foreach (TextSegment textSegment in textFragment.Segments)
+    {
+        Console.WriteLine("Text : {0} ", textSegment.Text);
+        Console.WriteLine("Position : {0} ", textSegment.Position);
+        Console.WriteLine("XIndent : {0} ", textSegment.Position.XIndent);
+        Console.WriteLine("YIndent : {0} ", textSegment.Position.YIndent);
+        Console.WriteLine("Font - Name : {0}", textSegment.TextState.Font.FontName);
+        Console.WriteLine("Font - IsAccessible : {0} ", textSegment.TextState.Font.IsAccessible);
+        Console.WriteLine("Font - IsEmbedded : {0} ", textSegment.TextState.Font.IsEmbedded);
+        Console.WriteLine("Font - IsSubset : {0} ", textSegment.TextState.Font.IsSubset);
+        Console.WriteLine("Font Size : {0} ", textSegment.TextState.FontSize);
+        Console.WriteLine("Foreground Color : {0} ", textSegment.TextState.ForegroundColor);
+    }
 }
 ```
 
+- `foreach (TextFragment textFragment in textFragmentCollection)` ：我們循環遍歷每個`TextFragment`在集合中。
+- `foreach (TextSegment textSegment in textFragment.Segments)`：每個片段內部有多個片段。我們循環遍歷它們以收集所有相關資訊。
+- 的各種屬性`textSegment`：這些為我們提供了有關文字的詳細信息，例如其位置（X 和 Y）、字體詳細資訊、大小和顏色。
+
+## 第六步：輸出結果
+
+最後，提取所有資訊後，在控制台中列印出結果。這可以幫助您準確地查看文字的位置及其格式詳細資訊。
+
+為了清楚起見，以下是一個範例輸出：
+
+```
+Text : text
+Position : X: 45.0, Y: 75.0
+XIndent : 45.0
+YIndent : 75.0
+Font - Name : Arial
+Font - IsAccessible : True
+Font - IsEmbedded : False
+Font - IsSubset : False
+Font Size : 12.0
+Foreground Color : System.Drawing.Color [Black]
+```
+
+- 此輸出為您提供指定頁面上文字「text」的確切位置和格式資訊。
+
 ## 結論
 
-恭喜！您已成功學習如何使用 Aspose.PDF for .NET 在 PDF 文件頁面上搜尋特定文字區段。本教學課程提供了從載入文件到存取提取的文字段的逐步指南。現在您可以將此程式碼合併到您自己的 C# 專案中，以在 PDF 文件中執行高級文字段搜尋。
+現在你就擁有了！您剛剛學習如何使用 Aspose.PDF for .NET 在 PDF 文件中搜尋特定文字段。在處理大型 PDF 時，此過程非常方便，可讓您有效地找出並提取關鍵文字。無論是分析資料、提取訊息，還是簡單地瀏覽文檔，Aspose.PDF 都為您提供了完成工作的強大工具。
 
-### 常見問題解答
+## 常見問題解答
 
-#### Q：「在 PDF 檔案中搜尋文字段頁面」教學的目的為何？
+### 我可以搜尋多個單字或短語嗎？
+是的，您可以修改`TextFragmentAbsorber`透過更改輸入字串來搜尋不同的文字。
 
-答：「在 PDF 檔案中搜尋文字段頁面」教學提供瞭如何利用 .NET 的 Aspose.PDF 庫在 PDF 文件的特定頁面上搜尋特定文字段的全面指南。它涵蓋了設定項目、載入 PDF 文件、搜尋文字段以及使用 C# 程式碼檢索其屬性的過程。
+### 是否可以跨多個頁面進行搜尋？
+絕對地！您可以透過迭代來循環瀏覽 PDF 中的所有頁面`pdfDocument.Pages`.
 
-#### Q：本教學如何幫助搜尋 PDF 文件中的特定文字段？
+### 如何搜尋不區分大小寫的文字？
+你可以使用`TextSearchOptions`啟用不區分大小寫的搜尋。
 
-答：本教學示範了在 PDF 文件的特定頁面上定位和提取特定文字段的過程。透過遵循提供的步驟和程式碼範例，使用者可以有效地搜尋所需的文字片段並檢索有關其屬性的資訊。
+### 找到文字後可以修改嗎？
+是的，一旦您找到了`TextFragment`，您可以修改其文字屬性。
 
-#### Q：學習本教程需要滿足哪些先決條件？
-
-答：在開始本教學之前，您應該對 C# 程式語言有基本的了解。此外，您需要安裝 Aspose.PDF for .NET 程式庫。您可以從 Aspose 網站取得它或使用 NuGet 將其安裝到您的專案中。
-
-#### Q：如何設定我的專案來遵循本教學？
-
-答：首先，在您首選的整合開發環境 (IDE) 中建立一個新的 C# 項目，並新增對 Aspose.PDF for .NET 程式庫的參考。這將使您能夠利用庫的功能來搜尋和處理 PDF 文件。
-
-#### Q：我可以使用本教學搜尋 PDF 任何頁面上的特定文字段嗎？
-
-答：是的，本教學提供如何在 PDF 文件的選定頁面上搜尋特定文字段的說明。它指導使用者設定項目、載入 PDF 以及使用 Aspose.PDF 庫來尋找和檢索所需文字段的屬性。
-
-#### Q：如何在本教程中指定要搜尋的文字？
-
-答：要指定要搜尋的文本，請建立一個`TextFragmentAbsorber`對象並使用以下命令設定其搜尋參數`Text`財產。替換預設值`"text"`在教程的程式碼中加入您所需的搜尋短語。
-
-#### 問：如何檢索擷取的文字段的屬性？
-
-接受後`TextFragmentAbsorber`對於 PDF 的特定頁面，您可以使用以下命令檢索提取的文字片段`TextFragments`吸收體對象的屬性。這提供了對文本片段集合的訪問，每個文本片段包含多個文本片段。
-
-#### Q：我可以自訂程式碼以對每個文字段執行其他操作嗎？
-
-答：當然。本教程的範例程式碼提供了一個循環來迭代檢索到的文字段。您可以自訂此循環中的程式碼，以便根據您的專案要求對每個文字段執行其他操作。
-
-#### Q：提取文字段後如何儲存修改後的PDF文件？
-
-答：本教學主要著重在搜尋文字段並檢索其屬性。如果您打算對 PDF 進行修改，您可以參考其他 Aspose.PDF 文檔，以了解如何根據您的特定需求操作和儲存文檔。
+### 此方法適用於加密的 PDF 嗎？
+可以，只要您使用正確的密碼解鎖 PDF。

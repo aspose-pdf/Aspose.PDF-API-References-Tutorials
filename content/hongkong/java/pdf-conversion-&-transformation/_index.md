@@ -22,7 +22,7 @@ Aspose.PDF for Java 的突出功能之一是它能夠將 PDF 文件無縫轉換�
 
 ## PDF 轉換與轉換教學課程
 ### [將 EPUB 轉換為 PDF 格式](./convert-epub-to-pdf-format/)
-了解如何使用 Aspose.PDF for Java 輕鬆將 EPUB 轉換為 PDF。我們的分步指南簡化了 EPUB 到 PDF 的轉換。
+了解如何使用 Aspose.PDF for Java 輕鬆將 EPUB 轉換為 PDF。我們的逐步指南簡化了 EPUB 到 PDF 的轉換。
 ### [將 HTML 轉換為 PDF 文件](./convert-html-to-pdf-files/)
 了解如何使用 Aspose.PDF for Java 輕鬆將 HTML 轉換為 PDF 檔案。包含有效產生文件的程式碼範例的逐步指南。
 ### [將 PCL 轉換為 PDF](./transform-pcl-to-pdfs/)

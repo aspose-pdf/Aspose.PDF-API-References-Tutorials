@@ -22,7 +22,7 @@ url: /zh-hant/net/document-conversion/markdown-to-pdf/
 
 ## 導入包
 
-完成所有設定後，下一步是匯入必要的套件。您可以這樣做：
+完成所有設定後，下一步就是匯入必要的套件。您可以這樣做：
 
 ```csharp
 using System;
@@ -68,7 +68,7 @@ doc.Save(dataDir + "MarkdownToPDF.pdf");
 
 ## 結論
 
-只需幾個簡單的步驟，您就學會如何使用 Aspose.PDF for .NET 將 Markdown 文件轉換為 PDF。這個強大的程式庫可以輕鬆處理文件轉換，讓您能夠專注於創建精彩的內容，而不必擔心技術細節。
+只需幾個簡單的步驟，您就學會如何使用 Aspose.PDF for .NET 將 Markdown 文件轉換為 PDF。這個強大的庫可以輕鬆處理文件轉換，讓您專注於創建精彩的內容，而不用擔心技術細節。
 
 ## 常見問題解答
 

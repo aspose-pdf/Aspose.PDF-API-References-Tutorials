@@ -50,7 +50,7 @@ Diese Namespaces bieten Ihnen Funktionen zur Bearbeitung von PDF-Dokumenten, ein
 
 Nachdem wir nun alles eingerichtet haben, können wir uns nun mit den detaillierten Schritten zum Hinzufügen eines PDF-Seitenstempels befassen. Der Übersichtlichkeit halber haben wir den Vorgang aufgeschlüsselt. 
 
-## Schritt 1: Dokumentverzeichnis definieren
+## Schritt 1: Definieren Sie das Dokumentverzeichnis
 
 Als Erstes müssen Sie den Pfad für die PDF-Dokumente festlegen. Diese Variable dient als Verzeichnis zum Lesen und Speichern von Dateien.
 

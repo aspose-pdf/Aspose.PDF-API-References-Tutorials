@@ -14,11 +14,11 @@ Napjaink digitális korában a PDF dokumentumok dinamikus előállítása a vál
 
 ## A feszített cellahatárok megértése PDF-ben
 
-Mielőtt belemerülne a megoldásba, elengedhetetlen, hogy megértse a feszített cellák fogalmát egy PDF-táblázatban. A feszült cellák azok, amelyek egynél több sort vagy oszlopot foglalnak el egy táblázatban. Amikor ilyen táblázatokat hoz létre, a PDF-könyvtárak gyakran látható szegélyeket jelenítenek meg e cellák körül, így a táblázat szerkezete láthatóbbá válik.
+Mielőtt belemerülne a megoldásba, elengedhetetlen, hogy megértse a feszített cellák fogalmát egy PDF-táblázatban. A feszült cellák azok, amelyek egynél több sort vagy oszlopot foglalnak el egy táblázatban. Amikor ilyen táblázatokat hoz létre, a PDF-könyvtárak gyakran látható kereteket jelenítenek meg e cellák körül, így a táblázat szerkezete láthatóbbá válik.
 
 ## Az átívelő cellahatárok elrejtésének kihívása
 
-Míg a látható szegélyek a legtöbb esetben hasznosak, vannak olyan helyzetek, amikor esztétikai vagy funkcionális okokból érdemes elrejteni a szegélyeket az átívelő cellák körül. Ennek manuális megvalósítása nehézkes és hibás lehet, ezért az Aspose.PDF for Java segít.
+Míg a látható szegélyek a legtöbb esetben hasznosak, vannak olyan helyzetek, amikor esztétikai vagy funkcionális okokból érdemes elrejteni az átívelő cellák körüli szegélyeket. Ennek manuális megvalósítása nehézkes és hibás lehet, ezért az Aspose.PDF for Java segít.
 
 ## Az Aspose.PDF for Java használata
 

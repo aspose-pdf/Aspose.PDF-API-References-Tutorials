@@ -32,7 +32,7 @@ using System.Linq;
 using System.Text;
 ```
 
-Met deze pakketten kunt u werken met PDF-bestanden en tekstmanipulatie.
+Met deze pakketten kunt u met PDF-bestanden werken en tekst bewerken.
 
 ## Stap 1: De documentenmap instellen
 

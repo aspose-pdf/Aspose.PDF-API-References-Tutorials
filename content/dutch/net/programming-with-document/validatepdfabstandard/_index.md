@@ -36,7 +36,7 @@ using System;
 
 Deze twee regels code bevatten de belangrijkste functionaliteiten die u nodig hebt om PDF-bestanden te openen, bewerken en valideren.
 
-Nu alles is ingesteld, gaan we het proces voor het valideren van een PDF voor de PDF/A-standaard met behulp van Aspose.PDF voor .NET verder uitsplitsen.
+Nu alles is ingesteld, gaan we het proces van het valideren van een PDF voor de PDF/A-standaard met behulp van Aspose.PDF voor .NET verder uitsplitsen.
 
 ## Stap 1: Stel uw documentenmap in
 

@@ -2,7 +2,7 @@
 title: Optimera PDF-dokument
 linktitle: Optimera PDF-dokument
 second_title: Aspose.PDF för .NET API Referens
-description: Lär dig hur du optimerar PDF-dokument med Aspose.PDF för .NET med vår steg-för-steg-guide. Förbättra webbprestanda genom att minska filstorleken och komplexiteten.
+description: Lär dig hur du optimerar PDF-dokument med Aspose.PDF för .NET med vår steg-för-steg-guide. Förbättra webbprestanda genom att minska filstorlek och komplexitet.
 type: docs
 weight: 240
 url: /sv/net/programming-with-document/optimizedocument/

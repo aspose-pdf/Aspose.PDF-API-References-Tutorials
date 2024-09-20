@@ -126,7 +126,7 @@ Och där har du det! Att hämta och ändra formulärfältsflikordning i PDF-doku
 
 ## FAQ's
 
-### Kan jag använda den här metoden på flersidiga PDF-formulär?  
+### Kan jag tillämpa den här metoden på flersidiga PDF-formulär?  
 Ja, det kan du. Gå bara till den specifika sidan där formulärfälten finns och använd samma metod.
 
 ### Hur installerar jag Aspose.PDF för .NET i mitt projekt?  

@@ -16,7 +16,7 @@ A megjegyzések az interaktivitás kapuját jelentik a PDF-fájlokban, oktatóan
 
 ## dokumentum-együttműködés javítása
 
-A megjegyzések nem csak a vizuális fejlesztésekről szólnak; megkönnyítik a PDF dokumentumokon belüli együttműködést és kommunikációt is. Oktatóanyagaink az együttműködés szempontjaival foglalkoznak, megtanítanak megjegyzéseket, jegyzeteket hozzáadni, és még rajzolni is PDF-oldalakra. Akár személyes használatra, akár csapatmunka vagy ügyfél-visszajelzés céljából ír megjegyzéseket, megtudhatja, hogy az Aspose.PDF for Java hogyan egyszerűsíti le a folyamatot, interaktívabbá és informatívabbá téve PDF-eit.
+Az annotációk nem csak a vizuális fejlesztésekről szólnak; megkönnyítik a PDF dokumentumokon belüli együttműködést és kommunikációt is. Oktatóanyagaink az együttműködés szempontjaival foglalkoznak, megtanítanak megjegyzéseket, jegyzeteket hozzáadni, és még rajzolni is PDF-oldalakra. Akár személyes használatra, akár csapatmunka vagy ügyfél-visszajelzés céljából ír megjegyzéseket, megtudhatja, hogy az Aspose.PDF for Java hogyan egyszerűsíti le a folyamatot, interaktívabbá és informatívabbá téve PDF-eit.
 
 ## PDF megjegyzések oktatóanyagok
 ### [Megjegyzések hozzáadása a PDF-dokumentumokhoz](./add-comments-pdf-documents/)

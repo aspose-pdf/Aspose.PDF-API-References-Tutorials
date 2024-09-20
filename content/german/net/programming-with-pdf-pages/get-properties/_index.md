@@ -47,7 +47,7 @@ Dieser einfache Schritt stellt sicher, dass Sie Zugriff auf die Klassen haben, d
 
 Lassen Sie uns nun die Aufgabe des Abrufens von PDF-Eigenschaften in umsetzbare Schritte unterteilen. Dieser Abschnitt führt Sie durch jeden Schritt, sodass Sie ihn leicht nachvollziehen und verstehen können, wie der Vorgang funktioniert.
 
-## Schritt 1: Dokumentverzeichnis definieren
+## Schritt 1: Definieren Sie das Dokumentverzeichnis
 
 Der erste Schritt auf unserem Weg besteht darin, zu definieren, wo sich unser PDF-Dokument befindet. Wir möchten auf den Speicherort von „GetProperties.pdf“ verweisen.
 

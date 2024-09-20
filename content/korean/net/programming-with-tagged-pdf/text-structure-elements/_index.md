@@ -2,149 +2,158 @@
 title: PDF 파일의 텍스트 구조 요소
 linktitle: PDF 파일의 텍스트 구조 요소
 second_title: .NET API 참조를 위한 Aspose.PDF
-description: Aspose.PDF for .NET을 사용하여 PDF 파일에 텍스트 구조 요소를 추가하는 방법을 알아보세요. PDF의 구조와 접근성을 개선하세요.
+description: Aspose.PDF for .NET을 사용하여 PDF의 텍스트 구조 요소를 조작하는 방법을 알아보세요. 이 단계별 가이드는 구조화된 PDF를 만드는 데 필요한 모든 것을 다룹니다.
 type: docs
 weight: 230
 url: /ko/net/programming-with-tagged-pdf/text-structure-elements/
 ---
-이 자세한 튜토리얼에서는 제공된 C# 소스 코드를 단계별로 안내하여 Aspose.PDF for .NET을 사용하여 태그가 지정된 PDF 파일에 텍스트 구조 요소를 만듭니다. 아래 지침을 따라 PDF 파일에 텍스트 구조 요소를 추가하는 방법을 이해합니다.
+## 소개
 
-## 1단계: 환경 설정
+PDF 문서를 처리하는 경우 Aspose.PDF for .NET은 개발자를 위한 강력한 솔루션으로 제공됩니다. PDF 파일을 손쉽게 조작, 생성 및 편집할 수 있습니다. 이 가이드에서는 자세한 단계별 자습서를 통해 PDF 파일의 텍스트 구조 요소를 사용하는 방법을 자세히 설명합니다. 전제 조건부터 구현까지 모든 것을 다루어 이 가이드를 마칠 때까지 Aspose.PDF를 효과적으로 활용하는 데 필요한 지식을 갖추도록 합니다.
 
-시작하기 전에 Aspose.PDF for .NET을 사용하도록 개발 환경을 구성했는지 확인하세요. 여기에는 Aspose.PDF 라이브러리를 설치하고 이를 참조하도록 프로젝트를 구성하는 것이 포함됩니다.
+## 필수 조건
 
-## 2단계: PDF 문서 만들기
+PDF 파일 내에서 텍스트 구조 요소를 조작하는 세부적인 내용을 살펴보기 전에 몇 가지 필수 조건이 있습니다.
 
-이 단계에서는 Aspose.PDF를 사용하여 새 PDF 문서 객체를 생성합니다.
+- C#에 대한 기본 지식: Aspose.PDF for .NET은 주로 이 프레임워크 내에서 활용되므로 C# 프로그래밍에 대한 지식이 필수적입니다.
+- Visual Studio 설치됨: 컴퓨터에 Visual Studio가 설치되어 있는지 확인하세요. 여기서 코드를 작성하고 실행합니다.
+-  Aspose.PDF for .NET 라이브러리: Aspose.PDF 라이브러리를 다운로드하여 설치해야 합니다. 최신 버전은 다음을 확인하세요.[다운로드 링크는 여기입니다](https://releases.aspose.com/pdf/net/).
+- .NET Framework에 대한 액세스: Aspose.PDF를 지원하는 호환 가능한 .NET Framework 버전을 사용하도록 프로젝트를 설정했는지 확인하세요.
+-  Aspose 라이센스: 무료 평가판이 제공되는 동안 영구 라이센스는 다음에서 얻을 수 있습니다.[여기](https://purchase.aspose.com/buy).
+
+## 패키지 가져오기
+
+구현을 시작하려면 필요한 패키지를 가져와야 합니다. 방법은 다음과 같습니다.
+
+### Visual Studio 프로젝트 열기
+기존 Visual Studio 프로젝트를 열거나 새 프로젝트를 만듭니다. .NET Framework 프로젝트인지 확인합니다.
+
+### .NET용 Aspose.PDF 설치
+1. 도구 -> NuGet 패키지 관리자 -> 솔루션용 NuGet 패키지 관리로 이동합니다.
+2.  검색`Aspose.PDF`.
+3. 설치를 클릭하여 프로젝트에 라이브러리를 추가합니다.
+
+### 사용 지침 추가
+C# 파일의 맨 위에 관련 네임스페이스를 포함합니다.
 
 ```csharp
-// 문서 디렉토리의 경로입니다.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// PDF 문서 만들기
-Document document = new Document();
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-Aspose.PDF로 새로운 PDF 문서를 만들었습니다.
+PDF 파일에서 텍스트 구조 요소를 다루는 과정을 관리 가능한 단계로 나누어 보겠습니다.
 
-## 3단계: 태그가 지정된 콘텐츠를 가져오고 제목과 언어 설정
+## 1단계: 문서 디렉토리 설정
 
-이제 PDF 문서의 태그가 지정된 콘텐츠를 가져와서 문서 제목과 언어를 설정해 보겠습니다.
-
-```csharp
-// 태그가 지정된 콘텐츠 가져오기
-ITaggedContent taggedContent = document.TaggedContent;
-
-// 문서 제목과 언어를 정의하세요
-taggedContent.SetTitle("Tagged PDF document");
-taggedContent.SetLanguage("fr-FR");
-```
-
-태그가 지정된 PDF 문서의 제목과 언어를 설정했습니다.
-
-## 4단계: 루트 구조 요소 얻기
-
-이제 PDF 문서의 루트 구조 요소를 살펴보겠습니다.
+PDF를 만들기 전에 문서를 저장할 위치를 정의해야 합니다.
 
 ```csharp
-// 루트 구조 요소를 얻습니다
-StructureElement rootElement = taggedContent.RootElement;
-```
-
-우리는 PDF 문서의 루트 구조 요소를 얻었습니다.
-
-## 5단계: 문단 구조 요소 추가
-
-이제 PDF 문서에 문단 구조 요소를 추가해 보겠습니다.
-
-```csharp
-// 문단 구조 요소 생성
-ParagraphElement p = taggedContent.CreateParagraphElement();
-
-// 문단 구조 요소의 텍스트 정의
-p.SetText("Paragraph.");
-
-// 루트 구조 요소에 문단 구조 요소를 추가합니다.
-rootElement.AppendChild(p);
-```
-
-PDF 문서에 텍스트가 포함된 문단 구조 요소를 추가했습니다.
-
-## 6단계: PDF 문서 저장
-
-이제 PDF 문서 편집이 끝났으니 파일로 저장해 보겠습니다.
-
-```csharp
-// 태그가 지정된 PDF 문서를 저장합니다.
-document.Save(dataDir + "ElementDeStructureDeTexte.pdf");
-```
-
-텍스트 구조 요소가 태그된 PDF 문서를 지정된 디렉토리에 저장했습니다.
-
-
-### .NET용 Aspose.PDF를 사용한 텍스트 구조 요소의 샘플 소스 코드 
-
-```csharp
-
-// 문서 디렉토리의 경로입니다.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+// "YOUR DOCUMENT DIRECTORY"를 PDF를 저장하려는 경로로 바꾸세요.
+```
 
-// PDF 문서 생성
+## 2단계: 새 PDF 문서 만들기
+
+다음으로, 새로운 PDF 문서를 만들어 보겠습니다.
+
+```csharp
 Document document = new Document();
+```
 
-// TaggedPdf로 작업할 콘텐츠 가져오기
+이 줄은 새 PDF 문서 인스턴스를 초기화하여 콘텐츠를 추가할 수 있도록 합니다.
+
+## 3단계: 태그가 지정된 콘텐츠에 액세스
+
+PDF 접근성을 위해, 우리는 태그가 지정된 콘텐츠를 만들고 관리합니다. 액세스하는 방법은 다음과 같습니다.
+
+```csharp
 ITaggedContent taggedContent = document.TaggedContent;
+```
 
-// Documnet의 제목 및 언어 설정
+ 그만큼`TaggedContent` 속성을 사용하면 PDF의 구조적 요소를 관리할 수 있는 방법이 제공되며, 이는 접근성을 유지하는 데 중요합니다.
+
+## 4단계: 문서 제목 및 언어 설정
+
+제목과 언어를 설정하면 문서의 접근성을 개선할 수 있습니다. 다음과 같이 할 수 있습니다.
+
+```csharp
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
+```
 
-// 루트 구조 요소 가져오기
+이 단계는 문서에 정체성을 부여하는 것으로 생각하세요. 사용자와 화면 판독기에 문서의 내용을 알려주는 것입니다.
+
+## 5단계: 루트 구조 요소 가져오기
+
+특정 콘텐츠 유형을 추가하려면 루트 요소에 액세스해야 합니다. 다음을 통해 이를 달성할 수 있습니다.
+
+```csharp
 StructureElement rootElement = taggedContent.RootElement;
+```
+
+뿌리 요소는 모든 다른 구조적 요소가 뻗어 나오는 나무의 줄기와 같습니다.
+
+## 6단계: 문단 요소 만들기
+
+이제 텍스트를 추가할 수 있는 문단 요소를 만들어야 합니다.
+
+```csharp
 ParagraphElement p = taggedContent.CreateParagraphElement();
+```
 
-// 텍스트를 텍스트 구조 요소로 설정
+이 줄은 텍스트를 담을 새로운 문단 요소를 선언합니다.
+
+## 7단계: 문단 요소에 텍스트 설정
+
+문단에 실제 텍스트를 추가해 보겠습니다.
+
+```csharp
 p.SetText("Paragraph.");
-rootElement.AppendChild(p);
+```
 
-// 태그가 지정된 PDF 문서 저장
+이 시점에서 문단은 이제 "문단"이라는 문자열을 보유합니다. 이것은 병에 메시지를 담아서 보여줄 준비가 된 것으로 생각하세요.
+
+## 8단계: 루트 요소에 문단 추가
+
+이제 방금 만든 문단을 루트 구조에 다시 추가해 보겠습니다.
+
+```csharp
+rootElement.AppendChild(p);
+```
+
+이 작업을 수행하면 땅에 꽃을 심는 것처럼 문단이 문서 구조에 통합됩니다.
+
+## 9단계: PDF 문서 저장
+
+마지막으로 지정된 디렉토리에 PDF 문서를 저장합니다.
+
+```csharp
 document.Save(dataDir + "TextStructureElement.pdf");
 ```
 
+이렇게 하면 PDF 개선 작업이 완료되고 사용할 준비가 되어 저장됩니다.
+
 ## 결론
 
-이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 PDF 문서에 텍스트 구조 요소를 추가하는 방법을 알아보았습니다. 이제 이러한 기능을 사용하여 PDF 문서의 구조와 접근성을 개선할 수 있습니다.
+이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF 문서를 만드는 방법을 알아보았습니다. 환경 설정부터 텍스트 구조 요소 만들기 및 조작까지, 이제 더욱 고급 PDF 기능을 탐구할 준비가 되었습니다. 구조화된 접근 방식은 PDF가 보기 좋을 뿐만 아니라 접근성도 유지하여 모든 사람이 사용하기 편리하도록 합니다. 
 
-### 자주 묻는 질문
+## 자주 묻는 질문
 
-#### 질문: Aspose.PDF for .NET을 사용하여 태그가 지정된 PDF 파일에 텍스트 구조 요소를 만드는 이 튜토리얼의 주요 목적은 무엇입니까?
+### .NET용 Aspose.PDF란 무엇인가요?  
+.NET용 Aspose.PDF는 개발자가 .NET 애플리케이션에서 프로그래밍 방식으로 PDF 문서를 만들고, 조작하고, 변환할 수 있도록 해주는 라이브러리입니다.
 
-A: 이 튜토리얼의 주요 초점은 Aspose.PDF for .NET을 사용하여 태그가 지정된 PDF 문서에 텍스트 구조 요소를 추가하는 과정을 안내하는 것입니다. 이 튜토리얼은 PDF 파일의 구조와 접근성을 향상시키는 데 도움이 되는 단계별 지침과 C# 소스 코드 예제를 제공합니다.
+### Aspose.PDF는 어디에서 다운로드할 수 있나요?  
+ .NET용 Aspose.PDF를 다음에서 다운로드할 수 있습니다.[대지](https://releases.aspose.com/pdf/net/).
 
-#### 질문: 태그가 지정된 PDF 파일의 텍스트 구조 요소에 대한 이 튜토리얼을 따르려면 어떤 전제 조건이 필요합니까?
+### Aspose.PDF를 사용하려면 라이선스가 필요합니까?  
+체험 기간 동안 라이브러리를 무료로 사용할 수 있습니다. 계속 사용하려면 라이선스가 필요하며, 라이선스는 구매할 수 있습니다.[여기](https://purchase.aspose.com/buy).
 
-A: 시작하기 전에 Aspose.PDF for .NET을 사용하도록 개발 환경을 설정했는지 확인하세요. 여기에는 Aspose.PDF 라이브러리를 설치하고 프로젝트를 구성하여 참조하도록 하는 것이 포함됩니다.
+### PDF 접근성을 어떻게 개선할 수 있나요?  
+태그가 지정된 콘텐츠를 사용하면 보조 기술이 이해할 수 있는 구조적 의미를 제공함으로써 PDF 접근성을 효과적으로 개선할 수 있습니다.
 
-#### 질문: Aspose.PDF for .NET을 사용하여 새 PDF 문서를 만들고 텍스트 구조 요소를 추가하려면 어떻게 해야 합니까?
-
-답변: 이 튜토리얼에는 Aspose.PDF for .NET을 사용하여 새 PDF 문서를 만들고 문단 텍스트 구조 요소를 추가하는 방법을 보여주는 C# 소스 코드 예제가 포함되어 있습니다.
-
-#### 질문: 태그가 지정된 PDF 문서에 텍스트 구조 요소를 추가하는 것은 무슨 의미가 있나요?
-
-A: 텍스트 구조 요소를 추가하면 PDF 문서의 의미 구조가 향상됩니다. 이를 통해 화면 판독기 및 기타 보조 기술의 접근성이 향상되어 사용자가 콘텐츠를 탐색하고 이해하기가 더 쉬워집니다.
-
-#### 질문: Aspose.PDF for .NET을 사용하여 태그가 지정된 PDF 문서의 제목과 언어를 설정하려면 어떻게 해야 합니까?
-
-답변: 이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 태그가 지정된 PDF 문서의 제목과 언어를 설정하는 방법을 보여주는 C# 소스 코드 예제를 제공합니다.
-
-#### 질문: Aspose.PDF for .NET을 사용하여 PDF 문서에 문단 텍스트 구조 요소를 어떻게 만들 수 있나요?
-
- A: 이 튜토리얼에는 C# 소스 코드 예제가 포함되어 있으며 이를 통해 문단 텍스트 구조 요소를 만드는 방법을 보여줍니다.`CreateParagraphElement()`방법을 사용하고 이를 사용하여 텍스트를 추가합니다.`SetText()` 방법. 그런 다음 문단은 태그가 지정된 PDF 문서의 루트 구조 요소에 추가됩니다.
-
-#### 질문: PDF 문서에 추가하는 텍스트 구조 요소의 모양과 서식을 사용자 지정할 수 있나요?
-
-A: 텍스트 구조 요소는 주로 의미 구조와 접근성에 초점을 맞춥니다. 텍스트 콘텐츠를 설정하고 잠재적으로 기본 서식을 적용할 수 있지만, 광범위한 모양 사용자 지정은 일반적으로 스타일, 글꼴 및 주석과 같은 다른 PDF 기능을 통해 달성됩니다.
-
-#### 질문: 제공된 샘플 소스 코드는 PDF 문서에 텍스트 구조 요소를 추가하는 데 어떻게 도움이 되나요?
-
-A: 샘플 소스 코드는 Aspose.PDF for .NET을 사용하여 태그가 지정된 PDF 문서에서 텍스트 구조 요소를 만드는 것을 구현하기 위한 실제 참조로 사용됩니다. 이 코드를 시작점으로 사용하여 특정 요구 사항에 맞게 수정할 수 있습니다.
+### Aspose로 다른 프로그래밍 언어로 PDF를 만들 수 있나요?  
+네, Aspose는 Java, Python 등 다양한 프로그래밍 언어에 대한 라이브러리를 제공합니다.

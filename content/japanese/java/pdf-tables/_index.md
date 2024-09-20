@@ -26,6 +26,6 @@ Aspose.PDF で Java を使用して PDF の新しいページにテーブルを�
 ### [Java を使用して PDF 内のセル境界を非表示にする](./hide-spanned-cell-border-in-pdf-using-java/)
 Aspose.PDF for Java のステップバイステップのチュートリアルで、Java を使用して PDF 内の複数のセルの境界線を非表示にする方法を学びます。
 ### [Java を使用して既存の PDF 内の表を操作する](./manipulate-tables-in-existing-pdf-using-java/)
-Aspose.PDF for Java を使用して、Java で PDF テーブルを操作する方法を学びます。このステップ バイ ステップ ガイドでは、テーブルの抽出、変更など、効果的な PDF 処理について説明します。
+Aspose.PDF for Java を使用して Java で PDF テーブルを操作する方法を学びます。このステップ バイ ステップ ガイドでは、テーブルの抽出、変更など、効果的な PDF 処理について説明します。
 ### [Java を使用して既存の PDF から表を削除する](./remove-tables-from-existing-pdf-using-java/)
 Aspose.PDF for Java を使用して、Java で PDF からテーブルを簡単に削除する方法を学びます。効率的なテーブル削除のためのステップバイステップ ガイド。

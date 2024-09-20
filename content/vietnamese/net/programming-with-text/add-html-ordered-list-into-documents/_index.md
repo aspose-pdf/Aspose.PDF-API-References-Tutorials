@@ -2,139 +2,132 @@
 title: Thêm danh sách có thứ tự HTML vào tài liệu
 linktitle: Thêm danh sách HTMLOrdered vào tài liệu
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Tìm hiểu cách thêm danh sách có thứ tự HTML vào tài liệu bằng Aspose.PDF cho .NET.
+description: Học cách thêm danh sách có thứ tự HTML vào tài liệu PDF bằng Aspose.PDF cho .NET. Khám phá hướng dẫn từng bước trong hướng dẫn chi tiết này.
 type: docs
 weight: 30
 url: /vi/net/programming-with-text/add-html-ordered-list-into-documents/
 ---
-Trong hướng dẫn này, bạn sẽ học cách sử dụng thư viện Aspose.PDF cho .NET để thêm danh sách có thứ tự HTML vào tài liệu. Mã được cung cấp sẽ trình bày các bước cần thiết để hoàn thành nhiệm vụ này.
+## Giới thiệu
 
-## Yêu cầu
-Trước khi bắt đầu, hãy đảm bảo bạn có những điều sau:
+Việc tạo tài liệu PDF ngay lập tức có thể mở ra một thế giới khả năng cho các nhà phát triển. Cho dù bạn cần tạo báo cáo, hóa đơn hay bất kỳ hình thức tài liệu nào khác, khả năng thao tác các thành phần HTML và tích hợp chúng liền mạch vào PDF của bạn là vô cùng mạnh mẽ. Trong bài viết này, chúng ta sẽ tìm hiểu cách thêm danh sách có thứ tự HTML vào tài liệu bằng Aspose.PDF cho .NET.
 
-- Visual Studio hoặc bất kỳ trình biên dịch C# nào khác được cài đặt trên máy của bạn.
-- Aspose.PDF cho thư viện .NET. Bạn có thể tải xuống từ trang web chính thức của Aspose hoặc sử dụng trình quản lý gói như NuGet để cài đặt.
+## Điều kiện tiên quyết
 
-## Bước 1: Thiết lập dự án
-1. Tạo một dự án C# mới trong môi trường phát triển mà bạn thích.
-2. Thêm tham chiếu đến thư viện Aspose.PDF cho .NET.
+Trước khi bắt đầu hành trình chỉnh sửa PDF này, hãy đảm bảo bạn đã chuẩn bị mọi thứ. Sau đây là tóm tắt nhanh về những gì bạn cần:
 
-## Bước 2: Nhập các không gian tên cần thiết
-Trong tệp mã mà bạn muốn thêm danh sách có thứ tự HTML, hãy thêm lệnh using sau vào đầu tệp:
+1. Môi trường phát triển .NET: Đảm bảo bạn đã cài đặt IDE như Visual Studio trên máy tính của mình. Đây sẽ là sân chơi cho việc lập trình của bạn.
+2.  Aspose.PDF cho Thư viện .NET: Bạn cần tải xuống và cài đặt thư viện Aspose.PDF. Bạn có thể tìm thấy các tệp cần thiết[đây](https://releases.aspose.com/pdf/net/). 
+3. Kiến thức cơ bản về C#: Có một chút hiểu biết về lập trình C# sẽ có lợi vì chúng ta sẽ viết mã bằng ngôn ngữ này.
+4.  Truy cập vào Tài liệu: Để làm quen với nhiều chức năng khác nhau của Aspose.PDF, thật tuyệt khi có[Aspose.PDF cho tài liệu .NET](https://reference.aspose.com/pdf/net/) hữu ích để tham khảo.
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
+Sau khi đã đáp ứng được các điều kiện tiên quyết, chúng ta hãy cùng bắt tay vào thực hiện thôi!
 
-## Bước 3: Thiết lập thư mục tài liệu và đường dẫn tệp đầu ra
- Trong mã, hãy xác định vị trí dòng ghi`string dataDir = "YOUR DOCUMENT DIRECTORY";` và thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn đến thư mục lưu trữ tài liệu của bạn.
+## Nhập gói
 
- Tiếp theo, xác định vị trí dòng ghi`string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";` và thay thế`"AddHTMLOrderedListIntoDocuments_out.pdf"` với tên mong muốn cho tệp PDF đầu ra của bạn.
+Trước tiên, bạn cần nhập các gói cần thiết vào ứng dụng C# của mình. Điều này sẽ cho phép bạn truy cập các lớp và phương thức do thư viện Aspose.PDF cung cấp. 
 
-## Bước 4: Tạo một đối tượng Document mới
- Khởi tạo một cái mới`Document` đối tượng bằng cách thêm dòng mã sau:
+### Tạo một dự án mới
 
-```csharp
-Document doc = new Document();
-```
+Mở Visual Studio và tạo một dự án Console Application mới. Đặt tên phù hợp, như "PDFOrderedListDemo".
 
-## Bước 5: Tạo đối tượng HtmlFragment với nội dung HTML
- Khởi tạo một`HtmlFragment` đối tượng có nội dung HTML mà bạn muốn thêm vào tài liệu. Trong mã được cung cấp, nội dung HTML được gán cho biến`t`. Bạn có thể sửa đổi nội dung HTML khi cần thiết.
+### Thêm tham chiếu Aspose.PDF
+
+1. Nhấp chuột phải vào dự án của bạn trong Solution Explorer.
+2. Chọn Quản lý gói NuGet.
+3. Tìm kiếm "Aspose.PDF" và cài đặt phiên bản mới nhất.
+
+### Nhập không gian tên bắt buộc
+
+ Trong của bạn`Program.cs`tệp, hãy bắt đầu bằng cách thêm lệnh using sau vào đầu:
 
 ```csharp
-HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li >Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>`");
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Bước 6: Thêm một trang vào tài liệu
- Thêm một trang mới vào tài liệu bằng cách sử dụng`Add` phương pháp của`Pages` bộ sưu tập. Trong mã được cung cấp, trang mới được gán cho biến`page`.
+Bây giờ chúng ta đã sẵn sàng để bắt đầu xây dựng PDF!
 
-```csharp
-Page page = doc.Pages.Add();
-```
+Bạn đã sẵn sàng tạo PDF với danh sách có thứ tự HTML chưa? Hãy làm theo các bước sau.
 
-## Bước 7: Thêm HtmlFragment vào trang
- Thêm vào`HtmlFragment` phản đối trang bằng cách sử dụng`Add` phương pháp của`Paragraphs` bộ sưu tập.
+## Bước 1: Xác định tài liệu và nội dung HTML của bạn
 
-```csharp
-page.Paragraphs.Add(t);
-```
+Chúng ta sẽ bắt đầu bằng cách thiết lập tài liệu PDF và xác định nội dung HTML bao gồm danh sách có thứ tự.
 
-## Bước 8: Lưu tài liệu PDF
- Lưu tệp PDF kết quả bằng cách sử dụng`Save` phương pháp của`Document` đối tượng. Chỉ định đường dẫn tệp đầu ra mà bạn đã đặt ở Bước 3.
-
-```csharp
-doc.Save(outFile);
-```
-
-### Mã nguồn mẫu để Thêm danh sách HTMLOrdered vào tài liệu bằng Aspose.PDF cho .NET 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Đường dẫn đến tài liệu đầu ra.
 string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";
+
 // Khởi tạo đối tượng Tài liệu
 Document doc = new Document();
+```
+
+Ở bước này, chúng ta thiết lập đường dẫn tệp để lưu tài liệu PDF sau này.
+
+## Bước 2: Tạo đoạn mã HTML
+
+ Tiếp theo, chúng ta sẽ tạo một`HtmlFragment` đối tượng chứa HTML của chúng tôi. Ở đây chúng tôi sẽ bao gồm một danh sách có thứ tự cùng với một số văn bản.
+
+```csharp
 // Khởi tạo đối tượng HtmlFragment với đoạn HTML tương ứng
-HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li>Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>`");
-// Thêm Trang vào Bộ sưu tập Trang
+HtmlFragment htmlFragment = new HtmlFragment("<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li>Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>");
+```
+
+Ở đây chúng tôi đã tạo một đoạn mã HTML bao gồm danh sách các mục. HTML được lưu trữ dưới dạng chuỗi, giúp dễ dàng thao tác.
+
+## Bước 3: Thêm Trang vào Tài liệu
+
+Bây giờ, chúng ta cần thêm một trang vào tài liệu PDF của mình. Mọi PDF đều cần có trang và chúng tôi cũng không ngoại lệ!
+
+```csharp
+//Thêm Trang vào Bộ sưu tập Trang
 Page page = doc.Pages.Add();
+```
+
+Dòng mã này thêm một trang mới vào tài liệu của chúng ta. Hãy nhớ rằng, mỗi trang có thể chứa nhiều thành phần khác nhau, bao gồm văn bản, hình ảnh và nội dung HTML của chúng ta.
+
+## Bước 4: Chèn đoạn mã HTML vào trang
+
+Đây chính là nơi phép thuật xảy ra! Bây giờ chúng ta sẽ thêm đoạn mã HTML đã định nghĩa trước đó vào trang chúng ta vừa tạo.
+
+```csharp
 // Thêm HtmlFragment vào bên trong trang
-page.Paragraphs.Add(t);
-//Lưu tệp PDF kết quả
+page.Paragraphs.Add(htmlFragment);
+```
+
+Bằng cách thêm đoạn mã HTML vào các đoạn văn trên trang, về cơ bản chúng ta đang yêu cầu PDF hiển thị HTML như cách nó sẽ hiển thị trên trình duyệt web.
+
+## Bước 5: Lưu tài liệu PDF
+
+Sau khi đã có đầy đủ nội dung, bước cuối cùng là lưu tài liệu vào đĩa.
+
+```csharp
+// Lưu tệp PDF kết quả
 doc.Save(outFile);
 ```
+
+ Ở đây chúng tôi gọi là`Save` phương pháp trên đối tượng tài liệu của chúng tôi, chỉ định đường dẫn tệp đầu ra nơi tệp PDF mới của chúng tôi sẽ lưu trữ.
 
 ## Phần kết luận
-Bạn đã thêm thành công danh sách có thứ tự HTML vào tài liệu bằng Aspose.PDF cho .NET. Tệp PDF kết quả hiện có thể được tìm thấy tại đường dẫn tệp đầu ra đã chỉ định.
 
-Hãy nhớ tùy chỉnh nội dung HTML và điều chỉnh mã theo yêu cầu cụ thể của bạn.
+Cho dù bạn đang tạo báo cáo, tài liệu thiết kế hay dự án cá nhân, khả năng chuyển đổi nội dung HTML sang định dạng PDF có thể làm phong phú thêm ứng dụng của bạn. Hãy thử nghiệm với các thành phần HTML khác và xem bạn có thể đưa các sáng tạo PDF của mình đi xa đến đâu!
 
-### Câu hỏi thường gặp
+## Câu hỏi thường gặp
 
-#### H: Mục đích của hướng dẫn này là gì?
+### Aspose.PDF dành cho .NET là gì?
+Aspose.PDF for .NET là một thư viện cho phép các nhà phát triển tạo, chỉnh sửa và chuyển đổi tài liệu PDF theo cách lập trình.
 
-A: Hướng dẫn này hướng dẫn bạn quy trình thêm danh sách có thứ tự HTML vào tài liệu bằng thư viện Aspose.PDF cho .NET. Hướng dẫn cung cấp hướng dẫn từng bước và đoạn mã để giúp bạn thực hiện nhiệm vụ này.
+### Tôi có thể sử dụng Aspose.PDF cho các loại nội dung HTML khác không?
+Có, Aspose.PDF hỗ trợ nhiều loại nội dung HTML, bao gồm văn bản, hình ảnh và các thành phần được định dạng.
 
-#### H: Tôi cần nhập những không gian tên nào cho hướng dẫn này?
+### Có thể tùy chỉnh giao diện của danh sách đã sắp xếp không?
+Hoàn toàn có thể! Bạn có thể áp dụng các kiểu và lớp CSS để kiểm soát hình ảnh hóa danh sách có thứ tự và các thành phần HTML khác.
 
-A: Bạn cần nhập các không gian tên sau vào đầu tệp mã của mình:
+### Tôi có cần kết nối Internet để sử dụng Aspose.PDF cho .NET không?
+Không, sau khi cài đặt, thư viện sẽ hoạt động ngoại tuyến.
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
-
-#### H: Làm thế nào để chỉ định thư mục tài liệu và đường dẫn tệp đầu ra?
-
- A: Trong mã, xác định vị trí dòng`string dataDir = "YOUR DOCUMENT DIRECTORY";` và thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế đến thư mục tài liệu của bạn. Ngoài ra, hãy tìm dòng`string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";` và thay thế`"AddHTMLOrderedListIntoDocuments_out.pdf"` với tên tệp PDF đầu ra mong muốn của bạn.
-
-#### H: Tôi có thể tùy chỉnh nội dung HTML được thêm vào tài liệu không?
-
- A: Chắc chắn rồi! Ở Bước 5, bạn sẽ tạo một`HtmlFragment` đối tượng được đặt tên`t` chứa nội dung HTML. Bạn có thể sửa đổi nội dung HTML trong dấu ngoặc kép để phù hợp với yêu cầu của bạn.
-
-#### H: Làm thế nào để thêm danh sách có thứ tự HTML vào một trang trong tài liệu?
-
- A: Ở Bước 7, bạn sẽ thêm`HtmlFragment` sự vật (`t` ) vào trang bằng cách sử dụng`Add` phương pháp của`Paragraphs` bộ sưu tập. Điều này sẽ tích hợp danh sách có thứ tự HTML vào tài liệu một cách liền mạch.
-
-#### H: Làm thế nào để lưu tài liệu PDF kết quả?
-
- A: Sau khi thêm nội dung HTML và sắp xếp nó trên một trang, bạn có thể lưu tài liệu PDF bằng cách sử dụng`Save` phương pháp của`Document` đối tượng. Hãy đảm bảo cung cấp đúng đường dẫn tệp đầu ra mà bạn đã đặt trước đó.
-
-#### H: Bạn có thể cung cấp bản tóm tắt mã nguồn mẫu để tham khảo không?
-
-A: Chắc chắn rồi! Sau đây là phiên bản tóm tắt của mã nguồn mẫu được cung cấp trong hướng dẫn này:
-
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";
-Document doc = new Document();
-HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li>Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>`");
-Page page = doc.Pages.Add();
-page.Paragraphs.Add(t);
-doc.Save(outFile);
-```
-
-#### H: Điểm chính cần lưu ý trong hướng dẫn này là gì?
-
-A: Bằng cách làm theo hướng dẫn này, bạn đã học thành công cách tận dụng thư viện Aspose.PDF cho .NET để kết hợp danh sách có thứ tự HTML vào tài liệu. Kiến thức mới tìm thấy này có thể được áp dụng để nâng cao quy trình tạo và xử lý tài liệu của bạn.
+### Tôi có thể tìm thấy hỗ trợ cho Aspose.PDF ở đâu?
+ Bạn có thể tìm kiếm sự hỗ trợ và tương tác với những người dùng khác trên[Diễn đàn hỗ trợ Aspose](https://forum.aspose.com/c/pdf/10).

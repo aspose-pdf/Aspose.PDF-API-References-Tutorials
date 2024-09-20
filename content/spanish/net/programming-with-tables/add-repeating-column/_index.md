@@ -2,120 +2,105 @@
 title: Agregar columna repetida en documento PDF
 linktitle: Agregar columna repetida en documento PDF
 second_title: Referencia de API de Aspose.PDF para .NET
-description: Aprenda a agregar una columna repetida en un documento PDF usando Aspose.PDF para .NET.
+description: Aprenda a agregar columnas repetidas a documentos PDF con Aspose.PDF para .NET. Guía paso a paso con ejemplos y código. Perfecta para desarrolladores.
 type: docs
 weight: 20
 url: /es/net/programming-with-tables/add-repeating-column/
 ---
-En este tutorial, aprenderemos a agregar una columna repetida en un documento PDF usando Aspose.PDF para .NET. Explicaremos el código fuente en C# paso a paso. Al final de este tutorial, sabrá cómo crear una tabla con una columna repetida en un documento PDF. ¡Comencemos!
+## Introducción
 
-## Paso 1: Configuración del entorno
-En primer lugar, asegúrese de haber configurado su entorno de desarrollo de C# con Aspose.PDF para .NET. Agregue la referencia a la biblioteca e importe los espacios de nombres necesarios.
+Si trabaja con documentos PDF y necesita agregar columnas repetidas, ¡está en el lugar correcto! Con Aspose.PDF para .NET, puede administrar fácilmente las tablas y el contenido dentro de un PDF. Ya sea que esté creando informes dinámicos, facturas o cualquier otro documento estructurado, las columnas repetidas pueden ser un elemento innovador en la organización de datos. Veamos una guía paso a paso sobre cómo agregar columnas repetidas a un documento PDF.
 
-## Paso 2: Creación del documento PDF
-En este paso, creamos un nuevo documento PDF.
+## Prerrequisitos
+
+Antes de pasar al código, asegurémonos de que tienes todo configurado:
+
+- Aspose.PDF para .NET: debe tener la biblioteca Aspose.PDF para .NET instalada en su proyecto.
+- [Descargar Aspose.PDF para .NET](https://releases.aspose.com/pdf/net/)
+- [Prueba gratuita](https://releases.aspose.com/)
+- Entorno de desarrollo: asegúrese de tener instalado un IDE compatible con .NET, como Visual Studio.
+- Comprensión básica de C#: si bien desglosaremos todo, una comprensión básica de C# le ayudará a seguir el proceso sin problemas.
+  
+ Si aún no tienes Aspose.PDF para .NET, puedes obtener uno[licencia temporal](https://purchase.aspose.com/temporary-license/) para comenzar a explorar sus características.
+
+## Importar paquetes
+
+Para comenzar, debe importar los espacios de nombres necesarios de Aspose.PDF para .NET. A continuación, le indicamos cómo hacerlo:
 
 ```csharp
-Document doc = new Document();
-Page page = doc.Pages.Add();
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-Hemos creado un documento PDF vacío donde podemos añadir contenido.
+Estos paquetes proporcionan las clases y métodos esenciales necesarios para trabajar con documentos PDF y manipular tablas.
 
-## Paso 3: Creación de las tablas
-En este paso creamos una tabla principal (`outerTable`) y una tabla anidada (`mytable`) que se repetirá en la columna.
+Ahora, vamos a dividir el proceso en varios pasos para agregar columnas repetidas a un documento PDF. ¡Siga leyendo!
 
-```csharp
-Table outerTable = new Table();
-outerTable.ColumnWidths = "100%";
-outerTable.HorizontalAlignment = HorizontalAlignment.Left;
+## Paso 1: Establezca la ruta al directorio de sus documentos
 
-Table mytable = new Table();
-mytable.Broken = TableBroken.VerticalInSamePage;
-mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
-```
-
-Especificamos propiedades de tabla como el ancho de columna y el modo de salto de tabla anidada.
-
-## Paso 4: Agregar las tablas al documento
-Ahora agregamos las tablas creadas al documento PDF.
+Antes de crear o manipular cualquier archivo, debemos definir la ruta donde se guardará el PDF generado. En su proyecto de C#, establezca la ruta del directorio donde se ubicarán sus archivos:
 
 ```csharp
-page.Paragraphs.Add(outerTable);
-var bodyRow = outerTable.Rows.Add();
-var bodyCell = bodyRow.Cells.Add();
-bodyCell.Paragraphs.Add(mytable);
-mytable.RepeatingColumnsCount = 5;
-page.Paragraphs.Add(mytable);
-```
-
-Primero agregamos la tabla principal (`outerTable`) al documento PDF. A continuación, agregamos la tabla anidada (`mytable` ) como un párrafo en una celda de la tabla principal. También especificamos el número de columnas repetidas para`mytable` (en este ejemplo, 5 columnas).
-
-## Paso 5: Agregar encabezados y líneas
-Ahora agregamos los encabezados y filas a la tabla.
-
-```csharp
-Row headerRow = mytable.Rows.Add();
-headerRow.Cells.Add("header 1");
-headerRow.Cells.Add("header 2");
-headerRow.Cells.Add("header 3");
-// ...
-//Añade otros encabezados aquí
-
-for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
-{
-     Row row1 = mytable.Rows.Add();
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
-     // ...
-     // Añade las otras columnas aquí
-}
-```
-
-Primero agregamos los encabezados a la primera fila de la tabla (`headerRow`). Luego, agregamos las filas de datos de un bucle. En este ejemplo, agregamos 6 filas de datos.
-
-## Paso 6: Guardar el documento PDF
-Finalmente, guardamos el documento PDF en el archivo especificado.
-
-```csharp
-string outFile = dataDir + "AddRepeatingColumn_out.pdf";
-doc.Save(outFile);
-```
-
-Asegúrese de especificar el directorio y el nombre de archivo correctos para guardar el archivo PDF de salida.
-
-### Código fuente de ejemplo para agregar una columna repetida usando Aspose.PDF para .NET
-
-```csharp
-// La ruta al directorio de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-
 string outFile = dataDir + "AddRepeatingColumn_out.pdf";
-// Crear un nuevo documento
+```
+
+ Esta ruta apunta al directorio donde se guardará el PDF de salida. Reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta actual en su máquina.
+
+## Paso 2: Crear un nuevo documento PDF
+
+ Para comenzar, crea una nueva instancia`Document` objeto. Este servirá como contenedor para todas las páginas y el contenido dentro del PDF.
+
+```csharp
 Document doc = new Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
+```
 
-// Crear una instancia de una tabla externa que ocupe toda la página
+ Aquí, hemos creado un nuevo documento PDF y le hemos agregado una página en blanco.`doc.Pages.Add()` El método inserta una nueva página en el documento.
+
+## Paso 3: Crear una instancia de la tabla externa
+
+continuación, creamos una tabla externa. Esta tabla ocupará todo el ancho de la página y servirá como contenedor para otras tablas, incluida la que contendrá las columnas repetidas.
+
+```csharp
 Aspose.Pdf.Table outerTable = new Aspose.Pdf.Table();
 outerTable.ColumnWidths = "100%";
 outerTable.HorizontalAlignment = HorizontalAlignment.Left;
+```
 
-// Cree una instancia de un objeto de tabla que se anidará dentro de outerTable y que se dividirá dentro de la misma página
+ Hemos establecido el`ColumnWidths` propiedad al "100%", lo que significa que la tabla se extenderá por todo el ancho de la página.
+
+## Paso 4: Crear la tabla interna
+
+ Ahora, vamos a crear la tabla interna, que tendrá columnas repetidas. Las propiedades clave aquí son:`Broken` , lo que permite que la tabla continúe en la misma página, y`ColumnAdjustment`, que ajusta automáticamente el ancho de las columnas para adaptarse al contenido.
+
+```csharp
 Aspose.Pdf.Table mytable = new Aspose.Pdf.Table();
 mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
+```
 
-// Añade la tabla externa a los párrafos de la página
-// Agregar mytable a outerTable
+Esta tabla interna estará anidada dentro de la tabla externa.
+
+## Paso 5: Agregar tablas a la página
+
+Ahora que tenemos listas las tablas internas y externas, agreguémoslas a la página. Este paso garantiza que las tablas se incluyan en la estructura del documento.
+
+```csharp
 page.Paragraphs.Add(outerTable);
 var bodyRow = outerTable.Rows.Add();
 var bodyCell = bodyRow.Cells.Add();
 bodyCell.Paragraphs.Add(mytable);
 mytable.RepeatingColumnsCount = 5;
-page.Paragraphs.Add(mytable);
+```
 
-// Agregar fila de encabezado
+ Aquí, agregamos el`outerTable` a la página, y luego dentro de la tabla externa, anidamos el`mytable` Además, establecimos`RepeatingColumnsCount` 5, especificando cuántas columnas deben repetirse cuando se agregan datos.
+
+## Paso 6: Agregar fila de encabezado
+
+Ahora es el momento de agregar los encabezados a la tabla. La fila de encabezado brinda contexto a los datos y ayuda a estructurar las columnas. 
+
+```csharp
 Aspose.Pdf.Row row = mytable.Rows.Add();
 row.Cells.Add("header 1");
 row.Cells.Add("header 2");
@@ -131,51 +116,64 @@ row.Cells.Add("header 14");
 row.Cells.Add("header 15");
 row.Cells.Add("header 16");
 row.Cells.Add("header 17");
+```
 
+Este fragmento de código agrega la primera fila (que usaremos como encabezados) y la llena con celdas que contienen texto como “encabezado 1”, “encabezado 2”, etc.
+
+## Paso 7: Agregar filas de datos
+
+Por último, podemos añadir algunos datos a la tabla. Este bucle crea filas de forma dinámica y rellena las celdas con contenido:
+
+```csharp
 for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
-
 {
-	// Crea filas en la tabla y luego celdas en las filas.
-	Aspose.Pdf.Row row1 = mytable.Rows.Add();
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 4");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 5");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 6");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 7");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 11");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 12");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 13");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 14");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 15");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 16");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 17");
+    Aspose.Pdf.Row row1 = mytable.Rows.Add();
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 4");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 5");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 6");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 7");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 11");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 12");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 13");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 14");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 15");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 16");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 17");
 }
+```
+
+El bucle se itera seis veces, agregando filas y llenando cada celda con los datos de la columna correspondiente (por ejemplo, “col 1, 1”, “col 2, 2”, etc.).
+
+## Paso 8: Guardar el documento
+
+Una vez agregadas todas las filas y columnas, el último paso es guardar el documento en la ruta de archivo especificada.
+
+```csharp
 doc.Save(outFile);
 ```
 
+¡Su documento ahora está guardado con columnas repetidas!
+
 ## Conclusión
-En este tutorial, aprendimos a agregar una columna repetida en un documento PDF con Aspose.PDF para .NET. Puede usar esta guía paso a paso para crear tablas con columnas repetidas en sus propios proyectos de C#.
 
-### Preguntas frecuentes sobre cómo agregar columnas repetidas en un documento PDF
+¡Y ya lo tienes! Con estos sencillos pasos, puedes crear un documento PDF con columnas repetidas usando Aspose.PDF para .NET. Al aprovechar la flexibilidad de las tablas anidadas, puedes lograr diseños complejos que hagan que tus archivos PDF tengan un aspecto profesional y organizado. Prueba esto en tu próximo proyecto y explora todo el potencial de Aspose.PDF para satisfacer tus necesidades de generación de archivos PDF.
 
-#### P: ¿Puedo personalizar la cantidad de columnas repetidas en la tabla anidada?
+## Preguntas frecuentes
 
- R: Sí, puede personalizar la cantidad de columnas repetidas en la tabla anidada. En el ejemplo proporcionado, configuramos`mytable.RepeatingColumnsCount = 5;`, lo que significa que habrá 5 columnas repetidas. Puedes cambiar este valor por cualquier número que desees.
+### ¿Qué es Aspose.PDF para .NET?
+Aspose.PDF para .NET es una potente biblioteca que permite a los desarrolladores crear, editar y administrar documentos PDF mediante programación.
 
-#### P: ¿Es posible agregar más filas a la tabla anidada de forma dinámica?
+### ¿Puedo ajustar dinámicamente el número de columnas repetidas?
+ Sí, puede cambiar el número de columnas repetidas modificando la`RepeatingColumnsCount` propiedad.
 
-R: Sí, puedes agregar dinámicamente más filas a la tabla anidada de la misma manera que se muestra en el tutorial. Puedes usar bucles o cualquier otra lógica para agregar filas en función de tus datos.
+### ¿Cómo puedo aplicar una licencia a Aspose.PDF para .NET?
+ Puede aplicar una licencia desde un archivo o flujo siguiendo las instrucciones[documentación](https://reference.aspose.com/pdf/net/).
 
-#### P: ¿Puedo aplicar estilos y formatos a la tabla y sus celdas?
+### ¿Es posible agregar imágenes a las celdas de la tabla?
+Sí, Aspose.PDF para .NET admite agregar varios tipos de contenido, incluidas imágenes, a las celdas de la tabla.
 
-R: Sí, puede aplicar estilos y formatos a la tabla y sus celdas mediante Aspose.PDF para .NET. La biblioteca proporciona varias propiedades y métodos para personalizar la apariencia de la tabla y su contenido.
-
-#### P: ¿Aspose.PDF para .NET es compatible con .NET Core?
-
-R: Sí, Aspose.PDF para .NET es compatible con .NET Core. Puede usarlo tanto en aplicaciones .NET Framework como .NET Core.
-
-#### P: ¿Puedo utilizar este enfoque para agregar columnas repetidas en un documento PDF existente?
-
-R: Sí, puede utilizar este método para agregar columnas repetidas en un documento PDF existente. Simplemente cargue el documento existente mediante Aspose.PDF para .NET y siga los mismos pasos para crear y agregar la columna repetida.
+### ¿Puedo personalizar aún más el diseño de la mesa?
+¡Por supuesto! Aspose.PDF ofrece numerosas funciones para personalizar los estilos de tabla, incluidos bordes, relleno, alineación y más.

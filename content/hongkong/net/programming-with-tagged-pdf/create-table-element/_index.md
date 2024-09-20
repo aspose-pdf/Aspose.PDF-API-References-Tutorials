@@ -7,281 +7,180 @@ type: docs
 weight: 80
 url: /zh-hant/net/programming-with-tagged-pdf/create-table-element/
 ---
-在本逐步指南中，我們將引導您完成使用 Aspose.PDF for .NET 建立陣列元素的過程。 Aspose.PDF 是一個功能強大的程式庫，可讓您以程式設計方式操作 PDF 文件。建立陣列元素是產生動態 PDF 時的常見要求，Aspose.PDF 提供了一個簡單有效的方法來完成此任務。
+## 介紹
 
-讓我們深入研究程式碼並了解如何使用 Aspose.PDF for .NET 建立陣列元素。
+您是否想過如何使用 .NET 輕鬆建立和自訂 PDF 中的表格元素？那麼，Aspose.PDF for .NET 是您的首選解決方案！無論您是自動產生報告還是為各種文件動態建立表格，Aspose.PDF 都提供了豐富的 API 來處理表格元素。本指南將引導您逐步了解如何建立表格、設定表格樣式，甚至確保其符合 PDF/UA 合規性標準。聽起來很令人興奮，對吧？讓我們深入探討吧！
 
 ## 先決條件
 
-在開始之前，請確保您具備以下條件：
+在我們開始之前，您需要做好一些準備：
+1.  Aspose.PDF for .NET：從以下位置下載最新版本[Aspose.PDF for .NET 下載](https://releases.aspose.com/pdf/net/).
+2. 開發環境：任何支援.NET 的IDE（例如Visual Studio）。
+3. C# 基礎知識：建議熟悉 C# 程式設計。
 
-1. 安裝了適用於.NET 的 Aspose.PDF 庫。
-2. C# 程式語言的基礎知識。
+最後，不要忘記您的 Aspose.PDF 許可證。如果您沒有，您可以使用[免費試用](https://releases.aspose.com/)或請求[臨時執照](https://purchase.aspose.com/temporary-license/)測試一切。
 
-## 第一步：建構環境
+## 導入包
 
-首先，開啟 C# 開發環境並建立一個新專案。請確定您已在專案中新增對 .NET 的 Aspose.PDF 庫的參考。
-
-```csharp
-//文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-```
-
-## 第 2 步：建立文檔
-
-第一步是使用以下命令建立新的 PDF 文檔`Document`班級。
+首先，讓我們導入必要的套件。這將使我們能夠使用所有相關類別在 PDF 文件中建立表格。
 
 ```csharp
-//建立文檔
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example Array");
-taggedContent.SetLanguage("fr-FR");
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-在這裡我們也設定標記內容的標題和語言。
+在本節中，我們將把建立表格的過程分解為多個步驟。每個步驟都專注於表格創建和定製過程的不同部分。
 
-## 步驟 3：建立陣列元素
+## 第 1 步：建立新的 PDF 文檔
 
-接下來，我們需要建立數組元素並將其新增到文件中。我們首先取得根結構元素，然後使用以下命令建立新的表元素`CreateTableElement`方法。
+我們需要做的第一件事是建立一個新的 PDF 文件。這將作為我們桌子的容器。
 
-```csharp
-//取得根結構元素
-StructureElement rootElement = taggedContent.RootElement;
-TableElement tableElement = taggedContent.CreateTableElement();
-rootElement.AppendChild(tableElement);
-tableElement.Border = new BorderInfo(BorderSide.All, 1.2F, Color.DarkBlue);
-TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
-TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
-TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-int rowCount = 50;
-int colCount = 4;
-int rowIndex;
-int colIndex;
-TableTRElement headTrElement = tableTHeadElement.CreateTR();
-headTrElement.AlternativeText = "Header Row";
-headTrElement.BackgroundColor = Color.LightGray;
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-TableTHElement theElement = headTrElement.CreateTH();
-thElement.SetText(String.Format("Header {0}", colIndex));
-theElement.BackgroundColor = Color.GreenYellow;
-theElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
-theElement. IsNoBorder = true;
-theElement.Margin = new MarginInfo(16.0, 2
-
-.0, 8.0, 2.0);
-theElement.Alignment = HorizontalAlignment.Right;
-}
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
-{
-TableTRElement trElement = tableTBodyElement.CreateTR();
-trElement.AlternativeText = String.Format("Row {0}", rowIndex);
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-int colSpan = 1;
-int rowSpan = 1;
-if (colIndex == 1 && rowIndex == 1)
-{
-colSpan = 2;
-rowSpan = 2;
-}
-else if (colIndex == 2 && (rowIndex == 1 || rowIndex == 2))
-{
-keep on going;
-}
-else if (rowIndex == 2 && (colIndex == 1 || colIndex == 2))
-{
-keep on going;
-}
-TableTDElement tdelement = trElement.CreateTD();
-tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-tdElement.BackgroundColor = Color.Yellow;
-tdElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
-tdElement.IsNoBorder = false;
-tdElement.Margin = new MarginInfo(8.0, 2.0, 8.0, 2.0);
-tdElement.Alignment = HorizontalAlignment.Center;
-TextState cellTextState = new TextState();
-cellTextState.ForegroundColor = Color.DarkBlue;
-cellTextState.FontSize = 7.5F;
-cellTextState.FontStyle = FontStyles.Bold;
-cellTextState.Font = FontRepository.FindFont("Arial");
-tdElement. DefaultCellTextState = cellTextState;
-tdElement.IsWordWrapped = true;
-tdElement.VerticalAlignment = VerticalAlignment.Center;
-tdElement.ColSpan = colSpan;
-tdElement. RowSpan = rowSpan;
-}
-}
-TableTRElement footTrElement = tableTFootElement.CreateTR();
-footTrElement.AlternativeText = "Footline";
-footTrElement.BackgroundColor = Color.LightSeaGreen;
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-TableTDElement tdElement = footTrElement.CreateTD();
-tdElement.SetText(String.Format("Foot {0}", colIndex));
-tdElement.Alignment = HorizontalAlignment.Center;
-tdElement.StructureTextState.FontSize = 7F;
-tdElement.StructureTextState.FontStyle = FontStyles.Bold;
-}
-StructureAttributes tableAttributes = tableElement.Attributes.GetAttributes(AttributeOwnerStandard.Table);
-StructureAttribute summaryAttribute = new StructureAttribute(AttributeKey.Summary);
-summaryAttribute.SetStringValue("The summary text for the table");
-tableAttributes.SetAttribute(summaryAttribute);
-
-//儲存標記的 PDF 文檔
-document.Save(dataDir + "CreateTableElement.pdf");
-
-//PDF/UA 合規性檢查
-document = new Document(dataDir + "CreateTableElement.pdf");
-bool isPdfUaCompliance = document.Validate(dataDir + "table.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
-```
-
-### 使用 Aspose.PDF for .NET 建立表格元素的範例原始碼 
 ```csharp
 //文檔目錄的路徑。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-//建立文檔
+//建立新的 PDF 文檔
 Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example table");
-taggedContent.SetLanguage("en-US");
+```
 
+在這裡，我們正在初始化一個新實例`Document`類，這將是我們的空白 PDF 文件。不要忘記定義您的檔案路徑！
+
+## 第 2 步：設定標記內容
+
+接下來，我們需要啟用標記內容，以確保表格的可存取性。需要加標籤的 PDF 才能符合 PDF/UA（通用輔助功能）。
+
+```csharp
+//啟用標記內容
+ITaggedContent taggedContent = document.TaggedContent;
+taggedContent.SetTitle("Example Table");
+taggedContent.SetLanguage("en-US");
+```
+
+此步驟設定文件標題和語言，確保表格符合輔助功能標準。擁有可存取的文件對於某些行業的使用者體驗和法律要求至關重要。
+
+## 第 3 步：建立表格元素
+
+現在到了有趣的部分——創建表格本身！
+
+```csharp
 //取得根結構元素
 StructureElement rootElement = taggedContent.RootElement;
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
+```
+
+在這裡，我們使用的是`RootElement`標記的內容附加到我們的表格中。這本質上是將表作為子節點添加到文件的結構中。
+
+## 第 4 步：自訂表格邊框和標題
+
+您不希望您的桌子看起來平淡無奇，對嗎？讓我們添加一些樣式！
+
+```csharp
 tableElement.Border = new BorderInfo(BorderSide.All, 1.2F, Color.DarkBlue);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-int rowCount = 50;
-int colCount = 4;
-int rowIndex;
-int colIndex;
+```
+
+我們正在定義邊框並在表格中新增頁首、正文和頁尾。注意使用`BorderInfo`將表格邊框設定為深藍色。
+
+## 第 5 步：將行和單元格新增至表中
+
+現在，讓我們用行和儲存格填滿表格。過程的這一部分是我們定義表格佈局的地方。
+
+### 步驟 5.1：建立標題行
+
+```csharp
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Head Row";
 headTrElement.BackgroundColor = Color.LightGray;
-for (colIndex = 0; colIndex < colCount; colIndex++)
+
+for (int colIndex = 0; colIndex < 4; colIndex++)
 {
-	TableTHElement thElement = headTrElement.CreateTH();
-	thElement.SetText(String.Format("Head {0}", colIndex));
-	thElement.BackgroundColor = Color.GreenYellow;
-	thElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
-	thElement.IsNoBorder = true;
-	thElement.Margin = new MarginInfo(16.0, 2.0, 8.0, 2.0);
-	thElement.Alignment = HorizontalAlignment.Right;
+    TableTHElement thElement = headTrElement.CreateTH();
+    thElement.SetText($"Head {colIndex}");
+    thElement.BackgroundColor = Color.GreenYellow;
+    thElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
+    thElement.Alignment = HorizontalAlignment.Right;
 }
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
+```
+
+我們正在建立一個包含 4 列的標題行，每個標題單元格的背景顏色為`GreenYellow`。我們還為標題設定了邊框和對齊方式。
+
+### 步驟5.2：新增正文行
+
+```csharp
+for (int rowIndex = 0; rowIndex < 50; rowIndex++)
 {
-	TableTRElement trElement = tableTBodyElement.CreateTR();
-	trElement.AlternativeText = String.Format("Row {0}", rowIndex);
-	for (colIndex = 0; colIndex < colCount; colIndex++)
-	{
-		int colSpan = 1;
-		int rowSpan = 1;
-		if (colIndex == 1 && rowIndex == 1)
-		{
-			colSpan = 2;
-			rowSpan = 2;
-		}
-		else if (colIndex == 2 && (rowIndex == 1 || rowIndex == 2))
-		{
-			continue;
-		}
-		else if (rowIndex == 2 && (colIndex == 1 || colIndex == 2))
-		{
-			continue;
-		}
-		TableTDElement tdElement = trElement.CreateTD();
-		tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-		tdElement.BackgroundColor = Color.Yellow;
-		tdElement.Border = new BorderInfo(BorderSide.All, 4.0F, Color.Gray);
-		tdElement.IsNoBorder = false;
-		tdElement.Margin = new MarginInfo(8.0, 2.0, 8.0, 2.0);
-		tdElement.Alignment = HorizontalAlignment.Center;
-		TextState cellTextState = new TextState();
-		cellTextState.ForegroundColor = Color.DarkBlue;
-		cellTextState.FontSize = 7.5F;
-		cellTextState.FontStyle = FontStyles.Bold;
-		cellTextState.Font = FontRepository.FindFont("Arial");
-		tdElement.DefaultCellTextState = cellTextState;
-		tdElement.IsWordWrapped = true;
-		tdElement.VerticalAlignment = VerticalAlignment.Center;
-		tdElement.ColSpan = colSpan;
-		tdElement.RowSpan = rowSpan;
-	}
+    TableTRElement trElement = tableTBodyElement.CreateTR();
+    trElement.AlternativeText = $"Row {rowIndex}";
+
+    for (int colIndex = 0; colIndex < 4; colIndex++)
+    {
+        TableTDElement tdElement = trElement.CreateTD();
+        tdElement.SetText($"Cell [{rowIndex}, {colIndex}]");
+        tdElement.BackgroundColor = Color.Yellow;
+        tdElement.Alignment = HorizontalAlignment.Center;
+    }
 }
+```
+
+在這裡，我們動態建立 50 行和 4 列，用文字填滿它們並設定儲存格樣式。背景顏色設定為黃色，文字置中。
+
+### 步驟 5.3：新增頁尾行
+
+```csharp
 TableTRElement footTrElement = tableTFootElement.CreateTR();
 footTrElement.AlternativeText = "Foot Row";
 footTrElement.BackgroundColor = Color.LightSeaGreen;
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-	TableTDElement tdElement = footTrElement.CreateTD();
-	tdElement.SetText(String.Format("Foot {0}", colIndex));
-	tdElement.Alignment = HorizontalAlignment.Center;
-	tdElement.StructureTextState.FontSize = 7F;
-	tdElement.StructureTextState.FontStyle = FontStyles.Bold;
-}
-StructureAttributes tableAttributes = tableElement.Attributes.GetAttributes(AttributeOwnerStandard.Table);
-StructureAttribute summaryAttribute = new StructureAttribute(AttributeKey.Summary);
-summaryAttribute.SetStringValue("The summary text for table");
-tableAttributes.SetAttribute(summaryAttribute);
 
-//儲存標記的 PDF 文檔
+for (int colIndex = 0; colIndex < 4; colIndex++)
+{
+    TableTDElement tdElement = footTrElement.CreateTD();
+    tdElement.SetText($"Foot {colIndex}");
+    tdElement.Alignment = HorizontalAlignment.Center;
+}
+```
+
+為了完成表格，我們添加一個帶有居中文字的頁腳和一個`LightSeaGreen`背景。
+
+## 第 6 步：驗證 PDF/UA 合規性
+
+建立表格後，確保 PDF 符合 PDF/UA 要求至關重要。
+
+```csharp
 document.Save(dataDir + "CreateTableElement.pdf");
 
-//檢查 PDF/UA 合規性
+//驗證 PDF/UA 合規性
 document = new Document(dataDir + "CreateTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "table.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
+Console.WriteLine($"PDF/UA compliance: {isPdfUaCompliance}");
 ```
+
+此程式碼片段保存 PDF 檔案並檢查它是否符合 PDF/UA 合規性標準。如果文件符合要求，殘障使用者就可以存取它。
 
 ## 結論
 
-您已經學習如何使用 Aspose.PDF for .NET 建立陣列元素。現在您可以使用此方法產生具有動態表格的 PDF 文件。請隨意探索 Aspose.PDF 的更多功能，以發現其全部潛力。
+恭喜！您已使用 Aspose.PDF for .NET 在 PDF 中成功建立了完全自訂的表格。從設計表格樣式到確保 PDF/UA 合規性，您現在擁有在 PDF 文件中產生動態表格的堅實基礎。不要忘記探索 Aspose.PDF 的廣泛功能以進一步增強您的文件！
 
-### 常見問題解答
+## 常見問題解答
 
-#### Q：什麼是 PDF 文件中的陣列元素？
+### 我可以自訂表格的字體和文字樣式嗎？
+是的，Aspose.PDF 允許您使用以下命令完全自訂字體、文字樣式和對齊方式：`TextState`班級。
 
-答：PDF 文件中的陣列元素表示結構化資料集合，通常用於建立表格或網格。在產生需要結構化資料呈現（例如表格資訊或網格）的動態 PDF 時，您可能需要使用 Aspose.PDF for .NET 建立陣列元素。
+### 如何動態新增更多列或行？
+您可以透過修改以下內容來調整列數或行數`rowIndex`和`colIndex`在循環中。
 
-#### Q：Aspose.PDF for .NET 如何簡化建立陣列元素的過程？
+### 是否可以合併表格中的儲存格？
+是的，您可以使用`ColSpan`和`RowSpan`跨列或行合併儲存格的屬性。
 
-答：Aspose.PDF for .NET 提供了一套全面的類別和方法，可讓您以程式設計方式建立、自訂和管理 PDF 文件中的陣列元素（表）。這消除了手動 PDF 操作的需要，並簡化了結構化資料表示的建立。
+### 什麼是 PDF/UA 合規性？
+PDF/UA 合規性確保殘障使用者可以存取該文檔，並遵守國際無障礙標準。
 
-#### Q：使用 Aspose.PDF for .NET 建立陣列元素涉及哪些關鍵步驟？
-
-答：關鍵步驟包括設定環境、建立文件、取得根結構元素、建立表格元素、定義表格內的行和儲存格以及指定元素的格式和屬性。提供的程式碼範例演示了這些步驟。
-
-####  Q： 有何作用`taggedContent` object play in creating an array element?
-
-答： 的`taggedContent`對象，從文件中取得`TaggedContent`屬性，可讓您定義 PDF 文件中標記內容的結構。這包括以分層方式建立和組織數組元素及其子元素。
-
-#### Q：程式碼如何確保創建的陣列元素的可訪問性和語義？
-
- A：代碼設定屬性，例如`AlternativeText`, `BackgroundColor`, `Border`, `Margin`, `Alignment`， 和`ColSpan`增強數組元素的可訪問性和語義。這些屬性有助於形成結構良好、資訊豐富且具有視覺吸引力的資料表示。
-
-#### Q：在建立陣列元素時，PDF/UA 合規性有何意義？
-
-答：PDF/UA（一般輔助功能）合規性可確保產生的 PDF 文件可供殘障使用者存取，並符合某些輔助功能標準。此程式碼範例使用以下命令檢查 PDF/UA 合規性`Validate`方法，幫助您建立包容且易於存取的文件。
-
-#### Q：我可以進一步自訂陣列元素的格式和外觀嗎？
-
-答：是的，您可以透過調整背景顏色、邊框樣式、字體大小和對齊方式等屬性來自訂陣列元素的格式和外觀。 Aspose.PDF for .NET 提供了廣泛的屬性來根據您的要求自訂視覺呈現。
-
-#### Q：如何擴展這些知識來創建更複雜的表格結構或將陣列元素合併到更大的 PDF 文件中？
-
-答：您可以透過探索Aspose.PDF for .NET 的其他功能來擴展這些知識，例如合併多個陣列元素、建立巢狀表格、新增頁首和頁尾以及將陣列元素整合到更大的PDF 佈局中。該庫的文檔和範例為這些高級場景提供了指導。
-
-#### Q：是否可以從外部來源（例如資料庫或電子表格）匯入資料來填入陣列元素？
-
-答：是的，您可以從外部來源匯入資料來填入陣列元素。您可以使用 C# 中的數據檢索和轉換技術從資料庫、電子表格或其他來源獲取數據，然後相應地填充數組元素。
-
-#### Q：如何利用從本教程中獲得的知識來提高以程式設計方式建立的 PDF 文件的品質和可用性？
-
-答：從本教程中獲得的知識使您能夠在 PDF 文件中創建結構化且具有視覺吸引力的數組元素（表格）。透過結合這些技術，您可以提高動態產生的 PDF 的可讀性、可存取性和使用者體驗，使其資訊更豐富且使用者友好。
+### 如何在 Aspose.PDF 中測試 PDF/UA 合規性？
+您可以使用`Validate`檢查文件是否符合 PDF/UA 標準的方法。

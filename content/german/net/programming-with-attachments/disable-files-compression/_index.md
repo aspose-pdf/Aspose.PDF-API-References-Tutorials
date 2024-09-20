@@ -45,7 +45,7 @@ using Aspose.Pdf;
 
 Nachdem wir nun alles eingerichtet haben, unterteilen wir den Vorgang zum Deaktivieren der Dateikomprimierung in einer PDF-Datei in überschaubare Schritte.
 
-## Schritt 1: Dokumentverzeichnis definieren
+## Schritt 1: Definieren Sie das Dokumentverzeichnis
 
 Zuerst müssen Sie den Pfad zum Verzeichnis angeben, in dem sich Ihre PDF-Datei befindet. Dies ist wichtig, da es dem Programm mitteilt, wo sich die zu bearbeitende Datei befindet.
 
@@ -104,7 +104,7 @@ Console.WriteLine("\nFile compression disabled successfully.\nFile saved at " + 
 
 ## Abschluss
 
-Mit den richtigen Tools kann das Deaktivieren der Dateikomprimierung in PDF-Dokumenten ein unkomplizierter Vorgang sein. Indem Sie die in diesem Tutorial beschriebenen Schritte befolgen, können Sie Ihre PDF-Dateien problemlos verwalten und sicherstellen, dass eingebettete Anhänge ihr ursprüngliches Format behalten. Aspose.PDF für .NET bietet eine leistungsstarke und flexible Möglichkeit zum Bearbeiten von PDF-Dokumenten und ist damit eine ausgezeichnete Wahl für Entwickler und Unternehmen.
+Mit den richtigen Tools kann das Deaktivieren der Dateikomprimierung in PDF-Dokumenten ein unkomplizierter Vorgang sein. Indem Sie die in diesem Tutorial beschriebenen Schritte befolgen, können Sie Ihre PDF-Dateien problemlos verwalten und sicherstellen, dass eingebettete Anhänge ihr ursprüngliches Format beibehalten. Aspose.PDF für .NET bietet eine leistungsstarke und flexible Möglichkeit zum Bearbeiten von PDF-Dokumenten und ist damit eine hervorragende Wahl für Entwickler und Unternehmen.
 
 ## FAQs
 

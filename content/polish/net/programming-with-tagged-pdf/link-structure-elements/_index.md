@@ -2,271 +2,201 @@
 title: Elementy struktury linków
 linktitle: Elementy struktury linków
 second_title: Aspose.PDF dla .NET API Reference
-description: Przewodnik krok po kroku dotyczący korzystania z elementów struktury linków w Aspose.PDF dla .NET. Twórz hiperłącza w dokumentach PDF.
+description: Dowiedz się, jak tworzyć elementy struktury linków w pliku PDF za pomocą Aspose.PDF dla .NET. Przewodnik krok po kroku dotyczący dodawania dostępnych linków, obrazów i walidacji zgodności.
 type: docs
 weight: 120
 url: /pl/net/programming-with-tagged-pdf/link-structure-elements/
 ---
-W tym przewodniku krok po kroku pokażemy Ci, jak używać elementów struktury linków z Aspose.PDF dla .NET. Aspose.PDF to potężna biblioteka, która pozwala programowo tworzyć i manipulować dokumentami PDF. Elementy struktury linków pozwalają Ci dodawać hiperłącza do dokumentu PDF, umożliwiając użytkownikom klikanie łączy i nawigowanie do zasobów online.
+## Wstęp
 
-Przyjrzyjmy się bliżej kodowi i dowiedzmy się, jak używać elementów struktury linków w Aspose.PDF dla platformy .NET.
+Tworzenie i zarządzanie elementami struktury linków w pliku PDF może mieć kluczowe znaczenie dla dokumentów wymagających dostępności i płynnej nawigacji. W tym samouczku przeprowadzimy Cię przez proces wykonywania tego przy użyciu Aspose.PDF dla .NET. Jeśli jesteś nowy w Aspose.PDF lub ogólnie w manipulowaniu plikami PDF, nie martw się. Wyjaśnię każdy krok szczegółowo, abyś mógł łatwo śledzić!
 
-## Wymagania wstępne
+## Wymagania wstępne  
 
-Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
+Zanim zagłębimy się w kodowanie, najpierw wyjaśnijmy kilka spraw. Oto podstawowe wymagania, które zapewnią płynne środowisko programistyczne.
 
-1. Zainstalowano bibliotekę Aspose.PDF dla .NET.
-2. Podstawowa znajomość języka programowania C#.
+1.  Aspose.PDF dla .NET: Możesz pobrać najnowszą wersję[Tutaj](https://releases.aspose.com/pdf/net/).
+2. Środowisko programistyczne .NET: Niezależnie od tego, czy jest to Visual Studio, czy dowolne środowisko IDE zgodne z platformą .NET, należy je zainstalować i mieć je gotowe.
+3.  Licencja Aspose: Możesz korzystać z bezpłatnej wersji próbnej Aspose.PDF[Tutaj](https://releases.aspose.com/) lub nabyć[licencja tymczasowa](https://purchase.aspose.com/temporary-license/).
+4. Podstawowa wiedza o języku C#: Będziemy pracować z kodem w języku C#, dlatego zrozumienie podstaw znacznie ułatwi sprawę.
 
-## Krok 1: Konfigurowanie środowiska
+## Importuj pakiety
 
-Aby rozpocząć, otwórz środowisko programistyczne C# i utwórz nowy projekt. Upewnij się, że dodałeś odwołanie do biblioteki Aspose.PDF dla .NET w swoim projekcie.
+Musisz zaimportować kilka pakietów przed napisaniem kodu dla elementów struktury linków. Zacznij od odwołania się do niezbędnych bibliotek Aspose.PDF w swoim projekcie:
 
 ```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-string outFile = dataDir + "LinkStructureElements_Output.pdf";
-string logFile = dataDir + "46035_log.xml";
-string imgFile = dataDir + "google-icon-512.png";
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Krok 2: Tworzenie dokumentu
+Dzięki importom możemy pracować z dokumentami PDF, dodawać tagi i zarządzać elementami struktury.
 
- Pierwszym krokiem jest utworzenie nowego dokumentu PDF przy użyciu`Document` klasa.
+Teraz utworzymy dokument PDF z różnymi typami struktur linków. Każdy krok zostanie rozbity na części, aby pomóc Ci w pełnym zrozumieniu procesu.
 
-```csharp
-// Utwórz dokument PDF
-Document document = new Document();
-```
+## Krok 1: Zainicjuj dokument  
 
-## Krok 3: Praca z oznaczoną treścią
-
-Następnie otrzymujemy oznaczoną zawartość dokumentu, z którą możemy pracować.
+Zacznijmy od utworzenia nowego dokumentu PDF i skonfigurowania oznaczonych treści pod kątem ułatwień dostępu.
 
 ```csharp
-// Pobierz oznaczoną zawartość dokumentu
-ITaggedContent taggedContent = document.TaggedContent;
-```
-
-## Krok 4: Ustaw tytuł i język dokumentu
-
-Teraz możemy ustawić tytuł i język dokumentu.
-
-```csharp
-// Zdefiniuj tytuł i język dokumentu
-taggedContent.SetTitle("Example Link Items");
-taggedContent.SetLanguage("fr-FR");
-```
-
-## Krok 5: Dodaj elementy struktury linków
-
-Teraz dodajmy elementy struktury linków do naszego dokumentu. Utworzymy różne typy linków, w tym proste linki tekstowe, linki do obrazów i linki wielowierszowe.
-```csharp
-// Pobierz element struktury głównej (element struktury dokumentu)
-StructureElement rootElement = taggedContent.RootElement;
-
-// Dodaj akapit z hiperłączem
-ParagraphElement p1 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p1);
-LinkElement link1 = taggedContent.CreateLinkElement();
-p1.AppendChild(link1);
-link1.Hyperlink = new WebHyperlink("http://");
-link1.SetText("Google");
-link1.AlternateDescriptions = "Link to Google";
-
-// Dodaj akapit z hiperłączem zawierającym bogaty tekst
-ParagraphElement p2 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p2);
-LinkElement link2 = taggedContent.CreateLinkElement();
-p2.AppendChild(link2);
-link2.Hyperlink = new WebHyperlink("http://");
-SpanElement span2 = taggedContent.CreateSpanElement();
-span2.SetText("Google");
-link2.AppendChild(span2);
-link2.AlternateDescriptions = "Link to Google";
-
-// Dodaj akapit z hiperłączem zawierającym częściowo sformatowany tekst
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-LinkElement link3 = taggedContent.CreateLinkElement();
-p3.AppendChild(link3);
-link3.Hyperlink = new WebHyperlink("http://");
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("G");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText("oogle");
-link3.AppendChild(span31);
-link3.SetText("-");
-link3.AppendChild(span32);
-link3.AlternateDescriptions = "Link to Google";
-
-// Dodaj akapit z hiperłączem wielowierszowym
-ParagraphElement p4 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p4);
-LinkElement link4 = taggedContent.CreateLinkElement();
-p4.AppendChild(link4);
-link4.Hyperlink = new WebHyperlink("http://");
-link4.SetText("The multiline link: Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google");
-link4.AlternateDescriptions = "Link to Google (multiline)";
-
-// Dodaj akapit z hiperłączem zawierającym obraz
-ParagraphElement p5 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p5);
-LinkElement link5 = taggedContent.CreateLinkElement();
-p5.AppendChild(link5);
-link5.Hyperlink = new WebHyperlink("http://");
-FigureElement figure5 = taggedContent.CreateFigureElement();
-figure5.SetImage(imgFile, 1200);
-figure5.AlternativeText = "Google icon";
-StructureAttributes linkLayoutAttributes = link5.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-StructureAttribute placementAttribute = new StructureAttribute(AttributeKey.Placement);
-placementAttribute.SetNameValue(AttributeName.Placement_Block);
-linkLayoutAttributes.SetAttribute(placementAttribute);
-link5.AppendChild(figure5);
-link5.AlternateDescriptions = "Link to Google";
-```
-
-## Krok 6: Zapisz oznaczony dokument PDF
-
-Na koniec zapisujemy oznaczony dokument PDF.
-
-```csharp
-// Zapisz oznaczony dokument PDF
-document. Save(outFile);
-```
-
-## Krok 7: Sprawdź zgodność PDF/UA
-
- Możemy również sprawdzić zgodność dokumentu z PDF/UA, korzystając z`Validate` metoda`Document` klasa.
-
-```csharp
-// Sprawdź zgodność PDF/UA
-document = new Document(outFile);
-bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
-```
-
-
-### Przykładowy kod źródłowy dla elementów struktury linków przy użyciu Aspose.PDF dla .NET 
-```csharp
-
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "LinkStructureElements_Output.pdf";
 string logFile = dataDir + "46035_log.xml";
 string imgFile = dataDir + "google-icon-512.png";
 
-//Dokument tworzenia i uzyskiwania oznaczonych treści PDF
+// Utwórz nowy dokument PDF
 Document document = new Document(); 
-ITaggedContent taggedContent = document.TaggedContent;
 
-// Ustawianie tytułu i języka natury dla dokumentu
+// Pobierz interfejs TaggedContent
+ITaggedContent taggedContent = document.TaggedContent;
+```
+  
+ Tutaj inicjujemy`Document` obiekt, który reprezentuje nasz plik PDF. Pobieramy również`TaggedContent` interfejs umożliwiający dodawanie elementów struktury, takich jak akapity, linki i obrazy.
+
+## Krok 2: Ustaw tytuł i język  
+
+Każdy plik PDF powinien mieć tytuł i ustawienia języka, zwłaszcza jeśli zależy Ci na zgodności ze standardami PDF/UA.
+
+```csharp
+// Ustaw tytuł i język dokumentu
 taggedContent.SetTitle("Link Elements Example");
 taggedContent.SetLanguage("en-US");
+```
+  
+Ten krok zapewnia, że Twój plik PDF ma znaczący tytuł i ustawia język na angielski (`en-US`). Jest to krytyczne dla dostępności i zapewnia, że czytniki ekranu lub inne technologie wspomagające będą mogły poprawnie interpretować Twój dokument.
 
-// Pobieranie elementu struktury głównej (element struktury dokumentu)
+## Krok 3: Tworzenie i dodawanie akapitów  
+
+W tym kroku dodamy akapity zawierające elementy linków.
+
+```csharp
+// Utwórz element główny
 StructureElement rootElement = taggedContent.RootElement;
+
+// Utwórz akapit i dodaj go do elementu głównego
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p1);
+```
+  
+Tworzymy element struktury głównej, który jest zasadniczo kontenerem najwyższego poziomu dla wszystkich innych elementów. Następnie tworzymy akapit (`p1`) i dodaj go do elementu głównego.
+
+## Krok 4: Dodaj prosty link  
+
+Teraz dodajmy podstawowy hiperłącze kierujące do Google.
+
+```csharp
+// Utwórz element linku i dodaj go do akapitu
 LinkElement link1 = taggedContent.CreateLinkElement();
 p1.AppendChild(link1);
+
+// Ustaw hiperłącze i tekst dla łącza
 link1.Hyperlink = new WebHyperlink("http://");
 link1.SetText("Google");
 link1.AlternateDescriptions = "Link to Google";
+```
+  
+tym kroku utworzyliśmy element linku, ustawiliśmy jego hiperłącze na „http://google.com” i podaliśmy tekst („Google”) dla linku. Dodaliśmy również alternatywny opis, aby zapewnić dostępność.
+
+## Krok 5: Dodawanie łącza z rozpiętościami  
+
+Możemy również tworzyć linki o różnej długości tekstu.
+
+```csharp
+// Utwórz kolejny akapit
 ParagraphElement p2 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p2);
+
+// Utwórz łącze z elementem span
 LinkElement link2 = taggedContent.CreateLinkElement();
 p2.AppendChild(link2);
 link2.Hyperlink = new WebHyperlink("http://");
+
 SpanElement span2 = taggedContent.CreateSpanElement();
 span2.SetText("Google");
 link2.AppendChild(span2);
+
 link2.AlternateDescriptions = "Link to Google";
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-LinkElement link3 = taggedContent.CreateLinkElement();
-p3.AppendChild(link3);
-link3.Hyperlink = new WebHyperlink("http://");
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("G");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText("oogle");
-link3.AppendChild(span31);
-link3.SetText("-");
-link3.AppendChild(span32);
-link3.AlternateDescriptions = "Link to Google";
+```
+  
+Tutaj użyliśmy elementu span, aby umieścić część tekstu wewnątrz linku, co pozwoliło nam dostosować sposób wyświetlania poszczególnych fragmentów linku.
+
+## Krok 6: Łącze wieloliniowe  
+
+Co jeśli tekst Twojego linku jest za długi? Nie martw się, możesz podzielić go na wiele wierszy.
+
+```csharp
 ParagraphElement p4 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p4);
+
 LinkElement link4 = taggedContent.CreateLinkElement();
 p4.AppendChild(link4);
 link4.Hyperlink = new WebHyperlink("http://");
-link4.SetText("The multiline link: Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google");
+link4.SetText("The multiline link: Google Google Google Google Google...");
 link4.AlternateDescriptions = "Link to Google (multiline)";
+```
+  
+W tym przypadku utworzyliśmy łącze wielowierszowe, po prostu ustawiając długą wartość tekstową, a tekst automatycznie zawinie się w wiele wierszy.
+
+## Krok 7: Dodaj obraz do linku  
+
+Można także dodawać obrazy wewnątrz linku.
+
+```csharp
+// Utwórz nowy akapit i element łącza
 ParagraphElement p5 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p5);
+
 LinkElement link5 = taggedContent.CreateLinkElement();
 p5.AppendChild(link5);
 link5.Hyperlink = new WebHyperlink("http://");
+
+// Dodaj obraz do linku
 FigureElement figure5 = taggedContent.CreateFigureElement();
 figure5.SetImage(imgFile, 1200);
 figure5.AlternativeText = "Google icon";
-StructureAttributes linkLayoutAttributes = link5.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-StructureAttribute placementAttribute = new StructureAttribute(AttributeKey.Placement);
-placementAttribute.SetNameValue(AttributeName.Placement_Block);
-linkLayoutAttributes.SetAttribute(placementAttribute);
 link5.AppendChild(figure5);
-link5.AlternateDescriptions = "Link to Google";
 
-// Zapisz oznaczony dokument PDF
+link5.AlternateDescriptions = "Link to Google";
+```
+  
+Ten krok pokazuje, jak możesz ulepszyć swoje linki za pomocą obrazu. W tym przypadku dodaliśmy ikonę Google wewnątrz linku. Zapewniliśmy również dostępność, ustawiając alternatywny tekst dla obrazu.
+
+## Krok 8: Sprawdź zgodność pliku PDF  
+
+Jeśli zależy Ci na zgodności dokumentu ze standardem PDF/UA (standardem dostępności), warto go zweryfikować.
+
+```csharp
+// Zapisz dokument PDF
 document.Save(outFile);
 
-// Sprawdzanie zgodności PDF/UA
-document = new Document(outFile);
+// Sprawdź zgodność dokumentu ze standardem PDF/UA
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
+Console.WriteLine($"PDF/UA compliance: {isPdfUaCompliance}");
 ```
-## Wniosek
+  
+Zapisaliśmy dokument i sprawdziliśmy jego zgodność ze standardem PDF/UA, co gwarantuje, że plik PDF spełnia wymagania dotyczące dostępności.
 
-Gratulacje! Nauczyłeś się, jak używać elementów struktury linków w Aspose.PDF dla .NET. Teraz możesz tworzyć hiperłącza w dokumentach PDF, umożliwiając użytkownikom nawigację do zasobów online. Eksperymentuj i odkrywaj więcej funkcji Aspose.PDF, aby tworzyć interaktywne i wzbogacone dokumenty PDF.
+## Wniosek  
 
-### Najczęściej zadawane pytania
+W tym samouczku omówiliśmy, jak tworzyć ustrukturyzowane dokumenty PDF przy użyciu Aspose.PDF dla .NET. Od dodawania podstawowych hiperłączy do bardziej złożonych struktur, takich jak spans, łącza wielowierszowe, a nawet obrazy, ten przewodnik zapewnia solidne podstawy do manipulowania elementami linków w plikach PDF. Dzięki dodatkowej korzyści zgodności z PDF/UA jesteś teraz wyposażony, aby tworzyć dostępne i łatwe do nawigacji pliki PDF.
 
-#### P: Czym są elementy struktury linków w dokumencie PDF i w jaki sposób zwiększają one interaktywność dokumentu?
+## Najczęściej zadawane pytania
 
-A: Elementy struktury linków w dokumencie PDF służą do tworzenia hiperłączy, które umożliwiają użytkownikom nawigację do zasobów online lub określonych lokalizacji w dokumencie. Elementy te zwiększają interaktywność, zapewniając klikalne łącza, które umożliwiają użytkownikom dostęp do powiązanych treści lub zewnętrznych witryn internetowych.
+### Czy mogę dodać bardziej złożone struktury, np. tabele, wewnątrz linków?  
+Nie, linki służą głównie do przechowywania tekstu i obrazów, ale w ich pobliżu można osadzać złożone elementy.
 
-#### P: W jaki sposób elementy struktury linków mogą być przydatne w dokumencie PDF?
+### Czy walidacja PDF/UA jest obowiązkowa?  
+Nie zawsze, ale jest to zdecydowanie zalecane, jeśli martwisz się o dostępność.
 
-A: Elementy struktury linków poprawiają wrażenia użytkownika, czyniąc dokument PDF interaktywnym. Zapewniają szybki dostęp do dodatkowych informacji, powiązanych treści, zewnętrznych stron internetowych lub określonych sekcji w dokumencie, usprawniając nawigację i ułatwiając wyszukiwanie informacji.
+### Co się stanie, jeśli ścieżka do pliku obrazu będzie nieprawidłowa?  
+Dokument nie wyświetli obrazu i może wystąpić błąd podczas renderowania.
 
-#### P: Czy w pliku Aspose.PDF dla platformy .NET mogę tworzyć różne typy hiperłączy, używając elementów struktury łączy?
+### Czy mogę stylizować tekst w linku?  
+Tak, można stosować style tekstu za pomocą elementów span.
 
-A: Tak, możesz tworzyć różne typy hiperłączy, używając elementów struktury linków. Aspose.PDF dla .NET umożliwia tworzenie hiperłączy z tekstem zwykłym, tekstem sformatowanym, obrazami i opisami wielowierszowymi, oferując wszechstronność w sposobie łączenia się z treścią zewnętrzną lub lokalizacjami w dokumencie.
-
-#### P: Jak skonfigurować i zainicjować elementy struktury łączy w dokumencie PDF za pomocą Aspose.PDF dla platformy .NET?
-
- A: Aby użyć elementów struktury linków, najpierw musisz utworzyć nowy dokument PDF, korzystając z`Document` klasa. Następnie uzyskaj oznaczoną zawartość za pomocą`TaggedContent`właściwość dokumentu. Stamtąd możesz tworzyć i dostosowywać elementy struktury linków i dodawać je do elementu struktury głównej.
-
-#### P: W jaki sposób mogę utworzyć prosty hiperłącze tekstowe, używając elementów struktury linków?
- A: Możesz utworzyć prosty hiperłącze tekstowe, tworząc`LinkElement` i ustawiając jego`Hyperlink` nieruchomość do`WebHyperlink` z adresem URL, do którego chcesz linkować. Możesz również ustawić tekst wyświetlany linku, używając`SetText` metoda.
-
-#### P: Czy można tworzyć hiperłącza z obrazami używając elementów struktury linków?
-
- A: Tak, możesz tworzyć hiperłącza z obrazami, używając elementów struktury linków. Utworzyłbyś`LinkElement` a następnie dodaj`FigureElement` z obrazem. Pozwala to na utworzenie hiperłącza opartego na obrazie.
-
-#### P: Jak mogę mieć pewność, że mój dokument PDF zawierający hiperłącza jest zgodny ze standardem dostępności PDF/UA?
-
- A: Aspose.PDF dla platformy .NET umożliwia sprawdzenie zgodności dokumentu PDF ze standardem PDF/UA przy użyciu`Validate` metoda`Document`Klasa. Zapewnia to, że hiperłącza dokumentu są dostępne dla użytkowników niepełnosprawnych.
-
-#### P: Jakie są alternatywne opisy elementów struktury linków i dlaczego są ważne?
-
-A: Alternatywne opisy (alt text) dla elementów struktury linków zapewniają tekstowe opisy hiperłączy. Te opisy są niezbędne dla dostępności, pozwalając użytkownikom z wadami wzroku zrozumieć cel linku i jego miejsce docelowe.
-
-#### P: Czy mogę dostosować wygląd i zachowanie hiperłączy utworzonych za pomocą elementów struktury linków?
-
-A: Podczas gdy elementy struktury linków skupiają się głównie na tworzeniu hiperłączy, możesz dostosować wygląd i zachowanie hiperłączy dalej, korzystając z innych funkcji oferowanych przez Aspose.PDF dla .NET. Obejmuje to określanie kolorów, stylów i akcji linków.
-
-#### P: W jaki sposób elementy struktury linków przyczyniają się do tego, że dokumenty PDF są bardziej interaktywne i przyjazne dla użytkownika?
-
-A: Elementy struktury linków przekształcają statyczne dokumenty PDF w interaktywne doświadczenia poprzez dodawanie klikalnych hiperłączy. Ta interaktywność poprawia zaangażowanie użytkownika, umożliwia płynną nawigację między powiązanymi treściami i zwiększa ogólną użyteczność dokumentu.
+### Czy można tworzyć wewnętrzne linki do dokumentów?  
+Oczywiście! Możesz linkować do konkretnych sekcji w tym samym dokumencie.

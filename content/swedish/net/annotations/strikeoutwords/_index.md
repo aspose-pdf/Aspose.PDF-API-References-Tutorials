@@ -161,7 +161,7 @@ Grattis! Du har lyckats stryka ut specifika ord i ett PDF-dokument med Aspose.PD
 
 ### Vad händer om jag bara vill stryka text på specifika sidor?
 
- Du kan ändra slingan som itererar genom sidorna så att den bara inkluderar de sidor du vill ändra. Till exempel,`for (int i = 1; i <= 3; i++)` skulle tillämpa strykningen endast på de första tre sidorna.
+ Du kan ändra slingan som itererar genom sidorna så att den bara inkluderar de sidor du vill ändra. Till exempel,`for (int i = 1; i <= 3; i++)` skulle tillämpa strykningen endast på de tre första sidorna.
 
 ### Hur kan jag justera tjockleken på strecklinjen?
 

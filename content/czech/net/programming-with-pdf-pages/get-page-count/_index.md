@@ -110,4 +110,4 @@ Absolutně. Aspose.PDF zpracovává všechny typy obsahu včetně textu, obrázk
 Ano, Aspose.PDF nabízí několik optimalizačních technik, jako je komprimace obrázků a písem, které mohou pomoci s výkonem velkých PDF.
 
 ### Potřebuji licenci k používání Aspose.PDF pro .NET?  
- Můžete to vyzkoušet s a[zkušební verze zdarma](https://releases.aspose.com/) , ale pro plnou funkčnost budete potřebovat licenci. Můžete také získat a[dočasná licence](https://purchase.aspose.com/temporary-license/) pro účely hodnocení.
+ Můžete to vyzkoušet pomocí a[zkušební verze zdarma](https://releases.aspose.com/) , ale pro plnou funkčnost budete potřebovat licenci. Můžete také získat a[dočasná licence](https://purchase.aspose.com/temporary-license/) pro účely hodnocení.

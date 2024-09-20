@@ -2,7 +2,7 @@
 title: 頁眉頁腳部分內嵌的影像和頁碼
 linktitle: 頁眉頁腳部分內嵌的影像和頁碼
 second_title: Aspose.PDF for .NET API 參考
-description: 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 在 PDF 的頁首部分新增內嵌影像和頁碼。
+description: 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 在 PDF 的頁首部分內嵌新增影像和頁碼。
 type: docs
 weight: 120
 url: /zh-hant/net/programming-with-stamps-and-watermarks/image-and-page-number-in-header-footer-section-inline/

@@ -2,189 +2,165 @@
 title: 搜尋文字並添加超鏈接
 linktitle: 搜尋文字並添加超鏈接
 second_title: Aspose.PDF for .NET API 參考
-description: 了解如何使用 Aspose.PDF for .NET 在 PDF 中搜尋文字、新增超連結到找到的文字以及儲存修改後的文件。
+description: 透過我們的逐步教學，了解如何使用 Aspose.PDF for .NET 在 PDF 中搜尋文字並新增超連結。
 type: docs
 weight: 450
 url: /zh-hant/net/programming-with-text/search-text-and-add-hyperlink/
 ---
-本教學課程介紹如何使用 Aspose.PDF for .NET 搜尋 PDF 文件中的特定文字、新增找到的文字的超連結以及儲存修改後的文件。提供的 C# 原始程式碼逐步演示了該過程。
+## 介紹
+
+您是否正在尋找一種不僅可以操作 PDF，還可以透過插入超連結來增強 PDF 的方法？嗯，您來對地方了！透過強大的 Aspose.PDF for .NET 程式庫，您可以在 PDF 文件中搜尋文字模式並無縫新增超連結。想像一下，有一個文件不僅可以傳達訊息，而且只需點擊連結即可將讀者連接到相關資源。聽起來很不錯，對吧？在本教程中，我們將逐步指導您如何使用正規表示式搜尋文字以及如何在 PDF 中新增超連結。無論您是經驗豐富的開發人員還是新手，您都會發現這個過程簡單且有益。
 
 ## 先決條件
 
-在繼續學習本教學之前，請確保您具備以下條件：
+在我們深入討論細節之前，讓我們確保您擁有遵循流程所需的一切。這是一個方便的清單：
 
-- C# 程式語言的基礎知識。
-- 安裝了 Aspose.PDF for .NET 函式庫。您可以從 Aspose 網站取得它或使用 NuGet 將其安裝到您的專案中。
+- .NET Framework：您的電腦上應安裝 .NET Framework（版本 4.0 或更高版本）。
+- Aspose.PDF for .NET 函式庫：不要忘記下載並在專案中新增對 Aspose.PDF 庫的參考。你可以找到它[這裡](https://releases.aspose.com/pdf/net/).
+- IDE：您需要像 Visual Studio 這樣的整合開發環境 (IDE) 來編寫和執行程式碼。
+- 範例 PDF 文件：取得一個範例 PDF 文件，您可以在其中測試程式碼。您可以建立一個簡單的 PDF 或使用現有文件之一。
 
-## 第 1 步：設定項目
+一旦您勾選了此清單中的所有內容，我們就可以開始了！
 
-首先在您首選的整合開發環境 (IDE) 中建立一個新的 C# 項目，並新增對 Aspose.PDF for .NET 程式庫的參考。
+## 導入包
 
-## 步驟2：導入必要的命名空間
+我們旅程的第一步是導入必要的套件。這是我們告訴專案我們將使用哪些工具的地方。您可以這樣做：
 
-在 C# 檔案的開頭新增以下 using 指令以匯入所需的命名空間：
+在您的 C# 檔案中，首先在頂部包含以下命名空間：
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
-using Aspose.Pdf.Content;
-using Aspose.Pdf.Facades;
 using Aspose.Pdf.Text;
+using Aspose.Pdf.Facades;
+using System;
 ```
 
-## 第三步：設定文檔目錄路徑
+透過匯入這些命名空間，您可以讓您的程式存取 Aspose.PDF 提供的所有酷炫功能。
 
-使用以下命令設定文檔目錄的路徑`dataDir`多變的：
+現在我們已經準備好了，是時候開始行動了。我們將通過一系列步驟完成此過程，因此請密切注意！
+
+### 第 1 步：設定您的文件目錄
+
+首先，您需要指定 PDF 檔案的儲存位置。修改`dataDir`變數指向文檔的目錄。操作方法如下：
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-代替`"YOUR DOCUMENT DIRECTORY"`與文檔目錄的實際路徑。
+確保更換`"YOUR DOCUMENT DIRECTORY"`與您的文件的實際路徑。
 
-## 第四步：建立一個TextFragmentAbsorber
+### 步驟2：建立一個TextFragmentAbsorber
 
-創建一個`TextFragmentAbsorber`物件尋找輸入搜尋短語的所有實例：
+接下來，我們需要一個工具來尋找我們想要連結的文字。輸入`TextFragmentAbsorber`。這個小傢伙將幫助我們搜尋 PDF 中的特定文字模式。
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("\\d{4}-\\d{4}");
 ```
 
-代替`"\\d{4}-\\d{4}"`與您想要的正規表示式模式。
+在這裡，我們正在尋找特定的模式：四位數字，破折號，後面跟著另外四位數字（例如電話號碼或年份）。
 
-## 第 5 步：啟用正規表示式搜尋
+### 第 3 步：啟用正規表示式搜尋
 
-透過設定啟用正規表示式搜尋`TextSearchOptions`吸收體的特性：
+我們已經在使用正規表示式來尋找文字模式，但我們需要確保我們的`absorber`知道它已啟用。這對於正確搜索至關重要。
 
 ```csharp
 absorber.TextSearchOptions = new TextSearchOptions(true);
 ```
 
-## 步驟6：開啟並綁定PDF文檔
+### 步驟 4：初始化 PdfContentEditor
 
-創建一個`PdfContentEditor`物件並將其綁定到來源 PDF 檔案：
+現在我們已經準備好了吸收器，我們需要一個`PdfContentEditor`來處理我們的 PDF 檔案。這個類別讓我們綁定到 PDF 並對其進行操作。
 
 ```csharp
 PdfContentEditor editor = new PdfContentEditor();
+```
+
+### 第 5 步：綁定來源 PDF 文件
+
+內容編輯器準備好後，就可以將其綁定到我們想要處理的實際 PDF 檔案了。
+
+```csharp
 editor.BindPdf(dataDir + "SearchRegularExpressionPage.pdf");
 ```
 
-代替`"SearchRegularExpressionPage.pdf"`與您的 PDF 檔案的實際名稱。
+確保更換`"SearchRegularExpressionPage.pdf"`與您的 PDF 檔案的名稱。
 
-## 第 7 步：接受頁面的吸收器
+### 第 6 步：接受頁面的吸收器
 
-接受文件所需頁面的吸收器：
+我們需要讓編輯知道我們想要在文件的特定頁面上進行搜尋。在本例中，我們選擇第 1 頁。
 
 ```csharp
 editor.Document.Pages[1].Accept(absorber);
 ```
 
-代替`1`與所需的頁碼。
+### 第 7 步：準備循環文字片段
 
-## 步驟 8：將超連結加入找到的文本
+現在，我們準備好循環遍歷吸收器找到的所有文字片段。我們將調整它們的外觀並設定我們的超連結。
 
-循環檢索到的文字片段並向其添加超連結：
+```csharp
+int[] dashArray = { };
+String[] LEArray = { };
+Color blue = Color.Blue;
+```
+
+在這裡，我們設定一些參數，例如超連結的顏色。
+
+### 第 8 步：循環遍歷每個文字片段
+
+對於與我們的搜尋相符的每個文字片段，我們將更改其顏色並建立超連結。看起來是這樣的：
 
 ```csharp
 foreach (TextFragment textFragment in absorber.TextFragments)
 {
     textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-    //根據文字片段的位置建立一個矩形
-    System.Drawing.Rectangle rect = new System.Drawing.Rectangle((int)textFragment.Rectangle.LLX,
+    Rectangle rect = new Rectangle((int)textFragment.Rectangle.LLX,
         (int)Math.Round(textFragment.Rectangle.LLY), (int)Math.Round(textFragment.Rectangle.Width + 2),
         (int)Math.Round(textFragment.Rectangle.Height + 1));
-    //將網頁連結新增至矩形
-    editor.CreateWebLink(rect, "http://www.aspose.com", 1, System.Drawing.Color.Blue);
+    Enum[] actionName = new Enum[2] { Aspose.Pdf.Annotations.PredefinedAction.Document_AttachFile, Aspose.Pdf.Annotations.PredefinedAction.Document_ExtractPages };
+    
+    editor.CreateWebLink(rect, "http://www.aspose.com", 1, 藍色, actionName);
+    editor.CreateLine(rect, "", (float)textFragment.Rectangle.LLX + 1, (float)textFragment.Rectangle.LLY - 1,
+        (float)textFragment.Rectangle.URX, (float)textFragment.Rectangle.LLY - 1, 1, 1, blue, "S", dashArray, LEArray);
 }
 ```
 
-代替`"http://www.aspose.com"`與所需的超連結 URL。
+### 第9步：儲存編輯後的PDF
 
-## 步驟9：儲存並關閉修改後的文檔
-
-儲存修改後的文件並關閉編輯器：
+我們快完成了！現在是時候將變更儲存到新的 PDF 檔案了。
 
 ```csharp
 dataDir = dataDir + "SearchTextAndAddHyperlink_out.pdf";
 editor.Save(dataDir);
-editor.Close();
-Console.WriteLine("\nText replaced and hyperlink added successfully based on a regular expression.\nFile saved at " + dataDir);
 ```
 
-確保更換`"SearchTextAndAddHyperlink_out.pdf"`與所需的輸出檔名。
+### 第10步：關閉編輯器
 
-### 使用 Aspose.PDF for .NET 搜尋文字和新增超連結的範例原始碼 
+最後，不要忘記關閉文件以釋放資源！
+
 ```csharp
-//文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-//建立吸收器物件以尋找輸入搜尋短語的所有實例
-TextFragmentAbsorber absorber = new TextFragmentAbsorber("\\d{4}-\\d{4}");
-//啟用正規表示式搜尋
-absorber.TextSearchOptions = new TextSearchOptions(true);
-//開啟文件
-PdfContentEditor editor = new PdfContentEditor();
-//綁定來源PDF文件
-editor.BindPdf(dataDir + "SearchRegularExpressionPage.pdf");
-//接受頁面的吸收器
-editor.Document.Pages[1].Accept(absorber);
-int[] dashArray = { };
-String[] LEArray = { };
-System.Drawing.Color blue = System.Drawing.Color.Blue;
-//循環遍歷片段
-foreach (TextFragment textFragment in absorber.TextFragments)
-{
-	textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-	System.Drawing.Rectangle rect = new System.Drawing.Rectangle((int)textFragment.Rectangle.LLX,
-		(int)Math.Round(textFragment.Rectangle.LLY), (int)Math.Round(textFragment.Rectangle.Width + 2),
-		(int)Math.Round(textFragment.Rectangle.Height + 1));
-	Enum[] actionName = new Enum[2] { Aspose.Pdf.Annotations.PredefinedAction.Document_AttachFile, Aspose.Pdf.Annotations.PredefinedAction.Document_ExtractPages };
-	editor.CreateWebLink(rect, "http://www.aspose.com", 1, 藍色, actionName);
-	editor.CreateLine(rect, "", (float)textFragment.Rectangle.LLX + 1, (float)textFragment.Rectangle.LLY - 1,
-		(float)textFragment.Rectangle.URX, (float)textFragment.Rectangle.LLY - 1, 1, 1, blue, "S", dashArray, LEArray);
-}
-dataDir = dataDir + "SearchTextAndAddHyperlink_out.pdf";
-editor.Save(dataDir);
 editor.Close();
 Console.WriteLine("\nText replaced and hyperlink added successfully based on a regular expression.\nFile saved at " + dataDir);
 ```
+
+現在，您剛剛建立了一個具有根據搜尋結果動態產生的超連結的 PDF。那有多酷？
 
 ## 結論
 
-恭喜！您已經成功學習如何在 PDF 文件中搜尋特定文字、在找到的文字中新增超連結以及使用 Aspose.PDF for .NET 儲存修改後的文件。本教程提供了從設定項目到執行所需操作的逐步指南。現在，您可以將此程式碼合併到您自己的 C# 專案中，以操作文字並在 PDF 文件中新增超連結。
+現在你就擁有了！透過執行這些步驟，您已了解如何使用 Aspose.PDF for .NET 庫搜尋 PDF 並新增超連結。這可以打開一個充滿可能性的世界，特別是當您正在處理需要互動性的文件時。想像一下添加相關資源、參考網站甚至內部頁面的連結——所有這些都只需幾行程式碼！
+## 常見問題解答
 
-### 常見問題解答
+### 什麼是 Aspose.PDF for .NET？  
+Aspose.PDF for .NET 是一個函式庫，可讓開發人員在 .NET 應用程式中建立、操作和管理 PDF 文件。
 
-#### Q：「搜尋文字並加入超連結」教學的目的是什麼？
+### 如何下載 .NET 版 Aspose.PDF？  
+您可以下載該庫[這裡](https://releases.aspose.com/pdf/net/).
 
-答：「搜尋文字並新增超連結」教學課程旨在示範如何使用 Aspose.PDF .NET 程式庫在 PDF 文件中搜尋特定文本，為找到的文字新增超鏈接，然後儲存修改後的文件。本教程提供了全面的指南和 C# 程式碼範例來說明逐步過程。
+### 我可以免費試用 Aspose.PDF 嗎？  
+絕對地！您可以獲得免費試用[這裡](https://releases.aspose.com/).
 
-#### Q：本教學如何幫助您在 PDF 文件中新增指向特定文字的超連結？
+### Aspose 產品有可用的支援嗎？  
+是的，您可以找到支持和社區討論[這裡](https://forum.aspose.com/c/pdf/10).
 
-答：本教學將引導您完成使用 Aspose.PDF 庫來尋找 PDF 文件中的特定文字、將超連結套用到所識別的文字以及儲存修改後的 PDF 的過程。它涵蓋了一些基本步驟，例如設定項目、載入文件、啟用正規表示式搜尋以及在找到的文字中新增超連結。
-
-#### Q：學習本教程需要什麼先決條件？
-
-答：開始之前，您應該對 C# 程式語言有基本的了解。此外，您需要安裝 Aspose.PDF for .NET 程式庫，該程式庫可以從 Aspose 網站取得或在專案中使用 NuGet 安裝。
-
-#### Q：如何設定我的專案來遵循本教學？
-
-答：首先在您首選的整合開發環境 (IDE) 中建立一個新的 C# 專案。然後，新增對 Aspose.PDF for .NET 程式庫的引用，這將使您能夠在專案中利用該程式庫的功能。
-
-#### Q：我可以使用本教學添加指向特定文字的超連結嗎？
-
-答：是的，本教學特別關注在 PDF 文件中添加指向特定文字的超連結。它示範如何使用正規表示式來尋找和提取所需的文字、建立與文字片段關聯的超連結以及儲存修改後的 PDF。
-
-#### Q：如何定義要搜尋的文字並新增超連結？
-
-答：若要指定要搜尋的文字並新增超鏈接，請建立一個`TextFragmentAbsorber`對象並使用設定其模式`Text`範圍。替換預設模式`"\\d{4}-\\d{4}"`在教學課程的程式碼中加入您所需的正規表示式模式。
-
-#### Q：如何啟用文字的正規表示式搜尋？
-
- A：透過建立一個來啟用正規表示式搜尋`TextSearchOptions`對象並將其值設為`true`。將此物件分配給`TextSearchOptions`的財產`TextFragmentAbsorber`實例。這可確保在文字搜尋期間套用正規表示式模式。
-
-#### Q：如何為找到的文字添加超連結？
-
- A：使用辨識文字片段後`TextFragmentAbsorber`，本教程提供了一個循環來迭代這些片段。對於每個文字片段，本教學示範如何將文字顏色設為藍色並使用`CreateWebLink`方法。
-
-#### Q：保存修改後的帶有超連結的PDF的步驟是什麼？
-
- A：將超連結加入所需的文字片段後，使用`PdfContentEditor`類別來保存修改後的文件。本教學的範例程式碼展示如何儲存編輯後的 PDF、關閉編輯器以及顯示成功訊息。
+### 如何取得 Aspose.PDF 的臨時授權？  
+您可以申請臨時許可證[這裡](https://purchase.aspose.com/temporary-license/).

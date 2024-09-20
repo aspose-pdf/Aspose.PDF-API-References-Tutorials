@@ -35,7 +35,7 @@ using System.Linq;
 using System.Text;
 ```
 
-Ces importations sont vitales car elles apportent les espaces de noms requis pour gérer la manipulation PDF, le rendu d'image et les opérations de flux de fichiers.
+Ces importations sont vitales car elles apportent les espaces de noms requis pour gérer la manipulation de PDF, le rendu d'images et les opérations de flux de fichiers.
 
 ## Étape 1 : Configurez votre projet et le chemin d'accès au document
 

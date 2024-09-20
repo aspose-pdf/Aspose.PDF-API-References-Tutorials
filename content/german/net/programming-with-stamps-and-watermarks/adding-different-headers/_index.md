@@ -23,7 +23,7 @@ Wenn diese Voraussetzungen erfüllt sind, können Sie Ihr eigenes PDF mit anpass
 
 ## Pakete importieren
 
-Nachdem die Einrichtung abgeschlossen ist, importieren wir die erforderlichen Pakete. Dies ist ein entscheidender Schritt, da wir dadurch alle fantastischen Funktionen von Aspose.PDF nutzen können.
+Nachdem die Einrichtung abgeschlossen ist, importieren wir die erforderlichen Pakete. Dies ist ein entscheidender Schritt, da wir dadurch alle fantastischen Funktionen nutzen können, die Aspose.PDF bietet.
 
 So können Sie den erforderlichen Aspose.PDF-Namespace in Ihr C#-Projekt importieren:
 

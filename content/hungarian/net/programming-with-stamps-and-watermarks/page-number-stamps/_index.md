@@ -144,7 +144,7 @@ Az oldalszámbélyegzők hozzáadása a PDF-fájlokhoz az Aspose.PDF for .NET se
 Igen! Az útmutatóban bemutatott módon módosíthatja az oldalszámok betűtípusát, méretét, színét és formázását.
 
 ### Ingyenesen használható az Aspose.PDF?  
- Az Aspose.PDF ingyenes próbaverziót kínál, de a széleskörű használathoz licenc szükséges. Nézze meg a[oldal vásárlása](https://purchase.aspose.com/buy) további információért.
+ Az Aspose.PDF ingyenes próbaverziót kínál, de a széleskörű használathoz licenc szükséges. Nézze meg a[oldal vásárlása](https://purchase.aspose.com/buy) további információkért.
 
 ### Mi van, ha problémákkal szembesülök a megvalósítás során?  
  Meglátogathatja a[Aspose támogatási fórum](https://forum.aspose.com/c/pdf/10) segítségért.

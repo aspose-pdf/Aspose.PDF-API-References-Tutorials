@@ -2,126 +2,139 @@
 title: Yapı Elemanları Ağacı Oluştur
 linktitle: Yapı Elemanları Ağacı Oluştur
 second_title: Aspose.PDF for .NET API Referansı
-description: .NET için Aspose.PDF kullanarak ağaç elemanlarından oluşan bir yapı oluşturun. Yapılandırılmış bir PDF belgesi oluşturmak için adım adım kılavuz.
+description: .NET için Aspose.PDF kullanarak PDF belgelerinde bir yapı elemanları ağacının nasıl oluşturulacağını öğrenin. Bu adım adım kılavuzu izleyin.
 type: docs
 weight: 70
 url: /tr/net/programming-with-tagged-pdf/create-structure-elements-tree/
 ---
-Bu adım adım kılavuzda, .NET için Aspose.PDF kullanarak ağaç öğelerinin bir yapısını oluşturmak için C# dilindeki kaynak kodunu açıklayacağız. Yapılandırılmış öğelerle bir PDF belgesinin nasıl oluşturulacağını ve bunların hiyerarşik olarak nasıl düzenleneceğini göstereceğiz. Aspose.PDF kitaplığını kullanmak, PDF öğelerinin işlenmesini büyük ölçüde basitleştirir ve yapılandırılmış belgelerle çalışmak için gelişmiş işlevsellik sağlar.
+## giriiş
 
-## Adım 1: Ortamı kurma
- Başlamadan önce, .NET için Aspose.PDF ile geliştirme ortamınızı kurduğunuzdan emin olun. Ayrıca, belgeler dizininize giden yolun ayarlandığından emin olun.`dataDir` değişken.
+PDF'lerle çalışırken, özellikle erişilebilirlik ve yapılandırılmış içerik sağlamayı hedefleyenler için, bir yapı öğeleri ağacı oluşturmak çok önemlidir. Bu ağacı, içeriği düzenlemeye ve yönetmeye yardımcı olan bir düzen sağlayan belgenizin iskeleti olarak düşünün. .NET için Aspose.PDF'ye yeniyseniz endişelenmeyin! Bu makale sizi adım adım süreçte yönlendirecektir.
 
-## Adım 2: PDF Belgesi Oluşturma
- Başlamak için, şunu kullanarak yeni bir PDF belgesi oluşturacağız:`Document` Aspose.PDF tarafından sağlanan sınıf. İşte bu adım için kod:
+## Ön koşullar
+
+Kodun ince ayrıntılarına dalmadan önce ihtiyacınız olan her şeye sahip olduğunuzdan emin olun:
+
+1.  .NET için Aspose.PDF: Bu kütüphanenin kurulu olduğundan emin olun. Buradan indirebilirsiniz:[.NET için Aspose.PDF'yi indirin](https://releases.aspose.com/pdf/net/).
+2. .NET Ortamı: Çalışan bir .NET geliştirme ortamı (Visual Studio gibi) gereklidir.
+3. Temel C# Bilgisi: C# hakkında temel bir anlayışa sahip olmak, kavramları hızlı bir şekilde kavramanıza yardımcı olacaktır.
+
+ Henüz yapmadıysanız, kontrol etmek isteyebilirsiniz[belgeleme](https://reference.aspose.com/pdf/net/) Daha fazla bilgi için.
+
+## Paketleri İçe Aktar
+
+Kodlamaya başlamadan önce, .NET uygulamanıza gerekli ad alanlarını içe aktarmanız gerekir. Bunu şu şekilde yapabilirsiniz:
 
 ```csharp
-// Belgeler dizinine giden yol.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// PDF belgesi oluştur
-Document document = new Document();
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Adım 3: İçeriğin TaggedPdf ile çalışmasını sağlama
- Aspose.PDF kütüphanesi, Etiketli PDF kavramını kullanarak yapılandırılmış PDF belgeleriyle çalışmanıza olanak tanır. Bunun için, belgenin etiketli içerik öğesine bir referans almamız gerekir.`TaggedContent`özellik. İşte bu adım için kod:
+Bu, programınıza etiketli PDF işlevleri de dahil olmak üzere Aspose'un PDF özelliklerini kullanmasını söyler. Şimdi kolları sıvayalım ve koda girelim!
+
+## Adım 1: Belge Yolunu Tanımlayın
+
+Başlamak için, PDF belgenizin nerede bulunacağına karar vermeniz gerekecek. Bu, kitabınız için bir raf seçmek gibi!
 
 ```csharp
-// TaggedPdf ile çalışmak için içerik edinin
-ITaggedContent taggedContent = document.TaggedContent;
-```
-
-## Adım 4: Belge başlığını ve dilini ayarlayın
- Öğelerin yapısını oluşturmaya başlamadan önce, belgenin başlığını ve dilini tanımlamamız gerekir. Bu, şu şekilde yapılabilir:`SetTitle` Ve`SetLanguage` yöntemleri`taggedContent` nesne. İşte bu adım için kod:
-
-```csharp
-// Belge başlığını ve dilini tanımlayın
-taggedContent.SetTitle("Structured PDF Document");
-taggedContent.SetLanguage("fr-FR");
-```
-
-## Adım 5: Mantıksal Yapı Elemanları Oluşturma
-Artık belgemizi kurduğumuza ve başlığı ve dili ayarladığımıza göre mantıksal yapı öğelerini oluşturmaya başlayabiliriz. Bu öğeler yapı ağacını oluşturmak için hiyerarşik olarak düzenlenecektir. İşte bu adım için kod:
-
-```csharp
-// Kök yapı öğesini edinin (Belge)
-StructureElement rootElement = taggedContent.RootElement;
-
-// Mantıksal yapıyı oluşturun
-SectElement sect1 = taggedContent.CreateSectElement();
-rootElement.AppendChild(sect1);
-
-SectElement sect2 = taggedContent.CreateSectElement();
-rootElement.AppendChild(sect2);
-
-DivElement div11 = taggedContent.CreateDivElement();
-sect1.AppendChild(div11);
-
-DivElement div12 = taggedContent.CreateDivElement();
-sect1.AppendChild(div12);
-
-ArtElement art21 = taggedContent.CreateArtElement();
-sect2.AppendChild(art21);
-
-ArtElement art22
-
-  = taggedContent.CreateArtElement();
-sect2.AppendChild(art22);
-
-DivElement div211 = taggedContent.CreateDivElement();
-art21.AppendChild(div211);
-
-DivElement div212 = taggedContent.CreateDivElement();
-art21.AppendChild(div212);
-
-DivElement div221 = taggedContent.CreateDivElement();
-art22.AppendChild(div221);
-
-DivElement div222 = taggedContent.CreateDivElement();
-art22.AppendChild(div222);
-
-SectElement sect3 = taggedContent.CreateSectElement();
-rootElement.AppendChild(sect3);
-
-DivElement div31 = taggedContent.CreateDivElement();
-sect3.AppendChild(div31);
-```
-
-## Adım 6: Etiketli PDF belgesini kaydetme
- Element yapısını oluşturduktan sonra PDF belgesini kaydedebiliriz.`Save` yöntemi`document` kaydedilecek PDF dosyasının yolunu ve adını belirtmek için nesne. Bu adım için kod şudur:
-
-```csharp
-// Etiketli PDF belgesini kaydedin
-document.Save(dataDir + "StructureElementsTree.pdf");
-```
-
-### .NET için Aspose.PDF kullanarak Yapı Elemanları Ağacı Oluşturma için örnek kaynak kodu 
-```csharp
-
 // Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// PDF Belgesi Oluştur
+```
+
+ Değiştirdiğinizden emin olun`"YOUR DOCUMENT DIRECTORY"` gerçek dosya yolunuzla. Son PDF'niz burada saklanacaktır.
+
+## Adım 2: Bir PDF Belgesi Oluşturun
+
+Şimdi, belgenin kendisini oluşturma zamanı. Bunu kitabınızın ilk sayfasını hazırlamak gibi düşünün. 
+
+```csharp
 Document document = new Document();
+```
+
+Bu satır, üzerine inşa edeceğiniz yeni bir PDF belgesi oluşturur.
+
+## Adım 3: Etiketli İçeriği Başlatın
+
+Bu kısım sihrin başladığı yerdir. Belgenin etiketli içeriğine erişmeniz gerekir.
+
+```csharp
 // TaggedPdf ile çalışmak için İçerik Alın
 ITaggedContent taggedContent = document.TaggedContent;
+```
+
+Bunu yaparak, tıpkı bir şaheser için boş bir tuval hazırlıyormuş gibi, yapılandırılmış verileri tutacak belgeyi hazırlıyorsunuz!
+
+## Adım 4: Başlığı ve Dili Ayarlayın
+
+Bir başlık ve dil belirtimi bağlam sağlar. Belgenize bir isim ve bir ses vermek gibidir.
+
+```csharp
 // Belge için Başlık ve Dil Ayarla
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
+```
+
+Artık belgenizin bir kimliği var!
+
+## Adım 5: Kök Elemanı Alın
+
+Her yapının bir temele ihtiyacı vardır, değil mi? Burada, kök yapı elemanını kuruyorsunuz.
+
+```csharp
 // Kök yapı öğesini al (Belge)
 StructureElement rootElement = taggedContent.RootElement;
-// Mantıksal Yapı Oluştur
+```
+
+Bu kök öğe, belgenizin yapısının en üst düzeyini oluşturacaktır.
+
+## Adım 6: Mantıksal Yapı Bölümlerini Oluşturun
+
+Bölümler içeriği mantıksal olarak düzenlemeye yardımcı olur. Bu bölümleri bir kitaptaki bölümler gibi tek tek oluşturalım!
+
+```csharp
 SectElement sect1 = taggedContent.CreateSectElement();
 rootElement.AppendChild(sect1);
 SectElement sect2 = taggedContent.CreateSectElement();
 rootElement.AppendChild(sect2);
+```
+
+Bu satırlarla iki bölüm eklediniz! 
+
+## Adım 7: Bölümlere Div Elemanları Ekleyin
+
+Div öğeleri bir bölüm içindeki paragraflar veya bölümler olarak düşünülebilir. Bu bölümlere içerik ekleyerek işleri biraz renklendirelim.
+
+```csharp
 DivElement div11 = taggedContent.CreateDivElement();
 sect1.AppendChild(div11);
 DivElement div12 = taggedContent.CreateDivElement();
 sect1.AppendChild(div12);
+```
+
+Burada ilk bölümün altına iki adet div elemanı eklediniz. 
+
+## Adım 8: Bir Sonraki Bölüme Sanat Öğeleri Ekleyin
+
+Şimdi, sanat öğelerini ekleyerek biraz sanatsal bir hava katalım!
+
+```csharp
 ArtElement art21 = taggedContent.CreateArtElement();
 sect2.AppendChild(art21);
 ArtElement art22 = taggedContent.CreateArtElement();
 sect2.AppendChild(art22);
+```
+
+İkinci bölümde resim veya grafik barındırabilecek iki adet sanat öğesi oluşturdunuz.
+
+## Adım 9: Sanat Öğeleri Altına Daha Fazla Div Öğesi Ekleyin
+
+Daha fazla div öğesi ekleyerek bu sanat öğelerini içerikle dolduralım.
+
+```csharp
 DivElement div211 = taggedContent.CreateDivElement();
 art21.AppendChild(div211);
 DivElement div212 = taggedContent.CreateDivElement();
@@ -130,56 +143,60 @@ DivElement div221 = taggedContent.CreateDivElement();
 art22.AppendChild(div221);
 DivElement div222 = taggedContent.CreateDivElement();
 art22.AppendChild(div222);
-SectElement sect3 = taggedContent.CreateSectElement();
-rootElement.AppendChild(sect3);
-DivElement div31 = taggedContent.CreateDivElement();
-sect3.AppendChild(div31);
-// Etiketli PDF Belgesini Kaydet
-document.Save(dataDir + "StructureElementsTree.pdf");
-
 ```
 
+İşte, dört tane daha div ekledik! Her div'i sanatsal serginizi dolduran mini bir bölme olarak düşünün.
+
+## Adım 10: Başka Bir Bölüm Oluşturun
+
+Şimdi durmayalım! Daha fazla içerik barındırmak için üçüncü bir bölüm ekleyeceğiz.
+
+```csharp
+SectElement sect3 = taggedContent.CreateSectElement();
+rootElement.AppendChild(sect3);
+```
+
+İşte doldurulmayı bekleyen boş bir sayfa daha!
+
+## Adım 11: Son Bölüme Div Öğesi Ekleyin
+
+Son olarak, bu son bölümü içerikle doldurmamız gerekiyor.
+
+```csharp
+DivElement div31 = taggedContent.CreateDivElement();
+sect3.AppendChild(div31);
+```
+
+İşte böylece belgeniz yapılandırılmış içeriklerle dolu hale geliyor.
+
+## Adım 12: Belgeyi Kaydedin
+
+Tüm bu sıkı çalışmadan sonra, eserinizi kaydetme zamanı geldi. Bunu, kitabınızı yazdıktan sonra rafa koymak gibi düşünün!
+
+```csharp
+// Etiketli PDF Belgesini Kaydet
+document.Save(dataDir + "StructureElementsTree.pdf");
+```
+
+Bu komut yeni yapılandırılmış PDF belgenizi belirtilen dizine kaydeder.
+
 ## Çözüm
-.NET için Aspose.PDF kullanarak ağaç öğelerinden oluşan bir yapı oluşturmayı öğrendiniz. Bu kılavuz size bir PDF belgesi kurmak, mantıksal yapı öğeleri oluşturmak ve son belgeyi kaydetmek için gereken adımları gösterdi. Aspose.PDF kullanarak PDF öğelerini kolayca düzenleyebilir ve yapılandırılmış belgeler oluşturabilirsiniz.
 
-### SSS
+Aspose.PDF for .NET ile bir yapı elemanları ağacı oluşturmak, bir binanın iskeletini inşa etmeye benzer. Her adım bir öncekinin üzerine inşa edilir ve size sağlam ve düzenli bir belge sunar. Artık PDF'leri çok daha etkili bir şekilde yönetebilir ve hatta erişilebilirliği artırabilirsiniz. İster raporlarla, ister kullanıcı kılavuzlarıyla veya başka herhangi bir belgeyle uğraşıyor olun, içeriğinizin doğru şekilde yapılandırılması büyük bir kazançtır.
 
-#### S: Aspose.PDF for .NET kullanarak bir PDF belgesinde ağaç elemanlarından oluşan bir yapı oluşturmanın amacı nedir?
+## SSS
 
-A: Aspose.PDF for .NET kullanarak bir PDF belgesinde ağaç öğelerinin bir yapısını oluşturmak, içeriği hiyerarşik olarak düzenlemenize olanak tanır. Bu yapılandırılmış yaklaşım, belge erişilebilirliğini, gezinmeyi ve semantiği iyileştirerek kullanıcıların ve yardımcı teknolojilerin içeriği yorumlamasını ve onunla etkileşim kurmasını kolaylaştırır.
+### Aspose.PDF for .NET nedir?
+Aspose.PDF for .NET, .NET uygulamalarında PDF belgeleri oluşturmak, düzenlemek ve yönetmek için kullanılan güçlü bir kütüphanedir.
 
-#### S: Sağlanan C# kodu bir PDF belgesinde ağaç elemanlarından oluşan bir yapıyı nasıl oluşturur?
+### Aspose.PDF'i kullanmaya nasıl başlayabilirim?
+ Kütüphaneyi şu adresten indirerek başlayın:[Aspose web sitesi](https://releases.aspose.com/pdf/net/) ve .NET ortamınıza kurulumunu yapın.
 
-A: Kod örneği, mantıksal öğelerin hiyerarşik bir yapısının nasıl oluşturulacağını göstermektedir.`SectElement`, `DivElement` , Ve`ArtElement` Aspose.PDF tarafından sağlanan sınıflar. Bu öğeler, belge içinde ağaç benzeri bir yapı oluşturan ebeveyn ve çocuk düğümleri olarak düzenlenir.
+### Aspose.PDF'yi satın almadan önce test edebilir miyim?
+ Evet! Bunu kullanarak ücretsiz deneyebilirsiniz.[ücretsiz deneme](https://releases.aspose.com/).
 
-#### S: Nasıl?`TaggedContent` property of the `Document` class contribute to creating a structured PDF document?
+### Aspose.PDF ile ilgili yardımı nereden bulabilirim?
+ Destek için şu adresi ziyaret edin:[Aspose forumu](https://forum.aspose.com/c/pdf/10) Soru sorabileceğiniz ve fikirlerinizi paylaşabileceğiniz bir yer.
 
- A:`TaggedContent` özellik, PDF belgesinin etiketli içerik özelliklerine erişim sağlar. Bu, yapılandırılmış öğeler oluşturmanıza ve bunları düzenlemenize, ilişkilerini tanımlamanıza ve bunları hiyerarşik olarak düzenlemenize olanak tanır, böylece belgenin yapısını ve erişilebilirliğini geliştirir.
-
-####  S: Belgenin başlığını ve dilini kullanarak ayarlamak neden önemlidir?`SetTitle` and `SetLanguage` methods?
-
- A: Belgenin başlığını ve dilini ayarlamak`SetTitle` Ve`SetLanguage` Yöntemler, belgenin erişilebilirliğini ve semantiğini geliştirir. Kullanıcıların ve yardımcı teknolojilerin belgenin amacını ve dilini anlamalarına yardımcı olur.
-
-####  S: Nasılsınız?`SectElement`, `DivElement`, and `ArtElement` used to create the structure tree?
-
- A: Bu sınıflar farklı tipteki yapı elemanlarını temsil eder.`SectElement` bölümler oluşturmak için kullanılır,`DivElement` bölümler içindeki bölümler için ve`ArtElement` sanat eseri veya çizimler için. Alt öğeleri ana öğelere ekleyerek hiyerarşik bir yapı kurarsınız.
-
-#### S: PDF belgesinde öğeleri hiyerarşik olarak düzenlemenin faydaları nelerdir?
-
-A: Öğeleri hiyerarşik olarak düzenlemek belge organizasyonunu, gezinmeyi ve semantiği iyileştirir. Kullanıcıların ve yardımcı teknolojilerin içeriğin yapısını ve ilişkilerini anlamasını sağlayarak genel kullanıcı deneyimini iyileştirir.
-
-#### S: Nasıl?`Save` method ensure the preservation of the hierarchical structure in the tagged PDF document?
-
- A:`Save` yöntem, PDF belgesini, kullanılarak oluşturulan hiyerarşik yapı ile birlikte kaydeder`AppendChild` yöntem. Bu, yapının bozulmadan kalmasını, belgenin erişilebilir ve iyi düzenlenmiş olmasını sağlar.
-
-#### S: Diğer mantıksal eleman türlerini ekleyerek yapı ağacını daha da özelleştirebilir miyim?
-
-C: Evet, Aspose.PDF tarafından sağlanan başlıklar, paragraflar, şekiller ve daha fazlası gibi diğer mantıksal öğe türlerini ekleyerek yapı ağacını daha da özelleştirebilirsiniz. Özelleştirilmiş bir yapı oluşturmak için farklı öğe türlerini deneyebilirsiniz.
-
-#### S: Oluşturulan yapılandırılmış ağaç, belge erişilebilirliğini ve kullanılabilirliğini nasıl iyileştirebilir?
-
-A: Yapılandırılmış ağaç, içeriğe net bir hiyerarşi ve anlamsal anlam sağlayarak belge erişilebilirliğini artırır. Yardımcı teknolojiler ve kullanıcılar, belgenin yapısını ve ilişkilerini daha etkili bir şekilde gezinebilir, anlayabilir ve yorumlayabilir.
-
-#### S: Bu bilgiyi çeşitli kullanım durumları için karmaşık yapılandırılmış PDF belgeleri oluşturmak amacıyla nasıl uygulayabilirim?
-
-A: Farklı yapı öğelerini birleştirerek ve bunları istenen içerik organizasyonuna uyacak şekilde hiyerarşik olarak düzenleyerek bu bilgiyi geliştirebilirsiniz. Bu yaklaşım, raporlar, makaleler, kılavuzlar ve daha fazlası gibi karmaşık belgeler oluşturmak için değerlidir.
+### Geçici lisans başvurusunu nasıl yapabilirim?
+ Geçici lisans başvurusunda bulunabilirsiniz[Burada](https://purchase.aspose.com/temporary-license/).

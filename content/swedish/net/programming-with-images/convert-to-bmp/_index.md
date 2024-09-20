@@ -71,7 +71,7 @@ for (int pageCount = 1; pageCount <= pdfDocument.Pages.Count; pageCount++)
 }
 ```
 
-Vi använder en enkel`for` slinga som går igenom alla sidor i PDF:en. De`pageCount` variabel kommer att gå från`1` till det totala antalet sidor (`pdfDocument.Pages.Count`), se till att vi bearbetar varje sida.
+Vi använder en enkel`for` loop som går igenom alla sidor i PDF:en. De`pageCount` variabel kommer att gå från`1` till det totala antalet sidor (`pdfDocument.Pages.Count`), se till att vi bearbetar varje sida.
 
 ## Steg 4: Skapa en FileStream för varje sida
 

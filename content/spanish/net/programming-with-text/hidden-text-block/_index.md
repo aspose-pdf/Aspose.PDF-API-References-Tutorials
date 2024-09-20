@@ -2,193 +2,190 @@
 title: Bloque de texto oculto en archivo PDF
 linktitle: Bloque de texto oculto en archivo PDF
 second_title: Referencia de API de Aspose.PDF para .NET
-description: Aprenda a crear bloques de texto ocultos en archivos PDF usando Aspose.PDF para .NET.
+description: Cree archivos PDF interactivos con bloques de texto ocultos con Aspose.PDF para .NET. Este tutorial ofrece una guía paso a paso para mejorar sus documentos.
 type: docs
 weight: 230
 url: /es/net/programming-with-text/hidden-text-block/
 ---
-En este tutorial, explicaremos cómo crear un bloque de texto oculto en un archivo PDF utilizando la biblioteca Aspose.PDF para .NET. Un bloque de texto oculto es un texto flotante que se vuelve visible cuando el cursor del mouse se desplaza sobre un área específica. Repasaremos el proceso paso a paso para crear el bloque de texto oculto utilizando el código fuente de C# proporcionado.
+## Introducción
 
-## Requisitos
+En el panorama digital actual, los archivos PDF siguen siendo el formato de referencia para todo, desde contratos hasta materiales educativos. Su versatilidad y confiabilidad son incomparables. Pero, ¿qué sucedería si pudiera agregar una capa adicional de interactividad a sus archivos PDF? Nos adentramos en el mundo de los bloques de texto ocultos con Aspose.PDF para .NET, una poderosa herramienta que facilita más que nunca la creación de documentos atractivos y fáciles de usar. Ya sea que sea un desarrollador experimentado o recién esté comenzando, este tutorial está diseñado para usted, repleto de instrucciones paso a paso y consejos para liberar todo el potencial de sus archivos PDF.
 
-Antes de comenzar, asegúrese de tener lo siguiente:
+## Prerrequisitos
 
-- La biblioteca Aspose.PDF para .NET instalada.
-- Un conocimiento básico de programación en C#.
+Antes de ponernos manos a la obra y empezar, asegurémonos de que tienes todo lo que necesitas. Esto es lo que necesitarás:
 
-## Paso 1: Configurar el directorio de documentos
+1. Aspose.PDF para .NET: esta biblioteca es esencial para trabajar con archivos PDF en aplicaciones .NET. Puede consultarla, descargarla o incluso obtener una versión de prueba gratuita en[Documentación en PDF de Aspose](https://reference.aspose.com/pdf/net/).
+2. .NET Framework: asegúrese de tener instalado el marco .NET, ya que es necesario para ejecutar la biblioteca Aspose.PDF.
+3. Entorno de desarrollo: un editor de código o un entorno de desarrollo integrado (IDE) como Visual Studio hará que la codificación sea muy sencilla. 
+4. Conocimientos básicos de C#: dado que programaremos en C#, tener un conocimiento básico del lenguaje te ayudará a comprender los conceptos mucho más fácilmente.
+5. Pasión por aprender: Por último, pero no por ello menos importante, ¡traiga su entusiasmo! Hoy vamos a aprender algo increíble.
 
- Primero, debes establecer la ruta al directorio donde deseas guardar el archivo PDF generado. Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el`dataDir` variable con la ruta al directorio deseado.
+Una vez que tengas estos requisitos previos establecidos, ¡estarás listo para crear bloques de texto ocultos interactivos en tus archivos PDF!
+
+## Importar paquetes
+
+Para comenzar a utilizar Aspose.PDF en su proyecto, deberá importar los paquetes necesarios. A continuación, le indicamos cómo hacerlo:
+
+### Crear un proyecto C#
+
+Lo primero es lo primero: abre Visual Studio o cualquier IDE de C# y crea un nuevo proyecto. Selecciona un tipo de aplicación de consola para simplificar.
+
+### Agregue Aspose.PDF a su proyecto
+
+Necesitará agregar la biblioteca Aspose.PDF a su proyecto. Puede hacerlo a través del Administrador de paquetes NuGet. A continuación, se incluye un breve resumen:
+
+```bash
+Install-Package Aspose.PDF
+```
+
+Este comando extraerá los archivos necesarios para que pueda trabajar con documentos PDF fácilmente.
+
+### Importar los espacios de nombres necesarios
+
+Una vez instalado el paquete, el siguiente paso es importar los espacios de nombres en la parte superior del archivo C#. Esto hace que todas las interesantes funciones de Aspose sean accesibles:
+
+```csharp
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Forms;
+using Aspose.Pdf.Text;
+```
+
+Ahora que su entorno está configurado, analicemos paso a paso el proceso de creación de un bloque de texto oculto en un archivo PDF.
+
+## Paso 1: Defina su directorio de documentos
+
+Define dónde se guardarán tus archivos. Esto te ayudará a administrar tus documentos sin problemas. Usa el siguiente código para configurarlo:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
 ```
+
+ Asegúrese de reemplazar`"YOUR DOCUMENT DIRECTORY"` con la ruta real en su máquina donde desea que se cree el PDF.
 
 ## Paso 2: Crear un documento de muestra
 
-En este paso, creamos un documento PDF de muestra y le agregamos un fragmento de texto. El fragmento de texto servirá como disparador para mostrar el bloque de texto oculto.
+Ahora, vamos a crear un documento PDF básico. Este paso inicial implica inicializar el documento PDF y agregar un fragmento de texto que será el punto focal de nuestro texto oculto.
 
 ```csharp
-string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
 doc.Save(outputFile);
 ```
 
-## Paso 3: Abra el documento
+Aquí, simplemente agregamos una cadena al documento. Esto activará la acción de texto oculto cuando el mouse pase sobre ella.
 
- Ahora, abrimos el documento creado anteriormente utilizando el`Document` clase.
+## Paso 3: Abra el documento creado
+
+Ahora que tenemos nuestro documento inicial, abrámoslo para editarlo más:
 
 ```csharp
 Document document = new Document(outputFile);
 ```
 
-## Paso 4: Encuentra el fragmento de texto
+Esta línea carga el documento que acabamos de crear para que podamos realizar cambios en él.
 
- Usamos un`TextFragmentAbsorber`Objeto para buscar el fragmento de texto que activará la visualización del bloque de texto oculto. En este caso, buscamos el texto exacto "Mueva el cursor del mouse aquí para mostrar el texto flotante".
+## Paso 4: Crea un TextAbsorber para encontrar frases
+
+ A continuación, queremos identificar el fragmento de texto con el que trabajaremos. Aquí es donde se encuentra el`TextFragmentAbsorber` Entra en juego:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-document.Pages.Accept(absorb);
-TextFragmentCollection textFragments = absorb.TextFragments;
-TextFragment fragment = textFragments[1];
-```
-
-## Paso 5: Crea el campo de texto oculto
-
- Creamos una`TextBoxField` Objeto que representa el campo de texto oculto. Este campo contendrá el texto que se vuelve visible cuando el cursor del mouse se desplaza sobre el texto del disparador.
-
-```csharp
-TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-floatingField.Value = "This is the \"floating text field\".";
-floatingField. ReadOnly = true;
-floatingField.Flags |= AnnotationFlags.Hidden;
-floatingField.PartialName = "FloatingField_1";
-floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
-floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
-floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
-floatingField.Border = new Border(floatingField);
-floatingField.Border.Width = 1;
-floatingField. Multiline = true;
-```
-
-## Paso 6: Agregue el campo de texto oculto al documento
-
-Agregamos el campo de texto oculto a la colección de formularios del documento.
-
-```csharp
-document.Form.Add(floatingField);
-```
-
-## Paso 7: Crea el botón invisible
-
-Creamos un campo de botón invisible que se ubicará sobre el fragmento de texto del disparador. Este campo de botón tendrá acciones asociadas con los eventos de entrada y salida del mouse.
-
-```csharp
-ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-buttonField.Actions.OnEnter = new HideAction(floatingField, false);
-buttonField.Actions.OnExit = new HideAction(floatingField);
-document.Form.Add(buttonField);
-```
-
-## Paso 8: Guardar el documento
-
-Finalmente, guardamos el documento modificado con el bloque de texto oculto.
-
-```csharp
-document. Save(outputFile);
-```
-
-### Código fuente de muestra para bloque de texto oculto con Aspose.PDF para .NET 
-```csharp
-// La ruta al directorio de documentos.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
-// Crear un documento de muestra con texto
-Document doc = new Document();
-doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
-doc.Save(outputFile);
-// Abrir documento con texto
-Document document = new Document(outputFile);
-//Cree un objeto TextAbsorber para encontrar todas las frases que coincidan con la expresión regular
-TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-// Acepta el absorbedor para las páginas del documento.
 document.Pages.Accept(absorber);
-// Obtener el primer fragmento de texto extraído
+```
+
+En este paso, le indicamos a Aspose que busque el texto que especificamos anteriormente.
+
+## Paso 5: Extraer el fragmento de texto
+
+Una vez que tengamos el fragmento de texto, lo extraeremos mediante el siguiente código, que nos permitirá manipularlo más:
+
+```csharp
 TextFragmentCollection textFragments = absorber.TextFragments;
 TextFragment fragment = textFragments[1];
-//Crear un campo de texto oculto para texto flotante en el rectángulo especificado de la página
+```
+
+Aquí nos centramos en el primer fragmento que se absorbió. Si tuviera más texto, tal vez quiera iterar sobre la colección.
+
+## Paso 6: Crea el campo de texto oculto
+
+¡Ahora, la magia! Crea un campo de texto oculto que se muestre cuando el usuario pase el cursor sobre el texto especificado. Usa este fragmento de código:
+
+```csharp
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-// Establecer el texto que se mostrará como valor del campo
 floatingField.Value = "This is the \"floating text field\".";
-// Recomendamos que el campo sea 'de solo lectura' para este escenario.
 floatingField.ReadOnly = true;
-// Establezca la bandera 'oculta' para hacer que el campo sea invisible al abrir el documento
 floatingField.Flags |= AnnotationFlags.Hidden;
-// No es necesario establecer un nombre de campo único, pero está permitido
+```
+
+Este código define la posición del texto flotante y establece sus propiedades, incluyendo hacerlo de solo lectura y oculto de forma predeterminada.
+
+## Paso 7: Personaliza la apariencia del campo
+
+¡Dale un toque de estilo a tu texto flotante! Personaliza la apariencia predeterminada del campo de texto flotante:
+
+```csharp
 floatingField.PartialName = "FloatingField_1";
-// No es necesario configurar las características de apariencia del campo, pero lo hace mejor.
-floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
-floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
-floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
+floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, Color.Blue);
+floatingField.Characteristics.Background = Color.LightBlue;
+floatingField.Characteristics.Border = Color.DarkBlue;
 floatingField.Border = new Border(floatingField);
 floatingField.Border.Width = 1;
 floatingField.Multiline = true;
-// Agregar campo de texto al documento
+```
+
+Desde el tamaño de fuente hasta los colores, puedes modificar estas configuraciones como desees, haciendo que la interfaz sea más fácil de usar y atractiva.
+
+## Paso 8: Agregar el campo de texto al documento
+
+Con el campo de texto configurado, es momento de agregar el campo flotante al documento:
+
+```csharp
 document.Form.Add(floatingField);
-// Crear un botón invisible en la posición del fragmento de texto
+```
+
+Esta línea integra el campo de texto oculto recién creado en su PDF.
+
+## Paso 9: Crear un campo de botón invisible
+
+Este botón gestionará las acciones de desplazamiento del campo de texto flotante. Agregue el siguiente código para crear un botón invisible:
+
+```csharp
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-// Crear una nueva acción de ocultar para el campo especificado (anotación) y una bandera de invisibilidad.
-// (También puede hacer referencia al campo flotante por el nombre si lo especificó anteriormente).
-// Agregar acciones al ingresar/salir del mouse en el campo del botón invisible
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);
-// Añadir campo de botón al documento
-document.Form.Add(buttonField);
-// Guardar documento
+```
+
+Aquí, hemos configurado el botón para mostrar el texto flotante cuando el mouse entra y para ocultarlo cuando el mouse sale.
+
+## Paso 10: Guardar el documento
+
+Finalmente, es hora de guardar tu trabajo y ver el resultado:
+
+```csharp
 document.Save(outputFile);
 ```
 
+¡Con esta acción, su PDF ahora está listo con una experiencia interactiva, brindando a los usuarios una forma completamente nueva de interactuar con su contenido!
+
 ## Conclusión
 
-En este tutorial, aprendió a crear un bloque de texto oculto con la biblioteca Aspose.PDF para .NET. Si sigue la guía paso a paso, podrá generar un documento PDF con un campo de texto oculto que se vuelve visible cuando el cursor del mouse se desplaza sobre un área específica. Puede personalizar la apariencia y el comportamiento del bloque de texto oculto según sus requisitos.
+¡Y ya está! Siguiendo estos pasos, habrás creado con éxito un bloque de texto oculto en un archivo PDF con Aspose.PDF para .NET. Esta sencilla pero potente función puede mejorar significativamente la interacción del usuario en tus documentos. Tanto si estás creando materiales educativos como recursos para clientes, la capacidad de ocultar y mostrar información al pasar el mouse sobre el documento proporciona un toque moderno y refinado. 
 
-### Preguntas frecuentes
+## Preguntas frecuentes
 
-#### P: ¿Cuál es el propósito del tutorial "Bloque de texto oculto en archivo PDF"?
+### ¿Qué es Aspose.PDF para .NET?  
+Aspose.PDF para .NET es una biblioteca sólida que permite a los desarrolladores crear, manipular y convertir documentos PDF en aplicaciones .NET.
 
-A: El tutorial "Bloque de texto oculto en archivo PDF" explica cómo crear un bloque de texto oculto en un archivo PDF utilizando la biblioteca Aspose.PDF para .NET. Un bloque de texto oculto es un texto flotante que se vuelve visible cuando el cursor del mouse se desplaza sobre un área específica. Este tutorial proporciona una guía paso a paso utilizando el código fuente de C#.
+### ¿Cómo instalo Aspose.PDF?  
+Puedes instalarlo a través del Administrador de paquetes NuGet en Visual Studio. Solo tienes que utilizar el comando:`Install-Package Aspose.PDF`.
 
-#### P: ¿Por qué querría crear un bloque de texto oculto en un archivo PDF?
+### ¿Puedo crear otros elementos interactivos en archivos PDF?  
+Sí, más allá de los bloques de texto ocultos, puedes agregar botones, hipervínculos, anotaciones y mucho más usando Aspose.PDF.
 
-R: Crear un bloque de texto oculto puede ser útil para documentos PDF interactivos en los que desea proporcionar información o contexto adicional que solo se vuelve visible cuando un usuario pasa el cursor del mouse sobre un área designada.
+### ¿Hay una prueba gratuita disponible?  
+ ¡Por supuesto! Puedes obtener una prueba gratuita desde[Página de lanzamiento de Aspose](https://releases.aspose.com/).
 
-#### P: ¿Cómo configuro el directorio de documentos?
-
-A: Para configurar el directorio de documentos:
-
-1.  Reemplazar`"YOUR DOCUMENT DIRECTORY"` en el`dataDir` variable con la ruta al directorio donde desea guardar el archivo PDF generado.
-
-#### P: ¿Cómo puedo crear un documento de muestra y agregarle un fragmento de texto?
-
- A: En el tutorial, utilizas el`Document` Clase para crear un documento PDF de muestra y agregar un fragmento de texto. Este fragmento de texto sirve como disparador para mostrar el bloque de texto oculto.
-
-#### P: ¿Cómo encuentro el fragmento de texto que activa el bloque de texto oculto?
-
- A: El tutorial demuestra cómo utilizar un`TextFragmentAbsorber` Objeto para encontrar el fragmento de texto que activa la visualización del bloque de texto oculto. Busca una cadena de texto específica dentro del documento PDF.
-
-#### P: ¿Cómo puedo crear y personalizar el campo de texto oculto?
-
- A: Creas una`TextBoxField`objeto para representar el campo de texto oculto. El tutorial proporciona código para configurar varias propiedades, como la posición, el valor, la apariencia y el comportamiento del campo de texto oculto.
-
-#### P: ¿Cómo puedo crear un botón invisible asociado al bloque de texto oculto?
-
- A: Se crea un campo de botón invisible utilizando el`ButtonField` Clase. Este campo de botón se ubica sobre el fragmento de texto del disparador y tiene acciones asociadas con los eventos de entrada y salida del mouse. Estas acciones controlan la visibilidad del bloque de texto oculto.
-
-#### P: ¿Puedo personalizar la apariencia del bloque de texto oculto y el área de activación?
-
-R: Sí, puedes personalizar varias propiedades tanto del campo de texto oculto como del botón invisible, incluida la fuente, el color, el tamaño y la posición.
-
-#### P: ¿Cómo guardo el documento modificado con el bloque de texto oculto?
-
- A: El tutorial demuestra cómo guardar el documento modificado usando el`Save` método de la`Document` clase.
+### ¿Qué pasa si necesito ayuda con Aspose.PDF?  
+ No dudes en buscar ayuda en el[Foro de Aspose](https://forum.aspose.com/c/pdf/10) Para cualquier pregunta o problema que pueda surgir.

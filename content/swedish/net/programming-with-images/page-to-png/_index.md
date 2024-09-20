@@ -73,7 +73,7 @@ using (FileStream imageStream = new FileStream(dataDir + "aspose-logo.png", File
 {
 ```
 
- I det här exemplet,`aspose-logo.png` är namnet på PNG-filen du vill skapa.
+ I det här exemplet,`aspose-logo.png` är namnet på den PNG-fil du vill skapa.
 
 ## Steg 4: Ställ in upplösningen
 

@@ -2,162 +2,155 @@
 title: Notizstrukturelement erstellen
 linktitle: Notizstrukturelement erstellen
 second_title: Aspose.PDF für .NET API-Referenz
-description: Schritt-für-Schritt-Anleitung zum Erstellen strukturierter Notizelemente in einem PDF-Dokument mit Aspose.PDF für .NET.
+description: Erfahren Sie in diesem ausführlichen Schritt-für-Schritt-Tutorial, wie Sie mit Aspose.PDF für .NET Notizstrukturelemente in PDFs erstellen.
 type: docs
 weight: 30
 url: /de/net/programming-with-tagged-pdf/create-note-structure-element/
 ---
-In diesem Tutorial erhalten Sie eine Schritt-für-Schritt-Anleitung zum Erstellen eines Notizstrukturelements in einem PDF-Dokument mit Aspose.PDF für .NET. Aspose.PDF ist eine leistungsstarke Bibliothek, mit der Sie PDF-Dokumente programmgesteuert erstellen, bearbeiten und konvertieren können. Mit den markierten Inhaltsstrukturfunktionen von Aspose.PDF können Sie Ihrem PDF-Dokument strukturierte Notizen hinzufügen.
+## Einführung
+
+Das Erstellen strukturierter Dokumente ist in der heutigen digitalen Welt unerlässlich, insbesondere beim Umgang mit PDFs. Wenn es um die Zugänglichkeit von Dokumenten geht, ist die Aspose.PDF-Bibliothek für .NET ein leistungsstarkes Tool, mit dem Entwickler PDF-Inhalte nahtlos verwalten können. In diesem Tutorial erfahren Sie ausführlich, wie Sie mit Aspose.PDF für .NET Notizstrukturelemente in einem PDF erstellen. Egal, ob Sie ein erfahrener Entwickler sind oder gerade erst anfangen, diese Anleitung führt Sie in einer verständlichen und leicht verständlichen Art und Weise durch jeden Schritt. Also, legen wir los!
 
 ## Voraussetzungen
 
-Stellen Sie zunächst sicher, dass die folgenden Voraussetzungen erfüllt sind:
+Bevor wir uns in die Codierung und Erstellung von Notizstrukturelementen stürzen, stellen wir sicher, dass Sie alles Nötige bereit haben:
 
-1. Visual Studio mit .NET Framework installiert.
-2. Die Aspose.PDF-Bibliothek für .NET.
+1. .NET-Umgebung: Sie sollten eine .NET-Entwicklungsumgebung wie Visual Studio eingerichtet haben.
+2.  Aspose.PDF-Bibliothek: Sie müssen die Aspose.PDF-Bibliothek herunterladen und installieren. Sie finden sie unter[Hier](https://releases.aspose.com/pdf/net/).
+3. Grundlegende C#-Kenntnisse: Um dieses Tutorial optimal nutzen zu können, sind Kenntnisse in der C#-Programmierung erforderlich.
+4. Zugriff auf .NET Framework: Stellen Sie sicher, dass Ihr Projekt auf eine kompatible Version des .NET Frameworks abzielt.
+5. Dokumentverzeichnis: Richten Sie ein Verzeichnis zum Speichern Ihrer PDF- und Protokolldateien ein. 
 
-## Schritt 1: Projekt-Setup
+Alles bereit? Super! Dann stürzen wir uns auf den Code!
 
-Erstellen Sie zunächst ein neues Projekt in Visual Studio und fügen Sie einen Verweis auf die Aspose.PDF-Bibliothek für .NET hinzu. Sie können die Bibliothek von der offiziellen Aspose-Website herunterladen und auf Ihrem Computer installieren.
+## Pakete importieren
 
-## Schritt 2: Importieren Sie die erforderlichen Namespaces
-
-Importieren Sie in Ihre C#-Codedatei die Namespaces, die für den Zugriff auf die von Aspose.PDF bereitgestellten Klassen und Methoden erforderlich sind:
+Der erste Schritt besteht darin, die erforderlichen Pakete zu importieren. Dies kann in Ihrer Entwicklungsumgebung erfolgen. Hier ist eine einfache Möglichkeit, dies zu tun:
 
 ```csharp
-using System;
-using Aspose.Pdf;
+using Aspose.Pdf.LogicalStructure;
 using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Schritt 3: Erstellen des PDF-Dokuments und Notieren strukturierter Elemente
+Diese Namespaces bieten Zugriff auf die Klassen und Methoden, die zum Erstellen und Bearbeiten von PDF-Dokumenten erforderlich sind.
 
-Verwenden Sie den folgenden Code, um ein PDF-Dokument zu erstellen und notizstrukturierte Elemente hinzuzufügen:
+## Schritt 1: Einrichten des Dokuments
 
-```csharp
-string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
-string outFile = dataDir + "45929_doc.pdf";
-string logFile = dataDir + "45929_log.xml";
-
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Sample Grade Items");
-taggedContent.SetLanguage("fr-FR");
-
-ParagraphElement paragraph = taggedContent.CreateParagraphElement();
-taggedContent.RootElement.AppendChild(paragraph);
-
-NoteElement note1 = taggedContent.CreateNoteElement();
-paragraph. AppendChild(note1);
-note1.SetText("Note with automatically generated ID. ");
-
-NoteElement note2 = taggedContent.CreateNoteElement();
-paragraph. AppendChild(note2);
-note2.SetText("Note with ID = 'note_002'.");
-note2.SetId("note_002");
-
-NoteElement note3 = taggedContent.CreateNoteElement();
-paragraph. AppendChild(note3);
-note3.SetText("Note with ID = 'note_003'.");
-note3.SetId("note_003");
-```
-
-Dieser Code erstellt ein leeres PDF-Dokument und fügt einem Absatz strukturierte Notizelemente hinzu. Jede Notiz wird mit den von Aspose.PDF bereitgestellten Methoden erstellt.
-
-## Schritt 4: Speichern des PDF-Dokuments
-
-Verwenden Sie den folgenden Code, um das PDF-Dokument zu speichern:
-
-```csharp
-document. Save(outFile);
-```
-
-Dieser Code speichert das PDF-Dokument mit den strukturierten Elementen der Notiz in einer angegebenen Datei.
-
-### Beispielquellcode zum Erstellen eines Notizstrukturelements mit Aspose.PDF für .NET 
+Zu Beginn müssen Sie eine neue Dokumentinstanz erstellen. Dies ist der Ausgangspunkt für jedes PDF, das Sie generieren möchten. So gehen Sie vor:
 
 ```csharp
 // Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "45929_doc.pdf";
 string logFile = dataDir + "45929_log.xml";
+
 // PDF-Dokument erstellen
 Document document = new Document();
+```
+Dieser Code initialisiert eine neue`Document` Objekt und richtet Dateipfade für die Ausgabe-PDF- und Protokolldateien ein. Stellen Sie sicher, dass Sie ersetzen`"YOUR DOCUMENT DIRECTORY"` durch Ihren tatsächlichen Verzeichnispfad.
+
+## Schritt 2: Festlegen von Tagged Content-Attributen
+
+Als Nächstes richten wir den getaggten Inhalt für Ihr PDF ein. Dazu gehört das Definieren der Titel- und Sprachattribute.
+
+```csharp
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Sample of Note Elements");
 taggedContent.SetLanguage("en-US");
+```
+ Hier greifen wir auf die`TaggedContent` des Dokuments und Festlegen von Titel und Sprache. Dies ist für die Zugänglichkeitsstandards von entscheidender Bedeutung und verleiht Ihrem Dokument einen professionelleren Touch.
+
+## Schritt 3: Erstellen eines Absatzelements
+
+Jetzt fügen wir dem getaggten Inhalt ein Absatzelement hinzu. Dieses dient als Container für Ihre Notizen.
+
+```csharp
 // Absatzelement hinzufügen
 ParagraphElement paragraph = taggedContent.CreateParagraphElement();
 taggedContent.RootElement.AppendChild(paragraph);
+```
+ Durch die Schaffung einer`ParagraphElement`, wir stellen eine Basis bereit, zu der Notizelemente hinzugefügt werden. Es ist vergleichbar mit dem Legen des Fundaments für ein Haus, bevor die Wände gebaut werden.
+
+## Schritt 4: Notizelemente hinzufügen
+
+Jetzt kommt der spaßige Teil: Notizelemente hinzufügen! Sie können mehrere Notizen erstellen – machen wir das in drei Schritten!
+
+### Schritt 4.1: Die erste Note hinzufügen
+
+```csharp
 // NoteElement hinzufügen
 NoteElement note1 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note1);
-note1.SetText("Note with auto generate ID. ");
+note1.SetText("Note with auto generate ID.");
+```
+Dieser Code erstellt die erste Notiz mit einer automatisch generierten ID. Beachten Sie, wie einfach es ist, unserem vorherigen Absatz Inhalt hinzuzufügen.
+
+### Schritt 4.2: Die zweite Note hinzufügen
+
+```csharp
 // NoteElement hinzufügen
 NoteElement note2 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note2);
 note2.SetText("Note with ID = 'note_002'. ");
 note2.SetId("note_002");
+```
+ Für die zweite Notiz setzen wir explizit eine ID von`note_002`. Achten Sie unbedingt auf die IDs, da Sie damit später auf bestimmte Notizen verweisen können.
+
+### Schritt 4.3: Dritte Note hinzufügen
+
+```csharp
 // NoteElement hinzufügen
 NoteElement note3 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note3);
 note3.SetText("Note with ID = 'note_003'. ");
 note3.SetId("note_003");
-//Ausnahme muss ausgelöst werden – Aspose.Pdf.Tagged.TaggedException: Strukturelement mit ID='note_002' ist bereits vorhanden
-//note3.SetId("note_002");
-// Das resultierende Dokument entspricht nicht PDF/UA, wenn ClearId() für das Note Structure Element verwendet wird.
-//note3.ClearId();
+// Ausnahme muss ausgelöst werden – Aspose.Pdf.Tagged.TaggedException: Strukturelement mit ID='note_002' ist bereits vorhanden
+```
+ Diese dritte Notiz ist der zweiten sehr ähnlich, verwendet aber eine andere eindeutige ID. Seien Sie vorsichtig; der Versuch, eine weitere Notiz mit derselben ID zu erstellen wie`note_002` wird eine Ausnahme auslösen. 
+
+## Schritt 5: Speichern des Dokuments
+
+Sobald Sie Ihre Notizen hinzugefügt haben, ist es Zeit, das Dokument zu speichern!
+
+```csharp
 // Getaggtes PDF-Dokument speichern
 document.Save(outFile);
+```
+Diese einfache Zeile speichert Ihre gesamte harte Arbeit in der angegebenen PDF-Datei. 
+
+## Schritt 6: PDF/UA-Konformität validieren
+
+Um sicherzustellen, dass Ihr Dokument den Barrierefreiheitsstandards entspricht, können Sie es validieren.
+
+```csharp
 // Überprüfung der PDF/UA-Konformität
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
 ```
+Dieser Codeabschnitt prüft Ihr PDF auf den PDF/UA-Standard (Universal Accessibility). Sie erhalten einen booleschen Wert, der die Konformität anzeigt!
 
 ## Abschluss
 
-In diesem Tutorial haben Sie gelernt, wie Sie mit Aspose.PDF für .NET Notizstrukturelemente in einem PDF-Dokument erstellen. Mit strukturierten Notizelementen können Sie Ihrem PDF-Dokument zusätzliche, strukturierte Informationen hinzufügen.
+Und da haben Sie es! Sie haben jetzt erfolgreich Notizstrukturelemente in einem PDF-Dokument erstellt, die eine bessere Zugänglichkeit und Struktur ermöglichen – dank Aspose.PDF für .NET! Indem Sie diese Schritte befolgen, können Sie Ihre PDFs effizienter verwalten und benutzerfreundlicher gestalten. 
 
-### Häufig gestellte Fragen
+## Häufig gestellte Fragen
 
-#### F: Was ist der Zweck der Erstellung von Notizstrukturelementen in einem PDF-Dokument mit Aspose.PDF für .NET?
+### Was sind Notizstrukturelemente in PDFs?
+Notizelemente sind Anmerkungen oder Kommentare, die zu bestimmten Teilen einer PDF-Datei hinzugefügt werden, um die Klarheit und das Verständnis zu verbessern.
 
-A: Durch das Erstellen von Notizstrukturelementen in einem PDF-Dokument mit Aspose.PDF für .NET können Sie dem Inhalt des Dokuments strukturierte Notizen hinzufügen. Diese Notizen können zusätzlichen Kontext, Erklärungen oder Verweise auf bestimmte Teile des Inhalts bieten.
+### Ist Aspose.PDF für .NET kostenlos?
+Obwohl eine kostenlose Testversion angeboten wird, handelt es sich bei Aspose.PDF um ein kommerzielles Produkt. Die Preise variieren je nach Nutzung und erforderlichen Funktionen.
 
-#### F: Wie hilft die Aspose.PDF-Bibliothek beim Erstellen von Notizstrukturelementen in einem PDF-Dokument?
+### Kann ich mit Aspose.PDF andere Elementtypen erstellen?
+Ja! Aspose.PDF unterstützt zahlreiche Elemente wie Bilder, Tabellen und Hyperlinks, um Ihre Dokumente zu bereichern.
 
-A: Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, die Funktionen zum programmgesteuerten Erstellen, Bearbeiten und Konvertieren von PDF-Dokumenten bietet. In diesem Tutorial werden die markierten Inhaltsstrukturfunktionen der Bibliothek verwendet, um strukturierte Notizelemente innerhalb des Inhalts des PDF-Dokuments zu erstellen.
+### Was ist PDF/UA-Konformität?
+Durch die PDF/UA-Konformität wird sichergestellt, dass PDFs für Personen mit Behinderungen zugänglich sind und globalen Standards entsprechen.
 
-#### F: Was sind die Voraussetzungen zum Erstellen von Notizstrukturelementen in einem PDF-Dokument mit Aspose.PDF für .NET?
-
-A: Bevor Sie beginnen, stellen Sie sicher, dass Sie Visual Studio mit dem .NET-Framework installiert haben und dass in Ihrem Projekt auf die Aspose.PDF-Bibliothek für .NET verwiesen wird.
-
-#### F: Wie erstellt der bereitgestellte C#-Code Notizstrukturelemente im Inhalt des PDF-Dokuments?
-
-A: Der Code zeigt, wie Sie ein PDF-Dokument erstellen, strukturierte Notizelemente definieren und diese einem Absatz hinzufügen. Jede Notiz wird mit den von Aspose.PDF bereitgestellten Methoden erstellt, sodass Sie strukturierte Notizen in den Inhalt integrieren können.
-
-#### F: Kann ich den Inhalt und die Eigenschaften der von mir erstellten Notizstrukturelemente anpassen?
-
-A: Ja, Sie können den Inhalt und die Eigenschaften von Notizstrukturelementen anpassen, indem Sie die Methoden und Eigenschaften der Aspose.PDF-Bibliothek verwenden. Der Code zeigt, wie Sie den Text und die ID von Notizelementen festlegen, aber Sie können sie bei Bedarf weiter anpassen.
-
-#### F: Wie wird die hierarchische Beziehung zwischen den Elementen der Notizstruktur und dem Inhalt des Dokuments hergestellt?
-
- A: Die hierarchische Beziehung wird hergestellt, indem Notizstrukturelemente als untergeordnete Elemente anderer strukturierter Elemente, wie z. B. Absätze, hinzugefügt werden. Im Code werden Notizelemente an ein Absatzelement angehängt, indem das`AppendChild` Verfahren.
-
-#### F: Kann ich den Elementen der Notizstruktur eindeutige IDs zuweisen?
-
- A: Ja, Sie können den Notizstrukturelementen eindeutige IDs zuweisen, indem Sie`SetId` Methode. Der Code zeigt, wie die IDs von Notizelementen auf eindeutige Werte gesetzt werden.
-
-#### F: Was passiert, wenn ich versuche, einem Notizstrukturelement eine doppelte ID zuzuweisen?
-
-A: Der Versuch, einem Notizstrukturelement eine doppelte ID zuzuweisen, führt zu einer Ausnahme. Der im Tutorial bereitgestellte Code enthält einen Kommentar, der dieses Szenario veranschaulicht.
-
-#### F: Wie kann ich beim Erstellen von Notizstrukturelementen die PDF/UA-Konformität sicherstellen?
-
-A: Der im Tutorial bereitgestellte Code zeigt, wie die PDF/UA-Konformität mithilfe des`Validate` Methode. Indem Sie das Dokument anhand des PDF/UA-Standards validieren, können Sie sicherstellen, dass die hinzugefügten Notizstrukturelemente den Richtlinien zur Barrierefreiheit entsprechen.
-
-#### F: Kann ich mit diesem Ansatz einem vorhandenen PDF-Dokument Notizstrukturelemente hinzufügen?
-
-A: Ja, Sie können den bereitgestellten Ansatz ändern, um Notizstrukturelemente zu einem vorhandenen PDF-Dokument hinzuzufügen. Anstatt ein neues Dokument zu erstellen, laden Sie das vorhandene Dokument mit Aspose.PDF und folgen dann ähnlichen Schritten, um Notizelemente anzufügen.
+### Wo erhalte ich Support für Aspose.PDF?
+ Für Unterstützung besuchen Sie die[Aspose-Forum](https://forum.aspose.com/c/pdf/10) wo Sie Fragen stellen und Ihre Erfahrungen austauschen können.

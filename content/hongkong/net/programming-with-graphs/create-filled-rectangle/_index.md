@@ -153,7 +153,7 @@ Console.WriteLine("\nFilled rectangle object created successfully.\nFile saved a
 
 ## 結論
 
-現在你就得到它了！您已使用 Aspose.PDF for .NET 在 PDF 文件中成功建立了填滿矩形。這個強大的函式庫為 PDF 操作開闢了一個可能性的世界，讓您以程式設計方式建立令人驚嘆的文件。無論您是產生報表、發票或任何其他類型的 PDF，Aspose.PDF 都能滿足您的需求。
+現在你就擁有了！您已使用 Aspose.PDF for .NET 在 PDF 文件中成功建立了填滿矩形。這個強大的函式庫為 PDF 操作開闢了一個可能性的世界，讓您以程式設計方式建立令人驚嘆的文件。無論您是產生報表、發票或任何其他類型的 PDF，Aspose.PDF 都能滿足您的需求。
 
 ## 常見問題解答
 

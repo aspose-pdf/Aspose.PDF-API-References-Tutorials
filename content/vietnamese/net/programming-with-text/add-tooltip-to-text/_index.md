@@ -2,108 +2,107 @@
 title: Thêm chú giải công cụ vào văn bản trong tệp PDF
 linktitle: Thêm chú giải công cụ vào văn bản trong tệp PDF
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Tìm hiểu cách thêm chú giải công cụ vào văn bản trong tệp PDF bằng Aspose.PDF cho .NET.
+description: Tìm hiểu cách thêm chú giải công cụ vào văn bản trong tệp PDF bằng Aspose.PDF cho .NET. Cải thiện tệp PDF của bạn bằng văn bản thông tin di chuột dễ dàng.
 type: docs
 weight: 90
 url: /vi/net/programming-with-text/add-tooltip-to-text/
 ---
-Hướng dẫn này sẽ hướng dẫn bạn quy trình thêm chú giải công cụ vào văn bản trong tệp PDF bằng Aspose.PDF cho .NET. Mã nguồn C# được cung cấp sẽ trình bày các bước cần thiết.
+## Giới thiệu
 
-## Yêu cầu
-Trước khi bắt đầu, hãy đảm bảo bạn có những điều sau:
+Khi nói đến việc tạo PDF hấp dẫn và tương tác, chú giải công cụ có thể vô cùng hữu ích. Bạn biết những hộp bật lên nhỏ cung cấp cho bạn thông tin bổ sung khi bạn di chuột qua một thứ gì đó không? Chúng có thể cung cấp ngữ cảnh, mô tả hoặc thậm chí là một số lời khuyên mà không làm lộn xộn tài liệu của bạn. Trong hướng dẫn này, chúng tôi sẽ hướng dẫn cách thêm chú giải công cụ vào văn bản trong tệp PDF bằng thư viện Aspose.PDF cho .NET. Cho dù bạn là một nhà phát triển dày dạn kinh nghiệm hay chỉ mới bắt đầu làm quen với thế giới PDF, bạn đã đến đúng nơi rồi! Vậy hãy cùng tìm hiểu nhé!
 
-- Visual Studio hoặc bất kỳ trình biên dịch C# nào khác được cài đặt trên máy của bạn.
-- Aspose.PDF cho thư viện .NET. Bạn có thể tải xuống từ trang web chính thức của Aspose hoặc sử dụng trình quản lý gói như NuGet để cài đặt.
+## Điều kiện tiên quyết
 
-## Bước 1: Thiết lập dự án
-1. Tạo một dự án C# mới trong môi trường phát triển mà bạn thích.
-2. Thêm tham chiếu đến thư viện Aspose.PDF cho .NET.
+Trước khi bắt đầu phần mã hóa, hãy đảm bảo rằng bạn có mọi thứ cần thiết để theo dõi một cách suôn sẻ.
 
-## Bước 2: Nhập các không gian tên cần thiết
-Trong tệp mã mà bạn muốn thêm chú giải công cụ vào văn bản, hãy thêm lệnh using sau vào đầu tệp:
+### Đã cài đặt Visual Studio
+Điều cần thiết là phải cài đặt Visual Studio trên máy của bạn vì đây sẽ là môi trường phát triển chính cho các ứng dụng .NET.
+
+### Aspose.PDF cho Thư viện .NET
+ Bạn cũng sẽ cần phải có thư viện Aspose.PDF theo ý của bạn. Bạn có thể[tải xuống ở đây](https://releases.aspose.com/pdf/net/). Hãy đảm bảo đưa nó vào phần tham khảo dự án của bạn.
+
+### Kiến thức cơ bản về C#
+Nền tảng về C# sẽ giúp ích rất nhiều vì chúng ta sẽ mã hóa bằng ngôn ngữ đó. Nhưng đừng lo lắng—tôi sẽ hướng dẫn bạn từng bước!
+
+### Một tài liệu PDF để làm việc
+Bạn có thể bắt đầu bằng một tài liệu PDF trống, như chúng tôi làm trong ví dụ này, hoặc sử dụng một tài liệu PDF có sẵn nếu bạn thích.
+
+Bây giờ, chúng ta hãy chuyển sang phần mã hóa!
+
+## Nhập gói 
+
+ Bước đầu tiên trong cuộc phiêu lưu mã hóa của chúng ta bao gồm việc nhập các gói cần thiết. Mở dự án Visual Studio của bạn và ở đầu tệp C#, bạn sẽ muốn thêm nội dung sau`using` chỉ thị:
 
 ```csharp
-using Aspose.Pdf;
 using Aspose.Pdf.Forms;
 using Aspose.Pdf.Text;
 ```
 
-## Bước 3: Thiết lập thư mục tài liệu
- Trong mã, hãy xác định vị trí dòng ghi`string dataDir = "YOUR DOCUMENT DIRECTORY";` và thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn đến thư mục lưu trữ tài liệu của bạn.
+Các gói này cung cấp cho bạn quyền truy cập vào tất cả các lớp và chức năng bạn cần để tạo và xử lý tài liệu PDF.
 
-## Bước 4: Tạo một tài liệu mẫu có văn bản
- Tạo một cái mới`Document`đối tượng và thêm các trang có đoạn văn bản. Trong mã được cung cấp, hai đoạn văn bản được thêm vào tài liệu với văn bản chú giải công cụ tương ứng.
+## Bước 1: Thiết lập thư mục tài liệu của bạn
 
-```csharp
-Document doc = new Document();
-doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a tooltip"));
-doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a very long tooltip"));
-doc.Save(outputFile);
-```
+Trước tiên, chúng ta cần thiết lập đường dẫn nơi bạn sẽ lưu tài liệu. Hãy nghĩ về điều này như việc tìm một vị trí thoải mái trong hệ thống tệp của bạn, nơi lưu trữ tất cả các sáng tạo của bạn.
 
-## Bước 5: Mở tài liệu và tìm các đoạn văn bản
- Tải tài liệu đã tạo bằng cách sử dụng`Document` constructor và tìm các đoạn văn bản cần chú giải công cụ bằng cách sử dụng`TextFragmentAbsorber`.
-
-```csharp
-Document document = new Document(outputFile);
-TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
-document.Pages.Accept(absorb);
-TextFragmentCollection textFragments = absorb.TextFragments;
-```
-
-## Bước 6: Thêm chú giải công cụ vào các đoạn văn bản
- Lặp qua các đoạn văn bản đã trích xuất và tạo các nút vô hình tại vị trí của chúng. Gán văn bản chú giải công cụ mong muốn cho`AlternateName` tài sản của`ButtonField`. Thêm các trường nút vào biểu mẫu của tài liệu.
-
-```csharp
-foreach(TextFragment fragment in textFragments)
-{
-     ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
-     field. AlternateName = "Tooltip for text.";
-     document.Form.Add(field);
-}
-```
-
-## Bước 7: Lặp lại cho các đoạn văn bản bổ sung có chú giải công cụ dài
-Lặp lại bước 5 và 6 cho các đoạn văn bản có chú giải công cụ dài. Sửa đổi tiêu chí tìm kiếm và văn bản chú giải công cụ cho phù hợp.
-
-```csharp
-absorb = new TextFragmentAbsorber("Move the mouse cursor here to display a very long tooltip");
-document.Pages.Accept(absorb);
-textFragments = absorb.TextFragments;
-
-foreach(TextFragment fragment in textFragments)
-{
-     ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
-     field. AlternateName = "Long tooltip text goes here...";
-     document.Form.Add(field);
-}
-```
-
-## Bước 8: Lưu tài liệu đã sửa đổi
- Lưu tài liệu PDF đã sửa đổi bằng cách sử dụng`Save` phương pháp của`Document` sự vật.
-
-```csharp
-document. Save(outputFile);
-```
-
-### Mã nguồn mẫu để Thêm chú giải công cụ vào văn bản bằng Aspose.PDF cho .NET 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outputFile = dataDir + "Tooltip_out.pdf";
-// Tạo tài liệu mẫu có văn bản
+```
+
+ Hãy chắc chắn thay thế`YOUR DOCUMENT DIRECTORY` với đường dẫn thực tế trên máy của bạn.
+
+## Bước 2: Tạo một tài liệu PDF mẫu
+
+Tiếp theo, đã đến lúc tạo một tệp PDF đơn giản có một số văn bản. Đây là nơi chúng ta bắt đầu quá trình sáng tạo của mình!
+
+```csharp
+//Tạo tài liệu mẫu có văn bản
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a tooltip"));
 doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a very long tooltip"));
 doc.Save(outputFile);
+```
+
+Ở bước này, chúng ta tạo một tài liệu, thêm hai đoạn văn bản và lưu vào đường dẫn đã chỉ định trước đó.
+
+## Bước 3: Mở tài liệu để xử lý
+
+Bây giờ chúng ta đã tạo xong tài liệu, hãy mở nó ra để có thể làm việc với các chú giải công cụ đó!
+
+```csharp
 // Mở tài liệu có văn bản
 Document document = new Document(outputFile);
-//Tạo đối tượng TextAbsorber để tìm tất cả các cụm từ khớp với biểu thức chính quy
+```
+
+Ở đây, chúng ta chỉ cần tải tài liệu vừa tạo.
+
+## Bước 4: Tạo một công cụ hấp thụ văn bản để tìm các đoạn văn bản
+
+Chúng ta cần tìm các đoạn văn bản mà chúng ta muốn thêm chú giải công cụ. Điều này giống như sử dụng kính lúp để làm nổi bật một phần cụ thể của bản đồ lớn! 
+
+```csharp
+// Tạo đối tượng TextAbsorber để tìm tất cả các cụm từ khớp với biểu thức chính quy
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
-// Chấp nhận bộ hấp thụ cho các trang tài liệu
 document.Pages.Accept(absorber);
+```
+
+## Bước 5: Trích xuất các đoạn văn bản
+
+Tiếp theo, chúng ta trích xuất các đoạn văn bản tìm được từ bước trước.
+
+```csharp
 // Lấy các đoạn văn bản đã trích xuất
 TextFragmentCollection textFragments = absorber.TextFragments;
+```
+
+Đoạn trích này cho phép chúng ta giữ lại các tham chiếu cho các đoạn văn bản mà chúng ta quan tâm.
+
+## Bước 6: Lặp qua các đoạn và thêm chú giải công cụ
+
+Bây giờ đến phần thú vị! Chúng ta sẽ lặp qua từng đoạn văn bản và thêm chú giải công cụ vào từng đoạn. Hãy tưởng tượng việc gói những món quà nhỏ (chú giải công cụ) xung quanh các mục cụ thể (đoạn văn bản).
+
+```csharp
 // Lặp lại các đoạn
 foreach (TextFragment fragment in textFragments)
 {
@@ -114,7 +113,16 @@ foreach (TextFragment fragment in textFragments)
 	// Thêm trường nút vào tài liệu
 	document.Form.Add(field);
 }
-// Tiếp theo sẽ là mẫu của tooltip rất dài
+```
+
+Ở mỗi lần lặp lại, chúng tôi tạo một trường nút tương ứng với vị trí của đoạn văn bản và gán văn bản chú giải công cụ cho trường đó.
+
+## Bước 7: Lặp lại cho các chú giải công cụ dài
+
+Giống như cách chúng ta thêm một chú giải công cụ đơn giản, chúng ta có thể làm tương tự với văn bản dài hơn. Hãy cùng mở rộng khả năng sáng tạo của chúng ta!
+
+```csharp
+// Tiếp theo sẽ là mẫu chú giải công cụ rất dài
 absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a very long tooltip");
 document.Pages.Accept(absorber);
 textFragments = absorber.TextFragments;
@@ -132,53 +140,40 @@ foreach (TextFragment fragment in textFragments)
 							" deserunt mollit anim id est laborum.";
 	document.Form.Add(field);
 }
+```
+
+Ở đây, chúng ta thực hiện cùng một công việc như trước, nhưng với chú giải công cụ mở rộng hơn nhiều.
+
+## Bước 8: Lưu tài liệu của bạn
+
+Bước cuối cùng là lưu tài liệu của bạn cùng với tất cả các chú giải công cụ mới sáng bóng đó. 
+
+```csharp
 // Lưu tài liệu
 document.Save(outputFile);
 ```
 
+Và thế là xong! Bạn đã thêm chú giải công cụ vào PDF, giúp PDF thân thiện với người dùng và tương tác hơn.
+
 ## Phần kết luận
-Bạn đã thêm thành công chú giải công cụ vào văn bản trong tài liệu PDF bằng Aspose.PDF cho .NET. Tệp PDF kết quả hiện có thể được tìm thấy tại đường dẫn tệp đầu ra đã chỉ định.
+
+Bạn đã có hướng dẫn dễ làm theo về cách thêm chú giải công cụ vào văn bản trong tệp PDF bằng Aspose.PDF cho .NET. Kỹ thuật này có thể cải thiện đáng kể trải nghiệm của người dùng, giúp tài liệu của bạn nhiều thông tin hơn mà không làm người đọc choáng ngợp với quá nhiều văn bản cùng một lúc. 
+
+Chỉ cần di chuột qua một từ hoặc cụm từ, người đọc sẽ nhận được thông tin có liên quan, có giá trị mà không lộn xộn. Vì vậy, hãy xắn tay áo lên và thử xem! Trước khi bạn biết điều đó, bạn có thể tạo ra đủ loại tài liệu hấp dẫn và nổi bật.
 
 ## Câu hỏi thường gặp
 
-#### H: Trọng tâm của hướng dẫn này là gì?
+### Aspose.PDF dành cho .NET là gì?
+Aspose.PDF for .NET là thư viện cho phép các nhà phát triển tạo, chỉnh sửa và chuyển đổi tài liệu PDF trong các ứng dụng .NET.
 
-A: Hướng dẫn này tập trung vào việc thêm chú giải công cụ vào văn bản trong tệp PDF bằng thư viện Aspose.PDF cho .NET. Mã nguồn C# được cung cấp sẽ trình bày các bước cần thiết để thực hiện việc này.
+### Tôi có thể sử dụng Aspose.PDF miễn phí không?
+ Có, Aspose cung cấp bản dùng thử miễn phí để bạn khám phá các tính năng của nó! Bạn có thể tìm thấy nó[đây](https://releases.aspose.com/).
 
-#### H: Những không gian tên nào cần được nhập cho hướng dẫn này?
+### Có tùy chọn cấp phép nào cho Aspose.PDF không?
+Có, bạn có thể mua giấy phép hoặc xin giấy phép tạm thời. Kiểm tra các tùy chọn[đây](https://purchase.aspose.com/).
 
-A: Trong tệp mã mà bạn muốn thêm chú giải công cụ vào văn bản, hãy nhập các không gian tên sau vào đầu tệp:
+### Tôi có thể thêm các thành phần tương tác khác ngoài chú giải công cụ bằng Aspose.PDF không?
+Hoàn toàn có thể! Aspose.PDF cho phép thêm nhiều thành phần tương tác khác nhau như siêu liên kết, nút và biểu mẫu.
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Forms;
-using Aspose.Pdf.Text;
-```
-
-#### H: Làm thế nào để chỉ định thư mục tài liệu?
-
- A: Trong mã, tìm dòng`string dataDir = "YOUR DOCUMENT DIRECTORY";` và thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế đến thư mục tài liệu của bạn.
-
-#### H: Làm thế nào tôi có thể tạo một tài liệu mẫu có văn bản?
-
- A: Ở Bước 4, bạn sẽ tạo một`Document` đối tượng và thêm các trang có đoạn văn bản. Mã được cung cấp sẽ thêm hai đoạn văn bản có văn bản chú giải công cụ tương ứng.
-
-#### H: Làm thế nào để mở tài liệu và tìm các đoạn văn bản?
-
- A: Ở Bước 5, bạn sẽ tải tài liệu đã tạo bằng cách sử dụng`Document` constructor và tìm các đoạn văn bản yêu cầu chú giải công cụ bằng cách sử dụng`TextFragmentAbsorber`.
-
-#### H: Làm thế nào để thêm chú giải công cụ vào đoạn văn bản?
-
- A: Ở Bước 6, bạn sẽ lặp qua các đoạn văn bản đã trích xuất và tạo các nút vô hình tại vị trí của chúng. Văn bản chú giải công cụ được gán cho`AlternateName` tài sản của`ButtonField`, được thêm vào mẫu của tài liệu.
-
-#### H: Làm thế nào để lặp lại quy trình này cho các đoạn văn bản bổ sung có chú giải công cụ dài?
-
-A: Đối với các đoạn văn bản có chú giải công cụ dài, hãy lặp lại Bước 5 và 6. Sửa đổi tiêu chí tìm kiếm và văn bản chú giải công cụ cho phù hợp.
-
-#### H: Làm thế nào để lưu tài liệu đã chỉnh sửa?
-
- A: Ở Bước 8, bạn sẽ lưu tài liệu PDF đã sửa đổi bằng cách sử dụng`Save` phương pháp của`Document` sự vật.
-
-#### H: Nội dung chính rút ra từ hướng dẫn này là gì?
-
-A: Bằng cách làm theo hướng dẫn này, bạn đã học cách cải thiện tài liệu PDF của mình bằng cách thêm chú giải công cụ vào văn bản bằng Aspose.PDF cho .NET. Điều này có thể cung cấp thông tin bổ sung có giá trị cho người đọc khi họ tương tác với nội dung PDF.
+### Tôi có thể tìm thêm tài liệu về Aspose.PDF ở đâu?
+ Bạn có thể kiểm tra tài liệu[đây](https://reference.aspose.com/pdf/net/) để được hướng dẫn chi tiết hơn.

@@ -2,7 +2,7 @@
 title: Získejte XFAProperties
 linktitle: Získejte XFAProperties
 second_title: Aspose.PDF pro .NET API Reference
-description: tomto komplexním kurzu se dozvíte, jak získat vlastnosti XFA pomocí Aspose.PDF pro .NET. Včetně průvodce krok za krokem.
+description: tomto komplexním kurzu se dozvíte, jak získat vlastnosti XFA pomocí Aspose.PDF for .NET. Včetně průvodce krok za krokem.
 type: docs
 weight: 160
 url: /cs/net/programming-with-forms/get-xfaproperties/

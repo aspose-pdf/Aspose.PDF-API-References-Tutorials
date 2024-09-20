@@ -33,7 +33,7 @@ url: /zh-hant/net/programming-with-document/setpropertiesforprintdialog/
 
 1. 右鍵單擊解決方案資源管理器中的“引用”。
 2. 選擇「新增引用」並瀏覽以尋找 Aspose.PDF 庫。
-3. 按一下「確定」將其新增至您的專案。
+3. 按一下「確定」將其新增至您的專案中。
 
 這允許您在程式碼中存取 Aspose.PDF 的功能。
 

@@ -2,105 +2,47 @@
 title: 在 PDF 文件中渲染表格
 linktitle: 在 PDF 文件中渲染表格
 second_title: Aspose.PDF for .NET API 參考
-description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中顯示表格。
+description: 使用 Aspose.PDF for .NET 渲染表格，輕鬆建立專業 PDF。按照我們的逐步指南來產生主文檔。
 type: docs
 weight: 170
 url: /zh-hant/net/programming-with-tables/render-table/
 ---
-在本教學中，我們將逐步指導您使用 Aspose.PDF for .NET 在 PDF 文件中顯示表格。我們將解釋提供的 C# 原始程式碼並向您展示如何實現它。
+## 介紹
 
-## 第 1 步：建立文檔
-首先，我們將建立一個新的 PDF 文件：
+以程式設計方式建立具有專業外觀的 PDF 似乎是一項艱鉅的任務，但使用 Aspose.PDF for .NET，這一切變得輕而易舉。無論您是產生報表、發票或任何其他需要表格資料的文件類型，Aspose.PDF 都能提供您所需的工具。在本教學中，我們將逐步探索如何在 PDF 文件中呈現表格。最後，您將深入了解如何輕鬆操作表格、管理頁面屬性和儲存 PDF 文件。
+
+## 先決條件
+
+在我們深入研究程式碼之前，您需要以下內容：
+
+-  Visual Studio：確保您的電腦上安裝了 Visual Studio。你可以下載它[這裡](https://visualstudio.microsoft.com/downloads/).
+- Aspose.PDF for .NET：您可以輕鬆地從以下位置下載 Aspose.PDF 庫：[Aspose 發佈頁面](https://releases.aspose.com/pdf/net/).
+- C# 基礎知識：了解 C# 基礎知識將幫助您更好地進行操作。
+- .NET Framework：理想情況下，請確保您在相容的 .NET 環境中運作。
+
+設定好這些先決條件後，您就可以開始建立 PDF 文件了！
+
+## 導入包
+
+在 C# 檔案的開頭，您需要匯入必要的 Aspose.PDF 命名空間。這使您可以在我們的專案中使用庫功能。
 
 ```csharp
-//文檔目錄的路徑
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-//建立一個新文檔
-Document doc = new Document();
+using System;
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-## 步驟 2：設定頁邊距和方向
-接下來，我們將配置頁邊距並將方向設定為橫向模式：
+請確定您已在專案中新增了對 Aspose.PDF 庫的必要引用。如果您使用 NuGet，則可以透過搜尋輕鬆新增它`Aspose.PDF`.
+
+現在我們已經完成了所有設置，讓我們將在 PDF 文件中渲染表格的過程分解為可管理的步驟。不用擔心;我將透過明確的說明引導您完成每個步驟！
+
+## 第 1 步：設定文件和頁面訊息
+
+首先，我們需要建立一個新文件並配置其頁面設定。以下是如何執行此操作：
 
 ```csharp
-PageInfo pageInfo = doc.PageInfo;
-Aspose.Pdf.MarginInfo marginInfo = pageInfo.Margin;
-
-marginInfo. Left = 37;
-marginInfo. Right = 37;
-marginInfo. Top = 37;
-marginInfo.Bottom = 37;
-
-pageInfo.IsLandscape = true;
-```
-
-## 步驟 3：建立表格和列
-現在讓我們建立一個表格並設定列寬：
-
-```csharp
-Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-table. ColumnWidths = "50 100";
-```
-
-## 步驟 4：在表格中新增行和儲存格
-接下來，我們將使用循環將行和單元格新增至表中：
-
-```csharp
-for (int i = 1; i <= 120; i++)
-{
-     Aspose.Pdf.Row row = table.Rows.Add();
-     row. FixedRowHeight = 15;
-     Aspose.Pdf.Cell cell1 = row.Cells.Add();
-     cell1.Paragraphs.Add(new TextFragment("Content 1"));
-     Aspose.Pdf.Cell cell2 = row.Cells.Add();
-     cell2.Paragraphs.Add(new TextFragment("HHHHH"));
-}
-```
-
-## 第5步：將表格加入到頁面
-現在讓我們將表格新增到文件頁面：
-
-```csharp
-Page curPage = doc.Pages.Add();
-Aspose.Pdf.Paragraphs paragraphs = curPage.Paragraphs;
-paragraphs. Add(table);
-```
-
-## 步驟 6：在新頁面上顯示表格
-接下來，我們將建立一個新表並將“IsInNewPage”屬性設為“true”以在新頁面上顯示該表：
-
-```csharp
-Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-table. ColumnWidths = "100 100";
-for (int i = 1; i <= 10; i++)
-{
-     Aspose.Pdf.Row row = table1.Rows.Add();
-     Aspose.Pdf.Cell cell1 = row.Cells.Add();
-     cell1.Paragraphs.Add(new TextFragment("LAAAAAAA"));
-     Aspose.Pdf.Cell cell2 = row.Cells.Add();
-     cell2.Paragraphs.Add(new TextFragment("LAAGGGGGG"));
-}
-table1.IsInNewPage = true;
-paragraphs. Add(table1);
-```
-
-## 第7步：儲存PDF
-最後，我們儲存PDF文檔：
-
-```csharp
-dataDir = dataDir + "IsNewPageProperty_Test_out.pdf";
-doc.Save(dataDir);
-
-Console.WriteLine("\nTable displayed successfully on a page.\nFile saved at location: " + dataDir);
-```
-
-### 使用 Aspose.PDF for .NET 的渲染表示範例原始碼
-
-```csharp
-//文檔目錄的路徑。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-
 Document doc = new Document();
 PageInfo pageInfo = doc.PageInfo;
 Aspose.Pdf.MarginInfo marginInfo = pageInfo.Margin;
@@ -111,63 +53,123 @@ marginInfo.Top = 37;
 marginInfo.Bottom = 37;
 
 pageInfo.IsLandscape = true;
-
-Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-table.ColumnWidths = "50 100";
-//新增頁面。
-Page curPage = doc.Pages.Add();
-for (int i = 1; i <= 120; i++)
-{
-	Aspose.Pdf.Row row = table.Rows.Add();
-	row.FixedRowHeight = 15;
-	Aspose.Pdf.Cell cell1 = row.Cells.Add();
-	cell1.Paragraphs.Add(new TextFragment("Content 1"));
-	Aspose.Pdf.Cell cell2 = row.Cells.Add();
-	cell2.Paragraphs.Add(new TextFragment("HHHHH"));
-}
-Aspose.Pdf.Paragraphs paragraphs = curPage.Paragraphs;
-paragraphs.Add(table);
-/********************************************/
-Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-table.ColumnWidths = "100 100";
-for (int i = 1; i <= 10; i++)
-{
-	Aspose.Pdf.Row row = table1.Rows.Add();
-	Aspose.Pdf.Cell cell1 = row.Cells.Add();
-	cell1.Paragraphs.Add(new TextFragment("LAAAAAAA"));
-	Aspose.Pdf.Cell cell2 = row.Cells.Add();
-	cell2.Paragraphs.Add(new TextFragment("LAAGGGGGG"));
-}
-table1.IsInNewPage = true;
-//我想將表 1 保留到下一頁...
-paragraphs.Add(table1);
-dataDir = dataDir + "IsNewPageProperty_Test_out.pdf";
-doc.Save(dataDir);
-
-Console.WriteLine("\nTable render successfully on a page.\nFile saved at " + dataDir);
 ```
 
+解釋： 
+- 我們先定義文檔的保存位置（`dataDir`）。 
+- 然後，我們建立一個新的實例`Document`班級。 
+- 我們配置頁邊距以在桌子周圍創造一些呼吸空間。
+- 最後，我們將文件設為橫向，這有助於顯示更寬的表格。
+
+## 第 2 步：建立第一個表
+
+接下來，讓我們建立第一個表並用一些範例資料填充它：
+
+```csharp
+Aspose.Pdf.Table table = new Aspose.Pdf.Table();
+table.ColumnWidths = "50 100"; //定義列寬
+```
+
+說明：在這裡，我們實例化`Table`類別並設定列寬。第一列的寬度為 50 個單位，第二列的寬度為 100 個單位。
+
+## 步驟 3：用行填滿表
+
+現在，讓我們循環新增行到表中：
+
+```csharp
+Page curPage = doc.Pages.Add(); //新增頁面
+for (int i = 1; i <= 120; i++)
+{
+    Aspose.Pdf.Row row = table.Rows.Add();
+    row.FixedRowHeight = 15; //設定行的固定高度
+    
+    Aspose.Pdf.Cell cell1 = row.Cells.Add();
+    cell1.Paragraphs.Add(new TextFragment("Content 1"));
+    
+    Aspose.Pdf.Cell cell2 = row.Cells.Add();
+    cell2.Paragraphs.Add(new TextFragment("HHHHH"));
+}
+```
+
+解釋： 
+- 在這裡我們建立一個新頁面來新增我們的表格。
+- 我們使用一個`for`循環向表中新增 120 行。每行的固定高度為 15 個單位。
+- 在每一行中，我們添加兩個單元格並用文字填充它們。
+
+## 步驟 4：將第一個表格新增至頁面
+
+填充表格後，我們會將其新增至目前頁面：
+
+```csharp
+Aspose.Pdf.Paragraphs paragraphs = curPage.Paragraphs;
+paragraphs.Add(table);
+```
+
+說明：此步驟只是將我們建立的表格新增至目前頁面的段落中，使表格在 PDF 文件中可見。
+
+## 第 5 步：建立第二個表
+
+現在，讓我們建立第二個包含不同內容的表格並將其新增至新頁面：
+
+```csharp
+Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
+table1.ColumnWidths = "100 100";
+for (int i = 1; i <= 10; i++)
+{
+    Aspose.Pdf.Row row = table1.Rows.Add();
+    Aspose.Pdf.Cell cell1 = row.Cells.Add();
+    cell1.Paragraphs.Add(new TextFragment("LAAAAAAA"));
+    
+    Aspose.Pdf.Cell cell2 = row.Cells.Add();
+    cell2.Paragraphs.Add(new TextFragment("LAAGGGGGG"));
+}
+table1.IsInNewPage = true; //設定第二個表顯示在新頁面上
+paragraphs.Add(table1);
+```
+
+解釋： 
+- 此程式碼片段建立一個包含兩列的新表，均為 100 個單位寬。
+- 一個`for`循環新增 10 行範例內容。
+- 透過設定`table1.IsInNewPage`為了做到這一點，我們確保表格出現在新頁面上，使內容井井有條且整潔。
+
+## 第 6 步：儲存文檔
+
+現在我們的表格已經準備好了，讓我們儲存我們的文件：
+
+```csharp
+dataDir = dataDir + "IsNewPageProperty_Test_out.pdf";
+doc.Save(dataDir);
+```
+
+說明：我們指定檔案名稱並將文件保存在定義的目錄中。當您執行此程式碼時，會出現一個標題為`IsNewPageProperty_Test_out.pdf`將在您指定的位置建立。
+
+## 步驟7：確認訊息
+
+最後，為了讓使用者知道一切順利，我們可以添加一個友善的控制台訊息：
+
+```csharp
+Console.WriteLine("\nTable rendered successfully on a page.\nFile saved at " + dataDir);
+```
+
+說明：這是確認操作是否成功以及使用者可以在其中找到新 PDF 檔案的簡單方法。
+
 ## 結論
-恭喜！現在您已經了解如何使用 Aspose.PDF for .NET 在 PDF 文件中顯示表格。本逐步指南向您展示如何建立文件、配置頁邊距和方向、新增表格以及在新頁面上顯示表格。現在您可以將這些知識應用到您自己的專案中。
 
-### PDF 文件中渲染表的常見問題解答
+現在你就擁有了！您已使用 Aspose.PDF for .NET 成功渲染了 PDF 文件中的表格。只需幾行程式碼，您就可以以有組織的格式處理和呈現大量數據，使您的文件既資訊豐富又具有視覺吸引力。無論您是在處理庫存清單、財務報告還是教育文檔，表格都是一目了然地傳達複雜訊息的絕佳方式。
 
-#### Q：如何修改表格的外觀，例如更改儲存格顏色或新增邊框？
+## 常見問題解答
 
- A：要修改表格的外觀，可以設定表格的各種屬性`Aspose.Pdf.Table`及其細胞。例如，您可以設定`BackgroundColor`單元格的屬性來變更其背景顏色。您也可以設定`Border`表格或單一儲存格的屬性來新增邊框。此外，您還可以透過修改表格內容來自訂字體、文字顏色和對齊方式。`TextState`的`TextFragment`新增到單元格的物件。
+### 我可以自訂 Aspose.PDF 中表格的外觀嗎？  
+絕對地！您可以調整顏色、邊框、字體樣式和其他屬性來增強表格的外觀。
 
-#### Q：我可以在表格中新增頁首或頁尾嗎？
+### Aspose.PDF 可以免費使用嗎？  
+ Aspose.PDF提供免費試用版，但如需商業用途，則需購買。您可以查看定價[這裡](https://purchase.aspose.com/buy).
 
-答：是的，您可以透過在表格的開頭或結尾建立附加行並在儲存格中設定適當的內容來為表格新增頁首或頁尾。您可以透過在這些特定行中新增不同的樣式或內容來獨立於表格內容的其餘部分自訂頁首或頁尾。
+### 如何獲得 Aspose.PDF 問題的支援？  
+您可以從 Aspose 支援論壇尋求協助[這裡](https://forum.aspose.com/c/pdf/10).
 
-#### Q：如何控製表格在頁面上的位置？
+### 免費試用版有任何限制嗎？  
+是的，試用版可能有某些限制，例如在產生的文件上加浮水印。要獲得完整功能，請考慮取得臨時許可證[這裡](https://purchase.aspose.com/temporary-license/).
 
-A：要控製表格在頁面上的位置，您可以調整`MarginInfo`的`PageInfo`目的。這`MarginInfo`允許您設定頁面的左、右、上、下邊距，這會影響表格的可用空間。您也可以使用`PositioningType`的財產`Aspose.Pdf.Table`控制其在頁面內容區域內的水平和垂直對齊。
-
-#### Q：我可以將表格匯出為不同的文件格式，例如 Excel 或 CSV 嗎？
-
-答：Aspose.PDF for .NET 主要是為處理 PDF 文件而設計的。雖然它可以將 PDF 文件匯出為圖像或 XPS，但它不直接支援將表格匯出為 Excel 或 CSV 等格式。要將表格資料匯出為不同的文件格式，您可能需要使用其他庫或方法將 PDF 內容轉換為所需的格式。
-
-#### Q：如何在表格單元格中新增超連結？
-
-答：若要為表格儲存格新增超鏈接，您可以使用`Aspose.Pdf.WebHyperlink`類別來建立超鏈接，然後將其作為錨點添加到`TextFragment`細胞內。這允許您將 URL 或連結目標與單元格內的特定文字或內容相關聯，從而建立可點擊的超連結。
+### 在哪裡可以找到有關 Aspose.PDF 功能的更多資訊？  
+您可以探索可用的綜合文檔[這裡](https://reference.aspose.com/pdf/net/).

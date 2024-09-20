@@ -12,7 +12,7 @@ Ebben a részletes útmutatóban végigvezetjük az egyéni címkenevek beállí
 
 ## Bevezetés
 
-A PDF-dokumentumok gyakran tartalmaznak összetett tartalmat, például táblázatokat, képeket és szöveget. Ahhoz, hogy ezek a dokumentumok minden felhasználó számára elérhetőek legyenek, elengedhetetlen a megfelelő címkézés használata. Az egyéni címkenevek lehetővé teszik, hogy értelmes és leíró neveket adjon meg a PDF-ben található elemeknek, így a képernyőolvasók és más segítő technológiák könnyebben értelmezhetik a tartalmat.
+A PDF-dokumentumok gyakran tartalmaznak összetett tartalmat, például táblázatokat, képeket és szöveget. Ahhoz, hogy ezek a dokumentumok minden felhasználó számára elérhetőek legyenek, elengedhetetlen a megfelelő címkézés használata. Az egyéni címkenevek lehetővé teszik, hogy értelmes és leíró neveket adjon meg a PDF-ben található elemeknek, megkönnyítve a képernyőolvasók és más kisegítő technológiák számára a tartalom értelmezését.
 
 ## Előfeltételek
 

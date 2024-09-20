@@ -9,7 +9,7 @@ url: /zh-hant/net/programming-with-forms/delete-form-field/
 ---
 ## 介紹
 
-您是否曾經遇到過需要修改 PDF 文件的情況，特別是透過刪除表單欄位？無論是不再有用的煩人文字方塊還是過時的輸入字段，了解如何刪除 PDF 中的表單欄位都可以為您節省大量時間和麻煩。在本教學中，我們將深入了解 Aspose.PDF for .NET 的世界，這是一個功能強大的程式庫，可讓您輕鬆操作 PDF 文件。在本指南結束時，您將掌握輕鬆從 PDF 文件中刪除表單欄位的知識。
+您是否曾經遇到過需要修改 PDF 文件的情況，特別是刪除表單欄位？無論是不再有用的煩人文字方塊還是過時的輸入字段，了解如何刪除 PDF 中的表單欄位都可以為您節省大量時間和麻煩。在本教學中，我們將深入了解 Aspose.PDF for .NET 的世界，這是一個功能強大的程式庫，可讓您輕鬆操作 PDF 文件。在本指南結束時，您將掌握輕鬆從 PDF 文件中刪除表單欄位的知識。
 
 ## 先決條件
 
@@ -69,7 +69,7 @@ pdfDocument.Save(dataDir);
 
 ## 步驟5：確認刪除
 
-最後，讓我們新增一點確認訊息，讓我們知道該欄位已成功刪除。這是一個很好的接觸，可以確保一切順利。
+最後，讓我們添加一點確認訊息，讓我們知道該欄位已成功刪除。這是一個很好的接觸，可以確保一切順利。
 
 ```csharp
 Console.WriteLine("\nParticular field deleted successfully.\nFile saved at " + dataDir);
@@ -77,7 +77,7 @@ Console.WriteLine("\nParticular field deleted successfully.\nFile saved at " + d
 
 ## 結論
 
-現在你就得到它了！使用 Aspose.PDF for .NET 從 PDF 文件中刪除表單欄位是一個簡單的過程，只需幾個步驟即可完成。有了這些知識，您就可以輕鬆管理和修改 PDF 文件以滿足您的需求。無論您是清理表單還是更新信息，Aspose.PDF 都能提供您高效完成工作所需的工具。
+現在你就擁有了！使用 Aspose.PDF for .NET 從 PDF 文件中刪除表單欄位是一個簡單的過程，只需幾個步驟即可完成。有了這些知識，您就可以輕鬆管理和修改 PDF 文件以滿足您的需求。無論您是清理表單還是更新信息，Aspose.PDF 都能提供您高效完成工作所需的工具。
 
 ## 常見問題解答
 

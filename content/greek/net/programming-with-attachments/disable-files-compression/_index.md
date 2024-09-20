@@ -118,7 +118,7 @@ Console.WriteLine("\nFile compression disabled successfully.\nFile saved at " + 
  Ναι, το Aspose προσφέρει μια δωρεάν δοκιμαστική έκδοση που μπορείτε να χρησιμοποιήσετε για να αξιολογήσετε τη βιβλιοθήκη. Μπορείτε να το κατεβάσετε[εδώ](https://releases.aspose.com/).
 
 ### Πού μπορώ να βρω περισσότερη τεκμηρίωση στο Aspose.PDF;
- Μπορείτε να βρείτε ολοκληρωμένη τεκμηρίωση για το[Aspose ιστότοπο](https://reference.aspose.com/pdf/net/).
+ Μπορείτε να βρείτε ολοκληρωμένη τεκμηρίωση για το[Aspose website](https://reference.aspose.com/pdf/net/).
 
 ### Πώς μπορώ να λάβω υποστήριξη για το Aspose.PDF;
  Μπορείτε να λάβετε υποστήριξη μεταβαίνοντας στο[Aspose φόρουμ](https://forum.aspose.com/c/pdf/10).

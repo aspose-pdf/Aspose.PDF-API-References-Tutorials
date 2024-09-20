@@ -47,7 +47,7 @@ Als u Aspose.PDF voor .NET nog niet aan uw project hebt toegevoegd, volgt u deze
 - Klik in Solution Explorer met de rechtermuisknop op uw project en selecteer NuGet-pakketten beheren.
 - Zoek in de NuGet Package Manager naar "Aspose.PDF" en installeer het.
 
-Nu bent u helemaal klaar met uw ontwikkelomgeving!
+Nu bent u klaar met uw ontwikkelomgeving!
 
 ## Stap 2: Een bestaand PDF-document laden
 

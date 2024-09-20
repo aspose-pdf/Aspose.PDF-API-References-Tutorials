@@ -16,7 +16,7 @@ Amikor PDF-dokumentumokkal dolgozik, gyakran használják az űrlapmezőket, pé
 
 Mielőtt elkezdené módosítani az űrlapmezőket, meg kell tennie néhány dolgot:
 
-1.  Aspose.PDF for .NET: Győződjön meg arról, hogy telepítette az Aspose.PDF for .NET fájlt. Tudod[töltse le itt](https://releases.aspose.com/pdf/net/).
+1.  Aspose.PDF for .NET: Győződjön meg arról, hogy telepítette az Aspose.PDF for .NET fájlt. Megteheti[töltse le itt](https://releases.aspose.com/pdf/net/).
 2. Fejlesztői környezet: Visual Studio vagy bármely tetszőleges C# IDE.
 3. .NET-keretrendszer: .NET-keretrendszer 4.0 vagy újabb telepítve.
 4. Minta PDF: PDF dokumentum, amely egy módosítani kívánt űrlapmezőt tartalmaz.

@@ -58,7 +58,7 @@ int lowerLeftY = 100;
 int upperRightX = 200;
 int upperRightY = 200;
 ```
-Te współrzędne określają, gdzie na stronie zostanie umieszczony obraz. Współrzędne w lewym dolnym rogu (100, 100) oznaczają punkt początkowy, natomiast współrzędne w prawym górnym rogu (200, 200) określają rozmiar i punkt końcowy obrazu.
+Te współrzędne określają, gdzie na stronie zostanie umieszczony obraz. Współrzędne w lewym dolnym rogu (100, 100) oznaczają punkt początkowy, podczas gdy współrzędne w prawym górnym rogu (200, 200) określają rozmiar i punkt końcowy obrazu.
 
 ## Krok 3: Wybierz stronę, na której chcesz wstawić obraz
 

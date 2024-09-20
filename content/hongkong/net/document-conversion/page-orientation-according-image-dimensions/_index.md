@@ -18,7 +18,7 @@ url: /zh-hant/net/document-conversion/page-orientation-according-image-dimension
 1. Visual Studio：確保您的電腦上安裝了 Visual Studio。它是 .NET 開發的最佳 IDE。
 2. .NET Framework：本指南假設您使用的是 .NET Framework。確保您安裝了合適的版本。
 3.  Aspose.PDF for .NET：您可以從下列位置下載程式庫：[阿斯普斯網站](https://releases.aspose.com/pdf/net/) 。如果您想先嘗試一下，您可以獲取[免費試用](https://releases.aspose.com/).
-4. C#基礎知識：熟悉C#程式設計將有助於您更好地理解範例。
+4. C# 基礎知識：熟悉 C# 程式設計將有助於您更好地理解範例。
 
 ## 導入包
 
@@ -123,7 +123,7 @@ doc.Save(dataDir + "SetPageOrientation_out.pdf");
 
 ## 結論
 
-現在你就得到它了！您已使用 Aspose.PDF for .NET 成功建立了 PDF 文檔，並根據影像的尺寸設定頁面方向。這個強大的庫為您在應用程式中處理 PDF 文件開闢了無限可能。無論您是產生報告、發票或任何其他類型的文檔，Aspose.PDF 都能滿足您的需求。
+現在你就擁有了！您已使用 Aspose.PDF for .NET 成功建立了 PDF 文檔，並根據影像的尺寸設定頁面方向。這個強大的庫為您在應用程式中處理 PDF 文件開闢了無限可能。無論您是產生報告、發票或任何其他類型的文檔，Aspose.PDF 都能滿足您的需求。
 
 ## 常見問題解答
 

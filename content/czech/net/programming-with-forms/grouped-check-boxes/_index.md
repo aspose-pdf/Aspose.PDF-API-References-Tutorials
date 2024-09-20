@@ -2,7 +2,7 @@
 title: Seskupená zaškrtávací políčka v dokumentu PDF
 linktitle: Seskupená zaškrtávací políčka v dokumentu PDF
 second_title: Aspose.PDF pro .NET API Reference
-description: Naučte se vytvářet seskupená zaškrtávací políčka (přepínače) v dokumentu PDF pomocí Aspose.PDF for .NET pomocí tohoto podrobného návodu.
+description: Naučte se, jak vytvořit seskupená zaškrtávací políčka (přepínače) v dokumentu PDF pomocí Aspose.PDF for .NET pomocí tohoto podrobného návodu.
 type: docs
 weight: 170
 url: /cs/net/programming-with-forms/grouped-check-boxes/

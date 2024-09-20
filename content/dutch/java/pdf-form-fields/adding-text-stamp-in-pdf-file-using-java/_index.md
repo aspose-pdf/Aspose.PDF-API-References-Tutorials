@@ -91,14 +91,14 @@ Nu hebt u de kennis en tools om uw PDF-documenten te verbeteren met tekststempel
 
 ### Hoe verander ik de positie van de tekststempel in de PDF?
 
- Om de positie van de tekststempel in de PDF te wijzigen, kunt u de volgende instellingen opgeven:`XIndent` En`YIndent` eigenschappen. Deze eigenschappen bepalen de horizontale en verticale positie van de postzegel op de pagina.
+ Om de positie van de tekststempel in de PDF te wijzigen, kunt u de`XIndent` En`YIndent` eigenschappen. Deze eigenschappen bepalen de horizontale en verticale positie van de postzegel op de pagina.
 
 ```java
 textStamp.setXIndent(100);
 textStamp.setYIndent(200);
 ```
 
-### Kan ik naast tekst ook aangepaste afbeeldingen als postzegels toevoegen?
+### Kan ik naast tekst ook aangepaste afbeeldingen als stempels toevoegen?
 
  Ja, u kunt aangepaste afbeeldingen als stempels toevoegen naast tekst met Aspose.PDF voor Java. U kunt een`ImageStamp`en pas het aan met uw afbeeldingsbestand.
 

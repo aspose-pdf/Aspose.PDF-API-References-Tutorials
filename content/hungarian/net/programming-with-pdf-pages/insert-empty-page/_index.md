@@ -15,11 +15,11 @@ Ha egy üres oldalt szeretne programozottan hozzáadni egy PDF-dokumentumhoz, ak
 
 Mielőtt elkezdené, győződjön meg arról, hogy a következők vannak a helyükön:
 
--  Aspose.PDF for .NET telepítve a fejlesztői környezetbe. Tudod[töltse le itt](https://releases.aspose.com/pdf/net/).
+-  Aspose.PDF for .NET telepítve a fejlesztői környezetbe. Megteheti[töltse le itt](https://releases.aspose.com/pdf/net/).
 - .NET fejlesztői környezet, például a Visual Studio.
 - A C# és az objektum-orientált programozás alapvető ismerete.
 
- Ha még nem tette meg, érdemes lehet ideiglenes licencet beszereznie az Aspose-tól, hogy elkerülje a korlátozásokat, miközben követi. Tudod[szerezd meg itt](https://purchase.aspose.com/temporary-license/).
+ Ha még nem tette meg, érdemes lehet ideiglenes licencet beszereznie az Aspose-tól, hogy elkerülje a korlátozásokat, miközben követi. Megteheti[szerezd meg itt](https://purchase.aspose.com/temporary-license/).
 
 ## Csomagok importálása
 
@@ -89,7 +89,7 @@ Az oldal beszúrása után el kell mentenünk a frissített PDF dokumentumot.
 
 ### 4.1 Határozza meg a kimeneti fájl elérési útját
 
-Határozzuk meg, hova kell menteni az új fájlt. Ebben az esetben ugyanabba a könyvtárba mentjük, hozzáfűzve a "_out" fájlnévre az egyértelműség kedvéért.
+Határozzuk meg, hova kell menteni az új fájlt. Ebben az esetben ugyanabba a könyvtárba mentjük, hozzáfűzve a "_out" fájlnévhez az egyértelműség kedvéért.
 
 ```csharp
 dataDir = dataDir + "InsertEmptyPage_out.pdf";

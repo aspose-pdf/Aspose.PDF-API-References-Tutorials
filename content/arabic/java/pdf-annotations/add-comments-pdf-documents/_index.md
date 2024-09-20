@@ -14,7 +14,7 @@ url: /ar/java/pdf-annotations/add-comments-pdf-documents/
 
 ## البدء باستخدام Aspose.PDF للغة Java
 
- للبدء، ستحتاج إلى إعداد بيئة التطوير الخاصة بك. تأكد من تثبيت مكتبة Aspose.PDF for Java. يمكنك تنزيلها من[هنا](https://releases.aspose.com/pdf/java/).
+للبدء، ستحتاج إلى إعداد بيئة التطوير الخاصة بك. تأكد من تثبيت مكتبة Aspose.PDF for Java. يمكنك تنزيلها من[هنا](https://releases.aspose.com/pdf/java/).
 
 ## إنشاء مستند PDF
 

@@ -102,7 +102,7 @@ Das Abrufen von Lesezeichen aus PDF-Dokumenten mit Aspose.PDF für Java ist eine
 
 Ja, Sie können das Erscheinungsbild abgerufener Lesezeichen an das Design und die Funktionalität Ihrer Anwendung anpassen.
 
-### Welche häufigen Fehler treten bei der Arbeit mit PDF-Dokumenten auf?
+### Welche häufigen Fehler treten beim Arbeiten mit PDF-Dokumenten auf?
 
 Zu den häufigen Fehlern gehören „Datei nicht gefunden“, „ungültiges PDF-Format“ und Berechtigungsprobleme. Behandeln Sie diese Fehler in Ihrem Code.
 

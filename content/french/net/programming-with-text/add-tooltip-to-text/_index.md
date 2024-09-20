@@ -2,108 +2,107 @@
 title: Ajouter une info-bulle au texte dans un fichier PDF
 linktitle: Ajouter une info-bulle au texte dans un fichier PDF
 second_title: Référence de l'API Aspose.PDF pour .NET
-description: Découvrez comment ajouter des info-bulles au texte d'un fichier PDF à l'aide d'Aspose.PDF pour .NET.
+description: Découvrez comment ajouter des info-bulles au texte des fichiers PDF à l'aide d'Aspose.PDF pour .NET. Améliorez vos PDF avec des textes de survol informatifs sans effort.
 type: docs
 weight: 90
 url: /fr/net/programming-with-text/add-tooltip-to-text/
 ---
-Ce didacticiel vous guidera tout au long du processus d'ajout d'info-bulles au texte d'un fichier PDF à l'aide d'Aspose.PDF pour .NET. Le code source C# fourni illustre les étapes nécessaires.
+## Introduction
 
-## Exigences
-Avant de commencer, assurez-vous de disposer des éléments suivants :
+Pour créer des PDF attrayants et interactifs, les info-bulles peuvent s'avérer très utiles. Vous connaissez ces petites fenêtres contextuelles qui vous donnent des informations supplémentaires lorsque vous passez la souris sur quelque chose ? Elles peuvent fournir un contexte, des descriptions ou même des conseils sans encombrer votre document. Dans ce didacticiel, nous vous expliquerons comment ajouter des info-bulles au texte d'un fichier PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. Que vous soyez un développeur chevronné ou que vous débutiez dans le monde des PDF, vous êtes au bon endroit ! Alors, plongeons-nous dans le vif du sujet !
 
-- Visual Studio ou tout autre compilateur C# installé sur votre machine.
-- Bibliothèque Aspose.PDF pour .NET. Vous pouvez la télécharger depuis le site officiel d'Aspose ou utiliser un gestionnaire de paquets comme NuGet pour l'installer.
+## Prérequis
 
-## Étape 1 : Configurer le projet
-1. Créez un nouveau projet C# dans votre environnement de développement préféré.
-2. Ajoutez une référence à la bibliothèque Aspose.PDF pour .NET.
+Avant de passer à la partie codage, assurons-nous que vous disposez de tout ce dont vous avez besoin pour suivre le cours en douceur.
 
-## Étape 2 : Importer les espaces de noms requis
-Dans le fichier de code dans lequel vous souhaitez ajouter des info-bulles au texte, ajoutez les directives using suivantes en haut du fichier :
+### Visual Studio installé
+Il est essentiel que Visual Studio soit installé sur votre machine, car il sera votre environnement de développement principal pour les applications .NET.
+
+### Bibliothèque Aspose.PDF pour .NET
+ Vous aurez également besoin de disposer de la bibliothèque Aspose.PDF. Vous pouvez[téléchargez-le ici](https://releases.aspose.com/pdf/net/)Assurez-vous de l'inclure dans vos références de projet.
+
+### Connaissances de base de C#
+Une connaissance du langage C# sera d'une grande aide, car nous coderons dans ce langage. Mais ne vous inquiétez pas, je vous guiderai à chaque étape !
+
+### Un document PDF avec lequel travailler
+Vous pouvez commencer avec un document PDF vierge, comme nous le faisons dans cet exemple, ou utiliser un document existant si vous préférez.
+
+Maintenant, passons à la partie codage !
+
+## Paquets d'importation 
+
+ La première étape de notre aventure de codage consiste à importer les packages nécessaires. Ouvrez votre projet Visual Studio et, en haut de votre fichier C#, vous souhaiterez ajouter ce qui suit`using` directives:
 
 ```csharp
-using Aspose.Pdf;
 using Aspose.Pdf.Forms;
 using Aspose.Pdf.Text;
 ```
 
-## Étape 3 : définir le répertoire du document
- Dans le code, recherchez la ligne qui dit`string dataDir = "YOUR DOCUMENT DIRECTORY";` et remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin vers le répertoire où sont stockés vos documents.
+Ces packages vous donnent accès à toutes les classes et fonctionnalités dont vous avez besoin pour créer et manipuler des documents PDF.
 
-## Étape 4 : Créer un exemple de document avec du texte
- Créer un nouveau`Document`objet et ajouter des pages avec des fragments de texte. Dans le code fourni, deux fragments de texte sont ajoutés au document avec le texte d'info-bulle correspondant.
+## Étape 1 : Configurez votre répertoire de documents
 
-```csharp
-Document doc = new Document();
-doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a tooltip"));
-doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a very long tooltip"));
-doc.Save(outputFile);
-```
+Tout d'abord, nous devons définir le chemin où vous allez enregistrer vos documents. Considérez cela comme la recherche d'un endroit confortable dans votre système de fichiers où toutes vos créations résideront.
 
-## Étape 5 : Ouvrez le document et recherchez les fragments de texte
- Chargez le document créé à l'aide de la`Document` constructeur et recherchez les fragments de texte qui ont besoin d'info-bulles à l'aide`TextFragmentAbsorber`.
-
-```csharp
-Document document = new Document(outputFile);
-TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
-document.Pages.Accept(absorb);
-TextFragmentCollection textFragments = absorb.TextFragments;
-```
-
-## Étape 6 : ajouter des info-bulles aux fragments de texte
- Parcourez les fragments de texte extraits et créez des boutons invisibles à leurs positions. Affectez le texte d'info-bulle souhaité à l'`AlternateName` propriété de la`ButtonField`Ajoutez les champs de boutons au formulaire du document.
-
-```csharp
-foreach(TextFragment fragment in textFragments)
-{
-     ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
-     field. AlternateName = "Tooltip for text.";
-     document.Form.Add(field);
-}
-```
-
-## Étape 7 : Répétez l'opération pour des fragments de texte supplémentaires avec de longues info-bulles
-Répétez les étapes 5 et 6 pour les fragments de texte avec de longues info-bulles. Modifiez les critères de recherche et le texte de l'info-bulle en conséquence.
-
-```csharp
-absorb = new TextFragmentAbsorber("Move the mouse cursor here to display a very long tooltip");
-document.Pages.Accept(absorb);
-textFragments = absorb.TextFragments;
-
-foreach(TextFragment fragment in textFragments)
-{
-     ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
-     field. AlternateName = "Long tooltip text goes here...";
-     document.Form.Add(field);
-}
-```
-
-## Étape 8 : Enregistrer le document modifié
- Enregistrez le document PDF modifié à l'aide de la`Save` méthode de la`Document` objet.
-
-```csharp
-document. Save(outputFile);
-```
-
-### Exemple de code source pour ajouter une info-bulle au texte à l'aide d'Aspose.PDF pour .NET 
 ```csharp
 // Le chemin vers le répertoire des documents.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outputFile = dataDir + "Tooltip_out.pdf";
-// Créer un exemple de document avec du texte
+```
+
+ Assurez-vous de remplacer`YOUR DOCUMENT DIRECTORY` avec le chemin réel sur votre machine.
+
+## Étape 2 : Créer un exemple de document PDF
+
+Ensuite, il est temps de créer un PDF simple avec du texte. C'est ici que nous lançons notre processus créatif !
+
+```csharp
+//Créer un exemple de document avec du texte
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a tooltip"));
 doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a very long tooltip"));
 doc.Save(outputFile);
+```
+
+Dans cette étape, nous créons un document, ajoutons deux fragments de texte et l’enregistrons dans le chemin précédemment spécifié.
+
+## Étape 3 : Ouvrir le document pour le traitement
+
+Maintenant que notre document est créé, ouvrons-le pour pouvoir travailler sur ces info-bulles !
+
+```csharp
 // Ouvrir un document avec du texte
 Document document = new Document(outputFile);
-//Créez un objet TextAbsorber pour trouver toutes les phrases correspondant à l'expression régulière
+```
+
+Ici, nous chargeons simplement le document que nous venons de créer.
+
+## Étape 4 : Créer un absorbeur de texte pour rechercher des fragments de texte
+
+Nous devons trouver les fragments de texte dans lesquels nous souhaitons ajouter les infobulles. C'est comme utiliser une loupe pour mettre en évidence une partie spécifique d'une grande carte ! 
+
+```csharp
+// Créez un objet TextAbsorber pour trouver toutes les phrases correspondant à l'expression régulière
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
-// Accepter l'absorbeur pour les pages du document
 document.Pages.Accept(absorber);
+```
+
+## Étape 5 : Extraire des fragments de texte
+
+Ensuite, nous extrayons les fragments de texte que nous avons trouvés à l’étape précédente.
+
+```csharp
 // Obtenir les fragments de texte extraits
 TextFragmentCollection textFragments = absorber.TextFragments;
+```
+
+Cet extrait nous permet de conserver les références des fragments de texte qui nous intéressent.
+
+## Étape 6 : Parcourez les fragments et ajoutez des info-bulles
+
+Vient maintenant la partie amusante ! Nous allons parcourir chacun des fragments de texte et ajouter une info-bulle à chacun d'eux. Imaginez que vous emballez de petits cadeaux (info-bulles) autour d'éléments spécifiques (fragments de texte).
+
+```csharp
 // Boucle à travers les fragments
 foreach (TextFragment fragment in textFragments)
 {
@@ -114,7 +113,16 @@ foreach (TextFragment fragment in textFragments)
 	// Ajouter un champ de bouton au document
 	document.Form.Add(field);
 }
-// Ensuite, nous verrons un échantillon d'une très longue info-bulle
+```
+
+À chaque itération, nous créons un champ de bouton qui correspond à la position du fragment de texte et lui attribuons le texte de l'info-bulle.
+
+## Étape 7 : Répétez l'opération pour les infobulles longues
+
+Tout comme nous avons ajouté une simple info-bulle, nous pouvons faire la même chose pour un texte plus long. Élargissons notre créativité !
+
+```csharp
+// Ensuite, nous verrons un exemple d'info-bulle très longue
 absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a very long tooltip");
 document.Pages.Accept(absorber);
 textFragments = absorber.TextFragments;
@@ -132,53 +140,40 @@ foreach (TextFragment fragment in textFragments)
 							" deserunt mollit anim id est laborum.";
 	document.Form.Add(field);
 }
+```
+
+Ici, nous faisons le même genre de travail que précédemment, mais avec une info-bulle beaucoup plus étendue.
+
+## Étape 8 : Enregistrez votre document
+
+L’étape finale consiste à enregistrer votre document avec toutes ces nouvelles info-bulles brillantes. 
+
+```csharp
 // Enregistrer le document
 document.Save(outputFile);
 ```
 
+Et voilà, c'est fait ! Vous avez ajouté des info-bulles à votre PDF, le rendant ainsi plus convivial et interactif.
+
 ## Conclusion
-Vous avez ajouté avec succès des info-bulles au texte d'un document PDF à l'aide d'Aspose.PDF pour .NET. Le fichier PDF résultant se trouve désormais dans le chemin de fichier de sortie spécifié.
+
+Et voilà, un guide facile à suivre pour ajouter des info-bulles au texte des fichiers PDF à l'aide d'Aspose.PDF pour .NET. Cette technique peut améliorer considérablement l'expérience utilisateur, en rendant vos documents plus informatifs sans submerger le lecteur avec trop de texte à la fois. 
+
+En passant simplement la souris sur un mot ou une phrase, le lecteur obtient des informations pertinentes qui ajoutent de la valeur sans encombrer le contenu. Alors, retroussez vos manches et essayez ! En un rien de temps, vous pourriez créer toutes sortes de documents attrayants qui se démarquent.
 
 ## FAQ
 
-#### Q : Quel est l’objectif de ce tutoriel ?
+### Qu'est-ce qu'Aspose.PDF pour .NET ?
+Aspose.PDF pour .NET est une bibliothèque qui permet aux développeurs de créer, manipuler et convertir des documents PDF dans des applications .NET.
 
-R : Ce didacticiel se concentre sur l'ajout d'info-bulles au texte d'un fichier PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. Le code source C# fourni illustre les étapes nécessaires pour y parvenir.
+### Puis-je utiliser Aspose.PDF gratuitement ?
+ Oui, Aspose propose un essai gratuit pour vous permettre d'explorer ses fonctionnalités ! Vous pouvez le trouver[ici](https://releases.aspose.com/).
 
-#### Q : Quels espaces de noms doivent être importés pour ce tutoriel ?
+### Existe-t-il des options de licence disponibles pour Aspose.PDF ?
+Oui, vous pouvez acheter une licence ou obtenir une licence temporaire. Découvrez les options[ici](https://purchase.aspose.com/).
 
-R : Dans le fichier de code dans lequel vous souhaitez ajouter des info-bulles au texte, importez les espaces de noms suivants au début du fichier :
+### Puis-je ajouter des éléments interactifs autres que des info-bulles à l'aide d'Aspose.PDF ?
+Absolument ! Aspose.PDF permet d'ajouter divers éléments interactifs tels que des hyperliens, des boutons et des formulaires.
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Forms;
-using Aspose.Pdf.Text;
-```
-
-#### Q : Comment spécifier le répertoire du document ?
-
- A : Dans le code, recherchez la ligne`string dataDir = "YOUR DOCUMENT DIRECTORY";` et remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin réel vers votre répertoire de documents.
-
-#### Q : Comment puis-je créer un exemple de document avec du texte ?
-
- A : À l'étape 4, vous allez créer un nouveau`Document` objet et ajouter des pages avec des fragments de texte. Le code fourni ajoute deux fragments de texte avec le texte d'info-bulle correspondant.
-
-#### Q : Comment ouvrir le document et trouver les fragments de texte ?
-
- A : À l'étape 5, vous chargerez le document créé à l'aide de l'`Document` constructeur et recherchez les fragments de texte nécessitant des info-bulles à l'aide de`TextFragmentAbsorber`.
-
-#### Q : Comment ajouter des info-bulles aux fragments de texte ?
-
- A : À l'étape 6, vous parcourrez les fragments de texte extraits et créerez des boutons invisibles à leurs emplacements. Le texte de l'info-bulle est attribué à l'`AlternateName` propriété de la`ButtonField`, qui est ajouté au formulaire du document.
-
-#### Q : Comment puis-je répéter le processus pour des fragments de texte supplémentaires avec de longues info-bulles ?
-
-R : Pour les fragments de texte avec de longues info-bulles, répétez les étapes 5 et 6. Modifiez les critères de recherche et le texte de l’info-bulle en conséquence.
-
-#### Q : Comment enregistrer le document modifié ?
-
- A : À l'étape 8, vous enregistrerez le document PDF modifié à l'aide de l'`Save` méthode de la`Document` objet.
-
-#### Q : Quel est le principal point à retenir de ce tutoriel ?
-
-R : En suivant ce didacticiel, vous avez appris à améliorer votre document PDF en ajoutant des info-bulles au texte à l'aide d'Aspose.PDF pour .NET. Cela peut fournir des informations supplémentaires précieuses aux lecteurs lorsqu'ils interagissent avec le contenu PDF.
+### Où puis-je trouver plus de documentation sur Aspose.PDF ?
+ Vous pouvez consulter la documentation[ici](https://reference.aspose.com/pdf/net/) pour des conseils plus approfondis.

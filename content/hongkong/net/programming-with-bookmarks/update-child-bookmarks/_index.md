@@ -107,7 +107,7 @@ Console.WriteLine("\nChild bookmarks updated successfully.\nFile saved at " + da
 
 ## 結論
 
-現在你就得到它了！您已使用 Aspose.PDF for .NET 成功更新了 PDF 檔案中的子書籤。只需幾行程式碼，您就可以增強 PDF 文件的導航體驗，使它們更加用戶友好且更有條理。無論您是在處理個人專案還是專業應用程序，掌握 PDF 操作都可以改變遊戲規則。
+現在你就擁有了！您已使用 Aspose.PDF for .NET 成功更新了 PDF 檔案中的子書籤。只需幾行程式碼，您就可以增強 PDF 文件的導航體驗，使它們更加用戶友好且更有條理。無論您是在處理個人專案還是專業應用程序，掌握 PDF 操作都可以改變遊戲規則。
 
 ## 常見問題解答
 

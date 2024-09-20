@@ -9,14 +9,14 @@ url: /zh-hant/net/programming-with-stamps-and-watermarks/image-and-page-number-i
 ---
 ## 介紹
 
-在建立專業級 PDF 文件時，控制頁首和頁尾等次要細節至關重要。您希望您的文件看起來整潔且組織良好，對嗎？那麼，使用 Aspose.PDF for .NET，您可以將影像和頁碼無縫新增至文件的頁首和頁尾部分。在本教程中，我們將引導您完成每個步驟，使其易於遵循。
+在建立專業級 PDF 文件時，控制頁首和頁尾等次要細節至關重要。您希望您的文件看起來整潔且組織良好，對吧？那麼，使用 Aspose.PDF for .NET，您可以將影像和頁碼無縫新增至文件的頁首和頁尾部分。在本教程中，我們將引導您完成每個步驟，使其易於遵循。
 
 ## 先決條件
 
 在深入了解本教學的實質內容之前，請確保您已整理好以下內容：
 
 1. .NET Framework：您需要在電腦上安裝任意版本的 .NET Framework。如果沒有，您可以輕鬆地從 Microsoft 網站下載。
-2.  Aspose.PDF for .NET：由於我們將使用 Aspose.PDF，請確保您已將其安裝在專案中。您可以下載試用版[這裡](https://releases.aspose.com/pdf/net/).
+2.  Aspose.PDF for .NET：由於我們將使用 Aspose.PDF，請確保您已將其安裝在您的專案中。您可以下載試用版[這裡](https://releases.aspose.com/pdf/net/).
 3. C# 基礎知識：熟悉基本的 C# 程式設計肯定會幫助您輕鬆理解程式碼。
 4. 圖像檔案：您需要將圖像放入 PDF 文件的頁眉中，例如徽標。將其保存在可存取的目錄中。 
 5. IDE：使用您選擇的整合開發環境 (IDE)（例如 Visual Studio）來處理您的 .NET 專案。
@@ -109,7 +109,7 @@ Aspose.Pdf.HeaderFooter footer = new Aspose.Pdf.HeaderFooter();
 page.Footer = footer;
 ```
 
-您將在此處放置頁碼。 
+您可以在此處放置頁碼。 
 
 ## 第 7 步：將文字新增至頁尾
 
@@ -139,7 +139,7 @@ doc.Save(dataDir + "ImageAndPageNumberInHeaderFooter_out.pdf");
 
 ## 結論
 
-現在你就得到它了！您剛剛使用 Aspose.PDF for .NET 建立了一個 PDF，其中頁首中有圖像，頁腳中有動態頁碼。幾行程式碼就能產生如此精美的輸出，真是令人難以置信。無論是公司報告還是個人化文檔，添加這些元素都會改變 PDF 的基調和專業性。
+現在你就擁有了！您剛剛使用 Aspose.PDF for .NET 建立了一個 PDF，其中頁首中有圖像，頁腳中有動態頁碼。幾行程式碼就能產生如此精美的輸出，真是令人難以置信。無論是公司報告還是個人化文檔，添加這些元素都會改變 PDF 的基調和專業性。
 
 ## 常見問題解答
 

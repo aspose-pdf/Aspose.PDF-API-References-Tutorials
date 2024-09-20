@@ -114,7 +114,7 @@ Console.WriteLine("\nBookmark added successfully.\nFile saved at " + dataDir);
 
 ## 結論
 
-現在你就得到它了！您已使用 Aspose.PDF for .NET 成功將書籤新增至 PDF 檔案。這項簡單而強大的功能可以顯著增強文件的可用性，讓讀者更輕鬆地瀏覽文件。因此，下次您使用 PDF 時，請記住添加這些書籤！
+現在你就擁有了！您已使用 Aspose.PDF for .NET 成功將書籤新增至 PDF 檔案。這個簡單而強大的功能可以顯著增強文件的可用性，使讀者更輕鬆地瀏覽它們。因此，下次您使用 PDF 時，請記住添加這些書籤！
 
 ## 常見問題解答
 

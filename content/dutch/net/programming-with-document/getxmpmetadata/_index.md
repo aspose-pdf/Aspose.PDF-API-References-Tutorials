@@ -111,7 +111,7 @@ Dit fragment haalt de metagegevenseigenschappen op waarmee we hebben gewerkt en 
 
 ## Stap 5: Foutverwerking (optioneel)
 
-Geen enkel programma is compleet zonder het afhandelen van mogelijke fouten! Stel dat uw PDF bepaalde metadata-eigenschappen niet heeft. Om uitzonderingen te voorkomen, kunt u een eenvoudige controle uitvoeren voordat u probeert metadata op te halen.
+Geen enkel programma is compleet zonder het afhandelen van potentiële fouten! Stel dat uw PDF bepaalde metadata-eigenschappen niet heeft. Om uitzonderingen te voorkomen, kunt u een eenvoudige controle uitvoeren voordat u probeert metadata op te halen.
 
 ```csharp
 // Veilig metagegevens ophalen

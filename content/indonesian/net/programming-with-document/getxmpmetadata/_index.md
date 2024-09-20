@@ -46,7 +46,7 @@ Hal pertama yang terpenting, Anda perlu memastikan bahwa proyek Anda telah disia
 
 ### Langkah 1.2: Tambahkan PDF ke Proyek
 
-Selanjutnya, pastikan Anda memiliki dokumen PDF di direktori proyek Anda. Jalur file akan penting untuk langkah selanjutnya. Untuk tutorial ini, kami akan menggunakan PDF bernama`GetXMPMetadata.pdf`.
+Selanjutnya, pastikan Anda memiliki dokumen PDF di direktori proyek Anda. Jalur file akan penting untuk langkah berikutnya. Untuk tutorial ini, kita akan menggunakan PDF bernama`GetXMPMetadata.pdf`.
 
 ## Langkah 2: Muat Dokumen PDF
 

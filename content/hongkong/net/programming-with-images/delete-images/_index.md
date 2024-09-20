@@ -1,6 +1,6 @@
 ---
-title: 從 PDF 檔案中刪除影像
-linktitle: 從 PDF 檔案中刪除影像
+title: 從 PDF 檔案中刪除圖像
+linktitle: 從 PDF 檔案中刪除圖像
 second_title: Aspose.PDF for .NET API 參考
 description: 透過簡單的逐步教學，了解如何使用 Aspose.PDF for .NET 從 PDF 檔案中刪除影像。透過輕鬆刪除不需要的圖像來優化 PDF。
 type: docs

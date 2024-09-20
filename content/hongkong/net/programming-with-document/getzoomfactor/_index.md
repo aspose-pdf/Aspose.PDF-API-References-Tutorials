@@ -9,14 +9,14 @@ url: /zh-hant/net/programming-with-document/getzoomfactor/
 ---
 ## 介紹
 
-在先前的教學中，我們探索如何使用 Aspose.PDF for .NET 從 PDF 檔案中擷取縮放係數。這次，我們將更深入地探討這個主題，提供更多見解、故障排除提示和最佳實踐，以增強您對庫的理解和使用。無論您是初學者還是經驗豐富的開發人員，本擴充指南都將為您提供有效處理 PDF 文件的知識。
+在先前的教學中，我們探索如何使用 Aspose.PDF for .NET 從 PDF 檔案中擷取縮放係數。這次，我們將深入探討該主題，提供更多見解、故障排除提示和最佳實踐，以增強您對庫的理解和使用。無論您是初學者還是經驗豐富的開發人員，本擴充指南都將為您提供有效處理 PDF 文件的知識。
 
 ## 先決條件
 
 在我們深入了解擴充內容之前，請確保您具備以下條件：
 
 1. Visual Studio：用於編寫和測試程式碼的開發環境。
-2. Aspose.PDF for .NET：從下列位置下載並安裝程式庫[下載連結](https://releases.aspose.com/pdf/net/).
+2. Aspose.PDF for .NET：從下列位置下載並安裝程式庫：[下載連結](https://releases.aspose.com/pdf/net/).
 3. 基本 C# 知識：熟悉 C# 將幫助您順利掌握。
 
 ## 導入包

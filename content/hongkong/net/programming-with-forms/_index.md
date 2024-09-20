@@ -36,8 +36,8 @@ Aspose.PDF for .NET「表單程式設計」教學課程對於希望建立和操�
 | [維護權利](./preserve-rights/) | 使用 Aspose.PDF for .NET 保留 PDF 文件中的表單權限。 |  
 | [單選按鈕](./radio-button/) | 透過此逐步教學課程，了解如何使用 Aspose.PDF for .NET 在 PDF 文件中建立互動式單選按鈕。 |  
 | [帶選項的單選按鈕](./radio-button-with-options/) | 使用 Aspose.PDF for .NET 新增單選按鈕，釋放互動式 PDF 的潛力。輕鬆建立引人入勝的表單並改善使用者體驗。 |  
-| [按 Tab 鍵順序擷取表單字段](./retrieve-form-field-in-tab-order/) | 了解如何使用 Aspose.PDF for .NET 按 Tab 鍵順序擷取和修改表單欄位。包含程式碼範例的逐步指南可簡化 PDF 表單導覽。 |  
-| [選擇 PDF 文件中的單選按鈕](./select-radio-button/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 在 PDF 文件中選擇單選按鈕。輕鬆自動化表單互動。 |  
+| [按 Tab 鍵順序擷取表單字段](./retrieve-form-field-in-tab-order/) | 了解如何使用 Aspose.PDF for .NET 按 Tab 鍵順序擷取和修改表單欄位。帶有程式碼範例的逐步指南可簡化 PDF 表單導覽。 |  
+| [選擇 PDF 文件中的單選按鈕](./select-radio-button/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 選擇 PDF 文件中的單選按鈕。輕鬆自動化表單互動。 |  
 | [設定字段限制](./set-field-limit/) | 透過此逐步教學，了解如何使用 Aspose.PDF for .NET 在 PDF 表單中設定欄位限制。增強使用者體驗和資料完整性。 |  
 | [設定Java腳本](./set-java-script/) | 釋放 Aspose.PDF for .NET 的強大功能。透過我們的逐步指南了解如何在表單欄位上設定 JavaScript。 |  
 | [設定單選按鈕標題](./set-radio-button-caption/) | 了解如何使用 Aspose.PDF for .NET 在 PDF 中設定單選按鈕標題。本逐步指南將引導您完成載入、修改和儲存 PDF 表單的過程。 |  

@@ -9,7 +9,7 @@ url: /pl/net/document-conversion/pdf-to-html/
 ---
 ## Wstęp
 
-W dzisiejszej erze cyfrowej konwersja dokumentów z jednego formatu na inny jest powszechnym zadaniem. Niezależnie od tego, czy jesteś programistą, twórcą treści, czy po prostu osobą, która musi udostępniać informacje, wiedza na temat konwersji plików PDF do HTML może być niezwykle przydatna. Ten przewodnik przeprowadzi Cię przez proces używania Aspose.PDF dla .NET do konwersji dokumentów PDF do formatu HTML. Dzięki Aspose.PDF możesz łatwo manipulować plikami PDF i wyodrębniać zawartość w sposób, który jest zarówno wydajny, jak i skuteczny. Więc zanurzmy się!
+W dzisiejszej erze cyfrowej konwersja dokumentów z jednego formatu na inny jest powszechnym zadaniem. Niezależnie od tego, czy jesteś programistą, twórcą treści, czy po prostu osobą, która musi udostępniać informacje, wiedza na temat konwersji plików PDF na HTML może być niezwykle przydatna. Ten przewodnik przeprowadzi Cię przez proces używania Aspose.PDF dla .NET do konwersji dokumentów PDF na format HTML. Dzięki Aspose.PDF możesz łatwo manipulować plikami PDF i wyodrębniać zawartość w sposób, który jest zarówno wydajny, jak i skuteczny. Więc zanurzmy się!
 
 ## Wymagania wstępne
 

@@ -9,7 +9,7 @@ url: /de/net/programming-with-forms/create-doc/
 ---
 ## Einführung
 
-Das Erstellen interaktiver Formulare in PDFs kann das Benutzererlebnis und die Benutzerinteraktion erheblich verbessern. Haben Sie sich schon einmal gefragt, wie Sie die Datenerfassung optimieren oder Antworten effektiv über Ihre Dokumente erfassen können? Mit Aspose.PDF für .NET ist das Generieren von PDFs mit Optionsfeldfeldern ein Kinderspiel! In diesem Tutorial erfahren Sie, wie Sie mit Aspose.PDF ein Dokument erstellen, das ein Optionsfeldfeld enthält, und werden Schritt für Schritt durch den Vorgang geführt. Egal, ob Sie ein erfahrener Entwickler sind oder gerade erst anfangen, dieser Leitfaden bietet klare Anweisungen und Einblicke. Tauchen Sie ein in die Welt der PDF-Generierung mit .NET und bringen Sie Ihre Dokumente zum Strahlen!
+Das Erstellen interaktiver Formulare in PDFs kann das Benutzererlebnis und die Benutzerinteraktion deutlich verbessern. Haben Sie sich schon einmal gefragt, wie Sie die Datenerfassung optimieren oder Antworten effektiv über Ihre Dokumente sammeln können? Mit Aspose.PDF für .NET ist das Generieren von PDFs mit Optionsfeldfeldern ein Kinderspiel! In diesem Tutorial erfahren Sie, wie Sie mit Aspose.PDF ein Dokument erstellen, das ein Optionsfeldfeld enthält, und werden Schritt für Schritt durch den Vorgang geführt. Egal, ob Sie ein erfahrener Entwickler sind oder gerade erst anfangen, dieser Leitfaden bietet klare Anweisungen und Einblicke. Tauchen Sie ein in die Welt der PDF-Generierung mit .NET und bringen Sie Ihre Dokumente zum Strahlen!
 
 ## Voraussetzungen
 

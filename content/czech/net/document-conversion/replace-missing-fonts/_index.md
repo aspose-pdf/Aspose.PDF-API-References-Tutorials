@@ -13,7 +13,7 @@ Stalo se vám někdy, že jste otevřeli dokument PDF, abyste zjistili, že něk
 
 ## Předpoklady
 
-Než začneme, je potřeba mít připraveno několik věcí:
+Než začneme, je třeba mít připraveno několik věcí:
 
 1.  Aspose.PDF pro .NET: Ujistěte se, že máte nainstalovanou knihovnu Aspose.PDF. Můžete si jej stáhnout z[zde](https://releases.aspose.com/pdf/net/).
 2. Visual Studio: Vývojové prostředí, kde můžete psát a testovat svůj kód.
@@ -60,7 +60,7 @@ Zde se pokusíme najít písmo. Pokud není nalezen, zachytíme výjimku a nahra
 
 ## Krok 3: Načtěte dokument PDF
 
-Nyní načteme dokument PDF, který chcete zpracovat. Budete muset zadat cestu ke vstupnímu souboru.
+Nyní načteme dokument PDF, který chcete zpracovat. Budete muset zadat cestu vstupního souboru.
 
 ```csharp
 var fileNew = new FileInfo(dataDir + "newfile_out.pdf");

@@ -46,7 +46,7 @@ using System;
 
 Nachdem wir nun alles eingerichtet haben, können wir uns an den Code machen!
 
-## Schritt 1: Dokumentverzeichnis definieren
+## Schritt 1: Definieren Sie das Dokumentverzeichnis
 
 Als Erstes müssen Sie den Pfad zu Ihrem Dokumentenverzeichnis angeben. Dort wird Ihre PDF-Datei gespeichert. So können Sie das tun:
 

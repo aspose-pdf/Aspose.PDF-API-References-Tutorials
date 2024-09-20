@@ -71,7 +71,7 @@ Tento objekt bude obsahovat různá nastavení, která určují, jak bude PDF p�
 
 ## Krok 4: Zadejte výstupní adresář
 
- Před uložením převedeného souboru musíte určit, kam bude výstupní soubor uložen. To se provádí nastavením`OutDirectoryPath` vlastnictví`saveOptions` objekt.
+ Před uložením převedeného souboru musíte určit, kam bude výstupní soubor uložen. To se provádí nastavením`OutDirectoryPath` vlastnictvím`saveOptions` objekt.
 
 ```csharp
 // Zadejte výstupní adresář

@@ -38,7 +38,7 @@ Install-Package Aspose.PDF
 ```
 
 ### Zaimportuj niezbędne przestrzenie nazw
-Na górze pliku z kodem uwzględnij następujące przestrzenie nazw:
+Na górze pliku z kodem umieść następujące przestrzenie nazw:
 ```csharp
 using System.IO;
 using System;

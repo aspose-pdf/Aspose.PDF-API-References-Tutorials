@@ -132,7 +132,7 @@ Console.WriteLine("\nChild bookmark added successfully.\nFile saved at " + dataD
 
 ## 結論
 
-恭喜！您已使用 Aspose.PDF for .NET 成功將子書籤新增至 PDF 檔案。這項簡單而強大的功能可以顯著增強文件的可用性，讓讀者更輕鬆地瀏覽文件。無論您是建立報告、電子書還是任何其他 PDF 文檔，書籤都是遊戲規則的改變者。
+恭喜！您已使用 Aspose.PDF for .NET 成功將子書籤新增至 PDF 檔案。這個簡單而強大的功能可以顯著增強文件的可用性，使讀者更輕鬆地瀏覽它們。無論您是建立報告、電子書還是任何其他 PDF 文檔，書籤都是遊戲規則的改變者。
 
 ## 常見問題解答
 

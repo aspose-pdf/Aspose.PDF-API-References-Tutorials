@@ -84,7 +84,7 @@ V tomto úryvku procházíme každý artefakt a kontrolujeme, zda jeho podtyp od
 
 ## Krok 5: Výstup výsledku
 
-Konečně je čas podívat se, kolik vodoznaků jsme v dokumentu našli. Vytiskněme to slavné číslo do konzole:
+Konečně je čas podívat se, kolik vodoznaků jsme v dokumentu našli. Vytiskněme to nádherné číslo do konzole:
 
 ```csharp
 Console.WriteLine("Page contains " + count + " watermarks");

@@ -94,7 +94,7 @@ Zodra u uw applicatie uitvoert, ziet u dit als bevestiging dat uw PDF nu is geco
 
 ## Conclusie
 
-En daar ga je! Je hebt net geleerd hoe je een PDF-bestand versleutelt met Aspose.PDF voor .NET. Door deze beveiligingslaag toe te voegen, kun je ervoor zorgen dat je waardevolle documenten beschermd zijn. Of je nu gevoelige informatie deelt of gewoon de toegang wilt beperken, het versleutelen van PDF's is een krachtig hulpmiddel dat tot je beschikking staat. Dus de volgende keer dat iemand vraagt hoe hij zijn bestanden kan beveiligen, weet je precies wat je moet zeggen!
+En daar ga je! Je hebt net geleerd hoe je een PDF-bestand kunt versleutelen met Aspose.PDF voor .NET. Door deze beveiligingslaag toe te voegen, kun je ervoor zorgen dat je waardevolle documenten beschermd zijn. Of je nu gevoelige informatie deelt of gewoon de toegang wilt beperken, het versleutelen van PDF's is een krachtig hulpmiddel dat tot je beschikking staat. Dus de volgende keer dat iemand vraagt hoe hij zijn bestanden kan beveiligen, weet je precies wat je moet zeggen!
 
 ## Veelgestelde vragen
 

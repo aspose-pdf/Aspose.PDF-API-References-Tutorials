@@ -9,7 +9,7 @@ url: /fr/net/programming-with-graphs/add-drawing/
 ---
 ## Introduction
 
-Lorsque vous travaillez avec des documents PDF, l'ajout de dessins peut grandement améliorer l'attrait visuel et la fonctionnalité de vos fichiers. Que vous créiez des rapports, des présentations ou des formulaires interactifs, la possibilité d'inclure des graphiques et des formes personnalisés est essentielle. Dans ce didacticiel, nous allons découvrir comment ajouter des dessins à un fichier PDF à l'aide d'Aspose.PDF pour .NET. Nous allons décomposer le processus étape par étape, afin que vous ayez une compréhension claire de chaque étape.
+Lorsque vous travaillez avec des documents PDF, l'ajout de dessins peut grandement améliorer l'attrait visuel et la fonctionnalité de vos fichiers. Que vous créiez des rapports, des présentations ou des formulaires interactifs, la possibilité d'inclure des graphiques et des formes personnalisés est essentielle. Dans ce didacticiel, nous allons découvrir comment ajouter des dessins à un fichier PDF à l'aide d'Aspose.PDF pour .NET. Nous allons décomposer le processus étape par étape, en veillant à ce que vous ayez une compréhension claire de chaque étape.
 
 ## Prérequis
 
@@ -87,7 +87,7 @@ Aspose.Pdf.Drawing.Graph graph = new Aspose.Pdf.Drawing.Graph(300.0, 400.0);
 
 Ici, nous créons un graphique avec une largeur de 300 unités et une hauteur de 400 unités.
 
-## Étape 6 : définir la bordure de l'objet graphique
+## Étape 6 : Définir la bordure de l'objet graphique
 
 Définissez la bordure du graphique pour le rendre visuellement distinct :
 

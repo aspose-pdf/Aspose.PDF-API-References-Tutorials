@@ -61,7 +61,7 @@ Document pdfDocument = new Document(dataDir + "GetParticularPage.pdf");
 
 ## 步骤 3：访问特定页面
 
-现在到了主要事件 — 获取特定页面！假设我们要从 PDF 文件中提取第二页。请记住，Aspose.PDF 中的页码是从 1 开始索引的，而不是从 0 开始。
+现在到了主要事件 — 获取特定页面！假设我们要从 PDF 文件中提取第二页。请记住，Aspose.PDF 中的页码从 1 开始索引，而不是从 0 开始。
 
 ```csharp
 //获取特定页面

@@ -96,7 +96,7 @@ Infine, puoi eseguire la tua applicazione. Se ci sono delle sostituzioni di font
 
 ## Conclusione
 
-Rilevare gli avvisi di sostituzione font nei documenti PDF è essenziale per mantenere l'integrità visiva dei file. Con Aspose.PDF per .NET, questo processo è semplice ed efficiente. Seguendo i passaggi descritti in questa guida, puoi facilmente impostare il rilevamento della sostituzione font e assicurarti che i tuoi PDF abbiano esattamente l'aspetto che desideravi.
+Rilevare gli avvisi di sostituzione font nei documenti PDF è essenziale per mantenere l'integrità visiva dei file. Con Aspose.PDF per .NET, questo processo è semplice ed efficiente. Seguendo i passaggi descritti in questa guida, puoi facilmente impostare il rilevamento della sostituzione font e assicurarti che i tuoi PDF abbiano esattamente l'aspetto che volevi.
 
 ## Domande frequenti
 

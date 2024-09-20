@@ -28,7 +28,7 @@ url: /zh-hant/net/document-conversion/pdf-to-xml/
 2. 新增 Aspose.PDF NuGet 套件：
 - 在解決方案資源管理器中以滑鼠右鍵按一下您的專案。
 - 選擇“管理 NuGet 套件”。
-- 搜尋“Aspose.PDF”並安裝該軟體包。
+- 搜尋“Aspose.PDF”並安裝該套件。
 
 安裝軟體包後，您就可以開始編寫將 PDF 轉換為 XML 的程式碼。
 
@@ -62,7 +62,7 @@ doc.Save(dataDir + "PDFToXML_out.xml", SaveFormat.MobiXml);
 
 ## 結論
 
-恭喜！您已使用 Aspose.PDF for .NET 成功將 PDF 檔案轉換為 XML 格式。這個強大的函式庫讓操作PDF文件變得容易，只需幾行程式碼，您就可以完成格式轉換等複雜的任務。無論您正在開發大型應用程式還是只需要轉換幾個文件，Aspose.PDF 都能滿足您的需求。
+恭喜！您已使用 Aspose.PDF for .NET 成功將 PDF 檔案轉換為 XML 格式。這個功能強大的庫可以輕鬆操作PDF文檔，只需幾行程式碼，您就可以完成格式轉換等複雜任務。無論您正在開發大型應用程式還是只需要轉換幾個文件，Aspose.PDF 都能滿足您的需求。
 
 ## 常見問題解答
 

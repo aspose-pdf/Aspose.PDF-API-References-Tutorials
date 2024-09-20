@@ -2,135 +2,174 @@
 title: Créer un PDF avec du texte balisé
 linktitle: Créer un PDF avec du texte balisé
 second_title: Référence de l'API Aspose.PDF pour .NET
-description: Guide étape par étape pour créer un PDF avec du texte balisé à l'aide d'Aspose.PDF pour .NET.
+description: Découvrez comment créer des PDF balisés avec du contenu accessible à l'aide d'Aspose.PDF pour .NET dans ce didacticiel complet étape par étape.
 type: docs
 weight: 50
 url: /fr/net/programming-with-tagged-pdf/create-pdf-with-tagged-text/
 ---
-Dans ce didacticiel, nous vous fournirons un guide étape par étape sur la façon de créer un document PDF avec du texte balisé à l'aide d'Aspose.PDF pour .NET. Aspose.PDF est une bibliothèque puissante qui vous permet de créer, de manipuler et de convertir des documents PDF par programmation. En utilisant les fonctionnalités de structure de contenu balisé d'Aspose.PDF, vous pouvez ajouter du texte balisé à votre document PDF.
+## Introduction
+
+À l'ère du numérique, les documents PDF sont devenus l'un des formats les plus populaires pour le partage et l'affichage de contenu. Qu'il s'agisse de rapports commerciaux, d'articles universitaires ou de manuels d'utilisation, les PDF sont partout ! Mais ce qui distingue un bon PDF d'un excellent PDF, c'est l'accessibilité et la structure. C'est vrai ! Les PDF balisés permettent aux lecteurs d'écran et aux technologies d'assistance de comprendre et de parcourir plus facilement le contenu. Et devinez quoi ? Dans ce tutoriel, je vais vous expliquer étape par étape le processus de création d'un PDF balisé à l'aide d'Aspose.PDF pour .NET ! 
+
+Alors, prenez votre boisson préférée, installez-vous et plongeons dans le monde des PDF balisés !
 
 ## Prérequis
 
-Avant de commencer, assurez-vous que les conditions préalables suivantes sont remplies :
+Avant de commencer, vous devez mettre en place quelques éléments :
 
-1. Visual Studio installé avec .NET Framework.
-2. La bibliothèque Aspose.PDF pour .NET.
+1. Visual Studio – Assurez-vous que Visual Studio est installé sur votre ordinateur. Vous pouvez utiliser n’importe quelle version prenant en charge .NET.
+2.  Aspose.PDF pour .NET - Téléchargez la dernière version d'Aspose.PDF pour .NET à partir du[site web](https://releases.aspose.com/pdf/net/)Vous pouvez également opter pour un essai gratuit pour découvrir ses fonctionnalités.
+3. .NET Framework - Ces exemples seront créés pour .NET. Assurez-vous d'avoir une version compatible installée sur votre machine.
+4. Connaissances de base de C# - Une familiarité avec la programmation C# sera utile lorsque nous écrirons du code !
 
-## Étape 1 : Configuration du projet
+Vous avez tout compris ? Super ! Passons au codage !
 
-Pour commencer, créez un nouveau projet dans Visual Studio et ajoutez une référence à la bibliothèque Aspose.PDF pour .NET. Vous pouvez télécharger la bibliothèque depuis le site officiel d'Aspose et l'installer sur votre machine.
+## Paquets d'importation
 
-## Étape 2 : Importer les espaces de noms nécessaires
+Maintenant que nous avons réglé nos prérequis, passons à la partie amusante : importer les packages nécessaires. Pour travailler avec Aspose.PDF, vous devez absolument ajouter la bibliothèque à votre projet. 
 
-Dans votre fichier de code C#, importez les espaces de noms requis pour accéder aux classes et méthodes fournies par Aspose.PDF :
+### Créer un nouveau projet
+
+Tout d’abord, lancez Visual Studio et créez un nouveau projet C#.
+
+1. Ouvrez Visual Studio.
+2. Cliquez sur « Créer un nouveau projet ».
+3. Choisissez « Application console (.NET) » et cliquez sur « Suivant ».
+4.  Nommez votre projet (par exemple,`TaggedPdfExample`) et définissez son emplacement.
+5. Cliquez sur « Créer ».
+
+### Ajouter une référence Aspose.PDF
+
+Maintenant, ajoutons la bibliothèque Aspose.PDF :
+
+1. Faites un clic droit sur votre projet dans l’Explorateur de solutions.
+2. Sélectionnez « Gérer les packages NuGet ».
+3. Recherchez « Aspose.PDF » et installez la dernière version.
+
+### Importer les espaces de noms requis
+
+ En haut de votre fichier de programme principal (comme`Program.cs`), importez les espaces de noms suivants :
 
 ```csharp
-using System;
-using Aspose.Pdf;
+using Aspose.Pdf.LogicalStructure;
 using Aspose.Pdf.Tagged;
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Étape 3 : Création du document PDF avec texte balisé
+Maintenant que nous avons tout configuré, décomposons le code en parties digestes et créons un PDF balisé étape par étape !
 
-Utilisez le code suivant pour créer un document PDF avec du texte balisé :
+## Étape 1 : Définir le répertoire des documents
+
+Avant de commencer à coder, définissons le répertoire du document dans lequel nous allons enregistrer notre fichier PDF :
 
 ```csharp
-string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Tagged PDF document");
-taggedContent.SetLanguage("fr-FR");
-
-HeaderElement headerElement = taggedContent.CreateHeaderElement();
-headerElement.ActualText = "Header 1";
-
-ParagraphElement paragraphElement1 = taggedContent.CreateParagraphElement();
-paragraphElement1.ActualText = "test1";
-
-// Ajoutez plus de paragraphes ici
-
-// Enregistrer le document PDF
-document.Save(dataDir + "PDFwithTagText.pdf");
-```
-
-Ce code crée un document PDF vide et ajoute du texte balisé à l'aide des méthodes fournies par Aspose.PDF. Vous pouvez ajouter d'autres éléments de texte balisés tels que des titres et des paragraphes à l'aide des méthodes appropriées.
-
-### Exemple de code source pour créer un PDF avec du texte balisé à l'aide d'Aspose.PDF pour .NET 
-```csharp
-
 // Le chemin vers le répertoire des documents.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Mettez à jour ceci selon votre chemin
+```
+
+ Remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin réel où vous souhaitez enregistrer votre PDF.
+
+## Étape 2 : Créer un document PDF
+
+Créons une nouvelle instance de document PDF. C'est comme dessiner une toile vierge sur laquelle nous ajouterons notre contenu. 
+
+```csharp
 // Créer un document PDF
 Document document = new Document();
+```
+
+## Étape 3 : Obtenir le contenu balisé pour le document
+
+Ensuite, nous devons obtenir le contenu balisé de notre document. Considérez le contenu balisé comme la structure sous-jacente qui le rend accessible. Voici comment procéder :
+
+```csharp
 // Obtenez du contenu pour travailler avec TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
+```
+
+## Étape 4 : Définir le titre et la langue du document
+
+Maintenant, définissons le titre et la langue de notre document. C'est très important pour l'accessibilité !
+
+```csharp
 // Définir le titre et la langue du document
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
+```
+
+## Étape 5 : Créer des éléments de structure au niveau du bloc de texte
+
+C'est ici que nous allons créer notre contenu. Nous allons créer des en-têtes et des paragraphes, comme des blocs de construction !
+
+### Étape 5.1 : Créer un élément d'en-tête
+
+Pour commencer, créons un élément d’en-tête :
+
+```csharp
 // Créer des éléments de structure au niveau du bloc de texte
 HeaderElement headerElement = taggedContent.CreateHeaderElement();
 headerElement.ActualText = "Heading 1";
+```
+
+### Étape 5.2 : Créer des éléments de paragraphe
+
+Ensuite, ajoutons quelques paragraphes. J'en ajouterai plusieurs pour vous, mais vous pouvez personnaliser cela selon vos besoins !
+
+```csharp
 ParagraphElement paragraphElement1 = taggedContent.CreateParagraphElement();
 paragraphElement1.ActualText = "test1";
+
 ParagraphElement paragraphElement2 = taggedContent.CreateParagraphElement();
 paragraphElement2.ActualText = "test 2";
+
 ParagraphElement paragraphElement3 = taggedContent.CreateParagraphElement();
 paragraphElement3.ActualText = "test 3";
+
 ParagraphElement paragraphElement4 = taggedContent.CreateParagraphElement();
 paragraphElement4.ActualText = "test 4";
+
 ParagraphElement paragraphElement5 = taggedContent.CreateParagraphElement();
 paragraphElement5.ActualText = "test 5";
+
 ParagraphElement paragraphElement6 = taggedContent.CreateParagraphElement();
 paragraphElement6.ActualText = "test 6";
+
 ParagraphElement paragraphElement7 = taggedContent.CreateParagraphElement();
 paragraphElement7.ActualText = "test 7";
-// Enregistrer le document PDF
-document.Save( dataDir + "PDFwithTaggedText.pdf");
-
 ```
+
+## Étape 6 : Enregistrer le document PDF
+
+Enfin, sauvegardons ce chef-d'œuvre ! Voici comment enregistrer votre PDF balisé :
+
+```csharp
+// Enregistrer le document PDF
+document.Save(dataDir + "PDFwithTaggedText.pdf");
+```
+
+Vous venez de créer un PDF balisé ! 
 
 ## Conclusion
 
-Dans ce didacticiel, vous avez appris à créer un document PDF avec du texte balisé à l'aide d'Aspose.PDF pour .NET. Les fonctionnalités de structure de contenu balisé d'Aspose.PDF vous permettent de structurer et d'organiser votre texte pour une meilleure accessibilité et une meilleure sémantique.
+Créer un PDF balisé avec Aspose.PDF pour .NET est un jeu d'enfant une fois que vous avez pris le coup de main ! Cela rend vos documents non seulement conviviaux, mais également accessibles à un public plus large. Mettre l'accent sur la structure sémantique sera certainement payant, surtout si vous travaillez dans des secteurs où l'accessibilité du contenu est essentielle. 
 
-### FAQ
+## FAQ
 
-#### Q : Quel est le but de créer un document PDF avec du texte balisé à l’aide d’Aspose.PDF pour .NET ?
+### Qu'est-ce qu'un PDF balisé ?  
+Un PDF balisé contient des données structurées qui permettent aux lecteurs d'écran et aux technologies d'assistance de parcourir plus efficacement le contenu.
 
-R : La création d'un document PDF avec du texte balisé à l'aide d'Aspose.PDF pour .NET vous permet de structurer et d'organiser le contenu textuel du document PDF. Le texte balisé ajoute une signification sémantique et améliore l'accessibilité pour les utilisateurs, en particulier ceux qui utilisent des technologies d'assistance.
+### Dois-je acheter Aspose.PDF pour l'utiliser ?  
+ Bien que vous puissiez commencer avec un essai gratuit, une licence sera nécessaire pour une utilisation à long terme. Vous pouvez en savoir plus[ici](https://purchase.aspose.com/buy).
 
-#### Q : Comment Aspose.PDF aide-t-il à créer un document PDF avec du texte balisé ?
+### Puis-je personnaliser les éléments de structure dans mon PDF ?  
+Absolument ! Vous pouvez manipuler différents éléments et créer des structures complexes en fonction de vos besoins.
 
-R : Aspose.PDF pour .NET est une bibliothèque puissante qui fournit des fonctionnalités pour créer, manipuler et convertir des documents PDF par programmation. Dans ce didacticiel, les fonctionnalités de structure de contenu balisé de la bibliothèque sont utilisées pour ajouter du texte structuré et sémantiquement significatif au document PDF.
+### Aspose.PDF est-il compatible avec toutes les applications .NET ?  
+Oui, Aspose.PDF est conçu pour fonctionner sur différentes plates-formes .NET, notamment .NET Framework, .NET Core, etc.
 
-#### Q : Quelles sont les conditions préalables pour créer un document PDF avec du texte balisé à l’aide d’Aspose.PDF pour .NET ?
-
-R : Avant de commencer, assurez-vous que Visual Studio est installé avec le framework .NET et que la bibliothèque Aspose.PDF pour .NET est référencée dans votre projet.
-
-#### Q : Comment le code C# fourni crée-t-il un document PDF avec du texte balisé ?
-
-R : L'exemple de code montre comment créer un document PDF, définir divers éléments de texte balisés (tels que des en-têtes et des paragraphes) et les ajouter au contenu du document. Ceci est réalisé à l'aide des fonctionnalités de structure de contenu balisé fournies par Aspose.PDF.
-
-#### Q : Comment puis-je personnaliser les éléments de texte balisés, tels que les en-têtes et les paragraphes ?
-
- R : Vous pouvez personnaliser les éléments de texte balisés en utilisant des méthodes appropriées, telles que`CreateHeaderElement` et`CreateParagraphElement` , et définir des propriétés telles que`ActualText` pour fournir un texte et une sémantique significatifs.
-
-#### Q : Puis-je ajouter d’autres éléments de texte balisés, tels que des listes ou des liens, en utilisant des techniques similaires ?
-
-R : Oui, vous pouvez ajouter d'autres éléments de texte balisés tels que des listes, des liens ou d'autres structures personnalisées à l'aide de techniques similaires. Aspose.PDF propose diverses méthodes pour créer différents types de contenu balisé, vous permettant ainsi d'améliorer la sémantique du document.
-
-####  : Comment fonctionne le`SetTitle` method contribute to the PDF document's tagged text?
-
- A : Le`SetTitle` La méthode définit le titre du contenu balisé du document PDF, en fournissant une brève description de l'objectif ou du sujet du document. Ces informations aident les utilisateurs à comprendre le contexte du texte balisé.
-
-#### Q : Comment l’utilisation de texte balisé améliore-t-elle l’accessibilité dans les documents PDF ?
-
-: Le texte balisé ajoute une signification sémantique au document, le rendant ainsi plus accessible aux utilisateurs handicapés ou à ceux qui utilisent des technologies d'assistance. Les lecteurs d'écran et autres dispositifs d'assistance peuvent interpréter et présenter le texte balisé pour une expérience utilisateur améliorée.
-
-####  : Comment fonctionne le`SetLanguage` method enhance the tagged text in a PDF document?
-
- A : Le`SetLanguage` La méthode définit l'attribut de langue du contenu balisé du document PDF. Cela permet d'indiquer la langue dans laquelle le texte balisé est écrit, améliorant ainsi l'accessibilité et permettant un rendu approprié en fonction de la langue.
-
-#### Q : Est-il possible d’ajouter d’autres éléments, tels que des images ou du contenu multimédia, à côté du texte balisé en utilisant des techniques similaires ?
-
-R : Oui, vous pouvez ajouter d'autres éléments tels que des images, des éléments multimédias ou des annotations à côté du texte balisé en utilisant des techniques similaires. Aspose.PDF offre une large gamme de fonctionnalités pour combiner différents types de contenu au sein du document.
+### Où puis-je trouver de l'aide pour Aspose.PDF ?  
+ Vous pouvez visiter le[Forum d'assistance Aspose](https://forum.aspose.com/c/pdf/10) pour toute question ou problème que vous rencontrez.

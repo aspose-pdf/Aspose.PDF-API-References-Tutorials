@@ -147,4 +147,4 @@ Gratulálok! Sikeresen létrehozott és testreszabott egy tintajegyzetet egy PDF
 Teljesen! A folyamat megismétlésével tetszőleges számú tintajegyzetet adhat hozzá egyetlen oldalhoz.
 
 ### Hogyan távolíthatok el egy tintajelölést a PDF-ből?  
- A kommentárt a következővel távolíthatja el`doc.Pages[1].Annotations.Delete(a1)` módszer, hol`a1` a megjegyzés objektuma.
+ A kommentárt a következővel távolíthatja el`doc.Pages[1].Annotations.Delete(a1)` módszer, hol`a1` az annotációs objektuma.

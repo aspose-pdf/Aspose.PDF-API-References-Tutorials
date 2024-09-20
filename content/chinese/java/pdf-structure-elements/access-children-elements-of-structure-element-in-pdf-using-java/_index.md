@@ -104,7 +104,7 @@ for (Element child : children) {
 
 ### 我可以使用 Aspose.PDF for Java 访问 PDF 中的非文本内容吗？
 
-是的，您可以使用 Aspose.PDF for Java 访问非文本内容，例如图像、表格等。该库提供了全面的功能，可用于处理 PDF 文档中的各种类型的内容。
+是的，您可以使用 Aspose.PDF for Java 访问非文本内容，例如图像、表格等。该库提供了全面的功能，可用于处理 PDF 文档中的各种内容。
 
 ### Aspose.PDF for Java 可以免费使用吗？
 

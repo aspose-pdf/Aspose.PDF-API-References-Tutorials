@@ -91,7 +91,7 @@ doc.Pages[2].Actions.OnClose = new JavascriptAction("app.alert('Page 2 closed')"
 
 ## 步骤 4：保存 PDF 文档
 
-现在，您已将 JavaScript 添加到文档和特定页面。最后一步是将修改后的 PDF 保存到您想要的位置。这部分很简单但至关重要——不要忘记保存您的工作！
+现在，您已将 JavaScript 添加到文档和特定页面。最后一步是将修改后的 PDF 保存到您想要的位置。这部分很简单，但至关重要——不要忘记保存您的工作！
 
 代码如下：
 

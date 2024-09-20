@@ -1,6 +1,6 @@
 ---
-title: PDF-kezelők
-linktitle: PDF-kezelők
+title: PDF operátorok
+linktitle: PDF operátorok
 second_title: Aspose.PDF for .NET API Reference
 description: Lépésről lépésre a PDF-operátorok használatához az Aspose.PDF for .NET-hez. Adjon hozzá egy képet egy PDF-oldalhoz, és adja meg a pozícióját.
 type: docs

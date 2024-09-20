@@ -78,7 +78,7 @@ for (Element child : children) {
 }
 ```
 
-Ten fragment kodu przechodzi przez elementy podrzędne i wyodrębnia tekst z fragmentów tekstu. Możesz dostosować ten kod do swoich konkretnych potrzeb, czy to wyodrębniając obrazy, tabele czy inną zawartość.
+Ten fragment kodu przechodzi przez elementy podrzędne i wyodrębnia tekst z fragmentów tekstu. Możesz dostosować ten kod do swoich konkretnych potrzeb, czy to wyodrębniając obrazy, tabele czy inną treść.
 
 ## Typowe przypadki użycia
 

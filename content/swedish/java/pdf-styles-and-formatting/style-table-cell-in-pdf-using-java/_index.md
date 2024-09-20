@@ -53,7 +53,7 @@ Den här koden skapar en grundläggande tabell med två kolumner: "Namn" och "Å
 Nu när vi har vår grundläggande tabell, låt oss gå vidare till styling av tabellcellerna. Vi kommer att fokusera på att ändra bakgrundsfärgen för specifika celler.
 
 ```java
-// Java-kod för att formatera tabellceller i en PDF
+// Java-kod för att utforma tabellceller i en PDF
 // Ladda det befintliga PDF-dokumentet
 Document pdfDocument = new Document("SimpleTable.pdf");
 

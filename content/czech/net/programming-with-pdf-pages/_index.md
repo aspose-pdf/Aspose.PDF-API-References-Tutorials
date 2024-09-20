@@ -15,7 +15,7 @@ Výukové programy obsahují pokyny krok za krokem, podrobné příklady kódu a
 | --- | --- | 
 | [Změnit orientaci](./change-orientation/) | Podrobný průvodce změnou orientace stránky PDF pomocí Aspose.PDF pro .NET. Snadné sledování a implementace do vašich projektů. |  
 | [Zřetězit soubory PDF](./concatenate-pdf-files/) | Zřetězte soubory PDF bez námahy pomocí Aspose.PDF for .NET s tímto komplexním průvodcem krok za krokem. |  
-| [Smazat konkrétní stránku v souboru PDF](./delete-particular-page/) | V tomto podrobném průvodci se dozvíte, jak odstranit konkrétní stránku ze souboru PDF pomocí Aspose.PDF for .NET. |  
+| [Odstranit konkrétní stránku v souboru PDF](./delete-particular-page/) | V tomto podrobném průvodci se dozvíte, jak odstranit konkrétní stránku ze souboru PDF pomocí Aspose.PDF for .NET. |  
 | [Určete barvu stránky](./determine-page-color/) | Naučte se určit barvu stránky souborů PDF pomocí Aspose.PDF for .NET pomocí našeho podrobného průvodce. Snadná implementace pro všechny úrovně dovedností. |  
 | [Přizpůsobit obsah stránky souboru PDF](./fit-page-contents/) | Bez námahy přizpůsobte svůj obsah PDF pomocí Aspose.PDF pro .NET. Tato příručka poskytuje podrobný postup krok za krokem k dosažení optimálního rozvržení stránky. |  
 | [Získejte rozměry stránky PDF](./get-dimensions/) | V tomto tutoriálu vysvětlíme, jak získat rozměry stránky PDF a provádět manipulace pomocí Aspose.PDF for .NET. Jsou uvedeny podrobné kroky, které vás provedou celým procesem. |  

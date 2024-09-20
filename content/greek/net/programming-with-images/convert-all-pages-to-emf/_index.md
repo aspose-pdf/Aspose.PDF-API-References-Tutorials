@@ -99,7 +99,7 @@ Resolution resolution = new Resolution(300);
 Στη συνέχεια, δημιουργήστε το EmfDevice που θα χειριστεί τη μετατροπή των σελίδων PDF σε μορφή EMF.
 
 ```csharp
-// Δημιουργία συσκευής EMF με καθορισμένα χαρακτηριστικά
+// Δημιουργήστε συσκευή EMF με καθορισμένα χαρακτηριστικά
 // Πλάτος, Ύψος, Ανάλυση
 EmfDevice emfDevice = new EmfDevice(500, 700, resolution);
 ```

@@ -2,7 +2,7 @@
 title: Vodorovně a svisle Přepínače
 linktitle: Vodorovně a svisle Přepínače
 second_title: Aspose.PDF pro .NET API Reference
-description: Naučte se vytvářet vodorovně a svisle zarovnaná přepínací tlačítka v PDF pomocí Aspose.PDF for .NET pomocí tohoto podrobného návodu.
+description: Naučte se vytvářet vodorovně a svisle zarovnaná přepínací tlačítka v PDF pomocí Aspose.PDF pro .NET pomocí tohoto podrobného návodu.
 type: docs
 weight: 180
 url: /cs/net/programming-with-forms/horizontally-and-vertically-radio-buttons/

@@ -9,7 +9,7 @@ url: /tr/net/programming-with-graphs/create-filled-rectangle/
 ---
 ## giriiş
 
-Görsel olarak çekici PDF'leri programatik olarak oluşturmak istediniz mi hiç? Eğer öyleyse, doğru yerdesiniz! Bu eğitimde, PDF belgelerini kolaylıkla düzenlemenize olanak tanıyan güçlü bir kütüphane olan Aspose.PDF for .NET dünyasına dalacağız. Bugün, bir PDF dosyası içinde dolu bir dikdörtgen oluşturmaya odaklanacağız. İster deneyimli bir geliştirici olun ister yeni başlıyor olun, bu kılavuz sizi her adımda dostça ve ilgi çekici bir şekilde yönlendirecektir. O halde, kodlama şapkanızı alın ve başlayalım!
+Görsel olarak çekici PDF'leri programatik olarak oluşturmak istediniz mi hiç? Eğer öyleyse, doğru yerdesiniz! Bu eğitimde, PDF belgelerini kolaylıkla düzenlemenize olanak tanıyan güçlü bir kütüphane olan .NET için Aspose.PDF dünyasına dalacağız. Bugün, bir PDF dosyası içinde dolu bir dikdörtgen oluşturmaya odaklanacağız. İster deneyimli bir geliştirici olun ister yeni başlıyor olun, bu kılavuz sizi her adımda dostça ve ilgi çekici bir şekilde yönlendirecektir. O halde, kodlama şapkanızı alın ve başlayalım!
 
 ## Ön koşullar
 

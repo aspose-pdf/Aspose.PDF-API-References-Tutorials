@@ -10,7 +10,7 @@ url: /pl/java/pdf-tags-and-structure/illustration-structure-elements-in-pdf-usin
 
 # Elementy struktury ilustracji w formacie PDF przy użyciu języka Java
 
-tym przewodniku krok po kroku zagłębimy się w fascynujący świat tworzenia elementów struktury ilustracji w plikach PDF przy użyciu języka Java, a wszystko dzięki potężnej bibliotece Aspose.PDF. Niezależnie od tego, czy jesteś doświadczonym programistą, czy dopiero zaczynasz przygodę z manipulacją plikami PDF, ten samouczek zapewni Ci wiedzę i kod źródłowy, których potrzebujesz, aby zacząć.
+tym przewodniku krok po kroku zagłębimy się w fascynujący świat tworzenia elementów struktury ilustracji w plikach PDF przy użyciu języka Java, a wszystko dzięki potężnej bibliotece Aspose.PDF. Niezależnie od tego, czy jesteś doświadczonym programistą, czy dopiero zaczynasz przygodę z manipulacją plikami PDF, ten samouczek dostarczy Ci wiedzy i kodu źródłowego, których potrzebujesz, aby zacząć.
 
 ## Wstęp
 

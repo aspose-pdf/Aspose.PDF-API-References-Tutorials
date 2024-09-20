@@ -66,7 +66,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Steg 2: Öppna PDF-dokumentet
 
-Nästa upp kommer vi att använda Aspose.PDF-biblioteket för att ladda vårt dokument. Detta är enkelt:
+Nästa upp kommer vi att använda Aspose.PDF-biblioteket för att ladda vårt dokument. Det här är enkelt:
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "PDFToPDFA.pdf");

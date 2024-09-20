@@ -20,7 +20,7 @@ url: /zh-hant/net/programming-with-images/convert-image-stream-to-pdf/
 1.  Aspose.PDF for .NET：首先，您需要安裝 Aspose.PDF 庫。您可以購買[這裡](https://purchase.aspose.com/buy)，或者如果您只是想嘗試一下，請抓住[免費試用](https://releases.aspose.com/pdf/net/).
 2. 開發環境：您需要一個像 Visual Studio 這樣安裝了 .NET 的 IDE。
 3. 有效許可證：要釋放 Aspose.PDF 的全部潛力，您需要有效許可證。你可以申請一個[臨時執照](https://purchase.aspose.com/temporary-license/)如果你還沒有的話。
-4. C# 基礎知識：由於本教學基於 C#，因此熟悉語言會很有幫助。
+4. C# 基礎知識：由於本教學是基於 C#，因此熟悉語言會很有幫助。
 
 ## 導入包
 

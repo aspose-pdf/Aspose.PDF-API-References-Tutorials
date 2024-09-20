@@ -2,105 +2,47 @@
 title: Tabelle im PDF-Dokument rendern
 linktitle: Tabelle im PDF-Dokument rendern
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET eine Tabelle in einem PDF-Dokument anzeigen.
+description: Erstellen Sie ganz einfach professionelle PDFs, indem Sie Tabellen mit Aspose.PDF für .NET rendern. Folgen Sie unserer Schritt-für-Schritt-Anleitung zur Masterdokumenterstellung.
 type: docs
 weight: 170
 url: /de/net/programming-with-tables/render-table/
 ---
-In diesem Tutorial führen wir Sie Schritt für Schritt durch die Anzeige einer Tabelle in einem PDF-Dokument mit Aspose.PDF für .NET. Wir erklären den bereitgestellten C#-Quellcode und zeigen Ihnen, wie Sie ihn implementieren.
+## Einführung
 
-## Schritt 1: Erstellen des Dokuments
-Zuerst erstellen wir ein neues PDF-Dokument:
+Das programmgesteuerte Erstellen professioneller PDFs kann eine gewaltige Aufgabe sein, aber mit Aspose.PDF für .NET wird es zum Kinderspiel. Egal, ob Sie Berichte, Rechnungen oder andere Dokumenttypen erstellen, die tabellarische Daten erfordern, Aspose.PDF bietet die Tools, die Sie benötigen. In diesem Tutorial erfahren Sie Schritt für Schritt, wie Sie Tabellen in einem PDF-Dokument rendern. Am Ende haben Sie ein solides Verständnis dafür, wie Sie Tabellen bearbeiten, Seiteneigenschaften verwalten und PDF-Dateien problemlos speichern können.
+
+## Voraussetzungen
+
+Bevor wir uns in den Code vertiefen, hier ist, was Sie brauchen:
+
+-  Visual Studio: Stellen Sie sicher, dass Visual Studio auf Ihrem Computer installiert ist. Sie können es herunterladen[Hier](https://visualstudio.microsoft.com/downloads/).
+-  Aspose.PDF für .NET: Sie können die Aspose.PDF-Bibliothek ganz einfach herunterladen von der[Aspose-Veröffentlichungsseite](https://releases.aspose.com/pdf/net/).
+- Grundkenntnisse in C#: Wenn Sie die Grundlagen von C# verstehen, können Sie den Schritten besser folgen.
+- .NET Framework: Stellen Sie idealerweise sicher, dass Sie in einer kompatiblen .NET-Umgebung arbeiten.
+
+Sobald Sie diese Voraussetzungen erfüllt haben, können Sie mit der Erstellung Ihrer PDF-Dokumente beginnen!
+
+## Pakete importieren
+
+Zu Beginn Ihrer C#-Datei müssen Sie die erforderlichen Aspose.PDF-Namespaces importieren. Dadurch können Sie die Bibliotheksfunktionen in unserem Projekt nutzen.
 
 ```csharp
-// Pfad zum Dokumentenverzeichnis
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// Neues Dokument erstellen
-Document doc = new Document();
+using System;
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-## Schritt 2: Seitenränder und -ausrichtung konfigurieren
-Als Nächstes konfigurieren wir die Seitenränder und stellen die Ausrichtung auf Querformat ein:
+ Stellen Sie sicher, dass Sie die erforderlichen Verweise auf die Aspose.PDF-Bibliothek in Ihrem Projekt hinzugefügt haben. Wenn Sie NuGet verwenden, können Sie es einfach hinzufügen, indem Sie nach`Aspose.PDF`.
+
+Nachdem wir nun alles eingerichtet haben, unterteilen wir den Vorgang zum Rendern einer Tabelle in ein PDF-Dokument in überschaubare Schritte. Keine Sorge, ich werde Sie mit klaren Anweisungen durch jeden Schritt führen!
+
+## Schritt 1: Dokument- und Seiteninformationen einrichten
+
+Als Erstes müssen wir ein neues Dokument erstellen und dessen Seiteneinstellungen konfigurieren. So geht's:
 
 ```csharp
-PageInfo pageInfo = doc.PageInfo;
-Aspose.Pdf.MarginInfo marginInfo = pageInfo.Margin;
-
-marginInfo. Left = 37;
-marginInfo. Right = 37;
-marginInfo. Top = 37;
-marginInfo.Bottom = 37;
-
-pageInfo.IsLandscape = true;
-```
-
-## Schritt 3: Tabelle und Spalten erstellen
-Lassen Sie uns nun eine Tabelle erstellen und die Spaltenbreiten festlegen:
-
-```csharp
-Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-table. ColumnWidths = "50 100";
-```
-
-## Schritt 4: Zeilen und Zellen zur Tabelle hinzufügen
-Als Nächstes fügen wir der Tabelle mithilfe einer Schleife Zeilen und Zellen hinzu:
-
-```csharp
-for (int i = 1; i <= 120; i++)
-{
-     Aspose.Pdf.Row row = table.Rows.Add();
-     row. FixedRowHeight = 15;
-     Aspose.Pdf.Cell cell1 = row.Cells.Add();
-     cell1.Paragraphs.Add(new TextFragment("Content 1"));
-     Aspose.Pdf.Cell cell2 = row.Cells.Add();
-     cell2.Paragraphs.Add(new TextFragment("HHHHH"));
-}
-```
-
-## Schritt 5: Hinzufügen der Tabelle zur Seite
-Fügen wir nun die Tabelle zur Dokumentseite hinzu:
-
-```csharp
-Page curPage = doc.Pages.Add();
-Aspose.Pdf.Paragraphs paragraphs = curPage.Paragraphs;
-paragraphs. Add(table);
-```
-
-## Schritt 6: Tabelle auf einer neuen Seite anzeigen
-Als nächstes erstellen wir eine neue Tabelle und setzen die Eigenschaft „IsInNewPage“ auf „true“, um die Tabelle auf einer neuen Seite anzuzeigen:
-
-```csharp
-Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-table. ColumnWidths = "100 100";
-for (int i = 1; i <= 10; i++)
-{
-     Aspose.Pdf.Row row = table1.Rows.Add();
-     Aspose.Pdf.Cell cell1 = row.Cells.Add();
-     cell1.Paragraphs.Add(new TextFragment("LAAAAAAA"));
-     Aspose.Pdf.Cell cell2 = row.Cells.Add();
-     cell2.Paragraphs.Add(new TextFragment("LAAGGGGGG"));
-}
-table1.IsInNewPage = true;
-paragraphs. Add(table1);
-```
-
-## Schritt 7: PDF speichern
-Abschließend speichern wir das PDF-Dokument:
-
-```csharp
-dataDir = dataDir + "IsNewPageProperty_Test_out.pdf";
-doc.Save(dataDir);
-
-Console.WriteLine("\nTable displayed successfully on a page.\nFile saved at location: " + dataDir);
-```
-
-### Beispielquellcode für Render Table mit Aspose.PDF für .NET
-
-```csharp
-// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-
 Document doc = new Document();
 PageInfo pageInfo = doc.PageInfo;
 Aspose.Pdf.MarginInfo marginInfo = pageInfo.Margin;
@@ -111,63 +53,123 @@ marginInfo.Top = 37;
 marginInfo.Bottom = 37;
 
 pageInfo.IsLandscape = true;
-
-Aspose.Pdf.Table table = new Aspose.Pdf.Table();
-table.ColumnWidths = "50 100";
-// Seite hinzugefügt.
-Page curPage = doc.Pages.Add();
-for (int i = 1; i <= 120; i++)
-{
-	Aspose.Pdf.Row row = table.Rows.Add();
-	row.FixedRowHeight = 15;
-	Aspose.Pdf.Cell cell1 = row.Cells.Add();
-	cell1.Paragraphs.Add(new TextFragment("Content 1"));
-	Aspose.Pdf.Cell cell2 = row.Cells.Add();
-	cell2.Paragraphs.Add(new TextFragment("HHHHH"));
-}
-Aspose.Pdf.Paragraphs paragraphs = curPage.Paragraphs;
-paragraphs.Add(table);
-/********************************************/
-Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-table.ColumnWidths = "100 100";
-for (int i = 1; i <= 10; i++)
-{
-	Aspose.Pdf.Row row = table1.Rows.Add();
-	Aspose.Pdf.Cell cell1 = row.Cells.Add();
-	cell1.Paragraphs.Add(new TextFragment("LAAAAAAA"));
-	Aspose.Pdf.Cell cell2 = row.Cells.Add();
-	cell2.Paragraphs.Add(new TextFragment("LAAGGGGGG"));
-}
-table1.IsInNewPage = true;
-// Ich möchte bitte Tabelle 1 auf der nächsten Seite behalten ...
-paragraphs.Add(table1);
-dataDir = dataDir + "IsNewPageProperty_Test_out.pdf";
-doc.Save(dataDir);
-
-Console.WriteLine("\nTable render successfully on a page.\nFile saved at " + dataDir);
 ```
 
+Erläuterung: 
+- Wir beginnen damit, festzulegen, wo unser Dokument gespeichert wird (`dataDir`). 
+-  Dann erstellen wir eine neue Instanz des`Document` Klasse. 
+- Wir konfigurieren die Seitenränder, um etwas Luft um unsere Tabelle herum zu schaffen.
+- Zum Schluss stellen wir das Dokument auf Querformat ein, was bei der Anzeige breiterer Tabellen hilfreich ist.
+
+## Schritt 2: Erstellen Sie die erste Tabelle
+
+Als Nächstes erstellen wir unsere erste Tabelle und füllen sie mit einigen Beispieldaten:
+
+```csharp
+Aspose.Pdf.Table table = new Aspose.Pdf.Table();
+table.ColumnWidths = "50 100"; // Spaltenbreiten definieren
+```
+
+ Erklärung: Hier instantiieren wir die`Table` Klasse und legen Sie die Spaltenbreiten fest. Die erste Spalte ist 50 Einheiten breit und die zweite Spalte 100 Einheiten.
+
+## Schritt 3: Füllen Sie die Tabelle mit Zeilen
+
+Fügen wir nun in einer Schleife Zeilen zu unserer Tabelle hinzu:
+
+```csharp
+Page curPage = doc.Pages.Add(); // Hinzufügen einer neuen Seite
+for (int i = 1; i <= 120; i++)
+{
+    Aspose.Pdf.Row row = table.Rows.Add();
+    row.FixedRowHeight = 15; // Festlegen einer festen Höhe für Zeilen
+    
+    Aspose.Pdf.Cell cell1 = row.Cells.Add();
+    cell1.Paragraphs.Add(new TextFragment("Content 1"));
+    
+    Aspose.Pdf.Cell cell2 = row.Cells.Add();
+    cell2.Paragraphs.Add(new TextFragment("HHHHH"));
+}
+```
+
+Erläuterung: 
+- Hier erstellen wir eine neue Seite, um unsere Tabelle hinzuzufügen.
+-  Wir verwenden ein`for` Schleife, um unserer Tabelle 120 Zeilen hinzuzufügen. Jede Zeile hat eine feste Höhe von 15 Einheiten.
+- Innerhalb jeder Zeile fügen wir zwei Zellen hinzu und füllen sie mit Text.
+
+## Schritt 4: Die erste Tabelle zur Seite hinzufügen
+
+Sobald wir die Tabelle ausgefüllt haben, fügen wir sie der aktuellen Seite hinzu:
+
+```csharp
+Aspose.Pdf.Paragraphs paragraphs = curPage.Paragraphs;
+paragraphs.Add(table);
+```
+
+Erklärung: Dieser Schritt fügt einfach die von uns erstellte Tabelle zu den Absätzen der aktuellen Seite hinzu, wodurch die Tabelle im PDF-Dokument sichtbar wird.
+
+## Schritt 5: Erstellen Sie eine zweite Tabelle
+
+Erstellen wir nun eine zweite Tabelle mit anderem Inhalt und fügen sie einer neuen Seite hinzu:
+
+```csharp
+Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
+table1.ColumnWidths = "100 100";
+for (int i = 1; i <= 10; i++)
+{
+    Aspose.Pdf.Row row = table1.Rows.Add();
+    Aspose.Pdf.Cell cell1 = row.Cells.Add();
+    cell1.Paragraphs.Add(new TextFragment("LAAAAAAA"));
+    
+    Aspose.Pdf.Cell cell2 = row.Cells.Add();
+    cell2.Paragraphs.Add(new TextFragment("LAAGGGGGG"));
+}
+table1.IsInNewPage = true; // Festlegen, dass die zweite Tabelle auf einer neuen Seite angezeigt wird
+paragraphs.Add(table1);
+```
+
+Erläuterung: 
+- Dieser Codeausschnitt erstellt eine neue Tabelle mit zwei Spalten, beide 100 Einheiten breit.
+-  A`for` Schleife fügt 10 Zeilen mit Beispielinhalten hinzu.
+-  Durch die Einstellung`table1.IsInNewPage` auf „true“ setzen, stellen wir sicher, dass diese Tabelle auf einer neuen Seite angezeigt wird, damit alles organisiert und übersichtlich bleibt.
+
+## Schritt 6: Speichern Sie das Dokument
+
+Nachdem unsere Tabellen nun fertig sind, speichern wir unser Dokument:
+
+```csharp
+dataDir = dataDir + "IsNewPageProperty_Test_out.pdf";
+doc.Save(dataDir);
+```
+
+ Erklärung: Wir geben den Dateinamen an und speichern das Dokument im angegebenen Verzeichnis. Wenn Sie diesen Code ausführen, wird eine PDF-Datei mit dem Titel`IsNewPageProperty_Test_out.pdf` wird an Ihrem angegebenen Standort erstellt.
+
+## Schritt 7: Bestätigungsnachricht
+
+Um dem Benutzer abschließend mitzuteilen, dass alles reibungslos funktioniert hat, können wir eine freundliche Konsolennachricht hinzufügen:
+
+```csharp
+Console.WriteLine("\nTable rendered successfully on a page.\nFile saved at " + dataDir);
+```
+
+Erklärung: Auf diese Weise lässt sich auf einfache Weise bestätigen, dass der Vorgang erfolgreich war und wo der Benutzer seine neue PDF-Datei finden kann.
+
 ## Abschluss
-Herzlichen Glückwunsch! Sie haben nun gelernt, wie Sie mit Aspose.PDF für .NET eine Tabelle in einem PDF-Dokument anzeigen. Diese Schritt-für-Schritt-Anleitung hat Ihnen gezeigt, wie Sie ein Dokument erstellen, Seitenränder und -ausrichtung konfigurieren, eine Tabelle hinzufügen und eine Tabelle auf einer neuen Seite anzeigen. Jetzt können Sie dieses Wissen in Ihren eigenen Projekten anwenden.
 
-### FAQs zum Rendern von Tabellen in PDF-Dokumenten
+Und da haben Sie es! Sie haben erfolgreich Tabellen in einem PDF-Dokument mit Aspose.PDF für .NET gerendert. Mit nur wenigen Codezeilen können Sie große Datenmengen in einem organisierten Format verarbeiten und präsentieren, sodass Ihre Dokumente sowohl informativ als auch optisch ansprechend sind. Egal, ob Sie an Inventarlisten, Finanzberichten oder Bildungsdokumenten arbeiten, Tabellen sind eine hervorragende Möglichkeit, komplexe Informationen auf einen Blick zu vermitteln.
 
-#### F: Wie kann ich das Erscheinungsbild der Tabelle ändern, beispielsweise die Zellenfarben ändern oder Rahmen hinzufügen?
+## Häufig gestellte Fragen
 
- A: Um das Aussehen der Tabelle zu ändern, können Sie verschiedene Eigenschaften der`Aspose.Pdf.Table` und seine Zellen. Sie können beispielsweise die`BackgroundColor` Eigenschaft von Zellen, um deren Hintergrundfarbe zu ändern. Sie können auch die`Border` Eigenschaft der Tabelle oder einzelner Zellen, um Rahmen hinzuzufügen. Darüber hinaus können Sie die Schriftart, Textfarbe und Ausrichtung des Tabelleninhalts anpassen, indem Sie die`TextState` der`TextFragment` Objekte, die den Zellen hinzugefügt werden.
+### Kann ich das Erscheinungsbild der Tabellen in Aspose.PDF anpassen?  
+Auf jeden Fall! Sie können Farben, Rahmen, Schriftarten und andere Eigenschaften anpassen, um das Erscheinungsbild Ihrer Tabellen zu verbessern.
 
-#### F: Kann ich der Tabelle Kopf- oder Fußzeilen hinzufügen?
+### Ist die Nutzung von Aspose.PDF kostenlos?  
+ Aspose.PDF bietet eine kostenlose Testversion an, für die kommerzielle Nutzung ist jedoch ein Kauf erforderlich. Sie können die Preise überprüfen[Hier](https://purchase.aspose.com/buy).
 
-A: Ja, Sie können der Tabelle Kopf- oder Fußzeilen hinzufügen, indem Sie am Anfang oder Ende der Tabelle zusätzliche Zeilen erstellen und den entsprechenden Inhalt in die Zellen eingeben. Sie können die Kopf- oder Fußzeilen unabhängig vom restlichen Tabelleninhalt anpassen, indem Sie diesen bestimmten Zeilen unterschiedliche Stile oder Inhalte hinzufügen.
+### Wie erhalte ich Support bei Problemen mit Aspose.PDF?  
+ Sie können im Aspose-Supportforum Hilfe suchen[Hier](https://forum.aspose.com/c/pdf/10).
 
-#### F: Wie kann ich die Position der Tabelle auf der Seite steuern?
+### Gibt es Einschränkungen für die kostenlose Testversion?  
+ Ja, die Testversion kann bestimmte Einschränkungen aufweisen, z. B. Wasserzeichen auf generierten Dokumenten. Für die volle Funktionalität sollten Sie eine temporäre Lizenz erwerben.[Hier](https://purchase.aspose.com/temporary-license/).
 
-A: Um die Position der Tabelle auf der Seite zu steuern, können Sie die`MarginInfo` der`PageInfo` Objekt. Das`MarginInfo` können Sie die linken, rechten, oberen und unteren Ränder der Seite festlegen, was sich auf den verfügbaren Platz für die Tabelle auswirkt. Sie können auch die`PositioningType` Eigentum der`Aspose.Pdf.Table` um die horizontale und vertikale Ausrichtung innerhalb des Inhaltsbereichs der Seite zu steuern.
-
-#### F: Kann ich die Tabelle in andere Dateiformate wie Excel oder CSV exportieren?
-
-A: Aspose.PDF für .NET ist in erster Linie für die Arbeit mit PDF-Dokumenten konzipiert. Obwohl es das PDF-Dokument als Bild oder XPS exportieren kann, unterstützt es nicht direkt den Export von Tabellen in Formate wie Excel oder CSV. Um die Tabellendaten in verschiedene Dateiformate zu exportieren, müssen Sie möglicherweise zusätzliche Bibliotheken oder Methoden verwenden, um den PDF-Inhalt in das gewünschte Format zu konvertieren.
-
-#### F: Wie kann ich den Tabellenzellen Hyperlinks hinzufügen?
-
- A: Um Hyperlinks zu den Tabellenzellen hinzuzufügen, können Sie das`Aspose.Pdf.WebHyperlink` Klasse, um einen Hyperlink zu erstellen und ihn dann als Anker zum`TextFragment`innerhalb der Zelle. Dadurch können Sie eine URL oder ein Linkziel mit einem bestimmten Text oder Inhalt innerhalb der Zelle verknüpfen und anklickbare Hyperlinks erstellen.
+### Wo finde ich weitere Informationen zu den Funktionen von Aspose.PDF?  
+ Sie können die umfassende Dokumentation erkunden, die verfügbar ist[Hier](https://reference.aspose.com/pdf/net/).

@@ -66,7 +66,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## 第 2 步：開啟 PDF 文檔
 
-現在我們已經有了文件的路徑，使用 Aspose.PDF 庫開啟您想要最佳化的 PDF 檔案。
+現在我們有了文件的路徑，使用 Aspose.PDF 庫開啟您想要最佳化的 PDF 檔案。
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "Shrinkimage.pdf");
@@ -135,7 +135,7 @@ Console.WriteLine("\nImage shrinked successfully.\nFile saved at " + dataDir);
 
 ## 結論
 
-現在你就得到它了！透過執行以下步驟，您可以使用 Aspose.PDF for .NET 快速有效地縮小 PDF 檔案中的影像。這不僅使您的 PDF 更易於共享，而且還可以增強其開啟或列印時的效能。
+現在你就擁有了！透過執行以下步驟，您可以使用 Aspose.PDF for .NET 快速有效地縮小 PDF 檔案中的影像。這不僅使您的 PDF 更易於共享，而且還可以增強其開啟或列印時的效能。
 
 ## 常見問題解答
 

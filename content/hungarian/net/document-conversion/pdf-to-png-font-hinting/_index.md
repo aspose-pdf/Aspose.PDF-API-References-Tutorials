@@ -2,7 +2,7 @@
 title: PDF-ből PNG-be font tippelés
 linktitle: PDF-ből PNG-be font tippelés
 second_title: Aspose.PDF for .NET API Reference
-description: Tanulja meg, hogyan konvertálhat PDF-et PNG-be font-utalásokkal az Aspose.PDF for .NET segítségével egy egyszerű, lépésről lépésre szóló útmutatóban.
+description: Ismerje meg, hogyan konvertálhat PDF-et PNG-be font-utalásokkal az Aspose.PDF for .NET segítségével egy egyszerű, lépésről lépésre bemutatott útmutatóban.
 type: docs
 weight: 160
 url: /hu/net/document-conversion/pdf-to-png-font-hinting/

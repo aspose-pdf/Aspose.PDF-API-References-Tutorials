@@ -2,7 +2,7 @@
 title: Töltse le az oldalszámot PDF-fájlban
 linktitle: Töltse le az oldalszámot PDF-fájlban
 second_title: Aspose.PDF for .NET API Reference
-description: Ismerje meg, hogyan töltheti le az oldalak számát PDF-fájlban az Aspose.PDF for .NET használatával. Kövesse lépésről lépésre útmutatónkat az egyszerű és hatékony megoldás érdekében.
+description: Ismerje meg, hogyan töltheti le az oldalszámot PDF-fájlban az Aspose.PDF for .NET használatával. Kövesse lépésről lépésre útmutatónkat az egyszerű és hatékony megoldás érdekében.
 type: docs
 weight: 80
 url: /hu/net/programming-with-pdf-pages/get-page-count/
@@ -60,7 +60,7 @@ Page page = doc.Pages.Add();
 
 ## 3. lépés: Szöveg hozzáadása a PDF-hez
 
- Itt válnak érdekessé a dolgok. Most szöveget adunk az oldalhoz az a segítségével`TextFragment`. Ez a lépés egy olyan forgatókönyvet szimulál, amelyben meg szeretné tölteni az oldalakat tartalommal, majd ellenőrizni, hogy hány oldalt hozott létre.
+ Itt válnak érdekessé a dolgok. Most szöveget adunk az oldalhoz a a`TextFragment`. Ez a lépés egy olyan forgatókönyvet szimulál, amelyben meg szeretné tölteni az oldalakat tartalommal, majd ellenőrizni, hogy hány oldalt hozott létre.
 
 ```csharp
 for (int i = 0; i < 300; i++)

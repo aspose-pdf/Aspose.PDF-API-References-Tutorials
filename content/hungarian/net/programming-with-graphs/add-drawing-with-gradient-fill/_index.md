@@ -64,7 +64,7 @@ Most, hogy elkészült a dokumentumunk, ideje hozzáadni egy oldalt.
 ```csharp
 Page page = doc.Pages.Add();
 ```
-Ez a sor egy új oldalt ad a dokumentumhoz. Helyet biztosít az összes hozzáadni kívánt grafikának és szövegnek.
+Ez a sor új oldalt ad a dokumentumhoz. Helyet biztosít az összes hozzáadni kívánt grafikának és szövegnek.
 
 ## 4. lépés: Hozzon létre egy grafikus objektumot
 

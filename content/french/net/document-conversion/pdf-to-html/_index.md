@@ -80,7 +80,7 @@ pdfDocument.Save(dataDir + "output_out.html", SaveFormat.Html);
 
 ## Conclusion
 
-Et voilà ! Convertir un PDF en HTML à l'aide d'Aspose.PDF pour .NET est un jeu d'enfant. Avec seulement quelques lignes de code, vous pouvez transformer vos documents en un format adapté au Web. Cela peut être particulièrement utile pour les développeurs Web et les gestionnaires de contenu qui doivent afficher du contenu PDF sur leurs sites Web. Alors, n'hésitez plus et essayez !
+Et voilà ! Convertir un PDF en HTML à l'aide d'Aspose.PDF pour .NET est un jeu d'enfant. Avec seulement quelques lignes de code, vous pouvez transformer vos documents en un format adapté au Web. Cela peut être particulièrement utile pour les développeurs Web et les gestionnaires de contenu qui doivent afficher du contenu PDF sur leurs sites Web. Alors, n'hésitez plus et essayez-le !
 
 ## FAQ
 

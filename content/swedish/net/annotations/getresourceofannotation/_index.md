@@ -66,7 +66,7 @@ I det här exemplet öppnar vi en PDF som heter AddAnnotation.pdf. Se till att d
 
 ## Steg 3: Skapa en anteckning
 
- Därefter skapar vi en ny kommentar. Här använder vi en`ScreenAnnotation`som låter dig bifoga multimediafiler som SWF i PDF:en.
+ Därefter skapar vi en ny anteckning. Här använder vi en`ScreenAnnotation`som låter dig bifoga multimediafiler som SWF i PDF:en.
 
 ```csharp
 // Skapa anteckning

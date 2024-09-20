@@ -84,7 +84,7 @@ Az erőforrások optimalizálása olyan, mint a szoba takarítása! Azáltal, ho
 
 Ha az optimalizálás befejeződött, ideje elmenteni az új, kisebb PDF-fájlt. Elmentjük új néven, hogy az eredeti fájl érintetlen maradjon.
 
- Az utolsó lépés az optimalizált PDF visszamentése a könyvtárba. Használni fogod a`Save()` módszert a frissített dokumentum megírásához.
+ Az utolsó lépés az optimalizált PDF visszamentése a könyvtárba. Használni fogod a`Save()` módszert a frissített dokumentum megírására.
 
 ```csharp
 dataDir = dataDir + "ShrinkDocument_out.pdf";

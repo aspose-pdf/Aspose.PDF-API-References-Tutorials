@@ -2,146 +2,132 @@
 title: PDF ファイル内の列テキストの抽出
 linktitle: PDF ファイル内の列テキストの抽出
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して PDF ファイル内の列テキストを抽出する方法を学習します。
+description: Aspose.PDF for .NET を使用して PDF ファイルからテキストの列を抽出する方法を学習します。このガイドでは、コード例と説明を使用して各手順を詳しく説明します。
 type: docs
 weight: 150
 url: /ja/net/programming-with-text/extract-columns-text/
 ---
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ファイル内の列テキストを抽出するプロセスについて説明します。提供されている C# ソース コードは、必要な手順を示しています。
+## 導入
 
-## 要件
-始める前に、次のものがあることを確認してください。
+PDF ファイルで作業していて、特定の列形式でテキストを抽出する必要がありますか? 請求書、レポート、または構造化されたドキュメントを処理する場合でも、PDF からテキストを正確に抽出するのは難しい場合があります。ここで、Aspose.PDF for .NET が介入してプロセスを簡素化します。このチュートリアルでは、PDF ファイルからテキストの列を簡単に抽出する方法を説明します。 
 
-- マシンにインストールされている Visual Studio またはその他の C# コンパイラ。
-- Aspose.PDF for .NET ライブラリ。公式 Aspose Web サイトからダウンロードするか、NuGet などのパッケージ マネージャーを使用してインストールできます。
+## 前提条件
 
-## ステップ1: プロジェクトを設定する
-1. 好みの開発環境で新しい C# プロジェクトを作成します。
-2. Aspose.PDF for .NET ライブラリへの参照を追加します。
+コードに進む前に、必要な基本的な事項について説明しましょう。
 
-## ステップ2: 必要な名前空間をインポートする
-列のテキストを抽出するコード ファイルで、ファイルの先頭に次の using ディレクティブを追加します。
+-  Aspose.PDF for .NET: Aspose.PDF for .NETの最新バージョンがインストールされていることを確認してください。そうでない場合は、[ここからダウンロード](https://releases.aspose.com/pdf/net/).
+- 開発環境: コードを操作するには、Visual Studio または別の .NET 開発環境が必要です。
+- PDF ドキュメント: サンプルの PDF ドキュメントを用意してください。できればテキストの列があるものがよいでしょう。そこからテキストを抽出するからです。
+
+ Aspose.PDF for .NETをまだインストールしていない場合は、[無料トライアル](https://releases.aspose.com/)または[ライセンスを購入する](https://purchase.aspose.com/buy)フル機能をご利用いただけます。[一時ライセンス](https://purchase.aspose.com/temporary-license)必要であれば。
+
+## 名前空間のインポート
+
+プロジェクトで Aspose.PDF for .NET を使用するには、次の名前空間をインポートする必要があります。
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using System.IO;
+using System;
 ```
 
-## ステップ3: ドキュメントディレクトリを設定する
-コード内で、次の行を見つけます。`string dataDir = "YOUR DOCUMENT DIRECTORY";`置き換えて`"YOUR DOCUMENT DIRECTORY"`ドキュメントが保存されているディレクトリへのパスを指定します。
+## ステップバイステップガイド: PDF からテキストの列を抽出する
 
-## ステップ4: PDF文書を開く
-既存のPDF文書を開くには、`Document`コンストラクターを呼び出して、入力 PDF ファイルへのパスを渡します。
+それでは、コードの各部分を分解して、その仕組みをよりよく理解しましょう。プロセスの各セグメントを説明しながら、ステップごとに進めていきましょう。
+
+## ステップ1: PDFドキュメントを読み込む
+
+まず最初にPDFファイルを読み込みます。`Document`オブジェクト。これが Aspose.PDF がドキュメントと対話する方法です。
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
 ```
 
-## ステップ5: フォントサイズを調整する
-読みやすさを向上させ、列形式のテキストをより適切に表現するために、テキスト フラグメントのフォント サイズを 0.7 倍に縮小します。
+このステップでは、PDF文書が保存されるディレクトリを定義するだけです。`"YOUR DOCUMENT DIRECTORY"`ローカルPDFファイルへのパスを入力します。`Document`オブジェクトは PDF をメモリに読み込み、さらに処理するためにアクセスできるようにします。
+
+## ステップ2: テキストフラグメント吸収装置を設定する
+
+次に、`TextFragmentAbsorber` PDF ファイルからすべてのテキストを吸収またはキャプチャします。このアブソーバー クラスは、PDF 内の特定の領域からテキストの断片を抽出するように設計されており、テキストの列を抽出するのに最適です。
 
 ```csharp
 TextFragmentAbsorber tfa = new TextFragmentAbsorber();
 pdfDocument.Pages.Accept(tfa);
 TextFragmentCollection tfc = tfa.TextFragments;
-foreach(TextFragment tf in tfc)
-{
-     tf.TextState.FontSize = tf.TextState.FontSize * 0.7f;
-}
 ```
 
-## ステップ6: 列からテキストを抽出する
-変更したPDF文書をメモリストリームに保存し、新しい文書として再読み込みします。次に、`TextAbsorber`列からテキストを抽出するクラス。
+ここでは、`TextFragmentAbsorber`これをPDFのすべてのページに適用するには、`Accept()` 。`TextFragmentCollection`抽出されたテキストを保存し、このコレクションから必要に応じてテキストを操作または抽出できます。
+
+## ステップ3: 抽出したテキストのフォントサイズを調整する
+
+テキストの断片をキャプチャしたら、特に元のテキストが大きすぎる場合は、フォント サイズを縮小する必要があります。この例では、フォント サイズを 70% 縮小しています。
 
 ```csharp
-Stream st = new MemoryStream();
-pdfDocument.Save(st);
-pdfDocument = new Document(st);
-TextAbsorber textAbsorber = new TextAbsorber();
-pdfDocument.Pages.Accept(textAbsorber);
-String extractedText = textAbsorber.Text;
-textAbsorber.Visit(pdfDocument);
-```
-
-## ステップ7: 抽出したテキストを保存する
-抽出したテキストを、指定された出力ファイル パスのテキスト ファイルに保存します。
-
-```csharp
-dataDir = dataDir + "ExtractColumnsText_out.txt";
-File.WriteAllText(dataDir, extractedText);
-Console.WriteLine("\nColumns text extracted successfully from Pages of PDF Document.\nFile saved at " + dataDir);
-```
-
-### Aspose.PDF for .NET を使用して列テキストを抽出するためのサンプル ソース コード 
-```csharp
-//ドキュメント ディレクトリへのパス。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-//ドキュメントを開く
-Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");                
-TextFragmentAbsorber tfa = new TextFragmentAbsorber();
-pdfDocument.Pages.Accept(tfa);
-TextFragmentCollection tfc = tfa.TextFragments;
 foreach (TextFragment tf in tfc)
 {
-	//フォントサイズを少なくとも70%縮小する必要がある
-	tf.TextState.FontSize = tf.TextState.FontSize * 0.7f;
+    //フォントサイズを70%縮小
+    tf.TextState.FontSize = tf.TextState.FontSize * 0.7f;
 }
+```
+
+このコードは各`TextFragment`コレクション内のテキストが削除され、フォント サイズが 70% 縮小されます。フォント サイズを調整すると、特にさまざまな目的に合わせて書式設定する場合に、抽出したテキストを管理しやすくなります。
+
+## ステップ4: ドキュメントをメモリストリームに保存する
+
+テキストを変更した後、PDFを`MemoryStream`これにより、ドキュメントをディスクに書き戻すことなく、メモリ内に保持してさらに処理することができます。
+
+```csharp
 Stream st = new MemoryStream();
 pdfDocument.Save(st);
 pdfDocument = new Document(st);
+```
+
+ここでは、PDF をメモリ ストリームに保存し、ドキュメントを再読み込みします。この方法は、大きなファイルを操作していて、不要なディスク操作を避けたい場合に便利です。
+
+## ステップ5: Text Absorberを使用してすべてのテキストを抽出する
+
+PDFの準備ができたので、次はテキストを抽出します。`TextAbsorber`ドキュメントからすべてのテキストを取得します。
+
+```csharp
 TextAbsorber textAbsorber = new TextAbsorber();
 pdfDocument.Pages.Accept(textAbsorber);
 String extractedText = textAbsorber.Text;
-textAbsorber.Visit(pdfDocument); 
+```
+
+このステップでは、`TextAbsorber` PDFからすべてのテキストを吸収し、抽出されたテキストは`extractedText`文字列。ここで魔法が起こります。テキストの列がプレーンテキスト形式になります。
+
+## ステップ6: 抽出したテキストをファイルに保存する
+
+最後に、抽出したテキストを`.txt`簡単にアクセスしてさらに使用できるファイル。
+
+```csharp
 dataDir = dataDir + "ExtractColumnsText_out.txt";
-System.IO.File.WriteAllText(dataDir, extractedText);           
+System.IO.File.WriteAllText(dataDir, extractedText);
 Console.WriteLine("\nColumns text extracted successfully from Pages of PDF Document.\nFile saved at " + dataDir);
 ```
 
+このコードは抽出したテキストを新しい`.txt`ファイルを作成し、指定したディレクトリに保存します。プロセスが成功したことを確認するメッセージがコンソールに表示されます。
+
 ## 結論
-Aspose.PDF for .NET を使用して PDF ドキュメントから列のテキストを正常に抽出しました。抽出されたテキストは指定された出力ファイルに保存されました。
 
-### よくある質問
+これで完了です。Aspose.PDF for .NET を使用して PDF ファイルからテキストの列を抽出するのは、想像以上に簡単です。わずか数行のコードで、PDF を読み込み、特定のテキストを抽出し、書式を調整し、結果をテキスト ファイルに保存できます。
 
-#### Q: このチュートリアルの目的は何ですか?
+この手法は、表、レポート、列に整理されたコンテンツなどの構造化ドキュメントを処理する場合に非常に便利です。データ抽出を自動化する必要がある場合でも、大量のドキュメントを処理する必要がある場合でも、Aspose.PDF はそれを効率的に実行するためのツールを提供します。
 
-A: このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ファイルからテキストの列を抽出する手順を段階的に説明します。付属の C# ソース コードでは、必要な手順を実際に示します。
+## よくある質問
 
-#### Q: どの名前空間をインポートすればよいですか?
+### PDF の特定のページからテキストを抽出できますか?  
+はい！変更することができます`TextFragmentAbsorber`特定のページをターゲットにするには`pdfDocument.Pages[pageIndex].Accept(tfa);`方法。
 
-A: テキストの列を抽出するコード ファイルでは、ファイルの先頭に次の using ディレクティブを含めます。
+### 複数列の PDF で 1 つの列からのみテキストを抽出することは可能ですか?  
+はい、ただし、テキストフラグメントの座標を次のように操作する必要があります。`TextFragment.Rectangle`ドキュメントの特定の領域をターゲットにします。
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-using System.IO;
-```
+### テキスト抽出の精度を向上させるにはどうすればよいですか?  
+精度を上げるには、PDFの構造が明確に定義されていることを確認し、複雑なレイアウトの文書は避けてください。`TextFragmentAbsorber`フォント スタイル、サイズ、または領域に基づいてテキストを抽出します。
 
-#### Q: ドキュメントディレクトリを指定するにはどうすればよいですか?
+### Aspose.PDF はスキャンされたドキュメントからのテキスト抽出をサポートしていますか?  
+はい、ただし OCR (光学式文字認識) テクノロジを使用する必要があります。Aspose にはそのためのツールも用意されています。
 
- A: 線を見つける`string dataDir = "YOUR DOCUMENT DIRECTORY";`コード内の`"YOUR DOCUMENT DIRECTORY"`ドキュメント ディレクトリへの実際のパスを入力します。
-
-#### Q: 既存の PDF ドキュメントを開くにはどうすればよいですか?
-
- A: ステップ4では、既存のPDF文書を`Document`コンストラクターを呼び出して、入力 PDF ファイルへのパスを指定します。
-
-#### Q: フォントサイズが調整されるのはなぜですか?
-
-A: ステップ 5 では、テキスト フラグメントのフォント サイズを 0.7 分の 1 に縮小します。この調整により、読みやすさが向上し、列形式のテキストがより正確に表現されます。
-
-#### Q: 列からテキストを抽出するにはどうすればよいですか?
-
- A: ステップ6は、変更されたPDF文書をメモリストリームに保存し、それを新しい文書として再読み込みし、`TextAbsorber`列からテキストを抽出するクラス。
-
-#### Q: 抽出したテキストを保存する目的は何ですか?
-
-A: ステップ 7 では、抽出したテキストを指定された出力ファイル パスのテキスト ファイルに保存します。
-
-#### Q: 抽出前にフォント サイズを縮小するのはなぜですか?
-
-A: フォント サイズを小さくすると、抽出されたテキストが列内で適切に配置されるようになり、元のレイアウトがより正確に表現されます。
-
-#### Q: このチュートリアルから得られる重要なポイントは何ですか?
-
-A: このチュートリアルに従うことで、Aspose.PDF for .NET を使用して PDF ドキュメントからテキストの列を抽出するために必要な知識とスキルを習得しました。結果のテキストは、指定された出力ファイルに保存されています。
+### 何千ページもの大きな PDF ファイルをどのように処理すればよいでしょうか?  
+大きな PDF の場合は、メモリ使用量の増加を避けるために、一度に数ページからテキストを抽出してドキュメントをチャンク単位で処理します。

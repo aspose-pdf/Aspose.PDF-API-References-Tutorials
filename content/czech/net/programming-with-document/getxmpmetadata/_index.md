@@ -42,7 +42,7 @@ Nejprve se musíte ujistit, že je váš projekt správně nastaven.
 
 1. Otevřete Visual Studio.
 2. Přejděte na Nástroje > Správce balíčků NuGet > Spravovat balíčky NuGet pro řešení.
-3. Vyhledejte Aspose.PDF a klepněte na Instalovat.
+3. Vyhledejte Aspose.PDF a klikněte na Instalovat.
 
 ### Krok 1.2: Přidejte PDF do projektu
 

@@ -19,7 +19,7 @@ Mielőtt belemerülne az oldalbélyegző hozzáadásával járó apróságokba, 
 .NET-keretrendszernek telepítve kell lennie a gépen. Az Aspose.PDF támogatja a .NET Core-t, a .NET-keretrendszert és még sok mást, ezért ellenőrizze a kompatibilitásukat a projekttől függően.
 
 ### Aspose.PDF for .NET Library
- A fejlesztői környezetben be kell állítania az Aspose.PDF könyvtárat. Tudod[töltse le itt](https://releases.aspose.com/pdf/net/). 
+ A fejlesztői környezetben be kell állítania az Aspose.PDF könyvtárat. Megteheti[töltse le itt](https://releases.aspose.com/pdf/net/). 
 
 ### IDE
 Bár bármilyen szövegszerkesztőt használhat, erősen ajánlott egy integrált fejlesztői környezet (IDE) használata, például a Visual Studio a hatékony kódolási élmény érdekében.
@@ -72,7 +72,7 @@ Document pdfDocument = new Document(dataDir + "PDFPageStamp.pdf");
 
 ## 3. lépés: Az oldalbélyegző létrehozása
 
- A kézben lévő dokumentummal ideje létrehozni a`PdfPageStamp`. Ez az osztály felelős a PDF-dokumentumok meghatározott oldalaihoz bélyegzők hozzáadásáért.
+ A kézben lévő dokumentummal itt az ideje létrehozni a`PdfPageStamp`. Ez az osztály felelős a PDF-dokumentumok meghatározott oldalaihoz bélyegzők hozzáadásáért.
 
 ```csharp
 PdfPageStamp pageStamp = new PdfPageStamp(pdfDocument.Pages[1]);

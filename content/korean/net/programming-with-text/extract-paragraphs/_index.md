@@ -2,152 +2,142 @@
 title: PDF 파일에서 문단 추출
 linktitle: PDF 파일에서 문단 추출
 second_title: .NET API 참조를 위한 Aspose.PDF
-description: Aspose.PDF for .NET을 사용하여 PDF 파일에서 문단을 추출하는 방법을 알아보세요.
+description: 이 쉽게 따라할 수 있는 튜토리얼에서 Aspose.PDF for .NET을 사용하여 PDF 파일에서 문단을 추출하는 방법을 알아보세요. 모든 레벨의 개발자에게 완벽합니다.
 type: docs
 weight: 160
 url: /ko/net/programming-with-text/extract-paragraphs/
 ---
-이 튜토리얼은 Aspose.PDF for .NET을 사용하여 PDF 파일에서 문단을 추출하는 과정을 안내합니다. 제공된 C# 소스 코드는 필요한 단계를 보여줍니다.
+## 소개
 
-## 요구 사항
-시작하기 전에 다음 사항이 있는지 확인하세요.
+PDF를 다룰 때 정보를 추출하는 것은 때때로 건초더미에서 바늘을 찾는 것과 같습니다. PDF를 열고 "그냥 텍스트 한 섹션만 필요해"라고 생각해 본 적이 있나요? 글쎄요, 운이 좋으시네요! 이 가이드에서는 Aspose.PDF for .NET을 사용하여 PDF에서 문단을 추출하는 과정을 안내해 드리겠습니다. 이 강력한 라이브러리는 PDF 문서를 효과적으로 조작하는 데 필요한 기능을 제공합니다. 뛰어들 준비가 되셨나요? 시작해 볼까요!
 
-- 컴퓨터에 Visual Studio나 다른 C# 컴파일러가 설치되어 있어야 합니다.
-- .NET 라이브러리용 Aspose.PDF. 공식 Aspose 웹사이트에서 다운로드하거나 NuGet과 같은 패키지 관리자를 사용하여 설치할 수 있습니다.
+## 필수 조건
 
-## 1단계: 프로젝트 설정
-1. 원하는 개발 환경에서 새로운 C# 프로젝트를 만듭니다.
-2. .NET 라이브러리용 Aspose.PDF에 대한 참조를 추가합니다.
+시작하기 전에 따라야 할 모든 것이 있는지 확인해 보겠습니다. 체크리스트는 다음과 같습니다.
 
-## 2단계: 필요한 네임스페이스 가져오기
-문단을 추출하려는 코드 파일에서 파일 맨 위에 다음 using 지침을 추가합니다.
+1. .NET 환경: .NET 개발 환경이 설정되어 있는지 확인하세요. 이는 Visual Studio 또는 선택한 다른 IDE일 수 있습니다. 
+2.  Aspose.PDF 라이브러리: .NET용 Aspose.PDF 라이브러리가 필요합니다. 여기에서 다운로드할 수 있습니다.[여기](https://releases.aspose.com/pdf/net/).
+3. PDF 파일: 테스트할 샘플 PDF 문서를 준비하세요. PDF 문서가 없다면 간단한 텍스트 PDF를 만들거나 웹에서 샘플을 다운로드하세요.
+4. 기본 C# 지식: C# 프로그래밍에 익숙하면 코드 조각을 더 잘 이해하는 데 도움이 됩니다.
+
+## 패키지 가져오기
+
+코딩에 들어가기 전에 필요한 패키지를 가져와야 합니다. 이는 애플리케이션이 Aspose.PDF 기능을 활용할 수 있도록 하기 때문에 매우 중요합니다. 방법은 다음과 같습니다.
 
 ```csharp
-using Aspose.Pdf;
+using Aspose.Pdf.Text;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 ```
 
-## 3단계: 문서 디렉토리 설정
- 코드에서 다음 줄을 찾으세요.`string dataDir = "YOUR DOCUMENT DIRECTORY";` 그리고 교체하다`"YOUR DOCUMENT DIRECTORY"` 문서가 저장된 디렉토리 경로를 포함합니다.
+C# 파일의 맨 위에 이것을 포함해야 합니다. 이러한 네임스페이스를 사용하면 PDF 문서로 작업하고 텍스트 기능에 액세스할 수 있습니다.
 
-## 4단계: PDF 문서 열기
- 기존 PDF 문서를 열려면 다음을 사용하세요.`Document`생성자를 사용하고 입력 PDF 파일의 경로를 전달합니다.
+이제 필수 구성 요소가 설정되고 필요한 패키지가 가져왔으니 추출 과정을 단계별로 나누어 보겠습니다.
 
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
+## 1단계: 문서 디렉토리 경로 설정
 
-## 5단계: 문단 추출
- 인스턴스화`ParagraphAbsorber` 클래스를 사용하고 사용합니다`Visit` 문서에서 문단을 추출하는 방법.
+우선, PDF 파일이 어디에 있는지 지정해야 합니다. 이는 코드에 "이봐, 내 PDF가 여기 있어."라고 말하는 것과 같습니다.
 
 ```csharp
-ParagraphAbsorber absorb = new ParagraphAbsorber();
-absorb.Visit(doc);
-```
-
-## 6단계: 문단 반복
-추출된 문단을 반복하여 텍스트 내용에 접근합니다. 중첩된 루프를 사용하여 각 문단 내의 섹션과 줄을 탐색합니다.
-
-```csharp
-foreach(PageMarkup markup in absorber.PageMarkups)
-{
-     int i = 1;
-     foreach(MarkupSection section in markup.Sections)
-     {
-         int j = 1;
-         foreach(MarkupParagraph paragraph in section.Paragraphs)
-         {
-             StringBuilder paragraphText = new StringBuilder();
-             foreach(List<TextFragment> line in paragraph.Lines)
-             {
-                 foreach(TextFragment fragment in line)
-                 {
-                     paragraphText.Append(fragment.Text);
-                 }
-                 paragraphText. Append("\r\n");
-             }
-             paragraphText. Append("\r\n");
-             Console.WriteLine("Paragraph {0} of section {1} on page {2}:", j, i, markup.Number);
-             Console.WriteLine(paragraphText.ToString());
-             j++;
-         }
-         i++;
-     }
-}
-```
-
-### .NET용 Aspose.PDF를 사용하여 문단 추출을 위한 샘플 소스 코드 
-```csharp
-// 문서 디렉토리의 경로입니다.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// 기존 PDF 파일 열기
+```
+
+ 바꾸다`"YOUR DOCUMENT DIRECTORY"` PDF 파일이 저장된 폴더의 실제 경로입니다. 이는 다음과 같을 수 있습니다.`"C:\\Users\\YourName\\Documents\\"`.
+
+## 2단계: 기존 PDF 파일 열기
+
+경로가 설정되면 다음 단계는 작업하려는 PDF 파일을 여는 것입니다. 이는 다음 코드로 수행됩니다.
+
+```csharp
 Document doc = new Document(dataDir + "input.pdf");
-// ParagraphAbsorber 인스턴스화
+```
+
+ 이 라인에서 우리는 새로운 것을 만듭니다`Document` 예를 들어 PDF 파일에 대한 전체 경로를 제공합니다. 파일 이름이 올바르게 지정되었는지(이 경우 "input.pdf")와 지정된 디렉토리에 있는지 확인합니다.
+
+## 3단계: ParagraphAbsorber 인스턴스화
+
+ 다음으로 우리는 다음을 사용할 것입니다.`ParagraphAbsorber`, PDF에서 모든 문단을 흡수(또는 잡기)할 수 있는 편리한 도구입니다. 방법은 다음과 같습니다.
+
+```csharp
 ParagraphAbsorber absorber = new ParagraphAbsorber();
+```
+
+ 생각해 보세요`ParagraphAbsorber` 나중에 사용할 수 있도록 PDF에서 관련 텍스트를 모두 빨아들이는 진공 청소기와 같습니다.
+
+## 4단계: 문서 방문
+
+ 이제 우리의 문서를 방문할 시간입니다`absorber`. 이렇게 하면 코드가 PDF의 페이지와 섹션을 탐색하기 시작합니다.
+
+```csharp
 absorber.Visit(doc);
+```
+
+ 이 라인은 마법이 시작되는 곳입니다!`Visit` 이 방법은 문서를 검토하고 추출할 문단 데이터를 준비합니다.
+
+## 5단계: 페이지 마크업 반복
+
+좋습니다! 이제 정보를 로드했습니다. 다음 단계는 각 페이지 마크업을 반복하는 것입니다. 여기서 실제 문단을 추출합니다.
+
+```csharp
 foreach (PageMarkup markup in absorber.PageMarkups)
 {
-	int i = 1;
-	foreach (MarkupSection section in markup.Sections)
-	{
-		int j = 1;
-		foreach (MarkupParagraph paragraph in section.Paragraphs)
-		{
-			StringBuilder paragraphText = new StringBuilder();
-			foreach (List<TextFragment> line in paragraph.Lines)
-			{
-				foreach (TextFragment fragment in line)
-				{
-					paragraphText.Append(fragment.Text);
-				}
-				paragraphText.Append("\r\n");
-			}
-			paragraphText.Append("\r\n");
-			Console.WriteLine("Paragraph {0} of section {1} on page {2}:", j, i, markup.Number);
-			Console.WriteLine(paragraphText.ToString());
-			j++;
-		}
-		i++;
-	}
+    int i = 1;
+    foreach (MarkupSection section in markup.Sections)
+    {
+        int j = 1;
+        foreach (MarkupParagraph paragraph in section.Paragraphs)
+        {
+            StringBuilder paragraphText = new StringBuilder();
+            foreach (List<TextFragment> line in paragraph.Lines)
+            {
+                foreach (TextFragment fragment in line)
+                {
+                    paragraphText.Append(fragment.Text);
+                }
+                paragraphText.Append("\r\n");
+            }
+            paragraphText.Append("\r\n");
+            Console.WriteLine("Paragraph {0} of section {1} on page {2}:", j, i, markup.Number);
+            Console.WriteLine(paragraphText.ToString());
+            j++;
+        }
+        i++;
+    }
 }
 ```
 
+이 코드에서 무슨 일이 일어나는지 살펴보겠습니다.
+
+- 외부 루프: 각 페이지의 마크업을 반복하여 섹션을 가져옵니다.
+- 중간 루프: 각 섹션의 문단에 접근합니다.
+- 내부 루프: 각 문단 내의 텍스트 줄을 루프하여 텍스트 조각을 추출합니다.
+- StringBuilder: 이를 사용하면 문단의 텍스트를 효율적으로 구성할 수 있습니다.
+
+마지막으로, 우리는 단락과 섹션, 페이지 번호를 함께 인쇄합니다. 이렇게 하면 결과물에서 정리하고 참조를 명확하게 유지하는 데 도움이 됩니다.
+
+## 6단계: 애플리케이션 컴파일 및 실행
+
+마지막 단계는 애플리케이션을 컴파일하고 실행하여 결과를 확인하는 것입니다. 모든 것이 올바르게 설정되었다면 코드를 실행하면 PDF에서 추출된 문단이 콘솔 창에 표시되는 것을 볼 수 있습니다.
+
 ## 결론
-Aspose.PDF for .NET을 사용하여 PDF 문서에서 문단을 성공적으로 추출했습니다. 추출된 문단이 콘솔 창에 표시되었습니다.
 
-### 자주 묻는 질문
+이제 다 되었습니다! Aspose.PDF for .NET을 사용하여 PDF에서 문단을 추출했습니다. 이 프로세스는 처음에는 복잡해 보일 수 있지만 관리 가능한 단계로 나누면 전문가처럼 PDF 조작을 처리할 수 있습니다. 운영 문서, 보고서 또는 새로운 발췌문을 처리하든 텍스트를 효율적으로 추출하는 것은 매우 귀중한 기술입니다. Aspose.PDF의 힘은 텍스트 추출 그 이상이며, 설명서를 더 자세히 살펴보시기 바랍니다.
 
-#### 질문: 이 튜토리얼의 목적은 무엇인가요?
+## 자주 묻는 질문
 
-A: 이 튜토리얼은 Aspose.PDF for .NET을 사용하여 PDF 파일에서 문단을 추출하는 과정을 안내합니다. 첨부된 C# 소스 코드는 이 작업을 달성하기 위한 실용적인 단계를 제공합니다.
+### Aspose.PDF를 사용하여 PDF에서 이미지를 추출할 수 있나요?
+네, Aspose.PDF는 텍스트뿐만 아니라 이미지 추출도 지원합니다.
 
-#### 질문: 어떤 네임스페이스를 가져와야 합니까?
+### Aspose.PDF는 모든 버전의 .NET과 호환됩니까?
+Aspose.PDF는 .NET Framework 및 .NET Core를 포함한 여러 버전과 호환됩니다.
 
-A: 문단을 추출하려는 코드 파일에서 파일 시작 부분에 다음 using 지침을 포함합니다.
+### 테스트용으로 임시 라이센스를 사용할 수 있나요?
+ 물론입니다! 임시 면허를 요청할 수 있습니다.[여기](https://purchase.aspose.com/temporary-license/).
 
-```csharp
-using Aspose.Pdf;
-using System;
-using System.Text;
-```
+### 문단을 추출하는 동안 오류가 발생하면 어떻게 해야 하나요?
+ Aspose 지원 포럼에서 도움을 요청할 수 있습니다.[여기](https://forum.aspose.com/c/pdf/10).
 
-#### 질문: 문서 디렉토리를 어떻게 지정하나요?
-
- A: 라인을 찾으세요`string dataDir = "YOUR DOCUMENT DIRECTORY";` 코드에서 교체`"YOUR DOCUMENT DIRECTORY"` 문서 디렉토리의 실제 경로를 포함합니다.
-
-#### 질문: 기존 PDF 문서를 어떻게 열 수 있나요?
-
- A: 4단계에서는 다음을 사용하여 기존 PDF 문서를 엽니다.`Document` 생성자를 사용하고 입력 PDF 파일에 대한 경로를 제공합니다.
-
-#### 질문: 문서에서 문단을 추출하려면 어떻게 해야 하나요?
-
- A: 5단계에는 인스턴스를 만드는 것이 포함됩니다.`ParagraphAbsorber` 클래스와 그것을 사용하는`Visit` PDF 문서에서 문단을 추출하는 방법.
-
-#### 질문: 추출된 문단을 반복하려면 어떻게 해야 하나요?
-
-A: 6단계에서는 추출된 문단을 반복하는 방법을 안내합니다. 중첩된 루프는 각 문단 내의 섹션과 줄을 순회하는 데 사용되며, 궁극적으로 텍스트 콘텐츠에 액세스하여 표시합니다.
-
-#### 질문: 이 튜토리얼의 주요 내용은 무엇인가요?
-
-A: 이 튜토리얼을 따라하면 Aspose.PDF for .NET을 사용하여 PDF 문서에서 문단을 추출하는 방법을 배웠습니다. 추출된 문단은 콘솔 창에 표시되어 문서의 콘텐츠 구조에 대한 귀중한 통찰력을 제공합니다.
+### Aspose.PDF에 대한 무료 평가판이 있나요?
+ 네, Aspose 웹사이트에서 무료 평가판을 다운로드할 수 있습니다.[여기](https://releases.aspose.com/).

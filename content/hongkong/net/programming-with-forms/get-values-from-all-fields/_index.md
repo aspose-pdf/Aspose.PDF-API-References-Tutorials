@@ -18,7 +18,7 @@ url: /zh-hant/net/programming-with-forms/get-values-from-all-fields/
 1. .NET Framework：請確定您的電腦上安裝了 .NET Framework。 Aspose.PDF 與 .NET 應用程式無縫協作。
 2.  Aspose.PDF for .NET：您需要下載並安裝 Aspose.PDF 庫。你可以找到它[這裡](https://releases.aspose.com/pdf/net/).
 3. Visual Studio：好的IDE會讓你的程式設計體驗更加流暢。 Visual Studio 是 .NET 開發的熱門選擇。
-4. C#基礎知識：熟悉C#程式設計將有助於您更好地理解範例。
+4. C# 基礎知識：熟悉 C# 程式設計將有助於您更好地理解範例。
 
 ## 導入包
 

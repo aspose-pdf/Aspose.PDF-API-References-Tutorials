@@ -67,7 +67,7 @@ File.Copy(dataDir + "blank.pdf", dataDir + "externalSignature1.pdf", true);
 
 ### 步驟 3：開啟 PDF 文檔
 
-操作：開啟複製的 PDF 進行閱讀和寫入。
+操作：開啟複製的 PDF 進行閱讀和書寫。
 
 ```csharp
 using (FileStream fs = new FileStream(dataDir + "externalSignature1.pdf", FileMode.Open, FileAccess.ReadWrite))

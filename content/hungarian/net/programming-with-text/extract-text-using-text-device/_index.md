@@ -7,139 +7,137 @@ type: docs
 weight: 210
 url: /hu/net/programming-with-text/extract-text-using-text-device/
 ---
-Ez az oktatóanyag végigvezeti Önt a PDF-dokumentumból a szöveg kinyerésének folyamatán az Aspose.PDF for .NET fájlban található Text Device segítségével. A mellékelt C# forráskód bemutatja a szükséges lépéseket.
+## Bevezetés
 
-## Követelmények
-Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel:
+szöveg kinyerése PDF-ből bonyolult lehet, különösen akkor, ha különféle formátumú, beágyazott betűtípusú vagy összetett elrendezésű dokumentumokkal foglalkozik. De az Aspose.PDF for .NET használatával ez a folyamat gyerekjáték lesz! Függetlenül attól, hogy egy PDF-fájl oldalait egyszerű szöveggé szeretné konvertálni további elemzés céljából, vagy egyszerűen csak bizonyos szakaszokat szeretne kivonatolni, az Aspose.PDF mindenre kiterjed. Ebben az oktatóanyagban lépésről lépésre lebontjuk, hogyan lehet szöveget kivonni PDF-ből az Aspose.PDF TextDevice osztályával. Világos magyarázatokat is adunk, így könnyedén alkalmazhatja ugyanazokat a módszereket saját projektjeinél.
 
-- Visual Studio vagy bármely más C# fordító telepítve a gépedre.
-- Aspose.PDF .NET könyvtárhoz. Letöltheti az Aspose hivatalos webhelyéről, vagy használhat csomagkezelőt, például a NuGetet a telepítéséhez.
+## Előfeltételek
 
-## 1. lépés: Állítsa be a projektet
-1. Hozzon létre egy új C# projektet a kívánt fejlesztői környezetben.
-2. Adjon hozzá hivatkozást az Aspose.PDF for .NET könyvtárhoz.
+Mielőtt belevágnánk a kódba, győződjön meg arról, hogy minden a helyén van a követéshez. Íme, amire szüksége lesz:
 
-## 2. lépés: Importálja a szükséges névtereket
-Abban a kódfájlban, amelybe szöveget szeretne kivonni, adja hozzá a következőket a fájl tetején található direktívák használatával:
+1.  Aspose.PDF for .NET: Töltse le a legújabb verziót a[Aspose.PDF .NET letöltési oldalhoz](https://releases.aspose.com/pdf/net/).
+2. Fejlesztői környezet: Visual Studio vagy bármely más C# fejlesztői környezet.
+3. .NET-keretrendszer: Győződjön meg arról, hogy a projektje a .NET-keretrendszer 4.x vagy újabb verzióját célozza meg.
+4. Beviteli PDF-fájl: PDF-fájl, amelyet szövegkivonathoz használhat. Helyezze el ezt egy könyvtárba a gépén (ezt úgy fogjuk hivatkozni, mint`YOUR DOCUMENT DIRECTORY`).
+
+## Csomagok importálása
+
+A kód tetején importálnia kell a szükséges névtereket az Aspose.PDF használatához:
 
 ```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Devices;
 using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using Aspose.Pdf.Devices;
+using System;
 using System.Text;
 ```
 
-## 3. lépés: Állítsa be a dokumentumkönyvtárat
- A kódban keresse meg azt a sort, amely ezt mondja`string dataDir = "YOUR DOCUMENT DIRECTORY";` és cserélje ki`"YOUR DOCUMENT DIRECTORY"` annak a könyvtárnak az elérési útjával, ahol a dokumentumokat tárolják.
+## 1. lépés: Töltse be a PDF-dokumentumot
 
-## 4. lépés: Nyissa meg a PDF dokumentumot
- Nyisson meg egy meglévő PDF dokumentumot a`Document`konstruktort, és átadja a bemeneti PDF-fájl elérési útját.
+ A szöveg kibontása előtt be kell töltenünk a PDF dokumentumot a memóriába. Ebben a lépésben az Aspose.PDF használatával nyissa meg a PDF-fájlt`Document` osztály. Ezzel elérheti a fájl összes oldalát és tartalmát.
 
 ```csharp
+// Határozza meg a PDF-dokumentum elérési útját
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// Töltse be a PDF dokumentumot
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
-## 5. lépés: Szöveg kibontása a Text Device segítségével
- Hozzon létre a`StringBuilder` objektum a kivont szöveg tárolására. Ismételje meg a dokumentum minden oldalát, és használja a a`TextDevice` hogy kinyerjük a szöveget minden oldalról.
+ Itt használjuk`Document pdfDocument = new Document(dataDir + "input.pdf");` a PDF betöltéséhez. A`dataDir` változó tartalmazza a PDF-fájl könyvtárának elérési útját. Ez hozzáférést biztosít számunkra a teljes dokumentumhoz, lehetővé téve az oldalak közötti hurokolást és a tartalom kibontását.
+
+## 2. lépés: Állítson be egy String Buildert a szövegtároláshoz
+
+ Most, hogy a dokumentum betöltődött, szükségünk van egy módra a kivont szöveg tárolására. Ehhez használjuk a`StringBuilder` amely lehetővé teszi a hatékony karakterlánc-összefűzést.
 
 ```csharp
+// StringBuilder a kivont szöveg tárolására
 StringBuilder builder = new StringBuilder();
-string extractedText = "";
-foreach(Page pdfPage in pdfDocument.Pages)
-{
-using (MemoryStream textStream = new MemoryStream())
-{
-TextDevice textDevice = new TextDevice();
-TextExtractionOptions textExtOptions = new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
-textDevice.ExtractionOptions = textExtOptions;
-textDevice.Process(pdfPage, textStream);
-textStream. Close();
-extractedText = Encoding.Unicode.GetString(textStream.ToArray());
-}
-builder. Append(extractedText);
-}
 ```
 
-## 6. lépés: Mentse el a kicsomagolt szöveget
- Adja meg a kimeneti fájl elérési útját, és mentse a kibontott szöveget egy szövegfájlba a segítségével`File.WriteAllText` módszer.
+ Inicializáljuk a`StringBuilder`példány, amely összegyűjti az egyes oldalakról kivont szöveget. Hatékonyabb módja a nagy karakterláncok kezelésének, mint a hurokban történő szokásos karakterlánc-összefűzés.
+
+## 3. lépés: Lapozzon át PDF-oldalakon
+
+ Ezután végigpörgetjük a PDF-dokumentum minden oldalát a szöveg kinyeréséhez. Minden oldalt egyenként dolgozunk fel a`TextDevice` osztály, amely a PDF tartalom szöveges formátumba konvertálásáért felelős.
 
 ```csharp
-dataDir = dataDir + "input_Text_Extracted_out.txt";
-File.WriteAllText(dataDir, builder.ToString());
-```
-
-### Minta forráskód a szöveg kibontásához szövegeszközzel az Aspose.PDF for .NET használatával 
-```csharp
-// A dokumentumok könyvtárának elérési útja.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Nyissa meg a dokumentumot
-Document pdfDocument = new Document( dataDir + "input.pdf");
-System.Text.StringBuilder builder = new System.Text.StringBuilder();
-//Karakterlánc a kivont szöveg tárolására
-string extractedText = "";
+// Lapozzon végig a PDF összes oldalán
 foreach (Page pdfPage in pdfDocument.Pages)
 {
-	using (MemoryStream textStream = new MemoryStream())
-	{
-		// Szövegeszköz létrehozása
-		TextDevice textDevice = new TextDevice();
-		// Szövegkivonási beállítások megadása – szövegkivonási mód beállítása (nyers vagy tiszta)
-		TextExtractionOptions textExtOptions = new
-		TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
-		textDevice.ExtractionOptions = textExtOptions;
-		// Konvertálja az adott oldalt, és mentse el a szöveget az adatfolyamba
-		textDevice.Process(pdfPage, textStream);
-		// Konvertálja az adott oldalt, és mentse el a szöveget az adatfolyamba
-		textDevice.Process(pdfDocument.Pages[1], textStream);
-		// Memóriafolyam bezárása
-		textStream.Close();
-		// Szöveg lekérése a memóriafolyamból
-		extractedText = Encoding.Unicode.GetString(textStream.ToArray());
-	}
-	builder.Append(extractedText);
+    // Minden oldal feldolgozása szövegkivonathoz
 }
-dataDir = dataDir + "input_Text_Extracted_out.txt";
-// Mentse el a kibontott szöveget szövegfájlba
-File.WriteAllText(dataDir, builder.ToString());
-Console.WriteLine("\nText extracted successfully using text device from page of PDF Document.\nFile saved at " + dataDir);
 ```
 
-## Következtetés
-Sikeresen kibontotta a szöveget egy PDF-dokumentumból az Aspose.PDF for .NET szövegeszközével. A kicsomagolt szöveg a megadott kimeneti fájlba került.
+Ez a ciklus végigmegy a PDF minden oldalán (`pdfDocument.Pages` ). Minden oldalról kivonjuk a szöveget, és hozzáadjuk a mi oldalunkhoz`StringBuilder`.
 
-### GYIK
+## 4. lépés: Szöveg kibontása minden oldalról
 
-#### K: Mi a célja ennek az oktatóanyagnak?
-
-V: Ez az oktatóanyag útmutatást nyújt a szöveg PDF-dokumentumból történő kibontásához az Aspose.PDF for .NET szövegeszköz funkciójával. A mellékelt C# forráskód bemutatja a feladat végrehajtásához szükséges lépéseket.
-
-#### K: Milyen névtereket kell importálnom?
-
-V: Abba a kódfájlba, amelybe szöveget kíván kivonni, a fájl elején direktívák használatával adja meg a következőket:
+ Most minden oldalhoz beállítjuk a szövegkivonási folyamatot. Itt létrehozunk egy`TextDevice` objektumot, és használja a PDF-oldalak feldolgozásához. A`TextDevice` nyers vagy formázott szöveget bont ki az általunk beállított kinyerési beállítások alapján.
 
 ```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Devices;
-using System.IO;
-using System.Text;
+using (MemoryStream textStream = new MemoryStream())
+{
+    // Hozzon létre egy szövegeszközt szövegkivonathoz
+    TextDevice textDevice = new TextDevice();
+    
+    // Állítsa a szövegkivonási beállításokat „Tiszta” módra
+    TextExtractionOptions textExtOptions = new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
+    textDevice.ExtractionOptions = textExtOptions;
+
+    //Szöveg kibontása az aktuális oldalról, és mentse a memóriafolyamba
+    textDevice.Process(pdfPage, textStream);
+
+    // Memóriafolyam átalakítása szöveggé
+    string extractedText = Encoding.Unicode.GetString(textStream.ToArray());
+
+    // A kibontott szöveg hozzáfűzése a StringBuilderhez
+    builder.Append(extractedText);
+}
 ```
 
-#### K: Hogyan adhatom meg a dokumentumkönyvtárat?
+- `TextDevice textDevice = new TextDevice();` : A`TextDevice` osztályt használjuk a szöveg kinyerésére a PDF-ből.
+- `TextExtractionOptions textExtOptions = new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);` : Ez az opció kivonja a nyers szöveget anélkül, hogy megtartana bármilyen formázást, például betűtípusokat vagy pozíciókat. Használhatod is`TextFormattingMode.Raw` ha nagyobb ellenőrzésre van szüksége a formázás felett.
+- `textDevice.Process(pdfPage, textStream);` : Ez feldolgozza a PDF minden oldalát, és a kivonatolt szöveget a`MemoryStream`.
+-  Végül konvertáljuk a szöveget a`MemoryStream` egy karakterlánchoz, és fűzze hozzá a`StringBuilder`.
 
- V: Keresse meg a kódban azt a sort, amely ezt mondja`string dataDir = "YOUR DOCUMENT DIRECTORY";` és cserélje ki`"YOUR DOCUMENT DIRECTORY"` a dokumentumkönyvtár tényleges elérési útjával.
+## 5. lépés: A kibontott szöveg mentése fájlba
 
-#### K: Hogyan nyithatok meg egy meglévő PDF-dokumentumot?
+ Az összes oldal feldolgozása után a szöveg a`StringBuilder`. Az utolsó lépés a kibontott szöveg mentése egy fájlba.
 
- V: A 4. lépésben megnyit egy meglévő PDF-dokumentumot a`Document` konstruktort, és megadja a bemeneti PDF-fájl elérési útját.
+```csharp
+// Határozza meg a szövegfájl kimeneti útvonalát
+dataDir = dataDir + "input_Text_Extracted_out.txt";
 
-#### K: Hogyan bonthatok ki szöveget a szöveges eszközzel?
+// Mentse el a kicsomagolt szöveget egy fájlba
+File.WriteAllText(dataDir, builder.ToString());
 
- V: Az 5. lépés az a`StringBuilder` objektum a kivont szöveg tárolására. Ezután a dokumentum minden oldalát végig kell ismételni, és a a`TextDevice` együtt`TextExtractionOptions` hogy minden oldalról szöveget vonjunk ki.
+Console.WriteLine("\nText extracted successfully from PDF document.\nFile saved at " + dataDir);
+```
 
-#### K: Hogyan menthetem el a kicsomagolt szöveget fájlba?
+- `File.WriteAllText(dataDir, builder.ToString());` : Ez írja a teljes tartalmát`StringBuilder` szöveges fájlba.
+- A kimeneti fájl elérési útját egy fájlnév (`"input_Text_Extracted_out.txt"` ) a`dataDir` útvonal.
 
- V: A 6. lépésben adja meg a kimeneti fájl elérési útját, és használja a`File.WriteAllText`módszer a kivont szöveg szövegfájlba mentésére.
+## Következtetés
 
-#### K: Mi a legfontosabb kivonat ebből az oktatóanyagból?
+szöveg kinyerése PDF-ből az Aspose.PDF for .NET használatával egyszerű és hatékony folyamat. Az ebben az útmutatóban ismertetett lépések követésével könnyedén megnyithat PDF-dokumentumokat, lapozhat az oldalakon, és szöveget szövegfájlba bonthat ki. Ez különösen hasznos nagy mennyiségű PDF-adat feldolgozásához, szövegelemzéshez vagy dokumentumok további manipulációhoz való konvertálásához.
 
-V: Az oktatóanyag követésével megtanulta, hogyan használhatja ki az Aspose.PDF for .NET-ben található Text Device funkcióját, hogy szöveget vonjon ki egy PDF-dokumentumból. A kibontott szöveget a rendszer egy megadott kimeneti fájlba menti, lehetővé téve a kibontott tartalom szükség szerinti kezelését és felhasználását.
+Az Aspose.PDF segítségével nem korlátozódhat a szövegkivonatokra – kezelheti a megjegyzéseket, manipulálhat képeket, vagy akár PDF-eket konvertálhat más formátumokba, például HTML- vagy Word-formátumba. A könyvtár rugalmassága és teljesítménye felbecsülhetetlen értékű eszközzé teszi a .NET-alkalmazások PDF-kezeléséhez.
+
+## GYIK
+
+### Az Aspose.PDF ki tudja bontani a szöveget képalapú PDF-ekből?
+Nem, az Aspose.PDF-et arra tervezték, hogy szöveget kinyerjen a tartalomalapú PDF-ekből. Kép alapú PDF-ekhez OCR technológia szükséges.
+
+### Az Aspose.PDF megőrzi a formázást a szöveg kibontásakor?
+Alapértelmezés szerint a szöveg formázás nélkül kerül kibontásra, de módosíthatja a kivonatolási beállításokat, ha meg szeretné tartani a formázást.
+
+### Kivonhatok szöveget egy adott oldaltartományból?
+Igen, módosíthatja a kódot úgy, hogy az összes oldal helyett egy adott oldaltartományon futjon át.
+
+### Melyek az Aspose.PDF szövegkivonási módjai?
+Az Aspose.PDF két módot kínál: nyers és tiszta. A Nyers mód megpróbálja megőrizni az eredeti elrendezést, míg a Pure mód csak a szöveget bontja ki formázás nélkül.
+
+### Az Aspose.PDF for .NET kompatibilis a .NET Core programmal?
+Igen, az Aspose.PDF for .NET teljes mértékben kompatibilis a .NET Core és a .NET Framework programmal.

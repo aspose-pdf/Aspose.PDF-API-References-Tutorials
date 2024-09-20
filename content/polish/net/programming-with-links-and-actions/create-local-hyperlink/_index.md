@@ -2,7 +2,7 @@
 title: Utwórz lokalne hiperłącze w pliku PDF
 linktitle: Utwórz lokalne hiperłącze w pliku PDF
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak bez wysiłku tworzyć lokalne hiperłącza w plikach PDF za pomocą Aspose.PDF for .NET, korzystając z naszego przewodnika krok po kroku.
+description: Dowiedz się, jak bez wysiłku tworzyć lokalne hiperłącza w plikach PDF za pomocą Aspose.PDF dla .NET, korzystając z naszego przewodnika krok po kroku.
 type: docs
 weight: 40
 url: /pl/net/programming-with-links-and-actions/create-local-hyperlink/

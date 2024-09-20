@@ -2,271 +2,201 @@
 title: Linkstructuurelementen
 linktitle: Linkstructuurelementen
 second_title: Aspose.PDF voor .NET API-referentie
-description: Stapsgewijze handleiding voor het gebruik van linkstructuurelementen met Aspose.PDF voor .NET. Maak hyperlinks in uw PDF-documenten.
+description: Leer hoe u linkstructuurelementen in een PDF maakt met Aspose.PDF voor .NET. Stapsgewijze handleiding voor het toevoegen van toegankelijke links, afbeeldingen en nalevingsvalidatie.
 type: docs
 weight: 120
 url: /nl/net/programming-with-tagged-pdf/link-structure-elements/
 ---
-In deze stapsgewijze handleiding laten we u zien hoe u linkstructuurelementen gebruikt met Aspose.PDF voor .NET. Aspose.PDF is een krachtige bibliotheek waarmee u PDF-documenten programmatisch kunt maken en bewerken. Met linkstructuurelementen kunt u hyperlinks toevoegen aan uw PDF-document, zodat gebruikers op de links kunnen klikken en naar online bronnen kunnen navigeren.
+## Invoering
 
-Laten we de code eens bekijken en leren hoe u linkstructuurelementen kunt gebruiken met Aspose.PDF voor .NET.
+Het maken en beheren van linkstructuurelementen in een PDF kan cruciaal zijn voor documenten die toegankelijkheid en soepele navigatie vereisen. In deze tutorial laten we u zien hoe u dit kunt doen met Aspose.PDF voor .NET. Als u nieuw bent met Aspose.PDF of PDF-manipulatie in het algemeen, maak u dan geen zorgen. Ik zal elke stap in detail uitleggen, zodat u het gemakkelijk kunt volgen!
 
-## Vereisten
+## Vereisten  
 
-Voordat u begint, moet u ervoor zorgen dat u het volgende bij de hand hebt:
+Voordat we in de codering duiken, willen we eerst een paar dingen uit de weg ruimen. Dit zijn de basisvereisten om een soepele ontwikkelervaring te garanderen.
 
-1. Aspose.PDF-bibliotheek voor .NET geïnstalleerd.
-2. Basiskennis van de programmeertaal C#.
+1.  Aspose.PDF voor .NET: U kunt de nieuwste versie downloaden[hier](https://releases.aspose.com/pdf/net/).
+2. .NET-ontwikkelomgeving: Zorg dat het geïnstalleerd en gereed is, ongeacht of het Visual Studio of een andere .NET-compatibele IDE is.
+3.  Aspose-licentie: U kunt de gratis proefversie van Aspose.PDF gebruiken[hier](https://releases.aspose.com/) of een[tijdelijke licentie](https://purchase.aspose.com/temporary-license/).
+4. Basiskennis van C#: We gaan werken met wat C#-code, dus als je de basisbeginselen begrijpt, wordt het een stuk makkelijker.
 
-## Stap 1: De omgeving instellen
+## Pakketten importeren
 
-Om te beginnen opent u uw C#-ontwikkelomgeving en maakt u een nieuw project. Zorg ervoor dat u een verwijzing naar de Aspose.PDF-bibliotheek voor .NET in uw project hebt toegevoegd.
+U moet een paar pakketten importeren voordat u de code voor linkstructuurelementen schrijft. Begin met het verwijzen naar de benodigde Aspose.PDF-bibliotheken in uw project:
 
 ```csharp
-// Het pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-string outFile = dataDir + "LinkStructureElements_Output.pdf";
-string logFile = dataDir + "46035_log.xml";
-string imgFile = dataDir + "google-icon-512.png";
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Stap 2: Het document maken
+Dankzij deze imports kunnen we met PDF-documenten werken, tags toevoegen en structuurelementen beheren.
 
- De eerste stap is het maken van een nieuw PDF-document met behulp van de`Document` klas.
+We gaan nu een PDF-document maken met verschillende soorten linkstructuren. Elke stap wordt uitgelegd, zodat u het proces beter begrijpt.
 
-```csharp
-// Maak het PDF-document
-Document document = new Document();
-```
+## Stap 1: Initialiseer het document  
 
-## Stap 3: Werk met getagde inhoud
-
-Vervolgens gaan we aan de slag met de getagde inhoud van het document.
+Laten we beginnen met het maken van een nieuw PDF-document en het instellen van getagde inhoud voor toegankelijkheid.
 
 ```csharp
-// De getagde inhoud van het document ophalen
-ITaggedContent taggedContent = document.TaggedContent;
-```
-
-## Stap 4: Documenttitel en taal instellen
-
-We kunnen nu de documenttitel en de taal instellen.
-
-```csharp
-// Definieer de documenttitel en taal
-taggedContent.SetTitle("Example Link Items");
-taggedContent.SetLanguage("fr-FR");
-```
-
-## Stap 5: Linkstructuurelementen toevoegen
-
-Laten we nu linkstructuurelementen aan ons document toevoegen. We zullen verschillende soorten links maken, waaronder eenvoudige tekstlinks, afbeeldingslinks en multi-line links.
-```csharp
-// Haal het rootstructuurelement op (documentstructuurelement)
-StructureElement rootElement = taggedContent.RootElement;
-
-// Een alinea met een hyperlink toevoegen
-ParagraphElement p1 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p1);
-LinkElement link1 = taggedContent.CreateLinkElement();
-p1.AppendChild(link1);
-link1.Hyperlink = new WebHyperlink("http://google.com");
-link1.SetText("Google");
-link1.AlternateDescriptions = "Link to Google";
-
-// Voeg een alinea toe met een hyperlink die rich text bevat
-ParagraphElement p2 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p2);
-LinkElement link2 = taggedContent.CreateLinkElement();
-p2.AppendChild(link2);
-link2.Hyperlink = new WebHyperlink("http://google.com");
-SpanElement span2 = taggedContent.CreateSpanElement();
-span2.SetText("Google");
-link2.AppendChild(span2);
-link2.AlternateDescriptions = "Link to Google";
-
-// Voeg een alinea toe met een hyperlink die gedeeltelijk opgemaakte tekst bevat
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-LinkElement link3 = taggedContent.CreateLinkElement();
-p3.AppendChild(link3);
-link3.Hyperlink = new WebHyperlink("http://google.com");
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("G");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText("oogle");
-link3.AppendChild(span31);
-link3.SetText("-");
-link3.AppendChild(span32);
-link3.AlternateDescriptions = "Link to Google";
-
-// Een alinea toevoegen met een meerregelige hyperlink
-ParagraphElement p4 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p4);
-LinkElement link4 = taggedContent.CreateLinkElement();
-p4.AppendChild(link4);
-link4.Hyperlink = new WebHyperlink("http://google.com");
-link4.SetText("The multiline link: Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google");
-link4.AlternateDescriptions = "Link to Google (multiline)";
-
-// Voeg een alinea toe met een hyperlink die een afbeelding bevat
-ParagraphElement p5 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p5);
-LinkElement link5 = taggedContent.CreateLinkElement();
-p5.AppendChild(link5);
-link5.Hyperlink = new WebHyperlink("http://google.com");
-FigureElement figure5 = taggedContent.CreateFigureElement();
-figure5.SetImage(imgFile, 1200);
-figure5.AlternativeText = "Google icon";
-StructureAttributes linkLayoutAttributes = link5.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-StructureAttribute placementAttribute = new StructureAttribute(AttributeKey.Placement);
-placementAttribute.SetNameValue(AttributeName.Placement_Block);
-linkLayoutAttributes.SetAttribute(placementAttribute);
-link5.AppendChild(figure5);
-link5.AlternateDescriptions = "Link to Google";
-```
-
-## Stap 6: Sla het getagde PDF-document op
-
-Ten slotte slaan we het getagde PDF-document op.
-
-```csharp
-// Sla het getagde PDF-document op
-document. Save(outFile);
-```
-
-## Stap 7: Controleer PDF/UA-compatibiliteit
-
- We kunnen het document ook controleren op PDF/UA-compatibiliteit met behulp van de`Validate` methode van de`Document` klas.
-
-```csharp
-// Controleer PDF/UA-compatibiliteit
-document = new Document(outFile);
-bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
-```
-
-
-### Voorbeeldbroncode voor Link Structure Elements met behulp van Aspose.PDF voor .NET 
-```csharp
-
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "LinkStructureElements_Output.pdf";
 string logFile = dataDir + "46035_log.xml";
 string imgFile = dataDir + "google-icon-512.png";
 
-//Creatiedocument en getagde pdf-inhoud verkrijgen
+// Een nieuw PDF-document maken
 Document document = new Document(); 
-ITaggedContent taggedContent = document.TaggedContent;
 
-// Titel en aardtaal voor document instellen
+// De TaggedContent-interface ophalen
+ITaggedContent taggedContent = document.TaggedContent;
+```
+  
+ Hier initialiseren we de`Document` object, dat ons PDF-bestand vertegenwoordigt. We halen ook de`TaggedContent` interface, waarmee we structuurelementen zoals alinea's, links en afbeeldingen kunnen toevoegen.
+
+## Stap 2: Titel en taal instellen  
+
+Elk PDF-bestand moet een titel en taalinstelling hebben, vooral als u wilt voldoen aan de PDF/UA-standaarden.
+
+```csharp
+// Stel de documenttitel en taal in
 taggedContent.SetTitle("Link Elements Example");
 taggedContent.SetLanguage("en-US");
+```
+  
+Met deze stap zorgt u ervoor dat uw PDF een betekenisvolle titel heeft en wordt de taal ingesteld op Engels (`en-US`). Dit is van cruciaal belang voor de toegankelijkheid en zorgt ervoor dat schermlezers of andere ondersteunende technologieën uw document correct kunnen interpreteren.
 
-// Rootstructuurelement verkrijgen (Documentstructuurelement)
+## Stap 3: Alinea's maken en toevoegen  
+
+In deze stap voegen we alinea's toe waarin we de linkelementen plaatsen.
+
+```csharp
+// Maak het rootelement
 StructureElement rootElement = taggedContent.RootElement;
+
+// Maak een alinea en voeg deze toe aan het rootelement
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p1);
+```
+  
+We maken een rootstructuurelement, wat in feite de bovenste container is voor alle andere elementen. Vervolgens maken we een alinea (`p1`) en voeg het toe aan het rootelement.
+
+## Stap 4: Voeg een eenvoudige link toe  
+
+Laten we nu een eenvoudige hyperlink toevoegen die naar Google verwijst.
+
+```csharp
+// Maak een linkelement en voeg het toe aan de alinea
 LinkElement link1 = taggedContent.CreateLinkElement();
 p1.AppendChild(link1);
+
+// Hyperlink en tekst voor de link instellen
 link1.Hyperlink = new WebHyperlink("http://google.com");
 link1.SetText("Google");
 link1.AlternateDescriptions = "Link to Google";
+```
+  
+In deze stap hebben we een linkelement gemaakt, de hyperlink ingesteld op "http://google.com" en tekst ("Google") voor de link verstrekt. We hebben ook een alternatieve beschrijving toegevoegd om de toegankelijkheid te waarborgen.
+
+## Stap 5: Een link toevoegen met overspanningen  
+
+We kunnen ook links maken met verschillende tekstgedeelten.
+
+```csharp
+// Maak een andere alinea
 ParagraphElement p2 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p2);
+
+// Een koppeling maken met een span-element
 LinkElement link2 = taggedContent.CreateLinkElement();
 p2.AppendChild(link2);
 link2.Hyperlink = new WebHyperlink("http://google.com");
+
 SpanElement span2 = taggedContent.CreateSpanElement();
 span2.SetText("Google");
 link2.AppendChild(span2);
+
 link2.AlternateDescriptions = "Link to Google";
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-LinkElement link3 = taggedContent.CreateLinkElement();
-p3.AppendChild(link3);
-link3.Hyperlink = new WebHyperlink("http://google.com");
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("G");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText("oogle");
-link3.AppendChild(span31);
-link3.SetText("-");
-link3.AppendChild(span32);
-link3.AlternateDescriptions = "Link to Google";
+```
+  
+Hier hebben we een span-element gebruikt om een deel van de tekst binnen de link te omsluiten. Zo kunnen we aanpassen hoe bepaalde delen van de link worden weergegeven.
+
+## Stap 6: Multiline-link  
+
+Wat als uw linktekst te lang is? Geen zorgen, u kunt hem over meerdere regels verdelen.
+
+```csharp
 ParagraphElement p4 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p4);
+
 LinkElement link4 = taggedContent.CreateLinkElement();
 p4.AppendChild(link4);
 link4.Hyperlink = new WebHyperlink("http://google.com");
-link4.SetText("The multiline link: Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google");
+link4.SetText("The multiline link: Google Google Google Google Google...");
 link4.AlternateDescriptions = "Link to Google (multiline)";
+```
+  
+In dit geval hebben we een link met meerdere regels gemaakt door simpelweg een lange tekstwaarde in te stellen. De tekst wordt dan automatisch over meerdere regels verdeeld.
+
+## Stap 7: Voeg een afbeelding toe aan de link  
+
+Ten slotte kunt u ook afbeeldingen aan een link toevoegen.
+
+```csharp
+// Maak een nieuwe alinea en koppel element
 ParagraphElement p5 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p5);
+
 LinkElement link5 = taggedContent.CreateLinkElement();
 p5.AppendChild(link5);
 link5.Hyperlink = new WebHyperlink("http://google.com");
+
+// Voeg een afbeelding toe aan de link
 FigureElement figure5 = taggedContent.CreateFigureElement();
 figure5.SetImage(imgFile, 1200);
 figure5.AlternativeText = "Google icon";
-StructureAttributes linkLayoutAttributes = link5.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-StructureAttribute placementAttribute = new StructureAttribute(AttributeKey.Placement);
-placementAttribute.SetNameValue(AttributeName.Placement_Block);
-linkLayoutAttributes.SetAttribute(placementAttribute);
 link5.AppendChild(figure5);
-link5.AlternateDescriptions = "Link to Google";
 
-// Gelabeld PDF-document opslaan
+link5.AlternateDescriptions = "Link to Google";
+```
+  
+Deze stap laat zien hoe u uw links kunt verbeteren met een afbeelding. In dit geval hebben we een Google-pictogram toegevoegd aan de link. We hebben ook gezorgd voor toegankelijkheid door alternatieve tekst voor de afbeelding in te stellen.
+
+## Stap 8: Valideer PDF voor naleving  
+
+Als u PDF/UA-compatibel wilt zijn (een toegankelijkheidsstandaard), is het verstandig om uw document te valideren.
+
+```csharp
+// Sla het PDF-document op
 document.Save(outFile);
 
-// Controleren van PDF/UA-compatibiliteit
-document = new Document(outFile);
+// Valideer het document op PDF/UA-compatibiliteit
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
+Console.WriteLine($"PDF/UA compliance: {isPdfUaCompliance}");
 ```
-## Conclusie
+  
+We hebben het document opgeslagen en gevalideerd aan de hand van de PDF/UA-standaard. Dit garandeert dat de PDF voldoet aan de toegankelijkheidsvereisten.
 
-Gefeliciteerd! U hebt geleerd hoe u linkstructuurelementen kunt gebruiken met Aspose.PDF voor .NET. U kunt nu hyperlinks maken in uw PDF-documenten, zodat gebruikers naar onlinebronnen kunnen navigeren. Experimenteer en ontdek meer functies van Aspose.PDF om interactieve en verrijkte PDF-documenten te maken.
+## Conclusie  
 
-### Veelgestelde vragen
+In deze tutorial hebben we behandeld hoe u gestructureerde PDF-documenten kunt maken met Aspose.PDF voor .NET. Van het toevoegen van basishyperlinks tot complexere structuren zoals spans, multiline links en zelfs afbeeldingen, deze gids biedt een solide basis voor het manipuleren van linkelementen in uw PDF's. Met het extra voordeel van PDF/UA-compliance bent u nu uitgerust om toegankelijke en navigeerbare PDF's te maken.
 
-#### V: Wat zijn linkstructuurelementen in een PDF-document en hoe verbeteren ze de interactie met het document?
+## Veelgestelde vragen
 
-A: Linkstructuurelementen in een PDF-document worden gebruikt om hyperlinks te maken waarmee gebruikers naar onlinebronnen of specifieke locaties in het document kunnen navigeren. Deze elementen verbeteren de interactiviteit door klikbare links te bieden waarmee gebruikers toegang krijgen tot gerelateerde content of externe websites.
+### Kan ik complexere structuren, zoals tabellen, in links toevoegen?  
+Nee, links zijn voornamelijk bedoeld voor tekst en afbeeldingen, maar u kunt complexe elementen in de buurt insluiten.
 
-#### V: Hoe kunnen linkstructuurelementen nuttig zijn in een PDF-document?
+### Is PDF/UA-validatie verplicht?  
+Niet altijd, maar het is zeker aan te raden als u zich zorgen maakt over de toegankelijkheid.
 
-A: Linkstructuurelementen verbeteren de gebruikerservaring door het PDF-document interactief te maken. Ze bieden snelle toegang tot aanvullende informatie, gerelateerde content, externe websites of specifieke secties binnen het document, verbeteren de navigatie en vergemakkelijken het ophalen van informatie.
+### Wat gebeurt er als het pad naar het afbeeldingsbestand onjuist is?  
+De afbeelding wordt niet weergegeven in het document en er kan een fout optreden tijdens het renderen.
 
-#### V: Kan ik verschillende soorten hyperlinks maken met behulp van linkstructuurelementen in Aspose.PDF voor .NET?
+### Kan ik de tekst in de link opmaken?  
+Ja, u kunt tekststijlen toepassen met behulp van de span-elementen.
 
-A: Ja, u kunt verschillende typen hyperlinks maken met behulp van linkstructuurelementen. Met Aspose.PDF voor .NET kunt u hyperlinks maken met platte tekst, rich text, afbeeldingen en beschrijvingen van meerdere regels, wat veelzijdigheid biedt in de manier waarop u linkt naar externe content of locaties binnen het document.
-
-#### V: Hoe stel ik linkstructuurelementen in een PDF-document in en initialiseer ik deze met behulp van Aspose.PDF voor .NET?
-
- A: Om linkstructuurelementen te gebruiken, moet u eerst een nieuw PDF-document maken met behulp van de`Document` klasse. Haal vervolgens de getagde inhoud op met behulp van de`TaggedContent`eigenschap van het document. Vanaf daar kunt u linkstructuurelementen maken en aanpassen en deze toevoegen aan het rootstructuurelement.
-
-#### V: Hoe kan ik een eenvoudige tekstuele hyperlink maken met behulp van linkstructuurelementen?
- A: U kunt een eenvoudige tekst-hyperlink maken door een`LinkElement` en het instellen ervan`Hyperlink` eigendom aan een`WebHyperlink` met de URL waarnaar u wilt linken. U kunt ook de weergavetekst van de link instellen met behulp van de`SetText` methode.
-
-#### V: Is het mogelijk om hyperlinks met afbeeldingen te maken met behulp van linkstructuurelementen?
-
- A: Ja, je kunt hyperlinks met afbeeldingen maken met behulp van linkstructuurelementen. Je zou een`LinkElement` en voeg dan een toe`FigureElement` met een afbeelding erbij. Hiermee kunt u een op afbeeldingen gebaseerde hyperlink maken.
-
-#### V: Hoe kan ik ervoor zorgen dat mijn PDF-document met hyperlinks voldoet aan de PDF/UA-standaard voor toegankelijkheid?
-
- A: Aspose.PDF voor .NET biedt de mogelijkheid om de naleving van uw PDF-document met de PDF/UA-standaard te valideren met behulp van de`Validate` methode van de`Document`klasse. Dit zorgt ervoor dat de hyperlinks van het document toegankelijk zijn voor gebruikers met een beperking.
-
-#### V: Wat zijn alternatieve beschrijvingen voor linkstructuurelementen en waarom zijn ze belangrijk?
-
-A: Alternatieve beschrijvingen (alt-tekst) voor linkstructuurelementen bieden tekstuele beschrijvingen van de hyperlinks. Deze beschrijvingen zijn essentieel voor toegankelijkheid, zodat gebruikers met een visuele beperking het doel van de link en de bestemming ervan kunnen begrijpen.
-
-#### V: Kan ik het uiterlijk en gedrag van hyperlinks die zijn gemaakt met behulp van linkstructuurelementen aanpassen?
-
-A: Hoewel linkstructuurelementen zich primair richten op het maken van hyperlinks, kunt u het uiterlijk en gedrag van hyperlinks verder aanpassen met behulp van andere functies die Aspose.PDF voor .NET biedt. Dit omvat het specificeren van kleuren, stijlen en linkacties.
-
-#### V: Hoe dragen linkstructuurelementen bij aan het interactiever en gebruiksvriendelijker maken van PDF-documenten?
-
-A: Linkstructuurelementen transformeren statische PDF-documenten in interactieve ervaringen door klikbare hyperlinks toe te voegen. Deze interactiviteit verbetert de betrokkenheid van de gebruiker, maakt naadloze navigatie tussen gerelateerde content mogelijk en verbetert de algehele bruikbaarheid van het document.
+### Is het mogelijk om interne documentlinks te maken?  
+Absoluut! Je kunt linken naar specifieke secties binnen hetzelfde document.

@@ -116,7 +116,7 @@ Tak, licencję można załadować z dowolnego strumienia obsługującego odczyt,
 Nie, ścieżka do pliku licencji nie jest rozróżniana pod względem wielkości liter, ale musi być zgodna z rzeczywistą strukturą pliku i lokalizacją w systemie.
 
 ### Czy mogę używać tego samego pliku licencji dla różnych wersji Aspose.PDF?  
-Ważna licencja jest zazwyczaj niezależna od wersji, ale zawsze warto sprawdzić to u wsparcia technicznego Aspose, jeśli dokonujesz aktualizacji do znacznie nowszej wersji.
+Ważna licencja jest zazwyczaj niezależna od wersji, ale zawsze warto sprawdzić ją u wsparcia technicznego Aspose, jeśli dokonujesz aktualizacji do znacznie nowszej wersji.
 
 ### Jak mogę sprawdzić, czy licencja została zastosowana pomyślnie?  
  Zwykle można stwierdzić, czy licencja została zastosowana pomyślnie, sprawdzając brak znaków wodnych w dokumentach wyjściowych. Ponadto`SetLicense` metoda nie zgłasza wyjątku w przypadku powodzenia.

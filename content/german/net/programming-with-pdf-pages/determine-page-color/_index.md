@@ -9,7 +9,7 @@ url: /de/net/programming-with-pdf-pages/determine-page-color/
 ---
 ## Einführung
 
-Bei der Arbeit mit PDF-Dokumenten kann es in bestimmten Anwendungen entscheidend sein, das Farbschema jeder Seite zu verstehen. Egal, ob Sie ein Dokument zum Drucken, Archivieren oder für Analysen vorbereiten, es kann entscheidend sein, zu wissen, ob eine Seite in Schwarzweiß, Graustufen oder RGB ist. Zum Glück hat Aspose.PDF für .NET die Analyse dieser Informationen unglaublich einfach gemacht. In diesem Handbuch erfahren Sie Schritt für Schritt, wie Sie diese leistungsstarke Bibliothek nutzen können, um die Seitenfarbe einer PDF-Datei zu bestimmen. 
+Bei der Arbeit mit PDF-Dokumenten kann es in bestimmten Anwendungen entscheidend sein, das Farbschema jeder Seite zu verstehen. Egal, ob Sie ein Dokument zum Drucken, Archivieren oder für Analysen vorbereiten, es kann entscheidend sein zu wissen, ob eine Seite in Schwarzweiß, Graustufen oder RGB ist. Zum Glück hat Aspose.PDF für .NET die Analyse dieser Informationen unglaublich einfach gemacht. In diesem Handbuch erfahren Sie Schritt für Schritt, wie Sie diese leistungsstarke Bibliothek nutzen können, um die Seitenfarbe einer PDF-Datei zu bestimmen. 
 
 ## Voraussetzungen
 

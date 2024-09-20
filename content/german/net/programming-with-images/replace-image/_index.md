@@ -52,7 +52,7 @@ using Aspose.Pdf;
 
 Nachdem Sie nun alles eingerichtet haben, analysieren wir nun den Codeausschnitt, der das Ersetzen eines Bilds in einer PDF-Datei bewerkstelligt. 
 
-## Schritt 1: Dokumentverzeichnis definieren
+## Schritt 1: Definieren Sie das Dokumentverzeichnis
 
 Zuerst definieren wir das Verzeichnis, in dem unsere PDF- und Bilddateien gespeichert sind. Sie sollten den Pfad so anpassen, dass er auf Ihr Dokumentverzeichnis verweist. So können Sie das tun:
 

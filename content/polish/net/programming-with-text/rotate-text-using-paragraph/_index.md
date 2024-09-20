@@ -2,195 +2,173 @@
 title: Obróć tekst za pomocą akapitu w pliku PDF
 linktitle: Obróć tekst za pomocą akapitu w pliku PDF
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak obracać tekst za pomocą akapitów w pliku PDF przy użyciu Aspose.PDF dla platformy .NET.
+description: Dowiedz się, jak obracać tekst w pliku PDF za pomocą Aspose.PDF dla .NET. Postępuj zgodnie z tym przewodnikiem krok po kroku, aby utworzyć dokumenty.
 type: docs
 weight: 380
 url: /pl/net/programming-with-text/rotate-text-using-paragraph/
 ---
-Ten samouczek wyjaśnia, jak używać Aspose.PDF dla .NET do obracania tekstu za pomocą akapitów. Dostarczony kod źródłowy C# demonstruje ten proces krok po kroku.
+## Wstęp
+
+Tworzenie plików PDF z dynamicznym tekstem może być angażującym sposobem przekazywania informacji. Jeśli chcesz dodać trochę polotu do swoich dokumentów, obracanie tekstu może pomóc podkreślić kluczowe punkty lub po prostu zapewnić atrakcyjny wizualnie projekt. W tym przewodniku przeprowadzę Cię przez proces obracania tekstu za pomocą Aspose.PDF dla .NET, dzięki czemu Twoje dokumenty PDF będą bardziej interaktywne i interesujące!
 
 ## Wymagania wstępne
 
-Przed przystąpieniem do samouczka upewnij się, że posiadasz następujące elementy:
+Zanim zanurzymy się w ekscytującym świecie rotacji tekstu w plikach PDF, upewnijmy się, że wszystko jest poprawnie skonfigurowane. Oto wymagania wstępne, których będziesz potrzebować:
 
-- Podstawowa znajomość języka programowania C#.
-- Aspose.PDF dla biblioteki .NET jest zainstalowany. Możesz go pobrać ze strony internetowej Aspose lub użyć NuGet, aby zainstalować go w swoim projekcie.
+1.  Aspose.PDF dla .NET: Upewnij się, że Aspose.PDF dla .NET jest zainstalowany w Twoim projekcie. Możesz go pobrać ze strony[strona internetowa](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: W tym samouczku założono, że do tworzenia oprogramowania .NET używasz programu Visual Studio.
+3. Podstawowa wiedza o C#: Znajomość programowania w C# pomoże Ci lepiej zrozumieć przykłady. Jeśli jesteś nowy, nie martw się; przejdziemy krok po kroku!
+4. .NET Framework: Upewnij się, że Twój projekt jest skonfigurowany z odpowiednią wersją .NET Framework. Aspose.PDF obsługuje różne wersje, więc sprawdź dokumentację pod kątem zgodności.
 
-## Krok 1: Skonfiguruj projekt
+Gdy już spełnisz te wymagania wstępne, będziemy gotowi zacząć pisać kod!
 
-Zacznij od utworzenia nowego projektu C# w preferowanym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla platformy .NET.
+## Importuj pakiety
 
-## Krok 2: Importuj niezbędne przestrzenie nazw
+Aby skutecznie używać Aspose.PDF, musisz zaimportować niezbędne przestrzenie nazw. Oto, jak możesz to zrobić:
 
-Dodaj następujące dyrektywy using na początku pliku C#, aby zaimportować wymagane przestrzenie nazw:
+### Otwórz swój projekt
+
+Uruchom program Visual Studio i otwórz projekt, w którym chcesz zastosować obrót tekstu w pliku PDF.
+
+### Dodaj odniesienie
+
+Kliknij prawym przyciskiem myszy swój projekt w Eksploratorze rozwiązań i wybierz opcję „Zarządzaj pakietami NuGet”. 
+
+### Wyszukaj i zainstaluj Aspose.PDF
+
+W Menedżerze pakietów NuGet wyszukaj „Aspose.PDF” i zainstaluj go. Ta czynność umożliwi Ci dostęp do wszystkich klas i funkcji dostępnych w bibliotece Aspose.PDF.
+
+### Importuj przestrzeń nazw
+
+Na górze pliku C# należy zaimportować przestrzeń nazw Aspose.PDF:
 
 ```csharp
+using System;
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using Aspose.Pdf.Text.TextBuilder;
+using Aspose.Pdf.Facades;
 ```
 
-## Krok 3: Utwórz dokument PDF
+I teraz możesz zacząć kodować!
 
- Zainicjuj`Document` obiekt, aby utworzyć nowy dokument PDF:
+Dobrze! Teraz przejdźmy do sedna sprawy — obracania tekstu w pliku PDF. Przejdziemy przez kod krok po kroku.
+
+## Krok 1: Zainicjuj dokument
+
+Pierwszym krokiem jest utworzenie nowego wystąpienia dokumentu PDF. To tutaj będzie przechowywana cała Twoja ciężka praca.
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document pdfDocument = new Document();
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Określ katalog dokumentów
+Document pdfDocument = new Document(); // Zainicjuj obiekt dokumentu
 ```
+Tutaj określamy katalog dla dokumentu i inicjujemy nowy obiekt Document. Ten obiekt będzie służył jako kontener dla Twojego pliku PDF.
 
- Pamiętaj o wymianie`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do katalogu dokumentów.
+## Krok 2: Uzyskaj konkretną stronę
 
-## Krok 4: Dodaj stronę
-
- Pobierz konkretną stronę z dokumentu za pomocą`Pages.Add()` metoda:
+Teraz dodajmy stronę, na której będziemy obracać tekst:
 
 ```csharp
-Page pdfPage = (Page)pdfDocument.Pages.Add();
+Page pdfPage = (Page)pdfDocument.Pages.Add(); // Pobierz konkretną stronę
 ```
+Ten wiersz dodaje nową stronę do pliku PDF i umożliwia rozpoczęcie dodawania do niej treści.
 
-## Krok 5: Utwórz akapit tekstowy
+## Krok 3: Utwórz akapit tekstowy
 
- Utwórz`TextParagraph` obiekt i ustaw jego pozycję na stronie:
+Następnie utwórzmy akapit, do którego dodamy fragmenty tekstu:
 
 ```csharp
 TextParagraph paragraph = new TextParagraph();
-paragraph.Position = new Position(200, 600);
+paragraph.Position = new Position(200, 600); // Ustaw pozycję akapitu
 ```
+Tutaj inicjujemy TextParagraph i ustawiamy jego pozycję na stronie. Współrzędne (200, 600) określają, gdzie akapit będzie się zaczynał na stronie.
 
-Dostosuj wartości pozycji zgodnie ze swoimi wymaganiami.
+## Krok 4: Utwórz fragmenty tekstu 
 
-## Krok 6: Utwórz i skonfiguruj fragmenty tekstu
+Teraz nadchodzi zabawna część — tworzenie fragmentów tekstu! Stworzymy trzy fragmenty tekstu, z których dwa zostaną obrócone.
 
- Utwórz wiele`TextFragment` obiekty i ustaw ich tekst oraz właściwości:
+### 4.1: Utwórz obrócony fragment tekstu
 
 ```csharp
 TextFragment textFragment1 = new TextFragment("rotated text");
 textFragment1.TextState.FontSize = 12;
 textFragment1.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment1.TextState.Rotation = 45;
+textFragment1.TextState.Rotation = 45; // Ustaw obrót
+```
+Tutaj tworzymy pierwszy fragment tekstu, który mówi „obrócony tekst”. Ustawiamy rozmiar czcionki, rodzaj czcionki, a następnie stosujemy obrót o 45 stopni.
 
+### 4.2: Utwórz główny fragment tekstu
+
+Następnie dodajmy główny fragment tekstu.
+
+```csharp
 TextFragment textFragment2 = new TextFragment("main text");
 textFragment2.TextState.FontSize = 12;
 textFragment2.TextState.Font = FontRepository.FindFont("TimesNewRoman");
+```
+Ten fragment pozostanie nieobrócony i będzie stanowił tekst główny akapitu.
 
+### 4.3: Utwórz kolejny obrócony fragment tekstu
+
+Na koniec utworzymy kolejny obrócony fragment tekstu.
+
+```csharp
 TextFragment textFragment3 = new TextFragment("another rotated text");
 textFragment3.TextState.FontSize = 12;
 textFragment3.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment3.TextState.Rotation = -45;
+textFragment3.TextState.Rotation = -45; // Ustaw obrót
 ```
+Podobnie jak pierwszy fragment, ten również charakteryzuje się obrotem o -45 stopni, co dodaje ciekawego kontrastu wizualnego.
 
-Dostosuj tekst i inne właściwości według potrzeb.
+## Krok 5: Dołącz fragmenty tekstu do akapitu
 
-## Krok 7: Dołącz fragmenty tekstu do akapitu
-
- Dołącz utworzone fragmenty tekstu do akapitu za pomocą`AppendLine` metoda:
+Teraz czas dodać wszystkie te fragmenty tekstu do akapitu, który utworzyliśmy wcześniej:
 
 ```csharp
 paragraph.AppendLine(textFragment1);
 paragraph.AppendLine(textFragment2);
 paragraph.AppendLine(textFragment3);
 ```
+ Po prostu dodajemy każdy fragment tekstu do naszego akapitu.`AppendLine` Metoda ta zapewnia ułożenie każdego fragmentu tekstu w pionie.
 
-## Krok 8: Utwórz TextBuilder i dodaj akapit
+## Krok 6: Utwórz obiekt TextBuilder
 
- Utwórz`TextBuilder` obiekt używający`pdfPage` i dołącz akapit tekstowy do strony PDF:
+Następnie użyjemy programu TextBuilder, aby dodać nasz akapit do strony PDF:
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(pdfPage);
-textBuilder.AppendParagraph(paragraph);
+textBuilder.AppendParagraph(paragraph); // Dołącz akapit tekstowy do strony PDF
 ```
+Obiekt TextBuilder działa jako narzędzie umożliwiające zastosowanie akapitu do określonej strony PDF.
 
-## Krok 9: Zapisz dokument PDF
+## Krok 7: Zapisz dokument
 
- Zapisz zmodyfikowany dokument PDF do pliku za pomocą`Save` metoda:
+Po całej tej ciężkiej pracy nadszedł czas, aby zapisać dokument i zobaczyć, co stworzyliśmy!
 
 ```csharp
 pdfDocument.Save(dataDir + "TextFragmentTests_Rotated2_out.pdf");
 ```
+Ten wiersz zapisuje dokument w określonym katalogu pod nazwą „TextFragmentTests_Rotated2_out.pdf”. 
 
- Pamiętaj o wymianie`"TextFragmentTests_Rotated2_out.pdf"` z żądaną nazwą pliku wyjściowego.
-
-### Przykładowy kod źródłowy dla funkcji Obróć tekst za pomocą akapitu przy użyciu Aspose.PDF dla .NET 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Zainicjuj obiekt dokumentu
-Document pdfDocument = new Document();
-// Pobierz konkretną stronę
-Page pdfPage = (Page)pdfDocument.Pages.Add();
-TextParagraph paragraph = new TextParagraph();
-paragraph.Position = new Position(200, 600);
-// Utwórz fragment tekstu
-TextFragment textFragment1 = new TextFragment("rotated text");
-// Ustaw właściwości tekstu
-textFragment1.TextState.FontSize = 12;
-textFragment1.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-// Ustaw obrót
-textFragment1.TextState.Rotation = 45;
-// Utwórz fragment tekstu
-TextFragment textFragment2 = new TextFragment("main text");
-// Ustaw właściwości tekstu
-textFragment2.TextState.FontSize = 12;
-textFragment2.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-// Utwórz fragment tekstu
-TextFragment textFragment3 = new TextFragment("another rotated text");
-// Ustaw właściwości tekstu
-textFragment3.TextState.FontSize = 12;
-textFragment3.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-// Ustaw obrót
-textFragment3.TextState.Rotation = -45;
-// Dołącz fragmenty tekstu do akapitu
-paragraph.AppendLine(textFragment1);
-paragraph.AppendLine(textFragment2);
-paragraph.AppendLine(textFragment3);
-// Utwórz obiekt TextBuilder
-TextBuilder textBuilder = new TextBuilder(pdfPage);
-// Dołącz akapit tekstowy do strony PDF
-textBuilder.AppendParagraph(paragraph);
-// Zapisz dokument
-pdfDocument.Save(dataDir + "TextFragmentTests_Rotated2_out.pdf");
-```
-
+voila! Teraz masz plik PDF z obróconym tekstem!
 
 ## Wniosek
 
-Gratulacje! Udało Ci się nauczyć, jak obracać tekst za pomocą akapitów w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Ten samouczek zawiera przewodnik krok po kroku, od tworzenia dokumentu do zapisywania zmodyfikowanej wersji. Teraz możesz włączyć ten kod do własnych projektów C#, aby manipulować obrotem tekstu w plikach PDF.
+Obrót tekstu w pliku PDF może dodać wiele kreatywności i podkreślenia Twoim dokumentom. Dzięki Aspose.PDF dla .NET jest to proste do wdrożenia i dostosowania do Twoich potrzeb projektowych. Postępując zgodnie z tym przewodnikiem krok po kroku, nauczyłeś się, jak tworzyć obrócony tekst w pliku PDF, zapewniając nowe możliwości prezentacji informacji w angażujący sposób. 
 
-### Najczęściej zadawane pytania
+## Najczęściej zadawane pytania
 
-#### P: Jaki jest cel samouczka „Obróć tekst za pomocą akapitu”?
+### Czym jest Aspose.PDF dla .NET?
+Aspose.PDF dla platformy .NET to zaawansowana biblioteka umożliwiająca programistom tworzenie, edytowanie i konwertowanie dokumentów PDF bezpośrednio w aplikacjach .NET.
 
-A: Samouczek „Obróć tekst za pomocą akapitu” ma na celu przeprowadzenie Cię przez proces używania biblioteki Aspose.PDF dla .NET do obracania tekstu za pomocą akapitów tekstowych w dokumencie PDF. Samouczek zawiera instrukcje krok po kroku i przykładowy kod, aby osiągnąć tę funkcjonalność.
+### Jak zainstalować Aspose.PDF w moim projekcie?
+ Możesz zainstalować Aspose.PDF za pomocą Menedżera pakietów NuGet w programie Visual Studio lub pobierając go ze strony[Strona pobierania Aspose](https://releases.aspose.com/pdf/net/).
 
-#### P: Co oznacza „obracanie tekstu za pomocą akapitów”?
+### Czy mogę używać Aspose.PDF bezpłatnie?
+ Tak, Aspose.PDF oferuje bezpłatny okres próbny. Możesz zacząć od[bezpłatny okres próbny](https://releases.aspose.com/) i poznaj jego funkcje.
 
-A: Obracanie tekstu za pomocą akapitów odnosi się do możliwości zastosowania obrotu do tekstu w dokumencie PDF za pomocą akapitów tekstowych. Ta technika umożliwia zorientowanie tekstu pod różnymi kątami lub w różnych pozycjach w treści PDF.
+### Czy jest dostępne wsparcie dla Aspose.PDF?
+ Oczywiście! Możesz się skontaktować[Wsparcie Aspose](https://forum.aspose.com/c/pdf/10) aby uzyskać pomoc w rozwiązaniu jakichkolwiek problemów.
 
-#### P: Dlaczego miałbym chcieć obrócić tekst w dokumencie PDF?
-
-A: Obracanie tekstu w dokumencie PDF może być przydatne z różnych powodów, np. w celu podkreślenia określonej treści, stworzenia projektów artystycznych lub poprawienia układu i czytelności.
-
-#### P: Jak mogę utworzyć nowy dokument PDF?
-
- A: Aby utworzyć nowy dokument PDF, zainicjuj`Document`obiekt z biblioteki Aspose.PDF. Możesz użyć tego obiektu, aby dodać strony i zawartość do pliku PDF.
-
-#### P: Jak obracać tekst za pomocą akapitów?
-
-A: Aby obrócić tekst za pomocą akapitów:
-
-1.  Utwórz`TextParagraph` obiekt.
-2.  Tworzyć`TextFragment` obiekty z pożądanym tekstem i kątami obrotu.
-3. Dołącz fragmenty tekstu do akapitu.
-4.  Utwórz`TextBuilder` obiekt i dołącz akapit tekstowy do określonej strony pliku PDF.
-
-#### P: Czy mogę kontrolować kąt obrotu poszczególnych fragmentów tekstu?
-
- A: Tak, możesz kontrolować kąt obrotu poszczególnych`TextFragment` obiekty poprzez ustawienie`TextState.Rotation` Właściwość. Wartości dodatnie oznaczają obrót zgodnie z ruchem wskazówek zegara, natomiast wartości ujemne oznaczają obrót przeciwnie do ruchu wskazówek zegara.
-
-#### P: Czy mogę stosować różne kąty obrotu do różnych fragmentów tekstu w obrębie tego samego akapitu?
-
- A: Tak, można stosować różne kąty obrotu do różnych`TextFragment` obiektów w tym samym akapicie, ustawiając`TextState.Rotation` właściwość każdego fragmentu odpowiednio.
-
-#### P: Jak zapisać obrócony dokument PDF?
-
-A: Aby zapisać obrócony dokument PDF, użyj`Save` metoda`Document` obiekt i podaj ścieżkę i nazwę żądanego pliku wyjściowego.
+### Jak mogę uzyskać tymczasową licencję na Aspose.PDF?
+ Możesz zakupić licencję tymczasową[Strona internetowa Aspose](https://purchase.aspose.com/temporary-license/) aby wypróbować wszystkie funkcje biblioteki.

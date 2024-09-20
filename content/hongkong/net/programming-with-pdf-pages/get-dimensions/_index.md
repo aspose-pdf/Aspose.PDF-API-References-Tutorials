@@ -101,7 +101,7 @@ Console.WriteLine(page.GetPageRect(true).Width.ToString() + ":" + page.GetPageRe
 
 恭喜！您已經成功學習如何使用 Aspose.PDF for .NET 擷取和修改 PDF 頁面的尺寸。現在，您應該能夠加載 PDF、檢查其頁面尺寸，甚至根據需要旋轉頁面。
 
-操作 PDF 不一定很複雜。使用 Aspose.PDF，只需執行幾個步驟並使用直覺的方法即可。因此，下次您需要處理 PDF 頁面尺寸時，您就會確切地知道該怎麼做！
+操作 PDF 不一定很複雜。使用 Aspose.PDF，只需遵循幾個步驟並使用直覺的方法即可。因此，下次您需要處理 PDF 頁面尺寸時，您就會確切地知道該怎麼做！
 
 ## 常見問題解答
 

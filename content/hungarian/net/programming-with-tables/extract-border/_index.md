@@ -2,30 +2,58 @@
 title: Szegély kibontása PDF fájlból
 linktitle: Szegély kibontása PDF fájlból
 second_title: Aspose.PDF for .NET API Reference
-description: Ismerje meg, hogyan bonthatja ki a szegélyt PDF-fájlból az Aspose.PDF for .NET segítségével.
+description: Ismerje meg, hogyan vonhat ki szegélyeket egy PDF-fájlból, és hogyan mentheti el őket képként az Aspose.PDF for .NET segítségével. Lépésről lépésre útmutató kódmintákkal és tippekkel a sikerhez.
 type: docs
 weight: 80
 url: /hu/net/programming-with-tables/extract-border/
 ---
-Ebben az oktatóanyagban megtudjuk, hogyan lehet kivonni a szegélyt PDF-fájlból az Aspose.PDF for .NET segítségével. Lépésről lépésre elmagyarázzuk a forráskódot C# nyelven. Ennek az oktatóanyagnak a végén tudni fogja, hogyan bontsa ki a szegélyt egy PDF-dokumentumból, és hogyan mentse el képként. Kezdjük!
+## Bevezetés
 
-## 1. lépés: A környezet beállítása
-Először is győződjön meg arról, hogy beállította C# fejlesztői környezetét az Aspose.PDF for .NET segítségével. Adja hozzá a hivatkozást a könyvtárhoz, és importálja a szükséges névtereket.
+Amikor PDF-ekkel dolgozik, bizonyos elemek, például szegélyek vagy grafikus útvonalak kinyerése ijesztő feladatnak tűnhet. Az Aspose.PDF for .NET segítségével azonban könnyedén kivonhatja a szegélyeket vagy alakzatokat egy PDF-fájlból, és képként mentheti őket. Ebben az oktatóanyagban belevetjük magunkat a szegély PDF-ből való kivonásához és PNG-képként való mentéséhez. Készüljön fel arra, hogy átvegye PDF-je grafikus tartalmát!
 
-## 2. lépés: A PDF-dokumentum betöltése
-Ebben a lépésben betöltjük a PDF dokumentumot a megadott fájlból.
+## Előfeltételek
+
+Mielőtt belemerülnénk a kódba, győződjön meg arról, hogy mindent beállított:
+
+1.  Aspose.PDF for .NET: Ha még nem telepítette az Aspose.PDF könyvtárat, megteheti[töltse le itt](https://releases.aspose.com/pdf/net/). A licencet is alkalmaznia kell, akár az ingyenes próbaverzióval, akár egy megvásárolt licenccel.
+2. IDE beállítása: Állítson be egy C#-projektet a Visual Studióban vagy bármely más .NET IDE-ben. Győződjön meg arról, hogy hozzáadta a szükséges hivatkozásokat az Aspose.PDF könyvtárhoz.
+3. PDF-fájl bevitele: Készítsen PDF-fájlt, amelyből kivonhatja a szegélyeket. Ez az oktatóanyag egy nevű fájlra hivatkozik`input.pdf`.
+
+## A szükséges csomagok importálása
+
+Kezdjük a szükséges névterek importálásával. Ezek a csomagok biztosítják a PDF-tartalom kezeléséhez szükséges eszközöket.
 
 ```csharp
+using System.IO;
+using System;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
+using System.Collections;
+using Aspose.Pdf;
+using Aspose.Pdf.Annotations;
+```
+
+Most, hogy az alapokkal foglalkoztunk, térjünk át a lépésről lépésre szóló útmutatóra, ahol a kód minden egyes részét lebontjuk, hogy részletesen elmagyarázzuk.
+
+
+## 1. lépés: A PDF-dokumentum betöltése
+
+Az első lépés a kibontandó szegélyt tartalmazó PDF dokumentum betöltése. Gondolj úgy, mintha kinyitnál egy könyvet, mielőtt elkezdesz olvasni – hozzá kell férned a tartalomhoz!
+
+ Kezdjük azzal, hogy megadjuk a könyvtárat, ahol a PDF-fájl tárolva van, és betöltjük a dokumentumot a segítségével`Aspose.Pdf.Document` osztály.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document doc = new Document(dataDir + "input.pdf");
 ```
 
-Feltétlenül cserélje ki a „DOKUMENTUMKÖNYVTÁR” elemet arra a könyvtárra, ahol a PDF-fájl található.
+ Ez a kód betölti a`input.pdf` fájlt a megadott könyvtárból. Győződjön meg arról, hogy a fájl elérési útja helyes, különben a fájl nem található hibaüzenetet kaphat.
 
-## 3. lépés: Élek kivonása
-A szegélyt kivonjuk a PDF dokumentumból a dokumentumban szereplő műveletek iterációjával.
+## 2. lépés: A grafika és a bitkép beállítása
+
+Mielőtt elkezdené a kibontást, létre kell hoznunk egy vásznat, amelyre rajzolhatunk. A .NET világában ez egy Bitmap és Graphics objektumok beállítását jelenti. A Bitmap a képet ábrázolja, a Graphics objektum pedig lehetővé teszi a PDF-ből kinyert alakzatok, például szegélyek rajzolását.
 
 ```csharp
-Stack graphicsState = new Stack();
 System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageInfo.Width, (int)doc.Pages[1].PageInfo.Height);
 System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
 System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
@@ -33,226 +61,106 @@ System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.M
 System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
 System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);
 System.Drawing.Color strokeColor = System.Drawing.Color.FromArgb(0, 0, 0);
+```
 
-using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
+Íme egy bontás:
+- A PDF első oldalának megfelelő méretű bittérképes képet készítünk.
+- A GraphicsPath alakzatok (ebben az esetben szegélyek) meghatározására szolgál.
+- A mátrix meghatározza a grafika átalakításának módját; szükségünk van egy inverziós mátrixra, mert a PDF és a .NET eltérő koordinátarendszerrel rendelkezik.
+
+## 3. lépés: A PDF-tartalom feldolgozása
+
+
+A PDF-fájl rajzparancsok sorozata, és mindegyik parancsot fel kell dolgoznunk a határinformációk azonosításához és kibontásához.
+
+```csharp
+foreach (Operator op in doc.Pages[1].Contents)
 {
-     // Az összes tartalomművelet feldolgozása
-     foreach(Operator op in doc.Pages[1].Contents)
-     {
-         // Ellenőrizze a művelet típusát
-         // ...
-         // Adjon hozzá kódot az egyes műveletek feldolgozásához
-     }
+    // Parancsok feldolgozása, például állapot mentése/visszaállítása, vonalak rajzolása, alakzatok kitöltése stb.
 }
 ```
 
- Létrehozunk a`graphicsState` verem a grafikai állapotok tárolásához, bittérképes kép a kivont szegély rögzítéséhez, a`GraphicsPath` objektum a rajzi útvonalak tárolására, és egyéb változók az állapot és a színek nyomon követésére.
+A kód végigfut minden rajzoperátoron a PDF tartalomfolyamában. Mindegyik operátor egy vonalat, téglalapot vagy más grafikus utasítást jelenthet.
 
-## 4. lépés: Tranzakció feldolgozása
-Ebben a lépésben feldolgozzuk a dokumentum minden egyes műveletét a szegély kibontásához.
+## 4. lépés: PDF-kezelők kezelése
+
+A PDF-fájl minden operátora egy-egy műveletet vezérel. A szegély kibontásához olyan parancsokat kell azonosítanunk, mint a „mozgatás ide”, „sor ide” és „téglalap rajzolása”. A következő operátorok kezelik ezeket a műveleteket:
+
+- MoveTo: A kurzort egy kezdőpontra mozgatja.
+- LineTo: vonalat húz az aktuális ponttól egy új pontig.
+- Re: Rajzol egy téglalapot (ez lehet a szegély része).
 
 ```csharp
-// Ellenőrizze a művelet típusát
-if (opSaveState != null)
-{
-     // Mentse el az előző állapotot, és tolja az aktuális állapotot a verem tetejére
-     graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-     lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-}
-else if (opRestoreState != null)
-{
-     // Törölje az aktuális állapotot és állítsa vissza az előző állapotot
-     graphicsState. Pop();
-     lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-}
-else if (opCtm != null)
-{
-     // Az aktuális transzformációs mátrix lekérése
-     System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
-         (float)opCtm.Matrix.A,
-         (float)opCtm.Matrix.B,
-         (float)opCtm.Matrix.C,
-         (float)opCtm.Matrix.D,
-         (float)opCtm.Matrix.E,
-         (float)opCtm.Matrix.F);
+Aspose.Pdf.Operators.MoveTo opMoveTo = op as Aspose.Pdf.Operators.MoveTo;
+Aspose.Pdf.Operators.LineTo opLineTo = op as Aspose.Pdf.Operators.LineTo;
+Aspose.Pdf.Operators.Re opRe = op as Aspose.Pdf.Operators.Re;
 
-     // Szorozzuk meg az aktuális mátrixot az állapotmátrixszal
-     ((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-     lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-}
-else if (opMoveTo != null)
+if (opMoveTo != null)
 {
-     // Frissítse az utolsó rajzpontot
-     lastPoint = new System.Drawing.PointF((float)opMoveTo.X, (float)opMoveTo.Y);
+    lastPoint = new System.Drawing.PointF((float)opMoveTo.X, (float)opMoveTo.Y);
 }
 else if (opLineTo != null)
 {
-     // Egy vonal rajzolásának feldolgozása
-     // ...
-     // Adjon hozzá kódot a vonal rajzolásához
+    System.Drawing.PointF linePoint = new System.Drawing.PointF((float)opLineTo.X, (float)opLineTo.Y);
+    graphicsPath.AddLine(lastPoint, linePoint);
+    lastPoint = linePoint;
 }
-// ...
-// Adjon hozzá else if blokkokat más műveletekhez
+else if (opRe != null)
+{
+    System.Drawing.RectangleF re = new System.Drawing.RectangleF((float)opRe.X, (float)opRe.Y, (float)opRe.Width, (float)opRe.Height);
+    graphicsPath.AddRectangle(re);
+}
 ```
 
-Feltételekkel ellenőrizzük a művelet típusát, és minden művelethez lefuttatjuk a megfelelő kódot.
+Ebben a lépésben:
+- Minden megrajzolt vonalhoz vagy alakzathoz rögzítjük a pontokat.
+- Téglalapokhoz (`opRe` ), közvetlenül hozzáadjuk őket a`graphicsPath`, amelyet később a határ meghúzásához használunk.
 
-## 5. lépés: Biztonsági kép
-Végül elmentjük a kibontott szegélyt tartalmazó bittérképes képet egy megadott fájlba.
+## 5. lépés: Rajzolja meg a határt
 
-```csharp
-dataDir = dataDir + "ExtractBorder_out.png";
-bitmap.Save(dataDir, ImageFormat.Png);
-```
-
-Ügyeljen arra, hogy a megfelelő könyvtárat és fájlnevet adja meg a kimeneti kép mentéséhez.
-
-### Példa forráskód az Extract Borderhez az Aspose.PDF for .NET használatával
+Miután azonosítottuk a szegélyt alkotó vonalakat és téglalapokat, ténylegesen rá kell rajzolnunk őket a Bitmap objektumra. Itt jön be a Graphics objektum.
 
 ```csharp
-// A dokumentumok könyvtárának elérési útja.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-Document doc = new Document(dataDir + "input.pdf");
-
-Stack graphicsState = new Stack();
-System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap((int)doc.Pages[1].PageInfo.Width, (int)doc.Pages[1].PageInfo.Height);
-System.Drawing.Drawing2D.GraphicsPath graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-// Az alapértelmezett ctm-mátrix értéke 1,0,0,1,0,0
-System.Drawing.Drawing2D.Matrix lastCTM = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, 0);
-// System.Drawing koordinátarendszer bal felső alapú, míg a pdf koordinátarendszer bal alsó alapú, ezért az inverziós mátrixot kell alkalmaznunk
-System.Drawing.Drawing2D.Matrix inversionMatrix = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, (float)doc.Pages[1].PageInfo.Height);
-System.Drawing.PointF lastPoint = new System.Drawing.PointF(0, 0);
-System.Drawing.Color fillColor = System.Drawing.Color.FromArgb(0, 0, 0);
-System.Drawing.Color strokeColor = System.Drawing.Color.FromArgb(0, 0, 0);
-
 using (System.Drawing.Graphics gr = System.Drawing.Graphics.FromImage(bitmap))
 {
-	gr.SmoothingMode = SmoothingMode.HighQuality;
-	graphicsState.Push(new System.Drawing.Drawing2D.Matrix(1, 0, 0, 1, 0, 0));
-
-	// Feldolgozza az összes tartalom parancsot
-	foreach (Operator op in doc.Pages[1].Contents)
-	{
-		Aspose.Pdf.Operators.GSave opSaveState = op as Aspose.Pdf.Operators.GSave;
-		Aspose.Pdf.Operators.GRestore opRestoreState = op as Aspose.Pdf.Operators.GRestore;
-		Aspose.Pdf.Operators.ConcatenateMatrix opCtm = op as Aspose.Pdf.Operators.ConcatenateMatrix;
-		Aspose.Pdf.Operators.MoveTo opMoveTo = op as Aspose.Pdf.Operators.MoveTo;
-		Aspose.Pdf.Operators.LineTo opLineTo = op as Aspose.Pdf.Operators.LineTo;
-		Aspose.Pdf.Operators.Re opRe = op as Aspose.Pdf.Operators.Re;
-		Aspose.Pdf.Operators.EndPath opEndPath = op as Aspose.Pdf.Operators.EndPath;
-		Aspose.Pdf.Operators.Stroke opStroke = op as Aspose.Pdf.Operators.Stroke;
-		Aspose.Pdf.Operators.Fill opFill = op as Aspose.Pdf.Operators.Fill;
-		Aspose.Pdf.Operators.EOFill opEOFill = op as Aspose.Pdf.Operators.EOFill;
-		Aspose.Pdf.Operators.SetRGBColor opRGBFillColor = op as Aspose.Pdf.Operators.SetRGBColor;
-		Aspose.Pdf.Operators.SetRGBColorStroke opRGBStrokeColor = op as Aspose.Pdf.Operators.SetRGBColorStroke;
-
-		if (opSaveState != null)
-		{
-			// Mentse el az előző állapotot, és tolja a jelenlegi állapotot a verem tetejére
-			graphicsState.Push(((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Clone());
-			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-		}
-		else if (opRestoreState != null)
-		{
-			// Dobja el a jelenlegi állapotot, és állítsa vissza az előzőt
-			graphicsState.Pop();
-			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-		}
-		else if (opCtm != null)
-		{
-			System.Drawing.Drawing2D.Matrix cm = new System.Drawing.Drawing2D.Matrix(
-				(float)opCtm.Matrix.A,
-				(float)opCtm.Matrix.B,
-				(float)opCtm.Matrix.C,
-				(float)opCtm.Matrix.D,
-				(float)opCtm.Matrix.E,
-				(float)opCtm.Matrix.F);
-
-			// Szorozzuk meg az árammátrixot az állapotmátrixszal
-			((System.Drawing.Drawing2D.Matrix)graphicsState.Peek()).Multiply(cm);
-			lastCTM = (System.Drawing.Drawing2D.Matrix)graphicsState.Peek();
-		}
-		else if (opMoveTo != null)
-		{
-			lastPoint = new System.Drawing.PointF((float)opMoveTo.X, (float)opMoveTo.Y);
-		}
-		else if (opLineTo != null)
-		{
-			System.Drawing.PointF linePoint = new System.Drawing.PointF((float)opLineTo.X, (float)opLineTo.Y);
-			graphicsPath.AddLine(lastPoint, linePoint);
-
-			lastPoint = linePoint;
-		}
-		else if (opRe != null)
-		{
-			System.Drawing.RectangleF re = new System.Drawing.RectangleF((float)opRe.X, (float)opRe.Y, (float)opRe.Width, (float)opRe.Height);
-			graphicsPath.AddRectangle(re);
-		}
-		else if (opEndPath != null)
-		{
-			graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-		}
-		else if (opRGBFillColor != null)
-		{
-			fillColor = opRGBFillColor.getColor();
-		}
-		else if (opRGBStrokeColor != null)
-		{
-			strokeColor = opRGBStrokeColor.getColor();
-		}
-		else if (opStroke != null)
-		{
-			graphicsPath.Transform(lastCTM);
-			graphicsPath.Transform(inversionMatrix);
-			gr.DrawPath(new System.Drawing.Pen(strokeColor), graphicsPath);
-			graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-		}
-		else if (opFill != null)
-		{
-			graphicsPath.FillMode = FillMode.Winding;
-			graphicsPath.Transform(lastCTM);
-			graphicsPath.Transform(inversionMatrix);
-			gr.FillPath(new System.Drawing.SolidBrush(fillColor), graphicsPath);
-			graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-		}
-		else if (opEOFill != null)
-		{
-			graphicsPath.FillMode = FillMode.Alternate;
-			graphicsPath.Transform(lastCTM);
-			graphicsPath.Transform(inversionMatrix);
-			gr.FillPath(new System.Drawing.SolidBrush(fillColor), graphicsPath);
-			graphicsPath = new System.Drawing.Drawing2D.GraphicsPath();
-		}
-	}
+    gr.SmoothingMode = SmoothingMode.HighQuality;
+    gr.DrawPath(new System.Drawing.Pen(strokeColor), graphicsPath);
 }
-dataDir = dataDir + "ExtractBorder_out.png";
-bitmap.Save(dataDir, ImageFormat.Png);
-
-Console.WriteLine("\nBorder extracted successfully as image.\nFile saved at " + dataDir);
 ```
 
+- A bittérkép alapján létrehozunk egy grafikus objektumot.
+- A SmoothingMode.HighQuality biztosítja, hogy szép sima képet kapjunk.
+- Végül a DrawPath segítségével rajzoljuk meg a határt.
+
+## 6. lépés: A kivont szegély mentése
+
+Most, hogy kibontottuk a szegélyt, ideje elmenteni képfájlként. Ezzel a szegélyt PNG-ként menti el.
+
+```csharp
+dataDir = dataDir + "ExtractBorder_out.png";
+bitmap.Save(dataDir, ImageFormat.Png);
+```
+
+- A bitkép PNG-képként kerül mentésre.
+- Most megnyithatja ezt a képet a kivont szegély megtekintéséhez.
+
 ## Következtetés
-Ebben az oktatóanyagban megtanultuk, hogyan lehet szegélyt kivonni egy PDF-dokumentumból az Aspose.PDF for .NET használatával. Ezzel a lépésenkénti útmutatóval szegélyt vonhat ki más PDF-dokumentumokból.
 
-### GYIK a szegély kivonásához PDF-fájlban
+A szegélyek kinyerése egy PDF-fájlból az Aspose.PDF for .NET használatával eleinte bonyolultnak tűnhet, de ha egyszer lebontja, ez egyszerűvé válik. A PDF-ben található rajzoperátorok megértésével és a hatékony .NET-könyvtárak használatával hatékonyan kezelheti és bonthatja ki a grafikus tartalmat. Ez az útmutató szilárd alapot nyújt a PDF-kezelés megkezdéséhez!
 
-#### K: Mi a célja a szegély kibontásának egy PDF-fájlból?
+## GYIK
 
-V: A szegély kibontása egy PDF-fájlból különféle célokra hasznos lehet. Lehetővé teszi a dokumentum szerkezeti elemeinek, például táblázatok, diagramok vagy grafikus elemek elkülönítését és elemzését. A kibontott szegély segítségével azonosíthatja a PDF-dokumentumban lévő tartalom elrendezését, méreteit és elhelyezését.
+### Hogyan kezelhetek több oldalt a PDF-ben?  
+ A dokumentum egyes oldalai között ismétléssel lépkedhet`doc.Pages` keménykódolás helyett`doc.Pages[1]`.
 
-#### K: Kivonhatom a szegélyt a PDF-dokumentum bizonyos oldalairól vagy területeiről?
+### Kivonhatok más elemeket, például szöveget, ugyanezzel a megközelítéssel?  
+Igen, az Aspose.PDF gazdag API-kat biztosít a szövegek, képek és egyéb tartalmak PDF-fájlokból való kinyerésére.
 
- V: Igen, módosíthatja a mellékelt C# forráskódot, hogy kivonja a szegélyt a PDF dokumentum bizonyos oldalairól vagy régióiról. Manipulálásával a`doc.Pages` gyűjtemény és egyéni feltételek megadásával kiválaszthatja, hogy kivonja a szegélyt bizonyos oldalakról vagy érdeklődési területekről.
+### Hogyan kérhetek engedélyt a korlátozások elkerülése érdekében?  
+ Megteheti[engedélyt alkalmazni](https://purchase.aspose.com/temporary-license/) keresztül töltve be`License` osztály által biztosított Aspose.
 
-#### K: Hogyan szabhatom testre a kimeneti képformátumot és minőséget?
+### Mi van, ha a PDF-emnek nincsenek határai?  
+Ha a PDF-fájl nem tartalmaz látható szegélyeket, előfordulhat, hogy a grafikai kinyerési folyamat nem hoz eredményt. Győződjön meg arról, hogy a PDF-tartalom rajzolható szegélyeket tartalmaz.
 
- V: A mellékelt C# kódban a kibontott szegély PNG-képként kerül mentésre. Ha módosítani szeretné a kimeneti képformátumot, módosíthatja a`ImageFormat.Png` paraméter a`bitmap.Save` módszert más támogatott képformátumokhoz, például JPEG, BMP vagy GIF. Ezenkívül igénye szerint módosíthatja a képminőséget vagy a tömörítési beállításokat.
-
-#### K: Milyen egyéb műveleteket hajthatok végre a kibontott határon?
-
-V: Miután kibontotta a szegélyt képként, tovább dolgozhatja azt képfeldolgozó könyvtárak vagy algoritmusok segítségével. Szükség esetén elemezheti a képet, alkalmazhat képszűrőket, észlelheti a mintákat, vagy OCR-t (optikai karakterfelismerést) hajthat végre, hogy szöveget vonjon ki a képből.
-
-#### K: Vannak-e korlátozások vagy megfontolások az összetett PDF-dokumentumok szegélyeinek kivonásakor?
-
-V: A kibontási folyamat a PDF-dokumentum összetettségétől függően változhat. A többrétegű, átlátszó vagy fejlett grafikával rendelkező összetett PDF-fájlok további feldolgozást vagy módosításokat igényelhetnek a szegély pontos kibontása érdekében. Elengedhetetlen, hogy alaposan tesztelje a kinyerési folyamatot különböző PDF-dokumentumokon a megbízható eredmények érdekében.
+### Elmenthetem a kimenetet nem PNG formátumban?  
+ Igen, egyszerűen változtassa meg a`ImageFormat.Png` másik támogatott formátumra, mint pl`ImageFormat.Jpeg`.

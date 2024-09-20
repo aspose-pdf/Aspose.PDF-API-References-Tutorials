@@ -14,7 +14,7 @@ Los documentos PDF se han convertido en un estándar para compartir información
 
 ## Introducción a Aspose.PDF para Java
 
- Para comenzar, deberá configurar su entorno de desarrollo. Asegúrese de tener instalada la biblioteca Aspose.PDF para Java. Puede descargarla desde[aquí](https://releases.aspose.com/pdf/java/).
+Para comenzar, deberá configurar su entorno de desarrollo. Asegúrese de tener instalada la biblioteca Aspose.PDF para Java. Puede descargarla desde[aquí](https://releases.aspose.com/pdf/java/).
 
 ## Creación de un documento PDF
 

@@ -105,7 +105,7 @@ Console.WriteLine("\nCombobox field added successfully.\nFile saved at " + dataD
 
 ## Conclusion
 
-Et voilà ! En seulement cinq étapes simples, vous avez réussi à ajouter une zone de liste déroulante à un PDF à l'aide d'Aspose.PDF pour .NET. Cette puissante fonctionnalité n'est qu'une des nombreuses fonctionnalités proposées par Aspose.PDF pour personnaliser et manipuler des documents PDF. Que vous créiez des formulaires complexes ou de simples listes déroulantes, Aspose.PDF pour .NET est là pour vous. Maintenant que vous avez vu à quel point c'est simple, pourquoi ne pas explorer d'autres champs de formulaire comme les cases à cocher, les champs de texte ou les boutons radio ?
+Et voilà ! En seulement cinq étapes simples, vous avez réussi à ajouter une zone de liste déroulante à un PDF à l'aide d'Aspose.PDF pour .NET. Cette fonctionnalité puissante n'est qu'une des nombreuses fonctionnalités proposées par Aspose.PDF pour personnaliser et manipuler des documents PDF. Que vous créiez des formulaires complexes ou de simples listes déroulantes, Aspose.PDF pour .NET est là pour vous. Maintenant que vous avez vu à quel point c'est simple, pourquoi ne pas explorer d'autres champs de formulaire comme les cases à cocher, les champs de texte ou les boutons radio ?
 
 ## FAQ
 

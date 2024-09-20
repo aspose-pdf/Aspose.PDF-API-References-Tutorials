@@ -7,139 +7,137 @@ type: docs
 weight: 210
 url: /tr/net/programming-with-text/extract-text-using-text-device/
 ---
-Bu eğitim, .NET için Aspose.PDF'deki Metin Aygıtını kullanarak bir PDF belgesinden metin çıkarma sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları göstermektedir.
+## giriiş
 
-## Gereksinimler
-Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
+Bir PDF'den metin çıkarmak, özellikle çeşitli biçimler, gömülü yazı tipleri veya karmaşık düzenler içeren belgelerle uğraşırken zor olabilir. Ancak .NET için Aspose.PDF ile bu süreç çocuk oyuncağı haline gelir! Bir PDF'nin sayfalarını daha fazla analiz için düz metne dönüştürmek veya yalnızca belirli bölümleri çıkarmak istemeniz fark etmez, Aspose.PDF sizin için her şeyi yapar. Bu eğitimde, Aspose.PDF'deki TextDevice sınıfını kullanarak bir PDF'den metnin nasıl çıkarılacağını adım adım açıklayacağız. Ayrıca, aynı yöntemleri kendi projelerinize kolayca uygulayabilmeniz için net açıklamalar da sunacağız.
 
-- Bilgisayarınızda Visual Studio veya herhangi bir C# derleyicisi yüklü olmalıdır.
-- Aspose.PDF for .NET kütüphanesi. Resmi Aspose web sitesinden indirebilir veya NuGet gibi bir paket yöneticisi kullanarak kurabilirsiniz.
+## Ön koşullar
 
-## Adım 1: Projeyi kurun
-1. Tercih ettiğiniz geliştirme ortamında yeni bir C# projesi oluşturun.
-2. .NET için Aspose.PDF kitaplığına bir referans ekleyin.
+Koda geçmeden önce, takip etmek için her şeyin yerli yerinde olduğundan emin olun. İhtiyacınız olanlar şunlar:
 
-## Adım 2: Gerekli ad alanlarını içe aktarın
-Metni çıkarmak istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki using yönergelerini ekleyin:
+1.  Aspose.PDF for .NET: En son sürümü şu adresten indirin:[Aspose.PDF for .NET indirme sayfası](https://releases.aspose.com/pdf/net/).
+2. Geliştirme Ortamı: Visual Studio veya herhangi bir C# geliştirme ortamı.
+3. .NET Framework: Projenizin .NET Framework 4.x veya üzerini hedeflediğinden emin olun.
+4. Giriş PDF Dosyası: Metin çıkarmak için kullanacağınız bir PDF dosyası. Bunu makinenizdeki bir dizine yerleştirin (buna şu şekilde atıfta bulunacağız:`YOUR DOCUMENT DIRECTORY`).
+
+## Paketleri İçe Aktar
+
+Kodunuzun en üstünde, Aspose.PDF ile çalışmak için gerekli ad alanlarını içe aktarmanız gerekecek:
 
 ```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Devices;
 using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using Aspose.Pdf.Devices;
+using System;
 using System.Text;
 ```
 
-## Adım 3: Belge dizinini ayarlayın
- Kodda şu satırı bulun:`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` Belgelerinizin saklandığı dizinin yolunu içeren.
+## Adım 1: PDF Belgenizi Yükleyin
 
-## Adım 4: PDF belgesini açın
- Mevcut bir PDF belgesini şu şekilde açın:`Document`yapıcı ve giriş PDF dosyasına giden yolu geçirme.
+ Metni çıkarmadan önce PDF belgesini belleğe yüklememiz gerekir. Bu adımda, PDF'nizi Aspose.PDF'in`Document` sınıf. Bu, dosyadaki tüm sayfalara ve içeriklere erişmenizi sağlayacaktır.
 
 ```csharp
+// PDF belgenize giden yolu tanımlayın
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// PDF belgesini yükleyin
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
-## Adım 5: Metin Aygıtını kullanarak metni çıkarın
- Bir tane oluştur`StringBuilder` Çıkarılan metni tutmak için nesne. Belgenin her sayfasını yineleyin ve bir`TextDevice` her sayfadan metni çıkarmak için.
+ Burada, şunu kullanıyoruz`Document pdfDocument = new Document(dataDir + "input.pdf");` PDF'yi yüklemek için`dataDir` değişkeni PDF dosyanızın dizin yolunu tutar. Bu bize tüm belgeye erişim sağlayacak, sayfalar arasında dolaşıp içerik çıkarmamızı sağlayacaktır.
+
+## Adım 2: Metin Depolama için Bir Dize Oluşturucu Ayarlayın
+
+ Artık belge yüklendiğine göre, çıkarılan metni depolamanın bir yoluna ihtiyacımız var. Bunun için bir`StringBuilder` verimli dize birleştirmeye olanak tanır.
 
 ```csharp
+// Çıkarılan metni tutacak StringBuilder
 StringBuilder builder = new StringBuilder();
-string extractedText = "";
-foreach(Page pdfPage in pdfDocument.Pages)
-{
-using (MemoryStream textStream = new MemoryStream())
-{
-TextDevice textDevice = new TextDevice();
-TextExtractionOptions textExtOptions = new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
-textDevice.ExtractionOptions = textExtOptions;
-textDevice.Process(pdfPage, textStream);
-textStream. Close();
-extractedText = Encoding.Unicode.GetString(textStream.ToArray());
-}
-builder. Append(extractedText);
-}
 ```
 
-## Adım 6: Çıkarılan metni kaydedin
- Çıktı dosyası yolunu belirtin ve çıkarılan metni bir metin dosyasına kaydedin`File.WriteAllText` Yöntem.
+ Birini başlatıyoruz`StringBuilder`her sayfadan çıkarılan metni toplayacak olan örnek. Döngüdeki normal dize birleştirmeye kıyasla büyük dizeleri işlemenin daha verimli bir yoludur.
+
+## Adım 3: PDF Sayfaları Arasında Döngü
+
+ Sonra, metni çıkarmak için PDF belgesinin her sayfasında döngü oluşturacağız. Her sayfayı tek tek şu şekilde işleyeceğiz:`TextDevice` PDF içeriğini metin formatına dönüştürmekten sorumlu sınıf.
 
 ```csharp
-dataDir = dataDir + "input_Text_Extracted_out.txt";
-File.WriteAllText(dataDir, builder.ToString());
-```
-
-### .NET için Aspose.PDF kullanarak Metin Aygıtı Kullanarak Metin Çıkarma için örnek kaynak kodu 
-```csharp
-// Belgeler dizinine giden yol.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Belgeyi aç
-Document pdfDocument = new Document( dataDir + "input.pdf");
-System.Text.StringBuilder builder = new System.Text.StringBuilder();
-//Çıkarılan metni tutacak dize
-string extractedText = "";
+// PDF'deki tüm sayfalarda dolaş
 foreach (Page pdfPage in pdfDocument.Pages)
 {
-	using (MemoryStream textStream = new MemoryStream())
-	{
-		// Metin aygıtı oluştur
-		TextDevice textDevice = new TextDevice();
-		// Metin çıkarma seçeneklerini ayarlayın - metin çıkarma modunu ayarlayın (Ham veya Saf)
-		TextExtractionOptions textExtOptions = new
-		TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
-		textDevice.ExtractionOptions = textExtOptions;
-		// Belirli bir sayfayı dönüştürün ve metni akışa kaydedin
-		textDevice.Process(pdfPage, textStream);
-		// Belirli bir sayfayı dönüştürün ve metni akışa kaydedin
-		textDevice.Process(pdfDocument.Pages[1], textStream);
-		// Bellek akışını kapat
-		textStream.Close();
-		// Bellek akışından metin al
-		extractedText = Encoding.Unicode.GetString(textStream.ToArray());
-	}
-	builder.Append(extractedText);
+    // Her sayfayı metin çıkarma işlemi için işle
 }
-dataDir = dataDir + "input_Text_Extracted_out.txt";
-// Çıkarılan metni metin dosyasına kaydedin
-File.WriteAllText(dataDir, builder.ToString());
-Console.WriteLine("\nText extracted successfully using text device from page of PDF Document.\nFile saved at " + dataDir);
 ```
 
-## Çözüm
-Aspose.PDF for .NET'teki Metin Aygıtını kullanarak bir PDF belgesinden metni başarıyla çıkardınız. Çıkarılan metin belirtilen çıktı dosyasına kaydedildi.
+Bu döngü PDF'nin her sayfasından geçer (`pdfDocument.Pages` ). Her sayfa için metni çıkarıp kendimize ekleyeceğiz.`StringBuilder`.
 
-### SSS
+## Adım 4: Her Sayfadan Metni Çıkarın
 
-#### S: Bu eğitimin amacı nedir?
-
-A: Bu eğitim, .NET için Aspose.PDF'deki Metin Aygıtı özelliğini kullanarak bir PDF belgesinden metin çıkarma konusunda rehberlik sağlar. Eşlik eden C# kaynak kodu, bu görevi başarmak için gerekli adımları gösterir.
-
-#### S: Hangi ad alanlarını içe aktarmalıyım?
-
-A: Metni çıkarmayı planladığınız kod dosyasında, dosyanın başına aşağıdaki using yönergelerini ekleyin:
+ Şimdi, her sayfa için metin çıkarma işlemini ayarlıyoruz. Burada, bir`TextDevice` nesneyi kullanın ve PDF sayfalarını işlemek için kullanın.`TextDevice` Ayarladığımız çıkarma seçeneklerine göre ham veya biçimlendirilmiş metni çıkarır.
 
 ```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Devices;
-using System.IO;
-using System.Text;
+using (MemoryStream textStream = new MemoryStream())
+{
+    // Metin çıkarma için bir metin aygıtı oluşturun
+    TextDevice textDevice = new TextDevice();
+    
+    // Metin çıkarma seçeneklerini 'Saf' moduna ayarlayın
+    TextExtractionOptions textExtOptions = new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
+    textDevice.ExtractionOptions = textExtOptions;
+
+    //Metni geçerli sayfadan çıkarın ve bellek akışına kaydedin
+    textDevice.Process(pdfPage, textStream);
+
+    // Bellek akışını metne dönüştür
+    string extractedText = Encoding.Unicode.GetString(textStream.ToArray());
+
+    // Çıkarılan metni StringBuilder'a ekleyin
+    builder.Append(extractedText);
+}
 ```
 
-#### S: Belge dizinini nasıl belirlerim?
+- `TextDevice textDevice = new TextDevice();` : :`TextDevice` sınıfı PDF'den metin çıkarmak için kullanılır.
+- `TextExtractionOptions textExtOptions = new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);` : Bu seçenek, yazı tipleri veya konumlar gibi herhangi bir biçimlendirmeyi korumadan ham metni çıkarır. Ayrıca şunu da kullanabilirsiniz:`TextFormattingMode.Raw` Biçimlendirme üzerinde daha fazla kontrole ihtiyacınız varsa.
+- `textDevice.Process(pdfPage, textStream);` : Bu, PDF'nin her sayfasını işler ve çıkarılan metni bir`MemoryStream`.
+-  Son olarak metni şu şekilde dönüştürüyoruz:`MemoryStream` bir dizeye ekleyin ve onu dizeye ekleyin`StringBuilder`.
 
- A: Kodda şunu söyleyen satırı bulun:`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belge dizininize giden gerçek yol ile.
+## Adım 5: Çıkarılan Metni Bir Dosyaya Kaydet
 
-#### S: Mevcut bir PDF belgesini nasıl açabilirim?
+ Tüm sayfalar işlendikten sonra metin şuraya kaydedilir:`StringBuilder`Son adım, çıkarılan bu metni bir dosyaya kaydetmektir.
 
- A: 4. Adımda, mevcut bir PDF belgesini kullanarak açacaksınız.`Document` yapıcı ve giriş PDF dosyasına giden yolu sağlama.
+```csharp
+// Metin dosyası için çıktı yolunu tanımlayın
+dataDir = dataDir + "input_Text_Extracted_out.txt";
 
-#### S: Metin Aygıtını kullanarak metni nasıl çıkarabilirim?
+// Çıkarılan metni bir dosyaya kaydedin
+File.WriteAllText(dataDir, builder.ToString());
 
- A: 5. Adım, bir`StringBuilder` Çıkarılan metni tutacak nesne. Daha sonra belgenin her sayfasında yineleme yapacaksınız ve bir`TextDevice` ile birlikte`TextExtractionOptions` her sayfadan metin çıkarmak için.
+Console.WriteLine("\nText extracted successfully from PDF document.\nFile saved at " + dataDir);
+```
 
-#### S: Çıkarılan metni bir dosyaya nasıl kaydederim?
+- `File.WriteAllText(dataDir, builder.ToString());` : Bu, tüm içeriği yazar`StringBuilder` Bir metin dosyasına.
+- Çıktı dosyasının yolu, bir dosya adı eklenerek ayarlanır (`"input_Text_Extracted_out.txt"` ) için`dataDir` yol.
 
- A: 6. Adımda çıktı dosyası yolunu belirtecek ve`File.WriteAllText`Çıkarılan metni bir metin dosyasına kaydetme yöntemi.
+## Çözüm
 
-#### S: Bu eğitimden çıkarılacak en önemli ders nedir?
+Aspose.PDF for .NET kullanarak bir PDF'den metin çıkarmak basit ve etkili bir işlemdir. Bu kılavuzda özetlenen adımları izleyerek PDF belgelerini kolayca açabilir, sayfalar arasında dolaşabilir ve metni bir metin dosyasına çıkarabilirsiniz. Bu özellikle büyük hacimli PDF verilerini işlemek, metin analizi yapmak veya belgeleri daha fazla düzenleme için dönüştürmek için kullanışlıdır.
 
-A: Bu öğreticiyi takip ederek, .NET için Aspose.PDF'deki Metin Aygıtı özelliğinden yararlanarak bir PDF belgesinden metin çıkarmayı öğrendiniz. Çıkarılan metin, belirtilen bir çıktı dosyasına kaydedildi ve bu sayede çıkarılan içeriği gerektiği gibi düzenleyip kullanabilirsiniz.
+Aspose.PDF ile metin çıkarmayla sınırlı değilsiniz; açıklamaları işleyebilir, görselleri düzenleyebilir veya hatta PDF'leri HTML veya Word gibi diğer biçimlere dönüştürebilirsiniz. Bu kitaplığın esnekliği ve gücü onu .NET uygulamalarında PDF yönetimi için paha biçilmez bir araç haline getirir.
+
+## SSS
+
+### Aspose.PDF resim tabanlı PDF'lerden metin çıkarabilir mi?
+Hayır, Aspose.PDF içerik tabanlı PDF'lerden metin çıkarmak için tasarlanmıştır. Görüntü tabanlı PDF'ler için OCR teknolojisi gereklidir.
+
+### Aspose.PDF metin çıkartılırken biçimlendirmeyi koruyor mu?
+Varsayılan olarak metin biçimlendirme olmadan çıkarılır, ancak bazı biçimlendirmeleri korumak istiyorsanız çıkarma seçeneklerini ayarlayabilirsiniz.
+
+### Belirli bir sayfa aralığından metin çıkarabilir miyim?
+Evet, kodu tüm sayfalar yerine belirli bir sayfa aralığı üzerinde döngü oluşturacak şekilde değiştirebilirsiniz.
+
+### Aspose.PDF'de metin çıkarma modları nelerdir?
+Aspose.PDF iki mod sunar: Raw ve Pure. Raw modu orijinal düzeni korumaya çalışırken, Pure modu biçimlendirme yapmadan yalnızca metni çıkarır.
+
+### Aspose.PDF for .NET, .NET Core ile uyumlu mudur?
+Evet, Aspose.PDF for .NET, .NET Core ve .NET Framework ile tam uyumludur.

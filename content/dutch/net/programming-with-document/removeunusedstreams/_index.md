@@ -95,7 +95,7 @@ En dat is alles! U hebt zojuist uw PDF-bestand geoptimaliseerd door ongebruikte 
 ## Veelgestelde vragen
 
 ### Wat doet "RemoveUnusedStreams" in Aspose.PDF voor .NET?
-Hiermee worden onnodige stromen verwijderd die niet actief door het PDF-bestand worden gebruikt, waardoor de bestandsgrootte wordt verkleind en de prestaties worden geoptimaliseerd.
+Het verwijdert onnodige stromen die niet actief door het PDF-bestand worden gebruikt, waardoor de bestandsgrootte wordt verkleind en de prestaties worden geoptimaliseerd.
 
 ### Kan ik naast RemoveUnusedStreams ook andere optimalisatieopties toepassen?
 Ja, Aspose.PDF biedt meerdere optimalisatiefuncties, zoals beeldcompressie, lettertype-optimalisatie en meer. U kunt ze naar wens combineren.

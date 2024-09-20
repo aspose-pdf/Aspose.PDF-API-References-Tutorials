@@ -37,7 +37,7 @@ Hozzá kell adnia az Aspose.PDF könyvtárat a projekthez. Ezt egyszerűen megte
 
 ### Tartalmazza a szükséges névtereket
 
-A C# fájl tetején importálnia kell az Aspose.PDF névteret. Ez tudatja a kóddal, hogy az Aspose által kínált PDF-funkciókkal fog dolgozni. Íme, amit hozzá kell tenni:
+A C# fájl tetején importálnia kell az Aspose.PDF névteret. Ez tudatja a kóddal, hogy az Aspose által kínált PDF-funkciókkal fog dolgozni. Íme, amit hozzá kell tennie:
 
 ```csharp
 using System.IO;

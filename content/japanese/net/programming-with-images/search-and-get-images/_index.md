@@ -51,7 +51,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## ステップ2: PDFドキュメントを開く
 
-次に、PDF文書をアプリケーションに読み込みます。これは、新しい`Document`指定したファイル パスを持つインスタンスを作成します。
+次に、PDF文書をアプリケーションに読み込みます。これは、新しい`Document`指定したファイル パスを持つインスタンス:
 
 ```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document(dataDir + "SearchAndGetImages.pdf");

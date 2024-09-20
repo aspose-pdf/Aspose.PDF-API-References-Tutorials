@@ -135,7 +135,7 @@ Ebben a lépésenkénti útmutatóban megtanultuk, hogyan lehet képeket töröl
 
 ## GYIK
 
-### Hogyan telepíthetem az Aspose.PDF for Java-t?
+### Hogyan telepíthetem az Aspose.PDF for Java fájlt?
 
  Az Aspose.PDF for Java telepítése egyszerű. Látogassa meg a[Aspose.PDF for Java letöltési oldal](https://releases.aspose.com/pdf/java/) és kövesse az adott fejlesztői környezetre vonatkozó telepítési utasításokat.
 

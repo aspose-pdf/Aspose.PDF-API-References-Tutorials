@@ -25,7 +25,7 @@ Nyní, když máte to podstatné, přistoupíme k importu potřebných balíčk�
 
 ## Importujte balíčky
 
-Nejprve se ujistíme, že jsme připraveni pracovat s Aspose.PDF. Do svého projektu musíte importovat příslušné balíčky. Zde je návod, jak to udělat krok za krokem:
+Nejprve se ujistíme, že jsme připraveni pracovat s Aspose.PDF. Do svého projektu musíte importovat příslušné balíčky. Zde je postup, jak to udělat krok za krokem:
 
 ### Krok 1: Nainstalujte balíček Aspose.PDF
 

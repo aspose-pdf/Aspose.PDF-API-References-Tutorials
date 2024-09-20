@@ -9,7 +9,7 @@ url: /zh/net/programming-with-document/validatepdfastandard/
 ---
 ## 介绍
 
-在当今的数字世界中，确保您的 PDF 文档符合特定标准至关重要，尤其是出于合规性和存档目的。其中一项标准是 PDF/A，它旨在长期保存电子文档。在本教程中，我们将探讨如何使用 Aspose.PDF for .NET 根据 PDF/A-1a 标准验证 PDF 文件。无论您是希望增强 PDF 处理能力的开发人员，还是对文档管理感兴趣的人，本指南都将逐步指导您完成该过程。
+在当今的数字世界中，确保您的 PDF 文档符合特定标准至关重要，尤其是出于合规性和存档目的。PDF/A 就是这样的标准之一，它旨在长期保存电子文档。在本教程中，我们将探讨如何使用 Aspose.PDF for .NET 根据 PDF/A-1a 标准验证 PDF 文件。无论您是希望增强 PDF 处理能力的开发人员，还是对文档管理感兴趣的人，本指南都将逐步指导您完成该过程。
 
 ## 先决条件
 
@@ -60,7 +60,7 @@ Document pdfDocument = new Document(dataDir + "ValidatePDFAStandard.pdf");
 pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
 ```
 
-在此步骤中，我们称`Validate`我们的方法`pdfDocument`对象。我们传递两个参数：我们要保存验证结果的路径和我们要验证的 PDF 格式。在本例中，我们要验证`PdfFormat.PDF_A_1A`.
+在此步骤中，我们称`Validate`方法`pdfDocument`对象。我们传递两个参数：我们要保存验证结果的路径和我们要验证的 PDF 格式。在本例中，我们要验证`PdfFormat.PDF_A_1A`.
 
 ## 步骤 4：检查验证结果
 

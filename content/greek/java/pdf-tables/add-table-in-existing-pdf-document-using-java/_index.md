@@ -16,7 +16,7 @@ url: /el/java/pdf-tables/add-table-in-existing-pdf-document-using-java/
 
 Πριν ξεκινήσουμε, βεβαιωθείτε ότι έχετε τις ακόλουθες προϋποθέσεις:
 
-- Εγκατεστημένο Java Development Kit (JDK).
+- Εγκαταστάθηκε το Java Development Kit (JDK).
 - Ένα ολοκληρωμένο περιβάλλον ανάπτυξης (IDE) όπως το IntelliJ IDEA ή το Eclipse.
 -  Aspose.PDF για βιβλιοθήκη Java, από την οποία μπορείτε να κατεβάσετε[εδώ](https://releases.aspose.com/pdf/java/).
 
@@ -67,7 +67,7 @@ table.setBorder(new BorderInfo(BorderSide.All, 1f));
 // Ρύθμιση πλάτους τραπεζιού
 table.setColumnWidths("100 100 100");
 
-// Ορισμός ευθυγράμμισης τραπεζιού
+// Ρύθμιση της ευθυγράμμισης τραπεζιού
 table.setAlignment(HorizontalAlignment.Center);
 ```
 

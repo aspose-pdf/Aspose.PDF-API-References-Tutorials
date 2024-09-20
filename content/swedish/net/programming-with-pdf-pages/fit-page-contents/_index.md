@@ -56,7 +56,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Steg 2: Ladda ditt PDF-dokument
 
- Ladda sedan in PDF-dokumentet i en`Document` objekt. Detta gör att du kan interagera med innehållet i filen.
+ Ladda sedan PDF-dokumentet i en`Document` objekt. Detta gör att du kan interagera med innehållet i filen.
 
 ```csharp
 Document doc = new Document(dataDir + "input.pdf");

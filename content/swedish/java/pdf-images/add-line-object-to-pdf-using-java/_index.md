@@ -17,7 +17,7 @@ I den här handledningen kommer vi att utforska hur man lägger till linjeobjekt
 Innan vi börjar måste du se till att du har följande förutsättningar:
 
 - Java Development Kit (JDK)
-- Integrerad utvecklingsmiljö (IDE) som IntelliJ IDEA eller Eclipse
+- Integrated Development Environment (IDE) som IntelliJ IDEA eller Eclipse
 - Aspose.PDF för Java-bibliotek
 
  Du kan ladda ner Aspose.PDF för Java-biblioteket från[här](https://releases.aspose.com/pdf/java/)Se till att välja rätt version för ditt projekt.

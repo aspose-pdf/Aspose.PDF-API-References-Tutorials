@@ -2,7 +2,7 @@
 title: Konwersja z RGB do skali szarości
 linktitle: Konwersja z RGB do skali szarości
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak przekonwertować plik PDF z RGB na skalę szarości za pomocą Aspose.PDF dla .NET. Przewodnik krok po kroku, który upraszcza konwersję kolorów PDF i oszczędza miejsce w pliku.
+description: Dowiedz się, jak przekonwertować plik PDF z RGB na skalę szarości za pomocą Aspose.PDF dla .NET. Przewodnik krok po kroku, który uprości konwersję kolorów PDF i oszczędzi miejsce w pliku.
 type: docs
 weight: 60
 url: /pl/net/programming-with-document/convertfromrgbtograyscale/
@@ -66,7 +66,7 @@ Ta strategia będzie stosowana do każdej strony pliku PDF w celu konwersji kolo
 
 ## Krok 4: Iteruj po stronach PDF
 
-Teraz, gdy masz już gotowy dokument i strategię konwersji, czas przejrzeć każdą stronę pliku PDF i zastosować konwersję do skali szarości. 
+Mając już gotowy dokument i strategię konwersji, czas przejrzeć każdą stronę pliku PDF i zastosować konwersję do skali szarości. 
 
 ```csharp
 // Przejrzyj wszystkie strony i zastosuj konwersję do skali szarości

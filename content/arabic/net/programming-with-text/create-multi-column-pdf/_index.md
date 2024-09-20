@@ -2,214 +2,179 @@
 title: إنشاء ملف PDF متعدد الأعمدة
 linktitle: إنشاء ملف PDF متعدد الأعمدة
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: تعرف على كيفية إنشاء ملف PDF متعدد الأعمدة باستخدام Aspose.PDF لـ .NET.
+description: تعرف على كيفية إنشاء ملفات PDF متعددة الأعمدة باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة مع أمثلة التعليمات البرمجية والشروحات التفصيلية. مثالي للمحترفين.
 type: docs
 weight: 110
 url: /ar/net/programming-with-text/create-multi-column-pdf/
 ---
-سيرشدك هذا البرنامج التعليمي خلال عملية إنشاء ملف PDF متعدد الأعمدة باستخدام Aspose.PDF لـ .NET. يوضح كود المصدر C# المقدم الخطوات اللازمة.
+## مقدمة
 
-## متطلبات
-قبل أن تبدأ، تأكد من أن لديك ما يلي:
+إن إنشاء ملفات PDF متعددة الأعمدة يعد طريقة رائعة لعرض النص بتنسيق أكثر تنظيمًا وقابلية للقراءة. سواء كنت تقوم بصياغة تقرير أو مقال أو تخطيط لمنشور، فإن الهياكل متعددة الأعمدة يمكن أن تجعل المحتوى الخاص بك أكثر جاذبية. في هذا البرنامج التعليمي، سنشرح كيفية إنشاء ملف PDF متعدد الأعمدة باستخدام Aspose.PDF لـ .NET. لا تقلق، سنقوم بتقسيم كل ذلك إلى خطوات بسيطة تجعل من السهل اتباعها، حتى إذا كنت جديدًا على المنصة.
 
-- Visual Studio أو أي مُجمِّع C# آخر مُثبت على جهازك.
-- مكتبة Aspose.PDF لـ .NET. يمكنك تنزيلها من موقع Aspose الرسمي أو استخدام مدير حزم مثل NuGet لتثبيتها.
+## المتطلبات الأساسية
 
-## الخطوة 1: إعداد المشروع
-1. قم بإنشاء مشروع C# جديد في بيئة التطوير المفضلة لديك.
-2. أضف مرجعًا إلى مكتبة Aspose.PDF لـ .NET.
+قبل أن ننتقل إلى الكود، هناك بعض الأشياء التي ستحتاج إلى وضعها في مكانها لمتابعتها بسلاسة:
 
-## الخطوة 2: استيراد المساحات المطلوبة
-في ملف الكود الذي تريد إنشاء ملف PDF متعدد الأعمدة فيه، أضف ما يلي باستخدام التوجيهات في الجزء العلوي من الملف:
+1.  Aspose.PDF for .NET: يجب أن يكون لديك هذه المكتبة مثبتة. يمكنك تنزيلها من[هنا](https://releases.aspose.com/pdf/net/).
+2. بيئة التطوير: قم بإعداد IDE المفضل لديك مثل Visual Studio لكتابة وتشغيل كود C#.
+3. .NET Framework: تأكد من أن لديك إصدارًا متوافقًا من .NET مثبتًا.
+4. الفهم الأساسي للغة C#: سيكون من المفيد التعرف على قواعد لغة C#، ولكننا سنشرح كل خطوة بالتفصيل.
+5.  الترخيص المؤقت: يتطلب Aspose.PDF ترخيصًا لتجنب العلامات المائية أو القيود. يمكنك الحصول على ترخيص[رخصة مؤقتة](https://purchase.aspose.com/temporary-license/) إذا لزم الأمر.
+
+## استيراد الحزم
+
+قبل أن تبدأ في كتابة الترميز، تحتاج إلى استيراد مساحات الأسماء الضرورية التي ستسمح لك بالتفاعل مع Aspose.PDF. إليك ما ستحتاج إلى استيراده:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
-using Aspose.Pdf.Drawing;
+using Aspose.Pdf.Text;
+using System;
 ```
 
-## الخطوة 3: تعيين دليل المستند
- في الكود، حدد السطر الذي يقول`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدالها`"YOUR DOCUMENT DIRECTORY"` مع المسار إلى الدليل الذي يتم تخزين مستنداتك فيه.
+توفر هذه المساحات الاسمية إمكانية الوصول إلى الفئات اللازمة لإنشاء ملفات PDF، ورسم الأشكال، ومعالجة تنسيق النص.
 
-## الخطوة 4: إنشاء مثيل مستند جديد
- إنشاء مثيل جديد`Document` الكائن عن طريق إضافة سطر التعليمات البرمجية التالي:
+دعونا نقوم بتقسيم عملية إنشاء ملف PDF متعدد الأعمدة إلى خطوات بسيطة وقابلة للإدارة.
 
-```csharp
-Document doc = new Document();
-```
+## الخطوة 1: إعداد المستند
 
-## الخطوة 5: ضبط هوامش الصفحة
- حدد معلومات الهامش الأيسر والأيمن لملف PDF باستخدام`PageInfo.Margin` ممتلكات`Document`.
+للبدء، تحتاج إلى إنشاء مستند PDF جديد. يتضمن هذا تحديد الهوامش وإضافة صفحة سيتم وضع المحتوى فيها.
 
-```csharp
-doc.PageInfo.Margin.Left = 40;
-doc.PageInfo.Margin.Right = 40;
-```
-
-## الخطوة 6: إضافة صفحة إلى المستند
- أضف صفحة جديدة إلى المستند باستخدام`Add` طريقة`Pages` المجموعة. في الكود المقدم، يتم تعيين الصفحة الجديدة للمتغير`page`.
-
-```csharp
-Page page = doc.Pages.Add();
-```
-
-## الخطوة 7: إنشاء كائن رسم بياني وإضافة خط
- إنشاء جديد`Graph` كائن ذو أبعاد محددة وأضف إليه خطًا. ثم أضف`Graph` الاعتراض على`Paragraphs` مجموعة من الصفحات.
-
-```csharp
-Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
-float[] backPos = new float[] { 1, 2, 500, 2 };
-Aspose.Pdf.Drawing.Line l1 = new Aspose.Pdf.Drawing.Line(posArr);
-graph1.Shapes.Add(l1);
-page.Paragraphs.Add(graph1);
-```
-
-## الخطوة 8: إضافة نص العنوان بتنسيق HTML
- إنشاء`HtmlFragment` الكائن وضبط محتواه على النص HTML المطلوب. ثم أضف الجزء إلى`Paragraphs` مجموعة من الصفحات.
-
-```csharp
-string s = "<font face=\"Times New Roman\" size=4>" +
-     "<strong>How to Steer Clear of money scams</<strong>" +
-     "</font>";
-HtmlFragment heading_text = new HtmlFragment(s);
-page.Paragraphs.Add(heading_text);
-```
-
-## الخطوة 9: إنشاء صندوق عائم يحتوي على أعمدة متعددة
- إنشاء`FloatingBox` الكائن وحدد عدد الأعمدة والتباعد بين الأعمدة. ثم أضف أجزاء نصية وسطرًا إلى`Paragraphs` مجموعة من`FloatingBox`.
-
-```csharp
-Aspose.Pdf.FloatingBox box = new Aspose.Pdf.FloatingBox();
-box. ColumnInfo. ColumnCount = 2;
-box.ColumnInfo.ColumnSpacing = "5";
-box.ColumnInfo.ColumnWidths = "105 105";
-
-TextFragment text1 = new TextFragment("By A Googling (The Official Google Blog)");
-text1.TextState.FontSize = 8;
-text1.TextState.LineSpacing = 2;
-box.Paragraphs.Add(text1);
-
-TextFragment text2 = new TextFragment("Sed augue tortor, sodales id, luctus et, pulvinar ut, eros. Suspendisse vel dolor. Sed quam. Curabitur ut massa vitae eros euismod aliquam...");
-box.Paragraphs.Add(text2);
-
-Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50, 10);
-float[] posArr2 = new float[] { 1, 10, 100, 10 };
-Aspose.Pdf.Drawing.Line l2 = new Aspose.Pdf.Drawing.Line(posArr2);
-graph2.Shapes.Add(l2);
-box.Paragraphs.Add(graph2);
-
-page.Paragraphs.Add(box);
-```
-
-## الخطوة 10: احفظ مستند PDF
- احفظ مستند PDF باستخدام`Save` طريقة`Document` هدف.
-
-```csharp
-doc.Save(dataDir);
-```
-
-### عينة من كود المصدر لإنشاء ملف Pdf متعدد الأعمدة باستخدام Aspose.PDF لـ .NET 
 ```csharp
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// إنشاء مستند PDF جديد
 Document doc = new Document();
-// تحديد معلومات الهامش الأيسر لملف PDF
+
+// تعيين الهوامش لملف PDF
 doc.PageInfo.Margin.Left = 40;
-// حدد معلومات الهامش الأيمن لملف PDF
 doc.PageInfo.Margin.Right = 40;
+
+// إضافة صفحة إلى المستند
 Page page = doc.Pages.Add();
-Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500, 2);
-// أضف السطر إلى مجموعة الفقرات الخاصة بكائن القسم
+```
+
+ هنا، قمنا بإنشاء`Document`الكائن وضبط الهوامش اليمنى واليسرى على 40 وحدة. ثم أضفنا صفحة جديدة إلى هذا المستند، والتي ستحمل تخطيطنا متعدد الأعمدة.
+
+## الخطوة 2: إضافة خط لفصل الأقسام
+
+بعد ذلك، دعنا نضيف خطًا أفقيًا إلى الصفحة للفصل البصري. يساعد هذا في إنشاء مظهر أنيق واحترافي.
+
+```csharp
+// إنشاء كائن رسم بياني للاحتفاظ بالخط
+Aspose.Pdf.Drawing.Graph graph1 = new Aspose.Pdf.Drawing.Graph(500.0, 2.0);
+
+// أضف السطر إلى مجموعة فقرات الصفحة
 page.Paragraphs.Add(graph1);
-// حدد إحداثيات الخط
+
+// تحديد إحداثيات الخط
 float[] posArr = new float[] { 1, 2, 500, 2 };
+
+// إنشاء خط وإضافته إلى الرسم البياني
 Aspose.Pdf.Drawing.Line l1 = new Aspose.Pdf.Drawing.Line(posArr);
 graph1.Shapes.Add(l1);
-// إنشاء متغيرات سلسلة تحتوي على نص يحتوي على علامات HTML
+```
+
+ هنا، نقوم بإنشاء خط أفقي باستخدام`Graph` و`Line` الفصول الدراسية. تمت إضافة هذا السطر إلى الصفحة`Paragraphs` المجموعة التي تحتوي على كافة العناصر المرئية.
+
+## الخطوة 3: إضافة نص HTML مع التنسيق
+
+بعد ذلك، دعنا نقوم بإدراج بعض النصوص التي تتضمن علامات HTML لإظهار كيفية تنسيق النص بشكل ديناميكي في ملف PDF.
+
+```csharp
+// إنشاء سلسلة تحتوي على محتوى HTML
 string s = "<font face=\"Times New Roman\" size=4>" +
-"<strong> How to Steer Clear of money scams</<strong> "
-+ "</font>";
-// إنشاء فقرات نصية تحتوي على نص HTML
+           "<strong> How to Steer Clear of Money Scams </strong>" +
+           "</font>";
+
+// إنشاء HtmlFragment جديد بالنص المنسق
 HtmlFragment heading_text = new HtmlFragment(s);
+
+// أضف نص HTML إلى الصفحة
 page.Paragraphs.Add(heading_text);
+```
+
+ استخدام`HtmlFragment`يمكننا إضافة نص منسق يتضمن علامات HTML مثل حجم الخط والنمط والنص الغامق. وهذا مفيد لتحسين مظهر محتوى PDF الخاص بك.
+
+## الخطوة 4: إنشاء تخطيط متعدد الأعمدة
+
+الآن سننشئ تخطيطًا متعدد الأعمدة. وهنا يحدث السحر - يمكنك تحديد عدد الأعمدة التي تريدها وعرضها.
+
+```csharp
+// إنشاء صندوق عائم لحمل الأعمدة
 Aspose.Pdf.FloatingBox box = new Aspose.Pdf.FloatingBox();
-// أضف أربعة أعمدة في القسم
+
+// ضبط عدد الأعمدة والمسافة بينها
 box.ColumnInfo.ColumnCount = 2;
-// ضبط المسافة بين الأعمدة
 box.ColumnInfo.ColumnSpacing = "5";
 box.ColumnInfo.ColumnWidths = "105 105";
+
+// أضف المربع إلى الصفحة
+page.Paragraphs.Add(box);
+```
+
+هنا، نقوم بإنشاء مربع عائم يحتوي على عمودين. نقوم بتعيين المسافة بين الأعمدة ونحدد أن كل عمود يجب أن يكون عرضه 105 وحدات. يتيح لنا هذا إنشاء تخطيط العمود المطلوب داخل ملف PDF.
+
+## الخطوة 5: إضافة نص إلى الأعمدة
+
+ لنبدأ الآن في ملء الأعمدة ببعض المحتوى النصي. يمكنك إضافة نصوص مختلفة`TextFragment` الأشياء لكل عمود.
+
+```csharp
+// إنشاء وتنسيق الجزء النصي الأول
 TextFragment text1 = new TextFragment("By A Googler (The Official Google Blog)");
 text1.TextState.FontSize = 8;
-text1.TextState.LineSpacing = 2;
-box.Paragraphs.Add(text1);
-text1.TextState.FontSize = 10;
 text1.TextState.FontStyle = FontStyles.Italic;
-// إنشاء كائن رسوم بيانية لرسم خط
-Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50, 10);
-// حدد إحداثيات الخط
+box.Paragraphs.Add(text1);
+
+// أضف سطرًا آخر للفصل
+Aspose.Pdf.Drawing.Graph graph2 = new Aspose.Pdf.Drawing.Graph(50.0, 10.0);
 float[] posArr2 = new float[] { 1, 10, 100, 10 };
 Aspose.Pdf.Drawing.Line l2 = new Aspose.Pdf.Drawing.Line(posArr2);
 graph2.Shapes.Add(l2);
-//إضافة السطر إلى مجموعة فقرات كائن القسم
 box.Paragraphs.Add(graph2);
-TextFragment text2 = new TextFragment(@"Sed augue tortor, sodales id, luctus et, pulvinar ut, eros. Suspendisse vel dolor. Sed quam. Curabitur ut massa vitae eros euismod aliquam. Pellentesque sit amet elit. Vestibulum interdum pellentesque augue. Cras mollis arcu sit amet purus. Donec augue. Nam mollis tortor a elit. Nulla viverra nisl vel mauris. Vivamus sapien. nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et,nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim Nam justo lorem, aliquam luctus, sodales et, semper sed, enim nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.nAenean posuere ante ut neque. Morbi sollicitudin congue felis. Praesent turpis diam, iaculis sed, pharetra non, mollis ac, mauris. Phasellus nisi ipsum, pretium vitae, tempor sed, molestie eu, dui. Duis lacus purus, tristique ut, iaculis cursus, tincidunt vitae, risus. Sed commodo. *** sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed urna. . Duis convallis ultrices nisi. Maecenas non ligula. Nunc nibh est, tincidunt in, placerat sit amet, vestibulum a, nulla. Praesent porttitor turpis eleifend ante. Morbi sodales.");
+
+//إنشاء جزء نصي ثانٍ وإضافته
+TextFragment text2 = new TextFragment("Lorem ipsum dolor sit amet, consectetur adipiscing elit...");
 box.Paragraphs.Add(text2);
-page.Paragraphs.Add(box);
-dataDir = dataDir + "CreateMultiColumnPdf_out.pdf";
-// حفظ ملف PDF
-doc.Save(dataDir);
-Console.WriteLine("\nMulti column pdf file created successfully.\nFile saved at " + dataDir);
 ```
 
-## خاتمة
-لقد نجحت في إنشاء ملف PDF متعدد الأعمدة باستخدام Aspose.PDF لـ .NET. يمكنك الآن العثور على ملف PDF الناتج في مسار ملف الإخراج المحدد.
+ نضيف`TextFragment` إلى المربع العائم، متبوعًا بخط أفقي آخر. الخط الثاني`TextFragment` يحتوي على المزيد من النص لملء العمود الثاني. تتيح لنا هذه الأجزاء إضافة عناصر نصية مختلفة إلى ملف PDF مع خيارات تنسيق مختلفة.
 
-### الأسئلة الشائعة
+## الخطوة 6: حفظ ملف PDF
 
-#### س: ما هو التركيز في هذا البرنامج التعليمي؟
-
-يركز هذا البرنامج التعليمي على إرشادك خلال عملية إنشاء ملف PDF متعدد الأعمدة باستخدام مكتبة Aspose.PDF for .NET. يوضح كود المصدر C# المقدم الخطوات اللازمة لتحقيق ذلك.
-
-#### س: ما هي المساحات الأسماء التي ينبغي لي استيرادها لهذا البرنامج التعليمي؟
-
-أ: في ملف الكود الذي تريد إنشاء ملف PDF متعدد الأعمدة فيه، قم باستيراد المساحات التالية في بداية الملف:
+بعد إضافة كل المحتوى الخاص بك، فإن الخطوة الأخيرة هي حفظ المستند كملف PDF.
 
 ```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Drawing;
+// تحديد مسار الإخراج لملف PDF
+dataDir = dataDir + "CreateMultiColumnPdf_out.pdf";
+
+// حفظ مستند PDF
+doc.Save(dataDir);
+
+// رسالة نجاح الإخراج
+Console.WriteLine("\nMulti-column PDF file created successfully.\nFile saved at " + dataDir);
 ```
 
-#### س: كيف أحدد دليل المستند؟
+تحفظ هذه الكتلة ملف PDF في الدليل المحدد وتخرج رسالة نجاح في وحدة التحكم. الآن أصبح ملف PDF جاهزًا للعرض!
 
- أ: في الكود، ابحث عن السطر`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدالها`"YOUR DOCUMENT DIRECTORY"` مع المسار الفعلي إلى دليل المستند الخاص بك.
+## خاتمة
 
-#### س: كيف أقوم بإنشاء مثيل مستند جديد؟
+باتباع هذه الخطوات البسيطة، يمكنك بسهولة إنشاء ملف PDF متعدد الأعمدة بمظهر احترافي باستخدام Aspose.PDF for .NET. سواء كان ذلك لتقرير أو مقال أو نشرة إخبارية، تساعد هذه التقنية في تنظيم المحتوى بتنسيق جذاب بصريًا. يوفر Aspose.PDF أدوات قوية لتخصيص ملفات PDF الخاصة بك، من الهوامش والتخطيط إلى تنسيق النص ورسم الأشكال. الآن حان دورك لتجربته ورفع مهاراتك في إنشاء ملفات PDF إلى المستوى التالي!
 
- أ: في الخطوة 4، ستقوم بإنشاء مثيل جديد`Document` الكائن باستخدام الكود المقدم.
+## الأسئلة الشائعة
 
-#### س: كيف أقوم بتعيين هوامش الصفحة؟
+### هل يمكنني إنشاء أكثر من عمودين في ملف PDF؟
+ نعم، يمكنك إنشاء عدد الأعمدة الذي تريده. ما عليك سوى ضبط`ColumnCount` الخاصية لتتناسب مع عدد الأعمدة التي تريدها.
 
- أ: في الخطوة 5، سوف تستخدم`PageInfo.Margin` ممتلكات`Document` لتحديد معلومات الهامش الأيسر والأيمن لملف PDF.
+### كيف أقوم بتغيير عرض كل عمود؟
+ يمكنك تعديل`ColumnWidths` خاصية لتحديد عرض مختلف لكل عمود. تقبل هذه الخاصية سلسلة من القيم مفصولة بمسافات.
 
-#### س: كيف أضيف صفحة إلى المستند؟
+### هل من الممكن إضافة الصور إلى الأعمدة؟
+ بالتأكيد! يمكنك إضافة الصور باستخدام`Image` قم بتصنيفها وتضمينها داخل المربع العائم أو أي عنصر تخطيط آخر في ملف PDF الخاص بك.
 
- أ: في الخطوة 6، ستضيف صفحة جديدة إلى المستند باستخدام`Add` طريقة`Pages` مجموعة.
+### هل يمكنني تنسيق النص باستخدام علامات HTML في الأعمدة؟
+ نعم، يمكنك استخدام علامات HTML داخل`HtmlFragment` يمكنك استخدام الكائنات لتصميم النص الخاص بك. ويتضمن ذلك إضافة الخطوط والأحجام والألوان والمزيد.
 
-#### س: كيف أقوم بإنشاء كائن رسم بياني وإضافة خط؟
-
- أ: في الخطوة 7، ستقوم بإنشاء ملف جديد`Graph` الكائن، أضف إليه خطًا، ثم أضف`Graph` الاعتراض على`Paragraphs` مجموعة من الصفحات.
-
-#### س: كيف أضيف نص العنوان بتنسيق HTML؟
-
-أ: في الخطوة 8، ستقوم بإنشاء`HtmlFragment` الكائن وتعيين محتواه إلى النص HTML المطلوب، ثم إضافة الجزء إلى`Paragraphs` مجموعة من الصفحات.
-
-#### س: كيف أقوم بإنشاء FloatingBox يحتوي على أعمدة متعددة؟
-
- أ: في الخطوة 9، ستقوم بإنشاء`FloatingBox` كائن يحتوي على أعمدة متعددة ومسافات بين الأعمدة، ثم أضف أجزاء نصية وسطرًا إلى`Paragraphs` مجموعة من`FloatingBox`.
-
-#### س: كيف أحفظ مستند PDF؟
-
- أ: في الخطوة 10، ستحفظ مستند PDF باستخدام`Save` طريقة`Document` هدف.
-
-#### س: ما هو الدرس الرئيسي المستفاد من هذا البرنامج التعليمي؟
-
-ج: باتباع هذا البرنامج التعليمي، ستتعلم كيفية إنشاء مستند PDF متعدد الأعمدة باستخدام Aspose.PDF لـ .NET. يمكن أن يكون هذا مفيدًا لعرض المحتوى في تخطيط منظم ومنظم.
+### كيف يمكنني إضافة المزيد من الصفحات بنفس تخطيط العمود؟
+ يمكنك إضافة صفحات إضافية باستخدام`doc.Pages.Add()` وكرر عملية إضافة الأعمدة والمحتوى لكل صفحة.

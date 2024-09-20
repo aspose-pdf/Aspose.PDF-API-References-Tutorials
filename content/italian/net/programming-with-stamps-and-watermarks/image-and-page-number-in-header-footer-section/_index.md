@@ -1,6 +1,6 @@
 ---
-title: Immagine e numero di pagina nella sezione intestazione piè di pagina
-linktitle: Immagine e numero di pagina nella sezione intestazione piè di pagina
+title: Immagine e numero di pagina nella sezione intestazione/piè di pagina
+linktitle: Immagine e numero di pagina nella sezione intestazione/piè di pagina
 second_title: Riferimento API Aspose.PDF per .NET
 description: Scopri come aggiungere un'immagine e i numeri di pagina all'intestazione e al piè di pagina del tuo PDF utilizzando Aspose.PDF per .NET in questo tutorial passo dopo passo.
 type: docs

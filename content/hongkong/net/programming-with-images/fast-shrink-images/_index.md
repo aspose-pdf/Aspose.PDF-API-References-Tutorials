@@ -162,7 +162,7 @@ Console.WriteLine("\nImage fast shrinked successfully.\nFile saved at " + dataDi
 
 ## 結論
 
-現在你就得到它了！您已成功學習如何使用 Aspose.PDF for .NET 縮小 PDF 檔案中的影像。這種方法不僅可以幫助您節省儲存空間，還可以顯著縮短文件的載入時間。下次您需要共享 PDF 時，您可以放心地發送優化版本，而不會影響其品質。快樂編碼！
+現在你就擁有了！您已成功學習如何使用 Aspose.PDF for .NET 縮小 PDF 檔案中的影像。這種方法不僅可以幫助您節省儲存空間，還可以顯著縮短文件的載入時間。下次您需要共享 PDF 時，您可以放心地發送優化版本，而不會影響其品質。快樂編碼！
 
 ## 常見問題解答
 

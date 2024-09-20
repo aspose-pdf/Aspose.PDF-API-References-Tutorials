@@ -107,7 +107,7 @@ W każdej aplikacji informacja zwrotna jest ważna. Ta wiadomość potwierdza, �
 
 ## Wniosek
 
-Gratulacje! Właśnie nauczyłeś się łączyć pliki PDF za pomocą Aspose.PDF dla .NET! Ta potężna biblioteka sprawia, że zadania takie jak scalanie dokumentów są proste i wydajne. Niezależnie od tego, czy usprawniasz swój przepływ pracy, czy przygotowujesz dokumenty do udostępniania, wiedza o tym, jak programowo manipulować plikami PDF, niewątpliwie okaże się przydatna.
+Gratulacje! Właśnie nauczyłeś się, jak łączyć pliki PDF za pomocą Aspose.PDF dla .NET! Ta potężna biblioteka sprawia, że zadania takie jak scalanie dokumentów są proste i wydajne. Niezależnie od tego, czy usprawniasz swój przepływ pracy, czy przygotowujesz dokumenty do udostępniania, wiedza, jak programowo manipulować plikami PDF, niewątpliwie okaże się przydatna.
 
 
 ## Najczęściej zadawane pytania

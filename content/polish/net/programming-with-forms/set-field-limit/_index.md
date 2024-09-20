@@ -114,7 +114,7 @@ Ustawianie limitu pól w formularzu PDF przy użyciu Aspose.PDF dla .NET to pros
 Aspose.PDF dla platformy .NET to zaawansowana biblioteka umożliwiająca programistom programowe tworzenie, edytowanie i konwertowanie dokumentów PDF.
 
 ### Czy mogę ustawić limity w wielu polach?
- Tak, możesz ustawić limity dla wielu pól, dzwoniąc`SetFieldLimit` metodę dla każdego pola, które chcesz ograniczyć.
+ Tak, możesz ustawić limity dla wielu pól, dzwoniąc pod numer`SetFieldLimit` metodę dla każdego pola, które chcesz ograniczyć.
 
 ### Czy jest dostępna bezpłatna wersja próbna?
  Tak, możesz pobrać bezpłatną wersję próbną Aspose.PDF dla platformy .NET ze strony[strona internetowa](https://releases.aspose.com/).

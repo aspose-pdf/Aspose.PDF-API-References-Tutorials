@@ -110,7 +110,7 @@ table.setTop(header);
 Na koniec zapisz dokument PDF w wybranej lokalizacji.
 
 ```java
-// Kod Java do zapisania dokumentu PDF
+// Kod Java do zapisywania dokumentu PDF
 pdfDocument.save("styled_table_example.pdf");
 ```
 

@@ -1,6 +1,6 @@
 ---
-title: Többrétegű PDF-fájl létrehozása Második megközelítés
-linktitle: Többrétegű PDF-fájl létrehozása Második megközelítés
+title: Második megközelítés többrétegű PDF-fájl létrehozása
+linktitle: Második megközelítés többrétegű PDF-fájl létrehozása
 second_title: Aspose.PDF for .NET API Reference
 description: Ismerje meg, hogyan hozhat létre többrétegű PDF-fájlt az Aspose.PDF for .NET használatával. Kövesse lépésenkénti útmutatónkat, hogy könnyedén adjon hozzá szöveget, képeket és rétegeket PDF-fájljához.
 type: docs

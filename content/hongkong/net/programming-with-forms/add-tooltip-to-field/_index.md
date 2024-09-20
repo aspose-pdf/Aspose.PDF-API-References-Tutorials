@@ -71,7 +71,7 @@ textField.AlternateName = "Text box tool tip";
 
 - textField.AlternateName：此屬性可讓您設定工具提示。在此範例中，我們將工具提示設定為`"Text box tool tip"`.
 
-這就像在字段旁邊貼一張小便簽，上面寫著：“這是您需要知道的！”
+這就像在字段旁邊貼一張小便條，上面寫著：“這是您需要知道的！”
 
 ## 第 4 步：儲存更新後的 PDF
 

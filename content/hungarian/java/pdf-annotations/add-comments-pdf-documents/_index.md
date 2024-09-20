@@ -14,7 +14,7 @@ A PDF-dokumentumok univerzális kompatibilitásuknak és következetes formázá
 
 ## Az Aspose.PDF for Java első lépései
 
- A kezdéshez be kell állítania a fejlesztői környezetet. Győződjön meg arról, hogy telepítve van az Aspose.PDF for Java könyvtár. Letöltheti innen[itt](https://releases.aspose.com/pdf/java/).
+ kezdéshez be kell állítania a fejlesztői környezetet. Győződjön meg arról, hogy telepítve van az Aspose.PDF for Java könyvtár. Letöltheti innen[itt](https://releases.aspose.com/pdf/java/).
 
 ## PDF dokumentum készítése
 

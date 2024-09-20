@@ -1,6 +1,6 @@
 ---
-title: تعيين تسمية توضيحية لأزرار الراديو
-linktitle: تعيين تسمية توضيحية لأزرار الراديو
+title: تعيين تسمية توضيحية لأزرار الاختيار
+linktitle: تعيين تسمية توضيحية لأزرار الاختيار
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
 description: تعرف على كيفية تعيين تسميات أزرار الاختيار في ملفات PDF باستخدام Aspose.PDF لـ .NET. يرشدك هذا الدليل خطوة بخطوة خلال تحميل نماذج PDF وتعديلها وحفظها.
 type: docs
@@ -48,7 +48,7 @@ Aspose.Pdf.Facades.Form form1 = new Aspose.Pdf.Facades.Form(dataDir + "RadioButt
 Document PDF_Template_PDF_HTML = new Document(dataDir + "RadioButtonField.pdf");
 ```
 
-في مقتطف التعليمات البرمجية هذا:
+في مقتطف الكود هذا:
 - `dataDir` يحدد المسار الذي يتواجد فيه ملف PDF الخاص بك.
 - `Form` يتم استخدام الفئة للتفاعل مع حقول النموذج داخل ملف PDF.
 - `Document` توفر الفئة إمكانية الوصول إلى صفحات مستند PDF.

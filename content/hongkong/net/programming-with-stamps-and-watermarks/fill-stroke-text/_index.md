@@ -2,7 +2,7 @@
 title: 在 PDF 檔案中填入描邊文本
 linktitle: 在 PDF 檔案中填入描邊文本
 second_title: Aspose.PDF for .NET API 參考
-description: 透過包含實際範例的逐步指南，了解如何使用 Aspose.PDF for .NET 輕鬆填入 PDF 檔案中的筆畫文字。
+description: 透過包含實際範例的逐步指南，了解如何使用 Aspose.PDF for .NET 輕鬆填入 PDF 檔案中的描邊文字。
 type: docs
 weight: 90
 url: /zh-hant/net/programming-with-stamps-and-watermarks/fill-stroke-text/
@@ -36,7 +36,7 @@ using System.Text;
 
 這些套件將使我們能夠使用 Aspose.PDF 庫的強大功能。
 
-讓我們將主要任務分解為清晰的步驟。透過執行以下步驟，您可以輕鬆地將筆劃文字填入 PDF 檔案中。 
+讓我們將主要任務分解為清晰的步驟。透過執行以下步驟，您可以輕鬆地將筆畫文字填入 PDF 檔案中。 
 
 ## 第 1 步：設定您的環境
 
@@ -135,7 +135,7 @@ stamp.BindTextState(ts);
 stamp.SetOrigin(100, 100);
 ```
 
-論據`(100, 100)`表示文本原點的 X 和 Y 座標（以磅為單位）。調整這些值以完美放置文字！
+論點`(100, 100)`表示文本原點的 X 和 Y 座標（以磅為單位）。調整這些值以完美放置文字！
 
 ## 步驟 11：配置不透明度和旋轉
 
@@ -172,7 +172,7 @@ fileStamp.Close();
 
 ## 結論
 
-現在你就得到它了！遵循這些簡單的步驟，您可以使用 Aspose.PDF for .NET 輕鬆填入 PDF 檔案中的描邊文字。無論是商業文件還是個人項目，此技術都可以讓您為 PDF 添加獨特的風格，使其在任何紙張中脫穎而出。
+現在你就擁有了！遵循這些簡單的步驟，您可以使用 Aspose.PDF for .NET 輕鬆填入 PDF 檔案中的描邊文字。無論是商業文件還是個人項目，此技術都可以讓您為 PDF 添加獨特的風格，使其在任何紙張中脫穎而出。
 
 ## 常見問題解答
 

@@ -9,7 +9,7 @@ url: /zh/net/programming-with-security-and-signatures/sign-with-smart-card-using
 ---
 ## 介绍
 
-在数字时代，保护文档比以往任何时候都更加重要。无论是合同、协议还是任何敏感信息，确保文档真实且未被篡改都至关重要。输入数字签名！今天，我们将深入研究如何使用 Aspose.PDF for .NET 使用智能卡签署 PDF 文件。这个强大的库允许开发人员高效地操作和创建 PDF 文档，包括添加安全的数字签名。所以，拿起你的智能卡，让我们开始吧！
+在数字时代，保护文档比以往任何时候都更加重要。无论是合同、协议还是任何敏感信息，确保文档真实且未被篡改都至关重要。数字签名来了！今天，我们将深入研究如何使用 Aspose.PDF for .NET 使用智能卡签署 PDF 文件。这个功能强大的库允许开发人员高效地操作和创建 PDF 文档，包括添加安全的数字签名。所以，拿起你的智能卡，让我们开始吧！
 
 ## 先决条件
 
@@ -109,7 +109,7 @@ pdfSign.SignatureAppearance = dataDir + "demo.png";
 pdfSign.Sign(1, "Reason", "Contact", "Location", true, new System.Drawing.Rectangle(100, 100, 200, 200), externalSignature);
 pdfSign.Save(dataDir + "externalSignature2.pdf");
 ```
-在此步骤中，我们称`Sign`我们的方法`pdfSign`对象。每个参数的含义如下：
+在此步骤中，我们称`Sign`方法`pdfSign`对象。每个参数的含义如下：
 - `1`：签名出现的页码。
 - `"Reason"`：签署该文件的原因。
 - `"Contact"`：签名者的联系信息。

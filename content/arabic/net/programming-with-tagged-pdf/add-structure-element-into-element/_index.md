@@ -2,135 +2,129 @@
 title: إضافة عنصر هيكلي إلى العنصر
 linktitle: إضافة عنصر هيكلي إلى العنصر
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: دليل خطوة بخطوة لإضافة عنصر هيكل إلى عنصر في مستند PDF باستخدام Aspose.PDF لـ .NET.
+description: تعرف على كيفية إضافة عناصر بنية إمكانية الوصول إلى ملفات PDF باستخدام Aspose.PDF لـ .NET في هذا البرنامج التعليمي الشامل خطوة بخطوة.
 type: docs
 weight: 20
 url: /ar/net/programming-with-tagged-pdf/add-structure-element-into-element/
 ---
-في هذا البرنامج التعليمي، سنزودك بدليل خطوة بخطوة حول كيفية إضافة عنصر هيكلي إلى عنصر في مستند PDF باستخدام Aspose.PDF for .NET. Aspose.PDF هي مكتبة قوية تتيح لك إنشاء مستندات PDF ومعالجتها وتحويلها برمجيًا. باستخدام ميزات هيكل المحتوى المميزة في Aspose.PDF، يمكنك إنشاء هيكل هرمي في مستند PDF الخاص بك.
+## مقدمة
+
+في عالمنا الرقمي اليوم، تعد إمكانية الوصول أمرًا بالغ الأهمية. يجب أن يتمتع الجميع بفرصة متساوية للوصول إلى المعلومات، وتوفيرها بتنسيق يمكن لجميع الأفراد التنقل فيه بسهولة أمر بالغ الأهمية. في هذا البرنامج التعليمي، نتعمق في كيفية تعزيز إمكانية الوصول إلى ملفات PDF من خلال إضافة عناصر هيكلية باستخدام Aspose.PDF لـ .NET. تتيح هذه المكتبة القوية للمطورين العمل بسلاسة مع مستندات PDF، مما يمكنهم من إنشاء ملفات PDF مُوسومة تتوافق مع معايير إمكانية الوصول.
 
 ## المتطلبات الأساسية
 
-قبل أن تبدأ، تأكد من توفر المتطلبات الأساسية التالية:
+قبل أن نبدأ رحلتنا في عالم عناصر بنية PDF، دعنا نتأكد من أنك تمتلك كل ما تحتاجه:
 
-1. تم تثبيت Visual Studio مع إطار عمل .NET.
-2. مكتبة Aspose.PDF لـ .NET.
+1.  فيجوال ستوديو: هذا هو برنامج التطوير المتكامل الذي ستكتب فيه وتشغل كود C# الخاص بك. يمكنك تنزيله من[Visual Studio](https://visualstudio.microsoft.com/) إذا لم تكن قد فعلت ذلك بالفعل.
+2.  مكتبة Aspose.PDF لـ .NET: ستحتاج إلى المكتبة للتعامل مع ملفات PDF. قم بتنزيل أحدث إصدار من[موقع اسبوس](https://releases.aspose.com/pdf/net/).هذه المكتبة أساسية لمشروعنا.
+3. المعرفة الأساسية بلغة C#: ستكون المعرفة بقواعد لغة C# والبرمجة الموجهة للكائنات مفيدة. إذا كنت تستطيع كتابة بضعة أسطر بلغة C# بسهولة، فأنت على ما يرام!
+4. دليل مستندات PDF: قم بإنشاء دليل على نظامك حيث ستحتفظ بملفات PDF المدخلة والمخرجة لهذا البرنامج التعليمي.
 
-## الخطوة 1: إعداد المشروع
+الآن بعد أن قمنا بتجهيز أدواتنا ومعرفتنا، فلنبدأ في إحضار الحزم اللازمة لبدء الأمور!
 
-للبدء، قم بإنشاء مشروع جديد في Visual Studio وأضف مرجعًا إلى مكتبة Aspose.PDF for .NET. يمكنك تنزيل المكتبة من موقع Aspose الرسمي وتثبيتها على جهازك.
+## استيراد الحزم
 
-## الخطوة 2: استيراد المساحات الاسمية الضرورية
-
-في ملف الكود C# الخاص بك، قم باستيراد المساحات الأساسية المطلوبة للوصول إلى الفئات والطرق التي يوفرها Aspose.PDF:
+أولاً وقبل كل شيء، دعنا نستورد مساحات الأسماء الضرورية. تأكد من وجود ما يلي في أعلى ملف C# الخاص بك:
 
 ```csharp
-using System;
-using Aspose.Pdf;
+using Aspose.Pdf.LogicalStructure;
 using Aspose.Pdf.Tagged;
+using System;
 ```
 
-## الخطوة 3: إنشاء مستند PDF وتحديد العناصر المنظمة
+تتيح لك هذه المساحات الوصول إلى الفئات والطرق اللازمة للعمل مع مستندات PDF وإنشاء محتوى مُميز. الآن، دعنا ننتقل إلى لب الموضوع ونبدأ في الترميز!
 
-استخدم الكود التالي لإنشاء مستند PDF وتحديد العناصر المنظمة:
+## الخطوة 1: إعداد دليل المستندات الخاص بك
+
+قبل إجراء أي عملية ترميز، نحتاج إلى تحديد المكان الذي سنحفظ فيه ملفاتنا. وهذا أمر بالغ الأهمية لتشغيل البرنامج النصي بسلاسة.
 
 ```csharp
+// تحديد المسار إلى دليل المستندات.
+string dataDir = "YOUR DOCUMENT DIRECTORY"; 
+```
 
-string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
-string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
-string logFile = dataDir + "46144_log.xml";
+ يستبدل`"YOUR DOCUMENT DIRECTORY"` مع المسار الفعلي الذي ترغب في حفظ ملفات PDF الخاصة بك فيه. قد يكون هذا شيئًا مثل`C:\\PDFs\\`.
 
+## الخطوة 2: إنشاء مستند PDF جديد
+
+الآن بعد أن قمنا بتعيين الدليل، فلنقم بإنشاء مستند PDF حيث سنضيف عناصر البنية الخاصة بنا.
+
+```csharp
 Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example Text Items");
-taggedContent.SetLanguage("fr-FR");
-
-StructureElement rootElement = taggedContent.RootElement;
-
-ParagraphElement p1 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p1);
-SpanElement span11 = taggedContent.CreateSpanElement();
-span11.SetText("Span_11");
-SpanElement span12 = taggedContent.CreateSpanElement();
-span12.SetText(" and Span_12.");
-p1.SetText("Paragraph with ");
-p1.AppendChild(span11);
-p1.AppendChild(span12);
-
-ParagraphElement p2 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p2);
-SpanElement span21 = taggedContent.CreateSpanElement();
-span21.SetText("Span_21");
-SpanElement span22 = taggedContent.CreateSpanElement();
-span22.SetText("Span_22.");
-p2.AppendChild(span21);
-p2.SetText(" and ");
-p2.AppendChild(span22);
-
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("Span_31");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText(" and Span_32");
-p3.AppendChild(span31);
-p3.AppendChild(span32);
-p3.SetText(".");
-
-ParagraphElement p4 = taggedContent.CreateParagraphElement();
-root
-
-Element.AppendChild(p4);
-SpanElement span41 = taggedContent.CreateSpanElement();
-SpanElement span411 = taggedContent.CreateSpanElement();
-span411.SetText("Span_411, ");
-span41.SetText("Span_41, ");
-span41.AppendChild(span411);
-SpanElement span42 = taggedContent.CreateSpanElement();
-SpanElement span421 = taggedContent.CreateSpanElement();
-span421.SetText("Span 421 and ");
-span42.AppendChild(span421);
-span42.SetText("Span_42");
-p4.AppendChild(span41);
-p4.AppendChild(span42);
-p4.SetText(".");
 ```
 
-يقوم هذا الكود بإنشاء مستند PDF فارغ وإضافة عناصر منظمة مثل الفقرات والامتدادات. يتم إنشاء كل عنصر من عناصر الهيكل باستخدام الطرق التي يوفرها Aspose.PDF.
+ يقوم هذا الخط بتهيئة مثيل جديد لـ`Document` الصف، مما يسمح لنا بالبدء في العمل مع محتوى PDF الخاص بنا.
 
-## الخطوة 4: حفظ مستند PDF
+## الخطوة 3: الوصول إلى المحتوى المُوسوم وإعداده
 
-استخدم الكود التالي لحفظ مستند PDF:
+بمجرد أن تصبح مستندك جاهزًا، حان الوقت لإعداد المحتوى المميز، وهو أمر ضروري لإمكانية الوصول إليه.
+
+### تهيئة المحتوى المُوسوم
 
 ```csharp
-document. Save(outFile);
+ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-يحفظ هذا الكود مستند PDF مع العناصر المنظمة في ملف محدد.
+يوفر هذا السطر إمكانية الوصول إلى المحتوى المُوسوم في ملف PDF الخاص بك. المحتوى المُوسوم ضروري لتمكين برامج قراءة الشاشة من تفسير مستندك بدقة.
 
-### عينة من كود المصدر لإضافة عنصر هيكلي إلى عنصر باستخدام Aspose.PDF لـ .NET 
+### تعيين بيانات تعريف المستند
+
+ستحتاج إلى إعطاء عنوان مناسب لمستندك وتحديد اللغة.
+
 ```csharp
-// المسار إلى دليل المستندات.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
-string logFile = dataDir + "46144_log.xml";
-//إنشاء مستند والحصول على محتوى Pdf المميز
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-// تعيين لغة العنوان والطبيعة للمستند
 taggedContent.SetTitle("Text Elements Example");
 taggedContent.SetLanguage("en-US");
-// الحصول على عنصر بنية الجذر (عنصر بنية المستند)
+```
+
+يعمل هذا على تعزيز بيانات المستند وتحسين إمكانية الوصول إليه.
+
+## الخطوة 4: إنشاء عناصر البنية وإضافتها
+
+دعنا نضيف بعض البنية! يتضمن ذلك إنشاء فقرات وعناصر امتداد من أجل إنشاء مستند منسق ومُوسَم بشكل صحيح.
+
+### إنشاء عنصر البنية الجذرية
+
+```csharp
 StructureElement rootElement = taggedContent.RootElement;
+```
+
+الآن سنقوم بإنشاء مجموعتنا الأولى من الفقرات وعناصر الامتداد.
+
+### إنشاء عنصر الفقرة الأولى
+
+```csharp
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p1);
+```
+
+هنا، نقوم بإنشاء عنصر فقرة جديد وإضافته إلى عنصر البنية الجذرية. هذه هي نقطة البداية لمحتواك!
+
+### إضافة عناصر الامتداد إلى الفقرة
+
+```csharp
 SpanElement span11 = taggedContent.CreateSpanElement();
 span11.SetText("Span_11");
 SpanElement span12 = taggedContent.CreateSpanElement();
 span12.SetText(" and Span_12.");
+```
+
+ ال`span` العناصر تشبه الفقرات الصغيرة داخل الفقرة الأكبر. وهي تسمح بالتحكم بشكل أدق في تنسيق النص.
+
+### جمع كل ذلك
+
+الآن دعونا نبني الفقرة الكاملة مع جميع العناصر معًا:
+
+```csharp
 p1.SetText("Paragraph with ");
 p1.AppendChild(span11);
 p1.AppendChild(span12);
+```
+
+### كرر ذلك للفقرات الإضافية
+
+ستكرر هذه العملية للفقرات الإضافية:
+
+```csharp
 ParagraphElement p2 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p2);
 SpanElement span21 = taggedContent.CreateSpanElement();
@@ -140,77 +134,60 @@ span22.SetText("Span_22.");
 p2.AppendChild(span21);
 p2.SetText(" and ");
 p2.AppendChild(span22);
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("Span_31");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText(" and Span_32");
-p3.AppendChild(span31);
-p3.AppendChild(span32);
-p3.SetText(".");
-ParagraphElement p4 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p4);
-SpanElement span41 = taggedContent.CreateSpanElement();
-SpanElement span411 = taggedContent.CreateSpanElement();
-span411.SetText("Span_411, ");
-span41.SetText("Span_41, ");
-span41.AppendChild(span411);
-SpanElement span42 = taggedContent.CreateSpanElement();
-SpanElement span421 = taggedContent.CreateSpanElement();
-span421.SetText("Span 421 and ");
-span42.AppendChild(span421);
-span42.SetText("Span_42");
-p4.AppendChild(span41);
-p4.AppendChild(span42);
-p4.SetText(".");
-// حفظ مستند PDF المُوسوم
+```
+
+ فقط استمر في الإبداع`ParagraphElement` رمل`SpanElement` س، وإضافتها إلى`rootElement` بنفس الطريقة كما هو موضح أعلاه`p1`.
+
+## الخطوة 5: احفظ مستندك
+
+بعد إعداد جميع عناصر البنية الخاصة بك، حان الوقت لحفظ مستند PDF الخاص بك.
+
+### تحديد مسار ملف الإخراج
+
+```csharp
+string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
+```
+
+### حفظ المستند
+
+```csharp
 document.Save(outFile);
-// التحقق من توافق PDF/UA
+```
+
+وهنا يحدث السحر! يتم حفظ مستندك في مسار ملف الإخراج المحدد.
+
+## الخطوة 6: التحقق من التوافق مع PDF/UA
+
+تتضمن الخطوة الأخيرة التحقق مما إذا كانت مستندك يتوافق مع معايير PDF/UA الخاصة بإمكانية الوصول.
+
+للتحقق من التوافق، استخدم الكود التالي:
+
+```csharp
 document = new Document(outFile);
+string logFile = dataDir + "46144_log.xml";
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
 ```
+
+سيؤدي هذا إلى إظهار ما إذا كانت مستندك متوافقة مع معايير PDF/UA، وهو أمر ضروري لإمكانية الوصول.
 
 ## خاتمة
 
-في هذا البرنامج التعليمي، تعلمت كيفية إضافة عنصر هيكل إلى عنصر في مستند PDF باستخدام Aspose.PDF لـ .NET. باستخدام ميزات هيكل المحتوى المميزة في Aspose.PDF، يمكنك إنشاء هيكل هرمي في مستند PDF الخاص بك، مما يجعل إدارة المحتوى والتنقل عبره أسهل.
+والآن، لقد تعلمت للتو كيفية إضافة عناصر هيكلية إلى مستند PDF باستخدام Aspose.PDF لـ .NET. باتباع هذه الخطوات، يمكنك تحويل أي ملف PDF إلى تنسيق يمكن الوصول إليه ويتوافق مع المعايير، مما يضمن تمتع الجميع بإمكانية الوصول المتساوية إلى المعلومات. 
 
-### الأسئلة الشائعة
+## الأسئلة الشائعة
 
-#### س: ما هو الغرض من إضافة عنصر هيكلي إلى عنصر في مستند PDF باستخدام Aspose.PDF لـ .NET؟
+### ما هو Aspose.PDF لـ .NET؟
+Aspose.PDF for .NET هي مكتبة تتيح للمطورين إنشاء مستندات PDF ومعالجتها وتحويلها برمجيًا.
 
-ج: إن إضافة عنصر هيكلي إلى عنصر في مستند PDF باستخدام Aspose.PDF for .NET يسمح لك بإنشاء هيكل هرمي داخل محتوى المستند. يعزز هذا الهيكل الهرمي تنظيم المحتوى والتنقل فيه، مما يجعل إدارة عناصر معينة والوصول إليها أسهل.
+### كيف يمكنني التحقق من إمكانية الوصول إلى ملف PDF الخاص بي؟
+بإمكانك التحقق من صحة ملف PDF الخاص بك وفقًا لمعايير PDF/UA باستخدام مكتبة Aspose.PDF للتأكد من أنه يلبي إرشادات إمكانية الوصول.
 
-#### س: كيف تساعد مكتبة Aspose.PDF في إضافة عناصر الهيكل إلى مستند PDF؟
+### هل يمكنني استخدام Aspose.PDF مجانًا؟
+ نعم، يقدم Aspose إصدارًا تجريبيًا مجانيًا، مما يسمح لك باستكشاف ميزاته دون أي تكلفة. يمكنك تنزيله[هنا](https://releases.aspose.com/).
 
-ج: Aspose.PDF for .NET هي مكتبة قوية توفر إمكانيات لإنشاء مستندات PDF ومعالجتها وتحويلها برمجيًا. في هذا البرنامج التعليمي، يتم الاستفادة من ميزات بنية المحتوى المميزة للمكتبة لإنشاء عناصر بنية وإضافتها إلى محتوى مستند PDF.
+### أين يمكنني العثور على الوثائق الخاصة بـ Aspose.PDF؟
+يمكنك العثور على وثائق شاملة لـ Aspose.PDF[هنا](https://reference.aspose.com/pdf/net/).
 
-#### س: ما هي المتطلبات الأساسية لإضافة عناصر الهيكل إلى مستند PDF باستخدام Aspose.PDF لـ .NET؟
-
-ج: قبل أن تبدأ، تأكد من تثبيت Visual Studio مع إطار عمل .NET ومن وجود مكتبة Aspose.PDF لـ .NET مذكورة في مشروعك.
-
-#### س: كيف يقوم الكود C# المقدم بإنشاء عناصر الهيكل وإضافتها إلى محتوى مستند PDF؟
-
-ج: يوضح الكود كيفية إنشاء مستند PDF، وتحديد عنصر هيكلي جذري، وإضافة عناصر هيكلية مختلفة مثل الفقرات والامتدادات إليه. يتم إنشاء كل عنصر هيكلي باستخدام الأساليب التي يوفرها Aspose.PDF، مما يسمح لك ببناء هيكل هرمي.
-
-#### س: هل يمكنني تخصيص أنواع عناصر الهيكل التي أقوم بإضافتها إلى مستند PDF؟
-
-ج: نعم، يمكنك تخصيص أنواع عناصر الهيكل من خلال استكشاف الطرق المختلفة التي توفرها مكتبة Aspose.PDF. يعرض الكود الفقرات والامتدادات كأمثلة، ولكن يمكنك إنشاء وإضافة أنواع أخرى من العناصر الهيكلية حسب الحاجة.
-
-#### س: كيف يمكنني تحديد العلاقة الهرمية بين عناصر الهيكل المضافة؟
-
- أ: يتم تحديد العلاقة الهرمية بين عناصر البنية من خلال الترتيب الذي تلحقها به بعناصرها الأصلية. في الكود، يتم إنشاء علاقات الوالد والطفل باستخدام`AppendChild` طريقة.
-
-#### س: ما هي فوائد إنشاء هيكل هرمي في مستند PDF؟
-
-أ: إن إنشاء هيكل هرمي في مستند PDF يعزز إمكانية الوصول إليه والتنقل فيه وتنظيمه. كما يسمح لتقنيات المساعدة بتفسير محتوى المستند ونقله بشكل أفضل، مما يجعله أكثر سهولة في الاستخدام للأشخاص ذوي الإعاقة.
-
-#### س: كيف يمكنني التحقق من توافق PDF/UA بعد إضافة عناصر الهيكل؟
-
-أ: يوضح الكود المقدم في البرنامج التعليمي كيفية التحقق من توافق PDF/UA باستخدام`Validate` الطريقة. من خلال التحقق من صحة المستند وفقًا لمعيار PDF/UA، يمكنك التأكد من أن عناصر البنية المضافة تتوافق مع إرشادات إمكانية الوصول.
-
-#### س: هل يمكنني استخدام هذا النهج لإضافة عناصر هيكلية إلى مستند PDF موجود؟
-
-ج: نعم، يمكنك تعديل النهج المقدم لإضافة عناصر البنية إلى مستند PDF موجود. فبدلاً من إنشاء مستند جديد، يمكنك تحميل المستند الموجود باستخدام Aspose.PDF ثم اتباع خطوات مماثلة لإضافة عناصر البنية.
+### كيف يمكنني شراء ترخيص لـ Aspose.PDF؟
+ يمكنك شراء الترخيص مباشرة من موقع Aspose[هنا](https://purchase.aspose.com/buy).

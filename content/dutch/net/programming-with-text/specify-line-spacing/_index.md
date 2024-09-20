@@ -2,186 +2,147 @@
 title: Regelafstand in PDF-bestand opgeven
 linktitle: Regelafstand in PDF-bestand opgeven
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u de regelafstand in een PDF-bestand kunt opgeven met Aspose.PDF voor .NET.
+description: Leer hoe u regelafstand in een PDF specificeert met Aspose.PDF voor .NET met deze stapsgewijze handleiding. Perfect voor ontwikkelaars die op zoek zijn naar nauwkeurige tekstopmaak.
 type: docs
 weight: 510
 url: /nl/net/programming-with-text/specify-line-spacing/
 ---
-Deze tutorial legt uit hoe u regelafstand in een PDF-bestand kunt specificeren met Aspose.PDF voor .NET. De meegeleverde C#-broncode demonstreert het proces stap voor stap.
+## Invoering
+
+Heb je ooit moeite gehad met het regelen van de regelafstand in een PDF-bestand? Misschien had je tekst die er te vol uitzag of er gewoon niet zo gepolijst uitzag als je zou willen. In deze tutorial laten we je zien hoe je eenvoudig regelafstand in een PDF kunt specificeren met Aspose.PDF voor .NET. We gebruiken een eenvoudige, stapsgewijze handleiding om je van een lege PDF naar een PDF met aangepaste regelafstand te brengen. Dit is perfect als je precisie nodig hebt in je tekstlay-out voor documenten zoals rapporten, facturen of certificaten.
 
 ## Vereisten
 
-Voordat u verdergaat met de tutorial, moet u ervoor zorgen dat u het volgende hebt:
+Voordat we in de code duiken, controleren we of je alles hebt wat je nodig hebt:
 
-- Basiskennis van de programmeertaal C#.
-- Aspose.PDF voor .NET-bibliotheek geïnstalleerd. U kunt het verkrijgen van de Aspose-website of NuGet gebruiken om het in uw project te installeren.
+1.  Aspose.PDF voor .NET geïnstalleerd. Als u het niet hebt, haal het dan uit de[Aspose.PDF downloadpagina](https://releases.aspose.com/pdf/net/).
+2. Een .NET-ontwikkelomgeving (zoals Visual Studio).
+3. Een TrueType-lettertypebestand (`.ttf` ) die we in het voorbeeld zullen gebruiken. U kunt elk lettertype gebruiken, maar voor deze handleiding gebruiken we het`HPSimplified.TTF` lettertype.
+4. Basiskennis van C# en PDF-bewerking.
 
-## Stap 1: Het project opzetten
+Als u er klaar voor bent, gaan we verder met het importeren van de benodigde pakketten.
 
-Begin met het maken van een nieuw C#-project in uw favoriete geïntegreerde ontwikkelomgeving (IDE) en voeg een verwijzing toe naar de Aspose.PDF voor .NET-bibliotheek.
+## Pakketten importeren
 
-## Stap 2: Importeer de benodigde naamruimten
-
-Voeg de volgende using-richtlijnen toe aan het begin van uw C#-bestand om de vereiste naamruimten te importeren:
+In uw C#-project moet u de Aspose.PDF-naamruimten importeren om met de PDF-functionaliteiten te werken. Dit is hoe u dat doet:
 
 ```csharp
-using Aspose.Pdf;
 using Aspose.Pdf.Text;
 using System.IO;
 ```
 
-## Stap 3: Stel het pad naar de documentmap in
+Met deze naamruimten kunt u PDF-documenten maken en bewerken, en kunt u werken met tekstopmaak en lettertypeopties.
 
- Stel het pad naar uw documentmap in met behulp van`dataDir` variabele:
+We zullen dit opsplitsen in kleine stappen, zodat u het gemakkelijk kunt volgen. Elke stap richt zich op een belangrijk onderdeel van het proces, van het instellen van uw PDF tot het specificeren van de regelafstand.
+
+## Stap 1: Stel uw project in en definieer de documentdirectory
+
+Het eerste wat we moeten doen is definiëren waar onze bestanden zich bevinden. Dit helpt het programma te weten waar het lettertype te vinden is en waar de resulterende PDF opgeslagen moet worden.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+string fontFile = dataDir + "HPSimplified.TTF";
 ```
 
- Vervangen`"YOUR DOCUMENT DIRECTORY"` met het daadwerkelijke pad naar uw documentenmap.
+ In deze stap vervangt u`"YOUR DOCUMENT DIRECTORY"` met het daadwerkelijke pad naar waar u uw bestanden opslaat. Dit is waar u uw lettertypebestand plaatst (`HPSimplified.TTF`) en waar de PDF wordt opgeslagen.
 
-## Stap 4: Laad het invoer-PDF-bestand
+## Stap 2: Een PDF-document laden
 
- Laad het invoer-PDF-bestand met behulp van de`Document` klas:
+Nu moeten we een nieuw PDF-document maken. Voor deze handleiding beginnen we met een leeg document, maar u kunt indien nodig ook een bestaand PDF-document laden.
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Stap 5: Tekstopmaakopties maken
+Dit creëert een nieuw, leeg PDF-document. Makkelijk toch?
 
- Maak een`TextFormattingOptions` object en stel de regelafstandmodus in op`FullSize`:
+## Stap 3: Tekstopmaakopties instellen
+
+ Hier gebeurt de magie. We specificeren de regelafstandmodus voor de tekst die we aan de PDF willen toevoegen. Aspose.PDF geeft ons verschillende opties, maar in deze handleiding gebruiken we`LineSpacingMode.FullSize`, waardoor de regelafstand volledig wordt gerespecteerd.
 
 ```csharp
 TextFormattingOptions formattingOptions = new TextFormattingOptions();
 formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 ```
 
-## Stap 6: Maak een tekstfragment
+ Deze code stelt de regelafstandmodus in op`FullSize` , zodat de tekst met de juiste spatie wordt weergegeven. Er zijn andere opties zoals`Proportional` als je verschillende spatiegedragingen wilt, maar laten we het voor nu bij`FullSize`.
 
- Maak een`TextFragment` object en specificeer de tekstinhoud:
+## Stap 4: Maak een tekstfragment
+
+Nu gaan we de daadwerkelijke tekst maken die in de PDF wordt geplaatst. Deze tekst zal de regelafstand respecteren die we hebben gedefinieerd.
 
 ```csharp
 TextFragment textFragment = new TextFragment("Hello world");
 ```
 
-## Stap 7: Laad het lettertypebestand (optioneel)
+ We hebben een tekstfragment gemaakt met de string`"Hello world"`Uiteraard kunt u deze tekst naar eigen wens aanpassen.
 
- Als u een specifiek lettertype voor de tekst wilt gebruiken, laadt u het TrueType-lettertypebestand in een`FileStream` voorwerp:
+## Stap 5: Een aangepast lettertype laden en toepassen
+
+Om de tekst te laten opvallen, laden we een aangepast TrueType-lettertype uit een bestand. Deze stap is optioneel, maar kan een professionele touch aan uw PDF's toevoegen.
 
 ```csharp
-string fontFile = dataDir + "HPSimplified.TTF";
-using (FileStream fontStream = File.OpenRead(fontFile))
+if (fontFile != "")
 {
-    textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-}
+    using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
+    {
+        textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
 ```
 
- Vervangen`"HPSimplified.TTF"` met de werkelijke bestandsnaam van het lettertype.
+Hier laden we het lettertypebestand en passen het toe op het tekstfragment. Als het bestandspad geldig is, wordt het lettertype gebruikt. Anders wordt het standaardlettertype toegepast.
 
-## Stap 8: Geef de tekstpositie en regelafstand op
+## Stap 6: Tekstpositie en opmaak instellen
 
- Stel de positie voor het tekstfragment in en wijs de`TextFormattingOptions` naar de`TextState.FormattingOptions` eigendom:
+Vervolgens moeten we de tekst op de PDF positioneren. We passen ook de opmaakopties toe die we eerder hebben gemaakt.
 
 ```csharp
 textFragment.Position = new Position(100, 600);
 textFragment.TextState.FormattingOptions = formattingOptions;
 ```
 
-## Stap 9: Voeg de tekst toe aan het document
+ De`Position` methode stelt de coördinaten in waar de tekst op de pagina zal verschijnen (in dit geval 100 eenheden vanaf de linkerkant en 600 eenheden vanaf de onderkant). De opmaakopties, inclusief de regelafstandmodus, worden hier toegepast.
 
- Voeg het tekstfragment toe aan het document, door het toe te voegen aan een`TextBuilder` of direct naar een pagina`Paragraphs` verzameling:
+## Stap 7: Tekst toevoegen aan de PDF-pagina
+
+Nu de tekst is opgemaakt en gepositioneerd, is het tijd om deze aan het PDF-document toe te voegen.
 
 ```csharp
 var page = doc.Pages.Add();
 page.Paragraphs.Add(textFragment);
 ```
 
-## Stap 10: Sla het resulterende PDF-document op
+Deze code maakt een nieuwe pagina in het PDF-document en voegt het tekstfragment eraan toe.
 
-Sla het gewijzigde PDF-document op:
+## Stap 8: Sla de PDF op
+
+We zijn bij de laatste stap! Nu alles is ingesteld, gaan we de PDF opslaan.
 
 ```csharp
 dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
 doc.Save(dataDir);
 ```
 
- Zorg ervoor dat u vervangt`"SpecifyLineSpacing_out.pdf"` met de gewenste naam van het uitvoerbestand.
-
-### Voorbeeldbroncode voor Regelafstand opgeven met Aspose.PDF voor .NET 
-```csharp
-// Het pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string fontFile = dataDir + "HPSimplified.TTF";
-// Laad invoer PDF-bestand
-Document doc = new Document();
-//Maak tekstopmaakopties met LineSpacingMode.FullSize
-TextFormattingOptions formattingOptions = new TextFormattingOptions();
-formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
-// Maak een tekstbuilderobject voor de eerste pagina van het document
-//TextBuilder textBuilder = new TextBuilder(doc.Pages[1]);
-// Maak een tekstfragment met een voorbeeldstring
-TextFragment textFragment = new TextFragment("Hello world");
-if (fontFile != "")
-{
-	//Laad het TrueType-lettertype in het streamobject
-	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
-	{
-		// Stel de lettertypenaam voor de tekstreeks in
-		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		// Geef de positie voor het tekstfragment op
-		textFragment.Position = new Position(100, 600);
-		//Stel TextFormattingOptions van het huidige fragment in op predefined (wat verwijst naar LineSpacingMode.FullSize)
-		textFragment.TextState.FormattingOptions = formattingOptions;
-		// Voeg de tekst toe aan TextBuilder zodat deze over het PDF-bestand kan worden geplaatst
-		//textBuilder.AppendText(tekstFragment);
-		var page = doc.Pages.Add();
-		page.Paragraphs.Add(textFragment);
-	}
-	dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
-	// Opslaan van resulterend PDF-document
-	doc.Save(dataDir);
-}
-```
+Hiermee wordt de PDF opgeslagen met de opgegeven regelafstand en uw bestand is klaar!
 
 ## Conclusie
 
-Gefeliciteerd! U hebt succesvol geleerd hoe u de regelafstand in een PDF-document kunt specificeren met Aspose.PDF voor .NET. Deze tutorial bood een stapsgewijze handleiding, van het instellen van het project tot het opslaan van het gewijzigde document. U kunt deze code nu opnemen in uw eigen C#-projecten om de regelafstand van tekst in PDF-bestanden aan te passen.
+En dat is alles! U hebt zojuist een PDF-document gemaakt met aangepaste regelafstand met Aspose.PDF voor .NET. Het is een krachtige tool waarmee u elk aspect van uw PDF-bestanden kunt beheren, en dit is slechts een voorbeeld van wat u kunt bereiken. Van tekstplaatsing tot opmaak, de mogelijkheden zijn eindeloos.
 
-### Veelgestelde vragen
+Als u dieper in PDF-manipulatie wilt duiken, biedt Aspose.PDF een schat aan functies om te verkennen. Aarzel niet om te experimenteren en de grenzen van wat u met uw documenten kunt doen te verleggen!
 
-#### V: Wat is het doel van de tutorial "Regelafstand opgeven in PDF-bestand"?
+## Veelgestelde vragen
 
-A: De tutorial "Specify Line Spacing In PDF File" is bedoeld om gebruikers te begeleiden bij het gebruik van de Aspose.PDF-bibliotheek voor .NET om de regelafstand van tekst in een PDF-document aan te passen. De tutorial biedt stapsgewijze instructies en C#-codevoorbeelden om het proces te demonstreren.
+### Kan ik de regelafstand aanpassen naar andere modi?  
+ Ja, u kunt andere modi gebruiken, zoals`Proportional` of`Fixed` afhankelijk van uw behoeften.
 
-#### V: Hoe helpt deze tutorial bij het specificeren van de regelafstand in een PDF-document?
+### Is het mogelijk om lettertypen vanuit het systeem te laden in plaats van uit een bestand?  
+ Ja, u kunt systeemgeïnstalleerde lettertypen laden met behulp van de`FontRepository`.
 
-A: Deze tutorial helpt gebruikers te begrijpen hoe ze de mogelijkheden van Aspose.PDF voor .NET kunnen gebruiken om regelafstand voor tekst in een PDF-document te specificeren. Door de gegeven stappen en codevoorbeelden te volgen, kunnen gebruikers de regelafstand aanpassen aan hun voorkeuren.
+### Kan ik Aspose.PDF voor .NET gebruiken met andere bestandsformaten?  
+Absoluut! Aspose.PDF voor .NET ondersteunt een verscheidenheid aan formaten zoals XML, HTML en meer.
 
-#### V: Welke vereisten zijn vereist om deze tutorial te volgen?
+### Heb ik een licentie nodig om Aspose.PDF voor .NET te gebruiken?  
+Ja, voor volledige functionaliteit heb je een licentie nodig, die je kunt verkrijgen[hier](https://purchase.aspose.com/buy).
 
-A: Voordat u met de tutorial begint, moet u een basiskennis hebben van de programmeertaal C#. Daarnaast moet u de Aspose.PDF voor .NET-bibliotheek geïnstalleerd hebben. U kunt deze verkrijgen via de Aspose-website of in uw project installeren met NuGet.
-
-#### V: Hoe stel ik mijn project in om deze tutorial te volgen?
-
-A: Om te beginnen, maak een nieuw C#-project in uw favoriete geïntegreerde ontwikkelomgeving (IDE) en voeg een referentie toe aan de Aspose.PDF voor .NET-bibliotheek. Hiermee kunt u de functies van de bibliotheek gebruiken voor het werken met PDF-documenten en het aanpassen van de regelafstand.
-
-#### V: Kan ik deze tutorial gebruiken om de regelafstand voor elk type tekst te specificeren?
-
-A: Ja, deze tutorial geeft instructies over hoe u de regelafstand voor tekstinhoud in een PDF-document kunt specificeren met Aspose.PDF voor .NET. U kunt de meegeleverde codevoorbeelden gebruiken om de regelafstand van tekst aan te passen aan uw behoeften.
-
-#### V: Hoe geef ik de regelafstandmodus op in de tutorial?
-
- A: De tutorial laat zien hoe je een`TextFormattingOptions` object en stel zijn`LineSpacing` eigendom van`TextFormattingOptions.LineSpacingMode.FullSize`In deze modus wordt de volledige regelafstand voor de tekstinhoud gespecificeerd.
-
-#### V: Hoe kan ik een specifiek lettertype voor de tekst laden?
-
- A: Als u een specifiek lettertype voor de tekstinhoud wilt gebruiken, biedt de tutorial richtlijnen voor het laden van een TrueType-lettertypebestand in een`FileStream` object en stel het in als het lettertype voor de`TextFragment`Hiermee kunt u het lettertype van de tekst en de regelafstand aanpassen.
-
-#### V: Hoe pas ik de positie van de tekst in het PDF-document aan?
-
- A: Om de positie van de tekst aan te passen, maakt u een`TextFragment` object en stel zijn`Position`eigenschap naar de gewenste coördinaten (X en Y). Hiermee kunt u bepalen waar de tekst in het PDF-document wordt geplaatst.
-
-#### V: Kan ik deze wijzigingen in de regelafstand toepassen op bestaande PDF-documenten?
-
- A: Ja, u kunt de regelafstand voor tekst in bestaande PDF-documenten aanpassen. De tutorial laat zien hoe u een`TextFragment` met de opgegeven regelafstand en positie, en voeg het vervolgens toe aan de pagina`Paragraphs` verzameling.
+### Hoe stel ik de regelafstand in voor meerdere alinea's?  
+ U kunt zich aanmelden`TextFormattingOptions` aan elk`TextFragment` of`TextParagraph` om de afstand tussen meerdere regels of alinea's te bepalen.

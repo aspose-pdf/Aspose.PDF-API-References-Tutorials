@@ -2,183 +2,154 @@
 title: Tìm kiếm đoạn văn bản trang trong tệp PDF
 linktitle: Tìm kiếm đoạn văn bản trang trong tệp PDF
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Tìm hiểu cách tìm kiếm các phân đoạn văn bản trên một trang trong tệp PDF và lấy các thuộc tính của chúng bằng Aspose.PDF cho .NET.
+description: Tìm hiểu cách tìm kiếm các phân đoạn văn bản trong tệp PDF bằng Aspose.PDF cho .NET với hướng dẫn từng bước chi tiết này. Trích xuất văn bản, phân tích các phân đoạn và nhiều hơn nữa.
 type: docs
 weight: 470
 url: /vi/net/programming-with-text/search-text-segments-page/
 ---
-Hướng dẫn này giải thích cách sử dụng Aspose.PDF cho .NET để tìm kiếm các đoạn văn bản cụ thể trên một trang tệp PDF và lấy các thuộc tính của chúng. Mã nguồn C# được cung cấp minh họa quy trình từng bước.
+## Giới thiệu
+
+Bạn đã bao giờ tự hỏi làm thế nào để định vị các đoạn văn bản cụ thể trong một tài liệu PDF bằng Aspose.PDF cho .NET chưa? Vâng, bạn thật may mắn! Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn thực hiện quy trình theo định dạng từng bước đơn giản. Cho dù bạn đang cố gắng trích xuất thông tin, phân tích văn bản hay chỉ điều hướng các phức tạp của thao tác PDF, Aspose.PDF cho .NET sẽ giúp bạn. Hãy cùng tìm hiểu!
 
 ## Điều kiện tiên quyết
 
-Trước khi thực hiện hướng dẫn, hãy đảm bảo bạn có những điều sau:
+Trước khi bắt đầu, hãy đảm bảo rằng bạn đã có mọi thứ cần thiết:
 
-- Kiến thức cơ bản về ngôn ngữ lập trình C#.
-- Đã cài đặt thư viện Aspose.PDF cho .NET. Bạn có thể tải xuống từ trang web Aspose hoặc sử dụng NuGet để cài đặt vào dự án của bạn.
+-  Aspose.PDF cho .NET: Đảm bảo bạn đã cài đặt thư viện. Bạn có thể lấy nó từ[đây](https://releases.aspose.com/pdf/net/).
+- .NET Framework: Đảm bảo bạn đã cài đặt .NET trên máy của mình.
+- Môi trường phát triển: Khuyến khích sử dụng Visual Studio hoặc bất kỳ IDE nào hỗ trợ .NET.
+- Tài liệu PDF: Tệp PDF mà bạn sẽ dùng để tìm kiếm các đoạn văn bản.
 
-## Bước 1: Thiết lập dự án
+ Nếu bạn chưa có Aspose.PDF cho .NET, đừng lo lắng! Bạn có thể dùng thử miễn phí từ[đây](https://releases.aspose.com/) hoặc mua nó[đây](https://purchase.aspose.com/buy).
 
-Bắt đầu bằng cách tạo một dự án C# mới trong môi trường phát triển tích hợp (IDE) mà bạn thích và thêm tham chiếu đến thư viện Aspose.PDF cho .NET.
+## Nhập gói
 
-## Bước 2: Nhập các không gian tên cần thiết
-
-Thêm lệnh using sau vào đầu tệp C# của bạn để nhập các không gian tên cần thiết:
+Trước khi bắt đầu mã hóa, điều quan trọng là phải nhập các gói cần thiết vào dự án của bạn. Điều này đảm bảo tất cả các lớp và phương thức cần thiết đều có sẵn cho các tác vụ thao tác PDF của bạn.
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
+using System;
 ```
 
-## Bước 3: Đặt đường dẫn đến thư mục tài liệu
+Sau khi đã có những thông tin cần thiết, chúng ta hãy cùng xem hướng dẫn từng bước.
 
- Đặt đường dẫn đến thư mục tài liệu của bạn bằng cách sử dụng`dataDir` biến:
 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-```
+## Bước 1: Tải Tài liệu PDF
 
- Thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế đến thư mục tài liệu của bạn.
+Bước đầu tiên trong quy trình là tải tệp PDF của bạn vào chương trình. Nếu không có tài liệu đã tải, sẽ không có gì để tìm kiếm, đúng không? Đây là cách bạn thực hiện.
 
-## Bước 4: Tải tài liệu PDF
-
- Tải tài liệu PDF bằng cách sử dụng`Document` lớp học:
-
-```csharp
-Document pdfDocument = new Document(dataDir + "SearchTextSegmentsPage.pdf");
-```
-
- Thay thế`"SearchTextSegmentsPage.pdf"` bằng tên thực của tệp PDF của bạn.
-
-## Bước 5: Tạo TextFragmentAbsorber
-
- Tạo một`TextFragmentAbsorber` đối tượng để tìm tất cả các trường hợp của cụm từ tìm kiếm đầu vào:
-
-```csharp
-TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
-```
-
- Thay thế`"text"` với cụm từ tìm kiếm bạn mong muốn.
-
-## Bước 6: Chấp nhận bộ hấp thụ cho một trang cụ thể
-
-Chấp nhận bộ hấp thụ cho trang mong muốn của tài liệu:
-
-```csharp
-pdfDocument.Pages[2].Accept(textFragmentAbsorber);
-```
-
- Thay thế`2` với số trang mong muốn (chỉ mục dựa trên 1).
-
-## Bước 7: Lấy lại các đoạn văn bản đã trích xuất
-
- Lấy các đoạn văn bản được trích xuất bằng cách sử dụng`TextFragments` tài sản của`TextFragmentAbsorber` sự vật:
-
-```csharp
-TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-```
-
-## Bước 8: Lặp qua các đoạn văn bản
-
-Lặp qua các đoạn văn bản đã lấy và truy cập vào các thuộc tính của chúng:
-
-```csharp
-foreach (TextFragment textFragment in textFragmentCollection)
-{
-	foreach (TextSegment textSegment in textFragment.Segments)
-	{
-		Console.WriteLine("Text: {0} ", textSegment.Text);
-		Console.WriteLine("Position: {0} ", textSegment.Position);
-		Console.WriteLine("XIndent: {0} ", textSegment.Position.XIndent);
-		Console.WriteLine("YIndent: {0} ", textSegment.Position.YIndent);
-		Console.WriteLine("Font - Name: {0}", textSegment.TextState.Font.FontName);
-		Console.WriteLine("Font - IsAccessible: {0} ", textSegment.TextState.Font.IsAccessible);
-		Console.WriteLine("Font - IsEmbedded: {0} ", textSegment.TextState.Font.IsEmbedded);
-		Console.WriteLine("Font - IsSubset: {0} ", textSegment.TextState.Font.IsSubset);
-		Console.WriteLine("Font Size: {0} ", textSegment.TextState.FontSize);
-		Console.WriteLine("Foreground Color: {0} ", textSegment.TextState.ForegroundColor);
-	}
-}
-```
-
-Sửa đổi mã trong vòng lặp để thực hiện các hành động tiếp theo trên mỗi phân đoạn văn bản nếu cần.
-
-### Mã nguồn mẫu cho Trang phân đoạn văn bản tìm kiếm sử dụng Aspose.PDF cho .NET 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Mở tài liệu
 Document pdfDocument = new Document(dataDir + "SearchTextSegmentsPage.pdf");
+```
+
+- `dataDir` : Biến này giữ đường dẫn đến tệp PDF của bạn. Thay thế`"YOUR DOCUMENT DIRECTORY"` với thư mục thực tế nơi tập tin của bạn được lưu trữ.
+- `pdfDocument` : Sử dụng`Document` lớp, chúng ta tải PDF vào bộ nhớ.
+
+## Bước 2: Thiết lập Tìm kiếm văn bản
+
+ Bây giờ tài liệu của bạn đã được tải, bước tiếp theo là tạo một`TextFragmentAbsorber` đối tượng, cho phép chúng ta tìm kiếm văn bản cụ thể trong tài liệu.
+
+```csharp
 // Tạo đối tượng TextAbsorber để tìm tất cả các trường hợp của cụm từ tìm kiếm đầu vào
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
+```
+
+- `TextFragmentAbsorber` : Đối tượng này được sử dụng để nắm bắt tất cả các lần xuất hiện của văn bản bạn đang tìm kiếm. Thay thế`"text"` với văn bản thực tế mà bạn muốn tìm kiếm.
+
+## Bước 3: Chấp nhận Absorber cho các trang cụ thể
+
+Bạn có thể không phải lúc nào cũng muốn tìm kiếm toàn bộ tài liệu PDF. Trong ví dụ này, chúng tôi sẽ thu hẹp phạm vi tìm kiếm xuống một trang cụ thể.
+
+```csharp
 // Chấp nhận bộ hấp thụ cho tất cả các trang
 pdfDocument.Pages[2].Accept(textFragmentAbsorber);
+```
+
+- `pdfDocument.Pages[2]`: Điều này cho biết chúng ta chỉ tìm kiếm trang thứ hai của tài liệu. Bạn có thể sửa đổi chỉ mục để nhắm mục tiêu đến các trang khác.
+- `Accept()` : Phương pháp này cho phép`TextFragmentAbsorber` để xử lý văn bản trong trang được chỉ định.
+
+## Bước 4: Trích xuất các đoạn văn bản
+
+Sau khi tìm kiếm trên trang, chúng tôi trích xuất các đoạn văn bản tìm thấy vào một bộ sưu tập.
+
+```csharp
 // Lấy các đoạn văn bản đã trích xuất
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+```
+
+- `TextFragmentCollection`:Bộ sưu tập này lưu trữ tất cả các trường hợp của đoạn văn bản được tìm thấy trong quá trình tìm kiếm.
+
+## Bước 5: Lặp qua các đoạn văn bản và trích xuất dữ liệu
+
+Bây giờ, chúng ta hãy lặp qua từng đoạn văn bản và trích xuất thông tin chi tiết của nó, chẳng hạn như vị trí, phông chữ và màu sắc.
+
+```csharp
 // Lặp lại các đoạn
 foreach (TextFragment textFragment in textFragmentCollection)
 {
-	foreach (TextSegment textSegment in textFragment.Segments)
-	{
-		Console.WriteLine("Text : {0} ", textSegment.Text);
-		Console.WriteLine("Position : {0} ", textSegment.Position);
-		Console.WriteLine("XIndent : {0} ",
-		textSegment.Position.XIndent);
-		Console.WriteLine("YIndent : {0} ",
-		textSegment.Position.YIndent);
-		Console.WriteLine("Font - Name : {0}",
-		textSegment.TextState.Font.FontName);
-		Console.WriteLine("Font - IsAccessible : {0} ",
-		textSegment.TextState.Font.IsAccessible);
-		Console.WriteLine("Font - IsEmbedded : {0} ",
-		textSegment.TextState.Font.IsEmbedded);
-		Console.WriteLine("Font - IsSubset : {0} ",
-		textSegment.TextState.Font.IsSubset);
-		Console.WriteLine("Font Size : {0} ",
-		textSegment.TextState.FontSize);
-		Console.WriteLine("Foreground Color : {0} ",
-		textSegment.TextState.ForegroundColor);
-	}
+    foreach (TextSegment textSegment in textFragment.Segments)
+    {
+        Console.WriteLine("Text : {0} ", textSegment.Text);
+        Console.WriteLine("Position : {0} ", textSegment.Position);
+        Console.WriteLine("XIndent : {0} ", textSegment.Position.XIndent);
+        Console.WriteLine("YIndent : {0} ", textSegment.Position.YIndent);
+        Console.WriteLine("Font - Name : {0}", textSegment.TextState.Font.FontName);
+        Console.WriteLine("Font - IsAccessible : {0} ", textSegment.TextState.Font.IsAccessible);
+        Console.WriteLine("Font - IsEmbedded : {0} ", textSegment.TextState.Font.IsEmbedded);
+        Console.WriteLine("Font - IsSubset : {0} ", textSegment.TextState.Font.IsSubset);
+        Console.WriteLine("Font Size : {0} ", textSegment.TextState.FontSize);
+        Console.WriteLine("Foreground Color : {0} ", textSegment.TextState.ForegroundColor);
+    }
 }
 ```
 
+- `foreach (TextFragment textFragment in textFragmentCollection)` : Chúng tôi lặp lại từng cái`TextFragment` trong bộ sưu tập.
+- `foreach (TextSegment textSegment in textFragment.Segments)`:Bên trong mỗi đoạn có nhiều phân đoạn. Chúng tôi lặp lại chúng để thu thập tất cả thông tin có liên quan.
+-  Các tính chất khác nhau của`textSegment`Chúng cung cấp cho chúng ta thông tin chi tiết về văn bản, chẳng hạn như vị trí (X và Y), chi tiết phông chữ, kích thước và màu sắc.
+
+## Bước 6: Xuất kết quả
+
+Cuối cùng, sau khi trích xuất tất cả thông tin, kết quả sẽ được in ra trong bảng điều khiển. Điều này giúp bạn thấy chính xác vị trí của văn bản và các chi tiết định dạng của nó.
+
+Sau đây là một mẫu đầu ra để làm rõ hơn:
+
+```
+Text : text
+Position : X: 45.0, Y: 75.0
+XIndent : 45.0
+YIndent : 75.0
+Font - Name : Arial
+Font - IsAccessible : True
+Font - IsEmbedded : False
+Font - IsSubset : False
+Font Size : 12.0
+Foreground Color : System.Drawing.Color [Black]
+```
+
+- Đầu ra này cung cấp cho bạn vị trí chính xác và thông tin định dạng của văn bản "text" trên trang được chỉ định.
+
 ## Phần kết luận
 
-Xin chúc mừng! Bạn đã học thành công cách tìm kiếm các đoạn văn bản cụ thể trên một trang của tài liệu PDF bằng Aspose.PDF cho .NET. Hướng dẫn này cung cấp hướng dẫn từng bước, từ việc tải tài liệu đến việc truy cập các đoạn văn bản đã trích xuất. Bây giờ bạn có thể kết hợp mã này vào các dự án C# của riêng mình để thực hiện tìm kiếm đoạn văn bản nâng cao trong các tệp PDF.
+Và bạn đã có nó! Bạn vừa học cách tìm kiếm các đoạn văn bản cụ thể trong một tài liệu PDF bằng Aspose.PDF cho .NET. Quá trình này cực kỳ tiện dụng khi xử lý các tệp PDF lớn, cho phép bạn xác định và trích xuất văn bản chính một cách hiệu quả. Cho dù đó là phân tích dữ liệu, trích xuất thông tin hay chỉ đơn giản là điều hướng qua một tài liệu, Aspose.PDF cung cấp cho bạn các công cụ mạnh mẽ để hoàn thành công việc.
 
-### Câu hỏi thường gặp
+## Câu hỏi thường gặp
 
-#### H: Mục đích của hướng dẫn "Tìm kiếm đoạn văn bản trong tệp PDF" là gì?
+### Tôi có thể tìm kiếm nhiều từ hoặc cụm từ không?
+ Có, bạn có thể sửa đổi`TextFragmentAbsorber`để tìm kiếm văn bản khác nhau bằng cách thay đổi chuỗi nhập.
 
-A: Hướng dẫn "Search Text Segments Page In PDF File" cung cấp hướng dẫn toàn diện về cách sử dụng thư viện Aspose.PDF cho .NET để tìm kiếm các đoạn văn bản cụ thể trên một trang cụ thể của tài liệu PDF. Hướng dẫn này bao gồm quy trình thiết lập dự án, tải tài liệu PDF, tìm kiếm các đoạn văn bản và truy xuất các thuộc tính của chúng bằng mã C#.
+### Có thể tìm kiếm trên nhiều trang không?
+ Chắc chắn rồi! Bạn có thể lặp qua tất cả các trang trong PDF bằng cách lặp lại`pdfDocument.Pages`.
 
-#### H: Hướng dẫn này giúp ích như thế nào trong việc tìm kiếm các đoạn văn bản cụ thể trong tài liệu PDF?
+### Làm thế nào để tìm kiếm văn bản không phân biệt chữ hoa chữ thường?
+ Bạn có thể sử dụng`TextSearchOptions` để cho phép tìm kiếm không phân biệt chữ hoa chữ thường.
 
-A: Hướng dẫn này trình bày quy trình định vị và trích xuất các đoạn văn bản cụ thể trên một trang cụ thể của tài liệu PDF. Bằng cách làm theo các bước và mẫu mã được cung cấp, người dùng có thể tìm kiếm hiệu quả các đoạn văn bản mong muốn và lấy thông tin về các thuộc tính của chúng.
+### Tôi có thể sửa đổi văn bản sau khi tìm thấy không?
+ Có, một khi bạn đã xác định được vị trí`TextFragment`, bạn có thể sửa đổi thuộc tính văn bản của nó.
 
-#### H: Cần có những điều kiện tiên quyết nào để làm theo hướng dẫn này?
-
-A: Trước khi bắt đầu hướng dẫn, bạn nên có hiểu biết cơ bản về ngôn ngữ lập trình C#. Ngoài ra, bạn cần cài đặt thư viện Aspose.PDF cho .NET. Bạn có thể tải xuống từ trang web Aspose hoặc cài đặt vào dự án của mình bằng NuGet.
-
-#### H: Tôi phải thiết lập dự án của mình như thế nào để thực hiện theo hướng dẫn này?
-
-A: Để bắt đầu, hãy tạo một dự án C# mới trong môi trường phát triển tích hợp (IDE) ưa thích của bạn và thêm tham chiếu đến thư viện Aspose.PDF cho .NET. Điều này sẽ cho phép bạn sử dụng các tính năng của thư viện để tìm kiếm và làm việc với các tài liệu PDF.
-
-#### H: Tôi có thể sử dụng hướng dẫn này để tìm kiếm các đoạn văn bản cụ thể trên bất kỳ trang nào của tệp PDF không?
-
-A: Có, hướng dẫn này cung cấp hướng dẫn về cách tìm kiếm các đoạn văn bản cụ thể trên một trang đã chọn của tài liệu PDF. Nó hướng dẫn người dùng thiết lập một dự án, tải PDF và sử dụng thư viện Aspose.PDF để định vị và truy xuất các thuộc tính của các đoạn văn bản mong muốn.
-
-#### H: Làm thế nào để chỉ định văn bản tôi muốn tìm kiếm trong hướng dẫn này?
-
- A: Để chỉ định văn bản bạn muốn tìm kiếm, hãy tạo một`TextFragmentAbsorber` đối tượng và thiết lập tham số tìm kiếm của nó bằng cách sử dụng`Text` thuộc tính. Thay thế mặc định`"text"` trong mã hướng dẫn với cụm từ tìm kiếm mong muốn của bạn.
-
-#### H: Làm thế nào để lấy lại các thuộc tính của các đoạn văn bản đã trích xuất?
-
-Sau khi chấp nhận`TextFragmentAbsorber` đối với một trang cụ thể của PDF, bạn có thể lấy các đoạn văn bản đã trích xuất bằng cách sử dụng`TextFragments` thuộc tính của đối tượng hấp thụ. Điều này cung cấp quyền truy cập vào bộ sưu tập các đoạn văn bản, mỗi đoạn chứa nhiều phân đoạn văn bản.
-
-#### H: Tôi có thể tùy chỉnh mã để thực hiện các hành động bổ sung trên mỗi phân đoạn văn bản không?
-
-A: Hoàn toàn đúng. Mã mẫu của hướng dẫn cung cấp một vòng lặp để lặp qua các phân đoạn văn bản đã truy xuất. Bạn có thể tùy chỉnh mã trong vòng lặp này để thực hiện các hành động bổ sung trên mỗi phân đoạn văn bản, dựa trên yêu cầu của dự án.
-
-#### H: Làm thế nào để lưu tài liệu PDF đã chỉnh sửa sau khi trích xuất các đoạn văn bản?
-
-A: Hướng dẫn này chủ yếu tập trung vào việc tìm kiếm các phân đoạn văn bản và lấy các thuộc tính của chúng. Nếu bạn có ý định sửa đổi PDF, bạn có thể tham khảo tài liệu Aspose.PDF khác để tìm hiểu cách thao tác và lưu tài liệu dựa trên nhu cầu cụ thể của bạn.
+### Phương pháp này có áp dụng được cho các tệp PDF được mã hóa không?
+Có, miễn là bạn mở khóa PDF bằng mật khẩu đúng.

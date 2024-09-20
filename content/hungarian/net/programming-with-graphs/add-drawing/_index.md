@@ -167,7 +167,7 @@ Az Aspose.PDF for .NET egy olyan könyvtár, amely lehetővé teszi a fejlesztő
 
 ### Hol találom az Aspose.PDF for .NET dokumentációját?
 
- A dokumentáció a címen érhető el[Aspose dokumentációs oldal](https://reference.aspose.com/pdf/net/).
+ A dokumentáció elérhető a[Aspose dokumentációs oldal](https://reference.aspose.com/pdf/net/).
 
 ### Hogyan kaphatok támogatást az Aspose.PDF for .NET számára?
 

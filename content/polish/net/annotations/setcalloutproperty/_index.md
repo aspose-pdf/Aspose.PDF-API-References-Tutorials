@@ -129,7 +129,7 @@ doc.Save(dataDir + "SetCalloutProperty.pdf");
 
 ## Wniosek
 
-masz to! Właśnie utworzyłeś dokument PDF z adnotacją objaśniającą przy użyciu Aspose.PDF dla .NET. Ta adnotacja może być niezwykle przydatna do wyróżniania lub wyjaśniania określonych części dokumentu. Aspose.PDF oferuje potężne API, które sprawia, że manipulacja PDF jest prosta i elastyczna. Niezależnie od tego, czy dodajesz adnotacje, konwertujesz dokumenty, czy obsługujesz złożone zadania PDF, Aspose.PDF ma dla Ciebie rozwiązanie.
+masz! Właśnie utworzyłeś dokument PDF z adnotacją objaśniającą przy użyciu Aspose.PDF dla .NET. Ta adnotacja może być niezwykle przydatna do wyróżniania lub wyjaśniania określonych części dokumentu. Aspose.PDF oferuje potężne API, które sprawia, że manipulacja PDF jest prosta i elastyczna. Niezależnie od tego, czy dodajesz adnotacje, konwertujesz dokumenty, czy obsługujesz złożone zadania PDF, Aspose.PDF ma dla Ciebie rozwiązanie.
 
 ## Najczęściej zadawane pytania
 

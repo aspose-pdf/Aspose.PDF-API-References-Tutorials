@@ -77,7 +77,7 @@ doc.Form.XFA[names[0]] = "Field 0";
 doc.Form.XFA[names[1]] = "Field 1";
 ```
 
- Ez a lépés olyan, mintha megragadná a tollat, és leírná az információkat az űrlap egyes részeiben. Az első mező megtelik`"Field 0"` , a második pedig a`"Field 1"`. Ezeket az értékeket lecserélheti a dokumentumra vonatkozó bármire.
+ Ez a lépés olyan, mintha megragadná a tollat, és leírná az információkat az űrlap egyes részeiben. Az első mező megtelik`"Field 0"` , a második pedig`"Field 1"`. Ezeket az értékeket lecserélheti a dokumentumra vonatkozó bármire.
 
 ## 4. lépés: Mentse el a frissített dokumentumot
 

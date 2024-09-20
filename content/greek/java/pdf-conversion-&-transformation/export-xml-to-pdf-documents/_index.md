@@ -28,7 +28,7 @@ url: /el/java/pdf-conversion-transformation/export-xml-to-pdf-documents/
 Για να ξεκινήσετε να χρησιμοποιείτε το Aspose.PDF για Java, πρέπει να προσθέσετε τη βιβλιοθήκη Aspose.PDF στο έργο σας. Μπορείτε να κάνετε λήψη της βιβλιοθήκης από τον ιστότοπο και να την προσθέσετε ως εξάρτηση στο έργο σας.
 
 ```java
-// Προσθέστε το Aspose.PDF ως εξάρτηση
+// Προσθήκη Aspose.PDF ως εξάρτηση
 import com.aspose.pdf.*;
 ```
 

@@ -14,7 +14,7 @@ url: /ru/java/pdf-annotations/add-comments-pdf-documents/
 
 ## Начало работы с Aspose.PDF для Java
 
- Для начала вам нужно настроить среду разработки. Убедитесь, что у вас установлена библиотека Aspose.PDF for Java. Вы можете загрузить ее с[здесь](https://releases.aspose.com/pdf/java/).
+Для начала вам нужно настроить среду разработки. Убедитесь, что у вас установлена библиотека Aspose.PDF for Java. Вы можете загрузить ее с[здесь](https://releases.aspose.com/pdf/java/).
 
 ## Создание PDF-документа
 

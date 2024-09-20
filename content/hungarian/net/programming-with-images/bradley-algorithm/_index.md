@@ -18,7 +18,7 @@ Ez az oktatóanyag végigvezeti Önt egy részletes, könnyen követhető folyam
 Mielőtt belemerülnénk a kódba, győződjünk meg arról, hogy minden megvan, ami a követéshez szükséges:
 
 -  Aspose.PDF .NET-hez: Szüksége lesz a könyvtárra. Töltse le innen[itt](https://releases.aspose.com/pdf/net/).
-- Visual Studio (vagy bármilyen C# IDE).
+- Visual Studio (vagy bármely C# IDE).
 - C# alapismeretek.
 -  Érvényes jogosítvány vagy a[ideiglenes engedély](https://purchase.aspose.com/temporary-license/) Aspose-tól.
 
@@ -151,5 +151,5 @@ Kiváló minőségű képekhez általában 300 DPI javasolt. Ezt az értéket az
 ### Mit jelent az 1bpp színmélységben?
 Az 1 bpp (1 bit/pixel) azt jelenti, hogy a kép fekete-fehér lesz, minden képpont teljesen fekete vagy teljesen fehér.
 
-### A Bradley algoritmus alkalmas OCR-re?
+### Alkalmas-e a Bradley algoritmus az OCR-hez?
 Igen, a Bradley algoritmust gyakran használják az OCR előfeldolgozásban, mert növeli a beolvasott dokumentumok szövegének kontrasztját.

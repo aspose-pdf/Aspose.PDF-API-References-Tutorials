@@ -2,192 +2,154 @@
 title: Přidat textový rámeček do souboru PDF
 linktitle: Přidat textový rámeček do souboru PDF
 second_title: Aspose.PDF pro .NET API Reference
-description: Naučte se, jak přidat textové ohraničení do souboru PDF pomocí Aspose.PDF pro .NET.
+description: Naučte se, jak přidat textové ohraničení do souboru PDF pomocí Aspose.PDF for .NET pomocí tohoto podrobného průvodce. Vylepšete své PDF dokumenty.
 type: docs
 weight: 70
 url: /cs/net/programming-with-text/add-text-border/
 ---
-Tento tutoriál vás provede procesem přidání textového ohraničení do souboru PDF pomocí Aspose.PDF pro .NET. Poskytnutý zdrojový kód C# ukazuje potřebné kroky.
+## Zavedení
 
-## Požadavky
-Než začnete, ujistěte se, že máte následující:
+Vytváření a manipulace s dokumenty PDF se v dnešním digitálním světě staly nezbytnou dovedností. Ať už generujete sestavy, faktury nebo jakýkoli jiný typ dokumentace, mít kontrolu nad tím, jak bude váš text vypadat, může znamenat významný rozdíl. Jedním z takových vylepšení, které možná budete chtít implementovat, je přidání ohraničení kolem textu v souboru PDF. V této příručce vás provedeme kroky k přidání textového ohraničení do souboru PDF pomocí knihovny Aspose.PDF pro .NET. Takže, pojďme se rovnou ponořit!
 
-- Visual Studio nebo jakýkoli jiný kompilátor C# nainstalovaný na vašem počítači.
-- Aspose.PDF pro knihovnu .NET. Můžete si jej stáhnout z oficiálního webu Aspose nebo jej nainstalovat pomocí správce balíčků, jako je NuGet.
+## Předpoklady
 
-## Krok 1: Nastavte projekt
-1. Vytvořte nový projekt C# ve vámi preferovaném vývojovém prostředí.
-2. Přidejte odkaz na knihovnu Aspose.PDF for .NET.
+Než začneme, je pár věcí, které musíte mít na svém místě. Nebojte se, je to docela jednoduché!
 
-## Krok 2: Importujte požadované jmenné prostory
-Do souboru kódu, kam chcete přidat textové ohraničení, přidejte následující pomocí direktivy v horní části souboru:
+1. Visual Studio: Ujistěte se, že máte na svém počítači nainstalované Visual Studio. Toto bude vaše vývojové prostředí, kde budete psát a spouštět svůj kód.
+2.  Aspose.PDF for .NET: Budete si muset stáhnout a nainstalovat knihovnu Aspose.PDF. Můžete to získat z[Aspose PDF for .NET download page](https://releases.aspose.com/pdf/net/) . Pokud si to chcete nejprve vyzkoušet, můžete také získat a[zkušební verze zdarma zde](https://releases.aspose.com/).
+3. Základní znalost C#: Základní znalost programovacího jazyka C# vám pomůže snadno následovat příklady.
+4. .NET Framework: Ujistěte se, že máte ve svém projektu nainstalované a nastavené rozhraní .NET Framework.
+
+Jakmile máte tyto předpoklady na místě, jste připraveni začít kódovat!
+
+## Importujte balíčky
+
+Nyní, když máme vše nastaveno, pojďme importovat potřebné balíčky pro použití Aspose.PDF v našem projektu. Můžete to udělat přidáním následujícího pomocí direktiv v horní části souboru C#:
 
 ```csharp
-using Aspose.Pdf;
 using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
 ```
 
-## Krok 3: Nastavte adresář dokumentů
- V kódu vyhledejte řádek, který říká`string dataDir = "YOUR DOCUMENT DIRECTORY";` a nahradit`"YOUR DOCUMENT DIRECTORY"` s cestou k adresáři, kde jsou uloženy vaše dokumenty.
+Tyto jmenné prostory vám umožní efektivně pracovat s dokumenty PDF a textovými fragmenty. 
 
-## Krok 4: Vytvořte nový objekt dokumentu
- Vytvořte nový`Document` objekt přidáním následujícího řádku kódu:
+Nyní si rozeberme proces přidávání ohraničení textu do podrobných kroků. Projdeme si každý krok, abyste přesně pochopili, co se děje pod kapotou.
 
-```csharp
-Document pdfDocument = new Document();
-```
+## Krok 1: Nastavte dokument
 
-## Krok 5: Přidejte do dokumentu stránku
- Přidejte do dokumentu novou stránku pomocí`Add` metoda`Pages` sbírka. V poskytnutém kódu je nová stránka přiřazena k proměnné`pdfPage`.
+Nejprve musíme vytvořit nový dokument PDF. Tady se stane všechna naše kouzla.
 
-```csharp
-Page pdfPage = (Page)pdfDocument.Pages.Add();
-```
-
-## Krok 6: Vytvořte TextFragment
- Vytvořte a`TextFragment`objekt a zadejte požadovaný text. Nastavte polohu textového fragmentu pomocí`Position` vlastnictví. V poskytnutém kódu je text nastaven na "hlavní text" a umístěn na stránce (100, 600).
-
-```csharp
-TextFragment textFragment = new TextFragment("main text");
-textFragment.Position = new Position(100, 600);
-```
-
-## Krok 7: Nastavte vlastnosti textu
-Přizpůsobte vlastnosti textu, jako je velikost písma, typ písma, barva pozadí, barva popředí atd. V poskytnutém kódu jsou pro fragment textu nastaveny vlastnosti, jako je velikost písma, písmo, barva pozadí, barva popředí a barva tahu.
-
-```csharp
-textFragment.TextState.FontSize = 12;
-textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
-```
-
-## Krok 8: Povolte ohraničení textu
- Chcete-li povolit ohraničení textu, nastavte`DrawTextRectangleBorder` vlastnost fragmentu textu`TextState` na`true`.
-
-```csharp
-textFragment.TextState.DrawTextRectangleBorder = true;
-```
-
-## Krok 9: Přidejte TextFragment na stránku
- Použijte`TextBuilder` třídy přidat`TextFragment` vznést námitku proti stránce.
-
-```csharp
-TextBuilder tb = new TextBuilder(pdfPage);
-tb.AppendText(textFragment);
-```
-
-## Krok 10: Uložte dokument PDF
- Uložte dokument PDF pomocí`Save` metoda`Document` objekt. Zadejte cestu k výstupnímu souboru, kterou jste nastavili v kroku 3.
-
-```csharp
-pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
-```
-
-### Ukázkový zdrojový kód pro Add Text Border pomocí Aspose.PDF pro .NET 
 ```csharp
 // Cesta k adresáři dokumentů.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Vytvořte nový objekt dokumentu
 Document pdfDocument = new Document();
+```
+
+ V tomto kroku určíme adresář, kam chceme uložit náš PDF soubor. Poté vytvoříme novou instanci`Document` třídy, která představuje náš dokument PDF.
+
+## Krok 2: Přidejte novou stránku
+
+Dále musíme do našeho dokumentu přidat stránku. Berte to jako přidání prázdného plátna, kam umístíme náš text.
+
+```csharp
 // Získejte konkrétní stránku
 Page pdfPage = (Page)pdfDocument.Pages.Add();
+```
+
+ Zde nazýváme`Add()` metoda na`Pages` sbírka našeho`pdfDocument` objekt. Tím se do dokumentu přidá nová stránka a odkaz na ni uložíme do souboru`pdfPage` variabilní.
+
+## Krok 3: Vytvořte textový fragment
+
+Nyní vytvoříme text, který chceme zobrazit v našem PDF. Zde definujeme obsah našeho textového fragmentu.
+
+```csharp
 // Vytvořte fragment textu
 TextFragment textFragment = new TextFragment("main text");
 textFragment.Position = new Position(100, 600);
+```
+
+ V tomto kódu vytvoříme nový`TextFragment` objekt s textem "hlavní text". Jeho pozici na stránce nastavíme také pomocí`Position` třída. Souřadnice (100, 600) určují, kde bude text na stránce umístěn.
+
+## Krok 4: Nastavte vlastnosti textu
+
+Dále upravíme náš fragment textu, aby byl vizuálně přitažlivý. To zahrnuje nastavení velikosti písma, typu písma, barvy pozadí a barvy popředí.
+
+```csharp
 // Nastavte vlastnosti textu
 textFragment.TextState.FontSize = 12;
 textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
+```
+
+Zde nastavíme velikost písma na 12, jako písmo použijeme „Times New Roman“ a použijeme světle šedou barvu pozadí s červeným textem. Tyto vlastnosti pomáhají zlepšit viditelnost textu.
+
+## Krok 5: Nastavte barvu tahu pro okraj
+
+Nyní se dostáváme k vzrušující části – přidávání ohraničení kolem našeho textu!
+
+```csharp
 // Nastavte vlastnost StrokingColor pro kreslení ohraničení (tahu) kolem textového obdélníku
 textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
+```
+
+V tomto kroku určíme barvu ohraničení, které chceme kolem našeho textu nakreslit. Zde jsme zvolili tmavě červenou barvu.
+
+## Krok 6: Povolte ohraničení obdélníku textu
+
+ Abychom skutečně nakreslili ohraničení kolem našeho textu, musíme povolit`DrawTextRectangleBorder` vlastnictví.
+
+```csharp
 // Nastavte hodnotu vlastnosti DrawTextRectangleBorder na true
 textFragment.TextState.DrawTextRectangleBorder = true;
+```
+
+ Nastavením této vlastnosti na`true`, řekneme Aspose.PDF, aby nakreslil ohraničení kolem textového obdélníku na základě zadané barvy tahu.
+
+## Krok 7: Připojte textový fragment na stránku
+
+Nyní, když máme náš textový fragment připraven se všemi nastavenými vlastnostmi, je čas jej přidat na stránku.
+
+```csharp
 TextBuilder tb = new TextBuilder(pdfPage);
 tb.AppendText(textFragment);
+```
+
+ Zde vytvoříme a`TextBuilder` objekt, který je spojen s naším`pdfPage` . Poté použijeme`AppendText` způsob přidání našeho`textFragment` na stránku. 
+
+## Krok 8: Uložte dokument
+
+Nakonec musíme uložit náš dokument PDF do zadaného adresáře. Toto je okamžik pravdy!
+
+```csharp
 // Uložte dokument
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
+ tomto kroku zavoláme`Save` metoda na našem`pdfDocument` objekt, poskytující cestu, kam chceme soubor uložit. Jakmile kód spustíte, měli byste najít svůj nově vytvořený PDF s ohraničením textu v určeném adresáři!
+
 ## Závěr
-Úspěšně jste přidali textové ohraničení do dokumentu PDF pomocí Aspose.PDF pro .NET. Výsledný soubor PDF lze nyní nalézt na zadané cestě k výstupnímu souboru.
 
-### FAQ
+A tady to máte! Úspěšně jste přidali textové ohraničení do souboru PDF pomocí Aspose.PDF for .NET. Tato jednoduchá, ale výkonná funkce může výrazně zlepšit čitelnost a estetiku vašich dokumentů PDF. Ať už vytváříte zprávy, brožury nebo jakýkoli jiný typ dokumentace, vědět, jak manipulovat s formátováním textu, se může hodit.
 
-#### Otázka: Co je hlavním zaměřením tohoto tutoriálu?
+## FAQ
 
-Odpověď: Tento tutoriál vás provede procesem přidání textového ohraničení do souboru PDF pomocí knihovny Aspose.PDF for .NET. Poskytnutý zdrojový kód C# demonstruje nezbytné kroky k dosažení tohoto cíle.
+### Co je Aspose.PDF pro .NET?
+Aspose.PDF for .NET je výkonná knihovna, která umožňuje vývojářům vytvářet, manipulovat a zpracovávat dokumenty PDF programově pomocí rozhraní .NET.
 
-#### Otázka: Které jmenné prostory musím pro tento výukový program importovat?
+### Mohu vyzkoušet Aspose.PDF zdarma?
+ Ano! Aspose nabízí a[zkušební verze zdarma](https://releases.aspose.com/) jejich knihovny PDF, což vám umožní otestovat její funkce před nákupem.
 
-Odpověď: Do souboru kódu, kam chcete přidat textové ohraničení, importujte na začátek souboru následující jmenné prostory:
+### Jak koupím Aspose.PDF pro .NET?
+ Aspose.PDF pro .NET si můžete koupit přímo od nich[nákupní stránku](https://purchase.aspose.com/buy).
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
+### Je k dispozici podpora pro Aspose.PDF?
+ Absolutně! Podporu můžete získat návštěvou stránky[Aspose fórum podpory](https://forum.aspose.com/c/pdf/10).
 
-#### Otázka: Jak určím adresář dokumentů?
-
- Odpověď: V kódu vyhledejte řádek`string dataDir = "YOUR DOCUMENT DIRECTORY";` a nahradit`"YOUR DOCUMENT DIRECTORY"` se skutečnou cestou k vašemu adresáři dokumentů.
-
-#### Otázka: Jak vytvořím objekt dokumentu?
-
- Odpověď: V kroku 4 vytvoříte instanci nového`Document` objekt pomocí následujícího řádku kódu:
-
-```csharp
-Document pdfDocument = new Document();
-```
-
-#### Otázka: Jak přidám stránku do dokumentu?
-
- Odpověď: V kroku 5 přidáte do dokumentu novou stránku pomocí`Add` metoda`Pages` sbírka:
-
-```csharp
-Page pdfPage = (Page)pdfDocument.Pages.Add();
-```
-
-#### Otázka: Jak vytvořím TextFragment a nastavím jeho pozici?
-
- Odpověď: V kroku 6 vytvoříte a`TextFragment` objektu a nastavte jeho pozici na stránce pomocí`Position` vlastnictví:
-
-```csharp
-TextFragment textFragment = new TextFragment("main text");
-textFragment.Position = new Position(100, 600);
-```
-
-#### Otázka: Jak mohu přizpůsobit vlastnosti textu, včetně ohraničení textu?
-
-Odpověď: V kroku 7 přizpůsobíte různé vlastnosti textu, jako je velikost písma, typ písma, barva pozadí, barva popředí a ohraničení textu:
-
-```csharp
-textFragment.TextState.FontSize = 12;
-textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
-textFragment.TextState.DrawTextRectangleBorder = true;
-```
-
-#### Otázka: Jak přidám TextFragment do dokumentu PDF?
-
- Odpověď: V kroku 9 použijete`TextBuilder` třídy přidat`TextFragment` vznést námitku na stránku:
-
-```csharp
-TextBuilder tb = new TextBuilder(pdfPage);
-tb.AppendText(textFragment);
-```
-
-#### Otázka: Jak uložím výsledný dokument PDF?
-
-A: Po přidání textu s okrajem použijte`Save` metoda`Document` objekt pro uložení dokumentu PDF:
-
-```csharp
-pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
-```
-
-#### Otázka: Jaký je hlavní poznatek z tohoto tutoriálu?
-
-Odpověď: Podle tohoto kurzu jste se úspěšně naučili, jak vylepšit dokument PDF přidáním ohraničení textu pomocí Aspose.PDF for .NET. To může být užitečné zejména pro zdůraznění konkrétního textového obsahu v souborech PDF.
+### Co když potřebuji dočasnou licenci?
+ Aspose poskytuje a[dočasná licence](https://purchase.aspose.com/temporary-license/) možnost pro vývojáře, kteří potřebují hodnotit knihovnu po omezenou dobu.

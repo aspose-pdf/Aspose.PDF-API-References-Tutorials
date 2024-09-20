@@ -9,7 +9,7 @@ url: /nl/net/programming-with-stamps-and-watermarks/add-image-stamp/
 ---
 ## Invoering
 
-Als het aankomt op het manipuleren van PDF-bestanden, zijn er maar weinig tools zo robuust en gebruiksvriendelijk als Aspose.PDF voor .NET. Of u nu aantekeningen wilt toevoegen, formulieren wilt maken of afbeeldingen wilt stempelen, deze bibliotheek biedt uitgebreide functionaliteit om te voldoen aan verschillende PDF-manipulatiebehoeften. In deze tutorial richten we ons op een specifieke taak: een afbeeldingstempel toevoegen aan een PDF-bestand. Dit gaat niet alleen over het plakken van een afbeelding op een pagina; het gaat over het verbeteren van uw documenten met branding en visuele aantrekkingskracht!
+Als het aankomt op het manipuleren van PDF-bestanden, zijn er maar weinig tools die zo robuust en gebruiksvriendelijk zijn als Aspose.PDF voor .NET. Of u nu aantekeningen wilt toevoegen, formulieren wilt maken of afbeeldingen wilt stempelen, deze bibliotheek biedt uitgebreide functionaliteit om te voldoen aan verschillende PDF-manipulatiebehoeften. In deze tutorial richten we ons op een specifieke taak: een afbeeldingstempel toevoegen aan een PDF-bestand. Dit gaat niet alleen over het plakken van een afbeelding op een pagina; het gaat over het verbeteren van uw documenten met branding en visuele aantrekkingskracht!
 
 ## Vereisten
 

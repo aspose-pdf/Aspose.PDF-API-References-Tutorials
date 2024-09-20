@@ -2,135 +2,129 @@
 title: Elemana Yapı Elemanı Ekle
 linktitle: Elemana Yapı Elemanı Ekle
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET kullanarak PDF belgesine yapı öğesi eklemeye yönelik adım adım kılavuz.
+description: Bu kapsamlı adım adım eğitimde, Aspose.PDF for .NET kullanarak PDF'lere erişilebilirlik yapı öğelerinin nasıl ekleneceğini öğrenin.
 type: docs
 weight: 20
 url: /tr/net/programming-with-tagged-pdf/add-structure-element-into-element/
 ---
-Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF belgesindeki bir öğeye bir yapı öğesinin nasıl ekleneceği konusunda adım adım bir kılavuz sağlayacağız. Aspose.PDF, PDF belgelerini programatik olarak oluşturmanıza, düzenlemenize ve dönüştürmenize olanak tanıyan güçlü bir kütüphanedir. Aspose.PDF'nin işaretli içerik yapısı özelliklerini kullanarak PDF belgenizde hiyerarşik bir yapı oluşturabilirsiniz.
+## giriiş
+
+Günümüzün dijital dünyasında erişilebilirlik anahtardır. Herkesin bilgiye eşit erişimi olmalı ve bunu herkesin kolayca gezinebileceği bir biçimde sağlamak hayati önem taşır. Bu eğitimde, .NET için Aspose.PDF kullanarak yapı öğeleri ekleyerek PDF erişilebilirliğini nasıl artıracağımızı ele alacağız. Bu güçlü kitaplık, geliştiricilerin PDF belgeleriyle sorunsuz bir şekilde çalışmasını sağlayarak erişilebilirlik standartlarına uygun etiketli PDF'ler oluşturmalarını sağlar.
 
 ## Ön koşullar
 
-Başlamadan önce aşağıdaki ön koşulların mevcut olduğundan emin olun:
+PDF yapı öğelerinin dünyasına yolculuğumuza başlamadan önce, ihtiyacınız olan her şeye sahip olduğunuzdan emin olalım:
 
-1. .NET framework ile Visual Studio kuruldu.
-2. .NET için Aspose.PDF kütüphanesi.
+1.  Görsel Stüdyo: Bu, C# kodunuzu yazacağınız ve çalıştıracağınız IDE'nizdir. Buradan indirebilirsiniz[Visual Studio](https://visualstudio.microsoft.com/) Eğer henüz yapmadıysanız.
+2.  .NET için Aspose.PDF Kütüphanesi: PDF'leri düzenlemek için kütüphaneye ihtiyacınız olacak. En son sürümü şu adresten indirin:[Aspose web sitesi](https://releases.aspose.com/pdf/net/)Bu kütüphane projemiz için çok önemli.
+3. Temel C# Bilgisi: C# sözdizimi ve nesne yönelimli programlamaya aşinalık faydalı olacaktır. Birkaç satır C# yazabiliyorsanız, hazırsınız demektir!
+4. PDF Belge Dizini: Bu eğitim için giriş ve çıkış PDF dosyalarını saklayacağınız sisteminizde bir dizin oluşturun.
 
-## Adım 1: Proje Kurulumu
+Artık araçlarımızı ve bilgilerimizi hazırladığımıza göre, işe koyulmak için gerekli paketleri hazırlayalım!
 
-Başlamak için, Visual Studio'da yeni bir proje oluşturun ve Aspose.PDF for .NET kütüphanesine bir referans ekleyin. Kütüphaneyi Aspose resmi web sitesinden indirebilir ve makinenize kurabilirsiniz.
+## Paketleri İçe Aktar
 
-## Adım 2: Gerekli ad alanlarını içe aktarın
-
-C# kod dosyanıza, Aspose.PDF tarafından sağlanan sınıflara ve yöntemlere erişmek için gereken ad alanlarını içe aktarın:
+İlk önce gerekli ad alanlarını içe aktaralım. C# dosyanızın en üstünde aşağıdakilerin olduğundan emin olun:
 
 ```csharp
-using System;
-using Aspose.Pdf;
+using Aspose.Pdf.LogicalStructure;
 using Aspose.Pdf.Tagged;
+using System;
 ```
 
-## Adım 3: PDF belgesini oluşturma ve yapılandırılmış öğeleri tanımlama
+Bu ad alanları, PDF belgelerinizle çalışmak ve etiketli içerik oluşturmak için gereken sınıflara ve yöntemlere erişmenizi sağlar. Şimdi, konunun özüne inelim ve kodlamaya başlayalım!
 
-Bir PDF belgesi oluşturmak ve yapılandırılmış öğeleri tanımlamak için aşağıdaki kodu kullanın:
+## Adım 1: Belge Dizininizi Ayarlayın
+
+Herhangi bir kodlama gerçekleşmeden önce, dosyalarımızı nereye kaydedeceğimizi belirlememiz gerekir. Bu, betiğimizin sorunsuz çalışması için çok önemlidir.
 
 ```csharp
+// Belgeler dizinine giden yolu tanımlayın.
+string dataDir = "YOUR DOCUMENT DIRECTORY"; 
+```
 
-string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
-string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
-string logFile = dataDir + "46144_log.xml";
+ Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` PDF dosyalarınızı saklamak istediğiniz gerçek yol ile. Bu, aşağıdaki gibi bir şey olabilir`C:\\PDFs\\`.
 
+## Adım 2: Yeni bir PDF Belgesi Oluşturun
+
+Artık dizinimiz hazır olduğuna göre, yapı elemanlarımızı ekleyeceğimiz bir PDF belgesi oluşturalım.
+
+```csharp
 Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example Text Items");
-taggedContent.SetLanguage("fr-FR");
-
-StructureElement rootElement = taggedContent.RootElement;
-
-ParagraphElement p1 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p1);
-SpanElement span11 = taggedContent.CreateSpanElement();
-span11.SetText("Span_11");
-SpanElement span12 = taggedContent.CreateSpanElement();
-span12.SetText(" and Span_12.");
-p1.SetText("Paragraph with ");
-p1.AppendChild(span11);
-p1.AppendChild(span12);
-
-ParagraphElement p2 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p2);
-SpanElement span21 = taggedContent.CreateSpanElement();
-span21.SetText("Span_21");
-SpanElement span22 = taggedContent.CreateSpanElement();
-span22.SetText("Span_22.");
-p2.AppendChild(span21);
-p2.SetText(" and ");
-p2.AppendChild(span22);
-
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("Span_31");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText(" and Span_32");
-p3.AppendChild(span31);
-p3.AppendChild(span32);
-p3.SetText(".");
-
-ParagraphElement p4 = taggedContent.CreateParagraphElement();
-root
-
-Element.AppendChild(p4);
-SpanElement span41 = taggedContent.CreateSpanElement();
-SpanElement span411 = taggedContent.CreateSpanElement();
-span411.SetText("Span_411, ");
-span41.SetText("Span_41, ");
-span41.AppendChild(span411);
-SpanElement span42 = taggedContent.CreateSpanElement();
-SpanElement span421 = taggedContent.CreateSpanElement();
-span421.SetText("Span 421 and ");
-span42.AppendChild(span421);
-span42.SetText("Span_42");
-p4.AppendChild(span41);
-p4.AppendChild(span42);
-p4.SetText(".");
 ```
 
-Bu kod boş bir PDF belgesi oluşturur ve paragraflar ve aralıklar gibi yapılandırılmış öğeler ekler. Her yapı öğesi Aspose.PDF tarafından sağlanan yöntemler kullanılarak oluşturulur.
+ Bu satır, yeni bir örneğini başlatır`Document` Sınıf, PDF içeriğimizle çalışmaya başlamamızı sağlıyor.
 
-## Adım 4: PDF Belgesini Kaydetme
+## Adım 3: Etiketli İçeriğe Erişim ve Kurulum
 
-PDF belgesini kaydetmek için aşağıdaki kodu kullanın:
+Belgeniz hazır olduğunda, erişilebilirlik için olmazsa olmaz olan etiketli içerikleri ayarlamanın zamanı geldi.
+
+### Etiketli İçeriği Başlat
 
 ```csharp
-document. Save(outFile);
+ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-Bu kod, yapılandırılmış öğeler içeren PDF belgesini belirtilen bir dosyaya kaydeder.
+Bu satır PDF'nizin etiketli içeriğine erişim sağlar. Etiketli içerik, ekran okuyucuların belgenizi doğru bir şekilde yorumlayabilmesi için gereklidir.
 
-### .NET için Aspose.PDF kullanarak Elemana Yapı Elemanı Ekleme için örnek kaynak kodu 
+### Belge Meta Verilerini Ayarla
+
+Belgenize uygun bir başlık vermeli ve dili tanımlamalısınız.
+
 ```csharp
-// Belgeler dizinine giden yol.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
-string logFile = dataDir + "46144_log.xml";
-//Belge oluşturma ve Etiketli Pdf İçeriği alma
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-// Belge için Başlık ve Doğa Dilinin Ayarlanması
 taggedContent.SetTitle("Text Elements Example");
 taggedContent.SetLanguage("en-US");
-// Kök yapı elemanını alma (Belge yapı elemanı)
+```
+
+Bu, belgenin meta verilerini geliştirir ve erişilebilirliğini artırır.
+
+## Adım 4: Yapı Öğelerini Oluşturun ve Ekleyin
+
+Biraz yapı ekleyelim! Bu, düzgün biçimlendirilmiş ve etiketlenmiş bir belge oluşturmak için paragraflar ve span öğeleri oluşturmayı içerir.
+
+### Kök Yapı Elemanı Oluştur
+
+```csharp
 StructureElement rootElement = taggedContent.RootElement;
+```
+
+Şimdi ilk paragraf ve span elemanlarımızı oluşturacağız.
+
+### İlk Paragraf Öğesini Oluştur
+
+```csharp
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p1);
+```
+
+Burada yeni bir paragraf öğesi başlatıyoruz ve onu kök yapı öğesine ekliyoruz. Bu, içeriğinizin başlangıç noktasıdır!
+
+### Paragrafa Span Elemanları Ekle
+
+```csharp
 SpanElement span11 = taggedContent.CreateSpanElement();
 span11.SetText("Span_11");
 SpanElement span12 = taggedContent.CreateSpanElement();
 span12.SetText(" and Span_12.");
+```
+
+ The`span` öğeler, daha büyük paragrafımızın içindeki mini paragraflar gibidir. Metin biçimlendirmesi üzerinde daha ince kontrol sağlarlar.
+
+### Hepsini Birleştir
+
+Şimdi tüm unsurları bir araya getirerek tam paragrafı oluşturalım:
+
+```csharp
 p1.SetText("Paragraph with ");
 p1.AppendChild(span11);
 p1.AppendChild(span12);
+```
+
+### Ek Paragraflar için tekrarlayın
+
+Bu işlemi diğer paragraflar için tekrarlayacaksınız:
+
+```csharp
 ParagraphElement p2 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p2);
 SpanElement span21 = taggedContent.CreateSpanElement();
@@ -140,77 +134,60 @@ span22.SetText("Span_22.");
 p2.AppendChild(span21);
 p2.SetText(" and ");
 p2.AppendChild(span22);
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("Span_31");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText(" and Span_32");
-p3.AppendChild(span31);
-p3.AppendChild(span32);
-p3.SetText(".");
-ParagraphElement p4 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p4);
-SpanElement span41 = taggedContent.CreateSpanElement();
-SpanElement span411 = taggedContent.CreateSpanElement();
-span411.SetText("Span_411, ");
-span41.SetText("Span_41, ");
-span41.AppendChild(span411);
-SpanElement span42 = taggedContent.CreateSpanElement();
-SpanElement span421 = taggedContent.CreateSpanElement();
-span421.SetText("Span 421 and ");
-span42.AppendChild(span421);
-span42.SetText("Span_42");
-p4.AppendChild(span41);
-p4.AppendChild(span42);
-p4.SetText(".");
-// Etiketli PDF Belgesini Kaydet
+```
+
+ Sadece yaratmaya devam et`ParagraphElement` kum`SpanElement` s, bunları ekleyerek`rootElement` yukarıda gösterildiği gibi aynı şekilde`p1`.
+
+## Adım 5: Belgenizi Kaydedin
+
+Tüm yapı öğeleriniz yerli yerindeyken, PDF belgenizi kaydetme zamanı geldi.
+
+### Çıktı Dosyası Yolunu Belirleyin
+
+```csharp
+string outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
+```
+
+### Belgeyi Kaydet
+
+```csharp
 document.Save(outFile);
-// PDF/UA uyumluluğunun kontrol edilmesi
+```
+
+İşte sihir burada gerçekleşiyor! Belgeniz belirtilen çıktı dosyası yoluna kaydedilir.
+
+## Adım 6: PDF/UA Uyumluluğunu Doğrulayın
+
+Son adım, belgenizin erişilebilirlik açısından PDF/UA standartlarına uygun olup olmadığını kontrol etmektir.
+
+Uygunluğu kontrol etmek için aşağıdaki kodu kullanın:
+
+```csharp
 document = new Document(outFile);
+string logFile = dataDir + "46144_log.xml";
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
 ```
+
+Bu, erişilebilirlik açısından önemli olan belgenizin PDF/UA standartlarına uygun olup olmadığını gösterecektir.
 
 ## Çözüm
 
-Bu eğitimde, .NET için Aspose.PDF kullanarak bir PDF belgesindeki bir öğeye bir yapı öğesinin nasıl ekleneceğini öğrendiniz. Aspose.PDF'nin işaretli içerik yapısı özelliklerini kullanarak, PDF belgenizde hiyerarşik bir yapı oluşturabilir, bu da içeriği yönetmeyi ve gezinmeyi kolaylaştırır.
+İşte karşınızda! Aspose.PDF for .NET kullanarak bir PDF belgesine yapı öğelerinin nasıl ekleneceğini öğrendiniz. Bu adımları izleyerek, herhangi bir PDF'yi standartlara uyan erişilebilir bir biçime dönüştürebilir ve herkesin bilgiye eşit erişimden yararlanmasını sağlayabilirsiniz. 
 
-### SSS
+## SSS
 
-#### S: Aspose.PDF for .NET kullanarak bir PDF belgesindeki bir öğeye yapı öğesi eklemenin amacı nedir?
+### Aspose.PDF for .NET nedir?
+Aspose.PDF for .NET, geliştiricilerin PDF belgelerini programlı bir şekilde oluşturmalarına, düzenlemelerine ve dönüştürmelerine olanak tanıyan bir kütüphanedir.
 
-A: Aspose.PDF for .NET kullanarak bir PDF belgesindeki bir öğeye bir yapı öğesi eklemek, belgenin içeriğinde hiyerarşik bir yapı oluşturmanıza olanak tanır. Bu hiyerarşik yapı, içeriğin organizasyonunu ve gezinmesini geliştirerek belirli öğeleri yönetmeyi ve erişmeyi kolaylaştırır.
+### PDF dosyamın erişilebilir olup olmadığını nasıl kontrol edebilirim?
+Erişilebilirlik yönergelerine uyduğundan emin olmak için Aspose.PDF kütüphanesini kullanarak PDF'nizi PDF/UA standartlarına göre doğrulayabilirsiniz.
 
-#### S: Aspose.PDF kütüphanesi bir PDF belgesine yapı öğeleri eklemeye nasıl yardımcı olur?
+### Aspose.PDF'yi ücretsiz kullanabilir miyim?
+ Evet, Aspose ücretsiz deneme sürümü sunuyor ve bu sayede özelliklerini hiçbir maliyet olmadan keşfedebilirsiniz. İndirebilirsiniz[Burada](https://releases.aspose.com/).
 
-A: Aspose.PDF for .NET, PDF belgelerini programatik olarak oluşturma, düzenleme ve dönüştürme yetenekleri sağlayan güçlü bir kütüphanedir. Bu eğitimde, kütüphanenin işaretli içerik yapısı özellikleri, PDF belgesinin içeriğine yapı öğeleri oluşturmak ve eklemek için kullanılır.
+### Aspose.PDF'in dokümanlarını nerede bulabilirim?
+Aspose.PDF için kapsamlı dokümanları bulabilirsiniz[Burada](https://reference.aspose.com/pdf/net/).
 
-#### S: Aspose.PDF for .NET kullanarak bir PDF belgesine yapı öğeleri eklemenin ön koşulları nelerdir?
-
-C: Başlamadan önce, Visual Studio'nun .NET Framework ile birlikte yüklü olduğundan ve projenizde .NET için Aspose.PDF kütüphanesine başvurulduğundan emin olun.
-
-#### S: Sağlanan C# kodu PDF belgesinin içeriğine yapı öğelerini nasıl oluşturur ve ekler?
-
-A: Kod, bir PDF belgesinin nasıl oluşturulacağını, bir kök yapı öğesinin nasıl tanımlanacağını ve paragraflar ve açıklıklar gibi çeşitli yapılandırılmış öğelerin nasıl ekleneceğini gösterir. Her yapılandırılmış öğe, Aspose.PDF tarafından sağlanan yöntemler kullanılarak oluşturulur ve hiyerarşik bir yapı oluşturmanıza olanak tanır.
-
-#### S: PDF belgesine eklediğim yapı elemanlarının türlerini özelleştirebilir miyim?
-
-C: Evet, Aspose.PDF kütüphanesi tarafından sağlanan farklı yöntemleri keşfederek yapı öğelerinin türlerini özelleştirebilirsiniz. Kod, örnek olarak paragrafları ve aralıkları gösterir, ancak ihtiyaç duyduğunuzda diğer türde yapılandırılmış öğeler oluşturabilir ve ekleyebilirsiniz.
-
-#### S: Eklenen yapı elemanları arasındaki hiyerarşik ilişkiyi nasıl tanımlarım?
-
- A: Yapı elemanları arasındaki hiyerarşik ilişki, bunları üst elemanlarına eklediğiniz sıraya göre tanımlanır. Kodda, üst-alt ilişkileri,`AppendChild` Yöntem.
-
-#### S: PDF belgesinde hiyerarşik bir yapı oluşturmanın faydaları nelerdir?
-
-A: PDF belgesinde hiyerarşik bir yapı oluşturmak erişilebilirliğini, gezinmesini ve organizasyonunu geliştirir. Yardımcı teknolojilerin belgenin içeriğini daha iyi yorumlamasına ve iletmesine olanak tanır ve engelli bireyler için daha kullanıcı dostu hale getirir.
-
-#### S: Yapı elemanlarını ekledikten sonra PDF/UA uyumluluğunu nasıl doğrulayabilirim?
-
-A: Eğitimde sağlanan kod, PDF/UA uyumluluğunun nasıl doğrulanacağını göstermektedir.`Validate` yöntem. Belgeyi PDF/UA standardına göre doğrulayarak, eklenen yapı öğelerinin erişilebilirlik yönergelerine uygun olduğundan emin olabilirsiniz.
-
-#### S: Bu yaklaşımı mevcut bir PDF belgesine yapı öğeleri eklemek için kullanabilir miyim?
-
-A: Evet, mevcut bir PDF belgesine yapı öğeleri eklemek için sağlanan yaklaşımı değiştirebilirsiniz. Yeni bir belge oluşturmak yerine, Aspose.PDF kullanarak mevcut belgeyi yükler ve ardından yapı öğelerini eklemek için benzer adımları izlersiniz.
+### Aspose.PDF için lisans nasıl satın alabilirim?
+ Lisansı doğrudan Aspose web sitesinden satın alabilirsiniz[Burada](https://purchase.aspose.com/buy).

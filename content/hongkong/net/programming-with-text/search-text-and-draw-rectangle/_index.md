@@ -2,88 +2,124 @@
 title: 搜尋文字並繪製一個矩形
 linktitle: 搜尋文字並繪製一個矩形
 second_title: Aspose.PDF for .NET API 參考
-description: 了解如何在 PDF 中搜尋文字、在找到的文字周圍繪製矩形以及使用 Aspose.PDF for .NET 儲存修改後的文件。
+description: 學習使用 Aspose.PDF for .NET 在 PDF 中搜尋文字並用矩形突出顯示它！簡單的逐步教學可增強 PDF 操作技能。
 type: docs
 weight: 460
 url: /zh-hant/net/programming-with-text/search-text-and-draw-rectangle/
 ---
-本教學課程介紹如何使用 Aspose.PDF for .NET 搜尋 PDF 文件中的特定文本，在找到的文本周圍繪製矩形，然後儲存修改後的文件。提供的 C# 原始程式碼逐步演示了該過程。
+## 介紹
+
+您想提升 PDF 操作技能嗎？您想了解如何在 PDF 文件中搜尋特定文字並用矩形突出顯示它嗎？您已經找到了完美的指南！今天，我將引導您了解如何使用 Aspose.PDF for .NET 在 PDF 文件中搜尋文字並在其周圍繪製矩形。本文將提供一個逐步教程，其設計時考慮到清晰性和實用性，確保您可以遵循這些技術並將其應用到您的專案中。 
 
 ## 先決條件
 
-在繼續學習本教學之前，請確保您具備以下條件：
+在深入學習本教學之前，讓我們先準備好確保工作流程順利進行所需的準備：
 
-- C# 程式語言的基礎知識。
-- 安裝了 Aspose.PDF for .NET 函式庫。您可以從 Aspose 網站取得它或使用 NuGet 將其安裝到您的專案中。
+1. 對 .NET 的基本了解：您應該熟悉 C# 程式設計和 .NET 框架，才能有效遵循本教學。
+   
+2. 安裝了 Visual Studio：您將需要一個整合開發環境 (IDE) 來編寫和測試程式碼。 Visual Studio Community 是一個不錯的選擇，而且是免費的。
+   
+3. Aspose.PDF for .NET：您需要在專案中安裝 Aspose.PDF 庫。你可以下載它[這裡](https://releases.aspose.com/pdf/net/)或考慮[臨時執照](https://purchase.aspose.com/temporary-license/)用於擴充功能。
+   
+4. 範例 PDF 文件：對於本教學課程，您將需要一個名為的範例 PDF 文件`SearchAndGetTextFromAll.pdf`儲存在您的專案目錄中。 
 
-## 第 1 步：設定項目
+## 導入包
 
-首先在您首選的整合開發環境 (IDE) 中建立一個新的 C# 項目，並新增對 Aspose.PDF for .NET 程式庫的參考。
+首先，您需要將必要的套件匯入到 .NET 專案中。請依照下列步驟操作：
 
-## 步驟2：導入必要的命名空間
+### 打開視覺工作室
 
-在 C# 檔案的開頭新增以下 using 指令以匯入所需的命名空間：
+啟動 Visual Studio 並建立一個新的控制台應用程序，或使用要實現 PDF 功能的現有控制台應用程式。
+
+### 將 Aspose.PDF 新增到您的專案中
+
+1. 在解決方案資源管理器中以滑鼠右鍵按一下您的專案。
+2. 選擇“管理 NuGet 套件”。
+3. 搜尋`Aspose.PDF`並安裝最新版本。
+
+透過這樣做，您就為即將執行的所有令人驚奇的 PDF 操作奠定了基礎。
+
+## 導入命名空間
+
+在程式檔案的頂部，您需要從 Aspose 庫匯入相關的命名空間：
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using Aspose.Pdf.Content;
+using System;
 using Aspose.Pdf.Facades;
 ```
 
-## 第三步：設定文檔目錄路徑
+這使得您可以更輕鬆地存取 Aspose.PDF 庫中的類別和方法來執行任務。
 
-使用以下命令設定文檔目錄的路徑`dataDir`多變的：
+
+現在您已完成所有設置，讓我們將在 PDF 中搜尋文字並在其周圍繪製矩形的過程分解為易於管理的步驟。
+
+## 第 1 步：設定文檔的路徑
+
+首先，設定 PDF 文件的路徑。確保更換`YOUR DOCUMENT DIRECTORY`與你的實際路徑`SearchAndGetTextFromAll.pdf`被儲存。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-代替`"YOUR DOCUMENT DIRECTORY"`與文檔目錄的實際路徑。
+## 第 2 步：開啟 PDF 文檔
 
-## 第 4 步：載入 PDF 文檔
-
-使用載入 PDF 文檔`Document`班級：
+接下來，建立一個實例`Document`載入 PDF 的類別：
 
 ```csharp
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
 ```
 
-代替`"SearchAndGetTextFromAll.pdf"`與您的 PDF 檔案的實際名稱。
+這行程式碼會開啟您指定的 PDF 文件，允許您進一步操作它。
 
-## 步驟5：建立一個TextFragmentAbsorber
+## 第 3 步：建立文字吸收器
 
-創建一個`TextFragmentAbsorber`物件尋找輸入搜尋短語的所有實例：
+現在，您需要一種方法來搜尋該文件中的文字。為此，我們使用`TextFragmentAbsorber`:
 
 ```csharp
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 ```
 
-代替`@"[\S]+"`與您想要的正規表示式模式。
+正規表示式`@"[\S]+"`旨在匹配 PDF 中的任何非空白字串。 
 
-## 第 6 步：啟用正規表示式搜尋
+## 步驟 4：設定文字搜尋選項
 
-透過設定啟用正規表示式搜尋`TextSearchOptions`吸收體的特性：
+接下來，您應該設定文字搜尋選項：
 
 ```csharp
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;
 ```
 
-## 步驟7：在所有頁面上搜尋
+在這裡，`true`參數意味著搜尋將區分大小寫。您可以將其設定為`false`如果您想要不區分大小寫的搜尋。
 
-接受文件所有頁面的吸收器：
+## 第 5 步：接受文件中的文字吸收器
+
+與你的`TextFragmentAbsorber`搜尋選項準備就緒，是時候從文件中吸收文字了：
 
 ```csharp
 document.Pages.Accept(textAbsorber);
 ```
 
-## 第 8 步：在找到的文字周圍畫一個矩形
+此方法檢查 PDF 中的每個頁面，以尋找與指定模式相符的文字片段。
 
-創建一個`PdfContentEditor`物件並循環檢索到的文字片段，在每個文字片段周圍繪製一個矩形：
+## 第 6 步：建立 PdfContentEditor
+
+要在文件上繪製形狀，您將需要`PdfContentEditor`:
 
 ```csharp
 var editor = new PdfContentEditor(document);
+```
+
+此編輯器可讓您輕鬆操作和編輯 PDF 內容。
+
+## 第 7 步：循環找到的文字片段
+
+現在，您需要循環遍歷找到的文字片段以在它們周圍繪製矩形：
+
+```csharp
 foreach (TextFragment textFragment in textAbsorber.TextFragments)
 {
     foreach (TextSegment textSegment in textFragment.Segments)
@@ -93,83 +129,66 @@ foreach (TextFragment textFragment in textAbsorber.TextFragments)
 }
 ```
 
+此循環迭代每個文字片段及其片段，調用`DrawBox`矩形繪製方法。
+
+## 第8步：定義DrawBox方法
+
+您需要定義`DrawBox`方法，它將處理矩形繪製邏輯。這是一個簡單的實作：
+
+```csharp
+private static void DrawBox(PdfContentEditor editor, int pageNumber, TextSegment textSegment, System.Drawing.Color color)
+{
+    //根據文字段計算矩形尺寸
+    float x = textSegment.Rectangle.LLX;
+    float y = textSegment.Rectangle.LLY;
+    float width = textSegment.Rectangle.Width;
+    float height = textSegment.Rectangle.Height;
+
+    //使用計算值繪製矩形
+    editor.DrawRectangle(pageNumber, x, y, width, height, color, 1);
+}
+```
+
+此方法根據段的邊界矩形確定矩形的位置和大小，並使用編輯器繪製它。
+
 ## 步驟9：儲存修改後的文檔
 
-儲存修改後的文件：
+在找到的文字周圍繪製矩形後，您可以儲存修改後的文件：
 
 ```csharp
 dataDir = dataDir + "SearchTextAndDrawRectangle_out.pdf";
 document.Save(dataDir);
 ```
 
-確保更換`"SearchTextAndDrawRectangle_out.pdf"`與所需的輸出檔名。
+確保使用不同的名稱儲存新文件，以避免覆蓋原始文件。
 
-### 使用 Aspose.PDF for .NET 搜尋文字和繪製矩形的範例原始程式碼 
+## 第10步：確認訊息
+
+最後，在控制台列印一條確認訊息，讓您知道操作成功：
+
 ```csharp
-//文檔目錄的路徑。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-//開啟文件
-Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-//建立 TextAbsorber 物件以尋找與正規表示式相符的所有短語
-TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
-TextSearchOptions textSearchOptions = new TextSearchOptions(true);
-textAbsorber.TextSearchOptions = textSearchOptions;
-document.Pages.Accept(textAbsorber); 
-var editor = new PdfContentEditor(document); 
-foreach (TextFragment textFragment in textAbsorber.TextFragments)
-{
-	foreach (TextSegment textSegment in textFragment.Segments)
-	{
-			DrawBox(editor, textFragment.Page.Number, textSegment, System.Drawing.Color.Red);
-	}
-}
-dataDir = dataDir + "SearchTextAndDrawRectangle_out.pdf";
-document.Save(dataDir);
 Console.WriteLine("\nRectangle drawn successfully on searched text.\nFile saved at " + dataDir);
 ```
 
+現在你就擁有了！您已成功建立一個腳本來搜尋 PDF 中的文字並用矩形突出顯示它。
+
 ## 結論
 
-恭喜！您已經成功學習如何在 PDF 文件中搜尋特定文字、在找到的文字周圍繪製矩形以及使用 Aspose.PDF for .NET 儲存修改後的文件。本教程提供了從設定項目到執行所需操作的逐步指南。現在，您可以將此程式碼合併到您自己的 C# 專案中，以操作 PDF 文件中的文字和繪製矩形。
+恭喜！您剛剛解鎖了一項強大的技能，可以使用 Aspose.PDF for .NET 大幅增強您的 PDF 操作能力。只需幾個簡單的步驟，您就可以搜尋文件中的任何文字並以視覺方式突出顯示它，從而使您的 PDF 文件更具互動性和易於管理。不要猶豫，嘗試不同的正規表示式模式和顏色選項，真正讓這個工具成為您自己的工具！
 
-### 常見問題解答
+## 常見問題解答
 
-#### Q：「搜尋文字並繪製矩形」教學的目的是什麼？
+### 什麼是 Aspose.PDF for .NET？
+Aspose.PDF for .NET 是一個函式庫，提供了以程式設計方式建立、操作和轉換 PDF 文件的綜合方法。
 
-A: The "Search Text And Draw Rectangle" tutorial aims to guide users through the process of using the Aspose.PDF library for .NET to search for specific text within a PDF document, draw rectangles around the found text segments, and save the modified文件.本教程提供了詳細的說明和 C# 程式碼範例來說明該過程的每個步驟。
+### 我可以免費使用 Aspose.PDF 嗎？
+是的，Aspose 提供免費試用版，您可以用它來測試庫的功能。一探究竟[這裡](https://releases.aspose.com/).
 
-#### Q：本教學如何幫助您在 PDF 文件中的特定文字周圍繪製矩形？
+### Aspose.PDF for .NET 需要使用什麼程式語言？
+Aspose.PDF for .NET 設計用於與 C# 和其他 .NET 語言一起使用。
 
-答：本教學提供了有關如何在 PDF 文件中的特定文字段周圍定位和繪製矩形的全面指南。它演示了設定項目、載入 PDF 文件、啟用正規表示式搜尋、在找到的文本段周圍繪製矩形以及保存修改後的 PDF 的過程。
+### 如何獲得有關 Aspose.PDF 的協助？
+您可以造訪 Aspose 支援論壇，以取得您可能遇到的任何問題或疑問的協助。尋求支持[這裡](https://forum.aspose.com/c/pdf/10).
 
-#### Q：學習本教程需要滿足哪些先決條件？
-
-答：在開始本教學之前，您應該對 C# 程式語言有基本的了解。此外，您需要安裝 Aspose.PDF for .NET 程式庫。您可以從 Aspose 網站取得它或使用 NuGet 將其安裝到您的專案中。
-
-#### Q：如何設定我的專案來遵循本教學？
-
-答：首先在您首選的整合開發環境 (IDE) 中建立一個新的 C# 專案。然後，將對 Aspose.PDF for .NET 程式庫的參考新增到您的專案中。這將使您能夠使用庫的功能來操作 PDF 文件。
-
-#### Q：我可以使用本教學在特定文字周圍繪製矩形嗎？
-
-答：是的，本教學的重點是在 PDF 文件中的特定文字段周圍繪製矩形。它示範如何使用正規表示式找到所需的文本，在識別的文本段周圍建立矩形，以及保存修改後的 PDF。
-
-#### Q：如何指定要搜尋的文字並在其周圍繪製矩形？
-
-答：若要指定要搜尋的文字並在其周圍繪製矩形，請建立一個`TextFragmentAbsorber`對象並使用設定其模式`Text`範圍。替換預設模式`@"[\S]+"`在教學課程的程式碼中加入您所需的正規表示式模式。
-
-#### Q：如何啟用文字的正規表示式搜尋？
-
- A：透過建立一個來啟用正規表示式搜尋`TextSearchOptions`對象並將其值設為`true`。將此物件分配給`TextSearchOptions`的財產`TextFragmentAbsorber`實例。這可確保在文字搜尋期間使用正規表示式模式。
-
-#### 問：如何在找到的文字周圍繪製矩形？
-
- A：使用辨識文本段後`TextFragmentAbsorber`，本教程提供了一個循環來迭代這些段落。對於每個文字段，本教學示範如何使用以下命令在其周圍建立一個矩形：`DrawBox`方法並指定矩形的外觀。
-
-#### Q：保存修改後的繪製矩形的PDF的步驟是什麼？
-
-答：在所需的文字段周圍繪製矩形後，使用`Document`班級的`Save`方法保存修改後的文件。本教學的範例程式碼展示如何儲存編輯後的 PDF 並顯示成功訊息。
-
-#### Q：我可以自訂繪製矩形的外觀嗎？
-
-答：是的，您可以自訂繪製矩形的外觀。在本教程的範例程式碼中，`DrawBox`方法用於建立矩形。您可以修改顏色、樣式和厚度等屬性來自訂繪製矩形的外觀。
+### 在哪裡下載 Aspose.PDF for .NET？
+您可以從 Aspose 網站下載該庫，[這裡](https://releases.aspose.com/pdf/net/).

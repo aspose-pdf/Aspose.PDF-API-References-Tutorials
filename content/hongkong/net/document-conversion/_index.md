@@ -8,7 +8,7 @@ description: 請參閱使用 Aspose.PDF for .NET 進行文件轉換的教學課�
 ---
 在.NET 的 Aspose.PDF 文件轉換教學中，您將學習如何將不同類型的文件（例如 Word、Excel、HTML、圖像等）轉換為 PDF 文件。您將了解如何使用進階轉換選項（例如佈局、字體、圖像、表格等）轉換現有文件。教學課程還將指導您將 PDF 文件轉換為其他格式，例如 Word、Excel、HTML、圖像等。 
 
-您將學習如何指定轉換設定、提取文字和圖像、保留原始文件結構和格式以及執行批次轉換。教學提供詳細的程式碼範例和逐步說明，幫助您掌握 Aspose.PDF for .NET 的文件轉換功能。無論您需要轉換文件用於歸檔、電子分發或其他需求，這些教學課程都為您提供了使用強大的 Aspose.PDF .NET 程式庫高效執行所有文件轉換任務的知識。
+您將學習如何指定轉換設定、提取文字和圖像、保留原始文件結構和格式以及執行批次轉換。教學提供詳細的程式碼範例和逐步說明，幫助您掌握 Aspose.PDF for .NET 的文件轉換功能。無論您需要轉換文件用於歸檔、電子分發或其他需求，這些教學課程都為您提供了使用強大的 Aspose.PDF .NET 庫高效執行所有文件轉換任務的知識。
 
 ## 教學
 | 標題 | 描述 |
@@ -34,7 +34,7 @@ description: 請參閱使用 Aspose.PDF for .NET 進行文件轉換的教學課�
 | [PDF 到 TeX](./pdf-to-tex/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 將 PDF 轉換為 TeX。非常適合希望提高文件處理技能的開發人員。 |  
 | [PDF 轉 XLS](./pdf-to-xls/) | 使用 Aspose.PDF for .NET 輕鬆將 PDF 檔案轉換為 XLS 格式。請按照我們的逐步指南進行無縫資料提取。 |  
 | [PDF 到 XML](./pdf-to-xml/) | 在這個綜合教學中了解如何使用 Aspose.PDF for .NET 將 PDF 轉換為 XML。包含程式碼範例的分步指南。 |  
-| [PDF 到 XPS](./pdf-to-xps/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 將 PDF 轉換為 XPS。非常適合開發人員和文件處理愛好者。 |  
+| [PDF 轉 XPS](./pdf-to-xps/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 將 PDF 轉換為 XPS。非常適合開發人員和文件處理愛好者。 |  
 | [後記轉PDF](./postscript-to-pdf/) | 在此逐步教學中了解如何使用 Aspose.PDF for .NET 將 Postscript 檔案轉換為 PDF。非常適合各個層級的開發人員。 |  
 | [在 HTML 轉 PDF 過程中提供憑證](./provide-credentials-during-html-to-pdf/) | 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 將 HTML 轉換為 PDF。非常適合希望簡化文件產生的開發人員。 |  
 | [從 Html 轉換後刪除超鏈接](./remove-hyperlinks-after-converting-from-html/) | 在此逐步指南中，了解如何使用 Aspose.PDF for .NET 將 HTML 文件轉換為 PDF 後刪除超連結。 |  

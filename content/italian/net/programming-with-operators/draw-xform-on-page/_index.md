@@ -159,7 +159,7 @@ pageContents.Add(new GRestore());
 
 Ciò consente di riutilizzare lo stesso XForm, massimizzando l'efficienza nel layout del documento.
 
-## Passaggio 10: finalizzare e salvare il documento
+## Passaggio 10: Finalizzare e salvare il documento
 
 Salvataggio del tuo lavoro
 

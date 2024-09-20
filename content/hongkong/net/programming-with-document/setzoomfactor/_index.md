@@ -16,7 +16,7 @@ url: /zh-hant/net/programming-with-document/setzoomfactor/
 在我們深入了解設定縮放係數的細節之前，您需要先做好以下幾件事：
 
 1.  Aspose.PDF for .NET：請確定您已安裝 Aspose.PDF 庫。您可以從[地點](https://releases.aspose.com/pdf/net/).
-2. Visual Studio：您可以在其中編寫和測試 .NET 程式碼的開發環境。
+2. Visual Studio：一個開發環境，您可以在其中編寫和測試 .NET 程式碼。
 3. C# 基礎知識：熟悉 C# 程式設計將幫助您理解我們將使用的程式碼片段。
 
 ## 導入包
@@ -109,7 +109,7 @@ doc.Save(dataDir);
 
 ## 結論
 
-現在你就得到它了！您已使用 Aspose.PDF for .NET 成功設定 PDF 檔案的縮放係數。這個簡單而強大的功能可以顯著增強閱讀您文件的任何人的使用者體驗。透過控制 PDF 的顯示方式，您可以讓受眾從一開始就更輕鬆地與您的內容互動。所以，繼續嘗試吧，看看您的 PDF 變得栩栩如生！
+現在你就擁有了！您已使用 Aspose.PDF for .NET 成功設定 PDF 檔案的縮放係數。這個簡單而強大的功能可以顯著增強閱讀您文件的任何人的使用者體驗。透過控制 PDF 的顯示方式，您可以讓受眾從一開始就更輕鬆地與您的內容互動。所以，繼續嘗試吧，看看您的 PDF 變得栩栩如生！
 
 ## 常見問題解答
 

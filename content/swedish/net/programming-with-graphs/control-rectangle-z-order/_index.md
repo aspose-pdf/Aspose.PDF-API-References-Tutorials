@@ -75,7 +75,7 @@ Genom att ställa in den vänstra och övre marginalen till noll säkerställer 
 
 ## Steg 4: Lägg till rektanglar med Z-ordningskontroll
 
-Nu den spännande delen – att lägga till rektanglar! Varje rektangel kan ha en angiven Z-ordning. Z-ordningen avgör vilken rektangel som visas ovanpå andra. Vi kommer att definiera en metod för att lägga till rektanglar.
+Nu den spännande delen - att lägga till rektanglar! Varje rektangel kan ha en angiven Z-ordning. Z-ordningen avgör vilken rektangel som visas ovanpå andra. Vi kommer att definiera en metod för att lägga till rektanglar.
 
 ```csharp
 void AddRectangle(Aspose.Pdf.Page page, float x, float y, float width, float height, Aspose.Pdf.Color color, int zOrder)

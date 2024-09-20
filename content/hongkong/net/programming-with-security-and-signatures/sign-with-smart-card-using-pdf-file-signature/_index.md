@@ -90,7 +90,7 @@ System.Security.Cryptography.X509Certificates.X509Certificate2Collection sel =
 ```csharp
 Aspose.Pdf.Forms.ExternalSignature externalSignature = new Aspose.Pdf.Forms.ExternalSignature(sel[0]);
 ```
-在這裡，我們建立一個實例`ExternalSignature`使用所選的證書。該物件將用於簽署 PDF 文件。
+在這裡，我們建立一個實例`ExternalSignature`使用選定的證書。該物件將用於簽署 PDF 文件。
 
 ## 第5步：設定簽名外觀
 
@@ -109,7 +109,7 @@ pdfSign.SignatureAppearance = dataDir + "demo.png";
 pdfSign.Sign(1, "Reason", "Contact", "Location", true, new System.Drawing.Rectangle(100, 100, 200, 200), externalSignature);
 pdfSign.Save(dataDir + "externalSignature2.pdf");
 ```
-在這一步中，我們稱`Sign`我們的方法`pdfSign`目的。以下是每個參數的意思：
+在這一步中，我們稱`Sign`我們的方法`pdfSign`目的。每個參數的意義如下：
 - `1`：簽名將出現的頁碼。
 - `"Reason"`：簽署文件的原因。
 - `"Contact"`：簽名者的聯絡資訊。
@@ -148,7 +148,7 @@ for (int index = 0; index <= sigNames.Count - 1; index++)
 
 ## 結論
 
-現在你就得到它了！您已透過 Aspose.PDF for .NET 使用智慧卡成功簽署了 PDF 文件。此過程不僅可以保護您的文檔，還可以增加一層在當今數位世界中至關重要的真實性。無論您是在處理合約、法律文件還是任何敏感訊息，了解如何實施數位簽名都是一項寶貴的技能。 
+現在你就擁有了！您已透過 Aspose.PDF for .NET 使用智慧卡成功簽署了 PDF 文件。此過程不僅可以保護您的文檔，還可以增加一層在當今數位世界中至關重要的真實性。無論您是在處理合約、法律文件還是任何敏感訊息，了解如何實施數位簽名都是一項寶貴的技能。 
 
 ## 常見問題解答
 

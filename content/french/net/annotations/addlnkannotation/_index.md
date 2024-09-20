@@ -38,7 +38,7 @@ using System.Collections.Generic;
 
 Cela vous donnera accès à toutes les classes et méthodes dont vous avez besoin pour travailler avec les annotations PDF.
 
-Maintenant que nous avons préparé le terrain, il est temps de retrousser nos manches et d'entrer dans le vif du sujet ! Nous allons détailler chaque étape pour nous assurer que vous comprenez exactement comment créer et ajouter une annotation manuscrite à votre document PDF.
+Maintenant que nous avons préparé le terrain, il est temps de retrousser nos manches et d'entrer dans le vif du sujet ! Nous allons détailler chaque étape pour nous assurer que vous comprenez exactement comment créer et ajouter une annotation manuscrite à votre document PDF.
 
 ## Étape 1 : définir le document et le répertoire
 

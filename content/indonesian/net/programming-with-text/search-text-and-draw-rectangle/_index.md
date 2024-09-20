@@ -2,88 +2,124 @@
 title: Cari Teks Dan Gambar Persegi Panjang
 linktitle: Cari Teks Dan Gambar Persegi Panjang
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Pelajari cara mencari teks dalam PDF, menggambar persegi panjang di sekitar teks yang ditemukan, dan menyimpan dokumen yang dimodifikasi menggunakan Aspose.PDF untuk .NET.
+description: Pelajari cara mencari teks dalam PDF dan menyorotnya dengan persegi panjang menggunakan Aspose.PDF untuk .NET! Tutorial langkah demi langkah yang mudah untuk meningkatkan keterampilan manipulasi PDF.
 type: docs
 weight: 460
 url: /id/net/programming-with-text/search-text-and-draw-rectangle/
 ---
-Tutorial ini menjelaskan cara menggunakan Aspose.PDF untuk .NET guna mencari teks tertentu dalam dokumen PDF, menggambar persegi panjang di sekitar teks yang ditemukan, dan menyimpan dokumen yang dimodifikasi. Kode sumber C# yang disediakan menunjukkan proses tersebut langkah demi langkah.
+## Perkenalan
+
+Apakah Anda ingin meningkatkan keterampilan manipulasi PDF Anda? Apakah Anda ingin mempelajari cara mencari teks tertentu dalam file PDF dan menyorotnya dengan persegi panjang? Anda telah menemukan panduan yang tepat! Hari ini, saya akan memandu Anda tentang cara menggunakan Aspose.PDF untuk .NET guna mencari teks dalam dokumen PDF dan menggambar persegi panjang di sekitarnya. Artikel ini akan memberikan tutorial langkah demi langkah yang dirancang dengan mempertimbangkan kejelasan dan kegunaan, memastikan Anda dapat mengikuti dan menerapkan teknik ini pada proyek Anda. 
 
 ## Prasyarat
 
-Sebelum melanjutkan tutorial, pastikan Anda memiliki hal berikut:
+Sebelum menyelami tutorial, mari persiapkan apa yang Anda butuhkan untuk memastikan alur kerja lancar:
 
-- Pengetahuan dasar tentang bahasa pemrograman C#.
-- Pustaka Aspose.PDF untuk .NET telah terinstal. Anda dapat memperolehnya dari situs web Aspose atau menggunakan NuGet untuk menginstalnya di proyek Anda.
+1. Pemahaman Dasar tentang .NET: Anda harus terbiasa dengan pemrograman C# dan kerangka kerja .NET untuk mengikuti tutorial ini secara efektif.
+   
+2. Visual Studio Terpasang: Anda akan memerlukan lingkungan pengembangan terpadu (IDE) untuk menulis dan menguji kode Anda. Visual Studio Community adalah pilihan yang bagus, dan gratis.
+   
+3. Aspose.PDF untuk .NET: Anda perlu menginstal pustaka Aspose.PDF di proyek Anda. Anda dapat mengunduhnya[Di Sini](https://releases.aspose.com/pdf/net/) atau pertimbangkan[lisensi sementara](https://purchase.aspose.com/temporary-license/) untuk fitur yang diperluas.
+   
+4.  Contoh Dokumen PDF: Untuk tutorial ini, Anda memerlukan file PDF contoh bernama`SearchAndGetTextFromAll.pdf` disimpan di direktori proyek Anda. 
 
-## Langkah 1: Siapkan proyek
+## Paket Impor
 
-Mulailah dengan membuat proyek C# baru di lingkungan pengembangan terintegrasi (IDE) pilihan Anda dan tambahkan referensi ke pustaka Aspose.PDF untuk .NET.
+Untuk memulai, pertama-tama Anda perlu mengimpor paket yang diperlukan ke dalam proyek .NET Anda. Ikuti langkah-langkah berikut:
 
-## Langkah 2: Impor namespace yang diperlukan
+### Buka Visual Studio
 
-Tambahkan perintah berikut di awal file C# Anda untuk mengimpor namespace yang diperlukan:
+Luncurkan Visual Studio dan buat Aplikasi Konsol baru atau gunakan yang sudah ada di mana Anda ingin mengimplementasikan fungsionalitas PDF.
+
+### Tambahkan Aspose.PDF ke Proyek Anda
+
+1. Klik kanan pada proyek Anda di Solution Explorer.
+2. Pilih "Kelola Paket NuGet."
+3.  Pencarian untuk`Aspose.PDF` dan instal versi terbaru.
+
+Dengan melakukan ini, Anda menyiapkan dasar untuk semua manipulasi PDF menakjubkan yang akan Anda lakukan.
+
+## Mengimpor Ruang Nama
+
+Di bagian atas file program Anda, Anda ingin mengimpor namespace yang relevan dari pustaka Aspose:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using Aspose.Pdf.Content;
+using System;
 using Aspose.Pdf.Facades;
 ```
 
-## Langkah 3: Tetapkan jalur ke direktori dokumen
+Hal ini memudahkan untuk mengakses kelas dan metode dalam pustaka Aspose.PDF untuk tugas Anda.
 
- Atur jalur ke direktori dokumen Anda menggunakan`dataDir` variabel:
+
+Sekarang setelah Anda menyiapkan semuanya, mari kita uraikan proses pencarian teks dalam PDF dan menggambar persegi panjang di sekitarnya menjadi beberapa langkah yang lebih mudah dikelola.
+
+## Langkah 1: Tetapkan Jalur untuk Dokumen Anda
+
+ Pertama, atur jalur ke file PDF Anda. Pastikan untuk mengganti`YOUR DOCUMENT DIRECTORY` dengan jalur sebenarnya tempat Anda`SearchAndGetTextFromAll.pdf` disimpan.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya ke direktori dokumen Anda.
+## Langkah 2: Buka Dokumen PDF
 
-## Langkah 4: Muat dokumen PDF
-
- Muat dokumen PDF menggunakan`Document` kelas:
+ Selanjutnya, buatlah sebuah instance dari`Document` kelas untuk memuat PDF Anda:
 
 ```csharp
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
 ```
 
- Mengganti`"SearchAndGetTextFromAll.pdf"` dengan nama sebenarnya berkas PDF Anda.
+Baris kode ini membuka berkas PDF yang Anda tentukan, sehingga memungkinkan Anda memanipulasinya lebih lanjut.
 
-## Langkah 5: Buat TextFragmentAbsorber
+## Langkah 3: Buat Penyerap Teks
 
- Membuat sebuah`TextFragmentAbsorber` objek untuk menemukan semua contoh frasa pencarian input:
+ Sekarang, Anda memerlukan cara untuk mencari teks dalam dokumen tersebut. Untuk ini, kami menggunakan`TextFragmentAbsorber`:
 
 ```csharp
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 ```
 
- Mengganti`@"[\S]+"` dengan pola ekspresi reguler yang Anda inginkan.
+ Ekspresi reguler`@"[\S]+"` dirancang untuk mencocokkan string apa pun yang bukan spasi dalam PDF. 
 
-## Langkah 6: Aktifkan pencarian ekspresi reguler
+## Langkah 4: Konfigurasikan Opsi Pencarian Teks
 
- Aktifkan pencarian ekspresi reguler dengan menyetel`TextSearchOptions` properti penyerap:
+Berikutnya, Anda harus mengatur opsi pencarian teks:
 
 ```csharp
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;
 ```
 
-## Langkah 7: Cari di semua halaman
+ Di sini,`true` parameter berarti pencarian akan peka huruf besar/kecil. Anda dapat mengaturnya ke`false` jika Anda menginginkan pencarian tanpa memperhatikan huruf besar/kecil.
 
-Terima penyerap untuk semua halaman dokumen:
+## Langkah 5: Terima Text Absorber di Dokumen
+
+ Dengan kamu`TextFragmentAbsorber` dan opsi pencarian sudah siap, saatnya menyerap teks dari dokumen:
 
 ```csharp
 document.Pages.Accept(textAbsorber);
 ```
 
-## Langkah 8: Gambarlah persegi panjang di sekitar teks yang ditemukan
+Metode ini memeriksa setiap halaman dalam PDF Anda untuk menemukan fragmen teks yang cocok dengan pola yang ditentukan.
 
- Membuat sebuah`PdfContentEditor` objek dan loop melalui fragmen teks yang diambil, menggambar persegi panjang di sekitar setiap segmen teks:
+## Langkah 6: Buat PdfContentEditor
+
+ Untuk menggambar bentuk pada dokumen, Anda memerlukan`PdfContentEditor`:
 
 ```csharp
 var editor = new PdfContentEditor(document);
+```
+
+Editor ini memungkinkan Anda untuk memanipulasi dan mengedit konten PDF dengan mudah.
+
+## Langkah 7: Ulangi Fragmen Teks yang Ditemukan
+
+Sekarang, Anda ingin mengulang fragmen teks yang ditemukan untuk menggambar persegi panjang di sekelilingnya:
+
+```csharp
 foreach (TextFragment textFragment in textAbsorber.TextFragments)
 {
     foreach (TextSegment textSegment in textFragment.Segments)
@@ -93,83 +129,66 @@ foreach (TextFragment textFragment in textAbsorber.TextFragments)
 }
 ```
 
-## Langkah 9: Simpan dokumen yang dimodifikasi
+ Loop ini mengulangi setiap fragmen teks dan segmennya, memanggil`DrawBox` metode untuk menggambar persegi panjang.
 
-Simpan dokumen yang dimodifikasi:
+## Langkah 8: Tentukan Metode DrawBox
+
+ Anda perlu mendefinisikan`DrawBox` metode, yang akan menangani logika menggambar persegi panjang. Berikut implementasi sederhananya:
+
+```csharp
+private static void DrawBox(PdfContentEditor editor, int pageNumber, TextSegment textSegment, System.Drawing.Color color)
+{
+    // Hitung dimensi persegi panjang berdasarkan segmen teks
+    float x = textSegment.Rectangle.LLX;
+    float y = textSegment.Rectangle.LLY;
+    float width = textSegment.Rectangle.Width;
+    float height = textSegment.Rectangle.Height;
+
+    // Gambarlah persegi panjang menggunakan nilai yang dihitung
+    editor.DrawRectangle(pageNumber, x, y, width, height, color, 1);
+}
+```
+
+Metode ini menentukan posisi dan ukuran persegi panjang berdasarkan persegi panjang pembatas segmen dan menggunakan editor untuk menggambarnya.
+
+## Langkah 9: Simpan Dokumen yang Dimodifikasi
+
+Setelah menggambar persegi panjang di sekitar teks yang ditemukan, Anda dapat menyimpan dokumen yang dimodifikasi:
 
 ```csharp
 dataDir = dataDir + "SearchTextAndDrawRectangle_out.pdf";
 document.Save(dataDir);
 ```
 
- Pastikan untuk mengganti`"SearchTextAndDrawRectangle_out.pdf"` dengan nama file keluaran yang diinginkan.
+Pastikan file baru Anda disimpan dengan nama yang berbeda untuk menghindari penimpaan dokumen asli Anda.
 
-### Contoh kode sumber untuk Pencarian Teks dan Gambar Persegi Panjang menggunakan Aspose.PDF untuk .NET 
+## Langkah 10: Pesan Konfirmasi
+
+Terakhir, cetak pesan konfirmasi ke konsol untuk memberi tahu Anda bahwa operasi berhasil:
+
 ```csharp
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Buka dokumen
-Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-//Buat objek TextAbsorber untuk menemukan semua frasa yang cocok dengan ekspresi reguler
-TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
-TextSearchOptions textSearchOptions = new TextSearchOptions(true);
-textAbsorber.TextSearchOptions = textSearchOptions;
-document.Pages.Accept(textAbsorber); 
-var editor = new PdfContentEditor(document); 
-foreach (TextFragment textFragment in textAbsorber.TextFragments)
-{
-	foreach (TextSegment textSegment in textFragment.Segments)
-	{
-			DrawBox(editor, textFragment.Page.Number, textSegment, System.Drawing.Color.Red);
-	}
-}
-dataDir = dataDir + "SearchTextAndDrawRectangle_out.pdf";
-document.Save(dataDir);
 Console.WriteLine("\nRectangle drawn successfully on searched text.\nFile saved at " + dataDir);
 ```
 
+Nah, itu dia! Anda telah berhasil membuat skrip untuk mencari teks dalam PDF dan menyorotnya dengan persegi panjang.
+
 ## Kesimpulan
 
-Selamat! Anda telah berhasil mempelajari cara mencari teks tertentu dalam dokumen PDF, menggambar persegi panjang di sekitar teks yang ditemukan, dan menyimpan dokumen yang dimodifikasi menggunakan Aspose.PDF untuk .NET. Tutorial ini menyediakan panduan langkah demi langkah, mulai dari menyiapkan proyek hingga melakukan tindakan yang diperlukan. Anda sekarang dapat memasukkan kode ini ke dalam proyek C# Anda sendiri untuk memanipulasi teks dan menggambar persegi panjang dalam file PDF.
+Selamat! Anda baru saja membuka keterampilan hebat yang dapat meningkatkan kemampuan manipulasi PDF Anda menggunakan Aspose.PDF untuk .NET. Hanya dengan beberapa langkah sederhana, Anda dapat mencari teks apa pun dalam dokumen Anda dan menyorotnya secara visual, membuat dokumen PDF Anda lebih interaktif dan mudah dikelola. Jangan ragu untuk bereksperimen dengan pola regex dan opsi warna yang berbeda untuk benar-benar menjadikan alat ini milik Anda!
 
-### Pertanyaan yang Sering Diajukan
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa tujuan dari tutorial "Cari Teks dan Gambar Persegi Panjang"?
+### Apa itu Aspose.PDF untuk .NET?
+Aspose.PDF untuk .NET adalah pustaka yang menyediakan cara komprehensif untuk membuat, memanipulasi, dan mengonversi dokumen PDF secara terprogram.
 
-J: Tutorial "Cari Teks dan Gambar Persegi Panjang" bertujuan untuk memandu pengguna melalui proses penggunaan pustaka Aspose.PDF untuk .NET guna mencari teks tertentu dalam dokumen PDF, menggambar persegi panjang di sekitar segmen teks yang ditemukan, dan menyimpan dokumen yang dimodifikasi. Tutorial ini menyediakan petunjuk terperinci dan contoh kode C# untuk mengilustrasikan setiap langkah proses.
+### Dapatkah saya menggunakan Aspose.PDF secara gratis?
+Ya, Aspose menawarkan uji coba gratis yang dapat Anda gunakan untuk menguji fungsionalitas pustaka. Lihatlah[Di Sini](https://releases.aspose.com/).
 
-#### T: Bagaimana tutorial ini membantu menggambar persegi panjang di sekitar teks tertentu dalam dokumen PDF?
+### Bahasa pemrograman apa yang perlu saya gunakan dengan Aspose.PDF untuk .NET?
+Aspose.PDF untuk .NET dirancang untuk digunakan dengan C# dan bahasa .NET lainnya.
 
-J: Tutorial ini menyediakan panduan lengkap tentang cara menemukan dan menggambar persegi panjang di sekitar segmen teks tertentu dalam dokumen PDF. Tutorial ini menunjukkan proses menyiapkan proyek, memuat dokumen PDF, mengaktifkan pencarian ekspresi reguler, menggambar persegi panjang di sekitar segmen teks yang ditemukan, dan menyimpan PDF yang dimodifikasi.
+### Bagaimana cara mendapatkan bantuan dengan Aspose.PDF?
+ Anda dapat mengunjungi forum dukungan Aspose untuk mendapatkan bantuan terkait masalah atau pertanyaan apa pun yang mungkin Anda miliki. Temukan dukungan[Di Sini](https://forum.aspose.com/c/pdf/10).
 
-#### T: Prasyarat apa yang diperlukan untuk mengikuti tutorial ini?
-
-J: Sebelum memulai tutorial ini, Anda harus memiliki pemahaman dasar tentang bahasa pemrograman C#. Selain itu, Anda perlu menginstal pustaka Aspose.PDF for .NET. Anda dapat memperolehnya dari situs web Aspose atau menginstalnya di proyek Anda menggunakan NuGet.
-
-#### T: Bagaimana cara menyiapkan proyek saya untuk mengikuti tutorial ini?
-
-J: Mulailah dengan membuat proyek C# baru di lingkungan pengembangan terpadu (IDE) pilihan Anda. Kemudian, tambahkan referensi ke pustaka Aspose.PDF for .NET ke proyek Anda. Ini akan memungkinkan Anda menggunakan fungsionalitas pustaka untuk memanipulasi dokumen PDF.
-
-#### T: Dapatkah saya menggambar persegi panjang di sekitar teks tertentu menggunakan tutorial ini?
-
-A: Ya, tutorial ini berfokus pada menggambar persegi panjang di sekitar segmen teks tertentu dalam dokumen PDF. Tutorial ini menunjukkan cara menemukan teks yang diinginkan menggunakan ekspresi reguler, membuat persegi panjang di sekitar segmen teks yang diidentifikasi, dan menyimpan PDF yang dimodifikasi.
-
-#### T: Bagaimana cara menentukan teks yang ingin saya cari dan menggambar persegi panjang di sekitarnya?
-
- A: Untuk menentukan teks yang ingin Anda cari dan menggambar persegi panjang di sekitarnya, buatlah`TextFragmentAbsorber` objek dan mengatur polanya menggunakan`Text` parameter. Ganti pola default`@"[\S]+"` dalam kode tutorial dengan pola ekspresi reguler yang Anda inginkan.
-
-#### T: Bagaimana cara mengaktifkan pencarian ekspresi reguler untuk teks?
-
- A: Pencarian ekspresi reguler diaktifkan dengan membuat`TextSearchOptions` objek dan mengatur nilainya ke`true` . Tetapkan objek ini ke`TextSearchOptions` milik`TextFragmentAbsorber` contoh. Ini memastikan bahwa pola ekspresi reguler digunakan selama pencarian teks.
-
-#### T: Bagaimana cara menggambar persegi panjang di sekitar teks yang ditemukan?
-
- A: Setelah mengidentifikasi segmen teks menggunakan`TextFragmentAbsorber` , tutorial menyediakan loop untuk mengulang segmen-segmen ini. Untuk setiap segmen teks, tutorial menunjukkan cara membuat persegi panjang di sekitarnya menggunakan`DrawBox` metode dan tentukan tampilan persegi panjang.
-
-#### T: Apa saja langkah untuk menyimpan PDF yang dimodifikasi dengan gambar persegi panjang?
-
-A: Setelah menggambar persegi panjang di sekitar segmen teks yang diinginkan, gunakan`Document` kelas`Save` metode untuk menyimpan dokumen yang dimodifikasi. Contoh kode tutorial menunjukkan cara menyimpan PDF yang diedit dan menampilkan pesan sukses.
-
-#### T: Dapatkah saya menyesuaikan tampilan persegi panjang yang digambar?
-
- A: Ya, Anda dapat menyesuaikan tampilan persegi panjang yang digambar. Dalam contoh kode tutorial,`DrawBox` Metode ini digunakan untuk membuat persegi panjang. Anda dapat mengubah properti seperti warna, gaya, dan ketebalan untuk menyesuaikan tampilan persegi panjang yang digambar.
+### Di mana saya mengunduh Aspose.PDF untuk .NET?
+ Anda dapat mengunduh pustaka dari situs web Aspose,[Di Sini](https://releases.aspose.com/pdf/net/).

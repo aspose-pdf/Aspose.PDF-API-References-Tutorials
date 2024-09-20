@@ -2,7 +2,7 @@
 title: Λήψη κειμένου υπερσύνδεσης σε αρχείο PDF
 linktitle: Λήψη κειμένου υπερσύνδεσης σε αρχείο PDF
 second_title: Aspose.PDF για Αναφορά API .NET
-description: Μάθετε πώς να εξάγετε εύκολα κείμενο υπερ-σύνδεσης από ένα αρχείο PDF χρησιμοποιώντας το Aspose.PDF για .NET. Οδηγός βήμα προς βήμα και κωδικός περιλαμβάνονται.
+description: Μάθετε πώς να εξάγετε εύκολα κείμενο υπερ-σύνδεσης από ένα αρχείο PDF χρησιμοποιώντας το Aspose.PDF για .NET. Βήμα-βήμα οδηγός και κώδικας περιλαμβάνονται.
 type: docs
 weight: 70
 url: /el/net/programming-with-links-and-actions/get-hyperlink-text/

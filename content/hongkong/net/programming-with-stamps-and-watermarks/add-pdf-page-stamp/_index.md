@@ -101,7 +101,7 @@ pageStamp.Rotate = Rotation.on180; //旋轉180度
 
 ## 第 5 步：將圖章新增至頁面
 
-這是生計和黃油的時刻；我們需要將已建立的圖章套用到頁面上。
+這是生計與黃油的時刻；我們需要將已建立的圖章套用到頁面上。
 
 ```csharp
 pdfDocument.Pages[1].AddStamp(pageStamp);
@@ -132,7 +132,7 @@ Console.WriteLine("\nPdf page stamp added successfully.\nFile saved at " + dataD
 
 ## 結論
 
-現在你就得到它了！您已經了解如何使用 Aspose.PDF for .NET 新增 PDF 頁戳記。從定義文件目錄到標記和保存 PDF，本逐步指南為您提供了輕鬆操作 PDF 文件的知識。當您繼續探索 Aspose.PDF 的功能時，增強 PDF 文件的可能性是無限的。那為什麼還要等呢？今天就開始嘗試，讓您的 PDF 脫穎而出。
+現在你就擁有了！您已經了解如何使用 Aspose.PDF for .NET 新增 PDF 頁戳記。從定義文件目錄到標記和保存 PDF，本逐步指南為您提供了輕鬆操作 PDF 文件的知識。當您繼續探索 Aspose.PDF 的功能時，增強 PDF 文件的可能性是無限的。那為什麼還要等呢？今天就開始嘗試，讓您的 PDF 脫穎而出。
 
 ## 常見問題解答
 

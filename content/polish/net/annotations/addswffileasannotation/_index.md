@@ -9,7 +9,7 @@ url: /pl/net/annotations/addswffileasannotation/
 ---
 ## Wstęp
 
-Czy kiedykolwiek chciałeś dodać interaktywną zawartość multimedialną, taką jak pliki SWF (Shockwave Flash), do swoich dokumentów PDF? Może chcesz stworzyć angażującą prezentację lub interaktywną książkę elektroniczną i chcesz osadzić animacje lub inne interaktywne elementy bezpośrednio w pliku PDF. Cóż, jesteś we właściwym miejscu! Ten samouczek przeprowadzi Cię przez proces dodawania pliku SWF jako adnotacji do pliku PDF przy użyciu Aspose.PDF dla .NET. Aspose.PDF to potężna biblioteka, która pozwala programistom manipulować plikami PDF i zarządzać nimi na różne sposoby. Pod koniec tego przewodnika będziesz w stanie bezproblemowo zintegrować pliki SWF z plikami PDF, czyniąc je bardziej dynamicznymi i interaktywnymi.
+Czy kiedykolwiek chciałeś dodać interaktywną zawartość multimedialną, taką jak pliki SWF (Shockwave Flash), do swoich dokumentów PDF? Może chcesz stworzyć angażującą prezentację lub interaktywną książkę elektroniczną i chcesz osadzić animacje lub inne interaktywne elementy bezpośrednio w pliku PDF. Cóż, jesteś we właściwym miejscu! Ten samouczek przeprowadzi Cię przez proces dodawania pliku SWF jako adnotacji do pliku PDF przy użyciu Aspose.PDF dla .NET. Aspose.PDF to potężna biblioteka, która umożliwia programistom manipulowanie plikami PDF i zarządzanie nimi na różne sposoby. Pod koniec tego przewodnika będziesz w stanie bezproblemowo zintegrować pliki SWF z plikami PDF, czyniąc je bardziej dynamicznymi i interaktywnymi.
 
 ## Wymagania wstępne
 

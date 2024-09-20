@@ -93,7 +93,7 @@ field.PartialName = "NewField";
 ```
  Här skapar vi en`RadioButtonField` objekt som vi tilldelar vår sida. De`Rect` parametern definierar positionen och storleken för alternativknappsfältet på sidan.
 
-## Steg 5: Definiera alternativ för alternativknappar
+## Steg 5: Definiera alternativ för alternativknapp
 
 Nu måste vi skapa några alternativ för våra radioknappar. Detta tillåter användare att välja mellan olika objekt.
 

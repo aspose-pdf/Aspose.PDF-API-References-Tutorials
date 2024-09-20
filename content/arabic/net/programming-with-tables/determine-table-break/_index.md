@@ -2,175 +2,193 @@
 title: تحديد فاصل الجدول في ملف PDF
 linktitle: تحديد فاصل الجدول في ملف PDF
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: تعرف على كيفية تحديد فواصل الجدول في ملف PDF باستخدام Aspose.PDF لـ .NET.
+description: اكتشف كيفية تحديد كسر الجدول في ملفات PDF باستخدام Aspose.PDF لـ .NET من خلال دليلنا خطوة بخطوة، بما في ذلك أمثلة التعليمات البرمجية ونصائح استكشاف الأخطاء وإصلاحها.
 type: docs
 weight: 60
 url: /ar/net/programming-with-tables/determine-table-break/
 ---
-في هذا البرنامج التعليمي، سنتعلم كيفية تحديد فواصل الجداول في ملف PDF باستخدام Aspose.PDF لـ .NET. وسنشرح التعليمات البرمجية المصدرية بلغة C# خطوة بخطوة. وفي نهاية هذا البرنامج التعليمي، ستعرف كيفية تحديد ما إذا كان الجدول يتجاوز هوامش الصفحة. فلنبدأ!
+## مقدمة
 
-## الخطوة 1: إعداد البيئة
-أولاً، تأكد من إعداد بيئة تطوير C# الخاصة بك باستخدام Aspose.PDF لـ .NET. أضف المرجع إلى المكتبة واستورد المساحات الأساسية اللازمة.
+قد يبدو إنشاء ملفات PDF والتلاعب بها أشبه بترويض وحش بري. ففي لحظة، تعتقد أنك قد فهمت الأمر، وفي اللحظة التالية، يتصرف المستند بشكل غير متوقع. هل تساءلت يومًا عن كيفية إدارة الجداول في ملف PDF بفعالية — على وجه التحديد، كيفية تحديد متى سينكسر الجدول؟ في هذه المقالة، سنتعمق في كيفية استخدام Aspose.PDF لـ .NET لتحديد متى يتوسع الجدول إلى ما يتجاوز حجم الصفحة. لذا، استعد ودعنا نستكشف عالم التلاعب بملفات PDF!
+
+## المتطلبات الأساسية
+
+قبل أن ننتقل إلى الترميز الفعلي، دعنا نتأكد من أن كل شيء في مكانه الصحيح:
+
+1. بيئة تطوير .NET: تأكد من تثبيت Visual Studio أو أي IDE متوافق.
+2.  مكتبة Aspose.PDF: تحتاج إلى إضافة مكتبة Aspose.PDF إلى مشروعك. يمكنك تنزيلها من[تنزيلات PDF من Aspose](https://releases.aspose.com/pdf/net/) الصفحة، أو يمكنك تثبيتها عبر مدير حزمة NuGet:
+   ```bash
+   Install-Package Aspose.PDF
+   ```
+3. المعرفة الأساسية بلغة C#: يفترض هذا الدليل أن لديك فهمًا معقولًا للغة C# والبرمجة الموجهة للكائنات.
+
+الآن بعد أن حصلنا على المتطلبات الأساسية، فلنبدأ في استيراد الحزم الضرورية.
+
+## استيراد الحزم
+
+للبدء في استخدام Aspose.PDF في مشروعك، تحتاج إلى تضمين المساحات ذات الصلة. إليك كيفية القيام بذلك:
+
+```csharp
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+```
+
+ستتيح لك هذه المساحات الاسمية الوصول إلى الوظائف الأساسية اللازمة للتعامل مع ملفات PDF.
+
+دعنا نقسم العملية إلى خطوات يمكن إدارتها. سنقوم بإنشاء مستند PDF وإضافة جدول وتحديد ما إذا كان سيتم تقسيمه إلى صفحة جديدة عند إضافة المزيد من الصفوف.
+
+## الخطوة 1: إعداد دليل المستندات الخاص بك
+
+قبل أن تبدأ في الترميز، حدد الموقع الذي سيتم حفظ ملف PDF الناتج فيه. هذا أمر بالغ الأهمية لأنه المكان الذي ستجد فيه المستند الناتج لاحقًا.
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // استبدله بالدليل الخاص بك.
+```
 
 ## الخطوة 2: إنشاء مستند PDF
- في هذه الخطوة نقوم بإنشاء ملف جديد`Document` كائن لتمثيل مستند PDF.
+
+ بعد ذلك، ستقوم بإنشاء مثيل جديد لـ`Document` فئة من مكتبة Aspose.PDF. هذا هو المكان الذي ستحدث فيه كل سحر PDF الخاص بك!
 
 ```csharp
-pdf-Document = new Document();
-```
-
-سيتم استخدام هذه الوثيقة لإضافة الأقسام والجداول.
-
-## الخطوة 3: إضافة قسم وجدول
-سنقوم الآن بإضافة قسم إلى مستند PDF الخاص بنا وإنشاء جدول داخل هذا القسم.
-
-```csharp
-Page page = pdf.Pages.Add();
-Table table1 = new Table();
-table1. Margin. Top = 300;
-page.Paragraphs.Add(table1);
-```
-
-كما حددنا هامشًا أعلى للجدول يبلغ 300 نقطة. ويمكنك تعديل هذه القيمة وفقًا لاحتياجاتك.
-
-## الخطوة 4: إعداد الجدول
-في هذه الخطوة، نقوم بتكوين خصائص الجدول، مثل عرض الأعمدة والحدود.
-
-```csharp
-table1. ColumnWidths = "100 100 100";
-table1.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1F);
-table1.Border = new BorderInfo(BorderSide.All, 1F);
-```
-
-هنا نقوم بتحديد عرض أعمدة الجدول وحدود الخلايا. يمكنك تعديل هذه القيم وفقًا لتفضيلاتك.
-
-## الخطوة 5: إضافة صفوف وخلايا إلى الجدول
-الآن سوف نقوم بإنشاء صفوف وخلايا في الجدول باستخدام حلقة.
-
-```csharp
-for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
-{
-     Row row1 = table1.Rows.Add();
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
-}
-```
-
-هنا نقوم بإنشاء 17 صفًا في الجدول ونضيف ثلاث خلايا لكل صف. يمكنك ضبط الإبزيم وفقًا لاحتياجاتك.
-
-## الخطوة 6: تحديد فواصل الجدول
-الآن سوف نحدد ما إذا كان الجدول يتجاوز هوامش الصفحة عن طريق مقارنة ارتفاع الصفحة مع الارتفاع الإجمالي للأشياء الموجودة في الجدول.
-
-```csharp
-float PageHeight = (float)pdf.PageInfo.Height;
-float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
-
-if ((PageHeight - TotalObjectsHeight) <= 10)
-     Console.WriteLine("The height of the page - Height of objects < 10, the table will be truncated");
-```
-
-نقوم بحساب ارتفاع الصفحة والارتفاع الإجمالي للأشياء مع مراعاة الهوامش. إذا كان الفرق 10 أو أقل، فإن الجدول يتجاوز هوامش الصفحة.
-
-## الخطوة 7: حفظ مستند PDF
-وأخيرًا، نحفظ مستند PDF مع النتائج.
-
-```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-dataDir = dataDir + "DetermineTableBreak_out.pdf";
-pdf.Save(dataDir);
-Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
-```
-
-تأكد من تحديد دليل المستند الصحيح. سيتم حفظ ملف PDF الناتج مع فواصل الجدول المحددة.
-
-### مثال على كود المصدر لتحديد فاصل الجدول باستخدام Aspose.PDF لـ .NET
-
-```csharp
-// المسار إلى دليل المستندات.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// إنشاء كائن من فئة PDF
 Document pdf = new Document();
-// أضف القسم إلى مجموعة أقسام مستند PDF
+```
+
+## الخطوة 3: إنشاء صفحة
+
+يحتاج كل ملف PDF إلى صفحة. إليك كيفية إضافة صفحة جديدة إلى مستندك.
+
+```csharp
 Aspose.Pdf.Page page = pdf.Pages.Add();
-// إنشاء كائن جدول
+```
+
+## الخطوة 4: إنشاء الجدول
+
+الآن، دعنا نقوم بإنشاء الجدول الفعلي الذي تريد مراقبته بحثًا عن الفواصل.
+
+```csharp
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-table1.Margin.Top = 300;
-// أضف الجدول في مجموعة فقرات القسم المطلوب
+table1.Margin.Top = 300; // يسمح ببعض المساحة أعلى طاولتك.
+```
+
+## الخطوة 5: إضافة الجدول إلى الصفحة
+
+بعد إنشاء الجدول، الخطوة التالية هي إضافته إلى الصفحة التي أنشأناها مسبقًا.
+
+```csharp
 page.Paragraphs.Add(table1);
-// مجموعة مع عرض أعمدة الجدول
-table1.ColumnWidths = "100 100 100";
-// تعيين حدود الخلية الافتراضية باستخدام كائن BorderInfo
+```
+
+## الخطوة 6: تحديد خصائص الجدول
+
+دعونا نحدد بعض الخصائص المهمة لجدولنا، مثل عرض الأعمدة والحدود.
+
+```csharp
+table1.ColumnWidths = "100 100 100"; // يبلغ عرض كل عمود 100 وحدة.
 table1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
-// تعيين حدود الجدول باستخدام كائن BorderInfo مخصص آخر
 table1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
-// إنشاء كائن MarginInfo وتعيين هوامشه اليسرى والسفلى واليمنى والعلوية
-Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
-margin.Top = 5f;
-margin.Left = 5f;
-margin.Right = 5f;
-margin.Bottom = 5f;
-// تعيين الحشو الافتراضي للخلية إلى كائن MarginInfo
+```
+
+## الخطوة 7: تعيين هوامش الخلايا
+
+نحن بحاجة إلى التأكد من أن خلايانا تحتوي على بعض الحشو لتحسين العرض. وإليك كيفية إعداد ذلك.
+
+```csharp
+Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo(5f, 5f, 5f, 5f); // أعلى، يسار، يمين، أسفل
 table1.DefaultCellPadding = margin;
-// إذا قمت بزيادة العداد إلى 17، فسوف تنكسر الطاولة
-// لأنه لا يمكن استيعاب المزيد من خلال هذه الصفحة
+```
+
+## الخطوة 8: إضافة صفوف إلى الجدول
+
+الآن أصبحنا مستعدين لإضافة صفوف! سنستمر في تكرار الأمر وإنشاء 17 صفًا. (لماذا 17؟ حسنًا، هذا هو المكان الذي سنرى فيه كسر الجدول!)
+
+```csharp
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
-	//إنشاء صفوف في الجدول ثم خلايا في الصفوف
-	Aspose.Pdf.Row row1 = table1.Rows.Add();
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
+    Aspose.Pdf.Row row1 = table1.Rows.Add();
+    row1.Cells.Add($"col {RowCounter}, 1");
+    row1.Cells.Add($"col {RowCounter}, 2");
+    row1.Cells.Add($"col {RowCounter}, 3");
 }
-// احصل على معلومات ارتفاع الصفحة
+```
+
+## الخطوة 9: الحصول على ارتفاع الصفحة
+
+لكي نتحقق من مدى ملاءمة جدولنا، نحتاج إلى معرفة ارتفاع صفحتنا. 
+
+```csharp
 float PageHeight = (float)pdf.PageInfo.Height;
-// احصل على معلومات الارتفاع الإجمالي للهوامش العلوية والسفلية للصفحة،
-// هامش أعلى الجدول وارتفاع الجدول.
-float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
+```
 
-// عرض ارتفاع الصفحة وارتفاع الجدول وحاشية أعلى الجدول وأعلى الصفحة
-// ومعلومات الهامش السفلي
-Console.WriteLine("PDF document Height = " + pdf.PageInfo.Height.ToString() + "\nTop Margin Info = " + page.PageInfo.Margin.Top.ToString() + "\nBottom Margin Info = " + page.PageInfo.Margin.Bottom.ToString() + "\n\nTable-Top Margin Info = " + table1.Margin.Top.ToString() + "\nAverage Row Height = " + table1.Rows[0].MinRowHeight.ToString() + " \nTable height " + table1.GetHeight().ToString() + "\n ----------------------------------------" + "\nTotal Page Height =" + PageHeight.ToString() + "\nCummulative height including Table =" + TotalObjectsHeight.ToString());
+## الخطوة 10: حساب الارتفاع الإجمالي للأشياء
 
-// تحقق مما إذا كنا نطرح مجموع هامش أعلى الصفحة + هامش أسفل الصفحة
-// + هامش أعلى الجدول وارتفاع الجدول من ارتفاع الصفحة وأقل
-// أقل من 10 (يمكن أن يكون الصف المتوسط أكبر من 10)
+الآن، دعونا نحسب الارتفاع الإجمالي لجميع الكائنات (هوامش الصفحة، وهوامش الجدول، وارتفاع الجدول) على الصفحة.
+
+```csharp
+float TotalObjectsHeight = page.PageInfo.Margin.Top + page.PageInfo.Margin.Bottom + table1.Margin.Top + table1.GetHeight();
+```
+
+## الخطوة 11: عرض معلومات الارتفاع
+
+من المفيد رؤية بعض معلومات التصحيح، أليس كذلك؟ دعنا نطبع كل معلومات الارتفاع ذات الصلة على وحدة التحكم.
+
+```csharp
+Console.WriteLine($"PDF document Height = {PageHeight}");
+Console.WriteLine($"Top Margin Info = {page.PageInfo.Margin.Top}");
+Console.WriteLine($"Bottom Margin Info = {page.PageInfo.Margin.Bottom}");
+Console.WriteLine($"Table-Top Margin Info = {table1.Margin.Top}");
+Console.WriteLine($"Average Row Height = {table1.Rows[0].MinRowHeight}");
+Console.WriteLine($"Table height {table1.GetHeight()}");
+Console.WriteLine($"Total Page Height = {PageHeight}");
+Console.WriteLine($"Cumulative Height including Table = {TotalObjectsHeight}");
+```
+
+## الخطوة 12: التحقق من حالة كسر الجدول
+
+أخيرًا، نريد أن نرى ما إذا كان إضافة المزيد من الصفوف سيؤدي إلى تقسيم الجدول إلى صفحة أخرى.
+
+```csharp
 if ((PageHeight - TotalObjectsHeight) <= 10)
-	// إذا كانت القيمة أقل من 10، قم بعرض الرسالة.
-	//مما يدل على أنه لا يمكن وضع صف آخر وإذا أضفنا صفًا جديدًا
-	// سيتم كسر الصف والجدول. يعتمد ذلك على قيمة ارتفاع الصف.
-	Console.WriteLine("Page Height - Objects Height < 10, so table will break");
+{
+    Console.WriteLine("Page Height - Objects Height < 10, so table will break");
+}
+```
 
+## الخطوة 13: احفظ مستند PDF
 
-dataDir = dataDir + "DetermineTableBreak_out.pdf";
-// حفظ مستند pdf
+بعد كل هذا العمل الشاق، دعنا نحفظ مستند PDF في الدليل المحدد.
+
+```csharp
+dataDir = dataDir + "DetermineTableBreak_out.pdf"; 
 pdf.Save(dataDir);
+```
 
-Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
+## الخطوة 14: رسالة التأكيد
+
+لكي نعلمك أن كل شيء سار بسلاسة، دعنا نرسل لك رسالة تأكيد.
+
+```csharp
+Console.WriteLine($"\nTable break determined successfully.\nFile saved at {dataDir}");
 ```
 
 ## خاتمة
-في هذا البرنامج التعليمي، تعلمنا كيفية تحديد فواصل الجداول في مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الدليل خطوة بخطوة للتحقق مما إذا كان الجدول يتجاوز هوامش الصفحة في مشاريع C# الخاصة بك.
 
-### الأسئلة الشائعة حول تحديد فاصل الجدول في ملف PDF
+في هذا الدليل، ألقينا نظرة فاحصة على كيفية تحديد متى قد ينكسر جدول في مستند PDF عند استخدام Aspose.PDF لـ .NET. باتباع هذه الخطوات، يمكنك بسهولة تحديد قيود المساحة وإدارة تخطيطات PDF بشكل أفضل. مع الممارسة، ستكتسب المهارات اللازمة للتعامل مع الجداول بشكل فعال وإنشاء ملفات PDF مصقولة مثل المحترفين. فلماذا لا تجربها وترى كيف يمكن أن تعمل لصالحك؟
 
-#### س: ما هو الغرض من تحديد فواصل الجدول في مستند PDF؟
+## الأسئلة الشائعة
 
-ج: الغرض من تحديد فواصل الجدول في مستند PDF هو التحقق مما إذا كان الجدول يتجاوز هوامش الصفحة. وهذا يضمن عرض محتوى الجدول بشكل صحيح ضمن مساحة الصفحة المتاحة. من خلال اكتشاف فواصل الجدول، يمكنك التعامل مع تجاوز المحتوى وضبط تخطيط الجدول وفقًا لذلك.
+### ما هو Aspose.PDF لـ .NET؟
+Aspose.PDF for .NET عبارة عن مكتبة قوية تسمح للمطورين بإنشاء مستندات PDF وتحويلها ومعالجتها مباشرة في تطبيقات .NET الخاصة بهم.
 
-#### س: كيف يمكنني تعديل الهامش العلوي للجدول؟
+### هل يمكنني الحصول على نسخة تجريبية مجانية من Aspose.PDF؟
+ نعم! يمكنك تنزيل[نسخة تجريبية مجانية](https://releases.aspose.com/) لاستكشاف مميزاته قبل الشراء.
 
- أ: في كود المصدر C# المقدم، يمكنك تعديل الهامش العلوي للجدول عن طريق تعديل قيمة`table1.Margin.Top`الخاصية. قم بزيادة أو تقليل القيمة حسب الحاجة لتعيين الهامش العلوي المطلوب للجدول.
+### كيف يمكنني العثور على الدعم لـ Aspose.PDF؟
+ يمكنك العثور على معلومات مفيدة والحصول على الدعم من مجتمع Aspose على[منتدى الدعم](https://forum.aspose.com/c/pdf/10).
 
-#### س: هل يمكنني تخصيص مظهر الجدول، مثل ألوان الخلايا وحجم الخط؟
+### ماذا يحدث إذا كنت بحاجة إلى أكثر من 17 صفًا في الجدول الخاص بي؟
+إذا تجاوزت المساحة المتوفرة، فلن يتناسب جدولك مع الصفحة، ويجب عليك اتخاذ الإجراء المناسب لتنسيقه بشكل صحيح.
 
-ج: نعم، يمكنك تخصيص مظهر الجدول وخلاياه باستخدام خصائص وطرق مختلفة يوفرها Aspose.PDF لـ .NET. على سبيل المثال، يمكنك تغيير ألوان خلفية الخلية وحجم الخط وعائلة الخط ومحاذاة النص والمزيد. راجع الوثائق الرسمية للحصول على مزيد من المعلومات حول كيفية تخصيص مظهر الجدول.
-
-#### س: ماذا يحدث إذا تجاوز الجدول هوامش الصفحة؟
-
-ج: إذا تجاوز الجدول هوامش الصفحة، فقد يؤدي ذلك إلى اقتطاع المحتوى أو تداخله، مما يجعل مستند PDF أقل قابلية للقراءة والتنظيم. من خلال اكتشاف فواصل الجدول والتعامل مع الفائض، يمكنك التأكد من أن المحتوى يظل معروضًا بشكل صحيح ضمن منطقة الصفحة المتاحة.
-
-#### س: هل يمكنني تحديد فواصل الجداول لعدة جداول في نفس مستند PDF؟
-
-ج: نعم، يمكنك تحديد فواصل الجداول لعدة جداول في نفس مستند PDF. ما عليك سوى تكرار الخطوات لكل جدول تريد تحليله وتعديل تخطيط الجدول حسب الضرورة لمنع تجاوز المحتوى.
+### أين يمكنني شراء مكتبة Aspose.PDF؟
+ يمكنك شراء المكتبة من[صفحة الشراء](https://purchase.aspose.com/buy).

@@ -1,6 +1,6 @@
 ---
-title: lnk Anteckningslinjebredd
-linktitle: lnk Anteckningslinjebredd
+title: lnk Annotation Line Width
+linktitle: lnk Annotation Line Width
 second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du ställer in färganteckningslinjebredden i en PDF med Aspose.PDF för .NET. Denna detaljerade handledning guidar dig genom varje steg, vilket säkerställer utskrifter av hög kvalitet.
 type: docs

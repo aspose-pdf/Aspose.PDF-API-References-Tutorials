@@ -113,7 +113,7 @@ doc.Save(dataDir + "XMLToPDF_out.pdf");
 
 ## 結論
 
-現在你就得到它了！只需幾行程式碼，您就可以使用 Aspose.PDF for .NET 成功地將 XML 檔案轉換為精美的 PDF 文件。這個強大的庫不僅簡化了流程，還讓您可以完全控製文件的內容和格式。無論您是處理簡單的 XML 檔案還是複雜的資料結構，Aspose.PDF 都能提供您高效率完成工作所需的工具。
+現在你就擁有了！只需幾行程式碼，您就可以使用 Aspose.PDF for .NET 成功地將 XML 檔案轉換為精美的 PDF 文件。這個強大的庫不僅簡化了流程，還讓您可以完全控製文件的內容和格式。無論您是處理簡單的 XML 檔案還是複雜的資料結構，Aspose.PDF 都能提供您高效率完成工作所需的工具。
 
 如果您遇到問題或有疑問，請記住[Aspose.PDF 文檔](https://reference.aspose.com/pdf/net/)始終為您提供幫助，您可以透過他們的方式尋求支持[論壇](https://forum.aspose.com/c/pdf/10)。快樂編碼！
 

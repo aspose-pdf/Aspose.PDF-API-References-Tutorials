@@ -11,7 +11,7 @@ url: /fr/net/programming-with-pdf-pages/get-dimensions/
 
 Avez-vous déjà eu besoin de manipuler les dimensions de page d'un document PDF ? Peut-être avez-vous voulu redimensionner une page ou la faire pivoter pour l'adapter à vos besoins ? Si tel est le cas, vous êtes au bon endroit ! Dans ce didacticiel, nous vous expliquerons comment récupérer et modifier les dimensions de page PDF à l'aide d'Aspose.PDF pour .NET. Que vous soyez un développeur débutant ou expérimenté, vous trouverez ce guide simple et facile à suivre.
 
-Aspose.PDF pour .NET est une bibliothèque puissante qui vous permet de créer, de manipuler et de transformer des fichiers PDF sans effort. C'est comme avoir un couteau suisse pour les PDF : vous pouvez peaufiner chaque petit détail pour l'adapter exactement à vos besoins. Alors, plongeons-nous dans le vif du sujet et apprenons à récupérer et à mettre à jour les dimensions des pages PDF à l'aide de cet outil génial !
+Aspose.PDF pour .NET est une bibliothèque puissante qui vous permet de créer, de manipuler et de transformer des fichiers PDF sans effort. C'est comme avoir un couteau suisse pour les PDF : vous pouvez modifier chaque petit détail pour l'adapter exactement à vos besoins. Alors, plongeons-nous dans le vif du sujet et apprenons à récupérer et à mettre à jour les dimensions des pages PDF à l'aide de cet outil génial !
 
 ## Prérequis
 

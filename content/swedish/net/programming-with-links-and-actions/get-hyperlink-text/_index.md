@@ -45,7 +45,7 @@ using Aspose.Pdf.Annotations;
 
 Okej, låt oss komma till den spännande delen – extrahera hyperlänktexter från ett PDF-dokument! Så här gör du, steg för steg.
 
-## Steg 1: Konfigurera din dokumentsökväg
+## Steg 1: Ställ in din dokumentsökväg
 
 I vår kod måste vi först ange sökvägen där vårt PDF-dokument finns. Detta görs med hjälp av en strängvariabel. 
 
@@ -98,7 +98,7 @@ private static void ShowLinkAnnotations(Page page)
 ```
 
 -  Kontrollera om anteckningen är en länk: Här kontrollerar vi om anteckningen på sidan är en`LinkAnnotation`. Om så är fallet fortsätter vi att extrahera dess titel och URI.
--  Visa hyperlänktexten: Använda`Console.WriteLine`, skriver vi ut länktexten och motsvarande URI.
+-  Visa hyperlänkstexten: Använda`Console.WriteLine`, skriver vi ut länktexten och motsvarande URI.
 
 ## Steg 5: Undantagshantering
 

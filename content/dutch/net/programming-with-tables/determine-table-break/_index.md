@@ -2,175 +2,193 @@
 title: Bepaal tabelonderbreking in PDF-bestand
 linktitle: Bepaal tabelonderbreking in PDF-bestand
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u tabeleinden in een PDF-bestand kunt bepalen met Aspose.PDF voor .NET.
+description: Ontdek hoe u tabelonderbrekingen in PDF-bestanden kunt bepalen met Aspose.PDF voor .NET met onze stapsgewijze handleiding, inclusief codevoorbeelden en tips voor probleemoplossing.
 type: docs
 weight: 60
 url: /nl/net/programming-with-tables/determine-table-break/
 ---
-In deze tutorial gaan we leren hoe je tabelonderbrekingen in een PDF-bestand kunt bepalen met Aspose.PDF voor .NET. We leggen de broncode in C# stap voor stap uit. Aan het einde van deze tutorial weet je hoe je kunt bepalen of een tabel de paginamarges overschrijdt. Laten we beginnen!
+## Invoering
 
-## Stap 1: De omgeving instellen
-Zorg er eerst voor dat u uw C#-ontwikkelomgeving hebt ingesteld met Aspose.PDF voor .NET. Voeg de referentie toe aan de bibliotheek en importeer de benodigde naamruimten.
+Het maken en manipuleren van PDF-bestanden kan voelen als het temmen van een wild beest. Het ene moment denk je dat je het doorhebt, en het volgende moment gedraagt het document zich onvoorspelbaar. Heb je je ooit afgevraagd hoe je tabellen in een PDF effectief kunt beheren — met name hoe je kunt bepalen wanneer een tabel kapotgaat? In dit artikel duiken we in hoe je Aspose.PDF voor .NET kunt gebruiken om te identificeren wanneer een tabel groter wordt dan de grootte van een pagina. Dus gesp je vast en laten we de wereld van PDF-manipulatie verkennen!
 
-## Stap 2: Het PDF-document maken
- In deze stap maken we een nieuwe`Document` object om het PDF-document weer te geven.
+## Vereisten
+
+Voordat we met de daadwerkelijke codering beginnen, willen we ervoor zorgen dat alles op orde is:
+
+1. .NET-ontwikkelomgeving: Zorg ervoor dat Visual Studio of een compatibele IDE is geïnstalleerd.
+2.  Aspose.PDF-bibliotheek: U moet de Aspose.PDF-bibliotheek aan uw project toevoegen. U kunt deze downloaden van de[Aspose PDF-downloads](https://releases.aspose.com/pdf/net/) pagina, of u kunt het installeren via NuGet Package Manager:
+   ```bash
+   Install-Package Aspose.PDF
+   ```
+3. Basiskennis van C#: in deze gids wordt ervan uitgegaan dat u een redelijke kennis hebt van C# en objectgeoriënteerd programmeren.
+
+Nu we de vereisten hebben vastgesteld, kunnen we aan de slag met het importeren van de benodigde pakketten.
+
+## Pakketten importeren
+
+Om Aspose.PDF in uw project te gebruiken, moet u de relevante naamruimten opnemen. Dit is hoe u dat kunt doen:
 
 ```csharp
-pdf-Document = new Document();
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-Dit document wordt gebruikt om secties en tabellen toe te voegen.
+Met deze naamruimten krijgt u toegang tot de belangrijkste functionaliteiten die nodig zijn om PDF-bestanden te bewerken.
 
-## Stap 3: Een sectie en een tabel toevoegen
-Nu gaan we een sectie toevoegen aan ons PDF-document en een tabel in deze sectie maken.
+Laten we het proces opsplitsen in beheersbare stappen. We gaan een PDF-document maken, een tabel toevoegen en bepalen of het op een nieuwe pagina wordt geplaatst wanneer we meer rijen toevoegen.
+
+## Stap 1: Stel uw documentenmap in
+
+Voordat u begint met coderen, bepaalt u de locatie waar uw output-PDF wordt opgeslagen. Dit is cruciaal omdat u hier later het gegenereerde document zult vinden.
 
 ```csharp
-Page page = pdf.Pages.Add();
-Table table1 = new Table();
-table1. Margin. Top = 300;
-page.Paragraphs.Add(table1);
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Vervang door uw directory.
 ```
 
-We specificeren ook een topmarge van 300 punten voor de tabel. U kunt deze waarde aanpassen naar uw behoeften.
+## Stap 2: Het PDF-document instantiëren
 
-## Stap 4: Tafelopstelling
-In deze stap configureren we tabeleigenschappen, zoals kolombreedtes en randen.
-
-```csharp
-table1. ColumnWidths = "100 100 100";
-table1.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1F);
-table1.Border = new BorderInfo(BorderSide.All, 1F);
-```
-
-Hier definiëren we de breedte van de tabelkolommen en de celranden. U kunt deze waarden aanpassen naar uw voorkeuren.
-
-## Stap 5: Rijen en cellen toevoegen aan de tabel
-Nu gaan we rijen en cellen in de tabel maken met behulp van een lus.
+ Vervolgens maakt u een nieuw exemplaar van de`Document` klasse van de Aspose.PDF bibliotheek. Dit is waar al je PDF magie zal gebeuren!
 
 ```csharp
-for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
-{
-     Row row1 = table1.Rows.Add();
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
-}
-```
-
-Hier maken we 17 rijen in de tabel en voegen drie cellen toe aan elke rij. U kunt de gesp aanpassen aan uw behoeften.
-
-## Stap 6: Tabelonderbrekingen bepalen
-Nu gaan we bepalen of de tabel de paginamarges overschrijdt door de hoogte van de pagina te vergelijken met de totale hoogte van de objecten in de tabel.
-
-```csharp
-float PageHeight = (float)pdf.PageInfo.Height;
-float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
-
-if ((PageHeight - TotalObjectsHeight) <= 10)
-     Console.WriteLine("The height of the page - Height of objects < 10, the table will be truncated");
-```
-
-We berekenen de hoogte van de pagina en de totale hoogte van de objecten, rekening houdend met de marges. Als het verschil 10 of minder is, overschrijdt de tabel de paginamarges.
-
-## Stap 7: Het PDF-document opslaan
-Tot slot slaan we het PDF-document met de resultaten op.
-
-```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-dataDir = dataDir + "DetermineTableBreak_out.pdf";
-pdf.Save(dataDir);
-Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
-```
-
-Zorg ervoor dat u de juiste documentdirectory opgeeft. Het resulterende PDF-bestand wordt opgeslagen met de vastgestelde tabelonderbrekingen.
-
-### Voorbeeldbroncode voor het bepalen van een tabelonderbreking met behulp van Aspose.PDF voor .NET
-
-```csharp
-// Het pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Instantieer een object PDF-klasse
 Document pdf = new Document();
-// Voeg de sectie toe aan de PDF-documentsectiesverzameling
+```
+
+## Stap 3: Maak een pagina
+
+Elke PDF heeft een pagina nodig. Hier leest u hoe u een nieuwe pagina aan uw document kunt toevoegen.
+
+```csharp
 Aspose.Pdf.Page page = pdf.Pages.Add();
-// Een tabelobject instantiëren
+```
+
+## Stap 4: Instantieer de tabel
+
+Nu gaan we de tabel maken die u wilt controleren op onderbrekingen.
+
+```csharp
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-table1.Margin.Top = 300;
-// Voeg de tabel toe in de alineaverzameling van de gewenste sectie
+table1.Margin.Top = 300; // Zorgt voor wat ruimte bovenop uw tafel.
+```
+
+## Stap 5: Voeg de tabel toe aan de pagina
+
+Nu de tabel is aangemaakt, voegen we deze toe aan de pagina die we eerder hebben gemaakt.
+
+```csharp
 page.Paragraphs.Add(table1);
-// Instellen met kolombreedtes van de tabel
-table1.ColumnWidths = "100 100 100";
-// Standaard celrand instellen met behulp van het BorderInfo-object
+```
+
+## Stap 6: Tabeleigenschappen definiëren
+
+Laten we een aantal belangrijke eigenschappen voor onze tabel definiëren, zoals de kolombreedtes en randen.
+
+```csharp
+table1.ColumnWidths = "100 100 100"; // Elke kolom is 100 eenheden breed.
 table1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
-// Stel de tabelrand in met behulp van een ander aangepast BorderInfo-object
 table1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
-// Maak een MarginInfo-object en stel de linker-, onder-, rechter- en bovenmarges in
-Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
-margin.Top = 5f;
-margin.Left = 5f;
-margin.Right = 5f;
-margin.Bottom = 5f;
-// Stel de standaard celopvulling in op het MarginInfo-object
+```
+
+## Stap 7: Celmarges instellen
+
+We moeten ervoor zorgen dat onze cellen wat opvulling hebben voor een betere presentatie. Hier is hoe je dat instelt.
+
+```csharp
+Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo(5f, 5f, 5f, 5f); // Boven, Links, Rechts, Onder
 table1.DefaultCellPadding = margin;
-// Als je de teller op 17 zet, zal de tafel kapot gaan
-// Omdat het niet meer op deze pagina kan worden ondergebracht
+```
+
+## Stap 8: Rijen toevoegen aan de tabel
+
+Nu zijn we klaar om rijen toe te voegen! We gaan doorlussen en 17 rijen maken. (Waarom 17? Nou, daar zien we de tabelbreuk!)
+
+```csharp
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
-	//Maak rijen in de tabel en vervolgens cellen in de rijen
-	Aspose.Pdf.Row row1 = table1.Rows.Add();
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
+    Aspose.Pdf.Row row1 = table1.Rows.Add();
+    row1.Cells.Add($"col {RowCounter}, 1");
+    row1.Cells.Add($"col {RowCounter}, 2");
+    row1.Cells.Add($"col {RowCounter}, 3");
 }
-// Ontvang de informatie over de paginahoogte
+```
+
+## Stap 9: Paginahoogte verkrijgen
+
+Om te controleren of onze tabel past, moeten we de hoogte van onze pagina weten. 
+
+```csharp
 float PageHeight = (float)pdf.PageInfo.Height;
-// Ontvang de totale hoogte-informatie van de boven- en ondermarge van de pagina,
-// Tafelbladmarge en tafelhoogte.
-float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
+```
 
-// Weergavepaginahoogte, tabelhoogte, tabelbovenmarge en paginabovenkant
-// En informatie over de ondermarge
-Console.WriteLine("PDF document Height = " + pdf.PageInfo.Height.ToString() + "\nTop Margin Info = " + page.PageInfo.Margin.Top.ToString() + "\nBottom Margin Info = " + page.PageInfo.Margin.Bottom.ToString() + "\n\nTable-Top Margin Info = " + table1.Margin.Top.ToString() + "\nAverage Row Height = " + table1.Rows[0].MinRowHeight.ToString() + " \nTable height " + table1.GetHeight().ToString() + "\n ----------------------------------------" + "\nTotal Page Height =" + PageHeight.ToString() + "\nCummulative height including Table =" + TotalObjectsHeight.ToString());
+## Stap 10: Bereken de totale hoogte van objecten
 
-// Controleer of we de som van de bovenste paginamarge + de onderste paginamarge aftrekken
-// + Tafelbladmarge en tabelhoogte van paginahoogte en zijn minder
-// Dan 10 (een gemiddelde rij kan groter zijn dan 10)
+Laten we nu de totale hoogte van alle objecten (paginamarges, tabelmarges en de hoogte van de tabel) op de pagina berekenen.
+
+```csharp
+float TotalObjectsHeight = page.PageInfo.Margin.Top + page.PageInfo.Margin.Bottom + table1.Margin.Top + table1.GetHeight();
+```
+
+## Stap 11: Hoogte-informatie weergeven
+
+Het is handig om wat debug-informatie te zien, nietwaar? Laten we alle relevante hoogte-informatie naar de console printen.
+
+```csharp
+Console.WriteLine($"PDF document Height = {PageHeight}");
+Console.WriteLine($"Top Margin Info = {page.PageInfo.Margin.Top}");
+Console.WriteLine($"Bottom Margin Info = {page.PageInfo.Margin.Bottom}");
+Console.WriteLine($"Table-Top Margin Info = {table1.Margin.Top}");
+Console.WriteLine($"Average Row Height = {table1.Rows[0].MinRowHeight}");
+Console.WriteLine($"Table height {table1.GetHeight()}");
+Console.WriteLine($"Total Page Height = {PageHeight}");
+Console.WriteLine($"Cumulative Height including Table = {TotalObjectsHeight}");
+```
+
+## Stap 12: Controleer op tafelbreukconditie
+
+Ten slotte willen we kijken of het toevoegen van meer rijen ertoe leidt dat de tabel op een andere pagina terechtkomt.
+
+```csharp
 if ((PageHeight - TotalObjectsHeight) <= 10)
-	// Als de waarde kleiner is dan 10, wordt het bericht weergegeven.
-	//Wat aantoont dat er geen andere rij geplaatst kan worden en als we een nieuwe toevoegen
-	// Rij, tabel zal breken. Het hangt af van de rijhoogtewaarde.
-	Console.WriteLine("Page Height - Objects Height < 10, so table will break");
+{
+    Console.WriteLine("Page Height - Objects Height < 10, so table will break");
+}
+```
 
+## Stap 13: Sla het PDF-document op
 
-dataDir = dataDir + "DetermineTableBreak_out.pdf";
-// Sla het pdf-document op
+Na al dat harde werk slaan we het PDF-document op in de door u opgegeven map.
+
+```csharp
+dataDir = dataDir + "DetermineTableBreak_out.pdf"; 
 pdf.Save(dataDir);
+```
 
-Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
+## Stap 14: Bevestigingsbericht
+
+Om u te laten weten dat alles goed is verlopen, sturen we u een bevestigingsbericht.
+
+```csharp
+Console.WriteLine($"\nTable break determined successfully.\nFile saved at {dataDir}");
 ```
 
 ## Conclusie
-In deze tutorial hebben we geleerd hoe u tabelonderbrekingen in een PDF-document kunt bepalen met Aspose.PDF voor .NET. U kunt deze stapsgewijze handleiding gebruiken om te controleren of een tabel de paginamarges in uw eigen C#-projecten overschrijdt.
 
-### FAQ's voor het bepalen van een tabelonderbreking in een PDF-bestand
+In deze gids hebben we uitgebreid gekeken naar hoe u kunt bepalen wanneer een tabel in een PDF-document zal breken bij gebruik van Aspose.PDF voor .NET. Door deze stappen te volgen, kunt u eenvoudig ruimtebeperkingen identificeren en uw PDF-indelingen beter beheren. Met wat oefening krijgt u de vaardigheden om tabellen effectief te manipuleren en gepolijste PDF's te maken als een professional. Dus waarom probeert u het niet eens en ziet u hoe het voor u kan werken?
 
-#### V: Wat is het doel van het bepalen van tabeleinden in een PDF-document?
+## Veelgestelde vragen
 
-A: Het doel van het bepalen van tabelonderbrekingen in een PDF-document is om te controleren of de tabel de paginamarges overschrijdt. Dit zorgt ervoor dat de inhoud van de tabel correct wordt weergegeven binnen de beschikbare paginaruimte. Door tabelonderbrekingen te detecteren, kunt u de overloop van de inhoud verwerken en de tabelindeling dienovereenkomstig aanpassen.
+### Wat is Aspose.PDF voor .NET?
+Aspose.PDF voor .NET is een robuuste bibliotheek waarmee ontwikkelaars PDF-documenten rechtstreeks in hun .NET-toepassingen kunnen maken, converteren en bewerken.
 
-#### V: Hoe kan ik de bovenmarge van de tabel aanpassen?
+### Kan ik Aspose.PDF gratis uitproberen?
+ Ja! U kunt een[gratis proefperiode](https://releases.aspose.com/) om de functies ervan te verkennen voordat u tot aankoop overgaat.
 
- A: In de meegeleverde C#-broncode kunt u de bovenmarge van de tabel aanpassen door de waarde van de`table1.Margin.Top`eigenschap. Verhoog of verlaag de waarde indien nodig om de gewenste bovenmarge voor de tabel in te stellen.
+### Hoe kan ik ondersteuning vinden voor Aspose.PDF?
+ U kunt nuttige informatie vinden en ondersteuning krijgen van de Aspose-community op hun website.[ondersteuningsforum](https://forum.aspose.com/c/pdf/10).
 
-#### V: Kan ik het uiterlijk van de tabel aanpassen, zoals de celkleuren en de lettergrootte?
+### Wat gebeurt er als ik meer dan 17 rijen in mijn tabel nodig heb?
+Als u de beschikbare ruimte overschrijdt, past uw tabel niet op de pagina en moet u passende maatregelen nemen om de tabel op de juiste manier op te maken.
 
-A: Ja, u kunt het uiterlijk van de tabel en de cellen aanpassen met behulp van verschillende eigenschappen en methoden die worden geboden door Aspose.PDF voor .NET. U kunt bijvoorbeeld de achtergrondkleuren van cellen, de lettergrootte, het lettertype, de tekstuitlijning en meer wijzigen. Raadpleeg de officiële documentatie voor meer informatie over het aanpassen van het uiterlijk van de tabel.
-
-#### V: Wat gebeurt er als de tabel de paginamarges overschrijdt?
-
-A: Als de tabel de paginamarges overschrijdt, kan dit resulteren in afkapping of overlapping van de inhoud, waardoor het PDF-document minder leesbaar en georganiseerd wordt. Door tabelonderbrekingen te detecteren en de overloop te verwerken, kunt u ervoor zorgen dat de inhoud correct wordt weergegeven binnen het beschikbare paginagebied.
-
-#### V: Kan ik tabeleinden bepalen voor meerdere tabellen in hetzelfde PDF-document?
-
-A: Ja, u kunt tabelonderbrekingen bepalen voor meerdere tabellen in hetzelfde PDF-document. Herhaal de stappen eenvoudigweg voor elke tabel die u wilt analyseren en pas de tabelindeling indien nodig aan om overloop van inhoud te voorkomen.
+### Waar kan ik de Aspose.PDF-bibliotheek kopen?
+ U kunt de bibliotheek aanschaffen bij de[aankooppagina](https://purchase.aspose.com/buy).

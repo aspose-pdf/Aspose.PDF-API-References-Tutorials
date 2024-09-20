@@ -7,139 +7,137 @@ type: docs
 weight: 210
 url: /pl/net/programming-with-text/extract-text-using-text-device/
 ---
-Ten samouczek przeprowadzi Cię przez proces wyodrębniania tekstu z dokumentu PDF przy użyciu urządzenia tekstowego w Aspose.PDF dla .NET. Dostarczony kod źródłowy C# demonstruje niezbędne kroki.
+## Wstęp
 
-## Wymagania
-Zanim zaczniesz, upewnij się, że masz następujące rzeczy:
+Wyodrębnianie tekstu z pliku PDF może być trudne, szczególnie w przypadku dokumentów o różnych formatach, osadzonych czcionkach lub złożonych układach. Ale dzięki Aspose.PDF dla .NET ten proces staje się dziecinnie prosty! Niezależnie od tego, czy chcesz przekonwertować strony pliku PDF na zwykły tekst w celu dalszej analizy, czy po prostu potrzebujesz wyodrębnić określone sekcje, Aspose.PDF ma dla Ciebie rozwiązanie. W tym samouczku krok po kroku wyjaśnimy, jak wyodrębnić tekst z pliku PDF przy użyciu klasy TextDevice w Aspose.PDF. Zapewnimy również jasne wyjaśnienia, dzięki czemu z łatwością zastosujesz te same metody w swoich projektach.
 
-- Visual Studio lub inny kompilator C# zainstalowany na Twoim komputerze.
-- Aspose.PDF dla biblioteki .NET. Możesz pobrać ją z oficjalnej strony Aspose lub użyć menedżera pakietów, takiego jak NuGet, aby ją zainstalować.
+## Wymagania wstępne
 
-## Krok 1: Skonfiguruj projekt
-1. Utwórz nowy projekt C# w preferowanym środowisku programistycznym.
-2. Dodaj odwołanie do biblioteki Aspose.PDF dla platformy .NET.
+Zanim przejdziemy do kodu, upewnij się, że masz wszystko na miejscu, aby móc to śledzić. Oto, czego będziesz potrzebować:
 
-## Krok 2: Importuj wymagane przestrzenie nazw
-W pliku kodu, z którego chcesz wyodrębnić tekst, dodaj na początku pliku następujące dyrektywy using:
+1.  Aspose.PDF dla .NET: Pobierz najnowszą wersję ze strony[Strona pobierania Aspose.PDF dla .NET](https://releases.aspose.com/pdf/net/).
+2. Środowisko programistyczne: Visual Studio lub inne środowisko programistyczne C#.
+3. .NET Framework: Upewnij się, że Twój projekt jest przeznaczony dla środowiska .NET Framework 4.x lub nowszego.
+4. Plik wejściowy PDF: Plik PDF, którego użyjesz do ekstrakcji tekstu. Umieść go w katalogu na swoim komputerze (będziemy go nazywać`YOUR DOCUMENT DIRECTORY`).
+
+## Importuj pakiety
+
+Na górze kodu musisz zaimportować niezbędne przestrzenie nazw, aby móc pracować z Aspose.PDF:
 
 ```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Devices;
 using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using Aspose.Pdf.Devices;
+using System;
 using System.Text;
 ```
 
-## Krok 3: Ustaw katalog dokumentów
- W kodzie znajdź linię, która mówi`string dataDir = "YOUR DOCUMENT DIRECTORY";` i zastąpić`"YOUR DOCUMENT DIRECTORY"` ze ścieżką do katalogu, w którym przechowywane są Twoje dokumenty.
+## Krok 1: Załaduj swój dokument PDF
 
-## Krok 4: Otwórz dokument PDF
- Otwórz istniejący dokument PDF za pomocą`Document`konstruktora i przekazując ścieżkę do pliku wejściowego PDF.
+ Przed wyodrębnieniem tekstu musimy załadować dokument PDF do pamięci. W tym kroku otworzysz swój plik PDF za pomocą Aspose.PDF`Document` class. To umożliwi Ci dostęp do wszystkich stron i treści w pliku.
 
 ```csharp
+// Zdefiniuj ścieżkę do swojego dokumentu PDF
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// Załaduj dokument PDF
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
-## Krok 5: Wyodrębnij tekst za pomocą urządzenia tekstowego
- Utwórz`StringBuilder` obiekt do przechowywania wyodrębnionego tekstu. Przejrzyj każdą stronę dokumentu i użyj`TextDevice` aby wyodrębnić tekst z każdej strony.
+ Tutaj używamy`Document pdfDocument = new Document(dataDir + "input.pdf");` aby załadować plik PDF.`dataDir` zmienna przechowuje ścieżkę katalogu pliku PDF. To da nam dostęp do całego dokumentu, pozwalając nam na pętlenie przez strony i wyodrębnianie treści.
+
+## Krok 2: Skonfiguruj konstruktora ciągów do przechowywania tekstu
+
+ Teraz, gdy dokument jest załadowany, potrzebujemy sposobu na przechowywanie wyodrębnionego tekstu. W tym celu użyjemy`StringBuilder` co pozwala na efektywne łączenie ciągów znaków.
 
 ```csharp
+// StringBuilder do przechowywania wyodrębnionego tekstu
 StringBuilder builder = new StringBuilder();
-string extractedText = "";
-foreach(Page pdfPage in pdfDocument.Pages)
-{
-using (MemoryStream textStream = new MemoryStream())
-{
-TextDevice textDevice = new TextDevice();
-TextExtractionOptions textExtOptions = new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
-textDevice.ExtractionOptions = textExtOptions;
-textDevice.Process(pdfPage, textStream);
-textStream. Close();
-extractedText = Encoding.Unicode.GetString(textStream.ToArray());
-}
-builder. Append(extractedText);
-}
 ```
 
-## Krok 6: Zapisz wyodrębniony tekst
- Określ ścieżkę do pliku wyjściowego i zapisz wyodrębniony tekst w pliku tekstowym za pomocą`File.WriteAllText` metoda.
+ Inicjujemy`StringBuilder`instancji, która będzie zbierać tekst wyodrębniony z każdej strony. Jest to bardziej wydajny sposób obsługi dużych ciągów w porównaniu do zwykłego łączenia ciągów w pętli.
+
+## Krok 3: Przejrzyj strony PDF
+
+ Następnie przechodzimy przez każdą stronę dokumentu PDF, aby wyodrębnić tekst. Przetworzymy każdą stronę indywidualnie, używając`TextDevice` Klasa, która odpowiada za konwersję zawartości pliku PDF do formatu tekstowego.
 
 ```csharp
-dataDir = dataDir + "input_Text_Extracted_out.txt";
-File.WriteAllText(dataDir, builder.ToString());
-```
-
-### Przykładowy kod źródłowy dla funkcji Wyodrębnij tekst za pomocą urządzenia tekstowego przy użyciu Aspose.PDF dla .NET 
-```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Otwórz dokument
-Document pdfDocument = new Document( dataDir + "input.pdf");
-System.Text.StringBuilder builder = new System.Text.StringBuilder();
-//Ciąg do przechowywania wyodrębnionego tekstu
-string extractedText = "";
+// Przejrzyj wszystkie strony w pliku PDF
 foreach (Page pdfPage in pdfDocument.Pages)
 {
-	using (MemoryStream textStream = new MemoryStream())
-	{
-		// Utwórz urządzenie tekstowe
-		TextDevice textDevice = new TextDevice();
-		// Ustaw opcje ekstrakcji tekstu - ustaw tryb ekstrakcji tekstu (surowy lub czysty)
-		TextExtractionOptions textExtOptions = new
-		TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
-		textDevice.ExtractionOptions = textExtOptions;
-		// Konwertuj określoną stronę i zapisz tekst w strumieniu
-		textDevice.Process(pdfPage, textStream);
-		// Konwertuj określoną stronę i zapisz tekst w strumieniu
-		textDevice.Process(pdfDocument.Pages[1], textStream);
-		// Zamknij strumień pamięci
-		textStream.Close();
-		// Pobierz tekst ze strumienia pamięci
-		extractedText = Encoding.Unicode.GetString(textStream.ToArray());
-	}
-	builder.Append(extractedText);
+    // Przetwarzaj każdą stronę pod kątem ekstrakcji tekstu
 }
-dataDir = dataDir + "input_Text_Extracted_out.txt";
-// Zapisz wyodrębniony tekst w pliku tekstowym
-File.WriteAllText(dataDir, builder.ToString());
-Console.WriteLine("\nText extracted successfully using text device from page of PDF Document.\nFile saved at " + dataDir);
 ```
 
-## Wniosek
-Pomyślnie wyodrębniono tekst z dokumentu PDF przy użyciu urządzenia Text Device w Aspose.PDF dla .NET. Wyodrębniony tekst został zapisany w określonym pliku wyjściowym.
+Ta pętla przechodzi przez każdą stronę pliku PDF (`pdfDocument.Pages` ). Dla każdej strony wyodrębnimy tekst i dodamy go do naszego`StringBuilder`.
 
-### Najczęściej zadawane pytania
+## Krok 4: Wyodrębnij tekst z każdej strony
 
-#### P: Jaki jest cel tego poradnika?
-
-A: Ten samouczek zawiera wskazówki dotyczące wyodrębniania tekstu z dokumentu PDF za pomocą funkcji Text Device w Aspose.PDF dla .NET. Towarzyszący kod źródłowy C# demonstruje niezbędne kroki w celu wykonania tego zadania.
-
-#### P: Jakie przestrzenie nazw powinienem zaimportować?
-
-A: W pliku kodu, z którego planujesz wyodrębnić tekst, umieść na początku pliku następujące dyrektywy using:
+ Teraz skonfigurujemy proces ekstrakcji tekstu dla każdej strony. Tutaj utworzymy`TextDevice` obiekt i użyj go do przetworzenia stron PDF.`TextDevice` wyodrębnia surowy lub sformatowany tekst w oparciu o ustawione przez nas opcje wyodrębniania.
 
 ```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Devices;
-using System.IO;
-using System.Text;
+using (MemoryStream textStream = new MemoryStream())
+{
+    // Utwórz urządzenie tekstowe do ekstrakcji tekstu
+    TextDevice textDevice = new TextDevice();
+    
+    // Ustaw opcje ekstrakcji tekstu na tryb „Czysty”
+    TextExtractionOptions textExtOptions = new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
+    textDevice.ExtractionOptions = textExtOptions;
+
+    //Wyodrębnij tekst z bieżącej strony i zapisz go w strumieniu pamięci
+    textDevice.Process(pdfPage, textStream);
+
+    // Konwertuj strumień pamięci na tekst
+    string extractedText = Encoding.Unicode.GetString(textStream.ToArray());
+
+    // Dołącz wyodrębniony tekst do StringBuilder
+    builder.Append(extractedText);
+}
 ```
 
-#### P: Jak określić katalog dokumentów?
+- `TextDevice textDevice = new TextDevice();` :Ten`TextDevice` Klasa służy do wyodrębniania tekstu z pliku PDF.
+- `TextExtractionOptions textExtOptions = new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);` : Ta opcja wyodrębnia surowy tekst bez zachowywania formatowania, takiego jak czcionki lub pozycje. Możesz również użyć`TextFormattingMode.Raw` jeśli potrzebujesz większej kontroli nad formatowaniem.
+- `textDevice.Process(pdfPage, textStream);` :Przetwarza każdą stronę pliku PDF i przechowuje wyodrębniony tekst w`MemoryStream`.
+-  Na koniec konwertujemy tekst z`MemoryStream` do ciągu i dołącz go do`StringBuilder`.
 
- A: W kodzie znajdź linię, która mówi`string dataDir = "YOUR DOCUMENT DIRECTORY";` i zastąpić`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do katalogu dokumentów.
+## Krok 5: Zapisz wyodrębniony tekst do pliku
 
-#### P: Jak otworzyć istniejący dokument PDF?
+ Po przetworzeniu wszystkich stron tekst jest zapisywany w`StringBuilder`Ostatnim krokiem jest zapisanie wyodrębnionego tekstu do pliku.
 
- A: W kroku 4 otworzysz istniejący dokument PDF za pomocą`Document` konstruktora i podając ścieżkę do pliku wejściowego PDF.
+```csharp
+// Zdefiniuj ścieżkę wyjściową dla pliku tekstowego
+dataDir = dataDir + "input_Text_Extracted_out.txt";
 
-#### P: Jak wyodrębnić tekst za pomocą urządzenia tekstowego?
+// Zapisz wyodrębniony tekst do pliku
+File.WriteAllText(dataDir, builder.ToString());
 
- A: Krok 5 obejmuje utworzenie`StringBuilder` obiekt do przechowywania wyodrębnionego tekstu. Następnie przejdziesz przez każdą stronę dokumentu i użyjesz`TextDevice` wraz z`TextExtractionOptions` aby wyodrębnić tekst z każdej strony.
+Console.WriteLine("\nText extracted successfully from PDF document.\nFile saved at " + dataDir);
+```
 
-#### P: Jak zapisać wyodrębniony tekst do pliku?
+- `File.WriteAllText(dataDir, builder.ToString());` :To zapisuje całą zawartość`StringBuilder` do pliku tekstowego.
+- Ścieżka do pliku wyjściowego jest ustawiana poprzez dodanie nazwy pliku (`"input_Text_Extracted_out.txt"` ) do`dataDir` ścieżka.
 
- A: W kroku 6 określisz ścieżkę do pliku wyjściowego i użyjesz`File.WriteAllText`metoda zapisywania wyodrębnionego tekstu do pliku tekstowego.
+## Wniosek
 
-#### P: Jakie są najważniejsze wnioski z tego samouczka?
+Wyodrębnianie tekstu z pliku PDF przy użyciu Aspose.PDF dla .NET to prosty i wydajny proces. Postępując zgodnie z krokami opisanymi w tym przewodniku, możesz łatwo otwierać dokumenty PDF, przechodzić przez strony i wyodrębniać tekst do pliku tekstowego. Jest to szczególnie przydatne do przetwarzania dużych ilości danych PDF, wykonywania analizy tekstu lub konwertowania dokumentów w celu dalszej manipulacji.
 
-A: Postępując zgodnie z tym samouczkiem, nauczyłeś się, jak wykorzystać funkcję Text Device w Aspose.PDF dla .NET, aby wyodrębnić tekst z dokumentu PDF. Wyodrębniony tekst został zapisany w określonym pliku wyjściowym, co umożliwia manipulowanie i wykorzystywanie wyodrębnionej zawartości w razie potrzeby.
+Dzięki Aspose.PDF nie jesteś ograniczony do ekstrakcji tekstu — możesz obsługiwać adnotacje, manipulować obrazami, a nawet konwertować pliki PDF do innych formatów, takich jak HTML lub Word. Elastyczność i moc tej biblioteki sprawiają, że jest ona nieocenionym narzędziem do zarządzania plikami PDF w aplikacjach .NET.
+
+## Najczęściej zadawane pytania
+
+### Czy Aspose.PDF może wyodrębnić tekst z plików PDF zawierających obrazy?
+Nie, Aspose.PDF jest przeznaczony do wyodrębniania tekstu z plików PDF opartych na treści. W przypadku plików PDF opartych na obrazach wymagana jest technologia OCR.
+
+### Czy Aspose.PDF zachowuje formatowanie podczas wyodrębniania tekstu?
+Domyślnie tekst jest wyodrębniany bez formatowania, ale możesz dostosować opcje wyodrębniania, jeśli wolisz zachować formatowanie.
+
+### Czy mogę wyodrębnić tekst z określonego zakresu stron?
+Tak, możesz zmodyfikować kod, aby pętla obejmowała określony zakres stron, a nie wszystkie strony.
+
+### Jakie są tryby wyodrębniania tekstu w pliku Aspose.PDF?
+Aspose.PDF oferuje dwa tryby: Raw i Pure. Tryb Raw próbuje zachować oryginalny układ, podczas gdy tryb Pure wyodrębnia tylko tekst bez formatowania.
+
+### Czy Aspose.PDF dla .NET jest zgodny z .NET Core?
+Tak, Aspose.PDF dla .NET jest w pełni kompatybilny z .NET Core i .NET Framework.

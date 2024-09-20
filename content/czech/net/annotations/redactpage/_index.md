@@ -137,7 +137,7 @@ Gratuluji! Nyní jste zvládli základy redakce dokumentů pomocí Aspose.PDF pr
 Redakce dokumentu je proces trvalého odstranění citlivých informací z dokumentů, které se stanou nečitelnými nebo nepřístupnými.
 
 ### Mohu upravit překryvný text v Aspose.PDF?
- Ano, překryvný text si můžete přizpůsobit nastavením`OverlayText` vlastnictví`RedactionAnnotation`.
+ Ano, překryvný text si můžete přizpůsobit nastavením`OverlayText` vlastnictvím`RedactionAnnotation`.
 
 ### Existuje bezplatná zkušební verze pro Aspose.PDF?
  Ano, Aspose nabízí bezplatnou zkušební verzi, kterou si můžete stáhnout[zde](https://releases.aspose.com/).

@@ -113,7 +113,7 @@ Console.WriteLine("\nLinkAnnotation text color updated successfully.\nFile saved
 
 İşte bu kadar! .NET için Aspose.PDF kullanarak bir PDF'deki bağlantı metni rengini güncellemek bu kadar kolay. Belirli bağlantıları vurgulamak veya sadece görünümlerini değiştirmek istiyorsanız, bu kılavuz size bunu yapma gücü verir. Aspose.PDF ile basit metin değişikliklerinin ötesine geçebilir ve PDF belgelerinizi tamamen özelleştirebilirsiniz.
 
-Sık sık PDF'lerle çalışıyorsanız, araç setinizde Aspose.PDF gibi araçlara sahip olmak size tonlarca zaman ve emek kazandırabilir. O zaman neden kendiniz deneyip başka neler yapabileceğinizi görmüyorsunuz?
+PDF'lerle sık sık çalışıyorsanız, araç setinizde Aspose.PDF gibi araçlara sahip olmak size tonlarca zaman ve emek kazandırabilir. O zaman neden kendiniz deneyip başka neler yapabileceğinizi görmüyorsunuz?
 
 ## SSS
 

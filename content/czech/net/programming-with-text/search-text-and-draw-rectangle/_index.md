@@ -2,88 +2,124 @@
 title: Hledat Text A Nakreslit Obdélník
 linktitle: Hledat Text A Nakreslit Obdélník
 second_title: Aspose.PDF pro .NET API Reference
-description: Naučte se hledat text v PDF, kreslit kolem nalezeného textu obdélníky a uložit upravený dokument pomocí Aspose.PDF for .NET.
+description: Naučte se vyhledávat text v PDF a zvýrazňovat jej pomocí obdélníků pomocí Aspose.PDF for .NET! Jednoduchý návod krok za krokem pro vylepšené dovednosti manipulace s PDF.
 type: docs
 weight: 460
 url: /cs/net/programming-with-text/search-text-and-draw-rectangle/
 ---
-Tento tutoriál vysvětluje, jak používat Aspose.PDF pro .NET k vyhledání určitého textu v dokumentu PDF, nakreslení obdélníku kolem nalezeného textu a uložení upraveného dokumentu. Poskytnutý zdrojový kód C# demonstruje proces krok za krokem.
+## Zavedení
+
+Chcete zlepšit své dovednosti v manipulaci s PDF? Chcete se naučit vyhledávat konkrétní text v souborech PDF a zvýraznit jej obdélníkem? Dostali jste se na perfektního průvodce! Dnes vás provedu tím, jak pomocí Aspose.PDF for .NET vyhledávat text v dokumentu PDF a kreslit kolem něj obdélníky. Tento článek poskytne návod krok za krokem navržený s ohledem na srozumitelnost a užitečnost a zajistí, že budete moci tyto techniky sledovat a aplikovat na své projekty. 
 
 ## Předpoklady
 
-Než budete pokračovat ve výukovém programu, ujistěte se, že máte následující:
+Než se pustíme do výukového programu, připravme si, co potřebujete k zajištění hladkého pracovního postupu:
 
-- Základní znalost programovacího jazyka C#.
-- Nainstalovaná knihovna Aspose.PDF pro .NET. Můžete jej získat z webu Aspose nebo jej pomocí NuGet nainstalovat do svého projektu.
+1. Základní porozumění .NET: Abyste mohli efektivně sledovat tento výukový program, měli byste být obeznámeni s programováním v C# a frameworkem .NET.
+   
+2. Visual Studio nainstalované: K psaní a testování kódu budete potřebovat integrované vývojové prostředí (IDE). Visual Studio Community je skvělá volba a je zdarma.
+   
+3. Aspose.PDF for .NET: Ve svém projektu musíte mít nainstalovanou knihovnu Aspose.PDF. Můžete si jej stáhnout[zde](https://releases.aspose.com/pdf/net/) nebo zvážit a[dočasná licence](https://purchase.aspose.com/temporary-license/) pro rozšířené funkce.
+   
+4.  Ukázkový dokument PDF: Pro tento výukový program budete potřebovat ukázkový soubor PDF s názvem`SearchAndGetTextFromAll.pdf` uloženy v adresáři vašeho projektu. 
 
-## Krok 1: Nastavte projekt
+## Importujte balíčky
 
-Začněte vytvořením nového projektu C# ve vašem preferovaném integrovaném vývojovém prostředí (IDE) a přidejte odkaz na knihovnu Aspose.PDF for .NET.
+Chcete-li začít, musíte nejprve importovat potřebné balíčky do svého projektu .NET. Postupujte takto:
 
-## Krok 2: Importujte potřebné jmenné prostory
+### Otevřete Visual Studio
 
-Chcete-li importovat požadované jmenné prostory, přidejte následující pomocí direktiv na začátek souboru C#:
+Spusťte Visual Studio a vytvořte novou konzolovou aplikaci nebo použijte existující, kde chcete implementovat funkce PDF.
+
+### Přidejte Aspose.PDF do svého projektu
+
+1. Klepněte pravým tlačítkem myši na svůj projekt v Průzkumníku řešení.
+2. Vyberte „Spravovat balíčky NuGet“.
+3.  Hledat`Aspose.PDF` a nainstalujte nejnovější verzi.
+
+Tím vytvoříte základ pro všechny úžasné manipulace s PDF, které se chystáte provést.
+
+## Importovat jmenné prostory
+
+V horní části souboru programu budete chtít importovat příslušné jmenné prostory z knihovny Aspose:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using Aspose.Pdf.Content;
+using System;
 using Aspose.Pdf.Facades;
 ```
 
-## Krok 3: Nastavte cestu k adresáři dokumentů
+To usnadňuje přístup ke třídám a metodám v rámci knihovny Aspose.PDF pro vaše úkoly.
 
- Nastavte cestu k adresáři dokumentů pomocí`dataDir` proměnná:
+
+Nyní, když máte vše nastaveno, pojďme si rozdělit proces hledání textu v PDF a nakreslení obdélníku kolem něj do zvládnutelných kroků.
+
+## Krok 1: Nastavte cestu pro váš dokument
+
+ Nejprve nastavte cestu k souboru PDF. Nezapomeňte vyměnit`YOUR DOCUMENT DIRECTORY` se skutečnou cestou, kde jste`SearchAndGetTextFromAll.pdf` je uložen.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Nahradit`"YOUR DOCUMENT DIRECTORY"` se skutečnou cestou k vašemu adresáři dokumentů.
+## Krok 2: Otevřete dokument PDF
 
-## Krok 4: Načtěte dokument PDF
-
- Načtěte dokument PDF pomocí`Document` třída:
+ Dále vytvořte instanci souboru`Document` třída pro načtení vašeho PDF:
 
 ```csharp
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
 ```
 
- Nahradit`"SearchAndGetTextFromAll.pdf"` se skutečným názvem vašeho souboru PDF.
+Tento řádek kódu otevře zadaný soubor PDF a umožní vám s ním dále manipulovat.
 
-## Krok 5: Vytvořte TextFragmentAbsorber
+## Krok 3: Vytvořte absorbér textu
 
- Vytvořte a`TextFragmentAbsorber` objekt k nalezení všech výskytů vstupní vyhledávací fráze:
+ Nyní budete potřebovat způsob, jak hledat text v tomto dokumentu. K tomu používáme`TextFragmentAbsorber`:
 
 ```csharp
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 ```
 
- Nahradit`@"[\S]+"` s požadovaným vzorem regulárního výrazu.
+ Regulární výraz`@"[\S]+"` je navržen tak, aby odpovídal jakémukoli řetězci bez mezer v PDF. 
 
-## Krok 6: Povolte vyhledávání regulárních výrazů
+## Krok 4: Nakonfigurujte možnosti vyhledávání textu
 
- Povolte vyhledávání regulárních výrazů nastavením`TextSearchOptions` vlastnost absorbéru:
+Dále byste měli nastavit možnosti textového vyhledávání:
 
 ```csharp
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;
 ```
 
-## Krok 7: Hledejte na všech stránkách
+ Tady,`true` parametr znamená, že vyhledávání bude rozlišovat malá a velká písmena. Můžete to nastavit na`false` pokud chcete vyhledávání bez rozlišení velkých a malých písmen.
 
-Přijměte absorbér pro všechny stránky dokumentu:
+## Krok 5: Přijměte v dokumentu absorbér textu
+
+ S tvým`TextFragmentAbsorber` a možnosti vyhledávání jsou připraveny, je čas absorbovat text z dokumentu:
 
 ```csharp
 document.Pages.Accept(textAbsorber);
 ```
 
-## Krok 8: Nakreslete kolem nalezeného textu obdélník
+Tato metoda prozkoumá každou stránku ve vašem PDF a najde fragmenty textu, které odpovídají zadanému vzoru.
 
- Vytvořte a`PdfContentEditor` objekt a procházet načtenými fragmenty textu, přičemž kolem každého segmentu textu nakreslíte obdélník:
+## Krok 6: Vytvořte PdfContentEditor
+
+ Chcete-li na dokument kreslit tvary, budete potřebovat`PdfContentEditor`:
 
 ```csharp
 var editor = new PdfContentEditor(document);
+```
+
+Tento editor vám umožňuje snadno manipulovat a upravovat obsah PDF.
+
+## Krok 7: Procházení nalezených textových fragmentů
+
+Nyní budete chtít procházet nalezené fragmenty textu a nakreslit kolem nich obdélníky:
+
+```csharp
 foreach (TextFragment textFragment in textAbsorber.TextFragments)
 {
     foreach (TextSegment textSegment in textFragment.Segments)
@@ -93,83 +129,66 @@ foreach (TextFragment textFragment in textAbsorber.TextFragments)
 }
 ```
 
+ Tato smyčka iteruje každý textový fragment a jeho segmenty a volá a`DrawBox` metoda kreslení obdélníku.
+
+## Krok 8: Definujte metodu DrawBox
+
+ Musíte definovat`DrawBox` metoda, která bude zpracovávat logiku kreslení obdélníku. Zde je jednoduchá implementace:
+
+```csharp
+private static void DrawBox(PdfContentEditor editor, int pageNumber, TextSegment textSegment, System.Drawing.Color color)
+{
+    // Vypočítejte rozměry obdélníku na základě segmentu textu
+    float x = textSegment.Rectangle.LLX;
+    float y = textSegment.Rectangle.LLY;
+    float width = textSegment.Rectangle.Width;
+    float height = textSegment.Rectangle.Height;
+
+    // Nakreslete obdélník pomocí vypočtených hodnot
+    editor.DrawRectangle(pageNumber, x, y, width, height, color, 1);
+}
+```
+
+Tato metoda určuje polohu a velikost obdélníku na základě ohraničujícího obdélníku segmentu a pomocí editoru jej nakreslí.
+
 ## Krok 9: Uložte upravený dokument
 
-Uložte upravený dokument:
+Po nakreslení obdélníků kolem nalezeného textu můžete upravený dokument uložit:
 
 ```csharp
 dataDir = dataDir + "SearchTextAndDrawRectangle_out.pdf";
 document.Save(dataDir);
 ```
 
- Nezapomeňte vyměnit`"SearchTextAndDrawRectangle_out.pdf"` s požadovaným názvem výstupního souboru.
+Ujistěte se, že je nový soubor uložen pod odlišným názvem, aby nedošlo k přepsání původního dokumentu.
 
-### Ukázka zdrojového kódu pro Search Text And Draw Rectangle pomocí Aspose.PDF pro .NET 
+## Krok 10: Potvrzující zpráva
+
+Nakonec vytiskněte potvrzovací zprávu do konzoly, abyste věděli, že operace byla úspěšná:
+
 ```csharp
-// Cesta k adresáři dokumentů.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Otevřete dokument
-Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-//Vytvořte objekt TextAbsorber a najděte všechny fráze odpovídající regulárnímu výrazu
-TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
-TextSearchOptions textSearchOptions = new TextSearchOptions(true);
-textAbsorber.TextSearchOptions = textSearchOptions;
-document.Pages.Accept(textAbsorber); 
-var editor = new PdfContentEditor(document); 
-foreach (TextFragment textFragment in textAbsorber.TextFragments)
-{
-	foreach (TextSegment textSegment in textFragment.Segments)
-	{
-			DrawBox(editor, textFragment.Page.Number, textSegment, System.Drawing.Color.Red);
-	}
-}
-dataDir = dataDir + "SearchTextAndDrawRectangle_out.pdf";
-document.Save(dataDir);
 Console.WriteLine("\nRectangle drawn successfully on searched text.\nFile saved at " + dataDir);
 ```
 
+A tady to máte! Úspěšně jste vytvořili skript pro vyhledávání textu v PDF a jeho zvýraznění pomocí obdélníků.
+
 ## Závěr
 
-Gratuluji! Úspěšně jste se naučili, jak vyhledat konkrétní text v dokumentu PDF, nakreslit kolem nalezeného textu obdélník a uložit upravený dokument pomocí Aspose.PDF for .NET. Tento výukový program poskytuje průvodce krok za krokem, od nastavení projektu až po provedení požadovaných akcí. Nyní můžete tento kód začlenit do svých vlastních projektů C# a manipulovat s textem a kreslit obdélníky v souborech PDF.
+Gratuluji! Právě jste odemkli výkonnou dovednost, která může výrazně zlepšit vaše schopnosti manipulace s PDF pomocí Aspose.PDF pro .NET. Pomocí několika jednoduchých kroků můžete vyhledat jakýkoli text v dokumentu a vizuálně jej zvýraznit, díky čemuž budou vaše dokumenty PDF interaktivnější a lépe spravovatelné. Neváhejte experimentovat s různými vzory regulárních výrazů a barevnými možnostmi, abyste si tento nástroj skutečně přizpůsobili!
 
-### FAQ
+## FAQ
 
-#### Otázka: Jaký je účel výukového programu „Vyhledat text a nakreslit obdélník“?
+### Co je Aspose.PDF pro .NET?
+Aspose.PDF for .NET je knihovna, která poskytuje komplexní způsob, jak programově vytvářet, manipulovat a převádět dokumenty PDF.
 
-Odpověď: Výukový program „Vyhledat text a nakreslit obdélník“ má za cíl provést uživatele procesem používání knihovny Aspose.PDF pro .NET k vyhledávání konkrétního textu v dokumentu PDF, kreslení obdélníků kolem nalezených textových segmentů a ukládání upravených dokument. Výukový program poskytuje podrobné pokyny a ukázky kódu C# pro ilustraci každého kroku procesu.
+### Mohu používat Aspose.PDF zdarma?
+Ano, Aspose nabízí bezplatnou zkušební verzi, kterou můžete použít k otestování funkcí knihovny. Podívejte se na to[zde](https://releases.aspose.com/).
 
-#### Otázka: Jak tento kurz pomáhá při kreslení obdélníků kolem určitého textu v dokumentu PDF?
+### Jaký programovací jazyk musím používat s Aspose.PDF pro .NET?
+Aspose.PDF for .NET je navržen pro použití s C# a dalšími jazyky .NET.
 
-Odpověď: Tento výukový program poskytuje komplexního průvodce, jak najít a nakreslit obdélníky kolem určitých textových segmentů v dokumentu PDF. Ukazuje proces nastavení projektu, načtení dokumentu PDF, umožnění vyhledávání regulárními výrazy, kreslení obdélníků kolem nalezených segmentů textu a uložení upraveného PDF.
+### Jak získám pomoc s Aspose.PDF?
+ Můžete navštívit fórum podpory Aspose, kde získáte pomoc ohledně jakéhokoli problému nebo dotazu, který můžete mít. Najděte podporu[zde](https://forum.aspose.com/c/pdf/10).
 
-#### Otázka: Jaké předpoklady jsou vyžadovány pro sledování tohoto kurzu?
-
-Odpověď: Než začnete s výukovým programem, měli byste mít základní znalosti programovacího jazyka C#. Navíc musíte mít nainstalovanou knihovnu Aspose.PDF for .NET. Můžete jej získat z webu Aspose nebo jej nainstalovat do svého projektu pomocí NuGet.
-
-#### Otázka: Jak nastavím svůj projekt, aby následoval tento tutoriál?
-
-Odpověď: Začněte vytvořením nového projektu C# ve vašem preferovaném integrovaném vývojovém prostředí (IDE). Poté do projektu přidejte odkaz na knihovnu Aspose.PDF for .NET. To vám umožní používat funkce knihovny pro manipulaci s dokumenty PDF.
-
-#### Otázka: Mohu pomocí tohoto kurzu kreslit obdélníky kolem určitého textu?
-
-Odpověď: Ano, výukový program se zaměřuje na kreslení obdélníků kolem určitých textových segmentů v dokumentu PDF. Ukazuje, jak najít požadovaný text pomocí regulárních výrazů, vytvořit obdélníky kolem identifikovaných textových segmentů a uložit upravený PDF.
-
-#### Otázka: Jak mohu určit text, který chci hledat, a nakreslit kolem něj obdélníky?
-
- A: Chcete-li zadat text, který chcete hledat, a kolem něj nakreslit obdélníky, vytvořte a`TextFragmentAbsorber` objekt a nastavte jeho vzor pomocí`Text` parametr. Nahradit výchozí vzor`@"[\S]+"` v kódu výukového programu s požadovaným vzorem regulárního výrazu.
-
-#### Otázka: Jak povolím vyhledávání textu pomocí regulárních výrazů?
-
- A: Hledání regulárních výrazů je povoleno vytvořením a`TextSearchOptions` objektu a nastavení jeho hodnoty na`true` . Přiřaďte tento objekt k`TextSearchOptions` vlastnictví`TextFragmentAbsorber` instance. Tím je zajištěno, že se při vyhledávání textu použije vzor regulárního výrazu.
-
-#### Otázka: Jak nakreslím kolem nalezeného textu obdélníky?
-
- A: Po identifikaci textových segmentů pomocí`TextFragmentAbsorber` , výukový program poskytuje smyčku pro iteraci těmito segmenty. Pro každý textový segment výukový program ukazuje, jak vytvořit obdélník kolem něj pomocí`DrawBox` a určete vzhled obdélníku.
-
-#### Otázka: Jaké jsou kroky k uložení upraveného PDF s nakreslenými obdélníky?
-
-Odpověď: Po nakreslení obdélníků kolem požadovaných textových segmentů použijte`Document` třídy`Save` způsob uložení upraveného dokumentu. Ukázkový kód výukového programu ukazuje, jak uložit upravené PDF a zobrazit zprávu o úspěchu.
-
-#### Otázka: Mohu upravit vzhled nakreslených obdélníků?
-
- Odpověď: Ano, vzhled nakreslených obdélníků si můžete přizpůsobit. V ukázkovém kódu výukového programu je`DrawBox` metoda se používá k vytváření obdélníků. Můžete upravit vlastnosti, jako je barva, styl a tloušťka, a přizpůsobit tak vzhled nakreslených obdélníků.
+### Kde si stáhnu Aspose.PDF pro .NET?
+ Knihovnu si můžete stáhnout z webu Aspose,[zde](https://releases.aspose.com/pdf/net/).

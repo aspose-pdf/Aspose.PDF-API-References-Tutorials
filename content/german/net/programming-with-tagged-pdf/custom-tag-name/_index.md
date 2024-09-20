@@ -7,126 +7,103 @@ type: docs
 weight: 90
 url: /de/net/programming-with-tagged-pdf/custom-tag-name/
 ---
-In dieser Schritt-für-Schritt-Anleitung zeigen wir Ihnen, wie Sie einen benutzerdefinierten Tag-Namen mit Aspose.PDF für .NET verwenden. Aspose.PDF ist eine leistungsstarke Bibliothek, mit der Sie PDF-Dokumente programmgesteuert bearbeiten können. Durch die Verwendung benutzerdefinierter Tags können Sie Ihrem PDF-Dokument bestimmte Strukturinformationen hinzufügen, wodurch es einfacher zu verwenden und zugänglich wird.
+## Einführung
 
-Lassen Sie uns in den Code eintauchen und lernen, wie Sie mit Aspose.PDF für .NET einen benutzerdefinierten Tag-Namen verwenden.
+Im heutigen digitalen Zeitalter sind PDFs allgegenwärtig. Von Berichten bis zu Handbüchern dienen sie einer Vielzahl von Zwecken in verschiedenen Branchen. Es ist jedoch von entscheidender Bedeutung, sicherzustellen, dass diese Dokumente für alle zugänglich sind, auch für Menschen mit Behinderungen. Hier kommen getaggte PDFs ins Spiel. Sie erleichtern Bildschirmleseprogrammen und anderen unterstützenden Technologien die effektive Interpretation von Dokumentinhalten.
 
 ## Voraussetzungen
 
-Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
+Bevor wir mit dem Programmieren beginnen, müssen Sie sicherstellen, dass Sie alles bereit haben. Folgendes benötigen Sie:
 
-1. Aspose.PDF-Bibliothek für .NET installiert.
-2. Grundkenntnisse der Programmiersprache C#.
+1. Visual Studio – Jede aktuelle Version ist geeignet, für optimale Funktionalität ist es jedoch am besten, die neueste Version zu verwenden.
+2.  Aspose.PDF für .NET - Sie können die neueste Version ganz einfach herunterladen von der[Downloadlink](https://releases.aspose.com/pdf/net/).
+3. Grundkenntnisse in C# – Kenntnisse der Grundlagen der C#-Programmierung sind bei der Implementierung des Codes von Vorteil.
 
-## Schritt 1: Einrichten der Umgebung
+## Pakete importieren
 
-Öffnen Sie zunächst Ihre C#-Entwicklungsumgebung und erstellen Sie ein neues Projekt. Stellen Sie sicher, dass Sie in Ihrem Projekt einen Verweis auf die Aspose.PDF-Bibliothek für .NET hinzugefügt haben.
+Sobald Sie Ihre Umgebung eingerichtet haben, besteht der nächste Schritt darin, die erforderlichen Pakete zur Verwendung von Aspose.PDF zu importieren. Sie können dies tun, indem Sie Ihrem Projekt die Aspose.PDF-Bibliothek hinzufügen.
+
+### Installieren Sie Aspose.PDF über NuGet
+
+1. Öffnen Sie Ihr Visual Studio-Projekt: Wenn Sie noch kein Projekt erstellt haben, erstellen Sie ein neues.
+2. Greifen Sie auf den NuGet-Paket-Manager zu: Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf Ihr Projekt und wählen Sie „NuGet-Pakete verwalten“ aus.
+3. Suchen Sie nach Aspose.PDF: Geben Sie „Aspose.PDF“ in die Suchleiste ein.
+4. Installieren Sie das Paket: Klicken Sie auf „Installieren“, um das Paket zu Ihrem Projekt hinzuzufügen. Nach der Installation können Sie loslegen!
+
+### Using-Direktive hinzufügen
+
+Um die Aspose-Funktionalität in Ihrem Code zu nutzen, müssen Sie die erforderliche using-Direktive oben in Ihrer Datei hinzufügen:
 
 ```csharp
-// Der Pfad zum Dokumentverzeichnis.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Schritt 2: Erstellen des Dokuments
+Wenn Sie diese Schritte abgeschlossen haben, können Sie mit der Erstellung Ihres getaggten PDFs beginnen!
 
- Der erste Schritt besteht in der Erstellung eines neuen PDF-Dokuments mit dem`Document` Klasse.
+Nachdem Sie nun alles eingerichtet haben, können wir uns an die Hauptaufgabe machen: das Erstellen eines getaggten PDF-Dokuments. Hier finden Sie eine Schritt-für-Schritt-Anleitung zur Verwendung von Aspose.PDF für .NET.
 
-```csharp
-// Erstellen Sie das PDF-Dokument
-Document document = new Document();
-```
+## Schritt 1: Definieren Sie das Dokumentverzeichnis
 
-## Schritt 3: Mit getaggten Inhalten arbeiten
-
-Dann erhalten wir den getaggten Inhalt des Dokuments, mit dem wir arbeiten können.
+Zunächst müssen Sie den Pfad angeben, in dem Ihr PDF gespeichert wird. Hier definieren Sie Ihr Datenverzeichnis.
 
 ```csharp
-// Holen Sie sich den getaggten Inhalt des Dokuments
-ITaggedContent taggedContent = document.TaggedContent;
-```
-
-## Schritt 4: Dokumenttitel und Sprache festlegen
-
-Wir können jetzt den Dokumenttitel und die Sprache festlegen.
-
-```csharp
-// Definieren Sie den Dokumenttitel und die Sprache
-taggedContent.SetTitle("Tagged PDF document");
-taggedContent.SetLanguage("fr-FR");
-```
-
-## Schritt 5: Logische Strukturelemente erstellen
-
-Lassen Sie uns nun einige logische Strukturelemente erstellen, um unseren Inhalt zu organisieren.
-
-```csharp
-// Logische Strukturelemente erstellen
-SectElement sect = taggedContent.CreateSectElement();
-taggedContent.RootElement.AppendChild(sect);
-ParagraphElement p1 = taggedContent.CreateParagraphElement();
-ParagraphElement p2 = taggedContent.CreateParagraphElement();
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-ParagraphElement p4 = taggedContent.CreateParagraphElement();
-p1.SetText("P1.");
-p2.SetText("P2.");
-p3.SetText("P3.");
-p4.SetText("P4.");
-p1.SetTag("P1");
-p2.SetTag("Para");
-p3.SetTag("Para");
-p4.SetTag("Paragraph");
-sect.AppendChild(p1);
-sect.AppendChild(p2);
-sect.AppendChild(p3);
-sect.AppendChild(p4);
-SpanElement span1 = taggedContent.CreateSpanElement();
-SpanElement span2 = taggedContent.CreateSpanElement();
-SpanElement span3 = taggedContent.CreateSpanElement();
-SpanElement span4 = taggedContent.CreateSpanElement();
-span1.SetText("Span 1.");
-span2.SetText("Span 2.");
-span3.SetText("Span 3.");
-span4.SetText("Span 4.");
-span1.SetTag("SPAN");
-span2.SetTag("Sp");
-span3.SetTag("Sp");
-span4.SetTag("TheSpan");
-p1.AppendChild(span1);
-p2.AppendChild(span2);
-p3.AppendChild(span3);
-p4.AppendChild(span4);
-```
-
-Hier erstellen wir Absatzelemente und Span-Elemente für unseren Inhalt und weisen ihnen benutzerdefinierte Tags zu.
-
-## Schritt 6: Speichern Sie das getaggte PDF-Dokument
-
-Abschließend speichern wir das getaggte PDF-Dokument.
-
-```csharp
-// Speichern des getaggten PDF-Dokuments
-document.Save(dataDir + "CustomTag.pdf");
-```
-
-### Beispielquellcode für benutzerdefinierte Tag-Namen mit Aspose.PDF für .NET 
-```csharp
-
-// Der Pfad zum Dokumentverzeichnis.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
-// PDF-Dokument erstellen
+Erklärung: Ersetzen Sie „IHR DOKUMENTVERZEICHNIS“ durch den tatsächlichen Pfad, in dem Sie die PDF-Datei speichern möchten. Es ist wichtig, Schreibberechtigung für dieses Verzeichnis zu haben, um Laufzeitausnahmen zu vermeiden.
+
+## Schritt 2: Ein neues PDF-Dokument erstellen
+
+ Als nächstes erstellen wir eine Instanz des`Document` Klasse.
+
+```csharp
 Document document = new Document();
+```
 
-// Holen Sie sich Inhalte für die Arbeit mit TaggedPdf
+Erklärung: Diese Zeile initialisiert ein neues PDF-Dokument. Stellen Sie sich das so vor, als würden Sie eine leere Leinwand erstellen, auf die Sie den Inhalt Ihres PDFs malen.
+
+## Schritt 3: Markierten Inhalt erstellen
+
+Jetzt ist es an der Zeit, zum Kern des Taggings zu kommen. Wir werden den getaggten Inhalt des Dokuments abrufen.
+
+```csharp
 ITaggedContent taggedContent = document.TaggedContent;
+```
 
-// Titel und Sprache für Dokument festlegen
+ Erläuterung: Die`TaggedContent` -Objekt ermöglicht es uns, die logische Struktur und Zugänglichkeit des PDF zu manipulieren, indem wir den Inhalt hierarchisch organisieren.
+
+## Schritt 4: Titel und Sprache festlegen
+
+Als nächstes können Sie den Titel und das Sprachattribut des Dokuments festlegen. Dies hilft Screenreadern, das Dokument richtig zu verarbeiten.
+
+```csharp
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
+```
 
-// Logische Strukturelemente erstellen
+Erklärung: Hier informieren wir jeden, der dieses PDF liest, über seinen Titel und die Sprache, was das Verständnis erleichtert, insbesondere bei Eingabehilfen.
+
+## Schritt 5: Erstellen der logischen Strukturelemente
+
+Jetzt ist es an der Zeit, strukturierte Elemente in Ihrem PDF zu erstellen.
+
+```csharp
 SectElement sect = taggedContent.CreateSectElement();
 taggedContent.RootElement.AppendChild(sect);
+```
+
+ Erklärung: Dieser Schritt führt ein Abschnittselement ein, in dem Sie Inhalte hinzufügen können. Das`RootElement` ist Ihre Heimatbasis.
+
+## Schritt 6: Absatzelemente erstellen
+
+Nun erstellen wir verschiedene Absatzelemente und legen deren Textinhalte fest.
+
+```csharp
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 ParagraphElement p2 = taggedContent.CreateParagraphElement();
 ParagraphElement p3 = taggedContent.CreateParagraphElement();
@@ -135,14 +112,41 @@ p1.SetText("P1. ");
 p2.SetText("P2. ");
 p3.SetText("P3. ");
 p4.SetText("P4. ");
+```
+
+Erklärung: Jeder Absatz ist mit einem Satz in einer Geschichte vergleichbar, er beschreibt die Szene und verleiht Ihrem Dokument Bedeutung.
+
+## Schritt 7: Absätzen Tags zuweisen
+
+Für die Barrierefreiheit Ihrer PDF-Datei ist es wichtig, jeden Absatz entsprechend zu kennzeichnen.
+
+```csharp
 p1.SetTag("P1");
 p2.SetTag("Para");
 p3.SetTag("Para");
 p4.SetTag("Paragraph");
+```
+
+Erklärung: Durch die Kennzeichnung mit Tags ermöglichen wir unterstützenden Technologien, die Struktur des Inhalts zu verstehen – es ist, als würden wir ihnen eine Straßenkarte zur Navigation durch das Gebiet geben.
+
+## Schritt 8: Absätze an den Abschnitt anhängen
+
+Wir werden diese Absätze nun an den zuvor erstellten Abschnitt anhängen.
+
+```csharp
 sect.AppendChild(p1);
 sect.AppendChild(p2);
 sect.AppendChild(p3);
 sect.AppendChild(p4);
+```
+
+Erklärung: Diese Aktion organisiert die Absätze innerhalb des Abschnitts und sorgt dafür, dass der Ablauf logisch und leicht nachvollziehbar wird.
+
+## Schritt 9: Span-Elemente erstellen
+
+Genau wie Absätze fügen Bereiche unserem Textinhalt detaillierte Details hinzu.
+
+```csharp
 SpanElement span1 = taggedContent.CreateSpanElement();
 SpanElement span2 = taggedContent.CreateSpanElement();
 SpanElement span3 = taggedContent.CreateSpanElement();
@@ -151,62 +155,63 @@ span1.SetText("Span 1.");
 span2.SetText("Span 2.");
 span3.SetText("Span 3.");
 span4.SetText("Span 4.");
+```
+
+Erklärung: Spannen sind wie die Feinabstimmung von Details; sie verleihen dem, was Sie in jedem Absatz vermitteln möchten, Spezifität.
+
+## Schritt 10: Span-Elementen Tags zuweisen
+
+Genau wie bei den Absätzen sollten wir unsere Span-Elemente mit Tags versehen, um das Verständnis zu erleichtern.
+
+```csharp
 span1.SetTag("SPAN");
 span2.SetTag("Sp");
 span3.SetTag("Sp");
 span4.SetTag("TheSpan");
+```
+
+Erklärung: Durch die ordnungsgemäße Kennzeichnung von Bereichen wird sichergestellt, dass alle Nuancen genau dargestellt werden, sodass für jeden, der darauf stößt, ein aussagekräftiges Dokument entsteht.
+
+## Schritt 11: Abschnitte an Absätze anhängen
+
+Hängen wir nun unsere Span-Elemente an die entsprechenden Absätze an.
+
+```csharp
 p1.AppendChild(span1);
 p2.AppendChild(span2);
 p3.AppendChild(span3);
 p4.AppendChild(span4);
-
-// Getaggtes PDF-Dokument speichern
-document.Save(dataDir + "CustomTag.pdf");
-
 ```
+
+Erklärung: Diese Integration verbessert Ihre Absätze durch die Einblendung zusätzlicher Informationen, genau wie Sie einem Buch Fußnoten zum tieferen Verständnis hinzufügen.
+
+## Schritt 12: Speichern Sie das getaggte PDF-Dokument
+
+Endlich ist es Zeit, Ihr Meisterwerk zu speichern!
+
+```csharp
+document.Save(dataDir + "CustomTag.pdf");
+```
+
+Erklärung: Mit dieser Zeile wird Ihr getaggtes PDF im angegebenen Verzeichnis gespeichert. Damit ist die Erstellung Ihres getaggten PDF-Dokuments abgeschlossen!
 
 ## Abschluss
 
-Herzlichen Glückwunsch! Sie haben gelernt, wie Sie mit Aspose.PDF für .NET einen benutzerdefinierten Tag-Namen verwenden. Sie können Ihrem PDF-Dokument jetzt mithilfe benutzerdefinierter Tags spezifische Strukturinformationen hinzufügen. Entdecken Sie weitere Funktionen von Aspose.PDF, um sein volles Potenzial zu entdecken.
+Beim Erstellen getaggter PDF-Dokumente mit Aspose.PDF für .NET geht es nicht nur darum, Inhalte hinzuzufügen; es geht darum, ein barrierefreies Erlebnis für alle Benutzer zu schaffen. Mit nur wenigen Schritten können Sie sicherstellen, dass Ihre Dokumente jeden ansprechen, Barrieren abbauen und das Verständnis verbessern. 
 
-### Häufig gestellte Fragen
+## Häufig gestellte Fragen
 
-#### F: Was ist ein benutzerdefinierter Tag-Name im Kontext von PDF-Dokumenten und warum sollte ich ihn mit Aspose.PDF für .NET verwenden?
+### Was ist ein getaggtes PDF?  
+Ein getaggtes PDF enthält zusätzliche Metadaten, die die Struktur und Zugänglichkeit des Dokumentinhalts beschreiben und so die Interpretation durch unterstützende Technologien erleichtern.
 
-A: Ein benutzerdefinierter Tag-Name in einem PDF-Dokument ist eine benutzerdefinierte Bezeichnung, die dem Inhalt des Dokuments spezifische Strukturinformationen verleiht. Durch die Verwendung benutzerdefinierter Tag-Namen mit Aspose.PDF für .NET können Sie die Zugänglichkeit und Organisation des PDF-Dokuments verbessern und so die Navigation, das Verständnis und die Interaktion erleichtern.
+### Warum brauche ich Aspose.PDF für .NET?  
+Aspose.PDF für .NET ist eine leistungsstarke Bibliothek, die es Entwicklern ermöglicht, PDF-Dokumente programmgesteuert mit umfangreichen Funktionen zu erstellen, zu ändern und zu bearbeiten.
 
-#### F: Wie erleichtert Aspose.PDF für .NET die Verwendung benutzerdefinierter Tag-Namen in PDF-Dokumenten?
+### Wie kann ich eine Testversion von Aspose.PDF erhalten?  
+ Sie können eine kostenlose Testversion von Aspose.PDF erhalten, indem Sie[dieser Link](https://releases.aspose.com/).
 
-A: Aspose.PDF für .NET bietet eine Reihe von Klassen und Methoden, mit denen Sie benutzerdefinierte Tag-Namen erstellen, bearbeiten und verschiedenen Strukturelementen in einem PDF-Dokument zuweisen können. Auf diese Weise können Sie dem Inhalt des Dokuments semantische Bedeutung und Kontext verleihen.
+### Kann ich Support für Aspose.PDF erhalten?  
+ Ja, Sie können Support über erreichen[das Aspose-Forum](https://forum.aspose.com/c/pdf/10).
 
-####  F: Welche Rolle spielt der`taggedContent` object play in using custom tag names?
-
- A: Die`taggedContent` Objekt, das aus dem Dokument`TaggedContent` -Eigenschaft ermöglicht Ihnen das Arbeiten mit strukturierten Elementen im PDF-Dokument. Sie können diese Elemente erstellen, organisieren und ihnen benutzerdefinierte Tag-Namen zuweisen, um die semantische Struktur des Dokuments zu verbessern.
-
-#### F: Wie verbessern benutzerdefinierte Tag-Namen die Zugänglichkeit und Benutzerfreundlichkeit von Dokumenten?
-
-A: Benutzerdefinierte Tag-Namen verleihen dem Inhalt des Dokuments zusätzlichen Kontext und zusätzliche Semantik, was die Zugänglichkeit für unterstützende Technologien verbessert und das allgemeine Benutzererlebnis steigert. Bildschirmleseprogramme und andere unterstützende Geräte können benutzerdefinierte Tag-Namen verwenden, um Benutzern aussagekräftige Informationen zu vermitteln.
-
-#### F: Kann ich benutzerdefinierte Tag-Namen für verschiedene Arten von Strukturelementen in einem PDF-Dokument verwenden?
-
-A: Ja, Sie können einer Vielzahl von Strukturelementen, darunter Absätzen, Bereichen, Abschnitten und mehr, benutzerdefinierte Tag-Namen zuweisen. Auf diese Weise können Sie verschiedene Teile des Dokumentinhalts kategorisieren und beschriften und so ein besser organisiertes und verständlicheres Layout erstellen.
-
-#### F: Wie definiere und weise ich mit Aspose.PDF für .NET Elementen in einem PDF-Dokument benutzerdefinierte Tag-Namen zu?
-
- A: Sie können benutzerdefinierte Tag-Namen definieren und zuweisen, indem Sie logische Strukturelemente wie Absätze und Bereiche erstellen und dann die`SetTag` Methode, um diesen Elementen den gewünschten benutzerdefinierten Tag-Namen zuzuweisen. Das bereitgestellte Codebeispiel demonstriert diesen Vorgang.
-
-#### F: Wie stelle ich sicher, dass die von mir verwendeten benutzerdefinierten Tag-Namen mit den Zugänglichkeitsstandards und Best Practices kompatibel sind?
-
-A: Bei der Auswahl benutzerdefinierter Tag-Namen wird empfohlen, die Zugänglichkeitsrichtlinien zu befolgen und beschreibende und aussagekräftige Bezeichnungen zu verwenden, die den Inhalt genau darstellen. Die Konsultation relevanter Zugänglichkeitsstandards und Dokumentationen kann Ihnen bei der Auswahl geeigneter benutzerdefinierter Tag-Namen helfen.
-
-#### F: Kann ich die Verwendung benutzerdefinierter Tag-Namen mit anderen PDF-Bearbeitungsfunktionen kombinieren, die von Aspose.PDF für .NET angeboten werden?
-
-A: Absolut! Sie können die Verwendung benutzerdefinierter Tag-Namen mit anderen Funktionen von Aspose.PDF für .NET kombinieren, z. B. Tabellen erstellen, Bilder hinzufügen, Hyperlinks einfügen und mehr. Auf diese Weise können Sie umfangreiche und zugängliche PDF-Dokumente mit strukturiertem Inhalt erstellen.
-
-#### F: Wie kann ich die Wirksamkeit der Verwendung benutzerdefinierter Tag-Namen hinsichtlich Zugänglichkeit und Benutzerfreundlichkeit in meinen PDF-Dokumenten überprüfen?
-
-A: Sie können die Wirksamkeit benutzerdefinierter Tag-Namen überprüfen, indem Sie unterstützende Technologien wie Bildschirmleseprogramme verwenden, um im PDF-Dokument zu navigieren und damit zu interagieren. Darüber hinaus können Sie mithilfe von Tools und Validierern testen, ob das Dokument den Standards und Richtlinien zur Barrierefreiheit entspricht.
-
-#### F: Wie kann ich dieses Wissen erweitern, um komplexere Dokumentstrukturen zu erstellen und benutzerdefinierte Tag-Namen für erweiterte Szenarien zu verwenden?
-
-A: Sie können dieses Wissen erweitern, indem Sie zusätzliche Funktionen von Aspose.PDF für .NET erkunden, z. B. das Erstellen verschachtelter Strukturelemente, die Verwendung benutzerdefinierter Tags für Formularfelder, das Einbinden von Multimediaelementen und mehr. Die Dokumentation und Beispiele der Bibliothek bieten Anleitungen für diese erweiterten Szenarien.
+### Wo finde ich eine ausführliche Aspose.PDF-Dokumentation?  
+ Die vollständige Dokumentation finden Sie[Hier](https://reference.aspose.com/pdf/net/).

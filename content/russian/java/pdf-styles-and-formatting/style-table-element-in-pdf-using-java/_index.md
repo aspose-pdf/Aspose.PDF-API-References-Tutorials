@@ -62,7 +62,7 @@ table.setDefaultCellTextState(new TextState());
 Давайте добавим некоторые данные в таблицу. Вы можете заполнить ячейки желаемым содержимым.
 
 ```java
-// Код Java для добавления данных в таблицу
+// Java-код для добавления данных в таблицу
 Row row = table.getRows().add();
 row.getCells().add("Name");
 row.getCells().add("Age");

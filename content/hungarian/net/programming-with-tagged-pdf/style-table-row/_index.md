@@ -2,262 +2,189 @@
 title: Stílus táblázat sor
 linktitle: Stílus táblázat sor
 second_title: Aspose.PDF for .NET API Reference
-description: Ismerje meg, hogyan testreszabhatja a táblázatsorokat az Aspose.PDF for .NET segítségével lépésről lépésre szóló útmutatója a sorok stílusához és formázásához.
+description: Ismerje meg, hogyan stílusozhat táblázatsorokat PDF-ben az Aspose.PDF for .NET használatával egy lépésről lépésre szóló útmutatóval, amellyel könnyedén javíthatja a dokumentumformázást.
 type: docs
 weight: 180
 url: /hu/net/programming-with-tagged-pdf/style-table-row/
 ---
-Ebben a részletes oktatóanyagban lépésről lépésre végigvezetjük a megadott C# forráskódon, hogy formázhassa a táblázatsort az Aspose.PDF for .NET használatával. Kövesse az alábbi utasításokat a táblázatsorstílusok és -tulajdonságok testreszabásához.
+## Bevezetés
 
-## 1. lépés: A környezet beállítása
+Ha jól strukturált és szépen formázott PDF-dokumentumokról van szó, az Aspose.PDF for .NET kiváló megoldás. Függetlenül attól, hogy automatizálja a jelentéseket, számlákat vagy dinamikus táblázatokat hoz létre, a táblázatok különféle stílusokkal történő formázása kulcsfontosságú a csiszolt dokumentumhoz. Ebben az oktatóanyagban részletesen elmerülünk a táblázatsorok stílusában az Aspose.PDF for .NET használatával. És ne aggódj, lépésről lépésre elvezetlek, akárcsak egy jó beszélgetés egy kávé mellett!
 
-Mielőtt elkezdené, győződjön meg arról, hogy a fejlesztői környezetet úgy konfigurálta, hogy az Aspose.PDF for .NET fájlt használja. Ez magában foglalja az Aspose.PDF könyvtár telepítését és a projekt konfigurálását, hogy hivatkozzon rá.
+## Előfeltételek
 
-## 2. lépés: Dokumentum létrehozása
+Mielőtt belevágnánk a kacsikba, győződjünk meg arról, hogy az összes kacsa sorban van. Szükséged lesz:
 
-Ebben a lépésben létrehozunk egy új Aspose.PDF dokumentumobjektumot.
+1. Aspose.PDF for .NET Library  
+    Ha még nem rendelkezik vele, akkor előveheti[itt](https://releases.aspose.com/pdf/net/) . Azt is kaphat a[ingyenes próbaverzió](https://releases.aspose.com/) kezdeni.
+2. Fejlesztési környezet  
+   Állítsa be a Visual Studio-t vagy bármely tetszőleges C# IDE-t. Szükséged lesz a .NET-re is, de gondolom ezt már ismered.
+3. C# és .NET alapszintű ismerete  
+   A C# jó ismerete gyerekjáték lesz ez az oktatóanyag. De ne aggódj, minden lépést részletesen elmagyarázok!
+
+## Csomagok importálása
+
+Mielőtt elkezdhetnénk dolgozni az Aspose.PDF-fel, importálnunk kell a szükséges névtereket. A C# projektben győződjön meg róla, hogy tartalmazza a következőket:
 
 ```csharp
-// A dokumentumok könyvtárának elérési útja.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// Dokumentumkészítés
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example of Table Row Formatting");
-taggedContent.SetLanguage("fr-FR");
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-Létrehoztunk egy új dokumentumot, és beállítottuk a dokumentum címét és nyelvét.
+Ezek elengedhetetlenek a táblázat létrehozásához és stílusához, és természetesen a címkézett tartalommal való együttműködéshez a megfelelőség érdekében.
 
-## 3. lépés: A gyökérstruktúra elem beszerzése
+Most bontsuk le a feladatot lépésről lépésre, hogy profi stílusban formázhassa táblázatsorait!
 
-Ebben a lépésben megkapjuk a dokumentumunk gyökérstruktúra elemét.
+## 1. lépés: Hozzon létre egy új PDF-dokumentumot
 
-```csharp
-// Szerezze meg a gyökérszerkezet elemet
-StructureElement rootElement = taggedContent.RootElement;
-```
-
-Megkaptuk a gyökérstruktúra elemet, amely a tömbelem tárolójaként fog szolgálni.
-
-## 4. lépés: A tömbstruktúra elem létrehozása
-
-Most hozzunk létre egy új táblázatszerkezet elemet a dokumentumunkhoz.
+Először is: hozzunk létre egy vadonatúj PDF-dokumentumot. Ez a dokumentum tartalmazza az összes stílusos táblázatsort.
 
 ```csharp
-// Hozd létre a tömbstruktúra elemet
-TableElement tableElement = taggedContent.CreateTableElement();
-rootElement.AppendChild(tableElement);
-```
-
-Létrehoztunk egy új tömbstruktúra elemet, és hozzáadtuk a gyökérstruktúra elemhez.
-
-## 5. lépés: A táblázat sorstílusainak és tulajdonságainak testreszabása
-
-Ebben a lépésben testre szabjuk a táblázat sorstílusait és tulajdonságait.
-
-```csharp
-// Testreszabhatja a táblázatsor stílusait és tulajdonságait
-TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
-TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
-TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-
-int rowCount = 7;
-int colCount = 3;
-int rowIndex;
-int colIndex;
-
-// Hozza létre a táblázat fejlécsorát
-TableTRElement headTrElement = tableTHeadElement.CreateTR();
-headTrElement.AlternativeText = "Header Row";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-     TableTHElement theElement = headTrElement.CreateTH();
-     theElement.SetText(string.Format("Header {0}", colIndex));
-}
-
-// Szabja testre a táblázat törzsének sorait
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
-{
-     TableTRElement trElement = tableTBodyElement.CreateTR();
-     trElement.AlternativeText = string.Format("Row {0}", rowIndex);
-     trElement.BackgroundColor = Color.LightGoldenrodYellow;
-     trElement.Border = new BorderInfo(BorderSide.All, 0.75F, Color.DarkGray);
-     trElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.Blue);
-     trElement.MinRowHeight = 100.0;
-     trElement.FixedRowHeight = 120.0;
-     trElement. IsInNewPage = (rowIndex % 3 == 1);
-     trElement.IsRowBroken = true;
-     TextState cellTextState = new TextState();
-     cellTextState.ForegroundColor = Color.Red;
-     trElement. DefaultCellTextState = cellTextState;
-     trElement. DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
-     trElement.VerticalAlignment = VerticalAlignment.Bottom;
-
-     for (colIndex = 0; colIndex < colCount; colIndex++)
-     {
-         TableTDElement tdelement = trElement.CreateTD();
-         tdElement.SetText(string.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-     }
-}
-
-// Hozza létre a táblázat láblécsorát
-TableTRElement footTrElement = tableTFootElement.CreateTR();
-footTrElement.AlternativeText = "Footline";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-     TableTDElement tdElement = footTrElement.CreateTD();
-     tdElement.SetText(string.Format("Foot {0}", colIndex));
-}
-```
-
-Testreszabtuk a táblázat sorának különféle szempontjait, például a háttérszínt, a szegélyeket, a sor magasságát, az oldalszámozást, az alapértelmezett cellastílust és egyebeket.
-
-## 6. lépés: Mentse el a címkézett PDF-dokumentumot
-
-Most, hogy elkészítettük dokumentumunkat a stílusos táblázatsorral, címkézett PDF-dokumentumként mentjük el.
-```csharp
-// Mentse el a címkézett PDF dokumentumot
-document.Save(dataDir + "StyleTableRow.pdf");
-```
-
-A címkézett PDF dokumentumot a megadott könyvtárba mentettük.
-
-## 7. lépés: PDF/UA megfelelőség ellenőrzése
-
-Ezután ellenőrizni fogjuk dokumentumunk PDF/UA megfelelőségét.
-
-```csharp
-// PDF/UA megfelelőségi ellenőrzés
-document = new Document(dataDir + "StyleTableRow.pdf");
-bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableRow.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
-```
-
-Feltöltöttük a címkézett PDF-dokumentumot, és egy XML-jelentés generálásával ellenőriztük annak PDF/UA megfelelőségét.
-
-
-### Minta forráskód a Style Table Row számára az Aspose.PDF for .NET használatával 
-```csharp
-
 // A dokumentumok könyvtárának elérési útja.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 // Dokumentum létrehozása
 Document document = new Document();
+```
+
+ Itt egyszerűen inicializálunk egy újat`Document` objektum, amely a PDF-fájlunkat fogja képviselni. Ügyeljen arra, hogy beállítsa a könyvtár elérési útját, ahová a kimeneti fájlokat menteni fogja.
+
+## 2. lépés: Munkavégzés a címkézett tartalommal
+
+A PDF-fájl akadálymentesítésének kialakítása érdekében címkézett tartalommal dolgozunk. Ez segít strukturált elemek, például táblázatok létrehozásában, biztosítva, hogy azok megfeleljenek az akadálymentesítési szabványoknak, például a PDF/UA.
+
+```csharp
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table row style");
 taggedContent.SetLanguage("en-US");
+```
 
+Itt beállítjuk a PDF címkézett tartalmának címét és nyelvét. Ez olyan, mintha nevet adna a PDF-nek, és megmondaná, milyen nyelven beszéljen!
+
+## 3. lépés: Határozza meg a táblázat szerkezetét
+
+Ezután határozzuk meg a létrehozandó táblázat szerkezetét. Minden táblázatnak szüksége van fejlécre, törzsre és láblécre – hasonlóan egy jól szervezett blogbejegyzéshez!
+
+```csharp
 // Gyökérstruktúra elem lekérése
 StructureElement rootElement = taggedContent.RootElement;
 
-// Táblázatszerkezet elem létrehozása
+// Táblázatstruktúra elem létrehozása
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-int rowCount = 7;
-int colCount = 3;
-int rowIndex;
-int colIndex;
+```
+
+Itt egy táblázatot készítünk fejléccel (`THead`), test (`TBody`), és lábléc (`TFoot`). Ezek az elemek fogják tartani a sorainkat.
+
+## 4. lépés: Adja hozzá a táblázat fejlécét
+
+A fejléc nélküli táblázatok olyanok, mint a cím nélküli könyvek. Először hozzuk létre a fejléc sort, hogy kontextust biztosítsunk az adatokhoz.
+
+```csharp
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Head Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
+for (int colIndex = 0; colIndex < 3; colIndex++)
 {
-	TableTHElement thElement = headTrElement.CreateTH();
-	thElement.SetText(String.Format("Head {0}", colIndex));
+    TableTHElement thElement = headTrElement.CreateTH();
+    thElement.SetText(String.Format("Head {0}", colIndex));
 }
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
+```
+
+Itt áthurkoljuk és hozzáadunk három fejlécet (`TableTHElement`), mindegyiknek egy-egy leíró szöveget adva. Egyszerű, igaz?
+
+## 5. lépés: Adjon hozzá stílusos törzssorokat
+
+Most jön a szórakoztató rész – a sorok formázása! Hozzon létre hét sort egyéni stílusokkal. Beállítjuk a háttérszíneket, a szegélyeket, a kitöltést és a szövegigazítást.
+
+```csharp
+for (int rowIndex = 0; rowIndex < 7; rowIndex++)
 {
-	TableTRElement trElement = tableTBodyElement.CreateTR();
-	trElement.AlternativeText = String.Format("Row {0}", rowIndex);
-	trElement.BackgroundColor = Color.LightGoldenrodYellow;
-	trElement.Border = new BorderInfo(BorderSide.All, 0.75F, Color.DarkGray);
-	trElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.Blue);
-	trElement.MinRowHeight = 100.0;
-	trElement.FixedRowHeight = 120.0;
-	trElement.IsInNewPage = (rowIndex % 3 == 1);
-	trElement.IsRowBroken = true;
-	TextState cellTextState = new TextState();
-	cellTextState.ForegroundColor = Color.Red;
-	trElement.DefaultCellTextState = cellTextState;
-	trElement.DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
-	trElement.VerticalAlignment = VerticalAlignment.Bottom;
-	for (colIndex = 0; colIndex < colCount; colIndex++)
-	{
-		TableTDElement tdElement = trElement.CreateTD();
-		tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-	}
+    TableTRElement trElement = tableTBodyElement.CreateTR();
+    trElement.AlternativeText = String.Format("Row {0}", rowIndex);
+    trElement.BackgroundColor = Color.LightGoldenrodYellow;
+    trElement.Border = new BorderInfo(BorderSide.All, 0.75F, Color.DarkGray);
+    trElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.Blue);
+    trElement.MinRowHeight = 100.0;
+    trElement.FixedRowHeight = 120.0;
+    trElement.IsInNewPage = (rowIndex % 3 == 1);
+    trElement.IsRowBroken = true;
+
+    for (int colIndex = 0; colIndex < 3; colIndex++)
+    {
+        TableTDElement tdElement = trElement.CreateTD();
+        tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
+    }
 }
+```
+
+- Háttérszín: Világos aranyvesszősárgát használtunk a professzionális, mégis meleg érintéshez.
+- Szegélyek: Minden sor sötétszürke külső szegélyt és kék cellaszegélyt kap az éles megjelenés érdekében.
+- Magasság és párnázás: A sormagasság be van állítva, és párnázás kerül hozzáadásra a tiszta megjelenés érdekében.
+- Oldaltörések: A táblázat olvashatóbbá tétele érdekében minden második sor új oldalon kezdődik.
+
+## 6. lépés: Adja hozzá a láblécsort
+
+A fejléchez hasonlóan a lábléc is rögzíti a táblázatot. Hozzunk létre egyet.
+
+```csharp
 TableTRElement footTrElement = tableTFootElement.CreateTR();
 footTrElement.AlternativeText = "Foot Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
+for (int colIndex = 0; colIndex < 3; colIndex++)
 {
-	TableTDElement tdElement = footTrElement.CreateTD();
-	tdElement.SetText(String.Format("Foot {0}", colIndex));
+    TableTDElement tdElement = footTrElement.CreateTD();
+    tdElement.SetText(String.Format("Foot {0}", colIndex));
 }
+```
 
-// Címkézett PDF dokumentum mentése
+Egyszerűen átugorunk három lábléccellán, és hozzáadunk egy kis szöveget. A lábléc alternatív szövege a „Foot Row”, hogy elérhető legyen.
+
+## 7. lépés: Mentse el a PDF-dokumentumot
+
+Most, hogy az asztal készen van, itt az ideje, hogy megmentse remekművét!
+
+```csharp
 document.Save(dataDir + "StyleTableRow.pdf");
+```
 
-// PDF/UA megfelelőség ellenőrzése
+Ugyanígy a PDF-fájl mentése az összes gyönyörű táblázatsorral együtt, amelyet most alakítottunk ki.
+
+## 8. lépés: Érvényesítse a PDF/UA megfelelőséget
+
+Annak érdekében, hogy PDF-ünk megfeleljen a kisegítő lehetőségek szabványainak, ellenőrizni fogjuk a PDF/UA megfelelőség szempontjából.
+
+```csharp
 document = new Document(dataDir + "StyleTableRow.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableRow.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
 ```
+
+Ez biztosítja, hogy a PDF megfelel a PDF/UA szabványnak, így mindenki számára elérhetővé válik. Az akadálymentesítés a játék neve!
 
 ## Következtetés
 
-Ebben az oktatóanyagban megtanultuk, hogyan formázhat táblázatsort az Aspose.PDF for .NET segítségével. Testreszabtuk a táblázat sorstílusait és tulajdonságait, hozzáadtuk a fejléceket, törzssorokat és láblécet, elmentettük a címkézett PDF dokumentumot, és ellenőriztük a PDF/UA megfelelőségét.
+És megvan! Néhány sornyi kóddal egy teljesen stílusos táblázatot hozott létre PDF-ben az Aspose.PDF for .NET használatával. A fejlécektől a láblécekig minden sort stílusosan alakítottunk, kisegítő elemeket adtunk hozzá, és még a dokumentum megfelelőségét is ellenőriztük. Akár vállalati jelentésekkel, prezentációkkal dolgozik, akár csak szórakozik a PDF-ekkel, ez az útmutató mindenre kiterjed. Most pedig kezdje el az asztalok stílusát profi módon!
 
-### GYIK
+## GYIK
 
-#### K: Mi a célja ennek az oktatóanyagnak a táblázatsorok formázásához az Aspose.PDF for .NET használatával?
+### Módosíthatom a táblázat betűstílusát is?  
+ Igen! A betűtípus stílusát a gombbal módosíthatja`TextState` objektum minden cellához, lehetővé téve a teljes testreszabást.
 
-V: Ennek az oktatóanyagnak az a célja, hogy végigvezesse a táblázat sorainak formázásán egy PDF-dokumentumban az Aspose.PDF for .NET használatával. Részletes utasításokat és C#-forráskód-példákat tartalmaz, amelyek segítenek testreszabni a táblázatsor stílusait és tulajdonságait.
+### Hogyan adhatok több oszlopot a táblázatomhoz?  
+ Csak állítsa be a`colCount`változót, és adjon hozzá több cellát a ciklusokhoz a fejlécekhez, a törzshöz és a láblécekhez.
 
-#### K: Melyek az oktatóanyag követésének előfeltételei?
+### Mi történik, ha nem állítom be a sormagasságot?  
+Ha nem állítja be a sor magasságát, a táblázat automatikusan a tartalom alapján módosul.
 
-V: Mielőtt elkezdené, győződjön meg arról, hogy a fejlesztői környezetet az Aspose.PDF for .NET használatára állította be. Ez magában foglalja az Aspose.PDF könyvtár telepítését és a projekt konfigurálását, hogy hivatkozzon rá.
+### Használhatom ezt dinamikus számú sorhoz?  
+Teljesen! Adatokat lekérhet adatbázisból vagy bármely más forrásból, és dinamikusan módosíthatja a sorok és oszlopok számát.
 
-#### K: Hogyan hozhatok létre új PDF-dokumentumot, és állíthatom be a címét és a nyelvét az Aspose.PDF for .NET használatával?
-
- V: Új PDF-dokumentum létrehozásához létre kell hoznia a`Document` objektumot az Aspose.PDF könyvtárból. Az oktatóanyagban található C# forráskód bemutatja, hogyan hozhat létre dokumentumot, és hogyan állíthatja be a címét és a nyelvi tulajdonságait.
-
-#### K: Mi a jelentősége a gyökérstruktúra elemnek egy PDF dokumentumban?
-
-V: A gyökérstruktúra elem a többi szerkezeti elem tárolójaként működik, segítve a PDF-dokumentum tartalmának rendszerezését és kategorizálását. Döntő szerepet játszik a dokumentum logikai szerkezetének kialakításában.
-
-#### K: Hogyan hozhatok létre és szabhatok testre egy táblázatszerkezet-elemet a táblázatsorok formázásához az Aspose.PDF for .NET használatával?
-
-V: Az oktatóanyag elmagyarázza, hogyan hozhat létre táblázatszerkezet-elemet, és hogyan szabhatja testre tulajdonságait a táblázatsorok formázásához. Olyan szempontokra terjed ki, mint a háttérszín, a szegélyek, a sor magassága, az oldalszámozás, az alapértelmezett cellastílus stb.
-
-#### K: Testreszabhatom az egyes cellák stílusát és tulajdonságait egy táblázatsorban?
-
-V: Igen, testreszabhatja az egyes cellák stílusát és tulajdonságait egy táblázatsorban. Az oktatóanyag bemutatja, hogyan állíthat be tulajdonságokat, például háttérszínt, szegélyeket, szövegszínt, kitöltést és egyebeket a táblázatcellákhoz a formázott táblázatsorban.
-
-#### K: Hogyan adhatok fejléceket, törzssorokat és láblécet a formázott táblázatsorhoz?
-
-V: Az oktatóanyag példákat mutat be fejlécek, törzssorok és lábléc létrehozására és hozzáadására a táblázatszerkezet elemhez. Ezek az elemek az oktatóanyagban leírt tulajdonságok segítségével tovább testreszabhatók.
-
-#### K: Mi a PDF/UA megfelelőség, és hogyan tudom érvényesíteni a címkézett PDF-dokumentumhoz?
-
- V: A PDF/UA megfelelőség biztosítja, hogy a PDF-dokumentum megfeleljen az akadálymentesítési szabványoknak, így a fogyatékkal élő felhasználók számára könnyebben elérhető. Az oktatóanyag bemutatja, hogyan ellenőrizheti a PDF/UA megfelelőséget a`Validate()` módszert, és készítsen XML megfelelőségi jelentést.
-
-#### K: Hogyan építhetem be ezeket a fogalmakat a saját .NET alkalmazásaimba?
-
-V: A mellékelt C#-forráskód-példákat útmutatóként használhatja a táblázatsorok formázásának megvalósításához saját .NET-alkalmazásaiban. Módosítsa és adaptálja a kódot az igényeinek megfelelően, és integrálja projektjeibe.
-
-#### K: Vannak-e ajánlott bevált módszerek a táblázatsorok formázására a PDF dokumentumokban?
-
-V: A táblázat sorainak formázásakor vegye figyelembe a tartalom olvashatóságát és hozzáférhetőségét. Gondoskodjon arról, hogy a színek megfelelő kontraszttal rendelkezzenek, használjon világos és olvasható betűtípusokat, és tartson fenn egységes elrendezést. Érvényesítse a PDF/UA-megfelelőséget, hogy biztosítsa az akadálymentesítési szabványok betartását.
-
-#### K: Az Aspose.PDF for .NET mely egyéb funkcióit fedezhetem fel a PDF-dokumentumok testreszabásához?
-
-V: Az Aspose.PDF for .NET funkciók széles skáláját kínálja a PDF-dokumentumok testreszabásához, beleértve a szövegkezelést, a képbeszúrást, az űrlapmezők kezelését, a digitális aláírásokat, a megjegyzéseket és egyebeket. A további funkciók felfedezéséhez tekintse meg a hivatalos dokumentációt és forrásokat.
+### Ingyenesen használható az Aspose.PDF for .NET?  
+ Az Aspose.PDF for .NET egy licencelt termék, de kipróbálhatja a[ingyenes próbaverzió](https://releases.aspose.com/) vagy kap a[ideiglenes engedély](https://purchase.aspose.com/temporary-license/).

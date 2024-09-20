@@ -153,7 +153,7 @@ doc.Save(dataDir);
 Console.WriteLine("\nAlignment defined successfully for text stamp.\nFile saved at " + dataDir);
 ```
 
-現在你就得到它了！您已使用 Aspose.PDF for .NET 成功定義了 PDF 檔案中的文字對齊方式。
+現在你就擁有了！您已使用 Aspose.PDF for .NET 成功定義了 PDF 檔案中的文字對齊方式。
 
 ## 結論
 

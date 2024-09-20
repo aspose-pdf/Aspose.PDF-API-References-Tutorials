@@ -42,7 +42,7 @@ import com.aspose.pdf.HeaderFooter;
 Document pdfDocument = new Document();
 ```
 
-## 4. lépés: Oldalak hozzáadása a PDF-hez
+## 4. lépés: Adjon hozzá oldalakat a PDF-hez
 
 Adja hozzá a szükséges oldalakat a PDF-dokumentumhoz. Minden oldalhoz szükség szerint különböző fejléceket határozhat meg. Íme egy példa három oldal hozzáadására:
 

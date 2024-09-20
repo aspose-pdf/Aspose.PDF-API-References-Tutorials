@@ -56,7 +56,7 @@ Und da haben Sie es! Sie können mit der Interaktion mit PDF-Dokumenten beginnen
 
 Jetzt, da alles eingerichtet ist, kommen wir zum interessanten Teil: dem Einfügen einer leeren Seite am Ende Ihres PDF-Dokuments. Befolgen Sie diese Schritte sorgfältig.
 
-## Schritt 1: Dokumentverzeichnis definieren
+## Schritt 1: Definieren Sie das Dokumentverzeichnis
 
 Zuerst müssen Sie das Verzeichnis einrichten, in dem sich Ihr PDF-Dokument befindet. Damit teilen Sie Ihrem Programm im Wesentlichen mit, wo sich die PDF-Datei befindet, die Sie bearbeiten möchten.
 

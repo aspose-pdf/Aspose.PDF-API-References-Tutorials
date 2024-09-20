@@ -88,7 +88,7 @@ V tomto úryvku kódu otevřeme stávající dokument PDF, přistoupíme k poli 
 Nyní, když jsme vyplnili pole formuláře, lze upravené PDF uložit jako nový soubor nebo přepsat stávající, v závislosti na vašich požadavcích.
 
 ```java
-// Uložte upravený PDF (volitelné)
+// Uložte upravené PDF (volitelné)
 pdfDocument.save("filled_form.pdf");
 ```
 
@@ -116,4 +116,4 @@ Ano, za používání Aspose.PDF pro Javu v komerčních projektech jsou účtov
 
 ### Kde najdu další příklady kódu a dokumentaci pro Aspose.PDF pro Javu?
 
- Komplexní dokumentaci a příklady kódu pro Aspose.PDF pro Java můžete najít na[dokumentační stránku](https://reference.aspose.com/pdf/java/).
+ Komplexní dokumentaci a příklady kódu pro Aspose.PDF pro Javu naleznete na[dokumentační stránku](https://reference.aspose.com/pdf/java/).

@@ -2,271 +2,201 @@
 title: Elementos da estrutura do link
 linktitle: Elementos da estrutura do link
 second_title: Referência da API do Aspose.PDF para .NET
-description: Guia passo a passo para usar elementos de estrutura de link com Aspose.PDF para .NET. Crie hiperlinks em seus documentos PDF.
+description: Aprenda a criar elementos de estrutura de links em um PDF usando Aspose.PDF para .NET. Guia passo a passo para adicionar links acessíveis, imagens e validação de conformidade.
 type: docs
 weight: 120
 url: /pt/net/programming-with-tagged-pdf/link-structure-elements/
 ---
-Neste guia passo a passo, mostraremos como usar elementos de estrutura de link com o Aspose.PDF para .NET. O Aspose.PDF é uma biblioteca poderosa que permite criar e manipular documentos PDF programaticamente. Os elementos de estrutura de link permitem adicionar hiperlinks ao seu documento PDF, permitindo que os usuários cliquem nos links e naveguem para recursos online.
+## Introdução
 
-Vamos mergulhar no código e aprender como usar elementos de estrutura de link com Aspose.PDF para .NET.
+Criar e gerenciar elementos de estrutura de link dentro de um PDF pode ser crucial para documentos que exigem acessibilidade e navegação suave. Neste tutorial, mostraremos como fazer isso usando o Aspose.PDF para .NET. Se você é novo no Aspose.PDF ou na manipulação de PDF em geral, não se preocupe. Explicarei cada etapa em detalhes para que você possa acompanhar facilmente!
 
-## Pré-requisitos
+## Pré-requisitos  
 
-Antes de começar, certifique-se de ter o seguinte:
+Antes de mergulharmos na codificação, vamos esclarecer algumas coisas primeiro. Esses são os requisitos básicos para garantir uma experiência de desenvolvimento tranquila.
 
-1. Biblioteca Aspose.PDF para .NET instalada.
-2. Conhecimento básico da linguagem de programação C#.
+1.  Aspose.PDF para .NET: Você pode baixar a versão mais recente[aqui](https://releases.aspose.com/pdf/net/).
+2. Ambiente de desenvolvimento .NET: seja o Visual Studio ou qualquer IDE compatível com .NET, tenha-o instalado e pronto.
+3.  Licença Aspose: Você pode usar a versão de teste gratuita do Aspose.PDF[aqui](https://releases.aspose.com/) ou adquirir um[licença temporária](https://purchase.aspose.com/temporary-license/).
+4. Conhecimento básico de C#: Trabalharemos com algum código C#, então entender os fundamentos tornará as coisas muito mais fáceis.
 
-## Etapa 1: Configurando o ambiente
+## Pacotes de importação
 
-Para começar, abra seu ambiente de desenvolvimento C# e crie um novo projeto. Certifique-se de ter adicionado uma referência à biblioteca Aspose.PDF para .NET em seu projeto.
+Você precisará importar alguns pacotes antes de escrever o código para elementos de estrutura de link. Comece referenciando as bibliotecas Aspose.PDF necessárias em seu projeto:
 
 ```csharp
-// O caminho para o diretório de documentos.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-string outFile = dataDir + "LinkStructureElements_Output.pdf";
-string logFile = dataDir + "46035_log.xml";
-string imgFile = dataDir + "google-icon-512.png";
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Etapa 2: Criando o documento
+Essas importações nos permitem trabalhar com documentos PDF, adicionar tags e gerenciar elementos de estrutura.
 
- O primeiro passo é criar um novo documento PDF usando o`Document` aula.
+Agora criaremos um documento PDF com diferentes tipos de estruturas de links, e cada etapa será detalhada para ajudar você a entender o processo completamente.
 
-```csharp
-// Crie o documento PDF
-Document document = new Document();
-```
+## Etapa 1: Inicializar o documento  
 
-## Etapa 3: trabalhe com conteúdo marcado
-
-Então, obtemos o conteúdo marcado do documento para trabalhar.
+Vamos começar criando um novo documento PDF e configurando o conteúdo marcado para acessibilidade.
 
 ```csharp
-// Obter o conteúdo marcado do documento
-ITaggedContent taggedContent = document.TaggedContent;
-```
-
-## Etapa 4: Defina o título e o idioma do documento
-
-Agora podemos definir o título e o idioma do documento.
-
-```csharp
-// Defina o título e o idioma do documento
-taggedContent.SetTitle("Example Link Items");
-taggedContent.SetLanguage("fr-FR");
-```
-
-## Etapa 5: Adicionar elementos de estrutura de link
-
-Agora vamos adicionar elementos de estrutura de link ao nosso documento. Criaremos diferentes tipos de links, incluindo links de texto simples, links de imagem e links multi-linha.
-```csharp
-// Obter o elemento de estrutura raiz (elemento de estrutura do documento)
-StructureElement rootElement = taggedContent.RootElement;
-
-// Adicionar um parágrafo com um hiperlink
-ParagraphElement p1 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p1);
-LinkElement link1 = taggedContent.CreateLinkElement();
-p1.AppendChild(link1);
-link1.Hyperlink = new WebHyperlink("http://google.com");
-link1.SetText("Google");
-link1.AlternateDescriptions = "Link to Google";
-
-// Adicionar um parágrafo com um hiperlink contendo texto enriquecido
-ParagraphElement p2 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p2);
-LinkElement link2 = taggedContent.CreateLinkElement();
-p2.AppendChild(link2);
-link2.Hyperlink = new WebHyperlink("http://google.com");
-SpanElement span2 = taggedContent.CreateSpanElement();
-span2.SetText("Google");
-link2.AppendChild(span2);
-link2.AlternateDescriptions = "Link to Google";
-
-// Adicionar um parágrafo com um hiperlink contendo texto parcialmente formatado
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-LinkElement link3 = taggedContent.CreateLinkElement();
-p3.AppendChild(link3);
-link3.Hyperlink = new WebHyperlink("http://google.com");
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("G");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText("oogle");
-link3.AppendChild(span31);
-link3.SetText("-");
-link3.AppendChild(span32);
-link3.AlternateDescriptions = "Link to Google";
-
-// Adicionar um parágrafo com um hiperlink multilinha
-ParagraphElement p4 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p4);
-LinkElement link4 = taggedContent.CreateLinkElement();
-p4.AppendChild(link4);
-link4.Hyperlink = new WebHyperlink("http://google.com");
-link4.SetText("The multiline link: Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google");
-link4.AlternateDescriptions = "Link to Google (multiline)";
-
-// Adicione um parágrafo com um hiperlink contendo uma imagem
-ParagraphElement p5 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p5);
-LinkElement link5 = taggedContent.CreateLinkElement();
-p5.AppendChild(link5);
-link5.Hyperlink = new WebHyperlink("http://google.com");
-FigureElement figure5 = taggedContent.CreateFigureElement();
-figure5.SetImage(imgFile, 1200);
-figure5.AlternativeText = "Google icon";
-StructureAttributes linkLayoutAttributes = link5.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-StructureAttribute placementAttribute = new StructureAttribute(AttributeKey.Placement);
-placementAttribute.SetNameValue(AttributeName.Placement_Block);
-linkLayoutAttributes.SetAttribute(placementAttribute);
-link5.AppendChild(figure5);
-link5.AlternateDescriptions = "Link to Google";
-```
-
-## Etapa 6: Salve o documento PDF marcado
-
-Por fim, salvamos o documento PDF marcado.
-
-```csharp
-// Salvar o documento PDF marcado
-document. Save(outFile);
-```
-
-## Etapa 7: Verifique a conformidade do PDF/UA
-
- Também podemos verificar a conformidade do documento com PDF/UA usando o`Validate` método do`Document` aula.
-
-```csharp
-// Verifique a conformidade com PDF/UA
-document = new Document(outFile);
-bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
-```
-
-
-### Exemplo de código-fonte para elementos de estrutura de link usando Aspose.PDF para .NET 
-```csharp
-
 // O caminho para o diretório de documentos.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "LinkStructureElements_Output.pdf";
 string logFile = dataDir + "46035_log.xml";
 string imgFile = dataDir + "google-icon-512.png";
 
-//Criação de documento e obtenção de conteúdo PDF marcado
+// Criar um novo documento PDF
 Document document = new Document(); 
-ITaggedContent taggedContent = document.TaggedContent;
 
-// Definir título e idioma da natureza para o documento
+// Recuperar a interface TaggedContent
+ITaggedContent taggedContent = document.TaggedContent;
+```
+  
+ Aqui, estamos inicializando o`Document` objeto, que representa nosso arquivo PDF. Também recuperamos o`TaggedContent` interface, permitindo-nos adicionar elementos de estrutura como parágrafos, links e imagens.
+
+## Etapa 2: Defina o título e o idioma  
+
+Cada PDF deve ter um título e uma configuração de idioma, especialmente se você deseja estar em conformidade com os padrões PDF/UA.
+
+```csharp
+// Defina o título e o idioma do documento
 taggedContent.SetTitle("Link Elements Example");
 taggedContent.SetLanguage("en-US");
+```
+  
+Esta etapa garante que seu PDF tenha um título significativo e defina o idioma como inglês (`en-US`). Isso é essencial para acessibilidade e garante que leitores de tela ou outras tecnologias assistivas possam interpretar seu documento corretamente.
 
-// Obtendo o elemento de estrutura raiz (elemento de estrutura do documento)
+## Etapa 3: Criar e anexar parágrafos  
+
+Nesta etapa, adicionaremos parágrafos para conter nossos elementos de link.
+
+```csharp
+// Crie o elemento raiz
 StructureElement rootElement = taggedContent.RootElement;
+
+// Crie um parágrafo e adicione-o ao elemento raiz
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p1);
+```
+  
+Criamos um elemento de estrutura raiz, que é essencialmente o contêiner de nível superior para todos os outros elementos. Em seguida, criamos um parágrafo (`p1`) e anexá-lo ao elemento raiz.
+
+## Etapa 4: adicione um link simples  
+
+Agora vamos adicionar um hiperlink básico que aponta para o Google.
+
+```csharp
+// Crie um elemento de link e adicione-o ao parágrafo
 LinkElement link1 = taggedContent.CreateLinkElement();
 p1.AppendChild(link1);
+
+// Definir hiperlink e texto para o link
 link1.Hyperlink = new WebHyperlink("http://google.com");
 link1.SetText("Google");
 link1.AlternateDescriptions = "Link to Google";
+```
+  
+Nesta etapa, criamos um elemento de link, definimos seu hiperlink como "http://google.com" e fornecemos texto ("Google") para o link. Também adicionamos uma descrição alternativa para garantir acessibilidade.
+
+## Etapa 5: Adicionando um link com spans  
+
+Também podemos criar links com diferentes extensões de texto.
+
+```csharp
+// Crie outro parágrafo
 ParagraphElement p2 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p2);
+
+// Crie um link com um elemento span
 LinkElement link2 = taggedContent.CreateLinkElement();
 p2.AppendChild(link2);
 link2.Hyperlink = new WebHyperlink("http://google.com");
+
 SpanElement span2 = taggedContent.CreateSpanElement();
 span2.SetText("Google");
 link2.AppendChild(span2);
+
 link2.AlternateDescriptions = "Link to Google";
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-LinkElement link3 = taggedContent.CreateLinkElement();
-p3.AppendChild(link3);
-link3.Hyperlink = new WebHyperlink("http://google.com");
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("G");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText("oogle");
-link3.AppendChild(span31);
-link3.SetText("-");
-link3.AppendChild(span32);
-link3.AlternateDescriptions = "Link to Google";
+```
+  
+Aqui, usamos um elemento span para incluir parte do texto dentro do link, permitindo-nos personalizar como certas partes do link aparecem.
+
+## Etapa 6: Link multilinha  
+
+E se o texto do seu link for muito longo? Não se preocupe, você pode dividi-lo em várias linhas.
+
+```csharp
 ParagraphElement p4 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p4);
+
 LinkElement link4 = taggedContent.CreateLinkElement();
 p4.AppendChild(link4);
 link4.Hyperlink = new WebHyperlink("http://google.com");
-link4.SetText("The multiline link: Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google");
+link4.SetText("The multiline link: Google Google Google Google Google...");
 link4.AlternateDescriptions = "Link to Google (multiline)";
+```
+  
+Nesse caso, criamos um link multilinha simplesmente definindo um valor de texto longo, e o texto será automaticamente quebrado em várias linhas.
+
+## Etapa 7: Adicione uma imagem ao link  
+
+Por fim, você também pode adicionar imagens dentro de um link.
+
+```csharp
+// Crie um novo parágrafo e elemento de link
 ParagraphElement p5 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p5);
+
 LinkElement link5 = taggedContent.CreateLinkElement();
 p5.AppendChild(link5);
 link5.Hyperlink = new WebHyperlink("http://google.com");
+
+// Adicione uma imagem ao link
 FigureElement figure5 = taggedContent.CreateFigureElement();
 figure5.SetImage(imgFile, 1200);
 figure5.AlternativeText = "Google icon";
-StructureAttributes linkLayoutAttributes = link5.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-StructureAttribute placementAttribute = new StructureAttribute(AttributeKey.Placement);
-placementAttribute.SetNameValue(AttributeName.Placement_Block);
-linkLayoutAttributes.SetAttribute(placementAttribute);
 link5.AppendChild(figure5);
-link5.AlternateDescriptions = "Link to Google";
 
-// Salvar documento PDF marcado
+link5.AlternateDescriptions = "Link to Google";
+```
+  
+Esta etapa demonstra como você pode aprimorar seus links com uma imagem. Neste caso, adicionamos um ícone do Google dentro do link. Também garantimos a acessibilidade definindo texto alternativo para a imagem.
+
+## Etapa 8: Validar PDF para conformidade  
+
+Se você deseja obter conformidade com PDF/UA (um padrão de acessibilidade), é uma boa prática validar seu documento.
+
+```csharp
+// Salvar o documento PDF
 document.Save(outFile);
 
-// Verificando a conformidade com PDF/UA
-document = new Document(outFile);
+// Validar o documento para conformidade com PDF/UA
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
+Console.WriteLine($"PDF/UA compliance: {isPdfUaCompliance}");
 ```
-## Conclusão
+  
+Salvamos o documento e o validamos de acordo com o padrão PDF/UA, o que garante que o PDF atenda aos requisitos de acessibilidade.
 
-Parabéns! Você aprendeu a usar elementos de estrutura de link com o Aspose.PDF para .NET. Agora você pode criar hiperlinks em seus documentos PDF, permitindo que os usuários naveguem para recursos online. Experimente e explore mais recursos do Aspose.PDF para criar documentos PDF interativos e enriquecidos.
+## Conclusão  
 
-### Perguntas frequentes
+Neste tutorial, abordamos como criar documentos PDF estruturados usando Aspose.PDF para .NET. Desde adicionar hiperlinks básicos até estruturas mais complexas como spans, links multilinha e até imagens, este guia fornece uma base sólida para manipular elementos de link em seus PDFs. Com o benefício adicional da conformidade com PDF/UA, agora você está equipado para criar PDFs acessíveis e navegáveis.
 
-#### P: O que são elementos de estrutura de links em um documento PDF e como eles melhoram a interatividade do documento?
+## Perguntas frequentes
 
-A: Os elementos de estrutura de link em um documento PDF são usados para criar hiperlinks que permitem que os usuários naveguem para recursos on-line ou locais específicos dentro do documento. Esses elementos aumentam a interatividade ao fornecer links clicáveis que permitem que os usuários acessem conteúdo relacionado ou sites externos.
+### Posso adicionar estruturas mais complexas, como tabelas, dentro de links?  
+Não, os links são principalmente para texto e imagens, mas você pode incorporar elementos complexos nas proximidades.
 
-#### P: Como os elementos da estrutura de links podem ser benéficos em um documento PDF?
+### A validação de PDF/UA é obrigatória?  
+Nem sempre, mas é altamente recomendado se você estiver preocupado com acessibilidade.
 
-A: Os elementos de estrutura de link melhoram a experiência do usuário ao tornar o documento PDF interativo. Eles fornecem acesso rápido a informações adicionais, conteúdo relacionado, sites externos ou seções específicas dentro do documento, melhorando a navegação e facilitando a recuperação de informações.
+### O que acontece se o caminho do arquivo de imagem estiver incorreto?  
+O documento não exibirá a imagem e poderá gerar um erro durante a renderização.
 
-#### P: Posso criar diferentes tipos de hiperlinks usando elementos de estrutura de links no Aspose.PDF para .NET?
+### Posso estilizar o texto dentro do link?  
+Sim, você pode aplicar estilos de texto usando os elementos span.
 
-R: Sim, você pode criar vários tipos de hiperlinks usando elementos de estrutura de link. O Aspose.PDF para .NET permite que você crie hiperlinks com texto simples, rich text, imagens e descrições multilinha, oferecendo versatilidade em como você vincula a conteúdo externo ou locais dentro do documento.
-
-#### P: Como configuro e inicializo elementos de estrutura de links em um documento PDF usando o Aspose.PDF para .NET?
-
- R: Para usar elementos de estrutura de link, primeiro você precisa criar um novo documento PDF usando o`Document` classe. Em seguida, obtenha o conteúdo marcado usando o`TaggedContent`propriedade do documento. A partir daí, você pode criar e personalizar elementos de estrutura de link e adicioná-los ao elemento de estrutura raiz.
-
-#### P: Como posso criar um hiperlink de texto simples usando elementos de estrutura de link?
- R: Você pode criar um hiperlink de texto simples criando um`LinkElement` e definindo seu`Hyperlink` propriedade para um`WebHyperlink` com a URL que você deseja vincular. Você também pode definir o texto de exibição do link usando o`SetText` método.
-
-#### P: É possível criar hiperlinks com imagens usando elementos de estrutura de links?
-
- R: Sim, você pode criar hiperlinks com imagens usando elementos de estrutura de link. Você criaria um`LinkElement` e então anexar um`FigureElement` com uma imagem para ele. Isso permite que você crie um hiperlink baseado em imagem.
-
-#### P: Como posso garantir que meu documento PDF com hiperlinks esteja em conformidade com o padrão PDF/UA para acessibilidade?
-
- R: O Aspose.PDF para .NET oferece a capacidade de validar a conformidade do seu documento PDF com o padrão PDF/UA usando o`Validate` método do`Document`classe. Isso garante que os hiperlinks do documento sejam acessíveis a usuários com deficiências.
-
-#### P: Quais são as descrições alternativas para elementos de estrutura de links e por que elas são importantes?
-
-A: Descrições alternativas (texto alternativo) para elementos de estrutura de link fornecem descrições textuais dos hiperlinks. Essas descrições são essenciais para acessibilidade, permitindo que usuários com deficiência visual entendam o propósito do link e seu destino.
-
-#### P: Posso personalizar a aparência e o comportamento de hiperlinks criados usando elementos de estrutura de links?
-
-R: Embora os elementos da estrutura de links se concentrem principalmente na criação de hiperlinks, você pode personalizar ainda mais a aparência e o comportamento dos hiperlinks usando outros recursos oferecidos pelo Aspose.PDF para .NET. Isso inclui especificar cores, estilos e ações de link.
-
-#### P: Como os elementos da estrutura de links contribuem para tornar os documentos PDF mais interativos e fáceis de usar?
-
-A: Os elementos de estrutura de link transformam documentos PDF estáticos em experiências interativas adicionando hiperlinks clicáveis. Essa interatividade melhora o engajamento do usuário, permite navegação perfeita entre conteúdo relacionado e melhora a usabilidade geral do documento.
+### É possível criar links internos para documentos?  
+Absolutamente! Você pode vincular a seções específicas dentro do mesmo documento.

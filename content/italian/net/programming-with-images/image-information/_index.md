@@ -9,7 +9,7 @@ url: /it/net/programming-with-images/image-information/
 ---
 ## Introduzione
 
-I file PDF sono ovunque oggigiorno: praticamente ogni documento professionale e personale prima o poi trova la sua strada in questo formato. Che si tratti di un report, di una brochure o di un eBook, capire come interagire con questi file a livello di programmazione offre una miriade di possibilità. Un requisito comune è estrarre informazioni sulle immagini dai file PDF. In questa guida, approfondiremo come utilizzare la libreria Aspose.PDF per .NET per estrarre dettagli cruciali sulle immagini incorporate in un documento PDF.
+I file PDF sono ovunque oggigiorno: praticamente ogni documento professionale e personale trova la sua strada in questo formato a un certo punto. Che si tratti di un report, di una brochure o di un eBook, capire come interagire con questi file a livello di programmazione offre una miriade di possibilità. Un requisito comune è estrarre informazioni sulle immagini dai file PDF. In questa guida, approfondiremo come utilizzare la libreria Aspose.PDF per .NET per estrarre dettagli cruciali sulle immagini incorporate in un documento PDF.
 
 ## Prerequisiti
 

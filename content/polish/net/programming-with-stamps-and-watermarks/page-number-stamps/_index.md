@@ -2,7 +2,7 @@
 title: Znaczki Numeru Strony W Pliku PDF
 linktitle: Znaczki Numeru Strony W Pliku PDF
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak dodawać numery stron do plików PDF za pomocą Aspose.PDF dla platformy .NET, korzystając z naszego prostego przewodnika z przykładem kodu.
+description: Dowiedz się, jak dodawać numery stron do plików PDF za pomocą Aspose.PDF dla platformy .NET, korzystając z naszego łatwego w użyciu przewodnika zawierającego również przykład kodu.
 type: docs
 weight: 160
 url: /pl/net/programming-with-stamps-and-watermarks/page-number-stamps/

@@ -2,7 +2,7 @@
 title: Java を使用して PDF 内のテキスト スタンプ オブジェクトの配置を定義する
 linktitle: Java を使用して PDF 内のテキスト スタンプ オブジェクトの配置を定義する
 second_title: Aspose.PDF Java PDF 処理 API
-description: Aspose.PDF for Java を使用して、Java で PDF 内のテキスト スタンプ オブジェクトを正確に配置する方法を学習します。ドキュメントの外観と読みやすさを向上させます。
+description: Aspose.PDF for Java を使用して、PDF 内のテキスト スタンプ オブジェクトを正確に配置する方法を学習します。ドキュメントの外観と読みやすさを向上させます。
 type: docs
 weight: 13
 url: /ja/java/pdf-form-fields/define-alignment-for-text-stamp-object-in-pdf-using-java/

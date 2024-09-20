@@ -9,7 +9,7 @@ url: /nl/net/document-conversion/xps-to-pdf/
 ---
 ## Invoering
 
-In de digitale wereld van vandaag is de noodzaak om bestanden van het ene formaat naar het andere te converteren groter dan ooit. Of u nu een ontwikkelaar, een zakelijke professional of gewoon iemand bent die regelmatig met documenten werkt, u zult merken dat u XPS-bestanden naar PDF moet converteren. Dit is waar Aspose.PDF voor .NET in het spel komt. Het is een krachtige bibliotheek die het proces van documentmanipulatie vereenvoudigt, zodat u verschillende bestandsformaten naadloos kunt converteren. In deze tutorial leiden we u door de stappen om een XPS-bestand naar een PDF te converteren met behulp van Aspose.PDF voor .NET. Dus pak uw codeerhoed en laten we erin duiken!
+In de digitale wereld van vandaag is de noodzaak om bestanden van het ene formaat naar het andere te converteren groter dan ooit. Of u nu een ontwikkelaar, een zakelijke professional of gewoon iemand bent die regelmatig met documenten werkt, u zult wellicht XPS-bestanden naar PDF moeten converteren. Dit is waar Aspose.PDF voor .NET in het spel komt. Het is een krachtige bibliotheek die het proces van documentmanipulatie vereenvoudigt, zodat u verschillende bestandsformaten naadloos kunt converteren. In deze tutorial leiden we u door de stappen om een XPS-bestand naar een PDF te converteren met behulp van Aspose.PDF voor .NET. Dus pak uw codeerhoed en laten we erin duiken!
 
 ## Vereisten
 

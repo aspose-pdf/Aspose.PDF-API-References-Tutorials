@@ -2,182 +2,143 @@
 title: PDF ファイルで後続の行にインデントを追加する
 linktitle: PDF ファイルで後続の行にインデントを追加する
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して PDF ファイル内のテキストに後続の行のインデントを追加する方法を学習します。
+description: Aspose.PDF for .NET を使用して、PDF ファイルに後続の行のインデントを追加する方法を学びます。プロフェッショナルなテキスト書式設定を行うには、この詳細なステップバイステップ ガイドに従ってください。
 type: docs
 weight: 60
 url: /ja/net/programming-with-text/add-subsequent-lines-indent/
 ---
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ファイル内のテキストに後続の行のインデントを追加するプロセスについて説明します。提供されている C# ソース コードは、必要な手順を示しています。
+## 導入
 
-## 要件
-始める前に、次のものがあることを確認してください。
+見た目に魅力的な PDF を作成するには、ページにテキストを配置する以上の作業が必要になることがよくあります。PDF ドキュメント内の後続の行にインデントを追加して、よりプロフェッショナルな外観にするにはどうしたらよいか考えたことはありますか? レポート、電子ブック、またはレイアウトが重要なドキュメントを作成する場合、テキストの流れを制御できることは非常に重要です。今日は、Aspose.PDF for .NET を使用して、PDF ファイルに後続の行のインデントを追加する方法について説明します。この機能は、読みやすさと見た目を向上させるぶら下げインデントが必要な段落に特に役立ちます。それでは、早速始めましょう!
 
-- マシンにインストールされている Visual Studio またはその他の C# コンパイラ。
-- Aspose.PDF for .NET ライブラリ。公式 Aspose Web サイトからダウンロードするか、NuGet などのパッケージ マネージャーを使用してインストールできます。
+## 前提条件
 
-## ステップ1: プロジェクトを設定する
-1. 好みの開発環境で新しい C# プロジェクトを作成します。
-2. Aspose.PDF for .NET ライブラリへの参照を追加します。
+始める前に、いくつか準備しておく必要があります。
 
-## ステップ2: 必要な名前空間をインポートする
-後続の行のインデントを追加するコード ファイルで、ファイルの先頭に次の using ディレクティブを追加します。
+-  Aspose.PDF for .NET: このライブラリをインストールする必要があります。まだインストールしていない場合は、[ここからダウンロード](https://releases.aspose.com/pdf/net/).
+- 開発環境: C# と Visual Studio などの IDE に関する基本的な知識があると役立ちます。
+- .NET Framework: このチュートリアルでは、.NET 環境で作業していることを前提としています。
+- 一時ライセンス: Aspose.PDFのフルライセンスをお持ちでない場合は、[一時ライセンス](https://purchase.aspose.com/temporary-license/).
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
+準備ができたので、コーディングセクションに進みましょう。
 
-## ステップ3: ドキュメントディレクトリを設定する
-コード内で、次の行を見つけます。`string dataDir = "YOUR DOCUMENT DIRECTORY";`置き換えて`"YOUR DOCUMENT DIRECTORY"`ドキュメントが保存されているディレクトリへのパスを指定します。
+## 名前空間のインポート
 
-## ステップ4: 新しいDocumentオブジェクトを作成する
-新しいインスタンスを作成する`Document`次のコード行を追加してオブジェクトを作成します。
+まず最初に、Aspose.PDF ライブラリをプロジェクトで使用できるようにするために必要な名前空間をインポートする必要があります。これは簡単な手順ですが、作業を開始するには不可欠です。
 
 ```csharp
-Aspose.Pdf.Document document = new Aspose.Pdf.Document();
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## ステップ5: ドキュメントにページを追加する
-ドキュメントに新しいページを追加するには、`Add`方法の`Pages`コレクション。提供されたコードでは、新しいページが変数に割り当てられます`page`.
+これらをインポートすると、Aspose.PDF が提供する強力なツールを使用できるようになります。
 
-```csharp
-Aspose.Pdf.Page page = document.Pages.Add();
-```
+## ステップ1: ドキュメントとページを設定する
 
-## ステップ6: 後続の行をインデントしたTextFragmentを作成する
-インスタンス化する`TextFragment`オブジェクトを作成し、必要なテキストを入力します。提供されたコードでは、テキストは変数に割り当てられます`text`次に初期化します`TextFormattingOptions`のために`TextFragment`指定する`SubsequentLinesIndent`価値。
+インデントを追加する前に、新しい PDF ドキュメントを作成し、それにページを追加する必要があります。これが、テキストの書式設定を適用するキャンバスになります。
 
-```csharp
-Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog." );
-text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
-{
-     SubsequentLinesIndent = 20
-};
-```
-
-## ステップ7: TextFragmentをページに追加する
-追加する`TextFragment`ページの段落コレクションへのオブジェクト。
-
-```csharp
-page.Paragraphs.Add(text);
-```
-
-## ステップ8: 追加の行については、ステップ6と7を繰り返します。
-同じインデントを持つ後続の行を追加するには、各行に対して手順 6 と 7 を繰り返します。必要に応じてテキスト コンテンツを更新します。
-
-```csharp
-text = new Aspose.Pdf.Text.TextFragment("Line2");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line3");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line4");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line5");
-page.Paragraphs.Add(text);
-```
-
-## ステップ9: PDF文書を保存する
-PDF文書を保存するには、`Save`方法の`Document`オブジェクト。出力ファイルのパスを指定します。
-
-```csharp
-document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
-```
-
-### Aspose.PDF for .NET を使用して後続の行にインデントを追加するためのサンプル ソース コード 
 ```csharp
 //ドキュメント ディレクトリへのパス。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+
 //新しいドキュメントオブジェクトを作成する
 Aspose.Pdf.Document document = new Aspose.Pdf.Document();
+
+//ドキュメントに新しいページを追加する
 Aspose.Pdf.Page page = document.Pages.Add();
-Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog. A quick brown fox jumped over the lazy dog.");
+```
+
+ここでは、PDF ドキュメントを初期化し、空白ページを追加します。ここまでは非常に簡単ですよね? これは、コンテンツを追加する前の準備だと考えてください。
+
+## ステップ2: テキストフラグメントを作成する
+
+次に、`TextFragment`オブジェクト。このオブジェクトには、PDF に表示するテキストが保持されます。このテキストは、後で必要なインデントでフォーマットされます。
+
+```csharp
+Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment(
+    "A quick brown fox jumped over the lazy dog. " +
+    "A quick brown fox jumped over the lazy dog. " +
+    "A quick brown fox jumped over the lazy dog. " +
+    "A quick brown fox jumped over the lazy dog. " +
+    "A quick brown fox jumped over the lazy dog."
+);
+```
+
+これは、ページ上のスペースを埋めるために複数回繰り返される単純なサンプルテキストです。これをプロジェクトに関連する任意のテキストに置き換えることができます。
+
+## ステップ3: テキスト書式設定オプションを初期化する
+
+ここで魔法が起こります！`TextFragment`テキスト書式設定オプションを初期化して、`SubsequentLinesIndent`この設定により、最初の行を除くすべての行にインデントが適用されます。
+
+```csharp
 //テキストフラグメントの TextFormattingOptions を初期化し、SubsequentLinesIndent 値を指定します。
-text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
-{
-	SubsequentLinesIndent = 20
-};
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line2");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line3");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line4");
-page.Paragraphs.Add(text);
-text = new Aspose.Pdf.Text.TextFragment("Line5");
-page.Paragraphs.Add(text);
-document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
-```
-
-## 結論
-Aspose.PDF for .NET を使用して、テキストに後続の行のインデントを正常に追加しました。結果の PDF ファイルは、指定された出力ファイル パスにあります。
-
-### よくある質問
-
-#### Q: このチュートリアルの焦点は何ですか?
-
-A: このチュートリアルでは、Aspose.PDF for .NET ライブラリを使用して PDF ファイル内のテキストに後続の行のインデントを追加する方法についての包括的なガイドを提供します。これを実現するために必要な手順を示す C# ソース コードの例が含まれています。
-
-#### Q: このチュートリアルではどの名前空間をインポートする必要がありますか?
-
-A: 後続の行のインデントを追加するコード ファイルで、ファイルの先頭に次の名前空間をインポートします。
-
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
-
-#### Q: ドキュメントディレクトリを指定するにはどうすればよいですか?
-
- A: コード内で次の行を見つけます`string dataDir = "YOUR DOCUMENT DIRECTORY";`置き換えて`"YOUR DOCUMENT DIRECTORY"`ドキュメント ディレクトリへの実際のパスを入力します。
-
-#### Q: Document オブジェクトを作成するにはどうすればよいですか?
-
- A: ステップ4では、新しいインスタンスを作成します。`Document`次のコード行を使用してオブジェクトを作成します。
-
-```csharp
-Aspose.Pdf.Document document = new Aspose.Pdf.Document();
-```
-
-#### Q: ドキュメントにページを追加するにはどうすればよいですか?
-
- A: ステップ5では、`Add`方法の`Pages`コレクション：
-
-```csharp
-Aspose.Pdf.Page page = document.Pages.Add();
-```
-
-#### Q: テキストに後続の行のインデントを追加するにはどうすればよいですか?
-
- A: ステップ6では、`TextFragment`オブジェクトを作成し、必要なテキストを割り当てます。次に、初期化します`TextFormattingOptions`のために`TextFragment`指定する`SubsequentLinesIndent`価値：
-
-```csharp
-Aspose.Pdf.Text.TextFragment text = new Aspose.Pdf.Text.TextFragment("Your text here");
 text.TextState.FormattingOptions = new Aspose.Pdf.Text.TextFormattingOptions()
 {
     SubsequentLinesIndent = 20
 };
 ```
 
-#### Q: TextFragment を PDF ドキュメントに追加するにはどうすればよいですか?
+この例では、インデントを 20 単位に設定しています。つまり、最初の行以降のすべての行は 20 単位でインデントされ、視覚的に明確なぶら下げインデントが作成されます。
 
- A: ステップ7では、`TextFragment`物体 （`text`) をページの段落コレクションに追加します。
+## ステップ4: ページにテキストを追加する
+
+必要な書式を適用したら、ページにテキストを追加します。これは、`TextFragment`ページの段落コレクションに追加します。
 
 ```csharp
 page.Paragraphs.Add(text);
 ```
 
-#### Q: 追加の行に対してこのプロセスを繰り返すことはできますか?
+この時点で、ページには後続の行がインデントされたテキストがあります。しかし、なぜそこで止まるのでしょうか。ドキュメントをより完成度の高いものにするために、さらに行を追加してみましょう。
 
-A: はい、ステップ8で、新しい行を作成して、同じインデントを持つ追加の行に対してこのプロセスを繰り返すことができます。`TextFragment`オブジェクトを抽出し、ページの段落コレクションに追加します。
+## ステップ5: 追加のテキストフラグメントを追加する
 
-#### Q: 生成された PDF ドキュメントをどのように保存しますか?
+複数のテキスト フラグメントが同じドキュメントに表示される様子を示すために、さらに数行追加することができます。これらの各行は、個別に書式設定することも、前の手順と同じ書式設定を使用することもできます。
 
- A: 後続の行をインデントしてテキストを追加した後、`Save`方法の`Document` PDF ドキュメントを保存するオブジェクト:
+```csharp
+text = new Aspose.Pdf.Text.TextFragment("Line2");
+page.Paragraphs.Add(text);
+
+text = new Aspose.Pdf.Text.TextFragment("Line3");
+page.Paragraphs.Add(text);
+
+text = new Aspose.Pdf.Text.TextFragment("Line4");
+page.Paragraphs.Add(text);
+
+text = new Aspose.Pdf.Text.TextFragment("Line5");
+page.Paragraphs.Add(text);
+```
+
+ページに新しいテキスト フラグメントが追加されるたびに、ドキュメントが形になり始めます。長いドキュメントを作成する場合でも、短い形式のコンテンツを作成する場合でも、さまざまなシナリオでこれをどのように使用できるかは容易に想像できます。
+
+## ステップ6: ドキュメントを保存する
+
+すべてのテキストを追加し、必要な書式を適用したら、ドキュメントを保存します。次のコード行は、指定したディレクトリにファイルを保存するだけです。
 
 ```csharp
 document.Save(dataDir + "SubsequentIndent_out.pdf", Aspose.Pdf.SaveFormat.Pdf);
 ```
 
-#### Q: このチュートリアルから得られる重要なポイントは何ですか?
+これで完了です。これで、PDF ファイルには後続の行がインデントされたテキストが含まれるようになりました。
 
-A: このチュートリアルでは、Aspose.PDF for .NET を使用して後続の行にインデントを追加することで、PDF ドキュメント内のテキストの読みやすさを向上させる方法を学習しました。この手法は、さまざまな種類のドキュメントやレポートに役立ちます。
+## 結論
+
+これで完了です。Aspose.PDF for .NET を使用して、PDF に後続の行のインデントを追加する方法を学習しました。この方法は、テキストの表示方法を柔軟に制御できるため、ドキュメントにプロフェッショナルなタッチを加えるのに最適です。ビジネス レポート、法律文書、またはあらゆる種類の PDF ファイルを作成する場合、インデントは読みやすさを向上させる小さいながらも強力なツールです。このチュートリアルが気に入った場合は、Aspose.PDF が提供する他の機能もぜひお試しください。
+
+## よくある質問
+
+### 段落ごとに異なるインデントを適用できますか?  
+はい、それぞれに異なるインデント設定を適用できます。`TextFragment`個々の`TextState.FormattingOptions`.
+
+### どのような単位が使用されるか`SubsequentLinesIndent` property?  
+インデントは、PDF ドキュメントの標準測定単位であるポイントで測定されます。
+
+### これを既存の PDF に適用できますか?  
+もちろんです! 既存の PDF を読み込み、新しいドキュメントと同じ方法でこれらの変更を適用できます。
+
+### 後続の行をインデントできる量に制限はありますか?  
+厳密な制限はありませんが、読みやすさを考慮して、インデントを適切な範囲内に保つことをお勧めします。
+
+### これを他のテキスト書式設定オプションと組み合わせることはできますか?  
+はい！組み合わせることができます`SubsequentLinesIndent`プロパティを、フォント サイズ、色、配置などの他のテキスト書式設定オプションと組み合わせて、テキストをさらにカスタマイズします。

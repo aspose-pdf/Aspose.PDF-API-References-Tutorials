@@ -64,7 +64,7 @@ foreach (Annotation annotation in doc.Pages[1].Annotations)
 {
 ```
 
- The`Annotations` vlastnictví`Page` objekt poskytuje přístup ke všem anotacím na konkrétní stránce PDF. Zde procházíme každou anotaci na první stránce.
+ The`Annotations` vlastnictvím`Page` objekt poskytuje přístup ke všem anotacím na konkrétní stránce PDF. Zde procházíme každou anotaci na první stránce.
 
 ## Krok 4: Filtr pro zvýrazněné textové poznámky
 

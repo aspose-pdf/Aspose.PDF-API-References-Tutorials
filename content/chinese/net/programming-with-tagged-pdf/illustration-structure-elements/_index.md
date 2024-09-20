@@ -2,155 +2,134 @@
 title: 插图结构元素
 linktitle: 插图结构元素
 second_title: Aspose.PDF for .NET API 参考
-description: 使用 Aspose.Pdf for .NET 的插图资产的分步指南。使用图像增强 PDF 的显示效果。
+description: 按照我们的分步教程，在 Aspose.PDF for .NET 中创建带有插图元素的结构化 PDF。
 type: docs
 weight: 100
 url: /zh/net/programming-with-tagged-pdf/illustration-structure-elements/
 ---
-在本分步指南中，我们将向您展示如何使用 Aspose.PDF for .NET 中的插图结构元素。Aspose.PDF 是一个功能强大的库，可让您以编程方式操作 PDF 文档。插图结构元素允许您向 PDF 文档添加图像和图形，从而改善其视觉呈现和理解。
+## 介绍
 
-让我们深入研究代码并学习如何使用 Aspose.PDF for .NET 的插图结构元素。
+您准备好在 .NET 应用程序中创建令人惊叹的结构化 PDF 了吗？无论您是在处理需要标记内容的项目，还是只想将 PDF 提升到一个新的水平，Aspose.PDF for .NET 都拥有处理插图结构元素所需的所有工具。在本教程中，我将逐步指导您完成整个过程，确保即使是最复杂的部分也清晰明了。
 
 ## 先决条件
 
-开始之前，请确保您已准备好以下物品：
+在我们深入讨论细节之前，让我们确保您已准备好顺利进行所需的一切。
 
-1. 已安装用于.NET 的 Aspose.PDF 库。
-2. C# 编程语言的基本知识。
+1.  Aspose.PDF for .NET – 您需要安装 Aspose.PDF 库。还没有吗？您可以[点击下载](https://releases.aspose.com/pdf/net/)。如果你想先测试一下，你可以拿一个[免费试用](https://releases.aspose.com/).
+2. Visual Studio – 我们将使用 C# 编码，因此请确保安装了 Visual Studio 或任何兼容的 IDE。
+3. .NET Framework – 确保您拥有与 Aspose.PDF for .NET 兼容的版本。
+4. 临时许可证 – Aspose.PDF 在试用模式下有一些限制，因此请获取[临时执照](https://purchase.aspose.com/temporary-license/)解锁全部功能。
 
-## 步骤 1：设置环境
+就这样！现在让我们导入必要的命名空间并继续编码。
 
-首先，打开 C# 开发环境并创建一个新项目。确保您已在项目中添加了对 .NET 的 Aspose.PDF 库的引用。
+## 导入命名空间
 
 ```csharp
-//文档目录的路径。
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## 第 2 步：创建文档
+这是基础 — 如果不导入这些命名空间，我们就无法与 Aspose.PDF 功能交互或处理带标签的 PDF 内容。现在让我们详细分解这些步骤。
 
-第一步是使用`Document`班级。
+## 步骤 1：设置文档目录
 
-```csharp
-//创建 PDF 文档
-Document document = new Document();
-```
-
-## 步骤 3：处理标记内容
-
-然后我们得到要处理的文档的标记内容。
+在开始创建 PDF 之前，您需要指定将保存文件的文档目录的路径。这是系统上存储图像或其他资产的文件夹。
 
 ```csharp
-//获取文档的标记内容
-ITaggedContent taggedContent = document.TaggedContent;
-```
-
-## 步骤 4：设置文档标题和语言
-
-我们现在可以设置文档标题和语言。
-
-```csharp
-//定义文档标题和语言
-taggedContent.SetTitle("Tagged PDF document");
-taggedContent.SetLanguage("fr-FR");
-```
-
-## 步骤 5：添加插图
-
-现在让我们向文档中添加说明性元素，例如图像和图形。
-
-```csharp
-//欠发达
-IllustrationElement figure1 = taggedContent.CreateFigureElement();
-taggedContent.RootElement.AppendChild(figure1);
-figure1.AlternativeText = "Figure One";
-figure1.Title = "Picture 1";
-figure1.SetTag("Fig1");
-figure1.SetImage("image.png");
-```
-
-在这里，我们创建一个插图结构元素，赋予它替代文本、标题、自定义标签，并将图像与其关联。
-
-## 步骤 6：保存标记的 PDF 文档
-
-最后，我们保存标记的PDF文档。
-
-```csharp
-//保存标记的 PDF 文档
-document.Save(dataDir + "IllustrationStructureElements.pdf");
-```
-
-### 使用 Aspose.Pdf for .NET 的插图结构元素示例源代码 
-```csharp
-
-//文档目录的路径。
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
-//创建 PDF 文档
+这一步很简单，但必不可少。你要告诉程序在哪里找到并存储你要处理的文件。这就像为你的 PDF 建立一个大本营。替换`"YOUR DOCUMENT DIRECTORY"`与您的机器上的实际路径。
+
+## 步骤 2：创建新的 PDF 文档
+
+现在，是时候创建 PDF 文档了。在此步骤中，我们将启动一个空的 PDF 文档，我们将在后续步骤中对其进行修改和增强。
+ 创建文档
+
+```csharp
 Document document = new Document();
+```
 
-//获取使用 TaggedPdf 工作的内容
+这行代码可以发挥神奇的作用。它会创建一个完全空白的新 PDF 文件，等待您向其中添加内容。您可以将其视为打开了一块新画布。
+
+## 步骤 3：访问带标签的 PDF 内容
+
+要使用插图结构元素，我们需要利用文档的标记内容。这使我们能够定义特定标记，使 PDF 更加结构化且更易于访问。
+
+```csharp
 ITaggedContent taggedContent = document.TaggedContent;
+```
 
-//设置 Documnet 的标题和语言
+这就是奇迹发生的地方！`TaggedContent`对象让我们定义如何解释 PDF 中的元素。如果您正在处理可访问性或结构，则此步骤至关重要。
+
+## 步骤 4：设置文档的标题和语言
+
+我们正在创建结构化的 PDF，因此定义标题和语言至关重要。这不仅有助于提高可访问性，还可以使文档更加专业且易于搜索。
+
+```csharp
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
+```
 
-//正在开发中
+通过指定标题和语言，您实际上是在赋予 PDF 一些个性。标题将显示在文档属性中，而设置语言可确保与屏幕阅读器和其他辅助工具兼容。
+
+## 步骤5：创建插图（图形）元素
+
+现在到了令人兴奋的部分 - 添加插图！在本例中，我们将创建一个包含图像、替代文本描述和标题的图形元素。
+
+```csharp
 IllustrationElement figure1 = taggedContent.CreateFigureElement();
 taggedContent.RootElement.AppendChild(figure1);
+```
+
+此代码创建一个新的图形元素并将其附加到文档的根元素。可以将其视为向文档添加图像占位符。
+
+## 步骤 6：添加替代文本、标题和图像
+
+为了确保您的 PDF 可访问，您需要为插图添加替代文本和标题。我们还将附加一张图片。
+
+```csharp
 figure1.AlternativeText = "Figure One";
 figure1.Title = "Image 1";
 figure1.SetTag("Fig1");
-figure1.SetImage("image.png");
-
-//保存带标签的 PDF 文档
-document.Save(dataDir + "IllustrationStructureElements.pdf");
-
+figure1.SetImage(dataDir + "image.jpg");
 ```
+
+这是最后的润色。我们为图像添加描述性替代文本（这对屏幕阅读器很有用）、标题，并设置实际图像文件。`SetTag`方法标记图形，使得以后更容易引用。
+
+重要提示：确保图片路径`SetImage`指向您机器上的有效图像文件。
+
+## 步骤 7：保存标记的 PDF 文档
+
+添加并构建所有内容后，就可以保存 PDF 了。此步骤完成所有内容并生成实际文件。
+
+```csharp
+document.Save(dataDir + "IllustrationStructureElements.pdf");
+```
+
+很简单，对吧？此命令会获取您所做的所有工作，并在您之前指定的目录中创建一个新的 PDF 文件。现在，检查您的文件夹，瞧 — 您有一个包含插图元素的结构化 PDF！
 
 ## 结论
 
-恭喜！您已经学会了如何使用 Aspose.PDF for .NET 中的插图结构元素。现在，您可以向 PDF 文档添加图像和图形以增强其视觉效果。探索 Aspose.PDF 的更多功能以发掘其全部潜力。
+恭喜！您刚刚学会了如何使用 Aspose.PDF for .NET 创建带有插图结构元素的标记 PDF。这种方法可确保您的 PDF 不仅具有视觉吸引力，而且结构合理且易于访问。通过标记内容和添加替代文本，您可以确保每个人（包括使用辅助技术的人）都能享受您的文档。
 
-### 常见问题解答
+## 常见问题解答
 
-#### 问：PDF 文档中的插图结构元素是什么，它们如何增强视觉呈现？
+### 什么是标记的 PDF 内容？
+带标记的 PDF 是包含标签或标记以识别不同元素（如标题、段落和图形）的 PDF，从而使文档更易于访问。
 
-答：PDF 文档中的插图结构元素允许您合并图像和图形等视觉内容。通过将插图结构元素与 Aspose.PDF for .NET 结合使用，您可以增强 PDF 文档的视觉呈现效果，使其更具吸引力和信息量。
+### 设置替代文本有何帮助？
+替代文本为图像提供描述，可被屏幕阅读器读取，从而提高视障用户的可访问性。
 
-#### 问：Aspose.PDF for .NET 如何方便使用插图结构元素？
+### 我可以向标记的 PDF 添加多幅图像吗？
+是的！您可以创建多个`FigureElement`对象并将每个对象附加到您的文档，就像我们对单个图像所做的那样。
 
-答：Aspose.PDF for .NET 提供了一组类和方法，使您能够创建、操作和向 PDF 文档添加插图结构元素。这些元素可以包括图像、图形和其他视觉内容。
+### 我需要许可证才能使用 Aspose.PDF for .NET 吗？
+是的，Aspose.PDF 是一个付费库，但你可以获得[临时执照](https://purchase.aspose.com/temporary-license/)或者从[免费试用](https://releases.aspose.com/).
 
-#### 问：`taggedContent` object play in using illustration structure elements?
-
-答：`taggedContent`对象，从文档的`TaggedContent`属性，允许您使用 PDF 文档中的结构化元素。您可以创建、组织和添加插图结构元素，以增强文档的视觉表现。
-
-#### 问：插图结构元素如何提高对 PDF 文档内容的理解？
-
-答：插图结构元素为 PDF 文档的文本内容提供视觉背景和支持。它们有助于通过图像和图形传达复杂的信息、数据或概念，使内容更易于理解和记忆。
-
-#### 问：使用插图结构元素可以添加哪些类型的视觉内容？
-
-答：插图结构元素可用于添加各种视觉内容，包括图像、图表、图形、图解和其他类型的艺术作品，以增强文档的视觉吸引力和叙事性。
-
-#### 问：如何使用 Aspose.PDF for .NET 中的插图结构元素创建图像并将其添加到 PDF 文档？
-
-答：您可以使用`CreateFigureElement`方法，为其分配替代文本、标题和自定义标签，并使用`SetImage`方法。提供的代码示例演示了此过程。
-
-#### 问：我可以自定义插图结构元素的外观和属性吗？
-
-答：是的，您可以通过设置替代文本、标题、自定义标签、图像源等属性来自定义插图结构元素的外观和属性。这样您就可以根据文档的需求定制视觉呈现。
-
-#### 问：如何确保使用插图结构元素添加的图像和图形可访问？
-
-答：为确保可访问性，请提供有意义的替代文本，准确描述图像或图形的内容。屏幕阅读器和其他辅助技术会读取此替代文本，使所有用户都可以访问视觉内容。
-
-#### 问：我可以将插图结构元素与 Aspose.PDF for .NET 提供的其他 PDF 处理功能结合使用吗？
-
-答：当然可以！您可以将插图结构元素与 Aspose.PDF for .NET 的其他功能相结合，例如添加文本、创建表格、插入超链接等。这允许您创建具有视觉吸引力和信息丰富的 PDF 文档。
-
-#### 问：如何进一步探索和利用插图结构元素进行高级文档设计和视觉叙事？
-
-答：为了深入了解，您可以探索 Aspose.PDF for .NET 的高级功能，例如创建交互元素、嵌入多媒体、利用不同的图像格式以及针对各种设备优化视觉内容。该库的文档和示例为这些高级场景提供了指导。
+### 创建 PDF 后可以修改图形元素吗？
+一旦 PDF 被保存，您就不能直接修改它，但您可以重新打开文档，进行更改，然后使用 Aspose.PDF 再次保存它。

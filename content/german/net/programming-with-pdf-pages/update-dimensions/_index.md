@@ -106,7 +106,7 @@ Hier wählen wir die erste Seite aus. Denken Sie daran, dass Seiten in Aspose ab
 Jetzt kommt der spaßige Teil! Sie können die Abmessungen der Seite festlegen. In unserem Beispiel ändern wir die Seitengröße auf A4.
 
 ```csharp
-// Stellen Sie die Seitengröße auf A4 (11,7 x 8,3 Zoll) und in Aspose.Pdf ein, 1 Zoll = 72 Punkte
+// Stellen Sie die Seitengröße auf A4 (11,7 x 8,3 Zoll) ein und in Aspose.Pdf ist 1 Zoll = 72 Punkte
 // Die Abmessungen des A4-Formats in Punkten betragen also (842,4, 597,6)
 pdfPage.SetPageSize(597.6, 842.4);
 ```

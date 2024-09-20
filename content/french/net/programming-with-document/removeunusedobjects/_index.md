@@ -90,7 +90,7 @@ C'est comme cliquer sur « Enregistrer » après avoir modifié un document Wo
 
 ## Conclusion
 
-Félicitations ! Vous venez d'apprendre à supprimer les objets inutilisés d'un PDF à l'aide d'Aspose.PDF pour .NET. En suivant ces étapes, vous obtiendrez un PDF plus propre, plus efficace, plus petit et plus rapide à charger. Il s'agit d'une technique essentielle, en particulier si vous gérez un volume important de PDF ou si vous devez les optimiser pour l'affichage sur le Web.
+Félicitations ! Vous venez d'apprendre à supprimer les objets inutilisés d'un PDF à l'aide d'Aspose.PDF pour .NET. En suivant ces étapes, vous obtiendrez un PDF plus propre, plus efficace, plus petit et plus rapide à charger. Il s'agit d'une technique essentielle, en particulier si vous gérez un grand volume de PDF ou si vous devez les optimiser pour l'affichage sur le Web.
 
 À présent, vous devriez être capable de charger un PDF, d'appliquer des options d'optimisation et d'enregistrer la version optimisée. C'est un processus simple, mais il peut avoir un impact considérable sur les performances et le stockage.
 

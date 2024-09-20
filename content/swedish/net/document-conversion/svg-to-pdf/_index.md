@@ -45,7 +45,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 ## Steg 2: Instantiera LoadOption-objekt
 
- Därefter måste du skapa en instans av`LoadOptions` klass specifikt för SVG-filer. Detta talar om för Aspose.PDF hur SVG-filen ska hanteras under konverteringsprocessen.
+ Därefter måste du skapa en instans av`LoadOptions` klass specifikt för SVG-filer. Detta berättar för Aspose.PDF hur SVG-filen ska hanteras under konverteringsprocessen.
 
  De`SvgLoadOptions` class är utformad för att ladda SVG-filer. Genom att skapa en instans av den här klassen säkerställer du att biblioteket vet att du arbetar med en SVG-fil.
 

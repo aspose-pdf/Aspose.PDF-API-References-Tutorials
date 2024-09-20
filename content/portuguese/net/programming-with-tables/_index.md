@@ -13,24 +13,24 @@ Seja você um iniciante ou um desenvolvedor experiente, os tutoriais Programming
 ## Tutoriais
 | Título | Descrição |
 | --- | --- | 
-| [Adicionar imagem em uma célula de tabela](./add-image-in-a-table-cell/) | Adicione uma imagem em uma célula de tabela com o Aspose.PDF para .NET, um guia passo a passo para manipulação precisa de imagens em documentos PDF. |  
-| [Adicionar coluna repetida em documento PDF](./add-repeating-column/) | Aprenda como adicionar uma coluna repetida em um documento PDF usando o Aspose.PDF para .NET. |  
-| [Adicionar objeto SVG em arquivo PDF](./add-svg-object/) | Adicione facilmente objetos SVG em arquivos PDF usando Aspose.PDF para .NET. |  
-| [Adicionar tabela em arquivo PDF](./add-table/) | Adicione tabelas facilmente em arquivos PDF usando Aspose.PDF para .NET. |  
-| [Ajuste automático à janela](./auto-fit-to-window/) | Guia passo a passo para usar o Aspose.PDF para .NET e obter ajuste automático à janela na geração de PDF. |  
-| [Determinar quebra de tabela em arquivo PDF](./determine-table-break/) | Aprenda como determinar quebras de tabela em arquivos PDF usando Aspose.PDF para .NET. |  
-| [Exportar dados da planilha do Excel para tabela](./export-excel-worksheet-data-to-table/) | Exporte dados de uma planilha do Excel para uma tabela PDF usando o Aspose.PDF para .NET. |  
-| [Extrair Borda em Arquivo PDF](./extract-border/) | Aprenda como extrair a borda em um arquivo PDF usando o Aspose.PDF para .NET. |  
-| [Obter largura da tabela em arquivo PDF](./get-table-width/) | Aprenda como obter a largura de uma tabela em um arquivo PDF usando o Aspose.PDF para .NET. |  
-| [Tags HTML dentro da tabela no arquivo PDF](./html-tags-inside-table/) | Aprenda a usar tags HTML dentro de uma tabela em um arquivo PDF com o Aspose.PDF para .NET. |  
-| [Inserir quebra de página em arquivo PDF](./insert-page-break/) | Aprenda como inserir uma quebra de página em um arquivo PDF usando o Aspose.PDF para .NET. |  
-| [Integrar com banco de dados em arquivo PDF](./integrate-with-database/) | Incorpore dados de um banco de dados em um arquivo PDF usando Aspose.PDF para .NET. |  
-| [Manipular tabela em arquivo PDF](./manipulate-table/) | Manipule facilmente tabelas em arquivos PDF com Aspose.PDF para .NET. |  
-| [Margens ou preenchimento](./margins-or-padding/) | Aprenda a definir margens ou preenchimento em uma tabela usando o Aspose.PDF para .NET. |  
-| [Remover várias tabelas em um documento PDF](./remove-multiple-tables/) | Aprenda como remover várias tabelas em um documento PDF usando o Aspose.PDF para .NET. |  
-| [Remover tabela em documento PDF](./remove-table/) | Aprenda como remover uma tabela em um documento PDF usando o Aspose.PDF para .NET. |  
-| [Renderizar tabela em documento PDF](./render-table/) | Aprenda a exibir uma tabela em um documento PDF usando o Aspose.PDF para .NET. |  
-| [Substituir tabela em documento PDF](./replace-table/) | Aprenda como substituir uma tabela em um documento PDF usando o Aspose.PDF para .NET. |  
-| [Mesa de canto arredondado em documento PDF](./rounded-corner-table/) | Aprenda a criar uma tabela de cantos arredondados em um documento PDF usando o Aspose.PDF para .NET. |  
-| [Definir borda em PDF para tabela](./set-border/) | Aprenda como definir uma borda em PDF para tabela com Aspose.PDF para .NET. |  
-| [Alinhamento de texto para conteúdo de linha de tabela](./text-alignment-for-table-row-content/) | Aprenda a alinhar o conteúdo da linha em uma tabela PDF usando o Aspose.PDF para .NET. |  
+| [Adicionar imagem em uma célula de tabela](./add-image-in-a-table-cell/) | Aprenda como adicionar facilmente imagens em células de tabela usando Aspose.PDF para .NET, aprimorando o apelo visual dos seus documentos PDF. Guia passo a passo fornecido. |  
+| [Adicionar coluna repetida em documento PDF](./add-repeating-column/) | Aprenda como adicionar colunas repetidas a documentos PDF usando Aspose.PDF para .NET. Guia passo a passo com exemplos e código. Perfeito para desenvolvedores. |  
+| [Adicionar objeto SVG em arquivo PDF](./add-svg-object/) | Aprenda como adicionar facilmente objetos SVG a arquivos PDF usando Aspose.PDF para .NET neste tutorial passo a passo. Aprimore seus documentos. |  
+| [Adicionar tabela em arquivo PDF](./add-table/) | Aprenda como adicionar tabelas facilmente a arquivos PDF usando Aspose.PDF para .NET com este tutorial passo a passo. Perfeito para desenvolvedores C#. |  
+| [Ajuste automático à janela](./auto-fit-to-window/) | Aprenda como ajustar automaticamente uma tabela à janela usando o Aspose.PDF para .NET neste guia detalhado passo a passo. Perfeito para criar tabelas polidas e bem ajustadas em PDFs. |  
+| [Determinar quebra de tabela em arquivo PDF](./determine-table-break/) | Descubra como determinar quebra de tabela em arquivos PDF usando Aspose.PDF para .NET com nosso guia passo a passo, incluindo exemplos de código e dicas de solução de problemas. |  
+| [Exportar dados da planilha do Excel para tabela](./export-excel-worksheet-data-to-table/) | Aprenda a exportar dados de planilhas do Excel para uma tabela PDF usando o Aspose.PDF para .NET. Tutorial passo a passo com exemplos de código, pré-requisitos e dicas úteis. |  
+| [Extrair Borda em Arquivo PDF](./extract-border/) | Aprenda como extrair bordas de um arquivo PDF e salvá-las como uma imagem usando o Aspose.PDF para .NET. Guia passo a passo com exemplos de código e dicas para o sucesso. |  
+| [Obter largura da tabela em arquivo PDF](./get-table-width/) | Aprenda como obter a largura de uma tabela em um PDF usando o Aspose.PDF para .NET com este guia passo a passo. |  
+| [Tags HTML dentro da tabela no arquivo PDF](./html-tags-inside-table/) | Aprenda como incorporar tags HTML dentro de células de tabela em um PDF usando Aspose.PDF para .NET com este guia passo a passo. Crie documentos PDF dinâmicos e profissionais. |  
+| [Inserir quebra de página em arquivo PDF](./insert-page-break/) | Aprenda como inserir quebras de página em um documento PDF usando Aspose.PDF para .NET. Siga este guia passo a passo para gerenciamento de PDF sem interrupções. |  
+| [Integrar com banco de dados em arquivo PDF](./integrate-with-database/) | Aprenda como integrar dados de banco de dados em arquivos PDF usando o Aspose.PDF para .NET com este guia passo a passo fácil. |  
+| [Manipular tabela em arquivo PDF](./manipulate-table/) | Aprenda a manipular tabelas em arquivos PDF usando o Aspose.PDF para .NET com um tutorial passo a passo, incluindo exemplos de código e práticas recomendadas. |  
+| [Margens ou preenchimento](./margins-or-padding/) | Aprenda a gerenciar margens e preenchimento no Aspose.PDF para .NET com este guia passo a passo abrangente para criar PDFs refinados. |  
+| [Remover várias tabelas em um documento PDF](./remove-multiple-tables/) | Aprenda como remover várias tabelas em um documento PDF usando o Aspose.PDF para .NET. Guia passo a passo com exemplos de código, perguntas frequentes e explicações detalhadas. |  
+| [Remover tabela em documento PDF](./remove-table/) | Aprenda como remover tabelas de documentos PDF usando Aspose.PDF para .NET com um guia passo a passo. Simplifique a manipulação de PDF com este tutorial fácil. |  
+| [Renderizar tabela em documento PDF](./render-table/) | Crie PDFs profissionais facilmente renderizando tabelas com Aspose.PDF para .NET. Siga nosso guia passo a passo para dominar a geração de documentos. |  
+| [Substituir tabela em documento PDF](./replace-table/) | Aprenda como substituir uma tabela em um documento PDF usando o Aspose.PDF para .NET. Guia passo a passo, dicas e truques incluídos. |  
+| [Mesa de canto arredondado em documento PDF](./rounded-corner-table/) | Aprenda a criar uma linda tabela com cantos arredondados em seus documentos PDF usando o Aspose.PDF para .NET com este guia passo a passo. |  
+| [Definir borda em PDF para tabela](./set-border/) | Aprenda como definir bordas em uma tabela PDF usando Aspose.PDF para .NET com nosso guia passo a passo. Melhore a aparência do seu documento facilmente. |  
+| [Alinhamento de texto para conteúdo de linha de tabela](./text-alignment-for-table-row-content/) | Aprenda a alinhar texto em linhas de tabela usando o Aspose.PDF para .NET. Guia passo a passo com exemplos de código para criar documentos PDF profissionais. |  

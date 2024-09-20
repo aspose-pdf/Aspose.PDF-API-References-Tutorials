@@ -9,7 +9,7 @@ url: /pl/net/annotations/updatefreetextannotation/
 ---
 ## Wstęp
 
-W erze cyfrowej pliki PDF stały się podstawą udostępniania dokumentów. Niezależnie od tego, czy jest to raport, umowa czy prosta notatka, pliki PDF zachowują swoje formatowanie na różnych urządzeniach, co czyni je niezwykle użytecznymi. Ale co, jeśli musisz zaktualizować adnotacje w pliku PDF? Tutaj wkracza Aspose.PDF dla .NET. Ta potężna biblioteka pozwala deweloperom z łatwością manipulować plikami PDF, w tym aktualizować adnotacje tekstu swobodnego. W tym samouczku przeprowadzimy Cię przez kroki aktualizacji adnotacji tekstu swobodnego w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Więc chwyć swój kapelusz kodera i zanurzmy się!
+W erze cyfrowej pliki PDF stały się podstawą udostępniania dokumentów. Niezależnie od tego, czy jest to raport, umowa czy prosta notatka, pliki PDF zachowują swoje formatowanie na różnych urządzeniach, co czyni je niezwykle użytecznymi. Ale co, jeśli musisz zaktualizować adnotacje w pliku PDF? Tutaj wkracza Aspose.PDF dla .NET. Ta potężna biblioteka pozwala deweloperom na łatwą manipulację plikami PDF, w tym aktualizowanie adnotacji w swobodnym tekście. W tym samouczku przeprowadzimy Cię przez kroki aktualizacji adnotacji w swobodnym tekście w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Więc chwyć swój kapelusz kodera i zanurzmy się!
 
 ## Wymagania wstępne
 

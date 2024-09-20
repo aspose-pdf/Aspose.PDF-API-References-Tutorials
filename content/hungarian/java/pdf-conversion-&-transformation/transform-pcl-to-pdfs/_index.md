@@ -18,7 +18,7 @@ Mielőtt belevágnánk az átalakítási folyamatba, győződjön meg arról, ho
 
 -  Aspose.PDF for Java Library: Töltse le és foglalja bele projektjébe az Aspose.PDF for Java könyvtárat. A letöltési linket megtalálod[itt](https://releases.aspose.com/pdf/java/).
 
-## Az átalakítási folyamat vázlata
+## Az átalakulási folyamat vázlata
 
 Kezdjük azzal, hogy felvázoljuk azokat a lépéseket, amelyeket a PCL-fájlok PDF-ekké alakításához az Aspose.PDF for Java használatával hajtunk végre:
 

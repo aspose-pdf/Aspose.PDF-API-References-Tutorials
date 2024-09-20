@@ -2,161 +2,178 @@
 title: عرض الرموز القابلة للاستبدال في ملف PDF
 linktitle: عرض الرموز القابلة للاستبدال في ملف PDF
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: تعرف على كيفية عرض الرموز القابلة للاستبدال في ملف PDF باستخدام Aspose.PDF لـ .NET.
+description: تعرف على كيفية عرض الرموز القابلة للاستبدال في ملفات PDF باستخدام Aspose.PDF لـ .NET باستخدام هذا الدليل خطوة بخطوة.
 type: docs
 weight: 310
 url: /ar/net/programming-with-text/rendering-replaceable-symbols/
 ---
-في هذا البرنامج التعليمي، سنشرح كيفية عرض الرموز القابلة للاستبدال في ملف PDF باستخدام مكتبة Aspose.PDF لـ .NET. سنتناول العملية خطوة بخطوة لإنشاء ملف PDF، وإضافة جزء نصي مع علامات سطر جديد، وتعيين خصائص النص، وتحديد موضع النص، وحفظ ملف PDF باستخدام كود المصدر C# المقدم.
+## مقدمة
+
+غالبًا ما يكون إنشاء ملفات PDF ومعالجتها أشبه بالتنقل في متاهة. ومع توفر العديد من الخيارات والأدوات، قد يكون من الصعب العثور على الحل المناسب لاحتياجاتك المحددة. لحسن الحظ، تعد Aspose.PDF for .NET مكتبة قوية تسهل العمل مع مستندات PDF، بما في ذلك عرض الرموز القابلة للاستبدال. في هذا البرنامج التعليمي، سنستعرض الخطوات اللازمة لعرض الرموز القابلة للاستبدال في ملف PDF باستخدام Aspose.PDF for .NET. سواء كنت مطورًا متمرسًا أو مبتدئًا، سيوفر لك هذا الدليل كل ما تحتاجه للبدء.
 
 ## المتطلبات الأساسية
 
-قبل أن تبدأ، تأكد من أن لديك ما يلي:
+قبل التعمق في الكود، دعنا نتأكد من أنك تمتلك كل ما تحتاجه للمتابعة. فيما يلي المتطلبات الأساسية:
 
-- تم تثبيت مكتبة Aspose.PDF لـ .NET.
-- فهم أساسي لبرمجة C#.
+1. Visual Studio: تأكد من تثبيت Visual Studio على جهازك. هذا هو المكان الذي ستكتب فيه كود .NET وتقوم بتشغيله.
+2. .NET Framework: يجب أن يكون لديك إصدار متوافق من .NET Framework. يدعم Aspose.PDF .NET Framework 4.0 والإصدارات الأحدث.
+3.  Aspose.PDF لـ .NET: يجب أن يكون لديك مكتبة Aspose.PDF. يمكنك تنزيلها من[موقع اسبوس](https://releases.aspose.com/pdf/net/) إذا كنت تريد تجربته أولاً، يمكنك الحصول على نسخة تجريبية مجانية[هنا](https://releases.aspose.com/).
+4. المعرفة الأساسية بلغة البرمجة C#: ستساعدك المعرفة بلغة البرمجة C# على فهم مقتطفات التعليمات البرمجية بشكل أفضل.
+5. قارئ PDF: لعرض ملفات PDF الناتجة، تأكد من تثبيت قارئ PDF على جهازك.
 
-## الخطوة 1: إعداد دليل المستندات
+## استيراد الحزم
 
- أولاً، تحتاج إلى تعيين المسار إلى الدليل الذي تريد حفظ ملف PDF الناتج فيه. استبدل`"YOUR DOCUMENT DIRECTORY"` في`dataDir` متغير يحتوي على المسار إلى الدليل المطلوب.
+قبل أن نبدأ في كتابة التعليمات البرمجية، نحتاج إلى استيراد الحزم اللازمة. في مشروع C# الخاص بك، تأكد من إضافة مرجع إلى مكتبة Aspose.PDF. إليك كيفية القيام بذلك:
+
+1. افتح مشروع Visual Studio الخاص بك.
+2. انقر بزر الماوس الأيمن على المشروع في مستكشف الحلول وحدد "إدارة حزم NuGet".
+3. ابحث عن "Aspose.PDF" وقم بتثبيت الحزمة.
+
+بمجرد تثبيت المكتبة، يمكنك البدء في كتابة الكود الخاص بك. فيما يلي دليل خطوة بخطوة لعرض الرموز القابلة للاستبدال في ملف PDF.
+
+## الخطوة 1: إعداد مشروعك
+
+### إنشاء مشروع جديد
+
+أولاً وقبل كل شيء، دعونا ننشئ مشروع C# جديدًا حيث سننفذ وظيفة عرض PDF الخاصة بنا.
+
+- افتح Visual Studio.
+- حدد "إنشاء مشروع جديد".
+- اختر "تطبيق وحدة التحكم (.NET Framework)" ثم انقر فوق "التالي".
+- قم بتسمية مشروعك (على سبيل المثال، "PDFRenderingExample") وانقر فوق "إنشاء".
+
+### إضافة باستخدام التوجيهات
+
+ في الجزء العلوي من`Program.cs` الملف، أضف التوجيهات اللازمة باستخدام Aspose.PDF:
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System;
 ```
 
-## الخطوة 2: إنشاء مستند وصفحة PDF
+## الخطوة 2: تهيئة مستند PDF
 
- بعد ذلك، نقوم بإنشاء مستند PDF جديد وإضافة صفحة إليه باستخدام`Document` الصف و`Page` الفئة من مكتبة Aspose.PDF.
+الآن، لنقم بإنشاء مستند PDF جديد وإضافة صفحة إليه. هذا هو المكان الذي سنعرض فيه رموزنا القابلة للاستبدال.
 
 ```csharp
-Aspose.Pdf.Document pdfApplicationDoc = new Aspose.Pdf.Document();
-Aspose.Pdf.Page applicationFirstPage = (Aspose.Pdf.Page)pdfApplicationDoc.Pages.Add();
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // حدد دليل المستند الخاص بك
+Document pdfDocument = new Document(); // إنشاء مستند PDF جديد
+Page pdfPage = pdfDocument.Pages.Add(); //إضافة صفحة جديدة إلى المستند
 ```
 
-## الخطوة 3: إضافة جزء من النص باستخدام علامات السطر الجديد
+-  نبدأ بتعريف المتغير`dataDir` للاحتفاظ بالمسار الذي سنحفظ فيه ملف PDF لاحقًا.
+-  نقوم بإنشاء مثيل جديد لـ`Document` الفئة التي تمثل ملف PDF الخاص بنا.
+-  ثم نضيف صفحة جديدة إلى هذه الوثيقة باستخدام`Pages.Add()` طريقة.
 
- نحن ننشئ`TextFragment` الكائن وضبط نصه ليشمل علامات السطر الجديد (`Environment.NewLine`) لتمثيل أسطر متعددة من النص.
+## الخطوة 3: إنشاء جزء النص
+
+بعد ذلك، سننشئ جزءًا نصيًا يحتوي على النص الذي نريد عرضه في ملف PDF. وهنا يمكننا تضمين الرموز القابلة للاستبدال.
 
 ```csharp
-Aspose.Pdf.Text.TextFragment textFragment = new Aspose.Pdf.Text.TextFragment("Applicant Name: " + Environment.NewLine + " Joe Smoe");
+TextFragment textFragment = new TextFragment("Applicant Name: " + Environment.NewLine + " Joe Smoe");
 ```
+
+-  ال`TextFragment` يتم استخدام الفئة لإنشاء جزء من النص يمكن إضافته إلى ملف PDF. 
+- نقوم بتضمين علامة سطر جديد (`Environment.NewLine`) لتنسيق النص بشكل صحيح.
 
 ## الخطوة 4: تعيين خصائص جزء النص
 
-يمكننا تعيين خصائص مختلفة لشظية النص إذا رغبنا في ذلك، مثل حجم الخط، ونوع الخط، ولون الخلفية، ولون المقدمة.
+الآن، دعونا نقوم بتخصيص مظهر جزء النص الخاص بنا، مثل حجم الخط ونوع الخط والألوان.
 
 ```csharp
-textFragment.TextState.FontSize = 12;
-textFragment.TextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("TimesNewRoman");
-textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
+textFragment.TextState.FontSize = 12; // ضبط حجم الخط
+textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman"); // تعيين نوع الخط
+textFragment.TextState.BackgroundColor = Color.LightGray; // تعيين لون الخلفية
+textFragment.TextState.ForegroundColor = Color.Red; // تعيين لون النص
 ```
 
-## الخطوة 5: إنشاء فقرة نصية وموضعها
+-  لقد وضعنا`FontSize` إلى 12 لجعل النص قابلاً للقراءة.
+-  استخدام`FontRepository.FindFont()`، نحدد نوع الخط.
+- نقوم أيضًا بتخصيص ألوان الخلفية والأمامية لتحسين الرؤية.
 
- نحن ننشئ`TextParagraph` الكائن، قم بإضافة جزء النص إلى الفقرة، وقم بتعيين موضع الفقرة على الصفحة.
+## الخطوة 5: إنشاء فقرة نصية
+
+ بعد ذلك، سنقوم بإنشاء`TextParagraph` كائن يحمل جزء النص الخاص بنا.
 
 ```csharp
-TextParagraph par = new TextParagraph();
-par.AppendLine(textFragment);
-par.Position = new Aspose.Pdf.Text.Position(100, 600);
+TextParagraph paragraph = new TextParagraph(); // إنشاء فقرة نصية جديدة
+paragraph.AppendLine(textFragment); // أضف جزء النص إلى الفقرة
 ```
 
-## الخطوة 6: إضافة فقرة نصية إلى الصفحة
+-  ال`TextParagraph` تسمح لنا الفئة بتجميع العديد من`TextFragment` أشياء.
+-  نحن نستخدم`AppendLine()` لإضافة جزء النص الخاص بنا إلى الفقرة، مع التأكد من ظهوره بشكل صحيح في ملف PDF.
 
- نحن ننشئ`TextBuilder` قم بإنشاء كائن بالصفحة وأضف فقرة النص إلى منشئ النص.
+## الخطوة 6: تعيين موضع الفقرة
+
+الآن، دعونا نحدد موضع فقرتنا على صفحة PDF.
 
 ```csharp
-TextBuilder textBuilder = new TextBuilder(applicationFirstPage);
-textBuilder.AppendParagraph(par);
+paragraph.Position = new Position(100, 600); // تعيين موضع الفقرة
 ```
 
-## الخطوة 7: احفظ مستند PDF
+-  ال`Position` تأخذ الخاصية معلمتين: إحداثيات X وY. يحدد هذا مكان ظهور النص على الصفحة. اضبط هذه القيم حسب الحاجة لتناسب تخطيطك.
 
-وأخيرًا، نقوم بحفظ مستند PDF في ملف الإخراج المحدد.
+## الخطوة 7: إنشاء منشئ نص
+
+لإضافة فقرتنا إلى صفحة PDF، سنستخدم`TextBuilder`.
 
 ```csharp
-dataDir = dataDir + "RenderingReplaceableSymbols_out.pdf";
-pdfApplicationDoc.Save(dataDir);
+TextBuilder textBuilder = new TextBuilder(pdfPage); // إنشاء TextBuilder للصفحة
+```
+
+-  ال`TextBuilder` تساعدنا الفئة على إضافة نص إلى صفحة معينة. من خلال تمرير`pdfPage` إلى المنشئ، نحن على استعداد لإدراج فقرتنا.
+
+## الخطوة 8: إضافة الفقرة إلى الصفحة
+
+ أخيرًا، سنقوم بإضافة فقرتنا إلى صفحة PDF باستخدام`TextBuilder`.
+
+```csharp
+textBuilder.AppendParagraph(paragraph); // أضف الفقرة إلى الصفحة
+```
+
+- يقوم هذا السطر من التعليمات البرمجية بأخذ الفقرة التي تم إنشاؤها مسبقًا وإضافتها إلى صفحة PDF، مما يجعلها مرئية في المستند النهائي.
+
+## الخطوة 9: احفظ مستند PDF
+
+الآن بعد أن أضفنا النص، حان الوقت لحفظ مستند PDF في الدليل المحدد.
+
+```csharp
+dataDir = dataDir + "RenderingReplaceableSymbols_out.pdf"; // حدد اسم ملف الإخراج
+pdfDocument.Save(dataDir); // حفظ المستند
+```
+
+-  نضيف اسم ملف الإخراج إلى`dataDir`.
+-  ال`Save()` تكتب الطريقة ملف PDF على القرص، مما يجعله متاحًا للعرض.
+
+## الخطوة 10: إخراج رسالة النجاح
+
+دعنا نقدم ملاحظات للمستخدم تشير إلى أنه تم إنشاء ملف PDF بنجاح.
+
+```csharp
 Console.WriteLine("\nReplaceable symbols rendered successfully during PDF creation.\nFile saved at " + dataDir);
 ```
 
-### نموذج لمصدر التعليمات البرمجية لعرض الرموز القابلة للاستبدال باستخدام Aspose.PDF لـ .NET 
-```csharp
-// المسار إلى دليل المستندات.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Aspose.Pdf.Document pdfApplicationDoc = new Aspose.Pdf.Document();
-Aspose.Pdf.Page applicationFirstPage = (Aspose.Pdf.Page)pdfApplicationDoc.Pages.Add();
-// تهيئة TextFragment جديدة بنص يحتوي على علامات السطر الجديد المطلوبة
-Aspose.Pdf.Text.TextFragment textFragment = new Aspose.Pdf.Text.TextFragment("Applicant Name: " + Environment.NewLine + " Joe Smoe");
-// تعيين خصائص جزء النص إذا لزم الأمر
-textFragment.TextState.FontSize = 12;
-textFragment.TextState.Font = Aspose.Pdf.Text.FontRepository.FindFont("TimesNewRoman");
-textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-// إنشاء كائن TextParagraph
-TextParagraph par = new TextParagraph();
-// إضافة جزء نصي جديد إلى الفقرة
-par.AppendLine(textFragment);
-// تعيين موضع الفقرة
-par.Position = new Aspose.Pdf.Text.Position(100, 600);
-// إنشاء كائن TextBuilder
-TextBuilder textBuilder = new TextBuilder(applicationFirstPage);
-// أضف TextParagraph باستخدام TextBuilder
-textBuilder.AppendParagraph(par);
-dataDir = dataDir + "RenderingReplaceableSymbols_out.pdf";
-pdfApplicationDoc.Save(dataDir);
-Console.WriteLine("\nReplaceable symbols render successfully duing pdf creation.\nFile saved at " + dataDir);
-```
+- يقوم هذا السطر بطباعة رسالة نجاح على وحدة التحكم، مما يساعد المستخدمين على التأكيد على اكتمال العملية دون أخطاء.
 
 ## خاتمة
 
-في هذا البرنامج التعليمي، تعلمت كيفية عرض الرموز القابلة للاستبدال في مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. باتباع الدليل خطوة بخطوة وتنفيذ التعليمات البرمجية C# المقدمة، يمكنك إنشاء ملف PDF وإضافة نص بعلامات سطر جديد وتعيين خصائص النص ووضع النص على الصفحة وحفظ ملف PDF.
+والآن، لقد نجحت في عرض رموز قابلة للاستبدال في ملف PDF باستخدام Aspose.PDF for .NET. تتيح لك هذه المكتبة القوية التعامل مع مستندات PDF بسهولة، وباستخدام الخطوات الموضحة أعلاه، يمكنك تخصيص مستنداتك لتناسب احتياجاتك تمامًا.
 
-### الأسئلة الشائعة
+## الأسئلة الشائعة
 
-#### س: ما هو الغرض من البرنامج التعليمي "عرض الرموز القابلة للاستبدال في ملف PDF"؟
+### ما هو Aspose.PDF لـ .NET؟
+Aspose.PDF for .NET هي مكتبة تسمح للمطورين بإنشاء مستندات PDF ومعالجتها وتحويلها داخل تطبيقات .NET.
 
-ج: يوضح البرنامج التعليمي "عرض الرموز القابلة للاستبدال في ملف PDF" كيفية استخدام مكتبة Aspose.PDF لـ .NET لإنشاء مستند PDF يتضمن رموزًا قابلة للاستبدال. يتم تمثيل هذه الرموز على هيئة أجزاء نصية مع علامات سطر جديد لإنشاء محتوى متعدد الأسطر.
+### هل يمكنني استخدام Aspose.PDF مجانًا؟
+ نعم، يمكنك تنزيل نسخة تجريبية مجانية من[موقع اسبوس](https://releases.aspose.com/).
 
-#### س: لماذا أرغب في عرض رموز قابلة للاستبدال في مستند PDF؟
+### كيف أقوم بتثبيت Aspose.PDF في مشروعي؟
+يمكنك تثبيته عبر NuGet Package Manager في Visual Studio عن طريق البحث عن "Aspose.PDF".
 
-أ: يعد عرض الرموز القابلة للاستبدال مفيدًا عندما تحتاج إلى إنشاء محتوى PDF ديناميكيًا يتضمن معلومات متغيرة أو خاصة بالمستخدم. تعمل هذه الرموز كعناصر نائبة يمكن استبدالها ببيانات فعلية أثناء وقت التشغيل، مثل قيم حقول النموذج أو التفاصيل الشخصية.
+### ما هي لغات البرمجة التي يدعمها Aspose.PDF؟
+يدعم Aspose.PDF بشكل أساسي لغات .NET، بما في ذلك C#، وVB.NET، وASP.NET.
 
-#### س: كيف أقوم بإعداد دليل المستندات؟
-
-أ: لإعداد دليل المستندات:
-
-1.  يستبدل`"YOUR DOCUMENT DIRECTORY"` في`dataDir` متغير يحتوي على المسار إلى الدليل الذي تريد حفظ ملف PDF الناتج فيه.
-
-#### س: كيف يمكنني عرض الرموز القابلة للاستبدال في مستند PDF باستخدام مكتبة Aspose.PDF؟
-
-أ: يرشدك البرنامج التعليمي خلال العملية خطوة بخطوة:
-
-1.  إنشاء مستند PDF جديد باستخدام`Document` فصل.
-2.  أضف صفحة إلى المستند باستخدام`Page` فصل.
-3.  إنشاء`TextFragment` كائن مع علامات السطر الجديد (`Environment.NewLine`) لتمثيل المحتوى متعدد الأسطر.
-4. تخصيص خصائص جزء النص مثل حجم الخط، ولون الخلفية، ولون المقدمة.
-5.  إنشاء`TextParagraph` الكائن، وأضف إليه جزءًا من النص، ثم حدد موضع الفقرة على الصفحة.
-6.  إنشاء`TextBuilder` قم بربط الكائن بالصفحة وأضف فقرة النص إليها.
-7. احفظ مستند PDF.
-
-#### س: ما هو الغرض من استخدام علامات السطر الجديد (`Environment.NewLine`) in the text fragment?
-
- أ: تُستخدم علامات السطر الجديد لإنشاء محتوى متعدد الأسطر داخل جزء نصي واحد. باستخدام`Environment.NewLine`يمكنك الإشارة إلى مكان حدوث فواصل الأسطر في النص.
-
-#### س: هل يمكنني تخصيص مظهر الرموز القابلة للاستبدال؟
-
-ج: نعم، يمكنك تخصيص خصائص مختلفة لشظية النص، مثل حجم الخط ونوعه ولون الخلفية ولون المقدمة. تحدد هذه الخصائص المظهر المرئي للرموز القابلة للاستبدال في مستند PDF.
-
-#### س: كيف أحدد موضع النص في الصفحة؟
-
- أ: يمكنك تعيين موضع النص عن طريق إنشاء`TextParagraph` الكائن واستخدامه`Position` الخاصية لتحديد إحداثيات X وY على الصفحة حيث يجب وضع الفقرة.
-
-#### س: ما هي النتيجة المتوقعة من تنفيذ الكود المقدم؟
-
-ج: باتباع البرنامج التعليمي وتشغيل كود C# المقدم، ستتمكن من إنشاء مستند PDF يتضمن رموزًا قابلة للاستبدال. سيتم تمثيل الرموز القابلة للاستبدال على هيئة أجزاء نصية مع علامات سطر جديد وخصائص مخصصة.
-
-#### س: هل يمكنني استخدام هذا النهج لإنشاء مستندات PDF مخصصة بشكل ديناميكي؟
-
-ج: نعم، هذا النهج مناسب لإنشاء مستندات PDF بشكل ديناميكي تحتوي على معلومات مخصصة. من خلال استبدال الرموز القابلة للاستبدال ببيانات فعلية، يمكنك إنشاء محتوى PDF مخصص لكل مستخدم أو سيناريو.
+### أين يمكنني العثور على مزيد من الوثائق حول Aspose.PDF؟
+ يمكنك العثور على وثائق مفصلة على[موقع اسبوس](https://reference.aspose.com/pdf/net/).

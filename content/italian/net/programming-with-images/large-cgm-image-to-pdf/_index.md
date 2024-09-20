@@ -113,4 +113,4 @@ CGM (Computer Graphics Metafile) è un formato di file per l'archiviazione di gr
  IL[forum di supporto](https://forum.aspose.com/c/pdf/10) è una grande risorsa di assistenza.
 
 ### Esiste una licenza temporanea per Aspose.PDF?
- Sì, puoi ottenere un[licenza temporanea](https://purchase.aspose.com/temporary-license/) per valutare l'intero set di funzionalità.
+ Sì, puoi ottenere un[licenza temporanea](https://purchase.aspose.com/temporary-license/) per valutare il set completo di funzionalità.

@@ -2,152 +2,142 @@
 title: استخراج الفقرات من ملف PDF
 linktitle: استخراج الفقرات من ملف PDF
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: تعرف على كيفية استخراج الفقرات في ملف PDF باستخدام Aspose.PDF لـ .NET.
+description: تعرف على كيفية استخراج الفقرات من ملفات PDF باستخدام Aspose.PDF for .NET في هذا البرنامج التعليمي السهل المتابعة. مثالي للمطورين من جميع المستويات.
 type: docs
 weight: 160
 url: /ar/net/programming-with-text/extract-paragraphs/
 ---
-سيرشدك هذا البرنامج التعليمي خلال عملية استخراج الفقرات في ملف PDF باستخدام Aspose.PDF لـ .NET. يوضح كود المصدر C# المقدم الخطوات اللازمة.
+## مقدمة
 
-## متطلبات
-قبل أن تبدأ، تأكد من أن لديك ما يلي:
+عندما يتعلق الأمر بالتعامل مع ملفات PDF، قد يبدو استخراج المعلومات في بعض الأحيان أشبه بالبحث عن إبرة في كومة قش. هل سبق لك أن فتحت ملف PDF وفكرت، "أحتاج فقط إلى هذا القسم من النص؟" حسنًا، أنت محظوظ! في هذا الدليل، سنرشدك خلال عملية استخراج الفقرات من ملف PDF باستخدام Aspose.PDF لـ .NET. تمنحك هذه المكتبة القوية الإمكانيات التي تحتاجها للتعامل مع مستندات PDF بفعالية. هل أنت مستعد للبدء؟ هيا بنا!
 
-- Visual Studio أو أي مُجمِّع C# آخر مُثبت على جهازك.
-- مكتبة Aspose.PDF لـ .NET. يمكنك تنزيلها من موقع Aspose الرسمي أو استخدام مدير حزم مثل NuGet لتثبيتها.
+## المتطلبات الأساسية
 
-## الخطوة 1: إعداد المشروع
-1. قم بإنشاء مشروع C# جديد في بيئة التطوير المفضلة لديك.
-2. أضف مرجعًا إلى مكتبة Aspose.PDF لـ .NET.
+قبل أن نبدأ، دعنا نتأكد من أنك تمتلك كل ما تحتاج إليه لمتابعة الخطوات. إليك قائمة مرجعية:
 
-## الخطوة 2: استيراد المساحات المطلوبة
-في ملف الكود الذي تريد استخراج الفقرات منه، أضف ما يلي باستخدام التوجيهات في أعلى الملف:
+1. بيئة .NET: تأكد من إعداد بيئة تطوير .NET. يمكن أن تكون هذه البيئة Visual Studio أو أي بيئة تطوير متكاملة أخرى من اختيارك. 
+2.  مكتبة Aspose.PDF: ستحتاج إلى مكتبة Aspose.PDF لـ .NET. يمكنك تنزيلها من[هنا](https://releases.aspose.com/pdf/net/).
+3. ملف PDF: قم بإعداد مستند PDF نموذجي جاهز للاختبار. إذا لم يكن لديك واحد، قم بإنشاء ملف PDF نصي بسيط أو قم بتنزيل عينة من الويب.
+4. المعرفة الأساسية بلغة C#: ستساعدك المعرفة ببرمجة C# على فهم مقتطفات التعليمات البرمجية بشكل أفضل.
+
+## استيراد الحزم
+
+قبل أن نبدأ في كتابة التعليمات البرمجية، نحتاج إلى استيراد الحزم اللازمة. وهذا أمر بالغ الأهمية لأنه يسمح لتطبيقك بالاستفادة من وظائف Aspose.PDF. وإليك كيفية القيام بذلك:
 
 ```csharp
-using Aspose.Pdf;
+using Aspose.Pdf.Text;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 ```
 
-## الخطوة 3: تعيين دليل المستند
- في الكود، حدد السطر الذي يقول`string dataDir = "YOUR DOCUMENT DIRECTORY";` واستبدالها`"YOUR DOCUMENT DIRECTORY"` مع المسار إلى الدليل الذي يتم تخزين مستنداتك فيه.
+تأكد من تضمين هذه الأسماء في أعلى ملف C#. ستتيح لك هذه الأسماء التعامل مع مستندات PDF والوصول إلى ميزات النص.
 
-## الخطوة 4: افتح مستند PDF
- افتح مستند PDF موجودًا باستخدام`Document`المنشئ وتمرير المسار إلى ملف PDF المدخل.
+الآن بعد أن قمنا بتعيين المتطلبات الأساسية واستيراد الحزم اللازمة، فلنبدأ في تقسيم عملية الاستخراج خطوة بخطوة.
 
-```csharp
-Document doc = new Document(dataDir + "input.pdf");
-```
+## الخطوة 1: تعيين المسار إلى دليل المستندات الخاص بك
 
-## الخطوة 5: استخراج الفقرات
- إنشاء مثيل`ParagraphAbsorber` الصف واستخدامه`Visit` طريقة استخراج الفقرات من الوثيقة.
+أولاً وقبل كل شيء، نحتاج إلى تحديد مكان ملف PDF الخاص بنا. هذا يشبه إخبار الكود الخاص بك، "مرحبًا، ملف PDF الخاص بي موجود هنا".
 
 ```csharp
-ParagraphAbsorber absorb = new ParagraphAbsorber();
-absorb.Visit(doc);
-```
-
-## الخطوة 6: التكرار خلال الفقرات
-قم بالتنقل عبر الفقرات المستخرجة للوصول إلى محتويات النص. استخدم الحلقات المتداخلة للتنقل عبر الأقسام والأسطر داخل كل فقرة.
-
-```csharp
-foreach(PageMarkup markup in absorber.PageMarkups)
-{
-     int i = 1;
-     foreach(MarkupSection section in markup.Sections)
-     {
-         int j = 1;
-         foreach(MarkupParagraph paragraph in section.Paragraphs)
-         {
-             StringBuilder paragraphText = new StringBuilder();
-             foreach(List<TextFragment> line in paragraph.Lines)
-             {
-                 foreach(TextFragment fragment in line)
-                 {
-                     paragraphText.Append(fragment.Text);
-                 }
-                 paragraphText. Append("\r\n");
-             }
-             paragraphText. Append("\r\n");
-             Console.WriteLine("Paragraph {0} of section {1} on page {2}:", j, i, markup.Number);
-             Console.WriteLine(paragraphText.ToString());
-             j++;
-         }
-         i++;
-     }
-}
-```
-
-### عينة من كود المصدر لاستخراج الفقرات باستخدام Aspose.PDF لـ .NET 
-```csharp
-// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-// فتح ملف PDF موجود
+```
+
+ يستبدل`"YOUR DOCUMENT DIRECTORY"` مع المسار الفعلي للمجلد الذي يتم تخزين ملف PDF فيه. قد يكون هذا شيئًا مثل`"C:\\Users\\YourName\\Documents\\"`.
+
+## الخطوة 2: افتح ملف PDF الموجود
+
+بعد تحديد المسار، تكون الخطوة التالية هي فتح ملف PDF الذي تريد العمل عليه. ويتم ذلك باستخدام الكود التالي:
+
+```csharp
 Document doc = new Document(dataDir + "input.pdf");
-// إنشاء ParagraphAbsorber
+```
+
+ في هذا السطر، نقوم بإنشاء سطر جديد`Document` على سبيل المثال، قم بتوفير المسار الكامل لملف PDF. تأكد من تسمية الملف بشكل صحيح (في هذه الحالة، "input.pdf") ومن أنه موجود في الدليل المحدد.
+
+## الخطوة 3: إنشاء ParagraphAbsorber
+
+ بعد ذلك، سوف نستخدم`ParagraphAbsorber`، وهي أداة مفيدة تتيح لنا استيعاب (أو انتزاع) جميع الفقرات من ملف PDF الخاص بنا. وإليك كيفية القيام بذلك:
+
+```csharp
 ParagraphAbsorber absorber = new ParagraphAbsorber();
+```
+
+ فكر في`ParagraphAbsorber` كالفراغ الذي يمتص كل النص ذي الصلة من ملف PDF الخاص بك حتى نتمكن من استخدامه لاحقًا.
+
+## الخطوة 4: قم بزيارة المستند
+
+ الآن حان الوقت لزيارة المستند باستخدام`absorber`يخبر هذا الكود الخاص بنا بالبدء في استكشاف الصفحات والأقسام الموجودة في ملف PDF.
+
+```csharp
 absorber.Visit(doc);
+```
+
+ هذا الخط هو حيث يبدأ السحر!`Visit` تمر الطريقة عبر المستند وتقوم بإعداد بيانات الفقرة لاستخراجها.
+
+## الخطوة 5: تكرار علامات الصفحة
+
+رائع! الآن قمنا بتحميل المعلومات. الخطوة التالية هي تكرار كل علامات التبويب في الصفحة. هنا نستخرج الفقرات الفعلية:
+
+```csharp
 foreach (PageMarkup markup in absorber.PageMarkups)
 {
-	int i = 1;
-	foreach (MarkupSection section in markup.Sections)
-	{
-		int j = 1;
-		foreach (MarkupParagraph paragraph in section.Paragraphs)
-		{
-			StringBuilder paragraphText = new StringBuilder();
-			foreach (List<TextFragment> line in paragraph.Lines)
-			{
-				foreach (TextFragment fragment in line)
-				{
-					paragraphText.Append(fragment.Text);
-				}
-				paragraphText.Append("\r\n");
-			}
-			paragraphText.Append("\r\n");
-			Console.WriteLine("Paragraph {0} of section {1} on page {2}:", j, i, markup.Number);
-			Console.WriteLine(paragraphText.ToString());
-			j++;
-		}
-		i++;
-	}
+    int i = 1;
+    foreach (MarkupSection section in markup.Sections)
+    {
+        int j = 1;
+        foreach (MarkupParagraph paragraph in section.Paragraphs)
+        {
+            StringBuilder paragraphText = new StringBuilder();
+            foreach (List<TextFragment> line in paragraph.Lines)
+            {
+                foreach (TextFragment fragment in line)
+                {
+                    paragraphText.Append(fragment.Text);
+                }
+                paragraphText.Append("\r\n");
+            }
+            paragraphText.Append("\r\n");
+            Console.WriteLine("Paragraph {0} of section {1} on page {2}:", j, i, markup.Number);
+            Console.WriteLine(paragraphText.ToString());
+            j++;
+        }
+        i++;
+    }
 }
 ```
 
+دعونا نلقي نظرة على ما يحدث في هذا الكود:
+
+- الحلقة الخارجية: نقوم بالمرور عبر علامات كل صفحة للحصول على الأقسام.
+- الحلقة الوسطى: بالنسبة لكل قسم، نصل إلى الفقرات.
+- الحلقة الداخلية: نقوم بالمرور عبر أسطر النص داخل كل فقرة لاستخراج أجزاء من النص.
+- StringBuilder: نستخدم هذا لبناء نص الفقرة الخاصة بنا بكفاءة.
+
+أخيرًا، نقوم بطباعة الفقرات مع أقسامها وأرقام الصفحات الخاصة بها. يساعد هذا في الحفاظ على تنظيم الأشياء ووضوح المراجع في الناتج.
+
+## الخطوة 6: تجميع التطبيق وتشغيله
+
+الخطوة الأخيرة هي تجميع التطبيق وتشغيله لرؤية النتائج. إذا تم ضبط كل شيء بشكل صحيح، فعند تنفيذ التعليمات البرمجية، يجب أن ترى الفقرات المستخرجة من ملف PDF معروضة في نافذة وحدة التحكم الخاصة بك.
+
 ## خاتمة
-لقد نجحت في استخراج فقرات من مستند PDF باستخدام Aspose.PDF for .NET. وقد تم عرض الفقرات المستخرجة في نافذة وحدة التحكم.
 
-### الأسئلة الشائعة
+والآن، لقد انتهيت من استخراج الفقرات من ملف PDF باستخدام Aspose.PDF for .NET. قد تبدو هذه العملية معقدة للوهلة الأولى، ولكن من خلال تقسيمها إلى خطوات يمكن إدارتها، يمكنك التعامل مع معالجة ملفات PDF مثل المحترفين. سواء كنت تتعامل مع مستندات تشغيلية أو تقارير أو حتى مقتطفات من روايات، فإن استخراج النص بكفاءة يعد مهارة لا تقدر بثمن. تمتد قوة Aspose.PDF إلى ما هو أبعد من مجرد استخراج النص، ونحن نشجعك على استكشاف وثائقها بشكل أكبر.
 
-#### س: ما هو الغرض من هذا البرنامج التعليمي؟
+## الأسئلة الشائعة
 
-ج: يهدف هذا البرنامج التعليمي إلى إرشادك خلال عملية استخراج الفقرات من ملف PDF باستخدام Aspose.PDF لـ .NET. يوفر كود المصدر C# المصاحب خطوات عملية لتحقيق هذه المهمة.
+### هل يمكنني استخراج الصور من ملف PDF باستخدام Aspose.PDF؟
+نعم، يدعم Aspose.PDF استخراج الصور بالإضافة إلى النص.
 
-#### س: ما هي المساحات الأسماء التي يجب أن أستوردها؟
+### هل Aspose.PDF متوافق مع كافة إصدارات .NET؟
+يعد Aspose.PDF متوافقًا مع إصدارات متعددة، بما في ذلك .NET Framework و.NET Core.
 
-أ: في ملف الكود الذي تنوي استخراج الفقرات منه، قم بتضمين ما يلي باستخدام التوجيهات في بداية الملف:
+### هل يمكنني استخدام ترخيص مؤقت للاختبار؟
+ بالتأكيد! يمكنك طلب ترخيص مؤقت[هنا](https://purchase.aspose.com/temporary-license/).
 
-```csharp
-using Aspose.Pdf;
-using System;
-using System.Text;
-```
+### ماذا لو واجهت خطأ أثناء استخراج الفقرات؟
+ يمكنك طلب المساعدة في منتدى دعم Aspose[هنا](https://forum.aspose.com/c/pdf/10).
 
-#### س: كيف أحدد دليل المستند؟
-
- أ: حدد موقع الخط`string dataDir = "YOUR DOCUMENT DIRECTORY";` في الكود واستبداله`"YOUR DOCUMENT DIRECTORY"` مع المسار الفعلي إلى دليل المستند الخاص بك.
-
-#### س: كيف يمكنني فتح مستند PDF موجود؟
-
- أ: في الخطوة 4، ستفتح مستند PDF موجودًا باستخدام`Document` المنشئ وتوفير المسار إلى ملف PDF المدخل.
-
-#### س: كيف يمكنني استخراج الفقرات من المستند؟
-
- أ: تتضمن الخطوة 5 إنشاء مثيل لـ`ParagraphAbsorber` الصف واستخدامه`Visit` طريقة استخراج الفقرات من مستند PDF.
-
-#### س: كيف يمكنني تكرار الفقرات المستخرجة؟
-
-أ: ترشدك الخطوة 6 خلال التنقل عبر الفقرات المستخرجة. تُستخدم الحلقات المتداخلة لتجاوز الأقسام والأسطر داخل كل فقرة، وفي النهاية الوصول إلى محتويات النص وعرضها.
-
-#### س: ما هو أهم ما يمكن تعلمه من هذا البرنامج التعليمي؟
-
-ج: باتباع هذا البرنامج التعليمي، ستتعلم كيفية استخراج فقرات من مستند PDF باستخدام Aspose.PDF لـ .NET. يتم عرض الفقرات المستخرجة في نافذة وحدة التحكم، مما يوفر لك نظرة ثاقبة قيمة حول بنية محتوى المستند.
+### هل هناك نسخة تجريبية مجانية متاحة لـ Aspose.PDF؟
+ نعم، يمكنك تنزيل نسخة تجريبية مجانية من موقع Aspose[هنا](https://releases.aspose.com/).

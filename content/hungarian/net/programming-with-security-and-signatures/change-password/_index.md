@@ -120,4 +120,4 @@ Sajnos, ha elfelejti a tulajdonos jelszavát, előfordulhat, hogy nem tudja megv
 A hurok segítségével több PDF-fájlt is feldolgozhat, ha azok egy könyvtárban vannak.
 
 ### Hol találhatok több információt az Aspose.PDF-ről?
- A részletes dokumentációért látogasson el a címre[Aspose.Reference](https://reference.aspose.com/pdf/net/).
+ A részletes dokumentációért látogasson el a címre[Aspose.Referencia](https://reference.aspose.com/pdf/net/).

@@ -114,6 +114,6 @@ Aspose.PDF for Java は商用ライブラリであり、特定の使用シナリ
 
 Aspose.PDF などのライブラリを使用すると、Java で PDF ドキュメントの処理を自動化できます。データの抽出やコンテンツの変更などの処理ロジックを定義し、Java アプリケーションに実装します。Aspose.PDF は、自動化のための幅広い機能を提供します。
 
-### Aspose.PDF for Java の操作に関するその他の例やリソースはどこで見つかりますか?
+### Aspose.PDF for Java を操作するためのその他の例やリソースはどこで見つかりますか?
 
 Aspose.PDF for Javaの使用に関する追加の例、ドキュメント、リソースについては、[Aspose.PDF for Java ドキュメント](https://reference.aspose.com/pdf/java/).

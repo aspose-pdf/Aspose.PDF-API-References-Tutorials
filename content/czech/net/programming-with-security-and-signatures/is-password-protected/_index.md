@@ -15,7 +15,7 @@ V tomto článku prozkoumáme, jak zkontrolovat, zda je soubor PDF chráněn hes
 
 ## Předpoklady
 
-Než začneme, je potřeba mít připraveno několik věcí:
+Než začneme, je třeba mít připraveno několik věcí:
 
 1. Visual Studio: Ujistěte se, že máte na svém počítači nainstalované Visual Studio. Toto bude vaše vývojové prostředí, kde budete psát a testovat svůj kód.
 2.  Aspose.PDF for .NET: Budete si muset stáhnout a nainstalovat knihovnu Aspose.PDF. Nejnovější verzi si můžete stáhnout z[Aspose PDF verze](https://releases.aspose.com/pdf/net/).
@@ -80,7 +80,7 @@ PdfFileInfo fileInfo = new PdfFileInfo(dataDir + @"IsPasswordProtected.pdf");
 
 ## Krok 3: Zkontrolujte, zda je PDF zašifrováno
 
- Nyní přichází ta vzrušující část! Zkontrolujete, zda je soubor PDF zašifrován (tj. chráněn heslem) pomocí`IsEncrypted` vlastnictví`PdfFileInfo` třída.
+ Nyní přichází ta vzrušující část! Zkontrolujete, zda je soubor PDF zašifrován (tj. chráněn heslem) pomocí`IsEncrypted` vlastnictvím`PdfFileInfo` třída.
 
 ```csharp
 //Zjistěte, zda je zdrojový soubor PDF zašifrován heslem

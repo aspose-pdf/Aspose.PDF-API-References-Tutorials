@@ -2,271 +2,201 @@
 title: 링크 구조 요소
 linktitle: 링크 구조 요소
 second_title: .NET API 참조를 위한 Aspose.PDF
-description: Aspose.PDF for .NET에서 링크 구조 요소를 사용하는 단계별 가이드. PDF 문서에 하이퍼링크를 만듭니다.
+description: Aspose.PDF for .NET을 사용하여 PDF에서 링크 구조 요소를 만드는 방법을 알아보세요. 접근 가능한 링크, 이미지 및 규정 준수 검증을 추가하기 위한 단계별 가이드입니다.
 type: docs
 weight: 120
 url: /ko/net/programming-with-tagged-pdf/link-structure-elements/
 ---
-이 단계별 가이드에서는 Aspose.PDF for .NET에서 링크 구조 요소를 사용하는 방법을 보여드리겠습니다. Aspose.PDF는 PDF 문서를 프로그래밍 방식으로 만들고 조작할 수 있는 강력한 라이브러리입니다. 링크 구조 요소를 사용하면 PDF 문서에 하이퍼링크를 추가하여 사용자가 링크를 클릭하고 온라인 리소스로 이동할 수 있습니다.
+## 소개
 
-이제 코드를 살펴보고 Aspose.PDF for .NET에서 링크 구조 요소를 사용하는 방법을 알아보겠습니다.
+PDF 내에서 링크 구조 요소를 만들고 관리하는 것은 접근성과 원활한 탐색이 필요한 문서에 매우 중요할 수 있습니다. 이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 이를 수행하는 방법을 안내해 드리겠습니다. Aspose.PDF나 PDF 조작에 익숙하지 않다면 걱정하지 마세요. 모든 단계를 자세히 설명하여 쉽게 따라할 수 있도록 하겠습니다!
 
-## 필수 조건
+## 필수 조건  
 
-시작하기 전에 다음 사항이 있는지 확인하세요.
+코딩에 들어가기 전에 먼저 몇 가지를 정리하겠습니다. 이는 원활한 개발 경험을 보장하기 위한 기본 요구 사항입니다.
 
-1. .NET용 Aspose.PDF 라이브러리가 설치되었습니다.
-2. C# 프로그래밍 언어에 대한 기본 지식.
+1.  .NET용 Aspose.PDF: 최신 버전을 다운로드할 수 있습니다.[여기](https://releases.aspose.com/pdf/net/).
+2. .NET 개발 환경: Visual Studio나 .NET 호환 IDE를 설치하여 준비하세요.
+3.  Aspose 라이센스: Aspose.PDF의 무료 평가판을 사용할 수 있습니다.[여기](https://releases.aspose.com/) 또는 획득하다[임시 면허](https://purchase.aspose.com/temporary-license/).
+4. C#에 대한 기본 지식: C# 코드를 다루게 되므로 기본 사항을 이해하면 작업이 훨씬 수월해질 것입니다.
 
-## 1단계: 환경 설정
+## 패키지 가져오기
 
-시작하려면 C# 개발 환경을 열고 새 프로젝트를 만드세요. 프로젝트에 .NET용 Aspose.PDF 라이브러리에 대한 참조를 추가했는지 확인하세요.
+링크 구조 요소에 대한 코드를 작성하기 전에 몇 가지 패키지를 가져와야 합니다. 프로젝트에서 필요한 Aspose.PDF 라이브러리를 참조하여 시작하세요.
 
 ```csharp
-// 문서 디렉토리의 경로입니다.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-string outFile = dataDir + "LinkStructureElements_Output.pdf";
-string logFile = dataDir + "46035_log.xml";
-string imgFile = dataDir + "google-icon-512.png";
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## 2단계: 문서 만들기
+이러한 가져오기를 사용하면 PDF 문서 작업, 태그 추가, 구조 요소 관리가 가능합니다.
 
- 첫 번째 단계는 다음을 사용하여 새 PDF 문서를 만드는 것입니다.`Document` 수업.
+이제 다양한 유형의 링크 구조를 사용하여 PDF 문서를 만들어 보겠습니다. 각 단계를 나누어 과정을 철저히 이해하는 데 도움을 드리겠습니다.
 
-```csharp
-// PDF 문서 만들기
-Document document = new Document();
-```
+## 1단계: 문서 초기화  
 
-## 3단계: 태그가 지정된 콘텐츠 작업
-
-그런 다음 태그가 지정된 문서의 내용을 작업합니다.
+먼저, 새로운 PDF 문서를 만들고 접근성을 위해 태그가 지정된 콘텐츠를 설정해 보겠습니다.
 
 ```csharp
-// 문서의 태그가 지정된 콘텐츠를 가져옵니다.
-ITaggedContent taggedContent = document.TaggedContent;
-```
-
-## 4단계: 문서 제목 및 언어 설정
-
-이제 문서 제목과 언어를 설정할 수 있습니다.
-
-```csharp
-// 문서 제목과 언어를 정의하세요
-taggedContent.SetTitle("Example Link Items");
-taggedContent.SetLanguage("fr-FR");
-```
-
-## 5단계: 링크 구조 요소 추가
-
-이제 문서에 링크 구조 요소를 추가해 보겠습니다. 간단한 텍스트 링크, 이미지 링크, 다중 라인 링크를 포함한 다양한 유형의 링크를 만들 것입니다.
-```csharp
-// 루트 구조 요소(문서 구조 요소) 가져오기
-StructureElement rootElement = taggedContent.RootElement;
-
-// 하이퍼링크가 있는 문단 추가
-ParagraphElement p1 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p1);
-LinkElement link1 = taggedContent.CreateLinkElement();
-p1.AppendChild(link1);
-link1.Hyperlink = new WebHyperlink("http://"google.com");
-link1.SetText("Google");
-link1.AlternateDescriptions = "Link to Google";
-
-// 서식 있는 텍스트를 포함하는 하이퍼링크가 있는 문단을 추가합니다.
-ParagraphElement p2 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p2);
-LinkElement link2 = taggedContent.CreateLinkElement();
-p2.AppendChild(link2);
-link2.Hyperlink = new WebHyperlink("http://"google.com");
-SpanElement span2 = taggedContent.CreateSpanElement();
-span2.SetText("Google");
-link2.AppendChild(span2);
-link2.AlternateDescriptions = "Link to Google";
-
-// 부분적으로 서식이 지정된 텍스트를 포함하는 하이퍼링크가 있는 문단을 추가합니다.
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-LinkElement link3 = taggedContent.CreateLinkElement();
-p3.AppendChild(link3);
-link3.Hyperlink = new WebHyperlink("http://"google.com");
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("G");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText("oogle");
-link3.AppendChild(span31);
-link3.SetText("-");
-link3.AppendChild(span32);
-link3.AlternateDescriptions = "Link to Google";
-
-// 다중줄 하이퍼링크가 있는 문단 추가
-ParagraphElement p4 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p4);
-LinkElement link4 = taggedContent.CreateLinkElement();
-p4.AppendChild(link4);
-link4.Hyperlink = new WebHyperlink("http://"google.com");
-link4.SetText("The multiline link: Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google");
-link4.AlternateDescriptions = "Link to Google (multiline)";
-
-// 이미지가 포함된 하이퍼링크가 있는 문단을 추가합니다.
-ParagraphElement p5 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p5);
-LinkElement link5 = taggedContent.CreateLinkElement();
-p5.AppendChild(link5);
-link5.Hyperlink = new WebHyperlink("http://"google.com");
-FigureElement figure5 = taggedContent.CreateFigureElement();
-figure5.SetImage(imgFile, 1200);
-figure5.AlternativeText = "Google icon";
-StructureAttributes linkLayoutAttributes = link5.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-StructureAttribute placementAttribute = new StructureAttribute(AttributeKey.Placement);
-placementAttribute.SetNameValue(AttributeName.Placement_Block);
-linkLayoutAttributes.SetAttribute(placementAttribute);
-link5.AppendChild(figure5);
-link5.AlternateDescriptions = "Link to Google";
-```
-
-## 6단계: 태그가 지정된 PDF 문서 저장
-
-마지막으로 태그가 지정된 PDF 문서를 저장합니다.
-
-```csharp
-// 태그가 지정된 PDF 문서를 저장합니다.
-document. Save(outFile);
-```
-
-## 7단계: PDF/UA 준수 확인
-
- PDF/UA 규정 준수 여부를 확인하려면 다음을 사용할 수도 있습니다.`Validate` 의 방법`Document` 수업.
-
-```csharp
-// PDF/UA 준수 확인
-document = new Document(outFile);
-bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
-```
-
-
-### .NET용 Aspose.PDF를 사용한 링크 구조 요소의 샘플 소스 코드 
-```csharp
-
 // 문서 디렉토리의 경로입니다.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "LinkStructureElements_Output.pdf";
 string logFile = dataDir + "46035_log.xml";
 string imgFile = dataDir + "google-icon-512.png";
 
-//문서 생성 및 태그가 지정된 PDF 콘텐츠 가져오기
+// 새 PDF 문서 만들기
 Document document = new Document(); 
-ITaggedContent taggedContent = document.TaggedContent;
 
-// 문서의 제목 및 자연어 설정
+// TaggedContent 인터페이스 검색
+ITaggedContent taggedContent = document.TaggedContent;
+```
+  
+ 여기서 우리는 초기화하고 있습니다`Document` PDF 파일을 나타내는 객체입니다. 또한 다음을 검색합니다.`TaggedContent` 인터페이스를 통해 문단, 링크, 이미지 등의 구조적 요소를 추가할 수 있습니다.
+
+## 2단계: 제목 및 언어 설정  
+
+모든 PDF에는 제목과 언어 설정이 있어야 합니다. 특히 PDF/UA 표준을 준수하는 것이 목표라면 더욱 그렇습니다.
+
+```csharp
+// 문서 제목과 언어 설정
 taggedContent.SetTitle("Link Elements Example");
 taggedContent.SetLanguage("en-US");
+```
+  
+이 단계에서는 PDF에 의미 있는 제목이 있는지 확인하고 언어를 영어로 설정합니다(`en-US`). 이는 접근성에 중요하며 화면 판독기나 기타 보조 기술이 문서를 올바르게 해석할 수 있도록 합니다.
 
-// 루트 구조 요소(문서 구조 요소) 가져오기
+## 3단계: 문단 만들기 및 추가  
+
+이 단계에서는 링크 요소를 담을 문단을 추가하겠습니다.
+
+```csharp
+// 루트 요소를 생성합니다
 StructureElement rootElement = taggedContent.RootElement;
+
+// 문단을 생성하여 루트 요소에 추가하세요
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p1);
+```
+  
+우리는 루트 구조 요소를 만듭니다. 이것은 본질적으로 다른 모든 요소의 최상위 컨테이너입니다. 그런 다음 문단(`p1`)을 루트 요소에 추가합니다.
+
+## 4단계: 간단한 링크 추가  
+
+이제 Google을 가리키는 기본 하이퍼링크를 추가해 보겠습니다.
+
+```csharp
+// 링크 요소를 생성하여 문단에 추가합니다.
 LinkElement link1 = taggedContent.CreateLinkElement();
 p1.AppendChild(link1);
+
+// 링크에 대한 하이퍼링크 및 텍스트 설정
 link1.Hyperlink = new WebHyperlink("http://"google.com");
 link1.SetText("Google");
 link1.AlternateDescriptions = "Link to Google";
+```
+  
+이 단계에서는 링크 요소를 만들고, 하이퍼링크를 "http://google.com"으로 설정하고, 링크에 대한 텍스트("Google")를 제공했습니다. 또한 접근성을 보장하기 위해 대체 설명을 추가했습니다.
+
+## 5단계: Span을 사용하여 링크 추가  
+
+다양한 텍스트 범위를 사용하여 링크를 만들 수도 있습니다.
+
+```csharp
+// 다른 문단을 만드세요
 ParagraphElement p2 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p2);
+
+// span 요소로 링크 생성
 LinkElement link2 = taggedContent.CreateLinkElement();
 p2.AppendChild(link2);
 link2.Hyperlink = new WebHyperlink("http://"google.com");
+
 SpanElement span2 = taggedContent.CreateSpanElement();
 span2.SetText("Google");
 link2.AppendChild(span2);
+
 link2.AlternateDescriptions = "Link to Google";
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-LinkElement link3 = taggedContent.CreateLinkElement();
-p3.AppendChild(link3);
-link3.Hyperlink = new WebHyperlink("http://"google.com");
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("G");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText("oogle");
-link3.AppendChild(span31);
-link3.SetText("-");
-link3.AppendChild(span32);
-link3.AlternateDescriptions = "Link to Google";
+```
+  
+여기서는 span 요소를 사용하여 텍스트의 일부를 링크 안에 포함시켜서 링크의 특정 부분이 어떻게 표시되는지 사용자 지정할 수 있었습니다.
+
+## 6단계: 다중 라인 링크  
+
+링크 텍스트가 너무 길다면요? 걱정하지 마세요. 여러 줄로 나눌 수 있습니다.
+
+```csharp
 ParagraphElement p4 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p4);
+
 LinkElement link4 = taggedContent.CreateLinkElement();
 p4.AppendChild(link4);
 link4.Hyperlink = new WebHyperlink("http://"google.com");
-link4.SetText("The multiline link: Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google");
+link4.SetText("The multiline link: Google Google Google Google Google...");
 link4.AlternateDescriptions = "Link to Google (multiline)";
+```
+  
+이 경우에는 긴 텍스트 값을 설정하여 다중 줄 링크를 만들었고, 텍스트는 자동으로 여러 줄에 걸쳐 줄바꿈되었습니다.
+
+## 7단계: 링크에 이미지 추가  
+
+마지막으로, 링크 안에 이미지를 추가할 수도 있습니다.
+
+```csharp
+// 새로운 문단과 링크 요소를 만듭니다.
 ParagraphElement p5 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p5);
+
 LinkElement link5 = taggedContent.CreateLinkElement();
 p5.AppendChild(link5);
 link5.Hyperlink = new WebHyperlink("http://"google.com");
+
+// 링크에 이미지를 추가하세요
 FigureElement figure5 = taggedContent.CreateFigureElement();
 figure5.SetImage(imgFile, 1200);
 figure5.AlternativeText = "Google icon";
-StructureAttributes linkLayoutAttributes = link5.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-StructureAttribute placementAttribute = new StructureAttribute(AttributeKey.Placement);
-placementAttribute.SetNameValue(AttributeName.Placement_Block);
-linkLayoutAttributes.SetAttribute(placementAttribute);
 link5.AppendChild(figure5);
-link5.AlternateDescriptions = "Link to Google";
 
-// 태그가 지정된 PDF 문서 저장
+link5.AlternateDescriptions = "Link to Google";
+```
+  
+이 단계에서는 이미지로 링크를 강화하는 방법을 보여줍니다. 이 경우 링크 내부에 Google 아이콘을 추가했습니다. 또한 이미지에 대한 대체 텍스트를 설정하여 접근성을 보장했습니다.
+
+## 8단계: PDF의 규정 준수 여부 확인  
+
+PDF/UA 규정 준수(접근성 표준)를 목표로 하는 경우 문서의 유효성을 검사하는 것이 좋습니다.
+
+```csharp
+// PDF 문서 저장
 document.Save(outFile);
 
-// PDF/UA 준수 확인
-document = new Document(outFile);
+// PDF/UA 규정 준수를 위해 문서 검증
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
+Console.WriteLine($"PDF/UA compliance: {isPdfUaCompliance}");
 ```
-## 결론
+  
+우리는 문서를 저장하고 PDF/UA 표준에 따라 검증했으며, 이를 통해 PDF가 접근성 요구 사항을 충족하는지 확인했습니다.
 
-축하합니다! Aspose.PDF for .NET에서 링크 구조 요소를 사용하는 방법을 배웠습니다. 이제 PDF 문서에 하이퍼링크를 만들어 사용자가 온라인 리소스로 이동할 수 있습니다. Aspose.PDF의 더 많은 기능을 실험하고 탐색하여 대화형이고 풍부한 PDF 문서를 만드세요.
+## 결론  
 
-### 자주 묻는 질문
+이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 구조화된 PDF 문서를 만드는 방법을 다루었습니다. 기본 하이퍼링크를 추가하는 것부터 span, 다중 라인 링크, 심지어 이미지와 같은 더 복잡한 구조에 이르기까지, 이 가이드는 PDF에서 링크 요소를 조작하기 위한 견고한 기반을 제공합니다. PDF/UA 준수의 추가 이점을 통해 이제 액세스 가능하고 탐색 가능한 PDF를 만들 준비가 되었습니다.
 
-#### 질문: PDF 문서의 링크 구조 요소는 무엇이며, 어떻게 문서 상호 작용성을 향상시키나요?
+## 자주 묻는 질문
 
-A: PDF 문서의 링크 구조 요소는 사용자가 온라인 리소스나 문서 내의 특정 위치로 이동할 수 있는 하이퍼링크를 만드는 데 사용됩니다. 이러한 요소는 사용자가 관련 콘텐츠나 외부 웹사이트에 액세스할 수 있도록 하는 클릭 가능한 링크를 제공하여 상호 작용을 향상시킵니다.
+### 링크 안에 표와 같은 더 복잡한 구조를 추가할 수 있나요?  
+아니요. 링크는 주로 텍스트와 이미지에 적용되지만, 근처에 복잡한 요소를 포함할 수 있습니다.
 
-#### 질문: PDF 문서에서 링크 구조 요소는 어떤 면에서 유익할까요?
+### PDF/UA 검증은 필수입니까?  
+항상 그런 것은 아니지만, 접근성이 걱정된다면 적극 권장됩니다.
 
-A: 링크 구조 요소는 PDF 문서를 대화형으로 만들어 사용자 경험을 향상시킵니다. 추가 정보, 관련 콘텐츠, 외부 웹사이트 또는 문서 내의 특정 섹션에 빠르게 액세스할 수 있게 하여 탐색을 개선하고 정보 검색을 용이하게 합니다.
+### 이미지 파일 경로가 올바르지 않으면 어떻게 되나요?  
+문서에 이미지가 표시되지 않으며 렌더링 중에 오류가 발생할 수 있습니다.
 
-#### 질문: Aspose.PDF for .NET의 링크 구조 요소를 사용하여 다양한 유형의 하이퍼링크를 만들 수 있나요?
+### 링크 내의 텍스트에 스타일을 지정할 수 있나요?  
+네, span 요소를 사용하여 텍스트 스타일을 적용할 수 있습니다.
 
-A: 네, 링크 구조 요소를 사용하여 다양한 유형의 하이퍼링크를 만들 수 있습니다. Aspose.PDF for .NET을 사용하면 일반 텍스트, 서식 있는 텍스트, 이미지 및 다중 줄 설명이 있는 하이퍼링크를 만들 수 있어 문서 내의 외부 콘텐츠나 위치에 링크하는 방법에 다양성을 제공합니다.
-
-#### 질문: Aspose.PDF for .NET을 사용하여 PDF 문서에서 링크 구조 요소를 설정하고 초기화하려면 어떻게 해야 합니까?
-
- A: 링크 구조 요소를 사용하려면 먼저 다음을 사용하여 새 PDF 문서를 만들어야 합니다.`Document` 클래스. 그런 다음 태그가 지정된 콘텐츠를 가져옵니다.`TaggedContent`문서의 속성입니다. 거기에서 링크 구조 요소를 만들고 사용자 정의하여 루트 구조 요소에 추가할 수 있습니다.
-
-#### 질문: 링크 구조 요소를 사용하여 간단한 텍스트 하이퍼링크를 만들려면 어떻게 해야 하나요?
- A: 간단한 텍스트 하이퍼링크를 생성하려면 다음을 수행하세요.`LinkElement` 그리고 그것을 설정`Hyperlink` 재산에`WebHyperlink` 링크하려는 URL을 입력합니다. 또한 다음을 사용하여 링크의 표시 텍스트를 설정할 수도 있습니다.`SetText` 방법.
-
-#### 질문: 링크 구조 요소를 사용하여 이미지로 하이퍼링크를 만들 수 있나요?
-
- A: 네, 링크 구조 요소를 사용하여 이미지로 하이퍼링크를 만들 수 있습니다.`LinkElement` 그리고 추가하세요`FigureElement` 이미지가 있는. 이를 통해 이미지 기반 하이퍼링크를 만들 수 있습니다.
-
-#### 질문: 하이퍼링크가 포함된 PDF 문서가 PDF/UA 접근성 표준을 준수하는지 어떻게 확인할 수 있나요?
-
- A: Aspose.PDF for .NET은 다음을 사용하여 PDF 문서가 PDF/UA 표준을 준수하는지 확인하는 기능을 제공합니다.`Validate` 의 방법`Document`클래스. 이렇게 하면 장애가 있는 사용자가 문서의 하이퍼링크에 액세스할 수 있습니다.
-
-#### 질문: 링크 구조 요소에 대한 대체 설명은 무엇이며, 왜 중요한가요?
-
-A: 링크 구조 요소에 대한 대체 설명(alt 텍스트)은 하이퍼링크에 대한 텍스트 설명을 제공합니다. 이러한 설명은 접근성에 필수적이며, 시각 장애가 있는 사용자가 링크의 목적과 목적지를 이해할 수 있도록 합니다.
-
-#### 질문: 링크 구조 요소를 사용하여 생성된 하이퍼링크의 모양과 동작을 사용자 지정할 수 있나요?
-
-A: 링크 구조 요소는 주로 하이퍼링크 생성에 초점을 맞추지만 Aspose.PDF for .NET에서 제공하는 다른 기능을 사용하여 하이퍼링크의 모양과 동작을 추가로 사용자 지정할 수 있습니다. 여기에는 색상, 스타일 및 링크 동작 지정이 포함됩니다.
-
-#### 질문: 링크 구조 요소는 PDF 문서를 보다 상호 작용적이고 사용자 친화적으로 만드는 데 어떻게 기여합니까?
-
-A: 링크 구조 요소는 클릭 가능한 하이퍼링크를 추가하여 정적 PDF 문서를 대화형 경험으로 변환합니다. 이러한 상호 작용은 사용자 참여를 개선하고 관련 콘텐츠 간의 원활한 탐색을 가능하게 하며 문서의 전반적인 사용성을 향상시킵니다.
+### 내부 문서 링크를 만드는 것이 가능합니까?  
+물론입니다! 같은 문서 내의 특정 섹션에 링크할 수 있습니다.

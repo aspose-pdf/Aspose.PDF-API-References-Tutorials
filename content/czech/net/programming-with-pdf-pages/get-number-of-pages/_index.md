@@ -73,7 +73,7 @@ Tady přichází kouzelný okamžik! Pojďme vlastně získat počet stránek v 
 ```csharp
 int pageCount = pdfDocument.Pages.Count;
 ```
- Pomocí`Pages` vlastnictví`Document`můžeme získat přístup k počtu stránek, které obsahuje. Je to tak jednoduché, jako otevřít plechovku sody – bez námahy!
+ Pomocí`Pages` vlastnictvím`Document`můžeme získat přístup k počtu stránek, které obsahuje. Je to tak jednoduché, jako otevřít plechovku sody – bez námahy!
 
 ## Krok 4: Zobrazte počet stránek
 

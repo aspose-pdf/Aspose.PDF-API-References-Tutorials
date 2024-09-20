@@ -7,37 +7,57 @@ type: docs
 weight: 320
 url: /hi/net/programming-with-text/replaceable-symbols-in-header-footer/
 ---
-इस ट्यूटोरियल में, हम बताएंगे कि .NET के लिए Aspose.PDF लाइब्रेरी का उपयोग करके PDF दस्तावेज़ के हेडर और फ़ुटर में रिप्लेसेबल सिंबल का उपयोग कैसे करें। हम PDF बनाने, मार्जिन सेट करने, रिप्लेसेबल सिंबल के साथ हेडर और फ़ुटर जोड़ने और दिए गए C# सोर्स कोड का उपयोग करके PDF को सेव करने की चरण-दर-चरण प्रक्रिया से गुजरेंगे।
+## परिचय
+
+पीडीएफ फाइलों के साथ काम करते समय, कई बार आपको हेडर और फूटर को पेज नंबर, रिपोर्ट नाम या जेनरेट की गई तारीखों जैसी गतिशील सामग्री के साथ कस्टमाइज़ करने की आवश्यकता होती है। सौभाग्य से, .NET के लिए Aspose.PDF इस प्रक्रिया को सरल बनाता है, जिससे आप हेडर और फूटर में स्वचालित रूप से अपडेट किए गए प्रतीकों के साथ पीडीएफ बना सकते हैं, जैसे पेज नंबर या रिपोर्ट जनरेशन विवरण। यह लेख आपको .NET के लिए Aspose.PDF का उपयोग करके हेडर और फूटर में प्रतीकों को बदलने की चरण-दर-चरण प्रक्रिया के माध्यम से मार्गदर्शन करेगा, एक ऐसे तरीके से जो न केवल सरल है बल्कि अविश्वसनीय रूप से कुशल भी है।
 
 ## आवश्यक शर्तें
 
-आरंभ करने से पहले, सुनिश्चित करें कि आपके पास निम्नलिखित हैं:
+चरण-दर-चरण मार्गदर्शिका में आगे बढ़ने से पहले, सुनिश्चित करें कि आपके पास निम्नलिखित हैं:
 
-- .NET के लिए Aspose.PDF लाइब्रेरी स्थापित की गई।
-- C# प्रोग्रामिंग की बुनियादी समझ.
+-  .NET लाइब्रेरी के लिए Aspose.PDF –[डाउनलोड करना](https://releases.aspose.com/pdf/net/) या प्राप्त करें[मुफ्त परीक्षण](https://releases.aspose.com/).
+- आपके सिस्टम पर Visual Studio या कोई भी C# IDE स्थापित होना चाहिए।
+- C# और .NET विकास का बुनियादी ज्ञान।
+-  वैध[लाइसेंस](https://purchase.aspose.com/temporary-license/) Aspose.PDF के लिए, या आप परीक्षण संस्करण का उपयोग कर सकते हैं।
 
-## चरण 1: दस्तावेज़ निर्देशिका सेट करें
+## पैकेज आयात करें
 
- सबसे पहले, आपको उस डायरेक्टरी का पथ सेट करना होगा जहाँ आप जेनरेट की गई पीडीएफ फाइल को सेव करना चाहते हैं।`"YOUR DOCUMENT DIRECTORY"` में`dataDir` अपने इच्छित निर्देशिका के पथ के साथ चर।
+आरंभ करने के लिए, आपको आवश्यक नामस्थानों को आयात करना होगा जो .NET के लिए Aspose.PDF की कार्यक्षमता को सक्षम करेंगे। नीचे आवश्यक आयात है:
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System;
 ```
 
-## चरण 2: एक पीडीएफ दस्तावेज़ और पेज बनाएँ
+ये पीडीएफ निर्माण, पाठ हेरफेर और हेडर/फुटर प्रबंधन के लिए आवश्यक हैं।
 
- इसके बाद, हम एक नया पीडीएफ दस्तावेज़ बनाते हैं और इसमें एक पृष्ठ जोड़ते हैं`Document` वर्ग और`Page` Aspose.PDF लाइब्रेरी से क्लास.
+आइए उदाहरण कोड को आसानी से समझने योग्य चरणों में विभाजित करें।
+
+## चरण 1: दस्तावेज़ और पृष्ठ सेट करें
+
+सबसे पहले, हमें दस्तावेज़ को आरंभीकृत करना होगा और उसमें एक पृष्ठ जोड़ना होगा। यह हेडर और फ़ुटर जोड़ने के लिए आधार तैयार करता है।
 
 ```csharp
+// दस्तावेज़ निर्देशिका सेट अप करें
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// दस्तावेज़ ऑब्जेक्ट को आरंभ करें
 Document doc = new Document();
+
+// दस्तावेज़ में एक पृष्ठ जोड़ें
 Page page = doc.Pages.Add();
 ```
 
-## चरण 3: मार्जिन सेट करें
+ यहाँ, हम एक पीडीएफ दस्तावेज़ सेट कर रहे हैं`Document` क्लास और एक पेज जोड़ना`doc.Pages.Add()`इस पृष्ठ पर शीर्षलेख, पादलेख और अन्य सामग्री होगी।
 
- हम पृष्ठ के लिए मार्जिन सेट करते हैं`MarginInfo` वर्ग। अपनी आवश्यकताओं के अनुसार मार्जिन मान समायोजित करें।
+## चरण 2: पेज मार्जिन कॉन्फ़िगर करें
+
+इसके बाद, हम पृष्ठ के लिए मार्जिन निर्धारित करेंगे ताकि यह सुनिश्चित हो सके कि हमारी सामग्री किनारे तक न जाए।
 
 ```csharp
+// मार्जिन कॉन्फ़िगर करें
 MarginInfo marginInfo = new MarginInfo();
 marginInfo.Top = 90;
 marginInfo.Bottom = 50;
@@ -46,209 +66,142 @@ marginInfo.Right = 50;
 page.PageInfo.Margin = marginInfo;
 ```
 
-## चरण 4: प्रतिस्थापन योग्य प्रतीकों के साथ हेडर जोड़ें
+ यहाँ, हमने ऊपरी, निचले, बाएँ और दाएँ मार्जिन को परिभाषित किया है`MarginInfo` क्लास का उपयोग करके इसे पृष्ठ पर लागू किया`page.PageInfo.Margin`.
 
- हम एक बनाते हैं`HeaderFooter` पृष्ठ के लिए ऑब्जेक्ट और जोड़ें`TextFragment` इसमें प्रतिस्थापन योग्य प्रतीक भी हैं।
+## चरण 3: हेडर बनाएं और कॉन्फ़िगर करें
+
+अब, चलिए एक हेडर बनाते हैं और इसे पेज पर जोड़ते हैं। हेडर में रिपोर्ट का शीर्षक और नाम शामिल होगा।
 
 ```csharp
+// हेडर बनाएं
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
+
+// हेडर मार्जिन सेट करें
 hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
 
-TextFragment t1 = new TextFragment("report title");
-// यदि चाहें तो पाठ गुण सेट करें
-t1.TextState.Font = FontRepository.FindFont("Arial");
-t1.TextState.FontSize = 16;
-t1.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
-t1.TextState.FontStyle = FontStyles.Bold;
-t1.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-t1.TextState.LineSpacing = 5f;
-
-hfFirst.Paragraphs.Add(t1);
-
-// अधिक टेक्स्टफ़्रेग्मेंट जोड़ें या आवश्यकतानुसार अनुकूलित करें
-```
-
-## चरण 5: प्रतिस्थापन योग्य प्रतीकों के साथ फ़ुटर जोड़ें
-
- इसी प्रकार, हम एक बनाते हैं`HeaderFooter` पृष्ठ पाद लेख के लिए ऑब्जेक्ट और जोड़ें`TextFragment` इसमें प्रतिस्थापन योग्य प्रतीकों वाली वस्तुएं शामिल हैं।
-
-```csharp
-HeaderFooter hfFoot = new HeaderFooter();
-page.Footer = hfFoot;
-hfFoot.Margin.Left = 50;
-hfFoot.Margin.Right = 50;
-
-TextFragment t3 = new TextFragment("Generated on test date");
-TextFragment t4 = new TextFragment("report name ");
-TextFragment t5 = new TextFragment("Page $p of $P");
-
-// अधिक टेक्स्टफ़्रेग्मेंट जोड़ें या आवश्यकतानुसार अनुकूलित करें
-
-hfFoot.Paragraphs.Add(tab2);
-```
-
-## चरण 6: पीडीएफ दस्तावेज़ सहेजें
-
-अंत में, हम पीडीएफ दस्तावेज़ को निर्दिष्ट आउटपुट फ़ाइल में सहेजते हैं।
-
-```csharp
-dataDir = dataDir + "ReplaceableSymbolsInHeaderFooter_out.pdf";
-doc.Save(dataDir);
-Console.WriteLine("\nReplaceable symbols replaced successfully in the header and footer.\nFile saved at " + dataDir);
-```
-
-### .NET के लिए Aspose.PDF का उपयोग करके हेडर फ़ुटर में प्रतिस्थापन योग्य प्रतीकों के लिए नमूना स्रोत कोड 
-```csharp
-// दस्तावेज़ निर्देशिका का पथ.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document doc = new Document();
-Page page = doc.Pages.Add();
-MarginInfo marginInfo = new MarginInfo();
-marginInfo.Top = 90;
-marginInfo.Bottom = 50;
-marginInfo.Left = 50;
-marginInfo.Right = 50;
-//sec1.PageInfo की मार्जिन प्रॉपर्टी को marginInfo इंस्टेंस असाइन करें
-page.PageInfo.Margin = marginInfo;
-HeaderFooter hfFirst = new HeaderFooter();
-page.Header = hfFirst;
-hfFirst.Margin.Left = 50;
-hfFirst.Margin.Right = 50;
-// एक टेक्स्ट पैराग्राफ़ को इंस्टैंसिएट करें जो हेडर के रूप में दिखाने के लिए सामग्री को संग्रहीत करेगा
+// शीर्षक में शीर्षक जोड़ें
 TextFragment t1 = new TextFragment("report title");
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
 t1.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
 t1.TextState.FontStyle = FontStyles.Bold;
 t1.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-t1.TextState.LineSpacing = 5f;
 hfFirst.Paragraphs.Add(t1);
+
+// हेडर में रिपोर्ट का नाम जोड़ें
 TextFragment t2 = new TextFragment("Report_Name");
 t2.TextState.Font = FontRepository.FindFont("Arial");
-t2.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
-t2.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-t2.TextState.LineSpacing = 5f;
 t2.TextState.FontSize = 12;
+t2.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 hfFirst.Paragraphs.Add(t2);
-// अनुभाग के लिए HeaderFooter ऑब्जेक्ट बनाएँ
+```
+
+ हमने दो जोड़े हैं`TextFragment` हेडर में ऑब्जेक्ट्स: एक रिपोर्ट शीर्षक के लिए और दूसरा रिपोर्ट नाम के लिए। टेक्स्ट को स्टाइल किया जाता है`TextState` फ़ॉन्ट, आकार और संरेखण जैसे गुण.
+
+## चरण 4: फ़ुटर बनाएँ और कॉन्फ़िगर करें
+
+अब फ़ुटर को सेट करने का समय आ गया है, जिसमें पृष्ठ संख्या और निर्माण तिथि जैसी गतिशील सामग्री होगी।
+
+```csharp
+// फ़ुटर बनाएँ
 HeaderFooter hfFoot = new HeaderFooter();
-// HeaderFooter ऑब्जेक्ट को विषम और सम फ़ुटर पर सेट करें
 page.Footer = hfFoot;
+
+// फ़ुटर मार्जिन सेट करें
 hfFoot.Margin.Left = 50;
 hfFoot.Margin.Right = 50;
-// कुल पृष्ठों की वर्तमान पृष्ठ संख्या वाला एक पाठ पैराग्राफ जोड़ें
+
+// फ़ुटर सामग्री जोड़ें
 TextFragment t3 = new TextFragment("Generated on test date");
-TextFragment t4 = new TextFragment("report name ");
+TextFragment t4 = new TextFragment("Report Name");
 TextFragment t5 = new TextFragment("Page $p of $P");
-// तालिका ऑब्जेक्ट को इंस्टैंसिएट करें
+```
+
+फ़ुटर में, हम जनरेशन दिनांक, रिपोर्ट नाम और गतिशील पृष्ठ संख्या के लिए अंश शामिल करते हैं (`$p` और`$P` वर्तमान पृष्ठ संख्या और कुल पृष्ठों की संख्या को क्रमशः दर्शाते हैं)।
+
+## चरण 5: फ़ुटर में एक तालिका बनाएँ
+
+आप अपने डेटा को बेहतर ढंग से व्यवस्थित करने के लिए फ़ुटर में तालिकाओं जैसे अधिक जटिल तत्व भी जोड़ सकते हैं।
+
+```csharp
+// फ़ुटर के लिए तालिका बनाएँ
 Table tab2 = new Table();
-// इच्छित अनुभाग के पैराग्राफ संग्रह में तालिका जोड़ें
 hfFoot.Paragraphs.Add(tab2);
-// तालिका की स्तंभ चौड़ाई के साथ सेट करें
 tab2.ColumnWidths = "165 172 165";
-//तालिका में पंक्तियाँ बनाएँ और फिर पंक्तियों में कक्ष बनाएँ
+
+// तालिका के लिए पंक्तियाँ और कक्ष बनाएँ
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
 row3.Cells.Add();
-// पाठ के ऊर्ध्वाधर संरेखण को केंद्र संरेखित के रूप में सेट करें
+
+// प्रत्येक सेल के लिए संरेखण सेट करें
 row3.Cells[0].Alignment = Aspose.Pdf.HorizontalAlignment.Left;
 row3.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 row3.Cells[2].Alignment = Aspose.Pdf.HorizontalAlignment.Right;
+
+// तालिका कक्षों में सामग्री जोड़ें
 row3.Cells[0].Paragraphs.Add(t3);
 row3.Cells[1].Paragraphs.Add(t4);
 row3.Cells[2].Paragraphs.Add(t5);
-//Sec1.Paragraphs.Add(New Text("Aspose.Total for Java, Aspose द्वारा प्रस्तुत प्रत्येक Java घटक का संकलन है। यह सुनिश्चित करने के लिए कि इसमें हमारे प्रत्येक Java घटक का सबसे अद्यतित संस्करण शामिल है, इसे दैनिक आधार पर संकलित किया जाता है।" #$NL " + "Aspose.Total for Java का उपयोग करके डेवलपर्स कई तरह के अनुप्रयोग बना सकते हैं। #$NL #$NL #$NP" + "Aspose.Total for Java, Aspose द्वारा प्रस्तुत प्रत्येक Java घटक का संकलन है। यह सुनिश्चित करने के लिए कि इसमें हमारे प्रत्येक Java घटक का सबसे अद्यतित संस्करण शामिल है, इसे दैनिक आधार पर संकलित किया जाता है।" #$NL " + "Aspose.Total for Java का उपयोग करके डेवलपर्स कई तरह के अनुप्रयोग बना सकते हैं। #$NL #$NL #$NP" + "Aspose.Total for Java, Aspose द्वारा प्रस्तुत प्रत्येक Java घटक का संकलन है। यह सुनिश्चित करने के लिए कि इसमें हमारे प्रत्येक Java घटक का सबसे अद्यतित संस्करण शामिल है, इसे दैनिक आधार पर संकलित किया जाता है।" + "जावा डेवलपर्स के लिए Aspose.Total का उपयोग करके अनुप्रयोगों की एक विस्तृत श्रृंखला बनाई जा सकती है। #$NL #$NL"))
+```
+
+यह कोड ब्लॉक फ़ूटर में 3-स्तंभ वाली तालिका बनाता है, जिसमें प्रत्येक स्तंभ में अलग-अलग जानकारी होती है, जैसे कि निर्माण तिथि, रिपोर्ट का नाम और पृष्ठ संख्या।
+
+## चरण 6: पेज पर सामग्री जोड़ें
+
+हेडर और फ़ुटर के अलावा, आप PDF पेज के मुख्य भाग में भी सामग्री जोड़ सकते हैं। यहाँ, हम कुछ प्लेसहोल्डर टेक्स्ट के साथ एक टेबल जोड़ते हैं।
+
+```csharp
 Table table = new Table();
 table.ColumnWidths = "33% 33% 34%";
-table.DefaultCellPadding = new MarginInfo();
-table.DefaultCellPadding.Top = 10;
-table.DefaultCellPadding.Bottom = 10;
-// इच्छित अनुभाग के पैराग्राफ संग्रह में तालिका जोड़ें
 page.Paragraphs.Add(table);
-// BorderInfo ऑब्जेक्ट का उपयोग करके डिफ़ॉल्ट सेल बॉर्डर सेट करें
-table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
-// किसी अन्य अनुकूलित BorderInfo ऑब्जेक्ट का उपयोग करके तालिका बॉर्डर सेट करें
-table.Border = new BorderInfo(BorderSide.All, 1f);
-table.RepeatingRowsCount = 1;
-//तालिका में पंक्तियाँ बनाएँ और फिर पंक्तियों में कक्ष बनाएँ
-Row row1 = table.Rows.Add();
-row1.Cells.Add("col1");
-row1.Cells.Add("col2");
-row1.Cells.Add("col3");
-const string CRLF = "\r\n";
+
+// तालिका सामग्री जोड़ें
 for (int i = 0; i <= 10; i++)
 {
-	Row row = table.Rows.Add();
-	row.IsRowBroken = true;
-	for (int c = 0; c <= 2; c++)
-	{
-		Cell c1;
-		if (c == 2)
-			c1 = row.Cells.Add("Aspose.Total for Java is a compilation of every Java component offered by Aspose. It is compiled on a" + CRLF + "daily basis to ensure it contains the most up to date versions of each of our Java components. " + CRLF + "daily basis to ensure it contains the most up to date versions of each of our Java components. " + CRLF + "Using Aspose.Total for Java developers can create a wide range of applications.");
-		else
-			c1 = row.Cells.Add("item1" + c);
-		c1.Margin = new MarginInfo();
-		c1.Margin.Left = 30;
-		c1.Margin.Top = 10;
-		c1.Margin.Bottom = 10;
-	}
+    Row row = table.Rows.Add();
+    for (int c = 0; c <= 2; c++)
+    {
+        Cell cell = row.Cells.Add("Content " + c);
+        cell.Margin = new MarginInfo { Left = 30, Top = 10, Bottom = 10 };
+    }
 }
+```
+
+यह कोड पेज पर तीन कॉलम वाली एक सरल तालिका जोड़ता है। आप इसे अपनी विशिष्ट आवश्यकताओं के अनुरूप संशोधित कर सकते हैं।
+
+## चरण 7: पीडीएफ को सेव करें
+
+एक बार सब कुछ सेट हो जाने के बाद, अंतिम चरण पीडीएफ दस्तावेज़ को अपने इच्छित स्थान पर सहेजना है।
+
+```csharp
 dataDir = dataDir + "ReplaceableSymbolsInHeaderFooter_out.pdf";
 doc.Save(dataDir);
-Console.WriteLine("\nSymbols replaced successfully in header and footer.\nFile saved at " + dataDir);
+Console.WriteLine("Symbols replaced successfully in header and footer. File saved at " + dataDir);
 ```
+
+ आप फ़ाइल पथ निर्दिष्ट करते हैं और दस्तावेज़ को सहेजते हैं`doc.Save()`. बस! आपने कस्टमाइज़्ड हेडर और फ़ुटर के साथ सफलतापूर्वक एक पीडीएफ बना लिया है।
 
 ## निष्कर्ष
 
-इस ट्यूटोरियल में, आपने सीखा है कि .NET के लिए Aspose.PDF लाइब्रेरी का उपयोग करके PDF दस्तावेज़ के हेडर और फ़ुटर में प्रतिस्थापन योग्य प्रतीकों का उपयोग कैसे करें। चरण-दर-चरण मार्गदर्शिका का पालन करके और दिए गए C# कोड को निष्पादित करके, आप एक PDF बना सकते हैं, मार्जिन सेट कर सकते हैं, प्रतिस्थापन योग्य प्रतीकों के साथ हेडर और फ़ुटर जोड़ सकते हैं, और PDF को सहेज सकते हैं।
+.NET के लिए Aspose.PDF का उपयोग करके हेडर और फ़ुटर में प्रतीकों को बदलना न केवल सरल है, बल्कि शक्तिशाली भी है। ऊपर दिए गए चरण-दर-चरण गाइड का पालन करके, आप आसानी से अपने PDF को गतिशील सामग्री, जैसे कि पृष्ठ संख्या, रिपोर्ट नाम और तिथियों के साथ अनुकूलित कर सकते हैं। यह विधि अत्यधिक लचीली है, जिससे आप तालिकाएँ सम्मिलित कर सकते हैं, स्वरूपण समायोजित कर सकते हैं, और अपनी विशिष्ट आवश्यकताओं के अनुरूप लेआउट को नियंत्रित कर सकते हैं।
 
-### अक्सर पूछे जाने वाले प्रश्न
+## अक्सर पूछे जाने वाले प्रश्न
 
-#### प्रश्न: "हैडर-फ़ुटर में प्रतिस्थापन योग्य प्रतीक" ट्यूटोरियल का उद्देश्य क्या है?
+### क्या मैं हेडर और फ़ुटर के लिए फ़ॉन्ट अनुकूलित कर सकता हूँ?  
+हां, आप हेडर और फ़ूटर में पाठ के लिए फ़ॉन्ट, आकार, रंग और शैली को पूरी तरह से अनुकूलित कर सकते हैं।
 
-उत्तर: "हेडर फ़ुटर में प्रतिस्थापन योग्य प्रतीक" ट्यूटोरियल का उद्देश्य आपको .NET के लिए Aspose.PDF लाइब्रेरी का उपयोग करने की प्रक्रिया के माध्यम से मार्गदर्शन करना है ताकि PDF दस्तावेज़ के हेडर और फ़ुटर में प्रतिस्थापन योग्य प्रतीक जोड़े जा सकें। प्रतिस्थापन योग्य प्रतीक आपको PDF बनाते समय विशिष्ट प्लेसहोल्डर्स को वास्तविक मानों से गतिशील रूप से बदलने की अनुमति देते हैं।
+### मैं हेडर और फ़ुटर में छवियाँ कैसे जोड़ूँ?  
+ आप उपयोग कर सकते हैं`ImageStamp` अपने हेडर और फूटर में चित्र सम्मिलित करने के लिए।
 
-#### प्रश्न: पीडीएफ हेडर और फुटर के संदर्भ में प्रतिस्थापन योग्य प्रतीक क्या हैं?
+### क्या हेडर या फूटर में हाइपरलिंक जोड़ना संभव है?  
+ हां, आप उपयोग कर सकते हैं`TextFragment` हाइपरलिंक के साथ सेट करके`Hyperlink` संपत्ति।
 
-उत्तर: प्रतिस्थापन योग्य प्रतीक प्लेसहोल्डर हैं जिन्हें आप PDF दस्तावेज़ के शीर्षलेख और पादलेख में डाल सकते हैं। ये प्रतीक उन मानों के लिए गतिशील प्लेसहोल्डर के रूप में कार्य करते हैं जिन्हें रनटाइम पर भरा जा सकता है, जैसे पृष्ठ संख्याएँ, तिथियाँ और कस्टम जानकारी।
+### क्या मैं विषम और सम पृष्ठों के लिए अलग-अलग शीर्षकों का उपयोग कर सकता हूँ?  
+हां, Aspose.PDF आपको विषम और सम पृष्ठों के लिए अलग-अलग शीर्षलेख और पादलेख निर्दिष्ट करने की अनुमति देता है।
 
-#### प्रश्न: मैं पीडीएफ हेडर और फुटर में प्रतिस्थापन योग्य प्रतीकों का उपयोग क्यों करना चाहूंगा?
-
-उत्तर: शीर्षलेख और पादलेख में प्रतिस्थापन योग्य प्रतीक तब उपयोगी होते हैं जब आप अपने PDF दस्तावेज़ों में गतिशील जानकारी शामिल करना चाहते हैं, जैसे पृष्ठ संख्या, दिनांक या अन्य परिवर्तनीय डेटा जो दस्तावेज़ तैयार होने पर बदल सकते हैं।
-
-#### प्रश्न: मैं पीडीएफ पृष्ठ के लिए मार्जिन कैसे सेट कर सकता हूं?
-
- उत्तर: आप पीडीएफ पेज के लिए मार्जिन सेट कर सकते हैं`MarginInfo` कक्षा और इसे असाइन करना`Margin` की संपत्ति`PageInfo` पृष्ठ का मार्जिन मान आवश्यकतानुसार समायोजित करें।
-
-#### प्रश्न: मैं हेडर और फ़ूटर में प्रतिस्थापन योग्य प्रतीक कैसे जोड़ूं?
-
- उत्तर: आप एक प्रतिस्थापन योग्य प्रतीक बनाकर जोड़ सकते हैं`HeaderFooter` पेज के हेडर और फ़ुटर के लिए ऑब्जेक्ट। फिर, आप जोड़ सकते हैं`TextFragment`वांछित पाठ वाली वस्तुओं को, जिसमें प्रतिस्थापन योग्य प्रतीक भी शामिल हैं,`Paragraphs` का संग्रह`HeaderFooter` वस्तु।
-
-#### प्रश्न: क्या मैं प्रतिस्थापन योग्य प्रतीकों के स्वरूप को अनुकूलित कर सकता हूँ?
-
- उत्तर: हां, आप प्रतिस्थापन योग्य प्रतीकों के गुणों को संशोधित करके उनकी उपस्थिति को अनुकूलित कर सकते हैं।`TextFragment` ऑब्जेक्ट जिसमें प्रतीक होते हैं। आप फ़ॉन्ट, फ़ॉन्ट आकार, रंग, संरेखण और पंक्ति रिक्ति जैसे गुण सेट कर सकते हैं।
-
-#### प्रश्न: मैं किस प्रकार के प्रतिस्थापन योग्य प्रतीकों का उपयोग कर सकता हूँ?
-
-उत्तर: आप विभिन्न प्रकार के प्रतिस्थापन योग्य प्रतीकों का उपयोग कर सकते हैं, जैसे:
-
-- `$p`: वर्तमान पृष्ठ संख्या.
-- `$P`: कुल पृष्ठों की संख्या.
-- `$d`: वर्तमान दिनांक.
-- `$t`: वर्तमान समय.
-- आपके द्वारा परिभाषित कस्टम प्लेसहोल्डर्स.
-
-#### प्रश्न: क्या मैं प्रतिस्थापन योग्य प्रतीकों के आसपास अन्य पाठ और स्वरूपण शामिल कर सकता हूँ?
-
- उत्तर: हां, आप प्रतिस्थापन योग्य प्रतीकों के आसपास अन्य पाठ और स्वरूपण शामिल कर सकते हैं`TextFragment` ऑब्जेक्ट्स। यह आपको अधिक जटिल हेडर और फ़ुटर बनाने की अनुमति देता है जो गतिशील और स्थिर सामग्री को शामिल करते हैं।
-
-#### प्रश्न: मैं उत्पन्न पीडीएफ दस्तावेज़ को कैसे सहेज सकता हूं?
-
- उत्तर: उत्पन्न पीडीएफ दस्तावेज़ को सहेजने के लिए, आप इसका उपयोग कर सकते हैं`Save` की विधि`Document`class. वांछित आउटपुट फ़ाइल पथ और नाम को तर्क के रूप में प्रदान करें।
-
-#### प्रश्न: क्या इस ट्यूटोरियल के लिए वैध एस्पोज लाइसेंस आवश्यक है?
-
-उत्तर: हाँ, इस ट्यूटोरियल में कोड को सफलतापूर्वक निष्पादित करने के लिए एक वैध Aspose लाइसेंस की आवश्यकता है। आप Aspose वेबसाइट से पूर्ण लाइसेंस या 30-दिन का अस्थायी लाइसेंस प्राप्त कर सकते हैं।
+### मैं शीर्षलेख और पादलेख की स्थिति कैसे समायोजित करूं?  
+आप अपने शीर्षलेखों और पादलेखों की स्थिति को नियंत्रित करने के लिए मार्जिन और संरेखण गुणों को समायोजित कर सकते हैं।

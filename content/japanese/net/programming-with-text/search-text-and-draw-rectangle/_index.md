@@ -2,88 +2,124 @@
 title: テキストを検索して四角形を描く
 linktitle: テキストを検索して四角形を描く
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して、PDF 内のテキストを検索し、見つかったテキストの周囲に四角形を描画し、変更されたドキュメントを保存する方法を学習します。
+description: Aspose.PDF for .NET を使用して PDF 内のテキストを検索し、四角形で強調表示する方法を学びます。PDF 操作スキルを向上させるための簡単なステップバイステップのチュートリアルです。
 type: docs
 weight: 460
 url: /ja/net/programming-with-text/search-text-and-draw-rectangle/
 ---
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメント内の特定のテキストを検索し、見つかったテキストの周囲に四角形を描画し、変更されたドキュメントを保存する方法について説明します。提供されている C# ソース コードでは、このプロセスを段階的に示しています。
+## 導入
+
+PDF 操作スキルを向上させたいですか? PDF ファイル内の特定のテキストを検索し、それを四角形で強調表示する方法を学びたいですか? 完璧なガイドにたどり着きました! 今日は、Aspose.PDF for .NET を使用して PDF ドキュメント内のテキストを検索し、その周りに四角形を描く方法を説明します。この記事では、明快さと有用性を念頭に設計されたステップバイステップのチュートリアルを提供します。このチュートリアルに沿って、プロジェクトにこれらのテクニックを適用できます。 
 
 ## 前提条件
 
-チュートリアルを進める前に、次のものを用意してください。
+チュートリアルに進む前に、スムーズなワークフローを実現するために必要なものを準備しましょう。
 
-- C# プログラミング言語に関する基本的な知識。
-- Aspose.PDF for .NET ライブラリがインストールされています。Aspose Web サイトから入手するか、NuGet を使用してプロジェクトにインストールできます。
+1. .NET の基本的な理解: このチュートリアルを効果的に実行するには、C# プログラミングと .NET フレームワークに精通している必要があります。
+   
+2. Visual Studio がインストールされている: コードを記述してテストするには、統合開発環境 (IDE) が必要です。Visual Studio Community は優れたオプションであり、無料です。
+   
+3. Aspose.PDF for .NET: プロジェクトにAspose.PDFライブラリをインストールする必要があります。ダウンロードできます。[ここ](https://releases.aspose.com/pdf/net/)または、[一時ライセンス](https://purchase.aspose.com/temporary-license/)拡張機能用。
+   
+4. サンプルPDFドキュメント: このチュートリアルでは、次のサンプルPDFファイルが必要です。`SearchAndGetTextFromAll.pdf`プロジェクト ディレクトリに保存されます。 
 
-## ステップ1: プロジェクトを設定する
+## パッケージのインポート
 
-まず、好みの統合開発環境 (IDE) で新しい C# プロジェクトを作成し、Aspose.PDF for .NET ライブラリへの参照を追加します。
+まず、必要なパッケージを .NET プロジェクトにインポートする必要があります。次の手順に従います。
 
-## ステップ2: 必要な名前空間をインポートする
+### Visual Studioを開く
 
-必要な名前空間をインポートするには、C# ファイルの先頭に次の using ディレクティブを追加します。
+Visual Studio を起動し、新しいコンソール アプリケーションを作成するか、PDF 機能を実装する既存のコンソール アプリケーションを使用します。
+
+### Aspose.PDF をプロジェクトに追加する
+
+1. ソリューション エクスプローラーでプロジェクトを右クリックします。
+2. 「NuGet パッケージの管理」を選択します。
+3. 検索する`Aspose.PDF`最新バージョンをインストールしてください。
+
+これを行うことで、これから実行するすべての素晴らしい PDF 操作の基礎が整います。
+
+## 名前空間のインポート
+
+プログラム ファイルの先頭で、Aspose ライブラリから関連する名前空間をインポートする必要があります。
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using Aspose.Pdf.Content;
+using System;
 using Aspose.Pdf.Facades;
 ```
 
-## ステップ3: ドキュメントディレクトリへのパスを設定する
+これにより、タスク用の Aspose.PDF ライブラリ内のクラスとメソッドに簡単にアクセスできるようになります。
 
-ドキュメントディレクトリへのパスを設定するには、`dataDir`変数：
+
+これですべての設定が完了したので、PDF 内のテキストを検索し、その周囲に四角形を描画するプロセスを管理しやすい手順に分解してみましょう。
+
+## ステップ1: ドキュメントのパスを設定する
+
+まず、PDFファイルへのパスを設定します。`YOUR DOCUMENT DIRECTORY`実際の経路で`SearchAndGetTextFromAll.pdf`保存されます。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-交換する`"YOUR DOCUMENT DIRECTORY"`ドキュメント ディレクトリへの実際のパスを入力します。
+## ステップ2: PDFドキュメントを開く
 
-## ステップ4: PDF文書を読み込む
-
- PDF文書を読み込むには、`Document`クラス：
+次に、`Document` PDF を読み込むクラス:
 
 ```csharp
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
 ```
 
-交換する`"SearchAndGetTextFromAll.pdf"` PDF ファイルの実際の名前を入力します。
+このコード行は指定された PDF ファイルを開き、さらに操作できるようにします。
 
-## ステップ5: TextFragmentAbsorberを作成する
+## ステップ3: テキストアブソーバーを作成する
 
-作成する`TextFragmentAbsorber`入力された検索フレーズのすべてのインスタンスを検索するオブジェクト:
+さて、その文書内のテキストを検索する方法が必要です。そのためには、`TextFragmentAbsorber`:
 
 ```csharp
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 ```
 
-交換する`@"[\S]+"`希望する正規表現パターンを使用します。
+正規表現`@"[\S]+"` PDF 内の空白以外の文字列に一致するように設計されています。 
 
-## ステップ6: 正規表現検索を有効にする
+## ステップ4: テキスト検索オプションを構成する
 
-正規表現検索を有効にするには、`TextSearchOptions`吸収体の特性:
+次に、テキスト検索オプションを設定する必要があります。
 
 ```csharp
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;
 ```
 
-## ステップ7: すべてのページを検索する
+ここでは、`true`パラメータは、検索時に大文字と小文字を区別することを意味します。`false`大文字と小文字を区別しない検索をしたい場合。
 
-ドキュメントのすべてのページの吸収剤を受け入れます。
+## ステップ5: 文書内のテキストアブソーバーを受け入れる
+
+あなたの`TextFragmentAbsorber`検索オプションの準備ができたら、ドキュメントからテキストを吸収します。
 
 ```csharp
 document.Pages.Accept(textAbsorber);
 ```
 
-## ステップ8: 見つかったテキストの周囲に四角形を描く
+このメソッドは、PDF 内の各ページを調べて、指定されたパターンに一致するテキスト フラグメントを検索します。
 
-作成する`PdfContentEditor`オブジェクトを取得し、取得したテキスト フラグメントをループして、各テキスト セグメントの周囲に四角形を描画します。
+## ステップ6: PdfContentEditorを作成する
+
+文書に図形を描くには、`PdfContentEditor`:
 
 ```csharp
 var editor = new PdfContentEditor(document);
+```
+
+このエディターを使用すると、PDF コンテンツを簡単に操作および編集できます。
+
+## ステップ7: 見つかったテキストフラグメントをループする
+
+ここで、見つかったテキスト フラグメントをループして、その周りに四角形を描画します。
+
+```csharp
 foreach (TextFragment textFragment in textAbsorber.TextFragments)
 {
     foreach (TextSegment textSegment in textFragment.Segments)
@@ -93,83 +129,66 @@ foreach (TextFragment textFragment in textAbsorber.TextFragments)
 }
 ```
 
+このループは各テキストフラグメントとそのセグメントを反復処理し、`DrawBox`長方形を描画する方法。
+
+## ステップ8: DrawBoxメソッドを定義する
+
+定義する必要があるのは`DrawBox`メソッドは、四角形の描画ロジックを処理します。簡単な実装は次のとおりです。
+
+```csharp
+private static void DrawBox(PdfContentEditor editor, int pageNumber, TextSegment textSegment, System.Drawing.Color color)
+{
+    //テキストセグメントに基づいて長方形の寸法を計算する
+    float x = textSegment.Rectangle.LLX;
+    float y = textSegment.Rectangle.LLY;
+    float width = textSegment.Rectangle.Width;
+    float height = textSegment.Rectangle.Height;
+
+    //計算された値を使用して長方形を描く
+    editor.DrawRectangle(pageNumber, x, y, width, height, color, 1);
+}
+```
+
+このメソッドは、セグメントの境界四角形に基づいて四角形の位置とサイズを決定し、エディターを使用してそれを描画します。
+
 ## ステップ9: 変更したドキュメントを保存する
 
-変更したドキュメントを保存します。
+見つかったテキストの周囲に四角形を描画したら、変更したドキュメントを保存できます。
 
 ```csharp
 dataDir = dataDir + "SearchTextAndDrawRectangle_out.pdf";
 document.Save(dataDir);
 ```
 
-必ず交換してください`"SearchTextAndDrawRectangle_out.pdf"`希望する出力ファイル名を指定します。
+元のドキュメントが上書きされないように、新しいファイルが別の名前で保存されていることを確認してください。
 
-### Aspose.PDF for .NET を使用してテキストを検索し、四角形を描画するためのサンプル ソース コード 
+## ステップ10: 確認メッセージ
+
+最後に、操作が成功したことを知らせる確認メッセージをコンソールに出力します。
+
 ```csharp
-//ドキュメント ディレクトリへのパス。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-//ドキュメントを開く
-Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-//正規表現に一致するすべてのフレーズを見つけるためにTextAbsorberオブジェクトを作成します。
-TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
-TextSearchOptions textSearchOptions = new TextSearchOptions(true);
-textAbsorber.TextSearchOptions = textSearchOptions;
-document.Pages.Accept(textAbsorber); 
-var editor = new PdfContentEditor(document); 
-foreach (TextFragment textFragment in textAbsorber.TextFragments)
-{
-	foreach (TextSegment textSegment in textFragment.Segments)
-	{
-			DrawBox(editor, textFragment.Page.Number, textSegment, System.Drawing.Color.Red);
-	}
-}
-dataDir = dataDir + "SearchTextAndDrawRectangle_out.pdf";
-document.Save(dataDir);
 Console.WriteLine("\nRectangle drawn successfully on searched text.\nFile saved at " + dataDir);
 ```
 
+これで完了です。PDF 内のテキストを検索し、四角形で強調表示するスクリプトが正常に作成されました。
+
 ## 結論
 
-おめでとうございます! Aspose.PDF for .NET を使用して、PDF ドキュメント内の特定のテキストを検索し、見つかったテキストの周囲に四角形を描画し、変更したドキュメントを保存する方法を学習しました。このチュートリアルでは、プロジェクトのセットアップから必要なアクションの実行まで、ステップ バイ ステップのガイドを提供しました。これで、このコードを独自の C# プロジェクトに組み込んで、PDF ファイル内のテキストを操作し、四角形を描画できるようになりました。
+おめでとうございます! Aspose.PDF for .NET を使用して PDF 操作能力を大幅に強化できる強力なスキルを習得しました。簡単な手順をいくつか実行するだけで、ドキュメント内の任意のテキストを検索して視覚的に強調表示できるため、PDF ドキュメントをよりインタラクティブで管理しやすいものにできます。さまざまな正規表現パターンやカラー オプションを試して、このツールを自分だけのものにしてください。
 
-### よくある質問
+## よくある質問
 
-#### Q: 「テキストを検索して四角形を描画する」チュートリアルの目的は何ですか?
+### Aspose.PDF for .NET とは何ですか?
+Aspose.PDF for .NET は、PDF ドキュメントをプログラムで作成、操作、変換するための包括的な方法を提供するライブラリです。
 
-A: 「テキストの検索と四角形の描画」チュートリアルは、Aspose.PDF ライブラリ for .NET を使用して PDF ドキュメント内の特定のテキストを検索し、見つかったテキスト セグメントの周囲に四角形を描画し、変更されたドキュメントを保存するプロセスをユーザーに案内することを目的としています。このチュートリアルでは、プロセスの各ステップを説明する詳細な手順と C# コード サンプルが提供されます。
+### Aspose.PDF を無料で使用できますか?
+はい、Aspose ではライブラリの機能をテストできる無料トライアルを提供しています。ぜひお試しください。[ここ](https://releases.aspose.com/).
 
-#### Q: このチュートリアルは、PDF ドキュメント内の特定のテキストの周囲に四角形を描画するのにどのように役立ちますか?
+### Aspose.PDF for .NET で使用するプログラミング言語は何ですか?
+Aspose.PDF for .NET は、C# およびその他の .NET 言語で使用するように設計されています。
 
-A: このチュートリアルでは、PDF ドキュメント内の特定のテキスト セグメントを見つけてその周囲に四角形を描画する方法について包括的なガイドを提供します。プロジェクトの設定、PDF ドキュメントの読み込み、正規表現検索の有効化、見つかったテキスト セグメントの周囲に四角形を描画、変更した PDF を保存するプロセスを示します。
+### Aspose.PDF に関するサポートを受けるにはどうすればよいですか?
+問題や質問がある場合は、Aspose サポートフォーラムにアクセスしてサポートを受けることができます。サポートを探す[ここ](https://forum.aspose.com/c/pdf/10).
 
-#### Q: このチュートリアルを実行するために必要な前提条件は何ですか?
-
-A: チュートリアルを始める前に、C# プログラミング言語の基礎を理解しておく必要があります。また、Aspose.PDF for .NET ライブラリがインストールされている必要があります。Aspose Web サイトから入手するか、NuGet を使用してプロジェクトにインストールできます。
-
-#### Q: このチュートリアルに従うためにプロジェクトを設定するにはどうすればよいですか?
-
-A: まず、お好みの統合開発環境 (IDE) で新しい C# プロジェクトを作成します。次に、Aspose.PDF for .NET ライブラリへの参照をプロジェクトに追加します。これにより、ライブラリの機能を使用して PDF ドキュメントを操作できるようになります。
-
-#### Q: このチュートリアルを使用して、特定のテキストの周囲に四角形を描くことはできますか?
-
-A: はい、このチュートリアルでは、PDF ドキュメント内の特定のテキスト セグメントの周囲に四角形を描画することに焦点を当てています。正規表現を使用して目的のテキストを見つけ、識別されたテキスト セグメントの周囲に四角形を作成し、変更した PDF を保存する方法を説明します。
-
-#### Q: 検索したいテキストを指定して、その周囲に四角形を描くにはどうすればいいですか?
-
- A: 検索したいテキストを指定して四角形を描くには、`TextFragmentAbsorber`オブジェクトを作成し、そのパターンを`Text`パラメータ。デフォルトのパターンを置き換える`@"[\S]+"`チュートリアルのコードに、希望する正規表現パターンを入力します。
-
-#### Q: テキストの正規表現検索を有効にするにはどうすればいいですか?
-
- A: 正規表現検索は、`TextSearchOptions`オブジェクトとその値を設定する`true`このオブジェクトを`TextSearchOptions`の財産`TextFragmentAbsorber`インスタンス。これにより、テキスト検索中に正規表現パターンが使用されるようになります。
-
-#### Q: 見つかったテキストの周囲に四角形を描くにはどうすればいいですか?
-
- A: テキストセグメントを識別した後、`TextFragmentAbsorber`チュートリアルでは、これらのセグメントを反復処理するループが用意されています。各テキストセグメントについて、チュートリアルでは、`DrawBox`メソッドを使用して、四角形の外観を指定します。
-
-#### Q: 四角形を描画した変更済みの PDF を保存する手順は何ですか?
-
-A: 希望するテキストセグメントの周囲に四角形を描いた後、`Document`クラスの`Save`メソッドを使用して、変更したドキュメントを保存します。チュートリアルのサンプル コードでは、編集した PDF を保存し、成功メッセージを表示する方法を示します。
-
-#### Q: 描画した長方形の外観をカスタマイズできますか?
-
- A: はい、描画した四角形の外観をカスタマイズできます。チュートリアルのサンプルコードでは、`DrawBox`メソッドは長方形を作成するために使用されます。色、スタイル、太さなどのプロパティを変更して、描画された長方形の外観をカスタマイズできます。
+### Aspose.PDF for .NET はどこからダウンロードできますか?
+ライブラリはAsposeのウェブサイトからダウンロードできます。[ここ](https://releases.aspose.com/pdf/net/).

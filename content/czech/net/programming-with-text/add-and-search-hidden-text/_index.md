@@ -2,107 +2,160 @@
 title: Přidat a hledat skrytý text v souboru PDF
 linktitle: Přidat a hledat skrytý text v souboru PDF
 second_title: Aspose.PDF pro .NET API Reference
-description: Podrobný průvodce přidáváním a vyhledáváním skrytého textu v souboru PDF pomocí Aspose.PDF pro .NET.
+description: Naučte se přidávat a vyhledávat skrytý text v dokumentech PDF pomocí Aspose.PDF for .NET. Podrobný průvodce včetně příkladů kódu.
 type: docs
 weight: 20
 url: /cs/net/programming-with-text/add-and-search-hidden-text/
 ---
-V tomto tutoriálu vás provedeme přidáváním a vyhledáváním skrytého textu v souboru PDF pomocí Aspose.PDF for .NET. Chcete-li tuto operaci snadno provést, postupujte podle následujících kroků.
+## Zavedení
 
-## 1. Předpoklady
+V tomto tutoriálu vás provedeme podrobným průvodcem, jak přidat a prohledat skrytý text v souboru PDF pomocí Aspose.PDF for .NET. Ať už jste zkušený vývojář nebo nováček, který chce zlepšit své programovací dovednosti, tento článek vám poskytne informace, které potřebujete k začlenění funkcí skrytého textu do vašich aplikací.
 
-Než začnete, ujistěte se, že máte následující:
+## Předpoklady
 
-- Visual Studio nebo jakékoli jiné vývojové prostředí nainstalované a nakonfigurované.
-- Základní znalost programovacího jazyka C#.
-- Nainstalovaná knihovna Aspose.PDF pro .NET. Můžete si jej stáhnout z oficiálních stránek Aspose.
+Než se ponoříte do kódovací části, existuje několik předpokladů, o které se musíte postarat:
 
-## 2. Vytvoření dokumentu PDF se skrytým textem
+### Kontrolní seznam požadavků
+- Visual Studio: Ujistěte se, že máte nainstalované Visual Studio. Tento kurz předpokládá, že používáte .NET Framework.
+-  Aspose.PDF pro .NET: Musíte mít knihovnu Aspose.PDF pro .NET. Můžete si jej stáhnout[zde](https://releases.aspose.com/pdf/net/).
+- Základní znalost C#: Znalost programování v C# vám pomůže lépe porozumět úryvkům kódu.
 
-Chcete-li začít, použijte následující kód k vytvoření nového dokumentu PDF obsahujícího skrytý text:
+## Importujte balíčky
+
+Než budete moci začít s kódem, musíte se ujistit, že importujete potřebné jmenné prostory Aspose.PDF. Jak na to:
+
+### Nastavte svůj projekt
+1. Otevřete Visual Studio a vytvořte nový projekt C# nebo použijte existující.
+2.  Nainstalujte Aspose.PDF přidáním balíčku NuGet. Můžete to udělat tak, že přejdete do Správce balíčků NuGet a vyhledáte`Aspose.PDF`. 
+3.  Případně si můžete knihovnu stáhnout přímo z[zde](https://releases.aspose.com/pdf/net/) a přidejte jej jako referenci do svého projektu.
+
+### Importujte požadované jmenné prostory
+V horní části souboru C# importujte následující jmenné prostory:
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-// Vytvořte dokument
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Tento krok je zásadní, protože tyto jmenné prostory obsahují třídy a metody nezbytné pro manipulaci s dokumenty PDF.
+
+## Vytvoření dokumentu PDF se skrytým textem
+
+Nyní, když jste nastavili, pojďme si projít kroky k vytvoření dokumentu PDF, který obsahuje viditelný i neviditelný text.
+
+### Krok 1: Definujte adresář dokumentů
+Nejprve budete chtít nastavit cestu, kam se PDF uloží. Tady začíná kouzlo!
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Změňte to na svůj adresář
+```
+
+ Tento řádek definuje, kam bude uložen váš vygenerovaný PDF. Nezapomeňte vyměnit`YOUR DOCUMENT DIRECTORY` s vaší skutečnou cestou.
+
+### Krok 2: Vytvořte dokument PDF
+Dále vytvoříme nový dokument PDF a přidáme do něj stránky.
+
+```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 Page page = doc.Pages.Add();
+```
+
+Zde inicializujeme nový dokument a přidáváme stránku, kam umístíme naše textové fragmenty.
+
+### Krok 3: Přidejte viditelný a skrytý text
+Nyní do našeho PDF přidáme viditelný i neviditelný text.
+
+```csharp
 TextFragment frag1 = new TextFragment("This is common text.");
 TextFragment frag2 = new TextFragment("This is invisible text.");
-// Nastavit vlastnost textu - neviditelný
+```
+
+ V tomto úryvku`frag1` budou viditelné, zatímco`frag2` bude příště nastaveno na neviditelné.
+
+### Krok 4: Nastavte Text na Neviditelný
+ Chcete-li vytvořit text`frag2` neviditelný, jednoduše jej upravíte`TextState`.
+
+```csharp
 frag2.TextState.Invisible = true;
+```
+
+ Nastavením této vlastnosti bude jakýkoli text spojený s`frag2` nebude vykreslen při prohlížení PDF.
+
+### Krok 5: Přidejte na stránku textové fragmenty
+Nakonec přidáme tyto textové fragmenty na stránku a uložíme PDF.
+
+```csharp
 page.Paragraphs.Add(frag1);
 page.Paragraphs.Add(frag2);
 doc.Save(dataDir + "39400_out.pdf");
 doc.Dispose();
 ```
 
-Nezapomeňte zadat požadovanou cestu a název souboru pro dokument PDF.
+Tato část kódu přidává na stránku naše textové fragmenty. Poté dokument řádně uložíme a zlikvidujeme.
 
-## 3. Vyhledejte text v dokumentu
+## Hledání skrytého textu v PDF
 
-Dále prohledáme skrytý text v dokumentu PDF. Použijte následující kód:
+Nyní, když jsme vytvořili naše PDF s viditelným i skrytým textem, jak tento skrytý text hledat? Pojďme to rozebrat.
+
+### Krok 1: Načtěte dokument PDF
+Chcete-li hledat text v PDF, musíme nejprve načíst dokument, který jsme právě vytvořili.
 
 ```csharp
 doc = new Aspose.Pdf.Document(dataDir + "39400_out.pdf");
-TextFragmentAbsorber absorb = new TextFragmentAbsorber();
-absorb.Visit(doc.Pages[1]);
-foreach(TextFragment fragment in absorber.TextFragments)
-{
-// Udělejte něco s úlomky
-Console.WriteLine("Text '{0}' at position {1}, invisibility: {2} ",
-fragment.Text, fragment.Position.ToString(), fragment.TextState.Invisible);
-}
-doc.Dispose();
 ```
 
-To prohledá skrytý text na druhé stránce dokumentu PDF a zobrazí příslušné informace.
+### Krok 2: Vytvořte absorbér textových fragmentů
+ budeme používat`TextFragmentAbsorber` zachytit všechny textové fragmenty v PDF.
 
-### Ukázka zdrojového kódu pro Add And Search Hidden Text pomocí Aspose.PDF for .NET 
 ```csharp
-// Cesta k adresáři dokumentů.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-//Vytvořte dokument se skrytým textem
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-Page page = doc.Pages.Add();
-TextFragment frag1 = new TextFragment("This is common text.");
-TextFragment frag2 = new TextFragment("This is invisible text.");
-//Nastavit vlastnost textu - neviditelný
-frag2.TextState.Invisible = true;
-page.Paragraphs.Add(frag1);
-page.Paragraphs.Add(frag2);
-doc.Save(dataDir + "39400_out.pdf");
-doc.Dispose();
-//Vyhledejte text v dokumentu
-doc = new Aspose.Pdf.Document(dataDir + "39400_out.pdf");
 TextFragmentAbsorber absorber = new TextFragmentAbsorber();
 absorber.Visit(doc.Pages[1]);
+```
+
+Zde určíme, že chceme absorbovat všechny fragmenty textu z první stránky.
+
+### Krok 3: Iterujte fragmenty
+Nyní můžeme procházet shromážděné fragmenty textu, abychom zjistili, které z nich jsou viditelné a které jsou skryté.
+
+```csharp
 foreach (TextFragment fragment in absorber.TextFragments)
 {
-	//Udělejte něco s fragmenty
-	Console.WriteLine("Text '{0}' on pos {1} invisibility: {2} ",
-	fragment.Text, fragment.Position.ToString(), fragment.TextState.Invisible);
+    Console.WriteLine("Text '{0}' on pos {1} invisibility: {2}",
+        fragment.Text, fragment.Position.ToString(), fragment.TextState.Invisible);
 }
+```
+
+ Tato smyčka kontroluje každý textový fragment a vytiskne jeho obsah spolu s jeho pozicí a stavem viditelnosti. Li`fragment.TextState.Invisible` je nastaveno na true, znamená to, že text je skrytý!
+
+### Krok 4: Zlikvidujte dokument
+Nakonec nezapomeňte dokument po dokončení znovu zlikvidovat.
+
+```csharp
 doc.Dispose();
 ```
 
 ## Závěr
 
-gratuluji! Úspěšně jste přidali a našli skrytý text v dokumentu PDF pomocí Aspose.PDF pro .NET. Nyní můžete tuto metodu použít na své vlastní projekty a manipulovat a prohledávat skrytý text v souborech PDF.
+V tomto tutoriálu jsme prošli vzrušujícím procesem přidávání a vyhledávání skrytého textu v souborech PDF pomocí Aspose.PDF pro .NET. Naučili jsme se, jak vytvořit dokument PDF s viditelným i skrytým textem, a také jak tento skrytý text programově vyhledávat. Tato schopnost může být neuvěřitelně užitečná v různých aplikacích, ať už potřebujete ukládat důvěrné informace nebo poskytnout jedinečný uživatelský zážitek ve svých dokumentech.
 
-### FAQ
+Jak se blíže seznámíte s ASPose.PDF, možnosti se stanou nekonečnými. Pokračujte v experimentování a posouvejte hranice toho, čeho můžete s dokumenty PDF dosáhnout!
 
-#### Otázka: Co je Aspose.PDF pro .NET?
+## FAQ
 
-Odpověď: Aspose.PDF for .NET je robustní knihovna, která umožňuje vývojářům vytvářet, manipulovat a transformovat dokumenty PDF v rámci aplikací .NET.
+### Dokáže Aspose.PDF zpracovat šifrované soubory PDF?  
+Ano, Aspose.PDF podporuje šifrování a dešifrování dokumentů PDF. Své PDF můžete snadno zabezpečit hesly.
 
-#### Otázka: Lze skrytý text použít pro účely vodoznaku?
+### Je k dispozici zkušební verze pro Aspose.PDF?  
+ Absolutně! Bezplatnou zkušební verzi si můžete stáhnout z[zde](https://releases.aspose.com/).
 
-A: Rozhodně! Skrytý text může sloužit jako účinný prostředek k vodoznaku dokumentů PDF a přidává další vrstvu zabezpečení.
+### Jaké programovací jazyky podporuje Aspose.PDF?  
+Aspose.PDF poskytuje podporu pro více jazyků, včetně C#, Java a Python.
 
-#### Otázka: Je možné odhalit skrytý text v dokumentu PDF?
+### Kde najdu dokumentaci k Aspose.PDF?  
+ Máte přístup k dokumentaci[zde](https://reference.aspose.com/pdf/net/).
 
-Odpověď: Ano, proces vyhledávání a odhalování skrytého textu v dokumentu PDF lze provést pomocí technik popsaných v tomto návodu.
-
-#### Otázka: Jaké další funkce nabízí Aspose.PDF pro .NET?
-
-Odpověď: Kromě manipulace se skrytým textem poskytuje Aspose.PDF for .NET širokou škálu funkcí, včetně generování PDF, převodu, šifrování a dalších.
+### Jak mohu získat podporu, pokud narazím na problémy?  
+ Pro podporu můžete navštívit fóra Aspose[zde](https://forum.aspose.com/c/pdf/10).

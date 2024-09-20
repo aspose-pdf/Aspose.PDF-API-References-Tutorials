@@ -46,7 +46,7 @@ A PDF megnyitása és feldolgozása előtt meg kell adnia, hol található a PDF
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Ez a sor határozza meg a PDF-fájl helyét a rendszeren. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a tényleges könyvtárral, ahol az Ön`watermark.pdf` tárolva van. Például:
+ Ez a sor határozza meg a PDF-fájl helyét a rendszeren. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` azzal a tényleges könyvtárral, ahol az Ön`watermark.pdf` tárolva van. Például:
 
 ```csharp
 string dataDir = "C:\\MyDocuments\\";

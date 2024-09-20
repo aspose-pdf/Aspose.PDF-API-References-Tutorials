@@ -9,7 +9,7 @@ url: /nl/net/programming-with-forms/select-radio-button/
 ---
 ## Invoering
 
-Het programmatisch selecteren van keuzerondjes in een PDF-document kan u veel tijd besparen, vooral bij het werken met grote formulieren of het automatiseren van processen. Aspose.PDF voor .NET is een krachtige bibliotheek die het eenvoudig maakt om op verschillende manieren met PDF-bestanden te werken. In deze handleiding leiden we u door een stapsgewijs proces om een keuzerondje in een PDF-document te selecteren met behulp van Aspose.PDF voor .NET. 
+Het selecteren van keuzerondjes in een PDF-document via een programma kan u veel tijd besparen, vooral bij het werken met grote formulieren of het automatiseren van processen. Aspose.PDF voor .NET is een krachtige bibliotheek die het eenvoudig maakt om op verschillende manieren met PDF-bestanden te werken. In deze handleiding leiden we u door een stapsgewijs proces om een keuzerondje in een PDF-document te selecteren met behulp van Aspose.PDF voor .NET. 
 
 ## Vereisten
 

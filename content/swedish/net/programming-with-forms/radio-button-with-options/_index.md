@@ -98,7 +98,7 @@ doc.Form.Add(rf, 1);
 
  Vi instansierar en`RadioButtonField`, ange dess namn och lägg sedan till det i dokumentformuläret. Detta fält låter användarna göra sina val.
 
-## Steg 5: Konfigurera alternativ för radioknappar
+## Steg 5: Konfigurera alternativ för alternativknappar
 
 Dags att skapa alternativen för alternativknapparna! Vi lägger till tre alternativ som användare kan välja mellan.
 

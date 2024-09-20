@@ -16,7 +16,7 @@ Aspose.PDF for Java to potężna biblioteka Java, która umożliwia programową 
 
 ## Czym jest Aspose.PDF dla Java?
 
-Aspose.PDF for Java to solidny interfejs API, który umożliwia programistom tworzenie, edycję i manipulowanie dokumentami PDF w aplikacjach Java. Zapewnia kompleksowe wsparcie dla różnych operacji związanych z PDF, co czyni go najlepszym wyborem do obsługi PDF w Javie.
+Aspose.PDF for Java to solidny interfejs API, który umożliwia programistom tworzenie, edytowanie i manipulowanie dokumentami PDF w aplikacjach Java. Zapewnia kompleksowe wsparcie dla różnych operacji związanych z PDF, co czyni go najlepszym wyborem do obsługi PDF w Javie.
 
 ## Dlaczego warto konwertować pliki PDF do HTML z podmianą czcionek?
 

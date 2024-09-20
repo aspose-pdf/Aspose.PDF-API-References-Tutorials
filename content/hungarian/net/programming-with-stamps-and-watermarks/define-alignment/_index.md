@@ -9,7 +9,7 @@ url: /hu/net/programming-with-stamps-and-watermarks/define-alignment/
 ---
 ## Bevezetés
 
-A PDF-fájlokkal való munka során, különösen akkor, ha vizuálisan tetszetőssé szeretné tenni őket, elengedhetetlen a szövegigazítás meghatározása. Előfordult már, hogy megtekintett egy PDF-et, és arra gondolt, hogy valami egyszerűen elromlik? Lehet, hogy rosszul igazodott a szöveg, vagy egyszerűen nem folyott jól az oldalon. Ez az, ahol a szövegigazítás meghatározása óriási változást hozhat! Ebben az útmutatóban bemutatjuk, hogyan használhatja az Aspose.PDF for .NET fájlt a PDF-dokumentumok igazításának meghatározására, így azok nem csak funkcionálisak, hanem esztétikusak is.
+A PDF-fájlokkal való munka során, különösen akkor, ha azokat vizuálisan vonzóvá szeretné tenni, elengedhetetlen a szövegigazítás meghatározása. Előfordult már, hogy megnézett egy PDF-fájlt, és arra gondolt, hogy valami csak elromlik? Lehet, hogy rosszul igazodott a szöveg, vagy egyszerűen nem folyott jól az oldalon. Ez az, ahol a szövegigazítás meghatározása óriási változást hozhat! Ebben az útmutatóban bemutatjuk, hogyan használhatja az Aspose.PDF for .NET fájlt a PDF-dokumentumok igazításának meghatározására, így azok nem csak funkcionálisak, hanem esztétikusak is.
 
 ## Előfeltételek
 
@@ -101,7 +101,7 @@ Ez a bélyeg lesz az, amit a szöveg igazításának megváltoztatása érdekéb
 
 ## 5. lépés: Adja meg a szöveg igazítási beállításait
 
-Most itt az ideje, hogy meghatározzuk, hogyan igazodjon a szövegünk a PDF-ben.
+Most itt az ideje, hogy meghatározzuk, hogyan legyen igazítva a szövegünk a PDF-ben.
 
 ### Vízszintes igazítás
 
@@ -174,4 +174,4 @@ Igen, az Aspose.PDF asztali és webes alkalmazásokban is használható, nagy ru
  Teljesen! Az Aspose.PDF ingyenes próbaverzióját innen érheti el[itt](https://releases.aspose.com/).
 
 ### Hol találok támogatást az Aspose.PDF számára?  
- Segítséget és támogatást a címen találhat[Aspose fórum](https://forum.aspose.com/c/pdf/10).
+ Segítséget és támogatást a[Aspose fórum](https://forum.aspose.com/c/pdf/10).

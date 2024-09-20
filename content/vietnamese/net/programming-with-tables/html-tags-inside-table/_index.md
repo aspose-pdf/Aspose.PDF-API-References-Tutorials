@@ -2,82 +2,61 @@
 title: Thẻ HTML bên trong bảng trong tệp PDF
 linktitle: Thẻ HTML bên trong bảng trong tệp PDF
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Tìm hiểu cách sử dụng thẻ HTML bên trong bảng trong tệp PDF với Aspose.PDF cho .NET.
+description: Tìm hiểu cách nhúng thẻ HTML vào các ô bảng trong PDF bằng Aspose.PDF cho .NET với hướng dẫn từng bước này. Tạo tài liệu PDF động và chuyên nghiệp.
 type: docs
 weight: 100
 url: /vi/net/programming-with-tables/html-tags-inside-table/
 ---
-Trong hướng dẫn này, chúng ta sẽ học cách sử dụng thẻ HTML bên trong bảng trong tài liệu PDF bằng Aspose.PDF cho .NET. Chúng tôi sẽ giải thích mã nguồn bằng C# từng bước. Vào cuối hướng dẫn này, bạn sẽ biết cách chèn nội dung HTML vào bảng trong tài liệu PDF. Hãy bắt đầu nào!
+## Giới thiệu
 
-## Bước 1: Thiết lập môi trường
-Đảm bảo bạn đã cấu hình môi trường phát triển C# của mình với Aspose.PDF cho .NET. Thêm tham chiếu đến thư viện và nhập các không gian tên cần thiết.
+Khi làm việc với PDF trong .NET, thư viện Aspose.PDF là một công cụ đặc biệt để tạo, thao tác và chuyển đổi tài liệu PDF. Một trong những tính năng nâng cao mà Aspose.PDF cung cấp là khả năng đưa nội dung HTML vào các ô bảng trong tệp PDF. Hướng dẫn này sẽ hướng dẫn bạn cách thực hiện điều này bằng Aspose.PDF cho .NET. Đến cuối hướng dẫn này, bạn sẽ có thể tạo bảng động với nội dung HTML được nhúng trong các ô.
 
-## Bước 2: Tạo dữ liệu bảng
-Chúng tôi tạo một DataTable chứa một cột "dữ liệu" kiểu String. Sau đó, chúng tôi thêm các hàng vào DataTable này bằng nội dung HTML.
+## Điều kiện tiên quyết
+
+Trước khi xem hướng dẫn từng bước, hãy đảm bảo rằng bạn có đủ các công cụ và tài nguyên cần thiết để thực hiện theo.
+
+-  Aspose.PDF cho .NET: Bạn sẽ cần phiên bản mới nhất của Aspose.PDF.[Tải xuống tại đây](https://releases.aspose.com/pdf/net/).
+- Môi trường .NET: Đảm bảo bạn có Visual Studio hoặc bất kỳ IDE tương thích nào khác được thiết lập với .NET framework.
+-  Giấy phép: Nếu bạn không sử dụng phiên bản được cấp phép của Aspose.PDF, bạn có thể lấy[giấy phép tạm thời](https://purchase.aspose.com/temporary-license/).
+- Hiểu biết cơ bản về C#: Có kiến thức cơ bản về C# và lập trình hướng đối tượng sẽ rất hữu ích.
+- Kiến thức về HTML: Một số hiểu biết về cấu trúc HTML sẽ có ích cho hướng dẫn này.
+
+## Nhập các gói cần thiết
+
+Trước khi bắt đầu viết mã, điều quan trọng là phải nhập các không gian tên cần thiết. Các không gian tên này cho phép chúng ta làm việc với các lớp và phương thức Aspose.PDF mà chúng ta sẽ sử dụng để thao tác với các tài liệu PDF.
 
 ```csharp
-DataTable dt = new DataTable("Employee");
-dt.Columns.Add("data", System.Type.GetType("System.String"));
-
-DataRow dr = dt.NewRow();
-dr[0] = "<li>Department of Emergency Medicine: 3400 Spruce Street Ground Silverstein Bldg Philadelphia PA 19104-4206</li>";
-dt.Rows.Add(dr);
-dr = dt. NewRow();
-dr[0] = "<li>Penn Observation Medicine Service: 3400 Spruce Street Ground Floor Donner Philadelphia PA 19104-4206</li>";
-dt.Rows.Add(dr);
-dr = dt. NewRow();
-dr[0] = "<li>UPHS/Presbyterian - Dept. of Emergency Medicine: 51 N. 39th Street . Philadelphia PA 19104-2640</li>";
-dt.Rows.Add(dr);
+using System;
+using System.Data;
 ```
 
-## Bước 3: Tạo Tài liệu và Bảng
-Chúng tôi tạo một tài liệu PDF mới và thêm một trang vào tài liệu này. Tiếp theo, chúng tôi khởi tạo một thể hiện của lớp Table và thiết lập các thuộc tính của bảng.
+Bây giờ, chúng ta hãy chia nhỏ nhiệm vụ thành các bước chi tiết, trong đó chúng ta sẽ giải thích từng phần của quy trình một cách rõ ràng và ngắn gọn.
+
+## Bước 1: Thiết lập thư mục tài liệu của bạn
+
+Bước đầu tiên là xác định đường dẫn đến thư mục tài liệu của bạn. Đây là nơi PDF sẽ được lưu sau khi chúng ta tạo và chỉnh sửa nó.
 
 ```csharp
-Document doc = new Document();
-doc.Pages.Add();
-
-Aspose.Pdf.Table tableProvider = new Aspose.Pdf.Table();
-tableProvider. ColumnWidths = "400 50";
-tableProvider.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.5F, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-tableProvider.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.5F, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
-margin. Top = 2.5F;
-margin. Left = 2.5F;
-margin. Bottom = 1.0F;
-tableProvider. DefaultCellPadding = margin;
-```
-
-## Bước 4: Nhập dữ liệu vào bảng
-Chúng tôi nhập dữ liệu từ DataTable vào bảng bằng phương thức "ImportDataTable". Chúng tôi chỉ định các tham số phương thức để chỉ ra phạm vi hàng và cột nào của DataTable sẽ được nhập.
-
-```csharp
-tableProvider.ImportDataTable(dt, false, 0, 0, 3, 1, true);
-```
-
-## Bước 5: Thêm bảng vào tài liệu
-Chúng tôi thêm bảng vào trang tài liệu.
-
-```csharp
-doc.Pages[1].Paragraphs.Add(tableProvider);
-```
-
-## Giai đoạn 6: Lưu tài liệu
-Chúng tôi lưu tài liệu PDF có bảng chứa nội dung HTML.
-
-```csharp
-doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
-```
-
-### Mã nguồn ví dụ cho Thẻ HTML Bên trong Bảng sử dụng Aspose.PDF cho .NET
-
-```csharp
-// Đường dẫn đến thư mục tài liệu.
+// Xác định đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
+ Hãy chắc chắn thay thế`"YOUR DOCUMENT DIRECTORY"`với đường dẫn thực tế mà bạn muốn lưu tệp PDF của mình. Điều này rất cần thiết để khi tài liệu được tạo, bạn có thể dễ dàng định vị được tệp đó.
+
+## Bước 2: Tạo và điền nội dung HTML vào DataTable
+
+ Bây giờ, chúng ta tạo ra một`DataTable` để giữ dữ liệu sẽ được hiển thị bên trong bảng trong PDF của chúng tôi. Điều này`DataTable` sẽ lưu trữ nội dung HTML, chẳng hạn như`<li>` thẻ mà chúng ta muốn nhúng vào trong các ô.
+
+```csharp
+// Tạo một DataTable và thêm các cột
 DataTable dt = new DataTable("Employee");
 dt.Columns.Add("data", System.Type.GetType("System.String"));
+```
 
+ Một khi`DataTable` được tạo, bạn sẽ cần điền nội dung HTML mà bạn muốn hiển thị trong bảng. Trong trường hợp này, chúng tôi sẽ thêm các mục danh sách HTML có địa chỉ.
+
+```csharp
+// Thêm hàng có nội dung HTML
 DataRow dr = dt.NewRow();
 dr[0] = "<li>Department of Emergency Medicine: 3400 Spruce Street Ground Silverstein Bldg Philadelphia PA 19104-4206</li>";
 dt.Rows.Add(dr);
@@ -87,50 +66,88 @@ dt.Rows.Add(dr);
 dr = dt.NewRow();
 dr[0] = "<li>UPHS/Presbyterian - Dept. of Emergency Medicine: 51 N. 39th Street . Philadelphia PA 19104-2640</li>";
 dt.Rows.Add(dr);
+```
 
+Bước này đảm bảo rằng các ô trong bảng sẽ chứa nội dung được định dạng HTML, nội dung này sẽ được hiển thị chính xác bên trong tài liệu PDF.
+
+## Bước 3: Tạo một tài liệu PDF mới
+
+Sau khi có dữ liệu, bước tiếp theo là khởi tạo một tài liệu PDF mới. Tài liệu này sẽ đóng vai trò là canvas nơi chúng ta sẽ thêm bảng.
+
+```csharp
+// Khởi tạo một Tài liệu PDF mới
 Document doc = new Document();
 doc.Pages.Add();
+```
+
+Đoạn mã đơn giản này sẽ tạo một tài liệu PDF trống và thêm một trang mới vào đó, sau đó sẽ chứa bảng.
+
+## Bước 4: Chuẩn bị bàn
+
+Bây giờ, chúng ta sẽ tạo và thiết lập bảng bên trong tài liệu PDF. Bảng này sẽ xác định độ rộng cột và cài đặt đường viền của nó.
+
+```csharp
 // Khởi tạo một phiên bản mới của Bảng
 Aspose.Pdf.Table tableProvider = new Aspose.Pdf.Table();
-//Đặt độ rộng cột của bảng
-tableProvider.ColumnWidths = "400 50 ";
-// Đặt màu viền bảng là LightGray
+// Đặt độ rộng cột của bảng
+tableProvider.ColumnWidths = "400 50";
+// Đặt màu viền bảng thành LightGray
 tableProvider.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.5F, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
-// Đặt đường viền cho các ô của bảng
+// Đặt đường viền cho từng ô của bảng
 tableProvider.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.5F, Aspose.Pdf.Color.FromRgb(System.Drawing.Color.LightGray));
+```
+
+Trong bước này, bạn đã tạo thành công một bảng và thiết lập độ rộng cột và đường viền tùy chỉnh cho cả bảng và các ô của bảng. Độ rộng cột đảm bảo căn chỉnh dữ liệu bên trong bảng.
+
+## Bước 5: Xác định Padding và Nhập dữ liệu
+
+ Để tăng cường tính thẩm mỹ trực quan của bảng, chúng ta sẽ xác định phần đệm cho các ô. Sau đó, chúng ta nhập`DataTable` với nội dung HTML vào bảng PDF.
+
+```csharp
+// Đặt phần đệm cho các ô trong bảng
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin.Top = 2.5F;
 margin.Left = 2.5F;
 margin.Bottom = 1.0F;
 tableProvider.DefaultCellPadding = margin;
 
+// Nhập DataTable vào Bảng PDF
 tableProvider.ImportDataTable(dt, false, 0, 0, 3, 1, true);
+```
 
+Bằng cách thiết lập lề, chúng ta cung cấp cho các ô bảng một số không gian thở, làm cho nội dung hấp dẫn hơn về mặt thị giác.`ImportDataTable` phương pháp kéo vào`DataTable` chúng tôi đã tạo trước đó, đảm bảo rằng nội dung HTML được nhúng vào các ô.
+
+## Bước 6: Thêm Bảng vào PDF và Lưu
+
+Cuối cùng, chúng ta thêm bảng vào trang đầu tiên của tài liệu PDF và lưu tệp.
+
+```csharp
+// Thêm bảng vào trang đầu tiên của tài liệu PDF
 doc.Pages[1].Paragraphs.Add(tableProvider);
+
+// Lưu tài liệu PDF
 doc.Save(dataDir + "HTMLInsideTableCell_out.pdf");
 ```
 
+Ở bước này, bảng có nội dung HTML sẽ được đặt ở trang đầu tiên của tệp PDF và tệp sẽ được lưu vào thư mục đã chỉ định.
+
 ## Phần kết luận
-Trong hướng dẫn này, chúng ta đã học cách sử dụng thẻ HTML bên trong bảng trong tài liệu PDF bằng Aspose.PDF cho .NET. Bạn có thể sử dụng hướng dẫn từng bước này để chèn nội dung HTML vào các ô bảng trong tài liệu PDF bằng C#.
 
-### Câu hỏi thường gặp về thẻ HTML bên trong bảng trong tệp PDF
+Bằng cách làm theo các bước trên, bạn đã nhúng thành công các thẻ HTML vào các ô bảng trong tài liệu PDF bằng Aspose.PDF cho .NET. Hướng dẫn này trình bày cách bạn có thể tận dụng các tính năng mạnh mẽ của Aspose.PDF để tạo các tài liệu PDF động và hấp dẫn về mặt hình ảnh trong các ứng dụng .NET của mình. Cho dù bạn đang tạo hóa đơn, báo cáo hay bảng chi tiết có nội dung HTML, phương pháp này cung cấp nền tảng vững chắc cho nhu cầu thao tác PDF của bạn.
 
-#### H: Tôi có thể sử dụng các thẻ và thuộc tính HTML khác bên trong các ô của bảng không?
+## Câu hỏi thường gặp
 
- A: Có, bạn có thể sử dụng nhiều thẻ HTML và thuộc tính khác nhau bên trong các ô của bảng, chẳng hạn như`<b>`, `<i>`, `<a>`và nhiều hơn nữa. Aspose.PDF cho .NET hỗ trợ nhiều thành phần và kiểu HTML mà bạn có thể sử dụng để định dạng nội dung trong các ô của bảng.
+### Aspose.PDF có thể xử lý nội dung HTML phức tạp bên trong các ô của bảng không?  
+Có, Aspose.PDF có thể xử lý và hiển thị nhiều loại thẻ HTML bên trong các ô bảng, bao gồm danh sách, hình ảnh và liên kết.
 
-#### H: Tôi có thể áp dụng kiểu CSS cho nội dung HTML bên trong các ô của bảng không?
+### Làm thế nào để điều chỉnh kích thước các cột trong bảng?  
+ Bạn có thể kiểm soát chiều rộng của các cột bằng cách sử dụng`ColumnWidths` thuộc tính bằng cách chỉ định chiều rộng cho mỗi cột.
 
-A: Có, bạn có thể áp dụng các kiểu CSS cho nội dung HTML bên trong các ô bảng. Aspose.PDF cho .NET cung cấp hỗ trợ cho các kiểu CSS cơ bản có thể áp dụng cho các thành phần HTML.
+### Có thể định dạng văn bản bên trong ô của bảng không?  
+ Chắc chắn rồi! Bạn có thể sử dụng các thẻ HTML như`<b>`, `<i>` , Và`<u>` trong nội dung để định dạng văn bản bên trong các ô của bảng.
 
-#### H: Có thể thêm hình ảnh cùng với nội dung HTML vào các ô của bảng không?
+### Điều gì xảy ra nếu nội dung HTML của tôi quá lớn so với ô trong bảng?  
+Nếu nội dung tràn ra ngoài ô, bảng sẽ tự động điều chỉnh, nhưng bạn có thể tùy chỉnh kích thước ô và tùy chọn ngắt dòng để kiểm soát cách hiển thị nội dung.
 
- A: Có, bạn có thể thêm hình ảnh cùng với nội dung HTML bên trong các ô bảng. Bạn có thể sử dụng HTML`<img>` thẻ để bao gồm hình ảnh từ nhiều nguồn khác nhau, chẳng hạn như tệp cục bộ hoặc URL.
-
-#### H: Làm thế nào để chỉ định độ rộng cột khác nhau cho bảng?
-
- A: Bạn có thể chỉ định các chiều rộng cột khác nhau cho bảng bằng cách sử dụng`ColumnWidths` thuộc tính của bảng. Thuộc tính này lấy một chuỗi chứa các giá trị được phân tách bằng dấu cách, trong đó mỗi giá trị biểu thị chiều rộng của một cột theo điểm.
-
-#### H: Tôi có thể sử dụng bảng lồng nhau bên trong ô có nội dung HTML không?
-
-A: Có, bạn có thể sử dụng các bảng lồng nhau bên trong một ô có nội dung HTML. Bạn có thể tạo các phiên bản bảng riêng biệt và thêm chúng như một phần của nội dung HTML bên trong một ô để đạt được hiệu ứng lồng nhau.
+### Tôi có thể thêm nhiều bảng vào một tài liệu PDF không?  
+Có, bạn có thể thêm nhiều bảng vào tài liệu PDF chỉ bằng cách lặp lại các bước thêm bảng, mỗi bước trên một trang hoặc phần mới của PDF.

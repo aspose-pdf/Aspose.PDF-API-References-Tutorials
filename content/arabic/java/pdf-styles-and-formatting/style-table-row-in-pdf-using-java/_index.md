@@ -111,7 +111,7 @@ cell.getParagraphs().add(text);
 
 Aspose.PDF for Java هي مكتبة Java تتيح للمطورين إنشاء مستندات PDF ومعالجتها والعمل عليها في تطبيقات Java.
 
-### كيف أقوم بتثبيت Aspose.PDF لـ Java؟
+### كيف أقوم بتثبيت Aspose.PDF لـJava؟
 
  لتثبيت Aspose.PDF لـ Java، قم بتنزيل المكتبة من[هنا](https://releases.aspose.com/pdf/java/) وقم بإدراج ملف JAR في مشروع Java الخاص بك.
 

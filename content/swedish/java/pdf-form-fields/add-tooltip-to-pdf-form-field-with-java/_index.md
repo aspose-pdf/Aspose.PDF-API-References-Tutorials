@@ -2,7 +2,7 @@
 title: Lägg till verktygstips till PDF-formulärfält med Java
 linktitle: Lägg till verktygstips till PDF-formulärfält med Java
 second_title: Aspose.PDF Java PDF Processing API
-description: Lär dig hur du lägger till verktygstips till PDF-formulärfält med Java. Steg-för-steg-guide med Aspose.PDF för Java API.
+description: Lär dig hur du lägger till verktygstips i PDF-formulärfält med Java. Steg-för-steg-guide med Aspose.PDF för Java API.
 type: docs
 weight: 11
 url: /sv/java/pdf-form-fields/add-tooltip-to-pdf-form-field-with-java/

@@ -75,7 +75,7 @@ pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1A);
 ## 常見問題解答
 
 ### 什麼是 PDF/A？
-PDF/A 是 PDF 的 ISO 標準化版本，專為電子文件的數位保存而設計。
+PDF/A 是 PDF 的 ISO 標準化版本，專門用於電子文件的數位保存。
 
 ### 為什麼我應該驗證我的 PDF 文件？
 驗證可確保您的文件符合特定標準，這對於合規性、存檔和長期可訪問性至關重要。

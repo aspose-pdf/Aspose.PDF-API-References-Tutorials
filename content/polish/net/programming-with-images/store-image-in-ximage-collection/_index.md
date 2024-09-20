@@ -143,7 +143,7 @@ Kazałeś Aspose.PDF zapisać dokument pod podaną nazwą pliku. Po uruchomieniu
 
 ## Wniosek
 
-masz to! Nauczyłeś się, jak używać Aspose.PDF dla .NET do przechowywania obrazu w kolekcji XImage punkt po punkcie. Czyż nie jest satysfakcjonujące widzieć, jak Twój kod nabiera kształtu i generuje coś użytecznego? Niezależnie od tego, czy tworzysz aplikacje, czy po prostu chcesz zautomatyzować raporty, ten przewodnik stanowi świetny element podstawowy. Pamiętaj, że moc Aspose.PDF może pomóc Ci w wielu zadaniach wykraczających poza to, więc kontynuuj eksplorację!
+masz to! Nauczyłeś się, jak używać Aspose.PDF dla .NET, aby punkt po punkcie przechowywać obraz w kolekcji XImage. Czyż nie jest satysfakcjonujące widzieć, jak Twój kod nabiera kształtu i generuje coś użytecznego? Niezależnie od tego, czy tworzysz aplikacje, czy po prostu chcesz zautomatyzować raporty, ten przewodnik stanowi świetny element podstawowy. Pamiętaj, że moc Aspose.PDF może pomóc Ci w wielu zadaniach wykraczających poza to, więc kontynuuj eksplorację!
 
 ## Najczęściej zadawane pytania
 

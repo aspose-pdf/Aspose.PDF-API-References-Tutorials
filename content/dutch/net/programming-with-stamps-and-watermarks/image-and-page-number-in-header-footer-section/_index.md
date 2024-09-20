@@ -9,7 +9,7 @@ url: /nl/net/programming-with-stamps-and-watermarks/image-and-page-number-in-hea
 ---
 ## Invoering
 
-Als het aankomt op het maken van professionele PDF-documenten, is het essentieel om controle te hebben over kleine details zoals kop- en voetteksten. U wilt dat uw documenten er gepolijst en overzichtelijk uitzien, toch? Nou, met Aspose.PDF voor .NET kunt u naadloos afbeeldingen en paginanummers toevoegen aan de kop- en voettekstsecties van uw document. In deze tutorial leiden we u door elke stap, zodat u het gemakkelijk kunt volgen.
+Als het aankomt op het maken van professionele PDF-documenten, is het essentieel om controle te hebben over kleine details zoals kop- en voetteksten. U wilt dat uw documenten er gepolijst en overzichtelijk uitzien, toch? Nou, met Aspose.PDF voor .NET kunt u naadloos afbeeldingen en paginanummers toevoegen aan de kop- en voettekstsecties van uw document. In deze tutorial begeleiden we u door elke stap, zodat u het gemakkelijk kunt volgen.
 
 ## Vereisten
 

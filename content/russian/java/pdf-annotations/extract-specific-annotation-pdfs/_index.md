@@ -1,6 +1,6 @@
 ---
-title: Извлечение конкретных аннотаций из PDF-файлов
-linktitle: Извлечение конкретных аннотаций из PDF-файлов
+title: Извлечение определенных аннотаций из PDF-файлов
+linktitle: Извлечение определенных аннотаций из PDF-файлов
 second_title: API обработки Java PDF Aspose.PDF
 description: Узнайте, как извлекать определенные аннотации из PDF-файлов с помощью Aspose.PDF для Java. Это пошаговое руководство содержит примеры кода и часто задаваемые вопросы для эффективного извлечения аннотаций PDF-файлов.
 type: docs
@@ -79,7 +79,7 @@ for (Annotation annotation : pdfDocument.getPages().get_Item(1).getAnnotations()
 // Извлечь аннотации с определенной страницы (страница номер 2)
 Page page = pdfDocument.getPages().get_Item(2);
 for (Annotation annotation : page.getAnnotations()) {
-    // Процесс аннотаций на этой странице
+    // Аннотации процесса на этой странице
 }
 ```
 

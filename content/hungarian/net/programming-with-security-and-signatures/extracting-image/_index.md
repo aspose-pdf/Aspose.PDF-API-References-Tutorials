@@ -26,7 +26,7 @@ Először is be kell állítani egy fejlesztői környezetet a .NET-tel. Ez ált
 
 PDF-ek kezeléséhez szüksége lesz az Aspose.PDF könyvtárra. Ez a könyvtár lehetővé teszi a PDF-fájlok szabad kezelését, beleértve a képek kibontását is. Így szerezheti be:
 
--  Tudod[töltse le a legújabb verziót](https://releases.aspose.com/pdf/net/) Aspose.PDF .NET-hez.
+-  Megteheti[töltse le a legújabb verziót](https://releases.aspose.com/pdf/net/) Aspose.PDF .NET-hez.
 -  Ha vásárlás előtt szeretné kipróbálni, a[ingyenes próbaverzió](https://releases.aspose.com/) elérhető.
 -  Ha úgy dönt, hogy hosszú távon folytatja a használatát, megteheti[vásároljon licencet](https://purchase.aspose.com/buy) vagy akár[kérjen ideiglenes engedélyt](https://purchase.aspose.com/temporary-license/) tesztelési célokra.
 
@@ -73,7 +73,7 @@ using (Document pdfDocument = new Document(input))
     // Ez biztosítja, hogy a PDF megfelelően be legyen zárva, amikor végeztünk.
 }
 ```
- A`using` Az utasítás biztosítja, hogy a PDF-dokumentum megfelelő ártalmatlanítása, miután befejeztük a vele való munkát, megelőzve a memóriaszivárgást.
+ A`using` Az utasítás biztosítja, hogy a PDF-dokumentum megfelelő ártalmatlanítása, miután befejeztük a munkát, megelőzi a memóriaszivárgást.
 
 ## 3. lépés: Ismétlés az aláírási mezőkön keresztül
 

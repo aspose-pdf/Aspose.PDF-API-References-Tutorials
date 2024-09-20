@@ -51,7 +51,7 @@ using Aspose.Pdf;
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-代替`"YOUR DOCUMENT DIRECTORY"`與您的 PDF 檔案所在的實際路徑。將此視為設定藏寶圖的座標 - 您需要知道「X」標記位置的位置！
+代替`"YOUR DOCUMENT DIRECTORY"`與您的 PDF 檔案所在的實際路徑。將此視為設定藏寶圖的座標 - 您需要知道「X」標記的位置！
 
 ## 第 2 步：載入 PDF 文檔
 

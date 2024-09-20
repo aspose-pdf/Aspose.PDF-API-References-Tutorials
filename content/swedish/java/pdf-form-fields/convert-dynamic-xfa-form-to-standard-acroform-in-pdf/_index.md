@@ -8,9 +8,9 @@ weight: 12
 url: /sv/java/pdf-form-fields/convert-dynamic-xfa-form-to-standard-acroform-in-pdf/
 ---
 
-## Introduktion till Konvertering av Dynamic XFA Form till Standard AcroForm i PDF
+## Introduktion till att konvertera Dynamic XFA Form till Standard AcroForm i PDF
 
-en värld av PDF-manipulation och generering är behovet av att konvertera Dynamic XFA (XML Forms Architecture)-formulär till Standard AcroForms ett vanligt krav. XFA-former, kända för sina dynamiska och interaktiva funktioner, har sina fördelar. Ändå, i vissa fall, gör kompatibilitetsproblem och behovet av bredare tillgänglighet det nödvändigt att konvertera dem till de mer universellt stödda AcroForms. I den här guiden kommer vi att gå igenom processen steg-för-steg för att konvertera dynamiska XFA-formulär till standard AcroForms i PDF med Aspose.PDF för Java.
+en värld av PDF-manipulation och generering är behovet av att konvertera Dynamic XFA (XML Forms Architecture)-formulär till Standard AcroForms ett vanligt krav. XFA-former, kända för sina dynamiska och interaktiva funktioner, har sina fördelar. Ändå, i vissa fall, gör kompatibilitetsproblem och behovet av bredare tillgänglighet det nödvändigt att konvertera dem till de mer universellt stödda AcroForms. I den här guiden går vi igenom processen steg-för-steg för att konvertera dynamiska XFA-formulär till standard AcroForms i PDF med Aspose.PDF för Java.
 
 ## Förutsättningar
 

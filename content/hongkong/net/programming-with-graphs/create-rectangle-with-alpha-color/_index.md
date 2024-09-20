@@ -108,7 +108,7 @@ Console.WriteLine("\nRectangle object created successfully with alpha color.\nFi
 
 ## 結論
 
-現在你就得到它了！您剛剛使用 Aspose.PDF for .NET 建立了一個包含具有 alpha 顏色的矩形的 PDF。本教學向您展示如何使用該庫繪製具有透明顏色的形狀，這可以為您的文件增添時尚和實用的感覺。嘗試不同的形狀和顏色，了解如何進一步增強 PDF。
+現在你就擁有了！您剛剛使用 Aspose.PDF for .NET 建立了一個包含具有 alpha 顏色的矩形的 PDF。本教學向您展示如何使用該庫繪製具有透明顏色的形狀，這可以為您的文件增添時尚和實用的感覺。嘗試不同的形狀和顏色，了解如何進一步增強 PDF。
 
 ## 常見問題解答
 

@@ -2,208 +2,186 @@
 title: 在 PDF 文件中的图像周围放置文本
 linktitle: 在 PDF 文件中的图像周围放置文本
 second_title: Aspose.PDF for .NET API 参考
-description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中的图像周围放置文本。
+description: 了解如何使用 Aspose.PDF for .NET 在 PDF 中的图像周围放置文本。按照我们的分步指南创建并排显示图像和文本的专业 PDF。
 type: docs
 weight: 260
 url: /zh/net/programming-with-text/placing-text-around-image/
 ---
-在本教程中，我们将解释如何使用 .NET 的 Aspose.PDF 库在 PDF 文件中的图像周围放置文本。我们将逐步介绍如何使用提供的 C# 源代码创建表格、添加图像以及在图像周围定位文本的过程。
+## 介绍
 
-## 要求
+您是否曾尝试在 PDF 文件中的图像周围放置文本，但发现这很困难？如果是这样，那么您来对地方了！Aspose.PDF for .NET 使这个过程变得简单，允许您仅用几行代码将文本放在图像旁边。无论您是创建报告、文档还是演示文稿，此功能都是增强内容布局并使其更具视觉吸引力的绝佳方式。今天，我们将介绍如何使用 Aspose.PDF for .NET 在 PDF 文档中的图像周围放置文本。
 
-开始之前，请确保您已准备好以下物品：
+## 先决条件
 
-- 已安装 Aspose.PDF for .NET 库。
-- 对 C# 编程有基本的了解。
+在我们开始编写代码之前，让我们确保我们已经设置好了一切。以下是您需要的内容：
 
-## 步骤 1：设置文档目录
+-  Aspose.PDF for .NET：你可以从以下网址下载[这里](https://releases.aspose.com/pdf/net/).
+- Visual Studio：确保您已安装最新版本，以便顺利进行。
+- .NET Framework：此示例使用 .NET，因此请确保您的环境已设置为进行 .NET 开发。
+- 临时执照：您可以申请临时执照[这里](https://purchase.aspose.com/temporary-license/)如果您正在评估该产品。
 
-首先，您需要设置要保存生成的 PDF 文件的目录路径。替换`"YOUR DOCUMENT DIRECTORY"`在`dataDir`变量为您所需目录的路径。
+如果你尚未设置 Aspose.PDF for .NET，请按照[文档](https://reference.aspose.com/pdf/net/).
+
+## 导入命名空间
+
+在开始编码之前，我们需要导入必要的命名空间。以下是执行此操作的代码片段：
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+这些命名空间非常重要，因为它们提供了对以下类的访问：`Document`, `Page`, `Image`， 和`HtmlFragment`，我们将使用它来创建和操作 PDF。
+
+现在我们已经做好了准备，让我们来分析一下如何使用 Aspose.PDF for .NET 在 PDF 文件中的图像周围放置文本。我们将逐步指导您完成这一步。
+
+## 步骤 1：实例化文档对象
+
+首先，您需要创建一个 PDF 文档。在 Aspose.PDF 中，这是通过实例化`Document`对象。此对象将作为我们添加的所有内容的基础。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 ```
 
-## 步骤 2：创建文档和页面
+这里我们创建了一个空的 PDF 文档。它还没有任何页面，但不用担心，我们将在下一步中添加页面。
 
-接下来我们创建一个`Document`对象并使用`Pages.Add()`方法。
+## 步骤 2：向文档添加页面
+
+现在我们已经有了文档，是时候添加页面了。想象一下创建一张白纸，您可以在其中添加内容。
 
 ```csharp
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
 ```
 
-## 步骤 3：创建表
+此代码向文档添加了一个新页面。默认情况下，该页面是空白的，但我们即将更改这种情况。
 
-我们使用创建一个表`Table`类并将其添加到页面的段落集合中。
+## 步骤 3：创建表格来组织内容
+
+为了使图像和文本保持正确对齐，我们将使用表格。PDF 中的表格可以帮助构建布局，就像在 Word 文档或 HTML 中一样。
 
 ```csharp
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
 page.Paragraphs.Add(table1);
 ```
 
-## 步骤 4：设置表格列宽和边距
+此代码片段创建一个表格并将其添加到页面。将表格视为对齐图像和文本的框架。
 
-我们设置表格的列宽并创建`MarginInfo`对象来设置边距。
+## 步骤 4：设置表格的列宽
 
-```csharp
-table1. ColumnWidths = "120,270";
-Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
-margin. Top = 5f;
-margin. Left = 5f;
-margin. Right = 5f;
-margin. Bottom = 5f;
-table1. DefaultCellPadding = margin;
-```
-
-## 步骤 5：向表中添加图像
-
-我们创建了一个`Image`对象，指定图片文件路径，设置图片的固定高度和宽度，然后我们将图片添加到表格单元格的段落集合中。
+现在我们已经添加了一个表格，我们需要定义列的宽度。这可以确保图像和文本在页面上的大小合适。
 
 ```csharp
-Aspose.Pdf.Image logo = new Aspose.Pdf.Image();
-logo.File = dataDir + "aspose-logo.jpg";
-logo.FixHeight = 120;
-logo.FixWidth = 110;
-row1.Cells.Add();
-row1.Cells[0].Paragraphs.Add(logo);
-```
-
-## 步骤 6：在图片周围添加文字
-
-我们创建包含 HTML 格式文本的字符串变量，并创建一个`HtmlFragment`对象。然后，我们将 HTML 文本添加到包含图像的表格单元格中。
-
-```csharp
-string TitleString = "<font face=\"Arial\" size=6 color=\"#101090\"><b>Aspose.Pdf for .NET</b></font>";
-string BodyString1 = "<font face=\"Arial\" size=2><br/>Aspose.Pdf for .NET is a non-graphical PDF� document reporting component that enables .NET applications to <b> create PDF documents from scratch </b> without utilizing Adobe Acrobat�. Aspose.Pdf for .NET is very affordably priced and offers a wealth of strong features including: compression, tables, graphs, images, hyperlinks, security and custom fonts. </font>" ;
-
-Aspose.Pdf.HtmlFragment TitleText = new Aspose.Pdf.HtmlFragment(TitleString + BodyString1);
-row1.Cells.Add();
-row1.Cells[1].Paragraphs.Add(TitleText);
-```
-
-## 步骤 7：添加其他文本
-
-我们创造另一个`HtmlFragment`包含附加 HTML 格式文本的对象并将其添加到单独的表格单元格中。
-
-```csharp
-string SecondRowString = "<font face=\"Arial\" size=2>Aspose.Pdf for .NET supports the creation of PDF files through API and XML or XSL-FO templates. Aspose.Pdf for .NET is very easy to use and is provided with 14 fully featured demos written in both C# and Visual Basic.</font>";
-Aspose.Pdf.HtmlFragment SecondRowText = new Aspose.Pdf.HtmlFragment(SecondRowString);
-SecondRow.Cells[0].Paragraphs.Add(SecondRowText);
-```
-
-## 步骤 8：保存 PDF 文档
-
-最后，我们将PDF文档保存到指定的输出文件。
-
-```csharp
-doc.Save(dataDir + "PlacingTextAroundImage_out.pdf");
-```
-
-### 使用 Aspose.PDF for .NET 在图像周围放置文本的示例源代码 
-```csharp
-//文档目录的路径。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-//实例化文档对象
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-//在 Pdf 中创建页面
-Aspose.Pdf.Page page = doc.Pages.Add();
-//实例化表对象
-Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-//在所需部分的段落集合中添加表格
-page.Paragraphs.Add(table1);
-//设置表格的列宽
 table1.ColumnWidths = "120 270";
-//创建 MarginInfo 对象并设置其左边距、下边距、右边距和上边距
+```
+
+此行设置两列的宽度——一列用于图片，一列用于文本。如果您的图片或文本需要更多或更少的空间，请调整这些值。
+
+## 步骤 5：定义边距和填充
+
+为了确保一切看起来整洁，让我们给表格添加一些边距和填充。
+
+```csharp
 Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
 margin.Top = 5f;
 margin.Left = 5f;
 margin.Right = 5f;
 margin.Bottom = 5f;
-//将默认单元格填充设置为 MarginInfo 对象
 table1.DefaultCellPadding = margin;
-//在表格中创建行，然后在行中创建单元格
+```
+
+这些设置可确保您的表格具有一致的间距，使内容具有视觉吸引力。
+
+## 步骤 6：将图像插入表格
+
+现在，让我们进入最有趣的部分 — 添加图像。在本例中，我们将添加 Aspose 徽标，但您可以随意使用任何您喜欢的图像。
+
+```csharp
 Aspose.Pdf.Row row1 = table1.Rows.Add();
-//创建图像对象
 Aspose.Pdf.Image logo = new Aspose.Pdf.Image();
-//指定图像文件路径
 logo.File = dataDir + "aspose-logo.jpg";
-//指定图像固定高度
 logo.FixHeight = 120;
-//指定图像固定宽度
 logo.FixWidth = 110;
 row1.Cells.Add();
-//将图像添加到表格单元格的段落集合中
 row1.Cells[0].Paragraphs.Add(logo);
-//使用包含 html 标签的文本创建字符串变量
+```
+
+以下是具体情况：
+- 我们从您指定的目录加载图像。
+- 我们设置图像的高度和宽度。
+- 最后，我们将图像添加到表格的第一个单元格。
+
+## 步骤 7：在图像旁边添加文本
+
+现在图片已经就位，让我们在图片旁边添加一些文本。在本例中，我们将使用 HTML 格式的文本来设置内容样式。
+
+```csharp
 string TitleString = "<font face=\"Arial\" size=6 color=\"#101090\"><b> Aspose.Pdf for .NET</b></font>";
-string BodyString1 = "<font face=\"Arial\" size=2><br/>Aspose.Pdf for .NET is a non-graphical PDF� document reporting component that enables .NET applications to <b> create PDF documents from scratch </b> without utilizing Adobe Acrobat�. Aspose.Pdf for .NET is very affordably priced and offers a wealth of strong features including: compression, tables, graphs, images, hyperlinks, security and custom fonts. </font>";
-//创建一个文本对象添加到图像的右侧
+string BodyString1 = "<font face=\"Arial\" size=2><br/>Aspose.Pdf for .NET is a non-graphical PDF document reporting component that enables .NET applications to <b>create PDF documents from scratch</b> without utilizing Adobe Acrobat.</font>";
+
 Aspose.Pdf.HtmlFragment TitleText = new Aspose.Pdf.HtmlFragment(TitleString + BodyString1);
 row1.Cells.Add();
-//将包含 HTML 文本的文本段落添加到表格单元格
 row1.Cells[1].Paragraphs.Add(TitleText);
-//将行内容的垂直对齐方式设置为顶部
+```
+
+此块在图像旁边的单元格中添加了样式化的标题和描述。您可以使用 HTML 标签格式化文本，以实现更多自定义。
+
+## 步骤 8：调整垂直对齐
+
+默认情况下，表格单元格中的内容可能不会按您想要的方式对齐。在这种情况下，我们希望确保文本与单元格顶部对齐。
+
+```csharp
 row1.Cells[1].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-//在表格中创建行，然后在行中创建单元格
+```
+
+这可确保文本位于单元格的顶部，从而保持布局整洁和专业。
+
+## 步骤 9：在图片和说明下方添加更多文字
+
+您可能希望在图片和文本下方包含更多内容。为此，我们在表格中添加另一行。
+
+```csharp
 Aspose.Pdf.Row SecondRow = table1.Rows.Add();
 SecondRow.Cells.Add();
-//将第二行的行跨度值设置为 2
 SecondRow.Cells[0].ColSpan = 2;
-//将第二行的垂直对齐方式设置为“顶部”
 SecondRow.Cells[0].VerticalAlignment = Aspose.Pdf.VerticalAlignment.Top;
-string SecondRowString = "<font face=\"Arial\" size=2>Aspose.Pdf for .NET supports the creation of PDF files through API and XML or XSL-FO templates. Aspose.Pdf for .NET is very easy to use and is provided with 14 fully featured demos written in both C# and Visual Basic.</font>";
+
+string SecondRowString = "<font face=\"Arial\" size=2>Aspose.Pdf for .NET supports the creation of PDF files through API and XML or XSL-FO templates.</font>";
 Aspose.Pdf.HtmlFragment SecondRowText = new Aspose.Pdf.HtmlFragment(SecondRowString);
-//将包含 HTML 文本的文本段落添加到表格单元格
 SecondRow.Cells[0].Paragraphs.Add(SecondRowText);
-//保存 Pdf 文件
+```
+
+在这里，我们添加了另一行附加文本，跨越两列以保持布局平衡。
+
+## 步骤 10：保存 PDF 文档
+
+最后，我们需要保存文档，以便您可以查看更改。
+
+```csharp
 doc.Save(dataDir + "PlacingTextAroundImage_out.pdf");
 ```
 
+这将保存 PDF，其中的图像和文本格式正是我们想要的。
+
 ## 结论
 
-在本教程中，您学习了如何使用 .NET 的 Aspose.PDF 库在 PDF 文档中的图像周围放置文本。通过遵循分步指南并执行提供的 C# 代码，您可以创建表格、添加图像并在 PDF 文档中的图像周围放置文本。
+在 PDF 中的图像周围放置文本似乎是一项艰巨的任务，但 Aspose.PDF for .NET 简化了该过程。通过利用表格、图像和样式文本，您可以轻松创建具有专业外观的 PDF。只需几行代码，您就可以将内容准确地放置在您想要的位置，使您的文档具有精致且井井有条的外观。
 
-### 常见问题解答
+## 常见问题解答
 
-#### 问： “在 PDF 文件中的图像周围放置文本”教程的目的是什么？
+### 我可以使用此方法放置多张带有文字的图片吗？
+是的，只需在表中添加更多行和单元格即可包含更多图像和文本。
 
-答：“在 PDF 文件中的图像周围放置文本”教程演示了如何使用 .NET 的 Aspose.PDF 库在 PDF 文档中的图像周围放置文本。本教程提供了分步指南和 C# 源代码，以帮助您创建表格、添加图像并在图像周围放置文本。
+### 我可以改变图像的对齐方式吗？
+当然可以！您可以通过调整单元格的对齐属性来修改图像对齐。
 
-#### 问：为什么我要在 PDF 文档中的图像周围放置文本？
+### 我如何进一步设置文本样式？
+您可以在`HtmlFragment`对象应用各种样式，如粗体、斜体或不同的字体。
 
-答：在图片周围放置文字可增强 PDF 文档的视觉效果，使其更具吸引力和信息量。此技术通常用于文档、小册子、报告和其他需要以美观的方式结合图像和文本的材料。
+### 我可以控制文本和图像之间的间距吗？
+是的，使用`MarginInfo`对象允许您控制元素之间的填充和边距。
 
-#### 问：如何设置文档目录？
-
-A：设置文档目录：
-
-1. 代替`"YOUR DOCUMENT DIRECTORY"`在`dataDir`变量为您想要保存生成的 PDF 文件的目录的路径。
-
-#### 问：如何创建表格并向其中添加图像？
-
-答：本教程将指导您使用`Table`类并使用`Image`类。在将图像文件添加到表格单元格之前，您将指定图像文件的路径、高度和宽度。
-
-#### 问：如何在图像周围定位文字？
-
-答：要在图像周围放置文本，您将使用`HtmlFragment`类。此文本将包含标题和正文。然后，您将此 HTML 文本添加到与图像单元格相邻的表格单元格中。
-
-#### 问：我可以自定义文本和图像的外观吗？
-
-答：是的，您可以使用 HTML 标签和属性自定义文本和图片的外观。例如，您可以设置文本的字体大小、颜色、样式和对齐方式。此外，您还可以调整图片的大小和尺寸。
-
-#### 问：如何保存 PDF 文档？
-
-答：将图片和文本添加到表格后，您可以使用`Save`方法`Document`类。将所需的输出文件路径作为参数提供给`Save`方法。
-
-#### 问：本教程的预期输出是什么？
-
-答：按照本教程并执行提供的 C# 代码，您将生成一个 PDF 文档，该文档演示了如何在图像周围放置文本。输出文档将包含一个表格，表格周围放置有图像和文本。
-
-#### 问：我可以使用 JPG 以外的其他图像格式吗？
-
-答：是的，您可以使用 Aspose.PDF 库支持的不同图像格式，例如 PNG、BMP、GIF 等。创建`Image`对象，指定所需图像格式的文件路径。
-
-#### 问：本教程是否需要有效的 Aspose 许可证？
-
-答：是的，本教程需要有效的 Aspose 许可证才能正常运行。您可以从 Aspose 网站购买完整许可证或获取 30 天的临时许可证。
+### 是否可以在文本中添加链接？
+当然可以！您可以使用`<a>`标签。

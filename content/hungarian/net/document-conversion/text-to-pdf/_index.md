@@ -2,7 +2,7 @@
 title: Szöveg PDF-be
 linktitle: Szöveg PDF-be
 second_title: Aspose.PDF for .NET API Reference
-description: Ebből a lépésről lépésre szóló útmutatóból megtudhatja, hogyan konvertálhat szöveges fájlokat PDF-be az Aspose.PDF for .NET használatával. Tökéletes azoknak a fejlesztőknek, akik szeretnék továbbfejleszteni alkalmazásaikat.
+description: Ebből a lépésenkénti útmutatóból megtudhatja, hogyan konvertálhat szöveges fájlokat PDF-be az Aspose.PDF for .NET használatával. Tökéletes azoknak a fejlesztőknek, akik szeretnék továbbfejleszteni alkalmazásaikat.
 type: docs
 weight: 300
 url: /hu/net/document-conversion/text-to-pdf/

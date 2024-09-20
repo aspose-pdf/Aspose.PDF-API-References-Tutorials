@@ -9,7 +9,7 @@ url: /fr/net/programming-with-stamps-and-watermarks/counting-artifacts/
 ---
 ## Introduction
 
-Lorsqu'il s'agit de gérer des fichiers PDF, de nombreux éléments supplémentaires peuvent être cachés dans le fichier, comme des filigranes, des annotations et d'autres artefacts. La compréhension de ces éléments peut être cruciale pour des tâches allant de l'audit d'un document à sa préparation pour votre prochaine grande présentation. Si vous vous êtes déjà demandé comment compter ces artefacts gênants (en particulier les filigranes) dans un fichier PDF à l'aide d'Aspose.PDF pour .NET, vous allez vous régaler ! Dans ce didacticiel, nous allons décomposer le processus étape par étape, afin que vous puissiez le suivre en toute confiance. 
+Lorsqu'il s'agit de gérer des fichiers PDF, de nombreux éléments supplémentaires peuvent être cachés dans le fichier, comme des filigranes, des annotations et d'autres artefacts. La compréhension de ces éléments peut être cruciale pour des tâches allant de l'audit d'un document à sa préparation pour votre prochaine grande présentation. Si vous vous êtes déjà demandé comment compter ces artefacts embêtants (en particulier les filigranes) dans un fichier PDF à l'aide d'Aspose.PDF pour .NET, vous allez vous régaler ! Dans ce didacticiel, nous allons décomposer le processus étape par étape, afin que vous puissiez le suivre en toute confiance. 
 
 ## Prérequis
 

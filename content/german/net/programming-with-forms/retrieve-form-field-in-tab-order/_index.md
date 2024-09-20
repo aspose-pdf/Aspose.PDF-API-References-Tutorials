@@ -9,7 +9,7 @@ url: /de/net/programming-with-forms/retrieve-form-field-in-tab-order/
 ---
 ## Einführung
 
-Das Verwalten von PDF-Dokumenten und das Sicherstellen, dass sie wie erwartet funktionieren, insbesondere bei interaktiven Feldern, kann manchmal wie das Hüten von Katzen erscheinen. Aber keine Sorge, mit den richtigen Tools können Sie die Kontrolle übernehmen und dafür sorgen, dass Ihre PDFs genau so funktionieren, wie Sie es möchten. In diesem Handbuch erfahren Sie, wie Sie Formularfelder in der Tabulatorreihenfolge mit Aspose.PDF für .NET abrufen. Dies ist ein wichtiger Trick, um die Benutzererfahrung zu optimieren und sicherzustellen, dass die Formularnavigation nahtlos ist. 
+Das Verwalten von PDF-Dokumenten und das Sicherstellen, dass sie wie erwartet funktionieren, insbesondere bei interaktiven Feldern, kann sich manchmal wie das Hüten von Katzen anfühlen. Aber keine Sorge, mit den richtigen Tools können Sie die Kontrolle übernehmen und dafür sorgen, dass Ihre PDFs genau so funktionieren, wie Sie es möchten. In diesem Handbuch erfahren Sie, wie Sie Formularfelder in der Tabulatorreihenfolge mit Aspose.PDF für .NET abrufen. Dies ist ein wichtiger Trick, um die Benutzererfahrung zu optimieren und sicherzustellen, dass die Formularnavigation nahtlos ist. 
 
 ## Voraussetzungen
 

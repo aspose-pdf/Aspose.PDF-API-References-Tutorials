@@ -118,7 +118,7 @@ Console.WriteLine("\nLinkAnnotation text color updated successfully.\nFile saved
 ## 常见问题解答
 
 ### 我可以将链接文本颜色更改为其他颜色吗？  
-是的，您可以将颜色更改为`System.Drawing.Color`命名空间。例如，`Color.Blue`或者`Color.Green`.
+是的，你可以将颜色更改为`System.Drawing.Color`命名空间。例如，`Color.Blue`或者`Color.Green`.
 
 ### 我可以一次更新多个页面上的文本吗？  
 是的，您可以循环遍历文档中的每一页，并应用相同的过程来更新所有页面上的链接。

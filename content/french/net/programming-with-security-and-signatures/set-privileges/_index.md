@@ -59,7 +59,7 @@ Tout d’abord, vous devez définir le chemin d’accès à votre répertoire de
 ```csharp
 string dataDir = "YOUR DOCUMENTS DIRECTORY";
 ```
- Remplacer`"YOUR DOCUMENTS DIRECTORY"` avec le répertoire réel de votre système où vous avez stocké votre`input.pdf`.
+ Remplacer`"YOUR DOCUMENTS DIRECTORY"` avec le répertoire réel sur votre système où vous avez stocké votre`input.pdf`.
 
 ## Étape 2 : Charger le fichier PDF source
 

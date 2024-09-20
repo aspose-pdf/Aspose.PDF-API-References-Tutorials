@@ -2,189 +2,165 @@
 title: テキストを検索してハイパーリンクを追加する
 linktitle: テキストを検索してハイパーリンクを追加する
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して、PDF 内のテキストを検索し、見つかったテキストにハイパーリンクを追加し、変更されたドキュメントを保存する方法を学習します。
+description: ステップバイステップのチュートリアルで、Aspose.PDF for .NET を使用して PDF でテキストを検索し、ハイパーリンクを追加する方法を学習します。
 type: docs
 weight: 450
 url: /ja/net/programming-with-text/search-text-and-add-hyperlink/
 ---
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメント内の特定のテキストを検索し、見つかったテキストにハイパーリンクを追加し、変更されたドキュメントを保存する方法について説明します。提供されている C# ソース コードでは、プロセスを段階的に示しています。
+## 導入
+
+PDF を操作するだけでなく、ハイパーリンクを挿入して強化する方法をお探しですか? まさにその通りです! 強力な Aspose.PDF for .NET ライブラリを使用すると、PDF ドキュメント内のテキスト パターンを検索し、シームレスにハイパーリンクを追加できます。情報を伝達するだけでなく、リンクをクリックするだけで読者を関連リソースに誘導するドキュメントがあると想像してください。すばらしいと思いませんか? このチュートリアルでは、正規表現を使用してテキストを検索し、PDF 内にハイパーリンクを追加する方法をステップごとに説明します。経験豊富な開発者でも、初心者でも、このプロセスはシンプルでやりがいのあるものであることがわかります。
 
 ## 前提条件
 
-チュートリアルを進める前に、次のものを用意してください。
+細かい点に入る前に、この手順に従うために必要なものがすべて揃っているかどうか確認しましょう。便利なチェックリストを以下に示します。
 
-- C# プログラミング言語に関する基本的な知識。
-- Aspose.PDF for .NET ライブラリがインストールされています。Aspose Web サイトから入手するか、NuGet を使用してプロジェクトにインストールできます。
+- .NET Framework: マシンに .NET Framework (バージョン 4.0 以上) がインストールされている必要があります。
+- Aspose.PDF for .NETライブラリ: プロジェクトにAspose.PDFライブラリへの参照をダウンロードして追加することを忘れないでください。[ここ](https://releases.aspose.com/pdf/net/).
+- IDE: コードを記述して実行するには、Visual Studio などの統合開発環境 (IDE) が必要です。
+- サンプル PDF ファイル: コードをテストできるサンプル PDF ファイルを取得します。シンプルな PDF を作成することも、既存のドキュメントのいずれかを使用することもできます。
 
-## ステップ1: プロジェクトを設定する
+このリストのすべてをチェックしたら、準備完了です!
 
-まず、好みの統合開発環境 (IDE) で新しい C# プロジェクトを作成し、Aspose.PDF for .NET ライブラリへの参照を追加します。
+## パッケージのインポート
 
-## ステップ2: 必要な名前空間をインポートする
+最初のステップは、必要なパッケージをインポートすることです。ここで、プロジェクトで使用するツールを指定します。手順は次のとおりです。
 
-必要な名前空間をインポートするには、C# ファイルの先頭に次の using ディレクティブを追加します。
+C# ファイルでは、まず先頭に次の名前空間を含めます。
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
-using Aspose.Pdf.Content;
-using Aspose.Pdf.Facades;
 using Aspose.Pdf.Text;
+using Aspose.Pdf.Facades;
+using System;
 ```
 
-## ステップ3: ドキュメントディレクトリへのパスを設定する
+これらの名前空間をインポートすることで、プログラムは Aspose.PDF が提供するすべての優れた機能にアクセスできるようになります。
 
-ドキュメントディレクトリへのパスを設定するには、`dataDir`変数：
+準備がすべて整ったので、いよいよ実行に移します。一連の手順で説明していきますので、よく読んでください。
+
+### ステップ1: ドキュメントディレクトリを設定する
+
+まず、PDFファイルの保存場所を指定する必要があります。`dataDir`変数をドキュメントのディレクトリを指すように変更します。方法は次のとおりです。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-交換する`"YOUR DOCUMENT DIRECTORY"`ドキュメント ディレクトリへの実際のパスを入力します。
+必ず交換してください`"YOUR DOCUMENT DIRECTORY"`ドキュメントへの実際のパスを入力します。
 
-## ステップ4: TextFragmentAbsorberを作成する
+### ステップ2: TextFragmentAbsorberを作成する
 
-作成する`TextFragmentAbsorber`入力された検索フレーズのすべてのインスタンスを検索するオブジェクト:
+次に、リンクしたいテキストを見つけるツールが必要です。`TextFragmentAbsorber`この小さなツールは、PDF 内の特定のテキスト パターンを検索するのに役立ちます。
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("\\d{4}-\\d{4}");
 ```
 
-交換する`"\\d{4}-\\d{4}"`希望する正規表現パターンを使用します。
+ここでは、4 桁の数字、ダッシュ、それに続く別の 4 桁の数字 (電話番号や年など) という特定のパターンを探しています。
 
-## ステップ5: 正規表現検索を有効にする
+### ステップ3: 正規表現検索を有効にする
 
-正規表現検索を有効にするには、`TextSearchOptions`吸収体の特性:
+すでに正規表現を使ってテキストパターンを見つけていますが、`absorber`有効になっていることを認識します。これは、適切に検索するために重要です。
 
 ```csharp
 absorber.TextSearchOptions = new TextSearchOptions(true);
 ```
 
-## ステップ6: PDF文書を開いてバインドする
+### ステップ4: PdfContentEditorを初期化する
 
-作成する`PdfContentEditor`オブジェクトを作成し、それをソース PDF ファイルにバインドします。
+吸収材の準備ができたので、次は`PdfContentEditor`PDF ファイルを操作します。このクラスを使用すると、PDF にバインドして操作できます。
 
 ```csharp
 PdfContentEditor editor = new PdfContentEditor();
+```
+
+### ステップ5: ソースPDFファイルをバインドする
+
+コンテンツ エディターの準備ができたら、作業する実際の PDF ファイルにそれをバインドします。
+
+```csharp
 editor.BindPdf(dataDir + "SearchRegularExpressionPage.pdf");
 ```
 
-交換する`"SearchRegularExpressionPage.pdf"` PDF ファイルの実際の名前を入力します。
+必ず交換してください`"SearchRegularExpressionPage.pdf"` PDF ファイルの名前を入力します。
 
-## ステップ7: ページの吸収剤を受け入れる
+### ステップ6: ページのアブソーバーを受け入れる
 
-ドキュメントの目的のページの吸収剤を受け入れます。
+ドキュメントの特定のページを検索したいことをエディターに知らせる必要があります。この場合は、ページ 1 を選択しましょう。
 
 ```csharp
 editor.Document.Pages[1].Accept(absorber);
 ```
 
-交換する`1`希望するページ番号を入力します。
+### ステップ7: テキストフラグメントをループする準備
 
-## ステップ8: 見つかったテキストにハイパーリンクを追加する
+これで、アブソーバーによって検出されたすべてのテキスト フラグメントをループする準備ができました。外観を微調整し、ハイパーリンクを設定します。
 
-取得したテキスト フラグメントをループし、それらにハイパーリンクを追加します。
+```csharp
+int[] dashArray = { };
+String[] LEArray = { };
+Color blue = Color.Blue;
+```
+
+ここでは、ハイパーリンクの色など、いくつかのパラメータを設定しています。
+
+### ステップ8: 各テキストフラグメントをループする
+
+検索に一致するすべてのテキスト フラグメントの色を変更し、ハイパーリンクを作成します。次のようになります。
 
 ```csharp
 foreach (TextFragment textFragment in absorber.TextFragments)
 {
     textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-    //テキストフラグメントの位置に基づいて四角形を作成する
-    System.Drawing.Rectangle rect = new System.Drawing.Rectangle((int)textFragment.Rectangle.LLX,
+    Rectangle rect = new Rectangle((int)textFragment.Rectangle.LLX,
         (int)Math.Round(textFragment.Rectangle.LLY), (int)Math.Round(textFragment.Rectangle.Width + 2),
         (int)Math.Round(textFragment.Rectangle.Height + 1));
-    //四角形にウェブリンクを追加する
-    editor.CreateWebLink(rect, "http://www.aspose.com"、1、System.Drawing.Color.Blue);
+    Enum[] actionName = new Enum[2] { Aspose.Pdf.Annotations.PredefinedAction.Document_AttachFile, Aspose.Pdf.Annotations.PredefinedAction.Document_ExtractPages };
+    
+    editor.CreateWebLink(rect, "http://www.aspose.com", 1, 青, アクション名);
+    editor.CreateLine(rect, "", (float)textFragment.Rectangle.LLX + 1, (float)textFragment.Rectangle.LLY - 1,
+        (float)textFragment.Rectangle.URX, (float)textFragment.Rectangle.LLY - 1, 1, 1, blue, "S", dashArray, LEArray);
 }
 ```
 
-交換する`"http://www.aspose.com"`目的のハイパーリンク URL を入力します。
+### ステップ9: 編集したPDFを保存する
 
-## ステップ9: 変更したドキュメントを保存して閉じる
-
-変更したドキュメントを保存し、エディターを閉じます。
+もうすぐ完了です。次は、変更内容を新しい PDF ファイルに保存します。
 
 ```csharp
 dataDir = dataDir + "SearchTextAndAddHyperlink_out.pdf";
 editor.Save(dataDir);
-editor.Close();
-Console.WriteLine("\nText replaced and hyperlink added successfully based on a regular expression.\nFile saved at " + dataDir);
 ```
 
-必ず交換してください`"SearchTextAndAddHyperlink_out.pdf"`希望する出力ファイル名を指定します。
+### ステップ10: エディターを閉じる
 
-### Aspose.PDF for .NET を使用してテキストを検索し、ハイパーリンクを追加するためのサンプル ソース コード 
+最後に、リソースを解放するためにドキュメントを閉じることを忘れないでください。
+
 ```csharp
-//ドキュメント ディレクトリへのパス。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-//入力された検索フレーズのすべてのインスタンスを検索するためのアブソーバーオブジェクトを作成します
-TextFragmentAbsorber absorber = new TextFragmentAbsorber("\\d{4}-\\d{4}");
-//正規表現検索を有効にする
-absorber.TextSearchOptions = new TextSearchOptions(true);
-//ドキュメントを開く
-PdfContentEditor editor = new PdfContentEditor();
-//ソースPDFファイルをバインドする
-editor.BindPdf(dataDir + "SearchRegularExpressionPage.pdf");
-//ページの吸収剤を受け入れる
-editor.Document.Pages[1].Accept(absorber);
-int[] dashArray = { };
-String[] LEArray = { };
-System.Drawing.Color blue = System.Drawing.Color.Blue;
-//フラグメントをループする
-foreach (TextFragment textFragment in absorber.TextFragments)
-{
-	textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-	System.Drawing.Rectangle rect = new System.Drawing.Rectangle((int)textFragment.Rectangle.LLX,
-		(int)Math.Round(textFragment.Rectangle.LLY), (int)Math.Round(textFragment.Rectangle.Width + 2),
-		(int)Math.Round(textFragment.Rectangle.Height + 1));
-	Enum[] actionName = new Enum[2] { Aspose.Pdf.Annotations.PredefinedAction.Document_AttachFile, Aspose.Pdf.Annotations.PredefinedAction.Document_ExtractPages };
-	editor.CreateWebLink(rect, "http://Www.aspose.com", 1, blue, actionName);
-	editor.CreateLine(rect, "", (float)textFragment.Rectangle.LLX + 1, (float)textFragment.Rectangle.LLY - 1,
-		(float)textFragment.Rectangle.URX, (float)textFragment.Rectangle.LLY - 1, 1, 1, blue, "S", dashArray, LEArray);
-}
-dataDir = dataDir + "SearchTextAndAddHyperlink_out.pdf";
-editor.Save(dataDir);
 editor.Close();
 Console.WriteLine("\nText replaced and hyperlink added successfully based on a regular expression.\nFile saved at " + dataDir);
 ```
+
+これで、検索結果に基づいて動的に生成されたハイパーリンクを含む PDF が作成されました。すばらしいと思いませんか?
 
 ## 結論
 
-おめでとうございます! Aspose.PDF for .NET を使用して、PDF ドキュメント内の特定のテキストを検索し、見つかったテキストにハイパーリンクを追加し、変更したドキュメントを保存する方法を学習しました。このチュートリアルでは、プロジェクトのセットアップから必要なアクションの実行まで、ステップ バイ ステップのガイドを提供しました。これで、このコードを独自の C# プロジェクトに組み込んで、PDF ファイル内のテキストを操作し、ハイパーリンクを追加できるようになりました。
+これで完了です。これらの手順に従うことで、Aspose.PDF for .NET ライブラリを使用して PDF を検索し、ハイパーリンクを追加する方法を学習しました。これにより、特にインタラクティブ性を必要とするドキュメントを扱っている場合に、可能性の世界が広がります。わずか数行のコードで、関連リソース、参照 Web サイト、さらには内部ページへのリンクを追加できることを想像してみてください。
+## よくある質問
 
-### よくある質問
+### Aspose.PDF for .NET とは何ですか?  
+Aspose.PDF for .NET は、開発者が .NET アプリケーションで PDF ドキュメントを作成、操作、管理できるようにするライブラリです。
 
-#### Q: 「テキストの検索とハイパーリンクの追加」チュートリアルの目的は何ですか?
+### Aspose.PDF for .NET をダウンロードするにはどうすればいいですか?  
+ライブラリをダウンロードできます[ここ](https://releases.aspose.com/pdf/net/).
 
-A: 「テキストの検索とハイパーリンクの追加」チュートリアルは、.NET 用の Aspose.PDF ライブラリを使用して PDF ドキュメント内の特定のテキストを検索し、見つかったテキストにハイパーリンクを追加して、変更したドキュメントを保存する方法を示すことを目的としています。このチュートリアルでは、包括的なガイドと C# コード サンプルが提供され、手順を追ってプロセスを説明します。
+### Aspose.PDF を無料で試すことはできますか?  
+もちろんです！無料トライアルをご利用いただけます[ここ](https://releases.aspose.com/).
 
-#### Q: このチュートリアルは、PDF ドキュメント内の特定のテキストにハイパーリンクを追加するのにどのように役立ちますか?
+### Aspose 製品のサポートはありますか?  
+はい、サポートやコミュニティのディスカッションを見つけることができます[ここ](https://forum.aspose.com/c/pdf/10).
 
-A: このチュートリアルでは、Aspose.PDF ライブラリを使用して PDF ドキュメント内の特定のテキストを検索し、特定したテキストにハイパーリンクを適用し、変更した PDF を保存するプロセスについて説明します。プロジェクトの設定、ドキュメントの読み込み、正規表現検索の有効化、見つかったテキストへのハイパーリンクの追加などの重要な手順について説明します。
-
-#### Q: このチュートリアルを実行するために必要な前提条件は何ですか?
-
-A: 始める前に、C# プログラミング言語の基礎を理解しておく必要があります。また、Aspose.PDF for .NET ライブラリがインストールされている必要があります。このライブラリは、Aspose Web サイトから取得するか、プロジェクトで NuGet を使用してインストールできます。
-
-#### Q: このチュートリアルに従うためにプロジェクトを設定するにはどうすればよいですか?
-
-A: まず、お好みの統合開発環境 (IDE) で新しい C# プロジェクトを作成します。次に、Aspose.PDF for .NET ライブラリへの参照を追加します。これにより、プロジェクトでライブラリの機能を利用できるようになります。
-
-#### Q: このチュートリアルを使用して特定のテキストにハイパーリンクを追加できますか?
-
-A: はい、このチュートリアルでは、PDF ドキュメント内の特定のテキストにハイパーリンクを追加することに特に焦点を当てています。正規表現を使用して目的のテキストを検索して抽出し、テキスト フラグメントに関連付けられたハイパーリンクを作成し、変更した PDF を保存する方法を説明します。
-
-#### Q: 検索するテキストを定義してハイパーリンクを追加するにはどうすればよいですか?
-
- A: 検索したいテキストを指定してハイパーリンクを追加するには、`TextFragmentAbsorber`オブジェクトを作成し、そのパターンを`Text`パラメータ。デフォルトのパターンを置き換える`"\\d{4}-\\d{4}"`チュートリアルのコードに、希望する正規表現パターンを入力します。
-
-#### Q: テキストの正規表現検索を有効にするにはどうすればいいですか?
-
- A: 正規表現検索は、`TextSearchOptions`オブジェクトとその値を設定する`true`このオブジェクトを`TextSearchOptions`の財産`TextFragmentAbsorber`インスタンス。これにより、テキスト検索中に正規表現パターンが適用されるようになります。
-
-#### Q: 見つかったテキストにハイパーリンクを追加するにはどうすればよいですか?
-
- A: テキストの断片を`TextFragmentAbsorber`チュートリアルでは、これらのフラグメントを反復処理するループを提供します。各テキストフラグメントについて、チュートリアルではテキストの色を青に設定し、`CreateWebLink`方法。
-
-#### Q: ハイパーリンクを含む変更された PDF を保存する手順は何ですか?
-
- A: 目的のテキストフラグメントにハイパーリンクを追加した後、`PdfContentEditor`クラスを使用して、変更したドキュメントを保存します。チュートリアルのサンプル コードでは、編集した PDF を保存し、エディターを閉じて、成功メッセージを表示する方法を示します。
+### Aspose.PDF の一時ライセンスを取得するにはどうすればよいですか?  
+一時ライセンスを申請できます[ここ](https://purchase.aspose.com/temporary-license/).

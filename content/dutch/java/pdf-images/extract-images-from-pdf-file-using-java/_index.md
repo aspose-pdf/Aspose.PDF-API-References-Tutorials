@@ -71,7 +71,7 @@ In deze stapsgewijze handleiding hebben we geleerd hoe u afbeeldingen uit een PD
 
 ### Kan ik afbeeldingen van een specifieke pagina in de PDF halen?
 
-Ja, u kunt afbeeldingen uit een specifieke pagina in de PDF extraheren door het paginanummer op te geven bij het itereren door de pagina's. Ga eenvoudig naar de gewenste pagina via de index en extraheer afbeeldingen zoals getoond in het codevoorbeeld.
+Ja, u kunt afbeeldingen uit een specifieke pagina in de PDF extraheren door het paginanummer op te geven bij het itereren door de pagina's. Ga eenvoudig naar de gewenste pagina via de index en extraheer afbeeldingen zoals weergegeven in het codevoorbeeld.
 
 ### Is Aspose.PDF voor Java compatibel met verschillende PDF-formaten?
 

@@ -48,7 +48,7 @@ page.getParagraphs().add(textFragment);
 pdfDocument.save("output.pdf");
 ```
 
-Ez a kód létrehoz egy új PDF dokumentumot, hozzáad egy oldalt, és beszúrja a "Hello, Aspose.PDF!" az oldalon. Az eredményül kapott PDF-fájl neve „output.pdf”.
+Ez a kód létrehoz egy új PDF dokumentumot, hozzáad egy oldalt, és beszúrja a "Hello, Aspose.PDF!" oldalon. Az eredményül kapott PDF-fájl neve „output.pdf”.
 
 ## Szövegszerkezeti elemek kezelése
 

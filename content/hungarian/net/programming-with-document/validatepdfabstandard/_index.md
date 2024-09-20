@@ -66,7 +66,7 @@ Ez a kritikus lépés: a PDF-fájl érvényesítése annak ellenőrzésére, hog
 pdfDocument.Validate(dataDir + "validation-result-A1A.xml", PdfFormat.PDF_A_1B);
 ```
 
-Bontsuk fel:
+Bontsuk szét:
 -  A`Validate` módszer két paramétert igényel. Az első az az útvonal, ahová az érvényesítési eredmények mentésre kerülnek. A második az a PDF/A formátum, amelyre ellenőrzi – ebben az esetben`PDF_A_1B`.
 - Az eredményeket a rendszer egy XML-fájlba menti, részletezve, hogy a dokumentum átment-e az érvényesítésen, és vannak-e problémák.
 

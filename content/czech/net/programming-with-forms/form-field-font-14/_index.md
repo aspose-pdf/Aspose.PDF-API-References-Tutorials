@@ -59,7 +59,7 @@ Document pdfDocument = new Document(dataDir + "FormFieldFont14.pdf");
 Aspose.Pdf.Forms.Field field = pdfDocument.Form["textbox1"] as Aspose.Pdf.Forms.Field;
 ```
 
- Zde používáme`Form` vlastnictví`Document` objekt k načtení polí formuláře obsažených v PDF. Chceme se konkrétně zaměřit`"textbox1"`.
+ Zde používáme`Form` vlastnictvím`Document` objekt k načtení polí formuláře obsažených v PDF. Chceme se konkrétně zaměřit`"textbox1"`.
 
 ## Krok 3: Vytvořte objekt písma
 

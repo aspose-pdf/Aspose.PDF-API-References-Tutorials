@@ -140,7 +140,7 @@ En daar gaat u! U hebt het zoomniveau van een PDF-document succesvol gewijzigd m
 
 Zoomen naar de inhoud van een PDF lijkt misschien een kleine taak, maar het kan de presentatie en ervaringen van uw document aanzienlijk verbeteren. Of u nu werkt aan een bedrijfsrapport, educatief materiaal of zelfs een persoonlijk project, deze eenvoudige stappen kunnen de leesbaarheid en professionaliteit verbeteren.
 
-Ontdek gerust de verdere mogelijkheden van Aspose.PDF, want het biedt een overvloed aan functionaliteiten om uw PDF-manipulatiespel naar een hoger niveau te tillen. En vergeet niet, oefening baart kunst!
+Voel je vrij om de verdere mogelijkheden van Aspose.PDF te verkennen, want het biedt een overvloed aan functionaliteiten om je PDF-manipulatiespel naar een hoger niveau te tillen. En vergeet niet, oefening baart kunst!
 
 ## Veelgestelde vragen
 
@@ -151,7 +151,7 @@ Ontdek gerust de verdere mogelijkheden van Aspose.PDF, want het biedt een overvl
  U kunt uitgebreide documentatie vinden[hier](https://reference.aspose.com/pdf/net/).
 
 ### Is het mogelijk om ook op andere pagina's dan de eerste te zoomen?
-Absoluut! Je hoeft alleen de pagina-index in de code aan te passen om andere pagina's te targeten.
+Absoluut! Je hoeft alleen maar de pagina-index in de code aan te passen om andere pagina's te targeten.
 
 ### Wat is een tijdelijke licentie?
 Met een tijdelijke licentie kunt u Aspose.PDF met alle functies voor een beperkte tijd uitproberen.[hier](https://purchase.aspose.com/temporary-license/).

@@ -82,7 +82,7 @@ Sla de gegenereerde SVG-afbeelding op in een bestand.
 
 ## Uitzonderingen afhandelen
 
-Uitzonderingsverwerking is essentieel om ervoor te zorgen dat uw code onverwachte situaties op een soepele manier afhandelt.
+Uitzonderingsverwerking is essentieel om ervoor te zorgen dat uw code onverwachte situaties op een correcte manier afhandelt.
 
 ## Foutverwerking toevoegen
 

@@ -14,7 +14,7 @@ url: /zh-hant/java/pdf-conversion-transformation/convert-pdfs-to-xps-format/
 
 ## 什麼是 Java 版 Aspose.PDF？
 
-Aspose.PDF for Java 是一個 Java 函式庫，可讓開發人員在 Java 應用程式中建立、操作和轉換 PDF 文件。它提供了廣泛的功能，包括 PDF 到 XPS 轉換，使其成為高效處理文件格式的寶貴工具。
+Aspose.PDF for Java 是一個 Java 函式庫，可讓開發人員在 Java 應用程式中建立、操作和轉換 PDF 文件。它提供了廣泛的功能，包括 PDF 到 XPS 的轉換，使其成為高效處理文件格式的寶貴工具。
 
 ## 為什麼要將 PDF 轉換為 XPS 格式？
 

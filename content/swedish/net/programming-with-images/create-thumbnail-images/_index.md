@@ -103,7 +103,7 @@ En upplösning på 300 DPI (punkter per tum) är standard för kvalitetsbilder. 
 JpegDevice jpegDevice = new JpegDevice(45, 59, resolution, 100);
 ```
 
-Här anger vi miniatyrernas dimensioner och kvaliteten. I det här fallet har vi angett måtten till 45x59 pixlar men kan justera dessa värden efter vad som behövs för din applikation.
+Här anger vi miniatyrbildernas mått och kvaliteten. I det här fallet har vi angett måtten till 45x59 pixlar men kan justera dessa värden efter vad som behövs för din applikation.
 
 ### Steg 4.4: Bearbeta varje sida
 
@@ -141,7 +141,7 @@ Aspose.PDF är ett kraftfullt bibliotek för att arbeta med PDF-dokument i .NET-
 Ja, du kan ändra parametrarna för bredd och höjd i JpegDevice-konstruktorn för att justera miniatyrstorlekar.
 
 ### Finns det några prestandaöverväganden vid konvertering av stora PDF-filer?  
-Ja, större filer kan ta längre tid att bearbeta beroende på upplösningen och antalet sidor; att optimera dessa parametrar kan bidra till att förbättra prestandan.
+Ja, större filer kan ta längre tid att bearbeta beroende på upplösningen och antalet sidor; Att optimera dessa parametrar kan bidra till att förbättra prestandan.
 
 ### Var kan jag hitta mer resurser och support?  
  Du kan hitta fler resurser och gemenskapsstöd på[Aspose forum](https://forum.aspose.com/c/pdf/10).

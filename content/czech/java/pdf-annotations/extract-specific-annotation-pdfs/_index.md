@@ -2,7 +2,7 @@
 title: Extrahujte konkrétní anotaci z PDF
 linktitle: Extrahujte konkrétní anotaci z PDF
 second_title: Aspose.PDF Java PDF Processing API
-description: Naučte se extrahovat konkrétní anotace z PDF pomocí Aspose.PDF pro Java. Tento podrobný průvodce poskytuje příklady kódu a často kladené otázky pro efektivní extrakci anotací PDF.
+description: Naučte se extrahovat konkrétní anotace z PDF pomocí Aspose.PDF for Java. Tento podrobný průvodce poskytuje příklady kódu a často kladené otázky pro efektivní extrakci anotací PDF.
 type: docs
 weight: 14
 url: /cs/java/pdf-annotations/extract-specific-annotation-pdfs/

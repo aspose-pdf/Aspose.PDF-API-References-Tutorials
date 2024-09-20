@@ -2,193 +2,190 @@
 title: Bloc de texte caché dans le fichier PDF
 linktitle: Bloc de texte caché dans le fichier PDF
 second_title: Référence de l'API Aspose.PDF pour .NET
-description: Découvrez comment créer des blocs de texte masqués dans un fichier PDF à l'aide d'Aspose.PDF pour .NET.
+description: Créez des PDF interactifs avec des blocs de texte masqués à l'aide d'Aspose.PDF pour .NET. Ce didacticiel fournit un guide étape par étape pour améliorer vos documents.
 type: docs
 weight: 230
 url: /fr/net/programming-with-text/hidden-text-block/
 ---
-Dans ce tutoriel, nous allons expliquer comment créer un bloc de texte masqué dans un fichier PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. Un bloc de texte masqué est un texte flottant qui devient visible lorsque le curseur de la souris survole une zone spécifique. Nous allons suivre le processus étape par étape de création du bloc de texte masqué à l'aide du code source C# fourni.
+## Introduction
 
-## Exigences
+Dans le paysage numérique actuel, les PDF restent le format de référence pour tout, des contrats aux supports pédagogiques. Leur polyvalence et leur fiabilité sont inégalées. Mais que se passerait-il si vous pouviez ajouter une couche supplémentaire d'interactivité à vos PDF ? Nous plongeons dans le monde des blocs de texte cachés avec Aspose.PDF pour .NET, un outil puissant qui facilite plus que jamais la création de documents attrayants et conviviaux. Que vous soyez un développeur chevronné ou que vous débutiez, ce tutoriel est conçu pour vous, rempli d'instructions et de conseils étape par étape pour exploiter tout le potentiel de vos PDF !
 
-Avant de commencer, assurez-vous de disposer des éléments suivants :
+## Prérequis
 
-- La bibliothèque Aspose.PDF pour .NET installée.
-- Une compréhension de base de la programmation C#.
+Avant de retrousser nos manches et de commencer, assurons-nous que vous disposez de tout ce dont vous avez besoin. Voici ce dont vous aurez besoin :
 
-## Étape 1 : Configurer le répertoire de documents
+1. Aspose.PDF pour .NET : cette bibliothèque est essentielle pour travailler avec des fichiers PDF dans des applications .NET. Vous pouvez la consulter, la télécharger ou même obtenir un essai gratuit à partir du[Documentation PDF d'Aspose](https://reference.aspose.com/pdf/net/).
+2. .NET Framework : assurez-vous que .NET Framework est installé, car il est nécessaire pour exécuter la bibliothèque Aspose.PDF.
+3. Environnement de développement : un éditeur de code ou un environnement de développement intégré (IDE) comme Visual Studio facilitera le codage. 
+4. Connaissances de base en C# : Étant donné que nous allons programmer en C#, une compréhension de base du langage vous aidera à saisir les concepts beaucoup plus facilement.
+5. Passion pour l'apprentissage : Enfin et surtout, apportez votre enthousiasme ! Nous allons apprendre quelque chose d'extraordinaire aujourd'hui.
 
- Tout d'abord, vous devez définir le chemin d'accès au répertoire dans lequel vous souhaitez enregistrer le fichier PDF généré. Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le`dataDir` variable avec le chemin vers votre répertoire souhaité.
+Une fois ces conditions préalables remplies, vous êtes prêt à créer des blocs de texte cachés interactifs dans vos PDF !
+
+## Paquets d'importation
+
+Pour commencer à utiliser Aspose.PDF dans votre projet, vous devez importer les packages nécessaires. Voici comment procéder :
+
+### Créer un projet C#
+
+Tout d’abord, ouvrez votre Visual Studio ou n’importe quel IDE C# et créez un nouveau projet. Sélectionnez un type d’application console pour plus de simplicité.
+
+### Ajoutez Aspose.PDF à votre projet
+
+Vous devrez ajouter la bibliothèque Aspose.PDF à votre projet. Vous pouvez le faire via le gestionnaire de packages NuGet. Voici une solution rapide :
+
+```bash
+Install-Package Aspose.PDF
+```
+
+Cette commande récupérera les fichiers nécessaires pour vous permettre de travailler facilement avec des documents PDF.
+
+### Importer les espaces de noms requis
+
+Une fois le package installé, l'étape suivante consiste à importer les espaces de noms en haut de votre fichier C#. Cela rend toutes les fonctionnalités intéressantes d'Aspose accessibles :
+
+```csharp
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Forms;
+using Aspose.Pdf.Text;
+```
+
+Maintenant que votre environnement est configuré, décomposons le processus de création d'un bloc de texte masqué dans un fichier PDF étape par étape.
+
+## Étape 1 : Définissez votre répertoire de documents
+
+Définissez l'emplacement de vos fichiers. Cela permet de gérer vos documents en toute simplicité. Utilisez le code suivant pour configurer :
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
 ```
+
+ Assurez-vous de remplacer`"YOUR DOCUMENT DIRECTORY"` avec le chemin réel sur votre machine où vous souhaitez que le PDF soit créé.
 
 ## Étape 2 : Créer un exemple de document
 
-Dans cette étape, nous créons un exemple de document PDF et y ajoutons un fragment de texte. Le fragment de texte servira de déclencheur pour l'affichage du bloc de texte masqué.
+Créons maintenant un document PDF de base. Cette première étape consiste à initialiser le document PDF et à ajouter un fragment de texte qui sera le point focal de notre texte caché.
 
 ```csharp
-string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
 doc.Save(outputFile);
 ```
 
-## Étape 3 : Ouvrir le document
+Ici, nous ajoutons simplement une chaîne au document. Cela déclenchera l'action de texte masqué lorsque la souris passera dessus.
 
- Maintenant, nous ouvrons le document précédemment créé en utilisant le`Document` classe.
+## Étape 3 : Ouvrir le document créé
+
+Maintenant que nous avons notre document initial, ouvrons-le pour une édition ultérieure :
 
 ```csharp
 Document document = new Document(outputFile);
 ```
 
-## Étape 4 : Trouver le fragment de texte
+Cette ligne charge le document que nous venons de créer afin que nous puissions y apporter des modifications.
 
- Nous utilisons un`TextFragmentAbsorber`objet pour trouver le fragment de texte qui déclenchera l'affichage du bloc de texte caché. Dans ce cas, nous recherchons le texte exact "Déplacez le curseur de la souris ici pour afficher le texte flottant".
+## Étape 4 : créer un TextAbsorber pour rechercher des phrases
+
+ Ensuite, nous voulons identifier le fragment de texte avec lequel nous allons travailler. C'est là que le`TextFragmentAbsorber` entre en jeu :
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-document.Pages.Accept(absorb);
-TextFragmentCollection textFragments = absorb.TextFragments;
-TextFragment fragment = textFragments[1];
-```
-
-## Étape 5 : Créer le champ de texte masqué
-
- Nous créons un`TextBoxField` objet représentant le champ de texte masqué. Ce champ contiendra le texte qui devient visible lorsque le curseur de la souris survole le texte déclencheur.
-
-```csharp
-TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-floatingField.Value = "This is the \"floating text field\".";
-floatingField. ReadOnly = true;
-floatingField.Flags |= AnnotationFlags.Hidden;
-floatingField.PartialName = "FloatingField_1";
-floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
-floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
-floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
-floatingField.Border = new Border(floatingField);
-floatingField.Border.Width = 1;
-floatingField. Multiline = true;
-```
-
-## Étape 6 : ajouter le champ de texte masqué au document
-
-Nous ajoutons le champ de texte caché à la collection de formulaires du document.
-
-```csharp
-document.Form.Add(floatingField);
-```
-
-## Étape 7 : Créer le bouton invisible
-
-Nous créons un champ de bouton invisible qui sera positionné au-dessus du fragment de texte déclencheur. Ce champ de bouton comportera des actions associées aux événements d'entrée et de sortie de la souris.
-
-```csharp
-ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-buttonField.Actions.OnEnter = new HideAction(floatingField, false);
-buttonField.Actions.OnExit = new HideAction(floatingField);
-document.Form.Add(buttonField);
-```
-
-## Étape 8 : Enregistrer le document
-
-Enfin, nous sauvegardons le document modifié avec le bloc de texte masqué.
-
-```csharp
-document. Save(outputFile);
-```
-
-### Exemple de code source pour le bloc de texte masqué à l'aide d'Aspose.PDF pour .NET 
-```csharp
-// Le chemin vers le répertoire des documents.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
-// Créer un exemple de document avec du texte
-Document doc = new Document();
-doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
-doc.Save(outputFile);
-// Ouvrir un document avec du texte
-Document document = new Document(outputFile);
-//Créez un objet TextAbsorber pour trouver toutes les phrases correspondant à l'expression régulière
-TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-// Accepter l'absorbeur pour les pages du document
 document.Pages.Accept(absorber);
-// Obtenir le premier fragment de texte extrait
+```
+
+Dans cette étape, nous demandons à Aspose de rechercher le texte que nous avons spécifié précédemment.
+
+## Étape 5 : Extraire le fragment de texte
+
+Une fois que nous avons le fragment de texte, nous allons l'extraire à l'aide du code suivant, qui nous permet de le manipuler davantage :
+
+```csharp
 TextFragmentCollection textFragments = absorber.TextFragments;
 TextFragment fragment = textFragments[1];
-//Créer un champ de texte masqué pour le texte flottant dans le rectangle spécifié de la page
+```
+
+Ici, nous nous concentrons sur le premier fragment qui a été absorbé. Si vous aviez plus de texte, vous pourriez vouloir parcourir la collection.
+
+## Étape 6 : Créer le champ de texte masqué
+
+Passons maintenant à la magie ! Créez un champ de texte masqué qui s'affiche lorsque l'utilisateur passe la souris sur le texte spécifié. Utilisez cet extrait de code :
+
+```csharp
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-// Définir le texte à afficher comme valeur de champ
 floatingField.Value = "This is the \"floating text field\".";
-// Nous recommandons de rendre le champ « en lecture seule » pour ce scénario
 floatingField.ReadOnly = true;
-// Définissez l'indicateur « masqué » pour rendre le champ invisible à l'ouverture du document
 floatingField.Flags |= AnnotationFlags.Hidden;
-// La définition d'un nom de champ unique n'est pas nécessaire mais autorisée
+```
+
+Ce code définit la position du texte flottant et définit ses propriétés, notamment en le rendant en lecture seule et masqué par défaut.
+
+## Étape 7 : Personnaliser l’apparence du champ
+
+Donnez un peu de style à votre texte flottant ! Personnalisez l'apparence par défaut du champ de texte flottant :
+
+```csharp
 floatingField.PartialName = "FloatingField_1";
-// La définition des caractéristiques de l'apparence du champ n'est pas nécessaire mais l'améliore
-floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
-floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
-floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
+floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, Color.Blue);
+floatingField.Characteristics.Background = Color.LightBlue;
+floatingField.Characteristics.Border = Color.DarkBlue;
 floatingField.Border = new Border(floatingField);
 floatingField.Border.Width = 1;
 floatingField.Multiline = true;
-// Ajouter un champ de texte au document
+```
+
+De la taille de la police aux couleurs, vous pouvez modifier ces paramètres à votre guise, rendant l'interface plus conviviale et attrayante.
+
+## Étape 8 : ajouter le champ de texte au document
+
+Une fois le champ de texte configuré, il est temps d'ajouter le champ flottant au document :
+
+```csharp
 document.Form.Add(floatingField);
-// Créer un bouton invisible sur la position du fragment de texte
+```
+
+Cette ligne intègre le champ de texte caché nouvellement créé dans votre PDF.
+
+## Étape 9 : créer un champ de bouton invisible
+
+Ce bouton gère les actions de survol du champ de texte flottant. Ajoutez le code suivant pour créer un bouton invisible :
+
+```csharp
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-// Créer une nouvelle action de masquage pour le champ spécifié (annotation) et l'indicateur d'invisibilité.
-// (Vous pouvez également faire référence au champ flottant par le nom si vous l'avez spécifié ci-dessus.)
-// Ajouter des actions sur l'entrée/sortie de la souris dans le champ du bouton invisible
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);
-// Ajouter un champ de bouton au document
-document.Form.Add(buttonField);
-// Enregistrer le document
+```
+
+Ici, nous avons configuré le bouton pour afficher le texte flottant lorsque la souris entre et pour le masquer lorsque la souris sort.
+
+## Étape 10 : Enregistrer le document
+
+Enfin, il est temps de sauvegarder votre travail et de voir le résultat :
+
+```csharp
 document.Save(outputFile);
 ```
 
+Avec cette action, votre PDF est désormais prêt avec une expérience interactive, offrant aux utilisateurs une toute nouvelle façon d’interagir avec votre contenu !
+
 ## Conclusion
 
-Dans ce didacticiel, vous avez appris à créer un bloc de texte masqué à l'aide de la bibliothèque Aspose.PDF pour .NET. En suivant le guide étape par étape, vous pouvez générer un document PDF avec un champ de texte masqué qui devient visible lorsque le curseur de la souris survole une zone spécifique. Vous pouvez personnaliser l'apparence et le comportement du bloc de texte masqué en fonction de vos besoins.
+Et voilà ! En suivant ces étapes, vous avez réussi à créer un bloc de texte masqué dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. Cette fonctionnalité simple mais puissante peut améliorer considérablement l'interaction de l'utilisateur au sein de vos documents. Que vous rédigiez des supports pédagogiques ou des ressources client, la possibilité de masquer et d'afficher des informations au survol apporte une touche moderne et soignée. 
 
-### FAQ
+## FAQ
 
-#### Q : Quel est le but du didacticiel « Bloc de texte masqué dans un fichier PDF » ?
+### Qu'est-ce qu'Aspose.PDF pour .NET ?  
+Aspose.PDF pour .NET est une bibliothèque robuste qui permet aux développeurs de créer, manipuler et convertir des documents PDF dans des applications .NET.
 
-R : Le didacticiel « Bloc de texte masqué dans un fichier PDF » explique comment créer un bloc de texte masqué dans un fichier PDF à l'aide de la bibliothèque Aspose.PDF pour .NET. Un bloc de texte masqué est un texte flottant qui devient visible lorsque le curseur de la souris survole une zone spécifique. Ce didacticiel fournit un guide étape par étape à l'aide du code source C#.
+### Comment installer Aspose.PDF ?  
+Vous pouvez l'installer via le gestionnaire de packages NuGet dans Visual Studio. Utilisez simplement la commande :`Install-Package Aspose.PDF`.
 
-#### Q : Pourquoi voudrais-je créer un bloc de texte masqué dans un fichier PDF ?
+### Puis-je créer d’autres éléments interactifs dans les PDF ?  
+Oui, au-delà des blocs de texte cachés, vous pouvez ajouter des boutons, des hyperliens, des annotations et bien plus encore en utilisant Aspose.PDF.
 
-R : La création d’un bloc de texte masqué peut être utile pour les documents PDF interactifs dans lesquels vous souhaitez fournir des informations ou un contexte supplémentaires qui ne deviennent visibles que lorsqu’un utilisateur passe le curseur de sa souris sur une zone désignée.
+### Existe-t-il un essai gratuit disponible ?  
+ Absolument ! Vous pouvez obtenir un essai gratuit à partir du[Page de sortie d'Aspose](https://releases.aspose.com/).
 
-#### Q : Comment configurer le répertoire de documents ?
-
-A : Pour configurer le répertoire de documents :
-
-1.  Remplacer`"YOUR DOCUMENT DIRECTORY"` dans le`dataDir` variable avec le chemin vers le répertoire où vous souhaitez enregistrer le fichier PDF généré.
-
-#### Q : Comment créer un exemple de document et y ajouter un fragment de texte ?
-
- R : Dans le didacticiel, vous utilisez le`Document` classe pour créer un exemple de document PDF et ajouter un fragment de texte. Ce fragment de texte sert de déclencheur pour l'affichage du bloc de texte masqué.
-
-#### Q : Comment trouver le fragment de texte qui déclenche le bloc de texte masqué ?
-
- A : Le didacticiel montre comment utiliser un`TextFragmentAbsorber` objet pour trouver le fragment de texte qui déclenche l'affichage du bloc de texte masqué. Il recherche une chaîne de texte spécifique dans le document PDF.
-
-#### Q : Comment créer et personnaliser le champ de texte masqué ?
-
- A : Vous créez un`TextBoxField`objet pour représenter le champ de texte masqué. Le didacticiel fournit du code pour définir diverses propriétés telles que la position, la valeur, l'apparence et le comportement du champ de texte masqué.
-
-#### Q : Comment créer un bouton invisible associé au bloc de texte masqué ?
-
- A : Un champ de bouton invisible est créé à l'aide de la`ButtonField` classe. Ce champ de bouton est positionné au-dessus du fragment de texte déclencheur et comporte des actions associées aux événements d'entrée et de sortie de la souris. Ces actions contrôlent la visibilité du bloc de texte masqué.
-
-#### Q : Puis-je personnaliser l’apparence du bloc de texte masqué et de la zone de déclenchement ?
-
-R : Oui, vous pouvez personnaliser diverses propriétés du champ de texte masqué et du bouton invisible, notamment la police, la couleur, la taille et le positionnement.
-
-#### Q : Comment enregistrer le document modifié avec le bloc de texte masqué ?
-
- A : Le didacticiel montre comment enregistrer le document modifié à l'aide de l'`Save` méthode de la`Document` classe.
+### Que faire si j’ai besoin d’aide avec Aspose.PDF ?  
+ N'hésitez pas à demander de l'aide sur le[Forum Aspose](https://forum.aspose.com/c/pdf/10) pour toute question ou problème que vous pourriez rencontrer.

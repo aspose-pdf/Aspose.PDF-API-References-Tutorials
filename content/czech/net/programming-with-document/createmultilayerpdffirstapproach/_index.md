@@ -134,7 +134,7 @@ To uloží nově vytvořené PDF se zadanými vrstvami – textem, obrázky a pl
 
 ## Závěr
 
-A tady to máte! Právě jste vytvořili vícevrstvé PDF pomocí Aspose.PDF pro .NET. Podobně jako vytváření dortu vrstvu po vrstvě je vytváření PDF s různými prvky kreativní a obohacující proces. Každý kus – text, obrázky a krabice – společně tvoří leštěný konečný produkt. S praxí budete schopni snadno vytvářet složité návrhy PDF.
+A tady to máte! Právě jste vytvořili vícevrstvé PDF pomocí Aspose.PDF pro .NET. Podobně jako vytváření dortů vrstvu po vrstvě je vytváření PDF s různými prvky kreativní a obohacující proces. Každý kus – text, obrázky a krabice – společně tvoří leštěný konečný produkt. S praxí budete schopni snadno vytvářet složité návrhy PDF.
 
 ## FAQ
 

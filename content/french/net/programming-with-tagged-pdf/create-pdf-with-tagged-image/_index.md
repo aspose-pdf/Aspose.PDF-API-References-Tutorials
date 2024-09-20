@@ -2,128 +2,149 @@
 title: Créer un PDF avec une image balisée
 linktitle: Créer un PDF avec une image balisée
 second_title: Référence de l'API Aspose.PDF pour .NET
-description: Guide étape par étape pour créer un PDF avec une image balisée à l'aide d'Aspose.PDF pour .NET.
+description: Apprenez à créer un PDF balisé avec des images à l'aide d'Aspose.PDF pour .NET. Suivez notre guide étape par étape pour créer des documents accessibles et professionnels.
 type: docs
 weight: 40
 url: /fr/net/programming-with-tagged-pdf/create-pdf-with-tagged-image/
 ---
-Dans ce didacticiel, nous vous fournirons un guide étape par étape sur la façon de créer un document PDF avec une image balisée à l'aide d'Aspose.PDF pour .NET. Aspose.PDF est une bibliothèque puissante qui vous permet de créer, de manipuler et de convertir des documents PDF par programmation. En utilisant les fonctionnalités de structure de contenu balisé d'Aspose.PDF, vous pouvez ajouter des images balisées à votre document PDF.
+## Introduction
+
+Créer des PDF peut être une tâche complexe, mais ce n'est pas forcément le cas ! Aujourd'hui, nous allons découvrir comment créer un document PDF avec une image balisée à l'aide d'Aspose.PDF pour .NET. Si vous souhaitez intégrer des images dans vos PDF et vous assurer qu'elles sont accessibles, vous êtes au bon endroit. Examinons ce processus étape par étape afin que vous puissiez créer facilement des PDF professionnels et accessibles.
 
 ## Prérequis
 
-Avant de commencer, assurez-vous que les conditions préalables suivantes sont remplies :
+Avant de commencer à créer votre PDF avec des images balisées, vous avez besoin de quelques éléments :
 
-1. Visual Studio installé avec .NET Framework.
-2. La bibliothèque Aspose.PDF pour .NET.
+1. Aspose.PDF pour .NET : cette puissante bibliothèque est essentielle pour gérer les documents PDF dans les applications .NET. Vous pouvez trouver la bibliothèque ici :[Téléchargement d'Aspose.PDF pour .NET](https://releases.aspose.com/pdf/net/).
+2. .NET Framework ou .NET Core : assurez-vous que votre ordinateur dispose d'une version compatible de .NET Framework ou de .NET Core. Cette bibliothèque prend en charge les deux.
+3. Fichier image : vous aurez besoin d'un fichier image à intégrer dans votre PDF. Dans notre exemple, nous utiliserons le fichier « aspose-logo.png ». Assurez-vous de l'avoir prêt dans votre répertoire de documents. 
 
-## Étape 1 : Configuration du projet
+En vous assurant que ces prérequis sont triés, vous êtes prêt à commencer !
 
-Pour commencer, créez un nouveau projet dans Visual Studio et ajoutez une référence à la bibliothèque Aspose.PDF pour .NET. Vous pouvez télécharger la bibliothèque depuis le site officiel d'Aspose et l'installer sur votre machine.
+## Paquets d'importation
 
-## Étape 2 : Importer les espaces de noms nécessaires
+Pour lancer notre aventure de codage, nous devons configurer notre espace de travail en important les espaces de noms Aspose.PDF nécessaires. Voici comment procéder :
 
-Dans votre fichier de code C#, importez les espaces de noms requis pour accéder aux classes et méthodes fournies par Aspose.PDF :
+### Créer un nouveau projet
+
+- Ouvrez votre IDE préféré (Visual Studio, par exemple).
+- Créez un nouveau projet d'application console. Pourquoi une application console ? C'est simple et parfait pour les tutoriels !
+
+### Ajouter une référence Aspose.PDF
+
+- Cliquez avec le bouton droit sur votre projet dans l’Explorateur de solutions et sélectionnez Gérer les packages NuGet.
+- Recherchez « Aspose.PDF » et installez-le. 
+- Cela ajoutera tous les packages nécessaires à votre projet, vous permettant d'accéder aux fonctionnalités dont nous avons besoin pour la manipulation de PDF.
+
+### Importer les espaces de noms requis
+
+ En haut de votre fichier de programme principal (comme`Program.cs`), importez les espaces de noms suivants :
 
 ```csharp
-using System;
-using Aspose.Pdf;
+using Aspose.Pdf.LogicalStructure;
 using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Étape 3 : Création du document PDF avec une image balisée
+En important ces packages, vous indiquez à votre application d'intégrer les fonctionnalités Aspose.PDF que nous utiliserons.
 
-Utilisez le code suivant pour créer un document PDF avec une image balisée :
+Maintenant que nous avons tout configuré, créons notre PDF avec une image balisée étape par étape.
+
+## Étape 1 : Initialiser le document
+
+Tout d’abord, nous devons créer un nouveau document PDF :
 
 ```csharp
-string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Définissez le chemin d'accès à votre répertoire
 Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Creating a PDF with a tagged image");
-taggedContent.SetLanguage("fr-FR");
-
-IllustrationElement figure1 = taggedContent.CreateFigureElement();
-taggedContent.RootElement.AppendChild(figure1);
-figure1.AlternativeText = "Aspose Logo";
-figure1.Title = "Picture 1";
-figure1.SetTag("Fig");
-figure1.SetImage(dataDir + @"aspose-logo.jpg");
 ```
 
-Ce code crée un document PDF vide et ajoute une image balisée à l'aide des méthodes fournies par Aspose.PDF. L'image est spécifiée avec un texte alternatif, un titre et une balise.
+-  Que se passe-t-il ici ? Nous instancions une nouvelle`Document` objet qui représente notre PDF. Considérez-le comme une toile vierge attendant vos chefs-d'œuvre !
 
-## Étape 4 : Enregistrer le document PDF
+## Étape 2 : Configurer le contenu balisé
 
-Utilisez le code suivant pour enregistrer le document PDF :
+Ensuite, nous allons configurer le contenu balisé :
 
 ```csharp
-document.Save(dataDir + "PDFwithTaggedImage.pdf");
+ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-Ce code enregistre le document PDF avec l'image balisée dans un fichier spécifié.
+- Pourquoi utiliser du contenu balisé ? Les PDF balisés sont essentiels à l'accessibilité, car ils permettent aux lecteurs d'écran de comprendre la structure du document.
 
-### Exemple de code source pour créer un PDF avec une image balisée à l'aide d'Aspose.PDF pour .NET 
+## Étape 3 : Configurer les métadonnées
+
+Maintenant, ajoutons quelques métadonnées qui décrivent notre PDF :
+
 ```csharp
-
-// Le chemin vers le répertoire des documents.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("CreatePDFwithTaggedImage");
 taggedContent.SetLanguage("en-US");
+```
+
+- Méta quoi ? Ajouter un titre et une langue, c'est comme mettre un nom sur votre création : cela aide les autres à comprendre de quoi il s'agit !
+
+## Étape 4 : Créer un élément d’illustration
+
+Nous devons créer l'élément qui contiendra notre image :
+
+```csharp
 IllustrationElement figure1 = taggedContent.CreateFigureElement();
 taggedContent.RootElement.AppendChild(figure1);
+```
+
+-  Juste comme ça ?! Oui ! Le`CreateFigureElement` La méthode nous permet de créer une nouvelle illustration, et nous l'ajoutons à l'élément racine de notre contenu balisé.
+
+## Étape 5 : Définir les propriétés de l’image
+
+Ensuite, définissons les propriétés de l’image :
+
+```csharp
 figure1.AlternativeText = "Aspose Logo";
 figure1.Title = "Image 1";
 figure1.SetTag("Fig");
-// Ajouter une image avec une résolution de 300 DPI (par défaut)
-figure1.SetImage(dataDir + @"aspose-logo.jpg");
-// Enregistrer le document PDF
-document.Save(dataDir + "PDFwithTaggedImage.pdf");
-
 ```
+
+- Pourquoi toutes ces propriétés ? Le texte alternatif décrit l'image pour ceux qui ne peuvent pas la voir, tandis que le titre et la balise catégorisent l'image pour une meilleure accessibilité.
+
+## Étape 6 : Ajouter l'image
+
+Il est maintenant temps d'ajouter l'image réelle à notre PDF :
+
+```csharp
+figure1.SetImage(dataDir + @"aspose-logo.png"); // Assurez-vous que le chemin de votre image est correct !
+```
+
+- C'est ici que la magie opère ! Vous intégrez l'image directement dans votre PDF. 
+
+## Étape 7 : Enregistrer le document PDF
+
+Enfin, sauvegardons notre création dans un fichier :
+
+```csharp
+document.Save(dataDir + "PDFwithTaggedImage.pdf");
+```
+
+- La grande finale ! Après avoir exécuté cette ligne, vous trouverez votre nouveau PDF dans le répertoire spécifié.
 
 ## Conclusion
 
-Dans ce didacticiel, vous avez appris à créer un document PDF avec une image balisée à l'aide d'Aspose.PDF pour .NET. Les images balisées ajoutent des informations structurées supplémentaires à votre document PDF.
+Créer des PDF avec des images balisées à l'aide d'Aspose.PDF pour .NET est un jeu d'enfant lorsque vous le décomposez en étapes faciles à gérer. En suivant ce guide, vous avez appris non seulement à créer un PDF, mais également à améliorer son accessibilité avec du contenu balisé. Que vous prépariez des documents pour un public plus large ou que vous peaufiniez simplement vos créations PDF, ces connaissances vous seront utiles.
 
-### FAQ
+## FAQ
 
-#### Q : Quel est le but de la création d’un document PDF avec une image balisée à l’aide d’Aspose.PDF pour .NET ?
+### Qu'est-ce qu'un PDF balisé ?
+Un PDF balisé est conçu pour être accessible. Il comprend des métadonnées qui permettent aux technologies d'assistance de le lire et de le parcourir correctement.
 
-R : La création d'un document PDF avec une image balisée à l'aide d'Aspose.PDF pour .NET vous permet d'ajouter des images balisées au contenu du document. Les images balisées fournissent des informations structurées, telles que du texte alternatif et des titres, améliorant ainsi l'accessibilité et l'organisation.
+### Puis-je ajouter plusieurs images en utilisant Aspose.PDF ?
+ Absolument ! Répétez simplement les étapes pour créer un nouveau`IllustrationElement` instances dans votre document.
 
-#### Q : Comment la bibliothèque Aspose.PDF aide-t-elle à créer un document PDF avec une image balisée ?
+### Où puis-je trouver plus de documentation sur Aspose.PDF ?
+ Consultez la documentation[ici](https://reference.aspose.com/pdf/net/).
 
-R : Aspose.PDF pour .NET est une bibliothèque robuste qui fournit des fonctionnalités pour créer, manipuler et convertir des documents PDF par programmation. Dans ce didacticiel, les fonctionnalités de structure de contenu balisé de la bibliothèque sont utilisées pour ajouter une image balisée au document PDF.
+### Existe-t-il un essai gratuit disponible pour Aspose.PDF ?
+ Oui ! Vous pouvez accéder à un essai gratuit[ici](https://releases.aspose.com/).
 
-#### Q : Quelles sont les conditions préalables pour créer un document PDF avec une image balisée à l’aide d’Aspose.PDF pour .NET ?
-
-R : Avant de commencer, assurez-vous que Visual Studio est installé avec le framework .NET et que la bibliothèque Aspose.PDF pour .NET est référencée dans votre projet.
-
-#### Q : Comment le code C# fourni crée-t-il un document PDF avec une image balisée ?
-
-R : Le code montre comment créer un document PDF, définir un élément d'image balisé et l'ajouter au contenu du document. L'image balisée comprend un texte alternatif, un titre et une balise à l'aide des méthodes fournies par Aspose.PDF.
-
-#### Q : Puis-je utiliser différents formats d’image pour l’image balisée ?
-
-R : Oui, vous pouvez utiliser différents formats d'image pour l'image balisée, tels que JPEG, PNG, GIF, etc. L'exemple de code fourni dans le didacticiel utilise une image JPEG, mais vous pouvez le remplacer par le chemin d'accès vers un fichier image dans votre format préféré.
-
-#### Q : Comment le texte alternatif (texte alt) est-il utilisé dans les images balisées ?
-
- A : Le texte alternatif fournit une description textuelle de l'image, qui est lue à haute voix par les lecteurs d'écran pour les utilisateurs malvoyants. Dans le code fourni, le texte alternatif est défini à l'aide de`AlternativeText` propriété de la`IllustrationElement` représentant l'image étiquetée.
-
-####  : Comment fonctionne le`SetTitle` method contribute to the PDF document's tagged image?
-
- A : Le`SetTitle` La méthode définit le titre du contenu balisé du document PDF, fournissant ainsi un contexte supplémentaire pour l'image balisée. Ce titre peut aider à identifier le but ou le sujet du contenu balisé.
-
-#### Q : Puis-je personnaliser la balise et le titre de l’image balisée ?
-
- R : Oui, vous pouvez personnaliser la balise et le titre de l'image balisée à l'aide de l'`SetTag` et`Title` méthodes de la`IllustrationElement`L'exemple de code montre comment définir la balise sur « Fig » et le titre sur « Image 1 ».
-
-#### Q : Comment puis-je garantir que l’image balisée est accessible et conforme aux normes d’accessibilité ?
-
-R : En utilisant les fonctionnalités de structure de contenu balisé d'Aspose.PDF et en fournissant du texte alternatif et d'autres informations pertinentes, vous contribuez à l'accessibilité de l'image balisée. La conformité aux normes d'accessibilité implique de suivre les meilleures pratiques en matière de texte alternatif et de structure du document.
-
-#### Q : Est-il possible d’ajouter plusieurs images balisées au même document PDF en utilisant des techniques similaires ?
-
- : Oui, vous pouvez ajouter plusieurs images balisées au même document PDF en utilisant des techniques similaires. Vous créeriez des images supplémentaires`IllustrationElement` instances pour chaque image balisée et personnalisez leurs propriétés selon vos besoins.
+### Comment puis-je obtenir de l'aide pour Aspose.PDF ?
+ Vous pouvez obtenir de l'aide en visitant le[Forums Aspose](https://forum.aspose.com/c/pdf/10).

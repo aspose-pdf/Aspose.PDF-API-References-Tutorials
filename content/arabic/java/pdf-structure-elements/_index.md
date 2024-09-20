@@ -2,7 +2,7 @@
 title: عناصر هيكل PDF
 linktitle: عناصر هيكل PDF
 second_title: واجهة برمجة تطبيقات معالجة PDF الخاصة بـ Aspose.PDF Java
-description: استكشف دروس Aspose.PDF لجافا لإتقان عناصر بنية PDF. قم بإنشاء ملفات PDF منظمة وسهلة الوصول إليها بكل سهولة.
+description: استكشف دروس Aspose.PDF لـ Java لإتقان عناصر بنية PDF. أنشئ ملفات PDF منظمة وسهلة الوصول إليها بكل سهولة.
 type: docs
 weight: 20
 url: /ar/java/pdf-structure-elements/

@@ -2,193 +2,190 @@
 title: PDF 文件中的隐藏文本块
 linktitle: PDF 文件中的隐藏文本块
 second_title: Aspose.PDF for .NET API 参考
-description: 了解如何使用 Aspose.PDF for .NET 在 PDF 文件中创建隐藏文本块。
+description: 使用 Aspose.PDF for .NET 创建带有隐藏文本块的交互式 PDF。本教程提供了逐步指南来增强您的文档。
 type: docs
 weight: 230
 url: /zh/net/programming-with-text/hidden-text-block/
 ---
-在本教程中，我们将解释如何使用 .NET 的 Aspose.PDF 库在 PDF 文件中创建隐藏文本块。隐藏文本块是浮动文本，当鼠标光标悬停在特定区域上时，该文本将变为可见。我们将使用提供的 C# 源代码逐步介绍创建隐藏文本块的过程。
+## 介绍
 
-## 要求
+在当今的数字环境中，PDF 仍然是从合同到教育材料等所有内容的首选格式。它们的多功能性和可靠性无与伦比。但是，如果您可以为 PDF 添加额外的交互层，会怎么样？我们将使用 Aspose.PDF for .NET 深入隐藏文本块的世界，这是一个功能强大的工具，可以比以往更轻松地创建引人入胜且用户友好的文档。无论您是经验丰富的开发人员还是刚刚起步，本教程都是为您设计的，其中包含分步说明和提示，可帮助您充分发挥 PDF 的潜力！
 
-开始之前，请确保您已准备好以下物品：
+## 先决条件
 
-- 已安装 Aspose.PDF for .NET 库。
-- 对 C# 编程有基本的了解。
+在我们撸起袖子开始工作之前，让我们先确保你已准备好一切所需。以下是你需要的东西：
 
-## 步骤 1：设置文档目录
+1. Aspose.Pdf for .NET：此库对于在 .NET 应用程序中处理 PDF 文件至关重要。您可以从以下位置查看、下载或免费试用[Aspose PDF 文档](https://reference.aspose.com/pdf/net/).
+2. .NET Framework：确保您已安装.NET 框架，因为它是运行 Aspose.PDF 库所必需的。
+3. 开发环境：像 Visual Studio 这样的代码编辑器或集成开发环境 (IDE) 将使编码变得轻而易举。 
+4. 基本 C# 知识：由于我们将使用 C# 进行编程，因此对该语言有基本的了解将帮助您更轻松地掌握概念。
+5. 学习热情：最后但同样重要的是，带上你的热情！今天我们要学习一些令人惊奇的东西。
 
-首先，您需要设置要保存生成的 PDF 文件的目录路径。替换`"YOUR DOCUMENT DIRECTORY"`在`dataDir`变量为您所需目录的路径。
+一旦满足这些先决条件，您就可以在 PDF 中创建交互式隐藏文本块了！
+
+## 导入包
+
+要开始在项目中使用 Aspose.PDF，您需要导入必要的软件包。操作方法如下：
+
+### 创建 C# 项目
+
+首先，打开 Visual Studio 或任何 C# IDE 并创建一个新项目。为简单起见，选择控制台应用程序类型。
+
+### 将 Aspose.PDF 添加到您的项目中
+
+您需要将 Aspose.PDF 库添加到您的项目中。您可以通过 NuGet 包管理器执行此操作。以下是一条快速的单行代码：
+
+```bash
+Install-Package Aspose.PDF
+```
+
+此命令将提取必要的文件，以便您轻松处理 PDF 文档。
+
+### 导入所需的命名空间
+
+安装软件包后，下一步是在 C# 文件顶部导入命名空间。这样就可以使用所有很酷的 Aspose 功能：
+
+```csharp
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Forms;
+using Aspose.Pdf.Text;
+```
+
+现在您的环境已经设置好了，让我们逐步分解在 PDF 文件中创建隐藏文本块的过程。
+
+## 步骤 1：定义文档目录
+
+定义文件存放位置。这有助于顺利管理文档。使用以下代码进行设置：
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
 ```
+
+确保更换`"YOUR DOCUMENT DIRECTORY"`使用您想要创建 PDF 的机器上的实际路径。
 
 ## 步骤 2：创建示例文档
 
-在此步骤中，我们创建一个示例 PDF 文档并向其中添加一个文本片段。该文本片段将作为显示隐藏文本块的触发器。
+现在，让我们创建一个基本的 PDF 文档。此初始步骤包括初始化 PDF 文档并添加文本片段，该文本片段将成为隐藏文本的焦点。
 
 ```csharp
-string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
 doc.Save(outputFile);
 ```
 
-## 步骤 3：打开文档
+这里我们只是向文档添加一个字符串。当鼠标悬停在它上面时，这将触发隐藏文本的操作。
 
-现在，我们使用`Document`班级。
+## 步骤3：打开创建的文档
+
+现在我们有了初始文档，让我们打开它进行进一步的编辑：
 
 ```csharp
 Document document = new Document(outputFile);
 ```
 
-## 步骤 4：查找文本片段
+此行加载我们刚刚创建的文档，以便我们可以对其进行更改。
 
-我们使用`TextFragmentAbsorber`对象来查找将触发隐藏文本块显示的文本片段。在本例中，我们搜索的是精确的文本“将鼠标光标移至此处以显示浮动文本”。
+## 步骤 4：创建 TextAbsorber 来查找短语
+
+接下来，我们要识别要处理的文本片段。这是`TextFragmentAbsorber`发挥作用：
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-document.Pages.Accept(absorb);
-TextFragmentCollection textFragments = absorb.TextFragments;
-TextFragment fragment = textFragments[1];
-```
-
-## 步骤 5：创建隐藏文本字段
-
-我们创建`TextBoxField`对象来表示隐藏的文本字段。此字段将包含鼠标光标悬停在触发文本上时可见的文本。
-
-```csharp
-TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-floatingField.Value = "This is the \"floating text field\".";
-floatingField. ReadOnly = true;
-floatingField.Flags |= AnnotationFlags.Hidden;
-floatingField.PartialName = "FloatingField_1";
-floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
-floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
-floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
-floatingField.Border = new Border(floatingField);
-floatingField.Border.Width = 1;
-floatingField. Multiline = true;
-```
-
-## 步骤 6：将隐藏文本字段添加到文档
-
-我们将隐藏的文本字段添加到文档的表单集合中。
-
-```csharp
-document.Form.Add(floatingField);
-```
-
-## 步骤 7：创建隐形按钮
-
-我们创建一个不可见的按钮字段，该字段将位于触发文本片段的顶部。此按钮字段将具有与鼠标进入和退出事件相关的操作。
-
-```csharp
-ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-buttonField.Actions.OnEnter = new HideAction(floatingField, false);
-buttonField.Actions.OnExit = new HideAction(floatingField);
-document.Form.Add(buttonField);
-```
-
-## 步骤 8：保存文档
-
-最后，我们保存修改后的带有隐藏文本块的文档。
-
-```csharp
-document. Save(outputFile);
-```
-
-### 使用 Aspose.PDF for .NET 的隐藏文本块示例源代码 
-```csharp
-//文档目录的路径。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
-//创建带有文本的示例文档
-Document doc = new Document();
-doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
-doc.Save(outputFile);
-//打开带有文本的文档
-Document document = new Document(outputFile);
-//创建 TextAbsorber 对象来查找与正则表达式匹配的所有短语
-TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-//接受文件页面的吸收器
 document.Pages.Accept(absorber);
-//获取第一个提取的文本片段
+```
+
+在此步骤中，我们告诉 Aspose 找到我们之前指定的文本。
+
+## 步骤 5：提取文本片段
+
+一旦我们有了文本片段，我们将使用以下代码提取它，这使我们能够进一步操作它：
+
+```csharp
 TextFragmentCollection textFragments = absorber.TextFragments;
 TextFragment fragment = textFragments[1];
-//在页面的指定矩形区域内创建用于浮动文本的隐藏文本字段
+```
+
+这里，我们关注的是第一个被吸收的片段。如果你有更多的文本，你可能需要迭代整个集合。
+
+## 步骤 6：创建隐藏文本字段
+
+现在，让我们来看一下魔术！创建一个隐藏的文本字段，当用户将鼠标悬停在指定文本上时显示该字段。使用以下代码片段：
+
+```csharp
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-//设置要显示为字段值的文本
 floatingField.Value = "This is the \"floating text field\".";
-//对于这种情况，我们建议将字段设为“只读”
 floatingField.ReadOnly = true;
-//设置“隐藏”标志以使字段在文档打开时不可见
 floatingField.Flags |= AnnotationFlags.Hidden;
-//设置唯一的字段名称不是必需的，但允许
+```
+
+此代码定义浮动文本的位置并设置其属性，包括使其默认为只读和隐藏。
+
+## 步骤 7：自定义字段外观
+
+让您的浮动文本更具特色！自定义浮动文本字段的默认外观：
+
+```csharp
 floatingField.PartialName = "FloatingField_1";
-//设置字段外观特征不是必需的，但可以使其变得更好
-floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
-floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
-floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
+floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, Color.Blue);
+floatingField.Characteristics.Background = Color.LightBlue;
+floatingField.Characteristics.Border = Color.DarkBlue;
 floatingField.Border = new Border(floatingField);
 floatingField.Border.Width = 1;
 floatingField.Multiline = true;
-//向文档添加文本字段
+```
+
+从字体大小到颜色，您可以根据需要调整这些设置，使界面更加用户友好和吸引人。
+
+## 步骤 8：将文本字段添加到文档
+
+设置完文本字段后，就可以将浮动字段添加到文档中了：
+
+```csharp
 document.Form.Add(floatingField);
-//在文本片段位置创建隐形按钮
+```
+
+此行将新创建的隐藏文本字段集成到您的 PDF 中。
+
+## 步骤 9：创建不可见按钮字段
+
+此按钮将管理浮动文本字段的悬停操作。添加以下代码以创建一个不可见的按钮：
+
+```csharp
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-//为指定字段（注释）和不可见标志创建新的隐藏操作。
-// （如果您上面已指定，您也可以通过名称来引用浮动字段。）
-//在不可见按钮字段添加鼠标进入/退出时的操作
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);
-//向文档添加按钮字段
-document.Form.Add(buttonField);
-//保存文档
+```
+
+这里我们配置了按钮，当鼠标进入时显示浮动文本，当鼠标退出时隐藏浮动文本。
+
+## 步骤 10：保存文档
+
+最后，是时候保存你的工作并查看结果了：
+
+```csharp
 document.Save(outputFile);
 ```
 
+通过此操作，您的 PDF 现在已经准备好提供交互式体验，为用户提供一种全新的方式来参与您的内容！
+
 ## 结论
 
-在本教程中，您学习了如何使用 Aspose.PDF for .NET 库创建隐藏文本块。按照分步指南，您可以生成带有隐藏文本字段的 PDF 文档，当鼠标光标悬停在特定区域上时，该文本字段将变为可见。您可以根据需要自定义隐藏文本块的外观和行为。
+就这样！按照这些步骤，您已成功使用 Aspose.PDF for .NET 在 PDF 文件中创建了隐藏文本块。这个简单但功能强大的功能可以显著增强文档中的用户交互。无论您是制作教育材料还是客户资源，在悬停时隐藏和显示信息的功能都提供了精致、现代的触感。 
 
-### 常见问题解答
+## 常见问题解答
 
-#### 问：《PDF 文件中的隐藏文本块》教程的目的是什么？
+### 什么是 Aspose.PDF for .NET？  
+Aspose.PDF for .NET 是一个强大的库，允许开发人员在 .NET 应用程序中创建、操作和转换 PDF 文档。
 
-答：“PDF 文件中的隐藏文本块”教程介绍了如何使用 .NET 的 Aspose.PDF 库在 PDF 文件中创建隐藏文本块。隐藏文本块是浮动文本，当鼠标光标悬停在特定区域上时，该文本块会变为可见。本教程使用 C# 源代码提供了分步指南。
+### 如何安装 Aspose.PDF？  
+您可以通过 Visual Studio 中的 NuGet 包管理器安装它。只需使用以下命令：`Install-Package Aspose.PDF`.
 
-#### 问：为什么我要在 PDF 文件中创建隐藏文本块？
+### 我可以在 PDF 中创建其他交互元素吗？  
+是的，除了隐藏的文本块之外，您还可以使用 Aspose.PDF 添加按钮、超链接、注释等。
 
-答：创建隐藏文本块对于交互式 PDF 文档很有用，您可以在其中提供只有当用户将鼠标光标悬停在指定区域上时才可见的附加信息或上下文。
+### 有免费试用吗？  
+当然！你可以从[Aspose 发布页面](https://releases.aspose.com/).
 
-#### 问：如何设置文档目录？
-
-A：设置文档目录：
-
-1. 代替`"YOUR DOCUMENT DIRECTORY"`在`dataDir`变量为您想要保存生成的 PDF 文件的目录的路径。
-
-#### 问：如何创建示例文档并向其中添加文本片段？
-
-答：在本教程中，您可以使用`Document`类创建示例 PDF 文档并添加文本片段。此文本片段用作显示隐藏文本块的触发器。
-
-#### 问：如何找到触发隐藏文本块的文本片段？
-
-答：本教程演示了如何使用`TextFragmentAbsorber`对象查找触发隐藏文本块显示的文本片段。它在 PDF 文档中搜索特定的文本字符串。
-
-#### 问：如何创建和自定义隐藏文本字段？
-
-答：你创建一个`TextBoxField`对象来表示隐藏的文本字段。本教程提供了设置隐藏文本字段的各种属性（如位置、值、外观和行为）的代码。
-
-#### 问：如何创建与隐藏文本块关联的隐形按钮？
-
-答：使用以下方式创建不可见按钮字段：`ButtonField`类。此按钮字段位于触发文本片段的顶部，并具有与鼠标进入和退出事件相关的操作。这些操作控制隐藏文本块的可见性。
-
-#### 问：我可以自定义隐藏文本块和触发区域的外观吗？
-
-答：是的，您可以自定义隐藏文本字段和隐形按钮的各种属性，包括字体、颜色、大小和定位。
-
-#### 问：如何保存修改后的隐藏文本块的文档？
-
-答：本教程演示如何使用`Save`方法`Document`班级。
+### 如果我需要 Aspose.PDF 的帮助怎么办？  
+欢迎随时寻求支持[Aspose 论坛](https://forum.aspose.com/c/pdf/10)对于您可能遇到的任何问题或问题。

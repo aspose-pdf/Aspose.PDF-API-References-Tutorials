@@ -121,7 +121,7 @@ A dokumentumjogok határozzák meg, hogy a felhasználók milyen műveleteket ha
 ### Hogyan telepíthetem az Aspose.PDF könyvtárat?  
 A NuGet segítségével telepítheti a Visual Studio-ban. Keresse meg az „Aspose.PDF” kifejezést a NuGet Package Managerben.
 
-### Engedélyezhetek több jogosultságot egyszerre?  
+### Engedélyezhetek egyszerre több jogosultságot?  
 Igen, több engedélyt is beállíthat a`DocumentPrivilege` ennek megfelelően állítja be.
 
 ### Milyen titkosítási algoritmusokat támogat az Aspose?  

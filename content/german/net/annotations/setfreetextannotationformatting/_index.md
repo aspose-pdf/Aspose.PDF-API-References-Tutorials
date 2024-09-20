@@ -49,7 +49,7 @@ using Aspose.Pdf;
 
 Nachdem wir nun alles eingerichtet haben, fahren wir mit dem Hauptteil unseres Tutorials fort: Festlegen der Formatierung für freie Textanmerkungen.
 
-## Schritt 1: Dokumentverzeichnis definieren
+## Schritt 1: Definieren Sie das Dokumentverzeichnis
 
 Als Erstes müssen Sie den Pfad zu Ihrem Dokumentenverzeichnis angeben. Dort wird Ihre PDF-Datei gespeichert. So können Sie das tun:
 
@@ -69,7 +69,7 @@ string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "SetFreeTextAnnotationFormatting.pdf");
 ```
 
- Diese Codezeile initialisiert eine neue`Document` Objekt und lädt die angegebene PDF-Datei. Stellen Sie sicher, dass der Dateiname mit dem in Ihrem Verzeichnis übereinstimmt.
+ Diese Codezeile initialisiert eine neue`Document` Objekt und lädt Ihre angegebene PDF-Datei. Stellen Sie sicher, dass der Dateiname mit dem in Ihrem Verzeichnis übereinstimmt.
 
 ## Schritt 3: DefaultAppearance-Objekt instantiieren
 

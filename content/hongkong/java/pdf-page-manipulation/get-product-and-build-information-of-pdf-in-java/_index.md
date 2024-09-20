@@ -82,7 +82,7 @@ System.out.println("Document Summary:\n" + documentSummary);
 
 ## 結論
 
-在本文中，我們探討如何使用 Aspose.PDF for Java 從 Java 中的 PDF 檔案中提取產品和建置資訊。我們介紹了入門、提取產品和建立詳細資訊以及將它們組合成有用的文件摘要的基本步驟。 Aspose.PDF for Java 對於處理 PDF 文件的開發人員來說是一個很有價值的工具，提供了各種任務所需的靈活性和功能。
+在本文中，我們探討如何使用 Aspose.PDF for Java 從 Java 中的 PDF 檔案中提取產品和建置資訊。我們介紹了入門、提取產品和建立詳細資訊以及將它們組合成有用的文件摘要的基本步驟。 Aspose.PDF for Java 對於處理 PDF 文件的開發人員來說是一個有價值的工具，提供了各種任務所需的靈活性和功能。
 
 ## 常見問題解答
 

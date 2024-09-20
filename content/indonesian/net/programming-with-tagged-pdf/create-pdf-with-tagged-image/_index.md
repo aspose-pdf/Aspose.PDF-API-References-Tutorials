@@ -2,128 +2,149 @@
 title: Buat PDF dengan Gambar yang Ditandai
 linktitle: Buat PDF dengan Gambar yang Ditandai
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Panduan langkah demi langkah untuk membuat PDF dengan gambar yang diberi tag menggunakan Aspose.PDF untuk .NET.
+description: Pelajari cara membuat PDF berlabel dengan gambar menggunakan Aspose.PDF untuk .NET. Ikuti panduan langkah demi langkah kami untuk pembuatan dokumen yang mudah diakses dan profesional.
 type: docs
 weight: 40
 url: /id/net/programming-with-tagged-pdf/create-pdf-with-tagged-image/
 ---
-Dalam tutorial ini, kami akan memberikan panduan langkah demi langkah tentang cara membuat dokumen PDF dengan gambar yang diberi tag menggunakan Aspose.PDF untuk .NET. Aspose.PDF adalah pustaka canggih yang memungkinkan Anda membuat, memanipulasi, dan mengonversi dokumen PDF secara terprogram. Dengan menggunakan fitur struktur konten yang diberi tag dari Aspose.PDF, Anda dapat menambahkan gambar yang diberi tag ke dokumen PDF Anda.
+## Perkenalan
+
+Membuat PDF bisa menjadi tugas yang rumit, tetapi tidak harus demikian! Hari ini, kita akan membahas cara membuat dokumen PDF dengan gambar yang diberi tag menggunakan Aspose.PDF untuk .NET. Jika Anda ingin tahu cara memasukkan gambar ke dalam PDF dan memastikannya dapat diakses, Anda telah datang ke tempat yang tepat. Mari kita bahas proses ini langkah demi langkah sehingga Anda dapat membuat PDF yang profesional dan mudah diakses dengan mudah.
 
 ## Prasyarat
 
-Sebelum memulai, pastikan Anda memiliki prasyarat berikut:
+Sebelum Anda mulai membuat PDF dengan gambar yang diberi tag, ada beberapa hal yang Anda perlukan:
 
-1. Visual Studio terinstal dengan kerangka kerja .NET.
-2. Pustaka Aspose.PDF untuk .NET.
+1. Aspose.PDF untuk .NET: Pustaka canggih ini penting untuk menangani dokumen PDF dalam aplikasi .NET. Anda dapat menemukan pustaka tersebut di sini:[Unduh Aspose.PDF untuk .NET](https://releases.aspose.com/pdf/net/).
+2. .NET Framework atau .NET Core: Pastikan Anda memiliki versi .NET Framework atau .NET Core yang kompatibel di komputer Anda. Pustaka ini mendukung keduanya.
+3. Berkas Gambar: Anda akan memerlukan berkas gambar untuk disematkan ke dalam PDF Anda. Dalam contoh kita, kita akan menggunakan 'aspose-logo.png'. Pastikan untuk menyiapkannya di direktori dokumen Anda. 
 
-## Langkah 1: Pengaturan Proyek
+Dengan memastikan Anda telah memenuhi prasyarat ini, Anda siap untuk memulai!
 
-Untuk memulai, buat proyek baru di Visual Studio dan tambahkan referensi ke pustaka Aspose.PDF untuk .NET. Anda dapat mengunduh pustaka tersebut dari situs web resmi Aspose dan menginstalnya di komputer Anda.
+## Paket Impor
 
-## Langkah 2: Impor namespace yang diperlukan
+Untuk memulai petualangan coding kita, kita perlu menyiapkan ruang kerja dengan mengimpor namespace Aspose.PDF yang diperlukan. Berikut cara melakukannya:
 
-Dalam berkas kode C# Anda, impor namespace yang diperlukan untuk mengakses kelas dan metode yang disediakan oleh Aspose.PDF:
+### Buat Proyek Baru
+
+- Buka IDE pilihan Anda (misalnya Visual Studio).
+- Buat proyek Aplikasi Konsol baru. Mengapa Aplikasi Konsol? Sederhana dan cocok untuk tutorial!
+
+### Tambahkan Referensi Aspose.PDF
+
+- Klik kanan pada proyek Anda di Solution Explorer dan pilih Kelola Paket NuGet.
+- Cari "Aspose.PDF" dan instal. 
+- Ini akan menambahkan semua paket yang diperlukan ke proyek Anda, memungkinkan Anda mengakses fungsionalitas yang kami perlukan untuk manipulasi PDF.
+
+### Impor Namespace yang Diperlukan
+
+ Di bagian atas file program utama Anda (seperti`Program.cs`), impor namespace berikut:
 
 ```csharp
-using System;
-using Aspose.Pdf;
+using Aspose.Pdf.LogicalStructure;
 using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Langkah 3: Membuat dokumen PDF dengan gambar yang diberi tag
+Dengan mengimpor paket-paket ini, Anda memberi tahu aplikasi Anda untuk menyertakan fungsionalitas Aspose.PDF yang akan kita manfaatkan.
 
-Gunakan kode berikut untuk membuat dokumen PDF dengan gambar yang diberi tag:
+Sekarang setelah semuanya disiapkan, mari buat PDF dengan gambar yang diberi tag langkah demi langkah.
+
+## Langkah 1: Inisialisasi Dokumen
+
+Pertama-tama, kita perlu membuat dokumen PDF baru:
 
 ```csharp
-string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Atur jalur ke direktori Anda
 Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Creating a PDF with a tagged image");
-taggedContent.SetLanguage("fr-FR");
-
-IllustrationElement figure1 = taggedContent.CreateFigureElement();
-taggedContent.RootElement.AppendChild(figure1);
-figure1.AlternativeText = "Aspose Logo";
-figure1.Title = "Picture 1";
-figure1.SetTag("Fig");
-figure1.SetImage(dataDir + @"aspose-logo.jpg");
 ```
 
-Kode ini membuat dokumen PDF kosong dan menambahkan gambar yang diberi tag menggunakan metode yang disediakan oleh Aspose.PDF. Gambar ditentukan dengan teks alt, judul, dan tag.
+-  Apa yang terjadi di sini? Kami sedang membuat contoh baru`Document` objek yang mewakili PDF kita. Anggap saja sebagai kanvas kosong yang menunggu karya agung Anda!
 
-## Langkah 4: Menyimpan Dokumen PDF
+## Langkah 2: Siapkan Konten yang Ditandai
 
-Gunakan kode berikut untuk menyimpan dokumen PDF:
+Berikutnya, kita akan menyiapkan konten yang diberi tag:
 
 ```csharp
-document.Save(dataDir + "PDFwithTaggedImage.pdf");
+ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-Kode ini menyimpan dokumen PDF dengan gambar yang diberi tag ke berkas yang ditentukan.
+- Mengapa menggunakan Konten Berlabel? PDF berlabel penting untuk aksesibilitas, yang memungkinkan pembaca layar memahami struktur dokumen.
 
-### Contoh kode sumber untuk Membuat PDF dengan Gambar Berlabel menggunakan Aspose.PDF untuk .NET 
+## Langkah 3: Konfigurasi Metadata
+
+Sekarang, mari tambahkan beberapa metadata yang menjelaskan PDF kita:
+
 ```csharp
-
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("CreatePDFwithTaggedImage");
 taggedContent.SetLanguage("en-US");
+```
+
+- Meta apa? Menambahkan judul dan bahasa seperti memberi label nama pada kreasi Anda — ini membantu orang lain memahami isinya!
+
+## Langkah 4: Buat Elemen Ilustrasi
+
+Kita perlu membuat elemen yang akan menampung gambar kita:
+
+```csharp
 IllustrationElement figure1 = taggedContent.CreateFigureElement();
 taggedContent.RootElement.AppendChild(figure1);
+```
+
+-  Begitu saja?! Ya!`CreateFigureElement` Metode ini memungkinkan kita membuat ilustrasi baru, dan kita menambahkannya ke elemen akar konten yang diberi tag.
+
+## Langkah 5: Mengatur Properti Gambar
+
+Selanjutnya, mari kita atur properti untuk gambar tersebut:
+
+```csharp
 figure1.AlternativeText = "Aspose Logo";
 figure1.Title = "Image 1";
 figure1.SetTag("Fig");
-// Tambahkan gambar dengan resolusi 300 DPI (secara default)
-figure1.SetImage(dataDir + @"aspose-logo.jpg");
-// Simpan Dokumen PDF
-document.Save(dataDir + "PDFwithTaggedImage.pdf");
-
 ```
+
+- Mengapa semua properti ini? Teks alternatif menjelaskan gambar bagi mereka yang tidak dapat melihatnya, sementara judul dan tag mengkategorikan gambar untuk aksesibilitas yang lebih baik.
+
+## Langkah 6: Tambahkan Gambar
+
+Sekarang, saatnya menambahkan gambar sebenarnya ke PDF kita:
+
+```csharp
+figure1.SetImage(dataDir + @"aspose-logo.png"); // Pastikan jalur gambar Anda benar!
+```
+
+- Di sinilah keajaiban terjadi! Anda menyematkan gambar langsung ke PDF Anda. 
+
+## Langkah 7: Simpan Dokumen PDF
+
+Terakhir, mari simpan kreasi kita ke sebuah file:
+
+```csharp
+document.Save(dataDir + "PDFwithTaggedImage.pdf");
+```
+
+- Akhir yang hebat! Setelah menjalankan baris ini, Anda akan menemukan PDF baru Anda di direktori yang ditentukan.
 
 ## Kesimpulan
 
-Dalam tutorial ini, Anda mempelajari cara membuat dokumen PDF dengan gambar yang diberi tag menggunakan Aspose.PDF for .NET. Gambar yang diberi tag menambahkan informasi terstruktur tambahan ke dokumen PDF Anda.
+Membuat PDF dengan gambar yang diberi tag menggunakan Aspose.PDF untuk .NET mudah dilakukan jika Anda membaginya menjadi beberapa langkah yang mudah dikelola. Dengan mengikuti panduan ini, Anda tidak hanya belajar membuat PDF tetapi juga meningkatkan aksesibilitasnya dengan konten yang diberi tag. Baik Anda sedang mempersiapkan dokumen untuk audiens yang lebih luas atau sekadar menyempurnakan kreasi PDF Anda, pengetahuan ini akan sangat berguna bagi Anda.
 
-### Pertanyaan yang Sering Diajukan
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa tujuan membuat dokumen PDF dengan gambar yang diberi tag menggunakan Aspose.PDF for .NET?
+### Apa itu PDF yang diberi tag?
+PDF yang diberi tag dirancang agar mudah diakses. PDF tersebut menyertakan metadata yang memungkinkan teknologi bantuan untuk membaca dan menavigasinya dengan benar.
 
-A: Membuat dokumen PDF dengan gambar yang diberi tag menggunakan Aspose.PDF for .NET memungkinkan Anda menambahkan gambar yang diberi tag ke konten dokumen. Gambar yang diberi tag menyediakan informasi terstruktur, seperti teks alt dan judul, yang meningkatkan aksesibilitas dan pengaturan.
+### Bisakah saya menambahkan beberapa gambar menggunakan Aspose.PDF?
+ Tentu saja! Ulangi saja langkah-langkah untuk membuat yang baru`IllustrationElement` contoh dalam dokumen Anda.
 
-#### T: Bagaimana pustaka Aspose.PDF membantu dalam pembuatan dokumen PDF dengan gambar yang diberi tag?
+### Di mana saya dapat menemukan dokumentasi lebih lanjut tentang Aspose.PDF?
+ Lihat dokumentasinya[Di Sini](https://reference.aspose.com/pdf/net/).
 
-J: Aspose.PDF untuk .NET adalah pustaka tangguh yang menyediakan fungsionalitas untuk membuat, memanipulasi, dan mengonversi dokumen PDF secara terprogram. Dalam tutorial ini, fitur struktur konten bertag pustaka digunakan untuk menambahkan gambar bertag ke dokumen PDF.
+### Apakah ada uji coba gratis yang tersedia untuk Aspose.PDF?
+ Ya! Anda dapat mengakses uji coba gratis[Di Sini](https://releases.aspose.com/).
 
-#### T: Apa saja prasyarat untuk membuat dokumen PDF dengan gambar yang ditandai menggunakan Aspose.PDF for .NET?
-
-A: Sebelum memulai, pastikan Anda telah menginstal Visual Studio dengan kerangka kerja .NET dan memiliki pustaka Aspose.PDF untuk .NET yang dirujuk dalam proyek Anda.
-
-#### T: Bagaimana kode C# yang disediakan membuat dokumen PDF dengan gambar yang diberi tag?
-
-A: Kode ini menunjukkan cara membuat dokumen PDF, menentukan elemen gambar yang diberi tag, dan menambahkannya ke konten dokumen. Gambar yang diberi tag menyertakan teks alt, judul, dan tag menggunakan metode yang disediakan oleh Aspose.PDF.
-
-#### T: Dapatkah saya menggunakan format gambar yang berbeda untuk gambar yang diberi tag?
-
-A: Ya, Anda dapat menggunakan format gambar yang berbeda untuk gambar yang diberi tag, seperti JPEG, PNG, GIF, dll. Contoh kode yang diberikan dalam tutorial ini menggunakan gambar JPEG, tetapi Anda dapat menggantinya dengan jalur ke file gambar dalam format pilihan Anda.
-
-#### T: Bagaimana teks alternatif (teks alt) digunakan pada gambar yang diberi tag?
-
- A: Teks alt menyediakan deskripsi tekstual dari gambar, yang dibacakan dengan keras oleh pembaca layar untuk pengguna yang memiliki gangguan penglihatan. Dalam kode yang diberikan, teks alt diatur menggunakan`AlternativeText` milik`IllustrationElement` mewakili gambar yang diberi tag.
-
-#### T: Bagaimana caranya`SetTitle` method contribute to the PDF document's tagged image?
-
- Sebuah:`SetTitle` metode menetapkan judul konten yang diberi tag pada dokumen PDF, yang menyediakan konteks tambahan untuk gambar yang diberi tag. Judul ini dapat membantu mengidentifikasi tujuan atau subjek konten yang diberi tag.
-
-#### T: Dapatkah saya menyesuaikan tag dan judul gambar yang diberi tag?
-
- A: Ya, Anda dapat menyesuaikan tag dan judul gambar yang diberi tag menggunakan`SetTag` Dan`Title` metode dari`IllustrationElement`Contoh kode ini menunjukkan cara menyetel tag ke "Fig" dan judul ke "Picture 1."
-
-#### T: Bagaimana saya dapat memastikan bahwa gambar yang diberi tag dapat diakses dan mematuhi standar aksesibilitas?
-
-J: Dengan menggunakan fitur struktur konten bertag dari Aspose.PDF dan menyediakan teks alt dan informasi relevan lainnya, Anda berkontribusi pada aksesibilitas gambar bertag. Memastikan kepatuhan terhadap standar aksesibilitas melibatkan praktik terbaik berikut untuk teks alt dan struktur dokumen.
-
-#### T: Apakah mungkin untuk menambahkan beberapa gambar yang diberi tag ke dokumen PDF yang sama menggunakan teknik yang sama?
-
-A: Ya, Anda dapat menambahkan beberapa gambar yang diberi tag ke dokumen PDF yang sama menggunakan teknik yang sama. Anda akan membuat gambar tambahan`IllustrationElement` contoh untuk setiap gambar yang diberi tag dan menyesuaikan propertinya sesuai kebutuhan.
+### Bagaimana saya bisa mendapatkan dukungan untuk Aspose.PDF?
+ Anda bisa mendapatkan dukungan dengan mengunjungi[Forum Aspose](https://forum.aspose.com/c/pdf/10).

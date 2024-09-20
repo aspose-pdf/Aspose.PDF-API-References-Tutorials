@@ -53,7 +53,7 @@ Document pdf = new Document(dataDir + "DetermineRequiredField.pdf");
  Ezután létre kell hoznunk egy példányt a`Form` objektum, amely része a`Aspose.Pdf.Facades` névtér. A`Form` Az objektum hozzáférést biztosít a PDF-en belüli űrlapmezőkhöz, lehetővé téve számunkra, hogy ellenőrizzük azok tulajdonságait, beleértve azt is, hogy kötelezőek-e vagy sem.
 
 ```csharp
-// Form objektum példányosítása
+// Példányosítási forma objektum
 Aspose.Pdf.Facades.Form pdfForm = new Aspose.Pdf.Facades.Form(pdf);
 ```
 

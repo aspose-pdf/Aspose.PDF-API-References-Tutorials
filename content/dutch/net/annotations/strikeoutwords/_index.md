@@ -147,7 +147,7 @@ document.Save(dataDir);
 
 ## Conclusie
 
-Gefeliciteerd! U hebt met succes specifieke woorden in een PDF-document doorgehaald met Aspose.PDF voor .NET. Door deze stapsgewijze handleiding te volgen, kunt u nu PDF-documenten aanpassen door tekst te markeren of door te halen, waardoor ze dynamischer worden en beter aansluiten op uw behoeften. Of u nu juridische documenten annoteert, rapporten voorbereidt of gewoon tekst markeert voor revisie, deze tutorial heeft u de vaardigheden gegeven om dit efficiënt te doen.
+Gefeliciteerd! U hebt met succes specifieke woorden in een PDF-document doorgehaald met Aspose.PDF voor .NET. Door deze stapsgewijze handleiding te volgen, kunt u nu PDF-documenten aanpassen door tekst te markeren of door te halen, waardoor ze dynamischer worden en beter aansluiten op uw behoeften. Of u nu juridische documenten annoteert, rapporten voorbereidt of gewoon tekst markeert voor controle, deze tutorial heeft u de vaardigheden gegeven om dit efficiënt te doen.
 
 ## Veelgestelde vragen
 

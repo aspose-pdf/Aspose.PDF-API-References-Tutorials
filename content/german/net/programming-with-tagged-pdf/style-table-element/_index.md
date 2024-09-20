@@ -2,291 +2,191 @@
 title: Stiltabellenelement
 linktitle: Stiltabellenelement
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie Tabellenelemente mit Aspose.PDF für .NET formatieren. Schritt-für-Schritt-Anleitung zum Anpassen von Stilen und Eigenschaften.
+description: Erfahren Sie, wie Sie in Aspose.PDF für .NET ein Tabellenelement erstellen und formatieren, mit Schritt-für-Schritt-Anleitungen, benutzerdefiniertem Format und PDF/UA-Konformität.
 type: docs
 weight: 170
 url: /de/net/programming-with-tagged-pdf/style-table-element/
 ---
-In diesem ausführlichen Tutorial führen wir Sie Schritt für Schritt durch den bereitgestellten C#-Quellcode, um das Array-Element mit Aspose.PDF für .NET zu formatieren. Befolgen Sie die nachstehenden Anweisungen, um zu verstehen, wie Sie die Stile und Eigenschaften des Array-Elements anpassen.
+## Einführung
 
-## Schritt 1: Einrichten der Umgebung
+In diesem Artikel erfahren Sie, wie Sie mit Aspose.PDF für .NET ein Tabellenelement erstellen und formatieren. Sie erfahren, wie Sie eine Tabelle strukturieren, benutzerdefinierte Formatvorlagen anwenden und die PDF/UA-Konformität Ihres Dokuments überprüfen. Am Ende dieses Tutorials können Sie problemlos professionell aussehende Tabellen in Ihren PDFs erstellen!
 
-Bevor Sie beginnen, stellen Sie sicher, dass Sie Ihre Entwicklungsumgebung für die Verwendung von Aspose.PDF für .NET konfiguriert haben. Dazu gehört die Installation der Aspose.PDF-Bibliothek und die Konfiguration Ihres Projekts, um darauf zu verweisen.
+## Voraussetzungen
 
-## Schritt 2: Erstellen eines Dokuments
+Bevor Sie mit dem Lernprogramm beginnen, müssen Sie sicherstellen, dass Sie über Folgendes verfügen:
 
-In diesem Schritt erstellen wir ein neues Dokumentobjekt Aspose.PDF.
+1. Auf Ihrem Computer ist Visual Studio oder eine ähnliche IDE installiert.
+2. .NET Framework oder .NET Core SDK zum Ausführen der Anwendung.
+3.  Aspose.PDF für .NET-Bibliothek heruntergeladen und in Ihrem Projekt referenziert. Sie können die neueste Version herunterladen von[Hier](https://releases.aspose.com/pdf/net/).
+4.  Eine gültige Aspose-Lizenz oder eine[vorläufige Lizenz](https://purchase.aspose.com/temporary-license/) um die volle Funktionalität der Bibliothek freizuschalten.
+
+## Pakete importieren
+
+Importieren Sie zunächst die erforderlichen Namespaces in Ihr Projekt:
+
+```csharp
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+Diese Namespaces decken grundlegende PDF-Vorgänge, getaggte Inhalte, Tabellen und Textformatierungen ab.
+
+Lassen Sie uns nun den Prozess zum Erstellen und Gestalten einer Tabelle in Aspose.PDF aufschlüsseln. Wir gehen jeden Abschnitt im Detail durch, damit Sie es nachvollziehen können.
+
+## Schritt 1: Neues PDF-Dokument erstellen und getaggten Inhalt einrichten
+
+In diesem ersten Schritt erstellen wir ein leeres PDF-Dokument und richten seinen getaggten Inhalt ein.
 
 ```csharp
 // Der Pfad zum Dokumentverzeichnis.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 
-// Dokumenterstellung
+// Neues PDF-Dokument erstellen
 Document document = new Document();
+
+// Einrichten von getaggtem Inhalt
 ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example of table formatting");
-taggedContent.SetLanguage("fr-FR");
+taggedContent.SetTitle("Example table style");
+taggedContent.SetLanguage("en-US");
 ```
 
-Wir haben ein neues Dokument erstellt und den Dokumenttitel und die Sprache festgelegt.
+ Wir beginnen mit der Schaffung eines neuen`Document` Objekt, das unser PDF darstellt. Das`TaggedContent`Das Objekt wird verwendet, um die Struktur des Dokuments zu verwalten und die Einhaltung der Zugänglichkeitsstandards sicherzustellen. Wir legen den Titel und die Sprache des Dokuments für die ordnungsgemäße Kennzeichnung fest.
 
-## Schritt 3: Abrufen des Stammstrukturelements
+## Schritt 2: Definieren Sie das Stammelement
 
-In diesem Schritt erhalten wir das Stammstrukturelement für unser Dokument.
+Als Nächstes erstellen wir das Stammstrukturelement, das als Container für den gesamten Inhalt unserer PDF-Datei fungiert.
 
 ```csharp
-// Erhalten Sie das Stammstrukturelement
+// Holen Sie sich das Stammstrukturelement
 StructureElement rootElement = taggedContent.RootElement;
 ```
 
-Wir haben das Stammstrukturelement, das als Container für das Array-Element dienen wird.
+ Der`RootElement` dient als Basiscontainer für alle strukturierten Elemente, einschließlich unserer Tabelle. Es hilft dabei, die strukturelle Hierarchie des Dokuments aufrechtzuerhalten, was sowohl für die Organisation als auch für die Zugänglichkeit wichtig ist.
 
-## Schritt 4: Erstellen des Array-Strukturelements
+## Schritt 3: Erstellen und Gestalten des Tabellenelements
 
-Lassen Sie uns nun ein neues Tabellenstrukturelement für unser Dokument erstellen.
+ Nachdem das Stammelement eingerichtet ist, erstellen wir ein`TableElement` und wenden Sie Stile wie Hintergrundfarbe, Ränder und Ausrichtung an.
 
 ```csharp
-// Erstellen des Array-Strukturelements
+// Tabellenstrukturelement erstellen
 TableElement tableElement = taggedContent.CreateTableElement();
 rootElement.AppendChild(tableElement);
-```
 
-Wir haben ein neues Array-Strukturelement erstellt und es dem Root-Strukturelement hinzugefügt.
-
-## Schritt 5: Anpassen der Stile und Eigenschaften von Array-Elementen
-
-In diesem Schritt passen wir die Stile und Eigenschaften des Array-Elements an.
-
-```csharp
-// Passen Sie die Stile und Eigenschaften des Array-Elements an
+// Den Tisch stylen
 tableElement.BackgroundColor = Color.Beige;
 tableElement.Border = new BorderInfo(BorderSide.All, 0.80F, Color.Gray);
-tableElement. Alignment = HorizontalAlignment. Center;
+tableElement.Alignment = HorizontalAlignment.Center;
 tableElement.Broken = TableBroken.Vertical;
 tableElement.ColumnAdjustment = ColumnAdjustment.AutoFitToWindow;
-tableElement. ColumnWidths = "80 80 80 80 80";
+```
+
+ Wir schaffen eine`TableElement` , das unsere Tabellenstruktur definiert. Die`BackgroundColor`, `Border` , Und`Alignment` Eigenschaften ermöglichen es uns, das Erscheinungsbild der Tabelle anzupassen. Die`Broken` stellt sicher, dass die Tabelle bei einem Seitenumbruch vertikal umgebrochen wird.
+
+## Schritt 4: Tabellenabmessungen und Zellenstile festlegen
+
+In diesem Schritt definieren wir die Anzahl der Spalten, den Zellenabstand und andere wichtige Tabelleneigenschaften.
+
+```csharp
+tableElement.ColumnWidths = "80 80 80 80 80";
 tableElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.DarkBlue);
-tableElement. DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
+tableElement.DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
 tableElement.DefaultCellTextState.ForegroundColor = Color.DarkCyan;
 tableElement.DefaultCellTextState.FontSize = 8F;
-tableElement. DefaultColumnWidth = "70";
-tableElement. IsBroken = false;
-tableElement.IsBordersIncluded = true;
-tableElement. Left = 0F;
-tableElement. Top = 40F;
-tableElement.RepeatingColumnsCount = 2;
-tableElement.RepeatingRowsCount = 3;
+```
 
-// Passen Sie den Stil wiederholter Zeilen an
+ Wir geben die Spaltenbreiten an, um sicherzustellen, dass jede Spalte in der Tabelle gleichmäßig verteilt ist.`DefaultCellBorder`, `DefaultCellPadding` , Und`DefaultCellTextState` Definieren Sie die Standardstile für die Zellen, einschließlich Rahmen, Polsterung, Textfarbe und Schriftgröße.
+
+## Schritt 5: Wiederholende Zeilen und benutzerdefinierte Stile hinzufügen
+
+Wir können auch Stile für sich wiederholende Zeilen und andere spezifische Tabellenelemente wie Kopf- und Fußzeilen definieren.
+
+```csharp
+tableElement.RepeatingRowsCount = 3;
 TextState rowStyle = new TextState();
 rowStyle.BackgroundColor = Color.LightCoral;
 tableElement.RepeatingRowsStyle = rowStyle;
 ```
 
-Wir haben verschiedene Eigenschaften verwendet, um das Tabellenelement anzupassen, wie etwa Hintergrundfarbe, Rahmen, Ausrichtung, Standardzellenstil, Ränder, Spaltenbreite usw.
+ Der`RepeatingRowsCount` sorgt dafür, dass sich die ersten drei Zeilen wiederholen, wenn die Tabelle mehrere Seiten umfasst. Wir setzen den`RepeatingRowsStyle` um diesen Zeilen eine benutzerdefinierte Hintergrundfarbe zuzuweisen.
 
-## Schritt 6: Tabellenkopfzeilen, Textkörper und Fußzeile hinzufügen
+## Schritt 6: Kopf-, Körper- und Fußelemente der Tabelle hinzufügen
 
-Fügen wir nun dem Tabellenelement die Tabellenüberschriften, den Textkörper und die Fußzeile hinzu.
+Lassen Sie uns nun die Abschnitte für Kopf-, Text- und Fußzeilen der Tabelle erstellen und mit Inhalt füllen.
+
 ```csharp
-// Tabellenüberschriften hinzufügen
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
 
-// Anzahl der Zeilen und Spalten in der Tabelle
-int rowCount = 10;
-int colCount = 5;
-int rowIndex;
-int colIndex;
-
-// Erstellen der Tabellenkopfzeile
+// Kopfzeile erstellen
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
-headTrElement.AlternativeText = "Header Row";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
+headTrElement.AlternativeText = "Head Row";
+for (int colIndex = 0; colIndex < 5; colIndex++)
 {
-     TableTHElement theElement = headTrElement.CreateTH();
-     theElement.SetText(string.Format("Header {0}", colIndex));
+    TableTHElement thElement = headTrElement.CreateTH();
+    thElement.SetText($"Head {colIndex}");
 }
 
-//Fügen Sie die Zeilen des Tabellenkörpers hinzu
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
+// Füllen Sie den Tabellenkörper auf
+for (int rowIndex = 0; rowIndex < 10; rowIndex++)
 {
-     TableTRElement trElement = tableTBodyElement.CreateTR();
-     trElement.AlternativeText = string.Format("Row {0}", rowIndex);
-
-     for (colIndex = 0; colIndex < colCount; colIndex++)
-     {
-         TableTDElement tdelement = trElement.CreateTD();
-         tdElement.SetText(string.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-     }
-}
-
-// Fügen Sie die Fußzeile der Tabelle hinzu
-TableTRElement footTrElement = tableTFootElement.CreateTR();
-footTrElement.AlternativeText = "Footline";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-     TableTDElement tdElement = footTrElement.CreateTD();
-     tdElement.SetText(string.Format("Foot {0}", colIndex));
+    TableTRElement trElement = tableTBodyElement.CreateTR();
+    for (int colIndex = 0; colIndex < 5; colIndex++)
+    {
+        TableTDElement tdElement = trElement.CreateTD();
+        tdElement.SetText($"Cell [{rowIndex}, {colIndex}]");
+    }
 }
 ```
 
-Wir haben der Tabelle mithilfe der entsprechenden Elemente Kopf-, Text- und Fußzeilen hinzugefügt.
+ Die Tabelle ist in drei Teile gegliedert: Kopf, Körper und Fuß. Wir erstellen zuerst die Kopfzeile mit`TableTHElement`und fügen Spaltenüberschriften hinzu. Dann füllen wir den Hauptteil der Tabelle mit`TableTDElement`, und füllen Sie jede Zelle mit einer Beschriftung, die ihre Position angibt.
 
-## Schritt 7: Speichern des getaggten PDF-Dokuments
+## Schritt 7: Speichern Sie das Dokument
 
-Nachdem wir nun unser Dokument mit dem gestalteten Tabellenelement erstellt haben, speichern wir es als getaggtes PDF-Dokument.
+Abschließend speichern wir das PDF-Dokument im angegebenen Verzeichnis.
 
 ```csharp
 // Speichern des getaggten PDF-Dokuments
 document.Save(dataDir + "StyleTableElement.pdf");
 ```
 
-Wir haben das getaggte PDF-Dokument im angegebenen Verzeichnis gespeichert.
+Dieser Schritt schließt den Dokumenterstellungsprozess durch Speichern der PDF-Datei mit der formatierten Tabelle ab.
 
-## Schritt 8: Validierung der PDF/UA-Konformität
+## Schritt 8: PDF/UA-Konformität validieren
 
-Als nächstes validieren wir die PDF/UA-Konformität unseres Dokuments.
-
-```csharp
-// PDF/UA-Konformitätsprüfung
-document = new Document(dataDir + "StyleTableElement.pdf");
-bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
-```
-
-Wir haben das getaggte PDF-Dokument hochgeladen und seine PDF/UA-Konformität durch die Generierung eines XML-Berichts validiert.
-
-### Beispielquellcode für Style Table Element mit Aspose.PDF für .NET 
+Nach dem Speichern des Dokuments muss unbedingt sichergestellt werden, dass es dem PDF/UA-Standard (Universal Accessibility) entspricht.
 
 ```csharp
-
-// Der Pfad zum Dokumentverzeichnis.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Dokument erstellen
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example table style");
-taggedContent.SetLanguage("en-US");
-
-// Stammstrukturelement abrufen
-StructureElement rootElement = taggedContent.RootElement;
-
-// Tabellenstrukturelement erstellen
-TableElement tableElement = taggedContent.CreateTableElement();
-rootElement.AppendChild(tableElement);
-tableElement.BackgroundColor = Color.Beige;
-tableElement.Border = new BorderInfo(BorderSide.All, 0.80F, Color.Gray);
-tableElement.Alignment = HorizontalAlignment.Center;
-tableElement.Broken = TableBroken.Vertical;
-tableElement.ColumnAdjustment = ColumnAdjustment.AutoFitToWindow;
-tableElement.ColumnWidths = "80 80 80 80 80";
-tableElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.DarkBlue);
-tableElement.DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
-tableElement.DefaultCellTextState.ForegroundColor = Color.DarkCyan;
-tableElement.DefaultCellTextState.FontSize = 8F;
-tableElement.DefaultColumnWidth = "70";
-tableElement.IsBroken = false;
-tableElement.IsBordersIncluded = true;
-tableElement.Left = 0F;
-tableElement.Top = 40F;
-tableElement.RepeatingColumnsCount = 2;
-tableElement.RepeatingRowsCount = 3;
-TextState rowStyle = new TextState();
-rowStyle.BackgroundColor = Color.LightCoral;
-tableElement.RepeatingRowsStyle = rowStyle;
-TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
-TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
-TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-int rowCount = 10;
-int colCount = 5;
-int rowIndex;
-int colIndex;
-TableTRElement headTrElement = tableTHeadElement.CreateTR();
-headTrElement.AlternativeText = "Head Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-	TableTHElement thElement = headTrElement.CreateTH();
-	thElement.SetText(String.Format("Head {0}", colIndex));
-}
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
-{
-	TableTRElement trElement = tableTBodyElement.CreateTR();
-	trElement.AlternativeText = String.Format("Row {0}", rowIndex);
-	for (colIndex = 0; colIndex < colCount; colIndex++)
-	{
-		TableTDElement tdElement = trElement.CreateTD();
-		tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-	}
-}
-TableTRElement footTrElement = tableTFootElement.CreateTR();
-footTrElement.AlternativeText = "Foot Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-	TableTDElement tdElement = footTrElement.CreateTD();
-	tdElement.SetText(String.Format("Foot {0}", colIndex));
-}
-
-// Getaggtes PDF-Dokument speichern
-document.Save(dataDir + "StyleTableElement.pdf");
-
-// Überprüfung der PDF/UA-Konformität
+// Überprüfen Sie die PDF/UA-Konformität
 document = new Document(dataDir + "StyleTableElement.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableElement.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
+Console.WriteLine($"PDF/UA compliance: {isPdfUaCompliance}");
 ```
+
+Hier laden wir das Dokument neu und validieren es anhand der PDF/UA-Standards. Durch die Konformität wird sichergestellt, dass Ihr PDF den Anforderungen an die Barrierefreiheit entspricht und somit für eine breite Palette von Benutzern geeignet ist.
 
 ## Abschluss
 
-In diesem Tutorial haben wir gelernt, wie man das Array-Element mit Aspose.PDF für .NET formatiert. Wir haben die Stile und Eigenschaften des Tabellenelements angepasst, Kopfzeilen, Textzeilen und eine Fußzeile hinzugefügt, das getaggte PDF-Dokument gespeichert und seine PDF/UA-Konformität überprüft.
+Mit Aspose.PDF für .NET ist das Erstellen und Gestalten von Tabellen in Ihren PDF-Dokumenten einfach und intuitiv. Indem Sie die in diesem Tutorial beschriebenen Schritte befolgen, können Sie Tabellen mit benutzerdefinierten Stilen erstellen und sicherstellen, dass Ihre PDFs den Zugänglichkeitsstandards entsprechen. Egal, ob Sie Berichte erstellen oder strukturierte Dokumente erstellen, Tabellen sind ein leistungsstarkes Werkzeug zur übersichtlichen Darstellung von Daten.
 
-### Häufig gestellte Fragen
+## Häufig gestellte Fragen
 
-#### F: Was ist der Zweck dieses Tutorials zum Formatieren des Array-Elements mit Aspose.PDF für .NET?
+### Kann ich Bilder in Tabellenzellen einfügen?
+ Ja, Sie können Bilder in Tabellenzellen einfügen, indem Sie`Image` Element.
 
-A: Ziel dieses Tutorials ist es, Sie durch den Prozess der Formatierung des Array-Elements in einem PDF-Dokument mit Aspose.PDF für .NET zu führen. Es enthält schrittweise Anleitungen und C#-Quellcodebeispiele, die Ihnen dabei helfen, die Stile und Eigenschaften des Array-Elements anzupassen.
+### Wie passe ich die Spaltenbreiten dynamisch an?
+ Sie können die`ColumnAdjustment` Eigentum an`AutoFitToWindow` um die Spaltenbreiten automatisch an den Inhalt anzupassen.
 
-#### F: Welche Voraussetzungen müssen für die Teilnahme an diesem Tutorial erfüllt sein?
+### Ist die PDF/UA-Konformität für alle Dokumente obligatorisch?
+Es ist zwar nicht zwingend erforderlich, wird jedoch für Dokumente empfohlen, die hohe Zugänglichkeitsstandards erfordern.
 
-A: Stellen Sie vor dem Start sicher, dass Sie Ihre Entwicklungsumgebung für die Verwendung von Aspose.PDF für .NET eingerichtet haben. Dazu müssen Sie die Aspose.PDF-Bibliothek installieren und Ihr Projekt so konfigurieren, dass es darauf verweist.
+### Kann ich auf bestimmte Zeilen unterschiedliche Stile anwenden?
+ Ja, Sie können einzelne Zeilen oder Zellen anpassen, indem Sie deren`TextState` oder`BackgroundColor`.
 
-#### F: Wie kann ich mit Aspose.PDF für .NET ein neues PDF-Dokument erstellen und dessen Titel und Sprache festlegen?
-
- A: Um ein neues PDF-Dokument zu erstellen, müssen Sie ein`Document` Objekt aus der Aspose.PDF-Bibliothek. Der im Tutorial bereitgestellte C#-Quellcode zeigt, wie ein Dokument erstellt und dessen Titel- und Spracheigenschaften festgelegt werden.
-
-#### F: Welche Bedeutung hat das Stammstrukturelement in einem PDF-Dokument?
-
-A: Das Stammstrukturelement fungiert als Container für andere Strukturelemente und hilft dabei, den Inhalt des PDF-Dokuments zu organisieren und zu kategorisieren. Es spielt eine entscheidende Rolle bei der Erstellung der logischen Struktur des Dokuments.
-
-#### F: Wie erstelle und passe ich ein Array-Strukturelement mit Aspose.PDF für .NET an?
-
- A: Sie können ein Array-Strukturelement erstellen mit dem`CreateTableElement()` Methode. Der Quellcode des Tutorials enthält Beispiele zum Anpassen verschiedener Eigenschaften des Tabellenelements, wie Hintergrundfarbe, Rahmen, Ausrichtung, Spaltenbreite und mehr.
-
-#### F: Kann ich die Stile und Eigenschaften von Tabellenzellen innerhalb des Array-Elements anpassen?
-
-A: Ja, das Tutorial beschreibt, wie Sie die Stile und Eigenschaften des gesamten Tabellenelements anpassen, einschließlich Kopfzeilen, Textzeilen und Fußzeilen. Es geht jedoch nicht speziell auf die Anpassung einzelner Tabellenzellen ein.
-
-#### F: Wie kann ich dem Tabellenelement Kopfzeilen, Textzeilen und eine Fußzeile hinzufügen?
-
-A: Das Tutorial erklärt, wie Sie mit den entsprechenden Methoden von Aspose.PDF für .NET Kopfzeilen, Textzeilen und eine Fußzeile zum Tabellenelement erstellen und hinzufügen.
-
-#### F: Was ist PDF/UA-Konformität und wie kann ich sie für mein getaggtes PDF-Dokument validieren?
-
- A: Die PDF/UA-Konformität stellt sicher, dass das PDF-Dokument den Zugänglichkeitsstandards entspricht und somit für Benutzer mit Behinderungen zugänglicher ist. Das Tutorial zeigt, wie Sie die PDF/UA-Konformität mithilfe des`Validate()` Methode und generieren Sie einen XML-Konformitätsbericht.
-
-#### F: Wie kann ich diese Konzepte in meine eigenen .NET-Anwendungen integrieren?
-
-A: Sie können die bereitgestellten C#-Quellcodebeispiele als Leitfaden zur Implementierung der Array-Elementformatierung in Ihren eigenen .NET-Anwendungen verwenden. Ändern und passen Sie den Code Ihren Anforderungen entsprechend an und integrieren Sie ihn in Ihre Projekte.
-
-#### F: Gibt es empfohlene Best Practices zum Formatieren von Array-Elementen in PDF-Dokumenten?
-
-A: Berücksichtigen Sie beim Formatieren von Array-Elementen (Tabellen) die Lesbarkeit und Zugänglichkeit des Inhalts. Verwenden Sie klare und lesbare Schriftarten, geeignete Farben und achten Sie auf ein einheitliches Layout. Überprüfen Sie die PDF/UA-Konformität, um sicherzustellen, dass die Zugänglichkeitsstandards eingehalten werden.
-
-#### F: Welche anderen Funktionen von Aspose.PDF für .NET kann ich zur Anpassung von PDF-Dokumenten erkunden?
-
-A: Aspose.PDF für .NET bietet eine Reihe von Funktionen zur Anpassung von PDF-Dokumenten, darunter Textbearbeitung, Bildeinfügung, Formularfeldverwaltung, digitale Signaturen, Anmerkungen und mehr. Weitere Funktionen finden Sie in der offiziellen Dokumentation und den Ressourcen.
+### Welchen Vorteil bietet die Verwendung getaggter Inhalte?
+Markierter Inhalt verbessert die Zugänglichkeit von Dokumenten und trägt dazu bei, die Einhaltung von Standards wie PDF/UA sicherzustellen.

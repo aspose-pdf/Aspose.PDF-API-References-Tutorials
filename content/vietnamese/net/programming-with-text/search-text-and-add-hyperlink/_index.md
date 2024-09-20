@@ -2,189 +2,165 @@
 title: Tìm kiếm văn bản và thêm siêu liên kết
 linktitle: Tìm kiếm văn bản và thêm siêu liên kết
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Tìm hiểu cách tìm kiếm văn bản trong PDF, thêm siêu liên kết vào văn bản tìm thấy và lưu tài liệu đã sửa đổi bằng Aspose.PDF cho .NET.
+description: Tìm hiểu cách tìm kiếm văn bản và thêm siêu liên kết vào tệp PDF bằng Aspose.PDF cho .NET với hướng dẫn từng bước của chúng tôi.
 type: docs
 weight: 450
 url: /vi/net/programming-with-text/search-text-and-add-hyperlink/
 ---
-Hướng dẫn này giải thích cách sử dụng Aspose.PDF cho .NET để tìm kiếm văn bản cụ thể trong tài liệu PDF, thêm siêu liên kết đến văn bản tìm thấy và lưu tài liệu đã sửa đổi. Mã nguồn C# được cung cấp trình bày quy trình từng bước.
+## Giới thiệu
+
+Bạn đang tìm cách không chỉ để thao tác PDF mà còn cải thiện chúng bằng cách chèn siêu liên kết? Vâng, bạn đã đến đúng nơi rồi! Với thư viện Aspose.PDF mạnh mẽ cho .NET, bạn có thể tìm kiếm các mẫu văn bản trong tài liệu PDF của mình và thêm siêu liên kết một cách liền mạch. Hãy tưởng tượng có một tài liệu không chỉ truyền tải thông tin mà còn kết nối người đọc với các tài nguyên có liên quan chỉ bằng cách nhấp vào liên kết. Nghe có vẻ hay, phải không? Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn từng bước về cách tìm kiếm văn bản bằng biểu thức chính quy và thêm siêu liên kết trong PDF của mình. Cho dù bạn là nhà phát triển dày dạn kinh nghiệm hay mới bắt đầu, bạn sẽ thấy quá trình này đơn giản và bổ ích.
 
 ## Điều kiện tiên quyết
 
-Trước khi thực hiện hướng dẫn, hãy đảm bảo bạn có những điều sau:
+Trước khi đi sâu vào chi tiết, hãy đảm bảo rằng bạn có mọi thứ cần thiết để theo dõi. Sau đây là danh sách kiểm tra hữu ích:
 
-- Kiến thức cơ bản về ngôn ngữ lập trình C#.
-- Đã cài đặt thư viện Aspose.PDF cho .NET. Bạn có thể tải xuống từ trang web Aspose hoặc sử dụng NuGet để cài đặt vào dự án của bạn.
+- .NET Framework: Bạn phải cài đặt .NET Framework trên máy của mình (phiên bản 4.0 trở lên).
+- Aspose.PDF cho Thư viện .NET: Đừng quên tải xuống và thêm tham chiếu đến thư viện Aspose.PDF trong dự án của bạn. Bạn có thể tìm thấy nó[đây](https://releases.aspose.com/pdf/net/).
+- IDE: Bạn sẽ cần một Môi trường phát triển tích hợp (IDE) như Visual Studio để viết và chạy mã.
+- Tệp PDF mẫu: Lấy tệp PDF mẫu mà bạn có thể kiểm tra mã. Bạn có thể tạo tệp PDF đơn giản hoặc sử dụng một trong các tài liệu hiện có của mình.
 
-## Bước 1: Thiết lập dự án
+Sau khi bạn đã hoàn thành mọi mục trong danh sách này, chúng ta đã sẵn sàng bắt đầu!
 
-Bắt đầu bằng cách tạo một dự án C# mới trong môi trường phát triển tích hợp (IDE) mà bạn thích và thêm tham chiếu đến thư viện Aspose.PDF cho .NET.
+## Nhập gói
 
-## Bước 2: Nhập các không gian tên cần thiết
+Bước đầu tiên trong hành trình của chúng tôi là nhập các gói cần thiết. Đây là nơi chúng tôi cho dự án biết những công cụ nào chúng tôi sẽ sử dụng. Sau đây là cách bạn có thể thực hiện:
 
-Thêm lệnh using sau vào đầu tệp C# của bạn để nhập các không gian tên cần thiết:
+Trong tệp C# của bạn, hãy bắt đầu bằng cách thêm các không gian tên sau vào đầu:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
-using Aspose.Pdf.Content;
-using Aspose.Pdf.Facades;
 using Aspose.Pdf.Text;
+using Aspose.Pdf.Facades;
+using System;
 ```
 
-## Bước 3: Đặt đường dẫn đến thư mục tài liệu
+Bằng cách nhập các không gian tên này, bạn cấp cho chương trình của mình quyền truy cập vào tất cả các tính năng thú vị mà Aspose.PDF cung cấp.
 
- Đặt đường dẫn đến thư mục tài liệu của bạn bằng cách sử dụng`dataDir` biến:
+Bây giờ chúng ta đã thiết lập xong, đã đến lúc hành động. Chúng ta sẽ thực hiện theo một loạt các bước, vì vậy hãy theo dõi chặt chẽ nhé!
+
+### Bước 1: Thiết lập thư mục tài liệu của bạn
+
+Đầu tiên, bạn cần phải chỉ định nơi lưu trữ các tệp PDF của mình. Sửa đổi`dataDir` biến để trỏ đến thư mục tài liệu của bạn. Đây là cách bạn thực hiện:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế đến thư mục tài liệu của bạn.
+ Hãy chắc chắn thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế tới tài liệu của bạn.
 
-## Bước 4: Tạo TextFragmentAbsorber
+### Bước 2: Tạo TextFragmentAbsorber
 
- Tạo một`TextFragmentAbsorber` đối tượng để tìm tất cả các trường hợp của cụm từ tìm kiếm đầu vào:
+ Tiếp theo, chúng ta cần một công cụ để tìm văn bản chúng ta muốn liên kết. Nhập`TextFragmentAbsorber`. Anh chàng nhỏ bé này sẽ giúp chúng ta tìm kiếm mẫu văn bản cụ thể trong tệp PDF của mình.
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("\\d{4}-\\d{4}");
 ```
 
- Thay thế`"\\d{4}-\\d{4}"` với mẫu biểu thức chính quy bạn mong muốn.
+Ở đây, chúng ta đang tìm kiếm một mẫu cụ thể: bốn chữ số, một dấu gạch ngang, theo sau là bốn chữ số khác (như số điện thoại hoặc năm).
 
-## Bước 5: Bật tìm kiếm biểu thức chính quy
+### Bước 3: Bật Tìm kiếm biểu thức chính quy
 
- Cho phép tìm kiếm biểu thức chính quy bằng cách thiết lập`TextSearchOptions` Tính chất của chất hấp thụ:
+ Chúng tôi đã sử dụng biểu thức chính quy để tìm mẫu văn bản của mình, nhưng chúng tôi cần đảm bảo`absorber` biết nó đã được bật. Điều này rất quan trọng để nó có thể tìm kiếm đúng cách.
 
 ```csharp
 absorber.TextSearchOptions = new TextSearchOptions(true);
 ```
 
-## Bước 6: Mở và đóng tài liệu PDF
+### Bước 4: Khởi tạo PdfContentEditor
 
- Tạo một`PdfContentEditor` đối tượng và liên kết nó với tệp PDF nguồn:
+ Bây giờ chúng ta đã có bộ hấp thụ sẵn sàng, chúng ta cần một`PdfContentEditor` để làm việc với tệp PDF của chúng tôi. Lớp này cho phép chúng tôi liên kết với PDF và thao tác với nó.
 
 ```csharp
 PdfContentEditor editor = new PdfContentEditor();
+```
+
+### Bước 5: Liên kết tệp PDF nguồn của bạn
+
+Sau khi trình chỉnh sửa nội dung đã sẵn sàng, đã đến lúc liên kết nó với tệp PDF thực tế mà chúng ta muốn làm việc.
+
+```csharp
 editor.BindPdf(dataDir + "SearchRegularExpressionPage.pdf");
 ```
 
- Thay thế`"SearchRegularExpressionPage.pdf"` bằng tên thực của tệp PDF của bạn.
+ Hãy chắc chắn thay thế`"SearchRegularExpressionPage.pdf"` bằng tên tệp PDF của bạn.
 
-## Bước 7: Chấp nhận bộ hấp thụ cho trang
+### Bước 6: Chấp nhận Absorber cho Trang
 
-Chấp nhận bộ hấp thụ cho trang mong muốn của tài liệu:
+Chúng ta cần cho biên tập viên biết rằng chúng ta muốn tìm kiếm trên một trang cụ thể của tài liệu. Trong trường hợp này, hãy chọn Trang 1.
 
 ```csharp
 editor.Document.Pages[1].Accept(absorber);
 ```
 
- Thay thế`1` với số trang mong muốn.
+### Bước 7: Chuẩn bị lặp qua các đoạn văn bản
 
-## Bước 8: Thêm siêu liên kết vào văn bản tìm thấy
+Bây giờ, chúng ta đã sẵn sàng để lặp qua tất cả các đoạn văn bản được trình hấp thụ của chúng ta tìm thấy. Chúng ta sẽ tinh chỉnh giao diện của chúng và thiết lập siêu liên kết của chúng ta.
 
-Lặp qua các đoạn văn bản đã lấy được và thêm siêu liên kết vào chúng:
+```csharp
+int[] dashArray = { };
+String[] LEArray = { };
+Color blue = Color.Blue;
+```
+
+Ở đây, chúng ta thiết lập một số thông số, như màu của siêu liên kết.
+
+### Bước 8: Lặp qua từng đoạn văn bản
+
+Đối với mỗi đoạn văn bản khớp với tìm kiếm của chúng tôi, chúng tôi sẽ thay đổi màu sắc của nó và tạo một siêu liên kết. Sau đây là giao diện của nó:
 
 ```csharp
 foreach (TextFragment textFragment in absorber.TextFragments)
 {
     textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-    // Tạo một hình chữ nhật dựa trên vị trí của đoạn văn bản
-    System.Drawing.Rectangle rect = new System.Drawing.Rectangle((int)textFragment.Rectangle.LLX,
+    Rectangle rect = new Rectangle((int)textFragment.Rectangle.LLX,
         (int)Math.Round(textFragment.Rectangle.LLY), (int)Math.Round(textFragment.Rectangle.Width + 2),
         (int)Math.Round(textFragment.Rectangle.Height + 1));
-    //Thêm liên kết web vào hình chữ nhật
-    editor.CreateWebLink(rect, "http://www.aspose.com", 1, System.draw.Color.Blue);
+    Enum[] actionName = new Enum[2] { Aspose.Pdf.Annotations.PredefinedAction.Document_AttachFile, Aspose.Pdf.Annotations.PredefinedAction.Document_ExtractPages };
+    
+    editor.CreateWebLink(rect, "http://www.aspose.com", 1, màu xanh, actionName);
+    editor.CreateLine(rect, "", (float)textFragment.Rectangle.LLX + 1, (float)textFragment.Rectangle.LLY - 1,
+        (float)textFragment.Rectangle.URX, (float)textFragment.Rectangle.LLY - 1, 1, 1, blue, "S", dashArray, LEArray);
 }
 ```
 
- Thay thế`"http://www.aspose.com"` với URL siêu liên kết mong muốn.
+### Bước 9: Lưu PDF đã chỉnh sửa
 
-## Bước 9: Lưu và đóng tài liệu đã sửa đổi
-
-Lưu tài liệu đã sửa đổi và đóng trình soạn thảo:
+Chúng ta sắp hoàn tất rồi! Bây giờ là lúc lưu những thay đổi vào một tệp PDF mới.
 
 ```csharp
 dataDir = dataDir + "SearchTextAndAddHyperlink_out.pdf";
 editor.Save(dataDir);
-editor.Close();
-Console.WriteLine("\nText replaced and hyperlink added successfully based on a regular expression.\nFile saved at " + dataDir);
 ```
 
- Hãy chắc chắn thay thế`"SearchTextAndAddHyperlink_out.pdf"` với tên tập tin đầu ra mong muốn.
+### Bước 10: Đóng Trình chỉnh sửa
 
-### Mã nguồn mẫu cho Tìm kiếm văn bản và thêm siêu liên kết bằng Aspose.PDF cho .NET 
+Cuối cùng, đừng quên đóng tài liệu để giải phóng tài nguyên!
+
 ```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Tạo đối tượng hấp thụ để tìm tất cả các trường hợp của cụm từ tìm kiếm đầu vào
-TextFragmentAbsorber absorber = new TextFragmentAbsorber("\\d{4}-\\d{4}");
-// Bật tìm kiếm biểu thức chính quy
-absorber.TextSearchOptions = new TextSearchOptions(true);
-// Mở tài liệu
-PdfContentEditor editor = new PdfContentEditor();
-// Liên kết tệp PDF nguồn
-editor.BindPdf(dataDir + "SearchRegularExpressionPage.pdf");
-// Chấp nhận bộ hấp thụ cho trang
-editor.Document.Pages[1].Accept(absorber);
-int[] dashArray = { };
-String[] LEArray = { };
-System.Drawing.Color blue = System.Drawing.Color.Blue;
-// Lặp lại các đoạn
-foreach (TextFragment textFragment in absorber.TextFragments)
-{
-	textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-	System.Drawing.Rectangle rect = new System.Drawing.Rectangle((int)textFragment.Rectangle.LLX,
-		(int)Math.Round(textFragment.Rectangle.LLY), (int)Math.Round(textFragment.Rectangle.Width + 2),
-		(int)Math.Round(textFragment.Rectangle.Height + 1));
-	Enum[] actionName = new Enum[2] { Aspose.Pdf.Annotations.PredefinedAction.Document_AttachFile, Aspose.Pdf.Annotations.PredefinedAction.Document_ExtractPages };
-	editor.CreateWebLink(rect, "http:// Www.aspose.com", 1, màu xanh, actionName);
-	editor.CreateLine(rect, "", (float)textFragment.Rectangle.LLX + 1, (float)textFragment.Rectangle.LLY - 1,
-		(float)textFragment.Rectangle.URX, (float)textFragment.Rectangle.LLY - 1, 1, 1, blue, "S", dashArray, LEArray);
-}
-dataDir = dataDir + "SearchTextAndAddHyperlink_out.pdf";
-editor.Save(dataDir);
 editor.Close();
 Console.WriteLine("\nText replaced and hyperlink added successfully based on a regular expression.\nFile saved at " + dataDir);
 ```
+
+Bây giờ, bạn vừa tạo một tệp PDF có siêu liên kết được tạo động dựa trên kết quả tìm kiếm. Thật tuyệt phải không?
 
 ## Phần kết luận
 
-Xin chúc mừng! Bạn đã học thành công cách tìm kiếm văn bản cụ thể trong tài liệu PDF, thêm siêu liên kết vào văn bản đã tìm thấy và lưu tài liệu đã sửa đổi bằng Aspose.PDF cho .NET. Hướng dẫn này cung cấp hướng dẫn từng bước, từ thiết lập dự án đến thực hiện các hành động cần thiết. Bây giờ bạn có thể kết hợp mã này vào các dự án C# của riêng mình để thao tác văn bản và thêm siêu liên kết vào tệp PDF.
+Và bạn đã có nó! Bằng cách làm theo các bước này, bạn đã học cách tìm kiếm trong PDF và thêm siêu liên kết bằng thư viện Aspose.PDF cho .NET. Điều này có thể mở ra một thế giới khả năng, đặc biệt nếu bạn đang làm việc với các tài liệu yêu cầu tính tương tác. Hãy tưởng tượng việc thêm liên kết đến các tài nguyên liên quan, trang web tham khảo hoặc thậm chí các trang nội bộ—tất cả chỉ với một vài dòng mã!
+## Câu hỏi thường gặp
 
-### Câu hỏi thường gặp
+### Aspose.PDF dành cho .NET là gì?  
+Aspose.PDF for .NET là thư viện cho phép các nhà phát triển tạo, thao tác và quản lý tài liệu PDF trong các ứng dụng .NET.
 
-#### H: Mục đích của hướng dẫn "Tìm kiếm văn bản và thêm siêu liên kết" là gì?
+### Làm thế nào tôi có thể tải xuống Aspose.PDF cho .NET?  
+ Bạn có thể tải xuống thư viện[đây](https://releases.aspose.com/pdf/net/).
 
-A: Hướng dẫn "Tìm kiếm văn bản và thêm siêu liên kết" nhằm mục đích chứng minh cách sử dụng thư viện Aspose.PDF cho .NET để tìm kiếm văn bản cụ thể trong tài liệu PDF, thêm siêu liên kết vào văn bản tìm thấy và sau đó lưu tài liệu đã sửa đổi. Hướng dẫn cung cấp hướng dẫn toàn diện và các mẫu mã C# để minh họa quy trình từng bước.
+### Tôi có thể dùng thử Aspose.PDF miễn phí không?  
+ Chắc chắn rồi! Bạn có thể dùng thử miễn phí[đây](https://releases.aspose.com/).
 
-#### H: Hướng dẫn này giúp ích gì khi thêm siêu liên kết vào văn bản cụ thể trong tài liệu PDF?
+### Có hỗ trợ cho các sản phẩm Aspose không?  
+ Có, bạn có thể tìm thấy sự hỗ trợ và thảo luận của cộng đồng[đây](https://forum.aspose.com/c/pdf/10).
 
-A: Hướng dẫn này hướng dẫn bạn quy trình sử dụng thư viện Aspose.PDF để định vị văn bản cụ thể trong tài liệu PDF, áp dụng siêu liên kết đến văn bản đã xác định và lưu PDF đã sửa đổi. Hướng dẫn này bao gồm các bước thiết yếu như thiết lập dự án, tải tài liệu, bật tìm kiếm biểu thức chính quy và thêm siêu liên kết vào văn bản đã tìm thấy.
-
-#### H: Cần có những điều kiện tiên quyết nào để làm theo hướng dẫn này?
-
-A: Trước khi bắt đầu, bạn nên có hiểu biết cơ bản về ngôn ngữ lập trình C#. Ngoài ra, bạn cần cài đặt thư viện Aspose.PDF cho .NET, có thể tải xuống từ trang web Aspose hoặc cài đặt bằng NuGet trong dự án của bạn.
-
-#### H: Tôi phải thiết lập dự án của mình như thế nào để thực hiện theo hướng dẫn này?
-
-A: Bắt đầu bằng cách tạo một dự án C# mới trong môi trường phát triển tích hợp (IDE) ưa thích của bạn. Sau đó, thêm tham chiếu đến thư viện Aspose.PDF cho .NET, cho phép bạn sử dụng các khả năng của thư viện trong dự án của mình.
-
-#### H: Tôi có thể thêm siêu liên kết vào văn bản cụ thể bằng hướng dẫn này không?
-
-A: Có, hướng dẫn này tập trung cụ thể vào việc thêm siêu liên kết vào văn bản cụ thể trong tài liệu PDF. Nó trình bày cách tìm và trích xuất văn bản mong muốn bằng cách sử dụng biểu thức chính quy, tạo siêu liên kết liên kết với các đoạn văn bản và lưu PDF đã sửa đổi.
-
-#### H: Làm thế nào để xác định văn bản tôi muốn tìm kiếm và thêm siêu liên kết vào?
-
- A: Để chỉ định văn bản bạn muốn tìm kiếm và thêm siêu liên kết vào, hãy tạo`TextFragmentAbsorber` đối tượng và thiết lập mẫu của nó bằng cách sử dụng`Text` tham số. Thay thế mẫu mặc định`"\\d{4}-\\d{4}"` trong mã hướng dẫn với mẫu biểu thức chính quy mong muốn của bạn.
-
-#### H: Làm thế nào tôi có thể bật tìm kiếm biểu thức chính quy cho văn bản?
-
- A: Tìm kiếm biểu thức chính quy được kích hoạt bằng cách tạo một`TextSearchOptions` đối tượng và thiết lập giá trị của nó thành`true` . Gán đối tượng này cho`TextSearchOptions` tài sản của`TextFragmentAbsorber` Ví dụ. Điều này đảm bảo rằng mẫu biểu thức chính quy được áp dụng trong quá trình tìm kiếm văn bản.
-
-#### H: Làm thế nào để thêm siêu liên kết vào văn bản tìm thấy?
-
- A: Sau khi xác định các đoạn văn bản bằng cách sử dụng`TextFragmentAbsorber` , hướng dẫn cung cấp một vòng lặp để lặp qua các đoạn văn bản này. Đối với mỗi đoạn văn bản, hướng dẫn trình bày cách đặt màu văn bản thành màu xanh lam và tạo siêu liên kết bằng cách sử dụng`CreateWebLink` phương pháp.
-
-#### H: Các bước để lưu tệp PDF đã chỉnh sửa có chứa siêu liên kết là gì?
-
- A: Sau khi thêm siêu liên kết vào các đoạn văn bản mong muốn, hãy sử dụng`PdfContentEditor` lớp để lưu tài liệu đã chỉnh sửa. Mã mẫu của hướng dẫn trình bày cách lưu PDF đã chỉnh sửa, đóng trình chỉnh sửa và hiển thị thông báo thành công.
+### Làm thế nào tôi có thể xin được giấy phép tạm thời cho Aspose.PDF?  
+ Bạn có thể yêu cầu giấy phép tạm thời[đây](https://purchase.aspose.com/temporary-license/).

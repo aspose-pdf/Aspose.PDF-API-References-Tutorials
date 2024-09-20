@@ -17,7 +17,7 @@ Mielőtt elkezdenénk a PDF-fájlban lévő képek átméretezésének ténylege
 
 1. Visual Studio telepítve: A Visual Studio verzióját telepítenie kell a gépére. Ide írjuk a kódunkat az Aspose.PDF könyvtárral való interakcióhoz.
 2. .NET-keretrendszer: Győződjön meg arról, hogy telepítve van a .NET-keretrendszer. Ez az oktatóanyag feltételezi, hogy legalább .NET-keretrendszer 4.0 vagy újabb verziót használ.
-3. Aspose.PDF for .NET Library: Le kell töltenie az Aspose.PDF könyvtárat. Ez a hatékony eszköz megkönnyíti a PDF-fájlok programozott kezelését. Tudod[töltse le itt](https://releases.aspose.com/pdf/net/).
+3. Aspose.PDF for .NET Library: Le kell töltenie az Aspose.PDF könyvtárat. Ez a hatékony eszköz megkönnyíti a PDF-fájlok programozott kezelését. Megteheti[töltse le itt](https://releases.aspose.com/pdf/net/).
 4. A C# alapszintű ismerete: A C# programozás ismerete előnyös lesz. Ha tudod, hogyan kell egyszerű C# kódot írni, akkor minden rendben lesz!
 5.  Tesztelendő PDF-fájl: Készítsen elő egy PDF-mintafájlt a képátméretezési funkció teszteléséhez. Az oktatóanyag kedvéért feltételezzük, hogy van egy neve`ResizeImage.pdf`.
 

@@ -116,7 +116,7 @@ Ez a sor menti a PDF-fájlt a megadott könyvtárba "SetExpiryDate_out.pdf" név
 
 ## Következtetés
 
-És megvan! Sikeresen létrehozott egy lejárati dátumú PDF-fájlt az Aspose.PDF for .NET használatával. Ez a funkció nemcsak a biztonságot növeli, hanem azt is biztosítja, hogy az érzékeny információk ellenőrzés alatt maradjanak. Akár szerződéseket, jelentéseket vagy egyéb fontos dokumentumokat küld ki, a lejárati dátum beállítása megváltoztathatja a játékot.
+És megvan! Sikeresen létrehozott egy lejárati dátumú PDF-fájlt az Aspose.PDF for .NET használatával. Ez a funkció nemcsak a biztonságot növeli, hanem azt is biztosítja, hogy az érzékeny információk ellenőrzés alatt maradjanak. Akár szerződéseket, jelentéseket vagy más fontos dokumentumokat küld ki, a lejárati dátum beállítása megváltoztathatja a játékot.
 
 ## GYIK
 

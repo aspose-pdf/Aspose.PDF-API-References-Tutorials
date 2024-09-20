@@ -2,174 +2,147 @@
 title: البحث عن تعبير عادي في ملف PDF
 linktitle: البحث عن تعبير عادي في ملف PDF
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: تعرف على كيفية البحث عن النص واسترجاعه باستخدام التعبيرات العادية في ملف PDF باستخدام Aspose.PDF لـ .NET.
+description: تعرف على كيفية البحث عن التعبيرات العادية في ملفات PDF باستخدام Aspose.PDF لـ .NET في هذا البرنامج التعليمي خطوة بخطوة. عزز إنتاجيتك باستخدام التعبيرات العادية.
 type: docs
 weight: 440
 url: /ar/net/programming-with-text/search-regular-expression/
 ---
-يوضح هذا البرنامج التعليمي كيفية استخدام Aspose.PDF لـ .NET للبحث عن واسترجاع النص الذي يتطابق مع تعبير عادي في ملف PDF. يوضح كود المصدر C# المقدم العملية خطوة بخطوة.
+## مقدمة
+
+عند التعامل مع مستندات PDF كبيرة الحجم، قد تجد نفسك تبحث عن أنماط أو تنسيقات معينة مثل التواريخ أو أرقام الهواتف أو غيرها من البيانات المنظمة. قد يكون البحث يدويًا في ملف PDF أمرًا مرهقًا، أليس كذلك؟ وهنا يأتي استخدام التعبيرات العادية (regex) في متناول اليد. في هذا البرنامج التعليمي، سنستكشف كيفية البحث عن نمط تعبير عادي داخل ملف PDF باستخدام Aspose.PDF لـ .NET. سيرشدك هذا الدليل خلال كل خطوة حتى تتمكن من تنفيذها بسهولة في تطبيق .NET الخاص بك.
 
 ## المتطلبات الأساسية
 
-قبل المتابعة بالبرنامج التعليمي، تأكد من توفر ما يلي:
+قبل أن نتعمق في البرنامج التعليمي خطوة بخطوة، دعنا نراجع ما تحتاج إلى وضعه في مكانه:
 
-- المعرفة الأساسية للغة البرمجة C#.
-- تم تثبيت مكتبة Aspose.PDF لـ .NET. يمكنك الحصول عليها من موقع Aspose على الويب أو استخدام NuGet لتثبيتها في مشروعك.
+-  Aspose.PDF لـ .NET: يجب أن تكون هذه المكتبة مثبتة. إذا لم تقم بتثبيتها بعد، يمكنك[تحميله هنا](https://releases.aspose.com/pdf/net/).
+- IDE: Visual Studio أو أي IDE آخر متوافق مع C#.
+- .NET Framework: تأكد من إعداد مشروعك باستخدام الإصدار المناسب من .NET Framework.
+- المعرفة الأساسية بلغة C#: على الرغم من أن هذا الدليل مفصل، إلا أن الفهم الأساسي للغة C# سيكون مفيدًا.
 
-## الخطوة 1: إعداد المشروع
+### استيراد الحزم
 
-ابدأ بإنشاء مشروع C# جديد في بيئة التطوير المتكاملة (IDE) المفضلة لديك وأضف مرجعًا إلى مكتبة Aspose.PDF لـ .NET.
-
-## الخطوة 2: استيراد المساحات الأساسية الضرورية
-
-أضف التوجيهات التالية في بداية ملف C# الخاص بك لاستيراد المساحات المطلوبة:
+للبدء، ستحتاج إلى استيراد المساحات الأساسية اللازمة من Aspose.PDF لـ .NET إلى مشروعك. تعد هذه الحزم ضرورية للعمل مع ملفات PDF وإجراء عمليات البحث باستخدام التعبيرات العادية.
 
 ```csharp
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
+using System;
 ```
 
-## الخطوة 3: تحميل مستند PDF
+دعونا نقوم بتقسيم عملية البحث عن التعبيرات العادية في ملف PDF باستخدام Aspose.PDF إلى خطوات متعددة.
 
- قم بتعيين المسار إلى دليل مستند PDF الخاص بك وقم بتحميل المستند باستخدام`Document` فصل:
+## الخطوة 1: إعداد دليل المستندات
+
+ تبدأ كل عملية PDF بتحديد مكان وجود المستند. ستحتاج إلى تحديد المسار إلى ملف PDF الخاص بك، والذي يتم تخزينه في`dataDir` عامل.
+
+### الخطوة 1.1: تحديد مسار المستند الخاص بك
 
 ```csharp
+// حدد المسار إلى مستند PDF الخاص بك
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
+
+ يستبدل`"YOUR DOCUMENT DIRECTORY"` مع المسار الفعلي لملف PDF الخاص بك. هذه الخطوة بالغة الأهمية لأنها توجه الكود الخاص بك إلى الملف الذي تريد العمل به.
+
+### الخطوة 1.2: افتح مستند PDF
+
+ بعد ذلك، تحتاج إلى فتح مستند PDF باستخدام`Document` الفئة من Aspose.PDF.
+
+```csharp
+// افتح المستند
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionAll.pdf");
 ```
 
- تأكد من الاستبدال`"YOUR DOCUMENT DIRECTORY"` مع المسار الفعلي إلى دليل المستند الخاص بك.
+ هنا،`"SearchRegularExpressionAll.pdf"` هو ملف PDF النموذجي الذي سنقوم من خلاله بإجراء بحث التعبيرات العادية.
 
-## الخطوة 4: البحث باستخدام التعبيرات العادية
+## الخطوة 2: إعداد TextFragmentAbsorber
 
- إنشاء`TextFragmentAbsorber` الكائن وتعيين نمط التعبير العادي للعثور على جميع العبارات التي تطابق النمط:
+ هذا هو المكان الذي يحدث فيه السحر!`TextFragmentAbsorber` تساعد الفئة في التقاط أجزاء من النص تتطابق مع نمط معين أو تعبير منتظم.
+
+دعنا نعد الممتص للبحث عن الأنماط باستخدام تعبير عادي. في هذه الحالة، نبحث عن نمط سنوات مثل "1999-2000".
 
 ```csharp
+// إنشاء كائن TextAbsorber للعثور على جميع العبارات المطابقة للتعبير العادي
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // مثل 1999-2000
 ```
 
- يستبدل`"\\d{4}-\\d{4}"` مع نمط التعبير العادي المطلوب.
+ التعبير العادي`\\d{4}-\\d{4}` يبحث عن نمط مكون من أربعة أرقام متبوعة بواصلة وأربعة أرقام أخرى، وهو أمر طبيعي بالنسبة لنطاقات السنوات.
 
-## الخطوة 5: تعيين خيارات البحث النصي
+## الخطوة 3: تمكين البحث باستخدام التعبيرات العادية
 
- إنشاء`TextSearchOptions` الكائن وضبطه على`TextSearchOptions` ممتلكات`TextFragmentAbsorber` كائن لتمكين استخدام التعابير العادية:
-
-```csharp
-TextSearchOptions textSearchOptions = new TextSearchOptions(true);
-textFragmentAbsorber.TextSearchOptions = textSearchOptions;
-```
-
-## الخطوة 6: البحث في جميع الصفحات
-
-قبول الامتصاص لجميع صفحات الوثيقة:
+ للتأكد من أن عملية البحث تفسر النمط كتعبير عادي، تحتاج إلى تكوين خيارات البحث باستخدام`TextSearchOptions` فصل.
 
 ```csharp
-pdfDocument.Pages.Accept(textFragmentAbsorber);
-```
-
-## الخطوة 7: استرداد أجزاء النص المستخرجة
-
- احصل على أجزاء النص المستخرجة باستخدام`TextFragments` ممتلكات`TextFragmentAbsorber` هدف:
-
-```csharp
-TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-```
-
-## الخطوة 8: التنقل عبر أجزاء النص
-
-قم بالتنقل عبر أجزاء النص المسترجعة والوصول إلى خصائصها:
-
-```csharp
-foreach (TextFragment textFragment in textFragmentCollection)
-{
-	Console.WriteLine("Text: {0} ", textFragment.Text);
-	Console.WriteLine("Position: {0} ", textFragment.Position);
-	Console.WriteLine("XIndent: {0} ", textFragment.Position.XIndent);
-	Console.WriteLine("YIndent: {0} ", textFragment.Position.YIndent);
-	Console.WriteLine("Font - Name: {0}", textFragment.TextState.Font.FontName);
-	Console.WriteLine("Font - IsAccessible: {0} ", textFragment.TextState.Font.IsAccessible);
-	Console.WriteLine("Font - IsEmbedded: {0} ", textFragment.TextState.Font.IsEmbedded);
-	Console.WriteLine("Font - IsSubset: {0} ", textFragment.TextState.Font.IsSubset);
-	Console.WriteLine("Font Size: {0} ", textFragment.TextState.FontSize);
-	Console.WriteLine("Foreground Color: {0} ", textFragment.TextState.ForegroundColor);
-}
-```
-
-بإمكانك تعديل الكود داخل الحلقة لأداء إجراءات أخرى على كل جزء من النص.
-
-### عينة من كود المصدر لتعبير البحث العادي باستخدام Aspose.PDF لـ .NET 
-```csharp
-// المسار إلى دليل المستندات.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// فتح المستند
-Document pdfDocument = new Document(dataDir + "SearchRegularExpressionAll.pdf");
-//إنشاء كائن TextAbsorber للعثور على جميع العبارات المطابقة للتعبير العادي
-TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // مثل 1999-2000
 // تعيين خيار البحث النصي لتحديد استخدام التعبيرات العادية
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textFragmentAbsorber.TextSearchOptions = textSearchOptions;
-// قبول الممتص لجميع الصفحات
+```
+
+ ضبط`TextSearchOptions` ل`true` ويضمن أن الممتص يستخدم البحث المبني على التعابير العادية بدلاً من النص العادي.
+
+## الخطوة 4: قبول امتصاص النص
+
+ في هذه المرحلة، يمكنك تطبيق أداة امتصاص النص على مستند PDF حتى تتمكن من إجراء عملية البحث. يتم ذلك عن طريق استدعاء`Accept` الطريقة على`Pages` غرض مستند PDF.
+
+```csharp
+// قبول الامتصاص لجميع الصفحات
 pdfDocument.Pages.Accept(textFragmentAbsorber);
+```
+
+تعمل هذه الأوامر على معالجة كافة صفحات ملف PDF، والبحث عن أي نص يتطابق مع التعبير العادي.
+
+## الخطوة 5: استخراج النتائج وعرضها
+
+ بعد اكتمال البحث، تحتاج إلى استخراج النتائج.`TextFragmentAbsorber` يخزن هذه النتائج في`TextFragmentCollection`يمكنك التنقل عبر هذه المجموعة للوصول إلى كل جزء نصي مطابق وعرضه.
+
+### الخطوة 5.1: استرداد أجزاء النص المستخرجة
+
+```csharp
 // احصل على أجزاء النص المستخرجة
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+```
+
+الآن بعد أن قمت بجمع الأجزاء، حان الوقت لتصفحها وعرض التفاصيل ذات الصلة مثل النص والموضع وتفاصيل الخط والمزيد.
+
+### الخطوة 5.2: تكرار الأجزاء
+
+```csharp
 // التنقل عبر الشظايا
 foreach (TextFragment textFragment in textFragmentCollection)
 {
-	Console.WriteLine("Text : {0} ", textFragment.Text);
-	Console.WriteLine("Position : {0} ", textFragment.Position);
-	Console.WriteLine("XIndent : {0} ", textFragment.Position.XIndent);
-	Console.WriteLine("YIndent : {0} ", textFragment.Position.YIndent);
-	Console.WriteLine("Font - Name : {0}", textFragment.TextState.Font.FontName);
-	Console.WriteLine("Font - IsAccessible : {0} ", textFragment.TextState.Font.IsAccessible);
-	Console.WriteLine("Font - IsEmbedded : {0} ", textFragment.TextState.Font.IsEmbedded);
-	Console.WriteLine("Font - IsSubset : {0} ", textFragment.TextState.Font.IsSubset);
-	Console.WriteLine("Font Size : {0} ", textFragment.TextState.FontSize);
-	Console.WriteLine("Foreground Color : {0} ", textFragment.TextState.ForegroundColor);
+    Console.WriteLine("Text : {0} ", textFragment.Text);
+    Console.WriteLine("Position : {0} ", textFragment.Position);
+    Console.WriteLine("XIndent : {0} ", textFragment.Position.XIndent);
+    Console.WriteLine("YIndent : {0} ", textFragment.Position.YIndent);
+    Console.WriteLine("Font - Name : {0}", textFragment.TextState.Font.FontName);
+    Console.WriteLine("Font - IsAccessible : {0} ", textFragment.TextState.Font.IsAccessible);
+    Console.WriteLine("Font - IsEmbedded : {0} ", textFragment.TextState.Font.IsEmbedded);
+    Console.WriteLine("Font - IsSubset : {0} ", textFragment.TextState.Font.IsSubset);
+    Console.WriteLine("Font Size : {0} ", textFragment.TextState.FontSize);
+    Console.WriteLine("Foreground Color : {0} ", textFragment.TextState.ForegroundColor);
 }
 ```
 
+ لكل واحد`TextFragment`تتم طباعة التفاصيل مثل حجم الخط واسم الخط وموضعه. وهذا لا يساعد فقط في العثور على النص، بل يمنحك أيضًا تنسيقه وموقعه الدقيقين.
+
 ## خاتمة
 
-مبروك! لقد تعلمت بنجاح كيفية البحث عن نص يطابق تعبيرًا عاديًا في مستند PDF واسترجاعه باستخدام Aspose.PDF for .NET. قدم هذا البرنامج التعليمي دليلًا خطوة بخطوة، من تحميل المستند إلى الوصول إلى أجزاء النص المستخرجة. يمكنك الآن دمج هذا الكود في مشاريع C# الخاصة بك لإجراء عمليات بحث متقدمة عن النصوص في ملفات PDF.
+هذا كل ما في الأمر! إن البحث عن الأنماط في ملف PDF باستخدام التعبيرات العادية يعد أمرًا قويًا للغاية، وخاصة بالنسبة للنصوص المنظمة مثل التواريخ وأرقام الهواتف والأنماط المشابهة. يوفر Aspose.PDF for .NET طريقة سلسة لإجراء مثل هذه العمليات بسهولة. يمكنك الآن الاستفادة من قوة التعبيرات العادية لأتمتة البحث عن نص PDF، مما يجعل سير عملك أكثر كفاءة.
 
-### الأسئلة الشائعة
+## الأسئلة الشائعة
 
-#### س: ما هو الغرض من البرنامج التعليمي "البحث عن تعبير عادي في ملف PDF"؟
+### هل يمكنني البحث عن أنماط متعددة في ملف PDF واحد؟
+ نعم، يمكنك تشغيل العديد من`TextFragmentAbsorber` الكائنات، كل منها بأنماط تعبيرات عادية مختلفة، عبر نفس ملف PDF.
 
-أ: يهدف البرنامج التعليمي "البحث عن تعبير عادي في ملف PDF" إلى عرض كيفية استخدام مكتبة Aspose.PDF لـ .NET للبحث عن واستخراج نص يطابق نمط تعبير عادي محدد داخل ملف PDF. يوفر البرنامج التعليمي إرشادات شاملة وعينة من كود C# لتوضيح العملية.
+### هل يدعم Aspose.PDF البحث عن الأنماط غير الحساسة لحالة الأحرف؟
+ بالتأكيد! يمكنك تكوين`TextSearchOptions` لجعل البحث غير حساس لحالة الأحرف.
 
-#### س: كيف يساعد هذا البرنامج التعليمي في البحث عن نص باستخدام التعبيرات العادية في مستند PDF؟
+### هل هناك حد لحجم ملف PDF الذي يمكنني البحث فيه؟
+لا يوجد حد صارم، ولكن قد يختلف الأداء اعتمادًا على حجم ملف PDF وتعقيد نمط التعبيرات العادية.
 
-ج: يوفر هذا البرنامج التعليمي نهجًا خطوة بخطوة لاستخدام مكتبة Aspose.PDF لإجراء عمليات بحث نصية في مستند PDF استنادًا إلى نمط تعبير عادي. ويوضح بالتفصيل كيفية إعداد المشروع وتحميل مستند PDF وتحديد نمط تعبير عادي واسترداد أجزاء النص المطابقة.
+### هل يمكنني تسليط الضوء على النص الموجود في ملف PDF؟
+نعم، يسمح لك Aspose.PDF بتسليط الضوء على النص أو حتى استبداله بمجرد العثور عليه باستخدام الممتص.
 
-#### س: ما هي المتطلبات الأساسية لمتابعة هذا البرنامج التعليمي؟
-
-ج: قبل البدء في هذا البرنامج التعليمي، يجب أن يكون لديك فهم أساسي للغة البرمجة C#. بالإضافة إلى ذلك، يجب أن يكون لديك مكتبة Aspose.PDF for .NET مثبتة. يمكنك الحصول عليها من موقع Aspose على الويب أو استخدام NuGet لدمجها في مشروعك.
-
-#### س: كيف أقوم بإعداد مشروعي لمتابعة هذا البرنامج التعليمي؟
-
-ج: للبدء، قم بإنشاء مشروع C# جديد في بيئة التطوير المتكاملة المفضلة لديك وأضف مرجعًا إلى مكتبة Aspose.PDF for .NET. سيتيح لك هذا الاستفادة من إمكانيات المكتبة داخل مشروعك.
-
-#### س: هل يمكنني استخدام التعبيرات العادية للبحث عن نص في مستند PDF؟
-
- ج: نعم، يوضح هذا البرنامج التعليمي كيفية استخدام التعبيرات العادية للبحث عن نص واستخراجه من مستند PDF. ويتضمن ذلك الاستفادة من`TextFragmentAbsorber` الفئة وتحديد نمط تعبير منتظم للعثور على العبارات التي تطابق النمط المقدم.
-
-#### س: كيف أقوم بتعريف نمط التعبير العادي للبحث النصي؟
-
- أ: لتحديد نمط تعبير منتظم للبحث النصي، قم بإنشاء`TextFragmentAbsorber` الكائن وتعيين نمطه باستخدام`Text` المعلمة. استبدال النمط الافتراضي`"\\d{4}-\\d{4}"` في كود البرنامج التعليمي باستخدام نمط التعبير العادي المطلوب.
-
-#### س: كيف يمكنني تمكين استخدام التعبيرات العادية للبحث النصي؟
-
- أ: يتم تمكين استخدام التعابير العادية عن طريق إنشاء`TextSearchOptions` الكائن وتعيين قيمته إلى`true` . تعيين هذا الكائن إلى`TextSearchOptions` ممتلكات`TextFragmentAbsorber` يضمن هذا تطبيق نمط التعبير العادي أثناء البحث عن النص.
-
-#### س: هل يمكنني استرجاع أجزاء النص التي تتطابق مع نمط التعبير العادي؟
-
- ج: بالتأكيد. بعد تطبيق البحث باستخدام التعبيرات العادية على مستند PDF، يمكنك استرداد أجزاء النص المستخرجة باستخدام`TextFragments` ممتلكات`TextFragmentAbsorber` تحتوي أجزاء النص هذه على أجزاء نصية تتطابق مع نمط التعبير العادي المحدد.
-
-#### س: ما الذي يمكنني الوصول إليه من أجزاء النص المسترجعة؟
-
-ج: من خلال أجزاء النص المسترجعة، يمكنك الوصول إلى خصائص مختلفة مثل محتوى النص المطابق، والموضع (إحداثيات X وY)، ومعلومات الخط (الاسم والحجم واللون)، والمزيد. يوضح الكود النموذجي داخل حلقة البرنامج التعليمي كيفية الوصول إلى هذه الخصائص وعرضها.
-
-#### س: كيف يمكنني تخصيص الإجراءات على أجزاء النص المستخرجة؟
-
-ج: بمجرد استخراج أجزاء النص، يمكنك تخصيص الكود داخل الحلقة لتنفيذ إجراءات إضافية على كل جزء من النص. وقد يتضمن ذلك حفظ النص المستخرج، أو تحليل الأنماط، أو تنفيذ تغييرات التنسيق بناءً على متطلباتك.
+### كيف أتعامل مع الأخطاء إذا لم يتم العثور على النمط؟
+ إذا لم يتم العثور على أي تطابقات،`TextFragmentCollection` ستكون فارغة. يمكنك التعامل مع هذا السيناريو من خلال فحص بسيط قبل تكرار النتائج.

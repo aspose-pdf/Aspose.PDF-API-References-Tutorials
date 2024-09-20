@@ -111,4 +111,4 @@ Teljesen! Az Aspose.PDF támogatja a különféle szabványok érvényesítésé
  Hivatkozhat a[dokumentáció](https://reference.aspose.com/pdf/net/) részletes információkért és példákért.
 
 ### Mi az érvényesítési eredmények kimeneti formátuma?  
-Az érvényesítési eredményeket a rendszer egy XML-fájlba menti, amely részletes tájékoztatást nyújt a PDF/UA szabványnak való megfelelési problémákról.
+Az érvényesítési eredményeket a rendszer egy XML-fájlba menti, amely részletes információkat tartalmaz a PDF/UA szabványnak való megfelelési problémákról.

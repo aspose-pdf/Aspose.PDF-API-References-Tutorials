@@ -35,7 +35,7 @@ import com.aspose.pdf.Document;
 
 public class Main {
     public static void main(String[] args) {
-        // Εκκινήστε το Aspose.PDF για Java
+        // Αρχικοποιήστε το Aspose.PDF για Java
         Document pdfDocument = new Document();
         // Ο κωδικός σας εδώ
     }

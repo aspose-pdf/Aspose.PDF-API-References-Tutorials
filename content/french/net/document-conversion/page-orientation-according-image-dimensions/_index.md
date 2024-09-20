@@ -86,7 +86,7 @@ for (counter = 0; counter < fileEntries.Length - 1; counter++)
 
  Ici, vous attribuez le fichier image actuel à la`Image` objet. Ceci est essentiel pour ajouter l'image au PDF.
 
-## Étape 6 : Vérifier les dimensions de l’image
+## Étape 6 : Vérifiez les dimensions de l'image
 
 Avant d'ajouter l'image au PDF, vous devez vérifier ses dimensions pour déterminer l'orientation de la page.
 

@@ -97,7 +97,7 @@ for (Element child : children) {
 ### 如何安裝 Aspose.PDF for Java？
 
 若要安裝 Aspose.PDF for Java，請依照下列步驟操作：
-1. 請造訪 Aspose 網站。
+1. 造訪 Aspose 網站。
 2. 下載 Aspose.PDF for Java 函式庫。
 3. 將庫新增至 Java 專案的依賴項。
 4. 您已準備好在專案中使用 Aspose.PDF for Java。

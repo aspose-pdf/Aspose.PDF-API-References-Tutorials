@@ -7,139 +7,137 @@ type: docs
 weight: 210
 url: /ja/net/programming-with-text/extract-text-using-text-device/
 ---
-このチュートリアルでは、Aspose.PDF for .NET のテキスト デバイスを使用して PDF ドキュメントからテキストを抽出するプロセスについて説明します。提供されている C# ソース コードは、必要な手順を示しています。
+## 導入
 
-## 要件
-始める前に、次のものがあることを確認してください。
+PDF からテキストを抽出するのは、さまざまな形式、埋め込みフォント、複雑なレイアウトを持つドキュメントを扱う場合は特に難しい場合があります。しかし、Aspose.PDF for .NET を使用すると、このプロセスは簡単になります。PDF のページをプレーン テキストに変換してさらに分析する場合でも、特定のセクションを抽出する必要がある場合でも、Aspose.PDF が対応します。このチュートリアルでは、Aspose.PDF の TextDevice クラスを使用して PDF からテキストを抽出する方法をステップごとに説明します。また、わかりやすい説明も提供しているので、同じ方法を自分のプロジェクトに簡単に適用できます。
 
-- マシンにインストールされている Visual Studio またはその他の C# コンパイラ。
-- Aspose.PDF for .NET ライブラリ。公式 Aspose Web サイトからダウンロードするか、NuGet などのパッケージ マネージャーを使用してインストールできます。
+## 前提条件
 
-## ステップ1: プロジェクトを設定する
-1. 好みの開発環境で新しい C# プロジェクトを作成します。
-2. Aspose.PDF for .NET ライブラリへの参照を追加します。
+コードに進む前に、必要な準備がすべて整っていることを確認してください。必要なものは次のとおりです。
 
-## ステップ2: 必要な名前空間をインポートする
-テキストを抽出するコード ファイルで、ファイルの先頭に次の using ディレクティブを追加します。
+1.  Aspose.PDF for .NET: 最新バージョンをダウンロードしてください。[Aspose.PDF for .NET ダウンロード ページ](https://releases.aspose.com/pdf/net/).
+2. 開発環境: Visual Studio またはその他の C# 開発環境。
+3. .NET Framework: プロジェクトが .NET Framework 4.x 以上を対象としていることを確認します。
+4. 入力PDFファイル: テキスト抽出に使用するPDFファイル。これをマシン上のディレクトリに配置します（以下ではこれを`YOUR DOCUMENT DIRECTORY`）。
+
+## パッケージのインポート
+
+コードの先頭で、Aspose.PDF を操作するために必要な名前空間をインポートする必要があります。
 
 ```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Devices;
 using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using Aspose.Pdf.Devices;
+using System;
 using System.Text;
 ```
 
-## ステップ3: ドキュメントディレクトリを設定する
-コード内で、次の行を見つけます。`string dataDir = "YOUR DOCUMENT DIRECTORY";`置き換えて`"YOUR DOCUMENT DIRECTORY"`ドキュメントが保存されているディレクトリへのパスを指定します。
+## ステップ1: PDF文書を読み込む
 
-## ステップ4: PDF文書を開く
-既存のPDF文書を開くには、`Document`コンストラクターを呼び出して、入力 PDF ファイルへのパスを渡します。
+テキストを抽出する前に、PDF文書をメモリに読み込む必要があります。このステップでは、Aspose.PDFの`Document`クラス。これにより、ファイル内のすべてのページとコンテンツにアクセスできるようになります。
 
 ```csharp
+// PDFドキュメントへのパスを定義する
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// PDF文書を読み込む
 Document pdfDocument = new Document(dataDir + "input.pdf");
 ```
 
-## ステップ5: テキストデバイスを使用してテキストを抽出する
-作成する`StringBuilder`抽出したテキストを保持するオブジェクト。文書の各ページを反復処理し、`TextDevice`各ページからテキストを抽出します。
+ここでは、`Document pdfDocument = new Document(dataDir + "input.pdf");` PDFを読み込むには`dataDir`変数は PDF ファイルのディレクトリ パスを保持します。これにより、ドキュメント全体にアクセスして、ページをループし、コンテンツを抽出できるようになります。
+
+## ステップ2: テキスト保存用の文字列ビルダーを設定する
+
+文書が読み込まれたら、抽出したテキストを保存する方法が必要です。これには、`StringBuilder`これにより、効率的な文字列連結が可能になります。
 
 ```csharp
+//抽出したテキストを保持するStringBuilder
 StringBuilder builder = new StringBuilder();
-string extractedText = "";
-foreach(Page pdfPage in pdfDocument.Pages)
-{
-using (MemoryStream textStream = new MemoryStream())
-{
-TextDevice textDevice = new TextDevice();
-TextExtractionOptions textExtOptions = new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
-textDevice.ExtractionOptions = textExtOptions;
-textDevice.Process(pdfPage, textStream);
-textStream. Close();
-extractedText = Encoding.Unicode.GetString(textStream.ToArray());
-}
-builder. Append(extractedText);
-}
 ```
 
-## ステップ6: 抽出したテキストを保存する
-出力ファイルのパスを指定し、抽出したテキストをテキストファイルに保存するには、`File.WriteAllText`方法。
+初期化する`StringBuilder`インスタンスは、各ページから抽出されたテキストを収集します。これは、ループ内での通常の文字列連結に比べて、大きな文字列を処理するより効率的な方法です。
+
+## ステップ3: PDFページをループする
+
+次に、PDF文書の各ページをループしてテキストを抽出します。各ページを個別に処理するには、`TextDevice` PDF コンテンツをテキスト形式に変換する役割を持つクラスです。
 
 ```csharp
-dataDir = dataDir + "input_Text_Extracted_out.txt";
-File.WriteAllText(dataDir, builder.ToString());
-```
-
-### Aspose.PDF for .NET を使用してテキスト デバイスでテキストを抽出するためのサンプル ソース コード 
-```csharp
-//ドキュメント ディレクトリへのパス。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-//ドキュメントを開く
-Document pdfDocument = new Document( dataDir + "input.pdf");
-System.Text.StringBuilder builder = new System.Text.StringBuilder();
-//抽出されたテキストを保持する文字列
-string extractedText = "";
+// PDF内のすべてのページをループする
 foreach (Page pdfPage in pdfDocument.Pages)
 {
-	using (MemoryStream textStream = new MemoryStream())
-	{
-		//テキストデバイスを作成する
-		TextDevice textDevice = new TextDevice();
-		//テキスト抽出オプションの設定 - テキスト抽出モードの設定 (Raw または Pure)
-		TextExtractionOptions textExtOptions = new
-		TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
-		textDevice.ExtractionOptions = textExtOptions;
-		//特定のページを変換し、テキストをストリームに保存する
-		textDevice.Process(pdfPage, textStream);
-		//特定のページを変換し、テキストをストリームに保存する
-		textDevice.Process(pdfDocument.Pages[1], textStream);
-		//メモリストリームを閉じる
-		textStream.Close();
-		//メモリストリームからテキストを取得する
-		extractedText = Encoding.Unicode.GetString(textStream.ToArray());
-	}
-	builder.Append(extractedText);
+    //各ページを処理してテキストを抽出します
 }
-dataDir = dataDir + "input_Text_Extracted_out.txt";
-//抽出したテキストをテキストファイルに保存する
-File.WriteAllText(dataDir, builder.ToString());
-Console.WriteLine("\nText extracted successfully using text device from page of PDF Document.\nFile saved at " + dataDir);
 ```
 
-## 結論
-Aspose.PDF for .NET のテキスト デバイスを使用して、PDF ドキュメントからテキストを正常に抽出しました。抽出されたテキストは、指定された出力ファイルに保存されました。
+このループはPDFのすべてのページを巡回します（`pdfDocument.Pages` ）。各ページからテキストを抽出し、`StringBuilder`.
 
-### よくある質問
+## ステップ4: 各ページからテキストを抽出する
 
-#### Q: このチュートリアルの目的は何ですか?
-
-A: このチュートリアルでは、Aspose.PDF for .NET のテキスト デバイス機能を使用して PDF ドキュメントからテキストを抽出する方法について説明します。付属の C# ソース コードは、このタスクを実行するために必要な手順を示しています。
-
-#### Q: どの名前空間をインポートすればよいですか?
-
-A: テキストを抽出する予定のコード ファイルで、ファイルの先頭に次の using ディレクティブを含めます。
+さて、各ページのテキスト抽出プロセスを設定します。ここでは、`TextDevice`オブジェクトを作成し、それを使用してPDFページを処理します。`TextDevice`設定した抽出オプションに基づいて、生のテキストまたはフォーマットされたテキストを抽出します。
 
 ```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Devices;
-using System.IO;
-using System.Text;
+using (MemoryStream textStream = new MemoryStream())
+{
+    //テキスト抽出用のテキストデバイスを作成する
+    TextDevice textDevice = new TextDevice();
+    
+    //テキスト抽出オプションを「Pure」モードに設定する
+    TextExtractionOptions textExtOptions = new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);
+    textDevice.ExtractionOptions = textExtOptions;
+
+    //現在のページからテキストを抽出し、メモリストリームに保存します
+    textDevice.Process(pdfPage, textStream);
+
+    //メモリストリームをテキストに変換する
+    string extractedText = Encoding.Unicode.GetString(textStream.ToArray());
+
+    //抽出したテキストをStringBuilderに追加します
+    builder.Append(extractedText);
+}
 ```
 
-#### Q: ドキュメントディレクトリを指定するにはどうすればよいですか?
+- `TextDevice textDevice = new TextDevice();` : の`TextDevice`クラスは PDF からテキストを抽出するために使用されます。
+- `TextExtractionOptions textExtOptions = new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure);` : このオプションは、フォントや位置などの書式設定を保持せずに生のテキストを抽出します。`TextFormattingMode.Raw`書式設定をさらに細かく制御する必要がある場合。
+- `textDevice.Process(pdfPage, textStream);` : PDFの各ページを処理し、抽出したテキストを`MemoryStream`.
+- 最後に、テキストを`MemoryStream`文字列に追加して`StringBuilder`.
 
- A: コードの中で、`string dataDir = "YOUR DOCUMENT DIRECTORY";`置き換えて`"YOUR DOCUMENT DIRECTORY"`ドキュメント ディレクトリへの実際のパスを入力します。
+## ステップ5: 抽出したテキストをファイルに保存する
 
-#### Q: 既存の PDF ドキュメントを開くにはどうすればよいですか?
+すべてのページを処理した後、テキストは`StringBuilder`最後のステップは、抽出したテキストをファイルに保存することです。
 
- A: ステップ4では、既存のPDF文書を`Document`コンストラクターを呼び出して、入力 PDF ファイルへのパスを指定します。
+```csharp
+//テキストファイルの出力パスを定義する
+dataDir = dataDir + "input_Text_Extracted_out.txt";
 
-#### Q: テキスト デバイスを使用してテキストを抽出するにはどうすればよいですか?
+//抽出したテキストをファイルに保存する
+File.WriteAllText(dataDir, builder.ToString());
 
- A: ステップ5では、`StringBuilder`抽出したテキストを保持するオブジェクトを作成します。次に、ドキュメントの各ページを反復処理し、`TextDevice`とともに`TextExtractionOptions`各ページからテキストを抽出します。
+Console.WriteLine("\nText extracted successfully from PDF document.\nFile saved at " + dataDir);
+```
 
-#### Q: 抽出したテキストをファイルに保存するにはどうすればよいですか?
+- `File.WriteAllText(dataDir, builder.ToString());` これは、`StringBuilder`テキストファイルに変換します。
+- 出力ファイルのパスはファイル名（`"input_Text_Extracted_out.txt"` ）に`dataDir`パス。
 
- A: ステップ6では、出力ファイルのパスを指定して、`File.WriteAllText`抽出したテキストをテキスト ファイルに保存する方法。
+## 結論
 
-#### Q: このチュートリアルから得られる重要なポイントは何ですか?
+Aspose.PDF for .NET を使用して PDF からテキストを抽出するのは、シンプルで効率的なプロセスです。このガイドで説明されている手順に従うと、PDF ドキュメントを簡単に開き、ページをループし、テキストをテキスト ファイルに抽出できます。これは、大量の PDF データの処理、テキスト分析の実行、またはドキュメントをさらに操作するための変換に特に役立ちます。
 
-A: このチュートリアルでは、Aspose.PDF for .NET のテキスト デバイス機能を利用して PDF ドキュメントからテキストを抽出する方法を学習しました。抽出されたテキストは指定された出力ファイルに保存され、必要に応じて抽出されたコンテンツを操作および利用できるようになります。
+Aspose.PDF を使用すると、テキスト抽出だけでなく、注釈の処理、画像の操作、さらには PDF を HTML や Word などの他の形式に変換することもできます。このライブラリの柔軟性とパワーにより、.NET アプリケーションでの PDF 管理に非常に役立つツールとなっています。
+
+## よくある質問
+
+### Aspose.PDF は画像ベースの PDF からテキストを抽出できますか?
+いいえ、Aspose.PDF はコンテンツベースの PDF からテキストを抽出するように設計されています。画像ベースの PDF の場合は、OCR テクノロジが必要です。
+
+### Aspose.PDF はテキストを抽出するときに書式を保持しますか?
+デフォルトでは、テキストは書式設定なしで抽出されますが、一部の書式設定を保持する場合は抽出オプションを調整できます。
+
+### 特定のページ範囲からテキストを抽出できますか?
+はい、すべてのページではなく特定の範囲のページをループするようにコードを変更することができます。
+
+### Aspose.PDF のテキスト抽出モードは何ですか?
+Aspose.PDF には、Raw と Pure の 2 つのモードがあります。Raw モードでは元のレイアウトが保持され、Pure モードでは書式設定なしでテキストのみが抽出されます。
+
+### Aspose.PDF for .NET は .NET Core と互換性がありますか?
+はい、Aspose.PDF for .NET は .NET Core および .NET Framework と完全に互換性があります。

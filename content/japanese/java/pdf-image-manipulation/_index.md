@@ -34,7 +34,7 @@ Aspose.PDF for Java を使用して、Java で既存の PDF ファイルに画�
 ### [Java を使用して PDF 内の特定のページ領域を画像に変換する](./convert-particular-page-region-to-image-in-pdf-using-java/)
 Java を使用して特定のページ領域を PDF 内の画像に変換する方法をステップバイステップのガイドで学習します。Aspose.PDF for Java の強力な PDF 操作機能について学びます。
 ### [Java を使用して PDF ページを BMP 画像に変換する](./convert-pdf-pages-to-bmp-image-using-java/)
-Aspose.PDF for Java を使用して、Java で PDF ページを BMP 画像に変換する方法を学びます。PDF から BMP へのシームレスな変換については、ステップバイステップのガイドに従ってください。
+Aspose.PDF for Java を使用して、Java で PDF ページを BMP 画像に変換する方法を学びます。PDF から BMP へのシームレスな変換については、当社のステップバイステップ ガイドに従ってください。
 ### [Java で PDF 内の画像がカラーか白黒かを識別する](./identify-if-image-inside-pdf-is-colored-or-black-and-white-in-java/)
 Aspose.PDF for Java を使用して PDF 内のカラー画像または白黒画像を識別する方法を学びます。ステップバイステップのガイドでプロセスが簡素化されます。
 ### [Java を使用して既存の PDF ファイル内の画像を置き換える](./replace-image-in-existing-pdf-file-using-java/)

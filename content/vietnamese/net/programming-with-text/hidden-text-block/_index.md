@@ -2,193 +2,190 @@
 title: Khối văn bản ẩn trong tệp PDF
 linktitle: Khối văn bản ẩn trong tệp PDF
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Tìm hiểu cách tạo khối văn bản ẩn trong tệp PDF bằng Aspose.PDF cho .NET.
+description: Tạo PDF tương tác với các khối văn bản ẩn bằng Aspose.PDF cho .NET. Hướng dẫn này cung cấp hướng dẫn từng bước để cải thiện tài liệu của bạn.
 type: docs
 weight: 230
 url: /vi/net/programming-with-text/hidden-text-block/
 ---
-Trong hướng dẫn này, chúng tôi sẽ giải thích cách tạo khối văn bản ẩn trong tệp PDF bằng thư viện Aspose.PDF cho .NET. Khối văn bản ẩn là văn bản nổi sẽ hiển thị khi con trỏ chuột di chuyển qua một vùng cụ thể. Chúng tôi sẽ hướng dẫn từng bước để tạo khối văn bản ẩn bằng mã nguồn C# được cung cấp.
+## Giới thiệu
 
-## Yêu cầu
+Trong bối cảnh kỹ thuật số ngày nay, PDF vẫn là định dạng được sử dụng cho mọi thứ, từ hợp đồng đến tài liệu giáo dục. Tính linh hoạt và độ tin cậy của chúng là vô song. Nhưng nếu bạn có thể thêm một lớp tương tác bổ sung vào PDF của mình thì sao? Chúng tôi đang khám phá thế giới của các khối văn bản ẩn với Aspose.PDF cho .NET, một công cụ mạnh mẽ giúp bạn tạo các tài liệu hấp dẫn và thân thiện với người dùng dễ dàng hơn bao giờ hết. Cho dù bạn là một nhà phát triển dày dạn kinh nghiệm hay chỉ mới bắt đầu, hướng dẫn này được thiết kế dành cho bạn, chứa đầy các hướng dẫn từng bước và mẹo để mở khóa toàn bộ tiềm năng của PDF của bạn!
 
-Trước khi bắt đầu, hãy đảm bảo bạn có những điều sau:
+## Điều kiện tiên quyết
 
-- Đã cài đặt thư viện Aspose.PDF cho .NET.
-- Hiểu biết cơ bản về lập trình C#.
+Trước khi xắn tay áo và bắt đầu, hãy đảm bảo bạn có mọi thứ mình cần. Sau đây là những gì bạn cần:
 
-## Bước 1: Thiết lập thư mục tài liệu
+1. Aspose.PDF cho .NET: Thư viện này rất cần thiết để làm việc với các tệp PDF trong các ứng dụng .NET. Bạn có thể kiểm tra, tải xuống hoặc thậm chí dùng thử miễn phí từ[Tài liệu PDF Aspose](https://reference.aspose.com/pdf/net/).
+2. .NET Framework: Đảm bảo bạn đã cài đặt .NET Framework vì nó cần thiết để chạy thư viện Aspose.PDF.
+3. Môi trường phát triển: Trình soạn thảo mã hoặc Môi trường phát triển tích hợp (IDE) như Visual Studio sẽ giúp việc viết mã trở nên dễ dàng. 
+4. Kiến thức cơ bản về C#: Vì chúng ta sẽ lập trình bằng C#, nên việc hiểu biết cơ bản về ngôn ngữ này sẽ giúp bạn nắm bắt các khái niệm dễ dàng hơn nhiều.
+5. Niềm đam mê học tập: Cuối cùng nhưng không kém phần quan trọng, hãy mang theo sự nhiệt tình của bạn! Chúng ta sẽ học một điều tuyệt vời ngày hôm nay.
 
- Đầu tiên, bạn cần thiết lập đường dẫn đến thư mục mà bạn muốn lưu tệp PDF đã tạo. Thay thế`"YOUR DOCUMENT DIRECTORY"` trong`dataDir` biến có đường dẫn đến thư mục bạn mong muốn.
+Khi đã đáp ứng được những điều kiện tiên quyết này, bạn đã sẵn sàng tạo các khối văn bản ẩn tương tác trong tệp PDF của mình!
+
+## Nhập gói
+
+Để bắt đầu sử dụng Aspose.PDF trong dự án của bạn, bạn sẽ cần nhập các gói cần thiết. Sau đây là cách thực hiện:
+
+### Tạo một dự án C#
+
+Trước tiên, hãy mở Visual Studio hoặc bất kỳ IDE C# nào và tạo một dự án mới. Chọn loại Ứng dụng Console để đơn giản hơn.
+
+### Thêm Aspose.PDF vào Dự án của bạn
+
+Bạn sẽ cần thêm thư viện Aspose.PDF vào dự án của mình. Bạn có thể thực hiện việc này thông qua NuGet Package Manager. Sau đây là một dòng ngắn gọn:
+
+```bash
+Install-Package Aspose.PDF
+```
+
+Lệnh này sẽ kéo các tập tin cần thiết để bạn có thể làm việc với các tài liệu PDF một cách dễ dàng.
+
+### Nhập các không gian tên bắt buộc
+
+Sau khi gói được cài đặt, bước tiếp theo là nhập các không gian tên ở đầu tệp C# của bạn. Điều này giúp tất cả các chức năng tuyệt vời của Aspose có thể truy cập được:
+
+```csharp
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Forms;
+using Aspose.Pdf.Text;
+```
+
+Bây giờ môi trường của bạn đã được thiết lập, chúng ta hãy cùng tìm hiểu từng bước quy trình tạo khối văn bản ẩn trong tệp PDF.
+
+## Bước 1: Xác định thư mục tài liệu của bạn
+
+Xác định nơi lưu trữ các tệp của bạn. Điều này giúp quản lý tài liệu của bạn một cách trơn tru. Sử dụng mã sau để thiết lập:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
 ```
+
+ Hãy chắc chắn thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế trên máy của bạn nơi bạn muốn tạo tệp PDF.
 
 ## Bước 2: Tạo một tài liệu mẫu
 
-Trong bước này, chúng tôi tạo một tài liệu PDF mẫu và thêm một đoạn văn bản vào đó. Đoạn văn bản sẽ đóng vai trò là trình kích hoạt để hiển thị khối văn bản ẩn.
+Bây giờ, chúng ta hãy tạo một tài liệu PDF cơ bản. Bước đầu tiên này bao gồm việc khởi tạo tài liệu PDF và thêm một đoạn văn bản sẽ là điểm nhấn cho văn bản ẩn của chúng ta.
 
 ```csharp
-string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
 doc.Save(outputFile);
 ```
 
-## Bước 3: Mở Tài liệu
+Ở đây, chúng ta chỉ cần thêm một chuỗi vào tài liệu. Điều này sẽ kích hoạt hành động văn bản ẩn khi di chuột qua nó.
 
- Bây giờ, chúng ta mở tài liệu đã tạo trước đó bằng cách sử dụng`Document` lớp học.
+## Bước 3: Mở Tài liệu đã tạo
+
+Bây giờ chúng ta đã có tài liệu ban đầu, hãy mở nó ra để chỉnh sửa thêm:
 
 ```csharp
 Document document = new Document(outputFile);
 ```
 
-## Bước 4: Tìm đoạn văn bản
+Dòng này tải tài liệu chúng ta vừa tạo để chúng ta có thể thay đổi tài liệu đó.
 
- Chúng tôi sử dụng một`TextFragmentAbsorber`đối tượng để tìm đoạn văn bản sẽ kích hoạt hiển thị khối văn bản ẩn. Trong trường hợp này, chúng tôi đang tìm kiếm văn bản chính xác "Di chuyển con trỏ chuột đến đây để hiển thị văn bản nổi".
+## Bước 4: Tạo TextAbsorber để tìm cụm từ
+
+ Tiếp theo, chúng ta muốn xác định đoạn văn bản mà chúng ta sẽ làm việc. Đây là nơi`TextFragmentAbsorber` có hiệu lực:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-document.Pages.Accept(absorb);
-TextFragmentCollection textFragments = absorb.TextFragments;
-TextFragment fragment = textFragments[1];
-```
-
-## Bước 5: Tạo trường văn bản ẩn
-
- Chúng tôi tạo ra một`TextBoxField` đối tượng để biểu diễn trường văn bản ẩn. Trường này sẽ chứa văn bản hiển thị khi con trỏ chuột di qua văn bản kích hoạt.
-
-```csharp
-TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-floatingField.Value = "This is the \"floating text field\".";
-floatingField. ReadOnly = true;
-floatingField.Flags |= AnnotationFlags.Hidden;
-floatingField.PartialName = "FloatingField_1";
-floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
-floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
-floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
-floatingField.Border = new Border(floatingField);
-floatingField.Border.Width = 1;
-floatingField. Multiline = true;
-```
-
-## Bước 6: Thêm trường văn bản ẩn vào tài liệu
-
-Chúng tôi thêm trường văn bản ẩn vào bộ sưu tập biểu mẫu của tài liệu.
-
-```csharp
-document.Form.Add(floatingField);
-```
-
-## Bước 7: Tạo nút vô hình
-
-Chúng tôi tạo một trường nút vô hình sẽ được định vị trên đầu đoạn văn bản kích hoạt. Trường nút này sẽ có các hành động liên quan đến sự kiện nhập và thoát chuột.
-
-```csharp
-ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-buttonField.Actions.OnEnter = new HideAction(floatingField, false);
-buttonField.Actions.OnExit = new HideAction(floatingField);
-document.Form.Add(buttonField);
-```
-
-## Bước 8: Lưu tài liệu
-
-Cuối cùng, chúng ta lưu tài liệu đã chỉnh sửa với khối văn bản ẩn.
-
-```csharp
-document. Save(outputFile);
-```
-
-### Mã nguồn mẫu cho Hidden Text Block sử dụng Aspose.PDF cho .NET 
-```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
-// Tạo tài liệu mẫu có văn bản
-Document doc = new Document();
-doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
-doc.Save(outputFile);
-// Mở tài liệu có văn bản
-Document document = new Document(outputFile);
-//Tạo đối tượng TextAbsorber để tìm tất cả các cụm từ khớp với biểu thức chính quy
-TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-// Chấp nhận bộ hấp thụ cho các trang tài liệu
 document.Pages.Accept(absorber);
-// Nhận đoạn văn bản được trích xuất đầu tiên
+```
+
+Ở bước này, chúng tôi yêu cầu Aspose tìm văn bản mà chúng tôi đã chỉ định trước đó.
+
+## Bước 5: Trích xuất đoạn văn bản
+
+Khi đã có đoạn văn bản, chúng ta sẽ trích xuất nó bằng đoạn mã sau, cho phép chúng ta thao tác thêm:
+
+```csharp
 TextFragmentCollection textFragments = absorber.TextFragments;
 TextFragment fragment = textFragments[1];
-//Tạo trường văn bản ẩn cho văn bản nổi trong hình chữ nhật được chỉ định của trang
+```
+
+Ở đây, chúng ta tập trung vào đoạn đầu tiên được hấp thụ. Nếu bạn có nhiều văn bản hơn, bạn có thể muốn lặp lại bộ sưu tập.
+
+## Bước 6: Tạo trường văn bản ẩn
+
+Bây giờ, hãy làm phép thuật! Tạo một trường văn bản ẩn hiển thị khi người dùng di chuột qua văn bản đã chỉ định. Sử dụng đoạn mã này:
+
+```csharp
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-// Đặt văn bản được hiển thị dưới dạng giá trị trường
 floatingField.Value = "This is the \"floating text field\".";
-// Chúng tôi khuyên bạn nên tạo trường 'chỉ đọc' cho trường hợp này
 floatingField.ReadOnly = true;
-// Đặt cờ 'ẩn' để làm cho trường vô hình khi mở tài liệu
 floatingField.Flags |= AnnotationFlags.Hidden;
-// Việc đặt tên trường duy nhất không cần thiết nhưng được phép
+```
+
+Mã này xác định vị trí của văn bản nổi và thiết lập các thuộc tính của nó, bao gồm cả việc chỉ đọc và ẩn theo mặc định.
+
+## Bước 7: Tùy chỉnh giao diện trường
+
+Thêm chút phong cách cho văn bản nổi của bạn! Tùy chỉnh giao diện mặc định của trường văn bản nổi:
+
+```csharp
 floatingField.PartialName = "FloatingField_1";
-// Thiết lập các đặc điểm của giao diện trường không cần thiết nhưng làm cho nó tốt hơn
-floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
-floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
-floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
+floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, Color.Blue);
+floatingField.Characteristics.Background = Color.LightBlue;
+floatingField.Characteristics.Border = Color.DarkBlue;
 floatingField.Border = new Border(floatingField);
 floatingField.Border.Width = 1;
 floatingField.Multiline = true;
-// Thêm trường văn bản vào tài liệu
+```
+
+Từ cỡ chữ đến màu sắc, bạn có thể tùy chỉnh các thiết lập này theo ý thích, giúp giao diện thân thiện và hấp dẫn hơn.
+
+## Bước 8: Thêm Trường Văn bản vào Tài liệu
+
+Sau khi thiết lập xong trường văn bản, đã đến lúc thêm trường nổi vào tài liệu:
+
+```csharp
 document.Form.Add(floatingField);
-// Tạo nút vô hình trên vị trí đoạn văn bản
+```
+
+Dòng này tích hợp trường văn bản ẩn mới tạo vào tệp PDF của bạn.
+
+## Bước 9: Tạo một trường nút vô hình
+
+Nút này sẽ quản lý các hành động di chuột của trường văn bản nổi. Thêm mã sau để tạo một nút vô hình:
+
+```csharp
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-// Tạo hành động ẩn mới cho trường được chỉ định (chú thích) và cờ ẩn.
-// (Bạn cũng có thể tham chiếu trường nổi theo tên nếu bạn đã chỉ định ở trên.)
-// Thêm hành động vào/ra chuột tại trường nút vô hình
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);
-// Thêm trường nút vào tài liệu
-document.Form.Add(buttonField);
-// Lưu tài liệu
+```
+
+Ở đây, chúng tôi đã cấu hình nút để hiển thị văn bản nổi khi chuột di chuyển vào và ẩn văn bản đó khi chuột di chuyển ra.
+
+## Bước 10: Lưu tài liệu
+
+Cuối cùng, đã đến lúc lưu công việc của bạn và xem kết quả:
+
+```csharp
 document.Save(outputFile);
 ```
 
+Với thao tác này, tệp PDF của bạn giờ đã sẵn sàng với trải nghiệm tương tác, mang đến cho người dùng một cách hoàn toàn mới để tương tác với nội dung của bạn!
+
 ## Phần kết luận
 
-Trong hướng dẫn này, bạn đã học cách tạo khối văn bản ẩn bằng thư viện Aspose.PDF cho .NET. Bằng cách làm theo hướng dẫn từng bước, bạn có thể tạo tài liệu PDF có trường văn bản ẩn hiển thị khi con trỏ chuột di chuột qua một vùng cụ thể. Bạn có thể tùy chỉnh giao diện và hành vi của khối văn bản ẩn theo yêu cầu của mình.
+Và bạn đã có nó! Bằng cách làm theo các bước này, bạn đã tạo thành công một khối văn bản ẩn trong tệp PDF bằng Aspose.PDF cho .NET. Tính năng đơn giản nhưng mạnh mẽ này có thể cải thiện đáng kể tương tác của người dùng trong tài liệu của bạn. Cho dù bạn đang tạo tài liệu giáo dục hay tài nguyên của khách hàng, khả năng ẩn và hiển thị thông tin khi di chuột qua sẽ mang đến nét hiện đại, tinh tế. 
 
-### Câu hỏi thường gặp
+## Câu hỏi thường gặp
 
-#### H: Mục đích của hướng dẫn "Khối văn bản ẩn trong tệp PDF" là gì?
+### Aspose.PDF dành cho .NET là gì?  
+Aspose.PDF for .NET là một thư viện mạnh mẽ cho phép các nhà phát triển tạo, chỉnh sửa và chuyển đổi tài liệu PDF trong các ứng dụng .NET.
 
-A: Hướng dẫn "Hidden Text Block In PDF File" giải thích cách tạo một khối văn bản ẩn trong tệp PDF bằng thư viện Aspose.PDF cho .NET. Khối văn bản ẩn là một văn bản nổi sẽ hiển thị khi con trỏ chuột di chuột qua một vùng cụ thể. Hướng dẫn này cung cấp hướng dẫn từng bước bằng cách sử dụng mã nguồn C#.
+### Làm thế nào để cài đặt Aspose.PDF?  
+Bạn có thể cài đặt nó thông qua NuGet Package Manager trong Visual Studio. Chỉ cần sử dụng lệnh:`Install-Package Aspose.PDF`.
 
-#### H: Tại sao tôi lại muốn tạo khối văn bản ẩn trong tệp PDF?
+### Tôi có thể tạo các thành phần tương tác khác trong tệp PDF không?  
+Có, ngoài các khối văn bản ẩn, bạn có thể thêm nút, siêu liên kết, chú thích và nhiều thứ khác bằng Aspose.PDF.
 
-A: Việc tạo khối văn bản ẩn có thể hữu ích cho các tài liệu PDF tương tác khi bạn muốn cung cấp thêm thông tin hoặc ngữ cảnh mà chỉ hiển thị khi người dùng di con trỏ chuột qua một vùng được chỉ định.
+### Có bản dùng thử miễn phí không?  
+ Chắc chắn rồi! Bạn có thể nhận được bản dùng thử miễn phí từ[Trang phát hành Aspose](https://releases.aspose.com/).
 
-#### H: Tôi phải thiết lập thư mục tài liệu như thế nào?
-
-A: Để thiết lập thư mục tài liệu:
-
-1.  Thay thế`"YOUR DOCUMENT DIRECTORY"` trong`dataDir` biến có đường dẫn đến thư mục mà bạn muốn lưu tệp PDF đã tạo.
-
-#### H: Làm thế nào để tạo một tài liệu mẫu và thêm đoạn văn bản vào đó?
-
- A: Trong hướng dẫn, bạn sử dụng`Document` lớp để tạo một tài liệu PDF mẫu và thêm một đoạn văn bản. Đoạn văn bản này đóng vai trò là trình kích hoạt để hiển thị khối văn bản ẩn.
-
-#### H: Làm thế nào để tìm đoạn văn bản kích hoạt khối văn bản ẩn?
-
- A: Hướng dẫn này trình bày cách sử dụng`TextFragmentAbsorber` đối tượng để tìm đoạn văn bản kích hoạt hiển thị khối văn bản ẩn. Nó tìm kiếm một chuỗi văn bản cụ thể trong tài liệu PDF.
-
-#### H: Làm thế nào để tạo và tùy chỉnh trường văn bản ẩn?
-
- A: Bạn tạo ra một`TextBoxField`đối tượng để biểu diễn trường văn bản ẩn. Hướng dẫn cung cấp mã để thiết lập nhiều thuộc tính khác nhau như vị trí, giá trị, giao diện và hành vi của trường văn bản ẩn.
-
-#### H: Làm thế nào để tạo nút vô hình liên kết với khối văn bản ẩn?
-
- A: Một trường nút vô hình được tạo ra bằng cách sử dụng`ButtonField` lớp. Trường nút này được định vị trên đầu đoạn văn bản kích hoạt và có các hành động liên quan đến sự kiện nhập và thoát của chuột. Các hành động này kiểm soát khả năng hiển thị của khối văn bản ẩn.
-
-#### H: Tôi có thể tùy chỉnh giao diện của khối văn bản ẩn và vùng kích hoạt không?
-
-A: Có, bạn có thể tùy chỉnh nhiều thuộc tính khác nhau của cả trường văn bản ẩn và nút vô hình, bao gồm phông chữ, màu sắc, kích thước và vị trí.
-
-#### H: Làm thế nào để lưu tài liệu đã chỉnh sửa với khối văn bản ẩn?
-
- A: Hướng dẫn này trình bày cách lưu tài liệu đã sửa đổi bằng cách sử dụng`Save` phương pháp của`Document` lớp học.
+### Tôi phải làm sao nếu cần trợ giúp về Aspose.PDF?  
+ Hãy thoải mái tìm kiếm sự hỗ trợ trên[Diễn đàn Aspose](https://forum.aspose.com/c/pdf/10) để giải đáp mọi thắc mắc hoặc vấn đề bạn có thể gặp phải.

@@ -2,7 +2,7 @@
 title: Tooltip mit Java zum PDF-Formularfeld hinzufügen
 linktitle: Tooltip mit Java zum PDF-Formularfeld hinzufügen
 second_title: Aspose.PDF Java PDF-Verarbeitungs-API
-description: Erfahren Sie, wie Sie mit Java Tooltips zu PDF-Formularfeldern hinzufügen. Schritt-für-Schritt-Anleitung zur Verwendung von Aspose.PDF für Java API.
+description: Erfahren Sie, wie Sie mit Java Tooltips zu PDF-Formularfeldern hinzufügen. Schritt-für-Schritt-Anleitung zur Verwendung der Aspose.PDF für Java-API.
 type: docs
 weight: 11
 url: /de/java/pdf-form-fields/add-tooltip-to-pdf-form-field-with-java/

@@ -107,7 +107,7 @@ Console.WriteLine("\nArabic text filled successfully in form field.\nFile saved 
 ### 什麼是 Aspose.PDF for .NET？
 Aspose.PDF for .NET 是一個函式庫，可讓開發人員以程式設計方式建立、編輯和操作 PDF 文件。
 
-### 我可以在 PDF 表格中填寫其他語言嗎？
+### 我可以在 PDF 表單中填寫其他語言嗎？
 是的，Aspose.PDF 支援多種語言，包括阿拉伯語、英語、法語等。
 
 ### 哪裡可以下載 Aspose.PDF for .NET？

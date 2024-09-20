@@ -80,7 +80,7 @@ SvgSaveOptions saveOptions = new SvgSaveOptions();
 Most konfiguráljuk a mentési beállításainkat. Ebben az esetben szeretnénk biztosítani, hogy az SVG-kép ne legyen tömörítve Zip-archívumba.
 
 ```csharp
-// Ne tömörítse az SVG-képet ZIP-archívumba
+// Ne tömörítse az SVG-képet Zip-archívumba
 saveOptions.CompressOutputToZipArchive = false;
 ```
 

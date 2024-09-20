@@ -23,7 +23,7 @@ Als u aan deze voorwaarden voldoet, bent u helemaal klaar om uw eigen PDF met aa
 
 ## Pakketten importeren
 
-Nu de installatie is voltooid, importeren we de benodigde pakketten. Dit is een cruciale stap, omdat we hiermee alle fantastische functies van Aspose.PDF kunnen gebruiken.
+Nu de installatie is voltooid, importeren we de benodigde pakketten. Dit is een cruciale stap, omdat het ons in staat stelt om alle fantastische functies die Aspose.PDF biedt te gebruiken.
 
 Hier ziet u hoe u de vereiste Aspose.PDF-naamruimte in uw C#-project kunt importeren:
 

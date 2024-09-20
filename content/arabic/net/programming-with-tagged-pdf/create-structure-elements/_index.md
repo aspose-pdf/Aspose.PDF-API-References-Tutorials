@@ -2,120 +2,84 @@
 title: إنشاء عناصر الهيكل
 linktitle: إنشاء عناصر الهيكل
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: في هذا البرنامج التعليمي، سوف تتعلم كيفية استخدام Aspose.PDF لـ .NET لإنشاء عناصر هيكلية في مستند PDF مُوسم.
+description: تعرف على كيفية إنشاء عناصر هيكلية في PDF باستخدام Aspose.PDF لـ .NET. دليل خطوة بخطوة لتحسين إمكانية الوصول إلى PDF وتنظيمه.
 type: docs
 weight: 60
 url: /ar/net/programming-with-tagged-pdf/create-structure-elements/
 ---
-يستخدم الكود المصدر C# التالي ملف Aspose.PDF لـ .NET لإنشاء عناصر البنية. اتبع الخطوات التالية لفهم كيفية عمل الكود.
+## مقدمة
 
-## الخطوة 1: استيراد المكتبات الضرورية
+إن إنشاء مستندات PDF منظمة يمكن أن يكون أمرًا بالغ الأهمية لسهولة الوصول والتنظيم، وخاصة عند التعامل مع الكثير من البيانات أو تقديم المحتوى بطريقة واضحة. مع Aspose.PDF for .NET، لا يعد التعامل مع ملفات PDF ومعالجتها أمرًا فعالًا فحسب، بل إنه أيضًا بديهي. في هذا البرنامج التعليمي، سنوضح عملية إنشاء عناصر هيكلية في مستند PDF خطوة بخطوة. وبحلول النهاية، ستكون لديك فكرة قوية عن كيفية استخدام Aspose.PDF لتحسين ملفات PDF الخاصة بك باستخدام عناصر الهيكل.
+
+## المتطلبات الأساسية
+
+قبل الخوض في البرنامج التعليمي، دعنا نغطي ما تحتاجه للبدء:
+
+1. .NET Framework: تأكد من إعداد بيئة .NET متوافقة. قد تكون هذه البيئة .NET Framework أو .NET Core، وفقًا لتفضيلاتك.
+2.  Aspose.PDF for .NET: قم بتنزيل المكتبة وتثبيتها. يمكنك العثور على أحدث إصدار[هنا](https://releases.aspose.com/pdf/net/).
+3. بيئة التطوير: أي بيئة تطوير متكاملة تدعم .NET، مثل Visual Studio، يجب أن تعمل بشكل جيد.
+4. المعرفة الأساسية بلغة C#: ستساعدك المعرفة ببرمجة C# على فهم الأمثلة بشكل أفضل.
+
+حسنًا! الآن بعد أن حددت المتطلبات الأساسية، فلنبدأ في إنشاء ملف PDF الخاص بنا.
+
+## استيراد الحزم
+
+قبل أن نبدأ في كتابة الكود الخاص بنا، نحتاج إلى التأكد من أننا قمنا باستيراد مساحات الأسماء Aspose.PDF اللازمة. ابدأ بإضافة التعليمات التالية باستخدام أعلى ملف C# الخاص بك:
 
 ```csharp
-using Aspose.Pdf;
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## الخطوة 2: قم بتحديد دليل مستنداتك
+ستتيح لنا هذه المساحات الاسمية الوصول إلى جميع الفئات والطرق التي نحتاجها للعمل مع ملفات PDF المميزة بشكل فعال.
+
+دعنا نقسم هذه العملية إلى خطوات يمكن إدارتها. تسلط كل خطوة الضوء على جزء أساسي من العملية، مما يمنحك مسارًا واضحًا لإنشاء مستندات PDF منظمة.
+
+## الخطوة 1: إعداد المستند
+
+ابدأ بتحديد المسار الخاص بمستندك وإنشاء ملف PDF جديد.
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-```
-
-تأكد من تحديد المسار الصحيح إلى دليل المستندات الخاص بك.
-
-## الخطوة 3: إنشاء مستند PDF
-
-```csharp
-Document document = new Document();
-```
-
-نقوم بإنشاء كائن مستند جديد يمثل مستند PDF.
-
-## الخطوة 4: الحصول على محتوى للعمل مع TaggedPdf
-
-```csharp
-ITaggedContent taggedContent = document.TaggedContent;
-```
-
-نقوم باسترجاع المحتوى المُوسوم لمستند PDF. وهذا سيسمح لنا بالتعامل مع العناصر الهيكلية.
-
-## الخطوة 5: تعيين عنوان المستند واللغة
-
-```csharp
-taggedContent.SetTitle("Tagged PDF document");
-taggedContent.SetLanguage("fr-FR");
-```
-
-لقد قمنا بتعيين عنوان ولغة مستند PDF المُوسوم. وهذا يحسن إمكانية الوصول إلى المستند.
-
-## الخطوة 6: إنشاء عناصر التجميع
-
-```csharp
-PartElement partElement = taggedContent.CreatePartElement();
-ArtElement artElement = taggedContent.CreateArtElement();
-SectElement sectElement = taggedContent.CreateSectElement();
-DivElement divElement = taggedContent.CreateDivElement();
-BlockQuoteElement blockQuoteElement = taggedContent.CreateBlockQuoteElement();
-CaptionElement captionElement = taggedContent.CreateCaptionElement();
-TOCElement tocElement = taggedContent.CreateTOCElement();
-TOCIElement tociElement = taggedContent.CreateTOCIElement();
-IndexElement indexElement = taggedContent.CreateIndexElement();
-NonStructElement nonStructElement = taggedContent.CreateNonStructElement();
-PrivateElement privateElement = taggedContent.CreatePrivateElement();
-```
-
-نقوم بإنشاء عناصر هيكلية مختلفة لتجميع المحتوى في مستند PDF.
-
-## الخطوة 7: إنشاء عناصر بنية الفقرة
-
-```csharp
-ParagraphElement paragraphElement = taggedContent.CreateParagraphElement();
-HeaderElement headerElement = taggedContent.CreateHeaderElement();
-HeaderElement h1Element = taggedContent.CreateHeaderElement(1);
-```
-
-نقوم بإنشاء عناصر هيكلية على مستوى الكتلة للفقرات والعناوين. يوضح المثال أعلاه إنشاء رأس من المستوى 1.
-
-## الخطوة 8: إنشاء عناصر هيكل المستوى المضمن
-
-```csharp
-SpanElement spanElement = taggedContent.CreateSpanElement();
-QuoteElement quoteElement = taggedContent.CreateQuoteElement();
-NoteElement noteElement = taggedContent.CreateNoteElement();
-```
-
-نقوم بإنشاء عناصر هيكلية على مستوى الخط لأجزاء النص التي تظهر داخل فقرة أو عنوان.
-
-## الخطوة 9: إنشاء عناصر هيكل العمل الفني
-
-```csharp
-FigureElement figureElement = taggedContent.CreateFigureElement();
-FormulaElement formulaElement = taggedContent.CreateFormulaElement();
-```
-
-نقوم بإنشاء العناصر الهيكلية للرسوم التوضيحية والصيغ الرياضية الموجودة في المستند.
-
-## الخطوة 10: احفظ مستند PDF المُوسوم
-
-```csharp
-document.Save(dataDir + "StructureElements.pdf");
-```
-
-نقوم بحفظ مستند PDF المُوسوم بعناصر البنية التي تم إنشاؤها.
-
-### نموذج لمصدر التعليمات البرمجية لإنشاء عناصر الهيكل باستخدام Aspose.PDF لـ .NET 
-
-```csharp
-
 // المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // إنشاء مستند PDF
 Document document = new Document();
+```
+
+ هنا، استبدل`"YOUR DOCUMENT DIRECTORY"` مع المسار الذي تريد حفظ ملف PDF فيه. وهذا يضمن أن ملف الإخراج الخاص بك له موقع معروف.
+
+## الخطوة 2: الحصول على المحتوى المميز
+
+الآن، دعونا نصل إلى المحتوى المميز للمستند الذي قمنا بإنشائه حديثًا.
+
+```csharp
 // احصل على محتوى للعمل باستخدام TaggedPdf
 ITaggedContent taggedContent = document.TaggedContent;
-// تعيين العنوان واللغة لـDocumnet
+```
+
+يسترجع هذا السطر من التعليمات البرمجية واجهة المحتوى المميز، مما يسمح لنا بالتلاعب ببنية مستند PDF.
+
+## الخطوة 3: ضبط العنوان واللغة
+
+من المهم تحديد العنوان واللغة لأغراض إمكانية الوصول.
+
+```csharp
+// تعيين العنوان واللغة للمستند
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
+```
+
+لا تساعد هذه الإضافة في تنظيم المستند فحسب، بل تعمل أيضًا على تحسين إمكانية الوصول إليه بالنسبة لقارئات الشاشة.
+
+## الخطوة 4: إنشاء عناصر التجميع
+
+بعد ذلك، سنقوم بإنشاء عناصر تجميع مختلفة.
+
+```csharp
 // إنشاء عناصر التجميع
 PartElement partElement = taggedContent.CreatePartElement();
 ArtElement artElement = taggedContent.CreateArtElement();
@@ -128,20 +92,65 @@ TOCIElement tociElement = taggedContent.CreateTOCIElement();
 IndexElement indexElement = taggedContent.CreateIndexElement();
 NonStructElement nonStructElement = taggedContent.CreateNonStructElement();
 PrivateElement privateElement = taggedContent.CreatePrivateElement();
+```
+
+يسمح لك كل عنصر بتقسيم مستندك إلى أقسام منطقية، مما يؤدي إلى تحسين التخطيط وإمكانية القراءة.
+
+## الخطوة 5: إنشاء عناصر بنية على مستوى كتلة النص
+
+في هذه الخطوة، نقوم بإنشاء العناصر المهمة للمحتوى النصي.
+
+```csharp
 // إنشاء عناصر هيكلية على مستوى كتلة النص
 ParagraphElement paragraphElement = taggedContent.CreateParagraphElement();
 HeaderElement headerElement = taggedContent.CreateHeaderElement();
 HeaderElement h1Element = taggedContent.CreateHeaderElement(1);
+```
+
+يتيح لك هذا الرمز إعداد المسرح لإضافة الفقرات والرؤوس، مما يعزز البنية النصية للمستند الخاص بك.
+
+## الخطوة 6: إنشاء عناصر بنية مستوى النص المضمن
+
+دعونا نلقي نظرة على كيفية إضافة عناصر نصية مضمنة.
+
+```csharp
 // إنشاء عناصر بنية نصية على مستوى السطر
 SpanElement spanElement = taggedContent.CreateSpanElement();
 QuoteElement quoteElement = taggedContent.CreateQuoteElement();
 NoteElement noteElement = taggedContent.CreateNoteElement();
+```
+
+تجعل العناصر المضمنة مثل الامتدادات والاقتباسات مستندك أكثر جاذبية من خلال السماح لك بتضمين أنواع مختلفة من المحتوى بسهولة.
+
+## الخطوة 7: إنشاء عناصر هيكل التوضيح
+
+حان الوقت لإضافة بعض الرسومات! يمكننا إضافة عناصر توضيحية لتعزيز الفهم.
+
+```csharp
 // إنشاء عناصر هيكلية توضيحية
 FigureElement figureElement = taggedContent.CreateFigureElement();
 FormulaElement formulaElement = taggedContent.CreateFormulaElement();
+```
+
+تُعد الأشكال والصيغ رائعة لإضافة محتوى مرئي ورياضي إلى ملف PDF الخاص بك.
+
+## الخطوة 8: إنشاء عناصر بنية القائمة والجدول
+
+يمكن أن تكون بنية القائمة والجدول مفيدة للغاية لتنظيم المحتوى.
+
+```csharp
 // الأساليب قيد التطوير
 ListElement listElement = taggedContent.CreateListElement();
 TableElement tableElement = taggedContent.CreateTableElement();
+```
+
+على الرغم من أن هذا النهج لا يزال في مرحلة التطوير، إلا أنه أصبح لديك الآن الأساس اللازم لدمج القوائم والجداول في مستندك.
+
+## الخطوة 9: إنشاء عناصر إضافية
+
+قم بتوسيع قدرات مستندك بإضافة المزيد من عناصر البنية.
+
+```csharp
 ReferenceElement referenceElement = taggedContent.CreateReferenceElement();
 BibEntryElement bibEntryElement = taggedContent.CreateBibEntryElement();
 CodeElement codeElement = taggedContent.CreateCodeElement();
@@ -150,53 +159,38 @@ AnnotElement annotElement = taggedContent.CreateAnnotElement();
 RubyElement rubyElement = taggedContent.CreateRubyElement();
 WarichuElement warichuElement = taggedContent.CreateWarichuElement();
 FormElement formElement = taggedContent.CreateFormElement();
+```
+
+تعمل هذه العناصر على إنشاء مستند أكثر ثراءً بالمراجع ومقاطع التعليمات البرمجية والارتباطات التشعبية والتعليقات التوضيحية والنماذج، مما يعزز التفاعل.
+
+## الخطوة 10: حفظ المستند
+
+وأخيرًا، دعنا نحفظ ملف PDF الخاص بك ذو الهيكل الجميل.
+
+```csharp
 // حفظ مستند PDF المُوسوم
 document.Save(dataDir + "StructureElements.pdf");
-
 ```
+
+هنا حيث تؤتي كل جهودك ثمارها! يتم الآن حفظ ملف PDF المنظم الخاص بك في الموقع المحدد.
 
 ## خاتمة
 
-في هذا البرنامج التعليمي، تعلمنا كيفية استخدام Aspose.PDF لـ .NET لإنشاء عناصر هيكلية في مستند PDF مُوسَم. تساعد العناصر الهيكلية في تحسين إمكانية الوصول إلى المستند وتنظيم المحتوى بطريقة مفيدة. يمكنك الآن استخدام هذه المعرفة لإنشاء مستندات PDF منظمة وسهلة التنقل.
+إن إنشاء ملفات PDF منظمة باستخدام Aspose.PDF for .NET يفتح عالمًا من الاحتمالات لإنشاء المستندات. بدءًا من العناوين والفقرات وحتى الصور والقوائم، يتيح الإطار تنسيق المستندات وتنظيمها بسهولة، مما يحسن تجربة المستخدم وإمكانية الوصول إليها. الآن بعد أن انتهيت من العملية، فلا تتردد في استكشاف المزيد من الوظائف بنفسك.
 
-### الأسئلة الشائعة
+## الأسئلة الشائعة
 
-#### س: ما هو الغرض من إنشاء عناصر الهيكل في مستند PDF باستخدام Aspose.PDF لـ .NET؟
+### ما هو Aspose.PDF لـ .NET؟
+Aspose.PDF for .NET هي مكتبة تتيح للمطورين إنشاء مستندات PDF ومعالجتها وتحويلها بسهولة باستخدام لغات برمجة .NET.
 
-أ: إن إنشاء عناصر هيكلية في مستند PDF باستخدام Aspose.PDF لـ .NET يعزز إمكانية الوصول إلى محتوى المستند وتنظيمه. توفر عناصر الهيكلية هيكلًا هرميًا يحسن التنقل والدلالات والتوافق مع التقنيات المساعدة.
+### كيف أقوم بتثبيت Aspose.PDF لـ .NET؟
+ يمكنك تنزيله[هنا](https://releases.aspose.com/pdf/net/) وأضفه إلى مشروعك عبر NuGet أو يدويًا.
 
-#### س: كيف يقوم الكود C# المقدم بإنشاء عناصر هيكلية في مستند PDF؟
+### هل يمكنني إنشاء علامات لتسهيل الوصول في ملفات PDF الخاصة بي؟
+نعم! يدعم Aspose.PDF for .NET إنشاء ملفات PDF ذات علامات، مما يحسن إمكانية الوصول إلى برامج قراءة الشاشة.
 
-ج: يوضح مثال التعليمات البرمجية كيفية إنشاء أنواع مختلفة من عناصر البنية، بما في ذلك عناصر التجميع (مثل الأجزاء والأقسام والأقسام الفرعية)، وعناصر مستوى الكتلة (مثل الفقرات والعناوين)، وعناصر مستوى السطر (الامتداد والاقتباس والملاحظة)، وعناصر العمل الفني (مثل الأشكال والصيغ). تساعد عناصر البنية هذه في تنظيم المحتوى.
+### أين يمكنني العثور على مزيد من الوثائق حول Aspose.PDF؟
+ يمكنك الوصول إلى الوثائق التفصيلية[هنا](https://reference.aspose.com/pdf/net/).
 
-####  س: لماذا من المهم تعيين عنوان المستند واللغة باستخدام`SetTitle` and `SetLanguage` methods?
-
- أ: ضبط عنوان المستند واللغة باستخدام`SetTitle` و`SetLanguage`تعمل الأساليب على تحسين إمكانية الوصول إلى المستند ودلالاته. يوفر العنوان وصفًا موجزًا لغرض المستند، بينما تعمل سمة اللغة على تحسين العرض وإمكانية الوصول الخاصة باللغة.
-
-####  س: كيف يتم تجميع العناصر، مثل`PartElement` and `SectElement`, contribute to the structure of the PDF document?
-
-أ: تعمل عناصر التجميع على إنشاء هيكل هرمي داخل مستند PDF، مما يسمح لك بتنظيم المحتوى المرتبط وتجميعه منطقيًا. وهذا يعزز التنقل ويوفر هيكلًا واضحًا للمستخدمين.
-
-#### س: ما هي عناصر البنية على مستوى الكتلة وعناصر البنية على المستوى المضمن، وكيف تختلف؟
-
-أ: تمثل عناصر البنية على مستوى الكتلة كتلًا أكبر من المحتوى، مثل الفقرات والعناوين، بينما تمثل العناصر على مستوى السطر أجزاء من النص داخل فقرة أو عنوان، مثل الفواصل والاقتباسات والملاحظات. وهي تساعد في تحديد التسلسل الهرمي والعلاقات بين المحتوى.
-
-####  س: كيف يتم بناء العناصر في العمل الفني، مثل`FigureElement` and `FormulaElement`, contribute to the document?
-
-أ: تتيح لك عناصر بنية العمل الفني إضافة الرسوم التوضيحية والأشكال والصيغ الرياضية إلى المستند. وهي توفر طريقة منظمة لتضمين المحتوى المرئي والرياضي.
-
-#### س: هل يمكنني استخدام تقنيات مماثلة لإنشاء أنواع أخرى من عناصر الهيكل، مثل القوائم أو الجداول أو التعليقات التوضيحية؟
-
-ج: نعم، يمكنك استخدام تقنيات مماثلة لإنشاء أنواع أخرى من عناصر البنية مثل القوائم والجداول والتعليقات التوضيحية والمراجع والمزيد. يوفر Aspose.PDF مجموعة واسعة من طرق إنشاء عناصر البنية.
-
-####  س: كيف يتم حفظ مستند PDF المُوسوم باستخدام`Save` method ensure the preservation of structure elements?
-
- أ: ال`Save` تحفظ الطريقة مستند PDF مع عناصر الهيكل التي تم إنشاؤها، مما يضمن الحفاظ على الهيكل الهرمي والدلالي للمستند من أجل إمكانية الوصول إليه والتنقل فيه.
-
-#### س: ما هي الفوائد التي تجلبها عناصر البنية إلى مستندات PDF من حيث إمكانية الوصول والتوافق مع التقنيات المساعدة؟
-
-أ: تعمل عناصر البنية على تعزيز إمكانية الوصول من خلال توفير بنية ودلالات مفيدة للمستند. وهذا يسمح لتقنيات المساعدة مثل برامج قراءة الشاشة بتفسير محتوى المستند ونقله بشكل أكثر فعالية للمستخدمين ذوي الإعاقة.
-
-#### س: كيف يمكنني تخصيص ودمج أنواع مختلفة من عناصر الهيكل في مستندات PDF الخاصة بي؟
-
-ج: يمكنك دمج عناصر البنية وتخصيصها باستخدام طرق الإنشاء المناسبة التي يوفرها Aspose.PDF. يمكنك تجربة عناصر مختلفة وخصائصها لإنشاء مستند PDF منظم وذو بنية جيدة.
+### هل هناك نسخة تجريبية مجانية متاحة؟
+ بالتأكيد! تحقق من النسخة التجريبية المجانية[هنا](https://releases.aspose.com/).

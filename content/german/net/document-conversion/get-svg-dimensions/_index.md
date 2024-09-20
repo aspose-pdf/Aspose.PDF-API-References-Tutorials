@@ -17,7 +17,7 @@ Bevor wir uns in den Code stürzen, müssen einige Dinge bereitstehen:
 
 1. Visual Studio: Stellen Sie sicher, dass Visual Studio auf Ihrem Computer installiert ist. Dies ist die IDE, die wir für dieses Tutorial verwenden werden.
 2.  .NET Framework: Stellen Sie sicher, dass Sie das .NET Framework installiert haben. Aspose.PDF unterstützt verschiedene Versionen. Überprüfen Sie daher die[Dokumentation](https://reference.aspose.com/pdf/net/) aus Kompatibilitätsgründen.
-3.  Aspose.PDF-Bibliothek: Sie können die neueste Version von Aspose.PDF für .NET herunterladen von der[Downloadlink](https://releases.aspose.com/pdf/net/) . Wenn Sie es erst einmal ausprobieren möchten, können Sie auch eine[Kostenlose Testversion](https://releases.aspose.com/).
+3.  Aspose.PDF-Bibliothek: Sie können die neueste Version von Aspose.PDF für .NET herunterladen von der[Downloadlink](https://releases.aspose.com/pdf/net/) Wenn Sie es erst einmal ausprobieren möchten, können Sie auch eine[Kostenlose Testversion](https://releases.aspose.com/).
 4. Grundlegende C#-Kenntnisse: Wenn Sie mit der C#-Programmierung vertraut sind, verstehen Sie die Beispiele besser.
 
 ## Pakete importieren

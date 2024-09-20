@@ -75,7 +75,7 @@ pdfDocument.save("StyledTable.pdf");
 
 ## 结论
 
-在本文中，我们探讨了如何使用 Aspose.PDF for Java 设置 PDF 中的表格单元格样式。借助这个功能强大的库，您可以完全控制 PDF 文档并根据特定需求进行自定义。无论您是突出显示数据还是创建复杂的报告，Aspose.PDF for Java 都能满足您的需求。
+在本文中，我们探讨了如何使用 Aspose.PDF for Java 设置 PDF 中的表格单元格样式。借助这个功能强大的库，您可以完全控制 PDF 文档并根据您的特定需求进行自定义。无论您是突出显示数据还是创建复杂的报告，Aspose.PDF for Java 都能满足您的需求。
 
 ## 常见问题解答
 

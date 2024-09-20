@@ -9,7 +9,7 @@ url: /de/net/programming-with-stamps-and-watermarks/define-alignment/
 ---
 ## Einführung
 
-Wenn Sie mit PDF-Dateien arbeiten, insbesondere wenn Sie sie optisch ansprechend gestalten möchten, ist die Definition der Textausrichtung von entscheidender Bedeutung. Haben Sie sich schon einmal eine PDF-Datei angesehen und gedacht, dass sich etwas nicht richtig anfühlt? Vielleicht war der Text falsch ausgerichtet oder er floss einfach nicht gut auf der Seite. Hier kann die Definition der Textausrichtung einen großen Unterschied machen! In diesem Handbuch erfahren Sie, wie Sie mit Aspose.PDF für .NET die Ausrichtung in Ihren PDF-Dokumenten definieren, damit sie nicht nur funktional, sondern auch ästhetisch ansprechend sind.
+Wenn Sie mit PDF-Dateien arbeiten, insbesondere wenn Sie sie optisch ansprechend gestalten möchten, ist die Definition der Textausrichtung von entscheidender Bedeutung. Haben Sie sich schon einmal eine PDF-Datei angesehen und gedacht, dass etwas nicht stimmt? Vielleicht war der Text falsch ausgerichtet oder er floss einfach nicht gut auf der Seite. Hier kann die Definition der Textausrichtung einen großen Unterschied machen! In diesem Handbuch erfahren Sie, wie Sie mit Aspose.PDF für .NET die Ausrichtung in Ihren PDF-Dokumenten definieren, damit sie nicht nur funktional, sondern auch ästhetisch ansprechend sind.
 
 ## Voraussetzungen
 

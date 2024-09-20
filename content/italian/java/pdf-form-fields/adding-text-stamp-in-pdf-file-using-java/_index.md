@@ -23,7 +23,7 @@ Prima di addentrarci nella parte di codifica, assicuriamoci di avere tutto ciò 
 ## Impostazione del progetto Java
 
 1. Crea un nuovo progetto Java nel tuo IDE preferito.
-2. Aggiungi la libreria Aspose.PDF per Java al percorso di build del tuo progetto.
+2. Aggiungi la libreria Aspose.PDF per Java al percorso di compilazione del tuo progetto.
 
 ## Creazione di un documento PDF
 

@@ -68,7 +68,7 @@ Nyní přichází hlavní událost – získání konkrétní stránky! Předpok
 Page pdfPage = pdfDocument.Pages[2];
 ```
 
-Tady bereme druhou stránku (`Pages[2]`dokumentu PDF. Číslo uvnitř hranatých závorek můžete změnit na číslo stránky, kterou chcete extrahovat.
+Tady máme druhou stránku (`Pages[2]`dokumentu PDF. Číslo uvnitř hranatých závorek můžete změnit na číslo stránky, kterou chcete extrahovat.
 
 ## Krok 4: Vytvoření nového dokumentu
 

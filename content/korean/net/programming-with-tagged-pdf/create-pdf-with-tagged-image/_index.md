@@ -2,128 +2,149 @@
 title: 태그가 지정된 이미지로 PDF 만들기
 linktitle: 태그가 지정된 이미지로 PDF 만들기
 second_title: .NET API 참조를 위한 Aspose.PDF
-description: Aspose.PDF for .NET을 사용하여 태그가 지정된 이미지로 PDF를 만드는 단계별 가이드입니다.
+description: Aspose.PDF for .NET을 사용하여 이미지가 있는 태그가 지정된 PDF를 만드는 방법을 알아보세요. 접근성 있고 전문적인 문서 생성을 위한 단계별 가이드를 따르세요.
 type: docs
 weight: 40
 url: /ko/net/programming-with-tagged-pdf/create-pdf-with-tagged-image/
 ---
-이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 태그가 지정된 이미지가 있는 PDF 문서를 만드는 방법에 대한 단계별 가이드를 제공합니다. Aspose.PDF는 PDF 문서를 프로그래밍 방식으로 만들고, 조작하고, 변환할 수 있는 강력한 라이브러리입니다. Aspose.PDF의 태그가 지정된 콘텐츠 구조 기능을 사용하여 PDF 문서에 태그가 지정된 이미지를 추가할 수 있습니다.
+## 소개
+
+PDF를 만드는 것은 복잡한 작업일 수 있지만, 반드시 그럴 필요는 없습니다! 오늘은 Aspose.PDF for .NET을 사용하여 태그가 지정된 이미지가 있는 PDF 문서를 만드는 방법을 알아보겠습니다. PDF에 이미지를 통합하고 액세스 가능한지 확인하는 데 관심이 있다면 올바른 곳에 왔습니다. 이 프로세스를 단계별로 풀어서 전문적이고 액세스 가능한 PDF를 쉽게 만들 수 있도록 하겠습니다.
 
 ## 필수 조건
 
-시작하기 전에 다음 전제 조건이 충족되었는지 확인하세요.
+태그가 지정된 이미지로 PDF를 만들기 전에 몇 가지 필요한 사항이 있습니다.
 
-1. .NET Framework와 함께 설치된 Visual Studio.
-2. .NET용 Aspose.PDF 라이브러리.
+1. .NET용 Aspose.PDF: 이 강력한 라이브러리는 .NET 애플리케이션에서 PDF 문서를 처리하는 데 필수적입니다. 라이브러리는 여기에서 찾을 수 있습니다.[.NET용 Aspose.PDF 다운로드](https://releases.aspose.com/pdf/net/).
+2. .NET Framework 또는 .NET Core: 컴퓨터에 호환되는 버전의 .NET Framework 또는 .NET Core가 있는지 확인하세요. 이 라이브러리는 둘 다 지원합니다.
+3. 이미지 파일: PDF에 삽입할 이미지 파일이 필요합니다. 이 예에서는 'aspose-logo.png'를 사용합니다. 문서 디렉토리에 준비해 두세요. 
 
-## 1단계: 프로젝트 설정
+이러한 전제 조건을 충족하면 시작할 준비가 된 것입니다!
 
-시작하려면 Visual Studio에서 새 프로젝트를 만들고 .NET 라이브러리용 Aspose.PDF에 대한 참조를 추가합니다. Aspose 공식 웹사이트에서 라이브러리를 다운로드하여 컴퓨터에 설치할 수 있습니다.
+## 패키지 가져오기
 
-## 2단계: 필요한 네임스페이스 가져오기
+코딩 모험을 시작하려면 필요한 Aspose.PDF 네임스페이스를 가져와서 작업 공간을 설정해야 합니다. 방법은 다음과 같습니다.
 
-C# 코드 파일에서 Aspose.PDF에서 제공하는 클래스와 메서드에 액세스하는 데 필요한 네임스페이스를 가져옵니다.
+### 새 프로젝트 만들기
+
+- 원하는 IDE(예: Visual Studio)를 엽니다.
+- 새 콘솔 애플리케이션 프로젝트를 만듭니다. 왜 콘솔 애플리케이션인가요? 간단하고 튜토리얼에 완벽하거든요!
+
+### Aspose.PDF 참조 추가
+
+- 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 버튼으로 클릭하고 NuGet 패키지 관리를 선택합니다.
+- "Aspose.PDF"를 검색하여 설치하세요. 
+- 이렇게 하면 프로젝트에 필요한 모든 패키지가 추가되어 PDF 조작에 필요한 기능에 액세스할 수 있습니다.
+
+### 필요한 네임스페이스 가져오기
+
+ 주 프로그램 파일의 맨 위(예:`Program.cs`), 다음 네임스페이스를 가져옵니다.
 
 ```csharp
-using System;
-using Aspose.Pdf;
+using Aspose.Pdf.LogicalStructure;
 using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## 3단계: 태그가 지정된 이미지로 PDF 문서 만들기
+이러한 패키지를 가져오면 애플리케이션에서 우리가 활용할 Aspose.PDF 기능을 가져오도록 하는 것입니다.
 
-다음 코드를 사용하여 태그가 지정된 이미지가 있는 PDF 문서를 만듭니다.
+이제 모든 것이 설정되었으니, 단계별로 태그가 지정된 이미지로 PDF를 만들어 보겠습니다.
+
+## 1단계: 문서 초기화
+
+우선, 새로운 PDF 문서를 만들어야 합니다.
 
 ```csharp
-string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // 디렉토리 경로를 설정하세요
 Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Creating a PDF with a tagged image");
-taggedContent.SetLanguage("fr-FR");
-
-IllustrationElement figure1 = taggedContent.CreateFigureElement();
-taggedContent.RootElement.AppendChild(figure1);
-figure1.AlternativeText = "Aspose Logo";
-figure1.Title = "Picture 1";
-figure1.SetTag("Fig");
-figure1.SetImage(dataDir + @"aspose-logo.jpg");
 ```
 
-이 코드는 빈 PDF 문서를 만들고 Aspose.PDF에서 제공하는 방법을 사용하여 태그가 지정된 이미지를 추가합니다. 이미지는 대체 텍스트, 제목 및 태그로 지정됩니다.
+-  여기서 무슨 일이 일어나고 있나요? 우리는 새로운 것을 인스턴스화하고 있습니다.`Document` PDF를 나타내는 객체입니다. 걸작을 기다리는 빈 캔버스라고 생각하세요!
 
-## 4단계: PDF 문서 저장
+## 2단계: 태그가 지정된 콘텐츠 설정
 
-다음 코드를 사용하여 PDF 문서를 저장하세요.
+다음으로, 태그가 지정된 콘텐츠를 설정합니다.
 
 ```csharp
-document.Save(dataDir + "PDFwithTaggedImage.pdf");
+ITaggedContent taggedContent = document.TaggedContent;
 ```
 
-이 코드는 태그가 지정된 이미지가 있는 PDF 문서를 지정된 파일에 저장합니다.
+- 태그가 있는 콘텐츠를 사용하는 이유는? 태그가 있는 PDF는 접근성에 필수적이며, 화면 판독기가 문서의 구조를 이해할 수 있게 해줍니다.
 
-### .NET용 Aspose.PDF를 사용하여 태그가 지정된 이미지로 PDF 만들기 샘플 소스 코드 
+## 3단계: 메타데이터 구성
+
+이제 PDF를 설명하는 메타데이터를 추가해 보겠습니다.
+
 ```csharp
-
-// 문서 디렉토리의 경로입니다.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("CreatePDFwithTaggedImage");
 taggedContent.SetLanguage("en-US");
+```
+
+- 메타 뭐? 제목과 언어를 추가하는 것은 당신의 작품에 이름표를 붙이는 것과 같습니다. 다른 사람들이 그것이 무엇에 대한 것인지 이해하는 데 도움이 됩니다!
+
+## 4단계: 일러스트레이션 요소 만들기
+
+우리는 이미지를 저장할 요소를 만들어야 합니다.
+
+```csharp
 IllustrationElement figure1 = taggedContent.CreateFigureElement();
 taggedContent.RootElement.AppendChild(figure1);
+```
+
+-  그렇게요?! 그렇죠!`CreateFigureElement` 이 방법을 사용하면 새로운 일러스트레이션을 만들고 태그가 지정된 콘텐츠의 루트 요소에 추가할 수 있습니다.
+
+## 5단계: 이미지 속성 설정
+
+다음으로, 이미지의 속성을 설정해 보겠습니다.
+
+```csharp
 figure1.AlternativeText = "Aspose Logo";
 figure1.Title = "Image 1";
 figure1.SetTag("Fig");
-// 해상도 300 DPI(기본값)의 이미지 추가
-figure1.SetImage(dataDir + @"aspose-logo.jpg");
-// PDF 문서 저장
-document.Save(dataDir + "PDFwithTaggedImage.pdf");
-
 ```
+
+- 왜 이 모든 속성이 필요한가요? 대체 텍스트는 이미지를 볼 수 없는 사람들을 위해 이미지를 설명하는 반면, 제목과 태그는 더 나은 접근성을 위해 이미지를 분류합니다.
+
+## 6단계: 이미지 추가
+
+이제 실제 이미지를 PDF에 추가할 시간입니다.
+
+```csharp
+figure1.SetImage(dataDir + @"aspose-logo.png"); // 이미지 경로가 올바른지 확인하세요!
+```
+
+- 마법이 일어나는 곳은 바로 여기입니다! 이미지를 PDF에 바로 삽입합니다. 
+
+## 7단계: PDF 문서 저장
+
+마지막으로, 우리가 만든 작품을 파일에 저장해 보겠습니다.
+
+```csharp
+document.Save(dataDir + "PDFwithTaggedImage.pdf");
+```
+
+- 대단원! 이 줄을 실행하면 지정된 디렉토리에서 새 PDF를 찾을 수 있습니다.
 
 ## 결론
 
-이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 태그가 지정된 이미지가 있는 PDF 문서를 만드는 방법을 배웠습니다. 태그가 지정된 이미지는 PDF 문서에 추가적이고 구조화된 정보를 추가합니다.
+Aspose.PDF for .NET을 사용하여 태그가 지정된 이미지로 PDF를 만드는 것은 관리 가능한 단계로 나누면 아주 쉽습니다. 이 가이드를 따르면 PDF를 만드는 방법뿐만 아니라 태그가 지정된 콘텐츠로 접근성을 높이는 방법도 배웠습니다. 더 많은 사람을 위해 문서를 준비하든 단순히 PDF 작품을 다듬든 이 지식은 여러분에게 큰 도움이 될 것입니다.
 
-### 자주 묻는 질문
+## 자주 묻는 질문
 
-#### 질문: Aspose.PDF for .NET을 사용하여 태그가 지정된 이미지가 포함된 PDF 문서를 만드는 목적은 무엇입니까?
+### 태그가 지정된 PDF란 무엇입니까?
+태그가 지정된 PDF는 접근 가능하도록 설계되었습니다. 여기에는 보조 기술이 올바르게 읽고 탐색할 수 있도록 하는 메타데이터가 포함됩니다.
 
-A: Aspose.PDF for .NET을 사용하여 태그가 지정된 이미지가 있는 PDF 문서를 만들면 태그가 지정된 이미지를 문서의 콘텐츠에 추가할 수 있습니다. 태그가 지정된 이미지는 대체 텍스트 및 제목과 같은 구조화된 정보를 제공하여 접근성과 구성을 향상시킵니다.
+### Aspose.PDF를 사용하여 여러 이미지를 추가할 수 있나요?
+ 물론입니다! 새 것을 만드는 단계를 반복하기만 하면 됩니다.`IllustrationElement` 문서 내의 인스턴스.
 
-#### 질문: Aspose.PDF 라이브러리는 태그가 지정된 이미지가 포함된 PDF 문서를 만드는 데 어떻게 도움이 되나요?
+### Aspose.PDF에 대한 더 많은 문서는 어디에서 찾을 수 있나요?
+ 문서를 확인하세요[여기](https://reference.aspose.com/pdf/net/).
 
-A: Aspose.PDF for .NET은 PDF 문서를 프로그래밍 방식으로 만들고, 조작하고, 변환하는 기능을 제공하는 강력한 라이브러리입니다. 이 튜토리얼에서는 라이브러리의 태그가 지정된 콘텐츠 구조 기능을 사용하여 태그가 지정된 이미지를 PDF 문서에 추가합니다.
+### Aspose.PDF에 대한 무료 평가판이 있나요?
+ 네! 무료 체험판을 이용할 수 있습니다.[여기](https://releases.aspose.com/).
 
-#### 질문: Aspose.PDF for .NET을 사용하여 태그가 지정된 이미지가 있는 PDF 문서를 만드는 데 필요한 전제 조건은 무엇입니까?
-
-답변: 시작하기 전에 .NET 프레임워크와 함께 Visual Studio가 설치되어 있는지 확인하고 프로젝트에서 .NET용 Aspose.PDF 라이브러리가 참조되었는지 확인하세요.
-
-#### 질문: 제공된 C# 코드는 어떻게 태그가 지정된 이미지가 포함된 PDF 문서를 생성합니까?
-
-A: 이 코드는 PDF 문서를 만들고, 태그가 지정된 이미지 요소를 정의하고, 문서의 콘텐츠에 추가하는 방법을 보여줍니다. 태그가 지정된 이미지에는 Aspose.PDF에서 제공하는 메서드를 사용하여 대체 텍스트, 제목 및 태그가 포함됩니다.
-
-#### 질문: 태그된 이미지에 다른 이미지 형식을 사용할 수 있나요?
-
-A: 네, 태그가 지정된 이미지에 JPEG, PNG, GIF 등 다양한 이미지 형식을 사용할 수 있습니다. 튜토리얼에 제공된 코드 예제에서는 JPEG 이미지를 사용하지만, 원하는 형식의 이미지 파일 경로로 바꿀 수 있습니다.
-
-#### 질문: 태그가 지정된 이미지에서 대체 텍스트(alt 텍스트)는 어떻게 사용되나요?
-
- A: 대체 텍스트는 시각 장애인 사용자를 위해 화면 판독기에서 소리 내어 읽어주는 이미지의 텍스트 설명을 제공합니다. 제공된 코드에서 대체 텍스트는 다음을 사용하여 설정됩니다.`AlternativeText` 의 속성`IllustrationElement` 태그된 이미지를 나타냅니다.
-
-#### Q: 어떻게`SetTitle` method contribute to the PDF document's tagged image?
-
- A: 그`SetTitle` 방법은 PDF 문서의 태그가 지정된 콘텐츠의 제목을 설정하여 태그가 지정된 이미지에 대한 추가 컨텍스트를 제공합니다. 이 제목은 태그가 지정된 콘텐츠의 목적이나 주제를 식별하는 데 도움이 될 수 있습니다.
-
-#### 질문: 태그된 이미지의 태그와 제목을 사용자 지정할 수 있나요?
-
- A: 예, 태그가 지정된 이미지의 태그와 제목을 사용자 정의할 수 있습니다.`SetTag` 그리고`Title` 의 방법`IllustrationElement`. 코드 예제는 태그를 "Fig"로, 제목을 "Picture 1"로 설정하는 방법을 보여줍니다.
-
-#### 질문: 태그된 이미지가 접근 가능하고 접근성 기준을 준수하는지 어떻게 확인할 수 있나요?
-
-A: Aspose.PDF의 태그가 지정된 콘텐츠 구조 기능을 사용하고 대체 텍스트와 기타 관련 정보를 제공함으로써 태그가 지정된 이미지의 접근성에 기여합니다. 접근성 표준을 준수하려면 대체 텍스트와 문서 구조에 대한 모범 사례를 따라야 합니다.
-
-#### 질문: 비슷한 기술을 사용해 동일한 PDF 문서에 여러 개의 태그가 지정된 이미지를 추가하는 것이 가능할까요?
-
-A: 네, 유사한 기술을 사용하여 동일한 PDF 문서에 태그가 지정된 여러 이미지를 추가할 수 있습니다. 추가`IllustrationElement` 태그가 지정된 각 이미지에 대한 인스턴스를 만들고 필요에 따라 속성을 사용자 정의합니다.
+### Aspose.PDF에 대한 지원은 어떻게 받을 수 있나요?
+ 방문하면 지원을 받을 수 있습니다.[Aspose 포럼](https://forum.aspose.com/c/pdf/10).

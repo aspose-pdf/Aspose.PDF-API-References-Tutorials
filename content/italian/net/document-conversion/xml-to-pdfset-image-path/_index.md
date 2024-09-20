@@ -41,7 +41,7 @@ Ora che hai impostato tutto, tuffiamoci nel processo vero e proprio. Lo suddivid
 Prima di scrivere qualsiasi codice, assicurati che il tuo progetto sia impostato correttamente.
 
 1. Crea un nuovo progetto: apri Visual Studio e crea una nuova applicazione console C#.
-2.  Installa Aspose.PDF: usa NuGet Package Manager per installare Aspose.PDF per .NET. Puoi farlo navigando su`Tools` >`NuGet Package Manager` >`Manage NuGet Packages for Solution` cerca "Aspose.PDF". Fai clic su Installa e sei pronto per iniziare.
+2.  Installa Aspose.PDF: usa NuGet Package Manager per installare Aspose.PDF per .NET. Puoi farlo andando su`Tools` >`NuGet Package Manager` >`Manage NuGet Packages for Solution` cerca "Aspose.PDF". Fai clic su Installa e sei pronto per iniziare.
 3. Organizza i tuoi file: crea una directory nel tuo progetto per i file XML e immagine. Questo ti aiuterà a tenere tutto organizzato.
 
 ## Passaggio 2: inizializzare l'oggetto documento

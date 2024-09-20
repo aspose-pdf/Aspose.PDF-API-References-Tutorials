@@ -86,7 +86,7 @@ dataDir = dataDir + "ArabicTextFilling_out.pdf";
 pdfDocument.Save(dataDir);
 ```
 
-記入されたPDFは次のように保存されます`ArabicTextFilling_out.pdf`指定されたディレクトリ内。
+これにより、入力されたPDFが次のように保存されます。`ArabicTextFilling_out.pdf`指定されたディレクトリ内。
 
 ## ステップ6: 操作を確認する
 

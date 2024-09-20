@@ -2,7 +2,7 @@
 title: Bestäm sidfärg
 linktitle: Bestäm sidfärg
 second_title: Aspose.PDF för .NET API Referens
-description: Lär dig att bestämma sidfärgen på PDF-filer med Aspose.PDF för .NET med vår steg-för-steg-guide. Enkel implementering för alla kunskapsnivåer.
+description: Lär dig att bestämma sidfärgen på PDF-filer med Aspose.PDF för .NET med vår steg-för-steg-guide. Enkel implementering för alla kompetensnivåer.
 type: docs
 weight: 40
 url: /sv/net/programming-with-pdf-pages/determine-page-color/

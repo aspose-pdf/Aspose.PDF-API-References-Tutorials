@@ -1,6 +1,6 @@
 ---
-title: Ladda licens från Stream Object
-linktitle: Ladda licens från Stream Object
+title: Ladda Licens Från Stream Object
+linktitle: Ladda Licens Från Stream Object
 second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du laddar en licens från ett strömobjekt i Aspose.PDF för .NET med den här omfattande, steg-för-steg-guiden.
 type: docs
@@ -119,4 +119,4 @@ Nej, sökvägen till licensfilen är inte skiftlägeskänslig, men den måste va
 En giltig licens är vanligtvis versionsoberoende, men det är alltid en bra idé att bekräfta med Asposes support om du uppgraderar till en betydligt nyare version.
 
 ### Hur kan jag kontrollera om licensen har tillämpats framgångsrikt?  
- Du kan vanligtvis se om licensen tillämpades framgångsrikt genom att leta efter frånvaron av vattenstämplar i dina utdatadokument. Dessutom`SetLicense` metoden ger inget undantag om den lyckas.
+ Du kan vanligtvis se om licensen tillämpades framgångsrikt genom att leta efter frånvaron av vattenstämplar i dina utdatadokument. Dessutom har`SetLicense` metoden ger inget undantag om den lyckas.

@@ -2,195 +2,173 @@
 title: PDF ファイル内の段落を使用してテキストを回転する
 linktitle: PDF ファイル内の段落を使用してテキストを回転する
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して PDF ファイル内の段落を使用してテキストを回転する方法を学習します。
+description: Aspose.PDF for .NET を使用して PDF 内のテキストを回転する方法を学びます。このステップバイステップのガイドに従ってドキュメントを作成します。
 type: docs
 weight: 380
 url: /ja/net/programming-with-text/rotate-text-using-paragraph/
 ---
-このチュートリアルでは、Aspose.PDF for .NET を使用して段落を使用してテキストを回転する方法について説明します。提供されている C# ソース コードでは、プロセスを段階的に示しています。
+## 導入
+
+動的テキストを含む PDF を作成すると、魅力的な方法で情報を伝達できます。ドキュメントにセンスを加えたい場合は、テキストを回転すると重要なポイントを強調したり、視覚的に魅力的なデザインを提供したりできます。このガイドでは、Aspose.PDF for .NET を使用してテキストを回転し、PDF ドキュメントをよりインタラクティブで興味深いものにする方法について説明します。
 
 ## 前提条件
 
-チュートリアルを進める前に、次のものを用意してください。
+PDF ファイルでのテキスト回転のエキサイティングな世界に飛び込む前に、すべてが正しく設定されていることを確認しましょう。必要な前提条件は次のとおりです。
 
-- C# プログラミング言語に関する基本的な知識。
-- Aspose.PDF for .NET ライブラリがインストールされています。Aspose Web サイトから入手するか、NuGet を使用してプロジェクトにインストールできます。
+1.  Aspose.PDF for .NET: プロジェクトにAspose.PDF for .NETがインストールされていることを確認してください。ダウンロードは以下から行えます。[Webサイト](https://releases.aspose.com/pdf/net/).
+2. Visual Studio: このチュートリアルでは、.NET 開発に Visual Studio を使用していることを前提としています。
+3. C# の基礎知識: C# プログラミングの知識があれば、例をよりよく理解できます。初心者でも心配はいりません。ステップごとに説明します。
+4. .NET Framework: プロジェクトが適切なバージョンの .NET Framework で設定されていることを確認してください。Aspose.PDF はさまざまなバージョンをサポートしているため、互換性についてはドキュメントを確認してください。
 
-## ステップ1: プロジェクトを設定する
+これらの前提条件が整ったら、コードの作成を開始する準備が整います。
 
-まず、好みの統合開発環境 (IDE) で新しい C# プロジェクトを作成し、Aspose.PDF for .NET ライブラリへの参照を追加します。
+## パッケージのインポート
 
-## ステップ2: 必要な名前空間をインポートする
+Aspose.PDF を効果的に使用するには、必要な名前空間をインポートする必要があります。手順は次のとおりです。
 
-必要な名前空間をインポートするには、C# ファイルの先頭に次の using ディレクティブを追加します。
+### プロジェクトを開く
+
+Visual Studio を起動し、PDF でテキストの回転を実装するプロジェクトを開きます。
+
+### 参照を追加
+
+ソリューション エクスプローラーでプロジェクトを右クリックし、[NuGet パッケージの管理] を選択します。 
+
+### Aspose.PDFを検索してインストールする
+
+NuGet パッケージ マネージャーで、「Aspose.PDF」を検索してインストールします。このアクションにより、Aspose.PDF ライブラリで使用可能なすべてのクラスと関数にアクセスできるようになります。
+
+### 名前空間をインポートする
+
+C# ファイルの先頭で、Aspose.PDF 名前空間をインポートする必要があります。
 
 ```csharp
+using System;
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using Aspose.Pdf.Text.TextBuilder;
+using Aspose.Pdf.Facades;
 ```
 
-## ステップ3: PDFドキュメントを作成する
+これで、コーディングを始める準備が整いました。
 
-初期化する`Document`新しい PDF ドキュメントを作成するオブジェクト:
+さあ、それでは本題に入りましょう。PDF 内のテキストを回転します。コードをステップごとに見ていきましょう。
+
+## ステップ1: ドキュメントを初期化する
+
+最初のステップは、PDF ドキュメントの新しいインスタンスを作成することです。ここに、これまでのすべての作業が保存されます。
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document pdfDocument = new Document();
+string dataDir = "YOUR DOCUMENT DIRECTORY"; //ドキュメントディレクトリを指定する
+Document pdfDocument = new Document(); //ドキュメントオブジェクトを初期化する
 ```
+ここでは、ドキュメントのディレクトリを指定し、新しい Document オブジェクトを初期化しています。このオブジェクトは、PDF のコンテナーとして機能します。
 
-必ず交換してください`"YOUR DOCUMENT DIRECTORY"`ドキュメント ディレクトリへの実際のパスを入力します。
+## ステップ2: 特定のページを取得する
 
-## ステップ4: ページを追加する
-
-ドキュメントから特定のページを取得するには、`Pages.Add()`方法：
+次に、テキストを回転させるページを追加しましょう。
 
 ```csharp
-Page pdfPage = (Page)pdfDocument.Pages.Add();
+Page pdfPage = (Page)pdfDocument.Pages.Add(); //特定のページを取得する
 ```
+この行は PDF に新しいページを追加し、そのページにコンテンツを追加できるようにします。
 
-## ステップ5: テキスト段落を作成する
+## ステップ3: テキスト段落を作成する
 
-作成する`TextParagraph`オブジェクトを作成し、ページ上の位置を設定します。
+次に、テキストフラグメントを追加する段落を作成しましょう。
 
 ```csharp
 TextParagraph paragraph = new TextParagraph();
-paragraph.Position = new Position(200, 600);
+paragraph.Position = new Position(200, 600); //段落の位置を設定する
 ```
+ここでは、TextParagraph を初期化し、ページ上の位置を設定します。座標 (200, 600) は、段落がページ上でどこから始まるかを決定します。
 
-必要に応じて位置の値を調整します。
+## ステップ4: テキストフラグメントを作成する 
 
-## ステップ6: テキストフラグメントを作成して構成する
+次は楽しい部分、つまりテキスト フラグメントの作成です。3 つのテキスト フラグメントを作成し、そのうち 2 つを回転させます。
 
-複数作成`TextFragment`オブジェクトを作成し、そのテキストとプロパティを設定します。
+### 4.1: 回転したテキストフラグメントを作成する
 
 ```csharp
 TextFragment textFragment1 = new TextFragment("rotated text");
 textFragment1.TextState.FontSize = 12;
 textFragment1.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment1.TextState.Rotation = 45;
+textFragment1.TextState.Rotation = 45; //回転を設定する
+```
+ここでは、「回転テキスト」という最初のテキスト フラグメントを作成します。フォント サイズとフォント タイプを設定し、45 度の回転を適用します。
 
+### 4.2: メインテキストフラグメントを作成する
+
+次に、メインのテキストフラグメントを追加しましょう。
+
+```csharp
 TextFragment textFragment2 = new TextFragment("main text");
 textFragment2.TextState.FontSize = 12;
 textFragment2.TextState.Font = FontRepository.FindFont("TimesNewRoman");
+```
+このフラグメントは回転されずに残り、段落のメインテキストとして機能します。
 
+### 4.3: 別の回転テキストフラグメントを作成する
+
+最後に、別の回転したテキストフラグメントを作成します。
+
+```csharp
 TextFragment textFragment3 = new TextFragment("another rotated text");
 textFragment3.TextState.FontSize = 12;
 textFragment3.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment3.TextState.Rotation = -45;
+textFragment3.TextState.Rotation = -45; //回転を設定する
 ```
+最初のフラグメントと同様に、このフラグメントは -45 度回転しており、興味深い視覚的なコントラストが追加されています。
 
-必要に応じてテキストやその他のプロパティを調整します。
+## ステップ5: 段落にテキストフラグメントを追加する
 
-## ステップ7: 段落にテキストフラグメントを追加する
-
-作成したテキストフラグメントを段落に追加するには、`AppendLine`方法：
+ここで、これらすべてのテキスト フラグメントを、先ほど作成した段落に追加します。
 
 ```csharp
 paragraph.AppendLine(textFragment1);
 paragraph.AppendLine(textFragment2);
 paragraph.AppendLine(textFragment3);
 ```
+それぞれのテキストを段落に追加しているだけです。`AppendLine`このメソッドは、各テキスト フラグメントが垂直に積み重ねられることを保証します。
 
-## ステップ8: TextBuilderを作成し、段落を追加する
+## ステップ6: TextBuilderオブジェクトを作成する
 
-作成する`TextBuilder`オブジェクトを使用して`pdfPage`テキスト段落を PDF ページに追加します。
+次に、TextBuilder を使用して段落を PDF ページに追加します。
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(pdfPage);
-textBuilder.AppendParagraph(paragraph);
+textBuilder.AppendParagraph(paragraph); //テキスト段落をPDFページに追加する
 ```
+TextBuilder オブジェクトは、指定された PDF ページに段落を適用するためのツールとして機能します。
 
-## ステップ9: PDF文書を保存する
+## ステップ7: ドキュメントを保存する
 
-変更したPDF文書をファイルに保存するには、`Save`方法：
+大変な作業が終わったら、ドキュメントを保存して、作成した内容を確認しましょう。
 
 ```csharp
 pdfDocument.Save(dataDir + "TextFragmentTests_Rotated2_out.pdf");
 ```
+この行は、ドキュメントを「TextFragmentTests_Rotated2_out.pdf」という名前で指定したディレクトリに保存します。 
 
-必ず交換してください`"TextFragmentTests_Rotated2_out.pdf"`希望する出力ファイル名を指定します。
-
-### Aspose.PDF for .NET を使用して段落を使用してテキストを回転するためのサンプル ソース コード 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-//ドキュメントオブジェクトを初期化する
-Document pdfDocument = new Document();
-//特定のページを取得する
-Page pdfPage = (Page)pdfDocument.Pages.Add();
-TextParagraph paragraph = new TextParagraph();
-paragraph.Position = new Position(200, 600);
-//テキストフラグメントを作成
-TextFragment textFragment1 = new TextFragment("rotated text");
-//テキストプロパティを設定する
-textFragment1.TextState.FontSize = 12;
-textFragment1.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-//回転を設定する
-textFragment1.TextState.Rotation = 45;
-//テキストフラグメントを作成
-TextFragment textFragment2 = new TextFragment("main text");
-//テキストプロパティを設定する
-textFragment2.TextState.FontSize = 12;
-textFragment2.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-//テキストフラグメントを作成
-TextFragment textFragment3 = new TextFragment("another rotated text");
-//テキストプロパティを設定する
-textFragment3.TextState.FontSize = 12;
-textFragment3.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-//回転を設定する
-textFragment3.TextState.Rotation = -45;
-//段落にテキストフラグメントを追加する
-paragraph.AppendLine(textFragment1);
-paragraph.AppendLine(textFragment2);
-paragraph.AppendLine(textFragment3);
-//TextBuilderオブジェクトを作成する
-TextBuilder textBuilder = new TextBuilder(pdfPage);
-//テキスト段落をPDFページに追加する
-textBuilder.AppendParagraph(paragraph);
-//ドキュメントを保存
-pdfDocument.Save(dataDir + "TextFragmentTests_Rotated2_out.pdf");
-```
-
+出来上がり！テキストが回転した PDF ファイルができました。
 
 ## 結論
 
-おめでとうございます! Aspose.PDF for .NET を使用して PDF ドキュメント内の段落を使用してテキストを回転する方法を学習しました。このチュートリアルでは、ドキュメントの作成から変更後のバージョンの保存まで、ステップ バイ ステップで説明しました。これで、このコードを独自の C# プロジェクトに組み込んで、PDF ファイル内のテキストの回転を操作できるようになりました。
+PDF 内のテキストを回転すると、ドキュメントに創造性と強調性を大幅に追加できます。Aspose.PDF for .NET を使用すると、デザインのニーズに合わせて簡単に実装およびカスタマイズできます。このステップ バイ ステップ ガイドに従うことで、PDF 内で回転したテキストを作成する方法を学習し、情報を魅力的な方法で提示する新しい可能性を提供します。 
 
-### よくある質問
+## よくある質問
 
-#### Q: 「段落を使用してテキストを回転する」チュートリアルの目的は何ですか?
+### Aspose.PDF for .NET とは何ですか?
+Aspose.PDF for .NET は、開発者が .NET アプリケーション内で直接 PDF ドキュメントを作成、操作、変換できるようにする強力なライブラリです。
 
-A: 「段落を使用してテキストを回転する」チュートリアルは、Aspose.PDF ライブラリ for .NET を使用して PDF ドキュメント内のテキスト段落を使用してテキストを回転するプロセスを説明することを目的としています。このチュートリアルでは、この機能を実現するための手順とサンプル コードが提供されます。
+### プロジェクトに Aspose.PDF をインストールするにはどうすればよいですか?
+ Aspose.PDFはVisual StudioのNuGetパッケージマネージャーからインストールするか、[Aspose ダウンロード ページ](https://releases.aspose.com/pdf/net/).
 
-#### Q: 「段落を使用してテキストを回転する」とはどういう意味ですか?
+### Aspose.PDF を無料で使用できますか?
+はい、Aspose.PDFは無料トライアルを提供しています。[無料トライアル](https://releases.aspose.com/)その機能を調べてみましょう。
 
-A: 段落を使用してテキストを回転するとは、テキスト段落を使用して PDF ドキュメント内のテキストに回転を適用する機能のことです。この手法を使用すると、PDF コンテンツ内でテキストをさまざまな角度や位置に配置できます。
+### Aspose.PDF のサポートはありますか?
+もちろんです！[Aspose サポート](https://forum.aspose.com/c/pdf/10)問題が発生した場合のサポートについては、
 
-#### Q: PDF ドキュメント内のテキストを回転する必要があるのはなぜですか?
-
-A: PDF ドキュメント内のテキストを回転すると、特定のコンテンツを強調したり、芸術的なデザインを作成したり、レイアウトや読みやすさを改善したりするなど、さまざまな目的に役立ちます。
-
-#### Q: 新しい PDF ドキュメントを作成するにはどうすればよいですか?
-
- A: 新しいPDF文書を作成するには、`Document`Aspose.PDF ライブラリのオブジェクト。このオブジェクトを使用して、PDF にページとコンテンツを追加できます。
-
-#### Q: 段落を使用してテキストを回転するにはどうすればよいですか?
-
-A: 段落を使用してテキストを回転するには:
-
-1. 作成する`TextParagraph`物体。
-2. 作成する`TextFragment`希望するテキストと回転角度を持つオブジェクト。
-3. テキストの断片をテキスト段落に追加します。
-4. 作成する`TextBuilder`オブジェクトを作成し、テキスト段落を特定の PDF ページに追加します。
-
-#### Q: 個々のテキストフラグメントの回転角度を制御できますか?
-
- A: はい、個々の回転角度を制御できます。`TextFragment`オブジェクトを設定することで`TextState.Rotation`プロパティ。正の値は時計回りの回転を示し、負の値は反時計回りの回転を示します。
-
-#### Q: 同じ段落内の異なるテキストフラグメントに異なる回転角度を適用できますか?
-
- A: はい、異なる回転角度を異なるオブジェクトに適用できます。`TextFragment`同じ段落内のオブジェクトを`TextState.Rotation`各フラグメントのプロパティをそれに応じて変更します。
-
-#### Q: 回転した PDF ドキュメントを保存するにはどうすればよいですか?
-
-A: 回転したPDF文書を保存するには、`Save`方法の`Document`オブジェクトを選択し、必要な出力ファイルのパスと名前を指定します。
+### Aspose.PDF の一時ライセンスを取得するにはどうすればよいですか?
+一時ライセンスは以下から購入できます。[Asposeのウェブサイト](https://purchase.aspose.com/temporary-license/)ライブラリの全機能を試してみましょう。

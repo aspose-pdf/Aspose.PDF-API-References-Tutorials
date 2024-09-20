@@ -2,7 +2,7 @@
 title: PDF ドキュメント内のすべての添付ファイルを一覧表示する
 linktitle: PDF ドキュメント内のすべての添付ファイルを一覧表示する
 second_title: Aspose.PDF Java PDF 処理 API
-description: Aspose.PDF for Java を使用して PDF 内の添付ファイルを一覧表示する方法を説明します。PDF 添付ファイルを簡単に抽出するためのステップバイステップ ガイド。
+description: Aspose.PDF for Java を使用して PDF 内の添付ファイルを一覧表示する方法を学びます。PDF 添付ファイルを簡単に抽出するためのステップバイステップ ガイド。
 type: docs
 weight: 13
 url: /ja/java/pdf-attachments/list-all-attachments-pdf-documents/

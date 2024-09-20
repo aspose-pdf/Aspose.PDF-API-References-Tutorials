@@ -2,146 +2,132 @@
 title: Spaltentext in PDF-Datei extrahieren
 linktitle: Spaltentext in PDF-Datei extrahieren
 second_title: Aspose.PDF für .NET API-Referenz
-description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Spaltentext aus einer PDF-Datei extrahieren.
+description: Erfahren Sie, wie Sie mit Aspose.PDF für .NET Textspalten aus PDF-Dateien extrahieren. In dieser Anleitung werden die einzelnen Schritte mit Codebeispielen und Erklärungen erläutert.
 type: docs
 weight: 150
 url: /de/net/programming-with-text/extract-columns-text/
 ---
-Dieses Tutorial führt Sie durch den Prozess des Extrahierens von Spaltentext in PDF-Dateien mit Aspose.PDF für .NET. Der bereitgestellte C#-Quellcode demonstriert die erforderlichen Schritte.
+## Einführung
 
-## Anforderungen
-Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
+Arbeiten Sie mit PDF-Dateien und müssen Text in einem bestimmten Spaltenformat extrahieren? Egal, ob Sie Rechnungen, Berichte oder strukturierte Dokumente verarbeiten, das genaue Extrahieren von Text aus einer PDF-Datei kann eine knifflige Angelegenheit sein. Hier kommt Aspose.PDF für .NET ins Spiel, um den Prozess zu vereinfachen. In diesem Tutorial zeigen wir Ihnen, wie Sie ganz einfach Textspalten aus einer PDF-Datei extrahieren. 
 
-- Visual Studio oder ein anderer C#-Compiler muss auf Ihrem Computer installiert sein.
-- Aspose.PDF für .NET-Bibliothek. Sie können es von der offiziellen Aspose-Website herunterladen oder einen Paketmanager wie NuGet verwenden, um es zu installieren.
+## Voraussetzungen
 
-## Schritt 1: Einrichten des Projekts
-1. Erstellen Sie ein neues C#-Projekt in Ihrer bevorzugten Entwicklungsumgebung.
-2. Fügen Sie einen Verweis auf die Aspose.PDF-Bibliothek für .NET hinzu.
+Bevor wir uns in den Code vertiefen, wollen wir die wesentlichen Dinge abdecken, die Sie benötigen:
 
-## Schritt 2: Erforderliche Namespaces importieren
-Fügen Sie in der Codedatei, aus der Sie Spaltentext extrahieren möchten, am Anfang der Datei die folgenden Using-Direktiven hinzu:
+-  Aspose.PDF für .NET: Stellen Sie sicher, dass Sie die neueste Version von Aspose.PDF für .NET installiert haben. Wenn nicht, können Sie[Laden Sie es hier herunter](https://releases.aspose.com/pdf/net/).
+- Entwicklungsumgebung: Sie benötigen Visual Studio oder eine andere .NET-Entwicklungsumgebung, um mit dem Code zu arbeiten.
+- PDF-Dokument: Halten Sie ein Beispiel-PDF-Dokument bereit, vorzugsweise eines mit Textspalten, da wir daraus Text extrahieren werden.
+
+ Wenn Sie Aspose.PDF für .NET noch nicht installiert haben, können Sie sich ein[Kostenlose Testversion](https://releases.aspose.com/) oder[eine Lizenz kaufen](https://purchase.aspose.com/buy) für alle Funktionen. Sie können auch eine[vorläufige Lizenz](https://purchase.aspose.com/temporary-license) falls erforderlich.
+
+## Namespaces importieren
+
+Um Aspose.PDF für .NET in Ihrem Projekt zu verwenden, müssen Sie die folgenden Namespaces importieren:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using System.IO;
+using System;
 ```
 
-## Schritt 3: Dokumentverzeichnis festlegen
- Suchen Sie im Code nach der Zeile, die besagt:`string dataDir = "YOUR DOCUMENT DIRECTORY";` und ersetzen`"YOUR DOCUMENT DIRECTORY"` durch den Pfad zum Verzeichnis, in dem Ihre Dokumente gespeichert sind.
+## Schritt-für-Schritt-Anleitung: Textspalten aus einer PDF extrahieren
 
-## Schritt 4: Öffnen Sie das PDF-Dokument
- Öffnen Sie ein vorhandenes PDF-Dokument mit dem`Document`Konstruktor und Übergabe des Pfads zur Eingabe-PDF-Datei.
+Lassen Sie uns nun jeden Teil des Codes aufschlüsseln, um besser zu verstehen, wie er funktioniert. Folgen Sie uns, während wir Schritt für Schritt jeden Abschnitt des Prozesses erklären.
+
+## Schritt 1: Laden Sie das PDF-Dokument
+
+ Als erstes müssen Sie Ihre PDF-Datei in das`Document`Objekt. So interagiert Aspose.PDF mit Ihrem Dokument.
 
 ```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY";
 Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");
 ```
 
-## Schritt 5: Passen Sie die Schriftgröße an
-Reduzieren Sie die Schriftgröße der Textfragmente um den Faktor 0,7, um die Lesbarkeit zu verbessern und spaltenförmigen Text besser darzustellen.
+ In diesem Schritt definieren wir einfach das Verzeichnis, in dem Ihr PDF-Dokument gespeichert ist. Ersetzen Sie`"YOUR DOCUMENT DIRECTORY"` mit dem Pfad zu Ihrer lokalen PDF-Datei. Die`Document` Objekt lädt das PDF in den Speicher und macht es für die weitere Verarbeitung zugänglich.
+
+## Schritt 2: Richten Sie den Textfragmentabsorber ein
+
+ Als nächstes verwenden wir ein`TextFragmentAbsorber` um den gesamten Text aus der PDF-Datei aufzunehmen oder zu erfassen. Diese Absorberklasse ist dafür ausgelegt, Textfragmente aus bestimmten Bereichen Ihrer PDF-Datei zu extrahieren, was sie ideal für das Extrahieren von Textspalten macht.
 
 ```csharp
 TextFragmentAbsorber tfa = new TextFragmentAbsorber();
 pdfDocument.Pages.Accept(tfa);
 TextFragmentCollection tfc = tfa.TextFragments;
-foreach(TextFragment tf in tfc)
-{
-     tf.TextState.FontSize = tf.TextState.FontSize * 0.7f;
-}
 ```
 
-## Schritt 6: Text aus Spalten extrahieren
- Speichern Sie das geänderte PDF-Dokument in einem Speicherstream und laden Sie es als neues Dokument erneut. Verwenden Sie dann die`TextAbsorber` Klasse zum Extrahieren von Text aus den Spalten.
+Hier erstellen wir eine Instanz von`TextFragmentAbsorber` und wenden Sie es auf alle Seiten der PDF an, indem Sie`Accept()` . Der`TextFragmentCollection` speichert den extrahierten Text und aus dieser Sammlung können wir Text nach Bedarf bearbeiten oder extrahieren.
+
+## Schritt 3: Passen Sie die Schriftgröße des extrahierten Textes an
+
+Nachdem Sie die Textfragmente erfasst haben, möchten Sie möglicherweise deren Schriftgröße reduzieren, insbesondere wenn der Originaltext zu groß ist. In diesem Beispiel reduzieren wir die Schriftgröße um 70 %.
 
 ```csharp
-Stream st = new MemoryStream();
-pdfDocument.Save(st);
-pdfDocument = new Document(st);
-TextAbsorber textAbsorber = new TextAbsorber();
-pdfDocument.Pages.Accept(textAbsorber);
-String extractedText = textAbsorber.Text;
-textAbsorber.Visit(pdfDocument);
-```
-
-## Schritt 7: Speichern Sie den extrahierten Text
-Speichern Sie den extrahierten Text in einer Textdatei im angegebenen Ausgabedateipfad.
-
-```csharp
-dataDir = dataDir + "ExtractColumnsText_out.txt";
-File.WriteAllText(dataDir, extractedText);
-Console.WriteLine("\nColumns text extracted successfully from Pages of PDF Document.\nFile saved at " + dataDir);
-```
-
-### Beispielquellcode zum Extrahieren von Spaltentext mit Aspose.PDF für .NET 
-```csharp
-// Der Pfad zum Dokumentverzeichnis.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Dokument öffnen
-Document pdfDocument = new Document(dataDir + "ExtractTextPage.pdf");                
-TextFragmentAbsorber tfa = new TextFragmentAbsorber();
-pdfDocument.Pages.Accept(tfa);
-TextFragmentCollection tfc = tfa.TextFragments;
 foreach (TextFragment tf in tfc)
 {
-	// Die Schriftgröße muss um mindestens 70 % reduziert werden
-	tf.TextState.FontSize = tf.TextState.FontSize * 0.7f;
+    // Reduzieren Sie die Schriftgröße um 70 %
+    tf.TextState.FontSize = tf.TextState.FontSize * 0.7f;
 }
+```
+
+Dieser Code durchläuft jede`TextFragment` in der Sammlung und reduziert die Schriftgröße um 70 %. Durch Anpassen der Schriftgröße kann der extrahierte Text leichter zu handhaben sein, insbesondere wenn Sie ihn für verschiedene Zwecke formatieren.
+
+## Schritt 4: Speichern Sie das Dokument in einem Memory Stream
+
+ Nach der Textbearbeitung speichern wir das PDF in einem`MemoryStream`. Dadurch können wir das Dokument zur weiteren Verarbeitung im Speicher behalten, ohne es wieder auf die Festplatte schreiben zu müssen.
+
+```csharp
 Stream st = new MemoryStream();
 pdfDocument.Save(st);
 pdfDocument = new Document(st);
+```
+
+Hier speichern wir das PDF in einem Speicherstream und laden das Dokument dann erneut. Diese Methode ist nützlich, wenn Sie mit großen Dateien arbeiten und unnötige Festplattenvorgänge vermeiden möchten.
+
+## Schritt 5: Extrahieren Sie den gesamten Text mit Text Absorber
+
+ Nachdem wir nun das PDF vorbereitet haben, ist es an der Zeit, den Text zu extrahieren. Wir verwenden`TextAbsorber` um den gesamten Text aus dem Dokument zu erfassen.
+
+```csharp
 TextAbsorber textAbsorber = new TextAbsorber();
 pdfDocument.Pages.Accept(textAbsorber);
 String extractedText = textAbsorber.Text;
-textAbsorber.Visit(pdfDocument); 
+```
+
+ In diesem Schritt wird der`TextAbsorber` nimmt den gesamten Text aus dem PDF auf und der extrahierte Text wird im`extractedText` Zeichenfolge. Hier geschieht die Magie – Ihre Textspalten liegen jetzt im Nur-Text-Format vor!
+
+## Schritt 6: Den extrahierten Text in einer Datei speichern
+
+ Abschließend speichern wir den extrahierten Text in einem`.txt` Datei für einfachen Zugriff und weitere Verwendung.
+
+```csharp
 dataDir = dataDir + "ExtractColumnsText_out.txt";
-System.IO.File.WriteAllText(dataDir, extractedText);           
+System.IO.File.WriteAllText(dataDir, extractedText);
 Console.WriteLine("\nColumns text extracted successfully from Pages of PDF Document.\nFile saved at " + dataDir);
 ```
 
+ Dieser Code schreibt den extrahierten Text in eine neue`.txt` Datei und speichert sie in dem von Ihnen angegebenen Verzeichnis. In der Konsole wird eine Meldung angezeigt, die bestätigt, dass der Vorgang erfolgreich war.
+
 ## Abschluss
-Sie haben erfolgreich Spaltentext aus einem PDF-Dokument mit Aspose.PDF für .NET extrahiert. Der extrahierte Text wurde in der angegebenen Ausgabedatei gespeichert.
 
-### Häufig gestellte Fragen
+Da haben Sie es! Das Extrahieren von Textspalten aus einer PDF-Datei mit Aspose.PDF für .NET ist einfacher, als Sie vielleicht denken. Mit nur wenigen Codezeilen können Sie eine PDF-Datei laden, bestimmten Text extrahieren, die Formatierung anpassen und die Ergebnisse in einer Textdatei speichern.
 
-#### F: Was ist der Zweck dieses Tutorials?
+Diese Technik ist unglaublich nützlich für die Verarbeitung strukturierter Dokumente wie Tabellen, Berichte oder beliebiger in Spalten organisierter Inhalte. Egal, ob Sie die Datenextraktion automatisieren oder Massendokumente verarbeiten müssen, Aspose.PDF bietet die Tools, um dies effizient zu erledigen.
 
-A: Dieses Tutorial bietet eine Schritt-für-Schritt-Anleitung zum Extrahieren von Textspalten aus einer PDF-Datei mit Aspose.PDF für .NET. Der zugehörige C#-Quellcode bietet eine praktische Demonstration der erforderlichen Verfahren.
+## Häufig gestellte Fragen
 
-#### F: Welche Namespaces soll ich importieren?
+### Kann ich Text aus bestimmten Seiten einer PDF-Datei extrahieren?  
+ Ja! Sie können die`TextFragmentAbsorber` zur gezielten Ansprache bestimmter Seiten mithilfe der`pdfDocument.Pages[pageIndex].Accept(tfa);` Verfahren.
 
-A: Fügen Sie in der Codedatei, aus der Sie Textspalten extrahieren möchten, am Anfang der Datei die folgenden Using-Direktiven ein:
+### Ist es möglich, Text aus nur einer Spalte in einem mehrspaltigen PDF zu extrahieren?  
+ Ja, aber Sie müssen mit den Koordinaten der Textfragmente arbeiten, indem Sie`TextFragment.Rectangle` um bestimmte Bereiche des Dokuments anzusprechen.
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-using System.IO;
-```
+### Wie kann ich die Genauigkeit der Textextraktion verbessern?  
+ Um eine höhere Genauigkeit zu erzielen, stellen Sie sicher, dass die Struktur des PDFs klar definiert ist und vermeiden Sie Dokumente mit komplexen Layouts. Sie können auch die`TextFragmentAbsorber` um Text basierend auf Schriftarten, -größen oder -regionen zu extrahieren.
 
-#### F: Wie gebe ich das Dokumentverzeichnis an?
+### Unterstützt Aspose.PDF die Textextraktion aus gescannten Dokumenten?  
+Ja, aber Sie müssen die OCR-Technologie (Optical Character Recognition) verwenden. Aspose bietet hierfür ebenfalls Tools an.
 
- A: Suchen Sie die Linie`string dataDir = "YOUR DOCUMENT DIRECTORY";` im Code und ersetzen Sie`"YOUR DOCUMENT DIRECTORY"` durch den tatsächlichen Pfad zu Ihrem Dokumentverzeichnis.
-
-#### F: Wie öffne ich ein vorhandenes PDF-Dokument?
-
- A: In Schritt 4 öffnen Sie ein vorhandenes PDF-Dokument mit dem`Document` Konstruktor und Bereitstellung des Pfads zur Eingabe-PDF-Datei.
-
-#### F: Warum wird die Schriftgröße angepasst?
-
-A: In Schritt 5 wird die Schriftgröße von Textfragmenten um den Faktor 0,7 reduziert. Diese Anpassung verbessert die Lesbarkeit und stellt spaltenförmigen Text genauer dar.
-
-#### F: Wie extrahiere ich Text aus Spalten?
-
- A: Schritt 6 besteht darin, das geänderte PDF-Dokument in einem Speicherstrom zu speichern, es als neues Dokument neu zu laden und dann mit dem`TextAbsorber` Klasse zum Extrahieren von Text aus den Spalten.
-
-#### F: Zu welchem Zweck wird der extrahierte Text gespeichert?
-
-A: In Schritt 7 speichern Sie den extrahierten Text in einer Textdatei im angegebenen Ausgabedateipfad.
-
-#### F: Warum die Schriftgröße vor dem Extrahieren reduzieren?
-
-A: Durch die Reduzierung der Schriftgröße wird sichergestellt, dass der extrahierte Text richtig in den Spalten ausgerichtet wird, wodurch eine genauere Darstellung des ursprünglichen Layouts ermöglicht wird.
-
-#### F: Was ist die wichtigste Erkenntnis aus diesem Tutorial?
-
-A: Durch das Durcharbeiten dieses Tutorials haben Sie sich das nötige Wissen und die Fähigkeiten angeeignet, um mit Aspose.PDF für .NET Textspalten aus einem PDF-Dokument zu extrahieren. Der resultierende Text wurde in der angegebenen Ausgabedatei gespeichert.
+### Wie gehe ich mit großen PDF-Dateien mit Tausenden von Seiten um?  
+Verarbeiten Sie bei großen PDF-Dateien das Dokument in Abschnitten, indem Sie den Text jeweils von einigen Seiten extrahieren, um einen hohen Speicherverbrauch zu vermeiden.

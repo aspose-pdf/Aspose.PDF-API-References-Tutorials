@@ -36,7 +36,7 @@ C# hakkında temel bir anlayış faydalı olacaktır. Basit C# betikleri yazma k
 
 ## Paketleri İçe Aktar
 
-Artık her şeyi ayarladığımıza göre, gerekli paketleri içe aktararak başlayalım. Aspose.PDF ad alanını C# dosyanızın en üstüne ekleyerek başlayacaksınız. İşte nasıl yapacağınız:
+Artık her şeyi ayarladığımıza göre, gerekli paketleri içe aktararak başlayalım. C# dosyanızın en üstüne Aspose.PDF ad alanını ekleyerek başlayacaksınız. İşte nasıl yapacağınız:
 
 ```csharp
 using System;

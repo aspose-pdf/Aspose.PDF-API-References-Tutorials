@@ -2,7 +2,7 @@
 title: Válassza a rádiógombot a PDF-dokumentumban
 linktitle: Válassza a rádiógombot a PDF-dokumentumban
 second_title: Aspose.PDF for .NET API Reference
-description: Ebből a lépésről lépésre szóló útmutatóból megtudhatja, hogyan választhat ki választógombokat PDF-dokumentumokban az Aspose.PDF for .NET használatával. Egyszerűen automatizálja az űrlapinterakciókat.
+description: Ebből a lépésről lépésre szóló útmutatóból megtudhatja, hogyan választhat ki választógombokat PDF-dokumentumokban az Aspose.PDF for .NET használatával. Egyszerűen automatizálja az űrlapokkal végzett interakciókat.
 type: docs
 weight: 250
 url: /hu/net/programming-with-forms/select-radio-button/

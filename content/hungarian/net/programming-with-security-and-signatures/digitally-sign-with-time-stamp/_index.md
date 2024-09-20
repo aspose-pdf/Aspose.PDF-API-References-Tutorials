@@ -15,7 +15,7 @@ Szüksége volt már arra, hogy digitálisan aláírjon egy PDF-dokumentumot, é
 
 Mielőtt belemerülnénk a kódba, néhány dolgot be kell állítania a követéshez. Íme egy gyors ellenőrző lista a kezdéshez szükséges előfeltételekről:
 
--  Aspose.PDF for .NET Library: A projektben telepíteni kell az Aspose.PDF for .NET könyvtárat. Tudod[töltse le a legújabb verziót innen](https://releases.aspose.com/pdf/net/) vagy adja hozzá a projekthez a NuGet segítségével.
+-  Aspose.PDF for .NET Library: A projektben telepíteni kell az Aspose.PDF for .NET könyvtárat. Megteheti[töltse le a legújabb verziót innen](https://releases.aspose.com/pdf/net/) vagy adja hozzá a projekthez a NuGet segítségével.
 - PDF-dokumentum: Szüksége lesz egy minta PDF-fájlra a munkához. Győződjön meg arról, hogy a projekt könyvtárában van egy fájl, amelyet alá szeretne írni.
 -  Digitális tanúsítvány (PFX fájl): Győződjön meg arról, hogy rendelkezik digitális tanúsítvánnyal (a`.pfx` fájl) a dokumentum digitális aláírásához.
 - Időbélyegző URL: Ez egy online időbélyegző szolgáltatás, amely időbélyegző csatolására szolgál a digitális aláíráshoz. 

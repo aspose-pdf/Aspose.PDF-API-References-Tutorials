@@ -1,6 +1,6 @@
 ---
-title: PDF 到 XPS
-linktitle: PDF 到 XPS
+title: PDF 轉 XPS
+linktitle: PDF 轉 XPS
 second_title: Aspose.PDF for .NET API 參考
 description: 透過此逐步指南，了解如何使用 Aspose.PDF for .NET 將 PDF 轉換為 XPS。非常適合開發人員和文件處理愛好者。
 type: docs
@@ -9,7 +9,7 @@ url: /zh-hant/net/document-conversion/pdf-to-xps/
 ---
 ## 介紹
 
-在當今的數位世界中，將文件從一種格式轉換為另一種格式的需求比以往任何時候都更加普遍。無論您是希望將文件處理整合到應用程式中的開發人員，還是需要以普遍接受的格式共用文件的業務專業人員，了解如何將 PDF 文件轉換為 XPS（XML 紙張規格）都非常有用。在本教學中，我們將深入研究使用強大的 Aspose.PDF .NET 庫將 PDF 轉換為 XPS 的過程。
+在當今的數位世界中，將文件從一種格式轉換為另一種格式的需求比以往任何時候都更加普遍。無論您是希望將文件處理整合到應用程式中的開發人員，還是需要以普遍接受的格式共用文件的業務專業人員，了解如何將 PDF 文件轉換為 XPS（XML 紙張規格）都非常有用。在本教學中，我們將深入了解使用強大的 Aspose.PDF .NET 庫將 PDF 轉換為 XPS 的過程。
 
 ## 先決條件
 

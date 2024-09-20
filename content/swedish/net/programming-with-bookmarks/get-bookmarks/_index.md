@@ -43,7 +43,7 @@ using System.IO;
 using Aspose.Pdf;
 ```
 
-Nu när vi har allt installerat, låt oss gå vidare till huvuddelen av vår handledning!
+Nu när vi har allt inställt, låt oss gå vidare till huvuddelen av vår handledning!
 
 I det här avsnittet kommer vi att dela upp processen att extrahera bokmärken från en PDF-fil i hanterbara steg.
 
@@ -84,7 +84,7 @@ foreach (OutlineItemCollection outlineItem in pdfDocument.Outlines)
 }
 ```
 
- I det här kodavsnittet använder vi en`foreach` slinga för att iterera genom varje`OutlineItemCollection` i`pdfDocument.Outlines`. För varje bokmärke skriver vi ut dess titel, kursiv status, fet status och färg. Detta ger oss en heltäckande bild av bokmärkena i vår PDF.
+ I det här kodavsnittet använder vi en`foreach` loop för att iterera genom varje`OutlineItemCollection` i`pdfDocument.Outlines`. För varje bokmärke skriver vi ut dess titel, kursiv status, fet status och färg. Detta ger oss en heltäckande bild av bokmärkena i vår PDF.
 
 ## Slutsats
 

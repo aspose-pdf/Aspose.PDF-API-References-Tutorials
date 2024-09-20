@@ -2,139 +2,132 @@
 title: Belgelere HTML Sıralı Liste Ekleme
 linktitle: Belgelere HTMLOrdered Liste Ekleme
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET kullanarak bir belgeye HTML sıralı liste eklemeyi öğrenin.
+description: Aspose.PDF for .NET kullanarak PDF belgelerine HTML sıralı listeler eklemeyi öğrenin. Bu ayrıntılı eğitimde adım adım talimatları keşfedin.
 type: docs
 weight: 30
 url: /tr/net/programming-with-text/add-html-ordered-list-into-documents/
 ---
-Bu eğitimde, bir belgeye HTML sıralı liste eklemek için Aspose.PDF for .NET kitaplığını nasıl kullanacağınızı öğreneceksiniz. Sağlanan kod, bu görevi gerçekleştirmek için gerekli adımları göstermektedir.
+## giriiş
 
-## Gereksinimler
-Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
+Anında PDF belgeleri oluşturmak, geliştiriciler için bir olasılıklar dünyasının kapılarını açabilir. Raporlar, faturalar veya başka herhangi bir belge biçimi oluşturmanız gerekip gerekmediğine bakılmaksızın, HTML öğelerini işleyebilmek ve bunları PDF'lerinize sorunsuz bir şekilde entegre edebilmek inanılmaz derecede güçlüdür. Bu makalede, .NET için Aspose.PDF kullanarak belgelere HTML sıralı bir liste eklemenin nasıl yapılacağına derinlemesine bakacağız.
 
-- Bilgisayarınızda Visual Studio veya herhangi bir C# derleyicisi yüklü olmalıdır.
-- Aspose.PDF for .NET kütüphanesi. Resmi Aspose web sitesinden indirebilir veya NuGet gibi bir paket yöneticisi kullanarak kurabilirsiniz.
+## Ön koşullar
 
-## Adım 1: Projeyi kurun
-1. Tercih ettiğiniz geliştirme ortamında yeni bir C# projesi oluşturun.
-2. .NET için Aspose.PDF kitaplığına bir referans ekleyin.
+PDF düzenleme yolculuğuna çıkmadan önce, her şeyin yerli yerinde olduğundan emin olalım. İşte ihtiyacınız olacak şeylerin kısa bir özeti:
 
-## Adım 2: Gerekli ad alanlarını içe aktarın
-HTML sıralı listesini eklemek istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki using yönergelerini ekleyin:
+1. .NET Geliştirme Ortamı: Bilgisayarınızda Visual Studio gibi bir IDE'nin yüklü olduğundan emin olun. Bu sizin kodlama oyun alanınız olacak.
+2.  Aspose.PDF for .NET Library: Aspose.PDF kütüphanesini indirip yüklemeniz gerekir. Gerekli dosyaları bulabilirsiniz[Burada](https://releases.aspose.com/pdf/net/). 
+3. C# Temel Bilgisi: Bu dilde kodlama yapacağımız için C# programlamaya aşina olmak faydalı olacaktır.
+4.  Belgelere Erişim: Aspose.PDF'nin çeşitli işlevlerine aşina olmak için,[.NET için Aspose.PDF belgeleri](https://reference.aspose.com/pdf/net/) referans için kullanışlı.
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
+Ön koşullarımızı tamamladığımıza göre, hadi ellerimizi kirletelim!
 
-## Adım 3: Belge dizinini ve çıktı dosyası yolunu ayarlayın
- Kodda şu satırı bulun:`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` Belgelerinizin saklandığı dizinin yolunu içeren.
+## Paketleri İçe Aktar
 
- Sonra, şunu söyleyen satırı bulun:`string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";` ve değiştir`"AddHTMLOrderedListIntoDocuments_out.pdf"` Çıktı PDF dosyanız için istediğiniz ismi yazın.
+İlk önce, gerekli paketleri C# uygulamanıza aktarmanız gerekir. Bu, Aspose.PDF kütüphanesi tarafından sağlanan sınıflara ve yöntemlere erişmenizi sağlayacaktır. 
 
-## Adım 4: Yeni bir Belge nesnesi oluşturun
- Yeni bir örnek oluştur`Document` Aşağıdaki kod satırını ekleyerek nesneyi oluşturun:
+### Yeni Bir Proje Oluştur
 
-```csharp
-Document doc = new Document();
-```
+Visual Studio'nuzu açın ve yeni bir Konsol Uygulaması projesi oluşturun. Buna "PDFOrderedListDemo" gibi uygun bir isim verin.
 
-## Adım 5: HTML içeriğiyle bir HtmlFragment nesnesi oluşturun
- Bir örnek oluştur`HtmlFragment` Belgeye eklemek istediğiniz HTML içeriğine sahip nesne. Sağlanan kodda, HTML içeriği değişkene atanır`t`HTML içeriğini ihtiyacınıza göre değiştirebilirsiniz.
+### Aspose.PDF Referansını Ekle
+
+1. Çözüm Gezgini’nde projenizin üzerine sağ tıklayın.
+2. NuGet Paketlerini Yönet'i seçin.
+3. "Aspose.PDF" dosyasını arayın ve en son sürümü yükleyin.
+
+### Gerekli Ad Alanlarını İçe Aktar
+
+ Senin içinde`Program.cs`dosyanın en üstüne aşağıdaki using yönergesini ekleyerek başlayın:
 
 ```csharp
-HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li >Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>`");
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Adım 6: Belgeye bir sayfa ekleyin
- Belgeye yeni bir sayfa eklemek için şunu kullanın:`Add` yöntemi`Pages` koleksiyon. Sağlanan kodda, yeni sayfa değişkene atanır`page`.
+Artık PDF'imizi oluşturmaya başlamaya hazırız!
 
-```csharp
-Page page = doc.Pages.Add();
-```
+HTML sıralı listeli bir PDF oluşturmaya hazır mısınız? Şu adımları izleyin.
 
-## Adım 7: HtmlFragment'ı sayfaya ekleyin
- Ekle`HtmlFragment` sayfaya nesneyi kullanarak`Add` yöntemi`Paragraphs` koleksiyon.
+## Adım 1: Belgenizi ve HTML İçeriğinizi Tanımlayın
 
-```csharp
-page.Paragraphs.Add(t);
-```
+Öncelikle PDF dokümanımızı hazırlayıp, sıralı listeyi içeren HTML içeriğimizi tanımlayalım.
 
-## Adım 8: PDF belgesini kaydedin
- Elde edilen PDF dosyasını kullanarak kaydedin`Save` yöntemi`Document` nesne. Adım 3'te ayarladığınız çıktı dosyası yolunu belirtin.
-
-```csharp
-doc.Save(outFile);
-```
-
-### .NET için Aspose.PDF kullanarak Belgelere HTMLOrdered Liste Eklemek için örnek kaynak kodu 
 ```csharp
 // Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Çıktı belgesinin yolu.
 string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";
+
 // Belge nesnesini örnekle
 Document doc = new Document();
+```
+
+Bu adımda, PDF dokümanımızı daha sonra kaydetmek istediğimiz dosya yollarını belirliyoruz.
+
+## Adım 2: HTML Parçasını Oluşturun
+
+ Daha sonra bir tane oluşturacağız`HtmlFragment` HTML'imizi içeren nesne. Burada biraz metinle birlikte sıralı bir liste ekleyeceğiz.
+
+```csharp
 // HtmlFragment nesnesini karşılık gelen HTML parçasıyla örnekleyin
-HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li>Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>`");
-// Sayfalar Koleksiyonuna Sayfa Ekle
+HtmlFragment htmlFragment = new HtmlFragment("<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li>Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>");
+```
+
+Burada, bir öğe listesi içeren bir HTML parçası oluşturduk. HTML bir dize olarak saklanır, bu da onu işlemeyi kolaylaştırır.
+
+## Adım 3: Belgeye Bir Sayfa Ekleyin
+
+Şimdi PDF belgemize bir sayfa eklememiz gerekiyor. Her PDF'in sayfalara ihtiyacı var ve biz de farklı değiliz!
+
+```csharp
+//Sayfalar Koleksiyonuna Sayfa Ekle
 Page page = doc.Pages.Add();
+```
+
+Bu kod satırı belgemize yeni bir sayfa ekler. Unutmayın, her sayfa metin, resim ve HTML içeriğimiz dahil olmak üzere çeşitli öğeleri barındırabilir.
+
+## Adım 4: HTML Parçasını Sayfaya Ekleyin
+
+İşte sihir burada gerçekleşiyor! Şimdi daha önce tanımladığımız HTML parçacığını az önce oluşturduğumuz sayfaya ekleyeceğiz.
+
+```csharp
 // Sayfanın içine HtmlFragment ekleyin
-page.Paragraphs.Add(t);
-//Sonuç PDF dosyasını kaydedin
+page.Paragraphs.Add(htmlFragment);
+```
+
+HTML parçasını sayfamızın paragraflarına ekleyerek, aslında PDF'e HTML kodumuzu bir web tarayıcısında göründüğü gibi göstermesini söylüyoruz.
+
+## Adım 5: PDF Belgesini Kaydedin
+
+Tüm içeriklerimiz hazır olduğunda, son adım belgeyi diske kaydetmektir.
+
+```csharp
+// Sonuç PDF dosyasını kaydedin
 doc.Save(outFile);
 ```
+
+ İşte burada şunu çağırıyoruz:`Save` Yeni PDF'imizin bulunacağı çıktı dosyası yolunu belirten belge nesnemizdeki yöntemimiz.
 
 ## Çözüm
-Aspose.PDF for .NET kullanarak bir belgeye HTML sıralı bir liste başarıyla eklediniz. Elde edilen PDF dosyası artık belirtilen çıktı dosyası yolunda bulunabilir.
 
-HTML içeriğini özelleştirmeyi ve kodu özel gereksinimlerinize göre ayarlamayı unutmayın.
+İster raporlar, ister tasarım belgeleri veya kişisel projeler üretiyor olun, HTML içeriğini PDF formatına dönüştürme yeteneği uygulamalarınızı büyük ölçüde zenginleştirebilir. Diğer HTML öğeleriyle deneyler yapın ve PDF kreasyonlarınızı ne kadar ileri götürebileceğinizi görün!
 
-### SSS
+## SSS
 
-#### S: Bu eğitimin amacı nedir?
+### Aspose.PDF for .NET nedir?
+Aspose.PDF for .NET, geliştiricilerin PDF belgelerini programlı bir şekilde oluşturmalarına, düzenlemelerine ve dönüştürmelerine olanak tanıyan bir kütüphanedir.
 
-A: Bu eğitim, Aspose.PDF for .NET kitaplığını kullanarak bir belgeye HTML sıralı liste ekleme sürecinde size rehberlik etmeyi amaçlamaktadır. Bu görevi başarmanıza yardımcı olmak için adım adım talimatlar ve kod parçacıkları sağlar.
+### Aspose.PDF'yi diğer HTML içerik türleri için kullanabilir miyim?
+Evet, Aspose.PDF metin, resim ve biçimlendirilmiş öğeler dahil olmak üzere geniş bir HTML içeriği yelpazesini destekler.
 
-#### S: Bu eğitim için hangi ad alanlarını içe aktarmam gerekiyor?
+### Sıralı listenin görünümünü özelleştirmek mümkün mü?
+Kesinlikle! Sıralı listelerinizin ve diğer HTML öğelerinizin görselleştirilmesini kontrol etmek için CSS stilleri ve sınıfları uygulayabilirsiniz.
 
-A: Kod dosyanızın en üstüne aşağıdaki ad alanlarını içe aktarmanız gerekir:
+### Aspose.PDF for .NET'i kullanmak için internet bağlantısına ihtiyacım var mı?
+Hayır, kütüphane kurulduktan sonra çevrimdışı olarak çalışır.
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
-
-#### S: Belge dizinini ve çıktı dosyası yolunu nasıl belirtirim?
-
- A: Kodda şu satırı bulun:`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belge dizininize giden gerçek yol ile. Ayrıca, şu satırı bulun`string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";` ve değiştir`"AddHTMLOrderedListIntoDocuments_out.pdf"` İstediğiniz çıktı PDF dosya adıyla.
-
-#### S: Belgeye eklenen HTML içeriğini özelleştirebilir miyim?
-
- A: Kesinlikle! 5. Adımda bir`HtmlFragment` isimli nesne`t` HTML içeriğini tutan. Backtick'ler içindeki HTML içeriğini ihtiyaçlarınıza uyacak şekilde değiştirebilirsiniz.
-
-#### S: Belgedeki bir sayfaya HTML sıralı listesini nasıl eklerim?
-
- A: 7. Adımda şunları ekleyeceksiniz:`HtmlFragment` nesne (`t` ) kullanarak sayfaya`Add` yöntemi`Paragraphs` koleksiyon. Bu, HTML sıralı listesini belgeye sorunsuz bir şekilde entegre edecektir.
-
-#### S: Ortaya çıkan PDF belgesini nasıl kaydedebilirim?
-
- A: HTML içeriğini ekledikten ve bir sayfaya düzenledikten sonra, PDF belgesini şu şekilde kaydedebilirsiniz:`Save` yöntemi`Document` nesne. Daha önce ayarladığınız doğru çıktı dosyası yolunu sağladığınızdan emin olun.
-
-#### S: Referans olması açısından örnek kaynak kodunun bir özetini verebilir misiniz?
-
-A: Elbette! İşte bu eğitimde sağlanan örnek kaynak kodunun özetlenmiş bir versiyonu:
-
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outFile = dataDir + "AddHTMLOrderedListIntoDocuments_out.pdf";
-Document doc = new Document();
-HtmlFragment t = new HtmlFragment("`<body style='line-height: 100px;'><ul><li>First</li><li>Second</li><li>Third</li><li>Fourth</li><li>Fifth</li></ul>Text after the list.<br/>Next line<br/>Last line</body>`");
-Page page = doc.Pages.Add();
-page.Paragraphs.Add(t);
-doc.Save(outFile);
-```
-
-#### S: Bu eğitimden çıkarılacak en önemli ders nedir?
-
-A: Bu öğreticiyi takip ederek, bir HTML sıralı listesini bir belgeye dahil etmek için Aspose.PDF for .NET kitaplığından nasıl yararlanacağınızı başarıyla öğrendiniz. Bu yeni edinilen bilgi, belge oluşturma ve düzenleme süreçlerinizi geliştirmek için uygulanabilir.
+### Aspose.PDF için desteği nerede bulabilirim?
+ Diğer kullanıcılarla destek arayabilir ve etkileşim kurabilirsiniz.[Aspose Destek Forumu](https://forum.aspose.com/c/pdf/10).

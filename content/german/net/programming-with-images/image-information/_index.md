@@ -9,7 +9,7 @@ url: /de/net/programming-with-images/image-information/
 ---
 ## Einführung
 
-PDF-Dateien sind heutzutage allgegenwärtig – praktisch jedes berufliche und private Dokument wird irgendwann in diesem Format verwendet. Ob es sich um einen Bericht, eine Broschüre oder ein E-Book handelt: Wenn Sie wissen, wie Sie programmgesteuert mit diesen Dateien interagieren können, eröffnen sich unzählige Möglichkeiten. Eine häufige Anforderung besteht darin, Bildinformationen aus PDF-Dateien zu extrahieren. In diesem Handbuch erfahren Sie, wie Sie mit der Aspose.PDF-Bibliothek für .NET wichtige Details zu Bildern extrahieren, die in ein PDF-Dokument eingebettet sind.
+PDF-Dateien sind heutzutage allgegenwärtig – praktisch jedes berufliche und private Dokument wird irgendwann in diesem Format verwendet. Ob Bericht, Broschüre oder E-Book: Wenn Sie wissen, wie Sie programmgesteuert mit diesen Dateien interagieren können, eröffnen sich unzählige Möglichkeiten. Eine häufige Anforderung besteht darin, Bildinformationen aus PDF-Dateien zu extrahieren. In diesem Handbuch erfahren Sie, wie Sie mithilfe der Aspose.PDF-Bibliothek für .NET wichtige Details zu Bildern extrahieren, die in ein PDF-Dokument eingebettet sind.
 
 ## Voraussetzungen
 

@@ -151,5 +151,5 @@ För bilder av hög kvalitet rekommenderas generellt 300 DPI. Du kan dock juster
 ### Vad betyder 1bpp i färgdjup?
 1bpp (1 bit per pixel) betyder att bilden blir i svartvitt, där varje pixel är antingen helt svart eller helt vit.
 
-### Är Bradley-algoritmen lämplig för OCR?
+### Är Bradley Algorithm lämplig för OCR?
 Ja, Bradley-algoritmen används ofta i OCR-förbearbetning eftersom den förbättrar kontrasten hos text i skannade dokument.

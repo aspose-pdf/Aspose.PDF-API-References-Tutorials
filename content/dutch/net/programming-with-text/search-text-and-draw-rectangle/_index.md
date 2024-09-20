@@ -2,88 +2,124 @@
 title: Zoek tekst en teken rechthoek
 linktitle: Zoek tekst en teken rechthoek
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u naar tekst in een PDF zoekt, rechthoeken rond de gevonden tekst tekent en het gewijzigde document opslaat met Aspose.PDF voor .NET.
+description: Leer hoe u tekst in PDF's kunt zoeken en markeren met rechthoeken met Aspose.PDF voor .NET! Eenvoudige stapsgewijze tutorial voor verbeterde PDF-manipulatievaardigheden.
 type: docs
 weight: 460
 url: /nl/net/programming-with-text/search-text-and-draw-rectangle/
 ---
-Deze tutorial legt uit hoe u Aspose.PDF voor .NET kunt gebruiken om te zoeken naar specifieke tekst in een PDF-document, een rechthoek rond de gevonden tekst te tekenen en het gewijzigde document op te slaan. De meegeleverde C#-broncode demonstreert het proces stap voor stap.
+## Invoering
+
+Wilt u uw PDF-manipulatievaardigheden verbeteren? Wilt u leren hoe u specifieke tekst in PDF-bestanden kunt zoeken en deze kunt markeren met een rechthoek? U bent op de perfecte gids terechtgekomen! Vandaag laat ik u zien hoe u Aspose.PDF voor .NET kunt gebruiken om tekst in een PDF-document te zoeken en er rechthoeken omheen te tekenen. Dit artikel biedt een stapsgewijze tutorial die is ontworpen met duidelijkheid en bruikbaarheid in gedachten, zodat u deze technieken kunt volgen en toepassen op uw projecten. 
 
 ## Vereisten
 
-Voordat u verdergaat met de tutorial, moet u ervoor zorgen dat u het volgende hebt:
+Voordat we met de tutorial beginnen, bereiden we eerst voor wat u nodig hebt om een soepele workflow te garanderen:
 
-- Basiskennis van de programmeertaal C#.
-- Aspose.PDF voor .NET-bibliotheek geïnstalleerd. U kunt het verkrijgen van de Aspose-website of NuGet gebruiken om het in uw project te installeren.
+1. Basiskennis van .NET: U moet bekend zijn met C#-programmering en het .NET Framework om deze tutorial effectief te kunnen volgen.
+   
+2. Visual Studio geïnstalleerd: U hebt een geïntegreerde ontwikkelomgeving (IDE) nodig om uw code te schrijven en testen. Visual Studio Community is een geweldige optie en het is gratis.
+   
+3. Aspose.PDF voor .NET: U moet de Aspose.PDF-bibliotheek in uw project hebben geïnstalleerd. U kunt deze downloaden[hier](https://releases.aspose.com/pdf/net/) of overweeg een[tijdelijke licentie](https://purchase.aspose.com/temporary-license/) voor uitgebreide functies.
+   
+4.  Voorbeeld PDF-document: Voor deze tutorial hebt u een voorbeeld PDF-bestand nodig met de naam`SearchAndGetTextFromAll.pdf` opgeslagen in uw projectmap. 
 
-## Stap 1: Het project opzetten
+## Pakketten importeren
 
-Begin met het maken van een nieuw C#-project in uw favoriete geïntegreerde ontwikkelomgeving (IDE) en voeg een verwijzing toe naar de Aspose.PDF voor .NET-bibliotheek.
+Om te beginnen moet u eerst de benodigde pakketten importeren in uw .NET-project. Volg deze stappen:
 
-## Stap 2: Importeer de benodigde naamruimten
+### Visual Studio openen
 
-Voeg de volgende using-richtlijnen toe aan het begin van uw C#-bestand om de vereiste naamruimten te importeren:
+Start Visual Studio en maak een nieuwe consoletoepassing of gebruik een bestaande consoletoepassing waarin u de PDF-functionaliteiten wilt implementeren.
+
+### Voeg Aspose.PDF toe aan uw project
+
+1. Klik met de rechtermuisknop op uw project in de Solution Explorer.
+2. Selecteer 'NuGet-pakketten beheren'.
+3.  Zoeken naar`Aspose.PDF` en installeer de nieuwste versie.
+
+Hiermee legt u de basis voor alle fantastische PDF-bewerkingen die u gaat uitvoeren.
+
+## Naamruimten importeren
+
+Bovenaan uw programmabestand wilt u de relevante naamruimten uit de Aspose-bibliotheek importeren:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using Aspose.Pdf.Content;
+using System;
 using Aspose.Pdf.Facades;
 ```
 
-## Stap 3: Stel het pad naar de documentmap in
+Hierdoor krijgt u eenvoudiger toegang tot klassen en methoden in de Aspose.PDF-bibliotheek voor uw taken.
 
- Stel het pad naar uw documentmap in met behulp van`dataDir` variabele:
+
+Nu u alles hebt ingesteld, kunnen we het proces van het zoeken naar tekst in een PDF en het tekenen van een rechthoek eromheen opsplitsen in beheersbare stappen.
+
+## Stap 1: Stel het pad voor uw document in
+
+ Stel eerst het pad naar uw PDF-bestand in. Zorg ervoor dat u vervangt`YOUR DOCUMENT DIRECTORY` met het werkelijke pad waar je`SearchAndGetTextFromAll.pdf` is opgeslagen.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Vervangen`"YOUR DOCUMENT DIRECTORY"` met het daadwerkelijke pad naar uw documentenmap.
+## Stap 2: Open het PDF-document
 
-## Stap 4: Laad het PDF-document
-
- Laad het PDF-document met behulp van de`Document` klas:
+ Maak vervolgens een exemplaar van de`Document` klasse om uw PDF te laden:
 
 ```csharp
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
 ```
 
- Vervangen`"SearchAndGetTextFromAll.pdf"` met de werkelijke naam van uw PDF-bestand.
+Met deze regel code opent u het door u opgegeven PDF-bestand, zodat u het verder kunt bewerken.
 
-## Stap 5: Maak een TextFragmentAbsorber
+## Stap 3: Maak een tekstabsorber
 
- Maak een`TextFragmentAbsorber` object om alle instanties van de ingevoerde zoekterm te vinden:
+ Nu heb je een manier nodig om te zoeken naar tekst in dat document. Hiervoor gebruiken we de`TextFragmentAbsorber`:
 
 ```csharp
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 ```
 
- Vervangen`@"[\S]+"` met het door u gewenste reguliere-expressiepatroon.
+ De reguliere expressie`@"[\S]+"` is ontworpen om elke tekenreeks zonder spaties in de PDF te matchen. 
 
-## Stap 6: Schakel reguliere expressiezoekopdrachten in
+## Stap 4: Configureer tekstzoekopties
 
- Schakel reguliere expressiezoekopdrachten in door de volgende instellingen in te stellen:`TextSearchOptions` Eigenschap van de absorber:
+Vervolgens moet u de opties voor tekst zoeken instellen:
 
 ```csharp
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;
 ```
 
-## Stap 7: Zoek op alle pagina's
+ Hier, de`true` parameter betekent dat de zoekopdracht hoofdlettergevoelig is. U kunt dit instellen op`false` als u een zoekopdracht wilt die niet hoofdlettergevoelig is.
 
-Accepteer de absorber voor alle pagina's van het document:
+## Stap 5: Accepteer de Text Absorber in het document
+
+ Met jouw`TextFragmentAbsorber` en de zoekopties gereed zijn, is het tijd om tekst uit het document op te nemen:
 
 ```csharp
 document.Pages.Accept(textAbsorber);
 ```
 
-## Stap 8: Teken een rechthoek rond de gevonden tekst
+Met deze methode wordt elke pagina in uw PDF onderzocht om tekstfragmenten te vinden die voldoen aan het opgegeven patroon.
 
- Maak een`PdfContentEditor` object en loop door de opgehaalde tekstfragmenten, waarbij u een rechthoek rond elk tekstsegment tekent:
+## Stap 6: Maak een PdfContentEditor
+
+ Om vormen op het document te tekenen, hebt u het volgende nodig:`PdfContentEditor`:
 
 ```csharp
 var editor = new PdfContentEditor(document);
+```
+
+Met deze editor kunt u de inhoud van een PDF eenvoudig bewerken.
+
+## Stap 7: Loop door gevonden tekstfragmenten
+
+Nu wilt u door de gevonden tekstfragmenten heen lopen om er rechthoeken omheen te tekenen:
+
+```csharp
 foreach (TextFragment textFragment in textAbsorber.TextFragments)
 {
     foreach (TextSegment textSegment in textFragment.Segments)
@@ -93,83 +129,66 @@ foreach (TextFragment textFragment in textAbsorber.TextFragments)
 }
 ```
 
+ Deze lus itereert over elk tekstfragment en hun segmenten, en roept een`DrawBox` Methode voor het tekenen van rechthoeken.
+
+## Stap 8: Definieer de DrawBox-methode
+
+ Je moet de`DrawBox` methode, die de logica van het tekenen van rechthoeken zal afhandelen. Hier is een eenvoudige implementatie:
+
+```csharp
+private static void DrawBox(PdfContentEditor editor, int pageNumber, TextSegment textSegment, System.Drawing.Color color)
+{
+    // Bereken de afmetingen van de rechthoek op basis van het tekstsegment
+    float x = textSegment.Rectangle.LLX;
+    float y = textSegment.Rectangle.LLY;
+    float width = textSegment.Rectangle.Width;
+    float height = textSegment.Rectangle.Height;
+
+    // Teken een rechthoek met behulp van de berekende waarden
+    editor.DrawRectangle(pageNumber, x, y, width, height, color, 1);
+}
+```
+
+Met deze methode worden de positie en de grootte van de rechthoek bepaald op basis van de begrenzende rechthoek van het segment en wordt de editor gebruikt om de rechthoek te tekenen.
+
 ## Stap 9: Sla het gewijzigde document op
 
-Sla het gewijzigde document op:
+Nadat u de rechthoeken rond de gevonden tekst hebt getekend, kunt u het gewijzigde document opslaan:
 
 ```csharp
 dataDir = dataDir + "SearchTextAndDrawRectangle_out.pdf";
 document.Save(dataDir);
 ```
 
- Zorg ervoor dat u vervangt`"SearchTextAndDrawRectangle_out.pdf"` met de gewenste naam van het uitvoerbestand.
+Zorg ervoor dat u uw nieuwe bestand opslaat met een duidelijke naam, om te voorkomen dat u uw originele document overschrijft.
 
-### Voorbeeldbroncode voor Zoektekst en teken rechthoek met behulp van Aspose.PDF voor .NET 
+## Stap 10: Bevestigingsbericht
+
+Druk ten slotte een bevestigingsbericht af op de console om u te laten weten dat de bewerking is geslaagd:
+
 ```csharp
-// Het pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Document openen
-Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-//Maak een TextAbsorber-object om alle zinnen te vinden die overeenkomen met de reguliere expressie
-TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
-TextSearchOptions textSearchOptions = new TextSearchOptions(true);
-textAbsorber.TextSearchOptions = textSearchOptions;
-document.Pages.Accept(textAbsorber); 
-var editor = new PdfContentEditor(document); 
-foreach (TextFragment textFragment in textAbsorber.TextFragments)
-{
-	foreach (TextSegment textSegment in textFragment.Segments)
-	{
-			DrawBox(editor, textFragment.Page.Number, textSegment, System.Drawing.Color.Red);
-	}
-}
-dataDir = dataDir + "SearchTextAndDrawRectangle_out.pdf";
-document.Save(dataDir);
 Console.WriteLine("\nRectangle drawn successfully on searched text.\nFile saved at " + dataDir);
 ```
 
+En daar heb je het! Je hebt succesvol een script gemaakt om te zoeken naar tekst in een PDF en deze te markeren met rechthoeken.
+
 ## Conclusie
 
-Gefeliciteerd! U hebt succesvol geleerd hoe u specifieke tekst in een PDF-document kunt zoeken, een rechthoek kunt tekenen rond de gevonden tekst en het gewijzigde document kunt opslaan met Aspose.PDF voor .NET. Deze tutorial bood een stapsgewijze handleiding, van het instellen van het project tot het uitvoeren van de vereiste acties. U kunt deze code nu opnemen in uw eigen C#-projecten om tekst te manipuleren en rechthoeken te tekenen in PDF-bestanden.
+Gefeliciteerd! U hebt zojuist een krachtige vaardigheid ontgrendeld die uw PDF-manipulatievaardigheden enorm kan verbeteren met Aspose.PDF voor .NET. Met slechts een paar eenvoudige stappen kunt u zoeken naar elke tekst in uw document en deze visueel markeren, waardoor uw PDF-documenten interactiever en beheersbaarder worden. Aarzel niet om te experimenteren met verschillende regex-patronen en kleuropties om deze tool echt uw eigen te maken!
 
-### Veelgestelde vragen
+## Veelgestelde vragen
 
-#### V: Wat is het doel van de tutorial "Tekst zoeken en rechthoek tekenen"?
+### Wat is Aspose.PDF voor .NET?
+Aspose.PDF voor .NET is een bibliotheek die een uitgebreide manier biedt om PDF-documenten programmatisch te maken, te bewerken en te converteren.
 
-A: De tutorial "Zoek tekst en teken rechthoek" is bedoeld om gebruikers te begeleiden door het proces van het gebruiken van de Aspose.PDF bibliotheek voor .NET om te zoeken naar specifieke tekst in een PDF document, rechthoeken te tekenen rond de gevonden tekstsegmenten en het aangepaste document op te slaan. De tutorial biedt gedetailleerde instructies en C# codevoorbeelden om elke stap van het proces te illustreren.
+### Kan ik Aspose.PDF gratis gebruiken?
+Ja, Aspose biedt een gratis proefperiode aan die u kunt gebruiken om de functionaliteiten van de bibliotheek te testen. Bekijk het[hier](https://releases.aspose.com/).
 
-#### V: Hoe helpt deze tutorial bij het tekenen van rechthoeken rond specifieke tekst in een PDF-document?
+### Welke programmeertaal moet ik gebruiken met Aspose.PDF voor .NET?
+Aspose.PDF voor .NET is ontworpen voor gebruik met C# en andere .NET-talen.
 
-A: Deze tutorial biedt een uitgebreide handleiding over hoe u rechthoeken rond specifieke tekstsegmenten in een PDF-document kunt vinden en tekenen. Het demonstreert het proces van het opzetten van een project, het laden van een PDF-document, het inschakelen van reguliere expressiezoekopdrachten, het tekenen van rechthoeken rond gevonden tekstsegmenten en het opslaan van de gewijzigde PDF.
+### Hoe krijg ik hulp met Aspose.PDF?
+ U kunt het Aspose-ondersteuningsforum bezoeken voor hulp met betrekking tot elk probleem of elke vraag die u mogelijk heeft. Vind ondersteuning[hier](https://forum.aspose.com/c/pdf/10).
 
-#### V: Welke vereisten zijn vereist om deze tutorial te volgen?
-
-A: Voordat u met de tutorial begint, moet u een basiskennis hebben van de programmeertaal C#. Daarnaast moet u de Aspose.PDF voor .NET-bibliotheek geïnstalleerd hebben. U kunt deze verkrijgen via de Aspose-website of in uw project installeren met NuGet.
-
-#### V: Hoe stel ik mijn project in om deze tutorial te volgen?
-
-A: Begin met het maken van een nieuw C#-project in uw favoriete geïntegreerde ontwikkelomgeving (IDE). Voeg vervolgens een verwijzing naar de Aspose.PDF voor .NET-bibliotheek toe aan uw project. Hiermee kunt u de functionaliteit van de bibliotheek gebruiken om PDF-documenten te manipuleren.
-
-#### V: Kan ik met deze tutorial rechthoeken rond specifieke tekst tekenen?
-
-A: Ja, de tutorial richt zich op het tekenen van rechthoeken rond specifieke tekstsegmenten in een PDF-document. Het laat zien hoe u de gewenste tekst kunt vinden met behulp van reguliere expressies, rechthoeken kunt maken rond de geïdentificeerde tekstsegmenten en de aangepaste PDF kunt opslaan.
-
-#### V: Hoe kan ik de tekst opgeven waarnaar ik wil zoeken en er rechthoeken omheen tekenen?
-
- A: Om de tekst te specificeren waarnaar u wilt zoeken en er rechthoeken omheen wilt tekenen, maakt u een`TextFragmentAbsorber` object en stel het patroon ervan in met behulp van de`Text` parameter. Vervang het standaardpatroon`@"[\S]+"` in de code van de tutorial met het door u gewenste reguliere-expressiepatroon.
-
-#### V: Hoe schakel ik reguliere expressie-zoekopdrachten voor tekst in?
-
- A: Zoeken met reguliere expressies wordt ingeschakeld door een`TextSearchOptions` object en het instellen van de waarde ervan op`true` . Wijs dit object toe aan de`TextSearchOptions` eigendom van de`TextFragmentAbsorber` voorbeeld. Dit zorgt ervoor dat het reguliere expressiepatroon wordt gebruikt tijdens tekst zoeken.
-
-#### V: Hoe teken ik rechthoeken rond de gevonden tekst?
-
- A: Nadat u de tekstsegmenten hebt geïdentificeerd met behulp van de`TextFragmentAbsorber` , de tutorial biedt een lus om door deze segmenten te itereren. Voor elk tekstsegment laat de tutorial zien hoe je een rechthoek eromheen kunt maken met behulp van de`DrawBox` methode en specificeer het uiterlijk van de rechthoek.
-
-#### V: Wat zijn de stappen om het aangepaste PDF-bestand met getekende rechthoeken op te slaan?
-
-A: Nadat u rechthoeken rond de gewenste tekstsegmenten hebt getekend, gebruikt u de`Document` klas`Save` methode om het gewijzigde document op te slaan. De voorbeeldcode van de tutorial laat zien hoe u de bewerkte PDF kunt opslaan en een succesbericht kunt weergeven.
-
-#### V: Kan ik het uiterlijk van de getekende rechthoeken aanpassen?
-
- A: Ja, u kunt het uiterlijk van de getekende rechthoeken aanpassen. In de voorbeeldcode van de tutorial staat de`DrawBox` methode wordt gebruikt om rechthoeken te maken. U kunt eigenschappen zoals kleur, stijl en dikte wijzigen om het uiterlijk van de getekende rechthoeken aan te passen.
+### Waar kan ik Aspose.PDF voor .NET downloaden?
+ U kunt de bibliotheek downloaden van de Aspose-website,[hier](https://releases.aspose.com/pdf/net/).

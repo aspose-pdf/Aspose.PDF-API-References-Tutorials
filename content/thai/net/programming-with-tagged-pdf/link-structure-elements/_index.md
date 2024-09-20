@@ -2,271 +2,201 @@
 title: องค์ประกอบโครงสร้างลิงก์
 linktitle: องค์ประกอบโครงสร้างลิงก์
 second_title: เอกสารอ้างอิง Aspose.PDF สำหรับ API ของ .NET
-description: คู่มือทีละขั้นตอนในการใช้องค์ประกอบโครงสร้างลิงก์กับ Aspose.PDF สำหรับ .NET สร้างไฮเปอร์ลิงก์ในเอกสาร PDF ของคุณ
+description: เรียนรู้วิธีสร้างองค์ประกอบโครงสร้างลิงก์ใน PDF โดยใช้ Aspose.PDF สำหรับ .NET คำแนะนำทีละขั้นตอนสำหรับการเพิ่มลิงก์ที่เข้าถึงได้ รูปภาพ และการตรวจสอบการปฏิบัติตามข้อกำหนด
 type: docs
 weight: 120
 url: /th/net/programming-with-tagged-pdf/link-structure-elements/
 ---
-ในคู่มือทีละขั้นตอนนี้ เราจะแสดงวิธีใช้องค์ประกอบโครงสร้างลิงก์กับ Aspose.PDF สำหรับ .NET Aspose.PDF เป็นไลบรารีอันทรงพลังที่ช่วยให้คุณสร้างและจัดการเอกสาร PDF ได้ด้วยโปรแกรม องค์ประกอบโครงสร้างลิงก์ช่วยให้คุณสามารถเพิ่มไฮเปอร์ลิงก์ไปยังเอกสาร PDF ของคุณ ทำให้ผู้ใช้สามารถคลิกลิงก์และนำทางไปยังแหล่งข้อมูลออนไลน์ได้
+## การแนะนำ
 
-มาเจาะลึกโค้ดและเรียนรู้วิธีใช้องค์ประกอบโครงสร้างลิงก์ใน Aspose.PDF สำหรับ .NET กัน
+การสร้างและจัดการองค์ประกอบโครงสร้างลิงก์ภายใน PDF อาจมีความสำคัญสำหรับเอกสารที่ต้องการการเข้าถึงและการนำทางที่ราบรื่น ในบทช่วยสอนนี้ เราจะแนะนำคุณเกี่ยวกับวิธีการดำเนินการนี้โดยใช้ Aspose.PDF สำหรับ .NET หากคุณเพิ่งเริ่มใช้ Aspose.PDF หรือการจัดการ PDF โดยทั่วไป ไม่ต้องกังวล ฉันจะอธิบายทุกขั้นตอนอย่างละเอียดเพื่อให้คุณทำตามได้ง่าย!
 
-## ข้อกำหนดเบื้องต้น
+## ข้อกำหนดเบื้องต้น  
 
-ก่อนที่คุณจะเริ่มต้น โปรดตรวจสอบให้แน่ใจว่าคุณมีสิ่งต่อไปนี้:
+ก่อนที่เราจะลงลึกในการเขียนโค้ด เรามาทำความเข้าใจกับบางสิ่งก่อน นี่คือข้อกำหนดพื้นฐานที่จะช่วยให้ประสบการณ์การพัฒนาเป็นไปอย่างราบรื่น
 
-1. ติดตั้งไลบรารี Aspose.PDF สำหรับ .NET แล้ว
-2. ความรู้พื้นฐานเกี่ยวกับภาษาการเขียนโปรแกรม C#
+1.  Aspose.PDF สำหรับ .NET: คุณสามารถดาวน์โหลดเวอร์ชันล่าสุดได้[ที่นี่](https://releases.aspose.com/pdf/net/).
+2. สภาพแวดล้อมการพัฒนา .NET: ไม่ว่าจะเป็น Visual Studio หรือ IDE ที่เข้ากันได้กับ .NET ใดๆ ก็ติดตั้งไว้และพร้อมใช้งาน
+3.  ใบอนุญาต Aspose: คุณสามารถใช้ Aspose.PDF เวอร์ชันทดลองใช้งานฟรีได้[ที่นี่](https://releases.aspose.com/) หรือได้รับ[ใบอนุญาตชั่วคราว](https://purchase.aspose.com/temporary-license/).
+4. ความรู้พื้นฐานเกี่ยวกับ C#: เราจะทำงานกับโค้ด C# ดังนั้นการทำความเข้าใจพื้นฐานจะทำให้ทุกอย่างง่ายขึ้นมาก
 
-## ขั้นตอนที่ 1: การตั้งค่าสภาพแวดล้อม
+## แพ็คเกจนำเข้า
 
-ในการเริ่มต้น ให้เปิดสภาพแวดล้อมการพัฒนา C# ของคุณและสร้างโปรเจ็กต์ใหม่ ตรวจสอบให้แน่ใจว่าคุณได้เพิ่มการอ้างอิงไปยังไลบรารี Aspose.PDF สำหรับ .NET ในโปรเจ็กต์ของคุณแล้ว
+คุณจะต้องนำเข้าแพ็คเกจสองสามรายการก่อนที่จะเขียนโค้ดสำหรับองค์ประกอบโครงสร้างลิงก์ เริ่มต้นด้วยการอ้างอิงไลบรารี Aspose.PDF ที่จำเป็นในโปรเจ็กต์ของคุณ:
 
 ```csharp
-// เส้นทางไปยังไดเร็กทอรีเอกสาร
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-string outFile = dataDir + "LinkStructureElements_Output.pdf";
-string logFile = dataDir + "46035_log.xml";
-string imgFile = dataDir + "google-icon-512.png";
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## ขั้นตอนที่ 2: การสร้างเอกสาร
+การนำเข้าเหล่านี้ช่วยให้เราทำงานกับเอกสาร PDF เพิ่มแท็ก และจัดการองค์ประกอบโครงสร้างได้
 
- ขั้นตอนแรกคือการสร้างเอกสาร PDF ใหม่โดยใช้`Document` ระดับ.
+ตอนนี้เราจะสร้างเอกสาร PDF ที่มีโครงสร้างลิงก์หลายประเภท และเราจะแบ่งขั้นตอนแต่ละขั้นตอนออกเป็นส่วนๆ เพื่อช่วยให้คุณเข้าใจกระบวนการได้อย่างถ่องแท้
 
-```csharp
-// สร้างเอกสาร PDF
-Document document = new Document();
-```
+## ขั้นตอนที่ 1: เริ่มต้นเอกสาร  
 
-## ขั้นตอนที่ 3: ทำงานกับเนื้อหาที่มีแท็ก
-
-จากนั้นเราจะได้รับเนื้อหาที่ถูกแท็กของเอกสารเพื่อใช้งาน
+เริ่มต้นด้วยการสร้างเอกสาร PDF ใหม่และตั้งค่าเนื้อหาที่แท็กไว้เพื่อการเข้าถึงได้
 
 ```csharp
-// รับเนื้อหาที่ถูกแท็กของเอกสาร
-ITaggedContent taggedContent = document.TaggedContent;
-```
-
-## ขั้นตอนที่ 4: ตั้งชื่อเอกสารและภาษา
-
-ตอนนี้เราสามารถตั้งชื่อเอกสารและภาษาได้แล้ว
-
-```csharp
-// กำหนดชื่อเอกสารและภาษา
-taggedContent.SetTitle("Example Link Items");
-taggedContent.SetLanguage("fr-FR");
-```
-
-## ขั้นตอนที่ 5: เพิ่มองค์ประกอบโครงสร้างลิงก์
-
-ตอนนี้เรามาเพิ่มองค์ประกอบโครงสร้างลิงก์ในเอกสารกัน เราจะสร้างลิงก์ประเภทต่างๆ รวมถึงลิงก์ข้อความธรรมดา ลิงก์รูปภาพ และลิงก์หลายบรรทัด
-```csharp
-// รับองค์ประกอบโครงสร้างราก (องค์ประกอบโครงสร้างเอกสาร)
-StructureElement rootElement = taggedContent.RootElement;
-
-// เพิ่มย่อหน้าด้วยไฮเปอร์ลิงก์
-ParagraphElement p1 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p1);
-LinkElement link1 = taggedContent.CreateLinkElement();
-p1.AppendChild(link1);
-link1.Hyperlink = new WebHyperlink("http://"google.com");
-link1.SetText("Google");
-link1.AlternateDescriptions = "Link to Google";
-
-// เพิ่มย่อหน้าด้วยไฮเปอร์ลิงก์ที่มีข้อความที่หลากหลาย
-ParagraphElement p2 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p2);
-LinkElement link2 = taggedContent.CreateLinkElement();
-p2.AppendChild(link2);
-link2.Hyperlink = new WebHyperlink("http://"google.com");
-SpanElement span2 = taggedContent.CreateSpanElement();
-span2.SetText("Google");
-link2.AppendChild(span2);
-link2.AlternateDescriptions = "Link to Google";
-
-// เพิ่มย่อหน้าด้วยไฮเปอร์ลิงก์ที่มีข้อความที่จัดรูปแบบบางส่วน
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-LinkElement link3 = taggedContent.CreateLinkElement();
-p3.AppendChild(link3);
-link3.Hyperlink = new WebHyperlink("http://"google.com");
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("G");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText("oogle");
-link3.AppendChild(span31);
-link3.SetText("-");
-link3.AppendChild(span32);
-link3.AlternateDescriptions = "Link to Google";
-
-// เพิ่มย่อหน้าด้วยไฮเปอร์ลิงก์หลายบรรทัด
-ParagraphElement p4 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p4);
-LinkElement link4 = taggedContent.CreateLinkElement();
-p4.AppendChild(link4);
-link4.Hyperlink = new WebHyperlink("http://"google.com");
-link4.SetText("The multiline link: Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google");
-link4.AlternateDescriptions = "Link to Google (multiline)";
-
-// เพิ่มย่อหน้าด้วยไฮเปอร์ลิงก์ที่มีรูปภาพ
-ParagraphElement p5 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p5);
-LinkElement link5 = taggedContent.CreateLinkElement();
-p5.AppendChild(link5);
-link5.Hyperlink = new WebHyperlink("http://"google.com");
-FigureElement figure5 = taggedContent.CreateFigureElement();
-figure5.SetImage(imgFile, 1200);
-figure5.AlternativeText = "Google icon";
-StructureAttributes linkLayoutAttributes = link5.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-StructureAttribute placementAttribute = new StructureAttribute(AttributeKey.Placement);
-placementAttribute.SetNameValue(AttributeName.Placement_Block);
-linkLayoutAttributes.SetAttribute(placementAttribute);
-link5.AppendChild(figure5);
-link5.AlternateDescriptions = "Link to Google";
-```
-
-## ขั้นตอนที่ 6: บันทึกเอกสาร PDF ที่ถูกแท็ก
-
-ในที่สุดเราก็บันทึกเอกสาร PDF ที่ถูกแท็ก
-
-```csharp
-// บันทึกเอกสาร PDF ที่ถูกแท็ก
-document. Save(outFile);
-```
-
-## ขั้นตอนที่ 7: ตรวจสอบความสอดคล้องของ PDF/UA
-
- เราสามารถตรวจสอบเอกสารเพื่อให้เป็นไปตามมาตรฐาน PDF/UA ได้โดยใช้`Validate` วิธีการของ`Document` ระดับ.
-
-```csharp
-// ตรวจสอบความสอดคล้องของ PDF/UA
-document = new Document(outFile);
-bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
-```
-
-
-### ตัวอย่างโค้ดต้นฉบับสำหรับองค์ประกอบโครงสร้างลิงก์โดยใช้ Aspose.PDF สำหรับ .NET 
-```csharp
-
 // เส้นทางไปยังไดเร็กทอรีเอกสาร
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "LinkStructureElements_Output.pdf";
 string logFile = dataDir + "46035_log.xml";
 string imgFile = dataDir + "google-icon-512.png";
 
-//การสร้างเอกสารและการรับเนื้อหา PDF ที่ถูกแท็ก
+// สร้างเอกสาร PDF ใหม่
 Document document = new Document(); 
-ITaggedContent taggedContent = document.TaggedContent;
 
-// การตั้งชื่อเรื่องและภาษาธรรมชาติของเอกสาร
+// ดึงข้อมูลอินเทอร์เฟซ TaggedContent
+ITaggedContent taggedContent = document.TaggedContent;
+```
+  
+ ที่นี่เราจะเริ่มต้น`Document` วัตถุซึ่งแสดงถึงไฟล์ PDF ของเรา นอกจากนี้ เรายังดึงข้อมูล`TaggedContent` อินเทอร์เฟซที่ช่วยให้เราเพิ่มองค์ประกอบโครงสร้างเช่นย่อหน้า ลิงก์ และรูปภาพ
+
+## ขั้นตอนที่ 2: ตั้งชื่อเรื่องและภาษา  
+
+ไฟล์ PDF ทุกไฟล์ควรมีการกำหนดชื่อและภาษา โดยเฉพาะอย่างยิ่งหากคุณต้องการให้เป็นไปตามมาตรฐาน PDF/UA
+
+```csharp
+// ตั้งค่าชื่อเอกสารและภาษา
 taggedContent.SetTitle("Link Elements Example");
 taggedContent.SetLanguage("en-US");
+```
+  
+ขั้นตอนนี้จะช่วยให้แน่ใจว่า PDF ของคุณมีชื่อที่มีความหมายและตั้งค่าภาษาเป็นภาษาอังกฤษ (`en-US`) ซึ่งถือเป็นสิ่งสำคัญสำหรับการเข้าถึงได้และช่วยให้แน่ใจว่าโปรแกรมอ่านหน้าจอหรือเทคโนโลยีช่วยเหลืออื่นสามารถตีความเอกสารของคุณได้อย่างถูกต้อง
 
-// การรับองค์ประกอบโครงสร้างราก (องค์ประกอบโครงสร้างเอกสาร)
+## ขั้นตอนที่ 3: สร้างและผนวกย่อหน้า  
+
+ในขั้นตอนนี้เราจะเพิ่มย่อหน้าเพื่อเก็บองค์ประกอบลิงก์ของเรา
+
+```csharp
+// สร้างองค์ประกอบราก
 StructureElement rootElement = taggedContent.RootElement;
+
+// สร้างย่อหน้าและเพิ่มลงในองค์ประกอบราก
 ParagraphElement p1 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p1);
+```
+  
+เราสร้างองค์ประกอบโครงสร้างรากซึ่งโดยพื้นฐานแล้วเป็นคอนเทนเนอร์ระดับบนสุดสำหรับองค์ประกอบอื่นทั้งหมด จากนั้นเราสร้างย่อหน้า (`p1`) และผนวกเข้ากับองค์ประกอบราก
+
+## ขั้นตอนที่ 4: เพิ่มลิงค์แบบง่าย  
+
+ตอนนี้เรามาเพิ่มไฮเปอร์ลิงก์พื้นฐานที่ชี้ไปยัง Google กัน
+
+```csharp
+// สร้างองค์ประกอบลิงก์และเพิ่มลงในย่อหน้า
 LinkElement link1 = taggedContent.CreateLinkElement();
 p1.AppendChild(link1);
+
+// ตั้งค่าไฮเปอร์ลิงก์และข้อความสำหรับลิงก์
 link1.Hyperlink = new WebHyperlink("http://"google.com");
 link1.SetText("Google");
 link1.AlternateDescriptions = "Link to Google";
+```
+  
+ในขั้นตอนนี้ เราสร้างองค์ประกอบลิงก์ ตั้งค่าไฮเปอร์ลิงก์เป็น "http://google.com" และใส่ข้อความ ("Google") ให้กับลิงก์ นอกจากนี้ เรายังเพิ่มคำอธิบายทางเลือกเพื่อให้เข้าถึงได้
+
+## ขั้นตอนที่ 5: การเพิ่มลิงก์พร้อมสแปน  
+
+เราสามารถสร้างลิงก์ด้วยข้อความช่วงต่างๆ กันได้
+
+```csharp
+// สร้างย่อหน้าใหม่
 ParagraphElement p2 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p2);
+
+// สร้างลิงก์ด้วยองค์ประกอบสแปน
 LinkElement link2 = taggedContent.CreateLinkElement();
 p2.AppendChild(link2);
 link2.Hyperlink = new WebHyperlink("http://"google.com");
+
 SpanElement span2 = taggedContent.CreateSpanElement();
 span2.SetText("Google");
 link2.AppendChild(span2);
+
 link2.AlternateDescriptions = "Link to Google";
-ParagraphElement p3 = taggedContent.CreateParagraphElement();
-rootElement.AppendChild(p3);
-LinkElement link3 = taggedContent.CreateLinkElement();
-p3.AppendChild(link3);
-link3.Hyperlink = new WebHyperlink("http://"google.com");
-SpanElement span31 = taggedContent.CreateSpanElement();
-span31.SetText("G");
-SpanElement span32 = taggedContent.CreateSpanElement();
-span32.SetText("oogle");
-link3.AppendChild(span31);
-link3.SetText("-");
-link3.AppendChild(span32);
-link3.AlternateDescriptions = "Link to Google";
+```
+  
+ที่นี่ เราใช้องค์ประกอบ span เพื่อล้อมรอบข้อความบางส่วนไว้ภายในลิงก์ ทำให้เราปรับแต่งลักษณะการแสดงส่วนต่างๆ ของลิงก์ได้
+
+## ขั้นตอนที่ 6: การเชื่อมโยงหลายบรรทัด  
+
+จะเกิดอะไรขึ้นหากข้อความลิงก์ของคุณยาวเกินไป ไม่ต้องกังวล คุณสามารถแบ่งข้อความออกเป็นหลายบรรทัดได้
+
+```csharp
 ParagraphElement p4 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p4);
+
 LinkElement link4 = taggedContent.CreateLinkElement();
 p4.AppendChild(link4);
 link4.Hyperlink = new WebHyperlink("http://"google.com");
-link4.SetText("The multiline link: Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google Google");
+link4.SetText("The multiline link: Google Google Google Google Google...");
 link4.AlternateDescriptions = "Link to Google (multiline)";
+```
+  
+ในกรณีนี้ เราได้สร้างลิงก์หลายบรรทัดโดยเพียงตั้งค่าข้อความยาว และข้อความจะห่อข้ามหลายบรรทัดโดยอัตโนมัติ
+
+## ขั้นตอนที่ 7: เพิ่มรูปภาพลงในลิงก์  
+
+สุดท้ายคุณสามารถเพิ่มรูปภาพภายในลิงค์ได้อีกด้วย
+
+```csharp
+// สร้างย่อหน้าใหม่และองค์ประกอบลิงค์
 ParagraphElement p5 = taggedContent.CreateParagraphElement();
 rootElement.AppendChild(p5);
+
 LinkElement link5 = taggedContent.CreateLinkElement();
 p5.AppendChild(link5);
 link5.Hyperlink = new WebHyperlink("http://"google.com");
+
+// เพิ่มรูปภาพลงในลิงค์
 FigureElement figure5 = taggedContent.CreateFigureElement();
 figure5.SetImage(imgFile, 1200);
 figure5.AlternativeText = "Google icon";
-StructureAttributes linkLayoutAttributes = link5.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-StructureAttribute placementAttribute = new StructureAttribute(AttributeKey.Placement);
-placementAttribute.SetNameValue(AttributeName.Placement_Block);
-linkLayoutAttributes.SetAttribute(placementAttribute);
 link5.AppendChild(figure5);
-link5.AlternateDescriptions = "Link to Google";
 
-// บันทึกเอกสาร PDF ที่ถูกแท็ก
+link5.AlternateDescriptions = "Link to Google";
+```
+  
+ขั้นตอนนี้จะแสดงวิธีปรับปรุงลิงก์ของคุณด้วยรูปภาพ ในกรณีนี้ เราได้เพิ่มไอคอน Google ไว้ภายในลิงก์ นอกจากนี้ เรายังทำให้เข้าถึงได้ง่ายขึ้นด้วยการตั้งค่าข้อความทางเลือกสำหรับรูปภาพ
+
+## ขั้นตอนที่ 8: ตรวจสอบ PDF ว่าเป็นไปตามข้อกำหนดหรือไม่  
+
+หากคุณต้องการให้เป็นไปตามมาตรฐาน PDF/UA (มาตรฐานการเข้าถึง) การตรวจสอบความถูกต้องของเอกสารถือเป็นแนวทางปฏิบัติที่ดี
+
+```csharp
+// บันทึกเอกสาร PDF
 document.Save(outFile);
 
-// การตรวจสอบความสอดคล้องของ PDF/UA
-document = new Document(outFile);
+// ตรวจสอบเอกสารให้เป็นไปตาม PDF/UA
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
-Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
+Console.WriteLine($"PDF/UA compliance: {isPdfUaCompliance}");
 ```
-## บทสรุป
+  
+เราบันทึกเอกสารและตรวจสอบเทียบกับมาตรฐาน PDF/UA ซึ่งทำให้แน่ใจได้ว่า PDF ตรงตามข้อกำหนดการเข้าถึง
 
-ขอแสดงความยินดี! คุณได้เรียนรู้วิธีใช้องค์ประกอบโครงสร้างลิงก์กับ Aspose.PDF สำหรับ .NET แล้ว ตอนนี้คุณสามารถสร้างไฮเปอร์ลิงก์ในเอกสาร PDF ของคุณ ช่วยให้ผู้ใช้นำทางไปยังแหล่งข้อมูลออนไลน์ได้ ทดลองใช้และสำรวจฟีเจอร์เพิ่มเติมของ Aspose.PDF เพื่อสร้างเอกสาร PDF แบบโต้ตอบและสมบูรณ์ยิ่งขึ้น
+## บทสรุป  
 
-### คำถามที่พบบ่อย
+ในบทช่วยสอนนี้ เราได้กล่าวถึงวิธีการสร้างเอกสาร PDF ที่มีโครงสร้างโดยใช้ Aspose.PDF สำหรับ .NET ตั้งแต่การเพิ่มไฮเปอร์ลิงก์พื้นฐานไปจนถึงโครงสร้างที่ซับซ้อนยิ่งขึ้น เช่น สแปน ลิงก์หลายบรรทัด และแม้แต่รูปภาพ คู่มือนี้ให้พื้นฐานที่มั่นคงสำหรับการจัดการองค์ประกอบลิงก์ใน PDF ของคุณ ด้วยประโยชน์เพิ่มเติมของการปฏิบัติตาม PDF/UA ตอนนี้คุณจึงพร้อมแล้วที่จะสร้าง PDF ที่เข้าถึงได้และนำทางได้
 
-#### ถาม: องค์ประกอบโครงสร้างลิงก์ในเอกสาร PDF คืออะไร และช่วยปรับปรุงการโต้ตอบของเอกสารได้อย่างไร
+## คำถามที่พบบ่อย
 
-A: องค์ประกอบโครงสร้างลิงก์ในเอกสาร PDF ใช้เพื่อสร้างไฮเปอร์ลิงก์ที่ให้ผู้ใช้นำทางไปยังแหล่งข้อมูลออนไลน์หรือตำแหน่งเฉพาะภายในเอกสาร องค์ประกอบเหล่านี้ช่วยเพิ่มการโต้ตอบโดยจัดให้มีลิงก์ที่คลิกได้ซึ่งช่วยให้ผู้ใช้สามารถเข้าถึงเนื้อหาที่เกี่ยวข้องหรือเว็บไซต์ภายนอกได้
+### ฉันสามารถเพิ่มโครงสร้างที่ซับซ้อนมากขึ้น เช่น ตาราง ภายในลิงก์ได้หรือไม่  
+ไม่ ลิงก์ส่วนใหญ่เป็นข้อความและรูปภาพ แต่คุณสามารถฝังองค์ประกอบที่ซับซ้อนไว้ใกล้ๆ ได้
 
-#### ถาม: องค์ประกอบโครงสร้างลิงก์สามารถเป็นประโยชน์ในเอกสาร PDF ได้อย่างไร
+### การตรวจสอบ PDF/UA เป็นสิ่งที่จำเป็นหรือไม่  
+ไม่เสมอไป แต่ขอแนะนำอย่างยิ่งหากคุณกังวลเกี่ยวกับการเข้าถึง
 
-A: องค์ประกอบโครงสร้างลิงก์ช่วยปรับปรุงประสบการณ์ของผู้ใช้โดยทำให้เอกสาร PDF เป็นแบบโต้ตอบได้ ช่วยให้เข้าถึงข้อมูลเพิ่มเติม เนื้อหาที่เกี่ยวข้อง เว็บไซต์ภายนอก หรือส่วนเฉพาะภายในเอกสารได้อย่างรวดเร็ว ช่วยปรับปรุงการนำทางและอำนวยความสะดวกในการดึงข้อมูล
+### จะเกิดอะไรขึ้นถ้าเส้นทางไฟล์ภาพไม่ถูกต้อง?  
+เอกสารจะไม่แสดงรูปภาพ และอาจเกิดข้อผิดพลาดระหว่างการเรนเดอร์
 
-#### ถาม: ฉันสามารถสร้างไฮเปอร์ลิงก์ประเภทต่างๆ โดยใช้องค์ประกอบโครงสร้างลิงก์ใน Aspose.PDF สำหรับ .NET ได้หรือไม่
+### ฉันสามารถกำหนดรูปแบบข้อความภายในลิงค์ได้ไหม  
+ใช่ คุณสามารถใช้รูปแบบข้อความด้วยการใช้องค์ประกอบ span ได้
 
-A: ใช่ คุณสามารถสร้างไฮเปอร์ลิงก์ประเภทต่างๆ ได้โดยใช้องค์ประกอบโครงสร้างลิงก์ Aspose.PDF สำหรับ .NET ช่วยให้คุณสร้างไฮเปอร์ลิงก์ที่มีข้อความธรรมดา ข้อความที่มีรูปแบบ รูปภาพ และคำอธิบายหลายบรรทัด ทำให้คุณสามารถลิงก์ไปยังเนื้อหาภายนอกหรือตำแหน่งต่างๆ ภายในเอกสารได้อย่างหลากหลาย
-
-#### ถาม: ฉันจะตั้งค่าและเริ่มต้นองค์ประกอบโครงสร้างลิงก์ในเอกสาร PDF โดยใช้ Aspose.PDF สำหรับ .NET ได้อย่างไร
-
- ก: หากต้องการใช้องค์ประกอบโครงสร้างลิงก์ ก่อนอื่นคุณต้องสร้างเอกสาร PDF ใหม่โดยใช้`Document` คลาส จากนั้นรับเนื้อหาที่แท็กโดยใช้`TaggedContent`คุณสมบัติของเอกสาร จากนั้น คุณสามารถสร้างและปรับแต่งองค์ประกอบโครงสร้างลิงก์และเพิ่มลงในองค์ประกอบโครงสร้างรากได้
-
-#### ถาม: ฉันจะสร้างไฮเปอร์ลิงก์ข้อความธรรมดาโดยใช้องค์ประกอบโครงสร้างลิงก์ได้อย่างไร
- A: คุณสามารถสร้างไฮเปอร์ลิงก์ข้อความธรรมดาได้โดยการสร้าง`LinkElement` และการตั้งค่าของมัน`Hyperlink` ทรัพย์สินให้กับ`WebHyperlink` ด้วย URL ที่คุณต้องการลิงก์ไป คุณยังสามารถตั้งค่าข้อความแสดงของลิงก์ได้โดยใช้`SetText` วิธี.
-
-#### ถาม: เป็นไปได้ไหมที่จะสร้างไฮเปอร์ลิงก์ด้วยรูปภาพโดยใช้องค์ประกอบโครงสร้างลิงก์?
-
- A: ใช่ คุณสามารถสร้างไฮเปอร์ลิงก์ด้วยรูปภาพโดยใช้องค์ประกอบโครงสร้างลิงก์ คุณจะสร้าง`LinkElement` แล้วจึงผนวก`FigureElement` โดยมีรูปภาพประกอบ วิธีนี้ช่วยให้คุณสร้างไฮเปอร์ลิงก์ที่อิงตามรูปภาพได้
-
-#### ถาม: ฉันจะมั่นใจได้อย่างไรว่าเอกสาร PDF ของฉันที่มีไฮเปอร์ลิงก์เป็นไปตามมาตรฐาน PDF/UA สำหรับการเข้าถึงได้
-
- A: Aspose.PDF สำหรับ .NET ให้ความสามารถในการตรวจสอบความสอดคล้องของเอกสาร PDF ของคุณกับมาตรฐาน PDF/UA โดยใช้`Validate` วิธีการของ`Document`คลาส ซึ่งจะทำให้มั่นใจได้ว่าผู้ใช้ที่มีความทุพพลภาพสามารถเข้าถึงไฮเปอร์ลิงก์ของเอกสารได้
-
-#### ถาม: คำอธิบายอื่นๆ สำหรับองค์ประกอบโครงสร้างลิงก์คืออะไร และเหตุใดจึงมีความสำคัญ?
-
-A: คำอธิบายทางเลือก (ข้อความอื่น) สำหรับองค์ประกอบโครงสร้างลิงก์จะให้คำอธิบายข้อความของไฮเปอร์ลิงก์ คำอธิบายเหล่านี้มีความสำคัญต่อการเข้าถึง ช่วยให้ผู้ใช้ที่มีความบกพร่องทางสายตาเข้าใจวัตถุประสงค์และปลายทางของลิงก์ได้
-
-#### ถาม: ฉันสามารถปรับแต่งลักษณะที่ปรากฏและลักษณะการทำงานของไฮเปอร์ลิงก์ที่สร้างโดยใช้องค์ประกอบโครงสร้างลิงก์ได้หรือไม่
-
-A: แม้ว่าองค์ประกอบโครงสร้างลิงก์จะเน้นไปที่การสร้างไฮเปอร์ลิงก์เป็นหลัก แต่คุณสามารถปรับแต่งลักษณะที่ปรากฏและพฤติกรรมของไฮเปอร์ลิงก์เพิ่มเติมได้โดยใช้ฟีเจอร์อื่นๆ ที่ Aspose.PDF สำหรับ .NET นำเสนอ ซึ่งรวมถึงการระบุสี สไตล์ และการดำเนินการของลิงก์
-
-#### ถาม: องค์ประกอบโครงสร้างลิงก์มีส่วนช่วยให้เอกสาร PDF มีการโต้ตอบและเป็นมิตรต่อผู้ใช้มากขึ้นได้อย่างไร
-
-A: องค์ประกอบโครงสร้างลิงก์จะเปลี่ยนเอกสาร PDF แบบคงที่ให้กลายเป็นประสบการณ์แบบโต้ตอบได้โดยการเพิ่มไฮเปอร์ลิงก์ที่คลิกได้ การโต้ตอบนี้ช่วยเพิ่มการมีส่วนร่วมของผู้ใช้ ช่วยให้สามารถนำทางระหว่างเนื้อหาที่เกี่ยวข้องได้อย่างราบรื่น และปรับปรุงการใช้งานเอกสารโดยรวม
+### สามารถสร้างลิงก์เอกสารภายในได้หรือไม่  
+แน่นอน! คุณสามารถลิงก์ไปยังส่วนที่เจาะจงภายในเอกสารเดียวกันได้

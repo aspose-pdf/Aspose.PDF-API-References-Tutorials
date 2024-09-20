@@ -2,7 +2,7 @@
 title: PDF注釈を追加する
 linktitle: 注釈を追加
 second_title: Aspose.PDF for .NET API リファレンス
-description: このステップバイステップ ガイドに従って、Aspose.PDF for .NET を使用して PDF にカスタム注釈を簡単に追加します。特定の詳細とアイコンを使用して注釈をカスタマイズします。
+description: このステップバイステップ ガイドに従って、Aspose.PDF for .NET を使用して PDF にカスタム注釈を簡単に追加できます。特定の詳細とアイコンを使用して注釈をカスタマイズします。
 type: docs
 weight: 10
 url: /ja/net/annotations/addannotation/

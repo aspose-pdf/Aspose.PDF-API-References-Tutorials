@@ -20,7 +20,7 @@ url: /ja/java/pdf-form-fields/adding-text-stamp-in-pdf-file-using-java/
 - Java 用の統合開発環境 (IDE) (Eclipse、IntelliJ IDEA など)。
 -  Aspose.PDF for Javaライブラリ。ダウンロードできます[ここ](https://releases.aspose.com/pdf/java/).
 
-## Java プロジェクトの設定
+## Javaプロジェクトの設定
 
 1. 好みの IDE で新しい Java プロジェクトを作成します。
 2. Aspose.PDF for Java ライブラリをプロジェクトのビルド パスに追加します。

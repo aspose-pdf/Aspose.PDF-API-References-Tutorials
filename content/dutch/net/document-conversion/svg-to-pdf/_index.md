@@ -9,7 +9,7 @@ url: /nl/net/document-conversion/svg-to-pdf/
 ---
 ## Invoering
 
-In de digitale wereld van vandaag is de noodzaak om bestanden van het ene formaat naar het andere te converteren, algemener dan ooit. Of u nu een ontwikkelaar, ontwerper of iemand bent die regelmatig met documenten werkt, het kan ongelooflijk nuttig zijn om te weten hoe u SVG-bestanden (Scalable Vector Graphics) naar PDF (Portable Document Format) kunt converteren. SVG-bestanden zijn geweldig vanwege hun schaalbaarheid en kwaliteit, maar soms hebt u een PDF nodig om te delen, af te drukken of te archiveren. In deze tutorial leiden we u door het proces van het converteren van SVG naar PDF met behulp van Aspose.PDF voor .NET. Dus pak uw favoriete drankje en laten we erin duiken!
+In de digitale wereld van vandaag is de noodzaak om bestanden van het ene formaat naar het andere te converteren, algemener dan ooit. Of u nu een ontwikkelaar, ontwerper of gewoon iemand bent die regelmatig met documenten werkt, het kan ongelooflijk nuttig zijn om te weten hoe u SVG-bestanden (Scalable Vector Graphics) naar PDF (Portable Document Format) kunt converteren. SVG-bestanden zijn geweldig vanwege hun schaalbaarheid en kwaliteit, maar soms hebt u een PDF nodig om te delen, af te drukken of te archiveren. In deze tutorial leiden we u door het proces van het converteren van SVG naar PDF met behulp van Aspose.PDF voor .NET. Dus pak uw favoriete drankje en laten we erin duiken!
 
 ## Vereisten
 

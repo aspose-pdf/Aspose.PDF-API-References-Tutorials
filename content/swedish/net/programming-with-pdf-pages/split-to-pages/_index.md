@@ -21,7 +21,7 @@ Innan vi dyker in i handledningen är det viktigt att du har rätt verktyg till 
 4. Ett exempel på PDF-fil: För teständamål behöver du en PDF-fil som du vill dela. Du kan antingen skapa ett eller ladda ner ett exempel, redo att delas isär.
 5. NuGet Package Manager: Detta ingår vanligtvis i Visual Studio och låter dig enkelt installera Aspose.PDF i ditt projekt.
 
-Så, redo att kavla upp ärmarna? Låt oss komma igång!
+Så redo att kavla upp ärmarna? Låt oss komma igång!
 
 ## Importera paket
 

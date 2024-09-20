@@ -104,7 +104,7 @@ Förbättra dina PDF-dokument genom att enkelt införliva roterad text, tack var
    Ja, du kan lägga till flera instanser av roterad text med olika vinklar till samma PDF-dokument. Upprepa helt enkelt processen som beskrivs i den här handledningen för varje stycke roterad text.
 
 ### 2. Hur kan jag ändra färgen på den roterade texten?
-    För att ändra textfärgen, använd`textFragment.getTextState().setForegroundColor` metod och ange färgen i RGB-format. Använd till exempel för att ställa in textfärgen till röd`textFragment.getTextState().setForegroundColor(com.aspose.pdf.Color.getRed());`.
+    För att ändra textfärgen, använd`textFragment.getTextState().setForegroundColor` metod och ange färgen i RGB-format. Använd till exempel för att ställa in textfärgen på röd`textFragment.getTextState().setForegroundColor(com.aspose.pdf.Color.getRed());`.
 
 ### 3. Är Aspose.PDF för Java ett gratis bibliotek?
    Aspose.PDF för Java är ett kraftfullt kommersiellt bibliotek, men det erbjuder en gratis testversion för testning och utvärdering. Beroende på ditt projekts krav kan du välja ett lämpligt licensalternativ.

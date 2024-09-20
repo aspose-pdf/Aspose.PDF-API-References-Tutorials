@@ -9,7 +9,7 @@ url: /nl/net/programming-with-security-and-signatures/digitally-sign/
 ---
 ## Invoering
 
-In onze digitale wereld kan het belang van het beveiligen van documenten niet genoeg worden benadrukt. Of u nu een freelancer bent die contracten verstuurt, een eigenaar van een klein bedrijf die facturen beheert of onderdeel bent van een groot bedrijf, het is cruciaal om ervoor te zorgen dat uw documenten authentiek en fraudebestendig blijven. Een effectieve manier om deze beveiliging te bereiken, is via digitale handtekeningen. In dit artikel onderzoeken we hoe u een PDF-bestand digitaal kunt ondertekenen met behulp van de Aspose.PDF voor .NET-bibliotheek. We nemen u stap voor stap mee door alles heen.
+In onze digitale wereld kan het belang van het beveiligen van documenten niet genoeg worden benadrukt. Of u nu een freelancer bent die contracten verstuurt, een eigenaar van een klein bedrijf die facturen beheert of onderdeel bent van een groot bedrijf, het is cruciaal om ervoor te zorgen dat uw documenten authentiek en fraudebestendig blijven. Een effectieve manier om deze beveiliging te bereiken, is via digitale handtekeningen. In dit artikel onderzoeken we hoe u een PDF-bestand digitaal ondertekent met behulp van de Aspose.PDF voor .NET-bibliotheek. We nemen u stap voor stap mee door alles heen.
 
 ## Vereisten
 

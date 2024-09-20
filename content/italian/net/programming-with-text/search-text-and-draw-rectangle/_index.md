@@ -2,88 +2,124 @@
 title: Cerca testo e disegna rettangolo
 linktitle: Cerca testo e disegna rettangolo
 second_title: Riferimento API Aspose.PDF per .NET
-description: Scopri come cercare testo in un PDF, disegnare rettangoli attorno al testo trovato e salvare il documento modificato utilizzando Aspose.PDF per .NET.
+description: Impara a cercare testo nei PDF ed evidenziarlo con rettangoli usando Aspose.PDF per .NET! Semplice tutorial passo dopo passo per migliorare le tue capacità di manipolazione dei PDF.
 type: docs
 weight: 460
 url: /it/net/programming-with-text/search-text-and-draw-rectangle/
 ---
-Questo tutorial spiega come usare Aspose.PDF per .NET per cercare testo specifico in un documento PDF, disegnare un rettangolo attorno al testo trovato e salvare il documento modificato. Il codice sorgente C# fornito illustra il processo passo dopo passo.
+## Introduzione
+
+Stai cercando di migliorare le tue capacità di manipolazione PDF? Vuoi imparare a cercare testo specifico nei file PDF ed evidenziarlo con un rettangolo? Hai trovato la guida perfetta! Oggi ti guiderò attraverso l'uso di Aspose.PDF per .NET per cercare testo in un documento PDF e disegnare rettangoli attorno ad esso. Questo articolo fornirà un tutorial passo dopo passo progettato con chiarezza e utilità in mente, assicurandoti di poter seguire e applicare queste tecniche ai tuoi progetti. 
 
 ## Prerequisiti
 
-Prima di procedere con il tutorial, assicurati di avere quanto segue:
+Prima di immergerci nel tutorial, prepariamo il necessario per garantire un flusso di lavoro fluido:
 
-- Conoscenza di base del linguaggio di programmazione C#.
-- Aspose.PDF per la libreria .NET installata. Puoi ottenerla dal sito web di Aspose o usare NuGet per installarla nel tuo progetto.
+1. Nozioni di base di .NET: per seguire questo tutorial in modo efficace è necessario avere familiarità con la programmazione C# e con il framework .NET.
+   
+2. Visual Studio installato: avrai bisogno di un ambiente di sviluppo integrato (IDE) per scrivere e testare il tuo codice. Visual Studio Community è un'ottima opzione, ed è gratuito.
+   
+3. Aspose.PDF per .NET: devi avere la libreria Aspose.PDF installata nel tuo progetto. Puoi scaricarla[Qui](https://releases.aspose.com/pdf/net/) o considera un[licenza temporanea](https://purchase.aspose.com/temporary-license/) per funzionalità estese.
+   
+4.  Esempio di documento PDF: per questo tutorial, avrai bisogno di un file PDF di esempio denominato`SearchAndGetTextFromAll.pdf` memorizzati nella directory del progetto. 
 
-## Passaggio 1: impostare il progetto
+## Importa pacchetti
 
-Inizia creando un nuovo progetto C# nel tuo ambiente di sviluppo integrato (IDE) preferito e aggiungi un riferimento alla libreria Aspose.PDF per .NET.
+Per iniziare, dovrai prima importare i pacchetti necessari nel tuo progetto .NET. Segui questi passaggi:
 
-## Passaggio 2: importare gli spazi dei nomi necessari
+### Apri Visual Studio
 
-Aggiungere le seguenti direttive using all'inizio del file C# per importare gli spazi dei nomi richiesti:
+Avvia Visual Studio e crea una nuova applicazione console oppure utilizzane una esistente in cui desideri implementare le funzionalità PDF.
+
+### Aggiungi Aspose.PDF al tuo progetto
+
+1. Fare clic con il pulsante destro del mouse sul progetto in Esplora soluzioni.
+2. Seleziona "Gestisci pacchetti NuGet".
+3.  Cercare`Aspose.PDF` e installare la versione più recente.
+
+In questo modo, porrai le basi per tutte le straordinarie manipolazioni PDF che stai per eseguire.
+
+## Importazione degli spazi dei nomi
+
+Nella parte superiore del file di programma, dovrai importare gli spazi dei nomi rilevanti dalla libreria Aspose:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using Aspose.Pdf.Content;
+using System;
 using Aspose.Pdf.Facades;
 ```
 
-## Passaggio 3: impostare il percorso della directory del documento
+In questo modo sarà più semplice accedere alle classi e ai metodi all'interno della libreria Aspose.PDF per le tue attività.
 
- Imposta il percorso della directory del documento utilizzando`dataDir` variabile:
+
+Ora che hai impostato tutto, scomponiamo il processo di ricerca del testo in un PDF e di tracciamento di un rettangolo attorno ad esso in passaggi gestibili.
+
+## Passaggio 1: imposta il percorso per il documento
+
+ Per prima cosa, imposta il percorso del tuo file PDF. Assicurati di sostituire`YOUR DOCUMENT DIRECTORY` con il percorso effettivo in cui ti trovi`SearchAndGetTextFromAll.pdf` è memorizzato.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Sostituire`"YOUR DOCUMENT DIRECTORY"` con il percorso effettivo della directory del documento.
+## Passaggio 2: aprire il documento PDF
 
-## Passaggio 4: caricare il documento PDF
-
- Caricare il documento PDF utilizzando`Document` classe:
+ Quindi, crea un'istanza di`Document` classe per caricare il tuo PDF:
 
 ```csharp
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
 ```
 
- Sostituire`"SearchAndGetTextFromAll.pdf"` con il nome effettivo del file PDF.
+Questa riga di codice apre il file PDF specificato, consentendoti di modificarlo ulteriormente.
 
-## Passaggio 5: creare un TextFragmentAbsorber
+## Passaggio 3: creare un assorbitore di testo
 
- Crea un`TextFragmentAbsorber` oggetto per trovare tutte le istanze della frase di ricerca di input:
+ Ora, avrai bisogno di un modo per cercare il testo all'interno di quel documento. Per questo, utilizziamo il`TextFragmentAbsorber`:
 
 ```csharp
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 ```
 
- Sostituire`@"[\S]+"` con il modello di espressione regolare desiderato.
+ L'espressione regolare`@"[\S]+"` è progettato per corrispondere a qualsiasi stringa senza spazi vuoti nel PDF. 
 
-## Passaggio 6: abilitare la ricerca tramite espressioni regolari
+## Passaggio 4: configurare le opzioni di ricerca del testo
 
- Abilita la ricerca di espressioni regolari impostando`TextSearchOptions` proprietà dell'assorbitore:
+Successivamente, dovresti impostare le opzioni di ricerca del testo:
 
 ```csharp
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;
 ```
 
-## Passaggio 7: Cerca in tutte le pagine
+ Qui, il`true` parametro significa che la ricerca sarà sensibile alle maiuscole/minuscole. Puoi impostarlo su`false` se si desidera una ricerca senza distinzione tra maiuscole e minuscole.
 
-Accetta l'assorbitore per tutte le pagine del documento:
+## Passaggio 5: accettare l'assorbitore di testo nel documento
+
+ Con il tuo`TextFragmentAbsorber` e le opzioni di ricerca sono pronte, è il momento di assorbire il testo dal documento:
 
 ```csharp
 document.Pages.Accept(textAbsorber);
 ```
 
-## Passaggio 8: Disegna un rettangolo attorno al testo trovato
+Questo metodo esamina ogni pagina del PDF per trovare frammenti di testo che corrispondono al modello specificato.
 
- Crea un`PdfContentEditor` oggetto e scorrere i frammenti di testo recuperati, disegnando un rettangolo attorno a ciascun segmento di testo:
+## Passaggio 6: creare un PdfContentEditor
+
+ Per disegnare forme sul documento, avrai bisogno di`PdfContentEditor`:
 
 ```csharp
 var editor = new PdfContentEditor(document);
+```
+
+Questo editor consente di manipolare e modificare facilmente il contenuto del PDF.
+
+## Passaggio 7: scorrere i frammenti di testo trovati
+
+Ora, dovrai scorrere i frammenti di testo trovati per disegnare dei rettangoli attorno a essi:
+
+```csharp
 foreach (TextFragment textFragment in textAbsorber.TextFragments)
 {
     foreach (TextSegment textSegment in textFragment.Segments)
@@ -93,83 +129,66 @@ foreach (TextFragment textFragment in textAbsorber.TextFragments)
 }
 ```
 
+ Questo ciclo esegue un'iterazione su ogni frammento di testo e sui relativi segmenti, chiamando un`DrawBox` metodo per disegnare rettangoli.
+
+## Passaggio 8: definire il metodo DrawBox
+
+ Devi definire il`DrawBox` metodo, che gestirà la logica di disegno del rettangolo. Ecco una semplice implementazione:
+
+```csharp
+private static void DrawBox(PdfContentEditor editor, int pageNumber, TextSegment textSegment, System.Drawing.Color color)
+{
+    // Calcola le dimensioni del rettangolo in base al segmento di testo
+    float x = textSegment.Rectangle.LLX;
+    float y = textSegment.Rectangle.LLY;
+    float width = textSegment.Rectangle.Width;
+    float height = textSegment.Rectangle.Height;
+
+    // Disegna un rettangolo utilizzando i valori calcolati
+    editor.DrawRectangle(pageNumber, x, y, width, height, color, 1);
+}
+```
+
+Questo metodo determina la posizione e la dimensione del rettangolo in base al rettangolo di delimitazione del segmento e utilizza l'editor per disegnarlo.
+
 ## Passaggio 9: Salvare il documento modificato
 
-Salvare il documento modificato:
+Dopo aver disegnato i rettangoli attorno al testo trovato, puoi salvare il documento modificato:
 
 ```csharp
 dataDir = dataDir + "SearchTextAndDrawRectangle_out.pdf";
 document.Save(dataDir);
 ```
 
- Assicurati di sostituire`"SearchTextAndDrawRectangle_out.pdf"` con il nome del file di output desiderato.
+Assicuratevi che il nuovo file venga salvato con un nome diverso per evitare di sovrascrivere il documento originale.
 
-### Esempio di codice sorgente per Cerca testo e disegna rettangolo usando Aspose.PDF per .NET 
+## Passaggio 10: messaggio di conferma
+
+Infine, visualizza un messaggio di conferma sulla console per informarti che l'operazione è riuscita:
+
 ```csharp
-// Percorso verso la directory dei documenti.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Apri documento
-Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-//Crea un oggetto TextAbsorber per trovare tutte le frasi che corrispondono all'espressione regolare
-TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
-TextSearchOptions textSearchOptions = new TextSearchOptions(true);
-textAbsorber.TextSearchOptions = textSearchOptions;
-document.Pages.Accept(textAbsorber); 
-var editor = new PdfContentEditor(document); 
-foreach (TextFragment textFragment in textAbsorber.TextFragments)
-{
-	foreach (TextSegment textSegment in textFragment.Segments)
-	{
-			DrawBox(editor, textFragment.Page.Number, textSegment, System.Drawing.Color.Red);
-	}
-}
-dataDir = dataDir + "SearchTextAndDrawRectangle_out.pdf";
-document.Save(dataDir);
 Console.WriteLine("\nRectangle drawn successfully on searched text.\nFile saved at " + dataDir);
 ```
 
+Ed ecco fatto! Hai creato con successo uno script per cercare testo in un PDF ed evidenziarlo con rettangoli.
+
 ## Conclusione
 
-Congratulazioni! Hai imparato con successo come cercare testo specifico in un documento PDF, disegnare un rettangolo attorno al testo trovato e salvare il documento modificato utilizzando Aspose.PDF per .NET. Questo tutorial ha fornito una guida passo passo, dall'impostazione del progetto all'esecuzione delle azioni richieste. Ora puoi incorporare questo codice nei tuoi progetti C# per manipolare il testo e disegnare rettangoli nei file PDF.
+Congratulazioni! Hai appena sbloccato una potente abilità che può migliorare notevolmente le tue capacità di manipolazione PDF usando Aspose.PDF per .NET. Con pochi semplici passaggi, puoi cercare qualsiasi testo nel tuo documento ed evidenziarlo visivamente, rendendo i tuoi documenti PDF più interattivi e gestibili. Non esitare a sperimentare diversi modelli di espressioni regolari e opzioni di colore per rendere davvero tuo questo strumento!
 
-### Domande frequenti
+## Domande frequenti
 
-#### D: Qual è lo scopo del tutorial "Cerca testo e disegna rettangolo"?
+### Che cos'è Aspose.PDF per .NET?
+Aspose.PDF per .NET è una libreria che fornisce un modo completo per creare, manipolare e convertire documenti PDF a livello di programmazione.
 
-R: Il tutorial "Cerca testo e disegna rettangolo" mira a guidare gli utenti attraverso il processo di utilizzo della libreria Aspose.PDF per .NET per cercare testo specifico all'interno di un documento PDF, disegnare rettangoli attorno ai segmenti di testo trovati e salvare il documento modificato. Il tutorial fornisce istruzioni dettagliate ed esempi di codice C# per illustrare ogni passaggio del processo.
+### Posso usare Aspose.PDF gratuitamente?
+Sì, Aspose offre una prova gratuita che puoi usare per testare le funzionalità della libreria. Dai un'occhiata[Qui](https://releases.aspose.com/).
 
-#### D: In che modo questo tutorial aiuta a disegnare rettangoli attorno a un testo specifico in un documento PDF?
+### Quale linguaggio di programmazione devo usare con Aspose.PDF per .NET?
+Aspose.PDF per .NET è progettato per essere utilizzato con C# e altri linguaggi .NET.
 
-R: Questo tutorial fornisce una guida completa su come individuare e disegnare rettangoli attorno a specifici segmenti di testo all'interno di un documento PDF. Illustra il processo di impostazione di un progetto, caricamento di un documento PDF, abilitazione della ricerca di espressioni regolari, disegno di rettangoli attorno a segmenti di testo trovati e salvataggio del PDF modificato.
+### Come posso ottenere assistenza con Aspose.PDF?
+ Puoi visitare il forum di supporto Aspose per ricevere assistenza su qualsiasi problema o domanda tu possa avere. Trova supporto[Qui](https://forum.aspose.com/c/pdf/10).
 
-#### D: Quali prerequisiti sono richiesti per seguire questo tutorial?
-
-R: Prima di iniziare il tutorial, dovresti avere una conoscenza di base del linguaggio di programmazione C#. Inoltre, devi avere installata la libreria Aspose.PDF per .NET. Puoi ottenerla dal sito web di Aspose o installarla nel tuo progetto usando NuGet.
-
-#### D: Come posso impostare il mio progetto in modo che segua questo tutorial?
-
-R: Inizia creando un nuovo progetto C# nel tuo ambiente di sviluppo integrato (IDE) preferito. Quindi, aggiungi un riferimento alla libreria Aspose.PDF per .NET al tuo progetto. Ciò ti consentirà di usare la funzionalità della libreria per manipolare documenti PDF.
-
-#### D: Posso disegnare rettangoli attorno a un testo specifico usando questo tutorial?
-
-R: Sì, il tutorial si concentra sul disegno di rettangoli attorno a specifici segmenti di testo all'interno di un documento PDF. Dimostra come individuare il testo desiderato utilizzando espressioni regolari, creare rettangoli attorno ai segmenti di testo identificati e salvare il PDF modificato.
-
-#### D: Come posso specificare il testo che voglio cercare e disegnare dei rettangoli attorno a esso?
-
- A: Per specificare il testo che vuoi cercare e disegnare rettangoli attorno, crea un`TextFragmentAbsorber` oggetto e imposta il suo modello utilizzando il`Text` parametro. Sostituisci il modello predefinito`@"[\S]+"` nel codice del tutorial con il modello di espressione regolare desiderato.
-
-#### D: Come posso abilitare la ricerca tramite espressioni regolari nel testo?
-
- A: La ricerca di espressioni regolari è abilitata creando un`TextSearchOptions` oggetto e impostandone il valore su`true` Assegna questo oggetto al`TextSearchOptions` proprietà del`TextFragmentAbsorber` istanza. Ciò garantisce che il modello di espressione regolare venga utilizzato durante la ricerca di testo.
-
-#### D: Come faccio a disegnare dei rettangoli attorno al testo trovato?
-
- A: Dopo aver identificato i segmenti di testo utilizzando il`TextFragmentAbsorber` , il tutorial fornisce un ciclo per scorrere questi segmenti. Per ogni segmento di testo, il tutorial dimostra come creare un rettangolo attorno ad esso utilizzando il`DrawBox` e specificare l'aspetto del rettangolo.
-
-#### D: Quali sono i passaggi per salvare il PDF modificato con i rettangoli disegnati?
-
-A: Dopo aver disegnato i rettangoli attorno ai segmenti di testo desiderati, utilizzare il`Document` di classe`Save` metodo per salvare il documento modificato. Il codice di esempio del tutorial mostra come salvare il PDF modificato e visualizzare un messaggio di successo.
-
-#### D: Posso personalizzare l'aspetto dei rettangoli disegnati?
-
- A: Sì, puoi personalizzare l'aspetto dei rettangoli disegnati. Nel codice di esempio del tutorial, il`DrawBox` Il metodo viene utilizzato per creare rettangoli. È possibile modificare proprietà quali colore, stile e spessore per personalizzare l'aspetto dei rettangoli disegnati.
+### Dove posso scaricare Aspose.PDF per .NET?
+ È possibile scaricare la libreria dal sito web di Aspose,[Qui](https://releases.aspose.com/pdf/net/).

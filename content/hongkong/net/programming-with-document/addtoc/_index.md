@@ -135,7 +135,7 @@ Console.WriteLine("\nTOC added successfully to an existing PDF.\nFile saved at "
 
 ## 結論
 
-現在你就得到它了！透過 Aspose.PDF for .NET，在 PDF 中新增目錄不僅簡單，而且可以自訂。無論您需要建立簡單的導航連結還是複雜的結構，這個工具都能滿足您的需求。因此，下次您處理冗長的 PDF 時，請不要忘記添加目錄以實現專業的風格！
+現在你就擁有了！透過 Aspose.PDF for .NET，在 PDF 中新增目錄不僅簡單，而且可以自訂。無論您需要建立簡單的導航連結還是複雜的結構，這個工具都能滿足您的需求。因此，下次您處理冗長的 PDF 時，請不要忘記添加目錄以實現專業的風格！
 
 ## 常見問題解答
 

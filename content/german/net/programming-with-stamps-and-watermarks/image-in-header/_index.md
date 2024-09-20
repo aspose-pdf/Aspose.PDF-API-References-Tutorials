@@ -41,7 +41,7 @@ Stellen Sie sicher, dass Sie die Aspose.PDF-Bibliothek installiert haben und die
 
 ## Schritt 1: Projekt einrichten und PDF-Dokument erstellen
 
-Zunächst richten wir ein neues Projekt ein. Wenn Sie dies noch nicht getan haben, öffnen Sie Visual Studio, erstellen Sie eine neue Konsolenanwendung und fügen Sie die erforderlichen Verweise auf die Aspose.PDF-Bibliothek für .NET hinzu.
+Zunächst richten wir ein neues Projekt ein. Wenn Sie dies noch nicht getan haben, öffnen Sie Visual Studio, erstellen Sie eine neue Konsolenanwendung und fügen Sie die erforderlichen Verweise zur Aspose.PDF-Bibliothek für .NET hinzu.
 
 Sie können entweder eine vorhandene PDF-Datei laden oder eine neue erstellen. Für dieses Beispiel laden wir ein vorhandenes Dokument, das wir ändern möchten.
 

@@ -9,7 +9,7 @@ url: /sv/net/programming-with-links-and-actions/extract-links/
 ---
 ## Introduktion
 
-I vår snabba digitala värld är det avgörande att hantera dokument effektivt. När det gäller PDF-filer är en vanlig uppgift att extrahera länkar från dessa filer. Oavsett om du är en utvecklare som införlivar PDF-funktioner i din applikation eller bara någon som vill hantera dina digitala dokument bättre, kan ett robust bibliotek som Aspose.PDF för .NET göra det här jobbet mycket enklare. I den här handledningen kommer vi att dyka djupt in i hur man extraherar länkar från ett PDF-dokument med Aspose.PDF för .NET, och delar upp det i hanterbara steg. Redo att börja? Låt oss gå!
+I vår snabba digitala värld är det avgörande att hantera dokument effektivt. När det gäller PDF-filer är en vanlig uppgift att extrahera länkar från dessa filer. Oavsett om du är en utvecklare som införlivar PDF-funktioner i din applikation eller bara någon som vill hantera dina digitala dokument bättre, kan ett robust bibliotek som Aspose.PDF för .NET göra det här jobbet mycket enklare. I den här handledningen kommer vi att dyka djupt in i hur man extraherar länkar från ett PDF-dokument med Aspose.PDF för .NET, och delar upp det i hanterbara steg. Redo att komma igång? Låt oss gå!
 
 ## Förutsättningar
 

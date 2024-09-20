@@ -2,162 +2,155 @@
 title: Buat Elemen Struktur Catatan
 linktitle: Buat Elemen Struktur Catatan
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Panduan langkah demi langkah untuk membuat item catatan terstruktur dalam dokumen PDF menggunakan Aspose.PDF untuk .NET.
+description: Pelajari cara membuat elemen struktur catatan dalam PDF dengan Aspose.PDF untuk .NET melalui tutorial langkah demi langkah terperinci ini.
 type: docs
 weight: 30
 url: /id/net/programming-with-tagged-pdf/create-note-structure-element/
 ---
-Dalam tutorial ini, kami akan memberikan panduan langkah demi langkah tentang cara membuat elemen struktur catatan dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Aspose.PDF adalah pustaka canggih yang memungkinkan Anda membuat, memanipulasi, dan mengonversi dokumen PDF secara terprogram. Dengan menggunakan fitur struktur konten bertanda dari Aspose.PDF, Anda dapat menambahkan catatan terstruktur ke dokumen PDF Anda.
+## Perkenalan
+
+Membuat dokumen terstruktur sangat penting dalam dunia digital saat ini, terutama saat menangani PDF. Terkait aksesibilitas dokumen, pustaka Aspose.PDF untuk .NET merupakan alat canggih yang membantu pengembang mengelola konten PDF dengan lancar. Dalam tutorial ini, kita akan membahas secara mendalam cara membuat elemen struktur catatan dalam PDF menggunakan Aspose.PDF untuk .NET. Baik Anda pengembang berpengalaman atau baru memulai, panduan ini akan memandu Anda melalui setiap langkah dengan cara yang mudah dipahami dan komunikatif. Jadi, mari kita mulai!
 
 ## Prasyarat
 
-Sebelum memulai, pastikan Anda memiliki prasyarat berikut:
+Sebelum kita mulai membuat kode dan membuat elemen struktur catatan, mari pastikan Anda telah menyiapkan semua yang dibutuhkan:
 
-1. Visual Studio terinstal dengan kerangka kerja .NET.
-2. Pustaka Aspose.PDF untuk .NET.
+1. Lingkungan .NET: Anda harus menyiapkan lingkungan pengembangan .NET, seperti Visual Studio.
+2.  Pustaka Aspose.PDF: Anda perlu mengunduh dan memasang pustaka Aspose.PDF. Anda dapat mengunduhnya dari[Di Sini](https://releases.aspose.com/pdf/net/).
+3. Pengetahuan Dasar C#: Keakraban dengan pemrograman C# diperlukan untuk memanfaatkan tutorial ini sebaik-baiknya.
+4. Akses ke .NET Framework: Pastikan proyek Anda menargetkan versi .NET Framework yang kompatibel.
+5. Direktori Dokumen: Siapkan direktori untuk menyimpan file PDF dan log Anda. 
 
-## Langkah 1: Pengaturan Proyek
+Sudah mengatur semuanya? Bagus! Mari kita mulai kodenya!
 
-Untuk memulai, buat proyek baru di Visual Studio dan tambahkan referensi ke pustaka Aspose.PDF untuk .NET. Anda dapat mengunduh pustaka tersebut dari situs web resmi Aspose dan menginstalnya di komputer Anda.
+## Paket Impor
 
-## Langkah 2: Impor namespace yang diperlukan
-
-Dalam berkas kode C# Anda, impor namespace yang diperlukan untuk mengakses kelas dan metode yang disediakan oleh Aspose.PDF:
+Langkah pertama adalah mengimpor paket yang diperlukan. Hal ini dapat dilakukan di lingkungan pengembangan Anda. Berikut cara mudah untuk melakukannya:
 
 ```csharp
-using System;
-using Aspose.Pdf;
+using Aspose.Pdf.LogicalStructure;
 using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Langkah 3: Membuat Dokumen PDF dan Catatan Elemen Terstruktur
+Ruang nama ini menyediakan akses ke kelas dan metode yang dibutuhkan untuk membuat dan memanipulasi dokumen PDF.
 
-Gunakan kode berikut untuk membuat dokumen PDF dan menambahkan elemen terstruktur catatan:
+## Langkah 1: Menyiapkan Dokumen
 
-```csharp
-string dataDir = "YOUR_DIRECTORY_OF_DOCUMENTS";
-string outFile = dataDir + "45929_doc.pdf";
-string logFile = dataDir + "45929_log.xml";
-
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Sample Grade Items");
-taggedContent.SetLanguage("fr-FR");
-
-ParagraphElement paragraph = taggedContent.CreateParagraphElement();
-taggedContent.RootElement.AppendChild(paragraph);
-
-NoteElement note1 = taggedContent.CreateNoteElement();
-paragraph. AppendChild(note1);
-note1.SetText("Note with automatically generated ID. ");
-
-NoteElement note2 = taggedContent.CreateNoteElement();
-paragraph. AppendChild(note2);
-note2.SetText("Note with ID = 'note_002'.");
-note2.SetId("note_002");
-
-NoteElement note3 = taggedContent.CreateNoteElement();
-paragraph. AppendChild(note3);
-note3.SetText("Note with ID = 'note_003'.");
-note3.SetId("note_003");
-```
-
-Kode ini membuat dokumen PDF kosong dan menambahkan elemen catatan terstruktur ke paragraf. Setiap catatan dibuat menggunakan metode yang disediakan oleh Aspose.PDF.
-
-## Langkah 4: Menyimpan Dokumen PDF
-
-Gunakan kode berikut untuk menyimpan dokumen PDF:
-
-```csharp
-document. Save(outFile);
-```
-
-Kode ini menyimpan dokumen PDF dengan elemen catatan terstruktur ke berkas tertentu.
-
-### Contoh kode sumber untuk Membuat Elemen Struktur Catatan menggunakan Aspose.PDF untuk .NET 
+Untuk memulai, Anda perlu membuat contoh dokumen baru. Ini adalah titik awal dari PDF yang ingin Anda buat. Berikut cara melakukannya:
 
 ```csharp
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outFile = dataDir + "45929_doc.pdf";
 string logFile = dataDir + "45929_log.xml";
+
 // Buat Dokumen Pdf
 Document document = new Document();
+```
+Kode ini menginisialisasi yang baru`Document` objek dan mengatur jalur file untuk file PDF dan log keluaran. Pastikan untuk mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur direktori Anda yang sebenarnya.
+
+## Langkah 2: Mengatur Atribut Konten yang Ditandai
+
+Selanjutnya, mari kita mulai menyiapkan konten yang diberi tag untuk PDF Anda. Ini termasuk menentukan atribut judul dan bahasa.
+
+```csharp
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Sample of Note Elements");
 taggedContent.SetLanguage("en-US");
+```
+ Di sini, kita mengakses`TaggedContent` dokumen dan pengaturan judul serta bahasanya. Hal ini penting untuk standar aksesibilitas dan memberikan sentuhan yang lebih profesional pada dokumen Anda.
+
+## Langkah 3: Membuat Elemen Paragraf
+
+Sekarang, kita akan menambahkan elemen paragraf ke konten yang diberi tag. Ini akan berfungsi sebagai wadah untuk catatan Anda.
+
+```csharp
 // Tambahkan Elemen Paragraf
 ParagraphElement paragraph = taggedContent.CreateParagraphElement();
 taggedContent.RootElement.AppendChild(paragraph);
+```
+ Dengan membuat sebuah`ParagraphElement`, kami menyediakan basis tempat elemen-elemen catatan akan ditambahkan. Mirip dengan meletakkan fondasi rumah sebelum membangun dinding.
+
+## Langkah 4: Menambahkan Elemen Catatan
+
+Sekarang bagian yang menyenangkan: menambahkan elemen catatan! Anda dapat membuat beberapa catatan—mari kita lakukan dalam tiga langkah!
+
+### Langkah 4.1: Tambahkan Catatan Pertama
+
+```csharp
 // Tambahkan NoteElement
 NoteElement note1 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note1);
-note1.SetText("Note with auto generate ID. ");
+note1.SetText("Note with auto generate ID.");
+```
+Kode ini membuat catatan pertama dengan ID yang dibuat secara otomatis. Perhatikan betapa mudahnya menambahkan konten ke paragraf sebelumnya.
+
+### Langkah 4.2: Tambahkan Catatan Kedua
+
+```csharp
 // Tambahkan NoteElement
 NoteElement note2 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note2);
 note2.SetText("Note with ID = 'note_002'. ");
 note2.SetId("note_002");
+```
+ Untuk catatan kedua, kami secara eksplisit menetapkan ID`note_002`Penting untuk memperhatikan ID karena ID menyediakan cara untuk merujuk catatan tertentu nanti.
+
+### Langkah 4.3: Tambahkan Catatan Ketiga
+
+```csharp
 // Tambahkan NoteElement
 NoteElement note3 = taggedContent.CreateNoteElement();
 paragraph.AppendChild(note3);
 note3.SetText("Note with ID = 'note_003'. ");
 note3.SetId("note_003");
-//Harus memunculkan pengecualian - Aspose.Pdf.Tagged.TaggedException : Elemen struktur dengan ID='note_002' sudah ada
-//note3.SetId("catatan_002");
-// Dokumen yang dihasilkan tidak sesuai dengan PDF/UA Jika ClearId() digunakan untuk Elemen Struktur Catatan
-//catatan3.ClearId();
+// Harus memunculkan pengecualian - Aspose.Pdf.Tagged.TaggedException : Elemen struktur dengan ID='note_002' sudah ada
+```
+ Catatan ketiga ini sangat mirip dengan catatan kedua tetapi menggunakan ID unik lainnya. Berhati-hatilah; mencoba membuat catatan lain dengan ID yang sama`note_002` akan memunculkan pengecualian. 
+
+## Langkah 5: Menyimpan Dokumen
+
+Setelah catatan Anda ditambahkan, waktunya menyimpan dokumen!
+
+```csharp
 // Simpan Dokumen Pdf yang Ditandai
 document.Save(outFile);
+```
+Baris sederhana ini menyimpan semua kerja keras Anda ke berkas PDF yang ditentukan. 
+
+## Langkah 6: Validasi Kepatuhan PDF/UA
+
+Untuk memastikan bahwa dokumen Anda memenuhi standar aksesibilitas, Anda dapat memvalidasinya.
+
+```csharp
 // Memeriksa kepatuhan PDF/UA
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
 ```
+Segmen kode ini memeriksa PDF Anda terhadap standar PDF/UA (Aksesibilitas Universal). Anda akan menerima nilai boolean yang menunjukkan kepatuhan!
 
 ## Kesimpulan
 
-Dalam tutorial ini, Anda mempelajari cara membuat elemen struktur catatan dalam dokumen PDF menggunakan Aspose.PDF for .NET. Elemen catatan terstruktur memungkinkan Anda menambahkan informasi tambahan yang terstruktur ke dokumen PDF Anda.
+Nah, itu dia! Anda kini telah berhasil membuat elemen struktur catatan dalam dokumen PDF yang memungkinkan aksesibilitas dan struktur yang lebih baik—terima kasih kepada Aspose.PDF untuk .NET! Dengan mengikuti langkah-langkah ini, Anda dapat mengelola PDF Anda dengan lebih efisien, sehingga lebih mudah digunakan. 
 
-### Pertanyaan yang Sering Diajukan
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa tujuan membuat elemen struktur catatan dalam dokumen PDF menggunakan Aspose.PDF untuk .NET?
+### Apa saja elemen struktur catatan dalam PDF?
+Elemen catatan adalah anotasi atau komentar yang ditambahkan ke bagian tertentu PDF, meningkatkan kejelasan dan pemahaman.
 
-A: Membuat elemen struktur catatan dalam dokumen PDF menggunakan Aspose.PDF for .NET memungkinkan Anda menambahkan catatan terstruktur ke konten dokumen. Catatan ini dapat memberikan konteks tambahan, penjelasan, atau referensi ke bagian konten tertentu.
+### Apakah Aspose.PDF untuk .NET gratis?
+Meskipun menawarkan uji coba gratis, Aspose.PDF adalah produk komersial; harganya bervariasi berdasarkan penggunaan dan fitur yang dibutuhkan.
 
-#### T: Bagaimana pustaka Aspose.PDF membantu dalam membuat elemen struktur catatan dalam dokumen PDF?
+### Bisakah saya membuat jenis elemen lain dengan Aspose.PDF?
+Ya! Aspose.PDF mendukung berbagai elemen seperti gambar, tabel, dan hyperlink untuk memperkaya dokumen Anda.
 
-J: Aspose.PDF untuk .NET adalah pustaka canggih yang menyediakan fungsionalitas untuk membuat, memanipulasi, dan mengonversi dokumen PDF secara terprogram. Dalam tutorial ini, fitur struktur konten bertanda pustaka digunakan untuk membuat elemen catatan terstruktur dalam konten dokumen PDF.
+### Apa itu kepatuhan PDF/UA?
+Kepatuhan PDF/UA memastikan bahwa PDF dapat diakses oleh individu penyandang disabilitas, selaras dengan standar global.
 
-#### T: Apa saja prasyarat untuk membuat elemen struktur catatan dalam dokumen PDF menggunakan Aspose.PDF for .NET?
-
-A: Sebelum memulai, pastikan Anda telah menginstal Visual Studio dengan kerangka kerja .NET dan memiliki pustaka Aspose.PDF untuk .NET yang dirujuk dalam proyek Anda.
-
-#### T: Bagaimana kode C# yang disediakan membuat elemen struktur catatan dalam konten dokumen PDF?
-
-A: Kode ini menunjukkan cara membuat dokumen PDF, menentukan elemen terstruktur catatan, dan menambahkannya ke paragraf. Setiap catatan dibuat menggunakan metode yang disediakan oleh Aspose.PDF, yang memungkinkan Anda untuk memasukkan catatan terstruktur ke dalam konten.
-
-#### T: Dapatkah saya menyesuaikan konten dan properti elemen struktur catatan yang saya buat?
-
-A: Ya, Anda dapat menyesuaikan konten dan properti elemen struktur catatan dengan menggunakan metode dan properti yang disediakan oleh pustaka Aspose.PDF. Kode tersebut menunjukkan cara mengatur teks dan ID elemen catatan, tetapi Anda dapat menyesuaikannya lebih lanjut sesuai kebutuhan.
-
-#### T: Bagaimana hubungan hierarkis dibangun antara elemen struktur catatan dan konten dokumen?
-
- A: Hubungan hierarkis dibuat dengan menambahkan elemen struktur catatan sebagai anak dari elemen terstruktur lainnya, seperti paragraf. Dalam kode, elemen catatan ditambahkan ke elemen paragraf menggunakan`AppendChild` metode.
-
-#### T: Dapatkah saya menetapkan ID unik untuk elemen struktur catatan?
-
- A: Ya, Anda dapat menetapkan ID unik untuk elemen struktur catatan menggunakan`SetId` metode. Kode ini menunjukkan cara mengatur ID elemen catatan ke nilai yang unik.
-
-#### T: Apa yang terjadi jika saya mencoba menetapkan ID duplikat ke elemen struktur catatan?
-
-A: Mencoba menetapkan ID duplikat ke elemen struktur catatan akan mengakibatkan pengecualian. Kode yang diberikan dalam tutorial menyertakan komentar yang mengilustrasikan skenario ini.
-
-#### T: Bagaimana saya dapat memastikan kepatuhan PDF/UA saat membuat elemen struktur catatan?
-
-A: Kode yang diberikan dalam tutorial menunjukkan cara memvalidasi kepatuhan PDF/UA menggunakan`Validate` metode. Dengan memvalidasi dokumen terhadap standar PDF/UA, Anda dapat memastikan bahwa elemen struktur catatan yang ditambahkan mematuhi pedoman aksesibilitas.
-
-#### T: Dapatkah saya menggunakan pendekatan ini untuk menambahkan elemen struktur catatan ke dokumen PDF yang ada?
-
-A: Ya, Anda dapat mengubah pendekatan yang diberikan untuk menambahkan elemen struktur catatan ke dokumen PDF yang sudah ada. Daripada membuat dokumen baru, Anda akan memuat dokumen yang sudah ada menggunakan Aspose.PDF lalu ikuti langkah-langkah serupa untuk menambahkan elemen catatan.
+### Di mana saya bisa mendapatkan dukungan untuk Aspose.PDF?
+ Untuk dukungan, kunjungi[Forum Aspose](https://forum.aspose.com/c/pdf/10) tempat Anda dapat mengajukan pertanyaan dan berbagi pengalaman.

@@ -2,192 +2,154 @@
 title: Tambahkan Batas Teks Dalam File PDF
 linktitle: Tambahkan Batas Teks Dalam File PDF
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Pelajari cara menambahkan batas teks dalam berkas PDF menggunakan Aspose.PDF untuk .NET.
+description: Pelajari cara menambahkan bingkai teks dalam file PDF menggunakan Aspose.PDF for .NET dengan panduan langkah demi langkah ini. Sempurnakan dokumen PDF Anda.
 type: docs
 weight: 70
 url: /id/net/programming-with-text/add-text-border/
 ---
-Tutorial ini akan memandu Anda melalui proses penambahan batas teks dalam file PDF menggunakan Aspose.PDF untuk .NET. Kode sumber C# yang disediakan menunjukkan langkah-langkah yang diperlukan.
+## Perkenalan
 
-## Persyaratan
-Sebelum memulai, pastikan Anda memiliki hal berikut:
+Membuat dan memanipulasi dokumen PDF telah menjadi keterampilan penting di dunia digital saat ini. Baik Anda membuat laporan, faktur, atau jenis dokumentasi lainnya, memiliki kendali atas tampilan teks dapat membuat perbedaan yang signifikan. Salah satu peningkatan yang mungkin ingin Anda terapkan adalah menambahkan bingkai di sekeliling teks dalam file PDF. Dalam panduan ini, kami akan memandu Anda melalui langkah-langkah untuk menambahkan bingkai teks dalam file PDF menggunakan pustaka Aspose.PDF untuk .NET. Jadi, mari kita langsung mulai!
 
-- Visual Studio atau kompiler C# lainnya terinstal di komputer Anda.
-- Aspose.PDF untuk pustaka .NET. Anda dapat mengunduhnya dari situs web resmi Aspose atau menggunakan pengelola paket seperti NuGet untuk menginstalnya.
+## Prasyarat
 
-## Langkah 1: Siapkan proyek
-1. Buat proyek C# baru di lingkungan pengembangan pilihan Anda.
-2. Tambahkan referensi ke pustaka Aspose.PDF untuk .NET.
+Sebelum kita mulai, ada beberapa hal yang perlu Anda persiapkan. Jangan khawatir, ini cukup mudah!
 
-## Langkah 2: Impor namespace yang diperlukan
-Pada berkas kode tempat Anda ingin menambahkan batas teks, tambahkan perintah using berikut di bagian atas berkas:
+1. Visual Studio: Pastikan Anda telah menginstal Visual Studio di komputer Anda. Ini akan menjadi lingkungan pengembangan tempat Anda menulis dan menjalankan kode.
+2.  Aspose.PDF untuk .NET: Anda perlu mengunduh dan memasang pustaka Aspose.PDF. Anda bisa mendapatkannya dari[Halaman unduhan Aspose PDF untuk .NET](https://releases.aspose.com/pdf/net/) Jika Anda ingin mencobanya terlebih dahulu, Anda juga bisa mendapatkan[uji coba gratis di sini](https://releases.aspose.com/).
+3. Pengetahuan Dasar C#: Pemahaman mendasar tentang bahasa pemrograman C# akan membantu Anda mengikuti contoh-contoh dengan mudah.
+4. .NET Framework: Pastikan Anda telah menginstal dan menyiapkan .NET Framework di proyek Anda.
+
+Setelah Anda memiliki prasyarat ini, Anda siap untuk mulai membuat kode!
+
+## Paket Impor
+
+Setelah semuanya siap, mari impor paket yang diperlukan untuk menggunakan Aspose.PDF dalam proyek kita. Anda dapat melakukannya dengan menambahkan perintah berikut di bagian atas file C# Anda:
 
 ```csharp
-using Aspose.Pdf;
 using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
 ```
 
-## Langkah 3: Mengatur direktori dokumen
- Dalam kode, temukan baris yang bertuliskan`string dataDir = "YOUR DOCUMENT DIRECTORY";` dan mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur ke direktori tempat dokumen Anda disimpan.
+Ruang nama ini akan memungkinkan Anda bekerja dengan dokumen PDF dan fragmen teks secara efektif. 
 
-## Langkah 4: Buat objek Dokumen baru
- Membuat instance baru`Document` objek dengan menambahkan baris kode berikut:
+Sekarang, mari kita uraikan proses penambahan bingkai teks ke dalam beberapa langkah terperinci. Kita akan membahas setiap langkahnya sehingga Anda dapat memahami dengan tepat apa yang terjadi di balik layar.
 
-```csharp
-Document pdfDocument = new Document();
-```
+## Langkah 1: Siapkan Dokumen
 
-## Langkah 5: Tambahkan halaman ke dokumen
- Tambahkan halaman baru ke dokumen dengan menggunakan`Add` metode dari`Pages` koleksi. Dalam kode yang diberikan, halaman baru ditetapkan ke variabel`pdfPage`.
+Pertama-tama, kita perlu membuat dokumen PDF baru. Di sinilah semua keajaiban kita akan terjadi.
 
-```csharp
-Page pdfPage = (Page)pdfDocument.Pages.Add();
-```
-
-## Langkah 6: Buat TextFragment
- Membuat sebuah`TextFragment`objek dan berikan teks yang diinginkan. Atur posisi fragmen teks menggunakan`Position` properti. Dalam kode yang diberikan, teks diatur ke "teks utama" dan diposisikan pada (100, 600) di halaman.
-
-```csharp
-TextFragment textFragment = new TextFragment("main text");
-textFragment.Position = new Position(100, 600);
-```
-
-## Langkah 7: Mengatur properti teks
-Sesuaikan properti teks seperti ukuran font, jenis font, warna latar belakang, warna latar depan, dll. Dalam kode yang diberikan, properti seperti ukuran font, font, warna latar belakang, warna latar depan, dan warna goresan ditetapkan untuk fragmen teks.
-
-```csharp
-textFragment.TextState.FontSize = 12;
-textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
-```
-
-## Langkah 8: Aktifkan batas teks
- Untuk mengaktifkan batas teks, atur`DrawTextRectangleBorder` properti dari fragmen teks`TextState` ke`true`.
-
-```csharp
-textFragment.TextState.DrawTextRectangleBorder = true;
-```
-
-## Langkah 9: Tambahkan TextFragment ke halaman
- Gunakan`TextBuilder` kelas untuk menambahkan`TextFragment` keberatan terhadap halaman tersebut.
-
-```csharp
-TextBuilder tb = new TextBuilder(pdfPage);
-tb.AppendText(textFragment);
-```
-
-## Langkah 10: Simpan dokumen PDF
- Simpan dokumen PDF menggunakan`Save` metode dari`Document` objek. Tentukan jalur file keluaran yang Anda tetapkan pada Langkah 3.
-
-```csharp
-pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
-```
-
-### Contoh kode sumber untuk Menambahkan Batas Teks menggunakan Aspose.PDF untuk .NET 
 ```csharp
 // Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Buat objek dokumen baru
 Document pdfDocument = new Document();
+```
+
+ Pada langkah ini, kita tentukan direktori tempat kita ingin menyimpan file PDF kita. Kemudian kita buat instance baru dari`Document` kelas, yang mewakili dokumen PDF kita.
+
+## Langkah 2: Tambahkan Halaman Baru
+
+Selanjutnya, kita perlu menambahkan halaman ke dokumen kita. Anggap saja ini seperti menambahkan kanvas kosong tempat kita akan meletakkan teks.
+
+```csharp
 // Dapatkan halaman tertentu
 Page pdfPage = (Page)pdfDocument.Pages.Add();
+```
+
+ Di sini, kami menyebutnya`Add()` metode pada`Pages` koleksi kami`pdfDocument` objek. Ini menambahkan halaman baru ke dokumen, dan kami menyimpan referensi ke sana di`pdfPage` variabel.
+
+## Langkah 3: Buat Fragmen Teks
+
+Sekarang, mari kita buat teks yang ingin kita tampilkan dalam PDF kita. Di sinilah kita mendefinisikan konten fragmen teks kita.
+
+```csharp
 // Buat fragmen teks
 TextFragment textFragment = new TextFragment("main text");
 textFragment.Position = new Position(100, 600);
+```
+
+ Dalam kode ini, kita membuat yang baru`TextFragment` objek dengan teks "teks utama". Kami juga mengatur posisinya di halaman menggunakan`Position` kelas. Koordinat (100, 600) menentukan di mana teks akan ditempatkan pada halaman.
+
+## Langkah 4: Mengatur Properti Teks
+
+Selanjutnya, kita akan menyesuaikan fragmen teks kita agar menarik secara visual. Ini termasuk pengaturan ukuran font, jenis font, warna latar belakang, dan warna latar depan.
+
+```csharp
 // Mengatur properti teks
 textFragment.TextState.FontSize = 12;
 textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
+```
+
+Di sini, kami menetapkan ukuran font menjadi 12, menggunakan "Times New Roman" sebagai font, dan menerapkan warna latar belakang abu-abu muda dengan teks merah. Properti ini membantu meningkatkan visibilitas teks.
+
+## Langkah 5: Mengatur Warna Goresan untuk Perbatasan
+
+Sekarang, kita sampai pada bagian yang menarik—menambahkan bingkai pada teks kita!
+
+```csharp
 // Atur properti StrokingColor untuk menggambar batas (stroking) di sekitar persegi panjang teks
 textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
+```
+
+Pada langkah ini, kita tentukan warna batas yang ingin kita buat di sekeliling teks. Di sini, kita pilih warna merah tua.
+
+## Langkah 6: Aktifkan Batas Persegi Panjang Teks
+
+ Untuk benar-benar menggambar batas di sekitar teks kita, kita perlu mengaktifkan`DrawTextRectangleBorder` milik.
+
+```csharp
 // Tetapkan nilai properti DrawTextRectangleBorder ke true
 textFragment.TextState.DrawTextRectangleBorder = true;
+```
+
+ Dengan mengatur properti ini ke`true`, kami memberi tahu Aspose.PDF untuk menggambar batas di sekitar persegi panjang teks berdasarkan warna goresan yang ditentukan.
+
+## Langkah 7: Tambahkan Fragmen Teks ke Halaman
+
+Sekarang setelah fragmen teks kita siap dengan semua properti yang ditetapkan, saatnya untuk menambahkannya ke halaman.
+
+```csharp
 TextBuilder tb = new TextBuilder(pdfPage);
 tb.AppendText(textFragment);
+```
+
+ Di sini, kita membuat`TextBuilder` objek yang terkait dengan kita`pdfPage` Kemudian kami menggunakan`AppendText` metode untuk menambahkan kita`textFragment` ke halaman. 
+
+## Langkah 8: Simpan Dokumen
+
+Terakhir, kita perlu menyimpan dokumen PDF kita ke direktori yang ditentukan. Inilah saatnya untuk menentukan kebenaran!
+
+```csharp
 // Simpan dokumen
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
+Pada langkah ini, kita memanggil`Save` metode pada kami`pdfDocument` objek, yang menyediakan jalur tempat kita ingin menyimpan file. Setelah menjalankan kode, Anda akan menemukan PDF yang baru Anda buat dengan bingkai teks di direktori yang ditentukan!
+
 ## Kesimpulan
-Anda telah berhasil menambahkan bingkai teks ke dokumen PDF Anda menggunakan Aspose.PDF untuk .NET. File PDF yang dihasilkan kini dapat ditemukan di jalur file keluaran yang ditentukan.
 
-### Pertanyaan yang Sering Diajukan
+Nah, itu dia! Anda telah berhasil menambahkan bingkai teks ke berkas PDF menggunakan Aspose.PDF for .NET. Fitur sederhana namun hebat ini dapat meningkatkan keterbacaan dan estetika dokumen PDF Anda secara signifikan. Baik Anda membuat laporan, brosur, atau jenis dokumentasi lainnya, mengetahui cara memanipulasi format teks dapat berguna.
 
-#### T: Apa fokus utama tutorial ini?
+## Pertanyaan yang Sering Diajukan
 
-J: Tutorial ini memandu Anda melalui proses penambahan batas teks ke berkas PDF menggunakan pustaka Aspose.PDF for .NET. Kode sumber C# yang disediakan menunjukkan langkah-langkah yang diperlukan untuk mencapainya.
+### Apa itu Aspose.PDF untuk .NET?
+Aspose.PDF untuk .NET adalah pustaka hebat yang memungkinkan pengembang untuk membuat, memanipulasi, dan memproses dokumen PDF secara terprogram menggunakan kerangka kerja .NET.
 
-#### T: Namespace mana yang perlu saya impor untuk tutorial ini?
+### Dapatkah saya mencoba Aspose.PDF secara gratis?
+ Ya! Aspose menawarkan[uji coba gratis](https://releases.aspose.com/) perpustakaan PDF mereka, yang memungkinkan Anda menguji fitur-fiturnya sebelum melakukan pembelian.
 
-A: Pada berkas kode tempat Anda ingin menambahkan batas teks, impor namespace berikut di awal berkas:
+### Bagaimana cara membeli Aspose.PDF untuk .NET?
+ Anda dapat membeli Aspose.PDF untuk .NET langsung dari mereka[halaman pembelian](https://purchase.aspose.com/buy).
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
+### Apakah ada dukungan yang tersedia untuk Aspose.PDF?
+ Tentu saja! Anda bisa mendapatkan dukungan dengan mengunjungi[Forum dukungan Aspose](https://forum.aspose.com/c/pdf/10).
 
-#### T: Bagaimana cara menentukan direktori dokumen?
-
- A: Pada kode tersebut, temukan baris`string dataDir = "YOUR DOCUMENT DIRECTORY";` dan mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya ke direktori dokumen Anda.
-
-#### T: Bagaimana cara membuat objek Dokumen?
-
- A: Pada Langkah 4, Anda akan membuat instance baru`Document` objek menggunakan baris kode berikut:
-
-```csharp
-Document pdfDocument = new Document();
-```
-
-#### T: Bagaimana cara menambahkan halaman ke dokumen?
-
- A: Pada Langkah 5, Anda akan menambahkan halaman baru ke dokumen menggunakan`Add` metode dari`Pages` koleksi:
-
-```csharp
-Page pdfPage = (Page)pdfDocument.Pages.Add();
-```
-
-#### T: Bagaimana cara membuat TextFragment dan mengatur posisinya?
-
- A: Pada Langkah 6, Anda akan membuat`TextFragment` objek dan mengatur posisinya di halaman menggunakan`Position` milik:
-
-```csharp
-TextFragment textFragment = new TextFragment("main text");
-textFragment.Position = new Position(100, 600);
-```
-
-#### T: Bagaimana cara menyesuaikan properti teks, termasuk batas teks?
-
-A: Pada Langkah 7, Anda akan menyesuaikan berbagai properti teks seperti ukuran font, jenis font, warna latar belakang, warna latar depan, dan batas teks:
-
-```csharp
-textFragment.TextState.FontSize = 12;
-textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
-textFragment.TextState.DrawTextRectangleBorder = true;
-```
-
-#### T: Bagaimana cara menambahkan TextFragment ke dokumen PDF?
-
- A: Pada Langkah 9, Anda akan menggunakan`TextBuilder` kelas untuk menambahkan`TextFragment` keberatan terhadap halaman:
-
-```csharp
-TextBuilder tb = new TextBuilder(pdfPage);
-tb.AppendText(textFragment);
-```
-
-#### T: Bagaimana cara menyimpan dokumen PDF yang dihasilkan?
-
-A: Setelah menambahkan teks dengan batas, gunakan`Save` metode dari`Document` objek untuk menyimpan dokumen PDF:
-
-```csharp
-pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
-```
-
-#### T: Apa hasil utama dari tutorial ini?
-
-J: Dengan mengikuti tutorial ini, Anda telah berhasil mempelajari cara menyempurnakan dokumen PDF Anda dengan menambahkan bingkai teks menggunakan Aspose.PDF untuk .NET. Ini dapat sangat berguna untuk menekankan konten teks tertentu dalam file PDF Anda.
+### Bagaimana jika saya memerlukan lisensi sementara?
+ Aspose menyediakan[lisensi sementara](https://purchase.aspose.com/temporary-license/) pilihan bagi pengembang yang perlu mengevaluasi pustaka untuk waktu terbatas.

@@ -85,7 +85,7 @@ Na koniec uruchom program w swoim IDE. Jeśli wszystko jest poprawnie skonfiguro
 
 ## Wniosek
 
-masz to! Właśnie nauczyłeś się, jak wyodrębnić wartości z pól formularza w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Ten proces może być niezwykle przydatny w wielu aplikacjach, od automatyzacji wyodrębniania danych po budowanie kompleksowych systemów przetwarzania formularzy. Niezależnie od tego, czy pracujesz nad małym projektem, czy dużym rozwiązaniem korporacyjnym, te kroki pomogą Ci bezproblemowo zintegrować wyodrębnianie danych PDF z Twoim przepływem pracy.
+masz to! Właśnie nauczyłeś się, jak wyodrębnić wartości z pól formularza w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Ten proces może być niezwykle przydatny w wielu aplikacjach, od automatyzacji wyodrębniania danych po tworzenie kompleksowych systemów przetwarzania formularzy. Niezależnie od tego, czy pracujesz nad małym projektem, czy dużym rozwiązaniem korporacyjnym, te kroki pomogą Ci bezproblemowo zintegrować wyodrębnianie danych PDF z Twoim przepływem pracy.
 
 ## Najczęściej zadawane pytania
 

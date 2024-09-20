@@ -21,11 +21,11 @@ Zorg ervoor dat u een .NET-ontwikkelomgeving hebt ingesteld. Dit kan Visual Stud
 
 ### Aspose.PDF voor .NET-bibliotheek
 
-Volgende op onze checklist is de Aspose.PDF voor .NET-bibliotheek. U kunt deze eenvoudig downloaden van de website. Met deze bibliotheek kunt u op verschillende manieren met PDF-documenten werken, waaronder het converteren van verschillende bestandsformaten naar PDF. Hier kunt u deze vinden:
+Volgende op onze checklist is de Aspose.PDF voor .NET-bibliotheek. U kunt deze eenvoudig downloaden van de website. Met deze bibliotheek kunt u op verschillende manieren met PDF-documenten werken, waaronder het converteren van verschillende bestandsformaten naar PDF. Hier kunt u deze krijgen:
 
 ### Basiskennis van C#
 
-Tot slot helpt een basiskennis van C# u bij het navigeren door de codefragmenten die we gaan gebruiken. Als u niet zo bekend bent met C#, maak u dan geen zorgen; de code is eenvoudig en ik zal elke stap uitleggen.
+Tot slot helpt een basiskennis van C# u door de codefragmenten te navigeren die we gaan gebruiken. Als u niet zo bekend bent met C#, maak u dan geen zorgen; de code is eenvoudig en ik zal elke stap uitleggen.
 
 Klaar om te beginnen? Laten we de vereiste pakketten importeren!
 

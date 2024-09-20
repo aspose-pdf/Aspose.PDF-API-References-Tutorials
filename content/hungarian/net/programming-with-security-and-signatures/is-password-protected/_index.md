@@ -9,7 +9,7 @@ url: /hu/net/programming-with-security-and-signatures/is-password-protected/
 ---
 ## Bevezetés
 
-A digitális korban a PDF-fájlok a dokumentumok megosztásának és tárolásának alapvető elemeivé váltak. Sok felhasználó azonban gyakran találkozik jelszóval védett PDF-ekkel, ami gondot okozhat, ha gyorsan kell hozzáférnie a tartalomhoz. Függetlenül attól, hogy Ön fejlesztő, aki PDF-funkciókat szeretne integrálni az alkalmazásába, vagy egyszerűen csak kíváncsi felhasználó, aki többet szeretne megtudni a PDF biztonságáról, ez az útmutató az Ön számára készült. 
+A digitális korszakban a PDF-fájlok a dokumentumok megosztásának és tárolásának alapvető elemeivé váltak. Sok felhasználó azonban gyakran találkozik jelszóval védett PDF-ekkel, ami gondot okozhat, ha gyorsan kell hozzáférnie a tartalomhoz. Függetlenül attól, hogy Ön fejlesztő, aki PDF-funkciókat szeretne integrálni az alkalmazásába, vagy egyszerűen csak kíváncsi felhasználó, aki többet szeretne megtudni a PDF biztonságáról, ez az útmutató az Ön számára készült. 
 
 Ebben a cikkben megvizsgáljuk, hogyan ellenőrizhető, hogy egy PDF-fájl jelszóval védett-e az Aspose.PDF for .NET segítségével, amely egy hatékony könyvtár, amely leegyszerűsíti a PDF-kezelést. A folyamatot kezelhető lépésekre bontjuk, így biztosítva, hogy az egyes részeket világosan megértse. Szóval, merüljünk bele!
 
@@ -56,7 +56,7 @@ Most már készen áll a kódolás megkezdésére!
 
 Most, hogy beállította a környezetet és importálta a szükséges csomagokat, merüljön el a tényleges kódban, és ellenőrizze, hogy egy PDF-fájl jelszóval védett-e.
 
-## 1. lépés: Határozza meg a könyvtár elérési útját
+## 1. lépés: Határozza meg a címtár elérési útját
 
 Először is meg kell adnia annak a könyvtárnak az elérési útját, ahol a PDF-fájl található. Ez döntő fontosságú, mert megmondja a programnak, hogy hol keresse a fájlt.
 

@@ -2,186 +2,147 @@
 title: Tentukan Spasi Baris Dalam File PDF
 linktitle: Tentukan Spasi Baris Dalam File PDF
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Pelajari cara menentukan spasi baris dalam berkas PDF menggunakan Aspose.PDF untuk .NET.
+description: Pelajari cara menentukan spasi baris dalam PDF menggunakan Aspose.PDF untuk .NET dengan panduan langkah demi langkah ini. Sempurna bagi pengembang yang menginginkan format teks yang tepat.
 type: docs
 weight: 510
 url: /id/net/programming-with-text/specify-line-spacing/
 ---
-Tutorial ini menjelaskan cara menentukan spasi baris dalam file PDF menggunakan Aspose.PDF untuk .NET. Kode sumber C# yang disediakan menunjukkan proses tersebut langkah demi langkah.
+## Perkenalan
+
+Pernahkah Anda kesulitan mengendalikan spasi baris dalam berkas PDF? Mungkin teks Anda terlihat terlalu padat atau tidak terlihat rapi seperti yang Anda inginkan. Dalam tutorial ini, kami akan membahas cara mudah menentukan spasi baris dalam PDF menggunakan Aspose.PDF for .NET. Kami akan menggunakan panduan langkah demi langkah yang sederhana untuk mengubah PDF kosong menjadi PDF yang menyertakan spasi baris khusus. Ini sangat cocok jika Anda membutuhkan ketepatan dalam tata letak teks untuk dokumen seperti laporan, faktur, atau sertifikat.
 
 ## Prasyarat
 
-Sebelum melanjutkan tutorial, pastikan Anda memiliki hal berikut:
+Sebelum kita masuk ke kode, mari pastikan Anda sudah memiliki semua yang dibutuhkan:
 
-- Pengetahuan dasar tentang bahasa pemrograman C#.
-- Pustaka Aspose.PDF untuk .NET telah terinstal. Anda dapat memperolehnya dari situs web Aspose atau menggunakan NuGet untuk menginstalnya di proyek Anda.
+1.  Aspose.PDF untuk .NET terinstal. Jika Anda belum memilikinya, ambil dari[Halaman unduhan Aspose.PDF](https://releases.aspose.com/pdf/net/).
+2. Lingkungan pengembangan .NET (seperti Visual Studio).
+3. File font TrueType (`.ttf` ) yang akan kita gunakan dalam contoh. Anda dapat menggunakan font apa saja, tetapi untuk panduan ini, kita akan menggunakan`HPSimplified.TTF` jenis huruf.
+4. Pengetahuan dasar tentang C# dan manipulasi PDF.
 
-## Langkah 1: Siapkan proyek
+Jika Anda siap, mari lanjutkan mengimpor paket yang diperlukan.
 
-Mulailah dengan membuat proyek C# baru di lingkungan pengembangan terintegrasi (IDE) pilihan Anda dan tambahkan referensi ke pustaka Aspose.PDF untuk .NET.
+## Paket Impor
 
-## Langkah 2: Impor namespace yang diperlukan
-
-Tambahkan perintah berikut di awal file C# Anda untuk mengimpor namespace yang diperlukan:
+Dalam proyek C# Anda, Anda perlu mengimpor namespace Aspose.PDF agar dapat bekerja dengan fungsi PDF. Berikut cara melakukannya:
 
 ```csharp
-using Aspose.Pdf;
 using Aspose.Pdf.Text;
 using System.IO;
 ```
 
-## Langkah 3: Tetapkan jalur ke direktori dokumen
+Ruang nama ini memungkinkan Anda membuat dan memanipulasi dokumen PDF, serta bekerja dengan format teks dan opsi font.
 
- Atur jalur ke direktori dokumen Anda menggunakan`dataDir` variabel:
+Kami akan membaginya menjadi beberapa langkah kecil, sehingga Anda dapat mengikutinya dengan mudah. Setiap langkah akan berfokus pada bagian penting dari proses, mulai dari menyiapkan PDF hingga menentukan spasi baris.
+
+## Langkah 1: Siapkan Proyek Anda dan Tentukan Direktori Dokumen
+
+Hal pertama yang perlu kita lakukan adalah menentukan di mana file kita berada. Ini membantu program mengetahui di mana menemukan font dan di mana menyimpan PDF yang dihasilkan.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+string fontFile = dataDir + "HPSimplified.TTF";
 ```
 
- Mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya ke direktori dokumen Anda.
+ Pada langkah ini, Anda akan mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya tempat Anda menyimpan file Anda. Ini akan menjadi tempat Anda meletakkan file font Anda (`HPSimplified.TTF`) dan tempat PDF akan disimpan.
 
-## Langkah 4: Muat file PDF masukan
+## Langkah 2: Muat Dokumen PDF
 
- Muat file PDF masukan menggunakan`Document` kelas:
+Sekarang, kita perlu membuat dokumen PDF baru. Untuk panduan ini, kita akan mulai dengan dokumen kosong, tetapi Anda juga dapat memuat PDF yang sudah ada jika diperlukan.
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Langkah 5: Buat TextFormattingOptions
+Ini akan menciptakan dokumen PDF baru yang kosong. Mudah, bukan?
 
- Membuat sebuah`TextFormattingOptions` objek dan atur mode spasi baris ke`FullSize`:
+## Langkah 3: Mengatur Opsi Pemformatan Teks
+
+ Di sinilah keajaiban terjadi. Kita akan menentukan mode spasi baris untuk teks yang ingin kita tambahkan ke PDF. Aspose.PDF memberi kita beberapa opsi, tetapi dalam panduan ini, kita akan menggunakan`LineSpacingMode.FullSize`, yang memastikan bahwa spasi baris dipatuhi sepenuhnya.
 
 ```csharp
 TextFormattingOptions formattingOptions = new TextFormattingOptions();
 formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 ```
 
-## Langkah 6: Buat TextFragment
+ Kode ini mengatur mode spasi baris ke`FullSize` , memastikan bahwa teks akan ditampilkan dengan spasi yang tepat. Ada pilihan lain seperti`Proportional` jika Anda menginginkan perilaku spasi yang berbeda, tetapi untuk saat ini, mari kita tetap menggunakan`FullSize`.
 
- Membuat sebuah`TextFragment` objek dan tentukan konten teks:
+## Langkah 4: Buat Fragmen Teks
+
+Sekarang, kita akan membuat teks yang akan ditempatkan di PDF. Teks ini akan mengikuti spasi baris yang telah kita tentukan.
 
 ```csharp
 TextFragment textFragment = new TextFragment("Hello world");
 ```
 
-## Langkah 7: Muat file font (opsional)
+ Kami telah membuat fragmen teks dengan string`"Hello world"`Tentu saja, Anda dapat menyesuaikan teks ini dengan apa pun yang Anda suka.
 
- Jika Anda ingin menggunakan font tertentu untuk teks, muat file font TrueType ke dalam`FileStream` obyek:
+## Langkah 5: Memuat dan Menerapkan Font Kustom
+
+Untuk membuat teks menonjol, kita akan memuat font TrueType khusus dari sebuah file. Langkah ini bersifat opsional, tetapi dapat menambahkan sentuhan profesional ke PDF Anda.
 
 ```csharp
-string fontFile = dataDir + "HPSimplified.TTF";
-using (FileStream fontStream = File.OpenRead(fontFile))
+if (fontFile != "")
 {
-    textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-}
+    using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
+    {
+        textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
 ```
 
- Mengganti`"HPSimplified.TTF"` dengan nama berkas font sebenarnya.
+Di sini, kita memuat berkas font dan menerapkannya pada fragmen teks. Jika jalur berkas valid, font akan digunakan. Jika tidak, font default akan diterapkan.
 
-## Langkah 8: Tentukan posisi teks dan spasi baris
+## Langkah 6: Mengatur Posisi dan Pemformatan Teks
 
- Atur posisi untuk fragmen teks dan tetapkan`TextFormattingOptions` ke`TextState.FormattingOptions` milik:
+Selanjutnya, kita perlu memposisikan teks pada PDF. Kita juga akan menerapkan opsi pemformatan yang telah kita buat sebelumnya.
 
 ```csharp
 textFragment.Position = new Position(100, 600);
 textFragment.TextState.FormattingOptions = formattingOptions;
 ```
 
-## Langkah 9: Tambahkan teks ke dokumen
+ Itu`Position` metode menetapkan koordinat tempat teks akan muncul di halaman (dalam kasus ini, 100 unit dari kiri dan 600 unit dari bawah). Opsi pemformatan, termasuk mode spasi baris, diterapkan di sini.
 
- Tambahkan fragmen teks ke dokumen, baik dengan menambahkannya ke`TextBuilder` atau langsung ke halaman`Paragraphs` koleksi:
+## Langkah 7: Tambahkan Teks ke Halaman PDF
+
+Sekarang teks kita telah diformat dan diposisikan, saatnya menambahkannya ke dokumen PDF.
 
 ```csharp
 var page = doc.Pages.Add();
 page.Paragraphs.Add(textFragment);
 ```
 
-## Langkah 10: Simpan dokumen PDF yang dihasilkan
+Kode ini membuat halaman baru dalam dokumen PDF dan menambahkan fragmen teks ke dalamnya.
 
-Simpan dokumen PDF yang dimodifikasi:
+## Langkah 8: Simpan PDF
+
+Kita telah mencapai langkah terakhir! Sekarang semuanya telah diatur, mari simpan PDF tersebut.
 
 ```csharp
 dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
 doc.Save(dataDir);
 ```
 
- Pastikan untuk mengganti`"SpecifyLineSpacing_out.pdf"` dengan nama file keluaran yang diinginkan.
-
-### Contoh kode sumber untuk Menentukan Spasi Baris menggunakan Aspose.PDF untuk .NET 
-```csharp
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string fontFile = dataDir + "HPSimplified.TTF";
-// Muat file PDF masukan
-Document doc = new Document();
-//Buat TextFormattingOptions dengan LineSpacingMode.FullSize
-TextFormattingOptions formattingOptions = new TextFormattingOptions();
-formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
-// Buat objek pembuat teks untuk halaman pertama dokumen
-//Pembuat Teks textBuilder = new TextBuilder(doc.Halaman[1]);
-// Buat fragmen teks dengan contoh string
-TextFragment textFragment = new TextFragment("Hello world");
-if (fontFile != "")
-{
-	//Muat font TrueType ke objek aliran
-	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
-	{
-		// Mengatur nama font untuk string teks
-		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		// Tentukan posisi untuk Fragmen Teks
-		textFragment.Position = new Position(100, 600);
-		//Tetapkan TextFormattingOptions dari fragmen saat ini ke yang telah ditetapkan sebelumnya (yang menunjuk ke LineSpacingMode.FullSize)
-		textFragment.TextState.FormattingOptions = formattingOptions;
-		// Tambahkan teks ke TextBuilder sehingga dapat ditempatkan di atas file PDF
-		//textBuilder.AppendText(fragmenteks);
-		var page = doc.Pages.Add();
-		page.Paragraphs.Add(textFragment);
-	}
-	dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
-	// Simpan dokumen PDF yang dihasilkan
-	doc.Save(dataDir);
-}
-```
+Ini menyimpan PDF dengan spasi baris yang ditentukan, dan berkas Anda siap!
 
 ## Kesimpulan
 
-Selamat! Anda telah berhasil mempelajari cara menentukan spasi baris dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Tutorial ini menyediakan panduan langkah demi langkah, mulai dari menyiapkan proyek hingga menyimpan dokumen yang dimodifikasi. Kini Anda dapat memasukkan kode ini ke dalam proyek C# Anda sendiri untuk menyesuaikan spasi baris teks dalam file PDF.
+Selesai! Anda baru saja membuat dokumen PDF dengan spasi baris khusus menggunakan Aspose.PDF for .NET. Ini adalah alat hebat yang memungkinkan Anda mengontrol setiap aspek file PDF, dan ini hanyalah salah satu contoh dari apa yang dapat Anda capai. Dari penempatan teks hingga pemformatan, kemungkinannya tidak terbatas.
 
-### Pertanyaan yang Sering Diajukan
+Jika Anda ingin mendalami manipulasi PDF lebih dalam, Aspose.PDF menawarkan banyak fitur untuk dijelajahi. Jangan ragu untuk bereksperimen dan melampaui batas kemampuan Anda dalam mengolah dokumen!
 
-#### T: Apa tujuan dari tutorial "Tentukan Spasi Baris Dalam Berkas PDF"?
+## Pertanyaan yang Sering Diajukan
 
-J: Tutorial "Tentukan Spasi Baris dalam File PDF" bertujuan untuk memandu pengguna tentang cara menggunakan pustaka Aspose.PDF untuk .NET guna menyesuaikan spasi baris teks dalam dokumen PDF. Tutorial ini menyediakan petunjuk langkah demi langkah dan contoh kode C# untuk menunjukkan prosesnya.
+### Bisakah saya menyesuaikan spasi baris pada mode lain?  
+ Ya, Anda dapat menggunakan mode lain seperti`Proportional` atau`Fixed` tergantung kebutuhan Anda.
 
-#### T: Bagaimana tutorial ini membantu dalam menentukan spasi baris dalam dokumen PDF?
+### Bisakah saya memuat font dari sistem dan bukan dari berkas?  
+ Ya, Anda dapat memuat font yang diinstal sistem menggunakan`FontRepository`.
 
-J: Tutorial ini membantu pengguna memahami cara memanfaatkan kemampuan Aspose.PDF for .NET untuk menentukan spasi baris untuk teks dalam dokumen PDF. Dengan mengikuti langkah-langkah dan contoh kode yang diberikan, pengguna dapat menyesuaikan spasi baris sesuai dengan preferensi mereka.
+### Dapatkah saya menggunakan Aspose.PDF untuk .NET dengan format file lain?  
+Tentu saja! Aspose.PDF untuk .NET mendukung berbagai format seperti XML, HTML, dan banyak lagi.
 
-#### T: Prasyarat apa yang diperlukan untuk mengikuti tutorial ini?
+### Apakah saya memerlukan lisensi untuk menggunakan Aspose.PDF untuk .NET?  
+Ya, untuk fungsionalitas penuh, Anda memerlukan lisensi, yang dapat Anda peroleh[Di Sini](https://purchase.aspose.com/buy).
 
-J: Sebelum memulai tutorial ini, Anda harus memiliki pemahaman dasar tentang bahasa pemrograman C#. Selain itu, Anda perlu menginstal pustaka Aspose.PDF for .NET. Anda dapat memperolehnya dari situs web Aspose atau menginstalnya di proyek Anda menggunakan NuGet.
-
-#### T: Bagaimana cara menyiapkan proyek saya untuk mengikuti tutorial ini?
-
-J: Untuk memulai, buat proyek C# baru di lingkungan pengembangan terpadu (IDE) pilihan Anda dan tambahkan referensi ke pustaka Aspose.PDF untuk .NET. Ini memungkinkan Anda memanfaatkan fitur pustaka untuk bekerja dengan dokumen PDF dan menyesuaikan spasi baris.
-
-#### T: Dapatkah saya menggunakan tutorial ini untuk menentukan spasi baris untuk jenis teks apa pun?
-
-A: Ya, tutorial ini menyediakan petunjuk tentang cara menentukan spasi baris untuk konten teks apa pun dalam dokumen PDF menggunakan Aspose.PDF for .NET. Anda dapat menggunakan contoh kode yang disediakan untuk menyesuaikan spasi baris teks sesuai dengan kebutuhan Anda.
-
-#### T: Bagaimana cara menentukan mode spasi baris dalam tutorial?
-
- A: Tutorial ini menunjukkan cara membuat`TextFormattingOptions` objek dan mengaturnya`LineSpacing` properti untuk`TextFormattingOptions.LineSpacingMode.FullSize`Mode ini menentukan spasi baris penuh untuk konten teks.
-
-#### T: Bagaimana cara memuat font tertentu untuk teks?
-
- A: Jika Anda ingin menggunakan font tertentu untuk konten teks, tutorial ini menyediakan panduan tentang cara memuat file font TrueType ke dalam`FileStream` objek dan mengaturnya sebagai font untuk`TextFragment`Ini memungkinkan Anda untuk menyesuaikan jenis huruf teks beserta spasi barisnya.
-
-#### T: Bagaimana cara menyesuaikan posisi teks dalam dokumen PDF?
-
- A: Untuk menyesuaikan posisi teks, buat`TextFragment` objek dan mengaturnya`Position`properti ke koordinat yang diinginkan (X dan Y). Ini memungkinkan Anda untuk mengontrol di mana teks akan ditempatkan dalam dokumen PDF.
-
-#### T: Dapatkah saya menerapkan modifikasi spasi baris ini ke dokumen PDF yang ada?
-
- A: Ya, Anda dapat mengubah spasi baris untuk teks dalam dokumen PDF yang ada. Tutorial ini menunjukkan cara membuat spasi baris.`TextFragment` dengan spasi dan posisi baris yang ditentukan, lalu menambahkannya ke halaman`Paragraphs` koleksi.
+### Bagaimana cara mengatur spasi baris untuk beberapa paragraf?  
+ Anda dapat melamar`TextFormattingOptions` untuk masing-masing`TextFragment` atau`TextParagraph` untuk mengontrol spasi untuk beberapa baris atau paragraf.

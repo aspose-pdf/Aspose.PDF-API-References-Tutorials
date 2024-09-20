@@ -13,7 +13,7 @@ url: /zh-hant/net/programming-with-security-and-signatures/determine-correct-pas
 
 ## 先決條件
 
-在深入學習我們的教程之前，讓我們確保您已具備開始使用所需的一切。 
+在深入學習我們的教程之前，讓我們確保您已具備入門所需的一切。 
 
 ### 軟體和工具
 
@@ -119,7 +119,7 @@ for (int passwordcount = 0; passwordcount < passwords.Length; passwordcount++)
 
 ## 結論
 
-現在你就得到它了！現在您已經了解如何使用 Aspose.PDF for .NET 確定受密碼保護的 PDF 檔案的正確密碼。對於那些經常處理鎖定 PDF 文件的人來說，這種功能簡直就是救星。由於 Aspose.PDF 提供了強大的 API，因此流程非常簡單。無論是專業用途還是個人項目，掌握這項技能都將為您節省時間並減少挫折感。
+現在你就擁有了！現在您已經了解如何使用 Aspose.PDF for .NET 確定受密碼保護的 PDF 檔案的正確密碼。對於那些經常處理鎖定 PDF 文件的人來說，這種功能簡直就是救星。由於 Aspose.PDF 提供了強大的 API，因此流程非常簡單。無論是專業用途還是個人項目，掌握這項技能都將為您節省時間並減少挫折感。
 
 ## 常見問題解答
 

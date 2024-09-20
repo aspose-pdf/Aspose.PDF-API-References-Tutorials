@@ -73,7 +73,7 @@ Jetzt kommt der magische Moment! Lassen Sie uns die Seitenzahl unseres PDF-Dokum
 ```csharp
 int pageCount = pdfDocument.Pages.Count;
 ```
- Mithilfe der`Pages` Eigentum der`Document`Beispielsweise können wir auf die Anzahl der darin enthaltenen Seiten zugreifen. Das ist so einfach wie das Öffnen einer Dose Limonade – mühelos!
+ Mit dem`Pages` Eigentum der`Document`Beispielsweise können wir auf die Anzahl der darin enthaltenen Seiten zugreifen. Das ist so einfach wie das Öffnen einer Dose Limonade – mühelos!
 
 ## Schritt 4: Seitenanzahl anzeigen
 

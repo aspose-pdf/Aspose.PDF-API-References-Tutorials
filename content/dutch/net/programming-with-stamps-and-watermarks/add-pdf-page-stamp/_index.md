@@ -140,7 +140,7 @@ En daar heb je het! Je hebt geleerd hoe je een PDF-paginastempel toevoegt met As
 U kunt tekststempels, afbeeldingsstempels of aangepaste grafische stempels toevoegen aan uw PDF-documenten.
 
 ### Kan ik het uiterlijk van de postzegel aanpassen?  
-Absoluut! Je kunt eigenschappen zoals kleur, rotatie en grootte instellen om het gewenste uiterlijk te bereiken.
+Absoluut! Je kunt eigenschappen zoals kleur, rotatie en grootte instellen om de gewenste look te bereiken.
 
 ### Heb ik speciale software nodig om Aspose.PDF te gebruiken?  
 Nee, het enige dat u nodig hebt is de Aspose.PDF-bibliotheek, het .NET-framework en een geschikte IDE.

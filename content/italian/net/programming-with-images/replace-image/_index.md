@@ -9,7 +9,7 @@ url: /it/net/programming-with-images/replace-image/
 ---
 ## Introduzione
 
-Nell'era digitale odierna, i PDF sono il formato di riferimento per la condivisione di documenti, grazie alla loro portabilità e alla formattazione coerente su diverse piattaforme. Tuttavia, a volte dobbiamo sostituire le immagini all'interno di questi file, sia per aggiornare il marchio o correggere un errore. Immagina di aver ricevuto un PDF pieno di informazioni vitali ma con un logo obsoleto. Non sarebbe fantastico sostituire semplicemente quel logo invece di partire da zero? Questa guida ti guiderà attraverso il processo di sostituzione di un'immagine in un file PDF utilizzando Aspose.PDF per .NET. Tuffiamoci subito!
+Nell'era digitale odierna, i PDF sono il formato di riferimento per la condivisione di documenti, grazie alla loro portabilità e alla formattazione coerente su diverse piattaforme. Tuttavia, a volte dobbiamo sostituire le immagini all'interno di questi file, sia per aggiornare il marchio o correggere un errore. Immagina di aver ricevuto un PDF pieno di informazioni vitali ma con un logo obsoleto. Non sarebbe fantastico sostituire semplicemente quel logo invece di partire da zero? Questa guida ti guiderà attraverso il processo di sostituzione di un'immagine in un file PDF utilizzando Aspose.PDF per .NET. Cominciamo subito!
 
 ## Prerequisiti
 

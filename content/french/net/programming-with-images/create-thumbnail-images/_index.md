@@ -9,7 +9,7 @@ url: /fr/net/programming-with-images/create-thumbnail-images/
 ---
 ## Introduction
 
-Créer des vignettes pour chaque page d'un PDF peut être extrêmement utile pour quiconque souhaite prévisualiser rapidement des documents sans ouvrir le fichier entier. Que vous créiez un système de gestion de documents ou que vous souhaitiez simplement simplifier la navigation dans une collection de PDF, ce processus peut vous faire gagner du temps et améliorer votre expérience utilisateur. Aujourd'hui, nous allons vous expliquer comment utiliser Aspose.PDF pour .NET pour générer automatiquement des vignettes pour chaque page de vos fichiers PDF. Il ne s'agit pas seulement de coder ; il s'agit de vous fournir les outils pour rationaliser votre flux de travail et améliorer l'accessibilité.
+Créer des vignettes pour chaque page d'un PDF peut être extrêmement utile pour quiconque souhaite prévisualiser rapidement des documents sans ouvrir le fichier entier. Que vous construisiez un système de gestion de documents ou que vous souhaitiez simplement simplifier la navigation dans une collection de PDF, ce processus peut vous faire gagner du temps et améliorer votre expérience utilisateur. Aujourd'hui, nous allons vous expliquer comment utiliser Aspose.PDF pour .NET pour générer automatiquement des vignettes pour chaque page de vos fichiers PDF. Il ne s'agit pas seulement de coder ; il s'agit de vous fournir les outils pour rationaliser votre flux de travail et améliorer l'accessibilité.
 
 ## Prérequis
 

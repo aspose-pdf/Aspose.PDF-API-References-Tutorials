@@ -115,7 +115,7 @@ canvas.Shapes.Add(line);
 ```csharp
 dataDir = dataDir + "DashLength_out.pdf";
 
-//儲存PDF文檔
+//儲存 PDF 文件
 doc.Save(dataDir);
 Console.WriteLine("\nLength dashed successfully in black and white.\nFile saved at " + dataDir);
 ```

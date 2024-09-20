@@ -52,7 +52,7 @@ public class PdfToXlsxConverter {
 }
 ```
 
-在上面的程式碼中，我們載入 PDF 文檔，初始化 Excel 儲存選項，然後使用 PdfConverter 類別將 PDF 轉換為 XLSX 文件。確保更換`"input.pdf"`以及您的 PDF 文件的路徑和`"output.xlsx"`與所需的輸出檔案路徑。
+在上面的程式碼中，我們載入一個 PDF 文檔，初始化 Excel 儲存選項，然後使用 PdfConverter 類別將 PDF 轉換為 XLSX 文件。確保更換`"input.pdf"`以及您的 PDF 文件的路徑和`"output.xlsx"`與所需的輸出檔案路徑。
 
 ## 運行轉換
 

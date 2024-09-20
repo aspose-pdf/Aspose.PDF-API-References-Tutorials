@@ -60,7 +60,7 @@ pdfDocument.save("output.pdf");
 //自訂線條屬性
 line.setColor(com.aspose.pdf.Color.getRed());
 line.setLineWidth(2f); //線寬
-line.setDashArray(new float[] { 1, 1 }); //線條樣式（點線）
+line.setDashArray(new float[] { 1, 1 }); //線型（點線）
 ```
 
 您可以隨意調整顏色、厚度和樣式以獲得所需的外觀。

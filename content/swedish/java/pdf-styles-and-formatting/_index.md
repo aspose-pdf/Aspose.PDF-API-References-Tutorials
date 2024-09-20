@@ -24,7 +24,7 @@ den sista delen av vår serie kommer vi att fördjupa oss i avancerade PDF-styli
 
 ## Handledning för PDF-stilar och formatering
 ### [Inline strukturelement i PDF med Java](./inline-structure-elements-in-pdf-using-java/)
-Lär dig hur du implementerar Inline Structure Elements i PDF-dokument med Java med Aspose.PDF för Java. Skapa lättillgängliga och välstrukturerade PDF-filer.
+Lär dig hur du implementerar inline-strukturelement i PDF-dokument med Java med Aspose.PDF för Java. Skapa lättillgängliga och välstrukturerade PDF-filer.
 ### [Rotstruktur i PDF med Java](./root-structure-in-pdf-using-java/)
 Lär dig rotstrukturmanipulation med Aspose.PDF. Skapa, ändra och förbättra PDF-filer.
 ### [Strukturelementegenskaper i PDF med Java](./structure-elements-properties-in-pdf-using-java/)

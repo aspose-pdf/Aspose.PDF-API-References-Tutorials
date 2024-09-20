@@ -18,7 +18,7 @@ url: /zh-hant/java/pdf-page-manipulation/
 
 有時，您需要從 PDF 中提取特定頁面或使用其他內容來增強它們。 Aspose.PDF for Java 為您提供了輕鬆完成這些任務的工具。我們的教學將引導您提取頁面以建立新文件或新增浮水印、頁首和頁尾以增強頁面內容。借助這些技能，您可以自訂 PDF 文件以滿足特定要求，確保它們有效且專業地傳達訊息。
 
-使用 Aspose.PDF 釋放 Java 中 PDF 頁面操作的潛力。無論您是尋求自動化文件處理的開發人員還是尋求簡化 PDF 工作流程的用戶，我們的教學課程都提供了您精通 PDF 頁面操作所需的知識和原始程式碼。
+使用 Aspose.PDF 釋放 Java 中 PDF 頁面操作的潛力。無論您是尋求自動化文件處理的開發人員，還是尋求簡化 PDF 工作流程的用戶，我們的教學課程都提供了您精通 PDF 頁面操作所需的知識和原始程式碼。
 
 ## PDF 頁面操作教學課程
 ### [使用 Java 取得 PDF 超連結目標](./get-pdf-hyperlink-destination-using-java/)

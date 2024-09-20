@@ -7,37 +7,57 @@ type: docs
 weight: 320
 url: /ar/net/programming-with-text/replaceable-symbols-in-header-footer/
 ---
-في هذا البرنامج التعليمي، سنشرح كيفية استخدام الرموز القابلة للاستبدال في رأس وتذييل مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. سنتناول العملية خطوة بخطوة لإنشاء ملف PDF، وتعيين الهوامش، وإضافة رأس وتذييل برموز قابلة للاستبدال، وحفظ ملف PDF باستخدام كود المصدر C# المقدم.
+## مقدمة
+
+عند العمل بملفات PDF، هناك أوقات تحتاج فيها إلى تخصيص الرؤوس والتذييلات بمحتوى ديناميكي مثل أرقام الصفحات أو أسماء التقارير أو التواريخ المولدة. لحسن الحظ، يبسط Aspose.PDF for .NET هذه العملية، مما يسمح لك بإنشاء ملفات PDF برموز محدثة تلقائيًا في الرؤوس والتذييلات، مثل أرقام الصفحات أو تفاصيل إنشاء التقرير. سترشدك هذه المقالة خلال عملية استبدال الرموز في الرؤوس والتذييلات باستخدام Aspose.PDF for .NET خطوة بخطوة، بطريقة ليست بسيطة فحسب، بل إنها أيضًا فعالة بشكل لا يصدق.
 
 ## المتطلبات الأساسية
 
-قبل أن تبدأ، تأكد من أن لديك ما يلي:
+قبل الغوص في الدليل خطوة بخطوة، تأكد من أن لديك ما يلي:
 
-- تم تثبيت مكتبة Aspose.PDF لـ .NET.
-- فهم أساسي لبرمجة C#.
+-  مكتبة Aspose.PDF لـ .NET –[تحميل](https://releases.aspose.com/pdf/net/) أو الحصول على[نسخة تجريبية مجانية](https://releases.aspose.com/).
+- Visual Studio أو أي C# IDE مثبت على نظامك.
+- المعرفة الأساسية بتطوير C# و.NET.
+-  صالحة[رخصة](https://purchase.aspose.com/temporary-license/) بالنسبة لـ Aspose.PDF، أو يمكنك استخدام الإصدار التجريبي.
 
-## الخطوة 1: إعداد دليل المستندات
+## استيراد الحزم
 
- أولاً، تحتاج إلى تعيين المسار إلى الدليل الذي تريد حفظ ملف PDF الناتج فيه. استبدل`"YOUR DOCUMENT DIRECTORY"` في`dataDir` متغير يحتوي على المسار إلى الدليل المطلوب.
+للبدء، تحتاج إلى استيراد مساحات الأسماء الضرورية التي ستمكن من وظيفة Aspose.PDF لـ .NET. فيما يلي الاستيراد الضروري:
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System;
 ```
 
-## الخطوة 2: إنشاء مستند وصفحة PDF
+تعتبر هذه ضرورية للتعامل مع إنشاء ملفات PDF، ومعالجة النصوص، وإدارة الرأس والتذييل.
 
- بعد ذلك، نقوم بإنشاء مستند PDF جديد وإضافة صفحة إليه باستخدام`Document` الصف و`Page` الفئة من مكتبة Aspose.PDF.
+دعنا نقوم بتقسيم الكود المثال إلى خطوات سهلة الفهم.
+
+## الخطوة 1: إعداد المستند والصفحة
+
+أولاً، نحتاج إلى تهيئة المستند وإضافة صفحة إليه. وهذا يمهد الطريق لإضافة رؤوس الصفحات وتذييلاتها.
 
 ```csharp
+// إعداد دليل المستندات
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// تهيئة كائن المستند
 Document doc = new Document();
+
+// إضافة صفحة إلى المستند
 Page page = doc.Pages.Add();
 ```
 
-## الخطوة 3: تعيين الهوامش
+ هنا، نقوم بإعداد مستند PDF باستخدام`Document` الصف وإضافة صفحة بها`doc.Pages.Add()`ستحتوي هذه الصفحة على الرأس والتذييل والمحتوى الآخر.
 
- لقد قمنا بتعيين هوامش الصفحة باستخدام`MarginInfo` الصف. قم بتعديل قيم الهوامش وفقًا لمتطلباتك.
+## الخطوة 2: تكوين هوامش الصفحة
+
+بعد ذلك، سنقوم بتحديد هوامش الصفحة للتأكد من أن المحتوى الخاص بنا لا يصل إلى الحافة.
 
 ```csharp
+// تكوين الهوامش
 MarginInfo marginInfo = new MarginInfo();
 marginInfo.Top = 90;
 marginInfo.Bottom = 50;
@@ -46,209 +66,142 @@ marginInfo.Right = 50;
 page.PageInfo.Margin = marginInfo;
 ```
 
-## الخطوة 4: إضافة رأس الصفحة بالرموز القابلة للاستبدال
+ هنا، قمنا بتحديد الهوامش العلوية والسفلية واليسرى واليمنى باستخدام`MarginInfo` الصف وتطبيقه على الصفحة باستخدام`page.PageInfo.Margin`.
 
- نحن ننشئ`HeaderFooter` كائن للصفحة وأضف`TextFragment` مع رموز قابلة للاستبدال.
+## الخطوة 3: إنشاء وتكوين الرأس
+
+الآن، لنقم بإنشاء رأس الصفحة وإضافته إلى الصفحة. سيتضمن الرأس عنوان التقرير واسمه.
 
 ```csharp
+// إنشاء رأس الصفحة
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
+
+// تعيين هوامش الرأس
 hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
 
-TextFragment t1 = new TextFragment("report title");
-// تعيين خصائص النص إذا رغبت في ذلك
-t1.TextState.Font = FontRepository.FindFont("Arial");
-t1.TextState.FontSize = 16;
-t1.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
-t1.TextState.FontStyle = FontStyles.Bold;
-t1.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-t1.TextState.LineSpacing = 5f;
-
-hfFirst.Paragraphs.Add(t1);
-
-// أضف المزيد من TextFragments أو قم بتخصيصها حسب الحاجة
-```
-
-## الخطوة 5: إضافة تذييل يحتوي على رموز قابلة للاستبدال
-
- وبالمثل، نقوم بإنشاء`HeaderFooter` كائن لتذييل الصفحة وإضافته`TextFragment` الأشياء التي تحتوي على رموز قابلة للاستبدال.
-
-```csharp
-HeaderFooter hfFoot = new HeaderFooter();
-page.Footer = hfFoot;
-hfFoot.Margin.Left = 50;
-hfFoot.Margin.Right = 50;
-
-TextFragment t3 = new TextFragment("Generated on test date");
-TextFragment t4 = new TextFragment("report name ");
-TextFragment t5 = new TextFragment("Page $p of $P");
-
-// أضف المزيد من TextFragments أو قم بتخصيصها حسب الحاجة
-
-hfFoot.Paragraphs.Add(tab2);
-```
-
-## الخطوة 6: احفظ مستند PDF
-
-وأخيرًا، نقوم بحفظ مستند PDF في ملف الإخراج المحدد.
-
-```csharp
-dataDir = dataDir + "ReplaceableSymbolsInHeaderFooter_out.pdf";
-doc.Save(dataDir);
-Console.WriteLine("\nReplaceable symbols replaced successfully in the header and footer.\nFile saved at " + dataDir);
-```
-
-### عينة من كود المصدر للرموز القابلة للاستبدال في الرأس والتذييل باستخدام Aspose.PDF لـ .NET 
-```csharp
-// المسار إلى دليل المستندات.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document doc = new Document();
-Page page = doc.Pages.Add();
-MarginInfo marginInfo = new MarginInfo();
-marginInfo.Top = 90;
-marginInfo.Bottom = 50;
-marginInfo.Left = 50;
-marginInfo.Right = 50;
-//تعيين مثيل marginInfo إلى خاصية Margin في sec1.PageInfo
-page.PageInfo.Margin = marginInfo;
-HeaderFooter hfFirst = new HeaderFooter();
-page.Header = hfFirst;
-hfFirst.Margin.Left = 50;
-hfFirst.Margin.Right = 50;
-// إنشاء فقرة نصية لتخزين المحتوى لعرضه كرأس
+// إضافة عنوان إلى الرأس
 TextFragment t1 = new TextFragment("report title");
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
 t1.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
 t1.TextState.FontStyle = FontStyles.Bold;
 t1.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-t1.TextState.LineSpacing = 5f;
 hfFirst.Paragraphs.Add(t1);
+
+// إضافة اسم التقرير إلى الرأس
 TextFragment t2 = new TextFragment("Report_Name");
 t2.TextState.Font = FontRepository.FindFont("Arial");
-t2.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
-t2.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-t2.TextState.LineSpacing = 5f;
 t2.TextState.FontSize = 12;
+t2.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 hfFirst.Paragraphs.Add(t2);
-// إنشاء كائن HeaderFooter للقسم
+```
+
+ لقد أضفنا اثنين`TextFragment` الكائنات الموجودة في الرأس: واحدة لعنوان التقرير وأخرى لاسم التقرير. يتم تنسيق النص باستخدام`TextState` خصائص مثل الخط والحجم والمحاذاة.
+
+## الخطوة 4: إنشاء التذييل وتكوينه
+
+الآن حان الوقت لإعداد التذييل، الذي سيحمل محتوى ديناميكيًا مثل أرقام الصفحات وتاريخ الإنشاء.
+
+```csharp
+// إنشاء تذييل
 HeaderFooter hfFoot = new HeaderFooter();
-// تعيين كائن HeaderFooter إلى تذييل فردي وزوجي
 page.Footer = hfFoot;
+
+// تعيين هوامش التذييل
 hfFoot.Margin.Left = 50;
 hfFoot.Margin.Right = 50;
-// أضف فقرة نصية تحتوي على رقم الصفحة الحالية أو إجمالي عدد الصفحات
+
+// إضافة محتوى التذييل
 TextFragment t3 = new TextFragment("Generated on test date");
-TextFragment t4 = new TextFragment("report name ");
+TextFragment t4 = new TextFragment("Report Name");
 TextFragment t5 = new TextFragment("Page $p of $P");
-// إنشاء كائن جدول
+```
+
+في التذييل، قمنا بتضمين أجزاء لتاريخ التوليد واسم التقرير وأرقام الصفحات الديناميكية (`$p` و`$P` تمثل رقم الصفحة الحالية والعدد الإجمالي للصفحات، على التوالي).
+
+## الخطوة 5: إنشاء جدول في التذييل
+
+يمكنك أيضًا إضافة عناصر أكثر تعقيدًا، مثل الجداول في التذييل، لتنظيم بياناتك بشكل أفضل.
+
+```csharp
+// إنشاء جدول للتذييل
 Table tab2 = new Table();
-// أضف الجدول في مجموعة فقرات القسم المطلوب
 hfFoot.Paragraphs.Add(tab2);
-// مجموعة مع عرض أعمدة الجدول
 tab2.ColumnWidths = "165 172 165";
-//إنشاء صفوف في الجدول ثم خلايا في الصفوف
+
+// إنشاء صفوف وخلايا للجدول
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
 row3.Cells.Add();
-// تعيين محاذاة النص العمودية إلى المنتصف
+
+// تعيين المحاذاة لكل خلية
 row3.Cells[0].Alignment = Aspose.Pdf.HorizontalAlignment.Left;
 row3.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 row3.Cells[2].Alignment = Aspose.Pdf.HorizontalAlignment.Right;
+
+// إضافة محتوى إلى خلايا الجدول
 row3.Cells[0].Paragraphs.Add(t3);
 row3.Cells[1].Paragraphs.Add(t4);
 row3.Cells[2].Paragraphs.Add(t5);
-//Sec1.Paragraphs.Add(New Text("يعد Aspose.Total for Java عبارة عن تجميع لكل مكون Java تقدمه Aspose. يتم تجميعه على أساس #$NL" + "يوميًا للتأكد من أنه يحتوي على أحدث إصدارات كل مكون من مكونات Java الخاصة بنا. #$NL " + "يمكن لمطوري Aspose.Total for Java إنشاء مجموعة واسعة من التطبيقات. #$NL #$NL #$NP" + "يعد Aspose.Total for Java عبارة عن تجميع لكل مكون Java تقدمه Aspose. يتم تجميعه على أساس #$NL" + "يوميًا للتأكد من أنه يحتوي على أحدث إصدارات كل مكون من مكونات Java الخاصة بنا. #$NL " + "يمكن لمطوري Aspose.Total for Java إنشاء مجموعة واسعة من التطبيقات. #$NL #$NL #$NP" + "يعد Aspose.Total for Java عبارة عن تجميع لكل مكون Java تقدمه Aspose. يتم تجميعه على أساس #$NL" + "يوميًا للتأكد من أنه يحتوي على أحدث إصدارات كل مكون من مكونات Java الخاصة بنا. #$NL " + "يمكن لمطوري Aspose.Total for Java إنشاء مجموعة واسعة من التطبيقات. #$NL #$NL #$NP" + "يعد Aspose.Total for Java عبارة عن تجميع لكل مكون Java تقدمه Aspose. يتم تجميعه على أساس #$NL" + "يوميًا للتأكد من أنه يحتوي على أحدث إصدارات كل مكون من مكونات Java الخاصة بنا. يحتوي على أحدث الإصدارات لكل مكون من مكونات Java الخاصة بنا. #$NL " + "يمكن لمطوري Java باستخدام Aspose.Total إنشاء مجموعة واسعة من التطبيقات. #$NL #$NL"))
+```
+
+يؤدي كتلة التعليمات البرمجية هذه إلى إنشاء جدول مكون من 3 أعمدة في التذييل، حيث يحتوي كل عمود على معلومات مختلفة، مثل تاريخ الإنشاء، واسم التقرير، وأرقام الصفحات.
+
+## الخطوة 6: إضافة المحتوى إلى الصفحة
+
+بالإضافة إلى الرؤوس والتذييلات، يمكنك إضافة محتوى إلى نص صفحة PDF. هنا، نضيف جدولاً يحتوي على بعض النصوص المؤقتة.
+
+```csharp
 Table table = new Table();
 table.ColumnWidths = "33% 33% 34%";
-table.DefaultCellPadding = new MarginInfo();
-table.DefaultCellPadding.Top = 10;
-table.DefaultCellPadding.Bottom = 10;
-// أضف الجدول في مجموعة فقرات القسم المطلوب
 page.Paragraphs.Add(table);
-// تعيين حدود الخلية الافتراضية باستخدام كائن BorderInfo
-table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
-// تعيين حدود الجدول باستخدام كائن BorderInfo مخصص آخر
-table.Border = new BorderInfo(BorderSide.All, 1f);
-table.RepeatingRowsCount = 1;
-//إنشاء صفوف في الجدول ثم خلايا في الصفوف
-Row row1 = table.Rows.Add();
-row1.Cells.Add("col1");
-row1.Cells.Add("col2");
-row1.Cells.Add("col3");
-const string CRLF = "\r\n";
+
+// إضافة محتوى الجدول
 for (int i = 0; i <= 10; i++)
 {
-	Row row = table.Rows.Add();
-	row.IsRowBroken = true;
-	for (int c = 0; c <= 2; c++)
-	{
-		Cell c1;
-		if (c == 2)
-			c1 = row.Cells.Add("Aspose.Total for Java is a compilation of every Java component offered by Aspose. It is compiled on a" + CRLF + "daily basis to ensure it contains the most up to date versions of each of our Java components. " + CRLF + "daily basis to ensure it contains the most up to date versions of each of our Java components. " + CRLF + "Using Aspose.Total for Java developers can create a wide range of applications.");
-		else
-			c1 = row.Cells.Add("item1" + c);
-		c1.Margin = new MarginInfo();
-		c1.Margin.Left = 30;
-		c1.Margin.Top = 10;
-		c1.Margin.Bottom = 10;
-	}
+    Row row = table.Rows.Add();
+    for (int c = 0; c <= 2; c++)
+    {
+        Cell cell = row.Cells.Add("Content " + c);
+        cell.Margin = new MarginInfo { Left = 30, Top = 10, Bottom = 10 };
+    }
 }
+```
+
+يضيف هذا الكود جدولًا بسيطًا بثلاثة أعمدة إلى الصفحة. يمكنك تعديله ليناسب احتياجاتك المحددة.
+
+## الخطوة 7: احفظ ملف PDF
+
+بمجرد إعداد كل شيء، فإن الخطوة الأخيرة هي حفظ مستند PDF في الموقع المطلوب.
+
+```csharp
 dataDir = dataDir + "ReplaceableSymbolsInHeaderFooter_out.pdf";
 doc.Save(dataDir);
-Console.WriteLine("\nSymbols replaced successfully in header and footer.\nFile saved at " + dataDir);
+Console.WriteLine("Symbols replaced successfully in header and footer. File saved at " + dataDir);
 ```
+
+ تحدد مسار الملف وتحفظ المستند باستخدام`doc.Save()`هذا كل شيء! لقد نجحت في إنشاء ملف PDF يحتوي على رؤوس وتذييلات مخصصة.
 
 ## خاتمة
 
-في هذا البرنامج التعليمي، تعلمت كيفية استخدام الرموز القابلة للاستبدال في رأس وتذييل مستند PDF باستخدام مكتبة Aspose.PDF لـ .NET. باتباع الدليل خطوة بخطوة وتنفيذ التعليمات البرمجية C# المقدمة، يمكنك إنشاء ملف PDF وتعيين الهوامش وإضافة رأس وتذييل برموز قابلة للاستبدال وحفظ ملف PDF.
+إن استبدال الرموز في الرؤوس والتذييلات باستخدام Aspose.PDF لـ .NET ليس بالأمر السهل فحسب، بل إنه قوي أيضًا. باتباع الدليل المفصل أعلاه، يمكنك بسهولة تخصيص ملفات PDF الخاصة بك بمحتوى ديناميكي، مثل أرقام الصفحات وأسماء التقارير والتاريخ. هذه الطريقة مرنة للغاية، مما يسمح لك بإدراج الجداول وتعديل التنسيق والتحكم في التخطيط ليناسب متطلباتك المحددة.
 
-### الأسئلة الشائعة
+## الأسئلة الشائعة
 
-#### س: ما هو الغرض من البرنامج التعليمي "الرموز القابلة للاستبدال في الرأس والتذييل"؟
+### هل يمكنني تخصيص الخطوط للرؤوس والتذييلات؟  
+نعم، يمكنك تخصيص الخطوط والأحجام والألوان والأنماط للنصوص الموجودة في الرؤوس والتذييلات بالكامل.
 
-أ: يهدف البرنامج التعليمي "الرموز القابلة للاستبدال في رأس وتذييل الصفحة" إلى إرشادك خلال عملية استخدام مكتبة Aspose.PDF لـ .NET لإضافة رموز قابلة للاستبدال إلى رأس وتذييل مستند PDF. تتيح لك الرموز القابلة للاستبدال استبدال العناصر النائبة المحددة ديناميكيًا بقيم فعلية عند إنشاء ملف PDF.
+### كيف أضيف الصور إلى الرؤوس والتذييلات؟  
+ يمكنك استخدام`ImageStamp` لإدراج الصور في الرؤوس والتذييلات.
 
-#### س: ما هي الرموز القابلة للاستبدال في سياق رأس وتذييل PDF؟
+### هل من الممكن إضافة ارتباطات تشعبية في الرؤوس أو التذييلات؟  
+ نعم يمكنك الاستخدام`TextFragment` مع وجود ارتباط تشعبي عن طريق ضبط`Hyperlink` ملكية.
 
-ج: الرموز القابلة للاستبدال هي عناصر نائبة يمكنك إدراجها في رأس وتذييل مستند PDF. تعمل هذه الرموز كعناصر نائبة ديناميكية للقيم التي يمكن ملؤها وقت التشغيل، مثل أرقام الصفحات والتاريخ والمعلومات المخصصة.
+### هل يمكنني استخدام رؤوس مختلفة للصفحات الفردية والزوجية؟  
+نعم، يسمح لك Aspose.PDF بتحديد رؤوس وتذييلات مختلفة للصفحات الفردية والزوجية.
 
-#### س: لماذا أرغب في استخدام رموز قابلة للاستبدال في رأس وتذييل ملف PDF؟
-
-أ: تعتبر الرموز القابلة للاستبدال في الرأس والتذييل مفيدة عندما تريد تضمين معلومات ديناميكية في مستندات PDF الخاصة بك، مثل أرقام الصفحات أو التواريخ أو غيرها من البيانات المتغيرة التي قد تتغير عند إنشاء المستند.
-
-#### س: كيف يمكنني ضبط الهوامش لصفحة PDF؟
-
- أ: يمكنك ضبط الهوامش لصفحة PDF باستخدام`MarginInfo` الصف وتعيينه إلى`Margin` ممتلكات`PageInfo` من الصفحة. قم بتعديل قيم الهوامش حسب الحاجة.
-
-#### س: كيف يمكنني إضافة رموز قابلة للاستبدال إلى الرأس والتذييل؟
-
- أ: يمكنك إضافة رموز قابلة للاستبدال عن طريق إنشاء`HeaderFooter` كائن لرأس وتذييل الصفحة. بعد ذلك، يمكنك إضافة`TextFragment`الأشياء التي تحتوي على النص المطلوب، بما في ذلك الرموز القابلة للاستبدال،`Paragraphs` مجموعة من`HeaderFooter` هدف.
-
-#### س: هل يمكنني تخصيص مظهر الرموز القابلة للاستبدال؟
-
- ج: نعم، يمكنك تخصيص مظهر الرموز القابلة للاستبدال عن طريق تعديل خصائص`TextFragment` الكائنات التي تحتوي على الرموز. يمكنك تعيين خصائص مثل الخط وحجم الخط واللون والمحاذاة والتباعد بين السطور.
-
-#### س: ما نوع الرموز القابلة للاستبدال التي يمكنني استخدامها؟
-
-أ: يمكنك استخدام مجموعة متنوعة من الرموز القابلة للاستبدال، مثل:
-
-- `$p`:رقم الصفحة الحالية.
-- `$P`:إجمالي عدد الصفحات.
-- `$d`:التاريخ الحالي.
-- `$t`:الوقت الحالي.
-- العناصر النائبة المخصصة التي تقوم بتحديدها.
-
-#### س: هل يمكنني تضمين نص وتنسيق آخر حول الرموز القابلة للاستبدال؟
-
- ج: نعم، يمكنك تضمين نص آخر وتنسيق حول الرموز القابلة للاستبدال داخل`TextFragment` يتيح لك هذا إنشاء رؤوس وتذييلات أكثر تعقيدًا تتضمن محتوى ديناميكيًا وثابتًا.
-
-#### س: كيف يمكنني حفظ مستند PDF الناتج؟
-
- أ: لحفظ مستند PDF الناتج، يمكنك استخدام`Save` طريقة`Document`قم بتوفير مسار ملف الإخراج المطلوب والاسم كحجة.
-
-#### س: هل يلزم الحصول على ترخيص Aspose صالح لهذا البرنامج التعليمي؟
-
-ج: نعم، يلزم الحصول على ترخيص Aspose صالح لتنفيذ التعليمات البرمجية بنجاح في هذا البرنامج التعليمي. يمكنك الحصول على ترخيص كامل أو ترخيص مؤقت لمدة 30 يومًا من موقع Aspose على الويب.
+### كيف أقوم بتعديل مواضع الرأس والتذييل؟  
+يمكنك ضبط الهوامش وخصائص المحاذاة للتحكم في موضع الرؤوس والتذييلات.

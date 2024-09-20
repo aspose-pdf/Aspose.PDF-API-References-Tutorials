@@ -75,7 +75,7 @@ Włączając tę opcję, instruujesz Aspose.PDF, aby skanował dokument pod kąt
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-Wyobraź sobie sprzątanie domu bez wyrzucania starych, nieużywanych przedmiotów. Nie robiłoby to dużej różnicy, prawda? Podobnie optymalizacja zasobów zapewnia usuwanie nieużywanych obiektów, dzięki czemu rozmiar pliku PDF jest mniejszy i bardziej wydajny.
+Wyobraź sobie sprzątanie domu bez wyrzucania starych, nieużywanych przedmiotów. Nie robiłoby to dużej różnicy, prawda? Podobnie optymalizacja zasobów zapewnia, że nieużywane obiekty są usuwane, dzięki czemu rozmiar pliku PDF jest mniejszy i bardziej wydajny.
 
 ## Krok 4: Zapisz zoptymalizowany plik PDF
 

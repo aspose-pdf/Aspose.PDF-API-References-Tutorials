@@ -2,55 +2,93 @@
 title: PDF 파일에서 정규 표현식의 텍스트 바꾸기
 linktitle: PDF 파일에서 Texton 정규 표현식을 교체하세요
 second_title: .NET API 참조를 위한 Aspose.PDF
-description: Aspose.PDF for .NET을 사용하여 PDF 파일에서 정규 표현식을 기반으로 텍스트를 바꾸는 방법을 알아보세요.
+description: Aspose.PDF for .NET을 사용하여 PDF 파일에서 정규 표현식을 기반으로 텍스트를 바꾸는 방법을 알아보세요. 텍스트 변경을 효율적으로 자동화하기 위한 단계별 가이드를 따르세요.
 type: docs
 weight: 360
 url: /ko/net/programming-with-text/replace-text-on-regular-expression/
 ---
-이 튜토리얼에서는 .NET용 Aspose.PDF 라이브러리를 사용하여 PDF 파일에서 정규 표현식을 기반으로 텍스트를 바꾸는 방법을 설명합니다. 필요한 C# 소스 코드와 함께 단계별 가이드를 제공합니다.
+## 소개
+
+Aspose.PDF for .NET은 개발자가 PDF 파일을 쉽게 조작할 수 있는 놀라운 도구입니다. 강력한 기능 중 하나는 정규 표현식을 기반으로 텍스트를 검색하여 바꿀 수 있는 기능입니다. 날짜, 전화번호 또는 코드와 같이 특정 텍스트 패턴을 변경해야 하는 PDF를 처리해야 했던 적이 있다면 이것이 바로 여러분이 찾고 있는 것입니다. 이 튜토리얼에서는 PDF 파일에서 정규 표현식을 사용하여 텍스트를 바꾸는 과정을 안내해 드리겠습니다. 이 기능을 프로젝트에 원활하게 통합할 수 있도록 쉽게 따를 수 있는 단계로 나누어 설명하겠습니다.
 
 ## 필수 조건
 
-시작하기 전에 다음 사항이 있는지 확인하세요.
+코드를 살펴보기 전에 모든 것이 설정되어 있는지 확인해 보겠습니다.
 
-- .NET 라이브러리용 Aspose.PDF가 설치되었습니다.
-- C# 프로그래밍에 대한 기본적인 이해.
+1.  .NET용 Aspose.PDF: .NET용 Aspose.PDF의 최신 버전이 필요합니다. 다운로드할 수 있습니다.[여기](https://releases.aspose.com/pdf/net/).
+2. IDE: Visual Studio 또는 기타 .NET 호환 통합 개발 환경(IDE).
+3. .NET Framework: .NET Framework 4.0 이상이 설치되어 있는지 확인하세요.
+4. PDF 문서: 텍스트를 검색하고 바꾸려는 샘플 PDF 파일입니다.
 
-## 1단계: 문서 디렉토리 설정
+모든 것을 준비했으면 시작할 준비가 된 것입니다!
 
- 입력 PDF 파일이 있는 디렉토리 경로를 설정합니다. 바꾸기`"YOUR DOCUMENT DIRECTORY"` 에서`dataDir` PDF 파일 경로가 있는 변수입니다.
+## 패키지 가져오기
+
+우리가 해야 할 첫 번째 일은 필요한 패키지를 가져오는 것입니다. 이렇게 하면 Aspose.PDF에서 필요한 모든 클래스와 메서드에 액세스할 수 있습니다.
+
+```csharp
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System;
+```
+
+이를 통해 PDF 문서를 다루고 문서 내의 텍스트 조각을 처리할 수 있습니다.
+
+이제 단계별로 프로세스를 살펴보겠습니다. 정규 표현식을 기반으로 텍스트를 대체하는 과정을 따라가세요.
+
+## 1단계: PDF 문서 로드
+
+ 먼저, 텍스트 교체를 수행할 PDF 문서를 로드해야 합니다. 이는 다음을 사용하여 수행됩니다.`Document` Aspose.PDF의 클래스입니다.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-```
-
-## 2단계: PDF 문서 로드
-
- PDF 문서를 로드하려면 다음을 사용합니다.`Document` Aspose.PDF 라이브러리의 클래스입니다.
-
-```csharp
 Document pdfDocument = new Document(dataDir + "SearchRegularExpressionPage.pdf");
 ```
 
-## 3단계: 정규 표현식을 사용하여 텍스트 검색 및 바꾸기
+ 이 단계에서는 다음을 교체합니다.`"YOUR DOCUMENT DIRECTORY"`PDF 파일이 저장된 실제 경로와 함께. 이 코드는 PDF를 열고 로드합니다.`pdfDocument` 다음 단계에서 조작할 객체입니다.
 
- 생성하다`TextFragmentAbsorber` 객체를 지정하고 정규 표현식 패턴을 지정하여 패턴과 일치하는 모든 구문을 찾습니다. 텍스트 검색 옵션을 설정하여 정규 표현식 사용을 활성화합니다.
+## 2단계: 정규 표현식 정의
+
+ 이제 문서를 로드했으므로 다음 단계는 관심 있는 텍스트 패턴을 검색할 정규 표현식을 정의하는 것입니다. 예를 들어 "1999-2000"과 같은 연도 범위를 바꾸려는 경우 정규 표현식을 사용할 수 있습니다.`\d{4}-\d{4}`.
 
 ```csharp
-TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // 1999-2000년처럼
+TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); 
+```
+
+ 이 라인은 다음을 설정합니다.`TextFragmentAbsorber` 4자리 숫자, 하이픈, 그리고 또 다른 4자리 숫자를 검색합니다. 필요에 따라 정규 표현식을 수정하여 특정 사용 사례와 일치시킬 수 있습니다.
+
+## 3단계: 정규 표현식 검색 옵션 활성화
+
+ Aspose.PDF를 사용하면 텍스트 검색 방법을 미세 조정할 수 있습니다. 이 경우 다음을 사용하여 정규 표현식 일치를 활성화합니다.`TextSearchOptions` 수업.
+
+```csharp
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textFragmentAbsorber.TextSearchOptions = textSearchOptions;
+```
+
+ 이 옵션을 설정하면`true`PDF 내에서 검색 시 정규 표현식을 사용할 수 있습니다.
+
+## 4단계: 특정 페이지에 흡수체 적용
+
+ 다음으로, 우리는 다음을 적용합니다.`TextFragmentAbsorber` 문서의 특정 페이지로. 이 예는 첫 번째 페이지에 적용합니다.
+
+```csharp
 pdfDocument.Pages[1].Accept(textFragmentAbsorber);
 ```
 
-## 4단계: 텍스트 바꾸기
+이 방법은 문서의 첫 페이지에서 정규 표현식과 일치하는 모든 텍스트 조각을 추출합니다. 전체 문서를 검색하려면 모든 페이지를 반복할 수 있습니다.
 
-추출된 텍스트 조각을 반복하고 필요에 따라 텍스트를 바꿉니다. 텍스트와 글꼴, 글꼴 크기, 전경색, 배경색과 같은 다른 속성을 업데이트합니다.
+## 5단계: 텍스트 반복 및 바꾸기
+
+이제 재밌는 부분이 왔습니다! 추출된 텍스트 조각을 반복하고, 텍스트를 대체하고, 글꼴 크기, 글꼴 유형, 색상과 같은 속성을 사용자 정의합니다.
 
 ```csharp
-foreach (TextFragment textFragment in textFragmentAbsorber.TextFragments)
+TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+
+foreach (TextFragment textFragment in textFragmentCollection)
 {
-    textFragment.Text = "New Phrase";
+    textFragment.Text = "New Phrase"; // 새로운 텍스트로 바꾸세요
     textFragment.TextState.Font = FontRepository.FindFont("Verdana");
     textFragment.TextState.FontSize = 22;
     textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Blue);
@@ -58,96 +96,46 @@ foreach (TextFragment textFragment in textFragmentAbsorber.TextFragments)
 }
 ```
 
-## 5단계: 수정된 PDF 저장
+ 여기서는 정규 표현식과 일치하는 각 텍스트 조각을 반복합니다. 각 일치 항목에 대해 텍스트가 다음으로 바뀝니다.`"New Phrase"`. 또한 글꼴을 "Verdana"로 사용자 지정하고, 글꼴 크기를 22로 설정하고, 텍스트와 배경색을 변경합니다.
 
-수정된 PDF 문서를 지정된 출력 파일에 저장합니다.
+## 6단계: 업데이트된 PDF 문서 저장
+
+모든 변경을 마쳤으면 수정된 PDF 문서를 저장할 차례입니다.
 
 ```csharp
 dataDir = dataDir + "ReplaceTextonRegularExpression_out.pdf";
 pdfDocument.Save(dataDir);
+```
+
+이렇게 하면 모든 텍스트 대체 내용이 포함된 업데이트된 PDF가 새 파일인 다음 파일에 저장됩니다.`ReplaceTextonRegularExpression_out.pdf`.
+
+## 7단계: 변경 사항 확인
+
+마지막으로 모든 것이 제대로 작동했는지 확인하려면 콘솔에 메시지를 출력하세요.
+
+```csharp
 Console.WriteLine("\nText replaced successfully based on a regular expression.\nFile saved at " + dataDir);
 ```
 
-### .NET용 Aspose.PDF를 사용하여 Texton 정규 표현식을 바꾸기 위한 샘플 소스 코드 
-```csharp
-// 문서 디렉토리의 경로입니다.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// 문서 열기
-Document pdfDocument = new Document(dataDir + "SearchRegularExpressionPage.pdf");
-//정규 표현식과 일치하는 모든 구문을 찾기 위해 TextAbsorber 객체를 생성합니다.
-TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // 1999-2000년처럼
-// 정규 표현식 사용을 지정하기 위한 텍스트 검색 옵션 설정
-TextSearchOptions textSearchOptions = new TextSearchOptions(true);
-textFragmentAbsorber.TextSearchOptions = textSearchOptions;
-// 흡수체를 단일 페이지에 대해 수락합니다.
-pdfDocument.Pages[1].Accept(textFragmentAbsorber);
-// 추출된 텍스트 조각을 가져옵니다
-TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// 조각을 반복합니다
-foreach (TextFragment textFragment in textFragmentCollection)
-{
-	// 텍스트 및 기타 속성 업데이트
-	textFragment.Text = "New Phrase";
-	// 객체의 인스턴스로 설정됩니다.
-	textFragment.TextState.Font = FontRepository.FindFont("Verdana");
-	textFragment.TextState.FontSize = 22;
-	textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Blue);
-	textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
-}
-dataDir = dataDir + "ReplaceTextonRegularExpression_out.pdf";
-pdfDocument.Save(dataDir);
-Console.WriteLine("\nText replaced successfully based on a regular expression.\nFile saved at " + dataDir);
-```
+이 메시지는 텍스트 바꾸기 과정이 성공적으로 이루어졌음을 확인하고 새 PDF가 저장된 위치를 보여줍니다.
 
 ## 결론
 
-이 튜토리얼에서는 .NET용 Aspose.PDF 라이브러리를 사용하여 PDF 문서에서 정규 표현식을 기반으로 텍스트를 바꾸는 방법을 알아보았습니다. 단계별 가이드를 따르고 제공된 C# 코드를 실행하면 PDF 문서를 로드하고 정규 표현식을 사용하여 텍스트를 검색하고 바꾸고 수정된 PDF를 저장할 수 있습니다.
+Aspose.PDF for .NET을 사용하여 정규 표현식을 기반으로 PDF 파일의 텍스트를 성공적으로 대체했습니다! 문서 처리를 자동화하든 오래된 정보를 정리하든 이 기능은 매우 강력합니다. 몇 줄의 코드만 있으면 몇 초 만에 큰 문서에서 복잡한 텍스트를 변경할 수 있습니다.
 
-### 자주 묻는 질문
+## 자주 묻는 질문
 
-#### 질문: "PDF 파일에서 정규 표현식의 텍스트 바꾸기" 튜토리얼의 목적은 무엇인가요?
+### 하나의 문서에서 여러 개의 정규 표현식을 사용할 수 있나요?
+ 네, 여러 개를 만들 수 있습니다.`TextFragmentAbsorber` 각각 다른 정규 표현식을 갖는 객체를 만들고 이를 문서에 적용합니다.
 
-A: "PDF 파일에서 정규 표현식의 텍스트 바꾸기" 튜토리얼은 .NET용 Aspose.PDF 라이브러리를 사용하여 정규 표현식을 기반으로 PDF 문서에서 텍스트를 검색하고 바꾸는 과정을 안내합니다. 샘플 C# 코드와 함께 단계별 가이드를 제공합니다.
+### .NET용 Aspose.PDF는 .NET Core와 호환됩니까?
+예, Aspose.PDF for .NET은 .NET Framework와 .NET Core를 모두 지원합니다.
 
-#### 질문: PDF 문서의 텍스트를 바꾸기 위해 정규 표현식을 사용해야 하는 이유는 무엇인가요?
+### 여러 페이지의 텍스트를 한 번에 바꿀 수 있나요?
+물론입니다! 흡수제를 한 페이지에 적용하는 대신 모든 페이지를 반복하거나 전체 문서에 한 번에 적용할 수도 있습니다.
 
-A: 정규 표현식을 사용하면 특정 형식을 따르는 텍스트 패턴을 검색하여 바꿀 수 있으므로 콘텐츠를 조작하는 강력한 방법이 됩니다. 이 접근 방식은 PDF 문서 전체에서 특정 패턴이나 구조와 일치하는 텍스트를 바꿔야 할 때 특히 유용합니다.
+### 대소문자를 구분하지 않고 검색하고 싶다면 어떻게 해야 하나요?
+적절한 정규 표현식 플래그를 사용하거나 검색 옵션을 조정하여 정규 표현식을 대소문자를 구분하지 않도록 수정할 수 있습니다.
 
-#### 질문: 문서 디렉토리를 어떻게 설정하나요?
-
-A: 문서 디렉토리를 설정하려면:
-
-1.  바꾸다`"YOUR DOCUMENT DIRECTORY"` 에서`dataDir` 입력 PDF 파일이 있는 디렉토리의 경로를 포함하는 변수입니다.
-
-#### 질문: PDF 문서에서 정규 표현식을 기반으로 텍스트를 바꾸려면 어떻게 해야 하나요?
-
-A: 튜토리얼에서는 다음 단계를 안내합니다.
-
-1.  PDF 문서를 로드하려면 다음을 사용합니다.`Document` 수업.
-2.  생성하다`TextFragmentAbsorber` 객체를 지정하고 정규 표현식 패턴을 지정하여 패턴과 일치하는 구문을 찾습니다. 텍스트 검색 옵션을 설정하여 정규 표현식 사용을 활성화합니다.
-3. 추출된 텍스트 조각을 반복하고 텍스트를 바꿉니다. 필요에 따라 글꼴, 글꼴 크기, 전경색 및 배경색과 같은 다른 속성을 업데이트합니다.
-4. 수정된 PDF 문서를 저장합니다.
-
-#### 질문: 복잡한 정규 표현식을 사용하여 텍스트를 바꿀 수 있나요?
-
-A: 네, 복잡한 정규 표현식을 사용하여 PDF 문서의 텍스트를 매치하고 바꿀 수 있습니다. 정규 표현식은 텍스트의 특정 패턴이나 구조를 식별하는 유연한 방법을 제공합니다.
-
-####  Q: 목적은 무엇입니까?`TextSearchOptions` class in the tutorial?
-
- A: 그`TextSearchOptions`클래스를 사용하면 텍스트 조각을 검색할 때 정규 표현식 사용을 활성화하는 것과 같은 텍스트 검색 옵션을 지정할 수 있습니다. 자습서에서는 정규 표현식 모드를 활성화하는 데 사용됩니다.`TextFragmentAbsorber`.
-
-#### 질문: 정규 표현식을 사용하여 텍스트를 바꿀 때 글꼴을 바꾸는 것은 선택 사항입니까?
-
-A: 네, 정규 표현식을 사용하여 텍스트를 바꿀 때 글꼴 바꾸기는 선택 사항입니다. 새 글꼴을 지정하지 않으면 텍스트는 원래 텍스트 조각의 글꼴을 유지합니다.
-
-#### 질문: 정규 표현식을 사용하여 여러 페이지의 텍스트를 바꾸려면 어떻게 해야 하나요?
-
-A: 튜토리얼 예제와 비슷하게 텍스트 조각을 통한 루프를 수정하여 PDF 문서의 모든 페이지를 포함할 수 있습니다. 이렇게 하면 정규 표현식 패턴을 기반으로 여러 페이지의 텍스트를 바꿀 수 있습니다.
-
-#### 질문: 제공된 코드를 실행하면 예상되는 결과는 무엇입니까?
-
-A: 튜토리얼을 따라 제공된 C# 코드를 실행하면 지정된 정규 표현식 패턴과 일치하는 PDF 문서의 텍스트를 대체하게 됩니다. 대체된 텍스트는 글꼴, 글꼴 크기, 전경색 및 배경색과 같이 지정한 속성을 갖게 됩니다.
-
-#### 질문: 이 방법을 사용하면 복잡한 서식이 있는 텍스트를 바꿀 수 있나요?
-
-A: 네, 글꼴, 글꼴 크기, 전경색, 배경색과 같은 속성을 업데이트하여 대체된 텍스트의 서식을 사용자 지정할 수 있습니다. 이를 통해 필요에 따라 서식을 유지하거나 수정할 수 있습니다.
+### PDF 파일의 이미지를 바꿀 수 있나요?
+네, .NET용 Aspose.PDF도 PDF 문서 내에서 이미지 교체 및 조작을 지원합니다.

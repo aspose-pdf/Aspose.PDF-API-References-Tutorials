@@ -7,316 +7,175 @@ type: docs
 weight: 110
 url: /ko/net/programming-with-tagged-pdf/inline-structure-elements/
 ---
-이 단계별 가이드에서는 Aspose.PDF for .NET에서 인라인 구조 요소를 사용하는 방법을 보여드리겠습니다. Aspose.PDF는 PDF 문서를 프로그래밍 방식으로 조작할 수 있는 강력한 라이브러리입니다. 인라인 구조 요소를 사용하면 다양한 레벨과 단락의 제목을 사용하여 PDF 문서에 계층 구조를 만들 수 있습니다.
+## 소개
 
-이제 코드를 살펴보고 Aspose.PDF for .NET에서 인라인 구조 요소를 사용하는 방법을 알아보겠습니다.
+오늘날의 디지털 환경에서는 접근 가능하고 잘 구성된 문서를 만드는 것이 매우 중요합니다. PDF를 스크롤하다가 텍스트 바다에 빠져버린 적이 있다면 좋은 구성의 중요성을 알고 있을 것입니다. PDF의 요소에 태그를 지정하면 접근성이 향상되어 화면 판독기가 콘텐츠를 더 쉽게 해석할 수 있습니다. 이 가이드에서는 Aspose.PDF for .NET을 사용하여 태그가 지정된 PDF 문서를 만들고 작업이 문서 구조화의 최신 표준을 충족하는지 확인하는 방법을 알아봅니다.
 
 ## 필수 조건
 
-시작하기 전에 다음 사항이 있는지 확인하세요.
+본격적으로 시작하기에 앞서, 따라야 할 모든 것이 있는지 확인해 보겠습니다.
 
-1. .NET용 Aspose.PDF 라이브러리가 설치되었습니다.
-2. C# 프로그래밍 언어에 대한 기본 지식.
+1. C#에 대한 기본 지식: C# 프로그래밍과 .NET 프레임워크 기본에 대한 지식이 필수입니다.
+2. Visual Studio 설치: 코드를 작성하고 실행하려면 Visual Studio와 같은 IDE가 필요합니다.
+3.  .NET용 Aspose.PDF: .NET용 Aspose.PDF를 다운로드하여 설치하세요. 다음에서 가져올 수 있습니다.[다운로드 링크](https://releases.aspose.com/pdf/net/).
+4. 임시 라이센스: 이것은 선택 사항이지만 제한 없이 모든 기능을 평가하려면 임시 라이센스를 취득하는 것을 고려하십시오.[임시 면허](https://purchase.aspose.com/temporary-license/).
 
-## 1단계: 환경 설정
+이러한 필수 구성 요소를 갖추면 첫 번째 태그가 지정된 PDF 문서를 만들 준비가 된 것입니다!
 
-시작하려면 C# 개발 환경을 열고 새 프로젝트를 만드세요. 프로젝트에 .NET용 Aspose.PDF 라이브러리에 대한 참조를 추가했는지 확인하세요.
+## 패키지 가져오기
+
+시작하려면 필요한 패키지를 임포트해 보겠습니다. 이렇게 하면 프로젝트에서 Aspose.PDF 라이브러리의 기능을 활용할 수 있습니다.
+
+1. Visual Studio 프로젝트를 엽니다.
+2. Aspose.PDF 라이브러리에 대한 참조를 추가합니다. 아직 추가하지 않았다면 NuGet Package Manager를 사용하여 설치할 수 있습니다.
+3. C# 파일의 맨 위에 다음 네임스페이스를 포함하세요.
 
 ```csharp
-// 문서 디렉토리의 경로입니다.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## 2단계: 문서 만들기
+이런 수입이 있으면 성공이 보장됩니다.
 
- 첫 번째 단계는 다음을 사용하여 새 PDF 문서를 만드는 것입니다.`Document` 수업.
+## 코드 분석: 태그가 지정된 PDF를 만드는 단계별 가이드
+
+이제 모든 것이 설정되었으니 코드를 단계별로 분석해 보겠습니다. 헤더 및 문단과 같은 구조화된 요소가 있는 태그가 지정된 PDF를 만들어 더 나은 접근성을 제공합니다.
+
+### 1단계: 문서 디렉토리 설정
+
+먼저, 문서가 저장될 경로를 설정합니다. 체계적인 파일 구조를 유지하는 것이 좋습니다.
 
 ```csharp
-// PDF 문서 만들기
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // 실제 경로로 바꾸세요
+```
+
+### 2단계: PDF 문서 인스턴스 생성
+
+ 다음으로 인스턴스를 생성합니다.`Document` PDF 콘텐츠의 컨테이너 역할을 하는 클래스입니다.
+
+```csharp
 Document document = new Document();
 ```
 
-## 3단계: 태그가 지정된 콘텐츠 작업
+### 3단계: 태그가 지정된 콘텐츠에 액세스
 
-그런 다음 태그가 지정된 문서의 내용을 작업합니다.
+이제 문서의 태그가 지정된 콘텐츠에 액세스합니다. 여기서 마법이 일어납니다. 콘텐츠에 태그를 지정하면 접근성이 향상됩니다.
 
 ```csharp
-// 문서의 태그가 지정된 콘텐츠를 가져옵니다.
-ITaggedContent taggedContent = document.TaggedContent;
+ITaggedContent taggedContent = document.TaggedContent;    
 ```
 
-## 4단계: 문서 제목 및 언어 설정
+### 4단계: 제목 및 언어 설정
 
-이제 문서 제목과 언어를 설정할 수 있습니다.
-
-```csharp
-// 문서 제목과 언어를 정의하세요
-taggedContent.SetTitle("Tagged PDF document");
-taggedContent.SetLanguage("fr-FR");
-```
-
-## 5단계: 온라인으로 구조적 요소 추가
-
-이제 다양한 수준의 제목과 문단과 같은 인라인 구조 요소를 문서에 추가해 보겠습니다.
+PDF 문서의 제목과 언어를 설정하는 것은 사용자와 화면 판독기 모두에게 필수적입니다. 이렇게 하면 문서가 더 유익하고 접근하기 쉬워집니다.
 
 ```csharp
-// 루트 구조 요소를 가져옵니다
-StructureElement rootElement = taggedContent.RootElement;
-
-// 다양한 레벨의 헤더 추가
-HeaderElement h1 = taggedContent.CreateHeaderElement(1);
-HeaderElement h2 = taggedContent.CreateHeaderElement(2);
-HeaderElement h3 = taggedContent.CreateHeaderElement(3);
-HeaderElement h4 = taggedContent.CreateHeaderElement(4);
-HeaderElement h5 = taggedContent.CreateHeaderElement(5);
-HeaderElement h6 = taggedContent.CreateHeaderElement(6);
-rootElement.AppendChild(h1);
-rootElement.AppendChild(h2);
-rootElement.AppendChild(h3);
-rootElement.AppendChild(h4);
-rootElement.AppendChild(h5);
-rootElement.AppendChild(h6);
-
-// 각 헤더에 콘텐츠 추가
-SpanElement spanH11 = taggedContent.CreateSpanElement();
-spanH11.SetText("H1.");
-h1.AppendChild(spanH11);
-SpanElement spanH12 = taggedContent.CreateSpanElement();
-spanH12.SetText("Level 1 header");
-h1.AppendChild(spanH12);
-
-SpanElement spanH21 = taggedContent.CreateSpanElement();
-spanH21.SetText("H2.");
-h2.AppendChild(spanH21);
-SpanElement spanH22 = taggedContent.CreateSpanElement();
-spanH22.SetText("Level 2 header");
-h2.AppendChild(spanH22);
-
-SpanElement spanH31 = taggedContent.CreateSpanElement();
-spanH31.SetText("H3.");
-h3.AppendChild(spanH31);
-SpanElement spanH32 = taggedContent.CreateSpanElement();
-spanH32.SetText("Level 3 header");
-h3.AppendChild(spanH32);
-
-SpanElement spanH41 = taggedContent.CreateSpanElement();
-spanH41.SetText("H4.");
-h4.AppendChild(spanH41);
-SpanElement spanH42 = taggedContent.CreateSpanElement();
-spanH42.SetText("Level 4 header");
-h4.AppendChild(spanH42);
-
-SpanElement spanH51 = taggedContent.CreateSpanElement();
-spanH51.SetText("H5.");
-h5.AppendChild(spanH51);
-SpanElement spanH52 = taggedContent.CreateSpanElement();
-spanH52.SetText("Level 5 header");
-h5.AppendChild(spanH52);
-
-SpanElement spanH61 = taggedContent.CreateSpanElement();
-spanH61.SetText("H6.");
-h6.AppendChild(spanH61);
-SpanElement spanH62 = taggedContent.CreateSpanElement();
-spanH62.SetText("Heading level 6");
-h6.AppendChild(spanH62);
-
-// 문단 추가
-ParagraphElement p = taggedContent.CreateParagraphElement();
-p.SetText("P.");
-rootElement.AppendChild(p);
-
-// 문단에 내용을 추가하세요
-SpanElement span1 = taggedContent.CreateSpanElement();
-span1.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
-p.AppendChild(span1);
-SpanElement span2 = taggedContent.CreateSpanElement();
-span2.SetText("Aenean nec lectus ac sem faucibus imperdiet.");
-p.AppendChild(span2);
-SpanElement span3 = taggedContent.CreateSpanElement();
-span3.SetText("Sed ut erat ac magna ullamcorper hendrerit.");
-p.AppendChild(span3);
-SpanElement span4 = taggedContent.CreateSpanElement();
-span4.SetText("Cras pellentesque libero semper, gravida magna sed, luctus leo.");
-p.AppendChild(span4);
-SpanElement span5 = taggedContent.CreateSpanElement();
-span5.SetText("Fusce lectus odio, laoreet nec ullamcorper ut, molestie eu elit.");
-p.AppendChild(span5);
-SpanElement span6 = taggedContent.CreateSpanElement();
-span6.SetText("Interdum et malesuada fames ac ante ipsum primis in faucibus. ");
-p.AppendChild(span6);
-SpanElement span7 = taggedContent.CreateSpanElement();
-span7.SetText("Aliquam lacinia sit amet elit ac consectetur. So cursus condimentum ligula, vitae volutpat sem tristique eget. ");
-p.AppendChild(span7);
-SpanElement span8 = taggedContent.CreateSpanElement();
-span8.SetText("Nulla in consectetur massa. Vestibulum vitae lobortis ante. Nulla ullamcorper pellentesque justo rhoncus accumsan. ");
-p.AppendChild(span8);
-SpanElement span9 = taggedContent.CreateSpanElement();
-span9.SetText("Mauris ornare eu odio non lacinia. Aliquam massa leo, rhoncus ac iaculis eget, tempus et magna. Sed non consectetur elit.");
-p.AppendChild(span9);
-SpanElement span10 = taggedContent.CreateSpanElement();
-span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla purus, vitae posuere risus odio id massa. Cras sed venenatis lacus.");
-p.AppendChild(span10);
-```
-
-여기서는 다양한 수준의 제목이나 문단 등의 인라인 구조 요소를 만들고 여기에 콘텐츠를 추가합니다.
-
-## 6단계: 태그가 지정된 PDF 문서 저장
-
-마지막으로 태그가 지정된 PDF 문서를 저장합니다.
-
-```csharp
-// 태그가 지정된 PDF 문서를 저장합니다.
-document.Save(dataDir + "InlineStructureElements.pdf");
-```
-
-### .NET용 Aspose.PDF를 사용한 인라인 구조 요소의 샘플 소스 코드 
-
-```csharp
-
-// 문서 디렉토리의 경로입니다.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// PDF 문서 생성
-Document document = new Document();
-
-// TaggedPdf로 작업할 콘텐츠 가져오기
-ITaggedContent taggedContent = document.TaggedContent;
-
-// Documnet의 제목 및 언어 설정
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
+```
 
-// 루트 구조 요소 가져오기
+### 5단계: 루트 구조 요소 가져오기
+
+문서에 요소를 추가해 보겠습니다. 먼저 태그가 지정된 콘텐츠의 루트 구조 요소를 가져오세요. 이는 문서 구조를 구축하는 기초가 됩니다.
+
+```csharp
 StructureElement rootElement = taggedContent.RootElement;
+```
+
+### 6단계: 헤더 요소 만들기
+
+이제 헤더 요소를 만들 차례입니다. 이는 콘텐츠를 계층 구조로 구성하는 데 도움이 됩니다. 6단계의 헤더를 만들 것입니다.
+
+```csharp
 HeaderElement h1 = taggedContent.CreateHeaderElement(1);
 HeaderElement h2 = taggedContent.CreateHeaderElement(2);
 HeaderElement h3 = taggedContent.CreateHeaderElement(3);
 HeaderElement h4 = taggedContent.CreateHeaderElement(4);
 HeaderElement h5 = taggedContent.CreateHeaderElement(5);
 HeaderElement h6 = taggedContent.CreateHeaderElement(6);
+```
+
+### 7단계: 루트 요소에 헤더 추가
+
+헤더 요소를 만든 후 루트 요소에 추가합니다. 이렇게 하면 문서의 구조적 계층이 구축됩니다.
+
+```csharp
 rootElement.AppendChild(h1);
 rootElement.AppendChild(h2);
 rootElement.AppendChild(h3);
 rootElement.AppendChild(h4);
 rootElement.AppendChild(h5);
 rootElement.AppendChild(h6);
+```
+
+### 8단계: 각 헤더에 텍스트 추가
+
+이제 각 헤더에 텍스트를 추가해 보겠습니다. 이는 간단한 과정이지만 문서를 유용하게 만드는 데 필수적입니다. 
+
+```csharp
+// H1
 SpanElement spanH11 = taggedContent.CreateSpanElement();
 spanH11.SetText("H1. ");
 h1.AppendChild(spanH11);
 SpanElement spanH12 = taggedContent.CreateSpanElement();
 spanH12.SetText("Level 1 Header");
 h1.AppendChild(spanH12);
-SpanElement spanH21 = taggedContent.CreateSpanElement();
-spanH21.SetText("H2. ");
-h2.AppendChild(spanH21);
-SpanElement spanH22 = taggedContent.CreateSpanElement();
-spanH22.SetText("Level 2 Header");
-h2.AppendChild(spanH22);
-SpanElement spanH31 = taggedContent.CreateSpanElement();
-spanH31.SetText("H3. ");
-h3.AppendChild(spanH31);
-SpanElement spanH32 = taggedContent.CreateSpanElement();
-spanH32.SetText("Level 3 Header");
-h3.AppendChild(spanH32);
-SpanElement spanH41 = taggedContent.CreateSpanElement();
-spanH41.SetText("H4. ");
-h4.AppendChild(spanH41);
-SpanElement spanH42 = taggedContent.CreateSpanElement();
-spanH42.SetText("Level 4 Header");
-h4.AppendChild(spanH42);
-SpanElement spanH51 = taggedContent.CreateSpanElement();
-spanH51.SetText("H5. ");
-h5.AppendChild(spanH51);
-SpanElement spanH52 = taggedContent.CreateSpanElement();
-spanH52.SetText("Level 5 Header");
-h5.AppendChild(spanH52);
-SpanElement spanH61 = taggedContent.CreateSpanElement();
-spanH61.SetText("H6. ");
-h6.AppendChild(spanH61);
-SpanElement spanH62 = taggedContent.CreateSpanElement();
-spanH62.SetText("Level 6 Header");
-h6.AppendChild(spanH62);
+
+// 위에 표시된 대로 H2~H6에 대해 반복합니다.
+```
+
+### 9단계: 문단 요소 만들기
+
+다음으로, 문단 요소를 추가해 보겠습니다. 이것은 PDF의 주요 콘텐츠 영역 역할을 할 것입니다. 
+
+```csharp
 ParagraphElement p = taggedContent.CreateParagraphElement();
 p.SetText("P. ");
 rootElement.AppendChild(p);
+```
+
+### 10단계: 문단에 텍스트 추가
+
+이제 문단 요소가 있으니 텍스트로 채울 차례입니다. 여러 span을 추가하여 콘텐츠를 구성할 수 있습니다.
+
+```csharp
 SpanElement span1 = taggedContent.CreateSpanElement();
 span1.SetText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. ");
 p.AppendChild(span1);
-SpanElement span2 = taggedContent.CreateSpanElement();
-span2.SetText("Aenean nec lectus ac sem faucibus imperdiet. ");
-p.AppendChild(span2);
-SpanElement span3 = taggedContent.CreateSpanElement();
-span3.SetText("Sed ut erat ac magna ullamcorper hendrerit. ");
-p.AppendChild(span3);
-SpanElement span4 = taggedContent.CreateSpanElement();
-span4.SetText("Cras pellentesque libero semper, gravida magna sed, luctus leo. ");
-p.AppendChild(span4);
-SpanElement span5 = taggedContent.CreateSpanElement();
-span5.SetText("Fusce lectus odio, laoreet nec ullamcorper ut, molestie eu elit. ");
-p.AppendChild(span5);
-SpanElement span6 = taggedContent.CreateSpanElement();
-span6.SetText("Interdum et malesuada fames ac ante ipsum primis in faucibus. ");
-p.AppendChild(span6);
-SpanElement span7 = taggedContent.CreateSpanElement();
-span7.SetText("Aliquam lacinia sit amet elit ac consectetur. Donec cursus condimentum ligula, vitae volutpat sem tristique eget. ");
-p.AppendChild(span7);
-SpanElement span8 = taggedContent.CreateSpanElement();
-span8.SetText("Nulla in consectetur massa. Vestibulum vitae lobortis ante. Nulla ullamcorper pellentesque justo rhoncus accumsan. ");
-p.AppendChild(span8);
-SpanElement span9 = taggedContent.CreateSpanElement();
-span9.SetText("Mauris ornare eu odio non lacinia. Aliquam massa leo, rhoncus ac iaculis eget, tempus et magna. Sed non consectetur elit. ");
-p.AppendChild(span9);
-SpanElement span10 = taggedContent.CreateSpanElement();
-span10.SetText("Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla purus, vitae posuere risus odio id massa. Cras sed venenatis lacus.");
-p.AppendChild(span10);
-
-// 태그가 지정된 PDF 문서 저장
-document.Save(dataDir + "InlineStructureElements.pdf");
-
+// 필요에 따라 추가 스팬을 계속 추가합니다.
 ```
+
+### 11단계: 태그가 지정된 PDF 문서 저장
+
+마지막으로 모든 콘텐츠를 추가한 후에는 문서를 저장해야 합니다. 마무리해 봅시다!
+
+```csharp
+document.Save(dataDir + "InlineStructureElements.pdf");
+```
+
+그리고 보일라! 이제 구조화되고 접근 가능한 태그가 지정된 PDF 문서가 있습니다.
 
 ## 결론
 
-축하합니다! Aspose.PDF for .NET에서 인라인 구조 요소를 사용하는 방법을 배웠습니다. 이제 다양한 레벨과 문단의 제목을 사용하여 PDF 문서에 계층 구조를 만들 수 있습니다. Aspose.PDF의 더 많은 기능을 탐색하여 그 잠재력을 최대한 발견하세요.
+태그가 지정된 PDF 문서를 만드는 것은 어려울 수 있지만 Aspose.PDF for .NET을 사용하면 아주 간단합니다! 이 단계별 가이드를 따르면 문서 구조화의 기본 사항을 마스터하게 됩니다. PDF에 태그를 올바르게 지정하면 접근성이 향상되어 귀중한 콘텐츠가 더 많은 사람에게 전달됩니다. 그러니 PDF를 보기 좋을 뿐만 아니라 사용하기 편리하게 만들어 보세요!
 
-### 자주 묻는 질문
+## 자주 묻는 질문
 
-#### 질문: PDF 문서의 인라인 구조 요소는 무엇이며, 계층적 구조를 만드는 데 어떻게 기여합니까?
+### 태그가 지정된 PDF란 무엇입니까?
+태그가 있는 PDF는 문서의 구조에 대한 정보를 포함하는 PDF로, 장애가 있는 사용자의 접근성을 높입니다.
 
-A: PDF 문서의 인라인 구조 요소(예: 다양한 레벨의 제목 및 문단)는 콘텐츠를 구조화된 방식으로 구성하고 표현하는 계층 구조를 만드는 데 사용됩니다. 이러한 요소를 사용하면 문서 내에서 명확한 계층 구조와 정보 흐름을 확립할 수 있습니다.
+### PDF에서 태그 지정이 중요한 이유는 무엇입니까?
+태그를 지정하면 접근성이 향상되어 화면 판독기가 문서를 명확하게 해석할 수 있으므로 장애가 있는 사용자에게 더 나은 환경을 제공할 수 있습니다.
 
-#### 질문: 인라인 구조 요소는 어떻게 PDF 문서의 가독성과 구성을 향상시킬 수 있나요?
+### Aspose.PDF를 무료로 사용할 수 있나요?
+ 예, Aspose.PDF for .NET을 다음을 통해 평가할 수 있습니다.[무료 체험](https://releases.aspose.com/).
 
-A: 인라인 구조 요소, 특히 제목과 문단은 논리적 구조를 제공하여 PDF 문서의 가독성과 구성을 개선하는 데 도움이 됩니다. 제목은 다양한 수준의 중요성을 나타내며 독자가 콘텐츠를 탐색하는 데 도움이 되는 반면, 문단은 관련 정보를 함께 그룹화합니다.
+### Aspose.PDF에 대한 지원은 어디서 받을 수 있나요?
+ 지원은 다음을 통해 액세스할 수 있습니다.[Aspose 지원 포럼](https://forum.aspose.com/c/pdf/10).
 
-#### 질문: .NET용 Aspose.PDF는 어떻게 인라인 구조 요소의 사용을 용이하게 하나요?
-
-A: Aspose.PDF for .NET은 제목 및 문단과 같은 인라인 구조 요소를 만들고 조작하는 클래스와 메서드를 제공합니다. 이러한 요소는 사용자 정의, 계층적으로 구성, 콘텐츠로 풍부하게 하여 문서의 시각적 표현과 접근성을 개선할 수 있습니다.
-
-####  Q: 목적은 무엇입니까?`taggedContent` object in relation to inline structure elements?
-
- A: 그`taggedContent` 객체, 에서 얻은`TaggedContent` 의 속성`Document`, 인라인 구조 요소를 포함한 구조화된 요소로 작업할 수 있습니다. 문서 내에서 제목과 문단을 만들고, 사용자 지정하고, 구성할 수 있습니다.
-
-#### 질문: 인라인 구조 요소는 명확한 문서 계층 구조를 만드는 데 어떻게 도움이 되나요?
-
-A: 다양한 수준의 제목과 같은 인라인 구조 요소는 문서에서 명확하고 잘 정의된 계층 구조를 확립하는 데 기여합니다. 독자는 주요 주제, 하위 주제 및 관련 콘텐츠를 빠르게 식별하여 문서를 탐색하고 이해하기 쉽게 만들 수 있습니다.
-
-#### 질문: Aspose.PDF for .NET을 사용하여 인라인 구조 요소의 모양과 서식을 사용자 정의할 수 있나요?
-
-A: 네, 인라인 구조 요소의 모양과 서식을 사용자 지정할 수 있습니다. 글꼴 스타일, 크기, 색상, 정렬, 들여쓰기, 간격과 같은 속성을 설정하여 제목과 문단에 대한 원하는 시각적 표현을 얻을 수 있습니다.
-
-#### 질문: Aspose.PDF for .NET에서 인라인 구조 요소를 사용하여 PDF 문서에 다양한 수준의 제목을 만들고 추가하려면 어떻게 해야 합니까?
-
- A: 다음을 사용하여 다양한 수준의 제목을 만들 수 있습니다.`CreateHeaderElement`방법을 사용한 다음 루트 구조 요소에 추가합니다. 그런 다음 다음을 사용하여 각 제목 요소에 콘텐츠를 추가할 수 있습니다.`CreateSpanElement` 텍스트 범위를 생성하는 방법입니다.
-
-#### 질문: PDF 문서에서 인라인 구조 요소를 사용하여 목록, 글머리 기호 또는 기타 유형의 콘텐츠 구성을 만들 수 있나요?
-
-답변: 인라인 구조 요소 자체는 주로 제목과 문단에 사용되지만 Aspose.PDF for .NET에서 제공하는 다른 기능과 함께 사용하여 목록, 글머리 기호, 표 및 기타 유형의 콘텐츠 구성을 만들어 포괄적인 문서 구조를 만들 수 있습니다.
-
-#### 질문: 인라인 구조 요소는 문서 접근성에 어떻게 기여하나요?
-
-A: 인라인 구조 요소는 문서 접근성을 강화하는 데 중요한 역할을 합니다. 적절하게 구성된 제목과 문단은 화면 판독기와 기타 보조 기술이 장애가 있는 사용자에게 콘텐츠를 정확하게 해석하고 전달하는 데 도움이 되는 명확한 문서 계층 구조를 제공합니다.
-
-#### 질문: 대화형 요소를 만들거나 멀티미디어를 포함하는 등 인라인 구조 요소를 더욱 고급적으로 활용할 수 있나요?
-
-A: 물론입니다! 이 튜토리얼은 제목과 문단을 만드는 데 중점을 두지만 Aspose.PDF for .NET은 대화형 요소를 만들고, 멀티미디어를 임베드하고, 하이퍼링크를 추가하는 등의 고급 기능을 제공합니다. 라이브러리의 설명서와 예제를 확인하여 이러한 고급 기능을 자세히 알아보세요.
+### .NET용 Aspose.PDF 라이선스를 어떻게 구매할 수 있나요?
+ 라이센스는 다음에서 직접 구매할 수 있습니다.[구매 페이지](https://purchase.aspose.com/buy).

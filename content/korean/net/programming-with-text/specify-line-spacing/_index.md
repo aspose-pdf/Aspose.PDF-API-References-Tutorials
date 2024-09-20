@@ -2,186 +2,147 @@
 title: PDF 파일에서 줄 간격 지정
 linktitle: PDF 파일에서 줄 간격 지정
 second_title: .NET API 참조를 위한 Aspose.PDF
-description: Aspose.PDF for .NET을 사용하여 PDF 파일의 줄 간격을 지정하는 방법을 알아보세요.
+description: 이 단계별 가이드를 통해 Aspose.PDF for .NET을 사용하여 PDF에서 줄 간격을 지정하는 방법을 알아보세요. 정확한 텍스트 서식을 찾는 개발자에게 완벽합니다.
 type: docs
 weight: 510
 url: /ko/net/programming-with-text/specify-line-spacing/
 ---
-이 튜토리얼은 Aspose.PDF for .NET을 사용하여 PDF 파일에서 줄 간격을 지정하는 방법을 설명합니다. 제공된 C# 소스 코드는 단계별로 프로세스를 보여줍니다.
+## 소개
+
+PDF 파일에서 줄 간격을 제어하는 데 어려움을 겪은 적이 있습니까? 너무 빽빽하게 뭉쳐 보이거나 원하는 만큼 세련되지 않은 텍스트가 있었을 수도 있습니다. 이 튜토리얼에서는 Aspose.PDF for .NET을 사용하여 PDF에서 줄 간격을 쉽게 지정하는 방법을 안내합니다. 간단한 단계별 가이드를 사용하여 빈 PDF에서 사용자 지정 줄 간격이 포함된 PDF로 안내합니다. 보고서, 송장 또는 인증서와 같은 문서의 텍스트 레이아웃에 정밀성이 필요한 경우에 적합합니다.
 
 ## 필수 조건
 
-튜토리얼을 진행하기 전에 다음 사항이 있는지 확인하세요.
+코드로 넘어가기 전에 먼저 필요한 모든 것이 있는지 확인해 보겠습니다.
 
-- C# 프로그래밍 언어에 대한 기본 지식.
-- .NET 라이브러리용 Aspose.PDF가 설치되었습니다. Aspose 웹사이트에서 얻을 수 있거나 NuGet을 사용하여 프로젝트에 설치할 수 있습니다.
+1.  .NET용 Aspose.PDF가 설치되어 있습니다. 설치되어 있지 않으면 다음에서 가져오세요.[Aspose.PDF 다운로드 페이지](https://releases.aspose.com/pdf/net/).
+2. .NET 개발 환경(Visual Studio와 같음).
+3. TrueType 글꼴 파일(`.ttf` ) 예제에서 사용할 것입니다. 어떤 글꼴이든 사용할 수 있지만 이 가이드에서는 다음을 사용합니다.`HPSimplified.TTF` 세례반.
+4. C# 및 PDF 조작에 대한 기본 지식.
 
-## 1단계: 프로젝트 설정
+준비가 되었다면, 필요한 패키지를 가져오는 단계로 넘어가겠습니다.
 
-선호하는 통합 개발 환경(IDE)에서 새 C# 프로젝트를 만들고 .NET 라이브러리용 Aspose.PDF에 대한 참조를 추가합니다.
+## 패키지 가져오기
 
-## 2단계: 필요한 네임스페이스 가져오기
-
-필요한 네임스페이스를 가져오려면 C# 파일의 시작 부분에 다음 using 지시문을 추가합니다.
+C# 프로젝트에서 PDF 기능을 사용하려면 Aspose.PDF 네임스페이스를 가져와야 합니다. 방법은 다음과 같습니다.
 
 ```csharp
-using Aspose.Pdf;
 using Aspose.Pdf.Text;
 using System.IO;
 ```
 
-## 3단계: 문서 디렉토리 경로 설정
+이러한 네임스페이스를 사용하면 PDF 문서를 만들고 조작할 수 있고, 텍스트 서식 및 글꼴 옵션을 사용할 수도 있습니다.
 
- 다음을 사용하여 문서 디렉토리 경로를 설정하세요.`dataDir` 변하기 쉬운:
+이것을 한 입 크기의 단계로 나누어서 쉽게 따라할 수 있도록 하겠습니다. 각 단계는 PDF 설정에서 줄 간격 지정까지 프로세스의 핵심 부분에 초점을 맞춥니다.
+
+## 1단계: 프로젝트 설정 및 문서 디렉토리 정의
+
+우리가 해야 할 첫 번째 일은 파일이 어디에 있는지 정의하는 것입니다. 이렇게 하면 프로그램이 글꼴을 어디에서 찾을지, 결과 PDF를 어디에 저장할지 알 수 있습니다.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+string fontFile = dataDir + "HPSimplified.TTF";
 ```
 
- 바꾸다`"YOUR DOCUMENT DIRECTORY"` 문서 디렉토리의 실제 경로를 포함합니다.
+ 이 단계에서는 다음을 교체합니다.`"YOUR DOCUMENT DIRECTORY"` 파일을 저장하는 실제 경로와 함께. 여기에 글꼴 파일을 배치합니다(`HPSimplified.TTF`) 및 PDF가 저장될 위치입니다.
 
-## 4단계: 입력 PDF 파일 로드
+## 2단계: PDF 문서 로드
 
- 다음을 사용하여 입력 PDF 파일을 로드합니다.`Document` 수업:
+이제 새 PDF 문서를 만들어야 합니다. 이 가이드에서는 빈 문서로 시작하지만, 필요한 경우 기존 PDF를 로드할 수도 있습니다.
 
 ```csharp
 Document doc = new Document();
 ```
 
-## 5단계: TextFormattingOptions 만들기
+이렇게 하면 새로운 빈 PDF 문서가 생성됩니다. 쉽죠?
 
- 생성하다`TextFormattingOptions` 객체를 선택하고 줄 간격 모드를 설정합니다.`FullSize`:
+## 3단계: 텍스트 서식 옵션 설정
+
+ 마법이 일어나는 곳은 바로 여기입니다. PDF에 추가하려는 텍스트의 줄 간격 모드를 지정합니다. Aspose.PDF는 여러 옵션을 제공하지만 이 가이드에서는 다음을 사용합니다.`LineSpacingMode.FullSize`이렇게 하면 줄 간격이 완벽하게 준수됩니다.
 
 ```csharp
 TextFormattingOptions formattingOptions = new TextFormattingOptions();
 formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 ```
 
-## 6단계: TextFragment 만들기
+ 이 코드는 줄 간격 모드를 설정합니다.`FullSize` , 텍스트가 적절한 간격으로 표시되도록 합니다. 다음과 같은 다른 옵션이 있습니다.`Proportional` 다른 간격 동작을 원하지만 지금은 다음을 고수하겠습니다.`FullSize`.
 
- 생성하다`TextFragment` 객체를 만들고 텍스트 내용을 지정합니다.
+## 4단계: 텍스트 조각 만들기
+
+이제 PDF에 배치될 실제 텍스트를 만들 것입니다. 이 텍스트는 우리가 정의한 줄 간격을 존중합니다.
 
 ```csharp
 TextFragment textFragment = new TextFragment("Hello world");
 ```
 
-## 7단계: 글꼴 파일 로드(선택 사항)
+ 우리는 문자열을 사용하여 텍스트 조각을 생성했습니다.`"Hello world"`물론, 이 텍스트를 원하는 대로 사용자 정의할 수 있습니다.
 
- 텍스트에 특정 글꼴을 사용하려면 TrueType 글꼴 파일을 로드합니다.`FileStream` 물체:
+## 5단계: 사용자 정의 글꼴 로드 및 적용
+
+텍스트를 돋보이게 하기 위해 파일에서 사용자 지정 TrueType 글꼴을 로드합니다. 이 단계는 선택 사항이지만 PDF에 전문적인 터치를 더할 수 있습니다.
 
 ```csharp
-string fontFile = dataDir + "HPSimplified.TTF";
-using (FileStream fontStream = File.OpenRead(fontFile))
+if (fontFile != "")
 {
-    textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-}
+    using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
+    {
+        textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
 ```
 
- 바꾸다`"HPSimplified.TTF"` 실제 글꼴 파일 이름을 사용합니다.
+여기서, 우리는 글꼴 파일을 로드하고 그것을 텍스트 조각에 적용합니다. 파일 경로가 유효하면 글꼴이 사용됩니다. 그렇지 않으면 기본 글꼴이 적용됩니다.
 
-## 8단계: 텍스트 위치 및 줄 간격 지정
+## 6단계: 텍스트 위치 및 서식 설정
 
- 텍스트 조각의 위치를 설정하고 다음을 할당합니다.`TextFormattingOptions` 에게`TextState.FormattingOptions` 재산:
+다음으로, PDF에 텍스트를 배치해야 합니다. 또한 이전에 만든 서식 옵션을 적용합니다.
 
 ```csharp
 textFragment.Position = new Position(100, 600);
 textFragment.TextState.FormattingOptions = formattingOptions;
 ```
 
-## 9단계: 문서에 텍스트 추가
+ 그만큼`Position` 방법은 텍스트가 페이지에 나타날 좌표를 설정합니다(이 경우 왼쪽에서 100단위, 아래쪽에서 600단위). 줄 간격 모드를 포함한 서식 옵션이 여기에 적용됩니다.
 
- 문서에 텍스트 조각을 추가하려면 다음을 수행합니다.`TextBuilder` 또는 페이지로 직접`Paragraphs` 수집:
+## 7단계: PDF 페이지에 텍스트 추가
+
+이제 텍스트의 서식과 위치가 정해졌으므로 PDF 문서에 추가할 차례입니다.
 
 ```csharp
 var page = doc.Pages.Add();
 page.Paragraphs.Add(textFragment);
 ```
 
-## 10단계: 결과 PDF 문서 저장
+이 코드는 PDF 문서에 새 페이지를 만들고 텍스트 조각을 추가합니다.
 
-수정된 PDF 문서를 저장합니다.
+## 8단계: PDF 저장
+
+마지막 단계에 도달했습니다! 이제 모든 것이 설정되었으니 PDF를 저장해 보겠습니다.
 
 ```csharp
 dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
 doc.Save(dataDir);
 ```
 
- 교체를 꼭 해주세요`"SpecifyLineSpacing_out.pdf"` 원하는 출력 파일 이름을 입력합니다.
-
-### .NET용 Aspose.PDF를 사용하여 줄 간격 지정을 위한 샘플 소스 코드 
-```csharp
-// 문서 디렉토리의 경로입니다.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string fontFile = dataDir + "HPSimplified.TTF";
-// 입력 PDF 파일 로드
-Document doc = new Document();
-//LineSpacingMode.FullSize로 TextFormattingOptions 만들기
-TextFormattingOptions formattingOptions = new TextFormattingOptions();
-formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
-// 문서의 첫 페이지에 대한 텍스트 빌더 객체를 만듭니다.
-//텍스트 빌더 텍스트 빌더 = 새 텍스트 빌더(doc.Pages[1]);
-// 샘플 문자열로 텍스트 조각 만들기
-TextFragment textFragment = new TextFragment("Hello world");
-if (fontFile != "")
-{
-	//TrueType 글꼴을 스트림 객체에 로드합니다.
-	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
-	{
-		// 텍스트 문자열에 대한 글꼴 이름을 설정합니다.
-		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		// 텍스트 조각의 위치를 지정하세요
-		textFragment.Position = new Position(100, 600);
-		//현재 조각의 TextFormattingOptions를 미리 정의된 것(LineSpacingMode.FullSize를 가리킴)으로 설정합니다.
-		textFragment.TextState.FormattingOptions = formattingOptions;
-		// PDF 파일 위에 놓을 수 있도록 TextBuilder에 텍스트를 추가합니다.
-		//textBuilder.AppendText(텍스트조각);
-		var page = doc.Pages.Add();
-		page.Paragraphs.Add(textFragment);
-	}
-	dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
-	// 결과 PDF 문서 저장
-	doc.Save(dataDir);
-}
-```
+이렇게 하면 지정된 줄 간격으로 PDF가 저장되고 파일이 준비됩니다!
 
 ## 결론
 
-축하합니다! Aspose.PDF for .NET을 사용하여 PDF 문서에서 줄 간격을 지정하는 방법을 성공적으로 배웠습니다. 이 튜토리얼은 프로젝트 설정부터 수정된 문서 저장까지 단계별 가이드를 제공했습니다. 이제 이 코드를 자신의 C# 프로젝트에 통합하여 PDF 파일에서 텍스트의 줄 간격을 사용자 지정할 수 있습니다.
+그리고 그게 전부입니다! 방금 Aspose.PDF for .NET을 사용하여 사용자 정의 줄 간격이 있는 PDF 문서를 만들었습니다. PDF 파일의 모든 측면을 제어할 수 있는 강력한 도구이며, 이것은 여러분이 달성할 수 있는 것의 한 예일 뿐입니다. 텍스트 배치에서 서식 지정까지 가능성은 무한합니다.
 
-### 자주 묻는 질문
+PDF 조작에 대해 더 깊이 파고들고 싶다면 Aspose.PDF는 탐험할 수 있는 풍부한 기능을 제공합니다. 주저하지 말고 실험하고 문서로 할 수 있는 일의 한계를 넓혀보세요!
 
-#### 질문: "PDF 파일에서 줄 간격 지정" 튜토리얼의 목적은 무엇인가요?
+## 자주 묻는 질문
 
-A: "PDF 파일에서 줄 간격 지정" 튜토리얼은 사용자에게 .NET용 Aspose.PDF 라이브러리를 사용하여 PDF 문서 내의 텍스트 줄 간격을 사용자 지정하는 방법을 안내하는 것을 목표로 합니다. 이 튜토리얼은 프로세스를 보여주기 위한 단계별 지침과 C# 코드 샘플을 제공합니다.
+### 다른 모드에서 줄 간격을 조정할 수 있나요?  
+ 네, 다음과 같은 다른 모드를 사용할 수 있습니다.`Proportional` 또는`Fixed` 귀하의 요구 사항에 따라 다릅니다.
 
-#### 질문: 이 튜토리얼은 PDF 문서에서 줄 간격을 지정하는 데 어떻게 도움이 되나요?
+### 파일 대신 시스템에서 글꼴을 로드하는 것이 가능합니까?  
+ 예, 다음을 사용하여 시스템에 설치된 글꼴을 로드할 수 있습니다.`FontRepository`.
 
-A: 이 튜토리얼은 사용자가 Aspose.PDF for .NET의 기능을 활용하여 PDF 문서의 텍스트에 대한 줄 간격을 지정하는 방법을 이해하는 데 도움이 됩니다. 제공된 단계와 코드 예제를 따르면 사용자는 선호도에 따라 줄 간격을 조정할 수 있습니다.
+### Aspose.PDF for .NET을 다른 파일 형식과 함께 사용할 수 있나요?  
+물론입니다! Aspose.PDF for .NET은 XML, HTML 등 다양한 형식을 지원합니다.
 
-#### 질문: 이 튜토리얼을 따르려면 어떤 전제 조건이 필요합니까?
+### Aspose.PDF for .NET을 사용하려면 라이선스가 필요합니까?  
+네, 모든 기능을 사용하려면 라이센스가 필요합니다. 라이센스는 다음과 같이 얻을 수 있습니다.[여기](https://purchase.aspose.com/buy).
 
-A: 튜토리얼을 시작하기 전에 C# 프로그래밍 언어에 대한 기본적인 이해가 있어야 합니다. 또한 Aspose.PDF for .NET 라이브러리를 설치해야 합니다. Aspose 웹사이트에서 얻거나 NuGet을 사용하여 프로젝트에 설치할 수 있습니다.
-
-#### 질문: 이 튜토리얼을 따르려면 프로젝트를 어떻게 설정해야 하나요?
-
-A: 시작하려면 선호하는 통합 개발 환경(IDE)에서 새 C# 프로젝트를 만들고 Aspose.PDF for .NET 라이브러리에 대한 참조를 추가합니다. 이렇게 하면 라이브러리의 기능을 활용하여 PDF 문서 작업과 줄 간격 사용자 지정이 가능합니다.
-
-#### 질문: 이 튜토리얼을 사용하면 모든 유형의 텍스트에 대한 줄 간격을 지정할 수 있나요?
-
-A: 네, 이 튜토리얼은 Aspose.PDF for .NET을 사용하여 PDF 문서 내의 모든 텍스트 콘텐츠에 대한 줄 간격을 지정하는 방법에 대한 지침을 제공합니다. 제공된 코드 샘플을 사용하여 필요에 따라 텍스트의 줄 간격을 조정할 수 있습니다.
-
-#### 질문: 튜토리얼에서 줄 간격 모드를 어떻게 지정하나요?
-
- A: 튜토리얼에서는 다음을 만드는 방법을 보여줍니다.`TextFormattingOptions` 객체를 설정하고 설정`LineSpacing` 재산에`TextFormattingOptions.LineSpacingMode.FullSize`이 모드는 텍스트 콘텐츠에 대한 전체 줄 간격을 지정합니다.
-
-#### 질문: 텍스트에 특정 글꼴을 로드하려면 어떻게 해야 하나요?
-
- A: 텍스트 콘텐츠에 특정 글꼴을 사용하려는 경우 튜토리얼에서는 TrueType 글꼴 파일을 로드하는 방법에 대한 지침을 제공합니다.`FileStream` 객체를 선택하고 해당 객체의 글꼴로 설정합니다.`TextFragment`이를 통해 줄 간격과 함께 텍스트의 글꼴을 사용자 지정할 수 있습니다.
-
-#### 질문: PDF 문서 내에서 텍스트의 위치를 사용자 지정하려면 어떻게 해야 하나요?
-
- A: 텍스트의 위치를 사용자 지정하려면 다음을 만듭니다.`TextFragment` 객체를 설정하고 설정`Position`속성을 원하는 좌표(X 및 Y)로 설정합니다. 이를 통해 PDF 문서 내에서 텍스트가 배치되는 위치를 제어할 수 있습니다.
-
-#### 질문: 이러한 줄 간격 수정 사항을 기존 PDF 문서에 적용할 수 있나요?
-
- A: 네, 기존 PDF 문서의 텍스트에 대한 줄 간격을 수정할 수 있습니다. 이 튜토리얼에서는`TextFragment` 지정된 줄 간격과 위치로 추가한 다음 페이지에 추가합니다.`Paragraphs` 수집.
+### 여러 문단의 줄 간격을 어떻게 설정합니까?  
+ 신청하실 수 있습니다`TextFormattingOptions` 각자에게`TextFragment` 또는`TextParagraph` 여러 줄이나 문단의 간격을 제어합니다.

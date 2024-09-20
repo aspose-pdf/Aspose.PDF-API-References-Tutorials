@@ -80,7 +80,7 @@ Nyní máte záhlaví, které si můžete přizpůsobit!
 
 ## Krok 5: Přidejte obrázek do záhlaví
 
-Nyní se dostáváme k zábavnější části! Musíte přidat obrázek do záhlaví. Nejprve vytvořte objekt obrázku:
+Nyní se dostáváme k té zábavné části! Musíte přidat obrázek do záhlaví. Nejprve vytvořte objekt obrázku:
 
 ```csharp
 Aspose.Pdf.Image image1 = new Aspose.Pdf.Image();

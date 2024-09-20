@@ -53,7 +53,7 @@ Page page = doc.Pages.Add();
 
  Itt létrehozunk a`Document` objektumot, és adjunk hozzá egy újat`Page` hozzá. Ez megteremti az alapot a vonal megrajzolásához.
 
-## 3. lépés: Hozza létre a rajzobjektumot
+## 3. lépés: Hozd létre a rajzobjektumot
 
  Ezután hozzon létre a`Graph` objektum, amely azt a területet képviseli, ahol rajzolni fog. Határozza meg a méreteit igényei szerint.
 
@@ -94,7 +94,7 @@ line.GraphInfo.DashPhase = 1;
 ```
 
 - `line.GraphInfo.Color`: Beállítja a vonal színét. Ebben az esetben piros.
-- `line.GraphInfo.DashArray` : Meghatározza a kötőjelmintát. Itt,`{ 0, 1, 0 }` szaggatott mintát jelent.
+- `line.GraphInfo.DashArray` : Meghatározza a szaggatott mintát. Itt,`{ 0, 1, 0 }` szaggatott mintát jelent.
 - `line.GraphInfo.DashPhase`: Beállítja a kötőjelminta kezdőpontját.
 
 ## 6. lépés: Adja hozzá a vonalat a rajzhoz

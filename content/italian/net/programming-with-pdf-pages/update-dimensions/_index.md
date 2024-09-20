@@ -9,7 +9,7 @@ url: /it/net/programming-with-pdf-pages/update-dimensions/
 ---
 ## Introduzione
 
-La gestione dei file PDF può spesso richiedere un po' di finezza, soprattutto quando si tratta di adattarne le dimensioni per una migliore usabilità. Chiunque abbia lottato con la modifica del layout di un documento sa che può essere un processo frustrante. Tuttavia, con Aspose.PDF per .NET, puoi facilmente aggiornare le dimensioni di pagina dei tuoi file PDF in pochi semplici passaggi. In questo tutorial, ti guideremo attraverso il processo di aggiornamento delle dimensioni di pagina PDF, assicurandoti di avere un layout che si adatti perfettamente. Tuffiamoci!
+La gestione dei file PDF può spesso richiedere un po' di finezza, soprattutto quando si tratta di adattare le loro dimensioni per una migliore usabilità. Chiunque abbia lottato con la modifica del layout di un documento sa che può essere un processo frustrante. Tuttavia, con Aspose.PDF per .NET, puoi facilmente aggiornare le dimensioni di pagina dei tuoi file PDF in pochi semplici passaggi. In questo tutorial, ti guideremo attraverso il processo di aggiornamento delle dimensioni di pagina PDF, assicurandoti di avere un layout che si adatti perfettamente. Tuffiamoci!
 
 ## Prerequisiti
 

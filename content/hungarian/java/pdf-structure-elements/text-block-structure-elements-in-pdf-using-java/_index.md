@@ -1,6 +1,6 @@
 ---
-title: Szövegblokk szerkezeti elemek a PDF-ben Java használatával
-linktitle: Szövegblokk szerkezeti elemek a PDF-ben Java használatával
+title: Szövegblokk szerkezeti elemek PDF-ben Java használatával
+linktitle: Szövegblokk szerkezeti elemek PDF-ben Java használatával
 second_title: Aspose.PDF Java PDF feldolgozó API
 description: Mester PDF szövegblokk szerkezeti elemek Java nyelven – Lépésről lépésre útmutató az Aspose.PDF for Java használatához.
 type: docs
@@ -32,7 +32,7 @@ Mielőtt PDF-ekkel dolgozna Java nyelven, győződjön meg arról, hogy telepít
 1.  Az Aspose.PDF for Java letöltése innen:[itt](https://releases.aspose.com/pdf/java/).
 2. Adja hozzá a könyvtárat a Java projekthez.
 
-### 2. lépés: Töltsön be egy PDF-dokumentumot
+### 2. lépés: Töltse be a PDF-dokumentumot
 
 A szövegblokk szerkezeti elemeivel való munkavégzéshez PDF-dokumentum szükséges. Töltse be a PDF dokumentumot az Aspose.PDF használatával:
 

@@ -99,7 +99,7 @@ doc.Save(dataDir + "PDFToSVG_out.svg", saveOptions);
 
 ## Conclusie
 
-En daar heb je het! Je hebt met succes een PDF-bestand geconverteerd naar SVG-formaat met Aspose.PDF voor .NET. Dit proces is niet alleen eenvoudig, maar ook ongelooflijk efficiënt, waardoor je je documentconversies met gemak kunt verwerken. Of je nu werkt aan een project dat afbeeldingen van hoge kwaliteit vereist of gewoon bestanden wilt converteren voor persoonlijk gebruik, Aspose.PDF is een krachtig hulpmiddel dat je kan helpen je doelen te bereiken.
+En daar heb je het! Je hebt met succes een PDF-bestand geconverteerd naar SVG-formaat met Aspose.PDF voor .NET. Dit proces is niet alleen eenvoudig, maar ook ongelooflijk efficiënt, waardoor je je documentconversies met gemak kunt verwerken. Of je nu werkt aan een project dat afbeeldingen van hoge kwaliteit vereist of gewoon bestanden wilt converteren voor persoonlijk gebruik, Aspose.PDF is een krachtige tool die je kan helpen je doelen te bereiken.
 
 ## Veelgestelde vragen
 

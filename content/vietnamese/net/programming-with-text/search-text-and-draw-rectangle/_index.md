@@ -2,88 +2,124 @@
 title: Tìm kiếm văn bản và vẽ hình chữ nhật
 linktitle: Tìm kiếm văn bản và vẽ hình chữ nhật
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Tìm hiểu cách tìm kiếm văn bản trong PDF, vẽ hình chữ nhật xung quanh văn bản tìm thấy và lưu tài liệu đã sửa đổi bằng Aspose.PDF cho .NET.
+description: Học cách tìm kiếm văn bản trong PDF và tô sáng bằng hình chữ nhật bằng Aspose.PDF cho .NET! Hướng dẫn từng bước dễ dàng để nâng cao kỹ năng thao tác PDF.
 type: docs
 weight: 460
 url: /vi/net/programming-with-text/search-text-and-draw-rectangle/
 ---
-Hướng dẫn này giải thích cách sử dụng Aspose.PDF cho .NET để tìm kiếm văn bản cụ thể trong tài liệu PDF, vẽ hình chữ nhật xung quanh văn bản tìm thấy và lưu tài liệu đã sửa đổi. Mã nguồn C# được cung cấp minh họa quy trình từng bước.
+## Giới thiệu
+
+Bạn đang muốn nâng cao kỹ năng thao tác PDF của mình? Bạn có muốn tìm hiểu cách tìm kiếm văn bản cụ thể trong các tệp PDF và tô sáng nó bằng hình chữ nhật không? Bạn đã tìm đúng hướng dẫn rồi! Hôm nay, tôi sẽ hướng dẫn bạn cách sử dụng Aspose.PDF cho .NET để tìm kiếm văn bản trong tài liệu PDF và vẽ hình chữ nhật xung quanh nó. Bài viết này sẽ cung cấp hướng dẫn từng bước được thiết kế rõ ràng và hữu ích, đảm bảo bạn có thể làm theo và áp dụng các kỹ thuật này vào các dự án của mình. 
 
 ## Điều kiện tiên quyết
 
-Trước khi thực hiện hướng dẫn, hãy đảm bảo bạn có những điều sau:
+Trước khi bắt đầu hướng dẫn, hãy chuẩn bị những gì bạn cần để đảm bảo quy trình làm việc diễn ra suôn sẻ:
 
-- Kiến thức cơ bản về ngôn ngữ lập trình C#.
-- Đã cài đặt thư viện Aspose.PDF cho .NET. Bạn có thể tải xuống từ trang web Aspose hoặc sử dụng NuGet để cài đặt vào dự án của bạn.
+1. Hiểu biết cơ bản về .NET: Bạn nên quen thuộc với lập trình C# và .NET framework để thực hiện hướng dẫn này một cách hiệu quả.
+   
+2. Đã cài Visual Studio: Bạn sẽ cần một môi trường phát triển tích hợp (IDE) để viết và kiểm tra mã của mình. Visual Studio Community là một lựa chọn tuyệt vời và miễn phí.
+   
+3. Aspose.PDF cho .NET: Bạn cần cài đặt thư viện Aspose.PDF trong dự án của mình. Bạn có thể tải xuống[đây](https://releases.aspose.com/pdf/net/) hoặc xem xét một[giấy phép tạm thời](https://purchase.aspose.com/temporary-license/) để có các tính năng mở rộng.
+   
+4.  Tài liệu PDF mẫu: Đối với hướng dẫn này, bạn sẽ cần một tệp PDF mẫu có tên`SearchAndGetTextFromAll.pdf` được lưu trữ trong thư mục dự án của bạn. 
 
-## Bước 1: Thiết lập dự án
+## Nhập gói
 
-Bắt đầu bằng cách tạo một dự án C# mới trong môi trường phát triển tích hợp (IDE) mà bạn thích và thêm tham chiếu đến thư viện Aspose.PDF cho .NET.
+Để bắt đầu, trước tiên bạn cần nhập các gói cần thiết vào dự án .NET của mình. Thực hiện theo các bước sau:
 
-## Bước 2: Nhập các không gian tên cần thiết
+### Mở Visual Studio
 
-Thêm lệnh using sau vào đầu tệp C# của bạn để nhập các không gian tên cần thiết:
+Khởi chạy Visual Studio và tạo một Ứng dụng Console mới hoặc sử dụng ứng dụng hiện có khi bạn muốn triển khai các chức năng PDF.
+
+### Thêm Aspose.PDF vào Dự án của bạn
+
+1. Nhấp chuột phải vào dự án của bạn trong Solution Explorer.
+2. Chọn "Quản lý gói NuGet".
+3.  Tìm kiếm`Aspose.PDF` và cài đặt phiên bản mới nhất.
+
+Bằng cách này, bạn đang đặt nền tảng cho tất cả các thao tác PDF tuyệt vời mà bạn sắp thực hiện.
+
+## Nhập không gian tên
+
+Ở đầu tệp chương trình, bạn sẽ muốn nhập các không gian tên có liên quan từ thư viện Aspose:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using Aspose.Pdf.Content;
+using System;
 using Aspose.Pdf.Facades;
 ```
 
-## Bước 3: Đặt đường dẫn đến thư mục tài liệu
+Điều này giúp bạn dễ dàng truy cập các lớp và phương thức trong thư viện Aspose.PDF cho các tác vụ của mình hơn.
 
- Đặt đường dẫn đến thư mục tài liệu của bạn bằng cách sử dụng`dataDir` biến:
+
+Bây giờ bạn đã thiết lập mọi thứ, hãy cùng chia nhỏ quy trình tìm kiếm văn bản trong tệp PDF và vẽ hình chữ nhật xung quanh nó thành các bước dễ quản lý.
+
+## Bước 1: Thiết lập Đường dẫn cho Tài liệu của bạn
+
+ Đầu tiên, hãy thiết lập đường dẫn đến tệp PDF của bạn. Hãy đảm bảo thay thế`YOUR DOCUMENT DIRECTORY` với con đường thực tế nơi bạn`SearchAndGetTextFromAll.pdf` được lưu trữ.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế đến thư mục tài liệu của bạn.
+## Bước 2: Mở Tài liệu PDF
 
-## Bước 4: Tải tài liệu PDF
-
- Tải tài liệu PDF bằng cách sử dụng`Document` lớp học:
+ Tiếp theo, tạo một phiên bản của`Document` lớp để tải PDF của bạn:
 
 ```csharp
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
 ```
 
- Thay thế`"SearchAndGetTextFromAll.pdf"` bằng tên thực của tệp PDF của bạn.
+Dòng mã này sẽ mở tệp PDF bạn chỉ định, cho phép bạn tiếp tục chỉnh sửa tệp đó.
 
-## Bước 5: Tạo TextFragmentAbsorber
+## Bước 3: Tạo một trình hấp thụ văn bản
 
- Tạo một`TextFragmentAbsorber` đối tượng để tìm tất cả các trường hợp của cụm từ tìm kiếm đầu vào:
+ Bây giờ, bạn sẽ cần một cách để tìm kiếm văn bản trong tài liệu đó. Đối với điều này, chúng tôi sử dụng`TextFragmentAbsorber`:
 
 ```csharp
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 ```
 
- Thay thế`@"[\S]+"` với mẫu biểu thức chính quy bạn mong muốn.
+ Biểu thức chính quy`@"[\S]+"` được thiết kế để phù hợp với bất kỳ chuỗi ký tự không phải khoảng trắng nào trong PDF. 
 
-## Bước 6: Bật tìm kiếm biểu thức chính quy
+## Bước 4: Cấu hình Tùy chọn Tìm kiếm Văn bản
 
- Cho phép tìm kiếm biểu thức chính quy bằng cách thiết lập`TextSearchOptions` Tính chất của chất hấp thụ:
+Tiếp theo, bạn nên thiết lập các tùy chọn tìm kiếm văn bản:
 
 ```csharp
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;
 ```
 
-## Bước 7: Tìm kiếm trên tất cả các trang
+ Ở đây,`true` tham số có nghĩa là tìm kiếm sẽ phân biệt chữ hoa chữ thường. Bạn có thể đặt nó thành`false` nếu bạn muốn tìm kiếm không phân biệt chữ hoa chữ thường.
 
-Chấp nhận bộ hấp thụ cho tất cả các trang của tài liệu:
+## Bước 5: Chấp nhận Text Absorber trong Tài liệu
+
+ Với bạn`TextFragmentAbsorber` và các tùy chọn tìm kiếm đã sẵn sàng, đã đến lúc lấy văn bản từ tài liệu:
 
 ```csharp
 document.Pages.Accept(textAbsorber);
 ```
 
-## Bước 8: Vẽ một hình chữ nhật xung quanh văn bản tìm thấy
+Phương pháp này kiểm tra từng trang trong tệp PDF của bạn để tìm các đoạn văn bản khớp với mẫu đã chỉ định.
 
- Tạo một`PdfContentEditor` đối tượng và lặp qua các đoạn văn bản đã lấy được, vẽ một hình chữ nhật xung quanh mỗi đoạn văn bản:
+## Bước 6: Tạo một PdfContentEditor
+
+ Để vẽ hình dạng trên tài liệu, bạn sẽ cần`PdfContentEditor`:
 
 ```csharp
 var editor = new PdfContentEditor(document);
+```
+
+Trình chỉnh sửa này cho phép bạn thao tác và chỉnh sửa nội dung PDF dễ dàng.
+
+## Bước 7: Lặp qua các đoạn văn bản đã tìm thấy
+
+Bây giờ, bạn sẽ muốn lặp qua các đoạn văn bản đã tìm thấy để vẽ các hình chữ nhật xung quanh chúng:
+
+```csharp
 foreach (TextFragment textFragment in textAbsorber.TextFragments)
 {
     foreach (TextSegment textSegment in textFragment.Segments)
@@ -93,83 +129,66 @@ foreach (TextFragment textFragment in textAbsorber.TextFragments)
 }
 ```
 
+ Vòng lặp này lặp lại qua từng đoạn văn bản và các phân đoạn của chúng, gọi một`DrawBox` phương pháp vẽ hình chữ nhật.
+
+## Bước 8: Xác định phương thức DrawBox
+
+ Bạn cần phải xác định`DrawBox` phương pháp này sẽ xử lý logic vẽ hình chữ nhật. Sau đây là một triển khai đơn giản:
+
+```csharp
+private static void DrawBox(PdfContentEditor editor, int pageNumber, TextSegment textSegment, System.Drawing.Color color)
+{
+    // Tính kích thước hình chữ nhật dựa trên đoạn văn bản
+    float x = textSegment.Rectangle.LLX;
+    float y = textSegment.Rectangle.LLY;
+    float width = textSegment.Rectangle.Width;
+    float height = textSegment.Rectangle.Height;
+
+    // Vẽ một hình chữ nhật sử dụng các giá trị đã tính toán
+    editor.DrawRectangle(pageNumber, x, y, width, height, color, 1);
+}
+```
+
+Phương pháp này xác định vị trí và kích thước của hình chữ nhật dựa trên hình chữ nhật giới hạn của đoạn thẳng và sử dụng trình chỉnh sửa để vẽ hình chữ nhật đó.
+
 ## Bước 9: Lưu tài liệu đã sửa đổi
 
-Lưu tài liệu đã sửa đổi:
+Sau khi vẽ các hình chữ nhật xung quanh văn bản tìm thấy, bạn có thể lưu tài liệu đã sửa đổi:
 
 ```csharp
 dataDir = dataDir + "SearchTextAndDrawRectangle_out.pdf";
 document.Save(dataDir);
 ```
 
- Hãy chắc chắn thay thế`"SearchTextAndDrawRectangle_out.pdf"` với tên tập tin đầu ra mong muốn.
+Hãy đảm bảo tệp mới của bạn được lưu dưới tên riêng để tránh ghi đè lên tài liệu gốc.
 
-### Mã nguồn mẫu cho Tìm kiếm văn bản và vẽ hình chữ nhật bằng Aspose.PDF cho .NET 
+## Bước 10: Tin nhắn xác nhận
+
+Cuối cùng, in thông báo xác nhận tới bảng điều khiển để cho bạn biết rằng thao tác đã thành công:
+
 ```csharp
-// Đường dẫn đến thư mục tài liệu.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Mở tài liệu
-Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-//Tạo đối tượng TextAbsorber để tìm tất cả các cụm từ khớp với biểu thức chính quy
-TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
-TextSearchOptions textSearchOptions = new TextSearchOptions(true);
-textAbsorber.TextSearchOptions = textSearchOptions;
-document.Pages.Accept(textAbsorber); 
-var editor = new PdfContentEditor(document); 
-foreach (TextFragment textFragment in textAbsorber.TextFragments)
-{
-	foreach (TextSegment textSegment in textFragment.Segments)
-	{
-			DrawBox(editor, textFragment.Page.Number, textSegment, System.Drawing.Color.Red);
-	}
-}
-dataDir = dataDir + "SearchTextAndDrawRectangle_out.pdf";
-document.Save(dataDir);
 Console.WriteLine("\nRectangle drawn successfully on searched text.\nFile saved at " + dataDir);
 ```
 
+Và thế là xong! Bạn đã tạo thành công một tập lệnh để tìm kiếm văn bản trong PDF và tô sáng nó bằng hình chữ nhật.
+
 ## Phần kết luận
 
-Xin chúc mừng! Bạn đã học thành công cách tìm kiếm văn bản cụ thể trong tài liệu PDF, vẽ hình chữ nhật xung quanh văn bản tìm thấy và lưu tài liệu đã sửa đổi bằng Aspose.PDF cho .NET. Hướng dẫn này cung cấp hướng dẫn từng bước, từ thiết lập dự án đến thực hiện các hành động cần thiết. Bây giờ bạn có thể kết hợp mã này vào các dự án C# của riêng mình để thao tác văn bản và vẽ hình chữ nhật trong tệp PDF.
+Xin chúc mừng! Bạn vừa mở khóa một kỹ năng mạnh mẽ có thể cải thiện đáng kể khả năng thao tác PDF của bạn bằng Aspose.PDF cho .NET. Chỉ với một vài bước đơn giản, bạn có thể tìm kiếm bất kỳ văn bản nào trong tài liệu của mình và tô sáng trực quan, giúp tài liệu PDF của bạn tương tác và dễ quản lý hơn. Đừng ngần ngại thử nghiệm các mẫu biểu thức chính quy và tùy chọn màu khác nhau để thực sự biến công cụ này thành của riêng bạn!
 
-### Câu hỏi thường gặp
+## Câu hỏi thường gặp
 
-#### H: Mục đích của hướng dẫn "Tìm kiếm văn bản và vẽ hình chữ nhật" là gì?
+### Aspose.PDF dành cho .NET là gì?
+Aspose.PDF for .NET là thư viện cung cấp giải pháp toàn diện để tạo, chỉnh sửa và chuyển đổi tài liệu PDF theo chương trình.
 
-A: Hướng dẫn "Tìm kiếm văn bản và vẽ hình chữ nhật" hướng dẫn người dùng quy trình sử dụng thư viện Aspose.PDF cho .NET để tìm kiếm văn bản cụ thể trong tài liệu PDF, vẽ hình chữ nhật xung quanh các phân đoạn văn bản tìm thấy và lưu tài liệu đã sửa đổi. Hướng dẫn cung cấp hướng dẫn chi tiết và các mẫu mã C# để minh họa từng bước của quy trình.
+### Tôi có thể sử dụng Aspose.PDF miễn phí không?
+Có, Aspose cung cấp bản dùng thử miễn phí mà bạn có thể sử dụng để kiểm tra các chức năng của thư viện. Hãy xem thử[đây](https://releases.aspose.com/).
 
-#### H: Hướng dẫn này giúp ích gì khi vẽ hình chữ nhật xung quanh văn bản cụ thể trong tài liệu PDF?
+### Tôi cần sử dụng ngôn ngữ lập trình nào với Aspose.PDF cho .NET?
+Aspose.PDF cho .NET được thiết kế để sử dụng với C# và các ngôn ngữ .NET khác.
 
-A: Hướng dẫn này cung cấp hướng dẫn toàn diện về cách định vị và vẽ hình chữ nhật xung quanh các phân đoạn văn bản cụ thể trong tài liệu PDF. Hướng dẫn này trình bày quy trình thiết lập dự án, tải tài liệu PDF, bật tìm kiếm biểu thức chính quy, vẽ hình chữ nhật xung quanh các phân đoạn văn bản tìm thấy và lưu PDF đã sửa đổi.
+### Làm thế nào để tôi nhận được trợ giúp về Aspose.PDF?
+ Bạn có thể truy cập diễn đàn hỗ trợ Aspose để được trợ giúp về bất kỳ vấn đề hoặc thắc mắc nào bạn có thể có. Tìm hỗ trợ[đây](https://forum.aspose.com/c/pdf/10).
 
-#### H: Cần có những điều kiện tiên quyết nào để làm theo hướng dẫn này?
-
-A: Trước khi bắt đầu hướng dẫn, bạn nên có hiểu biết cơ bản về ngôn ngữ lập trình C#. Ngoài ra, bạn cần cài đặt thư viện Aspose.PDF cho .NET. Bạn có thể tải xuống từ trang web Aspose hoặc cài đặt vào dự án của mình bằng NuGet.
-
-#### H: Tôi phải thiết lập dự án của mình như thế nào để thực hiện theo hướng dẫn này?
-
-A: Bắt đầu bằng cách tạo một dự án C# mới trong môi trường phát triển tích hợp (IDE) ưa thích của bạn. Sau đó, thêm tham chiếu đến thư viện Aspose.PDF cho .NET vào dự án của bạn. Điều này sẽ cho phép bạn sử dụng chức năng của thư viện để thao tác với các tài liệu PDF.
-
-#### H: Tôi có thể vẽ hình chữ nhật xung quanh văn bản cụ thể bằng hướng dẫn này không?
-
-A: Có, hướng dẫn tập trung vào việc vẽ các hình chữ nhật xung quanh các phân đoạn văn bản cụ thể trong tài liệu PDF. Nó trình bày cách định vị văn bản mong muốn bằng cách sử dụng biểu thức chính quy, tạo các hình chữ nhật xung quanh các phân đoạn văn bản đã xác định và lưu PDF đã sửa đổi.
-
-#### H: Làm thế nào để tôi có thể chỉ định văn bản tôi muốn tìm kiếm và vẽ hình chữ nhật xung quanh?
-
- A: Để chỉ định văn bản bạn muốn tìm kiếm và vẽ hình chữ nhật xung quanh, hãy tạo một`TextFragmentAbsorber` đối tượng và thiết lập mẫu của nó bằng cách sử dụng`Text` tham số. Thay thế mẫu mặc định`@"[\S]+"` trong mã hướng dẫn với mẫu biểu thức chính quy mong muốn của bạn.
-
-#### H: Làm thế nào để bật tìm kiếm biểu thức chính quy cho văn bản?
-
- A: Tìm kiếm biểu thức chính quy được kích hoạt bằng cách tạo một`TextSearchOptions` đối tượng và thiết lập giá trị của nó thành`true` . Gán đối tượng này cho`TextSearchOptions` tài sản của`TextFragmentAbsorber` Ví dụ. Điều này đảm bảo rằng mẫu biểu thức chính quy được sử dụng trong quá trình tìm kiếm văn bản.
-
-#### H: Làm thế nào để vẽ hình chữ nhật xung quanh văn bản tìm thấy?
-
- A: Sau khi xác định các đoạn văn bản bằng cách sử dụng`TextFragmentAbsorber` , hướng dẫn cung cấp một vòng lặp để lặp qua các phân đoạn này. Đối với mỗi phân đoạn văn bản, hướng dẫn trình bày cách tạo một hình chữ nhật xung quanh nó bằng cách sử dụng`DrawBox` phương pháp và chỉ định hình dạng của hình chữ nhật.
-
-#### H: Các bước để lưu tệp PDF đã chỉnh sửa có hình chữ nhật được vẽ là gì?
-
-A: Sau khi vẽ các hình chữ nhật xung quanh các đoạn văn bản mong muốn, hãy sử dụng`Document` lớp học`Save` phương pháp lưu tài liệu đã chỉnh sửa. Mã mẫu của hướng dẫn trình bày cách lưu PDF đã chỉnh sửa và hiển thị thông báo thành công.
-
-#### H: Tôi có thể tùy chỉnh giao diện của các hình chữ nhật đã vẽ không?
-
- A: Có, bạn có thể tùy chỉnh giao diện của các hình chữ nhật được vẽ. Trong mã mẫu của hướng dẫn,`DrawBox` phương pháp này được sử dụng để tạo hình chữ nhật. Bạn có thể sửa đổi các thuộc tính như màu sắc, kiểu dáng và độ dày để tùy chỉnh giao diện của hình chữ nhật được vẽ.
+### Tôi có thể tải Aspose.PDF cho .NET ở đâu?
+ Bạn có thể tải xuống thư viện từ trang web Aspose,[đây](https://releases.aspose.com/pdf/net/).

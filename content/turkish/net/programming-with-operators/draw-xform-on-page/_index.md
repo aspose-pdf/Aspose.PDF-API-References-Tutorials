@@ -187,7 +187,7 @@ XForm, grafikleri ve içerikleri kapsülleyebilen, bunların birden fazla sayfay
 Evet! Aspose.PDF kütüphanesinin sağladığı metin operatörlerini kullanarak, resim eklemeye benzer bir yaklaşım izleyerek metin de ekleyebilirsiniz.
 
 ### Aspose.PDF'i kullanmak ücretsiz mi?
- Aspose.PDF ücretsiz deneme sunsa da deneme süresinin ötesinde sürekli kullanım için lisans gerektirir. Lisanslama seçeneklerini inceleyebilirsiniz[Burada](https://purchase.aspose.com/buy).
+ Aspose.PDF ücretsiz deneme sunarken, deneme süresinin ötesinde sürekli kullanım için lisans gerektirir. Lisanslama seçeneklerini inceleyebilirsiniz[Burada](https://purchase.aspose.com/buy).
 
 ### Daha detaylı dokümanları nerede bulabilirim?
  Tam Aspose.PDF dokümantasyonunu bulabilirsiniz[Burada](https://reference.aspose.com/pdf/net/).

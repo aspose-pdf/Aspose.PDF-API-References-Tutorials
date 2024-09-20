@@ -13,7 +13,7 @@ Természetesen itt van a szöveg a kért fejlécekkel:
 
 Készen áll arra, hogy kihasználja az Aspose.PDF for Java teljes potenciálját? Oktatóanyagaink átjárót jelentenek ennek a hatékony PDF-kezelő eszköznek a feloldásához. Akár tapasztalt fejlesztő, akár csak most kezd, lépésről lépésre útmutatókat biztosítunk a PDF-dokumentumok zökkenőmentes létrehozásához, szerkesztéséhez és optimalizálásához.
 
-## Átfogó PDF-kezelési oktatóanyagok
+## Átfogó PDF-manipulációs oktatóanyagok
 
 Oktatóanyagaink a PDF-hez kapcsolódó feladatok széles skáláját fedik le. Az alapvető műveletektől, például a szövegbeszúrástól és az oldalkezeléstől a speciális témákig, mint például a PDF-struktúra, a címkék és a kisegítő lehetőségek megfelelősége, szakértelmet szerezhet a látványosan lenyűgöző és felhasználóbarát PDF-ek készítésében. Függetlenül attól, hogy automatizálja a dokumentumgenerálást, vagy javítja a meglévő PDF-eket, ezek az erőforrások javítják PDF-kezelési készségeit.
 
@@ -30,7 +30,7 @@ Ismerje meg a PDF-mellékletek kezelését Java nyelven az Aspose.PDF segítség
 ### [PDF könyvjelzők](./pdf-bookmarks/)
 Ismerje meg, hogyan hozhat létre interaktív PDF-könyvjelzőket az Aspose.PDF for Java segítségével. Növelje a dokumentumnavigációt és a felhasználói élményt.
 ### [PDF konvertálás és átalakítás](./pdf-conversion-transformation/)
-Fedezze fel a PDF-konverzió és -átalakítás hatalmát az Aspose.PDF for Java segítségével – Átfogó oktatóanyagok fejlesztőknek. Fejlessze PDF-feldolgozási készségeit még ma!
+Fedezze fel a PDF-konverzió és -átalakítás erejét az Aspose.PDF for Java segítségével – Átfogó oktatóanyagok fejlesztőknek. Fejlessze PDF-feldolgozási készségeit még ma!
 ### [PDF képek](./pdf-images/)
 Fedezze fel a PDF képkezelést az Aspose.PDF for Java segítségével. Tanuljon meg könnyedén beszúrni, módosítani és optimalizálni képeket PDF-fájlokba.
 ### [PDF képkezelés](./pdf-image-manipulation/)

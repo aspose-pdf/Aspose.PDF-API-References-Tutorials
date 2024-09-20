@@ -119,7 +119,7 @@ Dadurch erhalten Sie eine klare Rückmeldung, wenn etwas nicht wie geplant läuf
 
 ## Abschluss 
 
-Herzlichen Glückwunsch! Sie haben erfolgreich gelernt, wie Sie mit Aspose.PDF für .NET Hyperlinktext aus einer PDF-Datei extrahieren! Mit nur wenigen Codezeilen können Sie Erkenntnisse aus Ihren PDF-Dokumenten gewinnen wie nie zuvor. Ob Datenextraktion, Linküberprüfung oder Dokumentenprüfung – dieser Leitfaden rüstet Sie für die Extraktion von PDF-Hyperlinks. Experimentieren Sie weiter mit Aspose.PDF und schon bald werden Sie ein Profi in der PDF-Bearbeitung sein!
+Herzlichen Glückwunsch! Sie haben erfolgreich gelernt, wie Sie mit Aspose.PDF für .NET Hyperlinktext aus einer PDF-Datei extrahieren! Mit nur wenigen Codezeilen können Sie Erkenntnisse aus Ihren PDF-Dokumenten gewinnen wie nie zuvor. Ob Datenextraktion, Linküberprüfung oder Dokumentenprüfung – dieser Leitfaden macht Sie fit für die Extraktion von PDF-Hyperlinks. Experimentieren Sie weiter mit Aspose.PDF und schon bald sind Sie ein Profi in der PDF-Bearbeitung!
 
 ## Häufig gestellte Fragen
 

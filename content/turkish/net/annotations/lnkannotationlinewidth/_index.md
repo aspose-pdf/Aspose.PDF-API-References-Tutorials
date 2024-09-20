@@ -130,7 +130,7 @@ Console.WriteLine("\nInk annotation line width setup successfully.\nFile saved a
 
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesinde mürekkep notu başarıyla oluşturdunuz ve özelleştirdiniz. Bu eğitim, belgeyi başlatmaktan son dosyayı kaydetmeye kadar tüm süreci kapsıyordu. Bu bilgiyle, Aspose.PDF for .NET'in geniş yeteneklerini daha fazla keşfedebilir ve benzer teknikleri diğer not türlerine veya PDF düzenlemelerine uygulayabilirsiniz.
+Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesinde mürekkep notu oluşturmayı ve özelleştirmeyi başarıyla gerçekleştirdiniz. Bu eğitim, belgenin başlatılmasından son dosyanın kaydedilmesine kadar tüm süreci kapsıyordu. Bu bilgiyle, Aspose.PDF for .NET'in geniş yeteneklerini daha fazla keşfedebilir ve benzer teknikleri diğer not türlerine veya PDF düzenlemelerine uygulayabilirsiniz.
 
 ## SSS
 

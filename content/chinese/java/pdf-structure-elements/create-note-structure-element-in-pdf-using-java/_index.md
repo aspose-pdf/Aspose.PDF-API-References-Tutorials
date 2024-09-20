@@ -23,7 +23,7 @@ url: /zh/java/pdf-structure-elements/create-note-structure-element-in-pdf-using-
 
 ### 1. 简介
 
-PDF 文档用途广泛，但有时您需要为读者提供额外的背景信息或评论。向 PDF 添加注释可以帮助实现这一点。在本教程中，我们将向您展示如何使用 Java 和 Aspose.PDF for Java 在 PDF 中创建注释结构元素。
+PDF 文档用途广泛，但有时您需要为读者提供额外的背景信息或评论。在 PDF 中添加注释可以帮助实现这一点。在本教程中，我们将向您展示如何使用 Java 和 Aspose.PDF for Java 在 PDF 中创建注释结构元素。
 
 ### 2. 设置项目
 

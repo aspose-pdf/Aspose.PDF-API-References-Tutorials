@@ -10,7 +10,7 @@ url: /de/java/pdf-tables/manipulate-tables-in-existing-pdf-using-java/
 
 ## Einführung in die Tabellenbearbeitung in vorhandenen PDF-Dateien mit Java
 
-Tabellen sind ein grundlegender Bestandteil vieler PDF-Dokumente. Sie werden verwendet, um Daten in einem strukturierten Format zu organisieren und darzustellen. In diesem Artikel erfahren Sie, wie Sie Tabellen in vorhandenen PDF-Dokumenten mit Java und der Aspose.PDF-Bibliothek für Java bearbeiten können. Egal, ob Sie Daten aus Tabellen extrahieren, deren Inhalt ändern oder ganz neue Tabellen erstellen müssen, Aspose.PDF für Java bietet einen leistungsstarken Satz von Tools, mit denen Sie diese Aufgabe erledigen können.
+Tabellen sind ein grundlegender Bestandteil vieler PDF-Dokumente. Sie werden verwendet, um Daten in einem strukturierten Format zu organisieren und darzustellen. In diesem Artikel erfahren Sie, wie Sie Tabellen in vorhandenen PDF-Dokumenten mit Java und der Aspose.PDF-Bibliothek für Java bearbeiten können. Ob Sie Daten aus Tabellen extrahieren, deren Inhalt ändern oder ganz neue Tabellen erstellen möchten – Aspose.PDF für Java bietet eine Reihe leistungsstarker Tools, mit denen Sie diese Aufgabe erledigen können.
 
 ## Aspose.PDF für Java verstehen
 

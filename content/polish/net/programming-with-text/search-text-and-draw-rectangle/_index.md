@@ -2,88 +2,124 @@
 title: Wyszukaj tekst i narysuj prostokąt
 linktitle: Wyszukaj tekst i narysuj prostokąt
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak wyszukiwać tekst w pliku PDF, rysować prostokąty wokół znalezionego tekstu i zapisywać zmodyfikowany dokument za pomocą Aspose.PDF dla platformy .NET.
+description: Naucz się wyszukiwać tekst w plikach PDF i wyróżniać go prostokątami za pomocą Aspose.PDF dla .NET! Łatwy samouczek krok po kroku dla ulepszonych umiejętności manipulowania plikami PDF.
 type: docs
 weight: 460
 url: /pl/net/programming-with-text/search-text-and-draw-rectangle/
 ---
-Ten samouczek wyjaśnia, jak używać Aspose.PDF dla .NET do wyszukiwania określonego tekstu w dokumencie PDF, rysowania prostokąta wokół znalezionego tekstu i zapisywania zmodyfikowanego dokumentu. Dostarczony kod źródłowy C# demonstruje ten proces krok po kroku.
+## Wstęp
+
+Chcesz poprawić swoje umiejętności manipulowania plikami PDF? Chcesz dowiedzieć się, jak wyszukiwać określony tekst w plikach PDF i zaznaczać go prostokątem? Trafiłeś na idealny przewodnik! Dzisiaj przeprowadzę Cię przez proces używania Aspose.PDF dla .NET do wyszukiwania tekstu w dokumencie PDF i rysowania wokół niego prostokątów. Ten artykuł zawiera samouczek krok po kroku zaprojektowany z myślą o przejrzystości i użyteczności, dzięki czemu będziesz w stanie śledzić i stosować te techniki w swoich projektach. 
 
 ## Wymagania wstępne
 
-Przed przystąpieniem do samouczka upewnij się, że posiadasz następujące elementy:
+Zanim przejdziemy do samouczka, przygotujmy wszystko, co będzie potrzebne, aby zapewnić płynny przepływ pracy:
 
-- Podstawowa znajomość języka programowania C#.
-- Aspose.PDF dla biblioteki .NET jest zainstalowany. Możesz go pobrać ze strony internetowej Aspose lub użyć NuGet, aby zainstalować go w swoim projekcie.
+1. Podstawowa znajomość platformy .NET: Aby efektywnie korzystać z tego samouczka, powinieneś znać programowanie w języku C# i platformę .NET.
+   
+2. Zainstalowany program Visual Studio: Będziesz potrzebować zintegrowanego środowiska programistycznego (IDE), aby pisać i testować swój kod. Visual Studio Community to świetna opcja i jest bezpłatna.
+   
+3. Aspose.PDF dla .NET: Musisz mieć zainstalowaną bibliotekę Aspose.PDF w swoim projekcie. Możesz ją pobrać[Tutaj](https://releases.aspose.com/pdf/net/) lub rozważ[licencja tymczasowa](https://purchase.aspose.com/temporary-license/) dla rozszerzonych funkcji.
+   
+4.  Przykładowy dokument PDF: Do tego samouczka będziesz potrzebować przykładowego pliku PDF o nazwie`SearchAndGetTextFromAll.pdf` zapisane w katalogu Twojego projektu. 
 
-## Krok 1: Skonfiguruj projekt
+## Importuj pakiety
 
-Zacznij od utworzenia nowego projektu C# w preferowanym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla platformy .NET.
+Aby rozpocząć, musisz najpierw zaimportować niezbędne pakiety do swojego projektu .NET. Wykonaj następujące kroki:
 
-## Krok 2: Importuj niezbędne przestrzenie nazw
+### Otwórz program Visual Studio
 
-Dodaj następujące dyrektywy using na początku pliku C#, aby zaimportować wymagane przestrzenie nazw:
+Uruchom program Visual Studio i utwórz nową aplikację konsolową lub użyj istniejącej, w której chcesz zaimplementować funkcje PDF.
+
+### Dodaj Aspose.PDF do swojego projektu
+
+1. Kliknij prawym przyciskiem myszy swój projekt w Eksploratorze rozwiązań.
+2. Wybierz „Zarządzaj pakietami NuGet”.
+3.  Szukaj`Aspose.PDF` i zainstaluj najnowszą wersję.
+
+W ten sposób tworzysz podwaliny pod wszystkie niesamowite manipulacje plikami PDF, które zamierzasz wykonać.
+
+## Importuj przestrzenie nazw
+
+Na górze pliku programu należy zaimportować odpowiednie przestrzenie nazw z biblioteki Aspose:
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using Aspose.Pdf.Content;
+using System;
 using Aspose.Pdf.Facades;
 ```
 
-## Krok 3: Ustaw ścieżkę do katalogu dokumentu
+Dzięki temu dostęp do klas i metod w bibliotece Aspose.PDF podczas wykonywania zadań będzie łatwiejszy.
 
- Ustaw ścieżkę do katalogu dokumentów za pomocą`dataDir` zmienny:
+
+Teraz, gdy wszystko już skonfigurowałeś, możemy podzielić proces wyszukiwania tekstu w pliku PDF i rysowania wokół niego prostokąta na mniejsze, łatwiejsze do wykonania kroki.
+
+## Krok 1: Ustaw ścieżkę do swojego dokumentu
+
+ Najpierw ustaw ścieżkę do pliku PDF. Upewnij się, że zastąpiłeś`YOUR DOCUMENT DIRECTORY` z rzeczywistą ścieżką, gdzie jesteś`SearchAndGetTextFromAll.pdf` jest przechowywany.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
- Zastępować`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do katalogu dokumentów.
+## Krok 2: Otwórz dokument PDF
 
-## Krok 4: Załaduj dokument PDF
-
- Załaduj dokument PDF za pomocą`Document` klasa:
+ Następnie utwórz instancję`Document` klasa, aby załadować swój plik PDF:
 
 ```csharp
 Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
 ```
 
- Zastępować`"SearchAndGetTextFromAll.pdf"` z rzeczywistą nazwą pliku PDF.
+Ta linijka kodu otwiera określony plik PDF, umożliwiając dalsze manipulowanie nim.
 
-## Krok 5: Utwórz TextFragmentAbsorber
+## Krok 3: Utwórz absorber tekstu
 
- Utwórz`TextFragmentAbsorber` obiekt, aby znaleźć wszystkie wystąpienia wprowadzonej frazy wyszukiwania:
+ Teraz będziesz potrzebować sposobu na wyszukiwanie tekstu w tym dokumencie. W tym celu użyjemy`TextFragmentAbsorber`:
 
 ```csharp
 TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
 ```
 
- Zastępować`@"[\S]+"` z wybranym przez Ciebie wzorcem wyrażenia regularnego.
+ Wyrażenie regularne`@"[\S]+"` jest zaprojektowany tak, aby pasował do dowolnego ciągu znaków w pliku PDF, który nie jest spacją. 
 
-## Krok 6: Włącz wyszukiwanie wyrażeń regularnych
+## Krok 4: Skonfiguruj opcje wyszukiwania tekstu
 
- Włącz wyszukiwanie wyrażeń regularnych, ustawiając`TextSearchOptions` Właściwość absorbera:
+Następnie należy skonfigurować opcje wyszukiwania tekstowego:
 
 ```csharp
 TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 textAbsorber.TextSearchOptions = textSearchOptions;
 ```
 
-## Krok 7: Przeszukaj wszystkie strony
+ Tutaj,`true` parametr oznacza, że wyszukiwanie będzie uwzględniać wielkość liter. Możesz ustawić go na`false` jeśli nie chcesz uwzględniać wielkości liter w wyszukiwaniu.
 
-Zaakceptuj absorber dla wszystkich stron dokumentu:
+## Krok 5: Zaakceptuj Absorber Tekstu w Dokumencie
+
+ Z twoim`TextFragmentAbsorber` i opcje wyszukiwania gotowe, czas na wczytanie tekstu z dokumentu:
 
 ```csharp
 document.Pages.Accept(textAbsorber);
 ```
 
-## Krok 8: Narysuj prostokąt wokół znalezionego tekstu
+Ta metoda polega na sprawdzeniu każdej strony dokumentu PDF w celu znalezienia fragmentów tekstu odpowiadających określonemu wzorcowi.
 
- Utwórz`PdfContentEditor` obiekt i pętla przez pobrane fragmenty tekstu, rysując prostokąt wokół każdego segmentu tekstu:
+## Krok 6: Utwórz edytor treści PDF
+
+ Aby rysować kształty w dokumencie, będziesz potrzebować`PdfContentEditor`:
 
 ```csharp
 var editor = new PdfContentEditor(document);
+```
+
+Ten edytor umożliwia łatwą edycję i modyfikowanie zawartości plików PDF.
+
+## Krok 7: Przejrzyj znalezione fragmenty tekstu
+
+Teraz należy przejść przez znalezione fragmenty tekstu i narysować wokół nich prostokąty:
+
+```csharp
 foreach (TextFragment textFragment in textAbsorber.TextFragments)
 {
     foreach (TextSegment textSegment in textFragment.Segments)
@@ -93,83 +129,66 @@ foreach (TextFragment textFragment in textAbsorber.TextFragments)
 }
 ```
 
+ Ta pętla iteruje po każdym fragmencie tekstu i ich segmentach, wywołując`DrawBox` metoda rysowania prostokątów.
+
+## Krok 8: Zdefiniuj metodę DrawBox
+
+ Musisz zdefiniować`DrawBox` metoda, która będzie obsługiwać logikę rysowania prostokątów. Oto prosta implementacja:
+
+```csharp
+private static void DrawBox(PdfContentEditor editor, int pageNumber, TextSegment textSegment, System.Drawing.Color color)
+{
+    // Oblicz wymiary prostokąta na podstawie segmentu tekstu
+    float x = textSegment.Rectangle.LLX;
+    float y = textSegment.Rectangle.LLY;
+    float width = textSegment.Rectangle.Width;
+    float height = textSegment.Rectangle.Height;
+
+    // Narysuj prostokąt, używając obliczonych wartości
+    editor.DrawRectangle(pageNumber, x, y, width, height, color, 1);
+}
+```
+
+Ta metoda określa położenie i rozmiar prostokąta na podstawie prostokąta ograniczającego segment i rysuje go za pomocą edytora.
+
 ## Krok 9: Zapisz zmodyfikowany dokument
 
-Zapisz zmodyfikowany dokument:
+Po narysowaniu prostokątów wokół znalezionego tekstu możesz zapisać zmodyfikowany dokument:
 
 ```csharp
 dataDir = dataDir + "SearchTextAndDrawRectangle_out.pdf";
 document.Save(dataDir);
 ```
 
- Pamiętaj o wymianie`"SearchTextAndDrawRectangle_out.pdf"` z żądaną nazwą pliku wyjściowego.
+Upewnij się, że nowy plik jest zapisany pod unikalną nazwą, aby uniknąć nadpisania oryginalnego dokumentu.
 
-### Przykładowy kod źródłowy dla wyszukiwania tekstu i rysowania prostokąta przy użyciu Aspose.PDF dla .NET 
+## Krok 10: Wiadomość potwierdzająca
+
+Na koniec wyświetl na konsoli komunikat potwierdzający, że operacja zakończyła się powodzeniem:
+
 ```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Otwórz dokument
-Document document = new Document(dataDir + "SearchAndGetTextFromAll.pdf");
-//Utwórz obiekt TextAbsorber, aby znaleźć wszystkie frazy pasujące do wyrażenia regularnego
-TextFragmentAbsorber textAbsorber = new TextFragmentAbsorber(@"[\S]+");
-TextSearchOptions textSearchOptions = new TextSearchOptions(true);
-textAbsorber.TextSearchOptions = textSearchOptions;
-document.Pages.Accept(textAbsorber); 
-var editor = new PdfContentEditor(document); 
-foreach (TextFragment textFragment in textAbsorber.TextFragments)
-{
-	foreach (TextSegment textSegment in textFragment.Segments)
-	{
-			DrawBox(editor, textFragment.Page.Number, textSegment, System.Drawing.Color.Red);
-	}
-}
-dataDir = dataDir + "SearchTextAndDrawRectangle_out.pdf";
-document.Save(dataDir);
 Console.WriteLine("\nRectangle drawn successfully on searched text.\nFile saved at " + dataDir);
 ```
 
+I masz! Udało Ci się stworzyć skrypt do wyszukiwania tekstu w pliku PDF i zaznaczania go prostokątami.
+
 ## Wniosek
 
-Gratulacje! Udało Ci się nauczyć, jak wyszukiwać określony tekst w dokumencie PDF, rysować prostokąt wokół znalezionego tekstu i zapisywać zmodyfikowany dokument za pomocą Aspose.PDF dla .NET. Ten samouczek zawiera przewodnik krok po kroku, od konfiguracji projektu do wykonania wymaganych działań. Teraz możesz włączyć ten kod do własnych projektów C#, aby manipulować tekstem i rysować prostokąty w plikach PDF.
+Gratulacje! Właśnie odblokowałeś potężną umiejętność, która może znacznie zwiększyć Twoje możliwości manipulacji plikami PDF za pomocą Aspose.PDF dla .NET. Za pomocą zaledwie kilku prostych kroków możesz wyszukać dowolny tekst w dokumencie i wizualnie go wyróżnić, dzięki czemu Twoje dokumenty PDF będą bardziej interaktywne i łatwiejsze w zarządzaniu. Nie wahaj się eksperymentować z różnymi wzorcami wyrażeń regularnych i opcjami kolorów, aby naprawdę dostosować to narzędzie do swoich potrzeb!
 
-### Najczęściej zadawane pytania
+## Najczęściej zadawane pytania
 
-#### P: Jaki jest cel poradnika „Wyszukaj tekst i narysuj prostokąt”?
+### Czym jest Aspose.PDF dla .NET?
+Aspose.PDF dla platformy .NET to biblioteka zapewniająca kompleksowy sposób programowego tworzenia, modyfikowania i konwertowania dokumentów PDF.
 
-A: Samouczek „Search Text And Draw Rectangle” ma na celu przeprowadzenie użytkowników przez proces korzystania z biblioteki Aspose.PDF dla .NET w celu wyszukiwania określonego tekstu w dokumencie PDF, rysowania prostokątów wokół znalezionych segmentów tekstu i zapisywania zmodyfikowanego dokumentu. Samouczek zawiera szczegółowe instrukcje i przykłady kodu C# ilustrujące każdy krok procesu.
+### Czy mogę używać Aspose.PDF bezpłatnie?
+Tak, Aspose oferuje bezpłatną wersję próbną, której możesz użyć do przetestowania funkcjonalności biblioteki. Sprawdź to[Tutaj](https://releases.aspose.com/).
 
-#### P: W jaki sposób ten samouczek pomaga w rysowaniu prostokątów wokół określonego tekstu w dokumencie PDF?
+### Jakiego języka programowania muszę użyć w przypadku Aspose.PDF na platformie .NET?
+Aspose.PDF dla .NET jest przeznaczony do użytku z językiem C# i innymi językami .NET.
 
-A: Ten samouczek zawiera kompleksowy przewodnik na temat lokalizowania i rysowania prostokątów wokół określonych segmentów tekstu w dokumencie PDF. Pokazuje proces konfigurowania projektu, ładowania dokumentu PDF, włączania wyszukiwania wyrażeń regularnych, rysowania prostokątów wokół znalezionych segmentów tekstu i zapisywania zmodyfikowanego pliku PDF.
+### Gdzie mogę uzyskać pomoc dotyczącą Aspose.PDF?
+ Możesz odwiedzić forum pomocy technicznej Aspose, aby uzyskać pomoc dotyczącą dowolnego problemu lub zapytania, które możesz mieć. Znajdź pomoc[Tutaj](https://forum.aspose.com/c/pdf/10).
 
-#### P: Jakie warunki wstępne muszę spełnić, aby móc skorzystać z tego samouczka?
-
-A: Przed rozpoczęciem samouczka powinieneś mieć podstawową wiedzę na temat języka programowania C#. Ponadto musisz mieć zainstalowaną bibliotekę Aspose.PDF dla .NET. Możesz ją pobrać ze strony internetowej Aspose lub zainstalować w swoim projekcie za pomocą NuGet.
-
-#### P: Jak skonfigurować projekt, aby móc skorzystać z tego samouczka?
-
-A: Zacznij od utworzenia nowego projektu C# w preferowanym zintegrowanym środowisku programistycznym (IDE). Następnie dodaj odwołanie do biblioteki Aspose.PDF dla .NET do swojego projektu. Umożliwi ci to wykorzystanie funkcjonalności biblioteki do manipulowania dokumentami PDF.
-
-#### P: Czy mogę narysować prostokąty wokół określonego tekstu, korzystając z tego samouczka?
-
-A: Tak, samouczek koncentruje się na rysowaniu prostokątów wokół określonych segmentów tekstu w dokumencie PDF. Pokazuje, jak zlokalizować żądany tekst za pomocą wyrażeń regularnych, utworzyć prostokąty wokół zidentyfikowanych segmentów tekstu i zapisać zmodyfikowany plik PDF.
-
-#### P: W jaki sposób mogę określić tekst, który chcę wyszukać i narysować wokół niego prostokąty?
-
- A: Aby określić tekst, który chcesz wyszukać i narysować wokół niego prostokąty, utwórz`TextFragmentAbsorber` obiekt i ustaw jego wzorzec za pomocą`Text` parametr. Zastąp domyślny wzór`@"[\S]+"` w kodzie samouczka, wpisując żądany wzorzec wyrażenia regularnego.
-
-#### P: Jak włączyć wyszukiwanie tekstu za pomocą wyrażeń regularnych?
-
- A: Wyszukiwanie wyrażeń regularnych jest włączane poprzez utworzenie`TextSearchOptions` obiekt i ustawienie jego wartości na`true` . Przypisz ten obiekt do`TextSearchOptions` własność`TextFragmentAbsorber` instancji. Zapewnia to, że wzorzec wyrażenia regularnego jest używany podczas wyszukiwania tekstu.
-
-#### P: Jak narysować prostokąty wokół znalezionego tekstu?
-
- A: Po zidentyfikowaniu segmentów tekstu za pomocą`TextFragmentAbsorber` , samouczek zapewnia pętlę do iterowania przez te segmenty. Dla każdego segmentu tekstu samouczek pokazuje, jak utworzyć wokół niego prostokąt, używając`DrawBox` i określ wygląd prostokąta.
-
-#### P: Jakie kroki należy podjąć, aby zapisać zmodyfikowany plik PDF z narysowanymi prostokątami?
-
-A: Po narysowaniu prostokątów wokół żądanych segmentów tekstu użyj`Document` klasa`Save` metoda zapisywania zmodyfikowanego dokumentu. Przykładowy kod samouczka pokazuje, jak zapisać edytowany plik PDF i wyświetlić komunikat o powodzeniu.
-
-#### P: Czy mogę dostosować wygląd rysowanych prostokątów?
-
- A: Tak, możesz dostosować wygląd narysowanych prostokątów. W przykładowym kodzie samouczka,`DrawBox` Metoda ta jest używana do tworzenia prostokątów. Możesz modyfikować właściwości, takie jak kolor, styl i grubość, aby dostosować wygląd narysowanych prostokątów.
+### Gdzie mogę pobrać Aspose.PDF dla platformy .NET?
+ Bibliotekę można pobrać ze strony internetowej Aspose,[Tutaj](https://releases.aspose.com/pdf/net/).

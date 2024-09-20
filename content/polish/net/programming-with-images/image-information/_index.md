@@ -9,7 +9,7 @@ url: /pl/net/programming-with-images/image-information/
 ---
 ## Wstęp
 
-Pliki PDF są obecnie wszędzie — praktycznie każdy dokument zawodowy i osobisty w pewnym momencie trafia do tego formatu. Niezależnie od tego, czy jest to raport, broszura czy e-book, zrozumienie, jak programowo wchodzić w interakcję z tymi plikami, oferuje niezliczone możliwości. Jednym z powszechnych wymagań jest wyodrębnianie informacji o obrazach z plików PDF. W tym przewodniku zagłębimy się w to, jak używać biblioteki Aspose.PDF dla .NET, aby wyodrębnić kluczowe szczegóły dotyczące obrazów osadzonych w dokumencie PDF.
+Pliki PDF są obecnie wszędzie — praktycznie każdy dokument zawodowy i osobisty w pewnym momencie trafia do tego formatu. Niezależnie od tego, czy jest to raport, broszura czy e-book, zrozumienie, jak programowo wchodzić w interakcję z tymi plikami, oferuje niezliczoną ilość możliwości. Jednym z powszechnych wymagań jest wyodrębnianie informacji o obrazach z plików PDF. W tym przewodniku zagłębimy się w to, jak używać biblioteki Aspose.PDF dla .NET, aby wyodrębnić kluczowe szczegóły dotyczące obrazów osadzonych w dokumencie PDF.
 
 ## Wymagania wstępne
 

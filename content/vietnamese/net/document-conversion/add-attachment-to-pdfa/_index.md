@@ -18,7 +18,7 @@ Trước khi xắn tay áo và bắt tay vào code, có một vài điều bạn
 1.  Aspose.PDF cho .NET: Đảm bảo bạn đã cài đặt Aspose.PDF cho .NET. Bạn có thể tải xuống từ[liên kết tải xuống](https://releases.aspose.com/pdf/net/) hoặc sử dụng thông qua NuGet trong Visual Studio.
 2. Môi trường phát triển: Bạn nên thiết lập môi trường phát triển .NET. Visual Studio là một lựa chọn tuyệt vời.
 3. Kiến thức cơ bản về C#: Mặc dù hướng dẫn này dành cho người mới bắt đầu, nhưng hiểu biết cơ bản về C# sẽ giúp bạn theo dõi dễ dàng hơn.
-4. Tài liệu PDF và tệp đính kèm: Bạn sẽ cần một tài liệu PDF hiện có và tệp bạn muốn đính kèm. Đối với ví dụ của chúng tôi, chúng tôi sẽ sử dụng một tài liệu PDF và một tệp hình ảnh lớn.
+4. Tài liệu PDF và tệp để đính kèm: Bạn sẽ cần một tài liệu PDF hiện có và tệp bạn muốn đính kèm. Đối với ví dụ của chúng tôi, chúng tôi sẽ sử dụng một tài liệu PDF và một tệp hình ảnh lớn.
 5.  Giấy phép tạm thời: Để mở khóa toàn bộ tiềm năng của Aspose.PDF mà không có bất kỳ hạn chế nào, bạn có thể muốn có một[giấy phép tạm thời](https://purchase.aspose.com/temporary-license/).
 
 ## Nhập gói

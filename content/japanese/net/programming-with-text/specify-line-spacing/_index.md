@@ -2,186 +2,147 @@
 title: PDFファイル内の行間隔を指定する
 linktitle: PDFファイル内の行間隔を指定する
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して PDF ファイル内の行間隔を指定する方法を学習します。
+description: このステップバイステップ ガイドでは、Aspose.PDF for .NET を使用して PDF の行間隔を指定する方法を学習します。正確なテキスト書式設定を求める開発者に最適です。
 type: docs
 weight: 510
 url: /ja/net/programming-with-text/specify-line-spacing/
 ---
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ファイル内の行間隔を指定する方法について説明します。提供されている C# ソース コードは、プロセスを段階的に示しています。
+## 導入
+
+PDF ファイルの行間隔の制御に苦労したことはありませんか? テキストが詰め込まれすぎているように見えたり、思ったほど洗練されていないように見えたりしたことがあるかもしれません。このチュートリアルでは、Aspose.PDF for .NET を使用して PDF の行間隔を簡単に指定する方法を説明します。簡単なステップ バイ ステップ ガイドを使用して、空白の PDF からカスタム行間隔を含む PDF を作成します。これは、レポート、請求書、証明書などのドキュメントのテキスト レイアウトに精度が必要な場合に最適です。
 
 ## 前提条件
 
-チュートリアルを進める前に、次のものを用意してください。
+コードに進む前に、必要なものがすべて揃っていることを確認しましょう。
 
-- C# プログラミング言語に関する基本的な知識。
-- Aspose.PDF for .NET ライブラリがインストールされています。Aspose Web サイトから入手するか、NuGet を使用してプロジェクトにインストールできます。
+1.  Aspose.PDF for .NETがインストールされています。まだインストールされていない場合は、[Aspose.PDF ダウンロード ページ](https://releases.aspose.com/pdf/net/).
+2. .NET 開発環境 (Visual Studio など)。
+3. TrueTypeフォントファイル（`.ttf` ）を使用します。任意のフォントを使用できますが、このガイドでは`HPSimplified.TTF`フォント。
+4. C# と PDF 操作に関する基本的な知識。
 
-## ステップ1: プロジェクトを設定する
+準備ができたら、必要なパッケージのインポートに進みましょう。
 
-まず、好みの統合開発環境 (IDE) で新しい C# プロジェクトを作成し、Aspose.PDF for .NET ライブラリへの参照を追加します。
+## パッケージのインポート
 
-## ステップ2: 必要な名前空間をインポートする
-
-必要な名前空間をインポートするには、C# ファイルの先頭に次の using ディレクティブを追加します。
+C# プロジェクトでは、PDF 機能を使用するために Aspose.PDF 名前空間をインポートする必要があります。手順は次のとおりです。
 
 ```csharp
-using Aspose.Pdf;
 using Aspose.Pdf.Text;
 using System.IO;
 ```
 
-## ステップ3: ドキュメントディレクトリへのパスを設定する
+これらの名前空間を使用すると、PDF ドキュメントを作成および操作できるほか、テキストの書式設定やフォント オプションを操作できます。
 
-ドキュメントディレクトリへのパスを設定するには、`dataDir`変数：
+これを簡単な手順に分割して、簡単に実行できるようにします。各手順では、PDF の設定から行間隔の指定まで、プロセスの重要な部分に焦点を当てます。
+
+## ステップ1: プロジェクトを設定し、ドキュメントディレクトリを定義する
+
+最初に行う必要があるのは、ファイルの場所を定義することです。これにより、プログラムはフォントが見つかる場所と、結果の PDF を保存する場所を認識できるようになります。
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+string fontFile = dataDir + "HPSimplified.TTF";
 ```
 
-交換する`"YOUR DOCUMENT DIRECTORY"`ドキュメント ディレクトリへの実際のパスを入力します。
+このステップでは、`"YOUR DOCUMENT DIRECTORY"`ファイルを実際に保存する場所のパスを入力します。これがフォントファイルを置く場所になります（`HPSimplified.TTF`) と PDF が保存される場所を指定します。
 
-## ステップ4: 入力PDFファイルを読み込む
+## ステップ2: PDF文書を読み込む
 
-入力PDFファイルを読み込みます。`Document`クラス：
+ここで、新しい PDF ドキュメントを作成する必要があります。このガイドでは、空白のドキュメントから始めますが、必要に応じて既存の PDF を読み込むこともできます。
 
 ```csharp
 Document doc = new Document();
 ```
 
-## ステップ5: TextFormattingOptionsを作成する
+これにより、新しい空の PDF ドキュメントが作成されます。簡単ですよね?
 
-作成する`TextFormattingOptions`オブジェクトを選択し、行間隔モードを`FullSize`:
+## ステップ3: テキストの書式設定オプションを設定する
+
+ここで魔法が起こります。PDFに追加したいテキストの行間モードを指定します。Aspose.PDFにはいくつかのオプションがありますが、このガイドでは`LineSpacingMode.FullSize`これにより、行間隔が完全に確保されます。
 
 ```csharp
 TextFormattingOptions formattingOptions = new TextFormattingOptions();
 formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 ```
 
-## ステップ6: TextFragmentを作成する
+このコードは行間隔モードを`FullSize`適切な間隔でテキストが表示されるようにします。他にも次のようなオプションがあります。`Proportional`異なる間隔の動作が必要な場合は、今のところは`FullSize`.
 
-作成する`TextFragment`オブジェクトを作成し、テキスト コンテンツを指定します。
+## ステップ4: テキストフラグメントを作成する
+
+ここで、PDF に配置される実際のテキストを作成します。このテキストは、定義した行間隔に従います。
 
 ```csharp
 TextFragment textFragment = new TextFragment("Hello world");
 ```
 
-## ステップ 7: フォント ファイルを読み込む (オプション)
+文字列を含むテキストフラグメントを作成しました`"Hello world"`もちろん、このテキストは好きなようにカスタマイズできます。
 
-テキストに特定のフォントを使用する場合は、TrueTypeフォントファイルを`FileStream`物体：
+## ステップ5: カスタムフォントをロードして適用する
+
+テキストを目立たせるために、ファイルからカスタム TrueType フォントを読み込みます。この手順はオプションですが、PDF にプロフェッショナルなタッチを加えることができます。
 
 ```csharp
-string fontFile = dataDir + "HPSimplified.TTF";
-using (FileStream fontStream = File.OpenRead(fontFile))
+if (fontFile != "")
 {
-    textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-}
+    using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
+    {
+        textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
 ```
 
-交換する`"HPSimplified.TTF"`実際のフォントファイル名を使用します。
+ここでは、フォント ファイルをロードしてテキスト フラグメントに適用します。ファイル パスが有効な場合は、フォントが使用されます。そうでない場合は、既定のフォントが適用されます。
 
-## ステップ8: テキストの位置と行間隔を指定する
+## ステップ6: テキストの位置と書式を設定する
 
-テキストフラグメントの位置を設定し、`TextFormattingOptions`に`TextState.FormattingOptions`財産：
+次に、PDF 上のテキストを配置する必要があります。また、先ほど作成した書式設定オプションも適用します。
 
 ```csharp
 textFragment.Position = new Position(100, 600);
 textFragment.TextState.FormattingOptions = formattingOptions;
 ```
 
-## ステップ9: 文書にテキストを追加する
+の`Position`メソッドは、テキストがページ上に表示される座標を設定します (この場合は、左から 100 単位、下から 600 単位)。行間隔モードなどの書式設定オプションは、ここに適用されます。
 
-テキストフラグメントをドキュメントに追加するには、`TextBuilder`または直接ページの`Paragraphs`コレクション：
+## ステップ7: PDFページにテキストを追加する
+
+テキストの書式設定と配置が完了したら、それを PDF ドキュメントに追加します。
 
 ```csharp
 var page = doc.Pages.Add();
 page.Paragraphs.Add(textFragment);
 ```
 
-## ステップ10: 結果のPDF文書を保存する
+このコードは、PDF ドキュメントに新しいページを作成し、そこにテキスト フラグメントを追加します。
 
-変更した PDF ドキュメントを保存します。
+## ステップ8: PDFを保存する
+
+最後のステップに到達しました。すべての設定が完了したら、PDF を保存しましょう。
 
 ```csharp
 dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
 doc.Save(dataDir);
 ```
 
-必ず交換してください`"SpecifyLineSpacing_out.pdf"`希望する出力ファイル名を指定します。
-
-### Aspose.PDF for .NET を使用して行間隔を指定するためのサンプル ソース コード 
-```csharp
-//ドキュメント ディレクトリへのパス。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string fontFile = dataDir + "HPSimplified.TTF";
-//入力PDFファイルを読み込む
-Document doc = new Document();
-//LineSpacingMode.FullSize で TextFormattingOptions を作成する
-TextFormattingOptions formattingOptions = new TextFormattingOptions();
-formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
-//ドキュメントの最初のページのテキスト ビルダー オブジェクトを作成します。
-//テキストビルダー textBuilder = new TextBuilder(doc.Pages[1]);
-//サンプル文字列でテキストフラグメントを作成する
-TextFragment textFragment = new TextFragment("Hello world");
-if (fontFile != "")
-{
-	//TrueTypeフォントをストリームオブジェクトにロードする
-	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
-	{
-		//テキスト文字列のフォント名を設定する
-		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		//テキストフラグメントの位置を指定する
-		textFragment.Position = new Position(100, 600);
-		//現在のフラグメントの TextFormattingOptions を事前定義済み（LineSpacingMode.FullSize を指す）に設定します。
-		textFragment.TextState.FormattingOptions = formattingOptions;
-		// TextBuilderにテキストを追加して、PDFファイルの上に配置できるようにします。
-		//textBuilder.AppendText(テキストフラグメント);
-		var page = doc.Pages.Add();
-		page.Paragraphs.Add(textFragment);
-	}
-	dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
-	//結果のPDF文書を保存する
-	doc.Save(dataDir);
-}
-```
+これにより、指定した行間隔で PDF が保存され、ファイルの準備が整います。
 
 ## 結論
 
-おめでとうございます! Aspose.PDF for .NET を使用して PDF ドキュメントの行間隔を指定する方法を学習しました。このチュートリアルでは、プロジェクトのセットアップから変更したドキュメントの保存まで、ステップ バイ ステップで説明しました。これで、このコードを独自の C# プロジェクトに組み込んで、PDF ファイル内のテキストの行間隔をカスタマイズできるようになりました。
+これで完了です。Aspose.PDF for .NET を使用して、カスタムの行間隔を持つ PDF ドキュメントを作成しました。これは、PDF ファイルのあらゆる側面を制御できる強力なツールであり、これは実現可能なことのほんの一例にすぎません。テキストの配置から書式設定まで、可能性は無限です。
 
-### よくある質問
+PDF 操作をさらに深く探求したい場合、Aspose.PDF には探索すべき豊富な機能が用意されています。ぜひ試して、ドキュメントで実行できることの限界を押し広げてください。
 
-#### Q: 「PDF ファイルで行間隔を指定する」チュートリアルの目的は何ですか?
+## よくある質問
 
-A: 「PDF ファイルで行間隔を指定する」チュートリアルは、Aspose.PDF ライブラリ for .NET を使用して PDF ドキュメント内のテキストの行間隔をカスタマイズする方法をユーザーに説明することを目的としています。このチュートリアルでは、プロセスを示す手順と C# コード サンプルが提供されます。
+### 行間隔を他のモードに合わせて調整できますか?  
+はい、他のモードも使用できます。`Proportional`または`Fixed`ニーズに応じて。
 
-#### Q: このチュートリアルは、PDF ドキュメント内の行間隔を指定するのにどのように役立ちますか?
+### ファイルではなくシステムからフォントを読み込むことは可能ですか?  
+はい、システムにインストールされたフォントを読み込むことができます。`FontRepository`.
 
-A: このチュートリアルは、Aspose.PDF for .NET の機能を利用して PDF ドキュメント内のテキストの行間隔を指定する方法をユーザーが理解するのに役立ちます。提供されている手順とコード例に従うことで、ユーザーは好みに応じて行間隔を調整できます。
+### Aspose.PDF for .NET を他のファイル形式で使用できますか?  
+もちろんです! Aspose.PDF for .NET は、XML、HTML など、さまざまな形式をサポートしています。
 
-#### Q: このチュートリアルを実行するために必要な前提条件は何ですか?
+### Aspose.PDF for .NET を使用するにはライセンスが必要ですか?  
+はい、完全な機能を使用するにはライセンスが必要です。ライセンスは取得できます[ここ](https://purchase.aspose.com/buy).
 
-A: チュートリアルを始める前に、C# プログラミング言語の基礎を理解しておく必要があります。また、Aspose.PDF for .NET ライブラリがインストールされている必要があります。Aspose Web サイトから入手するか、NuGet を使用してプロジェクトにインストールできます。
-
-#### Q: このチュートリアルに従うためにプロジェクトを設定するにはどうすればよいですか?
-
-A: まず、お好みの統合開発環境 (IDE) で新しい C# プロジェクトを作成し、Aspose.PDF for .NET ライブラリへの参照を追加します。これにより、ライブラリの機能を活用して PDF ドキュメントを操作したり、行間隔をカスタマイズしたりできるようになります。
-
-#### Q: このチュートリアルを使用して、任意のタイプのテキストの行間隔を指定できますか?
-
-A: はい、このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメント内の任意のテキスト コンテンツの行間隔を指定する方法について説明します。提供されているコード サンプルを使用して、必要に応じてテキストの行間隔を調整できます。
-
-#### Q: チュートリアルで行間隔モードを指定するにはどうすればよいですか?
-
- A: チュートリアルでは、`TextFormattingOptions`オブジェクトを設定し、`LineSpacing`財産に`TextFormattingOptions.LineSpacingMode.FullSize`このモードでは、テキスト コンテンツの行間隔が完全に指定されます。
-
-#### Q: テキストに特定のフォントを読み込むにはどうすればいいですか?
-
- A: テキストコンテンツに特定のフォントを使用する場合は、チュートリアルでTrueTypeフォントファイルを読み込む方法を説明します。`FileStream`オブジェクトを選択し、それを`TextFragment`これにより、テキストのフォントと行間隔をカスタマイズできます。
-
-#### Q: PDF ドキュメント内のテキストの位置をカスタマイズするにはどうすればよいですか?
-
- A: テキストの位置をカスタマイズするには、`TextFragment`オブジェクトを設定し、`Position`プロパティを目的の座標 (X と Y) に設定します。これにより、PDF ドキュメント内でテキストを配置する場所を制御できます。
-
-#### Q: これらの行間隔の変更を既存の PDF ドキュメントに適用できますか?
-
- A: はい、既存のPDF文書内のテキストの行間を変更することができます。チュートリアルでは、`TextFragment`指定された行間と位置で配置し、ページの`Paragraphs`コレクション。
+### 複数の段落の行間隔を設定するにはどうすればよいですか?  
+申請できます`TextFormattingOptions`それぞれに`TextFragment`または`TextParagraph`複数の行または段落の間隔を制御します。

@@ -171,5 +171,5 @@ Evet, Aspose.PDF PNG, GIF, BMP ve JPEG gibi çeşitli resim formatlarını deste
 ### Dinamik olarak resim eklemek mümkün mü?  
 Evet, dosya yolunu sağlayarak veya akışları kullanarak görüntüleri dinamik olarak yükleyebilir ve ekleyebilirsiniz.
 
-### Aspose.PDF birden fazla sayfaya toplu olarak resim eklemeye izin veriyor mu?  
+### Aspose.PDF birden fazla sayfaya toplu olarak resim eklenmesine izin veriyor mu?  
 Evet, aynı yaklaşımı kullanarak bir belgedeki sayfalar arasında dolaşabilir ve birden fazla sayfaya resim ekleyebilirsiniz.

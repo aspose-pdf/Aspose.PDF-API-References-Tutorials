@@ -136,7 +136,7 @@ Nu är det dags att tillämpa dessa optimeringsalternativ på din PDF:
 pdfDocument.OptimizeResources(optimizeOptions);
 ```
 
-Du har ställt in allt och nu optimerar vi äntligen resurserna i PDF-dokumentet. Det är här magin händer!
+Du har ställt in allt och nu optimerar vi äntligen PDF-dokumentets resurser. Det är här magin händer!
 
 ## Steg 8: Spara det optimerade dokumentet
 

@@ -88,7 +88,7 @@ Ebben az oktatóanyagban megtanultuk, hogyan konvertálhat PDF-eket EPUB e-köny
 
 Az összetett elrendezések kezeléséhez módosíthatja a konverziós beállításokat, például az oldalmargókat, a méretezést és a betűtípus beállításait. Kísérletezzen különböző beállításokkal a kívánt eredmény elérése érdekében.
 
-### Átalakíthatom a jelszóval védett PDF fájlokat EPUB formátumba?
+### Átalakíthatom a jelszóval védett PDF-eket EPUB formátumba?
 
 Igen, az Aspose.PDF for Java támogatja a jelszóval védett PDF-ek konvertálását EPUB formátumba. A PDF dokumentum betöltésekor meg kell adnia a jelszót.
 

@@ -31,7 +31,7 @@ url: /zh-hant/java/pdf-image-manipulation/replace-image-in-existing-pdf-file-usi
 
 1. 從提供的連結下載 Aspose.PDF for Java 函式庫。
 2. 將下載的包解壓縮到系統上方便的位置。
-3. 在 IDE 中，右鍵單擊專案的根資料夾並選擇“屬性”或“建置路徑”。
+3. 在 IDE 中，以滑鼠右鍵按一下專案的根資料夾，然後選擇「屬性」或「建置路徑」。
 4. 導航至“庫”或“建置路徑”部分。
 5. 按一下「新增外部 JAR」或「新增 JAR」按鈕，然後從擷取的 Aspose.PDF 套件中選擇 JAR 檔案。
 6. 按一下「套用」或「確定」儲存變更。

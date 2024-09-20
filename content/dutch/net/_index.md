@@ -13,7 +13,7 @@ Aspose.PDF voor .NET Tutorials is een uitgebreide en gedetailleerde handleiding 
 ## Zelfstudies
 | Titel | Beschrijving |
 | --- | --- | 
-| [Programmeren met Document](./programming-with-document/) | Deze bron biedt Aspose.PDF voor .NET-bibliotheektutorials voor programmeren met documenten. Het behandelt onderwerpen zoals het maken/manipuleren van PDF's, het toevoegen van afbeeldingen/tabellen/links, het optimaliseren van documenten en het toevoegen van beveiliging. Het is een waardevolle bron voor ontwikkelaars die werken met PDF-documenten met Aspose.PDF voor .NET. |
+| [Programmeren met Document](./programming-with-document/) | Deze bron biedt Aspose.PDF voor .NET-bibliotheektutorials voor programmeren met documenten. Het behandelt onderwerpen zoals het maken/manipuleren van PDF's, het toevoegen van afbeeldingen/tabellen/links, het optimaliseren van documenten en het toevoegen van beveiliging. Het is een waardevolle bron voor ontwikkelaars die werken met PDF-documenten met behulp van Aspose.PDF voor .NET. |
 | [Programmeren met annotaties](./annotations/) | Programmeren met annotaties omvat API-zelfstudies en codefragmenten van Aspose.PDF voor .NET, inclusief het toevoegen en verwijderen van annotaties, het ophalen van annotatie-info en nog veel meer. |  
 | [Documentconversie](./document-conversion/) | Bekijk documentconversietutorials met Aspose.PDF voor .NET. Converteer bestanden eenvoudig naar verschillende formaten. |
 | [Programmeren met formulieren](./programming-with-forms/) | Bekijk programmeertutorials met Aspose.PDF Forms voor .NET om interactieve formulieren in uw PDF-bestanden te maken en beheren. |

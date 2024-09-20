@@ -90,7 +90,7 @@ In diesem Schritt wird die optimierte Datei als "OptimizeDocument_out.pdf" im se
 
 ## Abschluss
 
-Und das ist es! Sie haben gerade Ihre PDF-Datei optimiert, indem Sie ungenutzte Streams mit Aspose.PDF für .NET entfernt haben. Diese einfache, aber leistungsstarke Optimierung kann einen großen Unterschied in Bezug auf Dateigröße und Leistung bewirken, insbesondere bei großen oder ressourcenintensiven Dokumenten. Die Flexibilität und der umfassende Funktionsumfang von Aspose.PDF machen es zu einem wertvollen Tool für Entwickler, die effizient mit PDF-Dokumenten arbeiten möchten.
+Und das ist es! Sie haben gerade Ihre PDF-Datei optimiert, indem Sie ungenutzte Streams mit Aspose.PDF für .NET entfernt haben. Diese einfache, aber leistungsstarke Optimierung kann einen großen Unterschied in Bezug auf Dateigröße und Leistung ausmachen, insbesondere bei großen oder ressourcenintensiven Dokumenten. Die Flexibilität und der umfassende Funktionsumfang von Aspose.PDF machen es zu einem wertvollen Tool für Entwickler, die effizient mit PDF-Dokumenten arbeiten möchten.
 
 ## Häufig gestellte Fragen
 

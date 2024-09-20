@@ -2,120 +2,105 @@
 title: إضافة عمود متكرر في مستند PDF
 linktitle: إضافة عمود متكرر في مستند PDF
 second_title: مرجع واجهة برمجة التطبيقات Aspose.PDF لـ .NET
-description: تعرف على كيفية إضافة عمود متكرر في مستند PDF باستخدام Aspose.PDF لـ .NET.
+description: تعرف على كيفية إضافة أعمدة متكررة إلى مستندات PDF باستخدام Aspose.PDF for .NET. دليل خطوة بخطوة مع أمثلة وأكواد. مثالي للمطورين.
 type: docs
 weight: 20
 url: /ar/net/programming-with-tables/add-repeating-column/
 ---
-في هذا البرنامج التعليمي، سنتعلم كيفية إضافة عمود متكرر في مستند PDF باستخدام Aspose.PDF لـ .NET. وسنشرح الكود المصدري في C# خطوة بخطوة. وفي نهاية هذا البرنامج التعليمي، ستعرف كيفية إنشاء جدول بعمود متكرر في مستند PDF. لنبدأ!
+## مقدمة
 
-## الخطوة 1: إعداد البيئة
-أولاً، تأكد من إعداد بيئة تطوير C# الخاصة بك باستخدام Aspose.PDF لـ .NET. أضف المرجع إلى المكتبة واستورد المساحات الأساسية اللازمة.
+إذا كنت تعمل مع مستندات PDF وتحتاج إلى إضافة أعمدة متكررة، فأنت في المكان الصحيح! باستخدام Aspose.PDF for .NET، يمكنك بسهولة إدارة الجداول والمحتوى داخل ملف PDF. سواء كنت تقوم ببناء تقارير ديناميكية أو فواتير أو أي مستند منظم آخر، فإن الأعمدة المتكررة يمكن أن تكون بمثابة تغيير جذري في تنظيم البيانات. دعنا نتعمق في دليل خطوة بخطوة حول كيفية إضافة أعمدة متكررة إلى مستند PDF.
 
-## الخطوة 2: إنشاء مستند PDF
-في هذه الخطوة نقوم بإنشاء مستند PDF جديد.
+## المتطلبات الأساسية
+
+قبل أن ننتقل إلى الكود، دعنا نتأكد من إعداد كل شيء:
+
+- Aspose.PDF لـ .NET: يجب أن يكون لديك مكتبة Aspose.PDF لـ .NET مثبتة في مشروعك.
+- [تنزيل Aspose.PDF لـ .NET](https://releases.aspose.com/pdf/net/)
+- [نسخة تجريبية مجانية](https://releases.aspose.com/)
+- بيئة التطوير: تأكد من تثبيت IDE متوافق مع .NET مثل Visual Studio.
+- الفهم الأساسي للغة C#: على الرغم من أننا سنقوم بتقسيم كل شيء، إلا أن الفهم الأساسي للغة C# سيساعدك على المتابعة بسلاسة.
+  
+ إذا لم يكن لديك Aspose.PDF لـ .NET حتى الآن، فيمكنك الحصول على[رخصة مؤقتة](https://purchase.aspose.com/temporary-license/) للبدء في استكشاف ميزاته.
+
+## استيراد الحزم
+
+للبدء، تحتاج إلى استيراد المساحات الأساسية اللازمة من Aspose.PDF لـ .NET. إليك كيفية القيام بذلك:
 
 ```csharp
-Document doc = new Document();
-Page page = doc.Pages.Add();
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-لقد قمنا بإنشاء مستند PDF فارغًا حيث يمكننا إضافة المحتوى.
+توفر هذه الحزم الفئات والطرق الأساسية المطلوبة للعمل مع مستندات PDF ومعالجة الجداول.
 
-## الخطوة 3: إنشاء الجداول
-في هذه الخطوة نقوم بإنشاء جدول رئيسي (`outerTable`) وجدول متداخل (`mytable`) والتي سيتم تكرارها في العمود.
+الآن، دعنا نقسم العملية إلى عدة خطوات لإضافة أعمدة متكررة إلى مستند PDF. تابع معنا!
 
-```csharp
-Table outerTable = new Table();
-outerTable.ColumnWidths = "100%";
-outerTable.HorizontalAlignment = HorizontalAlignment.Left;
+## الخطوة 1: تعيين المسار إلى دليل المستندات الخاص بك
 
-Table mytable = new Table();
-mytable.Broken = TableBroken.VerticalInSamePage;
-mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
-```
-
-لقد حددنا خصائص الجدول مثل عرض العمود ووضع كسر الجدول المتداخل.
-
-## الخطوة 4: إضافة الجداول إلى المستند
-الآن نضيف الجداول التي تم إنشاؤها إلى مستند PDF.
+قبل إنشاء أو معالجة أي ملفات، نحتاج إلى تحديد المسار الذي سيتم حفظ ملف PDF الناتج فيه. في مشروع C# الخاص بك، اضبط مسار الدليل حيث سيتم حفظ ملفاتك:
 
 ```csharp
-page.Paragraphs.Add(outerTable);
-var bodyRow = outerTable.Rows.Add();
-var bodyCell = bodyRow.Cells.Add();
-bodyCell.Paragraphs.Add(mytable);
-mytable.RepeatingColumnsCount = 5;
-page.Paragraphs.Add(mytable);
-```
-
-نضيف أولاً الجدول الرئيسي (`outerTable`) إلى مستند PDF. بعد ذلك، نضيف الجدول المتداخل (`mytable` ) كفقرة في خلية في الجدول الرئيسي. كما نحدد عدد الأعمدة المكررة لـ`mytable` (في هذا المثال، 5 أعمدة).
-
-## الخطوة 5: إضافة العناوين والأسطر
-الآن نضيف الرؤوس والصفوف إلى الجدول.
-
-```csharp
-Row headerRow = mytable.Rows.Add();
-headerRow.Cells.Add("header 1");
-headerRow.Cells.Add("header 2");
-headerRow.Cells.Add("header 3");
-// ...
-//أضف عناوين أخرى هنا
-
-for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
-{
-     Row row1 = mytable.Rows.Add();
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
-     // ...
-     // أضف الأعمدة الأخرى هنا
-}
-```
-
-نضيف أولاً العناوين إلى الصف الأول من الجدول (`headerRow`). ثم نضيف صفوف البيانات من حلقة. في هذا المثال، نضيف 6 صفوف من البيانات.
-
-## الخطوة 6: حفظ مستند PDF
-وأخيرًا، نقوم بحفظ مستند PDF في الملف المحدد.
-
-```csharp
-string outFile = dataDir + "AddRepeatingColumn_out.pdf";
-doc.Save(outFile);
-```
-
-تأكد من تحديد الدليل واسم الملف الصحيحين لحفظ ملف PDF الناتج.
-
-### مثال على كود المصدر لإضافة عمود متكرر باستخدام Aspose.PDF لـ .NET
-
-```csharp
-// المسار إلى دليل المستندات.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
-
 string outFile = dataDir + "AddRepeatingColumn_out.pdf";
-// إنشاء مستند جديد
+```
+
+ يشير هذا المسار إلى الدليل الذي سيتم حفظ ملف PDF الناتج فيه. استبدل`"YOUR DOCUMENT DIRECTORY"` مع المسار الفعلي على جهازك.
+
+## الخطوة 2: إنشاء مستند PDF جديد
+
+ للبدء، قم بإنشاء مثيل جديد`Document` الكائن. سيكون هذا بمثابة الحاوية لجميع الصفحات والمحتوى داخل ملف PDF.
+
+```csharp
 Document doc = new Document();
 Aspose.Pdf.Page page = doc.Pages.Add();
+```
 
-// إنشاء جدول خارجي يشغل الصفحة بأكملها
+ هنا، قمنا بإنشاء مستند PDF جديد وأضفنا إليه صفحة فارغة.`doc.Pages.Add()` تقوم هذه الطريقة بإدراج صفحة جديدة في المستند.
+
+## الخطوة 3: إنشاء الجدول الخارجي
+
+بعد ذلك، نقوم بإنشاء جدول خارجي. سيغطي هذا الجدول عرض الصفحة بالكامل وسيعمل كحاوية للجداول الأخرى، بما في ذلك الجدول الذي سيحتوي على الأعمدة المتكررة.
+
+```csharp
 Aspose.Pdf.Table outerTable = new Aspose.Pdf.Table();
 outerTable.ColumnWidths = "100%";
 outerTable.HorizontalAlignment = HorizontalAlignment.Left;
+```
 
-// إنشاء كائن جدول سيتم تضمينه داخل الجدول الخارجي الذي سيتم تقسيمه داخل نفس الصفحة
+ لقد وضعنا`ColumnWidths` قم بتوسيع الخاصية إلى "100%"، مما يعني أن الجدول سوف يمتد عبر عرض الصفحة بالكامل.
+
+## الخطوة 4: إنشاء الجدول الداخلي
+
+ الآن، دعنا ننشئ الجدول الداخلي، والذي سيحتوي على أعمدة متكررة. الخصائص الرئيسية هنا هي`Broken` ، مما يسمح للجدول بالاستمرار عبر نفس الصفحة، و`ColumnAdjustment`، الذي يضبط عرض الأعمدة تلقائيًا ليناسب المحتوى.
+
+```csharp
 Aspose.Pdf.Table mytable = new Aspose.Pdf.Table();
 mytable.Broken = TableBroken.VerticalInSamePage;
 mytable.ColumnAdjustment = ColumnAdjustment.AutoFitToContent;
+```
 
-// أضف الجدول الخارجي إلى فقرات الصفحة
-// إضافة mytable إلى externalTable
+سيتم تضمين هذا الجدول الداخلي ضمن الجدول الخارجي.
+
+## الخطوة 5: إضافة الجداول إلى الصفحة
+
+الآن بعد أن أصبح لدينا كل من الجداول الخارجية والداخلية جاهزة، فلنقم بإضافتها إلى الصفحة. تضمن هذه الخطوة تضمين الجداول في بنية المستند.
+
+```csharp
 page.Paragraphs.Add(outerTable);
 var bodyRow = outerTable.Rows.Add();
 var bodyCell = bodyRow.Cells.Add();
 bodyCell.Paragraphs.Add(mytable);
 mytable.RepeatingColumnsCount = 5;
-page.Paragraphs.Add(mytable);
+```
 
-// إضافة صف الرأس
+ هنا، أضفنا`outerTable` إلى الصفحة، ثم داخل الجدول الخارجي، قمنا بتضمين`mytable` بالإضافة إلى ذلك، قمنا بتعيين`RepeatingColumnsCount`إلى 5، لتحديد عدد الأعمدة التي يجب تكرارها عند إضافة البيانات.
+
+## الخطوة 6: إضافة صف الرأس
+
+الآن حان الوقت لإضافة العناوين إلى الجدول. يوفر صف العناوين السياق للبيانات ويساعد في تنظيم الأعمدة. 
+
+```csharp
 Aspose.Pdf.Row row = mytable.Rows.Add();
 row.Cells.Add("header 1");
 row.Cells.Add("header 2");
@@ -131,51 +116,64 @@ row.Cells.Add("header 14");
 row.Cells.Add("header 15");
 row.Cells.Add("header 16");
 row.Cells.Add("header 17");
+```
 
+تضيف مقتطفات التعليمات البرمجية هذه الصف الأول (الذي سنستخدمه كعناوين)، وتملأه بالخلايا التي تحتوي على نص مثل "رأس 1"، "رأس 2"، وما إلى ذلك.
+
+## الخطوة 7: إضافة صفوف البيانات
+
+أخيرًا، يمكننا إضافة بعض البيانات إلى الجدول. تعمل هذه الحلقة على إنشاء صفوف ديناميكيًا وملء الخلايا بالمحتوى:
+
+```csharp
 for (int RowCounter = 0; RowCounter <= 5; RowCounter++)
-
 {
-	// إنشاء صفوف في الجدول ثم خلايا في الصفوف
-	Aspose.Pdf.Row row1 = mytable.Rows.Add();
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 4");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 5");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 6");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 7");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 11");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 12");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 13");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 14");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 15");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 16");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 17");
+    Aspose.Pdf.Row row1 = mytable.Rows.Add();
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 4");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 5");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 6");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 7");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 11");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 12");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 13");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 14");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 15");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 16");
+    row1.Cells.Add("col " + RowCounter.ToString() + ", 17");
 }
+```
+
+تتكرر الحلقة ست مرات، وتضيف الصفوف وتملأ كل خلية ببيانات العمود المقابلة (على سبيل المثال، "العمود 1، 1"، "العمود 2، 2"، وما إلى ذلك).
+
+## الخطوة 8: حفظ المستند
+
+بمجرد إضافة كافة الصفوف والأعمدة، فإن الخطوة الأخيرة هي حفظ المستند في مسار الملف المحدد.
+
+```csharp
 doc.Save(outFile);
 ```
 
+لقد تم الآن حفظ مستندك مع الأعمدة المتكررة!
+
 ## خاتمة
-في هذا البرنامج التعليمي، تعلمنا كيفية إضافة عمود متكرر في مستند PDF باستخدام Aspose.PDF لـ .NET. يمكنك استخدام هذا الدليل خطوة بخطوة لإنشاء جداول بأعمدة متكررة في مشاريع C# الخاصة بك.
 
-### الأسئلة الشائعة حول إضافة عمود متكرر في مستند PDF
+ها أنت ذا! باتباع هذه الخطوات البسيطة، يمكنك إنشاء مستند PDF بأعمدة متكررة باستخدام Aspose.PDF for .NET. ومن خلال الاستفادة من مرونة الجداول المتداخلة، يمكنك تحقيق تخطيطات معقدة تجعل ملفات PDF تبدو احترافية ومنظمة. جرّب هذا في مشروعك التالي واستكشف الإمكانات الكاملة لـ Aspose.PDF لتلبية احتياجاتك من إنشاء ملفات PDF.
 
-#### س: هل يمكنني تخصيص عدد الأعمدة المتكررة في الجدول المتداخل؟
+## الأسئلة الشائعة
 
- ج: نعم، يمكنك تخصيص عدد الأعمدة المتكررة في الجدول المتداخل. في المثال المقدم، قمنا بتعيين`mytable.RepeatingColumnsCount = 5;`، مما يعني أنه سيكون هناك 5 أعمدة متكررة. يمكنك تغيير هذه القيمة إلى أي رقم تريده.
+### ما هو Aspose.PDF لـ .NET؟
+Aspose.PDF for .NET هي مكتبة قوية تسمح للمطورين بإنشاء مستندات PDF وتحريرها وإدارتها برمجيًا.
 
-#### س: هل من الممكن إضافة المزيد من الصفوف إلى الجدول المتداخل بشكل ديناميكي؟
+### هل يمكنني تعديل عدد الأعمدة المتكررة بشكل ديناميكي؟
+ نعم، يمكنك تغيير عدد الأعمدة المتكررة عن طريق تعديل`RepeatingColumnsCount` ملكية.
 
-ج: نعم، يمكنك إضافة المزيد من الصفوف بشكل ديناميكي إلى الجدول المتداخل بنفس الطريقة الموضحة في البرنامج التعليمي. يمكنك استخدام الحلقات أو أي منطق آخر لإضافة صفوف بناءً على بياناتك.
+### كيف يمكنني التقدم بطلب ترخيص لـ Aspose.PDF لـ .NET؟
+ يمكنك تطبيق ترخيص من ملف أو دفق باتباع[التوثيق](https://reference.aspose.com/pdf/net/).
 
-#### س: هل يمكنني تطبيق الأنماط والتنسيق على الجدول وخلاياه؟
+### هل من الممكن إضافة الصور إلى خلايا الجدول؟
+نعم، يدعم Aspose.PDF لـ .NET إضافة أنواع مختلفة من المحتوى، بما في ذلك الصور، إلى خلايا الجدول.
 
-ج: نعم، يمكنك تطبيق الأنماط والتنسيق على الجدول وخلاياه باستخدام Aspose.PDF for .NET. توفر المكتبة خصائص وطرقًا مختلفة لتخصيص مظهر الجدول ومحتوياته.
-
-#### س: هل Aspose.PDF for .NET متوافق مع .NET Core؟
-
-ج: نعم، برنامج Aspose.PDF for .NET متوافق مع .NET Core. ويمكنك استخدامه في تطبيقات .NET Framework و.NET Core.
-
-#### س: هل يمكنني استخدام هذا النهج لإضافة أعمدة متكررة في مستند PDF موجود؟
-
-ج: نعم، يمكنك استخدام هذا الأسلوب لإضافة أعمدة متكررة في مستند PDF موجود. ما عليك سوى تحميل المستند الموجود باستخدام Aspose.PDF لـ .NET واتباع نفس الخطوات لإنشاء العمود المتكرر وإضافته.
+### هل يمكنني تخصيص تخطيط الجدول بشكل أكبر؟
+بالتأكيد! يوفر Aspose.PDF ميزات شاملة لتخصيص أنماط الجدول، بما في ذلك الحدود والحشو والمحاذاة والمزيد.

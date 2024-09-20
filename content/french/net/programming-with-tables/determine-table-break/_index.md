@@ -2,175 +2,193 @@
 title: Déterminer le saut de tableau dans un fichier PDF
 linktitle: Déterminer le saut de tableau dans un fichier PDF
 second_title: Référence de l'API Aspose.PDF pour .NET
-description: Découvrez comment déterminer les sauts de tableau dans un fichier PDF à l'aide d'Aspose.PDF pour .NET.
+description: Découvrez comment déterminer le saut de tableau dans les fichiers PDF à l'aide d'Aspose.PDF pour .NET avec notre guide étape par étape, comprenant des exemples de code et des conseils de dépannage.
 type: docs
 weight: 60
 url: /fr/net/programming-with-tables/determine-table-break/
 ---
-Dans ce tutoriel, nous allons apprendre à déterminer les sauts de tableau dans un fichier PDF à l'aide d'Aspose.PDF pour .NET. Nous expliquerons le code source en C# étape par étape. À la fin de ce tutoriel, vous saurez comment déterminer si un tableau dépasse les marges de la page. Commençons !
+## Introduction
 
-## Étape 1 : Configuration de l'environnement
-Tout d’abord, assurez-vous d’avoir configuré votre environnement de développement C# avec Aspose.PDF pour .NET. Ajoutez la référence à la bibliothèque et importez les espaces de noms nécessaires.
+Créer et manipuler des fichiers PDF peut être un peu comme apprivoiser une bête sauvage. Un instant, vous pensez avoir tout compris, et l'instant d'après, le document se comporte de manière imprévisible. Vous êtes-vous déjà demandé comment gérer efficacement les tableaux dans un PDF, et plus précisément comment déterminer quand un tableau va se briser ? Dans cet article, nous allons découvrir comment utiliser Aspose.PDF pour .NET pour identifier quand un tableau s'étend au-delà de la taille d'une page. Alors attachez vos ceintures et explorons le monde de la manipulation PDF !
 
-## Étape 2 : Création du document PDF
- Dans cette étape, nous créons un nouveau`Document` objet pour représenter le document PDF.
+## Prérequis
+
+Avant de passer au codage proprement dit, assurons-nous que tout est en place :
+
+1. Environnement de développement .NET : assurez-vous que Visual Studio ou tout autre IDE compatible est installé.
+2.  Bibliothèque Aspose.PDF : vous devez ajouter la bibliothèque Aspose.PDF à votre projet. Vous pouvez la télécharger à partir du[Téléchargements PDF d'Aspose](https://releases.aspose.com/pdf/net/) page, ou vous pouvez l'installer via le gestionnaire de packages NuGet :
+   ```bash
+   Install-Package Aspose.PDF
+   ```
+3. Connaissances de base de C# : ce guide suppose que vous avez une compréhension raisonnable de C# et de la programmation orientée objet.
+
+Maintenant que nous avons nos prérequis, commençons par importer les packages nécessaires.
+
+## Paquets d'importation
+
+Pour commencer à utiliser Aspose.PDF dans votre projet, vous devez inclure les espaces de noms appropriés. Voici comment procéder :
 
 ```csharp
-pdf-Document = new Document();
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-Ce document servira à ajouter des sections et des tableaux.
+Ces espaces de noms vous donneront accès aux fonctionnalités de base nécessaires à la manipulation de fichiers PDF.
 
-## Étape 3 : Ajout d'une section et d'un tableau
-Nous allons maintenant ajouter une section à notre document PDF et créer un tableau à l'intérieur de cette section.
+Décomposons le processus en étapes faciles à gérer. Nous allons créer un document PDF, ajouter un tableau et déterminer s'il s'ouvrira sur une nouvelle page lors de l'ajout de lignes supplémentaires.
+
+## Étape 1 : Configurez votre répertoire de documents
+
+Avant de commencer à coder, déterminez l'emplacement où votre PDF de sortie sera enregistré. C'est essentiel car c'est là que vous retrouverez le document généré plus tard.
 
 ```csharp
-Page page = pdf.Pages.Add();
-Table table1 = new Table();
-table1. Margin. Top = 300;
-page.Paragraphs.Add(table1);
+string dataDir = "YOUR DOCUMENT DIRECTORY"; // Remplacez par votre répertoire.
 ```
 
-Nous spécifions également une marge supérieure de 300 points pour le tableau. Vous pouvez ajuster cette valeur selon vos besoins.
+## Étape 2 : instancier le document PDF
 
-## Étape 4 : Installation de la table
-Dans cette étape, nous configurons les propriétés du tableau, telles que la largeur des colonnes et les bordures.
-
-```csharp
-table1. ColumnWidths = "100 100 100";
-table1.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1F);
-table1.Border = new BorderInfo(BorderSide.All, 1F);
-```
-
-Ici, nous définissons la largeur des colonnes du tableau et les bordures des cellules. Vous pouvez ajuster ces valeurs selon vos préférences.
-
-## Étape 5 : Ajouter des lignes et des cellules au tableau
-Nous allons maintenant créer des lignes et des cellules dans le tableau à l’aide d’une boucle.
+ Ensuite, vous allez créer une nouvelle instance du`Document` classe de la bibliothèque Aspose.PDF. C'est ici que toute votre magie PDF se produira !
 
 ```csharp
-for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
-{
-     Row row1 = table1.Rows.Add();
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
-}
-```
-
-Ici, nous créons 17 lignes dans le tableau et ajoutons trois cellules à chaque ligne. Vous pouvez ajuster la boucle selon vos besoins.
-
-## Étape 6 : Déterminer les sauts de tableau
-Nous allons maintenant déterminer si le tableau dépasse les marges de la page en comparant la hauteur de la page avec la hauteur totale des objets du tableau.
-
-```csharp
-float PageHeight = (float)pdf.PageInfo.Height;
-float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
-
-if ((PageHeight - TotalObjectsHeight) <= 10)
-     Console.WriteLine("The height of the page - Height of objects < 10, the table will be truncated");
-```
-
-Nous calculons la hauteur de la page et la hauteur totale des objets en tenant compte des marges. Si la différence est de 10 ou moins, le tableau dépasse les marges de la page.
-
-## Étape 7 : Enregistrer le document PDF
-Enfin, nous sauvegardons le document PDF avec les résultats.
-
-```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-dataDir = dataDir + "DetermineTableBreak_out.pdf";
-pdf.Save(dataDir);
-Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
-```
-
-Assurez-vous de spécifier le bon répertoire de document. Le fichier PDF résultant sera enregistré avec les sauts de tableau déterminés.
-
-### Exemple de code source pour déterminer le saut de tableau à l'aide d'Aspose.PDF pour .NET
-
-```csharp
-// Le chemin vers le répertoire des documents.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-// Instancier une classe d'objet PDF
 Document pdf = new Document();
-// Ajoutez la section à la collection de sections du document PDF
+```
+
+## Étape 3 : Créer une page
+
+Chaque PDF a besoin d'une page. Voici comment ajouter une nouvelle page à votre document.
+
+```csharp
 Aspose.Pdf.Page page = pdf.Pages.Add();
-// Instancier un objet de table
+```
+
+## Étape 4 : instancier la table
+
+Maintenant, créons la table réelle dont vous souhaitez surveiller les pauses.
+
+```csharp
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-table1.Margin.Top = 300;
-// Ajoutez le tableau dans la collection de paragraphes de la section souhaitée
+table1.Margin.Top = 300; // Permet de libérer de l'espace sur le dessus de votre table.
+```
+
+## Étape 5 : Ajouter le tableau à la page
+
+Une fois le tableau créé, l’étape suivante consiste à l’ajouter à la page que nous avons créée précédemment.
+
+```csharp
 page.Paragraphs.Add(table1);
-// Définir avec les largeurs de colonnes du tableau
-table1.ColumnWidths = "100 100 100";
-// Définir la bordure de cellule par défaut à l'aide de l'objet BorderInfo
+```
+
+## Étape 6 : Définir les propriétés du tableau
+
+Définissons quelques propriétés importantes pour notre tableau, comme la largeur des colonnes et les bordures.
+
+```csharp
+table1.ColumnWidths = "100 100 100"; // Chaque colonne mesure 100 unités de large.
 table1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
-// Définir la bordure du tableau à l’aide d’un autre objet BorderInfo personnalisé
 table1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
-// Créez un objet MarginInfo et définissez ses marges gauche, inférieure, droite et supérieure
-Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
-margin.Top = 5f;
-margin.Left = 5f;
-margin.Right = 5f;
-margin.Bottom = 5f;
-// Définir le remplissage de cellule par défaut sur l'objet MarginInfo
+```
+
+## Étape 7 : définir les marges des cellules
+
+Nous devons veiller à ce que nos cellules disposent d'un rembourrage pour une meilleure présentation. Voici comment procéder.
+
+```csharp
+Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo(5f, 5f, 5f, 5f); // Haut, gauche, droite, bas
 table1.DefaultCellPadding = margin;
-// Si vous augmentez le compteur à 17, la table se brisera
-// Parce qu'il n'est plus possible de l'héberger sur cette page
+```
+
+## Étape 8 : Ajouter des lignes au tableau
+
+Nous sommes maintenant prêts à ajouter des lignes ! Nous allons parcourir la boucle et créer 17 lignes. (Pourquoi 17 ? Eh bien, c'est là que nous verrons le tableau se briser !)
+
+```csharp
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
-	//Créez des lignes dans le tableau, puis des cellules dans les lignes
-	Aspose.Pdf.Row row1 = table1.Rows.Add();
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
+    Aspose.Pdf.Row row1 = table1.Rows.Add();
+    row1.Cells.Add($"col {RowCounter}, 1");
+    row1.Cells.Add($"col {RowCounter}, 2");
+    row1.Cells.Add($"col {RowCounter}, 3");
 }
-// Obtenir les informations sur la hauteur de la page
+```
+
+## Étape 9 : Obtenir la hauteur de la page
+
+Pour vérifier si notre tableau s'adaptera, nous devons connaître la hauteur de notre page. 
+
+```csharp
 float PageHeight = (float)pdf.PageInfo.Height;
-// Obtenez les informations sur la hauteur totale des marges supérieure et inférieure de la page,
-// Marge du plateau et hauteur de la table.
-float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
+```
 
-// Afficher la hauteur de la page, la hauteur du tableau, la marge supérieure du tableau et le haut de la page
-// Et les informations sur la marge inférieure
-Console.WriteLine("PDF document Height = " + pdf.PageInfo.Height.ToString() + "\nTop Margin Info = " + page.PageInfo.Margin.Top.ToString() + "\nBottom Margin Info = " + page.PageInfo.Margin.Bottom.ToString() + "\n\nTable-Top Margin Info = " + table1.Margin.Top.ToString() + "\nAverage Row Height = " + table1.Rows[0].MinRowHeight.ToString() + " \nTable height " + table1.GetHeight().ToString() + "\n ----------------------------------------" + "\nTotal Page Height =" + PageHeight.ToString() + "\nCummulative height including Table =" + TotalObjectsHeight.ToString());
+## Étape 10 : Calculer la hauteur totale des objets
 
-// Vérifiez si nous déduisons la somme de la marge supérieure de la page + la marge inférieure de la page
-// + Marge supérieure du tableau et hauteur du tableau à partir de la hauteur de la page et de son moins
-// Plus de 10 (une ligne moyenne peut être supérieure à 10)
+Maintenant, calculons la hauteur totale de tous les objets (marges de page, marges de tableau et hauteur du tableau) sur la page.
+
+```csharp
+float TotalObjectsHeight = page.PageInfo.Margin.Top + page.PageInfo.Margin.Bottom + table1.Margin.Top + table1.GetHeight();
+```
+
+## Étape 11 : Afficher les informations de hauteur
+
+Il est utile de voir quelques informations de débogage, n'est-ce pas ? Imprimons toutes les informations de hauteur pertinentes sur la console.
+
+```csharp
+Console.WriteLine($"PDF document Height = {PageHeight}");
+Console.WriteLine($"Top Margin Info = {page.PageInfo.Margin.Top}");
+Console.WriteLine($"Bottom Margin Info = {page.PageInfo.Margin.Bottom}");
+Console.WriteLine($"Table-Top Margin Info = {table1.Margin.Top}");
+Console.WriteLine($"Average Row Height = {table1.Rows[0].MinRowHeight}");
+Console.WriteLine($"Table height {table1.GetHeight()}");
+Console.WriteLine($"Total Page Height = {PageHeight}");
+Console.WriteLine($"Cumulative Height including Table = {TotalObjectsHeight}");
+```
+
+## Étape 12 : Vérifier la condition de rupture de la table
+
+Enfin, nous voulons voir si l’ajout de lignes supplémentaires entraînerait la rupture du tableau sur une autre page.
+
+```csharp
 if ((PageHeight - TotalObjectsHeight) <= 10)
-	// Si la valeur est inférieure à 10, affichez le message.
-	//Ce qui montre qu'une autre ligne ne peut pas être placée et si nous en ajoutons une nouvelle
-	// La ligne et le tableau seront cassés. Cela dépend de la valeur de la hauteur de la ligne.
-	Console.WriteLine("Page Height - Objects Height < 10, so table will break");
+{
+    Console.WriteLine("Page Height - Objects Height < 10, so table will break");
+}
+```
 
+## Étape 13 : Enregistrer le document PDF
 
-dataDir = dataDir + "DetermineTableBreak_out.pdf";
-// Enregistrer le document PDF
+Après tout ce travail acharné, enregistrons le document PDF dans le répertoire spécifié.
+
+```csharp
+dataDir = dataDir + "DetermineTableBreak_out.pdf"; 
 pdf.Save(dataDir);
+```
 
-Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
+## Étape 14 : Message de confirmation
+
+Pour vous faire savoir que tout s'est bien passé, nous vous envoyons un message de confirmation.
+
+```csharp
+Console.WriteLine($"\nTable break determined successfully.\nFile saved at {dataDir}");
 ```
 
 ## Conclusion
-Dans ce didacticiel, nous avons appris à déterminer les sauts de tableau dans un document PDF à l'aide d'Aspose.PDF pour .NET. Vous pouvez utiliser ce guide étape par étape pour vérifier si un tableau dépasse les marges de page dans vos propres projets C#.
 
-### FAQ pour déterminer le saut de tableau dans un fichier PDF
+Dans ce guide, nous avons examiné de près comment déterminer à quel moment un tableau dans un document PDF sera rompu lors de l'utilisation d'Aspose.PDF pour .NET. En suivant ces étapes, vous pouvez facilement identifier les limitations d'espace et mieux gérer vos mises en page PDF. Avec de la pratique, vous acquerrez les compétences nécessaires pour manipuler efficacement les tableaux et créer des PDF soignés comme un pro. Alors pourquoi ne pas l'essayer et voir comment cela peut fonctionner pour vous ?
 
-#### Q : Quel est le but de déterminer les sauts de tableau dans un document PDF ?
+## FAQ
 
-R : La détection des sauts de tableau dans un document PDF a pour but de vérifier si le tableau dépasse les marges de la page. Cela permet de garantir que le contenu du tableau s'affiche correctement dans l'espace disponible sur la page. En détectant les sauts de tableau, vous pouvez gérer le débordement du contenu et ajuster la mise en page du tableau en conséquence.
+### Qu'est-ce qu'Aspose.PDF pour .NET ?
+Aspose.PDF pour .NET est une bibliothèque robuste qui permet aux développeurs de créer, convertir et manipuler des documents PDF directement dans leurs applications .NET.
 
-#### Q : Comment puis-je ajuster la marge supérieure du tableau ?
+### Puis-je obtenir un essai gratuit d'Aspose.PDF ?
+ Oui ! Vous pouvez télécharger un[essai gratuit](https://releases.aspose.com/) pour explorer ses fonctionnalités avant de faire un achat.
 
- R : Dans le code source C# fourni, vous pouvez ajuster la marge supérieure du tableau en modifiant la valeur de`table1.Margin.Top`propriété. Augmentez ou diminuez la valeur selon vos besoins pour définir la marge supérieure souhaitée pour le tableau.
+### Comment puis-je trouver de l'aide pour Aspose.PDF ?
+ Vous pouvez trouver des informations utiles et obtenir de l'aide de la communauté Aspose sur leur[Forum de soutien](https://forum.aspose.com/c/pdf/10).
 
-#### Q : Puis-je personnaliser l’apparence du tableau, comme les couleurs des cellules et la taille de la police ?
+### Que se passe-t-il si j’ai besoin de plus de 17 lignes dans ma table ?
+Si vous dépassez l'espace disponible, votre tableau ne rentrera pas dans la page et vous devrez prendre les mesures appropriées pour le formater correctement.
 
-R : Oui, vous pouvez personnaliser l'apparence du tableau et de ses cellules à l'aide de diverses propriétés et méthodes fournies par Aspose.PDF pour .NET. Par exemple, vous pouvez modifier les couleurs d'arrière-plan des cellules, la taille de la police, la famille de polices, l'alignement du texte, etc. Reportez-vous à la documentation officielle pour plus d'informations sur la personnalisation de l'apparence du tableau.
-
-#### Q : Que se passe-t-il si le tableau dépasse les marges de la page ?
-
-R : Si le tableau dépasse les marges de la page, le contenu peut être tronqué ou superposé, ce qui rend le document PDF moins lisible et moins organisé. En détectant les sauts de tableau et en gérant le dépassement, vous pouvez vous assurer que le contenu reste correctement affiché dans la zone de page disponible.
-
-#### Q : Puis-je déterminer des sauts de tableau pour plusieurs tableaux dans le même document PDF ?
-
-: Oui, vous pouvez définir des sauts de tableau pour plusieurs tableaux dans le même document PDF. Répétez simplement les étapes pour chaque tableau que vous souhaitez analyser et ajustez la disposition du tableau si nécessaire pour éviter tout débordement de contenu.
+### Où puis-je acheter la bibliothèque Aspose.PDF ?
+ Vous pouvez acheter la bibliothèque auprès du[page d'achat](https://purchase.aspose.com/buy).

@@ -62,7 +62,7 @@ Aspose.Pdf.Metered metered = new Aspose.Pdf.Metered();
 metered.SetMeteredKey("YOUR_PUBLIC_KEY", "YOUR_PRIVATE_KEY");
 ```
 
--  ملاحظة هامة: استبدل`"YOUR_PUBLIC_KEY"` و`"YOUR_PRIVATE_KEY"`باستخدام مفاتيح الترخيص الفعلية التي تم قياسها. تعد هذه المفاتيح ضرورية لتفعيل الإمكانات الكاملة لبرنامج Aspose.PDF.
+-  ملاحظة هامة: استبدل`"YOUR_PUBLIC_KEY"` و`"YOUR_PRIVATE_KEY"`باستخدام مفاتيح الترخيص الفعلية الخاصة بك. هذه المفاتيح ضرورية لتفعيل الإمكانات الكاملة لبرنامج Aspose.PDF.
 
 ## الخطوة 4: قم بتحميل مستند PDF الخاص بك
 

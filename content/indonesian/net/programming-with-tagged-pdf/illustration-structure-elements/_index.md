@@ -2,155 +2,134 @@
 title: Elemen Struktur Ilustrasi
 linktitle: Elemen Struktur Ilustrasi
 second_title: Referensi API Aspose.PDF untuk .NET
-description: Panduan langkah demi langkah untuk menggunakan aset ilustrasi dengan Aspose.PDF untuk .NET. Sempurnakan presentasi PDF Anda dengan gambar.
+description: Buat PDF terstruktur dengan elemen ilustrasi di Aspose.PDF untuk .NET dengan mengikuti tutorial langkah demi langkah kami.
 type: docs
 weight: 100
 url: /id/net/programming-with-tagged-pdf/illustration-structure-elements/
 ---
-Dalam panduan langkah demi langkah ini, kami akan menunjukkan kepada Anda cara menggunakan elemen struktur ilustrasi dengan Aspose.PDF untuk .NET. Aspose.PDF adalah pustaka canggih yang memungkinkan Anda memanipulasi dokumen PDF secara terprogram. Elemen struktur ilustrasi memungkinkan Anda menambahkan gambar dan figur ke dokumen PDF Anda, sehingga meningkatkan tampilan visual dan pemahamannya.
+## Perkenalan
 
-Mari selami kode dan pelajari cara menggunakan elemen struktur ilustrasi dengan Aspose.PDF untuk .NET.
+Apakah Anda siap membuat PDF yang menakjubkan dan terstruktur dalam aplikasi .NET Anda? Baik Anda sedang mengerjakan proyek yang memerlukan pemberian tag pada konten atau sekadar ingin membawa PDF Anda ke tingkat berikutnya, Aspose.PDF untuk .NET memiliki semua alat yang Anda butuhkan untuk bekerja dengan elemen struktur ilustrasi. Dalam tutorial ini, saya akan memandu Anda melalui proses ini langkah demi langkah, memastikan bahkan bagian yang paling rumit pun menjadi sangat jelas.
 
 ## Prasyarat
 
-Sebelum memulai, pastikan Anda memiliki hal berikut:
+Sebelum kita membahas detailnya, mari pastikan Anda memiliki semua yang dibutuhkan agar dapat mengikutinya dengan lancar.
 
-1. Pustaka Aspose.PDF untuk .NET terpasang.
-2. Pengetahuan dasar tentang bahasa pemrograman C#.
+1.  Aspose.PDF untuk .NET – Anda memerlukan pustaka Aspose.PDF yang terinstal. Belum memilikinya? Anda dapat[unduh disini](https://releases.aspose.com/pdf/net/) Jika Anda ingin mengujinya terlebih dahulu, Anda dapat mengambil[uji coba gratis](https://releases.aspose.com/).
+2. Visual Studio – Kami akan membuat kode dalam C#, jadi pastikan Visual Studio atau IDE yang kompatibel telah terpasang.
+3. .NET Framework – Pastikan Anda memiliki versi yang kompatibel dengan Aspose.PDF untuk .NET.
+4.  Lisensi Sementara – Aspose.PDF hadir dengan beberapa batasan dalam mode uji coba, jadi dapatkan lisensi sementara.[lisensi sementara](https://purchase.aspose.com/temporary-license/) untuk membuka fitur lengkap.
 
-## Langkah 1: Menyiapkan lingkungan
+Selesai! Sekarang mari impor namespace yang diperlukan dan lanjutkan dengan pengkodean.
 
-Untuk memulai, buka lingkungan pengembangan C# Anda dan buat proyek baru. Pastikan Anda telah menambahkan referensi ke pustaka Aspose.PDF untuk .NET dalam proyek Anda.
+## Mengimpor Ruang Nama
 
 ```csharp
-// Jalur ke direktori dokumen.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-## Langkah 2: Membuat dokumen
+Ini adalah fondasinya—tanpa mengimpor namespace ini, kita tidak dapat berinteraksi dengan fitur Aspose.PDF atau menangani konten PDF yang diberi tag. Sekarang mari kita uraikan langkah-langkahnya secara terperinci.
 
- Langkah pertama adalah membuat dokumen PDF baru menggunakan`Document` kelas.
+## Langkah 1: Menyiapkan Direktori Dokumen Anda
 
-```csharp
-// Buat dokumen PDF
-Document document = new Document();
-```
-
-## Langkah 3: Bekerja dengan konten yang diberi tag
-
-Lalu, kita dapatkan konten dokumen yang diberi tag untuk dikerjakan.
+Sebelum Anda mulai membuat PDF, Anda perlu menentukan jalur ke direktori dokumen tempat file akan disimpan. Ini adalah folder di sistem tempat gambar atau aset lainnya disimpan.
 
 ```csharp
-// Dapatkan konten yang ditandai dari dokumen
-ITaggedContent taggedContent = document.TaggedContent;
-```
-
-## Langkah 4: Tetapkan judul dan bahasa dokumen
-
-Sekarang kita dapat mengatur judul dokumen dan bahasa.
-
-```csharp
-// Tentukan judul dan bahasa dokumen
-taggedContent.SetTitle("Tagged PDF document");
-taggedContent.SetLanguage("fr-FR");
-```
-
-## Langkah 5: Tambahkan karya seni
-
-Sekarang mari tambahkan elemen ilustrasi, seperti gambar dan gambar, ke dokumen kita.
-
-```csharp
-// Keterbelakangan
-IllustrationElement figure1 = taggedContent.CreateFigureElement();
-taggedContent.RootElement.AppendChild(figure1);
-figure1.AlternativeText = "Figure One";
-figure1.Title = "Picture 1";
-figure1.SetTag("Fig1");
-figure1.SetImage("image.png");
-```
-
-Di sini kita membuat elemen struktur ilustrasi, memberinya teks alt, judul, tag khusus, dan mengaitkan gambar dengannya.
-
-## Langkah 6: Simpan dokumen PDF yang diberi tag
-
-Terakhir, kami menyimpan dokumen PDF yang diberi tag.
-
-```csharp
-// Simpan dokumen PDF yang diberi tag
-document.Save(dataDir + "IllustrationStructureElements.pdf");
-```
-
-### Contoh kode sumber untuk Elemen Struktur Ilustrasi menggunakan Aspose.PDF untuk .NET 
-```csharp
-
-// Jalur ke direktori dokumen.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+```
 
-// Buat Dokumen Pdf
+ Langkah ini sederhana, tetapi penting. Anda memberi tahu program tempat menemukan dan menyimpan file yang akan Anda kerjakan. Ini seperti memiliki basis untuk PDF Anda. Ganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya di mesin Anda.
+
+## Langkah 2: Membuat Dokumen PDF Baru
+
+Sekarang, saatnya membuat dokumen PDF. Pada langkah ini, kita akan memulai dokumen PDF kosong, yang akan kita modifikasi dan tingkatkan pada langkah berikutnya.
+ Buat Dokumen
+
+```csharp
 Document document = new Document();
+```
 
-// Dapatkan Konten untuk bekerja dengan TaggedPdf
+Baris ini melakukan semua keajaiban. Baris ini membuat berkas PDF baru yang benar-benar kosong, menunggu Anda untuk menambahkan konten ke dalamnya. Anggap saja ini seperti membuka kanvas baru.
+
+## Langkah 3: Mengakses Konten PDF yang Ditandai
+
+Untuk bekerja dengan elemen struktur ilustrasi, kita perlu memanfaatkan Konten Berlabel dokumen. Ini memungkinkan kita untuk menentukan label tertentu, sehingga PDF menjadi lebih terstruktur dan mudah diakses.
+
+```csharp
 ITaggedContent taggedContent = document.TaggedContent;
+```
 
-// Mengatur Judul dan Bahasa untuk Dokumen
+ Di sinilah keajaiban terjadi!`TaggedContent` objek memungkinkan kita menentukan bagaimana elemen-elemen dalam PDF ditafsirkan. Jika Anda bekerja dengan aksesibilitas atau struktur, langkah ini sangat penting.
+
+## Langkah 4: Mengatur Judul dan Bahasa Dokumen
+
+Kami membuat PDF terstruktur, jadi penting untuk menentukan judul dan bahasa. Ini tidak hanya membantu aksesibilitas tetapi juga membuat dokumen lebih profesional dan mudah dicari.
+
+```csharp
 taggedContent.SetTitle("Tagged Pdf Document");
 taggedContent.SetLanguage("en-US");
+```
 
-// Sedang dalam pengembangan
+Dengan menentukan judul dan bahasa, pada dasarnya Anda memberikan sedikit kepribadian pada PDF Anda. Judul akan muncul di properti dokumen, dan pengaturan bahasa akan memastikan kompatibilitas dengan pembaca layar dan alat aksesibilitas lainnya.
+
+## Langkah 5: Membuat Elemen Ilustrasi (Gambar)
+
+Sekarang tibalah bagian yang menarik—menambahkan ilustrasi! Dalam kasus ini, kita akan membuat elemen figur yang menyertakan gambar, deskripsi teks alternatif, dan judul.
+
+```csharp
 IllustrationElement figure1 = taggedContent.CreateFigureElement();
 taggedContent.RootElement.AppendChild(figure1);
+```
+
+Kode ini membuat elemen gambar baru dan menambahkannya ke elemen akar dokumen. Anggap saja ini seperti menambahkan tempat penampung gambar ke dokumen Anda.
+
+## Langkah 6: Menambahkan Teks Alternatif, Judul, dan Gambar
+
+Untuk memastikan PDF Anda dapat diakses, sebaiknya sertakan teks alternatif dan judul untuk ilustrasi Anda. Kami juga akan melampirkan gambar.
+
+```csharp
 figure1.AlternativeText = "Figure One";
 figure1.Title = "Image 1";
 figure1.SetTag("Fig1");
-figure1.SetImage("image.png");
-
-// Simpan Dokumen Pdf yang Ditandai
-document.Save(dataDir + "IllustrationStructureElements.pdf");
-
+figure1.SetImage(dataDir + "image.jpg");
 ```
+
+ Ini adalah sentuhan terakhir. Kami memberikan teks alt deskriptif pada gambar kami (yang berguna untuk pembaca layar), judul, dan pengaturan berkas gambar yang sebenarnya.`SetTag`metode menandai gambar, sehingga lebih mudah untuk dirujuk nanti.
+
+ Catatan Penting: Pastikan jalur gambar di`SetImage` menunjuk ke berkas gambar yang valid pada komputer Anda.
+
+## Langkah 7: Menyimpan Dokumen PDF yang Ditandai
+
+Setelah semua konten ditambahkan dan terstruktur, saatnya menyimpan PDF. Langkah ini menyelesaikan semuanya dan menghasilkan file yang sebenarnya.
+
+```csharp
+document.Save(dataDir + "IllustrationStructureElements.pdf");
+```
+
+Sederhana, bukan? Perintah ini mengambil semua pekerjaan yang telah Anda lakukan dan membuat file PDF baru di direktori yang Anda tentukan sebelumnya. Sekarang, periksa folder Anda, dan voila—Anda memiliki PDF terstruktur dengan elemen ilustrasi!
 
 ## Kesimpulan
 
-Selamat! Anda telah mempelajari cara menggunakan elemen struktur ilustrasi dengan Aspose.PDF untuk .NET. Kini Anda dapat menambahkan gambar dan figur ke dokumen PDF Anda untuk menyempurnakan tampilan visualnya. Jelajahi lebih banyak fitur Aspose.PDF untuk menemukan potensinya secara penuh.
+Selamat! Anda baru saja mempelajari cara membuat PDF berlabel dengan elemen struktur ilustrasi menggunakan Aspose.PDF untuk .NET. Pendekatan ini memastikan bahwa PDF Anda tidak hanya menarik secara visual tetapi juga terstruktur dan mudah diakses. Dengan memberi label pada konten dan menambahkan teks alternatif, Anda memastikan semua orang, termasuk mereka yang menggunakan teknologi bantuan, dapat menikmati dokumen Anda.
 
-### Pertanyaan yang Sering Diajukan
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa saja elemen struktur ilustrasi dalam dokumen PDF, dan bagaimana mereka meningkatkan presentasi visual?
+### Apa itu konten PDF yang diberi tag?
+PDF yang diberi tag adalah PDF yang menyertakan tag atau label untuk mengidentifikasi berbagai elemen, seperti judul, paragraf, dan gambar, sehingga membuat dokumen lebih mudah diakses.
 
-A: Elemen struktur ilustrasi dalam dokumen PDF memungkinkan Anda untuk memasukkan konten visual seperti gambar dan figur. Dengan menggunakan elemen struktur ilustrasi dengan Aspose.PDF untuk .NET, Anda dapat meningkatkan tampilan visual dokumen PDF Anda, membuatnya lebih menarik dan informatif.
+### Bagaimana pengaturan teks alternatif membantu?
+Teks alternatif menyediakan deskripsi untuk gambar, yang dapat dibaca oleh pembaca layar, meningkatkan aksesibilitas bagi pengguna yang memiliki gangguan penglihatan.
 
-#### T: Bagaimana Aspose.PDF untuk .NET memfasilitasi penggunaan elemen struktur ilustrasi?
+### Bisakah saya menambahkan beberapa gambar ke PDF yang diberi tag?
+ Ya! Anda dapat membuat beberapa`FigureElement` objek dan menambahkan masing-masing objek ke dokumen Anda, seperti yang kita lakukan dengan gambar tunggal.
 
-A: Aspose.PDF untuk .NET menyediakan serangkaian kelas dan metode yang memungkinkan Anda membuat, memanipulasi, dan menambahkan elemen struktur ilustrasi ke dokumen PDF Anda. Elemen-elemen ini dapat mencakup gambar, figur, dan konten visual lainnya.
+### Apakah saya memerlukan lisensi untuk menggunakan Aspose.PDF untuk .NET?
+ Ya, Aspose.PDF adalah pustaka berbayar, tetapi Anda bisa mendapatkannya[lisensi sementara](https://purchase.aspose.com/temporary-license/) atau mulai dengan[uji coba gratis](https://releases.aspose.com/).
 
-####  T: Apa peran`taggedContent` object play in using illustration structure elements?
-
- Sebuah:`taggedContent` objek, diperoleh dari dokumen`TaggedContent`properti, memungkinkan Anda bekerja dengan elemen terstruktur dalam dokumen PDF. Anda dapat membuat, mengatur, dan menambahkan elemen struktur ilustrasi untuk meningkatkan representasi visual dokumen.
-
-#### T: Bagaimana elemen struktur ilustrasi meningkatkan pemahaman konten dokumen PDF?
-
-A: Elemen struktur ilustrasi menyediakan konteks visual dan dukungan terhadap konten tekstual dokumen PDF. Elemen-elemen tersebut membantu menyampaikan informasi, data, atau konsep yang kompleks melalui gambar dan figur, sehingga konten lebih mudah dipahami dan diingat.
-
-#### T: Jenis konten visual apa yang dapat ditambahkan menggunakan elemen struktur ilustrasi?
-
-A: Elemen struktur ilustrasi dapat digunakan untuk menambahkan berbagai konten visual, termasuk gambar, bagan, grafik, diagram, dan jenis karya seni lainnya yang meningkatkan daya tarik visual dan penceritaan dokumen.
-
-#### T: Bagaimana cara membuat dan menambahkan gambar ke dokumen PDF menggunakan elemen struktur ilustrasi di Aspose.PDF untuk .NET?
-
-A: Anda dapat membuat elemen struktur ilustrasi menggunakan`CreateFigureElement` metode, menetapkan teks alt, judul, dan tag khusus untuknya, dan mengaitkan file gambar menggunakan`SetImage` metode. Contoh kode yang diberikan menunjukkan proses ini.
-
-#### T: Dapatkah saya menyesuaikan tampilan dan atribut elemen struktur ilustrasi?
-
-A: Ya, Anda dapat menyesuaikan tampilan dan atribut elemen struktur ilustrasi dengan mengatur properti seperti teks alt, judul, tag kustom, sumber gambar, dan lainnya. Ini memungkinkan Anda untuk menyesuaikan representasi visual dengan kebutuhan dokumen Anda.
-
-#### T: Bagaimana saya dapat memastikan bahwa gambar dan gambar yang saya tambahkan menggunakan elemen struktur ilustrasi dapat diakses?
-
-J: Untuk memastikan aksesibilitas, berikan teks alt yang bermakna yang secara akurat menggambarkan konten gambar atau gambar. Teks alt ini dibaca oleh pembaca layar dan teknologi bantuan lainnya, sehingga konten visual dapat diakses oleh semua pengguna.
-
-#### T: Dapatkah saya menggunakan elemen struktur ilustrasi dalam kombinasi dengan fitur manipulasi PDF lain yang ditawarkan oleh Aspose.PDF untuk .NET?
-
-A: Tentu saja! Anda dapat menggabungkan elemen struktur ilustrasi dengan fitur Aspose.PDF for .NET lainnya, seperti menambahkan teks, membuat tabel, menyisipkan hyperlink, dan banyak lagi. Ini memungkinkan Anda membuat dokumen PDF yang menarik secara visual dan informatif.
-
-#### T: Bagaimana saya dapat lebih jauh mengeksplorasi dan memanfaatkan elemen struktur ilustrasi untuk desain dokumen tingkat lanjut dan penceritaan visual?
-
-J: Untuk mempelajari lebih dalam, Anda dapat menjelajahi fitur-fitur canggih Aspose.PDF untuk .NET, seperti membuat elemen interaktif, menyematkan multimedia, memanfaatkan berbagai format gambar, dan mengoptimalkan konten visual untuk berbagai perangkat. Dokumentasi dan contoh pustaka menyediakan panduan untuk skenario-skenario canggih ini.
+### Apakah mungkin untuk mengubah elemen gambar setelah membuat PDF?
+Setelah PDF disimpan, Anda tidak dapat mengubahnya secara langsung, tetapi Anda dapat membuka kembali dokumen tersebut, membuat perubahan, dan menyimpannya lagi menggunakan Aspose.PDF.

@@ -2,192 +2,154 @@
 title: Thêm đường viền văn bản vào tệp PDF
 linktitle: Thêm đường viền văn bản vào tệp PDF
 second_title: Tài liệu tham khảo Aspose.PDF cho API .NET
-description: Tìm hiểu cách thêm đường viền văn bản vào tệp PDF bằng Aspose.PDF cho .NET.
+description: Tìm hiểu cách thêm đường viền văn bản vào tệp PDF bằng Aspose.PDF cho .NET với hướng dẫn từng bước này. Cải thiện tài liệu PDF của bạn.
 type: docs
 weight: 70
 url: /vi/net/programming-with-text/add-text-border/
 ---
-Hướng dẫn này sẽ hướng dẫn bạn quy trình thêm đường viền văn bản vào tệp PDF bằng Aspose.PDF cho .NET. Mã nguồn C# được cung cấp sẽ trình bày các bước cần thiết.
+## Giới thiệu
 
-## Yêu cầu
-Trước khi bắt đầu, hãy đảm bảo bạn có những điều sau:
+Tạo và thao tác các tài liệu PDF đã trở thành một kỹ năng thiết yếu trong thế giới kỹ thuật số ngày nay. Cho dù bạn đang tạo báo cáo, hóa đơn hay bất kỳ loại tài liệu nào khác, việc kiểm soát cách văn bản của bạn xuất hiện có thể tạo ra sự khác biệt đáng kể. Một cải tiến như vậy mà bạn có thể muốn triển khai là thêm đường viền xung quanh văn bản của mình trong tệp PDF. Trong hướng dẫn này, chúng tôi sẽ hướng dẫn bạn các bước để thêm đường viền văn bản vào tệp PDF bằng thư viện Aspose.PDF cho .NET. Vậy, hãy cùng bắt đầu ngay nhé!
 
-- Visual Studio hoặc bất kỳ trình biên dịch C# nào khác được cài đặt trên máy của bạn.
-- Aspose.PDF cho thư viện .NET. Bạn có thể tải xuống từ trang web chính thức của Aspose hoặc sử dụng trình quản lý gói như NuGet để cài đặt.
+## Điều kiện tiên quyết
 
-## Bước 1: Thiết lập dự án
-1. Tạo một dự án C# mới trong môi trường phát triển mà bạn thích.
-2. Thêm tham chiếu đến thư viện Aspose.PDF cho .NET.
+Trước khi bắt đầu, có một vài điều bạn cần chuẩn bị. Đừng lo, nó khá đơn giản!
 
-## Bước 2: Nhập các không gian tên cần thiết
-Trong tệp mã mà bạn muốn thêm đường viền văn bản, hãy thêm lệnh using sau vào đầu tệp:
+1. Visual Studio: Đảm bảo bạn đã cài đặt Visual Studio trên máy của mình. Đây sẽ là môi trường phát triển nơi bạn sẽ viết và chạy mã của mình.
+2.  Aspose.PDF cho .NET: Bạn sẽ cần tải xuống và cài đặt thư viện Aspose.PDF. Bạn có thể lấy nó từ[Trang tải xuống Aspose PDF cho .NET](https://releases.aspose.com/pdf/net/) . Nếu bạn muốn dùng thử trước, bạn cũng có thể nhận được[dùng thử miễn phí tại đây](https://releases.aspose.com/).
+3. Kiến thức cơ bản về C#: Hiểu biết cơ bản về ngôn ngữ lập trình C# sẽ giúp bạn dễ dàng theo dõi các ví dụ.
+4. .NET Framework: Đảm bảo rằng bạn đã cài đặt và thiết lập .NET Framework trong dự án của mình.
+
+Khi đã có đủ những điều kiện tiên quyết này, bạn đã sẵn sàng để bắt đầu viết mã!
+
+## Nhập gói
+
+Bây giờ chúng ta đã thiết lập mọi thứ, hãy nhập các gói cần thiết để sử dụng Aspose.PDF trong dự án của chúng ta. Bạn có thể thực hiện việc này bằng cách thêm các chỉ thị using sau vào đầu tệp C# của bạn:
 
 ```csharp
-using Aspose.Pdf;
 using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
 ```
 
-## Bước 3: Thiết lập thư mục tài liệu
- Trong mã, hãy xác định vị trí dòng ghi`string dataDir = "YOUR DOCUMENT DIRECTORY";` và thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn đến thư mục lưu trữ tài liệu của bạn.
+Các không gian tên này sẽ cho phép bạn làm việc với các tài liệu PDF và đoạn văn bản một cách hiệu quả. 
 
-## Bước 4: Tạo một đối tượng Document mới
- Khởi tạo một cái mới`Document` đối tượng bằng cách thêm dòng mã sau:
+Bây giờ, chúng ta hãy chia nhỏ quy trình thêm đường viền văn bản thành các bước chi tiết. Chúng ta sẽ xem xét từng bước để bạn có thể hiểu chính xác những gì đang diễn ra bên trong.
 
-```csharp
-Document pdfDocument = new Document();
-```
+## Bước 1: Thiết lập tài liệu
 
-## Bước 5: Thêm một trang vào tài liệu
- Thêm một trang mới vào tài liệu bằng cách sử dụng`Add` phương pháp của`Pages` bộ sưu tập. Trong mã được cung cấp, trang mới được gán cho biến`pdfPage`.
+Trước tiên, chúng ta cần tạo một tài liệu PDF mới. Đây là nơi mọi phép thuật của chúng ta sẽ diễn ra.
 
-```csharp
-Page pdfPage = (Page)pdfDocument.Pages.Add();
-```
-
-## Bước 6: Tạo một TextFragment
- Tạo một`TextFragment`đối tượng và cung cấp văn bản mong muốn. Đặt vị trí của đoạn văn bản bằng cách sử dụng`Position` thuộc tính. Trong mã được cung cấp, văn bản được đặt thành "văn bản chính" và được định vị tại (100, 600) trên trang.
-
-```csharp
-TextFragment textFragment = new TextFragment("main text");
-textFragment.Position = new Position(100, 600);
-```
-
-## Bước 7: Thiết lập thuộc tính văn bản
-Tùy chỉnh các thuộc tính của văn bản như cỡ chữ, kiểu chữ, màu nền, màu nền trước, v.v. Trong mã được cung cấp, các thuộc tính như cỡ chữ, phông chữ, màu nền, màu nền trước và màu nét được thiết lập cho đoạn văn bản.
-
-```csharp
-textFragment.TextState.FontSize = 12;
-textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
-```
-
-## Bước 8: Kích hoạt đường viền văn bản
- Để bật đường viền văn bản, hãy đặt`DrawTextRectangleBorder` thuộc tính của đoạn văn bản`TextState` ĐẾN`true`.
-
-```csharp
-textFragment.TextState.DrawTextRectangleBorder = true;
-```
-
-## Bước 9: Thêm TextFragment vào trang
- Sử dụng`TextBuilder` lớp để thêm`TextFragment` phản đối trang.
-
-```csharp
-TextBuilder tb = new TextBuilder(pdfPage);
-tb.AppendText(textFragment);
-```
-
-## Bước 10: Lưu tài liệu PDF
- Lưu tài liệu PDF bằng cách sử dụng`Save` phương pháp của`Document` đối tượng. Chỉ định đường dẫn tệp đầu ra mà bạn đã đặt ở Bước 3.
-
-```csharp
-pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
-```
-
-### Mã nguồn mẫu để Thêm Đường viền Văn bản bằng Aspose.PDF cho .NET 
 ```csharp
 // Đường dẫn đến thư mục tài liệu.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Tạo đối tượng tài liệu mới
 Document pdfDocument = new Document();
+```
+
+ Trong bước này, chúng tôi chỉ định thư mục nơi chúng tôi muốn lưu tệp PDF của mình. Sau đó, chúng tôi tạo một phiên bản mới của`Document` lớp đại diện cho tài liệu PDF của chúng ta.
+
+## Bước 2: Thêm trang mới
+
+Tiếp theo, chúng ta cần thêm một trang vào tài liệu của mình. Hãy nghĩ về điều này như việc thêm một khung trống nơi chúng ta sẽ đặt văn bản của mình.
+
+```csharp
 // Lấy trang cụ thể
 Page pdfPage = (Page)pdfDocument.Pages.Add();
+```
+
+ Ở đây, chúng tôi gọi là`Add()` phương pháp trên`Pages` bộ sưu tập của chúng tôi`pdfDocument` đối tượng. Điều này thêm một trang mới vào tài liệu và chúng tôi lưu trữ một tham chiếu đến nó trong`pdfPage` biến đổi.
+
+## Bước 3: Tạo một đoạn văn bản
+
+Bây giờ, hãy tạo văn bản mà chúng ta muốn hiển thị trong PDF. Đây là nơi chúng ta xác định nội dung của đoạn văn bản.
+
+```csharp
 // Tạo đoạn văn bản
 TextFragment textFragment = new TextFragment("main text");
 textFragment.Position = new Position(100, 600);
+```
+
+ Trong mã này, chúng ta tạo một`TextFragment` đối tượng có văn bản "văn bản chính". Chúng tôi cũng thiết lập vị trí của nó trên trang bằng cách sử dụng`Position` lớp. Tọa độ (100, 600) chỉ định vị trí văn bản sẽ được đặt trên trang.
+
+## Bước 4: Thiết lập Thuộc tính Văn bản
+
+Tiếp theo, chúng ta sẽ tùy chỉnh đoạn văn bản của mình để làm cho nó hấp dẫn về mặt thị giác. Điều này bao gồm thiết lập kích thước phông chữ, kiểu phông chữ, màu nền và màu nền trước.
+
+```csharp
 // Đặt thuộc tính văn bản
 textFragment.TextState.FontSize = 12;
 textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
+```
+
+Ở đây, chúng tôi đặt cỡ chữ là 12, sử dụng "Times New Roman" làm phông chữ và áp dụng màu nền xám nhạt với chữ màu đỏ. Các thuộc tính này giúp tăng cường khả năng hiển thị của văn bản.
+
+## Bước 5: Thiết lập màu nét cho đường viền
+
+Bây giờ, chúng ta sẽ đến phần thú vị nhất—thêm đường viền xung quanh văn bản!
+
+```csharp
 // Đặt thuộc tính StrokeColor để vẽ đường viền (vẽ) xung quanh hình chữ nhật văn bản
 textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
+```
+
+Trong bước này, chúng ta chỉ định màu của đường viền mà chúng ta muốn vẽ xung quanh văn bản. Ở đây, chúng ta chọn màu đỏ sẫm.
+
+## Bước 6: Kích hoạt Đường viền hình chữ nhật văn bản
+
+ Để thực sự vẽ đường viền xung quanh văn bản của chúng ta, chúng ta cần kích hoạt`DrawTextRectangleBorder` tài sản.
+
+```csharp
 // Đặt giá trị thuộc tính DrawTextRectangleBorder thành true
 textFragment.TextState.DrawTextRectangleBorder = true;
+```
+
+ Bằng cách thiết lập thuộc tính này thành`true`, chúng tôi yêu cầu Aspose.PDF vẽ đường viền xung quanh hình chữ nhật văn bản dựa trên màu nét được chỉ định.
+
+## Bước 7: Thêm đoạn văn bản vào trang
+
+Bây giờ chúng ta đã có đoạn văn bản với tất cả các thuộc tính được thiết lập, đã đến lúc thêm nó vào trang.
+
+```csharp
 TextBuilder tb = new TextBuilder(pdfPage);
 tb.AppendText(textFragment);
+```
+
+ Ở đây, chúng tôi tạo ra một`TextBuilder` đối tượng được liên kết với chúng tôi`pdfPage` . Sau đó chúng tôi sử dụng`AppendText` phương pháp để thêm của chúng tôi`textFragment` vào trang. 
+
+## Bước 8: Lưu tài liệu
+
+Cuối cùng, chúng ta cần lưu tài liệu PDF vào thư mục đã chỉ định. Đây chính là khoảnh khắc quyết định!
+
+```csharp
 // Lưu tài liệu
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
+Trong bước này, chúng ta gọi`Save` phương pháp của chúng tôi`pdfDocument` đối tượng, cung cấp đường dẫn nơi chúng ta muốn lưu tệp. Sau khi chạy mã, bạn sẽ tìm thấy tệp PDF mới tạo có đường viền văn bản trong thư mục đã chỉ định!
+
 ## Phần kết luận
-Bạn đã thêm thành công đường viền văn bản vào tài liệu PDF của mình bằng Aspose.PDF cho .NET. Tệp PDF kết quả hiện có thể được tìm thấy tại đường dẫn tệp đầu ra đã chỉ định.
 
-### Câu hỏi thường gặp
+Và thế là xong! Bạn đã thêm thành công đường viền văn bản vào tệp PDF bằng Aspose.PDF cho .NET. Tính năng đơn giản nhưng mạnh mẽ này có thể cải thiện đáng kể khả năng đọc và tính thẩm mỹ của tài liệu PDF của bạn. Cho dù bạn đang tạo báo cáo, tờ rơi hay bất kỳ loại tài liệu nào khác, việc biết cách thao tác định dạng văn bản có thể hữu ích.
 
-#### H: Trọng tâm chính của hướng dẫn này là gì?
+## Câu hỏi thường gặp
 
-A: Hướng dẫn này hướng dẫn bạn quy trình thêm đường viền văn bản vào tệp PDF bằng thư viện Aspose.PDF cho .NET. Mã nguồn C# được cung cấp sẽ trình bày các bước cần thiết để thực hiện việc này.
+### Aspose.PDF dành cho .NET là gì?
+Aspose.PDF for .NET là một thư viện mạnh mẽ cho phép các nhà phát triển tạo, chỉnh sửa và xử lý các tài liệu PDF theo chương trình bằng cách sử dụng nền tảng .NET.
 
-#### H: Tôi cần nhập những không gian tên nào cho hướng dẫn này?
+### Tôi có thể dùng thử Aspose.PDF miễn phí không?
+ Có! Aspose cung cấp một[dùng thử miễn phí](https://releases.aspose.com/) của thư viện PDF, cho phép bạn kiểm tra các tính năng của thư viện trước khi mua.
 
-A: Trong tệp mã mà bạn muốn thêm đường viền văn bản, hãy nhập các không gian tên sau vào đầu tệp:
+### Làm thế nào để mua Aspose.PDF cho .NET?
+ Bạn có thể mua Aspose.PDF cho .NET trực tiếp từ[trang mua hàng](https://purchase.aspose.com/buy).
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
+### Có hỗ trợ cho Aspose.PDF không?
+ Chắc chắn rồi! Bạn có thể nhận được sự hỗ trợ bằng cách truy cập[Diễn đàn hỗ trợ Aspose](https://forum.aspose.com/c/pdf/10).
 
-#### H: Làm thế nào để chỉ định thư mục tài liệu?
-
- A: Trong mã, xác định vị trí dòng`string dataDir = "YOUR DOCUMENT DIRECTORY";` và thay thế`"YOUR DOCUMENT DIRECTORY"` với đường dẫn thực tế đến thư mục tài liệu của bạn.
-
-#### H: Làm thế nào để tạo đối tượng Tài liệu?
-
- A: Ở Bước 4, bạn sẽ tạo một phiên bản mới`Document` đối tượng bằng cách sử dụng dòng mã sau:
-
-```csharp
-Document pdfDocument = new Document();
-```
-
-#### H: Làm thế nào để thêm trang vào tài liệu?
-
- A: Ở Bước 5, bạn sẽ thêm một trang mới vào tài liệu bằng cách sử dụng`Add` phương pháp của`Pages` bộ sưu tập:
-
-```csharp
-Page pdfPage = (Page)pdfDocument.Pages.Add();
-```
-
-#### H: Làm thế nào để tạo TextFragment và thiết lập vị trí của nó?
-
- A: Ở Bước 6, bạn sẽ tạo một`TextFragment` đối tượng và thiết lập vị trí của nó trên trang bằng cách sử dụng`Position` tài sản:
-
-```csharp
-TextFragment textFragment = new TextFragment("main text");
-textFragment.Position = new Position(100, 600);
-```
-
-#### H: Làm thế nào để tùy chỉnh thuộc tính văn bản, bao gồm cả đường viền văn bản?
-
-A: Ở Bước 7, bạn sẽ tùy chỉnh nhiều thuộc tính văn bản khác nhau như kích thước phông chữ, kiểu phông chữ, màu nền, màu nền trước và đường viền văn bản:
-
-```csharp
-textFragment.TextState.FontSize = 12;
-textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
-textFragment.TextState.DrawTextRectangleBorder = true;
-```
-
-#### H: Làm thế nào để thêm TextFragment vào tài liệu PDF?
-
- A: Ở Bước 9, bạn sẽ sử dụng`TextBuilder` lớp để thêm`TextFragment` phản đối trang:
-
-```csharp
-TextBuilder tb = new TextBuilder(pdfPage);
-tb.AppendText(textFragment);
-```
-
-#### H: Làm thế nào để lưu tài liệu PDF kết quả?
-
-A: Sau khi thêm văn bản có đường viền, hãy sử dụng`Save` phương pháp của`Document` đối tượng để lưu tài liệu PDF:
-
-```csharp
-pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
-```
-
-#### H: Nội dung chính rút ra từ hướng dẫn này là gì?
-
-A: Bằng cách làm theo hướng dẫn này, bạn đã học thành công cách cải thiện tài liệu PDF của mình bằng cách thêm đường viền văn bản bằng Aspose.PDF cho .NET. Điều này có thể đặc biệt hữu ích để nhấn mạnh nội dung văn bản cụ thể trong tệp PDF của bạn.
+### Nếu tôi cần giấy phép tạm thời thì sao?
+ Aspose cung cấp một[giấy phép tạm thời](https://purchase.aspose.com/temporary-license/) Tùy chọn dành cho các nhà phát triển cần đánh giá thư viện trong thời gian giới hạn.

@@ -10,7 +10,7 @@ url: /de/java/pdf-page-manipulation/remove-document-open-action-from-pdf-file-us
 
 ## Einführung zum Entfernen der Dokumentöffnungsaktion aus einer PDF-Datei mit Java
 
-PDF-Dateien enthalten häufig Dokumentöffnungsaktionen, die beim Öffnen der PDF-Datei bestimmte Aktionen ausführen können. In einigen Fällen müssen Sie diese Aktion jedoch möglicherweise aus Sicherheits- oder Anpassungsgründen entfernen. In dieser Schritt-für-Schritt-Anleitung erfahren Sie, wie Sie die Dokumentöffnungsaktion mit Java und Aspose.PDF für Java aus einer PDF-Datei entfernen.
+PDF-Dateien enthalten häufig Dokument-Öffnen-Aktionen, die beim Öffnen der PDF-Datei bestimmte Aktionen ausführen können. In einigen Fällen müssen Sie diese Aktion jedoch möglicherweise aus Sicherheits- oder Anpassungsgründen entfernen. In dieser Schritt-für-Schritt-Anleitung erfahren Sie, wie Sie die Dokument-Öffnen-Aktion mit Java und Aspose.PDF für Java aus einer PDF-Datei entfernen.
 
 ## Voraussetzungen
 

@@ -2,110 +2,44 @@
 title: Oznacz obraz w istniejącym pliku PDF
 linktitle: Oznacz obraz w istniejącym pliku PDF
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak oznaczyć obraz w istniejącym pliku PDF za pomocą Aspose.PDF dla platformy .NET. Przewodnik krok po kroku dotyczący dodawania tagów do obrazów.
+description: Dowiedz się, jak oznaczać obrazy w istniejących plikach PDF za pomocą Aspose.PDF dla .NET. Przewodnik krok po kroku, jak zwiększyć dostępność dzięki zgodności z PDF/UA.
 type: docs
 weight: 210
 url: /pl/net/programming-with-tagged-pdf/tag-image-in-existing-pdf/
 ---
-W tym szczegółowym samouczku przeprowadzimy Cię krok po kroku przez dostarczony kod źródłowy C#, aby oznaczyć obraz w istniejącym pliku PDF za pomocą Aspose.PDF dla .NET. Postępuj zgodnie z poniższymi instrukcjami, aby dowiedzieć się, jak dodawać tagi do obrazu w pliku PDF.
+## Wstęp
 
-## Krok 1: Konfigurowanie środowiska
+tym samouczku przeprowadzimy Cię przez proces tagowania obrazu w istniejącym pliku PDF przy użyciu Aspose.PDF dla .NET. Do końca tego przewodnika będziesz w stanie ustawić tekst alternatywny dla obrazów, dostosować atrybuty układu i upewnić się, że Twój plik PDF jest zgodny ze standardami dostępności.
 
-Zanim zaczniesz, upewnij się, że skonfigurowałeś środowisko programistyczne do używania Aspose.PDF dla .NET. Obejmuje to zainstalowanie biblioteki Aspose.PDF i skonfigurowanie projektu, aby się do niej odwoływał.
+## Wymagania wstępne
 
-## Krok 2: Otwórz istniejący dokument PDF
+Zanim przejdziemy do konkretów, omówmy, czego będziesz potrzebować, żeby zacząć:
 
-tym kroku otworzymy istniejący dokument PDF za pomocą Aspose.PDF.
+-  Aspose.PDF dla platformy .NET: Upewnij się, że pobrałeś i zainstalowałeś najnowszą wersję pliku Aspose.PDF dla platformy .NET.[Pobierz tutaj](https://releases.aspose.com/pdf/net/).
+- .NET Framework: Upewnij się, że masz skonfigurowane środowisko programistyczne .NET, np. Visual Studio.
+- Podstawowa znajomość struktury dokumentu PDF: Znajomość elementów struktury dokumentu PDF, takich jak akapity, rozpiętości, tabele i obrazy.
+-  Ważna licencja: Możesz kupić licencję[Tutaj](https://purchase.aspose.com/buy) lub użyj tymczasowego[Tutaj](https://purchase.aspose.com/temporary-license/).
+
+## Importuj pakiety
+
+Aby rozpocząć kodowanie, musisz zaimportować niezbędne przestrzenie nazw z Aspose.PDF dla .NET. Dadzą ci one dostęp do niezbędnych klas i metod do manipulowania dokumentem PDF.
 
 ```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// Ścieżki plików wejściowych i wyjściowych
-string inFile = dataDir + "TH.pdf";
-string outFile = dataDir + "TH_out.pdf";
-string logFile = dataDir + "TH_out.xml";
-
-// Otwórz dokument
-Document document = new Document(inFile);
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-Otworzyliśmy istniejący dokument PDF za pomocą Aspose.PDF.
+Teraz, gdy już omówiliśmy szczegóły, podzielmy proces tagowania obrazu na kilka kroków.
 
-## Krok 3: Uzyskaj oznaczoną zawartość i element struktury głównej
+## Krok 1: Załaduj istniejący dokument PDF
 
-Teraz otrzymamy oznaczoną zawartość dokumentu PDF i odpowiadający jej element struktury głównej.
-
-```csharp
-// Pobierz oznaczoną zawartość i element struktury głównej
-ITaggedContent taggedContent = document.TaggedContent;
-StructureElement rootElement = taggedContent.RootElement;
-```
-
-Otrzymaliśmy oznaczoną zawartość dokumentu PDF i odpowiadający jej element struktury głównej.
-
-## Krok 4: Ustawianie tytułu dla oznaczonego dokumentu PDF
-
-Teraz ustawmy tytuł dla oznaczonego dokumentu PDF.
+Pierwszym krokiem jest załadowanie pliku PDF, z którym chcesz pracować. Może to być dowolny plik PDF z obrazem, który chcesz oznaczyć.
 
 ```csharp
-// Zdefiniuj tytuł dla oznaczonego dokumentu PDF
-taggedContent.SetTitle("Document with images");
-```
-
-Ustawiliśmy tytuł dla oznaczonego dokumentu PDF.
-
-## Krok 5: Przypisz tekst alternatywny i pole ograniczające do obrazu
-
-Teraz każdemu elementowi obrazu przypiszemy tekst alternatywny i ramkę ograniczającą.
-
-```csharp
-foreach(FigureElement figureElement in rootElement.FindElements<FigureElement>(true))
-{
-     // Przypisz tekst alternatywny do obrazu
-     figureElement.AlternativeText = "Alternative text for image (technique 2)";
-     // Utwórz i przypisz pole ograniczające (bbox)
-     StructureAttribute bboxAttribute = new StructureAttribute(AttributeKey.BBox);
-     bboxAttribute.SetRectangleValue(new Rectangle(0.0, 0.0, 100.0, 100.0));
-     StructureAttributes figureLayoutAttributes = figureElement.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-     figureLayoutAttributes.SetAttribute(bboxAttribute);
-}
-```
-
-Każdemu elementowi obrazu w dokumencie PDF przypisaliśmy tekst alternatywny i ramkę ograniczającą.
-
-## Krok 6: Przenoszenie elementu Span do akapitu
-
-Teraz przenieśmy element Span do akapitu.
-
-```csharp
-// Przenieś element Span do akapitu (znajdź nieprawidłowy element Span i akapit w pierwszym TD)
-TableElement tableElement = rootElement.FindElements<TableElement>(true)[0];
-SpanElement spanElement = tableElement.FindElements<SpanElement>(true)[0];
-TableTDElement firstTdElement = tableElement.FindElements<TableTDElement>(true)[0];
-ParagraphElement paragraph = firstTdElement.FindElements<ParagraphElement>(true)[0];
-
-// Przesuń element Span w akapicie
-spanElement.ChangeParentElement(paragraph);
-```
-
-Przenieśliśmy element Span do określonego akapitu.
-
-## Krok 7: Zapisywanie zmodyfikowanego dokumentu PDF
-
-Teraz, gdy wprowadziliśmy niezbędne zmiany, zapiszemy zmodyfikowany dokument PDF.
-
-```csharp
-// Zapisz dokument PDF
-document. Save(outFile);
-```
-
-Zapisaliśmy zmodyfikowany dokument PDF w podanym katalogu.
-
-### Przykładowy kod źródłowy dla tagowania obrazu w istniejącym pliku PDF przy użyciu Aspose.PDF dla .NET 
-
-```csharp
-
 // Ścieżka do katalogu dokumentów.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string inFile = dataDir + "TH.pdf";
@@ -114,89 +48,112 @@ string logFile = dataDir + "TH_out.xml";
 
 // Otwórz dokument
 Document document = new Document(inFile);
+```
 
-// Pobiera oznaczoną zawartość i element struktury głównej
+-  Zastępować`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do pliku.
+-  Ten`Document` Klasa pozwala załadować istniejący plik PDF. Będziesz modyfikować ten plik PDF, aby oznaczyć obraz.
+
+## Krok 2: Dostęp do oznaczonej zawartości i elementu struktury głównej
+
+Po otwarciu pliku PDF następnym krokiem jest dostęp do oznaczonej zawartości i zidentyfikowanie elementu struktury głównej. Jest to kluczowe, ponieważ umożliwia nawigację po elementach w pliku PDF i wprowadzanie modyfikacji.
+
+```csharp
+// Pobierz oznaczoną zawartość i element struktury głównej
 ITaggedContent taggedContent = document.TaggedContent;
 StructureElement rootElement = taggedContent.RootElement;
+```
 
+- `TaggedContent` zapewnia dostęp do ustrukturyzowanych elementów w pliku PDF.
+-  Ten`RootElement` jest najwyższym elementem struktury, z którego można przejść do innych elementów, takich jak akapity, tabele i obrazy.
+
+## Krok 3: Ustaw tytuł dla oznaczonego dokumentu PDF
+
+Dodanie tytułu do oznaczonego dokumentu PDF gwarantuje, że dokument będzie prawidłowo oznaczony, co jest przydatne w kontekście dostępności i zgodności ze standardem PDF/UA.
+
+```csharp
 // Ustaw tytuł dla oznaczonego dokumentu PDF
 taggedContent.SetTitle("Document with images");
+```
+
+- Ustawienie tytułu dla oznaczonego pliku PDF zwiększa dostępność i poprawia przejrzystość dokumentu dla czytników ekranu i technologii wspomagających.
+
+## Krok 4: Znajdź i oznacz obraz
+
+ Teraz znajdźmy element obrazu (nazywany`FigureElement` w pliku Aspose.PDF), ustaw dla niego tekst alternatywny i skonfiguruj jego atrybuty układu.
+
+```csharp
+// Przejdź przez wszystkie elementy Figure (obrazy) i ustaw alternatywny tekst oraz atrybuty układu
 foreach (FigureElement figureElement in rootElement.FindElements<FigureElement>(true))
 {
-	// Ustaw alternatywny tekst dla rysunku
-	figureElement.AlternativeText = "Figure alternative text (technique 2)";
-	// Utwórz i ustaw atrybut BBox
-	StructureAttribute bboxAttribute = new StructureAttribute(AttributeKey.BBox);
-	bboxAttribute.SetRectangleValue(new Rectangle(0.0, 0.0, 100.0, 100.0));
-	StructureAttributes figureLayoutAttributes = figureElement.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
-	figureLayoutAttributes.SetAttribute(bboxAttribute);
+    // Ustaw alternatywny tekst dla rysunku
+    figureElement.AlternativeText = "Figure alternative text (technique 2)";
+    
+    // Utwórz i ustaw atrybut BBox (pole ograniczające)
+    StructureAttribute bboxAttribute = new StructureAttribute(AttributeKey.BBox);
+    bboxAttribute.SetRectangleValue(new Aspose.Pdf.Rectangle(0.0, 0.0, 100.0, 100.0));
+    
+    // Ustaw atrybuty układu dla rysunku
+    StructureAttributes figureLayoutAttributes = figureElement.Attributes.GetAttributes(AttributeOwnerStandard.Layout);
+    figureLayoutAttributes.SetAttribute(bboxAttribute);
 }
+```
 
-// Przenieś element Span do akapitu (znajdź niewłaściwy element Span i akapit w pierwszym TD)
+-  Ten kod przechodzi przez wszystkie`FigureElement` obiekty w strukturze głównej, które reprezentują obrazy.
+- Ustawia tekst alternatywny na potrzeby ułatwień dostępu (czytniki ekranu będą go używać do opisu obrazu).
+- Pole ograniczające (`BBox`określa współrzędne układu obrazu, zapewniając jego prawidłowe wyświetlanie w dokumencie.
+
+## Krok 5: Modyfikowanie elementów rozpiętości w tabeli
+
+ W niektórych przypadkach może być konieczna modyfikacja elementów span w tabeli. Tutaj pokażemy, jak znaleźć`SpanElement` i przenieś do akapitu.
+
+```csharp
+// Znajdź elementy tabeli, rozpiętości i akapitu
 TableElement tableElement = rootElement.FindElements<TableElement>(true)[0];
 SpanElement spanElement = tableElement.FindElements<SpanElement>(true)[0];
 TableTDElement firstTdElement = tableElement.FindElements<TableTDElement>(true)[0];
 ParagraphElement paragraph = firstTdElement.FindElements<ParagraphElement>(true)[0];
 
-// Przenieś element Span do akapitu
+// Przenieś element span do akapitu
 spanElement.ChangeParentElement(paragraph);
+```
 
-// Zapisz dokument
+-  Tutaj znajdujemy`TableElement`, `SpanElement` , I`ParagraphElement` w pliku PDF.
+-  Korzystanie z`ChangeParentElement` metodą przenosimy rozpiętość do akapitu, aby zapewnić właściwe tagowanie i strukturę.
+
+## Krok 6: Zapisz dokument i sprawdź zgodność z PDF/UA
+
+Po wprowadzeniu wszystkich zmian ostatnim krokiem jest zapisanie zaktualizowanego pliku PDF i sprawdzenie, czy jest on zgodny ze standardami PDF/UA.
+
+```csharp
+// Zapisz zaktualizowany dokument PDF
 document.Save(outFile);
 
-//Sprawdzanie zgodności PDF/UA dla naszego dokumentu
+// Sprawdź zgodność z PDF/UA
 document = new Document(outFile);
 bool isPdfUaCompliance = document.Validate(logFile, PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
 ```
+
+-  Ten`Validate` Metoda sprawdza zgodność dokumentu PDF ze standardami PDF/UA i rejestruje wyniki.
+- Zapewnienie zgodności pomaga poprawić dostępność i spełnić wymogi regulacyjne dotyczące publikowania dokumentów.
 
 ## Wniosek
 
-W tym samouczku nauczyliśmy się, jak oznaczyć obraz w istniejącym pliku PDF za pomocą Aspose.PDF dla .NET. Teraz możesz użyć Aspose.PDF, aby dodać tagi i edytować obrazy w dokumentach PDF.
+tym samouczku pokazaliśmy, jak oznaczać obrazy w istniejącym pliku PDF za pomocą Aspose.PDF dla .NET. Ustawiając tekst alternatywny, dostosowując atrybuty układu i weryfikując zgodność dokumentu z PDF/UA, możesz zapewnić dostępność plików PDF i ich zgodność z nowoczesnymi standardami. Aspose.PDF ułatwia pracę ze strukturalnymi elementami, dając Ci kontrolę nad układem i dostępnością dokumentu.
 
-### Najczęściej zadawane pytania
+## Najczęściej zadawane pytania
 
-#### P: Jaki jest główny cel tego samouczka dotyczącego tagowania obrazów w istniejącym pliku PDF przy użyciu Aspose.PDF dla platformy .NET?
+### Do czego służy Aspose.PDF for .NET?
+Aspose.PDF dla platformy .NET to zaawansowana biblioteka służąca do tworzenia, edytowania i manipulowania dokumentami PDF programowo w środowisku .NET.
 
-A: Głównym celem tego samouczka jest przeprowadzenie Cię przez proces oznaczania obrazu w istniejącym dokumencie PDF przy użyciu Aspose.PDF dla .NET. Samouczek zawiera instrukcje krok po kroku i przykłady kodu źródłowego C#, które pomogą Ci zrozumieć, jak przypisywać tekst alternatywny i pola ograniczające do obrazów, przenosić elementy w dokumencie i dodawać tagi do obrazów.
+### Jak zapewnić zgodność ze standardem PDF/UA?
+ Możesz użyć Aspose.PDF`Validate` metoda sprawdzania zgodności dokumentu ze standardem PDF/UA po wprowadzeniu modyfikacji.
 
-#### P: Jakie wymagania należy spełnić, aby móc skorzystać z tego samouczka dotyczącego tagowania obrazów w pliku PDF za pomocą Aspose.PDF dla platformy .NET?
+### Czym jest tekst alternatywny w plikach PDF?
+Tekst alternatywny to opis dodawany do obrazów w plikach PDF w celu ułatwienia dostępu, zwłaszcza dla użytkowników korzystających z czytników ekranu.
 
-A: Zanim zaczniesz, upewnij się, że skonfigurowałeś środowisko programistyczne do używania Aspose.PDF dla .NET. Wiąże się to z zainstalowaniem biblioteki Aspose.PDF i skonfigurowaniem projektu tak, aby się do niej odwoływał.
+### Czy mogę manipulować tabelami i rozpiętościami w pliku PDF za pomocą Aspose.PDF?
+Tak, Aspose.PDF pozwala na manipulowanie tabelami, rozpiętościami i innymi elementami strukturalnymi w dokumencie PDF.
 
-#### P: W jaki sposób mogę otworzyć istniejący dokument PDF i uzyskać dostęp do jego oznaczonej zawartości przy użyciu Aspose.PDF dla platformy .NET?
-
-A: W tym samouczku zamieszczono przykłady kodu źródłowego w języku C#, które pokazują, jak otworzyć istniejący dokument PDF za pomocą Aspose.PDF dla platformy .NET i uzyskać dostęp do jego oznaczonej zawartości w celu dalszej obróbki.
-
-#### P: Jaki jest cel przypisywania tekstu alternatywnego i ramek ograniczających do obrazów w dokumencie PDF?
-
-A: Przypisywanie alternatywnego tekstu i ramek ograniczających do obrazów zwiększa dostępność, zapewniając opisowy tekst dla obrazów i definiując ich układ i pozycję w dokumencie. Informacje te są kluczowe dla czytników ekranu i innych technologii wspomagających.
-
-#### P: Jak mogę ustawić tytuł dla oznaczonego dokumentu PDF za pomocą Aspose.PDF dla platformy .NET?
-
-A: W tym samouczku znajdują się przykłady kodu źródłowego w języku C#, które ilustrują, jak ustawić tytuł dla oznaczonego dokumentu PDF za pomocą Aspose.PDF dla platformy .NET.
-
-#### P: Na czym polega proces przenoszenia elementów w dokumencie PDF?
-
-A: Przenoszenie elementów w dokumencie PDF wiąże się ze zmianą elementu nadrzędnego konkretnego elementu. W tym samouczku dowiesz się, jak przenieść element Span do określonego elementu Paragraph w tabeli.
-
-#### P: Jak zapisać zmodyfikowany dokument PDF po dodaniu tagów i wprowadzeniu zmian w obrazach?
-
- A: Po dodaniu tagów, przypisaniu tekstu alternatywnego, ustawieniu pól ograniczających i wprowadzeniu zmian w dokumencie PDF możesz użyć podanych przykładów kodu źródłowego w języku C#, aby zapisać zmodyfikowany dokument PDF za pomocą`Save()` metoda.
-
-#### P: Jaki jest cel przykładowego kodu źródłowego udostępnionego w samouczku?
-
-A: Przykładowy kod źródłowy służy jako praktyczne odniesienie do implementacji tagowania i manipulacji obrazami przy użyciu Aspose.PDF dla .NET. Możesz użyć tego kodu jako punktu wyjścia i zmodyfikować go, aby odpowiadał Twoim konkretnym wymaganiom.
-
-#### P: Czy mogę zastosować te techniki nie tylko do obrazów, ale także do innych typów elementów w dokumencie PDF?
-
-A: Tak, techniki zaprezentowane w tym samouczku można dostosować do pracy z różnymi typami elementów w dokumencie PDF. Możesz zastosować podobne zasady do tagowania i manipulowania innymi elementami, takimi jak tekst, tabele i inne.
-
-#### P: W jaki sposób mogę sprawdzić zgodność zmodyfikowanego dokumentu PDF ze standardem PDF/UA?
-
- A: W tym samouczku przedstawiono przykłady kodu źródłowego w języku C#, które pokazują, jak sprawdzić zgodność zmodyfikowanego dokumentu PDF ze standardem PDF/UA, korzystając z`Validate()` metody i generowania raportu XML.
-
-#### P: Jakie inne funkcje oferuje Aspose.PDF dla .NET do pracy z dokumentami PDF?
-
-A: Aspose.PDF dla .NET oferuje szeroki zakres funkcji do pracy z dokumentami PDF, w tym manipulację tekstem, wstawianie obrazów, tworzenie tabel, zarządzanie polami formularzy, podpisy cyfrowe, adnotacje i wiele innych. Zapoznaj się z oficjalną dokumentacją i zasobami, aby uzyskać dalsze informacje.
+### Gdzie mogę pobrać Aspose.PDF dla .NET?
+ Możesz pobrać najnowszą wersję Aspose.PDF dla .NET[Tutaj](https://releases.aspose.com/pdf/net/).

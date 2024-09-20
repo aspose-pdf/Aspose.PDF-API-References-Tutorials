@@ -17,7 +17,7 @@ url: /zh-hant/net/programming-with-forms/set-field-limit/
 
 1.  Aspose.PDF for .NET：請確定您已安裝 Aspose.PDF 庫。您可以從[網站](https://releases.aspose.com/pdf/net/).
 2. Visual Studio：一個可以編寫和測試程式碼的開發環境。
-3. C#基礎知識：熟悉C#程式設計將有助於您更好地理解範例。
+3. C# 基礎知識：熟悉 C# 程式設計將有助於您更好地理解範例。
 
 ## 導入包
 
@@ -106,7 +106,7 @@ Console.WriteLine("\nField added successfully with limit.\nFile saved at " + dat
 
 ## 結論
 
-使用 Aspose.PDF for .NET 在 PDF 表單中設定欄位限制是一個簡單的過程，可以大大增強使用者體驗。透過遵循本教程中概述的步驟，您可以確保用戶提供必要的信息，而不會讓他們不知所措。無論您是為調查、應用程式或任何其他目的建立表單，控制輸入長度都可以幫助保持資料完整性並提高可用性。
+使用 Aspose.PDF for .NET 在 PDF 表單中設定欄位限制是一個簡單的過程，可以大大增強使用者體驗。透過遵循本教程中概述的步驟，您可以確保用戶提供必要的信息，而不會讓他們不知所措。無論您是為調查、應用程式或任何其他目的建立表單，控制輸入長度都可以幫助維護資料完整性並提高可用性。
 
 ## 常見問題解答
 

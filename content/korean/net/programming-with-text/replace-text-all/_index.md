@@ -2,143 +2,163 @@
 title: PDF 파일에서 모든 텍스트 바꾸기
 linktitle: PDF 파일에서 모든 텍스트 바꾸기
 second_title: .NET API 참조를 위한 Aspose.PDF
-description: Aspose.PDF for .NET을 사용하여 PDF 파일의 모든 텍스트를 바꾸는 방법을 알아보세요.
+description: Aspose.PDF for .NET을 사용하여 PDF 파일의 텍스트를 손쉽게 바꾸는 방법을 알아보세요. 코드 조각이 포함된 전체 가이드.
 type: docs
 weight: 350
 url: /ko/net/programming-with-text/replace-text-all/
 ---
-이 튜토리얼에서는 .NET용 Aspose.PDF 라이브러리를 사용하여 PDF 파일의 모든 텍스트를 바꾸는 방법을 설명합니다. 필요한 C# 소스 코드와 함께 단계별 가이드를 제공합니다.
+## 소개
+
+PDF 파일을 관리할 때, 텍스트를 업데이트, 제거 또는 교체하든 콘텐츠를 조작하는 기능은 엄청나게 귀중할 수 있습니다. PDF 문서에서 단어나 구문을 변경해야 하는 상황에 처한 적이 있다면, 여러분은 올바른 곳에 있습니다! 오늘은 .NET용 강력한 Aspose.PDF 라이브러리를 사용하여 전체 PDF 파일에서 텍스트를 교체하는 방법을 알아보겠습니다. 따라가다 보면 이 튜토리얼을 끝낼 때쯤이면 단계를 이해할 수 있을 뿐만 아니라 프로젝트에 이 지식을 적용하는 데 자신감을 가질 수 있을 것입니다.
 
 ## 필수 조건
 
-시작하기 전에 다음 사항이 있는지 확인하세요.
+이 여정을 시작하기 전에, 여러분이 완전히 준비되었는지 확인해 보겠습니다. 준비해야 할 품목은 다음과 같습니다.
 
-- .NET 라이브러리용 Aspose.PDF가 설치되었습니다.
-- C# 프로그래밍에 대한 기본적인 이해.
+1.  .NET용 Aspose.PDF: 무엇보다도 Aspose.PDF 라이브러리를 설치해야 합니다. 쉽게 다운로드할 수 있습니다.[대지](https://releases.aspose.com/pdf/net/).
+2. .NET 환경: Visual Studio와 같은 작동하는 .NET 환경이 있는지 확인하세요. 프로젝트가 Aspose.PDF와 호환되는 .NET Framework 또는 .NET Core를 대상으로 하는지 확인하세요.
+3. 기본 C# 지식: C# 프로그래밍에 대한 기본적인 이해가 있으면 이 가이드를 훨씬 더 원활하게 따라갈 수 있습니다.
 
-## 1단계: 문서 디렉토리 설정
+위의 장비를 준비하면 이제 즐거운 단계인 코딩을 시작할 수 있습니다!
 
- 입력 PDF 파일이 있는 디렉토리 경로를 설정합니다. 바꾸기`"YOUR DOCUMENT DIRECTORY"` 에서`dataDir` PDF 파일 경로가 있는 변수입니다.
+## 패키지 가져오기
+
+일반적인 C# 프로젝트에서 첫 번째 단계는 일반적으로 필요한 네임스페이스나 라이브러리를 임포트하여 필요한 기능에 액세스하는 것을 포함합니다. 우리의 경우 Aspose.PDF 클래스를 임포트해야 합니다. 방법은 다음과 같습니다.
+
+### C# 편집기를 엽니다
+
+좋아하는 C# 편집기(Visual Studio 등)를 열고 새 프로젝트를 만듭니다. 이 프로젝트가 Aspose.PDF 라이브러리와 일치하는 올바른 버전의 .NET을 대상으로 하는지 확인하세요.
+
+### Aspose.PDF 참조 추가
+
+C# 파일 맨 위에 Aspose.PDF 네임스페이스를 가져옵니다. 다음과 같이 표시됩니다.
+
+```csharp
+using System;
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+```
+
+ 이것은 귀하의 프로젝트에 귀하가 다음을 사용하려고 한다는 것을 알려줍니다.`Aspose.Pdf` PDF 파일을 작업할 수 있는 라이브러리입니다.
+
+이제 설정이 끝났으니 PDF 파일에서 텍스트를 바꾸는 과정을 단계별로 살펴보겠습니다. 걱정하지 마세요. 모든 것을 자세히 설명해 드리니 따라하기 정말 쉽습니다.
+
+## 1단계: 문서 경로 정의
+
+가장 먼저 해야 할 일은 PDF 문서의 디렉토리를 지정하는 것입니다. 즉, 편집하려는 PDF 파일을 어디에서 찾을지 코드에 알려주는 것입니다. 
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 ```
 
-## 2단계: PDF 문서 로드
+ 바꾸다`"YOUR DOCUMENT DIRECTORY"` 기존 PDF 파일이 저장된 실제 경로와 함께. 프로그램에 보물을 찾을 수 있는 지도를 주는 것과 같습니다!
 
- PDF 문서를 로드하려면 다음을 사용합니다.`Document` Aspose.PDF 라이브러리의 클래스입니다.
+## 2단계: 문서 열기
+
+ 다음으로, 다음을 사용하여 PDF 문서를 프로그램에 로드해야 합니다.`Document` 수업.
 
 ```csharp
 Document pdfDocument = new Document(dataDir + "ReplaceTextAll.pdf");
 ```
 
-## 3단계: 텍스트 검색 및 바꾸기
+ 여기서는 PDF 파일을 엽니다.`ReplaceTextAll.pdf`이 단계는 책의 내용을 읽기 위해 책을 여는 것으로 생각하세요.
 
- 생성하다`TextFragmentAbsorber` 입력된 검색어의 모든 인스턴스를 찾는 객체. PDF 문서의 모든 페이지에 대한 흡수체를 수락하여 텍스트 조각을 추출합니다.
+## 3단계: 텍스트 흡수기 만들기
+
+ 이제 다음을 생성합니다.`TextFragmentAbsorber`이는 바꾸고 싶은 텍스트의 인스턴스를 찾는 데 도움이 되는 특수 객체입니다. 
 
 ```csharp
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
+```
+
+ 이 줄에서 다음을 바꾸세요.`"text"` 실제로 검색하는 텍스트와 함께. 이것은 하이라이터를 사용하여 페이지의 단어를 표시하는 것과 비슷합니다.
+
+## 4단계: 모든 페이지에 대한 흡수체 수락
+
+흡수체를 만들었으면 이제 PDF 문서 내의 모든 페이지에 적용할 차례입니다. 즉, 전체 문서에서 지정된 텍스트를 검색해야 합니다.
+
+```csharp
 pdfDocument.Pages.Accept(textFragmentAbsorber);
 ```
 
-## 4단계: 텍스트 바꾸기
+책을 넘기며 각 페이지에서 강조 표시된 단어를 확인하는 것과 같습니다.
 
-추출된 텍스트 조각을 반복하고 필요에 따라 텍스트를 바꿉니다. 텍스트와 글꼴, 글꼴 크기, 전경색, 배경색과 같은 다른 속성을 업데이트합니다.
+## 5단계: 추출된 텍스트 조각 가져오기
+
+이제 흡수체가 찾은 텍스트 조각을 가져올 시간입니다. 다음을 사용합니다.
 
 ```csharp
-foreach (TextFragment textFragment in textFragmentAbsorber.TextFragments)
+TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+```
+
+여기서는 기본적으로 다음 단계를 위해 확인한 모든 강조 표시된 단어를 바구니에 모으는 것입니다.
+
+## 6단계: 텍스트 조각을 반복합니다.
+
+마법이 일어나는 곳은 바로 여기입니다. 모든 텍스트 조각을 수집하면 교체가 필요한 각 인스턴스를 반복할 수 있습니다. 
+
+```csharp
+foreach (TextFragment textFragment in textFragmentCollection)
 {
-    textFragment.Text = "TEXT";
-    textFragment.TextState.Font = FontRepository.FindFont("Verdana");
-    textFragment.TextState.FontSize = 22;
-    textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Blue);
-    textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
+    // 텍스트 및 기타 속성을 업데이트하는 코드
 }
 ```
 
-## 5단계: 수정된 PDF 저장
+이 루프 내부에서 어떤 부분을 변경해야 할지 지정합니다.
 
-수정된 PDF 문서를 지정된 출력 파일에 저장합니다.
+## 7단계: 텍스트 속성 업데이트
+
+여기서 오래된 텍스트를 새 텍스트로 바꿉니다! 바꾸고 모양도 사용자 정의합니다.
+
+```csharp
+textFragment.Text = "TEXT"; // 새로운 텍스트
+textFragment.TextState.Font = FontRepository.FindFont("Verdana"); // 새로운 글꼴
+textFragment.TextState.FontSize = 22; //새로운 글꼴 크기
+textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Blue); // 텍스트 색상
+textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green); // 배경색
+```
+
+ 바꾸다`"TEXT"` 삽입하고 싶은 새로운 텍스트로. 이렇게 하면 문구를 변경할 수 있을 뿐만 아니라 어떻게 보이는지 스타일도 지정할 수 있습니다!
+
+## 8단계: 문서 저장
+
+필요한 모든 변경을 한 후에는 수정 사항을 저장하는 것이 중요합니다. 새 파일 이름을 지정하거나 원본을 덮어쓰면 됩니다. 
 
 ```csharp
 dataDir = dataDir + "ReplaceTextAll_out.pdf";
 pdfDocument.Save(dataDir);
+```
+
+ 이 줄은 업데이트된 PDF를 다음과 같이 저장합니다.`ReplaceTextAll_out.pdf`. 마치 수정한 책을 봉인하는 것과 같습니다!
+
+## 9단계: 변경 사항 확인
+
+마지막으로, 작업이 완료되었음을 알려주는 메시지를 인쇄할 수 있습니다. 
+
+```csharp
 Console.WriteLine("\nText replaced successfully.\nFile saved at " + dataDir);
 ```
 
-### .NET용 Aspose.PDF를 사용하여 모든 텍스트 바꾸기 샘플 소스 코드 
-```csharp
-// 문서 디렉토리의 경로입니다.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// 문서 열기
-Document pdfDocument = new Document(dataDir + "ReplaceTextAll.pdf");
-// 입력 검색어의 모든 인스턴스를 찾기 위해 TextAbsorber 객체를 생성합니다.
-TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
-// 모든 페이지에 대한 흡수체를 수용합니다.
-pdfDocument.Pages.Accept(textFragmentAbsorber);
-// 추출된 텍스트 조각을 가져옵니다
-TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-// 조각을 반복합니다
-foreach (TextFragment textFragment in textFragmentCollection)
-{
-	// 텍스트 및 기타 속성 업데이트
-	textFragment.Text = "TEXT";
-	textFragment.TextState.Font = FontRepository.FindFont("Verdana");
-	textFragment.TextState.FontSize = 22;
-	textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Blue);
-	textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.FromRgb(System.Drawing.Color.Green);
-}
-dataDir = dataDir + "ReplaceTextAll_out.pdf";
-// 생성된 PDF 문서를 저장합니다.
-pdfDocument.Save(dataDir);
-Console.WriteLine("\nText replaced  successfully.\nFile saved at " + dataDir);
-```
+이 피드백은 어려운 프로젝트를 끝마쳤을 때 "해냈어!"라는 말을 듣는 것과 같습니다.
 
 ## 결론
 
-이 튜토리얼에서는 .NET용 Aspose.PDF 라이브러리를 사용하여 PDF 문서의 모든 텍스트를 바꾸는 방법을 알아보았습니다. 단계별 가이드를 따르고 제공된 C# 코드를 실행하면 PDF 문서를 로드하고 원하는 텍스트를 검색하여 바꾸고 수정된 PDF를 저장할 수 있습니다.
+이제 다 배웠습니다! 방금 Aspose.PDF for .NET을 사용하여 전체 PDF 파일에서 텍스트를 바꾸는 방법을 배웠습니다! PDF 조작을 처음 접한다면 약간 어려울 수 있지만, 이 간단한 단계를 거치면 이미 PDF 전문가가 되는 길에 들어선 것입니다. 사용자 정의의 힘은 손끝에 있으며, 연습하면 노련한 전문가처럼 PDF 콘텐츠를 변경할 수 있다는 것을 기억하세요.
 
-### 자주 묻는 질문
+## 자주 묻는 질문
 
-#### 질문: "PDF 파일의 모든 텍스트 바꾸기" 튜토리얼의 목적은 무엇인가요?
+### 여러 개의 다른 텍스트를 한 번에 바꿀 수 있나요?
+네, TextFragmentCollection을 반복하고 다양한 조건을 적용하여 다양한 텍스트를 바꿀 수 있습니다.
 
-A: "PDF 파일에서 모든 텍스트 바꾸기" 튜토리얼은 .NET용 Aspose.PDF 라이브러리를 사용하여 PDF 문서에서 특정 텍스트의 모든 인스턴스를 바꾸는 과정을 안내합니다. 샘플 C# 코드와 함께 단계별 가이드를 제공합니다.
+### Aspose.PDF와 호환되는 .NET 버전은 무엇입니까?
+ Aspose.PDF는 .NET Framework 및 .NET Core를 포함한 다양한 버전을 지원합니다. 항상 다음을 확인하세요.[선적 서류 비치](https://reference.aspose.com/pdf/net/) 호환성을 위해.
 
-#### 질문: PDF 문서에서 모든 텍스트를 바꾸고 싶은 이유는 무엇인가요?
+### Aspose.PDF의 무료 평가판을 받을 수 있는 방법이 있나요?
+ 물론입니다! Aspose.PDF의 무료 평가판을 다음에서 받으실 수 있습니다.[릴리스 페이지](https://releases.aspose.com/).
 
-A: PDF 문서에서 특정 텍스트의 모든 인스턴스를 바꾸는 것은 문서 전체의 내용을 업데이트하거나 표준화해야 할 때 필요할 수 있습니다. 이 프로세스는 특히 문서 내용과 서식의 일관성을 보장하는 데 유용할 수 있습니다.
+### 문제가 발생하면 어떻게 지원을 받을 수 있나요?
+ Aspose 커뮤니티 포럼은 도움을 받기에 좋은 곳입니다. 다음을 방문할 수 있습니다.[지원하다](https://forum.aspose.com/c/pdf/10) 도움이 필요하면.
 
-#### 질문: 문서 디렉토리를 어떻게 설정하나요?
-
-A: 문서 디렉토리를 설정하려면:
-
-1.  바꾸다`"YOUR DOCUMENT DIRECTORY"` 에서`dataDir` 입력 PDF 파일이 있는 디렉토리의 경로를 포함하는 변수입니다.
-
-#### 질문: PDF 문서에서 모든 텍스트를 바꾸려면 어떻게 해야 하나요?
-
-A: 튜토리얼에서는 다음 단계를 안내합니다.
-
-1.  PDF 문서를 로드하려면 다음을 사용합니다.`Document` 수업.
-2.  생성하다`TextFragmentAbsorber` 입력된 검색어의 모든 인스턴스를 찾는 객체. PDF 문서의 모든 페이지에 대한 흡수체를 수락하여 텍스트 조각을 추출합니다.
-3. 추출된 텍스트 조각을 반복하고 텍스트를 바꿉니다. 필요에 따라 글꼴, 글꼴 크기, 전경색 및 배경색과 같은 다른 속성을 업데이트합니다.
-4. 수정된 PDF 문서를 저장합니다.
-
-#### 질문: 대소문자 구분 검색을 기준으로 텍스트를 바꿀 수 있나요?
-
- A: 네, 수정할 수 있습니다.`TextFragmentAbsorber` 대소문자 구분 검색을 수행하려면 텍스트를 검색하세요. 검색하려는 정확한 텍스트를 제공하기만 하면 흡수기가 그에 맞게 일치시켜줍니다.
-
-#### 질문: 텍스트를 바꿀 때 글꼴을 바꾸는 것은 선택 사항인가요?
-
-A: 네, 글꼴 교체는 선택 사항입니다. 새 글꼴을 지정하지 않으면 텍스트는 원래 텍스트 조각의 글꼴을 유지합니다.
-
-#### 질문: PDF 문서의 특정 섹션에 있는 텍스트를 어떻게 바꿀 수 있나요?
-
-A: 텍스트 조각을 통한 루프를 조정하여 텍스트 조각의 위치에 따라 조건문을 포함할 수 있습니다. 이렇게 하면 PDF의 특정 섹션에서만 텍스트를 대체하도록 선택할 수 있습니다.
-
-#### 질문: 제공된 코드를 실행하면 예상되는 결과는 무엇입니까?
-
-A: 튜토리얼을 따라 제공된 C# 코드를 실행하면 PDF 문서에서 지정된 텍스트의 모든 인스턴스를 대체하게 됩니다. 대체된 텍스트는 글꼴, 글꼴 크기, 전경색, 배경색과 같이 지정한 속성을 갖게 됩니다.
-
-#### 질문: 이 방법을 사용하면 이미지나 주석과 같은 텍스트가 아닌 요소를 바꿀 수 있나요?
-
-A: 아니요, 이 튜토리얼은 PDF 문서에서 텍스트를 대체하는 데 특히 초점을 맞춥니다. 텍스트가 아닌 요소를 대체해야 하는 경우 다른 절차를 따르거나 다른 Aspose.PDF 기능을 사용해야 합니다.
+### 체험판 사용 후 Aspose.PDF를 사용하는 데 비용이 발생합니까?
+ 네, Aspose.PDF는 유료 제품입니다. 구매 옵션을 볼 수 있습니다.[여기](https://purchase.aspose.com/buy).

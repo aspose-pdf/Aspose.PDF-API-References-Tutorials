@@ -1,6 +1,6 @@
 ---
-title: Kivonja a hivatkozásokat PDF-fájlból
-linktitle: Kivonja a hivatkozásokat PDF-fájlból
+title: Kivonja a hivatkozásokat PDF fájlból
+linktitle: Kivonja a hivatkozásokat PDF fájlból
 second_title: Aspose.PDF for .NET API Reference
 description: Ebben a lépésenkénti oktatóanyagban megtudhatja, hogyan lehet egyszerűen kivonni hivatkozásokat PDF-fájlokból az Aspose.PDF for .NET segítségével.
 type: docs

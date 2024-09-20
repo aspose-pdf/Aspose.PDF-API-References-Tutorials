@@ -14,7 +14,7 @@ Előfordult már, hogy el kellett távolítania az összes bosszantó megjegyzé
 
 Mielőtt belevágnánk a lépésről lépésre szóló útmutatóba, győződjünk meg arról, hogy mindennel rendelkezünk, ami az induláshoz szükséges:
 
-1.  Aspose.PDF for .NET: Szüksége lesz az Aspose.PDF for .NET könyvtárra. Tudod[töltse le itt](https://releases.aspose.com/pdf/net/) vagy szerezze be a NuGet segítségével a Visual Studio-ban.
+1.  Aspose.PDF for .NET: Szüksége lesz az Aspose.PDF for .NET könyvtárra. Megteheti[töltse le itt](https://releases.aspose.com/pdf/net/) vagy szerezze be a NuGet segítségével a Visual Studio-ban.
 2. Fejlesztői környezet: Győződjön meg arról, hogy be van állítva egy .NET fejlesztői környezet. A Visual Studio népszerű választás, de bármilyen kompatibilis IDE működik.
 3. Alapvető C# ismerete: Ez az oktatóanyag feltételezi, hogy rendelkezik a C# alapvető ismereteivel. Ha még nem ismeri a C#-t, ne aggódjon – mindent érthetően elmagyarázok.
 4. Minta PDF-fájl: Legyen egy PDF-minta megjegyzésekkel, amelyeket el szeretne távolítani. Bármilyen PDF-fájlt használhat, de győződjön meg róla, hogy az oktatóanyaghoz tartalmaz megjegyzéseket.

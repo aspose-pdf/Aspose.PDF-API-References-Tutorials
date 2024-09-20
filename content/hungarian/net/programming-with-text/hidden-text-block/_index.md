@@ -2,193 +2,190 @@
 title: Rejtett szövegblokk PDF-fájlban
 linktitle: Rejtett szövegblokk PDF-fájlban
 second_title: Aspose.PDF for .NET API Reference
-description: Ismerje meg, hogyan hozhat létre rejtett szövegblokkokat PDF-fájlban az Aspose.PDF for .NET használatával.
+description: Hozzon létre interaktív PDF-eket rejtett szövegblokkokkal az Aspose.PDF for .NET segítségével. Ez az oktatóanyag lépésről lépésre nyújt útmutatót a dokumentumok javításához.
 type: docs
 weight: 230
 url: /hu/net/programming-with-text/hidden-text-block/
 ---
-Ebben az oktatóanyagban elmagyarázzuk, hogyan hozhat létre rejtett szövegblokkot PDF-fájlban az Aspose.PDF könyvtár segítségével a .NET-hez. A rejtett szövegblokk egy lebegő szöveg, amely akkor válik láthatóvá, amikor az egérmutatót egy adott terület fölé viszi. Lépésről lépésre végigvesszük a rejtett szövegblokk létrehozásának folyamatát a mellékelt C# forráskód használatával.
+## Bevezetés
 
-## Követelmények
+A mai digitális környezetben a szerződésektől az oktatási anyagokig a PDF-ek továbbra is a legnépszerűbb formátumok. Sokoldalúságuk és megbízhatóságuk páratlan. De mi lenne, ha egy extra interaktivitási réteget adhatna PDF-fájljaihoz? A rejtett szövegblokkok világába merülünk az Aspose.PDF for .NET segítségével, amely egy hatékony eszköz, amely minden eddiginél egyszerűbbé teszi vonzó és felhasználóbarát dokumentumok létrehozását. Akár tapasztalt fejlesztő, akár csak most kezdi, ez az oktatóanyag az Ön számára készült, lépésről lépésre szóló utasításokkal és tippekkel, amelyek segítségével kiaknázhatja PDF-fájljaiban rejlő lehetőségeket!
 
-Mielőtt elkezdené, győződjön meg arról, hogy rendelkezik a következőkkel:
+## Előfeltételek
 
-- Az Aspose.PDF for .NET könyvtár telepítve van.
-- A C# programozás alapvető ismerete.
+Mielőtt feltűrjük az ingujjunkat, és nekilátunk, győződjünk meg arról, hogy mindenre szüksége van. Íme, mire lesz szüksége:
 
-## 1. lépés: Állítsa be a dokumentumkönyvtárat
+1. Aspose.PDF for .NET: Ez a könyvtár elengedhetetlen a PDF-fájlokkal való munkavégzéshez .NET-alkalmazásokban. Megnézheti, letöltheti, vagy akár ingyenes próbaverziót is igénybe vehet a webhelyen[Aspose PDF dokumentáció](https://reference.aspose.com/pdf/net/).
+2. .NET-keretrendszer: Győződjön meg arról, hogy a .NET-keretrendszer telepítve van, mivel ez szükséges az Aspose.PDF könyvtár futtatásához.
+3. Fejlesztői környezet: Egy kódszerkesztő vagy Integrált Fejlesztői Környezet (IDE), mint például a Visual Studio, gyerekjáték lesz a kódolás. 
+4. Alapvető C#-tudás: Mivel C#-ban fogunk programozni, a nyelv alapszintű ismerete segít sokkal könnyebben megérteni a fogalmakat.
+5. A tanulás iránti szenvedély: Végül, de nem utolsósorban, hozza el a lelkesedését! Ma valami csodálatosat fogunk tanulni.
 
- Először is be kell állítania annak a könyvtárnak az elérési útját, ahová a létrehozott PDF-fájlt menteni szeretné. Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változót a kívánt könyvtár elérési útjával.
+Ha megvannak ezek az előfeltételek, készen állsz interaktív rejtett szövegblokkok létrehozására PDF-fájljaiban!
+
+## Csomagok importálása
+
+Az Aspose.PDF használatának megkezdéséhez a projektben importálnia kell a szükséges csomagokat. Íme, hogyan:
+
+### Hozzon létre egy C# projektet
+
+Először is nyissa meg a Visual Studio-t vagy bármely C# IDE-t, és hozzon létre egy új projektet. Válassza ki a konzolalkalmazás típusát az egyszerűség kedvéért.
+
+### Adja hozzá az Aspose.PDF fájlt projektjéhez
+
+Hozzá kell adnia az Aspose.PDF könyvtárat a projekthez. Ezt a NuGet Package Manager segítségével teheti meg. Íme egy gyors egysoros:
+
+```bash
+Install-Package Aspose.PDF
+```
+
+Ez a parancs begyűjti a szükséges fájlokat a PDF dokumentumok egyszerű kezeléséhez.
+
+### Importálja a szükséges névtereket
+
+A csomag telepítése után a következő lépés a C# fájl tetején található névterek importálása. Ezzel elérhetővé teszi az Aspose összes nagyszerű funkcióját:
+
+```csharp
+using Aspose.Pdf.Annotations;
+using Aspose.Pdf.Forms;
+using Aspose.Pdf.Text;
+```
+
+Most, hogy a környezet be van állítva, bontsuk le lépésről lépésre a rejtett szövegblokk létrehozásának folyamatát egy PDF-fájlban.
+
+## 1. lépés: Határozza meg a dokumentumkönyvtárat
+
+Határozza meg, hol legyenek a fájlok. Ez segít a dokumentumok gördülékeny kezelésében. A beállításhoz használja a következő kódot:
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
 ```
+
+ Ügyeljen arra, hogy cserélje ki`"YOUR DOCUMENT DIRECTORY"` a tényleges elérési úttal a gépén, ahol a PDF-fájlt létre szeretné hozni.
 
 ## 2. lépés: Hozzon létre egy mintadokumentumot
 
-Ebben a lépésben létrehozunk egy minta PDF dokumentumot, és hozzáadunk egy szövegrészletet. A szövegrészlet a rejtett szövegblokk megjelenítésének indítójaként fog szolgálni.
+Most hozzunk létre egy alap PDF dokumentumot. Ez a kezdeti lépés magában foglalja a PDF-dokumentum inicializálását és egy szövegrészlet hozzáadását, amely a rejtett szövegünk fókuszpontja lesz.
 
 ```csharp
-string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
 doc.Save(outputFile);
 ```
 
-## 3. lépés: Nyissa meg a dokumentumot
+Itt egyszerűen hozzáadunk egy karakterláncot a dokumentumhoz. Ez elindítja a rejtett szöveges műveletet, amikor az egeret fölé viszi.
 
- Most megnyitjuk a korábban létrehozott dokumentumot a`Document` osztály.
+## 3. lépés: Nyissa meg a létrehozott dokumentumot
+
+Most, hogy megvan a kezdeti dokumentumunk, nyissuk meg további szerkesztésre:
 
 ```csharp
 Document document = new Document(outputFile);
 ```
 
-## 4. lépés: Keresse meg a szövegrészletet
+Ez a sor betölti az éppen létrehozott dokumentumot, hogy módosíthassuk azt.
 
- Használjuk a`TextFragmentAbsorber`objektumot, hogy megtalálja azt a szövegrészletet, amely kiváltja a rejtett szövegblokk megjelenítését. Ebben az esetben pontosan a "Vigye ide az egérkurzort a lebegő szöveg megjelenítéséhez" szövegre keresünk.
+## 4. lépés: Hozzon létre egy TextAbsorber-t a kifejezések kereséséhez
+
+ Ezután meg akarjuk határozni azt a szövegrészletet, amellyel dolgozni fogunk. Itt van a`TextFragmentAbsorber` játékba lép:
 
 ```csharp
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-document.Pages.Accept(absorb);
-TextFragmentCollection textFragments = absorb.TextFragments;
-TextFragment fragment = textFragments[1];
-```
-
-## 5. lépés: Hozza létre a rejtett szövegmezőt
-
- Létrehozunk a`TextBoxField` objektumot a rejtett szövegmező megjelenítéséhez. Ez a mező tartalmazza azt a szöveget, amely akkor válik láthatóvá, amikor az egérmutatót a trigger szövege fölé viszi.
-
-```csharp
-TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-floatingField.Value = "This is the \"floating text field\".";
-floatingField. ReadOnly = true;
-floatingField.Flags |= AnnotationFlags.Hidden;
-floatingField.PartialName = "FloatingField_1";
-floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
-floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
-floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
-floatingField.Border = new Border(floatingField);
-floatingField.Border.Width = 1;
-floatingField. Multiline = true;
-```
-
-## 6. lépés: Adja hozzá a rejtett szövegmezőt a dokumentumhoz
-
-A rejtett szövegmezőt hozzáadjuk a dokumentum űrlapgyűjteményéhez.
-
-```csharp
-document.Form.Add(floatingField);
-```
-
-## 7. lépés: Hozza létre a Láthatatlan gombot
-
-Létrehozunk egy láthatatlan gombmezőt, amely a trigger szövegrészlet tetejére kerül. Ebben a gombmezőben az egér be- és kilépési eseményeivel kapcsolatos műveletek találhatók.
-
-```csharp
-ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-buttonField.Actions.OnEnter = new HideAction(floatingField, false);
-buttonField.Actions.OnExit = new HideAction(floatingField);
-document.Form.Add(buttonField);
-```
-
-## 8. lépés: Mentse el a dokumentumot
-
-Végül elmentjük a módosított dokumentumot a rejtett szövegtömbbel.
-
-```csharp
-document. Save(outputFile);
-```
-
-### Minta forráskód a rejtett szövegblokkhoz az Aspose.PDF for .NET használatával 
-```csharp
-// A dokumentumok könyvtárának elérési útja.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string outputFile = dataDir + "TextBlock_HideShow_MouseOverOut_out.pdf";
-// Készítsen mintadokumentumot szöveggel
-Document doc = new Document();
-doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display floating text"));
-doc.Save(outputFile);
-// Nyissa meg a dokumentumot szöveggel
-Document document = new Document(outputFile);
-//Hozzon létre TextAbsorber objektumot a reguláris kifejezésnek megfelelő kifejezések megtalálásához
-TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display floating text");
-// Fogadja el az elnyelőt a dokumentumoldalakhoz
 document.Pages.Accept(absorber);
-// Szerezd meg az első kivont szövegrészletet
+```
+
+Ebben a lépésben azt mondjuk az Aspose-nak, hogy keresse meg a korábban megadott szöveget.
+
+## 5. lépés: Bontsa ki a szövegrészletet
+
+Miután megvan a szövegrészlet, kibontjuk a következő kóddal, amely lehetővé teszi a további manipulálást:
+
+```csharp
 TextFragmentCollection textFragments = absorber.TextFragments;
 TextFragment fragment = textFragments[1];
-//Rejtett szövegmező létrehozása a lebegő szöveghez az oldal megadott téglalapjában
+```
+
+Itt az első felszívódott töredékre összpontosítunk. Ha több szövege van, érdemes lehet ismételni a gyűjteményt.
+
+## 6. lépés: Hozza létre a rejtett szövegmezőt
+
+Most pedig a varázslatért! Hozzon létre egy rejtett szövegmezőt, amely akkor jelenik meg, amikor a felhasználó a megadott szöveg fölé viszi az egérmutatót. Használja ezt a kódrészletet:
+
+```csharp
 TextBoxField floatingField = new TextBoxField(fragment.Page, new Rectangle(100, 700, 220, 740));
-// Állítsa be a mező értékeként megjelenítendő szöveget
 floatingField.Value = "This is the \"floating text field\".";
-// Javasoljuk, hogy ennél a forgatókönyvnél állítsa be a „csak olvasható” mezőt
 floatingField.ReadOnly = true;
-// Állítsa be a „rejtett” jelzőt, hogy a mező láthatatlan legyen a dokumentum megnyitásakor
 floatingField.Flags |= AnnotationFlags.Hidden;
-// Egyedi mezőnév beállítása nem szükséges, de megengedett
+```
+
+Ez a kód határozza meg a lebegő szöveg helyzetét, és beállítja tulajdonságait, beleértve azt is, hogy alapértelmezés szerint írásvédett és rejtett legyen.
+
+## 7. lépés: A mező megjelenésének testreszabása
+
+Adj egy kis hangulatot a lebegő szövegednek! A lebegő szövegmező alapértelmezett megjelenésének testreszabása:
+
+```csharp
 floatingField.PartialName = "FloatingField_1";
-// A terepi megjelenés jellemzőinek beállítása nem szükséges, de jobbá teszi
-floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, System.Drawing.Color.Blue);
-floatingField.Characteristics.Background = System.Drawing.Color.LightBlue;
-floatingField.Characteristics.Border = System.Drawing.Color.DarkBlue;
+floatingField.DefaultAppearance = new DefaultAppearance("Helv", 10, Color.Blue);
+floatingField.Characteristics.Background = Color.LightBlue;
+floatingField.Characteristics.Border = Color.DarkBlue;
 floatingField.Border = new Border(floatingField);
 floatingField.Border.Width = 1;
 floatingField.Multiline = true;
-// Szövegmező hozzáadása a dokumentumhoz
+```
+
+A betűmérettől a színekig ezeket a beállításokat tetszés szerint módosíthatja, így a felület felhasználóbarátabb és vonzóbb.
+
+## 8. lépés: Adja hozzá a szövegmezőt a dokumentumhoz
+
+A szövegmező beállítása után ideje hozzáadni a lebegő mezőt a dokumentumhoz:
+
+```csharp
 document.Form.Add(floatingField);
-// Láthatatlan gomb létrehozása a szövegrészlet pozíciójában
+```
+
+Ez a sor integrálja az újonnan létrehozott rejtett szövegmezőt a PDF-be.
+
+## 9. lépés: Hozzon létre egy láthatatlan gombmezőt
+
+Ez a gomb kezeli a lebegő szövegmező lebegtetési műveleteit. Adja hozzá a következő kódot egy láthatatlan gomb létrehozásához:
+
+```csharp
 ButtonField buttonField = new ButtonField(fragment.Page, fragment.Rectangle);
-// Hozzon létre új elrejtési műveletet a megadott mezőhöz (jegyzet) és láthatatlansági jelzőhöz.
-// (A lebegő mezőt a névvel is hivatkozhat, ha fent megadta.)
-// Adjon hozzá műveleteket az egér be-/kilépésekor a láthatatlan gombmezőben
 buttonField.Actions.OnEnter = new HideAction(floatingField, false);
 buttonField.Actions.OnExit = new HideAction(floatingField);
-// Gombmező hozzáadása a dokumentumhoz
-document.Form.Add(buttonField);
-// Dokumentum mentése
+```
+
+Itt úgy konfiguráltuk a gombot, hogy az egér belépéskor a lebegő szöveget jelenítse meg, az egér kilépésekor pedig elrejtse.
+
+## 10. lépés: Mentse el a dokumentumot
+
+Végül itt az ideje, hogy mentse a munkáját, és nézze meg az eredményt:
+
+```csharp
 document.Save(outputFile);
 ```
 
+Ezzel a művelettel a PDF-fájlja készen áll egy interaktív élménnyel, amely teljesen új módot ad a felhasználóknak arra, hogy kapcsolatba lépjenek a tartalommal!
+
 ## Következtetés
 
-Ebben az oktatóanyagban megtanulta, hogyan hozhat létre rejtett szövegblokkot az Aspose.PDF for .NET könyvtár használatával. A lépésenkénti útmutatót követve PDF-dokumentumot hozhat létre rejtett szövegmezővel, amely akkor válik láthatóvá, amikor az egérmutatót egy adott terület fölé viszi. Igényeinek megfelelően testreszabhatja a rejtett szövegblokk megjelenését és viselkedését.
+És megvan! Az alábbi lépések végrehajtásával sikeresen létrehozott egy rejtett szövegblokkot egy PDF-fájlban az Aspose.PDF for .NET használatával. Ez az egyszerű, de hatékony funkció jelentősen javíthatja a felhasználói interakciót a dokumentumokon belül. Akár oktatási anyagokat, akár ügyfélforrásokat készít, az információk elrejtésének és megjelenítésének képessége a lebegtetéskor csiszolt, modern megjelenést biztosít. 
 
-### GYIK
+## GYIK
 
-#### K: Mi a célja a „Rejtett szövegblokk PDF-fájlban” című oktatóanyagnak?
+### Mi az Aspose.PDF for .NET?  
+Az Aspose.PDF for .NET egy robusztus könyvtár, amely lehetővé teszi a fejlesztők számára PDF dokumentumok létrehozását, kezelését és konvertálását .NET alkalmazásokban.
 
-V: A „Rejtett szövegblokk PDF-fájlban” című oktatóanyag elmagyarázza, hogyan hozhat létre rejtett szövegblokkot PDF-fájlban az Aspose.PDF-könyvtár használatával a .NET-hez. A rejtett szövegblokk egy lebegő szöveg, amely akkor válik láthatóvá, amikor az egérmutatót egy adott terület fölé viszi. Ez az oktatóanyag lépésenkénti útmutatót nyújt a C# forráskód használatával.
+### Hogyan telepíthetem az Aspose.PDF-et?  
+Telepítheti a Visual Studio NuGet Package Manager segítségével. Csak használja a parancsot:`Install-Package Aspose.PDF`.
 
-#### K: Miért szeretnék rejtett szövegblokkot létrehozni egy PDF-fájlban?
+### Létrehozhatok más interaktív elemeket PDF-ben?  
+Igen, az Aspose.PDF segítségével a rejtett szövegblokkok mellett gombokat, hiperhivatkozásokat, megjegyzéseket és még sok mást is hozzáadhat.
 
-V: A rejtett szövegblokk létrehozása hasznos lehet olyan interaktív PDF-dokumentumoknál, ahol további információkat vagy kontextust kíván megadni, amelyek csak akkor válnak láthatóvá, ha a felhasználó az egérmutatót egy kijelölt terület fölé viszi.
+### Van ingyenes próbaverzió?  
+ Teljesen! Ingyenes próbaverziót kaphat a[Az Aspose kiadási oldala](https://releases.aspose.com/).
 
-#### K: Hogyan állíthatom be a dokumentumkönyvtárat?
-
-V: A dokumentumkönyvtár beállításához:
-
-1.  Cserélje ki`"YOUR DOCUMENT DIRECTORY"` a`dataDir` változó annak a könyvtárnak az elérési útjával, ahová a generált PDF fájlt menteni szeretné.
-
-#### K: Hogyan készíthetek mintadokumentumot, és hogyan adhatok hozzá szövegrészletet?
-
- V: Az oktatóanyagban a`Document` osztályban PDF-minta létrehozásához és szövegrészlet hozzáadásához. Ez a szövegtöredék szolgál a rejtett szövegblokk megjelenítéséhez.
-
-#### K: Hogyan találhatom meg azt a szövegrészletet, amely kiváltja a rejtett szövegblokkot?
-
- V: Az oktatóanyag bemutatja, hogyan kell használni a`TextFragmentAbsorber` objektumot, hogy megtalálja azt a szövegrészletet, amely kiváltja a rejtett szövegblokk megjelenítését. Egy adott szöveges karakterláncot keres a PDF-dokumentumban.
-
-#### K: Hogyan hozhatom létre és szabhatom testre a rejtett szövegmezőt?
-
- V: Ön létrehoz egy`TextBoxField`objektumot a rejtett szövegmező megjelenítéséhez. Az oktatóanyag kódot tartalmaz a rejtett szövegmező különféle tulajdonságainak, például pozíciójának, értékének, megjelenésének és viselkedésének beállításához.
-
-#### K: Hogyan hozhatok létre egy láthatatlan gombot a rejtett szövegblokkhoz társítva?
-
- V: Egy láthatatlan gombmező a gombbal jön létre`ButtonField` osztály. Ez a gombmező az indító szövegrészlet tetején helyezkedik el, és az egér be- és kilépési eseményeihez kapcsolódó műveleteket tartalmaz. Ezek a műveletek szabályozzák a rejtett szövegblokk láthatóságát.
-
-#### K: Testreszabhatom a rejtett szövegblokk és az aktiválási terület megjelenését?
-
-V: Igen, testreszabhatja a rejtett szövegmező és a láthatatlan gomb különféle tulajdonságait, beleértve a betűtípust, a színt, a méretet és az elhelyezést.
-
-#### K: Hogyan menthetem el a módosított dokumentumot a rejtett szövegblokkkal?
-
- V: Az oktatóanyag bemutatja, hogyan mentheti el a módosított dokumentumot a`Save` módszere a`Document` osztály.
+### Mi a teendő, ha segítségre van szükségem az Aspose.PDF-hez?  
+ Nyugodtan kérjen támogatást a[Aspose fórum](https://forum.aspose.com/c/pdf/10) bármilyen kérdése vagy problémája felmerülhet.

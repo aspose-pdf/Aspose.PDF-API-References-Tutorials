@@ -2,156 +2,75 @@
 title: Стиль строки таблицы
 linktitle: Стиль строки таблицы
 second_title: Справочник по API Aspose.PDF для .NET
-description: Узнайте, как настраивать строки таблицы с помощью пошагового руководства Aspose.PDF для .NET по стилю и форматированию строк.
+description: Узнайте, как стилизовать строки таблицы в PDF-файле с помощью Aspose.PDF для .NET, с помощью пошагового руководства, которое поможет вам с легкостью улучшить форматирование документа.
 type: docs
 weight: 180
 url: /ru/net/programming-with-tagged-pdf/style-table-row/
 ---
-В этом подробном руководстве мы шаг за шагом проведем вас через предоставленный исходный код C#, чтобы отформатировать строку таблицы с помощью Aspose.PDF для .NET. Следуйте инструкциям ниже, чтобы понять, как настраивать стили и свойства строк таблицы.
+## Введение
 
-## Шаг 1: Настройка среды
+Когда дело доходит до создания хорошо структурированных и красиво отформатированных PDF-документов, Aspose.PDF для .NET — это решение, к которому стоит прибегнуть. Независимо от того, автоматизируете ли вы отчеты, счета-фактуры или создаете динамические таблицы, форматирование таблиц с различными стилями является ключом к безупречному документу. В этом уроке мы подробно рассмотрим стилизацию строки таблицы с помощью Aspose.PDF для .NET. И не волнуйтесь, я проведу вас шаг за шагом, как в хорошей беседе за чашкой кофе!
 
-Прежде чем начать, убедитесь, что вы настроили среду разработки для использования Aspose.PDF для .NET. Это включает установку библиотеки Aspose.PDF и настройку вашего проекта для ссылки на нее.
+## Предпосылки
 
-## Шаг 2: Создание документа
+Прежде чем мы перейдем к сути, давайте убедимся, что у вас все в порядке. Вам понадобится:
 
-На этом этапе мы создадим новый объект документа Aspose.PDF.
+1. Библиотека Aspose.PDF для .NET  
+    Если у вас его еще нет, вы можете получить его здесь[здесь](https://releases.aspose.com/pdf/net/) . Вы также можете получить[бесплатная пробная версия](https://releases.aspose.com/) для начала.
+2. Среда разработки  
+   Установите Visual Studio или любую C# IDE по вашему выбору. Вам также понадобится установленный .NET, но я предполагаю, что вы уже с ним знакомы.
+3. Базовые знания C# и .NET  
+   Хорошее понимание C# сделает этот урок легким. Но не волнуйтесь, я объясню каждый шаг подробно!
+
+## Импортные пакеты
+
+Прежде чем мы начнем работать с Aspose.PDF, нам нужно импортировать необходимые пространства имен. В вашем проекте C# убедитесь, что вы включили следующее:
 
 ```csharp
-// Путь к каталогу документов.
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-
-// Создание документа
-Document document = new Document();
-ITaggedContent taggedContent = document.TaggedContent;
-taggedContent.SetTitle("Example of Table Row Formatting");
-taggedContent.SetLanguage("fr-FR");
+using Aspose.Pdf.LogicalStructure;
+using Aspose.Pdf.Tagged;
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 ```
 
-Мы создали новый документ и задали его название и язык.
+Они необходимы для создания и оформления таблицы и, конечно же, для работы с тегированным контентом на предмет соответствия требованиям.
 
-## Шаг 3: Получение корневого структурного элемента
+Теперь давайте разберем задачу шаг за шагом, чтобы вы могли оформить строки таблицы как профессионал!
 
-На этом этапе мы получим корневой элемент структуры для нашего документа.
+## Шаг 1: Создайте новый PDF-документ
 
-```csharp
-// Получить корневой структурный элемент
-StructureElement rootElement = taggedContent.RootElement;
-```
-
-Мы получили корневой элемент структуры, который будет служить контейнером для элемента массива.
-
-## Шаг 4: Создание элемента структуры массива
-
-Теперь давайте создадим новый элемент структуры таблицы для нашего документа.
+Сначала самое главное: давайте создадим совершенно новый PDF-документ. Этот документ будет содержать все стилизованные строки таблицы.
 
 ```csharp
-// Создать элемент структуры массива
-TableElement tableElement = taggedContent.CreateTableElement();
-rootElement.AppendChild(tableElement);
-```
-
-Мы создали новый элемент структуры массива и добавили его к корневому элементу структуры.
-
-## Шаг 5: Настройте стили и свойства строк таблицы
-
-На этом этапе мы настроим стили и свойства строк таблицы.
-
-```csharp
-// Настройте стили и свойства строк таблицы
-TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
-TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
-TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-
-int rowCount = 7;
-int colCount = 3;
-int rowIndex;
-int colIndex;
-
-// Создайте строку заголовка таблицы
-TableTRElement headTrElement = tableTHeadElement.CreateTR();
-headTrElement.AlternativeText = "Header Row";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-     TableTHElement theElement = headTrElement.CreateTH();
-     theElement.SetText(string.Format("Header {0}", colIndex));
-}
-
-// Настройте строки тела таблицы
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
-{
-     TableTRElement trElement = tableTBodyElement.CreateTR();
-     trElement.AlternativeText = string.Format("Row {0}", rowIndex);
-     trElement.BackgroundColor = Color.LightGoldenrodYellow;
-     trElement.Border = new BorderInfo(BorderSide.All, 0.75F, Color.DarkGray);
-     trElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.Blue);
-     trElement.MinRowHeight = 100.0;
-     trElement.FixedRowHeight = 120.0;
-     trElement. IsInNewPage = (rowIndex % 3 == 1);
-     trElement.IsRowBroken = true;
-     TextState cellTextState = new TextState();
-     cellTextState.ForegroundColor = Color.Red;
-     trElement. DefaultCellTextState = cellTextState;
-     trElement. DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
-     trElement.VerticalAlignment = VerticalAlignment.Bottom;
-
-     for (colIndex = 0; colIndex < colCount; colIndex++)
-     {
-         TableTDElement tdelement = trElement.CreateTD();
-         tdElement.SetText(string.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-     }
-}
-
-// Создайте строку нижнего колонтитула таблицы
-TableTRElement footTrElement = tableTFootElement.CreateTR();
-footTrElement.AlternativeText = "Footline";
-
-for (colIndex = 0; colIndex < colCount; colIndex++)
-{
-     TableTDElement tdElement = footTrElement.CreateTD();
-     tdElement.SetText(string.Format("Foot {0}", colIndex));
-}
-```
-
-Мы настроили различные аспекты строки таблицы, такие как цвет фона, границы, высоту строки, нумерацию страниц, стиль ячеек по умолчанию и многое другое.
-
-## Шаг 6: Сохранение помеченного PDF-документа
-
-Теперь, когда мы создали документ со стилизованной строкой таблицы, мы сохраним его как тегированный PDF-документ.
-```csharp
-// Сохраните помеченный PDF-документ
-document.Save(dataDir + "StyleTableRow.pdf");
-```
-
-Мы сохранили помеченный PDF-документ в указанном каталоге.
-
-## Шаг 7: Проверка соответствия PDF/UA
-
-Далее мы проверим соответствие нашего документа формату PDF/UA.
-
-```csharp
-// Проверка соответствия PDF/UA
-document = new Document(dataDir + "StyleTableRow.pdf");
-bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableRow.xml", PdfFormat.PDF_UA_1);
-Console.WriteLine(string.Format("PDF/UA Compliance: {0}", isPdfUaCompliance));
-```
-
-Мы загрузили помеченный PDF-документ и проверили его соответствие PDF/UA, создав XML-отчет.
-
-
-### Пример исходного кода для строки таблицы стилей с использованием Aspose.PDF для .NET 
-```csharp
-
 // Путь к каталогу документов.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 
 // Создать документ
 Document document = new Document();
+```
+
+ Здесь мы просто инициализируем новый`Document` объект, который будет представлять наш PDF-файл. Обязательно укажите путь к каталогу, в котором вы будете сохранять выходные файлы.
+
+## Шаг 2: Работа с тегированным контентом
+
+Чтобы структурировать ваш PDF для доступности, мы будем работать с тегированным контентом. Это помогает создавать структурированные элементы, такие как таблицы, гарантируя их соответствие стандартам доступности, таким как PDF/UA.
+
+```csharp
 ITaggedContent taggedContent = document.TaggedContent;
 taggedContent.SetTitle("Example table row style");
 taggedContent.SetLanguage("en-US");
+```
 
+Здесь мы задаем заголовок и язык для помеченного содержимого PDF. Это как дать вашему PDF имя и указать ему, на каком языке он должен говорить!
+
+## Шаг 3: Определите структуру таблицы
+
+Далее давайте определим структуру таблицы, которую мы собираемся создать. Каждая таблица нуждается в заголовке, теле и нижнем колонтитуле — как хорошо организованная запись в блоге!
+
+```csharp
 // Получить корневой элемент структуры
 StructureElement rootElement = taggedContent.RootElement;
 
@@ -161,103 +80,111 @@ rootElement.AppendChild(tableElement);
 TableTHeadElement tableTHeadElement = tableElement.CreateTHead();
 TableTBodyElement tableTBodyElement = tableElement.CreateTBody();
 TableTFootElement tableTFootElement = tableElement.CreateTFoot();
-int rowCount = 7;
-int colCount = 3;
-int rowIndex;
-int colIndex;
+```
+
+Здесь мы создаем таблицу с заголовком (`THead`), тело (`TBody`) и нижний колонтитул (`TFoot`). Эти элементы будут удерживать наши ряды.
+
+## Шаг 4: Добавьте строку заголовка таблицы
+
+Таблицы без заголовков — как книги без названий. Давайте сначала создадим строку заголовка, чтобы обеспечить контекст для данных.
+
+```csharp
 TableTRElement headTrElement = tableTHeadElement.CreateTR();
 headTrElement.AlternativeText = "Head Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
+for (int colIndex = 0; colIndex < 3; colIndex++)
 {
-	TableTHElement thElement = headTrElement.CreateTH();
-	thElement.SetText(String.Format("Head {0}", colIndex));
+    TableTHElement thElement = headTrElement.CreateTH();
+    thElement.SetText(String.Format("Head {0}", colIndex));
 }
-for (rowIndex = 0; rowIndex < rowCount; rowIndex++)
+```
+
+Здесь мы проходим цикл и добавляем три ячейки заголовка (`TableTHElement`), давая каждому из них описательный текст. Просто, не правда ли?
+
+## Шаг 5: Добавьте стилизованные строки тела
+
+Теперь самое интересное — стилизуем строки! Давайте создадим семь строк с пользовательскими стилями. Мы зададим цвета фона, границы, отступы и выравнивание текста.
+
+```csharp
+for (int rowIndex = 0; rowIndex < 7; rowIndex++)
 {
-	TableTRElement trElement = tableTBodyElement.CreateTR();
-	trElement.AlternativeText = String.Format("Row {0}", rowIndex);
-	trElement.BackgroundColor = Color.LightGoldenrodYellow;
-	trElement.Border = new BorderInfo(BorderSide.All, 0.75F, Color.DarkGray);
-	trElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.Blue);
-	trElement.MinRowHeight = 100.0;
-	trElement.FixedRowHeight = 120.0;
-	trElement.IsInNewPage = (rowIndex % 3 == 1);
-	trElement.IsRowBroken = true;
-	TextState cellTextState = new TextState();
-	cellTextState.ForegroundColor = Color.Red;
-	trElement.DefaultCellTextState = cellTextState;
-	trElement.DefaultCellPadding = new MarginInfo(16.0, 2.0, 8.0, 2.0);
-	trElement.VerticalAlignment = VerticalAlignment.Bottom;
-	for (colIndex = 0; colIndex < colCount; colIndex++)
-	{
-		TableTDElement tdElement = trElement.CreateTD();
-		tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
-	}
+    TableTRElement trElement = tableTBodyElement.CreateTR();
+    trElement.AlternativeText = String.Format("Row {0}", rowIndex);
+    trElement.BackgroundColor = Color.LightGoldenrodYellow;
+    trElement.Border = new BorderInfo(BorderSide.All, 0.75F, Color.DarkGray);
+    trElement.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.50F, Color.Blue);
+    trElement.MinRowHeight = 100.0;
+    trElement.FixedRowHeight = 120.0;
+    trElement.IsInNewPage = (rowIndex % 3 == 1);
+    trElement.IsRowBroken = true;
+
+    for (int colIndex = 0; colIndex < 3; colIndex++)
+    {
+        TableTDElement tdElement = trElement.CreateTD();
+        tdElement.SetText(String.Format("Cell [{0}, {1}]", rowIndex, colIndex));
+    }
 }
+```
+
+- Цвет фона: мы использовали светло-золотистый оттенок для создания профессионального, но теплого оттенка.
+- Границы: каждая строка имеет темно-серую внешнюю границу и синие границы ячеек для четкого вида.
+- Высота и отступы: задается высота строк, а также добавляются отступы для придания четкого вида.
+- Разрывы страниц: Чтобы сделать таблицу более удобной для чтения, каждая вторая строка начинается с новой страницы.
+
+## Шаг 6: Добавьте строку нижнего колонтитула
+
+Подобно заголовку, нижний колонтитул закрепляет таблицу. Давайте создадим его.
+
+```csharp
 TableTRElement footTrElement = tableTFootElement.CreateTR();
 footTrElement.AlternativeText = "Foot Row";
-for (colIndex = 0; colIndex < colCount; colIndex++)
+for (int colIndex = 0; colIndex < 3; colIndex++)
 {
-	TableTDElement tdElement = footTrElement.CreateTD();
-	tdElement.SetText(String.Format("Foot {0}", colIndex));
+    TableTDElement tdElement = footTrElement.CreateTD();
+    tdElement.SetText(String.Format("Foot {0}", colIndex));
 }
+```
 
-// Сохранить помеченный PDF-документ
+Мы просто проходим по трем ячейкам нижнего колонтитула и добавляем немного текста. Альтернативный текст для нижнего колонтитула — «Foot Row», чтобы сделать его доступным.
+
+## Шаг 7: Сохраните PDF-документ.
+
+Теперь, когда стол накрыт, пришло время сохранить ваш шедевр!
+
+```csharp
 document.Save(dataDir + "StyleTableRow.pdf");
+```
 
-// Проверка соответствия PDF/UA
+Вот так ваш PDF-файл сохраняется со всеми прекрасными строками таблицы, которые мы только что стилизовали.
+
+## Шаг 8: Проверка соответствия PDF/UA
+
+Чтобы гарантировать, что наш PDF-файл соответствует стандартам доступности, мы проверим его на соответствие PDF/UA.
+
+```csharp
 document = new Document(dataDir + "StyleTableRow.pdf");
 bool isPdfUaCompliance = document.Validate(dataDir + "StyleTableRow.xml", PdfFormat.PDF_UA_1);
 Console.WriteLine(String.Format("PDF/UA compliance: {0}", isPdfUaCompliance));
-
 ```
+
+Это гарантирует, что ваш PDF соответствует стандарту PDF/UA, делая его доступным для всех. Доступность — это название игры!
 
 ## Заключение
 
-В этом уроке мы узнали, как форматировать строку таблицы с помощью Aspose.PDF для .NET. Мы настроили стили и свойства строки таблицы, добавили заголовки, строки тела и нижний колонтитул, сохранили помеченный PDF-документ и проверили его соответствие PDF/UA.
+И вот оно! Всего несколько строк кода — и вы создали полностью оформленную таблицу в PDF-файле с помощью Aspose.PDF для .NET. От заголовков до нижних колонтитулов мы оформили каждую строку, добавили элементы доступности и даже проверили документ на соответствие. Работаете ли вы над корпоративными отчетами, презентациями или просто развлекаетесь с PDF-файлами, это руководство вам поможет. Теперь приступайте к оформлению таблиц как профессионал!
 
-### Часто задаваемые вопросы
+## Часто задаваемые вопросы
 
-#### В: Какова цель этого руководства по форматированию строк таблицы с помощью Aspose.PDF для .NET?
+### Могу ли я изменить стиль шрифта таблицы?  
+ Да! Вы можете изменить стиль шрифта с помощью`TextState` объект для каждой ячейки, что обеспечивает полную настройку.
 
-A: Цель этого руководства — провести вас через процесс форматирования строк таблицы в документе PDF с помощью Aspose.PDF для .NET. Оно предоставляет пошаговые инструкции и примеры исходного кода C#, которые помогут вам настроить стили и свойства строк таблицы.
+### Как добавить больше столбцов в таблицу?  
+ Просто отрегулируйте`colCount`переменную и добавьте больше ячеек в циклы для заголовков, основного текста и нижних колонтитулов.
 
-#### В: Каковы предварительные условия для прохождения этого урока?
+### Что произойдет, если я не установлю высоту строки?  
+Если вы не зададите высоту строки, таблица будет автоматически подстраиваться под содержимое.
 
-A: Перед началом убедитесь, что вы настроили среду разработки для использования Aspose.PDF для .NET. Это включает установку библиотеки Aspose.PDF и настройку вашего проекта для ссылки на нее.
+### Могу ли я использовать это для динамического количества строк?  
+Конечно! Вы можете извлекать данные из базы данных или любого другого источника и динамически корректировать количество строк и столбцов.
 
-#### В: Как создать новый PDF-документ и задать его заголовок и язык с помощью Aspose.PDF для .NET?
-
- A: Чтобы создать новый PDF-документ, вам необходимо создать`Document` объект из библиотеки Aspose.PDF. Исходный код C#, предоставленный в учебнике, демонстрирует, как создать документ и задать его заголовок и языковые свойства.
-
-#### В: Каково значение корневого элемента структуры в PDF-документе?
-
-A: Элемент корневой структуры действует как контейнер для других элементов структуры, помогая организовать и категоризировать содержимое документа PDF. Он играет решающую роль в установлении логической структуры документа.
-
-#### В: Как создать и настроить элемент структуры таблицы для форматирования строк таблицы с помощью Aspose.PDF для .NET?
-
-A: В руководстве объясняется, как создать элемент структуры таблицы и настроить его свойства для форматирования строк таблицы. Оно охватывает такие аспекты, как цвет фона, границы, высота строки, нумерация страниц, стиль ячейки по умолчанию и многое другое.
-
-#### В: Могу ли я настраивать стили и свойства отдельных ячеек в строке таблицы?
-
-A: Да, вы можете настраивать стили и свойства отдельных ячеек в строке таблицы. В руководстве показано, как задать такие свойства, как цвет фона, границы, цвет текста, отступы и многое другое для ячеек таблицы в отформатированной строке таблицы.
-
-#### В: Как добавить заголовки, основные строки и нижний колонтитул в отформатированную строку таблицы?
-
-A: В руководстве приведены примеры создания и добавления заголовков, строк тела и нижнего колонтитула к элементу структуры таблицы. Эти элементы можно дополнительно настроить с помощью свойств, описанных в руководстве.
-
-#### В: Что такое соответствие стандарту PDF/UA и как я могу проверить его для моего помеченного PDF-документа?
-
- A: Соответствие PDF/UA гарантирует, что документ PDF соответствует стандартам доступности, что делает его более доступным для пользователей с ограниченными возможностями. В руководстве показано, как проверить соответствие PDF/UA с помощью`Validate()` метод и сформировать отчет о соответствии XML.
-
-#### В: Как я могу включить эти концепции в свои собственные приложения .NET?
-
-A: Вы можете использовать предоставленные примеры исходного кода C# в качестве руководства по реализации форматирования строк таблиц в ваших собственных приложениях .NET. Измените и адаптируйте код в соответствии с вашими требованиями и интегрируйте его в свои проекты.
-
-#### В: Существуют ли какие-либо рекомендуемые методы форматирования строк таблиц в PDF-документах?
-
-A: При форматировании строк таблицы учитывайте читаемость и доступность контента. Убедитесь, что цвета достаточно контрастны, используйте четкие и разборчивые шрифты и поддерживайте единообразную компоновку. Проверьте соответствие PDF/UA, чтобы убедиться в соблюдении стандартов доступности.
-
-#### В: Какие еще функции Aspose.PDF для .NET я могу изучить для настройки PDF-документов?
-
-A: Aspose.PDF для .NET предлагает широкий спектр функций для настройки PDF-документов, включая обработку текста, вставку изображений, управление полями форм, цифровые подписи, аннотации и многое другое. Ознакомьтесь с официальной документацией и ресурсами, чтобы изучить дополнительные функции.
+### Можно ли использовать Aspose.PDF для .NET бесплатно?  
+ Aspose.PDF для .NET — это лицензионный продукт, но вы можете попробовать его с помощью[бесплатная пробная версия](https://releases.aspose.com/) или получить[временная лицензия](https://purchase.aspose.com/temporary-license/).

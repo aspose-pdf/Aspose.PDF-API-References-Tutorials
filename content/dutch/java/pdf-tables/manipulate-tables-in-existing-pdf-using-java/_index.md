@@ -18,7 +18,7 @@ Aspose.PDF voor Java is een robuuste bibliotheek waarmee Java-ontwikkelaars prog
 
 ## De ontwikkelomgeving instellen
 
- Voordat we in de code duiken, moeten we controleren of onze ontwikkelomgeving correct is ingesteld. Java moet op uw systeem zijn geïnstalleerd en u kunt de Aspose.PDF voor Java-bibliotheek downloaden van de website[hier](https://releases.aspose.com/pdf/java/)Nadat u de bibliotheek hebt gedownload en aan uw project hebt toegevoegd, bent u klaar om te beginnen.
+ Voordat we in de code duiken, moeten we ervoor zorgen dat onze ontwikkelomgeving correct is ingesteld. Java moet op uw systeem zijn geïnstalleerd en u kunt de Aspose.PDF voor Java-bibliotheek downloaden van de website[hier](https://releases.aspose.com/pdf/java/)Nadat u de bibliotheek hebt gedownload en aan uw project hebt toegevoegd, bent u klaar om te beginnen.
 
 ## Een bestaande PDF laden
 

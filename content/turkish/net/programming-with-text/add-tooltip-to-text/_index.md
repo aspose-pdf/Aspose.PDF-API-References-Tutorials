@@ -2,108 +2,107 @@
 title: PDF Dosyasındaki Metne İpucu Ekle
 linktitle: PDF Dosyasındaki Metne İpucu Ekle
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET kullanarak PDF dosyasındaki metne araç ipuçlarının nasıl ekleneceğini öğrenin.
+description: Aspose.PDF for .NET kullanarak PDF dosyalarındaki metne araç ipuçlarının nasıl ekleneceğini öğrenin. PDF'lerinizi bilgilendirici gezinme metinleriyle zahmetsizce geliştirin.
 type: docs
 weight: 90
 url: /tr/net/programming-with-text/add-tooltip-to-text/
 ---
-Bu eğitim, .NET için Aspose.PDF kullanarak PDF dosyasındaki metne araç ipuçları ekleme sürecinde size rehberlik edecektir. Sağlanan C# kaynak kodu gerekli adımları göstermektedir.
+## giriiş
 
-## Gereksinimler
-Başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
+İlgi çekici ve etkileşimli PDF'ler oluşturmaya gelince, araç ipuçları paha biçilmez olabilir. Bir şeyin üzerine geldiğinizde size ekstra bilgi veren o küçük açılır kutuları biliyor musunuz? Belgenizi karmaşıklaştırmadan bağlam, açıklamalar veya hatta tavsiye parçaları sağlayabilirler. Bu eğitimde, .NET için Aspose.PDF kitaplığını kullanarak bir PDF dosyasındaki metne araç ipuçlarının nasıl ekleneceğini ele alacağız. İster deneyimli bir geliştirici olun, ister PDF dünyasında yeni yeni adım atıyor olun, doğru yerdesiniz! Hadi başlayalım!
 
-- Bilgisayarınızda Visual Studio veya herhangi bir C# derleyicisi yüklü olmalıdır.
-- Aspose.PDF for .NET kütüphanesi. Resmi Aspose web sitesinden indirebilir veya NuGet gibi bir paket yöneticisi kullanarak kurabilirsiniz.
+## Ön koşullar
 
-## Adım 1: Projeyi kurun
-1. Tercih ettiğiniz geliştirme ortamında yeni bir C# projesi oluşturun.
-2. .NET için Aspose.PDF kitaplığına bir referans ekleyin.
+Kodlama kısmına geçmeden önce, süreci sorunsuz bir şekilde takip edebilmeniz için ihtiyacınız olan her şeye sahip olduğunuzdan emin olalım.
 
-## Adım 2: Gerekli ad alanlarını içe aktarın
-Metne araç ipuçları eklemek istediğiniz kod dosyasında, dosyanın en üstüne aşağıdaki using yönergelerini ekleyin:
+### Visual Studio Yüklendi
+Bilgisayarınızda Visual Studio'nun yüklü olması önemlidir, çünkü bu, .NET uygulamalarınız için birincil geliştirme ortamınız olacaktır.
+
+### .NET Kütüphanesi için Aspose.PDF
+ Ayrıca Aspose.PDF kütüphanesinin de elinizin altında olması gerekir.[buradan indirin](https://releases.aspose.com/pdf/net/)Proje referanslarınıza eklemeyi unutmayın.
+
+### C# Temel Bilgisi
+C# dilinde bir geçmişe sahip olmak çok yardımcı olacaktır çünkü bu dilde kodlama yapacağız. Ama endişelenmeyin—her adımda size rehberlik edeceğim!
+
+### Çalışmak İçin Bir PDF Belgesi
+Bu örnekte yaptığımız gibi boş bir PDF belgesiyle başlayabilir veya dilerseniz mevcut bir belgeyi kullanabilirsiniz.
+
+Şimdi kodlama kısmına geçelim!
+
+## Paketleri İçe Aktar 
+
+ Kodlama serüvenimizin ilk adımı gerekli paketleri içe aktarmaktır. Visual Studio projenizi açın ve C# dosyanızın en üstüne şunları eklemek isteyeceksiniz:`using` yönergeler:
 
 ```csharp
-using Aspose.Pdf;
 using Aspose.Pdf.Forms;
 using Aspose.Pdf.Text;
 ```
 
-## Adım 3: Belge dizinini ayarlayın
- Kodda şu satırı bulun:`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` Belgelerinizin saklandığı dizinin yolunu içeren.
+Bu paketler, PDF belgeleri oluşturmak ve düzenlemek için ihtiyaç duyduğunuz tüm sınıflara ve işlevlere erişmenizi sağlar.
 
-## Adım 4: Metin içeren bir örnek belge oluşturun
- Yeni bir tane oluştur`Document`nesne ve metin parçalarıyla sayfalar ekleyin. Sağlanan kodda, iki metin parçası ilgili araç ipucu metniyle belgeye eklenir.
+## Adım 1: Belge Dizininizi Ayarlayın
 
-```csharp
-Document doc = new Document();
-doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a tooltip"));
-doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a very long tooltip"));
-doc.Save(outputFile);
-```
+İlk önce, belgelerinizi kaydedeceğiniz yolu ayarlamamız gerekiyor. Bunu, tüm kreasyonlarınızın bulunacağı dosya sisteminizde rahat bir yer bulmak olarak düşünün.
 
-## Adım 5: Belgeyi açın ve metin parçalarını bulun
- Oluşturulan belgeyi kullanarak yükleyin`Document` oluşturucuyu kullanın ve araç ipuçlarına ihtiyaç duyan metin parçalarını bulun`TextFragmentAbsorber`.
-
-```csharp
-Document document = new Document(outputFile);
-TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
-document.Pages.Accept(absorb);
-TextFragmentCollection textFragments = absorb.TextFragments;
-```
-
-## Adım 6: Metin parçalarına araç ipuçları ekleyin
- Çıkarılan metin parçaları arasında dolaşın ve konumlarında görünmez düğmeler oluşturun. İstenilen araç ipucu metnini atayın`AlternateName` mülkiyeti`ButtonField`. Belgenin formuna düğme alanlarını ekleyin.
-
-```csharp
-foreach(TextFragment fragment in textFragments)
-{
-     ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
-     field. AlternateName = "Tooltip for text.";
-     document.Form.Add(field);
-}
-```
-
-## Adım 7: Uzun araç ipuçlarına sahip ek metin parçaları için tekrarlayın
-Uzun araç ipuçlarına sahip metin parçaları için 5. ve 6. adımları tekrarlayın. Arama ölçütlerini ve araç ipucu metnini buna göre değiştirin.
-
-```csharp
-absorb = new TextFragmentAbsorber("Move the mouse cursor here to display a very long tooltip");
-document.Pages.Accept(absorb);
-textFragments = absorb.TextFragments;
-
-foreach(TextFragment fragment in textFragments)
-{
-     ButtonField field = new ButtonField(fragment.Page, fragment.Rectangle);
-     field. AlternateName = "Long tooltip text goes here...";
-     document.Form.Add(field);
-}
-```
-
-## Adım 8: Değiştirilen belgeyi kaydedin
- Değiştirilen PDF belgesini kullanarak kaydedin`Save` yöntemi`Document` nesne.
-
-```csharp
-document. Save(outputFile);
-```
-
-### .NET için Aspose.PDF kullanarak Metne İpucu Ekleme için örnek kaynak kodu 
 ```csharp
 // Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 string outputFile = dataDir + "Tooltip_out.pdf";
-// Metin içeren örnek belge oluşturun
+```
+
+ Değiştirdiğinizden emin olun`YOUR DOCUMENT DIRECTORY` makinenizdeki gerçek yol ile.
+
+## Adım 2: Örnek bir PDF Belgesi Oluşturun
+
+Sırada, biraz metin içeren basit bir PDF oluşturma zamanı var. Yaratıcı sürecimizi burada başlatıyoruz!
+
+```csharp
+//Metin içeren örnek belge oluşturun
 Document doc = new Document();
 doc.Pages.Add().Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a tooltip"));
 doc.Pages[1].Paragraphs.Add(new TextFragment("Move the mouse cursor here to display a very long tooltip"));
 doc.Save(outputFile);
+```
+
+Bu adımda bir belge oluşturuyoruz, iki metin parçası ekliyoruz ve bunu daha önce belirlediğimiz yola kaydediyoruz.
+
+## Adım 3: İşleme Alınmak Üzere Belgeyi Açın
+
+Artık belgemizi oluşturduğumuza göre, araç ipuçları üzerinde çalışabilmek için onu açalım!
+
+```csharp
 // Metin içeren belgeyi aç
 Document document = new Document(outputFile);
-//Düzenli ifadeyle eşleşen tüm ifadeleri bulmak için TextAbsorber nesnesi oluşturun
+```
+
+Burada sadece yeni oluşturduğumuz belgeyi yüklüyoruz.
+
+## Adım 4: Metin Parçalarını Bulmak İçin Bir Metin Emici Oluşturun
+
+Araç ipuçlarını eklemek istediğimiz metin parçalarını bulmamız gerekiyor. Bu, büyük bir haritanın belirli bir bölümünü vurgulamak için büyüteç kullanmaya benzer! 
+
+```csharp
+// Düzenli ifadeyle eşleşen tüm ifadeleri bulmak için TextAbsorber nesnesi oluşturun
 TextFragmentAbsorber absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a tooltip");
-// Belge sayfaları için emiciyi kabul edin
 document.Pages.Accept(absorber);
+```
+
+## Adım 5: Metin Parçalarını Çıkarın
+
+Daha sonra bir önceki adımda bulduğumuz metin parçalarını çıkarıyoruz.
+
+```csharp
 // Çıkarılan metin parçalarını alın
 TextFragmentCollection textFragments = absorber.TextFragments;
+```
+
+Bu kesit, ilgilendiğimiz metin parçalarına ait referansları elimizde tutmamızı sağlar.
+
+## Adım 6: Parçalar Arasında Döngü Oluşturun ve Araç İpuçları Ekleyin
+
+Şimdi eğlenceli kısma geliyoruz! Her bir metin parçasının etrafında dolaşacağız ve her birine bir ipucu ekleyeceğiz. Belirli öğelerin (metin parçaları) etrafına küçük hediyeler (ipuçları) sardığınızı düşünün.
+
+```csharp
 // Parçalar arasında döngü
 foreach (TextFragment fragment in textFragments)
 {
@@ -114,7 +113,16 @@ foreach (TextFragment fragment in textFragments)
 	// Belgeye düğme alanı ekle
 	document.Form.Add(field);
 }
-// Sonraki çok uzun bir ipucu örneği olacak
+```
+
+Her yinelemede, metin parçasının konumuna karşılık gelen bir düğme alanı oluşturuyoruz ve araç ipucu metnini buna atıyoruz.
+
+## Adım 7: Uzun Araç İpuçları için tekrarlayın
+
+Basit bir ipucu eklediğimiz gibi, daha uzun metinler için de aynısını yapabiliriz. Yaratıcılığımızı genişletelim!
+
+```csharp
+// Sırada çok uzun bir ipucu örneği olacak
 absorber = new TextFragmentAbsorber("Move the mouse cursor here to display a very long tooltip");
 document.Pages.Accept(absorber);
 textFragments = absorber.TextFragments;
@@ -132,53 +140,40 @@ foreach (TextFragment fragment in textFragments)
 							" deserunt mollit anim id est laborum.";
 	document.Form.Add(field);
 }
+```
+
+Burada, daha önce yaptığımızın aynısını, çok daha geniş bir ipucuyla yapıyoruz.
+
+## Adım 8: Belgenizi Kaydedin
+
+Son adım, belgenizi tüm o parlak yeni araç ipuçlarıyla kaydetmektir. 
+
+```csharp
 // Belgeyi kaydet
 document.Save(outputFile);
 ```
 
+Ve işte böyle, bitirdiniz! PDF'nize araç ipuçları eklediniz, onu daha kullanıcı dostu ve etkileşimli hale getirdiniz.
+
 ## Çözüm
-.NET için Aspose.PDF kullanarak bir PDF belgesindeki metne araç ipuçlarını başarıyla eklediniz. Elde edilen PDF dosyası artık belirtilen çıktı dosyası yolunda bulunabilir.
+
+İşte karşınızda—Aspose.PDF for .NET kullanarak PDF dosyalarındaki metne araç ipuçlarının nasıl ekleneceği konusunda takip etmesi kolay bir kılavuz. Bu teknik, kullanıcı deneyimini önemli ölçüde iyileştirebilir, belgelerinizi okuyucuyu aynı anda çok fazla metinle boğmadan daha bilgilendirici hale getirebilir. 
+
+Okuyucu, bir kelime veya ifadenin üzerine gelerek, karmaşa yaratmadan değer katan ilgili bilgilere ulaşır. O halde kollarınızı sıvayın ve deneyin! Farkına varmadan, göze çarpan her türden ilgi çekici belgeyi oluşturuyor olabilirsiniz.
 
 ## SSS
 
-#### S: Bu eğitimin odak noktası nedir?
+### Aspose.PDF for .NET nedir?
+Aspose.PDF for .NET, geliştiricilerin .NET uygulamalarında PDF belgeleri oluşturmasına, düzenlemesine ve dönüştürmesine olanak tanıyan bir kütüphanedir.
 
-A: Bu eğitim, .NET için Aspose.PDF kitaplığını kullanarak bir PDF dosyasındaki metne araç ipuçları eklemeye odaklanır. Sağlanan C# kaynak kodu, bunu başarmak için gereken adımları gösterir.
+### Aspose.PDF'yi ücretsiz kullanabilir miyim?
+ Evet, Aspose özelliklerini keşfetmeniz için ücretsiz deneme sürümü sunuyor! Bunu bulabilirsiniz[Burada](https://releases.aspose.com/).
 
-#### S: Bu eğitim için hangi ad alanlarının içe aktarılması gerekiyor?
+### Aspose.PDF için herhangi bir lisanslama seçeneği mevcut mu?
+Evet, bir lisans satın alabilir veya geçici bir lisans edinebilirsiniz. Seçenekleri inceleyin[Burada](https://purchase.aspose.com/).
 
-A: Metne araç ipuçları eklemek istediğiniz kod dosyasında, dosyanın başına aşağıdaki ad alanlarını içe aktarın:
+### Aspose.PDF'i kullanarak araç ipuçları dışında etkileşimli öğeler ekleyebilir miyim?
+Kesinlikle! Aspose.PDF, köprü metinleri, düğmeler ve formlar gibi çeşitli etkileşimli öğelerin eklenmesine olanak tanır.
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Forms;
-using Aspose.Pdf.Text;
-```
-
-#### S: Belge dizinini nasıl belirlerim?
-
- A: Kodda şu satırı bulun:`string dataDir = "YOUR DOCUMENT DIRECTORY";` ve değiştir`"YOUR DOCUMENT DIRECTORY"` belge dizininize giden gerçek yol ile.
-
-#### S: Metin içeren bir örnek belge nasıl oluşturabilirim?
-
- A: 4. Adımda yeni bir tane oluşturacaksınız`Document` nesne ve metin parçalarıyla sayfalar ekleyin. Sağlanan kod, ilgili araç ipucu metniyle iki metin parçası ekler.
-
-#### S: Belgeyi nasıl açabilirim ve metin parçalarını nasıl bulabilirim?
-
- A: 5. Adımda, oluşturulan belgeyi kullanarak yükleyeceksiniz`Document` oluşturucuyu kullanın ve araç ipuçlarını gerektiren metin parçalarını bulun`TextFragmentAbsorber`.
-
-#### S: Metin parçalarına araç ipuçlarını nasıl eklerim?
-
- A: 6. Adımda, çıkarılan metin parçaları arasında dolaşacak ve konumlarında görünmez düğmeler oluşturacaksınız. Araç ipucu metni,`AlternateName` mülkiyeti`ButtonField`Belgenin formuna eklenen.
-
-#### S: Uzun araç ipuçlarına sahip ek metin parçaları için işlemi nasıl tekrarlarım?
-
-A: Uzun araç ipuçlarına sahip metin parçaları için 5. ve 6. Adımları tekrarlayın. Arama kriterlerini ve araç ipucu metnini buna göre değiştirin.
-
-#### S: Değiştirilen belgeyi nasıl kaydedebilirim?
-
- A: 8. Adımda, değiştirilen PDF belgesini kullanarak kaydedeceksiniz`Save` yöntemi`Document` nesne.
-
-#### S: Bu eğitimden çıkarılacak en önemli ders nedir?
-
-A: Bu öğreticiyi takip ederek, Aspose.PDF for .NET kullanarak metne araç ipuçları ekleyerek PDF belgenizi nasıl geliştireceğinizi öğrendiniz. Bu, okuyucular PDF içeriğiyle etkileşime girdiklerinde değerli ek bilgiler sağlayabilir.
+### Aspose.PDF hakkında daha fazla dokümanı nerede bulabilirim?
+ Belgeleri kontrol edebilirsiniz[Burada](https://reference.aspose.com/pdf/net/) Daha detaylı rehberlik için.

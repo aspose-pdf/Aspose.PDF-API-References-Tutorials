@@ -2,107 +2,160 @@
 title: PDF ファイルに隠しテキストを追加して検索する
 linktitle: PDF ファイルに隠しテキストを追加して検索する
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して PDF ファイルに隠しテキストを追加および検索するためのステップバイステップ ガイド。
+description: Aspose.PDF for .NET を使用して PDF ドキュメントに隠しテキストを追加および検索する方法を学びます。コード例を含むステップバイステップ ガイドです。
 type: docs
 weight: 20
 url: /ja/net/programming-with-text/add-and-search-hidden-text/
 ---
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ファイルに隠しテキストを追加および検索する方法について説明します。この操作を簡単に実行するには、次の手順に従ってください。
+## 導入
 
-## 1. 前提条件
+このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ファイルに隠しテキストを追加および検索する方法について、ステップ バイ ステップで説明します。熟練した開発者でも、プログラミング スキルの向上を目指す初心者でも、この記事は、隠しテキスト機能をアプリケーションに組み込むために必要な情報を提供します。
 
-始める前に、次のものがあることを確認してください。
+## 前提条件
 
-- Visual Studio またはその他の開発環境がインストールおよび構成されている。
-- C# プログラミング言語に関する基本的な知識。
-- .NET 用の Aspose.PDF ライブラリがインストールされています。Aspose の公式 Web サイトからダウンロードできます。
+コーディング部分に進む前に、いくつかの前提条件を満たす必要があります。
 
-## 2. 隠しテキストを含むPDF文書の作成
+### 要件チェックリスト
+- Visual Studio: Visual Studio がインストールされていることを確認してください。このチュートリアルでは、.NET Framework を使用していることを前提としています。
+-  Aspose.PDF for .NET: Aspose.PDF for .NETライブラリが必要です。ダウンロードできます。[ここ](https://releases.aspose.com/pdf/net/).
+- C# の基礎知識: C# プログラミングに精通していると、コード スニペットをよりよく理解できるようになります。
 
-まず、次のコードを使用して、隠しテキストを含む新しい PDF ドキュメントを作成します。
+## パッケージのインポート
+
+コードを開始する前に、必要な Aspose.PDF 名前空間をインポートする必要があります。手順は次のとおりです。
+
+### プロジェクトを設定する
+1. Visual Studio を開き、新しい C# プロジェクトを作成するか、既存のプロジェクトを使用します。
+2.  Aspose.PDFをNuGetパッケージを追加してインストールします。NuGetパッケージマネージャーに移動して、以下を検索することで実行できます。`Aspose.PDF`. 
+3. または、ライブラリを直接ダウンロードすることもできます。[ここ](https://releases.aspose.com/pdf/net/)それをプロジェクト内の参照として追加します。
+
+### 必要な名前空間をインポートする
+C# ファイルの先頭で、次の名前空間をインポートします。
 
 ```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-//ドキュメントを作成する
+using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+これらの名前空間には PDF ドキュメントを操作するために必要なクラスとメソッドが含まれているため、この手順は非常に重要です。
+
+## 隠しテキストを含む PDF ドキュメントの作成
+
+設定が完了したら、可視テキストと不可視テキストの両方を含む PDF ドキュメントを作成する手順を実行してみましょう。
+
+### ステップ1: ドキュメントディレクトリを定義する
+まず、PDF を保存するパスを設定します。ここから魔法が始まります。
+
+```csharp
+string dataDir = "YOUR DOCUMENT DIRECTORY"; //これをあなたのディレクトリに変更してください
+```
+
+この行は、生成されたPDFが保存される場所を定義します。`YOUR DOCUMENT DIRECTORY`実際のパスを使用します。
+
+### ステップ2: PDFドキュメントを作成する
+次に、新しい PDF ドキュメントを作成し、それにページを追加してみましょう。
+
+```csharp
 Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
 Page page = doc.Pages.Add();
+```
+
+ここでは、新しいドキュメントを初期化し、テキストフラグメントを配置するページを追加します。
+
+### ステップ3: 表示テキストと非表示テキストを追加する
+ここで、表示可能なテキストと非表示のテキストの両方を PDF に追加します。
+
+```csharp
 TextFragment frag1 = new TextFragment("This is common text.");
 TextFragment frag2 = new TextFragment("This is invisible text.");
-//テキストプロパティを設定 - 非表示
+```
+
+このスニペットでは、`frag1`表示されますが、`frag2`次は非表示に設定されます。
+
+### ステップ4: テキストを非表示にする
+テキストを作成するには`frag2`目に見えない場合は、単に`TextState`.
+
+```csharp
 frag2.TextState.Invisible = true;
+```
+
+このプロパティを設定すると、`frag2` PDF を表示するときにはレンダリングされません。
+
+### ステップ5: ページにテキストフラグメントを追加する
+最後に、これらのテキストフラグメントをページに追加し、PDF を保存します。
+
+```csharp
 page.Paragraphs.Add(frag1);
 page.Paragraphs.Add(frag2);
 doc.Save(dataDir + "39400_out.pdf");
 doc.Dispose();
 ```
 
-PDF ドキュメントの希望するパスとファイル名を必ず指定してください。
+このコード部分は、テキストフラグメントをページに追加します。その後、ドキュメントを適切に保存して破棄します。
 
-## 3. 文書内のテキストを検索する
+## PDF内の隠しテキストの検索
 
-次に、PDF ドキュメント内の隠しテキストを検索します。次のコードを使用します。
+表示テキストと非表示テキストの両方を含む PDF を作成したので、非表示テキストを検索するにはどうすればよいでしょうか。詳しく見ていきましょう。
+
+### ステップ1: PDFドキュメントを読み込む
+PDF 内のテキストを検索するには、まず、作成したドキュメントを読み込む必要があります。
 
 ```csharp
 doc = new Aspose.Pdf.Document(dataDir + "39400_out.pdf");
-TextFragmentAbsorber absorb = new TextFragmentAbsorber();
-absorb.Visit(doc.Pages[1]);
-foreach(TextFragment fragment in absorber.TextFragments)
-{
-//破片を使って何かする
-Console.WriteLine("Text '{0}' at position {1}, invisibility: {2} ",
-fragment.Text, fragment.Position.ToString(), fragment.TextState.Invisible);
-}
-doc.Dispose();
 ```
 
-これにより、PDF ドキュメントの 2 ページ目の隠しテキストが検索され、関連情報が表示されます。
+### ステップ2: テキストフラグメント吸収体を作成する
+私たちは`TextFragmentAbsorber`PDF 内のすべてのテキスト フラグメントをキャプチャします。
 
-### Aspose.PDF for .NET を使用して隠しテキストを追加および検索するためのサンプル ソース コード 
 ```csharp
-//ドキュメント ディレクトリへのパス。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-//隠しテキストを含むドキュメントを作成する
-Aspose.Pdf.Document doc = new Aspose.Pdf.Document();
-Page page = doc.Pages.Add();
-TextFragment frag1 = new TextFragment("This is common text.");
-TextFragment frag2 = new TextFragment("This is invisible text.");
-//テキストプロパティを設定 - 非表示
-frag2.TextState.Invisible = true;
-page.Paragraphs.Add(frag1);
-page.Paragraphs.Add(frag2);
-doc.Save(dataDir + "39400_out.pdf");
-doc.Dispose();
-//文書内のテキストを検索
-doc = new Aspose.Pdf.Document(dataDir + "39400_out.pdf");
 TextFragmentAbsorber absorber = new TextFragmentAbsorber();
 absorber.Visit(doc.Pages[1]);
+```
+
+ここでは、最初のページからすべてのテキストフラグメントを吸収することを指定します。
+
+### ステップ3: フラグメントを反復処理する
+これで、収集されたテキスト フラグメントを反復処理して、どのテキスト フラグメントが表示され、どのテキスト フラグメントが非表示になっているかを確認できます。
+
+```csharp
 foreach (TextFragment fragment in absorber.TextFragments)
 {
-	//フラグメントを使って何かする
-	Console.WriteLine("Text '{0}' on pos {1} invisibility: {2} ",
-	fragment.Text, fragment.Position.ToString(), fragment.TextState.Invisible);
+    Console.WriteLine("Text '{0}' on pos {1} invisibility: {2}",
+        fragment.Text, fragment.Position.ToString(), fragment.TextState.Invisible);
 }
+```
+
+このループは各テキストフラグメントをチェックし、その内容と位置および可視性ステータスを出力します。`fragment.TextState.Invisible` true に設定すると、テキストが非表示になります。
+
+### ステップ4: 文書を処分する
+最後に、作業が終わったら必ず文書を廃棄してください。
+
+```csharp
 doc.Dispose();
 ```
 
 ## 結論
 
-おめでとうございます! Aspose.PDF for .NET を使用して、PDF ドキュメントに隠しテキストを追加し、見つけることができました。この方法を独自のプロジェクトに適用して、PDF ファイル内の隠しテキストを操作および検索することができます。
+このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ファイルに隠しテキストを追加および検索する興味深いプロセスを説明しました。表示テキストと隠しテキストの両方を含む PDF ドキュメントを作成する方法と、隠しテキストをプログラムで検索する方法を学びました。この機能は、機密情報を保存する必要がある場合や、ドキュメント内で独自のユーザー エクスペリエンスを提供する必要があるなど、さまざまなアプリケーションで非常に役立ちます。
 
-### よくある質問
+ASPose.PDF に慣れるにつれて、可能性は無限に広がります。実験を続け、PDF ドキュメントで実現できることの限界を押し広げてください。
 
-#### Q: Aspose.PDF for .NET とは何ですか?
+## よくある質問
 
-A: Aspose.PDF for .NET は、開発者が .NET アプリケーション内で PDF ドキュメントを作成、操作、変換できるようにする強力なライブラリです。
+### Aspose.PDF は暗号化された PDF ファイルを処理できますか?  
+はい、Aspose.PDF は PDF ドキュメントの暗号化と復号化をサポートしています。パスワードを使用して PDF を簡単に保護できます。
 
-#### Q: 隠しテキストを透かしとして使用できますか?
+### Aspose.PDF の試用版はありますか?  
+もちろんです！無料トライアルはこちらからダウンロードできます[ここ](https://releases.aspose.com/).
 
-A: もちろんです! 隠しテキストは PDF ドキュメントに透かしを入れる効果的な手段として機能し、セキュリティをさらに強化します。
+### Aspose.PDF はどのようなプログラミング言語をサポートしていますか?  
+Aspose.PDF は、C#、Java、Python を含む複数の言語をサポートしています。
 
-#### Q: PDF 文書内の隠しテキストを表示することは可能ですか?
+### Aspose.PDF のドキュメントはどこにありますか?  
+ドキュメントにアクセスできます[ここ](https://reference.aspose.com/pdf/net/).
 
-A: はい、PDF ドキュメント内の隠しテキストを検索して表示するプロセスは、このチュートリアルで説明されている手法を使用して実現できます。
-
-#### Q: Aspose.PDF for .NET には他にどのような機能がありますか?
-
-A: 隠しテキストの操作以外にも、Aspose.PDF for .NET は PDF の生成、変換、暗号化など、幅広い機能を提供します。
+### 問題が発生した場合、どうすればサポートを受けることができますか?  
+サポートについては、Asposeフォーラムをご覧ください。[ここ](https://forum.aspose.com/c/pdf/10).

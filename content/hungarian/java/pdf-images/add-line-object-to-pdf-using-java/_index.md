@@ -1,6 +1,6 @@
 ---
-title: Vonalobjektum hozzáadása a PDF-hez Java használatával
-linktitle: Vonalobjektum hozzáadása a PDF-hez Java használatával
+title: Adjon hozzá vonalobjektumot a PDF-hez Java használatával
+linktitle: Adjon hozzá vonalobjektumot a PDF-hez Java használatával
 second_title: Aspose.PDF Java PDF feldolgozó API
 description: Ismerje meg, hogyan adhat hozzá vonalobjektumokat PDF-fájlokhoz Java használatával az Aspose.PDF for Java segítségével. Szabja testre a vonalakat, helyezze el őket, és hozzon létre dinamikus PDF-eket könnyedén.
 type: docs
@@ -115,7 +115,7 @@ Ha több sort szeretne hozzáadni egyetlen oldalhoz, hozzon létre több sorobje
 
 ### Hozzáadhatok ívelt vonalakat egy PDF dokumentumhoz?
 
-Igen, ívelt vonalakat is hozzáadhat a PDF-dokumentumokhoz. Az Aspose.PDF for Java biztosítja a szükséges eszközöket különféle formák, köztük ívelt vonalak létrehozásához. Ezt úgy érheti el, hogy ennek megfelelően módosítja a vonal kezdő- és véghelyzetét.
+Igen, ívelt vonalakat is hozzáadhat egy PDF-dokumentumhoz. Az Aspose.PDF for Java biztosítja a szükséges eszközöket különféle formák, köztük ívelt vonalak létrehozásához. Ezt úgy érheti el, hogy ennek megfelelően módosítja a vonal kezdő- és véghelyzetét.
 
 ### Hol találhatok további információt az Aspose.PDF for Java fájlról?
 

@@ -61,7 +61,7 @@ Ezután hozzáadunk egy új oldalt a PDF dokumentumhoz, ahol később alkalmazzu
 Magyarázat: Minden PDF-hez oldalakra van szükség! Ez a lépés egy üres oldalt ad a PDF-hez, és beállítja a margókat a dokumentumszintű beállításoknak megfelelően.
 
 ```csharp
-// Új oldal hozzáadása a PDF-dokumentumhoz
+// Új oldal hozzáadása a PDF dokumentumhoz
 Aspose.Pdf.Page pdfPage = pdfDoc.Pages.Add();
 pdfPage.PageInfo.Width = 612.0;
 pdfPage.PageInfo.Height = 792.0;

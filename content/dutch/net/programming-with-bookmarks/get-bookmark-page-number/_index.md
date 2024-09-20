@@ -2,7 +2,7 @@
 title: Bladwijzerpaginanummer in PDF-bestand ophalen
 linktitle: Bladwijzerpaginanummer in PDF-bestand ophalen
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer in deze uitgebreide tutorial hoe u bladwijzerpaginanummers uit PDF-bestanden kunt extraheren met Aspose.PDF voor .NET.
+description: Leer in deze uitgebreide tutorial hoe u bladwijzerpaginanummers uit PDF-bestanden kunt halen met Aspose.PDF voor .NET.
 type: docs
 weight: 60
 url: /nl/net/programming-with-bookmarks/get-bookmark-page-number/

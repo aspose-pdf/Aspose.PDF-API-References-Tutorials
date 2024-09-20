@@ -2,192 +2,154 @@
 title: Tekstrand toevoegen in PDF-bestand
 linktitle: Tekstrand toevoegen in PDF-bestand
 second_title: Aspose.PDF voor .NET API-referentie
-description: Leer hoe u een tekstrand toevoegt aan een PDF-bestand met Aspose.PDF voor .NET.
+description: Leer hoe u een tekstrand toevoegt aan een PDF-bestand met Aspose.PDF voor .NET met deze stapsgewijze handleiding. Verbeter uw PDF-documenten.
 type: docs
 weight: 70
 url: /nl/net/programming-with-text/add-text-border/
 ---
-Deze tutorial begeleidt u door het proces van het toevoegen van een tekstrand in een PDF-bestand met behulp van Aspose.PDF voor .NET. De meegeleverde C#-broncode demonstreert de benodigde stappen.
+## Invoering
+
+Het maken en bewerken van PDF-documenten is een essentiële vaardigheid geworden in de digitale wereld van vandaag. Of u nu rapporten, facturen of een ander type documentatie genereert, controle hebben over hoe uw tekst eruitziet, kan een groot verschil maken. Een dergelijke verbetering die u wellicht wilt implementeren, is het toevoegen van een rand rond uw tekst in een PDF-bestand. In deze handleiding leiden we u door de stappen om een tekstrand toe te voegen aan een PDF-bestand met behulp van de Aspose.PDF-bibliotheek voor .NET. Laten we er meteen induiken!
 
 ## Vereisten
-Voordat u begint, moet u ervoor zorgen dat u over het volgende beschikt:
 
-- Visual Studio of een andere C#-compiler die op uw computer is geïnstalleerd.
-- Aspose.PDF voor .NET-bibliotheek. U kunt het downloaden van de officiële Aspose-website of een pakketbeheerder zoals NuGet gebruiken om het te installeren.
+Voordat we beginnen, zijn er een paar dingen die je op orde moet hebben. Maak je geen zorgen, het is vrij eenvoudig!
 
-## Stap 1: Het project opzetten
-1. Maak een nieuw C#-project in uw favoriete ontwikkelomgeving.
-2. Voeg een verwijzing toe naar de Aspose.PDF voor .NET-bibliotheek.
+1. Visual Studio: Zorg ervoor dat Visual Studio op uw machine is geïnstalleerd. Dit is uw ontwikkelomgeving waar u uw code schrijft en uitvoert.
+2.  Aspose.PDF voor .NET: U moet de Aspose.PDF-bibliotheek downloaden en installeren. U kunt deze verkrijgen via de[Aspose PDF voor .NET downloadpagina](https://releases.aspose.com/pdf/net/) . Als je het eerst wilt uitproberen, kun je ook een[gratis proefperiode hier](https://releases.aspose.com/).
+3. Basiskennis van C#: Een basiskennis van de programmeertaal C# helpt u de voorbeelden gemakkelijk te volgen.
+4. .NET Framework: Zorg ervoor dat u .NET Framework hebt geïnstalleerd en ingesteld in uw project.
 
-## Stap 2: Importeer de vereiste naamruimten
-Voeg in het codebestand waar u de tekstrand wilt toevoegen de volgende richtlijn toe boven aan het bestand:
+Zodra u aan deze vereisten voldoet, bent u klaar om te beginnen met coderen!
+
+## Pakketten importeren
+
+Nu we alles hebben ingesteld, importeren we de benodigde pakketten om Aspose.PDF in ons project te gebruiken. U kunt dit doen door de volgende using directives boven aan uw C#-bestand toe te voegen:
 
 ```csharp
-using Aspose.Pdf;
 using Aspose.Pdf.Text;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
 ```
 
-## Stap 3: Stel de documentdirectory in
- Zoek in de code de regel met de tekst`string dataDir = "YOUR DOCUMENT DIRECTORY";` en vervangen`"YOUR DOCUMENT DIRECTORY"` met het pad naar de map waar uw documenten zijn opgeslagen.
+Dankzij deze naamruimten kunt u effectief met PDF-documenten en tekstfragmenten werken. 
 
-## Stap 4: Een nieuw Document-object maken
- Een nieuwe instantiëren`Document` object door de volgende regel code toe te voegen:
+Laten we nu het proces van het toevoegen van een tekstrand opsplitsen in gedetailleerde stappen. We zullen elke stap doorlopen, zodat u precies begrijpt wat er onder de motorkap gebeurt.
 
-```csharp
-Document pdfDocument = new Document();
-```
+## Stap 1: Het document instellen
 
-## Stap 5: Voeg een pagina toe aan het document
- Voeg een nieuwe pagina toe aan het document met behulp van de`Add` methode van de`Pages` verzameling. In de meegeleverde code wordt de nieuwe pagina toegewezen aan de variabele`pdfPage`.
+Het eerste wat we moeten doen, is een nieuw PDF-document maken. Dit is waar al onze magie zal gebeuren.
 
-```csharp
-Page pdfPage = (Page)pdfDocument.Pages.Add();
-```
-
-## Stap 6: Maak een tekstfragment
- Maak een`TextFragment`object en geef de gewenste tekst op. Stel de positie van het tekstfragment in met behulp van de`Position` eigenschap. In de meegeleverde code is de tekst ingesteld op "hoofdtekst" en gepositioneerd op (100, 600) op de pagina.
-
-```csharp
-TextFragment textFragment = new TextFragment("main text");
-textFragment.Position = new Position(100, 600);
-```
-
-## Stap 7: Teksteigenschappen instellen
-Pas de teksteigenschappen aan, zoals lettergrootte, lettertype, achtergrondkleur, voorgrondkleur, enz. In de meegeleverde code worden eigenschappen zoals lettergrootte, lettertype, achtergrondkleur, voorgrondkleur en omlijningskleur ingesteld voor het tekstfragment.
-
-```csharp
-textFragment.TextState.FontSize = 12;
-textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
-```
-
-## Stap 8: Tekstrand inschakelen
- Om de tekstrand in te schakelen, stelt u de`DrawTextRectangleBorder` eigenschap van het tekstfragment`TextState` naar`true`.
-
-```csharp
-textFragment.TextState.DrawTextRectangleBorder = true;
-```
-
-## Stap 9: Voeg het TextFragment toe aan de pagina
- Gebruik de`TextBuilder` klasse om toe te voegen`TextFragment` bezwaar tegen de pagina.
-
-```csharp
-TextBuilder tb = new TextBuilder(pdfPage);
-tb.AppendText(textFragment);
-```
-
-## Stap 10: Sla het PDF-document op
- Sla het PDF-document op met behulp van de`Save` methode van de`Document` object. Geef het pad op naar het uitvoerbestand dat u in stap 3 hebt ingesteld.
-
-```csharp
-pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
-```
-
-### Voorbeeldbroncode voor Tekstrand toevoegen met Aspose.PDF voor .NET 
 ```csharp
 // Het pad naar de documentenmap.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Nieuw documentobject maken
 Document pdfDocument = new Document();
+```
+
+ In deze stap specificeren we de directory waar we ons PDF-bestand willen opslaan. Vervolgens maken we een nieuw exemplaar van de`Document` klasse, die ons PDF-document vertegenwoordigt.
+
+## Stap 2: Een nieuwe pagina toevoegen
+
+Vervolgens moeten we een pagina toevoegen aan ons document. Zie dit als het toevoegen van een leeg canvas waar we onze tekst plaatsen.
+
+```csharp
 // Specifieke pagina ophalen
 Page pdfPage = (Page)pdfDocument.Pages.Add();
+```
+
+ Hier noemen we de`Add()` methode op de`Pages` verzameling van onze`pdfDocument` object. Dit voegt een nieuwe pagina toe aan het document en we slaan een verwijzing ernaar op in de`pdfPage` variabel.
+
+## Stap 3: Maak een tekstfragment
+
+Laten we nu de tekst maken die we in onze PDF willen weergeven. Hier definiëren we de inhoud van ons tekstfragment.
+
+```csharp
 // Tekstfragment maken
 TextFragment textFragment = new TextFragment("main text");
 textFragment.Position = new Position(100, 600);
+```
+
+ In deze code maken we een nieuwe`TextFragment` object met de tekst "hoofdtekst". We stellen ook de positie ervan op de pagina in met behulp van de`Position` klasse. De coördinaten (100, 600) geven aan waar de tekst op de pagina wordt geplaatst.
+
+## Stap 4: Teksteigenschappen instellen
+
+Vervolgens passen we ons tekstfragment aan om het visueel aantrekkelijk te maken. Dit omvat het instellen van de lettergrootte, het lettertype, de achtergrondkleur en de voorgrondkleur.
+
+```csharp
 // Teksteigenschappen instellen
 textFragment.TextState.FontSize = 12;
 textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
+```
+
+Hier stellen we de lettergrootte in op 12, gebruiken we "Times New Roman" als lettertype en passen we een lichtgrijze achtergrondkleur toe met rode tekst. Deze eigenschappen helpen de zichtbaarheid van de tekst te verbeteren.
+
+## Stap 5: Stel de omlijningskleur voor de rand in
+
+Nu komen we bij het spannende gedeelte: een rand toevoegen rond onze tekst!
+
+```csharp
 // Stel de eigenschap StrokingColor in voor het tekenen van een rand (omlijning) rond een tekstrechthoek
 textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
+```
+
+In deze stap specificeren we de kleur van de rand die we rond onze tekst willen tekenen. Hier hebben we een donkerrode kleur gekozen.
+
+## Stap 6: Schakel de tekstrechthoekrand in
+
+ Om daadwerkelijk de rand rond onze tekst te tekenen, moeten we de`DrawTextRectangleBorder` eigendom.
+
+```csharp
 // Stel de eigenschapswaarde DrawTextRectangleBorder in op true
 textFragment.TextState.DrawTextRectangleBorder = true;
+```
+
+ Door deze eigenschap in te stellen op`true`, vertellen we Aspose.PDF om de rand rond het tekstrechthoek te tekenen op basis van de opgegeven kleur voor de omlijning.
+
+## Stap 7: Voeg het tekstfragment toe aan de pagina
+
+Nu het tekstfragment klaar is en alle eigenschappen zijn ingesteld, is het tijd om het aan de pagina toe te voegen.
+
+```csharp
 TextBuilder tb = new TextBuilder(pdfPage);
 tb.AppendText(textFragment);
+```
+
+ Hier creëren we een`TextBuilder` object dat geassocieerd wordt met onze`pdfPage` . Vervolgens gebruiken we de`AppendText` methode om onze toe te voegen`textFragment` naar de pagina. 
+
+## Stap 8: Sla het document op
+
+Ten slotte moeten we ons PDF-document opslaan in de opgegeven directory. Dit is het moment van de waarheid!
+
+```csharp
 // Sla het document op
 pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
 ```
 
+In deze stap noemen we de`Save` methode op onze`pdfDocument` object, met het pad waar we het bestand willen opslaan. Zodra u de code uitvoert, zou u uw nieuw gemaakte PDF met de tekstrand in de opgegeven directory moeten vinden!
+
 ## Conclusie
-hebt met succes een tekstrand toegevoegd aan uw PDF-document met Aspose.PDF voor .NET. Het resulterende PDF-bestand is nu te vinden op het opgegeven pad naar het uitvoerbestand.
 
-### Veelgestelde vragen
+En daar heb je het! Je hebt succesvol een tekstrand toegevoegd aan een PDF-bestand met Aspose.PDF voor .NET. Deze eenvoudige maar krachtige functie kan de leesbaarheid en esthetiek van je PDF-documenten aanzienlijk verbeteren. Of je nu rapporten, brochures of een ander type documentatie maakt, het kan handig zijn om te weten hoe je tekstopmaak kunt manipuleren.
 
-#### V: Waarop richt deze tutorial zich vooral?
+## Veelgestelde vragen
 
-A: Deze tutorial begeleidt u door het proces van het toevoegen van een tekstrand aan een PDF-bestand met behulp van de Aspose.PDF voor .NET-bibliotheek. De meegeleverde C#-broncode demonstreert de benodigde stappen om dit te bereiken.
+### Wat is Aspose.PDF voor .NET?
+Aspose.PDF voor .NET is een krachtige bibliotheek waarmee ontwikkelaars PDF-documenten programmatisch kunnen maken, bewerken en verwerken met behulp van het .NET Framework.
 
-#### V: Welke naamruimten moet ik importeren voor deze tutorial?
+### Kan ik Aspose.PDF gratis uitproberen?
+ Ja! Aspose biedt een[gratis proefperiode](https://releases.aspose.com/) van hun PDF-bibliotheek, zodat u de functies ervan kunt testen voordat u tot aankoop overgaat.
 
-A: Importeer de volgende naamruimten aan het begin van het bestand in het codebestand waar u de tekstrand wilt toevoegen:
+### Hoe kan ik Aspose.PDF voor .NET kopen?
+ U kunt Aspose.PDF voor .NET rechtstreeks bij hen kopen[aankooppagina](https://purchase.aspose.com/buy).
 
-```csharp
-using Aspose.Pdf;
-using Aspose.Pdf.Text;
-```
+### Is er ondersteuning beschikbaar voor Aspose.PDF?
+ Absoluut! U kunt ondersteuning krijgen door de[Aspose ondersteuningsforum](https://forum.aspose.com/c/pdf/10).
 
-#### V: Hoe geef ik de documentenmap op?
-
- A: Zoek in de code de regel`string dataDir = "YOUR DOCUMENT DIRECTORY";` en vervangen`"YOUR DOCUMENT DIRECTORY"` met het daadwerkelijke pad naar uw documentenmap.
-
-#### V: Hoe maak ik een Document-object?
-
- A: In stap 4 maakt u een nieuwe`Document` object met behulp van de volgende regel code:
-
-```csharp
-Document pdfDocument = new Document();
-```
-
-#### V: Hoe voeg ik een pagina toe aan het document?
-
- A: In stap 5 voegt u een nieuwe pagina toe aan het document met behulp van de`Add` methode van de`Pages` verzameling:
-
-```csharp
-Page pdfPage = (Page)pdfDocument.Pages.Add();
-```
-
-#### V: Hoe maak ik een TextFragment en stel ik de positie ervan in?
-
- A: In stap 6 maak je een`TextFragment` object en stel de positie ervan op de pagina in met behulp van de`Position` eigendom:
-
-```csharp
-TextFragment textFragment = new TextFragment("main text");
-textFragment.Position = new Position(100, 600);
-```
-
-#### V: Hoe kan ik de teksteigenschappen, inclusief de tekstrand, aanpassen?
-
-A: In stap 7 past u verschillende teksteigenschappen aan, zoals de lettergrootte, het lettertype, de achtergrondkleur, de voorgrondkleur en de tekstrand:
-
-```csharp
-textFragment.TextState.FontSize = 12;
-textFragment.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-textFragment.TextState.ForegroundColor = Aspose.Pdf.Color.Red;
-textFragment.TextState.StrokingColor = Aspose.Pdf.Color.DarkRed;
-textFragment.TextState.DrawTextRectangleBorder = true;
-```
-
-#### V: Hoe voeg ik een TextFragment toe aan het PDF-document?
-
- A: In stap 9 gebruikt u de`TextBuilder` klasse om toe te voegen`TextFragment` object op de pagina:
-
-```csharp
-TextBuilder tb = new TextBuilder(pdfPage);
-tb.AppendText(textFragment);
-```
-
-#### V: Hoe kan ik het resulterende PDF-document opslaan?
-
-A: Nadat u de tekst met een rand hebt toegevoegd, gebruikt u de`Save` methode van de`Document` object om het PDF-document op te slaan:
-
-```csharp
-pdfDocument.Save(dataDir + "PDFWithTextBorder_out.pdf");
-```
-
-#### V: Wat is de belangrijkste les die je uit deze tutorial hebt geleerd?
-
-A: Door deze tutorial te volgen, hebt u succesvol geleerd hoe u uw PDF-document kunt verbeteren door een tekstrand toe te voegen met behulp van Aspose.PDF voor .NET. Dit kan met name handig zijn om specifieke tekstinhoud in uw PDF-bestanden te benadrukken.
+### Wat als ik een tijdelijk rijbewijs nodig heb?
+ Aspose biedt een[tijdelijke licentie](https://purchase.aspose.com/temporary-license/) Optie voor ontwikkelaars die de bibliotheek voor een beperkte tijd moeten evalueren.

@@ -13,7 +13,7 @@ url: /zh-hant/net/programming-with-pdf-pages/determine-page-color/
 
 ## 先決條件
 
-在我們深入討論細節之前，讓我們確保您擁有開始所需的一切：
+在我們開始討論細節之前，讓我們確保您擁有開始所需的一切：
 
 1. .NET Framework：本指南假設您使用 .NET Framework，請確保已安裝它。
 2.  Aspose.PDF for .NET：您需要 Aspose.PDF for .NET 函式庫。如果您還沒有下載，您可以獲取[這裡](https://releases.aspose.com/pdf/net/).

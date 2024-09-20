@@ -61,7 +61,7 @@ Document pdfDocument = new Document(dataDir + "SetXMPMetadata.pdf");
 
 Đây chính là nơi phép thuật xảy ra! Bây giờ chúng ta đã tải xong tài liệu PDF, chúng ta có thể thiết lập các thuộc tính siêu dữ liệu như ngày tạo, biệt danh hoặc bất kỳ thuộc tính tùy chỉnh nào bạn muốn.
 
-Hãy nghĩ về bước này như việc điền vào phần "About Me" trong hồ sơ của bạn. Đây là nơi bạn thêm ngày tạo, biệt danh hoặc bất kỳ chi tiết nào khác mà bạn muốn nhúng vào tệp PDF.
+Hãy nghĩ đến bước này như việc điền vào phần "About Me" trong hồ sơ của bạn. Đây là nơi bạn thêm ngày tạo, biệt danh hoặc bất kỳ thông tin chi tiết nào khác mà bạn muốn nhúng vào tệp PDF.
 
 ```csharp
 pdfDocument.Metadata["xmp:CreateDate"] = DateTime.Now;

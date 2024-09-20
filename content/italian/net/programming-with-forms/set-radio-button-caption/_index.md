@@ -9,7 +9,7 @@ url: /it/net/programming-with-forms/set-radio-button-caption/
 ---
 ## Introduzione
 
-Se ti stai tuffando nella manipolazione PDF con Aspose.PDF per .NET, ti aspetta una sorpresa! Oggi ci concentreremo su una funzionalità pratica: l'impostazione delle didascalie dei pulsanti di scelta nei tuoi moduli PDF. I pulsanti di scelta sono essenziali per i moduli utente in cui è necessario scegliere tra una serie di opzioni. Immaginali come domande a scelta multipla in cui è consentita una sola risposta. Questo tutorial ti guiderà attraverso il processo di aggiornamento delle didascalie dei pulsanti di scelta in un modulo PDF, in modo che i tuoi documenti siano sia interattivi che intuitivi. 
+Se ti stai tuffando nella manipolazione di PDF con Aspose.PDF per .NET, ti aspetta una sorpresa! Oggi ci concentreremo su una funzionalità pratica: l'impostazione di didascalie dei pulsanti di scelta nei tuoi moduli PDF. I pulsanti di scelta sono essenziali per i moduli utente in cui è necessario scegliere tra una serie di opzioni. Immaginali come domande a scelta multipla in cui è consentita una sola risposta. Questo tutorial ti guiderà attraverso il processo di aggiornamento delle didascalie dei pulsanti di scelta in un modulo PDF, in modo che i tuoi documenti siano sia interattivi che intuitivi. 
 
 ## Prerequisiti
 

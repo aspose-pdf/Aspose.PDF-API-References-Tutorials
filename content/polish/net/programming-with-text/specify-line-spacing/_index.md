@@ -2,186 +2,147 @@
 title: Określ odstęp między wierszami w pliku PDF
 linktitle: Określ odstęp między wierszami w pliku PDF
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak określić odstępy między wierszami w pliku PDF za pomocą Aspose.PDF dla platformy .NET.
+description: Dowiedz się, jak określić odstępy między wierszami w pliku PDF za pomocą Aspose.PDF dla .NET dzięki temu przewodnikowi krok po kroku. Idealne dla programistów poszukujących precyzyjnego formatowania tekstu.
 type: docs
 weight: 510
 url: /pl/net/programming-with-text/specify-line-spacing/
 ---
-Ten samouczek wyjaśnia, jak określić odstęp między wierszami w pliku PDF za pomocą Aspose.PDF dla .NET. Dostarczony kod źródłowy C# demonstruje ten proces krok po kroku.
+## Wstęp
+
+Czy kiedykolwiek miałeś problem z kontrolowaniem odstępu między wierszami w pliku PDF? Być może miałeś tekst, który wyglądał na zbyt ściśnięty lub po prostu nie wyglądał tak dopracowany, jak byś chciał. W tym samouczku pokażemy, jak łatwo określić odstęp między wierszami w pliku PDF za pomocą Aspose.PDF dla .NET. Użyjemy prostego przewodnika krok po kroku, aby przejść z pustego pliku PDF do takiego, który zawiera niestandardowy odstęp między wierszami. Jest to idealne rozwiązanie, jeśli potrzebujesz precyzji w układzie tekstu w dokumentach, takich jak raporty, faktury lub certyfikaty.
 
 ## Wymagania wstępne
 
-Przed przystąpieniem do samouczka upewnij się, że posiadasz następujące elementy:
+Zanim przejdziemy do kodu, upewnijmy się, że masz wszystko, czego potrzebujesz:
 
-- Podstawowa znajomość języka programowania C#.
-- Aspose.PDF dla biblioteki .NET jest zainstalowany. Możesz go pobrać ze strony internetowej Aspose lub użyć NuGet, aby zainstalować go w swoim projekcie.
+1.  Aspose.PDF dla .NET zainstalowany. Jeśli go nie masz, pobierz go z[Strona pobierania Aspose.PDF](https://releases.aspose.com/pdf/net/).
+2. Środowisko programistyczne .NET (takie jak Visual Studio).
+3. Plik czcionki TrueType (`.ttf` ) którego użyjemy w przykładzie. Możesz użyć dowolnej czcionki, ale w tym przewodniku użyjemy`HPSimplified.TTF` chrzcielnica.
+4. Podstawowa znajomość języka C# i obsługi plików PDF.
 
-## Krok 1: Skonfiguruj projekt
+Jeśli jesteś gotowy, przejdźmy do importowania niezbędnych pakietów.
 
-Zacznij od utworzenia nowego projektu C# w preferowanym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla platformy .NET.
+## Importuj pakiety
 
-## Krok 2: Importuj niezbędne przestrzenie nazw
-
-Dodaj następujące dyrektywy using na początku pliku C#, aby zaimportować wymagane przestrzenie nazw:
+swoim projekcie C# musisz zaimportować przestrzenie nazw Aspose.PDF, aby pracować z funkcjonalnościami PDF. Oto, jak to zrobić:
 
 ```csharp
-using Aspose.Pdf;
 using Aspose.Pdf.Text;
 using System.IO;
 ```
 
-## Krok 3: Ustaw ścieżkę do katalogu dokumentu
+Te przestrzenie nazw umożliwiają tworzenie i modyfikowanie dokumentów PDF, a także pracę z formatowaniem tekstu i opcjami czcionek.
 
- Ustaw ścieżkę do katalogu dokumentów za pomocą`dataDir` zmienny:
+Podzielimy to na małe kroki, abyś mógł je łatwo śledzić. Każdy krok będzie koncentrował się na kluczowej części procesu, od konfiguracji pliku PDF po określenie odstępu między wierszami.
+
+## Krok 1: Skonfiguruj swój projekt i zdefiniuj katalog dokumentów
+
+Pierwszą rzeczą, którą musimy zrobić, jest zdefiniowanie, gdzie znajdują się nasze pliki. Pomaga to programowi wiedzieć, gdzie znaleźć czcionkę i gdzie zapisać wynikowy plik PDF.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+string fontFile = dataDir + "HPSimplified.TTF";
 ```
 
- Zastępować`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do katalogu dokumentów.
+ W tym kroku zastąpisz`"YOUR DOCUMENT DIRECTORY"` z rzeczywistą ścieżką do miejsca, w którym przechowujesz swoje pliki. To będzie miejsce, w którym umieścisz swój plik czcionki (`HPSimplified.TTF`) i gdzie plik PDF zostanie zapisany.
 
-## Krok 4: Załaduj plik wejściowy PDF
+## Krok 2: Załaduj dokument PDF
 
- Załaduj plik PDF wejściowy za pomocą`Document` klasa:
+Teraz musimy utworzyć nowy dokument PDF. W tym przewodniku zaczniemy od pustego dokumentu, ale możesz również załadować istniejący plik PDF, jeśli będzie to konieczne.
 
 ```csharp
 Document doc = new Document();
 ```
 
-## Krok 5: Utwórz opcje formatowania tekstu
+Tworzy nowy, pusty dokument PDF. Łatwe, prawda?
 
- Utwórz`TextFormattingOptions` obiekt i ustaw tryb odstępu między wierszami na`FullSize`:
+## Krok 3: Ustaw opcje formatowania tekstu
+
+ Tutaj dzieje się magia. Określimy tryb odstępu między wierszami dla tekstu, który chcemy dodać do pliku PDF. Aspose.PDF daje nam kilka opcji, ale w tym przewodniku użyjemy`LineSpacingMode.FullSize`, co gwarantuje pełne zachowanie odstępów między wierszami.
 
 ```csharp
 TextFormattingOptions formattingOptions = new TextFormattingOptions();
 formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
 ```
 
-## Krok 6: Utwórz fragment tekstu
+ Ten kod ustawia tryb odstępu między wierszami na`FullSize` , zapewniając, że tekst będzie wyświetlany z odpowiednim odstępem. Istnieją inne opcje, takie jak`Proportional` jeśli chcesz innego zachowania odstępu, ale na razie trzymajmy się tego`FullSize`.
 
- Utwórz`TextFragment` obiekt i określ zawartość tekstową:
+## Krok 4: Utwórz fragment tekstu
+
+Teraz utworzymy rzeczywisty tekst, który zostanie umieszczony w pliku PDF. Ten tekst będzie respektował odstępy między wierszami, które zdefiniowaliśmy.
 
 ```csharp
 TextFragment textFragment = new TextFragment("Hello world");
 ```
 
-## Krok 7: Załaduj plik czcionki (opcjonalnie)
+ Stworzyliśmy fragment tekstu z ciągiem znaków`"Hello world"`. Oczywiście możesz dostosować ten tekst do swoich upodobań.
 
- Jeśli chcesz użyć konkretnej czcionki dla tekstu, załaduj plik czcionki TrueType do`FileStream` obiekt:
+## Krok 5: Załaduj i zastosuj niestandardową czcionkę
+
+Aby tekst się wyróżniał, załadujemy niestandardową czcionkę TrueType z pliku. Ten krok jest opcjonalny, ale może dodać profesjonalny akcent do Twoich plików PDF.
 
 ```csharp
-string fontFile = dataDir + "HPSimplified.TTF";
-using (FileStream fontStream = File.OpenRead(fontFile))
+if (fontFile != "")
 {
-    textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-}
+    using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
+    {
+        textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
 ```
 
- Zastępować`"HPSimplified.TTF"` z rzeczywistą nazwą pliku czcionki.
+Tutaj ładujemy plik czcionki i stosujemy go do fragmentu tekstu. Jeśli ścieżka pliku jest prawidłowa, czcionka jest używana. W przeciwnym razie stosowana jest domyślna czcionka.
 
-## Krok 8: Określ położenie tekstu i odstęp między wierszami
+## Krok 6: Ustaw pozycję i formatowanie tekstu
 
- Ustaw pozycję fragmentu tekstu i przypisz`TextFormattingOptions` do`TextState.FormattingOptions` nieruchomość:
+Następnie musimy umieścić tekst w pliku PDF. Zastosujemy również wcześniej utworzone opcje formatowania.
 
 ```csharp
 textFragment.Position = new Position(100, 600);
 textFragment.TextState.FormattingOptions = formattingOptions;
 ```
 
-## Krok 9: Dodaj tekst do dokumentu
+ Ten`Position` Metoda ustawia współrzędne, w których tekst pojawi się na stronie (w tym przypadku 100 jednostek od lewej i 600 jednostek od dołu). Opcje formatowania, w tym tryb odstępu między wierszami, są tutaj stosowane.
 
- Dodaj fragment tekstu do dokumentu, dołączając go do`TextBuilder` lub bezpośrednio do strony`Paragraphs` kolekcja:
+## Krok 7: Dodaj tekst do strony PDF
+
+Teraz, gdy tekst jest sformatowany i umieszczony w odpowiednim miejscu, czas dodać go do dokumentu PDF.
 
 ```csharp
 var page = doc.Pages.Add();
 page.Paragraphs.Add(textFragment);
 ```
 
-## Krok 10: Zapisz powstały dokument PDF
+Ten kod tworzy nową stronę w dokumencie PDF i dodaje do niej fragment tekstu.
 
-Zapisz zmodyfikowany dokument PDF:
+## Krok 8: Zapisz plik PDF
+
+Dotarliśmy do ostatniego kroku! Teraz, gdy wszystko jest skonfigurowane, zapiszmy plik PDF.
 
 ```csharp
 dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
 doc.Save(dataDir);
 ```
 
- Pamiętaj o wymianie`"SpecifyLineSpacing_out.pdf"` z żądaną nazwą pliku wyjściowego.
-
-### Przykładowy kod źródłowy dla funkcji Określ odstęp między wierszami za pomocą Aspose.PDF dla .NET 
-```csharp
-// Ścieżka do katalogu dokumentów.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-string fontFile = dataDir + "HPSimplified.TTF";
-// Załaduj plik wejściowy PDF
-Document doc = new Document();
-//Utwórz opcje formatowania tekstu z LineSpacingMode.FullSize
-TextFormattingOptions formattingOptions = new TextFormattingOptions();
-formattingOptions.LineSpacing = TextFormattingOptions.LineSpacingMode.FullSize;
-// Utwórz obiekt konstruktora tekstu dla pierwszej strony dokumentu
-//TextBuilder textBuilder = nowy TextBuilder(doc.Pages[1]);
-// Utwórz fragment tekstu z przykładowym ciągiem znaków
-TextFragment textFragment = new TextFragment("Hello world");
-if (fontFile != "")
-{
-	//Załaduj czcionkę TrueType do obiektu strumieniowego
-	using (FileStream fontStream = System.IO.File.OpenRead(fontFile))
-	{
-		// Ustaw nazwę czcionki dla ciągu tekstowego
-		textFragment.TextState.Font = FontRepository.OpenFont(fontStream, FontTypes.TTF);
-		// Określ pozycję dla fragmentu tekstu
-		textFragment.Position = new Position(100, 600);
-		//Ustaw opcję TextFormattingOptions bieżącego fragmentu na wstępnie zdefiniowaną (co wskazuje na LineSpacingMode.FullSize)
-		textFragment.TextState.FormattingOptions = formattingOptions;
-		// Dodaj tekst do TextBuildera, aby można go było umieścić nad plikiem PDF
-		//textBuilder.AppendText(tekstFragment);
-		var page = doc.Pages.Add();
-		page.Paragraphs.Add(textFragment);
-	}
-	dataDir = dataDir + "SpecifyLineSpacing_out.pdf";
-	// Zapisz wynikowy dokument PDF
-	doc.Save(dataDir);
-}
-```
+Plik PDF zostanie zapisany z określonym odstępem między wierszami, a Ty będziesz gotowy!
 
 ## Wniosek
 
-Gratulacje! Udało Ci się nauczyć, jak określić odstęp między wierszami w dokumencie PDF za pomocą Aspose.PDF dla .NET. Ten samouczek zawiera przewodnik krok po kroku, od konfiguracji projektu do zapisania zmodyfikowanego dokumentu. Teraz możesz włączyć ten kod do własnych projektów C#, aby dostosować odstępy między wierszami tekstu w plikach PDF.
+I to wszystko! Właśnie utworzyłeś dokument PDF z niestandardowym odstępem między wierszami za pomocą Aspose.PDF dla .NET. To potężne narzędzie, które pozwala kontrolować każdy aspekt plików PDF, a to tylko jeden przykład tego, co możesz osiągnąć. Od rozmieszczenia tekstu po formatowanie, możliwości są nieograniczone.
 
-### Najczęściej zadawane pytania
+Jeśli chcesz zgłębić manipulację PDF-ami, Aspose.PDF oferuje bogactwo funkcji do odkrycia. Nie wahaj się eksperymentować i przesuwać granic tego, co możesz zrobić ze swoimi dokumentami!
 
-#### P: Jaki jest cel poradnika „Określ odstępy między wierszami w pliku PDF”?
+## Najczęściej zadawane pytania
 
-A: Samouczek „Określ odstępy między wierszami w pliku PDF” ma na celu poprowadzenie użytkowników przez sposób korzystania z biblioteki Aspose.PDF dla .NET w celu dostosowania odstępów między wierszami tekstu w dokumencie PDF. Samouczek zawiera instrukcje krok po kroku i przykłady kodu C#, aby zademonstrować ten proces.
+### Czy mogę dostosować odstępy między wierszami do innych trybów?  
+ Tak, możesz używać innych trybów, takich jak`Proportional` Lub`Fixed` w zależności od Twoich potrzeb.
 
-#### P: W jaki sposób ten samouczek jest pomocny w określaniu odstępu między wierszami w dokumencie PDF?
+### Czy istnieje możliwość ładowania czcionek z systemu zamiast z pliku?  
+ Tak, możesz załadować czcionki zainstalowane w systemie za pomocą`FontRepository`.
 
-A: Ten samouczek pomaga użytkownikom zrozumieć, jak wykorzystać możliwości Aspose.PDF dla .NET do określania odstępu między wierszami dla tekstu w dokumencie PDF. Postępując zgodnie z podanymi krokami i przykładami kodu, użytkownicy mogą dostosować odstępy między wierszami zgodnie ze swoimi preferencjami.
+### Czy mogę używać Aspose.PDF dla .NET z innymi formatami plików?  
+Oczywiście! Aspose.PDF dla .NET obsługuje wiele formatów, takich jak XML, HTML i inne.
 
-#### P: Jakie warunki wstępne muszę spełnić, aby móc skorzystać z tego samouczka?
+### Czy potrzebuję licencji, aby używać Aspose.PDF na platformie .NET?  
+Tak, aby korzystać z pełnej funkcjonalności, potrzebna jest licencja, którą można uzyskać[Tutaj](https://purchase.aspose.com/buy).
 
-A: Przed rozpoczęciem samouczka powinieneś mieć podstawową wiedzę na temat języka programowania C#. Ponadto musisz mieć zainstalowaną bibliotekę Aspose.PDF dla .NET. Możesz ją pobrać ze strony internetowej Aspose lub zainstalować w swoim projekcie za pomocą NuGet.
-
-#### P: Jak skonfigurować projekt, aby móc skorzystać z tego samouczka?
-
-A: Aby rozpocząć, utwórz nowy projekt C# w preferowanym zintegrowanym środowisku programistycznym (IDE) i dodaj odwołanie do biblioteki Aspose.PDF dla .NET. Dzięki temu możesz wykorzystać funkcje biblioteki do pracy z dokumentami PDF i dostosowywania odstępów między wierszami.
-
-#### P: Czy mogę użyć tego samouczka, aby określić odstęp między wierszami dla dowolnego typu tekstu?
-
-A: Tak, ten samouczek zawiera instrukcje, jak określić odstęp między wierszami dla dowolnej zawartości tekstowej w dokumencie PDF przy użyciu Aspose.PDF dla .NET. Możesz użyć dostarczonych przykładów kodu, aby dostosować odstępy między wierszami tekstu zgodnie ze swoimi potrzebami.
-
-#### P: Jak określić tryb odstępu między wierszami w samouczku?
-
- A: Samouczek pokazuje, jak utworzyć`TextFormattingOptions` obiekt i ustaw jego`LineSpacing` nieruchomość do`TextFormattingOptions.LineSpacingMode.FullSize`Ten tryb określa pełny odstęp między wierszami dla zawartości tekstowej.
-
-#### P: Jak mogę załadować konkretną czcionkę dla tekstu?
-
- A: Jeśli chcesz użyć konkretnej czcionki do treści tekstowej, samouczek zawiera wskazówki, jak załadować plik czcionki TrueType do`FileStream` obiekt i ustaw go jako czcionkę dla`TextFragment`. Dzięki temu możesz dostosować czcionkę tekstu i odstępy między wierszami.
-
-#### P: Jak mogę dostosować położenie tekstu w dokumencie PDF?
-
- A: Aby dostosować położenie tekstu, utwórz`TextFragment` obiekt i ustaw jego`Position`właściwość do żądanych współrzędnych (X i Y). Pozwala to kontrolować, gdzie tekst jest umieszczany w dokumencie PDF.
-
-#### P: Czy mogę zastosować te zmiany odstępów między wierszami w istniejących dokumentach PDF?
-
- A: Tak, możesz modyfikować odstępy między wierszami tekstu w istniejących dokumentach PDF. Samouczek pokazuje, jak utworzyć`TextFragment` z określonym odstępem między wierszami i pozycją, a następnie dodaj go do strony`Paragraphs` kolekcja.
+### Jak ustawić odstępy między wierszami dla wielu akapitów?  
+ Możesz złożyć wniosek`TextFormattingOptions` do każdego`TextFragment` Lub`TextParagraph` aby kontrolować odstępy między wierszami lub akapitami.

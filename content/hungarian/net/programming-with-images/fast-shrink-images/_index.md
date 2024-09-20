@@ -170,7 +170,7 @@ Kimenetet kap arról, hogy hány jelölésre (lényegében időegységre) volt s
 Az Aspose.PDF for .NET egy hatékony könyvtár, amely lehetővé teszi a fejlesztők számára PDF-dokumentumok programozott létrehozását, módosítását és kezelését.
 
 ### Kipróbálhatom az Aspose.PDF-et vásárlás előtt?
- Teljesen! Tudod[ingyenes próbaverzió letöltése itt](https://releases.aspose.com/).
+ Teljesen! Megteheti[ingyenes próbaverzió letöltése itt](https://releases.aspose.com/).
 
 ### Milyen egyéb funkciókat kínál az Aspose.PDF?
 A képoptimalizáláson kívül az Aspose.PDF lehetővé teszi a szövegkivonást, a dokumentumok egyesítését, a PDF konvertálást és még sok mást.

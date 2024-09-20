@@ -28,7 +28,7 @@ url: /zh/net/licensing-aspose-pdf/load-license-from-stream-object/
 
 ### 创建新的 C# 项目
 
-打开 Visual Studio 并创建一个新的 C# 控制台应用程序项目。将其命名为“AsposePDFLicenseLoader”等有意义的名称。这将是您从流对象加载 Aspose.PDF 许可证的场所。
+打开 Visual Studio 并创建一个新的 C# 控制台应用程序项目。将其命名为有意义的名称，例如“AsposePDFLicenseLoader”。这将是您从流对象加载 Aspose.PDF 许可证的场所。
 
 ### 安装 Aspose.PDF for .NET
 

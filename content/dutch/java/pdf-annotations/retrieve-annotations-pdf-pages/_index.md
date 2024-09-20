@@ -1,6 +1,6 @@
 ---
-title: Annotaties ophalen van PDF-pagina's
-linktitle: Annotaties ophalen van PDF-pagina's
+title: Annotaties ophalen uit PDF-pagina's
+linktitle: Annotaties ophalen uit PDF-pagina's
 second_title: Aspose.PDF Java PDF-verwerkings-API
 description: Leer hoe u annotaties van PDF-pagina's kunt ophalen met Aspose.PDF voor Java. Bekijk stapsgewijze instructies en codevoorbeelden in deze uitgebreide gids.
 type: docs

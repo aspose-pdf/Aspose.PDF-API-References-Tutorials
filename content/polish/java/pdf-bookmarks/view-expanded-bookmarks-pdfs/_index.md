@@ -59,7 +59,7 @@ pdfDocument.save("output.pdf");
 
 ## Wniosek
 
-W tym artykule przyjrzeliśmy się znaczeniu rozszerzonych zakładek w dokumentach PDF i sposobom ich włączania za pomocą Aspose.PDF for Java. Postępując zgodnie z przewodnikiem krok po kroku, możesz ulepszyć doświadczenie użytkownika podczas nawigacji po rozległych plikach PDF. Aspose.PDF for Java okazuje się cennym narzędziem dla programistów pracujących z plikami PDF, czyniąc złożone zadania, takie jak to, bardziej dostępnymi.
+W tym artykule zbadaliśmy znaczenie rozszerzonych zakładek w dokumentach PDF i sposób ich włączania za pomocą Aspose.PDF for Java. Postępując zgodnie z przewodnikiem krok po kroku, możesz ulepszyć doświadczenie użytkownika podczas nawigacji po rozległych plikach PDF. Aspose.PDF for Java okazuje się cennym narzędziem dla programistów pracujących z plikami PDF, czyniąc złożone zadania, takie jak to, bardziej dostępnymi.
 
 ## Najczęściej zadawane pytania
 

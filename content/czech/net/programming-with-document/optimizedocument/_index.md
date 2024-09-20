@@ -98,7 +98,7 @@ Gratuluji! Právě jste optimalizovali dokument PDF pro web pomocí Aspose.PDF p
 ### Co dělá optimalizace PDF?
 Optimalizace souboru PDF snižuje jeho velikost komprimací obrázků, zjednodušením písem a odstraněním nadbytečných dat, takže se na webu rychleji načítá.
 
-### Mohu optimalizovat PDF chráněné heslem?
+### Mohu optimalizovat soubor PDF chráněný heslem?
 Ano, Aspose.PDF vám umožňuje optimalizovat soubory PDF chráněné heslem, ale při otevírání dokumentu budete muset zadat heslo.
 
 ### Snižuje optimalizace PDF jeho kvalitu?

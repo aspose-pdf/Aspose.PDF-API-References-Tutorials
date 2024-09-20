@@ -88,7 +88,7 @@ using (FileStream fs = new FileStream(dataDir + "aspose-logo.jpg", FileMode.Open
     page.PageInfo.Margin.Right = 0;
 ```
 
-ページ余白をゼロに設定すると、画像が PDF 内に完全に収まり、周囲に不要な空白がなくなります。これは、画像の視覚的な整合性を維持するために非常に重要です。
+ページの余白をゼロに設定すると、画像が PDF 内に完全に収まり、周囲に不要な空白がなくなります。これは、画像の視覚的な整合性を維持するために非常に重要です。
 
 ## ステップ6: トリミングボックスを定義する
 

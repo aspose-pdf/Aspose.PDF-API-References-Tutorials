@@ -63,7 +63,7 @@ Document pdfDocument = new Document(dataDir + "ValidatePDFUAStandard.pdf");
 
 ## ステップ3: PDFをPDF/UA標準に適合しているかどうか検証する
 
-ここで重要な部分がやってきます。PDFがPDF/UA標準に準拠しているかどうかをチェックする検証です。これは、`Validate`メソッドを実行し、検証結果の出力ファイルを指定します。
+ここで重要な部分がやってきます。PDFがPDF/UA標準に準拠しているかどうかを確認する検証です。これは、`Validate`メソッドを実行し、検証結果の出力ファイルを指定します。
 
 PDF ドキュメントを検証するコードは次のとおりです。
 

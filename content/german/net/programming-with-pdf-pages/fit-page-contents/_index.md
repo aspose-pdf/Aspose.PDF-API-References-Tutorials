@@ -9,7 +9,7 @@ url: /de/net/programming-with-pdf-pages/fit-page-contents/
 ---
 ## Einführung
 
-Wenn Sie mit PDF-Dokumenten arbeiten, besteht eine Herausforderung häufig darin, den Inhalt richtig auf die Seite zu bringen. Hatten Sie schon einmal Probleme, bei denen Ihr Text oder Ihre Bilder abgeschnitten wurden oder vielleicht einfach nicht so angezeigt wurden, wie Sie es sich vorgestellt haben? Keine Angst! Mit Aspose.PDF für .NET können Sie Ihre PDF-Seiten ganz einfach anpassen, um sicherzustellen, dass alle Inhalte perfekt passen. In diesem Handbuch erfahren Sie, wie Sie die PDF-Abmessungen ändern und den Inhalt schön einpassen.
+Wenn Sie mit PDF-Dokumenten arbeiten, besteht häufig eine Herausforderung darin, den Inhalt richtig auf die Seite zu bringen. Hatten Sie schon einmal Probleme, bei denen Ihr Text oder Ihre Bilder abgeschnitten wurden oder vielleicht einfach nicht so angezeigt wurden, wie Sie es sich vorgestellt hatten? Keine Angst! Mit Aspose.PDF für .NET können Sie Ihre PDF-Seiten ganz einfach anpassen, um sicherzustellen, dass alle Inhalte perfekt passen. In diesem Handbuch erfahren Sie, wie Sie die PDF-Abmessungen ändern und den Inhalt schön einpassen.
 
 ## Voraussetzungen
 

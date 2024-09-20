@@ -16,7 +16,7 @@ In der Welt der Softwareentwicklung ist die Konvertierung von HTML in PDF eine g
 Bevor wir beginnen, müssen Sie einige Dinge vorbereitet haben:
 
 1. Visual Studio: Stellen Sie sicher, dass Visual Studio auf Ihrem Computer installiert ist. Dies wird unsere Entwicklungsumgebung sein.
-2.  Aspose.PDF für .NET: Sie können die Bibliothek herunterladen von der[Webseite](https://releases.aspose.com/pdf/net/) . Wenn Sie es erst einmal ausprobieren möchten, können Sie auch eine[Kostenlose Testversion](https://releases.aspose.com/).
+2.  Aspose.PDF für .NET: Sie können die Bibliothek herunterladen von der[Webseite](https://releases.aspose.com/pdf/net/) Wenn Sie es erst einmal ausprobieren möchten, können Sie auch eine[Kostenlose Testversion](https://releases.aspose.com/).
 3. Grundkenntnisse in C#: Wenn Sie mit der C#-Programmierung vertraut sind, verstehen Sie die Beispiele besser.
 4. Internetzugang: Da wir HTML-Inhalte von einer URL abrufen, stellen Sie sicher, dass Sie über eine aktive Internetverbindung verfügen.
 

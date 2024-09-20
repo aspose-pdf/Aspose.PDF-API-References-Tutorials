@@ -16,7 +16,7 @@ mai digitális környezetben a PDF-dokumentumokkal való interakció alapvető k
 Mielőtt belemerülnénk, győződjünk meg arról, hogy mindent megvan, ami a követéshez szükséges. Íme, mire lesz szükségünk:
 
 1. A C# alapvető ismerete: A C# programozás ismerete elengedhetetlen, mivel ezt a nyelvet fogjuk használni az oktatóprogram során.
-2.  Aspose.PDF for .NET: Győződjön meg arról, hogy telepítve van az Aspose.PDF könyvtár. Tudod[töltse le itt](https://releases.aspose.com/pdf/net/).
+2.  Aspose.PDF for .NET: Győződjön meg arról, hogy telepítve van az Aspose.PDF könyvtár. Megteheti[töltse le itt](https://releases.aspose.com/pdf/net/).
 3. Visual Studio vagy bármely C# IDE: A kód írásához és teszteléséhez szüksége lesz egy IDE-re.
 4. Minta PDF űrlapmezőkkel: A kód teszteléséhez legyen készen egy PDF-minta. Ennek a dokumentumnak rádiógomb-mezőket kell tartalmaznia, amelyek bemutatják a koordináták lekérését.
 

@@ -17,7 +17,7 @@ Mielőtt elkezdenénk, győződjünk meg arról, hogy mindennel rendelkezik, ami
 
 1.  Aspose.PDF for .NET: Győződjön meg arról, hogy a legújabb verzió van telepítve. Ha még nem tette meg, megteheti[töltse le itt](https://releases.aspose.com/pdf/net/).
 2. Érvényes licencfájl: rendelkeznie kell egy érvényes Aspose.PDF licencfájllal. Ha nincs, akkor kaphat a[ideiglenes engedély itt](https://purchase.aspose.com/temporary-license/) vagy[vásároljon itt egyet](https://purchase.aspose.com/buy).
-3. Visual Studio: A Visual Studiot fogjuk használni IDE-ként. Győződjön meg arról, hogy be van állítva, és készen áll a használatra.
+3. Visual Studio: A Visual Studiot fogjuk használni IDE-ként. Győződjön meg arról, hogy be van állítva és használatra kész.
 4. Alapvető C# ismerete: A C# és a .NET alapvető ismerete hasznos lesz, amikor végigjárjuk a kódot.
 
 Megvan minden? Döbbenetes! Térjünk át a szükséges névterek importálására és minden beállításra.

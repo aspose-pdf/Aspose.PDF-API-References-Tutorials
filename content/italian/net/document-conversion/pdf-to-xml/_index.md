@@ -9,7 +9,7 @@ url: /it/net/document-conversion/pdf-to-xml/
 ---
 ## Introduzione
 
-Nel mondo digitale odierno, la capacità di convertire i documenti da un formato all'altro è essenziale. Che tu sia uno sviluppatore, un professionista aziendale o semplicemente qualcuno che lavora spesso con i PDF, sapere come convertire i file PDF in XML può essere un punto di svolta. XML (eXtensible Markup Language) è ampiamente utilizzato per la rappresentazione dei dati ed è particolarmente utile per lo scambio di dati tra sistemi. In questo tutorial, esploreremo come utilizzare Aspose.PDF per .NET per convertire i file PDF in formato XML senza problemi. 
+Nel mondo digitale odierno, la capacità di convertire i documenti da un formato all'altro è essenziale. Che tu sia uno sviluppatore, un professionista aziendale o semplicemente qualcuno che lavora spesso con i PDF, sapere come convertire i file PDF in XML può cambiare le carte in tavola. XML (eXtensible Markup Language) è ampiamente utilizzato per la rappresentazione dei dati ed è particolarmente utile per lo scambio di dati tra sistemi. In questo tutorial, esploreremo come utilizzare Aspose.PDF per .NET per convertire i file PDF in formato XML senza problemi. 
 
 ## Prerequisiti
 

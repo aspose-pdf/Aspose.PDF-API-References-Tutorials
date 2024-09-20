@@ -15,7 +15,7 @@ dnešním digitálním světě je zásadní zajistit bezpečnost a integritu dok
 
 Než začneme, ujistěte se, že máte vše připraveno, abyste mohli začít.
 
--  Aspose.PDF for .NET Library: Pokud ji ještě nemáte, můžete si ji stáhnout z[Stránka pro stahování Aspose.PDF pro .NET](https://releases.aspose.com/pdf/net/). 
+-  Aspose.PDF for .NET Library: Pokud ji ještě nemáte, můžete si ji stáhnout z[Stránka ke stažení Aspose.PDF pro .NET](https://releases.aspose.com/pdf/net/). 
 - Vývojové prostředí .NET: Budete potřebovat IDE jako Visual Studio.
 - Základní znalost C#: Znalost C# je užitečná pro pochopení úryvků kódu v tomto tutoriálu.
 - Dokument PDF s digitálním podpisem: Pro účely testování se ujistěte, že máte soubor PDF, který obsahuje alespoň jeden digitální podpis.
@@ -69,7 +69,7 @@ foreach (Field field in pdfDocument.Form)
 }
 ```
 
- Iterací přes`Form` vlastnictví`Document` objekt, můžeme prozkoumat každé pole formuláře a zkontrolovat, zda se jedná o pole podpisu.
+ Iterací přes`Form` vlastnictvím`Document` objekt, můžeme prozkoumat každé pole formuláře a zkontrolovat, zda se jedná o pole podpisu.
 
 ## Krok 4: Identifikace polí podpisu
 

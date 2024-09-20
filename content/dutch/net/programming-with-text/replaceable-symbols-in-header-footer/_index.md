@@ -7,37 +7,57 @@ type: docs
 weight: 320
 url: /nl/net/programming-with-text/replaceable-symbols-in-header-footer/
 ---
-In deze tutorial leggen we uit hoe u vervangbare symbolen in de kop- en voettekst van een PDF-document kunt gebruiken met behulp van de Aspose.PDF-bibliotheek voor .NET. We doorlopen het stapsgewijze proces van het maken van een PDF, het instellen van marges, het toevoegen van kop- en voetteksten met vervangbare symbolen en het opslaan van de PDF met behulp van de meegeleverde C#-broncode.
+## Invoering
+
+Bij het werken met PDF-bestanden moet u soms kop- en voetteksten aanpassen met dynamische inhoud zoals paginanummers, rapportnamen of gegenereerde datums. Gelukkig vereenvoudigt Aspose.PDF voor .NET dit proces, zodat u PDF's kunt maken met automatisch bijgewerkte symbolen in kop- en voetteksten, zoals paginanummers of rapportgeneratiedetails. Dit artikel leidt u door het stapsgewijze proces van het vervangen van symbolen in kop- en voetteksten met Aspose.PDF voor .NET, op een manier die niet alleen eenvoudig is, maar ook ongelooflijk efficiënt.
 
 ## Vereisten
 
-Voordat u begint, moet u ervoor zorgen dat u over het volgende beschikt:
+Voordat u met de stapsgewijze handleiding aan de slag gaat, moet u ervoor zorgen dat u het volgende bij de hand hebt:
 
-- De Aspose.PDF voor .NET-bibliotheek is geïnstalleerd.
-- Basiskennis van C#-programmering.
+-  Aspose.PDF voor .NET-bibliotheek –[Download](https://releases.aspose.com/pdf/net/) of krijg een[gratis proefperiode](https://releases.aspose.com/).
+- Visual Studio of een andere C# IDE die op uw systeem is geïnstalleerd.
+- Basiskennis van C#- en .NET-ontwikkeling.
+-  Een geldig[licentie](https://purchase.aspose.com/temporary-license/) voor Aspose.PDF, of u kunt de proefversie gebruiken.
 
-## Stap 1: De documentenmap instellen
+## Pakketten importeren
 
- Eerst moet u het pad instellen naar de map waar u het gegenereerde PDF-bestand wilt opslaan. Vervangen`"YOUR DOCUMENT DIRECTORY"` in de`dataDir` variabele met het pad naar de gewenste map.
+Om te beginnen moet u de benodigde naamruimten importeren die de functionaliteit van Aspose.PDF voor .NET mogelijk maken. Hieronder ziet u de benodigde import:
 
 ```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
+using System.IO;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
+using System;
 ```
 
-## Stap 2: Maak een PDF-document en -pagina
+Deze zijn essentieel voor het maken van PDF's, het bewerken van tekst en het beheren van kop- en voetteksten.
 
- Vervolgens maken we een nieuw PDF-document en voegen er een pagina aan toe met behulp van de`Document` klasse en`Page` klas uit de Aspose.PDF bibliotheek.
+Laten we de voorbeeldcode opsplitsen in eenvoudig te begrijpen stappen.
+
+## Stap 1: Het document en de pagina instellen
+
+Eerst moeten we het document initialiseren en er een pagina aan toevoegen. Dit legt de basis voor het toevoegen van headers en footers.
 
 ```csharp
+// Documentenmap instellen
+string dataDir = "YOUR DOCUMENT DIRECTORY";
+
+// Initialiseer het documentobject
 Document doc = new Document();
+
+// Een pagina toevoegen aan het document
 Page page = doc.Pages.Add();
 ```
 
-## Stap 3: Marges instellen
+ Hier stellen we een PDF-document op met behulp van de`Document` klasse en een pagina toevoegen met`doc.Pages.Add()`Deze pagina bevat de koptekst, voettekst en andere inhoud.
 
- We stellen de marges voor de pagina in met behulp van de`MarginInfo` klasse. Pas de margewaarden aan volgens uw vereisten.
+## Stap 2: Paginamarges configureren
+
+Vervolgens definiëren we de marges voor de pagina om ervoor te zorgen dat de inhoud niet helemaal tot aan de rand reikt.
 
 ```csharp
+// Marges configureren
 MarginInfo marginInfo = new MarginInfo();
 marginInfo.Top = 90;
 marginInfo.Bottom = 50;
@@ -46,209 +66,142 @@ marginInfo.Right = 50;
 page.PageInfo.Margin = marginInfo;
 ```
 
-## Stap 4: Voeg een koptekst toe met vervangbare symbolen
+ Hier hebben we de boven-, onder-, linker- en rechtermarges gedefinieerd met behulp van de`MarginInfo` klasse en paste het toe op de pagina met behulp van`page.PageInfo.Margin`.
 
- Wij creëren een`HeaderFooter` object voor de pagina en voeg een`TextFragment` met vervangbare symbolen.
+## Stap 3: Maak en configureer de header
+
+Laten we nu een header maken en deze aan de pagina toevoegen. De header bevat de titel en naam van het rapport.
 
 ```csharp
+// Koptekst maken
 HeaderFooter hfFirst = new HeaderFooter();
 page.Header = hfFirst;
+
+// Koptekstmarges instellen
 hfFirst.Margin.Left = 50;
 hfFirst.Margin.Right = 50;
 
-TextFragment t1 = new TextFragment("report title");
-// Stel indien gewenst teksteigenschappen in
-t1.TextState.Font = FontRepository.FindFont("Arial");
-t1.TextState.FontSize = 16;
-t1.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
-t1.TextState.FontStyle = FontStyles.Bold;
-t1.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-t1.TextState.LineSpacing = 5f;
-
-hfFirst.Paragraphs.Add(t1);
-
-// Voeg meer TextFragments toe of pas ze naar wens aan
-```
-
-## Stap 5: Voeg een voettekst toe met vervangbare symbolen
-
- Op dezelfde manier creëren we een`HeaderFooter` object voor de paginavoettekst en toevoegen`TextFragment` objecten met vervangbare symbolen.
-
-```csharp
-HeaderFooter hfFoot = new HeaderFooter();
-page.Footer = hfFoot;
-hfFoot.Margin.Left = 50;
-hfFoot.Margin.Right = 50;
-
-TextFragment t3 = new TextFragment("Generated on test date");
-TextFragment t4 = new TextFragment("report name ");
-TextFragment t5 = new TextFragment("Page $p of $P");
-
-// Voeg meer TextFragments toe of pas ze naar wens aan
-
-hfFoot.Paragraphs.Add(tab2);
-```
-
-## Stap 6: Sla het PDF-document op
-
-Ten slotte slaan we het PDF-document op in het opgegeven uitvoerbestand.
-
-```csharp
-dataDir = dataDir + "ReplaceableSymbolsInHeaderFooter_out.pdf";
-doc.Save(dataDir);
-Console.WriteLine("\nReplaceable symbols replaced successfully in the header and footer.\nFile saved at " + dataDir);
-```
-
-### Voorbeeldbroncode voor Vervangbare symbolen in koptekst/voettekst met behulp van Aspose.PDF voor .NET 
-```csharp
-// Het pad naar de documentenmap.
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-Document doc = new Document();
-Page page = doc.Pages.Add();
-MarginInfo marginInfo = new MarginInfo();
-marginInfo.Top = 90;
-marginInfo.Bottom = 50;
-marginInfo.Left = 50;
-marginInfo.Right = 50;
-//Wijs het marginInfo-exemplaar toe aan de Margin-eigenschap van sec1.PageInfo
-page.PageInfo.Margin = marginInfo;
-HeaderFooter hfFirst = new HeaderFooter();
-page.Header = hfFirst;
-hfFirst.Margin.Left = 50;
-hfFirst.Margin.Right = 50;
-// Instantieer een tekstparagraaf die de inhoud opslaat om als kop weer te geven
+// Titel toevoegen aan koptekst
 TextFragment t1 = new TextFragment("report title");
 t1.TextState.Font = FontRepository.FindFont("Arial");
 t1.TextState.FontSize = 16;
 t1.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
 t1.TextState.FontStyle = FontStyles.Bold;
 t1.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-t1.TextState.LineSpacing = 5f;
 hfFirst.Paragraphs.Add(t1);
+
+// Rapportnaam toevoegen aan koptekst
 TextFragment t2 = new TextFragment("Report_Name");
 t2.TextState.Font = FontRepository.FindFont("Arial");
-t2.TextState.ForegroundColor = Aspose.Pdf.Color.Black;
-t2.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
-t2.TextState.LineSpacing = 5f;
 t2.TextState.FontSize = 12;
+t2.TextState.HorizontalAlignment = Aspose.Pdf.HorizontalAlignment.Center;
 hfFirst.Paragraphs.Add(t2);
-// Maak een HeaderFooter-object voor de sectie
+```
+
+ We hebben er twee toegevoegd`TextFragment` objecten naar de header: één voor de rapporttitel en een andere voor de rapportnaam. De tekst is gestyled met behulp van`TextState` eigenschappen zoals lettertype, grootte en uitlijning.
+
+## Stap 4: De voettekst maken en configureren
+
+Nu is het tijd om de voettekst in te stellen. Hierin worden dynamische inhoud, zoals paginanummers en de generatiedatum, geplaatst.
+
+```csharp
+// Voettekst maken
 HeaderFooter hfFoot = new HeaderFooter();
-// Stel het HeaderFooter-object in op oneven en even voettekst
 page.Footer = hfFoot;
+
+// Stel voettekstmarges in
 hfFoot.Margin.Left = 50;
 hfFoot.Margin.Right = 50;
-// Voeg een tekstparagraaf toe met het huidige paginanummer van het totale aantal pagina's
+
+// Voeg voettekstinhoud toe
 TextFragment t3 = new TextFragment("Generated on test date");
-TextFragment t4 = new TextFragment("report name ");
+TextFragment t4 = new TextFragment("Report Name");
 TextFragment t5 = new TextFragment("Page $p of $P");
-// Een tabelobject instantiëren
+```
+
+In de voettekst nemen we fragmenten op voor de generatiedatum, rapportnaam en dynamische paginanummers (`$p` En`$P` (respectievelijk het huidige paginanummer en het totale aantal pagina's).
+
+## Stap 5: Maak een tabel in de voettekst
+
+U kunt ook complexere elementen, zoals tabellen, aan de voettekst toevoegen om uw gegevens beter te organiseren.
+
+```csharp
+// Tabel voor voettekst maken
 Table tab2 = new Table();
-// Voeg de tabel toe in de alineaverzameling van de gewenste sectie
 hfFoot.Paragraphs.Add(tab2);
-// Instellen met kolombreedtes van de tabel
 tab2.ColumnWidths = "165 172 165";
-//Maak rijen in de tabel en vervolgens cellen in de rijen
+
+// Rijen en cellen voor de tabel maken
 Row row3 = tab2.Rows.Add();
 row3.Cells.Add();
 row3.Cells.Add();
 row3.Cells.Add();
-// Stel de verticale uitlijning van de tekst in als gecentreerd
+
+// Uitlijning voor elke cel instellen
 row3.Cells[0].Alignment = Aspose.Pdf.HorizontalAlignment.Left;
 row3.Cells[1].Alignment = Aspose.Pdf.HorizontalAlignment.Center;
 row3.Cells[2].Alignment = Aspose.Pdf.HorizontalAlignment.Right;
+
+// Inhoud toevoegen aan tabelcellen
 row3.Cells[0].Paragraphs.Add(t3);
 row3.Cells[1].Paragraphs.Add(t4);
 row3.Cells[2].Paragraphs.Add(t5);
-//Sec1.Paragraphs.Add(New Text("Aspose.Total voor Java is een compilatie van alle Java-componenten die Aspose aanbiedt. Het wordt dagelijks gecompileerd om ervoor te zorgen dat het de meest recente versies van elk van onze Java-componenten bevat. #$NL " + "Met Aspose.Total voor Java kunnen ontwikkelaars een breed scala aan toepassingen maken. #$NL #$NL #$NP" + "Aspose.Total voor Java is een compilatie van alle Java-componenten die Aspose aanbiedt. Het wordt dagelijks gecompileerd om ervoor te zorgen dat het de meest recente versies van elk van onze Java-componenten bevat. #$NL " + "Met Aspose.Total voor Java kunnen ontwikkelaars een breed scala aan toepassingen maken. #$NL #$NL #$NP" + "Aspose.Total voor Java is een compilatie van alle Java-componenten die Aspose aanbiedt. Het wordt dagelijks gecompileerd om ervoor te zorgen dat het de meest recente versies van elk van onze Java-componenten bevat. #$NL " + "Met Aspose.Total kunnen Java-ontwikkelaars een breed scala aan toepassingen maken. #$NL #$NL"))
+```
+
+Met dit codeblok wordt een tabel met drie kolommen in de voettekst gemaakt, waarbij elke kolom andere informatie bevat, zoals de generatiedatum, de rapportnaam en paginanummers.
+
+## Stap 6: Inhoud toevoegen aan de pagina
+
+Naast headers en footers kunt u ook content toevoegen aan de body van de PDF-pagina. Hier voegen we een tabel toe met wat tijdelijke tekst.
+
+```csharp
 Table table = new Table();
 table.ColumnWidths = "33% 33% 34%";
-table.DefaultCellPadding = new MarginInfo();
-table.DefaultCellPadding.Top = 10;
-table.DefaultCellPadding.Bottom = 10;
-// Voeg de tabel toe in de alineaverzameling van de gewenste sectie
 page.Paragraphs.Add(table);
-// Standaard celrand instellen met behulp van het BorderInfo-object
-table.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1f);
-// Stel de tabelrand in met behulp van een ander aangepast BorderInfo-object
-table.Border = new BorderInfo(BorderSide.All, 1f);
-table.RepeatingRowsCount = 1;
-//Maak rijen in de tabel en vervolgens cellen in de rijen
-Row row1 = table.Rows.Add();
-row1.Cells.Add("col1");
-row1.Cells.Add("col2");
-row1.Cells.Add("col3");
-const string CRLF = "\r\n";
+
+// Voeg tabelinhoud toe
 for (int i = 0; i <= 10; i++)
 {
-	Row row = table.Rows.Add();
-	row.IsRowBroken = true;
-	for (int c = 0; c <= 2; c++)
-	{
-		Cell c1;
-		if (c == 2)
-			c1 = row.Cells.Add("Aspose.Total for Java is a compilation of every Java component offered by Aspose. It is compiled on a" + CRLF + "daily basis to ensure it contains the most up to date versions of each of our Java components. " + CRLF + "daily basis to ensure it contains the most up to date versions of each of our Java components. " + CRLF + "Using Aspose.Total for Java developers can create a wide range of applications.");
-		else
-			c1 = row.Cells.Add("item1" + c);
-		c1.Margin = new MarginInfo();
-		c1.Margin.Left = 30;
-		c1.Margin.Top = 10;
-		c1.Margin.Bottom = 10;
-	}
+    Row row = table.Rows.Add();
+    for (int c = 0; c <= 2; c++)
+    {
+        Cell cell = row.Cells.Add("Content " + c);
+        cell.Margin = new MarginInfo { Left = 30, Top = 10, Bottom = 10 };
+    }
 }
+```
+
+Deze code voegt een eenvoudige tabel met drie kolommen toe aan de pagina. U kunt deze aanpassen aan uw specifieke behoeften.
+
+## Stap 7: Sla de PDF op
+
+Zodra alles is ingesteld, slaat u als laatste stap het PDF-document op de gewenste locatie op.
+
+```csharp
 dataDir = dataDir + "ReplaceableSymbolsInHeaderFooter_out.pdf";
 doc.Save(dataDir);
-Console.WriteLine("\nSymbols replaced successfully in header and footer.\nFile saved at " + dataDir);
+Console.WriteLine("Symbols replaced successfully in header and footer. File saved at " + dataDir);
 ```
+
+ U geeft het bestandspad op en slaat het document op met`doc.Save()`. Dat is alles! U hebt succesvol een PDF gemaakt met aangepaste headers en footers.
 
 ## Conclusie
 
-In deze tutorial hebt u geleerd hoe u vervangbare symbolen in de kop- en voettekst van een PDF-document kunt gebruiken met behulp van de Aspose.PDF-bibliotheek voor .NET. Door de stapsgewijze handleiding te volgen en de meegeleverde C#-code uit te voeren, kunt u een PDF maken, marges instellen, kop- en voettekst met vervangbare symbolen toevoegen en de PDF opslaan.
+Het vervangen van symbolen in headers en footers met Aspose.PDF voor .NET is niet alleen eenvoudig, maar ook krachtig. Door de bovenstaande stapsgewijze handleiding te volgen, kunt u uw PDF's eenvoudig aanpassen met dynamische inhoud, zoals paginanummers, rapportnamen en datums. Deze methode is zeer flexibel, zodat u tabellen kunt invoegen, opmaak kunt aanpassen en de lay-out kunt beheren om aan uw specifieke vereisten te voldoen.
 
-### Veelgestelde vragen
+## Veelgestelde vragen
 
-#### V: Wat is het doel van de tutorial 'Vervangbare symbolen in kop- en voettekst'?
+### Kan ik lettertypen voor kopteksten en voetteksten aanpassen?  
+Ja, u kunt de lettertypen, groottes, kleuren en stijlen voor tekst in kop- en voetteksten volledig aanpassen.
 
-A: De tutorial "Replaceable Symbols In Header Footer" is bedoeld om u te begeleiden bij het proces van het gebruiken van de Aspose.PDF-bibliotheek voor .NET om vervangbare symbolen toe te voegen aan de header en footer van een PDF-document. Met vervangbare symbolen kunt u specifieke tijdelijke aanduidingen dynamisch vervangen door werkelijke waarden bij het genereren van de PDF.
+### Hoe voeg ik afbeeldingen toe aan kop- en voetteksten?  
+ Je kunt gebruiken`ImageStamp` om afbeeldingen in uw kop- en voetteksten in te voegen.
 
-#### V: Wat zijn vervangbare symbolen in de context van een PDF-koptekst en -voettekst?
+### Is het mogelijk om hyperlinks in kop- of voetteksten toe te voegen?  
+ Ja, u kunt gebruiken`TextFragment` met een hyperlink door de`Hyperlink` eigendom.
 
-A: Vervangbare symbolen zijn tijdelijke aanduidingen die u in de kop- en voettekst van een PDF-document kunt invoegen. Deze symbolen fungeren als dynamische tijdelijke aanduidingen voor waarden die tijdens runtime kunnen worden ingevuld, zoals paginanummers, datums en aangepaste informatie.
+### Kan ik verschillende headers gebruiken voor even en oneven pagina's?  
+Ja, met Aspose.PDF kunt u verschillende kop- en voetteksten opgeven voor even en oneven pagina's.
 
-#### V: Waarom zou ik vervangbare symbolen willen gebruiken in de kop- en voettekst van een PDF?
-
-A: Vervangbare symbolen in de kop- en voettekst zijn handig als u dynamische informatie in uw PDF-documenten wilt opnemen, zoals paginanummers, datums of andere variabele gegevens die kunnen veranderen wanneer het document wordt gegenereerd.
-
-#### V: Hoe kan ik de marges voor de PDF-pagina instellen?
-
- A: U kunt de marges voor de PDF-pagina instellen met behulp van de`MarginInfo` klasse en deze toewijzen aan de`Margin` eigendom van de`PageInfo` van de pagina. Pas de margewaarden indien nodig aan.
-
-#### V: Hoe voeg ik vervangbare symbolen toe aan de kop- en voettekst?
-
- A: U kunt vervangbare symbolen toevoegen door een`HeaderFooter` object voor de header en footer van de pagina. Vervolgens kunt u toevoegen`TextFragment`objecten met de gewenste tekst, inclusief vervangbare symbolen, naar de`Paragraphs` verzameling van de`HeaderFooter` voorwerp.
-
-#### V: Kan ik het uiterlijk van de vervangbare symbolen aanpassen?
-
- A: Ja, u kunt het uiterlijk van de vervangbare symbolen aanpassen door de eigenschappen van de symbolen te wijzigen.`TextFragment` objecten die de symbolen bevatten. U kunt eigenschappen instellen zoals lettertype, lettergrootte, kleur, uitlijning en regelafstand.
-
-#### V: Welke vervangbare symbolen kan ik gebruiken?
-
-A: U kunt verschillende vervangbare symbolen gebruiken, zoals:
-
-- `$p`: Huidig paginanummer.
-- `$P`: Totaal aantal pagina's.
-- `$d`: Huidige datum.
-- `$t`: Huidige tijd.
-- Aangepaste tijdelijke aanduidingen die u definieert.
-
-#### V: Kan ik andere tekst en opmaak toevoegen aan de vervangbare symbolen?
-
- A: Ja, u kunt andere tekst en opmaak toevoegen rond de vervangbare symbolen in de`TextFragment` objecten. Hiermee kunt u complexere headers en footers maken die dynamische en statische content bevatten.
-
-#### V: Hoe kan ik het gegenereerde PDF-document opslaan?
-
- A: Om het gegenereerde PDF-document op te slaan, kunt u de`Save` methode van de`Document`klasse. Geef het gewenste pad en de naam van het uitvoerbestand op als argument.
-
-#### V: Is een geldige Aspose-licentie vereist voor deze tutorial?
-
-A: Ja, een geldige Aspose-licentie is vereist om de code in deze tutorial succesvol uit te voeren. U kunt een volledige licentie of een tijdelijke licentie van 30 dagen verkrijgen via de Aspose-website.
+### Hoe pas ik de positie van kop- en voetteksten aan?  
+U kunt de marges en uitlijningseigenschappen aanpassen om de positie van uw kopteksten en voetteksten te bepalen.

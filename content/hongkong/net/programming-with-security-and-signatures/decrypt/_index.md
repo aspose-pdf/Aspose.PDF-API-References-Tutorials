@@ -47,7 +47,7 @@ url: /zh-hant/net/programming-with-security-and-signatures/decrypt/
 
 ### 新增使用指令
 
-新增包後，就可以將其包含在程式碼中了。在你的頂部`Program.cs`文件中，新增以下命名空間：
+新增完包後，就可以將其包含在程式碼中了。在你的頂部`Program.cs`文件中，新增以下命名空間：
 
 ```csharp
 using System;

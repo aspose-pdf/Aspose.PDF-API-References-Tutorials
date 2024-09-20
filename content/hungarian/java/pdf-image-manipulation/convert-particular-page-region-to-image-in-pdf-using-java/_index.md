@@ -70,7 +70,7 @@ Ebben az oktatóanyagban megtanultuk, hogyan lehet kihasználni az Aspose.PDF fo
 
 ## GYIK
 
-### Hogyan telepíthetem az Aspose.PDF for Java-t?
+### Hogyan telepíthetem az Aspose.PDF for Java fájlt?
 
  Letöltheti az Aspose.PDF for Java könyvtárat innen[itt](https://releases.aspose.com/pdf/java/) és kövesse a dokumentációban található telepítési utasításokat.
 

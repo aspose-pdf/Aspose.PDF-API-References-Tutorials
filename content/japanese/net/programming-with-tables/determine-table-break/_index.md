@@ -2,175 +2,193 @@
 title: PDF ファイル内の表の区切りを決定する
 linktitle: PDF ファイル内の表の区切りを決定する
 second_title: Aspose.PDF for .NET API リファレンス
-description: Aspose.PDF for .NET を使用して PDF ファイル内の表の区切りを決定する方法を学習します。
+description: コード例やトラブルシューティングのヒントを含むステップバイステップ ガイドを使用して、Aspose.PDF for .NET を使用して PDF ファイル内の表の区切りを決定する方法を学びます。
 type: docs
 weight: 60
 url: /ja/net/programming-with-tables/determine-table-break/
 ---
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ファイル内の表の区切りを決定する方法を学習します。C# のソース コードをステップごとに説明します。このチュートリアルの最後には、表がページ余白を超えているかどうかを判断する方法がわかります。さあ、始めましょう!
+## 導入
 
-## ステップ1: 環境の設定
-まず、Aspose.PDF for .NET を使用して C# 開発環境が設定されていることを確認します。ライブラリへの参照を追加し、必要な名前空間をインポートします。
+PDF ファイルの作成と操作は、野獣を飼いならすような感覚になります。ある瞬間は、うまく操作できたと思っても、次の瞬間には、ドキュメントが予期しない動作をします。PDF 内の表を効果的に管理する方法、具体的には、表がいつ分割されるかを判断する方法を考えたことはありませんか? この記事では、Aspose.PDF for .NET を使用して、表がページ サイズを超えて拡張されたことを特定する方法について詳しく説明します。それでは、シートベルトを締めて、PDF 操作の世界を探検しましょう。
 
-## ステップ2: PDFドキュメントの作成
-このステップでは、新しい`Document` PDF ドキュメントを表すオブジェクト。
+## 前提条件
+
+実際のコーディングに入る前に、すべてが整っていることを確認しましょう。
+
+1. .NET 開発環境: Visual Studio または互換性のある IDE がインストールされていることを確認してください。
+2.  Aspose.PDFライブラリ: プロジェクトにAspose.PDFライブラリを追加する必要があります。[Aspose PDF ダウンロード](https://releases.aspose.com/pdf/net/)ページから、または NuGet パッケージ マネージャー経由でインストールすることもできます。
+   ```bash
+   Install-Package Aspose.PDF
+   ```
+3. C# の基礎知識: このガイドでは、C# とオブジェクト指向プログラミングについて十分な理解があることを前提としています。
+
+前提条件が揃ったので、必要なパッケージをインポートして作業を開始しましょう。
+
+## パッケージのインポート
+
+プロジェクトで Aspose.PDF の使用を開始するには、関連する名前空間を含める必要があります。その方法は次のとおりです。
 
 ```csharp
-pdf-Document = new Document();
+using System.IO;
+using System;
+using Aspose.Pdf;
+using Aspose.Pdf.Text;
 ```
 
-このドキュメントは、セクションと表を追加するために使用されます。
+これらの名前空間により、PDF ファイルの操作に必要なコア機能にアクセスできるようになります。
 
-## ステップ3: セクションとテーブルを追加する
-ここで、PDF ドキュメントにセクションを追加し、このセクション内に表を作成します。
+プロセスを管理しやすいステップに分解してみましょう。PDF ドキュメントを作成し、表を追加し、行を追加したときに新しいページに分割されるかどうかを確認します。
+
+## ステップ1: ドキュメントディレクトリを設定する
+
+コーディングを始める前に、出力 PDF を保存する場所を決めます。これは、後で生成されたドキュメントが見つかる場所なので非常に重要です。
 
 ```csharp
-Page page = pdf.Pages.Add();
-Table table1 = new Table();
-table1. Margin. Top = 300;
-page.Paragraphs.Add(table1);
+string dataDir = "YOUR DOCUMENT DIRECTORY"; //ディレクトリに置き換えます。
 ```
 
-また、テーブルの上部余白を 300 ポイントに指定します。この値は必要に応じて調整できます。
+## ステップ2: PDFドキュメントをインスタンス化する
 
-## ステップ4: テーブルの設定
-この手順では、列の幅や境界線などの表のプロパティを構成します。
-
-```csharp
-table1. ColumnWidths = "100 100 100";
-table1.DefaultCellBorder = new BorderInfo(BorderSide.All, 0.1F);
-table1.Border = new BorderInfo(BorderSide.All, 1F);
-```
-
-ここでは、表の列の幅とセルの境界線を定義します。これらの値は好みに応じて調整できます。
-
-## ステップ5: 表に行とセルを追加する
-ここで、ループを使用してテーブルに行とセルを作成します。
+次に、新しいインスタンスを作成します。`Document` Aspose.PDF ライブラリのクラス。ここで PDF マジックがすべて実現します。
 
 ```csharp
-for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
-{
-     Row row1 = table1.Rows.Add();
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-     row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
-}
-```
-
-ここでは、表に 17 行を作成し、各行に 3 つのセルを追加します。必要に応じてバックルを調整できます。
-
-## ステップ6: テーブル区切りの決定
-ここで、ページの高さと表内のオブジェクトの合計高さを比較して、表がページの余白を超えているかどうかを判断します。
-
-```csharp
-float PageHeight = (float)pdf.PageInfo.Height;
-float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
-
-if ((PageHeight - TotalObjectsHeight) <= 10)
-     Console.WriteLine("The height of the page - Height of objects < 10, the table will be truncated");
-```
-
-ページの高さとオブジェクトの合計の高さを余白を考慮して計算します。差が 10 以下の場合、表はページの余白を超えています。
-
-## ステップ7: PDF文書を保存する
-最後に、結果を PDF ドキュメントに保存します。
-
-```csharp
-string dataDir = "YOUR DOCUMENTS DIRECTORY";
-dataDir = dataDir + "DetermineTableBreak_out.pdf";
-pdf.Save(dataDir);
-Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
-```
-
-必ず正しいドキュメント ディレクトリを指定してください。結果の PDF ファイルは、決定された表区切りとともに保存されます。
-
-### Aspose.PDF for .NET を使用して表の区切りを決定するためのサンプル ソース コード
-
-```csharp
-//ドキュメント ディレクトリへのパス。
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-
-//オブジェクトPDFクラスをインスタンス化する
 Document pdf = new Document();
-//PDFドキュメントのセクションコレクションにセクションを追加する
+```
+
+## ステップ3: ページを作成する
+
+すべての PDF にはページが必要です。ドキュメントに新しいページを追加する方法は次のとおりです。
+
+```csharp
 Aspose.Pdf.Page page = pdf.Pages.Add();
-//テーブルオブジェクトをインスタンス化する
+```
+
+## ステップ4: テーブルをインスタンス化する
+
+次に、ブレークを監視する実際のテーブルを作成しましょう。
+
+```csharp
 Aspose.Pdf.Table table1 = new Aspose.Pdf.Table();
-table1.Margin.Top = 300;
-//希望するセクションの段落コレクションに表を追加します
+table1.Margin.Top = 300; //テーブルの上にスペースを確保します。
+```
+
+## ステップ5: ページに表を追加する
+
+テーブルを作成したら、次のステップは、それを以前に作成したページに追加することです。
+
+```csharp
 page.Paragraphs.Add(table1);
-//テーブルの列幅を設定する
-table1.ColumnWidths = "100 100 100";
-// BorderInfo オブジェクトを使用してデフォルトのセル境界線を設定する
+```
+
+## ステップ6: テーブルプロパティを定義する
+
+列の幅や境界線など、テーブルの重要なプロパティをいくつか定義しましょう。
+
+```csharp
+table1.ColumnWidths = "100 100 100"; //各列の幅は 100 単位です。
 table1.DefaultCellBorder = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 0.1F);
-//別のカスタマイズされたBorderInfoオブジェクトを使用して表の境界線を設定する
 table1.Border = new Aspose.Pdf.BorderInfo(Aspose.Pdf.BorderSide.All, 1F);
-//MarginInfoオブジェクトを作成し、左、下、右、上の余白を設定します。
-Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo();
-margin.Top = 5f;
-margin.Left = 5f;
-margin.Right = 5f;
-margin.Bottom = 5f;
-//デフォルトのセルパディングをMarginInfoオブジェクトに設定する
+```
+
+## ステップ7: セルの余白を設定する
+
+見栄えを良くするために、セルにパディングが確実に含まれるようにする必要があります。設定方法は次のとおりです。
+
+```csharp
+Aspose.Pdf.MarginInfo margin = new Aspose.Pdf.MarginInfo(5f, 5f, 5f, 5f); //上、左、右、下
 table1.DefaultCellPadding = margin;
-//カウンターを17に増やすとテーブルが壊れます
-//このページではこれ以上収容できないため
+```
+
+## ステップ8: テーブルに行を追加する
+
+これで、行を追加する準備ができました。ループして 17 行を作成します。(なぜ 17 行なのでしょうか? それは、テーブルが分割されるからです。)
+
+```csharp
 for (int RowCounter = 0; RowCounter <= 16; RowCounter++)
 {
-	//表に行を作成し、行にセルを作成します
-	Aspose.Pdf.Row row1 = table1.Rows.Add();
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 1");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 2");
-	row1.Cells.Add("col " + RowCounter.ToString() + ", 3");
+    Aspose.Pdf.Row row1 = table1.Rows.Add();
+    row1.Cells.Add($"col {RowCounter}, 1");
+    row1.Cells.Add($"col {RowCounter}, 2");
+    row1.Cells.Add($"col {RowCounter}, 3");
 }
-//ページの高さ情報を取得する
+```
+
+## ステップ9: ページの高さを取得する
+
+テーブルが収まるかどうかを確認するには、ページの高さを知る必要があります。 
+
+```csharp
 float PageHeight = (float)pdf.PageInfo.Height;
-//ページの上部と下部の余白の合計の高さ情報を取得します。
-//テーブル上部の余白とテーブルの高さ。
-float TotalObjectsHeight = (float)page.PageInfo.Margin.Top + (float)page.PageInfo.Margin.Bottom + (float)table1.Margin.Top + (float)table1.GetHeight();
+```
 
-//ページの高さ、表の高さ、表の上余白、ページの上部を表示します。
-//下部余白情報
-Console.WriteLine("PDF document Height = " + pdf.PageInfo.Height.ToString() + "\nTop Margin Info = " + page.PageInfo.Margin.Top.ToString() + "\nBottom Margin Info = " + page.PageInfo.Margin.Bottom.ToString() + "\n\nTable-Top Margin Info = " + table1.Margin.Top.ToString() + "\nAverage Row Height = " + table1.Rows[0].MinRowHeight.ToString() + " \nTable height " + table1.GetHeight().ToString() + "\n ----------------------------------------" + "\nTotal Page Height =" + PageHeight.ToString() + "\nCummulative height including Table =" + TotalObjectsHeight.ToString());
+## ステップ10: オブジェクトの合計高さを計算する
 
-//ページ上部の余白とページ下部の余白の合計を差し引くかどうかを確認します
-// テーブル上部の余白とテーブルの高さ（ページの高さから）
-// 10 より多い (平均行は 10 より大きくなる場合があります)
+ここで、ページ上のすべてのオブジェクト (ページ余白、表余白、表の高さ) の合計高さを計算してみましょう。
+
+```csharp
+float TotalObjectsHeight = page.PageInfo.Margin.Top + page.PageInfo.Margin.Bottom + table1.Margin.Top + table1.GetHeight();
+```
+
+## ステップ11: 高さ情報を表示する
+
+デバッグ情報を確認すると便利ですよね? 関連する高さ情報をすべてコンソールに出力してみましょう。
+
+```csharp
+Console.WriteLine($"PDF document Height = {PageHeight}");
+Console.WriteLine($"Top Margin Info = {page.PageInfo.Margin.Top}");
+Console.WriteLine($"Bottom Margin Info = {page.PageInfo.Margin.Bottom}");
+Console.WriteLine($"Table-Top Margin Info = {table1.Margin.Top}");
+Console.WriteLine($"Average Row Height = {table1.Rows[0].MinRowHeight}");
+Console.WriteLine($"Table height {table1.GetHeight()}");
+Console.WriteLine($"Total Page Height = {PageHeight}");
+Console.WriteLine($"Cumulative Height including Table = {TotalObjectsHeight}");
+```
+
+## ステップ12: テーブルブレーク条件を確認する
+
+最後に、さらに行を追加するとテーブルが別のページに分割されるかどうかを確認します。
+
+```csharp
 if ((PageHeight - TotalObjectsHeight) <= 10)
-	//値が 10 未満の場合は、メッセージを表示します。
-	//これは、別の行を配置できないことを示し、新しい行を追加すると
-	//行、テーブルは分割されます。行の高さの値によって異なります。
-	Console.WriteLine("Page Height - Objects Height < 10, so table will break");
+{
+    Console.WriteLine("Page Height - Objects Height < 10, so table will break");
+}
+```
 
+## ステップ13: PDFドキュメントを保存する
 
-dataDir = dataDir + "DetermineTableBreak_out.pdf";
-// PDF文書を保存する
+大変な作業が終わったら、PDF ドキュメントを指定したディレクトリに保存しましょう。
+
+```csharp
+dataDir = dataDir + "DetermineTableBreak_out.pdf"; 
 pdf.Save(dataDir);
+```
 
-Console.WriteLine("\nTable break determined successfully.\nFile saved at " + dataDir);
+## ステップ14: 確認メッセージ
+
+すべてがスムーズに進んだことをお知らせするために、確認メッセージを送ります。
+
+```csharp
+Console.WriteLine($"\nTable break determined successfully.\nFile saved at {dataDir}");
 ```
 
 ## 結論
-このチュートリアルでは、Aspose.PDF for .NET を使用して PDF ドキュメント内の表の区切りを決定する方法を学習しました。このステップ バイ ステップ ガイドを使用して、独自の C# プロジェクトで表がページ余白を超えているかどうかを確認できます。
 
-### PDF ファイル内の表の区切りを決定するための FAQ
+このガイドでは、Aspose.PDF for .NET を使用する際に PDF ドキュメント内のテーブルがいつ壊れるかを判断する方法について詳しく説明しました。これらの手順に従うことで、スペースの制限を簡単に特定し、PDF レイアウトをより適切に管理できます。練習すれば、テーブルを効果的に操作し、プロのように洗練された PDF を作成するスキルを身に付けることができます。ぜひ試してみて、どのように機能するかを確認してください。
 
-#### Q: PDF ドキュメントで表の区切りを決定する目的は何ですか?
+## よくある質問
 
-A: PDF ドキュメントで表の区切りを決定する目的は、表がページ余白を超えていないかどうかを確認することです。これにより、表の内容が使用可能なページ スペース内に正しく表示されるようになります。表の区切りを検出することで、コンテンツのオーバーフローを処理し、それに応じて表のレイアウトを調整できます。
+### Aspose.PDF for .NET とは何ですか?
+Aspose.PDF for .NET は、開発者が .NET アプリケーション内で直接 PDF ドキュメントを作成、変換、操作できるようにする強力なライブラリです。
 
-#### Q: 表の上余白を調整するにはどうすればよいですか?
+### Aspose.PDF の無料試用版を入手できますか?
+はい！ダウンロードできます[無料トライアル](https://releases.aspose.com/)購入する前にその機能を調べてください。
 
- A: 提供されているC#ソースコードでは、`table1.Margin.Top`プロパティ。必要に応じて値を増減して、テーブルの上余白を設定します。
+### Aspose.PDF のサポートはどこで見つけることができますか?
+ Asposeコミュニティでは役立つ情報やサポートを見つけることができます。[サポートフォーラム](https://forum.aspose.com/c/pdf/10).
 
-#### Q: セルの色やフォント サイズなど、テーブルの外観をカスタマイズできますか?
+### テーブルに 17 行以上必要な場合はどうなりますか?
+使用可能なスペースを超えると、表がページに収まらなくなるため、適切な措置を講じて適切にフォーマットする必要があります。
 
-A: はい、Aspose.PDF for .NET が提供するさまざまなプロパティとメソッドを使用して、テーブルとそのセルの外観をカスタマイズできます。たとえば、セルの背景色、フォント サイズ、フォント ファミリ、テキストの配置などを変更できます。テーブルの外観をカスタマイズする方法の詳細については、公式ドキュメントを参照してください。
-
-#### Q: 表がページの余白を超えた場合はどうなりますか?
-
-A: 表がページ余白を超えると、コンテンツが切り捨てられたり重なったりして、PDF ドキュメントの読みにくさと整理が悪くなる可能性があります。表の区切りを検出してオーバーフローを処理することで、使用可能なページ領域内にコンテンツが適切に表示されるようになります。
-
-#### Q: 同じ PDF ドキュメント内の複数の表の表区切りを指定できますか?
-
-A: はい、同じ PDF ドキュメント内の複数の表の表区切りを決定できます。分析する表ごとに手順を繰り返し、必要に応じて表のレイアウトを調整して、コンテンツのオーバーフローを防止します。
+### Aspose.PDF ライブラリはどこで購入できますか?
+ライブラリは以下から購入できます。[購入ページ](https://purchase.aspose.com/buy).

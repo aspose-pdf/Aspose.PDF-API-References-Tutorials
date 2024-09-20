@@ -10,7 +10,7 @@ url: /sv/java/pdf-document-operations/
 
 Inom området för PDF-dokumentoperationer står Aspose.PDF för Java som en robust allierad för utvecklare. I den här handledningsserien ger vi oss ut på en resa för att frigöra den fulla potentialen hos Aspose.PDF, och utrustar dig med färdigheter att manipulera, skapa och förbättra PDF-dokument med lätthet. Oavsett om du är en erfaren utvecklare eller precis har börjat, ger dessa handledningar dig möjlighet att utföra ett brett utbud av PDF-operationer effektivt med Java.
 
-## Bemästra PDF-manipulation
+## Att bemästra PDF-manipulation
 
 Våra handledningar tar dig igenom det väsentliga i PDF-manipulation. Från att slå samman och dela PDF-filer till att extrahera text och bilder, du får praktisk erfarenhet av att utföra olika dokumentoperationer. Vi guidar dig om hur du lägger till vattenstämplar, kommentarer och bokmärken till dina PDF-filer, så att du kan anpassa och förbättra dina dokument efter dina behov.
 
@@ -24,7 +24,7 @@ Effektivitet är nyckeln i PDF-dokumentoperationer, och vi visar dig hur du opti
 
 Följ med oss och utforska världen av PDF-dokumentoperationer med Aspose.PDF för Java och lyft dina färdigheter i PDF-manipulation till nya höjder.
 
-## Handledning för PDF-dokument
+## Handledning för dokumenthantering i PDF
 ### [Lägg till bildstämpel som bakgrund i flytande PDF-låda med Java](./add-image-stamp-as-background-in-floating-box-of-pdf-using-java/)
 Lär dig hur du lägger till bildstämplar som bakgrund i PDF-filer med Java och Aspose.PDF för Java. Steg-för-steg guide med kodexempel för anpassat varumärke och information.
 ### [Lägga till olika rubriker i en PDF-fil med Java](./adding-different-headers-in-one-pdf-file-using-java/)

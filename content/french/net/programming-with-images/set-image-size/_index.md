@@ -101,7 +101,7 @@ Nous devons maintenant indiquer à Aspose où trouver le fichier image. Assurez-
 img.File = dataDir + "aspose-logo.jpg";
 ```
  
- Ici, nous définissons le chemin d'accès au fichier image. L'image, dans ce cas, se trouve dans le`dataDir` dossier et est nommé`aspose-logo.jpg`Assurez-vous de remplacer ceci par le nom et l'emplacement réels de votre fichier image.
+ Ici, nous définissons le chemin d'accès au fichier de l'image. L'image, dans ce cas, se trouve dans le`dataDir` dossier et est nommé`aspose-logo.jpg`Assurez-vous de remplacer ceci par le nom et l'emplacement réels de votre fichier image.
 
 ## Étape 7 : Ajouter l’image à la page
 

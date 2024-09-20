@@ -16,17 +16,17 @@ url: /zh-hant/net/licensing-aspose-pdf/set-license-using-embedded-resource/
 在我們開始編寫程式碼之前，您需要做好以下幾件事：
 
 1. Visual Studio：確保您的電腦上安裝了 Visual Studio。這是我們將在本教程中使用的 IDE。
-2. .NET Framework：確保您已安裝 .NET Framework。 Aspose.PDF 支援各種版本，因此請檢查文件的相容性。
+2. .NET Framework：確保您已安裝 .NET Framework。 Aspose.PDF 支援各種版本，因此請檢查文件的兼容性。
 3.  Aspose.PDF 庫：您可以從以下位置下載該庫：[Aspose PDF for .NET 發佈頁面](https://releases.aspose.com/pdf/net/)。如果您想先測試一下，也可以選擇免費試用。
 4. 基本 C# 知識：熟悉 C# 程式設計將有助於您更好地理解範例。
 
 ## 導入包
 
-完成所有設定後，下一步是匯入必要的套件。您可以這樣做：
+完成所有設定後，下一步就是匯入必要的套件。您可以這樣做：
 
 1. 開啟您的 Visual Studio 專案。
 2. 在解決方案資源管理器中以滑鼠右鍵按一下您的項目，然後選擇「管理 NuGet 套件」。
-3. 搜尋“Aspose.PDF”並安裝該軟體包。
+3. 搜尋“Aspose.PDF”並安裝該套件。
 
 ```csharp
 using System;

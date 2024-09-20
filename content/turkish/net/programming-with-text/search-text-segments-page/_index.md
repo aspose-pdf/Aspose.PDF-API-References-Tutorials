@@ -2,183 +2,154 @@
 title: PDF Dosyasında Metin Segmentleri Sayfasını Ara
 linktitle: PDF Dosyasında Metin Segmentleri Sayfasını Ara
 second_title: Aspose.PDF for .NET API Referansı
-description: Aspose.PDF for .NET kullanarak PDF dosyasında bir sayfadaki metin parçalarını nasıl arayacağınızı ve özelliklerini nasıl alacağınızı öğrenin.
+description: Bu ayrıntılı adım adım kılavuzla .NET için Aspose.PDF kullanarak PDF dosyalarındaki metin segmentlerini nasıl arayacağınızı öğrenin. Metni ayıklayın, segmentleri analiz edin ve daha fazlasını yapın.
 type: docs
 weight: 470
 url: /tr/net/programming-with-text/search-text-segments-page/
 ---
-Bu eğitim, PDF dosyasının bir sayfasındaki belirli metin bölümlerini aramak ve özelliklerini almak için Aspose.PDF for .NET'in nasıl kullanılacağını açıklar. Sağlanan C# kaynak kodu, işlemi adım adım gösterir.
+## giriiş
+
+Aspose.PDF for .NET kullanarak bir PDF belgesindeki belirli metin parçalarını nasıl bulacağınızı hiç merak ettiniz mi? Şanslısınız! Bu kılavuzda, sizi bu süreçte basit, adım adım bir biçimde yönlendireceğiz. İster bilgi çıkarmaya, ister metni analiz etmeye veya sadece PDF manipülasyonunun karmaşıklıklarında gezinmeye çalışıyor olun, Aspose.PDF for .NET sizin için her şeyi hazırladı. Hadi başlayalım!
 
 ## Ön koşullar
 
-Eğitime başlamadan önce aşağıdakilere sahip olduğunuzdan emin olun:
+Başlamadan önce ihtiyacınız olan her şeye sahip olduğunuzdan emin olalım:
 
-- C# programlama dilinin temel bilgisi.
-- .NET kütüphanesi için Aspose.PDF yüklendi. Bunu Aspose web sitesinden edinebilir veya projenize yüklemek için NuGet'i kullanabilirsiniz.
+-  .NET için Aspose.PDF: Kütüphanenin kurulu olduğundan emin olun. Buradan alabilirsiniz[Burada](https://releases.aspose.com/pdf/net/).
+- .NET Framework: Bilgisayarınızda .NET'in yüklü olduğundan emin olun.
+- Geliştirme Ortamı: Visual Studio veya herhangi bir .NET destekli IDE önerilir.
+- PDF Belgesi: Metin parçalarını arayacağınız bir PDF dosyası.
 
-## Adım 1: Projeyi kurun
+ Eğer henüz .NET için Aspose.PDF'niz yoksa endişelenmeyin! Ücretsiz deneme sürümünü şuradan edinebilirsiniz:[Burada](https://releases.aspose.com/) veya satın al[Burada](https://purchase.aspose.com/buy).
 
-Tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir C# projesi oluşturarak başlayın ve .NET için Aspose.PDF kitaplığına bir başvuru ekleyin.
+## Paketleri İçe Aktar
 
-## Adım 2: Gerekli ad alanlarını içe aktarın
-
-Gerekli ad alanlarını içe aktarmak için C# dosyanızın başına aşağıdaki using yönergelerini ekleyin:
+Kodlamaya başlamadan önce, gerekli paketleri projenize içe aktarmak çok önemlidir. Bu, PDF düzenleme görevleriniz için gerekli tüm sınıfların ve yöntemlerin mevcut olduğundan emin olmanızı sağlar.
 
 ```csharp
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
+using System;
 ```
 
-## Adım 3: Belge dizinine giden yolu ayarlayın
+Temel bilgileri tamamladıktan sonra adım adım rehberimize geçelim.
 
- Belge dizininize giden yolu kullanarak ayarlayın`dataDir` değişken:
 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-```
+## Adım 1: PDF Belgesini Yükleyin
 
- Yer değiştirmek`"YOUR DOCUMENT DIRECTORY"` belge dizininize giden gerçek yol ile.
+İşlemin ilk adımı PDF dosyanızı programa yüklemektir. Yüklenmiş bir belge olmadan, aranacak hiçbir şey yoktur, değil mi? İşte bunu nasıl yapacağınız.
 
-## Adım 4: PDF belgesini yükleyin
-
- PDF belgesini kullanarak yükleyin`Document` sınıf:
-
-```csharp
-Document pdfDocument = new Document(dataDir + "SearchTextSegmentsPage.pdf");
-```
-
- Yer değiştirmek`"SearchTextSegmentsPage.pdf"` PDF dosyanızın gerçek adıyla.
-
-## Adım 5: Bir TextFragmentAbsorber Oluşturun
-
- Bir tane oluştur`TextFragmentAbsorber` Giriş arama ifadesinin tüm örneklerini bulmak için nesne:
-
-```csharp
-TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
-```
-
- Yer değiştirmek`"text"` İstediğiniz arama ifadesiyle.
-
-## Adım 6: Belirli bir sayfa için emiciyi kabul edin
-
-Belgenin istenilen sayfası için emiciyi kabul edin:
-
-```csharp
-pdfDocument.Pages[2].Accept(textFragmentAbsorber);
-```
-
- Yer değiştirmek`2` İstenilen sayfa numarasıyla (1 tabanlı dizin).
-
-## Adım 7: Çıkarılan metin parçalarını alın
-
- Çıkarılan metin parçalarını kullanarak alın`TextFragments` mülkiyeti`TextFragmentAbsorber` nesne:
-
-```csharp
-TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
-```
-
-## Adım 8: Metin bölümleri arasında döngü oluşturun
-
-Alınan metin parçaları arasında dolaşın ve özelliklerine erişin:
-
-```csharp
-foreach (TextFragment textFragment in textFragmentCollection)
-{
-	foreach (TextSegment textSegment in textFragment.Segments)
-	{
-		Console.WriteLine("Text: {0} ", textSegment.Text);
-		Console.WriteLine("Position: {0} ", textSegment.Position);
-		Console.WriteLine("XIndent: {0} ", textSegment.Position.XIndent);
-		Console.WriteLine("YIndent: {0} ", textSegment.Position.YIndent);
-		Console.WriteLine("Font - Name: {0}", textSegment.TextState.Font.FontName);
-		Console.WriteLine("Font - IsAccessible: {0} ", textSegment.TextState.Font.IsAccessible);
-		Console.WriteLine("Font - IsEmbedded: {0} ", textSegment.TextState.Font.IsEmbedded);
-		Console.WriteLine("Font - IsSubset: {0} ", textSegment.TextState.Font.IsSubset);
-		Console.WriteLine("Font Size: {0} ", textSegment.TextState.FontSize);
-		Console.WriteLine("Foreground Color: {0} ", textSegment.TextState.ForegroundColor);
-	}
-}
-```
-
-Gerekirse her metin parçasında daha fazla işlem gerçekleştirmek için döngü içindeki kodu değiştirin.
-
-### .NET için Aspose.PDF kullanarak Arama Metni Segmentleri Sayfası için örnek kaynak kodu 
 ```csharp
 // Belgeler dizinine giden yol.
 string dataDir = "YOUR DOCUMENT DIRECTORY";
 // Belgeyi aç
 Document pdfDocument = new Document(dataDir + "SearchTextSegmentsPage.pdf");
+```
+
+- `dataDir` : Bu değişken PDF dosyanızın yolunu tutar. Değiştir`"YOUR DOCUMENT DIRECTORY"` dosyanızın saklandığı gerçek dizinle.
+- `pdfDocument` : Kullanımı`Document` Sınıfta PDF'yi hafızaya yüklüyoruz.
+
+## Adım 2: Metin Aramasını Ayarlayın
+
+ Artık belgeniz yüklendiğine göre, bir sonraki adım bir belge oluşturmaktır.`TextFragmentAbsorber` Belge içerisinde belirli bir metni aramamıza olanak sağlayan nesne.
+
+```csharp
 // Giriş arama ifadesinin tüm örneklerini bulmak için TextAbsorber nesnesi oluşturun
 TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("text");
+```
+
+- `TextFragmentAbsorber` : Bu nesne aradığınız metnin tüm örneklerini yakalamak için kullanılır. Değiştir`"text"` Aramak istediğiniz gerçek metinle birlikte.
+
+## Adım 3: Belirli Sayfa(lar) için Absorber'ı Kabul Edin
+
+Her zaman PDF belgesinin tamamını aramak istemeyebilirsiniz. Bu örnekte, belirli bir sayfaya daraltıyoruz.
+
+```csharp
 // Tüm sayfalar için emiciyi kabul et
 pdfDocument.Pages[2].Accept(textFragmentAbsorber);
+```
+
+- `pdfDocument.Pages[2]`: Bu, belgenin yalnızca ikinci sayfasını aradığımızı gösterir. Dizini diğer sayfaları hedefleyecek şekilde değiştirebilirsiniz.
+- `Accept()` : Bu yöntem,`TextFragmentAbsorber` Belirtilen sayfadaki metni işlemek için.
+
+## Adım 4: Metin Parçalarını Çıkarın
+
+Sayfayı aradıktan sonra bulunan metin parçalarını bir koleksiyona çıkarıyoruz.
+
+```csharp
 // Çıkarılan metin parçalarını alın
 TextFragmentCollection textFragmentCollection = textFragmentAbsorber.TextFragments;
+```
+
+- `TextFragmentCollection`: Bu koleksiyon, arama işlemi sırasında bulunan metin parçalarının tüm örneklerini tutar.
+
+## Adım 5: Metin Parçalarında Döngü Yapın ve Verileri Çıkarın
+
+Şimdi her bir metin parçasının üzerinden geçelim ve konum, yazı tipi ve renk gibi ayrıntılarını çıkaralım.
+
+```csharp
 // Parçalar arasında döngü
 foreach (TextFragment textFragment in textFragmentCollection)
 {
-	foreach (TextSegment textSegment in textFragment.Segments)
-	{
-		Console.WriteLine("Text : {0} ", textSegment.Text);
-		Console.WriteLine("Position : {0} ", textSegment.Position);
-		Console.WriteLine("XIndent : {0} ",
-		textSegment.Position.XIndent);
-		Console.WriteLine("YIndent : {0} ",
-		textSegment.Position.YIndent);
-		Console.WriteLine("Font - Name : {0}",
-		textSegment.TextState.Font.FontName);
-		Console.WriteLine("Font - IsAccessible : {0} ",
-		textSegment.TextState.Font.IsAccessible);
-		Console.WriteLine("Font - IsEmbedded : {0} ",
-		textSegment.TextState.Font.IsEmbedded);
-		Console.WriteLine("Font - IsSubset : {0} ",
-		textSegment.TextState.Font.IsSubset);
-		Console.WriteLine("Font Size : {0} ",
-		textSegment.TextState.FontSize);
-		Console.WriteLine("Foreground Color : {0} ",
-		textSegment.TextState.ForegroundColor);
-	}
+    foreach (TextSegment textSegment in textFragment.Segments)
+    {
+        Console.WriteLine("Text : {0} ", textSegment.Text);
+        Console.WriteLine("Position : {0} ", textSegment.Position);
+        Console.WriteLine("XIndent : {0} ", textSegment.Position.XIndent);
+        Console.WriteLine("YIndent : {0} ", textSegment.Position.YIndent);
+        Console.WriteLine("Font - Name : {0}", textSegment.TextState.Font.FontName);
+        Console.WriteLine("Font - IsAccessible : {0} ", textSegment.TextState.Font.IsAccessible);
+        Console.WriteLine("Font - IsEmbedded : {0} ", textSegment.TextState.Font.IsEmbedded);
+        Console.WriteLine("Font - IsSubset : {0} ", textSegment.TextState.Font.IsSubset);
+        Console.WriteLine("Font Size : {0} ", textSegment.TextState.FontSize);
+        Console.WriteLine("Foreground Color : {0} ", textSegment.TextState.ForegroundColor);
+    }
 }
 ```
 
+- `foreach (TextFragment textFragment in textFragmentCollection)` : Her bir döngüde`TextFragment` koleksiyonda.
+- `foreach (TextSegment textSegment in textFragment.Segments)`: Her parçanın içinde birden fazla segment var. Tüm ilgili bilgileri toplamak için bunlar arasında döngü oluşturuyoruz.
+-  Çeşitli özellikleri`textSegment`Bunlar bize metnin konumu (X ve Y), yazı tipi ayrıntıları, boyutu ve rengi gibi metin hakkında ayrıntılı bilgi verir.
+
+## Adım 6: Sonuçları Çıktılayın
+
+Son olarak, tüm bilgiler çıkarıldıktan sonra sonuçlar konsolda yazdırılır. Bu, metnin tam olarak nerede bulunduğunu ve biçimlendirme ayrıntılarını görmenize yardımcı olur.
+
+Netlik açısından örnek çıktıyı aşağıda bulabilirsiniz:
+
+```
+Text : text
+Position : X: 45.0, Y: 75.0
+XIndent : 45.0
+YIndent : 75.0
+Font - Name : Arial
+Font - IsAccessible : True
+Font - IsEmbedded : False
+Font - IsSubset : False
+Font Size : 12.0
+Foreground Color : System.Drawing.Color [Black]
+```
+
+- Bu çıktı size belirtilen sayfadaki "text" metninin tam yerini ve biçimlendirme bilgisini verir.
+
 ## Çözüm
 
-Tebrikler! Aspose.PDF for .NET kullanarak bir PDF belgesinin bir sayfasında belirli metin parçalarını aramayı başarıyla öğrendiniz. Bu eğitim, belgeyi yüklemekten çıkarılan metin parçalarına erişmeye kadar adım adım bir kılavuz sağladı. Artık bu kodu kendi C# projelerinize dahil ederek PDF dosyalarında gelişmiş metin parçası aramaları yapabilirsiniz.
+İşte karşınızda! .NET için Aspose.PDF kullanarak bir PDF belgesindeki belirli metin parçalarını nasıl arayacağınızı öğrendiniz. Bu işlem, büyük PDF'lerle uğraşırken çok kullanışlıdır ve önemli metinleri etkili bir şekilde belirlemenize ve çıkarmanıza olanak tanır. İster veri analiz etmek, ister bilgi çıkarmak veya sadece bir belgede gezinmek olsun, Aspose.PDF işi halletmeniz için size güçlü araçlar sunar.
 
-### SSS
+## SSS
 
-#### S: "PDF Dosyasında Metin Segmentleri Sayfasını Arama" eğitiminin amacı nedir?
+### Birden fazla kelime veya ifade arayabilir miyim?
+ Evet, değiştirebilirsiniz`TextFragmentAbsorber`Giriş dizesini değiştirerek farklı metin aramak için.
 
-A: "PDF Dosyasında Metin Segmentleri Sayfasını Ara" öğreticisi, .NET için Aspose.PDF kütüphanesini kullanarak bir PDF belgesinin belirli bir sayfasındaki belirli metin segmentlerini nasıl arayacağınıza dair kapsamlı bir kılavuz sunar. Bir proje kurma, bir PDF belgesi yükleme, metin segmentlerini arama ve C# kodu kullanarak özelliklerini alma sürecini kapsar.
+### Birden fazla sayfada arama yapmak mümkün mü?
+ Kesinlikle! PDF'deki tüm sayfalarda yineleme yaparak dolaşabilirsiniz`pdfDocument.Pages`.
 
-#### S: Bu eğitim PDF belgesinde belirli metin parçalarını aramada nasıl yardımcı oluyor?
+### Büyük/küçük harfe duyarlı olmayan metinlerde nasıl arama yapabilirim?
+ Kullanabilirsiniz`TextSearchOptions` büyük/küçük harfe duyarlı olmayan aramayı etkinleştirmek için.
 
-A: Bu eğitim, bir PDF belgesinin belirli bir sayfasındaki belirli metin parçalarını bulma ve çıkarma sürecini gösterir. Sağlanan adımları ve kod örneklerini izleyerek, kullanıcılar istenen metin parçalarını etkili bir şekilde arayabilir ve özellikleri hakkında bilgi alabilir.
+### Metni bulduktan sonra değiştirebilir miyim?
+ Evet, bir tane bulduğunuzda`TextFragment`, metin özelliklerini değiştirebilirsiniz.
 
-#### S: Bu eğitimi takip etmek için hangi ön koşullar gereklidir?
-
-A: Eğitime başlamadan önce, C# programlama dili hakkında temel bir anlayışa sahip olmalısınız. Ek olarak, .NET için Aspose.PDF kütüphanesinin yüklü olması gerekir. Bunu Aspose web sitesinden edinebilir veya NuGet kullanarak projenize yükleyebilirsiniz.
-
-#### S: Bu eğitimi takip edecek şekilde projemi nasıl kurarım?
-
-A: Başlamak için, tercih ettiğiniz entegre geliştirme ortamında (IDE) yeni bir C# projesi oluşturun ve Aspose.PDF for .NET kitaplığına bir referans ekleyin. Bu, PDF belgelerini aramak ve bunlarla çalışmak için kitaplığın özelliklerini kullanmanızı sağlayacaktır.
-
-#### S: Bu eğitimi kullanarak PDF'in herhangi bir sayfasındaki belirli metin bölümlerini arayabilir miyim?
-
-C: Evet, bu eğitim, bir PDF belgesinin seçili bir sayfasında belirli metin segmentlerinin nasıl aranacağına dair talimatlar sağlar. Kullanıcılara bir proje kurma, bir PDF yükleme ve istenen metin segmentlerinin özelliklerini bulmak ve almak için Aspose.PDF kitaplığını kullanma konusunda rehberlik eder.
-
-#### S: Bu eğitimde aramak istediğim metni nasıl belirleyebilirim?
-
- A: Aramak istediğiniz metni belirtmek için bir`TextFragmentAbsorber` nesneyi seçin ve arama parametresini kullanarak ayarlayın`Text` özellik. Varsayılanı değiştirin`"text"` İstediğiniz arama ifadesiyle eğitimin koduna yazın.
-
-#### S: Çıkarılan metin parçalarının özelliklerini nasıl alabilirim?
-
-Kabul ettikten sonra`TextFragmentAbsorber` PDF'nin belirli bir sayfası için, çıkarılan metin parçalarını kullanarak alabilirsiniz`TextFragments` emici nesnenin özelliği. Bu, her biri birden fazla metin parçası içeren bir metin parçaları koleksiyonuna erişim sağlar.
-
-#### S: Her metin parçasında ek eylemler gerçekleştirmek için kodu özelleştirebilir miyim?
-
-A: Kesinlikle. Eğitimin örnek kodu, alınan metin segmentleri arasında yineleme yapmak için bir döngü sağlar. Projenizin gereksinimlerine göre, her metin segmentinde ek eylemler gerçekleştirmek için bu döngü içindeki kodu özelleştirebilirsiniz.
-
-#### S: Metin parçalarını çıkardıktan sonra değiştirilen PDF belgesini nasıl kaydederim?
-
-A: Bu eğitim öncelikli olarak metin parçalarını aramaya ve özelliklerini almaya odaklanır. PDF'de değişiklik yapmayı düşünüyorsanız, belgeyi özel ihtiyaçlarınıza göre nasıl düzenleyip kaydedeceğinizi öğrenmek için diğer Aspose.PDF belgelerine başvurabilirsiniz.
+### Bu yöntem şifreli PDF'ler için de geçerli mi?
+Evet, PDF'i doğru şifreyi kullanarak açtığınız sürece.

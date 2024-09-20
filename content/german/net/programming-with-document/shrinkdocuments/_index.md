@@ -18,7 +18,7 @@ Bevor wir ins Detail gehen, stellen wir sicher, dass Sie alles haben, was Sie zu
 1.  Aspose.PDF für .NET-Bibliothek: Laden Sie zunächst die[Aspose.PDF für .NET](https://releases.aspose.com/pdf/net/) Bibliothek. Sie benötigen sie zur Bearbeitung von PDF-Dokumenten.
 2. Entwicklungsumgebung: Sie benötigen eine IDE (Integrated Development Environment) wie Visual Studio, um den Code zu schreiben und auszuführen.
 3.  Gültige Lizenz: Aspose.PDF für .NET erfordert eine Lizenz. Wenn Sie noch keine haben, können Sie eine anfordern[vorläufige Lizenz](https://purchase.aspose.com/temporary-license/) oder laden Sie eine kostenlose Testversion herunter unter[Hier](https://releases.aspose.com/).
-4. Beispiel-PDF: Sie benötigen außerdem eine Beispiel-PDF-Datei, mit der Sie arbeiten können. In diesem Tutorial verwenden wir „ShrinkDocument.pdf“.
+4. Beispiel-PDF: Sie benötigen außerdem eine Beispiel-PDF-Datei zum Arbeiten. In diesem Tutorial verwenden wir „ShrinkDocument.pdf“.
 
 Sobald Sie über all dies verfügen, können Sie mit dem Codieren beginnen!
 
@@ -36,7 +36,7 @@ using System.Text;
 
 Das ist es! Jetzt kommen wir zum spaßigen Teil: dem Verkleinern Ihrer PDF-Datei.
 
-## Schritt 1: Dokumentverzeichnis definieren
+## Schritt 1: Definieren Sie das Dokumentverzeichnis
 
  Beginnen wir damit, zu definieren, wo Ihre PDF-Dateien gespeichert werden. Wir erstellen eine Zeichenfolgevariable namens`dataDir` um den Pfad anzugeben.
 

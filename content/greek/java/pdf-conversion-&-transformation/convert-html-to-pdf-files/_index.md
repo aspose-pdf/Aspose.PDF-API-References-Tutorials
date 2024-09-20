@@ -20,7 +20,7 @@ url: /el/java/pdf-conversion-transformation/convert-html-to-pdf-files/
 
 Πριν βουτήξουμε στον κώδικα, ας βεβαιωθούμε ότι έχετε ρυθμίσει τα πάντα:
 
-- Εγκατεστημένο Java Development Kit (JDK).
+- Εγκαταστάθηκε το Java Development Kit (JDK).
 - Ενσωματωμένο περιβάλλον ανάπτυξης (IDE) της επιλογής σας (π.χ. IntelliJ IDEA, Eclipse).
 - Η βιβλιοθήκη Aspose.PDF για Java προστέθηκε στο έργο σας.
 

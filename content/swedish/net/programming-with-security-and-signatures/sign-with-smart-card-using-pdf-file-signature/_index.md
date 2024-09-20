@@ -1,6 +1,6 @@
 ---
-title: Sign med smartkort med pdf-filsignatur
-linktitle: Sign med smartkort med pdf-filsignatur
+title: Signera med smartkort med pdf-filsignatur
+linktitle: Signera med smartkort med pdf-filsignatur
 second_title: Aspose.PDF för .NET API Referens
 description: Lär dig hur du signerar PDF-filer med ett smartkort med Aspose.PDF för .NET. Följ denna steg-för-steg-guide för säkra digitala signaturer.
 type: docs

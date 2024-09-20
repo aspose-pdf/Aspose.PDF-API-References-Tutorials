@@ -18,7 +18,7 @@ url: /el/java/pdf-structure-elements/create-pdf-with-tagged-image-in-java/
 
 -  Java Development Kit (JDK): Χρειάζεστε Java εγκατεστημένη στο σύστημά σας. Μπορείτε να το κατεβάσετε από[Ο ιστότοπος της Oracle](https://www.oracle.com/java/technologies/javase-downloads.html).
 
--  Aspose.PDF για Java: Θα πρέπει να έχετε τη βιβλιοθήκη Aspose.PDF για Java. Μπορείτε να το κατεβάσετε από το[Aspose ιστότοπο](https://releases.aspose.com/pdf/java/).
+-  Aspose.PDF για Java: Θα πρέπει να έχετε τη βιβλιοθήκη Aspose.PDF για Java. Μπορείτε να το κατεβάσετε από το[Aspose website](https://releases.aspose.com/pdf/java/).
 
 ## Ρύθμιση του έργου σας
 
@@ -74,7 +74,7 @@ pdfDocument.save("tagged_image.pdf");
 
 Για να εγκαταστήσετε το Aspose.PDF για Java, ακολουθήστε τα εξής βήματα:
 
-1.  Κατεβάστε τη βιβλιοθήκη από το[Aspose ιστότοπο](https://releases.aspose.com/pdf/java/).
+1.  Κατεβάστε τη βιβλιοθήκη από το[Aspose website](https://releases.aspose.com/pdf/java/).
 
 2. Προσθέστε το ληφθέν αρχείο JAR στη διαδρομή τάξης του έργου σας Java.
 

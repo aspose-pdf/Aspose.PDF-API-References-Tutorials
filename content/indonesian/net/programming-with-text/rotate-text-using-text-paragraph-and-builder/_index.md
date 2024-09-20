@@ -7,65 +7,79 @@ type: docs
 weight: 410
 url: /id/net/programming-with-text/rotate-text-using-text-paragraph-and-builder/
 ---
-Tutorial ini menjelaskan cara menggunakan Aspose.PDF untuk .NET guna memutar teks menggunakan paragraf teks dan pembangun dalam berkas PDF. Kode sumber C# yang disediakan menunjukkan proses tersebut langkah demi langkah.
+## Perkenalan
+
+ Membuat dokumen PDF yang dinamis dapat menjadi cara yang menarik untuk menyajikan data, laporan, dan ide Anda secara visual. Salah satu alat yang ampuh yang dapat membantu Anda mencapai hal ini secara terstruktur adalah Aspose.PDF untuk .NET. Dalam panduan ini, kita akan membahas cara menggunakan Aspose.PDF untuk memutar teks dalam file PDF menggunakan`TextParagraph` Dan`TextBuilder` kelas. Baik Anda ingin membuat laporan beranotasi atau dokumen yang menarik secara visual, menguasai manipulasi teks dalam PDF sangatlah penting. Siap untuk mengubah teks Anda secara harfiah? Mari kita mulai!
 
 ## Prasyarat
 
-Sebelum melanjutkan tutorial, pastikan Anda memiliki hal berikut:
+Sebelum kita memulai petualangan memutar teks, ada beberapa hal penting yang perlu Anda siapkan:
 
-- Pengetahuan dasar tentang bahasa pemrograman C#.
-- Pustaka Aspose.PDF untuk .NET telah terinstal. Anda dapat memperolehnya dari situs web Aspose atau menggunakan NuGet untuk menginstalnya di proyek Anda.
+- Pengetahuan Dasar C#: Keakraban dengan pemrograman C# akan memudahkan navigasi melalui kode.
+- Pengaturan Visual Studio: Pastikan Anda telah menginstal Visual Studio di komputer Anda untuk menulis dan menjalankan kode Anda.
+- Pustaka Aspose.PDF: Anda perlu memiliki pustaka Aspose.PDF yang dirujuk dalam proyek Anda. Jika Anda belum menginstalnya, Anda dapat mengunduhnya dari[Di Sini](https://releases.aspose.com/pdf/net/).
+- .NET Framework: Pastikan lingkungan Anda mendukung .NET; Anda dapat menggunakan .NET Framework atau .NET Core sesuai kebutuhan Anda.
 
-## Langkah 1: Siapkan proyek
+Sekarang setelah dasar-dasarnya sudah siap, mari impor paket-paket yang diperlukan untuk mulai bekerja dengan PDF.
 
-Mulailah dengan membuat proyek C# baru di lingkungan pengembangan terintegrasi (IDE) pilihan Anda dan tambahkan referensi ke pustaka Aspose.PDF untuk .NET.
+## Paket Impor
 
-## Langkah 2: Impor namespace yang diperlukan
-
-Tambahkan perintah berikut di awal file C# Anda untuk mengimpor namespace yang diperlukan:
+Untuk bekerja dengan Aspose.PDF untuk .NET, Anda perlu mengimpor namespace yang tepat. Di bagian paling atas file C# Anda, tambahkan perintah berikut:
 
 ```csharp
+using System;
+using System.IO;
 using Aspose.Pdf;
 using Aspose.Pdf.Text;
-using Aspose.Pdf.Text.TextBuilder;
+using Aspose.Pdf.Facades;
 ```
 
-## Langkah 3: Buat dokumen PDF
+Paket-paket ini akan menyediakan semua kelas yang Anda perlukan untuk memanipulasi teks dan aspek dokumen lainnya secara efektif.
 
- Inisialisasi`Document` objek untuk membuat dokumen PDF baru:
+Sekarang setelah semuanya siap, mari kita bahas langkah-langkah sebenarnya yang terlibat dalam memutar teks dalam dokumen PDF. Kita akan mulai dari menginisialisasi dokumen hingga menyimpannya. Bersiaplah!
+
+## Langkah 1: Inisialisasi Objek Dokumen
+
+ Langkah pertama adalah membuat dan menginisialisasi`Document` objek. Objek ini berfungsi sebagai kanvas tempat Anda akan menambahkan teks.
 
 ```csharp
 string dataDir = "YOUR DOCUMENT DIRECTORY";
+// Inisialisasi objek dokumen
 Document pdfDocument = new Document();
 ```
 
- Pastikan untuk mengganti`"YOUR DOCUMENT DIRECTORY"` dengan jalur sebenarnya ke direktori dokumen Anda.
+ Itu`Document`Kelas adalah tulang punggung PDF Anda. Kelas membantu dalam mengelola halaman dan konten di dalamnya.
 
-## Langkah 4: Tambahkan halaman
+## Langkah 2: Tambahkan Halaman
 
- Dapatkan halaman tertentu dari dokumen menggunakan`Pages.Add()` metode:
+Berikutnya, mari tambahkan halaman baru ke dokumen kita di mana teks akan ditempatkan.
 
 ```csharp
+// Dapatkan halaman tertentu
 Page pdfPage = (Page)pdfDocument.Pages.Add();
 ```
 
-## Langkah 5: Membuat dan memutar paragraf teks
+Di sini, kita tambahkan halaman baru ke PDF. Halaman ini akan menjadi tempat paragraf teks kita berada.
 
- Membuat sebuah`for` loop untuk menghasilkan beberapa paragraf teks dengan rotasi berbeda:
+## Langkah 3: Membuat dan Mengonfigurasi Paragraf Teks
+
+ Sekarang kesenangan dimulai! Kita akan membuat beberapa`TextParagraph` objek dan mengonfigurasi propertinya termasuk posisi dan sudut rotasinya.
 
 ```csharp
 for (int i = 0; i < 4; i++)
 {
-	TextParagraph paragraph = new TextParagraph();
-	paragraph.Position = new Position(200, 600);
-	paragraph.Rotation = i * 90 + 45;
+    TextParagraph paragraph = new TextParagraph();
+    paragraph.Position = new Position(200, 600);
+    // Tentukan rotasi
+    paragraph.Rotation = i * 90 + 45;
+}
 ```
 
-Sesuaikan nilai posisi dan rotasi sesuai kebutuhan Anda.
+Dalam putaran ini, kita membuat empat paragraf, dengan masing-masing diputar 90 derajat. Setiap paragraf awalnya diposisikan pada koordinat (200, 600).
 
-## Langkah 6: Membuat dan mengonfigurasi fragmen teks
+## Langkah 4: Buat Fragmen Teks
 
- Buat beberapa`TextFragment` objek, atur teks dan propertinya:
+ Setelah menyiapkan paragraf, saatnya menambahkan beberapa teks! Kita akan membuat`TextFragment` objek yang menampung teks sebenarnya yang ingin kita tampilkan.
 
 ```csharp
 TextFragment textFragment1 = new TextFragment("Paragraph Text");
@@ -73,26 +87,22 @@ textFragment1.TextState.FontSize = 12;
 textFragment1.TextState.Font = FontRepository.FindFont("TimesNewRoman");
 textFragment1.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
 textFragment1.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-
-TextFragment textFragment2 = new TextFragment("Second line of text");
-textFragment2.TextState.FontSize = 12;
-textFragment2.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment2.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-textFragment2.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-
-TextFragment textFragment3 = new TextFragment("And some more text...");
-textFragment3.TextState.FontSize = 12;
-textFragment3.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-textFragment3.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-textFragment3.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-textFragment3.TextState.Underline = true;
 ```
 
-Sesuaikan teks dan properti lainnya sesuai keinginan.
+Setiap fragmen dapat memiliki properti yang disesuaikan, seperti ukuran font, jenis font, warna latar belakang, dan warna latar depan. Kami mengulangi proses ini untuk beberapa fragmen teks:
 
-## Langkah 7: Tambahkan fragmen teks ke paragraf
+```csharp
+TextFragment textFragment2 = new TextFragment("Second line of text");
+textFragment2.TextState = ConfigureText("Second line of text");
+TextFragment textFragment3 = new TextFragment("And some more text...");
+textFragment3.TextState = ConfigureText("And some more text...", true);
+```
 
- Tambahkan fragmen teks yang dibuat ke paragraf menggunakan`AppendLine` metode:
+ Metode`ConfigureText`dapat menjadi metode utilitas yang Anda buat untuk merangkum properti gaya teks, meningkatkan penggunaan kembali dan kejelasan kode.
+
+## Langkah 5: Tambahkan Fragmen Teks ke Paragraf
+
+Selanjutnya, kita akan menambahkan fragmen teks ke paragraf kita. Ini menciptakan alur teks yang terstruktur dalam paragraf.
 
 ```csharp
 paragraph.AppendLine(textFragment1);
@@ -100,107 +110,46 @@ paragraph.AppendLine(textFragment2);
 paragraph.AppendLine(textFragment3);
 ```
 
-## Langkah 8: Buat TextBuilder dan tambahkan paragraf
+ Menggunakan`AppendLine`, Anda memastikan bahwa setiap bagian teks ditambahkan secara vertikal sebagai baris berbeda dalam paragraf.
 
- Membuat sebuah`TextBuilder` objek menggunakan`pdfPage` dan tambahkan paragraf teks ke halaman PDF:
+## Langkah 6: Tambahkan Paragraf ke Halaman PDF
+
+ Sekarang paragraf kita sudah penuh dengan teks, kita perlu meletakkannya di halaman PDF menggunakan`TextBuilder` obyek.
 
 ```csharp
 TextBuilder textBuilder = new TextBuilder(pdfPage);
 textBuilder.AppendParagraph(paragraph);
-}
 ```
 
-## Langkah 9: Simpan dokumen PDF
+ Di sinilah keajaiban terjadi! Anda mengambil paragraf yang telah disiapkan dan memberi tahu`TextBuilder` untuk meletakkannya di kanvas (halaman PDF) yang Anda buat sebelumnya.
 
- Simpan dokumen PDF yang dimodifikasi ke file menggunakan`Save` metode:
+## Langkah 7: Simpan Dokumen
+
+Akhirnya, saatnya menyimpan hasil kerja keras kita! Tentukan direktori dan nama file PDF keluaran.
 
 ```csharp
 pdfDocument.Save(dataDir + "TextFragmentTests_Rotated4_out.pdf");
 ```
 
- Pastikan untuk mengganti`"TextFragmentTests_Rotated4_out.pdf"` dengan nama file keluaran yang diinginkan.
-
-### Contoh kode sumber untuk Memutar Teks Menggunakan Paragraf Teks Dan Pembuat menggunakan Aspose.PDF untuk .NET 
-```csharp
-string dataDir = "YOUR DOCUMENT DIRECTORY";
-// Inisialisasi objek dokumen
-Document pdfDocument = new Document();
-// Dapatkan halaman tertentu
-Page pdfPage = (Page)pdfDocument.Pages.Add();
-for (int i = 0; i < 4; i++)
-{
-	TextParagraph paragraph = new TextParagraph();
-	paragraph.Position = new Position(200, 600);
-	// Tentukan rotasi
-	paragraph.Rotation = i * 90 + 45;
-	// Buat fragmen teks
-	TextFragment textFragment1 = new TextFragment("Paragraph Text");
-	// Buat fragmen teks
-	textFragment1.TextState.FontSize = 12;
-	textFragment1.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-	textFragment1.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-	textFragment1.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-	// Buat fragmen teks
-	TextFragment textFragment2 = new TextFragment("Second line of text");
-	// Mengatur properti teks
-	textFragment2.TextState.FontSize = 12;
-	textFragment2.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-	textFragment2.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-	textFragment2.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-	// Buat fragmen teks
-	TextFragment textFragment3 = new TextFragment("And some more text...");
-	// Mengatur properti teks
-	textFragment3.TextState.FontSize = 12;
-	textFragment3.TextState.Font = FontRepository.FindFont("TimesNewRoman");
-	textFragment3.TextState.BackgroundColor = Aspose.Pdf.Color.LightGray;
-	textFragment3.TextState.ForegroundColor = Aspose.Pdf.Color.Blue;
-	textFragment3.TextState.Underline = true;
-	paragraph.AppendLine(textFragment1);
-	paragraph.AppendLine(textFragment2);
-	paragraph.AppendLine(textFragment3);
-	// Buat objek TextBuilder
-	TextBuilder textBuilder = new TextBuilder(pdfPage);
-	// Tambahkan fragmen teks ke halaman PDF
-	textBuilder.AppendParagraph(paragraph);
-}
-// Simpan dokumen
-pdfDocument.Save(dataDir + "TextFragmentTests_Rotated4_out.pdf");
-```
+ Pada baris ini, ganti`dataDir` dengan jalur ke direktori keluaran yang Anda inginkan. PDF akan disimpan dengan nama "TextFragmentTests_Rotated4_out.pdf."
 
 ## Kesimpulan
 
-Selamat! Anda telah berhasil mempelajari cara memutar teks menggunakan paragraf teks dan pembangun dalam dokumen PDF menggunakan Aspose.PDF untuk .NET. Tutorial ini menyediakan panduan langkah demi langkah, mulai dari membuat dokumen hingga menyimpan versi yang dimodifikasi. Anda sekarang dapat memasukkan kode ini ke dalam proyek C# Anda sendiri untuk memanipulasi rotasi teks dalam file PDF.
+Nah, itu dia—panduan lengkap tentang cara memutar teks dalam PDF menggunakan Aspose.PDF untuk .NET! Semuanya tentang memecah tugas menjadi langkah-langkah yang dapat dikelola, dan sebelum Anda menyadarinya, Anda telah mengubah PDF Anda menjadi dokumen dinamis yang menunjukkan gaya dan kreativitas Anda. Baik Anda membuat laporan, membuat undangan, atau sekadar bereksperimen dengan pengaturan tekstual, Aspose.PDF menawarkan alat yang fleksibel untuk memenuhi kebutuhan Anda. Jadi, tunggu apa lagi? Mulailah bereksperimen dan lihat seberapa kreatif Anda dengan dokumen PDF Anda!
 
-### Pertanyaan yang Sering Diajukan
+## Pertanyaan yang Sering Diajukan
 
-#### T: Apa tujuan dari tutorial "Putar Teks Menggunakan Paragraf Teks dan Pembuat"?
+### Bisakah saya memutar teks dalam orientasi apa pun?
+Ya, Anda dapat menentukan sudut rotasi apa pun (kelipatan 90 derajat) untuk mencapai berbagai orientasi.
 
-J: Tutorial "Rotate Text Using Text Paragraph And Builder" menyediakan panduan lengkap tentang cara menggunakan pustaka Aspose.PDF untuk .NET guna memutar teks menggunakan paragraf teks dan builder dalam dokumen PDF. Tutorial ini menunjukkan petunjuk langkah demi langkah dan menyertakan contoh kode C# untuk mencapai rotasi teks dengan paragraf dan pemformatan khusus.
+### Bagaimana jika saya ingin menambahkan gambar, bukan teks?
+ Aspose.PDF juga memungkinkan Anda untuk memanipulasi gambar! Anda dapat menambahkan gambar menggunakan`Image` kelas dengan cara yang sama.
 
-#### T: Apa yang membedakan tutorial ini dengan tutorial rotasi teks sebelumnya?
+### Apakah Aspose.PDF untuk .NET gratis?
+ Aplikasi ini menawarkan uji coba gratis, tetapi untuk penggunaan lebih lanjut, lisensi harus dibeli. Lihat[Pembelian](https://purchase.aspose.com/buy) halaman untuk rinciannya!
 
-J: Tidak seperti tutorial sebelumnya, tutorial ini menggabungkan penggunaan paragraf teks, pembangun, dan sudut rotasi untuk mencapai efek rotasi teks yang lebih canggih. Tutorial ini menunjukkan cara membuat beberapa paragraf teks dengan berbagai sudut rotasi dan menerapkan pemformatan khusus pada setiap fragmen teks.
+### Bisakah saya mendapatkan dukungan untuk menggunakan Aspose.PDF?
+Ya, Anda dapat menemukan dukungan dan memposting pertanyaan Anda di[Forum Aspose](https://forum.aspose.com/c/pdf/10).
 
-#### T: Apa pentingnya penggunaan paragraf teks dan pembangun untuk rotasi teks?
-
-A: Menggunakan paragraf teks dan pembangun teks memungkinkan kontrol yang lebih baik atas rotasi dan pemformatan teks. Paragraf teks menawarkan cara terstruktur untuk mengatur fragmen teks, sementara pembangun memfasilitasi pembuatan dan manipulasi konten teks dalam dokumen PDF.
-
-#### T: Dapatkah saya menerapkan sudut rotasi yang berbeda pada setiap paragraf teks?
-
- A: Ya, Anda dapat menerapkan sudut rotasi yang berbeda ke setiap paragraf teks dengan mengatur`Rotation` milik`TextParagraph` objek. Hal ini memungkinkan Anda membuat efek rotasi teks yang beragam dan dinamis dalam dokumen PDF.
-
-#### T: Bagaimana cara menyesuaikan format fragmen teks dalam paragraf teks?
-
- A: Anda dapat menyesuaikan pemformatan fragmen teks dengan mengatur berbagai properti`TextState` dalam setiap`TextFragment` objek. Properti seperti ukuran font, jenis font, warna latar depan dan latar belakang, serta garis bawah dapat disesuaikan untuk mencapai efek visual yang diinginkan.
-
-#### T: Dapatkah saya membuat efek rotasi teks yang lebih kompleks menggunakan metode ini?
-
-A: Tentu saja. Dengan membuat beberapa paragraf teks secara berulang dengan sudut rotasi dan opsi pemformatan yang berbeda, Anda dapat memperoleh efek rotasi teks yang kompleks dan menarik secara visual yang dapat meningkatkan keterbacaan dan estetika dokumen PDF Anda.
-
-#### T: Apakah mungkin untuk menggabungkan rotasi teks dengan teknik manipulasi teks lainnya?
-
-J: Ya, Anda dapat menggabungkan rotasi teks dengan teknik manipulasi teks lain yang disediakan oleh pustaka Aspose.PDF. Ini termasuk menambahkan tabel, gambar, hyperlink, dan lainnya untuk membuat dokumen PDF yang kaya dan informatif.
-
-#### T: Apakah saya memerlukan lisensi khusus untuk menggunakan pustaka Aspose.PDF di proyek saya?
-
-J: Ya, Anda memerlukan lisensi Aspose yang valid untuk menggunakan pustaka Aspose.PDF dalam proyek Anda. Anda dapat memperoleh lisensi dari situs web Aspose, yang akan memberi Anda kredensial yang diperlukan untuk mengintegrasikan dan menggunakan pustaka tersebut secara efektif.
+### Bagaimana cara mendapatkan lisensi sementara untuk Aspose.PDF?
+ Anda dapat memperoleh lisensi sementara untuk tujuan pengujian dari[Halaman Lisensi Sementara](https://purchase.aspose.com/temporary-license/).

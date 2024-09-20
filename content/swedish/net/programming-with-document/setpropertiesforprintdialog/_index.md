@@ -37,7 +37,7 @@ Börja med att öppna Visual Studio och skapa ett nytt C#-projekt. Välj en proj
 
 Detta låter dig komma åt funktionerna i Aspose.PDF i din kod.
 
-### Använda Aspose.PDF-namnrymden
+### Använda Aspose.PDF-namnområdet
 
 Överst i din C#-fil måste du inkludera Aspose.PDF-namnområdet så att du enkelt kan komma åt dess klasser och metoder. Lägg till följande rad:
 
@@ -78,7 +78,7 @@ Nu är det dags att lägga till några sidor i din PDF. I det här fallet skapar
 doc.Pages.Add();
 ```
 
-Denna rad lägger till en ny sida till dokumentet. Tänk på det som att öppna ett nytt pappersark i en anteckningsbok. Du kan lägga till innehåll senare allt eftersom.
+Denna rad lägger till en ny sida i dokumentet. Tänk på det som att öppna ett nytt pappersark i en anteckningsbok. Du kan lägga till innehåll senare allt eftersom.
 
 ## Steg 4: Ställ in egenskaper för dubbelsidig utskrift
 

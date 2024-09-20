@@ -98,7 +98,7 @@ pdfDocument.getInfo().setKeywords("SVG, PDF, Aspose.PDF");
 
 ## الأسئلة الشائعة
 
-### كيف أقوم بتثبيت Aspose.PDF لـ Java؟
+### كيف أقوم بتثبيت Aspose.PDF لـJava؟
 
  لتثبيت Aspose.PDF لـ Java، قم بتنزيل المكتبة من[هنا](https://releases.aspose.com/pdf/java/) وأضفه إلى تبعيات مشروع Java الخاص بك.
 

@@ -14,7 +14,7 @@ PDF belgeleri, evrensel uyumlulukları ve tutarlı biçimlendirmeleri nedeniyle 
 
 ## Java için Aspose.PDF'ye Başlarken
 
- Başlamak için, geliştirme ortamınızı ayarlamanız gerekir. Java için Aspose.PDF kütüphanesinin yüklü olduğundan emin olun. Bunu şuradan indirebilirsiniz:[Burada](https://releases.aspose.com/pdf/java/).
+Başlamak için, geliştirme ortamınızı ayarlamanız gerekir. Java için Aspose.PDF kütüphanesinin yüklü olduğundan emin olun. Bunu şuradan indirebilirsiniz:[Burada](https://releases.aspose.com/pdf/java/).
 
 ## PDF Belgesi Oluşturma
 

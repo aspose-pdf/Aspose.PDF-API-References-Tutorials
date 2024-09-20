@@ -19,7 +19,7 @@ url: /ja/java/pdf-structure-elements/create-pdf-with-tagged-text-in-java/
 - Java Development Kit (JDK) がシステムにインストールされています。
 -  Aspose.PDF for Javaライブラリ。ダウンロードできます[ここ](https://releases.aspose.com/pdf/java/).
 
-## Java プロジェクトの設定
+## Javaプロジェクトの設定
 
 まず、お好みの統合開発環境 (IDE) で新しい Java プロジェクトを作成します。プロジェクトの依存関係に Aspose.PDF for Java ライブラリを含めるようにしてください。
 

@@ -2,7 +2,7 @@
 title: Pobierz pola z regionu w pliku PDF
 linktitle: Pobierz pola z regionu w pliku PDF
 second_title: Aspose.PDF dla .NET API Reference
-description: Dowiedz się, jak bez wysiłku wyodrębnić pola z określonego obszaru w plikach PDF, korzystając z Aspose.PDF dla .NET, z tego kompleksowego przewodnika.
+description: Dowiedz się, jak bez wysiłku wyodrębnić pola z określonego obszaru w plikach PDF za pomocą Aspose.PDF dla .NET, zapoznając się z tym kompleksowym przewodnikiem.
 type: docs
 weight: 130
 url: /pl/net/programming-with-forms/get-fields-from-region/
@@ -143,7 +143,7 @@ foreach (Field field in fields)
 
 ## Wniosek
 
-Gratulacje! Właśnie opanowałeś sposób wyodrębniania pól z określonego obszaru pliku PDF za pomocą Aspose.PDF dla .NET. Postępując zgodnie z tymi krokami, wyposażyłeś się w potężną umiejętność zarządzania i efektywnego manipulowania formularzami PDF. Niezależnie od tego, czy rozwijasz aplikację, która obsługuje dane wejściowe użytkownika, czy automatyzuje przepływy pracy dokumentów, ta wiedza będzie dla Ciebie przydatna. Eksperymentuj z różnymi funkcjonalnościami oferowanymi przez Aspose, a wkrótce staniesz się potęgą PDF!
+Gratulacje! Właśnie opanowałeś sposób wyodrębniania pól z określonego obszaru pliku PDF za pomocą Aspose.PDF dla .NET. Postępując zgodnie z tymi krokami, wyposażyłeś się w potężną umiejętność zarządzania i efektywnego manipulowania formularzami PDF. Niezależnie od tego, czy rozwijasz aplikację, która obsługuje dane wejściowe użytkownika, czy automatyzujesz przepływy pracy dokumentów, ta wiedza będzie dla Ciebie przydatna. Eksperymentuj z różnymi funkcjonalnościami oferowanymi przez Aspose, a wkrótce staniesz się potęgą PDF!
 
 ## Najczęściej zadawane pytania
 

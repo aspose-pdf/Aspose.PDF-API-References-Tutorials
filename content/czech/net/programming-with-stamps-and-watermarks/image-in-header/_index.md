@@ -17,7 +17,7 @@ Na konci této příručky budete moci bez námahy vkládat obrázky do záhlav�
 
 Než se pustíme do zábavných věcí, ujistěte se, že máme všechny nástroje na svém místě. Zde je to, co budete potřebovat:
 
-1.  Aspose.PDF pro .NET – Knihovnu si můžete stáhnout z[Stránka pro stahování Aspose.PDF pro .NET](https://releases.aspose.com/pdf/net/).
+1.  Aspose.PDF pro .NET – Knihovnu si můžete stáhnout z[Stránka ke stažení Aspose.PDF pro .NET](https://releases.aspose.com/pdf/net/).
 2. Visual Studio nebo jakékoli jiné IDE podle vašeho výběru pro psaní a kompilaci vašeho kódu C#.
 3.  Platnou licenci Aspose – získejte a[dočasná licence zde](https://purchase.aspose.com/temporary-license/) nebo se podívejte na[možnosti nákupu](https://purchase.aspose.com/buy).
 4. Ukázkový soubor PDF, kam přidáme záhlaví obrázku.
